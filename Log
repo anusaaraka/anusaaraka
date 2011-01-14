@@ -1487,7 +1487,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  5. Modified hindi_sentence.clp,run_sentence_ol.sh,run_sentence_link.sh,run_sentence_stanford.sh,ClipsToAnu_browser_intfc.sh for handling '=' punctuation.
  6. Modified run_openlogos.py , ol_parser_id_mapping.clp to Rename "id-number" fact as "parser_id-number".
 
- 12-01-11
+ 13-01-11
  ========
  1. Modified word.c for generalising all combination of punctuations.(ie, more than one punctuation is handled)
  2. Modified hindi_sentence.clp for above punctuations.
