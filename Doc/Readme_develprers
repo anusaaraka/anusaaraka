@@ -1,0 +1,8 @@
+To run the sentence for particular linkage then write the input sentence in title itself.
+
+<TITLE> Do students read books. </TITLE>
+
+eg: if onesen is given in title. then it has only one linkage and the sentence have 2 linkages then we dont get o/p  
+
+<TITLE> onesen.</TITLE>
+<p> Do students read books.</p>

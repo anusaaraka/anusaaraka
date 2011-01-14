@@ -1,0 +1,167 @@
+  1. Pre requisites:
+     English-Hindi Anusaaraka requires the following resources.
+       -- Java 1.6.0 
+       -- perl,
+       -- python,
+       -- flex, 
+       -- lttoolbox 3.1 or above
+       -- apertium 3.1 or above
+       -- xsltproc
+       -- gdbm, 
+       -- gcc ,  
+       -- ant ( Anusaaraka will run without ant also so one can ignore the errors found while compiling it )
+
+       -- OpenLogos MT (OpenLogos package contains the README for how to Install)
+       -- timeout    (this command is used to exit the CLIPS environment in the specific time.)
+
+--------------------------------------------------------------------------------------------------------------
+
+ 2. Install:
+
+     To install anu_testing from the source code, run
+
+	tar -xvzf <file name>  (Ex : tar -xvzf anu_testing.tgz)
+
+        Add following line to your ~/.bash_profile (or) ~/.bashrc
+        =========================================================
+
+        export HOME_anu_test=path_of_anu_installation
+        export HOME_anu_tmp=path_for_tmp_dir
+        export HOME_anu_provisional_wsd_rules=path_for_user_wsd_rules(provisional_wsd_rules)
+	export HOME_open_logos=path_openlogos_dir
+        
+        export PATH=path for jdk1.6.0_03/bin and $HOME_anu_test/bin
+        export JAVA_HOME=path for jdk1.6.0_03
+        export LD_LIBRARY_PATH=/usr/local/lib/    ( for Shared libraries )
+        
+        (Note : Along with anu_testing we are giving provisional_wsd_rules. Move this directory wherever you want
+                and set that path for provisional_wsd_rules)
+
+ 
+        Ex:
+        ==
+
+        export HOME_anu_test=$HOME/anu_testing
+	export HOME_anu_tmp=$HOME/tmp_anu_dir
+	export HOME_anu_provisional_wsd_rules=$HOME/provisional_wsd_rules
+	export HOME_open_logos=$HOME/openlogos-package/openlogos-1.0.3
+
+        export PATH=$HOME/OPEN-LOGOS/jdk1.6.0_03/bin:$HOME_anu_test/bin:$PATH
+        export JAVA_HOME=$HOME/OPEN-LOGOS/jdk1.6.0_03
+        export LD_LIBRARY_PATH=/usr/local/lib/
+
+        compile:
+        ========
+
+        cd anu_testing
+	  shell_scripts/anu_compile.sh
+
+      Note :: Please run  remove_out-files.sh before recompiling.
+          
+----------------------------------------------------------------------------------------------------------------
+ 3. To remove out files
+           shell_scripts/remove_out-files.sh
+
+-----------------------------------------------------------------------------------------------------------------   
+ 4. Run:
+
+      sample input file is given below:
+      <TITLE> test. </TITLE>
+      <p>
+          This is a sample file for anusaaraka.
+      </p>
+
+     Command to run 
+     --------------
+             Anusaaraka.sh  <file_name>         Ex : Anusaaraka.sh verified
+
+
+     To run the sentence for partucular linkage :
+     -------------------------------------------
+
+                     Anusaaraka.sh  <file_name> <linkage_number>
+               Ex :  Anusaaraka.sh  test 2    --- running test file for second linkage.
+
+  -------------------------------------------------------------------------------------------------------------------
+
+ 5. Output :
+   
+    The "tmp" directory is created for given input file. The facts for the particular sentences are stored in their 
+    respective directories.  (Ex: for second paragraph first sentence tmp/inputfile_tmp/2.1 dir )
+    
+    To view the facts :
+           $HOME_anu_tmp/tmp/<file_name_tmp>/<sentence_no>/all_facts      Ex:  $HOME_anu_tmp/tmp/verified_tmp/2.1/all_facts  
+       
+    To view the output, open html file through a browser by the command :
+
+               firefox <filename.html>
+           Ex: firefox verified.html (html o/p can be viewed in the directory where you have run)
+
+  -------------------------------------------------------------------------------------------------------------------
+ 6. Linkage diagram:
+    ===============   
+    To view the linkage diagram run the Unix command:
+    $ anu_link-parser.sh 
+
+   The program can run in batch mode for testing the system on a large number of sentences.
+   The following command runs the parser on a file.
+
+    $ anu_link-parser.sh  < <input_file>
+
+ -------------------------------------------------------------------------------------------------------------------
+   
+7. Debugging ::
+   ========= 
+   Anusaaraka is provided with debugging in order to find and reduce the number of bugs, in the translation.
+   For debugging,  
+ 
+   $ cd $HOME_anu_test/debugging/sentence_debug
+   $ sh sentence_debug.sh <file_name> <sentence_number>   Ex:  sh sentence_debug.sh  mytest  2.1
+                                                         (Ex: for 1st sentence of 2nd paragraph of the input file "mytest")
+ 
+  (NOTE : For Debugging basic knowledge of CLIPS is needed)
+----------------------------------------------------------------------------------------------------------------------
+
+ Categories: The categories.txt file contains category information in the following format:
+              <Long Form> <POS Tag> <Crude Category>
+
+  Punctuation: The following words are used for the respective punctuations:
+
+      ,  comma
+      .  full_stop
+      ;  semi_colon
+      :  colon
+      '  single_quote
+      "  double_quote
+      ?  question_mark
+      !  exclamation
+     ''  2_single_quotes
+      (  open_parenthesis
+      )  closed_parenthesis
+      $  dollar
+      %  percentage
+      =  equal_to
+ --------------------------------------------------------------------------------------------------------------------
+
+    The sentences with correct translation for Link and Stanford parser are in $HOME_anu_test/verified  file .
+                                   for only OL parser  in $HOME_anu_test/verified_ol
+                                   for only Stanford   in $HOME_anu_test/sd_verified
+        
+    OL parser fail sentences are in $HOME_anu_test/OL_parser_fails
+ --------------------------------------------------------------------------------------------------------------------
+  ERROR NOTE:
+  ----------
+
+  While running Anusaaraka.sh,
+                if at all you find below type of errors
+			[FACTRHS1] Template kriyA-side_saMbanXI does not exist for assert.
+			Function load-facts encountered an error
+			FALSE
+                then 
+                     Go to this directory and run following commands.
+                     $ cd $HOME_anu_test/Anu_clp_files/
+                     $ sh add_dummy_facts.sh  kriyA-side_saMbanXI 
+  
+           then run,
+                     $ myclips -f create_binary_files.clp 
+ -----------------------------------------------------------------------------------------------------------------------

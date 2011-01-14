@@ -1,0 +1,24 @@
+For running Anusaaraka from a certain point onwards.
+
+1. make a directory "step-debug" in bin.
+2. put the attached files inside it. (change .dat files to .bat )
+3. Make changes in the required file in the tmp directory for the given sentence . (e.g relations.dat, pada_id_info.dat, lwg_info.dat for relations, pada, lwg)
+4. run the respective shell script ( run-pada/rel/lwg-onwards.sh) giving "filename" and "sentence-no" as arg1 and arg2 respectively in step-debug directory.
+
+e.g. sh run-rel-onwards.sh jnk 2.1
+
+sriram
+
+
+For relations , changes should be made in following files.
+1.relations.dat
+2.relations_tmp1.dat
+
+
+For pada , changes should be made in following file.
+1. pada_id_info.dat
+
+(Note: Check relations.dat and relations_tmp1.dat along with above file.)
+
+For lwg, changes should be made in following file.
+1. lwg_info.dat

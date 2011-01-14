@@ -1,0 +1,26 @@
+GROK has been downloaded from http://grok.sourceforge.net/
+
+Chunker:
+--------
+
+   chunking Process:
+   ----------------
+   chunking is done in two steps. 
+   
+   1. POSTagger is run on the input file which creates input.POSTagger
+   
+   2. The output of the POSTagger (input.POSTagger file) is given to Chunker which creates input.chunker
+
+   How to Run:
+   -----------
+  To run chunker ,type the following command
+  
+  shell>sh chunker.sh input
+
+  This creates two files input.POSTagger and input.chunker. 
+
+  input.chunker is the final output file.
+
+
+   NOTE: To stop displaying debugging messages, remove -verbose in "chunker.sh"
+

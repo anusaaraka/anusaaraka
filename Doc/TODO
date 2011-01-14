@@ -1,0 +1,242 @@
+ --  Where to store the information of {ba.}/{ba.}{passive} and  {1.e.}) found in tam.    - Done
+ --  Modifying paxa_rules.                                                                - Done
+ --  linkid wordid _mapping.                                                              - Done
+ --  Remove {passive} from old wsd rules.                                                 - Done
+ --  mEM -merA Apertium format.                                                           - Done
+ --  linkid mapping for New Lwg rules from parser -                                       - Done
+ --  ^mEMne/mEM<cat:p><parsarg:ne><case:o><gen:any><num:s><per:u>$ - pronoun              - Done
+     ^@Mohan<cat:n><num:s><case:o><gen:m>$  ^ne<cat:prsg>$)        - noun
+ --  Reverse NP Ex : NP NP PP ---  NP PP NP -- sukhada                                    - Done
+ --  Add rule for tam 0 if root is have then sub vib (shasti) ke                          - Done
+ --  insert headid slot in hindi_tam_info file becoz we get the same tam 
+     for 2 diff ids then it will give problem.                                            - Done
+ --  tam yA    vibakthi - ne /0                                                           - Done
+     test with 0 list if yes then 0 else ne
+ --  Left paranthesis right paranthesis in word info.                                     - Done
+ --  "Running is good for health."                                                            
+     here Running is NP root,tam and vibhakti should be handled separately .              - Done
+ --  These are children's book.  parser treats "'s" as a separate word so
+     linkid_wordid mapping for this cases should be done.                                 - Done
+ --  She is beating him.                                                                  - Done
+     wsd_rule shoud be written for word "him"
+     1. him ->usa (when "him" is along with preposition)
+     2. him ->ussko(when "him" is treated as a single word)                               - Done
+ --  "I want Mohan to eat mangoes."
+      link-parser shows words which are not found in the database with [!]
+      eg:mangoes--->mangoes[!]
+     in clips rule-files matching for this words is not done 
+     (i.e information for this words is getting lost)                                     - Done
+ --  yA -yA1 how to decide.  data not found for yA1_wA in apertium ---  I did not go      - Done
+ --   Possibilities to remove "_" (underscores)                                           - Done
+ --  Retract the ids that are grouped and then send them to wsd rules.                    - Done
+ --  For consistency after lwg do category mapping using viSeRya-viSeRaNa fact            - Done
+ --  The boy plucked the flower which was running in the garden. ------  RS Pg*b          - Done
+ --  If cat is adjective and suffix is ed then load en_tam file                           - Done
+ --  merging ed_en_tam rules in en_tam and ed_tam files.                                  - Done
+ --  ^mEM<cat:p><case:o><parsarg:ke_sAWa><gen:m><num:s><per:u>$  He eats with me daily    - Done
+ --  I suggested he go to the party.                                                      - Done
+        +----------------------Xp----------------------+
+        |              +----I*j----+    +----Js---+    |
+        +--Wd--+--Sp*i-+--SIsj-+   +-MVp+   +--Ds-+    |
+        |      |       |       |   |    |   |     |    |
+    LEFT-WALL I.p suggested.v he go.v to.r the party.n .
+
+ --  I helped him make some changes in the program                                        - Done
+                        +--------MVp--------+
+            +-----I-----+-----Op-----+      +----Js---+
+     +-Sp*i-+--Ox-+     |     +--Dmc-+      |  +--Ds--+
+     |      |     |     |     |      |      |  |      |
+    I.p helped.v him make.v some changes.n in the program.n
+
+ --  should_be_en ---  no entry                                                           - Done
+ --  Avoid opening files in clips and use eval.
+ --  Number info in case of "and"
+ --  Handle the cases like --  He is here.    
+     In PP  "here" is a direct word so marking should be provided for such words  
+              sukhada will provide suggestion
+ --  which place are you coming from  -- sukhada will provide suggestion  
+ --  link-category is week we have to modify it     
+ --  Add tam information for please_0
+ --  vibakthi assignment sources:
+      1. root               :  (should be done in wsd rules)
+      2. tam                :  (should be done in database)
+      3. noun category (ko ) animate /inanimate : special rule to be written.
+         Ex: Rama is beating the dog. Rama is beating the drum.
+      4. root and tam together. (database)
+
+     (already rule is available for ed decide whether to keep in wsd rule or database)
+ --  convert the first letter of the first word in the sentence to lower then send it to morph.
+ --  For  "for_ing "---->ne_ke_liye (for verbal-noun) rules should be written separately.
+ --  Do not convert "I" into lower case because there will be a conflict in using roman letters i,ii......
+ --  decide both fine cat and cat coarse using link names.
+     decide whether vaerb_past_tense and verb_past_participle are needed
+     if needed then disambiguate them
+     the rules using these categories are commented in ed_en_tam file.
+ --  broken -- root
+ -- removed "'" from english apertium - to be included by sriram
+ -- BayaBIwa
+    ^BayaBIwa/BayaBIwa<cat:n><case:d><gen:m><num:s>/BayaBIwa<cat:n><case:d><gen:m><num:p>
+     /BayaBIwa<cat:n><case:o><gen:m><num:s>/BayaBIwa<cat:n><case:o><gen:m><num:p>$
+     no entry with adj
+ --  Our program did not run as quickly as expected
+     uwanA/uwanI-kriyA_viSeRaNa , EsA+kriyA-kyoMki
+ --
+   While framing multi-word-expression meaning is given to the last word and all other as "-"
+   Eg:- For (Compound_phrase) "come to grips with  "
+     come  -- "-" to    -- "-" grips -- "-"  with  -- "kA_sAmanA_kara"
+
+   but for Verb_Phrases meaning is given to 1st word
+   Eg:- For (Verb_phrase) "give up"
+              give -- "Coda_xe"     up   -- "-" (---- Is this compulsary to give the meaning for the first word?)
+
+   (This was kept for dissicussion in order to maintain uniformity in rules)
+
+   Solution::--->
+   Phrasal verb examples
+   1.He gave up smoking. --> give_up
+   2.Tommy dug the bone up. --> dig_up
+   3.He took his hat off.  --> take_off
+
+   The decission for displaying the hindi meaning: In this case under the verb                 -Done
+   Reason:: particle can be separated by the object Eg: 2 & 3 sen
+
+-- Html display for verbal phrases (sugessted by Dipthi Madam and Chaitanya Sir)
+   show back arrow under the particle and change the colour of the particle
+                                                                                                           
+-- Check why the Word "endeavour" is missing in apertium morph.
+--
+   The whole idea of advertising is to make people buy things .
+ 
+  (verb_type-verb-causative_verb-tam causative L6 L10 tam_to_be_decided)
+  (root-verbchunk-tam-link_chunkids  make_buy is_buy tam_to_be_decided  L6 L10)
+ 
+
+--- I need a new pair of trousers to go with this jacket . 
+
+   
+    +-------------------------------------Xp-------------------------------------+
+    |            +----------------TOo---------------+                            |
+    |            +------Os------+                   |                            |
+    |            |   +----Ds----+                   |         +------Js-----+    |
+    +--Wd--+-Sp*i+   |   +---A--+-Mp-+--Jp--+       +--I-+-MVp+     +--Dsu--+    |
+    |      |     |   |   |      |    |      |       |    |    |     |       |    |
+LEFT-WALL I.p need.v a new.a pair.n of trousers.n to.r go.v with this.d jacket.n . 
+
+    +-------------------------------------Xp-------------------------------------+
+    +-------------------------Wi-------------------------+                       |
+    |            +----------------TOo---------------+    |                       |
+    |            +------Os------+                   |    |                       |
+    |            |   +----Ds----+                   |    |    +------Js-----+    |
+    |      +-Sp*i+   |   +---A--+-Mp-+--Jp--+       +--I-+-MVp+     +--Dsu--+    |
+    |      |     |   |   |      |    |      |       |    |    |     |       |    |
+LEFT-WALL I.p need.v a new.a pair.n of trousers.n to.r go.v with this.d jacket.n . 
+
+   
+    +-------------------------------------Xp-------------------------------------+
+    |            +----------------MVi---------------+                            |
+    |            +------Os------+                   |                            |
+    |            |   +----Ds----+                   |         +------Js-----+    |
+    +--Wd--+-Sp*i+   |   +---A--+-Mp-+--Jp--+       +--I-+-MVp+     +--Dsu--+    |
+    |      |     |   |   |      |    |      |       |    |    |     |       |    |
+LEFT-WALL I.p need.v a new.a pair.n of trousers.n to.r go.v with this.d jacket.n . 
+
+ should need_to_go grouped or not ? (Here due to S_TO_I link in the 1st parse  it is getting fired)
+
+
+----
+   She is full of bright ideas . 
+   vaha camakIle vicAroM se BarA #huA hE
+
+  Apertium generation problem for word "full".
+
+----
+  
+  housed_at   --- should be grouped or not --- (kept for discussion)
+  FrameNet is a project housed at the International Computer Science Institute in Berkeley, which produces an electronic resource based on semantic frames.
+
+-----
+  The snake which was injured hissed loudly . (sukhada kept for discussion )
+ 
+----
+  I felt terrible after our discussion . 
+  mEMne hamArI carcA #ke bAxa #BayAnaka mahasUsa kiyA . (kept for discussion for hindi translation)
+---
+  I had been away for a few days so I had a lot of post waiting for me . 
+  a few days------- pada is kept for disscussion
+  "a few" here is adjectival phrase 
+
+---- IDIOMS
+    
+    I finally figured out why this program is so slow .
+    The chairs made up of wood are good .   ---->  Here  "of"  is connected with "chairs" (3rd linkage)
+    Water is made up of hydrogen and oxygen . --->       "of"  is connected with "is"
+
+    Eg:-It turned out that he is a thief .
+    (idiom_type_1  2 3)
+    (kriyA-dummy_subject  3 1)
+    (subject-subject_samAnAXikaraNa  5 8)  
+    (kriyA-subject  6 5)
+    (viSeRya-det_viSeRaNa  8 7)
+    
+     In the above sentence "turned out" is an idiom as well as LWG with "out" as head .
+     i)  Here all the relations are connected with "out" where as it should be done with "turned" (relation mapping should be done.)
+     ii) While loading wsd rule files if word is part of LWG other than head, will not get loaded.So, here turn.clp will never fire from WSD.
+
+   Eg:-
+    It turned out that Clinton did not actually kiss Monica .
+    He gave up smoking.
+
+   In the above two sentences, stanford parser takes both "out" and "up" as particle and the relation "prt" between "turned" and "out"  as well as between "gave" and "up",whereas Link parser takes idiomatic exp. for "turned out" and link K for "gave up" with "gave" as head word  . So to make it consistent, we have taught to take idiomatic exp. as link K, and therefore "turned" as head word in the case of "turned out". Thus the wsd rule written for a phrasal verb will work in both cases.
+
+  
+ ----- wrong relation name
+   kriyA-kqxanwa_viSeRaNa     to be renamed as kriyA-kqxanwa_object
+   It is not a good idea to drive for hours without a rest .  (kriyA-kqxanwa_viSeRaNa  2 8)
+   The students enjoyed taking that course .                                                   ---Done
+ 
+
+ -----
+ (14-12-09)
+ Should we need an disambiguation for englisg tam .
+ Eg:- Her family founded the college in 1895 .  --- (founded)
+ or 
+ Can we handle this type of sentences by just loading ed_en_tam.clp 
+ if not 
+ Can you give an example?
+ 
+
+-------
+ Should word "all"  be kept in plural_words_list.gdbm
+ for this sentences " All are well." 
+ it is correct,  where as for the the below sentence
+ " All is well." It is not correct .How this should be handled??
+
+------------
+ (20-01-10)
+ animate_list
+  for which sense "ko" vib is given to "party"
+  how to distinguish "party" and "political party"
+
+
+---------
+ 12-03-09
+ Should add (new column) head word information in samAsa-new.txt
+ To decide about the direction of arrow in case of (kriyA-upsaraga) verbal-phrases in html o/p.(Presently meaning is assigned to kriyA and meaning for upasarg is taken as "-" and direction is not decided in the html output)
+
+
+---------
+ 20-10-10 (Added by Roja)
+ In both OL and link 'neither' , 'nor' are not yet handled in hindi order.
+     Eg:   He neither plays, nor reads.                                   -----Done
+
+ 
+---------
+ 21-10-10 (Added by Roja)
+ In OL,  relations for "not" is not yet handled. 
+    Eg:  You can play football, not volleyball, in this field.
+
+
+---------
+ 25-10-10 (Added by Roja)
+ In Stanford-Parser , sentence type is not yet handled.
+    sentence type is mandatory field in the WSD form.

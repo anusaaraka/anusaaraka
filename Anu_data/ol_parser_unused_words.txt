@@ -1,0 +1,12 @@
+all	1
+jewelry	1
+hair	1
+two	1
+few	1
+many	1
+people	1
+dacoits	1
+orphanages	1
+beings	1
+Abrams	1
+smugglers	1

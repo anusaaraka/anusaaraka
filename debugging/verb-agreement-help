@@ -1,0 +1,15 @@
+
+                          Verb agreement algorithm
+                            ================
+
+      step1 : Check if subject has any prasarg (vibakthi)"
+   	           if no   ---> verb agreement is with subject     eg:-Rama is a good boy.
+        	   if yes  ---> Go to step 2                       eg:-She has a daughter.
+      step2 : Check if object has any prasarg (vibakthi)"
+     		   if no   ---> verb agreement is with object      eg:-She has a daughter.
+                   if yes  ---> Go to step 3                       eg:-Rama married Sita.
+      step3 : Check whether hindi meaning of the verb is in kriyA_mUla list
+                   if no   ---> Go to step 4                               
+                   if yes  ---> verb agree with kriyA_mUla         eg:-The student needs training .
+      step4 :  default agreement(m,s,a)                        eg:-They would have to eat .
+  

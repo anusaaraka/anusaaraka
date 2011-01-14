@@ -1,0 +1,50 @@
+(load "global_path.clp")
+(load-facts "parser_type.dat")
+(open "ol_relations.dat" ol_rel_file "r")
+(open "ol_relation_debug.dat" ol_rel_debug_file "r")
+
+(defrule load_link_rel
+?f0<-(Parser_used Link-Parser)
+=>
+ (batch* "relation_debug.clp")
+ (load-facts "link_relation_info.dat")
+ (load-facts "word.dat")
+ (load-facts "English_sentence.dat")
+ (load-facts "lwg_info.dat")
+ (load-facts "relations_tmp1.dat")
+ (load-facts "relations_debug.dat")
+ (load-facts "parserid_wordid_mapping.dat")
+ (assert (question1 "Input Sentence"))
+ (assert (question "What is the problem ::  "))
+)
+
+(defrule load_std_rel
+?f0<-(Parser_used Stanford-Parser)
+=>
+ (batch* "relation_debug.clp")
+ (load-facts "sd-relations_tmp1.dat")
+ (load-facts "sd_word.dat")
+ (load-facts "lwg_info.dat")
+ (load-facts "parserid_wordid_mapping.dat")
+ (load-facts "relations_debug.dat")
+ (assert (question1 "Input Sentence"))
+ (assert (question "What is the problem ::  "))
+)
+
+(defrule load_ol_rel
+?f0<-(Parser_used Open-Logos-Parser)
+=>
+ (batch* "relation_debug.clp")
+ (load-facts "ol_relations.dat")
+ (load-facts "word.dat")
+ (load-facts "English_sentence.dat")
+ (load-facts "lwg_info.dat")
+ (load-facts "parserid_wordid_mapping.dat")
+ (load-facts "ol_relation_debug.dat")
+ (assert (question1 "Input Sentence"))
+ (assert (question "What is the problem ::  "))
+)
+; (facts)
+; (agenda)
+(system clear)
+(run)

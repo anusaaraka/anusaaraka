@@ -1,0 +1,52 @@
+ Help
+ ----
+
+ Order of priority in choosing the hindi meaning :
+ ----------------------------------------------
+ On giving an example english sentence for the translation, anusaaraka takes the hindi meaning in the following order of priority from the information it has in the form of database, dictionary or the rules provided by the users,
+ 1. Complete short sentences .     Eg:-How do you do?   Apa_kEse_hEM?
+ 2. WSD- Compound Phrase meaning   
+ 3. Compound Phrase meaning from the database
+ 4. Provisional_wsd_rules
+ 5. Anusaaraka wsd_rules i.e, from anu_testing/WSD/wsd_rules
+ 6. Default hindi meaning from the built-in dictionary in anusaaraka. i.e,from anu_testing/Anu_data/default_meaning_frm_oldwsd.txt
+ 7. english word ; in case it does not find any hindi word corresponding to the given english word, it prints the english word as it is with a "@" before the word.
+
+
+Sense-Disambiguation in WSD :
+---------------------------
+While making the rules for word sense disambiguation, we  disambiguate/generate 
+1.root (Please see see.clp)
+2.word sense(hindi_meaning)
+3.vibhakti
+4.number 
+5.TAM etc...
+
+Complex_syntax in writing wsd_rules:
+------------------------------------
+For example
+
+1.To use animate.gdbm
+  To lookup a word from the animate.gdbm (database), the following fact pattern is used
+  (or(id-root ?id1  ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))(id-cat_coarse ?id1 PropN))
+
+
+2.To assign viBakwi to subject/object ,
+  (assert (kriyA_id-object_viBakwi ?id se))
+  (assert (kriyA_id-subject_viBakwi ?id ne))
+
+3. To decide root information
+  (assert (id-wsd_root ?id see))
+
+  For a compound phrase/phrasal verb/multiword expression,the pattern is
+  (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 aPavAha_PEla))
+
+4.To generate information about verbal noun, the pattern used  is as follows
+  (assert (make_verbal_noun ?rid))
+  (assert (id-H_vib_mng ?rid 0))
+
+  Note:For all the above  patterns, please see the file  see.clp in wsd_rules directory.
+
+5.To generate information about number , the pattern is
+  (assert (id-wsd_number ?id s))
+  (Please see press.clp)

@@ -1,0 +1,16 @@
+   to run debugging using FREEMIND :
+   ===============================
+
+1. Go to the followin directory "cd  $HOME_anu_test/debuggin/"
+
+
+2. If your sentence has been run with LINK PARSER (you can see in the output) then run 
+  > sh debug_link.sh <file-name> <sent-no>  
+    Ex: sh  debug_link.sh test 2.1 
+  > freemind debug.mm
+
+3. If your sentence has been run with STANFORD PARSER (you can see in the output) then run 
+  
+  > sh debug_std.sh <file-name> <sent-no>  
+    Ex: sh  debug_std.sh test 2.1 
+  > freemind debug.mm

@@ -1,0 +1,76 @@
+#!/usr/bin/perl
+
+
+##############################################################################
+#  Copyright (C) 2002-2005 Amba Kulkarni (amba at iiit dot net)
+#
+#  This program is free software; you can redistribute it and/or
+#  modify it under the terms of the GNU General Public License
+#  as published by the Free Software Foundation; either
+#  version 2 of the License, or (at your option) any later
+#  version.
+#
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+##############################################################################
+
+
+## This program splits the format information into sentences, and also adds a 
+## sentnce at the top of each format info.
+
+$/ = "</TITLE>\n";
+
+$sent = "";
+$in = <STDIN>;
+@in = split(/\n/,$in);
+  foreach $in (@in){
+     if($in =~ /\t/) {
+        ($num,$pre_tag,$wrd,$post_tag) = split(/\t/,$in);
+        $pre_tag =~ s/<[^>]+>//g;
+        $post_tag =~ s/<\/[^>]+>//g;
+        $sent .= $pre_tag.$wrd.$post_tag." ";
+     }
+  }
+ print "<S>  ",$sent,"</S>\n";
+  foreach $in (@in){
+     if($in =~ /\t/) {
+        print $in,"\n";
+     }
+  }
+ print "\n";
+
+$/="</s>";
+
+$first = 1;
+while($in = <STDIN>){
+$sent = "";
+@in = split(/\n/,$in);
+  foreach $in (@in){
+     if($in =~ /\t/) {
+        ($num,$pre_tag,$wrd,$post_tag) = split(/\t/,$in);
+        $pre_tag =~ s/<[^>]+>//g;
+        $post_tag =~ s/<\/[^>]+>//g;
+        $sent .= $pre_tag.$wrd.$post_tag." ";
+     }
+  }
+$/ = "\n";
+$rem_tag_part = <STDIN>;
+chomp($rem_tag_part);
+ if($sent ne "") { print "<S>  ", $sent,"</S>\n";}
+  if($rem_tag_part ne "") { $in[$#in] .= $rem_tag_part;}
+  foreach $in (@in){
+     if($in =~ /\t/) {
+        print $in,"\n";
+     }
+  }
+ if($sent ne "") { print "\n";}
+$first = 0;
+$/="</s>";
+}

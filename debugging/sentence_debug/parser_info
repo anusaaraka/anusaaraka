@@ -1,0 +1,25 @@
+Sentence Parsed Using Open-Logos-Parser
+===========================
+
+ English Sentence : He lives at Chandinichok in Delhi in India.
+ -------------------- 
+ Hindi Translation : vaha BArawa meM xillI meM \@Chandinichok meM rahawA hE .
+ --------------------- 
+ Relations :
+ -----------
+(viSeRya-in_saMbanXI 	4,chandinichok 	 6,delhi)
+(kriyA-object 	2,lives 	 6,delhi)
+(kriyA-in_saMbanXI 	2,lives 	 8,india)
+(kriyA-at_saMbanXI 	2,lives 	 4,chandinichok)
+(kriyA-subject 	2,lives 	 1,he)
+
+ id, word, root and category information: 
+ -------------------------------------------
+(id-word-root-category  8  india	 India	PropN)
+(id-word-root-category  7  in	 in	preposition)
+(id-word-root-category  6  delhi	 Delhi	PropN)
+(id-word-root-category  5  in	 in	preposition)
+(id-word-root-category  4  chandinichok	 Chandinichok	PropN)
+(id-word-root-category  3  at	 at	preposition)
+(id-word-root-category  2  lives	 live	verb)
+(id-word-root-category  1  he	 he	pronoun)

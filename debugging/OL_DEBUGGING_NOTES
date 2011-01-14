@@ -1,0 +1,59 @@
+
+> In all shell files added Open Logos related clip files and dat files that are used for debugging.
+> Need to check the debug fact pattern in the both the related debug dat file and the related debug clp file.
+
+sentence_debug.clp
+------------------
+Added defrule question rule for Open-Logos-Parser.
+This rule displays information about parser used, sentence in English and Hindi , Relations 
+
+
+run_relation_debug.bat
+---------------------
+Added a rule that loads Open-Logos along with the facts it needs.
+
+
+relation_debug.clp
+------------------
+Apart from the rule displaying Open-Logos relations information added a rules that debugs the facts
+  that are asserted and retracted.
+
+
+pada_debug.clp
+--------------
+Modified the rules which checks the parser type and loads the pada clip file.
+
+
+sentence_debug.sh
+-----------------
+Added "relations_tmp1.dat"   in  Line 3.
+
+run_sentence_debug.bat
+---------------------
+No change
+
+relation_debug.sh
+-----------------
+Added Line 2  $HOME_anu_test/Anu_clp_files/parser_id_mapping.clp
+      Line 4  relations_id_map_debug.dat 
+
+
+relation_debug.clp
+-----------------
+Added rules relation to Open-Logos
+
+
+run_relation_debug.bat
+----------------------
+Added OL rule
+
+WSD no change
+
+Agreement -------doubt  (no agreement rule for stanford parser in agreement_debug.clp )
+
+
+GNP
+Pada
+pada_debug.dat not available
+
+

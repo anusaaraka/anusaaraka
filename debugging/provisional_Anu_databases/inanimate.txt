@@ -1,0 +1,3 @@
+rock	1
+punch	1
+blow	1

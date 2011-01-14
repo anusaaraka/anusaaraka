@@ -1,0 +1,39 @@
+why verb group from link parser
+
+Should he eat fruits.
+    +--------------Xp--------------+
+    |         +----I---+           |
+    +----Qd---+-SIs-+  +--Op--+    |
+    |         |     |  |      |    |
+LEFT-WALL should.v he eat fruits.n .
+
+(S Should
+   (NP he)
+   (VP eat
+       (NP fruits))
+   .)
+
+
+Modifications in categories.txt
+-------------------------------
+
+1.   modified - preposition_subordinating_conjunction IN preposition_subordinating_conjunction
+     as       - preposition_subordinating_conjunction IN preposition
+
+2.   modified - coordinating_conjunction CC coordinating_conjunction
+     as       - coordinating_conjunction CC conjunction
+
+
+
+When the ids are grouped , then they should not pass  to wsd rules since individual ids did'nt have  meaning.
+
+  grouped ids     - TAM  
+  individual ids  - tam
+
+  vibakthi_id.dat file contains the above 2 info.
+  for wsd purpose we are giving same variable TAM (for both Tam & tam)
+
+Removing to_0 grouping in lwg.  since to.clp and to_0_tam.clp have almost same rules.
+this should be handled in wsd rules.
+
+

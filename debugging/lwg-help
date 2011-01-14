@@ -1,0 +1,18 @@
+
+
+Link-Parser
+===========
+To know about the Link-parser ,please see the web page http://www.abisource.com/projects/link-grammar/ 
+
+And for Link-summary see the web page
+http://www.abisource.com/projects/link-grammar/dict/index.html
+
+Databases_used
+==============
+
+adverbs_list.gdbm  ---> This is a list of adverbs. We use it in identifying adverbs in Local word Grouping in a sentence.
+
+           Ex: He has been frequently coming .
+
+Here "frequently" is an adverb and it occurs in the group "has been frequently  coming".While grouping(lwg) we remove this adverb and group only "has been coming".
+

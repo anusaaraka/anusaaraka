@@ -1,0 +1,55 @@
+
+ 1. combining_apostrophe.clp  : 1. Parser gives "!" mark at the end of the words that are not in Parser's dictionary. 
+                                2. Link Parsers treats " ' " as a saparate word and assigns it a different id .
+				3. Link Parsers gives YS/YP link for ' .
+				 
+                                This rule file 
+                                  1. removes "!" mark      	   Eg: Rama ate some sweets.  
+					(linkid-word-node_cat  L4  sweets[!] n) 
+					- >  (linkid-word-node_cat  L4  sweets  n)
+                                  2. combines "' " with its head.  Eg; These are children's books.
+					(linkid-word-node_cat   L3   children  n) 
+					(linkid-word-node_cat   L4   's  p)       
+                                        - > (linkid-word-node_cat L3's children's n) 
+                                  3. Modifies right id of YS/YP same as left id ;
+                                       (link_name-link_lnode-link_rnode  YS   L3   L4)
+                                       - >  (link_name-link_lnode-link_rnode  YS  L3's  L3's)
+
+                                input : link_word_tmp.dat  link_word_cat_tmp.dat   link_relation_info_tmp.dat
+                                output: link_word.dat      link_word_cat_tmp1.dat  link_relation_info_tmp1.dat
+
+2. linkid_wordid_mapping.clp :  Maps link word ids with word ids.
+    
+                                input  : link_word.dat   original_word.dat
+				output : linkid_wordid_mapping.dat :   (linkid-wordid  L3's  3)
+              
+3. cat_rule.clp              :  Checks for the link parser category. If found then takes link parser category else takes 
+				POS tagger category.
+				
+				input : pos_cat.dat   link_word_cat_tmp1.dat   linkid_wordid_mapping.dat
+				output : link_pos_cat.dat
+
+
+4. root_rule.clp  	     : Compares link category and morph category if both are same then extracts root and
+			       preferred-morph information else extracts root and preferred-morph information from 
+			       first morph analysis.
+                               
+                               input : link_pos_cat.dat  morph.dat original_word.dat morph_root_tobe_choosen.dat
+				       linkid_wordid_mapping.dat
+                               output :  root_tmp.dat           preferred_morph_tmp.dat
+
+5. load_lwg_rules.clp        : loads lwg rules.clp file and loads parser lwg rules
+
+6. verb_chunk.clp            : Generating verb group using link parser links for both interrogative and non interrogative
+			       sentences.
+
+                               input : ink_relation_info_tmp1.dat     link_name_expand.dat   root_tmp.dat
+                                       preferred_morph_tmp.dat        link_word_cat_tmp1.dat 
+                               output : lwg_ids.dat
+
+7. lwg_not.clp               :  Modifies generated verb group for negative sentences . If any id is missing between the group				     and there is N link then add that id to the group,
+                                
+				input : lwg_ids.dat  link_relation_info_tmp1.dat  link_name_expand.dat   link_word_tmp.dat 
+                                output : lwg_info_tmp.dat
+
+8. 

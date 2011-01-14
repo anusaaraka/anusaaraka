@@ -1,0 +1,6 @@
+rock	1
+punch	1
+blow	1
+issue	1
+trousers	1
+scissors	1

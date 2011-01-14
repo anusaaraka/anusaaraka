@@ -1,0 +1,6 @@
+all	1
+jewelry	1
+hair	1
+two	1
+few	1
+many	1

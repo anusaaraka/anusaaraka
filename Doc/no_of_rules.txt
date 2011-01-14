@@ -1,0 +1,1801 @@
+1.linkid_wordid_mapping.clp              -- 4
+(defrule start
+(defrule end
+(defrule id-link_id_map_for_first_word
+(defrule id-link_id_map
+
+2.link_mapping.clp                        -- 22
+(defrule start
+(defrule map_cat_consis
+(defrule map_cat_consis1
+(defrule map-id
+(defrule map-rel
+(defrule map-catid
+(defrule map-numid
+(defrule map-vb_chunk
+(defrule map-0_id
+(defrule map_no_comp_link_found
+(defrule map_root
+(defrule map_root1
+(defrule map_morph
+(defrule map_morph1
+(defrule map_lwg
+(defrule map_lwg1
+(defrule map_lwg2
+(defrule map_lwg3
+(defrule map_idiom_word
+(defrule map_idiom_root
+(defrule map_mng_decided
+(defrule end
+
+3. get_link_number.clp                      -- 6
+(defrule start
+(defrule num1
+(defrule num2
+(defrule num3
+(defrule num4
+(defrule end
+
+4.Hindi_reordering_rules.clp                 -- 13
+(defrule start
+(defrule end
+(defrule stranded_prep
+(defrule rev_VP_containing_SBAR
+(defrule rev_VP_containing_ADVP
+(defrule VP_containing_connecting_words
+(defrule rev
+(defrule rev1
+(defrule NP_containing_connecting_words
+(defrule reverse-NP-Daughters
+(defrule remaining-Daughters
+(defrule reverse-NP-id_Daughters
+(defrule remaining-id_Daughters
+
+5. idiomatic_expressions.clp                   -- 524
+(defrule start
+(defrule end
+(defrule	alter_ego
+(defrule	au_pair
+(defrule	mise_en_scene
+(defrule	faux_pas
+(defrule	non_sequitur
+(defrule	fait_accompli
+(defrule	modus_vivendi
+(defrule	head_of_state
+(defrule	tour_de_force
+(defrule	kung_fu
+(defrule	joie_de_vivre
+(defrule	op_art
+(defrule	noblesse_oblige
+(defrule	a_must
+(defrule	time_of_day
+(defrule	time_of_year
+(defrule	force_majeure
+(defrule	top_dollar
+(defrule	year_end
+(defrule	skim_milk
+(defrule	breach_of_contract
+(defrule	sleight_of_hand
+(defrule	power_of_attorney
+(defrule	word_of_mouth
+(defrule	carte_blanche
+(defrule	kind_of
+(defrule	type_of
+(defrule	sort_of
+(defrule	breed_of
+(defrule	kinds_of
+(defrule	types_of
+(defrule	sorts_of
+(defrule	breeds_of
+(defrule	each_other
+(defrule	it_all
+(defrule	them_all
+(defrule	us_all
+(defrule	you_all
+(defrule	no_one
+(defrule	nothing_but
+(defrule	all_that
+(defrule	all_this
+(defrule	all_those
+(defrule	all_these
+(defrule	such_a
+(defrule	such_an
+(defrule	a_lot
+(defrule	a_couple
+(defrule	a_couple_of
+(defrule	a_few
+(defrule	the_most
+(defrule	one_other
+(defrule	every_other
+(defrule	any_other
+(defrule	all_other
+(defrule	quite_a
+(defrule	quite_an
+(defrule	one_such
+(defrule	some_other
+(defrule	no_such
+(defrule	one_another
+(defrule	a_little
+(defrule	a_great_deal
+(defrule	many_more
+(defrule	a_few_more
+(defrule	a_couple_more
+(defrule	plenty_more
+(defrule	a_lot_more
+(defrule	some_more
+(defrule	one_more
+(defrule	not_many
+(defrule	not_enough
+(defrule	or_so
+(defrule	half_a_dozen
+(defrule	half_a_million
+(defrule	hundreds_of
+(defrule	thousands_of
+(defrule	millions_of
+(defrule	billions_of
+(defrule	trillions_of
+(defrule	dozens_of
+(defrule	and_a_half
+(defrule	made_of
+(defrule	made_up_of
+(defrule	take_place
+(defrule	show_up
+(defrule	take_office
+(defrule	do_battle
+(defrule	give_way
+(defrule	make_way
+(defrule	take_part
+(defrule	catch_on
+(defrule	break_free
+(defrule	take_over
+(defrule	jump_ship
+(defrule	see_fit
+(defrule	take_note
+(defrule	takes_place
+(defrule	pleads_guilty
+(defrule	pleads_innocent
+(defrule	takes_office
+(defrule	does_battle
+(defrule	gives_way
+(defrule	makes_way
+(defrule	takes_part
+(defrule	jumps_ship
+(defrule	sees_fit
+(defrule	lets_go
+(defrule	comes_true
+(defrule	pleaded_guilty
+(defrule	pleaded_innocent
+(defrule	made_way
+(defrule	caught_up
+(defrule	caught_on
+(defrule	jumped_ship
+(defrule	plead_guilty
+(defrule	plead_innocent
+(defrule	let_go
+(defrule	took_place
+(defrule	took_office
+(defrule	did_battle
+(defrule	gave_way
+(defrule	took_part
+(defrule	broke_free
+(defrule	took_over
+(defrule	saw_fit
+(defrule	took_note
+(defrule	came_true
+(defrule	came_clean
+(defrule	shown_up
+(defrule	taken_office
+(defrule	done_battle
+(defrule	given_way
+(defrule	taken_part
+(defrule	broken_free
+(defrule	taken_over
+(defrule	seen_fit
+(defrule	taken_note
+(defrule	come_true
+(defrule	come_clean
+(defrule	taking_place
+(defrule	showing_up
+(defrule	pleading_guilty
+(defrule	pleading_innocent
+(defrule	taking_office
+(defrule	doing_battle
+(defrule	giving_way
+(defrule	making_way
+(defrule	taking_part
+(defrule	breaking_free
+(defrule	taking_over
+(defrule	jumping_ship
+(defrule	seeing_fit
+(defrule	letting_go
+(defrule	taking_note
+(defrule	coming_true
+(defrule	coming_clean
+(defrule	bring_about
+(defrule	get_rid_of
+(defrule	let_go_of
+(defrule	puts_up_with
+(defrule	brings_about
+(defrule	gets_rid_of
+(defrule	lets_go_of
+(defrule	put_up_with
+(defrule	let_go_of
+(defrule	brought_about
+(defrule	got_rid_of
+(defrule	gotten_rid_of
+(defrule	taken_note_of
+(defrule	putting_up_with
+(defrule	bringing_about
+(defrule	getting_rid_of
+(defrule	letting_go_of
+(defrule	make_out
+(defrule	point_out
+(defrule	give_notice
+(defrule	serve_notice
+(defrule	makes_out
+(defrule	points_out
+(defrule	gives_notice
+(defrule	serves_notice
+(defrule	made_out
+(defrule	pointed_out
+(defrule	served_notice
+(defrule	took_it
+(defrule	gave_notice
+(defrule	given_notice
+(defrule	making_out
+(defrule	pointing_out
+(defrule	giving_notice
+(defrule	serving_notice
+(defrule	turn_out
+(defrule	turns_out
+(defrule	turned_out
+(defrule	turning_out
+(defrule	find_out
+(defrule	figure_out
+(defrule	finds_out
+(defrule	figures_out
+(defrule	found_out
+(defrule	figured_out
+(defrule	finding_out
+(defrule	figuring_out
+(defrule	keep_on
+(defrule	give_up
+(defrule	go_around
+(defrule	keeps_on
+(defrule	gives_up
+(defrule	kept_on
+(defrule	gave_up
+(defrule	given_up
+(defrule	keeping_on
+(defrule	giving_up
+(defrule	end_up
+(defrule	ends_up
+(defrule	ended_up
+(defrule	ending_up
+(defrule	just_over
+(defrule	just_under
+(defrule	well_over
+(defrule	of_them
+(defrule	so_as_to
+(defrule	better_off
+(defrule	worse_off
+(defrule	out_of
+(defrule	other_than
+(defrule	apart_from
+(defrule	aside_from
+(defrule	rather_than
+(defrule	instead_of
+(defrule	because_of
+(defrule	prior_to
+(defrule	as_well_as
+(defrule	according_to
+(defrule	as_of
+(defrule	in_case_of
+(defrule	in_response_to
+(defrule	unbeknownst_to
+(defrule	thanks_to
+(defrule	due_to
+(defrule	along_with
+(defrule	en_route_to
+(defrule	in_connection_with
+(defrule	regardless_of
+(defrule	as_to
+(defrule	irrespective_of
+(defrule	in_public
+(defrule	in_private
+(defrule	en_route
+(defrule	a_la_mode
+(defrule	a_la_carte
+(defrule	side_by_side
+(defrule	next_door
+(defrule	at_hand
+(defrule	in_reverse
+(defrule	in_place
+(defrule	in_town
+(defrule	under_way
+(defrule	in_office
+(defrule	out_of_office
+(defrule	out_of_reach
+(defrule	within_reach
+(defrule	on_guard
+(defrule	at_large
+(defrule	in_hand
+(defrule	on_hand
+(defrule	for_free
+(defrule	in_line
+(defrule	on_line
+(defrule	in_loco_parentis
+(defrule	en_route
+(defrule	in_bed
+(defrule	out_of_bed
+(defrule	on_strike
+(defrule	on_top
+(defrule	from_afar
+(defrule	at_stake
+(defrule	in_question
+(defrule	at_issue
+(defrule	on_lease
+(defrule	on_trial
+(defrule	in_league
+(defrule	in_cahoots
+(defrule	in_front
+(defrule	on_camera
+(defrule	in_command
+(defrule	in_concert
+(defrule	on_foot
+(defrule	on_line
+(defrule	out_of_town
+(defrule	in_situ
+(defrule	in_toto
+(defrule	off_course
+(defrule	under_oath
+(defrule	by_example
+(defrule	on_holiday
+(defrule	by_invitation
+(defrule	on_patrol
+(defrule	on_stage
+(defrule	in_step
+(defrule	in_tempo
+(defrule	on_schedule
+(defrule	behind_schedule
+(defrule	ahead_of_schedule
+(defrule	for_good
+(defrule	for_keeps
+(defrule	in_phase
+(defrule	out_of_step
+(defrule	out_of_phase
+(defrule	in_tune
+(defrule	out_of_tune
+(defrule	neck_and_neck
+(defrule	as_usual
+(defrule	to_date
+(defrule	in_turn
+(defrule	so_far
+(defrule	in_particular
+(defrule	in_response
+(defrule	in_general
+(defrule	thus_far
+(defrule	in_reply
+(defrule	next_to
+(defrule	in_back_of
+(defrule	in_front_of
+(defrule	close_to
+(defrule	on_top_of
+(defrule	outside_of
+(defrule	inside_of
+(defrule	ahead_of
+(defrule	by_way_of
+(defrule	akin_to
+(defrule	in_lieu_of
+(defrule	on_account_of
+(defrule	in_place_of
+(defrule	in_search_of
+(defrule	all_over
+(defrule	all_around
+(defrule	such_as
+(defrule	this_time
+(defrule	that_time
+(defrule	these_days
+(defrule	last_time
+(defrule	next_time
+(defrule	the_next
+(defrule	the_previous_piCalA
+(defrule	the_following
+(defrule	year_and_a_half
+(defrule	a_while
+(defrule	now_on
+(defrule	then_on
+(defrule	from_now
+(defrule	a_long_time
+(defrule	some_time
+(defrule	a_few_moments
+(defrule	every_time
+(defrule	a_long_way
+(defrule	percentage_point
+(defrule	percentage_points
+(defrule	one_dollar
+(defrule	a_dollar
+(defrule	one_cent
+(defrule	a_cent
+(defrule	a_hundredfold
+(defrule	a_thousandfold
+(defrule	degrees_Fahrenheit
+(defrule	degrees_Centigrade
+(defrule	no_matter
+(defrule	now_that
+(defrule	just_as
+(defrule	if_only
+(defrule	in_case
+(defrule	insofar_as
+(defrule	on_the_grounds_that
+(defrule	in_that
+(defrule	in_the_event_that
+(defrule	even_though
+(defrule	as_if
+(defrule	as_though
+(defrule	as_soon_as
+(defrule	ever_since
+(defrule	if_possible
+(defrule	if_necessary
+(defrule	if_so
+(defrule	if_only
+(defrule	no_wonder
+(defrule	why_not
+(defrule	whether_or_not
+(defrule	a_bitch
+(defrule	a_bummer
+(defrule	a_mistake
+(defrule	de_facto
+(defrule	de_jure
+(defrule	pro_forma
+(defrule	ad_hoc
+(defrule	bona_fide
+(defrule	a_priori
+(defrule	a_posteriori
+(defrule	as_possible
+(defrule	as_expected
+(defrule	as_reported
+(defrule	as_imagined
+(defrule	as_suspected
+(defrule	as_anticipated
+(defrule	as_predicted
+(defrule	as_proposed
+(defrule	as_intended
+(defrule	as_supposed
+(defrule	than_expected
+(defrule	than_imagined
+(defrule	than_proposed
+(defrule	than_realized
+(defrule	than_intended
+(defrule	more_than
+(defrule	no_more_than
+(defrule	fewer_than
+(defrule	less_than
+(defrule	as_many_as
+(defrule	an_estimated
+(defrule	an_additional
+(defrule	as_much_as
+(defrule	no_fewer_than
+(defrule	no_less_than
+(defrule	at_least
+(defrule	all_but
+(defrule	the_same
+(defrule	far_from
+(defrule	a_bit
+(defrule	a_little_bit
+(defrule	very_very
+(defrule	very_very_very
+(defrule	just_about
+(defrule	in_part
+(defrule	all_the_way
+(defrule	all_the_time
+(defrule	inter_alia
+(defrule	mutatis_mutandis
+(defrule	par_excellence
+(defrule	ab_initio
+(defrule	ad_infinitum
+(defrule	ad_lib
+(defrule	ad_libitum
+(defrule	ad_nauseum
+(defrule	en_masse
+(defrule	into_account
+(defrule	into_effect
+(defrule	to_bid
+(defrule	from_scratch
+(defrule	to_office
+(defrule	for_office
+(defrule	for_good
+(defrule	at_once
+(defrule	to_normal
+(defrule	to_bed
+(defrule	into_office
+(defrule	in_advance
+(defrule	by_lot
+(defrule	by_credit_card
+(defrule	by_ear
+(defrule	by_foot
+(defrule	in_kind
+(defrule	en_masse
+(defrule	in_mind
+(defrule	in_pen
+(defrule	to_scale
+(defrule	for_trial
+(defrule	all_right
+(defrule	full_time
+(defrule	part_time
+(defrule	by_far
+(defrule	once_again
+(defrule	at_first
+(defrule	at_best
+(defrule	at_present
+(defrule	of_late
+(defrule	not_suprisingly
+(defrule	in_fact
+(defrule	of_course
+(defrule	in_effect
+(defrule	for_example
+(defrule	for_instance
+(defrule	POST_VERBALLY
+(defrule	prima_facie
+(defrule	before_long
+(defrule	by_hand
+(defrule	by_car
+(defrule	by_plane
+(defrule	by_boat
+(defrule	by_bus
+(defrule	by_train
+(defrule	by_phone
+(defrule	by_telephone
+(defrule	at_long_last
+(defrule	on_cue
+(defrule	on_arrival
+(defrule	in_total
+(defrule	in_turn
+(defrule	over_and_over
+(defrule	later_on
+(defrule	for_now
+(defrule	day_by_day
+(defrule	day_after_day
+(defrule	step_by_step
+(defrule	one_by_one
+(defrule	for_sure
+(defrule	for_certain
+(defrule	even_so
+(defrule	more_often_than_not
+(defrule	all_of_a_sudden
+(defrule	no_longer
+(defrule	in_brief
+(defrule	in_short
+(defrule	in_sum
+(defrule	in_essence
+(defrule	at_no_time
+(defrule	not_once
+(defrule	since_when
+(defrule	not_since
+(defrule	not_even
+(defrule	so_that
+(defrule	so_on
+(defrule	the_likes_of
+
+6.link_cons_mapping.clp                     -- 4
+(defrule start
+(defrule map-cons
+(defrule map-cons1
+(defrule end
+
+7.link_relation_rules.clp                   -- 181
+(defrule start
+(defrule end
+(defrule kriyA-subject1
+(defrule kriyA-subject2
+(defrule kriyA-subject3
+(defrule kriyA-subject4
+(defrule kriyA-subject5
+(defrule kriyA-subject6
+(defrule kriyA-subject7
+(defrule rule24
+(defrule rule82
+(defrule rule136
+(defrule rule140
+(defrule rule177
+(defrule rule178
+(defrule rule7`
+(defrule rule2
+(defrule rule13
+(defrule rule15
+(defrule rule30
+(defrule rule36
+(defrule rule55
+(defrule rule68
+(defrule rule118
+(defrule rule144
+(defrule rule16
+(defrule rule17
+(defrule rule18
+(defrule rule19
+(defrule rule41
+(defrule rule43
+(defrule rule64
+(defrule rule65
+(defrule rule66
+(defrule rule67
+(defrule rule83
+;(defrule rule91
+(defrule rule92
+(defrule rule125
+(defrule rule71
+(defrule rule74
+(defrule rule3
+(defrule rule4
+(defrule rule77
+(defrule rule5
+(defrule rule32
+(defrule rule44
+(defrule rule47
+(defrule  rule48
+(defrule rule49
+(defrule rule51
+(defrule rule96
+(defrule rule100
+(defrule rule135
+(defrule rule9
+(defrule rule14
+(defrule RaRTI_saMbanXa
+(defrule rule20
+(defrule rule21
+(defrule rule22
+(defrule rule23
+(defrule rule25
+(defrule rule26
+(defrule rule27
+(defrule rule28
+(defrule rule29
+(defrule rule33
+(defrule rule34
+(defrule rule35
+(defrule rule37
+;(defrule rule38
+(defrule rule39
+(defrule rule40
+(defrule rule42
+(defrule rule45
+(defrule rule46
+(defrule rule50
+(defrule rule52
+(defrule rule53
+(defrule  rule54
+(defrule rule56
+(defrule rule57
+(defrule rule58
+;(defrule rule59
+(defrule rule60
+(defrule rule61
+(defrule rule62
+(defrule rule63
+(defrule rule69
+(defrule subject_question_wh_type
+(defrule rule71
+(defrule rule73
+(defrule rule75
+(defrule rule76
+(defrule rule78
+(defrule rule79
+(defrule rule80
+(defrule rule81
+(defrule rule84
+(defrule rule85
+(defrule rule87
+(defrule rule88
+(defrule rule89
+(defrule rule90
+(defrule rule93
+(defrule rule94
+(defrule rule95
+(defrule rule97
+(defrule rule98
+(defrule rule99
+(defrule rule101
+(defrule rule102
+(defrule rule103
+(defrule rule104
+(defrule rule105
+(defrule rule106
+(defrule rule108
+(defrule rule109
+(defrule rule110
+(defrule rule111
+(defrule rule113
+(defrule rule114
+(defrule rule115
+(defrule rule119
+(defrule rule120
+(defrule rule121
+(defrule rule122
+(defrule rule123
+(defrule rule133
+(defrule rule134
+(defrule rule137
+(defrule rule138
+(defrule rule141
+(defrule rule142
+(defrule  rule145
+;(defrule  rule146
+(defrule  rule148
+(defrule  rule149
+(defrule  rule150
+(defrule  rule151
+(defrule  rule152
+(defrule  rule153
+(defrule  rule154
+(defrule  rule155
+(defrule  rule156
+(defrule  rule157
+(defrule rule159
+(defrule  rule160
+(defrule  rule161
+(defrule  rule162
+(defrule rule163
+(defrule  rule164
+(defrule  rule165
+(defrule  rule166
+(defrule rule167
+(defrule sAmAnya_vAkya
+(defrule AjFArWaka_vAkya
+(defrule subject_question_wh_type
+(defrule yes_no_question
+(defrule wh_question
+(defrule niReXAwmaka_vAkya
+(defrule rule174
+(defrule rule176
+(defrule rule179
+(defrule rule180
+(defrule rule181
+(defrule rule182
+(defrule rule183
+(defrule rule112
+(defrule rule184
+(defrule rule185
+(defrule rule186
+(defrule rule187
+(defrule rule188
+(defrule rule189
+(defrule rule190
+(defrule rule191
+(defrule rule192
+(defrule pUrvakAlika_kriyA-ananwarakAlika_kriyA
+(defrule kriyA-samAnakAlika_kriyA
+(defrule kriyA-samAnakAlika_kriyA_1
+
+8. combining_possessive_suffix.clp           -- 13
+(defrule start
+ (defrule rm_sqr_brkt_from_cat
+ (defrule rm_sqr_brkt_from_word
+ (defrule word_rule_ys_yp
+ (defrule word_rule
+ (defrule word_rule1
+ (defrule cat_rule_ys_yp
+ (defrule cat_rule
+ (defrule cat_rule1
+ (defrule link_rel_ys_yp
+ (defrule link_rel_info
+ (defrule link_rel1
+ (defrule end
+ 
+9. Transforming_constituents.clp               -- 16
+(defrule start
+ (defrule combining_prime_ids
+(defrule get_wh_verb_chunk
+(defrule get_wh_verb_chunk1
+ (defrule test_S_is_a_daughter
+(defrule lwg_count
+(defrule find_and_or_wrd
+(defrule count
+(defrule add_dashes
+(defrule add_dashes_for_head
+(defrule change_group_daughters
+(defrule change_group_head_fact
+(defrule remaining_facts
+(defrule mapping
+(defrule New_Node_Category
+ (defrule end
+
+10. get_lwg_rules.clp                            -- 2
+(defrule lwg_rule
+(defrule lwg_rule1
+
+11. get_verb_chunk.clp                           -- 59 
+(defrule modal_perfective_presentparticiple0
+(defrule modal_perfective_presentparticiple1
+(defrule modal_perfective_presentparticiple2
+(defrule retract_id0
+(defrule modal_perfective_presentparticiple3
+(defrule modal_perfective_presentparticiple4
+(defrule modal_perfective_presentparticiple5
+(defrule modal_perfective_presentparticiple6
+(defrule modal_perfective_presentparticiple7
+(defrule modal_perfective_presentparticiple8
+(defrule modal_perfective_presentparticiple8
+(defrule retract_id1
+(defrule modal_perfective_presentparticiple9
+(defrule modal_perfective_presentparticiple10
+(defrule modal_perfective_presentparticiple11
+(defrule modal_perfective_presentparticiple12
+(defrule modal_perfective_presentparticiple13
+(defrule modal_perfective_presentparticiple14
+(defrule modal_perfective_presentparticiple15
+(defrule modal_perfective_presentparticiple16
+(defrule retract_id2
+(defrule modal_perfective_presentparticiple17_IDE
+(defrule modal_perfective_presentparticiple17
+(defrule modal_perfective_presentparticiple18
+(defrule modal_perfective_presentparticiple19
+(defrule modal_perfective_presentparticiple20
+(defrule modal_perfective_presentparticiple21
+(defrule retract_id3
+(defrule modal_perfective_presentparticiple22
+(defrule modal_perfective_presentparticiple23
+(defrule modal_perfective_presentparticiple24
+(defrule modal_perfective_presentparticiple25
+(defrule modal_perfective_presentparticiple26
+(defrule modal_perfective_presentparticiple27
+(defrule modal_perfective_presentparticiple29
+(defrule modal_perfective_presentparticiple30
+(defrule modal_perfective_presentparticiple31
+(defrule retract_id4
+(defrule modal_perfective_presentparticiple32
+(defrule modal_perfective_presentparticiple33
+(defrule modal_perfective_presentparticiple34
+(defrule modal_perfective_presentparticiple35
+(defrule modal_perfective_presentparticiple36
+(defrule modal_perfective_presentparticiple37
+(defrule retract_id5
+(defrule modal_perfective_presentparticiple38
+(defrule modal_perfective_presentparticiple39
+(defrule modal_perfective_presentparticiple40
+(defrule modal_perfective_presentparticiple41
+(defrule modal_perfective_presentparticiple42
+(defrule modal_perfective_presentparticiple43
+(defrule modal_perfective_presentparticiple44
+(defrule retract_id6
+(defrule modal_perfective_presentparticiple45
+(defrule modal_perfective_presentparticiple46
+(defrule modal_perfective_presentparticiple47
+(defrule modal_perfective_presentparticiple48
+(defrule retract_id7
+(defrule modal_perfective_presentparticiple49
+
+12. lwg_not.clp                           -- 3
+(defrule adverb
+(defrule tam
+(defrule tam1 
+
+13. get_tam_constituents.clp              -- 12
+(defrule start
+(defrule verb_grouping_for_causitve_verb
+(defrule verb_grouping_for_causitve_verb1
+(defrule verb_grp_with_to_wrd
+(defrule verb_grp_with_and_or
+(defrule verb_grp_rule_containing_NP
+(defrule verb_grp_rule
+(defrule verb_grp_rule1
+(defrule verb_grp_rule2
+(defrule verb_grp_rule3
+(defrule verb_grp_rule4
+(defrule end
+
+14. get_tam_meaning.clp                 -- 6
+(defrule start
+(defrule wsd_tam_mng
+(defrule wsd_tam_mng1
+(defrule wsd_tam_mng2
+(defrule default_tam_mng
+(defrule end
+
+15. get_vibakthi_id.clp                  -- 6
+(defrule start 
+(defrule tam_id_frm_vb_grp
+(defrule tam_id_frm_morph
+(defrule tam_id_frm_morph1
+(defrule tam_id_frm_morph2
+(defrule end
+
+16. get_wsd_tam_meaning.clp              -- 6
+(defrule start
+(defrule wsd_tam_mng
+(defrule wsd_tam_verb
+(defrule wsd_vib1
+(defrule wsd_vib2
+(defrule end
+
+17.H_tam_rules.clp                       -- 314
+(defrule start
+(defrule end
+(defrule tam1
+(defrule tam2
+(defrule imp
+(defrule IMP_not
+(defrule tam3
+(defrule tam4
+(defrule tam5
+(defrule tam6
+(defrule tam7
+(defrule tam8
+(defrule tam9
+(defrule tam10
+(defrule tam11
+(defrule tam12
+(defrule tam13
+(defrule tam14
+(defrule tam15
+(defrule tam16
+(defrule tam17
+(defrule tam18
+(defrule tam19
+(defrule tam20
+(defrule tam21
+(defrule tam22
+(defrule tam23
+(defrule tam24
+(defrule tam25
+(defrule tam26
+(defrule tam27
+(defrule tam28
+(defrule tam29
+(defrule tam30
+(defrule tam31
+(defrule tam32
+(defrule tam33
+(defrule tam34
+(defrule tam35
+(defrule tam36
+(defrule tam37
+(defrule tam38
+(defrule tam39
+(defrule tam40
+(defrule tam41
+(defrule tam42
+(defrule tam43
+(defrule tam44
+(defrule tam45
+(defrule tam46
+(defrule tam47
+(defrule tam48
+(defrule tam49
+(defrule tam50
+(defrule tam51
+(defrule tam52
+(defrule tam53
+(defrule tam54
+(defrule tam55
+(defrule tam56
+(defrule tam57
+(defrule tam58
+(defrule tam59
+(defrule tam60
+(defrule tam61
+(defrule tam62
+(defrule tam63
+(defrule tam64
+(defrule tam65
+(defrule tam66
+(defrule tam67
+(defrule tam68
+(defrule tam69
+(defrule tam70
+(defrule tam71
+(defrule tam72
+(defrule tam73
+(defrule tam74
+(defrule tam75
+(defrule tam76
+(defrule tam77
+(defrule tam78
+(defrule tam79
+(defrule tam80
+(defrule tam81
+(defrule tam82
+(defrule tam83
+(defrule tam84
+(defrule tam85
+(defrule tam86
+(defrule tam87
+(defrule tam88
+(defrule tam89
+(defrule tam90
+(defrule tam91
+(defrule tam92
+(defrule tam93
+(defrule tam94
+(defrule tam95
+(defrule tam96
+(defrule tam97
+(defrule tam98
+;(defrule tam99
+(defrule tam100
+(defrule tam101
+(defrule tam102
+(defrule tam103
+(defrule tam104
+(defrule tam105
+(defrule tam106
+(defrule tam107
+(defrule tam108
+(defrule tam109
+(defrule tam110
+(defrule tam111
+(defrule tam112
+(defrule tam113
+(defrule tam114
+(defrule tam115
+(defrule tam116
+(defrule tam117
+(defrule tam118
+(defrule tam119
+(defrule tam120
+(defrule tam121
+(defrule tam122
+(defrule tam123
+(defrule tam124
+(defrule tam125
+(defrule tam126
+(defrule tam127
+(defrule tam128
+(defrule tam129
+(defrule tam130
+(defrule tam131
+(defrule tam132
+(defrule tam133
+(defrule tam134
+(defrule tam135
+(defrule tam136
+(defrule tam137
+(defrule tam138
+(defrule tam139
+(defrule tam140
+(defrule tam141
+(defrule tam142
+(defrule tam143
+(defrule tam144
+(defrule tam145
+(defrule tam146
+(defrule tam147
+(defrule tam148
+(defrule tam149
+(defrule tam150
+(defrule tam151
+(defrule tam152
+(defrule tam153
+(defrule tam154
+(defrule tam155
+(defrule tam156
+(defrule tam157
+(defrule tam158
+(defrule tam159
+(defrule tam160
+(defrule tam161
+(defrule tam162
+(defrule tam163
+(defrule tam164
+(defrule tam165
+(defrule tam166
+(defrule tam167
+(defrule tam168
+(defrule tam169
+(defrule tam170
+(defrule tam171
+(defrule tam172
+(defrule tam173
+(defrule tam174
+(defrule tam175
+(defrule tam176
+(defrule tam177
+(defrule tam178
+(defrule tam179
+(defrule tam180
+(defrule tam181
+(defrule tam182
+(defrule tam183
+(defrule tam184
+(defrule tam185
+(defrule tam186
+(defrule tam187
+(defrule tam188
+(defrule tam189
+(defrule tam190
+(defrule tam191
+(defrule tam192
+(defrule tam193
+(defrule tam194
+(defrule tam195
+(defrule tam196
+(defrule tam197
+(defrule tam198
+(defrule tam199
+(defrule tam200
+(defrule tam201
+(defrule tam202
+(defrule tam203
+(defrule tam204
+(defrule tam205
+(defrule tam206
+(defrule tam207
+(defrule tam208
+(defrule tam209
+(defrule tam210
+(defrule tam211
+(defrule tam212
+(defrule tam213
+(defrule tam214
+(defrule tam215
+(defrule tam216
+(defrule tam217
+(defrule tam218
+(defrule tam219
+(defrule tam220
+(defrule tam221
+(defrule tam222
+(defrule tam223
+(defrule tam224
+(defrule tam225
+(defrule tam226
+(defrule tam227
+(defrule tam228
+(defrule tam229
+(defrule tam230
+(defrule tam231
+(defrule tam232
+(defrule tam233
+(defrule tam234
+(defrule tam235
+(defrule tam236
+(defrule tam237
+(defrule tam238
+(defrule tam239
+(defrule tam240
+(defrule tam241
+(defrule tam242
+(defrule tam243
+(defrule tam244
+(defrule tam245
+(defrule tam246
+(defrule tam247
+(defrule tam248
+(defrule tam249
+(defrule tam250
+(defrule tam251
+(defrule tam252
+(defrule tam253
+(defrule tam254
+(defrule tam255
+(defrule tam256
+(defrule tam257
+(defrule tam258
+(defrule tam259
+(defrule tam260
+(defrule tam261
+(defrule tam262
+(defrule tam263
+(defrule tam264
+(defrule tam265
+(defrule tam266
+(defrule tam267
+(defrule tam268
+(defrule tam269
+(defrule tam270
+(defrule tam271
+(defrule tam272
+(defrule tam273
+(defrule tam274
+(defrule tam275
+(defrule tam276
+(defrule tam277
+(defrule tam278
+(defrule tam279
+(defrule tam280
+(defrule tam281
+(defrule tam282
+(defrule tam283
+(defrule tam284
+(defrule tam285
+(defrule tam286
+(defrule tam287
+(defrule tam288
+(defrule tam289
+(defrule tam290
+(defrule tam291
+(defrule tam292
+(defrule tam293
+(defrule tam294
+(defrule tam295
+(defrule tam296
+(defrule tam297
+(defrule tam298
+(defrule tam299
+(defrule tam300
+(defrule tam301
+(defrule tam302
+(defrule tam303
+(defrule tam304
+(defrule tam305
+(defrule tam306
+(defrule tam307
+(defrule tam308
+(defrule tam309
+(defrule tam310
+
+18. load_wsd_tam_files.clp                   -- 5
+(defrule start
+(defrule end 
+(defrule load_tam_file
+(defrule load_suffux_file_en
+ (defrule load_suffux_file_ing
+
+19. lwg_rules.clp                            -- 313
+(defrule rule1
+(defrule rule2
+(defrule rule3
+(defrule rule4
+(defrule rule5
+(defrule rule6
+(defrule rule7
+(defrule rule8
+(defrule rule9
+(defrule rule10
+(defrule rule11
+(defrule rule12
+(defrule rule13
+(defrule rule14
+(defrule rule15
+(defrule rule16
+(defrule rule17
+(defrule rule18
+(defrule rule19
+(defrule rule20
+(defrule rule21
+(defrule rule22
+(defrule rule23
+(defrule rule24
+(defrule rule25
+(defrule rule26
+(defrule rule27
+(defrule rule28
+(defrule rule29
+(defrule rule30
+(defrule rule31
+(defrule rule32
+(defrule rule33
+(defrule rule34
+(defrule rule35
+(defrule rule36
+(defrule rule37
+(defrule rule38
+(defrule rule39
+(defrule rule40
+(defrule rule41
+(defrule rule42
+(defrule rule43
+(defrule rule44
+(defrule rule45
+(defrule rule46
+(defrule rule47
+(defrule rule48
+(defrule rule49
+(defrule rule50
+(defrule rule51
+(defrule rule52
+(defrule rule53
+(defrule rule54
+(defrule rule55
+(defrule rule56
+(defrule rule57
+(defrule rule58
+(defrule rule59
+(defrule rule60
+(defrule rule61
+(defrule rule62
+(defrule rule63
+(defrule rule64
+(defrule rule65
+(defrule rule66
+(defrule rule67
+(defrule rule68
+(defrule rule69
+(defrule rule70
+(defrule rule71
+(defrule rule72
+(defrule rule73
+(defrule rule74
+(defrule rule75
+(defrule rule76
+(defrule rule77
+(defrule rule78
+(defrule rule79
+(defrule rule80
+(defrule rule81
+(defrule rule82
+(defrule rule83
+(defrule rule84
+(defrule rule85
+(defrule rule86
+(defrule rule87
+(defrule rule88
+(defrule rule89
+(defrule rule90
+(defrule rule91
+(defrule rule92
+(defrule rule93
+(defrule rule94
+(defrule rule95
+;(defrule rule96
+(defrule rule97
+(defrule rule98
+(defrule rule99
+(defrule rule100
+(defrule rule101
+(defrule rule102
+(defrule rule103
+(defrule rule104
+(defrule rule105
+(defrule rule106
+(defrule rule107
+(defrule rule108
+(defrule rule109
+(defrule rule110
+(defrule rule111
+(defrule rule112
+(defrule rule113
+(defrule rule114
+(defrule rule115
+(defrule rule116
+(defrule rule117
+(defrule rule118
+(defrule rule119
+(defrule rule120
+(defrule rule121
+(defrule rule122
+(defrule rule123
+(defrule rule124
+(defrule rule125
+(defrule rule126
+(defrule rule127
+(defrule rule128
+(defrule rule129
+(defrule rule130
+(defrule rule131
+(defrule rule132
+(defrule rule133
+(defrule rule134
+(defrule rule135
+(defrule rule136
+(defrule rule137
+(defrule rule138
+(defrule rule139
+(defrule rule140
+(defrule rule141
+(defrule rule142
+(defrule rule143
+(defrule rule144
+(defrule rule145
+(defrule rule146
+(defrule rule147
+(defrule rule148
+(defrule rule149
+(defrule rule150
+(defrule rule151
+(defrule rule152
+(defrule rule153
+(defrule rule154
+(defrule rule155
+(defrule rule156
+(defrule rule157
+(defrule rule158
+(defrule rule159
+(defrule rule160
+(defrule rule161
+(defrule rule162
+(defrule rule163
+(defrule rule164
+(defrule rule165
+(defrule rule166
+(defrule rule167
+(defrule rule168
+(defrule rule169
+(defrule rule170
+(defrule rule171
+(defrule rule172
+(defrule rule173
+(defrule rule174
+(defrule rule175
+(defrule rule176
+(defrule rule177
+(defrule rule178
+(defrule rule179
+(defrule rule180
+(defrule rule181
+(defrule rule182
+(defrule rule183
+(defrule rule184
+(defrule rule185
+(defrule rule186
+(defrule rule187
+(defrule rule188
+(defrule rule189
+(defrule rule190
+(defrule rule191
+(defrule rule192
+(defrule rule193
+(defrule rule194
+(defrule rule195
+(defrule rule196
+(defrule rule197
+(defrule rule198
+(defrule rule199
+(defrule rule200
+(defrule rule201
+(defrule rule202
+(defrule rule203
+(defrule rule204
+(defrule rule205
+(defrule rule206
+(defrule rule207
+(defrule rule208
+(defrule rule209
+(defrule rule210
+(defrule rule211
+(defrule rule212
+(defrule rule213
+(defrule rule214
+(defrule rule215
+(defrule rule216
+(defrule rule217
+(defrule rule218
+(defrule rule219
+(defrule rule220
+(defrule rule221
+(defrule rule222
+(defrule rule223
+(defrule rule224
+(defrule rule225
+(defrule rule226
+(defrule rule227
+(defrule rule228
+(defrule rule229
+(defrule rule230
+(defrule rule231
+(defrule rule232
+(defrule rule233
+(defrule rule234
+(defrule rule235
+(defrule rule236
+(defrule rule237
+(defrule rule238
+(defrule rule239
+(defrule rule240
+(defrule rule241
+(defrule rule242
+(defrule rule243
+(defrule rule244
+(defrule rule245
+(defrule rule246
+(defrule rule247
+(defrule rule248
+(defrule rule249
+(defrule rule250
+(defrule rule251
+(defrule rule252
+(defrule rule253
+(defrule rule254
+(defrule rule255
+(defrule rule256
+(defrule rule257
+(defrule rule258
+(defrule rule259
+(defrule rule260
+(defrule rule261
+(defrule rule262
+(defrule rule263
+(defrule rule264
+(defrule rule265
+(defrule rule266
+(defrule rule267
+(defrule rule268
+(defrule rule269
+(defrule rule270
+(defrule rule271
+(defrule rule272
+(defrule rule273
+(defrule rule274
+(defrule rule275
+(defrule rule276
+(defrule rule277
+(defrule rule278
+(defrule rule279
+(defrule rule280
+(defrule rule281
+(defrule rule282
+(defrule rule283
+(defrule rule284
+(defrule rule285
+(defrule rule286
+(defrule rule287
+(defrule rule288
+(defrule rule289
+(defrule rule290
+(defrule rule291
+(defrule rule292
+(defrule rule293
+(defrule rule294
+(defrule rule295
+(defrule rule296
+(defrule rule297
+(defrule rule298
+(defrule rule299
+(defrule rule300
+(defrule rule301
+(defrule rule302
+(defrule rule303
+(defrule rule304
+(defrule rule305
+(defrule rule306
+(defrule rule307
+(defrule rule308
+(defrule rule309
+(defrule rule310
+(defrule rule311
+(defrule rule312
+(defrule rule313
+
+20. root_rule.clp                                  -- 13
+(defrule start
+(defrule get-root1
+(defrule get-root2
+(defrule get-root3
+(defrule get-root4
+(defrule get-root5
+(defrule get-root6
+(defrule get-root7
+(defrule get-root_POS
+(defrule get-root_POS1
+(defrule get-root_POS2
+;(defrule get-root_POS3
+(defrule get-root8
+
+21. agreement.clp                                    -- 6
+(defrule start
+(defrule end
+(defrule agrmt
+(defrule agrmt1
+(defrule agrmt2
+(defrule agrmt3
+
+22. get_hindi_analysis.clp                           -- 4
+ (defrule start
+ (defrule gene_sent
+ (defrule match_exp
+ (defrule end
+
+23. get_hindi_sentence.clp                           -- 4
+ (defrule substitute_hin_mng
+ (defrule substitute_punctuation
+ (defrule match_exp
+ (defrule end
+
+24. get_number.clp                                    -- 10
+(defrule start
+(defrule end
+(defrule get_num_frm_parser
+(defrule get_num_frm_parser1
+(defrule get_num_frm_morph
+(defrule get_num_frm_determiner
+(defrule get_num_frm_wrd
+(defrule get_num_frm_subj_agreemnt
+(defrule get_num_frm_obj_agreemnt
+(defrule get_num
+
+25. get_pada_ids.clp                                   -- 7
+(defrule start
+(defrule end
+(defrule get_pada1
+(defrule get_pada2
+(defrule get_pada3
+(defrule get_pada4
+(defrule get_pada6
+
+26. pada_rules.clp                                     -- 24                               
+(defrule start
+(defrule verb_sub_pada_generation_for_she
+(defrule verb_sub_pada_generation_for_I
+(defrule verb_sub_pada_generation_for_they
+(defrule verb_sub_pada_generation
+(defrule verb_obj_pada_generation_for_I
+(defrule verb_obj_pada_generation
+(defrule verb_kriyA_mUla
+(defrule verb_pada_generation3
+(defrule noun_pada_generation_for_I
+(defrule noun_pada_generation_for_He
+(defrule noun_pada_generation_for_She
+(defrule noun_pada_generation_for_we
+(defrule noun_pada_generation
+(defrule noun_pada_generation_0_vib_I
+(defrule noun_pada_generation_0_vib_he
+(defrule noun_pada_generation_0_vib_she
+(defrule noun_pada_generation_0_vib_we
+(defrule noun_pada_generation_0_vib
+(defrule noun_pada_generation_sub_samAnAXikaraNa
+(defrule  PP_pada_generation
+;(defrule  PP_pada_generation1
+(defrule pada_rule
+(defrule end
+
+27. prepare_Apertium_input.clp                        -- 48
+(defrule start
+ (defrule NP_rule_with_vib_for_your
+ (defrule NP_rule_with_vib_for_these
+  (defrule NP_rule_with_vib_for_rmng_words
+  (defrule NP_rule_with_vib_for_I
+  (defrule NP_rule_with_vib_for_He
+  (defrule NP_rule_with_vib_for_She
+  (defrule NP_rule_with_vib_and_for_They
+  (defrule NP_rule_with_vib_and_for_rmng_wrds
+  (defrule NP_rule_with_vib_and_for_my
+  (defrule NP_rule_with_vib_for_Hid_you
+  (defrule NP_rule_without_vib_for_his
+  (defrule NP_rule_without_vib_my
+  (defrule NP_rule_without_vib_our
+  (defrule NP_rule_without_vib_their
+  (defrule NP_rule_without_vib_these
+ (defrule NP_rule_without_vib_your
+ (defrule NP_rule_without_vib_her
+  (defrule NP_rule_without_vib_for_vb
+  (defrule NP_rule_without_vib
+  (defrule NP_rule_without_vib_for_Hid_him
+  (defrule NP_rule_without_vib_for_Hid_I
+  (defrule NP_rule_without_vib_for_Hid_they
+  (defrule NP_rule_without_vib_for_Hid_He
+  (defrule NP_rule_without_vib_for_Hid_she
+  (defrule NP_rule_without_vib_for_Hd_id_vb
+  (defrule NP_rule_without_vib_for_Hid
+  (defrule VP_rule_for_imper
+  (defrule VP_rule_for_imper_not
+  (defrule VP_rule_for_jA
+  (defrule VP_rule_for_jA1
+  (defrule VP_rule_hE_and_gA
+ (defrule VP_rule_hE
+  (defrule VP_rule_hE_and_wA_hE
+  (defrule VP_rule1
+  (defrule VP_rule_for_WA_f
+  (defrule VP_rule_for_WA_m
+  (defrule VP_rule3
+  (defrule VP_rule4
+  (defrule VP_rule5
+ (defrule pp_rule_for_kA
+ (defrule pp_rule10
+   (defrule pp_rule1
+   (defrule pp_rule2
+  (defrule pp_rule3
+  (defrule pp_rule4
+  (defrule pp_rule5
+  (defrule PP_rule_without_vib
+   (defrule end
+
+28. s1.clp                                     --  1
+(defrule generate_word_order
+(printout G_fp crlf "(defrule "?Mother"_rule" crlf "?f<-(expr $?pre " ?Mother " $?pos)" crlf "=>" crlf "(retract ?f)" crlf "(assert (expr $?pre  "  ?daughters_tmp " $?pos))" crlf ")" crlf)
+
+29. vibakthi.clp                                -- 8
+(defrule start
+(defrule end
+(defrule vibakthi_rule1
+(defrule vibakthi_rule2
+(defrule animate_vibakthi_rule
+(defrule tam_vib_rule1
+(defrule vib_rule1
+(defrule prefix_vib_rule
+
+30. wh-sent-reorder.clp                         --  13
+(defrule start
+(defrule wh-reorder
+(defrule wh-reorder1
+(defrule yes-no_question_DO
+(defrule yes-no_question_models
+(defrule yes-no_question_BE
+(defrule which-red-book
+(defrule Indirect_question
+(defrule Indirect_question_1
+(defrule stranded_prep
+;(defrule kriyA-kriyA_viSeRaNa
+(defrule hi_order
+(defrule end
+
+31. cat_consistency_check.clp                    -- 6
+  (defrule cat_cons
+  (defrule cat_cons1
+  (defrule map_V
+  (defrule map_V1
+  (defrule map_default
+  (defrule map4
+
+32.category_mapping.clp                           -- 7
+  (defrule map1
+  (defrule map2
+  (defrule map_V
+  (defrule map_N
+  (defrule map_A
+  (defrule map_default
+  (defrule map4
+
+33. cat_rule.clp                                 -- 23
+  (defrule cat1
+  (defrule cat2
+  (defrule link_cat_a
+  (defrule link_cat_n
+  (defrule link_cat_v
+  (defrule link_cat_p_noun
+  (defrule link_cat_prep
+  (defrule link_cat_s_or_i
+  (defrule link_cat_e
+  (defrule link_cat_g
+  (defrule pos_cat_verb
+  (defrule pos_cat_noun
+  (defrule pos_cat_adj
+  (defrule link_cat_r
+  (defrule link_cat_d
+  (defrule link_cat_c
+  (defrule default_cat
+  (defrule default_cat1
+  (defrule cat_noun
+  (defrule cat_verb
+  (defrule cat_adj
+  (defrule cat_rm
+  (defrule cat21
+
+34.  get_causative_verb_mng.clp              -- 4 
+(defrule start
+(defrule causative_verb_mng
+(defrule hnd_mng
+(defrule end
+
+35. get_default_mng.clp                      -- 3
+(defrule start
+(defrule default_mng
+(defrule end
+
+36. get_gender_info.clp                      -- 6
+(defrule start
+(defrule get_gender_from_female_list
+(defrule get_gender_from_male_list
+(defrule get_gender
+;(defrule get_gender
+(defrule end
+
+37. get_hin_mng.clp                         -- 11
+(defrule start
+(defrule lwg_mng
+(defrule lwg_mng1
+(defrule cmp_phrase_mng
+(defrule vrb_phrase_mng
+(defrule idiom_word_mng
+(defrule wsd_word_mng
+(defrule idiom_root_mng
+(defrule wsd_root_mng
+(defrule default_mng
+(defrule end
+
+38. get_wsd_meaning.clp                    -- 7
+(defrule start
+(defrule wsd_word_mng
+(defrule wsd_root_mng
+(defrule wsd_vib1
+(defrule wsd_vib2
+(defrule wsd_vib3
+(defrule end
+
+39. load_wsd_files.clp                    -- 4
+(defrule load_word_file
+(defrule load_word_file1
+(defrule load_root_file1
+(defrule load_root_file
+
+40. overwrite_wsd_mng.clp                 -- 2
+ (defrule over_write_rule
+ (defrule over_write_rule1

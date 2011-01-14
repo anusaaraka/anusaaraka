@@ -1,0 +1,247 @@
+
+  changes in  default_meaning_frm_oldwsd.txt
+  ==========================================
+  1. Modified ::
+
+        in-law_word     sasurAla-vAlA	as      in-law         	sasurAla
+        maturity        prODawA       	as      paripakvawA
+        typically	viSiRtapUrva   	as      viSiRta_rUpa_se      Meena(17.5.10)
+        typewritist                    	as                           Meena(17.5.10)
+        factory		kAraKAnA       	as      PEktarI              Meena(20.5.10)
+
+        electronic      ilEktrona_kI_kriyA_para_nirBara_sAXana  as 	electronic	ilEktronika
+       (suggestted by Dipti Mam as frequency of ilEktrona_kI_kriyA_para_nirBara_sAXana is less when compared to ilEktronika)
+
+        pianist  piyAno_bajAnevAlA	as  	"piyAno_bajAne_vAlA"
+        idea    "suJAva"             	as  	"vicAra" 	  (suggested by sukadha (23-09-09)
+                                                    Ex: It is not a good idea to drive for hours without a rest .
+        danish  "deniSa_pejataXI"    	as  	"deniSa"  	 (suggested by srirsmji (21-01-10))
+        chinese "cInI_BARA"          	as  	"cInI"     	 (suggested by srirsmji (21-01-10))
+        Monday  "omavAra"            	as  	"somavAra"	 (suggested by Manju (26-02-10))
+        mature  "pUrNa_vikasiwa"     	as  	"paripakva"	 (suggested by Meenaji (29-04-10))
+        wisdom  "jFAna"              	as  	"buxXimawwA"	 (suggested by Meenaji (29-04-10))
+	smuggler   waskara-vyApArI      as       waskara_vyApArI (suggested by Sukadha (20-04-10))
+        curious    jijFAsu_    		as      jijFAsu
+        per      prawi-                 as      prawi  (Modified my Manju(06-01-11))
+        temporarily   Wode_xina         as	asWAyI_rUpa_se	(suggested by Meenaji (12-01-11))
+
+  2. Added :: 
+	attorney-at-law   pramANiwa_aBikarwA
+	Delhi	          xillI
+        Moon              canxramA
+	Danes             denmArka_vAsI
+        senator 	  senetara       (suggested by Meenaji (04-03-10)
+                                         Ex:  The stupidity of the senators annoyed all my friends .
+  3. Removed ::
+
+        motion pravarwana_kara 				(suggested by Meenaji (19-11-10))
+	aspirations=?????_??	@HARI			(suggested by Sukadha (29-12-10))
+	chair-????????	saBApawi			(           "			)
+	congratulations=????!	@HARI			(           "			)
+	infrastructure=????????_????????	@HARI	(           "			)
+	internally=???????_???_??	@HARI		(           "			)
+	technologists=????????????_????????	@HARI	(           "			)
+	uk=????????_??????	@HARI			(           "			)
+
+  changes in male_list.txt
+  ========================
+  1. Removed  miwra from male list
+  2. Removed  vaha  from male list
+ 
+  changes in female_list.txt
+  ========================
+  1. Modified :  paraCAIM  as  paraCAI
+  2. Added :
+	"SuBakAmanA" (02-11-09) Suggested by sheetal Eg: We convey our best wishes to the Chinmaya Dham Yatris . 
+	"esItilIna"  (24-02-10) Suggested by Meenaji Eg: Acetylene burns with bright flame that helps in cutting and welding 
+	"mAxA_pakRI" (05-03-10) Suggested by sheetal Eg: Females of birds produce eggs.
+	"PEktarI"    Meena(20.5.10)
+	"PrIkveMsI"       f      Meena(11.6.10)
+	"Avqwi"   f              Meena(11.6.10)
+	"bAraMbArawA"     f      Meena(11.6.10)
+	"PrIkvensI"       f      Meena(11.6.10)
+	"upayogitA"       f    	 Meena(12.1.11)
+	"uMgalI"          f      Meena(12.1.11)
+	"kaMpanI" 	  f	 (20-04-10) Suggested by sukhada  Eg:He is being hired by another company .
+
+  3. Removed :
+           "mana"   (19-11-09)   Suggested by sheetal Eg: The big question on everybody's mind is who killed OJ .
+           "vAlA"   (24-11-09)   Suggested by Meenaji Eg: Which one is right for me ?  
+           "lAla"   (09-12-09)   Suggested by Sheetal Eg: If we heat iron it becomes red .
+           "yA"     (05-02-10)   Suggested by sukhada 
+           "pawi"   (24-02-10)   Suggested by sukhada 
+           "mAmalA  (02-03-10)
+           "kala"   (10-03-10)   Suggested by sukhada
+           "mAla"   (17-04-10)   Suggested by sukhada & Chaitanya Sir Eg:They are building a gigantic mall five miles from here . 
+           "nIlA"   (20-04-10)   Suggested by sukhada  Eg:The sky is blue , so it is likely that Joe will come . 
+ 
+  changes in Phrv.txt 
+  ===================
+  1.  Added
+       divide_up       bAzta_xe
+
+
+  changes in hindi_tam_rules.clp (tam.csv)
+  ========================================
+  1. Added
+       		 eng_tam                                           hin_tam
+
+	   have_to_keep_ing                                      we_rahanA_hE
+	   were_unable_to_0 | was_unable_to_0                    nahIM + 0_pAwA_wA
+	   am_unable_to_0   | are_unable_to_0 | is_unable_to_0   nahIM + 0_pAwA_hE
+	   were_able_to_0   | was_able_to_0                      0_pAwA_wA
+	   am_able_to_0     | are_able_to_0   | is_able_to_0     0_pAwA_hE
+	   will_be_able_to_0                                     0_pAyegA
+  2. Removed
+		 eng_tam                    hin_tam
+
+ 	   be_allowed_to_0 		ne_xiyA_jAye,         sub_vib - ko	
+           needs_to_0			nA_kI_jZarUrawa_hE    sub_vib - ko
+	   decided_to_0			ne_kA_niScaya_kiyA
+	   decided_not_to_0		ne_kA_niScaya_kiyA    pre-vb -nahIM	
+           can_not_afford_to_0		ne_kI_sWiwi_meM_ho    pre-vb -nahIM
+           want_to_0			nA_cAhawA_hE
+ 
+  changes in hindi_cat.txt
+  ========================
+  1. Added
+	 paDa	T
+
+
+  changes in kriyA_mUla-gender.txt
+  ================================
+  1. Added  :
+	ASA_kara        f
+	upekRA_kara     f
+	sahAyawA_kara   f  (Suggested by Sukhada (16-02-10) Ex: We should help the poor .)
+	GoRaNA_kara     f  (Suggested by Meena vipin (02-03-10)) Ex: Clinton announced on Tuesday a bold new proposal .)
+	SikAyawa_kara   f  (Suggested by Meenaji (10-03-10)) Ex: When none worked satisfactorily , his assistant
+								     complained ," All our work is in vain ".
+ 	vinawI_kara  	f  (Suggested by Meenaji (18-03-10)) Ex: As the Master grew old and infirm , the disciples
+								 begged him not to die .   
+        xeKaBAla_kara   f    Ex Sen: The shephered is tending the sheep. (Added by Meena (27-03-10)
+        upayoga_kara	m  (Suggested by Sukhada (20-04-10) Ex: They used force to open the jammed door . 
+        sUcanA_xe	f  (Suggested by Meena (13-05-10)) We informed the new employees that no salary increase would be pos                            sible .
+        niScaya_kara    m   Meena (14.6.10)
+        walASa_kara     f   Meena (14.6.10)
+	cota_laga       f   Meena (12.1.11)
+        kRawi_pahuzcA   f   Meena (13.1.11)
+
+
+changes in samAsa-new.txt
+  =========================
+  1. Added 
+	 train accident              ----  rela_xurGatanA
+	 damn shame                  ----  awyanwa_lajjAspaxa
+         language accessing software ----  BARA_aBigamana_praNAlI (suggested by Chaitanya sir --Eg:- "Anusaaraka is an 
+                                           English-Hindi language accessing software." (17-09-09))
+         best wishes                 ----  SuBakAmanA (Added by Sriram (02-11-09))
+         Warm welcome                ----  hArxika_svAgata (Added by Sriram (02-11-09))
+         income taxes                ----  Aya_kara        (Suggested by Meenaji (4-12-09))
+         female of birds             ----  mAxA_pakRI  (Suggested by sheetal (05-03-10))
+         Females of birds            ----  mAxA_pakRI  (Suggested by sheetal (05-03-10))
+	 out of love for 	     ----  ke_prawi_prema_ke_kAraNa (Suggested by Meenaji -- 12-03-10) 
+	 from inside 		     ----  ke_anxara_se   (Suggested by sukhada -- 13-03-10)
+						 Ex: She came from inside the room.
+         the head of the table       ----  muKya_sWAna  (Suggested by Meenaji (19-03-10))
+         capital punishment          ----  mqwyu_xaMda  (Suggested by Meenaji (19-03-10))
+         a lot of                    ----  bahuwa_sArA     bahuwa_sArA     noun    2 (suggested by sukhada 22-03-10)
+                                          Sen: "The experiment has a lot of problems ."
+         letter of application       ----  Avexana_pawra (sheetal (10.6.10)
+         curriculum vitae            ----  CV     (sheetal (10.6.10)
+         According to    ke_anusAra      ke_anusAra      1       WM (Meena 16.6.10)
+         at the bottom of   ke_nicale_wala_para  ke_nicale_wala_para  preposition  4  RM (Meena 19.11.10)
+         a month short of a year mAsa-Una-varRa  mAsa-Una-varRa  noun    6       RM  (suggested by Chaitanya Sir 22-11-10 eg:It took the government a month short of a year to tell Swamy that prosecution would be "premature" at this stage.)
+         In contrast to              ----- ke_viparIwa_meM(Suggested by Rajini 18-12-10)
+
+ 2. Removed/commented
+        in law    ----  sasurAla_vAlA    (there should be - between in and law i.e., in-law)
+        with that ----  usake_sAWa
+        thank you ----  XanyavAxa        (sugessted by Chaitanya sir (04-11-09)) Eg :-Thank you all for coming this evening .
+        see about      prabanXa_karanA   (the meaning is being taken care of by the rule see2/see.clp  Meena(20.5.10)
+        speed up     gawi^raPwAra{@s}    gawi^raPwAra{@s}   noun    2  RM (suggested by Meenaji (19-11-10))
+
+
+      
+ 3. Modified
+        turned out to be -----  nikalA  as  turned out to be  -----  nikala  (suggested by sheetal (04-11-09) Eg:- The object turned out to be a big meteorite .)
+        very much       -----   bahuwa  as  very much         -----  bahuwa_jyAxA (suggested by sukhada (25-01-10))
+ 4. Changed the structure of the file (6-03-10)
+    From   : English-compound-word  Hindi-paxasUwra
+    To     : English-compound-word  Hindi-meaning   Hindi-paxasUwra
+ 5. Modified (6-03-10)
+     Hindi-meaning --->    all right ------ from:Tika_[hE]  to:Tika
+ 6. Added :
+	  female friends -----  swrI_miwra       swrI_miwr        noun    2   (suggested by Sukhada 20-04-10)
+				Eg : My many female friends were angered by the hearings .
+ 	  blood vessel   -----  rakwa-vAhikA     rakwa_vAhikA     noun    2   (Added by Meena 21-04-10)
+          blood vessels  -----  rakwa-vAhikAyeM  rakwa_vAhikAyeM  noun    2   (Added by Meena 21-04-10)
+ 7. Modified the meaning
+            blood relative  rakwa-sambanXI    ----- 	rakwa_sambanXI  
+	    blood vessel    rakwa-vAhikA      ----- 	rakwa_vAhikA    
+	    blood vessels   rakwa-vAhikAeM   ----- 	rakwa_vAhikA       (Suggested by Meena 23-04-10)
+ 8. Changed the structure of the file (23-04-10)(added field Root/word-meaning)
+       From     : English-compound-word  Hindi-meaning   Hindi-paxasUwra category        Head_position   
+       To       : English-compound-word  Hindi-meaning   Hindi-paxasUwra category        Head_position   Root/Word-meaning(meaning-type)
+
+ 9. Added  new  (Meena 30.4.10)
+       from left to right      bAzyez_se xAzyez  bAzyez_se xAzyez  4       RM
+       from right to left      xAzyez_se_bAzyez  xAzyez_se_bAzyez  4       RM
+       traffic lights   trEPika_lAIta   trEPika_lAIta 2        RM
+
+
+ 10.   Modified the spellings and meaning  (Meena 30.4.10)
+       from side to side       xAzyez_bAzyez    from     xAyez_bAyez
+       on the right side of    "ke_xAhinI_waraPa"   from   "ke_xAhinI_waraPa_kA"
+
+ changes in Complete_sentence.txt
+ ================================
+  1. Added  
+         Chinmaya International Foundation  ----  cinmaya_anwarrARtrIya_saMsWA  (Added by Sriram (02-11-09))
+         Welcome you all                    ----  Apa_saba_kA_svAgata           (Added by Sriram (02-11-09))
+                   
+  changes in AllTam.txt
+  =====================
+  1. Modified   yA_huA_hE,m,s,u huA_hEM"  as  "yA_huA_hE,m,s,u huA_hUz (Suggested by sheetal(10-12-09))
+  2. Added      0_jAyegA    (Suggested by Meenaji Eg: There is still a ray of hope that the missing child will be found .)
+
+  changes in animate_list.txt
+  ===========================
+  1. Added      vixyArWI  ----  Suggested by Manju Eg: The school admits only 50 students at a time .
+  2. Removed    mUrKa, mUrKa vyakwi ---- Suggested by Meenaji (29-04-10)
+
+  changes in not_ne_verb_list.txt
+  ===============================
+  1. Added  howA, howe, howI (Suggested by Meenaji -- 23-03-10)
+                             Eg: If you were a middle-class American without a job , who would you vote for .
+
+  changes in PropN.txt
+  ==================== 
+  Added   	Rama    m
+		Gita    f
+		John    m
+		Mohan   m
+		Shyam   m   (Added by S.Mahalaxmi 20-04-10)
+                Bella	f   (Added by Meena(26.6.10))
+                Ellie   f   (Added by Meena(26.6.10))
+                Kate    f   (Added by Meena(26.6.10))
+
+  Changes in animate.txt
+  ========================
+  Added        they    1
+               Mohan   1
+               twins   1   (Added by Meena(4.5.10))
+               mother  1   (Added by Meena(10.5.10))
+               father  1
+               sister  1
+               brother 1
+               son     1
+               daughter        1
+               uncle   1
+               aunt    1
+
+ Changes in apertium_hn.dix
+ ==========================
+ Added  :
+	<e lm="uMgalI"><i>uMgal</i><par n="ladak/I__n"/></e>   (Added by Meenaji (12.1.11))
+	<e lm="giranA"><i>giran</i><par n="ladak/A__n"/></e>   (Suggested by Meenaji (13.1.11))

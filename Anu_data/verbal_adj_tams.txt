@@ -1,0 +1,12 @@
+is_en	hE
+is_not_en	nahIM_hE
+am_en	hUz
+am_not_en	nahIM_hUz
+are_en	hEM
+are_not_en	nahIM_hEM
+was_en	WA
+was_not_en	nahIM_WA
+were_en	We
+were_not_en	nahIM_We
+will_be_en	ho
+will_not_be_en	nahIM_ho

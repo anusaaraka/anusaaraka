@@ -1,0 +1,5 @@
+Compiling
+----------
+sh compile.sh
+
+It will create a gdbm file ol_vb_root.gdbm

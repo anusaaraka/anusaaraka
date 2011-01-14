@@ -1,0 +1,6 @@
+English Morphological Analyzer by Apertium.
+
+Source file:apertium-en-hi.en.metadix
+To compile : sh compile.sh
+binary file: en.morf.bin
+

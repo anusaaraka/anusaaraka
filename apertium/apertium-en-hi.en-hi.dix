@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dictionary>
+  <alphabet/>
+  <sdefs>
+
+<!-- shabdanjali categories -->
+
+
+
+	<sdef n="Adj"/>
+	<sdef n="Adv"/>
+	<sdef n="Art"/>
+	<sdef n="AuxV"/>
+	<sdef n="Conj"/>
+	<sdef n="cnj"/>
+	<sdef n="Det"/>
+	<sdef n="IDM"/>
+	<sdef n="Interj"/>
+	<sdef n="Interro"/>
+	<sdef n="MV"/>
+	<sdef n="N"/>
+	<sdef n="Part"/>
+	<sdef n="PhrV"/>
+	<sdef n="PhrVI"/>
+	<sdef n="PhrVT"/>
+	<sdef n="PossPron"/>
+	<sdef n="Pref"/>
+	<sdef n="Prefix"/>
+	<sdef n="Prep"/>
+	<sdef n="Pron"/>
+	<sdef n="Pron."/>
+	<sdef n="Posspron"/>
+	<sdef n="Relpron"/>
+	<sdef n="PropN"/>
+	<sdef n="suffix"/>
+	<sdef n="V"/>
+	<sdef n="VI"/>
+	<sdef n="Vneg"/>
+	<sdef n="VP"/>
+	<sdef n="VT"/>
+	<sdef n="VTI"/>
+	<sdef n="part"/>
+
+
+<!-- Aper Categories -->
+
+
+    <sdef n="comp"/>
+    <sdef n="art"/>
+    <sdef n="acr"/>
+    <sdef n="predet"/>
+    <sdef n="qnt"/>
+    <sdef n="detnt"/>
+    <sdef n="loc"/>
+    <sdef n="ant"/>
+    <sdef n="al"/>
+    <sdef n="cog"/>
+    <sdef n="atn"/>
+    <sdef n="enc"/>
+    <sdef n="pro"/>
+    <sdef n="tn"/>
+    <sdef n="n"/>
+    <sdef n="np"/>
+    <sdef n="adj"/>
+    <sdef n="f"/>
+    <sdef n="m"/>
+    <sdef n="mf"/>
+    <sdef n="sg"/>
+    <sdef n="pl"/>
+    <sdef n="adv"/>
+    <sdef n="preadv"/>
+    <sdef n="pr"/>
+    <sdef n="prn"/>
+    <sdef n="rel"/>
+    <sdef n="nn"/>
+    <sdef n="an"/>
+    <sdef n="aa"/>
+    <sdef n="ind"/>
+    <sdef n="itg"/>
+    <sdef n="det"/>
+    <sdef n="dem"/>
+    <sdef n="def"/>
+    <sdef n="cnjcoo"/>
+    <sdef n="cnjsub"/>
+    <sdef n="cnjadv"/>
+    <sdef n="nt"/>
+    <sdef n="vbser"/>
+    <sdef n="vbhaver"/>
+    <sdef n="vblex"/>
+    <sdef n="vbmod"/>
+    <sdef n="inf"/>
+    <sdef n="pres"/>
+    <sdef n="ger"/>
+    <sdef n="pp"/>
+    <sdef n="pprs"/>
+    <sdef n="subs"/>
+    <sdef n="pri"/>
+    <sdef n="p1"/>
+    <sdef n="p2"/>
+    <sdef n="p3"/>
+    <sdef n="pii"/>
+    <sdef n="ifi"/>
+    <sdef n="fti"/>
+    <sdef n="cni"/>
+    <sdef n="prs"/>
+    <sdef n="pis"/>
+    <sdef n="imp"/>
+    <sdef n="pos"/>
+    <sdef n="sp"/>
+    <sdef n="ref"/>
+    <sdef n="sup"/>
+    <sdef n="num"/>
+    <sdef n="ij"/>
+    <sdef n="sent"/>
+    <sdef n="cm"/>
+    <sdef n="lpar"/>
+    <sdef n="rpar"/>
+    <sdef n="lquest"/>
+    <sdef n="ND"/>
+    <sdef n="GD"/>
+    <sdef n="web"/>
+    <sdef n="past"/>
+    <sdef n="subj"/>
+    <sdef n="obj"/>
+    <sdef n="ord"/> 
+    <sdef n="gen"/> 
+    <sdef n="guio"/> 
+    <sdef n="vbdo"/>
+    <sdef n="sint"/>
+    <sdef n="unc"/>
+    <sdef n="sep"/>
+    <sdef n="vaux"/>
+    <sdef n="pron"/>
+    <sdef n="apos"/>
+    <sdef n="percent"/>
+
+  </sdefs>
+
+  
+<pardefs>
+
+  <pardef n="two__num">
+      
+      <e r="RL">
+        <p>
+          <l><s n="num"/></l>
+	  <r><s n="num"/><s n="m"/></r>
+        </p>
+      </e>
+      <e r="RL">
+        <p>
+          <l><s n="num"/></l>
+	  <r><s n="num"/><s n="f"/></r>
+        </p>
+      </e>
+       <e r="LR">
+        <p>
+          <l><s n="num"/></l>
+	  <r><s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+      <e r="RL">
+        <p>
+          <l><b/>hundred<s n="num"/></l>
+          <r>-cent<s n="num"/><s n="m"/></r>
+        </p>
+      </e>
+      <e r="RL">
+        <p>
+          <l><b/>hundred<s n="num"/></l>
+          <r>-cent<s n="num"/><s n="f"/></r>
+        </p>
+      </e>
+      <e r="LR">
+        <p>
+          <l><b/>hundred<s n="num"/></l>
+          <r>-cent<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+      <e r="RL">
+        <p>
+          <l><b/>thousand<s n="num"/></l>
+          <r><b/>mil<s n="num"/><s n="m"/></r>
+        </p>
+      </e>
+      <e r="RL">
+        <p>
+          <l><b/>thousand<s n="num"/></l>
+          <r><b/>mil<s n="num"/><s n="f"/></r>
+        </p>
+      </e>
+      <e r="LR">
+        <p>
+          <l><b/>thousand<s n="num"/></l>
+          <r><b/>mil<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+    </pardef>
+
+ <pardef n="two(1)__num">
+      
+      <e r="RL">
+        <p>
+          <l><s n="num"/></l>
+	  <r><s n="num"/><s n="m"/></r>
+        </p>
+      </e>
+      <e r="RL">
+        <p>
+          <l><s n="num"/></l>
+	  <r><s n="num"/><s n="f"/></r>
+        </p>
+      </e>
+       <e r="LR">
+        <p>
+          <l><s n="num"/></l>
+	  <r><s n="num"/><s n="GD"/></r>
+        </p>
+      </e>     
+      <e r="RL">
+        <p>
+          <l><b/>thousand<s n="num"/></l>
+          <r><b/>mil<s n="num"/><s n="m"/></r>
+        </p>
+      </e>
+      <e r="RL">
+        <p>
+          <l><b/>thousand<s n="num"/></l>
+          <r><b/>mil<s n="num"/><s n="f"/></r>
+        </p>
+      </e>
+      <e r="LR">
+        <p>
+          <l><b/>thousand<s n="num"/></l>
+          <r><b/>mil<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+    </pardef>
+
+ <pardef n="three__num">
+      
+      <e>
+        <p>
+          <l><s n="num"/></l>
+	  <r><s n="num"/><s n="mf"/></r>
+        </p>
+      </e>
+      <e r="RL">
+        <p>
+          <l><b/>hundred<s n="num"/></l>
+          <r>-cent<s n="num"/><s n="m"/></r>
+        </p>
+      </e>
+      <e r="RL">
+        <p>
+          <l><b/>hundred<s n="num"/></l>
+          <r>-cent<s n="num"/><s n="f"/></r>
+        </p>
+      </e>
+      <e r="LR">
+        <p>
+          <l><b/>hundred<s n="num"/></l>
+          <r>-cent<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l><b/>thousand<s n="num"/></l>
+          <r><b/>mil<s n="num"/><s n="mf"/></r>
+        </p>
+      </e>
+    </pardef>
+
+<pardef n="three(1)__num">
+      
+      <e>
+        <p>
+          <l><s n="num"/></l>
+	  <r><s n="num"/><s n="mf"/></r>
+        </p>
+      </e>    
+      <e>
+        <p>
+          <l><b/>thousand<s n="num"/></l>
+          <r><b/>mil<s n="num"/><s n="mf"/></r>
+        </p>
+      </e>
+    </pardef>
+
+    <pardef n="twenty__num">
+      <e>
+        <p>
+          <l></l>
+          <r></r>
+        </p>
+        <par n="three(1)__num"/>
+      </e>
+      <e>
+        <p>
+          <l>-one</l>
+          <r>-un</r>
+        </p>
+        <par n="two(1)__num"/>
+      </e>
+      <e>
+        <p>
+          <l>-two</l>
+          <r>-dos</r>
+        </p>
+        <par n="two(1)__num"/>
+      </e>
+      <e>
+        <p>
+          <l>-three</l>
+          <r>-tres</r>
+        </p>
+        <par n="three(1)__num"/>
+      </e>
+      <e>
+        <p>
+          <l>-four</l>
+          <r>-quatre</r>
+        </p>
+        <par n="three(1)__num"/>
+      </e>
+      <e>
+        <p>
+          <l>-five</l>
+          <r>-cinc</r>
+        </p>
+        <par n="three(1)__num"/>
+      </e>
+      <e>
+        <p>
+          <l>-six</l>
+          <r>-sis</r>
+        </p>
+        <par n="three(1)__num"/>
+      </e>
+      <e>
+        <p>
+          <l>-seven</l>
+          <r>-set</r>
+        </p>
+        <par n="three(1)__num"/>
+      </e>
+      <e>
+        <p>
+          <l>-eight</l>
+          <r>-vuit</r>
+        </p>
+        <par n="three(1)__num"/>
+      </e>
+      <e>
+        <p>
+          <l>-nine</l>
+          <r>-nou</r>
+        </p>
+        <par n="three(1)__num"/>
+      </e>
+    </pardef>
+
+ <pardef n="one__num">    
+     
+      <e>
+        <p>
+          <l><b/>hundred<s n="num"/></l>
+          <r>cent<s n="num"/><s n="mf"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l><b/>thousand<s n="num"/></l>
+          <r>mil<s n="num"/><s n="mf"/></r>
+        </p>
+      </e>
+  </pardef>
+
+
+<pardef n="twenty_hundred__num">
+      
+      <e>
+        <p>
+          <l><b/>hundred<s n="num"/></l>
+	  <r><b/>mil<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>    
+      <e>
+        <p>
+          <l>-one<b/>hundred<s n="num"/></l>
+          <r><b/>mil<b/>cent<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+       <e>
+        <p>
+          <l>-two<b/>hundred<s n="num"/></l>
+          <r><b/>mil<b/>dos-cents<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>-three<b/>hundred<s n="num"/></l>
+          <r><b/>mil<b/>tres-cents<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>-four<b/>hundred<s n="num"/></l>
+          <r><b/>mil<b/>quatre-cents<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>-five<b/>hundred<s n="num"/></l>
+          <r><b/>mil<b/>cinc-cents<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>-six<b/>hundred<s n="num"/></l>
+          <r><b/>mil<b/>sis-cents<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>-seven<b/>hundred<s n="num"/></l>
+          <r><b/>mil<b/>set-cents<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+       <e>
+        <p>
+          <l>-eight<b/>hundred<s n="num"/></l>
+          <r><b/>mil<b/>vuit-cents<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>-nine<b/>hundred<s n="num"/></l>
+          <r><b/>mil<b/>nou-cents<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+    </pardef>
+
+<pardef n="thirty_hundred__num">
+      
+      <e>
+        <p>
+          <l><b/>hundred<s n="num"/></l>
+	  <r><b/>mil<s n="num"/><s n="mf"/></r>
+        </p>
+      </e>    
+      <e>
+        <p>
+          <l>-one<b/>hundred<s n="num"/></l>
+          <r><b/>mil<b/>cent<s n="num"/><s n="mf"/></r>
+        </p>
+      </e>
+       <e>
+        <p>
+          <l>-two<b/>hundred<s n="num"/></l>
+          <r><b/>mil<b/>dos-cents<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>-three<b/>hundred<s n="num"/></l>
+          <r><b/>mil<b/>tres-cents<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>-four<b/>hundred<s n="num"/></l>
+          <r><b/>mil<b/>quatre-cents<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>-five<b/>hundred<s n="num"/></l>
+          <r><b/>mil<b/>cinc-cents<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>-six<b/>hundred<s n="num"/></l>
+          <r><b/>mil<b/>sis-cents<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>-seven<b/>hundred<s n="num"/></l>
+          <r><b/>mil<b/>set-cents<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+       <e>
+        <p>
+          <l>-eight<b/>hundred<s n="num"/></l>
+          <r><b/>mil<b/>vuit-cents<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+      <e>
+        <p>
+          <l>-nine<b/>hundred<s n="num"/></l>
+          <r><b/>mil<b/>nou-cents<s n="num"/><s n="GD"/></r>
+        </p>
+      </e>
+    </pardef>
+
+</pardefs>
+
+<section id="main" type="standard">
+
+<!-- shabdanjali all entries   -->
+
+
+
+<e><p>        <l>a<s n="det" /><s n="ind"/><s n="sg" /></l>        <r>a<s n="det" /><s n="ind"/><s n="sg" /></r></p></e>
+</section>
+</dictionary>

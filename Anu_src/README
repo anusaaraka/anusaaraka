@@ -1,0 +1,79 @@
+
+1. word.c  :  The word.c program gives ids for each word and generates control facts for further use.
+              The files generated are :
+                 new_text.txt                   - contains sentences with tags
+                 dir_names.txt                  - contains directories names
+                 original_word.dat              - contains original words with ids
+                 punctuation_info.dat           - contains left and right punctuation information for each word
+                 meaning_to_be_decided.dat      - control fact
+                 to_be_included_in_paxa.dat     - control fact
+                 morph_root_tobe_choosen.dat    - control fact
+                 Eng_id_order.dat               - contains english id order
+                 Eng_word_order.dat             - contains english word order
+                 word2.dat                      - contains capital letter information
+                 word.dat                       - contains word information with ids
+
+              compile : gcc word.c -o word.out
+              run     : ./word.out < <file-name>.fmt_split <file-name>
+
+---------------------------------------------------------------------------------------------------------------------------
+
+2. xml_parse.c  : The xml_parse.c program removes xml tags from the new_text.txt file (which is obtained from the
+                  fmt_split file) and prints the sentences,one sentence per line to the standard output.
+
+                  compile : gcc -g -Wall `xml2-config --cflags --libs` xml_parse.c -o  xml_parse.out
+
+---------------------------------------------------------------------------------------------------------------------------
+
+3. cat.c        : The cat.c program uses categories.txt file and generates pos_cat.dat. The mapping between the
+                  parts-of-speech and parts-of-speech tags is given in the categories.txt file  .
+
+                  compile :   gcc cat.c -o cat.out
+
+---------------------------------------------------------------------------------------------------------------------------
+
+4. chunker.c : The chunker.c program takes the chunker output as input(from the standard input) and the name of the text 
+               as an argument and produes the chunk.clp file.
+   
+               compile : gcc  chunker.c -o chunker.out
+               run     : ./chunker.out <file-name>  < chunk.dat
+
+---------------------------------------------------------------------------------------------------------------------------
+
+5. morph_analysis.c : The morph_analysis.c program takes one_sentence_per_line.txt file as an input and creates morph_temp
+		      file which ,contain original_word ,morph_word ,root, category and suffix information.
+			
+		      compile : gcc  morph_analysis.c -o morph_analysis.out -lgdbm -g
+                      run     : ./morph_analysis.out morph.dbm  one_sentence_per_line.txt
+
+---------------------------------------------------------------------------------------------------------------------------
+
+6. paxasUwra.c  : The paxasUwra.c program generates paxasUwra information of each word .
+
+                  compile :  gcc padasuthra.c -o padasuthra.out -lgdbm
+
+---------------------------------------------------------------------------------------------------------------------------
+
+7. split_file.c : The split_file.c program solits the sentences info with the pattern ;~~~~~~~~~~ and moves to the
+                  particular directory
+
+---------------------------------------------------------------------------------------------------------------------------
+
+8. remove_advb.c : The remove_advb.c program removes adverbs from the sentence, to get lwg to get tam information.
+			
+ 		   compile : gcc remove_advb.c -o remove_advb.out
+
+---------------------------------------------------------------------------------------------------------------------------
+
+9  lwg-word-id-mapping.c : The lwg-word-id-mapping.c program maps lwg ids  with word ids.
+
+------------------------------------------------------------------------------------------------------------------------
+
+
+10-12-10
+========
+Removed punct.c program (b'coz punctuation is already generated from word.c/ol_word.c program)
+(Note : punct.c file is available in anu_testing-19-11-10.tgz )
+
+
+

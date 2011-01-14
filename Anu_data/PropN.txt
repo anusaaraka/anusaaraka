@@ -1,0 +1,9 @@
+Sita	f
+Rama	m
+Gita	f
+John	m
+Mohan	m
+Shyam	m
+Bella	f
+Ellie	f
+Kate	f

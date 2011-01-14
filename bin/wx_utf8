@@ -1,0 +1,3 @@
+roman_iscii < $1 >$1_isc
+iscii2utf8.py 1 < $1_isc 
+rm $1_isc

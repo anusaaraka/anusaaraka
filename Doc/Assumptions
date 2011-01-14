@@ -1,0 +1,24 @@
+
+1. Assumed that the word ids and word count given by link parser(constituents) are identical. 
+2. assumed link categories
+    s and i --  noun     
+    g       --  verb
+    e       --  adverb 
+3.Modified "be" morph_analysis from
+                                    i) be       V       0
+                                    ii)be       I       NA
+in morph.txt file.
+
+4. For the below sentence
+   Sentence:: Wishing everyone involved in the Anusaaraka project at present and in the future - all success.
+   grok_tagger_information is
+   ;cat	Wishing/NNP everyone/NN involved/VBN in/IN the/DT Anusaaraka/NNP project/NN at/IN present/JJ and/CC in/IN the/DT future/NN -/: all/DT success/NN ./.
+
+  for "-" tagger information is ":"
+  So added information for ":" in categories.txt file(07-07-09) as,
+  space-separated-punctuation : space-separated-punctuation
+
+
+5.
+  This fact is being asserted by some rule "(id-tam_type)" but is not used in anusaaraka clip rules
+  So, debugging information for this fact is not added.

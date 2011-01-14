@@ -1,0 +1,19 @@
+him	1
+her	1
+me	1
+us	1
+them	1
+you	1
+they	1
+Mohan	1
+twins	1
+mother	1
+father	1
+brother	1
+sister	1
+friend	1
+uncle	1
+aunt	1
+son	1
+daughter	1
+
