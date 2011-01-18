@@ -4,7 +4,7 @@
  (deffacts dummy_facts
  (parser_id-root)
  (verb_type-verb-causative_verb-tam)
- (using-parser-ids)
+ (relation-parser_ids)
  (ol_res_id-word_id-word)
  (root-verbchunk-tam-parser_chunkids)
  (current_id-group_members)
@@ -49,42 +49,42 @@
  (defrule head_transfer_3
  (declare (salience 1502))
  (root-verbchunk-tam-parser_chunkids ?root ?xcited ?tam  ?v ?s)
- (using-parser-ids kriyA-subject  ?s    ?sub)
+ (relation-parser_ids kriyA-subject  ?s    ?sub)
  (ol_res_id-word_id-word ?v     ?i      ?am)
  (ol_res_id-word_id-word ?s     ?a      excited|worried)
  =>
- 	(printout       ?*ol_rel_fp*    "(using-parser-ids subject-subject_samAnAXikaraNa  "?sub" "?s")"crlf)
+ 	(printout       ?*ol_rel_fp*    "(relation-parser_ids subject-subject_samAnAXikaraNa  "?sub" "?s")"crlf)
  )
  ;---------------------------------------------------------------------------------------------------------
  ;I am quite excited about next week.
  (defrule head_transfer_4
  (declare (salience 1502))
  (root-verbchunk-tam-parser_chunkids ?root ?am_excited ?tam  ?v ?s)
- ?f<-(using-parser-ids kriyA-kriyA_viSeRaNa  ?s    ?vi)
+ ?f<-(relation-parser_ids kriyA-kriyA_viSeRaNa  ?s    ?vi)
  (ol_res_id-word_id-word ?v     ?i      ?am)
  (ol_res_id-word_id-word ?s     ?a      excited|worried)
  =>
 	(retract ?f)
-	(printout       ?*ol_rel_fp*    "(using-parser-ids viSeRaNa-viSeRaka  "?s" "?vi")"crlf)
+	(printout       ?*ol_rel_fp*    "(relation-parser_ids viSeRaNa-viSeRaka  "?s" "?vi")"crlf)
  )
  ;---------------------------------------------------------------------------------------------------------
  ;I am quite excited about next week.
  (defrule head_transfer_1
  (declare (salience 150))
  (root-verbchunk-tam-parser_chunkids ?root ?am_excited ?tam  ?v ?s)
- ?f<-(using-parser-ids ?rel ?s ?l)
+ ?f<-(relation-parser_ids ?rel ?s ?l)
  (ol_res_id-word_id-word ?v     ?i      ?am)
  (ol_res_id-word_id-word ?s     ?a      excited|worried)
  =>
 	(retract ?f)
-	(printout       ?*ol_rel_fp*    "(using-parser-ids   "?rel" "?v" "?l")"crlf)
+	(printout       ?*ol_rel_fp*    "(relation-parser_ids   "?rel" "?v" "?l")"crlf)
  )
  ;---------------------------------------------------------------------------------------------------------
  ;A fat ugly boy had to eat fruits.
  (defrule write_rels
- (using-parser-ids ?rel $?ids)
+ (relation-parser_ids ?rel $?ids)
  =>
-	(printout       ?*ol_rel_fp*    "(using-parser-ids   "?rel" "(implode$ (create$ $?ids))")"crlf)
+	(printout       ?*ol_rel_fp*    "(relation-parser_ids   "?rel" "(implode$ (create$ $?ids))")"crlf)
  )
  ;---------------------------------------------------------------------------------------------------------
  (defrule write_remaining_lwg

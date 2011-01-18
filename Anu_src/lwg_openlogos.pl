@@ -495,7 +495,7 @@ for($i=0;$i <= $#verb;$i++){
       $tam=$3;
       $causative_id=$scon2d_tran3[$causative_verb[0]][10];
       
-      $grp_id=$4." L".$causative_id;
+      $grp_id=$4." P".$causative_id;
 
       $myvbchnk1=$2."_".$res2d[$causative_id-1][35];
       $myvbchnk1 =~ /([^_]+)_([^_]+)$/;
@@ -503,10 +503,10 @@ for($i=0;$i <= $#verb;$i++){
       $root2=$VBROOT{$2};
       $causative_root=$root1."_".$root2;
 
-      $grp_id =~ /L(\d+)\s+L(\d+)$/;
+      $grp_id =~ /P(\d+)\s+P(\d+)$/;
       $verb_head=$1;
 
-      $lwg="(verb_type-verb-causative_verb-tam causative L$verb_head L$causative_id $tam)\n(root-verbchunk-tam-parser_chunkids  $causative_root $myvbchnk1 $tam $grp_id)";
+      $lwg="(verb_type-verb-causative_verb-tam causative P$verb_head P$causative_id $tam)\n(root-verbchunk-tam-parser_chunkids  $causative_root $myvbchnk1 $tam $grp_id)";
       print "$lwg\n";
       $flag_causative=0;
     }
@@ -581,7 +581,7 @@ sub find_lwg{
 #Infinitive and present (plural)
   if($form == "1") {
 
-    $lwg="(root-verbchunk-tam-parser_chunkids   - $tword[$ind] 0 L$scon2d_tran3[$sal2d[$ind][3]][10])";
+    $lwg="(root-verbchunk-tam-parser_chunkids   - $tword[$ind] 0 P$scon2d_tran3[$sal2d[$ind][3]][10])";
 return $lwg;
 #$lwg_ids=&find_lwg_id(\@res2d,\@tword,$lwg,$ind,$prev_ind);
 #$lwg=$lwg.$lwg_ids.")";
@@ -593,7 +593,7 @@ return $lwg;
 
     if(($sal2d[$ind][1] == "886")){
 
-      $lwg="(root-verbchunk-tam-parser_chunkids   root_to_be_decided am tam_to_be_decided L$scon2d_tran3[$sal2d[$ind][3]][10])";
+      $lwg="(root-verbchunk-tam-parser_chunkids   root_to_be_decided am tam_to_be_decided P$scon2d_tran3[$sal2d[$ind][3]][10])";
 return $lwg;
 #$lwg_ids=&find_lwg_id(\@res2d,\@tword,$lwg,$ind,$prev_ind);
 #$lwg=$lwg.$lwg_ids.")";
@@ -611,7 +611,7 @@ return $lwg;
       if ($flag_lwg_negation){
 
 
-        $lwg="(root-verbchunk-tam-parser_chunkids   root_to_be_decided is tam_to_be_decided L$scon2d_tran3[$sal2d[$ind][3]][10])";
+        $lwg="(root-verbchunk-tam-parser_chunkids   root_to_be_decided is tam_to_be_decided P$scon2d_tran3[$sal2d[$ind][3]][10])";
 return $lwg;
 #$lwg_ids=&find_lwg_id(\@res2d,\@tword,$lwg,$ind,$prev_ind);
 #$lwg=$lwg.$lwg_ids.")";
@@ -619,7 +619,7 @@ return $lwg;
       }
       else {
 
-        $lwg="(root-verbchunk-tam-parser_chunkids   root_to_be_decided is tam_to_be_decided L$scon2d_tran3[$sal2d[$ind][3]][10])";
+        $lwg="(root-verbchunk-tam-parser_chunkids   root_to_be_decided is tam_to_be_decided P$scon2d_tran3[$sal2d[$ind][3]][10])";
 return $lwg;
 #$lwg_ids=&find_lwg_id(\@res2d,\@tword,$lwg,$ind,$prev_ind);
 #$lwg=$lwg.$lwg_ids.")";
@@ -630,7 +630,7 @@ return $lwg;
 
 
 
-      $lwg="(root-verbchunk-tam-parser_chunkids   root_to_be_decided $tword[$ind] tam_to_be_decided L$scon2d_tran3[$sal2d[$ind][3]][10])";
+      $lwg="(root-verbchunk-tam-parser_chunkids   root_to_be_decided $tword[$ind] tam_to_be_decided P$scon2d_tran3[$sal2d[$ind][3]][10])";
 return $lwg;
 ##$lwg_ids=&find_lwg_id(\@res2d,\@tword,$lwg,$ind,$prev_ind);
 #      #$lwg=$lwg.$lwg_ids.")";
@@ -645,7 +645,7 @@ return $lwg;
       if ($flag_lwg_negation){
 
 
-        $lwg="(root-verbchunk-tam-parser_chunkids   root_to_be_decided are tam_to_be_decided L$scon2d_tran3[$sal2d[$ind][3]][10])";
+        $lwg="(root-verbchunk-tam-parser_chunkids   root_to_be_decided are tam_to_be_decided P$scon2d_tran3[$sal2d[$ind][3]][10])";
 return $lwg;
 #$lwg_ids=&find_lwg_id(\@res2d,\@tword,$lwg,$ind,$prev_ind);
 #$lwg=$lwg.$lwg_ids.")";
@@ -653,7 +653,7 @@ return $lwg;
       }
       else {
 
-        $lwg="(root-verbchunk-tam-parser_chunkids   root_to_be_decided are tam_to_be_decided L$scon2d_tran3[$sal2d[$ind][3]][10])";
+        $lwg="(root-verbchunk-tam-parser_chunkids   root_to_be_decided are tam_to_be_decided P$scon2d_tran3[$sal2d[$ind][3]][10])";
 return $lwg;
 #$lwg_ids=&find_lwg_id(\@res2d,\@tword,$lwg,$ind,$prev_ind);
 #$lwg=$lwg.$lwg_ids.")";
@@ -682,7 +682,7 @@ return $lwg;
 #past and past-participle
   if($form == "7") {
 
-    $lwg="(root-verbchunk-tam-parser_chunkids   root_to_be_decided $tword[$ind] tam_to_be_decided L$scon2d_tran3[$sal2d[$ind][3]][10])";
+    $lwg="(root-verbchunk-tam-parser_chunkids   root_to_be_decided $tword[$ind] tam_to_be_decided P$scon2d_tran3[$sal2d[$ind][3]][10])";
 return $lwg;
 #$lwg_ids=&find_lwg_id(\@res2d,\@tword,$lwg,$ind,$prev_ind);
 #$lwg=$lwg.$lwg_ids.")";
@@ -729,7 +729,7 @@ return $lwg;
 #were
   if($form == "13") {
 
-    $lwg="(root-verbchunk-tam-parser_chunkids   - were were L$scon2d_tran3[$sal2d[$ind][3]][10])";
+    $lwg="(root-verbchunk-tam-parser_chunkids   - were were P$scon2d_tran3[$sal2d[$ind][3]][10])";
     return $lwg;
 #$lwg_ids=&find_lwg_id(\@res2d,\@tword,$lwg,$ind,$prev_ind);
 #$lwg=$lwg.$lwg_ids.")";
@@ -3900,7 +3900,7 @@ sub find_lwg_id{
 				if(!$flag_exist){
 					$id=$scon2d_tran3[$sal2d[$i][3]][10];
 #$id=$i+1;
-					$lwg_id=$lwg_id." L".$id;
+					$lwg_id=$lwg_id." P".$id;
 					$found=1;
 					$prev_wd_id=$id;
 					$flag_exist=0;
@@ -3920,7 +3920,7 @@ sub find_lwg_id{
 					if(!$flag_exist){
 						$id=$res2d[$i][0];
 #$id=$i+1;
-						$lwg_id=$lwg_id." L".$id;
+						$lwg_id=$lwg_id." P".$id;
 						$found=1;
 						$prev_wd_id=$id;
 						$flag_exist=0;

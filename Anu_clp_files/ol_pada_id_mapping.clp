@@ -14,7 +14,7 @@
 (declare(salience 1000))
 ?f<-(pada_info (group_head_id ?gid) (group_ids ?gid)(preposition 0))
 (ol_res_id-word_id-word   ?gid  ?w_ids  from|about|above|across|after|against|along|alongside|amid|amidst|among|amongst|around|as|aside|astride|at|athwart|atop|barring|before|behind|below|beneath|beside|besides|between|beyond|by|circa|concerning|despite|down|during|except|excluding|failing|following|for|from|in|including|inside|into|like|mid|minus|near|notwithstanding|of|off|on|onto|opposite|out|outside|over|pace|past|per|plus|qua|regarding|round|save|since|than|through|throughout|till|times|to|toward|towards|under|underneath|unlike|until|up|upon|versus|via|with|within|without|worth)
-?f1<-(pada_info (group_head_id L10000) (group_cat PP) (group_ids L10000)(preposition 0))
+?f1<-(pada_info (group_head_id P10000) (group_cat PP) (group_ids P10000)(preposition 0))
 =>
 (retract ?f)
 (modify ?f1 (preposition ?gid))
@@ -57,24 +57,24 @@
 ;-------------------------------------------------------------------------------------------------------------------------
 (defrule map_vachan_id
 (declare(salience 800))
-?f<-(vachan_to_be_decided ?lid)
-(parserid-wordid   ?lid   ?wrd_id)
+?f<-(vachan_to_be_decided ?pid)
+(parserid-wordid   ?pid   ?wrd_id)
 =>
 (retract ?f)
 (assert (vachan_to_be_decided ?wrd_id)))
 ;-------------------------------------------------------------------------------------------------------------------------
 (defrule map_agmt_id
 (declare(salience 800))
-?f<-(agmt_control_fact ?lid)
-(parserid-wordid   ?lid   ?wrd_id)
+?f<-(agmt_control_fact ?pid)
+(parserid-wordid   ?pid   ?wrd_id)
 =>
 (retract ?f)
 (assert (agmt_control_fact ?wrd_id)))
 ;-------------------------------------------------------------------------------------------------------------------------
 (defrule map_pada_cntrl_id
 (declare(salience 800))
-?f<-(pada_control_fact ?lid)
-(parserid-wordid   ?lid   ?wrd_id)
+?f<-(pada_control_fact ?pid)
+(parserid-wordid   ?pid   ?wrd_id)
 =>
 (retract ?f)
 (assert (pada_control_fact ?wrd_id)))

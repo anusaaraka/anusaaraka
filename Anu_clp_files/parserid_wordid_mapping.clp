@@ -19,9 +19,9 @@
  (parser_numid-word-remark 1 ?wrd1 ?remark)
  =>
 	(if (neq ?remark -) then
-		(printout ?*link_map* "(parserid-wordid   L1"?remark"  1)" crlf)
+		(printout ?*link_map* "(parserid-wordid   P1"?remark"  1)" crlf)
 	else
-		(printout ?*link_map* "(parserid-wordid   L1   1)" crlf)
+		(printout ?*link_map* "(parserid-wordid   P1   1)" crlf)
 	)
  )
  ;--------------------------------------------------------------------------------------------------------------------
@@ -33,10 +33,10 @@
  (not (parser_numid-word-remark ?l_id1&:(and (>= ?l_id1 ?id) (< ?l_id1 ?l_id)) ?wrd ?remark))
  =>
 	(if (neq ?remark -) then
-		(printout ?*link_map* "(parserid-wordid   L" ?l_id ?remark"  " ?id ")" crlf)
-		(printout ?*link_map* "(parserid-wordid   L" (+ 1 ?l_id)"  " ?id ")" crlf)
+		(printout ?*link_map* "(parserid-wordid   P" ?l_id ?remark"  " ?id ")" crlf)
+		(printout ?*link_map* "(parserid-wordid   P" (+ 1 ?l_id)"  " ?id ")" crlf)
 	else
-		(printout ?*link_map* "(parserid-wordid   L" ?l_id"  " ?id ")" crlf)
+		(printout ?*link_map* "(parserid-wordid   P" ?l_id"  " ?id ")" crlf)
 	)	
  )
  ;--------------------------------------------------------------------------------------------------------------------

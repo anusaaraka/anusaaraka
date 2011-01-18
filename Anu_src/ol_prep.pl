@@ -17,7 +17,7 @@ while(<STDIN>){
       $line =~ s/\s+$//;
       @res=split(/\s+/,$line);
       if(($res[2] == 11)|| ($res[2] == 13)){
-        print PREP "(word-type-id $res[35] $res[2] L$res[0])\n";
+        print PREP "(word-type-id $res[35] $res[2] P$res[0])\n";
       }
       $line = <STDIN>;
     }

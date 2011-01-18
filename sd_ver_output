@@ -165,8 +165,8 @@ What does he eat?
 vaha kyA KAwA hE?
 
 Hindi meaning using Stanford parser 2.40
-But my efforts to win his heart have failed. 
-paranwu mere prayawna usakA hqxaya jIwane ke liye asaPala_ho cuke hEM.
+But my efforts to win his heart have failed.
+paranwu usakA hqxaya jIwane ke liye mere prayawna asaPala_ho cuke hEM.
 
 Hindi meaning using Stanford parser 2.41
 He is a brother of a rich person. 
@@ -817,8 +817,8 @@ That reeks of favoritism.
 usase pakRapAwa kI bU AwI hE.
 
 Hindi meaning using Stanford parser 2.203
-We should help the poor. 
-hameM/hamako xIna kI sahAyawA karanI cAhiye.
+We should help the poor.
+hameM/hamako xInoM_kI sahAyawA karanI cAhiye.
 
 Hindi meaning using Stanford parser 2.204
 He left all his money to the orphanage. 

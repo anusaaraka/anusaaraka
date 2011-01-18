@@ -282,9 +282,9 @@ sub process{
 
 
 #print tran1 and tran2 level groups.
-            print PADATMP "(tranlevel-ptype-headid-grpids $level PP L$scon2d[$head_id][10] ";
+            print PADATMP "(tranlevel-ptype-headid-grpids $level PP P$scon2d[$head_id][10] ";
             foreach $id (sort{ $a <=> $b } keys %grp_hash){
-              print PADATMP " L$scon2d[$id][10]";
+              print PADATMP " P$scon2d[$id][10]";
             }
             print PADATMP ")\n";
 
@@ -300,9 +300,9 @@ sub process{
                     foreach $id (@tmp){
                       if(($res2d[$scon2d[$id][10]-1][35] eq "and")||($res2d[$scon2d[$id][10]-1][35] eq "or")){ $head_id=$id;} 
                     }
-                    print PADATMP "\n(split_tranlevel-ptype-headid-grpids $level PP L$scon2d[$head_id][10] ";
+                    print PADATMP "\n(split_tranlevel-ptype-headid-grpids $level PP P$scon2d[$head_id][10] ";
                     foreach $id1 (@tmp){
-                      print PADATMP " L$scon2d[$id1][10]";
+                      print PADATMP " P$scon2d[$id1][10]";
                     }
                     print PADATMP ")\n";
                     @tmp = ();
@@ -320,9 +320,9 @@ sub process{
                   if(($res2d[$scon2d[$id][10]-1][35] eq "and")||($res2d[$scon2d[$id][10]-1][35] eq "or")){
                     $head_id=$id;}
                 }
-                print PADATMP "(split_tranlevel-ptype-headid-grpids $level PP L$scon2d[$head_id][10] ";
+                print PADATMP "(split_tranlevel-ptype-headid-grpids $level PP P$scon2d[$head_id][10] ";
                 foreach $id1 (@tmp){
-                  print PADATMP " L$scon2d[$id1][10]";
+                  print PADATMP " P$scon2d[$id1][10]";
                 }
                 print PADATMP ")\n";
               }
@@ -385,10 +385,10 @@ sub process{
             }
 
 
-            print PADATMP2 "(tranlevel-ptype-headid-grpids-prep $level PP L$scon2d[$head_id][10] ";
+            print PADATMP2 "(tranlevel-ptype-headid-grpids-prep $level PP P$scon2d[$head_id][10] ";
 
             foreach $id (sort{ $a <=> $b } keys %grp_hash){
-              print PADATMP2 " L$scon2d[$id][10]";
+              print PADATMP2 " P$scon2d[$id][10]";
             }
             if($flag_prep){
               print PADATMP2 " preposition";$prev_pp=0;$prev_pp_id="";
@@ -400,7 +400,7 @@ sub process{
 =pod
 
               if($prev_pp){
-                print PADATMP2 " L$prev_pp_id";$prev_pp=0;$prev_pp_id="";
+                print PADATMP2 " P$prev_pp_id";$prev_pp=0;$prev_pp_id="";
               }
               else{print PADATMP2 " 0";}
 =cut
@@ -422,7 +422,7 @@ sub process{
             print ERR "group id for $wid not found in SWORK of $level\n";}
           else {
 
-            print PADATMP1 "(tranlevel-ptype-headid-grpids $level PP L$scon2d[$wid][10] ";
+            print PADATMP1 "(tranlevel-ptype-headid-grpids $level PP P$scon2d[$wid][10] ";
 
 #for adding prepositions coming in SCONHF
 
@@ -431,16 +431,16 @@ sub process{
 		$num1=$1;
 		$num2=$2;
 		if($num1 < $maxid){ 
-              		print PADATMP1 " L$num1";
+              		print PADATMP1 " P$num1";
 		}
 		elsif($num2 < $maxid){ 
-              		print PADATMP1 " L$num2";
+              		print PADATMP1 " P$num2";
 		}
 	    }
 	    elsif($trg_tran[$line+5] =~ /SCONHF\s+(\d+)\s*$/){
 		$numpp=$1;
 		if($numpp < $maxid){ 
-              		print PADATMP1 " L$numpp";
+              		print PADATMP1 " P$numpp";
 		}
 	    }
 	}
@@ -450,7 +450,7 @@ sub process{
             @grp=split(/\s+/,$old_grp_id);
             @grp_sort=sort { $a <=> $b } @grp;
             foreach $id (@grp_sort){
-              print PADATMP1 " L$scon2d[$id][10]";
+              print PADATMP1 " P$scon2d[$id][10]";
             }
             print PADATMP1 ")\n";
           }
@@ -481,7 +481,7 @@ sub process{
         $word=$5;
 
 
-        print PADATMP "(addition-level-word-sid $level $word L$wid)\n";
+        print PADATMP "(addition-level-word-sid $level $word P$wid)\n";
       }
     }
   }

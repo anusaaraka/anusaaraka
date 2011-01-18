@@ -386,10 +386,11 @@
  (load-facts "lwg_info.dat")
  (load-facts "word.dat")
  (load-facts "cat_consistency_check.dat")
+ (open "pada_point_debug.dat" pada_point_debug "a")
  (assert (index 1))
  (assert (Eng_sen))
  (run)
- (save-facts "pada_info.dat" local current_id-group_members id-current_id using-parser-ids pada_head-preposition_id )
+ (save-facts "pada_info.dat" local current_id-group_members id-current_id relation-anu_ids pada_head-preposition_id )
  (save-facts "pada_with_point_concept.dat" local pada_info)
  (clear)
   ;---------------------------------------------------------------------------------

@@ -25,7 +25,7 @@ cd $MYPATH/$1_tmp/$2
 
  sed 's/(Eng_sen \"//g' English_sentence.dat |sed  's/\")//g'|sed 's/&quot;/\"/g'|sed 's/\&amp;/&/g'|sed 's/DOTDOTDOT/.../g' | sed 's/eABBRDOTABBRgABBRDOTABBR/e.g./g' | sed 's/aABBRDOTABBRkABBRDOTABBRaABBRDOTABBR/a.k.a./g'
 
- #cat  hindi_sentence.dat | sed  's/equal_to/=/g' |  sed 's/right_paren/)/g'| sed 's/left_paren/(/g' | sed  's/\")//g'|sed 's/&quot;/\"/g'|sed 's/\&amp;/&/g'|sed 's/DOTDOTDOT/.../g'| sed 's/ABBRThatis/i.e./g' | sed 's/aABBRDOTABBRkABBRDOTABBRaABBRDOTABBR/a.k.a./g' | sed 's/eABBRDOTABBRgABBRDOTABBR/e.g./g'| sed 's/TWTWTWTW/_/g' | sed 's/TWTW/ /g'  | sed -e 's/\\@//g' >hindi_sentence1.dat
+ cp hindi_sentence.dat hindi_sentence_tmp.dat
 
  cat  hindi_sentence.dat | sed  's/right_paren,/)/g' | sed  's/)\./\./g'|sed  's/equal_to/=/g'|sed  's/left_paren/(/g'|sed  's/right_paren/)/g' |sed  's/\")//g'|sed 's/&quot;/\"/g'|sed 's/\&amp;/&/g'|sed 's/DOTDOTDOT/.../g'| sed 's/ABBRThatis/i.e./g' | sed 's/aABBRDOTABBRkABBRDOTABBRaABBRDOTABBR/a.k.a./g' | sed 's/eABBRDOTABBRgABBRDOTABBR/e.g./g'| sed 's/TWTWTWTW/_/g' | sed 's/TWTW/ /g' | sed -e 's/\\@//g'  >hindi_sentence1.dat
 

@@ -8,7 +8,7 @@
   (load-facts "morph.dat")
   (load-facts "parser_pos_cat.dat")
   (assert (English-list))
-  (assert (index L1))
+  (assert (index P1))
   (open "lwg_debug.dat" lwg_db_fp "a")
   (run)
   (save-facts "lwg_info_tmp.dat" local root-verbchunk-tam-parser_chunkids  verb_type-verb-causative_verb-tam)

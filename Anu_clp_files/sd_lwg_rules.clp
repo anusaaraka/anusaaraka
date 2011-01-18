@@ -136,10 +136,12 @@
   (printout ?*lwg_debug_file* "(rule_name-grouped_ids   not_rule " $?ids ")" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
+ ;He may drink milk or eat apples.
+ ;I ate fruits, drank milk and slept.  
  (defrule cc_rule
  (declare (salience 750))
  ?f<-(root-verbchunk-tam-parser_chunkids root_to_be_decided verb_chunk_to_be_decided  tam_to_be_decided $?ids ?head)
- (rel_name-sids conj ?head ?cc)
+ (rel_name-sids conj_or|conj_and ?head ?cc) 
  (not (grouped_head ?cc))
   =>
  (assert (root-verbchunk-tam-parser_chunkids root_to_be_decided verb_chunk_to_be_decided  tam_to_be_decided $?ids ?cc))
@@ -175,7 +177,7 @@
  (assert (English-list $?Eng_list ?word))
  (bind ?id (string_to_integer ?id))
  (bind ?id (+ ?id 1))
- (bind ?id (explode$ (str-cat L ?id)))
+ (bind ?id (explode$ (str-cat P ?id)))
  (assert (index ?id))
  )
  ;-------------------------------------------------------------------------------------------------------------------------
@@ -208,7 +210,7 @@
  (parser_id-root-category-suffix-number  ?head  ?root1 verb ?suf ?)
  (parserid-word ?head ?word1)
  (test (or(eq (lowcase ?word1) does)(eq (lowcase ?word1) do)(eq (lowcase ?word1) did)))
- (parserid-word L1 ?word)
+ (parserid-word P1 ?word)
  (test (or(eq (lowcase ?word) does)(eq (lowcase ?word) do)(eq (lowcase ?word) did)(eq (lowcase ?word) why)(eq (lowcase ?word) what)(eq (lowcase ?word) where)(eq (lowcase ?word) whose)(eq (lowcase ?word) how)(eq (lowcase ?word) who)(eq (lowcase ?word) when)(eq (lowcase ?word) are)(eq (lowcase ?word) am)(eq (lowcase ?word) is)))
  (not (q_tam_modified ?head))
  =>

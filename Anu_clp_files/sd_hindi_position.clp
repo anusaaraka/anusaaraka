@@ -16,6 +16,10 @@
  (create$ (reverse (rest$ ?a)) (first$ ?a))))
 
  (deffacts dummy_facts 
+ (kriyA-due_to_saMbanXI) 
+ (viSeRya-than_saMbanXI) 
+ (relation-anu_ids) 
+ (relation-anu_ids) 
  (lupwa_subject_kriyA-subject_samAnAXikaraNa)
  (kriyA-in_keeping_with_saMbanXI) 
  (viSeRya-across_saMbanXI)
@@ -147,7 +151,7 @@
  (using-chunk-ids)
  (Sentence)
  (list)
- (using-parser-ids )
+ (relation-anu_ids )
  (root-verbchunk-tam-chunkids)
  (lwg_list)
  (hindi_id_order )
@@ -459,7 +463,7 @@
 
  (defrule rule1
  (declare (salience 1000))
- (using-parser-ids  ?rel ?l_id ?r_id)
+ (relation-anu_ids  ?rel ?l_id ?r_id)
  (test (and (neq ?rel viSeRya-det_viSeRaNa) (neq ?rel viSeRya-viSeRaNa)(neq ?rel kriyA-nA)(neq ?rel kriyA-ke_liye) (neq ?rel nAma-saMkRipwa_nAma)(neq ?rel proper_noun-det_viSeRaNa)(neq ?rel subject-opener)(neq ?rel kriyA-ne_ke_liye)(neq ?rel viSeRya-wulanAwmaka_viSeRaNa)(neq ?rel kriyA-viXi_vAkyakarma)(neq ?rel kriyA-samAnakAlika_kriyA)(neq ?rel pUrvakAlika_kriyA-ananwarakAlika_kriyA)(neq ?rel kriyA-praSnavAcI)(neq ?rel muKya_vAkya-sApekRa_upavAkya)(neq ?rel subject-vAkyasamAnAXikarNa)(neq ?rel kriyA-samakAlika_kriyA) (neq ?rel kriyA-vAkyakarma)))
  =>
  (bind ?*l_list* (create$ ?*l_list* ?l_id))
@@ -719,7 +723,7 @@
   ;;Moving (of/for/.....)_saMbanXI before its viSeRya
   (defrule viSeRya_viSeRaNa_rule
   (declare (salience 950))
-  ?f1<-(using-parser-ids  ?rel ?v_id ?v_id1)
+  ?f1<-(relation-anu_ids  ?rel ?v_id ?v_id1)
   (test (neq (str-index "-" ?rel)  FALSE))
   (test (neq (str-index "_" ?rel)  FALSE))
   (test (or (eq (sub-string 1 (- (str-index "-" ?rel) 1) ?rel) "viSeRya")(eq (sub-string 1 (- (str-index "-" ?rel) 1) ?rel) "kqxanwa")))
@@ -743,7 +747,7 @@
   ;Moving to_saMbanXI after its viSeRya
   (defrule viSeRya_viSeRaNa_to_rule
   (declare (salience 350))
-  ?f1<-(using-parser-ids  ?rel ?v_id ?v_id1)
+  ?f1<-(relation-anu_ids  ?rel ?v_id ?v_id1)
   (test (neq (str-index "-" ?rel)  FALSE))
   (test (neq (str-index "_" ?rel)  FALSE))
   (test (or (eq (sub-string 1 (- (str-index "-" ?rel) 1) ?rel) "viSeRya")(eq (sub-string 1 (- (str-index "-" ?rel) 1) ?rel) "kqxanwa")))
@@ -870,9 +874,9 @@
   ;--------------------------------------------------------------------------------------------------------------------
    (defrule viSeRya-jo_samAnAXikaraNa_rule
    (declare (salience -200))
-   ?f0<-(using-parser-ids viSeRya-jo_samAnAXikaraNa  ?sub ?jo_samAnAXikaraNa)
-   (using-parser-ids  kriyA-subject  ?kri ?sub)
-   (using-parser-ids  kriyA-subject  ?kri1&:(> ?kri ?kri1) ?sub_id)
+   ?f0<-(relation-anu_ids viSeRya-jo_samAnAXikaraNa  ?sub ?jo_samAnAXikaraNa)
+   (relation-anu_ids  kriyA-subject  ?kri ?sub)
+   (relation-anu_ids  kriyA-subject  ?kri1&:(> ?kri ?kri1) ?sub_id)
    ?f1<-(Sentence ?Sen1 $?sen1 ?kri)
    ?f2<-(Sentence ?Sen2 $?sen2 ?kri1)
    ?f3<-(hindi_id_order $?hin_order)
@@ -900,8 +904,8 @@
    ;Added by Shirisha Manju
    (defrule viSeRya-jo_samAnAXikaraNa_rule1
    (declare (salience -200))
-   ?f0<-(using-parser-ids viSeRya-jo_samAnAXikaraNa  ?sub ?jo_samAnAXikaraNa)
-   (using-parser-ids  kriyA-object  ?kri ?jo_samAnAXikaraNa)
+   ?f0<-(relation-anu_ids viSeRya-jo_samAnAXikaraNa  ?sub ?jo_samAnAXikaraNa)
+   (relation-anu_ids  kriyA-object  ?kri ?jo_samAnAXikaraNa)
    ?f2<-(Sentence ?Sen2 $?sen2 ?kri)
    ?f3<-(hindi_id_order $?hin_order)
    (test (member$ ?kri $?hin_order) )
@@ -993,8 +997,8 @@
  (defrule conjuction_for_common_kriyA_diff_saMbanXI
  (declare (salience -200))
  ?f<-(id-word ?id and|or)
- (using-parser-ids  ?rel ?kriyA ?pre_saMbanXI1)
- (using-parser-ids  ?rel ?kriyA ?pre_saMbanXI2)
+ (relation-anu_ids  ?rel ?kriyA ?pre_saMbanXI1)
+ (relation-anu_ids  ?rel ?kriyA ?pre_saMbanXI2)
  (test (neq ?pre_saMbanXI1 ?pre_saMbanXI2))
  (test (neq (str-index "-" ?rel)  FALSE))
  (test (neq (str-index "_" ?rel)  FALSE))
@@ -1066,7 +1070,7 @@
  (defrule subject-conjunction_rule2
  (declare (salience -200))
  ?f<-(kriyA-conjunction  ?sub ?sub_conj)
- (using-parser-ids viSeRya-RaRTI_viSeRaNa  ?sub ?viSeRaNa)
+ (relation-anu_ids viSeRya-RaRTI_viSeRaNa  ?sub ?viSeRaNa)
 ; (viSeRya-RaRTI_viSeRaNa  ?sub ?viSeRaNa)
  ?f1<-(hindi_id_order $?list)
  ?f2<-(pada_info (group_head_id ?viSeRaNa)(group_cat ?gtype)(group_ids $?grp_ids))
@@ -1170,8 +1174,8 @@
   (defrule remove_repeated_sub_ids
   (declare (salience -350))
   ?f0<-(hindi_id_order $?ids)
-  ?f1<-(using-parser-ids  kriyA-subject ?kriya ?sub_id)
-  ?f2<-(using-parser-ids  kriyA-subject ?kriya1 ?sub_id)
+  ?f1<-(relation-anu_ids  kriyA-subject ?kriya ?sub_id)
+  ?f2<-(relation-anu_ids  kriyA-subject ?kriya1 ?sub_id)
   (test (neq ?kriya ?kriya1))
   (test (member$ ?sub_id $?ids))
   =>

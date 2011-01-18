@@ -3,6 +3,10 @@
  (string-to-field (sub-string 2 10000 ?link_id)))
 
  (deffacts dummy_facts 
+ (kriyA-due_to_saMbanXI) 
+ (viSeRya-than_saMbanXI) 
+ (relation-anu_ids) 
+ (relation-parser_ids) 
  (lupwa_subject_kriyA-subject_samAnAXikaraNa) 
  (kriyA-in_keeping_with_saMbanXI) 
  (viSeRya-throughout_saMbanXI) 

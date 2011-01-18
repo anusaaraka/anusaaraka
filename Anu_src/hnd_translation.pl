@@ -44,7 +44,7 @@ $myline=$_[0];
 local $/="\n";
   if($myline =~ /(\d+)\.(\d+)\.(\d+)/){
 	$ParaId=$1;$SenId=$2;
-	local $facts_filename = $path_clips."/tmp/$ARGV[0]_tmp/".$ParaId.".".$SenId."/hindi_sentence.dat";
+	local $facts_filename = $path_clips."/tmp/$ARGV[0]_tmp/".$ParaId.".".$SenId."/hindi_sentence_tmp.dat";
 	if (-z $facts_filename){
             open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn.html") || die "Can't open $ARGV[0]_trnsltn.html";
             print TRANS "$ParaId.$SenId\tCould not translate the sentence. \n<BR>\n";

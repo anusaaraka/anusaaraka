@@ -1539,4 +1539,33 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 		verified    (556)         small_sent_verified     (73)
 		verified_ol (530)         small_sent_verified_ol  (66)
 		sd_verified (343)
+
+18-01-11
+--------
+ 1. Renamed 'using-parser-ids' fact as 'relation-parser_ids' and also  replaced 'L' id with 'P' id in following files:
+     01.run_openlogos.py		02.lwg_openlogos.pl		03.pada_openlogos.pl	
+     04.missing_pada.pl			05.ol_prep.pl			06.lwg_disambiguation.clp		
+     07.modify_ol_cat.clp		08.modify_ol_relations.clp	09.modify_ol_pada.clp
+     10.ol_pada_id_mapping.clp		11.causative_verb_mng.clp	12.ol_hindi_sent_reorder.clp	
+     13.ol_parserid_wordid_mapping.clp  14.print.c                      15.link_relation_rules.clp 
+     16.parser_id_mapping.clp           17.parserid_wordid_mapping.clp  18.sd_relation_rules.clp 
+     19.sd_pada.clp                     20.show_std_rel.clp		21.stnford_relations.lex 
+     22.sd_category.py            	23.sd_hindi_position.clp	24.sd_lwg_rules.clp                
+     25.run_sd_lwg_rules.bat		26.stnford_word.lex
+
+ 2. After mapping relations 'using-parser-ids' fact is renamed as 'relation-anu_ids' and also  replaced 'L' id with 'P' id in    following files:
+    01.ol_parser_id_mapping.clp		02.pada_point_concept_rules.clp		03.run_modules_ol.bat 
+    04.hindi_position.clp		05.user_wsd_info.clp			06.run_modules_link.bat
+    07.run_modules_std.bat		08.parser_id_mapping.clp
+
+ 3. Removed sd_hindi_position.clp to use Pada point concept in Stanford parser. Following files are modified to use this
+    concept.
+    01.sd_hindi_sent_reorder.clp	02.run_modules_std.bat		03.pada_point_concept_rules.clp
+ 4. Added debug info in pada_point_concept_rules.clp,run_modules_link.bat,run_modules_ol.bat,run_modules_std.bat
+ 5. Now using stanford new version(2010-11-10).
+ 6. Modified sd_relation_rules.clp,sd_pada.clp,sd_lwg_rules.clp(to generate conjunction components)
+ 7. Updated following files:
+                     verified	  (556)          small_sent_verified_ol  (66)
+                     verified_ol  (530)          small_sent_verified     (73)
+                     
  

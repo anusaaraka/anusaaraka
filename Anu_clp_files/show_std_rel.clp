@@ -38,7 +38,7 @@
 
  (defrule relations1
  (declare (salience 900))
- (using-parser-ids  ?rel ?id)
+ (relation-parser_ids  ?rel ?id)
  (id-word ?id ?word)
  =>
    (printout ?*rel-word-file*  "(" ?rel "	"?id","?word ")" crlf)
@@ -46,7 +46,7 @@
 
  (defrule relations2
  (declare (salience 900))
- (using-parser-ids  ?rel ?id ?id1)
+ (relation-parser_ids  ?rel ?id ?id1)
  (id-word ?id ?word)
  (id-word ?id1 ?word1)
  =>

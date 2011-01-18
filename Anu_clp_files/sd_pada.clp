@@ -56,7 +56,7 @@
  ;---------------------------------------------------------------------------------------------------------------------
  (defrule to-infinitive_pada
  (declare (salience 1002))
- (using-parser-ids to-infinitive  ?to ?inf)
+ (relation-anu_ids to-infinitive  ?to ?inf)
  ?f<-(to_be_included_in_paxa ?inf)
  ?f1<-(to_be_included_in_paxa ?to) ;Added by Manju
  =>
@@ -85,7 +85,7 @@
  ;---------------------------------------------------------------------------------------------------------------------
  (defrule PP_pada
  (declare (salience 1000))
- (using-parser-ids  ?rel  ?kri ?PP)
+ (relation-anu_ids  ?rel  ?kri ?PP)
  (test (or (eq ?rel kriyA-subject)(eq ?rel kriyA-object)(eq ?rel saMjFA-saMjFA_samAnAXikaraNa)(eq ?rel subject-subject_samAnAXikaraNa)(eq ?rel kriyA-kriyA_viSeRaNa)(eq ?rel kriyA-upasarga)(eq ?rel to-infinitive)(eq ?rel kriyA-dummy_subject))) 
  ?f<-(to_be_included_in_paxa ?PP)
   => 
@@ -97,7 +97,7 @@
  ;---------------------------------------------------------------------------------------------------------------------
  (defrule PP_pada1
  (declare (salience 1000))
- (using-parser-ids  ?rel  ?kri ?PP)
+ (relation-anu_ids  ?rel  ?kri ?PP)
  (test (neq (str-index "-" ?rel)  FALSE))
  (test (neq (str-index "_" ?rel)  FALSE))
  (test (eq (sub-string 1 (- (str-index "-" ?rel) 1) ?rel) "kriyA"))
@@ -112,7 +112,7 @@
  ;---------------------------------------------------------------------------------------------------------------------
  (defrule PP_pada2
  (declare (salience 1000))
- (using-parser-ids  ?rel  ?PP ?)
+ (relation-anu_ids  ?rel  ?PP ?)
  (test (eq ?rel kriyA-kqxanwa_viSeRaNa))
  ?f<-(to_be_included_in_paxa ?PP)
   =>
@@ -124,7 +124,7 @@
  ;---------------------------------------------------------------------------------------------------------------------
  (defrule viSeRaNa_pada
  (declare (salience 990))
- (using-parser-ids  ?rel ?viSeRya ?viSeRaNa)
+ (relation-anu_ids  ?rel ?viSeRya ?viSeRaNa)
  (test (or (eq ?rel viSeRya-det_viSeRaNa)(eq ?rel viSeRya-viSeRaNa)(eq ?rel samAsa)(eq ?rel kriyA-kqxanwa_viSeRaNa)(eq ?rel viSeRya-saMKyA_viSeRaNa)(eq ?rel viSeRaNa-viSeRaka)))
  ?f<-(to_be_included_in_paxa ?viSeRaNa)
  ?f1<-(pada_info (group_ids  $?id ?viSeRya $?ids)(group_cat PP|infinitive))
@@ -140,7 +140,7 @@
  ;---------------------------------------------------------------------------------------------------------------------
  (defrule RaRTI_viSeRaNa
  (declare (salience 1000))
- (using-parser-ids  viSeRya-RaRTI_viSeRaNa ?viSeRya ?viSeRaNa)
+ (relation-anu_ids  viSeRya-RaRTI_viSeRaNa ?viSeRya ?viSeRaNa)
  ?f<-(to_be_included_in_paxa ?viSeRaNa)
  =>
  (retract ?f)
@@ -150,15 +150,45 @@
  )
  ;---------------------------------------------------------------------------------------------------------------------
  (defrule add_prep
- (declare (salience 900))
- (rel_name-ids prep ?kriyA ?prep)
- (rel_name-ids pobj|pcomp  ?prep ?prep_saM)
+ (declare (salience 1300))
+ (rel_name-ids ?p ?x ?prep_saM)
  ?f1<-(pada_info (group_head_id ?prep_saM)(preposition 0))
- ?f<-(to_be_included_in_paxa ?prep)
+ (test (eq (sub-string 1 5 (implode$ (create$ ?p))) "prep_"))
+ (id-word ?prep_id ?w)
+ (test (eq (string-to-field (sub-string 6 100 (implode$ (create$  ?p)))) ?w))
+ ?f<-(to_be_included_in_paxa ?prep_id)
  =>
-  (retract ?f)
-  (modify ?f1 (preposition ?prep)))
+ (retract ?f)
+ (modify ?f1 (preposition  ?prep_id)))
+ ;Ex. Mohan fell from the top of the house. 
  ;---------------------------------------------------------------------------------------------------------------------
+ (defrule add_prepc
+ (declare (salience 1300))
+ (rel_name-ids ?p ?x ?prep_saM)
+ ?f1<-(pada_info (group_head_id ?prep_saM)(preposition 0))
+ (test (eq (sub-string 1 6 (implode$ (create$ ?p))) "prepc_"))
+ (id-word ?prep_id ?w)
+ (test (eq (string-to-field (sub-string 7 100 (implode$ (create$  ?p)))) ?w))
+ ?f<-(to_be_included_in_paxa ?prep_id)
+ =>
+ (retract ?f)
+ (modify ?f1 (preposition  ?prep_id)))
+ ;Ex. He made a mistake in inviting John. 
+ ;---------------------------------------------------------------------------------------------------------------------
+ (defrule add_prep_by
+ (declare (salience 1300))
+ (rel_name-ids auxpass ?x ?v)
+ (rel_name-ids agent ?x ?pobj)
+ ?f1<-(pada_info (group_head_id ?pobj)(preposition 0))
+ (id-word ?prep_id by)
+ (test (and (> ?prep_id ?x) (< ?prep_id ?pobj)))
+ ?f<-(to_be_included_in_paxa ?prep_id)
+ =>
+ (retract ?f)
+ (modify ?f1 (preposition  ?prep_id)))
+ ;Ex. He is being hired by another company.
+ ;---------------------------------------------------------------------------------------------------------------------
+ ;
  ;Ex. Where did they come from? Who did you talk to?
  (defrule stranded_prep
  (declare (salience 900))

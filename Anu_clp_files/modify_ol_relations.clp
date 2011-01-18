@@ -1,12 +1,12 @@
 (defglobal ?*ol_fp* = ol_rel_file)
 (defglobal ?*debug* = ol_rel_debug_file)
 
-(deffunction string_to_integer (?link_id); [Removes the first character from the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
- (string-to-field (sub-string 2 10000 ?link_id)))
+(deffunction string_to_integer (?parser_id); [Removes the first character from the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
+ (string-to-field (sub-string 2 10000 ?parser_id)))
 
  (deffacts dummy_facts 
  (verb_type-verb-causative_verb-tam)
- (using-parser-ids)
+ (relation-parser_ids)
  (id-word)
  (id-last_word)
  (parserid-wordid)
@@ -23,11 +23,11 @@
 ;Some schools do not give weightage to extracurricular activities .
 (defrule delete_viBakwi_rule
 (declare (salience 333))
-(using-parser-ids kriyA-object  ?kri ?id)
+(relation-parser_ids kriyA-object  ?kri ?id)
 
-(using-parser-ids kriyA-during_saMbanXI|kriyA-to_saMbanXI|kriyA-on_saMbanXI|kriyA-with_saMbanXI|kriyA-after_saMbanXI|kriyA-in_saMbanXI|kriyA-by_saMbanXI|kriyA-about_saMbanXI|kriyA-against_saMbanXI|kriyA-among_saMbanXI|kriyA-into_saMbanXI|kriyA-over_saMbanXI|kriyA-towards_saMbanXI|kriyA-for_saMbanXI  ?kri ?id1)
+(relation-parser_ids kriyA-during_saMbanXI|kriyA-to_saMbanXI|kriyA-on_saMbanXI|kriyA-with_saMbanXI|kriyA-after_saMbanXI|kriyA-in_saMbanXI|kriyA-by_saMbanXI|kriyA-about_saMbanXI|kriyA-against_saMbanXI|kriyA-among_saMbanXI|kriyA-into_saMbanXI|kriyA-over_saMbanXI|kriyA-towards_saMbanXI|kriyA-for_saMbanXI  ?kri ?id1)
 
-?f<-(using-parser-ids ?vi_prep  ?id ?id1)
+?f<-(relation-parser_ids ?vi_prep  ?id ?id1)
 
 (test(or (eq ?vi_prep viSeRya-during_saMbanXI) (eq ?vi_prep viSeRya-in_saMbanXI) (eq ?vi_prep viSeRya-after_saMbanXI) (eq ?vi_prep viSeRya-to_saMbanXI) (eq ?vi_prep viSeRya-with_saMbanXI) (eq ?vi_prep viSeRya-on_saMbanXI) (eq ?vi_prep viSeRya-by_saMbanXI) (eq ?vi_prep viSeRya-about_saMbanXI) (eq ?vi_prep viSeRya-against_saMbanXI) (eq ?vi_prep viSeRya-among_saMbanXI) (eq ?vi_prep viSeRya-into_saMbanXI) (eq ?vi_prep viSeRya-over_saMbanXI) (eq ?vi_prep viSeRya-towards_saMbanXI) (eq ?vi_prep viSeRya-for_saMbanXI) ))
 =>
@@ -39,9 +39,9 @@
 ;There is a ghost in the room .
 (defrule dummy_dummy_sub_rule
 (declare (salience 400))
-?f<-(using-parser-ids  kriyA-subject  ?kri ?sub)
-(using-parser-ids kriyA-dummy_subject  ?kri ?sub)
-(using-parser-ids kriyA-aBihiwa  ?kri ?id)
+?f<-(relation-parser_ids  kriyA-subject  ?kri ?sub)
+(relation-parser_ids kriyA-dummy_subject  ?kri ?sub)
+(relation-parser_ids kriyA-aBihiwa  ?kri ?id)
 =>
 (printout ?*debug* "(rule-deleted_relation-ids   dummy_dummy_sub_rule   kriyA-subject  "?kri"   " ?sub")"crlf)
 (retract ?f)
@@ -57,20 +57,20 @@
 (id-word ?viB from)
 (parserid-wordid ?id ?wh)
 (parserid-wordid ?id1 ?viB)
-?f<-(using-parser-ids kriyA-object  ?kri ?id1)
-?f1<-(using-parser-ids kriyA-object  ?kri ?id)
+?f<-(relation-parser_ids kriyA-object  ?kri ?id1)
+?f1<-(relation-parser_ids kriyA-object  ?kri ?id)
 =>
 (retract ?f ?f1)
 (assert (rel_has_been_deleted kriyA-object  ?kri ?id))
 (assert (rel_has_been_deleted kriyA-object  ?kri ?id1))
 (printout ?*debug* "(rule-deleted_relation-ids   where_rule  kriyA-object   "?kri"  " ?id")"crlf)
 (printout ?*debug* "(rule-deleted_relation-ids   where_rule  kriyA-object   "?kri"  " ?id1")"crlf)
-(assert (using-parser-ids kriyA-from_saMbanXI  ?kri ?id))
+(assert (relation-parser_ids kriyA-from_saMbanXI  ?kri ?id))
 (assert (rel_has_been_written  kriyA-from_saMbanXI  ?kri ?id))
-(printout       ?*ol_fp*    "(using-parser-ids  kriyA-from_saMbanXI  " ?kri" " ?id")"crlf)
-(assert (using-parser-ids kriyA-praSnavAcI  ?kri ?id))
+(printout       ?*ol_fp*    "(relation-parser_ids  kriyA-from_saMbanXI  " ?kri" " ?id")"crlf)
+(assert (relation-parser_ids kriyA-praSnavAcI  ?kri ?id))
 (assert (rel_has_been_written  kriyA-praSnavAcI  ?kri ?id))
-(printout       ?*ol_fp*    "(using-parser-ids  kriyA-praSnavAcI  " ?kri" " ?id")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  kriyA-praSnavAcI  " ?kri" " ?id")"crlf)
 (printout ?*debug* "(Rule-Rel-ids   where_rule   kriyA-from_saMbanXI   "?kri"    "?id")"crlf)
 (printout ?*debug* "(Rule-Rel-ids   where_rule   kriyA-praSnavAcI   "?kri"    "?id")"crlf)
 )
@@ -80,8 +80,8 @@
 ;A fat ugly boy had to eat too many fruits to lose his weight .
 (defrule samAsa_rule
 (declare (salience 300))
-(using-parser-ids  kriyA-kriyArWa_kriyA  ?kri ?id)
-?f<-(using-parser-ids  kriyA-subject  ?id ?id1)
+(relation-parser_ids  kriyA-kriyArWa_kriyA  ?kri ?id)
+?f<-(relation-parser_ids  kriyA-subject  ?id ?id1)
 =>
 (printout ?*debug* "(rule-deleted_relation-ids   samAsa_rule  kriyA-subject   "?id"   " ?id1")"crlf)
 (retract ?f)
@@ -99,9 +99,9 @@
 (parser_id-cat_coarse ?noun noun)
 (parser_id-cat_coarse ?to preposition)
 (parser_id-cat_coarse ?kri verb)
-(using-parser-ids  to-infinitive  ?to ?kri)
+(relation-parser_ids  to-infinitive  ?to ?kri)
 =>
-(assert (using-parser-ids  saMjFA-kqxanwa ?noun ?kri))
+(assert (relation-parser_ids  saMjFA-kqxanwa ?noun ?kri))
 (printout ?*debug* "(Rule-Rel-ids    saMjFA-kqxanwa_rel_rule    saMjFA-kqxanwa   "?noun"    "?kri")"crlf)
 )
 
@@ -110,8 +110,8 @@
 ;He was the first Asian scientist to win the Nobel Prize.
 (defrule delete_saMjFA-kqxanwa_rule
 (declare (salience 550))
-(using-parser-ids  kriyA-kriyArWa_kriyA  ?kri ?id)
-?f<-(using-parser-ids  saMjFA-kqxanwa  ?saM ?id)
+(relation-parser_ids  kriyA-kriyArWa_kriyA  ?kri ?id)
+?f<-(relation-parser_ids  saMjFA-kqxanwa  ?saM ?id)
 =>
 (printout ?*debug* "(rule-deleted_relation-ids   delete_saMjFA-kqxanwa_rule  saMjFA-kqxanwa  "?saM"   " ?id")"crlf)
 (retract ?f)
@@ -122,20 +122,20 @@
 ;Phil gave me a sweater which he bought in Paris.
 (defrule getting_in_saMbanXI
 (declare (salience 500))
-?f<-(using-parser-ids kriyA-object ?L_kri ?L_id)
-?f1<-(using-parser-ids kriyA-object_2 ?L_kri ?L_id)
-(parserid-wordid ?L_id ?id)
+?f<-(relation-parser_ids kriyA-object ?P_kri ?P_id)
+?f1<-(relation-parser_ids kriyA-object_2 ?P_kri ?P_id)
+(parserid-wordid ?P_id ?id)
 (id-word =(- ?id 1) in)
 =>
 (retract ?f ?f1)
-(assert (rel_has_been_deleted kriyA-object   ?L_kri ?L_id))
-(assert (rel_has_been_deleted kriyA-object_2  ?L_kri ?L_id))
-(printout ?*debug* "(rule-deleted_relation-ids   getting_in_saMbanXI   kriyA-object    "?L_kri"   " ?L_id")"crlf)
-(printout ?*debug* "(rule-deleted_relation-ids   getting_in_saMbanXI   kriyA-object_2   "?L_kri"  " ?L_id")"crlf)
-(assert (using-parser-ids kriyA-in_saMbanXI ?L_kri ?L_id))
-(assert (rel_has_been_written   kriyA-in_saMbanXI  ?L_kri ?L_id))
-(printout       ?*ol_fp*    "(using-parser-ids  kriyA-in_saMbanXI  " ?L_kri" " ?L_id")"crlf)
-(printout ?*debug* "(Rule-Rel-ids   getting_in_saMbanXI    kriyA-in_saMbanXI   "?L_kri"    "?L_id")"crlf)
+(assert (rel_has_been_deleted kriyA-object   ?P_kri ?P_id))
+(assert (rel_has_been_deleted kriyA-object_2  ?P_kri ?P_id))
+(printout ?*debug* "(rule-deleted_relation-ids   getting_in_saMbanXI   kriyA-object    "?P_kri"   " ?P_id")"crlf)
+(printout ?*debug* "(rule-deleted_relation-ids   getting_in_saMbanXI   kriyA-object_2   "?P_kri"  " ?P_id")"crlf)
+(assert (relation-parser_ids kriyA-in_saMbanXI ?P_kri ?P_id))
+(assert (rel_has_been_written   kriyA-in_saMbanXI  ?P_kri ?P_id))
+(printout       ?*ol_fp*    "(relation-parser_ids  kriyA-in_saMbanXI  " ?P_kri" " ?P_id")"crlf)
+(printout ?*debug* "(Rule-Rel-ids   getting_in_saMbanXI    kriyA-in_saMbanXI   "?P_kri"    "?P_id")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -143,8 +143,8 @@
 ;I read about the train accident in today's paper.
 (defrule del_viSeRya-viSeRaNa_rel
 (declare (salience 500))
-(using-parser-ids viSeRya-RaRTI_viSeRaNa  ?viS ?viSN)
-?f<-(using-parser-ids  viSeRya-viSeRaNa ?viS ?viSN)
+(relation-parser_ids viSeRya-RaRTI_viSeRaNa  ?viS ?viSN)
+?f<-(relation-parser_ids  viSeRya-viSeRaNa ?viS ?viSN)
 =>
 (printout ?*debug* "(rule-deleted_relation-ids   del_viSeRya-viSeRaNa_rel  viSeRya-viSeRaNa   "?viS"   " ?viSN")"crlf)
 (retract ?f)
@@ -158,7 +158,7 @@
 (defrule delete_rel_lwg
 (declare (salience 510))
 (root-verbchunk-tam-parser_chunkids   ?root ?verbchunk ?tam  $?ids)
-?f<-(using-parser-ids ?relname  ?kriyA	?id)
+?f<-(relation-parser_ids ?relname  ?kriyA	?id)
 (test (and (member$ ?kriyA $?ids) (member$ ?id $?ids)))
 (test (neq ?relname kriyA-kriyA_niReXaka));I do not go out as much now.
 =>
@@ -174,7 +174,7 @@
 (defrule head_transfer
 (declare (salience 500))
 (root-verbchunk-tam-parser_chunkids   ?root ?verbchunk ?tam  $?ids)
-?f<-(using-parser-ids ?relname  ?kriyA	?id)
+?f<-(relation-parser_ids ?relname  ?kriyA	?id)
 (tranlevel-ptype-headid-grpids ?l VP ?headid $?ids )
 (test (member$ ?kriyA $?ids))
 (test(neq ?kriyA ?headid))
@@ -182,9 +182,9 @@
 (retract ?f)
 (assert (rel_has_been_deleted ?relname  ?kriyA ?id))
 (printout ?*debug* "(rule-deleted_relation-ids   head_transfer  "?relname"  " ?kriyA"   " ?id")"crlf)
-(assert (using-parser-ids ?relname ?headid ?id))
+(assert (relation-parser_ids ?relname ?headid ?id))
 (assert (rel_has_been_written ?relname  ?headid ?id))
-(printout       ?*ol_fp*    "(using-parser-ids  "?relname"  " ?headid"   " ?id")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  "?relname"  " ?headid"   " ?id")"crlf)
 (printout ?*debug* "(Rule-Rel-ids   head_transfer   " ?relname "   "?headid"    "?id")"crlf)
 )
 
@@ -193,7 +193,7 @@
 ;Your house and garden are very attractive.
 (defrule head_RaRTI_vi
 (declare (salience 55))
-?f<-(using-parser-ids viSeRya-RaRTI_viSeRaNa ?id ?id1)
+?f<-(relation-parser_ids viSeRya-RaRTI_viSeRaNa ?id ?id1)
 ?f1<-(split_tranlevel-ptype-headid-grpids tran3 PP ?head $?ids ?head $?ids1)
 (test (or (member$ ?id1 $?ids) (member$ ?id1 $?ids1)))
 (test (and (neq ?id1 ?head) (neq ?id ?head)))
@@ -204,7 +204,7 @@
 (bind ?head_1 (nth$  (length $?ids) $?ids))
 (bind ?head_2 (nth$  (length $?ids1) $?ids1))
 (printout       ?*ol_fp*    "(conjunction-components  "?head"    " ?head_1" "?head_2")"crlf)
-(printout       ?*ol_fp*    "(using-parser-ids  "viSeRya-RaRTI_viSeRaNa" " ?head" "?id1")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  "viSeRya-RaRTI_viSeRaNa" " ?head" "?id1")"crlf)
 (assert (rel_has_been_written viSeRya-RaRTI_viSeRaNa  ?head ?id1))
 (printout ?*debug* "(Rule-Rel-ids   head_RaRTI_vi  conjunction-components   "?head"    " ?head_1"   "?head_2")"crlf)
 (printout ?*debug* "(Rule-Rel-ids   head_RaRTI_vi  viSeRya-RaRTI_viSeRaNa   "?head"   "?id1")"crlf)
@@ -214,7 +214,7 @@
 ;------------------------------------------------------------------------------------------------------------------------
 
 (defrule head_transfer_left
-?f<-(using-parser-ids ?relname  ?id1 ?id)
+?f<-(relation-parser_ids ?relname  ?id1 ?id)
 (split_tranlevel-ptype-headid-grpids tran3 PP ?head $?ids ?head $?ids1)
 (test (or (member$ ?id1 $?ids) (member$ ?id1 $?ids1)))
 (test(neq ?id1 ?head))
@@ -229,7 +229,7 @@
 (printout ?*debug* "(rule-deleted_relation-ids   head_transfer_left  "?relname"   "?id1"   " ?id")"crlf)
 (bind ?head_1 (nth$  (length $?ids) $?ids))
 (bind ?head_2 (nth$  (length $?ids1) $?ids1))
-(assert (using-parser-ids ?relname ?head ?id))
+(assert (relation-parser_ids ?relname ?head ?id))
 (printout       ?*ol_fp*    "(conjunction-components  "?head"    " ?head_1" "?head_2")"crlf)
 (printout       ?*ol_fp*    "(conjunction-components  "?head"    " ?head_2" "?head_1")"crlf)
 (printout ?*debug* "(Rule-Rel-ids   head_transfer_left    conjunction-components  "?head"    " ?head_1" "?head_2")"crlf)
@@ -242,9 +242,9 @@
 ;Sanal spent his summer studying basic mathematics, writing and reading comprehension.
 (defrule no_head_transfer_right
 (declare (salience 6))
-?f<-(using-parser-ids kriyA-object  ?id ?id1)
+?f<-(relation-parser_ids kriyA-object  ?id ?id1)
 (parser_id-cat_coarse  ?id  verbal_noun)
-(using-parser-ids kriyA-kqxanwa_viSeRaNa ?kri ?id)
+(relation-parser_ids kriyA-kqxanwa_viSeRaNa ?kri ?id)
 =>
 (assert (do_not_transfer_head ?id1))
 )
@@ -253,7 +253,7 @@
 
 (defrule head_transfer_right
 (declare (salience 5))
-?f<-(using-parser-ids ?relname  ?id ?id1)
+?f<-(relation-parser_ids ?relname  ?id ?id1)
 (split_tranlevel-ptype-headid-grpids tran3 PP ?head $?ids ?head $?ids1)
 (test (or (member$ ?id1 $?ids) (member$ ?id1 $?ids1)))
 (test(neq ?id1 ?head))
@@ -271,7 +271,7 @@
 (printout ?*debug* "(rule-deleted_relation-ids   head_transfer_right  "?relname"    "?id"   "?id1")"crlf)
 (bind ?head_1 (nth$  (length $?ids) $?ids))
 (bind ?head_2 (nth$  (length $?ids1) $?ids1))
-(assert (using-parser-ids ?relname ?id ?head))
+(assert (relation-parser_ids ?relname ?id ?head))
 (printout       ?*ol_fp*    "(conjunction-components  "?head"    " ?head_1" "?head_2")"crlf)
 (printout       ?*ol_fp*    "(conjunction-components  "?head"    " ?head_2" "?head_1")"crlf)
 (printout ?*debug* "(Rule-Rel-ids   head_transfer_right    conjunction-components  "?head"    " ?head_1" "?head_2")"crlf)
@@ -284,7 +284,7 @@
 ;Mary, Joe and Louise are coming to the party.
 (defrule head_transfer_right_s
 (declare (salience 55))
-?f<-(using-parser-ids kriyA-subject  ?id ?id1)
+?f<-(relation-parser_ids kriyA-subject  ?id ?id1)
 (split_tranlevel-ptype-headid-grpids tran3 PP ?head $?ids ?head $?ids1)
 (test (or (member$ ?id1 $?ids) (member$ ?id1 $?ids1)))
 (ol_res_id-word_id-word   ?head ?i   and|or)
@@ -294,7 +294,7 @@
 (printout ?*debug* "(rule-deleted_relation-ids head_transfer_right_s   kriyA-subject    "?id"   "?id1")"crlf)
 (bind ?head_1 (nth$  (length $?ids) $?ids))
 (bind ?head_2 (nth$  (length $?ids1) $?ids1))
-(assert (using-parser-ids kriyA-subject ?id ?head))
+(assert (relation-parser_ids kriyA-subject ?id ?head))
 (printout       ?*ol_fp*    "(conjunction-components  "?head"    " ?head_1" "?head_2")"crlf)
 (printout       ?*ol_fp*    "(conjunction-components  "?head"    " ?head_2" "?head_1")"crlf)
 
@@ -313,7 +313,7 @@
 ;When Mrs. Chitnis discovered that her husband was an adulterer she divorced him.
 (defrule head_transfer_m
 (declare (salience 5))
-?f<-(using-parser-ids ?relname  ?id ?id1)
+?f<-(relation-parser_ids ?relname  ?id ?id1)
 (split_tranlevel-ptype-headid-grpids tran3 PP ?head $?ids ?head $?ids1)
 (test (or (member$ ?id1 $?ids) (member$ ?id1 $?ids1)))
 (test(neq ?id1 ?head))
@@ -323,9 +323,9 @@
 (assert (rel_has_been_deleted   ?relname  ?id ?id1))
 (printout ?*debug* "(rule-deleted_relation-ids   head_transfer_m  "?relname"   "?id"   "?id1")"crlf)
 (bind ?head_1 (nth$  (length $?ids) $?ids))
-(assert (using-parser-ids ?relname ?id ?head))
+(assert (relation-parser_ids ?relname ?id ?head))
 (assert (rel_has_been_written ?relname ?id ?head))
-(printout       ?*ol_fp*    "(using-parser-ids  "?relname"  " ?id" " ?head")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  "?relname"  " ?id" " ?head")"crlf)
 (printout ?*debug* "(Rule-Rel-ids    head_transfer_m   " ?relname "    "?id"    "?head")"crlf)
 )
 
@@ -334,8 +334,8 @@
 ;Those that want to come can come.
 (defrule  del_sub_rule
 (declare (salience 500))
-(using-parser-ids kriyA-kqxanwa_karma   ?kri    ?karma)
-?f<-(using-parser-ids  kriyA-subject    ?karma   ?id)
+(relation-parser_ids kriyA-kqxanwa_karma   ?kri    ?karma)
+?f<-(relation-parser_ids  kriyA-subject    ?karma   ?id)
 =>
 (retract ?f)
 (assert (rel_has_been_deleted kriyA-subject ?karma ?id))
@@ -346,13 +346,13 @@
 
 ;Terrorists treat people very badly.
 (defrule add_kri_vi
-(using-parser-ids kriyA-kriyA_viSeRaNa  ?kri    ?kri_vi)
+(relation-parser_ids kriyA-kriyA_viSeRaNa  ?kri    ?kri_vi)
 (ol_res_id-word_id-word ?kri_vi  ?id    ?word)
 (ol_res_id-word_id-word  ?kri_vi_viSeRaka       =(- ?id 1)      very)
 =>
-(assert (using-parser-ids   kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?kri_vi ?kri_vi_viSeRaka))
+(assert (relation-parser_ids   kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?kri_vi ?kri_vi_viSeRaka))
 (assert (rel_has_been_written   kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka  ?kri_vi  ?kri_vi_viSeRaka))
-(printout       ?*ol_fp*    "(using-parser-ids   kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka  " ?kri_vi" " ?kri_vi_viSeRaka")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids   kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka  " ?kri_vi" " ?kri_vi_viSeRaka")"crlf)
 (printout ?*debug* "(Rule-Rel-ids    add_kri_vi    kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka    "?kri_vi"    "kri_vi_viSeRaka")"crlf)
 )
 
@@ -360,16 +360,16 @@
 
 ;How many years did it take to do it?
 (defrule add_kri_obj_rul
-(using-parser-ids viSeRya-det_viSeRaNa  ?kri_vi	?L2)
-(using-parser-ids kriyA-subject  ?kri	?sub)
-(using-parser-ids samAsa  ?L2)
+(relation-parser_ids viSeRya-det_viSeRaNa  ?kri_vi	?P2)
+(relation-parser_ids kriyA-subject  ?kri	?sub)
+(relation-parser_ids samAsa  ?P2)
 (ol_res_id-word_id-word	?kri	?id	take)
-(ol_res_id-word_id-word	?L2	?id1	how many)
+(ol_res_id-word_id-word	?P2	?id1	how many)
 (ol_res_id-word_id-word	?kri_vi	 ?id2	year)
 =>
-(assert (using-parser-ids kriyA-object ?kri ?kri_vi))
+(assert (relation-parser_ids kriyA-object ?kri ?kri_vi))
 (assert (rel_has_been_written  kriyA-object  ?kri ?kri_vi))
-(printout       ?*ol_fp*    "(using-parser-ids    kriyA-object   " ?kri"   " ?kri_vi")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids    kriyA-object   " ?kri"   " ?kri_vi")"crlf)
 (printout ?*debug* "(Rule-Rel-ids    add_kri_obj_rul    kriyA-object   "?kri"    "?kri_vi")"crlf)
 )
 
@@ -377,24 +377,24 @@
 
 ;Geeta and Reeta were born at the same time.(This is just a sample sentence, The object relation between 'born' and 'at the same time' is not correct for this sentence 26-09-10)
 (defrule rel_wit_multiple_ids
-(using-parser-ids ?rel   ?id1 ?id2)
+(relation-parser_ids ?rel   ?id1 ?id2)
 (ol_res_id-word_id-word ?id2    ?id     $?wrds)
 (current_id-group_members	?id	$?id2s)
 (test (>=  (length $?id2s) 3))
 =>
-(printout       ?*ol_fp*    "(using-parser-ids    "?rel"  " ?id1" " ?id2")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids    "?rel"  " ?id1" " ?id2")"crlf)
 (printout ?*debug* "(Rule-Rel-ids    rel_wit_multiple_ids " ?rel"   "?id1"    "?id2")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
 ;
 (defrule rel_wit_multiple_left_ids
-(using-parser-ids ?rel   ?id2 ?id1)
+(relation-parser_ids ?rel   ?id2 ?id1)
 (ol_res_id-word_id-word ?id2    ?id     $?wrds)
 (current_id-group_members       ?id     $?id2s)
 (test (>=  (length $?id2s) 3))
 =>
-(printout       ?*ol_fp*    "(using-parser-ids    "?rel"  " ?id2" " ?id1")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids    "?rel"  " ?id2" " ?id1")"crlf)
 (printout ?*debug* "(Rule-Rel-ids    rel_wit_multiple_left_ids " ?rel"   "?id2"    "?id1")"crlf)
 )
 
@@ -404,11 +404,11 @@
 (defrule add_kri_viSeRaNa_rule
 (ol_res_id-word_id-word	?kri	 ?id	?verb)
 (ol_res_id-word_id-word ?kri_vi =(- ?id 1)     still)
-(using-parser-ids kriyA-subject  ?kri	?sub)
+(relation-parser_ids kriyA-subject  ?kri	?sub)
 =>
-(assert (using-parser-ids kriyA-kriyA_viSeRaNa ?kri ?kri_vi))
+(assert (relation-parser_ids kriyA-kriyA_viSeRaNa ?kri ?kri_vi))
 (assert (rel_has_been_written   kriyA-kriyA_viSeRaNa  ?kri ?kri_vi))
-(printout       ?*ol_fp*    "(using-parser-ids   kriyA-kriyA_viSeRaNa  " ?kri" " ?kri_vi")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids   kriyA-kriyA_viSeRaNa  " ?kri" " ?kri_vi")"crlf)
 (printout ?*debug* "(Rule-Rel-ids    add_kri_viSeRaNa_rule    kriyA-kriyA_viSeRaNa    "?kri"    "?kri_vi")"crlf)
 )
 
@@ -421,9 +421,9 @@
 (parser_id-cat_coarse  ?kri_vi adverb)
 (parser_id-cat_coarse  ?kri verb)
 =>
-(assert (using-parser-ids kriyA-kriyA_viSeRaNa ?kri ?kri_vi))
+(assert (relation-parser_ids kriyA-kriyA_viSeRaNa ?kri ?kri_vi))
 (assert (rel_has_been_written   kriyA-kriyA_viSeRaNa  ?kri ?kri_vi))
-(printout       ?*ol_fp*    "(using-parser-ids    kriyA-kriyA_viSeRaNa  " ?kri" " ?kri_vi")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids    kriyA-kriyA_viSeRaNa  " ?kri" " ?kri_vi")"crlf)
 (printout ?*debug* "(Rule-Rel-ids    add_kriyA_viS    kriyA-kriyA_viSeRaNa   "?kri"    "?kri_vi")"crlf)
 )
 
@@ -435,9 +435,9 @@
 (split_tranlevel-ptype-headid-grpids tran3 PP ?vi  $?id ?det $?id1)
 (ol_res_id-word_id-word ?det  ?i    the|a|an)
 =>
-(assert (using-parser-ids   viSeRya-det_viSeRaNa ?vi ?det))
+(assert (relation-parser_ids   viSeRya-det_viSeRaNa ?vi ?det))
 (assert (rel_has_been_written   viSeRya-det_viSeRaNa  ?vi ?det))
-(printout     ?*ol_fp*    "(using-parser-ids  viSeRya-det_viSeRaNa  " ?vi" " ?det")"crlf)
+(printout     ?*ol_fp*    "(relation-parser_ids  viSeRya-det_viSeRaNa  " ?vi" " ?det")"crlf)
 (printout ?*debug* "(Rule-Rel-ids   add_vi_det   viSeRya-det_viSeRaNa   "?vi"    "?det")"crlf)
 )
 
@@ -446,9 +446,9 @@
 ;I have started working. She began singing. I will keep on trying.
 (defrule del_rel1
 (declare (salience 10))
-(using-parser-ids  kriyA-subject  ?k ?s)
-?f<-(using-parser-ids  kriyA-subject  ?k1 ?s)
-(using-parser-ids  kriyA-object ?k ?k1)
+(relation-parser_ids  kriyA-subject  ?k ?s)
+?f<-(relation-parser_ids  kriyA-subject  ?k1 ?s)
+(relation-parser_ids  kriyA-object ?k ?k1)
 =>
 (retract ?f)
 (assert (rel_has_been_deleted  kriyA-subject  ?k1 ?s))
@@ -461,15 +461,15 @@
 (defrule del_rel_1
 (declare (salience 10))
 (ol_res_id-word_id-word   ?lid ?i   is)
-?f<-(using-parser-ids  kriyA-kqxanwa_karma ?lid ?lid1)
+?f<-(relation-parser_ids  kriyA-kqxanwa_karma ?lid ?lid1)
 (not (id-word ?id than));Added by sheetal:Our program is easier to use than to understand.
 =>
 (retract ?f)
 (assert (rel_has_been_deleted  kriyA-kqxanwa_karma  ?lid ?lid1))
 (printout ?*debug* "(rule-deleted_relation-ids   del_rel_1   kriyA-kqxanwa_karma  "?lid"   " ?lid1")"crlf)
-(assert (using-parser-ids  kriyA-kriyArWa_kriyA ?lid ?lid1))
+(assert (relation-parser_ids  kriyA-kriyArWa_kriyA ?lid ?lid1))
 (assert (rel_has_been_written   kriyA-kriyArWa_kriyA  ?lid ?lid1))
-(printout       ?*ol_fp*    "(using-parser-ids   kriyA-kriyArWa_kriyA    "?lid"    "?lid1")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids   kriyA-kriyArWa_kriyA    "?lid"    "?lid1")"crlf)
 (printout ?*debug* "(Rule-Rel-ids    del_rel_1   kriyA-kriyArWa_kriyA    "?lid"    "?lid1")"crlf)
 )
 
@@ -477,14 +477,14 @@
 
 ;He was sitting next to Mohan's brother.
 (defrule next_to_rule
-(ol_res_id-word_id-word ?L_id   ?id     next)
-(ol_res_id-word_id-word ?L_id1  =(+ ?id 1)      to)
-(using-parser-ids kriyA-to_saMbanXI  ?kri ?noun)
+(ol_res_id-word_id-word ?P_id   ?id     next)
+(ol_res_id-word_id-word ?P_id1  =(+ ?id 1)      to)
+(relation-parser_ids kriyA-to_saMbanXI  ?kri ?noun)
 =>
-(assert (using-parser-ids kriyA-aXikaraNavAcI_avyaya ?kri ?L_id))
-(assert (rel_has_been_written   kriyA-aXikaraNavAcI_avyaya  ?kri ?L_id))
-(printout       ?*ol_fp*    "(using-parser-ids   kriyA-aXikaraNavAcI_avyaya   "?kri"    "?L_id")"crlf)
-(printout ?*debug* "(Rule-Rel-ids    next_to_rule    kriyA-aXikaraNavAcI_avyaya   "?kri"    "?L_id")"crlf)
+(assert (relation-parser_ids kriyA-aXikaraNavAcI_avyaya ?kri ?P_id))
+(assert (rel_has_been_written   kriyA-aXikaraNavAcI_avyaya  ?kri ?P_id))
+(printout       ?*ol_fp*    "(relation-parser_ids   kriyA-aXikaraNavAcI_avyaya   "?kri"    "?P_id")"crlf)
+(printout ?*debug* "(Rule-Rel-ids    next_to_rule    kriyA-aXikaraNavAcI_avyaya   "?kri"    "?P_id")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -494,13 +494,13 @@
 (ol_res_id-word_id-word ?det    ?id     their|her|his|its)
 (ol_res_id-word_id-word ?RaRTI_noun     =(+ ?id 1)      ?w1)
 (ol_res_id-word_id-word ?viSeRya        =(+ ?id 2)      ?w2)
-?f<-(using-parser-ids viSeRya-RaRTI_viSeRaNa  ?viSeRya  ?det)
-(using-parser-ids viSeRya-RaRTI_viSeRaNa  ?viSeRya      ?RaRTI_noun)
+?f<-(relation-parser_ids viSeRya-RaRTI_viSeRaNa  ?viSeRya  ?det)
+(relation-parser_ids viSeRya-RaRTI_viSeRaNa  ?viSeRya      ?RaRTI_noun)
 =>
 (retract ?f)
 (assert (rel_has_been_deleted viSeRya-RaRTI_viSeRaNa  ?viSeRya  ?det))
 (printout ?*debug* "(rule-deleted_relation-ids   del_and_modi_RaRTI_vi  viSeRya-RaRTI_viSeRaNa  "?viSeRya"   " ?det")"crlf)
-(assert (using-parser-ids viSeRya-RaRTI_viSeRaNa ?RaRTI_noun ?det))
+(assert (relation-parser_ids viSeRya-RaRTI_viSeRaNa ?RaRTI_noun ?det))
 (printout ?*debug* "(Rule-Rel-ids    del_and_modi_RaRTI_vi    viSeRya-RaRTI_viSeRaNa   "?RaRTI_noun"    "?det")"crlf)
 )
 
@@ -509,15 +509,15 @@
 ;I saw him telling her about the party.
 (defrule assert_rel
 (declare (salience 10))
-(using-parser-ids  kriyA-object ?lid ?lid1)
-(using-parser-ids  kriyA-subject ?li ?lid1)
-(using-parser-ids  kriyA-object ?li ?lid2)
+(relation-parser_ids  kriyA-object ?lid ?lid1)
+(relation-parser_ids  kriyA-subject ?li ?lid1)
+(relation-parser_ids  kriyA-object ?li ?lid2)
 (ol_res_id-word_id-word ?li    ?id     ?word)
 (test (eq (sub-string (- (length ?word) 2) (length ?word) ?word) "ing"))
 =>
-(assert (using-parser-ids  kriyA-kqxanwa_kriyA_viSeRaNa ?lid ?li))
+(assert (relation-parser_ids  kriyA-kqxanwa_kriyA_viSeRaNa ?lid ?li))
 (assert (rel_has_been_written   kriyA-kqxanwa_kriyA_viSeRaNa  ?lid ?li))
-(printout       ?*ol_fp*    "(using-parser-ids  kriyA-kqxanwa_kriyA_viSeRaNa   "?lid"    "?li")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  kriyA-kqxanwa_kriyA_viSeRaNa   "?lid"    "?li")"crlf)
 (printout ?*debug* "(Rule-Rel-ids    assert_rel   kriyA-kqxanwa_kriyA_viSeRaNa   "?lid"    "?li")"crlf)
 )
 
@@ -526,14 +526,14 @@
 ;Added by sheetal
 ;He commented that the two essays were rather similar.
 (defrule add_viSeRaNa-viSeRaka_rule
-(ol_res_id-word_id-word	?L_id	?id	rather)
-(ol_res_id-word_id-word	?L_vi	=(+ ?id 1)	?word)
-(parser_id-cat_coarse  ?L_vi adjective)
+(ol_res_id-word_id-word	?P_id	?id	rather)
+(ol_res_id-word_id-word	?P_vi	=(+ ?id 1)	?word)
+(parser_id-cat_coarse  ?P_vi adjective)
 =>
-(assert (using-parser-ids viSeRaNa-viSeRaka ?L_vi ?L_id))
-(assert (rel_has_been_written   viSeRaNa-viSeRaka  ?L_vi ?L_id))
-(printout       ?*ol_fp*    "(using-parser-ids  viSeRaNa-viSeRaka   "?L_vi"    "?L_id")"crlf)
-(printout ?*debug* "(Rule-Rel-ids   add_viSeRaNa-viSeRaka_rule   viSeRaNa-viSeRaka   "?L_vi"    "?L_id")"crlf)
+(assert (relation-parser_ids viSeRaNa-viSeRaka ?P_vi ?P_id))
+(assert (rel_has_been_written   viSeRaNa-viSeRaka  ?P_vi ?P_id))
+(printout       ?*ol_fp*    "(relation-parser_ids  viSeRaNa-viSeRaka   "?P_vi"    "?P_id")"crlf)
+(printout ?*debug* "(Rule-Rel-ids   add_viSeRaNa-viSeRaka_rule   viSeRaNa-viSeRaka   "?P_vi"    "?P_id")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -541,31 +541,31 @@
 ;Added by sheetal
 ;The dogs and cats know what happened.
 (defrule add_sub_of_happened
-(ol_res_id-word_id-word   ?L_kri  ?kri  know|knows|knew|knowing)
-(ol_res_id-word_id-word   ?L_what  =(+ ?kri 1)  what)
-(ol_res_id-word_id-word   ?L_hap  ?id happened|happen|happens)
+(ol_res_id-word_id-word   ?P_kri  ?kri  know|knows|knew|knowing)
+(ol_res_id-word_id-word   ?P_what  =(+ ?kri 1)  what)
+(ol_res_id-word_id-word   ?P_hap  ?id happened|happen|happens)
 (ol_res_id-word_id-word	  ?sub  ?id1	?word)
-?f<-(using-parser-ids kriyA-subject  ?L_hap ?sub)
-(using-parser-ids kriyA-subject  ?L_kri ?sub)
-?f1<-(using-parser-ids kriyA-object  ?L_kri ?L_what)
+?f<-(relation-parser_ids kriyA-subject  ?P_hap ?sub)
+(relation-parser_ids kriyA-subject  ?P_kri ?sub)
+?f1<-(relation-parser_ids kriyA-object  ?P_kri ?P_what)
 =>
 (retract ?f ?f1)
-(assert (rel_has_been_deleted   kriyA-subject  ?L_hap ?sub))
-(assert (rel_has_been_deleted   kriyA-object  ?L_kri ?L_what))
-(printout ?*debug* "(rule-deleted_relation-ids    add_sub_of_happened    kriyA-subject   "?L_hap"   " ?sub")"crlf)
-(printout ?*debug* "(rule-deleted_relation-ids    add_sub_of_happened    kriyA-object   "?L_kri"   " ?L_what")"crlf)
-(assert (using-parser-ids kriyA-vAkyakarma  ?L_kri ?L_hap))
-(assert (rel_has_been_written kriyA-vAkyakarma  ?L_kri ?L_hap))
-(printout       ?*ol_fp*    "(using-parser-ids  kriyA-vAkyakarma  "?L_kri"    "?L_hap")"crlf)
-(assert (using-parser-ids kriyA-praSnavAcI  ?L_kri ?L_what))
-(assert (rel_has_been_written  kriyA-praSnavAcI  ?L_kri ?L_what))
-(printout       ?*ol_fp*    "(using-parser-ids  kriyA-praSnavAcI  "?L_kri"    "?L_what")"crlf)
-(assert (using-parser-ids kriyA-subject  ?L_hap ?L_what))
-(assert (rel_has_been_written  kriyA-subject  ?L_hap ?L_what))
-(printout       ?*ol_fp*    "(using-parser-ids  kriyA-subject   "?L_hap"    "?L_what")"crlf)
-(printout ?*debug* "(Rule-Rel-ids   add_sub_of_happened   kriyA-vAkyakarma  "?L_kri"    "?L_hap")"crlf)
-(printout ?*debug* "(Rule-Rel-ids   add_sub_of_happened   kriyA-praSnavAcI  "?L_kri"    "?L_what")"crlf)
-(printout ?*debug* "(Rule-Rel-ids   add_sub_of_happened   kriyA-subject   "?L_hap"    "?L_what")"crlf)
+(assert (rel_has_been_deleted   kriyA-subject  ?P_hap ?sub))
+(assert (rel_has_been_deleted   kriyA-object  ?P_kri ?P_what))
+(printout ?*debug* "(rule-deleted_relation-ids    add_sub_of_happened    kriyA-subject   "?P_hap"   " ?sub")"crlf)
+(printout ?*debug* "(rule-deleted_relation-ids    add_sub_of_happened    kriyA-object   "?P_kri"   " ?P_what")"crlf)
+(assert (relation-parser_ids kriyA-vAkyakarma  ?P_kri ?P_hap))
+(assert (rel_has_been_written kriyA-vAkyakarma  ?P_kri ?P_hap))
+(printout       ?*ol_fp*    "(relation-parser_ids  kriyA-vAkyakarma  "?P_kri"    "?P_hap")"crlf)
+(assert (relation-parser_ids kriyA-praSnavAcI  ?P_kri ?P_what))
+(assert (rel_has_been_written  kriyA-praSnavAcI  ?P_kri ?P_what))
+(printout       ?*ol_fp*    "(relation-parser_ids  kriyA-praSnavAcI  "?P_kri"    "?P_what")"crlf)
+(assert (relation-parser_ids kriyA-subject  ?P_hap ?P_what))
+(assert (rel_has_been_written  kriyA-subject  ?P_hap ?P_what))
+(printout       ?*ol_fp*    "(relation-parser_ids  kriyA-subject   "?P_hap"    "?P_what")"crlf)
+(printout ?*debug* "(Rule-Rel-ids   add_sub_of_happened   kriyA-vAkyakarma  "?P_kri"    "?P_hap")"crlf)
+(printout ?*debug* "(Rule-Rel-ids   add_sub_of_happened   kriyA-praSnavAcI  "?P_kri"    "?P_what")"crlf)
+(printout ?*debug* "(Rule-Rel-ids   add_sub_of_happened   kriyA-subject   "?P_hap"    "?P_what")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -573,14 +573,14 @@
 ;Added by sheetal.
 ;The question is who we should invite.
 (defrule add_vAkyasamAnAXikarNa_rule
-(using-parser-ids kriyA-subject  ?kri   ?sub)
-?f<-(using-parser-ids kriyA-vAkyakarma  ?id     ?kri1)
+(relation-parser_ids kriyA-subject  ?kri   ?sub)
+?f<-(relation-parser_ids kriyA-vAkyakarma  ?id     ?kri1)
 =>
 (retract ?f)
 (assert (rel_has_been_deleted  kriyA-vAkyakarma  ?id ?kri1))
-(assert (using-parser-ids subject-vAkyasamAnAXikarNa ?sub ?kri1))
+(assert (relation-parser_ids subject-vAkyasamAnAXikarNa ?sub ?kri1))
 (assert (rel_has_been_written   subject-vAkyasamAnAXikarNa  ?sub ?kri1))
-(printout       ?*ol_fp*    "(using-parser-ids  subject-vAkyasamAnAXikarNa   "?sub"    "?kri1")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  subject-vAkyasamAnAXikarNa   "?sub"    "?kri1")"crlf)
 (printout ?*debug* "(rule-deleted_relation-ids    add_vAkyasamAnAXikarNa_rule    kriyA-vAkyakarma   "?id"   " ?kri1")"crlf)
 (printout ?*debug* "(Rule-Rel-ids   add_vAkyasamAnAXikarNa_rule   subject-vAkyasamAnAXikarNa   "?sub"    "?kri1")"crlf)
 )
@@ -590,14 +590,14 @@
 ;Added by sheetal
 ;The missiles were zeroed in on the enemy camps.
 (defrule add_kri_upsarg_rel
-(ol_res_id-word_id-word	?L_kri	?id	zeroed)
-(ol_res_id-word_id-word	?L_upsg	=(+ ?id 1)	in)
-(ol_res_id-word_id-word	?L_prep	=(+ ?id 2)	on)
+(ol_res_id-word_id-word	?P_kri	?id	zeroed)
+(ol_res_id-word_id-word	?P_upsg	=(+ ?id 1)	in)
+(ol_res_id-word_id-word	?P_prep	=(+ ?id 2)	on)
 =>
-(assert (using-parser-ids kriyA-upasarga ?L_kri ?L_upsg))
-(assert (rel_has_been_written   kriyA-upasarga   ?L_kri ?L_upsg))
-(printout       ?*ol_fp*    "(using-parser-ids  kriyA-upasarga   "?L_kri"    "?L_upsg")"crlf)
-(printout ?*debug* "(Rule-Rel-ids    add_kri_upsarg_rel   kriyA-upasarga   "?L_kri"    "?L_upsg")"crlf)
+(assert (relation-parser_ids kriyA-upasarga ?P_kri ?P_upsg))
+(assert (rel_has_been_written   kriyA-upasarga   ?P_kri ?P_upsg))
+(printout       ?*ol_fp*    "(relation-parser_ids  kriyA-upasarga   "?P_kri"    "?P_upsg")"crlf)
+(printout ?*debug* "(Rule-Rel-ids    add_kri_upsarg_rel   kriyA-upasarga   "?P_kri"    "?P_upsg")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -607,14 +607,14 @@
 (ol_res_id-word_id-word	?kri	?id	?verb)
 (ol_res_id-word_id-word	?kri_vi	=(+ ?id 1)	downwards)
 (parser_id-cat_coarse  ?kri verb)
-?f<-(using-parser-ids kriyA-object  ?kri	?kri_vi)
+?f<-(relation-parser_ids kriyA-object  ?kri	?kri_vi)
 =>
 (retract ?f)
 (assert (rel_has_been_deleted   kriyA-object  ?kri ?kri_vi))
 (printout ?*debug* "(rule-deleted_relation-ids    add_kri_vi_rule    kriyA-object  "?kri"   " ?kri_vi")"crlf)
-(assert (using-parser-ids kriyA-kriyA_viSeRaNa  ?kri        ?kri_vi))
+(assert (relation-parser_ids kriyA-kriyA_viSeRaNa  ?kri        ?kri_vi))
 (assert (rel_has_been_written   kriyA-kriyA_viSeRaNa  ?kri ?kri_vi))
-(printout       ?*ol_fp*    "(using-parser-ids  kriyA-kriyA_viSeRaNa   "?kri"    "?kri_vi")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  kriyA-kriyA_viSeRaNa   "?kri"    "?kri_vi")"crlf)
 (printout ?*debug* "(Rule-Rel-ids    add_kri_vi_rule   kriyA-kriyA_viSeRaNa   "?kri"    "?kri_vi")"crlf)
 )
 
@@ -622,40 +622,40 @@
 
 ;I really like the way you do your hair.
 (defrule del_and_add_RaRTI_vi_rule
-(ol_res_id-word_id-word	?L_RaRTI	?id	your)
-(ol_res_id-word_id-word	?L_vi	?id2	?wrd)
-?f<-(using-parser-ids viSeRya-viSeRaNa  ?L_vi	?L_RaRTI)
+(ol_res_id-word_id-word	?P_RaRTI	?id	your)
+(ol_res_id-word_id-word	?P_vi	?id2	?wrd)
+?f<-(relation-parser_ids viSeRya-viSeRaNa  ?P_vi	?P_RaRTI)
 =>
 (retract ?f)
-(assert (rel_has_been_deleted  viSeRya-viSeRaNa  ?L_vi ?L_RaRTI))
-(printout ?*debug* "(rule-deleted_relation-ids    del_and_add_RaRTI_vi_rule   viSeRya-viSeRaNa   "?L_vi"   " ?L_RaRTI")"crlf)
-(assert (using-parser-ids viSeRya-RaRTI_viSeRaNa ?L_vi   ?L_RaRTI))
-(assert (rel_has_been_written   viSeRya-RaRTI_viSeRaNa  ?L_vi  ?L_RaRTI))
-(printout       ?*ol_fp*    "(using-parser-ids  viSeRya-RaRTI_viSeRaNa  "?L_vi"    "?L_RaRTI")"crlf)
-(printout ?*debug* "(Rule-Rel-ids   del_and_add_RaRTI_vi_rule   viSeRya-RaRTI_viSeRaNa  "?L_vi"    "?L_RaRTI")"crlf)
+(assert (rel_has_been_deleted  viSeRya-viSeRaNa  ?P_vi ?P_RaRTI))
+(printout ?*debug* "(rule-deleted_relation-ids    del_and_add_RaRTI_vi_rule   viSeRya-viSeRaNa   "?P_vi"   " ?P_RaRTI")"crlf)
+(assert (relation-parser_ids viSeRya-RaRTI_viSeRaNa ?P_vi   ?P_RaRTI))
+(assert (rel_has_been_written   viSeRya-RaRTI_viSeRaNa  ?P_vi  ?P_RaRTI))
+(printout       ?*ol_fp*    "(relation-parser_ids  viSeRya-RaRTI_viSeRaNa  "?P_vi"    "?P_RaRTI")"crlf)
+(printout ?*debug* "(Rule-Rel-ids   del_and_add_RaRTI_vi_rule   viSeRya-RaRTI_viSeRaNa  "?P_vi"    "?P_RaRTI")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
 
 ;They are building a gigantic mall five miles from here
 (defrule kri-measure
-?f<-(using-parser-ids kriyA-object_1   ?L4  ?L7)
-?f1<-(using-parser-ids kriyA-object_2  ?L4  ?L9)
-(ol_res_id-word_id-word   ?L9 ?id1 mile)
+?f<-(relation-parser_ids kriyA-object_1   ?P4  ?P7)
+?f1<-(relation-parser_ids kriyA-object_2  ?P4  ?P9)
+(ol_res_id-word_id-word   ?P9 ?id1 mile)
 =>
 (retract ?f ?f1)
-(assert (rel_has_been_deleted  kriyA-object_1  ?L4 ?L7))
-(assert (rel_has_been_deleted  kriyA-object_2  ?L4 ?L9))
-(printout ?*debug* "(rule-deleted_relation-ids    kri-measure   kriyA-object_1   "?L4"   " ?L7")"crlf)
-(printout ?*debug* "(rule-deleted_relation-ids    kri-measure   kriyA-object_2   "?L4"   " ?L9")"crlf)
-(assert (using-parser-ids kriyA-object  ?L4   ?L7))
-(assert (rel_has_been_written  kriyA-object  ?L4 ?L7))
-(printout       ?*ol_fp*    "(using-parser-ids  kriyA-object   "?L4"    "?L7")"crlf)
-(assert (using-parser-ids kriyA-measurement ?L4   ?L9))
-(assert (rel_has_been_written  kriyA-measurement  ?L4 ?L9))
-(printout       ?*ol_fp*    "(using-parser-ids  kriyA-measurement   "?L4"    "?L9")"crlf)
-(printout ?*debug* "(Rule-Rel-ids  kri-measure   kriyA-object   "?L4"    "?L7")"crlf)
-(printout ?*debug* "(Rule-Rel-ids  kri-measure   kriyA-measurement   "?L4"    "?L9")"crlf)
+(assert (rel_has_been_deleted  kriyA-object_1  ?P4 ?P7))
+(assert (rel_has_been_deleted  kriyA-object_2  ?P4 ?P9))
+(printout ?*debug* "(rule-deleted_relation-ids    kri-measure   kriyA-object_1   "?P4"   " ?P7")"crlf)
+(printout ?*debug* "(rule-deleted_relation-ids    kri-measure   kriyA-object_2   "?P4"   " ?P9")"crlf)
+(assert (relation-parser_ids kriyA-object  ?P4   ?P7))
+(assert (rel_has_been_written  kriyA-object  ?P4 ?P7))
+(printout       ?*ol_fp*    "(relation-parser_ids  kriyA-object   "?P4"    "?P7")"crlf)
+(assert (relation-parser_ids kriyA-measurement ?P4   ?P9))
+(assert (rel_has_been_written  kriyA-measurement  ?P4 ?P9))
+(printout       ?*ol_fp*    "(relation-parser_ids  kriyA-measurement   "?P4"    "?P9")"crlf)
+(printout ?*debug* "(Rule-Rel-ids  kri-measure   kriyA-object   "?P4"    "?P7")"crlf)
+(printout ?*debug* "(Rule-Rel-ids  kri-measure   kriyA-measurement   "?P4"    "?P9")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -664,19 +664,19 @@
 ;Can you tell us where those strange ideas came from?
 (defrule add_from_saMb_rule
 (ol_res_id-word_id-word ?prep     ?id      from)
-(using-parser-ids kriyA-conjunction  ?kri	?where)
-(using-parser-ids kriyA-subject  ?kri	?sub)
-?f<-(using-parser-ids kriyA-aXikaraNavAcI_avyaya  ?kri	?where) 
-?f1<-(using-parser-ids kriyA-object  ?kri	?prep)
+(relation-parser_ids kriyA-conjunction  ?kri	?where)
+(relation-parser_ids kriyA-subject  ?kri	?sub)
+?f<-(relation-parser_ids kriyA-aXikaraNavAcI_avyaya  ?kri	?where) 
+?f1<-(relation-parser_ids kriyA-object  ?kri	?prep)
 =>
 (retract ?f ?f1)
 (assert (rel_has_been_deleted   kriyA-aXikaraNavAcI_avyaya  ?kri ?where))
 (assert (rel_has_been_deleted   kriyA-object ?kri ?prep))
 (printout ?*debug* "(rule-deleted_relation-ids    add_from_saMb_rule   kriyA-aXikaraNavAcI_avyaya    "?kri"   " ?where")"crlf)
 (printout ?*debug* "(rule-deleted_relation-ids    add_from_saMb_rule   kriyA-object   "?kri"   " ?prep")"crlf)
-(assert (using-parser-ids kriyA-from_saMbanXI ?kri ?where))
+(assert (relation-parser_ids kriyA-from_saMbanXI ?kri ?where))
 (assert (rel_has_been_written   kriyA-from_saMbanXI  ?kri ?where))
-(printout       ?*ol_fp*    "(using-parser-ids  kriyA-from_saMbanXI   "?kri"    "?where")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  kriyA-from_saMbanXI   "?kri"    "?where")"crlf)
 (printout ?*debug* "(Rule-Rel-ids   add_from_saMb_rule   kriyA-from_saMbanXI   "?kri"    "?where")"crlf)
 )
 
@@ -686,17 +686,17 @@
 ;The school admits only 50 students at a time.
 (defrule add_viSeRya-saMKyA_viSeRaNa
 (ol_res_id-word_id-word	?saMKyA	?id	50)
-?f<-(using-parser-ids viSeRaNa-viSeRaka  ?vi	?saMKyA)
-?f1<-(using-parser-ids viSeRya-viSeRaNa  ?vi	?saMKyA)
+?f<-(relation-parser_ids viSeRaNa-viSeRaka  ?vi	?saMKyA)
+?f1<-(relation-parser_ids viSeRya-viSeRaNa  ?vi	?saMKyA)
 =>
 (retract ?f ?f1)
 (assert (rel_has_been_deleted  viSeRaNa-viSeRaka  ?vi ?saMKyA))
 (assert (rel_has_been_deleted  viSeRaNa-viSeRaNa  ?vi ?saMKyA))
 (printout ?*debug* "(rule-deleted_relation-ids    add_viSeRya-saMKyA_viSeRaNa   viSeRaNa-viSeRaka   "?vi"   " ?saMKyA")"crlf)
 (printout ?*debug* "(rule-deleted_relation-ids    add_from_saMb_rule   viSeRya-viSeRaNa    "?vi"   " ?saMKyA")"crlf)
-(assert (using-parser-ids viSeRya-saMKyA_viSeRaNa ?vi    ?saMKyA))
+(assert (relation-parser_ids viSeRya-saMKyA_viSeRaNa ?vi    ?saMKyA))
 (assert (rel_has_been_written  viSeRya-saMKyA_viSeRaNa  ?vi ?saMKyA))
-(printout       ?*ol_fp*    "(using-parser-ids  viSeRya-saMKyA_viSeRaNa   "?vi"    "?saMKyA")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  viSeRya-saMKyA_viSeRaNa   "?vi"    "?saMKyA")"crlf)
 (printout ?*debug* "(Rule-Rel-ids   add_viSeRya-saMKyA_viSeRaNa   viSeRya-saMKyA_viSeRaNa   "?vi"    "?saMKyA")"crlf)
 )
 
@@ -707,17 +707,17 @@
 (defrule add_kri_vi_viSeRaka_rule
 (ol_res_id-word_id-word	?adv1	?id	certainly)
 (ol_res_id-word_id-word	?adv2	=(- ?id 1)	almost)
-(using-parser-ids kriyA-subject ?kri ?sub)
+(relation-parser_ids kriyA-subject ?kri ?sub)
 (parser_id-cat_coarse  ?adv1 adverb)
 (parser_id-cat_coarse  ?adv2 adverb)
 (test (> (string_to_integer ?kri)(string_to_integer ?adv1)))
 =>
-(assert (using-parser-ids kriyA-kriyA_viSeRaNa ?kri ?adv1))
+(assert (relation-parser_ids kriyA-kriyA_viSeRaNa ?kri ?adv1))
 (assert (rel_has_been_written   kriyA-kriyA_viSeRaNa  ?kri ?adv1))
-(printout       ?*ol_fp*    "(using-parser-ids  kriyA-kriyA_viSeRaNa   "?kri"    "?adv1")"crlf)
-(assert (using-parser-ids kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?adv1 ?adv2))
+(printout       ?*ol_fp*    "(relation-parser_ids  kriyA-kriyA_viSeRaNa   "?kri"    "?adv1")"crlf)
+(assert (relation-parser_ids kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?adv1 ?adv2))
 (assert (rel_has_been_written  kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka  ?adv1 ?adv2))
-(printout       ?*ol_fp*    "(using-parser-ids  kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka   "?adv1"    "?adv2")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka   "?adv1"    "?adv2")"crlf)
 (printout ?*debug* "(Rule-Rel-ids   add_kri_vi_viSeRaka_rule   kriyA-kriyA_viSeRaNa   "?kri"    "?adv1")"crlf)
 (printout ?*debug* "(Rule-Rel-ids   add_kri_vi_viSeRaka_rule   kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka   "?adv1"    "?adv2")"crlf)
 )
@@ -727,43 +727,43 @@
 ;Added by sheetal
 ;Our program is easier to use than to understand.
 (defrule add_saMjFA-kqxanwa_rel
-(ol_res_id-word_id-word	?L8	?id	than)
-(using-parser-ids to-infinitive  ?L9	?L10)
-?f1<-(using-parser-ids kriyA-subject  ?L10	?L3)
-(ol_res_id-word_id-word	?L5	?id1	?wrd)
-(using-parser-ids to-infinitive  ?L6     ?L7)
-?f<-(using-parser-ids kriyA-kqxanwa_karma  ?L4	?L7)
-(test (and (eq (- (string_to_integer ?L9)1)(string_to_integer ?L8)) (eq (- (string_to_integer ?L6)1) (string_to_integer ?L5))(neq ?wrd than)))
+(ol_res_id-word_id-word	?P8	?id	than)
+(relation-parser_ids to-infinitive  ?P9	?P10)
+?f1<-(relation-parser_ids kriyA-subject  ?P10	?P3)
+(ol_res_id-word_id-word	?P5	?id1	?wrd)
+(relation-parser_ids to-infinitive  ?P6     ?P7)
+?f<-(relation-parser_ids kriyA-kqxanwa_karma  ?P4	?P7)
+(test (and (eq (- (string_to_integer ?P9)1)(string_to_integer ?P8)) (eq (- (string_to_integer ?P6)1) (string_to_integer ?P5))(neq ?wrd than)))
 =>
 (retract ?f ?f1)
-(assert (rel_has_been_deleted   kriyA-kqxanwa_karma  ?L4 ?L7))
-(assert (rel_has_been_deleted   kriyA-subject   ?L10 ?L3))
-(printout ?*debug* "(rule-deleted_relation-ids    add_saMjFA-kqxanwa_rule   kriyA-kqxanwa_karma    "?L4"   " ?L7")"crlf)
-(printout ?*debug* "(rule-deleted_relation-ids    add_saMjFA-kqxanwa_rule   kriyA-subject    "?L10"   " ?L3")"crlf)
-(assert (using-parser-ids saMjFA-kqxanwa ?L5 ?L7))
-(assert (rel_has_been_written  saMjFA-kqxanwa  ?L5 ?L7))
-(printout       ?*ol_fp*    "(using-parser-ids  saMjFA-kqxanwa  "?L5"    "?L7")"crlf)
-(assert (using-parser-ids saMjFA-kqxanwa ?L8 ?L10))
-(assert (rel_has_been_written  saMjFA-kqxanwa  ?L8 ?L10))
-(printout       ?*ol_fp*    "(using-parser-ids  saMjFA-kqxanwa  "?L8"    "?L10")"crlf)
-(printout ?*debug* "(Rule-Rel-ids   add_saMjFA-kqxanwa_rel   saMjFA-kqxanwa  "?L5"    "?L7")"crlf)
-(printout ?*debug* "(Rule-Rel-ids   add_saMjFA-kqxanwa_rel   saMjFA-kqxanwa  "?L8"    "?L10")"crlf)
+(assert (rel_has_been_deleted   kriyA-kqxanwa_karma  ?P4 ?P7))
+(assert (rel_has_been_deleted   kriyA-subject   ?P10 ?P3))
+(printout ?*debug* "(rule-deleted_relation-ids    add_saMjFA-kqxanwa_rule   kriyA-kqxanwa_karma    "?P4"   " ?P7")"crlf)
+(printout ?*debug* "(rule-deleted_relation-ids    add_saMjFA-kqxanwa_rule   kriyA-subject    "?P10"   " ?P3")"crlf)
+(assert (relation-parser_ids saMjFA-kqxanwa ?P5 ?P7))
+(assert (rel_has_been_written  saMjFA-kqxanwa  ?P5 ?P7))
+(printout       ?*ol_fp*    "(relation-parser_ids  saMjFA-kqxanwa  "?P5"    "?P7")"crlf)
+(assert (relation-parser_ids saMjFA-kqxanwa ?P8 ?P10))
+(assert (rel_has_been_written  saMjFA-kqxanwa  ?P8 ?P10))
+(printout       ?*ol_fp*    "(relation-parser_ids  saMjFA-kqxanwa  "?P8"    "?P10")"crlf)
+(printout ?*debug* "(Rule-Rel-ids   add_saMjFA-kqxanwa_rel   saMjFA-kqxanwa  "?P5"    "?P7")"crlf)
+(printout ?*debug* "(Rule-Rel-ids   add_saMjFA-kqxanwa_rel   saMjFA-kqxanwa  "?P8"    "?P10")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
 
 ;I have been grading these stupid exams all day.
 (defrule kri-lupwa_prep
-?f1<-(using-parser-ids kriyA-object_2  ?k   ?o)
+?f1<-(relation-parser_ids kriyA-object_2  ?k   ?o)
 (ol_res_id-word_id-word   ?o ?id1 today|night|yesterday|tomorrow|week|month|year|sunday|monday|tuesday|wednesday|thursday|friday|saturday|january|february|march|april|may|june|july|august|september|october|november|december|season|evening|day)
 (ol_res_id-word_id-word   ?id  =(- ?id1 1) ~good) ;He will sing you good night.
 =>
 (retract ?f1)
 (assert (rel_has_been_deleted  kriyA-object_2   ?k  ?o))
 (printout ?*debug* "(rule-deleted_relation-ids    kri-lupwa_prep   kriyA-object_2    "?k"   " ?o")"crlf)
-(assert (using-parser-ids kriyA-kAlavAcI  ?k  ?o))
+(assert (relation-parser_ids kriyA-kAlavAcI  ?k  ?o))
 (assert (rel_has_been_written  kriyA-kAlavAcI  ?k ?o))
-(printout       ?*ol_fp*    "(using-parser-ids  kriyA-kAlavAcI  "?k"    "?o")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  kriyA-kAlavAcI  "?k"    "?o")"crlf)
 (printout ?*debug* "(Rule-Rel-ids   kri-lupwa_prep   kriyA-kAlavAcI  "?k"    "?o")"crlf)
 )
 
@@ -771,17 +771,17 @@
 
 ;How certain are you that John is coming.
 (defrule how
-?f1<-(using-parser-ids viSeRaNa-viSeRaka ?v ?how)
+?f1<-(relation-parser_ids viSeRaNa-viSeRaka ?v ?how)
 (ol_res_id-word_id-word   ?how? ?id1  how)
-?f2<-(using-parser-ids ?rel ?s ?how)
+?f2<-(relation-parser_ids ?rel ?s ?how)
 (test (neq ?rel viSeRaNa-viSeRaka))
 =>
 (retract ?f2)
 (assert (rel_has_been_deleted   ?rel ?s ?how))
 (printout ?*debug* "(rule-deleted_relation-ids    how   "?rel "    "?s"   " ?how")"crlf)
-(assert (using-parser-ids ?rel ?s ?v))
+(assert (relation-parser_ids ?rel ?s ?v))
 (assert (rel_has_been_written  ?rel ?s ?v))
-(printout       ?*ol_fp*    "(using-parser-ids  " ?rel "   "?s"    "?v")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  " ?rel "   "?s"    "?v")"crlf)
 (printout ?*debug* "(Rule-Rel-ids    how   " ?rel "   "?s"    "?v")"crlf)
 )
 
@@ -789,15 +789,15 @@
 
 ;How certain are you that John is coming.
 (defrule how_1
-?f1<-(using-parser-ids viSeRaNa-viSeRaka ?v ?how)
+?f1<-(relation-parser_ids viSeRaNa-viSeRaka ?v ?how)
 (ol_res_id-word_id-word   ?how? ?id1  how)
-?f2<-(using-parser-ids ?rel  ?how ?s)
+?f2<-(relation-parser_ids ?rel  ?how ?s)
 (test (neq ?rel viSeRaNa-viSeRaka))
 =>
 (retract ?f2)
 (assert (rel_has_been_deleted  ?rel  ?how ?s))
 (printout ?*debug* "(rule-deleted_relation-ids    how_1   "?rel "    "?how"   " ?s")"crlf)
-(assert (using-parser-ids ?rel ?v ?s))
+(assert (relation-parser_ids ?rel ?v ?s))
 (printout ?*debug* "(Rule-Rel-ids   how_1  " ?rel "   "?s"    "?v")"crlf)
 )
 
@@ -805,16 +805,16 @@
 
 ;Police is still hoping to find the dead woman's killer.
 (defrule RaRTI_viSeRaNa-vise
-(using-parser-ids  viSeRya-RaRTI_viSeRaNa ?v ?R)
-?f1<-(using-parser-ids  viSeRya-viSeRaNa ?v ?x)
+(relation-parser_ids  viSeRya-RaRTI_viSeRaNa ?v ?R)
+?f1<-(relation-parser_ids  viSeRya-viSeRaNa ?v ?x)
 (test  (eq (string_to_integer ?x) (- (string_to_integer ?R)1)))
 =>
 (retract ?f1)
 (assert (rel_has_been_deleted  viSeRya-viSeRaNa   ?v ?x))
 (printout ?*debug* "(rule-deleted_relation-ids    RaRTI_viSeRaNa-vise   viSeRya-viSeRaNa    "?v"   " ?x")"crlf)
-(assert (using-parser-ids viSeRya-viSeRaNa ?R ?x))
+(assert (relation-parser_ids viSeRya-viSeRaNa ?R ?x))
 (assert (rel_has_been_written  viSeRya-viSeRaNa  ?R ?x))
-(printout       ?*ol_fp*    "(using-parser-ids  viSeRya-viSeRaNa   "?R"    "?x")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  viSeRya-viSeRaNa   "?R"    "?x")"crlf)
 (printout ?*debug* "(Rule-Rel-ids   RaRTI_viSeRaNa-vise   viSeRya-viSeRaNa   "?R"    "?x")"crlf)
 )
 
@@ -823,15 +823,15 @@
 ;Added by sheetal
 ;He told me why he was here and what he was doing.
 (defrule del_sub_samAna_with_and
-(ol_res_id-word_id-word ?L_and     ?id     and)
+(ol_res_id-word_id-word ?P_and     ?id     and)
 (ol_res_id-word_id-word	?kri	=(- ?id 2)	?was)
-(ol_res_id-word_id-word	?L_id	=(- ?id 1)	?here)
-(using-parser-ids kriyA-subject  ?kri	?sub)
-?f<-(using-parser-ids subject-subject_samAnAXikaraNa  ?sub	?L_and)
+(ol_res_id-word_id-word	?P_id	=(- ?id 1)	?here)
+(relation-parser_ids kriyA-subject  ?kri	?sub)
+?f<-(relation-parser_ids subject-subject_samAnAXikaraNa  ?sub	?P_and)
 =>
 (retract ?f)
-(assert (rel_has_been_deleted   subject-subject_samAnAXikaraNa  ?sub ?L_and))
-(printout ?*debug* "(rule-deleted_relation-ids   del_sub_samAna_with_and  subject-subject_samAnAXikaraNa  "?sub "    " ?L_and")"crlf)
+(assert (rel_has_been_deleted   subject-subject_samAnAXikaraNa  ?sub ?P_and))
+(printout ?*debug* "(rule-deleted_relation-ids   del_sub_samAna_with_and  subject-subject_samAnAXikaraNa  "?sub "    " ?P_and")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -839,15 +839,15 @@
 ;Added by sheetal
 ;Many people can speak but only a few can act.
 (defrule add_viSeRya_viSeRaka
-(ol_res_id-word_id-word	?L_conj	?id	?conj)
-(ol_res_id-word_id-word	?L_vi	=(+ ?id 1)	only)
-(using-parser-ids kriyA-conjunction ?kri	?L_conj)
-(using-parser-ids  kriyA-subject  ?kri ?sub)
+(ol_res_id-word_id-word	?P_conj	?id	?conj)
+(ol_res_id-word_id-word	?P_vi	=(+ ?id 1)	only)
+(relation-parser_ids kriyA-conjunction ?kri	?P_conj)
+(relation-parser_ids  kriyA-subject  ?kri ?sub)
 =>
-(assert (using-parser-ids viSeRya-viSeRaka ?sub ?L_vi))
-(assert (rel_has_been_written  viSeRya-viSeRaka  ?sub ?L_vi))
-(printout       ?*ol_fp*    "(using-parser-ids  viSeRya-viSeRaka "?sub"    "?L_vi")"crlf)
-(printout ?*debug* "(Rule-Rel-ids add_viSeRya_viSeRaka viSeRya-viSeRaka "?sub"    "?L_vi")"crlf)
+(assert (relation-parser_ids viSeRya-viSeRaka ?sub ?P_vi))
+(assert (rel_has_been_written  viSeRya-viSeRaka  ?sub ?P_vi))
+(printout       ?*ol_fp*    "(relation-parser_ids  viSeRya-viSeRaka "?sub"    "?P_vi")"crlf)
+(printout ?*debug* "(Rule-Rel-ids add_viSeRya_viSeRaka viSeRya-viSeRaka "?sub"    "?P_vi")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -857,12 +857,12 @@
 (defrule add_no_as_det_viSeRaNa
 (ol_res_id-word_id-word	?verb	?id	made|make|makes)
 (ol_res_id-word_id-word	?no	=(+ ?id 1)	no)
-(ol_res_id-word_id-word	?L_wrd	=(+ ?id 2)	?wrd)
+(ol_res_id-word_id-word	?P_wrd	=(+ ?id 2)	?wrd)
 =>
-(assert (using-parser-ids viSeRya-det_viSeRaNa ?L_wrd ?no))
-(assert (rel_has_been_written  viSeRya-det_viSeRaNa   ?L_wrd ?no))
-(printout       ?*ol_fp*    "(using-parser-ids  viSeRya-det_viSeRaNa "?L_wrd"    "?no")"crlf)
-(printout ?*debug* "(Rule-Rel-ids add_no_as_det_viSeRaNa viSeRya-det_viSeRaNa "?L_wrd"    "?no")"crlf)
+(assert (relation-parser_ids viSeRya-det_viSeRaNa ?P_wrd ?no))
+(assert (rel_has_been_written  viSeRya-det_viSeRaNa   ?P_wrd ?no))
+(printout       ?*ol_fp*    "(relation-parser_ids  viSeRya-det_viSeRaNa "?P_wrd"    "?no")"crlf)
+(printout ?*debug* "(Rule-Rel-ids add_no_as_det_viSeRaNa viSeRya-det_viSeRaNa "?P_wrd"    "?no")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -874,9 +874,9 @@
 (ol_res_id-word_id-word	?kri	=(+ ?id 1)	?verb)
 (parser_id-cat_coarse  ?kri verb)
 =>
-(assert (using-parser-ids kriyA-kriyA_viSeRaNa ?kri ?adv))
+(assert (relation-parser_ids kriyA-kriyA_viSeRaNa ?kri ?adv))
 (assert (rel_has_been_written   kriyA-kriyA_viSeRaNa   ?kri ?adv))
-(printout       ?*ol_fp*    "(using-parser-ids  kriyA-kriyA_viSeRaNa "?kri"    "?adv")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  kriyA-kriyA_viSeRaNa "?kri"    "?adv")"crlf)
 (printout ?*debug* "(Rule-Rel-ids add_ever_as_kri_viSeRaNa kriyA-kriyA_viSeRaNa "?kri"    "?adv")"crlf)
 )
 
@@ -890,10 +890,10 @@
 (ol_res_id-word_id-word	?sub	?id	?wrd1)
 (ol_res_id-word_id-word	?v_noun	=(+ ?id 1)	?wrd2)
 (test (eq (sub-string (- (length ?wrd2) 2) (length ?wrd2) ?wrd2) "ing"))
-(using-parser-ids kriyA-subject  ?kri	?sub)
+(relation-parser_ids kriyA-subject  ?kri	?sub)
 =>
 (assert (rel_has_been_written   viSeRya-kqxanwa_viSeRaNa  ?sub ?v_noun))
-(printout       ?*ol_fp*    "(using-parser-ids  viSeRya-kqxanwa_viSeRaNa  "?sub"    "?v_noun")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  viSeRya-kqxanwa_viSeRaNa  "?sub"    "?v_noun")"crlf)
 (printout ?*debug* "(Rule-Rel-ids add_kqxanwa_viSeRaNa_rule  viSeRya-kqxanwa_viSeRaNa  "?sub"    "?v_noun")"crlf)
 )
 
@@ -901,9 +901,9 @@
 
 ;It was interesting to hear about school life in Britain.
 (defrule s_s_kq_karma
-(using-parser-ids  subject-subject_samAnAXikaraNa ?s ?ss)
-(using-parser-ids  kriyA-kqxanwa_karma ?ss ?x)
-?f1<-(using-parser-ids  kriyA-kqxanwa_karma ?k ?x)
+(relation-parser_ids  subject-subject_samAnAXikaraNa ?s ?ss)
+(relation-parser_ids  kriyA-kqxanwa_karma ?ss ?x)
+?f1<-(relation-parser_ids  kriyA-kqxanwa_karma ?k ?x)
 (test (neq ?k ?ss))
 =>
 (retract ?f1)
@@ -915,16 +915,16 @@
 
 ;The party last week was a big success.
 (defrule s_s_sa
-?f1<-(using-parser-ids  subject-subject_samAnAXikaraNa ?x ?ss)
-(using-parser-ids  kriyA-subject ?k ?s)
-(using-parser-ids  kriyA-kAlavAcI ?k ?x)
-?f<-(using-parser-ids  kriyA-subject ?k ?x)
+?f1<-(relation-parser_ids  subject-subject_samAnAXikaraNa ?x ?ss)
+(relation-parser_ids  kriyA-subject ?k ?s)
+(relation-parser_ids  kriyA-kAlavAcI ?k ?x)
+?f<-(relation-parser_ids  kriyA-subject ?k ?x)
 (test (neq ?s ?x))
 =>
 (retract ?f ?f1)
 (assert (rel_has_been_deleted  subject-subject_samAnAXikaraNa  ?x ?ss))
 (assert (rel_has_been_deleted  kriyA-subject ?k ?x))
-(printout       ?*ol_fp*    "(using-parser-ids  subject-subject_samAnAXikaraNa  "?s"  " ?ss")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  subject-subject_samAnAXikaraNa  "?s"  " ?ss")"crlf)
 (printout ?*debug* "(Rule-Rel-ids   s_s_sa    subject-subject_samAnAXikaraNa  "?s"    " ?ss")"crlf)
 (printout ?*debug* "(Rule-Rel-ids    s_s_sa    subject-subject_samAnAXikaraNa    "?s"   " ?ss")"crlf)
 (printout ?*debug* "(rule-deleted_relation-ids    s_s_sa    subject-subject_samAnAXikaraNa    "?x"   " ?ss")"crlf)
@@ -938,17 +938,17 @@
 (defrule add_kri_sub_for_Pnoun
 (declare (salience 500))
 (ol_res_id-word_id-word	?been	?id	been)
-(ol_res_id-word_id-word ?L_wrd     =(- ?id 2)       ?wrd)
-(using-parser-ids   proper_noun-waxviSiRta_proper_noun ?vi ?pn)
-?f<-(using-parser-ids   kriyA-subject ?been ?vi)
+(ol_res_id-word_id-word ?P_wrd     =(- ?id 2)       ?wrd)
+(relation-parser_ids   proper_noun-waxviSiRta_proper_noun ?vi ?pn)
+?f<-(relation-parser_ids   kriyA-subject ?been ?vi)
 =>
 (retract ?f)
 (assert (rel_has_been_deleted   kriyA-subject  ?been  ?vi))
 (printout ?*debug* "(rule-deleted_relation-ids   add_kri_sub_for_Pnoun     kriyA-subject    "?been"   " ?vi")"crlf)
-(assert (using-parser-ids   kriyA-subject  ?been  ?L_wrd))
-(printout ?*debug* "(Rule-Rel-ids     add_kri_sub_for_Pnoun   kriyA-subject  "?been"    " ?L_wrd")"crlf)
-(assert (using-parser-ids   viSeRya-viSeRaNa  ?L_wrd  ?vi))
-(printout ?*debug* "(Rule-Rel-ids    add_kri_sub_for_Pnoun    viSeRya-viSeRaNa  "?L_wrd"    " ?vi")"crlf)
+(assert (relation-parser_ids   kriyA-subject  ?been  ?P_wrd))
+(printout ?*debug* "(Rule-Rel-ids     add_kri_sub_for_Pnoun   kriyA-subject  "?been"    " ?P_wrd")"crlf)
+(assert (relation-parser_ids   viSeRya-viSeRaNa  ?P_wrd  ?vi))
+(printout ?*debug* "(Rule-Rel-ids    add_kri_sub_for_Pnoun    viSeRya-viSeRaNa  "?P_wrd"    " ?vi")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -958,13 +958,13 @@
 (defrule add_sub_samAn_for_been
 (declare (salience 400))
 (ol_res_id-word_id-word	?been	?id	been|be)
-(using-parser-ids   kriyA-subject ?been ?sub)
-?f<-(using-parser-ids   kriyA-object ?been ?sub_samAn)
+(relation-parser_ids   kriyA-subject ?been ?sub)
+?f<-(relation-parser_ids   kriyA-object ?been ?sub_samAn)
 =>
 (retract ?f)
 (assert (rel_has_been_deleted   kriyA-object  ?been  ?sub_samAn))
 (printout ?*debug* "(rule-deleted_relation-ids    add_sub_samAn_for_been    kriyA-object    "?been"   " ?sub_samAn")"crlf)
-(assert (using-parser-ids   subject-subject_samAnAXikaraNa   ?sub  ?sub_samAn))
+(assert (relation-parser_ids   subject-subject_samAnAXikaraNa   ?sub  ?sub_samAn))
 (printout ?*debug* "(Rule-Rel-ids   add_sub_samAn_for_been   subject-subject_samAnAXikaraNa   "?sub"    "?sub_samAn")"crlf)
 )
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -976,7 +976,7 @@
 (ol_res_id-word_id-word	?be	=(+ ?id 1)	be)
 (ol_res_id-word_id-word ?sub      =(- ?id 1)       ?wrd)
 =>
-(assert (using-parser-ids   kriyA-subject ?be ?sub))
+(assert (relation-parser_ids   kriyA-subject ?be ?sub))
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -984,7 +984,7 @@
 ;Added by Meena(1.9.10)
 ;I have been contemplating on the problem for a long time, but could not get the solution.
 (defrule kriya_for_rule
-?f1<-(using-parser-ids  kriyA-for_saMbanXI   ?kri   ?sam)
+?f1<-(relation-parser_ids  kriyA-for_saMbanXI   ?kri   ?sam)
 (parser_id-cat_coarse  ?kri  ~verb)
 =>
 (retract ?f1)
@@ -999,15 +999,15 @@
 (defrule add_but_conj
 (ol_res_id-word_id-word	?con	?id	but)
 (ol_res_id-word_id-word ?kri   ?id1   ?v)
-?f<-(using-parser-ids   wall_conjunction ?con)
-(using-parser-ids   kriyA-subject ?kri ?sub)
+?f<-(relation-parser_ids   wall_conjunction ?con)
+(relation-parser_ids   kriyA-subject ?kri ?sub)
 (test (> ?id 1))
 (test (> ?id1 ?id))
 =>
 (retract ?f)
 (assert (rel_has_been_deleted   wall_conjunction ?con))
 (printout ?*debug* "(rule-deleted_relation-ids    add_but_conj    wall_conjunction    " ?con")"crlf)
-(assert (using-parser-ids   kriyA-conjunction  ?kri  ?con))
+(assert (relation-parser_ids   kriyA-conjunction  ?kri  ?con))
 (printout ?*debug* "(Rule-Rel-ids   add_but_conj   kriyA-conjunction   "?kri"    "?con")"crlf)
 )
   
@@ -1016,12 +1016,12 @@
 ;Added by sheetal
 ;And 21 could stand for the 21 cm radio frequency of hydrogen in space.
 (defrule del_of_saM_with_viSeRya
-(using-parser-ids   viSeRya-viSeRaNa ?L10 ?L9)
-?f<-(using-parser-ids   viSeRya-of_saMbanXI ?L9 ?L12)
+(relation-parser_ids   viSeRya-viSeRaNa ?P10 ?P9)
+?f<-(relation-parser_ids   viSeRya-of_saMbanXI ?P9 ?P12)
 =>
 (retract ?f)
-(assert (rel_has_been_deleted  viSeRya-of_saMbanXI ?L9 ?L12))
-(printout ?*debug* "(rule-deleted_relation-ids    del_of_saM_with_viSeRya    viSeRya-of_saMbanXI    "?L9"   " ?L12")"crlf)
+(assert (rel_has_been_deleted  viSeRya-of_saMbanXI ?P9 ?P12))
+(printout ?*debug* "(rule-deleted_relation-ids    del_of_saM_with_viSeRya    viSeRya-of_saMbanXI    "?P9"   " ?P12")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -1029,12 +1029,12 @@
 ;Added by sheetal
 ;And 21 could stand for the 21 cm radio frequency of hydrogen in space.
 (defrule del_in_saM_with_viSeRya
-(using-parser-ids   viSeRya-viSeRaNa ?L10 ?L9)
-?f<-(using-parser-ids   viSeRya-in_saMbanXI ?L9 ?L14)
+(relation-parser_ids   viSeRya-viSeRaNa ?P10 ?P9)
+?f<-(relation-parser_ids   viSeRya-in_saMbanXI ?P9 ?P14)
 =>
 (retract ?f)
-(assert (rel_has_been_deleted  viSeRya-in_saMbanXI ?L9 ?L14))
-(printout ?*debug* "(rule-deleted_relation-ids    del_in_saM_with_viSeRya    viSeRya-in_saMbanXI    "?L9"   " ?L14")"crlf)
+(assert (rel_has_been_deleted  viSeRya-in_saMbanXI ?P9 ?P14))
+(printout ?*debug* "(rule-deleted_relation-ids    del_in_saM_with_viSeRya    viSeRya-in_saMbanXI    "?P9"   " ?P14")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -1043,12 +1043,12 @@
 ;And 21 could stand for the 21 cm radio frequency of hydrogen in space.
 (defrule add_and_as_wall_conj
 (ol_res_id-word_id-word	?and	1	and)
-?f<-(using-parser-ids   kriyA-vAkyakarma ?and  ?id)
+?f<-(relation-parser_ids   kriyA-vAkyakarma ?and  ?id)
 =>
 (retract ?f)
 (assert (rel_has_been_deleted  kriyA-vAkyakarma ?and  ?id))
 (printout ?*debug* "(rule-deleted_relation-ids    add_and_as_wall_conj    kriyA-vAkyakarma    "?and"   " ?id")"crlf)
-(assert (using-parser-ids   wall_conjunction  ?and))
+(assert (relation-parser_ids   wall_conjunction  ?and))
 (printout ?*debug* "(Rule-Rel-ids   add_and_as_wall_conj   wall_conjunction   "?and")"crlf)
 )
 
@@ -1058,13 +1058,13 @@
 ;I left the party after seeing Ann there.
 (defrule add_after_saM
 (ol_res_id-word_id-word	?prep	?id	after)
-(ol_res_id-word_id-word	?L_vn	=(+ ?id 1)	?vn)
-(parser_id-cat_coarse  ?L_vn verbal_noun)
-(using-parser-ids   kriyA-subject ?kri ?sub)
+(ol_res_id-word_id-word	?P_vn	=(+ ?id 1)	?vn)
+(parser_id-cat_coarse  ?P_vn verbal_noun)
+(relation-parser_ids   kriyA-subject ?kri ?sub)
 =>
-(assert (using-parser-ids   kriyA-after_saMbanXI  ?kri ?L_vn))
-(assert (rel_has_been_written kriyA-after_saMbanXI  ?kri ?L_vn))
-(printout ?*debug* "(Rule-Rel-ids   add_after_saM   kriyA-after_saMbanXI   "?kri"    "?L_vn")"crlf)
+(assert (relation-parser_ids   kriyA-after_saMbanXI  ?kri ?P_vn))
+(assert (rel_has_been_written kriyA-after_saMbanXI  ?kri ?P_vn))
+(printout ?*debug* "(Rule-Rel-ids   add_after_saM   kriyA-after_saMbanXI   "?kri"    "?P_vn")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -1072,15 +1072,15 @@
 ;Added by sheetal
 ;We now know that there are two thousand elements which we can not use to make a good light bulb.
 (defrule add_conj_rel_with_which
-(using-parser-ids   subject-subject_samAnAXikaraNa ?L_sub ?sub_samAn)
-(using-parser-ids   viSeRya-jo_samAnAXikaraNa ?sub_samAn ?con)
-(using-parser-ids   kriyA-subject ?kri ?sub)
+(relation-parser_ids   subject-subject_samAnAXikaraNa ?P_sub ?sub_samAn)
+(relation-parser_ids   viSeRya-jo_samAnAXikaraNa ?sub_samAn ?con)
+(relation-parser_ids   kriyA-subject ?kri ?sub)
 (ol_res_id-word_id-word	?con	?id	which)
 (ol_res_id-word_id-word	?kri	?id1	?verb)
 (test (neq ?sub ?con)) ; Suggested by Sukhada(30-12-10)
 (test (> ?id1 ?id))
 =>
-(assert (using-parser-ids   kriyA-conjunction ?kri ?con))
+(assert (relation-parser_ids   kriyA-conjunction ?kri ?con))
 (assert (rel_has_been_written kriyA-conjunction ?kri ?con))
 (printout ?*debug* "(Rule-Rel-ids   add_conj_rel_with_which   kriyA-conjunction   "?kri"    "?con")"crlf)
 )
@@ -1089,8 +1089,8 @@
 
 ;We camped there as it was too dark to go on.
 (defrule del_kri_vi
-?f<-(using-parser-ids   kriyA-kriyA_viSeRaNa ?k ?k_vi)
-(using-parser-ids   kriyA-conjunction ?sub ?k_vi)
+?f<-(relation-parser_ids   kriyA-kriyA_viSeRaNa ?k ?k_vi)
+(relation-parser_ids   kriyA-conjunction ?sub ?k_vi)
 =>
 (retract ?f)
 (printout ?*debug* "(rule-deleted_relation-ids   del_kri_vi    kriyA-kriyA_viSeRaNa "?k"   " ?k_vi")"crlf)
@@ -1099,19 +1099,19 @@
 ;----------------------------------------------------------------------------------------------------------------------------
 
 (defrule del_sub_conj
-(using-parser-ids   kriyA-subject ?k ?s)
-?f<-(using-parser-ids   subject-conjunction ?s ?c)
+(relation-parser_ids   kriyA-subject ?k ?s)
+?f<-(relation-parser_ids   subject-conjunction ?s ?c)
 =>
 (retract ?f)
 (printout ?*debug* "(rule-deleted_relation-ids   del_sub_conj    subject-conjunction "?s"   " ?c")"crlf)
-(assert (using-parser-ids   kriyA-conjunction ?k ?c))
+(assert (relation-parser_ids   kriyA-conjunction ?k ?c))
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
 
 (defrule del_sub_conj_1
 (declare (salience -40))
-?f<-(using-parser-ids   subject-conjunction ?s ?c)
+?f<-(relation-parser_ids   subject-conjunction ?s ?c)
 =>
 (retract ?f)
 (printout ?*debug* "(rule-deleted_relation-ids   del_sub_conj_1    subject-conjunction "?s"   " ?c")"crlf)
@@ -1121,7 +1121,7 @@
 ;
 (defrule and_between_viSeRya-viSeRaNa
 (declare (salience 700))
-?f<-(using-parser-ids   viSeRya-viSeRaNa ?vi ?vin)
+?f<-(relation-parser_ids   viSeRya-viSeRaNa ?vi ?vin)
 (ol_res_id-word_id-word ?and    ?id     and)
 (test (and (< (string_to_integer ?vin) (string_to_integer ?and)) (> (string_to_integer ?vi) (string_to_integer ?and))))
 =>
@@ -1135,7 +1135,7 @@
 ;The upper middle-class tend to go into business.
 (defrule delete_rel
 (declare (salience -40))
-?f<-(using-parser-ids   ?rel ?id ?id1)
+?f<-(relation-parser_ids   ?rel ?id ?id1)
 (parserid-wordid   ?id 	?wrdid)
 (parserid-wordid   ?id1 ?wrdid)
 =>
@@ -1149,7 +1149,7 @@
 ;IN January 1990, a historic new law was passed IN India ON Friday.  
 (defrule modify-saMbanXI-rel
 (split_tranlevel-ptype-headid-grpids tran3 PP ?head  $?ids)
-?f<-(using-parser-ids  ?rel  ?kri ?sam)
+?f<-(relation-parser_ids  ?rel  ?kri ?sam)
 (test (member$ ?sam  $?ids))
 (test (neq (str-index "-" ?rel)  FALSE))
 (test (neq (str-index "_" ?rel)  FALSE))
@@ -1160,7 +1160,7 @@
 (test (member$ ?lid  $?ids))
 =>
 (if (neq ?head ?sam) then 
-  (printout ?*ol_fp* "(using-parser-ids  kriyA-"?str"_saMbanXI  " ?kri" "?head")" crlf)
+  (printout ?*ol_fp* "(relation-parser_ids  kriyA-"?str"_saMbanXI  " ?kri" "?head")" crlf)
   (printout ?*debug* "(rule-deleted_relation-ids   modify-saMbanXI-rel    "?rel "    "  ?kri  "  " ?sam")"crlf)
   (retract ?f)
 ))
@@ -1169,10 +1169,10 @@
 
 (defrule write_remaining_relations
 (declare (salience -50))
-(using-parser-ids  ?rel ?kri ?id)
+(relation-parser_ids  ?rel ?kri ?id)
 (not (and (rel_has_been_deleted ?rel  ?kri ?id)(rel_has_been_written ?rel ?kri ?id)))
 =>
-(printout       ?*ol_fp*    "(using-parser-ids  "?rel" " ?kri" " ?id")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  "?rel" " ?kri" " ?id")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -1180,20 +1180,20 @@
 ;Ex. TELL me a sentence.
 (defrule write_AjFArWaka_kriyA_rel
 (declare (salience -50))
-(using-parser-ids  ?rel ?kri_id)
+(relation-parser_ids  ?rel ?kri_id)
 (not (or (rel_has_been_deleted  ?rel ?kri_id) (rel_has_been_written ?rel  ?kri_id)))
 =>
-(printout       ?*ol_fp*    "(using-parser-ids  "?rel" " ?kri_id")"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  "?rel" " ?kri_id")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
 
 (defrule write_AjFArWaka_kriyA_rel1
 (declare (salience -50))
-(using-parser-ids  ?rel)
+(relation-parser_ids  ?rel)
 (not (or (rel_has_been_deleted ?rel) (rel_has_been_written ?rel)))
 =>
-(printout       ?*ol_fp*    "(using-parser-ids  "?rel" )"crlf)
+(printout       ?*ol_fp*    "(relation-parser_ids  "?rel" )"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------

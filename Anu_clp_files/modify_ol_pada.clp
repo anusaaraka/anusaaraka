@@ -6,7 +6,7 @@
 
  (deffacts dummy_facts 
  (missing-level-id) 
- (using-parser-ids)
+ (relation-parser_ids)
  (parserid-wordid)
  (ol_res_id-word_id-word)
  (root-verbchunk-tam-parser_chunkids)
@@ -22,8 +22,8 @@
         (printout       ?*pada_cntrl_file*      "(pada_control_fact     "       ?paxa_head      ")"     crlf)
  )
 
- (deffunction string_to_integer (?link_id); [Removes the first character from the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
- (string-to-field (sub-string 2 10000 ?link_id)))
+ (deffunction string_to_integer (?parser_id); [Removes the first character from the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
+ (string-to-field (sub-string 2 10000 ?parser_id)))
 
  (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (slot preposition (default 0))(slot Hin_position (default 0)))
 ;----------------------------------------------------------------------------------------------------------------------- 
@@ -186,8 +186,8 @@
 ;Ex. The blacksmith made an assay of iron ore.
 (defrule samAsa_pada_head
 (declare (salience 1800))
-?f<-(pada_info (group_head_id ?lid))
-(ol_res_id-word_id-word   ?lid      ?headid $?words)
+?f<-(pada_info (group_head_id ?pid))
+(ol_res_id-word_id-word   ?pid      ?headid $?words)
 (current_id-group_members  ?headid ?com ?head)
 =>
 (modify ?f (group_head_id  ?head))
@@ -197,11 +197,11 @@
 ;Ex. He works according to my instructions.
 (defrule samAsa_prep
 (declare (salience 1800))
-?f5<-(split_tranlevel-ptype-headid-grpids tran3 PP ?headid  ?l $?ids)
-?f1<-(using-parser-ids samAsa ?l)
-?f2<-(ol_res_id-word_id-word ?l ?id $?words)
+?f5<-(split_tranlevel-ptype-headid-grpids tran3 PP ?headid  ?p $?ids)
+?f1<-(relation-parser_ids samAsa ?p)
+?f2<-(ol_res_id-word_id-word ?p ?id $?words)
 ?f3<-(current_id-group_members ?id ?prep ?prep1)
-?f4<-(word-type-id ?a ?b ?l)
+?f4<-(word-type-id ?a ?b ?p)
 =>
 (retract ?f1 ?f2 ?f3 ?f4 ?f5)
 (bind ?prp (string-to-field(str-cat ?prep "_" ?prep1)))
@@ -213,26 +213,26 @@
 (defrule samAsa_prep_1
 (declare (salience 1800))
 ?f5<-(split_tranlevel-ptype-headid-grpids tran3 PP ?headid  $?ids)
-?f1<-(using-parser-ids samAsa ?l)
-?f2<-(ol_res_id-word_id-word ?l ?id $?words)
+?f1<-(relation-parser_ids samAsa ?p)
+?f2<-(ol_res_id-word_id-word ?p ?id $?words)
 ?f3<-(current_id-group_members ?id ?prep ?prep1)
-?f4<-(word-type-id ?a ?b ?l)
-(test  (eq (string_to_integer ?l) (- (string_to_integer (implode$ (first$ (create$ $?ids))))1)))
+?f4<-(word-type-id ?a ?b ?p)
+(test  (eq (string_to_integer ?p) (- (string_to_integer (implode$ (first$ (create$ $?ids))))1)))
 =>
 (retract ?f1 ?f2 ?f3 ?f4 ?f5)
 (bind ?prp (string-to-field(str-cat ?prep "_" ?prep1)))
 (assert (pada_info (group_head_id ?headid) (group_cat PP) (group_ids $?ids) (preposition ?prp)))
-(assert (has_been_included_in_pada ?l)) ;Added by Roja for the same example given to this rule.(30-11-10)
+(assert (has_been_included_in_pada ?p)) ;Added by Roja for the same example given to this rule.(30-11-10)
 (printout       ?*debug_fp*     "(Rule-pada_head-pada_type-ids   samAsa_prep_1   "?headid"   PP  "(implode$ (create$ $?ids ))" "?prp")"crlf)
 )
 ;----------------------------------------------------------------------------------------------------------------------- 
 ;A more massive object changes its motion more slowly in response to a given force.
 (defrule samAsa_prep_2
 (declare (salience 1800))
-?f5<-(split_tranlevel-ptype-headid-grpids tran3 PP ?headid  ?l $?ids)
-?f2<-(ol_res_id-word_id-word ?l ?id $?words)
+?f5<-(split_tranlevel-ptype-headid-grpids tran3 PP ?headid  ?p $?ids)
+?f2<-(ol_res_id-word_id-word ?p ?id $?words)
 ?f3<-(current_id-group_members ?id ?prep ?prep1 ?prep2 )
-?f4<-(word-type-id ?a ?b ?l)
+?f4<-(word-type-id ?a ?b ?p)
 =>
 (retract ?f2 ?f3 ?f4 ?f5)
 (bind ?prp (string-to-field(str-cat ?prep "_" ?prep1"_" ?prep2)))
@@ -243,10 +243,10 @@
 ;He gave up his lucrative law practice for the sake of the country.
 (defrule samAsa_prep2
 (declare (salience 1800))
-?f5<-(split_tranlevel-ptype-headid-grpids tran3 PP ?headid  ?l $?ids)
-?f2<-(ol_res_id-word_id-word ?l ?id $?words)
+?f5<-(split_tranlevel-ptype-headid-grpids tran3 PP ?headid  ?p $?ids)
+?f2<-(ol_res_id-word_id-word ?p ?id $?words)
 ?f3<-(current_id-group_members ?id ?prep ?prep1 ?prep2 ?prep3 )
-?f4<-(word-type-id ?a ?b ?l)
+?f4<-(word-type-id ?a ?b ?p)
 =>
 (retract ?f2 ?f3 ?f4 ?f5)
 (bind ?prp (string-to-field(str-cat ?prep "_" ?prep1"_" ?prep2 "_" ?prep3 )))
@@ -257,10 +257,10 @@
 ;Keep on the right side of the road.
 (defrule samAsa_prep1
 (declare (salience 1800))
-?f5<-(split_tranlevel-ptype-headid-grpids tran3 PP ?headid  ?l $?ids)
-?f2<-(ol_res_id-word_id-word ?l ?id $?words)
+?f5<-(split_tranlevel-ptype-headid-grpids tran3 PP ?headid  ?p $?ids)
+?f2<-(ol_res_id-word_id-word ?p ?id $?words)
 ?f3<-(current_id-group_members ?id ?prep ?prep1 ?prep2 ?prep3 ?prep4)
-?f4<-(word-type-id ?a ?b ?l)
+?f4<-(word-type-id ?a ?b ?p)
 =>
 (retract ?f2 ?f3 ?f4 ?f5)
 (bind ?prp (string-to-field(str-cat ?prep "_" ?prep1"_" ?prep2 "_" ?prep3 "_" ?prep4)))
@@ -277,7 +277,7 @@
 (test (eq (string_to_integer ?prep) (- (string_to_integer (implode$ (first$ (create$ $?ids))))1)))
 (not (has_been_included_in_pada ?head))
 (not (has_been_included_in_pada  ?prep))
-(not (using-parser-ids kriyA-upasarga  ?k ?prep))
+(not (relation-parser_ids kriyA-upasarga  ?k ?prep))
 =>
 (retract ?f1 ?f2 ?f3)
 (assert (pada_info (group_head_id ?head) (group_cat PP) (group_ids $?ids) (preposition ?prep) ))
@@ -288,7 +288,7 @@
 (declare (salience 1800))
 ?f1<-(missing-level-id tran3 ?obj)
 ?f2<-(word-type-id ?p ?i ?prep)
-(not (using-parser-ids kriyA-upasarga  ?k ?prep))
+(not (relation-parser_ids kriyA-upasarga  ?k ?prep))
 (test (eq (string_to_integer ?prep) (- (string_to_integer ?obj )1)))
 (not (has_been_included_in_pada ?obj))
 =>
@@ -317,7 +317,7 @@
 ?f<-(missing-level-id tran3 ?prep)
 ?f1<-(split_tranlevel-ptype-headid-grpids tran3 PP  ?head ?head $?ids)
 (test  (eq (string_to_integer ?prep) (- (string_to_integer ?head)1 )))
-(not (using-parser-ids kriyA-upasarga  ?k ?prep))
+(not (relation-parser_ids kriyA-upasarga  ?k ?prep))
 (not (has_been_included_in_pada ?prep))
 (not (has_been_included_in_pada ?head))
 =>
@@ -335,8 +335,8 @@
 (ol_res_id-word_id-word	?prep	?word_id	to|from|in)
 (ol_res_id-word_id-word	?head	?head_id	where|who|which)
 ?f<-(pada_info (group_head_id ?punc) (group_cat PP) (group_ids ?punc) (preposition ?prep))
-?f1<-(pada_info (group_head_id ?head) (group_cat PP) (group_ids  ?head) (preposition ?L))
-?f2<-(pada_info (group_head_id ?prep) (group_cat PP) (group_ids ?prep) (preposition ?L))
+?f1<-(pada_info (group_head_id ?head) (group_cat PP) (group_ids  ?head) (preposition ?P))
+?f2<-(pada_info (group_head_id ?prep) (group_cat PP) (group_ids ?prep) (preposition ?P))
 =>
 (print_in_ctrl_fact_files  ?head)
 (assert (pada_info (group_head_id ?head) (group_cat PP) (group_ids  ?head) (preposition ?prep)))
@@ -346,38 +346,38 @@
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule delete_prep_pada_1
 (declare (salience 1999))
-(ol_res_id-word_id-word ?L_to   ?to_id        to)
-(not (ol_res_id-word_id-word ?L_had   =(- ?to_id 1)    had|have))
-(ol_res_id-word_id-word ?L_kri   =(+ ?to_id 1)       ?kri_wrd)
-(using-parser-ids to-infinitive  ?L_to ?L_kri)
+(ol_res_id-word_id-word ?P_to   ?to_id        to)
+(not (ol_res_id-word_id-word ?P_had   =(- ?to_id 1)    had|have))
+(ol_res_id-word_id-word ?P_kri   =(+ ?to_id 1)       ?kri_wrd)
+(relation-parser_ids to-infinitive  ?P_to ?P_kri)
 =>
-(print_in_ctrl_fact_files  ?L_kri)
-(assert (has_been_included_in_pada  ?L_to))
-(assert (has_been_included_in_pada  ?L_kri))
-(assert (pada_info (group_head_id ?L_kri) (group_cat infinitive) (group_ids  ?L_to ?L_kri)))
-(printout ?*debug_fp* "(Rule-pada_head-pada_type-ids  delete_prep_pada_1  "?L_kri"   infinitive  "?L_kri"  "?L_to")"crlf)
+(print_in_ctrl_fact_files  ?P_kri)
+(assert (has_been_included_in_pada  ?P_to))
+(assert (has_been_included_in_pada  ?P_kri))
+(assert (pada_info (group_head_id ?P_kri) (group_cat infinitive) (group_ids  ?P_to ?P_kri)))
+(printout ?*debug_fp* "(Rule-pada_head-pada_type-ids  delete_prep_pada_1  "?P_kri"   infinitive  "?P_kri"  "?P_to")"crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Dick is important to fix the problem.
 (defrule to-inf
 (declare (salience 1999))
-(ol_res_id-word_id-word ?L_to   ?to_id        to)
-(using-parser-ids to-infinitive  ?L_to ?L_kri)
-(missing-level-id tran3 ?L_to)
-(missing-level-id tran3 ?L_kri)
+(ol_res_id-word_id-word ?P_to   ?to_id        to)
+(relation-parser_ids to-infinitive  ?P_to ?P_kri)
+(missing-level-id tran3 ?P_to)
+(missing-level-id tran3 ?P_kri)
 =>
-(print_in_ctrl_fact_files  ?L_kri)
-(assert (has_been_included_in_pada ?L_to))
-(assert (has_been_included_in_pada  ?L_kri))
-(assert (pada_info (group_head_id ?L_kri) (group_cat infinitive) (group_ids  ?L_to ?L_kri )))
-(printout ?*debug_fp* "(Rule-pada_head-pada_type-ids  to-inf  "?L_kri"   infinitive  "?L_to"  "?L_kri")"crlf)
+(print_in_ctrl_fact_files  ?P_kri)
+(assert (has_been_included_in_pada ?P_to))
+(assert (has_been_included_in_pada  ?P_kri))
+(assert (pada_info (group_head_id ?P_kri) (group_cat infinitive) (group_ids  ?P_to ?P_kri )))
+(printout ?*debug_fp* "(Rule-pada_head-pada_type-ids  to-inf  "?P_kri"   infinitive  "?P_to"  "?P_kri")"crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
  ;Ex. On hearing the news of his father's death Sachin returned back to India .
  (defrule RaRTI_viSeRaNa_paxa
  (declare (salience 1100))
  (pada_info (group_head_id ?) (group_cat PP) (group_ids $?grp_ids) (preposition ?prep))
- (using-parser-ids viSeRya-RaRTI_viSeRaNa   ?viSeRya  ?RaRTI_viSeRaNa)
+ (relation-parser_ids viSeRya-RaRTI_viSeRaNa   ?viSeRya  ?RaRTI_viSeRaNa)
  (test (and (member$ ?viSeRya $?grp_ids) (member$ ?RaRTI_viSeRaNa $?grp_ids)))
  =>
  (print_in_ctrl_fact_files  ?RaRTI_viSeRaNa)
@@ -389,7 +389,7 @@
  (defrule viSeRya_paxa
  (declare (salience 1050))
  ?f<- (pada_info (group_head_id ?) (group_cat PP) (group_ids $?grp_ids) (preposition ?prep))
- (using-parser-ids viSeRya-RaRTI_viSeRaNa   ?viSeRya  ?RaRTI_viSeRaNa)
+ (relation-parser_ids viSeRya-RaRTI_viSeRaNa   ?viSeRya  ?RaRTI_viSeRaNa)
  (test (and (member$ ?viSeRya $?grp_ids) (member$ ?RaRTI_viSeRaNa $?grp_ids)))
  =>
  (print_in_ctrl_fact_files  ?viSeRya)
@@ -405,11 +405,11 @@
  (defrule add_viSeRaNa_to_its_viSeRya
  (declare (salience 1001))
  ?f<-(pada_info (group_head_id ?viSeRya) (group_cat PP) (group_ids $?viSeRya_grp) (preposition ?prep))
- (using-parser-ids viSeRya-RaRTI_viSeRaNa   ?viSeRya  ?RaRTI_viSeRaNa)
- ?f0<-(using-parser-ids ?viSeRya-viSeRaNa ?viSeRya ?viSeRaNa)
+ (relation-parser_ids viSeRya-RaRTI_viSeRaNa   ?viSeRya  ?RaRTI_viSeRaNa)
+ ?f0<-(relation-parser_ids ?viSeRya-viSeRaNa ?viSeRya ?viSeRaNa)
  (test (or (eq ?viSeRya-viSeRaNa viSeRya-viSeRaNa)  (eq ?viSeRya-viSeRaNa viSeRya-det_viSeRaNa) (eq ?viSeRya-viSeRaNa samAsa) (eq ?viSeRya-viSeRaNa viSeRya-saMKyA_viSeRaNa )))
 
-; (or (using-parser-ids viSeRya-viSeRaNa ?viSeRya ?viSeRaNa)(using-parser-ids viSeRya-det_viSeRaNa ?viSeRya ?viSeRaNa) (using-parser-ids samAsa  ?viSeRya ?viSeRaNa) (using-parser-ids viSeRya-saMKyA_viSeRaNa   ?viSeRya  ?viSeRaNa))
+; (or (relation-parser_ids viSeRya-viSeRaNa ?viSeRya ?viSeRaNa)(relation-parser_ids viSeRya-det_viSeRaNa ?viSeRya ?viSeRaNa) (relation-parser_ids samAsa  ?viSeRya ?viSeRaNa) (relation-parser_ids viSeRya-saMKyA_viSeRaNa   ?viSeRya  ?viSeRaNa))
   =>
   (bind ?g (create$ ?viSeRaNa $?viSeRya_grp))
   (modify ?f  (group_ids  ?g))
@@ -420,7 +420,7 @@
  (defrule RaRTI_viSeRaNa_rul_conj_and_or
  (declare (salience 1100))
  ?f<- (pada_info (group_head_id ?) (group_cat PP) (group_ids $?grp_ids) (preposition ?prep))
- ?f0<-(using-parser-ids viSeRya-RaRTI_viSeRaNa   ?viSeRya  ?RaRTI_viSeRaNa)
+ ?f0<-(relation-parser_ids viSeRya-RaRTI_viSeRaNa   ?viSeRya  ?RaRTI_viSeRaNa)
  (ol_res_id-word_id-word ?id   ?word_id and|or)
  (test (and (member$ ?viSeRya $?grp_ids)  (member$ ?RaRTI_viSeRaNa $?grp_ids) (member$ ?id $?grp_ids) ))
  =>
@@ -446,9 +446,9 @@
  (defrule add_viSeRaNa_to_its_RaRTI_viSeRaNa
  (declare (salience 1001))
  ?f<-(pada_info (group_head_id ?RaRTI_viSeRaNa) (group_cat PP) (group_ids $?RaRTI_viSeRaNa_grp) (preposition ?prep))
- ?f0<-(using-parser-ids viSeRya-RaRTI_viSeRaNa   ?viSeRya  ?RaRTI_viSeRaNa)
- (using-parser-ids viSeRya-viSeRaNa ?RaRTI_viSeRaNa ?viSeRaNa)
- (using-parser-ids viSeRya-det_viSeRaNa ?RaRTI_viSeRaNa ?det)
+ ?f0<-(relation-parser_ids viSeRya-RaRTI_viSeRaNa   ?viSeRya  ?RaRTI_viSeRaNa)
+ (relation-parser_ids viSeRya-viSeRaNa ?RaRTI_viSeRaNa ?viSeRaNa)
+ (relation-parser_ids viSeRya-det_viSeRaNa ?RaRTI_viSeRaNa ?det)
   =>
   (bind ?g (create$ ?det ?viSeRaNa $?RaRTI_viSeRaNa_grp))
   (modify ?f  (group_ids  ?g))
@@ -474,7 +474,7 @@
 ;Ex. Rama and Mohan went to the shop. Rama, Mohan, Shyam  and Gita went to the school.
  (defrule and_pada
  (declare (salience 1001))
- (using-parser-ids subject-subject_samAnAXikaraNa ?kriya ?paxa_head)
+ (relation-parser_ids subject-subject_samAnAXikaraNa ?kriya ?paxa_head)
  (conjunction-components  ?paxa_head $?ids)
  (ol_res_id-word_id-word ?paxa_head ?i and|or)
  (not (has_been_included_in_pada $? ?paxa_head $?))
@@ -499,7 +499,7 @@
 (declare (salience 500))
 (ol_res_id-word_id-word ?prep   ?word_id        to|from|in|with)
 (ol_res_id-word_id-word ?head   ?head_id        where|who|which)
-(using-parser-ids  kriyA-to_saMbanXI|kriyA-from_saMbanXI|kriyA-in_saMbanXI|kriyA-with_saMbanXI      ?kri   ?head)
+(relation-parser_ids  kriyA-to_saMbanXI|kriyA-from_saMbanXI|kriyA-in_saMbanXI|kriyA-with_saMbanXI      ?kri   ?head)
 ?f<-(pada_info (group_head_id ?head) (group_cat PP) (group_ids  ?head) )
 ?f1<-(pada_info (group_head_id ?prep) (group_cat PP) (group_ids ?prep) )
 =>
@@ -514,7 +514,7 @@
 (declare (salience 500))
 (ol_res_id-word_id-word ?prep   ?word_id        with)
 (ol_res_id-word_id-word ?head   ?head_id        who)
-(using-parser-ids  kriyA-with_saMbanXI      ?kri   ?head)
+(relation-parser_ids  kriyA-with_saMbanXI      ?kri   ?head)
 ?f<-(pada_info (group_head_id ?head) (group_cat PP) (group_ids  ?head))
 ?f1<-(word-type-id to|from|in|with ?i ?prep)
 =>
@@ -528,29 +528,29 @@
 ;As had been expected, the party was a big success.
 (defrule delete_prep_pada4
 (declare (salience 500))
-(using-parser-ids  wall_conjunction ?Lid)
-?f<-(pada_info (group_head_id ?Lid) (group_cat PP) (group_ids  ) (preposition ?Lid))
+(relation-parser_ids  wall_conjunction ?Pid)
+?f<-(pada_info (group_head_id ?Pid) (group_cat PP) (group_ids  ) (preposition ?Pid))
 =>
 (retract ?f)
-(assert (pada_info (group_head_id ?Lid) (group_cat PP) (group_ids  ?Lid) (preposition 0)))
-(printout ?*debug_fp* "(Rule_name-pada_head_id-pada_type-ids  delete_prep_pada4   "?Lid"  PP "(implode$ (create$ ?Lid))")"crlf)
+(assert (pada_info (group_head_id ?Pid) (group_cat PP) (group_ids  ?Pid) (preposition 0)))
+(printout ?*debug_fp* "(Rule_name-pada_head_id-pada_type-ids  delete_prep_pada4   "?Pid"  PP "(implode$ (create$ ?Pid))")"crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;I count the cars as they pass by the office.
 (defrule delete_prep_pada5
 (declare (salience 500))
-(using-parser-ids  kriyA-conjunction ?sub  ?conj)
-?f<-(pada_info (group_head_id ?Lid) (group_cat PP) (group_ids  ) (preposition ?Lid))
+(relation-parser_ids  kriyA-conjunction ?sub  ?conj)
+?f<-(pada_info (group_head_id ?Pid) (group_cat PP) (group_ids  ) (preposition ?Pid))
 =>
 (retract ?f)
-(assert (pada_info (group_head_id ?Lid) (group_cat PP) (group_ids  ?Lid) (preposition 0)))
-(printout ?*debug_fp* "(Rule_name-pada_head_id-pada_type-ids  delete_prep_pada5   "?Lid"  PP "(implode$ (create$ ?Lid))")"crlf)
+(assert (pada_info (group_head_id ?Pid) (group_cat PP) (group_ids  ?Pid) (preposition 0)))
+(printout ?*debug_fp* "(Rule_name-pada_head_id-pada_type-ids  delete_prep_pada5   "?Pid"  PP "(implode$ (create$ ?Pid))")"crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;I want her to know about it, but the telling will not be easy.
 (defrule delete_pada_1
 (declare (salience 500))
-(pada_info (group_head_id ?Lid) (group_cat VP) (group_ids ?id ?id1 ?Lid))
+(pada_info (group_head_id ?Pid) (group_cat VP) (group_ids ?id ?id1 ?Pid))
 ?f<-(pada_info (group_head_id ?id) (group_cat PP) (group_ids ?id))
 ?f1<-(pada_info (group_head_id ?id1) (group_cat PP) (group_ids ?id1))
 =>
@@ -560,16 +560,16 @@
 ;I left the party after seeing Ann there.
 (defrule delete_pada1
 (declare (salience 1500))
-(using-parser-ids  kriyA-after_saMbanXI ?L3 ?L7)
+(relation-parser_ids  kriyA-after_saMbanXI ?P3 ?P7)
 (ol_res_id-word_id-word ?after ?word_id after)
 ?f1<-(split_tranlevel-ptype-headid-grpids tran3 PP ?after ?after)
-?f0<-(missing-level-id tran1 ?L7)
-(test (eq (string_to_integer ?after) (- (string_to_integer ?L7)1)))
+?f0<-(missing-level-id tran1 ?P7)
+(test (eq (string_to_integer ?after) (- (string_to_integer ?P7)1)))
 =>
 (retract ?f0 ?f1)
-(assert (has_been_included_in_pada ?L7))
-(assert (pada_info (group_head_id ?L7) (group_cat PP) (group_ids  ?L7) (preposition ?after)))
-(printout ?*debug_fp* "(Rule_name-pada_head_id-pada_type-ids  delete_pada1   "?L7"  PP "?L7" "?after")"crlf)
+(assert (has_been_included_in_pada ?P7))
+(assert (pada_info (group_head_id ?P7) (group_cat PP) (group_ids  ?P7) (preposition ?after)))
+(printout ?*debug_fp* "(Rule_name-pada_head_id-pada_type-ids  delete_pada1   "?P7"  PP "?P7" "?after")"crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule end

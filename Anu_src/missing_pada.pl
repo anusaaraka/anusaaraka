@@ -4,26 +4,26 @@ open(PADATMP,"$ARGV[0]/ol_pada_tmp1.dat") or die "Can't open file ol_pada_tmp.da
   $line=<PADATMP>;
 	if($line =~ /tran1/){
   while($line !~ /^\n/){
-    $line =~ /tran1\s+PP\s+L\d+\s+([^\)]+)\)/;
+    $line =~ /tran1\s+PP\s+P\d+\s+([^\)]+)\)/;
     $tran1=$tran1." ".$1;
     $line=<PADATMP>;
   }
   $line=<PADATMP>;
   while($line !~ /^\n/){
-    $line =~ /tran2\s+PP\s+L\d+\s+([^\)]+)\)/;
+    $line =~ /tran2\s+PP\s+P\d+\s+([^\)]+)\)/;
     $tran2=$tran2." ".$1;
     $line=<PADATMP>;
   }
   $line=<PADATMP>;
   while($line !~ /^\n/){
-    $line =~ /tran3\s+PP\s+L\d+\s+([^\)]+)\)/;
+    $line =~ /tran3\s+PP\s+P\d+\s+([^\)]+)\)/;
     $tran3=$tran3." ".$1;
     $line=<PADATMP>;
   }
   $line=<PADATMP>;
   if($line =~ /VP/){
   while($line !~ /^\n/){
-    $line =~ /VP\s+L\d+\s+([^\)]+)\)/;
+    $line =~ /VP\s+P\d+\s+([^\)]+)\)/;
     $vp=$vp." ".$1;
     $line=<PADATMP>;
   }}
@@ -34,16 +34,16 @@ open(PADATMP,">>$ARGV[0]/ol_pada_tmp.dat") or die "Can't open file ol_pada_tmp.d
 
 $tran1 =~ s/^\s+//;
 $tran1 =~ s/\s+$//;
-$tran1 =~ s/L//g;
+$tran1 =~ s/P//g;
 $tran2 =~ s/^\s+//;
 $tran2 =~ s/\s+$//;
-$tran2 =~ s/L//g;
+$tran2 =~ s/P//g;
 $tran3 =~ s/^\s+//;
 $tran3 =~ s/\s+$//;
-$tran3 =~ s/L//g;
+$tran3 =~ s/P//g;
 $vp =~ s/^\s+//;
 $vp =~ s/\s+$//;
-$vp =~ s/L//g;
+$vp =~ s/P//g;
 
 @atran1=split(/\s+/,$tran1);
 @atran2=split(/\s+/,$tran2);
@@ -58,7 +58,7 @@ $vp =~ s/L//g;
     if(($total_tran1[$j] != $prev+1) && ($j >0)){
       for($k=1;$k < $total_tran1[$j] - $prev;$k++){
         $m_id=$prev+$k;
-        print PADATMP "(missing-level-id tran1 L$m_id)\n";
+        print PADATMP "(missing-level-id tran1 P$m_id)\n";
       }
       $prev=$total_tran1[$j];
     }
@@ -69,7 +69,7 @@ $vp =~ s/L//g;
     if(($total_tran2[$j] != $prev+1) && ($j >0)){
       for($k=1;$k < $total_tran2[$j] - $prev;$k++){
         $m_id=$prev+$k;
-        print PADATMP "(missing-level-id tran2 L$m_id)\n";
+        print PADATMP "(missing-level-id tran2 P$m_id)\n";
       }
       $prev=$total_tran2[$j];
     }
@@ -80,7 +80,7 @@ $vp =~ s/L//g;
     if(($total_tran3[$j] != $prev+1) && ($j >0)){
       for($k=1;$k < $total_tran3[$j] - $prev;$k++){
         $m_id=$prev+$k;
-        print PADATMP "(missing-level-id tran3 L$m_id)\n";
+        print PADATMP "(missing-level-id tran3 P$m_id)\n";
       }
       $prev=$total_tran3[$j];
     }

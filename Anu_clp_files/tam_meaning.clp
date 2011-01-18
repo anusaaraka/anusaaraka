@@ -3,6 +3,10 @@
  (deftemplate tam_tmp_info (slot head_id (default 0))(slot eng_tam (default 0))(slot hin_tam (default 0))(slot subject_vibhakti (default 0))(slot preceding_part_of_the_verb (default 0)))
 
  (deffacts dummy_facts 
+ (kriyA-due_to_saMbanXI) 
+ (viSeRya-than_saMbanXI) 
+ (relation-anu_ids) 
+ (relation-parser_ids) 
  (lupwa_subject_kriyA-subject_samAnAXikaraNa) 
  (kriyA-in_keeping_with_saMbanXI) 
  (viSeRya-throughout_saMbanXI) 

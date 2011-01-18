@@ -57,8 +57,8 @@
 
   echo "Calling Stanford parser"
  # cd $HOME_anu_test/stanford-parser/stanford-parser-2008-10-26/
-   cd $HOME_anu_test/stanford-parser/stanford-parser-2010-08-20/
- # cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/
+ #  cd $HOME_anu_test/stanford-parser/stanford-parser-2010-08-20/
+  cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/
   sh ./run_stanford-parser.sh $1 $MYPATH > /dev/null
   
   cd $MYPATH/tmp/$1_tmp

@@ -10,7 +10,7 @@
  )
  ;--------------------------------------------------------------------------------------------------------------------
  (defrule end
- (declare (salience -500))
+ (declare (salience -600))
  =>
         (close ?*DBUG*)
  )
@@ -49,7 +49,6 @@
  (pada_info (group_head_id ?kriyA)(group_cat VP))
  ?f1<-(id-word ?wh_word  what|when|why|who|how|where)
  (id-word ?aux do|does|did|have|has)
- (not (muKya_vAkya-sApekRa_upavAkya ? ?))
  (not (kriyA_viSeRaNa-viSeRaka ?  ?wh_word)) ;Ex. How quickly did you run?
  (not (wall_conjunction ?wh_word)) ;When we want to hear a music programme on the radio , we have to tune the radio to the correct station .
  (not (viSeRaNa-viSeRaka  ? ?wh_word)) ;I wonder how big the department is .
@@ -149,4 +148,28 @@
         (assert (hindi_id_order $?hin_order))
         (printout  ?*DBUG* "(Rule_Name-ids    usa_rule   (hindi_id_order  "(implode$ $?hin_order) ")" crlf)
  )
-;I saw the man who you love. 
+;I saw the man who you love.
+  ;--------------------------------------------------------------------------------------------------------------------
+  (defrule default_rule
+  (declare (salience -500))
+  (or (kriyA-subject ? ?subj_id) (kriyA-dummy_subject ? ?subj_id))
+  ?f4<-(id-word ?id ~to)
+  ?f3<-(pada_info (group_head_id ?id)(group_cat ?gtype)(group_ids $?grp_ids))
+  ?f0<-(pada_info (group_head_id ?h_id1)(group_cat ?gtype1)(group_ids $?grp_ids1)(preposition ?prep_id1))
+  ?f1<-(pada_info (group_head_id ?h_id2)(group_cat ?gtype2)(group_ids $?grp_ids2)(preposition ?prep_id2))
+  (test (and (neq ?h_id1 ?subj_id) (neq ?h_id2 ?subj_id)))
+  ?f2<-(hindi_id_order $?ids)
+  (test (not (member$ ?id $?ids)))
+  (test (and (neq ?id ?prep_id1)(neq ?id ?prep_id2)))
+  (test (and (member$ ?h_id1 $?ids)(member$ ?h_id2 $?ids)))
+  (test (and (neq ?gtype English_PP)(neq ?gtype1 English_PP)(neq ?gtype2 English_PP)))
+  =>
+  (retract ?f2 ?f4)
+  (bind ?pos (member$ (nth$ 1 $?grp_ids1) $?ids))
+  (if (neq ?pos FALSE) then
+        (bind $?ids (insert$ $?ids ?pos $?grp_ids))
+  )
+  (assert (hindi_id_order $?ids))
+  (printout ?*DBUG* "(Rule_Name-ids default_rule (hindi_id_order " (implode$ $?ids)"))" crlf)
+ )
+
