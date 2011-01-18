@@ -263,6 +263,7 @@
  (declare (salience 1004))
  (para_id-sent_id-no_of_words 1 1 1)
  ?f<-(id-original_word 1 ?original_word)
+ (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
  (id-word ?id ?word)
  (id-root ?id ?root)
  (id-cat_coarse ?id ?cat)
@@ -286,8 +287,9 @@
 ; (printout fp "<english category='none'><a onclick=\"initialize('"?Eng_sen"')\">" ?l_punc ?original_word ?r_punc"</a> </english>" crlf)
 
 
+ (printout fp "<english category='none'> <a onclick=\"javascript: fetchshabd('"?root"')\"> <span id=\"popup_link_"?p_id "_" ?s_id "_" ?original_word"\" class=\"popup_link\">" ?l_punc ?original_word ?r_punc "</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_"?p_id "_" ?s_id "_" ?original_word"',{position:'below',trigger:'click'}); </script>   </a> </english>" crlf)
 
- (printout fp "<english category='none'> <a onclick=\"initialize('"?Eng_sen"')\"> <span id=\"popup_link_" ?original_word"\" class=\"popup_link\">" ?l_punc ?original_word ?r_punc "</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_" ?original_word"'); </script>   </a> </english>" crlf)
+ ;(printout fp "<english category='none'> <a onclick=\"initialize('"?Eng_sen"')\" id=\"popup_link_" ?original_word"\" href=\"#\">" ?l_punc ?original_word ?r_punc "<script type=\"text/javascript\"> new Popup('popup_4','popup_link_" ?original_word"',{modal:true,duration:1}); </script>   </a> </english>" crlf)
 
 
  (printout fp "<h1> "?l_punc ?root ?r_punc" </h1>" crlf)
@@ -308,6 +310,7 @@
  (id-left_punctuation  1 ?l_punc )
  (id-original_word 1 ?original_word)
  (id-word 1 ?word)
+ (id-root 1 ?root)
  (test (eq ?p_id 1))
  (Eng_sen ?Eng_sen)
  =>
@@ -323,7 +326,11 @@
 ; (printout fp "<english category='none'><a onclick==\"initialize('"?Eng_sen"')\">" ?l_punc ?original_word ?r_punc"</a> </english>" crlf)
 
 
- (printout fp "<english category='none'> <a onclick=\"initialize('"?Eng_sen"')\"> <span id=\"popup_link_" ?original_word"\" class=\"popup_link\">" ?l_punc ?original_word ?r_punc "</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_" ?original_word"'); </script>   </a> </english>" crlf)
+ (printout fp "<english category='none'> <a onclick=\"javascript: fetchshabd('"?root"')\"> <span id=\"popup_link_"?p_id "_" ?s_id "_" ?original_word"\" class=\"popup_link\">" ?l_punc ?original_word ?r_punc "</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_"?p_id "_" ?s_id "_" ?original_word"',{position:'below',trigger:'click'}); </script>   </a> </english>" crlf)
+
+
+; (printout fp "<english category='none'> <a onclick=\"initialize('"?Eng_sen"')\" id=\"popup_link_" ?original_word"\" href=\"#\">" ?l_punc ?original_word ?r_punc "<script type=\"text/javascript\"> new Popup('popup_4','popup_link_" ?original_word"',{modal:true,duration:1}); </script>   </a> </english>" crlf)
+
 
  (assert (id-index 1 ?n_words))
  )
@@ -342,6 +349,7 @@
  (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
  (test (neq ?p_id 1))
  (id-word 1 ?word)
+ (id-root 1 ?root)
  (id-right_punctuation 1 ?r_punc)
  (id-left_punctuation  1 ?l_punc )
  (id-original_word 1 ?original_word)
@@ -358,7 +366,15 @@
  ;(printout fp "<english number='"?p_id"."?s_id"' category='none'> <a onclick=\"initialize('"?Eng_sen"')\">" ?l_punc ?original_word ?r_punc"</a> </english>" crlf)
 
 
- (printout fp "<english number='"?p_id"."?s_id"' category='none'> <a onclick=\"initialize('"?Eng_sen"')\"> <span id=\"popup_link_"?p_id"."?s_id"\" class=\"popup_link\">" ?l_punc ?original_word ?r_punc "</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_"?p_id"."?s_id"'); </script>  </a> </english>" crlf)
+ ;(printout fp "<english number='"?p_id"."?s_id"' category='none'> <a onclick=\"initialize('"?Eng_sen"')\"> <span id=\"popup_link_"?p_id"."?s_id"\" class=\"popup_link\">" ?l_punc ?original_word ?r_punc "</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_"?p_id"."?s_id"'); </script>  </a> </english>" crlf)
+
+
+
+ (printout fp "<english number='"?p_id"."?s_id"' category='none'> <a onclick=\"javascript:initialize('"?Eng_sen"'); fetchshabd('"?root"') \"> <span id=\"popup_link_"?p_id"_"?s_id"\" class=\"popup_link\">" ?l_punc ?original_word ?r_punc "</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_"?p_id"_"?s_id"',{position:'below',trigger:'click'}); </script>  </a> </english>" crlf)
+
+
+ ;(printout fp "<english number='"?p_id"."?s_id"' category='none'> <a onclick=\"initialize('"?Eng_sen"')\" id=\"popup_link_" ?original_word"\" href=\"#\">" ?l_punc ?original_word ?r_punc "<script type=\"text/javascript\"> new Popup('popup_4','popup_link_" ?original_word"',{modal:true,duration:1}); </script>   </a> </english>" crlf)
+
 
  (assert (id-index 1 ?n_words))
  )
@@ -366,7 +382,9 @@
  ;;printing word head information
  (defrule sent_next_word
  (declare (salience 1000))
+ (para_id-sent_id-no_of_words ?p_id ?s_id ?words)
  (id-word ?id ?word)
+ (id-root ?id ?root)
  (id-original_word ?id ?original_word)
  (id-index ?id ?n_words)
  (test (neq ?id 1))
@@ -379,7 +397,14 @@
 
 
 
- (printout fp "<english category='none'> <a onclick=\"initialize('"?Eng_sen"')\"> <span id=\"popup_link_" ?original_word"\" class=\"popup_link\">" ?l_punc ?original_word ?r_punc "</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_" ?original_word"'); </script>   </a> </english>" crlf)
+ ;(printout fp "<english category='none'> <a onclick=\"initialize('"?Eng_sen"')\"> <span id=\"popup_link_" ?original_word"\" class=\"popup_link\">" ?l_punc ?original_word ?r_punc "</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_" ?original_word"'); </script>   </a> </english>" crlf)
+
+
+
+ (printout fp "<english category='none'> <a onclick=\"javascript: fetchshabd('"?root"')\"> <span id=\"popup_link_"?p_id "_" ?s_id "_" ?original_word"\" class=\"popup_link\">" ?l_punc ?original_word ?r_punc "</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_"?p_id "_" ?s_id "_" ?original_word"',{position:'below',trigger:'click'}); </script>   </a> </english>" crlf)
+
+ ;(printout fp "<english category='none'> <a onclick=\"initialize('"?Eng_sen"')\" id=\"popup_link_" ?original_word"\" href=\"#\">" ?l_punc ?original_word ?r_punc "<script type=\"text/javascript\"> new Popup('popup_4','popup_link_" ?original_word"',{modal:true,duration:1}); </script>   </a> </english>" crlf)
+
 
  )
  ;---------------------------------------------------------------------------------------------------

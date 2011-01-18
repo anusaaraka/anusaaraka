@@ -38,6 +38,10 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 <script src="effects.js" type="text/javascript"></script>
 <script src="dragdrop.js" type="text/javascript"></script>
 <script src="popup.js" type="text/javascript"></script>
+<!--
+<script src="file://home/anusaaraka/Anusaaraka/anu_testing/Anu_data/shabdanjali.js" type="text/javascript"></script>
+-->
+<script src="shabdanjali.js" type="text/javascript"></script>
 <link rel="stylesheet" href="popup.css" type="text/css" />
 
 
@@ -61,11 +65,72 @@ Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 <body onload="register_keys()">
 
 
-	<div id="popup_2" class="popup popup_draghandle">
-		<h3>Google Translate</h3>
-		<div id="content">Loading   </div>
-		<p><a class="popup_closebox" href="#">Close box</a></p>
-	</div>
+<div id="popup_8" class="popup popup_draghandle">
+      <div id="content"></div>
+    </div>
+    <div id="popup_6" class="popup popup_draghandle">
+      <h3> IIT-B </h3>
+      <div id="content1iitb"></div>
+      <p>
+        <a class="popup_closebox" href="#">Close box</a>
+      </p>
+    </div>
+
+    <div id="popup_4" class="popup popup_draghandle">
+      <h3> Google Translate </h3>
+      <div id="contentgoogle1"></div>
+      <p>
+      <a class="popup_closebox" href="#">Close box</a>
+      </p>
+    </div>
+
+    <div id="popup_5" class="popup popup_draghandle">
+      <h3> Google Translate </h3>
+      <div id="contentgooglep"></div>
+      <p>
+      <a class="popup_closebox" href="#">Close box</a>
+      </p>
+    </div>
+
+    <div id="popup_3" class="popup popup_draghandle">
+      <p>
+      <a id="popup_link_4" href="#">Sentence Translation</a>
+      </p>
+      <p>
+      <a id="popup_link_5" href="#">Paragraph Translation</a>
+      </p>
+      <script type="text/javascript">
+        new Popup('popup_4','popup_link_4',{position:'below',trigger:'click'})
+        new Popup('popup_5','popup_link_5',{position:'below',trigger:'click'})
+        </script>
+      <p>
+        <a class="popup_closebox" href="#">Close box</a>
+      </p>
+    </div>
+
+
+
+
+
+    <div id="popup_2" class="popup popup_draghandle">
+      <h3> Shabdanjali </h3>
+      <div id="content1shabd"></div>
+      <script type="text/javascript">
+      new Popup('popup_6','popup_link_6',{position:'below',trigger:'click'})
+      new Popup('popup_8','popup_link_8',{position:'below',trigger:'click'})
+    </script>
+      <p>
+        <a class="popup_closebox" href="#">Close box</a>
+      </p>
+    </div>
+
+
+
+
+
+
+
+
 
 
 
