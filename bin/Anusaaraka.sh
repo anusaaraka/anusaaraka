@@ -143,6 +143,6 @@
 
 	#To add slashes before(',",(,) etc.. )  inside initialise function(used for google api)
 	cd $MYPATH1
-	perl $HOME_anu_test/bin/addslash.pl < $1.html > $1-new.html
+	perl $HOME_anu_test/Anu_src/change-html.pl < $1.html > $1-new.html
 	cp $1.html $1-old.html
 	cp $1-new.html $1.html
