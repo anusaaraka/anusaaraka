@@ -13,12 +13,12 @@
  ; stanford cat  
  (defrule sd_cat
  (declare (salience 100))
- ?f1<-(sid-cat_coarse  ?lid ?cat)
- (parserid-wordid ?lid ?id)
+ ?f1<-(sid-cat_coarse  ?pid ?cat)
+ (parserid-wordid ?pid ?id)
  ?f0<-(id-cat_coarse ?id ?)
  (test (neq ?cat -))
  =>
-	(printout ?*cat_file* "(parser_id-cat_coarse  "?lid"  "?cat")" crlf)
+	(printout ?*cat_file* "(parser_id-cat_coarse  "?pid"  "?cat")" crlf)
 	(retract ?f0 ?f1)
  )
  ;-----------------------------------------------------------------------------------------------
@@ -26,9 +26,9 @@
  (defrule pos_cat
  (declare (salience 50))
  ?f0<-(id-cat_coarse ?id ?cat)
- (parserid-wordid ?lid ?id)
+ (parserid-wordid ?pid ?id)
  =>
-        (printout ?*cat_file* "(parser_id-cat_coarse  "?lid"  "?cat")" crlf)
+        (printout ?*cat_file* "(parser_id-cat_coarse  "?pid"  "?cat")" crlf)
         (retract ?f0)
  )
  ;-----------------------------------------------------------------------------------------------

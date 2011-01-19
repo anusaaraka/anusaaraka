@@ -10751,7 +10751,7 @@ darkly	darAwe_hue
 darkness	aMXakAra
 darling	lAdalA
 darn	raPU_kara
-data	bAweM
+data	detA	
 datum	AXAra
 daughter	betI
 day-time_word	xina_ke_samaya

@@ -30,24 +30,24 @@
  (defrule is_ing_rule
  (declare (salience 250))
  ?f0<-(lwg_root-verbchunk-tam-chunkids ?root ?vbchunk is_ing  ?id $?ids)
- (parserid-wordid  ?lid ?id)
- (link_name-link_lnode-link_rnode Ost ?lid1 ?lid)
+ (parserid-wordid  ?pid ?id)
+ (link_name-link_lnode-link_rnode Ost ?pid1 ?pid)
  =>
  (retract ?f0)
  (printout ?*lwg-diff-file* "(lwg_root-verbchunk-tam-chunkids " ?root" " ?vbchunk " is_ing " ?id " "(implode$ $?ids)")" crlf)
  (printout ?*revised-lwg-file* "(lwg_root-verbchunk-tam-chunkids " ?root" "?vbchunk " is_ing "?id" "(implode$ $?ids) ")"crlf)
- (assert (old_lwg_grp_id ?lid))
+ (assert (old_lwg_grp_id ?pid))
  )
  ;-----------------------------------------------------------------------------------------------------------------
  (defrule was_ing_rule
  (declare (salience 250))
  ?f0<-(lwg_root-verbchunk-tam-chunkids ?root ?vbchunk was_ing  ?id $?ids)
- (parserid-wordid  ?lid ?id)
+ (parserid-wordid  ?pid ?id)
   =>
   (retract ?f0)
   (printout ?*lwg-diff-file* "(lwg_root-verbchunk-tam-chunkids "?root" "?vbchunk " was_ing "?id" "(implode$ $?ids)")" crlf)
   (printout ?*revised-lwg-file* "(lwg_root-verbchunk-tam-chunkids "?root" "?vbchunk " was_ing "?id" "(implode$ $?ids)")"crlf)
-  (assert (old_lwg_grp_id ?lid))
+  (assert (old_lwg_grp_id ?pid))
  )
  ;-----------------------------------------------------------------------------------------------------------------
  ;She is making the girl feed the child

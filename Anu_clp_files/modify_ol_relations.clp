@@ -460,17 +460,17 @@
 ;It is not a good idea to drive for hours without a rest.
 (defrule del_rel_1
 (declare (salience 10))
-(ol_res_id-word_id-word   ?lid ?i   is)
-?f<-(relation-parser_ids  kriyA-kqxanwa_karma ?lid ?lid1)
+(ol_res_id-word_id-word   ?pid ?i   is)
+?f<-(relation-parser_ids  kriyA-kqxanwa_karma ?pid ?pid1)
 (not (id-word ?id than));Added by sheetal:Our program is easier to use than to understand.
 =>
 (retract ?f)
-(assert (rel_has_been_deleted  kriyA-kqxanwa_karma  ?lid ?lid1))
-(printout ?*debug* "(rule-deleted_relation-ids   del_rel_1   kriyA-kqxanwa_karma  "?lid"   " ?lid1")"crlf)
-(assert (relation-parser_ids  kriyA-kriyArWa_kriyA ?lid ?lid1))
-(assert (rel_has_been_written   kriyA-kriyArWa_kriyA  ?lid ?lid1))
-(printout       ?*ol_fp*    "(relation-parser_ids   kriyA-kriyArWa_kriyA    "?lid"    "?lid1")"crlf)
-(printout ?*debug* "(Rule-Rel-ids    del_rel_1   kriyA-kriyArWa_kriyA    "?lid"    "?lid1")"crlf)
+(assert (rel_has_been_deleted  kriyA-kqxanwa_karma  ?pid ?pid1))
+(printout ?*debug* "(rule-deleted_relation-ids   del_rel_1   kriyA-kqxanwa_karma  "?pid"   " ?pid1")"crlf)
+(assert (relation-parser_ids  kriyA-kriyArWa_kriyA ?pid ?pid1))
+(assert (rel_has_been_written   kriyA-kriyArWa_kriyA  ?pid ?pid1))
+(printout       ?*ol_fp*    "(relation-parser_ids   kriyA-kriyArWa_kriyA    "?pid"    "?pid1")"crlf)
+(printout ?*debug* "(Rule-Rel-ids    del_rel_1   kriyA-kriyArWa_kriyA    "?pid"    "?pid1")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -509,16 +509,16 @@
 ;I saw him telling her about the party.
 (defrule assert_rel
 (declare (salience 10))
-(relation-parser_ids  kriyA-object ?lid ?lid1)
-(relation-parser_ids  kriyA-subject ?li ?lid1)
-(relation-parser_ids  kriyA-object ?li ?lid2)
+(relation-parser_ids  kriyA-object ?pid ?pid1)
+(relation-parser_ids  kriyA-subject ?li ?pid1)
+(relation-parser_ids  kriyA-object ?li ?pid2)
 (ol_res_id-word_id-word ?li    ?id     ?word)
 (test (eq (sub-string (- (length ?word) 2) (length ?word) ?word) "ing"))
 =>
-(assert (relation-parser_ids  kriyA-kqxanwa_kriyA_viSeRaNa ?lid ?li))
-(assert (rel_has_been_written   kriyA-kqxanwa_kriyA_viSeRaNa  ?lid ?li))
-(printout       ?*ol_fp*    "(relation-parser_ids  kriyA-kqxanwa_kriyA_viSeRaNa   "?lid"    "?li")"crlf)
-(printout ?*debug* "(Rule-Rel-ids    assert_rel   kriyA-kqxanwa_kriyA_viSeRaNa   "?lid"    "?li")"crlf)
+(assert (relation-parser_ids  kriyA-kqxanwa_kriyA_viSeRaNa ?pid ?li))
+(assert (rel_has_been_written   kriyA-kqxanwa_kriyA_viSeRaNa  ?pid ?li))
+(printout       ?*ol_fp*    "(relation-parser_ids  kriyA-kqxanwa_kriyA_viSeRaNa   "?pid"    "?li")"crlf)
+(printout ?*debug* "(Rule-Rel-ids    assert_rel   kriyA-kqxanwa_kriyA_viSeRaNa   "?pid"    "?li")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -1155,9 +1155,9 @@
 (test (neq (str-index "_" ?rel)  FALSE))
 (test (eq (sub-string 1 (- (str-index "-" ?rel) 1) ?rel) "kriyA"))
 (test (eq (sub-string (+ (+ (str-index "-" ?rel) 1) (- (str-index "_" ?rel)  (str-index "-" ?rel))) (length ?rel) ?rel) "saMbanXI"))
-(ol_res_id-word_id-word  ?lid  ?id  ?str&:(sub-string (+ (str-index "-" ?rel) 1) (- (str-index "_" ?rel) 1) ?rel))
+(ol_res_id-word_id-word  ?pid  ?id  ?str&:(sub-string (+ (str-index "-" ?rel) 1) (- (str-index "_" ?rel) 1) ?rel))
 (test (and (eq (str-index "." ?str) FALSE)(eq (str-index "punctuation_mark" ?str) FALSE))) ;That incident took place in 1800 B.C.  (to avoid kriyA-b.c_saMbanXI)
-(test (member$ ?lid  $?ids))
+(test (member$ ?pid  $?ids))
 =>
 (if (neq ?head ?sam) then 
   (printout ?*ol_fp* "(relation-parser_ids  kriyA-"?str"_saMbanXI  " ?kri" "?head")" crlf)

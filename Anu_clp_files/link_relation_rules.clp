@@ -3,9 +3,9 @@
  (defglobal ?*open-orign* = open-orign)
  (defglobal ?*hmng_fp* = hmng_fp)
 
-  (deffunction string_to_integer (?link_id)
+ (deffunction string_to_integer (?parser_id)
 ; Removes the first character from the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
- (string-to-field (sub-string 2 10000 ?link_id)))
+ (string-to-field (sub-string 2 10000 ?parser_id)))
 
  (deffacts dummy_facts 
  (missing-level-id) 

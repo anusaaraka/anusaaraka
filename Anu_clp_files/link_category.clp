@@ -10,40 +10,40 @@
  (No complete linkages found)
  )
  
-(deffunction string_to_integer (?link_id)
+ (deffunction string_to_integer (?parser_id)
 ; Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
- (string-to-field (sub-string 2 10000 ?link_id)))
+ (string-to-field (sub-string 2 10000 ?parser_id)))
 
  ; Generates control fact for deciding category
  (defrule generate_control_fact
  (declare (salience 300))
- (parserid-word ?lid  ?)
+ (parserid-word ?pid  ?)
  =>
- 	(assert (category_to_be_decided ?lid))
+ 	(assert (category_to_be_decided ?pid))
  )
  ;----------------------------------------------------------------------------------------------------------------
   ;Please do accept the same; bless the Anusaaraka project to make speedy progress.
  (defrule handling_cat_for_punctuations
  (declare (salience 500))
- (linkid-word-node_cat ?lid ?word  ?cat)
- ?f0<-(category_to_be_decided ?lid)
+ (linkid-word-node_cat ?pid ?word  ?cat)
+ ?f0<-(category_to_be_decided ?pid)
  (test (or (eq ?word "\"")(eq ?word "?")(eq ?word "(")(eq ?word ")")(eq ?word ";")))
  =>
        (retract ?f0)
        (if  (eq ?word "\"") then
-              (printout ?*link_cat-file* "(linkid-word-node_cat  " ?lid "  \"\\"  ?word"\" "?cat")" crlf)
+              (printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "  \"\\"  ?word"\" "?cat")" crlf)
        else
-       (printout ?*link_cat-file* "(linkid-word-node_cat  " ?lid "   \"" ?word"\"  "?cat ")"crlf))
+       (printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "   \"" ?word"\"  "?cat ")"crlf))
  )
  ;----------------------------------------------------------------------------------------------------------------
  ;if link category is g then take it as gerund
  (defrule gerund_rule
  (declare (salience 250))
- (linkid-word-node_cat ?lid ?word  g)
- ?f0<-(category_to_be_decided ?lid)
+ (linkid-word-node_cat ?pid ?word  g)
+ ?f0<-(category_to_be_decided ?pid)
  =>
  	(retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?lid "  " ?word"  gerund)" crlf)
+        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "  " ?word"  gerund)" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
  ; The game of life is played for winning  (M g p)
@@ -439,69 +439,69 @@
   ; Jane is soon coming . The Danes are nice people.
   (defrule pronoun_rule_first_cap
   (declare (salience 10))
-  ?f0<-(linkid-word-node_cat ?lid ?lword noun/pronoun)
-  (parserid-wordid  ?lid ?id)
+  ?f0<-(linkid-word-node_cat ?pid ?lword noun/pronoun)
+  (parserid-wordid  ?pid ?id)
   (id-word_cap_info ?id first_cap)
   (id-original_word ?wid ?word)
   (test (eq ?lword ?word))
   =>
   	(retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?lid "  "?lword"   PropN)" crlf)
+        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "  "?lword"   PropN)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ; if category is noun/pronoun and if word is he|she|they|this|we|all|I|it|you then modify category as pronoun
   ; How many people did you see
   (defrule pronoun_rule
   (declare (salience 20))
-  ?f0<-(linkid-word-node_cat ?lid ? noun/pronoun)
-  (parserid-word ?lid ?lword&he|she|they|this|we|all|I|it|you|me|her|him|us)
+  ?f0<-(linkid-word-node_cat ?pid ? noun/pronoun)
+  (parserid-word ?pid ?lword&he|she|they|this|we|all|I|it|you|me|her|him|us)
   =>
                (retract ?f0)
-               (printout ?*link_cat-file* "(linkid-word-node_cat  " ?lid "  "?lword"  pronoun)" crlf)
+               (printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "  "?lword"  pronoun)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ; if category is noun/pronoun and the above cases fail then modify category as noun
   (defrule pronoun_rule1
   (declare (salience 5))
-  ?f0<-(linkid-word-node_cat ?lid ? noun/pronoun)
- ; (parserid-word ?lid ?lword)
-  (parserid-word ?lid ?lword&:(not (numberp ?lword)))
+  ?f0<-(linkid-word-node_cat ?pid ? noun/pronoun)
+ ; (parserid-word ?pid ?lword)
+  (parserid-word ?pid ?lword&:(not (numberp ?lword)))
   =>
                 (retract ?f0)
-                (printout ?*link_cat-file* "(linkid-word-node_cat  " ?lid "  "?lword"  noun)" crlf)
+                (printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "  "?lword"  noun)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   (defrule apos_pronoun_rule
   (declare (salience 20))
   ?f0<-(apos_linkid-word-node_cat apos ?id ?lword noun/pronoun)
-  (parserid-word ?lid ?lword&he|she|they|this|we|all|I|it|you|her|him|us)
-  (test (eq (string_to_integer (sub-string 1 (- (length ?lid) 2) ?lid)) ?id))
+  (parserid-word ?pid ?lword&he|she|they|this|we|all|I|it|you|her|him|us)
+  (test (eq (string_to_integer (sub-string 1 (- (length ?pid) 2) ?pid)) ?id))
   =>
 	(retract ?f0)         
-	(printout ?*link_cat-file* "(linkid-word-node_cat  " ?lid "  "?lword"  pronoun)" crlf)
+	(printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "  "?lword"  pronoun)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ;John's book is given to John's sister.
   (defrule apos_PropN_rule
   (declare (salience 10)) 
   ?f0<-(apos_linkid-word-node_cat apos ?id ?lword noun/pronoun)	
-  (parserid-wordid  ?lid ?wid)
+  (parserid-wordid  ?pid ?wid)
   (id-word_cap_info ?wid first_cap)
   (id-original_word ?wid ?word)
-  (test (eq (string_to_integer (sub-string 1 (- (length ?lid) 2) ?lid)) ?id))
+  (test (eq (string_to_integer (sub-string 1 (- (length ?pid) 2) ?pid)) ?id))
   (test (eq ?lword ?word))
    =>
   	(retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?lid "  "?lword"   PropN)" crlf)
+        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "  "?lword"   PropN)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   (defrule apos_noun 
   ?f0<-(apos_linkid-word-node_cat apos ?id ?lword noun/pronoun)
-  (parserid-word ?lid ?lword)
-  (test (eq (string_to_integer (sub-string 1 (- (length ?lid) 2) ?lid)) ?id))
+  (parserid-word ?pid ?lword)
+  (test (eq (string_to_integer (sub-string 1 (- (length ?pid) 2) ?pid)) ?id))
   =>
   	(retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?lid "  "?lword"  noun)" crlf)
+        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "  "?lword"  noun)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ; No complete linkage

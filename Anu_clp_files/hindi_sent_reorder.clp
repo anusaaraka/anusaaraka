@@ -668,9 +668,9 @@
  ; If we heat iron it becomes red .
  ;If you were a middle-class American without a job , who would you vote for .
  (defrule CO_rule_for_wo
- (link_name-lnode-rnode CO*s ?lid ?id)
- (link_name-lnode-rnode Cs ?lid ?id1)   
- ?f1<-(id-word ?lid if|when)  ;Modified by Meena (28-10-10) 
+ (link_name-lnode-rnode CO*s ?pid ?id)
+ (link_name-lnode-rnode Cs ?pid ?id1)   
+ ?f1<-(id-word ?pid if|when)  ;Modified by Meena (28-10-10) 
  ?f0 <-(hindi_id_order $?pre ?id $?post)
  =>
         (retract ?f0 ?f1)
@@ -680,8 +680,8 @@
  ;------------------------------------------------------------------------------------------------------------------
 ;Since I know English , he spoke to me
  (defrule CO_rule_for_isaliye
- (link_name-lnode-rnode CO*s ?lid ?id)
- ?f1<-(id-word ?lid since) 
+ (link_name-lnode-rnode CO*s ?pid ?id)
+ ?f1<-(id-word ?pid since) 
  ?f0 <-(hindi_id_order $?pre ?id $?post)
  =>
         (retract ?f0 ?f1)
@@ -693,8 +693,8 @@
  ; Added by Shirisha Manju(23-03-10) --- (suggested by meenaji)
  ;If you were a middle-class American without a job , who would you vote for .
  (defrule wo_rule
- (link_name-lnode-rnode B*w ?lid ?id)
- (kriyA-for_saMbanXI ?kri ?lid)
+ (link_name-lnode-rnode B*w ?pid ?id)
+ (kriyA-for_saMbanXI ?kri ?pid)
  (kriyA-subject ?kri ?sub)
  ?f1<-(id-word ?sub ?)
  ?f0 <-(hindi_id_order $?pre ?sub $?post)

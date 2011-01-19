@@ -19,23 +19,23 @@
  ;If link cat is gerund then assign cat as verbal_noun
  (defrule link_gerund_cat
  (declare (salience 110))
- ?f1<-(linkid-word-node_cat  ?lid  ?word gerund)
- (parserid-wordid  ?lid ?id)
+ ?f1<-(linkid-word-node_cat  ?pid  ?word gerund)
+ (parserid-wordid  ?pid ?id)
  ?f0<-(id-cat_coarse ?id ?)
  =>
-        (printout ?*cat_fp* "(parser_id-cat_coarse  "?lid"  verbal_noun)" crlf)
+        (printout ?*cat_fp* "(parser_id-cat_coarse  "?pid"  verbal_noun)" crlf)
         (retract ?f0 ?f1)
  )
  ;-----------------------------------------------------------------------------------------------------------------
  ; link cat  
  (defrule link_cat
  (declare (salience 100))
- ?f1<-(linkid-word-node_cat  ?lid  ?word ?cat)
- (parserid-wordid  ?lid ?id)
+ ?f1<-(linkid-word-node_cat  ?pid  ?word ?cat)
+ (parserid-wordid  ?pid ?id)
  ?f0<-(id-cat_coarse ?id ?)
  (test (neq ?cat -))
  =>
-	(printout ?*cat_fp* "(parser_id-cat_coarse  "?lid"  "?cat")" crlf)
+	(printout ?*cat_fp* "(parser_id-cat_coarse  "?pid"  "?cat")" crlf)
 	(retract ?f0 ?f1)
  )
  ;-----------------------------------------------------------------------------------------------------------------
@@ -43,11 +43,11 @@
  ; Ex : The stand-still alert ended . (alert id is missing in apertium bcoz of "-")
  (defrule link_cat1
  (declare (salience 90))
- ?f1<-(linkid-word-node_cat  ?lid  ?word ?cat)
- (parserid-wordid  ?lid ?id)
+ ?f1<-(linkid-word-node_cat  ?pid  ?word ?cat)
+ (parserid-wordid  ?pid ?id)
  (test (neq ?cat -))
  =>
-	(printout ?*cat_fp* "(parser_id-cat_coarse  "?lid"  "?cat")" crlf) 
+	(printout ?*cat_fp* "(parser_id-cat_coarse  "?pid"  "?cat")" crlf) 
         (retract ?f1)
  )
  ;-----------------------------------------------------------------------------------------------------------------
@@ -55,9 +55,9 @@
  (defrule pos_cat
  (declare (salience 50))
  ?f0<-(id-cat_coarse ?id ?cat)
- (parserid-wordid  ?lid ?id)
+ (parserid-wordid  ?pid ?id)
  =>
-	(printout ?*cat_fp* "(parser_id-cat_coarse  "?lid"  "?cat")" crlf)
+	(printout ?*cat_fp* "(parser_id-cat_coarse  "?pid"  "?cat")" crlf)
         (retract ?f0)
  )
  ;-----------------------------------------------------------------------------------------------------------------

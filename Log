@@ -1551,7 +1551,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
      16.parser_id_mapping.clp           17.parserid_wordid_mapping.clp  18.sd_relation_rules.clp 
      19.sd_pada.clp                     20.show_std_rel.clp		21.stnford_relations.lex 
      22.sd_category.py            	23.sd_hindi_position.clp	24.sd_lwg_rules.clp                
-     25.run_sd_lwg_rules.bat		26.stnford_word.lex
+     25.run_sd_lwg_rules.bat		26.stnford_word.lex		27.sd_lwg_rules.clp
+     28.combining_apostrophe.clp	29.create_xml_file.clp          30.link_category.clp
+     31.pada_ids.clp			32.sd_combining_apostrophe.clp	33.root_rule.clp
+     34.sd_cat_rule.clp			35.cat_rule.clp			36.root_consistency_check.clp
+     37.lwg_consistency_check.clp	38.hindi_sent_reorder.clp	39.lwg_not.clp
 
  2. After mapping relations 'using-parser-ids' fact is renamed as 'relation-anu_ids' and also  replaced 'L' id with 'P' id in    following files:
     01.ol_parser_id_mapping.clp		02.pada_point_concept_rules.clp		03.run_modules_ol.bat 
@@ -1564,7 +1568,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  4. Added debug info in pada_point_concept_rules.clp,run_modules_link.bat,run_modules_ol.bat,run_modules_std.bat
  5. Now using stanford new version(2010-11-10).
  6. Modified sd_relation_rules.clp,sd_pada.clp,sd_lwg_rules.clp(to generate conjunction components)
- 7. Updated following files:
+ 7. Updated changes in databases.
+ 8. Updated following files:
                      verified	  (556)          small_sent_verified_ol  (66)
                      verified_ol  (530)          small_sent_verified     (73)
                      
