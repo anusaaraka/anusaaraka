@@ -18,6 +18,7 @@ SCON_FOR_tran4 = []; st4c =0
 inp=''; sent=''; sent_len=0
 tran1_components = []; tran1_head_wrds = []; tran1 = []; c = 0; tran2 = []
 sconId_resId = {}
+trn3=[]
 for f in file(sys.argv[1]):
 	inp = sent
 	sent = f
@@ -83,6 +84,18 @@ for f in file(sys.argv[1]):
         if tran_cnt == 3:
             OP_TAR_ARR_TRAN3.append(f.split())
             OTAR_TRAN3.append(f.split())
+            t3 = f.split()
+            if len(t3)>0:
+                if 'SWORKO' in t3:
+                    mc=0
+                    for each in xrange(len(t3)):
+                        if t3[each] == '=' and each <= 4:
+                            mc=1
+                        if mc == 1:
+                            a=t3[each+1:len(t3)]
+                            trn3.append(a)
+                            mc=0
+ 
 	#---------------------------information from semwrk values (containing prepositions)---------
 	# All the semwork values which contain prepositions are stored.
 	if prk==1 and "***SEMWRK VALUES" in f:
@@ -118,6 +131,7 @@ for f in file(sys.argv[1]):
             SCON_FOR_tran4.append(b)
             if len(b) == 21:
 	        sconId_resId[b[0]] = b[10]
+
 
 rel_fp = open("ol_original_relation_tmp.dat","w")
 B = ''; S = ''; O = ''
@@ -219,6 +233,25 @@ for i in xrange(len(RES_SWRK_TAB)):
 	if int(RES_SWRK_TAB[i][34]) > 1:
        	    id_wrd_lst_count_word[RES_SWRK_TAB[i][0]] = RES_SWRK_TAB[i][34:]
 
+"""
+#this part generates facts about tran wc etc.
+for i in xrange(len(tran1)):
+    print "(res_id-tran1_id-wc-subset-form-word  %s %s %s %s %s %s)\n"%(sconId_resId[tran1[i][3]], tran1[i][3], tran1[i][0], tran1[i][3], tran1[i][2], tran1[i][4]),
+print
+
+for i in xrange(len(tran2)):
+    print "(res_id-tran2_id-wc-form-word   %s %s %s %s %s)\n"%(sconId_resId[tran2[i][3]], tran2[i][3], tran2[i][0], tran2[i][2], tran2[i][4]),
+
+print
+for i in xrange(len(trn3)):
+    print "(res_id-tran3_id-wc-form-word   %s %s %s %s %s)\n"%(sconId_resId[trn3[i][3]], trn3[i][3], trn3[i][0], trn3[i][2], trn3[i][4]),
+
+print
+
+for i in xrange(len(RES_SWRK_TAB)):
+   print "(res_id-wc-form-subset-subchange-word   %s %s %s %s %s %s)\n"%(RES_SWRK_TAB[i][0], RES_SWRK_TAB[i][2], RES_SWRK_TAB[i][4], RES_SWRK_TAB[i][5], RES_SWRK_TAB[i][9], RES_SWRK_TAB[i][35]),
+
+"""
 k=1
 map_id = open("ol_original_numeric_word.dat","w")
 for i in xrange(len(INPUT)):
@@ -795,7 +828,7 @@ for i in xrange(len(tran3)):
 
         if len(tran3) >=5 and tran3[i-4][4] == '20' and tran3[i-4][5] == '450' and tran3[i-4][8] == 'why' and tran3[i-3][4] == '12' and tran3[i-2][4] == '1' and tran3[i-1][4] == '1' and tran3[i][4] == '2':
             rel_fp.write("(relation-parser_ids kriyA-wh_word_hewuvAcI P%s\tP%s)\n" % (sconId_resId[tran3[i][7]], sconId_resId[tran3[i-4][7]]))
-#           print "(aaaaaaaaaaaaaaaaaaaaarelation-parser_ids kriyA-wh_word_hewuvAcI P%s\tP%s)\n" % (tran3[i][7], tran3[i-4][7]),
+#           print "(aaaaaaaaaarelation-parser_ids kriyA-wh_word_hewuvAcI P%s\tP%s)\n" % (tran3[i][7], tran3[i-4][7]),
 #Ex.  
 
         if len(tran3) >=5 and tran3[i-3][4] == '20' and tran3[i-3][5] == '450' and tran3[i-3][8] == 'why' and tran3[i-2][4] == '12' and tran3[i-1][4] == '1' and tran3[i][4] == '2':
@@ -1049,6 +1082,11 @@ for i in xrange(len(tran3)):
         elif tran3[i-1][4] == '2' and tran3[i][4] == '1' and tran3[i+1][6] == '38' and tran3[i-1][9] != 'SWITCH68' and tran3[i+1][9] != 'SWITCH68':
                 rel_fp.write("(relation-parser_ids kriyA-kqxanwa_karma  P%s\tP%s)\n" % (sconId_resId[tran3[i-1][7]], sconId_resId[tran3[i+1][7]]))
 #Ex. Mary promised the instructor to take that course. 
+
+        elif tran3[i-2][4] == '2' and tran3[i][4] == '1' and tran3[i][5] == '543' and RESid_cat_dic[sconId_resId[tran3[i][7]]]=='3' and tran3[i][9] != 'SWITCH68' and tran3[i-1][9] != 'SWITCH68':
+                rel_fp.write("(relation-parser_ids kriyA-kriyA_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran3[i-2][7]], sconId_resId[tran3[i][7]]))
+#                print "(1111111111111111 kriyA-kriyA_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran3[i-2][7]], sconId_resId[tran3[i][7]])
+#Ex. She hurt her arm in the fall and lost the use of her fingers temporarily. 
 #-----------Information form semwork values------------------------------------------------------------
 
 for i in xrange(len(OTAR_TRAN3)):
@@ -1312,7 +1350,6 @@ for i in xrange(len(tran2)):
     for j in  xrange(len(tran2)):
         if tran2[i][0] == '1' and tran2[j][0] == '1' and tran2[i][1] == tran2[j][1] and i != j and (tran2[j-1][5] == 'CLS-BOS' or tran2[j-2][5] == 'CLS-BOS') and tran2[j-1][4] != '*' and tran3[i][4] != tran3[j][4]:
             rel_fp.write("(relation-parser_ids viSeRya-jo_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[tran2[i][3]], tran2[j][3]))
-#            print "(xxxxxxxxxiSeRya-jo_samAnAXikaraNa  P%s\tP%s)" % (sconId_resId[tran2[i][3]], tran2[j][3]) 
 # Ex. Is that the film in which he kills his mother. 
 
 preplist=  prep_dict_id_semwrk.values()

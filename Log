@@ -1540,7 +1540,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 		verified_ol (530)         small_sent_verified_ol  (66)
 		sd_verified (343)
 
-18-01-11
+19-01-11
 --------
  1. Renamed 'using-parser-ids' fact as 'relation-parser_ids' and also  replaced 'L' id with 'P' id in following files:
      01.run_openlogos.py		02.lwg_openlogos.pl		03.pada_openlogos.pl	
