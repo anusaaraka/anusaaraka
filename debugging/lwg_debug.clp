@@ -32,7 +32,7 @@
   else  
         (if (eq ?ptype Open-Logos-Parser) then
                 (printout t "      LWG debugging for Open Logos is not done at this point." crlf)
-                (printout t "      NOTE::: " crlf    "      If you want to debug LWG then go to this path \"anu_testing/Anu_data/\" and debug lwg_openlogos.pl programme. "  crlf crlf)
+                (printout t "      NOTE::: " crlf    "      If you want to debug LWG then go to this path \"anu_testing/Anu_src/\" and debug lwg_openlogos.pl programme. "  crlf crlf)
                 (printout t "     (exit) "crlf crlf)
         )
   )
@@ -141,8 +141,8 @@
 
  (defrule get_unnesasary_grouping
  ?f<-(get_unnesasary_id ?id)
- (parserid-wordid ?lid ?id)
- (rule_name-grouped_ids  ?rule_name $?ids ?lid)
+ (parserid-wordid ?pid ?id)
+ (rule_name-grouped_ids  ?rule_name $?ids ?pid)
  (Parser_used ?ptype)
  (not (Parser_used Open-Logos-Parser))
  =>
@@ -155,7 +155,7 @@
 		(ppdefrule ?rule_name)
  	)
         else (if (eq ?ptype Open-Logos-Parser) then
-                (printout t  crlf " The grouping is done from the file : anu_testing/Anu_data/lwg_openlogos.pl\n So,LWG grouping cannot be done at this point"crlf)
+                (printout t  crlf " The grouping is done from the file : anu_testing/Anu_src/lwg_openlogos.pl\n So,LWG grouping cannot be done at this point"crlf)
                (printout t "(exit) "crlf crlf) 
         ))
 
@@ -169,8 +169,8 @@
 
  (defrule get_unnesasary_grouping1
  ?f<-(get_unnesasary_id ?id)
- (parserid-wordid ?lid ?id)
- (not (rule_name-grouped_ids  ?rule_name $?ids ?lid))
+ (parserid-wordid ?pid ?id)
+ (not (rule_name-grouped_ids  ?rule_name $?ids ?pid))
  =>
    (retract ?f)
    (printout t "Enter the correct head id" crlf)
@@ -198,9 +198,9 @@
  (defrule check_not_id_for_link_parser
  (declare (salience 10))
  ?f<-(get_not_id ?id)
- (parserid-wordid ?lid ?id)
- (link_name-link_lnode-link_rnode ?name ? ?lid)
- (parserid-word ?lid  not)
+ (parserid-wordid ?pid ?id)
+ (link_name-link_lnode-link_rnode ?name ? ?pid)
+ (parserid-word ?pid  not)
  =>
  (retract ?f)
 
@@ -220,9 +220,9 @@
 
  (defrule check_not_id_for_sd_parser
  ?f<-(get_not_id ?id)
- (parserid-wordid ?lid ?id)
- (rel_name-sids ?lname ? ?lid)
- (parserid-word ?lid  not)
+ (parserid-wordid ?pid ?id)
+ (rel_name-sids ?lname ? ?pid)
+ (parserid-word ?pid  not)
   =>
   (retract ?f)
   (if (neq ?lname neg) then
@@ -244,8 +244,8 @@
 
  (defrule check_not_id1
  ?f<-(get_not_id ?id)
- (parserid-wordid ?lid ?id)
- (not (parserid-word ?lid  not))
+ (parserid-wordid ?pid ?id)
+ (not (parserid-word ?pid  not))
   =>
   (retract ?f)
   (printout t "Enter correctly :: " crlf)

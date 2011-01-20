@@ -4,7 +4,7 @@
  (load-facts "lwg_debug.dat")
  (load-facts "lwg_info.dat")
  (load-facts "sd_word_tmp.dat")
- (load-facts "sd-relations_tmp.dat")
+ (load-facts "relations_tmp.dat")
  (load-facts "link_name_expand.dat")
  (load-facts "link_relation_info_tmp1.dat")
  (load-facts "parserid_word_tmp.dat")

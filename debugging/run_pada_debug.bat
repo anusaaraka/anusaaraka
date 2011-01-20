@@ -44,7 +44,7 @@
  (load-facts "word.dat")
  (load-facts "English_sentence.dat")
  (load-facts "lwg_info.dat")
- (load-facts "pada_id_info.dat")
+ (load-facts "ol_pada.dat")
  (load-facts "ol_pada_debug.dat")
  (assert (question "Enter the Sentence ::  "))
  (assert (question1 "Enter the Sentence ::  "))

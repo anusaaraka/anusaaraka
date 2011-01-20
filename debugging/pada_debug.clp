@@ -19,11 +19,12 @@
   else
         (if (eq ?ptype Stanford-Parser) then
                 (load* "sd_pada.clp")
+                (load-facts "pada_id_info.dat")
         )
   else
 	(if (eq ?ptype Open-Logos-Parser) then
                 (load* "modify_ol_pada.clp")
-        	(load-facts "pada_id_info.dat")
+        	(load-facts "ol_pada.dat")
 	)
   )
   (system "clear")
@@ -127,7 +128,7 @@
  ?f<-(padas wrong)
   =>
   (retract ?f)
-  (printout t "Type the members of the pada  " crlf  "For Open-Logos Ex:- L3 L4 L5 :: " crlf " For other Parsers Ex: 3 4 5 " crlf)
+  (printout t "Type the members of the pada  " crlf  "For Open-Logos Ex:- P3 P4 P5 :: " crlf " For other Parsers Ex: 3 4 5 " crlf)
   (bind ?txt (explode$ (readline)))
   (assert (debug_pada ?txt))
   )

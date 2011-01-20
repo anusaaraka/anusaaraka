@@ -844,7 +844,7 @@ for i in xrange(len(tran3)):
             rel_fp.write("(relation-parser_ids kriyA-aXikaraNavAcI_avyaya  P%s\tP%s)\n" % (sconId_resId[tran3[i+1][7]], sconId_resId[tran3[i-1][7]]))
 #Ex. I wonder where John is. 
 
-        if tran3[i-2][4] == '2' and  tran3[i-1][4]=='20' and tran3[i-1][5]=='401' or tran3[i][4]=='12' and tran3[i+1][4] == '2' and tran3[i-2][7] != '10000' and tran3[i+1][7] != '10000' and tran3[i-2][8]!='that': 
+        if tran3[i-2][4] == '2' and  tran3[i-1][4]=='20' and (tran3[i-1][5]=='401' or tran3[i][4]=='12') and tran3[i+1][4] == '2' and tran3[i-2][7] != '10000' and tran3[i+1][7] != '10000' and tran3[i-2][8]!='that': 
             rel_fp.write("(relation-parser_ids kriyA-vAkyakarma  P%s\tP%s)\n" % (sconId_resId[tran3[i-2][7]], sconId_resId[tran3[i+1][7]]))
 #Ex. I knew who would come to the party.
 

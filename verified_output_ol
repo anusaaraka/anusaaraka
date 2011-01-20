@@ -3,6 +3,11 @@ Saving word information
 Saving morph information
 Calling POS Tagger and Chunker (APERTIUM)
 Calling OPEN-LOGOS
+rm: cannot remove `/tmp/openlogos/20100.*': No such file or directory
+Unable to open input file parse1.diag
+Unable to open input file parse2.diag
+Unable to open input file parse3.diag
+Unable to open input file parse4.diag
 matching compounds......
 Hindi meaning using Open Logos 1.1
 Test. 
@@ -2127,5 +2132,9 @@ Kufri shimla ke nikata eka CotA parvawIya sWAna hE.
 Hindi meaning using Open Logos 5.30
 She asked me to guess her age. 
 usane usakI umra kA anxAja lagAne ke liye muJe/muJako pUCA.
+
+Hindi meaning using Open Logos 5.31
+She hurt her arm in the fall and lost the use of her fingers temporarily. 
+usane girane meM usakI bAhu ko kRawi pahuzcAyI/pahuzcAI Ora asWAyI_rUpa se usakI uMgaliyoM kI upayogitA KoyI/KoI.
 
 Calling Interface related programs

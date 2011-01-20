@@ -50,21 +50,21 @@
  (system "clear")
  (system "echo \"Stanford-Parser-Output\" ")
  (system "echo \"----------------------------\" ")
- (system "cat sd-relations_tmp1.dat")
+ (system "cat relations_tmp.dat")
  (system "sed 's/(Eng_sen \"//g' English_sentence.dat |sed  's/\")//g'|sed 's/&quot;/\"/g'|sed 's/\&amp;/&/g' >jnk")
  (system "cat " ?*home_anu_tmp*)
  )
 
  (defrule V_P_relations
  (declare (salience 98))
- (using-parser-ids ?rel ?id ?id1)
+ (relation-parser_ids ?rel ?id ?id1)
  (test (and (neq ?rel viSeRya-det_viSeRaNa) (neq ?rel viSeRya-viSeRaNa)(neq ?rel kriyA-nA)(neq ?rel kriyA-ke_liye) (neq ?rel nAma-saMkRipwa_nAma)(neq ?rel proper_noun-det_viSeRaNa)(neq ?rel subject-opener)(neq ?rel kriyA-ne_ke_liye)(neq ?rel viSeRya-wulanAwmaka_viSeRaNa)(neq ?rel kriyA-viXi_vAkyakarma)(neq ?rel kriyA-samAnakAlika_kriyA)(neq ?rel pUrvakAlika_kriyA-ananwarakAlika_kriyA)(neq ?rel kriyA-praSnavAcI)(neq ?rel muKya_vAkya-sApekRa_upavAkya)(neq ?rel subject-vAkyasamAnAXikarNa))) 
- (not (using-parser-ids ?rel ?id ?id1 RC))
+ (not (relation-parser_ids ?rel ?id ?id1 RC))
  ?f<-(pp_list $?pp_list) 
  ?f1<-(head_count ?head_cnt)
  =>
  (retract ?f1 ?f)
- (assert (using-parser-ids ?rel ?id ?id1 RC))
+ (assert (relation-parser_ids ?rel ?id ?id1 RC))
  (if (not(member$ ?id1 $?pp_list)) then
  (bind $?pp_list (create$ $?pp_list ?id1)))
 
@@ -78,8 +78,8 @@
 
  (defrule test1
  (declare (salience 97))
- (using-parser-ids ?rel ?id ?id1)
- (using-parser-ids ?rel1 ?id ?id1)
+ (relation-parser_ids ?rel ?id ?id1)
+ (relation-parser_ids ?rel1 ?id ?id1)
  (not (relations_repeated ?id ?id1 RR))
  (test (neq ?rel ?rel1))
   =>
@@ -93,8 +93,8 @@
 
  (defrule test2
  (declare (salience 97))
- (using-parser-ids ?rel ?id ?id1)
- (using-parser-ids ?rel1 ?id1 ?id)
+ (relation-parser_ids ?rel ?id ?id1)
+ (relation-parser_ids ?rel1 ?id1 ?id)
  (not (relations_looped ?rel ?id ?id1 RL))
  (not (relations_looped ?rel1 ?id1 ?id RL))
  =>
@@ -177,17 +177,17 @@
  ?f<-(relations wrong)
   =>
   (retract ?f)
-  (printout t "Type the relation name and ids " crlf "For Open-Logos Ex:- kriyA-subject L3 L1 :: " crlf "   For other Parsers   Ex:- kriyA-subject 3 1 :: " crlf)
+  (printout t "Type the relation name and ids " crlf "For Open-Logos Ex:- kriyA-subject P3 P1 :: " crlf "   For other Parsers Ex:- kriyA-subject 3 1 :: " crlf)
   (bind ?txt (explode$ (readline)))
   (assert (debug ?txt))
   )
  
   (defrule debug_relation
   (declare (salience 10))
-  ?f<-(debug ?rel ?lid ?rid)
-  (Rule-Rel-ids ?rule_name ?rel ?L_lid ?L_rid)
-  (parserid-wordid  ?L_lid ?lid)
-  (parserid-wordid  ?L_rid ?rid)
+  ?f<-(debug ?rel ?pid ?rid)
+  (Rule-Rel-ids ?rule_name ?rel ?P_lid ?P_rid)
+  (parserid-wordid  ?P_lid ?pid)
+  (parserid-wordid  ?P_rid ?rid)
   (not (Parser_used Open-Logos-Parser))
   (Parser_used ?ptype)
   =>
@@ -204,7 +204,7 @@
  
   (defrule debug_ol_relations
   (declare (salience 12))
-  ?f<-(debug ?rel ?lid ?rid)
+  ?f<-(debug ?rel ?pid ?rid)
   (Parser_used Open-Logos-Parser)
   =>
 ;      (retract ?f)
@@ -222,19 +222,19 @@
  
   (defrule relations_asserted
   (declare (salience 11))
-  ?f1<-(debug ?rel ?L_lid ?L_rid)
+  ?f1<-(debug ?rel ?P_lid ?P_rid)
   ?f<-(relations asserted)
   (Parser_used Open-Logos-Parser)
-  (Rule-Rel-ids  ?rule_name   ?rel   ?L_lid   ?L_rid)
-  (parserid-wordid  ?L_lid  ?lid)
-  (parserid-wordid  ?L_rid  ?rid)
+  (Rule-Rel-ids  ?rule_name   ?rel   ?P_lid   ?P_rid)
+  (parserid-wordid  ?P_lid  ?pid)
+  (parserid-wordid  ?P_rid  ?rid)
   =>
   (retract ?f ?f1)
   (if  (and (neq ?rule_name write_remaining_relations) (neq ?rule_name write_AjFArWaka_kriyA_rel) (neq ?rule_name write_AjFArWaka_kriyA_rel1)) then
           (printout t crlf " Relation is given by  using the rule \"" ?rule_name "\""  crlf " And the rule is defined as..... " crlf crlf)
           (ppdefrule ?rule_name)
     else 
-            (printout t crlf " These Relations are given by using run_openlogos.py "crlf " If you want to debug these relations then go to the directory \"anu_testing/Anu_data\" and then debug run_openlogos.py" crlf))
+            (printout t crlf " These Relations are given by using run_openlogos.py "crlf " If you want to debug these relations then go to the directory \"anu_testing/Anu_src\" and then debug run_openlogos.py" crlf))
  
   (printout t crlf "NOTE:: " crlf crlf)
   (printout t "1. If you want to write any rule for the relations please go to the directory \"anu_testing/Anu_clp_files\" and "crlf "   write the rules in \"modify_ol_relations.clp\" file " crlf "2. After saving the rule compile it using the command  :    \" myclips -f create_binary_files.clp\"      "crlf  "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
@@ -242,24 +242,24 @@
 
   (defrule relations_asserted1
   (declare (salience 11))
-  ?f1<-(debug ?rel ?L_lid ?L_rid)
+  ?f1<-(debug ?rel ?P_lid ?P_rid)
   ?f<-(relations asserted)
   (Parser_used Open-Logos-Parser)
-  (not (Rule-Rel-ids  ?rule_name   ?rel   ?L_lid   ?L_rid))
+  (not (Rule-Rel-ids  ?rule_name   ?rel   ?P_lid   ?P_rid))
   =>
   (retract ?f ?f1)
-  (printout t crlf " These Relations are given by using run_openlogos.py "crlf " If you want to debug these relations then go to the directory \"anu_testing/Anu_data\" and then debug run_openlogos.py" crlf)
+  (printout t crlf " These Relations are given by using run_openlogos.py "crlf " If you want to debug these relations then go to the directory \"anu_testing/Anu_src\" and then debug run_openlogos.py" crlf)
   (printout t crlf "NOTE:: " crlf crlf)
   (printout t "1. If you want to write any rule for the relations please go to the directory \"anu_testing/Anu_clp_files\" and "crlf "   write the rules in \"modify_ol_relations.clp\" file " crlf "2. After saving the rule compile it using the command  :    \" myclips -f create_binary_files.clp\"      "crlf  "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
   )
 
   (defrule  relations_deleted
   (declare (salience 11))
-  ?f1<-(debug ?rel ?L_lid ?L_rid)
+  ?f1<-(debug ?rel ?P_lid ?P_rid)
   ?f<-(relations deleted)
-  (rule-deleted_relation-ids ?rule_name  ?rel  ?L_lid  ?L_rid)
-  (parserid-wordid  ?L_lid  ?lid)
-  (parserid-wordid  ?L_rid  ?rid)
+  (rule-deleted_relation-ids ?rule_name  ?rel  ?P_lid  ?P_rid)
+  (parserid-wordid  ?P_lid  ?pid)
+  (parserid-wordid  ?P_rid  ?rid)
   (Parser_used Open-Logos-Parser)
   =>
        (retract ?f)
@@ -268,11 +268,11 @@
   
   (defrule  relations_deleted_1
   (declare (salience 11))
-  ?f1<-(debug ?rel ?L_lid ?L_rid)
+  ?f1<-(debug ?rel ?P_lid ?P_rid)
   ?f<-(relations deleted)
-  (not (rule-deleted_relation-ids ?rule_name ?rel  ?L_lid  ?L_rid))
-  (parserid-wordid  ?L_lid  ?lid)
-  (parserid-wordid  ?L_rid  ?rid)
+  (not (rule-deleted_relation-ids ?rule_name ?rel  ?P_lid  ?P_rid))
+  (parserid-wordid  ?P_lid  ?pid)
+  (parserid-wordid  ?P_rid  ?rid)
   (Parser_used Open-Logos-Parser)
   =>
        (retract ?f)
@@ -282,11 +282,11 @@
  
   (defrule  relations_deleted_exists
   (declare (salience 10))
-  ?f1<-(debug ?rel ?L_lid ?L_rid)
+  ?f1<-(debug ?rel ?P_lid ?P_rid)
   ?f<-(relation_deleted  exists)
-  (rule-deleted_relation-ids ?rule_name  ?rel  ?L_lid  ?L_rid)
-  (parserid-wordid  ?L_lid  ?lid)
-  (parserid-wordid  ?L_rid  ?rid)
+  (rule-deleted_relation-ids ?rule_name  ?rel  ?P_lid  ?P_rid)
+  (parserid-wordid  ?P_lid  ?pid)
+  (parserid-wordid  ?P_rid  ?rid)
   (Parser_used Open-Logos-Parser)
   =>
   (retract ?f ?f1)
@@ -298,7 +298,7 @@
 
   (defrule  relations_deleted_doesnot_exists
   (declare (salience 10))
-  ?f1<-(debug ?rel ?L_lid ?L_rid)
+  ?f1<-(debug ?rel ?P_lid ?P_rid)
   ?f<-(relation_deleted  doesnot_exists)
   (Parser_used Open-Logos-Parser)
   =>
@@ -310,7 +310,7 @@
 
   (defrule debug_relation1
   (declare (salience 9))
-  ?f<-(debug ?rel ?lid ?rid)
+  ?f<-(debug ?rel ?pid ?rid)
   =>
   (retract ?f)
   (printout t "The specified relation among these ids is not present in the relations of the current sentence." crlf )
@@ -334,13 +334,13 @@
  =>
  (retract ?f)
  (printout t "Among which words the relation is missing :: "crlf)
- (printout t "Type the relation name and ids " crlf "For Open-Logos Ex:- kriyA-subject L3 L1 :: " crlf "   For other Parsers Ex:- kriyA-subject 3 1 :: " crlf)
+ (printout t "Type the relation name and ids " crlf "For Open-Logos Ex:- kriyA-subject P3 P1 :: " crlf "   For other Parsers Ex:- kriyA-subject 3 1 :: " crlf)
  (bind $?txt (explode$ (readline)))
  (assert (missing_relation $?txt))
  )
 
  (defrule missing_relation
- ?f<-(missing_relation ?rel ?lid ?rid)
+ ?f<-(missing_relation ?rel ?pid ?rid)
  (Parser_used ?ptype)
   =>
  (retract ?f)

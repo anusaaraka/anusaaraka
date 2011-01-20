@@ -52,8 +52,6 @@ WSD no change
 Agreement -------doubt  (no agreement rule for stanford parser in agreement_debug.clp )
 
 
-GNP
-Pada
-pada_debug.dat not available
-
-
+lwg_debug.clp
+-------------
+In OL, lwg comes from perl programme. So debugging LWG can only be done in Anu_src/lwg_openlogos.pl 

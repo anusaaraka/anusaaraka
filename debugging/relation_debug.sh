@@ -4,9 +4,8 @@
 
  cd $HOME_anu_tmp/tmp/$1_tmp/$2
  
- ls ol_relations.dat  ol_relation_debug.dat link_relation_info.dat parserid_wordid_mapping.dat relations_debug.dat word.dat lwg_info.dat relations_tmp1.dat relations.dat English_sentence.dat parser_type.dat sd-relations_tmp1.dat sd_word.dat lwg_info_tmp.dat > dat
+ ls ol_relations.dat  ol_relation_debug.dat link_relation_info.dat parserid_wordid_mapping.dat relations_debug.dat word.dat lwg_info.dat relations_tmp.dat relations.dat English_sentence.dat parser_type.dat sd_word.dat lwg_info_tmp.dat > dat
 
-# cp link_relation_info.dat relations_id_map_debug.dat parserid_wordid_mapping.dat relations_debug.dat word.dat lwg_info.dat relations_tmp1.dat relations.dat English_sentence.dat parser_type.dat sd-relations_tmp1.dat sd_word.dat lwg_info_tmp.dat $HOME_anu_test/debugging/sentence_debug/.
 
  var=`cat dat`
  for i in $var;

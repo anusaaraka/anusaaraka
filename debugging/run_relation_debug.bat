@@ -11,7 +11,7 @@
  (load-facts "word.dat")
  (load-facts "English_sentence.dat")
  (load-facts "lwg_info.dat")
- (load-facts "relations_tmp1.dat")
+ (load-facts "relations_tmp.dat")
  (load-facts "relations_debug.dat")
  (load-facts "parserid_wordid_mapping.dat")
  (assert (question1 "Input Sentence"))
@@ -22,7 +22,7 @@
 ?f0<-(Parser_used Stanford-Parser)
 =>
  (batch* "relation_debug.clp")
- (load-facts "sd-relations_tmp1.dat")
+ (load-facts "relations_tmp.dat")
  (load-facts "sd_word.dat")
  (load-facts "lwg_info.dat")
  (load-facts "parserid_wordid_mapping.dat")
