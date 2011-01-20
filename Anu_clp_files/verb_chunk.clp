@@ -658,6 +658,7 @@
  ; One of the best ways of improving your English is to read the language.  (dont group "is to read" bcoz "is" is main verb)
  ; A fat ugly boy had to eat fruits.  
  ; He has to do work hard.
+ ;Added "used" in the list suggested by Meenaji (20-01-11) .She used to live in Glasgow.
  (defrule S_TO_I_rule
  (declare (salience 800))
  (link_name-link_expansion  ?TO T O $?)
@@ -666,7 +667,7 @@
  (link_name-link_lnode-link_rnode ?TO   ?sr_node  ?TOr_node)
  (link_name-link_lnode-link_rnode ?I    ?TOr_node ?Ir_node)
  (link_name-link_lnode-link_rnode ?TO  ?TOl_node ?TOr_node)
- (linkid-word-node_cat   ?TOl_node has|had|have|need ?)
+ (linkid-word-node_cat   ?TOl_node has|had|have|need|used ?)  
  (linkid-word-node_cat   ?sr_node ?sword ?)
  (linkid-word-node_cat   ?Ir_node ?Iword ?)
  (linkid-word-node_cat   ?TOr_node ?Tword ?)
