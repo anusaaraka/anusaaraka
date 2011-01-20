@@ -4,3 +4,4 @@ blow	1
 issue	1
 trousers	1
 scissors	1
+flower	1

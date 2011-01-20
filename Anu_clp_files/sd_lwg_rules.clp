@@ -113,6 +113,22 @@
  (printout ?*lwg_debug_file* "(rule_name-grouped_ids  rule_1-2  " ?head ")" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------------
+ ;Petu ran fast but missed the bus.
+ ; Added by Shirisha Manju (20-01-11) suggested by sukhada
+ (defrule rule_1-3
+ (declare (salience 900))
+ (rel_name-sids dobj ?id ?id1)
+ (not (rel_name-sids nsubj ?id ?head))
+ (not (rel_name-sids aux ?id ?)) ;But my efforts to win his heart have failed.
+ (rel_name-sids ?prepc ? ?id)
+ (test (neq (sub-string 1 6 (implode$ (create$ ?prepc))) "prepc_")) ;He made a mistake in inviting John.
+ (not (grouped_head ?id))
+ =>
+ (assert (root-verbchunk-tam-parser_chunkids  root_to_be_decided verb_chunk_to_be_decided  tam_to_be_decided ?id))
+ (assert (grouped_head ?id))
+ (printout ?*lwg_debug_file* "(rule_name-grouped_ids  rule_1-3  " ?id ")" crlf)
+ )
+ ;-------------------------------------------------------------------------------------------------------------------------
  ; Ex:-I will not do it . 
  (defrule not_rule
  (declare (salience 800))
