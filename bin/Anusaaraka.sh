@@ -43,7 +43,6 @@
  cd $HOME_anu_test/Anu_src
  ./word.out < $MYPATH/tmp/tmp_save_format/$1.fmt_split $MYPATH/tmp $1
  ./rm_tags.out < $MYPATH/tmp/$1_tmp/new_text.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt
-# ./punct.out $MYPATH/tmp/tmp_save_format/$1.fmt_split $MYPATH/tmp/$1_tmp/punctuation.txt
 
   echo "Saving morph information"
   cd $HOME_anu_test/apertium/
@@ -65,7 +64,7 @@
 
   echo "Calling Stanford parser"
 #  cd $HOME_anu_test/stanford-parser/stanford-parser-2008-10-26/
-#   cd $HOME_anu_test/stanford-parser/stanford-parser-2010-08-20/
+#  cd $HOME_anu_test/stanford-parser/stanford-parser-2010-08-20/
   cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/ 
   sh ./run_stanford-parser.sh $1 $MYPATH > /dev/null
  
@@ -78,7 +77,6 @@
   $HOME_anu_test/Anu_src/split_file.out link_word_cat.txt dir_names.txt linkid_word_cat.dat
   $HOME_anu_test/Anu_src/split_file.out link_numeric_word.txt dir_names.txt link_numeric_word_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out linkage_count.txt dir_names.txt linkage_count
- # $HOME_anu_test/Anu_src/split_file.out punctuation.txt dir_names.txt punctuation.dat
   $HOME_anu_test/Anu_src/split_file.out chunk.txt dir_names.txt chunk.dat 
   $HOME_anu_test/Anu_src/split_file.out sd-relation.txt dir_names.txt sd-relations_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out sd_word.txt dir_names.txt sd_word_tmp.dat

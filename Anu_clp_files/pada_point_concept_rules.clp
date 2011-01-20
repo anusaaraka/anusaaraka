@@ -19,7 +19,7 @@
  (retract ?f)
  (bind $?ids (sort > (create$ ?id ?conj ?id1)))
  (assert (conjunction-comp ?conj $?ids))
- (printout ?*debug*  " conj_list" ?conj" " (implode$  $?ids) crlf)
+ (printout ?*debug*  " conj_list  " ?conj" " (implode$  $?ids) crlf)
  )
  ;------------------------------------------------------------------------------------------------------------- 
  (defrule conj_list1
@@ -37,7 +37,7 @@
  (retract ?f2)
  (bind $?IDS (sort > (create$  $?IDS ?id)))
  (assert (conjunction-comp ?conj  $?IDS))))
- (printout ?*debug*  "conj_list1" ?conj" " (implode$  $?IDS) crlf)
+ (printout ?*debug*  "conj_list1  " ?conj" " (implode$  $?IDS) crlf)
  )
  ;------------------------------------------------------------------------------------------------------------- 
  (defrule kriyA_pada

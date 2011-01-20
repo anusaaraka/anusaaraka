@@ -2,8 +2,8 @@
 
  (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (slot preposition (default 0))(slot Hin_position (default 0)))
 
-(deffunction string_to_integer (?link_id)
-(string-to-field (sub-string 2 10000 ?link_id)))
+(deffunction string_to_integer (?parser_id)
+(string-to-field (sub-string 2 10000 ?parser_id)))
 
  ;================================ Asserting dummy ==================================================
  ;Asserting chunk control facts if the id is present in any of the chunk.
