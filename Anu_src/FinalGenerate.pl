@@ -94,6 +94,8 @@ sub generate {
 	my $num=$_[3];
 	my $per=$_[4];
 	
+	$aper_gen=$gen;
+
 	open(APT,">$tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/apertium_input") || die "Can't open file apertium_input\n";
 	$tam =~ /^([^_]+)/;
 	$aper_tam=$1;
@@ -140,6 +142,12 @@ sub generate {
 
       print "$kriyA_mula";print" ";}
 
+		#for the tam "yA_karawA_WA" and gender (female) pass  gender "m" to yA and "f" to "karawA_WA"
+		if(($tam =~ /yA_karawA_WA/) && ($gen eq "f")){
+			$aper_gen="m";
+		}
+
+
     if(($tam =~ /_/)&&($gen eq "f") && ($num eq "p") && ($per eq "a")){
       print APT "\^$aper_root<cat:v><gen:f><num:s><per:a><tam:$aper_tam>\$ ";
       close(APT);
@@ -147,7 +155,7 @@ sub generate {
       system("lt-proc -c -g $ARGV[0] < $tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/apertium_input");
     }
     else{
-      print APT "\^$aper_root<cat:v><gen:$gen><num:$num><per:$per><tam:$aper_tam>\$ ";
+      print APT "\^$aper_root<cat:v><gen:$aper_gen><num:$num><per:$per><tam:$aper_tam>\$ ";
       close(APT);
 #      if($kriyA_mula ne ""){print "$kriyA_mula";print" ";}
       system("lt-proc -c -g $ARGV[0] < $tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/apertium_input");
