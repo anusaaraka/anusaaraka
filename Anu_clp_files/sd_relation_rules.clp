@@ -7,7 +7,7 @@
  (string-to-field (sub-string 2 10000 ?parser_id)))
  
 
-;1.	The relation "cc" was not found in parser but is discrobed in documents.
+;1.	The relation "cc" was not found in parser but is discribed in documents.
 ;2.	There is no need to map "xsubj" relation because we are getting the required info from "xcomp" relation.
 ;3.	The relations "aux" and "auxpass" are not mapped because these are part of main verb so are not required to map saperatly.
 ;4.	The relation "conj" is also not mapped to any relation because we are getting this info from other samAnAXikaraNa relations.
@@ -108,9 +108,9 @@
  ;Ex : Broken windows need to be replaced . 
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule nsubj_conj
- (rel_name-sids nsubj|nsubjpass ?kriyA ?sub) 
- (rel_name-sids ?conj  ?kriyA ?kriyA1)
- (test (eq (sub-string 1 4 (implode$ (create$ ?conj))) "conj"))
+ (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
+ (rel_name-sids conj_and|conj_or  ?kriyA ?kriyA1)
+; (test (eq (sub-string 1 4 (implode$ (create$ ?conj))) "conj"))
  =>
  (printout       ?*fp*   "(relation-parser_ids     kriyA-subject    "?kriyA1"        "?sub   ")"crlf)
  (printout       ?*fp*   "(relation-parser_ids     kriyA-subject    "?kriyA"        "?sub   ")"crlf)
@@ -121,8 +121,8 @@
  ;------------------------------------------------------------------------------------------------------------------------
 (defrule conj_and
 ;rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
-(rel_name-sids conj_and  ?x ?y)
-(parserid-word ?id and)
+(rel_name-sids conj_and|conj_or  ?x ?y)
+(parserid-word ?id and|or)
 (test (and (> (string_to_integer ?id) (string_to_integer ?x)) (< (string_to_integer ?id) (string_to_integer ?y))))
 =>
 (printout       ?*fp*   "(conjunction-components  "?id "  "?x" "?y")"crlf)
@@ -134,38 +134,56 @@
  ;------------------------------------------------------------------------------------------------------------------------
 (defrule nsubj_conj1
 (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
-(rel_name-sids conj  ?sub ?sub1)
+(rel_name-sids conj_and|conj_or  ?sub ?sub1)
+(not (rel_name-sids cop  ?kriyA ?))
+(parserid-word ?id and|or)
+(test (and (> (string_to_integer ?id) (string_to_integer ?sub)) (< (string_to_integer ?id) (string_to_integer ?sub1))))
 =>
-(printout       ?*fp*   "(relation-parser_ids     kriyA-subject    "?kriyA"        "?sub1   ")"crlf)
-(printout       ?*dbug* "(Rule-Rel-ids  nsubj_conj1  kriyA-subject  "?kriyA"        "?sub1   ")"crlf)
+(printout       ?*fp*   "(relation-parser_ids     kriyA-subject    "?kriyA"        "?id   ")"crlf)
+(printout       ?*dbug* "(Rule-Rel-ids  nsubj_conj1  kriyA-subject  "?kriyA"        "?id   ")"crlf)
 )
-
  ; Added by Mahalaxmi.
  ; Ex. Rama and Shyam are coming . He and I are friends . There are three boys and four girls in the park .
  ;------------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju
- (defrule nsubj_cc_conj
+ (defrule nsubj_conj
  (declare (salience 150))
  (rel_name-sids	nsubj ?kriyA  ?sub) 
- (rel_name-sids	conj  ?kriyA ?id1)
- (rel_name-sids	cc ?kriyA ?and)
- (not (rel_name-sids conj  ?kriyA ?id2));I ate fruits , drank milk and slept .
+ (rel_name-sids	conj_and|conj_or  ?kriyA ?id1)
+ (parserid-word ?and and|or)
+ (test (and (> (string_to_integer ?and) (string_to_integer ?kriyA)) (< (string_to_integer ?and) (string_to_integer ?id1))))
+; (rel_name-sids	cc ?kriyA ?and);xxxxxxxxxx
+; (not (rel_name-sids conj  ?kriyA ?id2));I ate fruits , drank milk and slept .
  =>
-  (printout       ?*fp*   "(relation-parser_ids     subject-subject_samAnAXikaraNa   "?sub"  "?and        ")"crlf)      
- (printout       ?*dbug* "(Rule-Rel-ids  nsubj_cc_conj       subject-subject_samAnAXikaraNa  "?sub"  "?and        ")"crlf)
+  (printout       ?*fp*   "(relation-parser_ids     subject-subject_samAnAXikaraNa   "?sub"  "?and")"crlf)      
+ (printout       ?*dbug* "(Rule-Rel-ids  nsubj_conj       subject-subject_samAnAXikaraNa  "?sub"  "?and")"crlf)
  (assert (rel_sub-sub_samAnAXikaraNa_decided ?sub))
  ) 
  ; Ex :Bill is big and honest .
  ;------------------------------------------------------------------------------------------------------------------------
- (defrule nsubj_cc_conj_1
+ (defrule nsubj_conj_sam
  (declare (salience 210))
- (rel_name-sids	cop   ?kri ?kriyA)
+ (rel_name-sids	cop   ?sam ?x)
+ (rel_name-sids nsubj ?sam  ?y)
+ (rel_name-sids conj_and|conj_or  ?sub ?id1)
+ (parserid-word ?and and|or)
+ (test (and (> (string_to_integer ?and) (string_to_integer ?sub)) (< (string_to_integer ?and) (string_to_integer ?id1))))
+ =>
+ (printout       ?*fp*   "(relation-parser_ids  subject-subject_samAnAXikaraNa  "?and"    "?sam")"crlf)
+ (printout       ?*dbug* "(Rule-Rel-ids  nsubj_conj_sam  subject-subject_samAnAXikaraNa  "?and"    "?sam")"crlf)
+ )
+ ; Ex : Your house and garden are very attractive .
+ ;------------------------------------------------------------------------------------------------------------------------
+ (defrule nsubj_conj_and
+ (declare (salience 210))
+ (rel_name-sids cop   ?kri ?kriyA)
  (rel_name-sids nsubj ?kri  ?sub)
- (rel_name-sids conj  ?sub ?id1)
- (rel_name-sids cc ?sub ?and)
+ (rel_name-sids conj_and|conj_or  ?sub ?id1)
+ (parserid-word ?and and|or)
+ (test (and (> (string_to_integer ?and) (string_to_integer ?sub)) (< (string_to_integer ?and) (string_to_integer ?id1))))
  =>
  (printout       ?*fp*   "(relation-parser_ids    kriyA-subject       "?kriyA"        "?and   ")"crlf)
- (printout       ?*dbug* "(Rule-Rel-ids  nsubj_cc_conj_1   kriyA-subject   "?kriyA"        "?and  ")"crlf)
+ (printout       ?*dbug* "(Rule-Rel-ids  nsubj_conj_and  kriyA-subject   "?kriyA"        "?and  ")"crlf)
  (assert (sub_for_kriyA ?kriyA))
  )
  ; Added by Shirisha Manju
@@ -176,8 +194,11 @@
 (declare(salience 210))
 (rel_name-sids expl ?kriyA ?kriyA_dummy_subject)
 (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
-(rel_name-sids  conj ?sub  ?)
-(rel_name-sids  cc   ?sub  ?and)
+(rel_name-sids  conj_and|conj_or ?sub  ?id1)
+;(rel_name-sids  cc   ?sub  ?and)
+ (parserid-word ?and and|or)
+ (test (and (> (string_to_integer ?and) (string_to_integer ?sub)) (< (string_to_integer ?and) (string_to_integer ?id1))))
+
 (not (rel_name-sids cop ?kriyA ?))
 (not (rel_name-sids nn ?sub ?))
 =>
@@ -251,8 +272,8 @@
 (rel_name-sids nsubj ?kriyA ?sub)
 (rel_name-sids acomp ?kriyA ?samAnAXikaraNa)
 =>
-(printout	?*fp*	"(relation-parser_ids     subject-subject_samAnAXikaraNa	"?sub"	"?samAnAXikaraNa	")"crlf)	
-(printout	?*dbug*	"(Rule-Rel-ids	acomp+nsubj	subject-subject_samAnAXikaraNa	"?sub"	"?samAnAXikaraNa	")"crlf)	
+(printout	?*fp*	"(relation-parser_ids     subject-subject_samAnAXikaraNa	"?sub"	"?samAnAXikaraNa")"crlf)	
+(printout	?*dbug*	"(Rule-Rel-ids	acomp+nsubj	subject-subject_samAnAXikaraNa	"?sub"	"?samAnAXikaraNa")"crlf)	
 )
  ; Ex. She looks beautiful. 
 ;------------------------------------------------------------------------------------------------------------------------
@@ -260,16 +281,28 @@
 (rel_name-sids nsubj ?kriyA ?sub)
 (rel_name-sids attr ?kriyA ?samAnAXikaraNa)
 =>
-(printout	?*fp*	"(relation-parser_ids     subject-subject_samAnAXikaraNa	"?sub"	"?samAnAXikaraNa	")"crlf)	
-(printout	?*dbug*	"(Rule-Rel-ids	attr+nsubj	subject-subject_samAnAXikaraNa	"?sub"	"?samAnAXikaraNa	")"crlf)	
+(printout	?*fp*	"(relation-parser_ids     subject-subject_samAnAXikaraNa	"?sub"	"?samAnAXikaraNa")"crlf)
+(printout	?*dbug*	"(Rule-Rel-ids	attr+nsubj	subject-subject_samAnAXikaraNa	"?sub"	"?samAnAXikaraNa")"crlf)	
 )
  ; Ex. What is that?
+;------------------------------------------------------------------------------------------------------------------------
+(defrule attr+aux
+(rel_name-sids aux ?sam ?k)
+(rel_name-sids attr ?sam ?sub)
+=>
+(printout       ?*fp*   "(relation-parser_ids     subject-subject_samAnAXikaraNa        "?sub"  "?sam")"crlf)
+(printout       ?*fp*   "(relation-parser_ids     kriyA-subject        "?k"  "?sub")"crlf)
+(printout       ?*dbug*   "(Rule-Rel-ids  attr+aux     kriyA-subject        "?k"  "?sub")"crlf)
+(printout       ?*dbug* "(Rule-Rel-ids  attr+aux      subject-subject_samAnAXikaraNa  "?sub"  "?sam")"crlf)
+)
+ ; Ex. Who is afraid of the big bad wolf? 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule cop+nsubj
 (declare(salience 100))
 (rel_name-sids nsubj|nsubjpass ?samAnAXikaraNa  ?sub)
 (rel_name-sids cop  ?samAnAXikaraNa ?kriyA)
-(not (rel_name-sids conj  ?sub ?))
+(not (rel_name-sids conj_and  ?sub ?))
+(not (rel_name-sids conj_or  ?sub ?))
 =>
 (printout       ?*fp*   "(relation-parser_ids     kriyA-subject    "?kriyA"        "?sub   ")"crlf)
 (printout      ?*dbug* "(Rule-Rel-ids  cop+nsubj       kriyA-subject   "?kriyA"        "?sub   ")"crlf)
@@ -280,11 +313,12 @@
 (defrule cop+nsubj_1
 (rel_name-sids nsubj|nsubjpass ?samAnAXikaraNa  ?sub)
 (rel_name-sids cop  ?samAnAXikaraNa ?kriyA)
-(not (rel_name-sids conj  ?sub ?))
+(not (rel_name-sids conj_and  ?sub ?))
+(not (rel_name-sids conj_or  ?sub ?))
 (not (rel_sub-sub_samAnAXikaraNa_decided ?sub));Bill is big and honest .
 =>
-(printout      ?*fp*   "(relation-parser_ids     subject-subject_samAnAXikaraNa   "?sub"  "?samAnAXikaraNa        ")"crlf)        
-(printout      ?*dbug* "(Rule-Rel-ids  cop+nsubj_1      subject-subject_samAnAXikaraNa  "?sub"  "?samAnAXikaraNa        ")"crlf)        
+(printout      ?*fp*   "(relation-parser_ids     subject-subject_samAnAXikaraNa   "?sub"  "?samAnAXikaraNa")"crlf)        
+(printout      ?*dbug* "(Rule-Rel-ids  cop+nsubj_1      subject-subject_samAnAXikaraNa  "?sub"  "?samAnAXikaraNa")"crlf)        
 )
 ; ; Ex. Bill is big.
 ;------------------------------------------------------------------------------------------------------------------------
@@ -724,7 +758,7 @@
  ; Added by Shirisha Manju
  ;------------------------------------------------------------------------------------------------------------------------
 (defrule prepc_p
- ?f0<-(rel_name-sids ?prep ?kriyA ?prep_saM)
+?f0<-(rel_name-sids ?prep ?kriyA ?prep_saM)
 (test (eq (sub-string 1 (- (str-index "_" ?prep) 1) ?prep) "prepc"));this condition is to stop this rule firing in "conj_and" cases, ex. "Rama , Mohan , Sita and Geeta came to the city."
 =>
 (retract ?f0)
