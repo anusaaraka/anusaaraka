@@ -574,10 +574,23 @@
 (rel_name-sids complm ?kriyA ?conj)
 (rel_name-sids nsubj ?kriyA ?x)
 =>
-(printout       ?*fp*   "(relation-parser_ids     kriyA-conjunction        "?x"      "?conj      ")"crlf)
-(printout       ?*dbug* "(Rule-Rel-ids  complm    kriyA-conjunction        "?x"      "?conj      ")"crlf)
+(printout       ?*fp*   "(relation-parser_ids     kriyA-conjunction        "?x"      "?conj")"crlf)
+(printout       ?*dbug* "(Rule-Rel-ids  complm    kriyA-conjunction        "?x"      "?conj")"crlf)
 )
  ; Ex. He says that you like to swim . 
+;------------------------------------------------------------------------------------------------------------------------
+(defrule conj_but
+(rel_name-sids ?cnj ?kriyA ?kri)
+(test (eq (sub-string 1 5 (implode$ (create$ ?cnj))) "conj_"))
+(parserid-word ?conj_id but)
+(test (and (> (string_to_integer ?conj_id) (string_to_integer ?kriyA)) (< (string_to_integer ?conj_id) (string_to_integer ?kri))))
+(not (rel_name-sids conj_and ?kriyA ?kri))
+(not (rel_name-sids conj_or ?kriyA ?kri))
+=>
+(printout       ?*fp*   "(relation-parser_ids     kriyA-conjunction        "?kri"      "?conj_id")"crlf)
+(printout       ?*dbug* "(Rule-Rel-ids  conj_but   kriyA-conjunction        "?kri"      "?conj_id")"crlf)
+)
+ ; Ex. Petu ran fast but missed the bus. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule partmod+nsubj+cop
 (declare(salience 205))
@@ -586,9 +599,9 @@
 ?f0<-(rel_name-sids cop ?sub_samA ?kriyA)
 =>
 (retract ?f0)
-(printout	?*fp*	"(relation-parser_ids     subject-subject_samAnAXikaraNa	"?sub"	"?sub_samA	")"crlf)	
+(printout	?*fp*	"(relation-parser_ids     subject-subject_samAnAXikaraNa	"?sub"	"?sub_samA")"crlf)	
 (printout	?*dbug*	"(Rule-Rel-ids	partmod+nsubj+cop	subject-subject_samAnAXikaraNa	"?sub"	"?sub_samA")"crlf)	
-(printout	?*fp*	"(relation-parser_ids     kriyA-subject	"?kriyA"	"?sub	")"crlf)	
+(printout	?*fp*	"(relation-parser_ids     kriyA-subject	"?kriyA"	"?sub")"crlf)	
 (printout	?*dbug*	"(Rule-Rel-ids	partmod+nsubj+cop	kriyA-subject	"?kriyA"	"?sub")"crlf)	
 )
  ; Ex. Truffles picked during the spring are tasty .  
