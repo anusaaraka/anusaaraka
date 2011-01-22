@@ -120,10 +120,10 @@
  ; Ex. He may drink milk or eat apples .
  ;------------------------------------------------------------------------------------------------------------------------
 (defrule conj_and
-;rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
 (rel_name-sids conj_and|conj_or  ?x ?y)
 (parserid-word ?id and|or)
 (test (and (> (string_to_integer ?id) (string_to_integer ?x)) (< (string_to_integer ?id) (string_to_integer ?y))))
+(not (found_kriyA-conjunction ?id))
 =>
 (printout       ?*fp*   "(conjunction-components  "?id "  "?x" "?y")"crlf)
 (printout       ?*fp*   "(conjunction-components  "?id "  "?y" "?x")"crlf)
@@ -591,6 +591,22 @@
 (printout       ?*dbug* "(Rule-Rel-ids  conj_but   kriyA-conjunction        "?kri"      "?conj_id")"crlf)
 )
  ; Ex. Petu ran fast but missed the bus. 
+;------------------------------------------------------------------------------------------------------------------------
+ (defrule k_conj
+ (declare (salience 1000))
+ (rel_name-sids ?cnj ?kriyA ?kri)
+ (test (eq (sub-string 1 5 (implode$ (create$ ?cnj))) "conj_"))
+ (rel_name-sids nsubj ?kriyA ?s)
+ (rel_name-sids nsubj ?kri ?s1)
+ (parserid-word ?conj_id ?conjunction)
+ (parserid-word ?conj_id and)
+ (test (and (> (string_to_integer ?conj_id) (string_to_integer ?kriyA)) (< (string_to_integer ?conj_id) (string_to_integer ?kri)) (> (string_to_integer ?conj_id) (string_to_integer ?s)) (< (string_to_integer ?conj_id) (string_to_integer ?s1))))
+ =>
+ (assert (found_kriyA-conjunction ?conj_id))
+ (printout       ?*fp*   "(relation-parser_ids     kriyA-conjunction        "?kri"      "?conj_id")"crlf)
+ (printout       ?*dbug* "(Rule-Rel-ids  k_conj   kriyA-conjunction        "?kri"      "?conj_id")"crlf)
+ )
+ ; Ex. I want to have this and I want to have that. I am in New York and I would like to see you. I slept and Mohan wept. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule partmod+nsubj+cop
 (declare(salience 205))
