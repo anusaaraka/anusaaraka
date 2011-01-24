@@ -239,7 +239,6 @@
  (to_be_included_in_paxa)
  (id-word)
  (root-verbchunk-tam-chunkids)
- (Node-Category)
  (proper_noun-waxviSiRta_proper_noun)
  (viSeRya-to_viSeRaNa)
  (kiwane)

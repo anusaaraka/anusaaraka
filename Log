@@ -1598,7 +1598,19 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  10. Updated FinalGenerate.pl for correcting error for tam--yA_karawA_WA-- for female gender
  11. Modified pada_point_concept_rules.clp
  12. Modified sd_category.py program to get category proper noun in the sentences like: We ate at Joe's Diner last week.
- 13. Updated changes_in_databases
- 14. Updated Log file
- 15. Updated verified_ol  (531)
+ 13. Removed dummy facts "(H_Mother-id_Daughters)" and  "(Node-Category) from the following files
+        1. pada_ids.clp   2. hindi_position.clp   3. hindi_meaning.clp           4. vibakthi.clp
+        5. agreement.clp  6. tam_meaning.clp      7. prepare_apertium_input.clp
+ 14. Removed all the dummy facts related to relations in tam_meaning.clp
+ 15. Removed relations.dat file for tam_meaning.clp in run_modules_link.bat,run_modules_ol.bat and run_modules_std.bat
+ 16. Removed tam_meaning.clp and sd_hindi_position.clp from add_dummy_fact.sh
+ 17. Removed following dummy facts from hindi_position.clp
+         id-number-src, id-HM-source, id-wsd_number, id-tam_type, id-H_vib_mng , make_verbal_noun, root_id-TAM-vachan,
+         id-E_tam-H_tam_mng, linkid-word, id-wsd_root_mng, id-wsd_word_mng, meaning_has_been_decided, id-word-node_cat,
+         using-chunk-ids, to_be_included_in_paxa, link_name-link_expansion, link_name-lnode-rnode, id-cat_coarse,
+         id-cat, id-wsd_root, affecting_id-affected_ids-wsd_group_root_mng, affecting_id-affected_ids-wsd_group_word_mng,
+         id-original_word, relation-parser_ids
+ 18. Updated changes_in_databases
+ 19. Updated Log file
+ 20. Updated verified_ol  (531)
    

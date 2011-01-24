@@ -7,14 +7,10 @@ grep -R "dummy_facts" hindi_meaning.clp| sed "s/(deffacts dummy_facts/& \n ($1)/
 mv hindi_meaning_tmp.clp  hindi_meaning.clp
 grep -R "dummy_facts" pada_ids.clp| sed "s/(deffacts dummy_facts/& \n ($1)/" < pada_ids.clp >pada_ids_tmp.clp
 mv pada_ids_tmp.clp  pada_ids.clp
-grep -R "dummy_facts" tam_meaning.clp| sed "s/(deffacts dummy_facts/& \n ($1)/" < tam_meaning.clp >tam_meaning_tmp.clp
-mv tam_meaning_tmp.clp  tam_meaning.clp
 grep -R "dummy_facts" prepare_apertium_input.clp| sed "s/(deffacts dummy_facts/& \n ($1)/" < prepare_apertium_input.clp >prepare_apertium_input_tmp.clp
 mv prepare_apertium_input_tmp.clp  prepare_apertium_input.clp
 grep -R "dummy_facts" hindi_position.clp|sed "s/(deffacts dummy_facts/& \n ($1)/" <hindi_position.clp >hindi_position_tmp.clp
 mv hindi_position_tmp.clp  hindi_position.clp
-grep -R "dummy_facts" sd_hindi_position.clp|sed "s/(deffacts dummy_facts/& \n ($1)/" <sd_hindi_position.clp >sd_hindi_position_tmp.clp
-mv sd_hindi_position_tmp.clp  sd_hindi_position.clp
 grep -R "dummy_facts" GNP_agreement.clp|sed "s/(deffacts dummy_facts/& \n ($1)/" <GNP_agreement.clp >GNP_agreement_tmp.clp
 mv GNP_agreement_tmp.clp  GNP_agreement.clp
 grep -R "dummy_facts" hindi_sent_reorder.clp|sed "s/(deffacts dummy_facts/& \n ($1)/" <hindi_sent_reorder.clp >hindi_sent_reorder_tmp.clp
