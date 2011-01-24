@@ -105,9 +105,6 @@
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
  (rel_name-sids conj_and|conj_or  ?kriyA ?kriyA1)
  (not (rel_name-sids cop  ?kriyA ?v))
-;rel_name-ids	cop  5 2)
-;rel_name-ids	conj_and  5 8)
-;rel_name-ids	nsubj  5 1)
  =>
  (printout       ?*fp*   "(relation-parser_ids     kriyA-subject    "?kriyA1"        "?sub")"crlf)
  (printout       ?*fp*   "(relation-parser_ids     kriyA-subject    "?kriyA"        "?sub")"crlf)
@@ -664,38 +661,35 @@
  ; Ex. I am older than my brother. John is more intelligent than Tom. This test is more difficult than other tests I have taken.
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule prep_p
- (declare (salience 100))
- (rel_name-sids ?prep ?kriyA ?prep_saM)
- (parser_id-cat_coarse ?kriyA verb)
- (test (eq (sub-string 1 5 (implode$ (create$ ?prep))) "prep_")) 
-=>
- (printout ?*fp* "(relation-parser_ids kriyA-"(sub-string 6 100 (implode$ (create$ ?prep)))"_saMbanXI "?kriyA" "?prep_saM")"crlf)      
- (printout ?*dbug* "(Rule-Rel-ids   prep_p  kriyA-"(sub-string 6 100 (implode$ (create$ ?prep)))"_saMbanXI  " ?kriyA" "?prep_saM")"crlf)   
+ (rel_name-sids ?p ?kri ?p_saM)
+ (parser_id-cat_coarse ?kri verb)
+ (test (eq (sub-string 1 5 (implode$ (create$ ?p))) "prep_")) 
+ =>
+ (printout ?*fp* "(relation-parser_ids kriyA-"(sub-string 6 100 (implode$ (create$ ?p)))"_saMbanXI "?kri" "?p_saM")"crlf)      
+ (printout ?*dbug* "(Rule-Rel-ids   prep_p  kriyA-"(sub-string 6 100 (implode$ (create$ ?p)))"_saMbanXI  " ?kri" "?p_saM")"crlf)   
  )
  ; Ex. The people of Orissa are FACING grave adversities DUE TO the CYCLONE. 
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule vi_prep
- (declare (salience 100))
- (rel_name-sids ?prep ?kriyA ?prep_saM)
-; (not (rel_name-sids  cop ?kriyA ?))
- (parser_id-cat_coarse ?kriyA ~verb)
- (test (eq (sub-string 1 5 (implode$ (create$ ?prep))) "prep_"))
-=>
- (printout ?*fp* "(relation-parser_ids  viSeRya-"(sub-string 6 100 (implode$ (create$ ?prep)))"_saMbanXI "?kriyA" "?prep_saM")"crlf)
- (printout ?*dbug* "(Rule-Rel-ids   prep_p  viSeRya"(sub-string 6 100 (implode$ (create$ ?prep)))"_saMbanXI  " ?kriyA" "?prep_saM")"crlf)
+ (rel_name-sids ?p ?kri ?p_saM)
+ (parser_id-cat_coarse ?kri ~verb)
+ (test (eq (sub-string 1 5 (implode$ (create$ ?p))) "prep_"))
+ =>
+ (printout ?*fp* "(relation-parser_ids  viSeRya-"(sub-string 6 100 (implode$ (create$ ?p)))"_saMbanXI "?kri" "?p_saM")"crlf)
+ (printout ?*dbug* "(Rule-Rel-ids  vi_prep  viSeRya"(sub-string 6 100 (implode$ (create$ ?p)))"_saMbanXI  " ?kri" "?p_saM")"crlf)
  )
  ; Ex. The PEOPLE of ORISSA are facing grave adversities due to the cyclone.  
  ;------------------------------------------------------------------------------------------------------------------------
-  (defrule prep_p1
-  (declare (salience 100))
-  ?f<-(rel_name-sids  nsubj|nsubjpass ?kriyA ?subj)
-  ?f0<-(rel_name-sids prep ?subj ?prep)
-  ?f1<-(rel_name-sids pobj ?prep ?prep_saM)
-  (parserid-word ?prep ?prp)
-  =>
-  (printout      ?*fp*   "(relation-parser_ids     kriyA-"(lowcase ?prp)"_saMbanXI        "?kriyA" "?prep_saM")"crlf)
-  (printout      ?*dbug* "(Rule-Rel-ids   prep_p1  kriyA-"?prp"_saMbanXI        "?kriyA" "?prep_saM")"crlf)
-  )
+ (defrule prep_p3
+ (declare (salience 100))
+ (rel_name-sids nsubjpass|nsubj ?kriyA ?) ;Added by Shirisha Manju Ex: He made a mistake in inviting John .
+ ?f0<-(rel_name-sids prep ?kriyA ?prep)
+ ?f1<-(rel_name-sids pcomp ?prep ?prep_saM)
+ (parserid-word ?prep ?prp)
+ =>
+ (printout      ?*fp*   "(relation-parser_ids     kriyA-"(lowcase ?prp)"_saMbanXI        "?kriyA" "?prep_saM")"crlf)
+ (printout      ?*dbug* "(Rule-Rel-ids   prep_p3  kriyA-"?prp"_saMbanXI        "?kriyA" "?prep_saM")"crlf)
+ )
  ; Ex : The game of life is played for winning . 
  ; Added by Mahalaxmi.
  ;------------------------------------------------------------------------------------------------------------------------
@@ -720,14 +714,14 @@
 )
  ; Ex. I saw the man who you love. I saw the man whose wife you love.
 ;------------------------------------------------------------------------------------------------------------------------
-(defrule rel+nsubj
-(rel_name-sids rel ?kri ?wh)
-(rel_name-sids nsubj ?mu_kri ?sub)
-(rel_name-sids rcmod ?x ?kri)
-=>
-(printout       ?*fp*   "(relation-parser_ids     muKya_vAkya-sApekRa_upavAkya  "?mu_kri" "?kri")"crlf)
-(printout       ?*dbug* "(Rule-Rel-ids  rel+nsubj	muKya_vAkya-sApekRa_upavAkya  "?mu_kri" "?kri")"crlf)
-)
+;(defrule rel+nsubj
+;(rel_name-sids rel ?kri ?wh)
+;(rel_name-sids nsubj ?mu_kri ?sub)
+;(rel_name-sids rcmod ?x ?kri)
+;=>
+;(printout       ?*fp*   "(relation-parser_ids     muKya_vAkya-sApekRa_upavAkya  "?mu_kri" "?kri")"crlf)
+;(printout       ?*dbug* "(Rule-Rel-ids  rel+nsubj	muKya_vAkya-sApekRa_upavAkya  "?mu_kri" "?kri")"crlf)
+;)
  ; Ex. I saw the man who you love. I saw the man whose wife you love.
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule rel+nsubj+wh
@@ -760,7 +754,7 @@
 (defrule num
 (rel_name-sids num ?vi ?sa-vi)
 =>
-(printout	?*fp*	"(relation-parser_ids     viSeRya-saMKyA_viSeRaNa	"	?vi"	"?sa-vi")"crlf)	
+(printout	?*fp*	"(relation-parser_ids     viSeRya-saMKyA_viSeRaNa	"?vi"	"?sa-vi")"crlf)	
 (printout	?*dbug*	"(Rule-Rel-ids	num	viSeRya-saMKyA_viSeRaNa	"	?vi"	"?sa-vi")"crlf)	
 )
  ; Ex. He eats 3 sheep. 
@@ -776,8 +770,6 @@
 (defrule aux_to
 (rel_name-sids aux  ?v ?to)
 (parserid-word ?to to)
-;(test (eq (- (string_to_integer (sub-string 1 (- (length ?v) 2) ?v)) 1) (string_to_integer (sub-string 1 (- (length ?to) 2) ?to))))
-;(parserid-word =(- ?v 1) to) I want to give this condition for the sentences like: "He was to become president." where i can stop firing this rule between 'to' and 'president'. 
 (not (rel_name-sids cop ?v ?))
 =>
 (printout       ?*fp*   "(relation-parser_ids     to-infinitive       "       ?to"    "?v")"crlf)
@@ -904,14 +896,11 @@
  ?f0<-(rel_name-sids prep ?kriyA ?prep)
  ?f1<-(rel_name-sids advmod ?kriyA ?prep_saM)
  (parserid-word ?prep ?prp&~than)
-=>
-(printout      ?*fp*   "(relation-parser_ids     kriyA-"(lowcase ?prp)"_saMbanXI        "       ?kriyA" "?prep_saM")"crlf)
-(printout      ?*dbug* "(Rule-Rel-ids   prep_nsubj_advmod_rule  kriyA-"?prp"_saMbanXI        "       ?kriyA" "?prep_saM")"crlf)
-)
+ =>
+ (printout      ?*fp*   "(relation-parser_ids     kriyA-"(lowcase ?prp)"_saMbanXI        "?kriyA" "?prep_saM")"crlf)
+ (printout      ?*dbug* "(Rule-Rel-ids   prep_nsubj_advmod_rule  kriyA-"?prp"_saMbanXI        "?kriyA" "?prep_saM")"crlf)
+ )
   ; Ex : Where are you coming from ?
   ; Added by Shirisha Manju
 ;------------------------------------------------------------------------------------------------------------------------
-
-
 ;rel+nsubj rel+nsubj+wh rules are not working properly. Check them.
-
