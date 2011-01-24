@@ -3481,6 +3481,22 @@ if($form == "70"){
 		}
 	}
 }
+
+
+#	71	e.g A pen used by Mahatma Gandhi is kept in the museum for display.
+
+
+if($form == "71"){
+
+	$lwg="(root-verbchunk-tam-parser_chunkids   root_to_be_decided $tword[$ind] tam_to_be_decided ";
+	$lwg_ids=&find_lwg_id(\@res2d,\@tword,$lwg,$ind,\@prev_ind);
+	$lwg=$lwg.$lwg_ids.")";
+	return $lwg;
+}
+
+
+
+
 #	72	(past)be_being_en
 ###################################
 #They were being eaten.
