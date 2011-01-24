@@ -785,7 +785,7 @@
 (id-word ?id had)
 ;(kriyA-on_saMbanXI  ?id ?id2)
 (kriyA-object ?id ?id1)
-(viSeRya-on_saMbanXI ?id1 ?id2) ;Added by manju suggested by sukhada(20-01-11)
+(or (kriyA-on_saMbanXI  ?id ?id2)(viSeRya-on_saMbanXI ?id1 ?id2)) ;Added by manju suggested by sukhada(20-01-11)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ho))

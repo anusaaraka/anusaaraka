@@ -120,6 +120,8 @@
  (rel_name-sids dobj ?id ?id1)
  (not (rel_name-sids nsubj ?id ?head))
  (not (rel_name-sids aux ?id ?)) ;But my efforts to win his heart have failed.
+ (not (rel_name-sids conj_or ? ?id));He may drink milk or eat apples. (22-01-11)
+ (not (rel_name-sids conj_and ? ?id))
  (rel_name-sids ?prepc ? ?id)
  (test (neq (sub-string 1 6 (implode$ (create$ ?prepc))) "prepc_")) ;He made a mistake in inviting John.
  (not (grouped_head ?id))

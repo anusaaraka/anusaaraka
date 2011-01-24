@@ -5,7 +5,6 @@
  (defglobal ?*k_list1* = (create$ ))
  (defglobal ?*final_list* = (create$ ))
  (defglobal ?*count* = 1)
- (defglobal ?*finite_verb_count* = 0) 
  (defglobal ?*k_list_debug* = (create$ ))
  (defglobal ?*debug* = hin_pos_debug)
 
@@ -458,7 +457,6 @@
  (kriyA-as_saMbanXI)
  (kriyA-with_saMbanXI)
  (kriyA-along_saMbanXI)
- (saMjFA-saMjFA_samAnAXikaraNa)
  (kriyA-kriyA_mUla)
  (saMjFA-kqxanwa)
  (subject-vAkyasamAnAXikarNa)
@@ -472,7 +470,6 @@
  (assert(lwg_list))
  (assert(hindi_id_order ))
  (assert(ordered_group_ids))
- (assert(finite_verb_count ))
  (assert (comma_list_for_sent_opener))
  )
  ;--------------------------------------------------------------------------------------------------------------- 
@@ -482,9 +479,9 @@
  ?f<-(comma_list_for_sent_opener $?ids)
  (test (eq (member$ ?id  $?ids) FALSE))
  =>
- (retract ?f)
- (bind $?ids (sort > (create$ $?ids ?id)))
- (assert (comma_list_for_sent_opener $?ids))
+ 	(retract ?f)
+ 	(bind $?ids (sort > (create$ $?ids ?id)))
+ 	(assert (comma_list_for_sent_opener $?ids))
  )
  ;---------------------------------------------------------------------------------------------------------------
  ; get head ids from local word grouping into lwg_list
@@ -496,7 +493,6 @@
  (not (lwg_id ?id))
   =>
 	(retract ?f )
-        (bind ?*finite_verb_count* (+ ?*finite_verb_count* 1))
 	(assert (lwg_id ?id))
     	(bind $?ids (insert$ $?ids 1 ?id))
     	(bind $?ids (sort > $?ids))
@@ -510,8 +506,8 @@
  (relation-anu_ids  ?rel ?l_id ?r_id)
  (test (and (neq ?rel viSeRya-det_viSeRaNa) (neq ?rel viSeRya-viSeRaNa)(neq ?rel kriyA-nA)(neq ?rel kriyA-ke_liye) (neq ?rel nAma-saMkRipwa_nAma)(neq ?rel proper_noun-det_viSeRaNa)(neq ?rel subject-opener)(neq ?rel kriyA-ne_ke_liye)(neq ?rel viSeRya-wulanAwmaka_viSeRaNa)(neq ?rel kriyA-viXi_vAkyakarma)(neq ?rel kriyA-samAnakAlika_kriyA)(neq ?rel pUrvakAlika_kriyA-ananwarakAlika_kriyA)(neq ?rel kriyA-praSnavAcI)(neq ?rel subject-vAkyasamAnAXikarNa)(neq ?rel kriyA-samakAlika_kriyA)(neq ?rel kriyA-karwA)(neq ?rel kriyA-vAkyakarma)(neq ?rel kriyA-preraka_kriyA)))
  =>
- (bind ?*l_list* (create$ ?*l_list* ?l_id))
- (bind ?*r_list* (create$ ?*r_list* ?r_id))
+ 	(bind ?*l_list* (create$ ?*l_list* ?l_id))
+ 	(bind ?*r_list* (create$ ?*r_list* ?r_id))
  )
  ;---------------------------------------------------------------------------------------------------------------
  ;Getting related ids of a particular finite verb
@@ -558,7 +554,6 @@
         (bind $?list (delete-member$ $?list ?subj_id))
         (bind $?list (create$ ?subj_id $?list))
         (assert(list $?list))
-        (bind ?*k_list* (create$))
 	(printout ?*debug*  "(Rule_name-before_movement-after_movement  subject_rule  ("(implode$ ?*k_list_debug*)")   ("(implode$ $?list)"))" crlf)
  )
  ;---------------------------------------------------------------------------------------------------------------
@@ -578,27 +573,11 @@
 	(printout ?*debug* "(Rule_name-before_movement-after_movement  verb_rule  ("(implode$ ?*k_list_debug*)")   ("(implode$ $?list)"))" crlf)       
  )
  ;---------------------------------------------------------------------------------------------------------------
- ;Moving subject_samAnAXikaraNa to before kriyA position in the sentence.
- ;The hat is too small for me . 
- (defrule subject_samAnAXikaraNa_rule
- (declare (salience 350))
- (relation-anu_ids subject-subject_samAnAXikaraNa ?sub_id ?subject_samAnAXikaraNa)
- ?f<-(list $?list ?kriyA)
- ?f1<-(list_control_fact ?subject_samAnAXikaraNa)
- (test (member$ ?sub_id $?list))
- =>
-        (retract ?f ?f1)
-        (bind ?*k_list_debug*  (create$ $?list ?kriyA))
-        (bind $?list (delete-member$ $?list ?subject_samAnAXikaraNa))
-        (assert(list $?list ?subject_samAnAXikaraNa ?kriyA))
- 	(printout ?*debug*  "(Rule_name-before_movement-after_movement  subject_samAnAXikaraNa_rule  ("(implode$ ?*k_list_debug*)")   ("(implode$ $?list)" "?subject_samAnAXikaraNa" "?kriyA"))" crlf)
- )
- ;---------------------------------------------------------------------------------------------------------------
  ;Move the object to the before kriyA position in the sentence.
  (defrule object_rule
  (declare (salience 953))
  (relation-anu_ids kriyA-object|kriyA-object_2 ?kriyA ?obj_id)
- (not (relation-anu_ids kriyA-object|kriyA-object_2 ?kriyA ?obj_id2&:(> ?obj_id2 ?obj_id))) 
+ (not (relation-anu_ids kriyA-object|kriyA-object_2 ?kriyA ?obj_id2&:(> ?obj_id2 ?obj_id)))
  ?f<-(list $?list ?kriyA)
  ?f1<-(list_control_fact ?obj_id)
  (test (member$ ?obj_id $?list))
@@ -607,7 +586,7 @@
         (bind ?*k_list_debug*  (create$ $?list ?kriyA))
         (bind $?list (delete-member$ $?list ?obj_id))
         (assert(list $?list ?obj_id ?kriyA ))
-	(printout  ?*debug*  "(Rule_name-before_movement-after_movement  object_rule  ("(implode$ ?*k_list_debug*)")   ("(implode$ $?list)" "?obj_id" "?kriyA"))" crlf)
+        (printout  ?*debug*  "(Rule_name-before_movement-after_movement  object_rule  ("(implode$ ?*k_list_debug*)")   ("(implode$ $?list)" "?obj_id" "?kriyA"))" crlf)
   )
  ;---------------------------------------------------------------------------------------------------------------
   ;Move the object to the before kriyA position in the sentence.(non-finite-verb)
@@ -623,37 +602,37 @@
         (bind $?list (delete-member$ $?list ?obj_id))
         (bind ?pos (member$ ?kriyA $?list))
         (bind $?list (insert$ $?list ?pos ?obj_id))
-        (assert(list $?list ?h_kriyA)) 
+        (assert(list $?list ?h_kriyA))
   (printout ?*debug*  "(Rule_name-before_movement-after_movement  object_rule1  ("(implode$ ?*k_list_debug*)")   ("(implode$ $?list)" "?h_kriyA"))" crlf)
   )
-  ;---------------------------------------------------------------------------------------------------------------
-  ;Moving object_samAnAXikaraNa to after object position in the sentence.(suggested by Sheetal 06-01-10)
-  ;We have undertaken a project to make the city clean .
-  (defrule object_samAnAXikaraNa_rule
-  (declare (salience 350))
-  (relation-anu_ids object-object_samAnAXikaraNa ?obj_id ?object_samAnAXikaraNa)
-  ?f<-(list $?list)
-  ?f1<-(list_control_fact ?object_samAnAXikaraNa)
-  (test (member$ ?obj_id $?list))
-  (test (member$ ?object_samAnAXikaraNa $?list))
-   =>
+ ;---------------------------------------------------------------------------------------------------------------
+ ; Moving subject/object samAnAXikaraNa before kriyA position in the sentence.
+ ; The hat is too small for me .
+ ; We have undertaken a project to make the city clean .
+ ; Added by Shirisha Manju (22-01-11)
+ (defrule sub_obj_samAnAXikaraNa_rule
+ (declare (salience 350))
+ (relation-anu_ids subject-subject_samAnAXikaraNa|object-object_samAnAXikaraNa ?id ?samAnAXikaraNa)
+ ?f<-(list $?list ?kriyA)
+ ?f1<-(list_control_fact ?samAnAXikaraNa)
+ (test (member$ ?id $?list))
+ =>
         (retract ?f ?f1)
-        (bind ?*k_list_debug*  (create$ $?list))
-        (bind $?list (delete-member$ $?list ?object_samAnAXikaraNa))
-        (bind ?pos (member$ ?obj_id $?list))
-        (bind $?list (insert$ $?list (+ ?pos 1) ?object_samAnAXikaraNa))
-        (assert (list $?list))
-        (printout  ?*debug*  "(Rule_name-before_movement-after_movement  object_samAnAXikaraNa_rule  ("(implode$ ?*k_list_debug*)")   ("(implode$ $?list)")" crlf)
-  )
-  ;---------------------------------------------------------------------------------------------------------------
-  ;It is not a good idea to drive for hours without a rest .   
-  (defrule kriyA_niReXaka_rule
-  (declare (salience 340))
-  (relation-anu_ids kriyA-kriyA_niReXaka  ?kriyA ?kriyA_niReXaka)
-  ?f<-(list $?list ?kriyA)
-  ?f1<-(list_control_fact ?kriyA_niReXaka)
-  (test (member$ ?kriyA_niReXaka $?list))
-   =>
+        (bind ?*k_list_debug*  (create$ $?list ?kriyA))
+        (bind $?list (delete-member$ $?list ?samAnAXikaraNa))
+        (assert(list $?list ?samAnAXikaraNa ?kriyA))
+        (printout ?*debug*  "(Rule_name-before_movement-after_movement  subject_samAnAXikaraNa_rule  ("(implode$ ?*k_list_debug*)")   ("(implode$ $?list)" "?samAnAXikaraNa" "?kriyA"))" crlf)
+ )
+ ;---------------------------------------------------------------------------------------------------------------
+ ; Moving niReXaka before kriyA position in the sentence.
+ ; It is not a good idea to drive for hours without a rest .   
+ (defrule kriyA_niReXaka_rule
+ (declare (salience 340))
+ (relation-anu_ids kriyA-kriyA_niReXaka  ?kriyA ?kriyA_niReXaka)
+ ?f<-(list $?list ?kriyA)
+ ?f1<-(list_control_fact ?kriyA_niReXaka)
+ (test (member$ ?kriyA_niReXaka $?list))
+  =>
         (retract ?f ?f1)
         (bind ?*k_list_debug*  (create$ $?list ?kriyA))
         (bind $?list (delete-member$ $?list ?kriyA_niReXaka))
@@ -701,12 +680,15 @@
 	(assert (kriyA-sentence_opener_movement_done ?kriyA))
   )
   ;---------------------------------------------------------------------------------------------------------------
-  ;Moving  RaRTI_viSeRaNa before RaRTI_viSeRya 
+  ;Moving  viSeRaNa before viSeRya 
   ;Passion is a must to excel and to reach your potential .
-  ;Modified by Shirisha Manju :"Added viSeRya-kqxanwa_viSeRaNa" in the list Ex:The 5 thousand people invited by Bob attended 
-  (defrule RaRTI_viSeRaNa_rule
+  ;Modified by Shirisha Manju :
+  ;         "Added viSeRya-kqxanwa_viSeRaNa" in the list Ex:The 5 thousand people invited by Bob attended 
+  ;         "Added kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka Ex:She works very carefully (24-01-11)
+  ;         "Added saMjFA-saMjFA_samAnAXikaraNa  Ex: ;Rama gave a book to Dasharat , the king of Ayodhya .
+  (defrule viSeRaNa_rule
   (declare (salience 340))
-  (relation-anu_ids viSeRya-RaRTI_viSeRaNa|kriyA_viSeRaNa-viSeRaka|viSeRya-kqxanwa_viSeRaNa ?RaRTI_id ?RaRTI_id1)
+  (relation-anu_ids viSeRya-RaRTI_viSeRaNa|kriyA_viSeRaNa-viSeRaka|viSeRya-kqxanwa_viSeRaNa|kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka|saMjFA-saMjFA_samAnAXikaraNa ?RaRTI_id ?RaRTI_id1)
   (not (viSeRya-RaRTI_viSeRaNa  ?RaRTI_id ?RaRTI_id2&:(> ?RaRTI_id2 ?RaRTI_id1)))
   ?f0<-(list $?list)
   (test (member$ ?RaRTI_id $?list))
@@ -720,7 +702,7 @@
         (bind ?pos (member$ ?RaRTI_id $?list))
         (bind $?list (insert$ $?list ?pos ?RaRTI_id1))
         (assert (list $?list))
-	(printout ?*debug*  "(Rule_name-before_movement-after_movement  RaRTI_viSeRaNa_rule  ("(implode$ ?*k_list_debug*)")   ("(implode$ $?list)"))" crlf)
+	(printout ?*debug*  "(Rule_name-before_movement-after_movement  viSeRaNa_rule  ("(implode$ ?*k_list_debug*)")   ("(implode$ $?list)"))" crlf)
   	(assert (movement_done ?RaRTI_id)) (assert (movement_done ?RaRTI_id1))
   )
   ;---------------------------------------------------------------------------------------------------------------
@@ -805,24 +787,6 @@
 	(printout  ?*debug*  "(Rule_name-before_movement-after_movement  viSeRya_viSeRaNa_to_rule  ("(implode$ ?*k_list_debug*)")   ("(implode$ $?id1)"))" crlf)
   )
   ;---------------------------------------------------------------------------------------------------------------
-  ;Moving kriyA_viSeRaNa_viSeRaka before kriyA_viSeRaNa
-  ;She works very carefully
-  (defrule viSeRaNa_viSeRaka_rule
-  (declare (salience 350))
-  ?f1<-(relation-anu_ids kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?v_id ?v_id1)
-  ?f0<-(list  $?id1)
-  (test (member$ ?v_id $?id1))
-  (test (member$  ?v_id1 $?id1))
-   =>
-        (retract ?f0 ?f1)
-        (bind ?*k_list_debug*  (create$  $?id1))
-        (bind $?id1 (delete-member$ $?id1 ?v_id1))
-        (bind ?pos (member$ ?v_id $?id1))
-        (bind $?id1 (insert$ $?id1 ?pos ?v_id1))
-        (assert (list $?id1))
- 	(printout  ?*debug*  "(Rule_name-before_movement-after_movement  viSeRaNa_viSeRaka_rule  ("(implode$ ?*k_list_debug*)")   ("(implode$ $?id1)"))" crlf)
-  )
-  ;---------------------------------------------------------------------------------------------------------------
   ; Be careful , she said .
   ; Move kriyA_mUla id before kriyA id
   (defrule kriyA_mUla_rule
@@ -839,24 +803,6 @@
         (bind $?ids (insert$ $?ids ?pos ?kriyA_mUla))
         (assert (list $?ids))
 	(printout  ?*debug* "(Rule_name-before_movement-after_movement  kriyA_mUla_rule  ("(implode$ ?*k_list_debug*)")   ("(implode$ $?ids)"))" crlf)
-  )
-  ;---------------------------------------------------------------------------------------------------------------
-  ;Move saMjFA_samAnAikaraNa before saMjFA
-  ;Rama gave a book to Dasharat , the king of Ayodhya . 
-  (defrule saMjFA-saMjFA_samAnAikaraNa_rule
-  (declare (salience 380))
-  ?f1<-(relation-anu_ids saMjFA-saMjFA_samAnAXikaraNa ?saMjFA_id ?saMjFA_samAnAikaraNa_id)
-  ?f0<-(list $?ids)
-  (test (member$ ?saMjFA_id $?ids))
-  (test (member$ ?saMjFA_samAnAikaraNa_id $?ids))
-  =>
-        (retract ?f0 ?f1)
-        (bind ?*k_list_debug*  (create$  $?ids))
-        (bind $?ids (delete-member$ $?ids ?saMjFA_samAnAikaraNa_id))
-        (bind ?pos (member$ ?saMjFA_id $?ids))
-        (bind $?ids (insert$ $?ids ?pos ?saMjFA_samAnAikaraNa_id))
-        (assert (list $?ids))
-	(printout  ?*debug*  "(Rule_name-before_movement-after_movement  saMjFA-saMjFA_samAnAikaraNa_rule  ("(implode$ ?*k_list_debug*)")   ("(implode$ $?ids)"))" crlf)
   )
   ;---------------------------------------------------------------------------------------------------------------
   ;Concatenating ordered sentences

@@ -66,7 +66,6 @@
 (kriyA-upasarga ?id ?id1)
 (kriyA-object ?id ?obj)
 (id-cat_coarse ?id verb)
-(id-root ?obj  ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))
 =>
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 pahacAna_le))
@@ -88,8 +87,7 @@
 (id-word ?id1 out)
 (kriyA-upasarga ?id ?id1)
 (kriyA-object ?id ?obj)
-;(kriyA-for_saMbanXI  ?id ?id2)
-(id-root ?obj  ?str&:(and (not (numberp ?str))(gdbm_lookup_p "inanimate.gdbm" ?str))) ;Added by Manju suggested by sukhada
+(kriyA-for_saMbanXI  ?id ?id2)
 =>
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 cuna_le))

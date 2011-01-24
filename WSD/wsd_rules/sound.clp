@@ -70,7 +70,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id AvAjZa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  sound.clp     sound04   "  ?id "  AvAjZa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  sound.clp     sound4   "  ?id "  AvAjZa )" crlf))
 )
 
 ;Salience reduced by Meena(9.11.09)

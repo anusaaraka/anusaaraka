@@ -2,6 +2,10 @@
  (defglobal ?*lwg_debug_file* = lwg_db_fp)
  (deftemplate word-morph(slot original_word)(slot morph_word)(slot root)(slot category)(slot suffix)(slot number))
 
+ (deffunction string_to_integer (?parser_id)
+; Removes the first character from the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
+ (string-to-field (sub-string 2 10000 ?parser_id)))
+
  (deffacts dummy_lwg_info
  (link_name-link_expansion)
  (link_name-link_lnode-link_rnode)
@@ -97,7 +101,7 @@
  (linkid-word-node_cat  ?sr_node ?sword ?)
  (linkid-word-node_cat  ?PPr_node ?PPword ?)
  (linkid-word-node_cat  ?TOr_node ?Tword ?)
- (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be|used ?)
+ (linkid-word-node_cat  ?TOl_node has|had|have|need|was|were|be ?)
  (linkid-word-node_cat  ?Ir_node  ?Iword ?)
  (linkid-word-node_cat  ?Pvr_node ?Pvword ?)
  (parser_id-root ?Pvr_node ?root)
@@ -171,7 +175,7 @@
  (link_name-link_lnode-link_rnode ?TO  ?TOl_node ?TOr_node)
  (linkid-word-node_cat  ?sr_node ?sword ?)
  (linkid-word-node_cat  ?Ir_node  ?Iword ?)
- (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be|used ?)
+ (linkid-word-node_cat  ?TOl_node has|had|have|need|was|were|be ?)
  (linkid-word-node_cat  ?TOr_node ?Tword ?)
  (linkid-word-node_cat  ?I2r_node ?I2word ?)
  (linkid-word-node_cat  ?Pvr_node ?Pvword ?)
@@ -228,7 +232,7 @@
  (link_name-link_lnode-link_rnode ?TO  ?TOl_node ?TOr_node)
  (linkid-word-node_cat  ?sr_node ?sword ?)
  (linkid-word-node_cat  ?Ir_node  ?Iword ?)
- (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be|used ?)
+ (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be ?)
  (linkid-word-node_cat  ?TOr_node ?Tword ?)
  (linkid-word-node_cat  ?I2r_node  ?I2word ?)
  (parser_id-root ?I2r_node ?root)
@@ -293,7 +297,7 @@
  (link_name-link_lnode-link_rnode ?TO  ?TOl_node ?TOr_node)
  (linkid-word-node_cat  ?sr_node ?sword ?)
  (linkid-word-node_cat  ?Pgr_node ?Pgword ?)
- (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be|used ?)
+ (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be ?)
  (linkid-word-node_cat  ?TOr_node ?Tword ?)
  (linkid-word-node_cat  ?Ir_node  ?Iword ?)
  (parser_id-root ?Ir_node ?root)
@@ -339,7 +343,7 @@
  (link_name-link_lnode-link_rnode ?TO  ?TOl_node ?TOr_node)
  (linkid-word-node_cat  ?sr_node ?sword ?)
  (linkid-word-node_cat  ?Pr_node ?Pword ?)
- (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be|used ?)
+ (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be ?)
  (linkid-word-node_cat  ?TOr_node ?Tword ?)
  (linkid-word-node_cat  ?Ir_node  keep ?)
  (word-morph (original_word  ?Pword)(root  ?root)(suffix ing))
@@ -361,7 +365,7 @@
  (link_name-link_lnode-link_rnode ?TO  ?TOl_node ?TOr_node)
  (linkid-word-node_cat  ?sr_node ?sword ?)
  (linkid-word-node_cat  ?Pvr_node ?Pvword ?)
- (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be|used ?)
+ (linkid-word-node_cat  ?TOl_node has|had|have|need|was|were|be ?)
  (linkid-word-node_cat  ?TOr_node ?Tword ?)
  (linkid-word-node_cat  ?Ir_node  ?Iword ?)
  (parser_id-root ?Pvr_node ?root)
@@ -407,7 +411,7 @@
  (link_name-link_lnode-link_rnode ?PP   ?Ir_node ?PPr_node)
  (link_name-link_lnode-link_rnode ?TO  ?TOl_node ?TOr_node)
  (linkid-word-node_cat  ?sr_node ?sword ?)
- (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be|used ?)
+ (linkid-word-node_cat  ?TOl_node has|had|have|need|was|were|be ?)
  (linkid-word-node_cat  ?TOr_node ?Tword ?)
  (linkid-word-node_cat  ?Ir_node  ?Iword ?)
  (linkid-word-node_cat  ?PPr_node ?PPword ?)
@@ -452,7 +456,7 @@
  (link_name-link_lnode-link_rnode ?Pg   ?Ir_node ?Pgr_node)
  (link_name-link_lnode-link_rnode ?TO  ?TOl_node ?TOr_node)
  (linkid-word-node_cat  ?sr_node ?sword ?)
- (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be|used ?)
+ (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be ?)
  (linkid-word-node_cat  ?TOr_node ?Tword ?)
  (linkid-word-node_cat  ?Ir_node  ?Iword ?)
  (linkid-word-node_cat  ?Pgr_node ?Pgword ?)
@@ -654,11 +658,10 @@
  )
  ;------------------------------------------- ( S  TO  I ) (suf - 0) ---------------------------------------------------
  ;He was to eat  They were to eat.
- ; Groups only if TO link left node word is has|had|have|need|are|is|was|were|be|used
+ ; Groups only if TO link left node word is has|had|have|need
  ; One of the best ways of improving your English is to read the language.  (dont group "is to read" bcoz "is" is main verb)
  ; A fat ugly boy had to eat fruits.  
  ; He has to do work hard.
- ;Added "used" in the list suggested by Meenaji (20-01-11) .She used to live in Glasgow.
  (defrule S_TO_I_rule
  (declare (salience 800))
  (link_name-link_expansion  ?TO T O $?)
@@ -666,9 +669,7 @@
  (Non_interogative_sentence ?sl_node ?sr_node)
  (link_name-link_lnode-link_rnode ?TO   ?sr_node  ?TOr_node)
  (link_name-link_lnode-link_rnode ?I    ?TOr_node ?Ir_node)
- (link_name-link_lnode-link_rnode ?TO  ?TOl_node ?TOr_node)
- (linkid-word-node_cat   ?TOl_node has|had|have|need|are|is|was|were|be|used ?)  
- (linkid-word-node_cat   ?sr_node ?sword ?)
+ (linkid-word-node_cat   ?sr_node ?sword&has|had|have|need ?)
  (linkid-word-node_cat   ?Ir_node ?Iword ?)
  (linkid-word-node_cat   ?TOr_node ?Tword ?)
  (parser_id-root ?Ir_node ?root)
@@ -677,7 +678,26 @@
   (printout lwg_fp  "(root-verbchunk-tam-parser_chunkids " ?root "  "?sword"_"?Tword"_"?Iword "  "?sword"_"?Tword"_0  " ?sr_node " "?TOr_node  " "  ?Ir_node  ")" crlf)
   (printout ?*lwg_debug_file* "(rule_name-grouped_ids   S_TO_I_rule   "?sr_node " "?TOr_node  " "  ?Ir_node  ")" crlf)
  )
-
+ ;-----------------------------------------------------------------------------------------------------------------------
+ ;suggested by Meenaji (20-01-11) .She used to live in Glasgow.
+ (defrule S_TO_I_rule_for_used
+ (declare (salience 801))
+ (link_name-link_expansion  ?TO T O $?)
+ (link_name-link_expansion  ?I  I $?)
+ (Non_interogative_sentence ?sl_node ?sr_node)
+ (link_name-link_lnode-link_rnode ?TO   ?sr_node  ?TOr_node)
+ (link_name-link_lnode-link_rnode ?I    ?TOr_node ?Ir_node)
+ (linkid-word-node_cat   ?sr_node ?sword&used ?)
+ (linkid-word-node_cat   ?Ir_node ?Iword ?)
+ (linkid-word-node_cat   ?TOr_node ?Tword ?)
+ (parser_id-root ?Ir_node ?root)
+ (link_name-link_lnode-link_rnode ?lname ?sr_node ?)
+ (test (and (neq (sub-string 1 1 (implode$ (create$ ?lname))) "O")(neq ?lname ?TO))) ;They used force to open the jammed door. (22-01-11)
+ =>
+  (assert (G3_NI_id_to_be_retracted ?sr_node))
+  (printout lwg_fp  "(root-verbchunk-tam-parser_chunkids " ?root "  "?sword"_"?Tword"_"?Iword "  "?sword"_"?Tword"_0  " ?sr_node " "?TOr_node  " "  ?Ir_node  ")" crlf)
+  (printout ?*lwg_debug_file* "(rule_name-grouped_ids   S_TO_I_rule_for_used   "?sr_node " "?TOr_node  " "  ?Ir_node  ")" crlf)
+ )
  ;------------------------------------------- ( RS  PP  Pv ) (suf - en) ---------------------------------------------------
  ; Mark the items which have been checked
  (defrule RS_PP_Pv_rule
@@ -1037,7 +1057,7 @@
  (link_name-link_lnode-link_rnode ?TO  ?TOl_node ?TOr_node)
  (linkid-word-node_cat  ?sl_node ?sword ?)
  (linkid-word-node_cat  ?PPr_node ?PPword ?)
- (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be|used ?)
+ (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be ?)
  (linkid-word-node_cat  ?TOr_node ?Tword ?)
  (linkid-word-node_cat  ?Ir_node  ?Iword ?)
  (linkid-word-node_cat  ?Pvr_node ?Pvword ?)
@@ -1109,7 +1129,7 @@
  (link_name-link_lnode-link_rnode ?TO  ?TOl_node ?TOr_node)
  (linkid-word-node_cat  ?sl_node ?sword ?)
  (linkid-word-node_cat  ?Ir_node  ?Iword ?)
- (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be|used ?)
+ (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be ?)
  (linkid-word-node_cat  ?TOr_node ?Tword ?)
  (linkid-word-node_cat  ?I2r_node  ?I2word ?)
  (linkid-word-node_cat  ?Pvr_node ?Pvword ?)
@@ -1165,7 +1185,7 @@
  (link_name-link_lnode-link_rnode ?TO  ?TOl_node ?TOr_node)
  (linkid-word-node_cat  ?sl_node ?sword ?)
  (linkid-word-node_cat  ?Ir_node  ?Iword ?)
- (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be|used ?)
+ (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be ?)
  (linkid-word-node_cat  ?TOr_node ?Tword ?)
  (linkid-word-node_cat  ?I2r_node  ?I2word ?)
  (parser_id-root ?I2r_node ?root)
@@ -1229,7 +1249,7 @@
  (link_name-link_lnode-link_rnode ?TO  ?TOl_node ?TOr_node)
  (linkid-word-node_cat  ?sl_node ?sword ?)
  (linkid-word-node_cat  ?Pgr_node ?Pgword ?)
- (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be|used ?)
+ (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be ?)
  (linkid-word-node_cat  ?TOr_node ?Tword ?)
  (linkid-word-node_cat  ?Ir_node  ?Iword ?)
  (parser_id-root ?Ir_node ?root)
@@ -1251,7 +1271,7 @@
  (link_name-link_lnode-link_rnode ?TO  ?TOl_node ?TOr_node)
  (linkid-word-node_cat  ?sl_node ?sword ?)
  (linkid-word-node_cat  ?Pvr_node ?Pvword ?)
- (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be|used ?)
+ (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be ?)
  (linkid-word-node_cat  ?TOr_node ?Tword ?)
  (linkid-word-node_cat  ?Ir_node  ?Iword ?)
  (parser_id-root ?Ir_node ?root)
@@ -1294,7 +1314,7 @@
  (link_name-link_lnode-link_rnode ?PP   ?Ir_node ?PPr_node)
  (link_name-link_lnode-link_rnode ?TO  ?TOl_node ?TOr_node)
  (linkid-word-node_cat  ?sl_node ?sword ?)
- (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be|used ?)
+ (linkid-word-node_cat  ?TOl_node has|had|have|need|are|is|was|were|be ?)
  (linkid-word-node_cat  ?TOr_node ?Tword ?)
  (linkid-word-node_cat  ?Ir_node  ?Iword ?)
  (linkid-word-node_cat  ?PPr_node ?PPword ?)
