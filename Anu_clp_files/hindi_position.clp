@@ -658,7 +658,8 @@
   ;Modified by Shirisha Manju :
   ;         "Added viSeRya-kqxanwa_viSeRaNa" in the list Ex:The 5 thousand people invited by Bob attended 
   ;         "Added kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka Ex:She works very carefully (24-01-11)
-  ;         "Added saMjFA-saMjFA_samAnAXikaraNa  Ex: ;Rama gave a book to Dasharat , the king of Ayodhya .
+  ;         "Added saMjFA-saMjFA_samAnAXikaraNa  Ex :  Rama gave a book to Dasharat , the king of Ayodhya . (24-01-11)
+  ;         "Added saMjFA-kqxanwa                Ex :  Our program is easier to use than to understand. 24-01-11)
   (defrule viSeRaNa_rule
   (declare (salience 340))
   (relation-anu_ids viSeRya-RaRTI_viSeRaNa|kriyA_viSeRaNa-viSeRaka|viSeRya-kqxanwa_viSeRaNa|kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka|saMjFA-saMjFA_samAnAXikaraNa|saMjFA-kqxanwa ?RaRTI_id ?RaRTI_id1)
@@ -687,9 +688,7 @@
   (relation-anu_ids  ?rel1 ?v_id ?v_id2&:(> ?v_id2 ?v_id1))
   (not (relation-anu_ids  ? ?v_id ?v_id3&:(> ?v_id3 ?v_id2)))
   (test (and (neq (str-index "-" ?rel)  FALSE)(neq (str-index "_" ?rel)  FALSE)))
-;  (test (neq (str-index "_" ?rel)  FALSE))
   (test (and (neq (str-index "-" ?rel1)  FALSE)(neq (str-index "_" ?rel1)  FALSE)))
-;  (test (neq (str-index "_" ?rel1)  FALSE)) 
   (test (or (eq (sub-string 1 (- (str-index "-" ?rel) 1) ?rel) "viSeRya")(eq (sub-string 1 (- (str-index "-" ?rel) 1) ?rel) "kqxanwa")(eq (sub-string 1 (- (str-index "-" ?rel) 1) ?rel) "kriyA")))
   (test (eq (sub-string (+ (+ (str-index "-" ?rel) 1) (- (str-index "_" ?rel)  (str-index "-" ?rel))) (length ?rel) ?rel) "saMbanXI"))
  (test (or (eq (sub-string 1 (- (str-index "-" ?rel1) 1) ?rel1) "viSeRya")(eq (sub-string 1 (- (str-index "-" ?rel1) 1) ?rel1) "kqxanwa")(eq (sub-string 1 (- (str-index "-" ?rel1) 1) ?rel1) "kriyA")))
@@ -883,28 +882,6 @@
                         (printout  ?*debug* "(Rule_name-before_movement-after_movement  viSeRya-jo_samAnAXikaraNa_rule1  ("(implode$ ?*k_list_debug*)")   ("(implode$ (create$ $?hin_order ))"))" crlf)
   )
   ;---------------------------------------------------------------------------------------------------------------
-;  (defrule kriyA-kqxanwa_viSeRaNa_rule
-;  (declare (salience -200))
-;  ?f1<-(Sentence ?Sen1 $?sen1 ?muKya_vAkya)
-;  ?f2<-(Sentence ?Sen2 $?sen2 ?sApekRa_upavAkya)
-;  ?f0<-(relation-anu_ids kriyA-kqxanwa_viSeRaNa ?muKya_vAkya ?sApekRa_upavAkya)
-;  ?f3<-(hindi_id_order $?pre $?hin_order $?pos)
- ; (current_id-group_members ?muKya_vAkya $?grp_ids)
- ; (test (and (member$ ?muKya_vAkya $?hin_order) (member$ ?sApekRa_upavAkya $?hin_order) ))
- ; =>
- ; 	(retract ?f0 ?f3)
- ;	(bind ?position (member$ (nth$ 1 $?grp_ids) $?hin_order))
- ;	(bind ?len (length $?sen2))
- ;;	(bind $?hin_order (delete-member$ $?hin_order ?sApekRa_upavAkya))
-; 	(loop-for-count (?i 1 ?len)
-;        	(bind ?id (nth$ ?i $?sen2))
-;		(bind $?hin_order (delete-member$ $?hin_order ?id))                 
-;	)
-;	(bind $?hin_order (insert$ $?hin_order ?position ?sApekRa_upavAkya))
-; 	(bind $?hin_order (insert$ $?hin_order ?position $?sen2 ))
-; 	(assert (hindi_id_order $?pre $?hin_order $?pos))
-;  )
-  ;---------------------------------------------------------------------------------------------------------------
   (defrule sentence_conj_rule
   (declare (salience -200))
   ?f1<-(Sentence ?Sen1 $?sen1 ?s1)
@@ -952,33 +929,9 @@
  	(printout  ?*debug*  "(Rule_name-before_movement-after_movement  wall_conjuction  ("(implode$ ?*k_list_debug*)")   ("(implode$ (create$ 1 $?list))"))" crlf)
   )
   ;---------------------------------------------------------------------------------------------------------------
-  ; He made a request that there be an investigation . 
-  ; usane anuroXa kiyA #ki eka wahakIkAwa ho
-  ; Added by Shirisha Manju (19-01-10) (suggested by Sukhada)
-  ; Moving "subj_conj_id" before "subj" pada
-  ;  (defrule subject-conjunction_rule1
-  (defrule kriyA-conjunction_rule1
-  (declare (salience -200))
-  ?f<-(relation-anu_ids kriyA-conjunction  ?sub1 ?sub_conj)
-  (relation-anu_ids kriyA-dummy_subject  ?kriyA ?sub1)
-  (relation-anu_ids kriyA-aBihiwa ?kriyA ?sub)
-  ?f1<-(hindi_id_order $?list)
-  (current_id-group_members ?sub $?grp_ids)
-  (test (and (member$ ?sub_conj $?list)(member$ ?sub $?grp_ids)(member$ ?sub $?list)))
-  (not (wall_conjunction  ?sub_conj))
-  =>
- 	(retract ?f ?f1)
- 	(bind ?*k_list_debug*  (create$ $?list ))
- 	(bind $?list (delete-member$ $?list ?sub_conj))
- 	(bind ?pos (member$ (nth$ 1  $?grp_ids ) $?list))
- 	(bind $?list (insert$ $?list  ?pos  ?sub_conj))
- 	(assert (hindi_id_order $?list))
- 	(printout  ?*debug*  "(Rule_name-before_movement-after_movement kriyA-conjunction_rule1  ("(implode$ ?*k_list_debug*)")   ("(implode$ (create$ $?list))"))" crlf)
-  )
-  ;---------------------------------------------------------------------------------------------------------------
   ; Added by Shirisha Manju (19-02-10)
   ;He disputed that our program was superior .
-  (defrule subject-conjunction_rule2
+  (defrule kriyA-conjunction_rule1
   (declare (salience -200))
   ?f<-(relation-anu_ids kriyA-conjunction  ?kri ?sub_conj)
   (relation-anu_ids  kriyA-subject  ?kri ?sub)
@@ -994,30 +947,18 @@
  	(bind ?pos (member$ (nth$ 1  $?grp_ids ) $?list))
  	(bind $?list (insert$ $?list  ?pos  ?sub_conj))
  	(assert (hindi_id_order $?list))
- 	(printout ?*debug*  "(Rule_name-before_movement-after_movement subject-conjunction_rule2  ("(implode$ ?*k_list_debug*)")   ("(implode$ (create$ $?list))"))" crlf)
+ 	(printout ?*debug*  "(Rule_name-before_movement-after_movement kriyA-conjunction_rule1  ("(implode$ ?*k_list_debug*)")   ("(implode$ (create$ $?list))"))" crlf)
   )
   ;---------------------------------------------------------------------------------------------------------------
-  ;Added by sheetal
-  ;Our program is easier to use than to understand.
- ; (defrule move_kqxanwa_before_saMjFA
- ; (id-word ?wrd than)
- ; (saMjFA-kqxanwa  ?wrd ?kqw)
- ; ?f0 <-(hindi_id_order $?hin_order)
- ; (test (member$ ?wrd $?hin_order))
-  ;(test (member$ ?kqw $?hin_order))
-  ;=>
- ;	(retract ?f0)
- ;	(bind ?*k_list_debug*  (create$ $?hin_order ))
- ;	(bind ?kqw_pos (member$ ?wrd $?hin_order))
- ;;	(bind $?hin_order (insert$ $?hin_order ?kqw_pos ?kqw))
-; 	(assert (hindi_id_order $?hin_order))
-;  	(printout  ?*debug*  "(Rule_name-before_movement-after_movement move_kqxanwa_before_saMjFA  ("(implode$ ?*k_list_debug*)")   ("(implode$ (create$ $?hin_order))"))" crlf)
-;  )
-  ;---------------------------------------------------------------------------------------------------------------
-  (defrule subject-conjunction_rule
+  ;Modified subject-conjunction as kriyA-conjunction by Shirisha Manju
+  ;Added kriyA-aBihiwa by Shirisha Manju (25-01-11)
+  ;Moving "subj_conj_id" before "subj" pada
+  ; He made a request that there be an investigation . 
+  ; usane anuroXa kiyA #ki eka wahakIkAwa ho
+  (defrule kriyA-conjunction_rule
   (declare (salience -210))
-  ?f<-(relation-anu_ids  kriyA-conjunction  ?kri ?sub_conj) ;modified subject-conjunction as kriyA-conjunction by Shirisha Manju
-  (or (relation-anu_ids kriyA-dummy_subject ?kri ?sub)(relation-anu_ids kriyA-subject ?kri ?sub));Added by Shirisha Manju
+  ?f<-(relation-anu_ids  kriyA-conjunction  ?kri ?sub_conj)
+  (or (relation-anu_ids kriyA-dummy_subject ?kri ?sub)(relation-anu_ids kriyA-subject ?kri ?sub)(relation-anu_ids kriyA-aBihiwa ?kri ?sub) )
   ?f1<-(hindi_id_order $?list)
   (current_id-group_members ?sub $?grp_ids)
   (test (member$ ?sub_conj $?list))
@@ -1030,7 +971,7 @@
  	(bind ?pos (member$ (nth$ 1  $?grp_ids ) $?list))
  	(bind $?list (insert$ $?list  ?pos  ?sub_conj))
  	(assert (hindi_id_order $?list))
-	(printout ?*debug*  "(Rule_name-before_movement-after_movement subject-conjunction_rule  ("(implode$ ?*k_list_debug*)")   ("(implode$ (create$ $?list))"))" crlf)
+	(printout ?*debug*  "(Rule_name-before_movement-after_movement kriyA-conjunction_rule  ("(implode$ ?*k_list_debug*)")   ("(implode$ (create$ $?list))"))" crlf)
   )
   ;---------------------------------------------------------------------------------------------------------------
   ;Removing common subject in all verbs expect the first.

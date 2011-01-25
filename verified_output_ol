@@ -3,11 +3,6 @@ Saving word information
 Saving morph information
 Calling POS Tagger and Chunker (APERTIUM)
 Calling OPEN-LOGOS
-rm: cannot remove `/tmp/openlogos/20100.*': No such file or directory
-Unable to open input file parse1.diag
-Unable to open input file parse2.diag
-Unable to open input file parse3.diag
-Unable to open input file parse4.diag
 matching compounds......
 Hindi meaning using Open Logos 1.1
 Test. 

@@ -55,7 +55,7 @@
 
 
 
-
+;Modified by Meena(25.1.11) ;added the list of human relations
 ;;A mother can picked out her child in a crowd.
 ;eka mAz apane bacce ko BIdZa meM BI pahacAna lewI hE
 (defrule pick3
@@ -64,8 +64,8 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 out)
 (kriyA-upasarga ?id ?id1)
-(kriyA-object ?id ?obj)
-(id-cat_coarse ?id verb)
+(id-root ?id2 son|brother|sister|daughter|husband|wife|father|mother|uncle|aunt)
+(kriyA-object ?id ?id2)
 =>
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 pahacAna_le))
@@ -75,7 +75,7 @@
 
 
 
-
+;Modified by Meena(25.1.11); commented (kriyA-for_saMbanXI  ?id ?id2)
 ;Added by Meena on 26.8.09
 ;We picked out some beautiful flowers for her.
 ;We picked some beautiful flowers out for her.
@@ -86,8 +86,8 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 out)
 (kriyA-upasarga ?id ?id1)
-(kriyA-object ?id ?obj)
-(kriyA-for_saMbanXI  ?id ?id2)
+(kriyA-object ?id ?)
+;(kriyA-for_saMbanXI  ?id ?id2)
 =>
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 cuna_le))
