@@ -1582,7 +1582,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
     is neccessary and also mapping "L" ids to "P" ids in following files and also cleaning done:
          1.relation_debug.sh        2.relation_debug.clp       3.order_debug.clp    4.lwg_debug.clp   5.pada_debug.clp
          6.run_relation_debug.bat   7.run_pada_debug.bat       8.run_lwg_debug.bat  9.order_debug.sh  10.run_order_debug.bat
- 4. WSD :  Modified:  sound4 rule in sound.clp,     have37 rule in have.clp,    guess.clp   and     pick.clp
+ 4. WSD :  Modified:  sound4 rule in sound.clp,     have37 rule in have.clp,  guess.clp,  pick.clp , mind.clp,twist.clp
  5. Modified sd_ver_output
  6. Added rule_1-3 in sd_lwg_rules.clp (to get lwg for dobj if nsubj|aux id is not same as dobj id)
  7. hindi_position.clp
@@ -1609,11 +1609,13 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
          using-chunk-ids, to_be_included_in_paxa, link_name-link_expansion, link_name-lnode-rnode, id-cat_coarse,
          id-cat, id-wsd_root, affecting_id-affected_ids-wsd_group_root_mng, affecting_id-affected_ids-wsd_group_word_mng,
          id-original_word, relation-parser_ids
- 18. Updated changes_in_databases
- 19. Removed "meaning_has_been_decided.dat" from WSD module, "relations_tmp1.dat" from GNP_agreement, "original_word.dat"         from pada_point_concept , "idiomatic_expr.dat" from prepare_apertium modules in run_modules_link.bat
- 20. Modified "dummy-jo_samAnAXikaraNa", "dummy-viBakwi_saMbanXI", "subject_insertion", "dummy_id"  rules  in                     link_relation_rules.clp for printing word fact for 10000 id.
- 21. Modified "asserted_who" rule in pada_point_concept_rules.clp for using word fact instead of original word fact above         purpose.
- 22. Modified "wh-reorder1" rule in hindi_sent_reorder.clp for adding a test condition for above purpose.
- 23. Removed sd_hindi_position.clp from create_binary_files.clp
+ 18. Removed "meaning_has_been_decided.dat" from WSD module, "relations_tmp1.dat" from GNP_agreement, "original_word.dat"         from pada_point_concept , "idiomatic_expr.dat" from prepare_apertium modules in run_modules_link.bat
+ 19. Modified "dummy-jo_samAnAXikaraNa", "dummy-viBakwi_saMbanXI", "subject_insertion", "dummy_id"  rules  in                     link_relation_rules.clp for printing word fact for 10000 id.
+ 20. Modified "asserted_who" rule in pada_point_concept_rules.clp for using word fact instead of original word fact above         purpose.
+ 21. Modified "wh-reorder1" rule in hindi_sent_reorder.clp for adding a test condition for above purpose.
+ 22. Removed sd_hindi_position.clp from create_binary_files.clp
+ 23. Updated changes_in_databases
  24. Updated Log file
- 25. Updated verified_ol  (531)
+ 25. Updated following files:
+                verified_ol  (531)             sd_verified  (344)
+                verified     (557)
