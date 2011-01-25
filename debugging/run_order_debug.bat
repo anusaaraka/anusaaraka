@@ -4,9 +4,9 @@
  (load-facts "word.dat")
  (load-facts "lwg_info.dat")
  (load-facts "Eng_id_order.dat")
- (load-facts "punctuation.dat")
+ (load-facts "punctuation_info.dat")
  (load-facts "pada_info.dat")
  (batch* "order_debug.clp")
- (system "clear")
- (run)
+; (system "clear")
+; (run)
 

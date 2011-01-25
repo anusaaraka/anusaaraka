@@ -1,8 +1,9 @@
  (defglobal ?*fp* = open-file)
  (defglobal ?*rel_debug* = debug_fp)
+ (defglobal ?*open-word* = open-word)
  (defglobal ?*open-orign* = open-orign)
  (defglobal ?*hmng_fp* = hmng_fp)
-
+ 
  (deffunction string_to_integer (?parser_id)
 ; Removes the first character from the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
@@ -25,6 +26,7 @@
  =>
  (close ?*fp*)
  (close ?*rel_debug*)
+ (close ?*open-word*)
  (close ?*open-orign*)
  (close ?*hmng_fp*)
  )
@@ -1539,7 +1541,8 @@
 (printout	?*rel_debug*	"(Rule-Rel-ids	dummy-jo_samAnAXikaraNa	kriyA-object	"?y"	10000)"	crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	dummy-jo_samAnAXikaraNa	viSeRya-jo_samAnAXikaraNa	"?z"	"10000")"	crlf)	
 (printout	?*hmng_fp*	"(id-HM-source	10000	jo	Relative_clause)"	crlf)	
-(printout	?*open-orign*	"(id-original_word	10000	who)"	crlf)	
+(printout	?*open-word*	"(id-word 10000	 who)"	crlf)
+(printout       ?*open-orign*   "(id-original_word 10000  who)"   crlf)	
 )
 ;Ex.  The dog I chased was black .
 ;----------------------------------------------------------------------------------------------------------------
@@ -1558,7 +1561,8 @@
 (printout	?*fp*	"(relation-parser_ids	viSeRya-jo_samAnAXikaraNa	"?z"	"10000")"	crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	dummy-viBakwi_saMbanXI	viSeRya-jo_samAnAXikaraNa	"?z"	"10000")"	crlf)	
 (printout	?*hmng_fp*	"(id-HM-source	10000	jo	Relative_clause)"	crlf)	
-(printout	?*open-orign*	"(id-original_word	10000	who)"	crlf)	
+(printout	?*open-word*	"(id-word 10000  who)"	crlf)
+(printout       ?*open-orign*   "(id-original_word 10000  who)"   crlf)	
 )
 ;Ex. The man I play tennis with is here.
 ;----------------------------------------------------------------------------------------------------------------
@@ -1587,8 +1591,9 @@ else
 (printout       ?*hmng_fp*      "(id-HM-source-sub_id  10001   vaha    subject_insertion  "?id0")"       crlf))
 ;the HM 'vaha' is only for the sents where apertium analysis does not exist.
 
-(printout	?*open-orign*	"(id-original_word	10001	"?word")"	crlf))	
-
+(printout	?*open-word*	"(id-word 10001  "?word")"	crlf)	
+(printout       ?*open-orign*   "(id-original_word 10001  "?word")"       crlf)
+)
 ;Ex.  She was asked about the pay increase but made no comment .
 ;     The cat sat on a mat and scratched itself loudly .(2nd-parse)
 ;----------------------------------------------------------------------------------------------------------------
@@ -1602,7 +1607,8 @@ else
 (printout	?*fp*	"(relation-parser_ids	kriyA-kAlavAcI	"?x	"	1000)"	crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	dummy_id	kriyA-kAlavAcI	"?x"	1000)"	crlf)	
 (printout	?*hmng_fp*	"(id-HM-source	1000	waba	Relative_clause)"	crlf)	
-(printout	?*open-orign*	"(id-original_word	1000	then)"	crlf)	
+(printout	?*open-word*	"(id-word 1000  then)"	crlf)
+(printout       ?*open-orign*    "(id-original_word 1000  then)"  crlf)
 )
 ;Ex.  We will go when you are ready. She cried when asked about it.
 ;----------------------------------------------------------------------------------------------------------------

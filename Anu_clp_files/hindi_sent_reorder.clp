@@ -461,6 +461,7 @@
  (not (kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?  ?wh_word)) ;Ex. How quickly did you run?
  (not (wall_conjunction ?wh_word)) ;When we want to hear a music programme on the radio , we have to tune the radio to the correct station .
  ?f0<-(hindi_id_order  $?start ?wh_word $?NP ?kriyA $?end)
+ (test (and (neq ?wh_word 10000)(neq ?wh_word 10001)))
  =>
 	(retract ?f0 ?f1)
   	(assert (hindi_id_order $?start  $?NP ?wh_word ?kriyA $?end))

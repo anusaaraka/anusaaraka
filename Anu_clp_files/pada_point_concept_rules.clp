@@ -77,7 +77,7 @@
  (defrule asserted_who
  (declare (salience 1000))
  ?f<-(relation-anu_ids viSeRya-jo_samAnAXikaraNa ?vi ?jo)
- (id-original_word 10000 who)
+ (id-word 10000 who)
  (not (has_been_included_in_paxa 10000))
  =>
         (assert (has_been_included_in_paxa 10000))

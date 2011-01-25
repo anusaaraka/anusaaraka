@@ -81,7 +81,22 @@
  (bind ?id (+ ?id 1))
  (assert (index ?id))
  )
-
+ ;-----------------------------------------------------------------------------------------------------
+ (defrule get_eng_word_list1
+ (declare (salience 1900))
+ (id-word ?id ?word)
+ ?f1<-(index ?id1)
+ ?f<-(English-list $?Eng_list)
+ (test (or (eq ?id 10000) (eq ?id 1000) (eq ?id 10001)))
+ (not (has_been_asserted ?id))
+ =>
+ (retract ?f ?f1)
+ (bind ?word (str-cat ?word "," ?id1 ))
+ (assert (English-list $?Eng_list ?word))
+ (assert (has_been_asserted ?id))
+ (bind ?id (+ ?id 1))
+ (assert (index ?id))
+ )
  ;----------------------------------------------------------------------------------------------------- 
  ; get head ids from local word grouping into lwg_list
  (defrule  lwg_list
@@ -162,7 +177,7 @@
                    (loop-for-count (?i  1 (length$ ?*k_list*))
                    (bind ?wrdid (nth$ ?i ?*k_list*))
                    (bind ?word (nth$ ?wrdid $?Eng_list))
-                   (printout t ?word " " )
+                   (printout t ?wrd " " )
                    )
  (printout t crlf)
  )
@@ -871,7 +886,7 @@
    =>
         (retract ?f0 ?f3)
         (if (eq ?*debug* ON) then
-          (printout t " FIRED subject-jo_samAnAXikaraNa_rule  :: Removed jo_samAnAXikaraNa("(nth$ ?jo_samAnAXikaraNa $?Eng_list)") from both the sentences and deciding its position and placing it in first position "crlf)
+          (printout t " FIRED subject-jo_samAnAXikaraNa_rule  :: Removed jo_samAnAXikaraNa("(nth$ ?jo_samAnAXikaraNa $?Eng_list)") from the main clause and moving it to the sentence initial position "crlf)
           (bind $?b_list (create$ $?hin_order))
           (printout t " Before Movement       :: ")
           (loop-for-count (?i  1 (length$ $?b_list))
