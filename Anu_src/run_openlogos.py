@@ -1347,8 +1347,8 @@ for i in xrange(1,len(tran3)):
 #Ex. I will show you the house where I met your mother. We now know that there are two thousand elements which we can not use to make a good light bulb.  
 
 for i in xrange(len(tran2)):
-    for j in  xrange(len(tran2)):
-        if tran2[i][0] == '1' and tran2[j][0] == '1' and tran2[i][1] == tran2[j][1] and i != j and (tran2[j-1][5] == 'CLS-BOS' or tran2[j-2][5] == 'CLS-BOS') and tran2[j-1][4] != '*' and tran3[i][4] != tran3[j][4]:
+    for j in xrange(len(tran2)-1):
+        if tran2[i][0] == '1' and tran2[j][0] == '1' and tran2[i][1] == tran2[j][1] and i != j and (tran2[j-1][5] == 'CLS-BOS' or tran2[j-2][5] == 'CLS-BOS') and tran2[j-1][4] != '*' and tran2[i][4] != tran2[j][4]:
             rel_fp.write("(relation-parser_ids viSeRya-jo_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[tran2[i][3]], tran2[j][3]))
 # Ex. Is that the film in which he kills his mother. 
 

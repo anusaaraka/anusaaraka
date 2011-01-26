@@ -435,20 +435,20 @@
  ; Ex. He talked to him in order to secure the account.
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule advcl
-(rel_name-sids  advcl ?kriyA ?samakAlika_kriyA)
+(rel_name-sids  advcl ?kri ?samakAlika_kri)
 =>
-(printout	?*fp*	"(relation-parser_ids     kriyA-samakAlika_kriyA	"?kriyA"	"?samakAlika_kriyA")"crlf)	
-(printout	?*dbug*	"(Rule-Rel-ids	advcl	kriyA-samakAlika_kriyA	"?kriyA"	"?samakAlika_kriyA")"crlf)	
+(printout	?*fp*	"(relation-parser_ids     kriyA-samakAlika_kriyA	"?kri"	"?samakAlika_kri")"crlf)	
+(printout	?*dbug*	"(Rule-Rel-ids	advcl	kriyA-samakAlika_kriyA	"?kri"	"?samakAlika_kri")"crlf)	
 )
  ; Ex. The accident happened as the night was falling. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule nsubj_advmod
-(root-verbchunk-tam-parser_chunkids ? ? ? $?ids ?kriyA)
-(rel_name-sids advmod ?kriyA ?kriyA_viSeRaNa)
-(not (rel_name-sids ccomp|xcomp ? ?kriyA))
+(root-verbchunk-tam-parser_chunkids ? ? ? $?ids ?kri)
+(rel_name-sids advmod ?kri ?kri_viSeRaNa)
+;(not (rel_name-sids ccomp|xcomp ? ?kriyA));commented for 'I am afraid that I have badly hurt him.'
 =>
-(printout	?*fp*	"(relation-parser_ids     kriyA-kriyA_viSeRaNa	"?kriyA"	"?kriyA_viSeRaNa")"crlf)	
-(printout	?*dbug*	"(Rule-Rel-ids	nsubj_advmod	kriyA-kriyA_viSeRaNa	"?kriyA"	"?kriyA_viSeRaNa")"crlf)	
+(printout	?*fp*	"(relation-parser_ids     kriyA-kriyA_viSeRaNa	"?kri"	"?kri_viSeRaNa")"crlf)	
+(printout	?*dbug*	"(Rule-Rel-ids	nsubj_advmod	kriyA-kriyA_viSeRaNa	"?kri"	"?kri_viSeRaNa")"crlf)	
 )
  ; Ex. I like genetically modified food.  He runs fast .
 ;------------------------------------------------------------------------------------------------------------------------
@@ -578,15 +578,31 @@
  (test (eq (sub-string 1 5 (implode$ (create$ ?cnj))) "conj_"))
  (rel_name-sids nsubj ?kriyA ?s)
  (rel_name-sids nsubj ?kri ?s1)
- (parserid-word ?conj_id ?conjunction)
- (parserid-word ?conj_id and)
- (test (and (> (string_to_integer ?conj_id) (string_to_integer ?kriyA)) (< (string_to_integer ?conj_id) (string_to_integer ?kri)) (> (string_to_integer ?conj_id) (string_to_integer ?s)) (< (string_to_integer ?conj_id) (string_to_integer ?s1))))
+; (parserid-word ?c_id ?conjunction)
+ (parserid-word ?c_id and|or)
+ (test (and (> (string_to_integer ?c_id) (string_to_integer ?kriyA)) (< (string_to_integer ?c_id) (string_to_integer ?kri)) (> (string_to_integer ?c_id) (string_to_integer ?s)) (< (string_to_integer ?c_id) (string_to_integer ?s1))))
  =>
- (assert (found_kriyA-conjunction ?conj_id))
- (printout       ?*fp*   "(relation-parser_ids     kriyA-conjunction        "?kri"      "?conj_id")"crlf)
- (printout       ?*dbug* "(Rule-Rel-ids  k_conj   kriyA-conjunction        "?kri"      "?conj_id")"crlf)
+ (assert (found_kriyA-conjunction ?c_id))
+ (printout       ?*fp*   "(relation-parser_ids     kriyA-conjunction        "?kri"      "?c_id")"crlf)
+ (printout       ?*dbug* "(Rule-Rel-ids  k_conj   kriyA-conjunction        "?kri"      "?c_id")"crlf)
  )
  ; Ex. I want to have this and I want to have that. I am in New York and I would like to see you. I slept and Mohan wept. 
+;------------------------------------------------------------------------------------------------------------------------
+ (defrule k_conj1
+ (declare (salience 1000))
+ (rel_name-sids ?cnj ?kriyA ?kri)
+ (test (eq (sub-string 1 5 (implode$ (create$ ?cnj))) "conj_"))
+ (rel_name-sids nsubj ?kriyA ?s)
+ (rel_name-sids dobj ?kriyA ?o)
+ (parserid-word ?c_id and|or)
+ (not (found_kriyA-conjunction ?c_id))
+ (test (and (> (string_to_integer ?c_id) (string_to_integer ?kriyA)) (< (string_to_integer ?c_id) (string_to_integer ?kri)) (> (string_to_integer ?c_id) (string_to_integer ?s))))
+ =>
+ (assert (found_kriyA-conjunction ?c_id))
+ (printout       ?*fp*   "(relation-parser_ids     kriyA-conjunction        "?kri"      "?c_id")"crlf)
+ (printout       ?*dbug* "(Rule-Rel-ids  k_conj1   kriyA-conjunction        "?kri"      "?c_id")"crlf)
+ )
+ ; Ex. The leopard seizes its kill and begins to eat. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule partmod+nsubj+cop
 (declare(salience 205))
