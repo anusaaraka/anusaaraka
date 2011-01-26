@@ -145,6 +145,7 @@
  (rel_name-sids	nsubj ?kriyA  ?sub) 
  (rel_name-sids	conj_and|conj_or  ?kriyA ?id1)
  (parserid-word ?and and|or)
+ (not (found_kriyA-conjunction ?and));I ate fruits, drank milk and slept. 
  (test (and (> (string_to_integer ?and) (string_to_integer ?kriyA)) (< (string_to_integer ?and) (string_to_integer ?id1))))
  =>
  (printout       ?*fp*   "(relation-parser_ids     subject-subject_samAnAXikaraNa   "?sub"  "?and")"crlf)      
@@ -578,7 +579,6 @@
  (test (eq (sub-string 1 5 (implode$ (create$ ?cnj))) "conj_"))
  (rel_name-sids nsubj ?kriyA ?s)
  (rel_name-sids nsubj ?kri ?s1)
-; (parserid-word ?c_id ?conjunction)
  (parserid-word ?c_id and|or)
  (test (and (> (string_to_integer ?c_id) (string_to_integer ?kriyA)) (< (string_to_integer ?c_id) (string_to_integer ?kri)) (> (string_to_integer ?c_id) (string_to_integer ?s)) (< (string_to_integer ?c_id) (string_to_integer ?s1))))
  =>
@@ -593,16 +593,15 @@
  (rel_name-sids ?cnj ?kriyA ?kri)
  (test (eq (sub-string 1 5 (implode$ (create$ ?cnj))) "conj_"))
  (rel_name-sids nsubj ?kriyA ?s)
- (rel_name-sids dobj ?kriyA ?o)
+ (parser_id-cat_coarse ?kri verb)
+ (parser_id-cat_coarse ?kriyA verb)
  (parserid-word ?c_id and|or)
  (not (found_kriyA-conjunction ?c_id))
  (test (and (> (string_to_integer ?c_id) (string_to_integer ?kriyA)) (< (string_to_integer ?c_id) (string_to_integer ?kri)) (> (string_to_integer ?c_id) (string_to_integer ?s))))
  =>
  (assert (found_kriyA-conjunction ?c_id))
- (printout       ?*fp*   "(relation-parser_ids     kriyA-conjunction        "?kri"      "?c_id")"crlf)
- (printout       ?*dbug* "(Rule-Rel-ids  k_conj1   kriyA-conjunction        "?kri"      "?c_id")"crlf)
  )
- ; Ex. The leopard seizes its kill and begins to eat. 
+ ; Ex. The leopard seizes its kill and begins to eat. I ate fruits, drank milk and slept.
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule partmod+nsubj+cop
 (declare(salience 205))
