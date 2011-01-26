@@ -1,6 +1,8 @@
 
 ;Deleted the redundant rules and modified the file .(Meena 9.4.10) 
 
+
+;Modified by Meena(15.10.09); added "path" in the list for the cases like  "The path has many twist and turns." 
 ;Added by Meena(15.10.09)
 ;The towns have people largely from the factories and their families .
 ;The city has large educated population.
@@ -10,7 +12,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id have|has)
 (kriyA-subject ?id ?id1)
-(id-root ?id1 town|city|party|assembly|country|university|bus|train)
+(id-root ?id1 path|town|city|party|assembly|country|university|bus|train)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id hE))
@@ -783,9 +785,8 @@
 (id-root ?id have)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id had)
-;(kriyA-on_saMbanXI  ?id ?id2)
+(kriyA-on_saMbanXI  ?id ?id2)
 (kriyA-object ?id ?id1)
-(or (kriyA-on_saMbanXI  ?id ?id2)(viSeRya-on_saMbanXI ?id1 ?id2)) ;Added by manju suggested by sukhada(20-01-11)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ho))

@@ -127,6 +127,9 @@
 )
 
 
+
+;Modified by Meena(25.1.11) ; added (conjunction-components  ?conj  ?id2 ?id) for the cases like the example below.
+;The path has many twist and turns. 
 ;Modified by Meena(30.4.10)
 ;Go straight and take a right turn . 
 (defrule turn8
@@ -134,13 +137,15 @@
 (id-root ?id turn)
 ?mng <-(meaning_to_be_decided ?id)
 ;(id-cat_coarse ?id noun)
-(or(viSeRya-viSeRaNa ?id ?id1)(viSeRya-det_viSeRaNa ?id ?id1)(samAsa ?id ?id1))
+(or(viSeRya-viSeRaNa ?id ?id1)(viSeRya-det_viSeRaNa ?id ?id1)(samAsa ?id ?id1)(conjunction-components  ?conj  ?id2 ?id))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id modZa))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  turn.clp 	turn8   "  ?id "  modZa )" crlf))
 )
+
+
 
 
 (defrule turn9

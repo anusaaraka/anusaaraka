@@ -1574,7 +1574,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                      verified_ol  (530)          small_sent_verified     (73)
                      
 
-25-01-11
+26-01-11
 --------
  1. Modified run_openlogos.py
  2. Added Shabdanjali in interface.For doing this updated Anusaaraka.sh and added Anusaaraka_site.sh & change-html.pl program
@@ -1582,7 +1582,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
     is neccessary and also mapping "L" ids to "P" ids in following files and also cleaning done:
          1.relation_debug.sh        2.relation_debug.clp       3.order_debug.clp    4.lwg_debug.clp   5.pada_debug.clp
          6.run_relation_debug.bat   7.run_pada_debug.bat       8.run_lwg_debug.bat  9.order_debug.sh  10.run_order_debug.bat
- 4. WSD :  Modified:  sound4 rule in sound.clp,     have37 rule in have.clp,  guess.clp,  pick.clp , mind.clp,twist.clp
+ 4. WSD :  Modified:  sound4 rule in sound.clp,     have37 rule in have.clp, guess.clp, pick.clp, mind.clp, twist.clp,           have.clp, turn.clp.
  5. Modified sd_ver_output
  6. Added rule_1-3 in sd_lwg_rules.clp (to get lwg for dobj if nsubj|aux id is not same as dobj id)
  7. hindi_position.clp
@@ -1617,5 +1617,5 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  23. Updated changes_in_databases
  24. Updated Log file
  25. Updated following files:
-                verified_ol  (531)             sd_verified  (344)
-                verified     (557)
+                verified_ol  (532)             sd_verified  (344)
+                verified     (558)
