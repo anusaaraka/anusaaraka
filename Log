@@ -1582,7 +1582,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
     is neccessary and also mapping "L" ids to "P" ids in following files and also cleaning done:
          1.relation_debug.sh        2.relation_debug.clp       3.order_debug.clp    4.lwg_debug.clp   5.pada_debug.clp
          6.run_relation_debug.bat   7.run_pada_debug.bat       8.run_lwg_debug.bat  9.order_debug.sh  10.run_order_debug.bat
- 4. WSD :  Modified:  sound4 rule in sound.clp,     have37 rule in have.clp, guess.clp, pick.clp, mind.clp, twist.clp,           have.clp, turn.clp.
+ 4. WSD :  Modified:  sound4 rule in sound.clp, have37 rule in have.clp, guess.clp, pick.clp, mind.clp, twist.clp, turn.clp.
  5. Modified sd_ver_output
  6. Added rule_1-3 in sd_lwg_rules.clp (to get lwg for dobj if nsubj|aux id is not same as dobj id)
  7. hindi_position.clp
@@ -1614,8 +1614,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  20. Modified "asserted_who" rule in pada_point_concept_rules.clp for using word fact instead of original word fact above         purpose.
  21. Modified "wh-reorder1" rule in hindi_sent_reorder.clp for adding a test condition for above purpose.
  22. Removed sd_hindi_position.clp from create_binary_files.clp
- 23. Updated changes_in_databases
- 24. Updated Log file
- 25. Updated following files:
+ 23. Removed "RULES FOR MAPPING STANFORD RELATIONS" (all 3 rules ie., map_std_rel, map_std_rel1, map_std_rel2) from               parser_id_mapping.clp.
+ 24. Removed "sd-relations_tmp1.dat" fact and "sd-relations.dat" from parser_id_mapping.clp & also removed "sd-relations.dat"     fact from sd_pada.clp, sd_hindi_sent_reorder.clp in run_modules_std.bat.
+ 25. Modified "conj_pada_and_or" rule and "add_prep" rule and removed "add_prepc", "add_prep_by", "stranded_prep",                "stranded_prep1" rules from sd_pada.clp. 
+ 26. Modified "yes-no_question" rule in sd_hindi_sent_reorder.clp
+ 27. Updated changes_in_databases
+ 28. Updated Log file
+ 29. Updated following files:
                 verified_ol  (532)             sd_verified  (344)
                 verified     (558)

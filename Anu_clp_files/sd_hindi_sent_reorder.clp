@@ -19,8 +19,8 @@
  ;May I go outside .
  ;Will I be going to the market ?
  (defrule yes-no_question
- (rel_name-ids  aux|cop ? 1)
- ?f1<-(id-word 1 may|can|could|would|will|do|did|does|has|have|are)
+; (rel_name-ids  aux|cop ? 1) ;Commented by Roja(26-01-11) without this fact also verified runs successfully.
+ ?f1<-(id-word 1 may|can|could|would|will|do|did|does|has|have|are|am|is); 'am' & 'is' added by Roja sugested by Sukhada(27-01-11)
  ?f0 <- (hindi_id_order  $?sent )
  =>
         (retract ?f0 ?f1)

@@ -36,7 +36,6 @@
  (defglobal ?*rel-file1* = file1)
  (defglobal ?*link_rel-file* = link_fp)
  (defglobal ?*l_rel-file* = l_rel_fp)
- (defglobal ?*sd-rel-file* = sd_rel_fp)
 
  (deffunction string_to_integer (?parser_id); [Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
@@ -70,33 +69,6 @@
  (using-chunk-ids ?rel $?ids)
  =>
         (printout ?*rel-file* "("?rel " " (implode$ $?ids)")"crlf)
- )
- ;================================   RULES FOR MAPPING STANFORD RELATIONS ==========================================
- (defrule map_std_rel
- (declare (salience 901))
- ?f0<-(rel_name-sids ?rel)
- =>
-	(retract ?f0)
-	(printout ?*sd-rel-file* "(rel_name-ids	"?rel ")"crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------------
- (defrule map_std_rel1
- (declare (salience 900))
- ?f0<-(rel_name-sids ?rel ?pid)
- (parserid-wordid  ?pid ?id)
- =>
-	(retract ?f0)
- 	(printout ?*sd-rel-file* "(rel_name-ids	"?rel"  "?id")"crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------------
- (defrule map_std_rel2
- (declare (salience 900))
- ?f0<-(rel_name-sids ?rel ?pid ?rid)
- (parserid-wordid  ?pid ?id)
- (parserid-wordid  ?rid ?id1)
- =>
-	(retract ?f0)
-        (printout ?*sd-rel-file* "(rel_name-ids	"?rel"  "?id" "?id1")"crlf)
  )
  ;================================   RULES FOR MAPPING RELATIONS =================================================
  (defrule map-id
@@ -328,12 +300,11 @@
 	(close ?*root-file*)
 	(close ?*morph-file*)
 	(close ?*lwg-file*)
-		(close ?*rel-file*)
-		(close ?*rel-file1*)
-		(close ?*link_rel-file*)
-		(close ?*l_rel-file*) 
-		(close ?*id_expr-file*)
-		(close ?*mng_dcd-file*)
-		(close ?*sd-rel-file*)
-	 )
+	(close ?*rel-file*)
+	(close ?*rel-file1*)
+	(close ?*link_rel-file*)
+	(close ?*l_rel-file*) 
+	(close ?*id_expr-file*)
+	(close ?*mng_dcd-file*)
+ )
 	 ;-------------------------------------------------------------------------------------------------------------------

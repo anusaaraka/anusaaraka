@@ -69,8 +69,7 @@
  ;Added by Shirisha Manju
  (defrule conj_pada_and_or
  (declare (salience 1001))
- (rel_name-ids	conj  ?id  ?id1)
- (rel_name-ids	cc  ?id ?and)
+ (conjunction-components ?and ?id ?id1) ;Modified by Roja(26-01-11) (Removed rel_name-ids fact )
  ?f<-(to_be_included_in_paxa ?id)
  ?f1<-(to_be_included_in_paxa ?id1)
  ?f2<-(to_be_included_in_paxa ?and)
@@ -149,73 +148,23 @@
  (print_in_ctrl_fact_files ?viSeRaNa)
  )
  ;---------------------------------------------------------------------------------------------------------------------
+ ;Modified by Roja(26-01-11)
  (defrule add_prep
  (declare (salience 1300))
- (rel_name-ids ?p ?x ?prep_saM)
+ (relation-anu_ids   ?rel  ?x ?prep_saM)
  ?f1<-(pada_info (group_head_id ?prep_saM)(preposition 0))
- (test (eq (sub-string 1 5 (implode$ (create$ ?p))) "prep_"))
+ (test (neq (str-index "-" ?rel)  FALSE))
+ (test (neq (str-index "_" ?rel)  FALSE))
+ (test (or (eq (sub-string 1 5 ?rel) "kriyA") (eq (sub-string 1 7 ?rel) "viSeRya")))
  (id-word ?prep_id ?w)
- (test (eq (string-to-field (sub-string 6 100 (implode$ (create$  ?p)))) ?w))
+ (test (eq (string-to-field (sub-string (+ (str-index "-" ?rel) 1) (- (str-index "_" ?rel) 1) ?rel)) ?w))
  ?f<-(to_be_included_in_paxa ?prep_id)
  =>
  (retract ?f)
- (modify ?f1 (preposition  ?prep_id)))
+ (modify ?f1 (preposition  ?prep_id))
+)
  ;Ex. Mohan fell from the top of the house. 
  ;---------------------------------------------------------------------------------------------------------------------
- (defrule add_prepc
- (declare (salience 1300))
- (rel_name-ids ?p ?x ?prep_saM)
- ?f1<-(pada_info (group_head_id ?prep_saM)(preposition 0))
- (test (eq (sub-string 1 6 (implode$ (create$ ?p))) "prepc_"))
- (id-word ?prep_id ?w)
- (test (eq (string-to-field (sub-string 7 100 (implode$ (create$  ?p)))) ?w))
- ?f<-(to_be_included_in_paxa ?prep_id)
- =>
- (retract ?f)
- (modify ?f1 (preposition  ?prep_id)))
- ;Ex. He made a mistake in inviting John. 
- ;---------------------------------------------------------------------------------------------------------------------
- (defrule add_prep_by
- (declare (salience 1300))
- (rel_name-ids auxpass ?x ?v)
- (rel_name-ids agent ?x ?pobj)
- ?f1<-(pada_info (group_head_id ?pobj)(preposition 0))
- (id-word ?prep_id by)
- (test (and (> ?prep_id ?x) (< ?prep_id ?pobj)))
- ?f<-(to_be_included_in_paxa ?prep_id)
- =>
- (retract ?f)
- (modify ?f1 (preposition  ?prep_id)))
- ;Ex. He is being hired by another company.
- ;---------------------------------------------------------------------------------------------------------------------
- ;
- ;Ex. Where did they come from? Who did you talk to?
- (defrule stranded_prep
- (declare (salience 900))
- (rel_name-ids advmod ?kriyA ?head)
- (rel_name-ids prep ?kriyA ?prep)
- ?f1<-(pada_info (group_head_id ?head)(preposition 0))
- ?f<-(to_be_included_in_paxa ?prep)
- (not (id-word ?head always)) ;Ex: He is always looking at himself in the mirror .
- =>
-  (retract ?f)
-  (modify ?f1 (preposition ?prep))
- )
- ;---------------------------------------------------------------------------------------------------------------------
-;Ex. From where did they come?
-; (defrule stranded_prep1
-; (declare (salience 1000))
-; (rel_name-ids advmod ?head1 ?prep1)
-; ?f<-(to_be_included_in_paxa ?head1)
-; ?f1<-(to_be_included_in_paxa ?prep1)
-; (id-word ?prep1 aboard|about|above|across|after|against|along|alongside|amid|amidst|among|amongst|around|as|aside|astride|at|athwart|atop|barring|before|behind|below|beneath|beside|besides|between|beyond|but|by|circa|concerning|despite|down|during|except|excluding|failing|following|for|from|given|in|including|inside|into|like|mid|minus|near|next|notwithstanding|of|off|on|onto|opposite|out|outside|over|pace|past|per|plus|qua|regarding|round|save|since|than|through|throughout|till|times|to|toward|towards|under|underneath|unlike|until|up|upon|versus|via|with|within|without|worth)
-;  =>
-; (retract ?f ?f1)
-; (assert (pada_info (group_head_id ?head1) (group_cat PP) (group_ids  ?head1) (preposition ?prep1)))
- ;(printout       ?*dbug* "(Rule_name-pada_head_id-pada_type-ids  stranded_prep1      P"?head1    "       PP      "?head1" "?prep1")"crlf)
-; (print_in_ctrl_fact_files ?head1)
-; )
-;---------------------------------------------------------------------------------------------------------------------
  (defrule default_pada
  ?f<-(to_be_included_in_paxa ?PP)
   =>
@@ -225,4 +174,3 @@
  (print_in_ctrl_fact_files ?PP)
  )
  ;---------------------------------------------------------------------------------------------------------------------
-
