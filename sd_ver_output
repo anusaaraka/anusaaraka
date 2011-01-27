@@ -486,7 +486,7 @@ yaha acCI waraha jA rahA hE.
 
 Hindi meaning using Stanford parser 2.120
 Petu ran fast but missed the bus. 
-Petu weja xOdA paranwu basa cUka gayI/gaI.
+Petu weja xOdA paranwu basa cUka gayA.
 
 Hindi meaning using Stanford parser 2.121
 There are three boys and four girls in the park. 
@@ -522,7 +522,7 @@ yaha mahawvapUrNa_nahIM howA hE Ted kyA karawA hE.
 
 Hindi meaning using Stanford parser 2.129
 Are a dog and a cat here? 
-kyA hEM kuwwA Ora billI yahAz?
+kyA kuwwA Ora billI yahAz hEM?
 
 Hindi meaning using Stanford parser 2.130
 There is a dog and a cat here. 
@@ -878,11 +878,11 @@ usakA lakRya aXyakRa honA WA.
 
 Hindi meaning using Stanford parser 2.218
 We have very different ideas about disciplining children. 
-hamAre baccoM ko anuSAsiwa karane ke bAre meM alaga vicAra awyaMwa hEM.
+hamAre baccoM ko anuSAsiwa karane ke bAre meM awyaMwa alaga vicAra hEM.
 
 Hindi meaning using Stanford parser 2.219
 It is not a good manner to eat alone. 
-KAnA acCA vyavahAra akelA nahIM hE.
+akelA KAnA acCA vyavahAra nahIM hE.
 
 Hindi meaning using Stanford parser 2.220
 He took the most convenient seat. 
@@ -1054,11 +1054,11 @@ prawyeka vyakwi ko pqWvI para amana banAe raKanA/raKane cAhiye.
 
 Hindi meaning using Stanford parser 2.262
 It is true that you are my friend but I can not go along with you on this issue. 
-yaha sawya hE ke sAWa ki Apa mere miwra hEM paranwu mEM isa viRaya para Apa sahamawa_nahIM_ho sakawA hUz.
+yaha sawya hE ki Apa mere miwra hEM paranwu mEM isa viRaya para Apake_sAWa sahamawa_nahIM_ho sakawA hUz.
 
 Hindi meaning using Stanford parser 2.263
 If we heat iron it becomes red. 
-yaxi hama yaha lohA lAla garama karawe hEM wo howA hE.
+yaxi hama lohA garama karawe hEM wo yaha lAla howA hE.
 
 Hindi meaning using Stanford parser 2.264
 John is more intelligent than Tom. 
@@ -1174,15 +1174,15 @@ Apane kiwanA pEsA kamAyA?
 
 Hindi meaning using Stanford parser 2.292
 How much do you swim? 
-Apa?
+Apa kiwanA wErawe hEM?
 
 Hindi meaning using Stanford parser 2.293
 How much did you read? 
-Apa ne?
+Apane kiwanA paDA?
 
 Hindi meaning using Stanford parser 2.294
 How much more spilled? 
-kiwanA aXika CalakA?
+kiwanA Ora CalakA?
 
 Hindi meaning using Stanford parser 2.295
 He is a great sports fan. 
@@ -1274,11 +1274,11 @@ hamane Gara ke liye AKirI basa pakadI.
 
 Hindi meaning using Stanford parser 3.17
 The last part of the course was hard because I was running against the wind. 
-xOdane_ke_liye_bane mArga kA AKirI BAga kyozki mEM havA ke viruxXa xOda rahA WA kaTina WA.
+xOdane_ke_liye_bane mArga kA AKirI BAga kaTina WA kyozki mEM havA ke viruxXa xOda rahA WA.
 
 Hindi meaning using Stanford parser 3.18
 The people of Orissa are facing grave adversities due to the cyclone. 
-Orissa ke loga wUPAna gaMBIra kaTinAiyoM kA sAmanA_kara rahe hEM.
+Orissa ke vyakwi wUPAna ke kAraNa gaMBIra kaTinAiyoM kA sAmanA_kara rahe hEM.
 
 Hindi meaning using Stanford parser 3.19
 He commented that the two essays were rather similar. 
@@ -1286,7 +1286,7 @@ usane tippaNI kI ki xo nibaMXa kAPI samAna We.
 
 Hindi meaning using Stanford parser 3.20
 Three quarters of a million people in this city have no health insurance. 
-xasa lAKa logoM kI wIna cOWAI ke isa Sahara meM svAsWya bImA nahIM hE.
+isa Sahara meM xasa lAKa logoM kI wIna cOWAI kA svAsWya bImA nahIM hE.
 
 Hindi meaning using Stanford parser 3.21
 I wonder how much money you earned. 
