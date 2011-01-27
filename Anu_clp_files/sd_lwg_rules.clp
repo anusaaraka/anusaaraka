@@ -131,6 +131,18 @@
  (printout ?*lwg_debug_file* "(rule_name-grouped_ids  rule_1-3  " ?id ")" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------------
+ ;Are a dog and a cat here? 
+ ; Added by Shirisha Manju (26-01-11) suggested by sukhada
+ (defrule rule_1-4
+ (declare (salience 850))
+ (rel_name-sids cop ?id P1)
+ (not (grouped_head P1))
+ =>
+ (assert (root-verbchunk-tam-parser_chunkids  root_to_be_decided verb_chunk_to_be_decided  tam_to_be_decided P1))
+ (assert (grouped_head P1))
+ (printout ?*lwg_debug_file* "(rule_name-grouped_ids  rule_1-4    P1)" crlf)
+ )
+ ;-------------------------------------------------------------------------------------------------------------------------
  ; Ex:-I will not do it . 
  (defrule not_rule
  (declare (salience 800))

@@ -1097,3 +1097,4 @@ AjFA_xe	f
 punargaNanA_kara	f
 cota_laga	f
 kRawi_pahuzcA	f
+BalA_kara	m

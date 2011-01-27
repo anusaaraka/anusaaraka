@@ -108,7 +108,6 @@
  (kriyA-subject  ?root_id ?sub_id)
  (not (kriyA-subject  ?root_id1&:(> ?root_id ?root_id1) ?sub_id))
  (id-HM-source ?root_id ? ?src)
- ;(ids-cmp_mng $?ids1 ?h_mng)
  (ids-cmp_mng-head-cat-mng_typ $?ids1 ?h_mng ?head_id ?grp_cat ?mng_typ)
  (test (and (eq ?src Compound_Phrase_gdbm) (member$ ?root_id $?ids1)))
  ?f0<-(pada_control_fact ?sub_id)
@@ -192,7 +191,6 @@
  (declare (salience 700))
  ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(preposition ?pp_id))
  (id-HM-source ?pp_id ?h_mng ?)
-; (id-original_word ?pp_id ~hours)
  (test (neq ?pp_id 0))
  ?f0<-(pada_control_fact ?pada_id)
  =>

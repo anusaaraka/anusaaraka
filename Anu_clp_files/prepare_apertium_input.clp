@@ -743,38 +743,31 @@
             (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_with_vib_and_h_id_and )" crlf)
   )
  ;-----------------------------------------------------------------------------------------------------------------------
- ;Ex. They were discussing their hopes and dreams. 
+ ;Ex. They were discussing their hopes and dreams.   The patient had complained of vague pains and backache.
+ ;    Republican policies only benefit the rich and the powerful.     
  (defrule PP_rule_with_vib_kA_and_following_VP_kriyAmUla_h_id_and
  (declare (salience 1011))
  ?f0<-(id-HM-source ?id ?h_word ?)
- (pada_info (group_head_id ?pada_id)(group_cat PP) (number ?num)(vibakthi kA) (person ?person)(group_ids $?ids)(case ?case))
- (hindi_id_order  $?start $?ids ?foll_pada_id $?)
- (pada_info(number ?num1)(case ?case1)(gender ?gen1) (group_cat ?gtype)(group_ids $?f_ids))
- (test (member$ ?foll_pada_id $?f_ids))
+ (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi kA) (gender ?gen)(group_ids $?ids)(case ?case))
  (id-word ?pada_id and|or)
- (id-gender-src ?id ?gen ?gen_src)
- (id-HM-source ?foll_id ?hmng1 ?)
- (test (and (member$ ?id $?ids)(neq ?id ?pada_id)))
+ (hindi_id_order  $?start $?ids ?foll_id $?)
+ (pada_info (group_head_id ?f_pada_id)(group_cat VP)(group_ids $?f_ids))
+ (id-HM-source ?f_pada_id ?hmng1 ?)
+ (id-number-src ?id ?num ?)
+ (id-number-src ?foll_id ?num1 ?)
+ (test (and (member$ ?id $?ids)(neq ?id ?pada_id)(member$ ?foll_id $?f_ids)) )
  =>
-	(retract ?f0)
-         (bind ?last_id (nth$  (length $?ids) $?ids))
-         (if (eq ?last_id ?id) then
-           (if (eq ?gtype VP) then
-              (bind ?gen2 (gdbm_lookup "kriyA_mUla-gender.gdbm" ?hmng1))
-              (if (neq ?gen "FALSE") then
-              (if (eq ?gen2 -) then (bind ?gen2 m))
-                       (printout ?*A_fp5* "(id-Apertium_input "?id " ^"?h_word"<cat:n><case:"?case"><gen:"?gen"><num:"?num">$              ^kA<cat:sh><case:d><gen:"?gen2"><num:"?num1">$)"  crlf)
-			(printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_with_vib_kA_and_following_VP_kriyAmUla_h_id_and )" crlf)
-              )
-           else
-               (printout ?*A_fp5* "(id-Apertium_input "?id " ^"?h_word"<cat:vn><case:o>$  ^kA<cat:sh><case:d><gen:"?gen1"><num:"?num1">$)"  crlf)
-		(printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_with_vib_kA_and_following_VP_kriyAmUla_h_id_and )" crlf)
-         )
-         else	
-            (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)"crlf)
- 	    (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_with_vib_kA_and_following_VP_kriyAmUla_h_id_and )" crlf)
-         )
-  )
+	(bind ?last_id (nth$  (length $?ids) $?ids))
+	(if (eq ?last_id ?id) then
+		(bind ?gen2 (gdbm_lookup "kriyA_mUla-gender.gdbm" ?hmng1))
+		(if (neq ?gen2 "FALSE") then
+			(if (eq ?gen2 -) then (bind ?gen2 m))
+ 			(printout ?*A_fp5* "(id-Apertium_input "?id " ^"?h_word"<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^kA<cat:sh><case:d><gen:"?gen2"><num:"?num1">$)"  crlf)
+			(retract ?f0)
+		)
+	)
+	(printout ?*aper_debug-file* "(id-Rule_name  "?id"  PP_rule_with_vib_kA_and_following_VP_kriyAmUla_h_id_and )" crlf)
+ )
  ;-----------------------------------------------------------------------------------------------------------------------
  ;He and I are friends .
  (defrule PP_rule_without_vib_and_h_id_and
