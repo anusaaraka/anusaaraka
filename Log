@@ -1574,7 +1574,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                      verified_ol  (530)          small_sent_verified     (73)
                      
 
-26-01-11
+27-01-11
 --------
  1. Modified run_openlogos.py
  2. Added Shabdanjali in interface.For doing this updated Anusaaraka.sh and added Anusaaraka_site.sh & change-html.pl program
