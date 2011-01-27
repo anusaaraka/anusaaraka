@@ -67,6 +67,19 @@
 
  )
  ;-------------------------------------------------------------------------------------------------------------------
+ ;The parents documented every step of their child's development .
+ (defrule rel_lnode
+ (declare (salience 91))
+ ?f0<-(rel_name-sids ?lname ?lnode ?rnode)
+ (id-Modified_id ?lnode ?lnd)
+ (not (modified_lid ?lnode))
+ =>
+       (retract ?f0)
+        (assert (modified_rel_name-lnode-rnode ?lname ?lnd ?rnode))
+        (assert (modified_lid ?lnode))
+ )
+ ;------------------------------------------------------------------------------------------------------------------- 
+ ;These are children's books.
  (defrule rel_rnode
  (declare (salience 91))
  ?f0<-(rel_name-sids ?lname ?lnode ?rnode)
