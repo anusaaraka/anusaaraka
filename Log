@@ -1596,7 +1596,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
        Renamed  : RaRTI_viSeRaNa_rule as viSeRaNa_rule and modified the rule accordingly
                   subject-conjunction_rule2 as kriyA-conjunction_rule1
  8. Modified S_TO_I_rule and Added S_TO_I_rule_for_used in verb_chunk.clp
- 9. Modified sd_relation_rules.clp for 'and' and 'or'
+ 9. sd_relation_rules.clp: 
+           Added : new rule kri_sub_rule 
+         Modified: 'and' and 'or' 
  10. Updated FinalGenerate.pl for correcting error for tam--yA_karawA_WA-- for female gender
  11. Modified pada_point_concept_rules.clp
  12. Modified sd_category.py program to get category proper noun in the sentences like: We ate at Joe's Diner last week.
@@ -1622,8 +1624,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  25. Modified "conj_pada_and_or" rule and "add_prep" rule and removed "add_prepc", "add_prep_by", "stranded_prep",                "stranded_prep1" rules from sd_pada.clp. 
  26. Modified "yes-no_question" rule in sd_hindi_sent_reorder.clp
  27. Modified  PP_rule_with_vib_kA_and_following_VP_kriyAmUla_h_id_and in prepare_apertium_input.clp
- 28. Updated changes_in_databases
- 29. Updated Log file
- 30. Updated following files:
+ 28. Added new rule "rel_lnode" in sd_combining_apostrophe.clp file.
+ 29. Updated changes_in_databases
+ 30. Updated Log file
+ 31. Updated following files:
                 verified_ol  (532)             sd_verified  (336)
                 verified     (559)
