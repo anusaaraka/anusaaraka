@@ -87,6 +87,18 @@
  ;Added by Shirisha Manju
  ; The boy has a computer . The train left on time .
  ;------------------------------------------------------------------------------------------------------------------------
+ (defrule kri_sub_rule
+; (declare (salience 190))
+ (root-verbchunk-tam-parser_chunkids $?ids ?kriyA)
+ (rel_name-sids cop ?sub ?kriyA)
+ (not (rel_name-sids nsubj ?sub ?x))
+ =>
+ (printout       ?*fp*   "(relation-parser_ids     kriyA-subject    "?kriyA"        "?sub")"crlf)
+ (printout       ?*dbug* "(Rule-Rel-ids  kri_sub_rule   kriyA-subject   "?kriyA"        "?sub")"crlf)
+; (assert (sub_for_kriyA ?kriyA))
+ )
+ ;
+ ;------------------------------------------------------------------------------------------------------------------------
  (defrule kriyA_sub_rule1
  (declare (salience 200))
  (root-verbchunk-tam-parser_chunkids $?ids ?kri)
