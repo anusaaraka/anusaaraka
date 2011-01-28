@@ -88,16 +88,14 @@
  ; The boy has a computer . The train left on time .
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule kri_sub_rule
-; (declare (salience 190))
  (root-verbchunk-tam-parser_chunkids $?ids ?kriyA)
  (rel_name-sids cop ?sub ?kriyA)
- (not (rel_name-sids nsubj ?sub ?x))
+ (not (rel_name-sids nsubj ?sub ?x));Rama is a good boy. 
  =>
  (printout       ?*fp*   "(relation-parser_ids     kriyA-subject    "?kriyA"        "?sub")"crlf)
  (printout       ?*dbug* "(Rule-Rel-ids  kri_sub_rule   kriyA-subject   "?kriyA"        "?sub")"crlf)
-; (assert (sub_for_kriyA ?kriyA))
  )
- ;
+ ;Ex. Are a dog and a cat here? There is no subject relation given in this sentence by SD parser so v r computing it in this way.
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule kriyA_sub_rule1
  (declare (salience 200))
@@ -114,10 +112,13 @@
  ;Ex : Broken windows need to be replaced . 
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule nsubj_conj
+ (declare (salience 100))
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
- (rel_name-sids conj_and|conj_or  ?kriyA ?kriyA1)
+ (rel_name-sids conj_and|conj_or|conj_but  ?kriyA ?kriyA1)
  (not (rel_name-sids cop  ?kriyA ?v))
+ (not (rel_name-sids nsubj  ?kriyA1 ?s))
  =>
+ (assert (found_kriyA-sub_rel ?kriyA1))
  (printout       ?*fp*   "(relation-parser_ids     kriyA-subject    "?kriyA1"        "?sub")"crlf)
  (printout       ?*fp*   "(relation-parser_ids     kriyA-subject    "?kriyA"        "?sub")"crlf)
  (printout       ?*dbug* "(Rule-Rel-ids  nsubj_conj    kriyA-subject      "?kriyA1"        "?sub")"crlf)
@@ -329,7 +330,7 @@
  (declare(salience 101))
  (rel_name-sids nsubj|nsubjpass ?samAnAXikaraNa  ?sub)
  (rel_name-sids cop  ?samAnAXikaraNa ?kriyA)
- ?f0<-(parserid-word ?sub It|it)
+ ?f0<-(parserid-word ?sub It);|it)
  (not (rel_name-sids infmod ?samAnAXikaraNa ?))
  =>
  (retract ?f0)
@@ -450,7 +451,7 @@
 (defrule advcl
 (rel_name-sids  advcl ?kri ?samakAlika_kri)
 =>
-(printout	?*fp*	"(relation-parser_ids     kriyA-samakAlika_kriyA	"?kri"	"?samakAlika_kri")"crlf)	
+;(printout	?*fp*	"(relation-parser_ids     kriyA-samakAlika_kriyA	"?kri"	"?samakAlika_kri")"crlf)	
 (printout	?*dbug*	"(Rule-Rel-ids	advcl	kriyA-samakAlika_kriyA	"?kri"	"?samakAlika_kri")"crlf)	
 )
  ; Ex. The accident happened as the night was falling. 
@@ -578,12 +579,14 @@
 (parserid-word ?conj_id but)
 (test (and (> (string_to_integer ?conj_id) (string_to_integer ?kriyA)) (< (string_to_integer ?conj_id) (string_to_integer ?kri))))
 (not (rel_name-sids conj_and ?kriyA ?kri))
-(not (rel_name-sids conj_or ?kriyA ?kri))
+(not (rel_name-sids conj_or ?kri ?))
+(not (found_kriyA-sub_rel ?kri))
+(not (rel_name-sids nsubj ?kri ?x))
 =>
 (printout       ?*fp*   "(relation-parser_ids     kriyA-conjunction        "?kri"      "?conj_id")"crlf)
 (printout       ?*dbug* "(Rule-Rel-ids  conj_but   kriyA-conjunction        "?kri"      "?conj_id")"crlf)
 )
- ; Ex. Petu ran fast but missed the bus. 
+ ; Ex. Petu ran fast but Betu could not run fast. 
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule k_conj
  (declare (salience 1000))
@@ -703,7 +706,7 @@
  (test (eq (sub-string 1 5 (implode$ (create$ ?p))) "prep_"))
  =>
  (printout ?*fp* "(relation-parser_ids  viSeRya-"(sub-string 6 100 (implode$ (create$ ?p)))"_saMbanXI "?kri" "?p_saM")"crlf)
- (printout ?*dbug* "(Rule-Rel-ids  vi_prep  viSeRya"(sub-string 6 100 (implode$ (create$ ?p)))"_saMbanXI  " ?kri" "?p_saM")"crlf)
+ (printout ?*dbug* "(Rule-Rel-ids  vi_prep  viSeRya-"(sub-string 6 100 (implode$ (create$ ?p)))"_saMbanXI  " ?kri" "?p_saM")"crlf)
  )
  ; Ex. The PEOPLE of ORISSA are facing grave adversities due to the cyclone.  
  ;------------------------------------------------------------------------------------------------------------------------
@@ -720,17 +723,20 @@
  ; Ex : The game of life is played for winning . 
  ; Added by Mahalaxmi.
  ;------------------------------------------------------------------------------------------------------------------------
-(defrule prepc_p
-?f0<-(rel_name-sids ?prep ?kriyA ?prep_saM)
-(test (eq (sub-string 1 (- (str-index "_" ?prep) 1) ?prep) "prepc"));this condition is to stop this rule firing in "conj_and" cases, ex. "Rama , Mohan , Sita and Geeta came to the city."
-=>
-(retract ?f0)
-(if(neq(str-index "_" ?prep) FALSE) then
-       (bind ?index(str-index "_"  ?prep))
-(printout       ?*fp*   "(relation-parser_ids     kriyA-"(sub-string(+      ?index  1)20      ?prep)"_saMbanXI        "?kriyA" "?prep_saM")"crlf)
-(printout       ?*dbug* "(Rule-Rel-ids   prepc_p  kriyA-"(sub-string(+      ?index  1)20      ?prep)"_saMbanXI        "?kriyA" "?prep_saM")"crlf)
-)
-)
+ (defrule prepc_p
+ ?f0<-(rel_name-sids ?p ?kri ?p_saM)
+ (test (eq (sub-string 1 6  ?p) "prepc_"));this condition is to stop this rule firing in "conj_and" cases, ex. "Rama , Mohan , Sita and Geeta came to the city."
+ (parser_id-cat_coarse ?kri ?cat)
+ =>
+; (retract ?f0)
+ (if(eq ?cat verb) then
+ (printout       ?*fp*   "(relation-parser_ids     kriyA-"(sub-string 7 100 ?p)"_saMbanXI        "?kri" "?p_saM")"crlf)
+ (printout       ?*dbug* "(Rule-Rel-ids   prepc_p  kriyA-"(sub-string 7 100 ?p)"_saMbanXI        "?kri" "?p_saM")"crlf)
+ else 
+ (printout       ?*fp*   "(relation-parser_ids     viSeRya-"(sub-string 7 100 ?p)"_saMbanXI        "?kri" "?p_saM")"crlf)
+ (printout       ?*dbug* "(Rule-Rel-ids   prepc_p  viSeRya-"(sub-string 7 100 ?p)"_saMbanXI        "?kri" "?p_saM")"crlf)
+ )
+ )
  ; Ex. Forces engaged in fighting after insurgents attacked .
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule rel
@@ -739,16 +745,6 @@
 (printout	?*fp*	"(relation-parser_ids     kriyA-object	"?kriyA"	"?obj")"crlf)	
 (printout	?*dbug*	"(Rule-Rel-ids	rel	kriyA-object	"	?kriyA"	"?obj")"crlf)	
 )
- ; Ex. I saw the man who you love. I saw the man whose wife you love.
-;------------------------------------------------------------------------------------------------------------------------
-;(defrule rel+nsubj
-;(rel_name-sids rel ?kri ?wh)
-;(rel_name-sids nsubj ?mu_kri ?sub)
-;(rel_name-sids rcmod ?x ?kri)
-;=>
-;(printout       ?*fp*   "(relation-parser_ids     muKya_vAkya-sApekRa_upavAkya  "?mu_kri" "?kri")"crlf)
-;(printout       ?*dbug* "(Rule-Rel-ids  rel+nsubj	muKya_vAkya-sApekRa_upavAkya  "?mu_kri" "?kri")"crlf)
-;)
  ; Ex. I saw the man who you love. I saw the man whose wife you love.
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule rel+nsubj+wh
@@ -835,7 +831,6 @@
 	(printout	?*dbug* "(Rule-Rel-ids  xcomp+cop   kriyA-kqxanwa_karma  "       ?kri"   "?kq_vi")"crlf)
 	(printout       ?*fp*   "(relation-parser_ids     kriyA-object     "?kq_vi"        "?id")"crlf)
         (printout       ?*dbug* "(Rule-Rel-ids  xcomp+cop    kriyA-object    "?kq_vi"        "?id")"crlf)
-
  )
  ;Added by Shirisha Manju
  ;Ex : They seem to resemble each other .
