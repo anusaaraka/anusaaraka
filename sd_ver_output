@@ -1540,4 +1540,20 @@ Hindi meaning using Stanford parser 3.83
 Kufri is a small hill station near shimla. 
 Kufri shimla ke nikata eka CotA parvawIya sWAna hE.
 
+Hindi meaning using Stanford parser 3.84
+The girl who you called yesterday has arrived. 
+Apane kala jise/jisako bulAyA vaha ladakI pahuzca gayI/gaI.
+
+Hindi meaning using Stanford parser 3.85
+The snake who swallowed the rat hissed loudly. 
+cUhA jisane nigalA vaha sAzpa Uzce_svara meM PuPakArA.
+
+Hindi meaning using Stanford parser 3.86
+The dog which Chris bought is really ugly. 
+jise/jisako Chris ne KarIxA vaha kuwwA vAswava mez kurUpa hE.
+
+Hindi meaning using Stanford parser 3.87
+Phil gave me a sweater which he bought in Paris. 
+Phil ne muJe/muJako vaha svetara xiyA jise/jisako usane Paris meM KarIxA.
+
 Calling Interface related programs

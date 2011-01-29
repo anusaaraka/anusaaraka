@@ -747,16 +747,26 @@
 )
  ; Ex. I saw the man who you love. I saw the man whose wife you love.
 ;------------------------------------------------------------------------------------------------------------------------
-(defrule rel+nsubj+wh
-(rel_name-sids rel ?kri ?wh)
-(rel_name-sids nsubj ?kri ?sub)
-(rel_name-sids rcmod ?x ?kri)
-(parserid-word ?wh who|which|when|whom)
+(defrule rcmod+dobj
+(rel_name-sids rcmod ?vi ?kri)
+(rel_name-sids dobj ?kri ?jo_s)
+(test (> (string_to_integer ?kri) (string_to_integer ?jo_s)))
 =>
-(printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?x" "?wh")"crlf)
-(printout       ?*dbug* "(Rule-Rel-ids  rel+nsubj+wh       viSeRya-jo_samAnAXikaraNa   "?x" "?wh")"crlf)
+(printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
+(printout       ?*dbug* "(Rule-Rel-ids  rcmod+dobj       viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
 )
- ; Ex. I saw the man who you love. I saw the man whose wife you love.
+ ;Ex. The girl who you called yesterday has arrived. The dog which Chris bought is really ugly.
+;------------------------------------------------------------------------------------------------------------------------
+(defrule rcmod+dobj_1
+(rel_name-sids rcmod    ?vi   ?kri)
+(rel_name-sids dobj     ?kri  ?obj)
+(rel_name-sids  nsubj   ?kri  ?jo_s)
+(test (< (string_to_integer ?kri) (string_to_integer ?obj)))
+=>
+(printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
+(printout       ?*dbug* "(Rule-Rel-ids  rcmod+dobj_1       viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
+)
+ ;Ex. The dog who chased me was black. The snake who swallowed the rat hissed loudly. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule csubj
 (rel_name-sids csubj|csubjpass ?kriyA ?obj)
