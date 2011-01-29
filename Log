@@ -1640,4 +1640,5 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
          i) Removed "sd-relations_tmp.dat" in sentence_debug.sh as its repeated.
         ii) Modified "choose_debug_list" rule in sentence_debug.clp
  5. Updated Log.
+ 6. Updated sd_verified (383)
  
