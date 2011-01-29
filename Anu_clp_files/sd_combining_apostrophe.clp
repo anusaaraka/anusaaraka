@@ -45,9 +45,9 @@
  (declare (salience 100))
  (rel_name-sids poss ?lnode ?rnode)
  ?f2<-(parserid-word ?rnode ?wrd)
- ?f3<-(parser_numeric_id-word ?rid ?wrd1&~our&~Our&~his&~His&~her&~Her&~my&~My&~your&~Your&~their&~Their&~its&~Its)
+ ?f3<-(parser_numeric_id-word ?rid ?wrd1)
  (test (= (string_to_integer ?rnode) ?rid))
- ?f4<-(parser_numeric_id-word =(+ (string_to_integer ?rnode) 1) ?word)
+ ?f4<-(parser_numeric_id-word =(+ (string_to_integer ?rnode) 1) ?word&'s)
   =>
 	(retract ?f2 ?f3 ?f4)
         (printout ?*nid_wrd_fp*  "(parser_numid-word-remark  " ?rid "  "?wrd1 ?word "  " ?word")" crlf)

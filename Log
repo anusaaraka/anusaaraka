@@ -1639,6 +1639,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  4. In debugging folder:
          i) Removed "sd-relations_tmp.dat" in sentence_debug.sh as its repeated.
         ii) Modified "choose_debug_list" rule in sentence_debug.clp
- 5. Updated Log.
- 6. Updated sd_verified (383)
+ 5. Simplified viSeRya_viSeRaNa_rule1, viSeRya_viSeRaNa_rule, viSeRya_viSeRaNa_to_rule in hindi_position.clp
+ 6. Modified word_rule_for_poss in sd_combining_apostrophe.clp
+ 7. Updated Log.
+ 8. Updated sd_verified (383)
  
