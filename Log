@@ -1630,3 +1630,14 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  31. Updated following files:
                 verified_ol  (532)             sd_verified  (336)
                 verified     (559)
+
+29-01-11
+--------
+ 1. Modified sd_relation_rules.clp file.
+ 2. Added newly "change-html-remove-title.pl" file for removing title name in the web interface.(for anusaaraka site purpose)
+ 3. Modified sd_ver_output file.
+ 4. In debugging folder:
+         i) Removed "sd-relations_tmp.dat" in sentence_debug.sh as its repeated.
+        ii) Modified "choose_debug_list" rule in sentence_debug.clp
+ 5. Updated Log.
+ 

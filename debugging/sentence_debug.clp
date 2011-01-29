@@ -69,7 +69,7 @@
   (printout t " Next time onwards we'll show you that list only." crlf crlf)
   (printout t "   debug_list-1					   	 debug_list-2" crlf)
   (printout t "   ============ 				   	 ============" crlf)
-  (printout t " Enter \"1\" for verb group debugging.               Enter \"1\" for ting_pada debugging."crlf)
+  (printout t " Enter \"1\" for verb group debugging.              Enter \"1\" for ting_pada debugging."crlf)
   (printout t " Enter \"2\" for pada debugging.			   Enter \"2\" for sup_pada debugging." crlf)
   (printout t " Enter \"3\" for relations debugging.		   Enter \"3\" for sambandha debugging." crlf)
   (printout t " Enter \"4\" for wsd debugging.			   Enter \"4\" for shabdaartha debugging." crlf)
@@ -77,7 +77,7 @@
   (printout t " Enter \"6\" for hindi order debugging.		   Enter \"6\" for Hindi pada krama debugging." crlf)
   (printout t " Enter \"7\" for GNP debugging.			   Enter \"7\" for ling_vachan_purush debugging." crlf)
   (printout t " Enter \"8\" for Verb_agreement debugging.	   Enter \"8\" for abhihita pada nirNaya debugging." crlf)
-  (printout t " Enter \"9\" to exit from CLIPS environmen	   Enter \"9\" to exit from CLIPS environment" crlf crlf)
+  (printout t " Enter \"9\" to exit from CLIPS environment	   Enter \"9\" to exit from CLIPS environment" crlf crlf)
   (printout t " Enter your choice (\"1\" for debug_list-1  and  \"2\" for debug_list-2) :"  crlf)
   (bind ?read (read))
   (if (eq ?read 1) then
