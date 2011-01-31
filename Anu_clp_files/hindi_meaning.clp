@@ -1,6 +1,10 @@
  (defglobal ?*hin_mng_file* = fp)
 
  (deffacts dummy_facts 
+ (kriyA-because_of_saMbanXI) 
+ (kriyA-on_top_of_saMbanXI) 
+ (viSeRya-out_saMbanXI) 
+ (viSeRya-until_saMbanXI) 
  (kriyA-due_to_saMbanXI) 
  (viSeRya-than_saMbanXI) 
  (relation-anu_ids) 
