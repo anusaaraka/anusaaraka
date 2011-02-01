@@ -103,8 +103,13 @@
 ?f2<-(split_tranlevel-ptype-headid-grpids tran3 PP ?h  $?p1)
 ?f3<-(word-type-id ?word ?type ?prep)
 (ol_res_id-word_id-word ?and ?id and)
+(ol_res_id-word_id-word ?id1  =(- ?word_id 1) ?w) ;Mumbai is the headquarters of the central and western railways. 
+(ol_res_id-word_id-word ?id2&:(nth$ (length$ $?p2) $?p2) ?wid ?w1) ;Mumbai is the headquarters of the central and western railways. 
 (test (eq (string_to_integer ?prep) (+ (string_to_integer (nth$ (length$ $?p1) $?p1))1)))
+(test (eq (string_to_integer ?prep) (+ (string_to_integer (nth$ (length$ $?p1) $?p1))1)))
+(test (and (eq ?w ?w1)(neq ?id1 ?id2))) ;Mumbai is the headquarters of the central and western railways. 
 =>
+(printout t ?id1   "  " ?id2   "  "  ?w  "  " crlf)
 (assert (has_been_included_in_pada ?prep))
 (assert (has_been_included_in_pada $?ids))
 (assert (has_been_included_in_pada ?and))

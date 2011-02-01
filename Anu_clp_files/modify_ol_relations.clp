@@ -119,26 +119,6 @@
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
-;Phil gave me a sweater which he bought in Paris.
-(defrule getting_in_saMbanXI
-(declare (salience 500))
-?f<-(relation-parser_ids kriyA-object ?P_kri ?P_id)
-?f1<-(relation-parser_ids kriyA-object_2 ?P_kri ?P_id)
-(parserid-wordid ?P_id ?id)
-(id-word =(- ?id 1) in)
-=>
-(retract ?f ?f1)
-(assert (rel_has_been_deleted kriyA-object   ?P_kri ?P_id))
-(assert (rel_has_been_deleted kriyA-object_2  ?P_kri ?P_id))
-(printout ?*debug* "(rule-deleted_relation-ids   getting_in_saMbanXI   kriyA-object    "?P_kri"   " ?P_id")"crlf)
-(printout ?*debug* "(rule-deleted_relation-ids   getting_in_saMbanXI   kriyA-object_2   "?P_kri"  " ?P_id")"crlf)
-(assert (relation-parser_ids kriyA-in_saMbanXI ?P_kri ?P_id))
-(assert (rel_has_been_written   kriyA-in_saMbanXI  ?P_kri ?P_id))
-(printout       ?*ol_fp*    "(relation-parser_ids  kriyA-in_saMbanXI  " ?P_kri" " ?P_id")"crlf)
-(printout ?*debug* "(Rule-Rel-ids   getting_in_saMbanXI    kriyA-in_saMbanXI   "?P_kri"    "?P_id")"crlf)
-)
-
-;----------------------------------------------------------------------------------------------------------------------------
 
 ;I read about the train accident in today's paper.
 (defrule del_viSeRya-viSeRaNa_rel
@@ -769,7 +749,7 @@
 
 ;----------------------------------------------------------------------------------------------------------------------------
 
-;How certain are you that John is coming.
+;I wonder how big the department is.
 (defrule how
 ?f1<-(relation-parser_ids viSeRaNa-viSeRaka ?v ?how)
 (ol_res_id-word_id-word   ?how? ?id1  how)
@@ -779,10 +759,10 @@
 (retract ?f2)
 (assert (rel_has_been_deleted   ?rel ?s ?how))
 (printout ?*debug* "(rule-deleted_relation-ids    how   "?rel "    "?s"   " ?how")"crlf)
-(assert (relation-parser_ids ?rel ?s ?v))
-(assert (rel_has_been_written  ?rel ?s ?v))
-(printout       ?*ol_fp*    "(relation-parser_ids  " ?rel "   "?s"    "?v")"crlf)
-(printout ?*debug* "(Rule-Rel-ids    how   " ?rel "   "?s"    "?v")"crlf)
+(assert (relation-parser_ids  ?rel ?s ?v))
+(assert (rel_has_been_written ?rel ?s ?v))
+(printout       ?*ol_fp*    "(relation-parser_ids   " ?rel "    "?s"    "?v")"crlf)
+(printout ?*debug* "(Rule-Rel-ids    how   " ?rel "     "?s"    "?v")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -977,6 +957,8 @@
 (ol_res_id-word_id-word ?sub      =(- ?id 1)       ?wrd)
 =>
 (assert (relation-parser_ids   kriyA-subject ?be ?sub))
+(assert (rel_has_been_written  kriyA-subject ?be ?sub))
+(printout ?*debug* "(Rule-Rel-ids   add_kri_sub_rel   kriyA-subject   "?be"    "?sub")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------

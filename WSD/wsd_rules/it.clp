@@ -509,17 +509,17 @@
 (declare (salience 4950))
 (id-root ?id it)
 ?mng <-(meaning_to_be_decided ?id)
-(kriyA-subject =(+ ?id 1) ?id)
+(kriyA-subject =(+ ?id 1) ?id)   
 (id-root =(+ ?id 1) ?root&~be)
 ;(test (neq ?root be))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id yaha))
-(assert (kriyA_id-subject_viBakwi ?id ne))
+;(assert (kriyA_id-subject_viBakwi ?id  ne)) ;commented by Roja(01-02-11) Here kriyA_id is written wrong.Even though if we correct it other sentences are getting disturbed. Without this also above sentence works well.
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  it.clp        it30   "  ?id "   yaha )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  it.clp      it30  "  ?id "  ne )" crlf))
-)
+;(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  it.clp      it30  "  ?id "  ne )" crlf))
+))
 
 
 ;Modified by sheetal(2-01-10).
