@@ -520,12 +520,12 @@
  ;We have very different ideas about disciplining children . 
  ; Added by Shirisha Manju
 ;------------------------------------------------------------------------------------------------------------------------
-(defrule det/predet
-(or(rel_name-sids det ?viSeRya ?det_viSeRaNa)(rel_name-sids predet ?viSeRya ?det_viSeRaNa))
-=>
-(printout	?*fp*	"(relation-parser_ids     viSeRya-det_viSeRaNa	"?viSeRya"	"?det_viSeRaNa")"crlf)	
-(printout	?*dbug*	"(Rule-Rel-ids	det/predet	viSeRya-det_viSeRaNa	"?viSeRya"	"?det_viSeRaNa")"crlf)	
-)
+ (defrule det/predet
+ (or(rel_name-sids det ?vi ?det_vi)(rel_name-sids predet ?vi ?det_vi))
+ =>
+ (printout	?*fp*	"(relation-parser_ids     viSeRya-det_viSeRaNa	"?vi"	"?det_vi")"crlf)	
+ (printout	?*dbug*	"(Rule-Rel-ids	det/predet	viSeRya-det_viSeRaNa	"?vi"	"?det_vi")"crlf)	
+ )
  ; Ex. The baby is cute. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule amod
@@ -762,11 +762,42 @@
 (rel_name-sids dobj     ?kri  ?obj)
 (rel_name-sids  nsubj   ?kri  ?jo_s)
 (test (< (string_to_integer ?kri) (string_to_integer ?obj)))
+(not (got_viSeRya-jo_samAnAXikaraNa_relation ?vi))
 =>
 (printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
 (printout       ?*dbug* "(Rule-Rel-ids  rcmod+dobj_1       viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
 )
  ;Ex. The dog who chased me was black. The snake who swallowed the rat hissed loudly. 
+;------------------------------------------------------------------------------------------------------------------------
+(defrule rcmod+dobj_2
+(rel_name-sids rcmod    ?vi   ?kri)
+(rel_name-sids  nsubj   ?kri  ?jo_s)
+(not (rel_name-sids dobj     ?kri  ?))
+(test (> (string_to_integer ?kri) (string_to_integer ?jo_s)))
+=>
+(printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
+(printout       ?*dbug* "(Rule-Rel-ids  rcmod+dobj_2       viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
+)
+ ;Ex. The boy who came yesterday from Delhi is my friend. 
+;------------------------------------------------------------------------------------------------------------------------
+(defrule rcmod+dobj_3
+(declare (salience 100))
+(rel_name-sids rcmod    ?vi   ?kri)
+(rel_name-sids  nsubj   ?kri  ?s)
+(rel_name-sids  advmod   ?kri  ?jo_s)
+;(not (rel_name-sids dobj     ?kri  ?))
+;rel_name-sids  rcmod   P6  P9)
+;rel_name-sids  nsubj   P9  P8)
+;rel_name-sids  advmod   P9  P7)
+
+(test (> (string_to_integer ?kri) (string_to_integer ?jo_s)))
+=>
+(assert (got_viSeRya-jo_samAnAXikaraNa_relation ?vi)) 
+(assert (got_viSeRya-jo_samAnAXikaraNa_relation ?jo_s)) 
+(printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
+(printout       ?*dbug* "(Rule-Rel-ids  rcmod+dobj_3       viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
+)
+ ;Ex. I will show you the house where I met your mother. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule csubj
 (rel_name-sids csubj|csubjpass ?kriyA ?obj)

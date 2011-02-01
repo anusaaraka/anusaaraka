@@ -395,13 +395,14 @@ cat_fp1= open("ol_cat_info_tmp.dat","w")
 cat_file = cat_fr.readlines()
 
 def return_prep(x):
-    if (RESid_cat_dic[x] == '11' or RESid_cat_dic[x] == '13') and int(id_count[x]) > 1:
-	p = id_wrd_lst_count_word[x]
-	a = p[1:]
-	prep = string.join (a, "_")
-	return prep
-    else:
-	return id_word[x]
+   if x != '0':
+       if (RESid_cat_dic[x] == '11' or RESid_cat_dic[x] == '13') and int(id_count[x]) > 1:
+   	   p = id_wrd_lst_count_word[x]
+	   a = p[1:]
+	   prep = string.join (a, "_")
+	   return prep
+       else:
+	   return id_word[x]
 
 not_v_n_lst = ['smoking','meeting','hearing','interesting','training']
 for i in cat_file:
@@ -1218,6 +1219,7 @@ for i in xrange(len(tran1)):
 
                     elif RES_SWRK_TAB[k][0] == id and (RES_SWRK_TAB[k][2] == '14' or RES_SWRK_TAB[k][2] == '15'):
                         rel_fp.write("(relation-parser_ids viSeRya-det_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran1[i][3]], sconId_resId[tran1_components[i][j]]))
+#                        print "(relation-parser_ids viSeRya-det_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran1[i][3]], sconId_resId[tran1_components[i][j]])
 #Ex. A fat ugly BOY had to eat too many fruits to lose his weight.
 
 		    elif RES_SWRK_TAB[k][0] == id and RES_SWRK_TAB[k][2]== '6' and RES_SWRK_TAB[k][35] == 'even' and tran1[i][0] == '1' and id_form_dic[tran1[i][3]] != '23':
@@ -1232,7 +1234,7 @@ for i in xrange(len(tran1)):
                         rel_fp.write("(relation-parser_ids viSeRya-saMKyA_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran1[i][3]], sconId_resId[tran1_components[i][j]]))
 #Ex.    
 
-                    if RES_SWRK_TAB[k][0] == id and RES_SWRK_TAB[k][2] == '1' and not id_word[sconId_resId[tran1_components[i][j]]] in alfa:
+                    elif RES_SWRK_TAB[k][0] == id and RES_SWRK_TAB[k][2] == '1' and sconId_resId[tran1_components[i][j]] != '0' and not id_word[sconId_resId[tran1_components[i][j]]] in alfa:
                          rel_fp.write("(relation-parser_ids viSeRya-viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran1[i][3]], sconId_resId[tran1_components[i][j]]))
 #Ex. A FAT UGLY BOY had to eat too many fruits to lose his weight .
 
@@ -1300,9 +1302,9 @@ for i in xrange(len(tran1)):
 	if tran1[i][0] == '1' and tran1[i][5] != 'SWITCH68':
 	    RaRTI_viSeRya = tran1[i][3]
 	    for j in xrange(1, len(tran1_components[i])):
-		if int(tran1_components[i][j]) < int(RaRTI_viSeRya):
+		if tran1_components[i][j] != '0' and int(tran1_components[i][j]) < int(RaRTI_viSeRya):
 		    RaRTI_vNa = tran1_components[i][j]
-		    if (id_form_dic[sconId_resId[RaRTI_vNa]] == '4' or id_form_dic[sconId_resId[RaRTI_vNa]] == '7') and id_word[sconId_resId[RaRTI_vNa]] not in RaRTI_viSeRaNa and(RESid_cat_dic[sconId_resId[RaRTI_vNa]] != '14' or RESid_cat_dic[sconId_resId[RaRTI_vNa]] != '15'):#The figure shows one layer of the three-dimensional structure of a salt crystal.
+		    if (id_form_dic[sconId_resId[RaRTI_vNa]] == '4' or id_form_dic[sconId_resId[RaRTI_vNa]] == '7') and id_word[sconId_resId[RaRTI_vNa]] not in RaRTI_viSeRaNa and(RESid_cat_dic[sconId_resId[RaRTI_vNa]] != '14' or RESid_cat_dic[sconId_resId[RaRTI_vNa]] != '15'): #The figure shows one layer of the three-dimensional structure of a salt crystal.
 			rel_fp.write("(relation-parser_ids viSeRya-RaRTI_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[RaRTI_viSeRya], sconId_resId[RaRTI_vNa]))
 #Ex. Mary's shoes are red. These are students' books.
 
@@ -1341,7 +1343,7 @@ for i in xrange(len(tran3)):
 
 for i in xrange(1,len(tran3)):
     for j in  xrange(1,len(tran3)):
-	if tran3[i][4] == '1' and tran3[j][4] == '1' and tran3[i][5] == tran3[j][5] and i != j and (tran3[j-1][9] == 'CLS-BOS' or tran3[j-2][9] == 'CLS-BOS') and tran3[i][8] != tran3[j][8] and tran3[j][7] != '10000':
+	if tran3[i][4] == '1' and tran3[j][4] == '1' and tran3[i][5] == tran3[j][5] and i != j and (tran3[j-1][9] == 'CLS-BOS' or tran3[j-2][9] == 'CLS-BOS') and tran3[i][8] != tran3[j][8] and tran3[j][7] != '10000' and tran3[i][7] != '10000':
 	    rel_fp.write("(relation-parser_ids viSeRya-jo_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[tran3[i][7]], tran3[j][7])) 
 #	    print "(bbbbbbbbbbbbbbbiSeRya-jo_samAnAXikaraNa  P%s\tP%s)" % (sconId_resId[tran3[i][7]], tran3[j][7]) 
 #Ex. I will show you the house where I met your mother. We now know that there are two thousand elements which we can not use to make a good light bulb.  
