@@ -202,13 +202,32 @@ sub process{
   $prev_pp=0;
   for $line (0 .. $#trg_tran){
     if($trg_tran[$line] !~ /SWORKO.*BOS|SWORKO.*EOS|\* SWITCH68 \*/){
-      if ($trg_tran[$line] =~ /SWORKO\s+=\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\w+)/){
+      if ($trg_tran[$line] =~ /SWORKO\s+=\s+(\d+)\s+(\d+)\s+(\d+)\s+(\d+)\s+(\S+)/){
 
         $wc=$1;
         $type=$2;
         $form=$3;
         $wid=$4;
         $word=$5;
+
+
+				#for handling sentneces 
+				#--------
+				#In addition, a series of commands can be automatically read directly from a file when CLIPS is first started
+				# or as the result of the batch command. 
+				#-------
+				#
+				#where in "OUTPUT TARGET ARRAYS IN tran3" the "," is head in the firs SWORKO. Hence take the previous word as head.
+				#
+				#
+
+				if($word =~ /^\S+$/){
+						
+					$wid = $wid-1;
+					$tmp_id=$scon2d[$wid][10];
+					$word=$res2d[$tmp_id][35];
+				}
+
 
         if(($wc != 2)&&($wc != 12)){
           $trg_tran[$line+2] =~ /SCONPO\s+(.*)/;
