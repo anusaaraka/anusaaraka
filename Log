@@ -1631,7 +1631,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                 verified_ol  (532)             sd_verified  (336)
                 verified     (559)
 
-01-02-11
+02-02-11
 --------
  1. In sd_relation_rules.clp, Three rules are added to handle relative clauses.
  2. Added newly "change-html-remove-title.pl" file for removing title name in the web interface.(for anusaaraka site purpose)
@@ -1640,7 +1640,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         ii) Modified "choose_debug_list" rule in sentence_debug.clp
  4. Simplified viSeRya_viSeRaNa_rule1, viSeRya_viSeRaNa_rule, viSeRya_viSeRaNa_to_rule in hindi_position.clp
  5. Modified word_rule_for_poss in sd_combining_apostrophe.clp
- 6. Added dummy fact 'viSeRya-until_saMbanXI','viSeRya-out_saMbanXI','kriyA-on_top_of_saMbanXI','viSeRya-amidst_saMbanXI' ,      'kriyA-on_the_verge_of_saMbanXI' in following files:
+ 6. Added dummy fact 'viSeRya-until_saMbanXI','viSeRya-out_saMbanXI','kriyA-on_top_of_saMbanXI','viSeRya-amidst_saMbanXI' ,      'kriyA-on_the_verge_of_saMbanXI','kriyA-for_the_purpose_of_saMbanXI' in following files:
         hindi_sent_reorder.clp		vibakthi.clp		GNP_agreement.clp
 	prepare_apertium_input.clp	pada_ids.clp		agreement.clp
 	hindi_meaning.clp		hindi_position.clp	ol_hindi_sent_reorder.clp
@@ -1648,8 +1648,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  8. KeyError problems are solved in run_openlogos.py
  9. Modified it30 rule in it.clp in WSD.
 10. Removed "getting_in_saMbanXI" rule in modify_ol_relations.clp
-11. Updated Log.
-12. Modified and updated sd_ver_out file.
-13. Updated folowing files:
+11. Removed load-fact "original_word.dat" in pada_point_concept_rules.clp and "meaning_has_been_decided.dat" from WSD module.
+12. Updated Log.
+13. Modified and updated sd_ver_out file.
+14. Updated folowing files:
           sd_verified (388)
           verified_ol (534)
