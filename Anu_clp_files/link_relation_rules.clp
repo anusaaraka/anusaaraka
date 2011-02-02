@@ -1421,20 +1421,6 @@
 )
 ;Ex.	"He STOOD UP and WALKED OUT"
 ;----------------------------------------------------------------------------------------------------------------
-(defrule rule40
-(link_name-link_lnode-link_rnode DG ?x ?y)
-(not (link_name-link_lnode-link_rnode Cs ?y ?z))
-(not (link_name-link_lnode-link_rnode ER ?y ?z));ex. 4 this condition: The better it is, the more people will use it.
-(not (link_name-link_lnode-link_rnode ER ?z ?y));ex. 4 this condition: The better it is, the more people will use it.
-;I left the moment I saw him.
-;The better it is, the more people will use it.
-;Axi vAkyoM ko rokane ke liye haya subject vAlI xUsarI condition hE
-=>
-(printout	?*fp*	"(relation-parser_ids	proper_noun-det_viSeRaNa	"?y"	"?x")"crlf)	
-(printout	?*rel_debug*	"(Rule-Rel-ids	rule40	proper_noun-det_viSeRaNa	"?y"	"?x")"crlf)	
-)
-;Ex.	The Emir of Kuwait died.
-;----------------------------------------------------------------------------------------------------------------
 (defrule rule42
 (link_name-link_expansion    ?lname   S I $?vars)
 (link_name-link_lnode-link_rnode ?lname ?x ?y)
@@ -3043,7 +3029,7 @@ else
 (link_name-link_lnode-link_rnode MVp ?x ?y)
 (link_name-link_lnode-link_rnode Mgp ?y ?z)
 (linkid-word-node_cat ?y ?viBakwi ?)
-(or(linkid-word-node_cat ?z ?gerund verb)(linkid-word-node_cat ?z ?gerund gerund))	
+(or(linkid-word-node_cat ?z ?gerund verb)(linkid-word-node_cat ?z ?gerund verbal_noun))	
 (not  (kriyA-'viBakwi'_saMbanXI_rel_has_been_deceded_by_'kriyA-'viBakwi'_saMbanXI_and'_rule ?y))
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?x"	"?z")"	crlf)	

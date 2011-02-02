@@ -204,7 +204,6 @@
  (honA_kriyA-kI_apekRA) 
  (kriyA-aBiprewa_kriyA) 
  (kriyA-without_saMbanXI) 
- (proper_noun-det_viSeRaNa) 
  (wall_conjunction) 
  (honA_kriyA-passive_kriyA) 
  (kriyA-before_sambanXa) 

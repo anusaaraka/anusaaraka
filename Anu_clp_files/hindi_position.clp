@@ -222,7 +222,6 @@
  (honA_kriyA-kI_apekRA) 
  (kriyA-aBiprewa_kriyA) 
  (kriyA-without_saMbanXI) 
- (proper_noun-det_viSeRaNa) 
  (wall_conjunction) 
  (honA_kriyA-passive_kriyA) 
  (kriyA-before_sambanXa) 
@@ -484,7 +483,7 @@
  (defrule rule1
  (declare (salience 1000))
  (relation-anu_ids  ?rel ?l_id ?r_id)
- (test (and (neq ?rel viSeRya-det_viSeRaNa) (neq ?rel viSeRya-viSeRaNa)(neq ?rel kriyA-nA)(neq ?rel kriyA-ke_liye) (neq ?rel nAma-saMkRipwa_nAma)(neq ?rel proper_noun-det_viSeRaNa)(neq ?rel subject-opener)(neq ?rel kriyA-ne_ke_liye)(neq ?rel viSeRya-wulanAwmaka_viSeRaNa)(neq ?rel kriyA-viXi_vAkyakarma)(neq ?rel kriyA-samAnakAlika_kriyA)(neq ?rel pUrvakAlika_kriyA-ananwarakAlika_kriyA)(neq ?rel kriyA-praSnavAcI)(neq ?rel subject-vAkyasamAnAXikarNa)(neq ?rel kriyA-samakAlika_kriyA)(neq ?rel kriyA-karwA)(neq ?rel kriyA-vAkyakarma)(neq ?rel kriyA-preraka_kriyA)))
+ (test (and (neq ?rel viSeRya-det_viSeRaNa) (neq ?rel viSeRya-viSeRaNa)(neq ?rel kriyA-nA)(neq ?rel kriyA-ke_liye) (neq ?rel nAma-saMkRipwa_nAma)(neq ?rel subject-opener)(neq ?rel kriyA-ne_ke_liye)(neq ?rel viSeRya-wulanAwmaka_viSeRaNa)(neq ?rel kriyA-viXi_vAkyakarma)(neq ?rel kriyA-samAnakAlika_kriyA)(neq ?rel pUrvakAlika_kriyA-ananwarakAlika_kriyA)(neq ?rel kriyA-praSnavAcI)(neq ?rel subject-vAkyasamAnAXikarNa)(neq ?rel kriyA-samakAlika_kriyA)(neq ?rel kriyA-karwA)(neq ?rel kriyA-vAkyakarma)(neq ?rel kriyA-preraka_kriyA)))
  =>
  	(bind ?*l_list* (create$ ?*l_list* ?l_id))
  	(bind ?*r_list* (create$ ?*r_list* ?r_id))

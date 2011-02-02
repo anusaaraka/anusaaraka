@@ -28,20 +28,6 @@
         (printout ?*root_fp*  "(parser_id-root "?pid" "?root")"crlf)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
- (defrule gerund_rule
- (declare (salience 200))
- (parser_id-cat_coarse ?pid gerund)
- (parserid-wordid  ?pid ?wid)
- (id-original_word ?wid ?word)
- (word-morph (original_word  ?word)(root ?root)(category  gerund)(suffix ?suf)(number ?num))
- ?f0<-(morph_analysis_to_be_choosen ?wid)
- =>
-        (retract ?f0)
-        (assert (parser_id-root ?pid ?root))
-        (printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?root"  gerund  "?suf" " -" )" crlf)
-        (printout ?*root_fp*  "(parser_id-root "?pid" "?root")"crlf)
- )
- ;-----------------------------------------------------------------------------------------------------------------------
  (defrule same_cat
  (declare (salience 150))
  (parser_id-cat_coarse ?pid ?cat)

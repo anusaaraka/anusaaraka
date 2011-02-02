@@ -43,7 +43,7 @@
  ?f0<-(category_to_be_decided ?pid)
  =>
  	(retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "  " ?word"  gerund)" crlf)
+        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "  " ?word"  verbal_noun)" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
  ; The game of life is played for winning  (M g p)
@@ -55,7 +55,7 @@
   ?f0<-(category_to_be_decided ?r_node)
   =>
         (retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?r_node "  " ?rword"  gerund)" crlf)
+        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?r_node "  " ?rword"  verbal_noun)" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
   ;;We sat and watched the sun setting .

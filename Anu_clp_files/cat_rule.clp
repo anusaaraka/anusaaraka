@@ -16,17 +16,6 @@
 	(printout ?*cat_fp* "(id-cat "?id" " ?cat")"crlf)
  )
  ;-----------------------------------------------------------------------------------------------------------------
- ;If link cat is gerund then assign cat as verbal_noun
- (defrule link_gerund_cat
- (declare (salience 110))
- ?f1<-(linkid-word-node_cat  ?pid  ?word gerund)
- (parserid-wordid  ?pid ?id)
- ?f0<-(id-cat_coarse ?id ?)
- =>
-        (printout ?*cat_fp* "(parser_id-cat_coarse  "?pid"  verbal_noun)" crlf)
-        (retract ?f0 ?f1)
- )
- ;-----------------------------------------------------------------------------------------------------------------
  ; link cat  
  (defrule link_cat
  (declare (salience 100))
