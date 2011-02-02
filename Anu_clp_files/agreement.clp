@@ -83,6 +83,8 @@
  )
  ;--------------------------------------------------------------------------------------------------------------------
  (deffacts dummy_facts 
+ (kriyA-for_the_purpose_of_saMbanXI) 
+ (kriyA-on_the_verge_of_saMbanXI) 
  (viSeRya-amidst_saMbanXI) 
  (kriyA-because_of_saMbanXI) 
  (kriyA-on_top_of_saMbanXI) 
