@@ -44,13 +44,16 @@
 (id-root ?id foot)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-object ?id1 ?id)
-(viSeRya-det_viSeRaNa  ?id  ?id2)
+(or (viSeRya-det_viSeRaNa  ?id  ?id2) (viSeRya-RaRTI_viSeRaNa ?id ?)); added RaRTI relation by Roja(02-02-11)When you stand on this rock and face the east, the waves of the bay of bengal lap your feet.
 ;(id-cat_coarse ?id noun)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id pAzva))
+(assert (kriyA_id-object_viBakwi ?id1 se));Added by Roja(02-02-11)When you stand on this rock and face the east, the waves of the bay of bengal lap your feet.
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  foot.clp 	foot2   "  ?id "  pAzva )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  foot.clp 	foot2   "  ?id "  pAzva )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  foot.clp   foot2   "  ?id1 " se )" crlf)
+)
 )
 
 ;LEVEL 

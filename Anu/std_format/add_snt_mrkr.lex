@@ -38,6 +38,8 @@ ABBR[ ][ ]\n		{printf("ABBR</s>\n<s>",yytext[0]);}
 [ ][A-Za-z][.][ ][A-Za-z][.]    {printf("%c%c%c%c%c",yytext[0],yytext[1],yytext[2],yytext[4],yytext[5]); }
 [ ][A-Za-z][.][ ][A-Za-z][.][ ][A-Z]	{printf("%c%c%c%c%c</s>\n<s>%c",yytext[0],yytext[1],yytext[2],yytext[4],yytext[5],yytext[7]); }
 [ ][A-Za-z][.][ ][ ]\)  {printf("%c%c%c%c",yytext[0],yytext[1],yytext[2],yytext[5]); }
+[.][ ][,][ ]		{printf("%c%c%c",yytext[0],yytext[2],yytext[3]); }
+[.][ ]\$[0-9]           {printf("%c</s>\n<s>%c%c",yytext[0],yytext[2],yytext[3]);} 
 \<p\>			{printf("<p><s>");}
 \<\/p\>			{printf("</s></p>\n");}
 \<A[ ]href[^>]+>	{
