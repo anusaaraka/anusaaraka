@@ -1640,8 +1640,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         ii) Modified "choose_debug_list" rule in sentence_debug.clp
  4. Simplified viSeRya_viSeRaNa_rule1, viSeRya_viSeRaNa_rule, viSeRya_viSeRaNa_to_rule in hindi_position.clp
  5. Modified word_rule_for_poss in sd_combining_apostrophe.clp
- 6. Added dummy fact 'viSeRya-until_saMbanXI','viSeRya-out_saMbanXI','kriyA-on_top_of_saMbanXI','viSeRya-amidst_saMbanXI', 
-    'kriyA-on_the_verge_of_saMbanXI','kriyA-for_the_purpose_of_saMbanXI' and Removed dummy fact "proper_noun-det_viSeRaNa"
+ 6. Added dummy facts 'viSeRya-until_saMbanXI','viSeRya-out_saMbanXI','kriyA-on_top_of_saMbanXI','viSeRya-amidst_saMbanXI', 
+    'kriyA-on_the_verge_of_saMbanXI','kriyA-for_the_purpose_of_saMbanXI','viSeRya-because_of_saMbanXI','viSeRya-for_the_sake_of_saMbanXI','viSeRya-according_to_saMbanXI' and Removed dummy fact "proper_noun-det_viSeRaNa"
      from then following files:
         hindi_sent_reorder.clp		vibakthi.clp		GNP_agreement.clp
 	prepare_apertium_input.clp	pada_ids.clp		agreement.clp

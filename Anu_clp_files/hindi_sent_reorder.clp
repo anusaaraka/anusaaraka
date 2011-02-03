@@ -3,6 +3,9 @@
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (slot preposition (default 0))(slot Hin_position (default 0))) 
 
  (deffacts dummy_facts 
+ (viSeRya-because_of_saMbanXI) 
+ (viSeRya-for_the_sake_of_saMbanXI) 
+ (viSeRya-according_to_saMbanXI) 
  (kriyA-for_the_purpose_of_saMbanXI) 
  (kriyA-on_the_verge_of_saMbanXI) 
  (viSeRya-amidst_saMbanXI) 

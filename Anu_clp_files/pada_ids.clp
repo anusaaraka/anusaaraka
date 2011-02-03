@@ -3,6 +3,9 @@
  (string-to-field (sub-string 2 10000 ?parser_id)))
 
  (deffacts dummy_facts 
+ (viSeRya-because_of_saMbanXI) 
+ (viSeRya-for_the_sake_of_saMbanXI) 
+ (viSeRya-according_to_saMbanXI) 
  (kriyA-for_the_purpose_of_saMbanXI) 
  (kriyA-on_the_verge_of_saMbanXI) 
  (viSeRya-amidst_saMbanXI) 
