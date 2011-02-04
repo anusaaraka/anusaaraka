@@ -125,7 +125,7 @@
  Categories: The categories.txt file contains category information in the following format:
               <Long Form> <POS Tag> <Crude Category>
 
-  Punctuation: The following words are used for the respective punctuations:
+  Punctuations: The following words are used for the respective punctuations:
 
       ,  comma
       .  full_stop
@@ -141,9 +141,10 @@
       $  dollar
       %  percentage
       =  equal_to
+     ()  open-closed_parenthesis
  --------------------------------------------------------------------------------------------------------------------
 
-    The sentences with correct translation for Link and Stanford parser are in $HOME_anu_test/verified  file .
+   The sentences with correct translation for Link and Stanford parser are in $HOME_anu_test/verified  file .
                                    for only OL parser  in $HOME_anu_test/verified_ol
                                    for only Stanford   in $HOME_anu_test/sd_verified
         
