@@ -2651,14 +2651,16 @@ else
 (defrule AjFArWaka_vAkya
 (declare (salience 1510))
 (link_name-link_lnode-link_rnode Wi ?x ?y)
+(root-verbchunk-tam-parser_chunkids $?chunk_ids ?kri)
+(test (or (member$ ?y $?chunk_ids) (eq ?kri ?y)))
 =>
 (printout	?*fp*	"(relation-parser_ids	AjFArWaka_vAkya)"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	AjFArWaka_vAkya	AjFArWaka_vAkya)"crlf)	
 
-(printout	?*fp*	"(relation-parser_ids	AjFArWaka_kriyA	"	?y")"crlf)	
-(printout	?*rel_debug*	"(Rule-Rel-ids	AjFArWaka_vAkya	AjFArWaka_kriyA	"	?y")"crlf)	
+(printout	?*fp*	"(relation-parser_ids	AjFArWaka_kriyA	"	?kri")"crlf)	
+(printout	?*rel_debug*	"(Rule-Rel-ids	AjFArWaka_vAkya	AjFArWaka_kriyA	"	?kri")"crlf)	
 )
-;Ex.	Go to the class. GO away
+;Ex.	Go to the class. GO away. Do not waste electricity.
 ;----------------------------------------------------------------------------------------------------------------
 (defrule subject_question_wh_type
 (declare (salience 1500))

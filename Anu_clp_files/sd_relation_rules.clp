@@ -976,8 +976,8 @@
   ; Added by Shirisha Manju
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule AjFArWaka_kri
- (rel_name-sids aux  ?i ?kri)
- (parserid-word ?kri Do)
+ (rel_name-sids aux  ?kri ?i)
+ (parserid-word ?i Do)
  =>
  (printout       ?*fp*   "(relation-parser_ids     AjFArWaka_kriyA      "?kri")"crlf)
  (printout       ?*dbug* "(Rule-Rel-ids  AjFArWaka_kri   AjFArWaka_kriyA     "?kri")"crlf)
