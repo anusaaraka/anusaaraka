@@ -1633,7 +1633,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 
 04-02-11
 --------
- 1. In sd_relation_rules.clp, Four rules are added to handle relative clauses.
+ 1. In sd_relation_rules.clp:
+       Added:  Four rules are added to handle relative clauses 
+               New rule to get 'AjFArWaka_kriyA' relation.
  2. Added newly "change-html-remove-title.pl" file for removing title name in the web interface.(for anusaaraka site purpose)
  3. In debugging folder:
          i) Removed "sd-relations_tmp.dat" in sentence_debug.sh as its repeated.
@@ -1654,7 +1656,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 10. Removed "getting_in_saMbanXI" rule in modify_ol_relations.clp
 11. Removed link_gerund_cat rule in cat_rule.clp
 12. Modified gerund_rule and gerund_rule_with_Mgp in link_category.clp
-13. Modified rule192 and Removed rule40 in link_relation_rules.clp
+13. link_relation_rules.clp:
+        Modified "rule192" and 'AjFArWaka_vAkya' rule.
+        Removed  "rule40" rule.  
 14. Removed gerund_rule in root_rule.clp
 15. Removed load-fact "original_word.dat" in pada_point_concept_rules.clp and "meaning_has_been_decided.dat" from WSD module.
 16. Added two new rules in add_snt_mrkr.lex file for sentence pre-processing.
