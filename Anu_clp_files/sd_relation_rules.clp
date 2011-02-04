@@ -509,6 +509,16 @@
  ; Ex. I want to go there . 
  ; Added by Mahalaxmi.
 ;------------------------------------------------------------------------------------------------------------------------
+ (defrule advmd
+ (rel_name-sids advmod ?kriyA ?lupwa_p)
+ (parser_id-cat_coarse ?kriyA verb)
+ (parserid-word  ?lupwa_p  again|later|here|there|somewhere|anywhere|everywhere|now|outside|longer|alone|next|upstairs|downstairs|upwards|downwards|above|down)
+ =>
+ (printout       ?*fp*   "(relation-parser_ids     kriyA-aXikaraNavAcI_avyaya     "?kriyA"        "?lupwa_p")"crlf)
+ (printout       ?*dbug* "(Rule-Rel-ids  advmd  kriyA-aXikaraNavAcI_avyaya    "?kriyA"        "?lupwa_p")"crlf)  
+ )
+ ;Ex. By going there you can earn more money.
+;------------------------------------------------------------------------------------------------------------------------
  (defrule advmod4
  (rel_name-sids amod ?v ?vn)
  (rel_name-sids advmod ?vn ?vk)
@@ -728,7 +738,6 @@
  (test (eq (sub-string 1 6  ?p) "prepc_"));this condition is to stop this rule firing in "conj_and" cases, ex. "Rama , Mohan , Sita and Geeta came to the city."
  (parser_id-cat_coarse ?kri ?cat)
  =>
-; (retract ?f0)
  (if(eq ?cat verb) then
  (printout       ?*fp*   "(relation-parser_ids     kriyA-"(sub-string 7 100 ?p)"_saMbanXI        "?kri" "?p_saM")"crlf)
  (printout       ?*dbug* "(Rule-Rel-ids   prepc_p  kriyA-"(sub-string 7 100 ?p)"_saMbanXI        "?kri" "?p_saM")"crlf)
@@ -966,4 +975,15 @@
   ; Ex : Where are you coming from ?
   ; Added by Shirisha Manju
 ;------------------------------------------------------------------------------------------------------------------------
+ (defrule AjFArWaka_kri
+ (rel_name-sids aux  ?i ?kri)
+ (parserid-word ?kri Do)
+ =>
+ (printout       ?*fp*   "(relation-parser_ids     AjFArWaka_kriyA      "?kri")"crlf)
+ (printout       ?*dbug* "(Rule-Rel-ids  AjFArWaka_kri   AjFArWaka_kriyA     "?kri")"crlf)
+ )
+ ; Ex.  Do not waste electricity. Do not disturb the sleeping kids. Do not forget to take your tiffin. Do not neglect your duties. 
+;------------------------------------------------------------------------------------------------------------------------
+
 ;rel+nsubj rel+nsubj+wh rules are not working properly. Check them.
+
