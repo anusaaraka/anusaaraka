@@ -1697,4 +1697,6 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  5. Modified run_modules_link.bat to remove load-facts "link_name_expand.dat", "link_relation_info.dat" in 
     hindi_sent_reorder.clp
  6. Modified AjFArWaka_kri rule in sd_relation_rules.clp
- 7. Modified verified_output, sd_ver_output, verified_output_ol, sd_verified and verified_ol
+ 7. Modified create_binary_files.clp to remove ol_hindi_sent_reorder.clp
+ 8. Modified verified_output, sd_ver_output, verified_output_ol, sd_verified and verified_ol
+ 9. Updated Log
