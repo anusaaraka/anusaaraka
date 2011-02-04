@@ -1667,8 +1667,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 19. Modified "L1" as "P1" in  run_modules_ol.bat and run_modules_link.bat.
 20. Removed stanford-parser-2008-10-26 and stanford-parser-2010-08-20 versions.
 21. Updated "README" in anu_testing for punctuations.
-22. Updated Log.
-23. Modified and updated sd_ver_out file.
-24. Updated folowing files:
+22. Removed old stanford version in following files: 
+	Anusaaraka_stanford.sh		Anusaaraka.sh		my_stanford.sh		Anusaaraka_site.sh
+	Anusaaraka_all.sh		anu_compile.sh		anu_compile_64bit.sh	
+23. Updated Log.
+24. Modified and updated sd_ver_out file.
+25. Updated folowing files:
           sd_verified (388)
           verified_ol (534)
