@@ -233,25 +233,6 @@ for i in xrange(len(RES_SWRK_TAB)):
 	if int(RES_SWRK_TAB[i][34]) > 1:
        	    id_wrd_lst_count_word[RES_SWRK_TAB[i][0]] = RES_SWRK_TAB[i][34:]
 
-"""
-#this part generates facts about tran wc etc.
-for i in xrange(len(tran1)):
-    print "(res_id-tran1_id-wc-subset-form-word  %s %s %s %s %s %s)\n"%(sconId_resId[tran1[i][3]], tran1[i][3], tran1[i][0], tran1[i][3], tran1[i][2], tran1[i][4]),
-print
-
-for i in xrange(len(tran2)):
-    print "(res_id-tran2_id-wc-form-word   %s %s %s %s %s)\n"%(sconId_resId[tran2[i][3]], tran2[i][3], tran2[i][0], tran2[i][2], tran2[i][4]),
-
-print
-for i in xrange(len(trn3)):
-    print "(res_id-tran3_id-wc-form-word   %s %s %s %s %s)\n"%(sconId_resId[trn3[i][3]], trn3[i][3], trn3[i][0], trn3[i][2], trn3[i][4]),
-
-print
-
-for i in xrange(len(RES_SWRK_TAB)):
-   print "(res_id-wc-form-subset-subchange-word   %s %s %s %s %s %s)\n"%(RES_SWRK_TAB[i][0], RES_SWRK_TAB[i][2], RES_SWRK_TAB[i][4], RES_SWRK_TAB[i][5], RES_SWRK_TAB[i][9], RES_SWRK_TAB[i][35]),
-
-"""
 k=1
 map_id = open("ol_original_numeric_word.dat","w")
 for i in xrange(len(INPUT)):
@@ -1018,7 +999,7 @@ for i in xrange(len(tran3)):
 			if (tran3[i+k][4] == '2' or tran3[i+k][4] == '20'):
 				break
 			if (tran3[i+k][4] == '1'):
-				if tran3[i+k][8] in prep_dict_word_semwrk.keys() and tran3[i][9] != 'SWITCH68' and int(word_id[prep_dict_word_semwrk[tran3[i+k][8]]]) > int(sconId_resId[tran3[i][7]]) and int(word_id[prep_dict_word_semwrk[tran3[i+k][8]]]) < int(sconId_resId[tran3[i+k][7]]) and prep_dict_word_semwrk[tran3[i+k][8]] != 'a':#ex. 4 > & < conditions: "Imagine that a magician waves his wand and changes a bowl of dirt into a bowl of leuttce." the last condition is added for the sentence: "A pool always needs to have its water circulated through a filter for several hours a day in order to keep it clean. and "The factory typically produces 500 chairs a week." 
+				if tran3[i+k][7] in prep_dict_id_semwrk.keys() and tran3[i][9] != 'SWITCH68' and int(word_id[prep_dict_word_semwrk[tran3[i+k][8]]]) > int(sconId_resId[tran3[i][7]]) and int(word_id[prep_dict_word_semwrk[tran3[i+k][8]]]) < int(sconId_resId[tran3[i+k][7]]) and prep_dict_word_semwrk[tran3[i+k][8]] != 'a':#ex. 4 > & < conditions: "Imagine that a magician waves his wand and changes a bowl of dirt into a bowl of leuttce." the last condition is added for the sentence: "A pool always needs to have its water circulated through a filter for several hours a day in order to keep it clean. and "The factory typically produces 500 chairs a week." 
                 			rel_fp.write("(relation-parser_ids kriyA-%s_saMbanXI  P%s\tP%s)\n" % (return_prep(prep_dict_id_semwrk[sconId_resId[tran3[i+k][7]]]), sconId_resId[tran3[i][7]], sconId_resId[tran3[i+k][7]]))
 #	               			print "(eeeeeeeeeeer-ids kriyA-%s_saMbanXI  P%s\tP%s)\n" % (return_prep(word_id[prep_dict_word_semwrk[tran3[i+k][8]]]), sconId_resId[tran3[i][7]], sconId_resId[tran3[i+k][7]])
 					got_prep_rel = prep_dict_word_semwrk.keys()
@@ -1047,7 +1028,7 @@ for i in xrange(len(tran3)):
 	    for hr in xrange(len(RES_SWRK_TAB)):
 		if tran3[i][7]==RES_SWRK_TAB[hr][0]:
 		    if RES_SWRK_TAB[hr][2]!='3' and RES_SWRK_TAB[hr][2]!='6' and tran3[i+1][9] != 'SWITCH68':
-			if tran3[i+1][8] in prep_dict_word_semwrk.keys():	
+			if tran3[i+1][7] in prep_dict_id_semwrk.keys():	
                             rel_fp.write("(relation-parser_ids viSeRya-%s_saMbanXI  P%s\tP%s)\n" % (return_prep(prep_dict_id_semwrk[sconId_resId[tran3[i+1][7]]]), sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]]))
 #                            print "(222222222222ser_ids viSeRya-%s_saMbanXI  P%s\tP%s)\n" % (return_prep(prep_dict_id_semwrk[sconId_resId[tran3[i+1][7]]]), sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]])
 #-----------------------------------------------------------------------------------------------------------------
