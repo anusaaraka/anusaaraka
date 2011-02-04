@@ -1675,3 +1675,26 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 25. Updated folowing files:
           sd_verified (388)
           verified_ol (534)
+
+ 05-02-11
+ ========
+ 1.  hindi_sent_reorder.clp
+     Removed the following dummy facts
+           id-number-src,  id-wsd_number , relation-anu_ids,  relation-parser_ids,
+           id-original_word,  affecting_id-affected_ids-wsd_group_root_mng,  affecting_id-affected_ids-wsd_group_word_mng
+           id-preceeding_part_of_verb
+     Removed   : yes-no_question_DO, yes-no_question_models, yes-no_question_BE, which-red-book, let_us, CO_rule_for_isaliye
+                 rules
+     Renamed   : Ce_rule_for_jisa_prakAra_se  as rule_for_jisa_prakAra_se and modified accordingly
+                 Cs_rule_for_yaha             as rule_for_yaha            and       "
+                 CO_rule_for_wo               as rule_for_wo              and       "
+                 Ce_rule_for_ki               as rule_for_ki              and       "
+                 let_me                       as let_rule                 and       "
+     Added     : yes-no_question, rule_for_wo_1, rule_for_ki_2 , rule_for_ki_1 and insert_nahIM rules
+ 2. WSD : Modified : if.clp  whether.clp
+ 3. Removed ol_hindi_sent_reorder.clp and sd_hindi_sent_reorder.clp files and used hindi_sent_reorder.clp
+ 4. Modified run_modules_ol.bat  and run_modules_std.bat accordingly
+ 5. Modified run_modules_link.bat to remove load-facts "link_name_expand.dat", "link_relation_info.dat" in 
+    hindi_sent_reorder.clp
+ 6. Modified AjFArWaka_kri rule in sd_relation_rules.clp
+ 7. Modified verified_output, sd_ver_output, verified_output_ol, sd_verified and verified_ol

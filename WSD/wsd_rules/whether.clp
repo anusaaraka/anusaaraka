@@ -19,9 +19,9 @@
 (id-word =(- ?id 1) ask|decide|depend|discuss|know|tell|question|wonder)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id ki_kyA))
+(assert (id-wsd_root_mng ?id kyA)); Modified ki_kyA as kyA by Manju Ex: I wonder whether we should go.
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  whether.clp 	whether1   "  ?id "  ki_kyA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  whether.clp 	whether1   "  ?id "  kyA )" crlf))
 )
 
 (defrule whether2

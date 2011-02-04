@@ -977,6 +977,7 @@
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule AjFArWaka_kri
  (rel_name-sids aux  ?kri ?i)
+ (rel_name-sids neg  ?kri ?n)
  (parserid-word ?i Do)
  =>
  (printout       ?*fp*   "(relation-parser_ids     AjFArWaka_kriyA      "?kri")"crlf)

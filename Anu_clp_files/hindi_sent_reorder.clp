@@ -15,8 +15,6 @@
  (viSeRya-until_saMbanXI) 
  (kriyA-due_to_saMbanXI) 
  (viSeRya-than_saMbanXI) 
- (relation-anu_ids) 
- (relation-parser_ids) 
  (lupwa_subject_kriyA-subject_samAnAXikaraNa)
  (kriyA-in_keeping_with_saMbanXI) 
  (viSeRya-throughout_saMbanXI) 
@@ -49,8 +47,6 @@
  (kriyA-along_with_saMbanXI) 
  (kriyA-from_inside_saMbanXI) 
  (missing-level-id) 
- (id-original_word) 
- (id-number-src) 
  (verb_type-verb-causative_verb-tam) 
  (addition-level-word-sid) 
  (kriyA-according_to_saMbanXI) 
@@ -61,7 +57,6 @@
  (passive_kriyA) 
  (kriyA-out_saMbanXI) 
  (viSeRya-since_saMbanXI) 
- (id-cat) 
  (kriyA-according_saMbanXI) 
  (conjunction-components)
  (viSeRya-as_well_as_saMbanXI) 
@@ -70,14 +65,10 @@
  (kriyA-kqxanwa_karma) 
  (kriyA-samakAlika_kriyA) 
  (niReXawmaka_vAkya) 
- (id-wsd_number) 
  (viSeRya-in_front_of_saMbanXI) 
  (viSeRya-in_front_saMbanXI) 
  (viSeRya-all_over_saMbanXI) 
  (kriyA-amidst_saMbanXI) 
- (affecting_id-affected_ids-wsd_group_root_mng)
- (affecting_id-affected_ids-wsd_group_word_mng)
- (id-last_word) 
  (saMjFA-saMjFA_samAnAXikaraNa) 
  (kqxanwa-of_saMbanXI) 
  (kriyA-because_saMbanXI) 
@@ -122,7 +113,7 @@
  (dummy_subject-subject_samAnAXikaraNa) 
  (kriyA-whatever_saMbanXI) 
  (object-kqxanwa_kriyA) 
-(kriyA-kAlavAcI)
+ (kriyA-kAlavAcI)
  (kqxanwa_kriyA-of_saMbanXI)
  (kqxanwa_kriyA-against_saMbanXI)
  (kqxanwa_kriyA-on_saMbanXI)
@@ -207,10 +198,10 @@
  (honA_kriyA-kI_apekRA) 
  (kriyA-aBiprewa_kriyA) 
  (kriyA-without_saMbanXI) 
+ (proper_noun-det_viSeRaNa) 
  (wall_conjunction) 
  (honA_kriyA-passive_kriyA) 
  (kriyA-before_sambanXa) 
- (id-preceeding_part_of_verb) 
  (kriyA-in_sambanXa) 
  (kriyA-of_saMbanXI) 
  (kriyA-about_saMbanXI) 
@@ -220,7 +211,6 @@
  (kriyA-through_saMbanXI) 
  (kriyA-into_saMbanXI) 
  (AjFArWaka_kriyA)
- (No complete linkages found)
  (proper_noun-waxviSiRta_proper_noun)
  (viSeRya-to_viSeRaNa)
  (kiwane)
@@ -424,25 +414,28 @@
  (saMjFA-kqxanwa)
  (subject-vAkyasamAnAXikarNa)
  (hindi_id_order)
- (link_name-lnode-rnode)
- (link_name-link_expansion)
  (id-word)
+ (id-last_word)
  (id-cat_coarse)
  (id-cat)
+ (root-verbchunk-tam-chunkids)
+ (verb_type-verb-kriyA_mUla-tam)
  )
  ;------------------------------------------------------------------------------------------------------------------
- ;What is your name? What is the purpose of Dharma? 
- (defrule wh-reorder
- (link_name-lnode-rnode Ws  ?wall  ?wh_word)
- ?f1<-(id-word ?wh_word  what)
- ?f0<-(hindi_id_order  ?wh_word $?NP ?kriyA )
+ ;Added by Shirisha Manju (1-02-11)
+ ;May I go outside ? Are you going? Did you take your breakfast?
+ (defrule yes-no_question
+ ?f1<-(id-word 1 did|do|does|may|can|could|would|will|are|is|was|were|am|shell|has|have|had|should)
+ ?f0 <- (hindi_id_order  $?sent )
+ (not (AjFArWaka_kriyA ?kri) )
+; (not (root-verbchunk-tam-chunkids ? ? ? $?ids 1 $?ids1));Do not waste electricity.	
  =>
-	(retract ?f0 ?f1)
- 	(assert (hindi_id_order $?NP ?wh_word ?kriyA))
-	(printout ?*DBUG* "(Rule_Name-ids	wh-reorder	 (hindi_id_order  "  (implode$ $?NP) " " ?wh_word " " ?kriyA "))" crlf)
+        (retract ?f0 ?f1)
+        (assert (hindi_id_order     kyA $?sent))
+	(printout ?*DBUG* "(Rule_Name-ids  yes-no_question   kyA " $?sent)
  )
  ;------------------------------------------------------------------------------------------------------------------
-;What colour is your shirt?
+ ; What colour is your shirt?
  (defrule wh_without_aux-reorder2
  (declare (salience 100))
  (pada_info (group_head_id ?kriyA)(group_cat VP))
@@ -479,12 +472,12 @@
  ;------------------------------------------------------------------------------------------------------------------
  ;I finally figured out why this program is so slow .
  (defrule wh_without_aux-reorder1
-; (declare (salience 50))
+ (declare (salience 10))
  (pada_info (group_head_id ?kriyA)(group_cat VP))
  ?f1<-(id-word ?wh_word  what|when|why|who|how|where)
  (not (kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?  ?wh_word)) ;Ex. How quickly did you run?
  (not (wall_conjunction ?wh_word))
-  ;When we want to hear a music programme on the radio , we have to tune the radio to the correct station .
+   ;When we want to hear a music programme on the radio , we have to tune the radio to the correct station .
  (not (viSeRaNa-viSeRaka  ? ?wh_word)) ;I wonder how big the department is .
  (not (viSeRya-jo_samAnAXikaraNa  ? ?wh_word))
  ?f0<-(hindi_id_order  $?start ?wh_word $?NP ?kriyA $?end)
@@ -495,97 +488,34 @@
         (printout ?*DBUG* "(Rule_Name-ids      wh_without_aux-reorder1      (hindi_id_order  "   (implode$ (create$ $?start $?NP ?wh_word ?kriyA $?end))")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
-
- ;Did you take your breakfast? Did you eat? Do they eat?
- (defrule yes-no_question_DO
- (link_name-lnode-rnode Qd  ?wall  ?what)
- ?f1<-(id-word ?what  did|do|does|may|can)
- ?f0 <- (hindi_id_order $?pre ?what $?pos)
- =>
-	(retract ?f0 ?f1)
-        (assert (hindi_id_order     kyA $?pre $?pos))
- 	(printout ?*DBUG* "(Rule_Name-ids	yes-no_question_DO	 (hindi_id_order   kyA "(implode$ $?pre)" "(implode$ $?pos) "))" crlf)
- )
- ;------------------------------------------------------------------------------------------------------------------
- ;May I go outside .
- (defrule yes-no_question_models
- (link_name-lnode-rnode Qd  ?wall  ?what)
- ?f1<-(id-word ?what  may|can|could|would)
- ?f0 <- (hindi_id_order  $?sent )
- =>
-	(retract ?f0 ?f1)
-        (assert (hindi_id_order     kyA $?sent))
- 	(printout ?*DBUG* "(Rule_Name-ids	yes-no_question_models	 (hindi_id_order   kyA "(implode$ $?sent) "))" crlf)
- )
- ;------------------------------------------------------------------------------------------------------------------
- ;Are you going? Has he been eating?
- (defrule yes-no_question_BE
-; ?f1<- (yes_no_question)
- (link_name-lnode-rnode Qd  0  ?what)
- ?f1<-(id-word ?what  will|are|is|was|were|am|shell|can|has|have|had|should)
- ?f0 <- (hindi_id_order  $?sent )
- =>
-	(retract ?f0 ?f1 )
-	(assert (hindi_id_order     kyA $?sent))
-	(printout ?*DBUG* "(Rule_Name-ids	yes-no_question_BE	 (hindi_id_order   kyA "(implode$ $?sent) "))" crlf)
- )
- ;------------------------------------------------------------------------------------------------------------------
- ;Which red book do you want? Whose younger brother did you meet?
- ; Just to remove dummy 'do': O/P -> Which red book you want? Whose younger brother you meet?
- (defrule which-red-book
- (link_name-lnode-rnode Wq  ?wall  ?wh)
- (link_name-link_expansion   ?SI      S I $?)
- (link_name-lnode-rnode ?SI ?do ?subj)
- ?f1<-(id-word ?do  did|do|does)
- ?f0 <- (hindi_id_order  ?wh $?viSeRya-viSeRaNa ?do ?sub $?rest_sent )
- =>
-	(retract ?f0 ?f1)
-	(assert (hindi_id_order   ?wh $?viSeRya-viSeRaNa ?sub $?rest_sent))
-	(printout ?*DBUG* "(Rule_Name-ids	which-red-book	 (hindi_id_order  "(implode$ (create$ ?wh $?viSeRya-viSeRaNa ?sub $?rest_sent)) "))" crlf)
- )
- ;------------------------------------------------------------------------------------------------------------------
  ;Indirect questions
  ;I asked her what she would like to eat .
  ; (id-word is used to retract the ?question_word id (without this it goes into loop)
- (defrule Indirect_question
- (link_name-link_expansion   ?QI      Q I $?)
- (link_name-lnode-rnode ?QI ?verb ?question_word)
- (kriyA-praSnavAcI  ?verb ?question_word)
- (kriyA-object  ?verb_1 ?question_word)
- ?f1<-(id-word ?question_word ?)
- ?f0 <- (hindi_id_order  $?NP ?question_word $?sent ?verb_1 $?rest)
- =>
-	(retract ?f0 ?f1)
-        (assert (hindi_id_order $?NP  ki $?sent ?question_word ?verb_1 $?rest ))
-	(printout ?*DBUG* "(Rule_Name-ids        Indirect_question   (hindi_id_order  "(implode$ (create$  $?NP  ki $?sent  ?question_word ?verb_1 $?rest  )) ")" crlf)
- )
+; (defrule Indirect_question
+; (link_name-link_expansion   ?QI      Q I $?)
+; (link_name-lnode-rnode ?QI ?verb ?question_word)
+; (kriyA-praSnavAcI  ?verb ?question_word)
+; (kriyA-object  ?verb_1 ?question_word)
+; ?f1<-(id-word ?question_word ?)
+; ?f0 <- (hindi_id_order  $?NP ?question_word $?sent ?verb_1 $?rest)
+; =>
+;	(retract ?f0 ?f1)
+;        (assert (hindi_id_order $?NP  ki $?sent ?question_word ?verb_1 $?rest ))
+;	(printout ?*DBUG* "(Rule_Name-ids        Indirect_question   (hindi_id_order  "(implode$ (create$  $?NP  ki $?sent  ?question_word ?verb_1 $?rest  )) ")" crlf)
+; )
  ;------------------------------------------------------------------------------------------------------------------
  ;Let me go to the market. O/P  #muJako - bAjAra ko jAne xo - .
  ;Let them go to the market. O/P unheM/unako - bAjAra ko jAne xo - .
  ;Let her go to the market. O/P usako/use - bAjAra ko jAne xo - .
  ;Let him go. O/P usako/use jAne xo - .
  (defrule let_me
- (link_name-lnode-rnode  Wi ?wall  ?let)
- (link_name-lnode-rnode I ?let ?kriyA)
+ (kriyA-object  ?kriyA ?object)
  ?f1<-(id-word ?let let)
  ?f0 <- (hindi_id_order $?pre ?object  ?let ?kriyA)
  =>
         (retract ?f0 ?f1)
 	(assert (hindi_id_order  ?object $?pre ?kriyA ?let))
         (printout ?*DBUG* "(Rule_Name-ids  let_me  (hindi_id_order  "(implode$ (create$ ?object $?pre ?kriyA ?let))")" crlf)
- )
- ;------------------------------------------------------------------------------------------------------------------
- ;Let us go to the market. O/P 
- (defrule let_us
- (link_name-lnode-rnode  Wi ?wall  ?let)
- (link_name-lnode-rnode I ?let ?kriyA)
- ?f1<-(id-word ?let let)
- (id-word 2 us)
- ?f0 <- (hindi_id_order $?pre ?kriyA ?let 2 $?post)
- =>
-        (retract ?f0 ?f1)
-	(assert (hindi_id_order  ?let 2 $?pre ?kriyA  $?post))
-        (printout  ?*DBUG* "(Rule_Name-ids        let_us   (hindi_id_order  "(implode$ (create$    ?let 2 $?pre ?kriyA  $?post  )) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
  ; You are lucky that there is no exam today
@@ -605,7 +535,7 @@
  (defrule always_rule
  (kriyA-subject  ?kriya  ?sub)
  (kriyA-kriyA_viSeRaNa  ?kriyA ?id)
- (test (and (< ?kriyA ?id) (> ?id ?sub)))
+ (test(> ?id ?sub))
  ?f1<-(id-word ?id  always)
  ?f0 <-(hindi_id_order $?pre ?sub $?ids ?id $?post ?kriyA)
  =>
@@ -614,23 +544,68 @@
         (printout  ?*DBUG* "(Rule_Name-ids   always_rule  (hindi_id_order  "(implode$ (create$  $?pre ?sub ?id $?ids $?post ?kriyA)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju
- ; I guess you are working very hard.
- (defrule Ce_rule_for_ki
- (link_name-lnode-rnode Ce ?v_id ?id)
+ ; Added by Shirisha Manju (1-02-11)
+ ; I guess you are working very hard.  I suppose his criticism was fair comment .
+ ; Anne told me I would almost certainly be hired .
+ ; I saw you put the key in your pocket .    I did not think he would do it , but he did .
+ ; I wonder how much you swim.  I hope he comes to the party tomorrow.
+ (defrule rule_for_ki
+ (declare (salience 10))
+ (kriyA-subject ?v_id ?sub)
+ (kriyA-subject ?v ?)
  (id-cat_coarse ?v_id verb)
- ?f1<-(id-word ?v_id ?)
+ ?f1<-(id-root ?v_id tell|guess|see|think|say|know|suppose|wonder)
  ?f0 <-(hindi_id_order $?pre ?v_id $?post)
+ (test (neq ?v_id ?v))
+ (not (hindi_id_order $?ids ?v_id));The Master said , if I did not go , how would you ever see ?
+ (not (kriyA-conjunction ?v ?)) ;Since I know English, he spoke to me.
+ (not (kriyA-conjunction ?v_id ?))
+ (not (kriyA-object  ?v_id ?));I saw him telling her about the party. 
  =>
-	(retract ?f0 ?f1)
-	(assert (hindi_id_order  $?pre ?v_id ki $?post))
-        (printout  ?*DBUG* "(Rule_Name-ids   Ce_rule_for_ki   (hindi_id_order  "(implode$ (create$ $?pre ?v_id ki $?post)) ")" crlf)
+        (retract ?f0 ?f1)
+        (assert (hindi_id_order  $?pre ?v_id ki $?post))
+	(assert (ki_asserted ?v_id))
+        (printout  ?*DBUG* "(Rule_Name-ids   rule_for_ki   (hindi_id_order  "(implode$ (create$ $?pre ?v_id ki $?post)) ")" crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (3-02-11)
+ ;The big question on everybody's mind is who killed OJ.
+ (defrule rule_for_ki_1
+ (kriyA-subject ?v_id ?sub)
+ (kriyA-subject ?v ?)
+ (id-root ?v_id be)
+ ?f1<-(id-root =(+ ?v_id 1) who)
+ ?f0 <-(hindi_id_order $?pre ?v_id $?post)
+ (test (neq ?v_id ?v))
+ (not (hindi_id_order $?ids ?v_id))
+ (not (ki_asserted ?v_id))
+ =>
+        (retract ?f0 ?f1) 
+        (assert (hindi_id_order  $?pre ?v_id ki $?post))
+        (printout  ?*DBUG* "(Rule_Name-ids   rule_for_ki_1   (hindi_id_order  "(implode$ (create$ $?pre ?v_id ki $?post)) ")" crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (3-02-11)
+ ;Guess who I saw at the party last night! 
+ (defrule rule_for_ki_2
+ (kriyA-subject ?v_id ?sub)
+ (AjFArWaka_kriyA ?id)
+ ?f1<-(id-root ?id guess )
+ ?f0 <-(hindi_id_order $?pre ?id $?post)
+ =>
+        (retract ?f0 ?f1)
+        (assert (hindi_id_order  $?pre ?id ki $?post))
+        (printout  ?*DBUG* "(Rule_Name-ids   rule_for_ki_2   (hindi_id_order  "(implode$ (create$ $?pre ?id ki $?post)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
  ;Added by sheetal(18-01-2010).
- (defrule Ce_rule_for_jisa_prakAra_se
- (link_name-lnode-rnode Ce ?way ?sub)
- ?f1<- (id-root ?way way)
+ ;Modified by Manju (1-02-11);replaced link names with relation
+ ; Do it the way you have always done it .
+ ; I really like the way you do your hair .
+ (defrule rule_for_jisa_prakAra_se
+ (kriyA-subject  ?kri ?sub)
+ (or (kriyA-kriyA_viSeRaNa  ?kri1  =(- ?sub 1))(kriyA-object ?kri1  =(- ?sub 1))(kriyA-object_2  ?kri1  ?way))
+ ?f1<- (id-root  =(- ?sub 1) way)
  ?f0 <-(hindi_id_order $?hin_order)
  (test (member$ ?sub $?hin_order))
  =>
@@ -638,80 +613,68 @@
          (bind ?sub_pos (member$ ?sub $?hin_order))
          (bind $?hin_order (insert$ $?hin_order ?sub_pos jisa_prakAra_se))
          (assert (hindi_id_order $?hin_order))
-        (printout  ?*DBUG* "(Rule_Name-ids    Ce_rule_for_jEse   (hindi_id_order  "(implode$ $?hin_order) ")" crlf)
+        (printout  ?*DBUG* "(Rule_Name-ids    rule_for_jisa_prakAra_se   (hindi_id_order  "(implode$ $?hin_order) ")" crlf)
  )
- ; Do it the way you have always done it .
- ; I really like the way you do your hair . 
-  ;------------------------------------------------------------------------------------------------------------------
+ ;------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju(1-12-2009).
  ;Whether we should go to the party is the important question .
  ;instead of variable_name used 1 bcoz of the sen: I wonder whether we should go .
- (defrule Cs_rule_for_yaha
- (link_name-lnode-rnode Cs 1 ?id)
- ?f1<-(id-word 1 whether)
+ (defrule rule_for_yaha
  (kriyA-conjunction ?kri 1)
+ ?f1<-(id-word 1 whether)
  ?f0 <-(hindi_id_order $?pre ?kri $?post)
  =>
 	(retract ?f0 ?f1)
         (assert (hindi_id_order  $?pre ?kri yaha $?post))
-        (printout  ?*DBUG* "(Rule_Name-ids   Cs_rule_for_yaha   (hindi_id_order  "(implode$ (create$ $?pre ?kri  yaha $?post)) ")" crlf)
- )
- ;------------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju(4-12-2009).
- ; The big question on everybody's mind is who killed OJ .
- ; If you know who did it , you should tell the teacher .
- (defrule BI_rule_for_ki
- (or (link_name-link_expansion   ?BI      B I $?) (link_name-link_expansion   ?BI  Q I * d))
- (link_name-lnode-rnode ?BI ?v_id ?id)
- (id-cat_coarse ?v_id verb)
- ?f1<-(id-word ?v_id ?)
- ?f0 <-(hindi_id_order $?pre ?v_id $?post)
- (not (hindi_id_order $?ids ?v_id)) ;Joan Smith is president of the company .
- =>
-        (retract ?f0 ?f1)
-        (assert (hindi_id_order  $?pre ?v_id ki $?post))
-        (printout  ?*DBUG* "(Rule_Name-ids   BI_rule_for_ki   (hindi_id_order  "(implode$ (create$ $?pre ?v_id ki $?post)) ")" crlf)
+        (printout  ?*DBUG* "(Rule_Name-ids   rule_for_yaha   (hindi_id_order  "(implode$ (create$ $?pre ?kri  yaha $?post)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju(09-12-2009). --- Suggested by Sheetal
  ; If you use that strategy , he will wipe you out . 
  ; If we heat iron it becomes red .
- ;If you were a middle-class American without a job , who would you vote for .
- (defrule CO_rule_for_wo
- (link_name-lnode-rnode CO*s ?pid ?id)
- (link_name-lnode-rnode Cs ?pid ?id1)   
- ?f1<-(id-word ?pid if|when)  ;Modified by Meena (28-10-10) 
+ (defrule rule_for_wo
+ (kriyA-conjunction  ?k ?pid)
+ (wall_conjunction  ?pid)
+ (kriyA-subject  ?kri1 ?id)
+ ?f1<-(id-word ?pid ?word&if|when|since)  ;Modified by Meena (28-10-10) 
  ?f0 <-(hindi_id_order $?pre ?id $?post)
+ (test (> ?kri1 ?k))
  =>
         (retract ?f0 ?f1)
-        (assert (hindi_id_order  $?pre wo ?id $?post))
-        (printout  ?*DBUG* "(Rule_Name-ids   CO_rule_for_wo   (hindi_id_order  "(implode$ (create$ $?pre wo ?id $?post)) ")" crlf)
+	(if (or (eq ?word if)(eq ?word when)) then
+	        (assert (hindi_id_order  $?pre wo ?id $?post))
+		(printout  ?*DBUG* "(Rule_Name-ids   rule_for_wo   (hindi_id_order  "(implode$ (create$ $?pre wo ?id $?post)) ")" crlf)
+	else
+		(assert (hindi_id_order  $?pre isaliye ?id $?post))
+        	(printout  ?*DBUG* "(Rule_Name-ids   rule_for_wo   (hindi_id_order  "(implode$ (create$ $?pre isaliye ?id $?post)) ")" crlf)
+	)
  )
  ;------------------------------------------------------------------------------------------------------------------
-;Since I know English , he spoke to me
- (defrule CO_rule_for_isaliye
- (link_name-lnode-rnode CO*s ?pid ?id)
- ?f1<-(id-word ?pid since) 
- ?f0 <-(hindi_id_order $?pre ?id $?post)
- =>
-        (retract ?f0 ?f1)
-        (assert (hindi_id_order  $?pre isaliye ?id $?post))
-        (printout  ?*DBUG* "(Rule_Name-ids   CO_rule_for_isaliye   (hindi_id_order  "(implode$ (create$ $?pre isaliye ?id $?post)) ")" crlf)
- )
-
- ;------------------------------------------------------------------------------------------------------------------
- ; Added by Shirisha Manju(23-03-10) --- (suggested by meenaji)
+ ; Added by Shirisha Manju(3-02-11)
  ;If you were a middle-class American without a job , who would you vote for .
- (defrule wo_rule
- (link_name-lnode-rnode B*w ?pid ?id)
- (kriyA-for_saMbanXI ?kri ?pid)
- (kriyA-subject ?kri ?sub)
- ?f1<-(id-word ?sub ?)
+ (defrule rule_for_wo_1
+ (kriyA-for_saMbanXI  ?kri ?who)
+ (kriyA-subject  ?kri ?sub)
+ ?f1<-(id-root ?who who)
  ?f0 <-(hindi_id_order $?pre ?sub $?post)
  =>
         (retract ?f0 ?f1)
         (assert (hindi_id_order  $?pre wo ?sub $?post))
         (printout  ?*DBUG* "(Rule_Name-ids   wo_rule   (hindi_id_order  "(implode$ (create$ $?pre wo ?sub $?post)) ")" crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------
+  ;I can not go out until my hair is dry.
+  ;"UNTIL" takes the form jaba_waka----na
+  (defrule insert_nahIM
+  ?f1<-(id-word ?id until)
+  (kriyA-conjunction  ?sub   ?id)
+  (kriyA-subject  ?kri  ?sub)
+  (id-HM-source   ?id   jaba_waka  ?)
+  ?f<-(hindi_id_order $?list ?id $?list1 ?kri)
+  =>
+  (retract ?f ?f1)
+  (assert (hindi_id_order  $?list ?id $?list1 nahIM ?kri))
+  (printout  ?*DBUG* "(Rule_Name-ids   insert_nahIM   (hindi_id_order  "(implode$ (create$ $?list  ?id $?list1 nahIM ?kri)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
  (defrule remove_ordered_ids

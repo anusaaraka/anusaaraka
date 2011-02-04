@@ -23,9 +23,9 @@
 (id-root =(- ?id 1) ask|decide|depend|discuss|know|tell|question|wonder)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id ki_kyA))
+(assert (id-wsd_root_mng ?id kyA)); Modified ki_kyA as kyA by manju Ex: I do not know if he came.
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  if.clp 	if1   "  ?id "  ki_kyA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  if.clp 	if1   "  ?id "  kyA )" crlf))
 )
 
 ;"if","Conj","1.yaxi"
