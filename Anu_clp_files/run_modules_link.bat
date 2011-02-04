@@ -164,7 +164,7 @@
  (run)
  (clear)
  ;----------------------------------------------------------------------
- ; mapping parser id back to original word id (e.g L1 -> 1)
+ ; mapping parser id back to original word id (e.g P1 -> 1)
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/parser_id_mapping.bclp"))
  (bload ?*path*)

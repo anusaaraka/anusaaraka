@@ -1631,9 +1631,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                 verified_ol  (532)             sd_verified  (336)
                 verified     (559)
 
-03-02-11
+04-02-11
 --------
- 1. In sd_relation_rules.clp, Three rules are added to handle relative clauses.
+ 1. In sd_relation_rules.clp, Four rules are added to handle relative clauses.
  2. Added newly "change-html-remove-title.pl" file for removing title name in the web interface.(for anusaaraka site purpose)
  3. In debugging folder:
          i) Removed "sd-relations_tmp.dat" in sentence_debug.sh as its repeated.
@@ -1660,8 +1660,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 16. Added two new rules in add_snt_mrkr.lex file for sentence pre-processing.
 17. Modified pada_openlogos.pl for handling forming of padas where punctuations are head.
 18. Updated sentence_debug.sh in bin
-19. Updated Log.
-20. Modified and updated sd_ver_out file.
-21. Updated folowing files:
+19. Modified "L1" as "P1" in  run_modules_ol.bat and run_modules_link.bat.
+20. Removed stanford-parser-2008-10-26 and stanford-parser-2010-08-20 versions.
+21. Updated "README" in anu_testing for punctuations.
+22. Updated Log.
+23. Modified and updated sd_ver_out file.
+24. Updated folowing files:
           sd_verified (388)
           verified_ol (534)
