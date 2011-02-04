@@ -703,6 +703,7 @@ for i in xrange(len(tran1)):
 
         elif tran1[i][0] == '13' and tran1[i-1][0] == '1' and tran1[i+1][0] == '1' and tran1[i][4] == 'of' and tran1[i-1][5] != 'SWITCH68' and tran1[i+1][5] != 'SWITCH68':
             rel_fp.write("(relation-parser_ids viSeRya-%s_saMbanXI P%s\tP%s)\n" % (tran1[i][4], sconId_resId[tran1[i-1][3]], sconId_resId[tran1[i+1][3]]))
+#            print "(111111111111ser_ids viSeRya-%s_saMbanXI P%s\tP%s)\n" % (tran1[i][4], sconId_resId[tran1[i-1][3]], sconId_resId[tran1[i+1][3]])
 #Ex. 
 	elif tran1[i][0] == '2' and tran1[i+1][0] == '3' and tran1[i+1][4] in lupwa_prep and tran1[i][5] != 'SWITCH68' and tran1[i+1][5] != 'SWITCH68':
 	    rel_fp.write("(relation-parser_ids kriyA-aXikaraNavAcI_avyaya  P%s\tP%s)\n" % (sconId_resId[tran1[i][3]], sconId_resId[tran1[i+1][3]]))
@@ -1018,7 +1019,7 @@ for i in xrange(len(tran3)):
 				break
 			if (tran3[i+k][4] == '1'):
 				if tran3[i+k][8] in prep_dict_word_semwrk.keys() and tran3[i][9] != 'SWITCH68' and int(word_id[prep_dict_word_semwrk[tran3[i+k][8]]]) > int(sconId_resId[tran3[i][7]]) and int(word_id[prep_dict_word_semwrk[tran3[i+k][8]]]) < int(sconId_resId[tran3[i+k][7]]) and prep_dict_word_semwrk[tran3[i+k][8]] != 'a':#ex. 4 > & < conditions: "Imagine that a magician waves his wand and changes a bowl of dirt into a bowl of leuttce." the last condition is added for the sentence: "A pool always needs to have its water circulated through a filter for several hours a day in order to keep it clean. and "The factory typically produces 500 chairs a week." 
-                			rel_fp.write("(relation-parser_ids kriyA-%s_saMbanXI  P%s\tP%s)\n" % (return_prep(word_id[prep_dict_word_semwrk[tran3[i+k][8]]]), sconId_resId[tran3[i][7]], sconId_resId[tran3[i+k][7]]))
+                			rel_fp.write("(relation-parser_ids kriyA-%s_saMbanXI  P%s\tP%s)\n" % (return_prep(prep_dict_id_semwrk[sconId_resId[tran3[i+k][7]]]), sconId_resId[tran3[i][7]], sconId_resId[tran3[i+k][7]]))
 #	               			print "(eeeeeeeeeeer-ids kriyA-%s_saMbanXI  P%s\tP%s)\n" % (return_prep(word_id[prep_dict_word_semwrk[tran3[i+k][8]]]), sconId_resId[tran3[i][7]], sconId_resId[tran3[i+k][7]])
 					got_prep_rel = prep_dict_word_semwrk.keys()
 				else:
@@ -1047,7 +1048,8 @@ for i in xrange(len(tran3)):
 		if tran3[i][7]==RES_SWRK_TAB[hr][0]:
 		    if RES_SWRK_TAB[hr][2]!='3' and RES_SWRK_TAB[hr][2]!='6' and tran3[i+1][9] != 'SWITCH68':
 			if tran3[i+1][8] in prep_dict_word_semwrk.keys():	
-                	    rel_fp.write("(relation-parser_ids viSeRya-%s_saMbanXI  P%s\tP%s)\n" % (prep_dict_word_semwrk[tran3[i+1][8]], sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]]))
+                            rel_fp.write("(relation-parser_ids viSeRya-%s_saMbanXI  P%s\tP%s)\n" % (return_prep(prep_dict_id_semwrk[sconId_resId[tran3[i+1][7]]]), sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]]))
+#                            print "(222222222222ser_ids viSeRya-%s_saMbanXI  P%s\tP%s)\n" % (return_prep(prep_dict_id_semwrk[sconId_resId[tran3[i+1][7]]]), sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]])
 #-----------------------------------------------------------------------------------------------------------------
 
 	elif (tran3[i][4] == '2' and tran3[i][6] == '28') and  (tran3[i-1][4] == '1') and got_kqxnwa_rel == '' and tran3[i][9] != 'SWITCH68' and tran3[i-1][9] != 'SWITCH68': # got_kqxnwa_rel = '' condition is to stop in "She rose from the table to welcome me."
@@ -1111,6 +1113,7 @@ for j in xrange(0, len(semwrk_prep)):
 	    for hr in xrange(len(RES_SWRK_TAB)):
 		if semwrk_prep[j][11]==RES_SWRK_TAB[hr][0] and id_word[RES_SWRK_TAB[hr][0]] in prep_lst:
 		    rel_fp.write("(relation-parser_ids viSeRya-%s_saMbanXI  P%s\tP%s)\n" % (RES_SWRK_TAB[hr][35], semwrk_prep[j][7], semwrk_prep[j][15]))
+#		    print "(3333333333arser_ids viSeRya-%s_saMbanXI  P%s\tP%s)\n" % (RES_SWRK_TAB[hr][35], semwrk_prep[j][7], semwrk_prep[j][15])
 
 #In the above relation computation, it would have been favourable to take the entire information from semwrks but we are not able to fetch the information from semwrks(for saMjFA-saMjFA_samAnAXikaraNa)
 #--------Get information of subject and object from Semwrk values---------------------------------------
