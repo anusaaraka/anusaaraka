@@ -95,8 +95,7 @@
  make
 
  echo "Compiling stanford parser files"
-# cd $HOME_anu_test/stanford-parser/stanford-parser-2008-10-26/
- cd $HOME_anu_test/stanford-parser/stanford-parser-2010-08-20/
+ cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/
  sh compile.sh
 
  echo "Creating binary files"
