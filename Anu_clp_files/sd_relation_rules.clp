@@ -946,8 +946,8 @@
 (defrule infmod 
 (rel_name-sids infmod  ?saMjFA ?kqxanwa)
  =>
-(printout       ?*fp*   "(relation-parser_ids     saMjFA-kqxanwa        "       ?saMjFA"    "?kqxanwa")"crlf)
-(printout       ?*dbug* "(Rule-Rel-ids  infmod   saMjFA-kqxanwa        "       ?saMjFA"    "?kqxanwa")"crlf)
+(printout       ?*fp*   "(relation-parser_ids     saMjFA-to_kqxanwa        "       ?saMjFA"    "?kqxanwa")"crlf)
+(printout       ?*dbug* "(Rule-Rel-ids  infmod   saMjFA-to_kqxanwa        "       ?saMjFA"    "?kqxanwa")"crlf)
 )
  ; Ex. But my efforts to win his heart have failed . 
  ;Added by Mahalaxmi.

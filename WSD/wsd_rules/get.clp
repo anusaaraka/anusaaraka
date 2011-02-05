@@ -7,7 +7,7 @@
 (id-root ?id get)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-object  ?id ?id1)
-(saMjFA-kqxanwa  ?id1 ?id2)
+(saMjFA-to_kqxanwa  ?id1 ?id2);renamed saMjFA-kqxanwa as saMjFA-to_kqxanwa by Manju (05-02-11)
 (to-infinitive  =(+ ?id1 1) ?id2)
 =>
 (retract ?mng)

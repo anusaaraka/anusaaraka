@@ -507,7 +507,7 @@
  (kriyA-along_saMbanXI)
  (saMjFA-saMjFA_samAnAikaraNa)
  (kriyA-kriyA_mUla)
- (saMjFA-kqxanwa)
+ (saMjFA-to_kqxanwa)
  (subject-vAkyasamAnAXikarNa)
  )
  ;--------------------------------------------------------------------------------------------------------------------

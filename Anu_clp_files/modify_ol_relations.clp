@@ -101,8 +101,8 @@
 (parser_id-cat_coarse ?kri verb)
 (relation-parser_ids  to-infinitive  ?to ?kri)
 =>
-(assert (relation-parser_ids  saMjFA-kqxanwa ?noun ?kri))
-(printout ?*debug* "(Rule-Rel-ids    saMjFA-kqxanwa_rel_rule    saMjFA-kqxanwa   "?noun"    "?kri")"crlf)
+(assert (relation-parser_ids  saMjFA-to_kqxanwa ?noun ?kri))
+(printout ?*debug* "(Rule-Rel-ids    saMjFA-kqxanwa_rel_rule    saMjFA-to_kqxanwa   "?noun"    "?kri")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -111,11 +111,11 @@
 (defrule delete_saMjFA-kqxanwa_rule
 (declare (salience 550))
 (relation-parser_ids  kriyA-kriyArWa_kriyA  ?kri ?id)
-?f<-(relation-parser_ids  saMjFA-kqxanwa  ?saM ?id)
+?f<-(relation-parser_ids  saMjFA-to_kqxanwa  ?saM ?id)
 =>
-(printout ?*debug* "(rule-deleted_relation-ids   delete_saMjFA-kqxanwa_rule  saMjFA-kqxanwa  "?saM"   " ?id")"crlf)
+(printout ?*debug* "(rule-deleted_relation-ids   delete_saMjFA-kqxanwa_rule  saMjFA-to_kqxanwa  "?saM"   " ?id")"crlf)
 (retract ?f)
-(assert (rel_has_been_deleted saMjFA-kqxanwa  ?saM ?id))
+(assert (rel_has_been_deleted saMjFA-to_kqxanwa  ?saM ?id))
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -720,14 +720,14 @@
 (assert (rel_has_been_deleted   kriyA-subject   ?P10 ?P3))
 (printout ?*debug* "(rule-deleted_relation-ids    add_saMjFA-kqxanwa_rule   kriyA-kqxanwa_karma    "?P4"   " ?P7")"crlf)
 (printout ?*debug* "(rule-deleted_relation-ids    add_saMjFA-kqxanwa_rule   kriyA-subject    "?P10"   " ?P3")"crlf)
-(assert (relation-parser_ids saMjFA-kqxanwa ?P5 ?P7))
-(assert (rel_has_been_written  saMjFA-kqxanwa  ?P5 ?P7))
-(printout       ?*ol_fp*    "(relation-parser_ids  saMjFA-kqxanwa  "?P5"    "?P7")"crlf)
-(assert (relation-parser_ids saMjFA-kqxanwa ?P8 ?P10))
-(assert (rel_has_been_written  saMjFA-kqxanwa  ?P8 ?P10))
-(printout       ?*ol_fp*    "(relation-parser_ids  saMjFA-kqxanwa  "?P8"    "?P10")"crlf)
-(printout ?*debug* "(Rule-Rel-ids   add_saMjFA-kqxanwa_rel   saMjFA-kqxanwa  "?P5"    "?P7")"crlf)
-(printout ?*debug* "(Rule-Rel-ids   add_saMjFA-kqxanwa_rel   saMjFA-kqxanwa  "?P8"    "?P10")"crlf)
+(assert (relation-parser_ids saMjFA-to_kqxanwa ?P5 ?P7))
+(assert (rel_has_been_written  saMjFA-to_kqxanwa  ?P5 ?P7))
+(printout       ?*ol_fp*    "(relation-parser_ids  saMjFA-to_kqxanwa  "?P5"    "?P7")"crlf)
+(assert (relation-parser_ids saMjFA-to_kqxanwa ?P8 ?P10))
+(assert (rel_has_been_written  saMjFA-to_kqxanwa  ?P8 ?P10))
+(printout       ?*ol_fp*    "(relation-parser_ids  saMjFA-to_kqxanwa  "?P8"    "?P10")"crlf)
+(printout ?*debug* "(Rule-Rel-ids   add_saMjFA-kqxanwa_rel   saMjFA-to_kqxanwa  "?P5"    "?P7")"crlf)
+(printout ?*debug* "(Rule-Rel-ids   add_saMjFA-kqxanwa_rel   saMjFA-to_kqxanwa  "?P8"    "?P10")"crlf)
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------

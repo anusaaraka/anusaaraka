@@ -440,7 +440,7 @@
  (kriyA-with_saMbanXI)
  (kriyA-along_saMbanXI)
  (kriyA-kriyA_mUla)
- (saMjFA-kqxanwa)
+ (saMjFA-to_kqxanwa)
  (subject-vAkyasamAnAXikarNa)
  )
  
@@ -668,10 +668,10 @@
   ;         "Added viSeRya-kqxanwa_viSeRaNa" in the list Ex:The 5 thousand people invited by Bob attended 
   ;         "Added kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka Ex:She works very carefully (24-01-11)
   ;         "Added saMjFA-saMjFA_samAnAXikaraNa  Ex :  Rama gave a book to Dasharat , the king of Ayodhya . (24-01-11)
-  ;         "Added saMjFA-kqxanwa                Ex :  Our program is easier to use than to understand. 24-01-11)
+  ;         "Added saMjFA-to_kqxanwa             Ex :  Our program is easier to use than to understand. 24-01-11)
   (defrule viSeRaNa_rule
   (declare (salience 340))
-  (relation-anu_ids viSeRya-RaRTI_viSeRaNa|kriyA_viSeRaNa-viSeRaka|viSeRya-kqxanwa_viSeRaNa|kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka|saMjFA-saMjFA_samAnAXikaraNa|saMjFA-kqxanwa ?RaRTI_id ?RaRTI_id1)
+  (relation-anu_ids viSeRya-RaRTI_viSeRaNa|kriyA_viSeRaNa-viSeRaka|viSeRya-kqxanwa_viSeRaNa|kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka|saMjFA-saMjFA_samAnAXikaraNa|saMjFA-to_kqxanwa ?RaRTI_id ?RaRTI_id1)
   (not (viSeRya-RaRTI_viSeRaNa  ?RaRTI_id ?RaRTI_id2&:(> ?RaRTI_id2 ?RaRTI_id1)))
   ?f0<-(list $?list)
   (test (member$ ?RaRTI_id $?list))

@@ -282,7 +282,7 @@
  ;-------------------------------------------------------------------------------------------------------------
  (defrule non_finite_kriyA_pada1
  (declare (salience 980))
- ?f0<-(relation-anu_ids saMjFA-kqxanwa ?id ?kri)
+ ?f0<-(relation-anu_ids saMjFA-to_kqxanwa ?id ?kri)
  (not (root-verbchunk-tam-chunkids ? ? ? $?ids ?kri))
  ?f1<-(pada_info (group_head_id ?kri)(group_ids  $?grp_ids)(group_cat ?gtype)(pada_head ?PH))
  ?f2<-(pada_info (group_head_id ?id)(group_ids  $?grp_ids1)(pada_head ?ph))
@@ -481,7 +481,7 @@
  (defrule non_finite_order1-2
  (declare (salience 961))
  ?f0<-(non_finte_verb_unordered_list ?kri $?grp_mems)
- ?f1<-(relation-anu_ids saMjFA-kqxanwa ?id1 ?kri)
+ ?f1<-(relation-anu_ids saMjFA-to_kqxanwa ?id1 ?kri)
  (test (and (member$ ?kri $?grp_mems)(member$ ?id1 $?grp_mems)))
  =>
  	(retract ?f0 ?f1)

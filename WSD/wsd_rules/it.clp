@@ -369,7 +369,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id It|it)
 (kriyA-dummy_subject  ?id1 ?id)
-(saMjFA-kqxanwa  ?id2 ?id3)
+(saMjFA-to_kqxanwa  ?id2 ?id3);renamed saMjFA-kqxanwa as saMjFA-to_kqxanwa by Manju (05-02-11)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id -))

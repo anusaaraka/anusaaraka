@@ -3356,8 +3356,8 @@ else
 (link_name-link_lnode-link_rnode I|If ?Trnode ?Irnode)
 (not (root-verbchunk-tam-parser_chunkids $? ?Tlnode $?)) ;The public seem to love him, no matter what he does. I managed to go. It  is Jane who wants to do it.
 =>
-(printout	?*fp*	"(relation-parser_ids	saMjFA-kqxanwa	"?Tlnode	"	"?Irnode")"	crlf)	
-(printout	?*rel_debug*	"(Rule-Rel-ids	saMjFA-kqxanwa_rule	saMjFA-kqxanwa	"?Tlnode	"	"?Irnode")"	crlf)	
+(printout	?*fp*	"(relation-parser_ids	saMjFA-to_kqxanwa	"?Tlnode	"	"?Irnode")"	crlf)	
+(printout	?*rel_debug*	"(Rule-Rel-ids	saMjFA-kqxanwa_rule	saMjFA-to_kqxanwa   "?Tlnode	"	"?Irnode")"	crlf)	
 )
 ;Ex He wasted his golden opportunity to play in the national team
 ;----------------------------------------------------------------------------------------------------------------
@@ -3366,8 +3366,8 @@ else
 (link_name-link_lnode-link_rnode TOi ?Tlnode ?Trnode)
 (link_name-link_lnode-link_rnode I|If ?Trnode ?Irnode)
 =>
-(printout	?*fp*	"(relation-parser_ids	saMjFA-kqxanwa	"?Tlnode	"	"?Irnode")"	crlf)	
-(printout	?*rel_debug*	"(Rule-Rel-ids	vi_Na-to_inf	saMjFA-kqxanwa	"?Tlnode	"	"?Irnode")"	crlf)	
+(printout	?*fp*	"(relation-parser_ids	saMjFA-to_kqxanwa	"?Tlnode	"	"?Irnode")"	crlf)	
+(printout	?*rel_debug*	"(Rule-Rel-ids	vi_Na-to_inf	saMjFA-to_kqxanwa	"?Tlnode	"	"?Irnode")"	crlf)	
 )
 ;Ex	It is fun   to try to beat the program.
 ;----------------------------------------------------------------------------------------------------------------

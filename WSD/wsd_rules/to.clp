@@ -548,7 +548,7 @@
 (declare (salience 2900))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
-(saMjFA-kqxanwa  ?id1 ?id2)    ;Sukhada may need to change this relation, here "impossible" is adjective and not saMjFA  ,then we will change the rule name also
+(saMjFA-to_kqxanwa  ?id1 ?id2)    ;Sukhada may need to change this relation, here "impossible" is adjective and not saMjFA  ,then we will change the rule name also . Renamed saMjFA-kqxanwa as saMjFA-to_kqxanwa by Manju (05-02-11)
 (subject-subject_samAnAXikaraNa  ?id3 ?id1)
 (to-infinitive  ?id ?rid)                       
 (id-cat_coarse ?rid verb)
@@ -575,7 +575,7 @@
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
 (not(id-root ?rid fix))
-(saMjFA-kqxanwa  ?lid ?rid)    ;Sukhada may need to change this relation, here "impossible" is adjective and not saMjFA  ,then we will change the rule name also
+(saMjFA-to_kqxanwa  ?lid ?rid)    ;Sukhada may need to change this relation, here "impossible" is adjective and not saMjFA  ,then we will change the rule name also. Renamed saMjFA-kqxanwa as saMjFA-to_kqxanwa by Manju (05-02-11)
 (subject-subject_samAnAXikaraNa  ?id1 ?lid)
 (kriyA-object  ?rid ?obj)
 (to-infinitive  ?id ?rid)
@@ -599,7 +599,7 @@
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
 (to-infinitive  ?id ?rid)
-(or(saMjFA-kqxanwa  ?id1 ?rid)(kriyA-kriyA_mUla ?id2  ?id1))
+(or(saMjFA-to_kqxanwa  ?id1 ?rid)(kriyA-kriyA_mUla ?id2 ?id1));Renamed saMjFA-kqxanwa as saMjFA-to_kqxanwa by Manju(05-02-11)
 (id-cat_coarse ?rid verb)
 =>
 (retract ?mng)
@@ -1421,7 +1421,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (to-infinitive  ?id ?rid)
 (id-root ?id1 failure)
-(saMjFA-kqxanwa  ?id1 ?rid)
+(saMjFA-to_kqxanwa  ?id1 ?rid);Renamed saMjFA-kqxanwa as saMjFA-to_kqxanwa by Manju (05-02-11)
 =>
 (retract ?mng)
 (assert (make_verbal_noun ?rid));added by sheetal

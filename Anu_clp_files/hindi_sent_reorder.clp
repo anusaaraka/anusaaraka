@@ -411,7 +411,7 @@
  (kriyA-along_saMbanXI)
  (saMjFA-saMjFA_samAnAikaraNa)
  (kriyA-kriyA_mUla)
- (saMjFA-kqxanwa)
+ (saMjFA-to_kqxanwa)
  (subject-vAkyasamAnAXikarNa)
  (hindi_id_order)
  (id-word)
@@ -428,7 +428,6 @@
  ?f1<-(id-word 1 did|do|does|may|can|could|would|will|are|is|was|were|am|shell|has|have|had|should)
  ?f0 <- (hindi_id_order  $?sent )
  (not (AjFArWaka_kriyA ?kri) )
-; (not (root-verbchunk-tam-chunkids ? ? ? $?ids 1 $?ids1));Do not waste electricity.	
  =>
         (retract ?f0 ?f1)
         (assert (hindi_id_order     kyA $?sent))
@@ -553,14 +552,16 @@
  (declare (salience 10))
  (kriyA-subject ?v_id ?sub)
  (kriyA-subject ?v ?)
- (id-cat_coarse ?v_id verb)
+; (id-cat_coarse ?v_id verb)
  ?f1<-(id-root ?v_id tell|guess|see|think|say|know|suppose|wonder)
  ?f0 <-(hindi_id_order $?pre ?v_id $?post)
- (test (neq ?v_id ?v))
+; (test (neq ?v_id ?v))
+ (test (< ?v_id ?v))
  (not (hindi_id_order $?ids ?v_id));The Master said , if I did not go , how would you ever see ?
- (not (kriyA-conjunction ?v ?)) ;Since I know English, he spoke to me.
+; (not (kriyA-conjunction ?v ?)) ;Since I know English, he spoke to me.
  (not (kriyA-conjunction ?v_id ?))
  (not (kriyA-object  ?v_id ?));I saw him telling her about the party. 
+ (not (kriyA-conjunction  ?v 10000));Do you think we should go to the party? 
  =>
         (retract ?f0 ?f1)
         (assert (hindi_id_order  $?pre ?v_id ki $?post))
@@ -633,12 +634,13 @@
  ; If you use that strategy , he will wipe you out . 
  ; If we heat iron it becomes red .
  (defrule rule_for_wo
- (kriyA-conjunction  ?k ?pid)
- (wall_conjunction  ?pid)
+; (kriyA-conjunction  ?k ?pid)
+ (kriyA-conjunction  ?k 1)
+; (wall_conjunction  ?pid)
  (kriyA-subject  ?kri1 ?id)
- ?f1<-(id-word ?pid ?word&if|when|since)  ;Modified by Meena (28-10-10) 
+ ?f1<-(id-word 1 ?word&if|when|since)  ;Modified by Meena (28-10-10) 
  ?f0 <-(hindi_id_order $?pre ?id $?post)
- (test (> ?kri1 ?k))
+ (test (and (> ?kri1 ?k) (neq ?id ?k)))
  =>
         (retract ?f0 ?f1)
 	(if (or (eq ?word if)(eq ?word when)) then
