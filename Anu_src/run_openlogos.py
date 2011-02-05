@@ -1034,7 +1034,7 @@ for i in xrange(len(tran3)):
 #-----------------------------------------------------------------------------------------------------------------
 
 	elif (tran3[i][4] == '2' and tran3[i][6] == '28') and  (tran3[i-1][4] == '1') and got_kqxnwa_rel == '' and tran3[i][9] != 'SWITCH68' and tran3[i-1][9] != 'SWITCH68': # got_kqxnwa_rel = '' condition is to stop in "She rose from the table to welcome me."
-                rel_fp.write("(relation-parser_ids saMjFA-kqxanwa   P%s\tP%s)\n" % (sconId_resId[tran3[i-1][7]], sconId_resId[tran3[i][7]]))
+                rel_fp.write("(relation-parser_ids saMjFA-to_kqxanwa   P%s\tP%s)\n" % (sconId_resId[tran3[i-1][7]], sconId_resId[tran3[i][7]]))
 #Ex.	A fat ugly boy had to eat too many FRUITS to LOSE his weight.
 
 	elif tran3[i][4] == '2' and tran3[i+1][4] == '1' and tran3[i+2][4] == '3' and tran3[i+2][8] in kAlavAcI and tran3[i][9] != 'SWITCH68':
@@ -1271,6 +1271,11 @@ for i in xrange(len(tran1)):
 	if tran1[i][0] == '3' and tran1[i][1] == '15' and tran1[i+1][0] == '1' and tran1[i][5] != 'SWITCH68' and tran1[i+1][5] != 'SWITCH68':
             rel_fp.write("(relation-parser_ids kriyA-kriyA_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran1[i+1][3]], sconId_resId[tran1[i][3]]))
 #Ex. He always bitches about Tanya.
+
+        if tran1[i-1][0] == '12' and tran1[i][0] == '3' and tran1[i][1] == '15' and tran1[i+1][0] == '2' and tran1[i][5] != 'SWITCH68' and tran1[i+1][5] != 'SWITCH68' and tran1[i-1][5] != 'SWITCH68':
+            rel_fp.write("(relation-parser_ids kriyA-kriyA_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran1[i+1][3]], sconId_resId[tran1[i][3]]))
+#            print "ser_ids kriyA-kriyA_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran1[i+1][3]], sconId_resId[tran1[i][3]])
+#Ex. Do it the way you have always done it.
 
 	if tran1[i][0] == '19' and (tran1[i][1] == '915' or tran1[i][1] == '849') and tran1[i+1][0] == '1' and tran1[i+1][1] !='795' and tran1[i+1][1] != '859' and tran1[i][5] != 'SWITCH68' and tran1[i+1][5] != 'SWITCH68':
             rel_fp.write("(relation-parser_ids subject-conjunction  P%s\tP%s)\n" % (sconId_resId[tran1[i+1][3]], sconId_resId[tran1[i][3]]))
