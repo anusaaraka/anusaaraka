@@ -3,6 +3,17 @@
 (defglobal ?*fp* = open-file)
 (defglobal ?*dbug* = debug_fp)
 
+ (open "word.dat" open-word "a")
+ (open "original_word.dat" open-orign "a")
+ (open "hindi_meanings_tmp.dat" hmng_fp "a")
+; (open "relations_tmp.dat" open-file "a")
+; (open "relations_debug.dat" debug_fp "a")
+
+ (defglobal ?*open-word* = open-word)
+ (defglobal ?*open-orign* = open-orign)
+ (defglobal ?*hmng_fp* = hmng_fp)
+
+
 (deffunction string_to_integer (?parser_id); [Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
  
@@ -781,6 +792,7 @@
 (defrule rcmod+dobj_2
 (rel_name-sids rcmod    ?vi   ?kri)
 (rel_name-sids  nsubj   ?kri  ?jo_s)
+(parserid-word ?jo_s who|which|when|whom|that);The man you saw is intelligent. 
 (not (rel_name-sids dobj     ?kri  ?))
 (test (> (string_to_integer ?kri) (string_to_integer ?jo_s)))
 =>
@@ -794,11 +806,6 @@
 (rel_name-sids rcmod    ?vi   ?kri)
 (rel_name-sids  nsubj   ?kri  ?s)
 (rel_name-sids  advmod   ?kri  ?jo_s)
-;(not (rel_name-sids dobj     ?kri  ?))
-;rel_name-sids  rcmod   P6  P9)
-;rel_name-sids  nsubj   P9  P8)
-;rel_name-sids  advmod   P9  P7)
-
 (test (> (string_to_integer ?kri) (string_to_integer ?jo_s)))
 =>
 (assert (got_viSeRya-jo_samAnAXikaraNa_relation ?vi)) 
@@ -807,6 +814,22 @@
 (printout       ?*dbug* "(Rule-Rel-ids  rcmod+dobj_3       viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
 )
  ;Ex. I will show you the house where I met your mother. 
+;------------------------------------------------------------------------------------------------------------------------
+(defrule insert-jo_samA
+(rel_name-sids  rcmod   ?vi  ?rv)
+(rel_name-sids  nsubj   ?rv  ?s)
+(parserid-word ?s ?word&~who&~which&~when&~whom&~that)
+(not (rel_name-sids  dobj   ?rv  ?))
+=>
+(printout       ?*fp*   "(relation-parser_ids   viSeRya-jo_samAnAXikaraNa       "?vi"   10000)"       crlf)
+(printout       ?*fp*   "(relation-parser_ids   kriyA-object    "?rv     "       10000)" crlf)
+(printout       ?*dbug*    "(Rule-Rel-ids  insert-jo_samA kriyA-object    "?rv"    10000)" crlf)
+(printout       ?*dbug*    "(Rule-Rel-ids  insert-jo_samA  viSeRya-jo_samAnAXikaraNa      "?vi"    10000)"crlf)
+(printout       ?*hmng_fp*      "(id-HM-source  10000   jo      Relative_clause)"       crlf)
+(printout       ?*open-word*    "(id-word 10000  who)"  crlf)
+(printout       ?*open-orign*   "(id-original_word 10000  who)"   crlf)
+)
+;Ex.  The dog I chased was black . The man you saw is intelligent. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule csubj
 (rel_name-sids csubj|csubjpass ?kriyA ?obj)
@@ -946,8 +969,8 @@
 (defrule infmod 
 (rel_name-sids infmod  ?saMjFA ?kqxanwa)
  =>
-(printout       ?*fp*   "(relation-parser_ids     saMjFA-to_kqxanwa        "       ?saMjFA"    "?kqxanwa")"crlf)
-(printout       ?*dbug* "(Rule-Rel-ids  infmod   saMjFA-to_kqxanwa        "       ?saMjFA"    "?kqxanwa")"crlf)
+(printout       ?*fp*   "(relation-parser_ids     saMjFA-kqxanwa        "       ?saMjFA"    "?kqxanwa")"crlf)
+(printout       ?*dbug* "(Rule-Rel-ids  infmod   saMjFA-kqxanwa        "       ?saMjFA"    "?kqxanwa")"crlf)
 )
  ; Ex. But my efforts to win his heart have failed . 
  ;Added by Mahalaxmi.

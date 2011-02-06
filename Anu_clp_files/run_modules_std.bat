@@ -124,6 +124,7 @@
  (load-facts "relations_tmp.dat")
  (load-facts "parser_pos_cat.dat")
  (load-facts "parserid_wordid_mapping.dat")
+ (load-facts "hindi_meanings_tmp.dat")
  (open "root.dat" root_fp "a")
  (open "preferred_morph.dat" pre_morph_fp "a")
  (open "lwg_info.dat" lwg_fp "a")
