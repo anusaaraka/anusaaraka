@@ -7,6 +7,6 @@
  (load-facts "punctuation_info.dat")
  (load-facts "pada_info.dat")
  (batch* "order_debug.clp")
-; (system "clear")
-; (run)
+ (system "clear")
+ (run)
 
