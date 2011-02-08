@@ -1676,7 +1676,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
           sd_verified (388)
           verified_ol (534)
 
- 07-02-11
+ 08-02-11
  ========
  1.  hindi_sent_reorder.clp
      Removed the following dummy facts
@@ -1739,4 +1739,6 @@ ii)In rel-onwards.bat and lwg-onwards.bat following changes are done:
  ol_pada_id_mapping:	Removed "pada_id_info.dat" save facts and opened as a file.
 
 iii)Modified run-lwg-onwards.sh, run-rel-onwards.sh, run-pada-onwards.sh accordingly with run_sentence_ol.sh
-11. Updated Log
+11. Updated samAsa-new.txt, default_meaning_frm_oldwsd.txt and changes_in_databases.
+12. Modified version no: of stanford parser in remove_out-files.sh.
+13. Updated Log.

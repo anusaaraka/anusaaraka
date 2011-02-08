@@ -21899,7 +21899,7 @@ natural impulse	nEsargika_manoyoga	nEsargika_manoyoga	noun	2	RM
 natural instinct	sahaja_pravqwwi	sahaja_pravqwwi	noun	2	RM
 natural language programs	rARtrIya_BARA_progrAma	rARtrIya_BARA_progrAma	noun	3	RM
 natural language query	prAkqwika_BARA_praSna	prAkqwika_BARA_praSna	noun	3	RM
-natural language	prAkqwa_anuBARaka	prAkqwa_anuBARaka	noun	2	RM
+natural language	prAkqwa_BARA	prAkqwa_BARA	noun	2	RM
 natural object	prAkqwika_vaswuez	prAkqwika_vaswuez	noun	2	RM
 natural order	prAkqwika_avABAvika_viXAna	prAkqwika_avABAvika_viXAna	noun	2	RM
 natural rate of growth	sahaja_saMvqxXi_xara	sahaja_saMvqxXi_xara	noun	2	RM
@@ -34339,3 +34339,4 @@ at the bottom of	ke_nicale_wala_para	ke_nicale_wala_para	preposition	4	RM
 a month short of a year	mAsa-Una-varRa	mAsa-Una-varRa	noun	6	RM
 In contrast to	ke_viparIwa_meM	ke_viparIwa_meM	preposition	3	RM
 most of the time	jZyAxAwara_samaya	jZyAxAwara_samaya	noun	4	RM
+natural language processing	prAkqwa_BARA_saMsAXana	prAkqwa_BARA_saMsAXana	noun	3	RM
