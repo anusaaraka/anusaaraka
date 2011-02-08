@@ -1687,10 +1687,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                  rules
      Renamed   : Ce_rule_for_jisa_prakAra_se  as rule_for_jisa_prakAra_se and modified accordingly
                  Cs_rule_for_yaha             as rule_for_yaha            and       "
-                 CO_rule_for_wo               as rule_for_wo              and       "
+                 CO_rule_for_wo               as wo_rule                  and       "
                  Ce_rule_for_ki               as rule_for_ki              and       "
                  let_me                       as let_rule                 and       "
-     Added     : yes-no_question, rule_for_wo_1, rule_for_ki_2 , rule_for_ki_1 and insert_nahIM rules
+     Added     : yes-no_question, rule_for_ki_2 , rule_for_ki_1 and insert_nahIM rules
  2. WSD : Modified :
                       if.clp   whether.clp   it.clp   get.clp   and   to.clp
  3. Removed ol_hindi_sent_reorder.clp and sd_hindi_sent_reorder.clp files and used hindi_sent_reorder.clp
@@ -1741,4 +1741,5 @@ ii)In rel-onwards.bat and lwg-onwards.bat following changes are done:
 iii)Modified run-lwg-onwards.sh, run-rel-onwards.sh, run-pada-onwards.sh accordingly with run_sentence_ol.sh
 11. Updated samAsa-new.txt, default_meaning_frm_oldwsd.txt and changes_in_databases.
 12. Modified version no: of stanford parser in remove_out-files.sh.
-13. Updated Log.
+13. Added "rm_repeated_ki" rule in hindi_sentence.clp
+14. Updated Log.
