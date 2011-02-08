@@ -168,9 +168,19 @@
 	)
  )
  ;---------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (07-02-11) 
+ ; to deleted repeated ki in hindi sentence Ex: He thought that she may have missed the train.
+ (defrule rm_repeated_ki
+ (declare (salience 700))
+ ?f0<-(hindi_id_order $?var ki ki $?var1)
+ =>
+	(retract ?f0)
+	(assert (hindi_id_order $?var ki $?var1))
+ )
+ ;---------------------------------------------------------------------------------------------------------
  ;Modified by Shirisha Manju to get punctuation (01-12-10)
  (defrule match_exp
- (declare (salience 700))
+ (declare (salience 690))
  (id-last_word ?id ?wrd)
  (id-right_punctuation   ?id  ?rp)
  (hindi_id_order $?var)

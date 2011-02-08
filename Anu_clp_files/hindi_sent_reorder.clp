@@ -431,7 +431,7 @@
  =>
         (retract ?f0 ?f1)
         (assert (hindi_id_order     kyA $?sent))
-	(printout ?*DBUG* "(Rule_Name-ids  yes-no_question   kyA " $?sent)
+	(printout ?*DBUG* "(Rule_Name-ids  yes-no_question   kyA " $?sent crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
  ; What colour is your shirt?
@@ -552,13 +552,10 @@
  (declare (salience 10))
  (kriyA-subject ?v_id ?sub)
  (kriyA-subject ?v ?)
-; (id-cat_coarse ?v_id verb)
- ?f1<-(id-root ?v_id tell|guess|see|think|say|know|suppose|wonder)
+ ?f1<-(id-root ?v_id tell|guess|see|think|say|know|suppose|wonder|hope)
  ?f0 <-(hindi_id_order $?pre ?v_id $?post)
-; (test (neq ?v_id ?v))
  (test (< ?v_id ?v))
  (not (hindi_id_order $?ids ?v_id));The Master said , if I did not go , how would you ever see ?
-; (not (kriyA-conjunction ?v ?)) ;Since I know English, he spoke to me.
  (not (kriyA-conjunction ?v_id ?))
  (not (kriyA-object  ?v_id ?));I saw him telling her about the party. 
  (not (kriyA-conjunction  ?v 10000));Do you think we should go to the party? 
@@ -583,6 +580,7 @@
  =>
         (retract ?f0 ?f1) 
         (assert (hindi_id_order  $?pre ?v_id ki $?post))
+	(assert (ki_asserted ?v_id))
         (printout  ?*DBUG* "(Rule_Name-ids   rule_for_ki_1   (hindi_id_order  "(implode$ (create$ $?pre ?v_id ki $?post)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
@@ -597,6 +595,23 @@
         (retract ?f0 ?f1)
         (assert (hindi_id_order  $?pre ?id ki $?post))
         (printout  ?*DBUG* "(Rule_Name-ids   rule_for_ki_2   (hindi_id_order  "(implode$ (create$ $?pre ?id ki $?post)) ")" crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------
+ ;Anne told me I would almost certainly be hired.
+ (defrule rule_for_ki_3
+ (kriyA-subject ?v_id ?sub)
+ (kriyA-subject ?v ?)
+ (id-root ?v_id tell)
+ (kriyA-object  ?v_id ?obj)
+ ?f1<-(id-root ?obj ?)
+ (not (ki_asserted ?v_id))
+ (not (hindi_id_order $?ids ?v_id))
+ ?f0 <-(hindi_id_order $?pre ?v_id $?post)
+ (test (< ?v_id ?v))
+ =>
+   	(retract ?f0 ?f1)
+   	(assert (hindi_id_order  $?pre ?v_id ki $?post))
+   	(printout  ?*DBUG* "(Rule_Name-ids   rule_for_ki_3   (hindi_id_order  "(implode$ (create$ $?pre ?v_id ki $?post)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
  ;Added by sheetal(18-01-2010).
@@ -633,10 +648,9 @@
  ; Added by Shirisha Manju(09-12-2009). --- Suggested by Sheetal
  ; If you use that strategy , he will wipe you out . 
  ; If we heat iron it becomes red .
- (defrule rule_for_wo
-; (kriyA-conjunction  ?k ?pid)
+ ;If you were a middle-class American without a job , who would you vote for .
+ (defrule wo_rule
  (kriyA-conjunction  ?k 1)
-; (wall_conjunction  ?pid)
  (kriyA-subject  ?kri1 ?id)
  ?f1<-(id-word 1 ?word&if|when|since)  ;Modified by Meena (28-10-10) 
  ?f0 <-(hindi_id_order $?pre ?id $?post)
@@ -644,25 +658,12 @@
  =>
         (retract ?f0 ?f1)
 	(if (or (eq ?word if)(eq ?word when)) then
-	        (assert (hindi_id_order  $?pre wo ?id $?post))
-		(printout  ?*DBUG* "(Rule_Name-ids   rule_for_wo   (hindi_id_order  "(implode$ (create$ $?pre wo ?id $?post)) ")" crlf)
+	    (assert (hindi_id_order  $?pre wo ?id $?post))
+	    (printout ?*DBUG* "(Rule_Name-ids   wo_rule   (hindi_id_order  "(implode$ (create$ $?pre wo ?id $?post))")" crlf)
 	else
-		(assert (hindi_id_order  $?pre isaliye ?id $?post))
-        	(printout  ?*DBUG* "(Rule_Name-ids   rule_for_wo   (hindi_id_order  "(implode$ (create$ $?pre isaliye ?id $?post)) ")" crlf)
+	    (assert (hindi_id_order  $?pre isaliye ?id $?post))
+            (printout ?*DBUG* "(Rule_Name-ids   wo_rule   (hindi_id_order  "(implode$ (create$ $?pre isaliye ?id $?post)) ")" crlf)
 	)
- )
- ;------------------------------------------------------------------------------------------------------------------
- ; Added by Shirisha Manju(3-02-11)
- ;If you were a middle-class American without a job , who would you vote for .
- (defrule rule_for_wo_1
- (kriyA-for_saMbanXI  ?kri ?who)
- (kriyA-subject  ?kri ?sub)
- ?f1<-(id-root ?who who)
- ?f0 <-(hindi_id_order $?pre ?sub $?post)
- =>
-        (retract ?f0 ?f1)
-        (assert (hindi_id_order  $?pre wo ?sub $?post))
-        (printout  ?*DBUG* "(Rule_Name-ids   wo_rule   (hindi_id_order  "(implode$ (create$ $?pre wo ?sub $?post)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
   ;I can not go out until my hair is dry.
