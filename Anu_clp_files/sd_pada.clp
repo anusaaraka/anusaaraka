@@ -198,7 +198,7 @@
  ?f1<-(pada_info (group_head_id ?prep_saM)(preposition ?prep))
  (test (neq (str-index "-" ?rel)  FALSE))
  (test (neq (str-index "_" ?rel)  FALSE))
- (test (eq (sub-string (- (length ?rel) 7) 1000 ?rel) "saMbanXI"));relation last part should be saMbanXI else we get kriyA-dummy_subject ,viSeRyA-RaRTI_viSeRanA etc also.
+ (test (eq (sub-string (- (length ?rel) 7) 1000 ?rel) "saMbanXI"));relation last part should be saMbanXI else we get kriyA-dummy_subject ,viSeRya-RaRTI_viSeRaNa etc also.
  (not (has_been_decided ?prep_saM))
  =>
 	(bind ?len (length ?*p_list*))

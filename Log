@@ -1695,8 +1695,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                       if.clp   whether.clp   it.clp   get.clp   due.clp  and   to.clp
  3. Removed ol_hindi_sent_reorder.clp and sd_hindi_sent_reorder.clp files and used hindi_sent_reorder.clp
  4. Modified run_modules_ol.bat  and run_modules_std.bat accordingly
- 5. Modified run_modules_link.bat to remove load-facts "link_name_expand.dat", "link_relation_info.dat" in 
-    hindi_sent_reorder.clp
+ 5. Modified run_modules_link.bat to remove load-facts "link_name_expand.dat" , "link_relation_info.dat" in                      hindi_sent_reorder.clp
  6. Modified AjFArWaka_kri rule in sd_relation_rules.clp
  7. Modified create_binary_files.clp to remove ol_hindi_sent_reorder.clp
  8. Renamed "saMjFA-kqxanwa" as "saMjFA-to_kqxanwa" in the following files
@@ -1709,22 +1708,16 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
          WSD module:	Removed: load-facts "meaning_has_been_decided.dat", 
 		        Added:   load-facts "sent_type.dat"
         sd_pada.clp:    Removed: completely
-
     hindi_tam_rules:	Removed: load-facts "link_word_cat.dat", "link_relation_info.dat"
-
         tam_meaning:    Removed: load-facts "relations.dat"
-
       hindi_meaning:	Removed: load-facts "idiomatic_expr.dat"
-
 	Number info:	Renamed 'number.clp' as 'ol_number.clp'
                         Removed: load-facts "pada_id_info.dat", "revised_preferred_morph.dat", "original_word.dat",                                                      "link_name_expand.dat", "link_relation_info.dat", "vachan_to_be_decided.dat"
                         Added:   load-facts "morph.dat", "number_tmp.dat" and opened "number.dat" file instead of saving it                                   has facts.
  pada_point_concept:	Removed: load-facts "link_relation_info.dat","original_word.dat"
                         Added:   "pada_point_debug.dat" 
                         Replaced 'using-parser-ids' fact as 'relation-anu_ids'
-
      hindi_position:    Added:   "hin_pos_debug.dat"
-
  hindi_sent_reorder:    Renamed 'ol_hindi_sent_reorder.clp' as 'hindi_sent_reorder.clp'
                         Removed: load-facts "link_name_expand.dat", "link_relation_info.dat","sent_type.dat"
                         Added:   load-facts "lwg_info.dat"
@@ -1732,7 +1725,6 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 
  b)In rel-onwards.bat and lwg-onwards.bat following changes are done:
      modify_ol_pada:	Loaded it has 'bclp' instead of 'clp'
-                        
  ol_pada_id_mapping:	Removed "pada_id_info.dat" save facts and opened as a file.
 
  c) Modified run-lwg-onwards.sh, run-rel-onwards.sh, run-pada-onwards.sh accordingly with run_sentence_ol.sh
@@ -1744,4 +1736,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
              Renamed "add_prep" has "add_single_prep".
              Added two new rules "getting_ids-complex_prep" and "add_complex_prep" to handle complex prepositions.
              Modified "add_single_prep" rule and default rule accordingly to handle complex prepositions and single preps.
-16. Updated Log.
+16. Removed dummy_facts "kriyA-before_sambanXa", "kriyA-in_sambanXa" in following files:
+            hindi_position.clp		agreement.clp    		GNP_agreement.clp 
+ 	    hindi_meaning.clp 		hindi_sent_reorder.clp 		pada_ids.clp 
+ 	    prepare_apertium_input.clp 	vibakthi.clp
+17. Updated Log.
