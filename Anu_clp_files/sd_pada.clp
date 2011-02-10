@@ -3,6 +3,7 @@
  (defglobal ?*pada_cntrl_file* = pada_cntrl_fp)
  (defglobal ?*dbug* = pada_debug_fp)
  (defglobal ?*errfp* = err_file)
+ (defglobal ?*p_list* = (create$ ))
 
  (defrule end
  (declare (salience -100))
@@ -149,7 +150,7 @@
  )
  ;---------------------------------------------------------------------------------------------------------------------
  ;Modified by Roja(26-01-11)
- (defrule add_prep
+ (defrule add_single_prep
  (declare (salience 1300))
  (relation-anu_ids   ?rel  ?x ?prep_saM)
  ?f1<-(pada_info (group_head_id ?prep_saM)(preposition 0))
@@ -158,14 +159,65 @@
  (test (or (eq (sub-string 1 5 ?rel) "kriyA") (eq (sub-string 1 7 ?rel) "viSeRya")))
  (id-word ?prep_id ?w)
  (test (eq (string-to-field (sub-string (+ (str-index "-" ?rel) 1) (- (str-index "_" ?rel) 1) ?rel)) ?w))
+ (test (eq (sub-string (+ (str-index  (str-cat ?w "_") ?rel) (length ?w)) 1000 ?rel) "_saMbanXI")) ;to take only single prep  relation. Ex: kriyA-from_saMbanXI
  ?f<-(to_be_included_in_paxa ?prep_id)
  =>
  (retract ?f)
  (modify ?f1 (preposition  ?prep_id))
+ (assert (has_been_decided ?prep_id))
+ (assert (has_been_decided ?prep_saM))
 )
  ;Ex. Mohan fell from the top of the house. 
  ;---------------------------------------------------------------------------------------------------------------------
+ (defrule getting_ids-complex_prep
+ (declare (salience -10))
+ (relation-anu_ids   ?rel  ?x ?prep_saM)   
+ (test (neq (str-index "-" ?rel)  FALSE))
+ (test (neq (str-index "_" ?rel)  FALSE))
+ (test (or (eq (sub-string 1 5 ?rel) "kriyA") (eq (sub-string 1 7 ?rel) "viSeRya")))
+ (test (eq (sub-string (- (length ?rel) 7) 1000 ?rel) "saMbanXI"))
+ (not (has_been_decided ?prep_saM))  
+ ?f<-(id-word ?id ?word)   
+ (not (has_been_decided ?id)) 
+ ?f1<-(pada_info (group_head_id ?id)(preposition 0)) ;retracting pada which has prep has head. 
+ (test (neq (str-index (str-cat ?word "_") ?rel) FALSE))
+ =>	
+
+			(retract ?f ?f1)
+                        (bind ?*p_list* (create$ ?*p_list* ?id )) ;Getting ids of complex prep Ex: kriyA-along_with_saMbanXI
+                        (bind ?*p_list* (sort > ?*p_list*)) 
+                        (printout t ?*p_list*)
+
+ )
+ ;It is true that you are my friend but I can not go ALONG WITH you on this issue. 
+ ;The people of Orissa are facing grave adversities DUE TO the cyclone. 
+ ;---------------------------------------------------------------------------------------------------------------------
+ (defrule  add_complex_prep
+ (declare (salience -11))
+ (relation-anu_ids   ?rel  ?x ?prep_saM)
+ ?f1<-(pada_info (group_head_id ?prep_saM)(preposition ?prep))
+ (test (neq (str-index "-" ?rel)  FALSE))
+ (test (neq (str-index "_" ?rel)  FALSE))
+ (test (eq (sub-string (- (length ?rel) 7) 1000 ?rel) "saMbanXI"));relation last part should be saMbanXI else we get kriyA-dummy_subject ,viSeRyA-RaRTI_viSeRanA etc also.
+ (not (has_been_decided ?prep_saM))
+ =>
+	(bind ?len (length ?*p_list*))
+           (bind ?pl (str-cat (nth$ 1 ?*p_list*)"_"))
+	   (loop-for-count (?i 2 ?len) do
+                 (if (< ?i ?len) then 
+	  	    (bind ?pl (str-cat ?pl (nth$ ?i ?*p_list* )"_"))
+	          else
+                    (bind ?pl (str-cat ?pl (nth$ ?i ?*p_list* )))
+		 )
+           )
+	   (modify ?f1  (preposition  (string-to-field ?pl)))
+           (assert (has_been_decided ?prep_saM))
+ )
+ ;It is true that you are my friend but I can not go ALONG WITH you on this issue. 
+ ;The people of Orissa are facing grave adversities DUE TO the cyclone. 
+ ;---------------------------------------------------------------------------------------------------------------------
  (defrule default_pada
+ (declare (salience 11))
  ?f<-(to_be_included_in_paxa ?PP)
   =>
  (retract ?f)

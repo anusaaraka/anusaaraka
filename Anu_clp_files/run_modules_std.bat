@@ -324,6 +324,8 @@
  (load-facts "compound_phrase.dat")
  (load-facts "original_word.dat")
  (load-facts "revised_root.dat")
+ (assert (index 1))
+ (assert (hin_mng_list))
  (run)
  (save-facts "vibakthi_info.dat" local pada_info)
  (clear)

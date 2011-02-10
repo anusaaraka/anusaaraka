@@ -7,8 +7,7 @@
 (id-root ?id due)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 to)
-(viSeRya-to_saMbanXI  ?id ?)
-;(idiom_type_1  ?id ?id1)
+(or(viSeRya-to_saMbanXI ?id ?)(kriyA-due_to_saMbanXI ?id2 ?));added kriyA-due_to_saMbanXI for stanford purpose Roja(09-02-11)
 =>
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 ke_kAraNa))
