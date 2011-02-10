@@ -1741,3 +1741,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  	    hindi_meaning.clp 		hindi_sent_reorder.clp 		pada_ids.clp 
  	    prepare_apertium_input.clp 	vibakthi.clp
 17. Updated Log.
+
+11-02-11
+---------
+ 1. Updated small_sent_ver_output and verified_output
+ 2. Updated following files:
+           verified (595)  small_sent_verified(118)
+ 3. Updated Log.
+  
