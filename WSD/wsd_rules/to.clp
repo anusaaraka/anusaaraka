@@ -614,6 +614,37 @@
 )
 
 
+
+;;Added by Meena(8.2.11)
+;;Experienced programmers can quickly learn enough Python using this book to get immersed in natural language processing.
+;(defrule to023
+;(declare (salience 2800))
+;(id-root ?id to)
+;?mng <-(meaning_to_be_decided ?id)
+;(to-infinitive  ?id ?rid)
+;(id-root ?rid get)
+;(id-root =(+ ?id 2) ?)
+;;(or(saMjFA-to_kqxanwa  ?id1 ?rid)(kriyA-kriyA_mUla ?id2 ?id1));Renamed saMjFA-kqxanwa as saMjFA-to_kqxanwa by Manju(05-02-11)
+;;(id-cat_coarse ?rid verb)
+;=>
+;(retract ?mng)
+;(assert (make_verbal_noun =(+ ?id 2)))
+;(assert (id-wsd_word_mng ?id -))
+;(assert (id-H_vib_mng =(+ ?id 2) ke_liye))
+;(if ?*debug_flag* then
+;(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp         to023   " (+ ?id 2) " )" crlf)
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp       to023   "  ?id "  -)" crlf)
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to023  "  (+ ?id 2) "  ke_liye )" crlf)
+;)
+;)
+
+
+
+
+
+
+
+
 ;I sleep to take rest.
 ;previous_word=enough && previous_minus_two_category=adjective && following_category=verb	{tam:ne_ke_liye}	0
 ;He is strong enough to lift this.
@@ -1310,7 +1341,7 @@
 
 
 
-
+;Modified by Meena(11.2.11); added "cinema" in the list.
 ;Modified by Meena(25.5.10); added store in the list.
 ;Modified by Meena(3.5.10); added market in the list. 
 ;Modified by Meena(29.4.10)
@@ -1320,7 +1351,7 @@
 (declare (salience 1100))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
-(id-root ?id2 store|market|school|hospital|station|home|movie|market|bazar|Bombay|Delhi|Paris)  ;make a data base for places and PropN(place names)
+(id-root ?id2 store|market|school|hospital|station|home|movie|market|bazar|Bombay|Delhi|Paris|cinema)  ;make a data base for places and PropN(place names)
 ;(id-root ?id1 go)
 (kriyA-to_saMbanXI  ?id1 ?id2)
 =>

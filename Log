@@ -1744,8 +1744,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 
 11-02-11
 ---------
- 1. Updated small_sent_ver_output and verified_output
- 2. Updated following files:
-           verified (595)  small_sent_verified(118)
- 3. Updated Log.
-  
+ 1. In WSD:
+            Modified to.clp
+ 2. Modified and Updated small_sent_ver_output, verified_output, verified_output_ol, small_sent_ver_output_ol.
+ 3. Updated following files:
+           verified_ol(541)  small_sent_verified_ol(106)
+           verified   (592)  small_sent_verified   (118)
+ 4. Updated Log.
