@@ -44,7 +44,15 @@
  echo "Creating AllTam.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/AllTam.gdbm < AllTam.txt
  echo "Creating month_day.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/month_day.gdbm  <month_day.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/month_day.gdbm  < month_day.txt
+ echo "Creating place.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/place.gdbm  < place.gdbm
+ echo "Creating time.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/time.gdbm  < time.txt
+ echo "Creating eng-animate-list.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/eng-animate-list.gdbm  < eng-animate-list.txt
+ echo "Creating transitive-verb-list.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/transitive-verb-list.gdbm  < transitive-verb-list.txt
 
  cd vb_root
  echo "Creating ol_vb_root.gdbm"

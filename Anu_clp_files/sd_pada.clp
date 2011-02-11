@@ -67,6 +67,15 @@
  (print_in_ctrl_fact_files ?inf)
  )
  ;---------------------------------------------------------------------------------------------------------------------
+ (defrule asserted_who
+ (relation-anu_ids  viSeRya-jo_samAnAXikaraNa ?vi 10000)
+ =>
+ (assert (pada_info (group_head_id 10000)(group_cat PP)(group_ids 10000)))
+ (printout       ?*dbug* "(Rule_name-pada_head_id-pada_type-ids  asserted_who    P"10000 "       PP      "10000  ")"crlf)
+ (print_in_ctrl_fact_files 10000)
+ )
+ ;The girl you met yesterday is here.  The dog I chased was black.  The man you saw is intelligent.
+ ;---------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju
  (defrule conj_pada_and_or
  (declare (salience 1001))

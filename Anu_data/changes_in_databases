@@ -250,9 +250,24 @@ changes in samAsa-new.txt
                daughter        1
                uncle   1
                aunt    1
+               son     1    (Added by Roja 11-02-11 suggested by Sukhada)
+	       daughter 1   (            "                              )
+	       boy     1    (            "                              )
+               girl    1    (            "                              )
+               dog     1    (            "                              )
+               man     1    (            "                              )
 
  Changes in apertium_hn.dix
  ==========================
  Added  :
 	<e lm="uMgalI"><i>uMgal</i><par n="ladak/I__n"/></e>   (Added by Meenaji (12.1.11))
 	<e lm="giranA"><i>giran</i><par n="ladak/A__n"/></e>   (Suggested by Meenaji (13.1.11))
+
+ Added new files:
+ ===============
+ 1.ol_parser_unused_words.txt (Added by Roja 06-11-10 suggested by Chaitanya sir)
+ 2.month_day.txt (Added by Roja 20-11-10 suggested by Meena ji)
+ 3.place.txt (Added by Roja 11-02-11. suggested by Sukhada)
+ 4.time.txt  (                   "                        )
+ 5.transitive-verb-list.txt(     "                        )
+ 6.eng-animate-list.txt    (     "                        )

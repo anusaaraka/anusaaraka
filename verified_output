@@ -1552,7 +1552,7 @@ yaha spaRta hE Rod ko kisane mArA.
 Hindi meaning using Link parser 3.9
 (Found maximum of 8 linkages )
 If John was with Lisa last night, who went to the movie with Diane. 
-yaxi jOYna piCalI rAwa Lisa ke sAWa WA Diane ke sAWa calaciwra wo kOna gayA.
+yaxi jOYna piCalI rAwa Lisa ke sAWa WA Diane ke sAWa calaciwra kOna gayA.
 
 Hindi meaning using Link parser 3.10
 (Found maximum of 2 linkages )
@@ -1637,7 +1637,7 @@ mEM ASA karawA hUz ki vaha kala pArtI ko AyegA/AegA.
 Hindi meaning using Link parser 3.26
 (Found maximum of 6 linkages )
 I told Margaret on Tuesday that I thought she would probably be hired. 
-mEMne maMgalavAra ko Margaret ko bawAyA ki mEMne socA usako/use saMBavawaH kAma xiyA jAegA.
+mEMne maMgalavAra ko Margaret ko bawAyA ki mEMne socA ki usako/use saMBavawaH kAma xiyA jAegA.
 
 Hindi meaning using Link parser 3.27
 (Found maximum of 2 linkages )
@@ -2176,7 +2176,7 @@ vixyAlaya eka sAWa sirPa 50 vixyArWiyoM ko svIkAra karawA hE.
 Hindi meaning using Link parser 4.34
 (Found maximum of 1 linkages )
 When Mrs. Chitnis discovered that her husband was an adulterer she divorced him. 
-jaba SrImawI Chitnis ko pawA lagA ki vaha wo pawi eka vyaBicArI WA usane usako/use walAka xiyA.
+jaba SrImawI Chitnis ko pawA lagA ki usakA pawi eka vyaBicArI WA wo usane usako/use walAka xiyA.
 
 Hindi meaning using Link parser 4.35
 (Found maximum of 3 linkages )
@@ -2345,7 +2345,7 @@ usakI kadI mehanawa Ora prawiBA_SAlI vyakwiwva sarvocca sWAna para usako/use le 
 Hindi meaning using Link parser 4.68
 (Found maximum of 2 linkages )
 If you know who did it, you should tell the teacher. 
-yaxi Apa jAnawe hEM yaha wo kisane kiyA Apako SikRaka ko bawAnA cAhiye.
+yaxi Apa jAnawe hEM ki yaha kisane kiyA wo Apako SikRaka ko bawAnA cAhiye.
 
 Hindi meaning using Link parser 4.69
 (Found maximum of 12 linkages )
@@ -2494,7 +2494,7 @@ vqxXa puruRa ko basa pakadane ke liye eka laMbA paWa calanA/calane padA.
 
 Hindi meaning using Stanford parser 4.98
 The Master said, if I did not go, how would you ever see? 
-Master ne kahA ki yaxi mEM nahIM gayA WA Apa kaBI BI kEse xeKeMge?
+Master ne kahA ki yaxi mEM nahIM gayA WA wo Apa kaBI BI kEse xeKeMge?
 
 Hindi meaning using Link parser 4.99
 (Found maximum of 1 linkages )
@@ -2809,171 +2809,156 @@ Take off the football from the table.
 meja se PutabOYla le jAiye.
 
 Hindi meaning using Link parser 5.62
-(Found maximum of 18 linkages )
-It is good to eat less food these days. 
-ina_xinoM kama AhAra KAne ke liye acCA hE.
-
-Hindi meaning using Link parser 5.63
-(Found maximum of 6 linkages )
-Everyone should enjoy each and every activity that he does. 
-prawyeka vyakwi ko prawyeka prawyeka kriyA kalApa kA Ananxa uTAnA cAhiye jise/jisako vaha karawA hE.
-
-Hindi meaning using Link parser 5.64
-(Found maximum of 6 linkages )
-There are millions of stars in the sky, but we can not see all of them. 
-AsamAna meM wArI xasa_lAKa hEM paranwu hama ve saba ko nahIM_xeKa sakawe hEM.
-
-Hindi meaning using Link parser 5.65
 (Found maximum of 9 linkages )
 The purpose of this note is to give simple sentences for translation. 
 isa tippaNI kA uxxeSya anuvAxa ke liye sarala vAkya xenA hE.
 
-Hindi meaning using Link parser 5.66
+Hindi meaning using Link parser 5.63
 (Found maximum of 2 linkages )
 Suman and Sarika live next to each other. 
 Suman Ora Sarika eka xUsare ke pAsa rahawe hEM.
 
-Hindi meaning using Link parser 5.67
+Hindi meaning using Link parser 5.64
 (Found maximum of 18 linkages )
 Galelio was the first scentist to claim that the earth moves around the sun. 
 Galelio xAvA karane ke liye praWama scentist WA ki pqWvI sUrya ke cAroM ora GUmawI hE.
 
-Hindi meaning using Link parser 5.68
+Hindi meaning using Link parser 5.65
 (Found maximum of 4 linkages )
 The journey takes about three hours. 
 yAwrA lagaBaga wIna GaMte lewI hE.
 
-Hindi meaning using Link parser 5.69
+Hindi meaning using Link parser 5.66
 (Found maximum of 4 linkages )
 They can both run equally fast. 
 ve samAna_rUpa se weja xono xOda sakawe hEM.
 
-Hindi meaning using Link parser 5.70
+Hindi meaning using Link parser 5.67
 (Found maximum of 4 linkages )
 Why are they sitting around the fire? 
 ve Aga ke cAroM ora kyoM bETa rahe hEM?
 
-Hindi meaning using Link parser 5.71
+Hindi meaning using Link parser 5.68
 (Found maximum of 5 linkages )
 Did you send a birthday card to Sheela? 
 kyA Apane Sheela ko janmaxina_kA kArda BejA?
 
-Hindi meaning using Link parser 5.72
+Hindi meaning using Link parser 5.69
 (Found maximum of 4 linkages )
 Cats sleep by day and hunt by night. 
 billiyAz xina meM sowI hEM Ora ve rAwa meM SikAra karawI hEM.
 
-Hindi meaning using Link parser 5.73
+Hindi meaning using Link parser 5.70
 (Found maximum of 6 linkages )
 My father fought in the last war. 
 mere piwA ne AKirI yuxXa meM ladAI kI.
 
-Hindi meaning using Link parser 5.74
+Hindi meaning using Link parser 5.71
 (Found maximum of 4 linkages )
 My father allows me money for books. 
 merA piwA puswakoM ke liye muJe/muJako pEsA anumawi xewA hE.
 
-Hindi meaning using Link parser 5.75
+Hindi meaning using Link parser 5.72
 (Found maximum of 2 linkages )
 My car broke down when I reached Lalitpur. 
 merI gAdI KarAba_ho gayI/gaI mEM Lalitpur jaba pahuzcA.
 
-Hindi meaning using Link parser 5.76
+Hindi meaning using Link parser 5.73
 (Found maximum of 4 linkages )
 Perhaps he will attend the meeting. 
 SAyaxa vaha bETaka meM upasWiwa hogA.
 
-Hindi meaning using Link parser 5.77
+Hindi meaning using Link parser 5.74
 (Found maximum of 3 linkages )
 Shall I help you to carry the luggage? 
 mEM sAmAna uTA_le jAne ke liye Apa sahAyawA karUzgA?
 
-Hindi meaning using Link parser 5.78
+Hindi meaning using Link parser 5.75
 (Found maximum of 1 linkages )
 How shall we collect the money? 
 hama pEsA kEse iktTA kareMge?
 
-Hindi meaning using Link parser 5.79
+Hindi meaning using Link parser 5.76
 (Found maximum of 3 linkages )
 He ordered that all the schools should be closed. 
 usane AjFA xI ki saBI vixyAlaya baMxa kiye/kie jAne cAhiye.
 
-Hindi meaning using Link parser 5.80
+Hindi meaning using Link parser 5.77
 (Found maximum of 2 linkages )
 He must get up early in the morning. 
 usako/use subaha jalxI uTanA/uTane cAhiye.
 
-Hindi meaning using Link parser 5.81
+Hindi meaning using Link parser 5.78
 (Found maximum of 3 linkages )
 He does not dare to ignore me. 
 vaha muJe/muJako avajFA karane ke liye sAhasa_nahIM karawA hE.
 
-Hindi meaning using Link parser 5.82
+Hindi meaning using Link parser 5.79
 (Found maximum of 1 linkages )
 He thought that she may have missed the train. 
 usane socA ki vaha relagAdI cUka gayI/gaI hogI.
 
-Hindi meaning using Link parser 5.83
+Hindi meaning using Link parser 5.80
 (Found maximum of 6 linkages )
 The law does not allow us to do it. 
 kAnUna yaha karane ke liye hama anumawi_nahIM xewA hE.
 
-Hindi meaning using Link parser 5.84
+Hindi meaning using Link parser 5.81
 (Found maximum of 6 linkages )
 It is night and the moon is shining in the sky. 
 rAwa hE Ora canxramA AsamAna meM camaka rahA hE.
 
-Hindi meaning using Link parser 5.85
+Hindi meaning using Link parser 5.82
 (Found maximum of 4 linkages )
 I have never played golf in my life. 
 mEM mere jIvana meM kaBI nahIM golPa Kela cukA hUz.
 
-Hindi meaning using Link parser 5.86
+Hindi meaning using Link parser 5.83
 (Found maximum of 3 linkages )
 The little ones are hopping and jumping merrily. 
 Cote vAle AnaMxiwa_waraha se eka_pEra_se_kUxa rahe hEM Ora AnaMxiwa_waraha se kUxa rahe hEM.
 
-Hindi meaning using Link parser 5.87
+Hindi meaning using Link parser 5.84
 (Found maximum of 1 linkages )
 I have never seen such a horrible scene. 
 mEM kaBI nahIM iwanA darAvane xqSya ko xeKa cukA hUz.
 
-Hindi meaning using Link parser 5.88
+Hindi meaning using Link parser 5.85
 (Found maximum of 1 linkages )
 The swimmer swam across the river. 
 wErAka ne naxI meM wErA.
 
-Hindi meaning using Link parser 5.89
+Hindi meaning using Link parser 5.86
 (Found maximum of 5 linkages )
 There was a football match in the school yesterday. 
 kala vixyAlaya meM PutabAla mEca WI.
 
-Hindi meaning using Link parser 5.90
+Hindi meaning using Link parser 5.87
 (Found maximum of 2 linkages )
 He is bold, but he is not practical. 
 vaha xabaMga hE paranwu vaha vyAvahArika nahIM hE.
 
-Hindi meaning using Link parser 5.91
+Hindi meaning using Link parser 5.88
 (Found maximum of 8 linkages )
 Either go to bed or open your book to read. 
 yA wo sone jAiye yA paDane ke liye ApakI puswaka Koliye.
 
-Hindi meaning using Link parser 5.92
+Hindi meaning using Link parser 5.89
 (Found maximum of 1 linkages )
 He neither plays, nor reads. 
 vaha na hI KelawA hE na paDawA hE.
 
-Hindi meaning using Link parser 5.93
+Hindi meaning using Link parser 5.90
 (Found maximum of 2 linkages )
 Since I know English, he spoke to me. 
 kyoMki mEM aMgrejI jAnawA hUz isaliye vaha muJase bolA.
 
-Hindi meaning using Link parser 5.94
+Hindi meaning using Link parser 5.91
 (Found maximum of 2 linkages )
 He will not come because he is busy. 
 vaha nahIM AyegA/AegA kyozki vaha vyaswa hE.
 
-Hindi meaning using Link parser 5.95
+Hindi meaning using Link parser 5.92
 (Found maximum of 2 linkages )
 They told me that the teacher was absent that day. 
 unhoMne muJe/muJako bawAyA ki SikRaka usa xina anupasWiwa WA.

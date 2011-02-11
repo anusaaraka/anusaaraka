@@ -1,0 +1,6603 @@
+word	1
+Dee Dee	1
+Paul	1
+Henry	1
+Wayne	1
+Ernest	1
+Phyllis	1
+George	1
+Thomas	1
+Diane	1
+Phillip	1
+Ford	1
+Suzanne	1
+Elizabeth	1
+Michael	1
+Hopper	1
+William	1
+Clinton	1
+Peter	1
+Herbert	1
+Ross	1
+Christ	1
+Richard	1
+Anne	1
+Ron	1
+De Bruine	1
+Steven	1
+Alice	1
+Sharon	1
+David	1
+Bob	1
+Bill Gates	1
+Pascal	1
+Ken	1
+Norman	1
+Brian	1
+Christian	1
+Kathleen	1
+Frank	1
+Bruce	1
+Art	1
+Jane	1
+Frank	1
+Barbara	1
+Jean	1
+Catherine	1
+Julian	1
+Carol	1
+Karen	1
+Caine	1
+James	1
+Jim	1
+Joan	1
+John	1
+Joseph	1
+Joyce	1
+Katherine	1
+Keith	1
+Kennedy	1
+Mary	1
+Marie	1
+Joanne	1
+predisposal	1
+creature	1
+offspring	1
+invertebrate	1
+presence	1
+centaur	1
+rudiment	1
+leviathan	1
+satyr	1
+cherub	1
+scavenger	1
+angel	1
+phantom	1
+chimera	1
+principalities	1
+annelid	1
+producer	1
+crossbreed	1
+parent	1
+archangel	1
+sport	1
+endotherm	1
+pioneer	1
+fairy	1
+sphinx	1
+demon	1
+primates	1
+harpy	1
+quarry	1
+deity	1
+protoplast	1
+gene	1
+progeny	1
+devil	1
+taenia	1
+ghoul	1
+stock	1
+dickens	1
+outcross	1
+hermaphrodite	1
+sleeper	1
+dragon	1
+griffin	1
+fauna	1
+mate	1
+dragoon	1
+muse	1
+ghost	1
+male	1
+deuce	1
+dwarf	1
+genie	1
+native	1
+bogeymen	1
+lithophyte	1
+germ carrier	1
+divinity	1
+bogeyman	1
+mule	1
+goblin	1
+lord	1
+bivalve	1
+naiad	1
+gremlin	1
+host	1
+organism	1
+godhead	1
+prey	1
+mutation	1
+mongrel	1
+gnome	1
+relict	1
+deuce	1
+pet	1
+métis	1
+predator	1
+feeder	1
+nymph	1
+mosaic	1
+fiend	1
+mermaid	1
+offspring	1
+neuter	1
+deities	1
+monster	1
+unicorn	1
+faun	1
+harpies	1
+embryo	1
+wight	1
+giantess	1
+vampire	1
+leprechaun	1
+fairies	1
+incarnation	1
+goddess	1
+entry	1
+variation	1
+imp	1
+umbra	1
+diploid	1
+waif	1
+giant	1
+vegetarian	1
+essence	1
+vermin	1
+hybrid	1
+adult	1
+hydra	1
+analog	1
+dickens	1
+community	1
+analogue	1
+God	1
+faunae	1
+abortion	1
+cherubim	1
+chimera	1
+aurora	1
+stratum	1
+buck	1
+brownie	1
+cyclops	1
+cross	1
+borer	1
+bogey	1
+Brahman	1
+bisexual	1
+alien	1
+clone	1
+apparition	1
+being	1
+Megaera	1
+creator	1
+Allah	1
+virus	1
+anlagen	1
+virus	1
+aerobe	1
+microbe	1
+cell	1
+bacteria	1
+artefact	1
+microorganism	1
+anaerobe	1
+yeast	1
+arcade	1
+neuron	1
+amebae	1
+vector	1
+artifact	1
+ovum	1
+bud	1
+tylose	1
+amoebae	1
+parasite	1
+crossover	1
+fungus	1
+bacteria	1
+pathogen	1
+coccus	1
+polymorph	1
+cone	1
+ova	1
+bacteriophage	1
+polyp	1
+bacteroid	1
+ptomaine	1
+corpuscle	1
+bacillus	1
+basophil	1
+hepatocyte	1
+nucleus	1
+bacterium	1
+starter	1
+granulocyte	1
+template	1
+blood cell	1
+reducer	1
+germ	1
+plasmodium	1
+basophil	1
+satellite	1
+flagellate	1
+suppressor	1
+bacilli	1
+templet	1
+fibroblast	1
+polymorph	1
+ameba	1
+sporocyst	1
+fungi	1
+spore	1
+amoeba	1
+spirochete	1
+gametocyte	1
+spirillum	1
+animalcule	1
+ovule	1
+chromosome	1
+protozoa	1
+anlage	1
+recessive	1
+cell	1
+spermatozoon	1
+erythrocyte	1
+rod	1
+diploid	1
+ova	1
+eosinophil	1
+rod	1
+dendrite	1
+schizomycetes	1
+factor	1
+osteoclast	1
+gene	1
+rust	1
+leukocyte	1
+fiber	1
+fibre	1
+dyad	1
+micrococcus	1
+gonococcus	1
+egg	1
+neighbor	1
+mite	1
+endospore	1
+hermaphrodite	1
+gamete	1
+dominant	1
+endoparasite	1
+infusorian	1
+inferior	1
+individual	1
+monad	1
+follicle	1
+determinant	1
+diploid	1
+immigrant	1
+ghost	1
+nymph	1
+looper	1
+nurse	1
+emperor	1
+nit	1
+forester	1
+swarm	1
+drone	1
+tarantula	1
+jigger	1
+trichina	1
+hopper	1
+scorpion	1
+monarch	1
+queen	1
+naiad	1
+scale	1
+imago	1
+pupa	1
+hawkmoth	1
+roundworm	1
+dun	1
+termite	1
+miller	1
+snail	1
+copper	1
+tick	1
+comma	1
+sawyer	1
+arachnoid	1
+wasp	1
+bug	1
+queen bee	1
+cicadae	1
+mosquito	1
+admiral	1
+roach	1
+borer	1
+moth	1
+bombyx	1
+slug	1
+blue	1
+pest	1
+cricket	1
+spider	1
+acaride	1
+worm	1
+annelid	1
+dragonflies	1
+cranefly	1
+viceroy	1
+crab	1
+fireflies	1
+chrysalis	1
+blowflies	1
+dragonfly	1
+chrysalides	1
+cicada	1
+flies	1
+earthworm	1
+gadflies	1
+centipede	1
+houseflies	1
+firefly	1
+butterflies	1
+cockroach	1
+horseflies	1
+horsefly	1
+worker	1
+chigger	1
+wolf	1
+gadfly	1
+underwing	1
+maggot	1
+gnat	1
+louse	1
+flea	1
+insect	1
+glowworm	1
+ladybug	1
+fly	1
+locust	1
+grub	1
+leech	1
+housefly	1
+katydid	1
+hornet	1
+ladybird	1
+hookworm	1
+larvae	1
+grasshopper	1
+larva	1
+butterfly	1
+lice	1
+bedbug	1
+anopheles	1
+bee	1
+anopheline mosquito	1
+beetle	1
+ant	1
+caterpillar	1
+aphid	1
+blowfly	1
+arachnid	1
+bluebottle	1
+bumblebee	1
+rattlesnake	1
+iguana	1
+viper	1
+caiman	1
+reptile	1
+loggerhead turtle	1
+periwinkle	1
+bullfrog	1
+snake	1
+lizard	1
+salamander	1
+boa	1
+serpent	1
+loggerhead	1
+siren	1
+frog	1
+swift	1
+dinosaur	1
+tortoise	1
+cobra	1
+periwinkle	1
+amphibia	1
+racer	1
+constrictor	1
+turtle	1
+anaconda	1
+python	1
+crocodile	1
+siren	1
+asp	1
+toad	1
+alligator	1
+slug	1
+fluke	1
+sidewinder	1
+gopher	1
+chameleon	1
+monitor	1
+amphibian	1
+ichthyosaur	1
+constrictor	1
+adder	1
+trout	1
+cat	1
+shiner	1
+coral	1
+starling	1
+coquina	1
+triton	1
+cucumber	1
+tilefish	1
+brownie	1
+pike	1
+cyclops	1
+squill	1
+brill	1
+shrimp	1
+conch	1
+squid	1
+angler	1
+redbreast	1
+angel	1
+thrift	1
+cockle	1
+thresher	1
+blubber	1
+perch	1
+anemone	1
+ruff	1
+cone	1
+sprat	1
+dab	1
+puffer	1
+bass	1
+pecten	1
+barbel	1
+spot	1
+barb	1
+tuna	1
+eel	1
+scaphander	1
+amphibian	1
+sponge	1
+electric eel	1
+tench	1
+goldfish	1
+poacher	1
+barnacle	1
+spike	1
+hake	1
+sucker	1
+catfish	1
+spawner	1
+haddock	1
+sucker	1
+carp	1
+pout	1
+flounder	1
+seal	1
+lox	1
+tadpole	1
+fish	1
+sole	1
+mackerel	1
+runner	1
+clam	1
+smelt	1
+jellyfish	1
+roach	1
+cod	1
+ray	1
+kipper	1
+sturgeon	1
+codfish	1
+sable	1
+lamprey	1
+necton	1
+cuttlefish	1
+sepia	1
+limpet	1
+torpedo	1
+crab	1
+salmon	1
+lobster	1
+python	1
+crayfish	1
+salmon	1
+crustacean	1
+oyster	1
+mussel	1
+snapper	1
+hind	1
+minnow	1
+fluke	1
+sardine	1
+darter	1
+perch	1
+drum	1
+scallop	1
+laker	1
+viper	1
+drill	1
+shark	1
+gudgeon	1
+trout	1
+naiad	1
+shrimp	1
+herring	1
+whelk	1
+discus	1
+gudgeon	1
+fantail	1
+halibut	1
+jack	1
+volute	1
+grunt	1
+whiting	1
+dolphin	1
+umber	1
+mollusc	1
+umbra	1
+loach	1
+univalve	1
+hammerhead	1
+hardhead	1
+flamingo	1
+fieldfare	1
+cockerel	1
+layer	1
+grouse	1
+diver	1
+chimney swift	1
+gosling	1
+hen	1
+goshawk	1
+condor	1
+lark	1
+gull	1
+knot	1
+cygnet	1
+mew	1
+geese	1
+hammerhead	1
+curassow	1
+kite	1
+fledgling	1
+kiwi	1
+cock	1
+fantail	1
+falcon	1
+harrier	1
+chimney swallow	1
+jaeger	1
+gamecock	1
+jackdaw	1
+chicken	1
+dickey	1
+heron	1
+drake	1
+chick	1
+hobby	1
+hornbill	1
+linnet	1
+cormorant	1
+flicker	1
+fowl	1
+dipper	1
+covey	1
+homer	1
+gander	1
+marabou	1
+crow	1
+nutcracker	1
+goldfinch	1
+phoenix	1
+darter	1
+nestling	1
+hummingbird	1
+nestlings	1
+cuckoo	1
+swift	1
+goose	1
+shank	1
+bantam	1
+teal	1
+hoopoe	1
+swallow	1
+birdie	1
+partridge	1
+finch	1
+roller	1
+cardinal	1
+shoveler	1
+hawk	1
+ruff	1
+canary	1
+rail	1
+albatross	1
+pie	1
+blackbird	1
+sultan	1
+dove	1
+sulphur	1
+buzzard	1
+sultana	1
+eagle	1
+resident	1
+bullfinch	1
+scooper	1
+egret	1
+sparrow	1
+cardinals	1
+pen	1
+duck	1
+songster	1
+capon	1
+snipe	1
+lovebird	1
+robin	1
+bird	1
+tumbler	1
+lark	1
+stint	1
+bluebird	1
+trumpeter	1
+jay	1
+topaz	1
+loon	1
+titmouse	1
+magpie	1
+skimmer	1
+kingfisher	1
+stilt	1
+kingbird	1
+albatross	1
+ibis	1
+cardinal	1
+ostrich	1
+coppersmith	1
+warbler	1
+bustard	1
+oriole	1
+bunting	1
+wildfowl	1
+booby	1
+parrot	1
+cob	1
+cockatoo	1
+bittern	1
+parakeet	1
+biddy	1
+weaver	1
+creeper	1
+owl	1
+crane	1
+waders	1
+barnacle	1
+pigeon	1
+Amazon	1
+chanticleer	1
+barb	1
+nestlings	1
+canaries	1
+nightingale	1
+vulture	1
+peacock	1
+wagtail	1
+penguin	1
+woodlark	1
+pelican	1
+woodpecker	1
+pheasant	1
+wader	1
+seagull	1
+whistler	1
+siskin	1
+turkey	1
+rooster	1
+raven	1
+squab	1
+redbreast	1
+stork	1
+quail	1
+starling	1
+swan	1
+waterfowl	1
+tern	1
+thrush	1
+turkey	1
+dog	1
+sheep	1
+koala	1
+studhorse	1
+doggie	1
+slink	1
+kitten	1
+swine	1
+deer	1
+rhinoceros	1
+jackal	1
+tiger	1
+doe	1
+sow	1
+hyena	1
+whale	1
+doggy	1
+rodent	1
+lapdog	1
+weasel	1
+dolphin	1
+sable	1
+livestock	1
+walrus	1
+donkey	1
+skunk	1
+llama	1
+weed	1
+dormice	1
+steer	1
+lemming	1
+bunnies	1
+dormouse	1
+stallion	1
+jackass	1
+doggies	1
+ewe	1
+mule	1
+lion	1
+wolf	1
+dromedary	1
+otter	1
+kangaroo	1
+wildcat	1
+elephant	1
+mouse	1
+marten	1
+kitties	1
+elk	1
+mice	1
+kitty	1
+wolves	1
+angora	1
+maverick	1
+mare	1
+zebra	1
+animal	1
+ox	1
+lamb	1
+dromedaries	1
+antelope	1
+monkey	1
+leopard	1
+fillies	1
+anthropoid	1
+pig	1
+lioness	1
+vampire	1
+ape	1
+piggy	1
+lynx	1
+vicuna	1
+ass	1
+mole	1
+jaguar	1
+piggies	1
+chipmunk	1
+mustang	1
+gorilla	1
+ponies	1
+chow-chow	1
+panther	1
+ferret	1
+puppies	1
+chimp	1
+oxen	1
+goat	1
+vixen	1
+chameleon	1
+piebald	1
+German Shepherd	1
+roe deer	1
+coyote	1
+porpoise	1
+hind	1
+yearling	1
+dachshund	1
+ram	1
+gibbon	1
+whistler	1
+cetacean	1
+puma	1
+hamster	1
+twin	1
+cow	1
+pony	1
+fawn	1
+watchdog	1
+colt	1
+puppy	1
+filly	1
+pup	1
+collie	1
+rabbit	1
+hedgehog	1
+raccoon	1
+coon	1
+reindeer	1
+fisher	1
+poodle	1
+cur	1
+rat	1
+heifer	1
+steeplechaser	1
+cottontail	1
+porcupine	1
+hackney	1
+piglet	1
+cougar	1
+scrag	1
+fox	1
+racehorse	1
+critter	1
+rabbit	1
+foxhound	1
+tigress	1
+cub	1
+scrag	1
+gazelle	1
+raccoon	1
+chimpanzee	1
+squirrel	1
+geldings	1
+springer	1
+bear	1
+pinscher	1
+hound	1
+primate	1
+camel	1
+stud	1
+gnu	1
+retriever	1
+bulldog	1
+setter	1
+giraffe	1
+polecat	1
+barking dog	1
+sire	1
+horse	1
+oxen	1
+bull	1
+sorrel	1
+gopher	1
+soliped	1
+badger	1
+pollard	1
+greyhound	1
+pug	1
+bunny	1
+pointer	1
+hog	1
+roan	1
+canine	1
+roadster	1
+hippopotami	1
+sloth	1
+calf	1
+palfrey	1
+hare	1
+roe	1
+baboon	1
+sable	1
+hippopotamus	1
+slink	1
+burro	1
+nanny	1
+bloodhound	1
+ounce	1
+bobcat	1
+schnauzer	1
+buck	1
+kid	1
+calves	1
+ermine	1
+bogey	1
+muskrat	1
+bison	1
+drill	1
+bitch	1
+dapple	1
+beast	1
+mammal	1
+cattle	1
+musk	1
+cat	1
+dam	1
+boar	1
+hack	1
+bronc	1
+lapin	1
+brute	1
+gelding	1
+buffalo	1
+gopher	1
+carnivore	1
+labrador	1
+caribou	1
+harrier	1
+bullock	1
+kit	1
+bronco	1
+humpback	1
+chamois	1
+kid	1
+Pekingese	1
+forester	1
+chinchilla	1
+mount	1
+Pekinese	1
+jumper	1
+alpaca	1
+jumbo	1
+armadillo	1
+fisher	1
+albino	1
+maverick	1
+calico	1
+jersey	1
+chow	1
+dalmatian	1
+brocket	1
+jack	1
+chowchow	1
+mink	1
+alien	1
+merino	1
+brayer	1
+dachsund	1
+Pomeranian	1
+nag	1
+civet	1
+mandrill	1
+chestnut	1
+growler	1
+boxer	1
+hammerhead	1
+boss	1
+dickey	1
+cheviot	1
+gib	1
+bolter	1
+nag	1
+cheetah	1
+mammoth	1
+cob	1
+howler	1
+charger	1
+hunter	1
+biped	1
+lucern	1
+Maltese	1
+dun	1
+beaver	1
+artiodactyl	1
+bat	1
+bachelor	1
+afghan	1
+angora	1
+barrow	1
+barker	1
+Alsatian	1
+loft	1
+colony	1
+hatch	1
+brood	1
+litter	1
+brood	1
+drive	1
+clutch	1
+gang	1
+bevy	1
+hive	1
+covey	1
+gathering	1
+wildlife	1
+drift	1
+yoke	1
+echelon	1
+undersigned	1
+fold	1
+nest	1
+menagerie	1
+pride	1
+drove	1
+team	1
+anteater	1
+swarm	1
+drove	1
+stable	1
+herd	1
+squadron	1
+flock	1
+tandem	1
+horde	1
+relay	1
+spawn	1
+span	1
+school	1
+stock	1
+string	1
+roundup	1
+subculture	1
+sloth	1
+troika	1
+troop	1
+pod	1
+pack	1
+mink	1
+ermine	1
+beaver	1
+marabou	1
+bass	1
+alpaca	1
+anti-Semite	1
+bairn	1
+men	1
+adult	1
+Assemblymen	1
+bloke	1
+parents	1
+adventuress	1
+vessel	1
+brother-in-law	1
+papa	1
+Amerindian	1
+wives	1
+brother	1
+mate	1
+Amerind	1
+biddies	1
+bondsman	1
+mother	1
+Anabaptist	1
+mummies	1
+bedlamite	1
+middleman	1
+ancestor	1
+brothers-in-law	1
+boy friend	1
+middlemen	1
+anchorite	1
+woman	1
+breadwinner	1
+parent	1
+Anglicist	1
+antivivisectionist	1
+boyfriend	1
+mummy	1
+anglophile	1
+fathers-in-law	1
+brat	1
+niece	1
+anglophobe	1
+working father	1
+bond servant	1
+others	1
+animator	1
+mesdames	1
+bagpiper	1
+people	1
+annalist	1
+working mother	1
+boy	1
+opposing party	1
+anthologist	1
+working parent	1
+babe	1
+predecessor	1
+anti-semite	1
+crybabies	1
+bum	1
+poor	1
+anticlerical	1
+Archduchess	1
+cardholder	1
+pygmy	1
+agriculturalist	1
+Archdeacon	1
+belle	1
+tot	1
+Air Commodore	1
+daughters-in-law	1
+backslider	1
+triplet	1
+air raid warden	1
+Assemblyman	1
+bondman	1
+stranger	1
+aquanaut	1
+cyclopes	1
+bondslave	1
+smoker	1
+Arabist	1
+wife	1
+butterfingers	1
+sire	1
+aircraftman	1
+women	1
+biddy	1
+sister	1
+aircraftmen	1
+babies	1
+biped	1
+air commodore	1
+aircraftsman	1
+daddies	1
+bondmen	1
+kiddies	1
+aircraftsmen	1
+opposing parties	1
+bondsmen	1
+pygmies	1
+archdeacon	1
+God	1
+bookworm	1
+Madam	1
+archduchess	1
+Mesdames	1
+auntie	1
+grandpa	1
+archer	1
+kiddy	1
+bondservant	1
+dwarves	1
+Argentinian	1
+vermin	1
+bedfellow	1
+unknown	1
+airwoman	1
+vegetable	1
+baby	1
+deceased	1
+airwomen	1
+elder	1
+Aztec	1
+mate	1
+Arian	1
+male	1
+descendent	1
+human	1
+Arien	1
+major	1
+demigod	1
+lag	1
+arithmetician	1
+fruit	1
+descendant	1
+gargoyle	1
+Armenian	1
+magpie	1
+eccentric	1
+god	1
+armorer	1
+junior	1
+decedent	1
+female	1
+armourer	1
+hermaphrodite	1
+earthling	1
+magnate	1
+aldermen	1
+forefathers	1
+elder	1
+jewel	1
+alderman	1
+madonna	1
+dude	1
+mestizo	1
+Aryan	1
+mortal	1
+embryo	1
+instrument	1
+Allah	1
+discard	1
+duo	1
+individual	1
+assemblymen	1
+inferior	1
+elves	1
+experimentee	1
+assemblyman	1
+encumbrance	1
+dwarf	1
+menace	1
+altruist	1
+fatality	1
+elf	1
+loafer	1
+forerunner	1
+matron	1
+damsel	1
+exemption	1
+henchmen	1
+mom	1
+common men	1
+love	1
+goddaughter	1
+fare	1
+crackpot	1
+mother-in-law	1
+fellow	1
+kid	1
+children	1
+ape	1
+horsewomen	1
+Lisbonite	1
+dad	1
+consort	1
+helpmate	1
+counterpart	1
+corpse	1
+anomaly	1
+grandchildren	1
+anonymity	1
+crybaby	1
+adult	1
+granddaughter	1
+conquest	1
+common man	1
+arrival	1
+god	1
+connection	1
+cyclops	1
+ass	1
+girl friend	1
+anonym	1
+cowgirl	1
+cadaver	1
+girl	1
+connexion	1
+daughter-in-law	1
+aryan	1
+forefather	1
+anathema	1
+daughter	1
+cookie	1
+father	1
+amerind	1
+child	1
+cooky	1
+heartthrob	1
+arian	1
+daddy	1
+charge	1
+grandfather	1
+ancestry	1
+chap	1
+cognate	1
+female	1
+body	1
+kindred	1
+blonde	1
+grandchild	1
+bitch	1
+individual	1
+athenian	1
+forebear	1
+atavism	1
+husband	1
+ancestress	1
+godchildren	1
+being	1
+kinsman	1
+creature	1
+gnome	1
+bastion	1
+kid	1
+asset	1
+human	1
+ant	1
+kinswomen	1
+cipher	1
+human being	1
+nephew	1
+individual	1
+national	1
+fetus	1
+nanny	1
+kiddie	1
+métis	1
+horsewoman	1
+triplet	1
+infant	1
+poor	1
+godchild	1
+stepbrother	1
+lad	1
+people	1
+faun	1
+prospect	1
+male	1
+sponger	1
+grouser	1
+relative	1
+kin	1
+spirits	1
+hobgoblin	1
+spirit	1
+kinsmen	1
+primate	1
+henchman	1
+quadragenarian	1
+kinswoman	1
+role	1
+father-in-law	1
+nymph	1
+knave	1
+offspring	1
+grandparent	1
+relation	1
+lass	1
+soul	1
+laddie	1
+poltergeist	1
+lassie	1
+stepchild	1
+man	1
+nude	1
+madam	1
+subject	1
+one	1
+others	1
+stepfather	1
+stepmother	1
+troll	1
+nonentity	1
+personality	1
+nothing	1
+headwaiter	1
+naturalist	1
+loyalist	1
+nemesis	1
+freshmen	1
+nihilist	1
+lowbrow	1
+neurotic	1
+Frenchmen	1
+neutral	1
+jinx	1
+needy	1
+headmaster	1
+nanny	1
+knight	1
+mystic	1
+goldsmith	1
+mythologist	1
+killjoy	1
+mute	1
+grandstander	1
+scholastic	1
+interviewee	1
+surety	1
+hair-dresser	1
+quad	1
+instructor	1
+muslim	1
+guy	1
+sycophant	1
+juryman	1
+reference	1
+healer	1
+statuary	1
+lout	1
+semanticist	1
+fiancee	1
+nonagenarian	1
+laughingstock	1
+stationmaster	1
+finder	1
+professional	1
+longshoreman	1
+revolutionary	1
+guerrilla	1
+technocrat	1
+ladyship	1
+scheduler	1
+godson	1
+populist	1
+juror	1
+protestant	1
+gentlewomen	1
+progressive	1
+idealist	1
+sweep	1
+hairdresser	1
+pro	1
+leaguer	1
+referral	1
+hag	1
+star	1
+kremlinologist	1
+radical	1
+fakir	1
+quack	1
+Kurd	1
+standby	1
+herbalist	1
+principal	1
+managing partner	1
+primate	1
+feudalist	1
+tease	1
+landlady	1
+northerner	1
+Haitian	1
+stapler	1
+kleptomaniac	1
+saleslady	1
+girlfriend	1
+phenomenon	1
+illiterate	1
+privateer	1
+hostage	1
+taxidermist	1
+junkie	1
+scum	1
+herald	1
+renegade	1
+longshoremen	1
+primitive	1
+gardener	1
+scold	1
+legalist	1
+savage	1
+grad	1
+pasha	1
+loony	1
+philanthropist	1
+gunsmith	1
+parson	1
+Leninist	1
+party	1
+fiance	1
+parvenu	1
+lowlife	1
+virgin	1
+fanatic	1
+surveyor	1
+itinerant	1
+premiere	1
+hemophiliac	1
+stalinist	1
+internationalist	1
+philistine	1
+feminist	1
+positivist	1
+legislator	1
+perfectionist	1
+flight mechanic	1
+multimillionaire	1
+Iranian	1
+protection	1
+friend	1
+opportunist	1
+jurist	1
+suspect	1
+foundling	1
+propagandist	1
+key operator	1
+pimp	1
+host	1
+native	1
+lecturer	1
+natural	1
+federalist	1
+operative	1
+left-hander	1
+remand	1
+halfback	1
+philatelist	1
+laymen	1
+protectionist	1
+finn	1
+mulatto	1
+magistrate	1
+reprobate	1
+fink	1
+support	1
+Maoist	1
+pawn	1
+gusher	1
+sexton	1
+leninist	1
+protagonist	1
+floor manager	1
+parliamentarian	1
+journeymen	1
+psalmist	1
+gnostic	1
+samaritan	1
+independent	1
+orientalist	1
+head hunter	1
+sexist	1
+lexicographer	1
+obscurant	1
+field employee	1
+quinquagenarian	1
+jockey	1
+shipmaster	1
+globetrotter	1
+shepherdess	1
+maoist	1
+sage	1
+floorwalker	1
+pluralist	1
+leftist	1
+mourner	1
+Hitlerite	1
+priestess	1
+jester	1
+signalman	1
+ferrymen	1
+ruffian	1
+Israelite	1
+pietist	1
+fundamentalist	1
+shyster	1
+leaseholder	1
+shintoist	1
+hillbilly	1
+prelate	1
+ignoramus	1
+superior	1
+heating engineer	1
+rector	1
+inmate	1
+oblate	1
+hellcat	1
+relief	1
+liar	1
+stranger	1
+framer	1
+sexagenarian	1
+junkmen	1
+tanker	1
+geographer	1
+rifleman	1
+inventor	1
+superman	1
+hedonist	1
+parasite	1
+inhabitant	1
+satellite	1
+gladiator	1
+sport	1
+Israeli	1
+plebeian	1
+herder	1
+super	1
+liaison officer	1
+stevedore	1
+harlot	1
+theorist	1
+interpreter	1
+sponsor	1
+freeman	1
+sponger	1
+industrialist	1
+paranoid	1
+flutist	1
+stewardess	1
+larcenist	1
+prosecution	1
+gourmet	1
+practician	1
+longhair	1
+sulk	1
+Gentile	1
+sheik	1
+illustrator	1
+railwayman	1
+hick	1
+sultana	1
+malefactor	1
+sultan	1
+Hinduist	1
+relict	1
+intern	1
+sinologist	1
+hitlerite	1
+quibbler	1
+liberal	1
+nonpareil	1
+harlequin	1
+royalty	1
+investor	1
+republican	1
+foreigner	1
+safeguard	1
+linesman	1
+prioress	1
+fire fighter	1
+rapporteur	1
+immigrant	1
+spiritist	1
+geologist	1
+paralegal	1
+left-winger	1
+proprietary	1
+extrovert	1
+seminarian	1
+journeyman	1
+reformer	1
+heir	1
+penitent	1
+legatee	1
+seeder	1
+gunmen	1
+scandal	1
+linesmen	1
+telephonist	1
+graduate	1
+seminarist	1
+machinist	1
+patient	1
+foreman	1
+neurologist	1
+intermediary	1
+pantomime	1
+financier	1
+morphologist	1
+libertarian	1
+oboist	1
+extremist	1
+server	1
+libertine	1
+spendthrift	1
+godfather	1
+nymphomaniac	1
+intellectual	1
+scout	1
+greenhorn	1
+proselyte	1
+janitor	1
+outlier	1
+geriatrician	1
+speleologist	1
+instructor	1
+rentier	1
+flight engineer	1
+policewoman	1
+legate	1
+publicist	1
+finalist	1
+sculptress	1
+look-alike	1
+occultist	1
+freemason	1
+success	1
+importer	1
+printer	1
+Guyanese	1
+oiler	1
+interloper	1
+representative	1
+firefighter	1
+official	1
+interrogator	1
+prior	1
+governess	1
+pest	1
+licensee	1
+spearhead	1
+field service representative	1
+pledge	1
+maker	1
+patroness	1
+health inspector	1
+provincial	1
+linguist	1
+nurse	1
+firemen	1
+precursor	1
+lackey	1
+nuncio	1
+Hindu	1
+senior	1
+impresario	1
+subtenant	1
+fencer	1
+polyglot	1
+maid	1
+stockkeeper	1
+functionalist	1
+sire	1
+licentiate	1
+protoplast	1
+gerontologist	1
+sacristan	1
+installer	1
+sovereign	1
+footmen	1
+satirist	1
+lowlives	1
+monotheist	1
+flagellant	1
+scab	1
+lumberjack	1
+outcast	1
+fop	1
+pickpocket	1
+legal representative	1
+resident	1
+foremen	1
+shirk	1
+jobholder	1
+source	1
+ghostwriter	1
+testator	1
+land agent	1
+poetess	1
+goon	1
+sourpuss	1
+locksmith	1
+subordinate	1
+Girl Friday	1
+sophist	1
+Jamaican	1
+soubrette	1
+haemophiliac	1
+tackle	1
+invalid	1
+substitute	1
+guard	1
+soprano	1
+liege man	1
+saddler	1
+guitarist	1
+moneychanger	1
+infantrymen	1
+solitaire	1
+ferryman	1
+septuagenarian	1
+liege men	1
+serologist	1
+freshman	1
+monitor	1
+Latin American	1
+sectarian	1
+founder	1
+subsidiary	1
+insider	1
+outrider	1
+filmmaker	1
+policeman	1
+imp	1
+permanent	1
+extern	1
+neurasthenic	1
+jaywalker	1
+sodomite	1
+foe	1
+subject	1
+Jugoslav	1
+offshoot	1
+geezer	1
+socialist	1
+lifeguard	1
+rowdy	1
+eyewitness	1
+notability	1
+impostor	1
+pyrotechnist	1
+guarantor	1
+monarchist	1
+Lombard	1
+tactician	1
+gent	1
+snob	1
+jew	1
+sneak	1
+forecaster	1
+schismatic	1
+magnate	1
+patrol	1
+head	1
+patricide	1
+lifesaver	1
+nuisance	1
+Filipino	1
+ploughman	1
+lifer	1
+stylist	1
+giant	1
+potentate	1
+lummox	1
+smoothtalker	1
+frogman	1
+subhuman	1
+imbecile	1
+sergeant	1
+forensic expert	1
+regionalist	1
+landlord	1
+smatterer	1
+forester	1
+slut	1
+infantryman	1
+replacement	1
+harpsichordist	1
+sloven	1
+litterbug	1
+patentee	1
+heretic	1
+second	1
+informant	1
+regicide	1
+head clerk	1
+page	1
+invoice clerk	1
+regent	1
+grannie	1
+slave	1
+jeweler	1
+opposite	1
+franchisee	1
+oracle	1
+land owner	1
+secondary	1
+file clerk	1
+seneschal	1
+Malay	1
+restaurateur	1
+genealogist	1
+orderly	1
+inebriate	1
+structuralist	1
+gas fitter	1
+tenor	1
+kook	1
+study	1
+field service engineer	1
+romanist	1
+mafioso	1
+nonconformist	1
+farmer	1
+separatist	1
+Inca	1
+pedicure	1
+forwarding agent	1
+reservist	1
+lunatic	1
+pedagog	1
+homebody	1
+postillion	1
+lessee	1
+sentry	1
+footman	1
+rascal	1
+logician	1
+pedestrian	1
+geophysicist	1
+octogenarian	1
+junkman	1
+romantic	1
+glutton	1
+syphilitic	1
+lesbian	1
+romanticist	1
+financial director	1
+revisionist	1
+juvenile	1
+sentinel	1
+hotshot	1
+rustic	1
+landholder	1
+respondent	1
+glazier	1
+proponent	1
+layman	1
+decoy	1
+Hindoo	1
+deconstructivist	1
+infidel	1
+dealer	1
+freebooter	1
+deadpan	1
+issuer	1
+dandy	1
+federal minister	1
+dairymaid	1
+journalist	1
+cypher	1
+floor walker	1
+governess	1
+lamebrain	1
+lifesaver	1
+factory inspector	1
+militarist	1
+laureate	1
+grandparent	1
+Greenlander	1
+moderate	1
+legionnaire	1
+lineman	1
+hero	1
+hire	1
+impressionist	1
+fox	1
+hermit	1
+generalissimo	1
+mailmen	1
+getter	1
+freedman	1
+hispanophone	1
+leader	1
+match	1
+gangster	1
+epileptic	1
+jewess	1
+liaison	1
+freedmen	1
+fidget	1
+lobbyist	1
+cuss	1
+guinea pig	1
+liberal	1
+Kenyan	1
+fossil	1
+gallant	1
+migrant	1
+lecher	1
+leadoff	1
+Fascist	1
+medium	1
+iconoclast	1
+dynamo	1
+helper	1
+deadhead	1
+manager	1
+detainee	1
+extortioner	1
+modern	1
+investigator	1
+materialist	1
+heavyweight	1
+grandparents	1
+lawyer	1
+leninist	1
+grave digger	1
+logger	1
+incumbent	1
+legend	1
+fishermen	1
+forward	1
+Kremlinologist	1
+legionary	1
+heroine	1
+modernist	1
+insurer	1
+looper	1
+featherbrain	1
+highbrow	1
+inquisitor	1
+functionalist	1
+hooligan	1
+limpet	1
+klutz	1
+despair	1
+fleming	1
+humanitarian	1
+knucklehead	1
+majesty	1
+fiduciary	1
+flake	1
+Lebanese	1
+greens	1
+fisherman	1
+loggerhead	1
+lithographer	1
+lead	1
+fugitive	1
+dissident	1
+imperialist	1
+feudalist	1
+gondolier	1
+expectant	1
+jeweller	1
+dove	1
+flatterer	1
+gull	1
+joint plaintiff	1
+model	1
+formalist	1
+diabetic	1
+mailman	1
+devil	1
+gamekeeper	1
+executive	1
+jock	1
+gossip	1
+handwriting expert	1
+hierarch	1
+liquidator	1
+last	1
+Frenchwomen	1
+humanist	1
+insurance broker	1
+harpist	1
+hippie	1
+hack	1
+introvert	1
+darling	1
+functionary	1
+drunk	1
+internist	1
+maharajah	1
+G.I.	1
+head	1
+lefty	1
+exhibitionist	1
+heathen	1
+graphologist	1
+leader	1
+grouch	1
+haberdasher	1
+hound	1
+joint heir	1
+expressionist	1
+forger	1
+lama	1
+insurance agent	1
+gopher	1
+frogmen	1
+laker	1
+lender	1
+microscopist	1
+gymnast	1
+egalitarian	1
+matador	1
+cur	1
+Frenchman	1
+extra	1
+materialist	1
+manicurist	1
+frontiersmen	1
+deadbeat	1
+mathematician	1
+goddess	1
+Frenchwoman	1
+harrier	1
+matron	1
+drone	1
+frontiersman	1
+harmonist	1
+Laplander	1
+kurd	1
+horseman	1
+dane	1
+mastermind	1
+formalist	1
+guardian	1
+gigolo	1
+Maya	1
+headmistress	1
+fogy	1
+neuropath	1
+individualist	1
+emperor	1
+Hessian	1
+lookout	1
+mechanic	1
+harrier	1
+hessian	1
+eurocrat	1
+mechanical engineer	1
+gem	1
+gatekeeper	1
+gray	1
+mason	1
+ensign	1
+guerilla	1
+knockout	1
+marxist	1
+fabulist	1
+freemen	1
+harpy	1
+Marxist	1
+masseur	1
+gentlewoman	1
+masseuse	1
+martyr	1
+grey	1
+gunman	1
+kingpin	1
+mediator	1
+kingship	1
+gentleman	1
+greaser	1
+loner	1
+fetishist	1
+guerilla	1
+holdover	1
+marquise	1
+empiric	1
+glass blower	1
+loon	1
+marine	1
+goalie	1
+hunker	1
+guardsman	1
+mariner	1
+deviant	1
+gravedigger	1
+gob	1
+impersonator	1
+guarantee	1
+humorist	1
+lion	1
+laundress	1
+deadhead	1
+hunter	1
+elk	1
+mannequin	1
+herdsman	1
+hussey	1
+cubist	1
+lyricist	1
+kaffir	1
+hussy	1
+delight	1
+lessor	1
+justice	1
+hustler	1
+juvenile	1
+Manchurian	1
+humbug	1
+huzzy	1
+gnostic	1
+Londoner	1
+forewoman	1
+humpback	1
+missionary	1
+liberian	1
+horror	1
+hunchback	1
+ham	1
+informer	1
+eyeful	1
+hygienist	1
+cub	1
+madman	1
+cub	1
+gourmand	1
+jumbo	1
+managing owner	1
+fence	1
+hypnotist	1
+joker	1
+madmen	1
+joy	1
+fatalist	1
+misogynist	1
+mainstay	1
+equalizer	1
+granny	1
+joiner	1
+Majorcan	1
+delinquent	1
+handymen	1
+dope	1
+Madagascan	1
+handler	1
+hypochondriac	1
+hog	1
+management consultant	1
+maverick	1
+huckster	1
+jointer	1
+maniac	1
+ham	1
+humanist	1
+feminist	1
+islander	1
+meteorologist	1
+humanitarian	1
+forerunner	1
+line manager	1
+jockey	1
+housewife	1
+dragoon	1
+landlubber	1
+jest	1
+housewives	1
+flautist	1
+jurymen	1
+horticulturist	1
+housekeeper	1
+jerk	1
+magician	1
+jay	1
+florist	1
+jaeger	1
+Islamist	1
+front	1
+hostess	1
+fury	1
+managing director	1
+entity	1
+fool	1
+fan	1
+insurgent	1
+jailer	1
+gynecologist	1
+crown	1
+director	1
+guaranty	1
+grammarian	1
+endomorph	1
+electrician	1
+fiduciary	1
+groom	1
+housemate	1
+diabetic	1
+equestrian	1
+grandmother	1
+homosexual	1
+employer	1
+mandarin	1
+hatter	1
+governor	1
+dustman	1
+deputation	1
+hoodlum	1
+islamist	1
+deary	1
+marquise	1
+gunner	1
+eminence	1
+envoy	1
+dependent	1
+gatecrasher	1
+deputy	1
+dimwit	1
+invalid	1
+honcho	1
+grunt	1
+deportee	1
+lineman	1
+horsemen	1
+cropper	1
+doorman	1
+diehard	1
+homosexual	1
+hulk	1
+defence counsel	1
+intermediate	1
+homemaker	1
+determiner	1
+director general	1
+discontent	1
+Hollywood star	1
+internationalist	1
+delegate	1
+intern	1
+holdover	1
+end	1
+empiricist	1
+expellee	1
+guest	1
+hand	1
+drunkard	1
+grunt	1
+hobo	1
+grandee	1
+designer	1
+excellence	1
+hawker	1
+intellectual	1
+engineer	1
+misanthropist	1
+hard hat	1
+etymologist	1
+deadbeat	1
+inspiration	1
+historian	1
+crook	1
+emissary	1
+exile	1
+Hispanophone	1
+hand	1
+desk clerk	1
+insured	1
+hard liner	1
+local	1
+egotist	1
+expert	1
+highbrow	1
+darwinist	1
+duettist	1
+lombard	1
+fathead	1
+flirt	1
+dupe	1
+marquis	1
+grandma	1
+gallant	1
+defence minister	1
+existentialist	1
+hysteric	1
+freak	1
+draftsman	1
+genius	1
+godmother	1
+fraud	1
+denizen	1
+lombard	1
+godparent	1
+dependant	1
+Englishwoman	1
+mesmerist	1
+felon	1
+faggot	1
+deconstructivist	1
+fake	1
+flier	1
+help	1
+dilettante	1
+helmsman	1
+grandson	1
+infatuation	1
+debt collector	1
+minor	1
+flunky	1
+industrial	1
+Ecuadoran	1
+flier	1
+guru	1
+descendent	1
+drover	1
+doll	1
+fogey	1
+infanta	1
+dressmaker	1
+groom	1
+flaunter	1
+mercenary	1
+economist	1
+domestic	1
+gunslinger	1
+gypsy	1
+Englishmen	1
+criminal	1
+cameramen	1
+incumbent	1
+evacuee	1
+man	1
+Brazilian	1
+homeopath	1
+Englishman	1
+patriot	1
+bigamist	1
+independent	1
+dropout	1
+hoarder	1
+Canadian	1
+element	1
+environmentalist	1
+heaver	1
+buffoon	1
+heel	1
+entrant	1
+draftswoman	1
+auxiliary	1
+ecclesiastic	1
+Dutchmen	1
+extremist	1
+biographer	1
+hobbyhorse	1
+defender	1
+heiress	1
+biochemist	1
+librarian	1
+Englishwomen	1
+liege	1
+Bohemian	1
+litigant	1
+evangelist	1
+grind	1
+cameraman	1
+dermatologist	1
+decorator	1
+example	1
+avenger	1
+folklorist	1
+dullard	1
+leper	1
+backwoodsmen	1
+dirt	1
+debtor	1
+incarnation	1
+backwoodsman	1
+incendiary	1
+demographer	1
+luminary	1
+capitalist	1
+lapidary	1
+eristic	1
+idiot	1
+Bahaist	1
+grader	1
+drawee	1
+enigma	1
+bombardier	1
+fascist	1
+devotee	1
+marine	1
+bill broker	1
+impressionist	1
+defence witness	1
+millionairess	1
+busboy	1
+eccentric	1
+endorsee	1
+creationist	1
+braggart	1
+examinee	1
+engraver	1
+hypocrite	1
+botanist	1
+fag	1
+dissenter	1
+hedonist	1
+caddy	1
+haulageman	1
+dearie	1
+grip	1
+cabinetmaker	1
+derelict	1
+deponent	1
+depository	1
+bully	1
+ethnologist	1
+defendant	1
+ethnographer	1
+baker	1
+imperial	1
+equipment engineer	1
+immunologist	1
+automatic task administrator	1
+fundamentalist	1
+Egyptian	1
+defence	1
+calligraphist	1
+factotum	1
+detective inspector	1
+figure	1
+bohemian	1
+dun	1
+dun	1
+gastronome	1
+bride	1
+mime	1
+defense attorney	1
+gastronomer	1
+bricklayer	1
+illiterate	1
+draughtsman	1
+ghost	1
+bodyguard	1
+defense	1
+defense minister	1
+crammer	1
+bridegroom	1
+failure	1
+disputant	1
+entry	1
+bridesmaid	1
+gentile	1
+druggist	1
+ideal	1
+beneficiary	1
+idler	1
+dignitary	1
+idol	1
+balloonist	1
+esthete	1
+defense counsel	1
+figurehead	1
+bookseller	1
+foil	1
+doomsayer	1
+eristic	1
+bankrupt	1
+ideologist	1
+decision maker	1
+heathen	1
+butler	1
+lovebird	1
+debutante	1
+idealisation	1
+caller	1
+idealization	1
+equal	1
+equal	1
+benefactor	1
+iceberg	1
+district attorney	1
+icon	1
+benefactress	1
+hysteric	1
+diva	1
+maoist	1
+builder	1
+fledgling	1
+depositary	1
+hypertonic	1
+baron	1
+defeated	1
+draftee	1
+hypnotic	1
+bacteriologist	1
+excavator	1
+electronics engineer	1
+hardhead	1
+ballerina	1
+deponent	1
+draftsmen	1
+geometrician	1
+bettor	1
+escort	1
+electrical engineer	1
+exemplar	1
+boor	1
+fanatic	1
+defense witness	1
+deadwood	1
+autodidact	1
+denier	1
+dentist	1
+doctrinaire	1
+auxiliary	1
+giant	1
+egoist	1
+shipping clerk	1
+captive	1
+auxiliaries	1
+Dutchman	1
+statistician	1
+bootblack	1
+accountant	1
+don	1
+Roman	1
+Buddhist	1
+Chieftain	1
+endorser	1
+retailer	1
+Bahai	1
+handyman	1
+dietician	1
+reprobate	1
+barkeep	1
+Defense Minister	1
+disk jockey	1
+sceptic	1
+Belgian	1
+Magistrate	1
+dick	1
+son	1
+brigadier	1
+Abbess	1
+dietitian	1
+rightist	1
+Calvinist	1
+Archpriest	1
+egalitarian	1
+spy	1
+beau	1
+colossi	1
+doctrinaire	1
+security administrator	1
+borrower	1
+witch	1
+equestrian	1
+servicemen	1
+candidate	1
+loonies	1
+dyer	1
+statesmen	1
+beautician	1
+dearies	1
+debauchee	1
+Spaniard	1
+brigand	1
+hellion	1
+dialectician	1
+secret agent	1
+bawd	1
+zoologist	1
+deviant	1
+salesman	1
+boxer	1
+bibliographer	1
+dependant	1
+seamstress	1
+Austrian	1
+hothead	1
+democrat	1
+sales manager	1
+biker	1
+virtuoso	1
+diehard	1
+rogue	1
+butcher	1
+Chief of Staff	1
+emigre	1
+saboteur	1
+bisexual	1
+bullies	1
+dervish	1
+sales clerk	1
+cabinet minister	1
+auxiliaries	1
+educator	1
+sales women	1
+burgher	1
+zealot	1
+dealer	1
+simpleton	1
+bicyclist	1
+tradesman	1
+dealer	1
+spokesperson	1
+baptist	1
+whaler	1
+diplomat	1
+representative	1
+bigwig	1
+proxies	1
+department manager	1
+repairman	1
+authoress	1
+deputies	1
+epicure	1
+repairmen	1
+bursar	1
+watch	1
+dogmatist	1
+spokesman	1
+boatmen	1
+excellencies	1
+discoverer	1
+statesman	1
+backbencher	1
+vanner	1
+doubter	1
+South American	1
+barmaid	1
+Consul	1
+draughtsmen	1
+sound engineer	1
+Bolivian	1
+bumpkin	1
+dictator	1
+rigger	1
+aviator	1
+officiaries	1
+despot	1
+slow payer	1
+bureaucrat	1
+Advocate	1
+derelict	1
+software professional	1
+bastard	1
+District Attorney	1
+delinquent	1
+sales representative	1
+Briton	1
+Chairwomen	1
+dowager	1
+salesmen	1
+branch manager	1
+Virgin	1
+drudge	1
+sexist	1
+blockhead	1
+lapidaries	1
+disc jockey	1
+serviceman	1
+cannibal	1
+intermediaries	1
+executive	1
+scholar	1
+boatswain	1
+Director-General	1
+doormen	1
+settler	1
+cad	1
+Protestant	1
+entertainer	1
+shorthand typist	1
+bandit	1
+Brigadier	1
+debater	1
+snoop	1
+blackmailer	1
+busybodies	1
+dispatcher	1
+software consultant	1
+bartender	1
+apothecaries	1
+displaced person	1
+Shintoist	1
+bondholder	1
+Jewess	1
+embezzler	1
+service representative	1
+buckaroo	1
+Attorney	1
+epileptic	1
+star	1
+biologist	1
+Czechoslovak	1
+escapee	1
+salaried employee	1
+barkeeper	1
+Councilmen	1
+divorcee	1
+stalinist	1
+buccaneer	1
+falconer	1
+domestic	1
+rhetorician	1
+bookkeeper	1
+Jew	1
+egomaniac	1
+sales director	1
+Bolshevist	1
+Defence Minister	1
+editor	1
+spouse	1
+ballboy	1
+Apostle	1
+ecclesiastic	1
+researcher	1
+bootlegger	1
+Corporate Director	1
+drunks	1
+sales executive	1
+bilk	1
+Yugoslav	1
+drummer	1
+research assistant	1
+bourgeois	1
+accessaries	1
+expert	1
+reviewer	1
+blabbermouth	1
+Federalist	1
+explorer	1
+seismologist	1
+banker	1
+hillbillies	1
+exponent	1
+scoundrel	1
+calligrapher	1
+wine merchant	1
+exponent	1
+revolutionary	1
+buckeroo	1
+Legate	1
+exporter	1
+sociopath	1
+awareness partner	1
+Chairwoman	1
+expatriate	1
+shipowner	1
+auditor	1
+vulture	1
+district manager	1
+sociologist	1
+boatman	1
+Knight	1
+expressionist	1
+republican	1
+bootlicker	1
+contemporaries	1
+existentialist	1
+sales people	1
+bobby	1
+Congresswoman	1
+exorcist	1
+sculptor	1
+broadcaster	1
+parties	1
+exhibitionist	1
+shepherd	1
+boss	1
+usurer	1
+exhibitor	1
+right-hander	1
+autocrat	1
+Managing Director	1
+emcee	1
+scriptwriter	1
+Californian	1
+counterspies	1
+endorsee	1
+soldier	1
+barrister	1
+Caliph	1
+emigrant	1
+somnambulist	1
+baggage handler	1
+Health Inspector	1
+ecologist	1
+security system administrator	1
+cannoneer	1
+Commander in Action	1
+employe	1
+spokesmen	1
+authoritarian	1
+Dame	1
+executor	1
+sailor	1
+Baptist	1
+loudmouth	1
+executioner	1
+servant	1
+burglar	1
+waders	1
+executive	1
+sadist	1
+bellboy	1
+utopian	1
+enemy	1
+secretary	1
+automaker	1
+huzzies	1
+enthusiast	1
+Slav	1
+boob	1
+voice	1
+egghead	1
+sales engineer	1
+beggar	1
+Detective Inspector	1
+evolutionist	1
+sales woman	1
+bard	1
+Patent Agent	1
+diver	1
+scapegoat	1
+cartoonist	1
+allies	1
+excellency	1
+sovereign	1
+behaviorist	1
+Baron	1
+examiner	1
+screwball	1
+bellhop	1
+contributories	1
+evildoer	1
+Soviet	1
+booby	1
+functionaries	1
+entrepreneur	1
+schoolteacher	1
+blacksmith	1
+wag	1
+eunuch	1
+soloist	1
+bigot	1
+notabilities	1
+Eurocrat	1
+strategist	1
+celebrant	1
+Postmaster	1
+dunce	1
+sloganeer	1
+celebrity	1
+Freemason	1
+Eurasian	1
+silversmith	1
+cellist	1
+Abbot	1
+esquire	1
+storyteller	1
+celibate	1
+Chairperson	1
+estate agent	1
+store clerk	1
+billionaire	1
+workman	1
+dreamer	1
+stoker	1
+centralist	1
+Councilman	1
+dependent	1
+stockbroker	1
+centrist	1
+grannies	1
+dp professional	1
+Stalinist	1
+CEO	1
+Don	1
+employee	1
+revisionist	1
+cartwright	1
+Branch Manager	1
+deliveryman	1
+steward	1
+cavalier	1
+filing clerk	1
+deliverymen	1
+Somali	1
+cavalryman	1
+homebodies	1
+deputy	1
+spokeswomen	1
+cavalrymen	1
+workmen	1
+Dutchwoman	1
+stenographer	1
+businesswomen	1
+cronies	1
+disciple	1
+stenotypist	1
+cattleman	1
+Chief Executive	1
+dustmen	1
+spokeswoman	1
+Caucasian	1
+witness	1
+desperado	1
+singer	1
+cattlemen	1
+writer	1
+dramatist	1
+shipping agent	1
+caterer	1
+Calif	1
+Dutchwomen	1
+rustic	1
+calif	1
+Managing Owner	1
+emancipator	1
+shoemaker	1
+broker	1
+dignitaries	1
+demagogue	1
+sales agent	1
+catcher	1
+Diplomat	1
+encyclopedist	1
+specialist	1
+catechist	1
+fireman	1
+European	1
+security guard	1
+castaway	1
+fogies	1
+diagnostician	1
+scribe	1
+cashier	1
+secretaries	1
+alumnae	1
+slouch	1
+cartographer	1
+ward	1
+alumni	1
+reporter	1
+building contractor	1
+gypsies	1
+alumnus	1
+resident	1
+barbarian	1
+caddies	1
+alumna	1
+scientist	1
+businessman	1
+buddies	1
+amanuensis	1
+socialist	1
+Catholic	1
+hussies	1
+amanuenses	1
+spectator	1
+caretaker	1
+Chairmen	1
+amateur	1
+realtor	1
+busybody	1
+Managing Partner	1
+accredited agent	1
+psychotherapist	1
+carpenter	1
+usherette	1
+ambassadress	1
+rationalist	1
+businesswoman	1
+alienist	1
+adulteress	1
+public servant	1
+bibliophile	1
+businessmen	1
+adulterer	1
+psychologist	1
+cardsharp	1
+bobbies	1
+ambulance nurse	1
+ranger	1
+aviatrix	1
+youngster	1
+absentee	1
+recitalist	1
+bailiff	1
+Aborigine	1
+American	1
+public enemy	1
+bachelor	1
+Director General	1
+amnesiac	1
+process operator	1
+barber	1
+wing	1
+adventurer	1
+public defender	1
+caller	1
+Republican	1
+adversary	1
+rancher	1
+buddy	1
+weasel	1
+absolutist	1
+professional traders	1
+courier	1
+Provost	1
+advertiser	1
+provost	1
+councilmen	1
+beneficiaries	1
+advertising manager	1
+preferential creditor	1
+courtesan	1
+mercenaries	1
+advertising consultant	1
+publicity agent	1
+chaser	1
+clown	1
+accuser	1
+primitive	1
+commoner	1
+watchman	1
+amputee	1
+publisher	1
+corsair	1
+Chief	1
+advocate	1
+postman	1
+concierge	1
+flunkies	1
+analyst	1
+raftsman	1
+craftsmen	1
+Viceroy	1
+anarchist	1
+press agent	1
+countryman	1
+boobies	1
+anatomist	1
+realist	1
+cockscomb	1
+wader	1
+aeronaut	1
+psychiatrist	1
+chief	1
+actuaries	1
+anchorman	1
+regionalist	1
+communicator	1
+accessories	1
+anchormen	1
+programmer	1
+cosmetician	1
+Account Executive	1
+anesthetist	1
+recipient	1
+contractual partner	1
+Headmaster	1
+Anglican	1
+primary system operator	1
+comer	1
+aviatrices	1
+Anglo-Catholic	1
+press worker	1
+chairperson	1
+notaries	1
+African	1
+radical	1
+darling	1
+Ambassadress	1
+announcer	1
+professor	1
+clarinetist	1
+Notary Public	1
+aborigine	1
+post master	1
+dalmatian	1
+Director	1
+acolyte	1
+positivist	1
+confectioner	1
+Member of Parliament	1
+antagonist	1
+rapist	1
+conciliator	1
+Negro	1
+agent	1
+prophet	1
+coeval	1
+tsarina	1
+agent	1
+recruit	1
+cynic	1
+Congressmen	1
+acrobat	1
+poststructuralist	1
+criminologist	1
+enemies	1
+Antichrist	1
+referee	1
+client	1
+Atheist	1
+anticommunist	1
+protege	1
+consul	1
+depositaries	1
+antique dealer	1
+private detective	1
+chiropractor	1
+washout	1
+agnostic	1
+purser	1
+comrade	1
+archenemies	1
+agriculturist	1
+prosecutor	1
+councilman	1
+emissaries	1
+agronomist	1
+radio engineer	1
+choirboy	1
+fiduciaries	1
+abortionist	1
+racketeer	1
+contestant	1
+Minister	1
+aide	1
+progressive	1
+copyist	1
+left winger	1
+academic	1
+protegee	1
+contralto	1
+Commissar	1
+apologist	1
+principal	1
+chairmen	1
+landladies	1
+apostate	1
+protestant	1
+Communist	1
+lefties	1
+apostle	1
+prodigy	1
+choirmaster	1
+Federal Minister	1
+apothecary	1
+pundit	1
+coal miner	1
+Post Master	1
+academician	1
+probationer	1
+Chairmen of the Board	1
+missionaries	1
+appellant	1
+proxy	1
+countrymen	1
+vision	1
+activist	1
+private citizen	1
+creditor	1
+audit manager	1
+actor	1
+priest	1
+cowman	1
+public enemies	1
+actress	1
+promoter	1
+classmate	1
+revolutionaries	1
+applicant	1
+proletarian	1
+crony	1
+veteran	1
+apprentice	1
+proof reader	1
+charge d'affaires	1
+verifier	1
+air hostess	1
+radiologist	1
+chimney sweep	1
+City Manager	1
+actuary	1
+provincial	1
+contract programmer	1
+Negress	1
+accepter	1
+prisoner of war	1
+claimant	1
+Countess	1
+air traffic controller	1
+producer	1
+contender	1
+vixen	1
+Arab	1
+pupil	1
+cultist	1
+whizz	1
+Arabian	1
+postmaster	1
+countrywomen	1
+gentlemen	1
+arbitrator	1
+puppeteer	1
+data processing manager	1
+dolt	1
+archaeologist	1
+purchaser	1
+data processing user	1
+warbler	1
+acceptor	1
+raftsmen	1
+copartner	1
+yachtswoman	1
+archeologist	1
+professional	1
+conductor	1
+gynaecologist	1
+archenemy	1
+psychoanalyst	1
+chatterbox	1
+left hander	1
+architect	1
+purist	1
+cost clerk	1
+rival	1
+archivist	1
+Provost Marshal	1
+combatant	1
+cosignatories	1
+archpriest	1
+prisoner	1
+cosignatory	1
+Councillor	1
+airman	1
+relative	1
+clerk	1
+adversaries	1
+airmen	1
+reject	1
+congresswomen	1
+Chaplain	1
+aristocrat	1
+prostitute	1
+chauffeur	1
+zionist	1
+alarmist	1
+receptionist	1
+countess	1
+celebrities	1
+albino	1
+registrar	1
+churchmen	1
+prodigies	1
+addict	1
+refugee	1
+councilor	1
+spies	1
+alcoholic	1
+practical nurse	1
+critical indicator administrator	1
+whip	1
+arsonist	1
+proprietor	1
+cyclist	1
+youth	1
+accessary	1
+postmen	1
+contributory	1
+yardman	1
+accessory	1
+rebel	1
+collectivist	1
+xylographer	1
+addressee	1
+postmodernist	1
+comedian	1
+Financial Director	1
+alien	1
+potter	1
+communicant	1
+wrongdoer	1
+artist	1
+production engineer	1
+clinician	1
+vegetarian	1
+artisan	1
+protectionist	1
+dame	1
+data base manager	1
+ascetic	1
+pyromaniac	1
+civil servant	1
+coquette	1
+Asian	1
+pragmatist	1
+Darwinist	1
+caliph	1
+accompanist	1
+primate	1
+chairwoman	1
+wolf	1
+assailant	1
+proof-reader	1
+commander in action	1
+wit	1
+assassin	1
+psychopath	1
+congresswoman	1
+waif	1
+assessor	1
+night watchman	1
+customer	1
+vedette	1
+assignee	1
+neighbour	1
+chairwomen	1
+Evangelist	1
+assignor	1
+Neapolitan	1
+customer support	1
+veterinarian	1
+assistance operator	1
+parachutist	1
+chauvinist	1
+Cabinet Minister	1
+assistant	1
+philistine	1
+culprit	1
+widower	1
+associate	1
+parts programmer	1
+corespondent	1
+whiz	1
+associate	1
+newcomer	1
+customs officer	1
+vintner	1
+adjudicator	1
+outsider	1
+chief executive	1
+white	1
+associated judge	1
+payee	1
+course administrator	1
+Zionist	1
+allergist	1
+noblemen	1
+convict	1
+uhlan	1
+asthmatic	1
+patrolmen	1
+coward	1
+turnkey	1
+astrologer	1
+patrolman	1
+controller	1
+tsarevitch	1
+astronomer	1
+obstetrician	1
+colonizer	1
+undersigned	1
+accomplice	1
+patron	1
+charmer	1
+vacationer	1
+adman	1
+North American	1
+champ	1
+supernumeraries	1
+adjutant	1
+Moroccan	1
+coppersmith	1
+truant	1
+admen	1
+New Zealander	1
+chiropodist	1
+warrant	1
+abbess	1
+panelist	1
+Chair of the Board	1
+tribune	1
+ally	1
+native	1
+contrabassist	1
+tributary	1
+atheist	1
+misfit	1
+companion	1
+valedictorian	1
+Athenian	1
+optometrist	1
+costumier	1
+Democrat	1
+athlete	1
+metallurgist	1
+convert	1
+transport	1
+abbot	1
+moralist	1
+database manager	1
+transient	1
+administrator	1
+narrator	1
+customer engineer	1
+transferee	1
+administrator	1
+musician	1
+cheapskate	1
+transfer	1
+attache	1
+nobleman	1
+crier	1
+tramp	1
+attaches	1
+owner	1
+Chilean	1
+tradeswoman	1
+account executive	1
+moderator	1
+creationist	1
+tragedian	1
+alpinist	1
+navigator	1
+dancer	1
+tragedienne	1
+attendant assistance	1
+person	1
+curmudgeon	1
+townsman	1
+attendant	1
+migrant	1
+costumer	1
+townswoman	1
+attendant	1
+oddball	1
+cheater	1
+Chairman	1
+attendant	1
+osteopath	1
+codefendant	1
+addresser	1
+attendee	1
+miller	1
+concubine	1
+weakling	1
+adolescent	1
+philosopher	1
+co-worker	1
+visionary	1
+attorney	1
+pauper	1
+critic	1
+yachtsman	1
+alto	1
+opportunist	1
+citizen	1
+right hander	1
+auctioneer	1
+Pakistani	1
+custodian	1
+Taoist	1
+coachmen	1
+payee	1
+coachman	1
+vegetarian	1
+counsellor	1
+modern	1
+colonist	1
+tailor	1
+chambermaid	1
+option dealer	1
+dabbler	1
+teller	1
+cleric	1
+pacifist	1
+collaborator	1
+sweetheart	1
+churchman	1
+phrenologist	1
+commodity broker	1
+tyrant	1
+day labourer	1
+pharmacist	1
+confessor	1
+system programmer	1
+copyreader	1
+operator	1
+clergymen	1
+treasurer	1
+dairyman	1
+non-resident	1
+consumptive	1
+supernumerary	1
+common marketeer	1
+oblate	1
+commercial traveller	1
+system supervisor	1
+choreographer	1
+mobster	1
+collegian	1
+system security administrator	1
+clansman	1
+news editor	1
+constructivist	1
+structuralist	1
+commando	1
+operative	1
+colleague	1
+tinker	1
+clairvoyant	1
+operator	1
+competitor	1
+victor	1
+chorister	1
+monogamist	1
+cop	1
+theologian	1
+chum	1
+Nicaraguan	1
+crusader	1
+Syrian	1
+cripple	1
+minor	1
+consigner	1
+trading partner	1
+counterman	1
+millionaire	1
+consignor	1
+terrorist	1
+clergyman	1
+motor mechanic	1
+convalescent	1
+trainer	1
+commissar	1
+missionary	1
+charter member	1
+Turk	1
+chaperone	1
+novelist	1
+cosmonaut	1
+translator	1
+concertmaster	1
+mortgagee	1
+complainant	1
+supervisor	1
+councillor	1
+Muslim	1
+compatriot	1
+Tunisian	1
+city manager	1
+optimist	1
+conjurer	1
+vocalist	1
+correspondent	1
+pitman	1
+Dane	1
+systems programmer	1
+commercial artist	1
+optician	1
+commentator	1
+technologist	1
+cosmopolitan	1
+novice	1
+confidant	1
+trainee	1
+cosmopolite	1
+mimic	1
+counselor	1
+usher	1
+composer	1
+pioneer	1
+concert master	1
+tailor	1
+collaborationist	1
+midget	1
+conspirator	1
+usher	1
+comedienne	1
+neighbor	1
+confidante	1
+Swiss	1
+Christian	1
+non smoker	1
+churl	1
+systems men	1
+civilian	1
+negress	1
+convert	1
+superintendent	1
+charwoman	1
+negro	1
+chaplain	1
+surgeon	1
+charwomen	1
+microbiologist	1
+chief of staff	1
+twin	1
+Confucianist	1
+midwife	1
+cretin	1
+sub-contractor	1
+christian	1
+paratrooper	1
+clansmen	1
+subordinate	1
+confederate	1
+modernist	1
+criminal lawyer	1
+thug	1
+cowpoke	1
+official	1
+consignee	1
+thieves	1
+contemporary	1
+oiler	1
+committee member	1
+trooper	1
+chaperon	1
+parts maker	1
+charlatan	1
+undergraduate	1
+co-producer	1
+miner	1
+columnist	1
+teacher	1
+chemist	1
+Moslim	1
+consort	1
+villain	1
+champion	1
+midwives	1
+civil engineer	1
+thief	1
+colossus	1
+Newfoundlander	1
+chef	1
+veteran	1
+colonial	1
+paymaster	1
+comptroller	1
+tenant	1
+current user	1
+pilot	1
+Chairman of the Board	1
+ticket collector	1
+commie	1
+oaf	1
+cooper	1
+subprincipal	1
+collier	1
+monk	1
+copilot	1
+subaltern	1
+coolie	1
+penitent	1
+contractor	1
+student	1
+counter clerk	1
+mountaineer	1
+consultant	1
+systems analyst	1
+connoisseur	1
+orthopedist	1
+conqueror	1
+tourist	1
+cook	1
+monarchist	1
+countermen	1
+systems engineer	1
+conservator	1
+mortgagor	1
+chimney sweeper	1
+teenager	1
+conservative	1
+packer	1
+customs inspector	1
+suspect	1
+coordinator	1
+merchandising manager	1
+curate	1
+underwriter	1
+chieftain	1
+officiary	1
+coxcomb	1
+system administrator	1
+data center manager	1
+nonconformist	1
+curator	1
+Sudanese	1
+compositor	1
+monarch	1
+cretan	1
+totalitarian	1
+cowmen	1
+mineralogist	1
+coworker	1
+superior	1
+cowherd	1
+operator	1
+daytime attendant	1
+vassal	1
+challenger	1
+owner	1
+creator	1
+Welshmen	1
+day laborer	1
+mute	1
+criminal	1
+tribune	1
+cubist	1
+pirate	1
+dairymen	1
+warden	1
+daredevil	1
+molder	1
+changeling	1
+successor	1
+cowboy	1
+member of parliament	1
+chairman	1
+trustee	1
+cowpuncher	1
+organizer	1
+conjuror	1
+trucker	1
+chipmaker	1
+non-commissioned officer	1
+corporate director	1
+whore	1
+colonialist	1
+operator	1
+codger	1
+widow	1
+counterspy	1
+PhD	1
+craftsman	1
+villager	1
+consulting engineer	1
+Pennsylvanian	1
+consumerist	1
+victim	1
+comic	1
+organist	1
+Costa Rican	1
+typesetter	1
+countrywoman	1
+ophthalmologist	1
+classicist	1
+Welshman	1
+computer programmer	1
+penologist	1
+concessionaire	1
+welder	1
+copywriter	1
+plagiarist	1
+cutler	1
+support manager	1
+courtier	1
+mystic	1
+academic	1
+waitress	1
+Saxon	1
+oculist	1
+Rhodesian	1
+waiter	1
+alien	1
+national	1
+carbineer	1
+weaver	1
+chair	1
+physical therapist	1
+Irishman	1
+upholsterer	1
+constructivist	1
+patient	1
+constituent	1
+valet	1
+President	1
+notary public	1
+centre	1
+vagrant	1
+centralist	1
+orphan	1
+Saviour	1
+violinist	1
+center	1
+M.D.	1
+centenarian	1
+trumpeter	1
+acquaintance	1
+pathologist	1
+competition	1
+systems man	1
+compere	1
+originator	1
+Hun	1
+tradesmen	1
+anthropologist	1
+organizer	1
+armourer	1
+volunteer	1
+celibate	1
+pamphleteer	1
+cavalier	1
+trader	1
+Hellene	1
+North Korean	1
+catholic	1
+switchboard operator	1
+caucasian	1
+physicist	1
+agonist	1
+viceroy	1
+anarchist	1
+notary	1
+catch	1
+surrealist	1
+Hindu	1
+mistress	1
+Scandinavian	1
+travel agent	1
+armorer	1
+occupant	1
+creep	1
+umpire	1
+casualty	1
+Mongol	1
+alcoholic	1
+technician	1
+archer	1
+physician	1
+Hindoo	1
+Swede	1
+Genevese	1
+octogenarian	1
+castellan	1
+subcontractor	1
+Genoan	1
+ombudsmen	1
+copper	1
+therapist	1
+Huguenot	1
+moneychanger	1
+Hinduist	1
+typist	1
+conscript	1
+member	1
+cotenant	1
+tutor	1
+auxiliary	1
+National Socialist	1
+Khartoumer	1
+taxpayer	1
+Ghanian	1
+paediatrician	1
+absolutist	1
+vandal	1
+clairvoyant	1
+miser	1
+communist	1
+nuclear physicist	1
+Rotarian	1
+moving man	1
+caricaturist	1
+nomad	1
+Oldenburger	1
+neurosurgeon	1
+chatterer	1
+ombudsman	1
+agriculturalist	1
+minion	1
+cardiologist	1
+Ph.D.	1
+commodore	1
+mercenary	1
+cardinal	1
+New Yorker	1
+Genevan	1
+naturalist	1
+captive	1
+messenger	1
+Goth	1
+mining engineer	1
+Hussar	1
+minister	1
+Offenbacher	1
+non-member	1
+chattel	1
+Pekinese	1
+adventist	1
+parole officer	1
+almoner	1
+North Vietnamese	1
+Offenburger	1
+physiologist	1
+capitalist	1
+nun	1
+Germanist	1
+merchant	1
+Gemini	1
+peasant	1
+canter	1
+moving men	1
+antiquarian	1
+nominee	1
+committee	1
+Mexican	1
+canon	1
+opponent	1
+canoeist	1
+outlaw	1
+conservative	1
+partner	1
+contemporary	1
+negotiator	1
+Genovese	1
+physiotherapist	1
+ace	1
+oceanographer	1
+christian	1
+painter	1
+Genoese	1
+photographer	1
+archiver	1
+Patagonian	1
+commissary	1
+neoliberal	1
+cambist	1
+participant	1
+agnostic	1
+neocolonialist	1
+calvinist	1
+Nigerian	1
+accused	1
+pervert	1
+count	1
+neopositivist	1
+Oriental	1
+Netizen	1
+Gaul	1
+pianist	1
+authority	1
+newscaster	1
+comic	1
+notability	1
+calenderer	1
+patriarch	1
+chronologist	1
+party	1
+Quakeress	1
+pitmen	1
+Franciscan	1
+pedagogue	1
+Puritan	1
+polemicist	1
+caddy	1
+policeman	1
+adolescent	1
+policemen	1
+cabman	1
+politician	1
+cheat	1
+orthopaedist	1
+Quaker	1
+pluralist	1
+ascetic	1
+podiatrist	1
+cabbie	1
+poet	1
+Galician	1
+populist	1
+cabby	1
+plaintiff	1
+Osnabruecker	1
+pedant	1
+authoritarian	1
+plumber	1
+Nigerian	1
+philologist	1
+Nazi	1
+pharmacologist	1
+Czechoslovak	1
+playwright	1
+accompanier	1
+playmate	1
+coloratura	1
+pessimist	1
+counsel	1
+pedestrian	1
+bungler	1
+Pekingese	1
+apple	1
+perfectionist	1
+baritone	1
+pilgrim	1
+antifascist	1
+pal	1
+chicken	1
+owner	1
+bummer	1
+nihilist	1
+bull	1
+peer	1
+allopath	1
+nationalist	1
+chick	1
+operations recorder	1
+colonialist	1
+motorist	1
+augur	1
+partisan	1
+buff	1
+operator	1
+colonial	1
+patent agent	1
+buffer	1
+petitioner	1
+browser	1
+night watchmen	1
+buddhist	1
+brute	1
+cosmopolitan	1
+cottager	1
+Nordic	1
+Redeemer	1
+brownie	1
+bail	1
+briton	1
+Norman	1
+Chancellor	1
+confucianist	1
+Doctor	1
+antiquary	1
+chief	1
+Dubliner	1
+Jordanian	1
+Methodist	1
+Columbian	1
+Saracen	1
+afflicted	1
+brazier	1
+Celt	1
+Cossack	1
+appendage	1
+antichrist	1
+bow	1
+confirmand	1
+Malaysian	1
+admiral	1
+Mohammedan	1
+Californian	1
+bourgeois	1
+Cambrian	1
+annunciator	1
+borrower	1
+bore	1
+Philistine	1
+adjunct	1
+adjutancy	1
+batman	1
+Professor	1
+appendant	1
+coeval	1
+Madrilenian	1
+Welshwoman	1
+bolshevist	1
+bogie	1
+bohemian	1
+bahai	1
+cobbler	1
+cobber	1
+bluff	1
+ambassador	1
+Madagascan	1
+blowhard	1
+bloomer	1
+bloomer	1
+coach	1
+accessory	1
+conductor	1
+Mormon	1
+correspondent	1
+Brahman	1
+anchor	1
+blocker	1
+contact	1
+blockbuster	1
+Malayan	1
+Silesian	1
+bleeder	1
+Brazilian	1
+Venetian	1
+Berliner	1
+Varsovian	1
+bankrupt	1
+contralto	1
+amateur	1
+Vestal	1
+Walloon	1
+bisexual	1
+Arab	1
+Scot	1
+affiliate	1
+contributory	1
+associate	1
+market leader	1
+data miner	1
+corporate executive	1
+Pope	1
+irish resident	1
+Mussulman	1
+Pomeranian	1
+Taoist	1
+clod	1
+Syrian	1
+investment advisor	1
+Lutheran	1
+Manchurian	1
+chartered accountant	1
+convalescent	1
+animator	1
+chemigrapher	1
+Benedictine	1
+civilian	1
+Marxist	1
+Belgian	1
+bacchant	1
+choker	1
+asthenic	1
+American	1
+contortionist	1
+Titan	1
+annalist	1
+asthmatic	1
+Swiss	1
+Alpinist	1
+bench	1
+Anglicist	1
+babysitter	1
+alchemist	1
+behaviorist	1
+aesthete	1
+bedmate	1
+altruist	1
+beauty	1
+alum	1
+aid	1
+character	1
+Jesuit	1
+beast	1
+beadle	1
+bear	1
+bear	1
+Sudanese	1
+Stoic	1
+Majorcan	1
+consumptive	1
+affluent	1
+bass	1
+Arabist	1
+alternate	1
+backup	1
+Swabian	1
+Tartar	1
+son-in-law	1
+ape	1
+Siberian	1
+Semite	1
+Kuwaiti	1
+classic	1
+backstop	1
+Amazon	1
+barnstormer	1
+Senator	1
+Serbian	1
+Shah	1
+bacchante	1
+barbarian	1
+Latinist	1
+bantam	1
+banker	1
+clamorer	1
+mongol	1
+Praguer	1
+Parisian	1
+Salzburger	1
+Potsdamer	1
+Philippino	1
+Paraguayan	1
+Rumanian	1
+Patagonian	1
+Haitian	1
+Pennsylvanian	1
+Peruvian	1
+Osloen	1
+Gabonese	1
+Panamanian	1
+Palestinian	1
+Pakistani	1
+Galilean	1
+Regensburger	1
+Colombian	1
+Roman	1
+Rotterdamer	1
+Turk	1
+Carinthian	1
+Capetowner	1
+Montrealer	1
+Stuttgarter	1
+Pole	1
+Tyrolean	1
+Moor	1
+Moroccan	1
+Municher	1
+Muscovite	1
+Munsterer	1
+Thuringian	1
+Tasmanian	1
+Trojan	1
+Tunisian	1
+Strasbourger	1
+Turkish	1
+Indian	1
+Polish	1
+Icelander	1
+Sumerian	1
+Russian	1
+Norwegian	1
+Indonesian	1
+Welsh	1
+Iranian	1
+Portuguese	1
+Irish	1
+Swedish	1
+apache	1
+Persian	1
+Iraqi	1
+Slavic	1
+Guyanese	1
+Papuan	1
+Pekingese	1
+Slovak	1
+Italian	1
+Bavarian	1
+Israelite	1
+Spanish	1
+Israeli	1
+wyomingite	1
+Hanoverian	1
+Russian	1
+Hebridean	1
+Scottish	1
+Pekinese	1
+Slovene	1
+Hebrew	1
+Slovenian	1
+Hawaiian	1
+phoenician	1
+Latvian	1
+scotch	1
+Ghanaian	1
+dalmatian	1
+Liverpudlian	1
+hindu	1
+Guatemalan	1
+hindoo	1
+Bavarian	1
+liberian	1
+Swahili	1
+cretan	1
+Greek	1
+laplander	1
+Persian	1
+maya	1
+Hungarian	1
+hessian	1
+Papuan	1
+european	1
+Greenlander	1
+finn	1
+Fijian	1
+finnish	1
+English	1
+inca	1
+Japanese	1
+Bulgarian	1
+Prussian	1
+Danish	1
+German	1
+Australian	1
+Georgian	1
+Chinese	1
+Armenian	1
+Cantonese	1
+Fleming	1
+Corsican	1
+Flemish	1
+British	1
+Frisian	1
+Congolese	1
+Egyptian	1
+Cambodian	1
+French	1
+Croatian	1
+Ecuadorian	1
+Estonian	1
+Ecuadorean	1
+Czech	1
+Alsatian	1
+English	1
+Ecuadoran	1
+Czechoslovakian	1
+Dutch	1
+Dutch	1
+ammonite	1
+Cypriot	1
+Chinese	1
+Eskimo	1
+Eskimo	1
+Cuban	1
+Lithuanian	1
+Ethiopian	1
+Estonian	1
+Indian	1
+Ethiopian	1
+Greek	1
+Neapolitan	1
+Japanese	1
+African	1
+Guatemalan	1
+Czech	1
+Lapp	1
+Nicaraguan	1
+Hawaiian	1
+Cypriot	1
+Laotian	1
+Norwegian	1
+Frisian	1
+Chilean	1
+Indonesian	1
+Danish	1
+Fijian	1
+Czechoslovakian	1
+Irish	1
+Dominican	1
+Hebrew	1
+Bernese	1
+Iraqi	1
+Slavic	1
+Ghanaian	1
+Javanese	1
+Latvian	1
+Jamaican	1
+German	1
+Portuguese	1
+Italian	1
+Corsican	1
+Hungarian	1
+Libyan	1
+Indo-European	1
+Congolese	1
+Flemish	1
+Cuban	1
+Mayan	1
+Croatian	1
+French	1
+Sumerian	1
+Latin	1
+Livonian	1
+Anglo-Saxon	1
+Cambodian	1
+Malaysian	1
+Cantonese	1
+Albanian	1
+Canadian	1
+Libyan	1
+Sicilian	1
+Maltese	1
+Milanese	1
+Malayan	1
+Jugoslav	1
+Lithuanian	1
+Yiddish	1
+Korean	1
+Welsh	1
+Asiatic	1
+Bolivian	1
+Phonetician	1
+Bosnian	1
+Korean	1
+Bohemian	1
+Polish	1
+Boer	1
+Zulu	1
+Yugoslavian	1
+Zambian	1
+Yugoslav	1
+Malay	1
+Asian	1
+Turkish	1
+Bulgarian	1
+British	1
+Byzantine	1
+Uruguayan	1
+Vietnamese	1
+Venezuelan	1
+Viennese	1
+Argentinian	1
+Afghan	1
+Mayan	1
+Arabian	1
+Maltese	1
+Spanish	1
+Australian	1
+Kenyan	1
+Maya	1
+Austrian	1
+Teuton	1
+Thai	1
+Arab	1
+Tibetan	1
+Mayan	1
+Malay	1
+Somali	1
+Maltese	1
+Slovene	1
+Scottish	1
+Argentine	1
+Slovenian	1
+Swedish	1
+Macedonian	1
+Macedonian	1
+Lebanese	1
+Slovak	1
+Siamese	1
+Albanian	1
+Laotian	1
+Latin	1
+Lapp	1
+newspaper vendor	1
+countess	1
+Secretary of State	1
+count	1
+nurse	1
+brigadier	1
+sheriff	1
+bombardier	1
+Mr.	1
+Miss	1
+Secretary General	1
+Secretaries General	1
+pastor	1
+Ms	1
+Sir	1
+Miss	1
+Ms.	1
+April	1
+senator	1
+baron	1
+officer	1
+ambassador	1
+Prince	1
+inspector	1
+Mr	1
+Air Chief Marshal	1
+Dauphin	1
+lady	1
+Mrs.	1
+archbishop	1
+Earl	1
+king	1
+Mrs	1
+archduke	1
+Empress	1
+lieutenant	1
+pope	1
+astronaut	1
+Baroness	1
+judge	1
+prince	1
+admiral	1
+Vice-President	1
+lord	1
+queen	1
+Dr.	1
+Friar	1
+mayor	1
+premier	1
+detective	1
+Lieutenant	1
+major	1
+rabbi	1
+empress	1
+Ambassador	1
+marshall	1
+Prof	1
+Dr	1
+prime minister	1
+marshal	1
+Prime Minister	1
+earl	1
+Congressman	1
+aunt	1
+Prof.	1
+duchess	1
+Duchess	1
+captain	1
+princess	1
+doge	1
+Professor	1
+bishop	1
+private	1
+duke	1
+General	1
+baroness	1
+president	1
+doctor	1
+Mayor	1
+cadet	1
+uncle	1
+doctor	1
+Commander in Chief	1
+ayatollah	1
+vice president	1
+emperor	1
+Deaconess	1
+Cardinal	1
+vicepresident	1
+dean	1
+President	1
+aunty	1
+Commander	1
+deaconess	1
+Archduke	1
+Czar	1
+Deacon	1
+deacon	1
+Princess	1
+Czarina	1
+Major	1
+Frau	1
+chief executive officer	1
+congressman	1
+Premier	1
+general	1
+Congresswomen	1
+congressmen	1
+Dean	1
+friar	1
+ladies	1
+constable	1
+Governor	1
+GP	1
+Secretaries of State	1
+commodore	1
+Archbishop	1
+herr	1
+Bishop	1
+cousin	1
+colonel	1
+grandaunt	1
+Pope	1
+commander	1
+vice-president	1
+governor	1
+Captain	1
+CPT.	1
+Saint	1
+CPT	1
+Commissioner	1
+Chief Executive Officer	1
+Lord	1
+dauphin	1
+Emperor	1
+commissioner	1
+Commodore	1
+commander in chief	1
+saint	1
+commandant	1
+Admiral	1
+Czarevitch	1
+aunties	1
+corporal	1
+senor	1
+chancellor	1
+nurse	1
+holiness	1
+sister	1
+lord	1
+skeptic	1
+highness	1
+grace	1
+major	1
+ladyship	1
+dame	1
+madam	1
+junior	1
+excellency	1
+madam	1
+excellence	1
+honour	1
+governor	1
+esquire	1
+honor	1
+marchioness	1
+doctor	1
+lordship	1
+nagger	1
+crusher	1
+teetotaler	1
+crossover	1
+murderess	1
+cringer	1
+multiplier	1
+cutter	1
+mower	1
+decoder	1
+modulator	1
+curser	1
+sander	1
+lighter	1
+precentor	1
+despiser	1
+teetotaller	1
+excursionist	1
+telegrapher	1
+malingerer	1
+poacher	1
+dispenser	1
+tedder	1
+developer	1
+onlooker	1
+lifter	1
+sweeper	1
+foundress	1
+puffer	1
+harvester	1
+shiner	1
+maltster	1
+mocker	1
+fuller	1
+starter	1
+destroyer	1
+reviewer	1
+leveller	1
+seeker	1
+leveler	1
+timer	1
+housepainter	1
+shaper	1
+flyer	1
+preparer	1
+hewer	1
+swaggerer	1
+maker	1
+shaker	1
+executor	1
+purchaser	1
+dissenter	1
+reducer	1
+factor	1
+tier	1
+enlarger	1
+reveler	1
+leaser	1
+plasterer	1
+executrix	1
+shadow	1
+layer	1
+sinker	1
+liner	1
+stacker	1
+fryer	1
+scavenger	1
+digger	1
+processor	1
+harpooner	1
+plotter	1
+laundress	1
+opener	1
+disperser	1
+tapster	1
+master	1
+rigger	1
+holder	1
+scrambler	1
+ladler	1
+perforator	1
+exorcist	1
+seer	1
+hotelier	1
+mixer	1
+giver	1
+piecer	1
+guide	1
+pitcher	1
+eliminator	1
+obstructionist	1
+manpower	1
+narrator	1
+fender	1
+stripper	1
+lacemaker	1
+promotor	1
+masticator	1
+straggler	1
+demmurrer	1
+supplier	1
+fixer	1
+pacemaker	1
+counter	1
+prayer	1
+mailer	1
+sdr	1
+extinguisher	1
+sewer	1
+knitter	1
+springer	1
+hesitator	1
+tanner	1
+kirver	1
+rectifier	1
+knacker	1
+spreader	1
+greaser	1
+scarfer	1
+hanger	1
+recorder	1
+kicker	1
+retractor	1
+magpie	1
+strangler	1
+exciter	1
+shoveler	1
+disintegrator	1
+recuperator	1
+dyer	1
+polisher	1
+gilder	1
+stringer	1
+duster	1
+spotter	1
+fisher	1
+temptress	1
+jumper	1
+preventer	1
+header	1
+selector	1
+locker	1
+questioner	1
+effector	1
+pacifier	1
+jigger	1
+spoiler	1
+discriminator	1
+signer	1
+exchanger	1
+reckoner	1
+jailbreaker	1
+retriever	1
+erector	1
+spinner	1
+divider	1
+presser	1
+issuer	1
+tempter	1
+feeder	1
+planter	1
+glover	1
+tamer	1
+ironer	1
+overseer	1
+inventress	1
+ponderer	1
+driller	1
+stopper	1
+edger	1
+setter	1
+floater	1
+prospector	1
+hauler	1
+prompter	1
+embroiderer	1
+paver	1
+interrupter	1
+schemer	1
+defaulter	1
+petitioner	1
+locator	1
+scutcher	1
+interceptor	1
+sufferer	1
+integrator	1
+quarreler	1
+freighter	1
+retoucher	1
+discharge	1
+speedster	1
+discharger	1
+speller	1
+drier	1
+suburbanite	1
+insulator	1
+receiver	1
+installer	1
+speculator	1
+experimenter	1
+nutritionist	1
+falsifier	1
+specifier	1
+grower	1
+planer	1
+denouncer	1
+planisher	1
+inputter	1
+positioner	1
+marker	1
+picket	1
+faultfinder	1
+picker	1
+dresser	1
+pounder	1
+gatherer	1
+stoker	1
+inductor	1
+projector	1
+limer	1
+sower	1
+distributor	1
+scourer	1
+drawer	1
+scrubber	1
+gripper	1
+tender	1
+framer	1
+roaster	1
+loader	1
+ropemaker	1
+crocheter	1
+rider	1
+digester	1
+retainer	1
+glider	1
+reaper	1
+filler	1
+tagger	1
+lubricator	1
+plunderer	1
+dipper	1
+saboteur	1
+improver	1
+puller	1
+doffer	1
+tacker	1
+hater	1
+regulator	1
+manufacturer	1
+ruler	1
+debutant	1
+separator	1
+encoder	1
+snuffler	1
+folder	1
+refiner	1
+implementor	1
+rower	1
+doer	1
+shipper	1
+director	1
+reactor	1
+impeller	1
+snooper	1
+generator	1
+snorer	1
+detector	1
+sniper	1
+diner	1
+pusher	1
+filibuster	1
+rioter	1
+eavesdropper	1
+smoker	1
+grinder	1
+smuggler	1
+emulator	1
+riser	1
+illuminator	1
+seller	1
+etcher	1
+tabulator	1
+identifier	1
+smelter	1
+mender	1
+subcontractor	1
+limiter	1
+roller	1
+fighter	1
+placer	1
+marauder	1
+plodder	1
+defeatist	1
+saver	1
+elevator	1
+plunger	1
+exerciser	1
+sloganeer	1
+hurdler	1
+sawer	1
+supplier	1
+mutineer	1
+worker	1
+riveter	1
+surveyor	1
+slinger	1
+washer	1
+newsmonger	1
+thinker	1
+sleeper	1
+watchmaker	1
+terminator	1
+traveler	1
+slaughterer	1
+voucher	1
+stutterer	1
+user	1
+slanderer	1
+cabbies	1
+systematizer	1
+thresher	1
+tinner	1
+whoremonger	1
+repeater	1
+vendor	1
+sawyer	1
+depositaries	1
+skiver	1
+taster	1
+tiler	1
+yodeler	1
+tiller	1
+user	1
+skimmer	1
+warmonger	1
+thresher	1
+test subscriber	1
+miller	1
+wooer	1
+skeiner	1
+troll	1
+milliner	1
+warner	1
+skirmisher	1
+survivor	1
+milker	1
+usurper	1
+sketcher	1
+toller	1
+skier	1
+antiquaries	1
+qualifier	1
+warrior	1
+balancer	1
+violator	1
+analyser	1
+taskmaster	1
+analyzer	1
+valuer	1
+chipper	1
+tester	1
+conspiratress	1
+vilifier	1
+catcher	1
+visitor	1
+autocoder	1
+viewer	1
+caster	1
+voter	1
+consoler	1
+end-user	1
+appraiser	1
+subscriber	1
+carver	1
+advisor	1
+acquirer	1
+sympathizer	1
+carrier	1
+responder	1
+applicator	1
+tormentor	1
+canvasser	1
+costar	1
+cantor	1
+supporter	1
+camper	1
+whistler	1
+absconder	1
+stroller	1
+caller	1
+typographer	1
+calculator	1
+swimmer	1
+comforter	1
+wrestler	1
+roller-type cam follower	1
+well-wisher	1
+computer	1
+wrecker	1
+burner	1
+talker	1
+copier	1
+worshipper	1
+allocator	1
+terminator	1
+comber	1
+worshiper	1
+accumulator	1
+tiller	1
+converter	1
+wanderer	1
+chronicler	1
+traitor	1
+congratulator	1
+wiper	1
+batcher	1
+wholesaler	1
+cleaner	1
+winder	1
+cooker	1
+transgressor	1
+admonisher	1
+tuner	1
+collator	1
+winder	1
+breaker	1
+tumbler	1
+administrator	1
+webmaster	1
+brakeman	1
+turner	1
+administratrix	1
+waif	1
+barker	1
+tucker	1
+botcher	1
+winner	1
+borer	1
+trustor	1
+booster	1
+vendor	1
+bomber	1
+undercutter	1
+batter	1
+viewer	1
+bolter	1
+watcher	1
+assayer	1
+walker	1
+boiler	1
+waster	1
+baler	1
+traveller	1
+conveyor	1
+troublemaker	1
+charterer	1
+suitor	1
+coaster	1
+unloader	1
+convertor	1
+swindler	1
+conversationalist	1
+trimmer	1
+blower	1
+moneylender	1
+adapter	1
+trawler	1
+assembler	1
+participator	1
+blazer	1
+trapper	1
+bleeder	1
+non-programmer	1
+chopper	1
+transmitter	1
+blender	1
+moulder	1
+blaster	1
+transformer	1
+skilled worker	1
+murderer	1
+bawler	1
+transcriber	1
+binder	1
+payer	1
+bettor	1
+trainer	1
+charger	1
+pensioner	1
+condensor	1
+trader	1
+better	1
+mover	1
+clipper	1
+tracer	1
+besieger	1
+peacekeeper	1
+conditioner	1
+tower	1
+bearer	1
+money changer	1
+assign	1
+tobacconist	1
+adaptor	1
+pawnbroker	1
+condenser	1
+runner	1
+beater	1
+offender	1
+Speaker	1
+solicitor	1
+assignor	1
+persecutor	1
+cleanser	1
+rescuer	1
+abutter	1
+multiple user	1
+clarifier	1
+riser	1
+adder	1
+observer	1
+debaucher	1
+salesperson	1
+climber	1
+passenger	1
+distiller	1
+shareholder	1
+chiseller	1
+perpetrator	1
+depositor	1
+shooter	1
+conformist	1
+objector	1
+essayist	1
+senior programmer	1
+co-star	1
+polluter	1
+demonstrator	1
+software vendor	1
+collector	1
+poacher	1
+defector	1
+sitter	1
+checker	1
+porter	1
+evaluator	1
+savings depositor	1
+copycat	1
+possessor	1
+depositary	1
+seducer	1
+contributor	1
+oppressor	1
+drifter	1
+software developer	1
+chiseler	1
+pacifier	1
+end user	1
+repossessor	1
+co-author	1
+player	1
+driver	1
+shopkeeper	1
+coauthor	1
+planter	1
+dweller	1
+starter	1
+coder	1
+planner	1
+draper	1
+restorer	1
+commuter	1
+peace keeper	1
+disciplinarian	1
+retriever	1
+compiler	1
+peddler	1
+donor	1
+robber	1
+cutthroat	1
+performer	1
+end subscriber	1
+sampler	1
+consumer	1
+pieceworker	1
+dockworker	1
+saver	1
+corker	1
+pedlar	1
+deliverer	1
+shopper	1
+corrupter	1
+prompter	1
+exploiter	1
+sender	1
+cosigner	1
+racer	1
+defeatist	1
+sharer	1
+crooner	1
+presenter	1
+deceiver	1
+shearer	1
+cultivator	1
+practitioner	1
+erector	1
+shoplifter	1
+bidder	1
+progenitor	1
+depositor	1
+storekeeper	1
+briber	1
+preacher	1
+deserter	1
+striker	1
+cabdriver	1
+preserver	1
+detractor	1
+sinner	1
+breeder	1
+profiteer	1
+diarist	1
+stockholder	1
+babbler	1
+proponent	1
+defrauder	1
+stockjobber	1
+calling-system user	1
+protagonist	1
+drinker	1
+stringer	1
+bystander	1
+protector	1
+doorkeeper	1
+sponsor	1
+beneficial owner	1
+protester	1
+dueler	1
+seller	1
+backer	1
+provider	1
+exterminator	1
+speaker	1
+bailor	1
+pursuer	1
+enquirer	1
+rambler	1
+blunderer	1
+ravisher	1
+economizer	1
+priority subscriber	1
+carpetbagger	1
+reckoner	1
+effector	1
+purveyor	1
+author	1
+reader	1
+eliminator	1
+bowler	1
+eloper	1
+automotive manufacturer	1
+diner	1
+blasphemer	1
+duelist	1
+bather	1
+adorer	1
+bailsmen	1
+ambulance driver	1
+bailsman	1
+adviser	1
+beginner	1
+advocator	1
+bluffer	1
+achiever	1
+censor	1
+angler	1
+blowhard	1
+abductor	1
+boarder	1
+aggressor	1
+boaster	1
+antiquary	1
+bullfighter	1
+agitator	1
+brewer	1
+abetter	1
+bugler	1
+application developer	1
+buyer	1
+applications developer	1
+cabbie	1
+appointee	1
+cabby	1
+arbiter	1
+captor	1
+ad hoc user	1
+believer	1
+arms manufacturer	1
+bailer	1
+abettor	1
+authorized system user	1
+adherent	1
+bailee	1
+aspirant	1
+intruder	1
+adjuster	1
+innovator	1
+adjustor	1
+interviewer	1
+almoner	1
+lover	1
+attacker	1
+mailer	1
+admirer	1
+jobber	1
+firebrand	1
+loser	1
+fishmonger	1
+imitator	1
+golfer	1
+looter	1
+gypper	1
+martinet	1
+gauger	1
+launderer	1
+fitter	1
+liberator	1
+follower	1
+licensed dealer	1
+hijacker	1
+keyboard operator	1
+fabulist	1
+licenser	1
+farmworker	1
+licensor	1
+fishwife	1
+lady-killer	1
+free trader	1
+kisser	1
+grumbler	1
+lector	1
+gambler	1
+kidnapper	1
+filibusterer	1
+learner	1
+fishwives	1
+job holder	1
+grocer	1
+labourer	1
+gunrunner	1
+loan officer	1
+gyp	1
+interlocutor	1
+freeloader	1
+initiator	1
+greengrocer	1
+instigator	1
+hiker	1
+intriguer	1
+guzzler	1
+invader	1
+faker	1
+jailer	1
+farm worker	1
+kicker	1
+fortuneteller	1
+jobber	1
+fiddler	1
+jogger	1
+first time user	1
+joiner	1
+factory worker	1
+juggler	1
+highest bidder	1
+matcher	1
+floater	1
+matchmaker	1
+fault finder	1
+keeper	1
+fowler	1
+master	1
+haggler	1
+kidder	1
+freethinker	1
+kidnaper	1
+grievor	1
+killer	1
+furrier	1
+laborer	1
+gager	1
+mass retailer	1
+rover	1
+laggard	1
+goalkeeper	1
+landowner	1
+grader	1
+lending officer	1
+griever	1
+latecomer	1
+harbinger	1
+lawbreaker	1
+hobbyist	1
+manipulator	1
+holder in due course	1
+libeler	1
+holder for value	1
+listener	1
+lodger	1
+infiltrator	1
+multitude	1
+gentility	1
+monopoly	1
+judiciary	1
+movement	1
+Federal Communications Commission	1
+office	1
+line management	1
+mission	1
+Food and Drug Administration	1
+minority	1
+investment trust	1
+ministry	1
+higher education	1
+rally	1
+insurance company	1
+military	1
+growth market	1
+quarters	1
+labour union	1
+symphony	1
+healthcare	1
+residency	1
+labor market	1
+polity	1
+going concern	1
+station	1
+issuing company	1
+protectorate	1
+fire company	1
+startup	1
+ISP	1
+state	1
+folk	1
+radio	1
+intelligentsia	1
+party	1
+fire department	1
+orders	1
+legislative	1
+rabble	1
+glitterati	1
+survey	1
+joint stock company	1
+revenue	1
+finance company	1
+partnership	1
+issuing house	1
+proprietary	1
+high school	1
+octet	1
+legislature	1
+reserve	1
+fringe group	1
+race	1
+joint committee	1
+philanthropy	1
+health service	1
+resistance	1
+issuing office	1
+right	1
+FBI	1
+sextet	1
+International Monetary Fund	1
+squirearchy	1
+firm	1
+profession	1
+Intel	1
+platoon	1
+Health Maintenance Organization	1
+professoriate	1
+jury	1
+royalty	1
+forwarding agency	1
+relief	1
+Internal Revenue Service	1
+seminary	1
+farmer's cooperative	1
+public	1
+International Business Machines Corporation	1
+ship	1
+fishery	1
+supplier	1
+lead underwriter	1
+outreach	1
+growth industry	1
+quintet	1
+lone parent family	1
+people	1
+freenet	1
+officiary	1
+information bureau	1
+settlement	1
+gentry	1
+publisher	1
+legation	1
+school	1
+fig	1
+politburo	1
+investment bank	1
+neighborhood	1
+household	1
+network	1
+international monetary fund	1
+post	1
+folks	1
+neighbourhood	1
+leading underwriter	1
+plutocracy	1
+governing body	1
+section	1
+International Chamber of Commerce	1
+outfit	1
+gateway service	1
+splinter	1
+international chamber of commerce	1
+phalanx	1
+football team	1
+suite	1
+investigating committee	1
+pool	1
+GOVT	1
+mess	1
+issuing bank	1
+nationality	1
+HMO	1
+service	1
+labor union	1
+quartet	1
+gatherings	1
+offence	1
+junta	1
+session	1
+Fund	1
+organization	1
+intercept service	1
+patronage	1
+garment industry	1
+relay	1
+land bank	1
+order	1
+gov't	1
+representation	1
+locals	1
+picket	1
+human resource	1
+spearhead	1
+kinsfolk	1
+meritocracy	1
+falling market	1
+negative	1
+mail order firm	1
+pantheon	1
+grand jury	1
+oligarchy	1
+legion	1
+nursery	1
+holding company	1
+synod	1
+lower class	1
+secretariat	1
+guild	1
+panel	1
+internet service provider	1
+shift	1
+humanity	1
+seller	1
+intelligence service	1
+reinforcement	1
+Board of Trade	1
+organ	1
+lending institution	1
+rearguard	1
+building industry	1
+police	1
+investment advisory service	1
+offense	1
+cartel	1
+plenum	1
+labor movement	1
+subsidiary	1
+Board of Health	1
+rental	1
+medium-size company	1
+soldiery	1
+Board of Directors	1
+patrol	1
+laity	1
+neutral	1
+brigade	1
+population	1
+Khmer Rouge	1
+society	1
+Board of Trustees	1
+side	1
+maintenance crew	1
+patriciate	1
+car rental	1
+seminar	1
+manufacturer	1
+repertory	1
+bond trading ring	1
+sisterhood	1
+managing committee	1
+monastery	1
+board	1
+readership	1
+labour movement	1
+subdivision	1
+branch of industry	1
+subcontractor	1
+mail order house	1
+nobility	1
+branch of service	1
+personnel	1
+labour market	1
+persuasion	1
+Board of Education	1
+peasantry	1
+cortege	1
+offspring	1
+caretaker government	1
+regency	1
+corps	1
+senate	1
+body of troops	1
+system	1
+consistory	1
+reserves	1
+bureau	1
+ring	1
+corporation	1
+septet	1
+building trade	1
+opposition	1
+complaint department	1
+outpost	1
+autocracy	1
+newspaper	1
+consultative committee	1
+populace	1
+Board of Brokers	1
+secondary market	1
+common carrier	1
+public company	1
+buying commission	1
+security department	1
+customs union	1
+press	1
+bourgeoisie	1
+sender's company	1
+Corp.	1
+publishing house	1
+casts	1
+sect	1
+clientele	1
+publishing company	1
+Board of Assessment	1
+shipping business	1
+county court	1
+recipient's department	1
+Board of Admiralty	1
+shipping agency	1
+computer giant	1
+progeny	1
+battalion	1
+sales force	1
+costing department	1
+power company	1
+banking commission	1
+sales department	1
+cult	1
+regime	1
+avant-garde	1
+Savings and Loan Association	1
+community chest	1
+regiment	1
+bargaining unit	1
+search party	1
+commune	1
+proletariat	1
+backshift	1
+savings club	1
+craft union	1
+processing industry	1
+calling-card service	1
+stockmarket	1
+county council	1
+purchasing commission	1
+dept	1
+single-parent family	1
+communications commission	1
+public	1
+EFTA	1
+savings and loan association	1
+confederacy	1
+puppet government	1
+display administration	1
+securities investment trust	1
+chorale	1
+puppet regime	1
+Dpt.	1
+retail industry	1
+corporation	1
+private bank	1
+European Union	1
+single parent family	1
+conglomerate	1
+professoriate	1
+engineering industry	1
+shipping company	1
+committee	1
+recipient's company	1
+engineering department	1
+security council	1
+commissariat	1
+probate	1
+engineering faculty	1
+sender's department	1
+co.	1
+private sector	1
+debt collection agency	1
+software house	1
+club	1
+wedge	1
+emergency service bureau	1
+shipbuilding industry	1
+collectivity	1
+Labor Union	1
+developing nation	1
+shipping office	1
+commonwealth	1
+Farmer's Cooperative	1
+discount market	1
+sender department	1
+corp.	1
+aristocracies	1
+Dept.	1
+State Supreme Court	1
+conservancy	1
+clergies	1
+detective agency	1
+steering committee	1
+council	1
+shipping companies	1
+electorate	1
+stock company	1
+clan	1
+Joint Committee	1
+elect	1
+State Department	1
+circuit court	1
+garment industries	1
+designing department	1
+state department	1
+Council Of Ministers	1
+finance companies	1
+Dyes and Chemicals Division	1
+republic	1
+clergy	1
+collectivities	1
+dealership	1
+sales agency	1
+construction industry	1
+Securities Investment Trust	1
+Eurovision	1
+special service	1
+Christendom	1
+debt collection agencies	1
+directorate	1
+service industry	1
+contrast control	1
+Merchant Marine	1
+draft board	1
+syndicate	1
+court of appeal	1
+construction industries	1
+Dyestuffs and Chemicals Division	1
+subculture	1
+consumer society	1
+humankind	1
+experts panel	1
+subsidiary	1
+credit agency	1
+subsidiary companies	1
+express company	1
+troop	1
+cohort	1
+single-parent families	1
+empire	1
+underwriting syndicate	1
+cooperative	1
+Express Company	1
+executive committee	1
+union local	1
+data-lynx	1
+constituencies	1
+Euromarket	1
+supplies division	1
+contingent	1
+parties	1
+exchequer	1
+troops	1
+cooperative society	1
+juries	1
+electronic industries association	1
+tribe	1
+congress	1
+university	1
+Department of Environmental Protection	1
+technical publications dept.	1
+constabulary	1
+Technical Publications Dept.	1
+evening shift	1
+underwriting consortium	1
+copartnership	1
+watch	1
+Eurostat	1
+subcommittee	1
+civilization	1
+mining industries	1
+European Monetary System	1
+two-parent family	1
+credit commission	1
+Union Local	1
+eurocapital market	1
+task force	1
+Cree Community	1
+native countries	1
+dynasty	1
+systems support group	1
+common market	1
+sender's companies	1
+European Community	1
+system house	1
+claque	1
+unit	1
+department	1
+treasury	1
+crew	1
+port authorities	1
+euromoney market	1
+Supreme Court	1
+accounting department	1
+County Court	1
+diocese	1
+underworld	1
+amenity society	1
+workgroup	1
+advertising agency	1
+tribunal	1
+advisory board	1
+armies	1
+ancillary industry	1
+trade association	1
+affiliate	1
+holding companies	1
+affiliated company	1
+tariff administration	1
+age group	1
+detective agencies	1
+answering service	1
+support personnel	1
+agency	1
+shipping agencies	1
+Apache	1
+subsidiary company	1
+action group	1
+express companies	1
+appraisal universe	1
+winning team	1
+Air Force	1
+subsidiaries	1
+aircraft builder	1
+underwriting consortia	1
+aircrew	1
+ancillary industries	1
+airline	1
+technical writing staff	1
+archive library user	1
+insurance companies	1
+aristocracy	1
+trade union	1
+alarm call service	1
+publishing companies	1
+armed force	1
+throng	1
+army	1
+Advertising Agencies	1
+admin	1
+upper class	1
+administrative body	1
+vicinage	1
+audience	1
+militia	1
+ferry	1
+Express Companies	1
+court	1
+navy	1
+government	1
+Xerox	1
+couple	1
+parent company	1
+country	1
+air force	1
+county	1
+merchant marine	1
+counsel	1
+gentilities	1
+correspondent	1
+operations office	1
+grade	1
+Advertising Agency	1
+executive	1
+military	1
+foundation	1
+public utilities	1
+detachment	1
+parish	1
+library	1
+Advisory Board	1
+huddle	1
+paratroops	1
+levy	1
+autocracies	1
+manning	1
+orchestra	1
+factor	1
+Ministries	1
+democracy	1
+party	1
+duet	1
+utility	1
+cordon	1
+minority company	1
+legislative	1
+universe	1
+forum	1
+monarchy	1
+left	1
+governing bodies	1
+distaff	1
+native country	1
+flank	1
+search parties	1
+faction	1
+multinational	1
+league	1
+working class	1
+generation	1
+operations division	1
+excursion	1
+Executive Committee	1
+majority	1
+MIS	1
+law	1
+Patent Office	1
+hierarchy	1
+newsgroup	1
+ghetto	1
+building industries	1
+elite	1
+meritocracy	1
+land	1
+fisheries	1
+enterprise	1
+mining industry	1
+line	1
+laities	1
+dorm	1
+patent office	1
+family	1
+monarchies	1
+denomination	1
+ministry	1
+house	1
+agencies	1
+locals	1
+news agency	1
+labor	1
+meritocracies	1
+lodge	1
+mob	1
+labour	1
+dynasties	1
+humanity	1
+OECD	1
+mass	1
+constabularies	1
+knighthood	1
+operations staff	1
+estate	1
+mafia	1
+flock	1
+picket line	1
+kitchen	1
+parent companies	1
+dormitory	1
+populace	1
+kindred	1
+lone parent families	1
+kindergarten	1
+port authority	1
+floor	1
+Engineering Department	1
+kind	1
+Port Authority	1
+kin	1
+conservancies	1
+empire	1
+middle class	1
+enemy	1
+Labour Union	1
+cooperation	1
+postal administration	1
+juvenility	1
+judiciaries	1
+judicature	1
+population	1
+cooperative	1
+confederacies	1
+fishery	1
+posterity	1
+magistracy	1
+medium size company	1
+femininity	1
+peerage	1
+front	1
+Accounting Department	1
+division	1
+mortgage and housing corporation	1
+crush	1
+Lending Institution	1
+firm	1
+nation	1
+delegation	1
+treasuries	1
+diet	1
+parliament	1
+market	1
+credit agencies	1
+harem	1
+Circuit Court	1
+fund	1
+constituency	1
+grange	1
+Security Council	1
+force	1
+bodies of troops	1
+convocation	1
+Euromoney Market	1
+guard	1
+Trade Association	1
+customs	1
+Diocese	1
+international	1
+world	1
+manufacturer	1
+welfare	1
+convoy	1
+World Trade Organization	1
+intermediary	1
+user	1
+interest	1
+joint stock companies	1
+machine	1
+humanities	1
+ensemble	1
+medium-size companies	1
+media	1
+Eurocapital Market	1
+intelligence	1
+shipbuilding industries	1
+instrumentality	1
+public companies	1
+institute	1
+ministries	1
+institution	1
+affiliated companies	1
+inspectorate	1
+xerox	1
+fellowship	1
+Credit Commission	1
+establishment	1
+workshop	1
+inquest	1
+Directorate	1
+glitterati	1
+progenies	1
+deputation	1
+power companies	1
+lyceum	1
+public utility	1
+lineage	1
+trustee	1
+local	1
+processing industries	1
+gallery	1
+consumer societies	1
+culture	1
+stock companies	1
+industry	1
+County Council	1
+infantry	1
+citizenries	1
+help	1
+administrative bodies	1
+industrial	1
+consistories	1
+lineup	1
+Parliament	1
+livery	1
+Ministry	1
+faculty	1
+posterities	1
+folk	1
+Postal Administration	1
+directory	1
+engineering industries	1
+distributor	1
+grand juries	1
+lobby	1
+forwarding agencies	1
+hood	1
+ward	1
+fleet	1
+issuing companies	1
+expedition	1
+navies	1
+following	1
+advertising agencies	1
+fold	1
+recipient's companies	1
+convention	1
+retail industries	1
+membership	1
+cooperative societies	1
+marine	1
+sales agencies	1
+conurbation	1
+service industries	1
+entente	1
+single parent families	1
+draught	1
+two-parent families	1
+man	1
+fire companies	1
+house	1
+court of arbitration	1
+embassy	1
+medium size companies	1
+earth	1
+mankind	1
+escort	1
+sales office	1
+defense	1
+engineering faculties	1
+hedgehog	1
+growth industries	1
+fuzz	1
+youth	1
+draft	1
+Emergency Service Bureau	1
+craft	1
+wire	1
+defence	1
+wing	1
+management	1
+van	1
+diocese	1
+gentries	1
+den	1
+trust	1
+manufacture	1
+underground	1
+encampment	1
+trio	1
+garrison	1
+tribunal	1
+dictatorship	1
+triarchy	1
+artillery	1
+union	1
+Islam	1
+venire	1
+chancellery	1
+AIRCOM	1
+consulate	1
+train	1
+academy	1
+trade	1
+chamber	1
+township	1
+chain	1
+Armed Force	1
+armament	1
+town	1
+centre	1
+totem	1
+center	1
+coterie	1
+cabinet	1
+Corps	1
+censorship	1
+minority companies	1
+cell	1
+tontine	1
+conspiracy	1
+news agencies	1
+complement	1
+vanguard	1
+cavalry	1
+militaries	1
+armor	1
+Fire Department	1
+competition	1
+Grand Jury	1
+caucus	1
+company	1
+cast	1
+concertino	1
+concern	1
+charity	1
+armour	1
+GmbH	1
+advertising	1
+amalgamation	1
+auxiliary	1
+church	1
+carrier	1
+communion	1
+community	1
+commonality	1
+contingent	1
+antiquity	1
+caravan	1
+arm	1
+autonomy	1
+capital	1
+commission	1
+paying agent	1
+conservatory	1
+assembly	1
+command	1
+camp	1
+commando	1
+camarilla	1
+conclave	1
+arbitration	1
+authority	1
+cadre	1
+executive board of directors	1
+combination	1
+cabal	1
+Hezballah	1
+business	1
+combine	1
+bureaucracy	1
+affirmative	1
+ballet	1
+colony	1
+bund	1
+provider	1
+christendom	1
+brotherhood	1
+third parties	1
+circus	1
+brood	1
+brokerage	1
+third party	1
+college	1
+Curia	1
+brethren	1
+alliance	1
+ambush	1
+confluence	1
+administration	1
+attendance	1
+collective	1
+brass	1
+branch	1
+axis	1
+admiralty	1
+academia	1
+array	1
+Cree Communities	1
+city	1
+airway	1
+confession	1
+chorus	1
+citizenry	1
+body	1
+board	1
+consultancy	1
+apparatus	1
+amenity societies	1
+blockade	1
+choir	1
+band	1
+block	1
+confederation	1
+backing	1
+Mercedes	1
+conference	1
+Port Authorities	1
+industry sector	1
+US government	1
+Federated Asset Management GmbH	1
+management companies	1
+biosphere	1
+management company	1
+authorities	1
+circle	1
+advisory board	1
+supervisory board	1
+ucits	1
+counter-party	1
+counter-parties	1
+undertaking for collective investment in transferable securities	1
+cinema	1
+European Communities	1
+consumer	1
+Soviet	1
+bench	1
+chapter	1
+clinic	1
+beggary	1
+class	1
+battery	1
+association	1
+bar	1
+circuit	1
+civvies	1
+banking	1
+staff	1
+company	1
+faculties	1
+community	1
+retinue	1
+combo	1
+communities	1
+community	1
+staff	1
+bloc	1
+fraternities	1
+consortia	1
+triumvirate	1
+federation	1
+growth companies	1
+crowd	1
+trade bloc	1
+growth company	1
+utility companies	1
+congregation	1
+team	1
+group	1
+families	1
+coalition	1
+trade block	1
+fraternity	1
+companies	1
+clique	1
+utility company	1
+faculty	1
+troika	1
+consortia	1
+stable	1
+faction	1
+squadron	1
+company	1
+squad	1
+family	1
+parade	1
+consortium	1
+set	1
+gang	1
+stock	1
+consortium	1
+organisation	1
+league	1
+society	1
+entourage	1
+syndicate	1
+labor force	1
+pack	1
+escort	1
+coven	1
+labour force	1
+faction	1
+family	1
+guild	1
+faculty	1
+group	1
+DEC	1
+intel	1
+Lotus	1
+UN	1
+EC	1
+Abbott	1
+Kremlin	1
+UNESCO	1
+EPA	1
+Euratom	1
+Logos	1
+US Army	1
+EEC	1
+xerox	1
+IMF	1
+Wang	1
+Ferrostaal Ag	1
+OPEC	1
+Air Canada	1
+U.N.	1
+IBM	1
+NATO	1
+Airbus	1
+WHO	1
+Burroughs	1
+NASA	1
+Chrysler	1
+Wall Street	1
+Boeing	1
+United Nations	1
+CIA	1
+General Electric co.	1
+Columbia	1
+European Telecommunications Standards Institute	1
+HBOS Treasury Services plc etd	1
+British Telecom plc	1
+Shell Transport & Trading	1
+Ovum	1
+Ovum	1
+Ovum	1
+J.P. Morgan Administration Services (Ireland) Limited	1
+Interleaf	1
+Federated Administrative Services Inc.	1
+J.P. Morgan Bank (Ireland) plc	1
+KPMG	1
+global words services gmbh	1
+ETSI	1
+Institute of Electrical and Electronics Engineers	1
+WECA	1
+global words services	1
+GlobalWare AG	1
+Alcatel	1
+global words technologies	1
+global words technologies Corp.	1
+Royal Bank of Scotland	1
+IEEE	1
+LVM Landwirtschaftlicher Versicherungsverein Münster a.G.	1
+Federated Investment Counseling	1
+wifi alliance	1
+wi-fi alliance	1
+wireless ethernet company alliance	1
+global words	1
+global words AG	1
+Airbusses	1
+Federated Global Investment Management Corp.	1
+LVM	1
+Federated Unit Trust	1
+Federated International Management Limited	1
+Central Bank of Ireland	1
+Lufthansa	1
+revenue commissioners of Ireland	1
+US Armies	1
+branch agency	1
+Executive Board	1
+customs office	1
+top management	1
+inspectorate	1
+Branch Agencies	1
+executive board	1
+pontificate	1
+branch agencies	1
+state assembly	1
+Branch Agency	1
+Customs Office	1
+state assemblies	1
+industry	1
+service personnel	1
+business	1
+bureaucracies	1
+infantry	1
+society	1
+bureaucracy	1
+infantries	1
+government	1
+small business	1
+civil defence	1
+cavalry	1
+data entry personnel	1
+volume business	1
+clerical personnel	1
+cavalries	1
+civil defense	1
+rabble	1
+societies	1
+readership	1
+industries	1
+office personnel	1
+operations personnel	1
+personnel	1
+police	1
+operating personnel	1

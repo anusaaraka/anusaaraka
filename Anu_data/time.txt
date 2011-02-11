@@ -1,0 +1,214 @@
+word	1
+Wednesday	1
+Monday	1
+pay day	1
+Friday	1
+Tuesday	1
+market day	1
+Saturday	1
+Thursday	1
+Sunday	1
+Feb.	1
+Oct.	1
+May	1
+Sept.	1
+February	1
+November	1
+Jul.	1
+September	1
+Dec.	1
+Nov.	1
+January	1
+October	1
+Dec	1
+march	1
+Jun	1
+December	1
+July	1
+Aug.	1
+Jan	1
+Apr	1
+June	1
+Apr.	1
+Mar	1
+April	1
+Mar.	1
+August	1
+Jan.	1
+Jun.	1
+March	1
+prime	1
+Fall	1
+winter	1
+advent	1
+peak season	1
+autumn	1
+season	1
+summer	1
+spring	1
+midnight	1
+morning	1
+AM	1
+sunrise	1
+lunch break	1
+night shift	1
+afternoon	1
+time of day	1
+lunch hour	1
+office hour	1
+A.M.	1
+twilight	1
+lunchtime	1
+peak hour	1
+daylight	1
+P.M.	1
+business hours	1
+noontime	1
+dawn	1
+prime time	1
+forenoon	1
+mornings	1
+closing time	1
+banking hours	1
+dusk	1
+PM	1
+daytime	1
+noon	1
+eve	1
+peak time	1
+daybreak	1
+night fall	1
+prime	1
+night	1
+evenings	1
+stage	1
+Ides	1
+past	1
+age	1
+antiquities	1
+trade date	1
+peacetime	1
+Jurassic	1
+winter	1
+Renaissance	1
+peace time	1
+valuation date	1
+epoch	1
+ex-div date	1
+weekend	1
+annual accounting period	1
+time	1
+Romanticism	1
+work week	1
+dealing day	1
+histories	1
+Rococo	1
+spell	1
+Cambrian	1
+eternities	1
+Monday	1
+short term	1
+Thursday	1
+present-day	1
+Tuesday	1
+short-term	1
+working hours	1
+present	1
+estrus	1
+present day	1
+common time	1
+yesterday	1
+era	1
+tide	1
+aeon	1
+tertiary	1
+everyday life	1
+course	1
+antiquity	1
+elapse	1
+eternity	1
+generation	1
+millenium	1
+eighties	1
+everyday lives	1
+candlelight	1
+millenia	1
+day	1
+future	1
+eve	1
+long term	1
+enlightenment	1
+history	1
+cycle	1
+lifetime	1
+eleventh	1
+heyday	1
+date	1
+hard times	1
+future	1
+half	1
+futurity	1
+holiday	1
+fifties	1
+past	1
+baroque	1
+hour	1
+period	1
+present	1
+perpetuity	1
+kingship	1
+phase	1
+keuper	1
+offing	1
+olympiad	1
+history	1
+interim	1
+incarnation	1
+nineties	1
+restoration	1
+millenium	1
+Sunday	1
+Wednesday	1
+Sabbath	1
+June	1
+November	1
+January	1
+February	1
+December	1
+July	1
+October	1
+August	1
+April	1
+autumn	1
+advent	1
+fall	1
+Shrovetide	1
+midsummer	1
+season	1
+lent	1
+spring	1
+harvest	1
+summer	1
+winter	1
+PM	1
+sunset	1
+midnight	1
+sunrise	1
+morning	1
+twilight	1
+noon	1
+daylight	1
+night	1
+darkness	1
+evening	1
+eve	1
+dusk	1
+dark	1
+dawn	1
+yesterday's	1
+last minute	1
+today's	1
+tomorrow's	1
+tonight's	1
+tomorrow morning's	1
+pontificate	1

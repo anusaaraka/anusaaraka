@@ -1,0 +1,2812 @@
+word	1
+hibernaculum	1
+hostelries	1
+radio	1
+motel	1
+levee	1
+stationery	1
+prospect	1
+nuclear power station	1
+leaguer	1
+hub	1
+lookout	1
+operations unit	1
+pike	1
+start	1
+reservation	1
+planetarium	1
+laundry	1
+Caliphate	1
+lodgings	1
+planetaria	1
+master	1
+depositories	1
+landing	1
+mortuary	1
+outlet	1
+forensic laboratories	1
+hub	1
+oil refinery	1
+salon	1
+stand	1
+preserve	1
+post office	1
+precinct	1
+university	1
+retreat	1
+place of jurisdiction	1
+seat	1
+stadia	1
+homer	1
+negotiating bank	1
+rotisserie	1
+stadia	1
+pit	1
+paying office	1
+kennel	1
+stable	1
+post	1
+nursery	1
+sanctuary	1
+surgery	1
+pound	1
+outpost	1
+opera	1
+stack	1
+piscary	1
+pc workstation	1
+pentagon	1
+penitentiaries	1
+school	1
+playing field	1
+quayage	1
+distilleries	1
+orchestra	1
+multinational bank	1
+magazine	1
+communications facilities	1
+pension	1
+pharmacy	1
+patriarchate	1
+clearing office	1
+nursery	1
+originating center	1
+press	1
+bakeries	1
+quarantine	1
+power station	1
+sauna	1
+zoo	1
+mess	1
+operations section	1
+institute	1
+market-place	1
+institution	1
+port	1
+installation	1
+film libraries	1
+resort	1
+oil well	1
+pen	1
+spur	1
+inn	1
+port of discharge	1
+saddlery	1
+discount store	1
+ministry	1
+port of destination	1
+mint	1
+quarries	1
+luncheonette	1
+penitentiary	1
+market	1
+armories	1
+pottery	1
+port of call	1
+library	1
+cemeteries	1
+repertory	1
+power plant	1
+lazaretto	1
+refineries	1
+monastery	1
+place of performance	1
+roadstead	1
+libraries	1
+menagerie	1
+pasture	1
+paddy	1
+creameries	1
+oracle	1
+port	1
+pad	1
+laboratories	1
+outlook	1
+multizone	1
+sawmill	1
+binderies	1
+infirmary	1
+order area	1
+garden	1
+store	1
+launching pad	1
+museum	1
+gas plant	1
+split	1
+limited market	1
+point of sale	1
+fuelling station	1
+shop	1
+kindergarten	1
+tavern	1
+graveyard	1
+colonies	1
+mill	1
+telephone booth	1
+gym	1
+Post Office	1
+mill	1
+warehouse	1
+firebase	1
+central office exchange	1
+meeting place	1
+training camp	1
+fishmarket	1
+breweries	1
+launching site	1
+work station	1
+hostel	1
+canneries	1
+lab	1
+supermarket	1
+hostelry	1
+commissaries	1
+meetinghouse	1
+super-market	1
+ground station	1
+stonework	1
+lodgings	1
+waterworks	1
+fire station	1
+dispensaries	1
+marshalling yard	1
+workstation	1
+gasworks	1
+foundries	1
+junkyard	1
+workplace	1
+garrison	1
+stockade	1
+left luggage office	1
+treatment plant	1
+filling station	1
+infirmaries	1
+menagerie	1
+workshop	1
+fountain	1
+mortuaries	1
+mines	1
+world market	1
+heliport	1
+nurseries	1
+job area	1
+theatre	1
+hotel	1
+work	1
+lumbermill	1
+swimming pool	1
+home office	1
+shrine	1
+lumberyard	1
+telephone box	1
+hothouse	1
+Air Base	1
+market	1
+wax museum	1
+forensic laboratory	1
+unemployment	1
+market place	1
+telephone exchange	1
+graving dock	1
+cemetery	1
+information desk	1
+taxi stand	1
+haven	1
+health spa	1
+mining area	1
+test bench	1
+free port	1
+icehouse	1
+mezzanine	1
+theater	1
+gymnasium	1
+turnery	1
+local tandem exchange	1
+working mine	1
+gateway service exchange	1
+waxworks	1
+inn	1
+work area	1
+foundry	1
+dairies	1
+landing field	1
+vegetable garden	1
+hippodrome	1
+yard	1
+laboratory	1
+underground	1
+FM	1
+works	1
+lighthouse	1
+proving ground	1
+gas field	1
+smelter	1
+missile base	1
+radar station	1
+foreign exchange market	1
+winning	1
+market	1
+ranch	1
+gymnasia	1
+oil refineries	1
+language laboratory	1
+refuge	1
+hospice	1
+terminal	1
+collection office	1
+refinery	1
+hub station	1
+slip	1
+community dial office	1
+property market	1
+gas station	1
+tribunal	1
+city hall	1
+pumping station	1
+grange	1
+treasury	1
+combined local tandem exchange	1
+printer control area	1
+greenhouse	1
+stud	1
+crosscut	1
+proportional space workstation	1
+film library	1
+pharmacies	1
+commodity market	1
+quarry	1
+esplanade	1
+still	1
+company central office	1
+remote station	1
+drugstore	1
+stadium	1
+clinic	1
+shopping centre	1
+department store	1
+serial workstation	1
+commercial college	1
+saloon	1
+dump	1
+resort	1
+communications facility	1
+stadia	1
+emporium	1
+shopping center	1
+custodian bank	1
+spa	1
+dock	1
+steak house	1
+colony	1
+stage	1
+exchange	1
+salon	1
+clearing house	1
+sandpit	1
+engineering works	1
+sawmill	1
+command module	1
+steel works	1
+discount house	1
+summer camp	1
+commissary	1
+substation	1
+depot	1
+service area	1
+computer center	1
+shamble	1
+exchange bureau	1
+sorting office	1
+custom house	1
+stockyard	1
+error trap	1
+stronghold	1
+creamery	1
+restaurant	1
+far-end exchange	1
+shunting station	1
+control point	1
+spot market	1
+far-end station	1
+autocracy	1
+control room	1
+auditoria	1
+delicatessen	1
+back	1
+customs house	1
+decoy	1
+electronic mall	1
+dealership	1
+dairy	1
+arsenal	1
+farm	1
+dockage	1
+correspondent bank	1
+centre	1
+dry cleaner	1
+armoury	1
+courthouse	1
+chamber	1
+equipment room	1
+change	1
+customhouse	1
+chest	1
+emporia	1
+chancellery	1
+construction site	1
+grid	1
+drilling platform	1
+central	1
+cooperative bank	1
+centrale	1
+digital exchange	1
+concentrator	1
+coalfield	1
+center	1
+depository	1
+forum	1
+commons	1
+cave	1
+distribution point	1
+gridiron	1
+cooperative farm	1
+court	1
+dinette	1
+company	1
+countinghouse	1
+drop	1
+dispensary	1
+church	1
+court of law	1
+casino	1
+distillery	1
+diamond	1
+croft	1
+community	1
+farmyard	1
+garage	1
+bank	1
+dam	1
+dry dock	1
+chute	1
+camp	1
+canteen	1
+enquiry center	1
+cantonment	1
+bindery	1
+facility	1
+exchange center	1
+development	1
+building site	1
+dance	1
+distribution center	1
+field	1
+cash office	1
+concern	1
+dump	1
+connection	1
+brewery	1
+greenery	1
+auditoria	1
+establishment	1
+bullring	1
+connexion	1
+amphitheater	1
+butcher	1
+bakery	1
+fishery	1
+amphitheatre	1
+forge	1
+backstage	1
+desk	1
+analog switching office	1
+front	1
+box office	1
+circus	1
+anchorage	1
+college	1
+Central African country	1
+aristocracy	1
+announcement work station	1
+goaf	1
+caliphate	1
+branch	1
+Antilles	1
+factory	1
+central office	1
+gallery	1
+air base	1
+habitation	1
+caserne	1
+cinema	1
+arsenal	1
+depot	1
+battlefield	1
+confectionery	1
+air-sea base	1
+club	1
+centrale	1
+bishopric	1
+air terminal	1
+billet	1
+beauty parlor	1
+consulate	1
+Arabia	1
+cloister	1
+bazaar	1
+asylum	1
+auditorium	1
+crib	1
+bazar	1
+convent	1
+airdrome	1
+exchange	1
+black-market	1
+bench	1
+airfield	1
+checkout	1
+base of operation	1
+bed	1
+archive workstation	1
+creche	1
+bookstore	1
+filature	1
+archiving workstation	1
+course	1
+cannery	1
+beacon	1
+airport	1
+battery	1
+barbershop	1
+bath	1
+airport terminal	1
+base	1
+bonded warehouse	1
+grill	1
+arena	1
+depositary	1
+cabstand	1
+diner	1
+Armenia	1
+embassy	1
+central	1
+bar	1
+armory	1
+academy	1
+ballpark	1
+anchorage	1
+auto-center	1
+language laboratories	1
+Baltic port	1
+airport	1
+asylum	1
+Central African countries	1
+bandstand	1
+aquarium	1
+atomic power station	1
+basilica	1
+battleground	1
+Charles De Gaulle Airport	1
+casern	1
+banking center	1
+capital market	1
+base transceiver station	1
+travel agency	1
+academy	1
+secretariat	1
+bear market	1
+toy shop	1
+abattoir	1
+stock market	1
+brickworks	1
+tourist office	1
+archdiocese	1
+state bank	1
+branch office	1
+university	1
+arms factory	1
+secondary school	1
+booking office	1
+synagogue	1
+art school	1
+station	1
+chain store	1
+World Wide Web site	1
+data processing center	1
+riding school	1
+bank of issue	1
+town centre	1
+convenience store	1
+stud farm	1
+candy store	1
+technical information center	1
+correctional facility	1
+studio	1
+central station	1
+yacht club	1
+court	1
+retail store	1
+business office	1
+town center	1
+college	1
+shipyard	1
+bull market	1
+town hall	1
+company store	1
+state house	1
+chancellery	1
+TV station	1
+court of justice	1
+souvenir shop	1
+bookshop	1
+television station	1
+consulate	1
+shoe store	1
+camera store	1
+public school	1
+conservatory	1
+savings bank	1
+law court	1
+reception office	1
+data center	1
+store	1
+merchant bank	1
+radio station	1
+headquarters	1
+stock exchange	1
+mental hospital	1
+press office	1
+hardware store	1
+nuclear power plant	1
+institute	1
+primary school	1
+golf course	1
+national bank	1
+juvenile court	1
+prison	1
+futures market	1
+newsroom	1
+law school	1
+recreation center	1
+home office	1
+office	1
+district court	1
+Chancellery	1
+golflinks	1
+observatory	1
+factory	1
+District Court	1
+head office	1
+news office	1
+electronics division	1
+Academies	1
+hospital	1
+plant	1
+elementary school	1
+arms factories	1
+golf links	1
+mortgage bank	1
+dockyard	1
+temple	1
+dye works	1
+chancelleries	1
+embassy	1
+correctional facilities	1
+court	1
+Archdiocese	1
+speech & language technology market	1
+travel agencies	1
+museum	1
+conservatories	1
+hostel	1
+observatories	1
+hotel	1
+academies	1
+rectory	1
+Town Hall	1
+mission	1
+embassies	1
+plant	1
+factories	1
+plantation	1
+universities	1
+oratorio	1
+State House	1
+sanatorium	1
+cigar shop	1
+registry	1
+Academy	1
+palace	1
+school	1
+haberdashery	1
+cooperage	1
+colliery	1
+boutique	1
+bleachery	1
+farriery	1
+monument	1
+oratory	1
+orangery	1
+flat	1
+herbarium	1
+court	1
+head	1
+compound	1
+hawse	1
+ark	1
+hatch	1
+arena	1
+parsonage	1
+archive	1
+hall	1
+archives	1
+hall	1
+cafe	1
+residence	1
+cell	1
+lot	1
+cafeteria	1
+malting	1
+cellarage	1
+refectory	1
+dock	1
+peristyle	1
+floor	1
+residency	1
+dwelling	1
+precinct	1
+casemate	1
+legation	1
+carriage	1
+lee	1
+capsule	1
+rental	1
+car	1
+lodging	1
+dugout	1
+lazaretto	1
+canvass	1
+poop	1
+conservatory	1
+nick	1
+canvas	1
+redoubt	1
+greenhouse	1
+lodgement	1
+eyrie	1
+laundry	1
+commissary	1
+household	1
+combustor	1
+sconce	1
+caisson	1
+housing	1
+cage	1
+quarters	1
+cache	1
+mew	1
+cabin	1
+parquet	1
+cab	1
+pinery	1
+coulisse	1
+hold	1
+cot	1
+manor	1
+chest	1
+joint	1
+cube	1
+pyramid	1
+bungalow	1
+livery	1
+fronton	1
+quadrangle	1
+bunker	1
+recess	1
+building	1
+marquise	1
+brownstone	1
+pressroom	1
+brig	1
+salon	1
+efficiency	1
+nursery	1
+box	1
+quad	1
+grillroom	1
+sarcophagus	1
+bowl	1
+prefecture	1
+cooler	1
+pillbox	1
+galley	1
+sacristy	1
+covert	1
+quadrangle	1
+corridor	1
+marquee	1
+dome	1
+place	1
+duplex	1
+pen	1
+groceries	1
+pit	1
+blister	1
+local	1
+catacomb	1
+pile	1
+blind	1
+mole	1
+coach	1
+pale	1
+bailey	1
+nave	1
+grave	1
+nacelle	1
+cloister	1
+restoration	1
+fastness	1
+paddock	1
+choir	1
+ring	1
+fold	1
+refuge	1
+bay	1
+sales room	1
+elevator	1
+shamble	1
+enceinte	1
+rotunda	1
+conclave	1
+shaft	1
+baptistery	1
+solarium	1
+flophouse	1
+set	1
+dome	1
+sty	1
+flat	1
+seraglio	1
+double room	1
+stall	1
+grocery	1
+senate	1
+duplex	1
+shelter	1
+henhouse	1
+section	1
+dwelling place	1
+restroom	1
+gazebo	1
+steerage	1
+electronics compartment	1
+sleeping compartment	1
+harem	1
+yard	1
+electronic storefront	1
+strong room	1
+fire house	1
+repositories	1
+dormitory	1
+stock room	1
+hockshop	1
+tier	1
+electronics bay	1
+rest room	1
+hall	1
+vault	1
+dressing room	1
+sheds	1
+fireplace	1
+workings	1
+farmhouse	1
+residence	1
+hutch	1
+kiosk	1
+den	1
+stable	1
+halfduplex	1
+shed	1
+domicile	1
+sitting room	1
+grain elevator	1
+yardage	1
+doghouse	1
+sanctuary	1
+firehouse	1
+mail room	1
+enclosure	1
+suite	1
+gold mine	1
+well	1
+discotheque	1
+storehouse	1
+home	1
+sanctuaries	1
+dorm	1
+suboffice	1
+fireside	1
+strongroom	1
+fairground	1
+sub-office	1
+home	1
+baptistries	1
+dungeon	1
+showroom	1
+grotto	1
+storage	1
+duplex	1
+storefront	1
+fitting room	1
+granaries	1
+dwellings	1
+single room	1
+hearth	1
+condominia	1
+darkroom	1
+storeroom	1
+groceries	1
+story	1
+courtroom	1
+solaria	1
+forecastle	1
+stew	1
+coop	1
+storage room	1
+grocery store	1
+stowage	1
+country house	1
+shop	1
+hermitage	1
+galleries	1
+condominium	1
+service flat	1
+grandstand	1
+suite	1
+conference room	1
+pinery	1
+fortress	1
+sties	1
+computer room	1
+pawnshop	1
+homestead	1
+urinal	1
+cove	1
+penalty box	1
+greenroom	1
+toilet	1
+citadel	1
+playroom	1
+gallery	1
+villa	1
+covert	1
+monastery	1
+guardhouse	1
+shower	1
+corral	1
+penthouse	1
+hut	1
+aviaries	1
+confessional	1
+pavilion	1
+fort	1
+balconies	1
+cloakroom	1
+pantheon	1
+foyer	1
+belfries	1
+cupboard	1
+mosque	1
+garage	1
+ward	1
+convent	1
+parlour	1
+igloo	1
+butcheries	1
+crypt	1
+powder room	1
+garner	1
+dormitories	1
+clubhouse	1
+parlor	1
+garret	1
+union	1
+cockpit	1
+outlet	1
+hangar	1
+walk	1
+compartment	1
+palace	1
+hovel	1
+stockade	1
+cottage	1
+pantry	1
+house	1
+lavatories	1
+closet	1
+operations room	1
+granary	1
+lobbies	1
+cubbyhole	1
+washroom	1
+grave	1
+monasteries	1
+cote	1
+wine cellar	1
+hayloft	1
+pantries	1
+courtyard	1
+ward	1
+hideout	1
+pineries	1
+deck cabin	1
+waiting room	1
+abode	1
+wellhead	1
+classroom	1
+vault	1
+antechamber	1
+deckhouse	1
+clothes cupboard	1
+tabernacle	1
+anteroom	1
+beehive	1
+cloister	1
+tomb	1
+anthill	1
+coliseum	1
+cubicle	1
+take away shop	1
+apartment	1
+tent	1
+cabaret	1
+temple	1
+apartment house	1
+snackbar	1
+bathroom	1
+waiting hall	1
+ac powered bay	1
+wings	1
+chalet	1
+tollbooth	1
+air brake shop	1
+wing	1
+belfry	1
+vestibule	1
+air chamber	1
+trunk	1
+brothel	1
+verandah	1
+air shaft	1
+sleeper	1
+cabin	1
+veranda	1
+arbor	1
+sty	1
+campus residence	1
+wardroom	1
+arbour	1
+trailer	1
+chat room	1
+press room	1
+arcade	1
+study	1
+chapel	1
+pressure cabin	1
+ark	1
+skyscraper	1
+backyard	1
+preserve	1
+armoire	1
+cab	1
+bower	1
+prefecture	1
+abbey	1
+reading room	1
+bawdyhouse	1
+repository	1
+alcove	1
+public building	1
+boudoir	1
+aerie	1
+aviary	1
+adobe	1
+bowling alley	1
+airdrome	1
+adit	1
+accommodation	1
+body shop	1
+annexe	1
+assembly shop	1
+annex	1
+bedroom	1
+assembly room	1
+caisson	1
+atria	1
+backbone closet	1
+atrium	1
+booth	1
+attic	1
+boardinghouse	1
+lecture room	1
+checkroom	1
+lobby	1
+billet	1
+living room	1
+balcony	1
+lounge	1
+butchery	1
+kennel	1
+calaboose	1
+lair	1
+bughouse	1
+kitchen	1
+berth	1
+luggage compartment	1
+casino	1
+jail	1
+cavern	1
+latrine	1
+burrow	1
+loft	1
+barracks	1
+loggia	1
+bedchamber	1
+lockup	1
+ballroom	1
+lodge	1
+baptistry	1
+kitchenette	1
+barn	1
+lavatory	1
+barnyard	1
+luncheonette	1
+barrack	1
+lunchroom	1
+chancel	1
+lyceum	1
+barroom	1
+jury box	1
+basement	1
+mansion	1
+church	1
+larder	1
+churchyard	1
+loge	1
+bawdy house	1
+cathedral	1
+chateau	1
+charterhouse	1
+cave	1
+bilge	1
+bonanza	1
+cellar	1
+castle	1
+buildings	1
+boiler room	1
+capitol	1
+boiler house	1
+boarding house	1
+chamber	1
+mine	1
+flower shop	1
+pastry shop	1
+health food shop	1
+station	1
+retirement home	1
+opera house	1
+auction room	1
+room	1
+baggage room	1
+room	1
+hotel room	1
+room	1
+emerging market	1
+headwall	1
+Christendom	1
+hammock	1
+aiguille	1
+reef	1
+Amsterdam	1
+noon	1
+campus	1
+savanna	1
+amusement arcade	1
+pinery	1
+campus	1
+satellite	1
+amusement park	1
+precinct	1
+Canary Islands	1
+plate	1
+Antartica	1
+peak	1
+backwoods	1
+main	1
+alp	1
+head	1
+bay	1
+neck	1
+apartment block	1
+lea	1
+chasm	1
+main	1
+apple orchard	1
+pole	1
+bog	1
+latitude	1
+acclivity	1
+northeast	1
+borderland	1
+protectorate	1
+atoll	1
+homestead	1
+Balkan Peninsula	1
+reserve	1
+lowland	1
+rapids	1
+canyon	1
+remains	1
+industrial park	1
+north	1
+block of flats	1
+hole	1
+intersection	1
+mandate	1
+bluff	1
+horn	1
+meander	1
+parish	1
+Brighton	1
+overseas	1
+marsh	1
+mantle	1
+bay	1
+key	1
+jungle	1
+jurisdiction	1
+beach	1
+mount	1
+industrial estate	1
+magistracy	1
+bailiwick	1
+manor	1
+lagoon	1
+relic	1
+equinoctial	1
+judicature	1
+meadow	1
+pond	1
+dune	1
+range	1
+landings	1
+northwest	1
+estuary	1
+horst	1
+magnetic pole	1
+pool	1
+fairway	1
+islet	1
+isthmus	1
+home	1
+equator	1
+marshland	1
+isle	1
+place	1
+Dorchester	1
+peneplain	1
+landmark	1
+principality	1
+downtown	1
+nation	1
+knoll	1
+interior	1
+divide	1
+piazza	1
+lake	1
+interchange	1
+epicenter	1
+rank	1
+coastline	1
+princedom	1
+desert	1
+reticulum	1
+cliff	1
+plain	1
+foothills	1
+panhandle	1
+clearings	1
+moorland	1
+fjord	1
+polder	1
+dale	1
+inset	1
+fountainhead	1
+inland	1
+countryside	1
+inlet	1
+hill	1
+quadrangle	1
+concentration camp	1
+pan	1
+Goa	1
+market	1
+cosmos	1
+reservoir	1
+grove	1
+point	1
+coast	1
+platform	1
+hemisphere	1
+sand	1
+country boundary	1
+port	1
+firmament	1
+hook	1
+crossings	1
+homeland	1
+harbor	1
+march	1
+glen	1
+lowlands	1
+grassland	1
+mare	1
+heartland	1
+littoral	1
+gulf	1
+lordship	1
+flatland	1
+nadir	1
+hamlet	1
+arroyo	1
+heath	1
+estate	1
+firth	1
+flat	1
+hinterland	1
+cession	1
+ford	1
+apron	1
+ghetto	1
+flat	1
+iceberg	1
+core	1
+harbour	1
+constituency	1
+forest	1
+down	1
+moon	1
+constabulary	1
+riverfront	1
+drumlin	1
+occident	1
+county	1
+sea port	1
+country	1
+oasis	1
+delta	1
+sales territory	1
+deep	1
+plateau	1
+fetch	1
+southeast	1
+commune	1
+orchard	1
+cape	1
+sky	1
+capital	1
+moor	1
+city	1
+stratosphere	1
+dorchester	1
+national park	1
+emergence	1
+riverbank	1
+copse	1
+nature reserve	1
+derelict	1
+slough	1
+gap	1
+mountain	1
+coulee	1
+shore	1
+exclave	1
+northeast	1
+dereliction	1
+roadside	1
+colony	1
+prairie	1
+chromosphere	1
+sun	1
+buffer	1
+peninsula	1
+elevation	1
+sea	1
+brush	1
+northwest	1
+gauge	1
+seafloor	1
+equinox	1
+pond	1
+breadbasket	1
+slum	1
+cove	1
+ocean	1
+brake	1
+shelves	1
+crossroads	1
+oases	1
+bowl	1
+shelf	1
+convocation	1
+moraine	1
+boundary	1
+shallows	1
+border	1
+orient	1
+corridor	1
+sector	1
+dependency	1
+plantation	1
+globe	1
+tundra	1
+bluff	1
+morass	1
+bailiwick	1
+recipient's countries	1
+blowdown	1
+plain	1
+block	1
+state	1
+backwater	1
+park	1
+equinoctial	1
+swamp	1
+enclave	1
+recipient's city	1
+asterism	1
+recipient's cities	1
+ball	1
+recipient's country	1
+bench	1
+fen	1
+condominium	1
+wasteland	1
+benefice	1
+acclivities	1
+belt	1
+Tropic of Capricorn	1
+cornfield	1
+underworld	1
+east	1
+waterfall	1
+embouchure	1
+triarchy	1
+basin	1
+tropics	1
+earth	1
+square	1
+circuit	1
+timberland	1
+diocese	1
+water	1
+wilderness	1
+skies	1
+woodland	1
+wash	1
+Tropic of Cancer	1
+spring	1
+estuaries	1
+upgrade	1
+spit	1
+shelf	1
+sales territories	1
+valley	1
+sound	1
+southwest	1
+southeast	1
+volcano	1
+solfatara	1
+ward	1
+frontier	1
+country boundaries	1
+viceroyalty	1
+wood	1
+subdivision	1
+slope	1
+table	1
+theater	1
+theatre	1
+isthmi	1
+province	1
+settlement	1
+estate	1
+pine wood	1
+bush	1
+sand	1
+mire	1
+Scorpio	1
+peninsula	1
+Taurus	1
+skerry	1
+companionway	1
+orbit	1
+directory path	1
+seaway	1
+course	1
+parkway	1
+driver path	1
+underpass	1
+cooling system passage	1
+obstacle course	1
+ecliptic	1
+tunnel	1
+data stream	1
+path	1
+fast-track	1
+swash	1
+communication channel	1
+passageway	1
+expressway	1
+valley	1
+crossroad	1
+motorway	1
+driveway	1
+stream	1
+crosswalk	1
+original path	1
+dell	1
+stairs	1
+converter path	1
+path	1
+inlet	1
+staircase	1
+day of week routing	1
+pointer trail	1
+mineshaft	1
+washout	1
+defile	1
+trail	1
+key path	1
+trajectories	1
+concourse	1
+trajectory	1
+lane	1
+tributary	1
+contrail	1
+thoroughfare	1
+inlet	1
+spur	1
+current-feed channel	1
+waterway	1
+inlet	1
+way	1
+cross aisle	1
+track	1
+interstate	1
+spout	1
+corridor	1
+thruway	1
+main road	1
+walk	1
+creek	1
+trail	1
+main track	1
+straight	1
+Amazon	1
+tributary	1
+meridian	1
+fire escape	1
+audit trail	1
+turnpike	1
+breezeway	1
+stope	1
+avenue	1
+wake	1
+byroad	1
+call diversion	1
+air lane	1
+valley	1
+cable railway	1
+spiral	1
+airlane	1
+river	1
+backstretch	1
+vein	1
+areaway	1
+source path	1
+bypass	1
+subway	1
+airstrip	1
+stairs	1
+byway	1
+strip	1
+airway	1
+road	1
+blvd.	1
+turnout	1
+aisle	1
+route	1
+canal	1
+tributaries	1
+arroyo	1
+St.	1
+boardwalk	1
+Blvd.	1
+alternate routing	1
+strait	1
+brook	1
+by-pass	1
+assembly line	1
+roadstead	1
+beltway	1
+rill	1
+assembly line	1
+stream	1
+bikeway	1
+tack	1
+alley	1
+road system	1
+boulevard	1
+siding	1
+alleyway	1
+stream	1
+basic call diversion	1
+tube	1
+alternative routing	1
+roadway	1
+causeway	1
+slipway	1
+hardware call trace	1
+route	1
+catwalk	1
+traverse	1
+highway	1
+superhighway	1
+bypass	1
+trail	1
+hallway	1
+stairwell	1
+beeline	1
+trace	1
+flume	1
+server path	1
+gorge	1
+railroad	1
+flight path	1
+street	1
+homestretch	1
+raceway	1
+footpath	1
+sidewalk	1
+fork in the road	1
+promenade	1
+freeway	1
+radio path	1
+gold plated track	1
+railway	1
+gangway	1
+aim	1
+artery	1
+airway	1
+arroyo	1
+airline	1
+armlet	1
+hall	1
+arc	1
+guideway	1
+arcade	1
+notch	1
+apron	1
+passing	1
+approach	1
+passage	1
+gorge	1
+runway	1
+channel	1
+pass	1
+course	1
+outlet	1
+court	1
+racetrack	1
+exit	1
+ladderway	1
+countermine	1
+labyrinth	1
+fairway	1
+run	1
+fork	1
+runaround	1
+bund	1
+macadam	1
+drive	1
+interstate	1
+brim	1
+meridian	1
+front	1
+rotary	1
+confluence	1
+heading	1
+feeder	1
+sap	1
+branch	1
+pattern	1
+cutout	1
+inlet	1
+gallery	1
+pipeline	1
+balk	1
+out	1
+col	1
+ria	1
+corridor	1
+palisade	1
+drift	1
+oxbow	1
+detour	1
+rivulet	1
+block	1
+piazza	1
+ecliptic	1
+impasse	1
+corduroy	1
+promenade	1
+cloister	1
+manway	1
+cycle	1
+pike	1
+flight	1
+portage	1
+belt	1
+esplanade	1
+circle	1
+defile	1
+cutoff	1
+draw	1
+circuit	1
+phoenix	1
+aurora	1
+labrador	1
+brighton	1
+mercury	1
+east	1
+Bernese Alps	1
+arabia	1
+Flanders	1
+Saugeen	1
+Chicoutimi	1
+Punjab	1
+Grisons Alps	1
+Sumatra	1
+Leeward Isles	1
+Pyrenees	1
+Himalaya	1
+Somaliland	1
+Kashmir	1
+Valais Alps	1
+Glarus Alps	1
+Namibia	1
+Lombardy	1
+Swiss Jura	1
+Guyana	1
+Pennine Alps	1
+Jupiter	1
+Therrien	1
+Guiana	1
+North Pole	1
+Labrador	1
+Trois Rivieres	1
+Far East	1
+New South Wales	1
+Lapland	1
+Westphalia	1
+Far North	1
+Patagonia	1
+Indo-China	1
+Venus	1
+East Africa	1
+Ticino Alps	1
+Latin America	1
+Upper Engadine	1
+Engadine	1
+Goa	1
+Dardanelles	1
+Argentine	1
+Alps	1
+Ram	1
+anchorage	1
+Sagittarius	1
+Carinthia	1
+oxford	1
+affluent	1
+Dead Sea	1
+Niagara	1
+Aar	1
+Volga	1
+Danube	1
+Pacific	1
+Antarctic Ocean	1
+Vorder Rhein	1
+Indian Ocean	1
+North Sea	1
+Aare	1
+Thames	1
+Mediterranean	1
+Persian Gulf	1
+Arctic Ocean	1
+Reuss	1
+Lake Leman	1
+Panama Canal	1
+Adda	1
+Rhine	1
+Lake of Constance	1
+Pacific Ocean	1
+Atlantic	1
+Suez Canal	1
+Lake of Biel	1
+Red Sea	1
+Atlantic Ocean	1
+Caribbean	1
+Lake of Thun	1
+Rhone	1
+Baltic Sea	1
+Lake of Neuchatel	1
+Baltic	1
+Lake Lugano	1
+Caspian Sea	1
+Lake of Brienz	1
+Hinter Rhein	1
+English Channel	1
+Elbe	1
+position	1
+line starting position	1
+seep	1
+emission spectra	1
+network neighborhood	1
+line position	1
+scope	1
+fan fuse position	1
+playground	1
+inferno	1
+cell	1
+domain	1
+paradise	1
+memory location	1
+stem	1
+excitation spectra	1
+ordinal position	1
+location of fault	1
+scoop	1
+environment	1
+oil slick	1
+locale	1
+west	1
+development area	1
+place of birth	1
+leasehold	1
+umbra	1
+destination	1
+position	1
+initial save area	1
+station	1
+excitation spectrum	1
+operating environment	1
+landholding	1
+swell	1
+disk area	1
+on-line environment	1
+locus	1
+waterline	1
+destination	1
+point of presence	1
+life zone	1
+vacuum	1
+emission spectrum	1
+pitch field	1
+main text area	1
+situation	1
+destination	1
+offing	1
+locality	1
+stretch	1
+expanse	1
+overlook	1
+location	1
+way	1
+digit position	1
+place	1
+loci	1
+starboard	1
+fast-growing area	1
+original position	1
+microcosm	1
+star	1
+field	1
+multiuser environment	1
+landmass	1
+watershed	1
+double precision decimal field	1
+position	1
+infield	1
+stage	1
+field	1
+public domain	1
+industrial area	1
+Archduchies	1
+fief	1
+ravine	1
+lookout	1
+landscape	1
+domain	1
+realm	1
+business setting	1
+surroundings	1
+empyrean	1
+programming environment	1
+cable entrance area	1
+armouries	1
+environs	1
+promontory	1
+capacity location	1
+double-precision decimal field	1
+domain	1
+relative position	1
+breeder zone	1
+scene	1
+date field	1
+remote site	1
+call origination	1
+waste	1
+crevasse	1
+pseudo-blank	1
+calvary	1
+utopia	1
+data space area	1
+production environment	1
+bow	1
+underground	1
+comment field	1
+venue	1
+bull ring	1
+shoal	1
+dead zone	1
+upstairs	1
+character position	1
+logon domain	1
+database area	1
+universal global area	1
+camping site	1
+low order position	1
+customer environment	1
+toxic waste site	1
+call destination	1
+spur	1
+corrupted parameter area	1
+surroundings	1
+box region	1
+set	1
+clamp location	1
+test area	1
+baptistery	1
+point-of-presence	1
+data area	1
+target location	1
+backward direction	1
+archduchies	1
+custom tab stop	1
+swale	1
+campground	1
+spread	1
+corn field	1
+whereabouts	1
+campus address	1
+scarp	1
+current cursor position	1
+wild	1
+branch location	1
+strand	1
+currency area	1
+vicinity	1
+character string position	1
+tongue	1
+corrupted software area	1
+trouble spot	1
+campsite	1
+cursor position	1
+coal field	1
+top-of-the-form position	1
+building entrance area	1
+spot	1
+control area	1
+tax heaven	1
+calibration range of assay	1
+calvaries	1
+core area	1
+testing environment	1
+birthplace	1
+cross-connect field	1
+current cursor position	1
+zone	1
+Australasia	1
+summit	1
+crosspoint	1
+vicinage	1
+ambit	1
+apiaries	1
+copy destination	1
+venue	1
+analog data endpoint	1
+baptisteries	1
+customer site	1
+terminal location	1
+afterworld	1
+data entry area	1
+decimal position	1
+universe	1
+antipodes	1
+vicinities	1
+database double precision field	1
+resting place	1
+abyss	1
+stopover	1
+deep	1
+sterling area	1
+apiary	1
+spit	1
+decimal point position	1
+scaling position	1
+archbishopric	1
+setting	1
+coverage zone	1
+riffle	1
+archduchy	1
+scar	1
+column location	1
+stray field	1
+area	1
+promontories	1
+cyberspace	1
+scene	1
+area	1
+turnoff	1
+cross-connect field area	1
+seaport	1
+area of coverage	1
+trusteeship	1
+fixed income holding	1
+seaside	1
+armoury	1
+stoop	1
+growth area	1
+subenvironment	1
+athletic field	1
+spin	1
+heaven	1
+slick	1
+alternate answering position	1
+underworld	1
+firebreak	1
+spits	1
+alternate destination on busy	1
+localities	1
+gated diode crosspoint	1
+site	1
+hellhole	1
+sphere	1
+hell	1
+rock bottom	1
+glade	1
+Archduchy	1
+highland	1
+spot	1
+high-order position	1
+sinkhole	1
+gold field	1
+stop	1
+ground level	1
+vanguard	1
+home position	1
+section	1
+heating zone	1
+van	1
+hotspot	1
+stitch	1
+habitat	1
+shoot	1
+heck	1
+shed	1
+haunt	1
+terrane	1
+hideaway	1
+Calvary	1
+ground floor	1
+side	1
+hangout	1
+territory	1
+headland	1
+pulsar	1
+haven	1
+zenith	1
+pasture	1
+vacuity	1
+patch	1
+wedge	1
+grounds	1
+world	1
+ground	1
+turnaround	1
+heading	1
+default printer destination	1
+rendezvous	1
+slough	1
+radius	1
+wild	1
+hump	1
+turf	1
+level	1
+slick	1
+pasturage	1
+tract	1
+lease	1
+slash	1
+possession	1
+topiary	1
+lawn	1
+sink	1
+quadrant	1
+terminus	1
+lodgement	1
+terrace	1
+property	1
+complex	1
+landscape	1
+emplacement	1
+octant	1
+cellar	1
+land	1
+exposure	1
+locus	1
+coverture	1
+plot	1
+empyrean	1
+sag	1
+conservancy	1
+offing	1
+entourage	1
+neve	1
+culmination	1
+knuckle	1
+fix	1
+knob	1
+gape	1
+ridge	1
+element	1
+holding	1
+aspect	1
+proscenium	1
+goal	1
+green	1
+fee	1
+mound	1
+crossing	1
+pyre	1
+eminence	1
+keyhole	1
+bow	1
+parcel	1
+attraction	1
+prefecture	1
+background	1
+junction	1
+dominion	1
+neighborhood	1
+deep	1
+riffle	1
+claim	1
+line	1
+concession	1
+recess	1
+feathering	1
+outside	1
+circumscription	1
+macrocosm	1
+environs	1
+lot	1
+franchise	1
+location	1
+extent	1
+heterotopia	1
+glide	1
+moorage	1
+biotope	1
+inspectorate	1
+fill	1
+saddle	1
+corona	1
+portion	1
+granary	1
+rise	1
+beyond	1
+rear	1
+climb	1
+pandemonium	1
+direction	1
+purgatory	1
+beginning	1
+helm	1
+climate	1
+pickup	1
+beat	1
+orb	1
+depression	1
+orbit	1
+clearance	1
+open	1
+clear	1
+polje	1
+clearing	1
+placer	1
+bay	1
+oxbow	1
+clearings	1
+grass	1
+fourth	1
+high	1
+base	1
+low	1
+excavation	1
+patent	1
+conurbation	1
+acre	1
+encampment	1
+campus site	1
+corner	1
+allotment	1
+entail	1
+ambush	1
+air	1
+fitting position	1
+public sector	1
+Wedel	1
+scenery	1
+outer space	1
+proportional space	1
+dark space	1
+scenery	1
+floor space	1
+space	1
+boundary-free space	1
+workspace	1
+frontage	1
+stack space	1
+ceiling space	1
+space	1
+land	1
+space	1
+disk space	1
+sluice	1
+lawn	1
+disk swap space	1
+legroom	1
+empty space	1
+airspace	1
+farmland	1
+figure space	1
+file space	1
+elbowroom	1
+exporting countries	1
+importing country	1
+importing countries	1
+Development and Trading Floor	1
+exporting country	1
+Washington, D.Cs.	1
+Lausanne	1
+Frankfurt	1
+Delemont	1
+Pittsburgh	1
+London	1
+Washington, D.C.	1
+Detroit	1
+Frankfurt am Main	1
+Interlaken	1
+Münster	1
+Dublin	1
+Feluy	1
+Lugano	1
+Schaffhouse	1
+East Berlin	1
+Geneva	1
+La Chaux-de-Fonds	1
+Rome	1
+Einsiedeln	1
+Boston	1
+Locarno	1
+Stans	1
+Eschborn	1
+Quebec	1
+Madrid	1
+Schaffhausen	1
+D.C.	1
+Oberwangen	1
+Marseilles	1
+Schwyz	1
+Aarau	1
+Neuchatel	1
+Milan	1
+Sierre	1
+Appenzell	1
+Munich	1
+Istanbul	1
+Sarnen	1
+Albuquerque	1
+Naples	1
+Los Angeles	1
+Rochester	1
+Athens	1
+Nuremberg	1
+Jerusalem	1
+Solothurn	1
+Atlantis	1
+Moscow	1
+Lisbon	1
+Sherbrooke	1
+Altdorf	1
+Morat	1
+Manila	1
+St. Gallen	1
+Coire	1
+Ottawa	1
+Calcutta	1
+St. Moritz	1
+Copenhagen	1
+Olten	1
+Berlin	1
+Thoune	1
+Davos	1
+Oxford	1
+Brigue	1
+Washington	1
+Cologne	1
+New Orleans	1
+Calgary	1
+Vevey	1
+Glaris	1
+Paris	1
+Bienne	1
+Toronto	1
+Halifax	1
+Murten	1
+Bonn	1
+Winterthur	1
+Hollywood	1
+New York	1
+Bern	1
+Winterthour	1
+Hamburg	1
+Prague	1
+Biel	1
+Wil	1
+Florence	1
+Montreal	1
+Bellinzona	1
+Sydney	1
+Hong Kong	1
+Montreux	1
+Basel	1
+Tokyo	1
+Herisau	1
+Thun	1
+Berne	1
+Wengen	1
+Frauenfeld	1
+Zell	1
+Chur	1
+Zoug	1
+Fribourg	1
+Zug	1
+Hague	1
+Zurich	1
+Glarus	1
+Zermatt	1
+Vancouver	1
+antartica	1
+North America	1
+australasia	1
+Antarctic	1
+Eurasia	1
+South America	1
+Africa	1
+Europe	1
+Arctic	1
+Central America	1
+Asia	1
+provinces	1
+Byelorussia	1
+armenia	1
+America	1
+Antilles	1
+Canada	1
+Phillipines	1
+Andorra	1
+Burgundy	1
+Bulgaria	1
+Austriae	1
+Angola	1
+Thüringen	1
+Baltic States	1
+Greenland	1
+Afghanistan	1
+Slovak Republic	1
+Bhutan	1
+Dalmatia	1
+Austria	1
+Somalia	1
+CA	1
+USA	1
+Australia	1
+Sierra Leone	1
+California	1
+Cameroon	1
+Antigua	1
+SD	1
+Bahrain	1
+Pennsylvania	1
+Appenzell Ausser Rhoden	1
+Saudi Arabia	1
+Balkans	1
+Poland	1
+Appenzell Innerrhoden	1
+RI	1
+Botswana	1
+Viet Nam	1
+Azerbaijan	1
+San Marino	1
+Bosnia	1
+Tanganyika	1
+AR	1
+Southern Ireland	1
+Bolivia	1
+Turkmenistan	1
+Argentina	1
+Soviet Union	1
+Central African Republic	1
+Thurgau	1
+AK	1
+Russian Federation	1
+Brunei Darussalam	1
+VT	1
+AL	1
+Rwanda	1
+Bavaria	1
+Ticino	1
+Ala.	1
+Senegal	1
+Brazil	1
+WI	1
+Alabama	1
+Saint Kitts and Nevis	1
+Barbuda	1
+Tenn.	1
+Ariz.	1
+R.I.	1
+Cal.	1
+Uri	1
+Arizona	1
+Rhode Island	1
+Burundi	1
+Uruguay	1
+Ark.	1
+Singapore	1
+Cape Verde	1
+US	1
+Arkansas	1
+Seychelles	1
+Basel Land	1
+Thailand	1
+Alas.	1
+Scotland	1
+Ceylon	1
+Tanzania	1
+Alaska	1
+Romania	1
+Belize	1
+Vanuatu	1
+Albania	1
+Saint Lucia	1
+Britain	1
+Vaud	1
+Alberta	1
+South Carolina	1
+Balaclava	1
+United States of America	1
+Aargau	1
+Soviet Russia	1
+Cambodia	1
+Tajikistan	1
+AZ	1
+Russia	1
+Basel Stadt	1
+TX	1
+Algeria	1
+Soviet Socialist Republic	1
+Burkina Faso	1
+Texas	1
+Id.	1
+SC	1
+Belgium	1
+WA	1
+Great Britain	1
+Samoa	1
+Benin	1
+UT	1
+Holland	1
+Sion	1
+Calif.	1
+Utah	1
+Haiti	1
+Sri Lanka	1
+China	1
+Uzbekistan	1
+GA	1
+Sao Tome and Principe	1
+Belarus	1
+UK	1
+HI	1
+South Africa	1
+Bahamas	1
+Vermont	1
+Illinois	1
+Sudan	1
+Chad	1
+United Kingdom	1
+Finland	1
+Slovakia	1
+Chile	1
+TN	1
+Iceland	1
+Spain	1
+Bangladesh	1
+Venezuela	1
+Hawaii	1
+Slovenia	1
+Barbados	1
+Switzerland	1
+Guinea Bissau	1
+Solomon Islands	1
+Jamaica	1
+Tennessee	1
+GB	1
+Saint Vincent	1
+Iran	1
+W.Va.	1
+FL	1
+South Dakota	1
+Laos	1
+Tunisia	1
+Fla.	1
+Puerto Rico	1
+Kyrgyz	1
+West Virginia	1
+FRG	1
+Qatar	1
+Madagascar	1
+Suriname	1
+Florida	1
+Prussia	1
+Israel	1
+Trinidad	1
+Grisons	1
+North Dakota	1
+Lao People's Democratic Republic	1
+Tobago	1
+Gibraltar	1
+ND	1
+Kyrgyz Republic	1
+U.K.	1
+Guinea	1
+North Carolina	1
+Lithuania	1
+S.Dak.	1
+GDR	1
+Okla.	1
+Ivory Coast	1
+Swaziland	1
+Georgia	1
+Obwalden	1
+Massachusetts	1
+U.S.	1
+Guatemala	1
+Nidwalden	1
+MN	1
+U.S.A.	1
+German Democratic Republic	1
+Nepal	1
+Jordan	1
+S.D.	1
+Hungary	1
+NJ	1
+Korea	1
+U.S.S.R.	1
+France	1
+NH	1
+Malaya	1
+United States	1
+Gabon	1
+PA	1
+Liberia	1
+Syria	1
+Germany	1
+Ore.	1
+Micronesia	1
+Va.	1
+Greece	1
+Netherlands	1
+Libya	1
+S.C.	1
+Ghana	1
+Nicaragua	1
+Kuwait	1
+VA	1
+IL	1
+Norway	1
+Mauritius	1
+Valais	1
+Grenada	1
+New England	1
+Mauritania	1
+Uganda	1
+Gambia	1
+Palau	1
+Manchuria	1
+Virginia	1
+Herzegovina	1
+Myanmar	1
+Lebanon	1
+Zion	1
+Honduras	1
+Philippines	1
+Liechtenstein	1
+WY	1
+India	1
+OH	1
+Md.	1
+Zimbabwe	1
+Idaho	1
+Mt	1
+MD	1
+Wyo.	1
+Ia.	1
+Nigeria	1
+ME	1
+Wyoming	1
+IA	1
+Nevis	1
+Malawi	1
+Togo	1
+Indiana	1
+Nebr.	1
+Kentucky	1
+WV	1
+Costa Rica	1
+Ontario	1
+Kansas	1
+Yugoslav Republic	1
+Colorado	1
+NE	1
+Kazakhstan	1
+Zaire	1
+Cyprus	1
+NC	1
+Iraq	1
+Yugoslavia	1
+Czech Republic	1
+Oman	1
+Jura	1
+Yemen	1
+CT	1
+Newfoundland	1
+Louisiana	1
+West Germany	1
+CO	1
+Normandy	1
+Italy	1
+Wisconsin	1
+Croatia	1
+Mozambique	1
+Latvia	1
+United Arab Emirates	1
+Czechoslovakia	1
+Nebraska	1
+Mali	1
+Turkey	1
+Corsica	1
+New Guinea	1
+Ken.	1
+Sweden	1
+Comoros	1
+Pa.	1
+Jugoslavia	1
+Zambia	1
+Connecticut	1
+Ohio	1
+Iowa	1
+Ukraine	1
+Congo	1
+New Zealand	1
+Indonesia	1
+Niger	1
+Colo.	1
+NM	1
+KS	1
+North Korea	1
+Conn.	1
+Penna.	1
+LA	1
+Palestine	1
+Cuba	1
+NV	1
+Minnesota	1
+N.D.	1
+Colombia	1
+N.Dak.	1
+La.	1
+Penn.	1
+Crete	1
+New Hampshire	1
+Ireland	1
+Papua New Guinea	1
+Estonia	1
+Nevada	1
+Minn.	1
+Paraguay	1
+Equatorial Guinea	1
+NY	1
+KY	1
+Pakistan	1
+England	1
+Nova Scotia	1
+Mich.	1
+Persia	1
+Ecuador	1
+Oregon	1
+Mexico	1
+New Jersey	1
+Egypt	1
+Portugal	1
+Japan	1
+Peru	1
+Denmark	1
+Panama	1
+MI	1
+North Vietnam	1
+Djibouti	1
+Northern Ireland	1
+Michigan	1
+N.Y.	1
+Dominican Republic	1
+New Mexico	1
+Maldives	1
+Or.	1
+East Germany	1
+Morocco	1
+Moldova	1
+N.J.	1
+Delaware	1
+Oklahoma	1
+Ky.	1
+Democratic People's Korea	1
+Maryland	1
+El Salvador	1
+Monaco	1
+Eritrea	1
+Mongolia	1
+Ethiopia	1
+Luxembourg	1
+Fiji	1
+Miss.	1
+Federal Republic Of Germany	1
+Mississippi	1
+Missouri	1
+MO	1
+Mass.	1
+Marshall Islands	1
+Mont.	1
+Malta	1
+Montana	1
+Majorca	1
+MA	1
+Maine	1
+Macedonia	1
+Mo.	1
+Kenya	1
+Lesotho	1
+Malaysia	1
+Madeira	1
+territory	1
+east	1
+municipality	1
+metropolis	1
+township	1
+Fairyland	1
+north	1
+mainland	1
+world	1
+duchy	1
+Native Land	1
+island	1
+Wonderland	1
+emirate	1
+neighbourhood	1
+Islet	1
+town	1
+earldom	1
+neighborhood	1
+kingdom	1
+west	1
+district	1
+precinct	1
+metropolitan area	1
+village	1
+fatherland	1
+Silicon Valley	1
+Middle East	1
+Vanguard	1
+hometown	1
+suburb	1
+marketplace	1
+borough	1
+archipelago	1
+south	1
+Borough	1
+Earldom	1
+continent	1
+province	1
+city	1
+west	1
+county	1
+region	1
+capital	1
+territories	1
+country	1
+Emirate	1
+Canton	1
+duchies	1
+continent	1
+counties	1
+empire	1
+municipalities	1
+east	1
+cities	1
+northeast	1
+Duchy	1
+north	1
+south	1
+kingship	1
+countries	1
+country of origin	1
+emerging market countries	1
+emerging market country	1
+countries of origin	1
+Duchies	1
+Northwest	1
+Archipelago	1

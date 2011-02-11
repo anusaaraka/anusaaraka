@@ -796,7 +796,6 @@
 (not (rel_name-sids  dobj   ?rv  ?))
 =>
 (bind ?a (gdbm_lookup "animate.gdbm" ?vi_word))
-(printout t ?a crlf)
 (if (eq ?a "1") then
 (printout       ?*fp*   "(relation-parser_ids   viSeRya-jo_samAnAXikaraNa       "?vi"   10000)"       crlf)
 (printout       ?*fp*   "(relation-parser_ids   kriyA-object    "?rv     "       10000)" crlf)

@@ -16,4 +16,7 @@ uncle	1
 aunt	1
 son	1
 daughter	1
-
+boy	1
+girl	1
+dog	1
+man	1
