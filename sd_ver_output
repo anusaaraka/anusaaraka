@@ -1556,4 +1556,16 @@ Hindi meaning using Stanford parser 3.87
 The boy who came yesterday from Delhi is my friend. 
 jo xillI se kala AyA vaha ladakA merA miwra hE.
 
+Hindi meaning using Stanford parser 3.88
+The girl you met yesterday is here. 
+jise/jisako Apa kala mile vaha ladakI yahAz hE.
+
+Hindi meaning using Stanford parser 3.89
+The dog I chased was black. 
+jisakA mEMne pICA kiyA vaha kuwwA kAlA WA.
+
+Hindi meaning using Stanford parser 3.90
+The man you saw is intelligent. 
+jise/jisako Apane xeKA vaha AxamI buxXimAna hE.
+
 Calling Interface related programs
