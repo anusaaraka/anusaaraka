@@ -6,8 +6,6 @@
  (open "word.dat" open-word "a")
  (open "original_word.dat" open-orign "a")
  (open "hindi_meanings_tmp.dat" hmng_fp "a")
-; (open "relations_tmp.dat" open-file "a")
-; (open "relations_debug.dat" debug_fp "a")
 
  (defglobal ?*open-word* = open-word)
  (defglobal ?*open-orign* = open-orign)
@@ -62,9 +60,8 @@
 (printout       ?*dbug* "(Rule-Rel-ids  nsubj_expl   kriyA-aBihiwa   "?kriyA"        "?sub")"crlf)
  (assert (sub_for_kriyA ?kriyA))
 )
+;Ex. There was a red mark on the door . 
 ;------------------------------------------------------------------------------------------------------------------------
- ;Ex. There was a red mark on the door . 
-
  (defrule nsubj_expl_nn
  (declare(salience 202))
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
@@ -767,60 +764,40 @@
 )
  ; Ex. I saw the man who you love. I saw the man whose wife you love.
 ;------------------------------------------------------------------------------------------------------------------------
-(defrule rcmod+dobj
-(rel_name-sids rcmod ?vi ?kri)
-(rel_name-sids dobj ?kri ?jo_s)
-(test (> (string_to_integer ?kri) (string_to_integer ?jo_s)))
-=>
-(printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
-(printout       ?*dbug* "(Rule-Rel-ids  rcmod+dobj       viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
-)
- ;Ex. The girl who you called yesterday has arrived. The dog which Chris bought is really ugly.
-;------------------------------------------------------------------------------------------------------------------------
-(defrule rcmod+dobj_1
-(rel_name-sids rcmod    ?vi   ?kri)
-(rel_name-sids dobj     ?kri  ?obj)
-(rel_name-sids  nsubj   ?kri  ?jo_s)
-(test (< (string_to_integer ?kri) (string_to_integer ?obj)))
+(defrule rcmod
+(rel_name-sids  rcmod ?vi ?kri)
+(or (rel_name-sids  nsubj ?kri ?js) (rel_name-sids  advmod   ?kri  ?js) (rel_name-sids  dobj     ?kri  ?js))
+(parserid-word ?js ?w)
+(test (>(string_to_integer ?kri)(string_to_integer ?js)))
 (not (got_viSeRya-jo_samAnAXikaraNa_relation ?vi))
 =>
-(printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
-(printout       ?*dbug* "(Rule-Rel-ids  rcmod+dobj_1       viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
-)
- ;Ex. The dog who chased me was black. The snake who swallowed the rat hissed loudly. 
-;------------------------------------------------------------------------------------------------------------------------
-(defrule rcmod+dobj_2
-(rel_name-sids rcmod    ?vi   ?kri)
-(rel_name-sids  nsubj   ?kri  ?jo_s)
-(parserid-word ?jo_s who|which|when|whom|that);The man you saw is intelligent. 
-(not (rel_name-sids dobj     ?kri  ?))
-(test (> (string_to_integer ?kri) (string_to_integer ?jo_s)))
-=>
-(printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
-(printout       ?*dbug* "(Rule-Rel-ids  rcmod+dobj_2       viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
-)
- ;Ex. The boy who came yesterday from Delhi is my friend. 
-;------------------------------------------------------------------------------------------------------------------------
-(defrule rcmod+dobj_3
-(declare (salience 100))
-(rel_name-sids rcmod    ?vi   ?kri)
-(rel_name-sids  nsubj   ?kri  ?s)
-(rel_name-sids  advmod   ?kri  ?jo_s)
-(test (> (string_to_integer ?kri) (string_to_integer ?jo_s)))
-=>
-(assert (got_viSeRya-jo_samAnAXikaraNa_relation ?vi)) 
-(assert (got_viSeRya-jo_samAnAXikaraNa_relation ?jo_s)) 
-(printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
-(printout       ?*dbug* "(Rule-Rel-ids  rcmod+dobj_3       viSeRya-jo_samAnAXikaraNa   "?vi" "?jo_s")"crlf)
-)
- ;Ex. I will show you the house where I met your mother. 
+ (if (or (eq ?w who) (eq ?w whom) (eq ?w that) (eq ?w which)) then
+    (printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
+    (printout       ?*dbug* "(Rule-Rel-ids  rcmod     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
+    (assert (got_viSeRya-jo_samAnAXikaraNa_relation ?vi))
+ )
+ (if (or (eq ?w when) (eq ?w where))then
+    (printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
+    (printout       ?*dbug* "(Rule-Rel-ids  rcmod     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
+    (assert (got_viSeRya-jo_samAnAXikaraNa_relation ?vi))
+ )
+ (if (or (eq ?w who) (eq ?w that) (eq ?w which)) then
+    (printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
+    (printout       ?*dbug* "(Rule-Rel-ids  rcmod       viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
+    (assert (got_viSeRya-jo_samAnAXikaraNa_relation ?vi))
+ ))
+ ;Ex. The girl who you called yesterday has arrived. The dog which Chris bought is really ugly. The dog who chased me was black. The snake who swallowed the rat hissed loudly. The boy who came yesterday from Delhi is my friend. I will show you the house where I met your mother. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule insert-jo_samA
 (rel_name-sids  rcmod   ?vi  ?rv)
 (rel_name-sids  nsubj   ?rv  ?s)
+(parserid-word ?vi ?vi_word)
 (parserid-word ?s ?word&~who&~which&~when&~whom&~that)
 (not (rel_name-sids  dobj   ?rv  ?))
 =>
+(bind ?a (gdbm_lookup "animate.gdbm" ?vi_word))
+(printout t ?a crlf)
+(if (eq ?a "1") then
 (printout       ?*fp*   "(relation-parser_ids   viSeRya-jo_samAnAXikaraNa       "?vi"   10000)"       crlf)
 (printout       ?*fp*   "(relation-parser_ids   kriyA-object    "?rv     "       10000)" crlf)
 (printout       ?*dbug*    "(Rule-Rel-ids  insert-jo_samA kriyA-object    "?rv"    10000)" crlf)
@@ -828,7 +805,7 @@
 (printout       ?*hmng_fp*      "(id-HM-source  10000   jo      Relative_clause)"       crlf)
 (printout       ?*open-word*    "(id-word 10000  who)"  crlf)
 (printout       ?*open-orign*   "(id-original_word 10000  who)"   crlf)
-)
+))
 ;Ex.  The dog I chased was black . The man you saw is intelligent. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule csubj
@@ -854,6 +831,14 @@
 (printout	?*dbug*	"(Rule-Rel-ids	num	viSeRya-saMKyA_viSeRaNa	"	?vi"	"?sa-vi")"crlf)	
 )
  ; Ex. He eats 3 sheep. 
+;------------------------------------------------------------------------------------------------------------------------
+(defrule number
+(rel_name-sids number ?s1 ?s2)
+=>
+(printout       ?*fp*   "(relation-parser_ids     saMKyA-saMKyA       "?s1"   "?s2")"crlf)
+(printout       ?*dbug* "(Rule-Rel-ids  number     saMKyA-saMKyA "       ?s1"    "?s2")"crlf)
+)
+ ; Ex. I invited four thousand fifty four students.
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule measure
 (rel_name-sids measure ?vi ?vi_n)
