@@ -146,9 +146,9 @@
  )
  ;----------------------------------------------------------------------------------------------------------------
  (defrule Relative_clause
- (id-HM-source  10000   jo      Relative_clause)
+ (id-HM-source  10000   ?mng    Relative_clause)
   =>
-	 (printout ?*caus_mng-file* "(id-HM-source  10000 jo Relative_clause)" crlf )
+	 (printout ?*caus_mng-file* "(id-HM-source  10000 "?mng" Relative_clause)" crlf )
  )
  ;----------------------------------------------------------------------------------------------------------------
  ;I thought it is right to resign.I hope he comes to the party tomorrow.

@@ -4,13 +4,13 @@
 (defglobal ?*dbug* = debug_fp)
 
  (open "word.dat" open-word "a")
+ (open "word.dat" open-word "a")
  (open "original_word.dat" open-orign "a")
  (open "hindi_meanings_tmp.dat" hmng_fp "a")
 
  (defglobal ?*open-word* = open-word)
  (defglobal ?*open-orign* = open-orign)
  (defglobal ?*hmng_fp* = hmng_fp)
-
 
 (deffunction string_to_integer (?parser_id); [Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
@@ -660,13 +660,13 @@
  ; Ex. Bill does not drive.
 ;------------------------------------------------------------------------------------------------------------------------
  ; Ex. John is more intelligent than Tom. This test is more difficult than other tests I have taken.
- (defrule prep_then
+ (defrule prep_than
  (rel_name-sids prep  ?m-up ?t-up)
  ?f0<-(parserid-word ?t-up than)
  =>
   (retract ?f0)	
   (printout	?*fp*	"(relation-parser_ids     more_upameya-than_upamAna	"	?m-up"	"?t-up")"crlf)	
-  (printout	?*dbug*	"(Rule-Rel-ids	prep_then	more_upameya-than_upamAna	"	?m-up"	"?t-up")"crlf)	
+  (printout	?*dbug*	"(Rule-Rel-ids	prep_than	more_upameya-than_upamAna	"	?m-up"	"?t-up")"crlf)	
  )
  ; Ex. 
  ;------------------------------------------------------------------------------------------------------------------------ 
@@ -769,26 +769,22 @@
 (or (rel_name-sids  nsubj ?kri ?js) (rel_name-sids  advmod   ?kri  ?js) (rel_name-sids  dobj     ?kri  ?js))
 (parserid-word ?js ?w)
 (test (>(string_to_integer ?kri)(string_to_integer ?js)))
-(not (got_viSeRya-jo_samAnAXikaraNa_relation ?vi))
 =>
  (if (or (eq ?w who) (eq ?w whom) (eq ?w that) (eq ?w which)) then
     (printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
     (printout       ?*dbug* "(Rule-Rel-ids  rcmod     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
-    (assert (got_viSeRya-jo_samAnAXikaraNa_relation ?vi))
  )
  (if (or (eq ?w when) (eq ?w where))then
     (printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
     (printout       ?*dbug* "(Rule-Rel-ids  rcmod     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
-    (assert (got_viSeRya-jo_samAnAXikaraNa_relation ?vi))
  )
  (if (or (eq ?w who) (eq ?w that) (eq ?w which)) then
     (printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
     (printout       ?*dbug* "(Rule-Rel-ids  rcmod       viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
-    (assert (got_viSeRya-jo_samAnAXikaraNa_relation ?vi))
  ))
  ;Ex. The girl who you called yesterday has arrived. The dog which Chris bought is really ugly. The dog who chased me was black. The snake who swallowed the rat hissed loudly. The boy who came yesterday from Delhi is my friend. I will show you the house where I met your mother. 
 ;------------------------------------------------------------------------------------------------------------------------
-(defrule insert-jo_samA
+(defrule insert-who
 (rel_name-sids  rcmod   ?vi  ?rv)
 (rel_name-sids  nsubj   ?rv  ?s)
 (parserid-word ?vi ?vi_word)
@@ -799,19 +795,64 @@
 (if (eq ?a "1") then
 (printout       ?*fp*   "(relation-parser_ids   viSeRya-jo_samAnAXikaraNa       "?vi"   10000)"       crlf)
 (printout       ?*fp*   "(relation-parser_ids   kriyA-object    "?rv     "       10000)" crlf)
-(printout       ?*dbug*    "(Rule-Rel-ids  insert-jo_samA kriyA-object    "?rv"    10000)" crlf)
-(printout       ?*dbug*    "(Rule-Rel-ids  insert-jo_samA  viSeRya-jo_samAnAXikaraNa      "?vi"    10000)"crlf)
+(printout       ?*dbug*    "(Rule-Rel-ids  insert-who   kriyA-object    "?rv"    10000)" crlf)
+(printout       ?*dbug*    "(Rule-Rel-ids  insert-who   viSeRya-jo_samAnAXikaraNa      "?vi"    10000)"crlf)
 (printout       ?*hmng_fp*      "(id-HM-source  10000   jo      Relative_clause)"       crlf)
 (printout       ?*open-word*    "(id-word 10000  who)"  crlf)
 (printout       ?*open-orign*   "(id-original_word 10000  who)"   crlf)
 ))
 ;Ex.  The dog I chased was black . The man you saw is intelligent. 
 ;------------------------------------------------------------------------------------------------------------------------
+(defrule insert-where
+(rel_name-sids  rcmod   ?vi  ?rv)
+(parserid-word ?vi ?vi_word)
+(not (rel_name-sids  dobj   ?rv  ?))
+=>
+(bind ?a (gdbm_lookup "place.gdbm" ?vi_word))
+(if (eq ?a "1") then
+    (printout       ?*fp*   "(relation-parser_ids   viSeRya-jo_samAnAXikaraNa       "?vi"   10000)"       crlf)
+    (printout       ?*dbug*    "(Rule-Rel-ids  insert-where  viSeRya-jo_samAnAXikaraNa      "?vi"    10000)"crlf)
+    (printout       ?*hmng_fp*      "(id-HM-source  10000   jahAz      Relative_clause)"       crlf)
+    (printout       ?*open-word*    "(id-word 10000  where)"  crlf)
+    (printout       ?*open-orign*   "(id-original_word 10000  where)"   crlf)
+))
+;Ex. This is the place I live.  
+;------------------------------------------------------------------------------------------------------------------------
+(defrule insert-where_2
+(rel_name-sids  rcmod   ?vi  ?rv)
+(parserid-word ?vi ?vi_word)
+(rel_name-sids  dobj   ?rv  ?obj)
+(test (>(string_to_integer ?obj)(string_to_integer ?rv)))
+=>
+(bind ?a (gdbm_lookup "place.gdbm" ?vi_word))
+(if (eq ?a "1") then
+    (printout       ?*fp*   "(relation-parser_ids   viSeRya-jo_samAnAXikaraNa       "?vi"   10000)"       crlf)
+    (printout       ?*dbug*    "(Rule-Rel-ids  insert-where_2  viSeRya-jo_samAnAXikaraNa      "?vi"    10000)"crlf)
+    (printout       ?*hmng_fp*      "(id-HM-source  10000   jahAz      Relative_clause)"       crlf)
+    (printout       ?*open-word*    "(id-word 10000  where)"  crlf)
+    (printout       ?*open-orign*   "(id-original_word 10000  where)"   crlf)
+))
+;Ex. This is the place I met them.
+;------------------------------------------------------------------------------------------------------------------------
+(defrule insert-when
+(rel_name-sids  rcmod   ?vi  ?rv)
+(parserid-word ?vi ?vi_word)
+=>
+(bind ?a (gdbm_lookup "time.gdbm" ?vi_word))
+(if (eq ?a "1") then
+    (printout       ?*fp*   "(relation-parser_ids   viSeRya-jo_samAnAXikaraNa       "?vi"   10000)"       crlf)
+    (printout       ?*dbug*    "(Rule-Rel-ids  insert-when  viSeRya-jo_samAnAXikaraNa      "?vi"    10000)"crlf)
+    (printout       ?*hmng_fp*      "(id-HM-source  10000   jaba      Relative_clause)"       crlf)
+    (printout       ?*open-word*    "(id-word 10000  when)"  crlf)
+    (printout       ?*open-orign*   "(id-original_word 10000  when)"   crlf)
+) )
+;Ex. Winter is the season I met him. 
+;------------------------------------------------------------------------------------------------------------------------
 (defrule csubj
 (rel_name-sids csubj|csubjpass ?kriyA ?obj)
 =>
-(printout	?*fp*	"(relation-parser_ids     kriyA-vAkyakarma	"	?obj"	"?kriyA")"crlf)	
-(printout	?*dbug*	"(Rule-Rel-ids	csubj	kriyA-vAkyakarma	"	?obj"	"?kriyA")"crlf)	
+(printout	?*fp*	"(relation-parser_ids     kriyA-vAkyakarma	"?obj"	"?kriyA")"crlf)	
+(printout	?*dbug*	"(Rule-Rel-ids	csubj	kriyA-vAkyakarma	"?obj"	"?kriyA")"crlf)	
 )
  ; Ex. What she said makes sense. What she said is not true.  That she lied was suspected by everyone.
 ;------------------------------------------------------------------------------------------------------------------------
@@ -899,8 +940,8 @@
  (rel_name-sids aux   ?kri ?to)
  (parserid-word ?to to)
  =>
-        (printout       ?*fp*   "(relation-parser_ids     kriyA-kriyArWa_kriyA   "       ?id"    "?kri")"crlf)
-        (printout       ?*dbug* "(Rule-Rel-ids  xcomp+aux   kriyA-kriyArWa_kriyA  "       ?id"   "?kri")"crlf)
+        (printout       ?*fp*   "(relation-parser_ids     kriyA-kriyArWa_kriyA   "?id"    "?kri")"crlf)
+        (printout       ?*dbug* "(Rule-Rel-ids  xcomp+aux   kriyA-kriyArWa_kriyA  "?id"   "?kri")"crlf)
  (assert (kriyA-kriyArWa_kriyA_rel_has_been_dcd_by_xcomp+aux_rule ?kri))
  )
  ;Added by Shirisha Manju
@@ -945,16 +986,16 @@
 (defrule quantmod
 (rel_name-sids quantmod  ?vi ?vi_ka)
 =>
-(printout       ?*fp*   "(relation-parser_ids     viSeRya-viSeRaka        "       ?vi"    "?vi_ka")"crlf)
-(printout       ?*dbug* "(Rule-Rel-ids  quantmod   viSeRya-viSeRaka        "       ?vi"    "?vi_ka")"crlf) 
+(printout       ?*fp*   "(relation-parser_ids     viSeRya-viSeRaka        "?vi"    "?vi_ka")"crlf)
+(printout       ?*dbug* "(Rule-Rel-ids  quantmod   viSeRya-viSeRaka        "?vi"    "?vi_ka")"crlf) 
 )
  ; Ex. About 200 people came to the party .
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule infmod 
 (rel_name-sids infmod  ?saMjFA ?kqxanwa)
  =>
-(printout       ?*fp*   "(relation-parser_ids     saMjFA-to_kqxanwa        "       ?saMjFA"    "?kqxanwa")"crlf)
-(printout       ?*dbug* "(Rule-Rel-ids  infmod   saMjFA-to_kqxanwa        "       ?saMjFA"    "?kqxanwa")"crlf)
+(printout       ?*fp*   "(relation-parser_ids     saMjFA-to_kqxanwa        "?saMjFA"    "?kqxanwa")"crlf)
+(printout       ?*dbug* "(Rule-Rel-ids  infmod   saMjFA-to_kqxanwa        "?saMjFA"    "?kqxanwa")"crlf)
 )
  ; Ex. But my efforts to win his heart have failed . 
  ;Added by Mahalaxmi.

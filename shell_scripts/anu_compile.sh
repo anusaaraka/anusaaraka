@@ -46,7 +46,7 @@
  echo "Creating month_day.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/month_day.gdbm  < month_day.txt
  echo "Creating place.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/place.gdbm  < place.gdbm
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/place.gdbm  < place.txt
  echo "Creating time.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/time.gdbm  < time.txt
  echo "Creating eng-animate-list.gdbm"
