@@ -1742,18 +1742,21 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  	    prepare_apertium_input.clp 	vibakthi.clp
 17. Updated Log.
 
-11-02-11
+14-02-11
 ---------
  1. In WSD:
             Modified to.clp
- 2. In sd_relation_rules.clp, these rules rcmod+dobj, rcmod+dobj_1, rcmod+dobj_2 and rcmod+dobj_3 are merged into one single     rule 'rcmod'.
+ 2. In sd_relation_rules.clp:
+       these rules rcmod+dobj, rcmod+dobj_1, rcmod+dobj_2 and rcmod+dobj_3 are merged into one single rule 'rcmod'.
+       Added some rules in sd_relation_rules.clp to assert 'who', 'where' and 'when' in relative clause sentences.
  3. Added new rule "asserted_who" in sd_pada.clp to get 10000 pada.
  4. Modified anu_compile.sh to get 4 new gdbms.
- 5. Updated above changes in changes_in_databases.
- 6. Modified "insert-jo_samA" rule in sd_relation_rules.clp
+ 5. Modified "insert-jo_samA" rule in sd_relation_rules.clp
+ 6. Modified rule: Relative_clause in causative_verb_mng.clp
  7. Modified and Updated small_sent_ver_output, verified_output, verified_output_ol, small_sent_ver_output_ol.
- 8. Updated following files:
+ 8. Updated changes_in_databases.
+ 9. Updated following files:
            verified_ol(541)  small_sent_verified_ol(106)
            verified   (592)  small_sent_verified   (118)
            sd_verified(390)
- 9. Updated Log.
+10. Updated Log.
