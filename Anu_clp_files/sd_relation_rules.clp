@@ -415,7 +415,7 @@
 	(printout       ?*dbug* "(Rule-Rel-ids  neg_cop   kriyA-kriyA_niReXaka    "?kriyA"        "?not")"crlf)
  )
  ;Added by Shirisha Manju
- ; Ex: It is not a good manner to eat alone .
+ ; Ex: It is not a good manner to eat alone.
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule poss_conj
  (declare (salience 210))
@@ -442,6 +442,7 @@
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule prt
 (rel_name-sids prt ?kriyA ?upasarga)
+(not (got_preposition_obj_for_this ?p))
 =>
 (printout	?*fp*	"(relation-parser_ids     kriyA-upasarga	"?kriyA"	"?upasarga")"crlf)	
 (printout	?*dbug*	"(Rule-Rel-ids	prt	kriyA-upasarga	"?kriyA"	"?upasarga")"crlf)	
@@ -467,6 +468,7 @@
 (defrule nsubj_advmod
 (root-verbchunk-tam-parser_chunkids ? ? ? $?ids ?kri)
 (rel_name-sids advmod ?kri ?kri_viSeRaNa)
+(not  (got_viSeRya-jo_samAnAXikaraNa  ?kri_viSeRaNa))
 ;(not (rel_name-sids ccomp|xcomp ? ?kriyA));commented for 'I am afraid that I have badly hurt him.'
 =>
 (printout	?*fp*	"(relation-parser_ids     kriyA-kriyA_viSeRaNa	"?kri"	"?kri_viSeRaNa")"crlf)	
@@ -757,14 +759,31 @@
  ; Ex. Forces engaged in fighting after insurgents attacked .
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule rel
-(rel_name-sids rel ?kriyA ?obj)
+(rel_name-sids rel ?rv ?jos)
+(rel_name-sids rcmod ?vi ?rv)
+(parserid-word ?jos who|which)
 =>
-(printout	?*fp*	"(relation-parser_ids     kriyA-object	"?kriyA"	"?obj")"crlf)	
-(printout	?*dbug*	"(Rule-Rel-ids	rel	kriyA-object	"	?kriyA"	"?obj")"crlf)	
+(printout	?*fp*	"(relation-parser_ids     viSeRya-jo_samAnAXikaraNa	"?vi"	"?jos")"crlf)	
+(printout	?*dbug*	"(Rule-Rel-ids	rel	viSeRya-jo_samAnAXikaraNa	"?vi"	"?jos")"crlf)	
 )
- ; Ex. I saw the man who you love. I saw the man whose wife you love.
+ ; Ex.  I will show you the house from which we came. I will show you the house which we came from. 
+;------------------------------------------------------------------------------------------------------------------------
+(defrule rel_1
+(declare (salience 100))
+(rel_name-sids  rel|dobj     ?rv ?jos)
+(rel_name-sids  rcmod   ?vi ?rv)
+(rel_name-sids  prt     ?rv  ?p)
+(parserid-word  ?jos    who|which|where|that)
+(parserid-word  ?p      ?prep)
+=>
+(assert (got_preposition_obj_for_this ?p))
+(printout       ?*fp*   "(relation-parser_ids     kriyA-"?prep"_saMbanXI     "?rv"   "?jos")"crlf)   
+(printout       ?*dbug* "(Rule-Rel-ids  rel_1     kriyA-"?prep"_saMbanXI     "?rv"   "?jos")"crlf)   
+)
+ ; Ex.  I will show you the house which we talked about. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule rcmod
+(declare (salience 220))
 (rel_name-sids  rcmod ?vi ?kri)
 (or (rel_name-sids  nsubj ?kri ?js) (rel_name-sids  advmod   ?kri  ?js) (rel_name-sids  dobj     ?kri  ?js))
 (parserid-word ?js ?w)
@@ -773,40 +792,52 @@
  (if (or (eq ?w who) (eq ?w whom) (eq ?w that) (eq ?w which)) then
     (printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
     (printout       ?*dbug* "(Rule-Rel-ids  rcmod     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
+    (assert (got_viSeRya-jo_samAnAXikaraNa  ?vi))
  )
  (if (or (eq ?w when) (eq ?w where))then
     (printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
     (printout       ?*dbug* "(Rule-Rel-ids  rcmod     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
+    (printout       ?*fp*   "(relation-parser_ids     kriyA-aXikaraNavAcI_avyaya  "?kri" "?js")"crlf)
+    (printout       ?*dbug* "(Rule-Rel-ids  rcmod     kriyA-aXikaraNavAcI_avyaya  "?kri" "?js")"crlf)
+    (assert (got_viSeRya-jo_samAnAXikaraNa  ?vi))
+    (assert (got_viSeRya-jo_samAnAXikaraNa  ?js))
  )
  (if (or (eq ?w who) (eq ?w that) (eq ?w which)) then
     (printout       ?*fp*   "(relation-parser_ids     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
-    (printout       ?*dbug* "(Rule-Rel-ids  rcmod       viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
+    (printout       ?*dbug* "(Rule-Rel-ids  rcmod     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
+    (assert (got_viSeRya-jo_samAnAXikaraNa  ?vi))
  ))
  ;Ex. The girl who you called yesterday has arrived. The dog which Chris bought is really ugly. The dog who chased me was black. The snake who swallowed the rat hissed loudly. The boy who came yesterday from Delhi is my friend. I will show you the house where I met your mother. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule insert-who
+(declare (salience 100))
 (rel_name-sids  rcmod   ?vi  ?rv)
 (rel_name-sids  nsubj   ?rv  ?s)
 (parserid-word ?vi ?vi_word)
 (parserid-word ?s ?word&~who&~which&~when&~whom&~that)
+(not (rel_name-sids  rel   ?rv  ?))
 (not (rel_name-sids  dobj   ?rv  ?))
 =>
 (bind ?a (gdbm_lookup "animate.gdbm" ?vi_word))
 (if (eq ?a "1") then
-(printout       ?*fp*   "(relation-parser_ids   viSeRya-jo_samAnAXikaraNa       "?vi"   10000)"       crlf)
-(printout       ?*fp*   "(relation-parser_ids   kriyA-object    "?rv     "       10000)" crlf)
-(printout       ?*dbug*    "(Rule-Rel-ids  insert-who   kriyA-object    "?rv"    10000)" crlf)
+(printout       ?*fp*   "(relation-parser_ids   viSeRya-jo_samAnAXikaraNa       "?vi"   10000)"crlf)
+(printout       ?*fp*   "(relation-parser_ids   kriyA-object    "?rv"       10000)"crlf)
+(printout       ?*dbug*    "(Rule-Rel-ids  insert-who   kriyA-object    "?rv"    10000)"crlf)
 (printout       ?*dbug*    "(Rule-Rel-ids  insert-who   viSeRya-jo_samAnAXikaraNa      "?vi"    10000)"crlf)
-(printout       ?*hmng_fp*      "(id-HM-source  10000   jo      Relative_clause)"       crlf)
-(printout       ?*open-word*    "(id-word 10000  who)"  crlf)
-(printout       ?*open-orign*   "(id-original_word 10000  who)"   crlf)
+(printout       ?*hmng_fp*      "(id-HM-source  10000   jo      Relative_clause)"crlf)
+(printout       ?*open-word*    "(id-word 10000  who)"crlf)
+(printout       ?*open-orign*   "(id-original_word 10000  who)"crlf)
+    (assert (got_viSeRya-jo_samAnAXikaraNa  ?vi))
 ))
 ;Ex.  The dog I chased was black . The man you saw is intelligent. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule insert-where
+(declare (salience 100))
 (rel_name-sids  rcmod   ?vi  ?rv)
 (parserid-word ?vi ?vi_word)
 (not (rel_name-sids  dobj   ?rv  ?))
+(not (rel_name-sids  rel   ?rv  ?x))
+(not (got_viSeRya-jo_samAnAXikaraNa  ?vi))
 =>
 (bind ?a (gdbm_lookup "place.gdbm" ?vi_word))
 (if (eq ?a "1") then
@@ -815,27 +846,37 @@
     (printout       ?*hmng_fp*      "(id-HM-source  10000   jahAz      Relative_clause)"       crlf)
     (printout       ?*open-word*    "(id-word 10000  where)"  crlf)
     (printout       ?*open-orign*   "(id-original_word 10000  where)"   crlf)
+    (assert (got_viSeRya-jo_samAnAXikaraNa  ?vi))
 ))
 ;Ex. This is the place I live.  
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule insert-where_2
+(declare (salience 100))
 (rel_name-sids  rcmod   ?vi  ?rv)
 (parserid-word ?vi ?vi_word)
 (rel_name-sids  dobj   ?rv  ?obj)
+(not (rel_name-sids  rel   ?rv  ?))
+(not (got_viSeRya-jo_samAnAXikaraNa  ?vi))
 (test (>(string_to_integer ?obj)(string_to_integer ?rv)))
 =>
 (bind ?a (gdbm_lookup "place.gdbm" ?vi_word))
 (if (eq ?a "1") then
-    (printout       ?*fp*   "(relation-parser_ids   viSeRya-jo_samAnAXikaraNa       "?vi"   10000)"       crlf)
+    (printout       ?*fp*   "(relation-parser_ids   viSeRya-jo_samAnAXikaraNa       "?vi"   10000)"crlf)
     (printout       ?*dbug*    "(Rule-Rel-ids  insert-where_2  viSeRya-jo_samAnAXikaraNa      "?vi"    10000)"crlf)
-    (printout       ?*hmng_fp*      "(id-HM-source  10000   jahAz      Relative_clause)"       crlf)
+    (printout       ?*fp*   "(relation-parser_ids   kriyA-aXikaraNavAcI_avyaya     "?rv"   10000)"crlf)
+    (printout       ?*dbug*    "(Rule-Rel-ids  insert-where_2  kriyA-aXikaraNavAcI_avyaya     "?rv"   10000)"crlf)
+    (printout       ?*hmng_fp*      "(id-HM-source  10000   jahAz      Relative_clause)"crlf)
     (printout       ?*open-word*    "(id-word 10000  where)"  crlf)
     (printout       ?*open-orign*   "(id-original_word 10000  where)"   crlf)
+    (assert (got_viSeRya-jo_samAnAXikaraNa  ?vi))
+    (assert (got_viSeRya-jo_samAnAXikaraNa  ?vi))
 ))
 ;Ex. This is the place I met them.
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule insert-when
+(declare (salience 100))
 (rel_name-sids  rcmod   ?vi  ?rv)
+(not (rel_name-sids  rel   ?rv  ?))
 (parserid-word ?vi ?vi_word)
 =>
 (bind ?a (gdbm_lookup "time.gdbm" ?vi_word))
@@ -845,8 +886,45 @@
     (printout       ?*hmng_fp*      "(id-HM-source  10000   jaba      Relative_clause)"       crlf)
     (printout       ?*open-word*    "(id-word 10000  when)"  crlf)
     (printout       ?*open-orign*   "(id-original_word 10000  when)"   crlf)
+    (assert (got_viSeRya-jo_samAnAXikaraNa  ?vi))
 ) )
-;Ex. Winter is the season I met him. 
+;Ex. Winter is the season I met them. 
+;------------------------------------------------------------------------------------------------------------------------
+(defrule insert-which
+(declare (salience 100))
+(rel_name-sids  rcmod   ?vi  ?rv)
+(rel_name-sids  nsubj   ?rv  ?s)
+(parserid-word ?s ?word&~who&~which&~that)
+(not (rel_name-sids  dobj   ?rv  ?))
+(not (rel_name-sids  rel   ?rv  ?))
+=>
+(bind ?a (gdbm_lookup "transitive-verb-list.gdbm" ?v_word))
+(if (eq ?a "1") then
+    (printout       ?*fp*   "(relation-parser_ids   viSeRya-jo_samAnAXikaraNa       "?vi"   10000)"crlf)
+    (printout       ?*dbug*    "(Rule-Rel-ids  insert-which  viSeRya-jo_samAnAXikaraNa      "?vi"    10000)"crlf)
+    (printout       ?*fp*   "(relation-parser_ids   kriyA-object    "?rv"       10000)"crlf)
+    (printout       ?*dbug*    "(Rule-Rel-ids  insert-which   kriyA-object    "?rv"    10000)"crlf)
+    (printout       ?*hmng_fp*      "(id-HM-source  10000   jisako      Relative_clause)"crlf)
+    (printout       ?*open-word*    "(id-word 10000  which)"crlf)
+    (printout       ?*open-orign*   "(id-original_word 10000  which)"crlf)
+    (assert (got_viSeRya-jo_samAnAXikaraNa  ?vi))
+)) 
+;Ex. I will show you the house we talked about.
+;------------------------------------------------------------------------------------------------------------------------
+(defrule insert-which1
+(rel_name-sids  rcmod   ?vi  ?rv)
+(not (got_viSeRya-jo_samAnAXikaraNa  ?vi))
+(not (rel_name-sids  rel   ?rv  ?))
+=>
+    (printout       ?*fp*   "(relation-parser_ids   viSeRya-jo_samAnAXikaraNa       "?vi"   10000)"crlf)
+    (printout       ?*dbug*    "(Rule-Rel-ids  insert-which1  viSeRya-jo_samAnAXikaraNa      "?vi"    10000)"crlf)
+    (printout       ?*fp*   "(relation-parser_ids   kriyA-object    "?rv"       10000)"crlf)
+    (printout       ?*dbug*    "(Rule-Rel-ids  insert-which1   kriyA-object    "?rv"    10000)"crlf)
+    (printout       ?*hmng_fp*      "(id-HM-source  10000   jo      Relative_clause)"crlf)
+    (printout       ?*open-word*    "(id-word 10000  which)"crlf)
+    (printout       ?*open-orign*   "(id-original_word 10000  which)"crlf)
+) 
+;Ex.  
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule csubj
 (rel_name-sids csubj|csubjpass ?kriyA ?obj)
