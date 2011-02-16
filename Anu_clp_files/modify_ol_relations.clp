@@ -169,8 +169,50 @@
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
-
+;Added by Roja (16-02-11)
 ;Your house and garden are very attractive.
+(defglobal ?*plist* = (create$ ))
+(defrule getting_conj_components 
+(declare (salience 60))
+(split_tranlevel-ptype-headid-grpids tran3 PP ?head $?ids)
+(ol_res_id-word_id-word   ?head ?i   and|or)
+(parser_id-cat_coarse  ?pid ?cat)
+(test (member$ ?pid $?ids))
+(parser_id-cat_coarse ?pid1 ?cat1)
+(parser_id-cat_coarse ?pid2 ?cat2)
+(test (eq ?pid1 (nth$ (length $?ids) $?ids)))
+(test (eq (string_to_integer ?head)(+ (string_to_integer ?pid2) 1)))
+(test (neq ?head ?pid))
+=>
+(bind ?len (length $?ids))
+        (loop-for-count (?i 1 ?len) do
+            (bind ?id1 (nth$ ?i $?ids))
+             (if (eq ?id1 ?pid) then
+               (if (eq ?cat ?cat1) then 
+                        (bind ?*plist* (insert$ ?*plist* 1 ?pid))
+                    else (if (eq ?cat ?cat2) then  ;Mumbai is the headquarters of the central and western railways
+                             (if (< (string_to_integer ?pid) (string_to_integer ?head)) then 
+                                (bind ?*plist* (insert$ ?*plist* 1 ?pid))
+                             )
+                         )
+               )
+            )
+       )
+       (assert (conjunction-components_dummy ?head     (create$ (implode$  ?*plist*))))
+)
+;----------------------------------------------------------------------------------------------------------------------------
+;Added by Roja(16-02-11)
+;Your house and garden are very attractive.
+(defrule print_conj_comp
+(declare (salience -10))
+(conjunction-components_dummy ?head   $?ids)
+(test (eq (length $?ids) (length ?*plist*)))
+=>
+  (printout ?*ol_fp* "(conjunction-components "  ?head "  "  (implode$ ?*plist*) ")" crlf)
+  (printout ?*debug* "(Rule-Rel-ids  print_conj_comp    conjunction-components "  ?head "  "  (implode$ ?*plist*) ")" crlf)
+)
+;----------------------------------------------------------------------------------------------------------------------------
+
 (defrule head_RaRTI_vi
 (declare (salience 55))
 ?f<-(relation-parser_ids viSeRya-RaRTI_viSeRaNa ?id ?id1)
@@ -183,16 +225,14 @@
 (assert (rel_has_been_deleted viSeRya-RaRTI_viSeRaNa  ?id ?id1))
 (bind ?head_1 (nth$  (length $?ids) $?ids))
 (bind ?head_2 (nth$  (length $?ids1) $?ids1))
-(printout       ?*ol_fp*    "(conjunction-components  "?head"    " ?head_1" "?head_2")"crlf)
 (printout       ?*ol_fp*    "(relation-parser_ids  "viSeRya-RaRTI_viSeRaNa" " ?head" "?id1")"crlf)
 (assert (rel_has_been_written viSeRya-RaRTI_viSeRaNa  ?head ?id1))
-(printout ?*debug* "(Rule-Rel-ids   head_RaRTI_vi  conjunction-components   "?head"    " ?head_1"   "?head_2")"crlf)
 (printout ?*debug* "(Rule-Rel-ids   head_RaRTI_vi  viSeRya-RaRTI_viSeRaNa   "?head"   "?id1")"crlf)
 (printout ?*debug* "(rule-deleted_relation-ids   head_RaRTI_vi  viSeRya-RaRTI_viSeRaNa   "?id"   " ?id1")"crlf)
 )
 
 ;------------------------------------------------------------------------------------------------------------------------
-
+;
 (defrule head_transfer_left
 ?f<-(relation-parser_ids ?relname  ?id1 ?id)
 (split_tranlevel-ptype-headid-grpids tran3 PP ?head $?ids ?head $?ids1)
@@ -210,10 +250,6 @@
 (bind ?head_1 (nth$  (length $?ids) $?ids))
 (bind ?head_2 (nth$  (length $?ids1) $?ids1))
 (assert (relation-parser_ids ?relname ?head ?id))
-(printout       ?*ol_fp*    "(conjunction-components  "?head"    " ?head_1" "?head_2")"crlf)
-(printout       ?*ol_fp*    "(conjunction-components  "?head"    " ?head_2" "?head_1")"crlf)
-(printout ?*debug* "(Rule-Rel-ids   head_transfer_left    conjunction-components  "?head"    " ?head_1" "?head_2")"crlf)
-(printout ?*debug* "(Rule-Rel-ids   head_transfer_left    conjunction-components  "?head"    " ?head_2" "?head_1")"crlf)
 (printout ?*debug* "(Rule-Rel-ids   head_transfer_left   " ?relname "   "?head"    "?id")"crlf)
 )
 
@@ -230,7 +266,7 @@
 )
 
 ;-------------------------------------------------------------------------------------------------------------------------
-
+;
 (defrule head_transfer_right
 (declare (salience 5))
 ?f<-(relation-parser_ids ?relname  ?id ?id1)
@@ -252,10 +288,6 @@
 (bind ?head_1 (nth$  (length $?ids) $?ids))
 (bind ?head_2 (nth$  (length $?ids1) $?ids1))
 (assert (relation-parser_ids ?relname ?id ?head))
-(printout       ?*ol_fp*    "(conjunction-components  "?head"    " ?head_1" "?head_2")"crlf)
-(printout       ?*ol_fp*    "(conjunction-components  "?head"    " ?head_2" "?head_1")"crlf)
-(printout ?*debug* "(Rule-Rel-ids   head_transfer_right    conjunction-components  "?head"    " ?head_1" "?head_2")"crlf)
-(printout ?*debug* "(Rule-Rel-ids   head_transfer_left    conjunction-components  "?head"    " ?head_2" "?head_1")"crlf)
 (printout ?*debug* "(Rule-Rel-ids    head_transfer_right   " ?relname "   "?id"    "?head")"crlf)
 )
 
@@ -275,17 +307,7 @@
 (bind ?head_1 (nth$  (length $?ids) $?ids))
 (bind ?head_2 (nth$  (length $?ids1) $?ids1))
 (assert (relation-parser_ids kriyA-subject ?id ?head))
-(printout       ?*ol_fp*    "(conjunction-components  "?head"    " ?head_1" "?head_2")"crlf)
-(printout       ?*ol_fp*    "(conjunction-components  "?head"    " ?head_2" "?head_1")"crlf)
-
-(if (neq ?id1 ?head_1) then   ;Added by Roja (27-11-10) He and I are friends.
-(printout       ?*ol_fp*    "(conjunction-components  "?head"    " ?id1" "?head_1")"crlf)
-(printout ?*debug* "(Rule-Rel-ids  head_transfer_right_s    conjunction-components    "?head"    "?id1"    "?head_1")"crlf)
-)
-
 (printout ?*debug* "(Rule-Rel-ids  head_transfer_right_s    kriyA-subject    "?id"    "?head")"crlf)
-(printout ?*debug* "(Rule-Rel-ids  head_transfer_right_s    conjunction-components    "?head"    " ?head_1"    "?head_2")"crlf)
-(printout ?*debug* "(Rule-Rel-ids  head_transfer_right_s    conjunction-components    "?head"    " ?head_2"    "?head_1")"crlf)
 )
 
 ;---------------------------------------------------------------------------------------------------------------------
@@ -447,7 +469,6 @@
 (retract ?f)
 (assert (rel_has_been_deleted  kriyA-kqxanwa_karma  ?pid ?pid1))
 (printout ?*debug* "(rule-deleted_relation-ids   del_rel_1   kriyA-kqxanwa_karma  "?pid"   " ?pid1")"crlf)
-(assert (relation-parser_ids  kriyA-kriyArWa_kriyA ?pid ?pid1))
 (assert (rel_has_been_written   kriyA-kriyArWa_kriyA  ?pid ?pid1))
 (printout       ?*ol_fp*    "(relation-parser_ids   kriyA-kriyArWa_kriyA    "?pid"    "?pid1")"crlf)
 (printout ?*debug* "(Rule-Rel-ids    del_rel_1   kriyA-kriyArWa_kriyA    "?pid"    "?pid1")"crlf)
@@ -463,7 +484,6 @@
 =>
 (assert (relation-parser_ids kriyA-aXikaraNavAcI_avyaya ?kri ?P_id))
 (assert (rel_has_been_written   kriyA-aXikaraNavAcI_avyaya  ?kri ?P_id))
-(printout       ?*ol_fp*    "(relation-parser_ids   kriyA-aXikaraNavAcI_avyaya   "?kri"    "?P_id")"crlf)
 (printout ?*debug* "(Rule-Rel-ids    next_to_rule    kriyA-aXikaraNavAcI_avyaya   "?kri"    "?P_id")"crlf)
 )
 

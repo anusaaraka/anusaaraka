@@ -272,36 +272,27 @@
        (printout ?*rel-debug* "(rule-rel_name-ids map-rel3   relation-parser_ids   kriyA-subject  "?id"  10001)"crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------------
- (defrule map-rel4
- (declare (salience 900))
-; (relation-parser_ids   conjunction-components ?conj ?s1 ?s2)
- (conjunction-components ?conj ?s1 ?s2)
- (parserid-wordid ?s1 ?S1)
- (parserid-wordid  ?s2 ?S2)
- (parserid-wordid ?conj ?CONJ)
- ?f<-(id-original_word ?s1 ?wrd)
- ?f1<-(id-original_word ?s2 ?wrd1)
- ?f2<-(id-original_word ?conj ?wrd2)
-  =>
-       (retract ?f ?f1 ?f2)       
-       (printout ?*rel-file* "(conjunction-components  "?CONJ"  "?S1" " ?S2")"crlf)
-       (printout ?*rel-file1* "(conjunction-components  "?CONJ"  "?S1" " ?S2")"crlf)
-       (printout ?*rel-debug* "(rule-rel_name-ids map-rel4  relation-parser_ids   conjunction-components  "?CONJ"  "?S1" " ?S2")"crlf)
+ ;Added by Roja (15-02-11)
+ ;Ex: Your house and garden are very attractive. 
+ (defrule map-conj
+ (declare (salience 950))
+ ?f<-(conjunction-components $?ids ?id $?ids1)
+ (parserid-wordid ?id ?wid)
+ =>
+      (retract ?f)
+      (assert  (conjunction-components $?ids ?wid $?ids1))
  )
  ;--------------------------------------------------------------------------------------------------------------------
- ;Sanal spent his summer studying basic mathematics, writing and reading comprehension.
- (defrule map-rel5
- (declare (salience 900))
- (conjunction-components ?conj ?l10 ?l12)
- (parserid-wordid ?l12 $?S1 ?head)
- (parserid-wordid  ?l10 ?S2)
- (parserid-wordid ?conj ?CONJ)
+ ;Added by Roja (15-02-11)
+ ;Ex: Your house and garden are very attractive.
+ (defrule write-conj
+ (declare (salience -10))
+ (conjunction-components $?ids)
  =>
-       (printout ?*rel-file* "(conjunction-components  "?CONJ"  "?S2" " ?head")"crlf)
-       (printout ?*rel-file1* "(conjunction-components  "?CONJ"  "?S2" " ?head")"crlf)
-       (printout ?*rel-debug* "(rule-rel_name-ids map-rel5  relation-parser_ids   conjunction-components  "?CONJ"  "?S2" " ?head")"crlf)
+       (printout ?*rel-file* "(conjunction-components  "(implode$ $?ids)")" crlf)
+       (printout ?*rel-file1* "(conjunction-components  "(implode$ $?ids)")"crlf)
+       (printout ?*rel-debug* "(rule-rel_name-ids write-conj   conjunction-components  "(implode$ $?ids) ")"crlf)
  )
-
  ;==============================  RULES FOR MAPPING ROOT    ===================================================
 
  ;Added newly for ol

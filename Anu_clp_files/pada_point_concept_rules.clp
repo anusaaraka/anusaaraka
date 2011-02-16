@@ -13,18 +13,18 @@
  ;-------------------------------------------------------------------------------------------------------------  
  (defrule conj_list
  (declare (salience 1005))
- ?f<- (conjunction-components  ?conj  ?id ?id1)
+ ?f<- (conjunction-components  ?conj  ?id $?id1) ;Modified ?id1 to $?id1 by Roja(15-02-11)
  (not (conjunction-comp ?conj $?IDS))
  =>
  	(retract ?f)
- 	(bind $?ids (sort > (create$ ?id ?conj ?id1)))
+ 	(bind $?ids (sort > (create$ ?id ?conj $?id1))) ;Modified ?id1 to $?id1 by Roja(15-02-11
  	(assert (conjunction-comp ?conj $?ids))
  	(printout ?*debug*  " conj_list " ?conj" " (implode$  $?ids) crlf)
  )
  ;------------------------------------------------------------------------------------------------------------- 
  (defrule conj_list1
  (declare (salience 1010))
- ?f<-(conjunction-components  ?conj  ?id ?id1)
+ ?f<-(conjunction-components  ?conj  ?id $?id1) ;Modified ?id1 to $?id1 by Roja(15-02-11
  ?f2<-(conjunction-comp ?conj $?IDS)
   =>
  	(retract  ?f)
@@ -33,7 +33,7 @@
  		(bind $?IDS (sort > (create$  $?IDS ?id)))
  		(assert (conjunction-comp ?conj  $?IDS))
 		(printout ?*debug*  "conj_list1  " ?conj" " (implode$  $?IDS) crlf)
- 	else (if (eq (member$ ?id1 $?IDS) FALSE) then
+ 	else (if (eq (member$ (nth$ (length $?id1) $?id1) $?IDS) FALSE) then ;Modified ?id1 to "(nth$ (length $?id1) $?id1)" by Roja(15-02-11)
  		(retract ?f2)
  		(bind $?IDS (sort > (create$  $?IDS ?id)))
  		(assert (conjunction-comp ?conj  $?IDS))
