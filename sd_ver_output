@@ -22,7 +22,7 @@ Rama eka acCA ladakA hE.
 
 Hindi meaning using Stanford parser 2.4
 This is a sample sentence for Anusaraka. 
-yaha Anusaraka ke liye namUnA vAkya hE.
+yaha Anusaraka ke liye eka namUnA vAkya hE.
 
 Hindi meaning using Stanford parser 2.5
 I will give up smoking. 
@@ -846,7 +846,7 @@ mEM kahawA hUz ki yaha awyanwa lajjAspaxa hE ki vaha calA gayA.
 
 Hindi meaning using Stanford parser 2.210
 He would play a football match against his former champions. 
-vaha usake BUwapUrva KilAdiyoM ke viruxXa PutabAla mEca KelegA.
+vaha usake BUwapUrva KilAdiyoM ke viruxXa eka PutabAla mEca KelegA.
 
 Hindi meaning using Stanford parser 2.211
 They are playing an important match against Liverpool on Saturday. 
@@ -926,7 +926,7 @@ vaha Lata kI eka badI praSaMsaka hE.
 
 Hindi meaning using Stanford parser 2.230
 He was a football fan. 
-vaha PutabOYla praSaMsaka WA.
+vaha eka PutabOYla praSaMsaka WA.
 
 Hindi meaning using Stanford parser 2.231
 A warm breeze fanned her cheeks. 
@@ -1158,7 +1158,7 @@ praSna hE ki hameM/hamako kisako/kise AmaMwriwa karanA cAhiye.
 
 Hindi meaning using Stanford parser 2.288
 Her parents were killed in a plane crash. 
-usake mAz bApa vimAna xurGatanA meM mAre gaye We.
+usake mAz bApa eka vimAna xurGatanA meM mAre gaye We.
 
 Hindi meaning using Stanford parser 2.289
 The jet zoomed across the sky. 
@@ -1366,7 +1366,7 @@ pAzca acCe pahanAvoM ne puraskAra prApwa kiye/kie.
 
 Hindi meaning using Stanford parser 3.40
 Espresso is a coffee drink. 
-Espresso kOYPI peya_yA Sarabawa hE.
+Espresso eka kOYPI peya_yA Sarabawa hE.
 
 Hindi meaning using Stanford parser 3.41
 I gave him for his birthday a very expensive present. 
@@ -1579,5 +1579,9 @@ yaha sWAna hE jahAz mEM usase milA.
 Hindi meaning using Stanford parser 3.93
 I will show you the house which I bought. 
 mEM Apako vaha Gara xiKAUzgA jise/jisako mEMne KarIxA.
+
+Hindi meaning using Stanford parser 3.94
+Shivaji was one of the most powerful rulers in 1600. 
+Shivaji 1600 meM sabase aXika SakwiSAlI SAsakoM meM se eka WA.
 
 Calling Interface related programs

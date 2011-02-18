@@ -735,7 +735,8 @@
  ; Ex. A man , apparently IN A BAD MOOD, was there. The girls IN THE LAB are tired. We did it in early December. The President announced on Monday that several more bases would be closed. The Zongle of Bongle Dongle resigned today. Is that the film in which he kills his mother. He did it in more.
  (defrule prep-noun
  (declare (salience 449))
- (link_name-lnode-rnode   Js|Jp|J|JG|Jw|IN|ON|Jm       ?prep   ?paxa_head)
+; (link_name-lnode-rnode   Js|Jp|J|JG|Jw|IN|ON|Jm       ?prep   ?paxa_head)
+ (link_name-lnode-rnode   Ju|Js|Jp|J|JG|Jw|IN|ON|Jm       ?prep   ?paxa_head)
  ?f0<-(to_be_included_in_paxa ?prep)
  ?f1<-(to_be_included_in_paxa ?paxa_head)
  (not (has_been_included_in_paxa $?id ?prep $?id1))

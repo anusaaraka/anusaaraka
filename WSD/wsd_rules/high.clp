@@ -5,7 +5,7 @@
 (declare (salience 5000))
 (id-root ?id high)
 ?mng <-(meaning_to_be_decided ?id)
-(samAsa ?id2 ?id1)
+;(samAsa ?id2 ?id1)
 (or(samAsa ?id2 ?id)(viSeRya-viSeRaNa ?id2 ?id))
 =>
 (retract ?mng)

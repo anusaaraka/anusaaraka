@@ -15,9 +15,10 @@
  ; generates Non_interogative_sentence fact 
  (defrule Non_interogative_sent_rule
  (declare (salience 1050))
+; (and (link_name-link_expansion    ?lname    S ~I $?vars) (link_name-link_expansion    ?lname    S ~J $?vars))
  (link_name-link_expansion ?sub S $?ids)
  (link_name-link_lnode-link_rnode ?sub  ?sl_node  ?sr_node)
- (test (not (member$ I $?ids)) )
+ (test (and (not (member$ I $?ids))(not (member$ J $?ids)) ))
  =>
   (assert (Non_interogative_sentence ?sl_node ?sr_node))
  )
@@ -652,6 +653,30 @@
   (printout lwg_fp "(root-verbchunk-tam-parser_chunkids "?root " " ?sword"_"?Iword"_"?PPword "  "  ?sword"_"?Iword"_en  " ?sr_node " " ?Ir_node  " "?PPr_node  ")" crlf)
   (printout ?*lwg_debug_file* "(rule_name-grouped_ids  S_I_PP_rule  "?sr_node " " ?Ir_node  " "?PPr_node  ")" crlf)
  )
+ ;------------------------------------------- ( S I VJ ) (suf 0)  ---------------------------------------------------
+ ; Teddy will go home and study.
+ (defrule S_I_VJ_rule
+ (declare (salience 800))
+ (link_name-link_expansion  ?I  I $?)
+ (link_name-link_expansion  ?Vl  V J l $?)
+ (link_name-link_expansion  ?Vr  V J r $?)
+ (Non_interogative_sentence ?sl_node ?sr_node)
+ (link_name-link_lnode-link_rnode ?I    ?sr_node  ?Ir_node)
+ (link_name-link_lnode-link_rnode ?Vr   ?Ir_node  ?Vr_node)
+ (link_name-link_lnode-link_rnode ?Vl   ?Vl_node  ?Ir_node)
+ (linkid-word-node_cat  ?sr_node ?sword ?)
+ (linkid-word-node_cat  ?Vr_node ?Vrword ?)
+ (linkid-word-node_cat  ?Vl_node ?Vlword ?)
+ (parser_id-root ?Vr_node ?root)
+ (parser_id-root ?Vl_node ?root1)
+ =>
+  (assert (G3_NI_id_to_be_retracted ?sr_node))
+  (printout lwg_fp "(root-verbchunk-tam-parser_chunkids "?root " " ?sword"_"?Vrword "  "  ?sword"_0  " ?sr_node " " ?Vr_node  ")" crlf)
+  (printout lwg_fp "(root-verbchunk-tam-parser_chunkids "?root1 " " ?sword"_"?Vlword "  "  ?sword"_0  " ?sr_node " " ?Vl_node  ")" crlf)
+  (printout ?*lwg_debug_file* "(rule_name-grouped_ids  S_I_VJ_rule  "?sr_node " " ?Vr_node  ")" crlf)
+  (printout ?*lwg_debug_file* "(rule_name-grouped_ids  S_I_VJ_rule  "?sr_node " " ?Vl_node  ")" crlf)
+ )
+
  ;------------------------------------------- ( S  TO  I ) (suf - 0) ---------------------------------------------------
  ;He was to eat  They were to eat.
  ; Groups only if TO link left node word is has|had|have|need
@@ -755,7 +780,31 @@
   (printout lwg_fp "(root-verbchunk-tam-parser_chunkids " ?root " "?sword"_"?Pvword "  "?sword"_en  "  ?sr_node " " ?Pvr_node  ")" crlf)
   (printout ?*lwg_debug_file* "(rule_name-grouped_ids  S_Pv_rule "?sr_node " " ?Pvr_node  ")" crlf)
  )
- ;------------------------------------------- (S Pg )  (suf - ing) --------------------------------------------------------
+ ;------------------------------------------- (S  Pg  VJ )   --------------------------------------------------------
+ ;The little ones are hopping and jumping merrily.
+ (defrule S_Pg_VJ_rule
+ (declare (salience 701))
+ (Non_interogative_sentence ?sl_node ?sr_node)
+ (link_name-link_expansion  ?Pg  P g ? b $?)
+ (link_name-link_lnode-link_rnode ?Pg   ?sr_node  ?Pgr_node)
+ (link_name-link_expansion  ?Vl  V J l g)
+ (link_name-link_lnode-link_rnode ?Vl   ?Vl_node  ?Pgr_node)
+ (link_name-link_expansion  ?Vr  V J r g)
+ (link_name-link_lnode-link_rnode ?Vr   ?Pgr_node  ?Vr_node)
+ (linkid-word-node_cat  ?Vr_node ?Vrword ?)
+ (linkid-word-node_cat  ?Vl_node ?Vlword ?)
+ (linkid-word-node_cat  ?sr_node ?sword ?)
+ (parser_id-root ?Pgr_node ?root)
+ =>
+  (assert (G2_NI_id_to_be_retracted ?sr_node))
+  (printout lwg_fp  "(root-verbchunk-tam-parser_chunkids " ?root " "?sword"_"?Vlword " "?sword"_ing  " ?sr_node " " ?Vl_node  ")" crlf)
+  (printout ?*lwg_debug_file* "(rule_name-grouped_ids   S_Pg_VJ_rule  "?sr_node " " ?Vl_node  ")" crlf)
+  (printout lwg_fp  "(root-verbchunk-tam-parser_chunkids " ?root " "?sword"_"?Vrword " "?sword"_ing  " ?sr_node " " ?Vr_node  ")" crlf)
+  (printout ?*lwg_debug_file* "(rule_name-grouped_ids   S_Pg_VJ_rule  "?sr_node " " ?Vr_node  ")" crlf)
+  (assert (grouped_id ?sr_node )) (assert (grouped_id ?Pgr_node))
+ )
+ ;------------------------------------------- (S  Pg ) (suf ing )--------------------------------------------------------
+
  ; I am eating
  ; She is sleeping. All are going to school.
  (defrule S_Pgstarb_rule
@@ -767,6 +816,7 @@
  (linkid-word-node_cat  ?Pgr_node ?Pgword ?)
  (parser_id-root ?Pgr_node ?root)
  (test (neq ?sword on))
+ (not (grouped_id ?sr_node))
  =>
   (assert (G2_NI_id_to_be_retracted ?sr_node))
   (printout lwg_fp  "(root-verbchunk-tam-parser_chunkids " ?root " "?sword"_"?Pgword " "?sword"_ing  " ?sr_node " " ?Pgr_node  ")" crlf)
@@ -949,7 +999,51 @@
    (assert (grouped_id ?sr_node ))
   (printout ?*lwg_debug_file* "(rule_name-grouped_ids   S_ID_rule  " ?idl_node" "?sr_node ")" crlf)
  )
- ;------------------------------------------------------------------------------------------------------------------------
+ ;--------------------------------------( S VJ VJ) ------------------------------------------------------------------------
+ ;I ate fruits, drank milk and slept.
+ (defrule S_VJ_VJ_rule
+ (declare (salience 201))
+ (and (link_name-link_expansion  ?Vl  V J l $?)(link_name-link_expansion  ?Vl1  V J l $?l))
+ (and (link_name-link_expansion  ?Vr  V J r $?)(link_name-link_expansion  ?Vr1  V J r $?r))
+ (Non_interogative_sentence ?sl_node ?sr_node)
+ (link_name-link_lnode-link_rnode ?Vl   ?Vl_node  ?sr_node)
+ (link_name-link_lnode-link_rnode ?Vr   ?sr_node  ?Vr_node)
+ (link_name-link_lnode-link_rnode ?Vl1  ?vl1_node ?Vr_node)
+ (link_name-link_lnode-link_rnode ?Vr1  ?Vr_node  ?vr1_node) 
+ (linkid-word-node_cat  ?vr1_node ?Vrword ?)
+ (linkid-word-node_cat  ?Vl_node ?Vlword ?)
+ (linkid-word-node_cat  ?vl1_node ?Vl1word ?)
+  =>
+   (assert (G1_NI_id_to_be_retracted ?sr_node))
+   (printout lwg_fp  "(root-verbchunk-tam-parser_chunkids  root_to_be_decided  "?Vlword " tam_to_be_decided " ?Vl_node ")" crlf)
+   (printout lwg_fp  "(root-verbchunk-tam-parser_chunkids  root_to_be_decided  "?Vrword " tam_to_be_decided " ?vr1_node ")" crlf)
+   (printout lwg_fp  "(root-verbchunk-tam-parser_chunkids  root_to_be_decided  "?Vl1word " tam_to_be_decided " ?vl1_node ")" crlf)
+  (assert (grouped_id ?sr_node ))
+  (printout ?*lwg_debug_file* "(rule_name-grouped_ids   S_VJ_VJ_rule  " ?Vl_node ")" crlf)
+  (printout ?*lwg_debug_file* "(rule_name-grouped_ids   S_VJ_VJ_rule  " ?vr1_node ")" crlf)
+  (printout ?*lwg_debug_file* "(rule_name-grouped_ids   S_VJ_VJ_rule  " ?vl1_node ")" crlf)
+ )
+ ;--------------------------------------( S VJ ) ------------------------------------------------------------------------
+ ;Petu ran fast but missed the bus.
+ (defrule S_VJ_rule
+ (declare (salience 200))
+ (link_name-link_expansion  ?Vl  V J l $?)
+ (link_name-link_expansion  ?Vr  V J r $?)
+ (Non_interogative_sentence ?sl_node ?sr_node)
+ (link_name-link_lnode-link_rnode ?Vl   ?Vl_node  ?sr_node)
+ (link_name-link_lnode-link_rnode ?Vr   ?sr_node  ?Vr_node)
+ (linkid-word-node_cat  ?Vr_node ?Vrword ?)
+ (linkid-word-node_cat  ?Vl_node ?Vlword ?)
+ (not (grouped_id ?sr_node))
+  =>
+   (assert (G1_NI_id_to_be_retracted ?sr_node))
+   (printout lwg_fp  "(root-verbchunk-tam-parser_chunkids  root_to_be_decided  "?Vlword " tam_to_be_decided " ?Vl_node ")" crlf)
+   (printout lwg_fp  "(root-verbchunk-tam-parser_chunkids  root_to_be_decided  "?Vrword " tam_to_be_decided " ?Vr_node ")" crlf)
+   (assert (grouped_id ?sr_node ))
+  (printout ?*lwg_debug_file* "(rule_name-grouped_ids   S_VJ_rule  " ?Vl_node ")" crlf)
+  (printout ?*lwg_debug_file* "(rule_name-grouped_ids   S_VJ_rule  " ?Vr_node ")" crlf)
+ )
+ ;------------------------------------------- ( S ) -----------------------------------------------------------------------
  ; The boy saw an elephant in the forest . 
  ; In saw case there is an ambigious for root and tam so for this assert root as root_to_be_decided and tam as 
  ; tam_to_be_decided
@@ -959,7 +1053,7 @@
  (Non_interogative_sentence ?sl_node ?sr_node)
  (linkid-word-node_cat  ?sr_node ?sword ?)
  (not (grouped_id ?sr_node))
- (test (neq ?sword on))
+ (test (and (neq ?sword on)(neq ?sword but)));Petu ran fast but missed the bus.
  =>
    (assert (G1_NI_id_to_be_retracted ?sr_node))
    (printout lwg_fp  "(root-verbchunk-tam-parser_chunkids  root_to_be_decided  "?sword " tam_to_be_decided "?sr_node  ")" crlf)

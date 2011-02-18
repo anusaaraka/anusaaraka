@@ -60,7 +60,8 @@
   echo "Calling Link Parser"
   cd $HOME_anu_test/LINK/link-grammar-4.5.7/link-grammar
   ./link-parser $HOME_anu_test/LINK/link-grammar-4.5.7/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt 
-
+ #cd $HOME_anu_test/LINK/link-grammar-4.7.4/link-grammar
+ # ./link-parser $HOME_anu_test/LINK/link-grammar-4.7.4/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt
 
   echo "Calling Stanford parser"
   cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/ 

@@ -35,7 +35,7 @@
 ;KRIYA-SUBJECT RELATION RULES:
 
 (defrule kriyA-subject1
-(link_name-link_expansion    ?lname    S ~F $?vars)
+(and (link_name-link_expansion    ?lname    S ~F $?vars) (link_name-link_expansion    ?lname    S ~J $?vars))
 (link_name-link_lnode-link_rnode ?lname  ?lnode ?rnode)
 (root-verbchunk-tam-parser_chunkids $?chunk_ids ?kri)
 (test (or (member$ ?rnode $?chunk_ids) (eq ?kri ?rnode)))
@@ -49,7 +49,7 @@
 (defrule kriyA-subject3
 (link_name-link_expansion    ?lname    S F ~I $?vars)
 (link_name-link_lnode-link_rnode  ?lname  ?a ?b)
-(link_name-link_lnode-link_rnode  Ost|Opt  ?b ?c)
+(link_name-link_lnode-link_rnode  Ost|Opt|Out  ?b ?c)
 (not (kriyA-subject_rel_has_been_deceded_by_'kriyA-subject_SF_and'_rule))
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-aBihiwa	"?b"	"?c")"crlf)	
@@ -58,7 +58,7 @@
 (printout	?*fp*	"(relation-parser_ids	kriyA-dummy_subject	"?b"	"?a")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	kriyA-subject3	kriyA-dummy_subject	"?b"	"?a")"crlf)	
 )
-;Ex.	There are flowers in the garden. There is a flower in the garden.
+;Ex.	There are flowers in the garden. There is a flower in the garden. There is abject poverty in India. 
 ;----------------------------------------------------------------------------------------------------------------
 (defrule kriyA-subject4
 (declare (salience 720))
@@ -204,6 +204,25 @@
 (printout	?*rel_debug*	"(Rule-Rel-ids	kriyA-subject8	kriyA-subject	"?y"	"?x")"crlf)	
 )
 ;Ex.      HAILSTORMS beat against the windows.
+;----------------------------------------------------------------------------------------------------------------
+(defrule kriyA-subject_but
+(link_name-link_expansion    ?S     S $?var)
+(link_name-link_lnode-link_rnode   ?S  ?x  ?but)
+(link_name-link_expansion    ?V    V J l $?v)
+(link_name-link_lnode-link_rnode   ?V  ?k ?but)
+(link_name-link_expansion    ?V1    V J r $?va)
+(link_name-link_lnode-link_rnode   ?V1 ?but ?k1)
+(root-verbchunk-tam-parser_chunkids ? ? ? $?chunk_ids ?kri)
+(root-verbchunk-tam-parser_chunkids ? ? ? $?chunk_ids ?kriyA )
+(test (or (member$ ?k $?chunk_ids) (eq ?k ?kri)))
+(test (or (member$ ?k1 $?chunk_ids) (eq ?k1 ?kriyA)))
+=>
+(printout       ?*fp*   "(relation-parser_ids   kriyA-subject   "?kri"    "?x")"crlf)
+(printout       ?*fp*   "(relation-parser_ids   kriyA-subject   "?kriyA"    "?x")"crlf)
+(printout       ?*rel_debug*    "(Rule-Rel-ids  kriyA-subject_but  kriyA-subject   "?kri"    "?x")"crlf)
+(printout       ?*rel_debug*    "(Rule-Rel-ids  kriyA-subject_but  kriyA-subject   "?kriyA"    "?x")"crlf)
+)
+;Ex. Petu ran fast but missed the bus. 
 ;---------------------------------------------------------------------------------------------------------------- 
 (defrule rule24
 (declare (salience 200))
@@ -226,7 +245,7 @@
 (defrule rule24_1
 (declare (salience 250))
 (link_name-link_lnode-link_rnode ALx ?x ?y)
-(link_name-link_lnode-link_rnode Jp ?x ?z)
+(link_name-link_lnode-link_rnode Jp|Ju ?x ?z)
 (link_name-link_expansion ?O O $?var)
 (link_name-link_lnode-link_rnode ?O ?s ?x)
 =>
@@ -308,7 +327,8 @@
 (defrule subj_MVp
 (declare (salience 200))
 (link_name-link_lnode-link_rnode MVp  ?v ?s-s)
-(not (link_name-link_lnode-link_rnode FM|J|Js|Jp|FL|IN|ON|Mgp|PF  ?s-s ?y)) ;Her family founded the college in 1895. she has no objection in staying overnight. I wonder where John is?
+;(not (link_name-link_lnode-link_rnode FM|J|Js|Jp|FL|IN|ON|Mgp|PF  ?s-s ?y)) ;Her family founded the college in 1895. she has no objection in staying overnight. I wonder where John is?
+(not (link_name-link_lnode-link_rnode FM|J|Js|Jp|Ju|FL|IN|ON|Mgp|PF  ?s-s ?y)) ;Her family founded the college in 1895. she has no objection in staying overnight. I wonder where John is?
 (not (link_name-link_lnode-link_rnode Yd ?a ?s-s));We swam three miles away.
 (link_name-link_expansion    ?S  S ~F $?vari) ;ex. 4 this "~F" condition . There is a dog and a cat here .
 (link_name-link_lnode-link_rnode ?S  ?s ?v)
@@ -501,7 +521,8 @@
 (defrule  kriyA-obj
 (declare (salience 200))
 ?f0<- (link_name-link_lnode-link_rnode ALx ?x ?y)
-?f1<- (link_name-link_lnode-link_rnode Jp ?x ?z)
+;?f1<- (link_name-link_lnode-link_rnode Jp ?x ?z)
+?f1<- (link_name-link_lnode-link_rnode Jp|Ju ?x ?z)
 (link_name-link_expansion ?O O $?var)
 ?f2<- (link_name-link_lnode-link_rnode ?O ?kriyA ?s)
 =>
@@ -1433,7 +1454,7 @@
 ;Ex.	 Are you ready for next week
 ;----------------------------------------------------------------------------------------------------------------
 (defrule rule45
-(link_name-link_lnode-link_rnode EAy|EAh|EA|EAm|EAxk|Ec ?x ?y)
+(link_name-link_lnode-link_rnode EAy|EAh|EA|EAm|EAxk|Ec|Em ?x ?y)
 =>
 (printout	?*fp*	"(relation-parser_ids	viSeRaNa-viSeRaka	"?y"	"?x")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule45	viSeRaNa-viSeRaka	"?y"	"?x")"crlf)	
@@ -1641,7 +1662,7 @@ else
 (defrule OF_1
 (declare (salience 500))
 ?f0 <- (link_name-link_lnode-link_rnode OF ?a ?b)
-(link_name-link_lnode-link_rnode J|Js|Jp ?b ?c)
+(link_name-link_lnode-link_rnode J|Js|Jp|Ju ?b ?c)
 (link_name-link_lnode-link_rnode Pa ?d ?a)
 =>
 (retract ?f0);This condition is added to stop rule2, which shows kriyA_object relation) ;Date 21/02/09
@@ -1653,7 +1674,7 @@ else
 (defrule OF_2
 (declare (salience 5))
 ?f0 <- (link_name-link_lnode-link_rnode OF ?a ?b)
-(link_name-link_lnode-link_rnode J|Js|Jp ?b ?c)
+(link_name-link_lnode-link_rnode J|Js|Jp|Ju ?b ?c)
 (not(link_name-link_lnode-link_rnode Wq ?which ?a)) ;Ex.4 this condition is: Which of your parents do you feel closer to?
 =>
 (retract ?f0);This condition is added to stop rule2, which shows kriyA_object relation) ;Date 21/02/09
@@ -1804,8 +1825,8 @@ else
 (root-verbchunk-tam-parser_chunkids ? ? ? $?chunk_ids ?kri)
 (link_name-link_expansion    ?lname   S ~F $?vars)
 (link_name-link_lnode-link_rnode ?lname  ?y  ?z)
-;(link_name-link_lnode-link_rnode Ost|Opt ?z ?x)
-(link_name-link_lnode-link_rnode Ost|Opt ?kri ?x)
+;(link_name-link_lnode-link_rnode Ost|Opt  ?kri ?x)
+(link_name-link_lnode-link_rnode Ost|Opt|Out  ?kri ?x)
 (not (subject-subject_samAnAXikaraNa_rel_has_been_deceded_by_'subject_samAnAXikaraNa_and'_rule))
 (not (subject-subject_samAnAXikaraNa_rel_has_been_deceded_by_'subject_samAnAXikaraNa_and_1'_rule ?x))
 (test (or (member$ ?z $?chunk_ids) (eq ?kri ?z)))
@@ -1813,9 +1834,10 @@ else
 (printout	?*fp*	"(relation-parser_ids	subject-subject_samAnAXikaraNa	"?y"	"?x")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule81	subject-subject_samAnAXikaraNa	"?y"	"?x")"crlf)	
 )
-;Modified by Manju : added root-verbchunk-tam-parser_chunkids fact and test condition
+; Modified by Manju : added root-verbchunk-tam-parser_chunkids fact and test condition
 ; Ex:  Tomorrow might be a good time for the meeting .
-;Ex.	I am a player, Anand is a player, Is Anand  a doctor, Are you a doctor
+; Ex.	I am a player, Anand is a player, Is Anand  a doctor, Are you a doctor
+; Ex : What is the purpose of Dharma?
 ;----------------------------------------------------------------------------------------------------------------
 (defrule sub_samA_been
 (link_name-link_expansion    ?S   S ~F $?vars)
@@ -2228,7 +2250,8 @@ else
 ;----------------------------------------------------------------------------------------------------------------
 (defrule kri-viB_sam
 (link_name-link_lnode-link_rnode MVp  ?b ?x)
-(link_name-link_lnode-link_rnode J|Js|Jp|IN|ON|FL|Jm ?x ?y)
+;(link_name-link_lnode-link_rnode J|Js|Jp|IN|ON|FL|Jm ?x ?y)
+(link_name-link_lnode-link_rnode J|Js|Jp|Ju|IN|ON|FL|Jm ?x ?y)
 (linkid-word-node_cat ?x ?viBakwi ?)
 (not (kriyA-viBakwi_saMbanXI_rel_has_been_dcd_by_'Paf_MVp'_rule ?b))
 (not (got_relation_for_MVp_link))
@@ -2246,7 +2269,8 @@ else
 (link_name-link_lnode-link_rnode Pa|Paf ?v ?a)
 (link_name-link_lnode-link_rnode MVl ?a ?b)
 (link_name-link_lnode-link_rnode MVp  ?b ?x)
-(link_name-link_lnode-link_rnode J|Js|Jp|IN|ON|FL ?x ?y)
+;(link_name-link_lnode-link_rnode J|Js|Jp|IN|ON|FL ?x ?y)
+(link_name-link_lnode-link_rnode J|Js|Jp|Ju|IN|ON|FL ?x ?y)
 (linkid-word-node_cat ?x ?viBakwi ?)
 (not (kriyA-'viBakwi'_saMbanXI_rel_has_been_deceded_by_'kriyA-'viBakwi'_saMbanXI_and'_rule ?x))
 =>
@@ -2258,7 +2282,8 @@ else
 ;----------------------------------------------------------------------------------------------------------------
 (defrule rule142
 (link_name-link_lnode-link_rnode Mp ?z ?x)
-(link_name-link_lnode-link_rnode J|Js|Jp|IN|ON|Mgp ?x ?y)
+;(link_name-link_lnode-link_rnode J|Js|Jp|IN|ON|Mgp ?x ?y)
+(link_name-link_lnode-link_rnode J|Js|Jp|Ju|IN|ON|Mgp ?x ?y)
 (linkid-word-node_cat ?x ?viBakwi ?)
 (linkid-word-node_cat ?z ?bit ?)
 =>
@@ -2732,7 +2757,8 @@ else
 (link_name-link_expansion    ?O   O $?vars)
 (link_name-link_lnode-link_rnode ?O ?x ?y)
 (link_name-link_lnode-link_rnode ALx|AL ?y ?z)
-(link_name-link_lnode-link_rnode Jp  ?y ?obj)
+;(link_name-link_lnode-link_rnode Jp  ?y ?obj)
+(link_name-link_lnode-link_rnode Jp|Ju  ?y ?obj)
 (link_name-link_lnode-link_rnode Ma  ?obj ?obj-s)
 =>
 (printout	?*fp*	"(relation-parser_ids	object-object_samAnAXikaraNa	"?obj"	"?obj-s")"crlf)	
@@ -2840,7 +2866,8 @@ else
 (defrule rule182
 (link_name-link_lnode-link_rnode MVp|MVb|Pp ?a ?b)
 (linkid-word-node_cat ?b again|later|here|there|somewhere|anywhere|everywhere|now|outside|longer|alone|next|upstairs|downstairs|upwards|downwards|above|down ?)
-(not (link_name-link_lnode-link_rnode J|Jp|Js|IN|ON ?b ?x));ex. I went outside of the room.
+(not (link_name-link_lnode-link_rnode J|Jp|Js|Ju|IN|ON ?b ?x));ex. I went outside of the room.
+;(not (link_name-link_lnode-link_rnode J|Jp|Js|IN|ON ?b ?x));ex. I went outside of the room.
 (not (linkid-word-node_cat ?a ? adjective));It was cold there even in summer .
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-aXikaraNavAcI_avyaya	"?a"	"?b")"crlf)	
@@ -2993,7 +3020,8 @@ else
 ;Ex  She felt something crawling on her neck.
 ;----------------------------------------------------------------------------------------------------------------
 (defrule rule189
-(link_name-link_expansion  ?V    V $?)
+;(link_name-link_expansion  ?V    V $?)
+(link_name-link_expansion  ?V    V ~J $?)
 (link_name-link_lnode-link_rnode  ?V ?a ?b)
 =>
 (printout	?*fp*	"(relation-parser_ids	idiom_type_2	"?a"	"?b")"crlf)	
@@ -3413,7 +3441,8 @@ else
 (link_name-link_lnode-link_rnode ?Q ?wh ?aux)
 (root-verbchunk-tam-parser_chunkids $? ?aux $? ?kriyA)
 (linkid-word-node_cat ?prep ?viBakwi ?)
-(not (link_name-link_lnode-link_rnode Js|Jp ?prep ?pobj));Ex 4 this: Why do you sleep in the night?
+(not (link_name-link_lnode-link_rnode Js|Jp|Ju ?prep ?pobj));Ex 4 this: Why do you sleep in the night?
+;(not (link_name-link_lnode-link_rnode Js|Jp ?prep ?pobj));Ex 4 this: Why do you sleep in the night?
 (not (link_name-link_lnode-link_rnode Qd ?wh ?aux)) ;Ex 4 this: Can you tell us where those strange ideas came from?
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?wh")"crlf)	
@@ -3998,6 +4027,30 @@ else
 (assert (subject-subject_samAnAXikaraNa_rel_has_been_deceded_by_'subject_samAnAXikaraNa_and_1'_rule ?s_s_1))
 (printout       ?*fp*   "(conjunction-components        "?and   "       "       ?s_s"    "?s_s_1")" crlf)
 )
+
+(defrule subject_samAnAXikaraNa_and_2
+(declare (salience 1000))
+(link_name-link_expansion    ?S   S ~ F $?vars)
+(link_name-link_lnode-link_rnode ?S  ?s ?kri)
+(link_name-link_lnode-link_rnode Pa|Paf|Opt|Ost|O*t  ?kri ?and)
+=>
+(printout       ?*fp*   "(relation-parser_ids      subject-subject_samAnAXikaraNa  "?s"  "?and")"crlf)
+(printout       ?*rel_debug*    "(Rule-Rel-ids  subject_samAnAXikaraNa_and_2      subject-subject_samAnAXikaraNa  "?s"  "?and")"crlf)
+(assert (subject-subject_samAnAXikaraNa_rel_has_been_deceded_by_'subject_samAnAXikaraNa_and_2'_rule ?and))
+(assert (subject-subject_samAnAXikaraNa_rel_has_been_deceded_by_'subject_samAnAXikaraNa_and_2'_rule ?and))
+)
+;Ex.    He is a devoted husband and a father .
+;----------------------------------------------------------------------------------------------------------------
+(defrule conj-comp
+(declare (salience 1000))
+(or (link_name-link_expansion    ?S   S J l $?vars)(link_name-link_expansion    ?S   A J l $?vars))
+(or (link_name-link_expansion    ?S1   S J r $?var)(link_name-link_expansion    ?S1   A J r $?var))
+(link_name-link_lnode-link_rnode ?S  ?x ?and)
+(link_name-link_lnode-link_rnode ?S1  ?and ?y)
+=>
+(printout       ?*fp*   "(conjunction-components        "?and"       "?x"    "?y")" crlf)
+(printout       ?*rel_debug*    "(Rule-Rel-ids conj-comp conjunction-components        "?and"       "?x"    "?y")" crlf)
+)
 ;Ex.    He is a devoted husband and a father .
 ;----------------------------------------------------------------------------------------------------------------
 (defrule subject_samAnAXikaraNa_and_SI
@@ -4041,8 +4094,10 @@ else
 (defrule kriyA-'viBakwi'_saMbanXI_and
 (declare (salience 1000))
 (link_name-link_lnode-link_rnode MVp  ?kri ?x)
-(link_name-link_lnode-link_rnode J|Js|Jp|IN|ON|FL|Mgp ?x ?y)
-(link_name-link_lnode-link_rnode J|Js|Jp|IN|ON|FL|Mgp ?x ?z)
+;(link_name-link_lnode-link_rnode J|Js|Jp|IN|ON|FL|Mgp ?x ?y)
+;(link_name-link_lnode-link_rnode J|Js|Jp|IN|ON|FL|Mgp ?x ?z)
+(link_name-link_lnode-link_rnode J|Js|Jp|Ju|IN|ON|FL|Mgp ?x ?y)
+(link_name-link_lnode-link_rnode J|Js|Jp|Ju|IN|ON|FL|Mgp ?x ?z)
 (parser_id-root ?and and|or)
 (test (and (< (string_to_integer ?and) (string_to_integer ?y)) (> (string_to_integer ?and) (string_to_integer ?z))))
 (linkid-word-node_cat ?x ?viBakwi ?)
@@ -4060,17 +4115,15 @@ else
 (declare (salience 1000))
 (link_name-link_expansion    ?D    D $?vars)
 ?f0<-(link_name-link_lnode-link_rnode  ?D ?x ?y)
-(link_name-link_expansion    ?D1    D $?var)
-?f1<-(link_name-link_lnode-link_rnode  ?D1 ?x ?z)
+(link_name-link_expansion    ?X    ? J l $?var)
+(link_name-link_lnode-link_rnode  ?X  ?y ?and)
 (linkid-word-node_cat ?x  his|her|my|our|your|their|its  ?)
 (parser_id-root ?and and|or)
-(test (and ( > (string_to_integer ?and ) (string_to_integer ?y)) (< (string_to_integer ?and ) (string_to_integer ?z))));I knocked my cup and saucer and spilled the coffee
-(test (< (string_to_integer ?y) (string_to_integer ?z)));Passion is a must to excel and to reach your potential.
 =>
-(retract ?f0 ?f1)
+(retract ?f0 )
 (printout	?*fp*	"(relation-parser_ids	viSeRya-RaRTI_viSeRaNa	"?and"	"?x")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	viSeRya_RaRTI_viSeRaNa_and	viSeRya-RaRTI_viSeRaNa	"?and"	"?x")"crlf)	
-(printout	?*fp*	"(conjunction-components	"?and	"	"?y	"	"	?z")"	crlf)	
+;(printout	?*fp*	"(conjunction-components	"?and	"	"?y	"	"	?z")"	crlf)	
 )
 ;Ex.    Your house and garden are very attractive .
 ;----------------------------------------------------------------------------------------------------------------

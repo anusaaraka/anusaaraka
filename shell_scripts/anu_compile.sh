@@ -75,7 +75,6 @@
  gcc -o split_file.out   split_file.c 
  gcc -o cat.out cat.c 
  gcc -o chunker.out  chunker.c 
-# gcc punct.c -o punct.out
  ./comp.sh aper_chunker 
  ./comp.sh rm_tags
 
@@ -96,13 +95,21 @@
  cd $HOME_anu_test/LINK/link-grammar-4.5.7/
  ./configure
  make
+# cd $HOME_anu_test/LINK/link-grammar-4.7.4/
+# ./configure
+# make
 
  echo " Compiling Original Link Parser files"
  cd $HOME_anu_test/Anu
  tar -xzf link-grammar-4.5.7.tar.gz 
+# tar -xzf link-grammar-4.7.4.tar.gz 
  cd $HOME_anu_test/Anu/link-grammar-4.5.7/
  ./configure
  make
+
+# cd $HOME_anu_test/Anu/link-grammar-4.7.4/
+# ./configure
+# make
 
  echo "Compiling stanford parser files"
  cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/

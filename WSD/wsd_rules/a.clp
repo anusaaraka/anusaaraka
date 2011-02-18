@@ -338,7 +338,7 @@
 (id-root ?id a)
 ?mng <-(meaning_to_be_decided ?id)
 (viSeRya-det_viSeRaNa  ?id1 ?id)
-(or (viSeRya-viSeRaNa ?id1 ?id2)(viSeRya-wulanAwmaka_viSeRaNa ?id1 ?id2)) 
+(or (viSeRya-viSeRaNa ?id1 ?id2)(viSeRya-wulanAwmaka_viSeRaNa ?id1 ?id2)(samAsa  ?id1 ?id2)) ;added samAsa by sukhada Ex:The chief guest gave a welcome address. 
 (not (id-root ?id1 sound|shame|success|effect|idea|manner|offer|salary|time))
 (not(id-root ?id2 variable))  ;Added by (Meena 24.5.10)
 (not(id-cat_coarse ?id1 PropN))

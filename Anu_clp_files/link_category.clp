@@ -89,7 +89,7 @@
  (link_name-link_lnode-link_rnode ?sub  ?sl_node  ?sr_node)
  (parserid-word ?sr_node ?rword)
  ?f0<-(category_to_be_decided ?sr_node)
- (test (member$ I $?ids) )
+ (test (or (member$ I $?ids)(member$ J $?ids )))
  =>
         (retract ?f0)
         (assert (linkid-word-node_cat ?sr_node ?rword noun/pronoun))
@@ -139,11 +139,28 @@
 	(printout ?*link_cat-file* "(linkid-word-node_cat  " ?Pr_node "  "?pword "  verb)" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
+ ;Teddy will go home and study. Added : (16-02-11)
+ (defrule verb_VJ_rule
+ (declare (salience 200))
+ (link_name-link_expansion  ?V  V J l $?)
+ (link_name-link_expansion  ?V1 V J r $?)
+ (link_name-link_lnode-link_rnode ?V  ?vl_node  ?)
+ (link_name-link_lnode-link_rnode ?V1 ?  ?v1r_node)
+ (parserid-word ?vl_node ?vword)
+ (parserid-word ?v1r_node ?v1word)
+ ?f1<-(category_to_be_decided ?vl_node)
+ ?f0<-(category_to_be_decided ?v1r_node)
+ =>
+        (retract ?f0 ?f1)
+        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?vl_node "  "?vword "  verb)" crlf)
+        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?v1r_node "  "?v1word "  verb)" crlf)
+ )
+ ;----------------------------------------------------------------------------------------------------------------
  (defrule verb_rule_with_S_link
  (declare (salience 150))
  (link_name-link_expansion ?sub S $?ids)
  (link_name-link_lnode-link_rnode ?sub  ?sl_node  ?sr_node)
- (parserid-word ?sr_node ?rword&~that)
+ (parserid-word ?sr_node ?rword&~that&~but)
  ?f0<-(category_to_be_decided ?sr_node)
  (test (not (member$ I $?ids)) )
  =>
