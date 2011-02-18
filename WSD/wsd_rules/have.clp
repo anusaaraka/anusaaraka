@@ -50,7 +50,6 @@
 
 
 
-
 ;(id-word ?id have|has) uncommented by Meena to get the proper output for the sentence    "She had two pens."
 ;She has three pencils.
 ;I have a cow.
@@ -425,14 +424,14 @@
 
 
 
-
+;Added "insurance" in the list (Meena 6.2.11)
 ;I had a computer.
 (defrule have21
 (declare (salience 5000))
 (id-root ?id have)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id had)
-(id-root ?id1 cow|money|dog|rupee|computer|cat|house|shirts|blanket|carpet|dollar|cycle|scooter)
+(id-root ?id1 cow|money|dog|rupee|computer|cat|house|shirts|blanket|carpet|dollar|cycle|scooter|insurance)
 ; we should put a list of all things animate (except human relations),inanimate and use the semantic relation
 (kriyA-object ?id ?id1)
 =>
@@ -730,7 +729,7 @@
 
 
 
-
+;Modified by Meena(15.2.11) for the examples like : The hospital has no vacant beds.
 ;They have social prestige .
 ;The cows have four legs and a tail.
 (defrule have35
@@ -741,15 +740,25 @@
 (id-word ?id have|has)
 (kriyA-subject ?id ?id1)
 (kriyA-object ?id ?id2)
+(id-word  ?id1 ?word)
 ;(id-cat_coarse ?id verb) this and the above line are automatically modified using a program by Sukhada this and the above line are automatically modified using a program by Sukhada
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id hE))
-;(assert (id-wsd_root_mng ?id ho))
+(if (or(eq ?word hospital)(eq ?word school)(eq ?word house)(eq ?word room)(eq ?word building)(eq ?word college)) then
+        (assert (kriyA_id-subject_viBakwi ?id meM))
+else
 (assert (kriyA_id-subject_viBakwi ?id kA))
+)
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp    have35   "  ?id "  hE )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  have.clp    have35   "  ?id "  kA )" crlf))
+(if (or(eq ?word hospital)(eq ?word school)(eq ?word house)(eq ?word room)(eq ?word building)(eq ?word college)) then
+        (assert (kriyA_id-subject_viBakwi ?id meM))
+        (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  have.clp      have35   "  ?id "  meM )" crlf)
+else
+(assert (kriyA_id-subject_viBakwi ?id kA))
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  have.clp    have35   "  ?id "  kA )" crlf)
+))
 )
 
 
