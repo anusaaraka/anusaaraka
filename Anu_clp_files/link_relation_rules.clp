@@ -3098,8 +3098,8 @@ else
 (link_name-link_expansion    ?S1    S ~F $?vars)
 (link_name-link_lnode-link_rnode ?S1  ?z ?a)
 =>
-(printout	?*fp*	"(relation-parser_ids	pUrvakAlika_kriyA-ananwarakAlika_kriyA	"?a"	"?x")"	crlf)	
-(printout	?*rel_debug*	"(Rule-Rel-ids	pUrva_kriyA-ananwara_kriyA	pUrvakAlika_kriyA-ananwarakAlika_kriyA	"?a"	"?x")"	crlf)	
+(printout	?*fp*	"(relation-parser_ids	kriyA-conjunction	"?a"	"?y")"crlf)	
+(printout	?*rel_debug*	"(Rule-Rel-ids	pUrva_kriyA-ananwara_kriyA	kriyA-conjunction       "?a"    "?y")"crlf)
 )
 ;Ex	The man I SAW after I LEFT your party is here .
 ;----------------------------------------------------------------------------------------------------------------

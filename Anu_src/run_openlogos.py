@@ -269,17 +269,6 @@ for i in xrange(len(OP_TAR_ARR_TRAN3)):
 		if OP_TAR_ARR_TRAN3[i][0].endswith(')'):
                         OP_TAR_ARR_TRAN3[i].insert(0, 'hpg')
 #--------------------------------
-OP = []
-T3_with_SWITCH68 = OP_TAR_ARR_TRAN3
-for i in xrange(len(T3_with_SWITCH68)):
-        if 'SWORKO' in T3_with_SWITCH68[i]:
-                if T3_with_SWITCH68[i][9]=='SWITCH68':
-                        T3_with_SWITCH68[i][7] = '10000'
-                        T3_with_SWITCH68[i][8] = 'who'
-			OP.append(T3_with_SWITCH68[i])
-		else:
-			OP.append(T3_with_SWITCH68[i])
-#----------------------------------------------------------------------
 for i in xrange(len(semwrk_prep)):
     for k in xrange(len(switch68_pos)):
 	for j in xrange(7,len(semwrk_prep[i])):
@@ -293,20 +282,37 @@ for i in xrange(len(semwrk_verb)):
 		semwrk_verb[i][j]=str(int(semwrk_verb[i][j])-1)
 #----------------------------------------------------------------------
 #get information from 'THE SWORK TABLE IN tran4'
+
+tran3_components = []; tran3 = []
+for i in xrange( len(OP_TAR_ARR_TRAN3)):
+        cur = i
+        if len(OP_TAR_ARR_TRAN3[i]) > 0:
+                a = OP_TAR_ARR_TRAN3[i][0]
+                if 'SCONPO' in OP_TAR_ARR_TRAN3[i]:
+                        tran3_components.append( OP_TAR_ARR_TRAN3[i])
+                if "SWORKO" in OP_TAR_ARR_TRAN3[i]:
+                        if OP_TAR_ARR_TRAN3[i][0].endswith(')'):
+                                OP_TAR_ARR_TRAN3[i].insert(0, 'added-by-Sukhada:)')
+                                tran3.append( OP_TAR_ARR_TRAN3[i])
+#Openlogos writes word-ids in paranthisis e.g. ( 1), ( 2) ... (10) and so on. Single digit ids have a space after opening paranthisis and if the word_id is of double digits there is no space left after the opening paranthisis, so  while splitting the ids on the basis of space the lenght becomes short, therefor, I'm inserting an extra element in the list namely 'added-by-Sukhada'.
+                        else:
+                                tran3.append( OP_TAR_ARR_TRAN3[i])
+
+
 SWRK_TAB_TRN4_0 = []
 SWRK_TAB_TRN4_1 = []
 SWRK_TAB_TRN4 = []
-for i in xrange(len(OP)):
-    SWRK_TAB_TRN4_0.append(OP[i][4:8])
-for i in xrange(len(OP)):
-    a = OP[i][8:-2]
+for i in xrange(len(tran3)):
+    SWRK_TAB_TRN4_0.append(tran3[i][4:8])
+for i in xrange(len(tran3)):
+    a = tran3[i][8:-2]
     if len(a) > 1:
         sukh=''
-	for j in xrange(len(a)):
-	    sukh = sukh + a[j] + '_'
+        for j in xrange(len(a)):
+            sukh = sukh + a[j] + '_'
         SWRK_TAB_TRN4_1.append(sukh[0:-1])
     else:
-	SWRK_TAB_TRN4_1.append(a[0])
+        SWRK_TAB_TRN4_1.append(a[0])
 
 for i in xrange(len(SWRK_TAB_TRN4_0)):
     c = ''
@@ -446,21 +452,6 @@ for i in xrange(len(SWRK_TAB_TRN4)):
 k=0;j=0;increment_loop=0
 SWRK_TAB_TRN4_V1 = SWRK_TAB_TRN4_V
 #----------------------------------#### Get Relation information ####--------------------------------
-tran3_components = []; tran3 = []
-for i in xrange( len(OP_TAR_ARR_TRAN3)):
-        cur = i
-        if len(OP_TAR_ARR_TRAN3[i]) > 0:
-                a = OP_TAR_ARR_TRAN3[i][0]
-                if 'SCONPO' in OP_TAR_ARR_TRAN3[i]:
-                        tran3_components.append( OP_TAR_ARR_TRAN3[i])
-                if "SWORKO" in OP_TAR_ARR_TRAN3[i]:
-                        if OP_TAR_ARR_TRAN3[i][0].endswith(')'):
-                                OP_TAR_ARR_TRAN3[i].insert(0, 'added-by-Sukhada:)')
-                                tran3.append( OP_TAR_ARR_TRAN3[i])
-#Openlogos writes word-ids in paranthisis e.g. ( 1), ( 2) ... (10) and so on. Single digit ids have a space after opening paranthisis and if the word_id is of double digits there is no space left after the opening paranthisis, so  while splitting the ids on the basis of space the lenght becomes short, therefor, I'm inserting an extra element in the list namely 'added-by-Sukhada'.
-                        else:
-                                tran3.append( OP_TAR_ARR_TRAN3[i])
-
 matrix = [[]]
 for j in xrange(1,len(OP_TAR_ARR_TRAN3)):
         if len(OP_TAR_ARR_TRAN3[j])>0:
@@ -726,15 +717,13 @@ H_mng_fp = open("hindi_meanings_tmp.dat","a")
 ol_num_wrd = open("ol_numeric_word.dat", "a")
 pada_con = open("ol_pada_control_fact.dat", "a")
 original_wrd = open("original_word.dat", "a")
-# Inserting missing words and relations with that word.
 
-#for j in xrange(len(OP)):
- #    print OP[j]
-
-for j in xrange(len(OP)):
-     if OP[j-1][5] == '591' and OP[j-1][6] == '53' and OP[j-1][7] == '10000' and OP[j][4]== '1' and  OP[j+1][4] == '2':
-            rel_fp.write("(relation-parser_ids viSeRya-jo_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[OP[1][7]], OP[j-1][7]))
-#            print "(sssssssssser-ids viSeRya-jo_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[OP[1][7]], OP[j-1][7])
+#------------------------ Inserting missing words and relations with that word ---------------------------
+for i in xrange(len(trn3)):
+    for j in xrange(len(trn3)):
+        if trn3[i][1] == trn3[j][1] and trn3[i][0] == '1' and trn3[j][2] == '94' and i != j and (trn3[j+2][0] == '2' or trn3[j+2][0] == '12' )and trn3[j][5] == 'SWITCH68':
+            rel_fp.write("(relation-parser_ids viSeRya-jo_samAnAXikaraNa  P%s\tP10000)\n" % sconId_resId[trn3[i][3]])
+   #         print "(111111111111111 viSeRya-jo_samAnAXikaraNa  P%s\tP10000)\n" % sconId_resId[trn3[i][3]]
             pada_fp.write("(pada_info (group_head_id P10000) (group_cat PP) (group_ids P10000) (vibakthi 0) (gender 0) (number 0) (case 0) (person 0) (H_tam 0) (tam_source 0) (preceeding_part_of_verb 0) (preposition 0) (Hin_position 0))\n" )
             original_wrd_fp.write("(parserid-wordid P10000 10000)\n")
             H_mng_fp.write("(id-HM-source 10000 jo Relative_clause)\n")
@@ -743,62 +732,42 @@ for j in xrange(len(OP)):
             wrd_fp.write("(id-word 10000  who)\n")
             pada_con.write("(pada_control_fact 10000)\n")
             original_wrd.write("(id-original_word 10000 who)\n")
-#           rel_fp.write("(relation-parser_ids kriyA-object  P%s\tP%s)\n" % (sconId_resId[OP[j+3][7]], OP[j][7]))
+            rel_fp.write("(relation-parser_ids kriyA-object  P%s\tP10000)\n" % sconId_resId[trn3[j+2][3]])
+    #        print "(11111111relation-parser_ids kriyA-object  P%s\tP10000)\n" % sconId_resId[trn3[j+2][3]]
+#Ex. The boy you called yesterday has arrived. The snake the mongoose attacked hissed loudly.
+        if i > 2:
+             if trn3[i][0] == '20' and trn3[i][1] == '103' and trn3[i][2] == '19' and trn3[i+1][0] == '1' and trn3[i][4] != 'that':
+                 rel_fp.write("(relation-parser_ids subject-conjunction  P%s\tP10000)\n" % sconId_resId[trn3[i+1][3]])
+                 pada_fp.write("(pada_info (group_head_id P10000) (group_cat PP) (group_ids P10000) (vibakthi 0) (gender 0) (number 0) (case 0) (person 0) (H_tam 0) (tam_source 0) (preceeding_part_of_verb 0) (preposition 0) (Hin_position 0))\n" )
+                 original_wrd_fp.write("(parserid-wordid P10000 10000)\n")
+                 H_mng_fp.write("(id-HM-source 10000 ki Python_prog)\n")
+                 ol_num_wrd.write("(parser_numid-word-remark P10000  that -)\n")
+                 rt_fp.write("(id-root 10000  that)\n")
+                 wrd_fp.write("(id-word 10000  that)\n")
+                 pada_con.write("(pada_control_fact 10000)\n")
+                 original_wrd.write("(id-original_word 10000 that)\n")
+#Ex. I thought it is right to resign. 
+
+        if trn3[j-1][1] == '591' and trn3[j-1][2] == '53' and trn3[j-1][5] == 'SWITCH68' and trn3[j][0]== '1' and  trn3[j+1][0] == '2':
+            rel_fp.write("(relation-parser_ids viSeRya-jo_samAnAXikaraNa  P%s\tP10000)\n" % sconId_resId[trn3[1][3]])
+#            print "(2222222222222er_ids viSeRya-jo_samAnAXikaraNa  P%s\tP10000)\n" % sconId_resId[trn3[1][3]]
+            pada_fp.write("(pada_info (group_head_id P10000) (group_cat PP) (group_ids P10000) (vibakthi 0) (gender 0) (number 0) (case 0) (person 0) (H_tam 0) (tam_source 0) (preceeding_part_of_verb 0) (preposition 0) (Hin_position 0))\n" )
+            original_wrd_fp.write("(parserid-wordid P10000 10000)\n")
+            H_mng_fp.write("(id-HM-source 10000 jo Relative_clause)\n")
+            ol_num_wrd.write("(parser_numid-word-remark P10000  which -)\n")
+            rt_fp.write("(id-root 10000  which)\n")
+            wrd_fp.write("(id-word 10000  which)\n")
+            pada_con.write("(pada_control_fact 10000)\n")
+            original_wrd.write("(id-original_word 10000 which)\n")
 #Ex. The position we talked about is gone.
 
-for i in xrange(len(tran3)):
-    if i > 2:
-        if tran3[i][4] == '20' and tran3[i][5] == '103' and tran3[i][6] == '19' and tran3[i+1][4] == '1' and  tran3[i][8] != 'that':
-            rel_fp.write("(relation-parser_ids subject-conjunction  P%s\tP10000)\n" % (sconId_resId[tran3[i+1][7]]))
-            pada_fp.write("(pada_info (group_head_id P10000) (group_cat PP) (group_ids P10000) (vibakthi 0) (gender 0) (number 0) (case 0) (person 0) (H_tam 0) (tam_source 0) (preceeding_part_of_verb 0) (preposition 0) (Hin_position 0))\n" )
-            original_wrd_fp.write("(parserid-wordid P10000 10000)\n")
-            H_mng_fp.write("(id-HM-source 10000 ki Python_prog)\n")
-            ol_num_wrd.write("(parser_numid-word-remark P10000  that -)\n")
-            rt_fp.write("(id-root 10000  that)\n")
-            wrd_fp.write("(id-word 10000  that)\n")
-            pada_con.write("(pada_control_fact 10000)\n")
-            original_wrd.write("(id-original_word 10000 that)\n")
-#Ex. I thought it is right to resign.	
+        if trn3[i][0] == '1' and trn3[j][0] == '1' and trn3[i][1] == trn3[j][1] and i != j and (trn3[j-1][5] == 'CLS-BOS' or trn3[j-2][5] == 'CLS-BOS') and trn3[i][4] != trn3[j][4] and  trn3[i][5] != 'SWITCH68' and trn3[j][5] != 'SWITCH68':
+            rel_fp.write("(relation-parser_ids viSeRya-jo_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[trn3[i][3]], sconId_resId[trn3[j][3]])) 
+#            print "(relation-parser_ids viSeRya-jo_samAnAXikaraNa  P%s\tP%s)" % (sconId_resId[trn3[i][3]], sconId_resId[trn3[j][3]] ) 
+#Ex. I will show you the house where I met your mother. We now know that there are two thousand elements which we can not use to make a good light bulb. 
 
-for i in xrange(len(OP)):
-    for j in xrange(len(OP)):
-        if OP[i][5] == OP[j][5] and  OP[i][4] == '1' and OP[j][6] == '94' and i != j and OP[j][7] == '10000' and OP[j+2][4] != '12' and OP[i][7] != '10000':
-            rel_fp.write("(relation-parser_ids viSeRya-jo_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[OP[i][7]], OP[j][7]))
-#            print "(tttttttttttr-ids viSeRya-jo_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[OP[i][7]], OP[j][7])
-            pada_fp.write("(pada_info (group_head_id P10000) (group_cat PP) (group_ids P10000) (vibakthi 0) (gender 0) (number 0) (case 0) (person 0) (H_tam 0) (tam_source 0) (preceeding_part_of_verb 0) (preposition 0) (Hin_position 0))\n" )
-            original_wrd_fp.write("(parserid-wordid P10000 10000)\n")
-            H_mng_fp.write("(id-HM-source 10000 jo Relative_clause)\n")
-            ol_num_wrd.write("(parser_numid-word-remark P10000  who -)\n")
-            rt_fp.write("(id-root 10000  who)\n")
-            wrd_fp.write("(id-word 10000  who)\n")
-	    pada_con.write("(pada_control_fact 10000)\n")
-	    original_wrd.write("(id-original_word 10000 who)\n")
-	    rel_fp.write("(relation-parser_ids kriyA-object  P%s\tP%s)\n" % (sconId_resId[OP[j+3][7]], OP[j][7]))
-#Ex. The boy you called yesterday has arrived. The snake the mongoose attacked hissed loudly.
 
-        if OP[i][5] == OP[j-1][5] and OP[i][4] == '1' and OP[j-1][6] == '94' and i != j and OP[j-1][7] == '10000' and OP[j+1][4]== '12' and  OP[j+2][4] == '2' and OP[i][7] != '10000':
-            rel_fp.write("(relation-parser_ids viSeRya-jo_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[OP[i][7]], OP[j-1][7]))
-#            print "(4333333333434343 viSeRya-jo_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[OP[i][7]], OP[j-1][7])
-            pada_fp.write("(pada_info (group_head_id P10000) (group_cat PP) (group_ids P10000) (vibakthi 0) (gender 0) (number 0) (case 0) (person 0) (H_tam 0) (tam_source 0) (preceeding_part_of_verb 0) (preposition 0) (Hin_position 0))\n" )
-            original_wrd_fp.write("(parserid-wordid P10000 10000)\n")
-            H_mng_fp.write("(id-HM-source 10000 jo Relative_clause)\n")
-            ol_num_wrd.write("(parser_numid-word-remark P10000  who -)\n")
-            rt_fp.write("(id-root 10000  who)\n")
-            wrd_fp.write("(id-word 10000  who)\n")
-            pada_con.write("(pada_control_fact 10000)\n")
-            original_wrd.write("(id-original_word 10000 who)\n")
-            rel_fp.write("(relation-parser_ids kriyA-object  P%s\tP%s)\n" % (sconId_resId[OP[j+3][7]], OP[j][7]))
-#Ex.The book I was reading is wonderful. 
 
-        if OP[i][5] == OP[j][5] and OP[i][4] == '1' and OP[j][6] == '94' and i != j and OP[j][7] == '10000' and OP[j+2][4] == '2':
-            rel_fp.write("(relation-parser_ids kriyA-object  P%s\tP%s)\n" % (sconId_resId[OP[j+2][7]], OP[j][7]))
-        if OP[i][5] == OP[j-3][5] and OP[i][4] == '1' and OP[j-2][6] == '94' and i != j-3 and OP[j-3][7] == '10000' and OP[j][4] == '2' :
-            rel_fp.write("(relation-parser_ids kriyA-object  P%s\tP%s)\n" % (sconId_resId[OP[j][7]], sconId_resId[OP[j-2][7]]))
-#Ex. The dog I chased was black. The book I was reading is wonderful. The boy you called yesterday has arrived.
-
-        if OP[i][5] == OP[j][5] and OP[i][4] == '1' and OP[j][6] == '94' and i != j and OP[j][7] == '10000' and OP[j+2][4] == '12' and OP[j+3][4] == '2':
-           rel_fp.write("(relation-parser_ids kriyA-object  P%s\tP%s)\n" % (sconId_resId[OP[j+3][7]], OP[j][7]))
-#Ex.The book I was reading is wonderful. 
 rt_fp.close()
 original_wrd_fp.close()
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#
@@ -857,7 +826,7 @@ for i in xrange(len(tran3)):
 #Ex:  Can you tell us where those strange ideas came from?
 
         if tran3[i-1][4] == '20' and tran3[i-1][8] in conjunction_list and (tran3[i-1][5] == '103' or tran3[i-1][5] == '446') and tran3[i][4] == '2' and tran3[i][9] != 'SWITCH68' and tran3[i-1][9] != 'SWITCH68':
-            rel_fp.write("(relation-parser_ids kriyA-conjunction  P%s\tP%s)\n" % (sconId_resId[tran3[i][7]], sconId_resId[tran3[i-1][7]]))
+            rel_fp.write("(relation-parser_ids subject-conjunction  P%s\tP%s)\n" % (sconId_resId[tran3[i][7]], sconId_resId[tran3[i-1][7]]))
 #Ex. Estimate how much the charge of a proton could differ in magnitude from the charge of an electron without creating a noticeable force between your hands.
 
         if tran3[i][4] == '20'  and  tran3[i][5] == '410'  and tran3[i][8] =='how' and tran3[i+1][4] == '1' and tran3[i+1][9] != 'SWITCH68':
@@ -1164,12 +1133,6 @@ for j in xrange(0,len(semwrk_verb)):
 	gor_kriyA=[]
 	gor_object=[]
 		
-
-for i in xrange(len(tran1)):
-    if tran1[i-1][0] == '1' and tran1[i][0] == '18' and tran1[i][1] == '401':
-        rel_fp.write("(relation-parser_ids viSeRya-jo_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[tran1[i-1][3]], tran1[i][3]))
-#        print "(sssssssssssssssssviSeRya-jo_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[tran1[i-1][3]], tran3[i][7])
-#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#
 if len(semwrk_verb) >=1 :
     for i in xrange(len(semwrk_verb)):
 	if len(semwrk_verb[i]) >20 and sconId_resId[semwrk_verb[i][19]] != '0' and semwrk_verb[i][12] == '1' and semwrk_verb[i][16] == '1' and id_form_dic[sconId_resId[semwrk_verb[i][19]]] == '23':
@@ -1207,7 +1170,7 @@ for i in xrange(len(tran1)):
 #Ex. A fat ugly BOY had to eat too many fruits to lose his weight.
 
 		    elif RES_SWRK_TAB[k][0] == id and RES_SWRK_TAB[k][2]== '6' and RES_SWRK_TAB[k][35] == 'even' and tran1[i][0] == '1' and id_form_dic[tran1[i][3]] != '23':
-			rel_fp.write("(relation-parser_ids viSeRya-emphatic_marker  P%s\tP%s)\n" % (sconId_resId[tran1[i][3]], sconId_resId[tran1_components[i][j]]))
+			rel_fp.write("(relation-parser_ids wall_conjunction  P%s)\n" % sconId_resId[tran1_components[i][j]])
 #Ex. Even a child can understand it.
 
 		    elif RES_SWRK_TAB[k][0] == id and RES_SWRK_TAB[k][2] == '16':
@@ -1330,13 +1293,6 @@ for i in xrange(len(tran3)):
                     rel_fp.write("(relation-parser_ids viSeRaNa-viSeRaka  P%s\tP%s)\n" % (tran3_components[i][j], tran3[i][7]))
 #Ex. How long will it last?
 
-for i in xrange(1,len(tran3)):
-    for j in  xrange(1,len(tran3)):
-	if tran3[i][4] == '1' and tran3[j][4] == '1' and tran3[i][5] == tran3[j][5] and i != j and (tran3[j-1][9] == 'CLS-BOS' or tran3[j-2][9] == 'CLS-BOS') and tran3[i][8] != tran3[j][8] and tran3[j][7] != '10000' and tran3[i][7] != '10000':
-	    rel_fp.write("(relation-parser_ids viSeRya-jo_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[tran3[i][7]], tran3[j][7])) 
-#	    print "(bbbbbbbbbbbbbbbiSeRya-jo_samAnAXikaraNa  P%s\tP%s)" % (sconId_resId[tran3[i][7]], tran3[j][7]) 
-#Ex. I will show you the house where I met your mother. We now know that there are two thousand elements which we can not use to make a good light bulb.  
-
 for i in xrange(len(tran2)):
     for j in xrange(len(tran2)-1):
         if tran2[i][0] == '1' and tran2[j][0] == '1' and tran2[i][1] == tran2[j][1] and i != j and (tran2[j-1][5] == 'CLS-BOS' or tran2[j-2][5] == 'CLS-BOS') and tran2[j-1][4] != '*' and tran2[i][4] != tran2[j][4]:
@@ -1362,32 +1318,32 @@ for i in xrange(len(SWRK_TAB_TRN4)):
 
 of_pada_tran1_components = []
 for i in xrange(1, (len(matrix[0])-1)):
-        tran1_components = []
-	of_pada_tran1_components = []
-	comp_list = []
-	of_comp_list = []
-	end_point = ''
-	start_point = ''
-        for j in xrange(len(matrix[0][i])):
-                if matrix[0][i][j] == 'SCONPO':
-                        head = matrix[0][i][8]
-                        start_point = j+1
-                        end_mat = matrix[0][i][j+1:]
-                        for k in xrange(len(end_mat)):
-                                if end_mat[k][0] in alfa:
-                                        end_point = ((k-1) + start_point)
-                                        break
-                        tran1_components.append(matrix[0][i][7])
-			if end_point != '' and start_point != '':
-                            for l in xrange(start_point, end_point):
-                                tran1_components.append(matrix[0][i][7])
-                                if int(matrix[0][i][l]) > 0 and  int(matrix[0][i][l]) <= int(matrix[0][i][7]):
-					tran1_components.append(matrix[0][i][l])
+    tran1_components = []
+    of_pada_tran1_components = []
+    comp_list = []
+    of_comp_list = []
+    end_point = ''
+    start_point = ''
+    for j in xrange(len(matrix[0][i])):
+        if matrix[0][i][j] == 'SCONPO':
+            head = matrix[0][i][8]
+            start_point = j+1
+            end_mat = matrix[0][i][j+1:]
+            for k in xrange(len(end_mat)):
+                if end_mat[k][0] in alfa:
+                    end_point = ((k-1) + start_point)
+                    break
+            tran1_components.append(matrix[0][i][7])
+            if end_point != '' and start_point != '':
+                for l in xrange(start_point, end_point):
+                    tran1_components.append(matrix[0][i][7])
+                    if int(matrix[0][i][l]) > 0 and  int(matrix[0][i][l]) <= int(matrix[0][i][7]):
+	                tran1_components.append(matrix[0][i][l])
 #The part below is to separate 'of_pada' from other pada of which it is postmodifier. Ex. Mohan fell from the top OF THE HOUSE.
-				if int(matrix[0][i][l]) <= (len(sent_wrd_list)+1) and int(matrix[0][i][l]) > int(matrix[0][i][7]):
-					of_pada_tran1_components.append(matrix[0][i][l])
-					if len(of_pada_tran1_components) > 0:
-						of_pada_tran1_components.sort()
+		    if int(matrix[0][i][l]) <= (len(sent_wrd_list)+1) and int(matrix[0][i][l]) > int(matrix[0][i][7]):
+			of_pada_tran1_components.append(matrix[0][i][l])
+		        if len(of_pada_tran1_components) > 0:
+		  	    of_pada_tran1_components.sort()
 
 if len(of_pada_tran1_components) > 0:
     if id_word[of_pada_tran1_components[0]] == 'than':

@@ -1111,6 +1111,17 @@
  )
  ; Ex.  Do not waste electricity. Do not disturb the sleeping kids. Do not forget to take your tiffin. Do not neglect your duties. 
 ;------------------------------------------------------------------------------------------------------------------------
+ (defrule sent_opener
+ (rel_name-sids ?p  ?kri ?sam)
+ (rel_name-sids nsubj  ?kri ?s)
+ (test (eq (sub-string 1 5 (implode$ (create$ ?p))) "prep_"))
+ (test (and (> (string_to_integer ?kri) (string_to_integer ?sam)) (< (string_to_integer ?kri) (string_to_integer ?s)))) 
+ =>
+ (printout       ?*fp*   "(relation-parser_ids     kriyA-sentence_opener      "?kri"   "?sam")"crlf)
+ (printout       ?*dbug* "(Rule-Rel-ids  sent_opener   kriyA-sentence_opener      "?kri"   "?sam")"crlf)
+ )
+ ; Ex.  In the garden stood a statue.
+;------------------------------------------------------------------------------------------------------------------------
 
 ;rel+nsubj rel+nsubj+wh rules are not working properly. Check them.
 
