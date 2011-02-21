@@ -34340,3 +34340,5 @@ a month short of a year	mAsa-Una-varRa	mAsa-Una-varRa	noun	6	RM
 In contrast to	ke_viparIwa_meM	ke_viparIwa_meM	preposition	3	RM
 most of the time	jZyAxAwara_samaya	jZyAxAwara_samaya	noun	4	RM
 natural language processing	prAkqwa_BARA_saMsAXana	prAkqwa_BARA_saMsAXana	noun	3	RM
+known as	ke_rUpa_meM_jAnAjAnevAlA	ke_rUpa_meM_jAnAjAnevAlA	adjective	1	RM 
+also known as	ke_rUpa_meM_BI_jAnAjAnevAlA	ke_rUpa_meM_BI_jAnAjAnevAlA	adjective	2	RM 

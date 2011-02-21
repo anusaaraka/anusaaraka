@@ -62,6 +62,26 @@
 )
 
 ; But just see how difficult it is.
+
+
+
+;Added by Meena(19.2.11)
+;Mysore also known as the city of palaces is just 139 kms by road from Bangalore.
+(defrule just05
+(declare (salience 4600))
+(id-root ?id just)
+?mng <-(meaning_to_be_decided ?id)
+(or(viSeRya-viSeRaNa ?id1 ?id)(viSeRya-viSeRaka  ?id1 ?id))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sirPa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  just.clp      just05   "  ?id " sirPa 
+ )" crlf))
+)
+
+
+
 (defrule just5
 (declare (salience 4500))
 (id-root ?id just)

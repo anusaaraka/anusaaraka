@@ -219,7 +219,9 @@
 ;He took the pen when noone was by.
 
 
-
+;Modified by Meena(19.2.11);added the list for ?id2 and relation (viSeRya-by_saMbanXI  ?id1 ?id2)and commmented (or(..)) 
+;I told him by telephone that I was coming by car. 
+;Mysore also known as the city of palaces is just 139 kms by road from Bangalore. 
 ;Added by Meena(9.11.09)
 ;They were awakened by the sound of a gun.
 ;I was awakened by a gun's sound . 
@@ -227,8 +229,9 @@
 (declare (salience 3500))
 (id-root ?id by)
 ?mng <-(meaning_to_be_decided ?id)
-(kriyA-by_saMbanXI  ?id1 ?id2)
-(or(viSeRya-of_saMbanXI  ?id2 ?id3)(viSeRya-RaRTI_viSeRaNa  ?id2 ?id3))
+(or(kriyA-by_saMbanXI  ?id1 ?id2)(viSeRya-by_saMbanXI  ?id1 ?id2)) ;in ol we get this relation which most probably is not correct, once this is sorted out, we can delete (viSe..) and can get the correct output with only (kriyA-by_saMbanXI  ?id1 ?id2)
+(id-root ?id2 sound|road|telephone|car|bus|letter)
+;(or(viSeRya-of_saMbanXI  ?id2 ?id3)(viSeRya-RaRTI_viSeRaNa  ?id2 ?id3))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id se))

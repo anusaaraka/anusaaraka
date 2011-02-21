@@ -4355,7 +4355,7 @@ narrow-minded	saMkIrNa_mana_vAlA
 narrow-mindedness	saMkIrNa_mana
 nasal	nAsikA_saMbaMXI
 nasty	burA
-national	rARtrIya
+national	rARtriya
 native	xeSI
 natural	prAkqwika
 naturally	sahaja_rUpa_se
