@@ -1742,16 +1742,21 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  	    prepare_apertium_input.clp 	vibakthi.clp
 17. Updated Log.
 
-21-02-11
+22-02-11
 ---------
  1. In WSD:
-            Modified: to.clp, turn.clp, have.clp, high.clp, public.clp, a.clp, by.clp, just.clp and second.clp
+       Modified: to.clp, turn.clp, have.clp, high.clp, public.clp, a.clp, by.clp, just.clp, boat.clp, shop.clp and second.clp
  2. In sd_relation_rules.clp:
        these rules rcmod+dobj, rcmod+dobj_1, rcmod+dobj_2 and rcmod+dobj_3 are merged into one single rule 'rcmod'.
        Added some rules in sd_relation_rules.clp to assert 'who', 'where' and 'when' in relative clause sentences.
        Added new rules to handle reduced relative clauses.
        Added new rule sent_opener.
- 3. Added new rule "asserted_who" in sd_pada.clp to get 10000 pada.
+       Removed : conj_and rule 
+       Added : conj-comp-rule and print_conj_comp rule to handle all conjunction components in one single list
+ 3. sd-pada.clp
+          Modified: "conj_pada_and_or" rule to get all conjunction components in the 'and/or' pada.
+          Added:  "asserted_who" rule to get 10000 pada.
+                  "prep_pada_conj" rule to modify preposition field in case of 'and/or' pada
  4. Modified anu_compile.sh  to get 4 new gdbms.
  5. Modified "insert-jo_samA" rule in sd_relation_rules.clp
  6. Modified rule: Relative_clause in causative_verb_mng.clp
@@ -1771,7 +1776,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Added    :  kriyA-subject_but   conj-comp
         Replaced :  pUrvakAlika_kriyA-ananwarakAlika_kriyA is replaced with kriyA-conjunction
 12. pada_ids.clp
-        Modified :   prep-noun
+        Modified :   prep-noun and to_infinitive rules.
 13. verb_chunk.clp :
         Added    : S_I_VJ_rule , S_VJ_rule , S_Pg_VJ_rule
         Modified : Non_interogative_sent_rule , S_rule
@@ -1783,10 +1788,15 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Anusaaraka.sh , Anusaaraka_link.sh , anu_compile.sh and  remove_out-files.sh
 17. run_openlogos.py: The relation viSeRya-emphatic_marker is replaced with wall_conjunction
                 Better programming is done for inserting missing words and relation in reduced relative clauses
-18. Updated changes_in_databases.
-19. Modified and Updated small_sent_ver_output, verified_output, verified_output_ol, small_sent_ver_output_ol,OL_parser_fails    sd_verified, sd_ver_out, new_verified, new_ver_output, verified_ol
-20. Updated following files:
-           verified_ol ( 544 )  small_sent_verified_ol( 106 )
+18. parser_id_mapping.clp:
+        Removed : map-rel4 rule 
+        Added  :  map-conj and write-conj rules to map conjunction components.
+19. prepare_apertium_input.clp
+    Modified:  PP_rule_with_vib_and_h_id_and to handle verbal_noun case.
+20. Updated changes_in_databases.
+21. Modified and Updated small_sent_ver_output, verified_output, verified_output_ol, small_sent_ver_output_ol,OL_parser_fails    sd_verified, sd_ver_output, new_verified, new_ver_output, verified_ol
+22. Updated following files:
+           verified_ol ( 545 )  small_sent_verified_ol( 106 )
            verified    ( 593 )  small_sent_verified   ( 118 )
            sd_verified ( 395 )  new_verified    ( 568 )
-21. Updated Log.
+23. Updated Log.

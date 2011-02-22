@@ -1580,6 +1580,7 @@
  ;----------------------------------------------------------------------------------------------------------------------
  ;Ex. They seem to resemble each other . 
  (defrule to_infinitive
+ (declare (salience 220)) ;Suggested by Sukhada(22-02-11)I had to run fast to catch the bus. 
  (id-word ?id_to to)
  (or (link_name-lnode-rnode I ?id_to ?paxa_head) (link_name-lnode-rnode Ix ?id_to ?paxa_head)(link_name-lnode-rnode If ?id_to ?paxa_head) (link_name-lnode-rnode I*a ?id_to ?paxa_head))
  ?f0<-(to_be_included_in_paxa ?id_to)

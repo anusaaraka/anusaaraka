@@ -129,15 +129,25 @@
        (printout ?*rel-file1* "(relation-anu_ids   kriyA-subject  "?id"  10001)"crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
- (defrule map-rel4
- (declare (salience 900))
- (conjunction-components ?conj ?s1 ?s2)
- (parserid-wordid ?s1 ?S1)
- (parserid-wordid  ?s2 ?S2)
- (parserid-wordid ?conj ?CONJ)
-  =>
-       (printout ?*rel-file* "(conjunction-components  "?CONJ"  "?S1" " ?S2")"crlf)
-       (printout ?*rel-file1* "(conjunction-components  "?CONJ"  "?S1" " ?S2")"crlf)
+ ;Added by Roja (22-02-11)
+ ;Ex: Your house and garden are very attractive. 
+ (defrule map-conj
+ (declare (salience 950))
+ ?f<-(conjunction-components $?ids ?id $?ids1)
+ (parserid-wordid ?id ?wid)
+ =>
+      (retract ?f)
+      (assert  (conjunction-components $?ids ?wid $?ids1))
+ )
+ ;--------------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (22-02-11)
+ ;Ex: Your house and garden are very attractive.
+ (defrule write-conj
+ (declare (salience -10))
+ (conjunction-components $?ids)
+ =>
+       (printout ?*rel-file* "(conjunction-components  "(implode$ $?ids)")" crlf)
+       (printout ?*rel-file1* "(conjunction-components  "(implode$ $?ids)")"crlf)
  )
  ;================================   RULES FOR MAPPING LINK CATEGORY =================================================
  (defrule map-catid

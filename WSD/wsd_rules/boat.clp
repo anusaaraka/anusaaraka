@@ -4,12 +4,12 @@
 (id-root ?id boat)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id boating )
-(id-cat_coarse ?id verb)
+(id-cat_coarse ?id verb|verbal_noun) ;Added category verbal_noun by Roja(21-02-11) Ulsoor lake is an ideal place for sightseeing, boating and shopping.
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id nOkA-vihAra_kara))
+(assert (id-wsd_root_mng ?id nOkA-vihAra_kara)) ;Modified word_mng to root_mng for above sentence by Roja(21-02-11)
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  boat.clp  	boat0   "  ?id "  nOkA-vihAra_kara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  boat.clp  	boat0   "  ?id "  nOkA-vihAra_kara )" crlf))
 )
 
 ;"boating","VI","1.nOkA-vihAra_karanA"

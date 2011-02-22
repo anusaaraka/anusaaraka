@@ -721,8 +721,8 @@
  (pada_info (group_head_id ?pada_id)(group_cat PP) (number ?num)(preposition ?pre) (vibakthi ?vib) (person ?person)(group_ids $?ids)(case ?case))
  (id-word ?pada_id and|or)
  (id-gender-src ?id ?gen ?gen_src)
- (id-number-src ?id ?num1 ?num_src)  ;;Added this on 31-08-10 for this sentence.  In the racing competition between the hare and the tortoise, the tortoise finally won the race.
-;Whenever agreement is done then pada head ids number information should not be passed to individual ids.
+ (id-number-src ?id ?num1 ?num_src)  ;;Added by Roja(31-08-10) for this sentence.  In the racing competition between the hare  and the tortoise, the tortoise finally won the race.
+ ;Whenever agreement is done then pada head ids number information should not be passed to individual ids.(Suggested by Chaitanya Sir)
  (test (and (member$ ?id $?ids)(neq ?id ?pada_id)))
  (id-cat_coarse ?id ?cat)
  (test (neq ?vib 0))
@@ -738,9 +738,12 @@
 	    else
                   (if (eq ?cat noun) then
 	              (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num1">$)"crlf)
-                  else
-                      (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num1">$ )" crlf)
-           )
+                  else (if (eq ?cat verbal_noun) then ;Ulsoor lake is an ideal place for sightseeing, boating and shopping. 
+                       (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word  "<cat:vn><case:"?case">$)"crlf)
+                       else
+                           (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num1">$ )" crlf)
+                       )
+                   )
          )
 	(retract ?f0)
             (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_with_vib_and_h_id_and )" crlf)

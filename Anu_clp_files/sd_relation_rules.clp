@@ -11,6 +11,7 @@
  (defglobal ?*open-word* = open-word)
  (defglobal ?*open-orign* = open-orign)
  (defglobal ?*hmng_fp* = hmng_fp)
+ (defglobal ?*list* = (create$ ))
 
 (deffunction string_to_integer (?parser_id); [Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
@@ -134,19 +135,39 @@
  )
  ; Ex. He may drink milk or eat apples .
  ;------------------------------------------------------------------------------------------------------------------------
-(defrule conj_and
-(rel_name-sids conj_and|conj_or  ?x ?y)
-(parserid-word ?id and|or)
-(test (and (> (string_to_integer ?id) (string_to_integer ?x)) (< (string_to_integer ?id) (string_to_integer ?y))))
-(not (found_kriyA-conjunction ?id))
-=>
-(printout       ?*fp*   "(conjunction-components  "?id "  "?x" "?y")"crlf)
-(printout       ?*fp*   "(conjunction-components  "?id "  "?y" "?x")"crlf)
-(printout       ?*dbug* "(Rule-Rel-ids conj_and  conjunction-components  "?id "  "?x" "?y")"crlf)
-(printout       ?*dbug* "(Rule-Rel-ids conj_and  conjunction-components  "?id "  "?y" "?x")"crlf)
-)
+ ;Added by Roja (21-02-11)
+ ;To handle all conjunction components in one single list
+ ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.
+ (defrule conj-comp-rule
+ (declare (salience 1000))
+ ?f<-(rel_name-sids conj_and|conj_or  ?x ?y)
+ (parserid-word ?id and|or)
+ (not (found_kriyA-conjunction ?id))
+ =>
+  (bind ?*list* (sort > (create$ ?*list* (string_to_integer ?y))))
+  (bind ?plist (create$ ))
+        (loop-for-count (?i   1 (length ?*list*))  do
+                (bind ?j (string-to-field (str-cat "P" (nth$ ?i ?*list*))))
+                (bind ?plist (insert$  ?plist (length ?*list*) ?j))
+        )
+
+  (assert (conjunction_components_dummy ?id ?x ?plist)) 
+ )
  ; Ex. Your house and garden are very attractive. 
  ;------------------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (21-02-11)
+ ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.
+ (defrule print_conj_comp
+ (declare (salience -10))
+ (conjunction_components_dummy ?head  ?x  $?ids)
+ =>
+ (if (eq (length $?ids) (length ?*list*)) then 
+  (printout ?*fp* "(conjunction-components "  ?head "  "?x "   " (implode$ $?ids) ")" crlf)
+  (printout ?*dbug* "(Rule-Rel-ids  print_conj_comp    conjunction-components "  ?head "  "?x " "  (implode$ $?ids) ")" crlf)
+ )
+)
+;------------------------------------------------------------------------------------------------------------------------
+
  (defrule nsubj_conj1
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
  (rel_name-sids conj_and|conj_or  ?sub ?sub1)
@@ -897,14 +918,17 @@
 (parserid-word ?s ?word&~who&~which&~that)
 (not (rel_name-sids  dobj   ?rv  ?))
 (not (rel_name-sids  rel   ?rv  ?))
+(parserid-word ?rv ?wrd)
+(test(and (neq ?wrd met)  (neq ?wrd meet)  (neq ?wrd meets)  (neq ?wrd meeting)))
+(not (got_viSeRya-jo_samAnAXikaraNa  ?vi))
 =>
-(bind ?a (gdbm_lookup "transitive-verb-list.gdbm" ?v_word))
+(bind ?a (gdbm_lookup "transitive-verb-list.gdbm" ?wrd))
 (if (eq ?a "1") then
     (printout       ?*fp*   "(relation-parser_ids   viSeRya-jo_samAnAXikaraNa       "?vi"   10000)"crlf)
     (printout       ?*dbug*    "(Rule-Rel-ids  insert-which  viSeRya-jo_samAnAXikaraNa      "?vi"    10000)"crlf)
     (printout       ?*fp*   "(relation-parser_ids   kriyA-object    "?rv"       10000)"crlf)
     (printout       ?*dbug*    "(Rule-Rel-ids  insert-which   kriyA-object    "?rv"    10000)"crlf)
-    (printout       ?*hmng_fp*      "(id-HM-source  10000   jisako      Relative_clause)"crlf)
+    (printout       ?*hmng_fp*      "(id-HM-source  10000   jo      Relative_clause)"crlf)
     (printout       ?*open-word*    "(id-word 10000  which)"crlf)
     (printout       ?*open-orign*   "(id-original_word 10000  which)"crlf)
     (assert (got_viSeRya-jo_samAnAXikaraNa  ?vi))

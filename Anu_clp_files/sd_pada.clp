@@ -77,21 +77,52 @@
  ;The girl you met yesterday is here.  The dog I chased was black.  The man you saw is intelligent.
  ;---------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju
+ ;Rule re-modified by Roja (22-02-11) for handling conjunction components in 'and/or' pada.
  (defrule conj_pada_and_or
  (declare (salience 1001))
- (conjunction-components ?and ?id ?id1) ;Modified by Roja(26-01-11) (Removed rel_name-ids fact )
+ (conjunction-components ?and ?id $?ids) ;Modified by Roja(26-01-11) (Removed rel_name-ids fact )
  ?f<-(to_be_included_in_paxa ?id)
  ?f1<-(to_be_included_in_paxa ?id1)
  ?f2<-(to_be_included_in_paxa ?and)
  (id-word ?and and|or)
+ (test (member$ ?id1 $?ids))
  =>
 	(retract ?f ?f1 ?f2)
-	(assert (pada_info (group_head_id ?and) (group_cat PP) (group_ids  ?id ?and ?id1)))
-	(printout       ?*dbug* "(Rule_name-pada_head_id-pada_type-ids  conj_pada_and_or    P"?and   "      PP      " ?id" "?and" "?id1 ")"crlf)
+        (bind ?list (create$ ))
+        (loop-for-count (?i 1 (length $?ids))
+                    (bind ?list (create$ ?list (nth$ ?i $?ids)))
+                    (printout t ?list crlf)
+        )
+        (bind ?list (sort > ?and ?id ?list))
+	(assert (pada_info (group_head_id ?and) (group_cat PP) (group_ids  ?list)))
+	(printout       ?*dbug* "(Rule_name-pada_head_id-pada_type-ids  conj_pada_and_or    P"?and   "      PP      "?list ")"crlf)
 	(print_in_ctrl_fact_files ?and)
  )
- ;Bill is big and honest .  There are three boys and four girls in the park .
+ ;Bill is big and honest .  There are three boys and four girls in the park . 
+ ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.
  ;---------------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (22-02-11)
+ ;Modifying preposition field in case of 'and/or' pada
+ (defrule prep_pada_conj
+ (declare (salience 900))
+ ?f1<-(pada_info (group_head_id ?and) (group_cat PP) (group_ids  $?ids)(preposition ?prep))
+ (relation-anu_ids   ?rel ? ?sam)
+ (test (neq (str-index "-" ?rel)  FALSE))
+ (test (neq (str-index "_" ?rel)  FALSE))
+ (test (or (eq (sub-string 1 5 ?rel) "kriyA") (eq (sub-string 1 7 ?rel) "viSeRya")))
+ (id-word ?prep_id ?w)
+ (test (eq (string-to-field (sub-string (+ (str-index "-" ?rel) 1) (- (str-index "_" ?rel) 1) ?rel)) ?w))
+ (test (eq (sub-string (+ (str-index  (str-cat ?w "_") ?rel) (length ?w)) 1000 ?rel) "_saMbanXI")) ;to take only single prep  relation. Ex: kriyA-from_saMbanXI
+ ?f0<-(to_be_included_in_paxa ?prep_id)
+ (id-word ?and and|or)
+ (test (member$ ?sam $?ids))
+ =>
+        (retract ?f0)
+        (modify ?f1 (preposition ?prep_id))
+ )
+ ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.
+ ;---------------------------------------------------------------------------------------------------------------------
+
  (defrule PP_pada
  (declare (salience 1000))
  (relation-anu_ids  ?rel  ?kri ?PP)
