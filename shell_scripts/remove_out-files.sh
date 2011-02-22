@@ -9,13 +9,13 @@
  echo "Cleaning link-parser "
  cd $HOME_anu_test/LINK/link-grammar-4.5.7/
  make distclean
-# cd $HOME_anu_test/LINK/link-grammar-4.7.4/
-# make distclean
+ cd $HOME_anu_test/LINK/link-grammar-4.7.4/
+ make distclean
 
  echo "Removing link-parser"
  cd $HOME_anu_test/Anu
  rm -rf link-grammar-4.5.7
-# rm -rf link-grammar-4.7.4
+ rm -rf link-grammar-4.7.4
 
  echo "Removing stanford out files"
  cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/
