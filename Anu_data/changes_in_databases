@@ -270,6 +270,13 @@ changes in samAsa-new.txt
 	<e lm="giranA"><i>giran</i><par n="ladak/A__n"/></e>   (Suggested by Meenaji (13.1.11))
         <e lm="BUrA"><i>BUr</i><par n="regular__adj-noun"/></e>(     "              (16-02-11))
 
+
+ Changes in apertium-en-hi.en.metadix 
+ =====================================
+ Added  :
+        <e lm="lie"><i>l</i><par n="d/ie__vblex"/></e>  (Added by Roja 23-02-11)
+ 
+
  Added new files:
  ===============
  1.ol_parser_unused_words.txt (Added by Roja 06-11-10 suggested by Chaitanya sir)

@@ -1806,5 +1806,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 --------
  1. sd_pada.clp
               Removed  : 'prep_pada_conj' rule and merged it in 'add_single_prep'
- 2. Updated changes_in_databases 
- 3. Updated Log.
+ 2. stanford-parser-2010-11-30: Earlier, we were running Stanford Parser twice: once for getting relation information & once for getting POS information. Now the programs are modified in such a way that both the informations are extracted by running the parser only once.
+              Modified : stnford_relations.lex , run_stanford-parser.sh run_stanford.sh , sd_category.py
+              Removed  : run_category.sh
+              Updated  : README of stanford-parser.
+ 3. Updated changes_in_databases 
+ 4. Updated Log.
