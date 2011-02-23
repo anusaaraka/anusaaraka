@@ -1800,3 +1800,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
            verified    ( 593 )  small_sent_verified   ( 118 )
            sd_verified ( 395 )  new_verified    ( 568 )
 23. Updated Log.
+
+
+23-02-11
+--------
+ 1. sd_pada.clp
+              Removed  : 'prep_pada_conj' rule and merged it in 'add_single_prep'
+ 2. Updated changes_in_databases 
+ 3. Updated Log.

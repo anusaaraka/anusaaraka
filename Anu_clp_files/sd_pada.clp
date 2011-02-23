@@ -91,7 +91,6 @@
         (bind ?list (create$ ))
         (loop-for-count (?i 1 (length $?ids))
                     (bind ?list (create$ ?list (nth$ ?i $?ids)))
-                    (printout t ?list crlf)
         )
         (bind ?list (sort > ?and ?id ?list))
 	(assert (pada_info (group_head_id ?and) (group_cat PP) (group_ids  ?list)))
@@ -101,28 +100,6 @@
  ;Bill is big and honest .  There are three boys and four girls in the park . 
  ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.
  ;---------------------------------------------------------------------------------------------------------------------
- ;Added by Roja (22-02-11)
- ;Modifying preposition field in case of 'and/or' pada
- (defrule prep_pada_conj
- (declare (salience 900))
- ?f1<-(pada_info (group_head_id ?and) (group_cat PP) (group_ids  $?ids)(preposition ?prep))
- (relation-anu_ids   ?rel ? ?sam)
- (test (neq (str-index "-" ?rel)  FALSE))
- (test (neq (str-index "_" ?rel)  FALSE))
- (test (or (eq (sub-string 1 5 ?rel) "kriyA") (eq (sub-string 1 7 ?rel) "viSeRya")))
- (id-word ?prep_id ?w)
- (test (eq (string-to-field (sub-string (+ (str-index "-" ?rel) 1) (- (str-index "_" ?rel) 1) ?rel)) ?w))
- (test (eq (sub-string (+ (str-index  (str-cat ?w "_") ?rel) (length ?w)) 1000 ?rel) "_saMbanXI")) ;to take only single prep  relation. Ex: kriyA-from_saMbanXI
- ?f0<-(to_be_included_in_paxa ?prep_id)
- (id-word ?and and|or)
- (test (member$ ?sam $?ids))
- =>
-        (retract ?f0)
-        (modify ?f1 (preposition ?prep_id))
- )
- ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.
- ;---------------------------------------------------------------------------------------------------------------------
-
  (defrule PP_pada
  (declare (salience 1000))
  (relation-anu_ids  ?rel  ?kri ?PP)
@@ -193,7 +170,7 @@
  (defrule add_single_prep
  (declare (salience 1300))
  (relation-anu_ids   ?rel  ?x ?prep_saM)
- ?f1<-(pada_info (group_head_id ?prep_saM)(preposition 0))
+ ?f1<-(pada_info (group_head_id ?id)(group_ids $?ids)(preposition 0))
  (test (neq (str-index "-" ?rel)  FALSE))
  (test (neq (str-index "_" ?rel)  FALSE))
  (test (or (eq (sub-string 1 5 ?rel) "kriyA") (eq (sub-string 1 7 ?rel) "viSeRya")))
@@ -201,6 +178,7 @@
  (test (eq (string-to-field (sub-string (+ (str-index "-" ?rel) 1) (- (str-index "_" ?rel) 1) ?rel)) ?w))
  (test (eq (sub-string (+ (str-index  (str-cat ?w "_") ?rel) (length ?w)) 1000 ?rel) "_saMbanXI")) ;to take only single prep  relation. Ex: kriyA-from_saMbanXI
  ?f<-(to_be_included_in_paxa ?prep_id)
+ (test(or (eq ?prep_saM ?id)(member$ ?prep_saM $?ids))) ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.
  =>
  (retract ?f)
  (modify ?f1 (preposition  ?prep_id))
