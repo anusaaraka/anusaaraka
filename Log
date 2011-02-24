@@ -1802,7 +1802,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 23. Updated Log.
 
 
-23-02-11
+24-02-11
 --------
  1. sd_pada.clp
               Removed  : 'prep_pada_conj' rule and merged it in 'add_single_prep'
@@ -1810,5 +1810,33 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
               Modified : stnford_relations.lex , run_stanford-parser.sh run_stanford.sh , sd_category.py
               Removed  : run_category.sh
               Updated  : README of stanford-parser.
- 3. Updated changes_in_databases 
- 4. Updated Log.
+  3. Modified print.c  and link-parser.c to modify the file name  "link_word_cat.txt" as linkid_cat.txt and
+     change the fact name "linkid-word-node_cat"  as "linkid-node_cat" and modified the code accordingly.
+  4. combining_apostrophe.clp
+        Removed  : rm_sqr_brkt_from_cat,  cat_rule_ys_yp , cat_rule  and cat_rule1
+        Modified : end
+  5. link_category.clp
+       Modified the fact "linkid-word-node_cat" as "linkid-node_cat" and modified the rules accordingly
+       Modified : gerund_rule, pronoun_rule_first_cap, apos_pronoun_rule , apos_noun and apos_PropN_rule
+       Removed  : handling_cat_for_punctuations , PropN_rule_with_DG_Cs, PropN_rule_with_DG ,PropN_rule_with_DG_ER
+                  and default_rule
+  6. Modified the fact "linkid-word-node_cat" as "linkid-node_cat" in  cat_rule.clp and link_relation_rules.clp
+  7. parser_id_mapping.clp
+       Removed  : map-catid
+       Modified : map_no_comp_link_found and end rules
+  8. Removed "tam8" rule in hindi_tam_rules.clp
+  9. Modified verb_chunk.clp to use "parserid-word" fact instead of "linkid-word-node_cat" to get word info
+  10. Modified run_parser_lwg_rules.bat to load "linkid_word.dat" instead of "link_word_cat_tmp1.dat"
+  11. run_modules_link.bat
+       i.   combining_apostrophe module
+                Removed loading linkid_cat_tmp.dat file  and  generating linkid_cat_tmp1.dat file
+       ii.  link_category module  :   loaded  linkid_cat_tmp.dat instead of linkid_cat_tmp1.dat
+       iii. loaded  linkid_cat.dat instead of link_word_cat_tmp1.dat in the foll modules
+              cat_rule , link_relation_rules  and  load_lwg_rules module
+       iv.  parser_id_mapping : Removed loading linkid_cat_tmp1.dat file and generating  link_word_cat.dat file
+        v.  hindi_tam_rules  module : Removed loading link_word_cat.dat and link_relation_info.dat files
+  12. Added dummy fact "kriyA-throughout_saMbanXI" in pada_ids.clp
+  13. Modified  Anusaaraka_link.sh and Anusaaraka.sh to generate "linkid_cat_tmp.dat" instead of "linkid_word_cat.dat"
+  14. Modified but.clp in WSD
+  15. Updated changes_in_databases 
+  16. Updated Log.

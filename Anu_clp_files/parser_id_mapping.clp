@@ -12,7 +12,6 @@
  (parserid-wordid )
  (id-cat)
  (parser_id-cat_coarse)
- (linkid-word-node_cat)
  (relation-parser_ids)
  (link_name-link_lnode-link_rnode)
  (parser_id-root)
@@ -34,7 +33,6 @@
  (defglobal ?*lwg-file* = lwg_fp)
  (defglobal ?*rel-file* = file)
  (defglobal ?*rel-file1* = file1)
- (defglobal ?*link_rel-file* = link_fp)
  (defglobal ?*l_rel-file* = l_rel_fp)
 
  (deffunction string_to_integer (?parser_id); [Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
@@ -149,14 +147,6 @@
        (printout ?*rel-file* "(conjunction-components  "(implode$ $?ids)")" crlf)
        (printout ?*rel-file1* "(conjunction-components  "(implode$ $?ids)")"crlf)
  )
- ;================================   RULES FOR MAPPING LINK CATEGORY =================================================
- (defrule map-catid
- (declare (salience 900))
- (linkid-word-node_cat   ?p_id ?lword  ?lcat)
- (parserid-wordid  ?p_id ?id)
- =>
-	(printout ?*link_rel-file* "(id-word-node_cat " ?id " "?lword " "?lcat ")"crlf)
- )
  ;================================   RULES FOR MAPPING LINK NODES =================================================
  (defrule map-vb_chunk
  (declare (salience 900))
@@ -179,7 +169,6 @@
  (declare (salience 900))
  (No complete linkages found)
  =>
-	(printout ?*link_rel-file* "(No complete linkages found)"crlf)
 	(printout ?*l_rel-file* "(No complete linkages found)" crlf)
         (printout ?*rel-file1* "(No complete linkages found)"crlf)
  )
@@ -312,9 +301,8 @@
 	(close ?*lwg-file*)
 	(close ?*rel-file*)
 	(close ?*rel-file1*)
-	(close ?*link_rel-file*)
 	(close ?*l_rel-file*) 
 	(close ?*id_expr-file*)
 	(close ?*mng_dcd-file*)
  )
-	 ;-------------------------------------------------------------------------------------------------------------------
+ ;-------------------------------------------------------------------------------------------------------------------

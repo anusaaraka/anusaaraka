@@ -3,7 +3,7 @@
  (deffacts link_cat_info
  (linkid-word)
  (parserid-wordid)
- (linkid-word-node_cat)
+ (linkid-node_cat)
  (link_name-link_expansion)
  (link_name-link_lnode-link_rnode)
  (id-word_cap_info)
@@ -14,6 +14,7 @@
 ; Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
 
+ ;----------------------------------------------------------------------------------------------------------------
  ; Generates control fact for deciding category
  (defrule generate_control_fact
  (declare (salience 300))
@@ -22,28 +23,14 @@
  	(assert (category_to_be_decided ?pid))
  )
  ;----------------------------------------------------------------------------------------------------------------
-  ;Please do accept the same; bless the Anusaaraka project to make speedy progress.
- (defrule handling_cat_for_punctuations
- (declare (salience 500))
- (linkid-word-node_cat ?pid ?word  ?cat)
- ?f0<-(category_to_be_decided ?pid)
- (test (or (eq ?word "\"")(eq ?word "?")(eq ?word "(")(eq ?word ")")(eq ?word ";")))
- =>
-       (retract ?f0)
-       (if  (eq ?word "\"") then
-              (printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "  \"\\"  ?word"\" "?cat")" crlf)
-       else
-       (printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "   \"" ?word"\"  "?cat ")"crlf))
- )
- ;----------------------------------------------------------------------------------------------------------------
  ;if link category is g then take it as gerund
  (defrule gerund_rule
  (declare (salience 250))
- (linkid-word-node_cat ?pid ?word  g)
+ (linkid-node_cat ?pid  verbal_noun)
  ?f0<-(category_to_be_decided ?pid)
  =>
  	(retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "  " ?word"  verbal_noun)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?pid "    verbal_noun)" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
  ; The game of life is played for winning  (M g p)
@@ -55,7 +42,7 @@
   ?f0<-(category_to_be_decided ?r_node)
   =>
         (retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?r_node "  " ?rword"  verbal_noun)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?r_node "    verbal_noun)" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
   ;;We sat and watched the sun setting .
@@ -66,7 +53,7 @@
   ?f0<-(category_to_be_decided ?r_node)
   =>
         (retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?r_node "  " ?rword"  verb)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?r_node "   verb)" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
  ; if S link then take left node as noun/pronoun 
@@ -79,7 +66,7 @@
  (test (not (member$ I $?ids)) )
  =>
  	(retract ?f0)
-        (assert (linkid-word-node_cat ?sl_node ?lword noun/pronoun))
+        (assert (linkid-node_cat ?sl_node  noun/pronoun))
  )
  ;----------------------------------------------------------------------------------------------------------------
  ;if SI link then take right node as noun/pronoun
@@ -92,7 +79,7 @@
  (test (or (member$ I $?ids)(member$ J $?ids )))
  =>
         (retract ?f0)
-        (assert (linkid-word-node_cat ?sr_node ?rword noun/pronoun))
+        (assert (linkid-node_cat ?sr_node  noun/pronoun))
  )
  ;----------------------------------------------------------------------------------------------------------------
  ;Rama is a good boy.
@@ -105,7 +92,7 @@
  ?f0<-(category_to_be_decided ?r_node)
  =>
         (retract ?f0)
-  	(assert (linkid-word-node_cat ?r_node ?rword noun/pronoun))
+  	(assert (linkid-node_cat ?r_node  noun/pronoun))
  )
  ;----------------------------------------------------------------------------------------------------------------
  ;This is a sample sentence for Anusaraka.
@@ -118,7 +105,7 @@
  ?f0<-(category_to_be_decided ?l_node)
  =>
 	(retract ?f0 )
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?l_node "  " ?lword"  noun)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?l_node "    noun)" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
  ;she is sleeping.
@@ -135,8 +122,8 @@
  ?f0<-(category_to_be_decided ?Pr_node)
  =>
  	(retract ?f0 ?f1)
-	(printout ?*link_cat-file* "(linkid-word-node_cat  " ?sr_node "  "?sword "  verb)" crlf)
-	(printout ?*link_cat-file* "(linkid-word-node_cat  " ?Pr_node "  "?pword "  verb)" crlf)
+	(printout ?*link_cat-file* "(linkid-node_cat  " ?sr_node "    verb)" crlf)
+	(printout ?*link_cat-file* "(linkid-node_cat  " ?Pr_node "    verb)" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
  ;Teddy will go home and study. Added : (16-02-11)
@@ -152,8 +139,8 @@
  ?f0<-(category_to_be_decided ?v1r_node)
  =>
         (retract ?f0 ?f1)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?vl_node "  "?vword "  verb)" crlf)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?v1r_node "  "?v1word "  verb)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?vl_node "    verb)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?v1r_node "   verb)" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
  (defrule verb_rule_with_S_link
@@ -165,7 +152,7 @@
  (test (not (member$ I $?ids)) )
  =>
 	(retract ?f0) 
-   	(printout ?*link_cat-file* "(linkid-word-node_cat  " ?sr_node "  "?rword "  verb)" crlf)
+   	(printout ?*link_cat-file* "(linkid-node_cat  " ?sr_node "   verb)" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
   (defrule verb_rule_with_SI_link
@@ -177,7 +164,7 @@
   (test (member$ I $?ids) )
   =>
         (retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?sl_node "  "?lword "  verb)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?sl_node "   verb)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ;I will keep on trying .
@@ -190,7 +177,7 @@
   ?f1<-(category_to_be_decided ?r_node)
   =>
          (retract ?f1 )
- 	(printout ?*link_cat-file* "(linkid-word-node_cat  " ?r_node "  "?rword "  verb)" crlf)
+ 	(printout ?*link_cat-file* "(linkid-node_cat  " ?r_node "   verb)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ;Do not waste Electricity. 
@@ -202,7 +189,7 @@
   ?f0<-(category_to_be_decided ?r_node)
   =>
         (retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?r_node "  "?rword "  verb)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?r_node "   verb)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
    ;He may drink milk or eat apples.
@@ -214,7 +201,7 @@
   ?f0<-(category_to_be_decided ?Ir_node)
   =>
         (retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?Ir_node "  "?rword "  verb)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?Ir_node "   verb)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ;Coming as it does from Chaitanya's mouth , it surprises me .
@@ -226,7 +213,7 @@
   ?f0<-(category_to_be_decided ?Il_node)
   =>
         (retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?Il_node "  "?lword "  verb)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?Il_node "   verb)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ;Rama is a good boy. Against my better judgment I gave him the job
@@ -237,7 +224,7 @@
   ?f0<-(category_to_be_decided ?l_node)
   =>
 	(retract ?f0)
-  	(printout ?*link_cat-file* "(linkid-word-node_cat  " ?l_node" "?lword "  adjective)"crlf)
+  	(printout ?*link_cat-file* "(linkid-node_cat  " ?l_node"   adjective)"crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ;It is easier to ignore the problem than to solve it.
@@ -250,7 +237,7 @@
   ?f0<-(category_to_be_decided ?r_node)
   =>
         (retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?r_node " "?rword "  adjective)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?r_node "   adjective)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ; The trial is because he is extremely famous. 
@@ -262,7 +249,7 @@
   ?f0<-(category_to_be_decided ?l_node)
   =>
         (retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?l_node "  "?lword "  adverb)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?l_node "    adverb)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ; She works very carefully .
@@ -273,7 +260,7 @@
   ?f0<-(category_to_be_decided ?r_node)
   =>
         (retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?r_node "  "?rword "  adverb)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?r_node "    adverb)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ; Jhon's book is on the table . (YS)
@@ -288,7 +275,7 @@
   =>
         (retract ?f0)
         (bind ?id (string_to_integer (sub-string 1 (- (length ?l_node) 2) ?l_node)))
-       	(assert (apos_linkid-word-node_cat apos ?id ?lword noun/pronoun))
+       	(assert (apos_linkid-node_cat apos ?id  noun/pronoun))
   )
   ;----------------------------------------------------------------------------------------------------------------
   ;Rama is a good boy.
@@ -300,7 +287,7 @@
   ?f0<-(category_to_be_decided ?l_node)
   =>
         (retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?l_node "  "?lword "  determiner)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?l_node "   determiner)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ;This is a sample sentence for Anusaraka. 
@@ -314,8 +301,8 @@
   ?f1<-(category_to_be_decided ?r_node)
   =>
         (retract ?f0 ?f1)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?l_node "  "?lword "  preposition)" crlf)
-        (assert (linkid-word-node_cat ?r_node ?rword noun/pronoun))
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?l_node "   preposition)" crlf)
+        (assert (linkid-node_cat ?r_node  noun/pronoun))
   )
   ;----------------------------------------------------------------------------------------------------------------
   ; I saw her sitting in the garden.
@@ -327,7 +314,7 @@
   ?f1<-(category_to_be_decided ?l_node)
   =>
         (retract ?f1)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?l_node "  "?lword "  verb)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?l_node "   verb)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ;May I go outside. I do not go out as much now . I saw her sitting in the garden.
@@ -339,7 +326,7 @@
   ?f1<-(category_to_be_decided ?r_node)
   =>
         (retract ?f1)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?r_node "  "?rword "  preposition)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?r_node "    preposition)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ; John Stuart Mill is an important author
@@ -350,7 +337,7 @@
   ?f1<-(category_to_be_decided ?l_node)
   =>
     	(retract ?f1 )
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?l_node "  "?lword "  PropN)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?l_node "   PropN)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ;This is my friend Bob
@@ -361,7 +348,7 @@
   ?f0<-(category_to_be_decided ?r_node)
   =>
         (retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?r_node "  "?rword "  PropN)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?r_node "   PropN)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ;This is my friend Bob
@@ -372,64 +359,7 @@
   ?f0<-(category_to_be_decided ?l_node)
   =>
         (retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?l_node "  "?lword "  noun)" crlf)
-  )
-  ;----------------------------------------------------------------------------------------------------------------
-  ;The better it is, the more people will use it.
-  (defrule PropN_rule_with_DG_ER
-  (declare (salience 100))
-  (link_name-link_lnode-link_rnode DG ?dl_node ?dr_node)
-  (link_name-link_lnode-link_rnode ER ?el_node ?er_node)
-  (parserid-word ?dl_node ?dlword)
-  (parserid-word ?dr_node ?drword)
-  ?f0<-(category_to_be_decided ?dr_node)
-  ?f1<-(category_to_be_decided ?dl_node)
-  =>
-        (retract ?f1)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?dl_node "  "?dlword "  determiner)" crlf)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?dr_node "  "?drword "  adjective)" crlf)
-  )
-  ;----------------------------------------------------------------------------------------------------------------
-  ;I left the moment I saw him
-  (defrule PropN_rule_with_DG_Cs
-  (declare (salience 100))
-  (link_name-link_lnode-link_rnode DG ?dl_node ?dr_node)
-  (link_name-link_lnode-link_rnode Cs ?el_node ?er_node)
-  (parserid-word ?dl_node ?dlword)
-  (parserid-word ?dr_node ?drword)
-  ?f0<-(category_to_be_decided ?dr_node)
-  ?f1<-(category_to_be_decided ?dl_node)
-  =>
-        (retract ?f1)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?dl_node "  "?dlword "  determiner)" crlf)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?dr_node "  "?drword "  noun)" crlf)
-  )
-  ;----------------------------------------------------------------------------------------------------------------  
-  ;The Emir of Kuwait died
-  (defrule PropN_rule_with_DG
-  (declare (salience 50))
-  (link_name-link_lnode-link_rnode DG ?dl_node ?dr_node)
-  (parserid-word ?dl_node ?dlword)
-  (parserid-word ?dr_node ?drword)
-  ?f0<-(category_to_be_decided ?dr_node)
-  ?f1<-(category_to_be_decided ?dl_node)
-  =>
-        (retract ?f1)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?dl_node "  "?dlword "  determiner)" crlf)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?dr_node "  "?drword "  PropN)" crlf)
-  )
-  ;---------------------------------------------------------------------------------------------------------------- 
-  (defrule default_rule
-  (declare (salience 40))
-  (link_name-link_lnode-link_rnode ? ?l_node ?r_node)
-  (parserid-word ?r_node ?rword)
-  (parserid-word ?l_node ?lword)
-  ?f0<-(category_to_be_decided ?r_node)
-  ?f1<-(category_to_be_decided ?l_node)
-  =>
-        (retract ?f0 ?f1)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?r_node "  "?rword "  -)" crlf)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?l_node "  "?lword "  -)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?l_node "    noun)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   (defrule default_rnode_rule
@@ -439,7 +369,7 @@
   ?f0<-(category_to_be_decided ?r_node) 
   =>
  	(retract ?f0 )
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?r_node "  "?rword "  -)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?r_node "    -)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   (defrule default_lnode_rule
@@ -449,76 +379,75 @@
   ?f0<-(category_to_be_decided ?l_node)
   =>
         (retract ?f0 )
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?l_node "  "?lword "  -)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?l_node "    -)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ; if category is noun/pronoun and the first letter is capital then modify category as PropN
   ; Jane is soon coming . The Danes are nice people.
   (defrule pronoun_rule_first_cap
   (declare (salience 10))
-  ?f0<-(linkid-word-node_cat ?pid ?lword noun/pronoun)
+  ?f0<-(linkid-node_cat ?pid noun/pronoun)
   (parserid-wordid  ?pid ?id)
+  (parserid-word ?pid ?lword)
   (id-word_cap_info ?id first_cap)
   (id-original_word ?wid ?word)
   (test (eq ?lword ?word))
   =>
   	(retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "  "?lword"   PropN)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?pid "    PropN)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ; if category is noun/pronoun and if word is he|she|they|this|we|all|I|it|you then modify category as pronoun
   ; How many people did you see
   (defrule pronoun_rule
   (declare (salience 20))
-  ?f0<-(linkid-word-node_cat ?pid ? noun/pronoun)
+  ?f0<-(linkid-node_cat ?pid  noun/pronoun)
   (parserid-word ?pid ?lword&he|she|they|this|we|all|I|it|you|me|her|him|us)
   =>
                (retract ?f0)
-               (printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "  "?lword"  pronoun)" crlf)
+               (printout ?*link_cat-file* "(linkid-node_cat  " ?pid "    pronoun)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ; if category is noun/pronoun and the above cases fail then modify category as noun
   (defrule pronoun_rule1
   (declare (salience 5))
-  ?f0<-(linkid-word-node_cat ?pid ? noun/pronoun)
- ; (parserid-word ?pid ?lword)
+  ?f0<-(linkid-node_cat ?pid  noun/pronoun)
   (parserid-word ?pid ?lword&:(not (numberp ?lword)))
   =>
                 (retract ?f0)
-                (printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "  "?lword"  noun)" crlf)
+                (printout ?*link_cat-file* "(linkid-node_cat  " ?pid "    noun)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   (defrule apos_pronoun_rule
   (declare (salience 20))
-  ?f0<-(apos_linkid-word-node_cat apos ?id ?lword noun/pronoun)
+  ?f0<-(apos_linkid-node_cat apos ?id  noun/pronoun)
+  (parserid-wordid ?pid ?id)
   (parserid-word ?pid ?lword&he|she|they|this|we|all|I|it|you|her|him|us)
-  (test (eq (string_to_integer (sub-string 1 (- (length ?pid) 2) ?pid)) ?id))
   =>
 	(retract ?f0)         
-	(printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "  "?lword"  pronoun)" crlf)
+	(printout ?*link_cat-file* "(linkid-node_cat  " ?pid "   pronoun)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ;John's book is given to John's sister.
   (defrule apos_PropN_rule
   (declare (salience 10)) 
-  ?f0<-(apos_linkid-word-node_cat apos ?id ?lword noun/pronoun)	
-  (parserid-wordid  ?pid ?wid)
-  (id-word_cap_info ?wid first_cap)
-  (id-original_word ?wid ?word)
-  (test (eq (string_to_integer (sub-string 1 (- (length ?pid) 2) ?pid)) ?id))
+  ?f0<-(apos_linkid-node_cat apos ?id noun/pronoun)	
+  (parserid-wordid  ?pid ?id)
+  (parserid-word ?pid  ?lword)
+  (id-word_cap_info ?id first_cap)
+  (id-original_word ?id ?word)
   (test (eq ?lword ?word))
-   =>
+  =>
   	(retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "  "?lword"   PropN)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?pid "    PropN)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   (defrule apos_noun 
-  ?f0<-(apos_linkid-word-node_cat apos ?id ?lword noun/pronoun)
-  (parserid-word ?pid ?lword)
-  (test (eq (string_to_integer (sub-string 1 (- (length ?pid) 2) ?pid)) ?id))
+  ?f0<-(apos_linkid-node_cat apos ?id  noun/pronoun)
+  (parserid-wordid  ?pid ?id)
   =>
   	(retract ?f0)
-        (printout ?*link_cat-file* "(linkid-word-node_cat  " ?pid "  "?lword"  noun)" crlf)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?pid "   noun)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ; No complete linkage

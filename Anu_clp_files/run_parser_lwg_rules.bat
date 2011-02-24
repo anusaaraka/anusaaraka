@@ -6,7 +6,7 @@
  (load-facts "root_tmp.dat")
  (load-facts "morph.dat")
  (load-facts "preferred_morph_tmp.dat")
- (load-facts "link_word_cat_tmp1.dat")
+ (load-facts "linkid_word.dat")
  (open "lwg_ids.dat" lwg_fp "a")
  (open "lwg_debug.dat" lwg_db_fp "a")
  (run)

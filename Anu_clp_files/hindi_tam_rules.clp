@@ -6,9 +6,6 @@
  (verb_type-verb-causative_verb-tam)
  (verb_type-verb-kriyA_mUla-tam)
  (root-verbchunk-tam-chunkids)
- (link_name-lnode-rnode)
- (id-word-node_cat)
- (No complete linkages found)
 )
 
 (deftemplate tam_tmp_info (slot head_id (default 0))(slot eng_tam (default 0))(slot hin_tam (default 0))(slot subject_vibhakti (default 0))(slot preceding_part_of_the_verb (default 0)))
@@ -88,17 +85,6 @@
 (root-verbchunk-tam-chunkids  ?root  ?orig-tam  ed_en  $?ids ?head_id)
 =>
 (printout  ?*Hin_tam_fp*  "(tam_tmp_info  (head_id  "?head_id")  (eng_tam ed_en) (hin_tam  yA_[huA])  )" crlf)
-)
-;-------------------------------------------------------------------------------------------------------------------------
-;I do not go out as much now .
-(defrule tam8
-(declare (salience 100))
-(link_name-lnode-rnode Wi ?lnode ?rnode)
-(id-word-node_cat ?rnode do v)
-?f0<-(root-verbchunk-tam-chunkids  ?root  ?orig-tam  do_not_0 ?rnode $?ids ?head_id)
-=>
-(retract ?f0)
-(printout  ?*Hin_tam_fp*  "(tam_tmp_info  (head_id  "?head_id")  (eng_tam do_not_0) (preceding_part_of_the_verb  mawa) (hin_tam 0) )" crlf)
 )
 ;-------------------------------------------------------------------------------------------------------------------------
 (defrule tam9

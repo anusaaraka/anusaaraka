@@ -261,7 +261,7 @@
 ?f0<- (link_name-link_lnode-link_rnode Jp ?y ?head)
 (link_name-link_lnode-link_rnode ALx ?a ?b)
 (root-verbchunk-tam-parser_chunkids $?c ?kriyA)
-(linkid-word-node_cat ?x ?viBakwi ?)
+(parserid-word ?x ?viBakwi )
 =>
 (retract ?f0 ?f1)
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?head")"crlf)	
@@ -273,7 +273,7 @@
 (declare (salience 400))
 (link_name-link_lnode-link_rnode Pp ?kriyA ?x)
 (link_name-link_lnode-link_rnode J|Jp|Js ?x ?y)
-(linkid-word-node_cat ?x ?viBakwi ?)
+(parserid-word ?x ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?y")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	prep-idiom	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?y")"crlf)	
@@ -286,7 +286,7 @@
 (link_name-link_lnode-link_rnode FM  ?x ?y)
 (link_name-link_expansion    ?J   J  $?vars)
 (link_name-link_lnode-link_rnode ?J  ?y ?head)
-(linkid-word-node_cat ?y ?viBakwi ?)
+(parserid-word ?y ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?head")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	prep_FM	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?head")"crlf)	
@@ -302,7 +302,7 @@
 (link_name-link_lnode-link_rnode ?ID  ?viSeRya ?y)
 (link_name-link_expansion    ?J   J  $?vars)
 (link_name-link_lnode-link_rnode ?J  ?y ?head)
-(linkid-word-node_cat ?y ?viBakwi ?)
+(parserid-word ?y ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	viSeRya-"?viBakwi"_saMbanXI	"?viSeRya"	"?head")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	prep_FM_1	viSeRya-"?viBakwi"_saMbanXI	"?viSeRya"	"?head")"crlf)	
@@ -317,7 +317,7 @@
 (link_name-link_lnode-link_rnode ?ID  ?viSeRya ?y)
 (link_name-link_expansion    ?J   J  $?vars)
 (link_name-link_lnode-link_rnode ?J  ?y ?head)
-(linkid-word-node_cat ?y ?viBakwi ?)
+(parserid-word ?y ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	viSeRya-"?viBakwi"_saMbanXI	"?viSeRya"	"?head")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	prep_FM_2	viSeRya-"?viBakwi"_saMbanXI	"?viSeRya"	"?head")"crlf)	
@@ -327,12 +327,11 @@
 (defrule subj_MVp
 (declare (salience 200))
 (link_name-link_lnode-link_rnode MVp  ?v ?s-s)
-;(not (link_name-link_lnode-link_rnode FM|J|Js|Jp|FL|IN|ON|Mgp|PF  ?s-s ?y)) ;Her family founded the college in 1895. she has no objection in staying overnight. I wonder where John is?
 (not (link_name-link_lnode-link_rnode FM|J|Js|Jp|Ju|FL|IN|ON|Mgp|PF  ?s-s ?y)) ;Her family founded the college in 1895. she has no objection in staying overnight. I wonder where John is?
 (not (link_name-link_lnode-link_rnode Yd ?a ?s-s));We swam three miles away.
 (link_name-link_expansion    ?S  S ~F $?vari) ;ex. 4 this "~F" condition . There is a dog and a cat here .
 (link_name-link_lnode-link_rnode ?S  ?s ?v)
-(not (linkid-word-node_cat ?s-s  aboard|about|above|across|after|against|along|alongside|amid|amidst|among|amongst|around|as|aside|astride|at|athwart|atop|barring|before|behind|below|beneath|beside|besides|between|beyond|but|by|circa|concerning|despite|down|during|except|excluding|failing|following|for|from|given|in|including|inside|into|like|mid|minus|near|next|notwithstanding|of|off|on|onto|opposite|out|outside|over|pace|past|per|plus|qua|regarding|round|save|since|than|through|throughout|till|times|to|toward|towards|under|underneath|unlike|until|up|upon|versus|via|with|within|without|worth ?));The planet that we live on is of medium size.
+(not (parserid-word ?s-s  aboard|about|above|across|after|against|along|alongside|amid|amidst|among|amongst|around|as|aside|astride|at|athwart|atop|barring|before|behind|below|beneath|beside|besides|between|beyond|but|by|circa|concerning|despite|down|during|except|excluding|failing|following|for|from|given|in|including|inside|into|like|mid|minus|near|next|notwithstanding|of|off|on|onto|opposite|out|outside|over|pace|past|per|plus|qua|regarding|round|save|since|than|through|throughout|till|times|to|toward|towards|under|underneath|unlike|until|up|upon|versus|via|with|within|without|worth ));The planet that we live on is of medium size.
 =>
 (printout	?*fp*	"(relation-parser_ids	subject-subject_samAnAXikaraNa	"?s"	"?s-s")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	subj_MVp	subject-subject_samAnAXikaraNa	"?s"	"?s-s"	)"crlf)	
@@ -346,7 +345,7 @@
 ?f0<- (link_name-link_lnode-link_rnode Jp ?y ?head)
 (link_name-link_lnode-link_rnode ALx ?a ?b)
 (root-verbchunk-tam-parser_chunkids $?c ?kriyA)
-(linkid-word-node_cat ?x ?viBakwi ?)
+(parserid-word ?x ?viBakwi )
 =>
 (retract ?f0 ?f1)
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?head")"crlf)	
@@ -412,7 +411,7 @@
 (link_name-link_expansion    ?lname    O x)
 (link_name-link_lnode-link_rnode  ?lname ?let ?obj)
 (link_name-link_lnode-link_rnode  I  ?let  ?kriyyA)
-(linkid-word-node_cat ?let let ?)
+(parserid-word ?let let )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-object	"?kriyA"	"?obj")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule_O_I_for_let	kriyA-object	"?kriyA"	"?obj")"crlf)	
@@ -450,9 +449,7 @@
 (and (link_name-link_expansion    ?lname    O ~N $?v) (link_name-link_expansion    ?lname    O ~F $?v)  (link_name-link_expansion    ?lname    O $?vars ~t) (link_name-link_expansion    ?lname    O $?vars ~c));This "~t" condition is to restrict kriyA-object relation between 'is' and 'doctor' in "He is a doctor".
 (or (link_name-link_lnode-link_rnode  ?lname  ?x ?y)(link_name-link_lnode-link_rnode  O  ?x ?y))
 ;(link_name-link_expansion    ?S_link    S ~F $?) ;this condition is to restrict kriyA-object relation in "are cats" type of groups in the sentences like: There are cats in the garden.
-;(link_name-link_lnode-link_rnode    ?S_link    ?a ?x)
-;(test (neq $?vars F))
-(linkid-word-node_cat ?x ~let ?) ;Added by Manju Ex : Let us go to the market
+(parserid-word ?x ~let ) ;Added by Manju Ex : Let us go to the market
 (not (or (kriyA-object_rel_has_been_deceded_by_'kriyA-object_and'_rule ?x) (kriyA-object_2_rel_has_been_deceded_by_'kriyA-object_2_and'_rule ?x)));I knocked my cup and saucer and spilled the coffee .
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-object	"?x"	"?y")"crlf)	
@@ -465,7 +462,7 @@
 (declare (salience 715))
 ?f0<- (link_name-link_expansion    ?O    O $?vars )
 (link_name-link_lnode-link_rnode  ?O  ?x ?y)
-(linkid-word-node_cat ?y  bit|some  ?)
+(parserid-word ?y  bit|some )
 (link_name-link_lnode-link_rnode  Mp  ?y ?prep)
 (link_name-link_expansion    ?J    J $?var )
 (link_name-link_lnode-link_rnode  ?J  ?prep ?object)
@@ -521,7 +518,6 @@
 (defrule  kriyA-obj
 (declare (salience 200))
 ?f0<- (link_name-link_lnode-link_rnode ALx ?x ?y)
-;?f1<- (link_name-link_lnode-link_rnode Jp ?x ?z)
 ?f1<- (link_name-link_lnode-link_rnode Jp|Ju ?x ?z)
 (link_name-link_expansion ?O O $?var)
 ?f2<- (link_name-link_lnode-link_rnode ?O ?kriyA ?s)
@@ -535,7 +531,7 @@
 (defrule rule36
 (link_name-link_lnode-link_rnode AM ?a ?b)
 (link_name-link_lnode-link_rnode Oy ?c ?b)
-(linkid-word-node_cat ?b much ?)
+(parserid-word ?b much )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-object	"?c"	"?a","?b")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule36	kriyA-object	"?c"	"?a","?b")"crlf)	
@@ -590,7 +586,7 @@
 (link_name-link_lnode-link_rnode MVp ?c ?d)
 (link_name-link_expansion    ?J J $?va)
 (link_name-link_lnode-link_rnode ?J ?d ?e)
-(linkid-word-node_cat ?d ?viBakwi ?)
+(parserid-word ?d ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?b"	"?e")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	kqxanwa_kriyA-prep	kriyA-"?viBakwi"_saMbanXI	"?b"	"?e")"crlf)	
@@ -653,7 +649,7 @@
 ;----------------------------------------------------------------------------------------------------------------
 (defrule rule17
 (link_name-link_lnode-link_rnode PF ?x ?y)
-(linkid-word-node_cat ?x when ?)
+(parserid-word ?x when )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-kAlavAcI	"?y"	"?x")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule17	kriyA-kAlavAcI	"?y"	"?x")"crlf)	
@@ -662,7 +658,7 @@
 ;----------------------------------------------------------------------------------------------------------------
 (defrule where_1
 (link_name-link_lnode-link_rnode PF|WR ?x ?y)
-(linkid-word-node_cat ?x where ?)
+(parserid-word ?x where )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-aXikaraNavAcI_avyaya	"?y"	"?x")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	where_1	kriyA-aXikaraNavAcI_avyaya	"?y"	"?x")"crlf)	
@@ -763,7 +759,7 @@
 (link_name-link_lnode-link_rnode Q ?a ?b)
 (root-verbchunk-tam-parser_chunkids ? ? $?chunks ?kriyA)
 (test (member$ ?b $?chunks))
-(linkid-word-node_cat ?a when ?)
+(parserid-word ?a when )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-kAlavAcI	"?kriyA"	"?a")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule83	kriyA-kAlavAcI	"?kriyA"	"?a")"crlf)	
@@ -773,7 +769,7 @@
 (defrule MVs+Mv
 (link_name-link_lnode-link_rnode MVs ?a ?b)
 (link_name-link_lnode-link_rnode Mv  ?b ?c)
-(linkid-word-node_cat ?b when ?)
+(parserid-word ?b when )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-kAlavAcI	"?a"	"?b")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	MVs+Mv	kriyA-kAlavAcI	"?a"	"?b")"crlf)	
@@ -786,7 +782,7 @@
 (defrule where
 (link_name-link_lnode-link_rnode Q ?a ?b)
 (link_name-link_lnode-link_rnode I*d|I ?b ?c)
-(linkid-word-node_cat ?a where ?)
+(parserid-word ?a where )
 (not(link_name-link_lnode-link_rnode MVp ?c ?y)) ;Ex. 4 this condition: "Where did they come from?"
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-aXikaraNavAcI_avyaya	"?c"	"?a")"crlf)	
@@ -798,7 +794,7 @@
 (link_name-link_expansion    ?S S $?var)
 (link_name-link_lnode-link_rnode ?S ?a ?v)
 (link_name-link_lnode-link_rnode MVp ?v ?prep)
-(linkid-word-node_cat ?prep ?viBakwi ?)
+(parserid-word ?prep ?viBakwi )
 (link_name-link_lnode-link_rnode Cs  ?c ?a)
 (parser_id-root ?prep ?now)
 (not (parser_id-root ?prep again|later|here|there|somewhere|anywhere|everywhere|now|outside|longer))
@@ -865,7 +861,7 @@
 (link_name-link_expansion    ?D    D $?vars)
 (link_name-link_lnode-link_rnode  ?D  ?x ?y)
 (link_name-link_lnode-link_rnode  L|Lf|La  ?x ?z);ex. 4 'Lf': Can we open a second browser window?  
-(linkid-word-node_cat ?z ? adjective|-)
+(linkid-node_cat ?z adjective|-)
 =>
 (printout	?*fp*	"(relation-parser_ids	viSeRya-viSeRaNa	"?y"	"?z")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	L_viSeRya-viSeRaNa	viSeRya-viSeRaNa	"?y"	"?z")"crlf)	
@@ -909,7 +905,7 @@
 (defrule kriyA_vi_kala
 (link_name-link_lnode-link_rnode  MVa|MVs  ?x ?y)
 (link_name-link_lnode-link_rnode Yt ?z ?y)
-(linkid-word-node_cat ?y ?viBakwi ?)
+(parserid-word ?y ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?x"	"?z")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	kriyA_vi_kala	kriyA-"?viBakwi"_saMbanXI	"?x"	"?z")"crlf)	
@@ -921,7 +917,7 @@
 ;----------------------------------------------------------------------------------------------------------------
 (defrule kriyA_vi
 (link_name-link_lnode-link_rnode  MVl|MVb  ?x ?y)
-(not (linkid-word-node_cat ?y later|after ?));ex. I saw her again a year and a half later.
+(not (parserid-word ?y later|after ));ex. I saw her again a year and a half later.
 (not (kriyA-kriyA_viSeRaNa_rel_has_been_dcd_by_kriyA_vi_Pa_rule ?y))
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-kriyA_viSeRaNa	"?x"	"?y")"crlf)	
@@ -944,7 +940,7 @@
 (link_name-link_lnode-link_rnode  Q  ?x ?y)
 (link_name-link_expansion   ?I I $?vars)
 (link_name-link_lnode-link_rnode ?I ?y ?z)
-(linkid-word-node_cat ?x how ?)
+(parserid-word ?x how )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-kriyA_viSeRaNa	"?z"	"?x")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	kriyA_vi_1	kriyA-kriyA_viSeRaNa	"?z"	"?x")"crlf)	
@@ -955,7 +951,7 @@
 (link_name-link_lnode-link_rnode  Q  ?x ?y)
 (or (link_name-link_expansion   ?l P g $?vars)  (link_name-link_expansion   ?l I $?var)  (link_name-link_expansion   ?l P P $?va))
 (link_name-link_lnode-link_rnode ?l ?y ?z)
-(linkid-word-node_cat ?x why ?)
+(parserid-word ?x why )
 =>
 (printout       ?*fp*   "(relation-parser_ids      kriyA-wh_word_hewuvAcI    "?z"    "?x")"crlf)
 (printout       ?*rel_debug*    "(Rule-Rel-ids  wh_word_hewuvAcI      kriyA-wh_word_hewuvAcI    "?z"    "?x")"crlf)
@@ -974,8 +970,8 @@
 ;----------------------------------------------------------------------------------------------------------------
 (defrule kriyA_vi_vi
 (link_name-link_lnode-link_rnode  EEh  ?x ?y)
-(linkid-word-node_cat ?x how ?)
-(not (linkid-word-node_cat ?y much ?)) ;Ex. How much more efficient are they?
+(parserid-word ?x how )
+(not (parserid-word ?y much )) ;Ex. How much more efficient are they?
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka	"?y"	"?x")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	kriyA_vi_vi	kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka	"?y"	"?x")"crlf)	
@@ -1031,7 +1027,7 @@
 (link_name-link_expansion    ?EB   E B $?vars)
 (link_name-link_lnode-link_rnode ?EB ?x ?y)
 (root-verbchunk-tam-parser_chunkids  $?ids ?kri)
-(linkid-word-node_cat ?y ?word&~not ?) 
+(parserid-word ?y ?word&~not ) 
 (test (or (member$ ?x $?ids) (eq ?kri ?x)));ex.: There is still a ray of hope that the missing child will be found.
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-kriyA_viSeRaNa	"?kri"	"?y")"crlf)	
@@ -1093,7 +1089,7 @@
 (link_name-link_lnode-link_rnode MXpx ?c ?d)
 (link_name-link_expansion    ?J1    J $?var)
 (link_name-link_lnode-link_rnode  ?J1 ?d ?e)
-(linkid-word-node_cat ?d ?viBakwi ?)
+(parserid-word ?d ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?a"	"?e")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule_MXpx	kriyA-"?viBakwi"_saMbanXI	"?a"	"?e")"crlf)	
@@ -1129,7 +1125,7 @@
 ;----------------------------------------------------------------------------------------------------------------
 (defrule rule9
 (link_name-link_lnode-link_rnode Us ?i ?j)
-(linkid-word-node_cat ?i per ?)
+(parserid-word ?i per )
 =>
 (printout	?*fp*	"(relation-parser_ids	viSeRya-det_viSeRaNa	"?j"	"?i")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule9	viSeRya-det_viSeRaNa	"?j"	"?i")"crlf)	
@@ -1150,7 +1146,7 @@
 (declare (salience 535))
 (link_name-link_expansion    ?lname    D $?vars)
 ?f0<-(link_name-link_lnode-link_rnode  ?lname ?x ?y)
-(linkid-word-node_cat ?x  his|her|my|our|your|their|its  ?)
+(parserid-word ?x  his|her|my|our|your|their|its )
 =>
 (retract ?f0)
 (printout	?*fp*	"(relation-parser_ids	viSeRya-RaRTI_viSeRaNa	"?y"	"?x")"crlf)	
@@ -1161,7 +1157,7 @@
 (defrule RaRTI_saMbanXI_1
 (declare (salience 545))
 ?f0<-(link_name-link_lnode-link_rnode  DD ?x ?y)
-(linkid-word-node_cat ?x  his|her|my|our|your|their|its  ?)
+(parserid-word ?x  his|her|my|our|your|their|its  )
 (link_name-link_expansion    ?D   D $?var)
 (link_name-link_lnode-link_rnode  ?D ?y ?z)
 =>
@@ -1282,7 +1278,7 @@
 (defrule rule28
 (link_name-link_lnode-link_rnode MVp|Pp|MVx ?z ?x)
 (link_name-link_lnode-link_rnode Js|Jp|J|IN|ON|TI ?x ?y) ;"TI" is added for the ex. "Mr . John Smith , 66 years old , will succeed him as president."
-(linkid-word-node_cat ?x ?viBakwi ?)
+(parserid-word ?x ?viBakwi )
 (not (got_relation_for_MVp_link))
 (not (link_name-link_lnode-link_rnode Pg|Pgf|Paf ?a ?z)) 
 (not (link_name-link_lnode-link_rnode MF ?xx ?x));ex. 4 this: Many people were injured , some of them children. 
@@ -1299,7 +1295,7 @@
 (link_name-link_lnode-link_rnode Pa|Paf ?v ?x)
 (link_name-link_lnode-link_rnode MVp|Pp|MVx ?x ?y)
 (link_name-link_lnode-link_rnode Js|Jp|J|IN|ON|FM|FL ?y ?z)
-(linkid-word-node_cat ?y ?viBakwi ?)
+(parserid-word ?y ?viBakwi )
 =>
 (assert (kriyA-viBakwi_saMbanXI_rel_has_been_dcd_by_'Paf_MVp'_rule ?x))
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?v"	"?z")"crlf)	
@@ -1314,7 +1310,7 @@
 (link_name-link_lnode-link_rnode MF  ?a ?x)
 (link_name-link_expansion  ?ID   I D  $?vars)
 (link_name-link_lnode-link_rnode ?ID  ?prep ?x)
-(linkid-word-node_cat ?prep ?viBakwi ?)
+(parserid-word ?prep ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?kri"	"?y")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule_MF	kriyA-"?viBakwi"_saMbanXI	"?kri"	"?y")"crlf)	
@@ -1327,8 +1323,8 @@
 ?f0<- (link_name-link_lnode-link_rnode MVp ?y ?z)
 (link_name-link_expansion    ?J   J $?vars)
 (or(link_name-link_lnode-link_rnode ?J ?z ?a) (link_name-link_lnode-link_rnode IN ?z ?a)(link_name-link_lnode-link_rnode ON ?z ?a))
-(linkid-word-node_cat ?z ?viBakwi ?)
-(not (linkid-word-node_cat ?x ? adjective));It was cold there even in summer .
+(parserid-word ?z ?viBakwi )
+(not (linkid-node_cat ?x  adjective));It was cold there even in summer .
 =>
 (retract ?f0)
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?x"	"?a")"crlf)	
@@ -1501,7 +1497,7 @@
 (defrule rule56
 (link_name-link_lnode-link_rnode MG ?x ?y)
 (link_name-link_lnode-link_rnode JG ?y ?z)
-(linkid-word-node_cat ?y ?viBakwi ?)
+(parserid-word ?y ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	viSeRya-"?viBakwi"_saMbanXI	"?x"	"?z")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule56	viSeRya-"?viBakwi"_saMbanXI	"?x"	"?z")"crlf)	
@@ -1514,7 +1510,7 @@
 (link_name-link_lnode-link_rnode MVp ?vi_ya ?prep)
 (link_name-link_expansion    ?J J $?ver)
 (link_name-link_lnode-link_rnode ?J  ?prep ?vi_Na)
-(linkid-word-node_cat ?prep  ?viBakwi ?)
+(parserid-word ?prep  ?viBakwi )
 =>
 (assert (got_relation_for_MVp_link))
 (printout	?*fp*	"(relation-parser_ids	viSeRya-"?viBakwi"_saMbanXI	"?vi_ya"	"?vi_Na")"crlf)	
@@ -1528,7 +1524,7 @@
 (link_name-link_lnode-link_rnode MVp ?vi_ya ?prep)
 (link_name-link_expansion    ?J J $?ver)
 (link_name-link_lnode-link_rnode ?J  ?prep ?vi_Na)
-(linkid-word-node_cat ?prep  ?viBakwi ?)
+(parserid-word ?prep  ?viBakwi )
 =>
 (assert (got_relation_for_MVp_link))
 (printout	?*fp*	"(relation-parser_ids	viSeRya-"?viBakwi"_saMbanXI	"?vi_ya"	"?vi_Na")"crlf)	
@@ -1555,12 +1551,12 @@
 ;----------------------------------------------------------------------------------------------------------------
 (defrule dummy-viBakwi_saMbanXI
 (declare (salience 200))
-(linkid-word-node_cat ?prep  aboard|about|above|across|after|against|along|alongside|amid|amidst|among|amongst|around|as|aside|astride|at|athwart|atop|barring|before|behind|below|beneath|beside|besides|between|beyond|but|by|circa|concerning|despite|down|during|except|excluding|failing|following|for|from|given|in|including|inside|into|like|mid|minus|near|next|notwithstanding|of|off|on|onto|opposite|out|outside|over|pace|past|per|plus|qua|regarding|round|save|since|than|through|throughout|till|times|to|toward|towards|under|underneath|unlike|until|up|upon|versus|via|with|within|without|worth ?)
+(parserid-word ?prep  aboard|about|above|across|after|against|along|alongside|amid|amidst|among|amongst|around|as|aside|astride|at|athwart|atop|barring|before|behind|below|beneath|beside|besides|between|beyond|but|by|circa|concerning|despite|down|during|except|excluding|failing|following|for|from|given|in|including|inside|into|like|mid|minus|near|next|notwithstanding|of|off|on|onto|opposite|out|outside|over|pace|past|per|plus|qua|regarding|round|save|since|than|through|throughout|till|times|to|toward|towards|under|underneath|unlike|until|up|upon|versus|via|with|within|without|worth )
 (link_name-link_lnode-link_rnode Bp|Bs ?z ?prep)
 (link_name-link_expansion    ?lname1 R n $?vars1)
 (link_name-link_lnode-link_rnode ?lname1 ?z ?a)
 (link_name-link_lnode-link_rnode MVp ?kri ?prep)
-(linkid-word-node_cat ?prep ?viBakwi ?)
+(parserid-word ?prep ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?kri"	"10000")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	dummy-viBakwi_saMbanXI	kriyA-"?viBakwi"_saMbanXI	"?kri"	"10000")"crlf)	
@@ -1607,7 +1603,7 @@ else
 (defrule dummy_id
 (link_name-link_lnode-link_rnode  MVs  ?x ?y)
 (link_name-link_lnode-link_rnode  Mv   ?y ?z)
-(linkid-word-node_cat ?b when ?)
+(parserid-word ?b when )
 =>
 (printout	?*fp*	"(relation-parser_ids	wall_conjunction	1000)"	crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	dummy_id	wall_conjunction	1000)"	crlf)	
@@ -1626,7 +1622,7 @@ else
 ?f0 <-(link_name-link_lnode-link_rnode OF ?a ?b)
 (link_name-link_expansion  ?J  J $?var)
 (link_name-link_lnode-link_rnode ?J ?b ?c)
-(linkid-word-node_cat ?b ?viBakwi ?)
+(parserid-word ?b ?viBakwi )
 =>
 (retract ?f0);This condition is added to stop rule2, which shows kriyA_object relation
 (printout	?*fp*	"(relation-parser_ids	kqxanwa-"?viBakwi"_saMbanXI	"?a"	"?c")"crlf)	
@@ -1706,7 +1702,7 @@ else
 (link_name-link_lnode-link_rnode Pam ?kriyA ?s_s)
 (link_name-link_lnode-link_rnode MVp ?s_s ?prep)
 (link_name-link_lnode-link_rnode Wq ?a ?v_s)
-(linkid-word-node_cat ?prep ?viBakwi ?)
+(parserid-word ?prep ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?v_s")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	kriyA-prep_saMbanXI	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?v_s")"crlf)	
@@ -1787,7 +1783,7 @@ else
 ;----------------------------------------------------------------------------------------------------------------
 (defrule rule75
 (link_name-link_lnode-link_rnode LI ?x ?y)
-(linkid-word-node_cat ?y ?viBakwi ?)
+(parserid-word ?y ?viBakwi )
 (link_name-link_expansion ?J J $?vari)
 (link_name-link_lnode-link_rnode ?J ?y ?z)
 (link_name-link_expansion ?S S $?var)
@@ -1825,7 +1821,6 @@ else
 (root-verbchunk-tam-parser_chunkids ? ? ? $?chunk_ids ?kri)
 (link_name-link_expansion    ?lname   S ~F $?vars)
 (link_name-link_lnode-link_rnode ?lname  ?y  ?z)
-;(link_name-link_lnode-link_rnode Ost|Opt  ?kri ?x)
 (link_name-link_lnode-link_rnode Ost|Opt|Out  ?kri ?x)
 (not (subject-subject_samAnAXikaraNa_rel_has_been_deceded_by_'subject_samAnAXikaraNa_and'_rule))
 (not (subject-subject_samAnAXikaraNa_rel_has_been_deceded_by_'subject_samAnAXikaraNa_and_1'_rule ?x))
@@ -1859,7 +1854,7 @@ else
 (link_name-link_lnode-link_rnode Qd|Cs  ?x ?kri)
 (link_name-link_expansion  ?S S  $?var)
 (link_name-link_lnode-link_rnode ?S  ?kri ?sub)
-(linkid-word-node_cat ?x ?viBakwi ?)
+(parserid-word ?x ?viBakwi )
 (root-verbchunk-tam-parser_chunkids ? ? ? $?chunk_ids ?kriyA)
 (test (or (member$ ?kri $?chunk_ids)(eq ?kri ?kriyA)))
 =>
@@ -1876,7 +1871,7 @@ else
 (link_name-link_lnode-link_rnode Qd|Cs ?x ?sub)
 (link_name-link_expansion  ?S S  $?var)
 (link_name-link_lnode-link_rnode ?S ?sub  ?kriyA)
-(linkid-word-node_cat ?x ?viBakwi ?)
+(parserid-word ?x ?viBakwi )
 =>
 (retract ?f0 ?f1)
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?y")"crlf)	
@@ -1893,7 +1888,7 @@ else
 (link_name-link_lnode-link_rnode Qd|Cs ?x ?sub)
 (link_name-link_expansion  ?S S  $?vari)
 (link_name-link_lnode-link_rnode ?S ?sub  ?kriyA)
-(linkid-word-node_cat ?x ?viBakwi ?)
+(parserid-word ?x ?viBakwi )
 =>
 (retract ?f0 ?f1)
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?head")"crlf)	
@@ -1903,7 +1898,7 @@ else
 ;----------------------------------------------------------------------------------------------------------------
 (defrule rule87
 (link_name-link_lnode-link_rnode Zs|Zc ?x ?y)
-(linkid-word-node_cat ?x as ?)
+(parserid-word ?x as )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-kriyA_viSeRaNa	"?y"	"?x")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule87	kriyA-kriyA_viSeRaNa	"?y"	"?x")"crlf)	
@@ -1914,8 +1909,8 @@ else
 (link_name-link_lnode-link_rnode NIa ?a ?b)
 (link_name-link_lnode-link_rnode NId ?a ?c)
 (link_name-link_lnode-link_rnode NIc ?a ?d)
-(linkid-word-node_cat ?b ?word ?)
-(linkid-word-node_cat ?d ?word1 ?)
+(parserid-word ?b ?word )
+(parserid-word ?d ?word1)
 =>
 (printout	?*fp*	"(relation-parser_ids	"?word"	se	"?word1"	waka	"?b",	"?c",	"?d",	"?c")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule90	"?word"	se	"?word1"	waka	"?b",	"?c",	"?d",	"?c")"crlf)	
@@ -1953,7 +1948,7 @@ else
 (defrule rule95
 (declare (salience 4))
 (link_name-link_lnode-link_rnode EBm ?x ?y)
-(linkid-word-node_cat ?y not ?)
+(parserid-word ?y not )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-kriyA_niReXaka	"?x"	"?y")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule95	kriyA-kriyA_niReXaka	"?x"	"?y")"crlf)	
@@ -2031,7 +2026,7 @@ else
 (defrule MVp_QI
 (link_name-link_lnode-link_rnode QI ?x ?y)
 (link_name-link_lnode-link_rnode MVp	?z ?x)
-(linkid-word-node_cat ?x ?viBakwi ?)
+(parserid-word ?x ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?z"	"?y")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	MVp_QI	kriyA-"?viBakwi"_saMbanXI	"?z"	"?y")"crlf)	
@@ -2049,8 +2044,8 @@ else
 ;----------------------------------------------------------------------------------------------------------------
 (defrule rule110
 (link_name-link_lnode-link_rnode Jr ?x ?y)
-(linkid-word-node_cat ?x of ?)
-(linkid-word-node_cat ?y whom ?)
+(parserid-word ?x of )
+(parserid-word ?y whom)
 =>
 (printout	?*fp*	"(relation-parser_ids	nirXArya-nirXAraNa	"?x"	"?y")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule110	nirXArya-nirXAraNa	"?x"	"?y")"crlf)	
@@ -2084,7 +2079,7 @@ else
 ;----------------------------------------------------------------------------------------------------------------
 (defrule rule113
 (link_name-link_lnode-link_rnode AM ?a ?b)
-(linkid-word-node_cat ?b much ?)
+(parserid-word ?b much )
 =>
 (printout	?*fp*	"(relation-parser_ids	viSeRaNa-viSeRaka	"?b"	"?a")"crlf).	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule113	viSeRaNa-viSeRaka	"?b"	"?a")"crlf)	
@@ -2114,7 +2109,7 @@ else
 ;----------------------------------------------------------------------------------------------------------------
 (defrule rule121
 (link_name-link_lnode-link_rnode H ?a ?b)
-(linkid-word-node_cat ?b many|much|long ?)
+(parserid-word ?b many|much|long )
 =>
 (printout	?*fp*	"(relation-parser_ids	idiom_type_2	"?b"	"?a")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule121	idiom_type_2	"?b"	"?a")"crlf)	
@@ -2250,9 +2245,8 @@ else
 ;----------------------------------------------------------------------------------------------------------------
 (defrule kri-viB_sam
 (link_name-link_lnode-link_rnode MVp  ?b ?x)
-;(link_name-link_lnode-link_rnode J|Js|Jp|IN|ON|FL|Jm ?x ?y)
 (link_name-link_lnode-link_rnode J|Js|Jp|Ju|IN|ON|FL|Jm ?x ?y)
-(linkid-word-node_cat ?x ?viBakwi ?)
+(parserid-word ?x ?viBakwi )
 (not (kriyA-viBakwi_saMbanXI_rel_has_been_dcd_by_'Paf_MVp'_rule ?b))
 (not (got_relation_for_MVp_link))
 (not (link_name-link_lnode-link_rnode Mvl ?z ?b));It was cold there even in summer . 
@@ -2269,9 +2263,8 @@ else
 (link_name-link_lnode-link_rnode Pa|Paf ?v ?a)
 (link_name-link_lnode-link_rnode MVl ?a ?b)
 (link_name-link_lnode-link_rnode MVp  ?b ?x)
-;(link_name-link_lnode-link_rnode J|Js|Jp|IN|ON|FL ?x ?y)
 (link_name-link_lnode-link_rnode J|Js|Jp|Ju|IN|ON|FL ?x ?y)
-(linkid-word-node_cat ?x ?viBakwi ?)
+(parserid-word ?x ?viBakwi )
 (not (kriyA-'viBakwi'_saMbanXI_rel_has_been_deceded_by_'kriyA-'viBakwi'_saMbanXI_and'_rule ?x))
 =>
 (assert (kriyA-'viBakwi'_saMbanXI_rel_has_been_deceded_by_'kri-viB_sam_MVl'_rule ?y))
@@ -2282,10 +2275,9 @@ else
 ;----------------------------------------------------------------------------------------------------------------
 (defrule rule142
 (link_name-link_lnode-link_rnode Mp ?z ?x)
-;(link_name-link_lnode-link_rnode J|Js|Jp|IN|ON|Mgp ?x ?y)
 (link_name-link_lnode-link_rnode J|Js|Jp|Ju|IN|ON|Mgp ?x ?y)
-(linkid-word-node_cat ?x ?viBakwi ?)
-(linkid-word-node_cat ?z ?bit ?)
+(parserid-word ?x ?viBakwi )
+(parserid-word ?z ?bit )
 =>
 (if (or ( eq ?bit bit) ( eq ?bit some))then  ;Ex. I ate a bit of biscuit. I know some of the people.
 (printout	?*fp*	"(relation-parser_ids	viSeRya-"?viBakwi"_saMbanXI	"?y"	"?z")"crlf)	
@@ -2303,8 +2295,8 @@ else
 (link_name-link_expansion ?ID I D $?Var)
 (link_name-link_lnode-link_rnode ?ID ?z ?y)
 (link_name-link_lnode-link_rnode J|Js|Jp|Jw  ?y ?a)
-(linkid-word-node_cat ?z ?viBakwi ?)
-(linkid-word-node_cat ?y ?viBakwi1 ?)
+(parserid-word ?z ?viBakwi )
+(parserid-word ?y ?viBakwi1 )
 (not (has_been_included_in_larger_group_by_rule_prep_IDIOM_2))
 =>
 (printout	?*fp*	"(relation-parser_ids	viSeRya-"?viBakwi"_"?viBakwi1"_saMbanXI	"?x"	"?a")"crlf)	
@@ -2318,8 +2310,8 @@ else
 (link_name-link_expansion ?ID I D $?Var)
 (link_name-link_lnode-link_rnode ?ID ?z ?y)
 (link_name-link_lnode-link_rnode J|Js|Jp|Jw  ?y ?a)
-(linkid-word-node_cat ?z ?viBakwi ?)
-(linkid-word-node_cat ?y ?viBakwi1 ?)
+(parserid-word ?z ?viBakwi )
+(parserid-word ?y ?viBakwi1 )
 (not (has_been_included_in_larger_group_by_rule_prep_IDIOM_2))
 =>
 (printout       ?*fp*   "(relation-parser_ids      kriyA-"?viBakwi"_"?viBakwi1"_saMbanXI "?x"    "?a")"crlf)
@@ -2336,9 +2328,9 @@ else
 (link_name-link_expansion ?ID1 I D $?Va)
 (link_name-link_lnode-link_rnode ?ID1 ?b ?y)
 (link_name-link_lnode-link_rnode J|Js|Jp|Jw  ?y ?c)
-(linkid-word-node_cat ?a ?viBakwi ?)
-(linkid-word-node_cat ?b ?viBakwi1 ?)
-(linkid-word-node_cat ?y ?viBakwi2 ?)
+(parserid-word ?a ?viBakwi )
+(parserid-word ?b ?viBakwi1 )
+(parserid-word ?y ?viBakwi2)
 =>
 (printout	?*fp*	"(relation-parser_ids	viSeRya-"?viBakwi"_"?viBakwi1"_"?viBakwi2"_saMbanXI	"?x"	"?c")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	prep_IDIOM_2	viSeRya-"?viBakwi"_"?viBakwi1"_"?viBakwi2"_saMbanXI	"?x"	"?c")"crlf)	
@@ -2356,7 +2348,6 @@ else
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-kqxanwa_karma	"?x"	"?z")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule145	kriyA-kqxanwa_karma	"?x"	"?z")"crlf)	
-; (assert (generated_relation_for_id ?y))
 )
 ;Ex.     I am trying to be a good learner.  From in back of the shed , I heard a scream that seemed to come from on top of the garage
 ;----------------------------------------------------------------------------------------------------------------
@@ -2409,7 +2400,7 @@ else
 (link_name-link_lnode-link_rnode QI ?x ?y)
 (link_name-link_lnode-link_rnode I ?a ?b)
 (not (got_relation_for_when))
-(linkid-word-node_cat ?y ?how ?)
+(parserid-word ?y ?how )
 =>
 (if (eq ?how how)then
 (printout	?*fp*	"(relation-parser_ids	kriyA-kriyA_viSeRaNa	"?b	"	"?y")"	crlf)	;Ex.	We	should	teach	children	how	to	read	and	write.	
@@ -2448,7 +2439,7 @@ else
 (link_name-link_lnode-link_rnode ?I ?y ?verb)
 (root-verbchunk-tam-parser_chunkids ? ? ? $?chunk_ids ?kri)
 (test (or (member$ ?verb $?chunk_ids)(eq ?kri ?verb)))
-(linkid-word-node_cat ?subjn ?word ?)
+(parserid-word ?subjn ?word )
 =>
 (printout	?*fp*	"(relation-parser_ids	viXi_vAkya	)"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	viXi_vAkyakarma_1	viXi_vAkya	)"crlf)	
@@ -2578,7 +2569,7 @@ else
 ;----------------------------------------------------------------------------------------------------------------
 (defrule  rule157
 (link_name-link_lnode-link_rnode Ye ?x ?y)
-(linkid-word-node_cat ?x every ?)
+(parserid-word ?x every )
 =>
 (printout	?*fp*	"(relation-parser_ids	viSeRya-det_viSeRaNa	"?y"	"?x")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule157	viSeRya-det_viSeRaNa	"?y"	"?x")"crlf)	
@@ -2609,7 +2600,7 @@ else
 (link_name-link_lnode-link_rnode Yd ?viSeRya ?y)
 (link_name-link_expansion    ?J   J  $?vars)
 (link_name-link_lnode-link_rnode ?J  ?y ?head)
-(linkid-word-node_cat ?y ?viBakwi ?)
+(parserid-word ?y ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	viSeRya-"?viBakwi"_saMbanXI	"?viSeRya"	"?head")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	Yd	viSeRya-"?viBakwi"_saMbanXI	"?viSeRya"	"?head")"crlf)	
@@ -2620,7 +2611,7 @@ else
 (link_name-link_lnode-link_rnode MVp ?x ?y)
 (link_name-link_lnode-link_rnode Yd ?z ?y)
 (link_name-link_lnode-link_rnode NJ ?prep ?z)
-(linkid-word-node_cat ?prep ?viBakwi ?)
+(parserid-word ?prep ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?x"	"?z")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	Yd_1	kriyA-"?viBakwi"_saMbanXI	"?x"	"?z")"crlf)	
@@ -2648,7 +2639,7 @@ else
 (link_name-link_lnode-link_rnode TH|THi|THb|THc ?x ?y)
 (link_name-link_expansion ?Ce   C e $?var)
 (link_name-link_lnode-link_rnode  ?Ce ?y ?z)
-(linkid-word-node_cat ?z ?word&~there  ?);Added by Shirisha Manju Ex: You are lucky that there is no exam today .
+(parserid-word ?z ?word&~there  );Added by Shirisha Manju Ex: You are lucky that there is no exam today .
 (link_name-link_expansion ?S  S $?v)
 (link_name-link_lnode-link_rnode ?S ?z ?k)
 (root-verbchunk-tam-parser_chunkids $?chunk_ids ?kri)
@@ -2708,7 +2699,7 @@ else
 (defrule wh_question
 (declare (salience 1502))
 (link_name-link_lnode-link_rnode Wq|Wj ?x ?y)
-(linkid-word-node_cat ?y ?word&~here  ?)
+(parserid-word ?y ?word&~here )
 =>
 (printout	?*fp*	"(relation-parser_ids	wh_question)"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	wh_question	wh_question)"crlf)	
@@ -2757,7 +2748,6 @@ else
 (link_name-link_expansion    ?O   O $?vars)
 (link_name-link_lnode-link_rnode ?O ?x ?y)
 (link_name-link_lnode-link_rnode ALx|AL ?y ?z)
-;(link_name-link_lnode-link_rnode Jp  ?y ?obj)
 (link_name-link_lnode-link_rnode Jp|Ju  ?y ?obj)
 (link_name-link_lnode-link_rnode Ma  ?obj ?obj-s)
 =>
@@ -2844,7 +2834,7 @@ else
 (link_name-link_lnode-link_rnode MVp ?x ?y)
 (link_name-link_lnode-link_rnode Bs|Bp ?a ?y)
 (link_name-link_lnode-link_rnode Rn|R ?a ?b)
-(linkid-word-node_cat ?y ?viBakwi ?)
+(parserid-word ?y ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?x"	"?b")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule180	kriyA-"?viBakwi"_saMbanXI	"?x"	"?b")"crlf)	
@@ -2855,7 +2845,7 @@ else
 (declare (salience 715))
 (link_name-link_lnode-link_rnode B*w|Bsw|Bsm|Bpm ?x ?y)
 (link_name-link_lnode-link_rnode MVp ?z ?y)
-(linkid-word-node_cat ?y ?viBakwi ?)
+(parserid-word ?y ?viBakwi )
 (root-verbchunk-tam-parser_chunkids $?ch ?z) ;Ex. 4 this condition: Which of your parents do you feel closer to?
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?z"	"?x")"crlf)	
@@ -2865,10 +2855,9 @@ else
 ;----------------------------------------------------------------------------------------------------------------
 (defrule rule182
 (link_name-link_lnode-link_rnode MVp|MVb|Pp ?a ?b)
-(linkid-word-node_cat ?b again|later|here|there|somewhere|anywhere|everywhere|now|outside|longer|alone|next|upstairs|downstairs|upwards|downwards|above|down ?)
+(parserid-word ?b again|later|here|there|somewhere|anywhere|everywhere|now|outside|longer|alone|next|upstairs|downstairs|upwards|downwards|above|down )
 (not (link_name-link_lnode-link_rnode J|Jp|Js|Ju|IN|ON ?b ?x));ex. I went outside of the room.
-;(not (link_name-link_lnode-link_rnode J|Jp|Js|IN|ON ?b ?x));ex. I went outside of the room.
-(not (linkid-word-node_cat ?a ? adjective));It was cold there even in summer .
+(not (linkid-node_cat ?a  adjective));It was cold there even in summer .
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-aXikaraNavAcI_avyaya	"?a"	"?b")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule182	kriyA-aXikaraNavAcI_avyaya	"?a"	"?b")"crlf)	
@@ -2878,8 +2867,8 @@ else
 (defrule kriyA-lupwa_prep_Pa
 (link_name-link_lnode-link_rnode Pa|Paf ?x ?a)
 (link_name-link_lnode-link_rnode MVp|MVb|Pp ?a ?b)
-(linkid-word-node_cat ?b again|later|here|there|somewhere|anywhere|everywhere|now|outside|longer|alone|next|upstairs|downstairs|upwards|downwards|above|down ?)
-(linkid-word-node_cat ?x is|are|am|was|were ?)
+(parserid-word ?b again|later|here|there|somewhere|anywhere|everywhere|now|outside|longer|alone|next|upstairs|downstairs|upwards|downwards|above|down )
+(parserid-word ?x is|are|am|was|were )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-aXikaraNavAcI_avyaya	"?x"	"?b")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	kriyA-lupwa_prep_Pa	kriyA-aXikaraNavAcI_avyaya	"?x"	"?b")"crlf)	
@@ -2898,9 +2887,9 @@ else
 (defrule how-to-drive
 (link_name-link_lnode-link_rnode  TOn ?how ?to)
 (link_name-link_lnode-link_rnode  I ?to ?drive)
-(linkid-word-node_cat ?how how ?)
-(linkid-word-node_cat ?to to ?)
-(linkid-word-node_cat ?drive drive ?)
+(parserid-word ?how how )
+(parserid-word ?to to )
+(parserid-word ?drive drive )
 =>
 (printout	?*fp*	"(relation-parser_ids	idiom_type_1	"?how"	"?to")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	how-to-drive	idiom_type_1	"?how"	"?to"	"?drive")"crlf)	
@@ -2923,7 +2912,7 @@ else
 (link_name-link_lnode-link_rnode  ?ID ?a ?b)
 (link_name-link_lnode-link_rnode  Pa|Pv ?z ?c)
 (link_name-link_lnode-link_rnode MVp  ?c ?b)
-(linkid-word-node_cat ?a ?viBakwi ?)
+(parserid-word ?a ?viBakwi )
 (not (has_been_included_in_larger_group_by_rule_prep_IDIOM-MVp ?a))
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?c"	"?b")"crlf)	
@@ -2948,7 +2937,7 @@ else
 (link_name-link_lnode-link_rnode TO ?a ?b)
 (link_name-link_lnode-link_rnode I ?b ?c)
 (link_name-link_lnode-link_rnode I*j|Ifj ?c ?d)
-(linkid-word-node_cat ?a have|has|had ?)
+(parserid-word ?a have|has|had )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-preraka_kriyA	"?d"	"?c")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule184	kriyA-preraka_kriyA	"?d"	"?c")"crlf)	
@@ -2972,7 +2961,7 @@ else
 (declare (salience 510))
 (link_name-link_lnode-link_rnode Pg*b|Pgfb|Pgf|PP|I|Ix|If ?y ?z)
 (link_name-link_lnode-link_rnode I*j|Ifj ?z ?d)
-(linkid-word-node_cat ?y is|are|am|was|had|has|have|were|been|be ?)
+(parserid-word ?y is|are|am|was|had|has|have|were|been|be )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-preraka_kriyA	"?d"	"?z")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule186	kriyA-preraka_kriyA	"?d"	"?z")"crlf)	
@@ -2992,7 +2981,7 @@ else
 (defrule rule188
 (link_name-link_lnode-link_rnode MVs ?x ?y)
 (link_name-link_lnode-link_rnode Mgp ?y ?z)
-(or(linkid-word-node_cat ?z ?samAnakAlika_kriyA v)(linkid-word-node_cat ?z ?samAnakAlika_kriyA g))	
+(or(linkid-node_cat ?z  verb)(parserid-word ?z verbal_noun))	
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-samAnakAlika_kriyA	"?x"	"?z")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule188	kriyA-samAnakAlika_kriyA	"?x"	"?z")"crlf)	
@@ -3020,7 +3009,6 @@ else
 ;Ex  She felt something crawling on her neck.
 ;----------------------------------------------------------------------------------------------------------------
 (defrule rule189
-;(link_name-link_expansion  ?V    V $?)
 (link_name-link_expansion  ?V    V ~J $?)
 (link_name-link_lnode-link_rnode  ?V ?a ?b)
 =>
@@ -3035,7 +3023,7 @@ else
 (link_name-link_expansion  ?object    O $?)
 (link_name-link_lnode-link_rnode  ?object ?y ?z)
 (link_name-link_lnode-link_rnode Pv ?y ?a)
-(linkid-word-node_cat ?y have|has|had ?)
+(parserid-word ?y have|has|had )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-preraka_kriyA	"?a"	"?y")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule190	kriyA-preraka_kriyA	"?a"	"?y")"crlf)	
@@ -3048,7 +3036,7 @@ else
 (link_name-link_expansion  ?object    O $?)
 (link_name-link_lnode-link_rnode  ?object ?z ?a)
 (link_name-link_lnode-link_rnode Pv ?z ?b)
-(linkid-word-node_cat ?y is|are|am|was|had|has|have|were|been|be ?)
+(parserid-word ?y is|are|am|was|had|has|have|were|been|be )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-preraka_kriyA	"?b"	"?z")"	crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule191	kriyA-preraka_kriyA	"?b"	"?z")"crlf)	
@@ -3058,8 +3046,8 @@ else
 (defrule rule192
 (link_name-link_lnode-link_rnode MVp ?x ?y)
 (link_name-link_lnode-link_rnode Mgp ?y ?z)
-(linkid-word-node_cat ?y ?viBakwi ?)
-(or(linkid-word-node_cat ?z ?gerund verb)(linkid-word-node_cat ?z ?gerund verbal_noun))	
+(parserid-word ?y ?viBakwi )
+(or(linkid-node_cat ?z verb)(linkid-node_cat ?z  verbal_noun))	
 (not  (kriyA-'viBakwi'_saMbanXI_rel_has_been_deceded_by_'kriyA-'viBakwi'_saMbanXI_and'_rule ?y))
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?x"	"?z")"	crlf)	
@@ -3072,7 +3060,7 @@ else
 (link_name-link_lnode-link_rnode MVp ?x ?y)
 (link_name-link_lnode-link_rnode Mgp ?y ?z)
 (link_name-link_lnode-link_rnode Mgn ?z ?a)
-(linkid-word-node_cat ?y ?viBakwi ?)
+(parserid-word ?y ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?x"	"?a")"	crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule192_1	kriyA-"?viBakwi"_saMbanXI	"?x"	"?a")"crlf)	
@@ -3082,7 +3070,7 @@ else
 (defrule kriyA-prep_saM
 (link_name-link_lnode-link_rnode Pp ?x ?y)
 (link_name-link_lnode-link_rnode Mgp ?y ?z)
-(linkid-word-node_cat ?y ?viBakwi ?)
+(parserid-word ?y ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?x"	"?z")"	crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	kriyA-prep_saM	kriyA-"?viBakwi"_saMbanXI	"?x"	"?z")"crlf)	
@@ -3094,7 +3082,7 @@ else
 (link_name-link_lnode-link_rnode ?S  ? ?x)
 (link_name-link_lnode-link_rnode MVs ?x ?y)
 (link_name-link_lnode-link_rnode Cs  ?y ?z)
-(linkid-word-node_cat ?y after ?)
+(parserid-word ?y after )
 (link_name-link_expansion    ?S1    S ~F $?vars)
 (link_name-link_lnode-link_rnode ?S1  ?z ?a)
 =>
@@ -3109,7 +3097,7 @@ else
 (link_name-link_lnode-link_rnode ?S  ? ?x)
 (link_name-link_lnode-link_rnode MVs ?x ?y)
 (link_name-link_lnode-link_rnode Cs  ?y ?z)
-(linkid-word-node_cat ?y when ?)
+(parserid-word ?y when )
 (link_name-link_expansion    ?S1    S ~F $?vars)
 (link_name-link_lnode-link_rnode ?S1  ?z ?a)
 =>
@@ -3130,7 +3118,7 @@ else
 (link_name-link_expansion    ?CO   C O $?var)
 (link_name-link_lnode-link_rnode ?CO ?y ?z)
 (link_name-link_lnode-link_rnode Cs  ?y ?b)
-(linkid-word-node_cat ?y when ?)
+(parserid-word ?y when )
 (link_name-link_expansion    ?S1    S ~F $?va)
 (link_name-link_lnode-link_rnode ?S1  ?z ?a)
 =>
@@ -3214,7 +3202,7 @@ else
 (link_name-link_lnode-link_rnode ?Pa ?kri ?kri_mUla)
 (or (link_name-link_expansion ?O O $?v) (link_name-link_expansion ?O N))
 (or (link_name-link_lnode-link_rnode ?O ?kri ?z)(link_name-link_lnode-link_rnode ?O ?x ?y))
-(not (linkid-word-node_cat ?kri be ?));To pretend that our program is usable in its current form would be silly.
+(not (parserid-word ?kri be ));To pretend that our program is usable in its current form would be silly.
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-kriyA_mUla	"?kri"	"?kri_mUla")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	kriyA_mUla_1	kriyA-kriyA_mUla	"?kri"	"?kri_mUla")"crlf)	
@@ -3339,7 +3327,7 @@ else
 (link_name-link_lnode-link_rnode   ?S  ?b ?kri)
 (root-verbchunk-tam-parser_chunkids ? ? ? $?chunk_ids ?kriyA)
 (test (or (member$ ?kri $?chunk_ids) (eq ?kri ?kriyA)))
-(linkid-word-node_cat ?c ?viBakwi ?)
+(parserid-word ?c ?viBakwi )
 =>
 (retract ?f0)
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?d")"crlf)	
@@ -3358,7 +3346,7 @@ else
 (link_name-link_lnode-link_rnode   ?S  ?b ?kri)
 (root-verbchunk-tam-parser_chunkids ? ? ? $?chunk_ids ?kriyA)
 (test (or (member$ ?kri $?chunk_ids) (eq ?kri ?kriyA)))
-(linkid-word-node_cat ?c ?viBakwi ?)
+(parserid-word ?c ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?e")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	wall_prep_saM_2	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?e")"crlf)	
@@ -3440,9 +3428,8 @@ else
 (link_name-link_expansion ?Q  Q $?)
 (link_name-link_lnode-link_rnode ?Q ?wh ?aux)
 (root-verbchunk-tam-parser_chunkids $? ?aux $? ?kriyA)
-(linkid-word-node_cat ?prep ?viBakwi ?)
+(parserid-word ?prep ?viBakwi )
 (not (link_name-link_lnode-link_rnode Js|Jp|Ju ?prep ?pobj));Ex 4 this: Why do you sleep in the night?
-;(not (link_name-link_lnode-link_rnode Js|Jp ?prep ?pobj));Ex 4 this: Why do you sleep in the night?
 (not (link_name-link_lnode-link_rnode Qd ?wh ?aux)) ;Ex 4 this: Can you tell us where those strange ideas came from?
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?wh")"crlf)	
@@ -3458,7 +3445,7 @@ else
 (root-verbchunk-tam-parser_chunkids $? ?kriyA)
 (link_name-link_expansion ?J  J $?)
 (link_name-link_lnode-link_rnode ?J ?prep ?noun)
-(linkid-word-node_cat ?prep ?viBakwi ?)
+(parserid-word ?prep ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?noun")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	CO_link	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?noun")"crlf)	
@@ -3473,7 +3460,7 @@ else
 (root-verbchunk-tam-parser_chunkids $? ?kriyA $? ?head)
 (link_name-link_expansion ?J  J $?)
 (link_name-link_lnode-link_rnode ?J ?prep ?noun)
-(linkid-word-node_cat ?prep ?viBakwi ?)
+(parserid-word ?prep ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?head"	"?noun")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	CO_link_1	kriyA-"?viBakwi"_saMbanXI	"?head"	"?noun")"crlf)	
@@ -3484,7 +3471,7 @@ else
 (link_name-link_lnode-link_rnode Paf ?verb ?m-up)
 (link_name-link_lnode-link_rnode EAm ?m ?m-up)
 (link_name-link_lnode-link_rnode MVt ?m-up ?t)
-(linkid-word-node_cat ?m ?more ?)
+(parserid-word ?m ?more )
 (link_name-link_expansion  ?O O ? c)
 ?f0<-(link_name-link_lnode-link_rnode ?O  ?t ?t-up)
 =>
@@ -3514,7 +3501,7 @@ else
 (link_name-link_expansion ?D  D m $?)
 (link_name-link_lnode-link_rnode ?D ?m ?m-up)
 (link_name-link_lnode-link_rnode Osc|Opc  ?y ?t-up)
-(linkid-word-node_cat ?m ?more ?)
+(parserid-word ?m ?more )
 =>
 (printout	?*fp*	"(relation-parser_ids	"?more"_upameya-than_upamAna	"?m-up"	"?t-up")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	more-than	"?more"_upameya-than_upamAna	"?m-up"	"?t-up")"crlf)	
@@ -3540,7 +3527,7 @@ else
 (link_name-link_lnode-link_rnode Paf ?x ?a)
 (link_name-link_lnode-link_rnode MVt ?a ?b)
 (link_name-link_lnode-link_rnode Pafc ?b ?c)
-(linkid-word-node_cat ?y ?more ?)
+(parserid-word ?y ?more )
 =>
 (printout	?*fp*	"(relation-parser_ids	"?more"_upameya-than_upamAna	"?a"	"?c")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	upameyopamAna	"?more"_upameya-than_upamAna	"?a"	"?c")"crlf)	
@@ -3655,7 +3642,7 @@ else
 (declare (salience 595))
 (link_name-link_expansion    ?E    E A $?var)
 (link_name-link_lnode-link_rnode   ?E   ?more  ?x)
-(linkid-word-node_cat ?more ?mor_or_less ?)
+(parserid-word ?more ?mor_or_less )
 (link_name-link_expansion    ?LE   L E $?vari)
 (link_name-link_lnode-link_rnode   ?LE    ?x   ?than)
 (root-verbchunk-tam-parser_chunkids ? ? $?chunk ?m_up)
@@ -3673,7 +3660,7 @@ else
 (declare (salience 595))
 (link_name-link_expansion    ?E    E A $?var)
 (link_name-link_lnode-link_rnode   ?E   ?more  ?x)
-(linkid-word-node_cat ?more ?mor_or_less ?)
+(parserid-word ?more ?mor_or_less )
 (link_name-link_expansion    ?LE   L E $?vari)
 (link_name-link_lnode-link_rnode   ?LE    ?x   ?than)
 (link_name-link_lnode-link_rnode   I   ?more  ?x)
@@ -3715,8 +3702,6 @@ else
 (link_name-link_lnode-link_rnode   ?S   ?m_up ?v1)
 (link_name-link_expansion    ?MVt    M V t $?var)
 (link_name-link_lnode-link_rnode   ?MVt   ?v1  ?t)
-;(link_name-link_expansion    ?C    C $?vars)
-;(link_name-link_lnode-link_rnode   ?C   ?t  ?v2)
 (link_name-link_expansion    ?O   O $? c)
 (link_name-link_lnode-link_rnode   ?O   ?t  ?t_up)
 =>
@@ -3730,7 +3715,7 @@ else
 (link_name-link_lnode-link_rnode ?TO ?x ?to)
 (link_name-link_expansion    ?I   I $?var)
 (link_name-link_lnode-link_rnode ?I  ?to ?inf)
-(not (linkid-word-node_cat ?x have|has|had ?))
+(not (parserid-word ?x have|has|had ))
 =>
 (printout	?*fp*	"(relation-parser_ids	to-infinitive	"?to"	"?inf")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	to-inf	to-infinitive	"?to"	"?inf")"crlf)	
@@ -3741,7 +3726,7 @@ else
 (link_name-link_expansion  ?R   R $?vars)
 (link_name-link_lnode-link_rnode ?R  ?x ?to)
 (link_name-link_lnode-link_rnode I  ?to ?inf)
-(linkid-word-node_cat ?to to ?)
+(parserid-word ?to to )
 =>
 (printout	?*fp*	"(relation-parser_ids	to-infinitive	"?to"	"?inf")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	to-inf1	to-infinitive	"?to"	"?inf")"crlf)	
@@ -3750,7 +3735,7 @@ else
 ;----------------------------------------------------------------------------------------------------------------
 (defrule to-inf2
 (link_name-link_lnode-link_rnode I|If  ?to ?inf)
-(linkid-word-node_cat ?to to ?)
+(parserid-word ?to to )
 =>
 (printout	?*fp*	"(relation-parser_ids	to-infinitive	"?to"	"?inf")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	to-inf1	to-infinitive	"?to"	"?inf")"crlf)	
@@ -3831,8 +3816,8 @@ else
 (link_name-link_expansion  ?J   J $?vars)
 (link_name-link_lnode-link_rnode ?J  ?prep ?nir)
 (link_name-link_lnode-link_rnode OF  ?which ?prep)
-(linkid-word-node_cat ?which which|Which ?)
-(linkid-word-node_cat ?prep of ?)
+(parserid-word ?which which|Which )
+(parserid-word ?prep of )
 =>
 (printout	?*fp*	"(relation-parser_ids	nirXArya-nirXAraNa	"?which"	"?nir")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	nirXArya-nirXAraNa	nirXArya-nirXAraNa	"?which"	"?nir")"crlf)	
@@ -3856,7 +3841,7 @@ else
 (link_name-link_lnode-link_rnode TI ?a ?c)
 (link_name-link_expansion   ?S S $?va)
 (link_name-link_lnode-link_rnode ?S ?b ?v)
-(linkid-word-node_cat ?a ?viBakwi ?)
+(parserid-word ?a ?viBakwi )
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?v"	"?c")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	CO_TI	kriyA-"?viBakwi"_saMbanXI	"?v"	"?c")"crlf)	
@@ -4017,8 +4002,6 @@ else
 (link_name-link_lnode-link_rnode Pa|Paf|Opt|Ost|O*t  ?kri ?s_s)
 (link_name-link_lnode-link_rnode Pa|Paf|Opt|Ost|O*t  ?kri ?s_s_1)
 (parser_id-root ?and and|or)
-;test (< ?s_s_1 ?s_s))
-;test (< (string_to_integer ?and) (string_to_integer ?s_s) ))
 (test (and (< (string_to_integer ?s_s) (string_to_integer ?and)) (< (string_to_integer ?and) (string_to_integer ?s_s_1))))
 =>
 (printout       ?*fp*   "(relation-parser_ids      subject-subject_samAnAXikaraNa  "?s"  "?and")"crlf)
@@ -4094,13 +4077,11 @@ else
 (defrule kriyA-'viBakwi'_saMbanXI_and
 (declare (salience 1000))
 (link_name-link_lnode-link_rnode MVp  ?kri ?x)
-;(link_name-link_lnode-link_rnode J|Js|Jp|IN|ON|FL|Mgp ?x ?y)
-;(link_name-link_lnode-link_rnode J|Js|Jp|IN|ON|FL|Mgp ?x ?z)
 (link_name-link_lnode-link_rnode J|Js|Jp|Ju|IN|ON|FL|Mgp ?x ?y)
 (link_name-link_lnode-link_rnode J|Js|Jp|Ju|IN|ON|FL|Mgp ?x ?z)
 (parser_id-root ?and and|or)
 (test (and (< (string_to_integer ?and) (string_to_integer ?y)) (> (string_to_integer ?and) (string_to_integer ?z))))
-(linkid-word-node_cat ?x ?viBakwi ?)
+(parserid-word ?x ?viBakwi )
 (root-verbchunk-tam-parser_chunkids ? ? ? $?chunk_ids ?kriyA)
 (test (or (member$ ?kri $?chunk_ids) (eq ?kri ?kriyA)))
 =>
@@ -4117,7 +4098,7 @@ else
 ?f0<-(link_name-link_lnode-link_rnode  ?D ?x ?y)
 (link_name-link_expansion    ?X    ? J l $?var)
 (link_name-link_lnode-link_rnode  ?X  ?y ?and)
-(linkid-word-node_cat ?x  his|her|my|our|your|their|its  ?)
+(parserid-word ?x  his|her|my|our|your|their|its  )
 (parser_id-root ?and and|or)
 =>
 (retract ?f0 )

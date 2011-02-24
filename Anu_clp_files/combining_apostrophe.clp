@@ -4,7 +4,6 @@
 
  (deffacts combining_apostrophe_info
  (link_name-link_lnode-link_rnode)
- (linkid-word-node_cat)
  (parser_numid-word-remark)
  (parser_numeric_id-word)
  (parserid-word)
@@ -12,24 +11,7 @@
  
  (defglobal ?*nid_wrd_fp* =  l_n_w_fp)
  (defglobal ?*l_wrd_fp* =  l_fp )
- (defglobal ?*l_cat_fp* = l_c_fp )
  (defglobal ?*l_rel_fp* = l_r_fp )
- ;-------------------------------------------------------------------------------------------------------------
- ; Rama ate some sweets . 
- ; Removes square bracket after the word in link_cat file  [ sweets[!] as sweets ]
- (defrule rm_sqr_brkt_from_cat
- (declare (salience 550))
- ?f0<-(linkid-word-node_cat  ?pid ?word ?cat)
- (test (eq (numberp ?word) FALSE))
- (test (neq (str-index "[" ?word)  FALSE)) ;Added by Shirisha Manju (29-12-10)
- =>
-	(bind ?index (str-index "[" ?word))
-	(if (numberp ?index) then
-		(retract ?f0)
-		(bind ?str (sub-string 1 (- ?index 1) ?word))
-		(printout ?*l_cat_fp* "(linkid-word-node_cat  " ?pid "  "?str "  "?cat ")"crlf)
-        )
- )
  ;-------------------------------------------------------------------------------------------------------------
  ; Rama ate some sweets . 
  ; Removes square bracket after the word in link_word file  [ sweets[!] as sweets ]
@@ -110,31 +92,6 @@
         (printout ?*nid_wrd_fp* "(No complete linkages found)" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
- ; These are children's books
- (defrule cat_rule_ys_yp
- (declare (salience 100))
- (or (link_name-link_lnode-link_rnode  YS  ?lnode ?rnode) (link_name-link_lnode-link_rnode YP ?lnode ?rnode))
- ?f0<-(linkid-word-node_cat  ?lnode ?word ?cat)
- ?f1<-(linkid-word-node_cat  ?rnode ?word1 ?cat1)
- =>
-	(retract ?f0 ?f1)
-	(printout ?*l_cat_fp* "(linkid-word-node_cat  " ?lnode ?word1 "  "?word ?word1 "  " ?cat ")" crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------
- (defrule cat_rule
- (declare (salience 50))
- (linkid-word-node_cat  ?pid ?word ?cat)
- =>
-	(printout ?*l_cat_fp* "(linkid-word-node_cat  " ?pid "  "?word "  " ?cat ")" crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------
- (defrule cat_rule1
- (declare (salience 30))
- (No complete linkages found)
- =>
-	(printout ?*l_cat_fp* "(No complete linkages found)" crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------
  (defrule link_rel_ys_yp0
  (declare (salience 91))
  ?f0<-(link_name-link_lnode-link_rnode ?lname ?lnode ?rnode)
@@ -182,7 +139,6 @@
  =>
         (close ?*nid_wrd_fp*)
 	(close ?*l_wrd_fp*)
-	(close  ?*l_cat_fp*)
 	(close  ?*l_rel_fp*)
  )
  ;-------------------------------------------------------------------------------------------------------------
