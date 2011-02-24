@@ -9620,7 +9620,6 @@ jvalinI	f
 jvAnI	f
 jvAra	f
 jvAlA	f
-jvAlAmuKI	f
 JaMkAra	f
 JaMkAriNI	f
 JaMkqwA	f
