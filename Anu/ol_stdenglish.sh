@@ -56,7 +56,7 @@ $PATH1/sentence-boundary.pl -d $PATH1/HONORIFICS -i $1.tmp3 -o ../$1.std_tmp
 #added for splitting sentences with ":"(colon) mark and replacing ":" with "."
 #OL parser splits the sentence with ":" 
 #Eg: Watch it now: the boy is coming: I may go. 
-sed -e 's/:[[:space:]]\+\([^a-z]\)/.  \1/g'  <  ../$1.std_tmp  | sed -e 's/:\([^\ a-z]\)/.  \1/g'  > ../$1.std
+sed -e 's/:[[:space:]]\+\([^a-z]\)/.  \1/g'  <  ../$1.std_tmp  | sed -e 's/:\([^\ a-z\(]\)/.  \1/g'  > ../$1.std
 
 cd ../
 fi

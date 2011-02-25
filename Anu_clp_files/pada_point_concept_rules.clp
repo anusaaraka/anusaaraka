@@ -10,36 +10,36 @@
   	(printout ?*debug*  " retract_cntrl_fact " crlf)
   	(retract ?f)
   )
- ;-------------------------------------------------------------------------------------------------------------  
+ ;------------------------------------------------------------------------------------------------------------- 
  (defrule conj_list
  (declare (salience 1005))
- ?f<- (conjunction-components  ?conj  ?id $?id1) ;Modified ?id1 to $?id1 by Roja(15-02-11)
+ ?f<- (conjunction-components  ?conj  ?id $?id1)
  (not (conjunction-comp ?conj $?IDS))
  =>
- 	(retract ?f)
- 	(bind $?ids (sort > (create$ ?id ?conj $?id1))) ;Modified ?id1 to $?id1 by Roja(15-02-11
- 	(assert (conjunction-comp ?conj $?ids))
- 	(printout ?*debug*  " conj_list " ?conj" " (implode$  $?ids) crlf)
+        (bind $?ids (sort > (create$ ?id ?conj $?id1)))
+        (assert (conjunction-comp ?conj $?ids))
+        (printout ?*debug*  " conj_list " ?conj" " (implode$  $?ids) crlf)
  )
  ;------------------------------------------------------------------------------------------------------------- 
- (defrule conj_list1
+ ;Added by Roja (25-02-11)
+ ;It is sometimes difficult to reconcile science and religion.
+ ;The black and white cat sleeps.
+ (defrule conj_comp_rule
  (declare (salience 1010))
- ?f<-(conjunction-components  ?conj  ?id $?id1) ;Modified ?id1 to $?id1 by Roja(15-02-11
- ?f2<-(conjunction-comp ?conj $?IDS)
-  =>
- 	(retract  ?f)
- 	(if (eq (member$ ?id $?IDS) FALSE) then
- 		(retract ?f2)
- 		(bind $?IDS (sort > (create$  $?IDS ?id)))
- 		(assert (conjunction-comp ?conj  $?IDS))
-		(printout ?*debug*  "conj_list1  " ?conj" " (implode$  $?IDS) crlf)
- 	else (if (eq (member$ (nth$ (length $?id1) $?id1) $?IDS) FALSE) then ;Modified ?id1 to "(nth$ (length $?id1) $?id1)" by Roja(15-02-11)
- 		(retract ?f2)
- 		(bind $?IDS (sort > (create$  $?IDS ?id)))
- 		(assert (conjunction-comp ?conj  $?IDS))
-		(printout ?*debug*  "conj_list1 " ?conj" " (implode$  $?IDS) crlf)
-	     )
-	)
+ (conjunction-components  ?conj  ?id $?id1)
+ (conjunction-comp ?conj $?IDS)
+ ?f<-(to_be_included_in_paxa ?i)
+ =>
+    (if (eq ?i ?conj) then
+       (retract ?f)
+       (assert (id-current_id  ?conj ?conj))
+       (assert (current_id-group_members ?conj  $?IDS))
+       (assert (pada_info (group_head_id ?conj) (group_cat PP) (group_ids $?IDS)(pada_head ?conj)))
+       (printout ?*debug*  "conj_comp_rule  "?conj"   " (implode$  $?IDS)  crlf)
+    )
+    (if (or (neq (member$ ?i $?id1) FALSE)(eq ?i ?id)) then
+          (retract ?f)
+    )
  )
  ;------------------------------------------------------------------------------------------------------------- 
  (defrule kriyA_pada
@@ -674,31 +674,6 @@
  	(assert (current_id-group_members ?id $?grp_mems))
  	(printout ?*debug* "non_finite_order12  "?kri "  " (implode$  $?grp_mems) crlf)
 )
- ;-------------------------------------------------------------------------------------------------------------
- (defrule conj_components
- (declare (salience 900))
- ?f0<-(conjunction-comp  ?conj $?IDS1 ?s1 $?IDS)
- ?f3<-(id-current_id  ?s1 ?current_id)
- ?f4<-(current_id-group_members ?current_id $?grp_ids)
- =>
- 	(if (eq ?s1 ?conj) then
- 		(retract ?f0 ?f3)
- 	else
- 	    (retract ?f3 ?f4 ?f0))
- 	    (assert (conjunction-comp  ?conj $?IDS1  $?grp_ids $?IDS))
-            (printout ?*debug* "conj_components "?conj" " (implode$  $?IDS1)" "(implode$ $?grp_ids)" "(implode$ $?IDS) crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------
- (defrule conj_components1
- (declare (salience 890))
- ?f0<-(conjunction-comp  ?conj $?IDS1)
- ?f1<-(current_id-group_members ?conj ?conj)
- ?f2<-(pada_info (group_head_id ?conj)(group_ids  ?conj)(group_cat PP)(pada_head ?conj))
- =>
- 	(retract  ?f1 ?f2)
- 	(assert (current_id-group_members ?conj $?IDS1))
- 	(printout ?*debug* "conj_components1  "?conj" " (implode$  $?IDS1) crlf)
- 	(assert (pada_info (group_head_id ?conj)(group_ids $?IDS1)(group_cat PP)(pada_head ?conj))))
  ;-------------------------------------------------------------------------------------------------------------
  (defrule saMjFA-saMjFA_samAnAikaraNa_rule1
  (declare (salience 899))

@@ -490,7 +490,7 @@ Petu weja xOdA paranwu basa cUka gayA.
 
 Hindi meaning using Stanford parser 2.121
 There are three boys and four girls in the park. 
-wIna ladake Ora cAra ladakiyAz uxyAna meM hEM.
+uxyAna meM wIna ladake Ora cAra ladakiyAz hEM.
 
 Hindi meaning using Stanford parser 2.122
 Where did they go to? 
@@ -522,7 +522,7 @@ yaha mahawvapUrNa_nahIM howA hE Ted kyA karawA hE.
 
 Hindi meaning using Stanford parser 2.129
 Are a dog and a cat here? 
-kyA yahAz kuwwA Ora billI hEM?
+kyA kuwwA Ora billI yahAz hEM?
 
 Hindi meaning using Stanford parser 2.130
 There is a dog and a cat here. 

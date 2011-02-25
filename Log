@@ -1802,7 +1802,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 23. Updated Log.
 
 
-24-02-11
+25-02-11
 --------
  1. sd_pada.clp
               Removed  : 'prep_pada_conj' rule and merged it in 'add_single_prep'
@@ -1838,5 +1838,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   12. Added dummy fact "kriyA-throughout_saMbanXI" in pada_ids.clp
   13. Modified  Anusaaraka_link.sh and Anusaaraka.sh to generate "linkid_cat_tmp.dat" instead of "linkid_word_cat.dat"
   14. Modified but.clp in WSD
-  15. Updated changes_in_databases 
-  16. Updated Log.
+  15. pada_point_concept_rules.clp:
+                  Removed  : conj_components, conj_components1 rules
+                  Modified : conj_list rule
+                  Added    : conj_comp_rule
+  16. Modified ol_stdenglish.sh to avoid splitting of sentence in unneccesary cases.
+  17. Updated changes_in_databases.
+  18. Modified and updated sd_ver_output, verified_output, verified_output_ol 
+  19. Updated Log.
