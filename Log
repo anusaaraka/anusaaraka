@@ -1843,6 +1843,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                   Modified : conj_list rule
                   Added    : conj_comp_rule
   16. Modified ol_stdenglish.sh to avoid splitting of sentence in unneccesary cases.
-  17. Updated changes_in_databases.
-  18. Modified and updated sd_ver_output, verified_output, verified_output_ol 
-  19. Updated Log.
+  17. hindi_sent_reorder.clp
+         Added    : wo_rule_for_if, wo_rule_for_if1 and wo_rule_for_when
+         Modified : wo_rule
+  18. Modified "mark" rule in sd_relation_rules.clp
+  19. Updated changes_in_databases.
+  20. Modified sd_ver_output, verified_output, verified_output_ol, new_ver_output and small_sent_ver_output_ol 
+  21. Updated small_sent_verified_ol ( 107 )
+  22. Updated Log.

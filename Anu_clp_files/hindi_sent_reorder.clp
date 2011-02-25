@@ -643,21 +643,61 @@
  ; If you use that strategy , he will wipe you out . 
  ; If we heat iron it becomes red .
  ;If you were a middle-class American without a job , who would you vote for .
+ ;If you know who did it, you should tell the teacher.
+ (defrule wo_rule_for_if
+ (declare (salience 2))
+ (kriyA-conjunction  ?k ?id)
+ (kriyA-praSnavAcI  ?k ?p)
+ ?f1<-(id-word ?id if)  ;Modified by Meena (28-10-10) 
+ ?f0 <-(hindi_id_order $?pre ?p $?post)
+ =>
+        (retract ?f0 ?f1)
+        (assert (hindi_id_order  $?pre ?p wo $?post))
+        (printout ?*DBUG* "(Rule_Name-ids  wo_rule_for_if  (hindi_id_order  "(implode$ (create$ $?pre ?p wo $?post))")" crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------
+ ; If John was with Lisa last night, who went to the movie with Diane. 
+ (defrule wo_rule_for_if1
+ (declare (salience 1))
+ (kriyA-conjunction  ?k ?id)
+ ?f1<-(id-word ?id if)  ;Modified by Meena (28-10-10) 
+ ?f0 <-(hindi_id_order $?pre ?k $?post)
+ (not (hindi_id_order $? ?k))
+ =>
+        (retract ?f0 ?f1)
+        (assert (hindi_id_order  $?pre ?k wo $?post))  
+        (printout ?*DBUG* "(Rule_Name-ids  wo_rule_for_if1  (hindi_id_order  "(implode$ (create$ $?pre ?k wo $?post))")" crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (25-02-11) 
+ ;When Mrs. Chitnis discovered that her husband was an adulterer she divorced him.
+ (defrule wo_rule_for_when
+ (declare (salience 1))
+ (kriyA-conjunction  ?k 1)
+ (kriyA-subject  ?k1 ?id)
+ ?f1<-(id-word 1 when)  ;Modified by Meena (28-10-10) 
+ ?f0 <-(hindi_id_order $?pre ?id $?post)
+ (test (> ?k1 ?k) )
+ (not (viSeRya-RaRTI_viSeRaNa  ?id ?))
+ =>
+        (retract ?f0 ?f1)
+        (assert (hindi_id_order  $?pre  wo ?id $?post))
+        (printout ?*DBUG* "(Rule_Name-ids   wo_rule_for_when   (hindi_id_order  "(implode$ (create$ $?pre ?k1 wo $?post))")"crlf)
+
+ )
+ 
+
  (defrule wo_rule
  (kriyA-conjunction  ?k 1)
  (kriyA-subject  ?kri1 ?id)
- ?f1<-(id-word 1 ?word&if|when|since)  ;Modified by Meena (28-10-10) 
+ ?f1<-(id-word 1 ?word&since)  ;Modified by Meena (28-10-10) 
  ?f0 <-(hindi_id_order $?pre ?id $?post)
  (test (and (> ?kri1 ?k) (neq ?id ?k)))
  =>
         (retract ?f0 ?f1)
-	(if (or (eq ?word if)(eq ?word when)) then
-	    (assert (hindi_id_order  $?pre wo ?id $?post))
-	    (printout ?*DBUG* "(Rule_Name-ids   wo_rule   (hindi_id_order  "(implode$ (create$ $?pre wo ?id $?post))")" crlf)
-	else
-	    (assert (hindi_id_order  $?pre isaliye ?id $?post))
+	    	(assert (hindi_id_order  $?pre isaliye ?id $?post))
             (printout ?*DBUG* "(Rule_Name-ids   wo_rule   (hindi_id_order  "(implode$ (create$ $?pre isaliye ?id $?post)) ")" crlf)
-	)
+	
  )
  ;------------------------------------------------------------------------------------------------------------------
   ;I can not go out until my hair is dry.

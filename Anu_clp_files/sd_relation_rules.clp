@@ -598,10 +598,13 @@
 (defrule mark
 (rel_name-sids mark ?kriyA ?conj)
 (rel_name-sids nsubj ?kriyA ?x)
+(root-verbchunk-tam-parser_chunkids ? ? ? $?ids ?kri)
+(test (or (member$ ?kriyA $?ids) (eq ?kriyA ?kri)))
 =>
-(printout       ?*fp*   "(relation-parser_ids     kriyA-conjunction        "?x"      "?conj")"crlf)
-(printout       ?*dbug* "(Rule-Rel-ids	mark    kriyA-conjunction        "?x"      "?conj")"crlf)
+(printout       ?*fp*   "(relation-parser_ids     kriyA-conjunction        "?kri"      "?conj")"crlf)
+(printout       ?*dbug* "(Rule-Rel-ids  mark    kriyA-conjunction        "?kri"      "?conj")"crlf)
 )
+
  ; Ex. The accident happened as the night was falling .
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule complm 
