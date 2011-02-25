@@ -20895,7 +20895,6 @@ mEKvArI	f
 mEnoSI	f
 mEparaswI	f
 mEParoSI	f
-mEca	f
 mEjala	f
 mEda	f
 mEwrI	f
