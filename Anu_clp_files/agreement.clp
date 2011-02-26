@@ -16,12 +16,11 @@
  (declare (salience 1100))
  (pada_info (group_head_id ?root_id)(group_cat VP))
  (or (kriyA-subject ?root_id ?x)(kriyA-aBihiwa  ?root_id ?x))
- (pada_info (group_cat ?cat)(group_head_id ?x)(vibakthi 0) (group_ids $?ids))
+ (pada_info (group_cat ?cat)(group_head_id ?x)(vibakthi 0) (group_ids $?ids ?last_id))
  (id-original_word ?x or)
  ?f0<-(agmt_control_fact ?root_id)
  (test (neq ?cat English_PP))
  =>
-        (bind ?last_id (nth$  (length $?ids) $?ids))
         (retract ?f0)
         (printout  ?*agrmt_file* "(verb_agrmt-subject_id-head_id  or_subject  "?last_id" "?root_id ")" crlf )
 	(printout ?*agrmt_debug* "(Rule_name-verb_agrmt-subject_id-head_id  sub_or_agr   or_subject  "?last_id" "?root_id ")" crlf )
