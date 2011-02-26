@@ -565,7 +565,7 @@
  (defrule rule_for_ki_1
  (kriyA-subject ?v_id ?sub)
  (kriyA-subject ?v ?)
- (id-root ?v_id be)
+ (id-root ?v_id be|know) ;added know (25-02-11)
  ?f1<-(id-root =(+ ?v_id 1) who)
  ?f0 <-(hindi_id_order $?pre ?v_id $?post)
  (test (neq ?v_id ?v))
@@ -639,24 +639,26 @@
         (printout  ?*DBUG* "(Rule_Name-ids   rule_for_yaha   (hindi_id_order  "(implode$ (create$ $?pre ?kri  yaha $?post)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
- ; Added by Shirisha Manju(09-12-2009). --- Suggested by Sheetal
- ; If you use that strategy , he will wipe you out . 
- ; If we heat iron it becomes red .
- ;If you were a middle-class American without a job , who would you vote for .
- ;If you know who did it, you should tell the teacher.
+ ; Added by Shirisha Manju(25-02-2011).
+ ; If you know who did it, you should tell the teacher.
  (defrule wo_rule_for_if
  (declare (salience 2))
  (kriyA-conjunction  ?k ?id)
  (kriyA-praSnavAcI  ?k ?p)
+ (kriyA-subject ?k1 ?p)
  ?f1<-(id-word ?id if)  ;Modified by Meena (28-10-10) 
- ?f0 <-(hindi_id_order $?pre ?p $?post)
+ ?f0 <-(hindi_id_order $?pre ?k1 $?post)
  =>
         (retract ?f0 ?f1)
-        (assert (hindi_id_order  $?pre ?p wo $?post))
-        (printout ?*DBUG* "(Rule_Name-ids  wo_rule_for_if  (hindi_id_order  "(implode$ (create$ $?pre ?p wo $?post))")" crlf)
+        (assert (hindi_id_order  $?pre ?k1 wo $?post))
+        (printout ?*DBUG* "(Rule_Name-ids  wo_rule_for_if  (hindi_id_order  "(implode$ (create$ $?pre ?k1 wo $?post))")"crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju(09-12-2009).--- Suggested by Sheetal
  ; If John was with Lisa last night, who went to the movie with Diane. 
+ ; If you were a middle-class American without a job , who would you vote for .
+ ; If we heat iron it becomes red .
+ ; If you use that strategy , he will wipe you out .
  (defrule wo_rule_for_if1
  (declare (salience 1))
  (kriyA-conjunction  ?k ?id)
@@ -685,19 +687,17 @@
         (printout ?*DBUG* "(Rule_Name-ids   wo_rule_for_when   (hindi_id_order  "(implode$ (create$ $?pre ?k1 wo $?post))")"crlf)
 
  )
- 
-
+ ;------------------------------------------------------------------------------------------------------------------
  (defrule wo_rule
  (kriyA-conjunction  ?k 1)
  (kriyA-subject  ?kri1 ?id)
- ?f1<-(id-word 1 ?word&since)  ;Modified by Meena (28-10-10) 
+ ?f1<-(id-word 1 since)  ;Modified by Meena (28-10-10) 
  ?f0 <-(hindi_id_order $?pre ?id $?post)
  (test (and (> ?kri1 ?k) (neq ?id ?k)))
  =>
         (retract ?f0 ?f1)
-	    	(assert (hindi_id_order  $?pre isaliye ?id $?post))
-            (printout ?*DBUG* "(Rule_Name-ids   wo_rule   (hindi_id_order  "(implode$ (create$ $?pre isaliye ?id $?post)) ")" crlf)
-	
+	(assert (hindi_id_order  $?pre isaliye ?id $?post))
+        (printout ?*DBUG* "(Rule_Name-ids   wo_rule  (hindi_id_order  "(implode$ (create$ $?pre isaliye ?id $?post))")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
   ;I can not go out until my hair is dry.

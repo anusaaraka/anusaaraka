@@ -3,6 +3,7 @@
  (string-to-field (sub-string 2 10000 ?parser_id)))
 
  (deffacts dummy_facts 
+ (viSeRya-but_saMbanXI)
  (viSeRya-because_of_saMbanXI) 
  (viSeRya-for_the_sake_of_saMbanXI) 
  (viSeRya-according_to_saMbanXI) 

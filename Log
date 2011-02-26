@@ -1835,7 +1835,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
               cat_rule , link_relation_rules  and  load_lwg_rules module
        iv.  parser_id_mapping : Removed loading linkid_cat_tmp1.dat file and generating  link_word_cat.dat file
         v.  hindi_tam_rules  module : Removed loading link_word_cat.dat and link_relation_info.dat files
-  12. Added dummy fact "kriyA-throughout_saMbanXI" in pada_ids.clp
+  12. Added dummy fact "kriyA-throughout_saMbanXI" and "viSeRya-but_saMbanXI" in pada_ids.clp
   13. Modified  Anusaaraka_link.sh and Anusaaraka.sh to generate "linkid_cat_tmp.dat" instead of "linkid_word_cat.dat"
   14. Modified but.clp in WSD
   15. pada_point_concept_rules.clp:
@@ -1845,7 +1845,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   16. Modified ol_stdenglish.sh to avoid splitting of sentence in unneccesary cases.
   17. hindi_sent_reorder.clp
          Added    : wo_rule_for_if, wo_rule_for_if1 and wo_rule_for_when
-         Modified : wo_rule
+         Modified : wo_rule , rule_for_ki_1
   18. Modified "mark" rule in sd_relation_rules.clp
   19. Updated changes_in_databases.
   20. Modified sd_ver_output, verified_output, verified_output_ol, new_ver_output and small_sent_ver_output_ol 
