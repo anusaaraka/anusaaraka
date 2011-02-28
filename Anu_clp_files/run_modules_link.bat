@@ -293,7 +293,6 @@
  (load-facts "original_word.dat")
  (load-facts "chunk.dat")
  (load-facts "cat_consistency_check.dat")
- (open "vachan_to_be_decided.dat" vachan_fp  "a")
  (open "agmt_control_fact.dat" agmt_cntrl_fp "a")
  (open "pada_control_fact.dat" pada_cntrl_fp "a")
  (open "pada_debug.dat" pada_debug_fp "a")

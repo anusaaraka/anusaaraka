@@ -1860,7 +1860,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                                    pada_id_info.dat, vachan_to_be_decided.dat and original_word.dat
                                 - loaded "wsd_facts_output.dat" file  and asserted new fact "(assert (std-parser-num))"
          run_modules_ol.bat  : loaded revised_preferred_morph.dat instead of  morph.dat file
-  24. Updated changes_in_databases.
-  25. Modified sd_ver_output, verified_output, verified_output_ol, new_ver_output and small_sent_ver_output_ol 
-  26. Updated small_sent_verified_ol ( 107 )
-  27. Updated Log.
+  24. Removed 'vachan' information in all three parsers in following files:
+         a) run_modules_ol.bat             d)modify_ol_pada.clp
+         b) run_modules_link.bat           e)sd_pada.clp
+         c) run_modules_std.bat            f)pada_ids.clp
+  25. Removed  "map_vachan_id" rule in ol_pada_id_mapping.clp         
+  26. Updated changes_in_databases.
+  27. Modified sd_ver_output, verified_output, verified_output_ol, new_ver_output and small_sent_ver_output_ol 
+  28. Updated small_sent_verified_ol ( 107 )
+  29. Updated Log.

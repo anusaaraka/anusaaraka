@@ -55,14 +55,6 @@
 (assert (implode$ (create$ $?ids)))
 (modify ?f (group_ids  $?str $?ids $?end)))
 ;-------------------------------------------------------------------------------------------------------------------------
-(defrule map_vachan_id
-(declare(salience 800))
-?f<-(vachan_to_be_decided ?pid)
-(parserid-wordid   ?pid   ?wrd_id)
-=>
-(retract ?f)
-(assert (vachan_to_be_decided ?wrd_id)))
-;-------------------------------------------------------------------------------------------------------------------------
 (defrule map_agmt_id
 (declare(salience 800))
 ?f<-(agmt_control_fact ?pid)

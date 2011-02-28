@@ -211,7 +211,6 @@
  (load-facts "relations_tmp1.dat")
  (load-facts "lwg_info.dat")
  (load-facts "word.dat")
- (open "vachan_to_be_decided.dat" vachan_fp  "a")
  (open "agmt_control_fact.dat" agmt_cntrl_fp "a")
  (open "pada_control_fact.dat" pada_cntrl_fp "a")
  (open "pada_debug.dat" pada_debug_fp "a")

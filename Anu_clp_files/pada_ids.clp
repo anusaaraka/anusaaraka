@@ -424,7 +424,6 @@
  (kriyA-whatever_saMbanXI)
  )
  
- (defglobal ?*vachan_file* = vachan_fp)
  (defglobal ?*agmt_cntrl_file* = agmt_cntrl_fp)
  (defglobal ?*pada_cntrl_file* = pada_cntrl_fp)
  (defglobal ?*dbug* = pada_debug_fp)
@@ -433,7 +432,6 @@
  (defrule end
  (declare (salience -100))
  =>
-	(close ?*vachan_file*)
 	(close ?*agmt_cntrl_file*)
 	(close ?*pada_cntrl_file*)
 	(close ?*dbug*)
@@ -441,7 +439,6 @@
  )  
  ;----------------------------------------------------------------------------------------------------------------------
  (deffunction print_in_ctrl_fact_files (?paxa_head)
-	(printout	?*vachan_file*	"(vachan_to_be_decided	"	?paxa_head	")"	crlf)	
 	(printout	?*agmt_cntrl_file*	"(agmt_control_fact	"	?paxa_head	")"	crlf)	
 	(printout	?*pada_cntrl_file*	"(pada_control_fact	"	?paxa_head	")"	crlf)	
  )
