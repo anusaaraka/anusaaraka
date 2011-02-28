@@ -1848,7 +1848,19 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
          Modified : wo_rule , rule_for_ki_1
   18. Modified "mark" rule in sd_relation_rules.clp
   19. Modified "sub_or_agr" rule in agreement.clp
-  20. Updated changes_in_databases.
-  21. Modified sd_ver_output, verified_output, verified_output_ol, new_ver_output and small_sent_ver_output_ol 
-  22. Updated small_sent_verified_ol ( 107 )
-  23. Updated Log.
+  20. Added link_number.clp file to get number info using link names
+  21. Added  "map_number" rule in parser_id_mapping.clp
+  22. Removed number.clp file and renamed ol_number.clp as number.clp
+  23. Modified number.clp module in
+         run_modules_link.bat : - Removed loading the following files :
+                                   pada_id_info.dat, original_word.dat, link_name_expand.dat , link_relation_info.dat ,
+                                   vachan_to_be_decided.dat and cat_consistency_check.dat
+                                - loaded number_tmp.dat
+         run_modules_std.bat :  - Removed loading the following files :
+                                   pada_id_info.dat, vachan_to_be_decided.dat and original_word.dat
+                                - loaded "wsd_facts_output.dat" file  and asserted new fact "(assert (std-parser-num))"
+         run_modules_ol.bat  : loaded revised_preferred_morph.dat instead of  morph.dat file
+  24. Updated changes_in_databases.
+  25. Modified sd_ver_output, verified_output, verified_output_ol, new_ver_output and small_sent_ver_output_ol 
+  26. Updated small_sent_verified_ol ( 107 )
+  27. Updated Log.

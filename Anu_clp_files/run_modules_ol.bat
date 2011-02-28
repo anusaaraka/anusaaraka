@@ -343,15 +343,15 @@
  ;----------------------------------------------------------------------
  ; Determine the number of each word.
  (load "global_path.clp")
- (bind ?*path* (str-cat ?*path* "/Anu_clp_files/ol_number.clp"))
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/number.clp"))
  (load ?*path*)
- (load-facts "morph.dat")
  (load-facts "word.dat")
  (load-facts "verb_agreement.dat")
  (load-facts "wsd_facts_output.dat")
  (load-facts "number_tmp.dat")
- (open "number.dat" num_fp1 "a")
+ (load-facts "revised_preferred_morph.dat")
  (run)
+ (save-facts "number.dat" local id-number-src)
  (clear)
  ;--------------------------------------------------------------------------
  ; intra-paxa aggreement (e.g A fat boy -> ek motA ladakA)

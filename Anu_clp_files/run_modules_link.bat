@@ -70,6 +70,18 @@
  (run)
  (clear)
  ;-----------------------------------------------------------------------------------
+ ;  Determine number from link parser
+ (load "global_path.clp")
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/link_number.clp"))
+ (load ?*path*)
+ (load-facts "link_relation_info_tmp1.dat")
+ (load-facts "link_name_expand.dat")
+ (load-facts "linkid_word.dat")
+ (load-facts "parser_pos_cat.dat")
+ (run)
+ (save-facts "link_number_tmp.dat" local  parser_id-number-src)
+ (clear)
+ ;-----------------------------------------------------------------------------------
  ; Determine root of each word after cat consistency 
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/root_rule.bclp"))
@@ -180,6 +192,7 @@
  (load-facts "parserid_wordid_mapping.dat")
  (load-facts "chunk_relations.dat")
  (load-facts "hindi_meanings_tmp.dat")
+ (load-facts "link_number_tmp.dat")
  (open "root.dat" root_fp "a")
  (open "idiomatic_expr.dat" id_expr_fp "a")
  (open "preferred_morph.dat" pre_morph_fp "a")
@@ -189,6 +202,7 @@
  (open "link_relation_info.dat" l_rel_fp "a")
  (open "meaning_has_been_decided.dat" mng_dcd_fp "a")
  (open "cat_consistency_check.dat" cat_cons_fp "a")
+ (open "number_tmp.dat" num_fp "a")
  (run)
  (clear)
  ;~~~~~~~~~~~~~~~~~~~~WSD MODULE ~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -419,18 +433,13 @@
  ;----------------------------------------------------------------------
  ; Determine the number of each word.
  (load "global_path.clp")
- (bind ?*path* (str-cat ?*path* "/Anu_clp_files/number.bclp"))
- (bload ?*path*)
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/number.clp"))
+ (load ?*path*)
+ (load-facts "number_tmp.dat")
  (load-facts "word.dat")
- (load-facts "pada_id_info.dat")
  (load-facts "revised_preferred_morph.dat")
- (load-facts "original_word.dat")
- (load-facts "link_name_expand.dat")
- (load-facts "link_relation_info.dat")
- (load-facts "vachan_to_be_decided.dat")
  (load-facts "verb_agreement.dat")
  (load-facts "wsd_facts_output.dat")
- (load-facts "cat_consistency_check.dat") 
  (run)
  (save-facts "number.dat" local id-number-src)
  (clear)

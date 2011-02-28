@@ -24,6 +24,7 @@
  (link_id-idiom_word_mng)
  (link_id-idiom_root_mng)  
  (meaning_has_been_decided_for_linkid) 
+ (parser_id-number-src)
  )
  (defglobal ?*cat_cons-file* = cat_cons_fp) 
  (defglobal ?*mng_dcd-file* = mng_dcd_fp)
@@ -34,6 +35,7 @@
  (defglobal ?*rel-file* = file)
  (defglobal ?*rel-file1* = file1)
  (defglobal ?*l_rel-file* = l_rel_fp)
+ (defglobal ?*num-file* = num_fp)
 
  (deffunction string_to_integer (?parser_id); [Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
@@ -60,6 +62,14 @@
  (parserid-wordid  ?p_id ?wid)
  =>
 	(printout ?*cat_cons-file* "(id-cat_coarse "?wid" "?var")" crlf)
+ )
+ ;======================================  RULES TO MAP NUMBER   ====================================================
+ (defrule map_number
+ (declare (salience 800))
+ (parser_id-number-src ?pid ?num ?src)
+ (parserid-wordid  ?pid ?wid)
+ =>
+        (printout ?*num-file* "(id-number-src "?wid" "?num" "?src ")" crlf)
  )
  ;================================   MAPPING CHUNK RELATIONS   =====================================================
  (defrule map_chunk_rel
@@ -304,5 +314,6 @@
 	(close ?*l_rel-file*) 
 	(close ?*id_expr-file*)
 	(close ?*mng_dcd-file*)
+	(close ?*num-file*)
  )
  ;-------------------------------------------------------------------------------------------------------------------
