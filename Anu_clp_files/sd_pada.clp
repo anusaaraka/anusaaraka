@@ -175,7 +175,7 @@
  (test (eq (string-to-field (sub-string (+ (str-index "-" ?rel) 1) (- (str-index "_" ?rel) 1) ?rel)) ?w))
  (test (eq (sub-string (+ (str-index  (str-cat ?w "_") ?rel) (length ?w)) 1000 ?rel) "_saMbanXI")) ;to take only single prep  relation. Ex: kriyA-from_saMbanXI
  ?f<-(to_be_included_in_paxa ?prep_id)
- (test(or (eq ?prep_saM ?id)(member$ ?prep_saM $?ids))) ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.
+ (test(and (or (eq ?prep_saM ?id)(member$ ?prep_saM $?ids))(< ?prep_id ?prep_saM))) ;Ulsoor lake is an ideal place for sightseeing, boating and shopping. I waited for Seeta for hours.
  =>
  (retract ?f)
  (modify ?f1 (preposition  ?prep_id))

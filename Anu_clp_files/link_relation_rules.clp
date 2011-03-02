@@ -1284,6 +1284,7 @@
 (not (link_name-link_lnode-link_rnode MF ?xx ?x));ex. 4 this: Many people were injured , some of them children. 
 (not (kriyA-'viBakwi'_saMbanXI_rel_has_been_deceded_by_'kriyA-'viBakwi'_saMbanXI_and'_rule ?x))
 (not (kriyA-'viBakwi'_saMbanXI_rel_has_been_deceded_by_'kri-viB_sam_MVl'_rule ?y))
+(not (has_been_included_in_larger_group_by_rule_prep_IDIOM-MVp ?y));Added by Shirisha Manju (01-03-11)Ex:The camels can adjust their body temperature according to the external temperature. 
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?z"	"?y")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule28	kriyA-"?viBakwi"_saMbanXI	"?z"	"?y")"crlf)	
@@ -2252,6 +2253,7 @@ else
 (not (link_name-link_lnode-link_rnode Mvl ?z ?b));It was cold there even in summer . 
 (not (kriyA-'viBakwi'_saMbanXI_rel_has_been_deceded_by_'kri-viB_sam_MVl'_rule ?y))
 (not (kriyA-'viBakwi'_saMbanXI_rel_has_been_deceded_by_'kriyA-'viBakwi'_saMbanXI_and'_rule ?x))
+(not (has_been_included_in_larger_group_by_rule_prep_IDIOM-MVp ?y));Added by Shirisha Manju (01-03-11)Ex:The camels can adjust their body temperature according to the external temperature.
 =>
 (printout	?*fp*	"(relation-parser_ids	kriyA-"?viBakwi"_saMbanXI	"?b"	"?y")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	kri-viB_sam	kriyA-"?viBakwi"_saMbanXI	"?b"	"?y")"crlf)	

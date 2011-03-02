@@ -1802,7 +1802,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 23. Updated Log.
 
 
-26-02-11
+02-03-11
 --------
  1. sd_pada.clp
               Removed  : 'prep_pada_conj' rule and merged it in 'add_single_prep'
@@ -1865,7 +1865,22 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
          b) run_modules_link.bat           e)sd_pada.clp
          c) run_modules_std.bat            f)pada_ids.clp
   25. Removed  "map_vachan_id" rule in ol_pada_id_mapping.clp         
-  26. Updated changes_in_databases.
-  27. Modified sd_ver_output, verified_output, verified_output_ol, new_ver_output and small_sent_ver_output_ol 
-  28. Updated small_sent_verified_ol ( 107 )
-  29. Updated Log.
+  26. pada_ids.clp :
+        Removed  :   prep-noun       prep-noun_and   prep-noun2      stranded_prep-noun4   stranded_prep-noun_5
+                     kqxanwa_pada1   kqxanwa_pada2   kqxanwa_pada3   wh-stranded_prep      complex_prep-noun
+                     idiom_type_1
+        Modified :   idiom_type
+        Added    :   idiom_with_viSeRya , add_single_prep, add_single_prep1 ,getting_ids-complex_prep,  add_complex_prep
+  27. Modified rule28 and  kri-viB_sam rules in link_relation_rules.clp
+  28. Removed "relations dummy facts" from  :
+        1. hindi_meaning.clp   2. GNP_agreement.clp         3. agreement.clp               4. pada_ids.clp
+        5. vibakthi.clp        6. hindi_sent_reorder.clp    7. prepare_apertium_input.clp  8. hindi_position.clp
+  29. Removed add_dummy_fact.sh file
+  30. Modified run_modules_ol.bat, run_modules_std.bat and run_modules_link.bat to load "relations_tmp1.dat" file
+      instead of "relations.dat" file in the following modules
+        1. hindi_meaning.clp   2. GNP_agreement.clp         3. agreement.clp               4. pada_ids.clp
+        5. vibakthi.clp        6. hindi_sent_reorder.clp 
+  31. Updated changes_in_databases.
+  32. Modified sd_ver_output, verified_output, verified_output_ol, new_ver_output and small_sent_ver_output_ol 
+  33. Updated small_sent_verified_ol ( 107 )
+  34. Updated Log.
