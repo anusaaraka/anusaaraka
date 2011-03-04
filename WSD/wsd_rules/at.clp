@@ -134,6 +134,7 @@
 (id-root ?id at)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-at_saMbanXI  ?id1 ?id2)
+(not(id-root ?id2 death))
 ;(id-word =(+ ?id 1) conference|meeting|discussion|party)
 =>
 (retract ?mng)

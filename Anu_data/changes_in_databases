@@ -274,6 +274,10 @@ changes in samAsa-new.txt
   "delicately      nAjZukawA[>kuSalawA]~pUrvaka\"  to  "delicately      nAjZukawA[>kuSalawA]~pUrvaka"
    (removed "/" at the  end. Due to this we get problem in loading this in Clips. Eg: The delicately lyrical tone of the cello contrasted with the fiercely percussive piano chords.)
 
+  Changes in verbal_adj.txt
+  =========================
+  Added :  sWiwa	1 (suggested by Meena 04-03-11)
+  
  Changes in apertium_hn.dix
  ==========================
  Added  :

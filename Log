@@ -1873,7 +1873,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 
  04-03-11
  -------- 
-  1. WSD: Modified high.clp shop.clp
+  1. WSD: 
+         Modified: high.clp, shop.clp, at.clp
+         Added   : situate.clp
   2. Modified "PP_rule_with_vib_and_h_id_and" rule in prepare_apertium_input.clp
   3. Modified verified_output_ol
   4. To add "relation-anu_ids" fact  modified "rule_for_jisa_prakAra_se", "wh-reorder1" rules in hindi_sent_reorder.clp
@@ -1897,4 +1899,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         5. vibakthi.clp        6. hindi_sent_reorder.clp
   10. Modified run_openlogos.py 
   11. Updated changes_in_databases.
-  12. Updated Log.
+  12. Modified and updated verified_output_ol, sd_ver_output.
+  13. Updated following files:
+               verified_ol (547)  sd_verified  (396)
+  14. Updated Log.

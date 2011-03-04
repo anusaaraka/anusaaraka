@@ -982,7 +982,7 @@ for i in xrange(len(tran3)):
 							gor_object.append(tran3[i+k][7])
 							if gor_counter==2:
 						            got_obj=tran3[i][4]
-	if gor_counter==1 and  gor_kriyA[0] != '10000' and id_word[gor_kriyA[0]] not in copula and lupwa_sub_kri == '':
+	if gor_counter==1 and gor_kriyA[0] in id_word.keys() and id_word[gor_kriyA[0]] not in copula and lupwa_sub_kri == '':
 	    rel_fp.write("(relation-parser_ids kriyA-object  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[0]],sconId_resId[gor_object[0]]))
 	    #print "(eeeeeeeer-ids kriyA-object  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[0]],sconId_resId[gor_object[0]])
 	if gor_counter==2 and sconId_resId[gor_kriyA[0]] != '0' and id_word[sconId_resId[gor_kriyA[0]]] not in copula :
@@ -997,7 +997,8 @@ for i in xrange(len(tran3)):
 	    for hr in xrange(len(RES_SWRK_TAB)):
 		if tran3[i][7]==RES_SWRK_TAB[hr][0]:
 		    if RES_SWRK_TAB[hr][2]!='3' and RES_SWRK_TAB[hr][2]!='6' and tran3[i+1][9] != 'SWITCH68':
-			if tran3[i+1][7] in prep_dict_id_semwrk.keys():	
+			if tran3[i+1][7] in prep_dict_id_semwrk.keys() and tran3[i+1][8] in prep_dict_word_semwrk.keys():	
+#			    print prep_dict_word_semwrk
 			    rel_fp.write("(relation-parser_ids viSeRya-%s_saMbanXI  L%s\tL%s)\n" % (prep_dict_word_semwrk[tran3[i+1][8]], sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]]))
 #			    print "rser-ids viSeRya-%s_saMbanXI  L%s\tL%s)\n" % (prep_dict_word_semwrk[tran3[i+1][8]], sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]])
 #-----------------------------------------------------------------------------------------------------------------
