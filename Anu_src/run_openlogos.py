@@ -968,8 +968,8 @@ for i in xrange(len(tran3)):
 			if (tran3[i+k][4] == '2' or tran3[i+k][4] == '20'):
 				break
 			if (tran3[i+k][4] == '1'):
-				if tran3[i+k][7] in prep_dict_id_semwrk.keys() and tran3[i][9] != 'SWITCH68' and int(word_id[prep_dict_word_semwrk[tran3[i+k][8]]]) > int(sconId_resId[tran3[i][7]]) and int(word_id[prep_dict_word_semwrk[tran3[i+k][8]]]) < int(sconId_resId[tran3[i+k][7]]) and prep_dict_word_semwrk[tran3[i+k][8]] != 'a':#ex. 4 > & < conditions: "Imagine that a magician waves his wand and changes a bowl of dirt into a bowl of leuttce." the last condition is added for the sentence: "A pool always needs to have its water circulated through a filter for several hours a day in order to keep it clean. and "The factory typically produces 500 chairs a week." 
-                			rel_fp.write("(relation-parser_ids kriyA-%s_saMbanXI  P%s\tP%s)\n" % (return_prep(prep_dict_id_semwrk[sconId_resId[tran3[i+k][7]]]), sconId_resId[tran3[i][7]], sconId_resId[tran3[i+k][7]]))
+				if tran3[i+k][8] in prep_dict_word_semwrk.keys() and tran3[i][9] != 'SWITCH68' and int(word_id[prep_dict_word_semwrk[tran3[i+k][8]]]) > int(sconId_resId[tran3[i][7]]) and int(word_id[prep_dict_word_semwrk[tran3[i+k][8]]]) < int(sconId_resId[tran3[i+k][7]]) and prep_dict_word_semwrk[tran3[i+k][8]] != 'a':#ex. 4 > & < conditions: "Imagine that a magician waves his wand and changes a bowl of dirt into a bowl of leuttce." the last condition is added for the sentence: "A pool always needs to have its water circulated through a filter for several hours a day in order to keep it clean. and "The factory typically produces 500 chairs a week." 
+                			rel_fp.write("(relation-parser_ids kriyA-%s_saMbanXI  P%s\tP%s)\n" % (prep_dict_word_semwrk[tran3[i+k][8]], sconId_resId[tran3[i][7]], sconId_resId[tran3[i+k][7]]))
 #	               			print "(eeeeeeeeeeer-ids kriyA-%s_saMbanXI  P%s\tP%s)\n" % (return_prep(word_id[prep_dict_word_semwrk[tran3[i+k][8]]]), sconId_resId[tran3[i][7]], sconId_resId[tran3[i+k][7]])
 					got_prep_rel = prep_dict_word_semwrk.keys()
 				else:
@@ -985,7 +985,7 @@ for i in xrange(len(tran3)):
 	if gor_counter==1 and  gor_kriyA[0] != '10000' and id_word[gor_kriyA[0]] not in copula and lupwa_sub_kri == '':
 	    rel_fp.write("(relation-parser_ids kriyA-object  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[0]],sconId_resId[gor_object[0]]))
 	    #print "(eeeeeeeer-ids kriyA-object  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[0]],sconId_resId[gor_object[0]])
-	if gor_counter==2 and gor_kriyA[0] != '10000' and id_word[gor_kriyA[0]] not in copula :
+	if gor_counter==2 and sconId_resId[gor_kriyA[0]] != '0' and id_word[sconId_resId[gor_kriyA[0]]] not in copula :
 	    rel_fp.write("(relation-parser_ids kriyA-object_1  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[0]],sconId_resId[gor_object[0]]))
             rel_fp.write("(relation-parser_ids kriyA-object_2  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[1]],sconId_resId[gor_object[1]]))
 	gor_counter=0
@@ -998,8 +998,8 @@ for i in xrange(len(tran3)):
 		if tran3[i][7]==RES_SWRK_TAB[hr][0]:
 		    if RES_SWRK_TAB[hr][2]!='3' and RES_SWRK_TAB[hr][2]!='6' and tran3[i+1][9] != 'SWITCH68':
 			if tran3[i+1][7] in prep_dict_id_semwrk.keys():	
-                            rel_fp.write("(relation-parser_ids viSeRya-%s_saMbanXI  P%s\tP%s)\n" % (return_prep(prep_dict_id_semwrk[sconId_resId[tran3[i+1][7]]]), sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]]))
-#                            print "(222222222222ser_ids viSeRya-%s_saMbanXI  P%s\tP%s)\n" % (return_prep(prep_dict_id_semwrk[sconId_resId[tran3[i+1][7]]]), sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]])
+			    rel_fp.write("(relation-parser_ids viSeRya-%s_saMbanXI  L%s\tL%s)\n" % (prep_dict_word_semwrk[tran3[i+1][8]], sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]]))
+#			    print "rser-ids viSeRya-%s_saMbanXI  L%s\tL%s)\n" % (prep_dict_word_semwrk[tran3[i+1][8]], sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]])
 #-----------------------------------------------------------------------------------------------------------------
 
 	elif (tran3[i][4] == '2' and tran3[i][6] == '28') and  (tran3[i-1][4] == '1') and got_kqxnwa_rel == '' and tran3[i][9] != 'SWITCH68' and tran3[i-1][9] != 'SWITCH68': # got_kqxnwa_rel = '' condition is to stop in "She rose from the table to welcome me."
@@ -1256,7 +1256,7 @@ for i in xrange(len(tran1)):
 	    for j in xrange(1, len(tran1_components[i])):
 		if tran1_components[i][j] != '0' and int(tran1_components[i][j]) < int(RaRTI_viSeRya):
 		    RaRTI_vNa = tran1_components[i][j]
-		    if (id_form_dic[sconId_resId[RaRTI_vNa]] == '4' or id_form_dic[sconId_resId[RaRTI_vNa]] == '7') and id_word[sconId_resId[RaRTI_vNa]] not in RaRTI_viSeRaNa and(RESid_cat_dic[sconId_resId[RaRTI_vNa]] != '14' or RESid_cat_dic[sconId_resId[RaRTI_vNa]] != '15'): #The figure shows one layer of the three-dimensional structure of a salt crystal.
+		    if sconId_resId[RaRTI_vNa] != '0' and (id_form_dic[sconId_resId[RaRTI_vNa]] == '4' or id_form_dic[sconId_resId[RaRTI_vNa]] == '7') and id_word[sconId_resId[RaRTI_vNa]] not in RaRTI_viSeRaNa and(RESid_cat_dic[sconId_resId[RaRTI_vNa]] != '14' or RESid_cat_dic[sconId_resId[RaRTI_vNa]] != '15'): #The figure shows one layer of the three-dimensional structure of a salt crystal.
 			rel_fp.write("(relation-parser_ids viSeRya-RaRTI_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[RaRTI_viSeRya], sconId_resId[RaRTI_vNa]))
 #Ex. Mary's shoes are red. These are students' books.
 
