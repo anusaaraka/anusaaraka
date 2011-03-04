@@ -1894,6 +1894,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   9. Modified run_modules_ol.bat, run_modules_std.bat and run_modules_link.bat to load "relations_tmp1.dat" file
       instead of "relations.dat" file in the following modules
         1. hindi_meaning.clp   2. GNP_agreement.clp         3. agreement.clp               4. pada_ids.clp
-        5. vibakthi.clp        6. hindi_sent_reorder.clp 
-  10. Updated changes_in_databases.
-  11. Updated Log.
+        5. vibakthi.clp        6. hindi_sent_reorder.clp
+  10. Modified run_openlogos.py 
+  11. Updated changes_in_databases.
+  12. Updated Log.
