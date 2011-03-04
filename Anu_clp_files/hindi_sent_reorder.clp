@@ -56,7 +56,7 @@
  ?f1<-(id-word ?wh_word  what|when|why|who|how|where)
  (id-word ?aux do|does|did|have|has)
  (not (relation-anu_ids  kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?  ?wh_word)) ;Ex. How quickly did you run?
- (not (wall_conjunction ?wh_word)) ;When we want to hear a music programme on the radio , we have to tune the radio to the correct station .
+ (not (relation-anu_ids wall_conjunction ?wh_word)) ;When we want to hear a music programme on the radio , we have to tune the radio to the correct station .
  ?f0<-(hindi_id_order  $?start ?wh_word $?NP ?kriyA $?end)
  (test (and (neq ?wh_word 10000)(neq ?wh_word 10001)))
  =>
@@ -216,7 +216,7 @@
  ; I really like the way you do your hair .
  (defrule rule_for_jisa_prakAra_se
  (relation-anu_ids  kriyA-subject  ?kri ?sub)
- (or (relation-anu_ids  kriyA-kriyA_viSeRaNa|kriyA-object ?kri1  =(- ?sub 1)) (kriyA-object_2  ?kri1  ?way))
+ (or (relation-anu_ids  kriyA-kriyA_viSeRaNa|kriyA-object ?kri1  =(- ?sub 1)) (relation-anu_ids kriyA-object_2  ?kri1  ?way))
 ; (or (kriyA-kriyA_viSeRaNa  ?kri1  =(- ?sub 1))(kriyA-object ?kri1  =(- ?sub 1))(kriyA-object_2  ?kri1  ?way))
  ?f1<- (id-root  =(- ?sub 1) way)
  ?f0 <-(hindi_id_order $?hin_order)

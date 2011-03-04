@@ -25146,7 +25146,7 @@ delicacy	komalawA^svAxiRta~Bojana{0}
 delicacy	nAjZukawA
 delicacy's	komalawA^svAxiRta~Bojana{@vib:kA}
 delicately	kuSalawApUrvaka
-delicately	nAjZukawA[>kuSalawA]~pUrvaka\
+delicately	nAjZukawA[>kuSalawA]~pUrvaka
 delicate	nAjZuka^nAjZuka/komala[-]
 delicate	nAjZuka[-]
 delicater	nAjZuka^nAjZuka/komala~{wara}

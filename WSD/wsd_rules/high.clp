@@ -1,12 +1,11 @@
-
+;Modified by Meena(3.3.11) ; added (viSeRya-viSeRaNa ?id1 ?id) and deleted (samAsa ?id2 ?id)
 ;Added by Meena(4.12.09)
 ;High income taxes are important .
 (defrule high0
 (declare (salience 5000))
 (id-root ?id high)
 ?mng <-(meaning_to_be_decided ?id)
-;(samAsa ?id2 ?id1)
-(or(samAsa ?id2 ?id)(viSeRya-viSeRaNa ?id2 ?id))
+(or(samAsa ?id2 ?id1)(viSeRya-viSeRaNa ?id2 ?id)(viSeRya-viSeRaNa ?id1 ?id))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id aXika))

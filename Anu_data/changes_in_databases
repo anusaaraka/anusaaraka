@@ -268,6 +268,12 @@ changes in samAsa-new.txt
                dog     1    (            "                              )
                man     1    (            "                              )
 
+  Changes in total-paxasUwra.txt 
+  ==============================
+  Modified:
+  "delicately      nAjZukawA[>kuSalawA]~pUrvaka\"  to  "delicately      nAjZukawA[>kuSalawA]~pUrvaka"
+   (removed "/" at the  end. Due to this we get problem in loading this in Clips. Eg: The delicately lyrical tone of the cello contrasted with the fiercely percussive piano chords.)
+
  Changes in apertium_hn.dix
  ==========================
  Added  :

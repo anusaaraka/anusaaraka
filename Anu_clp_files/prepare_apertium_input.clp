@@ -332,10 +332,13 @@
          (bind ?last_id (nth$  (length $?ids) $?ids))
          (if (eq ?last_id ?id) then
 	    (if (eq ?cat noun) then
-                  (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num1">$ ^" ?vib "<cat:prsg>$)" crlf) 
-            else
-                  (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num1">$ ^" ?vib "<cat:prsg>$)" crlf)
-	    )
+                  (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num1">$ ^" ?vib "<cat:prsg>$)" crlf)
+               else (if (eq ?cat verbal_noun) then ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.Added by Roja (04-03-11) 
+                       (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word  "<cat:vn><case:"?case">$  ^" ?vib "<cat:prsg>$)"crlf)
+                  else
+                       (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num1">$ ^" ?vib "<cat:prsg>$)" crlf)
+	            )
+            )
 	    else
                   (if (eq ?cat noun) then
 	              (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num1">$)"crlf)

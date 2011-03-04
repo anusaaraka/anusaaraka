@@ -1871,22 +1871,29 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   29. Updated Log.
 
 
- 03-03-11
- ========
-
-  1. pada_ids.clp :
-        Removed  :   prep-noun       prep-noun_and   prep-noun2      stranded_prep-noun4   stranded_prep-noun_5
-                     kqxanwa_pada1   kqxanwa_pada2   kqxanwa_pada3   wh-stranded_prep      complex_prep-noun
-                     idiom_type_1
-        Modified :   idiom_type
-        Added    :   idiom_with_viSeRya , add_single_prep, add_single_prep1 ,getting_ids-complex_prep,  add_complex_prep
-  2. Modified rule28 and  kri-viB_sam rules in link_relation_rules.clp
-  3. Removed "relations dummy facts" from  :
+ 04-03-11
+ -------- 
+  1. WSD: Modified high.clp shop.clp
+  2. Modified "PP_rule_with_vib_and_h_id_and" rule in prepare_apertium_input.clp
+  3. Modified verified_output_ol
+  4. To add "relation-anu_ids" fact  modified "rule_for_jisa_prakAra_se", "wh-reorder1" rules in hindi_sent_reorder.clp
+  5. In pada_ids.clp, modified relation fact with "relation-anu_ids" fact in following rules:
+      det-noun          det_det-noun            det-adj/s-noun          det-num_adj/s-noun      det-viSeRaNa-viSeRaka              adj/s-noun        det-prep-nouns          viSeRaNa_viSeRaka-noun  vi-viSeRaNa_viSeRaka    kriyA_viSeRaNa          
+      subject_insertion prep_RaRTI_viSeRaNa     RaRTI_viSeRaNa1         RaRTI_viSeRaNa5
+      RaRTI_viSeRaNa2   RaRTI_viSeRaNa3         RaRTI_viSeRaNa_det_adj  RaRTI_viSeRaNa4         subject_samA, subject_PRP
+      subject_PRP_1     subject_pada            subject_pada_to_verb    object_pada             kqxanwa_pada
+      kqxanwa_pada_AL   lupwa_prep              kriyA-kriyA_mUla        kriyA-kriyA_mUla_1      idiom_type
+      idiom_type_1      idiom_type_2            more_than               kriyA_vi_vi             and_pada
+      add_viSeRaNa_to_and_viSeRya               RaRTI_viSeRaNa_rule     asserted_who            asserted_who_1
+      add_viSeRaNa_to_its_RaRTI_viSeRaNa        add_viSeRaNa_to_its_viSeRya
+  6. Modified rule28 and  kri-viB_sam rules in link_relation_rules.clp
+  7. Removed "relations dummy facts" from  :
         1. hindi_meaning.clp   2. GNP_agreement.clp         3. agreement.clp               4. pada_ids.clp
         5. vibakthi.clp        6. hindi_sent_reorder.clp    7. prepare_apertium_input.clp  8. hindi_position.clp
-  4. Removed add_dummy_fact.sh file
-  5. Modified run_modules_ol.bat, run_modules_std.bat and run_modules_link.bat to load "relations_tmp1.dat" file
+  8. Removed add_dummy_fact.sh file
+  9. Modified run_modules_ol.bat, run_modules_std.bat and run_modules_link.bat to load "relations_tmp1.dat" file
       instead of "relations.dat" file in the following modules
         1. hindi_meaning.clp   2. GNP_agreement.clp         3. agreement.clp               4. pada_ids.clp
         5. vibakthi.clp        6. hindi_sent_reorder.clp 
-  6. Updated Log.
+  10. Updated changes_in_databases.
+  11. Updated Log.

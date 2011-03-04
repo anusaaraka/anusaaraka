@@ -22,7 +22,6 @@
  (defglobal ?*pada_cntrl_file* = pada_cntrl_fp)
  (defglobal ?*dbug* = pada_debug_fp)
  (defglobal ?*errfp* = err_file)
- (defglobal ?*p_list* = (create$ ))
  
  (defrule end
  (declare (salience -100))
@@ -50,9 +49,9 @@
  (defrule default_pada
  (declare (salience -4))
  ?f0<-(to_be_included_in_paxa ?paxa_head)
- ?f<-(count ?count)
- (id-cat_coarse ?paxa_head ?cat&~preposition)
  (not( has_been_included_in_paxa $?id ?paxa_head $?id1))
+ ?f<-(count ?count)
+ (id-cat_coarse ?paxa_head ?cat)
  (not (No complete linkages found))
  =>
         (print_in_ctrl_fact_files  ?paxa_head)
@@ -61,152 +60,12 @@
         (assert (count ?count))
         (if (eq ?cat verb) then 
 		(assert (pada_info (group_head_id ?paxa_head) (group_cat VP) (group_ids  ?paxa_head)))
-		(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	default_pada	P"?paxa_head	"	VP	"(implode$	(create$	?paxa_head	))	")"	crlf)	
+	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	default_pada	P"?paxa_head	"	VP	"(implode$	(create$	?paxa_head	))	")"	crlf)	
 
 	else 
 	        (assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids  ?paxa_head)))
-		(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	default_pada	P"?paxa_head	"	PP	"(implode$	(create$	?paxa_head	))	")"	crlf)	
+	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	default_pada	P"?paxa_head	"	PP	"(implode$	(create$	?paxa_head	))	")"	crlf)	
 	)
- )
- ;----------------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (1-03-11)
- ;Where are you coming from?
- (defrule add_single_prep
- (declare (salience 1301))
- (relation-anu_ids wh_question|yes_no_question)
- (relation-anu_ids   ?rel  ?x ?prep_saM)
- ?f1<-(pada_info (group_head_id ?id)(group_ids $?ids)(preposition ?prep))
- (test (and (neq (str-index "-" ?rel)  FALSE)(neq (str-index "_" ?rel)  FALSE)))
- (test (or (eq (sub-string 1 5 ?rel) "kriyA") (eq (sub-string 1 7 ?rel) "viSeRya")))
- (id-word ?prep_id ?w)
- (test (eq (string-to-field (sub-string (+ (str-index "-" ?rel) 1) (- (str-index "_" ?rel) 1) ?rel)) ?w))
- (test (eq (sub-string (+ (str-index  (str-cat ?w "_") ?rel) (length ?w)) 1000 ?rel) "_saMbanXI")) ;to take only single prep  relation. Ex: kriyA-from_saMbanXI
- ?f<-(to_be_included_in_paxa ?prep_id)
- (test(and (or (eq ?prep_saM ?id)(member$ ?prep_saM $?ids))(> ?prep_id ?prep_saM)))
- =>
-        (retract ?f)
-        (modify ?f1 (preposition  ?prep_id))
-        (assert (has_been_decided ?prep_id))
-        (assert (has_been_decided ?prep_saM))
- )
- ;---------------------------------------------------------------------------------------------------------------------
- ;Modified by Roja(26-01-11)
- ;Added "kqxanwa" by Manju Ex : He made a mistake in the inviting of John. (kqxanwa-of_saMbanXI inviting john) (01-03-11)
- (defrule add_single_prep1
- (declare (salience 1300))
- (relation-anu_ids   ?rel  ?x ?prep_saM)
- ?f1<-(pada_info (group_head_id ?id)(group_ids $?ids)(preposition ?prep))
- (test (neq (str-index "-" ?rel)  FALSE))
- (test (neq (str-index "_" ?rel)  FALSE))
- (test (or (eq (sub-string 1 5 ?rel) "kriyA") (eq (sub-string 1 7 ?rel) "viSeRya")(eq (sub-string 1 7 ?rel) "kqxanwa")))
- (id-word ?prep_id ?w)
- (test (eq (string-to-field (sub-string (+ (str-index "-" ?rel) 1) (- (str-index "_" ?rel) 1) ?rel)) ?w))
- (test (eq (sub-string (+ (str-index  (str-cat ?w "_") ?rel) (length ?w)) 1000 ?rel) "_saMbanXI")) ;to take only single prep  relation. Ex: kriyA-from_saMbanXI
- ?f<-(to_be_included_in_paxa ?prep_id)
- (test(and (or (eq ?prep_saM ?id)(member$ ?prep_saM $?ids))(< ?prep_id ?prep_saM))) ;Ulsoor lake is an ideal place for sightseeing, boating and shopping. I waited for Seeta for hours.
- (not  (has_been_decided ?prep_saM))
- =>
-        (retract ?f)
-        (modify ?f1 (preposition  ?prep_id))
-        (assert (has_been_decided ?prep_id))
-        (assert (has_been_decided ?prep_saM))
- )
- ;Ex. Mohan fell from the top of the house. 
- ;----------------------------------------------------------------------------------------------------------------------
- (defrule get_VP_pada
- (declare (salience 500))
- (root-verbchunk-tam-chunkids  ? ? ?  $?chunk_ids ?paxa_head)
- ?f0<-(to_be_included_in_paxa ?paxa_head)
-  ?f<-(count ?count)
- =>
-        (bind ?count (+ ?count 1))
-        (assert (count ?count))
-        (retract ?f ?f0)
-        (print_in_ctrl_fact_files  ?paxa_head)
-        (bind ?chunks (implode$ $?chunk_ids))
-        (assert (has_been_included_in_paxa ?paxa_head))
-        (assert (pada_info (group_head_id ?paxa_head) (group_cat VP) (group_ids $?chunk_ids ?paxa_head)))
-        (printout       ?*dbug* "(Rule_name-pada_head_id-pada_type-ids  get_VP_pada     P"?paxa_head    "       VP      "       ?chunks "       "?paxa_head     ")"     crlf)
-        (bind ?length (length $?chunk_ids))
-        (loop-for-count (?i  1 ?length)
-                (bind ?id (nth$ ?i $?chunk_ids))
-                (assert (has_been_included_in_pada ?id))
-        )
-
- )
- ;----------------------------------------------------------------------------------------------------------------------
- ;Checking the consistency between the LWG and CHUNKER grouping in case if No complete linkages found for a sentence.
- (defrule print_error_msg
- (declare (salience 500))
- (root-verbchunk-tam-chunkids  ? ? ?  $?lwg_ids ?paxa_head)
- (No complete linkages found)
- (chunk_ids VP $?chunk_ids ?paxa_head $?chunk_ids1)
-  =>
- (bind $?lwg_grp (create$ $?lwg_ids ?paxa_head))
- (bind $?chunker_grp (create$ $?chunk_ids ?paxa_head $?chunk_ids1))
-  (if (neq $?lwg_grp $?chunker_grp)  then
-     (printout ?*errfp* "lwg_group  :: " $?lwg_grp " ------------ chunker_group  :: " $?chunker_grp  "---- Both differ" crlf)
-  )
- )
- ;----------------------------------------------------------------------------------------------------------------------
- (defrule retract_id
- (declare (salience 450))
- (has_been_included_in_pada ?id)
- ?f0<-(to_be_included_in_paxa ?id)
- =>
-       (retract ?f0)
- )
- ;----------------------------------------------------------------------------------------------------------------------
- ;Ex. I know a woman who has two children .
- (defrule asserted_who
- (declare (salience 508))
- (relation-anu_ids  viSeRya-jo_samAnAXikaraNa ?vi ?jo)
- (id-original_word 10000 who)
- ?f<-(count ?count)
- (not (has_been_included_in_paxa 10000))
- =>
-        (retract ?f )
-        (print_in_ctrl_fact_files  10000)
-        (assert (has_been_included_in_paxa 10000))
-        (bind ?count (+ ?count 1))
-        (assert (count ?count))
-        (assert (pada_info (group_head_id 10000)(group_cat PP)(group_ids 10000)))
-        (printout       ?*dbug* "(Rule_name-pada_head_id-pada_type-ids  asserted_who    P"10000 "       PP      "10000  ")"crlf)
- )
- ;----------------------------------------------------------------------------------------------------------------------
- ;Ex. The man I play tennis with is here .
- (defrule asserted_who_1
- (declare (salience 550))
- (id-original_word 10000 who)
- (relation-anu_ids  viSeRya-jo_samAnAXikaraNa  ?x 10000)
- (link_name-lnode-rnode   Bs|Bp   ?x ?prep)
- ?f<-(count ?count)
- (not (has_been_included_in_paxa 10000))
- =>
-        (retract ?f )
-        (print_in_ctrl_fact_files  10000)
-        (assert (has_been_included_in_paxa 10000))
-        (bind ?count (+ ?count 1))
-        (assert (count ?count))
-        (assert(has_been_included_in_paxa ?prep))
-        (assert (pada_info (group_head_id 10000)(group_cat PP)(group_ids 10000) (preposition ?prep)))
-        (printout       ?*dbug* "(Rule_name-pada_head_id-pada_type-ids  asserted_who_1    P"10000 "       PP      "10000"  "?prep")"crlf)
- )
- ;----------------------------------------------------------------------------------------------------------------------
- ;Ex. She was asked about the pay increase but made no comment. 
- (defrule subject_insertion
- (declare (salience 508))
- (relation-anu_ids  kriyA-subject  ?kriyA 10001)
- ?f<-(count ?count)
- (not (has_been_included_in_paxa 10001))
- =>
-        (retract ?f )
-        (print_in_ctrl_fact_files  10001)
-        (assert (has_been_included_in_paxa 10001))
-        (bind ?count (+ ?count 1))
-        (assert (count ?count))
-        (assert (pada_info (group_head_id 10001)(group_cat PP)(group_ids 10001)))
-        (printout       ?*dbug* "(Rule_name-pada_head_id-pada_type-ids  subject_insertion    P"10001 "       PP      "10001  ")"crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------
  (defrule det-noun
@@ -263,7 +122,7 @@
  (defrule det-adj/s-noun
  (declare (salience 300))
  ?f0<-(relation-anu_ids  viSeRya-det_viSeRaNa      ?paxa_head ?det)
- ?f1<- (relation-anu_ids viSeRya-viSeRaNa       ?paxa_head ?adj)
+ ?f1<-(relation-anu_ids  viSeRya-viSeRaNa       ?paxa_head ?adj)
  ?f2<-(to_be_included_in_paxa ?det)
  ?f3<-(to_be_included_in_paxa ?paxa_head)
  ?f4<-(to_be_included_in_paxa ?adj)
@@ -290,7 +149,7 @@
  (declare (salience 400))
  ?f0<-(relation-anu_ids  viSeRya-det_viSeRaNa      ?paxa_head ?det)
  (relation-anu_ids  viSeRya-saMKyA_viSeRaNa  ?paxa_head ?num)
- ?f1<- (relation-anu_ids  viSeRya-viSeRaNa       ?num ?vi)
+ ?f1<-(relation-anu_ids  viSeRya-viSeRaNa       ?num ?vi)
  ?f2<-(to_be_included_in_paxa ?det)
  ?f3<-(to_be_included_in_paxa ?paxa_head)
  ?f4<-(to_be_included_in_paxa ?adj)
@@ -370,7 +229,7 @@
  (defrule det-prep-nouns
  (declare (salience 300))
  ?f0<-(relation-anu_ids viSeRya-det_viSeRaNa      ?paxa_head ?det)
- ?f1<- (relation-anu_ids viSeRya-viSeRaNa       ?paxa_head ?adj)
+ ?f1<-(relation-anu_ids viSeRya-viSeRaNa       ?paxa_head ?adj)
  ?f2<-(to_be_included_in_paxa ?det)
  ?f3<-(to_be_included_in_paxa ?paxa_head)
  ?f4<-(to_be_included_in_paxa ?adj)
@@ -420,9 +279,9 @@
  ;Ex. VERY FAT BOYS are coming .
  (defrule viSeRaNa_viSeRaka-noun
  (declare (salience 220))
- ?f0<- (relation-anu_ids viSeRya-viSeRaNa      ?paxa_head ?adj)
- ?f1<-(relation-anu_ids viSeRaNa-viSeRaka  ?adj ?adv)
- (not  (relation-anu_ids viSeRya-viSeRaNa     ?adj1&:(< ?adj1 ?adj)?paxa_head))
+ ?f0<-(relation-anu_ids  viSeRya-viSeRaNa      ?paxa_head ?adj)
+ ?f1<-(relation-anu_ids  viSeRaNa-viSeRaka  ?adj ?adv)
+ (not (relation-anu_ids  viSeRya-viSeRaNa     ?adj1&:(< ?adj1 ?adj)?paxa_head))
  ?f3<-(to_be_included_in_paxa ?paxa_head)
  ?f4<-(to_be_included_in_paxa ?adj)
  ?f<-(count ?count)
@@ -446,7 +305,6 @@
  ;Ex. Of her childhood we know very little .
  (defrule vi-viSeRaNa_viSeRaka
  (declare (salience 210))
-;(or (relation-anu_ids viSeRaNa-viSeRaNa_viSeRaka  ?paxa_head ?adv)  (relation-anu_ids viSeRaNa-viSeRaka  ?paxa_head ?adv) (relation-anu_ids viSeRya-viSeRaka  ?paxa_head ?adv)  (relation-anu_ids kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?paxa_head ?adv))
  (relation-anu_ids  viSeRaNa-viSeRaNa_viSeRaka|viSeRaNa-viSeRaka|viSeRya-viSeRaka|kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?paxa_head ?adv)
  ?f3<-(to_be_included_in_paxa ?paxa_head)
  ?f4<-(to_be_included_in_paxa ?adv)
@@ -466,52 +324,217 @@
 	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	vi-viSeRaNa_viSeRaka	P"?paxa_head	"	PP	"(implode$	?ids)	")"crlf)	
  )
  ;----------------------------------------------------------------------------------------------------------------------
- (defrule getting_ids-complex_prep
- (declare (salience 2))
- (relation-anu_ids   ?rel  ?x ?prep_saM)
- (test (neq (str-index "-" ?rel)  FALSE))
- (test (neq (str-index "_" ?rel)  FALSE))
- (test (or (eq (sub-string 1 5 ?rel) "kriyA") (eq (sub-string 1 7 ?rel) "viSeRya")))
- (test (eq (sub-string (- (length ?rel) 7) 1000 ?rel) "saMbanXI"))
- (not (has_been_decided ?prep_saM))
- ?f<-(id-word ?id ?word)
- (not (has_been_decided ?id))
- ?f1<-(pada_info (group_head_id ?id)(preposition ?p)) ;retracting pada which has prep has head. 
- (test (neq (str-index (str-cat ?word "_") ?rel) FALSE))
+ ; Ex. A man , apparently IN A BAD MOOD, was there. The girls IN THE LAB are tired. We did it in early December. The President announced on Monday that several more bases would be closed. The Zongle of Bongle Dongle resigned today. Is that the film in which he kills his mother. He did it in more.
+ (defrule prep-noun
+ (declare (salience 449))
+; (link_name-lnode-rnode   Js|Jp|J|JG|Jw|IN|ON|Jm       ?prep   ?paxa_head)
+ (link_name-lnode-rnode   Ju|Js|Jp|J|JG|Jw|IN|ON|Jm       ?prep   ?paxa_head)
+ ?f0<-(to_be_included_in_paxa ?prep)
+ ?f1<-(to_be_included_in_paxa ?paxa_head)
+ (not (has_been_included_in_paxa $?id ?prep $?id1))
+ (not (has_been_included_in_paxa $?id ?paxa_head $?id1)) 
+ ?f<-(count ?count)
  =>
-
-                        (retract ?f )
-                        (bind ?*p_list* (create$ ?*p_list* ?id )) ;Getting ids of complex prep Ex: kriyA-along_with_saMbanXI
-                        (bind ?*p_list* (sort > ?*p_list*))
-                        (printout t ?*p_list*)
-
+	(print_in_ctrl_fact_files  ?paxa_head)
+	(retract ?f ?f0 ?f1 )
+	(bind ?ids (create$ ))
+        (loop-for-count (?loop  (+ ?prep 1)  ?paxa_head)do
+		(bind ?ids (insert$ ?ids 1 ?loop))
+		(bind ?ids (sort > ?ids))
+        )
+        (assert (has_been_included_in_paxa ?ids))
+        (bind ?count (+ ?count 1))
+        (assert (count ?count))
+	(assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids  ?ids) (preposition ?prep)))
+	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	prep-noun	P"?paxa_head	"	PP	"(implode$ (create$	?ids ?prep))")"crlf)	
  )
- ;It is true that you are my friend but I can not go ALONG WITH you on this issue. 
- ;The people of Orissa are facing grave adversities DUE TO the cyclone. 
- ;---------------------------------------------------------------------------------------------------------------------
- (defrule  add_complex_prep
- (declare (salience 1))
- (relation-anu_ids   ?rel  ?x ?prep_saM)
- ?f1<-(pada_info (group_head_id ?prep_saM)(preposition ?prep))
- (test (neq (str-index "-" ?rel)  FALSE))
- (test (neq (str-index "_" ?rel)  FALSE))
- (test (eq (sub-string (- (length ?rel) 7) 1000 ?rel) "saMbanXI"));relation last part should be saMbanXI else we get kriyA-dummy_subject ,viSeRya-RaRTI_viSeRaNa etc also.
- (not (has_been_decided ?prep_saM))
+ ;----------------------------------------------------------------------------------------------------------------------
+ ;Ex.  He was an exotic creature with short red hair and brilliant green eyes. Acetylene that helps in cutting and welding burns with bright flame
+ (defrule prep-noun_and
+ (declare (salience 650))
+ (link_name-lnode-rnode   Js|Jp|J|JG|Jw|IN|ON|Mgp|Jm   ?prep   ?x)
+ (link_name-lnode-rnode   Js|Jp|J|JG|Jw|IN|ON|Mgp|Jm   ?prep   ?y)
+ (id-word ?paxa_head and|or)
+ (test (and (>  ?paxa_head ?x) (< ?paxa_head ?y)))
+ ?f0<-(to_be_included_in_paxa ?prep)
+ ?f1<-(to_be_included_in_paxa ?paxa_head)
+ ?f2<-(to_be_included_in_paxa ?x)
+ ?f3<-(to_be_included_in_paxa ?y)
+ (not (has_been_included_in_paxa $?id ?prep $?id1))
+ (not (has_been_included_in_paxa $?id ?paxa_head $?id1))
+ (not (has_been_included_in_paxa $?id ?x $?id1))
+ (not (has_been_included_in_paxa $?id ?y $?id1))
+ ?f<-(count ?count)
  =>
-        (bind ?len (length ?*p_list*))
-           (bind ?pl (str-cat (nth$ 1 ?*p_list*)"_"))
-           (loop-for-count (?i 2 ?len) do
-                 (if (< ?i ?len) then
-                    (bind ?pl (str-cat ?pl (nth$ ?i ?*p_list* )"_"))
-                  else
-                    (bind ?pl (str-cat ?pl (nth$ ?i ?*p_list* )))
-                 )
-           )
-           (modify ?f1  (preposition  (string-to-field ?pl)))
-           (assert (has_been_decided ?prep_saM))
+        (print_in_ctrl_fact_files  ?paxa_head)
+        (retract ?f ?f0 ?f1 ?f2 ?f3)
+        (bind ?ids (create$ ))
+        (loop-for-count (?loop  (+ ?prep 1)  ?y)do
+                (bind ?ids (insert$ ?ids 1 ?loop))
+                (bind ?ids (sort > ?ids))
+        )
+        (assert (has_been_included_in_paxa ?ids))
+        (bind ?count (+ ?count 1))
+        (assert (count ?count))
+        (assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids  ?ids) (preposition ?prep)))
+        (printout       ?*dbug* "(Rule_name-pada_head_id-pada_type-ids  prep-noun_and   P"?paxa_head    "       PP      "(implode$ (create$     ?ids ?prep))")"crlf)
  )
- ;It is true that you are my friend but I can not go ALONG WITH you on this issue. 
- ;The people of Orissa are facing grave adversities DUE TO the cyclone.
+ ;----------------------------------------------------------------------------------------------------------------------
+ ;Ex. We did it in early December. The President announced on Monday that several more bases would be closed.
+ (defrule prep-noun2
+ (declare (salience 459))
+ (link_name-lnode-rnode  IN    ?prep   ?x)
+ (link_name-lnode-rnode  TY  ?x  ?paxa_head)
+ ?f0<-(to_be_included_in_paxa ?prep)
+ ?f1<-(to_be_included_in_paxa ?x)
+ ?f2<-(to_be_included_in_paxa ?paxa_head)
+ ?f<-(count ?count)
+ =>
+        (print_in_ctrl_fact_files  ?paxa_head)
+        (retract ?f ?f0 ?f1 ?f2)
+        (assert (has_been_included_in_paxa ?x))
+        (assert (has_been_included_in_paxa ?prep))
+        (assert (has_been_included_in_paxa ?paxa_head))
+        (bind ?count (+ ?count 1))
+        (assert (count ?count))
+        (assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids  ?x ?paxa_head) (preposition ?prep)))
+	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	prep-noun2	P"?paxa_head	"	PP	"	?x	"	"?paxa_head ?prep ")"crlf)	
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ ;Who did you give the book to?
+ (defrule stranded_prep-noun
+ (declare (salience 449))
+ (link_name-link_expansion    ?MVp  M V p);ex.not to have $?var after "p": The boy who  you called yesterday has arrived
+ ?f0<-(link_name-lnode-rnode   ?MVp      ?verb  ?prep)
+ (link_name-link_expansion    ?B  B $?var)
+ (id-word ?prep aboard|about|above|across|after|against|along|alongside|amid|amidst|among|amongst|around|as|aside|astride|at|athwart|atop|barring|before|behind|below|beneath|beside|besides|between|beyond|but|by|circa|concerning|despite|down|during|except|excluding|failing|following|for|from|given|in|including|inside|into|like|mid|minus|near|next|notwithstanding|of|off|on|onto|opposite|out|outside|over|pace|past|per|plus|qua|regarding|round|save|since|than|through|throughout|till|times|to|toward|towards|under|underneath|unlike|until|up|upon|versus|via|with|within|without|worth)
+ ?f1<-(link_name-lnode-rnode   ?B       ?paxa_head  ?verb)
+ ?f2<-(to_be_included_in_paxa ?prep)
+ ?f3<-(to_be_included_in_paxa ?paxa_head)
+ ?f<-(count ?count)
+ =>
+	(print_in_ctrl_fact_files  ?paxa_head)
+ 	(retract ?f ?f0 ?f2 ?f3)
+	(bind ?count (+ ?count 1))
+        (assert (count ?count))
+	(assert (has_been_included_in_paxa ?paxa_head))
+	(assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids  ?paxa_head) (preposition ?prep)))
+	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	stranded_prep-noun	P"?paxa_head	"	PP	"?paxa_head" "?prep")"crlf)	
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ ; Which place did the car come from?
+ (defrule stranded_prep-noun1
+ (declare (salience 459))
+ (link_name-link_expansion    ?MVp  M V p $?vars)
+ ?f0<-(link_name-lnode-rnode   ?MVp      ?verb  ?prep)
+ (link_name-link_expansion    ?B  B $?var)
+ ?f1<-(link_name-lnode-rnode   ?B       ?paxa_head  ?prep)
+ (link_name-link_expansion    ?D  D $?vari)
+ (link_name-lnode-rnode   ?D       ?det  ?paxa_head)
+ (id-word ?prep aboard|about|above|across|after|against|along|alongside|amid|amidst|among|amongst|around|as|aside|astride|at|athwart|atop|barring|before|behind|below|beneath|beside|besides|between|beyond|but|by|circa|concerning|despite|down|during|except|excluding|failing|following|for|from|given|in|including|inside|into|like|mid|minus|near|next|notwithstanding|of|off|on|onto|opposite|out|outside|over|pace|past|per|plus|qua|regarding|round|save|since|than|through|throughout|till|times|to|toward|towards|under|underneath|unlike|until|up|upon|versus|via|with|within|without|worth)
+ ?f2<-(to_be_included_in_paxa ?prep)
+ ?f3<-(to_be_included_in_paxa ?paxa_head)
+ ?f<-(count ?count)
+ (not (has_been_included_in_paxa $?pre ?prep $?post))
+ =>
+	(print_in_ctrl_fact_files  ?paxa_head)
+	(retract ?f ?f0 ?f2 ?f3)
+	(bind ?ids (create$ ))
+        (loop-for-count (?loop  ?det  ?paxa_head)do
+		(bind ?ids (insert$ ?ids 1 ?loop))
+		(bind ?ids (sort > ?ids))
+        )
+	(assert (has_been_included_in_paxa ?ids))
+	(bind ?count (+ ?count 1))
+        (assert (count ?count))
+	(assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids ?ids) (preposition ?prep)))
+	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	stranded_prep-noun1	P"?paxa_head	"	PP	"(implode$	(create$	?ids ?prep))")"crlf)	
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ ;Can you tell us where those strange ideas came from?
+ (defrule stranded_prep-noun2
+ (declare (salience 45))
+ (link_name-lnode-rnode   MVp      ?v  ?prep)
+ (link_name-link_expansion    ?S  S $?var)
+ (link_name-lnode-rnode   ?S       ?n  ?v)
+ (link_name-lnode-rnode   Cs    ?paxa_head ?n)
+ ?f0<-(to_be_included_in_paxa ?prep)
+ ?f1<-(to_be_included_in_paxa ?paxa_head)
+ ?f<-(count ?count)
+ =>
+        (print_in_ctrl_fact_files  ?paxa_head)
+        (retract ?f ?f0 ?f1)
+        (assert (has_been_included_in_paxa ?prep))
+        (assert (has_been_included_in_paxa ?paxa_head))
+        (bind ?count (+ ?count 1))
+        (assert (count ?count))
+        (assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids ?paxa_head) (preposition ?prep)))
+	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	stranded_prep-noun2	P"?paxa_head	"	PP	"(implode$	(create$	?paxa_head ?prep))")"crlf)	
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ ;Ex. The planet that we live on is of medium size. These are the principles which we all believe in.
+ (defrule stranded_prep-noun3
+ (declare (salience 545))
+ (link_name-lnode-rnode   MVp      ?v  ?prep)
+ (link_name-lnode-rnode   Rn|R       ?n  ?paxa_head)
+ (link_name-lnode-rnode   Bs|Bp    ?n ?prep)
+ (not (has_been_included_in_paxa $?pre ?prep $?post))
+ ?f0<-(to_be_included_in_paxa ?prep)
+ ?f1<-(to_be_included_in_paxa ?paxa_head)
+ ?f<-(count ?count)
+ =>
+        (print_in_ctrl_fact_files  ?paxa_head)
+        (retract ?f ?f0 ?f1)
+        (assert (has_been_included_in_paxa ?prep))
+        (assert (has_been_included_in_paxa ?paxa_head))
+        (bind ?count (+ ?count 1))
+        (assert (count ?count))
+        (assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids ?paxa_head) (preposition ?prep)))
+	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	stranded_prep-noun3	P"?paxa_head	"	PP	"(implode$	(create$	?paxa_head ?prep))")"crlf)	
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ ;Ex.  Which of your parents do you feel closer to?
+ (defrule  stranded_prep-noun4
+ (declare (salience 500))
+ (link_name-lnode-rnode Pam ?kriyA ?s_s)
+ (link_name-lnode-rnode MVp ?s_s ?prep)
+ (link_name-lnode-rnode Wq ?a ?paxa_head)
+ (id-word ?prep aboard|about|above|across|after|against|along|alongside|amid|amidst|among|amongst|around|as|aside|astride|at|athwart|atop|barring|before|behind|below|beneath|beside|besides|between|beyond|but|by|circa|concerning|despite|down|during|except|excluding|failing|following|for|from|given|in|including|inside|into|like|mid|minus|near|next|notwithstanding|of|off|on|onto|opposite|out|outside|over|pace|past|per|plus|qua|regarding|round|save|since|than|through|throughout|till|times|to|toward|towards|under|underneath|unlike|until|up|upon|versus|via|with|within|without|worth)
+ ?f0<-(to_be_included_in_paxa ?prep)
+ ?f1<-(to_be_included_in_paxa ?paxa_head)
+ ?f<-(count ?count)
+ =>
+        (print_in_ctrl_fact_files  ?paxa_head)
+        (retract ?f ?f0 ?f1)
+        (assert (has_been_included_in_paxa ?prep))
+        (assert (has_been_included_in_paxa ?paxa_head))
+        (bind ?count (+ ?count 1))
+        (assert (count ?count))
+        (assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids ?paxa_head) (preposition ?prep)))
+	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	stranded_prep-noun4	P"?paxa_head	"	PP	"(implode$	(create$	?paxa_head ?prep))")"crlf)	
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ ;Ex. So what would an object moving at a constant velocity look like?
+ (defrule stranded_prep-noun_5
+ (declare (salience 449))
+ (link_name-link_expansion    ?MVp  M V p)
+ ?f0<-(link_name-lnode-rnode   ?MVp      ?verb  ?prep)
+ (link_name-link_expansion    ?B  B $?var)
+ (id-word ?prep aboard|about|above|across|after|against|along|alongside|amid|amidst|among|amongst|around|as|aside|astride|at|athwart|atop|barring|before|behind|below|beneath|beside|besides|between|beyond|but|by|circa|concerning|despite|down|during|except|excluding|failing|following|for|from|given|in|including|inside|into|like|mid|minus|near|next|notwithstanding|of|off|on|onto|opposite|out|outside|over|pace|past|per|plus|qua|regarding|round|save|since|than|through|throughout|till|times|to|toward|towards|under|underneath|unlike|until|up|upon|versus|via|with|within|without|worth)
+ ?f1<-(link_name-lnode-rnode   ?B       ?paxa_head  ?prep)
+ ?f2<-(to_be_included_in_paxa ?prep)
+ ?f3<-(to_be_included_in_paxa ?paxa_head)
+ ?f<-(count ?count)
+ (not (has_been_included_in_paxa $?pre ?prep $?post))
+ =>
+        (print_in_ctrl_fact_files  ?paxa_head)
+        (retract ?f ?f0 ?f2 ?f3)
+        (bind ?count (+ ?count 1))
+        (assert (count ?count))
+        (assert (has_been_included_in_paxa ?paxa_head))
+        (assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids  ?paxa_head) (preposition ?prep)))
+	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	stranded_prep-noun_5	P"?paxa_head	"	PP	"?paxa_head"	"?prep")"crlf)	
+ )
  ;----------------------------------------------------------------------------------------------------------------------
  ; Ex. She runs FAST .
  (defrule kriyA_viSeRaNa
@@ -612,8 +635,7 @@
  (declare (salience 1001))
  ?f<-(pada_info (group_head_id ?viSeRya) (group_cat PP) (group_ids $?viSeRya_grp) (preposition ?prep))
  ?f0<-(relation-anu_ids viSeRya-RaRTI_viSeRaNa   ?viSeRya  ?RaRTI_viSeRaNa)
-; (or (relation-anu_ids viSeRya-viSeRaNa ?viSeRya ?viSeRaNa)(relation-anu_ids viSeRya-det_viSeRaNa ?viSeRya ?viSeRaNa) (relation-anu_ids samAsa  ?viSeRya ?viSeRaNa) (relation-anu_ids viSeRya-saMKyA_viSeRaNa   ?viSeRya  ?viSeRaNa))
- (relation-anu_ids viSeRya-viSeRaNa|viSeRya-det_viSeRaNa|samAsa|viSeRya-saMKyA_viSeRaNa ?viSeRya ?viSeRaNa) 
+ (relation-anu_ids viSeRya-viSeRaNa|viSeRya-det_viSeRaNa|samAsa|viSeRya-saMKyA_viSeRaNa ?viSeRya ?viSeRaNa)  
  (not (has_been_included_in_paxa $? ?viSeRaNa $?))
   =>
   	(bind ?g (create$ ?viSeRaNa $?viSeRya_grp))
@@ -662,27 +684,27 @@
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ; I went there with his/my/your mother.
-; (defrule prep_RaRTI_viSeRaNa
-; (declare (salience 495))
-; ?f0<-(viSeRya-RaRTI_viSeRaNa   ?paxa_head  ?RaRTI_viSeRaNa)
-; (link_name-link_expansion    ?J   J $?vars)
-; ?f1<-(link_name-lnode-rnode   ?J       ?prep   ?paxa_head)
-; ?f2<-(to_be_included_in_paxa ?prep)  ?f3<-(to_be_included_in_paxa ?RaRTI_viSeRaNa)  ?f4<-(to_be_included_in_paxa ?paxa_head)
-; =>
-; 	(print_in_ctrl_fact_files  ?paxa_head)
-; 	(print_in_ctrl_fact_files  ?RaRTI_viSeRaNa)
-;	(retract  ?f3 ?f4)
-;        (bind ?g (create$ ))
-;        (loop-for-count (?loop (+ ?prep 1) ?paxa_head)do
-;        	(bind ?g (insert$ ?g 1 ?loop))
-;	)
-;        (bind ?a (sort > ?g))
-;        (bind ?c (nth$ 1 ?a))
-;        (bind ?b (delete$  ?a  1  1))
-;        (assert (pada_info (group_head_id ?paxa_head) (group_cat English_PP) (group_ids   ?a) (preposition ?prep)))
-;	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	prep_RaRTI_viSeRaNa	P"?paxa_head"	English_PP	"(implode$	(create$	?a  ?prep))")"crlf)	
-; )
-; ;----------------------------------------------------------------------------------------------------------------------
+ (defrule prep_RaRTI_viSeRaNa
+ (declare (salience 495))
+ ?f0<-(relation-anu_ids viSeRya-RaRTI_viSeRaNa   ?paxa_head  ?RaRTI_viSeRaNa)
+ (link_name-link_expansion    ?J   J $?vars)
+ ?f1<-(link_name-lnode-rnode   ?J       ?prep   ?paxa_head)
+ ?f2<-(to_be_included_in_paxa ?prep)  ?f3<-(to_be_included_in_paxa ?RaRTI_viSeRaNa)  ?f4<-(to_be_included_in_paxa ?paxa_head)
+ =>
+ 	(print_in_ctrl_fact_files  ?paxa_head)
+ 	(print_in_ctrl_fact_files  ?RaRTI_viSeRaNa)
+	(retract ?f2 ?f3 ?f4)
+        (bind ?g (create$ ))
+        (loop-for-count (?loop (+ ?prep 1) ?paxa_head)do
+        	(bind ?g (insert$ ?g 1 ?loop))
+	)
+        (bind ?a (sort > ?g))
+        (bind ?c (nth$ 1 ?a))
+        (bind ?b (delete$  ?a  1  1))
+        (assert (pada_info (group_head_id ?paxa_head) (group_cat English_PP) (group_ids   ?a) (preposition ?prep)))
+	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	prep_RaRTI_viSeRaNa	P"?paxa_head"	English_PP	"(implode$	(create$	?a  ?prep))")"crlf)	
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
  ; Ex. We had wasted OUR TIME. We had wasted OUR time. We had wasted our GOOD TIME. This is RAMA'S book. These are STUDENTS' books.
  (defrule RaRTI_viSeRaNa1
  (declare (salience 490))
@@ -970,8 +992,7 @@
  ;----------------------------------------------------------------------------------------------------------------------
  ; Ex. I saw COWS
  (defrule object_pada
-; (or(relation-anu_ids kriyA-object  ?verb ?paxa_head)(relation-anu_ids kriyA-kqxanwa_object  ?verb ?paxa_head)(relation-anu_ids kriyA-object_2  ?verb ?paxa_head)(relation-anu_ids kriyA-object_1  ?verb ?paxa_head))
- (relation-anu_ids kriyA-object|kriyA-kqxanwa_object|kriyA-object_2|kriyA-object_1 ?verb ?paxa_head)
+ (relation-anu_ids kriyA-object|kriyA-kqxanwa_object|kriyA-object_2|kriyA-object_1 ?verb ?paxa_head) 
  ?f1<-(to_be_included_in_paxa ?paxa_head)
  ?f<-(count ?count)
  (not  (has_been_included_in_paxa $?pre ?paxa_head $?post))
@@ -1035,6 +1056,61 @@
 	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	kqxanwa_pada_AL	P"?paxa_head	"	PP	"(implode$	?ids)	")"crlf)	
  )
  ;----------------------------------------------------------------------------------------------------------------------
+ ;The game of life is played FOR WINNING.
+ (defrule kqxanwa_pada1
+ (declare (salience 510))
+ ?f0<- (link_name-lnode-rnode   MVp      ?verb  ?prep )
+ ?f1<- (link_name-lnode-rnode   Mgp       ?prep  ?paxa_head)
+ ?f2<-(to_be_included_in_paxa ?prep)
+ ?f3<-(to_be_included_in_paxa ?paxa_head)
+ ?f<-(count ?count)
+ =>
+	(print_in_ctrl_fact_files  ?paxa_head)
+	(retract ?f ?f0 ?f1 ?f2 ?f3 )
+	(bind ?count (+ ?count 1))
+	(assert (has_been_included_in_paxa ?paxa_head))
+        (assert (count ?count))
+        (assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids  ?paxa_head)(preposition ?prep)))
+	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	kqxanwa_pada1	P"?paxa_head	"	PP	"?prep"	"?paxa_head")"crlf)	
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ ;Ex. By going there you can earn more money.
+ (defrule kqxanwa_pada2
+ (declare (salience 610))
+ (link_name-lnode-rnode   Mgp       ?prep  ?paxa_head)
+ ?f0<-(to_be_included_in_paxa ?prep)
+ ?f1<-(to_be_included_in_paxa ?paxa_head)
+ ?f<-(count ?count)
+ =>
+        (print_in_ctrl_fact_files  ?paxa_head)
+        (retract ?f ?f0 ?f1)
+        (bind ?count (+ ?count 1))
+        (assert (has_been_included_in_paxa ?paxa_head))
+        (assert (count ?count))
+        (assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids  ?paxa_head)(preposition ?prep)))
+	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	kqxanwa_pada2	P"?paxa_head	"	PP	"	?paxa_head" "?prep")"crlf)	
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ ;Ex. I prevented her from doing it by praising her for not doing it.
+ (defrule kqxanwa_pada3
+ (declare (salience 620))
+ (link_name-lnode-rnode   Mgp       ?prep  ?not)
+ (link_name-lnode-rnode   Mgn       ?not  ?paxa_head)
+ ?f0<-(to_be_included_in_paxa ?prep)
+ ?f1<-(to_be_included_in_paxa ?not)
+ ?f2<-(to_be_included_in_paxa ?paxa_head)
+ ?f<-(count ?count)
+ =>
+        (print_in_ctrl_fact_files  ?paxa_head)
+        (retract ?f ?f0 ?f1)
+        (bind ?count (+ ?count 1))
+        (assert (has_been_included_in_paxa ?paxa_head))
+        (assert (has_been_included_in_paxa ?not))
+        (assert (count ?count))
+        (assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids ?not ?paxa_head)(preposition ?prep)))
+	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	qxanwa_pada3	P"?paxa_head	"	PP	"	?not"	"?paxa_head"	"?prep")"crlf)	
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
  ; Ex. A man , apparently in a bad mood , was THERE.
  (defrule lupwa_prep
  (relation-anu_ids kriyA-aXikaraNavAcI_avyaya  ?kriyA ?paxa_head)  ; kriyA-lupwa_prep_saMbanXI  is now changed to kriyA-aXikaraNavAcI_avyaya (Modified by Roja 28-12-10 Suggested by Sukhada)
@@ -1048,6 +1124,50 @@
         (assert (count ?count))
 	(assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids  ?paxa_head)))
 	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	lupwa_prep	P"?paxa_head	"	PP	"(implode$	(create$	?paxa_head	))	")"	crlf)	
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ (defrule get_VP_pada
+ (declare (salience 500))
+ (root-verbchunk-tam-chunkids  ? ? ?  $?chunk_ids ?paxa_head)
+ ?f0<-(to_be_included_in_paxa ?paxa_head)
+  ?f<-(count ?count)
+ =>
+        (bind ?count (+ ?count 1))
+        (assert (count ?count))
+	(retract ?f ?f0)
+	(print_in_ctrl_fact_files  ?paxa_head)
+	(bind ?chunks (implode$ $?chunk_ids))
+	(assert (has_been_included_in_paxa ?paxa_head))
+	(assert (pada_info (group_head_id ?paxa_head) (group_cat VP) (group_ids $?chunk_ids ?paxa_head)))
+	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	get_VP_pada	P"?paxa_head	"	VP	"	?chunks	"	"?paxa_head	")"	crlf)	
+        (bind ?length (length $?chunk_ids))
+        (loop-for-count (?i  1 ?length)
+                (bind ?id (nth$ ?i $?chunk_ids))
+                (assert (has_been_included_in_pada ?id))
+        )
+
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ ;Checking the consistency between the LWG and CHUNKER grouping in case if No complete linkages found for a sentence.
+ (defrule print_error_msg
+ (declare (salience 500))
+ (root-verbchunk-tam-chunkids  ? ? ?  $?lwg_ids ?paxa_head)
+ (No complete linkages found)
+ (chunk_ids VP $?chunk_ids ?paxa_head $?chunk_ids1)
+  =>
+ (bind $?lwg_grp (create$ $?lwg_ids ?paxa_head))
+ (bind $?chunker_grp (create$ $?chunk_ids ?paxa_head $?chunk_ids1))
+  (if (neq $?lwg_grp $?chunker_grp)  then
+     (printout ?*errfp* "lwg_group  :: " $?lwg_grp " ------------ chunker_group  :: " $?chunker_grp  "---- Both differ" crlf)
+  )
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ (defrule retract_id
+ (declare (salience 450))
+ (has_been_included_in_pada ?id)
+ ?f0<-(to_be_included_in_paxa ?id)
+ =>
+       (retract ?f0)
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ;Ex. They seem to resemble each other . 
@@ -1124,38 +1244,12 @@
         (printout       ?*dbug* "(Rule_name-pada_head_id-pada_type-ids  kriyA-kriyA_mUla_1        P"?kriyA    "	infinitive      " (implode$      (create$    ?to ?paxa_head ?kriyA))")"     crlf)   
  )
  ;----------------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (01-03-11)
- ;How many people did you see?
- (defrule idiom_with_viSeRya
- (declare (salience 6))
- (or (relation-anu_ids idiom_type_1 ?x ?y) (relation-anu_ids idiom_type_2 ?x ?y))
- (relation-anu_ids viSeRya-det_viSeRaNa ?paxa_head ?x)
- ?f0<-(to_be_included_in_paxa ?x)
- ?f1<-(to_be_included_in_paxa ?paxa_head)
- ?f2<-(to_be_included_in_paxa ?y)
- (not (has_been_included_in_paxa $?id ?x $?id1)) ; ex. I had been away for a few days so I had a lot of post waiting for me.
- (not (has_been_included_in_paxa $?id ?paxa_head $?id1))
- (not (has_been_included_in_paxa $?id ?y $?id1))
- ?f<-(count ?count)
- =>
-        (retract ?f ?f0 ?f1 ?f2)
-        (print_in_ctrl_fact_files  ?paxa_head)
-        (bind ?count (+ ?count 1))
-        (assert (count ?count))
-        (assert (has_been_included_in_paxa ?paxa_head))
-        (assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids ?y  ?x ?paxa_head)))
-        (printout       ?*dbug* "(Rule_name-pada_head_id-pada_type-ids  idiom_type      P"?paxa_head    "       PP      "       ?x      "       "       ?paxa_head      ")"     crlf)
- )
- ;----------------------------------------------------------------------------------------------------------------------
  (defrule idiom_type
- (declare (salience 3));Added by Shirisha Manju Ex: I told him by telephone that I was coming by car.
-; (or (relation-anu_ids idiom_type_1 ?x ?paxa_head) (relation-anu_ids  idiom_type_2 ?x ?paxa_head))
- (relation-anu_ids idiom_type_1|idiom_type_2 ?x ?paxa_head)
+ (or (relation-anu_ids idiom_type_1 ?x ?paxa_head) (relation-anu_ids idiom_type_2 ?x ?paxa_head))
  ?f0<-(to_be_included_in_paxa ?x)
  ?f1<-(to_be_included_in_paxa ?paxa_head)
  (not (has_been_included_in_paxa $?id ?x $?id1)) ; ex. I had been away for a few days so I had a lot of post waiting for me.
  (not (has_been_included_in_paxa $?id ?paxa_head $?id1))
- (id-word ?x how|by|a|next|according|the|one|each)
  ?f<-(count ?count)
  =>
         (retract ?f ?f0 ?f1)
@@ -1167,11 +1261,29 @@
 	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	idiom_type	P"?paxa_head	"	PP	"	?x	"	"	?paxa_head	")"	crlf)	
  )
  ;----------------------------------------------------------------------------------------------------------------------
+ (defrule idiom_type_1
+ (declare (salience 50))
+ (or (relation-anu_ids idiom_type_1 ?x ?y) (relation-anu_ids idiom_type_2 ?x ?y))
+ (or (relation-anu_ids idiom_type_1 ?y  ?paxa_head) (relation-anu_ids idiom_type_2 ?y ?paxa_head))
+ ?f0<-(to_be_included_in_paxa ?x)
+ ?f1<-(to_be_included_in_paxa ?y)
+ ?f2<-(to_be_included_in_paxa ?paxa_head)
+ ?f<-(count ?count)
+ =>
+        (retract ?f ?f0 ?f1 ?f2)
+        (print_in_ctrl_fact_files  ?paxa_head)
+        (bind ?count (+ ?count 1))
+	(assert (has_been_included_in_paxa ?paxa_head))
+        (assert (count ?count))
+        (assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids ?x ?y ?paxa_head)))
+	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	idiom_type_1	P"?paxa_head	"	PP	"	?x	"	"	?y	"	"	?paxa_head	")"	crlf)	
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
  (defrule idiom_type_2
  (declare (salience 150))
- (relation-anu_ids idiom_type_1|idiom_type_2 ?x ?y)
- (relation-anu_ids idiom_type_1|idiom_type_2 ?y ?z)
- (relation-anu_ids idiom_type_1|idiom_type_2 ?z ?paxa_head)
+ (or (relation-anu_ids idiom_type_1 ?x ?y) (relation-anu_ids idiom_type_2 ?x ?y))
+ (or (relation-anu_ids idiom_type_1 ?y ?z) (relation-anu_ids idiom_type_2 ?y ?z))
+ (or (relation-anu_ids idiom_type_1 ?z  ?paxa_head) (relation-anu_ids idiom_type_2 ?z ?paxa_head))
  ?f0<-(to_be_included_in_paxa ?x)
  ?f1<-(to_be_included_in_paxa ?y)
  ?f3<-(to_be_included_in_paxa ?z)
@@ -1229,6 +1341,26 @@
         (assert (has_been_included_in_paxa ?paxa_head))
 	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	even	P"?paxa_head	"	PP	"?paxa_head"	"?even")"crlf)	
         (assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids   ?paxa_head ?even)))
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ ;Ex. Where is the figure taken from? Where are you coming from? Where is she coming from?
+ (defrule wh-stranded_prep
+ (link_name-lnode-rnode MVp ?kriyA  ?prep)
+ (link_name-link_expansion ?Q  Q $?)
+ (link_name-lnode-rnode ?Q ?paxa_head  ?aux)
+ (root-verbchunk-tam-chunkids $? ?aux $? ?kriyA)
+ (id-word ?prep aboard|about|above|across|after|against|along|alongside|amid|amidst|among|amongst|around|as|aside|astride|at|athwart|atop|barring|before|behind|below|beneath|beside|besides|between|beyond|but|by|circa|concerning|despite|down|during|except|excluding|failing|following|for|from|given|in|including|inside|into|like|mid|minus|near|next|notwithstanding|of|off|on|onto|opposite|out|outside|over|pace|past|per|plus|qua|regarding|round|save|since|than|through|throughout|till|times|to|toward|towards|under|underneath|unlike|until|up|upon|versus|via|with|within|without|worth)
+ ?f1<-(to_be_included_in_paxa ?prep)  ?f2<-(to_be_included_in_paxa ?paxa_head)
+ ?f<-(count ?count)
+ =>
+        (print_in_ctrl_fact_files  ?paxa_head)
+        (retract ?f ?f1 ?f2)
+        (bind ?count (+ ?count 1))
+        (assert (count ?count))
+        (assert (has_been_included_in_paxa ?prep))
+        (assert (has_been_included_in_paxa ?paxa_head))
+	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	wh-stranded_prep	P"?paxa_head	"	PP	"?paxa_head"	"?prep")"crlf)	
+        (assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids   ?paxa_head ) (preposition ?prep)))
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ;Ex.  He is stronger TAHN ME. He is more intelligent THAN ATTRACTIVE.
@@ -1321,8 +1453,7 @@
  ;Ex. I wonder how quickly Jane ran. How important is it to turn the computer off. 
  (defrule kriyA_vi_vi
  (declare (salience 495))
-; (or (relation-anu_ids  kriyA_viSeRaNa-viSeRaka ?paxa_head ?x) (relation-anu_ids  viSeRya-kiwanA_viSeRaNa  ?paxa_head ?x))
- (relation-anu_ids kriyA_viSeRaNa-viSeRaka|viSeRya-kiwanA_viSeRaNa ?paxa_head ?x)
+ (relation-anu_ids kriyA_viSeRaNa-viSeRaka|viSeRya-kiwanA_viSeRaNa ?paxa_head ?x) 
  ?f0<-(to_be_included_in_paxa ?x)  ?f1<-(to_be_included_in_paxa ?paxa_head)
  ?f<-(count ?count)
  =>
@@ -1516,8 +1647,7 @@
  ;Ex. Rama and Mohan went to the shop. Rama, Mohan, Shyam  and Gita went to the school.
  (defrule and_pada
  (declare (salience 1501))
-; (or (relation-anu_ids  kriyA-subject  ?kriya ?paxa_head) (relation-anu_ids  kriyA-object  ?kriya ?paxa_head) (relation-anu_ids  to-infinitive  ?kriya ?paxa_head) (relation-anu_ids  subject-subject_samAnAXikaraNa ?kriyA ?paxa_head) (relation-anu_ids  object-object_samAnAXikaraNa ?kriyA ?paxa_head) (relation-anu_ids  kriyA-aBihiwa  ?kriyA ?paxa_head)) 
- (relation-anu_ids  kriyA-subject|kriyA-object|to-infinitive|subject-subject_samAnAXikaraNa|object-object_samAnAXikaraNa|kriyA-aBihiwa ?kriyA ?paxa_head)
+ (relation-anu_ids  kriyA-subject|kriyA-object|to-infinitive|subject-subject_samAnAXikaraNa|object-object_samAnAXikaraNa|kriyA-aBihiwa ?kriyA ?paxa_head) 
  (conjunction-components  ?paxa_head $?ids)
  (id-word ?paxa_head and|or)
  ?f2<-(to_be_included_in_paxa ?paxa_head)
@@ -1540,8 +1670,7 @@
  ?f<-(pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids $?viSeRya_grp))
  (id-word ?paxa_head and|or)
  (conjunction-components  ?paxa_head $?ids)
-; (or (relation-anu_ids  viSeRya-viSeRaNa ?x ?viSeRaNa)(relation-anu_ids  viSeRya-det_viSeRaNa ?x ?viSeRaNa) (relation-anu_ids  viSeRya-RaRTI_viSeRaNa   ?x  ?viSeRaNa))
- (relation-anu_ids viSeRya-viSeRaNa|viSeRya-det_viSeRaNa|viSeRya-RaRTI_viSeRaNa ?x  ?viSeRaNa)
+ (relation-anu_ids viSeRya-viSeRaNa|viSeRya-det_viSeRaNa|viSeRya-RaRTI_viSeRaNa ?x  ?viSeRaNa) 
  (test (member$ ?x $?ids))
  (test (eq (member$  ?viSeRaNa  $?viSeRya_grp) FALSE))
   =>
@@ -1621,6 +1750,58 @@
 	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	NP_VP_rule_NCL	P"?head_id	"	PP	"(implode$	(create$	$?ids	?head_id))	")"crlf)	
     )
    (print_in_ctrl_fact_files  ?head_id)
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ ;Ex. I know a woman who has two children .
+ (defrule asserted_who
+ (declare (salience 508))
+ (relation-anu_ids  viSeRya-jo_samAnAXikaraNa ?vi ?jo)
+ (id-original_word 10000 who)
+ ?f<-(count ?count)
+ (not (has_been_included_in_paxa 10000))
+ =>
+	(retract ?f )
+	(print_in_ctrl_fact_files  10000)
+	(assert (has_been_included_in_paxa 10000))
+	(bind ?count (+ ?count 1))
+	(assert (count ?count))
+	(assert (pada_info (group_head_id 10000)(group_cat PP)(group_ids 10000)))
+	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	asserted_who	P"10000	"	PP	"10000	")"crlf)	
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ ;Ex. The man I play tennis with is here .
+ (defrule asserted_who_1
+ (declare (salience 550))
+ (id-original_word 10000 who)
+ (relation-anu_ids viSeRya-jo_samAnAXikaraNa  ?x 10000)
+ (link_name-lnode-rnode   Bs|Bp   ?x ?prep)
+ ?f<-(count ?count)
+ (not (has_been_included_in_paxa 10000))
+ =>
+        (retract ?f )
+        (print_in_ctrl_fact_files  10000)
+        (assert (has_been_included_in_paxa 10000))
+        (bind ?count (+ ?count 1))
+        (assert (count ?count))
+	(assert(has_been_included_in_paxa ?prep))
+        (assert (pada_info (group_head_id 10000)(group_cat PP)(group_ids 10000) (preposition ?prep)))
+        (printout       ?*dbug* "(Rule_name-pada_head_id-pada_type-ids  asserted_who_1    P"10000 "       PP      "10000"  "?prep")"crlf)
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ ;Ex. She was asked about the pay increase but made no comment. 
+ (defrule subject_insertion
+ (declare (salience 508))
+ (relation-anu_ids  kriyA-subject  ?kriyA 10001)
+ ?f<-(count ?count)
+ (not (has_been_included_in_paxa 10001))
+ =>
+        (retract ?f )
+        (print_in_ctrl_fact_files  10001)
+        (assert (has_been_included_in_paxa 10001))
+        (bind ?count (+ ?count 1))
+        (assert (count ?count))
+        (assert (pada_info (group_head_id 10001)(group_cat PP)(group_ids 10001)))
+        (printout       ?*dbug* "(Rule_name-pada_head_id-pada_type-ids  subject_insertion    P"10001 "       PP      "10001  ")"crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ;Ex. Each one of them recorded the narratives from twenty participants.
@@ -1743,6 +1924,37 @@
         (assert (has_been_included_in_paxa ?paxa_head))
 	(printout	?*dbug*	"(Rule_name-pada_head_id-pada_type-ids	TI	P"?paxa_head	"	PP	"?paxa_head"	"?prep")"crlf)	
         (assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids  ?paxa_head) (vibakthi kI_hEsiyawa_se)))
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ ;Ex. He came from inside the room.  Apart from jogging she gets no exercise.
+ (defrule complex_prep-noun
+ (declare (salience 469))
+ (or (link_name-link_expansion ?ID I D  $?vars) (link_name-link_expansion ?ID F M))
+ (link_name-lnode-rnode ?ID ?from ?prep)
+ (link_name-lnode-rnode Js|Jp|J|JG|Jw|IN|ON|Jm ?prep ?paxa_head)
+ ?f0<-(to_be_included_in_paxa ?from)
+ ?f1<-(to_be_included_in_paxa ?prep)
+ ?f2<-(to_be_included_in_paxa ?paxa_head)
+ (not (has_been_included_in_paxa $?id ?from $?id1))
+ (not (has_been_included_in_paxa $?id ?prep $?id1))
+ (not (has_been_included_in_paxa $?id ?paxa_head $?id1))
+ ?f<-(count ?count)
+ =>
+	(print_in_ctrl_fact_files ?paxa_head)
+	(retract ?f ?f0 ?f1 ?f2)
+	(bind ?prp (string-to-field(str-cat ?from "_" ?prep)))
+	(bind ?ids (create$ ))
+	(loop-for-count (?loop (+ ?prep 1) ?paxa_head)do
+		(bind ?ids (insert$ ?ids 1 ?loop))
+		(bind ?ids (sort > ?ids))
+	)
+	(assert (has_been_included_in_paxa ?ids))
+	(assert (has_been_included_in_paxa ?from))
+	(assert (has_been_included_in_paxa ?prep))
+	(bind ?count (+ ?count 1))	
+	(assert (count ?count))
+	(assert (pada_info (group_head_id ?paxa_head) (group_cat PP) (group_ids ?ids) (preposition ?prp)))
+	(printout ?*dbug* "(Rule_name-pada_head_id-pada_type-ids complex_prep-noun P"?paxa_head " PP "(implode$ (create$ ?ids ?prp))")"crlf)	
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ;Ex. The computer is in front of the table.
