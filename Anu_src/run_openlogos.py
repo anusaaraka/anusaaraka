@@ -1039,15 +1039,18 @@ for i in xrange(len(tran3)):
 
         elif tran3[i-2][4] == '2' and tran3[i][4] == '1' and tran3[i][5] == '543' and RESid_cat_dic[sconId_resId[tran3[i][7]]]=='3' and tran3[i][9] != 'SWITCH68' and tran3[i-1][9] != 'SWITCH68':
                 rel_fp.write("(relation-parser_ids kriyA-kriyA_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran3[i-2][7]], sconId_resId[tran3[i][7]]))
-#                print "(1111111111111111 kriyA-kriyA_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran3[i-2][7]], sconId_resId[tran3[i][7]])
 #Ex. She hurt her arm in the fall and lost the use of her fingers temporarily. 
+
+	elif tran3[i-3][4] == '2' and tran3[i-2][4] == '20' and tran3[i-2][5] == '391' and  tran3[i-2][8] == 'how' and tran3[i-2][9] == 'much' and tran3[i][4] == '2' :
+                rel_fp.write("(relation-parser_ids kriyA-praSnavAcI  P%s\tP%s)\n" % (sconId_resId[tran3[i-3][7]], sconId_resId[tran3[i-2][7]]))
+                rel_fp.write("(relation-parser_ids kriyA-kriyA_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran3[i][7]], sconId_resId[tran3[i-2][7]]))
+#Ex. I wonder how much you swim. 
 #-----------Information form semwork values------------------------------------------------------------
 
 for i in xrange(len(OTAR_TRAN3)):
     if 'SWORKO' in OTAR_TRAN3[i]:
   	if len(semwrk_prep) > 0 and len(semwrk_prep[0]) > 19 and  semwrk_prep[0][12] == '13' and semwrk_prep[0][19] == OTAR_TRAN3[i][7] and OP_TAR_ARR_TRAN3[i][7] == '10000' and OTAR_TRAN3[i][9] == OP_TAR_ARR_TRAN3[i][9]:
 	     rel_fp.write("(relation-parser_ids kriyA-%s_saMbanXI  P%s\tP10000)\n" % (return_prep(sconId_resId[semwrk_prep[0][15]]), sconId_resId[semwrk_prep[0][7]]))
-#	     print "(fffffffffffffffs kriyA-%s_saMbanXI  P%s\tP10000)\n" % (return_prep(sconId_resId[semwrk_prep[0][15]]), sconId_resId[semwrk_prep[0][7]])
 #Ex. The position we talked about is gone.
 
 for i in xrange(len(semwrk_verb)):
@@ -1266,9 +1269,11 @@ for i in xrange(len(tran1)):
                  rel_fp.write("(relation-parser_ids viSeRya-RaRTI_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran1[i+1][3]], sconId_resId[tran1[i][3]]))
 #Ex. The big question on everybody's mind is who killed OJ.
 
-        if tran1[i][0] == '19' and tran1[i][1] == '854' and tran1[i][5] != 'SWITCH68':
+        if tran1[i][0] == '19' and (tran1[i][1] == '854' or tran1[i][1] == '820') and tran1[i][5] != 'SWITCH68':
             rel_fp.write("(relation-parser_ids wall_conjunction P%s)\n" % sconId_resId[tran1[i][3]])
-#Ex. But my efforts to win his heart have failed.
+#Ex. But my efforts to win his heart have failed. And 21 could stand for the 21 cm radio frequency of hydrogen in space.
+
+
 
         if tran1[i][0] == '2' and tran1[i+1][0] == '2' and tran1[i+1][2] == '28' and tran1[i][5] != 'SWITCH68' and tran1[i+1][5] != 'SWITCH68':
             rel_fp.write("(relation-parser_ids kriyA-kqxanwa_karma  P%s\tP%s)\n" % (sconId_resId[tran1[i][3]], sconId_resId[tran1[i+1][3]]))
