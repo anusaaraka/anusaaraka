@@ -129,7 +129,7 @@
 
 
 ;Modified by Meena(25.1.11) ; added (conjunction-components  ?conj  ?id2 ?id) for the cases like the example below.
-;The path has many twist and turns. 
+;The path has many twists and turns. 
 ;Modified by Meena(30.4.10)
 ;Go straight and take a right turn . 
 (defrule turn8
