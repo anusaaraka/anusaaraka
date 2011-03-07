@@ -65,7 +65,7 @@
 
 
   echo "Calling Stanford parser"
-   cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/ 
+  cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/ 
   sh ./run_stanford-parser.sh $1 $MYPATH > /dev/null
  
   cd $MYPATH/tmp/$1_tmp
@@ -74,7 +74,7 @@
   $HOME_anu_test/Anu_src/split_file.out link_relation_info.txt dir_names.txt link_relation_info_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out link_name_expand.txt dir_names.txt link_name_expand.dat
   $HOME_anu_test/Anu_src/split_file.out linkid_word.txt dir_names.txt linkid_word_tmp.dat
-  $HOME_anu_test/Anu_src/split_file.out link_word_cat.txt dir_names.txt linkid_word_cat.dat
+  $HOME_anu_test/Anu_src/split_file.out linkid_cat.txt dir_names.txt linkid_cat_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out link_numeric_word.txt dir_names.txt link_numeric_word_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out linkage_count.txt dir_names.txt linkage_count
   $HOME_anu_test/Anu_src/split_file.out chunk.txt dir_names.txt chunk.dat 
@@ -103,11 +103,11 @@
 
                 then
     			echo "Hindi meaning using Stanford parser" $line
-			./run_sentence_stanford.sh $1 $line 1 $MYPATH
+			timeout 180 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
 			echo ""
 		else 
     			echo "Hindi meaning using Link parser" $line
-			./run_sentence_link.sh $1 $line 1 $MYPATH
+			timeout 180 ./run_sentence_link.sh $1 $line 1 $MYPATH
 			echo ""
                 fi
 

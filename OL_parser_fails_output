@@ -2,6 +2,8 @@ Saving Format info ...
 Saving word information
 Saving morph information
 Calling POS Tagger and Chunker (APERTIUM)
+Calling Link Parser
+Calling Stanford parser
 Calling OPEN-LOGOS
 matching compounds......
 Hindi meaning using Open Logos 1.1
@@ -26,7 +28,7 @@ usane usakI umra kA anxAja lagAne ke liye muJe/muJako pUCA.
 
 Hindi meaning using Open Logos 2.5
 I knew who would come to the party. 
-mEM jAnawA WA kOna pArtI ko AUzgA.
+mEM jAnawA WA ki kOna pArtI ko AUzgA.
 
 Hindi meaning using Open Logos 2.6
 How quickly did Joe run? 
@@ -46,7 +48,7 @@ jOYna ko AmaMwriwa karanA muJe/muJako isase_pahale ki Apase bAwacIwa karanI cAhi
 
 Hindi meaning using Open Logos 2.10
 Who came first in the race? 
-kOna praWama xOda meM AyA?
+praWama xOda meM kOna AyA?
 
 Hindi meaning using Open Logos 2.11
 It was cold there even in summer. 
@@ -62,7 +64,7 @@ mEM kahawA hUz ki yaha eka EsA awyanwa lajjAspaxa hE jisase vaha calA gayA.
 
 Hindi meaning using Open Logos 2.14
 It struggled to force its body through that little hole. 
-isane usakA SarIra WodA Cexa uwanA majabUra karane ke liye saMgrAma kiyA.
+isane usakA WodA Cexa uwanA SarIra majabUra karane ke liye saMgrAma kiyA.
 
 Hindi meaning using Open Logos 2.15
 We thank you all for coming this evening. 
@@ -70,11 +72,11 @@ hama saMXyA pUrA Apa Ane ke liye XanyavAxa xewe hEM.
 
 Hindi meaning using Open Logos 2.16
 The big question on everybody's mind is who killed OJ. 
-prawyeka vyakwi para mana badA praSna hE kisane OJ ko mArA.
+prawyeka vyakwi para mana badA praSna hE ki OJ ko kisane mArA.
 
 Hindi meaning using Open Logos 2.17
 The best five costumes got prizes. 
-pAzca pahanAvoM ne jise/jisako acCA puraskAra prApwa kiye/kie.
+jise/jisako pAzca pahanAvoM ne acCA puraskAra prApwa kiye/kie.
 
 Hindi meaning using Open Logos 2.18
 I wonder how much oil spilled. 
@@ -98,11 +100,11 @@ ki hama raha graha para maXyama AkAra kA hogA.
 
 Hindi meaning using Open Logos 2.23
 How much more oil did they spill? 
-unhoMne aXika wela kiwanA aXika wela CalakAyA?
+unhoMne aXika wela CalakAyA?
 
 Hindi meaning using Open Logos 2.24
 I gave her the present I bought for her. 
-mEMne jise/jisako usake_liye usakA mEM vaha upahAra xiyA jise/jisako usake_liye KarIxA.
+mEMne usakA mEM vaha upahAra xiyA jise/jisako usake_liye KarIxA.
 
 Hindi meaning using Open Logos 2.25
 I saw her again a year and a half later. 
@@ -114,11 +116,11 @@ yaha spaRta kOna mArI huI Rod hE.
 
 Hindi meaning using Open Logos 2.27
 The earth must revolve around the sun, Copernicus reasoned. 
-pqWvI ko Copernicus sUrya ke cAroM ora GUmanA/GUmane cAhiye.
+pqWvI ko kAraNa Copernicus sUrya ke cAroM ora GUmanA/GUmane cAhiye.
 
 Hindi meaning using Open Logos 2.28
 The 5 thousand people invited by Bob attended. 
-5 hajAra loga AmaMwriwa ke_xvArA Bob hissA le ke xvArA.
+hissA le ke xvArA AmaMwriwa.
 
 Hindi meaning using Open Logos 2.29
 Economic indicators fell sharply last month. 
@@ -126,15 +128,15 @@ wIkRNawA se piCale mahIne arWaSAswrIya sUcaka gire.
 
 Hindi meaning using Open Logos 2.30
 Do not get wet in the rain. 
-kara nahIM howA hE gIlA kara meM varRA meM.
+kyA kara nahIM howA hE gIlA kara meM varRA meM.
 
 Hindi meaning using Open Logos 2.31
 The Master said, if I did not go, how would you ever see? 
-Master ne kahA yaxi kEse mEM gayA Apa kaBI BI xeKeMge?
+Master ne kahA ki yaxi kEse mEM gayA Apa kaBI BI xeKeMge?
 
 Hindi meaning using Open Logos 2.32
 As the Master grew old and infirm, the disciples begged him not to die. 
-jaba Master purI Ora kamajora huA anuyAyiyoM ne nahIM TappA_yA sAzce ke usase vinawI kiyA.
+jaba Master purI Ora kamajora huA anuyAyiyoM ne TappA_yA sAzce ko usase nahIM vinawI kiyA.
 
 Hindi meaning using Open Logos 2.33
 I made it clear that I was angry. 
@@ -154,7 +156,7 @@ pUCA vaha karanA Apa kyA hEM.
 
 Hindi meaning using Open Logos 2.37
 I want her to know about it, but the telling will not be easy. 
-mEM isake_bAre_meM mAlUma karane ke liye usako/use cAhawA hUz ki paranwu bawAnA AsAna nahIM hogA.
+mEM isake_bAre_meM mAlUma karane ke liye usako/use cAhawA hUz paranwu bawAnA AsAna nahIM hogA.
 
 Hindi meaning using Open Logos 2.38
 He always bitches about Tanya. 
@@ -170,11 +172,11 @@ vaha ilektrOYnika mela saMxeSa kala jise/jisako BejA Apa AKirakAra pahuzca gayA.
 
 Hindi meaning using Open Logos 2.41
 In some countries wearing yashmak is compulsory for women. 
-burKA pahananA kuCa xeSoM meM nAriyoM ke liye anivArya hE.
+kuCa xeSoM meM burKA pahananA nAriyoM ke liye anivArya hE.
 
 Hindi meaning using Open Logos 2.42
 The man we saw when we went to Paris is here. 
-hamane jise/jisako jaba xeKA hama jise/jisako jaba Paris gaye vaha AxamI yahAz jise/jisako jaba hE.
+jise/jisako hamane xeKA hama Paris jaba gaye vaha AxamI yahAz hE.
 
 Hindi meaning using Open Logos 2.43
 Phil gave me a sweater which he bought in Paris. 
@@ -198,11 +200,11 @@ kyoM hEM Apa nahIM karanA ApakA gqhakArya?
 
 Hindi meaning using Open Logos 2.48
 Passion is a must to reach your potential. 
-ApakA anwarnihiwa Sakwi waka pahuzcane ke liye BAvAveSa AvaSyaka hE.
+ApakI anwarnihiwa Sakwi waka pahuzcane ke liye BAvAveSa AvaSyaka hE.
 
 Hindi meaning using Open Logos 2.49
 Passion is a must to excel and to reach your potential. 
-ApakA uwwama hone ke liye Ora anwarnihiwa Sakwi waka pahuzcane ke liye BAvAveSa AvaSyaka hE.
+Ora uwwama hone ke liye ApakI anwarnihiwa Sakwi waka pahuzcane ke liye BAvAveSa AvaSyaka hE.
 
 Hindi meaning using Open Logos 2.50
 If you were a middle-class American without a job, who would you vote for. 
@@ -212,9 +214,10 @@ Hindi meaning using Open Logos 2.51
 Her heart beats fast. 
 usakI hqxaya XadakaneM vrawa raKawI hEM.
 
-Hindi meaning using Open Logos 2.52
+Hindi meaning using Link parser 2.52
+(Found maximum of 1 linkages )
 I biked Johnson Creek. 
-mEM sAikila calA Johnson Creek.
+mEMne Johnson Creek ko bAika_para GumAyA.
 
 Hindi meaning using Open Logos 2.53
 Biking feels good. 
@@ -224,12 +227,33 @@ Hindi meaning using Open Logos 2.54
 Playing the piano bothers John. 
 jOYna ko waMga karawA hE.
 
-Hindi meaning using Open Logos 2.55
+Hindi meaning using Link parser 2.55
+(Found maximum of 1 linkages )
 How much more spilled. 
-kiwanA aXika CalakAyA huA.
+kiwanA Ora CalakA.
 
 Hindi meaning using Open Logos 2.56
 If John was with Lisa last night, who went to the movie with Diane. 
 yaxi jOYna jo piCalI rAwa Lisa ke sAWa WA jo Diane ke sAWa calaciwra gayI/gaI.
+
+Hindi meaning using Open Logos 2.57
+Mary quickly walked out of the room. 
+kamare ke bAhara PurwI se cAla.
+
+Hindi meaning using Open Logos 2.58
+The 5 thousand invited by Bob attended. 
+5 Bob ko 5 hajAra samIpa AmaMwriwa kiyA upasWiwa huA.
+
+Hindi meaning using Open Logos 2.59
+She worked in a school for a while before joining the college. 
+kOYleja saMyukwa karanA usane isase_pahale ki kuCa_samaya waka vixyAlaya meM kAma kiyA.
+
+Hindi meaning using Open Logos 2.60
+The sun rises from the east and sets in the west. 
+sUrya pUrva se ugawA hE Ora meM paScima jamAwA hE.
+
+Hindi meaning using Open Logos 2.61
+I wonder how much money you earned. 
+muJe/muJako AScarya howA hE ki kiwanA pEsA Apane kamAyA.
 
 Calling Interface related programs
