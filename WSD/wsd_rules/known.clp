@@ -1,3 +1,18 @@
+;Added by Meena(8.3.11)
+;Mysore, known as the city of palaces, is just 139 kms by road from Bangalore. 
+(defrule known_as
+(declare (salience 6000))
+(id-root ?id know)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-as_saMbanXI ?id ?id1)
+(id-root =(+ ?id 1) as)
+(not(id-root =(- ?id 1) be))
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(+ ?id 1) ke_rUpa_meM_jAnAjAnevAlA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " known.clp  known_as  "  ?id "  " ?id1 "  ke_rUpa_meM_jAnAjAnevAlA  )" crlf))
+)
 
 (defrule known0
 (declare (salience 5000))

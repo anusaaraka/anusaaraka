@@ -1874,7 +1874,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  08-03-11
  -------- 
   1. WSD: 
-         Modified: high.clp, shop.clp, at.clp, a.clp, turn.clp, on.clp, by.clp
+         Modified: high.clp, shop.clp, at.clp, a.clp, turn.clp, on.clp, by.clp, known.clp, is_en_tam.clp, vacant.clp,                           consider.clp
          Added   : situate.clp
          Removed : old_ing_tam.clp
   2. Modified "PP_rule_with_vib_and_h_id_and" rule in prepare_apertium_input.clp
@@ -1900,10 +1900,15 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         5. vibakthi.clp        6. hindi_sent_reorder.clp
   10. Modified run_openlogos.py 
   11. Updated changes_in_databases.
-  12. Modified and updated verified_ol, verified_output_ol, sd_verified, sd_ver_output, verified_output, new_ver_output,           OL_parser_fails and OL_parser_fails_output.
-  13. Updated following files:
-               verified_ol (547)  sd_verified  (396)
-  14. Modified Anusaaraka_all.sh and Anusaaraka_site.sh to replace 'link_word_cat.txt' to 'linkid_cat.txt' and 
+  12. Modified and updated:
+         verified_ol,  verified_output_ol, verified_output, sd_verified,  sd_ver_output, new_verified, new_ver_output, 
+         OL_parser_fails,  OL_parser_fails_output, small_sent_verified_ol, small_sent_ver_output_ol,
+         small_sent_verified and small_sent_ver_output
+  13. Modified Anusaaraka_all.sh and Anusaaraka_site.sh to replace 'link_word_cat.txt' to 'linkid_cat.txt' and 
       'link_word_cat.dat' to 'link_cat_tmp.dat'
-  15. Modified anu_compile.sh to remove month_day.gdbm
+  14. Modified anu_compile.sh to remove month_day.gdbm
+  15. Updated following files:
+               verified_ol  (549)     small_sent_verified (120)
+               sd_verified  (397)     small_sent_verified_ol (109) 
+               new_verified (570) 
   16. Updated Log.
