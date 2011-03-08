@@ -999,8 +999,8 @@ for i in xrange(len(tran3)):
 		    if RES_SWRK_TAB[hr][2]!='3' and RES_SWRK_TAB[hr][2]!='6' and tran3[i+1][9] != 'SWITCH68':
 			if tran3[i+1][7] in prep_dict_id_semwrk.keys() and tran3[i+1][8] in prep_dict_word_semwrk.keys():	
 #			    print prep_dict_word_semwrk
-			    rel_fp.write("(relation-parser_ids viSeRya-%s_saMbanXI  L%s\tL%s)\n" % (prep_dict_word_semwrk[tran3[i+1][8]], sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]]))
-#			    print "rser-ids viSeRya-%s_saMbanXI  L%s\tL%s)\n" % (prep_dict_word_semwrk[tran3[i+1][8]], sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]])
+			    rel_fp.write("(relation-parser_ids viSeRya-%s_saMbanXI  P%s\tL%s)\n" % (prep_dict_word_semwrk[tran3[i+1][8]], sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]]))
+#			    print "rser-ids viSeRya-%s_saMbanXI  P%s\tL%s)\n" % (prep_dict_word_semwrk[tran3[i+1][8]], sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]])
 #-----------------------------------------------------------------------------------------------------------------
 
 	elif (tran3[i][4] == '2' and tran3[i][6] == '28') and  (tran3[i-1][4] == '1') and got_kqxnwa_rel == '' and tran3[i][9] != 'SWITCH68' and tran3[i-1][9] != 'SWITCH68': # got_kqxnwa_rel = '' condition is to stop in "She rose from the table to welcome me."

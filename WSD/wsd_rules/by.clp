@@ -154,7 +154,7 @@
 (declare (salience 3900))
 (id-root ?id by)
 ?mng <-(meaning_to_be_decided ?id)
-(or(id-cat =(+ ?id 1) <num>)(id-cat_coarse =(+ ?id 1) noun)(id-root =(+ ?id 1) ?str&:(and (not (numberp ?str))(gdbm_lookup_p "month_day.gdbm" ?str))))
+(or(id-cat =(+ ?id 1) <num>)(id-cat_coarse =(+ ?id 1) noun)(id-root =(+ ?id 1) ?str&:(and (not (numberp ?str))(gdbm_lookup_p "time.gdbm" ?str)))) ;Renamed 'month_day.gdbm' as 'time.gdbm' by Roja (08-03-11)
 (not (or (kriyA-by_saMbanXI  ?id1 =(+ ?id 1))(viSeRya-by_saMbanXI  ?id1 =(+ ?id 1)))) ;Added by Roja(13-12-10);I told him by telephone that I was coming by car.
 =>
 (retract ?mng)

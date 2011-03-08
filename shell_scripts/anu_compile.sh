@@ -1,5 +1,5 @@
  echo "#define ABS_ANU_PATH \"$HOME_anu_test/Anu_databases/\"" > $HOME_anu_test/CLIPS/gdbm_lookup.h
-
+ 
  cd $HOME_anu_test/Anu_data
  echo "Creating morph.dbm"
  ./create_dbm_mo.pl $HOME_anu_test/Anu_databases/morph.dbm < morph.txt
@@ -43,8 +43,6 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/ol_parser_unused_words.gdbm < ol_parser_unused_words.txt
  echo "Creating AllTam.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/AllTam.gdbm < AllTam.txt
- echo "Creating month_day.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/month_day.gdbm  < month_day.txt
  echo "Creating place.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/place.gdbm  < place.txt
  echo "Creating time.gdbm"
@@ -69,6 +67,9 @@
 
  gcc  -o file-wx_utf8.out file-wx_utf8.c 
  gcc -o word.out word.c 
+ #gcc -o all_tran_pada.out -g f_tid-rid.c f_sen-range.c  ALL_TRAN_PADA.c
+ #gcc -o resid_wordid.out resid_wordid.c 
+
  flex ir.lex
  gcc -o ir lex.yy.c -lfl 
  mv ir $HOME_anu_test/bin/

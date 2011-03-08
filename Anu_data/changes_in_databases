@@ -307,4 +307,7 @@ changes in samAsa-new.txt
   Added:
          time	1  (Added by Sukhada 13-02-11) 
          year	1  (        "                )
- 
+
+  Removed: month_day.txt and merged all its contents in time.txt (Suggested by Sukhada 08-03-11)
+
+
