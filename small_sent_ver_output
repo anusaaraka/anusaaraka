@@ -85,12 +85,12 @@ What does he eat?
 vaha kyA KAwA hE?
 
 Hindi meaning using Link parser 2.16
-(Found maximum of 2 linkages )
+(Found maximum of 4 linkages )
 Her heart beats fast. 
 usakA hqxaya weja XadakawA hE.
 
 Hindi meaning using Link parser 2.17
-(Found maximum of 4 linkages )
+(Found maximum of 6 linkages )
 The Moon is shining. 
 canxramA camaka rahA hE.
 
@@ -130,12 +130,12 @@ Sita is a good girl.
 Sita eka acCI ladakI hE.
 
 Hindi meaning using Link parser 2.25
-(Found maximum of 6 linkages )
+(Found maximum of 3 linkages )
 Boys are eating fruits. 
 ladake Pala KA rahe hEM.
 
 Hindi meaning using Link parser 2.26
-(Found maximum of 3 linkages )
+(Found maximum of 2 linkages )
 Jane is soon coming. 
 Jane SIGra A rahA hE.
 
@@ -215,7 +215,7 @@ He lost his pen.
 usane usakI kalama KoyI/KoI.
 
 Hindi meaning using Link parser 2.42
-(Found maximum of 2 linkages )
+(Found maximum of 3 linkages )
 Dry sand absorbs water. 
 sUKI rewa pAnI soKa lewI hE.
 
@@ -274,12 +274,13 @@ Hindi meaning using Link parser 2.53
 Kennedy got killed. 
 Kennedy mArA gayA.
 
-Hindi meaning using Stanford parser 2.54
+Hindi meaning using Link parser 2.54
+(Found maximum of 2 linkages )
 Bill does not drive. 
 Bill kAra_nahIM calAwA hE.
 
 Hindi meaning using Link parser 2.55
-(Found maximum of 1 linkages )
+(Found maximum of 2 linkages )
 We saw a great movie. 
 hamane eka baDiyA calaciwra xeKA.
 
@@ -299,12 +300,12 @@ I gave for his birthday an expensive present.
 mEMne usake janmaxina ke liye mahazgA upahAra xiyA.
 
 Hindi meaning using Link parser 2.59
-(Found maximum of 2 linkages )
-We picked some beautiful flowers out for her. 
+(Found maximum of 4 linkages )
+We picked out some beautiful flowers for her. 
 hamane usake_liye kuCa sunxara PUla cuna liye/lie.
 
 Hindi meaning using Link parser 2.60
-(Found maximum of 1 linkages )
+(Found maximum of 4 linkages )
 Armenian is a wonderful language, Armenian food is great, and the Armenians are nice people. 
 Armenian eka axBuwa BARA hE Armenian AhAra bahuwa baDiyA hE Ora Armenians acCe loga hEM.
 
@@ -324,7 +325,7 @@ The 5 thousand invited by Bob attended.
 Bob ke xvArA AmaMwriwa 5 hajAra upasWiwa huye/hue.
 
 Hindi meaning using Link parser 2.64
-(Found maximum of 3 linkages )
+(Found maximum of 6 linkages )
 Republican policies only benefit the rich and powerful. 
 gaNawAMwrika nIwiyAz sirPa sampanna Ora SakwiSAlI kA BalA karawI hEM.
 
@@ -339,7 +340,7 @@ How many ran?
 kiwane xOde?
 
 Hindi meaning using Link parser 2.67
-(Found maximum of 2 linkages )
+(Found maximum of 3 linkages )
 How many boys are there? 
 kiwane ladake vahAz para hEM?
 
@@ -364,7 +365,7 @@ Few attended.
 kuCa upasWiwa huye/hue.
 
 Hindi meaning using Link parser 2.72
-(Found maximum of 2 linkages )
+(Found maximum of 3 linkages )
 Playing the piano bothers John. 
 piyAno bajanA jOYna ko waMga karawA hE.
 
@@ -384,7 +385,7 @@ He persuaded them to go.
 usane jAne ke liye unheM/unako rAjI kiyA.
 
 Hindi meaning using Link parser 2.76
-(Found maximum of 2 linkages )
+(Found maximum of 4 linkages )
 The soup needs more salt. 
 Sorabe ko aXika namaka kI AvaSyakawA hE.
 
@@ -414,7 +415,7 @@ He might attend the meeting.
 vaha bETaka meM upasWiwa_ho sakawA hE.
 
 Hindi meaning using Link parser 2.82
-(Found maximum of 1 linkages )
+(Found maximum of 2 linkages )
 May I come in? 
 kyA mEM aMxara_A sakawA hUz?
 
@@ -444,7 +445,7 @@ Why does everyone like her?
 prawyeka vyakwi usako/use kyoM pasaMxa karawA hE?
 
 Hindi meaning using Link parser 2.88
-(Found maximum of 1 linkages )
+(Found maximum of 2 linkages )
 Which hand do you use? 
 Apa kOna se hAWa kA upayoga karawe hEM?
 
@@ -464,12 +465,12 @@ Must we start immediately?
 hameM/hamako wawkAla Suru honA cAhiye?
 
 Hindi meaning using Link parser 2.92
-(Found maximum of 1 linkages )
+(Found maximum of 2 linkages )
 Did the noise wake you up? 
 kyA AvAja ne Apako jagAyA?
 
 Hindi meaning using Link parser 2.93
-(Found maximum of 1 linkages )
+(Found maximum of 2 linkages )
 Can you reach the ceiling fan? 
 kyA Apa panKe waka pahuzca sakawe hEM?
 
@@ -489,7 +490,7 @@ Should we cut down the trees?
 kyA hameM/hamako peda GatAnA_yA_kama karane cAhiye?
 
 Hindi meaning using Link parser 2.97
-(Found maximum of 1 linkages )
+(Found maximum of 2 linkages )
 In which school do you study? 
 Apa kisa vixyAlaya meM aXyayana karawe hEM?
 
@@ -504,7 +505,7 @@ I have always admired your good habits.
 mEM hameSA ApakI acCI AxawoM kI praSaMsA_kara cukA hUz.
 
 Hindi meaning using Link parser 2.100
-(Found maximum of 2 linkages )
+(Found maximum of 4 linkages )
 I have had my breakfast in time. 
 mEM samaya para merA jalapAna kara cukA hUz.
 
@@ -519,7 +520,7 @@ The tired child slept.
 WakA_huA baccA soyA.
 
 Hindi meaning using Link parser 2.103
-(Found maximum of 1 linkages )
+(Found maximum of 2 linkages )
 To help the poor is a good thing. 
 xInoM_kI sahAyawA karanA eka acCI cIja hE.
 
@@ -534,7 +535,7 @@ This box cannot be lifted.
 yaha baksA nahIM uTAyA jA sakawA hE.
 
 Hindi meaning using Link parser 2.106
-(Found maximum of 1 linkages )
+(Found maximum of 2 linkages )
 The matter was explained by her. 
 viRaya usake_xvArA samaJAyA gayA WA.
 
@@ -544,7 +545,7 @@ The train will leave shortly.
 relagAdI avilamba CUtegI.
 
 Hindi meaning using Link parser 2.108
-(Found maximum of 1 linkages )
+(Found maximum of 2 linkages )
 She entered the room slowly. 
 usane XIre se kamare meM praveSa kiyA.
 
@@ -564,12 +565,12 @@ The advantages of science are many.
 vijFAna ke PAyaxe bahuwa sAre hEM.
 
 Hindi meaning using Link parser 2.112
-(Found maximum of 6 linkages )
+(Found maximum of 8 linkages )
 You have no control over your emotions. 
 ApakA ApakI BAvanAoM ke Upara niyaMwraNa nahIM hE.
 
 Hindi meaning using Link parser 2.113
-(Found maximum of 1 linkages )
+(Found maximum of 2 linkages )
 He is careful about his studies. 
 vaha usake aXyayana ke bAre meM sAvaXAna hE.
 
@@ -578,31 +579,27 @@ Hindi meaning using Link parser 2.114
 I am busy with my studies. 
 mEM mere aXyayana meM vyaswa hUz.
 
-Hindi meaning using Stanford parser 2.115
-I am well, only I am tired. 
-mEM acCI waraha hUz mEM sirPa WakA_huA hUz.
-
-Hindi meaning using Link parser 2.116
+Hindi meaning using Link parser 2.115
 (Found maximum of 1 linkages )
 Sarla and Sudha are friends. 
 Sarla Ora Sudha miwra hEM.
 
-Hindi meaning using Link parser 2.117
-(Found maximum of 2 linkages )
+Hindi meaning using Link parser 2.116
+(Found maximum of 3 linkages )
 Rama said that Radha told a lie. 
 Rama ne kahA ki Radha ne JUTa bawAyA.
 
-Hindi meaning using Link parser 2.118
+Hindi meaning using Link parser 2.117
 (Found maximum of 5 linkages )
 The news that he has failed is true. 
 ki vaha asaPala_ho cukA hE samAcAra sawya hE.
 
-Hindi meaning using Link parser 2.119
+Hindi meaning using Link parser 2.118
 (Found maximum of 3 linkages )
 The hospital has no vacant beds. 
 aspawAla meM KAlI biswara nahIM hEM.
 
-Hindi meaning using Link parser 2.120
+Hindi meaning using Link parser 2.119
 (Found maximum of 1 linkages )
 She had large vacant brown eyes. 
 usakI badI aBivykwirahiwa BUrI AzKeM WIM.

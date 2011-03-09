@@ -1914,7 +1914,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   19. Modified Anusaaraka_stanford.sh and Anusaaraka.sh to split basic dependencies in respective directories and replaced         'sd-relation.txt' to  'sd-tree_relation.txt'.
   20. Replaced 'sd-relations_tmp.dat' fact as 'sd-tree_relations_tmp.dat' in run_modules_std.bat
   21. Updated following files:
-               verified_ol  (549)     small_sent_verified (120)
+               verified_ol  (549)     small_sent_verified (119)
                sd_verified  (397)     small_sent_verified_ol (109) 
                new_verified (570) 
   22. Updated Log.
