@@ -999,8 +999,8 @@ for i in xrange(len(tran3)):
 		    if RES_SWRK_TAB[hr][2]!='3' and RES_SWRK_TAB[hr][2]!='6' and tran3[i+1][9] != 'SWITCH68':
 			if tran3[i+1][7] in prep_dict_id_semwrk.keys() and tran3[i+1][8] in prep_dict_word_semwrk.keys():	
 #			    print prep_dict_word_semwrk
-			    rel_fp.write("(relation-parser_ids viSeRya-%s_saMbanXI  P%s\tL%s)\n" % (prep_dict_word_semwrk[tran3[i+1][8]], sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]]))
-#			    print "rser-ids viSeRya-%s_saMbanXI  P%s\tL%s)\n" % (prep_dict_word_semwrk[tran3[i+1][8]], sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]])
+			    rel_fp.write("(relation-parser_ids viSeRya-%s_saMbanXI  P%s\tP%s)\n" % (prep_dict_word_semwrk[tran3[i+1][8]], sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]]))
+#			    print "rser-ids viSeRya-%s_saMbanXI  L%s\tL%s)\n" % (prep_dict_word_semwrk[tran3[i+1][8]], sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]])
 #-----------------------------------------------------------------------------------------------------------------
 
 	elif (tran3[i][4] == '2' and tran3[i][6] == '28') and  (tran3[i-1][4] == '1') and got_kqxnwa_rel == '' and tran3[i][9] != 'SWITCH68' and tran3[i-1][9] != 'SWITCH68': # got_kqxnwa_rel = '' condition is to stop in "She rose from the table to welcome me."
@@ -1376,12 +1376,6 @@ for i in open("ol_prep.dat", "r"):
              rel_fp.write("(relation-parser_ids kriyA-%s_saMbanXI  P%s\tP%s)\n" % (return_prep(a[3][1:-1]), gor_kriyA[0],gor_object[0]))
 	     got_prep_rel = a[3]
 #He left in the morning.
-
-          if a[3][1:-1] != 0 and  gor_counter_semwrk==1  and id_word[gor_kriyA[0]] not in copula and semwrk_verb[j][14] == '96' and int(a[3][1:-1]) > int(gor_kriyA[0]) and int(a[3][1:-1]) < int(gor_object[0]) :
-             rel_fp.write("(relation-parser_ids kriyA-%s_saMbanXI  P%s\tP%s)\n" % (sconId_resId[id_word[a[3][1:-1]]], sconId_resId[gor_kriyA[0]],sconId_resId[gor_object[0]]))
-             #print "(relation-parser_ids kriyA-%s_saMbanXI  P%s\tP%s)\n" % (sconId_resId[id_word[a[3][1:-1]]], sconId_resId[gor_kriyA[0]],sconId_resId[gor_object[0]])
-	     got_prep_rel = a[3]
-#Ex.  ???????????
 
 gor_counter_semwrk=0; gor_kriyA=[]; gor_object=[]
 for i in open("ol_prep.dat", "r"):

@@ -47,4 +47,6 @@ cd $MYPATH/$1_tmp/$2
 
  myclips -f $HOME_anu_test/Anu_clp_files/user_wsd_info.clp > /dev/null
  mv user_wsd_info.dat $MYPATH/$1_$2_user_wsd_info.dat
-  
+
+#cat sd-relations_tmp1.dat
+#cat relations_debug.dat

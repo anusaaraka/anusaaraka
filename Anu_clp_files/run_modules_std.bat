@@ -13,7 +13,7 @@
  (load ?*path*)
  (load-facts "sd_numeric_word_tmp.dat")
  (load-facts "sd_word_tmp.dat")
- (load-facts "sd-relations_tmp.dat")
+ (load-facts "sd-tree_relations_tmp.dat")
  (open "sd_word.dat" l_fp "a")
  (open "sd_numeric_word.dat" l_n_w_fp "a")
  (open "sd-relations_tmp1.dat" l_r_fp "a")
