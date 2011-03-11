@@ -271,15 +271,6 @@
  (run)
  (clear)
  ;----------------------------------------------------------------------
- ;Generate equivalent hindi tam for every english tam
- (load "global_path.clp")
- (bind ?*path* (str-cat ?*path* "/Anu_clp_files/hindi_tam_rules.bclp"))
- (bload ?*path*)
- (load-facts "lwg_info.dat")
- (open "hindi_tam_tmp.dat" Hin_tam "a")
- (run)
- (clear)
- ;----------------------------------------------------------------------
  ; Generate hindi Pada for the sentence.
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/pada_ids.bclp"))
@@ -342,7 +333,7 @@
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/tam_meaning.bclp"))
  (bload ?*path*)
  (load-facts "wsd_tam_facts_output.dat")
- (load-facts "hindi_tam_tmp.dat")
+ (load-facts "lwg_info.dat")
  (load-facts "wsd_facts_output.dat")
  (load-facts "pada_id_info.dat")
  (load-facts "meaning_to_be_decided.dat")
@@ -404,10 +395,8 @@
  (assert (load_yA_tams_with_ne))
  (load-facts "hindi_meanings.dat")
  (load-facts "pada_control_fact.dat")
-; (load-facts "relations.dat")
  (load-facts "relations_tmp1.dat")
  (load-facts "wsd_tam_facts_output.dat")
- (load-facts "hindi_tam_tmp.dat")
  (load-facts "hindi_tam_info.dat")
  (load-facts "wsd_facts_output.dat")
  (load-facts "compound_phrase.dat")

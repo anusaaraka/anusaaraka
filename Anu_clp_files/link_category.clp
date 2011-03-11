@@ -77,9 +77,25 @@
  (parserid-word ?sr_node ?rword)
  ?f0<-(category_to_be_decided ?sr_node)
  (test (or (member$ I $?ids)(member$ J $?ids )))
+ (test (neq ?rword John))
  =>
         (retract ?f0)
         (assert (linkid-node_cat ?sr_node  noun/pronoun))
+ )
+ ;----------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (10-03-11)
+ ;John is quite certainly a better choice. 
+ ;Sita is baking breads for breakfast. 
+ (defrule sub_noun_rule3
+ (declare (salience 201))
+ (link_name-link_expansion  ?sub  S $?ids)
+ (link_name-link_lnode-link_rnode ?sub  ?sl_node  ?sr_node)
+ (parserid-word ?node John|Sita)
+ ?f0<-(category_to_be_decided ?sl_node)
+ (test (or (eq ?node ?sl_node)(eq ?node ?sr_node)))
+ =>
+        (retract ?f0)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?node "   PropN)" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
  ;Rama is a good boy.
@@ -391,7 +407,7 @@
   (parserid-word ?pid ?lword)
   (id-word_cap_info ?id first_cap)
   (id-original_word ?wid ?word)
-  (test (eq ?lword ?word))
+  (test (and (eq ?lword ?word)(neq ?wid 1))) ;Cancer and heart disease are the UK's biggest killers. 
   =>
   	(retract ?f0)
         (printout ?*link_cat-file* "(linkid-node_cat  " ?pid "    PropN)" crlf)

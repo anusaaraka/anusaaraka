@@ -11,6 +11,8 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/verbal_adj_tams.gdbm < verbal_adj_tams.txt
  echo "Creating default_meaning_frm_oldwsd.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/default_meaning_frm_oldwsd.gdbm < default_meaning_frm_oldwsd.txt
+ echo "Creating hindi_default_tam.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/hindi_default_tam.gdbm < hindi_default_tam.txt
  echo "Creating causative_verb_mng.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/causative_verb_mng.gdbm < causative_verb_mng.txt
  echo "Creating female_list.gdbm"

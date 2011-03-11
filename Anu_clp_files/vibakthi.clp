@@ -1,6 +1,5 @@
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (slot preposition (default 0))(slot Hin_position (default 0)))
 
- (deftemplate tam_tmp_info (slot head_id (default 0))(slot eng_tam (default 0))(slot hin_tam (default 0))(slot subject_vibhakti (default 0))(slot preceding_part_of_the_verb (default 0)))
 
  (deffacts dummy_facts
  (kriyA_id-subject_viBakwi)
@@ -119,10 +118,12 @@
  )
 
  ;---------------------------------------------( vib from tam database ) ------------------------------------
+ ;Rule re-modified by Roja (11-03-11)
+ ;Removed deftemplate tam_tmp_info and hindi_tam_rules.clp and instead created it as gdbm with name hindi_default_tam.gdbm.
+ ;A fat ugly boy had to eat fruits. 
  (defrule vib_rule
  (declare (salience 850))
- (pada_info (group_head_id ?root_id)(group_cat VP)(vibakthi 0)(H_tam ?tam)(tam_source Default))
- (tam_tmp_info (head_id  ?root_id)(subject_vibhakti ?vib))
+ ?f<-(pada_info (group_head_id ?root_id)(group_cat VP)(vibakthi ?vib)(H_tam ?tam)(tam_source Default))
  (relation-anu_ids kriyA-subject  ?root_id ?sub_id)
  ?f0<-(pada_control_fact ?sub_id)
  ?f1<-(pada_info (group_head_id ?sub_id))
@@ -130,8 +131,8 @@
  =>
 	(retract ?f0)
 	(modify ?f1 (vibakthi ?vib))
+	(modify ?f (vibakthi 0))
  )
-
  ;-------------------------------------------------------------------------------------------------------------
  ;The object turned out to be a big meteorite .
  ;Here Compound-phrase is "turned out to be" (generally  for a compound phrase meaning is assigned to the last word and all other as "-"), and in this case "turned" is "kriyA" and hindi meaning is "-" so vibakthi information for this types of phrases will go wrong by using rule vib_rule1 .So, in order to solve this problem we have added the below rule in which if verb is part of any phrase , phrase meaning is taken as verb meaning.

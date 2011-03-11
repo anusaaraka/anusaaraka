@@ -24,6 +24,7 @@
  (id-cat_coarse)
  (id-original_word)
  (id-HM-source)
+ (id-root)
  )
  ;----------------------------------------------------------------------------------------------------  
  ;Added by Shirisha Manju (17-12-10)
@@ -31,8 +32,9 @@
  (defrule word_as_numbers
  (declare (salience 250))
  ?f0<-(id-original_word ?id ?word)
- (test (numberp (string-to-field (sub-string 1 (- (str-index "-" ?word) 1) ?word) )))
- (test (numberp (string-to-field (sub-string (+ (str-index "-" ?word) 1) 1000 ?word))))
+ ?f1<-(id-root ?id ?rt)
+ (test (numberp (string-to-field (sub-string 1 (- (str-index "-" ?rt) 1) ?rt) ))) ;Modified by Roja(11-03-11)
+ (test (numberp (string-to-field (sub-string (+ (str-index "-" ?rt) 1) 1000 ?rt))));Instead of ?word testing with ?rt 
  (not (cntrl_fact_for_padasuthra ?id))
  =>
         (printout ?*paxasUwra_fp* "(id-padasuthra  " ?id"   \""?word"\")" crlf)
@@ -42,7 +44,8 @@
  (defrule word_as_number
  (declare (salience 200))
  ?f0<-(id-original_word ?id ?word)
- (test (numberp ?word))
+ ?f1<-(id-root ?id ?rt)
+ (test (numberp ?rt)) ;Modified by Roja(11-03-11) Instead of ?word testing with ?rt Ex: The idea of predators lurking on street corners was simply something that was not part of the collective consciousness of early 1960's America. 
  (not (cntrl_fact_for_padasuthra ?id))
  =>
 	(printout ?*paxasUwra_fp* "(id-padasuthra  " ?id"   \""?word"\")" crlf)

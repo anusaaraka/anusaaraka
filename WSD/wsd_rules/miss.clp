@@ -90,16 +90,20 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  miss.clp 	miss5   "  ?id "  Ko_jA )" crlf))
 )
 
+;He thought that she may have missed the train.
 (defrule miss6
 (declare (salience 4400))
 (id-root ?id miss)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
+(kriyA-subject ?id ?id1)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id cUka_jA))
+(assert (kriyA_id-subject_viBakwi ?id  0))  ;He thought that she may have missed the train.(Suggested by Sukhada 11-03-11)
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  miss.clp 	miss6   "  ?id "  cUka_jA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  miss.clp    miss6   "  ?id " 0 )" crlf)
 )
 
 ;"miss","V","1.cUka_jAnA"

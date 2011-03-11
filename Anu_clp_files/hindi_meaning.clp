@@ -389,7 +389,7 @@
  ?mng<-(meaning_to_be_decided ?id)
  =>
         (retract ?mng)
-        (if (neq (numberp ?original_wrd) TRUE) then
+        (if (neq (numberp ?rt) TRUE) then ;Modified by Roja (11-03-11). Instead of ?original_wrd testing with ?rt. Ex: The idea of predators lurking on street corners was simply something that was not part of the collective consciousness of early 1960's America.
                 (bind ?a (gdbm_lookup "default_meaning_frm_oldwsd.gdbm" ?rt))
                 (if (eq ?a "FALSE") then
                         (printout ?*hin_mng_file* "(id-HM-source   "?id"    @"?original_wrd"   Original_word)" crlf)
