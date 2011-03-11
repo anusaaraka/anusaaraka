@@ -70,6 +70,7 @@
   (modify ?f (H_tam  wA_hE))
  )
  ;---------------------------------------------------------------------------------------------------------------------
+ ;Added by Roja(10-03-11)
  ;A fat ugly boy had to eat fruits.(here tam is had_to_0) 
  (defrule get_tam_from_database
  (root-verbchunk-tam-chunkids  ?root  ?orig-tam   ?tam  $?ids ?head_id)
@@ -84,8 +85,9 @@
             (bind ?v (string-to-field (sub-string (+ (str-index "-" ?sub) 1) (length ?sub) ?sub))) ;?v = 0
             (assert (id-hin_tam-vib-preceding_part ?head_id ?h_tam  ?sub_v ?v))
         )
-)
+ )
  ;---------------------------------------------------------------------------------------------------------------------
+ ;Added by Roja(10-03-11)
  (defrule default_tam_mng
  (declare (salience 5000))
  (id-hin_tam-vib-preceding_part ?root_id ?h_tam  ?vib ?vrb)
