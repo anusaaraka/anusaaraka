@@ -1919,22 +1919,24 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                new_verified (570) 
   22. Updated Log.
 
-  11-03-11
+  14-03-11
   --------
   1. Removed "hindi_tam_rules.clp" and created this file as gdbm with name hindi_default_tam.gdbm.
   2. In tam_meaning.clp:
-         Added : three new rules "rule_for_tam-0" , "get_tam_from_database" and "default_tam_mng1" to handle default tams.
-         Removed : deftemplate tam_tmp_info.
+       Added : three new rules "rule_for_tam-0" , "get_tam_from_database" and "default_tam_mng1" to handle default tams.
+     Removed : deftemplate tam_tmp_info.
+       Added : dummy facts "verb_type-verb-causative_verb-tam","root-verbchunk-tam-chunkids", "verb_type-verb-kriyA_mUla-tam"
   3. In vibakthi.clp:
          Modified : "vib_rule" to handle above default tams.
          Removed : deftemplate tam_tmp_info.
+         Added : dummy facts "root-verbchunk-tam-chunkids"
   4. In run_modules_ol.bat, run_modules_link.bat and run_modules_std.bat :
          Removed : hindi_tam_rules module.
          In tam_meaning.clp, removed load-facst "hindi_tam_tmp.dat"  and added "lwg_info.dat" load-fact.
          In vibakthi.clp , removed load-facts "relations.dat" , "hindi_tam_tmp.dat".
   5. Modified anu_compile.sh to get "hindi_default_tam.gdbm".
   6. WSD: 
-       Modified : miss.clp
+       Modified : miss.clp, like.clp
   7. link_category.clp:
        Modified: "pronoun_rule_first_cap" rule .
        Added   : "sub_noun_rule3" 
@@ -1942,5 +1944,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   9. In padasuthra.clp, modified "word_as_numbers" and "word_as_number" rules to handle in case of numbers.
   10. In create_binary_files.clp,  removed "hindi_tam_rules.clp".
   11. Updated changes_in_databases.
-  12. Modified and updated new_ver_output.
-  13. Updated Log.
+  12. Modified and updated new_ver_output, verified_output.
+  13. Modified Anusaaraka_link.sh, Anusaaraka_all.sh, Anusaaraka_stanford.sh, Anusaaraka.sh, Anusaaraka_ol.sh to handle decimal nos.
+  14. Added new entry in "apertium-en-hi.en.metadix" and updated these changes in databses. 
+  15. Updated Log.

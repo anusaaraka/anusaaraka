@@ -65,14 +65,14 @@
 )
 
 
-
+;Modified by Meena(11.3.11) added "programming" in the list 
 ;Added by Meena(17.9.09)
 ;Would you like a cup of tea?
 (defrule like4
 (declare (salience 4800))
 (id-root ?id like)
 ?mng <-(meaning_to_be_decided ?id)
-(id-root ?id1 cup|bowl|glass|plate|dish)
+(id-root ?id1 cup|bowl|glass|plate|dish|programming)
 (kriyA-object ?id ?id1)
 =>
 (retract ?mng)
@@ -83,14 +83,6 @@
 ;(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  like.clp      like3   "  ?id " ko )" crlf)
 )
 )
-
-
-
-
-
-
-
-
 
 
 
