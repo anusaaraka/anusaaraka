@@ -1,4 +1,4 @@
-import sys; import os; import commands
+import sys, os, commands
 f = open(sys.argv[1],"r"); fr = open(sys.argv[2],"r"); fw = open(sys.argv[3],"w"); wt = open(sys.argv[4],"w"); tr_wrds=[]; tr_sent=''
 for i in fr.readlines():
      line = i.split()
@@ -15,9 +15,8 @@ for i in f.readlines():
 	    pass
 	 else:
  	    sent=s[0]+', then '+ s[1].strip()
-            fw.write(sent)
-            fw.write('\n')
 	    file_p=1
+	    sent_wrds = sent.split()
     for each in xrange(len(sent_wrds)):
         if sent_wrds[each] in tr_wrds:
   	    f1 = open('jnk',"w")
@@ -29,6 +28,10 @@ for i in f.readlines():
             pos=ss[2]
     ss=pos.split()
     for j in range(len(ss)):
+	    if '-LRB-' in ss[j]:
+	           ss[j] = '(-LRB-'
+            if '-RRB-' in ss[j]:
+                   ss[j] = ')-RRB-'
 	    if 'her_PRP' in ss[j] or 'Her_PRP' in ss[j] or 'like_VBP' in ss[j]:
 		strng = ss[j].split()
  	        for k in range(len(strng)):
@@ -53,7 +56,6 @@ for i in f.readlines():
                                 ss[j]='love_VBP'
                                 file_p=1
                                 wt.write("(id-original_word-transformed_word\t%s\tlike\tlove)\n"%(j+1))
-
     tr_sent=''
     for each in xrange(len(ss)):
 	st=ss[each].split('_')

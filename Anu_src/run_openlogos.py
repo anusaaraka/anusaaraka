@@ -1111,7 +1111,7 @@ for j in xrange(0,len(semwrk_verb)):
 		rel_fp.write("(relation-parser_ids kriyA-object  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[0]], sconId_resId[gor_object[0]]))
 		#print "(aaaaaaaaaa kriyA-object  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[0]], sconId_resId[gor_object[0]])
 
-        if gor_counter_semwrk==1 and semwrk_verb[j][6] =='61' and id_word[gor_kriyA[0]] not in copula and semwrk_verb[j][14] != '96' and semwrk_verb[j][14] != '90' and semwrk_verb[j][13] != '401':
+        if gor_counter_semwrk==1 and semwrk_verb[j][6] =='61' and sconId_resId[gor_kriyA[0]]!= '0' and id_word[gor_kriyA[0]] not in copula and semwrk_verb[j][14] != '96' and semwrk_verb[j][14] != '90' and semwrk_verb[j][13] != '401':
                 rel_fp.write("(relation-parser_ids kriyA-subject  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[0]],sconId_resId[gor_object[0]]))
 #Ex: 	I told Margaret on Tuesday that I thought she would probably be hired.
 
@@ -1129,7 +1129,7 @@ for j in xrange(0,len(semwrk_verb)):
 	   id_scon_keys = sconId_resId.values()
 	   id_word_keys = id_word.keys()
 	   id_obj_key = gor_object[0]
-           if id_key in id_word_keys and id_obj_key in id_word_keys:
+           if id_key in id_word_keys and id_obj_key in id_word_keys and sconId_resId[gor_kriyA[0]]!= '0':
                   if gor_counter_semwrk==2 and id_word[sconId_resId[gor_kriyA[0]]] not in copula and id_word[sconId_resId[gor_object[1]]] not in kAlavAcI: #I have been grading these stupid exams all day. I woke up early this morning.
 	              rel_fp.write("(relation-parser_ids kriyA-object_1  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[0]],sconId_resId[gor_object[0]]))
                       rel_fp.write("(relation-parser_ids kriyA-object_2  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[1]],sconId_resId[gor_object[1]]))
@@ -1173,7 +1173,7 @@ for i in xrange(len(tran1)):
 #                        print "(relation-parser_ids viSeRya-det_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran1[i][3]], sconId_resId[tran1_components[i][j]])
 #Ex. A fat ugly BOY had to eat too many fruits to lose his weight.
 
-		    elif RES_SWRK_TAB[k][0] == id and RES_SWRK_TAB[k][2]== '6' and RES_SWRK_TAB[k][35] == 'even' and tran1[i][0] == '1' and id_form_dic[tran1[i][3]] != '23':
+		    elif tran1[i][3] != '0' and RES_SWRK_TAB[k][0] == id and RES_SWRK_TAB[k][2]== '6' and RES_SWRK_TAB[k][35] == 'even' and tran1[i][0] == '1' and id_form_dic[tran1[i][3]] != '23':
 			rel_fp.write("(relation-parser_ids wall_conjunction  P%s)\n" % sconId_resId[tran1_components[i][j]])
 #Ex. Even a child can understand it.
 
@@ -1189,7 +1189,7 @@ for i in xrange(len(tran1)):
                          rel_fp.write("(relation-parser_ids viSeRya-viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran1[i][3]], sconId_resId[tran1_components[i][j]]))
 #Ex. A FAT UGLY BOY had to eat too many fruits to lose his weight .
 
-		    if RES_SWRK_TAB[k][2] == '6' and RES_SWRK_TAB[k+1][2] == '1' and (id_form_dic[sconId_resId[tran1_components[i][j]]] != '4' and id_form_dic[sconId_resId[tran1_components[i][j]]] != '7'): #His bed was next to the room's only window.
+		    if sconId_resId[tran1_components[i][j]] != '0' and RES_SWRK_TAB[k][2] == '6' and RES_SWRK_TAB[k+1][2] == '1' and (id_form_dic[sconId_resId[tran1_components[i][j]]] != '4' and id_form_dic[sconId_resId[tran1_components[i][j]]] != '7'): #His bed was next to the room's only window.
                         rel_fp.write("(relation-parser_ids viSeRaNa-viSeRaka  P%s\tP%s)\n" % (sconId_resId[tran1[i][3]], sconId_resId[tran1_components[i][j]]))
 #Ex.	Teasing can be VERY CRUEL.
 
@@ -1295,7 +1295,7 @@ for i in xrange(len(tran3)):
         if int(tran3_components[i][j]) > int(tran3[i][7]) and int(tran3_components[i][j]) <sent_len:
             id = tran3_components[i][j]
             for k in xrange(len(RES_SWRK_TAB)):
-                if RES_SWRK_TAB[k][0] == id and RES_SWRK_TAB[k][2] == '3' and id_word[tran3[i][7]] not in copula:
+                if RES_SWRK_TAB[k][0] == id and RES_SWRK_TAB[k][2] == '3' and sconId_resId[tran3[i][7]]!= '0' and id_word[tran3[i][7]] not in copula:
                     rel_fp.write("(relation-parser_ids viSeRaNa-viSeRaka  P%s\tP%s)\n" % (tran3_components[i][j], tran3[i][7]))
 #Ex. How long will it last?
 
@@ -1372,7 +1372,7 @@ for i in open("ol_prep.dat", "r"):
             if gor_counter_semwrk==2:
                 got_obj=semwrk_verb[j][4]
      if semwrk_verb[j]<= len(semwrk_verb):
-          if a[3][1:-1] != 0 and  gor_counter_semwrk==1  and id_word[gor_kriyA[0]] not in copula and semwrk_verb[j][14] == '96' and int(a[3][1:-1]) > int(gor_kriyA[0]) and int(a[3][1:-1]) < int(gor_object[0]) :
+          if a[3][1:-1] != 0 and  gor_counter_semwrk==1 and sconId_resId[gor_kriyA[0]]!= '0' and id_word[gor_kriyA[0]] not in copula and semwrk_verb[j][14] == '96' and int(a[3][1:-1]) > int(gor_kriyA[0]) and int(a[3][1:-1]) < int(gor_object[0]) :
              rel_fp.write("(relation-parser_ids kriyA-%s_saMbanXI  P%s\tP%s)\n" % (return_prep(a[3][1:-1]), gor_kriyA[0],gor_object[0]))
 	     got_prep_rel = a[3]
 #He left in the morning.

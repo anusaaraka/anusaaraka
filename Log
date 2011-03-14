@@ -1947,4 +1947,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   12. Modified and updated new_ver_output, verified_output.
   13. Modified Anusaaraka_link.sh, Anusaaraka_all.sh, Anusaaraka_stanford.sh, Anusaaraka.sh, Anusaaraka_ol.sh to handle decimal nos.
   14. Added new entry in "apertium-en-hi.en.metadix" and updated these changes in databses. 
-  15. Updated Log.
+  15. Minor changes in run_stanford.sh.
+  16. Minor changes in run_openlogos.py to handle key errors
+  17. Modified transform_words.py
+  18. Updated Log.
+
