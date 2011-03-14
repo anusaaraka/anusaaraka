@@ -32,6 +32,7 @@
  (id-cat_coarse)
  (id-word)
  (root-verbchunk-tam-chunkids)
+ (No complete linkages found)
  )
 
 

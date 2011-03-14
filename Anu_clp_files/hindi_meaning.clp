@@ -28,6 +28,7 @@
  (id-attach_emphatic)
  (relation-anu_ids)
  (conjunction-components)
+ (No complete linkages found)
  )
 
  ;for MWE meaning will be assinged to the last word (single mng will be given to all words).So,by this rule we are retracting cntrl facts for remaining ids.

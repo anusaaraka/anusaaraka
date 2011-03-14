@@ -16,6 +16,7 @@
  (id-cat)
  (root-verbchunk-tam-chunkids)
  (verb_type-verb-kriyA_mUla-tam)
+ (No complete linkages found)
  )
  ;------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (1-02-11)
