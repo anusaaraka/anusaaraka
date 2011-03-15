@@ -6,7 +6,7 @@
  echo "(Parser_used Open-Logos-Parser)" >> parser_type.dat
 
 # cat sent_type.dat >>relations.dat
- myclips -f $HOME_anu_test/bin/step-debug/lwg-onwards.bat >  $1.error
+ myclips -f $HOME_anu_test/bin/step-debug/rel-onwards.bat >  $1.error
 
 
  cd $HOME_anu_test/Anu_src/

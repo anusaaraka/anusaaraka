@@ -1957,3 +1957,21 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
        run-rel-onward.sh        lwg-onwards.bat         run-pada-onwards.sh
   22. Modified run_chunker_and_tagger.sh to remove formation of morph.
   23. Updated Log.
+
+ 15-03-11
+ --------
+ 1. In step-debug,
+     Added step-debug for all three parsers:
+     Deleted following files:
+         run-lwg-onwards.sh     rel-onwards.bat          pada-onwards.bat 
+         run-rel-onward.sh      lwg-onwards.bat          run-pada-onwards.sh
+     Added following files:
+         link-run-rel-onward.sh         run-pada.sh      link-pada-onwards.bat   link-lwg-rel-onwards.bat 
+         std-run-lwg-onward.sh          link-run-lwg-onward.sh                   std-rel-onwards.bat 
+         ol-run-rel-onward.sh           run-rel.sh ol-pada-onwards.bat           std-run-pada-onward.sh 
+         ol-lwg-rel-onwards.bat         link-run-pada-onward.sh                  ol-run-pada-onwards.sh 
+         run-lwg.sh                     ol-run-lwg-onward.sh                     std-run-rel-onward.sh 
+         std-pada-onwards.bat
+ 2. Updated README in step-debug
+ 3. Updated Log.
+
