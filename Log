@@ -1951,8 +1951,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   16. Minor changes in run_openlogos.py to handle key errors
   17. Modified transform_words.py
   18. Added dummy fact "No complete linkages found" in hindi_meaning.clp, vibakthi.clp, hindi_sent_reorder.clp.
-  19. Modified stdenglish.sh and ol_stdenglish.sh to "replace the non-breakable space with normal ascii space character".
+  19. Modified stdenglish.sh and ol_stdenglish.sh to "replace the non-breakable space and zero width non-breakable space with      normal ascii space character".
   20. In step-debug, Updated following files:
        run-lwg-onwards.sh       rel-onwards.bat         pada-onwards.bat
        run-rel-onward.sh        lwg-onwards.bat         run-pada-onwards.sh
-  21. Updated Log.
+  22. Modified run_chunker_and_tagger.sh to remove formation of morph.
+  23. Updated Log.
