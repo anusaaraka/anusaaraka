@@ -13,10 +13,8 @@
 #for normal chunking
 #apertium-deswxml $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | lt-proc -a en.morf.bin| apertium-tagger -g en-ca.prob | apertium-pretransfer | apertium-transfer en-hi.t1x en-hi.t1x.bin en-hi.autobil.bin | apertium-rewxml  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
-
 apertium-deswxml  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt  | lt-proc -a en.morf.bin  | tee $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph_tmp | apertium-tagger -g en-ca.prob | tee $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.tagger_tmp | apertium-pretransfer | apertium-transfer en-hi.t1x en-hi.t1x.bin en-hi.autobil.bin | apertium-rewxml  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
-apertium-rewxml < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph_tmp > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph
 
 apertium-rewxml < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.tagger_tmp > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.tagger
 

@@ -43,10 +43,10 @@ $PATH1/abbr1.out < $1.tmp1 > $1.tmp2
 # It removes these special characters.
 
 #Replacing the non-breakable space (NBSP) which has octal value (\302 240\) with normal ascii space character.
+#Replacing the zero width non-breakable space (ZWNBSP) which has octal value (\357 273\) with normal ascii space character.
 #Further such non-ascii characters can be included in this sed list.
-sed -e 's/ / /g'  < $1.tmp2 > $1.tmp2-tmp
+sed -e 's/ / /g'  <  $1.tmp2  | sed -e 's/﻿/ /g' >  $1.tmp2-tmp
 $PATH1/chk_input_format.pl < $1.tmp2-tmp > $1.tmp3
-#$PATH1/chk_input_format.pl < $1.tmp2 > $1.std
 
 #The program sentence_boundary.pl takes as an input a text file, and generates as
 #output another text file in which each line contains only one sentence. Blank
