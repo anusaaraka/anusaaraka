@@ -1919,7 +1919,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                new_verified (570) 
   22. Updated Log.
 
-  14-03-11
+  15-03-11
   --------
   1. Removed "hindi_tam_rules.clp" and created this file as gdbm with name hindi_default_tam.gdbm.
   2. In tam_meaning.clp:
@@ -1950,5 +1950,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   15. Minor changes in run_stanford.sh.
   16. Minor changes in run_openlogos.py to handle key errors
   17. Modified transform_words.py
-  18. Added dummy fact "No complete linkages found" in hindi_meaning.clp, vibakthi.clp, hindi_sent_reorder.clp. 
-  19. Updated Log.
+  18. Added dummy fact "No complete linkages found" in hindi_meaning.clp, vibakthi.clp, hindi_sent_reorder.clp.
+  19. Modified stdenglish.sh and ol_stdenglish.sh to "replace the non-breakable space with normal ascii space character".
+  20. In step-debug, Updated following files:
+       run-lwg-onwards.sh       rel-onwards.bat         pada-onwards.bat
+       run-rel-onward.sh        lwg-onwards.bat         run-pada-onwards.sh
+  21. Updated Log.
