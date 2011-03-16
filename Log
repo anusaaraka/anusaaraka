@@ -1975,4 +1975,5 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  2. Updated README in step-debug
  3. Modified ol_stdenglish.sh  and stdenglish.sh to handle special characters.
  4. Modified word.c to handle double quotes puntuation.
- 5. Updated Log.
+ 5. Modified "NN_rule" in sd_category.clp
+ 6. Updated Log.

@@ -9,8 +9,9 @@
  )
  ;------------------------------------------------------------------------------------------
  ; NNS -- How many people died .
+ ; NNPS -- A Grateful Dead/Allman Brothers concert in Washington D.C., that July, presented an unexpected opportunity to serve as a dry-run for our upcoming trip.
  (defrule NN_rule
- ?f0<-(id-sd_cat        ?id     ?cat&NN|NNP|NNS)
+ ?f0<-(id-sd_cat        ?id     ?cat&NN|NNP|NNS|NNPS)
  =>
 	(if (or (eq ?cat NN) (eq ?cat NNS)) then
 		(printout ?*cat_fp* "(sid-cat_coarse  "?id"  noun)" crlf)
@@ -41,8 +42,11 @@
         (retract ?f0)
  )
  ;------------------------------------------------------------------------------------------
+ ;If you use that strategy, he will wipe you out.
+ ;Since I know English, he spoke to me.
  (defrule IN_rule
  ?f0<-(id-sd_cat        ?id     IN)
+ (not (parserid-word  ?id  ?word&If|if|Since|since))
  =>
         (printout ?*cat_fp* "(sid-cat_coarse  "?id"  preposition)" crlf)
         (retract ?f0)
