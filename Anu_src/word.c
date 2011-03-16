@@ -27,7 +27,7 @@ int get_punct_full(char *ps)
 
 int func(char *str)
 {
-  if(strcmp(str,")")==0 ||strcmp(str,"(")==0 ||strcmp(str,"$")==0 ||strcmp(str,",")==0 ||strcmp(str,".")==0 ||strcmp(str,":")==0 ||strcmp(str,";")==0 ||strcmp(str,"?")==0 ||strcmp(str,"!")==0 ||strcmp(str,"''")==0 ||strcmp(str,"'")==0||strcmp(str,"=")==0)
+  if(strcmp(str,")")==0 ||strcmp(str,"(")==0 ||strcmp(str,"$")==0 ||strcmp(str,",")==0 ||strcmp(str,".")==0 ||strcmp(str,":")==0 ||strcmp(str,";")==0 ||strcmp(str,"?")==0 ||strcmp(str,"!")==0 ||strcmp(str,"''")==0 ||strcmp(str,"'")==0||strcmp(str,"=")==0 || strcmp(str,"\"")==0)
     return 1;
   return 0;
 }
@@ -276,6 +276,8 @@ To handle more than one punctuation for a word in a sentence following steps are
               //Added by Roja(07-01-10)
               else if(strcmp(lp,"=")==0)
                 fprintf(punct_clp,"(id-left_punctuation  %d\t\"equal_to\")\n",i,lp);
+              else if(strcmp(lp,"\"")==0)
+                fprintf(punct_clp,"(id-left_punctuation  %d\t\"\\%s\")\n",i,lp);
               //----------------------------------------------------------------------
               else
                 fprintf(punct_clp,"(id-left_punctuation  %d\t\"%s\")\n",i,lp);
@@ -295,6 +297,8 @@ To handle more than one punctuation for a word in a sentence following steps are
                   fprintf(punct_clp,"(id-right_punctuation %d\t\"left_parenright_paren\")\n",i,rp); 
               else if(strcmp(rp,"(),")==0)
                   fprintf(punct_clp,"(id-right_punctuation %d\t\"left_parenright_paren,\")\n",i,rp);
+              else if(strcmp(rp,"\"")==0)
+                  fprintf(punct_clp,"(id-right_punctuation %d\t\"\\%s\")\n",i,rp);
               //----------------------------------------------------------------------
 
 	      else

@@ -45,7 +45,8 @@ $PATH1/abbr1.out < $1.tmp1 > $1.tmp2
 #3. RSQM    \342 200\	
 #4. LDQM    \342 200\
 #5. RDQM    \342 200\
-sed -e 's/ / /g' <  $1.tmp2 | sed -e "s/’/'/g" | sed -e 's/“/"/g' | sed -e 's/”/"/g' | sed -e 's/﻿/ /g'  > $1.tmp2-tmp 
+#6. LSQM    \342 200\
+sed -e 's/ / /g' <  $1.tmp2 | sed -e "s/’/'/g" | sed -e 's/“/"/g' | sed -e 's/”/"/g' | sed -e "s/‘/'/g"| sed -e 's/﻿/ /g'  > $1.tmp2-tmp 
 $PATH1/chk_input_format.pl < $1.tmp2-tmp  > $1.tmp3
 
 #The program sentence_boundary.pl takes as an input a text file, and generates as
