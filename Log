@@ -1958,7 +1958,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   22. Modified run_chunker_and_tagger.sh to remove formation of morph.
   23. Updated Log.
 
- 16-03-11
+ 17-03-11
  --------
  1. In step-debug,
      Added step-debug for all three parsers:
@@ -1976,4 +1976,6 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  3. Modified ol_stdenglish.sh  and stdenglish.sh to handle special characters.
  4. Modified word.c to handle double quotes puntuation.
  5. Modified "NN_rule" in sd_category.clp
- 6. Updated Log.
+ 6. Modified add_snt_mrkr.lex programme to handle sentence pre-proccessing.
+ 7. Modified "word_rule" in sd_combining_apostrophe.clp 
+ 8. Updated Log.

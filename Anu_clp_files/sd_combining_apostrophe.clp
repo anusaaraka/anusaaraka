@@ -61,6 +61,8 @@
  (declare (salience 50))
  (parserid-word  ?pid ?word)
  ?f0<-(parser_numeric_id-word ?id ?word)
+ (test (eq (string_to_integer ?pid) ?id));Added by Roja(17-03-11) Without this condition we get repeated parserid-word facts.
+ ;Ex: As the 1970's arrived, the country was emerging from the Kennedy and Martin Luther King assassinations and from the nightmare of Viet Nam and a decade of "everything goes" and if "it feels good, do it, culture. 
  =>
         (printout ?*nid_wrd_fp* "(parser_numid-word-remark  " ?id "  "?word "  -)" crlf)
         (printout ?*l_wrd_fp* "(parserid-word  "?pid "  "?word ")" crlf)
