@@ -177,7 +177,7 @@
                    (loop-for-count (?i  1 (length$ ?*k_list*))
                    (bind ?wrdid (nth$ ?i ?*k_list*))
                    (bind ?word (nth$ ?wrdid $?Eng_list))
-                   (printout t ?wrd " " )
+                   (printout t ?word " " )  ;modified ?wrd to ?word by Roja (21-03-11)
                    )
  (printout t crlf)
  )

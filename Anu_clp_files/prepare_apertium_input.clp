@@ -402,8 +402,8 @@
               else (if (eq ?word they) then
                 (retract ?f0)
                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:p><case:"?case"><parsarg:0><gen:"?gen"><num:p><per:"?per">$)" crlf)
-              ))
                (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_without_vib_and_h_id_and )" crlf)
+              ))
                )
   )
  ;-----------------------------------------------------------------------------------------------------------------------

@@ -1958,7 +1958,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   22. Modified run_chunker_and_tagger.sh to remove formation of morph.
   23. Updated Log.
 
- 17-03-11
+ 22-03-11
  --------
  1. In step-debug,
      Added step-debug for all three parsers:
@@ -1966,16 +1966,20 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
          run-lwg-onwards.sh     rel-onwards.bat          pada-onwards.bat 
          run-rel-onward.sh      lwg-onwards.bat          run-pada-onwards.sh
      Added following files:
-         link-run-rel-onward.sh         run-pada.sh      link-pada-onwards.bat   link-lwg-rel-onwards.bat 
+         link-run-rel-onward.sh         link-pada-onwards.bat			 link-lwg-rel-onwards.bat 
          std-run-lwg-onward.sh          link-run-lwg-onward.sh                   std-rel-onwards.bat 
          ol-run-rel-onward.sh           run-rel.sh ol-pada-onwards.bat           std-run-pada-onward.sh 
          ol-lwg-rel-onwards.bat         link-run-pada-onward.sh                  ol-run-pada-onward.sh 
          run-lwg.sh                     ol-run-lwg-onward.sh                     std-run-rel-onward.sh 
-         std-pada-onwards.bat
+         std-pada-onwards.bat		run-pada.sh
  2. Updated README in step-debug
  3. Modified ol_stdenglish.sh  and stdenglish.sh to handle special characters.
  4. Modified word.c to handle double quotes puntuation.
  5. Modified "NN_rule" in sd_category.clp
  6. Modified add_snt_mrkr.lex programme to handle sentence pre-proccessing.
  7. Modified "word_rule" in sd_combining_apostrophe.clp 
- 8. Updated Log.
+ 8. In prepare_apertium_input.clp:
+      modified debug print statement in "PP_rule_without_vib_and_h_id_and" rule.
+ 9. In order_debug.clp, modified print statement in rule3.
+ 10. Updated changes_in_databases.
+ 11. Updated Log.

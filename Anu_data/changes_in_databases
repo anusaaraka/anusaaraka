@@ -46,6 +46,11 @@
 	internally=???????_???_??	@HARI		(           "			)
 	technologists=????????????_????????	@HARI	(           "			)
 	uk=????????_??????	@HARI			(           "			)
+        Jersey        eka_nasla_kI_gAya_jo_aXika_xUXa_xewI_hE     (Meena 16.03.11) 
+        Jerseys'       eka_nasla_kI_gAya_jaWaA_aXika_xUXa_xewI_hE (Meena 16.03.11) 
+        Jersey's       eka_nasla_kI_gAya_jo_aXika_xUXa_xewI_hE    (Meena 16.03.11) 
+        Jerseys        eka_nasla_kI_gAya_jo_aXika_xUXa_xewI_hE    (Meena 16.03.11) 
+
 
   changes in male_list.txt
   ========================
@@ -169,6 +174,7 @@ changes in samAsa-new.txt
          bad manners     aSiRtawA        aSiRtawA        noun    2       RM(Suggested by Veena 28-02-11 eg:It is bad manners to eat with your mouth open.)
          Jama masjid     jAmA_masjixa    jAmA_masjixa    noun    2       RM  (Meena7.3.11)
          Jumma masjid    jummA_masjixa   jummA_masjixa   noun    2       RM  (Meena 7.3.11) 
+         old student     purAnA_CAwra    purAnA_CAwra    noun    2       RM(changed from old boy to old student   Meena(17.3.11))
 
          
  2. Removed/commented
@@ -177,6 +183,9 @@ changes in samAsa-new.txt
         thank you ----  XanyavAxa        (sugessted by Chaitanya sir (04-11-09)) Eg :-Thank you all for coming this evening .
         see about      prabanXa_karanA   (the meaning is being taken care of by the rule see2/see.clp  Meena(20.5.10)
         speed up     gawi^raPwAra{@s}    gawi^raPwAra{@s}   noun    2  RM (suggested by Meenaji (19-11-10))
+        old lady       vqxXa_mahilA    vqxXa_mahilA    noun    2       RM(by Meena(17.1.11))
+        old man        vqxXa_puruRa    vqxXa_puruRa    noun    2       RM(by Meena(17.1.11))
+        old woman      vqxXa_swrI      vqxXa_swrI      noun    2       RM(by Meena(17.1.11))
 
  3. Modified
         turned out to be -----  nikalA  as  turned out to be  -----  nikala  (suggested by sheetal (04-11-09) Eg:- The object turned out to be a big meteorite .)

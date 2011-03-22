@@ -133,7 +133,6 @@ Jacobean	rAjA_jemsa_kA_SAsanakAla
 Jacuzzi	bahuwa_badA_snAnagqha
 Japanese	jApAnI
 Jehovah	bAIbala_meM_ISvara_kA_nAma
-Jersey	eka_nasla_kI_gAya_jo_aXika_xUXa_xewI_hE
 Jesuit	IsA_masIha_kI_royala_keWolika_samAja_kA_saxasya
 Jew	yahUxI
 Jiffy_bag	pArasala_karane_hewu_bEga
@@ -57321,9 +57320,6 @@ jerry-builders	saswe_paxArWoM_kA_upayoga_karane_vAlA
 jerrybuilder's	saswe_paxArWoM_kA_upayoga_karane_vAlA
 jerrybuilders'	saswe_paxArWoM_kA_upayoga_karane_vAlA
 jerrybuilders	saswe_paxArWoM_kA_upayoga_karane_vAlA
-Jerseys'	eka_nasla_kI_gAya_jaWaA_aXika_xUXa_xewI_hE
-Jersey's	eka_nasla_kI_gAya_jo_aXika_xUXa_xewI_hE
-Jerseys	eka_nasla_kI_gAya_jo_aXika_xUXa_xewI_hE
 jersey's	svetara
 jerseys'	svetara
 jerseys	svetara

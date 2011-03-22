@@ -22823,7 +22823,7 @@ oil seeds specialist	wilahana_viSeRajFa	wilahana_viSeRajFa	noun	3	RM
 old age pension	vqxXAvasWA_peMSana	vqxXAvasWA_peMSana	noun	3	RM
 old age	buDZApA	buDZApA	noun	2	RM
 old bag	purAnA_WElA	purAnA_WElA	noun	2	RM
-old boy	purAnA_CAwra	purAnA_CAwra	noun	2	RM
+old student	purAnA_CAwra	purAnA_CAwra	noun	2	RM
 old codger	KabwI_bUDZA	KabwI_bUDZA	noun	2	RM
 old enough	paryApwa_badZA	paryApwa_badZA	noun	2	RM
 old fashioned's	purAne_PESana_vAle_kA	purAne_PESana_vAle_kA	noun	2	RM
@@ -22831,11 +22831,8 @@ old fashioned	purAne_PESana_kA[-]	purAne_PESana_kA[-]	noun	2	RM
 old fashioneds'	purAne_PESana_kA{ba.}+kA	purAne_PESana_kA{ba.}+kA	noun	2	RM
 old fashioneds	purAne_PESana_kA{s}	purAne_PESana_kA{s}	noun	2	RM
 old fund	purAnI_niXi	purAnI_niXi	noun	2	RM
-old lady	vqxXa_mahilA	vqxXa_mahilA	noun	2	RM
-old man	vqxXa_puruRa	vqxXa_puruRa	noun	2	RM
 old record section	purAnA_aiBaleKa_anuBAga	purAnA_aiBaleKa_anuBAga	noun	3	RM
 old south	purAnA_xakRiNa	purAnA_xakRiNa	noun	2	RM
-old woman	vqxXa_swrI	vqxXa_swrI	noun	2	RM
 olive branch	SAMwi_saMkewa_xenA	SAMwi_saMkewa_xenA	noun	2	RM
 olive brown	jEwUna_kI_waraha_kA_harA_pana_liye_BUrA_raMga	jEwUna_kI_waraha_kA_harA_pana_liye_BUrA_raMga	noun	2	RM
 olive drab	&	&	noun	2	RM
