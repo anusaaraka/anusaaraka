@@ -1981,5 +1981,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  8. In prepare_apertium_input.clp:
       modified debug print statement in "PP_rule_without_vib_and_h_id_and" rule.
  9. In order_debug.clp, modified print statement in rule3.
- 10. Updated changes_in_databases.
- 11. Updated Log.
+ 10. In sd_relation_rules.clp:
+	Modified: conj-comp-rule rule
+	Added: dobj_as_well_as, delete_punc, conj_comp1 and decide_conj_rel rules
+	Deleted:  print_conj_comp rule
+ 11. Added "vi-jo_s" rule to get "viSeRya-jo_samAnAXikaraNa" relation in link_relation_rules.clp file.
+ 12. Updated changes_in_databases.
+ 13. Updated following files:
+               sd_verified  (398) 
+ 14. Updated Log.

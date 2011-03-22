@@ -877,6 +877,7 @@
 (not (viSeRya-det_viSeRaNa_rel_has_been_decided_by_rule_viSeRya-saMKyA_vi_DD ?y))
 (not (link_name-link_lnode-link_rnode  YS|YP  ?z ?x)) ;ex. 4 this cond. His bed was next to the room's only window.
 (not (viSeRya-det_viSeRaNa_rel_has_been_decided_by_rule_RaRTI_saMbanXI_1 ?x))
+(not (got_RaRTI_viSeRaNa_rel ?y))
 =>
 (printout	?*fp*	"(relation-parser_ids	viSeRya-det_viSeRaNa	"?y"	"?x")"crlf)	
 (printout	?*rel_debug*	"(Rule-Rel-ids	rule4	viSeRya-det_viSeRaNa	"?y"	"?x")"crlf)	
@@ -2219,6 +2220,20 @@ else
 (printout       ?*rel_debug*    "(Rule-Rel-ids  rule_vi-jo_samA  viSeRya-jo_samAnAXikaraNa       "?z"    "?jo")"crlf)
 )
 ;Ex. This book is intended for a diverse range of people who want to learn how to write programmes that analyse written language . 
+;----------------------------------------------------------------------------------------------------------------
+(defrule vi-jo_s
+(declare (salience 200))
+(link_name-link_lnode-link_rnode   Mr   ?x ?y)
+(link_name-link_expansion          ?D   D  $?var)
+(link_name-link_lnode-link_rnode   ?D   ?y ?z)
+=>
+(assert (got_RaRTI_viSeRaNa_rel ?z))
+(printout       ?*fp*   "(relation-parser_ids      viSeRya-jo_samAnAXikaraNa       "?x"    "?z")"crlf)
+(printout       ?*rel_debug*    "(Rule-Rel-ids  vi-jo_s  viSeRya-jo_samAnAXikaraNa       "?x"    "?z")"crlf)
+(printout       ?*fp*   "(relation-parser_ids      viSeRya-RaRTI_viSeRaNa       "?z"    "?y")"crlf)
+(printout       ?*rel_debug*    "(Rule-Rel-ids  vi-jo_s  viSeRya-RaRTI_viSeRaNa      "?z"    "?y")"crlf)
+)
+;Ex. The dog whose owner died was black. The dog whose owner John hit was black. 
 ;----------------------------------------------------------------------------------------------------------------
 (defrule rule138
 (declare (salience 200))

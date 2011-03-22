@@ -4,7 +4,7 @@
 (defglobal ?*dbug* = debug_fp)
 
  (open "word.dat" open-word "a")
- (open "word.dat" open-word "a")
+; (open "word.dat" open-word "a")
  (open "original_word.dat" open-orign "a")
  (open "hindi_meanings_tmp.dat" hmng_fp "a")
 
@@ -135,38 +135,100 @@
  )
  ; Ex. He may drink milk or eat apples .
  ;------------------------------------------------------------------------------------------------------------------------
+ (defrule dobj_conj
+ (declare (salience 900))
+ (rel_name-sids conj_and|conj_or  ?ob ?ob1)
+ (rel_name-sids dobj ?kriyA ?ob)
+ (parserid-word ?id and|or)
+ (test (and (> (string_to_integer ?id) (string_to_integer ?ob)) (< (string_to_integer ?id) (string_to_integer ?ob1))))
+ =>
+ (assert (found_kriyA-obj_rel ?kriyA))
+ (printout       ?*fp*   "(relation-parser_ids     kriyA-object    "?kriyA"        "?id")"crlf)
+ (printout       ?*dbug* "(Rule-Rel-ids  dobj_conj  kriyA-object    "?kriyA"        "?id")"crlf)
+ )
+ ; Ex. I like fruits and nuts. 
+ ;------------------------------------------------------------------------------------------------------------------------
+ (defrule dobj_as_well_as
+ (declare (salience 900))
+ (rel_name-sids conj_and|conj_or  ?ob ?ob1)
+ (rel_name-sids dobj ?kriyA ?ob)
+ (parserid-word ?id well)
+ (test (and (> (string_to_integer ?id) (string_to_integer ?ob)) (< (string_to_integer ?id) (string_to_integer ?ob1))))
+ =>
+ (assert (found_kriyA-obj_rel ?kriyA))
+ (printout       ?*fp*   "(relation-parser_ids     kriyA-object    "?kriyA"        "?id")"crlf)
+ (printout       ?*dbug* "(Rule-Rel-ids  dobj_as_well_as  kriyA-object    "?kriyA"        "?id")"crlf)
+ )
+ ; Ex. I like fruits as well as nuts.  
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;SD gives multiple conj_and relations with different ids for same 'AND', we keep one which has a wider scope and delete other relations which come within the larger scope.
+ (defrule decide_conj_rel
+ (declare (salience 1200))
+ ?f<-(rel_name-sids conj_and|conj_or  ?x ?y)
+ ?f1<-(rel_name-sids conj_and|conj_or  ?x ?y1)
+ (test (neq ?y ?y1))
+ =>
+  (bind ?y (string_to_integer ?y))
+  (bind ?y1 (string_to_integer ?y1)) 
+    (if (> ?y ?y1) then 
+        (retract ?f1)
+    )  
+ )
+ ;Ex. Ulsoor lake is an ideal place for sightseeing, boating and shopping.
+ ;------------------------------------------------------------------------------------------------------------------------
+
  ;Added by Roja (21-02-11)
  ;To handle all conjunction components in one single list
  ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.
  (defrule conj-comp-rule
  (declare (salience 1000))
  ?f<-(rel_name-sids conj_and|conj_or  ?x ?y)
- (parserid-word ?id and|or)
+ (parserid-word ?id and|or|well)
  (not (found_kriyA-conjunction ?id))
  =>
-  (bind ?*list* (sort > (create$ ?*list* (string_to_integer ?y))))
+  (bind ?first  (string_to_integer ?x))
+  (bind ?last (string_to_integer ?y))
+  (bind ?list  (create$ ))
   (bind ?plist (create$ ))
-        (loop-for-count (?i   1 (length ?*list*))  do
-                (bind ?j (string-to-field (str-cat "P" (nth$ ?i ?*list*))))
-                (bind ?plist (insert$  ?plist (length ?*list*) ?j))
+        (loop-for-count (?i  ?first  ?last)  do
+                  (bind ?list (insert$ ?list 1 ?i))
+                  (bind ?list (sort > ?list))
         )
-
-  (assert (conjunction_components_dummy ?id ?x ?plist)) 
+        (loop-for-count (?i 1 (length ?list))
+               (bind ?j (string-to-field (str-cat "P" (nth$ ?i ?list))))
+               (bind ?plist (insert$ ?plist (length ?list) ?j))
+        )
+        (bind ?plist (delete-member$ ?plist ?id))
+        (assert (conjunction_components ?id ?plist)) 
  )
- ; Ex. Your house and garden are very attractive. 
+; ; Ex. Your house and garden are very attractive. 
  ;------------------------------------------------------------------------------------------------------------------------
- ;Added by Roja (21-02-11)
- ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.
- (defrule print_conj_comp
- (declare (salience -10))
- (conjunction_components_dummy ?head  ?x  $?ids)
+ (defrule delete_punc
+ (declare (salience 900))
+ (conjunction_components $?list)
+ ?f<- (parserid-word ?pid ?punc)
+ (test (member$ ?pid $?list))
  =>
- (if (eq (length $?ids) (length ?*list*)) then 
-  (printout ?*fp* "(conjunction-components "  ?head "  "?x "   " (implode$ $?ids) ")" crlf)
-  (printout ?*dbug* "(Rule-Rel-ids  print_conj_comp    conjunction-components "  ?head "  "?x " "  (implode$ $?ids) ")" crlf)
- )
-)
-;------------------------------------------------------------------------------------------------------------------------
+ (bind ?plist (create$ ))
+    (if (eq ?punc ,) then 
+       (bind ?plist (delete-member$ $?list ?pid))
+       (printout ?*fp* "(conjunction-components "  (implode$ ?plist) ")" crlf)
+       (printout  ?*dbug* "(Rule-Rel-ids  delete_punc  (conjunction-components  "(implode$  ?plist)")"crlf)
+       (assert (has_been_included $?list))
+       (retract ?f)
+    )
+  )
+ ;Ex. Ulsoor lake is an ideal place for sightseeing, boating and shopping.
+ ;------------------------------------------------------------------------------------------------------------------------
+ (defrule conj_comp1
+ (conjunction_components $?list)
+ (not (has_been_included $?list))
+ =>
+        (printout ?*fp* "(conjunction-components  "(implode$ $?list)")"crlf)
+	(printout  ?*dbug* "(Rule-Rel-ids  conj_comp1  (conjunction-components  "(implode$ $?list)")"crlf)
+  )
+ ;Ex. Are a dog and a cat here?
+ ;------------------------------------------------------------------------------------------------------------------------
 
  (defrule nsubj_conj1
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
@@ -374,6 +436,7 @@
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule dobj
 (rel_name-sids dobj ?kriyA ?obj)
+(not (found_kriyA-obj_rel ?kriyA))
 (not  (parserid-word ?obj some))
 =>
 (printout	?*fp*	"(relation-parser_ids     kriyA-object	"?kriyA"	"?obj")"crlf)	
@@ -490,6 +553,7 @@
 (root-verbchunk-tam-parser_chunkids ? ? ? $?ids ?kri)
 (rel_name-sids advmod ?kri ?kri_viSeRaNa)
 (not  (got_viSeRya-jo_samAnAXikaraNa  ?kri_viSeRaNa))
+(not (got_kriyA-aXikaraNavAcI_avyaya_rel_for ?kri_viSeRaNa))
 ;(not (rel_name-sids ccomp|xcomp ? ?kriyA));commented for 'I am afraid that I have badly hurt him.'
 =>
 (printout	?*fp*	"(relation-parser_ids     kriyA-kriyA_viSeRaNa	"?kri"	"?kri_viSeRaNa")"crlf)	
@@ -541,10 +605,12 @@
  ; Added by Mahalaxmi.
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule advmd
+ (declare (salience 100))
  (rel_name-sids advmod ?kriyA ?lupwa_p)
  (parser_id-cat_coarse ?kriyA verb)
  (parserid-word  ?lupwa_p  again|later|here|there|somewhere|anywhere|everywhere|now|outside|longer|alone|next|upstairs|downstairs|upwards|downwards|above|down)
  =>
+ (assert (got_kriyA-aXikaraNavAcI_avyaya_rel_for ?lupwa_p))
  (printout       ?*fp*   "(relation-parser_ids     kriyA-aXikaraNavAcI_avyaya     "?kriyA"        "?lupwa_p")"crlf)
  (printout       ?*dbug* "(Rule-Rel-ids  advmd  kriyA-aXikaraNavAcI_avyaya    "?kriyA"        "?lupwa_p")"crlf)  
  )
