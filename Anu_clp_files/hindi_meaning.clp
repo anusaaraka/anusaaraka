@@ -1,6 +1,8 @@
  (defglobal ?*hin_mng_file* = fp)
 
  (deffacts dummy_facts 
+ (prep_id-relation-anu_ids)
+ (No complete linkages found)
  (missing-level-id) 
  (id-original_word) 
  (verb_type-verb-causative_verb-tam) 
@@ -26,9 +28,7 @@
  (id-cat_coarse)
  (root-verbchunk-tam-chunkids)
  (id-attach_emphatic)
- (relation-anu_ids)
  (conjunction-components)
- (No complete linkages found)
  )
 
  ;for MWE meaning will be assinged to the last word (single mng will be given to all words).So,by this rule we are retracting cntrl facts for remaining ids.
@@ -241,7 +241,7 @@
  ;The landlord had to back down .
  (defrule wsd_vrb_phrase_mng_word_mng
  (declare (salience 8701))
- (relation-anu_ids  kriyA-upasarga  ?id ?id1)
+ (prep_id-relation-anu_ids ?  kriyA-upasarga  ?id ?id1)
  (affecting_id-affected_ids-wsd_group_word_mng  ?id  ?id1 ?grp_mng)
  ?mng<-(meaning_to_be_decided ?id)
  ?mng1<-(meaning_to_be_decided ?id1)
@@ -255,7 +255,7 @@
  ;The landlord had to back down .
  (defrule wsd_vrb_phrase_mng_root_mng
  (declare (salience 8700))
- (relation-anu_ids  kriyA-upasarga  ?id ?id1)
+ (prep_id-relation-anu_ids  ? kriyA-upasarga  ?id ?id1)
  (affecting_id-affected_ids-wsd_group_root_mng  ?id  ?id1 ?grp_mng)
  ?mng<-(meaning_to_be_decided ?id)
  ?mng1<-(meaning_to_be_decided ?id1)
@@ -269,7 +269,7 @@
  ;They divided the money up among the children . 
  (defrule vrb_phrase_mng
  (declare (salience 8600))
- (relation-anu_ids  kriyA-upasarga  ?id ?id1)
+ (prep_id-relation-anu_ids ?  kriyA-upasarga  ?id ?id1)
  (id-root ?id ?rt)
  (id-root ?id1 ?rt1)
  ?mng<-(meaning_to_be_decided ?id)

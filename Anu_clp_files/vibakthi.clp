@@ -1,7 +1,8 @@
-(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (slot preposition (default 0))(slot Hin_position (default 0)))
+(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
 
  (deffacts dummy_facts
+ (prep_id-relation-anu_ids)
  (kriyA_id-subject_viBakwi)
  (kriyA_id-object_viBakwi)
  (kriyA_id-object1_viBakwi)
@@ -20,7 +21,6 @@
  (id-wsd_root_mng)
  (id-wsd_word_mng)
  (id-last_word)
- (relation-anu_ids)
  (missing-level-id)
  (id-original_word)
  (id-number-src)
@@ -32,7 +32,6 @@
  (id-cat_coarse)
  (id-word)
  (root-verbchunk-tam-chunkids)
- (No complete linkages found)
  )
 
 
@@ -59,12 +58,23 @@
  (assert (yA-tam  yA_huA_ho_sakawA_hE))
  (assert (yA-tam  yA_huA_nahIM_hogA))
  )
-
+ ;---------------------------------- kA vib for RaRTI_viSeRaNa  ----------------------------------
+ ;Added by Shirisha Manju (04-03-11)
+ ;Ex: We had wasted our journey.
+ (defrule RaRTI_viSeRaNa_rule
+ (declare (salience 1000))
+ (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa   ?viSeRya  ?RaRTI_viSeRaNa)
+ ?f1<-(pada_info (group_head_id ?RaRTI_viSeRaNa) (group_cat PP))
+ ?f0<-(pada_control_fact ?RaRTI_viSeRaNa)
+ =>
+ 	(retract ?f0 )
+	(modify ?f1 (vibakthi kA))
+ )
  ;---------------------------------- verb-to-sub-vibakthi --------------------------
  (defrule  kriya_sub_vibakthi_rule
  (declare (salience 1000))
  (kriyA_id-subject_viBakwi ?root_id ?vib)
- (relation-anu_ids kriyA-subject  ?root_id ?sub_id)
+ (prep_id-relation-anu_ids ? kriyA-subject  ?root_id ?sub_id)
  ?f0<-(pada_control_fact ?sub_id)
  ?f1<-(pada_info (group_head_id ?sub_id)(group_cat PP))
  =>
@@ -75,7 +85,7 @@
  ;I saw him telling her about the party .
  (defrule kriya_obj_vibakthi_rule
  (declare (salience 1000))
- (or (and (kriyA_id-object_viBakwi ?root_id ?vib)(relation-anu_ids kriyA-object  ?root_id ?obj_id))(and (kriyA_id-object2_viBakwi ?root_id ?vib)(relation-anu_ids kriyA-object_2  ?root_id ?obj_id))(and (kriyA_id-object1_viBakwi ?root_id ?vib)(relation-anu_ids kriyA-object_1  ?root_id ?obj_id)))
+ (or (and (kriyA_id-object_viBakwi ?root_id ?vib)(prep_id-relation-anu_ids ? kriyA-object  ?root_id ?obj_id))(and (kriyA_id-object2_viBakwi ?root_id ?vib)(prep_id-relation-anu_ids ? kriyA-object_2  ?root_id ?obj_id))(and (kriyA_id-object1_viBakwi ?root_id ?vib)(prep_id-relation-anu_ids ? kriyA-object_1  ?root_id ?obj_id)))
  ?f0<-(pada_control_fact ?obj_id)
  ?f1<-(pada_info (group_head_id ?obj_id)(group_cat PP))
  =>
@@ -86,7 +96,7 @@
  ; She is making the girl feed the child 
  (defrule kriya_prayojya_karwA_rule
  (declare (salience 980))
- (relation-anu_ids kriyA-prayojya_karwA  ?id ?id1)
+ (prep_id-relation-anu_ids ? kriyA-prayojya_karwA  ?id ?id1)
  ?f0<-(pada_control_fact ?id1)
  ?f1<-(pada_info (group_head_id ?id1)(group_cat PP))
  =>
@@ -97,9 +107,8 @@
  ;I gave my brother an expensive present
  (defrule animate_vibakthi_rule
  (declare (salience 950))
- (relation-anu_ids kriyA-object|kriyA-object_2|kriyA-object_1 ?root_id ?obj_id)
-; (or (kriyA-object  ?root_id ?obj_id)(kriyA-object_2  ?root_id ?obj_id)(kriyA-object_1  ?root_id ?obj_id))
- (not (relation-anu_ids subject-subject_samAnAXikaraNa  ?x ?obj_id))
+ (prep_id-relation-anu_ids ? kriyA-object|kriyA-object_2|kriyA-object_1 ?root_id ?obj_id)
+ (not (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa  ?x ?obj_id))
  (id-HM-source ?obj_id ?obj_mng ?)
  (id-root ?root_id ~have)
  (id-original_word ?obj_id ?word)
@@ -125,7 +134,7 @@
  (defrule vib_rule
  (declare (salience 850))
  ?f<-(pada_info (group_head_id ?root_id)(group_cat VP)(vibakthi ?vib)(H_tam ?tam)(tam_source Default))
- (relation-anu_ids kriyA-subject  ?root_id ?sub_id)
+ (prep_id-relation-anu_ids ? kriyA-subject  ?root_id ?sub_id)
  ?f0<-(pada_control_fact ?sub_id)
  ?f1<-(pada_info (group_head_id ?sub_id))
  (test (neq ?vib 0))
@@ -134,6 +143,7 @@
 	(modify ?f1 (vibakthi ?vib))
 	(modify ?f (vibakthi 0))
  )
+
  ;-------------------------------------------------------------------------------------------------------------
  ;The object turned out to be a big meteorite .
  ;Here Compound-phrase is "turned out to be" (generally  for a compound phrase meaning is assigned to the last word and all other as "-"), and in this case "turned" is "kriyA" and hindi meaning is "-" so vibakthi information for this types of phrases will go wrong by using rule vib_rule1 .So, in order to solve this problem we have added the below rule in which if verb is part of any phrase , phrase meaning is taken as verb meaning.
@@ -141,8 +151,8 @@
  (declare (salience 850))
  (pada_info (group_head_id ?root_id)(group_cat VP)(vibakthi 0)(H_tam ?tam))
  (yA-tam  ?tam)
- (relation-anu_ids kriyA-subject  ?root_id ?sub_id)
- (not (relation-anu_ids kriyA-subject  ?root_id1&:(> ?root_id ?root_id1) ?sub_id))
+ (prep_id-relation-anu_ids ? kriyA-subject  ?root_id ?sub_id)
+ (not (prep_id-relation-anu_ids ? kriyA-subject  ?root_id1&:(> ?root_id ?root_id1) ?sub_id))
  (id-HM-source ?root_id ? ?src)
  (ids-cmp_mng-head-cat-mng_typ $?ids1 ?h_mng ?head_id ?grp_cat ?mng_typ)
  (test (and (eq ?src Compound_Phrase_gdbm) (member$ ?root_id $?ids1)))
@@ -179,8 +189,8 @@
  (declare (salience 850))
  (pada_info (group_head_id ?root_id)(group_cat VP)(vibakthi 0)(H_tam ?tam))
  (yA-tam  ?tam)
- (relation-anu_ids kriyA-subject  ?root_id ?sub_id)
- (not (relation-anu_ids kriyA-subject  ?root_id1&:(> ?root_id ?root_id1) ?sub_id))
+ (prep_id-relation-anu_ids ? kriyA-subject  ?root_id ?sub_id)
+ (not (prep_id-relation-anu_ids ? kriyA-subject  ?root_id1&:(> ?root_id ?root_id1) ?sub_id))
  (id-HM-source ?root_id ?h_mng ?)
  ?f0<-(pada_control_fact ?sub_id)
  ?f1<-(pada_info (group_ids $?ids))
@@ -221,72 +231,42 @@
 	(retract ?f0)
 	(modify ?f1 (vibakthi kA))
  )
-
- ;------------------------------------------------------------------------------------------------------------------
- (defrule PP_vib
- (declare (salience 700))
- ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(preposition ?pp_id))
- (id-HM-source ?pp_id ?h_mng ?)
- (test (neq ?pp_id 0))
- ?f0<-(pada_control_fact ?pada_id)
- =>
-	(retract ?f0)
-	(if (eq ?h_mng -) then 
-		(modify ?f1 (vibakthi 0))
-	else 
-		(modify ?f1 (vibakthi ?h_mng))
- 	)
- )
-
- ;------------------------------------------------------------------------------------------------------------------
- ;Creating the fact of hindi-meanings in english-order(this fact is used by "vib_for_multiple_prep" rule for getting the vibakthi mng (26-03-10))
- (defrule get_hin_mng_list
- (declare (salience 702))
- ?f1<-(index ?id)
- ?f<-(hin_mng_list $?hin_list)
- ?f2<-(id-HM-source ?id ?h_mng ?)
- =>
- (retract ?f ?f1)
- (bind ?h_mng (str-cat ?h_mng ""))
- (assert (hin_mng_list $?hin_list ?h_mng))
- (bind ?id (+ ?id 1))
- (assert (index ?id))
- )
-
  ;-------------------------------------------------------------------------------------------------------------------
- ;Eg:-He came FROM INSIDE the room .
+ ;Eg: Mohan fell from the top of the house.
+ ;Added by Shirisha Manju (11-03-11)
+ (defrule vib_for_single_prep
+ (declare (salience 701))
+ ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(preposition ?pp_id ))
+ ?f2<-(id-HM-source ?pp_id ?h_mng ?)
+  =>
+	(if (eq ?h_mng -) then 
+               (modify ?f1 (vibakthi 0))
+        else 
+		(modify ?f1 (vibakthi ?h_mng))
+	)
+	(retract ?f2)
+ )
+ ;-------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (15-03-11)	 
+ ;The people of Orissa are facing grave adversities due to the cyclone. 
  (defrule vib_for_multiple_prep
  (declare (salience 701))
- ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(preposition ?pp_id))
- ?f2<-(hin_mng_list $?hin_list)
- (test (neq ?pp_id 0))
- (test (numberp (str-index "_" (str-cat ?pp_id ""))))
- ?f0<-(pada_control_fact ?pada_id)
+ ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(preposition $?pp_ids ))
+ ?f2<-(id-HM-source ?id ?h_mng ?)
+ (test (> (length $?pp_ids) 1))
+ (test (member$ ?id $?pp_ids))
  =>
-        (retract ?f0)
-        (bind ?str "")(bind ?str1 "")
-        (while (neq (str-index "_" ?pp_id) FALSE) do
-	        (bind ?index (str-index "_" ?pp_id))
-        	(bind ?str (sub-string 1 (- ?index 1) ?pp_id))
-	        (bind ?str (str-cat ?str " " ))
-        	(bind ?str1 (sub-string (+ ?index 1) 1000 ?pp_id)) 
-	        (bind ?pp_id (str-cat ?str ?str1))
-	)
-        (bind ?vib (str-cat ""))
-	(bind $?ids (explode$ ?pp_id))
-        (bind ?len (length$ $?ids))
-        (loop-for-count (?i 1 ?len)
-        	(bind ?id (nth$ ?i $?ids))
-                (if (and (eq ?i ?len)(neq (nth$ ?id $?hin_list)  "-")) then
-                	(bind ?vib (str-cat ?vib (nth$ ?id $?hin_list)))
-                        else (if (neq (nth$ ?id $?hin_list)  "-") then
-                        (bind ?vib (str-cat ?vib (nth$ ?id $?hin_list) "_")))			
-               	)
-	)
-        (if (neq ?vib "") then
-                (bind ?vib (string-to-field ?vib))
-                (modify ?f1 (vibakthi ?vib))
-        )
+	(bind ?len (length $?pp_ids))
+	(loop-for-count (?i 1 ?len) do
+		(if (eq ?id (nth$ ?i $?pp_ids)) then
+                	(if (eq ?h_mng -) then 
+                       		(modify ?f1 (vibakthi 0))
+               		else 
+                        	(modify ?f1 (vibakthi ?h_mng))
+                	)
+		(retract ?f2)
+		)
+       )
  )
 
  ;------------------------------------------------------------------------------------------
