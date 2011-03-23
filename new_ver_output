@@ -122,6 +122,7 @@ mEM yaha nahIM karUzgA.
 Hindi meaning using Link parser 2.23
 (Found maximum of 38 linkages )
 He wasted his golden opportunity to play in the national team. 
+usane usakA rARtriya tIma meM Kelane kA sunaharA mOkA vyarWa_meM_barabAxa kiyA.
 usane rARtriya tIma meM Kelane kA usakA sunaharA mOkA vyarWa_meM_barabAxa kiyA.
 
 Hindi meaning using Link parser 2.24
@@ -1577,7 +1578,7 @@ mEM ASA karawA hUz ki vaha kala pArtI ko AyegA/AegA.
 Hindi meaning using Link parser 3.14
 (Found maximum of 6 linkages )
 I told Margaret on Tuesday that I thought she would probably be hired. 
-mEMne maMgalavAra ko Margaret ko bawAyA ki mEMne socA ki usako/use saMBavawaH kAma xiyA jAegA.
+mEMne maMgalavAra ko Margaret ko bawAyA ki mEMne socA usako/use saMBavawaH kAma xiyA jAegA.
 
 Hindi meaning using Link parser 3.15
 (Found maximum of 2 linkages )
@@ -2791,6 +2792,7 @@ mEM mere jIvana meM kaBI nahIM golPa Kela cukA hUz.
 Hindi meaning using Link parser 5.58
 (Found maximum of 2 linkages )
 The little ones are hopping and jumping merrily. 
+Cote vAle AnaMxiwa_waraha se eka_pEra_se_kUxa rahe hEM Ora kUxa rahe hEM.
 Cote vAle AnaMxiwa_waraha se eka_pEra_se_kUxa rahe hEM Ora AnaMxiwa_waraha se kUxa rahe hEM.
 
 Hindi meaning using Link parser 5.59
@@ -2861,5 +2863,10 @@ Hindi meaning using Link parser 5.72
 (Found maximum of 6 linkages )
 These cuts in services will particularly affect the old. 
 sevAoM meM ye kAta viSeRa_rUpa se vqxXoM ko praBAviwa kareMgI.
+
+Hindi meaning using Link parser 5.73
+(Found maximum of 130 linkages )
+The old man had to walk a long way to catch the bus. 
+vqxXa puruRa ko basa pakadane ke liye eka laMbA mArga calanA/calane padA.
 
 Calling Interface related programs

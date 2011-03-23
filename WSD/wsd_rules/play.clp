@@ -173,7 +173,7 @@
 (id-root ?id play)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id playing)
-(or (kqxanwa-of_saMbanXI  ?id ?id1)(kriyA-object ?id ?id1)(viSeRya-of_saMbanXI ?id ?id1));added by sheetal   ;Modified by Roja (09-08-10)
+(or (kqxanwa-of_saMbanXI  ?id ?id1)(kriyA-of_saMbanXI ?id ?id1)(kriyA-object ?id ?id1)(viSeRya-of_saMbanXI ?id ?id1));Modified by Roja (09-08-10)
 (id-root ?id1 piano)
 =>
 (retract ?mng)
@@ -181,4 +181,4 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  play.clp      play10   "  ?id "  baja )" crlf))
 )
-
+;kriyA-of_saMbanXI added by Manju (16-03-11)

@@ -201,8 +201,8 @@
 (id-root ?id go)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word =(+ ?id 1) along)
-(or (kriyA-upasarga ?id =(+ ?id 1))(kriyA-along_with_saMbanXI  ?id ?id1))
-(id-cat_coarse ?id verb)
+(or (kriyA-upasarga ?id =(+ ?id 1))(kriyA-along_with_saMbanXI  ?id ?id1) (kriyA-with_saMbanXI  ?id ?id1))
+;(id-cat_coarse ?id verb)
 =>
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(+ ?id 1) sahamawa_ho))

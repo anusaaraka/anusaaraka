@@ -1993,3 +1993,79 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  16. Updated following files:
                sd_verified  (400)  new_verified (572)   verified_ol (551)  verified (595)
  17. Updated Log.
+
+ 23-03-11
+ ========
+ 
+  1.  WSD :  go.clp   play.clp   
+  2.  Renamed pada_point_concept_rules.clp  as pada_prawiniXi_id_nodation.clp in
+        run_modules_link.bat,    run_modules_std.bat  and    run_modules_ol.bat
+  3.  Modified pada_info template (slot as multislot for preposition) in the following files :
+        tam_meaning.clp          vibakthi.clp         agreement.clp    GNP_agreement.clp   hindi_position.clp
+        hindi_sent_reorder.clp   create_xml_file.clp  and prepare_apertium_input.clp
+  4.  Modified "relation-parser_ids"  as  "prep_id-relation-parser_ids" in the following files:
+        modify_ol_cat.clp       ol_parser_id_mapping.clp     lwg_disambiguation.clp     modify_ol_relations.clp
+        sd_relation_rules.clp   parser_id_mapping.clp        link_relation_rules.clp
+  5.  Modified "relation-anu_ids"  as  "prep_id-relation-anu_ids" in the following files:
+	pada_prawiniXi_id_nodation.clp     hindi_meaning.clp    vibakthi.clp   agreement.clp   hindi_sent_reorder.clp
+        GNP_agreement.clp                  hindi_position.clp   prepare_apertium_input.clp     
+  6.  Added "viSeRya-jo_samA_rule " in  hindi_position.clp
+  7.  Modified  saMKyA-saMKyA and  upameyopamAna_4  rules in link_relation_rules.clp
+  8.  Modified "run_stanford-parser.sh" to generate "sd-basic_relations_tmp.txt" file
+  9.  Modified "run_stanford.sh" to add "basicDependencies"
+  10. Added "stnford_basic_relations.lex" to get basic relations
+  11. Modified compile.sh  to generate stnford_basic_relations
+  12. Added "mwe" in split-basic-tree_rels.py
+  13. Modified Anu_src/run_openlogos.py  to get "saMbanXI" relations.
+  14. run_modules_ol.bat :
+	Removed  load-facts "word.dat" and "original_word.dat" in ol_parser_id_mapping module
+	Removed  "modify_ol_pada" and "ol_pada_id_mapping" modules
+	Removed "assert statements" in  pada_prawiniXi_id_nodation  and vibakthi  modules
+  15. ol_parser_id_mapping.clp :
+        Removed  : map_rel_y rule ,map-rel3 and map-rel2  rules
+        Modified : map-rel
+        Added    : map-rel_prep
+  16. run_modules_link.bat :
+	Removed : load-facts "word.dat" , "link_relation_info_tmp1.dat"  and "hindi_meanings_tmp.dat" facts  and generating 
+		  "link_relation_info.dat" in  parser_id_mapping  module
+	Removed "pada_ids.clp" module
+	Removed "assert statements" in  pada_prawiniXi_id_nodation  and vibakthi  modules
+  17. link_category.clp :
+	Modified : prep_rule_with_MVp_rnode
+	Added    : prep_rule_with_MVp_and_B  and  prep_rule_with_MVp_rnode1
+  18. run_modules_std.bat :
+	Loaded  :  "sd_word.dat" facts in sd_category module
+	           "sd-basic_relations_tmp1.dat" in sd_relation_rules module
+		   "pada_with_point_concept.dat" in tam_meaning  module	
+	Removed "word.dat" and "hindi_meanings_tmp.dat" facts in parser_id_mapping  module
+        Removed "sd_pada" module
+        Removed "assert statements" in  pada_prawiniXi_id_nodation  and vibakthi  modules
+  19. sd_category.clp :
+        Modified :  NN_rule   and  IN_rule      
+	Added	 :  NNP_rule  and  NNPS_rule
+  20. sd_relation_rules.clp :
+	Modified :  nsubjpass/csubjpass, vi_prep ,insert-where and prep_nsubj_advmod_rule rules
+	Added    :  single_prep , duble_prep  and  triple_prep rules
+	Removed  :  prep_than , prep+nsubj+pobj , prep_then+nsubj, prep_p , prep_p3  and  prepc_p  rules
+  21. parser_id_mapping.clp :
+	Modified :  map-rel1, map-rel and map-rel2  rules
+	Added    :  map-rel_prep, map-rel_1  and  map-rel_10000  rules
+	Removed  :  map-vb_chunk, map-0_id , map_no_comp_link_found, map-rel_3, default_cat, map_root1 
+                    and  map_morph1  rules
+  22. pada_prawiniXi_id_nodation.clp :
+	Added functions :  print_in_ctrl_fact_files , generate_initial_point and generate_incremented_point
+        Added rules	:  RaRTI_viSeRaNa_rule1 , ol_grouped_ids_pada ,modifying_pada_for_increment ,test_for_prep, 
+			   test_for_prep1, modifying_pada_for_increment1 and end rules 
+	Modified rules  :  kriyA_pada, conj_comp_rule , to-infinitive_pada, asserted_who , subject_insertion
+			   subject_conjunction_insert , PP_pada ,  PP_pada1, viSeRaNa_pada , non_finite_kriyA_pada
+			   non_finite_kriyA_pada1 and  non_finite_kriyA_pada2  rules
+	Removed         :  viSeRaNa-viSeRaka_rule , get_eng_word_list  and  default_pada1  rules
+  23. vibakthi.clp :
+	Added    :  RaRTI_viSeRaNa_rule  and vib_for_single_prep
+	Removed  :  PP_vib and get_hin_mng_list
+	Modified :  vib_for_multiple_prep
+  24. Modified bin/run_sentence_link.sh  to remove link_relation_info.dat 
+  25. Modified sd_ver_output  verified_output_ol  new_ver_output
+  26. Updated new_verified (573)
+  27. Updated Log
+ 
