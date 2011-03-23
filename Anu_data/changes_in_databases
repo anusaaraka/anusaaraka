@@ -27,7 +27,7 @@
         data           bAweM            as      detA            (Meena 18.1.11)  
 	processing	prakriyA	as	saMsAXana       (Meena 08-02-11)
         national        rARtrIya	as	rARtriya	(Suggested by Sukhada (21-02-11))
-
+        old         purA                as      purAnA          (Meena 18.3.11) 
   2. Added :: 
 	attorney-at-law   pramANiwa_aBikarwA
 	Delhi	          xillI
@@ -50,6 +50,8 @@
         Jerseys'       eka_nasla_kI_gAya_jaWaA_aXika_xUXa_xewI_hE (Meena 16.03.11) 
         Jersey's       eka_nasla_kI_gAya_jo_aXika_xUXa_xewI_hE    (Meena 16.03.11) 
         Jerseys        eka_nasla_kI_gAya_jo_aXika_xUXa_xewI_hE    (Meena 16.03.11) 
+        Sr     SrI  (Meena 22.3 .11)
+             
 
 
   changes in male_list.txt
@@ -295,6 +297,10 @@ changes in samAsa-new.txt
 	<e lm="uMgalI"><i>uMgal</i><par n="ladak/I__n"/></e>   (Added by Meenaji (12.1.11))
 	<e lm="giranA"><i>giran</i><par n="ladak/A__n"/></e>   (Suggested by Meenaji (13.1.11))
         <e lm="BUrA"><i>BUr</i><par n="regular__adj-noun"/></e>(     "              (16-02-11))
+        vAl/A__adj paradigm                                 (Suggested by Meenaji 22-03-11)
+        <e> <p><l></l>  <r></r></p><par n="vAl/A__n"/></e>  (      "                      )
+        <e> <p><l></l>  <r></r></p><par n="vAl/A__adj"/></e>(      "                      )
+        <e lm="kA"><i>k</i><par n="regular__adj-noun"/></e> (      "                      )
 
 
  Changes in apertium-en-hi.en.metadix 

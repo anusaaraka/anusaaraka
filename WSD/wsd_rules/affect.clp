@@ -31,7 +31,12 @@
 ;"affected","Adj","1.banAvatI"
 ;He showed affected feelings of sadness when his uncle died.
 ;
-;
+
+
+
+
+;Modified by Meena(17.3.11);have added (assert (kriyA_id-object_viBakwi ?id ko)) and changed the meaning from "praBAva_dAla" to "praBAviwa_kara" 
+;These cuts in services will particularly affect the old.
 (defrule affect2
 (declare (salience 4800))
 (id-root ?id affect)
@@ -39,9 +44,12 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id praBAva_dAla))
+(assert (id-wsd_root_mng ?id praBAviwa_kara))
+(assert (kriyA_id-object_viBakwi ?id ko))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  affect.clp 	affect2   "  ?id "  praBAva_dAla )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  affect.clp 	affect2   "  ?id "  praBAva_dAla )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  affect.clp      affect2   "  ?id " ko )" crlf)
+)
 )
 
 ;"affect","V","1.praBAva_dAlanA"

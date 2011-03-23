@@ -1958,7 +1958,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   22. Modified run_chunker_and_tagger.sh to remove formation of morph.
   23. Updated Log.
 
- 22-03-11
+ 23-03-11
  --------
  1. In step-debug,
      Added step-debug for all three parsers:
@@ -1987,6 +1987,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	Deleted:  print_conj_comp rule
  11. Added "vi-jo_s" rule to get "viSeRya-jo_samAnAXikaraNa" relation in link_relation_rules.clp file.
  12. Updated changes_in_databases.
- 13. Updated following files:
-               sd_verified  (398) 
- 14. Updated Log.
+ 13. In WSD:  Modified :to.clp, old.clp, affect.clp, woman.clp
+ 14. Modified and updated  verified_output_ol, new_ver_output, verified_output, sd_ver_output
+ 15. Added new entries in apertium_hn.dix.
+ 16. Updated following files:
+               sd_verified  (400)  new_verified (572)   verified_ol (551)  verified (595)
+ 17. Updated Log.

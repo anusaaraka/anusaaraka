@@ -316,6 +316,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-root =(- ?id 1) way|method|procedure|order)
 (to-infinitive  ?id ?rid)
+(not(id-root ?rid catch))  ;Added by Meena(22.3.11) so that we get "pakadane ke liye" for "to catch" in the ex.The old man had to walk a long way to catch the bus .
 (id-cat_coarse ?rid verb)
 (not (kriyA-kriyA_viSeRaNa  ?kriyA =(- ?id 1)));Added by sheetal 4:The old man had to walk a long way to catch the bus .
 =>

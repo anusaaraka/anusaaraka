@@ -132,6 +132,15 @@
 <e><p><l>I</l><r>A<s n="cat:adj"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l>I</l><r>A<s n="cat:adj"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>				
+
+<pardef n="vAl/A__adj">
+<e><p><l>A</l><r>A<s n="cat:adj"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
+<e><p><l>e</l><r>A<s n="cat:adj"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
+<e><p><l>e</l><r>A<s n="cat:adj"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
+<e><p><l>I</l><r>A<s n="cat:adj"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
+<e><p><l>I</l><r>A<s n="cat:adj"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
+</pardef>
+
 <pardef n="KA/__v">
 
 
@@ -3184,19 +3193,14 @@
 <pardef n="regular__adj-noun">
  <e>           <p><l></l>      <r></r></p><par n="kAl/A__adj"/></e>
  <e>           <p><l></l>      <r></r></p><par n="kAl/A__n"/></e>
+  <e>           <p><l></l>      <r></r></p><par n="vAl/A__n"/></e>
+  <e>           <p><l></l>      <r></r></p><par n="vAl/A__adj"/></e>
   <e>           <p><l></l>      <r></r></p><par n="ladak/A__n"/></e>
   <e>           <p><l></l>      <r></r></p><par n="ladak/I__n"/></e>
   </pardef>
   </pardefs>
 
 
-<!--
-<pardef n="regular__adj-noun">
-	<e>	<p><l>	</l>	<r></r></p><par  n="kAl/A__adj"/></e>
-	<e>	<p><l>	</l>	<r></r></p><par  n="ladak/A__n"/></e>
-
-</pardef>
--->
 
 
 <section id="main" type="standard">
@@ -14751,6 +14755,7 @@
 <e lm="Ka"><i>Ka</i><par n="kroXa/__n"/></e>
 <e lm="ka"><i>k</i><par n="Gar/a__n"/></e>
 <e lm="kA"><i>k</i><par n="k/A__sh"/></e>
+<e lm="kA"><i>k</i><par n="regular__adj-noun"/></e>
 <e lm="KAja"><i>KAja</i><par n="BIda/__n"/></e>
 <e lm="kAja"><i>kAja</i><par n="kroXa/__n"/></e>
 <e lm="kAjala"><i>kAjala</i><par n="kroXa/__n"/></e>

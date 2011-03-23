@@ -32,6 +32,8 @@
 [\.\?\!]["')]?[ ][ ]\n	{printf("%c</s>\n<s>",yytext[0]); BEGIN ABSORB;}
 [\.\?\!]["')]?[ ][ ]	{printf("%c</s>\n<s>",yytext[0]);}
 ABBR[ ][ ]\n		{printf("ABBR</s>\n<s>",yytext[0]);}
+
+
 [\)'][ ]\.		{printf("%c%c</s>",yytext[0],yytext[2],yytext[3]); BEGIN ABSORB; }   
 [\)'][ ]\.[ ][ ]	{printf("%c%c</s>\n<s>",yytext[0],yytext[2],yytext[3]); BEGIN ABSORB; }
 \.[ ][0-9]		{printf("%c</s>\n<s>%c",yytext[0],yytext[2]); BEGIN ABSORB; }
@@ -40,7 +42,9 @@ ABBR[ ][ ]\n		{printf("ABBR</s>\n<s>",yytext[0]);}
 [ ][A-Za-z][.][ ][ ]\)  {printf("%c%c%c%c",yytext[0],yytext[1],yytext[2],yytext[5]); }
 [.][ ][,][ ]		{printf("%c%c%c",yytext[0],yytext[2],yytext[3]); }
 [.][ ]\$[0-9]           {printf("%c</s>\n<s>%c%c",yytext[0],yytext[2],yytext[3]);} 
-[.]["][ ][ ][A-Z]	{ printf("%c%c</s>\n<s>%c",yytext[0],yytext[1],yytext[4]);}                      
+[\.\?]["][ ][ ][A-Z]	{printf("%c%c</s>\n<s>%c",yytext[0],yytext[1],yytext[4]);}                      
+
+
 \<p\>			{printf("<p><s>");}
 \<\/p\>			{printf("</s></p>\n");}
 \<A[ ]href[^>]+>	{

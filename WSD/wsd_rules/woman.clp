@@ -12,6 +12,8 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  woman.clp 	woman0   "  ?id "  yuvawI )" crlf))
 )
 
+
+;Meaning changed from nArI to swrI (Meena 22.3.11)
 (defrule woman1
 (declare (salience 4900))
 (id-root ?id woman)
@@ -19,9 +21,9 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id nArI))
+(assert (id-wsd_root_mng ?id swrI))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  woman.clp 	woman1   "  ?id "  nArI )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  woman.clp 	woman1   "  ?id "  swrI )" crlf))
 )
 
 ;"woman","N","1.nArI"

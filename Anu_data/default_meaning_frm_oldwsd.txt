@@ -322,7 +322,6 @@ Sided	pahalU
 Sikh	sikKa
 Sir	sara
 Sit_on_the_fence	xUrI_banAye_raKanA
-Sr	SrI
 St	sanwa
 Stone_Age	pARANa_kAla
 Suffix	prawyaya
@@ -4533,7 +4532,7 @@ ogle	katAkRa
 oil	wela
 oil-cloth	moma_jAmA
 oil-mill	kolhU
-old	purA
+old	purAnA
 old-fashioned	purAnI_cAla_kA
 olive-oil	jEwUna_kA_wela
 on	lagAwAra
