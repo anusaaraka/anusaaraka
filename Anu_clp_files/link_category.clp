@@ -333,16 +333,44 @@
         (printout ?*link_cat-file* "(linkid-node_cat  " ?l_node "   verb)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
-  ;May I go outside. I do not go out as much now . I saw her sitting in the garden.
+  ;I do not go out as much now . I saw her sitting in the garden.
+  ;I have doubts about inviting him.
   (defrule prep_rule_with_MVp_rnode
   (declare (salience 100))
   (link_name-link_expansion ?prep M V p)
   (link_name-link_lnode-link_rnode ?prep ?l_node ?r_node)
+  (link_name-link_lnode-link_rnode J|Js|Jp|Mgp ?r_node  ?jr_node)
   (parserid-word ?r_node ?rword)
   ?f1<-(category_to_be_decided ?r_node)
   =>
         (retract ?f1)
         (printout ?*link_cat-file* "(linkid-node_cat  " ?r_node "    preposition)" crlf)
+  )
+  ;----------------------------------------------------------------------------------------------------------------
+  ;The planet that we live on is of medium size.
+  (defrule prep_rule_with_MVp_and_B
+  (declare (salience 100))
+  (link_name-link_expansion ?prep M V p)
+  (link_name-link_lnode-link_rnode ?prep ?l_node ?r_node)
+  (link_name-link_lnode-link_rnode Bs|Bp ?bl_node  ?r_node)
+  (parserid-word ?r_node ?rword)
+  ?f1<-(category_to_be_decided ?r_node)
+  =>
+        (retract ?f1)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?r_node "    preposition)" crlf)
+  )
+  ;----------------------------------------------------------------------------------------------------------------
+  ;May I go outside. I do not go out as much now . 
+  (defrule prep_rule_with_MVp_rnode1
+  (declare (salience 99))
+  (link_name-link_expansion ?prep M V p)
+  (link_name-link_lnode-link_rnode ?prep ?l_node ?r_node)
+  (not (link_name-link_lnode-link_rnode J|Js|Jp ?r_node  ?jr_node))
+  (parserid-word ?r_node ?rword)
+  ?f1<-(category_to_be_decided ?r_node)
+  =>
+        (retract ?f1)
+        (printout ?*link_cat-file* "(linkid-node_cat  " ?r_node "    adverb)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
   ; John Stuart Mill is an important author

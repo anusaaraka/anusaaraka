@@ -1,12 +1,13 @@
  (defglobal ?*DBUG* =  h_id_reorder_fp )
 
-(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (slot preposition (default 0))(slot Hin_position (default 0))) 
+(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
  (deffacts dummy_facts 
+ (No complete linkages found)
  (missing-level-id) 
  (verb_type-verb-causative_verb-tam) 
  (addition-level-word-sid) 
- (relation-anu_ids)
+ (prep_id-relation-anu_ids)
  (conjunction-components)
  (hindi_id_order)
  (id-word)
@@ -16,7 +17,6 @@
  (id-cat)
  (root-verbchunk-tam-chunkids)
  (verb_type-verb-kriyA_mUla-tam)
- (No complete linkages found)
  )
  ;------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (1-02-11)
@@ -24,7 +24,7 @@
  (defrule yes-no_question
  ?f1<-(id-word 1 did|do|does|may|can|could|would|will|are|is|was|were|am|shell|has|have|had|should)
  ?f0 <- (hindi_id_order  $?sent )
- (not (relation-anu_ids  AjFArWaka_kriyA ?kri) )
+ (not (prep_id-relation-anu_ids ? AjFArWaka_kriyA ?kri) )
  =>
         (retract ?f0 ?f1)
         (assert (hindi_id_order     kyA $?sent))
@@ -37,7 +37,7 @@
  (pada_info (group_head_id ?kriyA)(group_cat VP))
  (pada_info (group_head_id ?vi)(group_cat PP)(group_ids $?grp_ids))
  ?f1<-(id-word ?wh_word  what)
- (relation-anu_ids  kriyA-subject  ?kriyA ?vi)
+ (prep_id-relation-anu_ids ?  kriyA-subject  ?kriyA ?vi)
  (test (member$ ?wh_word $?grp_ids))
  ?f0<-(hindi_id_order  $?start $?grp_ids $?NP ?kriyA $?end)
  =>
@@ -56,8 +56,8 @@
  (pada_info (group_head_id ?kriyA)(group_cat VP))
  ?f1<-(id-word ?wh_word  what|when|why|who|how|where)
  (id-word ?aux do|does|did|have|has)
- (not (relation-anu_ids  kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?  ?wh_word)) ;Ex. How quickly did you run?
- (not (relation-anu_ids wall_conjunction ?wh_word)) ;When we want to hear a music programme on the radio , we have to tune the radio to the correct station .
+ (not (prep_id-relation-anu_ids ?  kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?  ?wh_word)) ;Ex. How quickly did you run?
+ (not (prep_id-relation-anu_ids ?  wall_conjunction ?wh_word)) ;When we want to hear a music programme on the radio , we have to tune the radio to the correct station .
  ?f0<-(hindi_id_order  $?start ?wh_word $?NP ?kriyA $?end)
  (test (and (neq ?wh_word 10000)(neq ?wh_word 10001)))
  =>
@@ -71,11 +71,11 @@
  (declare (salience 10))
  (pada_info (group_head_id ?kriyA)(group_cat VP))
  ?f1<-(id-word ?wh_word  what|when|why|who|how|where)
- (not (relation-anu_ids  kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?  ?wh_word)) ;Ex. How quickly did you run?
- (not (relation-anu_ids  wall_conjunction ?wh_word))
+ (not (prep_id-relation-anu_ids ?  kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?  ?wh_word)) ;Ex. How quickly did you run?
+ (not (prep_id-relation-anu_ids ?  wall_conjunction ?wh_word))
    ;When we want to hear a music programme on the radio , we have to tune the radio to the correct station .
- (not (relation-anu_ids  viSeRaNa-viSeRaka  ? ?wh_word)) ;I wonder how big the department is .
- (not (relation-anu_ids  viSeRya-jo_samAnAXikaraNa  ? ?wh_word))
+ (not (prep_id-relation-anu_ids ?  viSeRaNa-viSeRaka  ? ?wh_word)) ;I wonder how big the department is .
+ (not (prep_id-relation-anu_ids ?  viSeRya-jo_samAnAXikaraNa  ? ?wh_word))
  ?f0<-(hindi_id_order  $?start ?wh_word $?NP ?kriyA $?end)
  (not (id-word =(+ ?wh_word 1) long));How long will it last ? 
  =>
@@ -105,7 +105,7 @@
  ;Let her go to the market. O/P usako/use - bAjAra ko jAne xo - .
  ;Let him go. O/P usako/use jAne xo - .
  (defrule let_me
- (relation-anu_ids  kriyA-object  ?kriyA ?object)
+ (prep_id-relation-anu_ids ? kriyA-object  ?kriyA ?object)
  ?f1<-(id-word ?let let)
  ?f0 <- (hindi_id_order $?pre ?object  ?let ?kriyA)
  =>
@@ -117,7 +117,7 @@
  ; You are lucky that there is no exam today
  ; Apa #BAgyavAna hEM #ki #Aja #parIkRA #nahIM hE
  (defrule det_viSeRaNa_rule
- (relation-anu_ids  viSeRya-det_viSeRaNa  ?v_id ?vn_id)
+ (prep_id-relation-anu_ids ? viSeRya-det_viSeRaNa  ?v_id ?vn_id)
  ?f1<-(id-word ?vn_id no)
  ?f0 <-(hindi_id_order $?pre ?vn_id $?mid ?v_id  $?post ?kriyA)
  =>
@@ -129,8 +129,8 @@
  ;Added by Shirisha Manju
  ;She is always in a hurry
  (defrule always_rule
- (relation-anu_ids  kriyA-subject  ?kriya  ?sub)
- (relation-anu_ids  kriyA-kriyA_viSeRaNa  ?kriyA ?id)
+ (prep_id-relation-anu_ids ?  kriyA-subject  ?kriya  ?sub)
+ (prep_id-relation-anu_ids ?  kriyA-kriyA_viSeRaNa  ?kriyA ?id)
  (test(> ?id ?sub))
  ?f1<-(id-word ?id  always)
  ?f0 <-(hindi_id_order $?pre ?sub $?ids ?id $?post ?kriyA)
@@ -147,15 +147,15 @@
  ; I wonder how much you swim.  I hope he comes to the party tomorrow.
  (defrule rule_for_ki
  (declare (salience 10))
- (relation-anu_ids  kriyA-subject ?v_id ?sub)
- (relation-anu_ids  kriyA-subject ?v ?)
+ (prep_id-relation-anu_ids ?  kriyA-subject ?v_id ?sub)
+ (prep_id-relation-anu_ids ?  kriyA-subject ?v ?)
  ?f1<-(id-root ?v_id tell|guess|see|think|say|know|suppose|wonder|hope)
  ?f0 <-(hindi_id_order $?pre ?v_id $?post)
  (test (< ?v_id ?v))
  (not (hindi_id_order $?ids ?v_id));The Master said , if I did not go , how would you ever see ?
- (not (relation-anu_ids  kriyA-conjunction ?v_id ?))
- (not (relation-anu_ids  kriyA-object  ?v_id ?));I saw him telling her about the party. 
- (not (relation-anu_ids  kriyA-conjunction  ?v 10000));Do you think we should go to the party? 
+ (not (prep_id-relation-anu_ids ?  kriyA-conjunction ?v_id ?))
+ (not (prep_id-relation-anu_ids ?  kriyA-object  ?v_id ?));I saw him telling her about the party. 
+ (not (prep_id-relation-anu_ids ?  kriyA-conjunction  ?v 10000));Do you think we should go to the party? 
  =>
         (retract ?f0 ?f1)
         (assert (hindi_id_order  $?pre ?v_id ki $?post))
@@ -166,8 +166,8 @@
  ; Added by Shirisha Manju (3-02-11)
  ;The big question on everybody's mind is who killed OJ.
  (defrule rule_for_ki_1
- (relation-anu_ids  kriyA-subject ?v_id ?sub)
- (relation-anu_ids  kriyA-subject ?v ?)
+ (prep_id-relation-anu_ids  ? kriyA-subject ?v_id ?sub)
+ (prep_id-relation-anu_ids  ? kriyA-subject ?v ?)
  (id-root ?v_id be|know) ;added know (25-02-11)
  ?f1<-(id-root =(+ ?v_id 1) who)
  ?f0 <-(hindi_id_order $?pre ?v_id $?post)
@@ -184,8 +184,8 @@
  ; Added by Shirisha Manju (3-02-11)
  ;Guess who I saw at the party last night! 
  (defrule rule_for_ki_2
- (relation-anu_ids  kriyA-subject ?v_id ?sub)
- (relation-anu_ids  AjFArWaka_kriyA ?id)
+ (prep_id-relation-anu_ids ?  kriyA-subject ?v_id ?sub)
+ (prep_id-relation-anu_ids ?  AjFArWaka_kriyA ?id)
  ?f1<-(id-root ?id guess )
  ?f0 <-(hindi_id_order $?pre ?id $?post)
  =>
@@ -196,10 +196,10 @@
  ;------------------------------------------------------------------------------------------------------------------
  ;Anne told me I would almost certainly be hired.
  (defrule rule_for_ki_3
- (relation-anu_ids  kriyA-subject ?v_id ?sub)
- (relation-anu_ids  kriyA-subject ?v ?)
+ (prep_id-relation-anu_ids ? kriyA-subject ?v_id ?sub)
+ (prep_id-relation-anu_ids ? kriyA-subject ?v ?)
  (id-root ?v_id tell)
- (relation-anu_ids  kriyA-object  ?v_id ?obj)
+ (prep_id-relation-anu_ids ? kriyA-object  ?v_id ?obj)
  ?f1<-(id-root ?obj ?)
  (not (ki_asserted ?v_id))
  (not (hindi_id_order $?ids ?v_id))
@@ -216,8 +216,8 @@
  ; Do it the way you have always done it .
  ; I really like the way you do your hair .
  (defrule rule_for_jisa_prakAra_se
- (relation-anu_ids  kriyA-subject  ?kri ?sub)
- (or (relation-anu_ids  kriyA-kriyA_viSeRaNa|kriyA-object ?kri1  =(- ?sub 1)) (relation-anu_ids kriyA-object_2  ?kri1  ?way))
+ (prep_id-relation-anu_ids  ? kriyA-subject  ?kri ?sub)
+ (or (prep_id-relation-anu_ids ? kriyA-kriyA_viSeRaNa|kriyA-object ?kri1  =(- ?sub 1))(prep_id-relation-anu_ids ? kriyA-object_2  ?kri1  ?way))
 ; (or (kriyA-kriyA_viSeRaNa  ?kri1  =(- ?sub 1))(kriyA-object ?kri1  =(- ?sub 1))(kriyA-object_2  ?kri1  ?way))
  ?f1<- (id-root  =(- ?sub 1) way)
  ?f0 <-(hindi_id_order $?hin_order)
@@ -234,7 +234,7 @@
  ;Whether we should go to the party is the important question .
  ;instead of variable_name used 1 bcoz of the sen: I wonder whether we should go .
  (defrule rule_for_yaha
- (relation-anu_ids  kriyA-conjunction ?kri 1)
+ (prep_id-relation-anu_ids ?  kriyA-conjunction ?kri 1)
  ?f1<-(id-word 1 whether)
  ?f0 <-(hindi_id_order $?pre ?kri $?post)
  =>
@@ -247,9 +247,9 @@
  ; If you know who did it, you should tell the teacher.
  (defrule wo_rule_for_if
  (declare (salience 2))
- (relation-anu_ids  kriyA-conjunction  ?k ?id)
- (relation-anu_ids  kriyA-praSnavAcI  ?k ?p)
- (relation-anu_ids  kriyA-subject ?k1 ?p)
+ (prep_id-relation-anu_ids  ? kriyA-conjunction  ?k ?id)
+ (prep_id-relation-anu_ids  ? kriyA-praSnavAcI  ?k ?p)
+ (prep_id-relation-anu_ids  ? kriyA-subject ?k1 ?p)
  ?f1<-(id-word ?id if)  ;Modified by Meena (28-10-10) 
  ?f0 <-(hindi_id_order $?pre ?k1 $?post)
  =>
@@ -265,7 +265,7 @@
  ; If you use that strategy , he will wipe you out .
  (defrule wo_rule_for_if1
  (declare (salience 1))
- (relation-anu_ids  kriyA-conjunction  ?k ?id)
+ (prep_id-relation-anu_ids  ? kriyA-conjunction  ?k ?id)
  ?f1<-(id-word ?id if)  ;Modified by Meena (28-10-10) 
  ?f0 <-(hindi_id_order $?pre ?k $?post)
  (not (hindi_id_order $? ?k))
@@ -279,12 +279,12 @@
  ;When Mrs. Chitnis discovered that her husband was an adulterer she divorced him.
  (defrule wo_rule_for_when
  (declare (salience 1))
- (relation-anu_ids  kriyA-conjunction  ?k 1)
- (relation-anu_ids  kriyA-subject  ?k1 ?id)
+ (prep_id-relation-anu_ids ?  kriyA-conjunction  ?k 1)
+ (prep_id-relation-anu_ids ?  kriyA-subject  ?k1 ?id)
  ?f1<-(id-word 1 when)  ;Modified by Meena (28-10-10) 
  ?f0 <-(hindi_id_order $?pre ?id $?post)
  (test (> ?k1 ?k) )
- (not (relation-anu_ids  viSeRya-RaRTI_viSeRaNa  ?id ?))
+ (not (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa  ?id ?))
  =>
         (retract ?f0 ?f1)
         (assert (hindi_id_order  $?pre  wo ?id $?post))
@@ -293,8 +293,8 @@
  )
  ;------------------------------------------------------------------------------------------------------------------
  (defrule wo_rule
- (relation-anu_ids  kriyA-conjunction  ?k 1)
- (relation-anu_ids  kriyA-subject  ?kri1 ?id)
+ (prep_id-relation-anu_ids ?  kriyA-conjunction  ?k 1)
+ (prep_id-relation-anu_ids ?  kriyA-subject  ?kri1 ?id)
  ?f1<-(id-word 1 since)  ;Modified by Meena (28-10-10) 
  ?f0 <-(hindi_id_order $?pre ?id $?post)
  (test (and (> ?kri1 ?k) (neq ?id ?k)))
@@ -308,8 +308,8 @@
   ;"UNTIL" takes the form jaba_waka----na
   (defrule insert_nahIM
   ?f1<-(id-word ?id until)
-  (relation-anu_ids  kriyA-conjunction  ?sub   ?id)
-  (relation-anu_ids  kriyA-subject  ?kri  ?sub)
+  (prep_id-relation-anu_ids ? kriyA-conjunction  ?sub   ?id)
+  (prep_id-relation-anu_ids ? kriyA-subject  ?kri  ?sub)
   (id-HM-source   ?id   jaba_waka  ?)
   ?f<-(hindi_id_order $?list ?id $?list1 ?kri)
   =>
@@ -345,8 +345,7 @@
  ;Our program is easier to use than to understand .
  (defrule default_rule
  (declare (salience -600))
- (relation-anu_ids  kriyA-subject|kriyA-dummy_subject ? ?subj_id)
-; (or (kriyA-subject ? ?subj_id) (kriyA-dummy_subject ? ?subj_id))
+ (prep_id-relation-anu_ids  ? kriyA-subject|kriyA-dummy_subject ? ?subj_id)
  ?f4<-(id-word ?id ~to)
  ?f3<-(pada_info (group_head_id ?id)(group_cat ?gtype)(group_ids $?grp_ids))
  ?f0<-(pada_info (group_head_id ?h_id1)(group_cat ?gtype1)(group_ids $?grp_ids1)(preposition ?prep_id1))

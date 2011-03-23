@@ -8,7 +8,7 @@
  (defglobal ?*k_list_debug* = (create$ ))
  (defglobal ?*debug* = hin_pos_debug)
 
-(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (slot preposition (default 0))(slot Hin_position (default 0)))
+(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0)))
 
  (deffunction reverse ($?a)
  (if (eq (length ?a) 0) then ?a
@@ -16,7 +16,7 @@
  (create$ (reverse (rest$ ?a)) (first$ ?a))))
 
  (deffacts dummy_facts 
- (relation-anu_ids) 
+ (prep_id-relation-anu_ids) 
  (missing-level-id) 
  (verb_type-verb-causative_verb-tam) 
  (addition-level-word-sid) 
@@ -67,7 +67,7 @@
  (defrule  lwg_list
  (declare (salience 1040))
  (root-verbchunk-tam-chunkids ? ? ? $? ?id)
- (relation-anu_ids  ?rel ?id ?r_id)
+ (prep_id-relation-anu_ids $?   ?rel ?id ?r_id)
  ?f<-(lwg_list $?ids)
  (not (lwg_id ?id))
   =>
@@ -82,7 +82,7 @@
  ;Adding right-id to ?*r_list* list
  (defrule rule1
  (declare (salience 1000))
- (relation-anu_ids  ?rel ?l_id ?r_id)
+ (prep_id-relation-anu_ids $?   ?rel ?l_id ?r_id)
  (test (and (neq ?rel viSeRya-det_viSeRaNa) (neq ?rel viSeRya-viSeRaNa)(neq ?rel kriyA-nA)(neq ?rel kriyA-ke_liye) (neq ?rel nAma-saMkRipwa_nAma)(neq ?rel subject-opener)(neq ?rel kriyA-ne_ke_liye)(neq ?rel viSeRya-wulanAwmaka_viSeRaNa)(neq ?rel kriyA-viXi_vAkyakarma)(neq ?rel kriyA-samAnakAlika_kriyA)(neq ?rel pUrvakAlika_kriyA-ananwarakAlika_kriyA)(neq ?rel kriyA-praSnavAcI)(neq ?rel subject-vAkyasamAnAXikarNa)(neq ?rel kriyA-samakAlika_kriyA)(neq ?rel kriyA-karwA)(neq ?rel kriyA-vAkyakarma)(neq ?rel kriyA-preraka_kriyA)))
  =>
  	(bind ?*l_list* (create$ ?*l_list* ?l_id))
@@ -123,7 +123,7 @@
  ;Moving the subject to first position in the sentence.
  (defrule subject_rule
  (declare (salience 955))
- (relation-anu_ids kriyA-subject ?kriyA_id ?subj_id)
+ (prep_id-relation-anu_ids ?  kriyA-subject ?kriyA_id ?subj_id)
  ?f<-(list $?list)
  ?f1<-(list_control_fact ?subj_id)
  (test (and (member$ ?subj_id $?list)(member$ ?kriyA_id $?list)))
@@ -155,8 +155,8 @@
  ;Move the object to the before kriyA position in the sentence.
  (defrule object_rule
  (declare (salience 953))
- (relation-anu_ids kriyA-object|kriyA-object_2 ?kriyA ?obj_id)
- (not (relation-anu_ids kriyA-object|kriyA-object_2 ?kriyA ?obj_id2&:(> ?obj_id2 ?obj_id)))
+ (prep_id-relation-anu_ids ?  kriyA-object|kriyA-object_2 ?kriyA ?obj_id)
+ (not (prep_id-relation-anu_ids ?  kriyA-object|kriyA-object_2 ?kriyA ?obj_id2&:(> ?obj_id2 ?obj_id)))
  ?f<-(list $?list ?kriyA)
  ?f1<-(list_control_fact ?obj_id)
  (test (member$ ?obj_id $?list))
@@ -172,7 +172,7 @@
   ;Taking that course improved the student's skills .
   (defrule object_rule1
   (declare (salience 351))
-  ?f1<-(relation-anu_ids kriyA-object  ?kriyA ?obj_id)
+  ?f1<-(prep_id-relation-anu_ids ?  kriyA-object  ?kriyA ?obj_id)
   ?f2<-(list $?list ?h_kriyA)
   (test (and (member$ ?obj_id $?list) (member$ ?kriyA $?list)))
   =>
@@ -191,7 +191,7 @@
  ; Added by Shirisha Manju (22-01-11)
  (defrule sub_obj_samAnAXikaraNa_rule
  (declare (salience 350))
- (relation-anu_ids subject-subject_samAnAXikaraNa|object-object_samAnAXikaraNa ?id ?samAnAXikaraNa)
+ (prep_id-relation-anu_ids ?  subject-subject_samAnAXikaraNa|object-object_samAnAXikaraNa ?id ?samAnAXikaraNa)
  ?f<-(list $?list ?kriyA)
  ?f1<-(list_control_fact ?samAnAXikaraNa)
  (test (member$ ?id $?list))
@@ -200,14 +200,14 @@
         (bind ?*k_list_debug*  (create$ $?list ?kriyA))
         (bind $?list (delete-member$ $?list ?samAnAXikaraNa))
         (assert(list $?list ?samAnAXikaraNa ?kriyA))
-        (printout ?*debug*  "(Rule_name-before_movement-after_movement  subject_samAnAXikaraNa_rule  ("(implode$ ?*k_list_debug*)")   ("(implode$ $?list)" "?samAnAXikaraNa" "?kriyA"))" crlf)
+        (printout ?*debug*  "(Rule_name-before_movement-after_movement  sub_obj_samAnAXikaraNa_rule ("(implode$ ?*k_list_debug*)")   ("(implode$ $?list)" "?samAnAXikaraNa" "?kriyA"))" crlf)
  )
  ;---------------------------------------------------------------------------------------------------------------
  ; Moving niReXaka before kriyA position in the sentence.
  ; It is not a good idea to drive for hours without a rest .   
  (defrule kriyA_niReXaka_rule
  (declare (salience 340))
- (relation-anu_ids kriyA-kriyA_niReXaka  ?kriyA ?kriyA_niReXaka)
+ (prep_id-relation-anu_ids ?  kriyA-kriyA_niReXaka  ?kriyA ?kriyA_niReXaka)
  ?f<-(list $?list ?kriyA)
  ?f1<-(list_control_fact ?kriyA_niReXaka)
  (test (member$ ?kriyA_niReXaka $?list))
@@ -224,8 +224,8 @@
   ;If for a kriyA there sentence_opener's  order of the whole clause will be same as English ,and is moved to the start of the sentence
   (defrule sentence_opener_rule
   (declare (salience 951))
-  ?f<-(relation-anu_ids kriyA-sentence_opener  ?kriyA ?sen_opener)
-  (not (relation-anu_ids kriyA-subject ?kriyA ?sen_opener1&:(> ?sen_opener ?sen_opener1)))
+  ?f<-(prep_id-relation-anu_ids ?  kriyA-sentence_opener  ?kriyA ?sen_opener)
+  (not (prep_id-relation-anu_ids ?  kriyA-subject ?kriyA ?sen_opener1&:(> ?sen_opener ?sen_opener1)))
   (comma_list_for_sent_opener $?ids)
   ?f2<-(list $?list)
   (test (!= (length $?ids) 0))
@@ -268,7 +268,7 @@
   ;         "Added saMjFA-to_kqxanwa             Ex :  Our program is easier to use than to understand. 24-01-11)
   (defrule viSeRaNa_rule
   (declare (salience 340))
-  (relation-anu_ids viSeRya-RaRTI_viSeRaNa|kriyA_viSeRaNa-viSeRaka|viSeRya-kqxanwa_viSeRaNa|kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka|saMjFA-saMjFA_samAnAXikaraNa|saMjFA-to_kqxanwa ?RaRTI_id ?RaRTI_id1)
+  (prep_id-relation-anu_ids ?  viSeRya-RaRTI_viSeRaNa|kriyA_viSeRaNa-viSeRaka|viSeRya-kqxanwa_viSeRaNa|kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka|saMjFA-saMjFA_samAnAXikaraNa|saMjFA-to_kqxanwa ?RaRTI_id ?RaRTI_id1)
   (not (viSeRya-RaRTI_viSeRaNa  ?RaRTI_id ?RaRTI_id2&:(> ?RaRTI_id2 ?RaRTI_id1)))
   ?f0<-(list $?list)
   (test (member$ ?RaRTI_id $?list))
@@ -290,9 +290,9 @@
   ; vaha BArawa meM xillI meM \@Chandinichok meM rahawA hE
   (defrule viSeRya_viSeRaNa_rule1
   (declare (salience 351))
-  ?f1<-(relation-anu_ids  ?rel ?v_id ?v_id1)
-  (relation-anu_ids  ?rel1 ?v_id ?v_id2&:(> ?v_id2 ?v_id1))
-  (not (relation-anu_ids  ? ?v_id ?v_id3&:(> ?v_id3 ?v_id2)))
+  ?f1<-(prep_id-relation-anu_ids ?   ?rel ?v_id ?v_id1)
+  (prep_id-relation-anu_ids ?   ?rel1 ?v_id ?v_id2&:(> ?v_id2 ?v_id1))
+  (not (prep_id-relation-anu_ids ?   ? ?v_id ?v_id3&:(> ?v_id3 ?v_id2)))
   (test (and (neq (str-index "-" ?rel)  FALSE)(neq (str-index "_" ?rel)  FALSE)))
   (test (and (neq (str-index "-" ?rel1)  FALSE)(neq (str-index "_" ?rel1)  FALSE)))
   (test (or (eq (sub-string 1 7 ?rel) "viSeRya")(eq (sub-string 1 7 ?rel) "kqxanwa")(eq (sub-string 1 5 ?rel) "kriyA"))) 
@@ -321,8 +321,8 @@
   ;;Moving (of/for/.....)_saMbanXI before its viSeRya
   (defrule viSeRya_viSeRaNa_rule
   (declare (salience 350))
-  ?f1<-(relation-anu_ids  ?rel ?v_id ?v_id1)
-  (not (relation-anu_ids  ?rel ?v_id ?v_id2&:(< ?v_id2 ?v_id1)))
+  ?f1<-(prep_id-relation-anu_ids ?   ?rel ?v_id ?v_id1)
+  (not (prep_id-relation-anu_ids ?   ?rel ?v_id ?v_id2&:(< ?v_id2 ?v_id1)))
   (test (neq (str-index "-" ?rel)  FALSE))
   (test (neq (str-index "_" ?rel)  FALSE))
   (test (or (eq (sub-string 1 7 ?rel) "viSeRya")(eq (sub-string 1 7 ?rel) "kqxanwa")))
@@ -346,7 +346,7 @@
   ;Moving to_saMbanXI after its viSeRya
   (defrule viSeRya_viSeRaNa_to_rule
   (declare (salience 351))
-  ?f1<-(relation-anu_ids  ?rel ?v_id ?v_id1)
+  ?f1<-(prep_id-relation-anu_ids ?   ?rel ?v_id ?v_id1)
   (test (neq (str-index "-" ?rel)  FALSE))
   (test (neq (str-index "_" ?rel)  FALSE))
   (test (or (eq (sub-string 1 7 ?rel) "viSeRya")(eq (sub-string 1 7 ?rel) "kqxanwa")))
@@ -369,7 +369,7 @@
   ; Move kriyA_mUla id before kriyA id
   (defrule kriyA_mUla_rule
   (declare (salience 350))
-  ?f1<-(relation-anu_ids kriyA-kriyA_mUla  ?kriyA  ?kriyA_mUla)
+  ?f1<-(prep_id-relation-anu_ids ?  kriyA-kriyA_mUla  ?kriyA  ?kriyA_mUla)
   ?f0<-(list $?ids)
   (test (member$ ?kriyA $?ids))
   (test (member$  ?kriyA_mUla $?ids))
@@ -438,9 +438,9 @@
    ;The girl who you called yesterday has arrived.
    (defrule viSeRya-jo_samAnAXikaraNa_rule
    (declare (salience -200))
-   ?f0<-(relation-anu_ids viSeRya-jo_samAnAXikaraNa  ?sub ?jo_samAnAXikaraNa)
-   (relation-anu_ids  kriyA-subject  ?kri ?sub)
-   (relation-anu_ids  kriyA-subject  ?kri1&:(> ?kri ?kri1) ?sub_id)
+   ?f0<-(prep_id-relation-anu_ids ?  viSeRya-jo_samAnAXikaraNa  ?sub ?jo_samAnAXikaraNa)
+   (prep_id-relation-anu_ids ?   kriyA-subject  ?kri ?sub)
+   (prep_id-relation-anu_ids ?   kriyA-subject  ?kri1&:(> ?kri ?kri1) ?sub_id)
    ?f1<-(Sentence ?Sen1 $?sen1 ?kri)
    ?f2<-(Sentence ?Sen2 $?sen2 ?kri1) 
    ?f3<-(hindi_id_order $?hin_order)
@@ -462,13 +462,42 @@
 			(printout  ?*debug* "(Rule_name-before_movement-after_movement  viSeRya-jo_samAnAXikaraNa_rule  ("(implode$ ?*k_list_debug*)")   ("(implode$ (create$ $?hin_order ))"))" crlf)
    )
    ;--------------------------------------------------------------------------------------------------------------- 
+   ;This is the place I live.  (subject-subject_samAnAXikaraNa)
+   ;Added by Shirisha Manju (11-03-11) suggested by sukhada
+   (defrule viSeRya-jo_samA_rule
+   (declare (salience -200))
+   ?f0<-(prep_id-relation-anu_ids ?  viSeRya-jo_samAnAXikaraNa  ?vi ?jo_s)
+   (prep_id-relation-anu_ids - subject-subject_samAnAXikaraNa  ?sub ?vi)
+   (prep_id-relation-anu_ids ?   kriyA-subject  ?kri ?sub)
+   (prep_id-relation-anu_ids ?   kriyA-subject  ?kri1&:(> ?kri1 ?kri) ?sub_id)
+   ?f1<-(Sentence ?Sen1 $?sen1 ?kri)
+   ?f2<-(Sentence ?Sen2 $?sen2 ?kri1)
+   ?f3<-(hindi_id_order $?hin_order)
+   (test (and (member$ ?kri $?hin_order) (member$ ?kri1 $?hin_order) ))
+   (test (member$ ?jo_s $?sen2))
+   (test (member$ ?jo_s $?sen1))
+   =>
+        (retract ?f0 ?f3)
+        (bind ?*k_list_debug*  (create$ $?hin_order ))
+        (bind $?hin_order (delete-member$ $?hin_order ?jo_s))
+        (bind $?sen2 (delete-member$ $?sen2 ?jo_s))
+        (bind ?position (member$ (nth$ 1 $?sen2) $?hin_order))
+        (if (neq ?position FALSE) then
+                (bind $?hin_order (insert$ $?hin_order ?position ?jo_s ))
+        else    (if (eq (length$ $?sen2) 0) then
+                        (bind ?position (member$  ?kri1 $?hin_order))
+                        (bind $?hin_order (insert$ $?hin_order ?position ?jo_s ))))
+                        (assert (hindi_id_order $?hin_order))
+                        (printout  ?*debug* "(Rule_name-before_movement-after_movement  viSeRya-jo_samA_rule  ("(implode$ ?*k_list_debug*)")   ("(implode$ (create$ $?hin_order ))"))" crlf)
+   )
+   ;--------------------------------------------------------------------------------------------------------------- 
    ;I gave her the present I bought for her.
    ;I saw the man who you love. The snake who swallowed the rat hissed loudly.
    ;Added by Shirisha Manju
    (defrule viSeRya-jo_samAnAXikaraNa_rule1
    (declare (salience -200))
-   ?f0<-(relation-anu_ids viSeRya-jo_samAnAXikaraNa  ?sub ?jo_samAnAXikaraNa)
-   (relation-anu_ids  kriyA-object  ?kri ?jo_samAnAXikaraNa)
+   ?f0<-(prep_id-relation-anu_ids ?  viSeRya-jo_samAnAXikaraNa  ?sub ?jo_samAnAXikaraNa)
+   (prep_id-relation-anu_ids ?   kriyA-object  ?kri ?jo_samAnAXikaraNa)
    ?f2<-(Sentence ?Sen2 $?sen2 ?kri)
    ?f3<-(hindi_id_order $?hin_order)
    (test (member$ ?kri $?hin_order) )
@@ -522,7 +551,7 @@
   ;But my efforts to win his heart have failed
   (defrule wall_conjuction
   (declare (salience -200))
-  ?f<-(relation-anu_ids wall_conjunction  1)
+  ?f<-(prep_id-relation-anu_ids ?  wall_conjunction  1)
   (expr 1 $?)
   ?f1<-(hindi_id_order $?list)
   =>
@@ -539,9 +568,9 @@
   ;He disputed that our program was superior .
   (defrule kriyA-conjunction_rule1
   (declare (salience -200))
-  ?f<-(relation-anu_ids kriyA-conjunction  ?kri ?sub_conj)
-  (relation-anu_ids  kriyA-subject  ?kri ?sub)
-  (relation-anu_ids viSeRya-RaRTI_viSeRaNa  ?sub ?viSeRaNa)
+  ?f<-(prep_id-relation-anu_ids ?  kriyA-conjunction  ?kri ?sub_conj)
+  (prep_id-relation-anu_ids ?   kriyA-subject  ?kri ?sub)
+  (prep_id-relation-anu_ids ?  viSeRya-RaRTI_viSeRaNa  ?sub ?viSeRaNa)
   ?f1<-(hindi_id_order $?list)
   (current_id-group_members ?viSeRaNa $?grp_ids)
   (test (and (member$ ?sub_conj $?list)(member$ ?viSeRaNa $?grp_ids)(member$ ?viSeRaNa $?list)))
@@ -563,13 +592,13 @@
   ; usane anuroXa kiyA #ki eka wahakIkAwa ho
   (defrule kriyA-conjunction_rule
   (declare (salience -210))
-  ?f<-(relation-anu_ids  kriyA-conjunction  ?kri ?sub_conj)
-  (or (relation-anu_ids kriyA-dummy_subject ?kri ?sub)(relation-anu_ids kriyA-subject ?kri ?sub)(relation-anu_ids kriyA-aBihiwa ?kri ?sub) )
+  ?f<-(prep_id-relation-anu_ids ?   kriyA-conjunction  ?kri ?sub_conj)
+  (or (prep_id-relation-anu_ids ?  kriyA-dummy_subject ?kri ?sub)(prep_id-relation-anu_ids ?  kriyA-subject ?kri ?sub)(prep_id-relation-anu_ids ?  kriyA-aBihiwa ?kri ?sub) )
   ?f1<-(hindi_id_order $?list)
   (current_id-group_members ?sub $?grp_ids)
   (test (member$ ?sub_conj $?list))
   (test (member$ (nth$ 1 $?grp_ids) $?list))
-  (not (relation-anu_ids  wall_conjunction  ?sub_conj))
+  (not (prep_id-relation-anu_ids ?   wall_conjunction  ?sub_conj))
   =>
  	(retract ?f ?f1)
  	(bind ?*k_list_debug*  (create$ $?list ))
@@ -585,8 +614,8 @@
   (defrule remove_repeated_sub_ids
   (declare (salience -350))
   ?f0<-(hindi_id_order $?ids)
-  ?f1<-(relation-anu_ids  kriyA-subject ?kriya ?sub_id)
-  ?f2<-(relation-anu_ids  kriyA-subject ?kriya1 ?sub_id)
+  ?f1<-(prep_id-relation-anu_ids ?   kriyA-subject ?kriya ?sub_id)
+  ?f2<-(prep_id-relation-anu_ids ?   kriyA-subject ?kriya1 ?sub_id)
   (current_id-group_members ?sub_id $?grp_ids)
   (test (neq ?kriya ?kriya1))
   (test (member$ (nth$ (length $?grp_ids) $?grp_ids) $?ids))

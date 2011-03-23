@@ -1,4 +1,9 @@
  (defglobal ?*cat_fp* = cat_fp) 
+
+ (deffunction string_to_integer (?parser_id)
+; Removes the first character from the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
+ (string-to-field (sub-string 2 10000 ?parser_id)))
+
  
  ;He disputed that our program was superior . (PRP$) 
  (defrule PRP_rule
@@ -9,15 +14,28 @@
  )
  ;------------------------------------------------------------------------------------------
  ; NNS -- How many people died .
- ; NNPS -- A Grateful Dead/Allman Brothers concert in Washington D.C., that July, presented an unexpected opportunity to serve as a dry-run for our upcoming trip.
  (defrule NN_rule
- ?f0<-(id-sd_cat        ?id     ?cat&NN|NNP|NNS|NNPS)
+ ?f0<-(id-sd_cat        ?id     ?cat&NN|NNS)
  =>
-	(if (or (eq ?cat NN) (eq ?cat NNS)) then
-		(printout ?*cat_fp* "(sid-cat_coarse  "?id"  noun)" crlf)
-	else
-		(printout ?*cat_fp* "(sid-cat_coarse  "?id" PropN)" crlf)
-	)
+	(printout ?*cat_fp* "(sid-cat_coarse  "?id"  noun)" crlf)
+        (retract ?f0)
+ )
+ ;------------------------------------------------------------------------------------------
+ (defrule NNP_rule
+ ?f0<-(id-sd_cat        ?id     NNP)
+ =>
+        (printout ?*cat_fp* "(sid-cat_coarse  "?id" PropN)" crlf)
+        (retract ?f0)
+ )
+ ;------------------------------------------------------------------------------------------
+ ; NNPS -- A Grateful Dead/Allman Brothers concert in Washington D.C., that July, presented an unexpected opportunity to serve as a dry-run for our upcoming trip.
+ (defrule NNPS_rule
+ (declare (salience 10))
+ ?f0<-(id-sd_cat        ?id     NNPS)
+ (id-sd_cat ?id1 NNP)
+ (test (eq (- (string_to_integer ?id) 1) (string_to_integer ?id1)))
+ =>
+        (printout ?*cat_fp* "(sid-cat_coarse  "?id" PropN)" crlf)
         (retract ?f0)
  )
  ;------------------------------------------------------------------------------------------

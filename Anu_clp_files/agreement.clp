@@ -1,7 +1,7 @@
  (defglobal ?*agrmt_file* = agrmt_fp)
  (defglobal ?*agrmt_debug* = agrmt_db)
 
-(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (slot preposition (default 0))(slot Hin_position (default 0)))
+ (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
   (deffacts dummy_facts
  (missing-level-id)
@@ -23,7 +23,7 @@
  (id-word)
  (root-verbchunk-tam-chunkids)
  (conjunction-components)
- (relation-anu_ids)
+ (prep_id-relation-anu_ids)
  )
  ;--------------------------------------------------------------------------------------------------------------------
  (defrule end
@@ -38,8 +38,7 @@
  (defrule sub_or_agr
  (declare (salience 1100))
  (pada_info (group_head_id ?root_id)(group_cat VP))
- (relation-anu_ids  kriyA-subject|kriyA-aBihiwa ?root_id ?x)
-; (or (kriyA-subject ?root_id ?x)(kriyA-aBihiwa  ?root_id ?x))
+ (prep_id-relation-anu_ids  ? kriyA-subject|kriyA-aBihiwa ?root_id ?x)
  (pada_info (group_cat ?cat)(group_head_id ?x)(vibakthi 0) (group_ids $?ids ?last_id))
  (id-original_word ?x or)
  ?f0<-(agmt_control_fact ?root_id)
@@ -55,8 +54,7 @@
  (defrule sub_agrmt
  (declare (salience 1000))
  (pada_info (group_head_id ?root_id)(group_cat VP))
- (relation-anu_ids  kriyA-subject|kriyA-aBihiwa ?root_id ?x)
-; (or (kriyA-subject ?root_id ?x)(kriyA-aBihiwa  ?root_id ?x))
+ (prep_id-relation-anu_ids ? kriyA-subject|kriyA-aBihiwa ?root_id ?x)
  (pada_info (group_cat ?cat)(group_head_id ?x)(vibakthi 0))
  ?f0<-(agmt_control_fact ?root_id)
  (test (neq ?cat English_PP))
@@ -70,8 +68,7 @@
  (defrule obj_agrmt
  (declare (salience 900))
  (pada_info (group_head_id ?root_id)(group_cat VP))
- (relation-anu_ids  kriyA-object|kriyA-object_2 ?root_id ?x)
-; (or(kriyA-object ?root_id ?x)(kriyA-object_2 ?root_id ?x))
+ (prep_id-relation-anu_ids ?  kriyA-object|kriyA-object_2 ?root_id ?x)
  (pada_info (group_cat ?cat)(group_head_id ?x)(vibakthi 0))
  ?f0<-(agmt_control_fact ?root_id)
  (test (neq ?cat English_PP))

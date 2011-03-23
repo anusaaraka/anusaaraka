@@ -2,10 +2,10 @@
 (defglobal ?*gnp_debug* = gnp_fp)
 
 
-(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (slot preposition (default 0))(slot Hin_position (default 0)))
+(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
  (deffacts dummy_facts 
- (relation-anu_ids) 
+ (prep_id-relation-anu_ids)
  (missing-level-id) 
  (id-original_word) 
  (id-number-src) 
@@ -188,8 +188,7 @@
  ;John is quite certainly a better choice . This is the way to go .
  (defrule samAnAXikaraNa_rule
  (declare (salience 800))
- (relation-anu_ids subject-subject_samAnAXikaraNa|saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
-; (or (subject-subject_samAnAXikaraNa  ?sub_id ?samAnAXikaraNa_id)(saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id))
+ (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa|saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
  ?f1<-(pada_info (group_head_id ?samAnAXikaraNa_id)(group_cat PP)(vibakthi ?vib)(gender ?gen1)(number ?num1))
  ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender ?gen)(number ?num)(person ?per)(case ?case))
  (not(samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
@@ -226,7 +225,7 @@
  ;Venus was a major Roman goddess , associated with love and beauty .
  (defrule PP_pada_saMjFA_samAnAXikaraNa
  (declare (salience 750))
- (relation-anu_ids  saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
+ (prep_id-relation-anu_ids  ? saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
  ?f1<-(pada_info (group_head_id ?samAnAXikaraNa_id)(group_cat PP|VP)(vibakthi 0)(gender ?gen1)(number ?num1))
  ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender ?gen)(number ?num)(person ?per)(case ?case))
  (id-original_word ?sub_id  ?pada_head)
@@ -263,7 +262,7 @@
 
  (defrule jo_samAnAXikaraNa_rule
  (declare (salience 850))
- (relation-anu_ids  viSeRya-jo_samAnAXikaraNa  ?sub_id ?id)
+ (prep_id-relation-anu_ids ? viSeRya-jo_samAnAXikaraNa  ?sub_id ?id)
  ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender ?gen) (number ?num)(person ?per)(case ?case))
  ?f1<-(pada_info (group_head_id ?id)(group_cat PP)(vibakthi ?vib))
  (not (jo_samAnAXikaraNa_checked ?id))
@@ -362,7 +361,7 @@
  (defrule verb_with_viSeRya_kqxanwa_viSeRaNa
  (declare (salience 650))
  (verb_agrmt-head_id default ?pada_id)
- (relation-anu_ids  viSeRya-kqxanwa_viSeRaNa ?vi ?pada_id)
+ (prep_id-relation-anu_ids  ? viSeRya-kqxanwa_viSeRaNa ?vi ?pada_id)
  (pada_info (group_head_id ?vi)(gender ?gen) (number ?num)(person ?per))
  ?f1<-(pada_info (group_head_id ?pada_id)(group_cat VP))
  ?f0<-(pada_control_fact ?pada_id)
@@ -388,7 +387,7 @@
  (defrule case_for_kAlavAcI
  (declare (salience 890))
  ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(group_ids $?ids)(vibakthi ?vib))
- ?f0<-(relation-anu_ids  kriyA-kAlavAcI  ?kri ?pada_id)
+ ?f0<-(prep_id-relation-anu_ids  ? kriyA-kAlavAcI  ?kri ?pada_id)
  =>
 	(retract ?f0)
         (modify ?f1 (case o))
@@ -414,9 +413,9 @@
  (id-gender-src ?id1 m  ?gen_src1)
  (test (and (member$ ?id $?ids) (member$ ?id1 $?ids)))
  (test (and (neq ?id ?pada_id)(neq ?id ?pada_id)))
- (not (relation-anu_ids  subject-subject_samAnAXikaraNa ? ?pada_id))
- (not (relation-anu_ids  saMjFA-saMjFA_samAnAikaraNa  ? ?pada_id))
- (not (relation-anu_ids  viSeRya-jo_samAnAXikaraNa  ? ?pada_id))
+ (not (prep_id-relation-anu_ids ?p subject-subject_samAnAXikaraNa ? ?pada_id))
+ (not (prep_id-relation-anu_ids ?p saMjFA-saMjFA_samAnAikaraNa  ? ?pada_id))
+ (not (prep_id-relation-anu_ids ?p viSeRya-jo_samAnAXikaraNa  ? ?pada_id))
  ?f2<-(id-original_word ?pada_id and|And)
  =>
      (retract ?f2)
@@ -431,9 +430,9 @@
  ?f1<-(pada_info (group_head_id ?pada_id)(gender -)(group_ids $?ids)(group_cat PP))
  (id-gender-src ?id ?gen ?gen_src)
  (test (member$ ?id $?ids))
- (not (relation-anu_ids  subject-subject_samAnAXikaraNa ? ?pada_id))
- (not (relation-anu_ids  saMjFA-saMjFA_samAnAikaraNa  ? ?pada_id))
- (not (relation-anu_ids  viSeRya-jo_samAnAXikaraNa  ? ?pada_id))
+ (not (prep_id-relation-anu_ids ?p subject-subject_samAnAXikaraNa ? ?pada_id))
+ (not (prep_id-relation-anu_ids ?p saMjFA-saMjFA_samAnAikaraNa  ? ?pada_id))
+ (not (prep_id-relation-anu_ids ?p viSeRya-jo_samAnAXikaraNa  ? ?pada_id))
  (test (neq ?gen -))
  =>
  	(modify ?f1 (gender ?gen))

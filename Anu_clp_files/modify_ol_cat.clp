@@ -1,7 +1,7 @@
  (defglobal ?*ol_fp* = ol_cat_file)
 
  (deffacts dummy_facts 
- (relation-parser_ids)
+ (prep_id-relation-parser_ids )
  (parserid-wordid)
  (ol_res_id-word_id-word)
  (root-verbchunk-tam-parser_chunkids)
@@ -15,11 +15,11 @@
 ;The girl running to the shop is my friend.
 (defrule preposition_rule_1
 (declare (salience 1000))
-?f1<-(relation-parser_ids   viSeRya-jo_samAnAXikaraNa ?P3 ?P10000)
-(relation-parser_ids   kriyA-subject ?P4 ?P10000)
+?f1<-(prep_id-relation-parser_ids  ?p   viSeRya-jo_samAnAXikaraNa ?P3 ?P10000)
+(prep_id-relation-parser_ids  ?p   kriyA-subject ?P4 ?P10000)
 ?f<-(parser_id-cat_coarse	?P4	verbal_noun)
 (ol_res_id-word_id-word ?P4    ?id     ?word)
-(not (or (relation-parser_ids  viSeRya-viSeRaNa  ?P3  ?)(relation-parser_ids   kriyA-vAkyakarma ?P4 ?))); Added by Roja (15-11-10)
+(not (or (prep_id-relation-parser_ids  ?p  viSeRya-viSeRaNa  ?P3  ?)(prep_id-relation-parser_ids  ?p   kriyA-vAkyakarma ?P4 ?))); Added by Roja (15-11-10)
 (test (eq (sub-string (- (length ?word) 2) (length ?word) ?word) "ing"))
 =>
 (retract ?f ?f1)
@@ -30,7 +30,7 @@
 ;Do not climb on the running train.
 (defrule preposition_rule_2
 (declare (salience 1000))
-(relation-parser_ids viSeRya-viSeRaNa ?P8 ?P7)
+(prep_id-relation-parser_ids  ?p viSeRya-viSeRaNa ?P8 ?P7)
 ?f<-(parser_id-cat_coarse ?P7 verbal_noun)
 (ol_res_id-word_id-word ?P7 ?id ?word)
 (test (eq (sub-string (- (length ?word) 2) (length ?word) ?word) "ing"))
@@ -42,7 +42,7 @@
 ;He wasted his golden opportunity to play in the national team . 
 (defrule preposition_rule
 (declare (salience 1000))
-(relation-parser_ids  to-infinitive  ?id ?kri)
+(prep_id-relation-parser_ids  ?p  to-infinitive  ?id ?kri)
 ?f<-(parser_id-cat_coarse ?id verb)
 (parser_id-cat_coarse ?kri verb)
 =>
@@ -115,7 +115,7 @@
 (defrule verbal_noun_modify_rule
 (declare (salience 1200))
 (ol_res_id-word_id-word	  ?Pid	 ?id   sleeping)
-(relation-parser_ids  viSeRya-viSeRaNa   ?vis   ?Pid)
+(prep_id-relation-parser_ids  ?p  viSeRya-viSeRaNa   ?vis   ?Pid)
 ?f<-(parser_id-cat_coarse    ?Pid   verbal_noun)
 =>
 (retract ?f)
@@ -126,7 +126,7 @@
 (defrule make_adj
 (declare (salience 1200))
 (ol_res_id-word_id-word   ?Pid   ?id   only)
-(relation-parser_ids  viSeRaNa-viSeRaka  ?vis   ?Pid)
+(prep_id-relation-parser_ids  ?p  viSeRaNa-viSeRaka  ?vis   ?Pid)
 ?f<-(parser_id-cat_coarse    ?Pid   adverb)
 =>
 (retract ?f)

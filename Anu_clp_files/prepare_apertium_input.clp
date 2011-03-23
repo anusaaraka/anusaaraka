@@ -2,10 +2,11 @@
 (defglobal ?*A_fp5* = fp5)
 (defglobal ?*aper_debug-file* = aper_debug)
 
-(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (slot preposition (default 0))(slot Hin_position (default 0)))
+(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
  (deffacts dummy_facts 
- (relation-anu_ids) 
+ (No complete linkages found)
+ (prep_id-relation-anu_ids)
  (missing-level-id) 
  (id-original_word) 
  (id-number-src) 
@@ -36,12 +37,8 @@
  (id-wsd_word_mng)
  (id-preceeding_part_of_verb) 
  (id-wsd_root) 
- (No complete linkages found)
  (id-cat)
  (id-cat_coarse)
- (link_name-link_expansion)
- (link_name-lnode-rnode)
- (to_be_included_in_paxa)
  (id-word)
  (root-verbchunk-tam-chunkids)
  (id-attach_emphatic)
@@ -142,7 +139,7 @@
  (test (member$ ?id $?ids))
  (hindi_id_order  $?start $?ids ?foll_pada_id $?)
  (pada_info (group_cat PP)(number ?num1)(case ?case1)(gender ?gen1)(person ?per1)(group_ids $?f_ids))
- (or (relation-anu_ids  viSeRya-RaRTI_viSeRaNa ? ?)(relation-anu_ids  viSeRya-of_saMbanXI ? ?id))
+ (or (prep_id-relation-anu_ids  ? viSeRya-RaRTI_viSeRaNa ? ?)(prep_id-relation-anu_ids ?  viSeRya-of_saMbanXI ? ?id))
  (test (member$ ?foll_pada_id $?f_ids))
  =>
         (retract ?f0)
@@ -532,7 +529,7 @@
   (declare (salience 940))
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(vibakthi ?vib)(person ?per)(group_ids $?ids))
   (id-original_word ?pada_id  His|his)
-  (relation-anu_ids  viSeRya-RaRTI_viSeRaNa  ?rel ?pada_id)
+  (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa  ?rel ?pada_id)
   (pada_info (group_head_id ?rel) (group_cat PP) (number ?num1) (case ?case1) (gender ?gen1) (person ?per1) (group_ids $?f_ids))
   ?f0<-(id-HM-source ?pada_id ?hmng ?)
 ;  (hindi_id_order  $?start $?ids ?foll_pada_id $?)
@@ -1314,7 +1311,7 @@
   (declare (salience 960))
   (pada_info (group_head_id ?pada_id)(number ?num)(gender ?gen)(person ?person)(H_tam we_hue));the (group_cat VP) condition is deleted by Sukhada for "I saw him telling her about the party" in OpenLogos (12.08.10)
   ?f0<-(id-HM-source ?pada_id ?hmng ?)
-  (relation-anu_ids kriyA-kqxanwa_kriyA_viSeRaNa ? ?pada_id )
+  (prep_id-relation-anu_ids ? kriyA-kqxanwa_kriyA_viSeRaNa ? ?pada_id )
   =>
         (retract ?f0)
         (printout ?*A_fp5* "(id-Apertium_input "?pada_id " root:"?hmng ",tam:adv_we_hue,gen:"?gen",num:"?num ",per:"?person")"  crlf)
@@ -1673,7 +1670,7 @@
   (id-original_word ?pada_id  She|she)
   ?f0<-(id-HM-source ?pada_id ?h_word ?)
   (hindi_id_order  $?start $?ids ?foll_pada_id $?)
-  (relation-anu_ids kriyA-upasarga  ?kri  ?foll_pada_id)
+  (prep_id-relation-anu_ids ? kriyA-upasarga  ?kri  ?foll_pada_id)
   (test (neq ?vib 0))
   =>
         (retract ?f0)

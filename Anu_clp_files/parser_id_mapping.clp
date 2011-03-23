@@ -4,16 +4,13 @@
  (id-number-src) 
  (verb_type-verb-causative_verb-tam) 
  (addition-level-word-sid) 
- (id-HM-source-sub_id)
  (conjunction-components)
  (id-original_word)
- (id-last_word)
  (using-chunk-ids)
  (parserid-wordid )
  (id-cat)
  (parser_id-cat_coarse)
- (relation-parser_ids)
- (link_name-link_lnode-link_rnode)
+ (prep_id-relation-parser_ids)
  (parser_id-root)
  (No complete linkages found)
  (parser_id-root-category-suffix-number)       
@@ -39,108 +36,66 @@
 
  (deffunction string_to_integer (?parser_id); [Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
- ;======================================  RULES TO MAP CATEGORY   ====================================================
-
- (defrule map_cat_consis
- (declare (salience 900))
- (id-cat $?var)
- =>
-	(printout ?*cat_cons-file* "(id-cat " (implode$ $?var) ")" crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------------
- (defrule default_cat
- (declare (salience 100))
- (No complete linkages found)
- (parser_id-cat_coarse ?id ?var)
- =>
-        (printout ?*cat_cons-file* "(id-cat_coarse "?id" "?var")" crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------------
- (defrule map_cat_consis1
- (declare (salience 850))
- (parser_id-cat_coarse ?p_id ?var)
- (parserid-wordid  ?p_id ?wid)
- =>
-	(printout ?*cat_cons-file* "(id-cat_coarse "?wid" "?var")" crlf)
- )
- ;======================================  RULES TO MAP NUMBER   ====================================================
- (defrule map_number
- (declare (salience 800))
- (parser_id-number-src ?pid ?num ?src)
- (parserid-wordid  ?pid ?wid)
- =>
-        (printout ?*num-file* "(id-number-src "?wid" "?num" "?src ")" crlf)
- )
- ;================================   MAPPING CHUNK RELATIONS   =====================================================
- (defrule map_chunk_rel
- (declare (salience 901))
- (using-chunk-ids ?rel $?ids)
- =>
-        (printout ?*rel-file* "("?rel " " (implode$ $?ids)")"crlf)
- )
+  
  ;================================   RULES FOR MAPPING RELATIONS =================================================
- (defrule map-id
- (declare (salience 901))
- (relation-parser_ids  ?rel)
+ (defrule map-rel
+ (declare (salience 1001))
+ (prep_id-relation-parser_ids - ?rel)
  =>
-	(printout ?*rel-file* "("?rel")"crlf)
-        (printout ?*rel-file1* "(relation-anu_ids   " ?rel")"crlf)
+        (printout ?*rel-file* "("?rel")"crlf)
+        (printout ?*rel-file1* "(prep_id-relation-anu_ids  -    " ?rel")"crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
- (defrule map-rel1
- (declare (salience 900))
- (relation-parser_ids  ?rel ?l_id_1)
+ (defrule map-rel_1
+ (declare (salience 1000))
+ (prep_id-relation-parser_ids -  ?rel ?l_id_1)
  (parserid-wordid  ?l_id_1 ?id1)
- (id-word ?id1 ?word)
  =>
         (printout ?*rel-file* "("?rel"  "?id1")"crlf)
-        (printout ?*rel-file1* "(relation-anu_ids   " ?rel"  "?id1")"crlf)
+        (printout ?*rel-file1* "(prep_id-relation-anu_ids    -   " ?rel"  "?id1")"crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
- (defrule map-rel
- (declare (salience 900))
- (relation-parser_ids  ?rel ?l_id_1 ?l_id_2)
+ ;We had wasted our journey.
+ (defrule map-rel_2
+ (declare (salience 1000))
+ ?f0<-(prep_id-relation-parser_ids  -  ?rel ?l_id_1 ?l_id_2)
  (parserid-wordid  ?l_id_1 ?id1)
  (parserid-wordid  ?l_id_2 ?id2)
- (id-word ?id1 ?word)
- (id-word ?id2 ?word1)
  =>
-	(printout ?*rel-file* "("?rel"  "?id1" "?id2")"crlf)
-        (printout ?*rel-file1* "(relation-anu_ids   "?rel"  "?id1" "?id2")"crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------------
- (defrule map-rel2
- (declare (salience 900))
- (relation-parser_ids  ?rel ?l_id_1 ?id)
- (relation-parser_ids  viSeRya-jo_samAnAXikaraNa ?l_id_2 ?id)
- (parserid-wordid  ?l_id_1 ?id1)
- (parserid-wordid  ?l_id_2 ?id2)
- (id-word ?id1 ?word)
- (id-word ?id2 ?word1)
- (id-HM-source ?id ?hmng Relative_clause)
- =>
-       (printout ?*rel-file* "("?rel"  "?id1"  "?id")"crlf)
-       (printout ?*rel-file* "(viSeRya-jo_samAnAXikaraNa  "?id2"  "?id")"crlf)
-       (printout ?*rel-file1* "(relation-anu_ids   "?rel"  "?id1"  "?id")"crlf)
-       (printout ?*rel-file1* "(relation-anu_ids   viSeRya-jo_samAnAXikaraNa  "?id2"  "?id")"crlf)
+        (retract ?f0)
+        (printout ?*rel-file* "("?rel"  "?id1" "?id2")"crlf)
+        (printout ?*rel-file1* "(prep_id-relation-anu_ids   -   "?rel"  "?id1" "?id2")"crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
  ;Ex. She was asked about the pay increase but made no comment.
  ;The cat sat on a mat and scratched itself loudly .(2nd-parse)
- (defrule map-rel3
- (declare (salience 900))
- (relation-parser_ids  kriyA-subject ?l_id 10001)
+ (defrule map-rel_10001
+ (declare (salience 910))
+ (prep_id-relation-parser_ids  -  ?rel  ?l_id 10001)
  (parserid-wordid  ?l_id ?id)
  (id-original_word 10001 ?word)
  =>
-       (printout ?*rel-file* "(kriyA-subject  "?id"  10001)"crlf)
-       (printout ?*rel-file1* "(relation-anu_ids   kriyA-subject  "?id"  10001)"crlf)
+       (printout ?*rel-file* "("?rel"  "?id"  10001)"crlf)
+       (printout ?*rel-file1* "(prep_id-relation-anu_ids  - "?rel "   "?id"  10001)"crlf)
+ )
+ ;-------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (05-03-11)
+ ;They are having a party in front of the building.
+ ;The boy you called yesterday has arrived. 
+ (defrule map-rel_10000
+ (declare (salience 910))
+ (prep_id-relation-parser_ids -  ?rel ?pid 10000)
+ (parserid-wordid  ?pid ?id)
+ (id-original_word 10000 ?)
+ =>
+       (printout ?*rel-file* "("?rel"  "?id"  10000)"crlf)
+       (printout ?*rel-file1* "(prep_id-relation-anu_ids  -     "?rel"  "?id"  10000)"crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
  ;Added by Roja (22-02-11)
  ;Ex: Your house and garden are very attractive. 
  (defrule map-conj
- (declare (salience 950))
+ (declare (salience 910))
  ?f<-(conjunction-components $?ids ?id $?ids1)
  (parserid-wordid ?id ?wid)
  =>
@@ -151,74 +106,84 @@
  ;Added by Roja (22-02-11)
  ;Ex: Your house and garden are very attractive.
  (defrule write-conj
- (declare (salience -10))
+ (declare (salience 900))
  (conjunction-components $?ids)
  =>
        (printout ?*rel-file* "(conjunction-components  "(implode$ $?ids)")" crlf)
        (printout ?*rel-file1* "(conjunction-components  "(implode$ $?ids)")"crlf)
  )
- ;================================   RULES FOR MAPPING LINK NODES =================================================
- (defrule map-vb_chunk
- (declare (salience 900))
- (link_name-link_lnode-link_rnode  ?lname   ?lnode  ?rnode)
- (parserid-wordid  ?lnode ?l_id)
- (parserid-wordid  ?rnode ?r_id)
+ ;--------------------------------------------------------------------------------------------------------------------
+ (defrule map-rel_prep
+ (declare (salience 910))
+ ?f0<-(prep_id-relation-parser_ids  $?ids ?prep_id $?ids1 ?rel ?x ?y)
+ (parserid-wordid  ?prep_id ?id)
+ (test (neq ?prep_id -))
  =>
-	(printout ?*l_rel-file* "(link_name-lnode-rnode " ?lname " " ?l_id " " ?r_id ")" crlf)
+        (retract ?f0)
+        (assert (prep_id-relation-parser_ids $?ids ?id $?ids1 ?rel ?x  ?y))
  )
  ;-------------------------------------------------------------------------------------------------------------------
- (defrule map-0_id
+ (defrule write-rel_prep
  (declare (salience 900))
- (link_name-link_lnode-link_rnode  ?lname   P0  ?rnode)
- (parserid-wordid  ?rnode ?r_id)
+ ?f0<-(prep_id-relation-parser_ids  $?ids ?rel ?l_id_1 ?l_id_2)
+ (parserid-wordid  ?l_id_1 ?id1)
+ (parserid-wordid  ?l_id_2 ?id2)
  =>
-	(printout ?*l_rel-file* "(link_name-lnode-rnode " ?lname "  0  " ?r_id ")" crlf)
-)
+        (retract ?f0)
+        (printout ?*rel-file* "("?rel"  "?id1" "?id2")"crlf)
+        (printout ?*rel-file1* "(prep_id-relation-anu_ids   "(implode$ $?ids)"  "?rel"  "?id1" "?id2")"crlf)
+ )
+ 
+ ;======================================  RULES TO MAP CATEGORY   ====================================================
+
+ (defrule map_cat
+ (declare (salience 850))
+ (id-cat $?var)
+ =>
+	(printout ?*cat_cons-file* "(id-cat " (implode$ $?var) ")" crlf)
+ )
  ;-------------------------------------------------------------------------------------------------------------------
- (defrule map_no_comp_link_found
- (declare (salience 900))
- (No complete linkages found)
+ (defrule map_cat_coarse
+ (declare (salience 800))
+ (parser_id-cat_coarse ?p_id ?var)
+ (parserid-wordid  ?p_id ?wid)
  =>
-	(printout ?*l_rel-file* "(No complete linkages found)" crlf)
-        (printout ?*rel-file1* "(No complete linkages found)"crlf)
+	(printout ?*cat_cons-file* "(id-cat_coarse "?wid" "?var")" crlf)
+ )
+ ;======================================  RULES TO MAP NUMBER   ====================================================
+ (defrule map_number
+ (declare (salience 700))
+ (parser_id-number-src ?pid ?num ?src)
+ (parserid-wordid  ?pid ?wid)
+ =>
+        (printout ?*num-file* "(id-number-src "?wid" "?num" "?src ")" crlf)
+ )
+ ;================================   MAPPING CHUNK RELATIONS   =====================================================
+ (defrule map_chunk_rel
+ (declare (salience 650))
+ (using-chunk-ids ?rel $?ids)
+ =>
+        (printout ?*rel-file* "("?rel " " (implode$ $?ids)")"crlf)
  )
  ;==============================  RULES FOR MAPPING ROOT  ===========================================================
  (defrule map_root
- (declare (salience 900))
+ (declare (salience 600))
  (parserid-wordid  ?pid ?wid)
  (parser_id-root ?pid ?root)
  =>
 	(printout  ?*root-file* "(id-root " ?wid " " ?root ")" crlf)
  )
- ;-------------------------------------------------------------------------------------------------------------------
- (defrule map_root1
- (declare (salience 800))
- (No complete linkages found)
- (parser_id-root ?pid ?root)
- =>
-	(bind ?pid (string_to_integer ?pid))
-	(printout  ?*root-file* "(id-root " ?pid " " ?root ")" crlf)
- )
  ;================================== RULES FOR MAPPING PREFERRED MORPH    ==========================================
  (defrule map_morph
- (declare (salience 900))
+ (declare (salience 550))
  (parserid-wordid  ?pid ?wid)
  (parser_id-root-category-suffix-number  ?pid $?vars)
  =>
  	(printout ?*morph-file* "(id-root-category-suffix-number "  ?wid " " (implode$ $?vars) ")" crlf)
  )
- ;-------------------------------------------------------------------------------------------------------------------
- (defrule map_morph1
- (declare (salience 800))
- (No complete linkages found)
- (parser_id-root-category-suffix-number  ?pid $?vars)
- =>
-	(bind ?pid (string_to_integer ?pid))
-	(printout ?*morph-file* "(id-root-category-suffix-number "  ?pid " " (implode$ $?vars) ")" crlf)
- )
  ;=================================== RULES FOR MAPPING LWG ========================================================
  (defrule map_lwg
- (declare (salience 900))
+ (declare (salience 500))
  ?f0<-(root-verbchunk-tam-parser_chunkids  ?rt ?vb_chnk ?tam $?start ?pid $?end)
  (parserid-wordid  ?pid ?wid)
  =>
@@ -227,7 +192,7 @@
  )
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule map_lwg1
- (declare (salience 100))
+ (declare (salience 450))
  ?f0<-(root-verbchunk-tam-parser_chunkids  $?vars)
  =>
  	(printout ?*lwg-file* "(root-verbchunk-tam-chunkids "  (implode$ $?vars) ")" crlf)
@@ -235,7 +200,7 @@
  )
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule map_cau_lwg
- (declare (salience 900))
+ (declare (salience 400))
  ?f0<-(verb_type-verb-causative_verb-tam  ?vrb_typ ?pid ?pid1 ?tam)
  (parserid-wordid  ?pid ?wid)
  (parserid-wordid  ?pid1 ?wid1)
@@ -245,7 +210,7 @@
  )
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule map_cau_lwg1
- (declare (salience 100))
+ (declare (salience 350))
  ?f0<-(verb_type-verb-causative_verb-tam  $?vars)
  =>
 	(printout ?*lwg-file* "(verb_type-verb-causative_verb-tam "  (implode$ $?vars) ")" crlf)
@@ -253,7 +218,7 @@
  )
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule map_kri_mUl_lwg
- (declare (salience 900))
+ (declare (salience 350))
  ?f0<-(verb_type-verb-kriyA_mUla-tam  ?vrb_typ ?pid ?pid1 ?tam)
  (parserid-wordid  ?pid ?wid)
  (parserid-wordid  ?pid1 ?wid1)
@@ -263,7 +228,7 @@
  )
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule map_kri_mUl_lwg1
- (declare (salience 100))
+ (declare (salience 300))
  ?f0<-(verb_type-verb-kriyA_mUla-tam  $?vars)
  =>
         (printout ?*lwg-file* "(verb_type-verb-kriyA_mUla-tam "  (implode$ $?vars) ")" crlf)
@@ -271,7 +236,7 @@
  )
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule map_lwg4
- (declare (salience 100))
+ (declare (salience 250))
  ?f0<-(lwg_root-verbchunk-tam-chunkids  $?vars)
  =>
 	(printout ?*lwg-file* "(root-verbchunk-tam-chunkids "  (implode$ $?vars) ")" crlf)
@@ -279,7 +244,7 @@
  )
  ;=================================== RULES FOR MAPPING IDIOMS  ======================================================
  (defrule map_idiom_word
- (declare (salience 900))
+ (declare (salience 200))
  (link_id-idiom_word_mng    ?pid     ?mng)
  (parserid-wordid    ?pid  ?wid)
  => 
@@ -287,7 +252,7 @@
  )
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule map_idiom_root
- (declare (salience 900))
+ (declare (salience 200))
  (link_id-idiom_root_mng    ?pid     ?mng)
  (parserid-wordid    ?pid  ?wid)
  =>
@@ -295,7 +260,7 @@
  )
  ;====================================================================================================================
  (defrule map_mng_decided
- (declare (salience 900))
+ (declare (salience 150))
  (meaning_has_been_decided_for_linkid ?pid)
  (parserid-wordid    ?pid  ?wid)
  =>

@@ -15,17 +15,13 @@
 
 
  (deffacts dummy_facts
- (relation-anu_ids) 
- (id-original_word) 
  (parser_id-number)
  (conjunction-components)
- (id-original_word)
- (id-last_word)
  (using-chunk-ids)
  (parserid-wordid )
  (id-cat)
  (parser_id-cat_coarse)
- (relation-parser_ids)
+ (prep_id-relation-parser_ids )
  (parser_id-root)
  (parser_id-root-category-suffix-number)       
  (root-verbchunk-tam-parser_chunkids)
@@ -54,7 +50,7 @@
  ;-------------------------------------------------------------------------------------------------------------------- 
  (defrule modify_cat
  (declare (salience 950))
- (relation-parser_ids  kriyA-kqxanwa_kriyA_viSeRaNa ?k ?P) 
+ (prep_id-relation-parser_ids   ?prep  kriyA-kqxanwa_kriyA_viSeRaNa ?k ?P) 
  ?f<- (parser_id-cat_coarse ?P  verbal_noun)
  =>
  (retract ?f)
@@ -130,148 +126,125 @@
  
  (defrule map-id
  (declare (salience 901))
- (relation-parser_ids  ?rel)
+ (prep_id-relation-parser_ids   -  ?rel)
  =>
 	(printout ?*rel-file* "("?rel")"crlf)
-        (printout ?*rel-file1* "(relation-anu_ids   " ?rel")"crlf)
+        (printout ?*rel-file1* "(prep_id-relation-anu_ids  -   " ?rel")"crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------------
  (defrule map-rel1
  (declare (salience 900))
- (relation-parser_ids  ?rel ?l_id_1)
+ (prep_id-relation-parser_ids   -  ?rel ?l_id_1)
  (parserid-wordid  ?l_id_1 ?id1)
- (id-word ?id1 ?word)
  =>
         (printout ?*rel-file* "("?rel"  "?id1")"crlf)
-        (printout ?*rel-file1* "(relation-anu_ids   " ?rel"  "?id1")"crlf)
-        (printout ?*rel-debug* "(rule-rel_name-ids  map-rel1   relation-parser_ids   " ?rel"  "?id1")"crlf)
+        (printout ?*rel-file1* "(prep_id-relation-anu_ids    -   " ?rel"  "?id1")"crlf)
+        (printout ?*rel-debug* "(rule-rel_name-ids  map-rel1   prep_id-relation-parser_ids   -   " ?rel"  "?id1")"crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------------
 ;I saw a bus, volvo, the king of traffic jam. How much money did you earn?
  (defrule map_samAsa
  (declare (salience 990))
- ?f<- (relation-parser_ids  samAsa ?l_id)
+ ?f<- (prep_id-relation-parser_ids   -  samAsa ?l_id)
  (ol_res_id-word_id-word ?l_id  ?id1 $?wrds)
  (current_id-group_members ?id1 	$?wrd_ids)
  =>
  (retract ?f)
 	(bind ?ids (sort < $?wrd_ids))
         (printout ?*rel-file* "(samAsa  "(implode$ ?ids)")"crlf)
-        (printout ?*rel-file1* "(relation-anu_ids   samAsa  " (implode$ ?ids)")"crlf)
-        (printout ?*rel-debug* "(rule-rel_name-ids   map_samAsa  relation-parser_ids   samAsa  " (implode$ ?ids)")"crlf)
+        (printout ?*rel-file1* "(prep_id-relation-anu_ids   -   samAsa  " (implode$ ?ids)")"crlf)
+        (printout ?*rel-debug* "(rule-rel_name-ids   map_samAsa  prep_id-relation-parser_ids   -   samAsa  " (implode$ ?ids)")"crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------------
  ;I saw a bus, volvo, the king of traffic jam. How much money did you earn?
+ ;The blacksmith made an assay of iron ore.
  (defrule map_samAsa_1
- (declare (salience 999))
- ?f<- (relation-parser_ids  samAsa ?l_id)
- (relation-parser_ids ?rel ?l_vi ?l_id)
+ (declare (salience 998))
+ ?f<- (prep_id-relation-parser_ids   -  samAsa ?l_id)
+ (prep_id-relation-parser_ids   ?p ?rel ?l_vi ?l_id)
  (ol_res_id-word_id-word ?l_id  ?id1 $?wrds)
  (ol_res_id-word_id-word ?l_vi  ?vi_id ?wrd)
  (current_id-group_members ?id1    $?wrd_ids ?head)
  =>
         (printout ?*rel-file* "("?rel "  "?vi_id "  "?head")"crlf)
-        (printout ?*rel-file1* "(relation-anu_ids   "?rel "  "?vi_id "  "?head")"crlf)
-        (printout ?*rel-debug* "(rule-rel_name-ids  map_samAsa_1  relation-parser_ids   "?rel "  "?vi_id "  "?head")"crlf)
+        (printout ?*rel-file1* "(prep_id-relation-anu_ids   "?p"   "?rel "  "?vi_id "  "?head")"crlf)
+        (printout ?*rel-debug* "(rule-rel_name-ids  map_samAsa_1  prep_id-relation-parser_ids "?p"   "?rel "  "?vi_id "  "?head")"crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------------
  ; SOME fruit JUICES are very acidic. High income taxes are important.
  (defrule map_samAsa_viS-det_vi
  (declare (salience 1990))
- ?f<- (relation-parser_ids  samAsa ?l_id)
- (relation-parser_ids ?viSeRya-det_viSeRaNa  ?l_id  ?vi)
+ ?f<- (prep_id-relation-parser_ids  -  samAsa ?l_id)
+ (prep_id-relation-parser_ids   ?p ?vi-det_vi  ?l_id  ?vi)
  (ol_res_id-word_id-word ?l_id  ?id1 $?wrds)
  (ol_res_id-word_id-word ?vi  ?vi_id ?wrd)
  (current_id-group_members ?id1    $?wrd_ids ?head)
  =>
-        (printout ?*rel-file* "("?viSeRya-det_viSeRaNa"  "?head"  "?vi_id")"crlf)
-        (printout ?*rel-file1* "(relation-anu_ids  " ?viSeRya-det_viSeRaNa"  "?head"  "?vi_id")"crlf)
-        (printout ?*rel-debug* "(rule-rel_name-ids  map_samAsa_viS-det_vi  relation-parser_ids  "?viSeRya-det_viSeRaNa"  "?head"  "?vi_id")"crlf)
+        (printout ?*rel-file* "("?vi-det_vi"  "?head"  "?vi_id")"crlf)
+        (printout ?*rel-file1* "(prep_id-relation-anu_ids   "?p"  " ?vi-det_vi"  "?head"  "?vi_id")"crlf)
+        (printout ?*rel-debug* "(rule-rel_name-ids  map_samAsa_viS-det_vi  prep_id-relation-parser_ids "?p"  "?vi-det_vi"  "?head"  "?vi_id")"crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------------
  ;Geeta and Reeta were born at the same time. (This is just a sample sentence, The object relation between 'born' and 'at the same time' is not correct for this sentence 26-09-10) 
  (defrule map_rel_x
  (declare (salience 1990))
- ?f<- (relation-parser_ids  ?rel ?id1 ?id2)
+ ?f<- (prep_id-relation-parser_ids  ?p  ?rel ?id1 ?id2)
  (ol_res_id-word_id-word ?id1  ?i ?wrd)
  (ol_res_id-word_id-word ?id2  ?i2 $?wrds)
  (current_id-group_members ?i2    $?wrd_ids ?head)
  (test (>=  (length $?wrd_ids) 2))
  =>
         (printout ?*rel-file* "("?rel "  "?i"  "?head")"crlf)
-        (printout ?*rel-file1* "(relation-anu_ids  " ?rel"  "?i"  "?head")"crlf)
-        (printout ?*rel-debug* "(rule-rel_name-ids  map_rel_x  relation-parser_ids  "?rel"  "?i"  "?head")"crlf)
- )
- ;--------------------------------------------------------------------------------------------------------------------
- ;
- (defrule map_rel_y
- (declare (salience 1990))
- ?f<- (relation-parser_ids  ?rel ?id2 ?id1)
- (ol_res_id-word_id-word ?id1  ?i ?wrd)
- (ol_res_id-word_id-word ?id2  ?i2 $?wrds)
- (current_id-group_members ?i2    $?wrd_ids ?head)
- (test (>=  (length $?wrd_ids) 2))
- =>
-        (printout ?*rel-file* "("?rel "  "?head"  "?i")"crlf)
-        (printout ?*rel-file1* "(relation-anu_ids  " ?rel"  "?head"  "?i")"crlf)
-        (printout ?*rel-debug* "(rule-rel_name-ids  map_rel_y  relation-parser_ids  "?rel"  "?head"  "?i")"crlf)
+        (printout ?*rel-file1* "(prep_id-relation-anu_ids   "?p"  " ?rel"  "?i"  "?head")"crlf)
+        (printout ?*rel-debug* "(rule-rel_name-ids  map_rel_x  prep_id-relation-parser_ids   -  "?rel"  "?i"  "?head")"crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------------
  ;The book I was reading is wonderful
  (defrule map_10000_vi_jo
  (declare (salience 1990))
- (relation-parser_ids ?rel ?l_id P10000)
+ (prep_id-relation-parser_ids   - ?rel ?l_id P10000)
  (ol_res_id-word_id-word ?l_id  ?id1 $?wrds)
  =>
         (printout ?*rel-file* "("?rel"  "?id1  " 10000)"crlf)
-        (printout ?*rel-file1* "(relation-anu_ids   "?rel" "?id1  " 10000)"crlf)
-        (printout ?*rel-debug* "(rule-rel_name-ids  map_10000_vi_jo  relation-parser_ids   "?rel" "?id1  " 10000)"crlf)
+        (printout ?*rel-file1* "(prep_id-relation-anu_ids   -   "?rel" "?id1  " 10000)"crlf)
+        (printout ?*rel-debug* "(rule-rel_name-ids  map_10000_vi_jo  prep_id-relation-parser_ids   -   "?rel" "?id1  " 10000)"crlf)
  ) 
  ;--------------------------------------------------------------------------------------------------------------------
  (defrule map-rel
- (declare (salience 900))
- (relation-parser_ids  ?rel ?l_id_1 ?l_id_2)
+ (declare (salience 901))
+ ?f0<-(prep_id-relation-parser_ids   -  ?rel ?l_id_1 ?l_id_2)
  (parserid-wordid  ?l_id_1 ?id1)
  (parserid-wordid  ?l_id_2 ?id2)
- (id-word ?id1 ?word)
- (id-word ?id2 ?word1)
  =>
+	(retract ?f0)
 	(printout ?*rel-file* "("?rel"  "?id1" "?id2")"crlf)
-        (printout ?*rel-file1* "(relation-anu_ids   "?rel"  "?id1" "?id2")"crlf)
-        (printout ?*rel-debug* "(rule-rel_name-ids  map-rel  relation-parser_ids   "?rel"  "?id1" "?id2")"crlf)
+        (printout ?*rel-file1* "(prep_id-relation-anu_ids   -   "?rel"  "?id1" "?id2")"crlf)
+        (printout ?*rel-debug* "(rule-rel_name-ids  map-rel  prep_id-relation-parser_ids   -   "?rel"  "?id1" "?id2")"crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------------
- (defrule map-rel2
+ ;Keep on the right side of the road.
+ (defrule map-rel_prep
+ (declare (salience 999))
+; (declare (salience 1991))
+ ?f0<-(prep_id-relation-parser_ids  $?ids ?prep_id $?ids1 ?rel ?x ?y)
+ (parserid-wordid  ?prep_id $?prp)
+ (test (neq ?prep_id -))
+ =>
+        (retract ?f0)
+        (assert (prep_id-relation-parser_ids $?ids $?prp $?ids1 ?rel ?x  ?y))
+ )
+ ;-------------------------------------------------------------------------------------------------------------------
+ (defrule map-rel_1
  (declare (salience 900))
- (relation-parser_ids  ?rel ?l_id_1 ?id)
- (relation-parser_ids  viSeRya-jo_samAnAXikaraNa ?l_id_2 ?id)
+ ?f0<-(prep_id-relation-parser_ids  $?ids ?rel ?l_id_1 ?l_id_2)
  (parserid-wordid  ?l_id_1 ?id1)
  (parserid-wordid  ?l_id_2 ?id2)
- (id-word ?id1 ?word)
- (id-word ?id2 ?word1)
- (id-HM-source ?id ?hmng Relative_clause)
  =>
-       (printout ?*rel-file* "("?rel"  "?id1"  "?id")"crlf)
-       (printout ?*rel-file* "(viSeRya-jo_samAnAXikaraNa  "?id2"  "?id")"crlf)
-       (printout ?*rel-file1* "(relation-anu_ids   "?rel"  "?id1"  "?id")"crlf)
-       (printout ?*rel-debug* "(rule-rel_name-ids map-rel2   relation-parser_ids   "?rel"  "?id1"  "?id")"crlf)
-       (printout ?*rel-file1* "(relation-anu_ids   viSeRya-jo_samAnAXikaraNa  "?id2"  "?id")"crlf)
-       (printout ?*rel-debug* "(rule-rel_name-ids map-rel2   relation-parser_ids   viSeRya-jo_samAnAXikaraNa  "?id2"  "?id")"crlf)
- ) 
- ;--------------------------------------------------------------------------------------------------------------------
- ;Ex. She was asked about the pay increase but made no comment.
- ;The cat sat on a mat and scratched itself loudly .(2nd-parse)
- (defrule map-rel3
- (declare (salience 900))
- (relation-parser_ids  kriyA-subject ?l_id 10001)
- (parserid-wordid  ?l_id ?id)
- (id-original_word 10001 ?word)
- =>
-       (printout ?*rel-file* "(kriyA-subject  "?id"  10001)"crlf)
-       (printout ?*rel-file1* "(relation-anu_ids   kriyA-subject  "?id"  10001)"crlf)
-       (printout ?*rel-debug* "(rule-rel_name-ids map-rel3   relation-parser_ids   kriyA-subject  "?id"  10001)"crlf)
+        (retract ?f0)
+        (printout ?*rel-file* "("?rel"  "?id1" "?id2")"crlf)
+        (printout ?*rel-file1* "(prep_id-relation-anu_ids   "(implode$ $?ids)"  "?rel"  "?id1" "?id2")"crlf)
  )
- ;--------------------------------------------------------------------------------------------------------------------
+ ;-------------------------------------------------------------------------------------------------------------------
  ;Added by Roja (15-02-11)
  ;Ex: Your house and garden are very attractive. 
  (defrule map-conj
