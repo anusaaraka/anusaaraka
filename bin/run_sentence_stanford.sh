@@ -23,7 +23,7 @@ cd $MYPATH/$1_tmp/$2
  
  cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat parserid_wordid_mapping.dat lwg_info.dat relations.dat hindi_meanings.dat GNP_agmt_info.dat id_Apertium_output.dat  hindi_id_reorder.dat English_sentence.dat hindi_sentence.dat >>$MYPATH/$1_tmp/$2/all_facts
 
- sed 's/(Eng_sen \"//g' English_sentence.dat |sed  's/\")//g'|sed 's/&quot;/\"/g'|sed 's/\&amp;/&/g'|sed 's/DOTDOTDOT/.../g' | sed 's/eABBRDOTABBRgABBRDOTABBR/e.g./g' | sed 's/aABBRDOTABBRkABBRDOTABBRaABBRDOTABBR/a.k.a./g' | sed 's/ABBRDOT/./g'
+ sed 's/(Eng_sen \"//g' English_sentence.dat |sed  's/\")//g'|sed 's/&quot;/\"/g'|sed 's/\&amp;/&/g'|sed 's/DOTDOTDOT/.../g'| sed 's/ABBRThatis/i.e./g' | sed 's/aABBRDOTABBRkABBRDOTABBRaABBRDOTABBR/a.k.a./g' | sed 's/eABBRDOTABBRgABBRDOTABBR/e.g./g'| sed 's/TWTWTWTW/_/g' | sed 's/TWTW/ /g' | sed 's/ABBRDOT/./g'
 
  cp hindi_sentence.dat hindi_sentence_tmp.dat
 
@@ -48,5 +48,3 @@ cd $MYPATH/$1_tmp/$2
  myclips -f $HOME_anu_test/Anu_clp_files/user_wsd_info.clp > /dev/null
  mv user_wsd_info.dat $MYPATH/$1_$2_user_wsd_info.dat
 
-#cat sd-relations_tmp1.dat
-#cat relations_debug.dat
