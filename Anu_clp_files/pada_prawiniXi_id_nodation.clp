@@ -275,7 +275,6 @@
 	else
 		(generate_incremented_point ?PH ?viSeRya)
 		(assert (viSeRaNa_ids ?viSeRya $?grp_ids ?viSeRaNa))
-		(printout ?*debug* "viSeRaNa_pada " ?PH" " (implode$  $?grp_ids) crlf)
  	)
  )
  ;-------------------------------------------------------------------------------------------------------------
@@ -293,6 +292,7 @@
         (assert (id-current_id ?id ?c_id))
         (assert (current_id-group_members ?c_id $?grp_ids))
         (modify ?f3 (group_ids $?grp_ids)(pada_head ?c_id))
+	(printout ?*debug* "modifying_pada_for_increment "?PH"  "?c_id " " (implode$  $?grp_ids) crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (03-03-11)
@@ -350,7 +350,7 @@
  ;A fat ugly boy had to eat too many fruits to lose his weight. 
  ;Running is good for health.
  (defrule modifying_pada_for_increment1
- (declare (salience 980))
+ (declare (salience 981))
  ?f<-(to_be_grouped_ids ?id $?grp_ids ?viSeRaNa)
  ?f1<-(id-current_id ?id ?c_id)
  ?f2<-(current_id-group_members ?c_id $?ids)
@@ -360,10 +360,12 @@
         (bind $?grp_ids (sort < (create$  $?grp_ids ?viSeRaNa)))
         (assert (id-current_id ?id ?c_id))
         (assert (current_id-group_members ?c_id $?grp_ids))
+	(modify ?f3 (pada_head ?c_id))
+	(printout ?*debug* "modifying_pada_for_increment1 "?PH"  "?c_id " " (implode$  $?grp_ids) crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------
  (defrule non_finite_kriyA_pada
- (declare (salience 980))
+ (declare (salience 981))
  ?f0<-(prep_id-relation-anu_ids  ? ?rel ?kri ?id) 
  (test (and (neq ?rel kriyA-karwA)(neq ?rel kriyA-vAkyakarma)))
  (test (neq (str-index "-" ?rel)  FALSE))
@@ -373,22 +375,21 @@
  ?f1<-(pada_info (group_head_id ?kri)(group_ids  $?grp_ids)(group_cat ?gtype)(pada_head ?PH))
  ?f2<-(pada_info (group_head_id ?id)(group_ids  $?grp_ids1)(pada_head ?ph))
  ?f3<-(id-current_id  ?kri ?current_id)
- ?f4<-(current_id-group_members ?current_id $?grp_ids)
+ ?f4<-(current_id-group_members ?current_id $?c_ids)
  ?f5<-(id-current_id  ?id ?current_id1)
  ?f6<-(current_id-group_members ?current_id1 $?grp_ids1)
- (test (eq (member$ ?id $?grp_ids) FALSE))
+ (test (eq (member$ ?id $?c_ids) FALSE))
  =>
  	(retract ?f3 ?f4 ?f5 ?f6) 
  	(if (eq ?kri ?current_id) then
 		(generate_initial_point ?kri)
-		(assert (to_be_grouped_ids ?kri $?grp_ids ?grp_ids1))
-		(printout ?*debug* "non_finite_kriyA_pada  "?PH "  " (implode$  $?grp_ids) crlf)
+		(assert (to_be_grouped_ids ?kri $?c_ids ?grp_ids1))
  	else
 		(generate_incremented_point ?PH ?kri)
-                (assert (to_be_grouped_ids ?kri $?grp_ids ?grp_ids1))
-		(printout ?*debug* "non_finite_kriyA_pada  "?PH "  " (implode$  $?grp_ids) crlf)
+                (assert (to_be_grouped_ids ?kri $?c_ids ?grp_ids1))
  ))
  ;-------------------------------------------------------------------------------------------------------------
+ ;But my efforts to win his heart have failed.
  (defrule non_finite_kriyA_pada1
  (declare (salience 980))
  ?f0<-(prep_id-relation-anu_ids  ? saMjFA-to_kqxanwa ?id ?kri)
@@ -396,22 +397,21 @@
  ?f1<-(pada_info (group_head_id ?kri)(group_ids  $?grp_ids)(group_cat ?gtype)(pada_head ?PH))
  ?f2<-(pada_info (group_head_id ?id)(group_ids  $?grp_ids1)(pada_head ?ph))
  ?f3<-(id-current_id  ?kri ?current_id)
- ?f4<-(current_id-group_members ?current_id $?grp_ids)
+ ?f4<-(current_id-group_members ?current_id $?c_ids)
  ?f5<-(id-current_id  ?id ?current_id1)
  ?f6<-(current_id-group_members ?current_id1 $?grp_ids1)
- (test (eq (member$ ?id $?grp_ids) FALSE))
+ (test (eq (member$ ?id $?c_ids) FALSE))
   =>
  	(retract ?f3 ?f4 ?f5 ?f6)
  	(if (eq ?kri ?current_id) then
 		(generate_initial_point ?kri)
-		(assert (to_be_grouped_ids ?kri $?grp_ids ?grp_ids1))
- 		(printout ?*debug* "non_finite_kriyA_pada1 "?PH "  " (implode$  $?grp_ids) crlf)
+		(assert (to_be_grouped_ids ?kri $?c_ids ?grp_ids1))
  	else
 		(generate_incremented_point ?PH ?kri)
-                (assert (to_be_grouped_ids ?kri $?grp_ids ?grp_ids1))
-		(printout ?*debug* "non_finite_kriyA_pada1 "?PH "  " (implode$  $?grp_ids) crlf)
+                (assert (to_be_grouped_ids ?kri $?c_ids ?grp_ids1))
  ))
  ;-------------------------------------------------------------------------------------------------------------
+ ;But my efforts to win his heart have failed.
  (defrule non_finite_kriyA_pada2
  (declare (salience 979))
  ?f0<-(prep_id-relation-anu_ids  ?  viSeRya-RaRTI_viSeRaNa ?id ?id1)
@@ -419,21 +419,19 @@
  (test (or (eq ?gtype infinitive) (eq ?gtype VP)))
  (not (root-verbchunk-tam-chunkids ? ? ? $?ids ?kri))
  ?f2<-(pada_info (group_head_id ?id1)(group_ids  $?grp_ids1)(pada_head ?ph))
- (test (member$ ?id $?grp_ids))
  ?f3<-(id-current_id  ?kri ?current_id)
- ?f4<-(current_id-group_members ?current_id $?grp_ids)
+ ?f4<-(current_id-group_members ?current_id $?c_ids)
  ?f5<-(id-current_id  ?id1 ?current_id1)
  ?f6<-(current_id-group_members ?current_id1 $?grp_ids1)
+ (test (member$ ?id $?c_ids))
  =>
 	(retract ?f3 ?f4 ?f5 ?f6)
  	(if (eq ?kri ?current_id) then
 		(generate_initial_point ?kri)
-                (assert (to_be_grouped_ids ?kri $?grp_ids ?grp_ids1))
- 		(printout ?*debug* "non_finite_kriyA_pada2 "?PH "  " (implode$  $?grp_ids) crlf)
+                (assert (to_be_grouped_ids ?kri $?c_ids ?grp_ids1))
  	else
 		(generate_incremented_point ?PH ?kri)
-                (assert (to_be_grouped_ids ?kri $?grp_ids ?grp_ids1))
- 		(printout ?*debug* "non_finite_kriyA_pada2 "?PH "  " (implode$  $?grp_ids) crlf)
+                (assert (to_be_grouped_ids ?kri $?c_ids ?grp_ids1))
  ))
  ;-------------------------------------------------------------------------------------------------------------
  (defrule test_for_conj
@@ -458,6 +456,7 @@
  	(printout ?*debug* "test_for_conj "?PH "  " (implode$  $?grp_ids) crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
+ ;getting list of ids for non_finite_kriyA
  (defrule test_for_non_finite_kriyA
  (declare (salience 970))
  ?f0<-(prep_id-relation-anu_ids  ? ?rel ?kri ?id)
@@ -474,6 +473,7 @@
  	(printout ?*debug* "test_for_non_finite_kriyA  "?kri "  " (implode$  $?grp_mems)  crlf)
 )
  ;-------------------------------------------------------------------------------------------------------------
+ ;getting list of ids for non_finite_kriyA
  (defrule test_for_non_finite_kriyA1
  (declare (salience 969))
  ?f0<-(prep_id-relation-anu_ids  ?id to-infinitive ?to ?kri)
@@ -516,10 +516,11 @@
  	(printout ?*debug* "non_finite_order1-2  "?kri "  " (implode$  $?grp_mems) crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
+ ;But my efforts to win his heart have failed.
  (defrule non_finite_order1-3
  (declare (salience 959))
  ?f0<-(non_finte_verb_unordered_list ?kri $?grp_mems)
- ?f1<-(prep_id-relation-anu_ids  ?id viSeRya-RaRTI_viSeRaNa ?id1 ?id)
+ ?f1<-(prep_id-relation-anu_ids  ?pid viSeRya-RaRTI_viSeRaNa ?id1 ?id)
  (test (and (member$ ?id $?grp_mems)(member$ ?id1 $?grp_mems)))
  =>
  	(retract ?f0 ?f1)
@@ -533,7 +534,7 @@
  (defrule non_finite_order2
  (declare (salience 960))
  ?f0<-(non_finte_verb_unordered_list ?kri $?grp_mems)
- ?f1<-(prep_id-relation-anu_ids  ?id  ?rel ?kri ?id)
+ ?f1<-(prep_id-relation-anu_ids  ?pid  ?rel ?kri ?id)
   (test (neq (str-index "-" ?rel)  FALSE))
   (test (neq (str-index "_" ?rel)  FALSE))
   (test (or (eq (sub-string 1 (- (str-index "-" ?rel) 1) ?rel) "viSeRya")(eq (sub-string 1 (- (str-index "-" ?rel) 1) ?rel) "kqxanwa")))
