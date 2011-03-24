@@ -1338,7 +1338,7 @@ ead-cat " to "ids-cmp_mng-head-cat-mng_typ ".
 
 
  27-08-10
- --------
+ ========
  Added Debug information for Open-Logos in these files:
         relation_debug.clp
         lwg_debug.clp
@@ -1354,28 +1354,28 @@ ead-cat " to "ids-cmp_mng-head-cat-mng_typ ".
  
 
  08-09-10
- --------
+ ========
  New stanford version(stanford-parser-2010-08-20.tgz) is updated in anu_testing/stanford-parser/
  Steps to Update New version is added inside README
 
  06-11-10
-----------
+ ========
  1.  Created  a new file ol_number.clp  for OL parser. As OL parser itself gives number information.
  2.  Rules for Mapping Number are added in ol_parser_id_mapping.clp.
 
  07-11-10
- --------
+ ========
  For running Anusaaraka from a certain point onwards. 'step-debug' is  added in bin.
  Readme for step-debug is available inside it.
  
 
  01-12-10
- --------
+ ========
   Removed all rules in ol_parserid_wordid_mapping.clp  and file is modified again for mapping RES IDS with WORD IDS.
   Note: Now mapping is done based on word.dat file.
 
  08-12-10
- --------
+ ========
  Modified subject-conjunction relation to kriyA-conjunction  in following clip files
  In dummy facts agreement.clp            	GNP_agreement.clp
       		hindi_meaning.clp               pada_ids.clp
@@ -1395,7 +1395,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 				where.clp  were.clp
 
  10-12-10
- --------
+ ========
  1. Removed punct.c program (b'coz punctuation is already generated from word.c/ol_word.c program)
     (Note : punct.c file is available in anu_testing-19-11-10.tgz )
  2. Modified Anusaaraka.sh,Anusaaraka_ol.sh, Anusaaraka_link.sh, Anusaaraka_stanford.sh to remove punct.c
@@ -1403,7 +1403,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  4. To handle punctuations like parenthesis, percentage, dollar, rules are modified in hindi_sentence.clp and create_xml_file.clp (With this Calling interface problems are solved)
 
  14-12-10
- -------
+ ========
  1. OL parser is integrated with Link and Stanford parsers in Anusaaraka_all.sh.
  2. check_ol_failure.py is created to check the status of OL parser(passed/failed).
  3. transform_words.py,transform_words.txt , myrun.sh, stanford-postagger-full-2010-05-26 are added in bin to run Anusaaraka_all.sh
@@ -1411,7 +1411,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  
 
  16-12-10
- --------
+ ========
  Updated new version of Stanford parser (stanford-parser-2010-11-30.tgz ) in anu_testing/stanford-parser/
  Relatively updated in Anusaaraka.sh,Anusaaraka_stanford.sh, anu_compile.sh 
  (Note: stanford-parser-2010-08-20 is used presently. 
@@ -1423,12 +1423,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         If at all we need to run older or new version then the current version need to be commented and the required version need to be uncommented in the following files : Anusaaraka_stanford.sh , Anusaaraka.sh anu_compile.sh)
  
  26-12-10
- --------
+ ========
  Removed ol_word.c  programme and word.c programme is modified such that it works for all three parsers (ie. Link,OL,Std)
 
  
  28-12-10
- --------
+ ========
   kriyA-lupwa_prep_saMbanXI  relation is now changed to kriyA-aXikaraNavAcI_avyaya 
   Above relation is modified in dummy facts in following files:
 	1. agreement.clp
@@ -1451,7 +1451,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   In WSD , relation is replaced in above.clp     get.clp        next.clp
 
   29-12-10
-  --------
+  ========
   1. Added few rules in add_snt_mrkr.lex  (for pre-processing the sentence in correct way.).
   2. Updated verified_ol(533) and verified(556)
   3. OL parser splits the sentence with ':' . for this purpose ol_stdenglish.sh file is created(on adive of Chaitanya Sir).
@@ -1541,7 +1541,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 		sd_verified (343)
 
 19-01-11
---------
+========
  1. Renamed 'using-parser-ids' fact as 'relation-parser_ids' and also  replaced 'L' id with 'P' id in following files:
      01.run_openlogos.py		02.lwg_openlogos.pl		03.pada_openlogos.pl	
      04.missing_pada.pl			05.ol_prep.pl			06.lwg_disambiguation.clp		
@@ -1575,7 +1575,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                      
 
 27-01-11
---------
+========
  1. Modified run_openlogos.py
  2. Added Shabdanjali in interface.For doing this updated Anusaaraka.sh and added Anusaaraka_site.sh & change-html.pl program
  3. Modified debugging tool for renaming fact 'using-parser-ids' to 'relation-parser-ids' and 'relation-anu_ids' which ever
@@ -1632,7 +1632,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                 verified     (559)
 
 04-02-11
---------
+========
  1. In sd_relation_rules.clp:
        Added:  Four rules are added to handle relative clauses 
                New rule to get 'AjFArWaka_kriyA' relation.
@@ -1742,8 +1742,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  	    prepare_apertium_input.clp 	vibakthi.clp
 17. Updated Log.
 
-22-02-11
----------
+ 22-02-11
+ ========
  1. In WSD:
        Modified: to.clp, turn.clp, have.clp, high.clp, public.clp, a.clp, by.clp, just.clp, boat.clp, shop.clp and second.clp
  2. In sd_relation_rules.clp:
@@ -1802,8 +1802,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 23. Updated Log.
 
 
-03-03-11
---------
+ 03-03-11
+ ========
  1. sd_pada.clp
               Removed  : 'prep_pada_conj' rule and merged it in 'add_single_prep'
  2. stanford-parser-2010-11-30: Earlier, we were running Stanford Parser twice: once for getting relation information & once for getting POS information. Now the programs are modified in such a way that both the informations are extracted by running the parser only once.
@@ -1872,7 +1872,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 
 
  09-03-11
- -------- 
+ ======== 
   1. WSD: 
          Modified: high.clp, shop.clp, at.clp, a.clp, turn.clp, on.clp, by.clp, known.clp, is_en_tam.clp, vacant.clp,                           consider.clp
          Added   : situate.clp
@@ -1920,7 +1920,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   22. Updated Log.
 
   15-03-11
-  --------
+  ========
   1. Removed "hindi_tam_rules.clp" and created this file as gdbm with name hindi_default_tam.gdbm.
   2. In tam_meaning.clp:
        Added : three new rules "rule_for_tam-0" , "get_tam_from_database" and "default_tam_mng1" to handle default tams.
@@ -1959,7 +1959,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   23. Updated Log.
 
  23-03-11
- --------
+ ========
  1. In step-debug,
      Added step-debug for all three parsers:
      Deleted following files:
@@ -1994,10 +1994,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                sd_verified  (400)  new_verified (572)   verified_ol (551)  verified (595)
  17. Updated Log.
 
- 23-03-11
+ 24-03-11
  ========
  
-  1.  WSD :  go.clp   play.clp   
+  1.  WSD : Modified: go.clp, play.clp.
   2.  Renamed pada_point_concept_rules.clp  as pada_prawiniXi_id_nodation.clp in
         run_modules_link.bat,    run_modules_std.bat  and    run_modules_ol.bat
   3.  Modified pada_info template (slot as multislot for preposition) in the following files :
@@ -2065,7 +2065,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	Removed  :  PP_vib and get_hin_mng_list
 	Modified :  vib_for_multiple_prep
   24. Modified bin/run_sentence_link.sh  to remove link_relation_info.dat 
-  25. Modified sd_ver_output  verified_output_ol  new_ver_output
-  26. Updated new_verified (573)
-  27. Updated Log
- 
+  25. Removed pada_ids.clp and modify_ol_pada.clp from create_binary_files.clp to generate bclp.
+  26. Modified sd_ver_output, verified_output_ol, new_ver_output
+  27. Updated new_verified (573)
+  28. Updated Log
