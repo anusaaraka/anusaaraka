@@ -33,13 +33,14 @@
 
 
 
-
+;Added "call" in the list (Meena 23.3.11)
+;He was called simply Clint Jr. because his Daddy was Clint Sr..
 ; Protoplasm is known as the physical basis for life.
 (defrule was_en_tam1
 (declare (salience 4900))
 (id-TAM ?id was_en)
 ?mng <-(meaning_to_be_decided ?id)
-(id-root ?id1  know)
+(id-root ?id1  know|call)
 =>
 (retract ?mng)
 (assert (id-E_tam-H_tam_mng ?id was_en yA_jAwA_WA))
@@ -58,7 +59,7 @@
 (declare (salience 4800))
 (id-TAM ?id was_en)
 ?mng <-(meaning_to_be_decided ?id)
-(kriyA-subject ?id ?id1)
+(or(kriyA-subject ?id ?id1)(kriyA-object ?id ?id1))
 (or(id-root ?id2 about|for|in|out|with|by)(kriyA-kriyA_viSeRaNa ?id ?id2))
 (not(id-root ?id1 spell))
 ;(test(> ?id2 ?id))
@@ -98,7 +99,7 @@
 (declare (salience 4850))
 (id-TAM ?id was_en)
 ?mng <-(meaning_to_be_decided ?id)
-(id-root ?id ask)
+(id-root ?id ask|found)
 =>
 (retract ?mng)
 (assert (id-E_tam-H_tam_mng ?id were_en yA_gayA_WA))

@@ -65,7 +65,9 @@
   cd $HOME_open_logos/testapi
   cp testolgs.sh TransL_JobControlArguments apitest_settings.txt $HOME_anu_tmp/
   cd $HOME_anu_tmp
-  cp $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt $HOME_anu_tmp/apitest.input
+  sed 's/ABBRDOT/./g' $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt_tmp  #Ex: He was called simply Clint Jr. because his Daddy was Clint Sr.. 
+  mv $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt_tmp  $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt
+  cp  $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt   $HOME_anu_tmp/apitest.input
   sh testolgs.sh >/dev/null
   cp apitest.input-EG-TR.diag $MYPATH/tmp/$1_tmp/one_sentence_per_line-diag.txt 
 

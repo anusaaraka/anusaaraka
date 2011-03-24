@@ -43660,9 +43660,6 @@ engravings	XAwu-lakadZI_Axi_para_ciwra_Koxane_kI_vixyA
 engrossed	mote_akRaroM_meM_liKanA
 engrosses	mote_akRaroM_meM_liKanA
 engrossing	mote_akRaroM_meM_liKanA
-engulfed	nimagna_kara
-engulfing	nimagna_kara
-engulfs	nimagna_kara
 enhanced	baDZAnA
 enhancement's	viswAra
 enhancements'	viswAra
