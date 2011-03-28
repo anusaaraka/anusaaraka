@@ -280,11 +280,11 @@
 	(if (eq ?viSeRya ?current_id) then
 		(generate_initial_point ?viSeRya)
 		(assert (viSeRaNa_ids ?viSeRya $?grp_ids ?viSeRaNa))
-		(printout ?*debug* "viSeRaNa_pada " ?viSeRya" " ??viSeRaNa"  "(implode$  $?grp_ids) crlf)
+		(printout ?*debug* "viSeRaNa_pada " ?viSeRya" " ?viSeRaNa"  "(implode$  $?grp_ids) crlf)
 	else
 		(generate_incremented_point ?PH ?viSeRya)
 		(assert (viSeRaNa_ids ?viSeRya $?grp_ids ?viSeRaNa))
-		(printout ?*debug* "viSeRaNa_pada " ?viSeRya" " ??viSeRaNa"  "(implode$  $?grp_ids) crlf)
+		(printout ?*debug* "viSeRaNa_pada " ?viSeRya" " ?viSeRaNa"  "(implode$  $?grp_ids) crlf)
  	)
  )
  ;-------------------------------------------------------------------------------------------------------------

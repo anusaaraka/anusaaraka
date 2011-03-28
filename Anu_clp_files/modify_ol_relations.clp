@@ -182,6 +182,9 @@
 (test (eq ?pid1 (nth$ (length $?ids) $?ids)))
 (test (eq (string_to_integer ?head)(+ (string_to_integer ?pid2) 1)))
 (test (neq ?head ?pid))
+(ol_res_id-word_id-word   ?id  ?i1   ?wrd)
+(test (eq (string_to_integer ?id) (- (string_to_integer ?head) 1)))  
+(test (neq ?wrd punctuation_mark))  ;Madras, or Chennai as it is now called, is known as the gateway of southern india. 
 =>
 (bind ?len (length $?ids))
         (loop-for-count (?i 1 ?len) do

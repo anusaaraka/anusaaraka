@@ -2070,20 +2070,22 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   27. Updated new_verified (573)
   28. Updated Log
 
-  24-03-11
+  28-03-11
   ========
   1. WSD: Modified: was_en_tam.clp
+          Added   : or.clp
   2. Modified abbr1.lex file to handle abbrevation type words.
   3. Modified Anusaaraka_ol.sh, Anusaaraka_all.sh, run_sentence_ol.sh, run_sentence_link.sh, run_sentence_stanford.sh to
      handle above abbrevation type words.
-  4. Updated changes_in_databases.
-  5. Modified and updated new_ver_output, sd_ver_output, verified_output_ol and verified_output .
-  6. Updated step-debug all files and README for step-debug.
-  7. Modified following rules in pada_prawiniXi_id_nodation.clp :
+  4. Modified and updated new_ver_output, sd_ver_output, verified_output_ol and verified_output .
+  5. Updated step-debug all files and README for step-debug.
+  6. Modified following rules in pada_prawiniXi_id_nodation.clp :
       non_finite_order2  , non_finite_kriyA_pada2, non_finite_kriyA_pada1       , non_finite_order7  , non_finite_kriyA_pada       viSeRaNa_pada      , non_finite_order1-3   , modifying_pada_for_increment1,  non_finite_order4 , non_finite_order6  
       non_finite_order1-1, non_finite_order1-2   , modifying_pada_for_increment ,  non_finite_order4 , non_finite_order5 
-      non_finite_order8  , non_finite_order9    and  non_finite_order10
-  8. Modified "vib_for_single_prep" and "vib_for_multiple_prep " rules in vibakthi.clp
-  9. Updated following files:
+      non_finite_order8  , non_finite_order9    ,  viSeRaNa_pada and  non_finite_order10
+  7. Modified "vib_for_single_prep" and "vib_for_multiple_prep " rules in vibakthi.clp
+  8. Modified "getting_conj_components" rule in modify_ol_relations.clp to handle conjunction components.
+  9. Updated changes_in_databases.
+  10.Updated following files:
             new_verified (575)       sd_verified(401)   verified_ol (553)
-  10. Updated Log.
+  11.Updated Log.
