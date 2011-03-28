@@ -16,7 +16,7 @@
         (assert (id-current_id  ?viSeRya ?PH))
         (assert (current_id-group_members ?PH ?viSeRya))
  )
- ;-------------------------------------------------------------------------------------------------------------
+ ;----------------------------------------------------------------------------------------------------------------------
  (deffunction  generate_incremented_point (?PH ?id)
         (bind ?PH (str-cat ?PH ""))
         (bind ?pos (str-index "." ?PH))
@@ -25,6 +25,13 @@
         (bind ?PH (string-to-field (str-cat (sub-string 1 ?pos ?PH) ?sub-str)))
         (assert (id-current_id  ?id ?PH))
         (assert (current_id-group_members ?PH ?id))
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ (deffunction generate_order (?id ?id1 ?kri $?grp_mems)
+        (bind $?grp_mems (delete-member$ $?grp_mems ?id))
+        (bind ?pos (member$ ?id1  $?grp_mems))
+        (bind $?grp_mems (insert$ $?grp_mems ?pos ?id))
+        (assert (non_finte_verb_unordered_list ?kri $?grp_mems))
  )
  ;====================================   Pada formation ========================================================
  (defrule retract_cntrl_fact
@@ -233,6 +240,7 @@
  	(printout ?*debug* "PP_pada2 " ?PH" " (implode$  $?grp_ids) crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
+ ;Only for Open-Logos-Parser
  ;Added by Shirisha Manju (18-03-11)
  ;Everyone should enjoy each and every activity that he does.
  (defrule ol_grouped_ids_pada
@@ -272,9 +280,11 @@
 	(if (eq ?viSeRya ?current_id) then
 		(generate_initial_point ?viSeRya)
 		(assert (viSeRaNa_ids ?viSeRya $?grp_ids ?viSeRaNa))
+		(printout ?*debug* "viSeRaNa_pada " ?viSeRya" " ??viSeRaNa"  "(implode$  $?grp_ids) crlf)
 	else
 		(generate_incremented_point ?PH ?viSeRya)
 		(assert (viSeRaNa_ids ?viSeRya $?grp_ids ?viSeRaNa))
+		(printout ?*debug* "viSeRaNa_pada " ?viSeRya" " ??viSeRaNa"  "(implode$  $?grp_ids) crlf)
  	)
  )
  ;-------------------------------------------------------------------------------------------------------------
@@ -292,7 +302,6 @@
         (assert (id-current_id ?id ?c_id))
         (assert (current_id-group_members ?c_id $?grp_ids))
         (modify ?f3 (group_ids $?grp_ids)(pada_head ?c_id))
-	(printout ?*debug* "modifying_pada_for_increment "?PH"  "?c_id " " (implode$  $?grp_ids) crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (03-03-11)
@@ -361,7 +370,6 @@
         (assert (id-current_id ?id ?c_id))
         (assert (current_id-group_members ?c_id $?grp_ids))
 	(modify ?f3 (pada_head ?c_id))
-	(printout ?*debug* "modifying_pada_for_increment1 "?PH"  "?c_id " " (implode$  $?grp_ids) crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------
  (defrule non_finite_kriyA_pada
@@ -384,9 +392,11 @@
  	(if (eq ?kri ?current_id) then
 		(generate_initial_point ?kri)
 		(assert (to_be_grouped_ids ?kri $?c_ids ?grp_ids1))
+		(printout ?*debug* "non_finite_kriyA_pada " ?kri "  "$?c_ids" " (implode$  ?grp_ids1) crlf)
  	else
 		(generate_incremented_point ?PH ?kri)
                 (assert (to_be_grouped_ids ?kri $?c_ids ?grp_ids1))
+		(printout ?*debug* "non_finite_kriyA_pada " ?kri" " $?c_ids"  " (implode$ ?grp_ids1) crlf)
  ))
  ;-------------------------------------------------------------------------------------------------------------
  ;But my efforts to win his heart have failed.
@@ -406,9 +416,11 @@
  	(if (eq ?kri ?current_id) then
 		(generate_initial_point ?kri)
 		(assert (to_be_grouped_ids ?kri $?c_ids ?grp_ids1))
+		(printout ?*debug* "non_finite_kriyA_pada1 " ?kri "  " $?c_ids"  "(implode$  ?grp_ids1) crlf)
  	else
 		(generate_incremented_point ?PH ?kri)
                 (assert (to_be_grouped_ids ?kri $?c_ids ?grp_ids1))
+		(printout ?*debug* "non_finite_kriyA_pada1 " ?kri"  " $?c_ids"  "(implode$ ?grp_ids1)crlf)
  ))
  ;-------------------------------------------------------------------------------------------------------------
  ;But my efforts to win his heart have failed.
@@ -429,9 +441,11 @@
  	(if (eq ?kri ?current_id) then
 		(generate_initial_point ?kri)
                 (assert (to_be_grouped_ids ?kri $?c_ids ?grp_ids1))
+		(printout ?*debug* "non_finite_kriyA_pada2 " ?kri" " $?c_ids" "(implode$ ?grp_ids1)crlf)
  	else
 		(generate_incremented_point ?PH ?kri)
                 (assert (to_be_grouped_ids ?kri $?c_ids ?grp_ids1))
+		(printout ?*debug* "non_finite_kriyA_pada2 " ?kri"  " $?c_ids"  "(implode$ ?grp_ids1)crlf)
  ))
  ;-------------------------------------------------------------------------------------------------------------
  (defrule test_for_conj
@@ -495,25 +509,19 @@
  (test (and (member$ ?id $?grp_mems)(member$ ?id1 $?grp_mems)))
  =>
  	(retract ?f0  ?f1)
- 	(bind $?grp_mems (delete-member$ $?grp_mems ?id))
- 	(bind ?pos (member$ ?id1  $?grp_mems))
- 	(bind $?grp_mems (insert$ $?grp_mems ?pos ?id))
- 	(assert (non_finte_verb_unordered_list ?kri $?grp_mems))
- 	(printout ?*debug* "non_finite_order1-1  "?kri "  " (implode$  $?grp_mems) crlf)
+	(generate_order ?id ?id1 ?kri $?grp_mems)
+	(printout ?*debug* "non_finite_order1-1 " ?id" " ?id1"  "?kri" "(implode$  $?grp_mems) crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  (defrule non_finite_order1-2
  (declare (salience 961))
  ?f0<-(non_finte_verb_unordered_list ?kri $?grp_mems)
- ?f1<-(prep_id-relation-anu_ids  ?id saMjFA-to_kqxanwa ?id1 ?kri)
- (test (and (member$ ?kri $?grp_mems)(member$ ?id1 $?grp_mems)))
+ ?f1<-(prep_id-relation-anu_ids  ? saMjFA-to_kqxanwa ?id1 ?id)
+ (test (and (member$ ?id $?grp_mems)(member$ ?id1 $?grp_mems)))
  =>
  	(retract ?f0 ?f1)
- 	(bind $?grp_mems (delete-member$ $?grp_mems ?kri))
- 	(bind ?pos (member$ ?id1  $?grp_mems))
- 	(bind $?grp_mems (insert$ $?grp_mems ?pos ?kri))
- 	(assert (non_finte_verb_unordered_list ?kri $?grp_mems))
- 	(printout ?*debug* "non_finite_order1-2  "?kri "  " (implode$  $?grp_mems) crlf)
+ 	(generate_order ?id ?id1 ?kri $?grp_mems)
+	(printout ?*debug* "non_finite_order1-2 " ?id" " ?id1"  "?kri" "(implode$  $?grp_mems) crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  ;But my efforts to win his heart have failed.
@@ -524,11 +532,8 @@
  (test (and (member$ ?id $?grp_mems)(member$ ?id1 $?grp_mems)))
  =>
  	(retract ?f0 ?f1)
- 	(bind $?grp_mems (delete-member$ $?grp_mems ?id))
-  	(bind ?pos (member$ ?id1  $?grp_mems))
- 	(bind $?grp_mems (insert$ $?grp_mems ?pos ?id))
- 	(assert (non_finte_verb_unordered_list ?kri $?grp_mems))
- 	(printout ?*debug* "non_finite_order1-3  "?kri "  " (implode$  $?grp_mems) crlf)
+	(generate_order ?id ?id1 ?kri $?grp_mems)
+	(printout ?*debug* "non_finite_order1-3 " ?id" " ?id1"  "?kri" "(implode$  $?grp_mems) crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  (defrule non_finite_order2
@@ -584,11 +589,8 @@
  (test (and(member$ ?id $?grp_mems) (member$ ?id1 $?grp_mems)))
  =>
  	(retract ?f0 ?f1)
- 	(bind $?grp_mems (delete-member$ $?grp_mems ?id))
- 	(bind ?pos (member$ ?id1 $?grp_mems))
- 	(bind $?grp_mems (insert$ $?grp_mems ?pos ?id))
- 	(assert (non_finte_verb_unordered_list ?kri $?grp_mems))
- 	(printout ?*debug* "non_finite_order4  "?kri "  " (implode$  $?grp_mems) crlf)
+	(generate_order ?id ?id1 ?kri $?grp_mems)
+	(printout ?*debug* "non_finite_order4 " ?id" " ?id1"  "?kri" "(implode$  $?grp_mems) crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  (defrule non_finite_order5
@@ -598,11 +600,8 @@
  (test (and(member$ ?id $?grp_mems) (member$ ?id1 $?grp_mems)))
  =>
  	(retract ?f0 ?f1)
- 	(bind $?grp_mems (delete-member$ $?grp_mems ?id))
- 	(bind ?pos (member$ ?id1 $?grp_mems))
- 	(bind $?grp_mems (insert$ $?grp_mems ?pos ?id))
- 	(assert (non_finte_verb_unordered_list ?kri $?grp_mems))
- 	(printout ?*debug* "non_finite_order5  "?kri "  " (implode$  $?grp_mems) crlf)
+	(generate_order ?id ?id1 ?kri $?grp_mems)
+	(printout ?*debug* "non_finite_order5 " ?id" " ?id1"  "?kri" "(implode$  $?grp_mems) crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  (defrule non_finite_order6
@@ -612,11 +611,8 @@
  (test (and(member$ ?id $?grp_mems) (member$ ?id1 $?grp_mems)))
  =>
  	(retract ?f0 ?f1)
- 	(bind $?grp_mems (delete-member$ $?grp_mems ?id))
- 	(bind ?pos (member$ ?id1 $?grp_mems))
- 	(bind $?grp_mems (insert$ $?grp_mems ?pos ?id))
- 	(assert (non_finte_verb_unordered_list ?kri $?grp_mems))
- 	(printout ?*debug* "non_finite_order6  "?kri "  " (implode$  $?grp_mems) crlf)
+	(generate_order ?id ?id1 ?kri $?grp_mems)
+	(printout ?*debug* "non_finite_order6 " ?id" " ?id1"  "?kri" "(implode$  $?grp_mems) crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  (defrule non_finite_order7
@@ -626,11 +622,8 @@
  (test (and(member$ ?id $?grp_mems) (member$ ?id1 $?grp_mems)))
  =>
  	(retract ?f0 ?f1)
- 	(bind $?grp_mems (delete-member$ $?grp_mems ?id))
- 	(bind ?pos (member$ ?id1 $?grp_mems))
- 	(bind $?grp_mems (insert$ $?grp_mems ?pos ?id))
- 	(assert (non_finte_verb_unordered_list ?kri $?grp_mems))
- 	(printout ?*debug* "non_finite_order7  "?kri "  " (implode$  $?grp_mems) crlf)
+	(generate_order ?id ?id1 ?kri $?grp_mems)
+	(printout ?*debug* "non_finite_order7 " ?id" " ?id1"  "?kri" "(implode$  $?grp_mems) crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  (defrule non_finite_order8
@@ -640,11 +633,8 @@
  (test (and(member$ ?id $?grp_mems) (member$ ?id1 $?grp_mems)))
  =>
  	(retract ?f0 ?f1)
- 	(bind $?grp_mems (delete-member$ $?grp_mems ?id))
- 	(bind ?pos (member$ ?id1 $?grp_mems))
- 	(bind $?grp_mems (insert$ $?grp_mems ?pos ?id))
- 	(assert (non_finte_verb_unordered_list ?kri $?grp_mems))
- 	(printout ?*debug* "non_finite_order8  "?kri "  " (implode$  $?grp_mems) crlf)
+	(generate_order ?id ?id1 ?kri $?grp_mems)
+	(printout ?*debug* "non_finite_order8 " ?id" " ?id1"  "?kri" "(implode$  $?grp_mems) crlf)
  )
  ;------------------------------------------------------------------------------------------------------------- 
  (defrule non_finite_order9
@@ -654,11 +644,8 @@
  (test (and(member$ ?id $?grp_mems) (member$ ?id1 $?grp_mems)))
  =>
  	(retract ?f0 ?f1)
- 	(bind $?grp_mems (delete-member$ $?grp_mems ?id))
- 	(bind ?pos (member$ ?id1 $?grp_mems))
- 	(bind $?grp_mems (insert$ $?grp_mems ?pos ?id))
-  	(assert (non_finte_verb_unordered_list ?kri $?grp_mems))
- 	(printout ?*debug* "non_finite_order9  "?kri "  " (implode$  $?grp_mems) crlf)
+	(generate_order ?id ?id1 ?kri $?grp_mems)
+	(printout ?*debug* "non_finite_order9 " ?id" " ?id1"  "?kri" "(implode$  $?grp_mems) crlf)
 )
  ;-------------------------------------------------------------------------------------------------------------
  (defrule non_finite_order10
@@ -668,11 +655,8 @@
  (test (and(member$ ?id $?grp_mems) (member$ ?id1 $?grp_mems)))
  =>
  	(retract ?f0 ?f1)
- 	(bind $?grp_mems (delete-member$ $?grp_mems ?id1))
- 	(bind ?pos (member$ ?id $?grp_mems))
- 	(bind $?grp_mems (insert$ $?grp_mems ?pos ?id1))
- 	(assert (non_finte_verb_unordered_list ?kri $?grp_mems))
- 	(printout ?*debug* "non_finite_order10  "?kri "  " (implode$  $?grp_mems) crlf)
+	(generate_order ?id ?id1 ?kri $?grp_mems)
+	(printout ?*debug* "non_finite_order10 " ?id" " ?id1"  "?kri" "(implode$  $?grp_mems) crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  (defrule non_finite_order11

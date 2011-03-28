@@ -238,37 +238,30 @@
  (declare (salience 701))
  ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(preposition ?pp_id ))
  ?f2<-(id-HM-source ?pp_id ?h_mng ?)
+ (test (neq ?h_mng -))
   =>
-	(if (eq ?h_mng -) then 
-               (modify ?f1 (vibakthi 0))
-        else 
-		(modify ?f1 (vibakthi ?h_mng))
-	)
+	(modify ?f1 (vibakthi ?h_mng))
 	(retract ?f2)
  )
  ;-------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (15-03-11)	 
  ;The people of Orissa are facing grave adversities due to the cyclone. 
+ ;He gave up his lucrative law practice for the sake of the country.
  (defrule vib_for_multiple_prep
  (declare (salience 701))
- ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(preposition $?pp_ids ))
+ ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(preposition $?pp_ids )(vibakthi ?vib))
  ?f2<-(id-HM-source ?id ?h_mng ?)
  (test (> (length $?pp_ids) 1))
- (test (member$ ?id $?pp_ids))
+ (test (and (member$ ?id $?pp_ids)(neq ?h_mng -)))
  =>
 	(bind ?len (length $?pp_ids))
 	(loop-for-count (?i 1 ?len) do
 		(if (eq ?id (nth$ ?i $?pp_ids)) then
-                	(if (eq ?h_mng -) then 
-                       		(modify ?f1 (vibakthi 0))
-               		else 
-                        	(modify ?f1 (vibakthi ?h_mng))
-                	)
-		(retract ?f2)
+                       	(modify ?f1 (vibakthi ?h_mng))
+			(retract ?f2)
 		)
        )
  )
-
  ;------------------------------------------------------------------------------------------
  ; She asked me to guess her age.
  ; I showed them how they should do it .
