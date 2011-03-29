@@ -34340,3 +34340,4 @@ natural language processing	prAkqwa_BARA_saMsAXana	prAkqwa_BARA_saMsAXana	noun	3
 bad manners	aSiRtawA	aSiRtawA	noun	2	RM
 Jama masjid	jAmA_masjixa	jAmA_masjixa	noun	2	RM
 Jumma masjid	jummA_masjixa	jummA_masjixa	noun	2	RM
+beyond the grave	mqwyu_uparAMwa	mqwyu_uparAMwa	preposition	1	RM

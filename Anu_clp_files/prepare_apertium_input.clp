@@ -159,7 +159,18 @@
 	(printout ?*A_fp5* "(id-Apertium_input "?id " ^"?hmng "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^" ?vib "<cat:prsg>$)"  crlf)
 	(printout ?*aper_debug-file* "(id-Rule_name  " ?id " Compound_mng_with_vib )" crlf)
  )
-
+ ;-------------------------------------------------------------------------------------------------------------------------
+ ;Is there life beyond the grave? 
+ (defrule Compound_mng_with_Prep_id
+ (declare (salience 1003))
+ ?f0<-(id-HM-source ?p_id ?hmng Database_compound_phrase_word_mng|Database_compound_phrase_root_mng)
+ (pada_info (group_head_id ?pada_id)(group_cat PP)(group_ids $?ids) (vibakthi ?vib)(number ?num)(case ?case)(gender ?gen)(preposition ?p_id))
+ (test(neq ?vib 0))
+ =>
+        (retract ?f0)
+        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?hmng "<cat:prsg>$)"  crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id " Compound_mng_with_Prep_id )" crlf)
+ )
 ;============================================= wsd/database/idiom word meanings ===========================================
 
 ;Added by Mahalaxmi (16-09-09)
