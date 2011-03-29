@@ -139,7 +139,7 @@ sub generate {
 #if tam is multiword and gnp is (f,p,a), then pass  (tam,fsa) to apertium. and (tam,fpa) in tam database.
     if($kriyA_mula ne ""){
       if(($gen eq "f") && ($kriyA_mula =~ /calA$|KadA$/)){ $kriyA_mula =~ s/A$/I/;}
-
+      if(($num eq "p") && ($kriyA_mula =~ /calA$|KadA$/)){ $kriyA_mula =~ s/A$/e/;} #Ex:When you stand on this rock and face the east, the waves of the bay of bengal lap your feet.
       print "$kriyA_mula";print" ";}
 
 		#for the tam "yA_karawA_WA" and gender (female) pass  gender "m" to yA and "f" to "karawA_WA"

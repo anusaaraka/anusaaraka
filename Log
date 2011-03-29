@@ -2070,7 +2070,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   27. Updated new_verified (573)
   28. Updated Log
 
-  28-03-11
+  29-03-11
   ========
   1. WSD: Modified: was_en_tam.clp
           Added   : or.clp
@@ -2085,7 +2085,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
       non_finite_order8  , non_finite_order9    ,  viSeRaNa_pada and  non_finite_order10
   7. Modified "vib_for_single_prep" and "vib_for_multiple_prep " rules in vibakthi.clp
   8. Modified "getting_conj_components" rule in modify_ol_relations.clp to handle conjunction components.
-  9. Updated changes_in_databases.
-  10.Updated following files:
-            new_verified (575)       sd_verified(401)   verified_ol (553)
-  11.Updated Log.
+  9. Modified FinalGenerate.pl.
+  10.Updated changes_in_databases.
+  11.Updated following files:
+            new_verified (575)    sd_verified(401)   verified_ol (553)
+  12.Updated Log.
