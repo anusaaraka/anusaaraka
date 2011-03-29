@@ -2072,7 +2072,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 
   29-03-11
   ========
-  1. WSD: Modified: was_en_tam.clp
+  1. WSD: Modified: was_en_tam.clp, lap.clp, face.clp
           Added   : or.clp
   2. Modified abbr1.lex file to handle abbrevation type words.
   3. Modified Anusaaraka_ol.sh, Anusaaraka_all.sh, run_sentence_ol.sh, run_sentence_link.sh, run_sentence_stanford.sh to
@@ -2093,5 +2093,5 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  14. Removed new_verified and new_ver_output
  15. Added link_verified and link_ver_output (178)
  16. Updated following files:
-            sd_verified(402)   verified_ol (553)
+            sd_verified(403)   ol_verified (554)
  17. Updated Log.

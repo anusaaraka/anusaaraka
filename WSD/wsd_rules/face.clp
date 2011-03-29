@@ -48,9 +48,30 @@
 
 
 
+;Added by Meena(29.3.11)
+;When you stand on this rock and face the east, the waves of the bay of bengal lap your feet.
+(defrule face3
+(declare (salience 4800))
+(id-root ?id face)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object ?id ?id1)
+(id-root ?id1 east|west|north|south)
+=>
+(retract ?mng)
+(assert (kriyA_id-object_viBakwi ?id kI_ora))
+(assert (id-wsd_root_mng ?id muzha_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  face.clp      face3   "  ?id "  muzha_kara )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  face.clp      face3   "  ?id " kI_ora )" crlf))
+)
+
+
+
+
+
 ;Added by Meena(24.02.10)
 ;The people of Orissa are facing grave adversities due to the cyclone .
-(defrule face3
+(defrule face4
 (declare (salience 4700))
 (id-root ?id face)
 ?mng <-(meaning_to_be_decided ?id)
@@ -60,16 +81,15 @@
 (assert (kriyA_id-object_viBakwi ?id kA))
 (assert (id-wsd_root_mng ?id sAmanA_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  face.clp      face3   "  ?id "  sAmanA_kara )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  face.clp      face3   "  ?id " kA )" crlf)
-)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  face.clp      face4   "  ?id "  sAmanA_kara )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  face.clp      face4   "  ?id " kA )" crlf))
 )
 
 
 
 
 ;Salience reduced by Meena(24.02.10)
-(defrule face4
+(defrule face5
 (declare (salience 0))
 ;(declare (salience 4700))
 (id-root ?id face)
@@ -79,7 +99,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id sAmanA_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  face.clp 	face4   "  ?id "  sAmanA_kara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  face.clp 	face5   "  ?id "  sAmanA_kara )" crlf))
 )
 
 ;default_sense && category=verb	sAmanA-honA/kara	0
