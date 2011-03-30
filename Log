@@ -2086,12 +2086,16 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   7. Modified "vib_for_single_prep" and "vib_for_multiple_prep " rules in vibakthi.clp
   8. Modified "getting_conj_components" rule in modify_ol_relations.clp to handle conjunction components.
   9. Added "Compound_mng_with_Prep_id" rule in prepare_apertium_input.clp
- 10. Modified FinalGenerate.pl.
- 11. Updated changes_in_databases.
- 12. Renamed "verified_ol" as "ol_verified"  and "verified_output_ol" as  "ol_ver_output"
- 13. Modified small_sent_ver_output, small_sent_verified, verified  and verified_output
- 14. Removed new_verified and new_ver_output
- 15. Added link_verified and link_ver_output (178)
- 16. Updated following files:
+ 10. gender_info.clp :
+        Added    : retract_id_with_no_hin_mng, get_female_gender, get_female_gender_with_cat, get_male_gender  and
+                   get_male_gender_with_cat
+        Modified : get_gender_for_PropN, get_gender_from_female_list and get_gender_from_male_list
+ 11. Modified FinalGenerate.pl.
+ 12. Updated changes_in_databases.
+ 13. Renamed "verified_ol" as "ol_verified"  and "verified_output_ol" as  "ol_ver_output"
+ 14. Modified small_sent_ver_output, small_sent_verified, verified  and verified_output
+ 15. Removed new_verified and new_ver_output
+ 16. Added link_verified and link_ver_output (178)
+ 17. Updated following files:
             sd_verified(403)   ol_verified (554)
- 17. Updated Log.
+ 18. Updated Log.
