@@ -12,7 +12,7 @@ switch68_pos=[]
 
 #--------------------------#information from 'RESOLVED SWORK RECORDS'#--------------------------------------------
 RES_SWRK_TAB = []; count =0; prk=0; INPUT = []; inp_cnt =0
-tran_cnt = 0; OP_TAR_ARR_TRAN3 = []; OTAR_TRAN3 = []
+tran_cnt = 0; OP_TAR_ARR_TRAN3 = []
 i=4; semwrk_prep=[]
 SCON_FOR_tran4 = []; st4c =0
 inp=''; sent=''; sent_len=0
@@ -83,7 +83,6 @@ for f in file(sys.argv[1]):
                             mc=0
         if tran_cnt == 3:
             OP_TAR_ARR_TRAN3.append(f.split())
-            OTAR_TRAN3.append(f.split())
             t3 = f.split()
             if len(t3)>0:
                 if 'SWORKO' in t3:
@@ -132,18 +131,6 @@ for f in file(sys.argv[1]):
             if len(b) == 21:
 	        sconId_resId[b[0]] = b[10]
 
-
-rel_fp = open("ol_original_relation_tmp.dat","w")
-B = ''; S = ''; O = ''
-for i in OTAR_TRAN3:
-	B = S
-	S = O
-	O = i
-	if 'BOS' in B and 'OPADRO' in S and 'SCONPO' in O:
-	    for j in O:
-		if j == '2':
-		    rel_fp.write("(prep_id-relation-parser_ids - wall_conjunction P2)\n") 
-#Ex. However the user needs some training to use the software effectively.
 	
 scon_res_id_map = open("scon_id_res_id.dat", "w")
 for i in xrange(1,len(SCON_FOR_tran4)-1):
@@ -281,22 +268,39 @@ for i in xrange(len(semwrk_verb)):
 	    if int(semwrk_verb[i][j])>int(switch68_pos[k]):
 		semwrk_verb[i][j]=str(int(semwrk_verb[i][j])-1)
 #----------------------------------------------------------------------
+#-----------------------------------------build preposition dictionary from semwrk values----------------------
+prep_counter=2
+tmp_prep=''
+tmp_head=''
+for j in xrange(0,len(semwrk_prep)):
+    for i in xrange(4,len(semwrk_prep[j]),4):
+        if semwrk_prep[j][i]=='13' and i+7<=len(semwrk_prep[j]):
+            for hr in xrange(len(RES_SWRK_TAB)):
+                if RES_SWRK_TAB[hr][0]==semwrk_prep[j][i+3]:
+                    tmp_prep=RES_SWRK_TAB[hr][35]
+                if RES_SWRK_TAB[hr][0]==semwrk_prep[j][i+7]:
+                    tmp_head=RES_SWRK_TAB[hr][35]
+            if semwrk_prep[j][i+7] in prep_dict_id_semwrk.keys() and prep_dict_id_semwrk[semwrk_prep[j][i+7]]!=semwrk_prep[j][i+3]:
+                prep_dict_id_semwrk[semwrk_prep[j][i+7]+'_part_'+`prep_counter`]=semwrk_prep[j][i+3]
+                prep_dict_word_semwrk[tmp_head+'_part_'+`prep_counter`]=tmp_prep
+                prep_counter+=1
+            else:
+                prep_dict_id_semwrk[semwrk_prep[j][i+7]]=semwrk_prep[j][i+3]
+                prep_dict_word_semwrk[tmp_head]=tmp_prep
+#NOTE : There are two separate preposition dictionaries built from semwrk values and tran3 output. If more than one preposition is attached to a word, it is indicated by the word '_part_'.
+#-------------------------------------------------------------------------------------------------------------
+
 #get information from 'THE SWORK TABLE IN tran4'
 
-tran3_components = []; tran3 = []
+tran3_components = []; tran3 = []; pobj_prep={}
 for i in xrange( len(OP_TAR_ARR_TRAN3)):
-        cur = i
         if len(OP_TAR_ARR_TRAN3[i]) > 0:
-                a = OP_TAR_ARR_TRAN3[i][0]
                 if 'SCONPO' in OP_TAR_ARR_TRAN3[i]:
                         tran3_components.append( OP_TAR_ARR_TRAN3[i])
                 if "SWORKO" in OP_TAR_ARR_TRAN3[i]:
-                        if OP_TAR_ARR_TRAN3[i][0].endswith(')'):
-                                OP_TAR_ARR_TRAN3[i].insert(0, 'added-by-Sukhada:)')
-                                tran3.append( OP_TAR_ARR_TRAN3[i])
-#Openlogos writes word-ids in paranthisis e.g. ( 1), ( 2) ... (10) and so on. Single digit ids have a space after opening paranthisis and if the word_id is of double digits there is no space left after the opening paranthisis, so  while splitting the ids on the basis of space the lenght becomes short, therefor, I'm inserting an extra element in the list namely 'added-by-Sukhada'.
-                        else:
-                                tran3.append( OP_TAR_ARR_TRAN3[i])
+                        tran3.append( OP_TAR_ARR_TRAN3[i])
+		if 'SCONHF' in OP_TAR_ARR_TRAN3[i]:
+			pobj_prep[OP_TAR_ARR_TRAN3[i-5][7]]= OP_TAR_ARR_TRAN3[i][-1]
 
 
 SWRK_TAB_TRN4_0 = []
@@ -463,6 +467,18 @@ for j in xrange(1,len(OP_TAR_ARR_TRAN3)):
                         matrix[0][-1].extend(OP_TAR_ARR_TRAN3[j])
 #modified on 13-07-10 for "I saw the man who you love." type sentences where 'you' was missing in pada and relations.
 
+rel_fp = open("ol_original_relation_tmp.dat","w")
+B = ''; S = ''; O = ''
+for i in OP_TAR_ARR_TRAN3:
+        B = S
+        S = O
+        O = i
+        if 'BOS' in B and 'OPADRO' in S and 'SCONPO' in O:
+            for j in O:
+                if j == '2':
+                    rel_fp.write("(prep_id-relation-parser_ids - wall_conjunction P2)\n")
+#Ex. However the user needs some training to use the software effectively.
+
 # Within pada relations: 
 id_word_tuple = id_word.items()
 kriyA_id = ''; upasarga_id = ''
@@ -535,27 +551,6 @@ for i in xrange(0,len(matrix[0])):
 			prep_dict_word[matrix[0][i][8]]=RES_SWRK_TAB[j][35]
 # The above verb-adverb relations computed from semwrk values.
 #--------------------------------------------------------------------------------------------------------------
-#-----------------------------------------build preposition dictionary from semwrk values----------------------
-prep_counter=2
-tmp_prep=''
-tmp_head=''
-for j in xrange(0,len(semwrk_prep)):
-    for i in xrange(4,len(semwrk_prep[j]),4):	
-	if semwrk_prep[j][i]=='13' and i+7<=len(semwrk_prep[j]):
-	    for hr in xrange(len(RES_SWRK_TAB)):
-		if RES_SWRK_TAB[hr][0]==semwrk_prep[j][i+3]:
-		    tmp_prep=RES_SWRK_TAB[hr][35]
-		if RES_SWRK_TAB[hr][0]==semwrk_prep[j][i+7]:
-		    tmp_head=RES_SWRK_TAB[hr][35]
-	    if semwrk_prep[j][i+7] in prep_dict_id_semwrk.keys() and prep_dict_id_semwrk[semwrk_prep[j][i+7]]!=semwrk_prep[j][i+3]:
-		prep_dict_id_semwrk[semwrk_prep[j][i+7]+'_part_'+`prep_counter`]=semwrk_prep[j][i+3]
-		prep_dict_word_semwrk[tmp_head+'_part_'+`prep_counter`]=tmp_prep
-		prep_counter+=1
-	    else:
-		prep_dict_id_semwrk[semwrk_prep[j][i+7]]=semwrk_prep[j][i+3]
-		prep_dict_word_semwrk[tmp_head]=tmp_prep
-#NOTE : There are two separate preposition dictionaries built from semwrk values and tran3 output. If more than one preposition is attached to a word, it is indicated by the word '_part_'.
-#-------------------------------------------------------------------------------------------------------------
 conjunction_list = ['so','that','because','where','when','but','without','after']
 jo_samA = ['who','which','whom','that','where']
 copula = ['is','are','am', 'was','were']
@@ -572,7 +567,6 @@ lupwa_sub_kri=''
 if tran3[1][4]=='2' and tran3[1][5] == '886' and tran3[2][4]=='1':
     rel_fp.write("(prep_id-relation-parser_ids - lupwa_subject_kriyA-subject_samAnAXikaraNa  P%s P%s)\n"%(tran3[1][7], tran3[2][7]))
     lupwa_sub_kri=tran3[1][7]
-    #print "(prep_id-relation-parser_ids - lupwa_subject_kriyA-subject_samAnAXikaraNa  P%s P%s)\n"%(tran3[1][7], tran3[2][7])
 #Ex. Be quiet, she said. Be a doctor.
 
 for i in xrange(len(tran1)):
@@ -584,7 +578,6 @@ for i in xrange(len(tran1)):
 #Ex. Last week I saw a great movie.
         elif tran1[i][0] == '1' and tran1[i][1] == '174'  and tran1[i][4] in kAlavAcI and tran1[i+1][5] != 'SWITCH68' and tran1[i][5] != 'SWITCH68' :
             rel_fp.write("(prep_id-relation-parser_ids - kriyA-kAlavAcI  P%s\tP%s)\n" % (sconId_resId[tran1[i+1][3]], sconId_resId[tran1[i][3]]))
-                #print "(aaaaaaaarser-ids kriyA-kAlavAcI  P%s\tP%s)\n" % (sconId_resId[tran1[i+1][3]], sconId_resId[tran1[i][3]])
 #Ex. The party that night was a big success.
 
 	elif tran1[i][0] == '2' and tran1[i-1][0] == '1'  and tran1[i-1][4] in kAlavAcI and tran1[i][5] != 'SWITCH68' and tran1[i-1][5] != 'SWITCH68':
@@ -644,7 +637,6 @@ for i in xrange(len(tran1)):
         elif ((tran1[i][0] == '2' or tran1[i][0] == '12') and tran1[i+1][0] == '2') and (tran1[i+2][0] == '12') and (tran1[i+3][0] == '1') and tran1[i+2][0] in prep_lst and tran1[i][5] != 'SWITCH68' and tran1[i+1][5] != 'SWITCH68' and tran1[i+2][5] != 'SWITCH68':
 	    prep = sconId_resId[tran1[i+2][3]]
             rel_fp.write("(prep_id-relation-parser_ids P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (prep, return_prep(prep), sconId_resId[tran1[i+1][3]], sconId_resId[tran1[i+3][3]]))
-            #print "(aaaaaaaaaaaaaaaa kriyA-%s_saMbanXI  P%s\tP%s)\n" % (return_prep(prep), sconId_resId[tran1[i+1][3]], sconId_resId[tran1[i+3][3]])
 	    got_prep_rel = prep
 	    prep = ''
 #Ex.    All are GOING TO SCHOOL.
@@ -655,13 +647,11 @@ for i in xrange(len(tran1)):
 
         elif tran1[i-2][0] == '2' and tran1[i-1][0] == '19' and tran1[i-1][4] in prep_lst and tran1[i][0] == '1' and tran1[i][5] != 'SWITCH68' and tran1[i-1][5] != 'SWITCH68' and tran1[i-2][5] != 'SWITCH68':
             rel_fp.write("(prep_id-relation-parser_ids P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (tran1[i-1][3], return_prep(tran1[i-1][3]), tran1[i-2][3], tran1[i][3]))
-#            print "(ssssssssids P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (tran1[i-1][3], return_prep(tran1[i-1][3]), tran1[i-2][3], tran1[i][3])
 #Ex. He is known as the Einstein of India.  
 
         elif tran1[i][0] == '2' and tran1[i+1][0] == '13' and tran1[i+1][4] in prep_lst and tran1[i+2][0] == '1' and (upasarga_id == ''or tran1[i+1][4] != id_word[upasarga_id]) and tran1[i][5] != 'SWITCH68' and tran1[i+1][5] != 'SWITCH68' and tran1[i+2][5] != 'SWITCH68':
             prep = sconId_resId[tran1[i+1][3]]
             rel_fp.write("(prep_id-relation-parser_ids P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (prep, return_prep(prep), sconId_resId[tran1[i][3]], sconId_resId[tran1[i+2][3]]))
-            #print "(bbbbbbbbbbbr-ids kriyA-%s_saMbanXI  P%s\tP%s)\n" % (return_prep(prep), sconId_resId[tran1[i][3]], sconId_resId[tran1[i+2][3]])
             got_prep_rel = prep
             prep = ''
 #Ex.  The man we saw when we went to Paris is here.
@@ -669,7 +659,6 @@ for i in xrange(len(tran1)):
         if tran1[i][0] == '2' and tran1[i+1][0] == '3' and (tran1[i+2][0] == "11" or tran1[i+2][0] == "13" ) and tran1[i+3][0] == '1' and tran1[i+2][0] in prep_lst and tran1[i][5] != 'SWITCH68' and tran1[i+1][5] != 'SWITCH68' and tran1[i+2][5] != 'SWITCH68' and tran1[i+3][5] != 'SWITCH68':
 	    prep = sconId_resId[tran1[i+2][3]]
             rel_fp.write("(prep_id-relation-parser_ids P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (prep, return_prep(prep), sconId_resId[tran1[i][3]], sconId_resId[tran1[i+3][3]]))
-            #print "(cccccccccccccccc kriyA-%s_saMbanXI  P%s\tP%s)\n" % (return_prep(prep), sconId_resId[tran1[i][3]], sconId_resId[tran1[i+3][3]])
 	    got_prep_rel = prep
             prep = ''
 #Ex.   The missiles were ZEROED in on the enemy CAMPS.
@@ -677,7 +666,6 @@ for i in xrange(len(tran1)):
 	elif tran1[i][0] == '2' and tran1[i][4] in prerak_kriyA and tran1[i+1][0] == '1' and tran1[i+2][0] == '2' and tran1[i+2][0] in prep_lst and tran1[i][5] != 'SWITCH68' and tran1[i+1][5] != 'SWITCH68' and tran1[i+2][5] != 'SWITCH68' and tran1[i+3][5] != 'SWITCH68':
             prep = sconId_resId[tran1[i+2][3]]
             rel_fp.write("(prep_id-relation-parser_ids P%s kriyA-%s_saMbanXI P%s\tP%s)\n" % (prep, return_prep(prep), sconId_resId[tran1[i][3]], sconId_resId[tran1[i+3][3]]))
-            #print "(ddddddddddddddds kriyA-%s_saMbanXI P%s\tP%s)\n" % (return_prep(prep), sconId_resId[tran1[i][3]], sconId_resId[tran1[i+3][3]])
 	    got_prep_rel = prep
 	    prep = ''
 #Ex.   The missiles were ZEROED in on the enemy CAMPS.
@@ -685,10 +673,8 @@ for i in xrange(len(tran1)):
         elif tran1[i][0] == '13' and tran1[i-1][0] == '1' and tran1[i+1][0] == '1' and tran1[i-1][5] != 'SWITCH68' and tran1[i+1][5] != 'SWITCH68':
 	    if  tran1[i-1][2] == '57':
 		rel_fp.write("(prep_id-relation-parser_ids P%s kriyA-%s_saMbanXI P%s\tP%s)\n" % (sconId_resId[tran1[i][3]], tran1[i][4], sconId_resId[tran1[i-1][3]], sconId_resId[tran1[i+1][3]]))
-#	        print "(1dddd1111 kriyA-%s_saMbanXI P%s\tP%s)\n" % (tran1[i][4], sconId_resId[tran1[i-1][3]], sconId_resId[tran1[i+1][3]])
 	    else:
                 rel_fp.write("(prep_id-relation-parser_ids P%s viSeRya-%s_saMbanXI P%s\tP%s)\n" % (sconId_resId[tran1[i][3]], tran1[i][4], sconId_resId[tran1[i-1][3]], sconId_resId[tran1[i+1][3]]))
- #               print "(11111ser_ids viSeRya-%s_saMbanXI P%s\tP%s)\n" % (tran1[i][4], sconId_resId[tran1[i-1][3]], sconId_resId[tran1[i+1][3]])
 #Ex. 
 	elif tran1[i][0] == '2' and tran1[i+1][0] == '3' and tran1[i+1][4] in lupwa_prep and tran1[i][5] != 'SWITCH68' and tran1[i+1][5] != 'SWITCH68':
 	    rel_fp.write("(prep_id-relation-parser_ids - kriyA-aXikaraNavAcI_avyaya  P%s\tP%s)\n" % (sconId_resId[tran1[i][3]], sconId_resId[tran1[i+1][3]]))
@@ -703,7 +689,6 @@ for i in xrange(len(tran1)):
 
 if tran1[1][4] == 'there' and (tran1[2][0] == 'seem' or tran1[2][0] == 'appear') and tran1[3][5] != 'SWITCH68':
     rel_fp.write("(prep_id-relation-parser_ids - kriyA-dummy_subject  P%s\tP%s)\n" % (sconId_resId[tran1[2][3]], sconId_resId[tran1[1][3]]))
-#    print "(prep_id-relation-parser_ids - kriyA-dummy_subject  P%s\tP%s)\n" % (sconId_resId[tran1[2][3]], sconId_resId[tran1[1][3]])
 #Ex. There seems to be no acceleration in the rate of Indian economic growth.
 
 for i in xrange(len(RES_SWRK_TAB)):
@@ -736,7 +721,6 @@ for i in xrange(len(trn3)):
     for j in xrange(len(trn3)):
         if trn3[i][1] == trn3[j][1] and trn3[i][0] == '1' and trn3[j][2] == '94' and i != j and (trn3[j+2][0] == '2' or trn3[j+2][0] == '12' )and trn3[j][5] == 'SWITCH68':
             rel_fp.write("(prep_id-relation-parser_ids - viSeRya-jo_samAnAXikaraNa  P%s\tP10000)\n" % sconId_resId[trn3[i][3]])
-   #         print "(111111111111111 viSeRya-jo_samAnAXikaraNa  P%s\tP10000)\n" % sconId_resId[trn3[i][3]]
             pada_fp.write("(pada_info (group_head_id P10000) (group_cat PP) (group_ids P10000) (vibakthi 0) (gender 0) (number 0) (case 0) (person 0) (H_tam 0) (tam_source 0) (preceeding_part_of_verb 0) (preposition 0) (Hin_position 0))\n" )
             original_wrd_fp.write("(parserid-wordid P10000 10000)\n")
             H_mng_fp.write("(id-HM-source 10000 jo Relative_clause)\n")
@@ -746,7 +730,6 @@ for i in xrange(len(trn3)):
             pada_con.write("(pada_control_fact 10000)\n")
             original_wrd.write("(id-original_word 10000 who)\n")
             rel_fp.write("(prep_id-relation-parser_ids - kriyA-object  P%s\tP10000)\n" % sconId_resId[trn3[j+2][3]])
-    #        print "(11111111prep_id-relation-parser_ids - kriyA-object  P%s\tP10000)\n" % sconId_resId[trn3[j+2][3]]
 #Ex. The boy you called yesterday has arrived. The snake the mongoose attacked hissed loudly.
         if i > 2:
              if trn3[i][0] == '20' and trn3[i][1] == '103' and trn3[i][2] == '19' and trn3[i+1][0] == '1' and trn3[i][4] != 'that':
@@ -763,7 +746,6 @@ for i in xrange(len(trn3)):
 
         if trn3[j-1][1] == '591' and trn3[j-1][2] == '53' and trn3[j-1][5] == 'SWITCH68' and trn3[j][0]== '1' and  trn3[j+1][0] == '2':
             rel_fp.write("(prep_id-relation-parser_ids - viSeRya-jo_samAnAXikaraNa  P%s\tP10000)\n" % sconId_resId[trn3[1][3]])
-#            print "(2222222222222er_ids viSeRya-jo_samAnAXikaraNa  P%s\tP10000)\n" % sconId_resId[trn3[1][3]]
             pada_fp.write("(pada_info (group_head_id P10000) (group_cat PP) (group_ids P10000) (vibakthi 0) (gender 0) (number 0) (case 0) (person 0) (H_tam 0) (tam_source 0) (preceeding_part_of_verb 0) (preposition 0) (Hin_position 0))\n" )
             original_wrd_fp.write("(parserid-wordid P10000 10000)\n")
             H_mng_fp.write("(id-HM-source 10000 jo Relative_clause)\n")
@@ -776,16 +758,13 @@ for i in xrange(len(trn3)):
 
         if trn3[i][0] == '1' and trn3[j][0] == '1' and trn3[i][1] == trn3[j][1] and i != j and (trn3[j-1][5] == 'CLS-BOS' or trn3[j-2][5] == 'CLS-BOS') and trn3[i][4] != trn3[j][4] and  trn3[i][5] != 'SWITCH68' and trn3[j][5] != 'SWITCH68':
             rel_fp.write("(prep_id-relation-parser_ids - viSeRya-jo_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[trn3[i][3]], sconId_resId[trn3[j][3]])) 
-#            print "(prep_id-relation-parser_ids - viSeRya-jo_samAnAXikaraNa  P%s\tP%s)" % (sconId_resId[trn3[i][3]], sconId_resId[trn3[j][3]] ) 
 #Ex. I will show you the house where I met your mother. We now know that there are two thousand elements which we can not use to make a good light bulb. 
-
-
 
 rt_fp.close()
 original_wrd_fp.close()
 #%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%#
-gor_counter=0; gor_kriyA=[]; gor_object=[]
 
+gor_counter=0; gor_kriyA=[]; gor_object=[]
 for i in xrange(len(tran3)):
         if tran3[i][4] == '20' and (tran3[i][5] == '942' or tran3[i][5] == '915' or tran3[i][5] == '122') and (tran3[i][6] == '19' or tran3[i][6] == '88') and tran3[i][7] == '2':
             rel_fp.write("(prep_id-relation-parser_ids - wall_conjunction P%s)\n" % sconId_resId[tran3[i][7]])
@@ -793,12 +772,10 @@ for i in xrange(len(tran3)):
 
         if len(tran3) >=5 and tran3[i-4][4] == '20' and tran3[i-4][5] == '450' and tran3[i-4][8] == 'why' and tran3[i-3][4] == '12' and tran3[i-2][4] == '1' and tran3[i-1][4] == '1' and tran3[i][4] == '2':
             rel_fp.write("(prep_id-relation-parser_ids - kriyA-wh_word_hewuvAcI P%s\tP%s)\n" % (sconId_resId[tran3[i][7]], sconId_resId[tran3[i-4][7]]))
-#           print "(aaaaaaaaaaprep_id-relation-parser_ids - kriyA-wh_word_hewuvAcI P%s\tP%s)\n" % (tran3[i][7], tran3[i-4][7]),
 #Ex.  
 
         if len(tran3) >=5 and tran3[i-3][4] == '20' and tran3[i-3][5] == '450' and tran3[i-3][8] == 'why' and tran3[i-2][4] == '12' and tran3[i-1][4] == '1' and tran3[i][4] == '2':
             rel_fp.write("(prep_id-relation-parser_ids - kriyA-wh_word_hewuvAcI P%s\tP%s)\n" % (sconId_resId[tran3[i][7]], sconId_resId[tran3[i-3][7]]))
- #          print "(prep_id-relation-parser_ids - kriyA-wh_word_hewuvAcI P%s\tP%s)\n" % (tran3[i][7], tran3[i-3][7]),
 #Ex. Why is she not sleeping? 
 
         if tran3[i-1][4] == '2' and tran3[i][4] == '1' and tran3[i+1][4] == '1' and tran3[i+1][5] == '541' and tran3[i+1][8] in lupwa_prep and tran3[i-1][9] != 'SWITCH68' and tran1[i+1][5] != 'SWITCH68':
@@ -855,12 +832,10 @@ for i in xrange(len(tran3)):
 
         if tran3[i-1][8] in aux_verb_lst and tran3[i-1][4] == '2' and tran3[i][4] == '1' and tran3[i][8] == 'a' and tran3[i+1][4] == '12' and tran3[i+1][9] != 'SWITCH68' and tran3[i-2][9] != 'SWITCH68':
             rel_fp.write("(prep_id-relation-parser_ids - subject-subject_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[tran3[i-2][7]], sconId_resId[tran3[i+1][7]]))
-                #print "(dddddddddser-ids subject-subject_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[tran3[i-2][7]], sconId_resId[tran3[i+1][7]])
 #Ex. Passion is a must to reach your potential. 
 	if len(tran3) > 4:
             if tran3[i-2][4] =='20' and tran3[i-1][4] == '2' and tran3[i-1][8] in aux_verb_lst_small and tran3[i][4] == '20' and tran3[i+1][4] == '1' and tran3[i][9] != 'SWITCH68' and tran3[i-2][9] != 'SWITCH68' and tran3[i+1][9] != 'SWITCH68':
                rel_fp.write("(prep_id-relation-parser_ids - subject-subject_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]]))
-                #print "(eeeeeeeeeser-ids subject-subject_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]])
                rel_fp.write("(prep_id-relation-parser_ids - kriyA-subject  P%s\tP%s)\n" % (sconId_resId[tran3[i-1][7]], sconId_resId[tran3[i][7]]))
 #Ex. Is that the film in which he kills his mother.
 
@@ -872,7 +847,6 @@ for i in xrange(len(tran3)):
 	    prep_obj = prep_dict_word_semwrk.keys()
 	    if tran3[i+1][8] not in prep_obj and tran3[i+1][4] != '2':#She sold the house even though it was against his wishes. I thought it is right to resign.
 		rel_fp.write("(prep_id-relation-parser_ids - subject-subject_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[tran3[i-1][7]], sconId_resId[tran3[i+1][7]]))
-		#print "(ffffffffffer-ids subject-subject_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[tran3[i-1][7]], sconId_resId[tran3[i+1][7]])
 
         if tran3[i][8] in copula and not(tran3[i][4]=='12') and not(tran3[i-1][4]=='2' or tran3[i-1][4]=='12') and tran3[1][8] not in lupwa_prep and tran3[i+1][8] != 'a' and tran3[i-1][8] !='how' and tran3[i-1][9] != 'SWITCH68': #'not in lupwa_prep' condition is for 'Here is a big surprise for you.'
        	    rel_fp.write("(prep_id-relation-parser_ids - kriyA-subject  P%s\tP%s)\n" % (sconId_resId[tran3[i][7]], sconId_resId[tran3[i-1][7]]))
@@ -880,7 +854,6 @@ for i in xrange(len(tran3)):
 
 	if tran3[i][8] in copula and not (tran3[i][4]=='12') and (tran3[i-1][4]=='2' or tran3[i-1][4]=='12') and tran3[1][8] not in lupwa_prep and tran3[i-2][9] != 'SWITCH68' and tran3[i+1][9] != 'SWITCH68': #'not in lupwa_prep' condition is for 'Here is a big surprise for you.'
 	    rel_fp.write("(prep_id-relation-parser_ids - subject-subject_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[tran3[i-2][7]], sconId_resId[tran3[i+1][7]]))
-	    #print "(aaaaaaaaaaer-ids subject-subject_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[tran3[i-2][7]], sconId_resId[tran3[i+1][7]])
 #Ex.	THIS IS a sample SENTENCE for Anusaaraka.
 
 	if tran3[i][4] == '1' and tran3[i+1][4] == '2' and tran3[i+1][8] in prerak_kriyA and tran3[i+2][4] == '1' and tran3[i+3][4] == '2' and tran3[i+3][9] != 'SWITCH68' and tran3[i][9] != 'SWITCH68':
@@ -901,7 +874,6 @@ for i in xrange(len(tran3)):
 
         if tran3[1][4] == '2' and tran3[1][8] in aux_verb_lst  and tran3[1][5] == '886' and tran3[1+1][4] == '1' and tran3[3][4] == '1' and tran3[3][9] != 'SWITCH68' and tran1[3][5] != 'SWITCH68':
             rel_fp.write("(prep_id-relation-parser_ids - subject-subject_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[tran3[2][7]], sconId_resId[tran3[3][7]]))
-            #print "(bbbbbbbbbbbr-ids subject-subject_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[tran3[2][7]], sconId_resId[tran3[3][7]])
 #Ex.  Are you afraid of spiders?
 
         if tran3[i-1][4] == '2' and tran3[i][4] == '1' and tran3[i][8] in lupwa_prep and tran3[i-1][9] != 'SWITCH68':
@@ -911,18 +883,16 @@ for i in xrange(len(tran3)):
 	elif (tran3[i][4] == '2' and tran3[i+1][4] == '2' and tran3[i][8] in have_root) and (tran3[i+2][4] == '1') and tran3[i+1][9] != 'SWITCH68' and tran3[i-1][9] != 'SWITCH68' and tran3[i-1][9] != 'SWITCH68':
        	    rel_fp.write("(prep_id-relation-parser_ids - kriyA-subject  P%s\tP%s)\n" % (sconId_resId[tran3[i+1][7]], sconId_resId[tran3[i-1][7]]))
 	    rel_fp.write("(prep_id-relation-parser_ids - kriyA-object  P%s\tP%s)\n" % (sconId_resId[tran3[i+1][7]], sconId_resId[tran3[i+2][7]]))
-	    #print "(cccccccccccr-ids kriyA-object  P%s\tP%s)\n" % (sconId_resId[tran3[i+1][7]], sconId_resId[tran3[i+2][7]])
+	    #print "(asfdids - kriyA-object  P%s\tP%s)\n" % (sconId_resId[tran3[i+1][7]], sconId_resId[tran3[i+2][7]])
 #Ex.  A fat ugly BOY had to EAT too many FRUITS to lose his weight .
 
         elif tran3[i][4] == '2' and tran3[i+1][4] == '2' and tran3[i+1][6] == '35' and tran3[i+1][8][-3:] == 'ing' and tran3[i][9] != 'SWITCH68':
             rel_fp.write("(prep_id-relation-parser_ids - kriyA-object  P%s\tP%s)\n" % (sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]]))
-            #print "(bbbbbbbbb kriyA-object  P%s\tP%s)\n" % (sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]])
 #Ex. I have started working. 
 
 	elif tran3[i][4] == '2' and tran3[i+1][4] == '2' and tran3[i+1][6] != '38' and (tran3[i+2][4] == '1') and (tran3[i+1][9] != 'SWITCH68' and tran3[i][9] != 'SWITCH68' and tran3[i-1][9] != 'SWITCH68'):#the condition tran3[i+2][6] != '38 is for 'I want to go there.' 
             rel_fp.write("(prep_id-relation-parser_ids - kriyA-subject  P%s\tP%s)\n" % (sconId_resId[tran3[i+1][7]], sconId_resId[tran3[i-1][7]]))
 	    rel_fp.write("(prep_id-relation-parser_ids - kriyA-object  P%s\tP%s)\n" % (sconId_resId[tran3[i+1][7]], sconId_resId[tran3[i+2][7]]))
-	    #print "(ddddddddddd kriyA-object  P%s\tP%s)\n" % (sconId_resId[tran3[i+1][7]], sconId_resId[tran3[i+2][7]])
 #ex. I had to guess to know the answer. 
 
 	elif tran3[i-3][4] == '2' and tran3[i][4] == '1' and tran3[i][5] == '853' and tran3[i][9] != 'SWITCH68' and tran3[i-3][9] != 'SWITCH68':
@@ -983,7 +953,6 @@ for i in xrange(len(tran3)):
 			if (tran3[i+k][4] == '1'):
 				if tran3[i+k][8] in prep_dict_word_semwrk.keys() and tran3[i][9] != 'SWITCH68' and int(word_id[prep_dict_word_semwrk[tran3[i+k][8]]]) > int(sconId_resId[tran3[i][7]]) and int(word_id[prep_dict_word_semwrk[tran3[i+k][8]]]) < int(sconId_resId[tran3[i+k][7]]) and prep_dict_word_semwrk[tran3[i+k][8]] != 'a':#ex. 4 > & < conditions: "Imagine that a magician waves his wand and changes a bowl of dirt into a bowl of leuttce." the last condition is added for the sentence: "A pool always needs to have its water circulated through a filter for several hours a day in order to keep it clean. and "The factory typically produces 500 chairs a week." 
                 			rel_fp.write("(prep_id-relation-parser_ids P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (sconId_resId[prep_dict_id_semwrk[tran3[i+k][7]]], return_prep(word_id[prep_dict_word_semwrk[tran3[i+k][8]]]), sconId_resId[tran3[i][7]], sconId_resId[tran3[i+k][7]]))
-	               			#print "(eeeeeeeeeeer-ids %s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (sconId_resId[prep_dict_id_semwrk[tran3[i+k][7]]], return_prep(word_id[prep_dict_word_semwrk[tran3[i+k][8]]]), sconId_resId[tran3[i][7]], sconId_resId[tran3[i+k][7]])
 					got_prep_rel = prep_dict_word_semwrk.keys()
 				else:
 				    for hr in xrange(len(RES_SWRK_TAB)):
@@ -995,9 +964,9 @@ for i in xrange(len(tran3)):
 							gor_object.append(tran3[i+k][7])
 							if gor_counter==2:
 						            got_obj=tran3[i][4]
-	if gor_counter==1 and gor_kriyA[0] in id_word.keys() and id_word[gor_kriyA[0]] not in copula and lupwa_sub_kri == '':
+	if gor_counter==1 and gor_kriyA[0] in id_word.keys() and id_word[gor_kriyA[0]] not in copula and lupwa_sub_kri == '' and gor_object[0] not in pobj_prep.keys(): #the last part in this con is to stop object relation for prepositional objects. ex. "Ayodhya during ancient times was known as Kaushaldesa."
 	    rel_fp.write("(prep_id-relation-parser_ids - kriyA-object  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[0]],sconId_resId[gor_object[0]]))
-	    #print "(eeeeeeeer-ids kriyA-object  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[0]],sconId_resId[gor_object[0]])
+#	    print "yteery - kriyA-object  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[0]],sconId_resId[gor_object[0]])
 	if gor_counter==2 and sconId_resId[gor_kriyA[0]] != '0' and id_word[sconId_resId[gor_kriyA[0]]] not in copula :
 	    rel_fp.write("(prep_id-relation-parser_ids - kriyA-object_1  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[0]],sconId_resId[gor_object[0]]))
             rel_fp.write("(prep_id-relation-parser_ids - kriyA-object_2  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[1]],sconId_resId[gor_object[1]]))
@@ -1011,18 +980,13 @@ for i in xrange(len(tran3)):
 		if tran3[i][7]==RES_SWRK_TAB[hr][0]:
 		    if RES_SWRK_TAB[hr][2]!='3' and RES_SWRK_TAB[hr][2]!='6' and tran3[i+1][9] != 'SWITCH68':
 			if tran3[i+1][7] in prep_dict_id_semwrk.keys() and tran3[i+1][8] in prep_dict_word_semwrk.keys():	
-#<<<<<<< .mine
 			    rel_fp.write("(prep_id-relation-parser_ids P%s viSeRya-%s_saMbanXI  P%s\tP%s)\n" % (prep_dict_id_semwrk[sconId_resId[tran3[i+1][7]]], prep_dict_word_semwrk[tran3[i+1][8]], sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]]))
-			    #print "rser-ids P%s viSeRya-%s_saMbanXI  P%s\tP%s)\n" % (prep_dict_id_semwrk[sconId_resId[tran3[i+1][7]]], prep_dict_word_semwrk[tran3[i+1][8]], sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]])
-#=======
-#			    print prep_dict_word_semwrk
-#			    rel_fp.write("(relation-parser_ids viSeRya-%s_saMbanXI  P%s\tP%s)\n" % (prep_dict_word_semwrk[tran3[i+1][8]], sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]]))
-#			    print "rser-ids viSeRya-%s_saMbanXI  L%s\tL%s)\n" % (prep_dict_word_semwrk[tran3[i+1][8]], sconId_resId[tran3[i][7]], sconId_resId[tran3[i+1][7]])
-#>>>>>>> .r140
 #-----------------------------------------------------------------------------------------------------------------
 
-	elif (tran3[i][4] == '2' and tran3[i][6] == '28') and  (tran3[i-1][4] == '1') and got_kqxnwa_rel == '' and tran3[i][9] != 'SWITCH68' and tran3[i-1][9] != 'SWITCH68': # got_kqxnwa_rel = '' condition is to stop in "She rose from the table to welcome me."
+	elif tran3[i][4] == '2' and (tran3[i][6] == '28' or tran3[i][6] == '38') and tran3[i-1][4] == '1' and got_kqxnwa_rel == '' and tran3[i][9] != 'SWITCH68' and tran3[i-1][9] != 'SWITCH68' and got_kqxnwa_rel != tran3[i][7]: # got_kqxnwa_rel = '' condition is to stop in "She rose from the table to welcome me."
                 rel_fp.write("(prep_id-relation-parser_ids - saMjFA-to_kqxanwa   P%s\tP%s)\n" % (sconId_resId[tran3[i-1][7]], sconId_resId[tran3[i][7]]))
+#                print "r_ids - saMjFA-to_kqxanwa   P%s\tP%s)\n" % (sconId_resId[tran3[i-1][7]], sconId_resId[tran3[i][7]])
+
 #Ex.	A fat ugly boy had to eat too many FRUITS to LOSE his weight.
 
 	elif tran3[i][4] == '2' and tran3[i+1][4] == '1' and tran3[i+2][4] == '3' and tran3[i+2][8] in kAlavAcI and tran3[i][9] != 'SWITCH68':
@@ -1064,25 +1028,27 @@ for i in xrange(len(tran3)):
                 rel_fp.write("(prep_id-relation-parser_ids - kriyA-kriyA_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran3[i][7]], sconId_resId[tran3[i-2][7]]))
 #Ex. I wonder how much you swim. 
 
-        elif len(tran3) > 4 and tran3[1][7] in prep_dict_id_semwrk.keys() and tran3[2][4] == '12':
+        elif len(tran3) > 4 and tran3[1][7] in prep_dict_id_semwrk.keys() and tran3[2][4] == '12' and int(prep_dict_id_semwrk[tran3[1][7]]) < int(tran3[1][7]):
 	    rel_fp.write("(prep_id-relation-parser_ids P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (prep_dict_id_semwrk[tran3[1][7]], return_prep(prep_dict_id_semwrk[tran3[1][7]]), sconId_resId[tran3[2][7]], sconId_resId[tran3[1][7]]))
-	    #print "(yyyyyyyion-parser_ids P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (prep_dict_id_semwrk[tran3[1][7]], return_prep(prep_dict_id_semwrk[tran3[1][7]]), sconId_resId[tran3[2][7]], sconId_resId[tran3[1][7]])
 #Ex. In which school do you study? 
 #-----------Information form semwork values------------------------------------------------------------
 
-for i in xrange(len(OTAR_TRAN3)):
-    if 'SWORKO' in OTAR_TRAN3[i]:
-  	if len(semwrk_prep) > 0 and len(semwrk_prep[0]) > 19 and  semwrk_prep[0][12] == '13' and semwrk_prep[0][19] == OTAR_TRAN3[i][7] and OP_TAR_ARR_TRAN3[i][9] == 'SWITCH68' and OTAR_TRAN3[i][9] == OP_TAR_ARR_TRAN3[i][9]:
-	     rel_fp.write("(prep_id-relation-parser_ids P%s kriyA-%s_saMbanXI  P%s\tP10000)\n" % (sconId_resId[semwrk_prep[0][15]], return_prep(sconId_resId[semwrk_prep[0][15]]), sconId_resId[semwrk_prep[0][7]]))
+for i in xrange(len(tran3)):
+    if 'SWORKO' in tran3[i]:
+        if len(semwrk_prep) > 0 and len(semwrk_prep[0]) > 19 and  semwrk_prep[0][12] == '13' and semwrk_prep[0][19] == tran3[i][7] and tran3[i][9] == 'SWITCH68':
+             rel_fp.write("(prep_id-relation-parser_ids P%s kriyA-%s_saMbanXI  P%s\tP10000)\n" % (sconId_resId[semwrk_prep[0][15]], return_prep(sconId_resId[semwrk_prep[0][15]]), sconId_resId[semwrk_prep[0][7]]))
+ #            print "(prep_id-relation-parser_ids P%s kriyA-%s_saMbanXI  P%s\tP10000)\n" % (sconId_resId[semwrk_prep[0][15]], return_prep(sconId_resId[semwrk_prep[0][15]]), sconId_resId[semwrk_prep[0][7]])
 #Ex. The position we talked about is gone.
 
 for i in xrange(len(semwrk_verb)):
     if len(semwrk_verb[i]) > 19:
-	for j in xrange(len(OTAR_TRAN3)):
-	    if 'SWORKO' in OTAR_TRAN3[j]:
-		if semwrk_verb[i][10] == '91' and semwrk_verb[i][9] == OTAR_TRAN3[j][5] and OP_TAR_ARR_TRAN3[j][7] == '10000' and OTAR_TRAN3[j][9] == 'SWITCH68'and OTAR_TRAN3[j][7] == semwrk_verb[i][11] :
-		    rel_fp.write("(prep_id-relation-parser_ids - kriyA-subject P%s\tP10000)\n" % (sconId_resId[semwrk_verb[i][7]]))
+        for j in xrange(len(tran3)):
+            if 'SWORKO' in tran3[j]:
+                if semwrk_verb[i][10] == '91' and semwrk_verb[i][9] == tran3[j][5] and tran3[j][9] == 'SWITCH68'and tran3[j][7] == semwrk_verb[i][11] :
+                    rel_fp.write("(prep_id-relation-parser_ids - kriyA-subject P%s\tP10000)\n" % (sconId_resId[semwrk_verb[i][7]]))
+#                    print "(prep_id-relation-parser_ids - kriyA-subject P%s\tP10000)\n" % (sconId_resId[semwrk_verb[i][7]])
 #Ex. The girl running to the shop is my friend.
+
 
 for j in xrange(0, len(semwrk_prep)):
     if len(semwrk_prep)>0 and len(semwrk_prep[j])>15 and semwrk_prep[j][0]=='1':
@@ -1090,7 +1056,6 @@ for j in xrange(0, len(semwrk_prep)):
 	    for hr in xrange(len(RES_SWRK_TAB)):
 		if semwrk_prep[j][11]==RES_SWRK_TAB[hr][0] and id_word[RES_SWRK_TAB[hr][0]] in prep_lst:
 		    rel_fp.write("(prep_id-relation-parser_ids P%s viSeRya-%s_saMbanXI  P%s\tP%s)\n" % (RES_SWRK_TAB[hr][0], RES_SWRK_TAB[hr][35], semwrk_prep[j][7], semwrk_prep[j][15]))
-		    #print "(3333333333arser_ids P%s viSeRya-%s_saMbanXI  P%s\tP%s)\n" % (RES_SWRK_TAB[hr][0], RES_SWRK_TAB[hr][35], semwrk_prep[j][7], semwrk_prep[j][15])
 
 #In the above relation computation, it would have been favourable to take the entire information from semwrks but we are not able to fetch the information from semwrks(for saMjFA-saMjFA_samAnAXikaraNa)
 #--------Get information of subject and object from Semwrk values---------------------------------------
@@ -1132,7 +1097,7 @@ for j in xrange(0,len(semwrk_verb)):
            if id_key in id_word_keys and lupwa_sub_kri == '':
               if gor_counter_semwrk==1 and sconId_resId[gor_kriyA[0]]!= '0' and semwrk_verb[j][6] not in passive_verb_form and semwrk_verb[j][6] != '61' and id_word[sconId_resId[gor_kriyA[0]]] not in copula and semwrk_verb[j][14] != '96' and semwrk_verb[j][14] != '90' and semwrk_verb[j][13] != '401': #the second condition is to stop in passive sentences ex. 'Ravana was killed by Rama' #ex for 'semwrk_verb[j][14] != '96'" condition 'He left in the morning.' These shoes that I bought will look nice with that hat.
 		rel_fp.write("(prep_id-relation-parser_ids - kriyA-object  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[0]], sconId_resId[gor_object[0]]))
-		#print "(aaaaaaaaaa kriyA-object  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[0]], sconId_resId[gor_object[0]])
+		#print "sds - kriyA-object  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[0]], sconId_resId[gor_object[0]])
 
         if gor_counter_semwrk==1 and semwrk_verb[j][6] =='61' and sconId_resId[gor_kriyA[0]]!= '0' and id_word[gor_kriyA[0]] not in copula and semwrk_verb[j][14] != '96' and semwrk_verb[j][14] != '90' and semwrk_verb[j][13] != '401':
                 rel_fp.write("(prep_id-relation-parser_ids - kriyA-subject  P%s\tP%s)\n" % (sconId_resId[gor_kriyA[0]],sconId_resId[gor_object[0]]))
@@ -1145,7 +1110,6 @@ for j in xrange(0,len(semwrk_verb)):
            if id_key in id_word_keys:
               if gor_counter_semwrk==1 and sconId_resId[gor_kriyA[0]]!= '0' and semwrk_verb[j][6] not in passive_verb_form and id_word[sconId_resId[gor_kriyA[0]]] not in copula and semwrk_verb[j][14] != '96' and semwrk_verb[j][14] == '90':
 		rel_fp.write("(prep_id-relation-parser_ids - subject-subject_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[semwrk_verb[j][11]], sconId_resId[gor_object[0]]))
-		#print "(ucccccccccer-ids subject-subject_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[semwrk_verb[j][11]], sconId_resId[gor_object[0]])
 #ex. These shoes that I bought will look nice with that hat.
 	if len(gor_kriyA) > 0 and len(gor_object) == 1:
  	   id_key = gor_kriyA[0]
@@ -1164,7 +1128,6 @@ if len(semwrk_verb) >=1 :
     for i in xrange(len(semwrk_verb)):
 	if len(semwrk_verb[i]) >20 and sconId_resId[semwrk_verb[i][19]] != '0' and semwrk_verb[i][12] == '1' and semwrk_verb[i][16] == '1' and id_form_dic[sconId_resId[semwrk_verb[i][19]]] == '23':
 	    rel_fp.write("(prep_id-relation-parser_ids - object-object_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[semwrk_verb[i][15]], sconId_resId[semwrk_verb[i][19]]))
-#	    print "(prep_id-relation-parser_ids - object-object_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[semwrk_verb[i][15]], sconId_resId[semwrk_verb[i][19]])
 #Ex. Hary considers John honest. The tenors sang themselves hoarse.
 
 kriyA_mUla_lst = ['get','got','gets','getting','make','made','makes','making']
@@ -1193,7 +1156,6 @@ for i in xrange(len(tran1)):
 
                     elif RES_SWRK_TAB[k][0] == id and (RES_SWRK_TAB[k][2] == '14' or RES_SWRK_TAB[k][2] == '15'):
                         rel_fp.write("(prep_id-relation-parser_ids - viSeRya-det_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran1[i][3]], sconId_resId[tran1_components[i][j]]))
-#                        print "(prep_id-relation-parser_ids - viSeRya-det_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran1[i][3]], sconId_resId[tran1_components[i][j]])
 #Ex. A fat ugly BOY had to eat too many fruits to lose his weight.
 
 		    elif tran1[i][3] != '0' and RES_SWRK_TAB[k][0] == id and RES_SWRK_TAB[k][2]== '6' and RES_SWRK_TAB[k][35] == 'even' and tran1[i][0] == '1' and id_form_dic[tran1[i][3]] != '23':
@@ -1264,7 +1226,6 @@ for i in xrange(len(tran1)):
 
         if tran1[i-1][0] == '12' and tran1[i][0] == '3' and tran1[i][1] == '15' and tran1[i+1][0] == '2' and tran1[i][5] != 'SWITCH68' and tran1[i+1][5] != 'SWITCH68' and tran1[i-1][5] != 'SWITCH68':
             rel_fp.write("(prep_id-relation-parser_ids - kriyA-kriyA_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran1[i+1][3]], sconId_resId[tran1[i][3]]))
-#            print "ser_ids kriyA-kriyA_viSeRaNa  P%s\tP%s)\n" % (sconId_resId[tran1[i+1][3]], sconId_resId[tran1[i][3]])
 #Ex. Do it the way you have always done it.
 
 	if tran1[i][0] == '19' and (tran1[i][1] == '915' or tran1[i][1] == '849') and tran1[i+1][0] == '1' and tran1[i+1][1] !='795' and tran1[i+1][1] != '859' and tran1[i][5] != 'SWITCH68' and tran1[i+1][5] != 'SWITCH68':
@@ -1295,8 +1256,6 @@ for i in xrange(len(tran1)):
         if tran1[i][0] == '19' and (tran1[i][1] == '854' or tran1[i][1] == '820') and tran1[i][5] != 'SWITCH68':
             rel_fp.write("(prep_id-relation-parser_ids - wall_conjunction P%s)\n" % sconId_resId[tran1[i][3]])
 #Ex. But my efforts to win his heart have failed. And 21 could stand for the 21 cm radio frequency of hydrogen in space.
-
-
 
         if tran1[i][0] == '2' and tran1[i+1][0] == '2' and tran1[i+1][2] == '28' and tran1[i][5] != 'SWITCH68' and tran1[i+1][5] != 'SWITCH68':
             rel_fp.write("(prep_id-relation-parser_ids - kriyA-kqxanwa_karma  P%s\tP%s)\n" % (sconId_resId[tran1[i][3]], sconId_resId[tran1[i+1][3]]))
@@ -1331,12 +1290,10 @@ for i in xrange(len(tran2)):
 preplist=  prep_dict_id_semwrk.values()
 if '2' in preplist and tran3[2][4] == '20' and tran3[2][5] == '888' and tran3[5][4] == '2':
     rel_fp.write("(prep_id-relation-parser_ids P2 kriyA-%s_saMbanXI  P%s\tP%s)\n" % (return_prep('2'), sconId_resId[tran3[5][7]], sconId_resId[tran3[1][7]]))
-    #print "(prep_id-relation-parser_ids - kriyA-%s_saMbanXI  P%s\tP%s)\n" % (return_prep('2'), sconId_resId[tran3[5][7]], sconId_resId[tran3[1][7]])
 #Ex. In physics, the term fluid is used to mean either a gas or a liquid.
 
 if '2' in preplist and tran3[2][4] == '20' and tran3[2][5] == '888' and tran3[4][4] == '2':
     rel_fp.write("(prep_id-relation-parser_ids P2 kriyA-%s_saMbanXI  P%s\tP%s)\n" % (return_prep('2'), sconId_resId[tran3[4][7]], sconId_resId[tran3[1][7]]))
-    #print "(prep_id-relation-parser_ids - kriyA-%s_saMbanXI  P%s\tP%s)\n" % (return_prep('2'), sconId_resId[tran3[4][7]], sconId_resId[tran3[1][7]])
 #Ex. In India, people are intelligent. 
 
 for i in xrange(len(SWRK_TAB_TRN4)):
@@ -1377,7 +1334,6 @@ for i in xrange(1, (len(matrix[0])-1)):
 if len(of_pada_tran1_components) > 0:
     if id_word[of_pada_tran1_components[0]] == 'than':
         rel_fp.write("(prep_id-relation-parser_ids P%s more_upameya-than_upamAna  P%s\tP%s)\n" % (of_pada_tran1_components[0], str(int(sconId_resId[of_pada_tran1_components[0]])-1), sconId_resId[of_pada_tran1_components[-1]]))
-#        print "(ooooooooo %s more_upameya-than_upamAna  P%s\tP%s)\n" % (of_pada_tran1_components[0], str(int(sconId_resId[of_pada_tran1_components[0]])-1), sconId_resId[of_pada_tran1_components[-1]])
 #Ex. He is more INTELLIGENT than JOHN.
 
     if id_word[of_pada_tran1_components[0]] == 'than' and id_word[str(int(of_pada_tran1_components[0])-2)] == 'more':
@@ -1398,7 +1354,6 @@ for i in open("ol_prep.dat", "r"):
      if semwrk_verb[j]<= len(semwrk_verb):
           if a[3][1:-1] != 0 and  gor_counter_semwrk==1 and sconId_resId[gor_kriyA[0]]!= '0' and id_word[gor_kriyA[0]] not in copula and semwrk_verb[j][14] == '96' and int(a[3][1:-1]) > int(gor_kriyA[0]) and int(a[3][1:-1]) < int(gor_object[0]) :
              rel_fp.write("(prep_id-relation-parser_ids P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (a[3][1:-1], return_prep(a[3][1:-1]), gor_kriyA[0],gor_object[0]))
-             #print "(hggghid-relation-parser_ids P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (a[3][1:-1], return_prep(a[3][1:-1]), gor_kriyA[0],gor_object[0])
 	     got_prep_rel = a[3]
 #He left in the morning.
 
@@ -1416,9 +1371,6 @@ for i in open("ol_prep.dat", "r"):
                     p_key = prep_key[0]
             if got_prep_rel == '' and a[3][1:-1] != 0 and sconId_resId[gor_kriyA[0]] != '0' and len(semwrk_verb[j]) > 16 and  gor_counter_semwrk==1 and id_word[gor_kriyA[0]] not in copula and semwrk_verb[j][16] == '13' :
                 rel_fp.write("(prep_id-relation-parser_ids P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (a[3][1:-1], return_prep(a[3][1:-1]), gor_kriyA[0], p_key))
-
-                #print "(prep_id-relation-parser_ids P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (a[3][1:-1], return_prep(a[3][1:-1]), gor_kriyA[0], p_key)
 #Ex. Who did you play tennis with?
-
 
 rel_fp.close()

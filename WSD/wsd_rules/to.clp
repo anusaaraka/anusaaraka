@@ -553,6 +553,7 @@
 (subject-subject_samAnAXikaraNa  ?id3 ?id1)
 (to-infinitive  ?id ?rid)                       
 (id-cat_coarse ?rid verb)
+(id-cat_coarse ?id3 pronoun) ;Dick is important to fix the problem. 
 =>
 (retract ?mng)
 (assert (make_verbal_noun ?rid))

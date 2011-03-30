@@ -1148,6 +1148,17 @@
 )
 
 ;----------------------------------------------------------------------------------------------------------------------------
+;She is making the girl feed the child.
+(defrule del_saMjFA-to_kqxanwa
+(declare (salience 600))
+?f<-(prep_id-relation-parser_ids ?  saMjFA-to_kqxanwa  ?id ?id1)
+(root-verbchunk-tam-parser_chunkids   ?root ?verbchunk  $?ids ?id1)
+=>
+(retract ?f)
+(printout ?*debug* "(rule-deleted_relation-ids   del_saMjFA-to_kqxanwa   " ?id  "  " ?id1")"crlf)
+)
+
+;----------------------------------------------------------------------------------------------------------------------------
 
 ;Added by Roja (27-12-10)
 ;IN January 1990, a historic new law was passed IN India ON Friday.  
