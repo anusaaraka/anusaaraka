@@ -2121,6 +2121,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                 map_number2 and renamed it has map_compound_number
                 end rule.
   3. In run_modules_ol.bat, removed  opening a meaning_has_been_decided.dat file.
-  4. Modified sd_ver_output, ol_ver_output, link_ver_output
-  5. Updated changes_in_databases.
-  6. Updated Log.
+  4. Modified "verb_VJ_rule" in link_category.clp
+  5. Modified "S_VJ_rule" in verb_chunk.clp
+  6. Modified sd_ver_output, ol_ver_output, link_ver_output, verified and verified_output files
+  7. Updated changes_in_databases.
+  8. Updated link_verified (235)
+  9. Updated Log.

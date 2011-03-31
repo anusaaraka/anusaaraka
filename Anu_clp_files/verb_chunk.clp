@@ -1025,7 +1025,7 @@
  ;Petu ran fast but missed the bus.
  (defrule S_VJ_rule
  (declare (salience 200))
- (link_name-link_expansion  ?Vl  V J l $?)
+ (link_name-link_expansion  ?Vl  V J l|n $?) ;He neither plays nor reads.
  (link_name-link_expansion  ?Vr  V J r $?)
  (Non_interogative_sentence ?sl_node ?sr_node)
  (link_name-link_lnode-link_rnode ?Vl   ?Vl_node  ?sr_node)

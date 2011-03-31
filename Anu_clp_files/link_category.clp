@@ -145,7 +145,7 @@
  ;Teddy will go home and study. Added : (16-02-11)
  (defrule verb_VJ_rule
  (declare (salience 200))
- (link_name-link_expansion  ?V  V J l $?)
+ (link_name-link_expansion  ?V  V J l|n $?) ;He neither plays nor reads.
  (link_name-link_expansion  ?V1 V J r $?)
  (link_name-link_lnode-link_rnode ?V  ?vl_node  ?)
  (link_name-link_lnode-link_rnode ?V1 ?  ?v1r_node)
