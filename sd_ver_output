@@ -334,7 +334,7 @@ Nixon pattiyoM kA rahasya kaBI nahIM hala kiyA gayA WA.
 
 Hindi meaning using Stanford parser 2.82
 A million people attended. 
-xasa lAKa loga upasWiwa huye/hue.
+xasa-lAKa loga upasWiwa huye/hue.
 
 Hindi meaning using Stanford parser 2.83
 A few people attended. 
@@ -1274,7 +1274,7 @@ usane tippaNI kI ki xo nibaMXa kAPI samAna We.
 
 Hindi meaning using Stanford parser 3.17
 Three quarters of a million people in this city have no health insurance. 
-isa Sahara meM xasa lAKa logoM kI wIna cOWAI kA svAsWya bImA nahIM hE.
+isa Sahara meM xasa-lAKa logoM kI wIna cOWAI kA svAsWya bImA nahIM hE.
 
 Hindi meaning using Stanford parser 3.18
 I wonder how much money you earned. 

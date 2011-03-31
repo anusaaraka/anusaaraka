@@ -98,7 +98,6 @@
  (open "relations.dat" file "a")
  (open "relations_tmp1.dat" file1 "a")
  (open "relations_id_map_debug.dat" rel_debug "a")
- (open "meaning_has_been_decided.dat" mng_dcd_fp "a")
  (open "cat_consistency_check.dat" cat_cons_fp "a")
  (open "number_tmp.dat" num_fp "a")
  (run)

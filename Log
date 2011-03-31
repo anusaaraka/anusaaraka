@@ -2102,3 +2102,25 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  18. Updated following files:
             sd_verified(403)   ol_verified (554)
  19. Updated Log.
+
+ 31-03-11
+ ========
+ 1. In root_rule.clp
+      Removed:  samAsa_root_2, samAsa_root_3,  samAsa_root_4
+      Modified:  samAsa_root,  PropN_rule1
+ 2. In ol_parser_id_mapping.clp
+      Removed : map_root_2,   map_root_3 , map_root_4,   
+                map_morph2,   map_morph3,  map_morph4
+                map_number3,  map_number4, map_number5, 
+                map_cat_consis1, map_cat_consis2, map_cat_consis3, map_cat_consis4, map_cat_consis5
+                map_mng_decided, map_chunk_rel, map-id rule
+                defglobal ?*mng_dcd-file*,?*id_expr-file*, ?*link_rel-file*, ?*l_rel-file*, ?*sd-rel-file*
+      Modified: map_root_1   and renamed it as map_compound_root,
+                map_cat_consis1 and renamed it has map_cat_consis
+                map_morph1 and renamed it has map_compound_morph 
+                map_number2 and renamed it has map_compound_number
+                end rule.
+  3. In run_modules_ol.bat, removed  opening a meaning_has_been_decided.dat file.
+  4. Modified sd_ver_output, ol_ver_output, link_ver_output
+  5. Updated changes_in_databases.
+  6. Updated Log.
