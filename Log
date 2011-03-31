@@ -2123,7 +2123,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   3. In run_modules_ol.bat, removed  opening a meaning_has_been_decided.dat file.
   4. Modified "verb_VJ_rule" in link_category.clp
   5. Modified "S_VJ_rule" in verb_chunk.clp
-  6. Modified sd_ver_output, ol_ver_output, link_ver_output, verified and verified_output files
-  7. Updated changes_in_databases.
-  8. Updated link_verified (235)
-  9. Updated Log.
+  6. WSD: Modified : to.clp
+  7. In modify_ol_relations.clp, Added a condition in rule add_conj_rel_with_which.
+  8. Modified run_openlogos.py
+  9. Modified sd_ver_output, ol_ver_output, link_ver_output, verified and verified_output files
+  10. Updated changes_in_databases.
+  11. Updated link_verified (235)
+  12. Updated Log.

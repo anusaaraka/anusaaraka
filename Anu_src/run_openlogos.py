@@ -868,11 +868,11 @@ for i in xrange(len(tran3)):
             rel_fp.write("(prep_id-relation-parser_ids - kriyA-subject  P%s\tP%s)\n" % (sconId_resId[tran3[i+1][7]], sconId_resId[tran3[i-1][7]]))
 #Ex.  I am in New York and I would like to see you.
 
-        if tran3[1][4] == '2' and tran3[1][8] in aux_verb_lst  and tran3[1][5] == '886' and tran3[1+1][4] == '1' and tran3[2][9] != 'SWITCH68':
+        if tran3[1][4] == '2' and tran3[1][8] in aux_verb_lst and tran3[1][5] == '886' and tran3[2][4] == '1' and tran3[2][9] != 'SWITCH68':
             rel_fp.write("(prep_id-relation-parser_ids - kriyA-subject  P%s\tP%s)\n" % (sconId_resId[tran3[1][7]], sconId_resId[tran3[2][7]]))
 #Ex.  Are you afraid of spiders?
 
-        if tran3[1][4] == '2' and tran3[1][8] in aux_verb_lst  and tran3[1][5] == '886' and tran3[1+1][4] == '1' and tran3[3][4] == '1' and tran3[3][9] != 'SWITCH68' and tran1[3][5] != 'SWITCH68':
+        if tran3[1][4] == '2' and tran3[1][8] in aux_verb_lst and tran3[1][5] == '886' and tran3[2][4] == '1' and tran3[3][4] == '1' and tran3[3][9] != 'SWITCH68' and tran1[3][5] != 'SWITCH68':
             rel_fp.write("(prep_id-relation-parser_ids - subject-subject_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[tran3[2][7]], sconId_resId[tran3[3][7]]))
 #Ex.  Are you afraid of spiders?
 
@@ -1031,6 +1031,15 @@ for i in xrange(len(tran3)):
         elif len(tran3) > 4 and tran3[1][7] in prep_dict_id_semwrk.keys() and tran3[2][4] == '12' and int(prep_dict_id_semwrk[tran3[1][7]]) < int(tran3[1][7]):
 	    rel_fp.write("(prep_id-relation-parser_ids P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (prep_dict_id_semwrk[tran3[1][7]], return_prep(prep_dict_id_semwrk[tran3[1][7]]), sconId_resId[tran3[2][7]], sconId_resId[tran3[1][7]]))
 #Ex. In which school do you study? 
+
+        elif len(tran3) > 4 and tran3[i-3][4] == '2' and tran3[i-1][8] in prep_lst and tran3[i][4] == '2':
+            rel_fp.write("(prep_id-relation-parser_ids P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (sconId_resId[tran3[i-1][7]], return_prep(sconId_resId[tran3[i-3][7]]), sconId_resId[tran3[i-3][7]], sconId_resId[tran3[i][7]]))
+#Ex. I yelled at her for going to the party.
+
+        elif len(tran3) > 4 and tran3[i-3][4] == '2' and tran3[i-1][8] in prep_lst and tran3[i][4] == '2':
+            rel_fp.write("(prep_id-relation-parser_ids P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (sconId_resId[tran3[i-1][7]], return_prep(sconId_resId[tran3[i-3][7]]), sconId_resId[tran3[i-3][7]], sconId_resId[tran3[i][7]]))
+#            print "(asdas P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (sconId_resId[tran3[i-1][7]], return_prep(sconId_resId[tran3[i-3][7]]), sconId_resId[tran3[i-3][7]], sconId_resId[tran3[i][7]])
+#Ex. 
 #-----------Information form semwork values------------------------------------------------------------
 
 for i in xrange(len(tran3)):
@@ -1286,6 +1295,11 @@ for i in xrange(len(tran2)):
         if tran2[i][0] == '1' and tran2[j][0] == '1' and tran2[i][1] == tran2[j][1] and i != j and (tran2[j-1][5] == 'CLS-BOS' or tran2[j-2][5] == 'CLS-BOS') and tran2[j-1][4] != '*' and tran2[i][4] != tran2[j][4]:
             rel_fp.write("(prep_id-relation-parser_ids - viSeRya-jo_samAnAXikaraNa  P%s\tP%s)\n" % (sconId_resId[tran2[i][3]], tran2[j][3]))
 # Ex. Is that the film in which he kills his mother. 
+	
+	if len(tran2) > 4 and tran2[i-4][0] == '20' and tran2[i-3][0] == '13' and tran2[i-2][0] == '1' and tran2[i-1][0] == '1' and tran2[i][0] == '2':
+            rel_fp.write("(prep_id-relation-parser_ids  P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % ( sconId_resId[tran2[i-3][3]], return_prep(tran2[i-3][3]), sconId_resId[tran2[i][3]], sconId_resId[tran2[i-2][3]]))
+#            print "afdssssssssss  P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (sconId_resId[tran2[i-3][3]], return_prep(tran2[i-3][3]), sconId_resId[tran2[i][3]], sconId_resId[tran2[i-2][3]])
+# Ex. Is that the film in which he kills his mother.
 
 preplist=  prep_dict_id_semwrk.values()
 if '2' in preplist and tran3[2][4] == '20' and tran3[2][5] == '888' and tran3[5][4] == '2':

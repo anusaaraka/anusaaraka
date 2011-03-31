@@ -1082,6 +1082,7 @@
 (ol_res_id-word_id-word	?con	?id	which)
 (ol_res_id-word_id-word	?kri	?id1	?verb)
 (test (neq ?sub ?con)) ; Suggested by Sukhada(30-12-10)
+(not (prep_id-relation-parser_ids   ?   kriyA-in_saMbanXI ?kri ?con))
 (test (> ?id1 ?id))
 =>
 (assert (prep_id-relation-parser_ids   -   kriyA-conjunction ?kri ?con))
