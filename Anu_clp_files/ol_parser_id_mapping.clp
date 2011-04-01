@@ -59,13 +59,6 @@
 
  ;======================================  RULES TO MAP CATEGORY   ====================================================
 
- (defrule map_cat
- (declare (salience 983))
- (id-cat $?var)
- =>
-	(printout ?*cat_cons-file* "(id-cat " (implode$ $?var) ")" crlf)
- )
- ;--------------------------------------------------------------------------------------------------------------------
  ;I saw him telling her about the party. 
  (defrule modify_cat
  (declare (salience 985))
@@ -79,7 +72,7 @@
  ;Added by Roja (31-3-11)
  ;Some people take a lot of time to acclimatize themselves to the new environment.
  (defrule map_cat_consis
- (declare (salience 984))
+ (declare (salience 980))
  (parser_id-cat_coarse ?pid ?var)
  (parserid-wordid  ?pid $?wid)
  =>
@@ -89,49 +82,9 @@
         )
  )
  ;================================   RULES FOR MAPPING RELATIONS =================================================
- 
- (defrule map-rel1
- (declare (salience 930))
- (prep_id-relation-parser_ids   -  ?rel ?l_id_1)
- (parserid-wordid  ?l_id_1 ?id1)
- =>
-        (printout ?*rel-file* "("?rel"  "?id1")"crlf)
-        (printout ?*rel-file1* "(prep_id-relation-anu_ids    -   " ?rel"  "?id1")"crlf)
-        (printout ?*rel-debug* "(rule-rel_name-ids  map-rel1   prep_id-relation-parser_ids   -   " ?rel"  "?id1")"crlf)
- )
- ;--------------------------------------------------------------------------------------------------------------------
- ;I saw a bus, volvo, the king of traffic jam. How much money did you earn?
- (defrule map_samAsa
- (declare (salience 960))
- ?f<- (prep_id-relation-parser_ids   -  samAsa ?l_id)
- (ol_res_id-word_id-word ?l_id  ?id1 $?wrds)
- (current_id-group_members ?id1 	$?wrd_ids)
- =>
-      (retract ?f)
-      (bind ?ids (sort < $?wrd_ids))
-      (printout ?*rel-file* "(samAsa  "(implode$ ?ids)")"crlf)
-      (printout ?*rel-file1* "(prep_id-relation-anu_ids   -   samAsa  " (implode$ ?ids)")"crlf)
-      (printout ?*rel-debug* "(rule-rel_name-ids   map_samAsa  prep_id-relation-parser_ids   -   samAsa  " (implode$ ?ids)")"crlf)
- )
- ;--------------------------------------------------------------------------------------------------------------------
- ;I saw a bus, volvo, the king of traffic jam. How much money did you earn?
- ;The blacksmith made an assay of iron ore.
- (defrule map_samAsa_1
- (declare (salience 970))
- ?f<- (prep_id-relation-parser_ids   -  samAsa ?l_id)
- (prep_id-relation-parser_ids   ?p ?rel ?l_vi ?l_id)
- (ol_res_id-word_id-word ?l_id  ?id1 $?wrds)
- (ol_res_id-word_id-word ?l_vi  ?vi_id ?wrd)
- (current_id-group_members ?id1    $?wrd_ids ?head)
- =>
-        (printout ?*rel-file* "("?rel "  "?vi_id "  "?head")"crlf)
-        (printout ?*rel-file1* "(prep_id-relation-anu_ids   "?p"   "?rel "  "?vi_id "  "?head")"crlf)
-        (printout ?*rel-debug* "(rule-rel_name-ids  map_samAsa_1  prep_id-relation-parser_ids "?p"   "?rel "  "?vi_id "  "?head")"crlf)
- )
- ;--------------------------------------------------------------------------------------------------------------------
  ;SOME fruit JUICES are very acidic. High income taxes are important.
  (defrule map_samAsa_viS-det_vi
- (declare (salience 980))
+ (declare (salience 970))
  ?f<- (prep_id-relation-parser_ids  -  samAsa ?l_id)
  (prep_id-relation-parser_ids   ?p ?vi-det_vi  ?l_id  ?vi)
  (ol_res_id-word_id-word ?l_id  ?id1 $?wrds)
@@ -145,7 +98,7 @@
  ;--------------------------------------------------------------------------------------------------------------------
  ;Geeta and Reeta were born at the same time. (This is just a sample sentence, The object relation between 'born' and 'at the same time' is not correct for this sentence 26-09-10) 
  (defrule map_rel_x
- (declare (salience 980))
+ (declare (salience 970))
  ?f<- (prep_id-relation-parser_ids  ?p  ?rel ?id1 ?id2)
  (ol_res_id-word_id-word ?id1  ?i ?wrd)
  (ol_res_id-word_id-word ?id2  ?i2 $?wrds)
@@ -159,30 +112,18 @@
  ;--------------------------------------------------------------------------------------------------------------------
  ;The book I was reading is wonderful
  (defrule map_10000_vi_jo
- (declare (salience 980))
+ (declare (salience 970))
  (prep_id-relation-parser_ids   - ?rel ?l_id P10000)
  (ol_res_id-word_id-word ?l_id  ?id1 $?wrds)
  =>
         (printout ?*rel-file* "("?rel"  "?id1  " 10000)"crlf)
         (printout ?*rel-file1* "(prep_id-relation-anu_ids   -   "?rel" "?id1  " 10000)"crlf)
         (printout ?*rel-debug* "(rule-rel_name-ids  map_10000_vi_jo  prep_id-relation-parser_ids   -   "?rel" "?id1  " 10000)"crlf)
- ) 
- ;--------------------------------------------------------------------------------------------------------------------
- (defrule map-rel
- (declare (salience 940))
- ?f0<-(prep_id-relation-parser_ids   -  ?rel ?l_id_1 ?l_id_2)
- (parserid-wordid  ?l_id_1 ?id1)
- (parserid-wordid  ?l_id_2 ?id2)
- =>
-	(retract ?f0)
-	(printout ?*rel-file* "("?rel"  "?id1" "?id2")"crlf)
-        (printout ?*rel-file1* "(prep_id-relation-anu_ids   -   "?rel"  "?id1" "?id2")"crlf)
-        (printout ?*rel-debug* "(rule-rel_name-ids  map-rel  prep_id-relation-parser_ids   -   "?rel"  "?id1" "?id2")"crlf)
  )
- ;--------------------------------------------------------------------------------------------------------------------
+ ;-------------------------------------------------------------------------------------------------------------------- 
  ;Keep on the right side of the road.
  (defrule map-rel_prep
- (declare (salience 975))
+ (declare (salience 960))
  ?f0<-(prep_id-relation-parser_ids  $?ids ?prep_id $?ids1 ?rel ?x ?y)
  (parserid-wordid  ?prep_id $?prp)
  (test (neq ?prep_id -))
@@ -193,7 +134,7 @@
  ;-------------------------------------------------------------------------------------------------------------------
  ;Keep on the right side of the road.
  (defrule map-rel_1
- (declare (salience 930))
+ (declare (salience 950))
  ?f0<-(prep_id-relation-parser_ids  $?ids ?rel ?l_id_1 ?l_id_2)
  (parserid-wordid  ?l_id_1 ?id1)
  (parserid-wordid  ?l_id_2 ?id2)
@@ -204,10 +145,39 @@
         (printout ?*rel-debug* "(rule-rel_name-ids  map-rel  map-rel_1   "(implode$ $?ids)"   "?rel"  "?id1" "?id2")"crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
+ ;I saw a bus, volvo, the king of traffic jam. How much money did you earn?
+ ;The blacksmith made an assay of iron ore.
+ (defrule map_samAsa_1
+ (declare (salience 940))
+ ?f<- (prep_id-relation-parser_ids   -  samAsa ?l_id)
+ (prep_id-relation-parser_ids   ?p ?rel ?l_vi ?l_id)
+ (ol_res_id-word_id-word ?l_id  ?id1 $?wrds)
+ (ol_res_id-word_id-word ?l_vi  ?vi_id ?wrd)
+ (current_id-group_members ?id1    $?wrd_ids ?head)
+ =>
+        (printout ?*rel-file* "("?rel "  "?vi_id "  "?head")"crlf)
+        (printout ?*rel-file1* "(prep_id-relation-anu_ids   "?p"   "?rel "  "?vi_id "  "?head")"crlf)
+        (printout ?*rel-debug* "(rule-rel_name-ids  map_samAsa_1  prep_id-relation-parser_ids "?p"   "?rel "  "?vi_id "  "?head")"crlf)
+ )
+ ;--------------------------------------------------------------------------------------------------------------------
+ ;I saw a bus, volvo, the king of traffic jam. How much money did you earn?
+ (defrule map_samAsa
+ (declare (salience 930))
+ ?f<- (prep_id-relation-parser_ids   -  samAsa ?l_id)
+ (ol_res_id-word_id-word ?l_id  ?id1 $?wrds)
+ (current_id-group_members ?id1         $?wrd_ids)
+ =>
+      (retract ?f)
+      (bind ?ids (sort < $?wrd_ids))
+      (printout ?*rel-file* "(samAsa  "(implode$ ?ids)")"crlf)
+      (printout ?*rel-file1* "(prep_id-relation-anu_ids   -   samAsa  " (implode$ ?ids)")"crlf)
+      (printout ?*rel-debug* "(rule-rel_name-ids   map_samAsa  prep_id-relation-parser_ids   -   samAsa  " (implode$ ?ids)")"crlf)
+ )
+ ;--------------------------------------------------------------------------------------------------------------------
  ;Added by Roja (15-02-11)
  ;Ex: Your house and garden are very attractive. 
  (defrule map-conj
- (declare (salience 950))
+ (declare (salience 920))
  ?f<-(conjunction-components $?ids ?id $?ids1)
  (parserid-wordid ?id ?wid)
  =>
@@ -218,17 +188,40 @@
  ;Added by Roja (15-02-11)
  ;Ex: Your house and garden are very attractive.
  (defrule write-conj
- (declare (salience 920))
+ (declare (salience 910))
  (conjunction-components $?ids)
  =>
        (printout ?*rel-file* "(conjunction-components  "(implode$ $?ids)")" crlf)
        (printout ?*rel-file1* "(conjunction-components  "(implode$ $?ids)")"crlf)
        (printout ?*rel-debug* "(rule-rel_name-ids write-conj   conjunction-components  "(implode$ $?ids) ")"crlf)
  )
+ ;--------------------------------------------------------------------------------------------------------------------
+ (defrule map-rel
+ (declare (salience 900))
+ ?f0<-(prep_id-relation-parser_ids   -  ?rel ?l_id_1 ?l_id_2)
+ (parserid-wordid  ?l_id_1 ?id1)
+ (parserid-wordid  ?l_id_2 ?id2)
+ =>
+	(retract ?f0)
+	(printout ?*rel-file* "("?rel"  "?id1" "?id2")"crlf)
+        (printout ?*rel-file1* "(prep_id-relation-anu_ids   -   "?rel"  "?id1" "?id2")"crlf)
+        (printout ?*rel-debug* "(rule-rel_name-ids  map-rel  prep_id-relation-parser_ids   -   "?rel"  "?id1" "?id2")"crlf)
+ )
+ ;--------------------------------------------------------------------------------------------------------------------
+ (defrule map-rel1
+ (declare (salience 890))
+ (prep_id-relation-parser_ids   -  ?rel ?l_id_1)
+ (parserid-wordid  ?l_id_1 ?id1)
+ =>
+        (printout ?*rel-file* "("?rel"  "?id1")"crlf)
+        (printout ?*rel-file1* "(prep_id-relation-anu_ids    -   " ?rel"  "?id1")"crlf)
+        (printout ?*rel-debug* "(rule-rel_name-ids  map-rel1   prep_id-relation-parser_ids   -   " ?rel"  "?id1")"crlf)
+ )
+
  ;================================== RULES FOR MAPPING PREFERRED MORPH    =========================================
 
  (defrule map_morph
- (declare (salience 910))
+ (declare (salience 880))
  (parserid-wordid  ?pid ?wid)
  (parser_id-root-category-suffix-number  ?pid $?vars)
  =>
@@ -238,7 +231,7 @@
  ;Added by Roja (30-03-11).
  ;The blacksmith made an assay of iron ore.
  (defrule map_compound_morph
- (declare (salience 900))
+ (declare (salience 870))
  (ol_res_id-word_id-word	?P	?id   $?words)
  (current_id-group_members	?id	$?ids)
  ?f<-(parser_id-root-category-suffix-number  ?P ?r ?c ?s ?n)
@@ -255,7 +248,7 @@
  ;=================================== RULES FOR MAPPING LWG ===========================================
 
  (defrule map_lwg
- (declare (salience 830))
+ (declare (salience 860))
  ?f0<-(root-verbchunk-tam-parser_chunkids  ?rt ?vb_chnk ?tam $?start ?pid $?end)
  (parserid-wordid  ?pid ?wid)
  =>
@@ -263,21 +256,31 @@
 	(retract ?f0)
  )
  ;--------------------------------------------------------------------------------------------------------------------
- (defrule map_lwg1
- (declare (salience 820))
- ?f0<-(root-verbchunk-tam-parser_chunkids  $?vars)
- =>
- 	(printout ?*lwg-file* "(root-verbchunk-tam-chunkids "  (implode$ $?vars) ")" crlf)
-	(retract ?f0)
- )
- ;--------------------------------------------------------------------------------------------------------------------
  (defrule map_cau_lwg
- (declare (salience 830))
+ (declare (salience 850))
  ?f0<-(verb_type-verb-causative_verb-tam  ?vrb_typ ?pid ?pid1 ?tam)
  (parserid-wordid  ?pid ?wid)
  (parserid-wordid  ?pid1 ?wid1)
  =>
-	(assert (verb_type-verb-causative_verb-tam  ?vrb_typ ?wid ?wid1 ?tam))
+        (assert (verb_type-verb-causative_verb-tam  ?vrb_typ ?wid ?wid1 ?tam))
+        (retract ?f0)
+ )
+ ;--------------------------------------------------------------------------------------------------------------------
+ (defrule map_kri_mUl_lwg
+ (declare (salience 840))
+ ?f0<-(verb_type-verb-kriyA_mUla-tam  ?vrb_typ ?pid ?pid1 ?tam)
+ (parserid-wordid  ?pid ?wid)
+ (parserid-wordid  ?pid1 ?wid1)
+ =>
+        (assert (verb_type-verb-kriyA_mUla-tam  ?vrb_typ ?wid ?wid1 ?tam))
+        (retract ?f0)
+ )
+ ;--------------------------------------------------------------------------------------------------------------------
+ (defrule map_lwg1
+ (declare (salience 830))
+ ?f0<-(root-verbchunk-tam-parser_chunkids  $?vars)
+ =>
+ 	(printout ?*lwg-file* "(root-verbchunk-tam-chunkids "  (implode$ $?vars) ")" crlf)
 	(retract ?f0)
  )
  ;--------------------------------------------------------------------------------------------------------------------
@@ -289,18 +292,8 @@
 	(retract ?f0)
  )
  ;--------------------------------------------------------------------------------------------------------------------
- (defrule map_kri_mUl_lwg
- (declare (salience 830))
- ?f0<-(verb_type-verb-kriyA_mUla-tam  ?vrb_typ ?pid ?pid1 ?tam)
- (parserid-wordid  ?pid ?wid)
- (parserid-wordid  ?pid1 ?wid1)
- =>
-        (assert (verb_type-verb-kriyA_mUla-tam  ?vrb_typ ?wid ?wid1 ?tam))
-        (retract ?f0)
- )
- ;--------------------------------------------------------------------------------------------------------------------
  (defrule map_kri_mUl_lwg1
- (declare (salience 820))
+ (declare (salience 810))
  ?f0<-(verb_type-verb-kriyA_mUla-tam  $?vars)
  =>
         (printout ?*lwg-file* "(verb_type-verb-kriyA_mUla-tam "  (implode$ $?vars) ")" crlf)
@@ -308,7 +301,7 @@
  )
  ;--------------------------------------------------------------------------------------------------------------------
  (defrule map_lwg4
- (declare (salience 820))
+ (declare (salience 800))
  ?f0<-(lwg_root-verbchunk-tam-chunkids  $?vars)
  =>
 	(printout ?*lwg-file* "(root-verbchunk-tam-chunkids "  (implode$ $?vars) ")" crlf)
@@ -323,7 +316,7 @@
 
  ;Mapping number 
  (defrule map_number1
- (declare (salience 890))
+ (declare (salience 790))
  ?f<- (parser_id-number ?pid  ?num) 
  (parserid-wordid    ?pid  ?wid)
  (not (id-number-src  ?wid  ?num ?))
@@ -334,7 +327,7 @@
  ;--------------------------------------------------------------------------------------------------------------------
  ;The blacksmith made an assay of iron ore.
  (defrule map_compound_number
- (declare (salience 880))
+ (declare (salience 780))
  ?f0<-(parser_id-number ?pid  ?num)
  (ol_res_id-word_id-word  ?pid	?id  $?wrd)
  (current_id-group_members  ?id   $?wid)
@@ -348,7 +341,7 @@
  ;--------------------------------------------------------------------------------------------------------------------
  ;default number rule 
  (defrule default_number
- (declare (salience 870))
+ (declare (salience 770))
  ?f0<-(id-number-src  ?id  -  OL)
  =>
         (retract ?f0)
@@ -357,7 +350,7 @@
  ;--------------------------------------------------------------------------------------------------------------------
  ;print the number info into a file.
  (defrule  number_rule
- (declare (salience 860))
+ (declare (salience 760))
  (id-number-src ?wid  ?num  ?src)
  =>
       (printout ?*num-file* "(id-number-src  " ?wid  "  "   ?num  "  "  ?src ")" crlf)
