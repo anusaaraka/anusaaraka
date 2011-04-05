@@ -1,11 +1,13 @@
-
+;Modified by Meena(5.4.11); added the relations (kriyA-object ?id ?id1) and (id-root ?id1 election|player)
+;Alan bet me five dollars Clinton would lose the election. 
 ;Added by Meena(1.4.10)
 ;Losing to a younger player was a bitter pill to swallow . 
 (defrule lose0
 (declare (salience 4900))
 (id-root ?id lose)
 ?mng <-(meaning_to_be_decided ?id)
-(kriyA-to_saMbanXI ?id ?id1)
+(or(kriyA-to_saMbanXI ?id ?id1)(kriyA-object ?id ?id1))
+(id-root ?id1 election|player)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id hAra))
@@ -42,7 +44,8 @@
 ;Children who are handicapped lose out to play.
 ;apAhija bacce Kelane se vaMciwa raha jAwe hEM
 (defrule lose2
-(declare (salience 4900))
+(declare (salience 0))
+;(declare (salience 4900))
 (id-root ?id lose)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)

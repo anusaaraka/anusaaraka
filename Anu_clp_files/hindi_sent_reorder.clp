@@ -149,7 +149,7 @@
  (declare (salience 10))
  (prep_id-relation-anu_ids ?  kriyA-subject ?v_id ?sub)
  (prep_id-relation-anu_ids ?  kriyA-subject ?v ?)
- ?f1<-(id-root ?v_id tell|guess|see|think|say|know|suppose|wonder|hope)
+ ?f1<-(id-root ?v_id tell|guess|see|think|say|know|suppose|wonder|hope|bet);bet suggested my Meena(05-04-11)Ex:Alan bet me five dollars Clinton would lose the election. 
  ?f0 <-(hindi_id_order $?pre ?v_id $?post)
  (test (< ?v_id ?v))
  (not (hindi_id_order $?ids ?v_id));The Master said , if I did not go , how would you ever see ?

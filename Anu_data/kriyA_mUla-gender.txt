@@ -1098,3 +1098,4 @@ punargaNanA_kara	f
 cota_laga	f
 kRawi_pahuzcA	f
 BalA_kara	m
+Sarwa_lagA	f

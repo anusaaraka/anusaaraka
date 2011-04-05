@@ -36,11 +36,10 @@
 
 
 
-
+;Salience reduced by Meena(5.4.11)
 ;Added by Meena(13.5.10)
-;
 (defrule bet2
-(declare (salience 4900))
+(declare (salience 4800))
 (id-root ?id bet)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-subject ?id ?id1)

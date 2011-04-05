@@ -1,26 +1,34 @@
-
-;Originally the rule file had just one rule. I changed the existing rule and added one more rule. I commented the statement (id-cat_crude....) because in the all_facts file it was showing crude category for "excessively" as adjective and could get the right sense even without the statement (id-cat_crude....).
-
+;Modified by Meena(5.4.11);added (kriyA-kriyA_viSeRaNa  ?id1 ?id)
 ;He does not drink excessively.
 (defrule excessively1
-(declare (salience 10000))
+(declare (salience 4000))
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id excessively)
-;(id-cat_coarse ?id adverb)
+(kriyA-kriyA_viSeRaNa  ?id1 ?id)
 =>
 (retract ?mng)
-(assert (id-HM ?id aXika)))
-
-(defrule excessively2
-(declare (salience 10000))
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id excessively)
-;(id-cat_coarse ?id adverb)
-(id-word =(+ ?id 1)  so)
-=>
-(retract ?mng)
-(assert (id-HM ?id iwanA_aXika))
+(assert (id-wsd_word_mng ?id aXika))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  excessively.clp          excessively0   "  ?id "  aXika )" crlf))
 )
 
-;The  excessively2 rule I added to incorporate the meaning "aXika" when ' excessively' occurs with 'so' (Meena).
+
+
+
+;Added by Meena
 ;She was polite but not excessively so.
+;(defrule excessively2
+;(declare (salience 4000))
+;?mng <-(meaning_to_be_decided ?id)
+;(id-word ?id excessively)
+;;(id-cat_coarse ?id adverb)
+;(id-word =(+ ?id 1)  so)
+;=>
+;(retract ?mng)
+;(assert (id-wsd_word_mng ?id iwanA_aXika))
+;(if ?*debug_flag* then
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  excessively.clp          excessively0   "  ?id "  iwanA_aXika )" crlf))
+;)
+
+
+

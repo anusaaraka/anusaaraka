@@ -2131,15 +2131,16 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   8. Added "pada" module after "wsd_tam_meaning" module  and  Added "pada_prawiniXi" module after "GNP_agreement" 
      module in the following files
         1. run_modules_link.bat   2. run_modules_ol.bat   3. run_modules_std.bat
-  9. WSD: Modified : to.clp, back.clp, at.clp, were_en_tam.clp, bunch.clp
+  9. WSD: Modified : to.clp, back.clp, at.clp, were_en_tam.clp, bunch.clp, excessively.clp, bet.clp, lose.clp
           Added    : corner.clp
   10. In modify_ol_relations.clp, Added a condition in rule add_conj_rel_with_which.
   11. Modified run_openlogos.py
   12. In step-debug updated following files:
         link-pada-onwards.bat		std-lwg-rel-onwards.bat		link-lwg-rel-onwards.bat	README
         ol-pada-onwards.bat		ol-lwg-rel-onwards.bat		std-pada-onwards.bat
+  13. In hindi_sent_reorder.clp, modified "rule_for_ki".
   13. Modified sd_ver_output, ol_ver_output, link_ver_output, verified and verified_output files
   14. Updated changes_in_databases.
   15. Updated following files:
-            link_verified (235)	   verified (456)     ol_verified (558)
+            link_verified (237)	   verified (455)     ol_verified (558)
   16. Updated Log.
