@@ -2132,6 +2132,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
      module in the following files
         1. run_modules_link.bat   2. run_modules_ol.bat   3. run_modules_std.bat
   9. WSD: Modified : to.clp, back.clp, at.clp, were_en_tam.clp, bunch.clp
+          Added    : corner.clp
   10. In modify_ol_relations.clp, Added a condition in rule add_conj_rel_with_which.
   11. Modified run_openlogos.py
   12. In step-debug updated following files:
@@ -2140,5 +2141,5 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   13. Modified sd_ver_output, ol_ver_output, link_ver_output, verified and verified_output files
   14. Updated changes_in_databases.
   15. Updated following files:
-            link_verified (235)		verified (455)  ol_verified ( )
+            link_verified (235)	   verified (456)     ol_verified (558)
   16. Updated Log.
