@@ -6,7 +6,7 @@
  (load-facts "wsd_tam_facts_output.dat")
  (load-facts "lwg_info.dat")
  (load-facts "wsd_facts_output.dat")
- (load-facts "pada_with_point_concept.dat")
+ (load-facts "pada_id_info.dat")
  (load-facts "meaning_to_be_decided.dat")
  (run)
  (save-facts "hindi_tam_info.dat" local pada_info)
@@ -121,6 +121,17 @@
  (close gnp_fp)
  (clear)
  ;-------------------------------------------------------------------------------
+ (load "global_path.clp")
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/pada_prawiniXi.clp"))
+ (load ?*path*)
+ (load-facts "GNP_agmt_info.dat")
+ (load-facts "relations_tmp1.dat")
+ (load-facts "lwg_info.dat")
+ (open "pada_point_debug.dat" pada_point_debug "a")
+ (run)
+ (save-facts "pada_info.dat" local current_id-group_members id-current_id prep_id-relation-anu_ids )
+ (clear)
+ ;------------------------------------------------------------------------------- 
  ; Across paxa ordering
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/hindi_position.bclp"))

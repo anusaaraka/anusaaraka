@@ -125,8 +125,24 @@
 )
 
 
+;Added by Meena(1.4.11)
+;We were bunched up at the back of the room. 
+(defrule at_the_back
+(declare (salience 4000))
+(id-root ?id at)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-at_saMbanXI  ?id1 ?id2)
+(id-root ?id2 back)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id -))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  at.clp        at_the_back   "  ?id "  - )" crlf))
+)
 
 
+
+;Modified by Meena(1.4.11);added "back" in the list; Ex: "We were bunched up at the back of the room."
 ;Modified by Meena(24.10.09)
 ;Guess who I saw at the party last night ! 
 (defrule at10
@@ -134,7 +150,7 @@
 (id-root ?id at)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-at_saMbanXI  ?id1 ?id2)
-(not(id-root ?id2 death))
+(not(id-root ?id2 death|back))
 ;(id-word =(+ ?id 1) conference|meeting|discussion|party)
 =>
 (retract ?mng)
@@ -184,7 +200,8 @@
 
 
 (defrule at13
-(declare (salience 3900))
+(declare (salience 0))
+;(declare (salience 3900))
 (id-root ?id at)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id preposition)

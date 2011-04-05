@@ -141,22 +141,40 @@
 
 
 
+;Added by Meena(1.4.11)
+;We were bunched up at the back of the room. (link)
+(defrule at_the_back
+(declare (salience 4100))
+(id-root ?id back)
+?mng <-(meaning_to_be_decided ?id)
+;(or(viSeRya-of_saMbanXI  ?id ?id1)(kriyA-at_the_back_of_saMbanXI ?id3 ?id1)
+(kriyA-at_saMbanXI  ?id1 ?id)
+(id-word ?id2 on|at)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id   =(- ?id 1)  pICe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  back.clp      at_the_back   "  ?id "   "(- ?id 1)"   pICe )" crlf))
+)
 
+
+
+;Modified by Meena(1.4.11)
+;We were bunched up at the back of the room.(OL)
 ;Added by Meena(26.9.09)
 ;He wrote the date on the back of the photograph .
 ;He stood at the back of the stage .
-(defrule back011
+(defrule at_the_back_of
 (declare (salience 4000))
 (id-root ?id back)
 ?mng <-(meaning_to_be_decided ?id)
-(viSeRya-of_saMbanXI  ?id ?id1)
+(or(viSeRya-of_saMbanXI  ?id ?id1)(kriyA-at_the_back_of_saMbanXI ?id3 ?id1)(kriyA-at_saMbanXI  ?id3 ?id))
 (id-word ?id2 on|at)
-;(id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 pICe))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id  ?id2  =(- ?id 1)  =(+ ?id 1)  ke_pICe))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  back.clp      back011   "  ?id " " ?id1"  pICe )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  back.clp      at_the_back_of   "  ?id " " ?id2"  "(- ?id 1)" "(+ ?id 1)"  ke_pICe )" crlf))
 )
 
 

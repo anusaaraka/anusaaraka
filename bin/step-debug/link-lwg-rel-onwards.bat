@@ -50,7 +50,6 @@
  (clear)
  ;----------------------------------------------------------------------
  ; Generate tam for all verbs 
-
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/vibakthi_id.bclp"))
  (bload ?*path*)
@@ -62,25 +61,6 @@
  (open "vibakthi_id.dat" vib_id_fp "a")
  (open "tam_id.dat" tam_id_fp "a")
  (run)
- (clear)
- ;----------------------------------------------------------------------
- ; Generate hindi Pada for the sentence.
- ; with in paxa ordering (e.g to reach your potential --> hindi ((your) (potential)(to reach))
- (load "global_path.clp")
- (bind ?*path* (str-cat ?*path* "/Anu_clp_files/pada_prawiniXi_id_nodation.clp"))
- (load ?*path*)
- (load-facts "relations_tmp1.dat")
- (load-facts "relations.dat")
- (load-facts "to_be_included_in_paxa.dat")
- (load-facts "lwg_info.dat")
- (load-facts "word.dat")
- (load-facts "cat_consistency_check.dat")
- (open "pada_point_debug.dat" pada_point_debug "a")
- (open "agmt_control_fact.dat" agmt_cntrl_fp "a")
- (open "pada_control_fact.dat" pada_cntrl_fp "a")
- (run)
- (save-facts "pada_info.dat" local current_id-group_members id-current_id prep_id-relation-anu_ids )
- (save-facts "pada_with_point_concept.dat" local pada_info)
  (clear)
  ;----------------------------------------------------------------------
  ; tam disambiguation in wsd rule
@@ -117,6 +97,24 @@
  (save-facts "wsd_tam_facts_output.dat" local)
  (clear)
  ;----------------------------------------------------------------------
+ ; Generate hindi Pada for the sentence.
+ ; with in paxa ordering (e.g to reach your potential --> hindi ((your) (potential)(to reach))
+ (load "global_path.clp")
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/pada.clp"))
+ (load ?*path*)
+ (load-facts "relations_tmp1.dat")
+ (load-facts "to_be_included_in_paxa.dat")
+ (load-facts "word.dat")
+ (load-facts "lwg_info.dat")
+ (load-facts "cat_consistency_check.dat")
+ (open "pada_info_debug.dat" pada_info_debug "a")
+ (open "agmt_control_fact.dat" agmt_cntrl_fp "a")
+ (open "pada_control_fact.dat" pada_cntrl_fp "a")
+ (run)
+ (facts)
+ (save-facts "pada_id_info.dat" local  pada_info)
+ (clear)
+ ;----------------------------------------------------------------------
  ; tam consistency check (more weightage to wsd then default)
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/tam_meaning.bclp"))
@@ -124,7 +122,7 @@
  (load-facts "wsd_tam_facts_output.dat")
  (load-facts "lwg_info.dat")
  (load-facts "wsd_facts_output.dat")
- (load-facts "pada_with_point_concept.dat")
+ (load-facts "pada_id_info.dat")
  (load-facts "meaning_to_be_decided.dat")
  (run)
  (save-facts "hindi_tam_info.dat" local pada_info)
@@ -238,6 +236,17 @@
  (run)
  (save-facts "GNP_agmt_info.dat" local pada_info)
  (close gnp_fp)
+ (clear)
+ ;-------------------------------------------------------------------------------
+ (load "global_path.clp")
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/pada_prawiniXi.clp"))
+ (load ?*path*)
+ (load-facts "GNP_agmt_info.dat")
+ (load-facts "relations_tmp1.dat")
+ (load-facts "lwg_info.dat")
+ (open "pada_point_debug.dat" pada_point_debug "a")
+ (run)
+ (save-facts "pada_info.dat" local current_id-group_members id-current_id prep_id-relation-anu_ids )
  (clear)
  ;-------------------------------------------------------------------------------
  ; Across paxa ordering

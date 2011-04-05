@@ -1,10 +1,11 @@
+;Added "bunch" in the list (Meena 31.3.11)
 ;Added by Meena(10.5.10)
 ;The box contained many books , some of which were badly damaged .
 (defrule were_en_tam0
 (declare (salience 5000))
 (id-TAM ?id were_en)
 ?mng <-(meaning_to_be_decided ?id)
-(id-root ?id damage)
+(id-root ?id damage|bunch)
 (kriyA-subject ?id ?id1)
 =>
 (retract ?mng)
