@@ -57,6 +57,7 @@
  (declare (salience 145))
  ?f0<-(id-original_word ?id ?word)
  (id-cat_coarse ?id PropN)
+ (test (not (numberp ?word)))
  (not (cntrl_fact_for_padasuthra ?id))
  =>
  (bind  ?paxasUwra (gdbm_lookup "total-paxasUwra.gdbm" ?word))
@@ -71,6 +72,7 @@
  (declare (salience 140))
  ?f0<-(id-word ?id ?word)
  (id-cat_coarse ?id PropN)
+ (test (not (numberp ?word)))
  (not (cntrl_fact_for_padasuthra ?id))
  =>
  (bind  ?paxasUwra (gdbm_lookup "total-paxasUwra.gdbm" ?word))
@@ -85,6 +87,7 @@
  (declare (salience 135))
  ?f0<-(id-root ?id ?root)
  (id-cat_coarse ?id PropN)
+ (test (not (numberp ?root)))
  (not (cntrl_fact_for_padasuthra ?id))
  =>
  (bind  ?paxasUwra (gdbm_lookup "total-paxasUwra.gdbm" ?root))
@@ -109,6 +112,8 @@
  (defrule padasuthra_for_original_word
  (declare (salience 130))
  ?f0<-(id-original_word ?id  ?word)
+ (test (not (numberp ?word)));To avoid gdbm_lookup for numbers. Eg. Moon is at a distance of 2.68 billion miles from Earth.
+                             ;Added by Mahalaxmi.(6-04-11)
  (not (cntrl_fact_for_padasuthra ?id))
  =>
  (bind  ?paxasUwra (gdbm_lookup "total-paxasUwra.gdbm" ?word))
@@ -122,6 +127,7 @@
  (defrule padasuthra_for_word
  (declare (salience 125))
  ?f0<-(id-word ?id  ?word)
+ (test (not (numberp ?word)))
  (not (cntrl_fact_for_padasuthra ?id))
  =>
  (bind  ?paxasUwra (gdbm_lookup "total-paxasUwra.gdbm" ?word))
@@ -135,6 +141,7 @@
  (defrule padasuthra_for_root
  (declare (salience 120))
  ?f0<-(id-root ?id  ?root)
+ (test (not (numberp ?root)))
  (not (cntrl_fact_for_padasuthra ?id))
  =>
  (bind  ?paxasUwra (gdbm_lookup "total-paxasUwra.gdbm" ?root))

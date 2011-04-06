@@ -2103,7 +2103,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
             sd_verified(403)   ol_verified (554)
  19. Updated Log.
 
- 05-04-11
+ 06-04-11
  ========
  1. In root_rule.clp
       Removed:  samAsa_root_2, samAsa_root_3,  samAsa_root_4
@@ -2139,8 +2139,13 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         link-pada-onwards.bat		std-lwg-rel-onwards.bat		link-lwg-rel-onwards.bat	README
         ol-pada-onwards.bat		ol-lwg-rel-onwards.bat		std-pada-onwards.bat
   13. In hindi_sent_reorder.clp, modified "rule_for_ki".
-  13. Modified sd_ver_output, ol_ver_output, link_ver_output, verified and verified_output files
-  14. Updated changes_in_databases.
-  15. Updated following files:
+  14. Modified print.c in link-parser to handle decimal numbers.
+  15. In padasuthra.clp (To avoid gdbm_lookup for numbers),
+        Modified: padasuthra_for_PropN_with_word   padasuthra_for_PropN_with_original_word   padasuthra_for_PropN_with_root
+                  padasuthra_for_word              padasuthra_for_root                       padasuthra_for_original_word
+  16. Removed file create_dbm_mo.pl and compilation part for "morph.dbm" from anu_compile.sh and remove_out-file.sh.
+  17. Modified sd_ver_output, ol_ver_output, link_ver_output, verified and verified_output files
+  18. Updated changes_in_databases.
+  19. Updated following files:
             link_verified (237)	   verified (455)     ol_verified (558)
-  16. Updated Log.
+  20. Updated Log.

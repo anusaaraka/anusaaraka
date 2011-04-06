@@ -1,8 +1,6 @@
  echo "#define ABS_ANU_PATH \"$HOME_anu_test/Anu_databases/\"" > $HOME_anu_test/CLIPS/gdbm_lookup.h
  
  cd $HOME_anu_test/Anu_data
- echo "Creating morph.dbm"
- ./create_dbm_mo.pl $HOME_anu_test/Anu_databases/morph.dbm < morph.txt
  echo "Creating paxasUwra.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/total-paxasUwra.gdbm < total-paxasUwra.txt 
  echo "Creating verbal_adj.gdbm"

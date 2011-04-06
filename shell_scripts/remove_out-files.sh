@@ -1,6 +1,6 @@
  echo "Removing all gdbms"
  cd $HOME_anu_test/Anu_databases
- rm  *.gdbm *.dbm
+ rm  *.gdbm 
 
  echo "Removing .bclp files"
  cd $HOME_anu_test/Anu_clp_files
