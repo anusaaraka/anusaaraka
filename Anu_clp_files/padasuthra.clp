@@ -17,7 +17,8 @@
 
  (defglobal ?*paxasUwra_fp* = paxasUwra_fp)
 
- (deffacts dummy_facts 
+ (deffacts dummy_facts
+ (id-inserted_sub_id) 
  (id-last_word)
  (id-word)
  (id-cat)

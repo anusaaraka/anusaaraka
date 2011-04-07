@@ -1591,9 +1591,11 @@
 (printout	?*fp*	"(prep_id-relation-parser_ids -	kriyA-subject	"?kri"	"10001")"	crlf)	
 (printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	subject_insertion	kriyA-subject	"?kri"	"10001")"	crlf)	
 (if (or (eq ?subj i) (eq ?subj I)) then
-(printout       ?*hmng_fp*      "(id-HM-source-sub_id  10001   mEM    subject_insertion  "?id0")"       crlf)	
-else
-(printout       ?*hmng_fp*      "(id-HM-source-sub_id  10001   vaha    subject_insertion  "?id0")"       crlf))
+(printout       ?*hmng_fp*      "(id-HM-source  10001   mEM    subject_insertion)"       crlf)
+(printout       ?*hmng_fp*      "(id-inserted_sub_id  "?id0"  10001)" crlf); Modified (id-HM-source-sub_id) fact to (id-inserted_sub_id) and printing directly the data in hindi_meaning.dat file. ;Modified by Mahalaxmi (07-04-11)
+else 
+(printout       ?*hmng_fp*      "(id-HM-source  10001   vaha    subject_insertion)"       crlf)
+(printout       ?*hmng_fp*      "(id-inserted_sub_id  "?id0"  10001)" crlf))
 ;the HM 'vaha' is only for the sents where apertium analysis does not exist.
 
 (printout	?*open-word*	"(id-word 10001  "?word")"	crlf)	

@@ -2162,11 +2162,20 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
           Removed loading of "chunk.dat" in hindi_position.clp
   4. In run_modules_link.bat,
           Removed loading of "hindi_meanings_tmp.dat" and instead loaded "hindi_meanings.dat" in GNP_agreement.clp
+          In link_relation_rules.clp module, opened hindi_meanings.dat in append mode
   5. In run_modules_std.bat,
           Renamed apertium_input_debug file to apertium_input_debug.dat in prepare_apertium_input.clp module.
           Added comments for each and every module.
   6. In hindi_position.clp
-         Removed dummy_facts (chunk_ids) and (root-verbchunk-tam-chunkids)
-  7. Updated Log.
+          Removed dummy_facts (chunk_ids) and (root-verbchunk-tam-chunkids)
+  7. In causative_verb_mng.clp, removed "subject_insertion" rule.
+  8. In link_relation_rules.clp, 
+          Modified : subject_insertion rule.
+  9. In GNP_agreement.clp,  
+          Modified : subject_insertion_rule.
+  10. Added dummy fact (id-inserted_sub_id) in following files:
+            agreement.clp	vibakthi.clp		GNP_agreement.clp
+	    gender_info.clp	padasuthra.clp		prepare_apertium_input.clp
+  11. Updated Log.
 
            

@@ -2,6 +2,7 @@
 
 
  (deffacts dummy_facts
+ (id-inserted_sub_id)
  (prep_id-relation-anu_ids)
  (kriyA_id-subject_viBakwi)
  (kriyA_id-object_viBakwi)

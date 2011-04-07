@@ -1,6 +1,7 @@
  (defglobal ?*gen-file*  = gen_fp)
 
- (deffacts dummy_facts 
+ (deffacts dummy_facts
+ (id-inserted_sub_id)
  (missing-level-id) 
  (id-original_word)
  (id-HM-source)

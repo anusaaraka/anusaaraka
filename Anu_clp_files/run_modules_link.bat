@@ -130,7 +130,7 @@
  (load-facts "root_tmp.dat")
  (load-facts "parserid_wordid_mapping.dat")
  (load-facts "original_word.dat")
- (open "hindi_meanings_tmp.dat" hmng_fp "a")
+ (open "hindi_meanings.dat" hmng_fp "a")
  (open "original_word.dat" open-orign "a")
  (open "relations_tmp.dat" open-file "a")
  (open "relations_debug.dat" debug_fp "a")

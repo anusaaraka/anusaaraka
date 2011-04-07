@@ -4,7 +4,8 @@
 
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
- (deffacts dummy_facts 
+ (deffacts dummy_facts
+ (id-inserted_sub_id)  
  (prep_id-relation-anu_ids)
  (missing-level-id) 
  (id-original_word) 
@@ -281,7 +282,8 @@
  ;Added by Mahalaxmi(24-04-10)
  (defrule subject_insertion_rule
  (declare (salience 850))
- ?f0<-(id-HM-source-sub_id 10001 ?h_mng ?src ?sub_id)
+ ?f0<-(id-HM-source 10001 ?h_mng ?src)
+ (id-inserted_sub_id  10001  ?sub_id) ;Modified (id-HM-source-sub_id) fact to (id-inserted_sub_id) ;Modified by Mahalaxmi (07-04-11)
  ?f1<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender ?gen) (number ?num)(person ?per)(case ?case))
  ?f2<-(pada_info (group_head_id 10001)(group_cat PP)(vibakthi ?vib))
  =>
