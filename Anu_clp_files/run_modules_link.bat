@@ -244,7 +244,6 @@
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/preferred_morph_consistency_check.bclp"))
  (bload ?*path*)
  (load-facts "root.dat")
- (load-facts "morph.dat")
  (load-facts "preferred_morph.dat")
  (load-facts "wsd_facts_output.dat")
  (open "revised_preferred_morph.dat" morph_cons_fp "a")
@@ -252,7 +251,7 @@
  (run)
  (clear)
  ;----------------------------------------------------------------------
- ; Generate tam for all verbs 
+ ; Generate tam for all verbs
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/vibakthi_id.bclp"))
  (bload ?*path*)
@@ -432,7 +431,7 @@
  (load-facts "relations_tmp1.dat")
  (load-facts "number.dat")
  (load-facts "gender.dat")
- (load-facts "hindi_meanings_tmp.dat")
+ (load-facts "hindi_meanings.dat")
  (load-facts "pada_control_fact.dat")
  (open "GNP_errors.txt" err_fp "a")
  (open "GNP_debug.dat" gnp_fp "a")

@@ -2,7 +2,7 @@
  (defglobal ?*rev_root_file* = rev_rt_fp)
 
 
- (deftemplate word-morph(slot original_word)(slot morph_word)(slot root)(slot category)(slot suffix)(slot number))
+; (deftemplate word-morph(slot original_word)(slot morph_word)(slot root)(slot category)(slot suffix)(slot number))
  (deffacts dummy_facts 
  (missing-level-id) 
  (id-original_word) 
@@ -27,15 +27,18 @@
  (id-attach_emphatic)
  )
  ;--------------------------------------------------------------------------------------------------------------------
+ ;Rule re-modified by Roja(07-04-11)
+ ;The leaves of the scarlet oak trees turn red in October.
+ ;Giving high preference to WSD.
  (defrule p_morph
  (declare (salience 700))
  (id-wsd_root ?id ?root)
- (word-morph (root ?root)(category ?cat)(suffix ?suf)(number ?num))
- ?f0<-(id-root-category-suffix-number ?id $?)
- ?f1<-(id-root ?id ?)
+; (word-morph (root ?root)(category ?cat)(suffix ?suf)(number ?num))
+ ?f0<-(id-root-category-suffix-number ?id ?root1 $?ids)
+ ?f1<-(id-root ?id ?root1)
  =>
 	(retract ?f0 ?f1)
-	(printout ?*morph_cons_file* "(id-root-category-suffix-number " ?id" " ?root" "?cat " "?suf" " ?num")" crlf)
+	(printout ?*morph_cons_file* "(id-root-category-suffix-number " ?id" " ?root" "(implode$ $?ids)")" crlf)
 	(printout ?*rev_root_file* "(id-root " ?id" " ?root" )" crlf)
  ) 
  ;--------------------------------------------------------------------------------------------------------------------

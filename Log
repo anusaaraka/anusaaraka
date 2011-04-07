@@ -2149,3 +2149,24 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   19. Updated following files:
             link_verified (237)	   verified (455)     ol_verified (558)
   20. Updated Log.
+
+  07-04-11
+  ========
+  1. In preferred_morph_consistency_check.clp, 
+          Removed  : deftemplate word-morph
+          Modified : p_morph rule 
+  2. Removed "loading morph.dat" in preferred_morph_consistency_check.clp module in following files:
+          run_modules_ol.bat	run_modules_std.bat	run_modules_link.bat
+  3. In run_modules_ol.bat,
+          Removed loading of "hindi_meanings_tmp.dat" and instead loaded "hindi_meanings.dat" in GNP_agreement.clp
+          Removed loading of "chunk.dat" in hindi_position.clp
+  4. In run_modules_link.bat,
+          Removed loading of "hindi_meanings_tmp.dat" and instead loaded "hindi_meanings.dat" in GNP_agreement.clp
+  5. In run_modules_std.bat,
+          Renamed apertium_input_debug file to apertium_input_debug.dat in prepare_apertium_input.clp module.
+          Added comments for each and every module.
+  6. In hindi_position.clp
+         Removed dummy_facts (chunk_ids) and (root-verbchunk-tam-chunkids)
+  7. Updated Log.
+
+           
