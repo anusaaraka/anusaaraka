@@ -2174,8 +2174,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   9. In GNP_agreement.clp,  
           Modified : subject_insertion_rule.
   10. Added dummy fact (id-inserted_sub_id) in following files:
-            agreement.clp	vibakthi.clp		GNP_agreement.clp
-	    gender_info.clp	padasuthra.clp		prepare_apertium_input.clp
-  11. Updated Log.
-
-           
+          agreement.clp		vibakthi.clp		GNP_agreement.clp
+	  gender_info.clp	padasuthra.clp		prepare_apertium_input.clp
+  11. Modified "nsubj_advmod" rule in sd_relation_rules.clp.
+  12. Modified "Compound_mng_with_vib" rule in prepare_apertium_input.clp
+  13. Updated changes_in_databases. 
+  14. Updated Log.

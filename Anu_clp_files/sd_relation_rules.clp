@@ -549,7 +549,7 @@
  ; Ex. The accident happened as the night was falling. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule nsubj_advmod
-(root-verbchunk-tam-parser_chunkids ? ? ? $?ids ?kri)
+(or (root-verbchunk-tam-parser_chunkids ? ? ? $?ids ?kri) (rel_name-sids aux ?kri  ?to))
 (rel_name-sids advmod ?kri ?kri_viSeRaNa)
 (not  (got_viSeRya-jo_samAnAXikaraNa  ?kri_viSeRaNa))
 (not (got_kriyA-aXikaraNavAcI_avyaya_rel_for ?kri_viSeRaNa))
@@ -557,7 +557,7 @@
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     kriyA-kriyA_viSeRaNa	"?kri"	"?kri_viSeRaNa")"crlf)	
 (printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	nsubj_advmod	kriyA-kriyA_viSeRaNa	"?kri"	"?kri_viSeRaNa")"crlf)	
 )
- ; Ex. I like genetically modified food.  He runs fast .
+ ; Ex. I like genetically modified food.  He runs fast.  When you take the scissors, remember to put them back.
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule nsubj_advmod_1
 (rel_name-sids  advmod   ?viSeRya ?viSeRaka)

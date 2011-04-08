@@ -4574,7 +4574,7 @@ as unwrought copper	anagaDe_wAMbe_ke_rUpa_meM	anagaDe_wAMbe_ke_rUpa_meM	noun	3	R
 as usual	hameSA_kI_waraha	hameSA_kI_waraha	noun	2	RM
 as verbally instructed	mOKika_AxeSAnusAra	mOKika_AxeSAnusAra	noun	3	RM
 as well	acCA_hI_hE	acCA_hI_hE	noun	2	RM
-as well as	vEse_hI	vEse_hI	noun	3	RM
+as well as	vEse_hI	vEse_hI	noun	1	RM
 as whole	samagra	samagra	noun	2	RM
 as you know	jEsA_ki_Apa_jAnawe_ho	jEsA_ki_Apa_jAnawe_ho	noun	3	RM
 asbestos abatement	EsbestOYsa_upaSamana	EsbestOYsa_upaSamana	noun	2	RM
@@ -34341,3 +34341,4 @@ bad manners	aSiRtawA	aSiRtawA	noun	2	RM
 Jama masjid	jAmA_masjixa	jAmA_masjixa	noun	2	RM
 Jumma masjid	jummA_masjixa	jummA_masjixa	noun	2	RM
 beyond the grave	mqwyu_uparAMwa	mqwyu_uparAMwa	preposition	1	RM
+each and every	prawyeka	prawyeka	determiner	3	RM

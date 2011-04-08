@@ -157,8 +157,13 @@
  (test(neq ?vib 0))
  =>
 	(retract ?f0)
-	(printout ?*A_fp5* "(id-Apertium_input "?id " ^"?hmng "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^" ?vib "<cat:prsg>$)"  crlf)
-	(printout ?*aper_debug-file* "(id-Rule_name  " ?id " Compound_mng_with_vib )" crlf)
+        (if (eq ?pada_id ?id) then ;Ex: Everyone should enjoy each and every activity that he does. 
+	        (printout ?*A_fp5* "(id-Apertium_input "?id " ^"?hmng "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^" ?vib "<cat:prsg>$)"  crlf)
+      	     (printout ?*aper_debug-file* "(id-Rule_name  " ?id " Compound_mng_with_vib )" crlf)
+        else
+               (printout ?*A_fp5* "(id-Apertium_input "?id " ^"?hmng "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)"  crlf)
+               (printout ?*aper_debug-file* "(id-Rule_name  " ?id " Compound_mng_with_vib )" crlf)
+        )
  )
  ;-------------------------------------------------------------------------------------------------------------------------
  ;Is there life beyond the grave? 

@@ -2,7 +2,6 @@
  (defglobal ?*rev_root_file* = rev_rt_fp)
 
 
-; (deftemplate word-morph(slot original_word)(slot morph_word)(slot root)(slot category)(slot suffix)(slot number))
  (deffacts dummy_facts 
  (missing-level-id) 
  (id-original_word) 
@@ -33,7 +32,6 @@
  (defrule p_morph
  (declare (salience 700))
  (id-wsd_root ?id ?root)
-; (word-morph (root ?root)(category ?cat)(suffix ?suf)(number ?num))
  ?f0<-(id-root-category-suffix-number ?id ?root1 $?ids)
  ?f1<-(id-root ?id ?root1)
  =>
