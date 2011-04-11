@@ -18,20 +18,23 @@ else
     cd $PATH2/tmp_stdenglish
   fi
 
+### Removed join_hard_hyphen.lex  and rm_joined_hard_hyphens.lex because Now  we get morph information from apertium.
+
 # join_hard_hyphen.lex joins the two words that are split with hard hyphen.
 # It checks for the pattern '{WRD}\-[ ]*$', removes the white spaces following the hyphen.
 # It also removes '' from the dos format files.
 #$PATH1/join_hard_hyphen.out < $PATH2/$1 |\
-$PATH1/join_hard_hyphen.out < $2/$1 |\
+#$PATH1/join_hard_hyphen.out < $2/$1 |\
 
 
 # rm_joined_hard_hyphens.lex looks at all the occurances of w1-w2, and removes the hyphen if a a character sequence w1w2 exists in English morph database.
 
 # rm_joined_hard_hyphens.lex looks at all the occurances of w1-w2, and removes the hyphen if a a character sequence w1w2 exists in English morph database.
-$PATH1/rm_joined_hard_hyphens.out $HOME_anu_test/Anu_databases/morph.dbm > $1.tmp
+#$PATH1/rm_joined_hard_hyphens.out $HOME_anu_test/Anu_databases/morph.dbm > $1.tmp
 
 # abbr.lex expands the standard abbreviations with single apostophe such as I'm
-$PATH1/abbr.out < $1.tmp > $1.tmp1
+#$PATH1/abbr.out < $1.tmp > $1.tmp1
+$PATH1/abbr.out < $2/$1 > $1.tmp1
 
 # abbr1.lex handles standard abbreviations such as 'i.e.', 'e.g.', etc.
 # Better solution for this is necessary
