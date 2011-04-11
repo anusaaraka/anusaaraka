@@ -92,10 +92,15 @@
 (link_name-link_lnode-link_rnode ?lname ?x ?y)
 (root-verbchunk-tam-parser_chunkids ? ? ? $?chunk_ids ?kri)
 (test (or (member$ ?x $?chunk_ids) (eq ?kri ?x)))
+;(test (<= (string_to_integer ?y ) 2))
 =>
+(if (<= (string_to_integer ?y ) 2) then
 (printout	?*fp*	"(prep_id-relation-parser_ids -	kriyA-dummy_subject	"?kri"	"?y")"crlf)	
-(printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	kriyA-subject_SFI	kriyA-dummy_subject	"?kri"	"?y")"crlf)	
-)
+(printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	kriyA-subject_SFI	kriyA-dummy_subject  "?kri"	"?y")"crlf)	
+else
+(printout       ?*fp*   "(prep_id-relation-parser_ids - kriyA-dummy_subject     "?kri"  "?y")"crlf)
+(printout       ?*rel_debug*    "(prep_id-Rule-Rel-ids -        kriyA-subject_SFI       kriyA-subject   "?kri"  "?y")"crlf)
+))
 ;Ex.   How important is it to turn the computer off? 
 ;----------------------------------------------------------------------------------------------------------------
 (defrule kriyA-subject_SF
@@ -1591,11 +1596,9 @@
 (printout	?*fp*	"(prep_id-relation-parser_ids -	kriyA-subject	"?kri"	"10001")"	crlf)	
 (printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	subject_insertion	kriyA-subject	"?kri"	"10001")"	crlf)	
 (if (or (eq ?subj i) (eq ?subj I)) then
-(printout       ?*hmng_fp*      "(id-HM-source  10001   mEM    subject_insertion)"       crlf)
-(printout       ?*hmng_fp*      "(id-inserted_sub_id  "?id0"  10001)" crlf); Modified (id-HM-source-sub_id) fact to (id-inserted_sub_id) and printing directly the data in hindi_meaning.dat file. ;Modified by Mahalaxmi (07-04-11)
-else 
-(printout       ?*hmng_fp*      "(id-HM-source  10001   vaha    subject_insertion)"       crlf)
-(printout       ?*hmng_fp*      "(id-inserted_sub_id  "?id0"  10001)" crlf))
+(printout       ?*hmng_fp*      "(id-HM-source-sub_id  10001   mEM    subject_insertion  "?id0")"       crlf)	
+else
+(printout       ?*hmng_fp*      "(id-HM-source-sub_id  10001   vaha    subject_insertion  "?id0")"       crlf))
 ;the HM 'vaha' is only for the sents where apertium analysis does not exist.
 
 (printout	?*open-word*	"(id-word 10001  "?word")"	crlf)	
@@ -3390,9 +3393,10 @@ else
 (link_name-link_lnode-link_rnode ?Tname ?Tlnode ?Trnode)
 (link_name-link_lnode-link_rnode I|If ?Trnode ?Irnode)
 (not (root-verbchunk-tam-parser_chunkids $? ?Tlnode $?)) ;The public seem to love him, no matter what he does. I managed to go. It  is Jane who wants to do it.
+(test (neq ?Tname TOfc)) ;Our program is easier to use than to understand.
 =>
-(printout	?*fp*	"(prep_id-relation-parser_ids -	saMjFA-to_kqxanwa	"?Tlnode	"	"?Irnode")"	crlf)	
-(printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	saMjFA-kqxanwa_rule	saMjFA-to_kqxanwa   "?Tlnode	"	"?Irnode")"	crlf)	
+(printout	?*fp*	"(prep_id-relation-parser_ids -	saMjFA-to_kqxanwa	"?Tlnode	"	"?Irnode")"crlf)	
+(printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	saMjFA-kqxanwa_rule	saMjFA-to_kqxanwa   "?Tlnode"	"?Irnode")"crlf)	
 )
 ;Ex He wasted his golden opportunity to play in the national team
 ;----------------------------------------------------------------------------------------------------------------
@@ -3400,9 +3404,10 @@ else
 (declare (salience 100))
 (link_name-link_lnode-link_rnode TOi ?Tlnode ?Trnode)
 (link_name-link_lnode-link_rnode I|If ?Trnode ?Irnode)
+(linkid-node_cat ?Tlnode ~verb) ;How many years did it take to do it?
 =>
-(printout	?*fp*	"(prep_id-relation-parser_ids -	saMjFA-to_kqxanwa	"?Tlnode	"	"?Irnode")"	crlf)	
-(printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	vi_Na-to_inf	saMjFA-to_kqxanwa	"?Tlnode	"	"?Irnode")"	crlf)	
+(printout	?*fp*	"(prep_id-relation-parser_ids -	saMjFA-to_kqxanwa	"?Tlnode	"	"?Irnode")"crlf)	
+(printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	vi_Na-to_inf	saMjFA-to_kqxanwa	"?Tlnode"	"?Irnode")"crlf)	
 )
 ;Ex	It is fun   to try to beat the program.
 ;----------------------------------------------------------------------------------------------------------------
@@ -3728,6 +3733,26 @@ else
 (printout       ?*rel_debug*    "(prep_id-Rule-Rel-ids "?t"  upameyopamAna_11	more_upameya-than_upamAna	"?m_up"	"?t_up")"crlf)
 )
 ;Ex. Our program works better than yours.
+;----------------------------------------------------------------------------------------------------------------
+(defrule upameyopamAna_12
+(declare (salience 595))
+(link_name-link_expansion    ?P    P a $?v m)
+(link_name-link_lnode-link_rnode   ?P  ?x ?y)
+(link_name-link_expansion    ?To    T O $?var)
+(link_name-link_lnode-link_rnode   ?To   ?y  ?to)
+(link_name-link_expansion    ?I   I $?)
+(link_name-link_lnode-link_rnode   ?I   ?to  ?m_up)
+(link_name-link_expansion    ?L    L E $?vars)
+(link_name-link_lnode-link_rnode   ?L  ?y ?t)
+(link_name-link_expansion    ?Toc    T O $?vari c)
+(link_name-link_lnode-link_rnode   ?Toc   ?t  ?to1)
+(link_name-link_expansion    ?I1   I $?z)
+(link_name-link_lnode-link_rnode   ?I1   ?to1  ?t_up)
+=>
+(printout       ?*fp*   "(prep_id-relation-parser_ids  "?t"      more_upameya-than_upamAna       "?m_up" "?t_up")"crlf)
+(printout       ?*rel_debug*    "(prep_id-Rule-Rel-ids "?t"  upameyopamAna_12   more_upameya-than_upamAna       "?m_up" "?t_up")"crlf)
+)
+;Ex. Our program is easier to use than to understand.
 ;----------------------------------------------------------------------------------------------------------------
 (defrule to-inf
 (link_name-link_expansion    ?TO   T O $?vars)

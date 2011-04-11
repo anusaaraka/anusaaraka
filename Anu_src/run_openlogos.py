@@ -453,7 +453,6 @@ for i in xrange(len(SWRK_TAB_TRN4)):
       if SWRK_TAB_TRN4[i][1] == '2' or SWRK_TAB_TRN4[i][1] == '12' or SWRK_TAB_TRN4[i][0] == 'EOS' or SWRK_TAB_TRN4[i][0] == 'BOS' or SWRK_TAB_TRN4[i][0] == 'CLS-BOS' or SWRK_TAB_TRN4[i][0] == 'CLS-EOS' or SWRK_TAB_TRN4[i][1]=='20':
          SWRK_TAB_TRN4_V.append(SWRK_TAB_TRN4[i])
          j = j+1
-k=0;j=0;increment_loop=0
 SWRK_TAB_TRN4_V1 = SWRK_TAB_TRN4_V
 #----------------------------------#### Get Relation information ####--------------------------------
 matrix = [[]]
@@ -684,6 +683,11 @@ for i in xrange(len(tran1)):
             if tran1[i-2][0] == '2' and tran1[i][0] == '3' and tran1[i][4] in lupwa_prep and tran1[i-2][5] != 'SWITCH68':
                 rel_fp.write("(prep_id-relation-parser_ids - kriyA-aXikaraNavAcI_avyaya  P%s\tP%s)\n" % (sconId_resId[tran1[i-2][3]], sconId_resId[tran1[i][3]]))
 #Ex. It was cold there even in summer.
+
+        if len(tran1) > 4 and tran1[i-2][0] == '1' and tran1[i-1][0] == '13' and tran1[i][0] == '2' and tran1[i][2] == '5':
+            rel_fp.write("(prep_id-relation-parser_ids  P%s viSeRya-%s_saMbanXI  P%s\tP%s)\n" % (sconId_resId[tran1[i-1][3]], return_prep(tran1[i-1][3]), sconId_resId[tran1[i-2][3]], sconId_resId[tran1[i][3]]))
+# Ex. We have very different idea about disciplining children.
+
 
 #NOTE : The above relations do not add any new relations. They are retained as a back-up.  All the across relations are computed from tran3 output.
 
@@ -1297,7 +1301,7 @@ for i in xrange(len(tran2)):
 # Ex. Is that the film in which he kills his mother. 
 	
 	if len(tran2) > 4 and tran2[i-4][0] == '20' and tran2[i-3][0] == '13' and tran2[i-2][0] == '1' and tran2[i-1][0] == '1' and tran2[i][0] == '2':
-            rel_fp.write("(prep_id-relation-parser_ids  P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % ( sconId_resId[tran2[i-3][3]], return_prep(tran2[i-3][3]), sconId_resId[tran2[i][3]], sconId_resId[tran2[i-2][3]]))
+            rel_fp.write("(prep_id-relation-parser_ids  P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (sconId_resId[tran2[i-3][3]], return_prep(tran2[i-3][3]), sconId_resId[tran2[i][3]], sconId_resId[tran2[i-2][3]]))
 #            print "afdssssssssss  P%s kriyA-%s_saMbanXI  P%s\tP%s)\n" % (sconId_resId[tran2[i-3][3]], return_prep(tran2[i-3][3]), sconId_resId[tran2[i][3]], sconId_resId[tran2[i-2][3]])
 # Ex. Is that the film in which he kills his mother.
 
