@@ -7,11 +7,11 @@
        -- lttoolbox 3.1 or above
        -- apertium 3.1 or above
        -- xsltproc
-       -- gdbm, 
+       -- libgdbm3, libgdbm-dev (to use gdbm), 
        -- gcc ,  
        -- ant ( Anusaaraka will run without ant also so one can ignore the errors found while compiling it )
-
-       -- OpenLogos MT (OpenLogos package contains the README for how to Install)
+       -- clips
+       -- OpenLogos MT (OpenLogos package contains README, steps to Install it)
        -- timeout    (this command is used to exit the CLIPS environment in the specific time.)
 
 --------------------------------------------------------------------------------------------------------------

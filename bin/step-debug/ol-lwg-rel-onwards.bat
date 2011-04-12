@@ -1,4 +1,4 @@
-; ;~~~~~~~~~~~~~~~~~~~~WSD MODULE ~~~~~~~~~~~~~~~~~~~~~~~~~~
+ ;~~~~~~~~~~~~~~~~~~~~WSD MODULE ~~~~~~~~~~~~~~~~~~~~~~~~~~
  (defmodule MAIN (export ?ALL)
                  (export deftemplate ?ALL))
  (deftemplate word-morph(slot original_word)(slot morph_word)(slot root)(slot category)(slot suffix)(slot number))
@@ -42,7 +42,6 @@
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/preferred_morph_consistency_check.bclp"))
  (bload ?*path*)
  (load-facts "root.dat")
- (load-facts "morph.dat")
  (load-facts "preferred_morph.dat")
  (load-facts "wsd_facts_output.dat")
  (open "revised_preferred_morph.dat" morph_cons_fp "a")
@@ -99,7 +98,7 @@
  (clear)
  ;----------------------------------------------------------------------
  ; Generate hindi Pada for the sentence.
- ; with in paxa ordering (e.g to reach your potential --> hindi ((your) (potential)(to reach)) 
+ ; with in paxa ordering (e.g to reach your potential --> hindi ((your) (potential)(to reach))
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/pada.clp"))
  (load ?*path*)
@@ -211,11 +210,11 @@
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/number.clp"))
  (load ?*path*)
+ (load-facts "number_tmp.dat")
  (load-facts "word.dat")
+ (load-facts "revised_preferred_morph.dat")
  (load-facts "verb_agreement.dat")
  (load-facts "wsd_facts_output.dat")
- (load-facts "number_tmp.dat")
- (load-facts "revised_preferred_morph.dat")
  (run)
  (save-facts "number.dat" local id-number-src)
  (clear)
@@ -230,7 +229,7 @@
  (load-facts "relations_tmp1.dat")
  (load-facts "number.dat")
  (load-facts "gender.dat")
- (load-facts "hindi_meanings_tmp.dat")
+ (load-facts "hindi_meanings.dat")
  (load-facts "pada_control_fact.dat")
  (open "GNP_errors.txt" err_fp "a")
  (open "GNP_debug.dat" gnp_fp "a")
@@ -249,13 +248,12 @@
  (run)
  (save-facts "pada_info.dat" local current_id-group_members id-current_id prep_id-relation-anu_ids )
  (clear)
- ;------------------------------------------------------------------------------- 
+ ;-------------------------------------------------------------------------------
  ; Across paxa ordering
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/hindi_position.bclp"))
  (bload ?*path*)
  (load-facts "word.dat")
- (load-facts "chunk.dat")
  (load-facts "lwg_info.dat")
  (load-facts "Eng_id_order.dat")
  (load-facts "punctuation_info.dat")

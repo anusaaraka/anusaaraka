@@ -25,19 +25,6 @@
  (run)
  (clear)
  ;-----------------------------------------------------------------------------------
- ; modify the root accordingly (e.g Broken window - > broken(adj) but take root (broken-verb)
- (load "global_path.clp")
- (bind ?*path* (str-cat ?*path* "/Anu_clp_files/root_consistency_check.clp"))
- (load ?*path*)
- (load-facts "original_word.dat")
- (load-facts "morph.dat")
- (load-facts "ol_cat_info.dat")
- (load-facts "root_tmp.dat")
- (load-facts "parserid_wordid_mapping.dat")
- (open "root_consistency_check_tmp.dat" root_cons_tmp_fp "a")
- (run)
- (clear)
- ;------------------------------------------------------------------------
  ;Desambiguating LWG:
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/lwg_disambiguation.bclp"))
@@ -84,7 +71,7 @@
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/ol_parser_id_mapping.bclp"))
  (bload ?*path*)
  (load-facts "ol_lwg_info.dat")
- (load-facts "root_consistency_check_tmp.dat")
+ (load-facts "root_tmp.dat")
  (load-facts "preferred_morph_tmp.dat")
  (load-facts "ol_relations.dat")
  (load-facts "ol_cat_info_tmp1.dat")
@@ -216,7 +203,6 @@
  (open "agmt_control_fact.dat" agmt_cntrl_fp "a")
  (open "pada_control_fact.dat" pada_cntrl_fp "a")
  (run)
- (facts)
  (save-facts "pada_id_info.dat" local  pada_info)
  (clear)
  ;----------------------------------------------------------------------

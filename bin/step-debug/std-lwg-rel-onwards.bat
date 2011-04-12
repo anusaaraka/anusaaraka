@@ -1,5 +1,5 @@
  ;~~~~~~~~~~~~~~~~~~~~WSD MODULE ~~~~~~~~~~~~~~~~~~~~~~~~~~
-(defmodule MAIN (export ?ALL)
+ (defmodule MAIN (export ?ALL)
                  (export deftemplate ?ALL))
  (deftemplate word-morph(slot original_word)(slot morph_word)(slot root)(slot category)(slot suffix)(slot number))
  (load-facts "meaning_to_be_decided.dat")
@@ -36,11 +36,11 @@
  (save-facts "wsd_facts_output.dat" local)
  (clear)
  ;----------------------------------------------------------------------
+ ; take prefered morph according to wsd root
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/preferred_morph_consistency_check.bclp"))
  (bload ?*path*)
  (load-facts "root.dat")
- (load-facts "morph.dat")
  (load-facts "preferred_morph.dat")
  (load-facts "wsd_facts_output.dat")
  (open "revised_preferred_morph.dat" morph_cons_fp "a")
@@ -48,6 +48,7 @@
  (run)
  (clear)
  ;----------------------------------------------------------------------
+ ; Generate tam for all verbs
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/vibakthi_id.bclp"))
  (bload ?*path*)
@@ -59,8 +60,9 @@
  (open "vibakthi_id.dat" vib_id_fp "a")
  (open "tam_id.dat" tam_id_fp "a")
  (run)
-  (clear)
+ (clear)
  ;----------------------------------------------------------------------
+ ; tam disambiguation in wsd rule
  (defmodule MAIN (export ?ALL))
  (load-facts "revised_root.dat")
  (load-facts "word.dat")
@@ -112,6 +114,7 @@
  (save-facts "pada_id_info.dat" local  pada_info)
  (clear)
  ;----------------------------------------------------------------------
+ ; tam consistency check (more weightage to wsd then default)
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/tam_meaning.bclp"))
  (bload ?*path*)
@@ -124,6 +127,7 @@
  (save-facts "hindi_tam_info.dat" local pada_info)
  (clear)
  ;----------------------------------------------------------------------
+ ; Generate hindi meaning for every english word (priority -> compl.sen, compound,wsd,default etc..)
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/hindi_meaning.bclp"))
  (bload ?*path*)
@@ -141,6 +145,7 @@
  (run)
  (clear)
  ;----------------------------------------------------------------------
+ ; modify the hindi verb root to causative form (e.g KAnA_kilA --> KAnA-KilavA)
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/causative_verb_mng.bclp"))
  (bload ?*path*)
@@ -155,6 +160,7 @@
  (run)
  (clear)
  ;----------------------------------------------------------------------
+ ; Determine gender of all hindi words
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/gender_info.bclp"))
  (bload ?*path*)
@@ -166,7 +172,8 @@
  (run)
  (clear)
  ;----------------------------------------------------------------------
-  (load "global_path.clp")
+ ; Determine viBakwi for each pada taking information from wsd,tam,shasthi-pronouns
+ (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/vibakthi.bclp"))
  (bload ?*path*)
  (assert (load_yA_tams_with_ne))
@@ -183,6 +190,7 @@
  (save-facts "vibakthi_info.dat" local pada_info)
  (clear)
  ;----------------------------------------------------------------------
+ ; Decide the verb agreement with padas.
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/agreement.bclp"))
  (bload ?*path*)
@@ -190,23 +198,26 @@
  (load-facts "relations_tmp1.dat")
  (load-facts "agmt_control_fact.dat")
  (load-facts "hindi_meanings.dat")
+ (load-facts "original_word.dat")
  (open "verb_agreement.dat" agrmt_fp "a")
  (open "agreement_debug.dat" agrmt_db "a")
  (run)
  (clear)
  ;----------------------------------------------------------------------
+ ; Determine the number of each word.
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/number.clp"))
  (load ?*path*)
- (load-facts "revised_preferred_morph.dat")
- (load-facts "wsd_facts_output.dat")
- (load-facts "verb_agreement.dat")
  (load-facts "word.dat")
+ (load-facts "revised_preferred_morph.dat")
+ (load-facts "verb_agreement.dat")
+ (load-facts "wsd_facts_output.dat")
  (assert (std-parser-num))
  (run)
  (save-facts "number.dat" local id-number-src)
  (clear)
  ;--------------------------------------------------------------------------
+ ; intra-paxa aggreement (e.g A fat boy -> ek motA ladakA)
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/GNP_agreement.bclp"))
  (bload ?*path*)
@@ -251,6 +262,7 @@
  (save-facts "hindi_position.dat" local pada_info)
  (clear)
  ;---------------------------------------------------------------------------------
+ ; Adding extra hindi word and reorder the hindi sentence (e.g Are you going ?  -> kyA Aap jA rahe ho ?)
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/hindi_sent_reorder.bclp"))
  (bload ?*path*)
@@ -266,6 +278,7 @@
  (save-facts "hindi_id_reorder.dat" local hindi_id_order)
  (clear)
  ;--------------------------------------------------------------------------
+ ; prepare Apertium input for final hindi word generation.
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/prepare_apertium_input.bclp"))
  (bload ?*path*)
@@ -286,10 +299,11 @@
  (load-facts "cat_consistency_check.dat")
  (load-facts "tam_id.dat")
  (open "id_Apertium_input.dat" fp5 "a")
- (open "apertium_input_debug" aper_debug "a")
+ (open "apertium_input_debug.dat" aper_debug "a")
  (run)
  (clear)
  ;--------------------------------------------------------------------------
+ ; For html output generate paxasUwra layer for each word.
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/padasuthra.bclp"))
  (bload ?*path*)

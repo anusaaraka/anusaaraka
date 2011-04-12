@@ -74,7 +74,6 @@
  gcc -o ir lex.yy.c -lfl 
  mv ir $HOME_anu_test/bin/
  gcc -o split_file.out   split_file.c 
- gcc -o cat.out cat.c 
  gcc -o chunker.out  chunker.c 
  ./comp.sh aper_chunker 
  ./comp.sh rm_tags

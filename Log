@@ -2150,7 +2150,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
             link_verified (237)	   verified (455)     ol_verified (558)
   20. Updated Log.
 
-  11-04-11
+  12-04-11
   ========
   1. In preferred_morph_consistency_check.clp, 
           Removed  : deftemplate word-morph
@@ -2170,7 +2170,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
           Removed dummy_facts (chunk_ids) and (root-verbchunk-tam-chunkids)
   7. In causative_verb_mng.clp, removed "subject_insertion" rule.
   8. In link_relation_rules.clp, 
-          Modified : subject_insertion rule.
+          Modified : subject_insertion, kriyA-subject_SFI, saMjFA-kqxanwa_rule, vi_Na-to_inf rules
+          Added    : upameyopamAna_12 rule
   9. In GNP_agreement.clp,  
           Modified : subject_insertion_rule.
   10. Added dummy fact (id-inserted_sub_id) in following files:
@@ -2178,8 +2179,20 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	  gender_info.clp	padasuthra.clp		prepare_apertium_input.clp
   11. Modified "nsubj_advmod" rule in sd_relation_rules.clp.
   12. Modified "Compound_mng_with_vib" rule in prepare_apertium_input.clp
-  13. In ol_stdenglish.sh and stdenglish.sh:
+  13. In modify_ol_relations.clp,   Modified:  add_conj_rel_with_which
+  14. Modified 'Pre requisites' in README for anu_testing.
+  15. In ol_stdenglish.sh and stdenglish.sh:
           Modified: Removed join_hard_hyphen.lex  and rm_joined_hard_hyphens.lex because Now  we get morph information from 
                     apertium.
-  14. Updated changes_in_databases. 
-  15. Updated Log.
+  16. Modified run_openlogos.py.
+  17. Removed "root_consistency_check.clp" file and handled it in root_rule.clp for all three parsers.
+  18. In run_modules_ol.bat, run_modules_link.bat and run_modules_std.bat:
+          Removed : root_consistency_check.clp module 
+          Modified: Instead of loading "root_consistency_check_tmp.dat" in parser_id_mapping.clp & ol_parser_id_mapping.clp
+                    loaded "root_tmp.dat" file.
+  19. Updated in step-debug following files:
+          link-pada-onwards.bat		std-lwg-rel-onwards.bat		link-lwg-rel-onwards.bat
+          ol-pada-onwards.bat		ol-lwg-rel-onwards.bat		std-pada-onwards.bat
+  20. Removed cat.c programme, as its not used now and modified the same in anu_compile.sh
+  21. Updated changes_in_databases. 
+  22. Updated Log.
