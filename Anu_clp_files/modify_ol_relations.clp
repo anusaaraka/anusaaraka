@@ -1182,43 +1182,73 @@
 ))
 
 ;----------------------------------------------------------------------------------------------------------------------------
-
+;Removed below three rules from lwg_disambiguation.clp and added here. 
+;I am quite excited about next week.
+(defrule head_transfer_3
+(declare (salience 1502))
+(root-verbchunk-tam-parser_chunkids ?root ?xcited ?tam  ?v ?s)
+(prep_id-relation-parser_ids  - kriyA-subject  ?s    ?sub)
+(ol_res_id-word_id-word ?v     ?i      ?am)
+(ol_res_id-word_id-word ?s     ?a      excited|worried)
+=>
+      (printout       ?*ol_fp*    "(prep_id-relation-parser_ids  - subject-subject_samAnAXikaraNa  "?sub" "?s")"crlf)
+)
+;---------------------------------------------------------------------------------------------------------
+;I am quite excited about next week.
+(defrule head_transfer_4
+(declare (salience 1502))
+(root-verbchunk-tam-parser_chunkids ?root ?am_excited ?tam  ?v ?s)
+?f<-(prep_id-relation-parser_ids  - kriyA-kriyA_viSeRaNa  ?s    ?vi)
+(ol_res_id-word_id-word ?v     ?i      ?am)
+(ol_res_id-word_id-word ?s     ?a      excited|worried)
+=>
+      (retract ?f)
+      (printout       ?*ol_fp*    "(prep_id-relation-parser_ids  - viSeRaNa-viSeRaka  "?s" "?vi")"crlf)
+)
+;---------------------------------------------------------------------------------------------------------
+;I am quite excited about next week.
+(defrule head_transfer_1
+(declare (salience 150))
+(root-verbchunk-tam-parser_chunkids ?root ?am_excited ?tam  ?v ?s)
+?f<-(prep_id-relation-parser_ids  ?p ?rel ?s ?l)
+(ol_res_id-word_id-word ?v     ?i      ?am)
+(ol_res_id-word_id-word ?s     ?a      excited|worried)
+=>
+      (retract ?f)
+      (printout       ?*ol_fp*    "(prep_id-relation-parser_ids  "?p"   "?rel" "?v" "?l")"crlf)
+)
+;---------------------------------------------------------------------------------------------------------
 (defrule write_remaining_relations
 (declare (salience -50))
 (prep_id-relation-parser_ids   ?p  ?rel ?kri ?id)
 (not (and (rel_has_been_deleted ?p ?rel  ?kri ?id)(rel_has_been_written ?p ?rel ?kri ?id)))
 =>
-(printout       ?*ol_fp*    "(prep_id-relation-parser_ids "  ?p"  "?rel" " ?kri" " ?id")"crlf)
+     (printout       ?*ol_fp*    "(prep_id-relation-parser_ids "  ?p"  "?rel" " ?kri" " ?id")"crlf)
 )
 
-;----------------------------------------------------------------------------------------------------------------------------
-
+;---------------------------------------------------------------------------------------------------------------------------
 ;Ex. TELL me a sentence.
 (defrule write_AjFArWaka_kriyA_rel
 (declare (salience -50))
 (prep_id-relation-parser_ids   ?p  ?rel ?kri_id)
 (not (or (rel_has_been_deleted  ?p ?rel ?kri_id) (rel_has_been_written ?p ?rel  ?kri_id)))
 =>
-(printout       ?*ol_fp*    "(prep_id-relation-parser_ids  " ?p"  "?rel" " ?kri_id")"crlf)
+     (printout       ?*ol_fp*    "(prep_id-relation-parser_ids  " ?p"  "?rel" " ?kri_id")"crlf)
 )
 
-;----------------------------------------------------------------------------------------------------------------------------
-
+;---------------------------------------------------------------------------------------------------------------------------
 (defrule write_AjFArWaka_kriyA_rel1
 (declare (salience -50))
 (prep_id-relation-parser_ids   ?p  ?rel)
 (not (or (rel_has_been_deleted ?p ?rel) (rel_has_been_written ?p ?rel)))
 =>
-(printout       ?*ol_fp*    "(prep_id-relation-parser_ids   "?p"  "?rel" )"crlf)
+     (printout       ?*ol_fp*    "(prep_id-relation-parser_ids   "?p"  "?rel" )"crlf)
 )
-
-;----------------------------------------------------------------------------------------------------------------------------
-
+;---------------------------------------------------------------------------------------------------------------------------
 (defrule end
 (declare (salience -100))
 =>
-(close ?*ol_fp*)
-(close ?*debug*)
+     (close ?*ol_fp*)
+     (close ?*debug*)
 )
-
-;----------------------------------------------------------------------------------------------------------------------------
+;---------------------------------------------------------------------------------------------------------------------------

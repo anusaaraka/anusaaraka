@@ -178,7 +178,7 @@ may_be_en	yA_jA_sakawA_hE-0-0
 may_have_been_en	yA_gayA_hogA-0-0
 may_have_been_ing	wA_rahA_ho-0-ho_sakawA_hE
 may_have_en	yA_hogA-ne-0
-may_need_to_0	nA_kI_jarUWawa_pada_sakawI_hE-0-0
+may_need_to_0	ne_kI_jarUWawa_pada_sakawI_hE-ko-0
 may_not_0	0_sakawA-0-nahIM
 may_not_be_en	yA_jA_sakawA_hE-0-nahIM
 may_not_have_been_en	yA_gayA_hogA-0-nahIM

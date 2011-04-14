@@ -1698,3 +1698,17 @@ ye_binA,m,p,u	ye_binA
 ye_binA,m,s,a	ye_binA
 ye_binA,m,s,m	ye_binA
 ye_binA,m,s,u	ye_binA
+
+
+ne_kI_jarUWawa_pada_sakawI_hE,f,p,a	kI_jarUWawa_pada_sakawI_hE
+ne_kI_jarUWawa_pada_sakawI_hE,f,p,m	kI_jarUWawa_pada_sakawI_hE
+ne_kI_jarUWawa_pada_sakawI_hE,f,p,u	kI_jarUWawa_pada_sakawI_hE
+ne_kI_jarUWawa_pada_sakawI_hE,f,s,a	kI_jarUWawa_pada_sakawI_hE
+ne_kI_jarUWawa_pada_sakawI_hE,f,s,m	kI_jarUWawa_pada_sakawI_hE
+ne_kI_jarUWawa_pada_sakawI_hE,f,s,u	kI_jarUWawa_pada_sakawI_hE
+ne_kI_jarUWawa_pada_sakawI_hE,m,p,a	kI_jarUWawa_pada_sakawI_hE
+ne_kI_jarUWawa_pada_sakawI_hE,m,p,m	kI_jarUWawa_pada_sakawI_hE
+ne_kI_jarUWawa_pada_sakawI_hE,m,p,u	kI_jarUWawa_pada_sakawI_hE
+ne_kI_jarUWawa_pada_sakawI_hE,m,s,a	kI_jarUWawa_pada_sakawI_hE
+ne_kI_jarUWawa_pada_sakawI_hE,m,s,m	kI_jarUWawa_pada_sakawI_hE
+ne_kI_jarUWawa_pada_sakawI_hE,m,s,u	kI_jarUWawa_pada_sakawI_hE

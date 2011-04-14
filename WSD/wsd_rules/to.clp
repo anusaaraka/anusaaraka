@@ -7,7 +7,7 @@
 
 ;Added by Meena(12.4.10)
 ;Everyone has a right to education.  (2nd linkage gives correct parse)
-(defrule to01
+(defrule to0
 (declare (salience 6000))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -16,10 +16,8 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* " to.clp    to01  "  ?id "   kA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* " to.clp    to0  "  ?id "   kA  )" crlf))
 )
-
-
 
 
 
@@ -71,7 +69,7 @@
 
 ;Added by Meena(8.9.10)
 ;Because of the recession the company is to axe 350 jobs . 
-(defrule to04
+(defrule to4
 (declare (salience 4700))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -84,16 +82,16 @@
 (assert (id-H_vib_mng ?rid vAlA))
 (assert (id-wsd_word_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp         to04   "  ?rid " )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to04   "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to04   "  ?rid " vAlA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp         to4   "  ?rid " )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to4   "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to4   "  ?rid " vAlA )" crlf))
 )
 
 
 
 
 
-(defrule to4
+(defrule to5
 (declare (salience 4600))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -105,16 +103,16 @@
 (assert (id-H_vib_mng ?rid 0))
 (assert (id-wsd_word_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to4   "  ?rid " )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to4   "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to4   "  ?rid " 0 )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to5  "  ?rid " )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to5   "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to5   "  ?rid " 0 )" crlf))
 )
 
 ;To stimulate is to cause to be alert && energetic.
 
 
 
-(defrule to5
+(defrule to6
 (declare (salience 4500))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -124,14 +122,14 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to5   "  ?id "  - )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to6   "  ?id "  - )" crlf))
 )
 
 ;The paper turned from red to green.
 
 
 
-(defrule to6
+(defrule to7
 (declare (salience 4400))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -144,15 +142,15 @@
 (assert (id-H_vib_mng ?rid ke_liye))
 (assert (id-wsd_word_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp   	to6   "  ?rid " )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to6  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to6  "  ?rid " ke_liye )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp   	to7   "  ?rid " )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to7  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to7  "  ?rid " ke_liye )" crlf))
 )
 
 
 
 
-(defrule to7
+(defrule to8
 (declare (salience 4300))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -162,7 +160,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id waka))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to7   "  ?id "  waka )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to8   "  ?id "  waka )" crlf))
 )
 
 ;He ran from point A to point B.
@@ -172,7 +170,7 @@
 
 
 
-(defrule to8
+(defrule to9                            
 (declare (salience 4200))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -181,13 +179,13 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to8   "  ?id "  - )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to9   "  ?id "  - )" crlf))
 )
 
 
 
 
-(defrule to9
+(defrule to10
 (declare (salience 4100))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -200,9 +198,9 @@
 (assert (id-H_vib_mng ?rid 0))
 (assert (id-wsd_word_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to9   " ?rid "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to9  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to9  "  ?rid " 0 )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to10   " ?rid "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to10  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to10  "  ?rid " 0 )" crlf))
 )
 
 ; I want him to pass the exam
@@ -211,7 +209,7 @@
 
 
 
-(defrule to10
+(defrule to11
 (declare (salience 4000))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -224,9 +222,9 @@
 (assert (id-H_vib_mng ?rid 0))
 (assert (id-wsd_word_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to10   "  ?rid "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to10  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to10  "  ?rid " 0 )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to11   "  ?rid "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to11  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to11  "  ?rid " 0 )" crlf))
 )
 
 ; Anne began to cry.
@@ -236,7 +234,7 @@
 
 
 
-(defrule to11
+(defrule to12
 (declare (salience 3900))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -249,9 +247,9 @@
 (assert (id-H_vib_mng ?rid 0))
 (assert (id-wsd_word_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to11   "  ?rid " )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to11  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to11  "  ?rid " 0 )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to12   "  ?rid " )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to12  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to12  "  ?rid " 0 )" crlf))
 )
 
 ;He is going to start it.
@@ -260,7 +258,7 @@
 
 
 
-(defrule to12
+(defrule to13
 (declare (salience 3800))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -273,9 +271,9 @@
 (assert (id-H_vib_mng ?rid kI))
 (assert (id-wsd_word_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to12   " ?rid "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to12  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to12  "  ?rid " kI )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to13   " ?rid "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to13  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to13  "  ?rid " kI )" crlf))
 )
 
 ;He has ability to cross the river.
@@ -284,7 +282,7 @@
 
 
 
-(defrule to13
+(defrule to14
 (declare (salience 3700))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -297,9 +295,9 @@
 (assert (id-H_vib_mng ?rid kA))
 (assert (id-wsd_word_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to13   " ?rid " )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to13  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to13  "  ?rid " kA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to14   " ?rid " )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to14  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to14  "  ?rid " kA )" crlf))
 )
 
 ;Modified by sheetal(18-03-10)
@@ -310,7 +308,7 @@
 
 
 
-(defrule to14
+(defrule to15
 (declare (salience 2950));salience changed by sheetal
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -325,9 +323,9 @@
 (assert (id-H_vib_mng ?rid kA))
 (assert (id-wsd_word_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp        to14   "  ?rid "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to14  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to14  "  ?rid " kA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp        to15   "  ?rid "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to15  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to15  "  ?rid " kA )" crlf))
 )
 
 ;This is the right way to go.
@@ -337,7 +335,7 @@
 
 
 
-(defrule to15
+(defrule to16
 (declare (salience 3500))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -351,9 +349,9 @@
 (assert (id-H_vib_mng ?rid 0))
 (assert (id-wsd_word_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to15   " ?rid "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to15  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to15  "  ?rid " 0 )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to16   " ?rid "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to16  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to16  "  ?rid " 0 )" crlf))
 )
 
 ;His aim was to become president.
@@ -363,7 +361,7 @@
 
 
 
-(defrule to16
+(defrule to17
 (declare (salience 3400))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -376,9 +374,9 @@
 (assert (id-H_vib_mng ?rid vAlA))
 (assert (id-wsd_word_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to16   " ?rid "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to16  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to16  "  ?rid "  vAlA)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to17   " ?rid "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to17  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to17  "  ?rid "  vAlA)" crlf))
 )
 
 ;He was to become president.
@@ -386,7 +384,7 @@
 
 
 
-(defrule to17
+(defrule to18
 (declare (salience 3300))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -399,9 +397,9 @@
 (assert (id-H_vib_mng ?rid 0))
 (assert (id-wsd_word_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to17   "  ?rid "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to17  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to17  "  ?rid "  0 )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to18   "  ?rid "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to18  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to18  "  ?rid "  0 )" crlf)
 )
 )
 
@@ -546,10 +544,13 @@
 ;Added by Meena(2.9.09)The salience in this rule should be higher than that in "to21";(assert (id-H_vib_mng ?rid 0)) , here H-vib_mng should be "0" and not "-"
 ;It is impossible to reach on time for the function.
 (defrule to22
-(declare (salience 2900))
+(declare (salience 3000))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
-(saMjFA-to_kqxanwa  ?id1 ?id2)    ;Sukhada may need to change this relation, here "impossible" is adjective and not saMjFA  ,then we will change the rule name also . Renamed saMjFA-kqxanwa as saMjFA-to_kqxanwa by Manju (05-02-11)
+(not(id-root ?rid fix|catch|word))
+(id-cat_coarse =(- ?id 1) adjective) ;Added by Meena(6.4.11)
+(or(saMjFA-to_kqxanwa  =(- ?id 1)  ?rid)(kriyA-kriyArWa_kriyA  ?kri ?rid)(kriyA-kqxanwa_karma  ?kri ?rid))
+    ;Sukhada may need to change this relation, here "impossible" is adjective and not saMjFA  ,then we will change the rule name also . Renamed saMjFA-kqxanwa as saMjFA-to_kqxanwa by Manju (05-02-11)
 (subject-subject_samAnAXikaraNa  ?id3 ?id1)
 (to-infinitive  ?id ?rid)                       
 (id-cat_coarse ?rid verb)
@@ -567,11 +568,37 @@
 
 
 
+;Added by Meena(6.4.11)
+;Galelio was the first scientist to claim that the earth moves around the sun.
+(defrule to23
+(declare (salience 2900))
+(id-root ?id to)
+?mng <-(meaning_to_be_decided ?id)
+(or(saMjFA-to_kqxanwa  ?id1 ?id2)(kriyA-kriyArWa_kriyA  ?kri ?rid))    
+(subject-subject_samAnAXikaraNa  ?id3 ?id1)
+(not(id-root ?id1 manner))    ;Added by Meena (8.4.11)
+(not(kriyA-dummy_subject  ?kri ?id3))
+(not(id-root ?rid resign|drive|fix|hear))
+(to-infinitive  ?id ?rid)
+(id-cat_coarse ?rid verb)
+=>
+(retract ?mng)
+(assert (make_verbal_noun ?rid))
+(assert (id-wsd_word_mng ?id -))
+(assert (id-H_vib_mng ?rid ke_liye))    
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp         to23   " ?rid " )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp       to23   "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to23  "  ?rid "  ke_liye )" crlf)
+)
+)
+
+
 
 
 ;;Added by Meena(1.9.10)
 ;;This time I am determined to give a simple sentence for testing . 
-(defrule to022
+(defrule to24
 (declare (salience 2900))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -586,20 +613,21 @@
 (assert (id-wsd_word_mng ?id -))
 (assert (id-H_vib_mng ?rid ke_liye))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp         to022   " ?rid " )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp       to022   "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to022  "  ?rid "  0 )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp         to24   " ?rid " )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp       to24   "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to24  "  ?rid "  ke_liye )" crlf)
 )
 )
 
 
 ;Modified by Meena(15.9.09)
 ;But my efforts to win his heart have failed . 
-(defrule to23
+(defrule to25
 (declare (salience 2800))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
 (to-infinitive  ?id ?rid)
+;(not(id-root ?rid understand))
 (or(saMjFA-to_kqxanwa  ?id1 ?rid)(kriyA-kriyA_mUla ?id2 ?id1));Renamed saMjFA-kqxanwa as saMjFA-to_kqxanwa by Manju(05-02-11)
 (id-cat_coarse ?rid verb)
 =>
@@ -608,9 +636,9 @@
 (assert (id-wsd_word_mng ?id -))
 (assert (id-H_vib_mng ?rid ke_liye))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to23   " ?rid " )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp       to23   "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to23  "  ?rid "  ke_liye )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to25   " ?rid " )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp       to25   "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to25  "  ?rid "  ke_liye )" crlf)
 )
 )
 
@@ -642,20 +670,12 @@
 
 
 
-
-
-
-
 ;I sleep to take rest.
 ;previous_word=enough && previous_minus_two_category=adjective && following_category=verb	{tam:ne_ke_liye}	0
 ;He is strong enough to lift this.
 
 
-
-
-
-
-(defrule to24
+(defrule to26
 (declare (salience 2700))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -668,9 +688,9 @@
 (assert (id-H_vib_mng ?rid 0))
 (assert (id-wsd_word_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to24   "  ?rid "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to24  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to24  "  ?rid "  0 )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to26   "  ?rid "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to26  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to26  "  ?rid "  0 )" crlf)
 )
 )
 
@@ -681,7 +701,7 @@
 
 
 
-(defrule to25
+(defrule to27
 (declare (salience 2600))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -695,15 +715,17 @@
 (assert (id-H_vib_mng ?rid ke_liye))
 (assert (id-wsd_word_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to25   "  ?rid "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to25  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to25  "  ?rid "  ke_liye )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to27   "  ?rid "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to27  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to27  "  ?rid "  ke_liye )" crlf)
 )
 )
 
 
 ;She is too weak to carry this box.
-(defrule to26
+
+
+(defrule to28
 (declare (salience 2500))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -716,9 +738,9 @@
 (assert (id-H_vib_mng ?rid 0))
 (assert (id-wsd_word_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to26   "  ?rid "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to26  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to26  "  ?rid " 0 )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to28   "  ?rid "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to28  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to28  "  ?rid " 0 )" crlf)
 )
 )
 
@@ -731,7 +753,7 @@
 
 
 
-(defrule to27
+(defrule to29
 (declare (salience 2400))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -744,9 +766,9 @@
 (assert (id-H_vib_mng ?rid se))
 (assert (id-wsd_word_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to27   " ?rid "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to27  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to27  "  ?rid " se )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to29   " ?rid "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to29  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to29  "  ?rid " se )" crlf)
 )
 )
 
@@ -758,7 +780,7 @@
 
 
 
-(defrule to28
+(defrule to30
 (declare (salience 2300))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -769,7 +791,7 @@
 (assert (id-wsd_root_mng ?id  -))
 (assert (id-H_vib_mng (+  ?id  1) 0_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-rule_name-id-H_vib_mng 	 " ?*wsd_dir* "  to.clp     to28   "  (+  ?id  1) "  0_kara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-rule_name-id-H_vib_mng 	 " ?*wsd_dir* "  to.clp     to30   "  (+  ?id  1) "  0_kara )" crlf))
 )
 
 
@@ -783,7 +805,7 @@
 
 
 
-(defrule to29
+(defrule to31
 (declare (salience 2200))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -797,9 +819,9 @@
 (assert (id-H_vib_mng ?rid 0))
 (assert (id-wsd_word_mng ?id  -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to29   "  ?rid "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to29 "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to29 "  ?rid " 0 )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to31   "  ?rid "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to31 "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to31 "  ?rid " 0 )" crlf))
 )
 
 
@@ -810,13 +832,16 @@
 
 ;Modified by Meena(16.9.09); added (kriyA-ke_liye  ?id1 ?id) and given (id-H_vib_mng..) as ke_liye
 ;Dick is important to fix the problem .
-(defrule to30
-(declare (salience 2100))
+(defrule to32
+(declare (salience 3000))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
+(not(id-root 1 it))
+(not(id-root =(+ ?id 1) reach))
 (id-cat_coarse =(- ?id 1) adjective)
 (to-infinitive  ?id ?rid)
-(kriyA-ke_liye  ?id1 ?id)
+(or(kriyA-kqxanwa_viSeRaNa  ?kri ?rid)(kriyA-kriyArWa_kriyA  ?kri ?rid))  ;Added by Meena(6.4.11)
+;(kriyA-ke_liye  ?id1 ?id)           ;Commented by Meena(6.4.11) 
 ;(id-cat_coarse ?rid verb)
 =>
 (retract ?mng)
@@ -825,9 +850,9 @@
 (assert (id-H_vib_mng ?rid ke_liye))
 (assert (id-wsd_word_mng ?id  -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to30   "  ?rid "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to30  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to30 "  ?rid " ke_liye )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to32   "  ?rid "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to32  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to32 "  ?rid " ke_liye )" crlf)
 )
 )
 
@@ -844,7 +869,7 @@
 
 
 
-(defrule to31
+(defrule to33
 (declare (salience 2000))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -858,9 +883,9 @@
 (assert (id-H_vib_mng ?rid 0))
 (assert (id-wsd_word_mng ?id  -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to31   " ?rid "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to31  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to31 "  ?rid " 0 )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to33   " ?rid "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to33  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to33 "  ?rid " 0 )" crlf)
 )
 )
 
@@ -870,7 +895,7 @@
 
 ;Added by Meena(22.01.10)
 ;I want her to know about it.
-(defrule to32
+(defrule to34
 (declare (salience 2900))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -882,21 +907,22 @@
 (assert (id-H_vib_mng ?rid -))
 (assert (id-wsd_word_mng ?id  -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to32  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to32 "  ?rid " - )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to34  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to34 "  ?rid " - )" crlf)
 )
 )
 
 
 ;Added by Meena(23.3.10)
 ;The upper middle-class tend to go into business or become the professionals .
-(defrule to33
+;I was unable to word my feelings at the Ritu's husband's death.
+(defrule to35
 (declare (salience 2900))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
 (to-infinitive  ?id ?rid)
 (kriyA-kqxanwa_karma  ?id1 ?rid)
-(not(id-root ?rid talk))     ;constraint added by Meena(27.4.10)
+(not(id-root ?rid talk|hear))     ;constraint added by Meena(27.4.10)
 (not(id-root =(- ?id 1) decide))
 =>
 (retract ?mng)
@@ -904,9 +930,9 @@
 (assert (id-H_vib_mng ?rid ke_liye))
 (assert (id-wsd_word_mng ?id  -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp         to33   " ?id "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to33  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to33 "  ?rid " ke_liye )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp         to35   " ?id "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to35  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to35 "  ?rid " ke_liye )" crlf)
 )
 )
 
@@ -916,7 +942,7 @@
 
 ;Added by Meena(27.4.10)
 ;He wanted to talk to his boss . 
-(defrule to033
+(defrule to36
 (declare (salience 2800))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -928,8 +954,8 @@
 (assert (make_verbal_noun ?rid))
 (assert (id-wsd_word_mng ?id  -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp         to033   " ?id "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to033  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp         to36   " ?id "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to36  "  ?id "  -)" crlf)
 )
 )
 
@@ -939,7 +965,7 @@
 ;Modified by Meena(27.4.10)
 ;;Added by Meena(5.4.10) ;The rule needs  more thinking.
 ;;Losing to a younger player was a bitter pill to swallow . 
-(defrule to34
+(defrule to37
 (declare (salience 2300))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -952,9 +978,9 @@
 (assert (id-H_vib_mng ?rid -))
 (assert (id-wsd_word_mng ?id  -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp         to34   " ?id "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to34  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to34 "  ?rid " - )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp         to37   " ?id "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to37  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to37 "  ?rid " - )" crlf)
 )
 )
 
@@ -964,30 +990,31 @@
 
 ;Added by Meena(28.4.10)
 ;He was the first Asian scientist to win the Nobel Prize . 
-(defrule to035
-(declare (salience 2000))
+(defrule to38
+(declare (salience 2900)) ;Salince increased by Meena(6.4.11) 
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
 (to-infinitive  ?id ?rid)
-(kriyA-kriyArWa_kriyA  ?id1 ?rid)
-(id-root ?id2 Prize|prize|lottery)
-(kriyA-object  ?rid ?id2)
+;(kriyA-kriyArWa_kriyA  ?id1 ?rid)
+(or(saMjFA-to_kqxanwa  =(- ?id 1) ?rid)(kriyA-kriyArWa_kriyA  ?kri ?rid))
+(id-root ?id1 Prize|prize|lottery)
+(kriyA-object  ?rid ?id1)
 =>
 (retract ?mng)
 (assert (make_verbal_noun ?rid))
 (assert (id-H_vib_mng ?rid vAlA))
 (assert (id-wsd_word_mng ?id  -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp         to035   " ?id "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to035  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to035 "  ?rid " vAlA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp         to38   " ?id "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to38  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to38 "  ?rid " vAlA )" crlf)
 )
 )
 
 
 
 
-(defrule to35
+(defrule to39
 (declare (salience 1900))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -999,14 +1026,14 @@
 (assert (id-H_vib_mng ?rid ke_liye))
 (assert (id-wsd_word_mng ?id  -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to35   " ?id "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to35  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to35 "  ?rid " ke_liye )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to39   " ?id "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to39  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to39 "  ?rid " ke_liye )" crlf)
 )
 )
 ;The instructor persuaded Mary to take that course
 
-(defrule to36
+(defrule to40
 (declare (salience 1800))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1015,10 +1042,13 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to36   "  ?id "  - )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to40   "  ?id "  - )" crlf))
 )
 
-(defrule to37
+
+
+
+(defrule to41
 (declare (salience 1700))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1027,11 +1057,14 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ke_liye))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to37   "  ?id "  ke_liye )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp   to41   "  ?id "  ke_liye )" crlf))
 )
 
 ;The teacher reads to her students daily.
-(defrule to38
+
+
+
+(defrule to42
 (declare (salience 1600))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1040,10 +1073,10 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id waka))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to38   "  ?id "  waka )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to42   "  ?id "  waka )" crlf))
 )
 
-(defrule to39
+(defrule to43
 (declare (salience 1500))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1052,12 +1085,12 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id waka))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to39   "  ?id "  waka )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to43   "  ?id "  waka )" crlf))
 )
 
 ;Modified by Sukhada
 ;The girl running to the shop is my friend . 
-(defrule to40
+(defrule to44
 (declare (salience 1400))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1066,12 +1099,12 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kI_ora))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to40   "  ?id "  kI_ora )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to44   "  ?id "  kI_ora )" crlf))
 )
 
 
 
-(defrule to41
+(defrule to45
 (declare (salience 900))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1080,11 +1113,11 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id se))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to41   "  ?id "  se )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to45   "  ?id "  se )" crlf))
 )
 
  
-(defrule to42
+(defrule to46
 (declare (salience 400))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1093,10 +1126,10 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to42   "  ?id "  kA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to46   "  ?id "  kA )" crlf))
 )
 
-(defrule to43
+(defrule to47
 (declare (salience 300))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1106,10 +1139,10 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ke_liye))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to43   "  ?id "  ke_liye )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to47   "  ?id "  ke_liye )" crlf))
 )
 
-(defrule to44
+(defrule to48
 (declare (salience 200))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1119,10 +1152,10 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to44   "  ?id "  kA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to48   "  ?id "  kA )" crlf))
 )
 
-(defrule to45
+(defrule to49
 (declare (salience 100))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1132,12 +1165,12 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id meM))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to45   "  ?id "  meM )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to49   "  ?id "  meM )" crlf))
 )
 
 
 
-(defrule to46
+(defrule to50
 (declare (salience -100))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1147,10 +1180,10 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ke_sAmane))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to46   "  ?id "  ke_sAmane )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to50   "  ?id "  ke_sAmane )" crlf))
 )
 
-(defrule to47
+(defrule to51
 (declare (salience -200))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1160,10 +1193,10 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ke_sAmane))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to47   "  ?id "  ke_sAmane )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to51   "  ?id "  ke_sAmane )" crlf))
 )
 
-(defrule to48
+(defrule to52
 (declare (salience -300))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1174,10 +1207,10 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to48   "  ?id "  - )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to52   "  ?id "  - )" crlf))
 )
 
-(defrule to49
+(defrule to53
 (declare (salience -400))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1187,10 +1220,10 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id waka))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to49   "  ?id "  waka )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to53   "  ?id "  waka )" crlf))
 )
 
-(defrule to50
+(defrule to54
 (declare (salience -500))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1200,10 +1233,10 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ko))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to50   "  ?id "  ko )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to54   "  ?id "  ko )" crlf))
 )
 
-(defrule to51
+(defrule to55
 (declare (salience -600))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1213,10 +1246,10 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ke_liye))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to51   "  ?id "  ke_liye )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to55   "  ?id "  ke_liye )" crlf))
 )
 
-(defrule to52
+(defrule to56
 (declare (salience -700))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1226,10 +1259,10 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ke_liye))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to52   "  ?id "  ke_liye )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to56   "  ?id "  ke_liye )" crlf))
 )
 
-(defrule to53
+(defrule to57
 (declare (salience -800))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1239,10 +1272,10 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ora))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to53   "  ?id "  ora )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to57   "  ?id "  ora )" crlf))
 )
 
-(defrule to54
+(defrule to58
 (declare (salience -900))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1252,10 +1285,10 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ko))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to54   "  ?id "  ko )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to58   "  ?id "  ko )" crlf))
 )
 
-(defrule to55
+(defrule to59
 (declare (salience -1000))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1265,7 +1298,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ke_karIba))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to55   "  ?id "  ke_karIba )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to59   "  ?id "  ke_karIba )" crlf))
 )
 
 
@@ -1276,7 +1309,7 @@
 ;Added by Meena(28.4.10)
 ;She gave birth to twins .
 ;Some schools do not give weightage to extracurricular activities .  
-(defrule to56
+(defrule to60
 (declare (salience 200))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1286,14 +1319,14 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id  ko))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to56  "  ?id "  ko)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to60  "  ?id "  ko)" crlf)
 )
 )
 
 
 ;Added by Meena(28.4.10)
 ;To the people of India he is the symbol of mature wisdom .
-(defrule to056
+(defrule to61
 (declare (salience 100))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1303,12 +1336,12 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id  ke_liye))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to056  "  ?id "  ke_liye)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to61  "  ?id "  ke_liye)" crlf)
 )
 )
 
 
-(defrule to57
+(defrule to62
 (declare (salience -100))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1317,7 +1350,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ko))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to57   "  ?id "  ko )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to62   "  ?id "  ko )" crlf))
 )
 ;
 
@@ -1325,7 +1358,7 @@
 
 ;Rule added by Meena(22.8.09)
 ;He left all his money to the orphanage .
-(defrule to58
+(defrule to63
 (declare (salience 1100))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1336,7 +1369,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ke_liye))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp    to58   "  ?id "  ke_liye )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp    to63   "  ?id "  ke_liye )" crlf))
 )
 
 
@@ -1348,7 +1381,7 @@
 ;Modified by Meena(29.4.10)
 ;Rule added by Meena(20.11.09)
 ;If John was with Lisa last night , who went to the movie with Diane .
-(defrule to59
+(defrule to64
 (declare (salience 1100))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1359,7 +1392,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp    to59   "  ?id "  - )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp    to64   "  ?id "  - )" crlf))
 )
 
 
@@ -1371,7 +1404,7 @@
 ;To whom were you speaking ? (Modified by Meena 27.3.10)
 ;;He is not related to me .(Modified by Meena 22.8.09)
 ;;I should have talked to you before inviting John . Added by sukhada
-(defrule to60_saMbanXI
+(defrule to65_saMbanXI
 (declare (salience 1100))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1381,13 +1414,13 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id se))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp    to60_saMbanXI   "  ?id "  se )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp    to65_saMbanXI   "  ?id "  se )" crlf))
 )
 
 
 
 
-(defrule to61
+(defrule to66
 (declare (salience 1100))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1397,7 +1430,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp    to61   "  ?id "  - )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp    to66   "  ?id "  - )" crlf))
 )
 ;Where did they go to
 
@@ -1409,7 +1442,7 @@
 ;Added by Meena(31.8.09)
 ;We discussed adding new features to the program . 
 ;Some people take a lot of time to acclimatize themselves to the new environment .
-(defrule to62
+(defrule to67
 (declare (salience 1100))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1419,7 +1452,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id meM))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp    to62   "  ?id "  meM )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp    to67   "  ?id "  meM )" crlf))
 )
 
 
@@ -1427,7 +1460,7 @@
 
 ;Added by Meena(9.11.09)
 ;She awakened to the sound of birds' singing . 
-(defrule to63
+(defrule to68
 (declare (salience 1100))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1438,7 +1471,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id se))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp    to63   "  ?id "  se )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp    to68   "  ?id "  se )" crlf))
 )
 
 
@@ -1447,7 +1480,7 @@
 
 ;Added by Meena(10.11.09)
 ;Failure to comply may result in dismissal.
-(defrule to64
+(defrule to69
 (declare (salience 2800))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1460,14 +1493,14 @@
 (assert (id-H_vib_mng ?rid kA))
 (assert (id-wsd_root_mng ?id -));meaning is change by sheetal
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp         to64   "  ?rid " )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  to.clp     to64  "  ?id "  - )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to64  "  ?id " kA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp         to69   "  ?rid " )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  to.clp     to69  "  ?id "  - )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to69  "  ?id " kA )" crlf)
 )
 )
 
 ;
-(defrule to65
+(defrule to70
 (declare (salience -1200))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1479,15 +1512,15 @@
 (assert (id-H_vib_mng ?rid 0))
 (assert (id-wsd_word_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to65   "  ?rid " )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to65  "  ?id "  - )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to65  "  ?id " 0 )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to70   "  ?rid " )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to70  "  ?id "  - )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to70  "  ?id " 0 )" crlf)
 )
 )
 
 ;Added by sheetal(18-09-09).
-;I thought it is right to resign .It is not a good manner to eat alone .It is not a good idea to drive for hours without a rest . It is hard to absorb so much information 
-(defrule to66
+;I thought it is right to resign .It is not a good manner to eat alone .It is not a good idea to drive for hours without a rest . It is hard to absorb so much information. It is important to fix the problem.  
+(defrule to71
 (declare (salience 2850))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1502,9 +1535,9 @@
 (assert (id-wsd_word_mng ?id -))
 (assert (id-H_vib_mng ?id1 -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp        to66   " ?id1 " )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng " ?*wsd_dir* "  to.clp        to66   " ?id1 " - )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp       to66   "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp        to71   " ?id1 " )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng " ?*wsd_dir* "  to.clp        to71   " ?id1 " - )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp       to71   "  ?id "  -)" crlf)
 )
 )
 
@@ -1512,7 +1545,7 @@
 
 ;Modified by Meena(28.4.10); added top|station|place in the list and commented (id-root ?id1 heat),so that the rule works with other verbs.
 ;Added by sheetal(14-01-10).
-(defrule to67
+(defrule to72
 (declare (salience 1150))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1523,7 +1556,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id para))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp    to67   "  ?id "  para )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp    to72   "  ?id "  para )" crlf))
 )
 ;Food must be heated to a high temperature to kill harmful bacteria .
 
@@ -1532,7 +1565,7 @@
 
 ;Added by sheetal(14-03-10)
 ;Grace may not be possible to fix the problem .
-(defrule to68
+(defrule to73
 (declare (salience 4150))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1546,9 +1579,9 @@
 (assert (id-H_vib_mng ?rid -))
 (assert (id-wsd_word_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp        to68   " ?rid "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to68  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to68  "  ?rid " 0 )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp        to73   " ?rid "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  to.clp     to73  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to73  "  ?rid " 0 )" crlf))
 )
 
 

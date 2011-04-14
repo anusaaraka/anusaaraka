@@ -98,10 +98,11 @@
 (printout	?*fp*	"(prep_id-relation-parser_ids -	kriyA-dummy_subject	"?kri"	"?y")"crlf)	
 (printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	kriyA-subject_SFI	kriyA-dummy_subject  "?kri"	"?y")"crlf)	
 else
-(printout       ?*fp*   "(prep_id-relation-parser_ids - kriyA-dummy_subject     "?kri"  "?y")"crlf)
+(printout       ?*fp*   "(prep_id-relation-parser_ids - kriyA-subject     "?kri"  "?y")"crlf)
 (printout       ?*rel_debug*    "(prep_id-Rule-Rel-ids -        kriyA-subject_SFI       kriyA-subject   "?kri"  "?y")"crlf)
 ))
-;Ex.   How important is it to turn the computer off? 
+;Ex.   How important is it to turn the computer off?
+;Ex:   How many years did it take to do it? 
 ;----------------------------------------------------------------------------------------------------------------
 (defrule kriyA-subject_SF
 (declare (salience 200))

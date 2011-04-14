@@ -81,6 +81,7 @@
 	"uMgalI"          f      Meena(12.1.11)
 	"kaMpanI" 	  f	 (20-04-10) Suggested by sukhada  Eg:He is being hired by another company .
         "jummA_masjixa"   f	 Meena(08.03.11)
+        "pANdulipi"       f      Meena(13.4.11)  
 
   3. Removed :
            "mana"   (19-11-09)   Suggested by sheetal Eg: The big question on everybody's mind is who killed OJ .
@@ -241,7 +242,9 @@ changes in samAsa-new.txt
   1. Modified   yA_huA_hE,m,s,u huA_hEM"  as  "yA_huA_hE,m,s,u huA_hUz (Suggested by sheetal(10-12-09))
   2. Added      0_jAyegA    (Suggested by Meenaji Eg: There is still a ray of hope that the missing child will be found .)
 
-  3. Added    yA_jAwA_WA   (Meena(18.2.11) Ex: Ayodhya during ancient times was known as kaushaldesa. 
+  3. Added    yA_jAwA_WA   (Meena(18.2.11) Ex: Ayodhya during ancient times was known as kaushaldesa.
+  4. Added    ne_kI_jarUWawa_pada_sakawI_hE,f,p,a     kI_jarUWawa_pada_sakawI_hE
+   for all cases (Meena 13.4.11)
   
   changes in animate_list.txt
   ===========================
@@ -337,5 +340,10 @@ changes in samAsa-new.txt
          year	1  (        "                )
 
   Removed: month_day.txt and merged all its contents in time.txt (Suggested by Sukhada 08-03-11)
+
+ Changes in hindi_default_tam.txt
+ ==================================
+ Modified        may_need_to_0   nA_kI_jarUWawa_pada_sakawI_hE-0-0   as  may_need_to_0   ne_kI_jarUWawa_pada_sakawI_hE-ko-0 (by Meena 13-04-11)                     
+
 
 

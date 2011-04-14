@@ -224,8 +224,30 @@
 
 
 
+
+;Added by Meena(12.4.11)
+;How many years did it take to do it? 
 (defrule take15
 (declare (salience 2600))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject ?id ?id1)
+(id-root ?id1 it)     ;Meena(14.4.11)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id le))
+(assert (kriyA_id-subject_viBakwi ?id ne))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  take.clp      take15   "  ?id "  le )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  take.clp      take15   "  ?id " ne )" crlf))
+)
+
+
+
+;Salience reduced by Meena(12.4.11)
+(defrule take16
+(declare (salience 0))
+;(declare (salience 2600))
 (id-root ?id take)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -233,8 +255,10 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id le))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  take.clp 	take15   "  ?id "  le )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  take.clp      take16   "  ?id "  le )" crlf))
 )
+
+
 
 ;default_sense && category=verb	le	0
 ;"take","VI","1.lenA"

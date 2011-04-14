@@ -2180,7 +2180,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   11. Modified "nsubj_advmod" rule in sd_relation_rules.clp.
   12. Modified "Compound_mng_with_vib" rule in prepare_apertium_input.clp
   13. In modify_ol_relations.clp,   Modified:  add_conj_rel_with_which
-  14. Modified 'Pre requisites' in README for anu_testing.
+  14. Added "libgdbm3, libgdbm-dev (to use gdbm) and clips" in 'Pre requisites' in README for anu_testing.
   15. In ol_stdenglish.sh and stdenglish.sh:
           Modified: Removed join_hard_hyphen.lex  and rm_joined_hard_hyphens.lex because Now  we get morph information from 
                     apertium.
@@ -2196,3 +2196,24 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   20. Removed cat.c programme, as its not used now and modified the same in anu_compile.sh
   21. Updated changes_in_databases. 
   22. Updated Log.
+
+  14-04-11
+  ========
+  1. In WSD,  Modified : take.clp, lay.clp, to.clp, of.clp.
+              Added    : revise.clp
+  2. Modified "kriyA-subject_SFI" rule in link_relation_rules.clp.
+  3. In anu_testing "README", Added "g++" in 'Pre requisites'.
+  4. In lwg_disambiguation.clp,  Removed : head_transfer_3, head_transfer_4, head_transfer_1, write_rels rules.
+  5. In modify_ol_relations.clp, Added   : head_transfer_3, head_transfer_4, head_transfer_1  rules.
+  6. In run_modules_ol.bat, 
+       In lwg_disambiguation.clp module,
+           Removed : loading ol_original_relation_tmp.dat and opening of ol_original_relations.dat.
+       In modify_ol_relations.clp module, 
+           Modified: instead of loading "ol_original_relations.dat" now loaded "ol_original_relation_tmp.dat" and 
+                     instead of loading "ol_lwg_res_info.dat" now loaded "ol_lwg_res_info.dat" file.
+       Moved lwg_disambiguation.clp module after modify_ol_relations.clp module.
+  7. Updated changes_in_databases.
+  8. Modified and updated ol_ver_output, link_ver_output, verified_output.
+  9. Updated following files:
+           verified (458)  ol_verified (559)
+  10. Updated Log.

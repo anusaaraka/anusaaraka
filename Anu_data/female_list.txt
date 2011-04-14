@@ -32178,4 +32178,5 @@ warAju	f
 swrI_miwra	f
 upayogitA	f    
 uMgalI	f
-jummA_masjixa	f 
+jummA_masjixa	f
+pANdulipi	f 
