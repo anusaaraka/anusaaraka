@@ -34342,3 +34342,4 @@ Jama masjid	jAmA_masjixa	jAmA_masjixa	noun	2	RM
 Jumma masjid	jummA_masjixa	jummA_masjixa	noun	2	RM
 beyond the grave	mqwyu_uparAMwa	mqwyu_uparAMwa	preposition	1	RM
 each and every	prawyeka	prawyeka	determiner	3	RM
+By this time	abawaka	abawaka	noun	3	RM

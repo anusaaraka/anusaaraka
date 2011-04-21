@@ -9,7 +9,7 @@
  (defrule PRP_rule
  ?f0<-(id-sd_cat	?id	PRP|PRP$)
  =>
-	(printout ?*cat_fp* "(sid-cat_coarse  "?id"  pronoun)" crlf)
+	(printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  pronoun)" crlf)
  	(retract ?f0)
  )
  ;------------------------------------------------------------------------------------------
@@ -17,14 +17,14 @@
  (defrule NN_rule
  ?f0<-(id-sd_cat        ?id     ?cat&NN|NNS)
  =>
-	(printout ?*cat_fp* "(sid-cat_coarse  "?id"  noun)" crlf)
+	(printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  noun)" crlf)
         (retract ?f0)
  )
  ;------------------------------------------------------------------------------------------
  (defrule NNP_rule
  ?f0<-(id-sd_cat        ?id     NNP)
  =>
-        (printout ?*cat_fp* "(sid-cat_coarse  "?id" PropN)" crlf)
+        (printout ?*cat_fp* "(parser_id-cat_coarse  "?id" PropN)" crlf)
         (retract ?f0)
  )
  ;------------------------------------------------------------------------------------------
@@ -35,28 +35,28 @@
  (id-sd_cat ?id1 NNP)
  (test (eq (- (string_to_integer ?id) 1) (string_to_integer ?id1)))
  =>
-        (printout ?*cat_fp* "(sid-cat_coarse  "?id" PropN)" crlf)
+        (printout ?*cat_fp* "(parser_id-cat_coarse  "?id" PropN)" crlf)
         (retract ?f0)
  )
  ;------------------------------------------------------------------------------------------
  (defrule VB_rule
  ?f0<-(id-sd_cat        ?id     VB|VBZ|VBN|VBG|VBD|VBP)
  =>
-        (printout ?*cat_fp* "(sid-cat_coarse  "?id"  verb)" crlf)
+        (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  verb)" crlf)
         (retract ?f0)
  )
  ;------------------------------------------------------------------------------------------
  (defrule RB_rule
  ?f0<-(id-sd_cat        ?id     RB)
  =>
-        (printout ?*cat_fp* "(sid-cat_coarse  "?id"  adverb)" crlf)
+        (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  adverb)" crlf)
         (retract ?f0)
  )
  ;------------------------------------------------------------------------------------------
  (defrule JJ_rule
  ?f0<-(id-sd_cat        ?id     JJ)
  =>
-	(printout ?*cat_fp* "(sid-cat_coarse  "?id"  adjective)" crlf)
+	(printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  adjective)" crlf)
         (retract ?f0)
  )
  ;------------------------------------------------------------------------------------------
@@ -66,21 +66,21 @@
  ?f0<-(id-sd_cat        ?id     IN)
  (not (parserid-word  ?id  ?word&If|if|Since|since))
  =>
-        (printout ?*cat_fp* "(sid-cat_coarse  "?id"  preposition)" crlf)
+        (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  preposition)" crlf)
         (retract ?f0)
  )
  ;------------------------------------------------------------------------------------------
  (defrule DT_rule
  ?f0<-(id-sd_cat        ?id     DT)
  =>
-        (printout ?*cat_fp* "(sid-cat_coarse  "?id"  determiner)" crlf)
+        (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  determiner)" crlf)
         (retract ?f0)
  )
  ;------------------------------------------------------------------------------------------
  (defrule MD
  ?f0<-(id-sd_cat        ?id     MD)
  =>
-        (printout ?*cat_fp* "(sid-cat_coarse  "?id"  verb)" crlf)
+        (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  verb)" crlf)
         (retract ?f0)
  )
 ; MD may be modal verb or verb

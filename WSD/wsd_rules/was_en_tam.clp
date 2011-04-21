@@ -52,6 +52,23 @@
 
 
 
+;Added by Meena(19.4.11)
+;The silver was tarnished by the long exposure to the air.
+(defrule was_en_tam02
+(declare (salience 4900))
+(id-TAM ?id was_en)
+?mng <-(meaning_to_be_decided ?id)
+(id-root ?id tarnish)
+=>
+(retract ?mng)
+(assert (id-E_tam-H_tam_mng ?id was_en 0_gayA_WA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  was_en_tam.clp    was_en_tam02  "  ?id "  0_gayA_WA )" crlf))
+(assert (id-tam_type ?id passive))
+)
+
+
+
 
 
 ;Modified by Meena(14.4.10)

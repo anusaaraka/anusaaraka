@@ -2199,8 +2199,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 
   14-04-11
   ========
-  1. In WSD,  Modified : take.clp, lay.clp, to.clp, of.clp.
+  1. In WSD,  Modified : take.clp, lay.clp, to.clp, of.clp, was_en_tam.clp , tarnish.clp , by.clp
               Added    : revise.clp
+              Removed  : excessive.clp
   2. Modified "kriyA-subject_SFI" rule in link_relation_rules.clp.
   3. In anu_testing "README", Added "g++" in 'Pre requisites'.
   4. In lwg_disambiguation.clp,  Removed : head_transfer_3, head_transfer_4, head_transfer_1, write_rels rules.
@@ -2213,7 +2214,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                      instead of loading "ol_lwg_res_info.dat" now loaded "ol_lwg_res_info.dat" file.
        Moved lwg_disambiguation.clp module after modify_ol_relations.clp module.
   7. Updated changes_in_databases.
-  8. Modified and updated ol_ver_output, link_ver_output, verified_output.
-  9. Updated following files:
-           verified (458)  ol_verified (559)
-  10. Updated Log.
+  8. Modified and updated ol_ver_output, link_ver_output, verified_output and sd_ver_output.
+  9. Modified deffact "sid-cat_coarse" as "parser_id-cat_coarse"  in sd_category.clp
+  10. Modified deffact "linkid-node_cat" as "parser_id-cat_coarse" in cat_rule.clp
+  11. Replaced "sd_cat_rule.clp" module with "/cat_rule.clp" module in run_modules_std.bat
+  12. Removed "sd_cat_rule.clp" file
+  13. Updated changes_in_databases
+  14. Updated following files:
+        verified (459)  ol_verified (560)  sd_verified(403)
+  8. Updated Log

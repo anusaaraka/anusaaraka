@@ -66,13 +66,15 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  by.clp 	by4   "  ?id "  kI )" crlf))
 )
 
+
+
 ;Modified by sheetal
 ;My many female friends were angered by the hearings .
 (defrule by5
 (declare (salience 4400))
 (id-root ?id by)
 ?mng <-(meaning_to_be_decided ?id)
-(or (id-word =(- ?id 1) join)(id-root =(+ ?id 2) hearing));'hearing' is added by sheetal
+(or (id-word =(- ?id 1) join)(id-root =(+ ?id 2) hearing));'hearing' is added by sheetal 
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id se))
@@ -219,6 +221,9 @@
 ;He took the pen when noone was by.
 
 
+
+;Modified by Meena(19.4.11) ;added "misdeed" in the list
+;His reputation was tarnished by his misdeeds.
 ;Modified by Meena(19.2.11);added the list for ?id2 and relation (viSeRya-by_saMbanXI  ?id1 ?id2)and commmented (or(..)) 
 ;I told him by telephone that I was coming by car. 
 ;Mysore also known as the city of palaces is just 139 kms by road from Bangalore. 
@@ -230,7 +235,7 @@
 (id-root ?id by)
 ?mng <-(meaning_to_be_decided ?id)
 (or(kriyA-by_saMbanXI  ?id1 ?id2)(viSeRya-by_saMbanXI  ?id1 ?id2)) ;in ol we get this relation which most probably is not correct, once this is sorted out, we can delete (viSe..) and can get the correct output with only (kriyA-by_saMbanXI  ?id1 ?id2)
-(id-root ?id2 sound|road|telephone|car|bus|letter)
+(id-root ?id2 sound|road|telephone|car|bus|letter|misdeed)
 ;(or(viSeRya-of_saMbanXI  ?id2 ?id3)(viSeRya-RaRTI_viSeRaNa  ?id2 ?id3))
 =>
 (retract ?mng)
