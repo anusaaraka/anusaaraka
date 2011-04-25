@@ -55,12 +55,12 @@
  (clear)
  ;---------------------------------------------------------------------------------
  (load "global_path.clp")
- (bind ?*path* (str-cat ?*path* "/Anu_clp_files/cat_rule.bclp"))
- (bload ?*path*)
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/sd_cat_rule.clp"))
+ (load ?*path*)
  (load-facts "pos_cat.dat")
  (load-facts "sd_category_info.dat")
  (load-facts "parserid_wordid_mapping.dat")
- (open "parser_pos_cat.dat" cat_fp "a")
+ (open "parser_pos_cat.dat" cat_fp1 "a")
  (run)
  (clear)
  ;-----------------------------------------------------------------------------------

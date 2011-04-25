@@ -4,7 +4,7 @@
  (id-cat)
  (id-cat_coarse)
  (parserid-wordid)
- (parser_id-cat_coarse)
+ (linkid-node_cat)
  (No complete linkages found)
  )
  ;-----------------------------------------------------------------------------------------------------------------
@@ -19,7 +19,7 @@
  ; link cat  
  (defrule link_cat
  (declare (salience 100))
- ?f1<-(parser_id-cat_coarse  ?pid  ?cat)
+ ?f1<-(linkid-node_cat  ?pid  ?cat)
  (parserid-wordid  ?pid ?id)
  ?f0<-(id-cat_coarse ?id ?)
  (test (neq ?cat -))
@@ -32,7 +32,7 @@
  ; Ex : The stand-still alert ended . (alert id is missing in apertium bcoz of "-")
  (defrule link_cat1
  (declare (salience 90))
- ?f1<-(parser_id-cat_coarse  ?pid  ?cat)
+ ?f1<-(linkid-node_cat  ?pid  ?cat)
  (parserid-wordid  ?pid ?id)
  (test (neq ?cat -))
  =>
