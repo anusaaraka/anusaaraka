@@ -36,6 +36,8 @@
  (declare (salience 1010))
  (conjunction-components  ?conj  ?id $?id1)
  (conjunction-comp ?conj $?IDS)
+ (root-verbchunk-tam-chunkids ? ? ? $?ids ?kri) ; Added by Maha 
+ (test (and (eq (member$ ?kri $?id1) FALSE) (neq ?kri ?id))) ; Added by Maha
  ?f<-(to_be_included_in_paxa ?i)
  =>
         (print_in_ctrl_fact_files  ?conj)

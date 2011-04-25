@@ -2197,7 +2197,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   21. Updated changes_in_databases. 
   22. Updated Log.
 
-  21-04-11
+  25-04-11
   ========
   1. In WSD,  Modified : take.clp, lay.clp, to.clp, of.clp, was_en_tam.clp , tarnish.clp , by.clp
               Added    : revise.clp
@@ -2217,10 +2217,16 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   8. Modified deffact "linkid-node_cat" as "parser_id-cat_coarse" in cat_rule.clp
   9. Replaced "sd_cat_rule.clp" module with "cat_rule.clp" module in run_modules_std.bat
   10. Removed "sd_cat_rule.clp" file
-  11. Added a rule in Anu/stdenglish/abbr1.lex
-  12. Modified new pattern for sed in bin/run_sentence_link.sh, bin/run_sentence_ol.sh, bin/run_sentence_stanford.sh
-  13. Updated changes_in_databases
-  14. Modified and updated ol_ver_output, link_ver_output, verified_output and sd_ver_output.
-  15. Updated following files:
+  11. Added a rule in abbr1.lex
+  12. Modified new pattern for sed in run_sentence_link.sh, run_sentence_ol.sh, run_sentence_stanford.sh
+  13. In parserid_wordid_mapping.clp, modified "id-link_id_map" rule.
+  14. In sd_relation_rules.clp,
+            Added    : deffunction my_string_cmp
+            Modified : decide_conj_rel, conj-comp-rule, kriyA_sub_rule
+            Removed  : delete_punc, conj_comp1 rules.
+  15. In pada.clp,  Modified : "conj_comp_rule" rule.
+  16. Updated changes_in_databases
+  17. Modified and updated ol_ver_output, link_ver_output, verified_output and sd_ver_output.
+  18. Updated following files:
         verified (459)  ol_verified (560)  sd_verified(403)
-  16. Updated Log
+  19. Updated Log

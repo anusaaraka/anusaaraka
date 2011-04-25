@@ -14,7 +14,9 @@
 
 (deffunction string_to_integer (?parser_id); [Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
- 
+;------------------------------------------------------------------------------------------------------------------------
+(deffunction my_string_cmp> (?a ?b)
+  (> (str-compare ?a ?b) 0))
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule abbrev
 (rel_name-sids abbrev ?nAma ?saMkRipwa_nAma)
@@ -87,6 +89,7 @@
  (root-verbchunk-tam-parser_chunkids $?ids ?kriyA)
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
  (not (sub_for_kriyA ?kriyA))
+ (not (found_kriyA-sub_rel ?kriyA)); Added new by Sukhada
  =>
  (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?kriyA"        "?sub")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kriyA_sub_rule   kriyA-subject   "?kriyA"        "?sub")"crlf)
@@ -160,75 +163,35 @@
  )
  ; Ex. I like fruits as well as nuts.  
  ;------------------------------------------------------------------------------------------------------------------------
- ;SD gives multiple conj_and relations with different ids for same 'AND', we keep one which has a wider scope and delete other relations which come within the larger scope.
+ ;SD gives multiple conj_and relations with different ids for same 'AND', So handling them in one single list.
  (defrule decide_conj_rel
- (declare (salience 1200))
- ?f<-(rel_name-sids conj_and|conj_or  ?x ?y)
- ?f1<-(rel_name-sids conj_and|conj_or  ?x ?y1)
- (test (neq ?y ?y1))
+ (declare (salience -900))
+ ?f<-(rel_name-sids ?conj  ?x ?y)
+ ?f1<-(rel_name-sids ?conj  ?x $?y1)
+ (test (or (eq ?conj conj_and) (eq ?conj conj_or)))
+ (test (eq (member$ ?y ?y1) FALSE))
  =>
-  (bind ?y (string_to_integer ?y))
-  (bind ?y1 (string_to_integer ?y1)) 
-    (if (> ?y ?y1) then 
-        (retract ?f1)
-    )  
+   (bind ?plist (create$ ))
+   (bind ?plist (create$ ?plist ?y))
+   (assert (rel_name-sids ?conj ?x (sort my_string_cmp> $?y1  ?plist)))
+   (retract ?f ?f1)
  )
  ;Ex. Ulsoor lake is an ideal place for sightseeing, boating and shopping.
  ;------------------------------------------------------------------------------------------------------------------------
-
- ;Added by Roja (21-02-11)
- ;To handle all conjunction components in one single list
+ ;printing conjunction-components.
  ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.
  (defrule conj-comp-rule
- (declare (salience 1000))
- ?f<-(rel_name-sids conj_and|conj_or  ?x ?y)
+ (declare (salience -1000))
+ ?f<-(rel_name-sids conj_and|conj_or  ?x $?ids  ?y)
  (parserid-word ?id and|or|well)
- (not (found_kriyA-conjunction ?id))
+ (test (and (> (string_to_integer ?id) (string_to_integer ?x)) (< (string_to_integer ?id) (string_to_integer ?y))))
  =>
-  (bind ?first  (string_to_integer ?x))
-  (bind ?last (string_to_integer ?y))
-  (bind ?list  (create$ ))
-  (bind ?plist (create$ ))
-        (loop-for-count (?i  ?first  ?last)  do
-                  (bind ?list (insert$ ?list 1 ?i))
-                  (bind ?list (sort > ?list))
-        )
-        (loop-for-count (?i 1 (length ?list))
-               (bind ?j (string-to-field (str-cat "P" (nth$ ?i ?list))))
-               (bind ?plist (insert$ ?plist (length ?list) ?j))
-        )
-        (bind ?plist (delete-member$ ?plist ?id))
-        (assert (conjunction_components ?id ?plist)) 
+     (printout ?*fp* "(conjunction-components  "?id"   "?x"  "(implode$ $?ids)"   "?y")"crlf)
+     (printout ?*dbug* "(conjunction-components    conj-comp-rule  "?id"   "?x"  "(implode$ $?ids)"   "?y")"crlf)
+     (retract ?f)
  )
- ; Ex. Your house and garden are very attractive. 
+ ; Ex. Your house and garden are very attractive.
  ;------------------------------------------------------------------------------------------------------------------------
- (defrule delete_punc
- (declare (salience 900))
- (conjunction_components $?list)
- ?f<- (parserid-word ?pid ?punc)
- (test (member$ ?pid $?list))
- =>
- (bind ?plist (create$ ))
-    (if (eq ?punc ,) then 
-       (bind ?plist (delete-member$ $?list ?pid))
-       (printout ?*fp* "(conjunction-components "  (implode$ ?plist) ")" crlf)
-       (printout  ?*dbug* "(prep_id-Rule-Rel-ids   -  delete_punc  (conjunction-components  "(implode$  ?plist)")"crlf)
-       (assert (has_been_included $?list))
-       (retract ?f)
-    )
-  )
- ;Ex. Ulsoor lake is an ideal place for sightseeing, boating and shopping.
- ;------------------------------------------------------------------------------------------------------------------------
- (defrule conj_comp1
- (conjunction_components $?list)
- (not (has_been_included $?list))
- =>
-        (printout ?*fp* "(conjunction-components  "(implode$ $?list)")"crlf)
-	(printout  ?*dbug* "(prep_id-Rule-Rel-ids  - conj_comp1  (conjunction-components  "(implode$ $?list)")"crlf)
-  )
- ;Ex. Are a dog and a cat here?
- ;------------------------------------------------------------------------------------------------------------------------
-
  (defrule nsubj_conj1
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
  (rel_name-sids conj_and|conj_or  ?sub ?sub1)
