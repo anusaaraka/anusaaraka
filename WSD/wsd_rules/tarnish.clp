@@ -34,11 +34,35 @@
 
 
 
+
+
+;Added by Meena(23.4.11)
+;By this time a series of scandals had severely tarnished the leader's image. 
+(defrule tarnish2
+(declare (salience 4900))
+(id-root ?id tarnish)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject ?id ?subj)
+(kriyA-object ?id ?id1)
+;(test(neq ?id1 ?subj))
+(id-root ?id1 image|reputation)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kalaMkiwa_kara))
+(assert (kriyA_id-object_viBakwi ?id ko))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  tarnish.clp   tarnish2   "  ?id "  kalaMkiwa_kara )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  tarnish.clp     tarnish2   "  ?id " ko )" crlf)
+)
+)
+
+
+
 ;Added by Meena(19.4.11)
 ;His reputation was tarnished by his misdeeds .
 ;Her reputation was tarnished after the affair with a married man.
-(defrule tarnish2
-(declare (salience 4900))
+(defrule tarnish3
+(declare (salience 4800))
 (id-root ?id tarnish)
 ?mng <-(meaning_to_be_decided ?id)
 ;(or(kriyA-by_saMbanXI  ?id ?id2)(kriyA-after_saMbanXI  ?id ?id2))
@@ -47,14 +71,14 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kalaMkiwa_ho))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  tarnish.clp   tarnish2   "  ?id "  kalaMkiwa_ho )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  tarnish.clp   tarnish3   "  ?id "  kalaMkiwa_ho )" crlf))
 )
 
 
 
 ;Salience reduced by Meena(21.1.11)
 ;The silver was tarnished by the long exposure to the air.
-(defrule tarnish3
+(defrule tarnish4
 (declare (salience 0))
 (id-root ?id tarnish)
 ?mng <-(meaning_to_be_decided ?id)
@@ -63,7 +87,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id XUmila_ho))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  tarnish.clp 	tarnish3   "  ?id "  Xumila_ho )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  tarnish.clp 	tarnish4   "  ?id "  Xumila_ho )" crlf))
 )
 
 

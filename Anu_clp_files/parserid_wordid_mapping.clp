@@ -25,6 +25,7 @@
 	)
  )
  ;--------------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (25-04-11)
  ;Galelio was the first scentist to claim that the earth moves around the sun.
  (defrule map_id
  (declare (salience 500))

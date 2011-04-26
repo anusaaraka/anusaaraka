@@ -50,6 +50,7 @@
 
 
 
+
 ;(id-word ?id have|has) uncommented by Meena to get the proper output for the sentence    "She had two pens."
 ;She has three pencils.
 ;I have a cow.
@@ -192,6 +193,34 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp      have8   "  ?id "  KA )" crlf))
 )
+
+
+
+;Added by Meena(25.4.11)
+;She is having an affair with a married man. (link 2nd parse)
+(defrule have_cala
+(declare (salience 5000))
+(id-root ?id have)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id having)
+(id-root ?id1 affair)
+(kriyA-object ?id ?id1)
+=>
+(retract ?mng)
+(assert (kriyA_id-subject_viBakwi ?id kA))
+(assert (id-wsd_root_mng ?id cala))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp      have_cala   "  ?id "  cala )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  have.clp      have_cala   "  ?id " kA )" crlf))
+)
+
+
+
+
+
+
+
+
 
 
 
@@ -727,6 +756,23 @@
 
 
 
+;Added by Meena(17.2.11)
+;He has a vacant look on his face.
+(defrule have0035
+(declare (salience 4001))
+(id-root ?id have)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id have|has)
+(kriyA-object ?id ?id1)
+(id-root ?id1 look|expression)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id liye_hE))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp    have0035   "  ?id "  liye_hE )" crlf))
+)
+
+
 
 
 ;Modified by Meena(15.2.11) for the examples like : The hospital has no vacant beds.
@@ -763,6 +809,21 @@ else
 
 
 
+;Added by Meena(17.2.11)
+;He had a vacant look on his face.
+(defrule have036
+(declare (salience 4001))
+(id-root ?id have)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id had)
+(kriyA-object ?id ?id1)
+(id-root ?id1 look|expression)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id liye_WA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp    have036   "  ?id "  liye_WA )" crlf))
+)
 
 
 

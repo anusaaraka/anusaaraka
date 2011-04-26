@@ -83,7 +83,7 @@
 	"kaMpanI" 	  f	 (20-04-10) Suggested by sukhada  Eg:He is being hired by another company .
         "jummA_masjixa"   f	 Meena(08.03.11)
         "pANdulipi"       f      Meena(13.4.11)  
-
+        "SrqMKalA         f      Meena(23.4.11)
   3. Removed :
            "mana"   (19-11-09)   Suggested by sheetal Eg: The big question on everybody's mind is who killed OJ .
            "vAlA"   (24-11-09)   Suggested by Meenaji Eg: Which one is right for me ?  
@@ -188,7 +188,6 @@ changes in samAsa-new.txt
 	 beyond the grave            ----- mqwyu_uparAMwa  mqwyu_uparAMwa  preposition     1       RM (Meena 27.3.11)
          each and every              ----- prawyeka	prawyeka   determiner   3       RM (Meena 8.4.11)
          By this time		     ----- abawaka	abawaka	   noun 	3       RM (Meena 19.4.11)
- 
  2. Removed/commented
         in law    ----  sasurAla_vAlA    (there should be - between in and law i.e., in-law)
         with that ----  usake_sAWa
@@ -315,7 +314,7 @@ changes in samAsa-new.txt
         <e lm="kA"><i>k</i><par n="regular__adj-noun"/></e> (      "                      )
         <e lm="xoharavA"><i>xoharavA</i><par n="KA/__v"/></e>(     "              25-03-11)
         <e lm="pinjarA"><i>pinjar</i><par n="regular__adj-noun"/></e>(    "       31-03-11)
-
+        <e lm="rahanA"><i>rahan</i><par n="loh/A__n"/></e>   (             "      26-04-11)
 
  Changes in apertium-en-hi.en.metadix 
  =====================================

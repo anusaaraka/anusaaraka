@@ -235,7 +235,7 @@
 (id-root ?id by)
 ?mng <-(meaning_to_be_decided ?id)
 (or(kriyA-by_saMbanXI  ?id1 ?id2)(viSeRya-by_saMbanXI  ?id1 ?id2)) ;in ol we get this relation which most probably is not correct, once this is sorted out, we can delete (viSe..) and can get the correct output with only (kriyA-by_saMbanXI  ?id1 ?id2)
-(id-root ?id2 sound|road|telephone|car|bus|letter|misdeed)
+(id-root ?id2 sound|road|telephone|car|bus|letter|misdeed|exposure);added "exposure" in the list (The silver was tarnished by the long exposure to the air.)               
 ;(or(viSeRya-of_saMbanXI  ?id2 ?id3)(viSeRya-RaRTI_viSeRaNa  ?id2 ?id3))
 =>
 (retract ?mng)

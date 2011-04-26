@@ -2197,10 +2197,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   21. Updated changes_in_databases. 
   22. Updated Log.
 
-  25-04-11
+  26-04-11
   ========
-  1. In WSD,  Modified : take.clp, lay.clp, to.clp, of.clp, was_en_tam.clp , tarnish.clp , by.clp
-              Added    : revise.clp
+  1. In WSD,  Modified : take.clp, lay.clp, to.clp, of.clp, was_en_tam.clp, tarnish.clp, by.clp, have.clp
+              Added    : revise.clp, exposure.clp, severely.clp, appreciate.clp, affair
               Removed  : excessive.clp
   2. Modified "kriyA-subject_SFI" rule in link_relation_rules.clp.
   3. In anu_testing "README", Added "g++" in 'Pre requisites'.
@@ -2225,5 +2225,5 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   12. Updated changes_in_databases
   13. Modified and updated ol_ver_output, link_ver_output, verified_output and sd_ver_output.
   14. Updated following files:
-        verified (459)  ol_verified (560)  sd_verified(403)
+        verified (461)  ol_verified (560)  sd_verified(403)
   15. Updated Log
