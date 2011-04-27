@@ -67,8 +67,8 @@
 
  gcc  -o file-wx_utf8.out file-wx_utf8.c 
  gcc -o word.out word.c 
- gcc -o all_tran_pada.out -g f_tid-rid.c f_sen-range.c  ALL_TRAN_PADA.c
- gcc -o f_range.out f_range_wordarray_resarray.c
+ #gcc -o all_tran_pada.out -g f_tid-rid.c f_sen-range.c  ALL_TRAN_PADA.c
+ #gcc -o f_range.out f_range_wordarray_resarray.c
 
  flex ir.lex
  gcc -o ir lex.yy.c -lfl 

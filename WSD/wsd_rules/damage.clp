@@ -15,7 +15,8 @@
 ;There were major damages to his brain after the accident.
 
 
-
+;Meaning modified by Meena(26.4.11)
+;The arms-dealing affair has severely damaged the reputation of the government. 
 ;Modified by Meena(5.12.09)
 ;The explosion damaged his hearing.
 (defrule damage1
@@ -26,10 +27,11 @@
 ;(id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id bigAdZa_xe))
+(assert (id-wsd_root_mng ?id bigAdZa))
+;(assert (id-wsd_root_mng ?id bigAdZa_xe))
 (assert (kriyA_id-object_viBakwi ?id ko))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  damage.clp 	damage1   "  ?id "  bigAdZa_xe )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  damage.clp 	damage1   "  ?id "  bigAdZa )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  damage.clp      damage1   "  ?id " ko )" crlf)
 )
 )

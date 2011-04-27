@@ -2197,9 +2197,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   21. Updated changes_in_databases. 
   22. Updated Log.
 
-  26-04-11
+  27-04-11
   ========
-  1. In WSD,  Modified : take.clp, lay.clp, to.clp, of.clp, was_en_tam.clp, tarnish.clp, by.clp, have.clp
+  1. In WSD,  Modified : take.clp, lay.clp, to.clp, of.clp, was_en_tam.clp, tarnish.clp, by.clp, have.clp, damage.clp
               Added    : revise.clp, exposure.clp, severely.clp, appreciate.clp, affair
               Removed  : excessive.clp
   2. Modified "kriyA-subject_SFI" rule in link_relation_rules.clp.
@@ -2208,19 +2208,19 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   5. In modify_ol_relations.clp, Added   : head_transfer_3, head_transfer_4, head_transfer_1  rules.
   6. In run_modules_ol.bat, 
        In lwg_disambiguation.clp module,
-           Removed : loading ol_original_relation_tmp.dat and opening of ol_original_relations.dat.
+           Removed  : loading ol_original_relation_tmp.dat and opening of ol_original_relations.dat.
        In modify_ol_relations.clp module, 
-           Modified: instead of loading "ol_original_relations.dat" now loaded "ol_original_relation_tmp.dat" and 
-                     instead of loading "ol_lwg_res_info.dat" now loaded "ol_lwg_res_info.dat" file.
+           Modified : instead of loading "ol_original_relations.dat" now loaded "ol_original_relation_tmp.dat" and 
+                      instead of loading "ol_lwg_res_info.dat" now loaded "ol_lwg_res_info.dat" file.
        Moved lwg_disambiguation.clp module after modify_ol_relations.clp module.
   7. Added a rule in abbr1.lex
   8. Modified new pattern for sed in run_sentence_link.sh, run_sentence_ol.sh, run_sentence_stanford.sh
   9. In parserid_wordid_mapping.clp, Modified: "id-link_id_map" rule.
                                      Added   : map_id rule. 
   10. In sd_relation_rules.clp,
-            Added    : deffunction my_string_cmp
-            Modified : decide_conj_rel, conj-comp-rule, kriyA_sub_rule
-            Removed  : delete_punc, conj_comp1 rules.
+           Added    : deffunction my_string_cmp
+           Modified : decide_conj_rel, conj-comp-rule, kriyA_sub_rule
+           Removed  : delete_punc, conj_comp1 rules.
   11. In pada.clp,  Modified : "conj_comp_rule" rule.
   12. Updated changes_in_databases
   13. Modified and updated ol_ver_output, link_ver_output, verified_output and sd_ver_output.
