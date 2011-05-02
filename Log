@@ -2197,7 +2197,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   21. Updated changes_in_databases. 
   22. Updated Log.
 
-  27-04-11
+  02-05-11
   ========
   1. In WSD,  Modified : take.clp, lay.clp, to.clp, of.clp, was_en_tam.clp, tarnish.clp, by.clp, have.clp, damage.clp
               Added    : revise.clp, exposure.clp, severely.clp, appreciate.clp, affair
@@ -2222,8 +2222,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
            Modified : decide_conj_rel, conj-comp-rule, kriyA_sub_rule
            Removed  : delete_punc, conj_comp1 rules.
   11. In pada.clp,  Modified : "conj_comp_rule" rule.
-  12. Updated changes_in_databases
-  13. Modified and updated ol_ver_output, link_ver_output, verified_output and sd_ver_output.
-  14. Updated following files:
+  12. In padasuthra.clp , Modified : "word_as_numbers" rule to avoid join network errors.
+  13. Added Stanford_parser_fails file.
+  14. Modified chk_input_format.pl programme top handle "&" symbol.
+  15. Updated changes_in_databases
+  16. Modified and updated ol_ver_output, link_ver_output, verified_output and sd_ver_output.
+  17. Updated following files:
         verified (461)  ol_verified (560)  sd_verified(403)
-  15. Updated Log
+  18. Updated Log

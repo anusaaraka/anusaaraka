@@ -28,11 +28,11 @@ while($in = <STDIN>){
 	   $in =~ s/[\*	 ]//g;
 	#Special case for GUTENBERG texts.
         }
-	if($in =~ /[#\^\~\`\&\*€-ÿ_]/){
+	if($in =~ /[#\^\~\`\*€-ÿ_]/){
 	   print STDERR "\tTEXT CONTAINS SOME SPECIAL CHARACTERS. \n";
            print STDERR "\tTHEY ARE REMOVED TO RUN THE TEXT SMOOTHLY.\n";
            print STDERR "\t$in\n";
-	   $in =~ s/[#\^\~\`\&\*€-ÿ_]//g;
+	   $in =~ s/[#\^\~\`\*€-ÿ_]//g;
         }
 # Remove non printable characters outside the range 32 to 127
 	$in =~ s/[^ -\n\t]/ /g;
