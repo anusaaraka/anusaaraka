@@ -433,7 +433,8 @@
   ?f0<-(linkid-node_cat ?pid noun/pronoun)
   (parserid-wordid  ?pid ?id)
   (parserid-word ?pid ?lword)
-  (id-word_cap_info ?id first_cap)
+  (id-word_cap_info ?id first_cap|all_caps);Added 'all_caps' in the list by Roja(02-05-11).
+                                           ;Ex: They accused the US of interfering in the internal affairs of other nations.
   (id-original_word ?wid ?word)
   (test (and (eq ?lword ?word)(neq ?wid 1))) ;Cancer and heart disease are the UK's biggest killers. 
   =>

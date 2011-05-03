@@ -2199,8 +2199,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 
   02-05-11
   ========
-  1. In WSD,  Modified : take.clp, lay.clp, to.clp, of.clp, was_en_tam.clp, tarnish.clp, by.clp, have.clp, damage.clp
-              Added    : revise.clp, exposure.clp, severely.clp, appreciate.clp, affair
+  1. In WSD,  Modified : take.clp, lay.clp, to.clp, of.clp, was_en_tam.clp, tarnish.clp, by.clp, have.clp, damage.clp, a.clp,
+                         make.clp, any.clp, pretty.clp
+              Added    : revise.clp, exposure.clp, severely.clp, appreciate.clp, affair.clp, interfere.clp, velvet.clp, 
+                         velvety.clp, disappoint.clp
               Removed  : excessive.clp
   2. Modified "kriyA-subject_SFI" rule in link_relation_rules.clp.
   3. In anu_testing "README", Added "g++" in 'Pre requisites'.
@@ -2215,7 +2217,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
        Moved lwg_disambiguation.clp module after modify_ol_relations.clp module.
   7. Added a rule in abbr1.lex
   8. Modified new pattern for sed in run_sentence_link.sh, run_sentence_ol.sh, run_sentence_stanford.sh
-  9. In parserid_wordid_mapping.clp, Modified: "id-link_id_map" rule.
+  9. In parserid_wordid_mapping.clp, Modified: id-link_id_map rule.
                                      Added   : map_id rule. 
   10. In sd_relation_rules.clp,
            Added    : deffunction my_string_cmp
@@ -2225,8 +2227,14 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   12. In padasuthra.clp , Modified : "word_as_numbers" rule to avoid join network errors.
   13. Added Stanford_parser_fails file.
   14. Modified chk_input_format.pl programme top handle "&" symbol.
-  15. Updated changes_in_databases
-  16. Modified and updated ol_ver_output, link_ver_output, verified_output and sd_ver_output.
-  17. Updated following files:
-        verified (461)  ol_verified (560)  sd_verified(403)
-  18. Updated Log
+  15. Modified morph.pl programme to handle 'US' (location)
+  16. In ol_parserid_wordid_mapping.clp, Modified:'OL_id_map_hyphen','OL_id_map_hyphen_1' rules to avoid join network errors.
+  17. In modify_ol_relations.clp, Modified: 'add_kri_viSeRaNa_rule', 'add_kri_vi_rule', 'add_viSeRya_viSeRaka',
+                                            'add_but_conj', 'modify-saMbanXI-rel' rules to avoid join network errors.
+  18. In vibakthi.clp,  Modified: 'prefix_vib_rule' rule to avoid join network errors.
+  19. In link_category.clp, Modified: pronoun_rule_first_cap  rule.
+  19. Updated changes_in_databases
+  20. Modified and updated ol_ver_output, link_ver_output, verified_output and sd_ver_output.
+  21. Updated following files:
+        verified (466)  ol_verified (565)  sd_verified(407)
+  22. Updated Log

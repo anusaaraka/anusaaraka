@@ -159,7 +159,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (viSeRya-det_viSeRaNa  ?id1 ?id)
 (or(samAsa  ?id1 ?id2)(viSeRya-viSeRaNa ?id1 ?id2)(viSeRya-wulanAwmaka_viSeRaNa ?id1 ?id2)) ;added samAsa by sukhada Ex:The chief guest gave a welcome address. This has been taken into account in a10(Meena 3.3.11)  
-(not (id-root ?id1 sound|shame|success|effect|idea|manner|offer|salary|time))
+(not (id-root ?id1 sound|shame|success|effect|idea|manner|offer|salary|time|affair)) ;added affair in the list(Meena 28.4.11)
 (not(id-root ?id2 variable|vacant|welcome|music|curriculum|birthday))  ;Added by (Meena 24.5.10)
 (not(id-cat_coarse ?id1 PropN))
 =>
@@ -173,7 +173,8 @@
 
 
 
-
+;Modified by Meena(28.4.11)
+;The debate was a pretty disappointing affair. 
 ;Added by Meena(3.3.11)
 ;When we want to hear a music programme on the radio, we have to tune the radio to the correct station.
 ;The chief guest gave a welcome address.  

@@ -67,7 +67,7 @@ for $i (0 .. $#lines){
 			if($multiword){$root_orig=$root_mw;$root=$root_mw;$orig_word=$root_mw;}
 			elsif($root =~ /^\*/){$root=$orig_word;}
 			elsif((($root eq "Prpers")||($root eq "prpers"))&& ($orig_word eq "I")){$root=$orig_word;}
-			elsif(($root eq "Prpers")||($root eq "prpers")){$root=lc($orig_word);}
+			elsif(($root eq "Prpers")||($root eq "prpers")||($root eq "PRPERS")){$root=lc($orig_word);}
 			else{$root=lc($1);}
 			$analysis=$2;
 			@tags=split(/>/,$analysis);

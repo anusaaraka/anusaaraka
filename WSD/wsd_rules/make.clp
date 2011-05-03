@@ -1,4 +1,21 @@
 
+
+;Added by Meena(27.1.11)
+;She gave the cap another twist to make sure it was tight. 
+(defrule make_sure0
+(declare (salience 5000))
+(id-root ?id make)
+?mng <-(meaning_to_be_decided ?id)
+(id-root =(+ ?id 1) sure)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(+ ?id 1) niSciwa_kara))
+;(assert (id-wsd_root_mng ?id saMvexanA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " make.clp  make_sure  "  ?id "  " (+ ?id 1) "  niSciwa_kara  )" crlf))
+)
+
+
 ;Added by Meena(16.10.10)
 ;It makes sense that the charge approaches zero, since the balloon is losing its charge.
 (defrule make_sense0
@@ -687,14 +704,20 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  make.clp      make59   "  ?id "  xe )" crlf))
 )
 
- ;Added by sheetal (04-02-10). 
+
+
+
+
+;Added "mention" in the list(Meena 27.4.11)
+;The book does not make any mention of his love affair. 
+;Added by sheetal (04-02-10). 
 ; after removing rules- [21,22,23,25,27,28,29,30,31,32,33,34,35,36,37,38,42,45,46,56]
 (defrule make60
 (declare (salience 4950))
 (id-root ?id make)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-object ?id ?id1)
-(id-word ?id1 attempt|effort|excuse|suggestion|decision|exception|enquiry|call|mistake|request|fuss|noise|arrangement|journey|statement|love|war|peace|comment|observation|inspection) ; list Added by Manju (04-02-10).
+(id-word ?id1 mention|attempt|effort|excuse|suggestion|decision|exception|enquiry|call|mistake|request|fuss|noise|arrangement|journey|statement|love|war|peace|comment|observation|inspection) ; list Added by Manju (04-02-10).
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kara))

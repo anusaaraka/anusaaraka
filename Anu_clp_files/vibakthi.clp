@@ -225,6 +225,8 @@
  (defrule prefix_vib_rule
  (declare (salience 700))
  ?f0<-(id-original_word ?id ?word)
+ (test (eq (numberp ?word) FALSE)) ;Added by Roja(02-05-11) To avoid join network errors.
+                                   ;Ex: We lost 30 minutes in the traffic jam. 
  (test (eq (sub-string (- (length ?word) 1) (length ?word) ?word) "'s"))
  ?f1<-(pada_info (group_head_id ?id)(group_cat ?cat))
  (test (neq ?cat English_PP))

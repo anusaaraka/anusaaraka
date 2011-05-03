@@ -406,7 +406,7 @@
 
 ;Whatever the outcome is, I am sure he will still be popular.
 (defrule add_kri_viSeRaNa_rule
-(ol_res_id-word_id-word	?kri	 ?id	?verb)
+(ol_res_id-word_id-word	?kri  ?id   ?verb&~punctuation_mark);Added '&~punctuation_mark' by Roja to avoid join network errors.
 (ol_res_id-word_id-word ?kri_vi =(- ?id 1)     still)
 (prep_id-relation-parser_ids   -  kriyA-subject  ?kri	?sub)
 =>
@@ -606,7 +606,7 @@
 
 ;Prices have tended downwards over recent years.
 (defrule add_kri_vi_rule
-(ol_res_id-word_id-word	?kri	?id	?verb)
+(ol_res_id-word_id-word	?kri   ?id  ?verb&~punctuation_mark);Added '&~punctuation_mark' by Roja to avoid join network errors.
 (ol_res_id-word_id-word	?kri_vi	=(+ ?id 1)	downwards)
 (parser_id-cat_coarse  ?kri verb)
 ?f<-(prep_id-relation-parser_ids   -  kriyA-object  ?kri	?kri_vi)
@@ -841,7 +841,7 @@
 ;Added by sheetal
 ;Many people can speak but only a few can act.
 (defrule add_viSeRya_viSeRaka
-(ol_res_id-word_id-word	?P_conj	?id	?conj)
+(ol_res_id-word_id-word	?P_conj	?id  ?conj&~punctuation_mark);Added '&~punctuation_mark' by Roja to avoid join network errors
 (ol_res_id-word_id-word	?P_vi	=(+ ?id 1)	only)
 (prep_id-relation-parser_ids   - kriyA-conjunction ?kri	?P_conj)
 (prep_id-relation-parser_ids   -  kriyA-subject  ?kri ?sub)
@@ -1002,7 +1002,7 @@
 ;Many people can speak but only a few can act.
 (defrule add_but_conj
 (ol_res_id-word_id-word	?con	?id	but)
-(ol_res_id-word_id-word ?kri   ?id1   ?v)
+(ol_res_id-word_id-word ?kri   ?id1   ?v&~punctuation_mark);Added '&~punctuation_mark' by Roja to avoid join network errors.
 ?f<-(prep_id-relation-parser_ids   -   wall_conjunction ?con)
 (prep_id-relation-parser_ids   -   kriyA-subject ?kri ?sub)
 (test (> ?id 1))
@@ -1172,7 +1172,8 @@
 (test (eq (sub-string 1 (- (str-index "-" ?rel) 1) ?rel) "kriyA"))
 (test (eq (sub-string (+ (+ (str-index "-" ?rel) 1) (- (str-index "_" ?rel)  (str-index "-" ?rel))) (length ?rel) ?rel) "saMbanXI"))
 (ol_res_id-word_id-word  ?pid  ?id  ?str&:(sub-string (+ (str-index "-" ?rel) 1) (- (str-index "_" ?rel) 1) ?rel))
-(test (and (eq (str-index "." ?str) FALSE)(eq (str-index "punctuation_mark" ?str) FALSE))) ;That incident took place in 1800 B.C.  (to avoid kriyA-b.c_saMbanXI)
+(test (eq (numberp ?str) FALSE)) ;;Added to avoid join network errors.
+(test (eq (str-index "." ?str) FALSE)) ;That incident took place in 1800 B.C.  (to avoid kriyA-b.c_saMbanXI)
 (test (member$ ?pid  $?ids))
 =>
 (if (neq ?head ?sam) then 

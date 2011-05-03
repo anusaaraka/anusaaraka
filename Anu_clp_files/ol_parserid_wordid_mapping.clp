@@ -77,9 +77,10 @@
  (declare (salience 1000))
  ?f<-(ol_res_id-word_id-word	?pid	?wrdid	?wrd)
  ?f1<-(id-word ?wrdid1  ?word)
+ (test (eq (numberp ?word) FALSE)) ;To avoid join network errors
+ (test (neq (str-index "-" ?word) FALSE))
  (not (ol_res_id-word_id-word    ?pid  ?wrdid punctuation_mark))
  ?f2<-(ol_res_id-word_id-word    ?pid1   =(+ ?wrdid 1)  ?wrd1)
- (test (neq (str-index "-" ?word) FALSE))
  =>
    (bind ?wrd_wrd (string-to-field (str-cat ?wrd "-" ?wrd1)))
    (if (and (eq ?word ?wrd_wrd)(eq ?wrdid1 ?wrdid)) then
@@ -106,6 +107,7 @@
  (not (ol_res_id-word_id-word    ?pid  ?wrdid punctuation_mark))
  ?f2<-(ol_res_id-word_id-word    ?pid1   =(+ ?wrdid 1)  ?wrd1)
  ?f3<-(ol_res_id-word_id-word    ?pid2   =(+ ?wrdid 2)  ?wrd2)
+ (test (eq (numberp ?word) FALSE)) ;To avoid join network errors
  (test (neq (str-index "-" ?word) FALSE))
  =>
    (bind ?wrd_wrd (string-to-field (str-cat ?wrd "-" ?wrd1 "-" ?wrd2)))

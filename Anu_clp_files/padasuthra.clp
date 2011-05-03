@@ -34,6 +34,7 @@
  (declare (salience 250))
  ?f0<-(id-original_word ?id ?word)
  ?f1<-(id-root ?id ?rt)
+ (test (eq (numberp ?rt) FALSE)) ;To avoid join network errors. Added by Roja (27-04-11)
  (test (neq (str-index "-" ?rt) FALSE));To avoid join network errors. Added by Roja (27-04-11)
  (test (numberp (string-to-field (sub-string 1 (- (str-index "-" ?rt) 1) ?rt) ))) ;Modified by Roja(11-03-11)
  (test (numberp (string-to-field (sub-string (+ (str-index "-" ?rt) 1) 1000 ?rt))));Instead of ?word testing with ?rt 

@@ -95,7 +95,8 @@
 
 
 
-
+;Modified by Meena(3.5.11)
+;The book does not make any mention of his love affair.
 ;Added by Meena(21.10.09)
 ;It did not resemble any living creature.
 (defrule any7
@@ -103,13 +104,20 @@
 (id-root ?id any)
 ?mng <-(meaning_to_be_decided ?id)
 (viSeRya-det_viSeRaNa  ?id1 ?id)
+(id-word ?id1 ?wrd)
 =>
 (retract ?mng)
+(if (or(eq ?wrd mention)(eq ?wrd questions)) then
+        (assert (id-wsd_root_mng ?id koI))
+else
 (assert (id-wsd_root_mng ?id kisI))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  any.clp       any7   "  ?id "  kisI )" crlf))
 )
-
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  any.clp       any7   "  ?id "  kisI )" crlf)
+(if (or(eq ?wrd mention)(eq ?wrd questions)) then
+        (assert (id-wsd_root_mng ?id koI))
+        (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  any.clp      any7   "  ?id "  koI )" crlf))
+))
 
 
 ;Salience reduced in "any8" by Meena(21.10.09) as it is a very general rule. 
