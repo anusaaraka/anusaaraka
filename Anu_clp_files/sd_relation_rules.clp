@@ -18,6 +18,40 @@
 (deffunction my_string_cmp> (?a ?b)
   (> (str-compare ?a ?b) 0))
 ;------------------------------------------------------------------------------------------------------------------------
+ (defrule replace_left_head
+ (declare (salience 9999))
+ (propogation_rel_name-sids ?rel  ?x ?y)
+ (propogation_rel_name-sids ?rel2  ?z ?y)
+ ?f<- (rel_name-sids ?rel1   ?x ?y)
+ (rel_name-sids conj_and|conj_or  ?x ?z)
+ (parserid-word ?id and|or)
+ (test (and (> (string_to_integer ?id) (string_to_integer ?x)) (< (string_to_integer ?id) (string_to_integer ?z)) (neq ?rel conj_and) (neq ?rel conj_or) (neq ?rel2 conj_or) (neq ?rel2 conj_and) (eq ?rel ?rel1) (eq ?rel ?rel2) ))
+ =>
+ (retract ?f )
+ (assert (rel_name-sids ?rel  ?id  ?y))
+ (printout       ?*dbug* "(rel_name-sids  "?rel"  "?id"  "?y")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids    replace_left_head  "?rel"  "?id"  "?y")"crlf)
+ (printout       ?*dbug* "(rule-deleted_Relation-ids    replace_left_head  "?rel"  "?x"  "?y")"crlf)
+ )
+ ; Ex. Bell, based in Los Angeles, makes and distributes electronic, computer and building products. 
+;------------------------------------------------------------------------------------------------------------------------
+ (defrule replace_right_head
+ (declare (salience 9999))
+ (propogation_rel_name-sids ?rel  ?x ?y)
+ (propogation_rel_name-sids ?rel2  ?x ?z)
+ ?f<- (rel_name-sids ?rel1   ?x ?y)
+ (rel_name-sids conj_and|conj_or  ?y ?z)
+ (parserid-word ?id and|or)
+ (test (and (> (string_to_integer ?id) (string_to_integer ?y)) (< (string_to_integer ?id) (string_to_integer ?z)) (neq ?rel conj_and) (neq ?rel conj_or) (eq ?rel ?rel1) (eq ?rel ?rel2) ))
+ =>
+ (retract ?f )
+ (assert (rel_name-sids ?rel  ?x  ?id))
+ (printout       ?*dbug* "(rel_name-sids  "?rel"  "?x"  "?id")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids    replace_right_head  "?rel"  "?x"  "?id")"crlf)
+ (printout       ?*dbug* "(rule-deleted_Relation-ids    replace_right_head  "?rel"  "?x"  "?id")"crlf)
+ )
+ ; Ex. Bell, based in Los Angeles, makes and distributes electronic, computer and building products.  
+;------------------------------------------------------------------------------------------------------------------------
 (defrule abbrev
 (rel_name-sids abbrev ?nAma ?saMkRipwa_nAma)
 =>
@@ -137,19 +171,6 @@
  )
  ; Ex. He may drink milk or eat apples .
  ;------------------------------------------------------------------------------------------------------------------------
- (defrule dobj_conj
- (declare (salience 900))
- (rel_name-sids conj_and|conj_or  ?ob ?ob1)
- (rel_name-sids dobj ?kriyA ?ob)
- (parserid-word ?id and|or)
- (test (and (> (string_to_integer ?id) (string_to_integer ?ob)) (< (string_to_integer ?id) (string_to_integer ?ob1))))
- =>
- (assert (found_kriyA-obj_rel ?kriyA))
- (printout       ?*fp*   "(prep_id-relation-parser_ids  -   kriyA-object    "?kriyA"        "?id")"crlf)
- (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -  dobj_conj  kriyA-object    "?kriyA"        "?id")"crlf)
- )
- ; Ex. I like fruits and nuts. 
- ;------------------------------------------------------------------------------------------------------------------------
  (defrule dobj_as_well_as
  (declare (salience 900))
  (rel_name-sids conj_and|conj_or  ?ob ?ob1)
@@ -192,85 +213,6 @@
  )
  ; Ex. Your house and garden are very attractive.
  ;------------------------------------------------------------------------------------------------------------------------
- (defrule nsubj_conj1
- (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
- (rel_name-sids conj_and|conj_or  ?sub ?sub1)
- (not (rel_name-sids cop  ?kriyA ?))
- (parserid-word ?id and|or)
- (test (and (> (string_to_integer ?id) (string_to_integer ?sub)) (< (string_to_integer ?id) (string_to_integer ?sub1))))
- =>
- (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?kriyA"        "?id")"crlf)
- (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj_conj1  kriyA-subject  "?kriyA"        "?id")"crlf)
- )
- ; Added by Mahalaxmi.
- ; Ex. Rama and Shyam are coming . He and I are friends . There are three boys and four girls in the park .
- ;------------------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju
- (defrule nsubj_conj2
- (declare (salience 250))
- (rel_name-sids	nsubj ?kriyA  ?sub) 
- (rel_name-sids	conj_and|conj_or  ?kriyA ?id1)
- (parserid-word ?and and|or)
- (not (found_kriyA-conjunction ?and));I ate fruits, drank milk and slept. 
- (test (and (> (string_to_integer ?and) (string_to_integer ?kriyA)) (< (string_to_integer ?and) (string_to_integer ?id1))))
- =>
- (printout       ?*fp*   "(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa   "?sub"  "?and")"crlf)      
- (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj_conj2     subject-subject_samAnAXikaraNa  "?sub"  "?and")"crlf)
- (assert (rel_sub-sub_samAnAXikaraNa_decided ?and))
- ) 
- ; Ex :Bill is big and honest .
- ;------------------------------------------------------------------------------------------------------------------------
- (defrule nsubj_conj_sam
- (declare (salience 210))
- (rel_name-sids	cop   ?sam ?x)
- (rel_name-sids nsubj ?sam  ?y)
- (rel_name-sids conj_and|conj_or  ?sub ?id1)
- (parserid-word ?and and|or)
- (test (and (> (string_to_integer ?and) (string_to_integer ?sub)) (< (string_to_integer ?and) (string_to_integer ?id1))))
- (not (rel_sub-sub_samAnAXikaraNa_decided ?and))
- =>
- (assert (got_subject_samAnAXikaraNa ?sam))
- (printout       ?*fp*   "(prep_id-relation-parser_ids  -  subject-subject_samAnAXikaraNa  "?and"    "?sam")"crlf)
- (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj_conj_sam  subject-subject_samAnAXikaraNa  "?and"    "?sam")"crlf)
- )
- ; Ex : Your house and garden are very attractive .
- ;------------------------------------------------------------------------------------------------------------------------
- (defrule nsubj_conj_and
- (declare (salience 210))
- (rel_name-sids cop   ?kri ?kriyA)
- (rel_name-sids nsubj ?kri  ?sub)
- (rel_name-sids conj_and|conj_or  ?sub ?id1)
- (parserid-word ?and and|or)
- (test (and (> (string_to_integer ?and) (string_to_integer ?sub)) (< (string_to_integer ?and) (string_to_integer ?id1))))
- =>
- (printout       ?*fp*   "(prep_id-relation-parser_ids  -    kriyA-subject       "?kriyA"        "?and")"crlf)
- (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj_conj_and  kriyA-subject   "?kriyA"        "?and")"crlf)
- (assert (sub_for_kriyA ?kriyA))
- )
- ; Added by Shirisha Manju
- ; Ex : Your house and garden are very attractive .
- ;------------------------------------------------------------------------------------------------------------------------
-;;Added by Shirisha Manju 
-(defrule nsubj_expl_cc_conj
-(declare(salience 210))
-(rel_name-sids expl ?kriyA ?kriyA_dummy_subject)
-(rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
-(rel_name-sids  conj_and|conj_or ?sub  ?id1)
-(parserid-word ?and and|or)
-(test (and (> (string_to_integer ?and) (string_to_integer ?sub)) (< (string_to_integer ?and) (string_to_integer ?id1))))
-(not (rel_name-sids cop ?kriyA ?))
-(not (rel_name-sids nn ?sub ?))
-=>
-(printout       ?*fp*   "(prep_id-relation-parser_ids  -    kriyA-dummy_subject       "?kriyA"        "?kriyA_dummy_subject")"crlf)
-(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj_expl_cc_conj   kriyA-dummy_subject   "?kriyA"        "?kriyA_dummy_subject")"crlf)
-
-(printout       ?*fp*   "(prep_id-relation-parser_ids  -    kriyA-aBihiwa       "?kriyA"        "?and")"crlf)
-(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj_expl_cc_conj   kriyA-aBihiwa   "?kriyA"        "?and")"crlf)
- (assert (sub_for_kriyA ?kriyA))
-)
-; Ex :Bill is big and honest .
-;------------------------------------------------------------------------------------------------------------------------
-
 (defrule nsubjpass/csubjpass
 (declare(salience 200))
 (rel_name-sids nsubjpass|csubjpass ?kriyA ?sub)
@@ -464,20 +406,6 @@
  ;Added by Shirisha Manju
  ; Ex: It is not a good manner to eat alone.
 ;------------------------------------------------------------------------------------------------------------------------
- (defrule poss_conj
- (declare (salience 210))
- (rel_name-sids poss ?R_vi ?R_viNa) 
- (rel_name-sids conj_and|conj_or ?R_vi ?id)
- (parserid-word ?and  and|or)
- (test (and(>(string_to_integer ?and) (string_to_integer ?R_viNa))(<(string_to_integer ?and)(string_to_integer ?id))))
- =>
- (assert (got_viSeRya-RaRTI_viSeRaNa ?R_viNa))
- (printout       ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?and"        "?R_viNa")"crlf)
- (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   poss_conj   viSeRya-RaRTI_viSeRaNa  "?and"        "?R_viNa")"crlf)
- )
- ;Added by Shirisha Manju
- ;Your house and garden are very attractive .
-;------------------------------------------------------------------------------------------------------------------------
  (defrule poss
  (rel_name-sids poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
  (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_viSeRaNa))
@@ -657,36 +585,6 @@
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   conj_but   kriyA-conjunction        "?kri"      "?conj_id")"crlf)
 )
  ; Ex. Petu ran fast but Betu could not run fast. 
-;------------------------------------------------------------------------------------------------------------------------
- (defrule k_conj
- (declare (salience 1000))
- (rel_name-sids ?cnj ?kriyA ?kri)
- (test (eq (sub-string 1 5 (implode$ (create$ ?cnj))) "conj_"))
- (rel_name-sids nsubj ?kriyA ?s)
- (rel_name-sids nsubj ?kri ?s1)
- (parserid-word ?c_id and|or)
- (test (and (> (string_to_integer ?c_id) (string_to_integer ?kriyA)) (< (string_to_integer ?c_id) (string_to_integer ?kri)) (> (string_to_integer ?c_id) (string_to_integer ?s)) (< (string_to_integer ?c_id) (string_to_integer ?s1))))
- =>
- (assert (found_kriyA-conjunction ?c_id))
- (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-conjunction        "?kri"      "?c_id")"crlf)
- (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   k_conj   kriyA-conjunction        "?kri"      "?c_id")"crlf)
- )
- ; Ex. I want to have this and I want to have that. I am in New York and I would like to see you. I slept and Mohan wept. 
-;------------------------------------------------------------------------------------------------------------------------
- (defrule k_conj1
- (declare (salience 1000))
- (rel_name-sids ?cnj ?kriyA ?kri)
- (test (eq (sub-string 1 5 (implode$ (create$ ?cnj))) "conj_"))
- (rel_name-sids nsubj ?kriyA ?s)
- (parser_id-cat_coarse ?kri verb)
- (parser_id-cat_coarse ?kriyA verb)
- (parserid-word ?c_id and|or)
- (not (found_kriyA-conjunction ?c_id))
- (test (and (> (string_to_integer ?c_id) (string_to_integer ?kriyA)) (< (string_to_integer ?c_id) (string_to_integer ?kri)) (> (string_to_integer ?c_id) (string_to_integer ?s))))
- =>
- (assert (found_kriyA-conjunction ?c_id))
- )
- ; Ex. The leopard seizes its kill and begins to eat. I ate fruits, drank milk and slept.
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule partmod+nsubj+cop
 (declare(salience 205))

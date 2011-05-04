@@ -92,6 +92,7 @@
  (batch* ?*path*)
  (load-facts "sd-relations_tmp1.dat")
  (load-facts "sd-basic_relations_tmp1.dat")
+ (load-facts "sd-propagation_relations_tmp1.dat")
  (load-facts "sd_word.dat")
  (load-facts "lwg_info_tmp.dat")
  (load-facts "parserid_wordid_mapping.dat")

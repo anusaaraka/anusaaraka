@@ -2238,3 +2238,26 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   21. Updated following files:
         verified (466)  ol_verified (565)  sd_verified(407)
   22. Updated Log
+
+  04-05-11
+  ========
+   1. To handle conjunctions (and, or) some changes are made in
+           split-basic-tree_rels.py is replaced with split-basic-propagation-tree_rels.py.
+           This program extracts basic, propagation into tree different files:
+                a. sd-basic_relations_tmp.txt
+                b. sd-propagation_relations_tmp.txt and
+                c. sd-tree_relations_tmp.txt
+   2. Added: stnford_propagation_relations.lex to convert SD propagation relations into CLIPS format.
+   3. compile.sh: stnford_propagation_relations.lex file is compiled to get stnford_propagation_relations.out.
+   4. In run_stanford-parser.sh:
+       Using stnford_propagation_relations.out to convert sd-propagation_relations_tmp.txt to sd-propagation_relations.txt
+   5. run_stanford.sh: Added CCPropagatedDependencies in outputFormatOptions to get propagation SDs.
+   6. In sd_relation_rules.clp
+            Removed: dobj_conj, nsubj_conj1, nsubj_conj2, nsubj_conj_sam, nsubj_conj_and, nsubj_expl_cc_conj,
+                          poss_conj, k_conj and k_conj1 rules.
+            Added  : replace_left_head and replace_right_head rules
+   7. In Anusaaraka_stanford.sh:
+            Using split_file.c to convert sd-propagation_relations.txt file into sd-propagation_relations_tmp1.dat
+   8. In run_modules_std.bat, Loding sd-propagation_relations_tmp.dat in sd_relation_rules.clp module.
+   9. Updated Log.
+
