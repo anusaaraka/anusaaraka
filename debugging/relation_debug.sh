@@ -4,7 +4,7 @@
 
  cd $HOME_anu_tmp/tmp/$1_tmp/$2
  
- ls ol_relations.dat  ol_relation_debug.dat link_relation_info.dat parserid_wordid_mapping.dat relations_debug.dat word.dat lwg_info.dat relations_tmp.dat relations.dat English_sentence.dat parser_type.dat sd_word.dat lwg_info_tmp.dat > dat
+ ls ol_relations.dat  ol_relation_debug.dat link_relation_info_tmp1.dat parserid_wordid_mapping.dat relations_debug.dat word.dat lwg_info.dat relations_tmp.dat relations.dat English_sentence.dat parser_type.dat sd_word.dat lwg_info_tmp.dat > dat
 
 
  var=`cat dat`

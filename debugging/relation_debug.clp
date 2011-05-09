@@ -34,7 +34,8 @@
  (batch* ?*path*)
  (system "clear")
  (system "sed 's/(Eng_sen \"//g' English_sentence.dat |sed  's/\")//g'|sed 's/&quot;/\"/g'|sed 's/\&amp;/&/g' >jnk")
- (system "anu_link-parser.sh <jnk >jnk1 2>err")
+; (system "anu_link-parser.sh <jnk >jnk1 2>err")
+ (system "anu_link4.sh <jnk >jnk1 2>err")
  (system "cat jnk1")
  (system "cat " ?*home_anu_tmp*)
  )
@@ -57,14 +58,14 @@
 
  (defrule V_P_relations
  (declare (salience 98))
- (relation-parser_ids ?rel ?id ?id1)
+ (prep_id-relation-parser_ids ?p  ?rel ?id ?id1)
  (test (and (neq ?rel viSeRya-det_viSeRaNa) (neq ?rel viSeRya-viSeRaNa)(neq ?rel kriyA-nA)(neq ?rel kriyA-ke_liye) (neq ?rel nAma-saMkRipwa_nAma)(neq ?rel proper_noun-det_viSeRaNa)(neq ?rel subject-opener)(neq ?rel kriyA-ne_ke_liye)(neq ?rel viSeRya-wulanAwmaka_viSeRaNa)(neq ?rel kriyA-viXi_vAkyakarma)(neq ?rel kriyA-samAnakAlika_kriyA)(neq ?rel pUrvakAlika_kriyA-ananwarakAlika_kriyA)(neq ?rel kriyA-praSnavAcI)(neq ?rel muKya_vAkya-sApekRa_upavAkya)(neq ?rel subject-vAkyasamAnAXikarNa))) 
- (not (relation-parser_ids ?rel ?id ?id1 RC))
+ (not (prep_id-relation-parser_ids  ?p  ?rel ?id ?id1 RC))
  ?f<-(pp_list $?pp_list) 
  ?f1<-(head_count ?head_cnt)
  =>
  (retract ?f1 ?f)
- (assert (relation-parser_ids ?rel ?id ?id1 RC))
+ (assert (prep_id-relation-parser_ids ?p ?rel ?id ?id1 RC))
  (if (not(member$ ?id1 $?pp_list)) then
  (bind $?pp_list (create$ $?pp_list ?id1)))
 
@@ -78,7 +79,7 @@
 
  (defrule test1
  (declare (salience 97))
- (relation-parser_ids ?rel ?id ?id1)
+ (prep_id-relation-parser_ids ?p  ?rel ?id ?id1)
  (relation-parser_ids ?rel1 ?id ?id1)
  (not (relations_repeated ?id ?id1 RR))
  (test (neq ?rel ?rel1))
@@ -93,8 +94,8 @@
 
  (defrule test2
  (declare (salience 97))
- (relation-parser_ids ?rel ?id ?id1)
- (relation-parser_ids ?rel1 ?id1 ?id)
+ (prep_id-relation-parser_ids ?p ?rel ?id ?id1)
+ (prep_id-relation-parser_ids ?p ?rel1 ?id1 ?id)
  (not (relations_looped ?rel ?id ?id1 RL))
  (not (relations_looped ?rel1 ?id1 ?id RL))
  =>
@@ -185,7 +186,7 @@
   (defrule debug_relation
   (declare (salience 10))
   ?f<-(debug ?rel ?pid ?rid)
-  (Rule-Rel-ids ?rule_name ?rel ?P_lid ?P_rid)
+  (or (prep_id-Rule-Rel-ids ? ?rule_name ?rel ?P_lid ?P_rid) (Rule-Rel-ids ?rule_name ?rel ?P_lid ?P_rid))
   (parserid-wordid  ?P_lid ?pid)
   (parserid-wordid  ?P_rid ?rid)
   (not (Parser_used Open-Logos-Parser))
@@ -226,8 +227,6 @@
   ?f<-(relations asserted)
   (Parser_used Open-Logos-Parser)
   (Rule-Rel-ids  ?rule_name   ?rel   ?P_lid   ?P_rid)
-  (parserid-wordid  ?P_lid  ?pid)
-  (parserid-wordid  ?P_rid  ?rid)
   =>
   (retract ?f ?f1)
   (if  (and (neq ?rule_name write_remaining_relations) (neq ?rule_name write_AjFArWaka_kriyA_rel) (neq ?rule_name write_AjFArWaka_kriyA_rel1)) then
@@ -245,7 +244,7 @@
   ?f1<-(debug ?rel ?P_lid ?P_rid)
   ?f<-(relations asserted)
   (Parser_used Open-Logos-Parser)
-  (not (Rule-Rel-ids  ?rule_name   ?rel   ?P_lid   ?P_rid))
+  (not (Rule-Rel-ids ?rule_name   ?rel   ?P_lid   ?P_rid))
   =>
   (retract ?f ?f1)
   (printout t crlf " These Relations are given by using run_openlogos.py "crlf " If you want to debug these relations then go to the directory \"anu_testing/Anu_src\" and then debug run_openlogos.py" crlf)
@@ -348,7 +347,7 @@
  (system "echo \"rel_debug.*"?rel"	\" >pat")
  (system "grep -R \"^[ \\t]\*(printout\" link_relation_rules.clp |sed \"s/[ \\t]\*(printout/(printout/g\" <link_relation_rules.clp >link_relation_rules_copy.clp")
  (system "perl ../replace_spaces_with_tab.pl <link_relation_rules_copy.clp >link_relation_rules_copy1.clp")
- (system  "grep -f pat link_relation_rules_copy1.clp | cut -f 4 >out_file")
+ (system  "grep -f pat link_relation_rules_copy1.clp | cut -f 5 >out_file")
 ; (system "echo \"rel_debug.*	"?rel"	\" >pat") 
 ; (system  "grep -f pat link_relation_rules.clp | cut -f 4 >out_file")
  ;(open "out_file" fp "r")
@@ -357,7 +356,7 @@
  (system "echo \"rel_debug.*"?rel"	\" >pat")
  (system "grep -R \"^[ \\t]\*(printout\" sd_relation_rules.clp |sed \"s/[ \\t]\*(printout/(printout/g\" <sd_relation_rules.clp >sd_relation_rules_copy.clp")
  (system "perl ../replace_spaces_with_tab.pl <sd_relation_rules_copy.clp >sd_relation_rules_copy1.clp")
- (system  "grep -f pat sd_relation_rules_copy1.clp | cut -f 4 >out_file"))
+ (system  "grep -f pat sd_relation_rules_copy1.clp | cut -f 5 >out_file"))
  else
  (if (eq ?ptype Open-Logos-Parser) then
  (system "echo \"debug.*"?rel"      \" >pat")

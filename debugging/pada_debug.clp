@@ -9,26 +9,6 @@
  (system "zenity  --text-info --title="pada-help" --filename="?help-file_path"  --width=560  --height=300  &")
  )
 
- (defrule load_files
- (declare (salience 150))
- (Parser_used ?ptype)
- =>
-  (if (eq ?ptype Link-Parser) then
-        (load* "pada_ids.clp")
- 	(load-facts "pada_id_info.dat")
-  else
-        (if (eq ?ptype Stanford-Parser) then
-                (load* "sd_pada.clp")
-                (load-facts "pada_id_info.dat")
-        )
-  else
-	(if (eq ?ptype Open-Logos-Parser) then
-                (load* "modify_ol_pada.clp")
-        	(load-facts "ol_pada.dat")
-	)
-  )
-  (system "clear")
- )
 
  (defrule display_linkage
  (declare (salience 120))
@@ -36,7 +16,7 @@
  =>
  (system "sed 's/(Eng_sen \"//g' English_sentence.dat |sed  's/\")//g'|sed 's/&quot;/\"/g'|sed 's/\&amp;/&/g' >jnk")
  (printout t "Sentence :: " (system "cat jnk") crlf)
- (system "anu_link-parser.sh <jnk >jnk1 2>err")
+ (system "anu_link4.sh <jnk >jnk1 2>err")
  (system "cat jnk1")
  )
 
@@ -54,15 +34,9 @@
  (printout t  "---------------------" crlf)
  (system "cat relations.dat")
  (printout t crlf "=====================" crlf)
- (if (neq  ?ptype  Open-Logos-Parser) then
-      (printout t crlf "pada Information:" crlf)
-      (system "cat pada_debug.dat")
-      (printout t crlf "=====================" crlf)
-   else
-      (printout t crlf "pada Information:" crlf)
-      (system "cat ol_pada_debug.dat")
-      (printout t crlf "=====================" crlf)
- )
+ (printout t crlf "pada Information:" crlf)
+ (system "cat pada_id_info.dat")
+ (printout t crlf "=====================" crlf)
  )
 
  (defrule sentence_display
@@ -136,22 +110,15 @@
   (defrule debug_pada
   (declare (salience 90))
  ?f<-(debug_pada $?ids)
-  (or (Rule_name-pada_head_id-pada_type-ids   ?r_name  ?p_head ?g_type $?ids)(Rule-pada_head-pada_type-ids  ?r_name  ?p_head ?g_type  $?ids))
+  (Rule_name-group_head_id-pada_type-gids   ?r_name  ?g_head ?g_type $?ids)
   (Parser_used ?ptype)
  =>
   (retract ?f)
   (printout t " pada is formed using the rule \"" ?r_name "\""  crlf " And the rule is defined as..... " crlf crlf)
   (ppdefrule ?r_name)
   (printout t crlf "NOTE:: " crlf crlf )
-  (if (eq ?ptype Link-Parser) then
-	(printout t  "1. If you want to write any rule for the pada formation please go to the directory \"anu_testing/Anu_clp_files\" and " crlf "   write the rules in \"pada_ids.clp\" file " crlf "2. After saving the rule complie it using the command  :     \" myclips -f create_binary_files.clp\"     "crlf "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
-  
-  else  (if (eq  ?ptype Stanford-Parser) then
-	(printout t  "1. If you want to write any rule for the pada formation please go to the directory \"anu_testing/Anu_clp_files\" and " crlf "   write the rules in \"sd_pada.clp\" file " crlf "2. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf "3. Use following command to exit :: (exit)" crlf crlf))
-  
-  else  (if (eq  ?ptype Open-Logos-Parser) then
-        (printout t  "1. If you want to write any rule for the pada formation please go to the directory \"anu_testing/Anu_clp_files\" and " crlf "   write the rules in \"modify_ol_pada.clp\" file " crlf "2. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf "3. Use following command to exit :: (exit)" crlf crlf))
-  ))
+  (printout t  "1. If you want to write any rule for the pada formation please go to the directory \"anu_testing/Anu_clp_files\" and " crlf "   write the rules in \"pada.clp\" file " crlf "2. After saving the rule complie it using the command  :     \" myclips -f create_binary_files.clp\"     "crlf "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
+  )
   
 
   (defrule debug_pada1

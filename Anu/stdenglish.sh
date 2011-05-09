@@ -29,12 +29,8 @@ else
 
 # abbr.lex expands the standard abbreviations with single apostophe such as I'm
 #$PATH1/abbr.out < $1.tmp > $1.tmp1
-$PATH1/abbr.out < $2/$1 > $1.tmp1
 
-# abbr1.lex handles standard abbreviations such as 'i.e.', 'e.g.', etc.
-# Better solution for this is necessary
-$PATH1/abbr1.out < $1.tmp1 > $1.tmp2
-
+####################################################################################
 # This program checks the input format for unprintable characters, and
 # special characters such as '[^#&~`*]' which have special meanings either 
 # in bash or in regular expressions.
@@ -45,12 +41,22 @@ $PATH1/abbr1.out < $1.tmp1 > $1.tmp2
 #Further such non-ascii characters can be included in this sed list.
 #1. NBSP    \302 240\
 #2. ZWNBSP  \357 273\
-#3. RSQM    \342 200\	
+#3. RSQM    \342 200\   
 #4. LDQM    \342 200\
 #5. RDQM    \342 200\
 #6. LSQM    \342 200\
-sed -e 's/ / /g' <  $1.tmp2 | sed -e "s/’/'/g" | sed -e 's/“/"/g' | sed -e 's/”/"/g' | sed -e "s/‘/'/g"| sed -e 's/﻿/ /g'  > $1.tmp2-tmp 
-$PATH1/chk_input_format.pl < $1.tmp2-tmp  > $1.tmp3
+
+sed -e 's/ / /g' <  $2/$1 | sed -e "s/’/'/g" | sed -e 's/“/"/g' | sed -e 's/”/"/g' | sed -e "s/‘/'/g"| sed -e 's/﻿/ /g'  > $1.tmp 
+
+####################################################################################
+
+$PATH1/abbr.out < $1.tmp > $1.tmp1
+
+# abbr1.lex handles standard abbreviations such as 'i.e.', 'e.g.', etc.
+# Better solution for this is necessary
+$PATH1/abbr1.out < $1.tmp1 > $1.tmp2
+
+$PATH1/chk_input_format.pl < $1.tmp2  > $1.tmp3
 
 #The program sentence_boundary.pl takes as an input a text file, and generates as
 #output another text file in which each line contains only one sentence. Blank

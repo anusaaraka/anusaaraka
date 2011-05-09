@@ -55,9 +55,13 @@
   cd $HOME_anu_test/Anu_src
   ./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
+  echo "Calling Berkeley parser" 
+  cd $HOME/BERKELEY_PARSER/
+  java -jar berkeleyParser.jar -gr eng_sm6.gr -tokenize -inputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt -outputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley
+
   echo "Calling Stanford parser"
   cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/
-  sh run_stanford-parser.sh $1 $MYPATH > /dev/null
+  ./run_berkeley-parser.sh $1 $MYPATH > /dev/null
   
   cd $MYPATH/tmp/$1_tmp
   sed 's/&/\&amp;/g' one_sentence_per_line.txt|sed -e s/\'/\\\'/g |sed 's/\"/\&quot;/g' |sed  "s/^/(Eng_sen \"/" |sed -n '1h;2,$H;${g;s/\n/\")\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/$/\")\n;~~~~~~~~~~\n/g;p}' > one_sentence_per_line_tmp.txt

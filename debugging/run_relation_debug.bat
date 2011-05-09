@@ -7,7 +7,8 @@
 ?f0<-(Parser_used Link-Parser)
 =>
  (batch* "relation_debug.clp")
- (load-facts "link_relation_info.dat")
+; (load-facts "link_relation_info.dat")
+ (load-facts "link_relation_info_tmp1.dat")
  (load-facts "word.dat")
  (load-facts "English_sentence.dat")
  (load-facts "lwg_info.dat")

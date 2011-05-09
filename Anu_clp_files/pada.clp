@@ -15,7 +15,7 @@
  (has_been_included_in_paxa ?id)
  ?f<-(to_be_included_in_paxa ?id)
  =>
-        (printout ?*debug*  " retract_cntrl_fact " crlf)
+        (printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids      retract_cntrl_fact )" crlf)
         (retract ?f)
  )
  ;------------------------------------------------------------------------------------------------------------- 
@@ -26,7 +26,7 @@
  =>
         (bind $?ids (sort > (create$ ?id ?conj $?id1)))
         (assert (conjunction-comp ?conj $?ids))
-        (printout ?*debug*  " conj_list " ?conj" " (implode$  $?ids) crlf)
+        (printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    conj_list   " ?conj"  PP  " (implode$  $?ids) ")" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  ;Added by Roja (25-02-11)
@@ -44,7 +44,7 @@
  	(if (eq ?i ?conj) then
        		(retract ?f)
        		(assert (pada_info (group_head_id ?conj) (group_cat PP) (group_ids $?IDS)(pada_head ?conj)))
-       		(printout ?*debug*  "conj_comp_rule  "?conj"   " (implode$  $?IDS)  crlf)
+       		(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids   conj_comp_rule   "?conj"  PP  " (implode$  $?IDS) ")"  crlf)
     	)
     	(if (or (neq (member$ ?i $?id1) FALSE)(eq ?i ?id)) then
         	(retract ?f)
@@ -65,7 +65,7 @@
         	(bind ?j (nth$ ?i $?ids))
                 (assert (has_been_included_in_paxa ?j))
  	)
- 	(printout ?*debug*  "kriyA_pada  "?kri" " (implode$  $?ids) " " ?kri crlf)
+ 	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    kriyA_pada  "?kri"   VP   " (implode$  $?ids) " " ?kri ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------- 
  ;;Generating to-infinitive pada
@@ -78,7 +78,7 @@
  	(retract ?f ?f1)
 	(print_in_ctrl_fact_files  ?inf)
  	(assert (pada_info (group_head_id ?inf) (group_cat infinitive) (group_ids  ?to ?inf)(pada_head ?inf)))
- 	(printout ?*debug*  "to-infinitive_pada  " ?inf" " ?to "  " ?inf crlf) 
+ 	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids   to-infinitive_pada  " ?inf"  infinitive  " ?to "  " ?inf ")"  crlf) 
  )
  ;-------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (16-03-11)
@@ -93,7 +93,7 @@
         (retract ?f1)
         (print_in_ctrl_fact_files  ?viSeRaNa)
         (assert (pada_info (group_head_id ?viSeRaNa) (group_cat PP) (group_ids  ?viSeRaNa)(pada_head ?viSeRaNa)))
-        (printout ?*debug* "RaRTI_viSeRaNa_rule1" ?viSeRaNa"  " ?viSeRaNa crlf)
+        (printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    RaRTI_viSeRaNa_rule1" ?viSeRaNa"   PP   " ?viSeRaNa  ")" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju (31-03-11)
@@ -111,7 +111,7 @@
         (retract ?f1 ?f ?f2)
         (bind $?ids (sort > (create$   $?ids ?id)))
         (modify ?f2 (group_ids $?ids))
-        (printout ?*debug* "saMjFA_samAnAXikaraNa_rule " ?PH" " (implode$  $?ids) crlf)
+        (printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids   saMjFA_samAnAXikaraNa_rule " ?PH"  "  ?gtype  "  " (implode$  $?ids)   ")" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  ;Ex: Our team was easily beaten in the competition. 
@@ -125,9 +125,9 @@
         (print_in_ctrl_fact_files  ?viSeRya)
         (print_in_ctrl_fact_files  ?viSeRaNa)
         (assert (pada_info (group_head_id ?viSeRya) (group_cat PP) (group_ids  ?viSeRya)(pada_head ?viSeRya)))
-        (printout ?*debug* "RaRTI_viSeRaNa_rule " ?viSeRya"  " ?viSeRya crlf)
+        (printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    RaRTI_viSeRaNa_rule " ?viSeRya"   PP   " ?viSeRya   ")"  crlf)
         (assert (pada_info (group_head_id ?viSeRaNa) (group_cat PP) (group_ids  ?viSeRaNa)(pada_head ?viSeRaNa)))
-        (printout ?*debug* "RaRTI_viSeRaNa_rule  " ?viSeRaNa"  " ?viSeRaNa crlf)
+        (printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    RaRTI_viSeRaNa_rule  " ?viSeRaNa"    PP  " ?viSeRaNa  ")"  crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  ;The snake the mongoose attacked hissed loudly.
@@ -141,7 +141,7 @@
 	(print_in_ctrl_fact_files   10000)
         (assert (has_been_included_in_paxa 10000))
         (assert (pada_info (group_head_id 10000)(group_cat PP)(group_ids 10000)(pada_head 10000)))
-	(printout ?*debug*  "asserted_who 10000 10000 " crlf)
+	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    asserted_who   10000  PP  10000 )" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  ;She was asked about the pay increase but made no comment.
@@ -154,7 +154,7 @@
 	(print_in_ctrl_fact_files   10001)
         (assert (has_been_included_in_paxa 10001))
         (assert (pada_info (group_head_id 10001)(group_cat PP)(group_ids 10001)(pada_head 10001)))
- 	(printout ?*debug* "subject_insertion 10001 10001 " crlf)
+ 	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids   subject_insertion 10001 10001 )" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  ;I hope he comes to the party tomorrow.
@@ -166,7 +166,7 @@
 	(print_in_ctrl_fact_files   10000)
         (assert (has_been_included_in_paxa 10000))
         (assert (pada_info (group_head_id 10000)(group_cat PP)(group_ids 10000)(pada_head 10000)))
-	(printout ?*debug* "subject_conjunction_insert 10000 10000 "crlf)
+	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids   subject_conjunction_insert 10000 10000 )" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  (defrule PP_pada
@@ -179,7 +179,7 @@
  	(retract ?f )
 	(print_in_ctrl_fact_files  ?PP)
  	(assert (pada_info (group_head_id ?PP) (group_cat PP) (group_ids  ?PP)(pada_head ?PP)))
- 	(printout ?*debug* "PP_pada  " ?PP " "?PP crlf)
+ 	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    PP_pada  " ?PP  "   VP  "?PP ")"  crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  (defrule PP_pada1
@@ -194,7 +194,7 @@
  	(retract ?f )
 	(print_in_ctrl_fact_files  ?PP)
  	(assert (pada_info (group_head_id ?PP) (group_cat PP) (group_ids  ?PP)(pada_head ?PP)))
- 	(printout ?*debug* "PP_pada1  " ?PP" " ?PP crlf)
+ 	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    PP_pada1  " ?PP"  PP   " ?PP  ")" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  ;John Stuart Mill is an important author. 
@@ -209,7 +209,7 @@
  	(retract ?f1 ?f ?f2)
  	(bind $?grp_ids (sort > (create$   $?grp_ids ?id)))
  	(modify ?f2 (group_ids $?grp_ids))
- 	(printout ?*debug* "PP_pada2 " ?PH" " (implode$  $?grp_ids) crlf)
+ 	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    PP_pada2 " ?PH"   "  ?gtype"  " (implode$  $?grp_ids)  ")" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  ;Only for Open-Logos-Parser
@@ -226,7 +226,7 @@
 	(retract ?f)
         (bind ?v1 (string-to-field (str-cat ?v ".1")))
         (modify ?f1 (group_head_id ?v) (group_cat PP) (group_ids  $?ids ?head ?v)(pada_head ?v1))
-        (printout ?*debug* "ol_grouped_ids_pada   "?v "   " ?head" " ?v crlf)
+        (printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    ol_grouped_ids_pada   "?v "  PP   " ?head" " ?v  ")" crlf)
         (bind ?len (length $?ids))
         (loop-for-count (?i 1 ?len) do
                 (bind ?j (nth$ ?i $?ids))
@@ -248,14 +248,14 @@
 		(bind ?PH (string-to-field (str-cat ?viSeRya ".1")))
 	        (bind $?grp_ids (sort > (create$  $?grp_ids ?viSeRaNa)))
 		(modify ?f1 (group_ids $?grp_ids)(pada_head ?PH))
-        	(printout ?*debug* "viSeRaNa_pada " ?PH" " (implode$  $?grp_ids) crlf)
+        	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    viSeRaNa_pada " ?PH"   "?gtype "  " (implode$  $?grp_ids)  ")"  crlf)
 	else
 	        (bind ?pos (str-index "." ?PH))	;?PH=5.1 , ?pos=2
         	(bind ?sub-str (string-to-field (sub-string (+ ?pos 1) (length ?PH) ?PH))) ; ?sub-str=1
         	(bind ?PH (string-to-field (str-cat (sub-string 1 ?pos ?PH) (+ 1 ?sub-str)))); ?PH=5.2
 		(bind $?grp_ids (sort > (create$  $?grp_ids ?viSeRaNa)))
                 (modify ?f1 (group_ids $?grp_ids)(pada_head ?PH))
-                (printout ?*debug* "viSeRaNa_pada " ?PH" " (implode$  $?grp_ids) crlf)
+                (printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids   viSeRaNa_pada " ?PH"   "?gtype"  " (implode$  $?grp_ids) ")" crlf)
 	)
  )
  ;-------------------------------------------------------------------------------------------------------------
@@ -272,7 +272,7 @@
   =>
         (retract ?f)
         (modify ?f1 (preposition ?prep_id))
-        (printout ?*debug* "test_for_prep        "?prep_saM " "?prep_id crlf)
+        (printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    test_for_prep    "?prep_saM " "?prep_id  ")" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (04-03-11)
@@ -305,7 +305,7 @@
         (retract ?f)
         (print_in_ctrl_fact_files  ?PP)
         (assert (pada_info (group_head_id ?PP) (group_cat PP) (group_ids  ?PP)(pada_head ?PP)))
-        (printout ?*debug* "default_pada   "?PP " "?PP crlf)
+        (printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    default_pada   "?PP "   PP  "?PP  ")"  crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------- 
 

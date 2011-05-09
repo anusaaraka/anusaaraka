@@ -27,8 +27,10 @@
  (parserid-word ?id and|or)
  (test (and (> (string_to_integer ?id) (string_to_integer ?x)) (< (string_to_integer ?id) (string_to_integer ?z)) (neq ?rel conj_and) (neq ?rel conj_or) (neq ?rel2 conj_or) (neq ?rel2 conj_and) (eq ?rel ?rel1) (eq ?rel ?rel2) ))
  =>
- (retract ?f )
+; (retract ?f )
  (assert (rel_name-sids ?rel  ?id  ?y))
+ (assert (rel_name-sids ?rel1  ?x  ?y))
+ (assert (rel_name-sids ?rel2  ?z  ?y))
  (printout       ?*dbug* "(rel_name-sids  "?rel"  "?id"  "?y")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids    replace_left_head  "?rel"  "?id"  "?y")"crlf)
  (printout       ?*dbug* "(rule-deleted_Relation-ids    replace_left_head  "?rel"  "?x"  "?y")"crlf)
@@ -44,9 +46,13 @@
  (parserid-word ?id and|or)
  (test (and (> (string_to_integer ?id) (string_to_integer ?y)) (< (string_to_integer ?id) (string_to_integer ?z)) (neq ?rel conj_and) (neq ?rel conj_or) (eq ?rel ?rel1) (eq ?rel ?rel2) ))
  =>
- (retract ?f )
+;(retract ?f )
  (assert (rel_name-sids ?rel  ?x  ?id))
+ (assert (rel_name-sids ?rel1  ?x  ?y))
+ (assert (rel_name-sids ?rel2  ?x  ?z))
  (printout       ?*dbug* "(rel_name-sids  "?rel"  "?x"  "?id")"crlf)
+ (printout       ?*dbug* "(rel_name-sids  "?rel1" "?x"  "?y")"crlf)
+ (printout       ?*dbug* "(rel_name-sids  "?rel2" "?x"  "?z")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids    replace_right_head  "?rel"  "?x"  "?id")"crlf)
  (printout       ?*dbug* "(rule-deleted_Relation-ids    replace_right_head  "?rel"  "?x"  "?id")"crlf)
  )
@@ -94,7 +100,7 @@
 
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -    kriyA-aBihiwa       "?kriyA"        "?sub")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj_expl   kriyA-aBihiwa   "?kriyA"        "?sub")"crlf)
- (assert (sub_for_kriyA ?kriyA))
+ (assert (sub_for_kriyA ?kriyA  ?sub))
 )
 ;Ex. There was a red mark on the door . 
 ;------------------------------------------------------------------------------------------------------------------------
@@ -122,12 +128,12 @@
  (declare (salience 190))
  (root-verbchunk-tam-parser_chunkids $?ids ?kriyA)
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
- (not (sub_for_kriyA ?kriyA))
+ (not (sub_for_kriyA ?kriyA ?sub)) ;Commented on 4-5-11 by Sukhada
  (not (found_kriyA-sub_rel ?kriyA)); Added new by Sukhada
  =>
  (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?kriyA"        "?sub")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kriyA_sub_rule   kriyA-subject   "?kriyA"        "?sub")"crlf)
- (assert (sub_for_kriyA ?kriyA))
+ (assert (sub_for_kriyA ?kriyA ?sub))
  )
  ;Added by Shirisha Manju
  ; The boy has a computer . The train left on time .

@@ -2239,7 +2239,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         verified (466)  ol_verified (565)  sd_verified(407)
   22. Updated Log
 
-  04-05-11
+  09-05-11
   ========
    1. To handle conjunctions (and, or) some changes are made in
            split-basic-tree_rels.py is replaced with split-basic-propagation-tree_rels.py.
@@ -2253,11 +2253,35 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
        Using stnford_propagation_relations.out to convert sd-propagation_relations_tmp.txt to sd-propagation_relations.txt
    5. run_stanford.sh: Added CCPropagatedDependencies in outputFormatOptions to get propagation SDs.
    6. In sd_relation_rules.clp
-            Removed: dobj_conj, nsubj_conj1, nsubj_conj2, nsubj_conj_sam, nsubj_conj_and, nsubj_expl_cc_conj,
-                          poss_conj, k_conj and k_conj1 rules.
-            Added  : replace_left_head and replace_right_head rules
-   7. In Anusaaraka_stanford.sh:
+            Removed : dobj_conj, nsubj_conj1, nsubj_conj2, nsubj_conj_sam, nsubj_conj_and, nsubj_expl_cc_conj,
+                      poss_conj, k_conj and k_conj1 rules.
+            Added   : replace_left_head and replace_right_head rules
+            Modified: nsubj_expl and kriyA_sub_rule
+   7. In Anusaaraka_stanford.sh and Anusaaraka.sh:
             Using split_file.c to convert sd-propagation_relations.txt file into sd-propagation_relations_tmp1.dat
    8. In run_modules_std.bat, Loding sd-propagation_relations_tmp.dat in sd_relation_rules.clp module.
-   9. Updated Log.
-
+   9. Added BERKELEY parser in anu_testing (anu_testing/berkeley_parser/").
+  10. Added:In stanford-parser-2010-11-30 (for handling berkeley-parser output)
+	1.split-berkeley-basic-tree-prop_rels.py
+	2.run_berkeley-parser.sh
+	3.run_berkeley.sh
+	4.berkeley_word_cat.lex
+        5.Added compilation part for berkeley_word_cat.lex file in compile.sh 
+  11. Added Anusaaraka_berkeley.sh in anu_testing/bin.
+  12. Removed stnford_propagation_relations.lex and stnford_basic_relations.lex files [handled by stnford_relations.lex file]
+  13. Modified compile.sh file to compile berkeley_word_cat.lex in stanford-parser
+  14. Modified and Updated following files in debugging folder:
+        wsd_tam_debug.clp       sentence_debug.sh       pada_debug.sh           agreement_debug.sh      pada_debug.clp
+        run_pada_debug.bat      GNP_debug.clp           wsd_debug.sh            wsd_tam_debug.sh        wsd_debug.clp
+        sentence_debug.clp      relation_debug.sh       OL_DEBUGGING_NOTES      relation_debug.clp      GNP_debug.sh
+        run_relation_debug.bat
+  15. Updated sentence_debug.sh in bin folder.
+  16. Modified ol_stdenglish.sh and stdenglish.sh to handle special characters.
+  17. Added debug statements in pada.clp
+  18. In user_wsd_info.clp,
+        Modified the pattern 'relation-anu_ids' as 'prep_id-relation-anu_ids' in following rules:
+        relations, relations1, relations2
+  19. Updated changes_in_databases.
+  20. Modified and updated sd_ver_output, ol_ver_output
+  21. Updated ol_verified(566), sd_verified(406).
+  22. Updated Log.

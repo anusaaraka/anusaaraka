@@ -49,14 +49,14 @@
  ;----------------------------------------------------------------------------------------------------------------
  (defrule relations
  (declare (salience 900))
- (relation-anu_ids  ?rel)
+ (prep_id-relation-anu_ids ?p  ?rel)
  =>
    (printout ?*rel-word-file*  "(" ?rel ")" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
  (defrule relations1
  (declare (salience 900))
- (relation-anu_ids  ?rel ?id)
+ (prep_id-relation-anu_ids  ?p  ?rel ?id)
  (id-word ?id ?word)
  =>
    (printout ?*rel-word-file*  "(" ?rel " 	"?id","?word ")" crlf)
@@ -64,7 +64,7 @@
  ;----------------------------------------------------------------------------------------------------------------
  (defrule relations2
  (declare (salience 900))
- (relation-anu_ids  ?rel ?id ?id1)
+ (prep_id-relation-anu_ids  ?p  ?rel ?id ?id1)
  (id-word ?id ?word)
  (id-word ?id1 ?word1)
  =>

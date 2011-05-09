@@ -34,7 +34,7 @@ No change
 
 relation_debug.sh
 -----------------
-Added Line 2  $HOME_anu_test/Anu_clp_files/parser_id_mapping.clp
+Added Line 2  $HOME_anu_test/Anu_clp_files/ol_parser_id_mapping.clp
       Line 4  relations_id_map_debug.dat 
 
 
@@ -47,7 +47,10 @@ run_relation_debug.bat
 ----------------------
 Added OL rule
 
-WSD no change
+WSD 
+-----
+Added sent_type.dat in wsd_debug.clp 
+Added load-facts "sent_type.dat" in wsd_debug.sh
 
 Agreement -------doubt  (no agreement rule for stanford parser in agreement_debug.clp )
 

@@ -3911,7 +3911,7 @@ log	wa
 log-jam	kArya_meM_pragawi_na_ho_pA
 log_cabin	JoMpadA
 logging	katAI
-long	lambA
+long	laMbA
 long-past	suxUra_awIwa
 long-settled	bahuwa_samaya_se_waya
 long-stay	lambe_samaya_waka_raha

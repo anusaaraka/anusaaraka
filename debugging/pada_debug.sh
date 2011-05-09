@@ -1,7 +1,7 @@
- cp $HOME_anu_test/Anu_clp_files/modify_ol_pada.clp  $HOME_anu_test/Anu_clp_files/pada_ids.clp $HOME_anu_test/Anu_clp_files/sd_pada.clp $HOME_anu_test/debugging/pada_debug.clp $HOME_anu_test/debugging/run_pada_debug.bat  $HOME_anu_test/debugging/sentence_debug/.
+ cp  $HOME_anu_test/Anu_clp_files/pada.clp  $HOME_anu_test/debugging/pada_debug.clp $HOME_anu_test/debugging/run_pada_debug.bat  $HOME_anu_test/debugging/sentence_debug/.
 
  cd $HOME_anu_tmp/tmp/$1_tmp/$2
- ls  ol_pada_debug.dat pada_id_info.dat word.dat lwg_info.dat relations.dat English_sentence.dat parser_type.dat global_path.clp  ol_vachan_to_be_decided.dat  ol_agmt_control_fact.dat  ol_pada_control_fact.dat  ol_pada.dat  pada_debug.dat> dat
+ ls  pada_info_debug.dat pada_id_info.dat word.dat lwg_info.dat relations.dat English_sentence.dat parser_type.dat global_path.clp  agmt_control_fact.dat  pada_control_fact.dat > dat
 
 
 var=`cat dat`
