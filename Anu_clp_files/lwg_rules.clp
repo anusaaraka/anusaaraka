@@ -5266,7 +5266,7 @@
 (defrule rule312_start_id
 ?f0<-(id_w_adv-word ?id0 ?word)
 (id-original_word  1 ?word)
-(parser_id-root-category-suffix-number  L1   ?rt verb 0 ?num)
+(parser_id-root-category-suffix-number  P1   ?rt verb 0 ?num)
 (lwgid-wordid  1  1)
 =>
  (printout  old_lwg_file  "(lwg_root-verbchunk-tam-chunkids   "  ?rt   "     "?word" 0   1  )"  crlf )

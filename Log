@@ -2285,3 +2285,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   20. Modified and updated sd_ver_output, ol_ver_output
   21. Updated ol_verified(566), sd_verified(406).
   22. Updated Log.
+
+  11-05-11
+  ========
+  1. In lwg_rules.clp, Modified "rule312_start_id" from 'L1' to 'P1'.
+  2. Updated Log.
