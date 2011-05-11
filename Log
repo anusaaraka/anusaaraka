@@ -2289,4 +2289,18 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   11-05-11
   ========
   1. In lwg_rules.clp, Modified "rule312_start_id" from 'L1' to 'P1'.
-  2. Updated Log.
+  2. Modified print.c (removed the code related to category and deleted linkid_cat.txt)
+  3. Modified link-parser.c (deleted linkid_cat.txt)
+  4. Modified Anusaaraka.sh and Anusaaraka_link.sh (removed splitting of linkid_cat.txt)
+  5. Added removing_subscripts.clp (to remove subscript after the word Eg:health.n-u -> health)
+  6. run_modules_link.bat
+        added removing_subscripts.clp module
+        loaded linkid_word.dat instead of linkid_cat.dat in load_lwg_rules.clp module
+        Removed parser_pos_cat.dat from link_relation_rules module
+  7. Modified the fact "linkid-node_cat" as "parserid-cat_coarse" in link_category.clp ,cat_rule.clp and
+     link_relation_rules.clp
+  8. Modified the fact "linkid-word" as "parserid-word" in link_number.clp and load_lwg_rules.clp
+  9. Modified the fact " sid-cat_coarse" as "parser_id-cat_coarse" in sd_category.clp
+  10. Removed sd_cat_rule.clp
+  11. Modified run_modules_std.bat to use cat_rule.clp instead of sd_cat_rule.clp
+  12. Updated Log.

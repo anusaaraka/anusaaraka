@@ -9,6 +9,8 @@
  (string-to-field (sub-string 2 10000 ?parser_id)))
 
  (deffacts dummy_facts 
+ (id-cat)
+ (parser_id-cat_coarse)
  (missing-level-id) 
  (id-original_word)
  (verb_type-verb-causative_verb-tam)
@@ -867,7 +869,7 @@ else
 (link_name-link_expansion    ?D    D $?vars)
 (link_name-link_lnode-link_rnode  ?D  ?x ?y)
 (link_name-link_lnode-link_rnode  L|Lf|La  ?x ?z);ex. 4 'Lf': Can we open a second browser window?  
-(linkid-node_cat ?z adjective|-)
+(parser_id-cat_coarse ?z adjective|-)
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids -	viSeRya-viSeRaNa	"?y"	"?z")"crlf)	
 (printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	L_viSeRya-viSeRaNa	viSeRya-viSeRaNa	"?y"	"?z")"crlf)	
@@ -1153,7 +1155,7 @@ else
 (declare (salience 535))
 (link_name-link_expansion    ?lname    D $?vars)
 ?f0<-(link_name-link_lnode-link_rnode  ?lname ?x ?y)
-(parserid-word ?x  his|her|my|our|your|their|its )
+(parserid-word ?x  his|her|my|our|your|their|its|My )
 =>
 (retract ?f0)
 (printout	?*fp*	"(prep_id-relation-parser_ids -	viSeRya-RaRTI_viSeRaNa	"?y"	"?x")"crlf)	
@@ -1164,7 +1166,7 @@ else
 (defrule RaRTI_saMbanXI_1
 (declare (salience 545))
 ?f0<-(link_name-link_lnode-link_rnode  DD ?x ?y)
-(parserid-word ?x  his|her|my|our|your|their|its  )
+(parserid-word ?x  his|her|my|our|your|their|its|My  )
 (link_name-link_expansion    ?D   D $?var)
 (link_name-link_lnode-link_rnode  ?D ?y ?z)
 =>
@@ -1332,7 +1334,7 @@ else
 (link_name-link_expansion    ?J   J $?vars)
 (or(link_name-link_lnode-link_rnode ?J ?z ?a) (link_name-link_lnode-link_rnode IN ?z ?a)(link_name-link_lnode-link_rnode ON ?z ?a))
 (parserid-word ?z ?viBakwi )
-(not (linkid-node_cat ?x  adjective));It was cold there even in summer .
+(not (parser_id-cat_coarse ?x  adjective));It was cold there even in summer .
 =>
 (retract ?f0)
 (printout	?*fp*	"(prep_id-relation-parser_ids "?z"	kriyA-"?viBakwi"_saMbanXI	"?x"	"?a")"crlf)	
@@ -2882,7 +2884,7 @@ else
 (link_name-link_lnode-link_rnode MVp|MVb|Pp ?a ?b)
 (parserid-word ?b again|later|here|there|somewhere|anywhere|everywhere|now|outside|longer|alone|next|upstairs|downstairs|upwards|downwards|above|down )
 (not (link_name-link_lnode-link_rnode J|Jp|Js|Ju|IN|ON ?b ?x));ex. I went outside of the room.
-(not (linkid-node_cat ?a  adjective));It was cold there even in summer .
+(not (parser_id-cat_coarse ?a  adjective));It was cold there even in summer .
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids -	kriyA-aXikaraNavAcI_avyaya	"?a"	"?b")"crlf)	
 (printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	rule182	kriyA-aXikaraNavAcI_avyaya	"?a"	"?b")"crlf)	
@@ -3006,7 +3008,7 @@ else
 (defrule rule188
 (link_name-link_lnode-link_rnode MVs ?x ?y)
 (link_name-link_lnode-link_rnode Mgp ?y ?z)
-(or(linkid-node_cat ?z  verb)(parserid-word ?z verbal_noun))	
+(or(parser_id-cat_coarse ?z  verb)(parser_id-cat_coarse ?z verbal_noun))	
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids -	kriyA-samAnakAlika_kriyA	"?x"	"?z")"crlf)	
 (printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	rule188	kriyA-samAnakAlika_kriyA	"?x"	"?z")"crlf)	
@@ -3072,7 +3074,7 @@ else
 (link_name-link_lnode-link_rnode MVp ?x ?y)
 (link_name-link_lnode-link_rnode Mgp ?y ?z)
 (parserid-word ?y ?viBakwi )
-(or(linkid-node_cat ?z verb)(linkid-node_cat ?z  verbal_noun))	
+(or(parser_id-cat_coarse ?z verb)(parser_id-cat_coarse ?z  verbal_noun))	
 (not  (kriyA-'viBakwi'_saMbanXI_rel_has_been_deceded_by_'kriyA-'viBakwi'_saMbanXI_and'_rule ?y))
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids "?y"	kriyA-"?viBakwi"_saMbanXI	"?x"	"?z")"	crlf)	
@@ -3407,7 +3409,7 @@ else
 (declare (salience 100))
 (link_name-link_lnode-link_rnode TOi ?Tlnode ?Trnode)
 (link_name-link_lnode-link_rnode I|If ?Trnode ?Irnode)
-(linkid-node_cat ?Tlnode ~verb) ;How many years did it take to do it?
+(parser_id-cat_coarse ?Tlnode ~verb) ;How many years did it take to do it?
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids -	saMjFA-to_kqxanwa	"?Tlnode	"	"?Irnode")"crlf)	
 (printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	vi_Na-to_inf	saMjFA-to_kqxanwa	"?Tlnode"	"?Irnode")"crlf)	

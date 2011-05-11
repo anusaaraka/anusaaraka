@@ -3,14 +3,14 @@
  
 
  (deffacts link_num_info
- (linkid-word)
+ (parserid-word)
  (link_name-link_expansion)
  (link_name-link_lnode-link_rnode)
  (No complete linkages found)
  )
 
  ;------------------------------------------------------------------------------------------------
- ; Generates control fact for deciding category
+ ; Generates control fact for deciding number
  (defrule generate_control_fact
  (declare (salience 300))
  (parserid-word ?pid  ?)
@@ -36,8 +36,8 @@
  (link_name-link_expansion   ?sub   S p $?vars)
  (link_name-link_lnode-link_rnode ?sub ?lnode ?rnode)
  (not (parser_id-number-src ?lnode ? ?))
- (not (parser_id-cat_coarse ?lnode number));Ex. And 21 could stand for the 21 cm radio frequency of hydrogen in space .
  ?f0<-(number_to_be_decided ?lnode)
+ (parserid-word ?lnode ?word&:(not (numberp ?word)));Ex.And 21 could stand for the 21 cm radio frequency of hydrogen in space
  =>	
 	(retract ?f0)
         (assert (parser_id-number-src ?lnode  p  Link_parser))
