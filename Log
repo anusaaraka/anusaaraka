@@ -2290,4 +2290,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   ========
   1. In lwg_rules.clp, Modified "rule312_start_id" from 'L1' to 'P1'.
   2. Modified Anusaaraka_berkeley.sh to change directory name of berkeley-parser and also to increase heap size.
-  3. Updated Log.
+  3. Added comment in abbr1.lex file.
+  4. Added new file abbr.sh in bin folder to modify abbrevations in English_sentence.dat and hindi_sentence.dat.
+  5. abbr.sh file is called in following files:
+        run_sentence_link.sh	run_sentence_ol.sh	run_sentence_stanford.sh
+  6. Updated Log.

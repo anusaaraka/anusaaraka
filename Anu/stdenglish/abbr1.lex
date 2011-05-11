@@ -20,6 +20,7 @@
 
 ##############################################################################
 
+############### NOTE:  Any changes done in this file should be updated in bin/abbr.sh file also.
 
 */
 SPC [^a-zA-Z0-9]
