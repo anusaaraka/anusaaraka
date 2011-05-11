@@ -2260,7 +2260,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
    7. In Anusaaraka_stanford.sh and Anusaaraka.sh:
             Using split_file.c to convert sd-propagation_relations.txt file into sd-propagation_relations_tmp1.dat
    8. In run_modules_std.bat, Loding sd-propagation_relations_tmp.dat in sd_relation_rules.clp module.
-   9. Added BERKELEY parser in anu_testing (anu_testing/berkeley_parser/").
+   9. Added BERKELEY parser in anu_testing (anu_testing/berkeley-parser/").
   10. Added:In stanford-parser-2010-11-30 (for handling berkeley-parser output)
 	1.split-berkeley-basic-tree-prop_rels.py
 	2.run_berkeley-parser.sh
@@ -2289,4 +2289,5 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   11-05-11
   ========
   1. In lwg_rules.clp, Modified "rule312_start_id" from 'L1' to 'P1'.
-  2. Updated Log.
+  2. Modified Anusaaraka_berkeley.sh to change directory name of berkeley-parser and also to increase heap size.
+  3. Updated Log.

@@ -56,8 +56,8 @@
   ./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
   echo "Calling Berkeley parser" 
-  cd $HOME/BERKELEY_PARSER/
-  java -jar berkeleyParser.jar -gr eng_sm6.gr -tokenize -inputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt -outputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley
+  cd $HOME_anu_test/berkeley-parser/
+  java -mx500m  -jar berkeleyParser.jar -gr eng_sm6.gr -tokenize -inputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt -outputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley
 
   echo "Calling Stanford parser"
   cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/
