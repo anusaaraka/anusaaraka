@@ -1,5 +1,5 @@
  (deffacts dummy_facts
- (linkid-word-node_cat)
+ (parserid-word)
  )
  
  (bind ?*path1* (str-cat ?*path1* "/Anu_clp_files"))
