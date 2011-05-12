@@ -22,12 +22,11 @@
  (declare (salience 9999))
  (propogation_rel_name-sids ?rel  ?x ?y)
  (propogation_rel_name-sids ?rel2  ?z ?y)
- ?f<- (rel_name-sids ?rel1   ?x ?y)
+ (rel_name-sids ?rel1   ?x ?y)
  (rel_name-sids conj_and|conj_or  ?x ?z)
  (parserid-word ?id and|or)
  (test (and (> (string_to_integer ?id) (string_to_integer ?x)) (< (string_to_integer ?id) (string_to_integer ?z)) (neq ?rel conj_and) (neq ?rel conj_or) (neq ?rel2 conj_or) (neq ?rel2 conj_and) (eq ?rel ?rel1) (eq ?rel ?rel2) ))
  =>
-; (retract ?f )
  (assert (rel_name-sids ?rel  ?id  ?y))
  (assert (rel_name-sids ?rel1  ?x  ?y))
  (assert (rel_name-sids ?rel2  ?z  ?y))
@@ -41,12 +40,11 @@
  (declare (salience 9999))
  (propogation_rel_name-sids ?rel  ?x ?y)
  (propogation_rel_name-sids ?rel2  ?x ?z)
- ?f<- (rel_name-sids ?rel1   ?x ?y)
+ (rel_name-sids ?rel1   ?x ?y)
  (rel_name-sids conj_and|conj_or  ?y ?z)
  (parserid-word ?id and|or)
  (test (and (> (string_to_integer ?id) (string_to_integer ?y)) (< (string_to_integer ?id) (string_to_integer ?z)) (neq ?rel conj_and) (neq ?rel conj_or) (eq ?rel ?rel1) (eq ?rel ?rel2) ))
  =>
-;(retract ?f )
  (assert (rel_name-sids ?rel  ?x  ?id))
  (assert (rel_name-sids ?rel1  ?x  ?y))
  (assert (rel_name-sids ?rel2  ?x  ?z))
@@ -128,8 +126,9 @@
  (declare (salience 190))
  (root-verbchunk-tam-parser_chunkids $?ids ?kriyA)
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
- (not (sub_for_kriyA ?kriyA ?sub)) ;Commented on 4-5-11 by Sukhada
+ (not (sub_for_kriyA ?kriyA ?sub)) ;Modified on 4-5-11 by Sukhada
  (not (found_kriyA-sub_rel ?kriyA)); Added new by Sukhada
+ (not (sub-sub_samAnAXikaraNa_decided ?kriyA))
  =>
  (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?kriyA"        "?sub")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kriyA_sub_rule   kriyA-subject   "?kriyA"        "?sub")"crlf)
@@ -149,7 +148,7 @@
  ;Ex. Are a dog and a cat here? There is no subject relation given in this sentence by SD parser so v r computing it in this way.
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule kriyA_sub_rule1
- (declare (salience 200))
+; (declare (salience 200))
  (root-verbchunk-tam-parser_chunkids $?ids ?kri)
  (rel_name-sids xcomp ?kriyA ?kri)
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
@@ -160,7 +159,7 @@
  (assert (sub_for_kriyA ?kri))
  )
  ;Added by Shirisha Manju
- ;Ex : Broken windows need to be replaced . 
+ ;Ex : Broken windows need to be replaced. 
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule nsubj_conj
  (declare (salience 100))
@@ -230,7 +229,6 @@
 (printout	?*dbug*	"(prep_id-Rule-Rel-ids  "?prep" 	nsubjpass	kriyA-by_saMbanXI	"?kriyA"	"?by_sub")"crlf)	
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     kriyA-subject	"?kriyA"	"?sub")"crlf)	
 (printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	nsubjpass/csubjpass	kriyA-subject	"?kriyA"	"?sub")"crlf)	
-
 )
  ; Ex. Dole was defeated by Clinton. That she lied was suspected by everyone . 
  ; Modified by Shirisha Manju --  kriyA-by_sambanXa   as  kriyA-by_saMbanXI
@@ -316,13 +314,13 @@
  ; Ex. Bill is big.  Bill is big and honest .
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule cop+nsubj_1
+(declare (salience 1000))
 (rel_name-sids nsubj|nsubjpass ?samA  ?sub)
 (rel_name-sids cop  ?samA ?kriyA)
 (not (rel_name-sids conj_and  ?sub ?))
 (not (rel_name-sids conj_or  ?sub ?))
-(not (rel_sub-sub_samAnAXikaraNa_decided ?sub));Bill is big and honest .
-(not (got_subject_samAnAXikaraNa ?samA))
 =>
+(assert (sub-sub_samAnAXikaraNa_decided ?samA))
 (printout      ?*fp*   "(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa   "?sub"  "?samA")"crlf)        
 (printout      ?*dbug* "(prep_id-Rule-Rel-ids  -   cop+nsubj_1      subject-subject_samAnAXikaraNa  "?sub"  "?samA")"crlf)        
 )
@@ -421,6 +419,90 @@
  )
  ; Ex.  He is John's cousin. Sam is my brother.
 ;------------------------------------------------------------------------------------------------------------------------
+ (defrule poss
+ (rel_name-sids poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
+ (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_viSeRaNa))
+ =>
+ (printout   ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
+ (printout   ?*dbug* "(prep_id-Rule-Rel-ids  -   poss    viSeRya-RaRTI_viSeRaNa  "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
+ )
+ ; Ex.  He is John's cousin. Sam is my brother.
+;------------------------------------------------------------------------------------------------------------------------
+ (defrule poss
+ (rel_name-sids poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
+ (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_viSeRaNa))
+ =>
+ (printout   ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
+ (printout   ?*dbug* "(prep_id-Rule-Rel-ids  -   poss    viSeRya-RaRTI_viSeRaNa  "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
+ )
+ ; Ex.  He is John's cousin. Sam is my brother.
+;------------------------------------------------------------------------------------------------------------------------
+ (defrule poss
+ (rel_name-sids poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
+ (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_viSeRaNa))
+ =>
+ (printout   ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
+ (printout   ?*dbug* "(prep_id-Rule-Rel-ids  -   poss    viSeRya-RaRTI_viSeRaNa  "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
+ )
+ ; Ex.  He is John's cousin. Sam is my brother.
+;------------------------------------------------------------------------------------------------------------------------
+ (defrule poss
+ (rel_name-sids poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
+ (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_viSeRaNa))
+ =>
+ (printout   ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
+ (printout   ?*dbug* "(prep_id-Rule-Rel-ids  -   poss    viSeRya-RaRTI_viSeRaNa  "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
+ )
+ ; Ex.  He is John's cousin. Sam is my brother.
+;------------------------------------------------------------------------------------------------------------------------
+ (defrule poss
+ (rel_name-sids poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
+ (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_viSeRaNa))
+ =>
+ (printout   ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
+ (printout   ?*dbug* "(prep_id-Rule-Rel-ids  -   poss    viSeRya-RaRTI_viSeRaNa  "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
+ )
+ ; Ex.  He is John's cousin. Sam is my brother.
+;------------------------------------------------------------------------------------------------------------------------
+ (defrule poss
+ (rel_name-sids poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
+ (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_viSeRaNa))
+ =>
+ (printout   ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
+ (printout   ?*dbug* "(prep_id-Rule-Rel-ids  -   poss    viSeRya-RaRTI_viSeRaNa  "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
+ )
+ ; Ex.  He is John's cousin. Sam is my brother.
+;------------------------------------------------------------------------------------------------------------------------
+ (defrule poss
+ (rel_name-sids poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
+ (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_viSeRaNa))
+ =>
+ (printout   ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
+ (printout   ?*dbug* "(prep_id-Rule-Rel-ids  -   poss    viSeRya-RaRTI_viSeRaNa  "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
+ )
+ ; Ex.  He is John's cousin. Sam is my brother.
+;------------------------------------------------------------------------------------------------------------------------
+ (defrule poss
+ (rel_name-sids poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
+ (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_viSeRaNa))
+ =>
+ (printout   ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
+ (printout   ?*dbug* "(prep_id-Rule-Rel-ids  -   poss    viSeRya-RaRTI_viSeRaNa  "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
+ )
+ ; Ex.  He is John's cousin. Sam is my brother.
+;------------------------------------------------------------------------------------------------------------------------
+;tmod(paper-10, today-8)
+;possessive(today-8, 's-9)
+ (defrule tmod_poss
+ (rel_name-sids tmod ?vi ?RaRTI_vi)
+ (rel_name-sids possessive ?RaRTI_vi ?apos)
+ (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_vi))
+ =>
+ (printout   ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?vi"        "?RaRTI_vi")"crlf)
+ (printout   ?*dbug* "(prep_id-Rule-Rel-ids  -   tmod_possessive    viSeRya-RaRTI_viSeRaNa  "?vi"        "?RaRTI_vi")"crlf)
+ )
+ ; Ex.  He is John's cousin. Sam is my brother.
+;------------------------------------------------------------------------------------------------------------------------
 (defrule prt
 (rel_name-sids prt ?kriyA ?upasarga)
 (not (got_preposition_obj_for_this ?p))
@@ -448,13 +530,18 @@
 (defrule nsubj_advmod
 (or (root-verbchunk-tam-parser_chunkids ? ? ? $?ids ?kri) (rel_name-sids aux ?kri  ?to))
 (rel_name-sids advmod ?kri ?kri_viSeRaNa)
+(parserid-word ?kri_viSeRaNa  ?When)
 (not  (got_viSeRya-jo_samAnAXikaraNa  ?kri_viSeRaNa))
 (not (got_kriyA-aXikaraNavAcI_avyaya_rel_for ?kri_viSeRaNa))
 =>
+(if (eq ?When When) then
+(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-kriyA_viSeRaNa       "?kri"  "?kri_viSeRaNa")"crlf)
+(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -       nsubj_advmod    kriyA-conjunction    "?kri"  "?kri_viSeRaNa")"crlf)
+else
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     kriyA-kriyA_viSeRaNa	"?kri"	"?kri_viSeRaNa")"crlf)	
-(printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	nsubj_advmod	kriyA-kriyA_viSeRaNa	"?kri"	"?kri_viSeRaNa")"crlf)	
+(printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	nsubj_advmod	kriyA-kriyA_viSeRaNa	"?kri"	"?kri_viSeRaNa")"crlf)	)
 )
- ; Ex. I like genetically modified food.  He runs fast.  When you take the scissors, remember to put them back.
+ ; Ex. I like genetically modified food.  He runs fast.  When you take the scissors, remember to put them back. When the dollar is in a fall, even central banks can not stop it.
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule nsubj_advmod_1
 (rel_name-sids  advmod   ?viSeRya ?viSeRaka)
@@ -473,7 +560,7 @@
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-kriyA_viSeRaNa     "?kriyA"        "?kriyA_viSeRaNa")"crlf)      
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   advmod_acomp  kriyA-kriyA_viSeRaNa    "?kriyA"        "?kriyA_viSeRaNa")"crlf)      
 )
- ; Ex : I guess you are working very hard .
+ ; Ex : I guess you are working very hard . ???	PARSER FAILS FOR THIS SENTENCE.
  ; Added by Shirisha Manju
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule advmod1
@@ -493,7 +580,6 @@
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-aXikaraNavAcI_avyaya     "?kriyA"        "?lupwa_p")"crlf)      
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   advmod2  kriyA-aXikaraNavAcI_avyaya    "?kriyA"        "?lupwa_p")"crlf)   ; kriyA-lupwa_prep_saMbanXI  is now changed to kriyA-aXikaraNavAcI_avyaya (Modified by Roja 28-12-10 Suggested by Sukhada)
-   
 )
  ; Ex. I want to go there . 
  ; Added by Mahalaxmi.
@@ -521,13 +607,21 @@
  ;We have very different ideas about disciplining children . 
  ; Added by Shirisha Manju
 ;------------------------------------------------------------------------------------------------------------------------
- (defrule det/predet
- (or(rel_name-sids det ?vi ?det_vi)(rel_name-sids predet ?vi ?det_vi))
+ (defrule det
+ (rel_name-sids det|predet ?vi ?det_vi)
  =>
  (printout	?*fp*	"(prep_id-relation-parser_ids  -     viSeRya-det_viSeRaNa	"?vi"	"?det_vi")"crlf)	
- (printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	det/predet	viSeRya-det_viSeRaNa	"?vi"	"?det_vi")"crlf)	
+ (printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	det	viSeRya-det_viSeRaNa	"?vi"	"?det_vi")"crlf)
  )
  ; Ex. The baby is cute. 
+;------------------------------------------------------------------------------------------------------------------------
+ (defrule predet
+ (rel_name-sids predettt ?vi ?det_vi);There are some generation problems when this relation comes therefore predet is made predettt to stop firing this rule. Once the generation prob is solved this can be replaced.
+ =>
+ (printout      ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-predet_viSeRaNa       "?vi"   "?det_vi")"crlf)
+ (printout      ?*dbug* "(prep_id-Rule-Rel-ids  -       predet      viSeRya-predet_viSeRaNa    "?vi"   "?det_vi")"crlf)      
+ )
+ ; Ex. I found both these articles to be very helpful.
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule amod
 (rel_name-sids amod ?viSeRya ?viSeRaNa)
@@ -630,21 +724,103 @@
  )
  ; Ex.My talk at the university was more appreciated by the students than the faculty .Added by Mahalaxmi (18-12-09)
  ;------------------------------------------------------------------------------------------------------------------------
+ (defrule single_prep_1
+ (declare (salience 10))
+ (basic_rel_name-sids prep  ?kri ?p)
+ (or (basic_rel_name-sids pobj ?p ?p_saM)(basic_rel_name-sids pcomp ?p ?p_saM))
+ (propogation_rel_name-sids ?prep_wd ?kri  ?p_saM)
+ (propogation_rel_name-sids ?prep_wd1 ?kri  ?x)
+ (parserid-word ?p ?word)
+ (rel_name-sids conj_and|conj_or  ?p_saM ?x)
+ (parserid-word ?id and|or)
+ (parser_id-cat_coarse ?kri ?cat)
+ (test (and (> (string_to_integer ?id) (string_to_integer ?p_saM)) (< (string_to_integer ?id) (string_to_integer ?x)) (eq ?prep_wd ?prep_wd1)))
+ =>
+ (assert (got_prepositional_rel ?p))
+ (if (eq ?cat verb) then
+ (printout ?*fp* "(prep_id-relation-parser_ids  "?p" kriyA-"(lowcase ?word)"_saMbanXI "?kri" "?p_saM")"crlf)
+ (printout ?*dbug* "(prep_id-Rule-Rel-ids  "?p"    single_prep_1  kriyA-"(lowcase ?word)"_saMbanXI  " ?kri" "?p_saM")"crlf)
+ (printout ?*fp* "(prep_id-relation-parser_ids  "?p" kriyA-"(lowcase ?word)"_saMbanXI "?kri" "?x")"crlf)
+ (printout ?*dbug* "(prep_id-Rule-Rel-ids  "?p"    single_prep_1  kriyA-"(lowcase ?word)"_saMbanXI  " ?kri" "?x")"crlf)
+ (printout ?*fp* "(prep_id-relation-parser_ids  "?p" kriyA-"(lowcase ?word)"_saMbanXI "?kri" "?id")"crlf)
+ (printout ?*dbug* "(prep_id-Rule-Rel-ids  "?p"    single_prep_1  kriyA-"(lowcase ?word)"_saMbanXI  " ?kri" "?id")"crlf)
+ else
+ (printout ?*fp* "(prep_id-relation-parser_ids  "?p" viSeRya-"(lowcase ?word)"_saMbanXI "?kri" "?p_saM")"crlf)
+ (printout ?*dbug* "(prep_id-Rule-Rel-ids  "?p"    single_prep_1  kriyA-"(lowcase ?word)"_saMbanXI  " ?kri" "?p_saM")"crlf)
+ (printout ?*fp* "(prep_id-relation-parser_ids  "?p" viSeRya-"(lowcase ?word)"_saMbanXI "?kri" "?x")"crlf)
+ (printout ?*dbug* "(prep_id-Rule-Rel-ids  "?p"    single_prep_1  kriyA-"(lowcase ?word)"_saMbanXI  " ?kri" "?x")"crlf)
+ (printout ?*fp* "(prep_id-relation-parser_ids  "?p" viSeRya-"(lowcase ?word)"_saMbanXI "?kri" "?id")"crlf)
+ (printout ?*dbug* "(prep_id-Rule-Rel-ids  "?p"    single_prep_1  kriyA-"(lowcase ?word)"_saMbanXI  " ?kri" "?id")"crlf)
+ ) )
+ ; Ex. Power is not something that is possessed like blue eyes or red hair but manifests itself in terms of relations with others. 
+ ;------------------------------------------------------------------------------------------------------------------------
  (defrule single_prep
+ (declare (salience 1))
  ?f0<-(basic_rel_name-sids prep  ?kri ?p)
  (or (basic_rel_name-sids pobj ?p ?p_saM)(basic_rel_name-sids pcomp ?p ?p_saM))
  (parser_id-cat_coarse ?kri verb)
  (parserid-word ?p ?word)
+ (not (got_prepositional_rel ?p))
  =>
  (retract ?f0)
+ (assert (got_prep_rel ?p_saM))
  (printout ?*fp* "(prep_id-relation-parser_ids  "?p" kriyA-"(lowcase ?word)"_saMbanXI "?kri" "?p_saM")"crlf)
  (printout ?*dbug* "(prep_id-Rule-Rel-ids  "?p"    single_prep  kriyA-"(lowcase ?word)"_saMbanXI  " ?kri" "?p_saM")"crlf)
  )
  ;He lives at Chandinichok in Delhi in India. Of her childhood we know very little. 
  ; Ex. The people of Orissa are FACING grave adversities DUE TO the CYCLONE. 
- 
+ ;------------------------------------------------------------------------------------------------------------------------
+ (defrule double_p
+ (declare (salience 100))
+ (basic_rel_name-sids prep ?kri ?p-1)
+ ?f<- (basic_rel_name-sids pcomp ?p-1 ?p)
+ (basic_rel_name-sids pobj ?p ?p_saM)
+ (parser_id-cat_coarse ?kri ?cat)
+ (parserid-word ?p-1 ?word) (parserid-word ?p ?word1)
+ =>
+ (retract ?f)
+ (if (eq ?cat verb) then
+ (printout ?*fp* "(prep_id-relation-parser_ids  "?p-1" "?p" kriyA-"(lowcase ?word)"_"(lowcase ?word1)"_saMbanXI "?kri" "?p_saM")"crlf)
+ (printout ?*dbug* "(prep_id-Rule-Rel-ids  "?p-1" "?p"  duble_prep  kriyA-"(lowcase ?word)"_"(lowcase ?word1)"_saMbanXI "?kri" "?p_saM")"crlf)
+ else
+ (printout ?*fp* "(prep_id-relation-parser_ids  "?p-1" "?p" viSeRya-"(lowcase ?word)"_"(lowcase ?word1)"_saMbanXI "?kri" "?p_saM")"crlf)
+ (printout ?*dbug* "(prep_id-Rule-Rel-ids  "?p-1" "?p"  duble_prep  viSeRya-"(lowcase ?word)"_"(lowcase ?word1)"_saMbanXI "?kri" "?p_saM")"crlf)
+ ))
+ ;Ex. Buyers stepped in to the futures pit.
+ ;------------------------------------------------------------------------------------------------------------------------
+;-6     (rel_name-sids conj_or P11 P14)
+;-8     (rel_name-sids prep_such_as P7 P11)
+;-16    (basic_rel_name-sids mwe P9 P8)
+;-17    (basic_rel_name-sids prep P7 P9)
+;-18    (basic_rel_name-sids pobj P9 P11)
+;rel_name-sids  prep_such_as  P7  P12)
+;rel_name-sids  prep_such_as P7  P11)
+;rel_name-sids  prep_such_as P7  P14)
+
+ (defrule duble_prep_conj
+ (declare (salience 220))
+ (basic_rel_name-sids prep  ?kri ?p)
+ (basic_rel_name-sids pobj ?p ?p_saM)
+ (basic_rel_name-sids  mwe  ?p   ?p-1)
+ (rel_name-sids  prep_such_as  ?kri  ?p_saM)
+ (rel_name-sids  prep_such_as  ?kri  ?x)
+ (rel_name-sids conj_or ?x ?p_saM )
+ (parser_id-cat_coarse ?kri ?cat)
+ (parserid-word ?p-1 ?word) (parserid-word ?p ?word1)
+ (parserid-word ?id and|or)
+; (test (and (> (string_to_integer ?id) (string_to_integer ?p_saM)) (< (string_to_integer ?id) (string_to_integer ?x)) (eq ?prep_wds ?prep_wds1)))
+ =>
+ (if (eq ?cat verb) then
+ (printout ?*fp* "(prep_id-relation-parser_ids  "?p" "?p-1" kriyA-"(lowcase ?word)"_"(lowcase ?word1)"_saMbanXI "?kri" "?p_saM")"crlf)
+ (printout ?*dbug* "(prep_id-Rule-Rel-ids  "?p" "?p-1"  duble_prep_conj  kriyA-"(lowcase ?word)"_"(lowcase ?word1)"_saMbanXI "?kri" "?p_saM")"crlf)
+ else
+ (printout ?*fp* "(prep_id-relation-parser_ids  "?p" "?p-1" viSeRya-"(lowcase ?word)"_"(lowcase ?word1)"_saMbanXI "?kri" "?p_saM")"crlf)
+ (printout ?*dbug* "(prep_id-Rule-Rel-ids  "?p" "?p-1"  duble_prep_conj  viSeRya-"(lowcase ?word)"_"(lowcase ?word1)"_saMbanXI "?kri" "?p_saM")"crlf)
+ ))
+ ; Ex. Power is not something that is possessed such as blue eyes or red hair but manifests itself in terms of relations with others.
+ ;------------------------------------------------------------------------------------------------------------------------
  (defrule duble_prep
-(declare (salience 10))
+ (declare (salience 10))
  ?f0<-(basic_rel_name-sids prep  ?kri ?p)
  (basic_rel_name-sids mwe  ?p   ?p-1)
  (basic_rel_name-sids pobj ?p ?p_saM)
@@ -660,7 +836,7 @@
  (printout ?*dbug* "(prep_id-Rule-Rel-ids  "?p" "?p-1"  duble_prep  viSeRya-"(lowcase ?word)"_"(lowcase ?word1)"_saMbanXI "?kri" "?p_saM")"crlf)
  ))
  ; Ex. The people of Orissa are facing grave adversities due to the cyclone.
-
+ ;------------------------------------------------------------------------------------------------------------------------
  (defrule triple_prep
  (declare (salience 100))
  ?f0<-(basic_rel_name-sids prep  ?kri ?p)
@@ -695,8 +871,6 @@
  )
  ; Ex. The PEOPLE of ORISSA are facing grave adversities due to the cyclone.  
  ;------------------------------------------------------------------------------------------------------------------------
- ;------------------------------------------------------------------------------------------------------------------------
-;------------------------------------------------------------------------------------------------------------------------
 (defrule rel
 (rel_name-sids rel ?rv ?jos)
 (rel_name-sids rcmod ?vi ?rv)
@@ -724,7 +898,7 @@
 (defrule rcmod
 (declare (salience 220))
 (rel_name-sids  rcmod ?vi ?kri)
-(or (rel_name-sids  nsubj ?kri ?js) (rel_name-sids  advmod   ?kri  ?js) (rel_name-sids  dobj     ?kri  ?js))
+(or(rel_name-sids nsubj ?kri ?js)(rel_name-sids advmod ?kri ?js)(rel_name-sids dobj ?kri ?js)(rel_name-sids nsubjpass ?kri ?js) )
 (parserid-word ?js ?w)
 (test (>(string_to_integer ?kri)(string_to_integer ?js)))
 =>
@@ -746,7 +920,7 @@
     (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   rcmod     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
     (assert (got_viSeRya-jo_samAnAXikaraNa  ?vi))
  ))
- ;Ex. The girl who you called yesterday has arrived. The dog which Chris bought is really ugly. The dog who chased me was black. The snake who swallowed the rat hissed loudly. The boy who came yesterday from Delhi is my friend. I will show you the house where I met your mother. 
+ ;Ex. The girl who you called yesterday has arrived. The dog which Chris bought is really ugly. The dog who chased me was black. The snake who swallowed the rat hissed loudly. The boy who came yesterday from Delhi is my friend. I will show you the house where I met your mother. Power is not something that is possessed such as blue eyes or red hair but manifests itself in terms of relations with others. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule insert-who
 (declare (salience 100))
@@ -962,7 +1136,7 @@
  (rel_name-sids aux   ?kri ?to)
  (parserid-word ?to to)
  =>
-        (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-kriyArWa_kriyA   "?id"    "?kri")"crlf)
+        (printout      ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-kriyArWa_kriyA   "?id"    "?kri")"crlf)
         (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   xcomp+aux   kriyA-kriyArWa_kriyA  "?id"   "?kri")"crlf)
  (assert (kriyA-kriyArWa_kriyA_rel_has_been_dcd_by_xcomp+aux_rule ?kri))
  )
@@ -999,6 +1173,8 @@
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule tmod
 (rel_name-sids tmod  ?kri ?kAl)
+(not (basic_rel_name-sids pobj ?p ?kAl))
+;(not (got_prep_rel ?vi))
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-kAlavAcI        "       ?kri"    "?kAl")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   tmod	kriyA-kAlavAcI        "       ?kri"    "?kAl")"crlf)
@@ -1021,6 +1197,14 @@
 )
  ; Ex. But my efforts to win his heart have failed . 
  ;Added by Mahalaxmi.
+;------------------------------------------------------------------------------------------------------------------------
+(defrule npadvmod
+(rel_name-sids npadvmod  ?vi ?vi_Na)
+ =>
+(printout       ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-viSeRaNa        "?vi"    "?vi_Na")"crlf)
+(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   npadvmod viSeRya-viSeRaNa        "?vi"    "?vi_Na")"crlf)
+)
+ ; Ex. The director is 65 years old. 
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule cc_rule
  (rel_name-sids cc ? P1)
@@ -1056,6 +1240,19 @@
  )
  ; Ex.  Do not waste electricity. Do not disturb the sleeping kids. Do not forget to take your tiffin. Do not neglect your duties. 
 ;------------------------------------------------------------------------------------------------------------------------
+ (defrule AjFArWaka_vAkya
+ ;(rel_name-sids neg  ?kri ?n)
+ (parserid-word P1 ?word&~Do&~Does&~Is&~Are&~Has&~Have&~Did&~Am&~Was&~Were&~Will&~Would&~Could&~Should&~Can&~May&~Had)
+ (parser_id-cat_coarse P1 verb)
+ (not(rel_name-sids aux  ?kri P1))
+ =>
+ (printout       ?*fp*   "(prep_id-relation-parser_ids  -     AjFArWaka_vAkya)"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   AjFArWaka_vAkya   AjFArWaka_vAkya)"crlf)
+ (printout       ?*fp*   "(prep_id-relation-parser_ids  -     AjFArWaka_kriyA      P1)"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   AjFArWaka_vAkya   AjFArWaka_kriyA    P1)"crlf)
+ )
+ ; Ex. Give me your phone number. Leave your coat in the hall.
+;------------------------------------------------------------------------------------------------------------------------
  (defrule sent_opener
  (rel_name-sids ?p  ?kri ?sam)
  (rel_name-sids nsubj  ?kri ?s)
@@ -1067,6 +1264,7 @@
  )
  ; Ex.  In the garden stood a statue.
 ;------------------------------------------------------------------------------------------------------------------------
+
 
 ;rel+nsubj rel+nsubj+wh rules are not working properly. Check them.
 

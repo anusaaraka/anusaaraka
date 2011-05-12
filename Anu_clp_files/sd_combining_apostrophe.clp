@@ -57,6 +57,26 @@
         (assert (id-Modified_id ?rnode ?lnd))
  )
  ;-------------------------------------------------------------------------------------------------------------------
+ ;I read about the train accident in today's paper. 
+ (defrule word_rule_4_possessive
+ (declare (salience 100))
+ (rel_name-sids possessive ?lnode ?rnode)
+ ?f1<-(parserid-word ?lnode ?wrd)
+ ?f2<-(parserid-word ?rnode ?rwrd)
+ ?f3<-(parser_numeric_id-word ?lid ?wrd1)
+ ?f4<-(parser_numeric_id-word ?rid  ?word&'s)
+ (test (= (string_to_integer ?lnode) ?lid))
+ (test (= (string_to_integer ?rnode) ?rid))
+  =>
+        (retract ?f2 ?f3 ?f4)
+        (printout ?*nid_wrd_fp*  "(parser_numid-word-remark  " ?lid "  "?wrd1 ?word "  " ?word")" crlf)
+        (printout ?*l_wrd_fp* "(parserid-word  "?lnode ?word" "?wrd1 ?word ")" crlf)
+        (bind ?wrd1 (str-cat ?lnode ?word))
+        (bind ?lnd (explode$ ?wrd1))
+        (assert (id-Modified_id ?lnode ?lnd))
+ )
+ ;-------------------------------------------------------------------------------------------------------------------
+
  (defrule word_rule
  (declare (salience 50))
  (parserid-word  ?pid ?word)
