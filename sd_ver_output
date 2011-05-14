@@ -3,6 +3,7 @@ Saving word information
 Saving morph information
 Calling POS Tagger and Chunker (APERTIUM)
 Calling Stanford parser
+Finding NER... 
 matching compounds......
 Hindi meaning using Stanford parser 1.1
 Test. 
@@ -1633,5 +1634,9 @@ puswaka usake prema saMbanXa kA koI ulleKa nahIM karawI hE.
 Hindi meaning using Stanford parser 4.6
 He sat under a wonderful velvet sky. 
 vaha eka axBuwa maKamalI AsamAna ke nIce bETA.
+
+Hindi meaning using Stanford parser 4.7
+Do this in your room. 
+Apake kamare meM yaha kariye/kIjiye.
 
 Calling Interface related programs

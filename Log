@@ -2286,7 +2286,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   21. Updated ol_verified(566), sd_verified(406).
   22. Updated Log.
 
-  12-05-11
+  14-05-11
   ========
   1. In lwg_rules.clp, Modified "rule312_start_id" from 'L1' to 'P1'.
   2. Modified Anusaaraka_berkeley.sh to change directory name of berkeley-parser and also to increase heap size.
@@ -2300,18 +2300,35 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   9. Modified Anusaaraka.sh and Anusaaraka_link.sh (removed splitting of linkid_cat.txt)
   10. Added removing_subscripts.clp (to remove subscript after the word Eg:health.n-u -> health)
   11. run_modules_link.bat
-        added removing_subscripts.clp module
-        loaded linkid_word.dat instead of linkid_cat.dat in load_lwg_rules.clp module
-        Removed parser_pos_cat.dat from link_relation_rules module
+        added    removing_subscripts.clp module
+        loaded   linkid_word.dat instead of linkid_cat.dat in load_lwg_rules.clp module
+        Removed  parser_pos_cat.dat from link_relation_rules module
+  	loaded   ner.dat in link_category module
   12. Modified the fact "linkid-node_cat" as "parserid-cat_coarse" in link_category.clp ,cat_rule.clp and
      link_relation_rules.clp
   13. Modified the fact "linkid-word" as "parserid-word" in link_number.clp and load_lwg_rules.clp
   14. Modified the fact " sid-cat_coarse" as "parser_id-cat_coarse" in sd_category.clp
   15. Removed sd_cat_rule.clp
-  16. Modified run_modules_std.bat to use cat_rule.clp instead of sd_cat_rule.clp
+  16. Modified run_modules_std.bat to use cat_rule.clp instead of sd_cat_rule.clp and
+				   loaded ner.dat in sd_category module
   17. In sd_relation_rules.clp
 	    Added: single_prep_1, double_p, duble_prep_conj, npadvmod, AjFArWaka_vAkya
   18. In run_stanford.sh, added option -retainTmpSubcategories 
-  19. Modified sd_ver_output
-  20. Added rule word_rule_4_possessive in sd_combining_apostrophe.clp
-  21. Updated Log.
+  19. Added rule word_rule_4_possessive in sd_combining_apostrophe.clp
+  20. Added stanford-ner-2008-05-07
+  21. sd_category.clp
+        Added    : CC_rule, PropN_rule
+        Modified : "RB_rule" and "JJ_rule" rules
+  22. link_category.clp
+        Added    : PropN_rule
+        Removed  : sub_noun_rule3 rule
+        Modified : sub_noun_rule2 (removed test condition for John)
+  23. Modified Anusaaraka.sh, Anusaaraka_stanford.sh -- to add ner
+  24. sd_lwg_rules.clp
+        Added    : rule_1-5 and rule_2-1
+        Modified : q_tam (added not condition)  
+        Renamed  : rule_1-1 as rule_2-2
+  25. Modified run_sd_lwg_rules.bat to load "sd-basic_relations_tmp1.dat" in sd_lwg_rules module
+  26. Modified link_ver_output, sd_ver_output and verified_output
+  27. Updated sd_verified (407)
+  28. Updated Log.

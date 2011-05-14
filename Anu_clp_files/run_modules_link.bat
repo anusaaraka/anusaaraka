@@ -67,6 +67,7 @@
  (load-facts "word2.dat")
  (load-facts "original_word.dat")
  (load-facts "parserid_wordid_mapping.dat")
+ (load-facts "ner.dat")
  (open "linkid_cat.dat" link_cat_fp "a")
  (run)
  (clear)

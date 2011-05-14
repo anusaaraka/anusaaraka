@@ -76,6 +76,34 @@
  (printout ?*lwg_debug_file* "(rule_name-grouped_ids   rule_2  "?id2"  "  ?head ")"  crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (14-05-11); Do not waste electricity.
+ (defrule rule_2-1
+ (declare (salience 900))
+ (rel_name-sids aux|auxpass ?head ?id1)
+ (not (rel_name-sids nsubj ?head ?))
+ (not(rel_name-sids cop ?head ?))
+ (not (grouped_head ?head))
+ (parserid-word ?id1 ~to)
+  =>
+  	(assert (root-verbchunk-tam-parser_chunkids  root_to_be_decided verb_chunk_to_be_decided  imper_0  ?id1 ?head))
+  	(assert (grouped_head ?head))
+   	(assert (tam_imper_decided))
+	(printout ?*lwg_debug_file* "(rule_name-grouped_ids   rule_2-1  "?id1" " ?head ")" crlf)
+ )
+ ;-------------------------------------------------------------------------------------------------------------------------
+ (defrule rule_2-2
+ (declare (salience 900))
+ (rel_name-sids aux|auxpass ?head ?id1)
+ (rel_name-sids nsubj ?head ?); added to deferentiate imer sentence
+ (not(rel_name-sids cop ?head ?))
+ (not (grouped_head ?head))
+ (parserid-word ?id1 ~to)
+  =>
+ (assert (root-verbchunk-tam-parser_chunkids  root_to_be_decided verb_chunk_to_be_decided  tam_to_be_decided  ?id1 ?head))
+ (assert (grouped_head ?head))
+ (printout ?*lwg_debug_file* "(rule_name-grouped_ids   rule_1-1  "?id1" " ?head ")" crlf)
+ )
+ ;-------------------------------------------------------------------------------------------------------------------------
  ;Ex:-You are lucky I am here .
  (defrule rule_1-0
  (declare (salience 900))
@@ -89,17 +117,18 @@
  (printout ?*lwg_debug_file* "(rule_name-grouped_ids    rule_1-0  " ?head ")" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------------
- (defrule rule_1-1
- (declare (salience 900))
- (rel_name-sids aux|auxpass ?head ?id1)
- (not(rel_name-sids cop ?head ?))
- (not (grouped_head ?head))
- (parserid-word ?id1 ~to)
-  =>
-(assert (root-verbchunk-tam-parser_chunkids  root_to_be_decided verb_chunk_to_be_decided  tam_to_be_decided  ?id1 ?head))
- (assert (grouped_head ?head))
- (printout ?*lwg_debug_file* "(rule_name-grouped_ids   rule_1-1  "?id1" " ?head ")" crlf)
- )
+; (defrule rule_1-1
+; (declare (salience 900))
+; (rel_name-sids aux|auxpass ?head ?id1)
+; (rel_name-sids nsubj ?head ?)
+; (not(rel_name-sids cop ?head ?))
+; (not (grouped_head ?head))
+; (parserid-word ?id1 ~to)
+;  =>
+;(assert (root-verbchunk-tam-parser_chunkids  root_to_be_decided verb_chunk_to_be_decided  tam_to_be_decided  ?id1 ?head))
+; (assert (grouped_head ?head))
+; (printout ?*lwg_debug_file* "(rule_name-grouped_ids   rule_1-1  "?id1" " ?head ")" crlf)
+; )
  ;-------------------------------------------------------------------------------------------------------------------------
  ;Ex:-You are lucky I am here .
  (defrule rule_1-2
@@ -143,12 +172,31 @@
  (printout ?*lwg_debug_file* "(rule_name-grouped_ids  rule_1-4    P1)" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------------
+ ; Do this in your room. Go home.
+ ; Added by Shirisha Manju (13-05-11) suggested by sukhada
+ (defrule rule_1-5
+ (declare (salience 700))
+ (rel_name-sids ?rel ?id1 ?id)
+ (parser_id-cat_coarse  ?id1  verb)
+ (not (rel_name-sids nsubj ?id1 ?))
+ (not (rel_name-sids xcomp ? ?id1));He wasted his golden opportunity to play in the national team. 
+ (not (rel_name-sids infmod ? ?id1));But my efforts to win his heart have failed.
+ (not (basic_rel_name-sids pcomp ? ?id1));I yelled at her for going to the party.
+ (not (grouped_head ?id1))
+ (test (and (neq ?rel cop)(neq ?rel aux)(neq ?rel advmod)));He is a well known scientist.
+ =>
+ (assert (root-verbchunk-tam-parser_chunkids  root_to_be_decided verb_chunk_to_be_decided  imper ?id1))
+ (assert (grouped_head ?id1))
+ (assert (tam_imper_decided))
+ (printout ?*lwg_debug_file* "(rule_name-grouped_ids  rule_1-5    "?id1")" crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
  ; Ex:-I will not do it . 
  (defrule not_rule
  (declare (salience 800))
  (rel_name-sids neg ?head ?not)
  ?f1<-(parserid-word ?not not)
- ?f<-(root-verbchunk-tam-parser_chunkids root_to_be_decided verb_chunk_to_be_decided  tam_to_be_decided $?ids)
+ ?f<-(root-verbchunk-tam-parser_chunkids root_to_be_decided verb_chunk_to_be_decided  tam_to_be_decided|imper_0 $?ids)
  (test (and (not (member$ ?not $?ids))(member$ ?head $?ids)))
  (test (and (> (string_to_integer  ?not) (string_to_integer  (nth$ 1 $?ids))) (< (string_to_integer  ?not) (string_to_integer  (nth$ (length $?ids) $?ids)))))
   =>
@@ -243,6 +291,7 @@
  (parserid-word P1 ?word)
  (test (or(eq (lowcase ?word) does)(eq (lowcase ?word) do)(eq (lowcase ?word) did)(eq (lowcase ?word) why)(eq (lowcase ?word) what)(eq (lowcase ?word) where)(eq (lowcase ?word) whose)(eq (lowcase ?word) how)(eq (lowcase ?word) who)(eq (lowcase ?word) when)(eq (lowcase ?word) are)(eq (lowcase ?word) am)(eq (lowcase ?word) is)))
  (not (q_tam_modified ?head))
+ (not (tam_imper_decided)) ; Added by Shirisha Manju (13-05-11) ;Do this in your room.
  =>
  (retract ?f)
      (bind ?vrb_chunk1 (explode$ (str-cat "q_" ?vrb_chunk )))

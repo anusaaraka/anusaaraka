@@ -3,6 +3,7 @@
   (bind ?*path* (str-cat ?*path* "/Anu_clp_files/sd_lwg_rules.clp"))
   (load* ?*path*)
   (load-facts "sd-relations_tmp1.dat")
+  (load-facts "sd-basic_relations_tmp1.dat")
   (load-facts "sd_word_tmp.dat")
   (load-facts "preferred_morph_tmp.dat")
   (load-facts "morph.dat")

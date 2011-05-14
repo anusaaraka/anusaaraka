@@ -3,12 +3,14 @@
  (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
  ;----------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (24-03-11)
  (deffunction generate_initial_point (?viSeRya)
         (bind ?PH (string-to-field (str-cat ?viSeRya ".1")))
         (assert (id-current_id  ?viSeRya ?PH))
         (assert (current_id-group_members ?PH ?viSeRya))
  )
  ;----------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (24-03-11)
  (deffunction  generate_incremented_point (?PH ?id)
         (bind ?PH (str-cat ?PH ""))
         (bind ?pos (str-index "." ?PH))
@@ -19,6 +21,7 @@
         (assert (current_id-group_members ?PH ?id))
  )
  ;----------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (25-03-11)
  (deffunction generate_order (?id ?id1 ?kri $?grp_mems)
         (bind $?grp_mems (delete-member$ $?grp_mems ?id))
         (bind ?pos (member$ ?id1  $?grp_mems))

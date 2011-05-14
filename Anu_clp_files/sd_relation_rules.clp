@@ -1241,10 +1241,10 @@ else
  ; Ex.  Do not waste electricity. Do not disturb the sleeping kids. Do not forget to take your tiffin. Do not neglect your duties. 
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule AjFArWaka_vAkya
- ;(rel_name-sids neg  ?kri ?n)
- (parserid-word P1 ?word&~Do&~Does&~Is&~Are&~Has&~Have&~Did&~Am&~Was&~Were&~Will&~Would&~Could&~Should&~Can&~May&~Had)
  (parser_id-cat_coarse P1 verb)
- (not(rel_name-sids aux  ?kri P1))
+ (not (rel_name-sids aux  ?kri P1))
+ (not (rel_name-sids cop  ?kri P1))
+ (not (rel_name-sids expl  P1  ?));Is there life beyond the grave? 
  =>
  (printout       ?*fp*   "(prep_id-relation-parser_ids  -     AjFArWaka_vAkya)"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   AjFArWaka_vAkya   AjFArWaka_vAkya)"crlf)
@@ -1253,6 +1253,7 @@ else
  )
  ; Ex. Give me your phone number. Leave your coat in the hall.
 ;------------------------------------------------------------------------------------------------------------------------
+ 
  (defrule sent_opener
  (rel_name-sids ?p  ?kri ?sam)
  (rel_name-sids nsubj  ?kri ?s)

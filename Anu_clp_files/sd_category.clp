@@ -4,7 +4,20 @@
 ; Removes the first character from the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
 
- 
+
+ ;------------------------------------------------------------------------------------------
+  (defrule PropN_rule
+  (declare (salience 10))
+  (word-wordid-nertype ?word ?id PERSON|LOCATION|ORGANIZATION)
+  (parserid-wordid  ?pid ?id)
+  (parserid-word ?pid ?lword)
+  ?f0<-(id-sd_cat   ?pid ?)
+  (test (eq ?lword ?word))
+  =>
+	(printout ?*cat_fp* "(parser_id-cat_coarse  "?pid" PropN)" crlf)
+	(retract ?f0)
+ )
+ ;------------------------------------------------------------------------------------------ 
  ;He disputed that our program was superior . (PRP$) 
  (defrule PRP_rule
  ?f0<-(id-sd_cat	?id	PRP|PRP$)
@@ -30,7 +43,7 @@
  ;------------------------------------------------------------------------------------------
  ; NNPS -- A Grateful Dead/Allman Brothers concert in Washington D.C., that July, presented an unexpected opportunity to serve as a dry-run for our upcoming trip.
  (defrule NNPS_rule
- (declare (salience 10))
+ (declare (salience 5))
  ?f0<-(id-sd_cat        ?id     NNPS)
  (id-sd_cat ?id1 NNP)
  (test (eq (- (string_to_integer ?id) 1) (string_to_integer ?id1)))
@@ -47,14 +60,14 @@
  )
  ;------------------------------------------------------------------------------------------
  (defrule RB_rule
- ?f0<-(id-sd_cat        ?id     RB)
+ ?f0<-(id-sd_cat        ?id     RB|RBR|RBS)
  =>
         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  adverb)" crlf)
         (retract ?f0)
  )
  ;------------------------------------------------------------------------------------------
  (defrule JJ_rule
- ?f0<-(id-sd_cat        ?id     JJ)
+ ?f0<-(id-sd_cat        ?id     JJ|JJR|JJS)
  =>
 	(printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  adjective)" crlf)
         (retract ?f0)
@@ -84,6 +97,13 @@
         (retract ?f0)
  )
 ; MD may be modal verb or verb
+ ;------------------------------------------------------------------------------------------
+ (defrule CC_rule
+ ?f0<-(id-sd_cat        ?id     CC)
+ =>
+        (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  conjunction)" crlf)
+        (retract ?f0)
+ )
  ;------------------------------------------------------------------------------------------
  (defrule close_cat_file
  (declare (salience -100))

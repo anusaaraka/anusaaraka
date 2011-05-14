@@ -9,6 +9,7 @@
  (id-word_cap_info)
  (No complete linkages found)
  (parser_id-cat_coarse)
+ (word-wordid-nertype)
  )
  
  (deffunction string_to_integer (?parser_id)
@@ -75,25 +76,9 @@
  (parserid-word ?sr_node ?rword)
  ?f0<-(category_to_be_decided  ?sr_node )
  (test (or (member$ I $?ids)(member$ J $?ids )))
- (test (neq ?rword John))
  =>
         (retract ?f0)
         (assert (parser_id-cat_coarse ?sr_node  noun/pronoun))
- )
- ;----------------------------------------------------------------------------------------------------------------
- ;Added by Roja (10-03-11)
- ;John is quite certainly a better choice. 
- ;Sita is baking breads for breakfast. 
- (defrule sub_noun_rule3
- (declare (salience 201))
- (link_name-link_expansion  ?sub  S $?ids)
- (link_name-link_lnode-link_rnode ?sub  ?sl_node  ?sr_node)
- (parserid-word ?node John|Sita)
- ?f0<-(category_to_be_decided  ?sl_node )
- (test (or (eq ?node ?sl_node)(eq ?node ?sr_node)))
- =>
-        (retract ?f0)
-        (printout ?*link_cat-file* "(parser_id-cat_coarse  " ?node "   PropN)" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
  ;Rama is a good boy.
@@ -130,7 +115,6 @@
  (link_name-link_lnode-link_rnode ?P   ?sr_node  ?Pr_node)
  ?f0<-(category_to_be_decided  ?sr_node )
  ?f1<-(category_to_be_decided  ?Pr_node )
-; ?f1<-(parserid-cat_coarse  ?Pr_node )
  =>
  	(retract ?f0 ?f1)
 	(printout ?*link_cat-file* "(parser_id-cat_coarse	" ?sr_node "    verb)" crlf)
@@ -146,7 +130,6 @@
  (link_name-link_lnode-link_rnode ?V1 ?  ?v1r_node)
  ?f0<-(category_to_be_decided  ?vl_node )
  ?f1<-(category_to_be_decided  ?v1r_node )
-; ?f1<-(parserid-cat_coarse  ?v1r_node )
  =>
         (retract ?f0 ?f1)
         (printout ?*link_cat-file* "(parser_id-cat_coarse  " ?vl_node "    verb)" crlf)
@@ -399,10 +382,24 @@
         (printout ?*link_cat-file* "(parser_id-cat_coarse  " ?l_node "    -)" crlf)
   )
   ;----------------------------------------------------------------------------------------------------------------
+  ; if category is noun/pronoun and ner type is PERSON/LOCATION/ORGANIZATION then modify category as PropN
+  ; Jane is soon coming . The Danes are nice people.
+  (defrule PropN_rule
+  (declare (salience 10))
+  ?f0<-(parser_id-cat_coarse ?pid noun/pronoun)
+  (parserid-wordid  ?pid ?id)
+  (parserid-word ?pid ?lword)
+  (word-wordid-nertype ?word ?id PERSON|LOCATION|ORGANIZATION)
+  (test (eq ?lword ?word))
+  =>
+        (retract ?f0)
+        (printout ?*link_cat-file* "(parser_id-cat_coarse  " ?pid "    PropN)" crlf)
+  )
+  ;----------------------------------------------------------------------------------------------------------------
   ; if category is noun/pronoun and the first letter is capital then modify category as PropN
   ; Jane is soon coming . The Danes are nice people.
   (defrule pronoun_rule_first_cap
-  (declare (salience 10))
+  (declare (salience 5))
   ?f0<-(parser_id-cat_coarse ?pid noun/pronoun)
   (parserid-wordid  ?pid ?id)
   (parserid-word ?pid ?lword)
