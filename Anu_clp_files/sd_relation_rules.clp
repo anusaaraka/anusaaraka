@@ -129,6 +129,7 @@
  (not (sub_for_kriyA ?kriyA ?sub)) ;Modified on 4-5-11 by Sukhada
  (not (found_kriyA-sub_rel ?kriyA)); Added new by Sukhada
  (not (sub-sub_samAnAXikaraNa_decided ?kriyA))
+ (not (got_kri-sub_rel ?kriyA))
  =>
  (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?kriyA"        "?sub")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kriyA_sub_rule   kriyA-subject   "?kriyA"        "?sub")"crlf)
@@ -1145,7 +1146,7 @@ else
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule ccomp_1
 (rel_name-sids ccomp ?pre_kri ?kri)
-(parserid-word  ?pre_kri made|make|makes|has|have|had|get|gets|got)
+(parserid-word  ?pre_kri made|make|makes|making|has|have|had|having|get|gets|got|getting)
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-preraka_kriyA   "       ?kri"    "?pre_kri")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   ccomp_1   kriyA-preraka_kriyA  "       ?kri"   "?pre_kri")"crlf)
@@ -1155,7 +1156,8 @@ else
  (defrule ccomp+nsubj
 (rel_name-sids ccomp ?pre_kri ?kri)
 (rel_name-sids nsubj ?kri ?pra_karwA)
-(parserid-word  ?pre_kri made|make|makes|has|have|had)
+(rel_name-sids nsubj ?pre_kri ?sub)
+(parserid-word  ?pre_kri made|make|makes|making|has|have|had|having|get|gets|got|getting)
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-prayojya_karwA   "       ?kri"    "?pra_karwA")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   ccomp+nsubj   kriyA-prayojya_karwA   "       ?kri"    "?pra_karwA")"crlf)
@@ -1163,9 +1165,12 @@ else
 ;Ex.  I made him go. The teacher made the students stay after class.
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule kri_sub_for_causative_verb
-(verb_type-verb-causative_verb-tam causative ?kri $?)
-(rel_name-sids  nsubj  ?kri  ?sub) 
+(declare (salience 500))
+(verb_type-verb-causative_verb-tam causative $?v ?kri ?is_ing)
+(rel_name-sids  nsubj  ?k  ?sub) 
+(test (member$ ?k $?v))
 =>
+(assert (got_kri-sub_rel ?kri))
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -	kriyA-subject  "?kri"    "?sub")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  - 	kri_sub_for_causative_verb	kriyA-subject	"?kri"    "?sub")"crlf)
 )

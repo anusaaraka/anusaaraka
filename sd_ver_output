@@ -1640,15 +1640,31 @@ Do this in your room.
 Apake kamare meM yaha kariye/kIjiye.
 
 Hindi meaning using Stanford parser 4.8
-I have been running about all morning trying to find you. 
-mEM Apako pAne ke liye prayAsa kariye/kIjiye pUrI subaha meM iXara-uXara xOdawA rahA hUz Apako pAne ke liye prayAsa kariye/kIjiye.
-
-Hindi meaning using Stanford parser 4.9
 Their belongings were flung about the room. 
 unake sAmAna kamare meM iXara-uXara PeMke gaye We.
 
-Hindi meaning using Stanford parser 4.10
+Hindi meaning using Stanford parser 4.9
 The suspect was about 2 meters tall. 
 sanxigXa lagaBaga 2 mItara laMbA WA.
+
+Hindi meaning using Stanford parser 4.10
+Do not waste electricity. 
+vixyuwa Sakwi vyarWa_meM_barabAxa_mawa kariye/kIjiye.
+
+Hindi meaning using Stanford parser 4.11
+Leave your coat in the hall. 
+hOYla meM Apake kota ko Coda jAiye.
+
+Hindi meaning using Stanford parser 4.12
+Do not shut the door. 
+xaravAjA banxa_mawa kariye/kIjiye.
+
+Hindi meaning using Stanford parser 4.13
+I have been running about all morning trying to find you. 
+mEM Apako pAne ke liye prayAsa karwe_hue pUrI subaha meM iXara-uXara xOdawA rahA hUz.
+
+Hindi meaning using Stanford parser 4.14
+She is making the girl feed the child. 
+vaha ladakI se bacce ko KAnA_KilavA rahI hE.
 
 Calling Interface related programs

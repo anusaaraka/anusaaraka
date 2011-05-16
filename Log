@@ -2339,9 +2339,20 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
           Modified : about.clp, ing_tam.clp, lie.clp, suspect.clp
   2. Modified an entry in apertium-en-hi.en.metadix
   3. Updated above changes in changes_in_databases file.
-  4. Updated ol_ver_output, ol_verified, sd_ver_output, sd_verified, verified_output and verified
-  5. Modified stnford_relations.lex file to handle compound words and decimal nos.
-  6. Modified 'we_hue_rule' in prepare_apertium_input.clp
-  7. Updated following files:
-             ol_verified (567)  sd_verified (410)  verified (470)
-  8. Updated Log.
+  4. Modified stnford_relations.lex file to handle compound words and decimal nos.
+  5. Modified 'we_hue_rule' in prepare_apertium_input.clp
+  6. sd_lwg_rules.clp
+        - Modified all the rules to add "parserid-word" and "parser_id-root-category-suffix-number" facts in rule part to
+          generate verb_chunk and tam (instead of "ids" we get "words" now)
+        - Modified "not_rule" for "imper" sentences
+        - Modified "rule_1-4" for "imper" sentences -- added not condition
+        - Removed  "get_eng_word_list" and "substitute_root_vrbchnk_tam" rules
+  7. Modified run_sd_lwg_rules.bat to remove assert statements (to generate words)
+  8. sd_relation_rules.clp
+        Modified : ccomp_1, ccomp+nsubj, kri_sub_for_causative_verb and kriyA_sub_rule
+  9. Updated ol_ver_output, ol_verified, sd_ver_output, sd_verified, verified_output and verified
+ 10. Modified link_ver_output and link_verified
+ 11. Updated README
+ 12. Updated following files:
+             ol_verified (567)  sd_verified (414)  verified (470) 
+ 13. Updated Log
