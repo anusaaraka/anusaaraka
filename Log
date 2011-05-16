@@ -2332,3 +2332,16 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   26. Modified link_ver_output, sd_ver_output and verified_output
   27. Updated sd_verified (407)
   28. Updated Log.
+
+  16-05-11
+  ========
+  1. In WSD, Added : belongings.clp, meters.clp
+          Modified : about.clp, ing_tam.clp, lie.clp, suspect.clp
+  2. Modified an entry in apertium-en-hi.en.metadix
+  3. Updated above changes in changes_in_databases file.
+  4. Updated ol_ver_output, ol_verified, sd_ver_output, sd_verified, verified_output and verified
+  5. Modified stnford_relations.lex file to handle compound words and decimal nos.
+  6. Modified 'we_hue_rule' in prepare_apertium_input.clp
+  7. Updated following files:
+             ol_verified (567)  sd_verified (410)  verified (470)
+  8. Updated Log.

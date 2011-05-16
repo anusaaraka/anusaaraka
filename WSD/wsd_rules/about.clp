@@ -53,15 +53,14 @@
 
 
 
-
+;Added (or(id-cat =(+ ?id 1) <num>)(id-cat_coarse =(+ ?id 1) number)(......) for {"The suspect was about 2 metres tall."} Meena (11.5.11) 
 ;Modified by Meena(20.5.10)
 ;Typically , a doctor will see about thirty patients a day .
 (defrule about3
 (declare (salience 4500))
 (id-root ?id about)
 ?mng <-(meaning_to_be_decided ?id)
-;(id-cat_coarse =(+ ?id 1) cardinal)
-(or(id-cat_coarse =(+ ?id 1) number)(id-word =(+ ?id 1) one|two|three|four|five|six|seven|eight|nine|ten|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand))
+(or(id-cat =(+ ?id 1) <num> )(id-cat_coarse =(+ ?id 1) number)(id-word =(+ ?id 1) one|two|three|four|five|six|seven|eight|nine|ten|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id lagaBaga))
@@ -72,9 +71,10 @@
 
 
 
-
+;Salience changed by Meena(12.5.11)
 (defrule about4
-(declare (salience 4200))
+(declare (salience 0))
+;(declare (salience 4200))
 (id-root ?id about)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id adverb)
@@ -96,8 +96,41 @@
 ;
 
 
+
+;Added by Meena(12.5.11)
+;Their belongings were flung about the room.
+;I have been running about all morning trying to find you.
+;She always leaves her clothes lying about on the floor. 
 (defrule about5
 (declare (salience 4100))
+(id-root ?id about)
+?mng <-(meaning_to_be_decided ?id)
+(or(kriyA-about_saMbanXI  ?id1 ?saMb)(kriyA-kriyA_viSeRaNa ?id1 ?id))
+(id-root ?id1 fling|throw|lie|run|jog|walk|move|stroll)
+(id-cat_coarse =(+ ?id 1) ?cat)
+=>
+(retract ?mng)
+(if (neq ?cat preposition) then
+    (assert (id-wsd_root_mng ?id meM_iXara-uXara))
+    else
+    (assert (id-wsd_root_mng ?id iXara-uXara))
+)
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  about.clp     about5   "  ?id "  iXara-uXara )" crlf)
+(if (neq ?cat preposition) then
+        (assert (id-wsd_root_mng ?id meM_iXara-uXara))
+        (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  about.clp      about5   "  ?id "  meM_iXara-uXara )" crlf)
+))
+)
+
+
+
+
+
+;Salience reduced by Meena(12.5.11)
+(defrule about6
+(declare (salience 0))
+;(declare (salience 4100))
 (id-root ?id about)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id preposition)
@@ -105,7 +138,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ke_bAre_meM))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  about.clp 	about5   "  ?id "  ke_bAre_meM )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  about.clp 	about6   "  ?id "  ke_bAre_meM )" crlf))
 )
 
 ;"about","Prep","1.ke_bAre_meM"

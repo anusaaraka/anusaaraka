@@ -1328,7 +1328,7 @@
   (declare (salience 960))
   (pada_info (group_head_id ?pada_id)(number ?num)(gender ?gen)(person ?person)(H_tam we_hue));the (group_cat VP) condition is deleted by Sukhada for "I saw him telling her about the party" in OpenLogos (12.08.10)
   ?f0<-(id-HM-source ?pada_id ?hmng ?)
-  (prep_id-relation-anu_ids ? kriyA-kqxanwa_kriyA_viSeRaNa ? ?pada_id )
+  (prep_id-relation-anu_ids ? kriyA-kqxanwa_kriyA_viSeRaNa|viSeRya-kqxanwa_viSeRaNa ? ?pada_id ) ;Added 'viSeRya-kqxanwa_viSeRaNa'  for this ex. I have been running about all morning trying to find you. (Meena 12.5.11)
   =>
         (retract ?f0)
         (printout ?*A_fp5* "(id-Apertium_input "?pada_id " root:"?hmng ",tam:adv_we_hue,gen:"?gen",num:"?num ",per:"?person")"  crlf)

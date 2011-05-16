@@ -17,6 +17,8 @@
 ))
 
 ;The beds in which the two men lay vibrated
+
+
 (defrule lie1
 (declare (salience 4900))
 (id-root ?id lie)
@@ -34,6 +36,8 @@
 )
 
 ;They lay eggs.
+
+
 (defrule lie2
 (declare (salience 4800))
 (id-root ?id lie)
@@ -47,6 +51,9 @@
 )
 
 ;particle_down_-	leta_{0/ed/en}	0
+
+
+
 (defrule lie3
 (declare (salience 4700))
 (id-root ?id lie)
@@ -64,6 +71,8 @@
 ;A lay musician.
 ;
 ;
+
+
 (defrule lie4
 (declare (salience 4600))
 (id-root ?id lie)
@@ -80,6 +89,10 @@
 
 ;You've worked a lot,I think you should lie back now.
 ;wuma bahuwa kAma kara cuke ho ,aba wumheM ArAma karanA cAhie
+
+
+
+
 (defrule lie5
 (declare (salience 4500))
 (id-root ?id lie)
@@ -96,6 +109,10 @@
 
 ;I like to lie in on holidays.
 ;muJe avakASa meM sonA pasaMxa hE
+
+
+
+
 (defrule lie6
 (declare (salience 4400))
 (id-root ?id lie)
@@ -113,6 +130,10 @@
 
 ; The decision lies with you to do it or not..
 ;ise karane yA na karane kA PZEsalA wuma para nirBara karawA hE
+
+
+
+
 (defrule lie7
 (declare (salience 4300))
 (id-root ?id lie)
@@ -127,21 +148,11 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " lie.clp	lie7  "  ?id "  " ?id1 "  so  )" crlf))
 )
 
-(defrule lie8
-(declare (salience 4200))
-(id-root ?id lie)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 down)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 so))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " lie.clp	lie8  "  ?id "  " ?id1 "  so  )" crlf))
-)
 
-(defrule lie9
+
+
+
+(defrule lie8
 (declare (salience 4100))
 (id-root ?id lie)
 ?mng <-(meaning_to_be_decided ?id)
@@ -151,10 +162,12 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id leta))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lie.clp 	lie9   "  ?id "  leta )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lie.clp 	lie8   "  ?id "  leta )" crlf))
 )
 
-(defrule lie10
+
+
+(defrule lie9
 (declare (salience 4000))
 (id-root ?id lie)
 ?mng <-(meaning_to_be_decided ?id)
@@ -164,10 +177,14 @@
 (retract ?mng)
 (assert (id-wsd_word_mng ?id aviSeRajFa-))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  lie.clp  	lie10   "  ?id "  aviSeRajFa- )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  lie.clp  	lie9   "  ?id "  aviSeRajFa- )" crlf))
 )
 
-(defrule lie11
+
+
+
+
+(defrule lie10
 (declare (salience 3900))
 (id-root ?id lie)
 ?mng <-(meaning_to_be_decided ?id)
@@ -176,14 +193,38 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id JUTa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lie.clp 	lie11   "  ?id "  JUTa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lie.clp 	lie10   "  ?id "  JUTa )" crlf))
 )
 
 ;"lie","N","1.JUTa"
 ;Whatever he has said is a pack of lies.
 ;
-(defrule lie12
+
+
+
+;Added by Meena(12.5.11)
+;She always leaves her clothes lying about on the floor.
+(defrule lie11
 (declare (salience 3800))
+(id-root ?id lie)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id lying)
+(kriyA-kqxanwa_karma  ?id1 ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id pade_hue))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lie.clp       lie11   "  ?id "  pade_hue )" crlf))
+)
+
+
+
+
+
+
+;Salience reduced by Meena(12.5.11)
+(defrule lie12
+;(declare (salience 3800))
 (id-root ?id lie)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)

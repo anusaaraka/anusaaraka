@@ -12,13 +12,17 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  ing_tam.clp  	ing_tam0  "  ?id " )" crlf))
 )
 
+
+
+;Added by Meena(12.5.11)
+;I have been running about all morning trying to find you.
 ;I saw him telling her about the party 
 ;Default is wA_huA
 (defrule ing_tam1
 (declare (salience 4900))
 (id-TAM ?id ing)
 ?mng <-(meaning_to_be_decided ?id)
-(kriyA-kqxanwa_kriyA_viSeRaNa ? ?id )
+(or(kriyA-kqxanwa_kriyA_viSeRaNa ? ?id )(viSeRya-kqxanwa_viSeRaNa  ?  ?id ))
 =>
 (retract ?mng)
 (assert (id-E_tam-H_tam_mng ?id ing we_hue))
