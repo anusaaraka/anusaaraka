@@ -2333,7 +2333,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   27. Updated sd_verified (407)
   28. Updated Log.
 
-  16-05-11
+  18-05-11
   ========
   1. In WSD, Added : belongings.clp, meters.clp
           Modified : about.clp, ing_tam.clp, lie.clp, suspect.clp
@@ -2350,9 +2350,19 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   7. Modified run_sd_lwg_rules.bat to remove assert statements (to generate words)
   8. sd_relation_rules.clp
         Modified : ccomp_1, ccomp+nsubj, kri_sub_for_causative_verb and kriyA_sub_rule
-  9. Updated ol_ver_output, ol_verified, sd_ver_output, sd_verified, verified_output and verified
- 10. Modified link_ver_output and link_verified
- 11. Updated README
- 12. Updated following files:
+  9. Updated README in anu_testing.
+ 10. Removed OL_parser_fails_output file and Updated OL_parser_fails file.
+ 11. Added "Ner information" in Anusaaraka_all.sh and Anusaaraka_link.sh.
+ 12. Updated step-debug in following files :
+        link-run-lwg-onward.sh  	link-run-pada-onward.sh		link-run-rel-onward.sh
+        ol-run-lwg-onward.sh		ol-run-pada-onward.sh		ol-run-rel-onward.sh
+        std-run-lwg-onward.sh		std-run-pada-onward.sh		std-run-rel-onward.sh	
+ 13. Added new 'sd-original-info.lex' file to store original information of relation and category for user. 
+ 14. Updated compile.sh to generate 'sd-original-info.out' file.
+ 15. Modified run_stanford-parser.sh to use sd-original-info.lex and to generate sd-user-relations-cat.txt.
+ 16. Updated Anusaaraka.sh and Anusaaraka_stanford.sh to get 'sd-user-relations-cat.dat' file.
+ 17. Removed comments in run_sentence_stanford.sh
+ 18. Updated ol_ver_output,ol_verified,sd_ver_output,sd_verified,link_ver_output,link_verified,verified_output and verified.
+ 19. Updated following files:
              ol_verified (567)  sd_verified (414)  verified (470) 
- 13. Updated Log
+ 20. Updated Log

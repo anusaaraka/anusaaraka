@@ -1,5 +1,4 @@
-#/bin/sh
-
+ #/bin/sh
  source ~/.bashrc
 
  export LC_ALL=
@@ -65,8 +64,8 @@
   ./link-parser $HOME_anu_test/LINK/link-grammar-4.7.4/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt
 
   echo "Calling Stanford parser"
-  cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/ 
-  sh ./run_stanford-parser.sh $1 $MYPATH > /dev/null
+  cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/
+  sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 
   #running stanford NER (Named Entity Recogniser) on whole text.
   echo "Finding NER... "
@@ -83,12 +82,14 @@
   $HOME_anu_test/Anu_src/split_file.out linkage_count.txt dir_names.txt linkage_count
   $HOME_anu_test/Anu_src/split_file.out chunk.txt dir_names.txt chunk.dat
   $HOME_anu_test/Anu_src/split_file.out sd-tree_relation.txt dir_names.txt sd-tree_relations_tmp.dat
-  $HOME_anu_test/Anu_src/split_file.out sd-basic_relation.txt dir_names.txt sd-basic_relations_tmp1.dat 
+  $HOME_anu_test/Anu_src/split_file.out sd-basic_relation.txt dir_names.txt sd-basic_relations_tmp1.dat
   $HOME_anu_test/Anu_src/split_file.out sd-propagation_relations.txt dir_names.txt sd-propagation_relations_tmp1.dat
   $HOME_anu_test/Anu_src/split_file.out sd_word.txt dir_names.txt sd_word_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out sd_numeric_word.txt dir_names.txt sd_numeric_word_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out sd_category.txt dir_names.txt sd_category.dat
   $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line.txt.ner dir_names.txt ner.dat
+
+  $HOME_anu_test/Anu_src/split_file.out sd-user-relations-cat.txt  dir_names.txt  sd-user-relations-cat.dat
 
   echo 'matching compounds......'
   perl $HOME_anu_test/Anu_src/Compound-dict.pl $HOME_anu_test/Anu_databases/compound.gdbm  one_sentence_per_line.txt_tmp > compound_phrase.txt
@@ -100,7 +101,6 @@
  cd $HOME_anu_test/bin
  while read line
  do
-
 
 	while read line1
 	do
@@ -147,7 +147,9 @@
   cp *.html *.js *.css $MYPATH1
 
 	#To add slashes before(',",(,) etc.. )  inside initialise function(used for google api)
+
 	cd $MYPATH1
 	perl $HOME_anu_test/Anu_src/change-html.pl < $1.html > $1-new.html
 	cp $1.html $1-old.html
 	cp $1-new.html $1.html
+

@@ -1,4 +1,5 @@
- #/bin/sh
+#/bin/sh
+
  source ~/.bashrc
 
  export LC_ALL=
@@ -45,7 +46,7 @@
 
   echo "Saving morph information"
   cd $HOME_anu_test/apertium/
- sed 's/\([^0-9]\)\.\([^0-9]*\)/\1 \.\2/g'  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | sed 's/?/ ?/g'| sed 's/\"/\" /g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp
+  sed 's/\([^0-9]\)\.\([^0-9]*\)/\1 \.\2/g'  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | sed 's/?/ ?/g'| sed 's/\"/\" /g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp
   apertium-destxt $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp  | lt-proc -a en.morf.bin | apertium-retxt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph
   perl morph.pl $MYPATH $1 < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph
 
@@ -60,9 +61,13 @@
  # cd $HOME_anu_test/LINK/link-grammar-4.5.7/link-grammar
  # ./link-parser $HOME_anu_test/LINK/link-grammar-4.5.7/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt 
   cd $HOME_anu_test/LINK/link-grammar-4.7.4/link-grammar
-./link-parser $HOME_anu_test/LINK/link-grammar-4.7.4/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt
+ ./link-parser $HOME_anu_test/LINK/link-grammar-4.7.4/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt
 
-
+  #running stanford NER (Named Entity Recogniser) on whole text.
+  echo "Finding NER... "
+  cd $HOME_anu_test/stanford-parser/stanford-ner-2008-05-07/
+  sh run-ner.sh $1
+ 
   cd $MYPATH/tmp/$1_tmp
   sed 's/&/\&amp;/g' one_sentence_per_line.txt|sed -e s/\'/\\\'/g |sed 's/\"/\&quot;/g' |sed  "s/^/(Eng_sen \"/" |sed -n '1h;2,$H;${g;s/\n/\")\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/$/\")\n;~~~~~~~~~~\n/g;p}' > one_sentence_per_line_tmp.txt
   $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line_tmp.txt dir_names.txt English_sentence.dat
@@ -72,6 +77,7 @@
   $HOME_anu_test/Anu_src/split_file.out link_numeric_word.txt dir_names.txt link_numeric_word_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out linkage_count.txt dir_names.txt linkage_count
   $HOME_anu_test/Anu_src/split_file.out chunk.txt dir_names.txt chunk.dat 
+  $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line.txt.ner dir_names.txt ner.dat
 
   echo 'matching compounds......'
   perl $HOME_anu_test/Anu_src/Compound-dict.pl $HOME_anu_test/Anu_databases/compound.gdbm  one_sentence_per_line.txt_tmp > compound_phrase.txt
