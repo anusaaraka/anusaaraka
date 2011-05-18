@@ -2346,6 +2346,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
           generate verb_chunk and tam (instead of "ids" we get "words" now)
         - Modified "not_rule" for "imper" sentences
         - Modified "rule_1-4" for "imper" sentences -- added not condition
+	- Modified causitive_verb_rule
         - Removed  "get_eng_word_list" and "substitute_root_vrbchnk_tam" rules
   7. Modified run_sd_lwg_rules.bat to remove assert statements (to generate words)
   8. sd_relation_rules.clp
@@ -2362,7 +2363,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  15. Modified run_stanford-parser.sh to use sd-original-info.lex and to generate sd-user-relations-cat.txt.
  16. Updated Anusaaraka.sh and Anusaaraka_stanford.sh to get 'sd-user-relations-cat.dat' file.
  17. Removed comments in run_sentence_stanford.sh
- 18. Updated ol_ver_output,ol_verified,sd_ver_output,sd_verified,link_ver_output,link_verified,verified_output and verified.
- 19. Updated following files:
-             ol_verified (567)  sd_verified (414)  verified (470) 
- 20. Updated Log
+ 18.  Created Anu_outputs dir and moved all output files into it
+ 19. Updated ol_ver_output,ol_verified,sd_ver_output,sd_verified,link_ver_output,link_verified,verified_output and verified.
+ 20. Updated following files:
+             ol_verified (567)  sd_verified (415)  verified (470) 
+ 21. Updated Log
