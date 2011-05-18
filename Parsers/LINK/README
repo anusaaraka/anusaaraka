@@ -1,0 +1,24 @@
+
+ -   The programs (api.c ,resources.c, print.c, link-parser.c and link-includes.h) are modified version of the original 
+     source code in link-grammar-4.5.7 of the link parser.
+
+ -   The code added for Anusaaraka system is kept between "#####"(comments) .
+
+ -   To execute this code CLIPS Source code is nessarary.
+
+ -   By default this program extracts information for the first linkage . 
+ 
+ -   To view the linkage diagram
+     Run the program issue the Unix command:
+     $ anu_link-parser.sh
+   
+     The program can run in batch mode for testing the system on a large
+     number of sentences.  The following command runs the parser on
+     a file.
+
+     $ anu_link-parser.sh  < <input_file>
+
+     - Shirisha Manju and Maha Laxmi
+       Date :: 26-08-08
+
+

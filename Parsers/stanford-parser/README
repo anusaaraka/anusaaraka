@@ -1,0 +1,30 @@
+     Command to run stanford parser
+     ------------------------------
+                      
+              Anusaaraka_stanford.sh  <file_name>     Ex :  Anusaaraka_stanford.sh verified
+
+      Note : Currently stanford parser is used in case if "No complete linkage Found" in Link-parser
+             (presently stanford to paninian relations mapping is under progress)
+      TODO : POS , pada formation ..etc extraction from stanford --- yet to be done.
+
+
+    Steps to update new Stanford version.
+    -------------------------------------
+
+	1.   Untar the new Stanford version  in $HOME_anu_test/stanford-parser/
+               Eg:   tar -xvzf stanford-parser-2010-08-20.tgz
+
+        2.   Copy the files listed below from the existing Stanford-parser directory to the new Stanford-parser version.
+                	compile.sh
+			comp.sh
+			run_stanford-parser.sh
+			run_stanford.sh
+			sd_category.py
+			stnford_relations.lex
+			stnford_word.lex
+
+       3.    Change the version of Stanford-parser in $HOME_anu_test/bin/ for Anusaaraka.sh ,  Anusaaraka_stanford.sh and
+             $HOME_anu_test/shell_scripts for anu_compile.sh
+
+       4.    run:    shell_scripts/remove_out-files.sh 
+                     shell_scripts/anu_compile.sh

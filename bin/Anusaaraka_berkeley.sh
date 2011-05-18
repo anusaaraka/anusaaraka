@@ -56,12 +56,18 @@
   ./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
   echo "Calling Berkeley parser" 
-  cd $HOME_anu_test/berkeley-parser/
+  cd $HOME_anu_test/Parsers/berkeley-parser/
   java -mx500m  -jar berkeleyParser.jar -gr eng_sm6.gr -tokenize -inputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt -outputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley
 
   echo "Calling Stanford parser"
-  cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
   ./run_berkeley-parser.sh $1 $MYPATH > /dev/null
+ 
+  #running stanford NER (Named Entity Recogniser) on whole text.
+  echo "Finding NER... "
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2008-05-07/
+  sh run-ner.sh $1
+
   
   cd $MYPATH/tmp/$1_tmp
   sed 's/&/\&amp;/g' one_sentence_per_line.txt|sed -e s/\'/\\\'/g |sed 's/\"/\&quot;/g' |sed  "s/^/(Eng_sen \"/" |sed -n '1h;2,$H;${g;s/\n/\")\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/$/\")\n;~~~~~~~~~~\n/g;p}' > one_sentence_per_line_tmp.txt
@@ -73,6 +79,7 @@
   $HOME_anu_test/Anu_src/split_file.out sd_word.txt dir_names.txt sd_word_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out sd_numeric_word.txt dir_names.txt sd_numeric_word_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out sd_category.txt dir_names.txt sd_category.dat
+  $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line.txt.ner dir_names.txt ner.dat
 
   echo 'matching compounds......'
   perl $HOME_anu_test/Anu_src/Compound-dict.pl $HOME_anu_test/Anu_databases/compound.gdbm  one_sentence_per_line.txt_tmp > compound_phrase.txt
@@ -84,7 +91,7 @@
  cd $HOME_anu_test/bin
  while read line
  do
-    echo "Hindi meaning using Stanford parser" $line
+    echo "Hindi meaning using Berkeley parser" $line
    timeout 180 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt

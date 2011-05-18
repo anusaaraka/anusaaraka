@@ -57,12 +57,17 @@
   ./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
   echo "Calling Link Parser"
-  cd $HOME_anu_test/LINK/link-grammar-4.5.7/link-grammar
-  ./link-parser $HOME_anu_test/LINK/link-grammar-4.5.7/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt
+  cd $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/link-grammar
+  ./link-parser $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt
  
   echo "Calling Stanford parser"
-  cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
   sh ./run_stanford-parser.sh $1 $MYPATH > /dev/null
+
+   #running stanford NER (Named Entity Recogniser) on whole text.
+  echo "Finding NER... "
+  cd $HOME_anu_test/stanford-parser/stanford-ner-2008-05-07/
+  sh run-ner.sh $1
  
   echo "Calling OPEN-LOGOS"
   cd $HOME_anu_test/Anu_src
@@ -78,11 +83,6 @@
  sh testolgs.sh >/dev/null
  cp apitest.input-EG-TR.diag $MYPATH/tmp/$1_tmp/one_sentence_per_line-diag.txt 
  
- 
-   #running stanford NER (Named Entity Recogniser) on whole text.
-  echo "Finding NER... "
-  cd $HOME_anu_test/stanford-parser/stanford-ner-2008-05-07/
-  sh run-ner.sh $1
  
  cd $MYPATH/tmp/$1_tmp
  sed 's/&/\&amp;/g' one_sentence_per_line.txt|sed -e s/\'/\\\'/g |sed 's/\"/\&quot;/g' |sed  "s/^/(Eng_sen \"/" |sed -n '1h;2,$H;${g;s/\n/\")\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/$/\")\n;~~~~~~~~~~\n/g;p}' > one_sentence_per_line_tmp.txt

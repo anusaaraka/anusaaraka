@@ -92,10 +92,10 @@
  mv myclips $HOME_anu_test/bin/.
 
  echo "Compiling Anusaraka Link Parser files"
- cd $HOME_anu_test/LINK/link-grammar-4.5.7/
+ cd $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/
  ./configure
  make
- cd $HOME_anu_test/LINK/link-grammar-4.7.4/
+ cd $HOME_anu_test/Parsers/LINK/link-grammar-4.7.4/
  ./configure
  make
 
@@ -112,7 +112,7 @@
  make
 
  echo "Compiling stanford parser files"
- cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/
+ cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
  sh compile.sh
 
  echo "Creating binary files"

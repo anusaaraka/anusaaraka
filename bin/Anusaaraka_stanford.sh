@@ -57,12 +57,12 @@
   ./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
   echo "Calling Stanford parser"
-  cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 
   #running stanford NER (Named Entity Recogniser) on whole text.
   echo "Finding NER... "
-  cd $HOME_anu_test/stanford-parser/stanford-ner-2008-05-07/
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2008-05-07/
   sh run-ner.sh $1
  
   cd $MYPATH/tmp/$1_tmp

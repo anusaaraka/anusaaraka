@@ -3,12 +3,12 @@ Saving word information
 Saving morph information
 Calling POS Tagger and Chunker (APERTIUM)
 Calling Link Parser
-Calling Stanford parser
 Finding NER... 
 matching compounds......
-Hindi meaning using Stanford parser 1.1
-Test. 
-parIkRA.
+Hindi meaning using Link parser 1.1
+(Found maximum of 2 linkages )
+These are few sentences for Link Parser. 
+ye Link Parser ke liye kuCa vAkya hEM.
 
 Hindi meaning using Link parser 2.1
 (Found maximum of 1 linkages )
