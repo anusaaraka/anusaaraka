@@ -49,10 +49,8 @@
  (rel_name-sids aux|auxpass ?head ?id3)
  (test (and (<  (string_to_integer ?id1) (string_to_integer ?id2)) (< (string_to_integer ?id2) (string_to_integer ?id3))))
  (not (grouped_head ?head))
- (parserid-word ?kri ?w)
- (parserid-word ?id2 ?w1)
- (parserid-word ?id3 ?w2)
- (parserid-word ?head ?w3)
+ (parserid-word ?kri ?w)  (parserid-word ?id2 ?w1)
+ (parserid-word ?id3 ?w2) (parserid-word ?head ?w3)
  (parser_id-root-category-suffix-number ?head ?root ? ?suf ?)
   =>
         (bind ?chunk (str-cat (lowcase ?w)"_"?w1"_"?w2"_"?w3))
@@ -173,7 +171,7 @@
  (not (rel_name-sids conj_or ? ?id));He may drink milk or eat apples. (22-01-11)
  (not (rel_name-sids conj_and ? ?id))
  (rel_name-sids ?prepc ? ?id)
- (test (neq (sub-string 1 6 (implode$ (create$ ?prepc))) "prepc_")) ;He made a mistake in inviting John.
+ (test (neq (sub-string 1 6 ?prepc) "prepc_")) ;He made a mistake in inviting John.
  (not (grouped_head ?id))
  (parserid-word ?id ?w1)
  =>
@@ -263,8 +261,8 @@
  	(retract ?f ?f1)
  	(assert(verb_type-verb-causative_verb-tam causative ?head ?cau_vrb ?tam))
  	(bind ?chunk (string-to-field (str-cat ?vb_chunk"_"?verb_chunk)))
-	(bind ?root (string-to-field (str-cat ?rt"_"?verb_chunk)))
- 	(assert(root-verbchunk-tam-parser_chunkids ?rt ?chunk  ?tam $?ids1 ?head ?cau_vrb))
+	(bind ?root (string-to-field (str-cat ?root"_"?verb_chunk)))
+ 	(assert(root-verbchunk-tam-parser_chunkids ?root ?chunk  ?tam $?ids1 ?head ?cau_vrb))
 	(assert (causative_head ?cau_vrb))
  	(printout ?*lwg_debug_file* "(rule_name-grouped_ids   causitive_verb_rule " $?ids1 ?head ?cau_vrb ")" crlf)
  )

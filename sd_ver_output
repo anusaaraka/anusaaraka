@@ -1667,4 +1667,8 @@ Hindi meaning using Stanford parser 4.14
 She is making the girl feed the child. 
 vaha ladakI se bacce ko KAnA_KilavA rahI hE.
 
+Hindi meaning using Stanford parser 4.15
+She made the girl feed the child. 
+usane ladakI se bacce ko KAnA KilavAyA.
+
 Calling Interface related programs
