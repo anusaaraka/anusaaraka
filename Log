@@ -2366,7 +2366,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  18. Created Anu_outputs dir and moved all output files into it
  19. Created Parsers dir and moved all parsers into it (link,stanford and berkeley)
  20. Moved categories.txt from anu_testing to Anu_data
- 21. Modified Anusaaraka.sh, Anusaaraka_all.sh, Anusaaraka_berkeley.sh, Anusaaraka_link.sh and Anusaaraka_stanford.sh
+ 21. Modified Anusaaraka.sh, Anusaaraka_all.sh, Anusaaraka_berkeley.sh, Anusaaraka_link.sh, Anusaaraka_stanford.sh and
+     stanford_pos.sh accordingly to set the new path accordingly.
  22. Modified anu_compile.sh and remove_out-files.sh (to change the path)
  23. Added ber_verified and ber_ver_output ( 373 )
  24. Updated ol_ver_output,ol_verified,sd_ver_output,sd_verified,link_ver_output,link_verified,verified_output and verified.

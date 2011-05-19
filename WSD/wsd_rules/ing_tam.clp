@@ -13,7 +13,7 @@
 )
 
 
-
+;Modified by Meena(18.5.11) so that it does not affect the sentences like :The girl running to the shop is my friend. 
 ;Added by Meena(12.5.11)
 ;I have been running about all morning trying to find you.
 ;I saw him telling her about the party 
@@ -22,7 +22,8 @@
 (declare (salience 4900))
 (id-TAM ?id ing)
 ?mng <-(meaning_to_be_decided ?id)
-(or(kriyA-kqxanwa_kriyA_viSeRaNa ? ?id )(viSeRya-kqxanwa_viSeRaNa  ?  ?id ))
+(or(kriyA-kqxanwa_kriyA_viSeRaNa ?id1 ?id )(viSeRya-kqxanwa_viSeRaNa  ?id1  ?id ))
+(not(id-root ?id1 girl|boy|man|woman|baby|child))
 =>
 (retract ?mng)
 (assert (id-E_tam-H_tam_mng ?id ing we_hue))
@@ -202,8 +203,8 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  ing_tam.clp  	ing_tam13  "  ?id "  wA_huA )" crlf))
 )
-
 ;I saw him dancing under a tree?
+
 (defrule ing_tam14
 (declare (salience 3600))
 (id-TAM ?id ing)
@@ -216,8 +217,9 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  ing_tam.clp  	ing_tam14  "  ?id "  yA_huA )" crlf))
 )
-
 ;Who is the boy sitting under a tree?
+
+
 (defrule ing_tam15
 (declare (salience 3500))
 (id-TAM ?id ing)
@@ -229,8 +231,9 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  ing_tam.clp  	ing_tam15  "  ?id "  wA_huA )" crlf))
 )
-
 ;Who is the boy dancing under a tree?
+
+
 (defrule ing_tam16
 (declare (salience 3400))
 (id-TAM ?id ing)
