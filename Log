@@ -2374,3 +2374,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  25. Updated following files:
              ol_verified (567)  sd_verified (415)  verified (470) 
  26. Updated Log
+
+ 25-05-11
+ ========
+ 1. Modified  WSD : to.clp
+ 2. Modified Anusaaraka_berkeley.sh 
+ 3. Modified ber_verified and Stanford_parser_fails
+ 4. Updated changes_in_databases
+ 5. Updated Log
+

@@ -22655,7 +22655,7 @@ townspeople	nagaravAsI
 toxic	viRElA
 toxicity	viRAkwawA
 toxicology	viRa_vixyA
-toxin	jIva-viRa
+toxin	viRElA-wawva
 tracer	camakaxAra_golI
 tracery	paWWara_kI_nakkASI
 trachea	SvAsanalI
@@ -55259,7 +55259,7 @@ industrializations	uxyogIkaraNa
 industrialized	OxyogIkaraNa_karanA
 industrializes	OxyogIkaraNa_karanA
 industrializing	OxyogIkaraNa_karanA
-industrials	Oxyogika_prawiBUwiyAM
+industrials	Seyara
 industries'	pariSrama
 industries	pariSrama
 industriouser	pariSramI
@@ -87529,7 +87529,7 @@ toxicologies	viRa_vixyA
 toxicology's	viRa_vixyA
 toxin's	jIva-viRa
 toxins'	jIva-viRa
-toxins	jIva-viRa
+toxins	viREle-wawva
 toy's	manoraMjana_ke_lie
 toys'	manoraMjana_ke_lie
 toys	manoraMjana_ke_lie

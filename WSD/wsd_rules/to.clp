@@ -837,7 +837,7 @@
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
 (not(id-root 1 it))
-(not(id-root =(+ ?id 1) reach))
+(not(id-root =(+ ?id 1) reach|resign));resign Added by Roja.(19-05-11)I thought it is right to resign. 
 (id-cat_coarse =(- ?id 1) adjective)
 (to-infinitive  ?id ?rid)
 (or(kriyA-kqxanwa_viSeRaNa  ?kri ?rid)(kriyA-kriyArWa_kriyA  ?kri ?rid))  ;Added by Meena(6.4.11)

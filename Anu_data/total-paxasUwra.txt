@@ -50925,7 +50925,7 @@ industrializes	OxyogIkaraNa~karanA~{@s}
 industrializing	OxyogIkaraNa~karanA~{@ing}
 industrially	Oxyogika~rUpa~se
 industrial	Oxyogika[-]
-industrials	Oxyogika~prawiBUwiyAM
+industrials	Seyara{Oxyogika_kampaniyoM_ke}
 industrial	uxyoga~saMbanXI[-]
 industries	uxyoga^uxyama{@s}
 industries'	uxyoga^uxyama{@s}{@vib:kA}
