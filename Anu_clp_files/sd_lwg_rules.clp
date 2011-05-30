@@ -82,6 +82,26 @@
 	(printout ?*lwg_debug_file* "(rule_name-grouped_ids  rule_3  "?id2"  " ?id3" " ?head ")" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------------
+ ;A fat boy had to eat fruits. 
+ ;Added by Shirisha Manju (26-05-11) Suggested by Sukhada
+ (defrule rule_3_1
+ (declare (salience 2000))
+ (rel_name-sids nsubj|nsubjpass ?head ?id1)
+ (rel_name-sids xcomp ?head ?id2)
+ (rel_name-sids aux|auxpass ?id2 ?id3)
+ (not (grouped_head ?head))
+ (parserid-word ?id2 ?w)
+ (parserid-word ?id3 ?w1)
+ (parserid-word ?head had)
+ (parser_id-root-category-suffix-number ?id2 ?root ? ?suf ?)
+  =>
+        (bind ?chunk (string-to-field (str-cat "had_"?w1"_"?w)))
+        (bind ?tam   (string-to-field (str-cat "had_"?w1"_"?suf)))
+        (assert (root-verbchunk-tam-parser_chunkids  ?root  ?chunk ?tam  ?head ?id3 ?id2))
+        (assert (grouped_head ?head))
+        (printout ?*lwg_debug_file* "(rule_name-grouped_ids  rule_3  "?head"  " ?id3" " ?id2 ")" crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------------- 
  (defrule rule_2
  (declare (salience 1000))
  (rel_name-sids nsubj|nsubjpass ?head ?id1)

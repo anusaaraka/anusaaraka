@@ -5,6 +5,7 @@
  (defglobal ?*nid_wrd_fp* =  l_n_w_fp)
  (defglobal ?*l_wrd_fp* =  l_fp )
  (defglobal ?*l_rel_fp* = l_r_fp )
+ (defglobal ?*l_cat_fp* = l_c_fp)
  ;-------------------------------------------------------------------------------------------------------------------
  ; Please do accept the same; bless the Anusaaraka project to make speedy progress.
  (defrule handling_punctuations
@@ -44,6 +45,7 @@
  (defrule word_rule_for_poss
  (declare (salience 100))
  (rel_name-sids poss ?lnode ?rnode)
+ ?f1<-(id-sd_cat ?rnode ?c)
  ?f2<-(parserid-word ?rnode ?wrd)
  ?f3<-(parser_numeric_id-word ?rid ?wrd1)
  (test (= (string_to_integer ?rnode) ?rid))
@@ -52,6 +54,7 @@
 	(retract ?f2 ?f3 ?f4)
         (printout ?*nid_wrd_fp*  "(parser_numid-word-remark  " ?rid "  "?wrd1 ?word "  " ?word")" crlf)
         (printout ?*l_wrd_fp* "(parserid-word  "?rnode ?word" "?wrd1 ?word ")" crlf)
+        (printout ?*l_cat_fp* "(id-sd_cat  "?rnode ?word" "?c ")" crlf)
 	(bind ?wrd1 (str-cat ?rnode ?word))
         (bind ?lnd (explode$ ?wrd1))
         (assert (id-Modified_id ?rnode ?lnd))
@@ -76,17 +79,17 @@
         (assert (id-Modified_id ?lnode ?lnd))
  )
  ;-------------------------------------------------------------------------------------------------------------------
-
  (defrule word_rule
  (declare (salience 50))
  (parserid-word  ?pid ?word)
+ ?f1<-(id-sd_cat ?pid ?cat)
  ?f0<-(parser_numeric_id-word ?id ?word)
  (test (eq (string_to_integer ?pid) ?id));Added by Roja(17-03-11) Without this condition we get repeated parserid-word facts.
  ;Ex: As the 1970's arrived, the country was emerging from the Kennedy and Martin Luther King assassinations and from the nightmare of Viet Nam and a decade of "everything goes" and if "it feels good, do it, culture. 
  =>
         (printout ?*nid_wrd_fp* "(parser_numid-word-remark  " ?id "  "?word "  -)" crlf)
         (printout ?*l_wrd_fp* "(parserid-word  "?pid "  "?word ")" crlf)
-
+	(printout ?*l_cat_fp* "(id-sd_cat  "?pid "  "?cat ")" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
  ;The parents documented every step of their child's development .
@@ -133,5 +136,6 @@
         (close ?*nid_wrd_fp*)
 	(close ?*l_wrd_fp*)
 	(close  ?*l_rel_fp*)
+	(close ?*l_cat_fp*)
  )
  ;-------------------------------------------------------------------------------------------------------------------

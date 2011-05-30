@@ -1671,4 +1671,12 @@ Hindi meaning using Stanford parser 4.15
 She made the girl feed the child. 
 usane ladakI se bacce ko KAnA KilavAyA.
 
+Hindi meaning using Stanford parser 4.16
+A fat boy had to eat fruits. 
+eka mote ladake ko Pala KAne pade.
+
+Hindi meaning using Stanford parser 4.17
+A fat boy had to do various exercises. 
+eka mote ladake ko viBinna vyAyAma karane pade.
+
 Calling Interface related programs

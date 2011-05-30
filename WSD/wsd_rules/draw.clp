@@ -53,6 +53,44 @@
 
 ;He drew on his gloves.
 ;usane apane xaswAne(hAWoM se) KIMca lie
+
+
+
+;Added by Meena(21.5.11)
+;It also helps draw out toxins and excess oils.
+(defrule draw03
+(declare (salience 4800))
+(id-root ?id draw)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 out)
+(kriyA-upasarga ?id ?id1)
+(kriyA-object ?id ?id2)
+(or(kriyA-kqxanwa_karma  ?kri ?id)(kriyA-vAkyakarma  ?kri ?id))
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 KIMca_nikAla))
+(assert (make_verbal_noun ?id))
+(assert (kriyA_id-object_viBakwi ?kri  meM))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " draw.clp  draw03  "  ?id "  " ?id1 "  KIMca_nikAla  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  draw.clp      draw03   "  ?kri " meM )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  draw.clp         draw03   "  ?id " )" crlf)
+)
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 (defrule draw3
 (declare (salience 4700))
 (id-root ?id draw)

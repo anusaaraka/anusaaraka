@@ -2377,9 +2377,17 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 
  25-05-11
  ========
- 1. Modified  WSD : to.clp
- 2. Modified Anusaaraka_berkeley.sh 
- 3. Modified ber_verified and Stanford_parser_fails
- 4. Updated changes_in_databases
- 5. Updated Log
+ 1.  WSD
+        Added    : systemic.clp  and performance.clp
+        Modified : draw.clp   to.clp  fat.clp
+ 2. Added "rule_3_1" rule in sd_lwg_rules.clp
+ 3. Modified  word_rule_for_poss and word_rule -- to get category information in sd_combining_apostrophe.clp
+ 4. Modified run_modules_std.bat
+        -- Loaded sd_category.dat file in sd_combining_apostrophe.clp
+        -- Loaded sd_category_tmp.dat instead sd_category.dat in sd_category.clp
+ 5. Modified Anusaaraka_berkeley.sh 
+ 6. Modified ber_verified, sd_ver_output, verified_output and Stanford_parser_fails
+ 7. Updated changes_in_databases
+ 8. Updated sd_verified (417)
+ 9. Updated Log
 

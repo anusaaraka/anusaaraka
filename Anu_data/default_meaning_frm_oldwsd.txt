@@ -23704,7 +23704,7 @@ variation	viviXawA
 variegate	raMgabiraMgA
 varietal	prakArIya
 variety	viviXawA
-various	Binna
+various	viBinna
 variously	Binna_Binna_prakAra_se
 varsity	yUnivarsitI
 vascular	saMvahanI
