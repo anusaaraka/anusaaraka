@@ -1,0 +1,24 @@
+
+   Debugging ::
+   =========
+
+   Anusaaraka provides a debugging tool to find and reduce the bugs in the translation.
+
+   For debugging:
+   $ cd $HOME_anu_test/debugging/sentence_debug
+   $ sentence_debug.sh <file_name> <sentence_number>   Ex:$ sentence_debug.sh  mytest  2.1
+                                                         (Ex: for 1st sentence of 2nd paragraph of the input file "mytest")
+
+  (NOTE : For debugging, basic knowledge of CLIPS is required.)
+  
+
+  NOTE: If you think that it is necessary to make changes/add something in the data files, then follow the following steps.
+        step 1 : Go to the respective data file 
+                 $HOME_anu_test/debugging/provisional_Anu_databases/<file_name>
+        step 2 : Make changes/add  according to the pattern in the file.
+        step 3 : compile the file using the following command:
+                 sh $HOME_anu_test/debugging/provisional_Anu_databases/compile.sh 
+        step 4 : Run the sentence after compiling. And, if the changes made are effective then mail the changes
+                 to anusaaraka team.
+        step 5 : Reset (ITS IMPORTANT TO RESET)
+                 $sh $HOME_anu_test/debugging/provisional_Anu_databases/reset.sh
