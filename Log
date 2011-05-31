@@ -2375,19 +2375,34 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
              ol_verified (567)  sd_verified (415)  verified (470) 
  26. Updated Log
 
- 25-05-11
+ 31-05-11
  ========
  1.  WSD
         Added    : systemic.clp  and performance.clp
-        Modified : draw.clp   to.clp  fat.clp
+        Modified : draw.clp   to.clp  fat.clp   the.clp
  2. Added "rule_3_1" rule in sd_lwg_rules.clp
  3. Modified  word_rule_for_poss and word_rule -- to get category information in sd_combining_apostrophe.clp
  4. Modified run_modules_std.bat
         -- Loaded sd_category.dat file in sd_combining_apostrophe.clp
         -- Loaded sd_category_tmp.dat instead sd_category.dat in sd_category.clp
+	-- used H_ordering_rules.clp instead hindi_position.clp
+	-- Loaded "parser_type.dat" file in hindi_sent_reorder.clp
  5. Modified Anusaaraka_berkeley.sh 
  6. Modified ber_verified, sd_ver_output, verified_output and Stanford_parser_fails
- 7. Updated changes_in_databases
- 8. Updated sd_verified (417)
- 9. Updated Log
+ 7. Added run_lexicalize.sh to get lexicalized output
+ 8. Added constituency_parse.l and constituency_parse.y files in Anu_src to get constituents information
+ 9. Added compile_bison.sh file to compile bison program
+ 10. Added add_pattern.lex to split lexicalized output
+ 11. Added H_ordering_rules.clp file to generate hindi order using constituents
+ 12. Modified compile.sh and anu_compile.sh to generate out files for lex files
+ 13. Modified run_sentence_stanford.sh, run_berkeley-parser.sh ,Anusaaraka.sh ,Anusaaraka_berkeley.sh and 
+     Anusaaraka_stanford.sh to run constituents
+ 14. hindi_sent_reorder.clp
+         Modified : default_rule -- added not condition
+         Added    : rm_prep_id -- to remove prep id from order for stanford parser
+ 15. Loaded "parser_type.dat" file for hindi_sent_reorder module in run_modules_link.bat and run_modules_ol.bat
+ 16. Modified sd_ver_output and ber_ver_output
+ 17. Updated changes_in_databases
+ 18. Updated sd_verified (417)
+ 19. Updated Log
 

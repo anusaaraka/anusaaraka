@@ -220,6 +220,7 @@ prAXyApaka ne puswaka liKane ke liye niScaya kiyA.
 
 Hindi meaning using Berkeley parser 2.53
 The instructor persuaded Mary to take that course. 
+upaxeSaka ne Mary ko vaha pATyakrama lene ke liye rAjI kiyA.
 upaxeSaka ne vaha pATyakrama lene ke liye Mary ko rAjI kiyA.
 
 Hindi meaning using Berkeley parser 2.54
@@ -492,10 +493,12 @@ yaha mahawvapUrNa_nahIM howA hE Ted kyA karawA hE.
 
 Hindi meaning using Berkeley parser 2.121
 Are a dog and a cat here? 
+kyA yahAz kuwwA Ora billI hEM?
 kyA kuwwA Ora billI yahAz hEM?
 
 Hindi meaning using Berkeley parser 2.122
 There is a dog and a cat here. 
+yahAz kuwwA Ora billI hEM.
 kuwwA Ora billI yahAz hEM.
 
 Hindi meaning using Berkeley parser 2.123
@@ -552,6 +555,7 @@ mEM usakI umra kA anxAja_lagA sakawA hUz.
 
 Hindi meaning using Berkeley parser 2.136
 She asked me to guess her age. 
+usane muJe/muJako usakI umra kA anxAja lagAne ke liye pUCA.
 usane usakI umra kA anxAja lagAne ke liye muJe/muJako pUCA.
 
 Hindi meaning using Berkeley parser 2.137
@@ -624,6 +628,7 @@ Sita jalapAna ke liye breda sezka rahI hE.
 
 Hindi meaning using Berkeley parser 2.154
 Last week I saw a great movie. 
+piCale sapwAha mEMne eka baDiyA calaciwra xeKA.
 mEMne piCale sapwAha eka baDiyA calaciwra xeKA.
 
 Hindi meaning using Berkeley parser 2.155
@@ -656,6 +661,7 @@ mEMne nahIM socA WA ki vaha yaha karegA paranwu usane kiyA.
 
 Hindi meaning using Berkeley parser 2.162
 By going there you can earn more money. 
+vahAz para jAne ke xvArA Apa aXika pEsA kamA sakawe hEM.
 Apa vahAz para jAne ke xvArA aXika pEsA kamA sakawe hEM.
 
 Hindi meaning using Berkeley parser 2.163

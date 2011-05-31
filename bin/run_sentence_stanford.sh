@@ -10,7 +10,11 @@
  echo "(defglobal ?*path* = $HOME_anu_test)" > global_path.clp
  echo "(defglobal ?*provisional_wsd_path* = $HOME_anu_provisional_wsd_rules)" >> global_path.clp
  echo "(Parser_used Stanford-Parser)" >> parser_type.dat
+ 
+ cd $HOME_anu_test/Anu_src/
+ ./constituency_parse $MYPATH/$1_tmp/$2/E_constituents_info.dat  $MYPATH/$1_tmp/$2/Node_category.dat < $MYPATH/$1_tmp/$2/sd-lexicalize_info.dat
 
+ cd $MYPATH/$1_tmp/$2
  myclips -f $HOME_anu_test/Anu_clp_files/run_modules_std.bat >  $1.error
  
  cd $HOME_anu_test/Anu_src/

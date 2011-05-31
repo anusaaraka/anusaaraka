@@ -180,7 +180,7 @@
 (declare (salience 4999))
 (id-root ?id the)
 (viSeRya-det_viSeRaNa  ?vi ?id)
-(or (kriyA-object ?kriyA ?vi)(kriyA-subject  ?kriyA ?vi)(kriyA-object_2  ?kriyA ?vi));fact "kriyA-object_2" is added by sheetal
+(or (kriyA-aXikaraNavAcI_avyaya ?kriyA ?id1)(kriyA-object ?kriyA ?vi)(kriyA-subject  ?kriyA ?vi)(kriyA-object_2  ?kriyA ?vi));fact "kriyA-object_2" is added by sheetal
 ;(or(muKya_vAkya-sApekRa_upavAkya  ?kriyA ?)                          ;(or(muKya_vAkya-sApekRa_upavAkya ...)(and(....    )added by Meena
 ;  (and(id-word  =(+ ?vi 1) with)(id-word =(+ ?id 2) whom)))
 (or (viSeRya-jo_samAnAXikaraNa  ?vi  ?id1)(and(id-word  =(+ ?vi 1) with)(id-word =(+ ?id 3) whom)))

@@ -77,6 +77,7 @@
  gcc -o chunker.out  chunker.c 
  ./comp.sh aper_chunker 
  ./comp.sh rm_tags
+ ./compile_bison.sh
 
  echo "Compiling Anu stdenglish source files"
  cd $HOME_anu_test/Anu/stdenglish

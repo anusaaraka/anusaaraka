@@ -356,6 +356,7 @@
   (test (and (neq ?id ?prep_id1)(neq ?id ?prep_id2)))
   (test (and (member$ ?h_id1 $?ids)(member$ ?h_id2 $?ids)))
   (test (and (neq ?gtype English_PP)(neq ?gtype1 English_PP)(neq ?gtype2 English_PP)))
+  (not (Parser_used Stanford-Parser)) ;Added by Manju(31-05-11) restricted for stanford parser
   =>
   (retract ?f2 ?f4)
   (bind ?pos (member$ (nth$ 1 $?grp_ids1) $?ids))
@@ -364,6 +365,16 @@
   )
   (assert (hindi_id_order $?ids))
   (printout ?*DBUG* "(Rule_Name-ids default_rule (hindi_id_order " (implode$ $?ids)"))" crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------
+ (defrule rm_prep_id
+ ?f<-(pada_info (preposition ?pid))
+ ?f1<-(hindi_id_order  $?ids ?pid $?ids1)
+ (Parser_used Stanford-Parser)
+ =>
+        (retract ?f ?f1)
+        (assert (hindi_id_order   $?ids $?ids1))
+        (printout ?*DBUG* "(Rule_Name-ids  rm_prep_id  (hindi_id_order " (implode$ $?ids)" "(implode$ $?ids1)"))" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
  (defrule hi_order

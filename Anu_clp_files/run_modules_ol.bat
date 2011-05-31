@@ -363,6 +363,7 @@
  (load-facts "GNP_agmt_info.dat")
  (load-facts "hindi_id_order.dat")
  (load-facts "lwg_info.dat")
+(load-facts "parser_type.dat")
  (open "hindi_id_reorder_debug.dat" h_id_reorder_fp "a")
  (run)
  (save-facts "hindi_id_reorder.dat" local hindi_id_order)
