@@ -367,14 +367,19 @@
   (printout ?*DBUG* "(Rule_Name-ids default_rule (hindi_id_order " (implode$ $?ids)"))" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (29-05-11)
+ ;The people of Orissa are facing grave adversities due to the cyclone.
  (defrule rm_prep_id
- ?f<-(pada_info (preposition ?pid))
+ ?f<-(pada_info (preposition $?prep_ids))
  ?f1<-(hindi_id_order  $?ids ?pid $?ids1)
  (Parser_used Stanford-Parser)
+ (test (member$ ?pid $?prep_ids))
+ (not (pre_id_deleted ?pid))
  =>
-        (retract ?f ?f1)
+        (retract ?f1)
         (assert (hindi_id_order   $?ids $?ids1))
         (printout ?*DBUG* "(Rule_Name-ids  rm_prep_id  (hindi_id_order " (implode$ $?ids)" "(implode$ $?ids1)"))" crlf)
+	(assert (pre_id_deleted ?pid))
  )
  ;------------------------------------------------------------------------------------------------------------------
  (defrule hi_order
