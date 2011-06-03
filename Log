@@ -2415,4 +2415,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Modified all the rules to add debug stmt
  3. Modified run_modules_std.bat to open hin_order_debug.dat in H_ordering_rules module
  4. Modified sd_ver_output and ber_ver_output
- 5. Updated Log
+ 5. WSD : 
+        Modified : about.clp   at.clp   close.clp  for.clp    found.clp  ing_tam.clp  interview.clp  more.clp
+                   nettle.clp  old.clp  past.clp   patch.clp  post.clp   share.clp    trade.clp      within.clp
+ 6. Updated changes_in_databases
+ 7. Updated following files:
+         sd_verified (424)    verified (473)    ber_verified ( 376 )
+ 8. Updated Log
+

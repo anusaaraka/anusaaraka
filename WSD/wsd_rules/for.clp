@@ -1,3 +1,25 @@
+
+
+
+
+;Added by Meena(22.5.11)
+;In fact she had been feeling tired and queasy for the past three days.
+(defrule for00
+(declare (salience 5000))
+(id-root ?id for)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-for_saMbanXI  ?viSeR  ?id1)
+(id-root ?id1 day|hour|month|week|minute|year|decade|century)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id se))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp       for00   "  ?id "  se )" crlf))
+)
+
+
+
+
 ;You can substitute oil for butter in this recipe. 
 ;Added by Sukhada.
 (defrule substitute_for
@@ -51,7 +73,7 @@
 )
 
 
-
+;;Added "months" in the list(Meena 2.5.11)
 ;Modified by meena(25.9.09), added (kriyA-for_saMbanXI  ?id1 ?id2)and changed (id-word =(+ ?id 1) long|hours...) accordingly
 ;I lived there for two years . 
 ;I wondered for a long time why everyone liked her so much . 
@@ -60,7 +82,7 @@
 (id-root ?id for)
 ?mng <-(meaning_to_be_decided ?id)
 ;(id-word =(+ ?id 1) long|hours|weeks|years) ;modified by Dipti-27-07-09 ;dropped 'a' from the list
-(id-word ?id2  long|hours|weeks|years|time) ;Added "time" in the list(Meena 8.02.10)
+(id-word ?id2  long|hours|weeks|years|time|months) ;Added "time" in the list(Meena 8.02.10);added "months" in the list(Meena
 (kriyA-for_saMbanXI  ?id1 ?id2)
 =>
 (retract ?mng)

@@ -96,9 +96,8 @@
 )
 
 ;The petals of some flowers close up while touching them.
-;kuCa PUloM kI pawwiyAz CUne se ikatTI ho jAwI hEM
 (defrule close6
-(declare (salience 4400))
+(declare (salience 4300))
 (id-root ?id close)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 around)
@@ -111,35 +110,8 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close6  "  ?id "  " ?id1 "  AliMgana_kara  )" crlf))
 )
 
+
 (defrule close7
-(declare (salience 4300))
-(id-root ?id close)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 around)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 AliMgana_kara))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close7  "  ?id "  " ?id1 "  AliMgana_kara  )" crlf))
-)
-
-(defrule close8
-(declare (salience 4200))
-(id-root ?id close)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 down)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 samApwa_kara))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close8  "  ?id "  " ?id1 "  samApwa_kara  )" crlf))
-)
-
-(defrule close9
 (declare (salience 4100))
 (id-root ?id close)
 ?mng <-(meaning_to_be_decided ?id)
@@ -150,24 +122,11 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 samApwa_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close9  "  ?id "  " ?id1 "  samApwa_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close7  "  ?id "  " ?id1 "  samApwa_kara  )" crlf))
 )
 
-(defrule close10
-(declare (salience 4000))
-(id-root ?id close)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 in)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 CotA_ho))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close10  "  ?id "  " ?id1 "  CotA_ho  )" crlf))
-)
 
-(defrule close11
+(defrule close8
 (declare (salience 3900))
 (id-root ?id close)
 ?mng <-(meaning_to_be_decided ?id)
@@ -178,24 +137,11 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 CotA_ho))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close11  "  ?id "  " ?id1 "  CotA_ho  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close8  "  ?id "  " ?id1 "  CotA_ho  )" crlf))
 )
 
-(defrule close12
-(declare (salience 3800))
-(id-root ?id close)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 over)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 AliMgana_kara))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close12  "  ?id "  " ?id1 "  AliMgana_kara  )" crlf))
-)
 
-(defrule close13
+(defrule close9
 (declare (salience 3700))
 (id-root ?id close)
 ?mng <-(meaning_to_be_decided ?id)
@@ -206,10 +152,12 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 AliMgana_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close13  "  ?id "  " ?id1 "  AliMgana_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close9  "  ?id "  " ?id1 "  AliMgana_kara  )" crlf))
 )
 
-(defrule close14
+
+
+(defrule close10
 (declare (salience 3600))
 (id-root ?id close)
 ?mng <-(meaning_to_be_decided ?id)
@@ -220,24 +168,11 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 AliMgana_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close14  "  ?id "  " ?id1 "  AliMgana_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close10  "  ?id "  " ?id1 "  AliMgana_kara  )" crlf))
 )
 
-(defrule close15
-(declare (salience 3500))
-(id-root ?id close)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 round)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 AliMgana_kara))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close15  "  ?id "  " ?id1 "  AliMgana_kara  )" crlf))
-)
 
-(defrule close16
+(defrule close11
 (declare (salience 3400))
 (id-root ?id close)
 ?mng <-(meaning_to_be_decided ?id)
@@ -248,24 +183,11 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 banxa_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close16  "  ?id "  " ?id1 "  banxa_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close11  "  ?id "  " ?id1 "  banxa_kara  )" crlf))
 )
 
-(defrule close17
-(declare (salience 3300))
-(id-root ?id close)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 up)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 banxa_kara))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close17  "  ?id "  " ?id1 "  banxa_kara  )" crlf))
-)
 
-(defrule close18
+(defrule close12
 (declare (salience 3200))
 (id-root ?id close)
 ?mng <-(meaning_to_be_decided ?id)
@@ -276,24 +198,11 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 Amane_sAmane_ho))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close18  "  ?id "  " ?id1 "  Amane_sAmane_ho  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close12  "  ?id "  " ?id1 "  Amane_sAmane_ho  )" crlf))
 )
 
-(defrule close19
-(declare (salience 3100))
-(id-root ?id close)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 with)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 Amane_sAmane_ho))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close19  "  ?id "  " ?id1 "  Amane_sAmane_ho  )" crlf))
-)
 
-(defrule close20
+(defrule close13
 (declare (salience 3000))
 (id-root ?id close)
 ?mng <-(meaning_to_be_decided ?id)
@@ -303,10 +212,10 @@
 (retract ?mng)
 (assert (id-wsd_word_mng ?id banXa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  close.clp  	close20   "  ?id "  banXa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  close.clp  	close13   "  ?id "  banXa )" crlf))
 )
 
-(defrule close21
+(defrule close14
 (declare (salience 2900))
 (id-root ?id close)
 ?mng <-(meaning_to_be_decided ?id)
@@ -315,10 +224,12 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id nikata))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  close.clp 	close21   "  ?id "  nikata )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  close.clp 	close14   "  ?id "  nikata )" crlf))
 )
 
-(defrule close22
+
+
+(defrule close15
 (declare (salience 2800))
 (id-root ?id close)
 ?mng <-(meaning_to_be_decided ?id)
@@ -327,11 +238,33 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id pAsa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  close.clp 	close22   "  ?id "  pAsa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  close.clp 	close15   "  ?id "  pAsa )" crlf))
 )
 
-(defrule close23
+
+
+
+
+;Added by Meena(20.5.11)
+;The Dow Jones industrials closed at 2569.26. 
+(defrule close16
 (declare (salience 2700))
+(id-root ?id close)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject ?id ?subj)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id baMxa_ho))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  close.clp     close16   "  ?id "  baMxa_ho )" crlf))
+)               
+
+
+
+;Salience reduced by Meena(20.5.11)
+(defrule close17
+(declare (salience 0))
+;(declare (salience 2700))
 (id-root ?id close)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -339,10 +272,10 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id baMxa_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  close.clp 	close23   "  ?id "  baMxa_kara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  close.clp 	close17   "  ?id "  baMxa_kara )" crlf))
 )
 
-(defrule close24
+(defrule close18
 (declare (salience 2600))
 (id-root ?id close)
 ?mng <-(meaning_to_be_decided ?id)
@@ -353,10 +286,10 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 banxa_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close24  "  ?id "  " ?id1 "  banxa_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close18  "  ?id "  " ?id1 "  banxa_kara  )" crlf))
 )
 
-(defrule close25
+(defrule close19
 (declare (salience 2500))
 (id-root ?id close)
 ?mng <-(meaning_to_be_decided ?id)
@@ -367,20 +300,9 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 banxa_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close25  "  ?id "  " ?id1 "  banxa_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close19  "  ?id "  " ?id1 "  banxa_kara  )" crlf))
 )
 
-(defrule close26
-(declare (salience 2400))
-(id-root ?id close)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id banxa_kara))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  close.clp 	close26   "  ?id "  banxa_kara )" crlf))
-)
 
 ;default_sense && category=noun	samApwi	0
 ;"close","N","1.samApwi"

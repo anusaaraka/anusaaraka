@@ -1,5 +1,5 @@
 
-
+;Modified by Meena(31.5.11);added she,he,I,.... in the list,Ex.She was just 3 weeks old. 
 ;Added by Meena(18.3.11)
 ;He was imprisoned in 1945 for the brutal murder of a sixty year old woman. 
 (defrule old_kA
@@ -8,7 +8,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (or(samAsa ?id1 ?id)(viSeRya-viSeRaNa  ?id1 ?id)(subject-subject_samAnAXikaraNa  ?id1 ?id))
 (or(samAsa =(- ?id 1)  =(- ?id 2))(viSeRya-viSeRaNa   =(+ ?id 1)  ?id2)(viSeRya-saMKyA_viSeRaNa  =(- ?id 1)  =(- ?id 2)))
-(id-root ?id1 man|woman|girl|boy|baby|father|mother|brother|sister|son|daughter) ; we should make a list of human and human relationships and put it in the database
+(id-root ?id1 man|woman|girl|boy|baby|father|mother|brother|sister|son|daughter|she|he|I|they|you) ; we should make a list of human and human relationships and put it in the database
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kA))

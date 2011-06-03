@@ -1,5 +1,23 @@
 
+
+;Added by Meena(2.6.10)
+;Within the relationship he feels ill-used most of the time.
 (defrule within0
+(declare (salience 4800))
+(id-root ?id within)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-within_saMbanXI  ?kri  ?saMb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id meM))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  within.clp    within0   "  ?id "  meM )" crlf))
+)
+
+
+
+
+(defrule within1
 (declare (salience 5000))
 (id-root ?id within)
 ?mng <-(meaning_to_be_decided ?id)
@@ -9,10 +27,13 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id isa_ke_BIwara_ki))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  within.clp 	within0   "  ?id "  isa_ke_BIwara_ki )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  within.clp 	within1   "  ?id "  isa_ke_BIwara_ki )" crlf))
 )
 
-(defrule within1
+
+
+
+(defrule within2
 (declare (salience 4900))
 (id-root ?id within)
 ?mng <-(meaning_to_be_decided ?id)
@@ -21,10 +42,13 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id usa_ke_BIwara_ki))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  within.clp 	within1   "  ?id "  usa_ke_BIwara_ki )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  within.clp 	within2   "  ?id "  usa_ke_BIwara_ki )" crlf))
 )
 
-(defrule within2
+
+
+
+(defrule within3
 (declare (salience 4800))
 (id-root ?id within)
 ?mng <-(meaning_to_be_decided ?id)
@@ -33,13 +57,13 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id BIwara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  within.clp 	within2   "  ?id "  BIwara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  within.clp 	within3   "  ?id "  BIwara )" crlf))
 )
 
 ;"within","Adv","1.BIwara"
 ;Apply the paste within the mould.
 ;
-(defrule within3
+(defrule within4
 (declare (salience 4700))
 (id-root ?id within)
 ?mng <-(meaning_to_be_decided ?id)
@@ -48,7 +72,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ke_BIwara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  within.clp 	within3   "  ?id "  ke_BIwara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  within.clp 	within4   "  ?id "  ke_BIwara )" crlf))
 )
 
 ;"within","Prep","1.ke_BIwara"

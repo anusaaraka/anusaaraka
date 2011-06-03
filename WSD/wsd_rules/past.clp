@@ -1,4 +1,21 @@
 
+
+;Added by Meena(22.5.11)
+;In fact she had been feeling tired and queasy for the past few days. 
+(defrule past00
+(declare (salience 4800))
+(id-root ?id past)
+?mng <-(meaning_to_be_decided ?id)
+(or(id-root =(+ ?id 1) few|day|year|month|week|hour)(id-root =(+ ?id 2) day|year|month|week|hour))
+(or(viSeRya-viSeRaNa =(+ ?id 1) ?id)(viSeRya-viSeRaNa =(+ ?id 2) ?id))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id piCalA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  past.clp      past00   "  ?id "  piCalA )" crlf))
+)
+
+
 ;Added by human
 (defrule past0
 (declare (salience 5000))
@@ -39,11 +56,14 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  past.clp 	past2   "  ?id "  piCalA )" crlf))
 )
 
+
+
+
 (defrule past3
 (declare (salience 4700))
 (id-root ?id past)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 day)
+(id-root ?id1 day)
 (viSeRya-viSeRaNa ?id1 ?id)
 =>
 (retract ?mng)

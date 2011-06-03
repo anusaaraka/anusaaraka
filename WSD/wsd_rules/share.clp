@@ -31,6 +31,10 @@
 ;They shared the apartment.
 ;
 
+
+
+;Modified by Meena(20.5.11)
+;At the end of the day, 251.2 million shares were traded. 
 ;Added by sheetal(25-02-10)
 ;Buying of shares was brisk on Wall Street today .
 (defrule share2
@@ -38,9 +42,9 @@
 (id-root ?id share)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
-(or (kriyA-of_saMbanXI  ?kri ?id)(viSeRya-of_saMbanXI  ?kri ?id))
-(subject-subject_samAnAXikaraNa  ?kri ?sam)
-(id-root ?sam brisk)
+(or (kriyA-of_saMbanXI  ?kri ?id)(viSeRya-of_saMbanXI  ?kri ?id)(viSeRya-det_viSeRaNa  ?id  ?det)(viSeRya-saMKyA_viSeRaNa  ?id ?id1))
+;(subject-subject_samAnAXikaraNa  ?kri ?sam)    ;commented by Meena(20.5.11) 
+;(id-root ?sam brisk)                           ;commented by Meena(20.5.11) 
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id Seyara))

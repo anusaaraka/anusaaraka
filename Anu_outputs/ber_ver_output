@@ -938,6 +938,7 @@ vaha UparI_wOra se uwwama piyAno bajAne vAlI hE.
 
 Hindi meaning using Berkeley parser 2.231
 There is a dog or a cat here. 
+kuwwA yA billI yahAz hE.
 yahAz kuwwA yA billI hE.
 
 Hindi meaning using Berkeley parser 2.232
@@ -1110,6 +1111,7 @@ Apane kiwanA pEsA kamAyA?
 
 Hindi meaning using Berkeley parser 2.274
 How much more spilled? 
+kiwanA Ora CalakA?
 kiwanA aXika CalakA?
 
 Hindi meaning using Berkeley parser 2.275
@@ -1374,7 +1376,7 @@ Someone laughed suddenly and the spell was broken.
 koI acAnaka hazsA Ora mAhOla BaMga_ho gayA WA.
 
 Hindi meaning using Berkeley parser 3.40
-To the people of India he is the symbol of mature wisdom.
+To the people of India he is the symbol of mature wisdom. 
 BArawa ke logoM ke liye vaha paripakva buxXimawwA kA prawIka hE.
 vaha BArawa ke logoM ke liye paripakva buxXimawwA kA prawIka hE.
 
@@ -1433,7 +1435,7 @@ yaha jahAz mEM rahawA hUz vaha sWAna hE.
 yaha sWAna hE jahAz mEM rahawA hUz.
 
 Hindi meaning using Berkeley parser 3.54
-This is the place I met him.
+This is the place I met him. 
 yaha jahAz mEM usase milA vaha sWAna hE.
 yaha sWAna hE jahAz mEM usase milA.
 
@@ -1513,5 +1515,17 @@ vaha ladakI se bacce ko KAnA_KilavA rahI hE.
 Hindi meaning using Berkeley parser 3.73
 She made the girl feed the child. 
 usane ladakI se bacce ko KAnA KilavAyA.
+
+Hindi meaning using Berkeley parser 3.74
+Applicants for posts are called for interview. 
+paxoM ke liye prArWI sAkRAwkAra ke liye bulAye/bulAe gaye hEM.
+
+Hindi meaning using Berkeley parser 3.75
+The interview lasted about an hour. 
+sAkRAwkAra eka GaMte lagaBaga calawA rahA.
+
+Hindi meaning using Berkeley parser 3.76
+The performance starts at seven. 
+praxarSana sAwa baje Suru howA hE.
 
 Calling Interface related programs

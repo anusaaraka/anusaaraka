@@ -11,17 +11,27 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  at.clp 	at0   "  ?id "  meM )" crlf))
 )
 
+
+
+
+;Modified by Meena(18.5.11)
+;When my name was called, he looked across at me. 
 (defrule at1
 (declare (salience 4900))
 (id-root ?id at)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) look)
+(id-root ?id1 look)
+(kriyA-at_saMbanXI  ?id1  ?id2)
+(id-root  ?id2  me|us|you|her|him|them)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kI_ora))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  at.clp 	at1   "  ?id "  kI_ora )" crlf))
 )
+
+
+
 
 (defrule at2
 (declare (salience 4800))
@@ -161,7 +171,8 @@
 
 
 
-
+;Modified by Meena(20.5.11)
+;The Dow Jones industrials closed at 2569.26. 
 ;Added by Meena(24.10.09)
 ; I yelled at her for going to the party .
 ;The fact that he smiled at me gives me hope .
@@ -170,7 +181,7 @@
 (id-root ?id at)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-at_saMbanXI  ?id1 ?id2)
-(id-root  ?id2  me|us|you|her|him|them)
+(or(id-root ?id2  me|us|you|her|him|them)(id-cat_coarse ?id2 number))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id para))
@@ -198,8 +209,24 @@
 
 
 
-
+;Added by Meena(27.5.11)
+;The performance starts at seven. 
 (defrule at13
+(declare (salience 4000))
+(id-root ?id at)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-at_saMbanXI  ?id1 ?id2)
+(id-root  ?id2 one|two|three|four|five|six|seven|eight|nine|ten|eleven|twelve)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id baje))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  at.clp        at13   "  ?id "  baje )" crlf))
+)
+
+
+
+(defrule at14
 (declare (salience 0))
 ;(declare (salience 3900))
 (id-root ?id at)
@@ -209,7 +236,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id para))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  at.clp 	at13   "  ?id "  para )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  at.clp 	at14   "  ?id "  para )" crlf))
 )
 
 ;"at","Prep","1.para"

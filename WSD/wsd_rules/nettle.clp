@@ -1,4 +1,5 @@
-
+;Meaning modified by Meena(1.6.11)
+;She was found crying in a patch of nettles.
 (defrule nettle0
 (declare (salience 5000))
 (id-root ?id nettle)
@@ -6,9 +7,10 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id bicCU_kA_pedZa))
+(assert (id-wsd_root_mng ?id bicCU_GAsa))
+;(assert (id-wsd_root_mng ?id bicCU_kA_pedZa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  nettle.clp 	nettle0   "  ?id "  bicCU_kA_pedZa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  nettle.clp 	nettle0   "  ?id "  bicCU_GAsa )" crlf))
 )
 
 ;"nettle","N","1.bicCU_kA_pedZa"

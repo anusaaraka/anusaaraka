@@ -31,6 +31,27 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  ing_tam.clp  	ing_tam1  "  ?id "  we_hue )" crlf))
 )
 
+;Modified by Meena(3.6.11);added (id-root =(- ?id 2) be)
+;Added by Meena(1.6.11)
+;She was found crying in a patch of nettles. 
+(defrule ing_tam01
+(declare (salience 4900))
+(id-TAM ?id ing)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse =(- ?id 1) verb)
+(kriyA-kqxanwa_karma  =(- ?id 1) ?id)
+(id-root =(- ?id 2) be)
+=>
+(retract ?mng)
+(assert (id-E_tam-H_tam_mng ?id ing wA_huA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  ing_tam.clp       ing_tam01  "  ?id "  wA_huA )" crlf))
+)
+
+
+
+
+
 (defrule ing_tam2
 (declare (salience 4800))
 (id-TAM ?id ing)
@@ -43,6 +64,11 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  ing_tam.clp  	ing_tam2  "  ?id "  wA_huA )" crlf))
 )
 
+
+
+;Modified by Meena(3.6.11)
+;I have started working. 
+;I like running. 
 (defrule ing_tam3
 (declare (salience 4700))
 (id-TAM ?id ing)

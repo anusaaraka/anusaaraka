@@ -1,6 +1,24 @@
 ;;FILE MODIFIED BY Meena(20.5.10); DELETED THE REDUNDANT RULES 
 
 
+;Added by Meena(13.5.11)
+(defrule what_about
+(declare (salience 4600))
+(id-root ?id about)
+?mng <-(meaning_to_be_decided ?id)
+(id-word =(- ?id 1) how|what)
+(id-cat_coarse =(+ ?id 1) verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(- ?id 1) =(+ ?id 1) 0_ne_ke_bAre_meM_kya_KyAla_hE))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " about.clp   what_about  "  ?id "  " (- ?id 1) " "(+ ?id 1)"  0_ne_ke_bAre_meM_kya_KyAla_hE )" crlf))
+)
+
+
+
+
+
 (defrule about0
 (declare (salience 5000))
 (id-root ?id about)
@@ -52,21 +70,42 @@
 ; He was thinking about who got killed in the accident.
 
 
-
+;Modified by Meena(27.5.11); added "half" ,"an" in the list Ex; The interview lasted about an hour.
 ;Added (or(id-cat =(+ ?id 1) <num>)(id-cat_coarse =(+ ?id 1) number)(......) for {"The suspect was about 2 metres tall."} Meena (11.5.11) 
 ;Modified by Meena(20.5.10)
-;Typically , a doctor will see about thirty patients a day .
+;Typically , a doctor will take about thirty patients a day .
 (defrule about3
 (declare (salience 4500))
 (id-root ?id about)
 ?mng <-(meaning_to_be_decided ?id)
-(or(id-cat =(+ ?id 1) <num> )(id-cat_coarse =(+ ?id 1) number)(id-word =(+ ?id 1) one|two|three|four|five|six|seven|eight|nine|ten|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand))
+(or(id-cat =(+ ?id 1) <num> )(id-cat_coarse =(+ ?id 1) number)(id-word =(+ ?id 1) half|an|one|two|three|four|five|six|seven|eight|nine|ten|twenty|thirty|forty|fifty|sixty|seventy|eighty|ninety|hundred|thousand))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id lagaBaga))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  about.clp 	about3   "  ?id "  lagaBaga )" crlf))
 )
+
+
+
+
+;Modified by Meena(3.6.11);(not(id-cat_coarse =(+ ?id 1) verb|.. ..))
+;Is John about?
+;There's a lot of flu about.
+(defrule about04
+(declare (salience  100))
+;(declare (salience 4200))
+(id-root ?id about)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse =(- ?id 1) noun|PropN|adverb)
+(not(id-cat_coarse =(+ ?id 1) verb|verbal_noun|determiner))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id AsapAsa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  about.clp     about04   "  ?id "  AsapAsa )" crlf))
+)
+
 
 
 
@@ -128,6 +167,7 @@
 
 
 ;Salience reduced by Meena(12.5.11)
+;;We have very different ideas about disciplining children. 
 (defrule about6
 (declare (salience 0))
 ;(declare (salience 4100))

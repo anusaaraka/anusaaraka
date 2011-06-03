@@ -2,7 +2,7 @@
 ;Added by Meena(5.02.10)
 ;How much more spilled?
 (defrule more0
-(declare (salience 5000))
+(declare (salience 5001))
 (id-root ?id more)
 ?mng <-(meaning_to_be_decided ?id)
 (or (viSeRaNa-viSeRaka ?id ?id1) (kriyA-kriyA_viSeRaNa ?k ?id)) ;How much more should we work on this?

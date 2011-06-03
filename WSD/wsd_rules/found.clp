@@ -65,7 +65,7 @@
 )
 )
 
-
+;Modified by Meena(1.06.11);added (kriyA-kqxanwa_karma  ?id  =(+ ?id 1)) for Ex.She was found crying in a patch of nettles. 
 ;Modified by Meena(23.02.10)
 ;Added by Meena(5.9.09)
 ;There is still a ray of hope that the missing child will be found .
@@ -74,24 +74,19 @@
 (declare (salience 3000))
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id found )
-(kriyA-subject ?id ?id1)
-(id-word =(- ?id 1) ?word)
+(or(kriyA-subject ?id ?subj)(kriyA-kqxanwa_karma  ?id  =(+ ?id 1)))
+(id-root =(- ?id 1) ?root)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id mila))
 (assert (id-wsd_root ?id find))
-(if (neq ?word be) then 
+(if (neq ?root be) then 
 	(assert (kriyA_id-subject_viBakwi ?id ko))
 )
-;(assert (id-E_tam ?id ed))
-;(assert (id-H_vib_mng ?id yA))
-;(assert (kriyA_id-subject_viBakwi ?id ne))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  found.clp      found3   "  ?id "  mila )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  found.clp      found3   "  ?id "  find )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-E_tam   " ?*wsd_dir* "  found.clp      found3   "  ?id "  ed )" crlf)
-;(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng    " ?*wsd_dir* "  found.clp      found3   "  ?id "  yA )" crlf)
-(if (neq ?word be) then
+(if (neq ?root be) then
         (assert (kriyA_id-subject_viBakwi ?id ko))
         (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  found.clp      found3   "  ?id "  ko )" crlf)
  )
