@@ -10,29 +10,48 @@
  else
 (create$ (first$ ?a) (reverse (rest$ ?a)))))
 ;----------------------------------------------------------------------------------------
-;(defrule replace_aux_with_head_VP
-;(declare (salience 1500))
-;?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?VB $?daut ?VP)
-;?f1<-(Head-Level-Mother-Daughters ? ? ?VP $?daut1)
-;(Node-Category  ?Mot    VP)
-;(Node-Category  ?VB     MD|VB|VBN|VBZ|VBD|VBP|VBG)
-;(Node-Category  ?VP     VP|S)
-;=>
-;	(retract ?f ?f1)
-;	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut1))
-;)
+(defrule replace_aux_with_head_VP
+(declare (salience 1500))
+?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?VB $?daut ?VP)
+?f1<-(Head-Level-Mother-Daughters ? ? ?VP $?daut1 ?VP1)
+(Node-Category  ?Mot    VP)
+(Node-Category  ?VB     MD|VB|VBN|VBZ|VBD|VBP|VBG)
+(Node-Category  ?VP     VP|S)
+(Node-Category  ?VP1    ?CAT)
+=>
+        (if (eq ?CAT VP) then
+        (retract ?f ?f1)
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut1 ?VP1))
+        else
+        (retract ?f)
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP))
+        )
+)
 ;;----------------------------------------------------------------------------------------
-;(defrule replace_aux_with_head_SQ
-;(declare (salience 1500))
-;?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?VB $?daut ?VP)
-;?f1<-(Head-Level-Mother-Daughters ? ? ?VP $?daut1)
-;(Node-Category  ?Mot    SQ)
-;(Node-Category  ?VB     MD|VB|VBN|VBZ|VBD|VBP|VBG)
-;(Node-Category  ?VP     VP|S)
-;=>
-;	(retract ?f ?f1)
-;	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut $?daut1))
-;)
+(defrule replace_aux_with_head_SQ
+(declare (salience 1500))
+?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?VB $?daut ?VP)
+?f1<-(Head-Level-Mother-Daughters ? ? ?VP $?daut1 ?VP1)
+(Node-Category  ?Mot    SQ)
+(Node-Category  ?VB     MD|VB|VBN|VBZ|VBD|VBP|VBG)
+(Node-Category  ?VP     VP|S)
+(Node-Category  ?VP1    ?CAT)
+=>
+
+        (if (eq ?CAT VP) then
+	(retract ?f ?f1)
+	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut $?daut1 ?VP1))
+        else
+        (retract ?f)
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP)))
+)
+
+(defrule undef_rules
+(declare (salience 1400))
+(Node-Category  ?   ROOT)
+=>
+(undefrule replace_aux_with_head_SQ)
+(undefrule replace_aux_with_head_VP))
 ;-----------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (1-06-11) -- Suggested by Sukhada.
 ;Failure to comply may result in dismissal.
