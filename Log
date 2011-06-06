@@ -2406,12 +2406,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  18. Updated sd_verified (417)
  19. Updated Log
 
- 2-06-11
+ 6-06-11
  =======
  1. Modified rm_prep_id rule in hindi_sent_reorder.clp
  2. H_ordering_rules.clp
         Modified : rev -- added not condition
-        Added    : move_kri_vi_be4_kri and move_kri_vi_be4_obj rules
+        Added    : move_kri_vi_be4_kri and move_kri_vi_be4_obj rules, replace_aux_with_head_VP, replace_aux_with_head_SQ
         Modified all the rules to add debug stmt
  3. Modified run_modules_std.bat to open hin_order_debug.dat in H_ordering_rules module
  4. Modified sd_ver_output and ber_ver_output
@@ -2421,5 +2421,17 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  6. Updated changes_in_databases
  7. Updated following files:
          sd_verified (424)    verified (473)    ber_verified ( 376 )
- 8. Updated Log
-
+ 8.  1. Added "%" in constituency_parse.l program to handle sentences like
+       "Stock funds have averaged a staggering gain of 25% through September , according to Lipper Analytical Services Inc ."
+     2. added NP@ node in constituency_parse.l program
+ 9. To get lexicalized output previously sentence input is given using stanford-parser and constituents input is given for
+    berkeley parser to make unique in both the cases(i.e passing penn input to get lexicalized output)following has been done
+            Added  :: run_penn.sh
+            Modified :: run_berkeley-parser.sh, run_lexicalize.sh, run_stanford-parser.sh
+ 10.Applied tsurgeon operations on standford-lexicalized output to handle POS tag
+      Added ::
+        1. stanford-tregex.jar
+        2. tsurgeon-grammar
+        3. tsurgeon.sh
+ 11. Updated Log
+ 
