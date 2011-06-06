@@ -27,12 +27,25 @@
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP))
         )
 )
+
+(defrule replace_head_VP
+(declare (salience 1501))
+?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP)
+?f1<-(Head-Level-Mother-Daughters ? ? ?VP ?VP1)
+(Node-Category  ?Mot    S)
+(Node-Category  ?VP     VP|S)
+=>
+        (retract ?f ?f1)
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP1))
+        
+)
+
 ;;----------------------------------------------------------------------------------------
 (defrule replace_aux_with_head_SQ
 (declare (salience 1500))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?VB $?daut ?VP)
 ?f1<-(Head-Level-Mother-Daughters ? ? ?VP $?daut1 ?VP1)
-(Node-Category  ?Mot    SQ)
+(Node-Category  ?Mot    SQ|S)
 (Node-Category  ?VB     MD|VB|VBN|VBZ|VBD|VBP|VBG)
 (Node-Category  ?VP     VP|S)
 (Node-Category  ?VP1    ?CAT)
@@ -46,12 +59,6 @@
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP)))
 )
 
-(defrule undef_rules
-(declare (salience 1400))
-(Node-Category  ?   ROOT)
-=>
-(undefrule replace_aux_with_head_SQ)
-(undefrule replace_aux_with_head_VP))
 ;-----------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (1-06-11) -- Suggested by Sukhada.
 ;Failure to comply may result in dismissal.
