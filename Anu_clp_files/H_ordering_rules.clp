@@ -14,15 +14,14 @@
 (declare (salience 1500))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?VB $?daut ?VP)
 ?f1<-(Head-Level-Mother-Daughters ? ? ?VP $?daut1 ?VP1)
-(Node-Category  ?Mot    VP)
+(Node-Category  ?Mot    VP|SQ)
 (Node-Category  ?VB     MD|VB|VBN|VBZ|VBD|VBP|VBG)
 (Node-Category  ?VP     VP)
 (Node-Category  ?VP1    ?CAT)
-;(test (or (eq ?head is) (eq ?head are)(eq ?head am)(eq ?head was)(eq ?head were))) ;I want to go there. He wasted his golden opportunity to play in the national team.
 =>
         (if (eq ?CAT VP) then
         (retract ?f ?f1)
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut1 ?VP1))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut $?daut1 ?VP1))
         else
         (retract ?f)
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP))
@@ -39,27 +38,6 @@
         (retract ?f ?f1)
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP1))
         
-)
-
-;;----------------------------------------------------------------------------------------
-(defrule replace_aux_with_head_SQ
-(declare (salience 1500))
-?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?VB $?daut ?VP)
-?f1<-(Head-Level-Mother-Daughters ? ? ?VP $?daut1 ?VP1)
-(Node-Category  ?Mot    SQ|S)
-(Node-Category  ?VB     MD|VB|VBN|VBZ|VBD|VBP|VBG)
-(Node-Category  ?VP     VP|S)
-(Node-Category  ?VP1    ?CAT)
-=>
-
-        (if (eq ?CAT VP) then
-	(retract ?f ?f1)
-	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut $?daut1 ?VP1))
-        else
-        (retract ?f)
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP))
-	(assert (Mother  ?Mot))
-)
 )
 
 ;-----------------------------------------------------------------------------------------
@@ -157,6 +135,7 @@
 (declare (salience 950))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  ?d $?daut)
 (Node-Category  ?Mot  SQ)
+(Node-Category  ?d  MD|VB|VBN|VBZ|VBD|VBP|VBG)
 (not (Mother  ?Mot))
 =>
         (retract ?f0)
