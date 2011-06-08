@@ -16,8 +16,9 @@
 ?f1<-(Head-Level-Mother-Daughters ? ? ?VP $?daut1 ?VP1)
 (Node-Category  ?Mot    VP)
 (Node-Category  ?VB     MD|VB|VBN|VBZ|VBD|VBP|VBG)
-(Node-Category  ?VP     VP|S)
+(Node-Category  ?VP     VP)
 (Node-Category  ?VP1    ?CAT)
+;(test (or (eq ?head is) (eq ?head are)(eq ?head am)(eq ?head was)(eq ?head were))) ;I want to go there. He wasted his golden opportunity to play in the national team.
 =>
         (if (eq ?CAT VP) then
         (retract ?f ?f1)
@@ -56,7 +57,9 @@
 	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut $?daut1 ?VP1))
         else
         (retract ?f)
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP)))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP))
+	(assert (Mother  ?Mot))
+)
 )
 
 ;-----------------------------------------------------------------------------------------

@@ -47,6 +47,11 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " tire.clp	tire2  "  ?id "  " ?id1 "  Uba  )" crlf))
 )
 
+
+
+
+
+;In fact she had been feeling tired and queasy for the past three days.
 (defrule tire3
 (declare (salience 4700))
 (id-root ?id tire)
@@ -59,6 +64,8 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  tire.clp  	tire3   "  ?id "  WakA_huA )" crlf))
 )
+
+
 
 (defrule tire4
 (declare (salience 4600))
