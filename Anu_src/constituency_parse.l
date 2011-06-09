@@ -5,7 +5,7 @@
 extern YYSTYPE yylval; 
 %}
 %%
-[(][,.;'"`?\% ][,.;'"`?/\[\]\% ]*[)]                  /*  */
+[(][,.;'"`?:\-\%LR][,.;'"`?:\-/\[\]\%RB ]*[)]                  /*  */
 
 \[                      return LEFT_BRACKET;
 \]                      return RIGHT_BRACKET;
@@ -70,7 +70,7 @@ VBP             	yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+
 VBZ             	yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
 WDT             	yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
 WP              	yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
-WP$             	yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
+WP[$]             	yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
 WHNP                    yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
 WHADJP                  yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
 WRB             	yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
