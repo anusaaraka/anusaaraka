@@ -39,7 +39,6 @@
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP1))
         
 )
-
 ;-----------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (1-06-11) -- Suggested by Sukhada.
 ;Failure to comply may result in dismissal.
@@ -63,7 +62,7 @@
 (Node-Category  ?Mot  VP|PP|WHPP)
 ;(Node-Category  ?Mot  ?cat&:?|VP|PP|WHPP)
 (not (Node-Category  ?d CC));I ate fruits, drank milk and slept. 
-(not (Node-Category  ?d ADVP));He has been frequently coming.
+;(not (Node-Category  ?d ADVP));He has been frequently coming.
 (not (Mother  ?Mot))
 (not (Daughters_replaced  ?Mot))
 (test (and (neq ?head think) (neq ?head thought) (neq ?head thinks) (neq ?head thinking) (neq ?head matter) (neq ?head wonder) (neq ?head say) (neq ?head said) (neq ?head says) (neq ?head saying) (neq ?head disputed) (neq ?head suppose) (neq ?head supposed) (neq ?head supposes) (neq ?head supposing) (neq ?head commented) (neq ?head figured) (neq ?head pointed))) ;Do you think we should go to the party?  He disputed that our program was superior.
@@ -77,33 +76,35 @@
 )
 ;----------------------------------------------------------------------------------------
 ; Anne told me I would almost certainly be hired. I showed them how they should do it. I say it is a damn shame that he left. Can you tell us where those strange ideas came from? 
-(defrule rev_VP_SBAR
-(declare (salience 950))
-?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?v ?NP ?SBAR )
-(Node-Category  ?Mot  VP)
-(Node-Category  ?NP  NP)
-(Node-Category  ?SBAR SBAR)
-=>
-        (retract ?f0)
-        (bind ?rev_daut (create$ ?head ?lev (reverse_daughters ?Mot $?daut ?v ?NP)))
-        (assert (Head-Level-Mother-Daughters ?rev_daut ?SBAR))
-        (assert (Mother  ?Mot))
-	(printout ?*order_debug-file* "rule_name      : rev_VP_SBAR " crlf "Before reverse : " ?head" " ?lev" " ?Mot" "  (implode$ $?daut)" " ?v" " ?NP" "?SBAR crlf )
-        (printout ?*order_debug-file* "After reverse  : " (implode$ ?rev_daut)" " ?SBAR crlf)
-)
-;----------------------------------------------------------------------------------------
-; It was obvious that he would do it. It was so dark that I could not see anything. The last part of the course was hard because I was running against the wind. It is true that you are my friend but I can not go along with you on this issue. 
+;(defrule rev_VP_SBAR
+;(declare (salience 950))
+;?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?v ?NP ?SBAR )
+;(Node-Category  ?Mot  VP)
+;(Node-Category  ?NP  NP)
+;(Node-Category  ?SBAR SBAR)
+;=>
+;        (retract ?f0)
+;        (bind ?rev_daut (create$ ?head ?lev (reverse_daughters ?Mot $?daut ?v ?NP)))
+;        (assert (Head-Level-Mother-Daughters ?rev_daut ?SBAR))
+;        (assert (Mother  ?Mot))
+;	(printout ?*order_debug-file* "rule_name      : rev_VP_SBAR " crlf "Before reverse : " ?head" " ?lev" " ?Mot" "  (implode$ $?daut)" " ?v" " ?NP" "?SBAR crlf )
+;        (printout ?*order_debug-file* "After reverse  : " (implode$ ?rev_daut)" " ?SBAR crlf)
+;)
+;;----------------------------------------------------------------------------------------
+;; It was obvious that he would do it. It was so dark that I could not see anything. The last part of the course was hard because I was running against the wind. It is true that you are my friend but I can not go along with you on this issue. 
 (defrule rev_ADJP_SBAR
 (declare (salience 1999))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?v ?ADJP ?SBAR )
 (Node-Category  ?Mot  VP)
-(Node-Category  ?ADJP  ADJP)
-(Node-Category  ?SBAR SBAR)
+(Node-Category  ?ADJP  ADJP);|ADVP)
+;(Node-Category  ?SBAR SBAR)
 (Node-Category  ?v  ?VBD)
 (test (or (eq ?head was) (eq ?head is) (eq ?head am) (eq ?head are) (eq ?head were)))
 (not (Daughters_replaced  ?Mot))
 =>
         (retract ?f0)
+;        (bind ?rev_daut (create$ ?head ?lev ?Mot ?ADJP (reverse_daughters $?daut ?SBAR ?v)))
+ ;       (assert (Head-Level-Mother-Daughters ?rev_daut))
         (bind ?rev_daut (create$ ?head ?lev (reverse_daughters ?Mot $?daut ?v ?ADJP)))
         (assert (Head-Level-Mother-Daughters ?rev_daut ?SBAR))
         (assert (Daughters_replaced  ?Mot))
@@ -194,6 +195,41 @@
 	(printout ?*order_debug-file* "rule_name      : replace_NP-daut_PDT " crlf "Before replace : " ?head" " ?lvl" " ?mot" " ?PDT" " ?PRP" " ?N crlf )
         (printout ?*order_debug-file* "After replace   : " ?head" " ?lvl" " ?mot" " ?PRP" "?PDT" " ?N crlf crlf)
 )
+
+
+;----------------------------------------------------------------------------------------
+;Here we undef all the rules (As this rule are firing again after the nodes are replaced with terminal)
+(defrule undefrules
+(declare (salience 799))
+=>
+(undefrule replace_aux_with_head_VP)
+(undefrule replace_head_VP)
+(undefrule dont_rev_if_VP_goesto_TO)
+(undefrule rev_VP_or_PP_or_WHPP)
+;(undefrule rev_VP_SBAR)
+(undefrule rev_ADJP_SBAR)
+(undefrule rev_ADJP_goesto_PP)
+(undefrule make_first_child_of_SQ_last)
+(undefrule make_S_last_child_first)
+(undefrule reverse-NP-Daughters)
+(undefrule replace_NP-daut_PDT))
+
+;
+(defrule get_SBAR
+(declare (salience 798))
+?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?dat $?pos)
+(Head-Level-Mother-Daughters ? ? ?dat $?child)
+(Node-Category  ?Mot SBAR|SBARQ)
+(Node-Category  ?dat ?DAT)
+;(test (or (neq ?dat SBAR) (neq ?dat SBARQ)))
+=>
+(retract ?f)
+(if (or (eq ?DAT SBAR)(eq ?DAT SBARQ)) then
+(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?pos))
+else
+(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?child $?pos)))
+)
+
 ;----------------------------------------------------------------------------------------
 (defrule msg_replace_dau
 (declare (salience 750))
@@ -230,15 +266,50 @@
 	(printout ?*order_debug-file* "After insertion  : " ?head" " ?lvl" " ?mot" " $?id"  10000 "?sub" " $?id1" " ?k" " $?daut crlf crlf)
 )
 ;----------------------------------------------------------------------------------------
+
+
+;This rule delete's all the SBAR from ROOT
+(defrule rmv_sbar_from_root
+(declare (salience -80))
+?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut)
+?f1<-(Head-Level-Mother-Daughters ? ? ?dat $?child)
+(Node-Category  ?Mot ROOT)
+(Node-Category  ?dat SBAR|SBARQ)
+(test (member$ $?child $?daut))
+=>
+(retract ?f)
+ (assert (Sen  $?child))
+ (loop-for-count (?i 1 (length $?child))
+                 (bind ?id (nth$ ?i $?child))
+                 (bind $?daut (delete-member$ $?daut ?id)))
+ (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut)))
+
+
+;Here ROOT category is changed to SBAR
+(defrule rename_ROOT_cat_to_SBAR
+(declare (salience -90))
+?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut)
+?f1<-(Node-Category  ?Mot ROOT)
+=>
+(retract ?f1)
+(assert (Sen $?daut))
+(assert (Node-Category  ?Mot SBAR))
+(assert (hindi_id_order))
+)
+
+;----------------------------------------------------------------------------------------
+
 (defrule hin_order
 (declare (salience -100))
-(Head-Level-Mother-Daughters ?head ?lv ?Mot $?daughters)
-?f0<-(Node-Category  ?Mot  ROOT)
+?f0<-(Sen $?daughters ?id)
+(not (Sen $? ?id1&:(> ?id ?id1)))
+?f1<-(hindi_id_order $?dau)
 =>
-	(retract ?f0)
-	(assert (hindi_id_order $?daughters))
+	(retract ?f0 ?f1)
+	(assert (hindi_id_order $?dau $?daughters ?id))
 	(printout ?*order_debug-file* crlf "rule name   : hin_order  " crlf "Final order : " (implode$ $?daughters) crlf)
 )
+
 ;----------------------------------------------------------------------------------------
 ;Our team was easily beaten in the competition.
 (defrule move_kri_vi_be4_kri

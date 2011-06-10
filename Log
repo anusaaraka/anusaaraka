@@ -2410,8 +2410,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  =======
  1. Modified rm_prep_id rule in hindi_sent_reorder.clp
  2. H_ordering_rules.clp
-        Modified : rev -- added not condition
-        Added    : move_kri_vi_be4_kri and move_kri_vi_be4_obj rules, replace_aux_with_head_VP, replace_aux_with_head_SQ
+        Modified : rev -- added not condition, rev_VP_or_PP_or_WHPP, hin_order
+        Added    : move_kri_vi_be4_kri and move_kri_vi_be4_obj rules, replace_aux_with_head_VP, 
+                   undefrules, get_SBAR, rmv_sbar_from_root, rename_ROOT_cat_to_SBAR
         Modified all the rules to add debug stmt
  3. Modified run_modules_std.bat to open hin_order_debug.dat in H_ordering_rules module
  4. Modified sd_ver_output and ber_ver_output
