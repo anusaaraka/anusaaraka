@@ -5,7 +5,7 @@
 extern YYSTYPE yylval; 
 %}
 %%
-[(][,.;'"`?:\-\%LR][,.;'"`?:\-/\[\]\%RB ]*[)]                  /*  */
+[(][,.;'"`?:!\-\%LR][,.;'"`?:!\-/\[\]\%CRBL ]*[)]                  /*  */
 
 \[                      return LEFT_BRACKET;
 \]                      return RIGHT_BRACKET;
@@ -78,7 +78,7 @@ WHPP                    yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(
 X                       yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
 WHADVP                  yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
 UCP                     yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
-[A-Za-z0-9%'][A-Za-z0-9.%'-]*    yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return STRING;
+[A-Za-z0-9%='][A-Za-z0-9.,%'-]*    yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return STRING;
 \n                      /* ignore end of line */;
 [ \t]+                  /* ignore whitespace */;
 [, .]*                   /*                   */
