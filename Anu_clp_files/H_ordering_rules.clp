@@ -249,25 +249,6 @@ else
 	(printout ?*order_debug-file* "rule_name : replace-daughters  " ?mother1 $?pre $?daughters $?post crlf)
 )
 ;----------------------------------------------------------------------------------------
-;The girl you met yesterday is here. The dog I chased was black.
-(defrule insert_jo_samAnAXikaraNa
-(declare (salience -50))
-?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot $?id ?sub $?id1 ?k $?daut)
-(Node-Category  ?mot  ROOT)
-(or (kriyA-object  ?k  10000)(kriyA-aXikaraNavAcI_avyaya  ?k  10000))
-(kriyA-subject  ?k ?sub)
-(viSeRya-jo_samAnAXikaraNa  ?  10000)
-(not (jo_samAn_id_inserted ))
-=>
-        (retract ?f0)
-	(assert (Head-Level-Mother-Daughters ?head ?lvl ?mot $?id 10000 ?sub $?id1 ?k $?daut))
-	(assert (jo_samAn_id_inserted ))
-	(printout ?*order_debug-file* "rule_name      : insert_jo_samAnAXikaraNa " crlf "Before insertion : "?head" " ?lvl" "?mot" " $?id" " ?sub" " $?id1" " ?k" " $?daut crlf)
-	(printout ?*order_debug-file* "After insertion  : " ?head" " ?lvl" " ?mot" " $?id"  10000 "?sub" " $?id1" " ?k" " $?daut crlf crlf)
-)
-;----------------------------------------------------------------------------------------
-
-
 ;This rule delete's all the SBAR from ROOT
 (defrule rmv_sbar_from_root
 (declare (salience -80))
@@ -310,6 +291,22 @@ else
 	(printout ?*order_debug-file* crlf "rule name   : hin_order  " crlf "Final order : " (implode$ $?daughters) crlf)
 )
 
+;----------------------------------------------------------------------------------------
+;The girl you met yesterday is here. The dog I chased was black.
+(defrule insert_jo_samAnAXikaraNa
+(declare (salience 4))
+?f0<-(hindi_id_order $?id ?sub $?id1 ?k $?daut)
+(or (kriyA-object  ?k  10000)(kriyA-aXikaraNavAcI_avyaya  ?k  10000))
+(kriyA-subject  ?k ?sub)
+(viSeRya-jo_samAnAXikaraNa  ?  10000)
+(not (jo_samAn_id_inserted ))
+=>
+        (retract ?f0)
+        (assert (hindi_id_order $?id 10000 ?sub $?id1 ?k $?daut))
+        (assert (jo_samAn_id_inserted ))
+        (printout ?*order_debug-file* "rule_name      : insert_jo_samAnAXikaraNa " crlf "Before insertion : " $?id" " ?sub" " $?id1" " ?k" " $?daut crlf)
+        (printout ?*order_debug-file* "After insertion  : "  $?id"  10000 "?sub" " $?id1" " ?k" " $?daut crlf crlf)
+)
 ;----------------------------------------------------------------------------------------
 ;Our team was easily beaten in the competition.
 (defrule move_kri_vi_be4_kri
