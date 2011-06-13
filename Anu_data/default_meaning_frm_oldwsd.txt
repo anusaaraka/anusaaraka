@@ -95958,7 +95958,7 @@ scalar	_axiSa
 'scapes	BAga_nikalanA
 'scaping	BAga_nikalanA
 scavenger	jamAxAra
-scenario	parixqSWawa
+scenario	parixqSWawa
 scenarist	xqSyaleKaka
 scheduler	anusUcaka
 scholar	vixvAna

@@ -36,6 +36,7 @@
 	toxins  jIva-viRa		as	viREle-wawva	(suggested by Meenaji (24-05-11))
 	industrials Oxyogika_prawiBUwiyAM as 	Seyara 		(suggested by Meenaji (24-05-11))
 	various Binna                   as      viBinna         (suggested by Meenaji (26-05-11))
+        scenario        parixqSWawa<8d> as	scenario        parixqSWawa  (By Roja 13-06-11) 
 
  2. Added :: 
 	attorney-at-law   pramANiwa_aBikarwA
@@ -338,6 +339,7 @@ changes in samAsa-new.txt
         <e lm="lie"><i>l</i><par n="d/ie__vblex"/></e>           (Added by Roja 23-02-11)
         <e lm="spot"><i>spot</i><par n="admit__vblex"/></e>      (     "        14-03-11)
         <e lm="engulf"><i>engulf</i> <par n="accept__vblex"/></e>(     "        24-03-11)
+        <e lm="knee"><i>kne</i><par n="liv/e__vblex"/></e>       (     "        13-06-11)
  
 Modified:
         <e lm="belonging"><i>belonging</i><par n="house__n"/></e>   as    <e lm="belongings"><i>belongings</i><par n="personnel__n"/></e>   (Suggested by Meena ji 12-05-11)
