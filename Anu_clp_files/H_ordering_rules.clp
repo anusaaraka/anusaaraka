@@ -9,7 +9,7 @@
 (if (< (length ?a) 2) then ?a
  else
 (create$ (first$ ?a) (reverse (rest$ ?a)))))
-;----------------------------------------------------------------------------------------
+;-----------------------------------------------------------------------------------------------------------------------
 (defrule replace_aux_with_head_VP
 (declare (salience 1500))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?VB $?daut ?VP)
@@ -27,7 +27,7 @@
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP))
         )
 )
-
+;-----------------------------------------------------------------------------------------------------------------------
 (defrule replace_head_VP
 (declare (salience 1501))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP)
@@ -39,7 +39,7 @@
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP1))
         
 )
-;-----------------------------------------------------------------------------------------
+;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (1-06-11) -- Suggested by Sukhada.
 ;Failure to comply may result in dismissal.
 (defrule dont_rev_if_VP_goesto_TO
@@ -55,14 +55,12 @@
 	(printout ?*order_debug-file* "rule_name      : dont_rev_if_VP_goesto_TO" crlf "Before reverse : " ?head" " ?lev" "?Mot" "?d" "(implode$  $?daut) crlf)
         (printout ?*order_debug-file* "After reverse  : " ?head" "?lev" " ?Mot" "?d" "(implode$ $?daut) crlf crlf)
 )
-;----------------------------------------------------------------------------------------
+;-----------------------------------------------------------------------------------------------------------------------
 (defrule rev_VP_or_PP_or_WHPP
 (declare (salience 950))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d ?d1 )
 (Node-Category  ?Mot  VP|PP|WHPP)
-;(Node-Category  ?Mot  ?cat&:?|VP|PP|WHPP)
 (not (Node-Category  ?d CC));I ate fruits, drank milk and slept. 
-;(not (Node-Category  ?d ADVP));He has been frequently coming.
 (not (Mother  ?Mot))
 (not (Daughters_replaced  ?Mot))
 (test (and (neq ?head think) (neq ?head thought) (neq ?head thinks) (neq ?head thinking) (neq ?head matter) (neq ?head wonder) (neq ?head say) (neq ?head said) (neq ?head says) (neq ?head saying) (neq ?head disputed) (neq ?head suppose) (neq ?head supposed) (neq ?head supposes) (neq ?head supposing) (neq ?head commented) (neq ?head figured) (neq ?head pointed))) ;Do you think we should go to the party?  He disputed that our program was superior.
@@ -74,7 +72,7 @@
 	(printout ?*order_debug-file* "rule_name      : rev_VP_or_PP_or_WHPP " crlf "Before reverse : " ?head" " ?lev" " ?Mot" "  (implode$ $?daut)" " ?d" " ?d1 crlf )
 	(printout ?*order_debug-file* "After reverse  : " (implode$ ?rev_daut) crlf crlf)
 )
-;----------------------------------------------------------------------------------------
+;-----------------------------------------------------------------------------------------------------------------------
 ; Anne told me I would almost certainly be hired. I showed them how they should do it. I say it is a damn shame that he left. Can you tell us where those strange ideas came from? 
 ;(defrule rev_VP_SBAR
 ;(declare (salience 950))
@@ -90,36 +88,14 @@
 ;	(printout ?*order_debug-file* "rule_name      : rev_VP_SBAR " crlf "Before reverse : " ?head" " ?lev" " ?Mot" "  (implode$ $?daut)" " ?v" " ?NP" "?SBAR crlf )
 ;        (printout ?*order_debug-file* "After reverse  : " (implode$ ?rev_daut)" " ?SBAR crlf)
 ;)
-;;----------------------------------------------------------------------------------------
-;; It was obvious that he would do it. It was so dark that I could not see anything. The last part of the course was hard because I was running against the wind. It is true that you are my friend but I can not go along with you on this issue. 
-(defrule rev_ADJP_SBAR
-(declare (salience 1999))
-?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?v ?ADJP ?SBAR )
-(Node-Category  ?Mot  VP)
-(Node-Category  ?ADJP  ADJP);|ADVP)
-;(Node-Category  ?SBAR SBAR)
-(Node-Category  ?v  ?VBD)
-(test (or (eq ?head was) (eq ?head is) (eq ?head am) (eq ?head are) (eq ?head were)))
-(not (Daughters_replaced  ?Mot))
-=>
-        (retract ?f0)
-;        (bind ?rev_daut (create$ ?head ?lev ?Mot ?ADJP (reverse_daughters $?daut ?SBAR ?v)))
- ;       (assert (Head-Level-Mother-Daughters ?rev_daut))
-        (bind ?rev_daut (create$ ?head ?lev (reverse_daughters ?Mot $?daut ?v ?ADJP)))
-        (assert (Head-Level-Mother-Daughters ?rev_daut ?SBAR))
-        (assert (Daughters_replaced  ?Mot))
-        (assert (Mother  ?Mot))
-	(printout ?*order_debug-file* "rule_name      : rev_ADJP_SBAR " crlf "Before reverse : " ?head" " ?lev" " ?Mot" "(implode$ $?daut)" "?v" "?ADJP" "?SBAR crlf )
-        (printout ?*order_debug-file* "After reverse   : "?head" " ?lev" " ?Mot" " (implode$ ?rev_daut) ?SBAR crlf crlf)
-)
-;----------------------------------------------------------------------------------------
+;-----------------------------------------------------------------------------------------------------------------------
 ; Added by Shirisha Manju(30-05-11) Suggested by Sukhada. Modified by Sukhada on 31-05-11.
 ;Buying of shares was brisk on Wall Street today. She is very careful about her work.  
 (defrule rev_ADJP_goesto_PP
 (declare (salience 950))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d)
 (Node-Category  ?Mot  ADJP)
-(Node-Category  ?d  PP)
+(Node-Category  ?d  PP|S);Dick is important to fix the problem.
 (not (Mother  ?Mot))
 =>
         (retract ?f0)
@@ -128,11 +104,29 @@
   	(printout ?*order_debug-file* "rule_name      : rev_ADJP_goesto_PP " crlf "Before reverse : " ?head" " ?lev" " ?Mot" "(implode$ $?daut)" "?d crlf )
         (printout ?*order_debug-file* "After reverse   : "?head" " ?lev" " ?Mot" "?d" "(implode$ $?daut) crlf crlf)
 )
-;----------------------------------------------------------------------------------------
+;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju(14-06-11) -- suggested by sukhada
+;The yield of kharif crops was not good this season.
+(defrule rev_ADJP_goesto_RB
+(declare (salience 900))
+?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d $?dt)
+(Head-Level-Mother-Daughters ? ? ?d ?id)
+(Node-Category  ?Mot  ADJP)
+(Node-Category  ?d  RB)
+(id-word ?id not)
+(not (Mother  ?Mot))
+=>
+        (retract ?f0)
+        (assert (Head-Level-Mother-Daughters   ?head ?lev ?Mot $?daut $?dt ?d))
+        (assert (Mother  ?Mot))
+        (printout ?*order_debug-file* "rule_name      : rev_ADJP_goesto_RB " crlf "Before reverse : " ?head" " ?lev" " ?Mot" "(implode$ $?daut)" "?d " "(implode$ $?dt) crlf )
+        (printout ?*order_debug-file* "After reverse  : "?head" " ?lev" " ?Mot" "(implode$ $?daut) " "(implode$ $?dt) " " ?d crlf crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
 ; Added by Shirisha Manju(27-05-11) Suggested by Sukhada
 ; Is there life beyond the grave? Is this my book? 
 ; Is my book in your room? Are you reading the book?
-(defrule make_first_child_of_SQ_last
+(defrule move_first_child_of_SQ_last
 (declare (salience 950))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  ?d $?daut)
 (Node-Category  ?Mot  SQ)
@@ -142,13 +136,13 @@
         (retract ?f0)
         (assert (Head-Level-Mother-Daughters ?head ?lev ?Mot $?daut ?d))
         (assert (Mother  ?Mot))
-	(printout ?*order_debug-file* "rule_name      : make_first_child_of_SQ_last " crlf "Before reverse : " ?head" " ?lev" " ?Mot" "?d" " (implode$ $?daut) crlf )
+	(printout ?*order_debug-file* "rule_name      : move_first_child_of_SQ_last " crlf "Before reverse : " ?head" " ?lev" " ?Mot" "?d" " (implode$ $?daut) crlf )
         (printout ?*order_debug-file* "After reverse  : "?head" " ?lev" " ?Mot" "(implode$  $?daut)" " ?d crlf crlf)
 )
-;----------------------------------------------------------------------------------------
+;-----------------------------------------------------------------------------------------------------------------------
 ; Added by Shirisha Manju(28-05-11) Suggested by Sukhada
 ;This is the way to go. 
-(defrule make_S_last_child_first
+(defrule move_S_last_child_first
 (declare (salience 950))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d)
 (Node-Category  ?Mot  NP)
@@ -158,10 +152,10 @@
         (retract ?f0)
         (assert (Head-Level-Mother-Daughters ?head ?lev ?Mot ?d $?daut))
         (assert (Mother  ?Mot))
-	(printout ?*order_debug-file* "rule_name      : make_S_last_child_first " crlf "Before reverse : " ?head" " ?lev" " ?Mot" "  (implode$ $?daut)" " ?d crlf )
+	(printout ?*order_debug-file* "rule_name      : move_S_last_child_first " crlf "Before reverse : " ?head" " ?lev" " ?Mot" "  (implode$ $?daut)" " ?d crlf )
         (printout ?*order_debug-file* "After reverse  : " ?head" " ?lev" "?Mot" " ?d" "(implode$  $?daut)  crlf crlf)
 )
-;----------------------------------------------------------------------------------------
+;-----------------------------------------------------------------------------------------------------------------------
 ;The;Assumptions while writing this rule:
 ;If the daughters of the NP are not numbers then only this rule fires.
 ;These are given assuming that if first daughter of the Mother-NP is NP the rest daughters will never be numbers
@@ -180,7 +174,7 @@
 	(printout ?*order_debug-file* "rule_name      : reverse-NP-Daughters " crlf "Before reverse : " ?head" " ?lvl" " ?mot" " ?NP" " ?PP crlf )
 	(printout ?*order_debug-file* "After reverse  : " (implode$ ?NP_rev) crlf crlf)
 )
-;----------------------------------------------------------------------------------------
+;-----------------------------------------------------------------------------------------------------------------------
 ;All our sisters are coming. He left all his money to the orphanage. 
 (defrule replace_NP-daut_PDT
 (declare (salience 800))
@@ -195,9 +189,7 @@
 	(printout ?*order_debug-file* "rule_name      : replace_NP-daut_PDT " crlf "Before replace : " ?head" " ?lvl" " ?mot" " ?PDT" " ?PRP" " ?N crlf )
         (printout ?*order_debug-file* "After replace   : " ?head" " ?lvl" " ?mot" " ?PRP" "?PDT" " ?N crlf crlf)
 )
-
-
-;----------------------------------------------------------------------------------------
+;-----------------------------------------------------------------------------------------------------------------------
 ;Here we undef all the rules (As this rule are firing again after the nodes are replaced with terminal)
 (defrule undefrules
 (declare (salience 799))
@@ -206,14 +198,13 @@
 (undefrule replace_head_VP)
 (undefrule dont_rev_if_VP_goesto_TO)
 (undefrule rev_VP_or_PP_or_WHPP)
-;(undefrule rev_VP_SBAR)
 (undefrule rev_ADJP_SBAR)
 (undefrule rev_ADJP_goesto_PP)
-(undefrule make_first_child_of_SQ_last)
-(undefrule make_S_last_child_first)
+(undefrule move_first_child_of_SQ_last)
+(undefrule move_S_last_child_first)
 (undefrule reverse-NP-Daughters)
 (undefrule replace_NP-daut_PDT))
-
+;-----------------------------------------------------------------------------------------------------------------------
 ;
 (defrule get_SBAR
 (declare (salience 798))
@@ -221,7 +212,6 @@
 (Head-Level-Mother-Daughters ? ? ?dat $?child)
 (Node-Category  ?Mot SBAR|SBARQ)
 (Node-Category  ?dat ?DAT)
-;(test (or (neq ?dat SBAR) (neq ?dat SBARQ)))
 =>
 (retract ?f)
 (if (or (eq ?DAT SBAR)(eq ?DAT SBARQ)) then
@@ -229,14 +219,14 @@
 else
 (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?child $?pos)))
 )
-
-;----------------------------------------------------------------------------------------
+;-----------------------------------------------------------------------------------------------------------------------
 (defrule msg_replace_dau
 (declare (salience 750))
  =>
 	(printout ?*order_debug-file* "Substituting Mother Node with Child Node "crlf)
 	(printout ?*order_debug-file* "==========================================" crlf)
 )
+;-----------------------------------------------------------------------------------------------------------------------
 (defrule replace-daughters
 (declare (salience 700))
 ?used1<-(Head-Level-Mother-Daughters ?head ? ?mother $?daughters)
@@ -248,7 +238,7 @@ else
 	(assert (replaced_daughters ?mother))
 	(printout ?*order_debug-file* "rule_name : replace-daughters  " ?mother1 $?pre $?daughters $?post crlf)
 )
-;----------------------------------------------------------------------------------------
+;-----------------------------------------------------------------------------------------------------------------------
 ;This rule delete's all the SBAR from ROOT
 (defrule rmv_sbar_from_root
 (declare (salience -80))
@@ -264,11 +254,21 @@ else
                  (bind ?id (nth$ ?i $?child))
                  (bind $?daut (delete-member$ $?daut ?id)))
  (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut)))
-
-
+;-----------------------------------------------------------------------------------------------------------------------
+;The Master said, if I did not go, how would you ever see? 
+(defrule create_sen
+(declare (salience -90))
+?f1<-(Head-Level-Mother-Daughters ? ? ?dat $?child)
+(Node-Category  ?dat SBAR|SBARQ)
+(not (sent $?child))
+=>
+(assert (Sen  $?child))
+(assert (sen  $?child))
+)
+;-----------------------------------------------------------------------------------------------------------------------
 ;Here ROOT category is changed to SBAR
 (defrule rename_ROOT_cat_to_SBAR
-(declare (salience -90))
+(declare (salience -99))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut)
 ?f1<-(Node-Category  ?Mot ROOT)
 =>
@@ -277,21 +277,19 @@ else
 (assert (Node-Category  ?Mot SBAR))
 (assert (hindi_id_order))
 )
-
-;----------------------------------------------------------------------------------------
-
+;-----------------------------------------------------------------------------------------------------------------------
 (defrule hin_order
 (declare (salience -100))
 ?f0<-(Sen $?daughters ?id)
 (not (Sen $? ?id1&:(> ?id ?id1)))
 ?f1<-(hindi_id_order $?dau)
+;(test (eq (member$ ?id $?dau) FALSE))
 =>
 	(retract ?f0 ?f1)
 	(assert (hindi_id_order $?dau $?daughters ?id))
 	(printout ?*order_debug-file* crlf "rule name   : hin_order  " crlf "Final order : " (implode$ $?daughters) crlf)
 )
-
-;----------------------------------------------------------------------------------------
+;-----------------------------------------------------------------------------------------------------------------------
 ;The girl you met yesterday is here. The dog I chased was black.
 (defrule insert_jo_samAnAXikaraNa
 (declare (salience 4))
@@ -307,7 +305,7 @@ else
         (printout ?*order_debug-file* "rule_name      : insert_jo_samAnAXikaraNa " crlf "Before insertion : " $?id" " ?sub" " $?id1" " ?k" " $?daut crlf)
         (printout ?*order_debug-file* "After insertion  : "  $?id"  10000 "?sub" " $?id1" " ?k" " $?daut crlf crlf)
 )
-;----------------------------------------------------------------------------------------
+;-----------------------------------------------------------------------------------------------------------------------
 ;Our team was easily beaten in the competition.
 (defrule move_kri_vi_be4_kri
 (declare (salience 4))
@@ -319,7 +317,7 @@ else
 	(printout ?*order_debug-file* "rule_name      : move_kri_vi_be4_kri " crlf "Before Movement : "$?pre" " ?kri" " $?po" " ?k_vi" " $?last crlf) 
 	(printout ?*order_debug-file* "After movement  : " $?pre" " ?k_vi" " ?kri" " $?po" " $?last crlf crlf)
 )
-;----------------------------------------------------------------------------------------
+;-----------------------------------------------------------------------------------------------------------------------
 ;Have you ever seen the Pacific? 
 (defrule move_kri_vi_be4_obj
 (declare (salience 5))
@@ -332,10 +330,10 @@ else
 	(printout ?*order_debug-file* "rule_name      : move_kri_vi_be4_obj " crlf "Before Movement : "$?pre" " ?obj" " $?po" " ?k_vi" "?kri" " $?last crlf)
         (printout ?*order_debug-file* "After movement  : " $?pre" " ?k_vi" "  ?obj" " $?po" " ?kri" " $?last crlf crlf)
 )
-;----------------------------------------------------------------------------------------
+;-----------------------------------------------------------------------------------------------------------------------
 (defrule end_order
 (declare (salience -200))
 =>
 	(close ?*order_debug-file*)
 )
-;----------------------------------------------------------------------------------------
+;-----------------------------------------------------------------------------------------------------------------------
