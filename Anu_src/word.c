@@ -4,7 +4,7 @@
 #include <sys/stat.h>
 
 #define MAX_LINE_LENGTH 500
-#define MAX_NO_OF_LINES 200
+#define MAX_NO_OF_LINES 500 //Increased to 500 from 200 by Roja(14-06-11) for a big sentence from "calculate" file in SENSEVAL TRAIN
 #define INPUT_LENGTH MAX_LINE_LENGTH*MAX_NO_OF_LINES
 
 char *punct_short[]={",",".",";",":","'","\"","?","!","(",")","$","=","()",").","(),","'.","''"};

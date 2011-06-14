@@ -2440,7 +2440,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
          sd_verified (425)    verified (473)    ber_verified ( 376 )
  12. Updated Log
 
- 13-06-11
+ 14-06-11
  =======
- 1. Updated changes_in_databases.
- 2. Updated Log.
+ 1. Modified word.c to resolve segmentation faults due to memory allocation.
+ 2. Updated changes_in_databases.
+ 3. Updated Log.
