@@ -238,6 +238,7 @@
 (defrule undefrules
 (declare (salience 799))
 =>
+(save-facts "hindi_rev_order.dat" local Head-Level-Mother-Daughters)
 (undefrule replace_aux_with_head_VP)
 (undefrule replace_head_VP)
 (undefrule dont_rev_if_VP_goesto_TO)
