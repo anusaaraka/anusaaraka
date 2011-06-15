@@ -2440,12 +2440,16 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
          sd_verified (425)    verified (473)    ber_verified ( 376 )
  12. Updated Log
 
- 14-06-11
+ 15-06-11
  =======
  1. Modified word.c to resolve segmentation faults due to memory allocation.
  2. H_ordering_rules.clp
         Removed : rev_ADJP_SBAR
-        Added   : rev_ADJP_goesto_RB and create_sen rules
+        Added   : rev_ADJP_goesto_RB and create_sen rules print_for_debugging1, print_for_debugging2, print_for_debugging3, print_for_debugging4 .
+        Modified :: Modified debugging information in all the rules.
  3. Modified sd_ver_output 
  4. Updated changes_in_databases.
- 5. Updated Log.
+ 5. Modified order_debug.sh, order_debug.clp and run_order_debug.bat .
+ 6. Added get_constituency_tree.clp file (to get constituency tree using clips data)
+ 7. Modified files run_modules_std.bat and run_sentence_stanford.sh. (Added code for get_constituency_tree.clp) .
+ 88888888. Updated Log.

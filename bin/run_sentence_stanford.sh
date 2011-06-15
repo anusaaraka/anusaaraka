@@ -51,3 +51,5 @@ cd $MYPATH/$1_tmp/$2
  myclips -f $HOME_anu_test/Anu_clp_files/user_wsd_info.clp > /dev/null
  mv user_wsd_info.dat $MYPATH/$1_$2_user_wsd_info.dat
 
+ sed  's/LB /(/g' $MYPATH/$1_tmp/$2/rev_constituency_tree.dat |sed 's/RB /)/g' |sed 's/RB)$/))/g'> $MYPATH/$1_tmp/$2/rev_constituency_tree1.dat
+cat $MYPATH/$1_tmp/$2/rev_constituency_tree1.dat >>$MYPATH/$1_tmp/rev_constituency_tree2.dat

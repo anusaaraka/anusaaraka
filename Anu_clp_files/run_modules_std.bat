@@ -410,6 +410,16 @@
  (save-facts "hindi_id_order.dat" local hindi_id_order)
  (clear)
  ;---------------------------------------------------------------------------------
+ (load "global_path.clp")
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/get_constituency_tree.clp"))
+ (load ?*path*)
+ (load-facts "hindi_rev_order.dat")
+ (assert (daughter ROOT1))
+ (assert (Cons-tree))
+ (run)
+ (save-facts "rev_constituency_tree.dat" local Cons-tree)
+ (clear)
+ ;---------------------------------------------------------------------------------
  ; Adding extra hindi word and reorder the hindi sentence (e.g Are you going ?  -> kyA Aap jA rahe ho ?)
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/hindi_sent_reorder.bclp"))
