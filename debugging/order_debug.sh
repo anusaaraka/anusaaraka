@@ -1,6 +1,6 @@
 rm *
 cd $HOME_anu_test/Anu_clp_files/
-cp $HOME_anu_test/debugging/hindi_order_debug.clp $HOME_anu_test/debugging/run_order_debug.bat  $HOME_anu_test/debugging/sentence_debug/.
+cp $HOME_anu_test/debugging/order_debug.clp $HOME_anu_test/debugging/run_order_debug.bat  $HOME_anu_test/debugging/sentence_debug/.
 
 cd $HOME_anu_tmp/tmp/$1_tmp/$2
 cp global_path.clp pada_info.dat Eng_id_order.dat word.dat hin_order_debug.dat $HOME_anu_test/debugging/sentence_debug/.

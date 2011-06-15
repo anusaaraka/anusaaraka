@@ -17,8 +17,7 @@
 (bind ?*count* (+ ?*count* 1))
 (printout ?*order_debug-file* "(debug_info  "?*count*" Removing auxillary verbs from the sentence)" crlf)
 )
-
-
+;-----------------------------------------------------------------------------------------------------------------------
 (defrule replace_aux_with_head_VP
 (declare (salience 1500))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?VB $?daut ?VP)
@@ -66,7 +65,6 @@
 (bind ?*count* (+ ?*count* 1))
 (printout ?*order_debug-file* "(debug_info  "?*count*" Applying Reversing rules )" crlf)
 )
-
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (1-06-11) -- Suggested by Sukhada.
 ;Failure to comply may result in dismissal.
@@ -104,22 +102,6 @@
                          "              Before    - "?head" " ?lev" "?Mot" "(implode$ $?daut)" " ?d" "?d1 crlf
 	                 "              After     - "(implode$ ?rev_daut) ")" crlf)
 )
-;-----------------------------------------------------------------------------------------------------------------------
-; Anne told me I would almost certainly be hired. I showed them how they should do it. I say it is a damn shame that he left. Can you tell us where those strange ideas came from? 
-;(defrule rev_VP_SBAR
-;(declare (salience 950))
-;?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?v ?NP ?SBAR )
-;(Node-Category  ?Mot  VP)
-;(Node-Category  ?NP  NP)
-;(Node-Category  ?SBAR SBAR)
-;=>
-;        (retract ?f0)
-;        (bind ?rev_daut (create$ ?head ?lev (reverse_daughters ?Mot $?daut ?v ?NP)))
-;        (assert (Head-Level-Mother-Daughters ?rev_daut ?SBAR))
-;        (assert (Mother  ?Mot))
-;	(printout ?*order_debug-file* "rule_name      : rev_VP_SBAR " crlf "Before reverse : " ?head" " ?lev" " ?Mot" "  (implode$ $?daut)" " ?v" " ?NP" "?SBAR crlf )
-;        (printout ?*order_debug-file* "After reverse  : " (implode$ ?rev_daut)" " ?SBAR crlf)
-;)
 ;-----------------------------------------------------------------------------------------------------------------------
 ; Added by Shirisha Manju(30-05-11) Suggested by Sukhada. Modified by Sukhada on 31-05-11.
 ;Buying of shares was brisk on Wall Street today. She is very careful about her work.  
@@ -243,7 +225,6 @@
 (undefrule replace_head_VP)
 (undefrule dont_rev_if_VP_goesto_TO)
 (undefrule rev_VP_or_PP_or_WHPP)
-(undefrule rev_ADJP_SBAR)
 (undefrule rev_ADJP_goesto_PP)
 (undefrule move_first_child_of_SQ_last)
 (undefrule move_S_last_child_first)
@@ -257,15 +238,6 @@
 (printout ?*order_debug-file* "(debug_info  "?*count*"  Replacing Mother-Node with Child-Node  )" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-
-;(defrule msg_replace_dau
-;(declare (salience 750))
-; =>
-;	(printout ?*order_debug-file* "Substituting Mother Node with Child Node "crlf)
-;	(printout ?*order_debug-file* "==========================================" crlf)
-;)
-
-
 (defrule get_SBAR
 (declare (salience 730))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?dat $?pos)
@@ -286,8 +258,6 @@
         	         "              Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)"  "?dat" "(implode$ $?pos) crlf
                 	 "              After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?child)" "(implode$ $?pos) ")" crlf)
 )
-
-
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule replace-daughters
 (declare (salience 700))
@@ -313,7 +283,6 @@
 (Node-Category  ?dat SBAR|SBARQ)
 (test (member$ $?child $?daut))
 =>
-
 	(retract ?f)
 	(assert (Sen  $?child))
 	(loop-for-count (?i 1 (length $?child))
@@ -354,9 +323,8 @@
 =>
 	(retract ?f0 ?f1)
 	(assert (hindi_id_order $?dau $?daughters ?id))
-;	(printout ?*order_debug-file* crlf "rule name   : hin_order  " crlf "Final order : " (implode$ $?daughters) crlf)
 )
-
+;-----------------------------------------------------------------------------------------------------------------------
 (defrule print_for_debugging4
 (declare (salience -101))
 ?f1<-(hindi_id_order $?dau)
@@ -366,7 +334,6 @@
 (bind ?*count* (+ ?*count* 1))
 (printout ?*order_debug-file* "(debug_info  "?*count*"  Word Insertion rules)" crlf)
 )
-
 ;-----------------------------------------------------------------------------------------------------------------------
 ;The girl you met yesterday is here. The dog I chased was black.
 (defrule insert_jo_samAnAXikaraNa

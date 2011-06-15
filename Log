@@ -2444,12 +2444,17 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  =======
  1. Modified word.c to resolve segmentation faults due to memory allocation.
  2. H_ordering_rules.clp
-        Removed : rev_ADJP_SBAR
-        Added   : rev_ADJP_goesto_RB and create_sen rules print_for_debugging1, print_for_debugging2, print_for_debugging3, print_for_debugging4 .
-        Modified :: Modified debugging information in all the rules.
- 3. Modified sd_ver_output 
- 4. Updated changes_in_databases.
+        Removed : rev_ADJP_SBAR, rev_VP_SBAR and msg_replace_dau
+        Added   : rev_ADJP_goesto_RB , create_sen rules print_for_debugging1, print_for_debugging2, print_for_debugging3,
+		  and print_for_debugging4 .
+ 	Modified : Modified debugging information in all the rules.
  5. Modified order_debug.sh, order_debug.clp and run_order_debug.bat .
  6. Added get_constituency_tree.clp file (to get constituency tree using clips data)
  7. Modified files run_modules_std.bat and run_sentence_stanford.sh. (Added code for get_constituency_tree.clp) .
- 88888888. Updated Log.
+ 8. GNP_agreement.clp
+        Removed  : PP_pada_saMjFA_samAnAXikaraNa and samAnAXikaraNa_rule rules
+        Added    : samAnAXikaraNa_rule_1, samAnAXikaraNa_rule_2, samAnAXikaraNa_rule_3, samAnAXikaraNa_rule_4
+ 9. Modified sd_ver_output
+10. Updated changes_in_databases.
+11. Updated Log.
+

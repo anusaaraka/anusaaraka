@@ -186,78 +186,74 @@
 	)
  )
  ;================================== subject-subject_samAnAXikaraNa ==========================================
- ;John is quite certainly a better choice . This is the way to go .
+ ; if subject gen is "-" and samAnAXikaraNa gen is not equal to "-"
  (defrule samAnAXikaraNa_rule
  (declare (salience 800))
+ (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa|saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
+ ?f1<-(pada_info (group_head_id ?samAnAXikaraNa_id)(group_cat PP)(gender ?gen)(number ?num1))
+ ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender -)(number ?num)(person ?per)(case ?case))
+ (not(samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
+ =>
+         (modify ?f1 (gender ?gen)(number ?num)(person ?per))
+         (modify ?f2 (gender ?gen) )
+         (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " samAnAXikaraNa_rule "?gen" PV "?num" number_from_subject "?per " person_from_subject )" crlf)
+	(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified  " ?sub_id " samAnAXikaraNa_rule "?gen" gender_from_samAnAXikaraNa  "?num" PV "?per " PV)" crlf)
+	(assert (samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
+ )
+
+ ; if  samAnAXikaraNa gen is "-" and subject gen is not equal to "-"
+ (defrule samAnAXikaraNa_rule_1
+ (declare (salience 790))
+ (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa|saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
+ ?f1<-(pada_info (group_head_id ?samAnAXikaraNa_id)(group_cat PP)(vibakthi ?vib)(gender -)(number ?num1))
+ ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender ?gen)(number ?num)(person ?per)(case ?case))
+ (not(samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
+ =>
+	 (modify ?f1 (gender ?gen)(number ?num)(person ?per))
+         (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " samAnAXikaraNa_rule_1 "?gen " gender_from_subject "?num"  number_from_subject "?per"  person_from_subject)" crlf)
+	(assert (samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
+ )
+	
+ ; if  samAnAXikaraNa gen is "-" and subject gen is "-"
+ (defrule samAnAXikaraNa_rule_2
+ (declare (salience 780))
+ (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa|saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
+ ?f1<-(pada_info (group_head_id ?samAnAXikaraNa_id)(group_cat PP)(vibakthi ?vib)(gender -)(number ?num1))
+ ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender -)(number ?num)(person ?per)(case ?case))
+ (not(samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
+ =>
+	 (modify ?f1 (gender -)(number ?num)(person ?per))
+         (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " samAnAXikaraNa_rule_2 - PV "?num"  number_from_subject "?per" person_from_subject )" crlf)
+	(assert (samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
+ )
+ ; if  samAnAXikaraNa gen is not equal to "-" and subject gen is not equal to "-" but the gender for both is same
+ (defrule samAnAXikaraNa_rule_3
+ (declare (salience 770))
  (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa|saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
  ?f1<-(pada_info (group_head_id ?samAnAXikaraNa_id)(group_cat PP)(vibakthi ?vib)(gender ?gen1)(number ?num1))
  ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender ?gen)(number ?num)(person ?per)(case ?case))
  (not(samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
+ (test (and (neq ?gen1 -)(neq ?gen -)(eq ?gen ?gen1)))
  =>
-
-     (if (and (eq ?gen -)(neq ?gen1 -)) then
-         (modify ?f1 (gender ?gen1)(number ?num)(person ?per))
-         (modify ?f2 (gender ?gen1) ) 
-	 (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " samAnAXikaraNa_rule "?gen1" PV "?num" number_from_subject "?per " person_from_subject )" crlf)
- (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified  " ?sub_id " samAnAXikaraNa_rule "?gen1" gender_from_samAnAXikaraNa  "?num" PV "?per " PV)" crlf)
-    )
-    (if (and (eq ?gen1 -)(neq ?gen -)) then
-    	(modify ?f1 (gender ?gen)(number ?num)(person ?per))
-	(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " samAnAXikaraNa_rule "?gen " gender_from_subject "?num"  number_from_subject "?per"  person_from_subject)" crlf)
-    )
-    (if (and (eq ?gen1 -)(eq ?gen -))  then
-    	(modify ?f1 (gender -)(number ?num)(person ?per))
-      	 (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " samAnAXikaraNa_rule " ?gen1" PV "?num"  number_from_subject "?per" person_from_subject )" crlf)
-    )
-    (if (and (neq ?gen1 -)(neq ?gen -)) then
-    	(if (eq ?gen ?gen1) then
-        	(modify ?f1 (gender ?gen)(number ?num)(person ?per))
-		(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " samAnAXikaraNa_rule "?gen" PV "?num" number_from_subject "?per" person_from_subject )" crlf)
-        else
-                (printout  ?*error_file* crlf "The ids " ?sub_id " and " ?samAnAXikaraNa_id" have saMjFA-saMjFA_samAnAikaraNa relation "crlf "And the gender information for the ids are different ---------   " ?sub_id"-"?gen "  "?samAnAXikaraNa_id "-" ?gen1 crlf "if saMjFA id ("?sub_id") word is \"She\" then consider gender as f "crlf "else By default considering the samAnAXikaraNa id gender i.e., "?samAnAXikaraNa_id " - " ?gen1 crlf crlf)
-                 (close ?*error_file*)
-                 (modify ?f1 (gender ?gen1)(number ?num)(person ?per))
-		 (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " samAnAXikaraNa_rule "?gen1" PV "?num " number_from_subject "?per"  person_from_subject )" crlf)
-       )
-   )
-   (assert (samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
+	(modify ?f1 (gender ?gen)(number ?num)(person ?per))
+	(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " samAnAXikaraNa_rule_3 "?gen" PV "?num" number_from_subject "?per" person_from_subject )" crlf)
+	(assert (samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
  )
- ;----------------------------------------------------------------------------------------------------------------------
- ;Venus was a major Roman goddess , associated with love and beauty .
- (defrule PP_pada_saMjFA_samAnAXikaraNa
- (declare (salience 750))
- (prep_id-relation-anu_ids  ? saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
- ?f1<-(pada_info (group_head_id ?samAnAXikaraNa_id)(group_cat PP|VP)(vibakthi 0)(gender ?gen1)(number ?num1))
+  ; if  samAnAXikaraNa gen is not equal to "-" and subject gen is not equal to "-" but the gender for both is different
+ (defrule samAnAXikaraNa_rule_4
+ (declare (salience 760))
+ (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa|saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
+ ?f1<-(pada_info (group_head_id ?samAnAXikaraNa_id)(group_cat PP)(vibakthi ?vib)(gender ?gen1)(number ?num1))
  ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender ?gen)(number ?num)(person ?per)(case ?case))
- (id-original_word ?sub_id  ?pada_head)
- (not (saMjFA-saMjFA_samAnAXikaraNa_checked ?samAnAXikaraNa_id))
+ (not(samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
+ (test (and (neq ?gen1 -)(neq ?gen -)(neq ?gen ?gen1)))
  =>
-        (if (and (eq ?gen -)(neq ?gen1 -)) then
-                (modify ?f1 (gender ?gen1)(number ?num)(person ?per))
-       (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " PP_pada_saMjFA_samAnAXikaraNa "?gen1 " PV " ?num" number_from_saMjFA "?per " person_from_saMjFA )" crlf)
- (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified  " ?sub_id " PP_pada_saMjFA_samAnAXikaraNa gender_from_samAnAXikaraNa PV PV PV )" crlf)
-        )
-        (if (and (eq ?gen1 -)(neq ?gen -)) then
-                (modify ?f1 (gender ?gen)(number ?num)(person ?per))
-  (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " PP_pada_saMjFA_samAnAXikaraNa " ?gen" gender_from_saMjFA "?num " number_from_saMjFA "?per " person_from_saMjFA )" crlf)
-        )
-        (if (and (eq ?gen1 -)(eq ?gen -))  then
-                (modify ?f1 (gender -)(number ?num)(person ?per))
-  (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " PP_pada_saMjFA_samAnAXikaraNa "?gen" PV " ?per" number_from_saMjFA "?per" person_from_saMjFA )" crlf)
-       )
-        (if (and (neq ?gen1 -)(neq ?gen -)) then
-                (if (eq ?gen ?gen1) then
-                        (modify ?f1 (gender ?gen)(number ?num)(person ?per))
-(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " PP_pada_saMjFA_samAnAXikaraNa "?gen " PV "?num " number_from_saMjFA "?per " person_from_saMjFA)" crlf)
-                else
-                        (printout  ?*error_file* crlf "The ids " ?sub_id " and " ?samAnAXikaraNa_id" have saMjFA-saMjFA_samAnAikaraNa relation "crlf "And the gender information for the ids are different ---------   " ?sub_id"-"?gen "  "?samAnAXikaraNa_id "-" ?gen1 crlf "if saMjFA id ("?sub_id") word is \"She\" then consider gender as f "crlf "else By default considering the samAnAXikaraNa id gender i.e., "?samAnAXikaraNa_id " - " ?gen1 crlf crlf)
-                        (close ?*error_file*)
-                        (modify ?f1 (gender ?gen1)(number ?num1)(person ?per))
-      (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " PP_pada_saMjFA_samAnAXikaraNa " ?gen1" PV " ?num1" number_from_saMjFA " ?per "person_from_saMjFA )" crlf)
-                )
-        )
-  (assert (saMjFA-saMjFA_samAnAXikaraNa_checked ?samAnAXikaraNa_id))
-  )
+	 (printout  ?*error_file* crlf "The ids " ?sub_id " and " ?samAnAXikaraNa_id" have saMjFA-saMjFA_samAnAikaraNa relation "crlf "And the gender information for the ids are different ---------   " ?sub_id"-"?gen "  "?samAnAXikaraNa_id "-" ?gen1 crlf "if saMjFA id ("?sub_id") word is \"She\" then consider gender as f "crlf "else By default considering the samAnAXikaraNa id gender i.e., "?samAnAXikaraNa_id " - " ?gen1 crlf crlf)
+                 (close ?*error_file*)
+        (modify ?f1 (gender ?gen1)(number ?num)(person ?per))
+        (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " samAnAXikaraNa_rule_4 "?gen1" PV "?num " number_from_subject "?per"  person_from_subject )" crlf)
+	(assert (samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
+ )
 
  ;========================================== Relative Clause Rule ==============================================
 

@@ -640,7 +640,6 @@
 
 ;============================================== verbel-noun with tam ========================================================
  ;Ex: Police are still hoping to find the dead woman's killer .
- ;    He wasted his golden opportunity to play in the national team
 ; (defrule verbal_noun_infinitive_rule_with_kA_1
 ; (declare (salience 890))
 ; (pada_info (group_head_id ?pada_id)(group_cat infinitive)(H_tam kA)(group_ids $?ids))
@@ -776,7 +775,7 @@
 
   ;================================ NP rule for vibakthi not equal to nil (not head_id) =================================
   ; He saw the broken window 
-  (defrule PP_rule_with_vib_for_vb
+  (defrule PP_rule_with_vib_for_verb
   (declare (salience 110))
   ?f0<-(id-HM-source ?id ?h_word ?)
   (pada_info (group_head_id ?pada_id)(group_cat PP) (number ?num)(gender ?gen)(vibakthi ?vib)(person ?person)(group_ids $?ids)(H_tam ?tam))
@@ -787,7 +786,7 @@
    	(if (eq ?a "T") then
      	 (retract ?f0)
 	 (printout ?*A_fp5* "(id-Apertium_input "?id" root:"?h_word ",tam:"?tam",gen:"?gen",num:"?num ",per:"?person")" crlf)
-         (printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_with_vib_for_vb )" crlf)
+         (printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_with_vib_for_verb )" crlf)
    	)
   )
  ;-----------------------------------------------------------------------------------------------------------------------
