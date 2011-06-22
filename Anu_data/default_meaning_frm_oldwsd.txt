@@ -18999,7 +18999,7 @@ prom	sAmUhika_nqwya
 promenade	vihArasWala
 prominently	praXAna_rUpa_se
 promiscuous	asaMyamI
-promise	vAxA_karanA
+promise	vAxA_kara
 promo	pracAriwa_huA
 promontory	anwarIya
 promote	Age_baDA

@@ -3,7 +3,7 @@
        -- Java 1.6.0 
        -- perl,
        -- python,
-       -- flex, 
+       -- flex,bison 
        -- lttoolbox 3.1 or above
        -- apertium 3.1 or above
        -- xsltproc

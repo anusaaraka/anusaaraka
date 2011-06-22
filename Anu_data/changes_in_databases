@@ -332,6 +332,9 @@ changes in samAsa-new.txt
         <e lm="xoharavA"><i>xoharavA</i><par n="KA/__v"/></e>(     "              25-03-11)
         <e lm="pinjarA"><i>pinjar</i><par n="regular__adj-noun"/></e>(    "       31-03-11)
         <e lm="rahanA"><i>rahan</i><par n="loh/A__n"/></e>   (             "      26-04-11)
+ Modified :
+	<e><p><l>we_hue</l>         as <e><p><l>owe_hue</l>      for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
+	<e><p><l>we_rahanA_hE</l>  as <e><p><l>owe_rahanA_hE</l> for tam:we_rahanA_hE  (Suggested by Sriram 21-06-11)
 
  Changes in apertium-en-hi.en.metadix 
  =====================================

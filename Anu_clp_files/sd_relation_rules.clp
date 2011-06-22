@@ -931,6 +931,7 @@ else
 (parserid-word ?s ?word&~who&~which&~when&~whom&~that)
 (not (rel_name-sids  rel   ?rv  ?))
 (not (rel_name-sids  dobj   ?rv  ?))
+(test (eq (lexemep ?vi_word) TRUE)) ;lexemep = symbol or string
 =>
 (bind ?a (gdbm_lookup "animate.gdbm" ?vi_word))
 (if (eq ?a "1") then
@@ -952,6 +953,7 @@ else
 (not (rel_name-sids  dobj   ?rv  ?))
 (not (rel_name-sids  rel   ?rv  ?x))
 (not (got_viSeRya-jo_samAnAXikaraNa  ?vi))
+(test (eq (lexemep ?vi_word) TRUE));Added by Shirisha Manju (lexemep = symbol or string)(21-06-11)
 =>
 (bind ?a (gdbm_lookup "place.gdbm" ?vi_word))
 (if (eq ?a "1") then
@@ -974,6 +976,7 @@ else
 (not (rel_name-sids  rel   ?rv  ?))
 (not (got_viSeRya-jo_samAnAXikaraNa  ?vi))
 (test (>(string_to_integer ?obj)(string_to_integer ?rv)))
+(test (eq (lexemep ?vi_word) TRUE));Added by Shirisha Manju (lexemep = symbol or string)(21-06-11)
 =>
 (bind ?a (gdbm_lookup "place.gdbm" ?vi_word))
 (if (eq ?a "1") then
@@ -994,6 +997,7 @@ else
 (rel_name-sids  rcmod   ?vi  ?rv)
 (not (rel_name-sids  rel   ?rv  ?))
 (parserid-word ?vi ?vi_word)
+(test (eq (lexemep ?vi_word) TRUE));Added by Shirisha Manju (lexemep = symbol or string)(21-06-11) 
 =>
 (bind ?a (gdbm_lookup "time.gdbm" ?vi_word))
 (if (eq ?a "1") then
@@ -1016,6 +1020,7 @@ else
 (parserid-word ?rv ?wrd)
 (test(and (neq ?wrd met)  (neq ?wrd meet)  (neq ?wrd meets)  (neq ?wrd meeting)))
 (not (got_viSeRya-jo_samAnAXikaraNa  ?vi))
+(test (eq (lexemep ?wrd) TRUE));Added by Shirisha Manju (lexemep = symbol or string)(21-06-11)
 =>
 (bind ?a (gdbm_lookup "transitive-verb-list.gdbm" ?wrd))
 (if (eq ?a "1") then

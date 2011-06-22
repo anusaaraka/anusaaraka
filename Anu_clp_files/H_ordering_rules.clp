@@ -23,13 +23,13 @@
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?VB $?daut ?VP)
 ?f1<-(Head-Level-Mother-Daughters ? ? ?VP $?daut1 ?VP1)
 (Node-Category  ?Mot    VP|SQ)
-(Node-Category  ?VB     MD|VB|VBN|VBZ|VBD|VBP|VBG)
+(Node-Category  ?VB     MD|VB|VBN|VBZ|VBD|VBP|VBG|RB)
 (Node-Category  ?VP     VP)
 (Node-Category  ?VP1    ?CAT)
 =>
         (bind ?*count* (+ ?*count* 1))
         (if (eq ?CAT VP) then
-        (retract ?f ?f1)
+	(retract ?f ?f1)
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut $?daut1 ?VP1))
         (printout ?*order_debug-file* "(rule_name - replace_aux_with_head_VP  " ?*count* " " crlf 
                           "             Before    - "?head" "?lvl"  "?Mot"  "?VB" "(implode$ $?daut)" "?VP"  "crlf
@@ -41,22 +41,6 @@
                           "             Before    - "?head" "?lvl"  "?Mot"  "?VB" "(implode$ $?daut)" "?VP"  "crlf
                           "             After     - "?head" "?lvl"  "?Mot"  "(implode$ $?daut)" "?VP ")"crlf)
         )
-)
-;-----------------------------------------------------------------------------------------------------------------------
-(defrule replace_head_VP
-(declare (salience 1501))
-?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP)
-?f1<-(Head-Level-Mother-Daughters ? ? ?VP ?VP1)
-(Node-Category  ?Mot    S)
-(Node-Category  ?VP     VP|S)
-=>
-        (bind ?*count* (+ ?*count* 1))
-        (retract ?f ?f1)
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP1))
-        (printout ?*order_debug-file*"(rule_name - replace_head_VP " ?*count* " " crlf
-                         "             Before    - "?head" "?lvl"  "?Mot"  "(implode$ $?daut)" "?VP"  "crlf
-                         "             After     - "?head" "?lvl"  "?Mot"  "(implode$ $?daut)" "?VP1 ")" crlf)
-        
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule print_for_debugging2
@@ -103,6 +87,26 @@
 	                 "              After     - "(implode$ ?rev_daut) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+; Added by Shirisha Manju(15-06-11) Suggested by Sukhada.
+; The mystery of the Nixon tapes was never solved
+; Anne told me I would almost certainly be hired.
+(defrule rev_ADVP_goesto_RB
+(declare (salience 900))
+?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut $?d1 ?d $?d2)
+(Head-Level-Mother-Daughters never|certainly|apparently|clearly|really  ? ?d $?)
+(Node-Category  ?d  ADVP)
+(Node-Category  ?Mot  VP)
+(not (Mother ?d))
+=>
+	(bind ?*count* (+ ?*count* 1))
+        (retract ?f0)
+        (assert (Head-Level-Mother-Daughters   ?head ?lev ?Mot $?daut ?d $?d1 $?d2))
+	(assert (Mother ?d))
+;        (printout ?*order_debug-file* "(rule_name - rev_ADVP_goesto_RB " ?*count* " " crlf
+;	                 "              Before    - " ?head" " ?lev" " ?Mot" "(implode$ $?daut)" "?v " "?d crlf 
+;			 "		After	  - " ?head" " ?lev" " ?Mot" "(implode$ $?daut)" " ?d " "?v ")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
 ; Added by Shirisha Manju(30-05-11) Suggested by Sukhada. Modified by Sukhada on 31-05-11.
 ;Buying of shares was brisk on Wall Street today. She is very careful about her work.  
 (defrule rev_ADJP_goesto_PP
@@ -141,6 +145,31 @@
                          "              After     - "?head" "?lev" "?Mot" "(implode$ $?daut)" "(implode$ $?dt)" "?d ")"crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+; Added by Shirisha Manju(20-06-11) Suggested by Dipti mam
+;How many people did you see? How much money did you earn?I wonder how much money you earned.
+(defrule WHNP_rule
+(declare (salience 950))
+?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  ?whnp ?sq)
+?f1<-(Head-Level-Mother-Daughters ?h ?l ?sq $?dau ?vp)
+(Node-Category  ?Mot  SBARQ|SBAR)
+(Node-Category ?whnp WHNP)
+(Node-Category ?sq  SQ|S)
+(Node-Category ?vp VP)
+(not (Mother  ?Mot))
+=>
+	(bind ?*count* (+ ?*count* 1))
+        (retract ?f0 ?f1)
+	(assert (Head-Level-Mother-Daughters ?head ?lev ?Mot ?sq))
+	(assert (Head-Level-Mother-Daughters ?h ?l ?sq $?dau ?whnp ?vp))
+	(assert (Mother  ?Mot))
+        (printout ?*order_debug-file* "(rule_name - WHNP_rule " ?*count* " " crlf
+                         "              Before    - "?h" "?l" "?sq" "(implode$ $?dau)" "?vp crlf
+                         "              After     - "?h" "?l" "?sq" "(implode$ $?dau)" "?whnp" "?vp ")" crlf)
+	(printout ?*order_debug-file* "(rule_name - WHNP_rule " ?*count* " " crlf
+                         "              Before    - "?head" "?lev" "?Mot" "?whnp" "?sq crlf
+                         "              After     - "?head" "?lev" "?Mot" "?sq ")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
 ; Added by Shirisha Manju(27-05-11) Suggested by Sukhada
 ; Is there life beyond the grave? Is this my book? 
 ; Is my book in your room? Are you reading the book?
@@ -176,6 +205,31 @@
 	(printout ?*order_debug-file* "(rule_name - move_S_last_child_first " ?*count* crlf
                          "              Before    - "?head" "?lev" "?Mot" "(implode$ $?daut)" " ?d crlf
                          "              After     - "?head" "?lev" "?Mot" "?d" "(implode$  $?daut) ")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
+; Added by Shirisha Manju(20-06-11) Suggested by Dipti mam
+; He never really recovered from the shock of his wife's death. 
+(defrule move_negation_before_verb
+(declare (salience 900))
+?f0<-(Head-Level-Mother-Daughters ?head ?lvl $?d ?ADVP $?d1 ?VP)
+?f1<-(Head-Level-Mother-Daughters ?h ?l ?VP $?d2 ?V)
+(Head-Level-Mother-Daughters never ? ?ADVP $?)
+(Node-Category ?VP9 VP)
+(Node-Category ?ADVP5 ADVP)
+(Node-Category ?V VBD)
+(not (Mother  ?ADVP))
+=>
+	(bind ?*count* (+ ?*count* 1))
+        (retract ?f0 ?f1)
+        (assert (Head-Level-Mother-Daughters ?head ?lvl $?d $?d1 ?VP))
+	(assert (Head-Level-Mother-Daughters ?h ?l ?VP $?d2 ?ADVP ?V))
+        (assert (Mother  ?ADVP))
+        (printout ?*order_debug-file* "(rule_name - move_negation_before_verb " ?*count* crlf
+                         "              Before    - "?head" "?lvl" "(implode$ $?d)" "?ADVP" "(implode$ $?d1)" "?VP crlf
+                         "              After     - "?head" "?lvl" "(implode$ $?d)" "(implode$ $?d1)" "?VP")" crlf crlf)
+	(printout ?*order_debug-file* "(rule_name - move_negation_before_verb " ?*count* crlf
+                         "              Before    - "?h" "?l" "?VP" "(implode$ $?d2)" "?V crlf
+                         "              After     - "?h" "?l" "?VP" "(implode$ $?d2)" "?ADVP" "?VP")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;The;Assumptions while writing this rule:
@@ -229,7 +283,12 @@
 (undefrule move_first_child_of_SQ_last)
 (undefrule move_S_last_child_first)
 (undefrule reverse-NP-Daughters)
-(undefrule replace_NP-daut_PDT))
+(undefrule replace_NP-daut_PDT)
+(undefrule move_negation_before_verb)
+(undefrule WHNP_rule)
+(undefrule rev_ADVP_goesto_RB)
+)
+
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule print_for_debugging3
 (declare (salience 750))
