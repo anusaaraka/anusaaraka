@@ -2440,7 +2440,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
          sd_verified (425)    verified (473)    ber_verified ( 376 )
  12. Updated Log
 
- 15-06-11
+ 22-06-11
  =======
  1. Modified word.c to resolve segmentation faults due to memory allocation.
  2. H_ordering_rules.clp
@@ -2449,17 +2449,24 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 		  rev_ADVP_goesto_RB, WHNP_rule , move_negation_before_verb  and print_for_debugging4 .
  	Modified : Modified debugging information in all the rules.
 		   replace_aux_with_head_VP (added RB in the list)
- 5. Modified order_debug.sh, order_debug.clp and run_order_debug.bat .
- 6. Added get_constituency_tree.clp file (to get constituency tree using clips data)
- 7. Modified files run_modules_std.bat and run_sentence_stanford.sh. (Added code for get_constituency_tree.clp) .
- 8. GNP_agreement.clp
+ 3. Modified order_debug.sh, order_debug.clp and run_order_debug.bat .
+ 4. Added get_constituency_tree.clp file (to get constituency tree using clips data)
+ 5. Modified files run_modules_std.bat and run_sentence_stanford.sh. (Added code for get_constituency_tree.clp) .
+ 6. GNP_agreement.clp
         Removed  : PP_pada_saMjFA_samAnAXikaraNa and samAnAXikaraNa_rule rules
         Added    : samAnAXikaraNa_rule_1, samAnAXikaraNa_rule_2, samAnAXikaraNa_rule_3, samAnAXikaraNa_rule_4
- 9. sd_relation_rules.clp
+ 7. sd_relation_rules.clp
         Added test condition to check lexemep in the following rules
                 insert-who  insert-where  insert-where_2  insert-when   insert-which
-10. Added rm_repeated_ki_1 and rm_ki_if_sent_first rules in hindi_sentence.clp
-11. Modified sd_ver_output, sd_verified, ber_ver_output
-12. Updated changes_in_databases.
-13. Updated Log.
+ 8. Added rm_repeated_ki_1 and rm_ki_if_sent_first rules in hindi_sentence.clp
+ 9. prepare_apertium_input.clp
+        Added    : RaRTI_kA_vib_rule, RaRTI_kA_vib_rule_1, kA_vib_rule
+        Removed  : PP_rule_with_vib_for_Hid_her, pp_rule_with_vib_Hid_vib_kA_prp_0, verbal_noun_with_tam_kA1
+        Modified : PP_rule_with_vib_for_his
+10. Added English_sentence.clp -- to get english words with vib in hindi order
+11. Added English_sentence module in run_H_gen_sen.bat
+12. Modified ber_ver_output, link_ver_output, ol_ver_output, verified_output ,sd_ver_output, sd_verified
+13. Modified run_sentence_stanford.sh
+14. Updated changes_in_databases.
+15. Updated Log.
 

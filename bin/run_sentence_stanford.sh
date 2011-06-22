@@ -35,9 +35,10 @@ cd $MYPATH/$1_tmp/$2
 
  cp hindi_sentence1.dat  hindi_sentence.dat
 
+ cat english_sentence.dat
+
  cat  hindi_sentence.dat
  
-
  grep -B2 "FALSE" $1.error >> errors.txt
  cat errors.txt
 
