@@ -2478,6 +2478,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Modified : PP_rule_with_vib_for_Hid_those
  2. Modified "move_kri_vi_be4_obj",  "undefrules" rules in H_ordering_rules.clp
  3. Added "pn_vib" rule in English_sentence.clp
- 4. Updated Log
+ 4. Modified rule  assert_dummy_linkid-wrdid_fact (L--->P) in lwg_rules.clp file.
+ 5. Removed rule map_id and modified rule id-link_id-map in parserid_wordid_mapping.clp.
+ 6. Updated Log
 
 

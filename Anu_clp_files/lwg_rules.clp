@@ -19,7 +19,7 @@
 (id-original_word  ?x ?word)
 (not (parserid-wordid   ?  ?x))
 =>
-(bind ?y (explode$ (str-cat L ?x)))
+(bind ?y (explode$ (str-cat P ?x)))
 (assert (parserid-wordid   ?y  ?x))
 )
 ;--------------------------------------------------------------------------------------------------------------------------
