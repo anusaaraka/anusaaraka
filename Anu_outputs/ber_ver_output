@@ -493,13 +493,13 @@ yaha mahawvapUrNa_nahIM howA hE Ted kyA karawA hE.
 
 Hindi meaning using Berkeley parser 2.121
 Are a dog and a cat here? 
-kyA yahAz kuwwA Ora billI hEM?
 kyA kuwwA Ora billI yahAz hEM?
+kyA yahAz kuwwA Ora billI hEM?
 
 Hindi meaning using Berkeley parser 2.122
 There is a dog and a cat here. 
-yahAz kuwwA Ora billI hEM.
 kuwwA Ora billI yahAz hEM.
+yahAz kuwwA Ora billI hEM.
 
 Hindi meaning using Berkeley parser 2.123
 Where did the car come from? 
@@ -555,8 +555,8 @@ mEM usakI umra kA anxAja_lagA sakawA hUz.
 
 Hindi meaning using Berkeley parser 2.136
 She asked me to guess her age. 
-usane muJe/muJako usakI umra kA anxAja lagAne ke liye pUCA.
 usane usakI umra kA anxAja lagAne ke liye muJe/muJako pUCA.
+usane muJe/muJako usakI umra kA anxAja lagAne ke liye pUCA.
 
 Hindi meaning using Berkeley parser 2.137
 How can I participate? 
@@ -1414,7 +1414,7 @@ The girl who you called yesterday has arrived.
 Apane kala jise/jisako bulAyA vaha ladakI pahuzca gayI/gaI.
 
 Hindi meaning using Berkeley parser 3.48
-The dog which Chris bought is really ugly.
+The dog which Chris bought is really ugly. 
 Chris ne jise/jisako KarIxA vaha kuwwA vAswava mez kurUpa hE.
 jise/jisako Chris ne KarIxA vaha kuwwA vAswava mez kurUpa hE.
 

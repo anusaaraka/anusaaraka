@@ -102,9 +102,9 @@
         (retract ?f0)
         (assert (Head-Level-Mother-Daughters   ?head ?lev ?Mot $?daut ?d $?d1 $?d2))
 	(assert (Mother ?d))
-;        (printout ?*order_debug-file* "(rule_name - rev_ADVP_goesto_RB " ?*count* " " crlf
-;	                 "              Before    - " ?head" " ?lev" " ?Mot" "(implode$ $?daut)" "?v " "?d crlf 
-;			 "		After	  - " ?head" " ?lev" " ?Mot" "(implode$ $?daut)" " ?d " "?v ")" crlf)
+        (printout ?*order_debug-file* "(rule_name - rev_ADVP_goesto_RB " ?*count* " " crlf
+	                 "              Before    - " ?head" " ?lev" " ?Mot" "(implode$ $?daut)" "(implode$ $?d1)" "?d" "(implode$ $?d2) crlf 
+			 "		After	  - " ?head" " ?lev" " ?Mot" "(implode$ $?daut)" " ?d " "(implode$ $?d1)" "(implode$ $?d2) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ; Added by Shirisha Manju(30-05-11) Suggested by Sukhada. Modified by Sukhada on 31-05-11.
@@ -270,13 +270,38 @@
                          "              After     - "?head" "?lvl" "?mot" "?PRP" "?PDT" "?N ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju(23-06-11) Suggested by Sukhada
+;It plunged first its nose into the river. --NN
+;Have you ever seen the Pacific? -- NNP , I am afraid that I have badly hurt him. --- VBP
+(defrule move_kri_vi_be4_obj
+(declare (salience 800))
+?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot $?d ?NN $?d1)
+(Head-Level-Mother-Daughters ? ? ?NN ?obj)
+(Node-Category ?mot NP|VP)
+(Node-Category ?NN  NN|NNP|VBP)
+(kriyA-object  ?k ?obj)
+(kriyA-kriyA_viSeRaNa  ?k ?vi)
+(Head-Level-Mother-Daughters ? ? ?RB ?vi)
+(Head-Level-Mother-Daughters ? ? ?ADVP ?RB $?)
+?f1<-(Head-Level-Mother-Daughters ?h ?l ?m $?d2 ?ADVP $?d3)
+(not (Mother  ?mot))
+=>
+	(bind ?*count* (+ ?*count* 1))
+        (retract ?f0 ?f1)
+	(assert (Head-Level-Mother-Daughters ?head ?lvl ?mot ?ADVP $?d ?NN $?d1))
+	(assert (Head-Level-Mother-Daughters ?h ?l ?m $?d2 $?d3))
+        (assert (Mother  ?mot))
+	(printout ?*order_debug-file* "(rule_name - move_kri_vi_be4_obj "  ?*count* crlf
+                         "              Before    - "?head" "?lvl" "?mot" "(implode$ $?d)" "?NN" "(implode$ $?d1) crlf
+                         "              After     - "?head" "?lvl" "?mot" "?RB" "(implode$ $?d)" "?NN" "(implode$ $?d1) ")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
 ;Here we undef all the rules (As this rule are firing again after the nodes are replaced with terminal)
 (defrule undefrules
 (declare (salience 799))
 =>
 (save-facts "hindi_rev_order.dat" local Head-Level-Mother-Daughters)
 (undefrule replace_aux_with_head_VP)
-(undefrule replace_head_VP)
 (undefrule dont_rev_if_VP_goesto_TO)
 (undefrule rev_VP_or_PP_or_WHPP)
 (undefrule rev_ADJP_goesto_PP)
@@ -285,6 +310,7 @@
 (undefrule reverse-NP-Daughters)
 (undefrule replace_NP-daut_PDT)
 (undefrule move_negation_before_verb)
+(undefrule move_kri_vi_be4_obj)
 (undefrule WHNP_rule)
 (undefrule rev_ADVP_goesto_RB)
 )
@@ -427,19 +453,29 @@
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Have you ever seen the Pacific? 
-(defrule move_kri_vi_be4_obj
-(declare (salience 5))
-?f<-(hindi_id_order  $?pre ?obj $?po ?k_vi ?kri $?last)
-(kriyA-kriyA_viSeRaNa  ?kri ?k_vi)
-(kriyA-object  ?kri ?obj)
-=>
-        (bind ?*count* (+ ?*count* 1))
-        (retract ?f)
-        (assert (hindi_id_order $?pre ?k_vi  ?obj $?po ?kri $?last))
-	(printout ?*order_debug-file* "(rule_name - move_kri_vi_be4_obj " ?*count* crlf
-                         "              Before    - "(implode$ $?pre)" "?obj" "(implode$ $?po)" "?k_vi" "?kri" "(implode$ $?last) crlf
-                         "              After     - "(implode$ $?pre)" "?k_vi" "?obj" "(implode$ $?po)" "?kri" "(implode$ $?last) ")" crlf)
-)
+;It plunged first its nose into the river. 
+;Modified by Shirisha Manju (23-06-11)
+;(defrule move_kri_vi_be4_obj
+;(declare (salience 5))
+;(Head-Level-Mother-Daughters ? ? ?NP $?d ?NN $?)
+;(Head-Level-Mother-Daughters ? ? ?NN ?obj)
+;(Node-Category ?NP NP)
+;?f<-(hindi_id_order  $?order)
+;(kriyA-kriyA_viSeRaNa  ?kri ?k_vi)
+;(kriyA-object  ?kri ?obj)
+;;(test (member$ ?obj $?d))
+;=>
+;        (bind ?*count* (+ ?*count* 1))
+;        (retract ?f)
+;	(bind $?o $?order)
+;	(bind $?order (delete-member$ $?order ?k_vi))
+; 	(bind ?pos (member$ (first$ $?d) $?order))
+;	(bind $?order (insert$ $?order ?pos ?k_vi)) 
+;	(assert (hindi_id_order $?order))
+;	(printout ?*order_debug-file* "(rule_name - move_kri_vi_be4_obj " ?*count* crlf
+;                         "              Before    - "(implode$ $?o) crlf
+;                         "              After     - "(implode$ $?order) ")" crlf)
+;)
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule end_order
 (declare (salience -200))

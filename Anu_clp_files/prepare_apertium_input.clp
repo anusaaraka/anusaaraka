@@ -232,7 +232,6 @@
             (retract ?f0)
 	    (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  kA_vib_rule )" crlf)
         )
-;	(printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  kA_vib_rule )" crlf)
  )
  ;============================================ verbel-noun without vib ===================================================
  ; Running is good for health.
@@ -275,22 +274,6 @@
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  verbal_noun_without_tam )"  crlf)
   )
  ;============================================== verbel-noun with tam ====================================================\\
- ; verbal_noun_with_tam_kA and following pada is PP
-; (defrule verbal_noun_with_tam_kA1
-; (declare (salience 900))
-; (pada_info (group_head_id ?pada_id)(group_cat infinitive)(H_tam kA)(group_ids $?ids))
-; (or (id-cat_coarse ?pada_id verbal_noun) (make_verbal_noun ?pada_id))
-; ?f0<-(id-HM-source ?pada_id ?hmng ?)
-; (hindi_id_order  $?start $?ids ?foll_pada_id $?)
-; (pada_info (group_head_id ?foll_id)(group_cat PP)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
-; (id-HM-source ?foll_id ?hmng1 ?)
-; (test (member$ ?foll_pada_id $?f_ids))
-;  =>
-;        (retract ?f0)
-;        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?hmng"<cat:vn><case:o>$  ^kA<cat:sh><case:d><gen:"?gen1"><num:"?num1">$)"  crlf)
-;	(printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  verbal_noun_with_tam_kA1 )"  crlf)
-; )
- ;------------------------------------------------------------------------------------------------------------------------
  ; A fat ugly boy had to eat too many fruits to lose his weight. 
  (defrule verbal_noun_with_tam
  (declare (salience 890))
@@ -303,7 +286,7 @@
         (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?hmng"<cat:vn><case:o>$  ^" ?vib "<cat:prsg>$)"  crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  verbal_noun_with_tam )"  crlf)
   )
-  ;======================================== pronoun rules ==============================================================
+  ;============================ Pronoun rules -  vibakthi not equal to nil (head id) ======================================
   ; All his books are good. 
   ; He wasted his golden opportunity to play in the national team .
   ; The truth is more complicated, especially in his education system  
@@ -319,13 +302,37 @@
   =>
         (retract ?f0)
         (printout ?*A_fp5*  "(id-Apertium_input "?pada_id" ^vaha<cat:p><parsarg:"?vib"><fnum:"?num1"><case:"?case1"><gen:"?gen1"><num:"?num"><per:"?per ">$)" crlf)
-       ; (printout ?*A_fp5*  "(id-Apertium_input "?pada_id" ^vaha<cat:p><parsarg:"?vib"><fnum:"?num1"><case:"?case1"><gen:"?gen1"><num:"?num1"><per:"?per ">$)" crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id "  PP_rule_with_vib_for_his )" crlf)
   )
-
-
-
-
+  ;------------------------------------------------------------------------------------------------------------------------
+  ; Added by Shirisha Manju (23-06-11)  
+  ; vib kA -- for He,I,She ,They Ex:  I asked him a question . She carefully prepared the dinner.
+  (defrule PP_pronoun_rule_with_vib_kA
+  (declare (salience 940))
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(vibakthi kA)(group_ids $?ids))
+  (id-original_word ?pada_id  He|he|She|she|they|They|their|Their|I|i|those|Those)
+  (hindi_id_order  $?start $?ids ?foll_pada_id $?)
+  (pada_info(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
+  (test (member$ ?foll_pada_id $?f_ids))
+  ?f0<-(id-HM-source ?pada_id ?h_word ?)
+  =>
+	(retract ?f0)
+	(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><parsarg:kA><fnum:"?num1"><case:"?case1"><gen:"?gen1"><num:"?num"><per:"?per ">$)"  crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_with_vib_kA )" crlf)
+  )
+  ;------------------------------------------------------------------------------------------------------------------------
+  ; Added by Shirisha Manju (24-06-11)
+  (defrule PP_pronoun_rule_with_vib
+  (declare (salience 930))
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(case ?case)(vibakthi ?vib))
+  (id-original_word ?pada_id  He|he|She|she|they|They|their|Their|I|i|those|Those)
+  ?f0<-(id-HM-source ?pada_id ?h_word ?)
+  (test (neq ?vib 0))
+  =>
+        (retract ?f0)
+	(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><case:"?case"><parsarg:"?vib "><gen:"?gen"><num:"?num"><per:"?per ">$)"  crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_with_vib )" crlf)
+  )
  ;====================================== VP rule for root and tam =========================================================
  ;Added by Mahalaxmi (23-09-09)
  ;He is not related to me.
@@ -902,12 +909,10 @@
   =>
  	(if (eq ?cat noun) then
 	    (retract ?f0)
-;            (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
            (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
             (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_with_vib_default )" crlf)
 	else
  	    (retract ?f0)
- ;           (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
            (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
             (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_with_vib_default )" crlf)
 
@@ -915,49 +920,6 @@
   ) 
 
  ;================================== NP rule for vibakthi not equal to nil (head id)=========================================
-  ; All his books are good. 
-  ; He wasted his golden opportunity to play in the national team .
-  ; The truth is more complicated, especially in his education system  
-  ; Modified by Manoj (03/09/2010)
-
-;  (defrule PP_rule_with_vib_for_his
-;  (declare (salience 940))
-;  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(vibakthi ?vib)(person ?per)(group_ids $?ids))
-;  (id-original_word ?pada_id  His|his)
-;  (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa  ?rel ?pada_id)
-;  (pada_info (group_head_id ?rel) (group_cat PP) (number ?num1) (case ?case1) (gender ?gen1) (person ?per1) (group_ids $?f_ids))
-;  ?f0<-(id-HM-source ?pada_id ?hmng ?)
-;;  (hindi_id_order  $?start $?ids ?foll_pada_id $?)
-;;  (pada_info (group_cat PP)(number ?num1)(case ?case1)(gender ?gen1)(person ?per1)(group_ids $?f_ids))
-;;  (test (member$ ?foll_pada_id $?f_ids))
-;;  (test (neq ?vib 0))
-;  =>
-;   	(retract ?f0)
-;   	(printout ?*A_fp5*  "(id-Apertium_input "?pada_id" ^vaha<cat:p><parsarg:"?vib"><fnum:"?num1"><case:"?case1"><gen:"?gen1"><num:"?num"><per:"?per ">$)" crlf)
-;   	(printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id "  PP_rule_with_vib_for_his )" crlf)
-;  )
-;;---------------------------------------------------------------------------------------------------------------------------
-;  ;She called her . Her name is Sita.
-;  ;She is having her children cook dinner for her .
-;  (defrule PP_rule_with_vib_for_Hid_her
-;  (declare (salience 940))
-;  (pada_info (group_head_id ?pada_id)(group_cat PP) (number ?num)(gender ?gen)(vibakthi ?vib)(person ?per)(group_ids $?ids))
-;  ?f0<-(id-original_word ?pada_id  her|Her)
-;  ?f1<-(id-HM-source ?pada_id ?hmng ?)
-;  (hindi_id_order  $?start $?ids ?foll_pada_id $?)
-;  (pada_info (group_cat PP)(number ?num1)(case ?case1)(gender ?gen1)(person ?per1)(group_ids $?f_ids))
-;  (test (member$ ?foll_pada_id $?f_ids))
-;  (test (neq ?vib 0))
-;  =>
-;   	(retract ?f1)
-;	(if (eq ?vib kA) then
-;		(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^vaha<cat:p><parsarg:"?vib"><fnum:"?num1"><case:"?case1"><gen:"?gen1"><num:"?num"><per:"?per">$)"  crlf)
-;	else
-;		(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^vaha<cat:p><case:o><parsarg:"?vib"><gen:"?gen"><num:"?num"><per:"?per">$)" crlf)
-;        )
-;   	(printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_Hid_her )" crlf)
-;  )
-;---------------------------------------------------------------------------------------------------------------------------
   ;  Mother likes her (her with no following id)
   (defrule PP_rule_with_vib_for_Hid_her1
   (declare (salience 940))
@@ -969,27 +931,6 @@
    	(retract ?f1)
    	(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^vaha<cat:p><case:"?case"><parsarg:"?vib"><gen:"?gen"><num:"?num"><per:"?per">$)"  crlf)
    	(printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_Hid_her1 )" crlf)
-  )
-;---------------------------------------------------------------------------------------------------------------------------
-  ;I have three dogs . I asked him a question .
-  (defrule PP_rule_with_vib_for_I
-  (declare (salience 940))
-  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(person ?per)(vibakthi ?vib)(group_ids $?ids))
-  (id-original_word ?pada_id  I|i)
-  ?f0<-(id-HM-source ?pada_id ?h_word ?)
-  (hindi_id_order  $?start $?ids ?foll_pada_id $?)
-  (pada_info(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
-  (test (member$ ?foll_pada_id $?f_ids))
-  (test (neq ?vib 0))
-  =>
-   	(retract ?f0)
-       	(if (eq ?vib kA) then 
-       		(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><parsarg:kA><fnum:"?num1"><case:"?case1"><gen:"?gen1"><num:s><per:"?per ">$)"  crlf)
-       		(printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_I )" crlf)
-       	else
-        	(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><case:"?case"><parsarg:"?vib "><gen:"?gen"><num:s><per:"?per ">$)"  crlf)
-            	(printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_I )" crlf)
-       	)
   )
 ;---------------------------------------------------------------------------------------------------------------------------
 ;Added by sheetal
@@ -1007,48 +948,6 @@
 	(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><case:"?case"><parsarg:"?vib "><gen:"?gen"><num:s><per:"?per ">$)"  crlf)
                 (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_for_I_followed_by_adv )" crlf)
 )
- ;------------------------------------------------------------------------------------------------------------------------------
-  ; He bought the published books for his library . What did he eat ?He had social prestige .
-  (defrule PP_rule_with_vib_for_He
-  (declare (salience 940))
-  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(person ?per)(vibakthi ?vib)(group_ids $?ids))
-  (id-original_word ?pada_id  He|he)
-  (hindi_id_order  $?start $?ids ?foll_pada_id $?)
-  (pada_info(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
-  (test (member$ ?foll_pada_id $?f_ids))
-  ?f0<-(id-HM-source ?pada_id ?h_word ?)
-  (test (neq ?vib 0))
-  =>
-       	(retract ?f0)
-       (if (eq ?vib kA) then
-                (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><parsarg:kA><fnum:"?num1"><case:"?case1"><gen:"?gen1"><num:s><per:"?per ">$)"  crlf)
-                (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_He )" crlf)
-        else
-
-        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><case:o><parsarg:"?vib "><gen:"?gen"><num:s><per:"?per ">$)"  crlf)
-        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_He )" crlf))
-  )
-;---------------------------------------------------------------------------------------------------------------------------
-  ;Be careful , she said . She carefully prepared the dinner.She had social prestige .
-  (defrule PP_rule_with_vib_for_She
-  (declare (salience 940))
-  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(person ?per)(vibakthi ?vib)(group_ids $?ids))
-  (id-original_word ?pada_id  She|she)
-  ?f0<-(id-HM-source ?pada_id ?h_word ?)
-  (hindi_id_order  $?start $?ids ?foll_pada_id $?)
-  (pada_info(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
-  (test (member$ ?foll_pada_id $?f_ids))
-  (test (neq ?vib 0))
-  =>
-        (retract ?f0)
-         (if (eq ?vib kA) then
-                (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><parsarg:kA><fnum:"?num1"><case:"?case1"><gen:"?gen1"><num:s><per:"?per ">$)"  crlf)
-                (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_She )" crlf)
-        else
-        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><case:o><parsarg:"?vib "><gen:"?gen"><num:s><per:"?per ">$)"  crlf)
-        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_She )" crlf))
-  )
-
 ;---------------------------------------------------------------------------------------------------------------------------
   ;They may have eaten fruits. They would have to eat.
   (defrule PP_rule_with_vib_and_for_Hid_They
@@ -1097,20 +996,21 @@
   (pada_info (group_head_id ?pada_id)(group_cat PP)(case ?case)(gender ?gen)(vibakthi ?vib)(person ?per)(group_ids $?ids))
   ?f1<-(id-original_word ?pada_id  Those|those)
   ?f0<-(id-HM-source ?pada_id ?h_word ?)
-  (hindi_id_order  $?start $?ids ?foll_pada_id $?)
+ ; (hindi_id_order  $?start $?ids ?foll_pada_id $?)
   (pada_info (group_cat ?gtype)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
-  (test (member$ ?foll_pada_id $?f_ids))
+ ; (test (member$ ?foll_pada_id $?f_ids))
   (test (and (neq ?vib 0)(neq ?gtype English_PP)))
   =>
         (retract ?f0 ?f1)
-	(if (eq ?vib kA) then
-                (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^vaha<cat:p><parsarg:"?vib "><fnum:"?num1"><case:"?case1"><gen:"?gen1"><num:p><per:"?per">$)"  crlf)
-        else	(if (eq ?vib kI) then
+;	(if (eq ?vib kA) then
+ ;               (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^vaha<cat:p><parsarg:"?vib "><fnum:"?num1"><case:"?case1"><gen:"?gen1"><num:p><per:"?per">$)"  crlf)
+  ;      else
+	(if (eq ?vib kI) then
 		  (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^vaha<cat:p><case:o><parsarg:0><gen:"?gen"><num:p><per:"?per">$  ^" ?vib "<cat:prsg>$)"  crlf)
-	else
-                (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^vaha<cat:p><case:o><parsarg:"?vib "><gen:"?gen"><num:p><per:"?per ">$)"  crlf)
+;	else
+ ;               (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^vaha<cat:p><case:o><parsarg:"?vib "><gen:"?gen"><num:p><per:"?per ">$)"  crlf)
         )
-	)
+;	)
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_Hid_those )" crlf)
   )
 

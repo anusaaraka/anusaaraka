@@ -2469,4 +2469,15 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 13. Modified run_sentence_stanford.sh
 14. Updated changes_in_databases.
 15. Updated Log.
+ 
+ 24-06-11
+ ========
+ 1. prepare_apertium_input.clp
+        Added    : PP_pronoun_rule_with_vib_kA  and  PP_pronoun_rule_with_vib
+        Removed  : PP_rule_with_vib_for_I,  PP_rule_with_vib_for_He, PP_rule_with_vib_for_She
+        Modified : PP_rule_with_vib_for_Hid_those
+ 2. Modified "move_kri_vi_be4_obj",  "undefrules" rules in H_ordering_rules.clp
+ 3. Added "pn_vib" rule in English_sentence.clp
+ 4. Updated Log
+
 
