@@ -272,13 +272,13 @@
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju(23-06-11) Suggested by Sukhada
 ;It plunged first its nose into the river. --NN
-;Have you ever seen the Pacific? -- NNP , I am afraid that I have badly hurt him. --- VBP
+;Have you ever seen the Pacific? -- NNP , I am afraid that I have badly hurt him. --- PRP
 (defrule move_kri_vi_be4_obj
 (declare (salience 800))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot $?d ?NN $?d1)
 (Head-Level-Mother-Daughters ? ? ?NN ?obj)
 (Node-Category ?mot NP|VP)
-(Node-Category ?NN  NN|NNP|VBP)
+(Node-Category ?NN  NN|NNP|PRP)
 (kriyA-object  ?k ?obj)
 (kriyA-kriyA_viSeRaNa  ?k ?vi)
 (Head-Level-Mother-Daughters ? ? ?RB ?vi)

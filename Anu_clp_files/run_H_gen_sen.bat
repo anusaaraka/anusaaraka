@@ -5,7 +5,7 @@
  (load-facts "vibakthi_info.dat")
  (load-facts "punctuation_info.dat")
  (load-facts "hindi_id_reorder.dat")
- (open "english_sentence.dat" e_sen_fp "a")
+ (open "hin_eng_sent.dat" e_sen_fp "a")
  (run)
  (clear)
  ;----------------------------------------------------------------------

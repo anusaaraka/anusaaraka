@@ -19,6 +19,18 @@
 	)
   )
  ;---------------------------------------------------------------------------------------------------------
+ (defrule substitute_tam
+ (declare (salience 900))
+ (pada_info (group_head_id ?id)(H_tam  ?vib))
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
+ ?f1<-(id-word ?id ?word&~and)
+ (test (neq ?vib 0))
+ =>
+        (retract ?f0)
+        (bind ?word (string-to-field (str-cat ?word "_"?vib)))
+        (assert (hindi_id_order $?id1 ?word $?id2))
+  )
+ ;---------------------------------------------------------------------------------------------------------
  (defrule substitute_vib
  (declare (salience 900))
  (pada_info (group_head_id ?id)(vibakthi ?vib))
