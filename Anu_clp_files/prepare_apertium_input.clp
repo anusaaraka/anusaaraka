@@ -306,11 +306,13 @@
   )
   ;------------------------------------------------------------------------------------------------------------------------
   ; Added by Shirisha Manju (23-06-11)  
-  ; vib kA -- for He,I,She ,They Ex:  I asked him a question . She carefully prepared the dinner.
+  ; vib kA -- for He,I,She ,They 
+  ; Ex:  I asked him a question . She carefully prepared the dinner.
+  ;      Discuss it among yourselves first . The leopard seizes its kill and begins to eat .
   (defrule PP_pronoun_rule_with_vib_kA
   (declare (salience 940))
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(vibakthi kA)(group_ids $?ids))
-  (id-original_word ?pada_id  He|he|She|she|they|They|their|Their|I|i|those|Those)
+  (id-original_word ?pada_id  He|he|She|she|their|Their|I|i|those|Those)
   (hindi_id_order  $?start $?ids ?foll_pada_id $?)
   (pada_info(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
   (test (member$ ?foll_pada_id $?f_ids))
@@ -321,11 +323,29 @@
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_with_vib_kA )" crlf)
   )
   ;------------------------------------------------------------------------------------------------------------------------
+  ; God helps those who help themselves .
   ; Added by Shirisha Manju (24-06-11)
+  (defrule PP_rule_with_vib_for_Hid_those
+  (declare (salience 930))
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(case ?case)(gender ?gen)(vibakthi ?vib)(person ?per)(group_ids $?ids))
+  ?f1<-(id-original_word ?pada_id  Those|those)
+  ?f0<-(id-HM-source ?pada_id ?h_word ?)
+  (test (neq ?vib 0))
+  =>
+        (retract ?f0 ?f1)
+        (if (eq ?vib kI) then
+                  (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^vaha<cat:p><case:o><parsarg:0><gen:"?gen"><num:p><per:"?per">$  ^" ?vib "<cat:prsg>$)"  crlf)
+       else
+                (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^vaha<cat:p><case:o><parsarg:"?vib "><gen:"?gen"><num:p><per:"?per ">$)"  crlf)
+        )
+        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_Hid_those )" crlf)
+  )
+  ;------------------------------------------------------------------------------------------------------------------------
+   ; Added by Shirisha Manju (24-06-11)
   (defrule PP_pronoun_rule_with_vib
   (declare (salience 930))
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(case ?case)(vibakthi ?vib))
-  (id-original_word ?pada_id  He|he|She|she|they|They|their|Their|I|i|those|Those)
+  (id-original_word ?pada_id  He|he|She|she|their|Their|I|i)
   ?f0<-(id-HM-source ?pada_id ?h_word ?)
   (test (neq ?vib 0))
   =>
@@ -333,6 +353,21 @@
 	(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><case:"?case"><parsarg:"?vib "><gen:"?gen"><num:"?num"><per:"?per ">$)"  crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_with_vib )" crlf)
   )
+  ;------------------------------------------------------------------------------------------------------------------------
+  ; Added by Shirisha Manju (24-06-11)
+  ;He told them about the accident immediately
+  (defrule PP_rule_with_vib_for_Hid_them
+  (declare (salience 940))
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(case ?case)(gender ?gen)(vibakthi ?vib)(person ?per))
+  ?f1<-(id-original_word ?pada_id  Them|them)
+  ?f0<-(id-HM-source ?pada_id ?h_word ?)
+  (test (neq ?vib 0))
+  =>
+       (retract ?f0 ?f1)
+       (printout ?*A_fp5* "(id-Apertium_input "?pada_id" ^vaha<cat:p><case:o><parsarg:"?vib"><gen:"?gen"><num:p><per:"?per">$)" crlf)
+       (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_Hid_them )" crlf)
+  )
+
  ;====================================== VP rule for root and tam =========================================================
  ;Added by Mahalaxmi (23-09-09)
  ;He is not related to me.
@@ -957,7 +992,6 @@
   ?f0<-(id-HM-source ?pada_id ?h_word ?)
   (hindi_id_order  $?start $?ids ?foll_pada_id $?)
   (id-gender-src ?foll_pada_id ?f_gen ?)
-;  (pada_info (group_cat ?gtype)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
   (pada_info (group_head_id ?f_pada_id)(group_cat ?gtype)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
   (id-original_word ?f_pada_id ?word)
   (test (member$ ?foll_pada_id $?f_ids))
@@ -977,43 +1011,30 @@
     	)
   )
 ;---------------------------------------------------------------------------------------------------------------------------
-  ;He told them about the accident immediately 
-  (defrule PP_rule_with_vib_for_Hid_them
-  (declare (salience 940))
-  (pada_info (group_head_id ?pada_id)(group_cat PP)(case ?case)(gender ?gen)(vibakthi ?vib)(person ?per))
-  ?f1<-(id-original_word ?pada_id  Them|them)
-  ?f0<-(id-HM-source ?pada_id ?h_word ?)
-  (test (neq ?vib 0))
-  =>
-   	(retract ?f0 ?f1)
-   	(printout ?*A_fp5* "(id-Apertium_input "?pada_id" ^vaha<cat:p><case:o><parsarg:"?vib"><gen:"?gen"><num:p><per:"?per">$)" crlf)
-   	(printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_Hid_them )" crlf)
-  )
- ;---------------------------------------------------------------------------------------------------------------------------
   ; God helps those who help themselves .
-  (defrule PP_rule_with_vib_for_Hid_those
-  (declare (salience 940))
-  (pada_info (group_head_id ?pada_id)(group_cat PP)(case ?case)(gender ?gen)(vibakthi ?vib)(person ?per)(group_ids $?ids))
-  ?f1<-(id-original_word ?pada_id  Those|those)
-  ?f0<-(id-HM-source ?pada_id ?h_word ?)
- ; (hindi_id_order  $?start $?ids ?foll_pada_id $?)
-  (pada_info (group_cat ?gtype)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
- ; (test (member$ ?foll_pada_id $?f_ids))
-  (test (and (neq ?vib 0)(neq ?gtype English_PP)))
-  =>
-        (retract ?f0 ?f1)
-;	(if (eq ?vib kA) then
- ;               (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^vaha<cat:p><parsarg:"?vib "><fnum:"?num1"><case:"?case1"><gen:"?gen1"><num:p><per:"?per">$)"  crlf)
-  ;      else
-	(if (eq ?vib kI) then
-		  (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^vaha<cat:p><case:o><parsarg:0><gen:"?gen"><num:p><per:"?per">$  ^" ?vib "<cat:prsg>$)"  crlf)
-;	else
- ;               (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^vaha<cat:p><case:o><parsarg:"?vib "><gen:"?gen"><num:p><per:"?per ">$)"  crlf)
-        )
-;	)
-        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_Hid_those )" crlf)
-  )
-
+;  (defrule PP_rule_with_vib_for_Hid_those
+;  (declare (salience 940))
+;  (pada_info (group_head_id ?pada_id)(group_cat PP)(case ?case)(gender ?gen)(vibakthi ?vib)(person ?per)(group_ids $?ids))
+;  ?f1<-(id-original_word ?pada_id  Those|those)
+;  ?f0<-(id-HM-source ?pada_id ?h_word ?)
+; ; (hindi_id_order  $?start $?ids ?foll_pada_id $?)
+;  (pada_info (group_cat ?gtype)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
+; ; (test (member$ ?foll_pada_id $?f_ids))
+;  (test (and (neq ?vib 0)(neq ?gtype English_PP)))
+;  =>
+;        (retract ?f0 ?f1)
+;;	(if (eq ?vib kA) then
+; ;               (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^vaha<cat:p><parsarg:"?vib "><fnum:"?num1"><case:"?case1"><gen:"?gen1"><num:p><per:"?per">$)"  crlf)
+;  ;      else
+;	(if (eq ?vib kI) then
+;		  (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^vaha<cat:p><case:o><parsarg:0><gen:"?gen"><num:p><per:"?per">$  ^" ?vib "<cat:prsg>$)"  crlf)
+;;	else
+; ;               (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^vaha<cat:p><case:o><parsarg:"?vib "><gen:"?gen"><num:p><per:"?per ">$)"  crlf)
+;        )
+;;	)
+;        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_Hid_those )" crlf)
+;  )
+;
 ;---------------------------------------------------------------------------------------------------------------------------
   ;Do you think we should go to the party.  We had five field-workers
   (defrule PP_rule_with_vib_for_Hid_we

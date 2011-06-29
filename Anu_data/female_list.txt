@@ -14361,7 +14361,6 @@ pawiMvarA	f
 pawikAmA	f
 pawiGAwinI	f
 pawiGnI	f
-xevawA	f
 xevA	f
 xevAprANA	f
 xevABakwi	f

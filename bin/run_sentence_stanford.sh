@@ -35,7 +35,7 @@ cd $MYPATH/$1_tmp/$2
 
  cp hindi_sentence1.dat  hindi_sentence.dat
 
- cat english_sentence.dat
+ cat hin_eng_sent.dat
 
  cat  hindi_sentence.dat
  
@@ -54,3 +54,4 @@ cd $MYPATH/$1_tmp/$2
 
  sed  's/LB /(/g' $MYPATH/$1_tmp/$2/rev_constituency_tree.dat |sed 's/RB /)/g' |sed 's/RB)$/))/g'> $MYPATH/$1_tmp/$2/rev_constituency_tree1.dat
 cat $MYPATH/$1_tmp/$2/rev_constituency_tree1.dat >>$MYPATH/$1_tmp/rev_constituency_tree2.dat
+
