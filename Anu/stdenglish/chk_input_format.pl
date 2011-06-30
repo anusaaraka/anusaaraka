@@ -28,10 +28,12 @@ while($in = <STDIN>){
 	   $in =~ s/[\*	 ]//g;
 	#Special case for GUTENBERG texts.
         }
+#	if($in =~ /[#\^\~\`\*€-ÿ_]/){
 	if($in =~ /[#\^\~\`\*€-ÿ]/){
 	   print STDERR "\tTEXT CONTAINS SOME SPECIAL CHARACTERS. \n";
            print STDERR "\tTHEY ARE REMOVED TO RUN THE TEXT SMOOTHLY.\n";
            print STDERR "\t$in\n";
+	  # $in =~ s/[#\^\~\`\*€-ÿ_]//g;
 	   $in =~ s/[#\^\~\`\*€-ÿ]//g;
         }
 # Remove non printable characters outside the range 32 to 127
@@ -48,9 +50,7 @@ while($in = <STDIN>){
 	$in =~ s/\-\-+/ DOTDOTDOT/g;
 # Replace ... by one word DOTDOTDOT
 	$in =~ s/\.\.\.+/ DOTDOTDOT /g;
-# Replace . . . by one word THREEDOTS
-	$in =~ s/\. \. \.+/ THREEDOTS/g;
-
+	$in =~ s/\. \. \.+/ ABBRDOTDOTDOT /g;
 ## Replace more than two consecutive spaces by two spaces.
 	$in =~ s/[ ][ ][ ]+/  /g;
 # Replace starting single quote by normal quote reason:shell gives error
