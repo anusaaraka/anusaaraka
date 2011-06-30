@@ -31,14 +31,14 @@ if($#ARGV >= 2) {
 
 &init_count();
 
-$wrd = "[a-zA-Z0-9\-¡-þ%]+";
+$wrd = "[a-zA-Z0-9\-¡-þ%_]+";
 $start_tag = "<$wrd>";
 $end_tag = "<\\\/$wrd>";
 $number = "[+-]?[0-9]+([,.][0-9]+)?";
 $section_number = "[+-]?[0-9]+([,.][0-9]+)+";
 $hr_min = "[0-9]+[:][0-9]+";
 $hr_min_sec = "[0-9]+[:][0-9]+[:][0-9]+";
-$punct = "[^a-zA-Z0-9\-¡-þ%]";
+$punct = "[^a-zA-Z0-9\-¡-þ%_]";
 $abbr = "[A-Za-z][A-Za-z]?\\.(?:[A-Za-z]\\.)+";
 
 $para_no=1; $word_no = 1; $sent_no = 1;

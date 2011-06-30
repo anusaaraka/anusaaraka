@@ -50,6 +50,7 @@ if  [ -s $MYPATH/$1_tmp/$2/ol_pada_tmp-new.dat ] ; then
 
 
 cd $MYPATH/$1_tmp/$2
+ cp $MYPATH/$1_tmp/underscore_hyphen_replace_info.txt  $MYPATH/$1_tmp/$2/.
  myclips -f $HOME_anu_test/Anu_clp_files/run_H_gen_sen.bat >> $1.error
 
 fi

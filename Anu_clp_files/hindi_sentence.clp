@@ -220,9 +220,31 @@
         )
  )
  ;---------------------------------------------------------------------------------------------------------
+ ;Added by Roja (29-06-11)
+ ;To replace hyphen(-) with underscore(_) only in cases where we get underscore in the sentence. 
+ ;Ex: Child_abuse is the physical or emotional or sexual mistreatment of children. (Note: used for WordNet purpose)
+
+ (defrule replace_hyphen_with_underscore
+ (declare (salience  2000)) 
+ ?f0<-(para_id-sent_id-word_id-original_word-hyphenated_word  ?para_id  ?sent_id  ?wid  ?org_wrd $? ?hyp_wrd $?)
+ (id-original_word  ?wid  ?hyp_wrd)
+ (hindi_id_order $? ?wid $?)
+ ?f1<-(id-HM-source ?wid ?hmng ?src)
+ ?f2<-(id-Apertium_output ?wid ?wrd_analysis $?wrd)
+ =>
+   (bind ?hyp_word (string-to-field (str-cat "@" ?hyp_wrd)))
+   (bind ?hyp_wd   (string-to-field (str-cat "\@" ?hyp_wrd)))
+   (printout t ?hmng "   "  ?hyp_word crlf)
+   (if (or (eq ?hmng ?hyp_word) (eq $?wrd_analysis  ?hyp_word)  (eq $?wrd_analysis  ?hyp_wd)) then 
+      (assert (id-HM-source  ?wid ?org_wrd ?src)) 
+      (assert (id-Apertium_output ?wid ?org_wrd $?wrd))
+      (retract ?f0 ?f1  ?f2)
+   )
+ )
+ ;---------------------------------------------------------------------------------------------------------
  (defrule end
  (declare (salience -10))
  =>
         (close ?*hin_sen-file* )
  )
-;---------------------------------------------------------------------------------------------------------
+ ;---------------------------------------------------------------------------------------------------------

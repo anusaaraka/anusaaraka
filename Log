@@ -2470,7 +2470,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 14. Updated changes_in_databases.
 15. Updated Log.
  
- 24-06-11
+ 30-06-11
  ========
  1. prepare_apertium_input.clp
         Added    : PP_pronoun_rule_with_vib_kA  and  PP_pronoun_rule_with_vib
@@ -2483,6 +2483,14 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  6. Modified sd_ver_output
  7. Modified run_sentence_stanford.sh
  8. Updated changes_in_databases
- 9. Updated Log
+ 9. Added replace_underscore_with_hyphen.py programme in save_format to replace underscore with hyphen within a word.
+10. Modified save_format.sh to call 'replace_underscore_with_hyphen.py' programme.
+11. In gen_table.pl, added _(underscore) to avoid treating it as a punctuation if it occurs within a  word.
+12. In chk_input_format.pl, handled _(underscore) to avoid it as a special character.
+13. Added a rule in add_snt_mrkr.lex, to handle a word which contains underscore.
+14. In hindi_sentence.clp, Added a rule : 'replace_hyphen_with_underscore'  to substitue back -(hyphen) with _(underscore).
+15. In run_H_gen_sen.bat, Added: load-facts "original_word.dat" & "underscore_hyphen_replace_info.dat" in hindi_sentence.clp
+16. In run_sentence_stanford.sh, run_sentence_link.sh and run_sentence_ol.sh added  a line to copy the file underscore_hyphen_replace_info.txt which is generated in <filename>_tmp directory into directories of each sentence.
+17. Updated Log
 
 
