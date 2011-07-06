@@ -6,9 +6,9 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id maMjZUrI))
+(assert (id-wsd_root_mng ?id maMjUrI))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  sanction.clp 	sanction0   "  ?id "  maMjZUrI )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  sanction.clp 	sanction0   "  ?id "  maMjUrI )" crlf))
 )
 
 ;"sanction","N","1.maMjZUrI"
@@ -23,9 +23,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id maMjZUra_kara))
+(assert (id-wsd_root_mng ?id maMjUra_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  sanction.clp 	sanction1   "  ?id "  maMjZUra_kara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  sanction.clp 	sanction1   "  ?id "  maMjUra_kara )" crlf))
 )
 
 ;"sanction","V","1.maMjZUra_karanA"
