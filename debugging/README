@@ -22,3 +22,16 @@
                  to anusaaraka team.
         step 5 : Reset (ITS IMPORTANT TO RESET)
                  $sh $HOME_anu_test/debugging/provisional_Anu_databases/reset.sh
+
+
+  DepTreeeViewer ::
+  ==============
+
+   $ cd $HOME_anu_test/debugging/sentence_debug
+   $ sh ../DepTreeeViewer.sh <file_name> <sentence_number>   Ex: $ sh ../DepTreeeViewer.sh   mytest  2.1
+  
+   RUN ::
+   java -jar DepTreeeViewer_17_06_10.jar
+
+   (In "File" Menu select "Open Treebank" load option load paninian_to_conllx_format.dat  file [i.e from $HOME_anu_test/debugging/sentence_debug/paninian_to_conllx_format.dat])
+
