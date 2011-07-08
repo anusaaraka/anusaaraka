@@ -7,4 +7,4 @@ cp $HOME_anu_test/debugging/paninian_to_conllx_format.clp .
 
 myclips -f paninian_to_conllx_format.clp
 
-java -jar $HOME/TREE_VIEWERS/DepTreeeViewer_17_06_10.jar
+java -jar $HOME_anu_test/debugging/DepTreeeViewer_17_06_10.jar
