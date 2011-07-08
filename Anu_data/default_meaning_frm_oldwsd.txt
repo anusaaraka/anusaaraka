@@ -839,7 +839,7 @@ bind	bAzXa
 binding	AvaSyaka
 bite	kAta
 biting	cuBawA_huA
-bitter	kaduvA
+bitter	kadavA	
 black	kAlA
 blacking	syAhIr
 blackmail	blEkamela_kara

@@ -141,11 +141,11 @@
  (defrule substitute_eng_word 
  (declare (salience 800))
  ?f0<-(hindi_id_order $?id1 ?id $?id2)
- (id-word ?id ?wrd)
+ ?f1<-(id-word ?id ?wrd)
  (id-left_punctuation ?id ?lp)
  (id-right_punctuation ?id ?rp)
  =>
-  	(retract ?f0)
+  	(retract ?f0 ?f1)
 	(bind ?lp1 (string-to-field ?lp))
 	(bind ?rp1 (string-to-field ?rp))
 	(if (and (eq ?rp "NONE" )(eq ?lp "left_paren" )) then

@@ -6,7 +6,7 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id kadZavA))
+(assert (id-wsd_root_mng ?id kadavA))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  bitter.clp 	bitter0   "  ?id "  kadZavA )" crlf))
 )
@@ -19,7 +19,7 @@
 (id-cat_coarse ?id adjective)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id kadZavA))
+(assert (id-wsd_root_mng ?id kadavA))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  bitter.clp 	bitter1   "  ?id "  kadZavA )" crlf))
 )

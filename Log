@@ -2498,4 +2498,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  1. Added -(hyphen) in berkeley_word_cat.lex to handle compound words Ex: Living-thing
  2  Added :: DepTreeeViewer_17_06_10.jar ConstTreeViewer_13_05_10.jar DepTreeeViewer.sh in debugging
  3. Added information in anu_testing/debugging/README for DepTreeeViewer
- 4. Updated Log.
+ 4. Modified abbr.lex to handle now's and modified abbr1.lex to handle Ms. and modified abbr.sh to handle both now's and Ms.
+ 5. Modified substitute_eng_word rule in hindi_sentence.clp to retract word fact
+ 6. Removed pada_prawiniXi and hindi_position modules in run_modules_std.bat
+ 7. WSD : Modified : bitter.clp
+ 8. Modified Anusaaraka_berkeley.sh to modify sed command for ROOT
+ 9. Updated Log

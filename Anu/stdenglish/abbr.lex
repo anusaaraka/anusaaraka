@@ -123,6 +123,11 @@
 [^a-zA-Z][yY]ou'll	{printf("%c%cou will",yytext[0],yytext[1]);}
 [^a-zA-Z][Yy]ou've	{printf("%c%cou have",yytext[0],yytext[1]);}
 [^a-zA-Z][yY]ou'd	{printf("%c%cou would",yytext[0],yytext[1]);}
+
+
+[^a-zA-Z][nN]ow's       {printf("%c%cow is",yytext[0],yytext[1]);}
+
+
 [a-zA-Z]'[sS][^a-zA-Z]	{printf("%s",yytext);}
 o'clock		{printf("%s",yytext);}
 Hon'ble		{ printf("Honourable");	}
