@@ -42,7 +42,8 @@ SPC [^a-zA-Z0-9]
 [ ]Dr\.		{printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
 [ ]Mr\.		{printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
 [ ]Mrs\.	{printf("%c%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2],yytext[3]); }
-[ ]Ms\.         {printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
+[ ]Inc\.	{printf("%c%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2],yytext[3]); }
+
 %%
 main()
 {

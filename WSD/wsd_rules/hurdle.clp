@@ -22,7 +22,8 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id hardala))
+;(assert (id-wsd_root_mng ?id hardala))
+(assert (id-wsd_root_mng ?id bAXA)) ;Changed meaning by Roja(suggested vy Chaitanya Sir 07-7-11)
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  hurdle.clp 	hurdle1   "  ?id "  hardala )" crlf))
 )

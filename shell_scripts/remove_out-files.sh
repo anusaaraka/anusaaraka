@@ -26,6 +26,8 @@
  cd $HOME_anu_test/Anu_src
  rm *.out
  rm ir
+ rm lex.yy.c y.tab.c  y.tab.h jnk 
+ 
 
  cd $HOME_anu_test/apertium
  rm *.out

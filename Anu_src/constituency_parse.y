@@ -5,7 +5,7 @@
 
 int my_level=0,my_token_count=0,found=0,my_index[100],j=0,index1=1,k=0;// index1 seems to store (max_number_of_levels+1)!
 int my_opn_parn_loc[100];
-char my_temp[100][100000],str1[100],str2[100],str3[100],token[10],node_cat[100][100];
+char my_temp[100][100000],str1[100],str2[100],str3[100],token[10],node_cat[200][100];
 int current_sub_level[100];
 char my_daughters[100][100][100], my_mother[100][100][100], my_head[100][100][100];
 char buffer[20];

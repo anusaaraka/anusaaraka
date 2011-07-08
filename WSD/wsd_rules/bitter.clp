@@ -1,4 +1,4 @@
-;(the meaning 'kadZuA' has been modified as 'kadZavA' by Sukhada. 8-4-10)
+;(the meaning 'kadZuA' has been modified as 'kadavA' by Sukhada. 08-07-11)
 (defrule bitter0
 (declare (salience 5000))
 (id-root ?id bitter)
@@ -8,10 +8,10 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kadavA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  bitter.clp 	bitter0   "  ?id "  kadZavA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  bitter.clp 	bitter0   "  ?id "  kadavA )" crlf))
 )
 
-;Ex. Losing to a younger player was a bitter pill to swallow. (the meaning 'kadZuvA' has been modified as 'kadZavA' by Sukhada. 8-4-10)
+;Ex. Losing to a younger player was a bitter pill to swallow. (the meaning 'kadZuvA' has been modified as 'kadavA' by Sukhada. 08-06-11)
 (defrule bitter1
 (declare (salience 4900))
 (id-root ?id bitter)
@@ -21,7 +21,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kadavA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  bitter.clp 	bitter1   "  ?id "  kadZavA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  bitter.clp 	bitter1   "  ?id "  kadavA )" crlf))
 )
 
 ;"bitter","Adj","1.kadZuvA"

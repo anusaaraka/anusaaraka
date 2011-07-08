@@ -247,7 +247,6 @@
  (open "agmt_control_fact.dat" agmt_cntrl_fp "a")
  (open "pada_control_fact.dat" pada_cntrl_fp "a")
  (run)
- (facts)
  (save-facts "pada_id_info.dat" local  pada_info)
  (clear)
  ;----------------------------------------------------------------------
