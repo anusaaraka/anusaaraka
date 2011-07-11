@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include <stddef.h>
 #include "gdbm_lookup.h"
-char * gdbm_lookup(char *word,char *dbm)
+char * gdbm_lookup(char *dbm,char *word)
 {
    GDBM_FILE   dbf;
    datum       key,value; 
@@ -13,12 +13,16 @@ char * gdbm_lookup(char *word,char *dbm)
    char        abs_db_path[1000];
    int         len=0,len1=0;
    char        *dbm1;
+   DATA_OBJECT temp;
    /*=================================*/
    /* Check for exactly one argument. */
    /*=================================*/
 
    if (ArgCountCheck("gdbm_lookup",EXACTLY,2) == -1)
    { return(AddSymbol("")); }
+
+   if (ArgTypeCheck("gdbm_lookup",2,SYMBOL_OR_STRING,&temp) == 0)
+    { return(AddSymbol(""));} 
 
    /*=================================*/
    /* To open the gdbm file.          */
@@ -28,7 +32,6 @@ char * gdbm_lookup(char *word,char *dbm)
   dbm=malloc(sizeof(char)*len+1);
 
   strcpy(dbm,RtnLexeme(1));
-  //strcpy(abs_db_path,"/home/mahalaxmi/02-04-09/anu_testing/Anu_databases/");
   strcpy(abs_db_path,ABS_ANU_PATH);
   strcat(abs_db_path,dbm);
   free(dbm);
@@ -37,19 +40,21 @@ char * gdbm_lookup(char *word,char *dbm)
   strcpy(dbm1,abs_db_path);
   
    dbf = gdbm_open(dbm1,512,GDBM_READER,0644,0);
-   if (dbf == NULL) exit(1); 
+   /*==================================================*/
+  /* Check for database. 1.Empty  OR  2.File not found */
+  /*===================================================*/
+  if (dbf == NULL)
+ { PrintRouter(WDISPLAY,"Warning :: Database Not Found ----- OR ----- Database Is Empty.\n");return(AddSymbol(""));}
+
    
 /*==========================================================================================*/
 /* RtnLexeme returns a character pointer from either a symbol, string, or instance name data type */
 /*=========================================================================================*/
-
    word = RtnLexeme(2);
-
    key.dptr=word;
    key.dsize=strlen(key.dptr);
    
    value = gdbm_fetch(dbf,key);
-
    /*=================================*/
    /* To allocate the size.           */
    /*=================================*/
@@ -61,10 +66,11 @@ char * gdbm_lookup(char *word,char *dbm)
   { strncpy(morph_out,value.dptr,value.dsize);
    morph_out[value.dsize] = '\0';}
 
+
    /*=============================================================================*/
    /* To return the morph output.Refer 3.3.1 of advanced clips pdf for AddSymbol. */ 
    /*=============================================================================*/
- 
+  
    my_morph_out = AddSymbol(morph_out);
    free(dbm1);free(morph_out);
    return my_morph_out;

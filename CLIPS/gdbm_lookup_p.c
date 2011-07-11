@@ -5,14 +5,16 @@
 #include <gdbm.h>
 #include "gdbm_lookup.h"
 
-int gdbm_lookup_p(char *word,char *dbm)
+int gdbm_lookup_p(char *dbm,char *word)
 {
    GDBM_FILE   dbf;
    datum       key,value;
-   int 	       flag;
+//   int 	       flag;
    char        abs_db_path[1000];
    int         len=0,len1=0;
    char        *dbm1;
+   DATA_OBJECT temp;
+
   /*=================================*/
   /* Check for exactly two argument. */
   /*=================================*/
@@ -20,6 +22,12 @@ int gdbm_lookup_p(char *word,char *dbm)
   if (ArgCountCheck("gdbm_lookup_p",EXACTLY,2) == -1)
   { return(FALSE); }
 
+  /*=================================*/
+  /* Check the datatype of 2nd argument. */
+  /*=================================*/
+
+  if (ArgTypeCheck("gdbm_lookup_p",2,SYMBOL_OR_STRING,&temp) == 0)
+    { return(1L);}
  /*==========================================================================================*/
  /*RtnLexeme returns a character pointer from either a symbol, string, or instance name data type */
  /*=========================================================================================*/
@@ -35,7 +43,6 @@ int gdbm_lookup_p(char *word,char *dbm)
   dbm1=malloc(sizeof(char)*len1+1);
   strcpy(dbm1,abs_db_path);
   
-  //dbm = RtnLexeme(1);
   word = RtnLexeme(2);
  
   /*=================================*/
@@ -43,24 +50,18 @@ int gdbm_lookup_p(char *word,char *dbm)
   /*=================================*/
 
   dbf = gdbm_open(dbm1,512,GDBM_READER,0644,0);
-  if (dbf == NULL) exit(1);
+ /*=================================*/
+  /* Check whether databse is empty. */
+  /*=================================*/
+  if (dbf == NULL) 
+ { PrintRouter(WDISPLAY,"Warning :: Database Not Found ------ OR ----- Database Is Empty.\n");return(1L); }
   
   key.dptr=word;
   key.dsize=strlen(key.dptr);
   value = gdbm_fetch(dbf,key);
 
-  while(value.dptr==NULL)
-   {
-      flag=0;
-      break;
-   }
-  while(value.dptr!=NULL) 
-   {
-      flag=1;
-      break;
-   }
-
-   if(flag==1)
-         return(TRUE);
-  else  return(FALSE);   
+  if(value.dptr!=NULL)
+    return(TRUE);
+  else
+   return(FALSE);
 }
