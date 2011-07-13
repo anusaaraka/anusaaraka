@@ -102,7 +102,7 @@
  ?f<-(padas wrong)
   =>
   (retract ?f)
-  (printout t "Type the members of the pada  " crlf  "For Open-Logos Ex:- P3 P4 P5 :: " crlf " For other Parsers Ex: 3 4 5 " crlf)
+  (printout t "Type the members of the pada  " crlf  "Ex: 3 4 5 " crlf)
   (bind ?txt (explode$ (readline)))
   (assert (debug_pada ?txt))
   )
