@@ -73,11 +73,12 @@
  ?f1<-(id-word ?wh_word  what|when|why|who|how|where)
  (not (prep_id-relation-anu_ids ?  kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?  ?wh_word)) ;Ex. How quickly did you run?
  (not (prep_id-relation-anu_ids ?  wall_conjunction ?wh_word))
-   ;When we want to hear a music programme on the radio , we have to tune the radio to the correct station .
+ ;When we want to hear a music programme on the radio , we have to tune the radio to the correct station .
  (not (prep_id-relation-anu_ids ?  viSeRaNa-viSeRaka  ? ?wh_word)) ;I wonder how big the department is .
  (not (prep_id-relation-anu_ids ?  viSeRya-jo_samAnAXikaraNa  ? ?wh_word))
  ?f0<-(hindi_id_order  $?start ?wh_word $?NP ?kriyA $?end)
  (not (id-word =(+ ?wh_word 1) long));How long will it last ? 
+ (not (prep_id-relation-anu_ids - niReXawmaka_vAkya));When the dollar is in a free-fall, even central banks can not stop it.
  =>
         (retract ?f0 ?f1)
         (assert (hindi_id_order $?start  $?NP ?wh_word ?kriyA $?end))
@@ -316,6 +317,23 @@
   (retract ?f ?f1)
   (assert (hindi_id_order  $?list ?id $?list1 nahIM ?kri))
   (printout  ?*DBUG* "(Rule_Name-ids   insert_nahIM   (hindi_id_order  "(implode$ (create$ $?list  ?id $?list1 nahIM ?kri)) ")" crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------
+ ;If the USA were to be invaded by another country, would it really matter? 
+ ; Added by Shirisha Manju (8-07-11) suggested by Sukhada
+ (defrule kyA_rule
+ (Head-Level-Mother-Daughters ? ? ?ROOT ?SQ )
+ (Node-Category ?ROOT   ROOT)
+ (Head-Level-Mother-Daughters ? ? ?SQ ?SBAR ?M $?)
+ (Node-Category ?SQ     SQ)
+ (Node-Category ?SBAR  SBAR)
+ (Head-Level-Mother-Daughters ?aux ? ?M ?id)
+ ?f<-(hindi_id_order $?list ?id $?list1)
+ ?f1<-(id-word ?id ?)
+  =>
+  (retract ?f ?f1)
+  (assert (hindi_id_order  $?list  kyA ?id $?list1))
+  (printout  ?*DBUG* "(Rule_Name-ids   kyA_rule   (hindi_id_order  "(implode$ (create$ $?list kyA  ?id)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
  (defrule remove_ordered_ids

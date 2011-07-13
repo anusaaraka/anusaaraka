@@ -87,6 +87,25 @@
 	                 "              After     - "(implode$ ?rev_daut) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+;At this point, the Dow was down about 35 points.
+; Added by Shirisha Manju(09-07-11) Suggested by Sukhada.
+(defrule rev_ADVP
+(declare (salience 940))
+?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d ?d1 )
+(Node-Category  ?Mot  ADVP)
+(Node-Category  ?d1  NP)
+(not (Mother  ?Mot))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (retract ?f0)
+        (bind ?rev_daut (create$ ?head ?lev (reverse_daughters ?Mot $?daut ?d ?d1)))
+        (assert (Head-Level-Mother-Daughters ?rev_daut))
+        (assert (Mother  ?Mot))
+        (printout ?*order_debug-file* "(rule_name - rev_ADVP " ?*count* " " crlf
+                         "              Before    - "?head" " ?lev" "?Mot" "(implode$ $?daut)" " ?d" "?d1 crlf
+                         "              After     - "(implode$ ?rev_daut) ")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
 ; Added by Shirisha Manju(15-06-11) Suggested by Sukhada.
 ; The mystery of the Nixon tapes was never solved
 ; Anne told me I would almost certainly be hired.
@@ -451,31 +470,6 @@
                          "             Before    - "(implode$ $?pre)" "?kri" "(implode$ $?po)" "?k_vi" "(implode$ $?last) crlf 
                          "             After     - "(implode$ $?pre)" "?k_vi" "?kri" "(implode$ $?po)" "(implode$ $?last) ")" crlf)
 )
-;-----------------------------------------------------------------------------------------------------------------------
-;Have you ever seen the Pacific? 
-;It plunged first its nose into the river. 
-;Modified by Shirisha Manju (23-06-11)
-;(defrule move_kri_vi_be4_obj
-;(declare (salience 5))
-;(Head-Level-Mother-Daughters ? ? ?NP $?d ?NN $?)
-;(Head-Level-Mother-Daughters ? ? ?NN ?obj)
-;(Node-Category ?NP NP)
-;?f<-(hindi_id_order  $?order)
-;(kriyA-kriyA_viSeRaNa  ?kri ?k_vi)
-;(kriyA-object  ?kri ?obj)
-;;(test (member$ ?obj $?d))
-;=>
-;        (bind ?*count* (+ ?*count* 1))
-;        (retract ?f)
-;	(bind $?o $?order)
-;	(bind $?order (delete-member$ $?order ?k_vi))
-; 	(bind ?pos (member$ (first$ $?d) $?order))
-;	(bind $?order (insert$ $?order ?pos ?k_vi)) 
-;	(assert (hindi_id_order $?order))
-;	(printout ?*order_debug-file* "(rule_name - move_kri_vi_be4_obj " ?*count* crlf
-;                         "              Before    - "(implode$ $?o) crlf
-;                         "              After     - "(implode$ $?order) ")" crlf)
-;)
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule end_order
 (declare (salience -200))

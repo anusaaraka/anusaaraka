@@ -40,36 +40,46 @@ foreach $line (@lines){
 
 
 sub final_translation{
-$myline=$_[0];
-local $/="\n";
+  $myline=$_[0];
+  local $/="\n";
   if($myline =~ /(\d+)\.(\d+)\.(\d+)/){
-	$ParaId=$1;$SenId=$2;
-	local $facts_filename = $path_clips."/tmp/$ARGV[0]_tmp/".$ParaId.".".$SenId."/hindi_sentence_tmp.dat";
-	if (-z $facts_filename){
-            open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn.html") || die "Can't open $ARGV[0]_trnsltn.html";
-            print TRANS "$ParaId.$SenId\tCould not translate the sentence. \n<BR>\n";
-		close(TRANS);
-		return;
-	}
-	else {	open(FT,"< $facts_filename") || die "Can't open $facts_filename\n";
-		while(<FT>){
-			chomp($sen_wx=$_);
-			$sen_wx =~ s/^\s*//g;
-			$sen_wx =~ s/\s*$//g;
-			$sen_wx =~ s/-//g;
-		   	$sen_wx =~ s/#0//g;
-   			$sen_wx =~ s/#//g;
-		       	$sen_wx =~ s/\\//g;
-			$sen_wx =~ s/\_/ /g;
-			$sen_utf8=&wx_utf8($sen_wx);
-			open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn.html") || die "Can't open $ARGV[0]_trnsltn.html";
-	#
-			print TRANS "$ParaId.$SenId\t$sen_utf8\n<BR>\n";
+    $ParaId=$1;$SenId=$2;
+    local $facts_filename = $path_clips."/tmp/$ARGV[0]_tmp/".$ParaId.".".$SenId."/hindi_sentence_tmp.dat";
 
-			close(TRANS);
-			return;
-		}
-	}
+    if (-e  $facts_filename) {
+      if (-z $facts_filename){
+        open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn.html") || die "Can't open $ARGV[0]_trnsltn.html";
+        print TRANS "$ParaId.$SenId\tCould not translate the sentence. \n<BR>\n";
+        close(TRANS);
+        return;
+      }
+      else{
+        open(FT,"< $facts_filename") || die "Can't open $facts_filename\n";
+        while(<FT>){
+          chomp($sen_wx=$_);
+          $sen_wx =~ s/^\s*//g;
+          $sen_wx =~ s/\s*$//g;
+          $sen_wx =~ s/-//g;
+          $sen_wx =~ s/#0//g;
+          $sen_wx =~ s/#//g;
+          $sen_wx =~ s/\\//g;
+          $sen_wx =~ s/\_/ /g;
+          $sen_utf8=&wx_utf8($sen_wx);
+          open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn.html") || die "Can't open $ARGV[0]_trnsltn.html";
+          #
+          print TRANS "$ParaId.$SenId\t$sen_utf8\n<BR>\n";
+
+          close(TRANS);
+          return;
+        }
+      }
+    }
+    else {
+      open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn.html") || die "Can't open $ARGV[0]_trnsltn.html";
+      print TRANS "$ParaId.$SenId\tCould not translate the sentence. \n<BR>\n";
+      close(TRANS);
+
+    }
   }
 }
 

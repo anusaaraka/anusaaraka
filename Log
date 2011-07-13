@@ -2529,4 +2529,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 15. Replaced "%" symbol with 'ABBRpercent' in abbr1.lex and updated the same in abbr.sh  as all the parsers treat '%' as         separate word.
 16. Modified "(chunk_ids) fact as "(chunk-ids") in following files:
      chunk_relation_rules.clp		create_xml_file.clp	aper_chunker.lex
-17. Updated Log.
+17. Added rev_ADVP rule in H_ordering_rules.clp
+18. Added kyA_rule in hindi_sent_reorder.clp
+19. Loaded "E_constituents_info.dat" and "Node_category.dat" files for hindi_sent_reorder module in run_modules_std.bat
+20. Modified rel_lnode rule in  sd_combining_apostrophe.clp
+21. Modified ber_ver_output and sd_ver_output
+22. Modified hnd_translation.pl -- added error msg to the translation file if hindi_sentence_tmp.dat file is not found
+23. Updated Log.
