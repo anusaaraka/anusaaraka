@@ -2493,7 +2493,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 16. In run_sentence_stanford.sh, run_sentence_link.sh and run_sentence_ol.sh added  a line to copy the file underscore_hyphen_replace_info.txt which is generated in <filename>_tmp directory into directories of each sentence.
 17. Updated Log
 
- 12-07-11
+ 13-07-11
  ========
  1. Added -(hyphen) in berkeley_word_cat.lex to handle compound words Ex: Living-thing
  2  Added :: DepTreeeViewer_17_06_10.jar ConstTreeViewer_13_05_10.jar DepTreeeViewer.sh in debugging
