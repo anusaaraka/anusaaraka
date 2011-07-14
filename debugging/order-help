@@ -1,0 +1,78 @@
+1. Applying tree surgery operations(tsurgeon) on the constituents tree.
+
+   i) Combining apostrope words with its head (where as stanford parser treats word and its apos as two different units)
+      Ex:- These are children's books.
+
+     Input :
+
+	 (ROOT
+	  (S
+	    (NP (DT These))
+	    (VP (VBP are)
+	      (NP                                         
+	        (NP (NNS children) (POS 's))
+	        (NNS books)))
+	    (. .)))
+         
+          
+     Applying tsurgeon operations 
+
+       Output :
+
+	(ROOT
+	  (S
+	    (NP (DT These))
+	    (VP (VBP are)
+	      (NP (NP@ children) (NNS books)))
+	    (. .)))
+
+
+2. Removing the auxillary verbs from the tree (i.e. representing the TAM with its head in the constituent tree.) 
+  
+  Ex :- She is sleeping.
+
+   (VP5 VBZ6 VP7)
+   (VBZ6 is)                         ==========>  (VP5 VP7)
+   (VP7 VBG8 )                                    (VP7 VBG8 )
+   (VBG8 sleeping)                                (VBG8 sleeping)
+
+3. Movement within Phrases.
+   
+   Ex:-  He wasted his golden opportunity to play in the national team.
+                               
+
+                                                          PP
+                                                         /  \
+    NP    VP             NP                 VP        IN       NP       
+   [He] [wasted] [his golden opportunity] [to play] [[in][the national team]].
+    1      2            3                    4             5   
+                                                           |  PP = IN + NP
+                                                           |
+                                                           V
+   [He] [wasted] [his golden opportunity] [to play] [[the national team] [in]].
+    1      2            3                    4             5 
+
+  
+4. Movement across phrases.
+   
+    
+   Ex:-  He wasted his golden opportunity to play in the national team.
+                                                           
+                            
+    NP    VP             NP                 VP            PP
+   [He] [wasted] [his golden opportunity] [to play] [in the national team].
+    1 ------> 2  ---------> 3 -------------> 4 -----------> 5    
+
+   [He] [in the national team] [to play] [his golden opportunity] [wasted]
+    1 --------> 5 ----------------> 4 ---------> 3 -----------------> 2
+
+5. Replacing the phrases with its daughters.
+
+5. Movement within sentences. (i.e SBAR in this case)
+   
+   
+
+6. Inserting new words .(Sometimes new words are inserted in the sentences for proper translation)
+
+7. Final order.
+

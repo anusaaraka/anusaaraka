@@ -1,7 +1,7 @@
  (load "global_path.clp")
  (load-facts "agreement_debug.dat")
  (load-facts "English_sentence.dat")
- (load-facts "lwg_info.dat")
+ ;(load-facts "lwg_info.dat")
  (load-facts "word.dat")
  (assert(index 1))
  (assert(Eng_word_list))
@@ -60,19 +60,6 @@
   (print algorithm)
    =>
   (printout t crlf "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" crlf)
- ; (printout t "                      Verb agreement algorithm" crlf)
- ; (printout t "                      ========================" crlf)
- ; (printout t crlf "	step1 : Check if subject has any prasarg (vibakthi)" 
- ;             crlf "	        if no   ---> verb agreement is with subject	eg:-Rama is a good boy." 
- ;             crlf "	        if yes  ---> Go to step 2			eg:-She has a daughter."     
- ;        crlf crlf "	step2 : Check if object has any prasarg (vibakthi)"
- ;             crlf "	        if no   ---> verb agreement is with object	eg:-She has a daughter." 
- ;             crlf "	        if yes  ---> Go to step 3			eg:-Rama married Sita."  
- ;        crlf crlf "	step3 : Check whether hindi meaning of the verb is in kriyA_mUla list" 
- ;             crlf "	        if no   ---> Go to step 4				" 
- ;             crlf "	        if yes  ---> verb agree with kriyA_mUla		eg:-The student needs training ." 
- ;        crlf crlf "	step4 : default agreement(m,s,a)			eg:-They would have to eat ." crlf
- ; )
   )
 
  (defrule sub_agmt_for_or

@@ -67,7 +67,7 @@
  ?f0<-(id-TAM ?id ?tam)
  =>
  (retract ?f0)
- (printout t crlf "  " ?tam " --- with id --- " ?id crlf)
+ (printout t crlf "id :: " ?id "   TAM :: " ?tam  crlf)
  (assert (id-tam ?id ?tam))
  )
 

@@ -11,7 +11,7 @@
  (load-facts "debug_file.dat")
  (load-facts "hindi_meanings.dat")
  (load-facts "compound_phrase.dat")
- (load-facts "sent_type.dat")
+; (load-facts "sent_type.dat")
 
  (defglobal ?*prov_dir* = ?*provisional_wsd_path*)
  (defglobal ?*debug_flag* = TRUE)
@@ -97,7 +97,7 @@
 
  (defrule hindi_mng_src0
  (declare (salience 76))
- ?f<-(hmng_frm_wsd_mwe ?id ?original_word ?word ?root)
+ ?f<-(hmng_frm_wsd_mwe-src ?id ?original_word ?word ?root ?src)
  (dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng ?d_n ?f_n ?r_n ?id1 $?ids ?group_mng)
  (id-word ?id1 ?word1)
  (id-word ?id ?word)
@@ -106,7 +106,7 @@
  (English-list $?Eng_list)
  =>
  (retract ?f)
- (printout t crlf "Word  \""?word"\" is part of MWE(multi-word-expression) (\" ")
+ (printout t crlf "Word  \""?word"\" is part of MWE(multi-word-expression("?src")) (\" ")
  (bind $?ids (sort > (create$ $?ids ?id1)))
  (bind ?len (length $?ids))
  (loop-for-count (?i 1 ?len)
@@ -119,7 +119,7 @@
 
  (defrule hindi_mng_src1
  (declare (salience 76))
- ?f<-(hmng_frm_wsd_mwe ?id ?original_word ?word ?root)
+ ?f<-(hmng_frm_wsd_mwe-src ?id ?original_word ?word ?root ?src)
  (dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_word_mng ?d_n ?f_n ?r_n ?id1 $?ids ?mng)
  (id-word ?id1 ?word1)
  (id-word ?id ?word)
@@ -128,7 +128,7 @@
  (English-list $?Eng_list)
  =>
  (retract ?f)
- (printout t crlf "Word  \""?word"\" is part of MWE(multi-word-expression) (\" ")
+ (printout t crlf "Word  \""?word"\" is part of MWE(multi-word-expression("?src")) (\" ")
  (bind $?ids (sort > (create$ $?ids ?id1)))
  (bind ?len (length $?ids))
  (loop-for-count (?i 1 ?len)
@@ -141,13 +141,13 @@
 
  (defrule hindi_mng_src_db1
  (declare (salience 76))
- ?f<-(hmng_frm_db_mwe ?id ?original_word ?word ?root)
+ ?f<-(hmng_frm_db_mwe-src ?id ?original_word ?word ?root ?src)
  (ids-cmp_mng-head-cat-mng_typ $?ids ?group_mng ?head ?cat ?mng_typ)
  (test (eq (nth$ ?head $?ids) ?id))
  (English-list $?Eng_list)
  =>
  (retract ?f)
- (printout t crlf "Word  \""?word"\" is part of MWE(multi-word-expression) (\" ")
+ (printout t crlf "Word  \""?word"\" is part of MWE(multi-word-expression("?src")) (\" ")
  (bind ?len (length $?ids))
  (loop-for-count (?i 1 ?len)
                  (bind ?j (nth$ ?i $?ids))
@@ -160,14 +160,14 @@
 
  (defrule hindi_mng_src_db2
  (declare (salience 76))
- ?f<-(hmng_frm_db_mwe ?id ?original_word ?word ?root)
+ ?f<-(hmng_frm_db_mwe-src ?id ?original_word ?word ?root ?src)
  (ids-cmp_mng-head-cat-mng_typ $?ids ?group_mng ?head ?cat ?mng_typ)
  (test (and (neq (nth$ ?head $?ids) ?id) (member$ ?id $?ids)))
  (id-word ?id ?word)
  (English-list $?Eng_list)
  =>
  (retract ?f)
- (printout t crlf "Word  \""?word"\" is part of MWE(multi-word-expression) (\" ")
+ (printout t crlf "Word  \""?word"\" is part of MWE(multi-word-expression("?src")) (\" ")
  (bind ?len (length $?ids))
  (loop-for-count (?i 1 ?len)
                  (bind ?j (nth$ ?i $?ids))
@@ -229,7 +229,7 @@
  =>
  (retract ?f)
  (if (or (eq ?src WSD_compound_phrase_mng)(eq ?src WSD_verb_phrase_mng)) then
- (assert (hmng_frm_wsd_mwe ?id ?original_word ?word ?root ))
+ (assert (hmng_frm_wsd_mwe-src ?id ?original_word ?word ?root ?src))
  else (if (or (eq ?src WSD_root_mng)(eq ?src WSD_word_mng)) then
  (assert (hmng_frm_wsd ?id ?original_word ?word ?root ))
  else (if (eq ?src Default) then
@@ -243,7 +243,7 @@
  else (if (or (eq ?src Database_compound_phrase_root_mng) (eq ?src Database_compound_phrase_root_mng)) then
  (printout t crlf "This word is part of \"Compound_Phrase\"" crlf)
  (printout t "Meaning :: \"" ?h_mng "\"" crlf crlf)
- (assert (hmng_frm_db_mwe ?id ?original_word ?word ?root ))
+ (assert (hmng_frm_db_mwe-src ?id ?original_word ?word ?root ?src))
  else 
  (printout t crlf "Meaning has been generated from " ?src crlf)
  (printout t "Meaning :: \"" ?h_mng "\"" crlf crlf)

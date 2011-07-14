@@ -353,7 +353,7 @@
  ;(open "out_file" fp "r")
  else
  (if (eq ?ptype Stanford-Parser) then
- (system "echo \"rel_debug.*"?rel"	\" >pat")
+ (system "echo \"dbug.*"?rel"	\" >pat")
  (system "grep -R \"^[ \\t]\*(printout\" sd_relation_rules.clp |sed \"s/[ \\t]\*(printout/(printout/g\" <sd_relation_rules.clp >sd_relation_rules_copy.clp")
  (system "perl ../replace_spaces_with_tab.pl <sd_relation_rules_copy.clp >sd_relation_rules_copy1.clp")
  (system  "grep -f pat sd_relation_rules_copy1.clp | cut -f 5 >out_file"))
