@@ -92,16 +92,17 @@
 	(printout ?*l_cat_fp* "(id-sd_cat  "?pid "  "?cat ")" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
- ;The parents documented every step of their child's development .
+ ; The parents documented every step of their child's development .
+ ; The Big Board's Mr. Grasso said, "Our systemic performance was good."
  (defrule rel_lnode
  (declare (salience 91))
  ?f0<-(rel_name-sids ?lname ?lnode ?rnode)
  (id-Modified_id ?lnode ?lnd)
- (not (modified_lid ?lnode))
+ (not (modified_lid ?lname))
  =>
        (retract ?f0)
         (assert (modified_rel_name-lnode-rnode ?lname ?lnd ?rnode))
-        (assert (modified_lid ?lnode))
+        (assert (modified_lid ?lname))
  )
  ;------------------------------------------------------------------------------------------------------------------- 
  ;These are children's books.

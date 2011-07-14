@@ -10,7 +10,7 @@ char ch;
                                                                     lt_len = strcspn(yytext,"@");
                                                                     ch=*(yytext+(lt_len+1));
                                     if(((ch >= 'A') && (ch <= 'Z')) || ((ch >= 'a') && (ch <= 'z'))||(ch == '-'))
-                                                                   {count=count+1;fprintf(fp,"(chunk_ids U  %d)\n",count);}
+                                                                   {count=count+1;fprintf(fp,"(chunk-ids U  %d)\n",count);}
                                                                    }
 
 [\^]unknown[\{\]\[\^\-@.!?\';,:\"\*<>$a-zA-Z0-9\(\)]*[\}][$]                { str_len=strlen(yytext);
@@ -24,9 +24,9 @@ char ch;
                                                                       if(*(yytext+cap_len)=='^')
                                                                       {
                                                                        if (*(yytext+(cap_len+1))=='*')
-                                                                       fprintf(fp,"(chunk_ids NP ");
+                                                                       fprintf(fp,"(chunk-ids NP ");
                                                                        else
-                                                                       fprintf(fp,"(chunk_ids U ");
+                                                                       fprintf(fp,"(chunk-ids U ");
                                                                          
                                                                        count=count+1;
                                                                        fprintf(fp," %d",count);
@@ -39,7 +39,7 @@ char ch;
 
 
 [\^a-zA-Z0-9_-]*[\<\]\[_A-Z]*[\>][\{][-_\@.!?\';,:%\"\^a-zA-Z0-9\<\>$\(\) ]*[\}][$]  {  str_len=strlen(yytext);
-                                                                    fprintf(fp,"(chunk_ids ");      
+                                                                    fprintf(fp,"(chunk-ids ");      
                                                                     lt_len = strcspn(yytext,"<");
                                                                     yytext=yytext+lt_len;
                                                                     if(*(yytext+1)=='>')
