@@ -2493,7 +2493,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 16. In run_sentence_stanford.sh, run_sentence_link.sh and run_sentence_ol.sh added  a line to copy the file underscore_hyphen_replace_info.txt which is generated in <filename>_tmp directory into directories of each sentence.
 17. Updated Log
 
- 13-07-11
+ 14-07-11
  ========
  1. Added -(hyphen) in berkeley_word_cat.lex to handle compound words Ex: Living-thing
  2  Added :: DepTreeeViewer_17_06_10.jar ConstTreeViewer_13_05_10.jar DepTreeeViewer.sh in debugging
@@ -2528,7 +2528,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 15. Replaced "%" symbol with 'ABBRpercent' in abbr1.lex and updated the same in abbr.sh  as all the parsers treat '%' as         separate word and also added Ms. and Inc.
 16. Modified "(chunk_ids) fact as "(chunk-ids") in following files:
      chunk_relation_rules.clp		create_xml_file.clp	aper_chunker.lex
-17. Added rev_ADVP rule in H_ordering_rules.clp
+17. H_ordering_rules.clp
+     Added : rev_ADVP rule and prep_in_SBAR_rule
 18. Added kyA_rule in hindi_sent_reorder.clp
 19. Loaded "E_constituents_info.dat" and "Node_category.dat" files for hindi_sent_reorder module in run_modules_std.bat
 20. Modified rel_lnode rule in  sd_combining_apostrophe.clp
@@ -2536,4 +2537,5 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 22. Modified hnd_translation.pl -- added error msg to the translation file if hindi_sentence_tmp.dat file is not found
 23. Added abbr_browser.sh in bin folder to handle abbrevations in Browser and also used it in ClipsToAnu_browser_intfc.sh.
 24. Modified wrong_pada rule in pada_debug.clp inside debugging.
-25. Updated Log.
+25. Added complm+cop rule in sd_relation_rules.clp
+26. Updated Log.

@@ -261,6 +261,7 @@
 (Node-Category  ?NP  NP)
 (Node-Category  ?PP PP|SBAR)
 (not (Mother  ?mot))
+(test (and (neq ?head lot)(neq ?head most)));And I think a lot of people will harp on program trading.
 =>      
         (bind ?*count* (+ ?*count* 1))
 	(retract ?f0)
@@ -315,6 +316,26 @@
                          "              After     - "?head" "?lvl" "?mot" "?RB" "(implode$ $?d)" "?NN" "(implode$ $?d1) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju(13-07-11) Suggested by Sukhada
+;Several fund managers expect a rough market this morning before prices stabilize.
+(defrule prep_in_SBAR_rule
+(declare (salience 800))
+?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?SBAR ?prep $?d)
+(Head-Level-Mother-Daughters ? ? ?prep ?id)
+(Node-Category ?SBAR SBAR)
+(Node-Category ?prep IN)
+(not (kriyA-conjunction  ? ?id));It was so dark that I could not see anything.
+(not (Mother  ?SBAR))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (retract ?f0)
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?SBAR $?d ?prep))
+        (assert (Mother  ?SBAR))
+        (printout ?*order_debug-file* "(rule_name - prep_in_SBAR_rule "  ?*count* crlf
+                         "              Before    - "?head" "?lvl" "?SBAR" "?prep" "(implode$ $?d) crlf
+                         "              After     - "?head" "?lvl" "?SBAR" "(implode$ $?d)" "?prep ")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
 ;Here we undef all the rules (As this rule are firing again after the nodes are replaced with terminal)
 (defrule undefrules
 (declare (salience 799))
@@ -331,6 +352,7 @@
 (undefrule move_negation_before_verb)
 (undefrule move_kri_vi_be4_obj)
 (undefrule WHNP_rule)
+(undefrule prep_in_SBAR_rule)
 (undefrule rev_ADVP_goesto_RB)
 )
 

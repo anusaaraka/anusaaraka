@@ -672,6 +672,16 @@ else
 )
  ; Ex. He says that you like to swim. He disputed that our program was superior.
 ;------------------------------------------------------------------------------------------------------------------------
+(defrule complm+cop
+(rel_name-sids complm ?x  ?conj)
+(rel_name-sids cop ?x ?kriyA) 
+(root-verbchunk-tam-parser_chunkids ? ? ? $?ids ?kriyA)
+=>
+(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-conjunction        "?kriyA"      "?conj")"crlf)
+(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   complm+cop    kriyA-conjunction        "?kriyA"      "?conj")"crlf)
+)
+ ; Ex. He disputed that our program was superior.
+;------------------------------------------------------------------------------------------------------------------------
 (defrule conj_but
 (rel_name-sids ?cnj ?kriyA ?kri)
 (test (eq (sub-string 1 5 (implode$ (create$ ?cnj))) "conj_"))
