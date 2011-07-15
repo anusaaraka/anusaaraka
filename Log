@@ -2538,4 +2538,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 23. Added abbr_browser.sh in bin folder to handle abbrevations in Browser and also used it in ClipsToAnu_browser_intfc.sh.
 24. Modified wrong_pada rule in pada_debug.clp inside debugging.
 25. Added complm+cop rule in sd_relation_rules.clp
-26. Updated Log.
+26. Added code (Warning messages) in CLIPS/gdbm_lookup.c and CLIPS/gdbm_lookup_p.c files
+             1) For Argument type check
+             2) For Database (is NULL)
+27. Added new rule id-link_id_map_for_lowercase in parserid_wordid_mapping.clp
+28. Updated debugging.
+29. Updated Log.
