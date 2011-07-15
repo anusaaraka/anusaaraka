@@ -30,7 +30,8 @@
 
  ;--------------------------------------------------------------------------------------------------------------------
  (defrule id-link_id_map 
- ?f0<-(current_id ?id);Added by Mahalaxmi. (24-06-11)
+ (declare (salience 999))
+ ?f0<-(current_id ?id);Added by Mahalaxmi. (24-06-11) Suggested by Chaitanya Sir.
  ?f1<-(id-original_word ?id ?wrd)   
  ?f2<-(parser_numid-word-remark ?l_id&:(>= ?l_id ?id) ?wrd ?remark)  
  (not (parser_numid-word-remark ?l_id1&:(and (>= ?l_id1 ?id) (> ?l_id ?l_id1)) ?wrd ?remark))   
@@ -42,6 +43,28 @@
 	else
 		(printout ?*link_map* "(parserid-wordid   P" ?l_id"  " ?id ")" crlf)  
 	)	
+      (bind ?id (+ ?id 1))
+      (assert (current_id ?id))
+ )
+ ;--------------------------------------------------------------------------------------------------------------------
+ ;Ex:-On january 14th every year, something extraordinary happens in bangalore's gavi gangadhareswara temple.
+ ;In order to make the system robust we have added this rule.
+ ;here in the above sentence stanford makes "j"anuary ===> "J"anuary so lowercase of these words are also checked.
+ ;Added by Mahalaxmi. (14-07-11) Suggested by Chaitanya Sir
+ (defrule id-link_id_map_for_lowercase
+ (declare (salience 998))
+ ?f0<-(current_id ?id)
+ ?f1<-(id-original_word ?id ?wrd)
+ ?f2<-(parser_numid-word-remark ?l_id&:(>= ?l_id ?id) ?WRD&:(lowcase (lexemep ?wrd)) ?remark)
+ (not (parser_numid-word-remark ?l_id1&:(and (>= ?l_id1 ?id) (> ?l_id ?l_id1)) ?WRD&:(lowcase (lexemep ?wrd)) ?remark))
+ =>
+        (retract ?f0 ?f1 ?f2)
+        (if (neq ?remark -) then
+                (printout ?*link_map* "(parserid-wordid   P" ?l_id ?remark"  " ?id ")" crlf)
+                (printout ?*link_map* "(parserid-wordid   P" (+ 1 ?l_id)"  " ?id ")" crlf)
+        else
+                (printout ?*link_map* "(parserid-wordid   P" ?l_id"  " ?id ")" crlf)
+        )
       (bind ?id (+ ?id 1))
       (assert (current_id ?id))
  )
