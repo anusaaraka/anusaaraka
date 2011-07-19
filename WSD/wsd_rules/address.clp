@@ -97,6 +97,27 @@
 ;The chief guest gave a welcome address .
 
 
+
+;Added by Meena(14.7.11)(works with link, berkeley and stanford)
+;The President's address to the nation was broadcasted across the country.
+(defrule address7
+(declare (salience 4950))
+(id-root ?id address)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-to_saMbanXI ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id saMboXana))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  address.clp   address7   "  ?id "  saMboXana )" crlf))
+)
+
+
+
+
+
+
+
 ;default_sense && category=verb	pawA_liKa	0
 ;"address","V","1.pawA_liKanA"
 ;Did you address the letter?
