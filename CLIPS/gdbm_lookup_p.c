@@ -18,7 +18,7 @@ int gdbm_lookup_p(char *dbm,char *word)
   /*=================================*/
   /* Check for exactly two argument. */
   /*=================================*/
- 
+
   if (ArgCountCheck("gdbm_lookup_p",EXACTLY,2) == -1)
   { return(FALSE); }
 
@@ -44,7 +44,7 @@ int gdbm_lookup_p(char *dbm,char *word)
   strcpy(dbm1,abs_db_path);
   
   word = RtnLexeme(2);
- 
+  //PrintRouter(WDISPLAY,"Database: ");PrintRouter(WDISPLAY,RtnLexeme(1));PrintRouter(WDISPLAY,"  word :");PrintRouter(WDISPLAY,RtnLexeme(2));PrintRouter(WDISPLAY,"\n");
   /*=================================*/
   /* To open the gdbm file.          */
   /*=================================*/
@@ -54,12 +54,17 @@ int gdbm_lookup_p(char *dbm,char *word)
   /* Check whether databse is empty. */
   /*=================================*/
   if (dbf == NULL) 
- { PrintRouter(WDISPLAY,"Warning :: Database Not Found ------ OR ----- Database Is Empty.\n");return(1L); }
+ { PrintRouter(WDISPLAY,"Warning :: Database Not Found ------ OR ----- Database Is Empty.\n");
+//   PrintRouter(WDISPLAY,"\n");
+ //  PrintRouter(WDISPLAY,RtnLexeme(2));
+  // PrintRouter(WDISPLAY,"\n");
+   return(1L); }
   
   key.dptr=word;
   key.dsize=strlen(key.dptr);
   value = gdbm_fetch(dbf,key);
 
+  gdbm_close (dbf);
   if(value.dptr!=NULL)
     return(TRUE);
   else

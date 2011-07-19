@@ -77,7 +77,7 @@
   (printout t " Enter \"6\" for hindi order debugging.		   Enter \"6\" for Hindi pada krama debugging." crlf)
   (printout t " Enter \"7\" for GNP debugging.			   Enter \"7\" for ling_vachan_purush debugging." crlf)
   (printout t " Enter \"8\" for Verb_agreement debugging.	   Enter \"8\" for abhihita pada nirNaya debugging." crlf)
-  (printout t " Enter \"9\" to exit from CLIPS environment	   Enter \"9\" to exit from CLIPS environment" crlf crlf)
+  (printout t " Enter \"9\" to exit from debugging.	           Enter \"9\" to exit from debugging." crlf crlf)
   (printout t " Enter your choice (\"1\" for debug_list-1  and  \"2\" for debug_list-2) :"  crlf)
   (bind ?read (read))
   (if (eq ?read 1) then
@@ -110,7 +110,7 @@
   (printout t " Enter \"6\" for hindi order debugging." crlf)
   (printout t " Enter \"7\" for GNP debugging." crlf)
   (printout t " Enter \"8\" for Verb_agreement debugging." crlf)
-  (printout t " Enter \"9\" to exit from CLIPS environment" crlf)
+  (printout t " Enter \"9\" to exit from debugging." crlf)
   else (if (eq ?txt "Run debug_list-2") then
   (printout t crlf ?txt crlf)
   (printout t "========================" crlf)
@@ -122,7 +122,7 @@
   (printout t " Enter \"6\" for Hindi pada krama debugging." crlf)
   (printout t " Enter \"7\" for ling_vachan_purush debugging." crlf)
   (printout t " Enter \"8\" for abhihita pada nirNaya debugging." crlf)
-  (printout t " Enter \"9\" to exit from CLIPS environment" crlf)
+  (printout t " Enter \"9\" to exit from debugging." crlf)
   (printout t " To exit from any of the debugging enter (exit) at the CLIPS prompt." crlf))  )
   
   (printout t  crlf " NOTE  ::" crlf)
