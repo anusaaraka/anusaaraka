@@ -44,13 +44,18 @@ char * gdbm_lookup(char *dbm,char *word)
   /* Check for database. 1.Empty  OR  2.File not found */
   /*===================================================*/
   if (dbf == NULL)
- { PrintRouter(WDISPLAY,"Warning :: Database Not Found ----- OR ----- Database Is Empty.\n");return(AddSymbol(""));}
+ { PrintRouter(WDISPLAY,"Warning :: Database Not Found ----- OR ----- Database Is Empty.\n");
+//   PrintRouter(WDISPLAY,"\n");
+//   PrintRouter(WDISPLAY,RtnLexeme(2));
+//   PrintRouter(WDISPLAY,"\n");
+   return(AddSymbol(""));}
 
    
 /*==========================================================================================*/
 /* RtnLexeme returns a character pointer from either a symbol, string, or instance name data type */
 /*=========================================================================================*/
    word = RtnLexeme(2);
+  // PrintRouter(WDISPLAY,"Database: ");PrintRouter(WDISPLAY,RtnLexeme(1));PrintRouter(WDISPLAY,"  word :");PrintRouter(WDISPLAY,RtnLexeme(2));PrintRouter(WDISPLAY,"\n");
    key.dptr=word;
    key.dsize=strlen(key.dptr);
    
@@ -70,7 +75,8 @@ char * gdbm_lookup(char *dbm,char *word)
    /*=============================================================================*/
    /* To return the morph output.Refer 3.3.1 of advanced clips pdf for AddSymbol. */ 
    /*=============================================================================*/
-  
+
+   gdbm_close (dbf);  
    my_morph_out = AddSymbol(morph_out);
    free(dbm1);free(morph_out);
    return my_morph_out;
