@@ -772,6 +772,7 @@ else
  (parser_id-cat_coarse ?kri verb)
  (parserid-word ?p ?word)
  (not (got_prepositional_rel ?p))
+ (not (parserid-word  ?p_saM  ABBRdollar))
  =>
  (retract ?f0)
  (assert (got_prep_rel ?p_saM))
@@ -1285,7 +1286,24 @@ else
  )
  ; Ex.  In the garden stood a statue.
 ;------------------------------------------------------------------------------------------------------------------------
-
+ (defrule appos
+ (propogation_rel_name-sids   appos ?saMj ?saMj_sa)
+ =>
+ (printout       ?*fp*   "(prep_id-relation-parser_ids  -     saMjFA-saMjFA_samAnAXikaraNa    "?saMj" "?saMj_sa")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -       appos  saMjFA-saMjFA_samAnAXikaraNa  "?saMj" "?saMj_sa")"crlf)
+ )
+ ; Ex. In addition, Robert Sakowitz, chief executive of the Sakowitz chain, is seeking funds to buy out the Hooker interest in his company.
+;------------------------------------------------------------------------------------------------------------------------
+(defrule advmod_am_pm
+(rel_name-sids advmod  ?vi ?vi_Na)
+(parserid-word  ?vi_Na  AM|a.m|PM|p.m.)
+ =>
+(printout       ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-viSeRaNa        "?vi"    "?vi_Na")"crlf)
+(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   advmod_am-pm   viSeRya-viSeRaNa        "?vi"    "?vi_Na")"crlf)
+)
+ ; Ex. The Dow industrials were down 55 points at 3 p.m. before the futures-trading halt.
+;------------------------------------------------------------------------------------------------------------------------
+ 
 
 ;rel+nsubj rel+nsubj+wh rules are not working properly. Check them.
 

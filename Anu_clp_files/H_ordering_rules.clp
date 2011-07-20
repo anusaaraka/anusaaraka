@@ -261,7 +261,8 @@
 (Node-Category  ?NP  NP)
 (Node-Category  ?PP PP|SBAR)
 (not (Mother  ?mot))
-(test (and (neq ?head lot)(neq ?head most)));And I think a lot of people will harp on program trading.
+(test (and (neq ?head lot)(neq ?head most)(neq ?head number)));And I think a lot of people will harp on program trading.
+;Chamba has a number of temples, palaces and stylized buildings
 =>      
         (bind ?*count* (+ ?*count* 1))
 	(retract ?f0)

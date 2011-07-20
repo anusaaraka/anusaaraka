@@ -7556,7 +7556,7 @@ October	aktUbara
 Saturday	SanivAra
 September	siwambara
 Sunday	ravivAra
-Thursday	gurUvAra
+Thursday	guruvAra
 Tuesday	maMgalavAra
 Wednesday	buXavAra
 Without_tam_ing	yA_binA
