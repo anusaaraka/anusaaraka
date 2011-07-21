@@ -75,14 +75,14 @@
 
      Command to run 
      --------------
-             Anusaaraka.sh  <file_name>         Ex : Anusaaraka.sh verified
+             Anusaaraka_stanford.sh  <file_name>         Ex : Anusaaraka_stanford.sh verified
 
 
      To run the sentence for partucular linkage :
      -------------------------------------------
 
-                     Anusaaraka.sh  <file_name> <linkage_number>
-               Ex :  Anusaaraka.sh  test 2    --- running test file for second linkage.
+                     Anusaaraka_link.sh  <file_name> <linkage_number>
+               Ex :  Anusaaraka_link.sh  test 2    --- running test file for second linkage.
 
   -------------------------------------------------------------------------------------------------------------------
 
@@ -152,19 +152,3 @@
         
     OL parser fail sentences are in $HOME_anu_test/OL_parser_fails
  --------------------------------------------------------------------------------------------------------------------
-  ERROR NOTE:
-  ----------
-
-  While running Anusaaraka.sh,
-                if at all you find below type of errors
-			[FACTRHS1] Template kriyA-side_saMbanXI does not exist for assert.
-			Function load-facts encountered an error
-			FALSE
-                then 
-                     Go to this directory and run following commands.
-                     $ cd $HOME_anu_test/Anu_clp_files/
-                     $ sh add_dummy_facts.sh  kriyA-side_saMbanXI 
-  
-           then run,
-                     $ myclips -f create_binary_files.clp 
- -----------------------------------------------------------------------------------------------------------------------

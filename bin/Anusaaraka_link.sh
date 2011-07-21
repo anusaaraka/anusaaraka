@@ -58,10 +58,10 @@
   ./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
   echo "Calling Link Parser"
- # cd $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/link-grammar
- # ./link-parser $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt 
-  cd $HOME_anu_test/Parsers/LINK/link-grammar-4.7.4/link-grammar
- ./link-parser $HOME_anu_test/Parsers/LINK/link-grammar-4.7.4/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt
+  cd $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/link-grammar
+  ./link-parser $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt 
+ # cd $HOME_anu_test/Parsers/LINK/link-grammar-4.7.4/link-grammar
+ #./link-parser $HOME_anu_test/Parsers/LINK/link-grammar-4.7.4/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt
 
   #running stanford NER (Named Entity Recogniser) on whole text.
   echo "Finding NER... "

@@ -243,7 +243,7 @@ char * linkage_print_disjuncts(Linkage linkage)
         *  opens link_ps_info.clp and link_ps_word.clp files in write mode */
 
         FILE        *fp1,*fp2,*fp3,*fp4,*fp5;
-        char        *relcp,*p;
+        char        *relcp1,*p;
         char        filename[1000];
        sprintf(filename,"%s/%s_tmp/linkid_word.txt",tmp_path,file_name);
        fp1 = fopen(filename,"a");
@@ -317,42 +317,20 @@ char * linkage_print_disjuncts(Linkage linkage)
 		if ((i%10 == 0) && (i>0)) append_string(string, "\n");
 		i++;
 		append_string(string, "(%s)", linkage->word[j]);
-               /*##################################################################################################*/
-               /*  This part of the code written by Shirisha Manju and Maha Laxmi.
-                *  replacing the word "?" with question_mark , "(" with with left_paren, ")" with right_parene and 
+		/*######################### Added newly ##########################*/
+                // This part of the code written by Shirisha Manju
+		/* replacing the word "?" with question_mark , "(" with with left_paren, ")" with right_parene and 
                    ";" with semi_colon */
-               relcp=malloc(sizeof(char)*50);
-               p=malloc(sizeof(char)*15);
-               if(( p=strchr(linkage->word[j],'.'))!=NULL)
-                 { *p= ' '; //printf("%s\n",p);
-			if (strcmp(p," g")==0 )
-                                       fprintf(fp3, "(linkid-node_cat\tP%d\tverbal_noun)\n",j);
-                                else
-                                       fprintf(fp3, "(linkid-node_cat\tP%d\t-)\n",j);
-			//		 fprintf(fp3, "(linkid-node_cat\tP%d\t%s)\n",j,linkage->word[j]);
-		 }
-               if(( p=strchr(linkage->word[j],' '))!=NULL)
-                 { *p= '\0';fprintf(fp1, "(parserid-word\tP%d\t%s)\n",j,linkage->word[j]);
-                    fprintf(fp2, "(parser_numeric_id-word\t\t%d\t%s)\n",j,linkage->word[j]); }
-               else { 	strcpy(relcp,linkage->word[j]);
-                    	if(strcmp(relcp,"?")==0){
-				strcpy(relcp,"question_mark");     
-			}
-		        if(strcmp(relcp,"(")==0){
-                		strcpy(relcp,"left_paren");
-               		}
-               		if(strcmp(relcp,")")==0){
-                  		strcpy(relcp,"right_paren");
-               		}
-              		if(strcmp(relcp,";")==0){
-                  		strcpy(relcp,"semi_colon");
-               		}
-                	fprintf(fp1,"(parserid-word\tP%d\t%s)\n",j, relcp);
-                	fprintf(fp2, "(parser_numeric_id-word\t\t%d\t%s)\n",j, relcp);
-                	fprintf(fp3,"(linkid-node_cat\tP%d\t -)\n",j);
-             	}
-           /*##############################################################################################################*/
 
+                relcp1=malloc(sizeof(char)*50);
+                strcpy(relcp1,linkage->word[j]);
+                if(strcmp(relcp1,"?")==0)       strcpy(relcp1,"question_mark");
+                if(strcmp(relcp1,"(")==0)       strcpy(relcp1,"left_paren");
+                if(strcmp(relcp1,")")==0)       strcpy(relcp1,"right_paren");
+                if(strcmp(relcp1,";")==0)       strcpy(relcp1,"semi_colon");
+                fprintf(fp1,"(parserid-word\tP%d\t%s)\n",j, relcp1);
+                fprintf(fp2, "(parser_numeric_id-word\t%d\t%s)\n",j, relcp1);
+                /*################################################################*/
 	}
 	append_string(string,"]");
 	append_string(string,"\n");
