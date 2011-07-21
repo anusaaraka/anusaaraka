@@ -2562,9 +2562,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 11. Modified sed command in Anusaaraka_berkeley.sh  to handle empty constituent tree.
 12. Added sed command to handle "SENTENCE_SKIPPED_OR_UNPARSABLE" in Anusaaraka_stanford.sh
 13. Modified ber_ver_output and sd_ver_output
-14. Updated changes_in_databases
-15. Updated README
-16. Updated following files:
+14. Updated remove_out-files.sh
+15. Updated changes_in_databases
+16. Updated README
+17. Updated following files:
          sd_verified (423)    ber_verified (377)    link_verified (218)    new_link_verified ( 236 )
-17. Updated Log
+18. Updated Log
 
