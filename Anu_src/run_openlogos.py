@@ -224,7 +224,7 @@ k=1
 map_id = open("ol_original_numeric_word.dat","w")
 for i in xrange(len(INPUT)):
       if INPUT[i][0] == 'INPUT:':
-         if INPUT[i][1] == ',' or INPUT[i][1] == '?' or INPUT[i][1] == '!':
+         if INPUT[i][1] == ',' or INPUT[i][1] == '?' or INPUT[i][1] == '!' or INPUT[i][1] == ';':
             map_id.write("(parser_numid-word-remark %d  \"%s\"  -)\n" % (k,INPUT[i][1]))
          else:
             map_id.write("(parser_numid-word-remark %d  %s  -)\n" % (k,INPUT[i][1]))
