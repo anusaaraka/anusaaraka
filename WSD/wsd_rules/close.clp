@@ -244,14 +244,15 @@
 
 
 
-
+;Modified by Meena(7.6.11) ;added (id-root ?id1 industrials|share)
 ;Added by Meena(20.5.11)
 ;The Dow Jones industrials closed at 2569.26. 
 (defrule close16
 (declare (salience 2700))
 (id-root ?id close)
 ?mng <-(meaning_to_be_decided ?id)
-(kriyA-subject ?id ?subj)
+(kriyA-subject ?id ?id1)
+(id-root ?id1 industrials|share|dollar|pound) 
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id baMxa_ho))
@@ -289,19 +290,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close18  "  ?id "  " ?id1 "  banxa_kara  )" crlf))
 )
 
-(defrule close19
-(declare (salience 2500))
-(id-root ?id close)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 up)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 banxa_kara))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " close.clp	close19  "  ?id "  " ?id1 "  banxa_kara  )" crlf))
-)
 
 
 ;default_sense && category=noun	samApwi	0

@@ -1,11 +1,12 @@
 
 
 
-
+;Salience changed by Meena(27.7.11) to stop this rule for the example:I waited for Seeta for hours.(because ol takes (viSeRya-for_saMbanXI  Seeta hours))
 ;Added by Meena(22.5.11)
 ;In fact she had been feeling tired and queasy for the past three days.
 (defrule for00
-(declare (salience 5000))
+(declare (salience 4700))
+;(declare (salience 5000))
 (id-root ?id for)
 ?mng <-(meaning_to_be_decided ?id)
 (viSeRya-for_saMbanXI  ?viSeR  ?id1)

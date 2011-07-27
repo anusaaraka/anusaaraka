@@ -443,6 +443,7 @@ kuCa anya pahanAve vAswava mez KarAba We.
 Hindi meaning using Stanford parser 2.108
 Do you think we should go to the party? 
 kyA Apa socawe hEM ki hameM/hamako pArtI ko jAnA cAhiye?
+kyA Apa socawe hEM ki hameM/hamako pArtI meM jAnA cAhiye?
 
 Hindi meaning using Stanford parser 2.109
 Where did you put the milk? 
@@ -602,6 +603,7 @@ mEM kAma karanA Suru_kara cukA hUz.
 Hindi meaning using Stanford parser 2.147
 I knew who would come to the party. 
 mEM jAnawA WA ki pArtI ko kOna AyegA/AegA.
+mEM jAnawA WA ki pArtI meM kOna AyegA/AegA.
 
 Hindi meaning using Stanford parser 2.148
 He prays with me daily. 
@@ -1734,5 +1736,9 @@ isa sambanXa meM vaha jyAxAwara samaya xurvyavahariwa huA mahasUsa karawA hE.
 Hindi meaning using Stanford parser 4.23
 No, it was not Black Monday. 
 nahIM vaha aSuBa somavAra nahIM WA.
+
+Hindi meaning using Stanford parser 4.24
+The President's address to the nation was broadcasted across the country. 
+rARtra ke liye President kA saMboXana pUre_xeSa meM prasAriwa kiyA gayA WA.
 
 Calling Interface related programs
