@@ -2547,25 +2547,25 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 29. Updated Log.
 
  
- 21-07-11
+ 27-07-11
  ========
  1. Modified reverse-NP-Daughters rule in H_ordering_rules.clp
  2. Modified Anu/stdenglish/abbr1.lex , bin/abbr.sh, bin/abbr_browser.sh files to add "$ and #"
  3. Modified single_prep rule in sd_relation_rules.clp (added not condition for $)
- 4. WSD : Modified : address.clp , black.clp, broadcast.clp
+ 4. WSD : Modified : address.clp , black.clp, broadcast.clp , a.clp  close.clp  for.clp
  5. Due to "and" problems we are now using link-grammar-4.5.7 instead link-grammar-4.7.4
  6. Modified print.c (according to new version)
  7. Modified link_relation_rules.clp (according to old version)
  8. Modified link_ver_output, verified_output
- 9. Added new_link_ver_output and new_link_verified
+ 9. Added new_link_ver_output , new_link_verified, new_ver_output and new_verified
 10. Modified Anusaaraka.sh and Anusaaraka_link.sh -- to change the link version
 11. Modified sed command in Anusaaraka_berkeley.sh  to handle empty constituent tree.
 12. Added sed command to handle "SENTENCE_SKIPPED_OR_UNPARSABLE" in Anusaaraka_stanford.sh
-13. Modified ber_ver_output and sd_ver_output
+13. Modified ber_ver_output,verified_output, ol_ver_output and sd_ver_output
 14. Updated remove_out-files.sh
 15. Updated changes_in_databases
 16. Updated README
 17. Updated following files:
-         sd_verified (423)    ber_verified (377)    link_verified (218)    new_link_verified ( 236 )
+         sd_verified (424)    ber_verified (378)    link_verified (218)    new_link_verified ( 236 )
 18. Updated Log
 
