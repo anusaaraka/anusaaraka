@@ -71,12 +71,17 @@
 
 ;The faster it is, the more they will like it.
 ; Added by Amba
+
+
+;Modified by Meena(28.7.11);added(not(id-word =(+ ?id 2) to)) to stop this rule for the cases like  ;This is the way to go.
+;This is the place I live.
 (defrule the3
 (declare (salience 4700))
 (id-root ?id the)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word =(- ?id 1) is)
 (id-word =(- ?id 2) this)
+(not(id-word =(+ ?id 2) to)) 
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id vahI))
@@ -113,17 +118,19 @@
 ;following_word=only	vaha-	0
 ; He may sleep on the only bed (there is).
 ; the only  mOjUxa akelA/ vaha- akelA
-(defrule the6
-(declare (salience 4400))
-(id-root ?id the)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) way)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id vaha))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  the.clp 	the6   "  ?id "  vaha )" crlf))
-)
+
+;;Commented by Meena(28.7.11) to stop it for the example : This is the way to go.
+;(defrule the6
+;(declare (salience 4400))
+;(id-root ?id the)
+;?mng <-(meaning_to_be_decided ?id)
+;(id-word =(+ ?id 1) way)
+;=>
+;(retract ?mng)
+;(assert (id-wsd_root_mng ?id vaha))
+;(if ?*debug_flag* then
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  the.clp 	the6   "  ?id "  vaha )" crlf))
+;)
 
 
 
@@ -148,12 +155,28 @@
 
 
 
+;Added by Meena(3.6.11)
+;Within the relationship he feels ill-used most of the time.
+(defrule the08
+;(declare (salience 0)) 
+(declare (salience 4900))
+(id-root ?id the)
+?mng <-(meaning_to_be_decided ?id)
+;(id-cat_coarse ?id determiner)
+(id-root  =(- ?id 1) within)
+=>
+(retract ?mng)
+(assert (id-wsd_word_mng ?id isa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng   " ?*wsd_dir* "  the.clp       the08   "  ?id "   isa )" crlf))
+)
+
 
 
 ;Salience reduced by Meena(22.3.10)
 (defrule the8
-;(declare (salience 0)) 
-(declare (salience 4900)) 
+(declare (salience 0)) 
+;(declare (salience 4900)) 
 (id-root ?id the)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id determiner)
@@ -180,7 +203,7 @@
 (declare (salience 4999))
 (id-root ?id the)
 (viSeRya-det_viSeRaNa  ?vi ?id)
-(or (kriyA-aXikaraNavAcI_avyaya ?kriyA ?id1)(kriyA-object ?kriyA ?vi)(kriyA-subject  ?kriyA ?vi)(kriyA-object_2  ?kriyA ?vi));fact "kriyA-object_2" is added by sheetal
+(or (kriyA-object ?kriyA ?vi)(kriyA-subject  ?kriyA ?vi)(kriyA-object_2  ?kriyA ?vi));fact "kriyA-object_2" is added by sheetal
 ;(or(muKya_vAkya-sApekRa_upavAkya  ?kriyA ?)                          ;(or(muKya_vAkya-sApekRa_upavAkya ...)(and(....    )added by Meena
 ;  (and(id-word  =(+ ?vi 1) with)(id-word =(+ ?id 2) whom)))
 (or (viSeRya-jo_samAnAXikaraNa  ?vi  ?id1)(and(id-word  =(+ ?vi 1) with)(id-word =(+ ?id 3) whom)))

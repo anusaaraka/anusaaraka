@@ -2547,12 +2547,15 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 29. Updated Log.
 
  
- 27-07-11
+ 29-07-11
  ========
  1. Modified reverse-NP-Daughters rule in H_ordering_rules.clp
  2. Modified Anu/stdenglish/abbr1.lex , bin/abbr.sh, bin/abbr_browser.sh files to add "$ and #"
  3. Modified single_prep rule in sd_relation_rules.clp (added not condition for $)
- 4. WSD : Modified : address.clp , black.clp, broadcast.clp , a.clp  close.clp  for.clp
+ 4. WSD :
+	Modified : address.clp , black.clp, broadcast.clp , a.clp ,  close.clp, for.clp, at.clp, be.clp, build.clp 
+		   even.clp    , fall.clp , point.clp     , on.clp,  stop.clp , the.clp
+	Added    : free-fall.clp   philosophy.clp  sell.clp
  5. Due to "and" problems we are now using link-grammar-4.5.7 instead link-grammar-4.7.4
  6. Modified print.c (according to new version)
  7. Modified link_relation_rules.clp (according to old version)
@@ -2568,4 +2571,3 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 17. Updated following files:
          sd_verified (424)    ber_verified (378)    link_verified (218)    new_link_verified ( 236 )
 18. Updated Log
-

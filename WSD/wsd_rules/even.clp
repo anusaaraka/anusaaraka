@@ -100,6 +100,9 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  even.clp 	even6   "  ?id "  wo_BI )" crlf))
 )
 
+
+
+;Modified by Meena(19.7.11); added (id-cat_coarse ?id adverb) with or {(or(    )(    ))} for ex: When the dollar is in a free-fall, even central banks can not stop it. 
 ;I shall continue to work from 6 a.m. till midnight, even if it kills me.
 ;She checks her text messages when you least expect her to, even when she's driving.
 ;Even though she has a degree in business administration, all her business ventures have failed.
@@ -107,8 +110,7 @@
 (declare (salience 4100))
 (id-root ?id even)
 ?mng <-(meaning_to_be_decided ?id)
-(kriyA-kriyA_viSeRaNa ?id1 ?id)
-;(id-cat_coarse ?id adverb)
+(or(kriyA-kriyA_viSeRaNa ?id1 ?id)(id-cat_coarse ?id adverb))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id BI))
@@ -116,6 +118,8 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  even.clp 	even7   "  ?id "  0_BI )" crlf))
 )
+
+
 
 (defrule even8
 (declare (salience 4000))

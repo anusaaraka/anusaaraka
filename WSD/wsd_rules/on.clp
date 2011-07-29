@@ -50,11 +50,16 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  on.clp 	on2   "  ?id "  para )" crlf))
 )
 
+
+
+;Modified by Meena(21.7.11)
+;The Dow fell 22.6% on Black Monday.
 (defrule on3
 (declare (salience 4700))
 (id-root ?id on)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) sunday|monday|tuesday|wednesday|thursday|friday|saturday)
+(or(kriyA-on_saMbanXI ?kri ?id1)(viSeRya-on_saMbanXI  ?viSeRya  ?id1))
+(id-root  ?id1 Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ko))
