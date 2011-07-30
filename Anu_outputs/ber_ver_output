@@ -1441,12 +1441,12 @@ jisakA mEMne pICA kiyA vaha kuwwA kAlA WA.
 
 Hindi meaning using Berkeley parser 3.53
 This is the place I live. 
-yaha vaha sWAna hE jahAz mEM rahawA hUz.
+yaha vahI sWAna hE jahAz mEM rahawA hUz.
 yaha jahAz mEM rahawA hUz vaha sWAna hE.
 
 Hindi meaning using Berkeley parser 3.54
 This is the place I met him. 
-yaha vaha sWAna hE jahAz mEM usase milA.
+yaha vahI sWAna hE jahAz mEM usase milA.
 yaha jahAz mEM usase milA vaha sWAna hE.
 
 Hindi meaning using Berkeley parser 3.55
@@ -1544,5 +1544,9 @@ praxarSana sAwa baje Suru howA hE.
 Hindi meaning using Berkeley parser 3.77
 No, it was not Black Monday. 
 nahIM vaha aSuBa somavAra nahIM WA.
+
+Hindi meaning using Berkeley parser 3.78
+The President's address to the nation was broadcasted across the country. 
+rARtra ke liye President kA saMboXana pUre_xeSa meM prasAriwa kiyA gayA WA.
 
 Calling Interface related programs

@@ -1,5 +1,54 @@
 
+;Added by Meena(25.7.11)
+;At this point, the Dow was down about 35 points. 
 (defrule point0
+(declare (salience 5000))
+(id-root ?id point)
+?mng <-(meaning_to_be_decided ?id)
+(or(kriyA-at_saMbanXI  ?id1 ?id)(kriyA-on_saMbanXI  ?id1 ?id)(kriyA-to_saMbanXI  ?id1 ?id))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id samaya))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  point.clp      point0   "  ?id "  samaya )" crlf))
+)
+
+
+;Added by Meena(25.7.11)
+;At this point, the Dow was down about 35 points. 
+(defrule point1
+(declare (salience 5000))
+(id-root ?id point)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id points)
+(viSeRya-saMKyA_viSeRaNa  ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_word_mng ?id pOintsa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  point.clp      point1   "  ?id "  pOintsa )" crlf))
+)
+ 
+
+
+;Added by Meena(6.5.11)
+;Each exercise focuses on a different grammar point.
+(defrule point2
+(declare (salience 5000))
+(id-root ?id point)
+?mng <-(meaning_to_be_decided ?id)
+(id-word =(- ?id 1) grammar)
+(samAsa ?id =(- ?id 1)) 
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id muxxA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  point.clp      point2   "  ?id "  muxxA )" crlf))
+)
+
+
+
+(defrule point3
 (declare (salience 5000))
 (id-root ?id point)
 ?mng <-(meaning_to_be_decided ?id)
@@ -9,14 +58,14 @@
 (retract ?mng)
 (assert (id-wsd_word_mng ?id tIpatApa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  point.clp  	point0   "  ?id "  tIpatApa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  point.clp  	point3   "  ?id "  tIpatApa )" crlf))
 )
 
 ;"pointing","N","1.tIpatApa/tipakArI"
 ;The pointing used in the castle is of good quality
 ;
 ;
-(defrule point1
+(defrule point4
 (declare (salience 4900))
 (id-root ?id point)
 ?mng <-(meaning_to_be_decided ?id)
@@ -28,12 +77,12 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 xiKA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " point.clp	point1  "  ?id "  " ?id1 "  xiKA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " point.clp	point4  "  ?id "  " ?id1 "  xiKA  )" crlf))
 )
 
 ;He pointed out his car to the watchman.
 ;usane apanI kAra cOkIxAra ko xiKAI
-(defrule point2
+(defrule point5
 (declare (salience 4800))
 (id-root ?id point)
 ?mng <-(meaning_to_be_decided ?id)
@@ -45,12 +94,12 @@
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 XyAna_AkarRiwa_kara))
 (assert (kriyA_id-object_viBakwi ?id kI_ora))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " point.clp	point2  "  ?id "  " ?id1 "  XyAna_AkarRiwa_kara  )" crlf))
-(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  point.clp     point2   "  ?id "  kI_ora )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " point.clp	point5  "  ?id "  " ?id1 "  XyAna_AkarRiwa_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  point.clp     point5   "  ?id "  kI_ora )" crlf)
 )
 
 ;Added by Sheetal(02-08-10)
-;(defrule point3
+;(defrule point6
 ;(declare (salience 4950))
 ;(id-root ?id point)
 ;?mng <-(meaning_to_be_decided ?id)
@@ -63,13 +112,13 @@
 ;(retract ?mng)
 ;(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 XyAna xilA))
 ;(if ?*debug_flag* then
-;(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " point.clp	point3  "  ?id "  " ?id1 "  XyAna xilA  )" crlf))
+;(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " point.clp	point6  "  ?id "  " ?id1 "  XyAna xilA  )" crlf))
 ;)
 
 ;particle_out_- && category=verb	nirxeSa_kara	100
 ;PP_null_out && category=verb	nirxeSa_kara	100
 ;Added by Human
-(defrule point4
+(defrule point7
 (declare (salience 4600))
 (id-root ?id point)
 ?mng <-(meaning_to_be_decided ?id)
@@ -81,10 +130,10 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id nukIle))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  point.clp 	point4   "  ?id "  nukIle )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  point.clp 	point7   "  ?id "  nukIle )" crlf))
 )
 
-(defrule point5
+(defrule point8
 (declare (salience 4500))
 (id-root ?id point)
 ?mng <-(meaning_to_be_decided ?id)
@@ -94,7 +143,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id nukIlA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  point.clp 	point5   "  ?id "  nukIlA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  point.clp 	point8   "  ?id "  nukIlA )" crlf))
 )
 
 ;"pointed","Adj","1.nukIlA"
@@ -103,7 +152,7 @@
 ;He gave a pointed talk on the issue.
 ;
 ;
-(defrule point6
+(defrule point9
 (declare (salience 4400))
 (id-root ?id point)
 ?mng <-(meaning_to_be_decided ?id)
@@ -112,7 +161,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id iSArA_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  point.clp 	point6   "  ?id "  iSArA_kara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  point.clp 	point9   "  ?id "  iSArA_kara )" crlf))
 )
 
 ;default_sense && category=verb	iSArA kara	0

@@ -171,6 +171,8 @@
 
 
 
+
+;Modified by Meena(26.7.11);added "point" in the list for the examples like ;At this point,the Dow was down about 35 points. 
 ;Modified by Meena(20.5.11)
 ;The Dow Jones industrials closed at 2569.26. 
 ;Added by Meena(24.10.09)
@@ -181,7 +183,7 @@
 (id-root ?id at)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-at_saMbanXI  ?id1 ?id2)
-(or(id-root ?id2  me|us|you|her|him|them)(id-cat_coarse ?id2 number))
+(or(id-root ?id2  point|me|us|you|her|him|them)(id-cat_coarse ?id2 number))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id para))

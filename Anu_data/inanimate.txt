@@ -5,3 +5,8 @@ issue	1
 trousers	1
 scissors	1
 flower	1
+dollar	1
+pound	1
+euro	1
+price	1
+value	1

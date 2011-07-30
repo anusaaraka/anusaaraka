@@ -1,4 +1,23 @@
 
+;Added by Meena(19.7.11)
+;When the dollar is in a free fall, even central banks can not stop it. 
+(defrule free_fall01
+(declare (salience 4800))
+(id-root ?id fall)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 free)
+(id-cat_coarse ?id noun)
+(id-root ?id2 dollar|pound|price|value|euro)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 BArI_girAvata))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " fall.clp  fall01  "  ?id "  " ?id1 "  BArI_girAvata )" crlf))
+)
+
+
+
+
 (defrule fall0
 (declare (salience 5000))
 (id-root ?id fall)

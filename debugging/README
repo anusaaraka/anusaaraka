@@ -12,7 +12,7 @@
   (NOTE : For debugging, basic knowledge of CLIPS is required.)
   
 
-  NOTE: If you think that it is necessary to make changes/add something in the data files, then follow the following steps.
+  NOTE: If you think that it is necessary to make changes/add something in the data (databases) files, then follow the following steps.
         step 1 : Go to the respective data file 
                  $HOME_anu_test/debugging/provisional_Anu_databases/<file_name>
         step 2 : Make changes/add  according to the pattern in the file.
@@ -20,7 +20,7 @@
                  sh $HOME_anu_test/debugging/provisional_Anu_databases/compile.sh 
         step 4 : Run the sentence after compiling. And, if the changes made are effective then mail the changes
                  to anusaaraka team.
-        step 5 : Reset (ITS IMPORTANT TO RESET)
+        step 5 : Reset (IT'S IMPORTANT TO RESET)
                  $sh $HOME_anu_test/debugging/provisional_Anu_databases/reset.sh
 
 

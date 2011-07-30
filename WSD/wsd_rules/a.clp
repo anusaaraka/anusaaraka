@@ -145,7 +145,7 @@
 )
 
 
-
+;Added "right" in the list of "?id2" ;Ex.Go straight and take a right turn.(Meena 27.7.11)
 ;Added "welcome|music|curriculum" in the list (Meena 5.3.11)
 ;Modified by Meena(17.2.11) ;added "vacant" in the list for "id2":He had a vacant look/expression on his face.
 ;Added time in the "(not(id-root ?id1 ....... |offer|salary|time))";{Meena(8.02.10)
@@ -160,7 +160,7 @@
 (viSeRya-det_viSeRaNa  ?id1 ?id)
 (or(samAsa  ?id1 ?id2)(viSeRya-viSeRaNa ?id1 ?id2)(viSeRya-wulanAwmaka_viSeRaNa ?id1 ?id2)) ;added samAsa by sukhada Ex:The chief guest gave a welcome address. This has been taken into account in a10(Meena 3.3.11)  
 (not (id-root ?id1 sound|shame|success|effect|idea|manner|offer|salary|time|affair)) ;added affair in the list(Meena 28.4.11)
-(not(id-root ?id2 variable|vacant|welcome|music|curriculum|birthday))  ;Added by (Meena 24.5.10)
+(not(id-root ?id2 right|variable|vacant|welcome|music|curriculum|birthday))  ;Added by (Meena 24.5.10)
 (not(id-cat_coarse ?id1 PropN))
 =>
 (retract ?mng)

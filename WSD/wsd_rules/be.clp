@@ -1,3 +1,22 @@
+;Added by Meena(19.7.11)
+;When the dollar is in a free-fall, even central banks can not stop it. 
+(defrule be00
+(declare (salience 5000))
+(id-root ?id be)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id is)
+(id-root =(- ?id 3) when)
+(id-root =(- ?id 1) ?inanimate)
+(id-root =(- ?id 1)  ?str&:(and (not (numberp ?str))(gdbm_lookup_p "inanimate.gdbm" ?str)))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ho ))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  be.clp        be00   "  ?id "  ho )" crlf))
+)
+
+
+
 ;previous_minus_two=the	howeM_hEM	0
 ;previous_minus_three=the	howeM_hEM	0
 ;The students are mischievous.
@@ -367,33 +386,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " be.clp	be21  "  ?id "  " ?id1 "  ke_pICe_raha  )" crlf))
 )
 
-(defrule be22
-(declare (salience 2800))
-(id-root ?id be)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 after)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 ke_pICe_raha))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " be.clp	be22  "  ?id "  " ?id1 "  ke_pICe_raha  )" crlf))
-)
-
-(defrule be23
-(declare (salience 2700))
-(id-root ?id be)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 intimate)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 GaniRTa_ho))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " be.clp	be23  "  ?id "  " ?id1 "  GaniRTa_ho  )" crlf))
-)
 
 (defrule be24
 (declare (salience 2600))
@@ -449,76 +441,7 @@
 ;What is the purpose of our being.
 ;
 ;
-(defrule be27
-(declare (salience 2300))
-(id-root ?id be)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 after)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 ke_pICe_raha))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " be.clp	be27  "  ?id "  " ?id1 "  ke_pICe_raha  )" crlf))
-)
 
-(defrule be28
-(declare (salience 2200))
-(id-root ?id be)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 after)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 ke_pICe_raha))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " be.clp	be28  "  ?id "  " ?id1 "  ke_pICe_raha  )" crlf))
-)
-
-(defrule be29
-(declare (salience 2100))
-(id-root ?id be)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 intimate)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 GaniRTa_ho))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " be.clp	be29  "  ?id "  " ?id1 "  GaniRTa_ho  )" crlf))
-)
-
-(defrule be30
-(declare (salience 2000))
-(id-root ?id be)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 intimate)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 GaniRTa_ho))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " be.clp	be30  "  ?id "  " ?id1 "  GaniRTa_ho  )" crlf))
-)
-
-(defrule be31
-(declare (salience 1900))
-(id-root ?id be)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id ho))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  be.clp 	be31   "  ?id "  ho )" crlf))
-)
-
-;"be","V","1.honA"
-;Don't worry be happy.
 ;
 (defrule be32
 (declare (salience 1800))
@@ -548,74 +471,6 @@
 ;Everybody knows what a stupid photographer is like?
 ;"is","V","1.hE"
 ;The boy is reading.
-;
-(defrule be34
-(declare (salience 1600))
-(id-root ?id be)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 after)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 ke_pICe_raha))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " be.clp	be34  "  ?id "  " ?id1 "  ke_pICe_raha  )" crlf))
-)
-
-(defrule be35
-(declare (salience 1500))
-(id-root ?id be)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 after)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 ke_pICe_raha))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " be.clp	be35  "  ?id "  " ?id1 "  ke_pICe_raha  )" crlf))
-)
-
-(defrule be36
-(declare (salience 1400))
-(id-root ?id be)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 intimate)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 GaniRTa_ho))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " be.clp	be36  "  ?id "  " ?id1 "  GaniRTa_ho  )" crlf))
-)
-
-(defrule be37
-(declare (salience 1300))
-(id-root ?id be)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 intimate)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 GaniRTa_ho))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " be.clp	be37  "  ?id "  " ?id1 "  GaniRTa_ho  )" crlf))
-)
-
-(defrule be38
-(declare (salience 1200))
-(id-root ?id be)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id ho))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  be.clp 	be38   "  ?id "  ho )" crlf))
-)
 
 ;"be","V","1.honA"
 ;Don't worry be happy.
