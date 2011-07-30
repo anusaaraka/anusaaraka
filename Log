@@ -2547,7 +2547,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 29. Updated Log.
 
  
- 21-07-11
+ 30-07-11
  ========
  1. Modified reverse-NP-Daughters rule in H_ordering_rules.clp
  2. Modified Anu/stdenglish/abbr1.lex , bin/abbr.sh, bin/abbr_browser.sh files to add "$ and #"
@@ -2567,5 +2567,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 16. Updated README
 17. Updated following files:
          sd_verified (423)    ber_verified (377)    link_verified (218)    new_link_verified ( 236 )
-18. Updated Log
-
+18. Added RASP Parser.
+19. Added new files add_labels.lex, eng_aper_gen.lex, run_rasp-parser.sh (scripts for converting rasp format to stanford format)
+20. Added Anusaraka_rasp.sh file .
+21. Added code for compilation and deletion  of files for rasp parser in anu_compile.sh and remove_out-files.sh files.
+22. Added code for generating en.gen.bin in apertium/compile.sh. (Used by RASP parser)
+23. Updated Log

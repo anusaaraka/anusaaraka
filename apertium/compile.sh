@@ -4,6 +4,7 @@ xsltproc tmp1gen.xsl apertium-en-hi.en.metadix >en-hi.dixtmp1
 rm tmp1gen.xsl
 apertium-validate-dictionary en-hi.dixtmp1
 lt-comp lr en-hi.dixtmp1 en.morf.bin
+lt-comp rl en-hi.dixtmp1 en.gen.bin
 
 #Preparing Morph for multiword
 xsltproc buscaPar.xsl apertium-en-hi.en-multiword.metadix | uniq > tmp1gen.xsl
