@@ -1,29 +1,36 @@
 import sys, os, commands
-f = open(sys.argv[1],"r"); fr = open(sys.argv[2],"r"); fw = open(sys.argv[3],"w"); wt = open(sys.argv[4],"w"); tr_wrds=[]; tr_sent=''
+f = open(sys.argv[1],"r")
+fr = open(sys.argv[2],"r")
+fw = open(sys.argv[3],"w")
+wt = open(sys.argv[4],"w")
+tr_wrds=[]; tr_sent=''
+punc_list = ["-", "[", "]", "{", "}", "<", ">", '.', "!", "/", "=", "?", "(", "'", ",", ":", ";", ")"]
+
 for i in fr.readlines():
      line = i.split()
      tr_wrds.append(line[0])
+
 file_p=0
 for i in f.readlines():
+    sent = ''
     file_p=0
     pos=''
-    sent_wrds = i.split()
     if ' then ' in i:
-	 s=i.split(' then ')
- 	 s[0].strip()
-	 if s[0].endswith(','):
-	    pass
-	 else:
- 	    sent=s[0]+', then '+ s[1].strip()
-	    file_p=1
-	    sent_wrds = sent.split()
+	s=i.split(' then ')
+ 	s[0].strip()
+	sent=s[0]+', then '+ s[1]
+	sent_wrds = sent.split()
+	i = sent
+    else:
+	sent_wrds = i.split()
+	sent = i
     for each in xrange(len(sent_wrds)):
         if sent_wrds[each] in tr_wrds:
   	    f1 = open('jnk',"w")
 	    a = i.strip()
-	    f1.write(a)
+	    f1.write(sent)
 	    f1.close()
-	    s = commands.getoutput("sh $HOME_anu_test/bin/stanford_pos.sh  jnk")
+	    s = commands.getoutput("sh $HOME_anu_test/bin/stanford_pos.sh jnk")
 	    ss = s.split('\n')
             pos=ss[2]
     ss=pos.split()
@@ -59,7 +66,10 @@ for i in f.readlines():
     tr_sent=''
     for each in xrange(len(ss)):
 	st=ss[each].split('_')
-        tr_sent=tr_sent+st[0]+' '
+	if st[0] in punc_list:
+		tr_sent=tr_sent.rstrip()+st[0]+' '
+	else:
+		tr_sent=tr_sent+st[0]+' '
     fw.write(tr_sent)
     wt.write(';changed words\n')
     wt.write(';~~~~~~~~~~\n')
