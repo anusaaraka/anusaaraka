@@ -68,6 +68,24 @@
                          "              After     - "?head" "?lev" "?Mot" "?d" "(implode$ $?daut) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (2-08-11) -- Suggested by Sukhada.
+;The balance is supplied by a host of smaller exporters, such as Australia and Venezuela.
+(defrule dont_rev_if_PP_goesto_SUCH
+(declare (salience 960))
+?f0<-(Head-Level-Mother-Daughters ?head ?l ?Mot ?JJ $?d)
+(Node-Category  ?Mot  PP)
+(Head-Level-Mother-Daughters ?h&such ? ?JJ $?)
+(not (Mother  ?Mot))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (retract ?f0)
+        (assert (Head-Level-Mother-Daughters ?head ?l ?Mot  ?JJ $?d))
+        (assert (Mother  ?Mot))
+        (printout ?*order_debug-file* "(rule_name - dont_rev_if_PP_goesto_SUCH " ?*count* " " crlf
+                         "              Before    - "?head" "?l" "?Mot" "?JJ" "(implode$  $?d) crlf
+                         "              After     - "?head" "?l" "?Mot" "?JJ" "(implode$ $?d) ")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
 (defrule rev_VP_or_PP_or_WHPP
 (declare (salience 950))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d ?d1 )
@@ -327,6 +345,7 @@
 (Node-Category ?prep IN)
 (not (kriyA-conjunction  ? ?id));It was so dark that I could not see anything.
 (not (Mother  ?SBAR))
+(test (and (neq ?head that)(neq ?head because))); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy.
 =>
         (bind ?*count* (+ ?*count* 1))
         (retract ?f0)
