@@ -254,6 +254,7 @@
 ;The;Assumptions while writing this rule:
 ;If the daughters of the NP are not numbers then only this rule fires.
 ;These are given assuming that if first daughter of the Mother-NP is NP the rest daughters will never be numbers
+;Ex. The girl in blue shirt is my siser. The girl who came yesterday is my sister.
 (defrule reverse-NP-Daughters
 (declare (salience 800))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot ?NP ?PP)
@@ -325,6 +326,7 @@
 (Head-Level-Mother-Daughters ? ? ?prep ?id)
 (Node-Category ?SBAR SBAR)
 (Node-Category ?prep IN)
+(test (neq ?head that));He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.
 (not (kriyA-conjunction  ? ?id));It was so dark that I could not see anything.
 (not (Mother  ?SBAR))
 =>
