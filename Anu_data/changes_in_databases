@@ -50,7 +50,7 @@
         Jummamasjid	  jummA_masjixa  (Added by Meena 08-03-11)
         arms-dealing    SaswrAswra_kraya_vikraya (Meena  26.4.11)
 	ill-used        xurvyavahariwa_huA (Meena 2.6.11) Ex.Within the relationship he feels ill-used most of the time.
-	free-fall       besahArA_giranA    (Meena 28.7.11) 
+        free-fall       besahArA_giranA    (Meena 21.7.11) 
 
   3. Removed ::
 
@@ -78,6 +78,7 @@
   1. Removed  :   miwra  
                   vaha  
   2. Added    :   mEca    (suggested by sukhada (24.2.11) Ex: There was a football match in the school yesterday.
+  3. Added    :   prabaMXaka   Added by Meena(28.7.11)    Ex: But fund managers say they are ready.
  
   changes in female_list.txt
   ========================
@@ -111,7 +112,7 @@
            "mEca"   (24.02.11)   Suggested by sukhada  Eg:There was a football match in the school yesterday.
        "jvAlAmuKI"  (24-02-11)   Suggested by Venna 24-02-11 Eg: Volcano could erupt at any time.
 	   "xevawA" (25-06-11)   Suggested by Chaitanya Sir Eg: God helps those who help themselves .
- 
+           "GanA"   (29.7.11)    Meena ex.Uttar pradesh is a land of cultural and geographical diversity, which is blessed by an innumerable perennial rivers, dense forests, and fertile soil.
   changes in Phrv.txt 
   ===================
   1.  Added
@@ -221,6 +222,7 @@ changes in samAsa-new.txt
         turned out to be -----  nikalA  as  turned out to be  -----  nikala  (suggested by sheetal (04-11-09) Eg:- The object turned out to be a big meteorite .)
         very much       -----   bahuwa  as  very much         -----  bahuwa_jyAxA (suggested by sukhada (25-01-10))
         natural language  ----  prAkqwa_anuBARaka  as  natural language ----prAkqwa_BARA(Meena 08-02-11)
+        free fall       nIce_giranA     as  free fall         -----  besahArA_giranA noun    2       RM (21.7.11)
 
 
  4. Changed the structure of the file (6-03-10)

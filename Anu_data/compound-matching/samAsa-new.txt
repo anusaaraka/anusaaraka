@@ -14567,7 +14567,6 @@ free currency market	mukwa_muxrA_bAjAra	mukwa_muxrA_bAjAra	noun	3	RM
 free delivery	ni:Sulka_viwaraNa	ni:Sulka_viwaraNa	noun	2	RM
 free economy	mukwa_arWavyavasWA	mukwa_arWavyavasWA	noun	2	RM
 free enterprise	mukwa_uxyama	mukwa_uxyama	noun	2	RM
-free fall	nIce_giranA	nIce_giranA	noun	2	RM
 free floating	cAlU_honA	cAlU_honA	noun	2	RM
 free fone	muPwa_Pona{britena_meM_Pona_karane_kI_eka_vyavasWA_jisameM_pEsA_nahIM_cukAyA_jAwA}	muPwa_Pona{britena_meM_Pona_karane_kI_eka_vyavasWA_jisameM_pEsA_nahIM_cukAyA_jAwA}	noun	2	RM
 free for all	warka	warka	noun	3	RM
