@@ -137,6 +137,8 @@
  ?f1<- (pada_info (group_head_id ?pada_id)(group_cat PP)(group_ids $?word_ids) (vibakthi ?vib))
  (id-original_word ?pada_id and)
  (id-gender-src ?pada_id ?gen ?gen_src)
+; (prep_id-relation-anu_ids  ? kriyA-subject  ?k ?pada_id)
+; (id-number-src ?k ? Default)
  ?f0<-(pada_control_fact ?pada_id)
  =>
 	(retract ?f0) 
@@ -320,12 +322,21 @@
  (declare (salience 700))
  (verb_agrmt-subject_id-head_id subject ?sub_id ?kriyA)
  ?f1<-(pada_info (group_head_id ?kriyA)(group_cat VP))
- (pada_info (group_head_id ?sub_id)(group_cat PP)(gender ?gen)(number ?num)(person ?per))
+ ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender ?gen)(number ?num)(person ?per))
  ?f0<-(pada_control_fact ?kriyA)
+ (id-number-src ?kriyA ?num1 ?src)
  =>
         (retract ?f0 )
-        (modify ?f1 (gender ?gen)(number ?num)(person ?per))
- (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?kriyA " verb_sub_agmt "?gen" gender_from_subject "?num"  number_from_subject "?per" person_from_subject)" crlf)
+	(if (neq ?src Default) then
+	        (modify ?f1 (gender ?gen)(number ?num1)(person ?per))
+        	(modify ?f2 (number ?num1))
+		(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?kriyA " verb_sub_agmt "?gen" gender_from_subject "?num1"  number_from_verb "?per" person_from_subject)" crlf)
+	else
+		(modify ?f1 (gender ?gen)(number ?num)(person ?per))
+		(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?kriyA " verb_sub_agmt "?gen" gender_from_subject "?num"  number_from_subject "?per" person_from_subject)" crlf)
+        )
+;        (modify ?f1 (gender ?gen)(number ?num)(person ?per))
+ ;(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?kriyA " verb_sub_agmt "?gen" gender_from_subject "?num"  number_from_subject "?per" person_from_subject)" crlf)
  )
 
  ;=================================  verb with object agreement ================================================

@@ -499,8 +499,8 @@ kyA yahAz kuwwA Ora billI hEM?
 
 Hindi meaning using Berkeley parser 2.122
 There is a dog and a cat here. 
-kuwwA Ora billI yahAz hEM.
-yahAz kuwwA Ora billI hEM.
+kuwwA Ora billI yahAz hE.
+yahAz kuwwA Ora billI hE.
 
 Hindi meaning using Berkeley parser 2.123
 Where did the car come from? 
@@ -1548,5 +1548,21 @@ nahIM vaha aSuBa somavAra nahIM WA.
 Hindi meaning using Berkeley parser 3.78
 The President's address to the nation was broadcasted across the country. 
 rARtra ke liye President kA saMboXana pUre_xeSa meM prasAriwa kiyA gayA WA.
+
+Hindi meaning using Berkeley parser 3.79
+Still, fund groups are not taking any chances. 
+aBI BI pUzjI samUha KawarA_mola_nahIM_le rahe hEM.
+
+Hindi meaning using Berkeley parser 3.80
+The accord expired yesterday. 
+anubanXa kala samApwa huA.
+
+Hindi meaning using Berkeley parser 3.81
+But fund managers say they are ready. 
+paranwu pUzjI prabaMXaka kahawe hEM ki ve wEyAra hEM.
+
+Hindi meaning using Berkeley parser 3.82
+The test may come today. 
+parIkRA Aja ho sakawI hE.
 
 Calling Interface related programs

@@ -40,6 +40,25 @@
        (retract ?f1 ?f2)
  )
  ;-----------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (suggested by sukhada )
+ ;The sheep are jumping. The sheep is jumping.
+ (defrule verb_rule
+ (declare (salience 960))
+ ?f1<-(id-number-src ?id ?num Default)
+ (root-verbchunk-tam-chunkids ?r ?v ?t ?id $? ?head)
+ ?f2<-(id-root-category-suffix-number  ?id ? verb $?)
+ (id-word ?id ?word)
+ =>
+        (retract ?f1 ?f2)
+        (if (or (eq ?word are)(eq ?word were)) then
+                (assert (id-number-src ?head  p  Word))
+        else
+                (if (eq ?word is) then
+                        (assert (id-number-src ?head  s  Word))
+                )
+        )
+ )
+ ;-----------------------------------------------------------------------------------------------------------
  ;The Danes are nice people.
  (defrule get_num_for_sub
  (declare (salience 900))

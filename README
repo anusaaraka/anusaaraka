@@ -1,4 +1,5 @@
   1. Pre requisites:
+     ==============
      English-Hindi Anusaaraka requires the following resources.
        -- Java 1.6.0 
        -- perl,
@@ -15,8 +16,8 @@
        -- timeout    (this command is used to exit the CLIPS environment in the specific time.)
 
 --------------------------------------------------------------------------------------------------------------
-
  2. Install:
+    ========
 
      To install anu_testing from the source code, run
 
@@ -61,33 +62,24 @@
       Note :: Please run  remove_out-files.sh before recompiling.
           
 ----------------------------------------------------------------------------------------------------------------
- 3. To remove out files
-           shell_scripts/remove_out-files.sh
+3. To remove out files  :   shell_scripts/remove_out-files.sh
 
 -----------------------------------------------------------------------------------------------------------------   
- 4. Run:
+4. How to run Anusaaraka:
+   =====================
 
-      sample input file is given below:
-      <TITLE> test. </TITLE>
-      <p>
-          This is a sample file for anusaaraka.
-      </p>
+	i. Copy the below text in a "sample"
+         
+	      <TITLE> test. </TITLE>
+	      <p>
+        	  This is a sample file for anusaaraka.
+	      </p>
+       ii. Anusaaraka_stanford.sh  sample
 
-     Command to run 
-     --------------
-             Anusaaraka_stanford.sh  <file_name>         Ex : Anusaaraka_stanford.sh verified
+-----------------------------------------------------------------------------------------------------------------
+5. Output :
+   ======
 
-
-     To run the sentence for partucular linkage :
-     -------------------------------------------
-
-                     Anusaaraka_link.sh  <file_name> <linkage_number>
-               Ex :  Anusaaraka_link.sh  test 2    --- running test file for second linkage.
-
-  -------------------------------------------------------------------------------------------------------------------
-
- 5. Output :
-   
     The "tmp" directory is created for given input file. The facts for the particular sentences are stored in their 
     respective directories.  (Ex: for second paragraph first sentence tmp/inputfile_tmp/2.1 dir )
     
@@ -96,25 +88,39 @@
        
     To view the output, open html file through a browser by the command :
 
-               firefox <filename.html>
-           Ex: firefox verified.html (html o/p can be viewed in the directory where you have run)
+               firefox <filename_frame.html>
+           Ex: firefox verified_frame.html   (html o/p can be viewed in the directory where you have run)
 
-  -------------------------------------------------------------------------------------------------------------------
- 6. Linkage diagram:
+-------------------------------------------------------------------------------------------------------------------
+6. Linkage diagram:
     ===============   
     To view the linkage diagram run the Unix command:
-    $ anu_link-parser.sh 
+    $ anu_link-parser.sh   
 
    The program can run in batch mode for testing the system on a large number of sentences.
    The following command runs the parser on a file.
 
     $ anu_link-parser.sh  < <input_file>
 
- -------------------------------------------------------------------------------------------------------------------
-   
-7. Debugging ::
-   ========= 
-   Anusaaraka is provided with debugging in order to find and reduce the number of bugs, in the translation.
+-------------------------------------------------------------------------------------------------------------------
+7. To run Anusaaraka for different Parsers
+    =======================================
+        1.  To run Stanford Parser   -- Anusaaraka_stanford.sh <file_name>
+	2.  To run Berkeley Parser   -- Anusaaraka_berkeley.sh <file_name>
+  	3.  To run Open Logos Parser -- Anusaaraka_ol.sh <file_name> 
+	4.  To run Rasp Parser       -- Anusaaraka_rasp.sh <file_name>
+	5.  To run Link Parser 	     -- Anusaaraka_link.sh  <file_name>			
+                                         
+    To run the sentence for partucular linkage in Link parser:
+     --------------------------------------------------------
+
+                     Anusaaraka_link.sh  <file_name> <linkage_number>
+               Ex :  Anusaaraka_link.sh  test 2    --- running test file for second linkage.
+
+-------------------------------------------------------------------------------------------------------------------
+ 8. Debugging 
+    ========= 
+   Anusaaraka is provided with debugging to find and reduce the number of bugs, in the translation.
    For debugging,  
  
    $ cd $HOME_anu_test/debugging/sentence_debug
@@ -123,11 +129,14 @@
  
   (NOTE : For Debugging basic knowledge of CLIPS is needed)
 ----------------------------------------------------------------------------------------------------------------------
-
- Categories: The categories.txt file contains category information in the following format:
+9. Categories
+   ==========
+     The categories.txt file contains category information in the following format:
               <Long Form> <POS Tag> <Crude Category>
-
-  Punctuations: The following words are used for the respective punctuations:
+----------------------------------------------------------------------------------------------------------------------
+10.  Punctuations: 
+     ============= 
+     The following words are used for the respective punctuations:
 
       ,  comma
       .  full_stop
@@ -144,11 +153,10 @@
       %  percentage
       =  equal_to
      ()  open-closed_parenthesis
- --------------------------------------------------------------------------------------------------------------------
-
-   The sentences with correct translation for Link and Stanford parser are in $HOME_anu_test/verified  file .
-                                   for only OL parser  in $HOME_anu_test/verified_ol
-                                   for only Stanford   in $HOME_anu_test/sd_verified
-        
-    OL parser fail sentences are in $HOME_anu_test/OL_parser_fails
- --------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------
+11.   The sentences with correct translation for all the parsers are available in $HOME_anu_test/Anu_outputs.
+		for OL parser      -- ol_ver_output
+		for Std parser     -- sd_ver_output
+		for Link parser    -- link_ver_output
+		for Berkely parser -- ber_ver_output
+--------------------------------------------------------------------------------------------------------------------

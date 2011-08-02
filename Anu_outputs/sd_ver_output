@@ -528,8 +528,8 @@ kyA kuwwA Ora billI yahAz hEM?
 
 Hindi meaning using Stanford parser 2.129
 There is a dog and a cat here. 
-yahAz kuwwA Ora billI hEM.
-kuwwA Ora billI yahAz hEM.
+yahAz kuwwA Ora billI hE.
+kuwwA Ora billI yahAz hE.
 
 Hindi meaning using Stanford parser 2.130
 Where did the car come from? 
@@ -1740,5 +1740,21 @@ nahIM vaha aSuBa somavAra nahIM WA.
 Hindi meaning using Stanford parser 4.24
 The President's address to the nation was broadcasted across the country. 
 rARtra ke liye President kA saMboXana pUre_xeSa meM prasAriwa kiyA gayA WA.
+
+Hindi meaning using Stanford parser 4.25
+Still, fund groups are not taking any chances. 
+aBI BI pUzjI samUha KawarA_mola_nahIM_le rahe hEM.
+
+Hindi meaning using Stanford parser 4.26
+The accord expired yesterday. 
+anubanXa kala samApwa huA.
+
+Hindi meaning using Stanford parser 4.27
+But fund managers say they are ready. 
+paranwu pUzjI prabaMXaka kahawe hEM ki ve wEyAra hEM.
+
+Hindi meaning using Stanford parser 4.28
+The test may come today. 
+parIkRA Aja ho sakawI hE.
 
 Calling Interface related programs

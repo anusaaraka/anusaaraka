@@ -27,6 +27,30 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  accord.clp 	accord1   "  ?id "  xe )" crlf))
 )
 
+
+
+;Added by Meena(29.7.11)
+;The accord expired yesterday.
+;The two sides were able to reach an accord.
+(defrule accord2
+(declare (salience 4900))
+(id-root ?id accord)
+?mng <-(meaning_to_be_decided ?id)
+(id-root ?id1 expire|sign|reach|bring)
+(or(kriyA-object ?id1 ?id)(kriyA-subject ?id1 ?id))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id anubanXa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  accord.clp    accord2   "  ?id " anubanXa   )" crlf))
+)
+
+
+
+
+
+
+
 ;default_sense && category=verb	milanA[milAnA]	0
 ;"accord","V","1.milanA[milAnA]"
 ;His thoughts && actions do not accord.
