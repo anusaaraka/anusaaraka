@@ -132,6 +132,7 @@
   )
  ;----------------------------------------------------------------------------------------------------------------
  ;Ex. There are three boys and four girls in the park . Added by Sukhada.
+ ; if both are singular for and case then num is plural suggested by Dipti mam
  (defrule PP_pada_for_and
  (declare (salience 910))
  ?f1<- (pada_info (group_head_id ?pada_id)(group_cat PP)(group_ids $?word_ids) (vibakthi ?vib))
