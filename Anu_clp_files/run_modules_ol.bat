@@ -303,6 +303,7 @@
  (load-facts "revised_preferred_morph.dat")
  (load-facts "verb_agreement.dat")
  (load-facts "wsd_facts_output.dat")
+ (load-facts "lwg_info.dat")
  (run)
  (save-facts "number.dat" local id-number-src)
  (clear)

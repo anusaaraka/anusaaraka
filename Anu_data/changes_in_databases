@@ -77,8 +77,9 @@
   ========================
   1. Removed  :   miwra  
                   vaha  
-  2. Added    :   mEca    (suggested by sukhada (24.2.11) Ex: There was a football match in the school yesterday.
- 
+  2. Added    :   mEca        (suggested by sukhada (24.2.11) Ex: There was a football match in the school yesterday.
+                  prabaMXaka  (Added by Meena(28.7.11)  Ex: But fund managers say they are ready.
+
   changes in female_list.txt
   ========================
   1. Modified :  paraCAIM  as  paraCAI
@@ -111,6 +112,7 @@
            "mEca"   (24.02.11)   Suggested by sukhada  Eg:There was a football match in the school yesterday.
        "jvAlAmuKI"  (24-02-11)   Suggested by Venna 24-02-11 Eg: Volcano could erupt at any time.
 	   "xevawA" (25-06-11)   Suggested by Chaitanya Sir Eg: God helps those who help themselves .
+           "GanA"   (29.7.11)    Meena ex.Uttar pradesh is a land of cultural and geographical diversity, which is blessed by an innumerable perennial rivers, dense forests, and fertile soil.
  
   changes in Phrv.txt 
   ===================
@@ -204,7 +206,6 @@ changes in samAsa-new.txt
          By this time		     ----- abawaka	abawaka	   noun 	3       RM (Meena 19.4.11)
          love affair     	     ----- prema_saMbanXa  prema_saMbanXa  noun  2  RM (Meena 27.4.11)
 	 In fact                     ----- asala_meM       noun    2       RM  (Meena 27.5.11)
-	 free fall       	     ----- besahArA_giranA besahArA_giranA noun    2       RM (Meena 28.7.11)
 
 
  2. Removed/commented
@@ -220,8 +221,8 @@ changes in samAsa-new.txt
  3. Modified
         turned out to be -----  nikalA  as  turned out to be  -----  nikala  (suggested by sheetal (04-11-09) Eg:- The object turned out to be a big meteorite .)
         very much       -----   bahuwa  as  very much         -----  bahuwa_jyAxA (suggested by sukhada (25-01-10))
-        natural language  ----  prAkqwa_anuBARaka  as  natural language ----prAkqwa_BARA(Meena 08-02-11)
-
+        natural language  ----  prAkqwa_anuBARaka  as  natural language ----  prAkqwa_BARA (Meena 08-02-11)
+	free fall         ----	nIce_giranA        as  free fall        ----- besahArA_giranA (Meena (21.7.11))
 
  4. Changed the structure of the file (6-03-10)
     From   : English-compound-word  Hindi-paxasUwra

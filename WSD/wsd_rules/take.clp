@@ -187,6 +187,22 @@
 
 
 
+
+(defrule take_any_chance012
+(declare (salience 3300))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(id-word =(+ ?id 1) a|any) 
+(id-root ?id2 chance)
+(kriyA-object ?id ?id2)
+=>
+(retract ?mng) 
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id (+ ?id 1)  ?id2  KawarA_mola_le))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp  take012  "  ?id "  " (+ ?id 1) " "?id2"   KawarA_mola_le  )" crlf))
+)
+
+
 (defrule take13
 (declare (salience 3200))
 (id-root ?id take)

@@ -1214,35 +1214,28 @@
 ; Example: Galaxies come in various shapes.
 ; example: Please come in. 
 ; (in should be distinguished, do not group come in)
+
+
+
+
+;Added by Meena(28.7.11)
+;The test may come today. 
 (defrule come81
-(declare (salience -3100))
+(declare (salience 3300))
 (id-root ?id come)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 back)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
+(kriyA-subject ?id ?id1)
+(id-root ?id1 test|quiz|exam|examination)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 vApisa_A))
+(assert (id-wsd_root_mng ?id ho))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come81  "  ?id "  " ?id1 "  vApisa_A  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  come.clp      come81   "  ?id "  ho )" crlf))
 )
+
+
 
 (defrule come82
-(declare (salience -3200))
-(id-root ?id come)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 back)
-(kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 vApisa_A))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come82  "  ?id "  " ?id1 "  vApisa_A  )" crlf))
-)
-
-(defrule come83
 (declare (salience -3300))
 (id-root ?id come)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1251,7 +1244,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id A))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  come.clp 	come83   "  ?id "  A )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  come.clp 	come82   "  ?id "  A )" crlf))
 )
 
 ;default_sense && category=verb	A	0
