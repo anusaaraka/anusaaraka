@@ -664,7 +664,7 @@ else
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule complm 
 (rel_name-sids complm ?kriyA ?conj)
-(rel_name-sids nsubj ?kriyA ?x)
+(rel_name-sids nsubj|nsubjpass ?kriyA ?x)
 (root-verbchunk-tam-parser_chunkids ? ? ? $?ids ?kriyA)
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-conjunction        "?kriyA"      "?conj")"crlf)
@@ -1124,6 +1124,7 @@ else
  ;------------------------------------------------------------------------------------------------------------------------
 (defrule xcomp
 (rel_name-sids xcomp  ?kri ?kq_vi)
+(parser_id-cat_coarse ?kri verb)
 (not (rel_name-sids cop ?kq_vi ?)) ;Added by Shirisha Manju 
 (not (parser_id-cat_coarse ?kq_vi adjective))
 (not (kriyA-kriyArWa_kriyA_rel_has_been_dcd_by_xcomp+aux_rule ?kq_vi))
@@ -1131,7 +1132,7 @@ else
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-kqxanwa_karma	"	?kri"    "?kq_vi")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   xcomp	kriyA-kqxanwa_karma	"	?kri"	"?kq_vi")"crlf)
 )
- ; Ex. I want to go. Dick is important to fix the problem.
+ ; Ex. I want to go. 
  ;It struggled to force its body through that little hole . 
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule xcomp+cop
@@ -1150,6 +1151,7 @@ else
  (defrule xcomp+aux
  (declare (salience 11))
  (rel_name-sids xcomp ?id ?kri)
+ (parser_id-cat_coarse ?id verb) ; added by Sukhada
  (rel_name-sids aux   ?kri ?to)
  (parserid-word ?to to)
  =>
@@ -1211,7 +1213,9 @@ else
  ; Ex. About 200 people came to the party .
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule infmod 
-(rel_name-sids infmod  ?saMjFA ?kqxanwa)
+(rel_name-sids infmod|xcomp  ?saMjFA ?kqxanwa)
+(parser_id-cat_coarse ?saMjFA ~verb) ;Added by Sukhada
+
  =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     saMjFA-to_kqxanwa        "?saMjFA"    "?kqxanwa")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   infmod   saMjFA-to_kqxanwa        "?saMjFA"    "?kqxanwa")"crlf)
