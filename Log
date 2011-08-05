@@ -2546,8 +2546,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 28. Updated debugging.
 29. Updated Log.
 
- 
- 02-08-11
+ 03-08-11
  ========
  1. H_ordering_rules.clp
  	Added    : dont_rev_if_PP_goesto_SUCH
@@ -2581,3 +2580,4 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 23. Updated following files:
 	sd_verified (428)    ber_verified (382)    link_verified (218)    new_link_verified ( 236 )
 24. Updated Log
+
