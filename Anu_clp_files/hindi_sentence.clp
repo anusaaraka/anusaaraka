@@ -124,7 +124,7 @@
 	(assert (hindi_id_order $?id1 ?hmng $?id2))	
  )
  ;---------------------------------------------------------------------------------------------------------
- ;Substituting hindi_meaning for the id(10000) generated from python program for OL 
+ ;Substituting hindi_meaning for the id(10000)  
  ;Added by Shirisha Manju (03-12-10)
  (defrule substitute_hnd_mng1
  (declare (salience 850))
