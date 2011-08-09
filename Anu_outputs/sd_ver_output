@@ -1543,19 +1543,22 @@ Kufri shimla ke nikata eka CotA parvawIya sWAna hE.
 
 Hindi meaning using Stanford parser 3.78
 The girl who you called yesterday has arrived. 
+vaha ladakI Apane kala jise/jisako bulAyA pahuzca gayI/gaI.
 Apane kala jise/jisako bulAyA vaha ladakI pahuzca gayI/gaI.
 
 Hindi meaning using Stanford parser 3.79
 The snake who swallowed the rat hissed loudly. 
+vaha sAzpa jisane cUhA nigalA Uzce_svara meM PuPakArA.
 jisane cUhA nigalA vaha sAzpa Uzce_svara meM PuPakArA.
 
 Hindi meaning using Stanford parser 3.80
 The dog which Chris bought is really ugly. 
-Chris ne jise/jisako KarIxA vaha kuwwA vAswava mez kurUpa hE.
 jise/jisako Chris ne KarIxA vaha kuwwA vAswava mez kurUpa hE.
+Chris ne jise/jisako KarIxA vaha kuwwA vAswava mez kurUpa hE.
 
 Hindi meaning using Stanford parser 3.81
 Phil gave me a sweater which he bought in Paris. 
+Phil ne vaha svetara jise/jisako usane Paris meM KarIxA muJe/muJako xiyA.
 Phil ne vaha svetara muJe/muJako xiyA usane jise/jisako Paris meM KarIxA.
 Phil ne vaha svetara muJe/muJako xiyA jise/jisako usane Paris meM KarIxA.
 Phil ne jise/jisako usane Paris meM KarIxA vaha svetara muJe/muJako xiyA.
@@ -1567,6 +1570,7 @@ jo xillI se kala AyA vaha ladakA merA miwra hE.
 
 Hindi meaning using Stanford parser 3.83
 The girl you met yesterday is here. 
+vaha ladakI jise/jisako Apa kala mile yahAz hE.
 jise/jisako Apa kala mile vaha ladakI yahAz hE.
 
 Hindi meaning using Stanford parser 3.84
@@ -1589,6 +1593,7 @@ yaha jahAz mEM usase milA vaha sWAna hE.
 
 Hindi meaning using Stanford parser 3.88
 I will show you the house which I bought. 
+mEM vaha Gara jise/jisako mEMne KarIxA Apako xiKAUzgA.
 mEM vaha Gara Apako xiKAUzgA mEMne jise/jisako KarIxA.
 mEM vaha Gara Apako xiKAUzgA jise/jisako mEMne KarIxA.
 mEM jise/jisako mEMne KarIxA vaha Gara Apako xiKAUzgA.
@@ -1681,8 +1686,8 @@ xaravAjA banxa_mawa kariye/kIjiye.
 
 Hindi meaning using Stanford parser 4.10
 I have been running about all morning trying to find you. 
-mEM pUrI subaha meM iXara-uXara Apako pAne ke liye prayAsa karwe_hue xOdawA rahA hUz.
 mEM Apako pAne ke liye prayAsa karwe_hue pUrI subaha meM iXara-uXara xOdawA rahA hUz.
+mEM pUrI subaha meM iXara-uXara Apako pAne ke liye prayAsa karwe_hue xOdawA rahA hUz.
 
 Hindi meaning using Stanford parser 4.11
 She is making the girl feed the child. 
