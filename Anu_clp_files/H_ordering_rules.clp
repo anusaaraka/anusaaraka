@@ -182,7 +182,7 @@
                          "              After     - "?head" "?lev" "?Mot" "(implode$ $?daut)" "(implode$ $?dt)" "?d ")"crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-; Added by Shirisha Manju(20-06-11) Suggested by Dipti mam
+;Added by Shirisha Manju(20-06-11) Suggested by Dipti mam
 ;How many people did you see? How much money did you earn?I wonder how much money you earned.
 (defrule WHNP_rule
 (declare (salience 950))
@@ -193,6 +193,7 @@
 (Node-Category ?sq  SQ|S)
 (Node-Category ?vp VP)
 (not (Mother  ?Mot))
+(not (viSeRya-jo_samAnAXikaraNa ? ?x));Added by Sukhada(9.8.11). Ex. I will show you the house which I bought. Phil gave me a sweater which he bought in Paris. 
 =>
 	(bind ?*count* (+ ?*count* 1))
         (retract ?f0 ?f1)
@@ -272,12 +273,14 @@
 ;The;Assumptions while writing this rule:
 ;If the daughters of the NP are not numbers then only this rule fires.
 ;These are given assuming that if first daughter of the Mother-NP is NP the rest daughters will never be numbers
+;PP: VP: Information International said it believes that the complaints, filed in federal court in Georgia, are without merit.
 (defrule reverse-NP-Daughters
 (declare (salience 800))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot ?NP ?PP)
 (Node-Category  ?mot  NP)
 (Node-Category  ?NP  NP)
-(Node-Category  ?PP PP|SBAR)
+;(Node-Category  ?PP PP|SBAR)
+(Node-Category  ?PP PP|VP)
 (not (Mother  ?mot))
 (test (and (neq ?head lot)(neq ?head most)(neq ?head number)));And I think a lot of people will harp on program trading.
 ;Chamba has a number of temples, palaces and stylized buildings
@@ -384,16 +387,46 @@
 (printout ?*order_debug-file* "(debug_info  "?*count*"  Replacing Mother-Node with Child-Node  )" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+;This is the place I live. This is the place I met him. 
+(defrule get_SBAR_copula
+(declare (salience 730))
+?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?dat $?pos)
+(Head-Level-Mother-Daughters ? ? ?dat $?child)
+(Node-Category  ?Mot SBAR)
+(Node-Category  ?dat ?DAT)
+(Head-Level-Mother-Daughters ? ? ?m ?samA)
+(subject-subject_samAnAXikaraNa ? ?samA)
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (retract ?f)
+        (if (or (eq ?DAT SBAR)(eq ?DAT SBARQ)) then
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?pos))
+        (printout ?*order_debug-file* "(rule_name - get_SBAR_copula "  ?*count* crlf
+                         "              Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)"  "?dat" "(implode$ $?pos) crlf
+                         "              After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?pos) ")" crlf)
+        else
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?child $?pos)))
+        (printout ?*order_debug-file* "(rule_name - get_SBAR_copula "  ?*count* crlf
+                         "              Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)"  "?dat" "(implode$ $?pos) crlf
+                         "              After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?child)" "(implode$ $?pos) ")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
+
 (defrule get_SBAR
 (declare (salience 730))
+(Head-Level-Mother-Daughters ? ? ?NP $?id ?Mot $?)
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?dat $?pos)
 (Head-Level-Mother-Daughters ? ? ?dat $?child)
 (Node-Category  ?Mot SBAR|SBARQ)
 (Node-Category  ?dat ?DAT)
+(Node-Category ?NP ?noun)
 =>
 	(bind ?*count* (+ ?*count* 1))
 	(retract ?f)
-	(if (or (eq ?DAT SBAR)(eq ?DAT SBARQ)) then
+	(if (eq ?noun NP) then
+		(assert (dont_separate_sbar ?Mot))
+	)
+	(if (and (or (eq ?DAT SBAR)(eq ?DAT SBARQ))(neq ?noun NP)) then
 	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?pos))
 	(printout ?*order_debug-file* "(rule_name - get_SBAR "  ?*count* crlf
         	         "              Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)"  "?dat" "(implode$ $?pos) crlf
@@ -428,6 +461,7 @@
 (Node-Category  ?Mot ROOT)
 (Node-Category  ?dat SBAR|SBARQ)
 (test (member$ $?child $?daut))
+(not (dont_separate_sbar ?dat)) ;The boy who came yesterday from Delhi is my friend.
 =>
 	(retract ?f)
 	(assert (Sen  $?child))
@@ -443,6 +477,7 @@
 ?f1<-(Head-Level-Mother-Daughters ? ? ?dat $?child)
 (Node-Category  ?dat SBAR|SBARQ)
 (not (sent $?child))
+(not (dont_separate_sbar ?dat))
 =>
 	(assert (Sen  $?child))
 	(assert (sen  $?child))
