@@ -51,3 +51,22 @@
 ;The dying man blessed his son
 ;
 ;
+
+
+;Added by Meena(1.8.11)
+;Uttar pradesh is a land of cultural and geographical diversity, which is blessed by an innumerable perennial rivers, dense forests, and fertile soil. 
+(defrule be_blessed_by
+(declare (salience 4800))
+(id-root ?id bless)
+?mng <-(meaning_to_be_decided ?id)
+(id-root =(- ?id 1) be)
+(id-root =(+ ?id 1) by)
+(kriyA-by_saMbanXI  ?id ?id1)
+(id-root ?id1 river|forest|soil) 
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sampanna_ho))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  bless.clp     be_blessed_by   "  ?id "  sampanna_ho )" crlf))
+)
+

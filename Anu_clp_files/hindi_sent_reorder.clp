@@ -361,29 +361,29 @@
   )
  ;------------------------------------------------------------------------------------------------------------------
  ;Our program is easier to use than to understand .
-; (defrule default_rule
-; (declare (salience -600))
-; (prep_id-relation-anu_ids  ? kriyA-subject|kriyA-dummy_subject ? ?subj_id)
-; ?f4<-(id-word ?id ~to)
-; ?f3<-(pada_info (group_head_id ?id)(group_cat ?gtype)(group_ids $?grp_ids))
-; ?f0<-(pada_info (group_head_id ?h_id1)(group_cat ?gtype1)(group_ids $?grp_ids1)(preposition ?prep_id1))
-; ?f1<-(pada_info (group_head_id ?h_id2)(group_cat ?gtype2)(group_ids $?grp_ids2)(preposition ?prep_id2))
-;  (test (and (neq ?h_id1 ?subj_id) (neq ?h_id2 ?subj_id)))
-;  ?f2<-(hindi_id_order $?ids)
-;  (test (not (member$ ?id $?ids)))
-;  (test (and (neq ?id ?prep_id1)(neq ?id ?prep_id2)))
-;  (test (and (member$ ?h_id1 $?ids)(member$ ?h_id2 $?ids)))
-;  (test (and (neq ?gtype English_PP)(neq ?gtype1 English_PP)(neq ?gtype2 English_PP)))
-;  (not (Parser_used Stanford-Parser)) ;Added by Manju(31-05-11) restricted for stanford parser
-;  =>
-;  (retract ?f2 ?f4)
-;  (bind ?pos (member$ (nth$ 1 $?grp_ids1) $?ids))
-;  (if (neq ?pos FALSE) then
-; 	(bind $?ids (insert$ $?ids ?pos $?grp_ids))
-;  )
-;  (assert (hindi_id_order $?ids))
-;  (printout ?*DBUG* "(Rule_Name-ids default_rule (hindi_id_order " (implode$ $?ids)"))" crlf)
-; )
+ (defrule default_rule
+ (declare (salience -600))
+ (prep_id-relation-anu_ids  ? kriyA-subject|kriyA-dummy_subject ? ?subj_id)
+ ?f4<-(id-word ?id ~to)
+ ?f3<-(pada_info (group_head_id ?id)(group_cat ?gtype)(group_ids $?grp_ids))
+ ?f0<-(pada_info (group_head_id ?h_id1)(group_cat ?gtype1)(group_ids $?grp_ids1)(preposition ?prep_id1))
+ ?f1<-(pada_info (group_head_id ?h_id2)(group_cat ?gtype2)(group_ids $?grp_ids2)(preposition ?prep_id2))
+  (test (and (neq ?h_id1 ?subj_id) (neq ?h_id2 ?subj_id)))
+  ?f2<-(hindi_id_order $?ids)
+  (test (not (member$ ?id $?ids)))
+  (test (and (neq ?id ?prep_id1)(neq ?id ?prep_id2)))
+  (test (and (member$ ?h_id1 $?ids)(member$ ?h_id2 $?ids)))
+  (test (and (neq ?gtype English_PP)(neq ?gtype1 English_PP)(neq ?gtype2 English_PP)))
+  (not (Parser_used Stanford-Parser)) ;Added by Manju(31-05-11) restricted for stanford parser
+  =>
+  (retract ?f2 ?f4)
+  (bind ?pos (member$ (nth$ 1 $?grp_ids1) $?ids))
+  (if (neq ?pos FALSE) then
+ 	(bind $?ids (insert$ $?ids ?pos $?grp_ids))
+  )
+  (assert (hindi_id_order $?ids))
+  (printout ?*DBUG* "(Rule_Name-ids default_rule (hindi_id_order " (implode$ $?ids)"))" crlf)
+ )
  ;------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (29-05-11)
  ;The people of Orissa are facing grave adversities due to the cyclone.

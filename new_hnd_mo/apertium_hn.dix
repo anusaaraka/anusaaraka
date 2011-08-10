@@ -860,6 +860,8 @@
 <e><p><l>o</l><r>o<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:m"/><s n="tam:0"/></r></p></e>
 <e><p><l>o</l><r>o<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="tam:0"/></r></p></e>
 <e><p><l>o</l><r>o<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:m_h"/><s n="tam:0"/></r></p></e>
+
+
 <e><p><l>oUz</l><r>o<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:u"/><s n="tam:subj"/></r></p></e>
 <e><p><l>oUz</l><r>o<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:u"/><s n="tam:subj"/></r></p></e>
 <e><p><l>o</l><r>o<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m"/><s n="tam:subj"/></r></p></e>
@@ -1719,7 +1721,8 @@
 <e><p><l>E</l><r>E<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m"/><s n="tam:hE"/></r></p></e>
 <e><p><l>E</l><r>E<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:m"/><s n="tam:hE"/></r></p></e>
 <e><p><l>E</l><r>E<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/><s n="tam:hE"/></r></p></e>
-<e><p><l>E</l><r>E<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="tam:hE"/></r></p></e>
+<e><p><l>E</l><r>o<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="tam:hE"/></r></p></e> 
+<e><p><l>E</l><r>E<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="tam:hE"/></r></p></e> 
 <e><p><l>EM</l><r>E<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/><s n="tam:hE"/></r></p></e>
 <e><p><l>EM</l><r>E<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:u"/><s n="tam:hE"/></r></p></e>
 <e><p><l>o</l><r>E<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m"/><s n="tam:hE"/></r></p></e>
@@ -22958,6 +22961,7 @@
 <e lm="prawAriwa"><i>prawAriwa</i><par n="amIra/__adj"/></e>
 <e lm="prawarka"><i>prawarka</i><par n="kroXa/__n"/></e>
 <e lm="prawarxana"><i>prawarxana</i><par n="kroXa/__n"/></e>
+<e lm="prawi"><i>prawi</i><par n="Apawwi/__n"/></e> 
 <e lm="prAwiBa"><i>prAwiBa</i><par n="amIra/__adj"/></e>
 <e lm="prawiBA"><i>prawiBA</i><par n="ASA/__n"/></e>
 <e lm="prawibala"><i>prawibala</i><par n="amIra/__adj"/></e>
@@ -25170,6 +25174,7 @@
 <e lm="samAkarRI"><i>samAkarRI</i><par n="ajAwI/__adj"/></e>
 <e lm="samakoNa"><i>samakoNa</i><par n="amIra/__adj"/></e>
 <e lm="samakRa"><i>samakRa</i><par n="amIra/__adj"/></e>
+<e lm="sampanna"><i>sampanna</i><par n="amIra/__adj"/></e>
 <e lm="samakRawA"><i>samakRawA</i><par n="IrRyA/__n"/></e>
 <e lm="samAkula"><i>samAkula</i><par n="amIra/__adj"/></e>
 <e lm="samAKyA"><i>samAKyA</i><par n="ASA/__n"/></e>

@@ -6,9 +6,9 @@
 (id-cat ?id adjective|adjective_comparative|adjective_superlative)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id bahuwa_badZA))
+(assert (id-wsd_root_mng ?id bahuwa_badA)) ;Removed 'Z' in the meaning (Roja 05-08-11)
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  giant.clp 	giant0   "  ?id "  bahuwa_badZA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  giant.clp 	giant0   "  ?id "  bahuwa_badA )" crlf))
 )
 
 ;"giant","Adj","1.bahuwa_badZA"

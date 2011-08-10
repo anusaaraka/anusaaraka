@@ -41,10 +41,17 @@ ABBR[ ][ ]\n		{printf("ABBR</s>\n<s>",yytext[0]);}
 [ ][A-Za-z][.][ ][A-Za-z][.][ ][A-Z]	{printf("%c%c%c%c%c</s>\n<s>%c",yytext[0],yytext[1],yytext[2],yytext[4],yytext[5],yytext[7]); }
 [ ][A-Za-z][.][ ][ ]\)  {printf("%c%c%c%c",yytext[0],yytext[1],yytext[2],yytext[5]); }
 [.][ ][,][ ]		{printf("%c%c%c",yytext[0],yytext[2],yytext[3]); }
-[.][ ]\$[0-9]           {printf("%c</s>\n<s>%c%c",yytext[0],yytext[2],yytext[3]);} 
-[\.\?]["][ ][ ][A-Z]	{printf("%c%c</s>\n<s>%c",yytext[0],yytext[1],yytext[4]);}                      
+[.][ ]\$[0-9]           {printf("%c</s>\n<s>%c%c",yytext[0],yytext[2],yytext[3]); /*[\.\?]["][ ][ ][A-Z]	{printf("%c%c</s>\n<s>%c",yytext[0],yytext[1],yytext[4]); */
+                        }                      
 [A-Za-z][_][ ][A-Za-z]  {printf("%c%c%c",yytext[0],yytext[1],yytext[3]); }
-
+["][.][ ][A-Z]		{printf("%c%c</s>\n<s>%c", yytext[0],yytext[1],yytext[3]); }
+[?]["][ ][ ][A-Z]	{printf("%c%c%c%c", yytext[0],yytext[1],yytext[2],yytext[4]); }
+[!]["][ ][ ][A-Z]	{printf("%c%c%c%c", yytext[0],yytext[1],yytext[2],yytext[4]); }
+[.]["][.][ ][A-Z]       {printf("%c%c%c</s>\n<s>%c", yytext[0],yytext[1],yytext[2],yytext[4]); }
+[.]["][ ][0-9]		{printf("%c%c</s>\n<s>%c", yytext[0],yytext[1],yytext[3]); }
+[ ][A-Z][.][ ][A-Z][a-z]	{printf("%c%c%c</s>\n<s>%c%c", yytext[0],yytext[1],yytext[2], yytext[4],yytext[5]);	}
+[ ][A-Z][.][ ][A-Z][ ]	{printf("%c%c%c</s>\n<s>%c%c", yytext[0],yytext[1],yytext[2], yytext[4],yytext[5]);	}
+[)][.][ ][A-Z]		{printf("%c%c</s>\n<s>%c", yytext[0],yytext[1], yytext[3]);     }
 
 \<p\>			{printf("<p><s>");}
 \<\/p\>			{printf("</s></p>\n");}

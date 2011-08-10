@@ -17,8 +17,8 @@ for $i (0 .. $#lines){
  for $j (0 .. $#words){
 	$genitive=0;
 	$last_genitive=0;
-  if(($words[$j] !~ /^\^\.\/\.\<sent\>["']*\$$/) && ($words[$j] !~ /^\^\?\/\?\<sent\>["']*\$$/)  && ($words[$j] !~ /^\^\?\/\?\<sent\>["']*\$\^\.\/\.\<sent\>["']*\$$/) &&($words[$j] !~ /^\^\,\/\,\<cm\>["']*\$$/)&&($words[$j] !~ /^\^\:\/\:\<sent\>["']*\$$/)&&($words[$j] !~ /^\^\'\/\'\<apos\>['"]*\$$/)&&($words[$j] !~ /^\"\^\.\/\.\<sent\>\$$/)&&($words[$j] !~ /^\"$/) && ($words[$j] !~ /^\"\^\:\/\:\<sent\>\$$/)){	
-
+  if(($words[$j] !~ /^\^\.\/\.\<sent\>["']*\$$/) && ($words[$j] !~ /^\^\?\/\?\<sent\>["']*\$$/)  && ($words[$j] !~ /^\^\?\/\?\<sent\>["']*\$\^\.\/\.\<sent\>["']*\$$/) &&($words[$j] !~ /^\^\,\/\,\<cm\>["']*\$$/)&&($words[$j] !~ /^\^\:\/\:\<sent\>["']*\$$/)&&($words[$j] !~ /^\^\'\/\'\<apos\>['"]*\$$/)&&($words[$j] !~ /^\"\^\.\/\.\<sent\>\$$/)&&($words[$j] !~ /^\"$/) && ($words[$j] !~ /^\"\^\:\/\:\<sent\>\$$/) && ($words[$j] !~ /^\^\?\/\?\<sent\>\$\^\'\/\'\<apos\>\$$/)){ 
+# This pattern ^?/?<sent>$^'/'<apos>$  added by Roja (09-08-11)
 
 
 #for handling patterns $^5/5<num>$ where "$" is part of sentence.(The university spends $5 per student.)

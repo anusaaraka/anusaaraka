@@ -47,7 +47,9 @@ sub search {
 			while($match){
 				$new_word=$word;
 				$new_word =~ s/\(/\\(/g;# Added to avoid error(when strings have "(" or ")")	
-				$new_word =~ s/\)/\\)/g;	
+				$new_word =~ s/\)/\\)/g;
+                                $new_word =~ s/\[/\\[/g;# Added to avoid error(when strings have "[" or "]") by Roja (8-8-11)
+                                $new_word =~ s/\]/\\]/g;#             "
 				if($eng_word_tmp =~ /$new_word/){
 					if($eng_word_tmp eq  $word){
 						$next_word=$word." ".$words[$cindex+$i];

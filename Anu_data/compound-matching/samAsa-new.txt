@@ -30000,7 +30000,7 @@ steamer fire engine operator	stImara_PAyara_iMjana_OYparetara	stImara_PAyara_iMj
 steamer fitter	stImara_Pitara	stImara_Pitara	noun	2	RM
 steamship company	BApa_powa_kampanI	BApa_powa_kampanI	noun	2	RM
 steel authority of india limited	BArawIya_ispAwa_prAXikaraNa_limiteda	BArawIya_ispAwa_prAXikaraNa_limiteda	noun	2	RM
-steel band	DZola_bajAnevAloM_kA_samUha	DZola_bajAnevAloM_kA_samUha	noun	2	RM
+steel band	Dola_bajAnevAloM_kA_samUha	Dola_bajAnevAloM_kA_samUha	noun	2	RM
 steel blue	ispAwI_nIlA	ispAwI_nIlA	noun	2	RM
 steel can	stIla_kA_dibbA	stIla_kA_dibbA	noun	2	RM
 steel company	ispAwa_kampanI	ispAwa_kampanI	noun	2	RM
@@ -34345,3 +34345,4 @@ By this time	abawaka	abawaka	noun	3	RM
 love affair	prema_saMbanXa	prema_saMbanXa	noun	2	RM
 In fact	asala_meM	asala_meM	noun	2	RM
 free fall	besahArA_giranA	besahArA_giranA	noun	2	RM
+miles and miles	miloM	miloM	noun	3	WM  
