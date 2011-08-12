@@ -1,0 +1,5 @@
+Basic Assumtions
+================
+     1.  While adding an entry in 'samAsa-new.txt'  a phrase without any punctuations should be entered.
+     2.  For the time being  a phrase with or without comma has the same meaning.
+              Ex:  if so --> yaxi_EsA_hE_wo  is same as  If so , --> yaxi_EsA_ho_wo

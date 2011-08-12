@@ -208,6 +208,10 @@ changes in samAsa-new.txt
          love affair     	     ----- prema_saMbanXa  prema_saMbanXa  noun  2  RM (Meena 27.4.11)
 	 In fact                     ----- asala_meM       noun    2       RM  (Meena 27.5.11)
          miles and miles             ----- miloM   miloM   noun    3       WM  (Meena 9.8.11) ex: The road went on for miles and miles.
+         miles and miles             ----- miloM   miloM   noun    3       WM  (Meena 9.8.11)
+         a spot of                   ----- WodA_sA WodA_sA noun    2       RM  (Meena 10.8.11) 
+         for the last time           ----- AKirI_bAra      AKirI_bAra      4       WM (Meena 10.8.11)
+         stop talking                ----- bAweM_banxa_kIjiye      bAweM_banxa_kIjiye      noun    1       WM (Meena 10.8.11)
 
 
  2. Removed/commented
@@ -343,6 +347,10 @@ changes in samAsa-new.txt
         <e lm="rahanA"><i>rahan</i><par n="loh/A__n"/></e>   (             "      26-04-11)
         <e lm="prawi"><i>prawi</i><par n="Apawwi/__n"/></e>  (             "      09-08-11)
 
+        <sdef n="parsarg:ke_pakRa_meM" c="ke_pakRa_meM"/>  (added new parsarg 'ke_pakRa_meM')   (             "      11-08-11)
+        <e><p><l>isake_pakRa_meM</l><r>yaha<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke_pakRa_meM"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>    				 (             "      11-08-11)
+        <e><p><l>isake_pakRa_meM</l><r>yaha<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke_pakRa_meM"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/></r></p></e>				 (             "      11-08-11)
+
  Modified :
 	<e><p><l>we_hue</l>         as <e><p><l>owe_hue</l>      for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
 	<e><p><l>we_rahanA_hE</l>  as <e><p><l>owe_rahanA_hE</l> for tam:we_rahanA_hE  (Suggested by Sriram 21-06-11)
@@ -357,6 +365,7 @@ changes in samAsa-new.txt
  
 Modified:
         <e lm="belonging"><i>belonging</i><par n="house__n"/></e>   as    <e lm="belongings"><i>belongings</i><par n="personnel__n"/></e>   (Suggested by Meena ji 12-05-11)
+        <e lm="box"><i>box</i><par n="bass__n"/></e>   as   <e lm="box"><i>box</i><par n="access__n"/></e>  (Suggested by Meena ji 10-08-11)
 
 
  Added new files:

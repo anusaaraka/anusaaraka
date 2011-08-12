@@ -19,9 +19,13 @@ while(<STDIN>){
 				# for prasargs having more than one words.
 				if($word =~ /\^([^<]+)_(.*)<cat:prsg>/){ $word =~ s/_/ /g;}
 
-
 				#for  nouns having more than one words.
 				if($word =~ /\^([^<]+)_.*/){
+#                                  $new =~ /\^([^<]+)_([^<]+)(.*)/
+#                                   $w1=$1;
+#                                   $w2=$2;
+#                                   $w3=$3;                                   
+#                                 print "$1\n$2\n$3\n";
 
 
 					#for adjectival participle , where the form has a tam "yA_huA" e.g BarA_huA. Make it to verb-form and generate as a verb.

@@ -20,6 +20,11 @@
 ;She is doing her post graduation in painting.
 ;vaha ciwrakArI meM snAwkowwara kara rahI hE.
 ;
+
+
+
+;Hindi meaning modified by Meena(10.8.11)
+;This room would look big for a spot of paint. 
 (defrule paint1
 (declare (salience 4900))
 (id-root ?id paint)
@@ -27,9 +32,10 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id raMgalepa))
+(assert (id-wsd_root_mng ?id raMga))
+;(assert (id-wsd_root_mng ?id raMgalepa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  paint.clp 	paint1   "  ?id "  raMgalepa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  paint.clp 	paint1   "  ?id "  raMga )" crlf))
 )
 
 ;"paint","N","1.raMgalepa"

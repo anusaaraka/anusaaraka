@@ -34345,4 +34345,7 @@ By this time	abawaka	abawaka	noun	3	RM
 love affair	prema_saMbanXa	prema_saMbanXa	noun	2	RM
 In fact	asala_meM	asala_meM	noun	2	RM
 free fall	besahArA_giranA	besahArA_giranA	noun	2	RM
-miles and miles	miloM	miloM	noun	3	WM  
+miles and miles	miloM	miloM	noun	3	WM
+a spot of	WodA_sA	WodA_sA	noun	2	RM 
+for the last time	AKirI_bAra	AKirI_bAra	noun	4	WM
+stop talking	bAweM_banxa_kIjiye	bAweM_banxa_kIjiye	noun	1	WM 

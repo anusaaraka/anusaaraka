@@ -2590,14 +2590,18 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 2. In sd_relation_rules.clp, Modified rules: complm, xcomp, xcomp+aux and infmod.
 3. In Compound-dict.pl,  Added a pattern to avoid errors when strings are "[" or "]".
 4. WSD:
-         Modified : bless.clp, giant.clp, is_en_tam.clp, rabbit.clp
+         Modified : bless.clp, giant.clp, is_en_tam.clp, rabbit.clp, paint.clp
 5. In morph.pl, Added a pattern to avoid morph deftemplate errors.
 6. In get_word_cat.lex modified rules to handle punctuations and added code for handiling (\").
 7. Updated abbr1.lex file.
 8. Updated add_snt_mrkr.lex file.
 9. Updated chk_input_format.pl.
-10.Updated changes_in_databases.
-11.Modified sd_ver_output, ol_ver_output
-12. Mofified "handling_punctuations" rule (added space in printout stmt) in sd_combining_apostrophe.clp.
-13. Modified eng_aper_gen.lex file and run_rasp-parser.sh (POS mapping).
-12.Updated Log
+10.Modified "handling_punctuations" rule (added space in printout stmt) in sd_combining_apostrophe.clp.
+11.Modified eng_aper_gen.lex file and run_rasp-parser.sh (POS mapping).
+12.Modified following files to handle matching compounds without punctuations:
+	Anusaaraka.sh		Anusaaraka_all.sh	Anusaaraka_berkeley.sh		Anusaaraka_link.sh
+	Anusaaraka_ol.sh	Anusaaraka_rasp.sh	Anusaaraka_site.sh		Anusaaraka_stanford.sh
+13.Added a new file Compound_Readme inside compound-matching folder.
+14.Updated changes_in_databases.
+15.Modified sd_ver_output, ol_ver_output
+16.Updated Log
