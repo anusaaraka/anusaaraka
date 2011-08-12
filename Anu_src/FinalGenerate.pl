@@ -21,12 +21,6 @@ while(<STDIN>){
 
 				#for  nouns having more than one words.
 				if($word =~ /\^([^<]+)_.*/){
-#                                  $new =~ /\^([^<]+)_([^<]+)(.*)/
-#                                   $w1=$1;
-#                                   $w2=$2;
-#                                   $w3=$3;                                   
-#                                 print "$1\n$2\n$3\n";
-
 
 					#for adjectival participle , where the form has a tam "yA_huA" e.g BarA_huA. Make it to verb-form and generate as a verb.
 					if($word =~ /\^([^_]+)_huA<cat:adj><case:(.+)>.*<gen:(.+)>.*<num:(.+)>/){
