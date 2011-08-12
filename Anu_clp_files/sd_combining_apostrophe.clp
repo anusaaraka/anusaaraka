@@ -16,7 +16,7 @@
  =>
 	(retract ?f0 ?f1)
 	(if  (eq ?word "\"") then
-		(printout ?*nid_wrd_fp* "(parser_numid-word-remark  " ?id "  \"\\"  ?word"\""  "-)" crlf)
+		(printout ?*nid_wrd_fp* "(parser_numid-word-remark  " ?id "  \"\\"  ?word"\""  "  -)" crlf)
 		(printout ?*l_wrd_fp* "(parserid-word  "?pid " \"\\"  ?word"\"" ")" crlf)
 	else	
 		(printout ?*nid_wrd_fp* "(parser_numid-word-remark  " ?id "   \"" ?word"\"  -)" crlf)
