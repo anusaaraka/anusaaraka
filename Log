@@ -2585,8 +2585,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  12-08-11
  ========
 1. H_ordering_rules.clp :
-        Added    : get_SBAR_copula
-        Modified : get_SBAR ,rmv_sbar_from_root and create_sen
+        Added    : get_SBAR_copula , merge_ADVP, rev_ADVP_1 and rev_VP_for_obj1_obj2
+        Modified : get_SBAR ,rmv_sbar_from_root and create_sen, reverse-NP-Daughters and undefrules
+	Removed  : move_kri_vi_be4_obj and move_kri_vi_be4_kri
 2. In sd_relation_rules.clp, Modified rules: complm, xcomp, xcomp+aux and infmod.
 3. In Compound-dict.pl,  Added a pattern to avoid errors when strings are "[" or "]".
 4. WSD:
@@ -2602,6 +2603,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	Anusaaraka.sh		Anusaaraka_all.sh	Anusaaraka_berkeley.sh		Anusaaraka_link.sh
 	Anusaaraka_ol.sh	Anusaaraka_rasp.sh	Anusaaraka_site.sh		Anusaaraka_stanford.sh
 13.Added a new file Compound_Readme inside compound-matching folder.
-14.Updated changes_in_databases.
-15.Modified sd_ver_output, ol_ver_output
-16.Updated Log
+14.Modified run_modules_std.bat -- to load original_word.dat instead word.dat in H_ordering_rules module
+15.vibakthi.clp
+        Added  : obj_1_vibakthi_rule     Modified : animate_vibakthi_rule
+16.Updated changes_in_databases.
+17.Modified sd_ver_output, ol_ver_output and ber_ver_output
+18. Updated following files:
+        sd_verified (430)    ber_verified (384)
+19.Updated Log
