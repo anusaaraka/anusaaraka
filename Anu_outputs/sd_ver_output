@@ -321,6 +321,7 @@ gAdI ke pahiyoM ne mudanA AramBa kiyA.
 Hindi meaning using Stanford parser 2.78
 Our team was easily beaten in the competition. 
 hamArI tIma sparXA meM AsAnI se harAyI/harAI gayI WI.
+hamArI tIma AsAnI se sparXA meM harAyI/harAI gayI WI.
 
 Hindi meaning using Stanford parser 2.79
 She carefully prepared the dinner. 
@@ -364,6 +365,7 @@ yaha samBava hE ve AyeMge/Aezge.
 
 Hindi meaning using Stanford parser 2.89
 Have you ever seen the Pacific? 
+kyA Apa Pacific ko kaBI BI xeKa cuke hEM?
 kyA Apa kaBI BI Pacific ko xeKa cuke hEM?
 
 Hindi meaning using Stanford parser 2.90
@@ -380,8 +382,8 @@ kiwane kuwwe xOde?
 
 Hindi meaning using Stanford parser 2.93
 He told them about the accident immediately. 
-usane xurGatanA ke bAre meM wawkAla unheM/unako bawAyA.
 usane wawkAla xurGatanA ke bAre meM unheM/unako bawAyA.
+usane xurGatanA ke bAre meM wawkAla unheM/unako bawAyA.
 
 Hindi meaning using Stanford parser 2.94
 She works very carefully. 
@@ -774,6 +776,7 @@ unhoMne baccoM ke bIca meM pEsA bAzta xiyA.
 
 Hindi meaning using Stanford parser 2.189
 It plunged first its nose into the river. 
+isane naxI ke aMxara usakI nAka pahale PazsAyI/PazsAI.
 isane naxI ke aMxara pahale usakI nAka PazsAyI/PazsAI.
 
 Hindi meaning using Stanford parser 2.190
@@ -834,6 +837,7 @@ hamane usake_liye kuCa sunxara PUla cuna liye/lie.
 
 Hindi meaning using Stanford parser 2.204
 I am afraid that I have badly hurt him. 
+mEM cinwiwa hUz ki mEM usako/use burI_waraha se kRawi_pahuzcA cukA hUz.
 mEM cinwiwa hUz ki mEM burI_waraha se usako/use kRawi_pahuzcA cukA hUz.
 
 Hindi meaning using Stanford parser 2.205
@@ -958,6 +962,7 @@ vaha cIKane kI AvAja se uRAkAla meM jagAyA gayA WA.
 
 Hindi meaning using Stanford parser 2.235
 I am afraid you have completely misunderstood the question. 
+mEM cinwiwa hUz Apa praSna pUrI_waraha se galawa_samaJa cuke hEM.
 mEM cinwiwa hUz Apa pUrI_waraha se praSna galawa_samaJa cuke hEM.
 
 Hindi meaning using Stanford parser 2.236
@@ -1415,6 +1420,7 @@ mEM Apake varNana se nahIM socawA hUz ki mEM isakA Ananxa uTAUzgA.
 
 Hindi meaning using Stanford parser 3.47
 The lawyer pointed out that Clinton did not actually kiss Monica. 
+vakIla ne XyAna_AkarRiwa kiyA ki Clinton ne Monica ko vAswava meM nahIM cUmA WA.
 vakIla ne XyAna_AkarRiwa kiyA ki Clinton ne vAswava meM Monica ko nahIM cUmA WA.
 
 Hindi meaning using Stanford parser 3.48
@@ -1488,8 +1494,8 @@ muJe/muJako AScarya howA hE ki kyA hameM/hamako jAnA cAhiye.
 
 Hindi meaning using Stanford parser 3.65
 He told them about the accident, presumably. 
-usane xurGatanA ke bAre meM saMBavawaH unheM/unako bawAyA.
 usane saMBavawaH xurGatanA ke bAre meM unheM/unako bawAyA.
+usane xurGatanA ke bAre meM saMBavawaH unheM/unako bawAyA.
 
 Hindi meaning using Stanford parser 3.66
 The doctor is tending the injured. 
@@ -1761,5 +1767,13 @@ paranwu pUzjI prabaMXaka kahawe hEM ki ve wEyAra hEM.
 Hindi meaning using Stanford parser 4.28
 The test may come today. 
 parIkRA Aja ho sakawI hE.
+
+Hindi meaning using Stanford parser 4.29
+I will tell you some interesting facts tomorrow. 
+mEM kala Apako kuCa rucikara waWya bawAUzgA.
+
+Hindi meaning using Stanford parser 4.30
+At this point, the Dow was down about 35 points. 
+isa samaya para Dow lagaBaga 35 pOintsa nIce WA.
 
 Calling Interface related programs

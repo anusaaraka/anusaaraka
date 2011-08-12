@@ -377,7 +377,7 @@
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/H_ordering_rules.clp"))
  (load ?*path*)
- (load-facts "word.dat")
+ (load-facts "original_word.dat")
  (load-facts "relations.dat")
  (load-facts "E_constituents_info.dat")
  (load-facts "Node_category.dat")

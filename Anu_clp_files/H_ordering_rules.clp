@@ -43,17 +43,30 @@
         )
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-(defrule print_for_debugging2
-(declare (salience 961))
+; Mysore is also known as the city of palaces.
+; Added by Shirisha Manju (12-08-11) Suggested by Sukhada
+;If VP > ADVP VP1 and VP1 > x y z then this rule modifies VP as VP > ADVP xyz and removes the node VP1.
+(defrule merge_ADVP
+(declare (salience 1400))
+?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP ?ADVP ?VP1)
+?f1<-(Head-Level-Mother-Daughters ?h1 ? ?VP1 $?daut)
+(Node-Category  ?VP   VP)
+(Node-Category  ?VP1  VP)
+(Node-Category  ?ADVP ADVP)
+(test (neq ?h ?h1))
 =>
-(bind ?*count* (+ ?*count* 1))
-(printout ?*order_debug-file* "(debug_info  "?*count*" Applying Reversing rules )" crlf)
-)
+	(bind ?*count* (+ ?*count* 1))
+	(retract ?f0 ?f1)
+	(assert (Head-Level-Mother-Daughters ?h ?l ?VP ?ADVP $?daut))
+	(printout ?*order_debug-file* "(rule_name - merge_ADVP " ?*count* " "crlf
+                          "             Before    - "?h" "?l"  "?VP"  "?ADVP" "?VP1"  "crlf
+                          "             After     - "?h" "?l"  "?VP"  "?ADVP" "(implode$ $?daut) ")"crlf)
+ )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (1-06-11) -- Suggested by Sukhada.
 ;Failure to comply may result in dismissal.
 (defrule dont_rev_if_VP_goesto_TO
-(declare (salience 960))
+(declare (salience 1400))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  ?d $?daut)
 (Node-Category  ?Mot  VP)
 (Node-Category  ?d TO)
@@ -71,7 +84,7 @@
 ;Added by Shirisha Manju (2-08-11) -- Suggested by Sukhada.
 ;The balance is supplied by a host of smaller exporters, such as Australia and Venezuela.
 (defrule dont_rev_if_PP_goesto_SUCH
-(declare (salience 960))
+(declare (salience 1400))
 ?f0<-(Head-Level-Mother-Daughters ?head ?l ?Mot ?JJ $?d)
 (Node-Category  ?Mot  PP)
 (Head-Level-Mother-Daughters ?h&such ? ?JJ $?)
@@ -84,6 +97,30 @@
         (printout ?*order_debug-file* "(rule_name - dont_rev_if_PP_goesto_SUCH " ?*count* " " crlf
                          "              Before    - "?head" "?l" "?Mot" "?JJ" "(implode$  $?d) crlf
                          "              After     - "?head" "?l" "?Mot" "?JJ" "(implode$ $?d) ")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
+(defrule print_for_debugging2
+(declare (salience 1000))
+=>
+(bind ?*count* (+ ?*count* 1))
+(printout ?*order_debug-file* "(debug_info  "?*count*" Applying Reversing rules )" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
+;Have you ever seen Pasafic?  
+(defrule rev_ADVP_1
+(declare (salience 960))
+?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot ?advp ?vp $?daut )
+(Node-Category  ?Mot  VP)
+(Node-Category  ?advp  ADVP)
+(not (Mother  ?advp))
+(not (Mother  ?Mot));Her heart beats fast. 
+=>
+        (retract ?f0)
+	(assert (Mother  ?advp))
+	(assert (Head-Level-Mother-Daughters ?head ?lev ?Mot ?vp ?advp $?daut ))
+	(printout ?*order_debug-file* "(rule_name - rev_ADVP_1 " ?*count* " " crlf
+                         "              Before    - "?head" " ?lev" "?Mot" "?advp" "?vp" "(implode$ $?daut) crlf
+	                 "              After     - "?head" " ?lev" "?Mot" "?vp" "?advp" "(implode$ $?daut) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule rev_VP_or_PP_or_WHPP
@@ -103,6 +140,31 @@
 	(printout ?*order_debug-file* "(rule_name - rev_VP_or_PP_or_WHPP " ?*count* " " crlf
                          "              Before    - "?head" " ?lev" "?Mot" "(implode$ $?daut)" " ?d" "?d1 crlf
 	                 "              After     - "(implode$ ?rev_daut) ")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
+;;Ex. I gave her a book. I will tell you the story tomorrow. 
+;Added by Shirisha Manju (11-08-11) Suggested by Sukhada
+(defrule rev_VP_for_obj1_obj2
+(declare (salience 940))
+?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d1 ?d $?rest)
+(Node-Category  ?Mot  VP)
+(id-original_word ?kri ?head) ;I gave Rama a book.
+(and (kriyA-object_2 ?kri ?obj2)  (kriyA-object_1 ?kri ?obj1))
+(id-original_word ?obj2 ?wrd) (id-original_word ?obj1 ?h)
+(Head-Level-Mother-Daughters  ?wrd ? ?d1  $?modf  ?y )
+(Head-Level-Mother-Daughters  ?h ? ?d  $?mod  ?x )
+(not (Mother  ?d1))
+(not (Mother ?d))
+(not (viSeRya-jo_samAnAXikaraNa  ?obj2 ?));I will show you the house which I bought.
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (retract ?f0)
+        (assert (Head-Level-Mother-Daughters  ?head ?lev ?Mot $?daut ?d ?d1  $?rest))
+        (assert (Mother  ?d1))
+        (assert (Mother  ?d))
+        (printout ?*order_debug-file* "(rule_name - rev_VP_for_obj1_obj2 " ?*count* " " crlf
+                         "              Before    - "?head" " ?lev" "?Mot" "(implode$ $?daut)" " ?d1" "?d" "(implode$ ?rest) crlf
+                         "              After     - "?head" " ?lev" "?Mot" "(implode$ $?daut)" " ?d" "?d1" "(implode$ ?rest) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;At this point, the Dow was down about 35 points.
@@ -170,7 +232,7 @@
 (Head-Level-Mother-Daughters ? ? ?d ?id)
 (Node-Category  ?Mot  ADJP)
 (Node-Category  ?d  RB)
-(id-word ?id not)
+(id-original_word ?id not)
 (not (Mother  ?Mot))
 =>       
         (bind ?*count* (+ ?*count* 1))
@@ -183,7 +245,7 @@
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju(20-06-11) Suggested by Dipti mam
-;How many people did you see? How much money did you earn?I wonder how much money you earned.
+;How many people did you see? How much money did you earn? I wonder how much money you earned.
 (defrule WHNP_rule
 (declare (salience 950))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  ?whnp ?sq)
@@ -312,32 +374,6 @@
                          "              After     - "?head" "?lvl" "?mot" "?PRP" "?PDT" "?N ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju(23-06-11) Suggested by Sukhada
-;It plunged first its nose into the river. --NN
-;Have you ever seen the Pacific? -- NNP , I am afraid that I have badly hurt him. --- PRP
-(defrule move_kri_vi_be4_obj
-(declare (salience 800))
-?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot $?d ?NN $?d1)
-(Head-Level-Mother-Daughters ? ? ?NN ?obj)
-(Node-Category ?mot NP|VP)
-(Node-Category ?NN  NN|NNP|PRP)
-(kriyA-object  ?k ?obj)
-(kriyA-kriyA_viSeRaNa  ?k ?vi)
-(Head-Level-Mother-Daughters ? ? ?RB ?vi)
-(Head-Level-Mother-Daughters ? ? ?ADVP ?RB $?)
-?f1<-(Head-Level-Mother-Daughters ?h ?l ?m $?d2 ?ADVP $?d3)
-(not (Mother  ?mot))
-=>
-	(bind ?*count* (+ ?*count* 1))
-        (retract ?f0 ?f1)
-	(assert (Head-Level-Mother-Daughters ?head ?lvl ?mot ?ADVP $?d ?NN $?d1))
-	(assert (Head-Level-Mother-Daughters ?h ?l ?m $?d2 $?d3))
-        (assert (Mother  ?mot))
-	(printout ?*order_debug-file* "(rule_name - move_kri_vi_be4_obj "  ?*count* crlf
-                         "              Before    - "?head" "?lvl" "?mot" "(implode$ $?d)" "?NN" "(implode$ $?d1) crlf
-                         "              After     - "?head" "?lvl" "?mot" "?RB" "(implode$ $?d)" "?NN" "(implode$ $?d1) ")" crlf)
-)
-;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju(13-07-11) Suggested by Sukhada
 ;Several fund managers expect a rough market this morning before prices stabilize.
 (defrule prep_in_SBAR_rule
@@ -365,6 +401,7 @@
 =>
 (save-facts "hindi_rev_order.dat" local Head-Level-Mother-Daughters)
 (undefrule replace_aux_with_head_VP)
+(undefrule merge_ADVP)
 (undefrule dont_rev_if_VP_goesto_TO)
 (undefrule rev_VP_or_PP_or_WHPP)
 (undefrule rev_ADJP_goesto_PP)
@@ -373,7 +410,6 @@
 (undefrule reverse-NP-Daughters)
 (undefrule replace_NP-daut_PDT)
 (undefrule move_negation_before_verb)
-(undefrule move_kri_vi_be4_obj)
 (undefrule WHNP_rule)
 (undefrule prep_in_SBAR_rule)
 (undefrule rev_ADVP_goesto_RB)
@@ -532,20 +568,6 @@
 	(printout ?*order_debug-file* "(rule_name - insert_jo_samAnAXikaraNa " ?*count* crlf
         	         "              Before    - "(implode$ $?id)" "?sub" "(implode$ $?id1)" "?k" "(implode$ $?daut) crlf
                 	 "              After     - "(implode$ $?id)"  10000 "?sub" " (implode$ $?id1)" "?k" "(implode$ $?daut) ")" crlf)
-)
-;-----------------------------------------------------------------------------------------------------------------------
-;Our team was easily beaten in the competition.
-(defrule move_kri_vi_be4_kri
-(declare (salience 4))
-?f<-(hindi_id_order  $?pre ?kri $?po ?k_vi $?last)
-(kriyA-kriyA_viSeRaNa  ?kri ?k_vi) 
-=>      
-        (bind ?*count* (+ ?*count* 1))
-	(retract ?f)
-        (assert (hindi_id_order $?pre ?k_vi ?kri $?po $?last))
-        (printout ?*order_debug-file* "(rule_name - move_kri_vi_be4_kri " ?*count* crlf
-                         "             Before    - "(implode$ $?pre)" "?kri" "(implode$ $?po)" "?k_vi" "(implode$ $?last) crlf 
-                         "             After     - "(implode$ $?pre)" "?k_vi" "?kri" "(implode$ $?po)" "(implode$ $?last) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule end_order

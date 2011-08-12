@@ -104,11 +104,24 @@
         (retract ?f0)
         (modify ?f1 (vibakthi se))
  )
+;------------------------------------------- obj_1-vib -----------------------------------------------------
+ ; Added by Shirisha Manju (12-08-11) Suggested by Sukhada
+ ; Ex: I gave Rama a book.
+ (defrule obj_1_vibakthi_rule
+ (declare (salience 970))
+ (and (prep_id-relation-anu_ids ? kriyA-object_1 ?root_id ?obj_id)(prep_id-relation-anu_ids ? kriyA-object_2 ?root_id ?obj_id1))
+ (not (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa  ?x ?obj_id))
+ ?f0<-(pada_control_fact ?obj_id)
+ ?f1<-(pada_info (group_head_id ?obj_id)(group_cat PP))
+ =>
+	(retract ?f0)
+        (modify ?f1 (vibakthi ko))
+ )
  ;------------------------------------------- animate-obj-vib -------------------------------------------------
  ;I gave my brother an expensive present
  (defrule animate_vibakthi_rule
  (declare (salience 950))
- (prep_id-relation-anu_ids ? kriyA-object|kriyA-object_2|kriyA-object_1 ?root_id ?obj_id)
+ (prep_id-relation-anu_ids ? kriyA-object ?root_id ?obj_id)
  (not (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa  ?x ?obj_id))
  (id-HM-source ?obj_id ?obj_mng ?)
  (id-root ?root_id ~have)
