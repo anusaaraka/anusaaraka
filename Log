@@ -2604,10 +2604,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	Anusaaraka_ol.sh	Anusaaraka_rasp.sh	Anusaaraka_site.sh		Anusaaraka_stanford.sh
 13.Added a new file Compound_Readme inside compound-matching folder.
 14.Modified run_modules_std.bat -- to load original_word.dat instead word.dat in H_ordering_rules module
-15.vibakthi.clp
-        Added  : obj_1_vibakthi_rule     Modified : animate_vibakthi_rule
-16.Updated changes_in_databases.
-17.Modified sd_ver_output, ol_ver_output and ber_ver_output
-18. Updated following files:
+15.In vibakthi.clp
+        Added  : obj_1_vibakthi_rule  ,   Modified : animate_vibakthi_rule
+16.Updated Stanford_parser_fails file. 
+17.Updated changes_in_databases.
+18.Modified sd_ver_output, ol_ver_output and ber_ver_output
+19. Updated following files:
         sd_verified (430)    ber_verified (384)
-19.Updated Log
+20.Updated Log.

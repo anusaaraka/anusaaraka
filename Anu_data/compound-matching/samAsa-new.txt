@@ -6690,7 +6690,7 @@ budgetary allocation	bajata_vivixAna	bajata_vivixAna	noun	2	RM
 budgetary allotment	bajata_xvArA_niRPala	bajata_xvArA_niRPala	noun	2	RM
 budgetary balance	bajata_saMwulana_aajatIya_saMwulana	bajata_saMwulana_aajatIya_saMwulana	noun	2	RM
 budgetary control	bajata_niyaMwraNa	bajata_niyaMwraNa	noun	2	RM
-budgetary deficit	bajata_xAtA	bajata_xAtA	noun	2	RM
+budgetary deficit	bajata_GAtA	bajata_GAtA	noun	2	RM
 budgetary powers	bajata_SikwayAM	bajata_SikwayAM	noun	2	RM
 budgetary procedure	bajata_prakriyA	bajata_prakriyA	noun	2	RM
 budgetary resources	bajata_sAXana	bajata_sAXana	noun	2	RM
@@ -8526,7 +8526,7 @@ commercial complex	vAprijyika_parisara	vAprijyika_parisara	noun	2	RM
 commercial corporation	vAprijyika_nigama	vAprijyika_nigama	noun	2	RM
 commercial correspondence	vAprijyika_pawrAcAra_aawra_vyavahAra	vAprijyika_pawrAcAra_aawra_vyavahAra	noun	2	RM
 commercial credit	vANijyika_uXAra	vANijyika_uXAra	noun	2	RM
-commercial deficit	vAprijyika_xAtA	vAprijyika_xAtA	noun	2	RM
+commercial deficit	vAprijyika_GAtA	vAprijyika_GAtA	noun	2	RM
 commercial department	vAprijya_viBAga	vAprijya_viBAga	noun	2	RM
 commercial development	vANijyika_vikAsa	vANijyika_vikAsa	noun	2	RM
 commercial document	vANijyaka_xaswAvejZa	vANijyaka_xaswAvejZa	noun	2	RM
@@ -10491,7 +10491,7 @@ deficiency of service	sevA_kI_kamI	sevA_kI_kamI	noun	1	RM
 deficit area	kamI_kA_kRewra	kamI_kA_kRewra	noun	2	RM
 deficit budget	GAte_kA_bajata	GAte_kA_bajata	noun	2	RM
 deficit districts	aBAva_vAle_jile	aBAva_vAle_jile	noun	2	RM
-deficit financing	xAte_kI_vwwi_vyavasWA	xAte_kI_vwwi_vyavasWA	noun	2	RM
+deficit financing	GAte_kI_vwwi_vyavasWA	GAte_kI_vwwi_vyavasWA	noun	2	RM
 deficit proposals	GAte-kA-bajata	GAte-kA-bajata	noun	2	RM
 deficit spending	GAtA_xiKAkara_Karca_karanA	GAtA_xiKAkara_Karca_karanA	noun	2	RM
 definite network	niSciwa_netavarka	niSciwa_netavarka	noun	2	RM
@@ -23397,7 +23397,7 @@ over work	kAryAXikya	kAryAXikya	noun	2	RM
 over writing	aXileKana	aXileKana	noun	2	RM
 overaged locomotives	gawAyu_BApa_iMjana	gawAyu_BApa_iMjana	noun	2	RM
 overall charge	samagra_praBAra	samagra_praBAra	noun	2	RM
-overall deficit	samagra_xAtA	samagra_xAtA	noun	2	RM
+overall deficit	samagra_GAtA	samagra_GAtA	noun	2	RM
 overall efficiency	samagra_xakRawA_ARamawA	samagra_xakRawA_ARamawA	noun	2	RM
 overall estimate	kula-anumAna	kula-anumAna	noun	2	RM
 overall expenditure	kula_Karca	kula_Karca	noun	2	RM
@@ -27205,7 +27205,7 @@ revenue audit section	rAjasva_leKAparIkRA_anuBAga	rAjasva_leKAparIkRA_anuBAga	no
 revenue board	rAjasva_borda	rAjasva_borda	noun	2	RM
 revenue bond	kara_prawijFA_pawra	kara_prawijFA_pawra	noun	2	RM
 revenue code	rAjasva_saMhiwA	rAjasva_saMhiwA	noun	2	RM
-revenue deficit	rAjasva_xAtA	rAjasva_xAtA	noun	2	RM
+revenue deficit	rAjasva_GAtA	rAjasva_GAtA	noun	2	RM
 revenue duty	rAjasva_Sulka	rAjasva_Sulka	noun	2	RM
 revenue enhancement	Aya_saMvqxXi	Aya_saMvqxXi	noun	2	RM
 revenue expenditure	rAjasva_Karca	rAjasva_Karca	noun	2	RM
@@ -31922,7 +31922,7 @@ trade commissioner	vyApAra_Ayukwa_aamiSnara	vyApAra_Ayukwa_aamiSnara	noun	2	RM
 trade credit	vyApAra_qNa	vyApAra_qNa	noun	2	RM
 trade credits	vyApArika_uXAra	vyApArika_uXAra	noun	2	RM
 trade cycle	vyApAra_cakra	vyApAra_cakra	noun	2	RM
-trade deficit	vyApAra_xAtA	vyApAra_xAtA	noun	2	RM
+trade deficit	vyApAra_GAtA	vyApAra_GAtA	noun	2	RM
 trade delegation	vyApAra_prawiniXimaMdala	vyApAra_prawiniXimaMdala	noun	2	RM
 trade development authority of india	BArawIya_vyApAra_vikAsa_prAXikaraNa	BArawIya_vyApAra_vikAsa_prAXikaraNa	noun	3	RM
 trade development authority	vyApAra_vikAsa_prAXikaraNa	vyApAra_vikAsa_prAXikaraNa	noun	3	RM
@@ -34346,6 +34346,6 @@ love affair	prema_saMbanXa	prema_saMbanXa	noun	2	RM
 In fact	asala_meM	asala_meM	noun	2	RM
 free fall	besahArA_giranA	besahArA_giranA	noun	2	RM
 miles and miles	miloM	miloM	noun	3	WM
-a spot of	WodA_sA	WodA_sA	noun	2	RM 
+a spot of	jarA_sA	jarA_sA	noun	2	RM 
 for the last time	AKirI_bAra	AKirI_bAra	noun	4	WM
 stop talking	bAweM_banxa_kIjiye	bAweM_banxa_kIjiye	noun	1	WM 
