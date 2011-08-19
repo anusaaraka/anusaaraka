@@ -102,6 +102,27 @@
         (printout ?*lwg_debug_file* "(rule_name-grouped_ids  rule_3  "?head"  " ?id3" " ?id2 ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------------- 
+ ;Added by Roja(17-08-11) To group 'should' and 'be'.
+ ;He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan.
+ (defrule rule_3_2
+ (declare (salience 1100))
+ (rel_name-sids nsubj|nsubjpass ?head ?id1)
+ (rel_name-sids aux|auxpass ?head ?id2)
+ ?f<-(rel_name-sids cop ?head ?id3)
+ (test (< (string_to_integer ?id1) (string_to_integer ?id2)))
+ (not (grouped_head ?head))
+ (parserid-word ?id2 ?w)
+ (parserid-word ?id3 ?w1)
+ (parser_id-root-category-suffix-number ?id3 ?root ? ?suf ?)
+  =>
+        (retract ?f)
+        (bind ?chunk (string-to-field (str-cat (lowcase ?w)"_"?w1)))
+        (bind ?tam   (string-to-field (str-cat (lowcase ?w)"_"?suf)))
+        (assert (root-verbchunk-tam-parser_chunkids  ?root  ?chunk ?tam  ?id2 ?id3))
+        (assert (grouped_head ?head))
+        (printout ?*lwg_debug_file* "(rule_name-grouped_ids   rule_3_2  "?id2"  "  ?id3 ")"  crlf)
+ )
+ ;-------------------------------------------------------------------------------------------------------------------------
  (defrule rule_2
  (declare (salience 1000))
  (rel_name-sids nsubj|nsubjpass ?head ?id1)

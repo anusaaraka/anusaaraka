@@ -94,6 +94,23 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  land.clp 	land4   "  ?id "  uwara )" crlf))
 )
 
+
+
+
+;Added by Meena(29.7.11)
+;Uttar pradesh is a land of cultural and geographical diversity, which is blessed by an innumerable perennial rivers, dense forests, and fertile soil.
+(defrule land5
+(declare (salience 0))
+(id-root ?id land)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_word_mng ?id BUmi))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  land.clp       land5   "  ?id "  BUmi )" crlf))
+)
+
 ;default_sense && category=verb	uwaranA/avawaraNa kara	0
 ;"land","V","1.uwaranA/avawaraNa karanA"
 ;Troops have been landed at several points.

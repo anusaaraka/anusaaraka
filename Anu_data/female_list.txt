@@ -7299,7 +7299,6 @@ GAGarApalatana	f
 GAGI	f
 GAta	f
 GAtabaMxI	f
-GAtA	f
 GAti	f
 GAtikA	f
 GAtI	f

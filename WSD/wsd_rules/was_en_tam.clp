@@ -5,7 +5,7 @@
 (declare (salience 5000))
 (id-TAM ?id was_en)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 disappoint|break|relate)
+(id-word ?id1 disappoint|break|relate|bless)
 =>
 (retract ?mng)
 (assert (id-E_tam-H_tam_mng ?id was_en WA))
@@ -149,6 +149,32 @@
 )
 
 
+
+
+;Modified by Meena(1.8.11)
+;Uttar pradesh is a land of cultural and geographical diversity, which is blessed by an innumerable perennial rivers, dense forests, and fertile soil. 
+;The fruit is eaten by the child.
+(defrule was_en_tam6
+(declare (salience 4800))
+(id-TAM ?id was_en)
+?mng <-(meaning_to_be_decided ?id)
+(id-root =(+ ?id 1) as|by|for|of)
+(id-root  ?id ?root)
+=>
+;(retract ?mng)
+(if (eq ?root bless) then
+        (assert (id-E_tam-H_tam_mng ?id was_en WA ))       
+        (retract ?mng)
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng   " ?*wsd_dir* "  was_en_tam.clp      was_en_tam6   "  ?id "  WA )" crlf)
+)
+else
+(retract ?mng)
+(assert (id-E_tam-H_tam_mng ?id was_en yA_gayA_WA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  was_en_tam.clp     was_en_tam2  "  ?id "  yA_gayA_WA )" crlf))
+(assert (id-tam_type ?id passive))
+))
 
 
 

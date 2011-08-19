@@ -135,7 +135,7 @@
 ;
 
 
-
+;Modified by Meena(8.8.11)
 ;Added by Meena(12.5.11)
 ;Their belongings were flung about the room.
 ;I have been running about all morning trying to find you.
@@ -147,20 +147,19 @@
 (or(kriyA-about_saMbanXI  ?id1 ?saMb)(kriyA-kriyA_viSeRaNa ?id1 ?id))
 (id-root ?id1 fling|throw|lie|run|jog|walk|move|stroll)
 (id-cat_coarse =(+ ?id 1) ?cat)
+(id-word =(+ ?id 1) ?wrd)
 =>
-(retract ?mng)
-(if (neq ?cat preposition) then
+(if (and (neq ?cat preposition)(neq ?wrd all)) then
     (assert (id-wsd_root_mng ?id meM_iXara-uXara))
+    (retract ?mng)
+    (if ?*debug_flag* then
+        (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  about.clp      about5   "  ?id "  meM_iXara-uXara )" crlf))
     else
     (assert (id-wsd_root_mng ?id iXara-uXara))
-)
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  about.clp     about5   "  ?id "  iXara-uXara )" crlf)
-(if (neq ?cat preposition) then
-        (assert (id-wsd_root_mng ?id meM_iXara-uXara))
-        (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  about.clp      about5   "  ?id "  meM_iXara-uXara )" crlf)
+    (retract ?mng)
+    (if ?*debug_flag* then
+        (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  about.clp     about5   "  ?id "  iXara-uXara )" crlf))
 ))
-)
 
 
 

@@ -1,12 +1,155 @@
+;Added by Meena(10.8.11)
+;Keep the papers ready for the next time.
+;I am warning you for the last time stop talking. 
+;I saw him for the first time in Delhi.
+(defrule for_the_last_time0
+(declare (salience 4750))
+(id-root ?id for)
+?mng <-(meaning_to_be_decided ?id)
+(id-root =(+ ?id 1) the)
+(id-root =(+ ?id 2) ?root)
+(id-root =(+ ?id 3) time)
+=>
+(if (eq ?root first)then
+    (assert (affecting_id-affected_ids-wsd_group_root_mng  =(+ ?id 3)  ?id  =(+ ?id 1) =(+ ?id 2) pahalI_bAra))
+    (retract ?mng)
+    (if ?*debug_flag* then
+      (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " for.clp  for_the_last_time0  " (+ ?id 3) "  " ?id  " "(+ ?id 1) " "(+ ?id 2) "  pahalI_bAra  )" crlf))
+) 
+(if (eq ?root next)then
+    (assert (affecting_id-affected_ids-wsd_group_root_mng =(+ ?id 3) ?id  =(+ ?id 1) =(+ ?id 2) agalI_bAra_ke_liye))
+    (retract ?mng)
+    (if ?*debug_flag* then
+      (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " for.clp  for_the_last_time0  " (+ ?id 3) "  " ?id  " "(+ ?id 1) " "(+ ?id 2) "  agalI_bAra_ke_liye  )" crlf))
+)
+(if (eq ?root last)then
+    (assert (affecting_id-affected_ids-wsd_group_root_mng =(+ ?id 3)    ?id  =(+ ?id 1) =(+ ?id 2) AKirI_bAra))
+    (retract ?mng)
+    (if ?*debug_flag* then
+      (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " for.clp  for_the_last_time0  "  (+ ?id 3) "  " ?id " "(+ ?id 1) " "(+ ?id 2) "  AKirI_bAra  )" crlf))
+)
+)
+
+;Added by Meena(6.8.11)
+;I am speaking for everyone in this department. 
+(defrule for0
+(declare (salience 4700))
+(id-root ?id for)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-for_saMbanXI  ?id1  ?id2)
+(id-root ?id1 speak|talk|say|tell|invite|ask)
+(id-root ?id2 everyone|all)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kI_ora_se))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp       for0   "  ?id "  kI_ora_se )" crlf))
+)
+
+
+
+;Added by Meena(8.8.11)
+;You will feel better for a good night's sleep.  
+(defrule for1
+(declare (salience 4700))
+(id-root ?id for)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-for_saMbanXI  ?id1  ?id2)
+(or(kriyA-kriyA_viSeRaNa ?id1  =(+ ?id1 1))(subject-subject_samAnAXikaraNa   ?subj  =(+ ?id1 1)))
+(not(id-root =(- ?id 1) right|afraid|good|compulsory|mainly))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ke_bAxa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp       for1   "  ?id "  ke_bAxa )" crlf))
+)
+
+
+
+;Modified by Meena(17.8.11)
+;Added by Meena(9.8.11)
+;This room would look big and airy for a spot of paint.
+(defrule for2
+(declare (salience 4700))
+(id-root ?id for)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-for_saMbanXI  ?id1  ?id2)
+(id-word ?id2 ?wrd&~me&~us&~him&~her&~them&~you&~meeting&~discussion)
+(not(id-cat_coarse ?id1 noun))
+(not(id-root ?id1 important|afraid|young|anxious|worried|happy|distress|compulsory|good))      
+(subject-subject_samAnAXikaraNa   ?subj   ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ke_bAxa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp       for2   "  ?id "  ke_bAxa )" crlf))
+)
+
+
+
+;Added by Meena(8.8.11)
+;The weather was warm for the time of year. 
+;She is tall for her age. 
+;He is not bad for a beginner. 
+(defrule for3
+(declare (salience 4700))
+(id-root ?id for)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-for_saMbanXI  ?id1  ?id2)
+;(id-root ?id2 time|age|beginner|England|child|man)
+(id-root ?id1 warm|tall|bad|responsibility)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ke_hisAba_se))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp       for3   "  ?id "  ke_hisAba_se )" crlf))
+)
+
+
+;Added by Meena(9.8.11)
+;Copies are available for two dollars each.
+(defrule for4
+(declare (salience 4700))
+(id-root ?id for)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-for_saMbanXI  ?viSeR  ?id1)
+(id-root ?id1 dollar|rupee|cent|paisa|pound|pence|euro|yen|yuwan)    ;we need list of currency(Meena)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id meM))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp       for4   "  ?id "  meM )" crlf))
+)
+
+
+
+;Added by Meena(6.8.11)
+;I am all for people having fun. 
+;She is all for it. 
+;Are you for the proposal?
+;Is government for the election?
+(defrule for5
+(declare (salience 4700))
+(id-root ?id for)
+?mng <-(meaning_to_be_decided ?id)
+(or(and(viSeRya-for_saMbanXI  ?viSeR  ?id1)
+(id-root ?id1 postponing|postponement|proposal|advice|arrangement|election))
+(and(id-root =(- ?id 1) all)(id-cat_coarse =(+ ?id 1) ?wrd&~verb&~verbal_noun))
+)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ke_pakRa_meM))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp       for5   "  ?id "  ke_pakRa_meM )" crlf))
+)
 
 
 
 ;Salience changed by Meena(27.7.11) to stop this rule for the example:I waited for Seeta for hours.(because ol takes (viSeRya-for_saMbanXI  Seeta hours))
 ;Added by Meena(22.5.11)
 ;In fact she had been feeling tired and queasy for the past three days.
-(defrule for00
+(defrule for6
 (declare (salience 4700))
-;(declare (salience 5000))
 (id-root ?id for)
 ?mng <-(meaning_to_be_decided ?id)
 (viSeRya-for_saMbanXI  ?viSeR  ?id1)
@@ -15,7 +158,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id se))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp       for00   "  ?id "  se )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp       for6   "  ?id "  se )" crlf))
 )
 
 
@@ -37,31 +180,26 @@
 )
 
 
-(defrule for0
+
+
+;Modified by Meena(6.8.11)
+;I could not speak for laughing. 
+;He did not answer for fear of hurting her. 
+(defrule for7
 (declare (salience 5000))
 (id-root ?id for)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) reason)
+(id-root ?id1  reason|laugh|fear|cough|arrogance|tear)
+(kriyA-for_saMbanXI ?kriyA ?id1)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kI_vajaha_se))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp 	for0   "  ?id "  kI_vajaha_se )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp 	for7   "  ?id "  kI_vajaha_se )" crlf))
 )
 
-(defrule for1
-(declare (salience 4900))
-(id-root ?id for)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) time|time period|period of time|period|moment|minute|second|instant|point in time|clock time|hour)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id waka))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp 	for1   "  ?id "  waka )" crlf))
-)
 
-(defrule for2
+(defrule for8
 (declare (salience 4800))
 (id-root ?id for)
 ?mng <-(meaning_to_be_decided ?id)
@@ -70,7 +208,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp 	for2   "  ?id "  - )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp 	for8   "  ?id "  - )" crlf))
 )
 
 
@@ -78,24 +216,25 @@
 ;Modified by meena(25.9.09), added (kriyA-for_saMbanXI  ?id1 ?id2)and changed (id-word =(+ ?id 1) long|hours...) accordingly
 ;I lived there for two years . 
 ;I wondered for a long time why everyone liked her so much . 
-(defrule for3
+(defrule for9
 (declare (salience 4700))
 (id-root ?id for)
 ?mng <-(meaning_to_be_decided ?id)
 ;(id-word =(+ ?id 1) long|hours|weeks|years) ;modified by Dipti-27-07-09 ;dropped 'a' from the list
-(id-word ?id2  long|hours|weeks|years|time|months) ;Added "time" in the list(Meena 8.02.10);added "months" in the list(Meena
+(id-word ?id2  miles|long|hours|weeks|years|time|months|hours|minutes|seconds) ;Added "time" in the list(Meena 8.02.10)
 (kriyA-for_saMbanXI  ?id1 ?id2)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id waka))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp 	for3   "  ?id "  waka )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp 	for9   "  ?id "  waka )" crlf))
 )
 
 
 ;Modified by Meena(26.9.09).Commented (id-word =(....) animate) as there is no list for animate in the database.Instead of this, I added (id-cat_coarse =(+ ?id 1) PropN) and (kriyA-for_saMbanXI ?id1  =(+ ?id 1))
 ;I waited for Seeta for hours .
-(defrule for5
+;Shaking your head for 'No' is not universal.
+(defrule for10
 (declare (salience 4700))
 (id-root ?id for)
 ?mng <-(meaning_to_be_decided ?id)
@@ -106,30 +245,11 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ke_liye))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp       for5   "  ?id "  ke_liye )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp       for10   "  ?id "  ke_liye )" crlf))
 )
 
 
-
-
-;I did not wait for long
-(defrule for4
-(declare (salience 4600))
-(id-root ?id for)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) wait)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id kI))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp 	for4   "  ?id "  kI )" crlf))
-)
-
-
-
-
-
-(defrule for6
+(defrule for11
 (declare (salience 4400))
 (id-root ?id for)
 ?mng <-(meaning_to_be_decided ?id)
@@ -138,7 +258,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kyoMki))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp 	for6   "  ?id "  kyoMki )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp 	for11   "  ?id "  kyoMki )" crlf))
 )
 
 ;"for","Conj","1.kyoMki"
@@ -165,7 +285,7 @@
 
 
 ;Salience reduced by Meena(9.3.10)
-(defrule for7
+(defrule for12
 (declare (salience 0))
 ;(declare (salience 4300))
 (id-root ?id for)
@@ -175,7 +295,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ke_liye))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp 	for7   "  ?id "  ke_liye )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp 	for12   "  ?id "  ke_liye )" crlf))
 )
 
 ;"for","Prep","1.ke_liye"

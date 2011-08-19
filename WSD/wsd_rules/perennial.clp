@@ -1,4 +1,6 @@
 
+;Meaning changed by Meena(29.7.11)
+;Uttar pradesh is a land of cultural and geographical diversity, which is blessed by an innumerable perennial rivers, dense forests, and fertile soil. 
 (defrule perennial0
 (declare (salience 5000))
 (id-root ?id perennial)
@@ -6,9 +8,10 @@
 (id-cat_coarse ?id adjective)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id Avqwwi_pAnevAlI))
+(assert (id-wsd_root_mng ?id bArahamAsI))
+;(assert (id-wsd_root_mng ?id Avqwwi_pAnevAlI))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  perennial.clp 	perennial0   "  ?id "  Avqwwi_pAnevAlI )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  perennial.clp 	perennial0   "  ?id "  bArahamAsI )" crlf))
 )
 
 ;"perennial","Adj","1.Avqwwi_pAnevAlI"

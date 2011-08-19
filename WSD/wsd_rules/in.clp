@@ -119,7 +119,8 @@
 
 
 
-
+;;Modified by Meena(4.8.11) ; added (id-root =(- ?id 1) arrive|reach|come) for the following example.
+;Reached in Honolulu, Mr. Shidler said that he believes the various Hooker malls can become profitable with new management. 
 ;Added by Meena(12.5.10)
 ;It was in Paris that Debussy first heard Balinese music . 
 (defrule in8
@@ -127,7 +128,8 @@
 ;(declare (salience 1000))
 (id-root ?id in)
 ?mng <-(meaning_to_be_decided ?id)
-(kriyA-dummy_subject  =(- ?id 1)  =(- ?id 2))
+(or(kriyA-dummy_subject  =(- ?id 1)  =(- ?id 2))(id-root =(- ?id 1) arrive|reach|come))
+;(or(kriyA-dummy_subject  =(- ?id 1)  =(- ?id 2))(id-cat_coarse =(+ ?id 1) PropN))
 (kriyA-in_saMbanXI =(- ?id 1) ?id1)
 =>
 (retract ?mng)
@@ -175,6 +177,22 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  in.clp 	in10   "  ?id "  meM )" crlf))
 )
 
+
+
+
+;Salience reduced by Meena(29.10.09)
+(defrule in11
+;(declare (salience 4300))
+(declare (salience 0))
+(id-root ?id in)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id preposition)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id meM))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  in.clp        in10   "  ?id "  meM )" crlf))
+)
 
 
 ;"in","Prep","1.meM"

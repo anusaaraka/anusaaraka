@@ -33,6 +33,9 @@
 ;We took our pets with us for picnic.
 ;
 
+
+;Modified by Meena(6.8.11)
+;Let us go for a walk.
 (defrule us2
 (declare (salience 4900))
 (id-root ?id us)
@@ -40,13 +43,16 @@
 (id-word =(- ?id 1) let)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id caliye_hama))
+;(assert (id-wsd_root_mng ?id caliye_hama))
 (assert (id-wsd_number ?id p))
-;(assert (root_id-TAM-vachan ?id p))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(- ?id 1) caliye_hama))  
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  us.clp        us2   "  ?id "  caliye_hama)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_number   " ?*wsd_dir* "  us.clp        us2   "  ?id " p )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " us.clp  us2  "  ?id "  " (- ?id 1) "  caliye_hama  )" crlf))
 )
+;(assert (root_id-TAM-vachan ?id p))
+;(if ?*debug_flag* then
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  us.clp        us2   "  ?id "  caliye_hama)" crlf)
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_number   " ?*wsd_dir* "  us.clp        us2   "  ?id " p )" crlf))
  ; Added by Shirisha Manju (08-12-09) (suggested by Sheetal)
  ; Ex : Let us go to the market.
 

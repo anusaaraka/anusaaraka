@@ -149,15 +149,21 @@
 
 
 
+
+;Modified by Meena(17.8.11);added "|verb|verbal_noun" in the list to stop this rule for By going there you can earn more money.
+;Modified by Meena(2.8.11) added{(not(id-cat_coarse =(+ ?id 1) PropN)) and (kriyA-by_saMbanXI ?kri =(+ ?id 1))},deleted (id-cat_coarse =(+ ?id 1) noun) and commented (not (or (kriyA-by_saMbanXI  ?id1 ... )(... ... ...)))
 ;Modified by Meena(20.11.10); commented (kriyA-by_saMbanXI...) and added (id-cat_coarse =(+ ?id 1) noun)(id-root ?id1....)
 ;Added by Meena(12.11.09)
 ;By 2012 the task will be completed.
 (defrule by11
-(declare (salience 3900))
+(declare (salience 4000))
+;(declare (salience 3900))
 (id-root ?id by)
 ?mng <-(meaning_to_be_decided ?id)
-(or(id-cat =(+ ?id 1) <num>)(id-cat_coarse =(+ ?id 1) noun)(id-root =(+ ?id 1) ?str&:(and (not (numberp ?str))(gdbm_lookup_p "time.gdbm" ?str)))) ;Renamed 'month_day.gdbm' as 'time.gdbm' by Roja (08-03-11)
-(not (or (kriyA-by_saMbanXI  ?id1 =(+ ?id 1))(viSeRya-by_saMbanXI  ?id1 =(+ ?id 1)))) ;Added by Roja(13-12-10);I told him by telephone that I was coming by car.
+(not(id-cat_coarse =(+ ?id 1) PropN|verb|verbal_noun|pronoun))
+(or(id-cat =(+ ?id 1) <num>)(kriyA-by_saMbanXI ?kri =(+ ?id 1))(id-root =(+ ?id 1) ?str&:(and (not (numberp ?str))(gdbm_lookup_p "time.gdbm" ?str))))
+;(or(id-cat =(+ ?id 1) <num>)(id-cat_coarse =(+ ?id 1) noun)(id-root =(+ ?id 1) ?str&:(and (not (numberp ?str))(gdbm_lookup_p "time.gdbm" ?str)))) ;Renamed 'month_day.gdbm' as 'time.gdbm' by Roja (08-03-11)
+;(not (or (kriyA-by_saMbanXI  ?id1 =(+ ?id 1))(viSeRya-by_saMbanXI  ?id1 =(+ ?id 1)))) ;Added by Roja(13-12-10);I told him by telephone that I was coming by car.
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id waka))
@@ -221,7 +227,7 @@
 ;He took the pen when noone was by.
 
 
-
+;Modified by Meena(2.8.11);added river|forest|soil| in the list Ex.Uttar pradesh is a land of cultural and geographical diversity, which is blessed by an innumerable perennial rivers, dense forests, and fertile soil. 
 ;Modified by Meena(19.4.11) ;added "misdeed" in the list
 ;His reputation was tarnished by his misdeeds.
 ;Modified by Meena(19.2.11);added the list for ?id2 and relation (viSeRya-by_saMbanXI  ?id1 ?id2)and commmented (or(..)) 
@@ -231,11 +237,12 @@
 ;They were awakened by the sound of a gun.
 ;I was awakened by a gun's sound . 
 (defrule by16
-(declare (salience 3500))
+(declare (salience 4000))
+;(declare (salience 3500))
 (id-root ?id by)
 ?mng <-(meaning_to_be_decided ?id)
 (or(kriyA-by_saMbanXI  ?id1 ?id2)(viSeRya-by_saMbanXI  ?id1 ?id2)) ;in ol we get this relation which most probably is not correct, once this is sorted out, we can delete (viSe..) and can get the correct output with only (kriyA-by_saMbanXI  ?id1 ?id2)
-(id-root ?id2 sound|road|telephone|car|bus|letter|misdeed|exposure);added "exposure" in the list (The silver was tarnished by the long exposure to the air.)               
+(id-root ?id2 radio|river|forest|soil|sound|road|telephone|car|bus|letter|misdeed|exposure);added "exposure" in the list (The silver was tarnished by the long exposure to the air.)               
 ;(or(viSeRya-of_saMbanXI  ?id2 ?id3)(viSeRya-RaRTI_viSeRaNa  ?id2 ?id3))
 =>
 (retract ?mng)
@@ -262,11 +269,11 @@
 )
 
 
-
+;Salience increased by Meena(17.8.11)
 ;Added by Meena(24.4.10)
 ;I count the cars as they pass by the office .
 (defrule by18
-(declare (salience 3600))
+(declare (salience 4000))
 (id-root ?id by)
 ?mng <-(meaning_to_be_decided ?id)
 (id-root =(- ?id 1) pass)
@@ -283,7 +290,8 @@
 ;Added by Meena(10.11.09)
 ;The book was read by Meera.
 (defrule by19
-(declare (salience 3400))
+(declare (salience 3900))
+;(declare (salience 3400))
 (id-root ?id by)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-by_saMbanXI  ?id1 ?id2)

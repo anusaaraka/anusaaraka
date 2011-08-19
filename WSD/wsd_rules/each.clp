@@ -14,6 +14,10 @@
 ;"each","Adv","1.hara"
 ;The puffs are one rupee each.
 ;
+
+
+;Meaning modified by Meena(9.8.11) 
+;Copies are available for two dollars each. 
 (defrule each1
 (declare (salience 4900))
 (id-root ?id each)
@@ -21,9 +25,10 @@
 (id-cat_coarse ?id determiner)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id prawyeka))
+(assert (id-wsd_root_mng ?id eka_eka))
+;(assert (id-wsd_root_mng ?id prawyeka))  
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  each.clp 	each1   "  ?id "  prawyeka )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  each.clp 	each1   "  ?id "  eka_eka)" crlf))
 )
 
 ;"each","Det","1.prawyeka"

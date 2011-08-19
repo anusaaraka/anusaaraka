@@ -440,7 +440,7 @@ Apa kahAz se A rahe hEM?
 
 Hindi meaning using Stanford parser 2.107
 Some other costumes were really bad. 
-kuCa anya pahanAve vAswava mez KarAba We.
+kuCa anya pahanAve vAswava meM KarAba We.
 
 Hindi meaning using Stanford parser 2.108
 Do you think we should go to the party? 
@@ -971,7 +971,7 @@ prawyeka vyakwi ke mana meM badA praSna hE ki OJ ko kisane mArA.
 
 Hindi meaning using Stanford parser 2.237
 Last Tuesday was really fun. 
-piCalA maMgalavAra vAswava mez majA WA.
+piCalA maMgalavAra vAswava meM majA WA.
 
 Hindi meaning using Stanford parser 2.238
 This is my friend Bob. 
@@ -1155,6 +1155,7 @@ cora Kule xvAra meM se BAga gayA.
 
 Hindi meaning using Stanford parser 2.282
 The land was zoned for industrial purposes. 
+BUmi Oxyogika uxxeSyoM ke liye kRewroM_meM_viBAjiwa kI gayI WI.
 sWala Oxyogika uxxeSyoM ke liye kRewroM_meM_viBAjiwa kiyA gayA WA.
 
 Hindi meaning using Stanford parser 2.283
@@ -1474,7 +1475,7 @@ SeyaroM kA KarIxanA Wall Street para Aja weja WA.
 
 Hindi meaning using Stanford parser 3.60
 The playing of the piano really bothers John. 
-piyAno kA bajanA vAswava mez jOYna ko waMga karawA hE.
+piyAno kA bajanA vAswava meM jOYna ko waMga karawA hE.
 
 Hindi meaning using Stanford parser 3.61
 Many people can speak but only a few can act. 
@@ -1524,8 +1525,8 @@ mEM isake sAWa wIna xaswAveja BejawA hUz.
 
 Hindi meaning using Stanford parser 3.72
 He never really recovered from the shock of his wife's death. 
-vaha vAswava mez usakI pawnI kI mqwyu ke saxame se kaBI nahIM uBara pAyA.
-vaha usakI pawnI kI mqwyu ke saxame se vAswava mez kaBI nahIM uBara pAyA.
+vaha vAswava meM usakI pawnI kI mqwyu ke saxame se kaBI nahIM uBara pAyA.
+vaha usakI pawnI kI mqwyu ke saxame se vAswava meM kaBI nahIM uBara pAyA.
 
 Hindi meaning using Stanford parser 3.73
 He was well aware of the problem. 
@@ -1559,8 +1560,8 @@ jisane cUhA nigalA vaha sAzpa Uzce_svara meM PuPakArA.
 
 Hindi meaning using Stanford parser 3.80
 The dog which Chris bought is really ugly. 
-jise/jisako Chris ne KarIxA vaha kuwwA vAswava mez kurUpa hE.
-Chris ne jise/jisako KarIxA vaha kuwwA vAswava mez kurUpa hE.
+jise/jisako Chris ne KarIxA vaha kuwwA vAswava meM kurUpa hE.
+Chris ne jise/jisako KarIxA vaha kuwwA vAswava meM kurUpa hE.
 
 Hindi meaning using Stanford parser 3.81
 Phil gave me a sweater which he bought in Paris. 
@@ -1692,7 +1693,7 @@ xaravAjA banxa_mawa kariye/kIjiye.
 
 Hindi meaning using Stanford parser 4.10
 I have been running about all morning trying to find you. 
-mEM Apako pAne ke liye prayAsa karwe_hue pUrI subaha meM iXara-uXara xOdawA rahA hUz.
+mEM Apako pAne ke liye prayAsa karwe_hue pUrI subaha iXara-uXara xOdawA rahA hUz.
 mEM pUrI subaha meM iXara-uXara Apako pAne ke liye prayAsa karwe_hue xOdawA rahA hUz.
 
 Hindi meaning using Stanford parser 4.11
@@ -1775,5 +1776,21 @@ mEM kala Apako kuCa rucikara waWya bawAUzgA.
 Hindi meaning using Stanford parser 4.30
 At this point, the Dow was down about 35 points. 
 isa samaya para Dow lagaBaga 35 pOintsa nIce WA.
+
+Hindi meaning using Stanford parser 4.31
+Do not send the message by radio. 
+redio se saMxeSa mawa Bejiye.
+
+Hindi meaning using Stanford parser 4.32
+The matter was explained by her. 
+viRaya usake_xvArA samaJAyA gayA WA.
+
+Hindi meaning using Stanford parser 4.33
+He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
+usane kahA ki Ese pariNAmoM ko Japan ke sAWa U.S. vyApAra GAtA GatAne meM dOlara Ora sEnta meM mApane yogya honA cAhiye.
+
+Hindi meaning using Stanford parser 4.34
+Uttar pradesh is a land of cultural and geographical diversity, which is blessed by an innumerable perennial rivers, dense forests, and fertile soil. 
+Uttar pradesh sAMskqwika Ora BUgola sambanXI viBinnawA kI BUmi hE jo asaMKya bArahamAsI naxiyoM Gane jaMgaloM Ora urvara mittI se sampanna hE.
 
 Calling Interface related programs

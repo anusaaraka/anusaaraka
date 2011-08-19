@@ -406,7 +406,7 @@ Apa kahAz se A rahe hEM?
 
 Hindi meaning using Berkeley parser 2.99
 Some other costumes were really bad. 
-kuCa anya pahanAve vAswava mez KarAba We.
+kuCa anya pahanAve vAswava meM KarAba We.
 
 Hindi meaning using Berkeley parser 2.100
 Do you think we should go to the party? 
@@ -1084,6 +1084,7 @@ cora Kule xvAra meM se BAga gayA.
 
 Hindi meaning using Berkeley parser 2.266
 The land was zoned for industrial purposes. 
+BUmi Oxyogika uxxeSyoM ke liye kRewroM_meM_viBAjiwa kI gayI WI.
 sWala Oxyogika uxxeSyoM ke liye kRewroM_meM_viBAjiwa kiyA gayA WA.
 
 Hindi meaning using Berkeley parser 2.267
@@ -1349,7 +1350,7 @@ vixyAlaya eka sAWa sirPa 50 vixyArWiyoM ko svIkAra karawA hE.
 
 Hindi meaning using Berkeley parser 3.31
 The playing of the piano really bothers John. 
-piyAno kA bajanA vAswava mez jOYna ko waMga karawA hE.
+piyAno kA bajanA vAswava meM jOYna ko waMga karawA hE.
 
 Hindi meaning using Berkeley parser 3.32
 Actress Whoopi Goldberg and singer Michael Jackson attended the ceremony. 
@@ -1391,7 +1392,7 @@ vaha BArawa ke logoM ke liye paripakva buxXimawwA kA prawIka hE.
 
 Hindi meaning using Berkeley parser 3.41
 He never really recovered from the shock of his wife's death. 
-vaha vAswava mez usakI pawnI kI mqwyu ke saxame se kaBI nahIM uBara pAyA.
+vaha vAswava meM usakI pawnI kI mqwyu ke saxame se kaBI nahIM uBara pAyA.
 vaha usakI pawnI kI mqwyu ke saxame se vAswava mez kaBI nahIM uBara pAyA.
 
 Hindi meaning using Berkeley parser 3.42
@@ -1421,8 +1422,8 @@ Apane kala jise/jisako bulAyA vaha ladakI pahuzca gayI/gaI.
 
 Hindi meaning using Berkeley parser 3.48
 The dog which Chris bought is really ugly. 
-jise/jisako Chris ne KarIxA vaha kuwwA vAswava mez kurUpa hE.
-Chris ne jise/jisako KarIxA vaha kuwwA vAswava mez kurUpa hE.
+jise/jisako Chris ne KarIxA vaha kuwwA vAswava meM kurUpa hE.
+Chris ne jise/jisako KarIxA vaha kuwwA vAswava meM kurUpa hE.
 
 Hindi meaning using Berkeley parser 3.49
 Phil gave me a sweater which he bought in Paris. 
@@ -1579,5 +1580,9 @@ mEM kala Apako kuCa rucikara waWya bawAUzgA.
 Hindi meaning using Berkeley parser 3.84
 At this point, the Dow was down about 35 points. 
 isa samaya para Dow lagaBaga 35 pOintsa nIce WA.
+
+Hindi meaning using Berkeley parser 3.85
+He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
+usane kahA ki Ese pariNAmoM ko Japan ke sAWa U.S. vyApAra GAtA GatAne meM dOlara Ora sEnta meM mApane yogya honA cAhiye.
 
 Calling Interface related programs
