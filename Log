@@ -2582,7 +2582,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 24. Updated Log
 
 
- 19-08-11
+ 24-08-11
  ========
 1. H_ordering_rules.clp :
         Added    : get_SBAR_copula , merge_ADVP, rev_ADVP_1 and rev_VP_for_obj1_obj2
@@ -2609,9 +2609,16 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 15.In vibakthi.clp
         Added  : obj_1_vibakthi_rule  ,   Modified : animate_vibakthi_rule
 16.Added new rule 'rule_3_2' in sd_lwg_rules.clp.
-17.Updated Stanford_parser_fails file. 
-18.Updated changes_in_databases.
-19.Modified sd_ver_output, ol_ver_output, ber_ver_output, verified_output and link_ver_output
-20.Updated following files:
+17.In link_relation_rules.clp,
+        Added  : decide_conj_rel, print_conj-comp rules and deffunction my_string_cmp.
+        Removed conjunction components  printout statements and added assert statements in following rules:
+	  kriyA-object_2_and	subject_samAnAXikaraNa_and_1	subject_samAnAXikaraNa_and_SI	object_samAnAXikaraNa_and
+	  kriyArWa_kriyA_and	subject_samAnAXikaraNa_and	kriyA-subject_and		kriyA-subject_SF_and	
+	  kriyA-object_and	kriyA-subject_invertion_and	viSeRya_RaRTI_viSeRaNa_and	kriyA-'viBakwi'_saMbanXI_and
+	  conj-comp
+18.Updated Stanford_parser_fails file. 
+19.Updated changes_in_databases.
+20.Modified sd_ver_output, ol_ver_output, ber_ver_output, verified_output and link_ver_output
+21.Updated following files:
         sd_verified (434)    ber_verified (385)
-21.Updated Log.
+22.Updated Log.

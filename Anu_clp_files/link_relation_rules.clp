@@ -8,6 +8,9 @@
 ; Removes the first character from the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
 
+ (deffunction my_string_cmp> (?a ?b)
+  (> (str-compare ?a ?b) 0))
+ ;------------------------------------------------------------------------------------------------------------------
  (deffacts dummy_facts 
  (missing-level-id) 
  (id-original_word)
@@ -3956,7 +3959,7 @@ else
 (printout	?*fp*	"(prep_id-relation-parser_ids  -	kriyA-subject	"?kriyA"	"?and")"crlf)	
 (printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	kriyA-subject_and	kriyA-subject	"?kriyA"	"?and")"crlf)	
 (assert (kriyA-subject_rel_has_been_deceded_by_'kriyA-subject_and'_rule ?kriyA))
-(printout	?*fp*	"(conjunction-components	"?and	"	"	?x"	"?y")"	crlf)	
+(assert (conjunction-components	?and	?x ?y))	
 )
 ;Ex. He and I are friends.
 ;----------------------------------------------------------------------------------------------------------------
@@ -3977,7 +3980,7 @@ else
 (printout	?*fp*	"(prep_id-relation-parser_ids  -	kriyA-aBihiwa	"?kriyA"	"?and")"crlf)	
 (printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	kriyA-subject_SF_and	kriyA-aBihiwa	"?kriyA"	"?and")"crlf)	
 (assert (kriyA-subject_rel_has_been_deceded_by_'kriyA-subject_SF_and'_rule))
-(printout	?*fp*	"(conjunction-components	"?and	"	"	?y"	"?z")"	crlf)	
+(assert (conjunction-components	?and  ?y  ?z))	
 )
 ;Ex. There are three boys and four girls in the park.
 ;----------------------------------------------------------------------------------------------------------------
@@ -3998,7 +4001,7 @@ else
 (printout	?*fp*	"(prep_id-relation-parser_ids  -	kriyA-subject	"?kriyA"	"?and")"crlf)	
 (printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	kriyA-subject_inver_and	kriyA-subject	"?kriyA"	"?and")"crlf)	
 (assert (kriyA-subject_rel_has_been_deceded_by_'kriyA-subject_invertion_and'_rule))
-(printout	?*fp*	"(conjunction-components	"?and	"	"	?x"	"?y")"	crlf)	
+(assert  (conjunction-components ?and	?x  ?y))	
 )
 ;Ex. Are John or I invited?
 ;----------------------------------------------------------------------------------------------------------------
@@ -4015,7 +4018,7 @@ else
 (printout	?*fp*	"(prep_id-relation-parser_ids  -	kriyA-object	"?kri"	"?and")"crlf)	
 (printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	kriyA-object_and	kriyA-object	"?kri"	"?and")"crlf)	
 (assert (kriyA-object_rel_has_been_deceded_by_'kriyA-object_and'_rule ?kri))
-(printout	?*fp*	"(conjunction-components	"?and	"	"	?obj1"	"?obj")"	crlf)	
+(assert (conjunction-components	?and  ?obj1  ?obj))	
 )
 ;Ex. He ate fruits and nuts.
 ;----------------------------------------------------------------------------------------------------------------
@@ -4036,7 +4039,7 @@ else
 (printout	?*fp*	"(prep_id-relation-parser_ids  -	kriyA-object_2	"?kriyA"	"?and")"crlf)	
 (printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	kriyA-object_2_and	kriyA-object_2	"?kriyA"	"?and")"crlf)	
 (assert (kriyA-object_2_rel_has_been_deceded_by_'kriyA-object_2_and'_rule))
-(printout	?*fp*	"(conjunction-components	"?and	"	"	?obj"	"?obj2")"	crlf)	
+(assert (conjunction-components	?and  ?obj ?obj2))	
 )
 ;Ex. 
 ;----------------------------------------------------------------------------------------------------------------
@@ -4054,7 +4057,7 @@ else
 (printout	?*fp*	"(prep_id-relation-parser_ids  -	subject-subject_samAnAXikaraNa	"?and"	"?s_s")"crlf)	
 (printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	subject_samAnAXikaraNa_and	subject-subject_samAnAXikaraNa	"?and"	"?s_s")"crlf)	
 (assert (subject-subject_samAnAXikaraNa_rel_has_been_deceded_by_'subject_samAnAXikaraNa_and'_rule))
-(printout	?*fp*	"(conjunction-components	"?and	"	"	?s"	"?s1")"	crlf)	
+(assert (conjunction-components	?and  ?s  ?s1))	
 )
 ;Ex.    Your house and garden are very attractive.
 ;----------------------------------------------------------------------------------------------------------------
@@ -4073,7 +4076,7 @@ else
 (printout       ?*rel_debug*    "(prep_id-Rule-Rel-ids -  subject_samAnAXikaraNa_and_1      subject-subject_samAnAXikaraNa  "?s"  "?and")"crlf)
 (assert (subject-subject_samAnAXikaraNa_rel_has_been_deceded_by_'subject_samAnAXikaraNa_and_1'_rule ?s_s))
 (assert (subject-subject_samAnAXikaraNa_rel_has_been_deceded_by_'subject_samAnAXikaraNa_and_1'_rule ?s_s_1))
-(printout       ?*fp*   "(conjunction-components        "?and   "       "       ?s_s"    "?s_s_1")" crlf)
+(assert (conjunction-components     ?and    ?s_s   ?s_s_1))
 )
 
 (defrule subject_samAnAXikaraNa_and_2
@@ -4096,8 +4099,7 @@ else
 (link_name-link_lnode-link_rnode ?S  ?x ?and)
 (link_name-link_lnode-link_rnode ?S1  ?and ?y)
 =>
-(printout       ?*fp*   "(conjunction-components        "?and"       "?x"    "?y")" crlf)
-(printout       ?*rel_debug*    "(prep_id-Rule-Rel-ids - conj-comp conjunction-components        "?and"       "?x"    "?y")" crlf)
+(assert (conjunction-components  ?and  ?x  ?y))
 )
 ;Ex.    He is a devoted husband and a father .
 ;----------------------------------------------------------------------------------------------------------------
@@ -4115,7 +4117,7 @@ else
 (printout	?*fp*	"(prep_id-relation-parser_ids  -	subject-subject_samAnAXikaraNa	"?and"	"?s_s")"crlf)	
 (printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	subject_samAnAXikaraNa_and_SI	subject-subject_samAnAXikaraNa	"?and"	"?s_s")"crlf)	
 (assert (subject-subject_samAnAXikaraNa_rel_has_been_deceded_by_'subject_samAnAXikaraNa_and_SI'_rule))
-(printout	?*fp*	"(conjunction-components	"?and	"	"	?s"	"?s1")"	crlf)	
+(assert (conjunction-components	 ?and  ?s  ?s1))	
 )
 ;Ex.   Are he and I friends ? 
 ;----------------------------------------------------------------------------------------------------------------
@@ -4134,7 +4136,7 @@ else
 (printout	?*fp*	"(prep_id-relation-parser_ids  -	object-object_samAnAXikaraNa	"?obj"	"?and")"crlf)	
 (printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	object_samAnAXikaraNa_and	object-object_samAnAXikaraNa	"?obj"	"?and")"crlf)	
 (assert (object-object_samAnAXikaraNa_rel_has_been_deceded_by_'object_samAnAXikaraNa_and'_rule))
-(printout	?*fp*	"(conjunction-components	"?and	"	"	?obj_s"	"?obj_s1")"	crlf)	
+(assert  (conjunction-components  ?and  ?obj_s  ?obj_s1))	
 
 )
 ;Ex.   I consider him intelligent and beautiful.
@@ -4153,7 +4155,7 @@ else
 (printout	?*fp*	"(prep_id-relation-parser_ids "?x"	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?and")"crlf)	
 (printout	?*rel_debug*	"(prep_id-Rule-Rel-ids "?x"	kriyA-'viBakwi'_saMbanXI_and	kriyA-"?viBakwi"_saMbanXI	"?kriyA"	"?and")"crlf)	
 (assert (kriyA-'viBakwi'_saMbanXI_rel_has_been_deceded_by_'kriyA-'viBakwi'_saMbanXI_and'_rule ?x))
-(printout	?*fp*	"(conjunction-components	"?and	"	"?z	"	"	?y")"	crlf)	
+(assert (conjunction-components	 ?and	?z   ?y))	
 )
 ;Ex.	He was an exotic creature with short red hair and brilliant green eyes. Acetylene that helps in cutting and welding burns with bright flame .
 ;----------------------------------------------------------------------------------------------------------------
@@ -4171,7 +4173,7 @@ else
 (retract ?f0 ?f1)
 (printout	?*fp*	"(prep_id-relation-parser_ids  -	viSeRya-RaRTI_viSeRaNa	"?and"	"?x")"crlf)	
 (printout	?*rel_debug*	"(prep_id-Rule-Rel-ids -	viSeRya_RaRTI_viSeRaNa_and	viSeRya-RaRTI_viSeRaNa	"?and"	"?x")"crlf)	
-(printout	?*fp*	"(conjunction-components	"?and	"	"?y	"	"	?z")"	crlf)	
+(assert (conjunction-components	?and  ?y  ?z))	
 )
 ;Ex.    Your house and garden are very attractive .
 ;----------------------------------------------------------------------------------------------------------------
@@ -4188,9 +4190,38 @@ else
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -      kriyA-kriyArWa_kriyA    "?x"    "?and")"crlf)
 (printout       ?*rel_debug*    "(prep_id-Rule-Rel-ids -	kriyArWa_kriyA_and	kriyA-kriyArWa_kriyA    "?x"    "?and")"crlf)
-(printout       ?*fp*   "(conjunction-components        "?and   "       "?a"       "?b")"   crlf)
+(assert (conjunction-components  ?and  ?a  ?b))
 (assert (kriyA-kriyArWa_kriyA_rel_has_been_dcd_by_'kriyArWa_kriyA_and'_rule ?a))
 (assert (kriyA-kriyArWa_kriyA_rel_has_been_dcd_by_'kriyArWa_kriyA_and'_rule ?b))
 )
 ;Ex.   Passion is a must to excel and to reach your potential.
-;----------------------------------------------------------------------------------------------------------------
+ ;----------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (23-08-11)
+ ;For a same  conjunction , getting all its components into one single list.
+ (defrule decide_conj_rel
+ (declare (salience -900))
+ ?f<-(conjunction-components ?conj  ?x ?y)
+ ?f1<-(conjunction-components ?conj  $?x1 ?y)
+ (test (eq (member$ ?x $?x1) FALSE))
+ =>
+   (bind ?plist (create$ ))
+   (bind ?plist (create$ ?plist ?x))
+   (assert (conjunction-components ?conj  (sort my_string_cmp> $?x1  ?plist) ?y))
+   (retract ?f ?f1)
+ )
+ ;Ex. Mary, Joe and Louise are coming to the party.
+ ;---------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (23-08-11)
+ ;printing conjunction-components.
+ ;Mary, Joe and Louise are coming to the party.
+ (defrule print_conj-comp
+ (declare (salience -1000))
+ ?f<-(conjunction-components ?id  ?x $?ids  ?y)
+ (parserid-word ?id and|or)
+ (test (and (> (string_to_integer ?id) (string_to_integer ?x)) (< (string_to_integer ?id) (string_to_integer ?y))))
+ =>
+     (printout ?*fp* "(conjunction-components  "?id"   "?x"  "(implode$ $?ids)"   "?y")"crlf)
+     (printout ?*rel_debug* "(conjunction-components    print_conj-comp  "?id"   "?x"  "(implode$ $?ids)"   "?y")"crlf)
+     (retract ?f)
+ )
+ ;---------------------------------------------------------------------------------------------------------------
