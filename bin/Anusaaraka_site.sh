@@ -1,5 +1,4 @@
 #/bin/sh
-
  source ~/.bash_profile
 
  export LC_ALL=
@@ -48,7 +47,7 @@
 
   echo "Saving morph information"
   cd $HOME_anu_test/apertium/
-  sed 's/\([^0-9]\)\.\([^0-9]*\)/\1 \.\2/g'  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | sed 's/?/ ?/g'| sed 's/\"/\" /g' | sed 's/!/ !/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp
+  sed 's/\([^0-9]\)\.\([^0-9]*\)/\1 \.\2/g'  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | sed 's/?/ ?/g'| sed 's/\"/\" /g'  | sed 's/!/ !/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp
   apertium-destxt $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp  | lt-proc -a en.morf.bin | apertium-retxt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph
   perl morph.pl $MYPATH $1 < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph
 
@@ -59,32 +58,34 @@
   cd $HOME_anu_test/Anu_src
   ./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
-  echo "Calling Link Parser"
-  cd $HOME_anu_test/LINK/link-grammar-4.5.7/link-grammar
-  ./link-parser $HOME_anu_test/LINK/link-grammar-4.5.7/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt 
-
-
   echo "Calling Stanford parser"
-  cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/ 
-  sh ./run_stanford-parser.sh $1 $MYPATH > /dev/null
- 
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
+  sh run_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
+  sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}"  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp | sed -n -e "H;\${g;s/\n//g;p}" | sed 's/)(ROOT/)\n(ROOT/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn
+  sh run_stanford-parser.sh $1 $MYPATH > /dev/null
+
+  #running stanford NER (Named Entity Recogniser) on whole text.
+  echo "Finding NER... "
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2008-05-07/
+  sh run-ner.sh $1
+
   cd $MYPATH/tmp/$1_tmp
   sed 's/&/\&amp;/g' one_sentence_per_line.txt|sed -e s/\'/\\\'/g |sed 's/\"/\&quot;/g' |sed  "s/^/(Eng_sen \"/" |sed -n '1h;2,$H;${g;s/\n/\")\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/$/\")\n;~~~~~~~~~~\n/g;p}' > one_sentence_per_line_tmp.txt
   $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line_tmp.txt dir_names.txt English_sentence.dat
-  $HOME_anu_test/Anu_src/split_file.out link_relation_info.txt dir_names.txt link_relation_info_tmp.dat
-  $HOME_anu_test/Anu_src/split_file.out link_name_expand.txt dir_names.txt link_name_expand.dat
-  $HOME_anu_test/Anu_src/split_file.out linkid_word.txt dir_names.txt linkid_word_tmp.dat
-  $HOME_anu_test/Anu_src/split_file.out linkid_cat.txt dir_names.txt linkid_cat_tmp.dat
-  $HOME_anu_test/Anu_src/split_file.out link_numeric_word.txt dir_names.txt link_numeric_word_tmp.dat
-  $HOME_anu_test/Anu_src/split_file.out linkage_count.txt dir_names.txt linkage_count
-  $HOME_anu_test/Anu_src/split_file.out chunk.txt dir_names.txt chunk.dat 
-  $HOME_anu_test/Anu_src/split_file.out sd-relation.txt dir_names.txt sd-relations_tmp.dat
+  $HOME_anu_test/Anu_src/split_file.out chunk.txt dir_names.txt chunk.dat
+  $HOME_anu_test/Anu_src/split_file.out sd-lexicalize_info.txt dir_names.txt sd-lexicalize_info.dat
+  $HOME_anu_test/Anu_src/split_file.out sd-tree_relation.txt dir_names.txt sd-tree_relations_tmp.dat
+  $HOME_anu_test/Anu_src/split_file.out sd-basic_relation.txt dir_names.txt sd-basic_relations_tmp1.dat
+  $HOME_anu_test/Anu_src/split_file.out sd-propagation_relations.txt dir_names.txt sd-propagation_relations_tmp1.dat
   $HOME_anu_test/Anu_src/split_file.out sd_word.txt dir_names.txt sd_word_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out sd_numeric_word.txt dir_names.txt sd_numeric_word_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out sd_category.txt dir_names.txt sd_category.dat
+  $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line.txt.ner dir_names.txt ner.dat
+
+  $HOME_anu_test/Anu_src/split_file.out sd-original-relations.txt  dir_names.txt  sd-original-relations.dat
 
   echo 'matching compounds......'
-    grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt  
+  grep -v '^$' $MYPATH/tmp/$1.snt  > $MYPATH/tmp/$1_tmp/$1.snt
 ##NOTE: While 'matching compounds', using one_sentence_per_line.txt_tmp problem occured when we get punctuations in between the sentence. Ex: I am warning you for the last time, stop talking! 
 ## So '$1.snt' file which contains only sentences without punctuations is used. (Modified by Roja (11-08-11)) 
   perl $HOME_anu_test/Anu_src/Compound-dict.pl $HOME_anu_test/Anu_databases/compound.gdbm  $1.snt > compound_phrase.txt
@@ -96,27 +97,9 @@
  cd $HOME_anu_test/bin
  while read line
  do
-
-
-	while read line1
-	do
-
-                echo "$line1" | grep -q 'of 0 linkages'
-                if [[ $? -eq 0 ]] ;
-
-                then
-    			echo "Hindi meaning using Stanford parser" $line
-			timeout 180 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
-			echo ""
-		else 
-    			echo "Hindi meaning using Link parser" $line
-			timeout 180 ./run_sentence_link.sh $1 $line 1 $MYPATH
-			echo ""
-                fi
-
-	done < $HOME_anu_tmp/tmp/$1_tmp/$line/linkage_count
-
-
+    echo "Hindi meaning using Stanford parser" $line
+    timeout 500 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
+    echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
  
  cd $MYPATH/tmp/$1_tmp/
@@ -142,9 +125,9 @@
   cd src
   cp *.html *.js *.css $MYPATH1
 
-#To add slashes before(',",(,) etc.. )  inside initialise function(used for google api)
+	#To add slashes before(',",(,) etc.. )  inside initialise function(used for google api)
 
-cd $MYPATH1
-perl $HOME_anu_test/Anu_src/change-html.pl < $1.html > $1-new.html
-cp $1.html $1-old.html
-cp $1-new.html $1.html
+	cd $MYPATH1
+	perl $HOME_anu_test/Anu_src/change-html-remove-title.pl < $1.html > $1-new.html
+	cp $1.html $1-old.html
+	cp $1-new.html $1.html
