@@ -22998,7 +22998,6 @@ open system interworking	anAvqwa_waMwra_aMwarakArya	anAvqwa_waMwra_aMwarakArya	n
 open systems interconnection	anAvqwa_waMwra_aMwarasaMbaMXa	anAvqwa_waMwra_aMwarasaMbaMXa	noun	3	RM
 open tender	KulA_teMdara	KulA_teMdara	noun	2	RM
 open the floodgates	BIdZa_Ane_ke_xaravAjZe_KolanA	BIdZa_Ane_ke_xaravAjZe_KolanA	noun	3	RM
-open to	ke_liye_KolanA	ke_liye_KolanA	noun	2	RM
 open wire line	nagna_wAra_lAina	nagna_wAra_lAina	noun	3	RM
 open wire	KulA_wAra	KulA_wAra	noun	2	RM
 opencast mining	KulI_KAna_se_koyalA_yA_kaccI_XAwu_nikAlanA	KulI_KAna_se_koyalA_yA_kaccI_XAwu_nikAlanA	noun	2	RM

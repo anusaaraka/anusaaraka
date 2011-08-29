@@ -155,3 +155,18 @@
 )
 ;He opened a conversation on the issue of animal rights.
 
+
+
+;Dr. Singh said, "We are open to a reasoned debate on all these issues". Added by Sukhada(23-8-11).
+(defrule open1o
+(declare (salience 4950))
+(id-root ?id open)
+?mng <-(meaning_to_be_decided ?id)
+(subject-subject_samAnAXikaraNa ?id1 ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id KulA_huA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  open.clp      open10  "  ?id "  KulA_huA )" crlf))
+)
+
