@@ -2628,12 +2628,16 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 
  29-08-11
  ========
-1. Added '#include<string.h>' header file in following files.
+
+ 1. Added map_constituent_tree.sh , add_labels.clp ,get_rasp_constituency_tree.sh files.
+ 2. Modified run_rasp-parser.sh, Anusaaraka_rasp.sh files
+ 3. Removed add_labels.lex file from RASP.
+ 4. Added '#include<string.h>' header file in following files.
         add_snt_mrkr.lex        change2mystdformat.lex          html_tag_sp.lex         stnford_relations.lex
         join_hard_hyphen.lex    rm_joined_hard_hyphens.lex      aper_chunker.lex        constituency_parse.l
         ir.lex                  rm_tags.lex                     eng_aper_gen.lex        get_word_cat.lex
         abbr.lex                abbr1.lex
-2. Updated Anusaaraka_stanford.sh
-3. Updated anu_compile_64bit.sh
-4. Updated README
-5. Updated Log.
+ 5. Updated Anusaaraka_stanford.sh
+ 6. Updated anu_compile_64bit.sh
+ 7. Updated README
+ 8. Updated Log.
