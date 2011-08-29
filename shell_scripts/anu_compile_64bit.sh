@@ -1,8 +1,6 @@
  echo "#define ABS_ANU_PATH \"$HOME_anu_test/Anu_databases/\"" > $HOME_anu_test/CLIPS/gdbm_lookup.h
 
  cd $HOME_anu_test/Anu_data
- echo "Creating morph.dbm"
- ./create_dbm_mo.pl $HOME_anu_test/Anu_databases/morph.dbm < morph.txt
  echo "Creating paxasUwra.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/total-paxasUwra.gdbm < total-paxasUwra.txt 
  echo "Creating verbal_adj.gdbm"
@@ -11,6 +9,8 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/verbal_adj_tams.gdbm < verbal_adj_tams.txt
  echo "Creating default_meaning_frm_oldwsd.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/default_meaning_frm_oldwsd.gdbm < default_meaning_frm_oldwsd.txt
+ echo "Creating hindi_default_tam.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/hindi_default_tam.gdbm < hindi_default_tam.txt
  echo "Creating causative_verb_mng.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/causative_verb_mng.gdbm < causative_verb_mng.txt
  echo "Creating female_list.gdbm"
@@ -39,8 +39,18 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/animate.gdbm < animate.txt
  echo "Creating plural_words.gdbm "
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/plural_words.gdbm < plural_words.txt
+ echo "Creating ol_parser_unused_words.gdbm "
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/ol_parser_unused_words.gdbm < ol_parser_unused_words.txt
  echo "Creating AllTam.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/AllTam.gdbm < AllTam.txt
+ echo "Creating place.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/place.gdbm  < place.txt
+ echo "Creating time.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/time.gdbm  < time.txt
+ echo "Creating eng-animate-list.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/eng-animate-list.gdbm  < eng-animate-list.txt
+ echo "Creating transitive-verb-list.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/transitive-verb-list.gdbm  < transitive-verb-list.txt
 
  cd vb_root
  echo "Creating ol_vb_root.gdbm"
@@ -51,23 +61,20 @@
  sh make-dict.sh
  mv compound.gdbm $HOME_anu_test/Anu_databases/.
  mv Complete_sentence.gdbm $HOME_anu_test/Anu_databases/.
- mv word.gdbm  $HOME_anu_test/Anu_databases/.
 
  echo "Compiling c and flex programs"
  cd $HOME_anu_test/Anu_src
 
  gcc  -o file-wx_utf8.out file-wx_utf8.c 
  gcc -o word.out word.c 
- gcc -o ol_word.out ol_word.c
  flex ir.lex
  gcc -o ir lex.yy.c -lfl 
  mv ir $HOME_anu_test/bin/
  gcc -o split_file.out   split_file.c 
- gcc -o cat.out cat.c 
  gcc -o chunker.out  chunker.c 
- gcc punct.c -o punct.out
  ./comp.sh aper_chunker 
  ./comp.sh rm_tags
+ ./compile_bison.sh
 
  echo "Compiling Anu stdenglish source files"
  cd $HOME_anu_test/Anu/stdenglish
@@ -83,7 +90,7 @@
  mv myclips $HOME_anu_test/bin/.
 
  echo "Compiling Anusaraka Link Parser files"
- cd $HOME_anu_test/LINK/link-grammar-4.5.7/
+ cd $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/
  ./configure
  make
 
@@ -95,8 +102,13 @@
  make
 
  echo "Compiling stanford parser files"
- cd $HOME_anu_test/stanford-parser/stanford-parser-2010-11-30/
+ cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
  sh compile.sh
+
+ echo "Compiling RASP parser files"
+ cd $HOME_anu_test/Parsers/RASP/rasp3os/scripts/
+ sh $HOME_anu_test/Anu_src/comp.sh add_labels
+ sh $HOME_anu_test/Anu_src/comp.sh eng_aper_gen
 
  echo "Creating binary files"
  cd $HOME_anu_test/Anu_clp_files

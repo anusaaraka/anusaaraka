@@ -34,7 +34,6 @@
         export PATH=path for jdk1.6.0_03/bin and $HOME_anu_test/bin
         export JAVA_HOME=path for jdk1.6.0_03
         export LD_LIBRARY_PATH=/usr/local/lib/    ( for Shared libraries )
-	export CLASSPATH=path_for_ner    (for named entity recognizer)
         
         (Note : User can create provisional_wsd_rules directory to write their own wsd rules and set the path for 
 	        provisional_wsd_rules)
@@ -48,10 +47,9 @@
 	export HOME_anu_provisional_wsd_rules=$HOME/provisional_wsd_rules
 	export HOME_open_logos=$HOME/openlogos-package/openlogos-1.0.3
 
-        export PATH=$HOME/OPEN-LOGOS/jdk1.6.0_03/bin:$HOME_anu_test/bin:$PATH
-        export JAVA_HOME=$HOME/OPEN-LOGOS/jdk1.6.0_03
+        export PATH=$HOME/openlogos-package/jdk1.6.0_03/bin:$HOME_anu_test/bin:$PATH
+        export JAVA_HOME=$HOME/openlogos-package/jdk1.6.0_03
         export LD_LIBRARY_PATH=/usr/local/lib/
- 	export CLASSPATH=$HOME_anu_test/stanford-parser/stanford-ner-2008-05-07/stanford-ner.jar
 
         compile:
         ========

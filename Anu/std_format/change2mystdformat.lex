@@ -22,6 +22,7 @@
 
 
 */
+ #include<string.h>
  char *str;
 %x ABSORB
 %%

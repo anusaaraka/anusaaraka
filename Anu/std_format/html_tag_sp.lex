@@ -22,6 +22,7 @@
 
 
 */
+ #include<string.h> 
 %s HTML_TAG
 %%
 \<	{ printf("<");BEGIN HTML_TAG;}
