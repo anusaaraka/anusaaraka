@@ -57,6 +57,7 @@
 
   echo "Calling RASP parser" 
   cd $HOME_anu_test/Parsers/RASP/rasp3os/scripts/
+  sh $HOME_anu_test/bin/map_constituent_tree.sh $MYPATH $1 one_sentence_per_line.txt
   sh run_rasp-parser.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt
 
   echo "Calling Stanford parser"
