@@ -1,4 +1,5 @@
 %{
+#include<string.h>
 FILE *fp;
 int cap_len=0,str_len=0,count=0,lt_len=0,sent_len=0,len=0,cap_len1=0;
 char ch;

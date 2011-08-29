@@ -22,6 +22,7 @@
 
 
 */
+ #include<string.h>
 %%
 
 ^[aA]ll's	{printf("%cll is",yytext[0]);}

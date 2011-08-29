@@ -22,6 +22,7 @@
 
 
 */
+ #include<string.h>
  char hyphen_wrd[20];
 WRD [a-zA-Z0-9]+
 %x HYPHEN

@@ -23,7 +23,7 @@
 
 */
  #include <stdio.h>
- #include <strings.h>
+ #include <string.h>
  #include <gdbm.h>
  datum tag,tag2;
  char word[30],left_half[30];
