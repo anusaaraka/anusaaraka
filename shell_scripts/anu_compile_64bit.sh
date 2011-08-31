@@ -1,5 +1,6 @@
  echo "#define ABS_ANU_PATH \"$HOME_anu_test/Anu_databases/\"" > $HOME_anu_test/CLIPS/gdbm_lookup.h
-
+ echo "#define ABS_PATH \"$HOME_anu_tmp/tmp/\"" > $HOME_anu_test/Anu_src/f_tid-rid.h
+ 
  cd $HOME_anu_test/Anu_data
  echo "Creating paxasUwra.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/total-paxasUwra.gdbm < total-paxasUwra.txt 
@@ -66,7 +67,10 @@
  cd $HOME_anu_test/Anu_src
 
  gcc  -o file-wx_utf8.out file-wx_utf8.c 
- gcc -o word.out word.c 
+ gcc -o word.out word.c
+ gcc -o all_tran_pada.out -g f_tid-rid.c f_sen-range.c  ALL_TRAN_PADA.c
+ gcc -o f_range.out f_range_wordarray_resarray.c
+
  flex ir.lex
  gcc -o ir lex.yy.c -lfl 
  mv ir $HOME_anu_test/bin/
@@ -107,7 +111,6 @@
 
  echo "Compiling RASP parser files"
  cd $HOME_anu_test/Parsers/RASP/rasp3os/scripts/
- sh $HOME_anu_test/Anu_src/comp.sh add_labels
  sh $HOME_anu_test/Anu_src/comp.sh eng_aper_gen
 
  echo "Creating binary files"

@@ -180,10 +180,9 @@
  ; These are children's books.
  (defrule RaRTI_kA_vib_rule
  (declare (salience 1000))
+ (prep_id-relation-anu_ids - viSeRya-RaRTI_viSeRaNa  ?foll_pada_id ?pada_id)
  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(vibakthi kA)(group_ids $?ids))
- (prep_id-relation-anu_ids - viSeRya-RaRTI_viSeRaNa  ?foll_pada_id ?)
  (pada_info (group_cat PP)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
- (hindi_id_order  $?start $?ids $?f_ids $?)
  (test (member$ ?foll_pada_id $?f_ids))
  ?f0<-(id-HM-source ?pada_id ?h_word&~vaha&~usakA&~hamArA&~merA&~Apa&~yaha&~mEM ?)
  =>
@@ -198,11 +197,10 @@
  ;     Failure to comply may result in dismissal. 
  (defrule RaRTI_kA_vib_rule_1
  (declare (salience 1000))
+ (or (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa ?f_id ?id)(prep_id-relation-anu_ids ? viSeRya-of_saMbanXI ?f_id ?id)(prep_id-relation-anu_ids - saMjFA-to_kqxanwa ?f_id ?id))
  (pada_info (group_head_id ?id)(vibakthi ?vib)(group_ids $?ids)(H_tam ?tam))
  (or (make_verbal_noun ?id)(id-cat_coarse ?id verbal_noun))
- (or (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa ? ?id)(prep_id-relation-anu_ids ? viSeRya-of_saMbanXI ? ?id)(prep_id-relation-anu_ids - saMjFA-to_kqxanwa ? ?id))
  ?f0<-(id-HM-source ?id ?hmng ?)
- (hindi_id_order  $?start $?ids ?f_id $?)
  (pada_info (number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
  (test (member$ ?f_id $?f_ids))
  (test (or (eq ?tam kA)(eq ?vib kA)))

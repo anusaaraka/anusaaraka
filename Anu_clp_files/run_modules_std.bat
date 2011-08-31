@@ -381,6 +381,7 @@
  (load-facts "relations.dat")
  (load-facts "E_constituents_info.dat")
  (load-facts "Node_category.dat")
+ (load-facts "cat_consistency_check.dat")
  (open "hin_order_debug.dat" order_debug "a")
  (run)
  (save-facts "hindi_id_order.dat" local hindi_id_order)

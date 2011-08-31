@@ -375,6 +375,7 @@
   (test (and (member$ ?h_id1 $?ids)(member$ ?h_id2 $?ids)))
   (test (and (neq ?gtype English_PP)(neq ?gtype1 English_PP)(neq ?gtype2 English_PP)))
   (not (Parser_used Stanford-Parser)) ;Added by Manju(31-05-11) restricted for stanford parser
+  (not (Parser_used Open-Logos-Parser)) ;Added by Manju(31-08-11) restricted for open logos parser
   =>
   (retract ?f2 ?f4)
   (bind ?pos (member$ (nth$ 1 $?grp_ids1) $?ids))

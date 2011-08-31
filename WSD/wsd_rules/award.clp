@@ -38,7 +38,7 @@
 ;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  award.clp     award1   "  ?id "  puraskAra_xe )" crlf)
 ;(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  award.clp      award1   "  ?id "  ko )" crlf))
 ;)
-
+;
 (defrule award2
 (declare (salience 4800))
 (id-root ?id award)

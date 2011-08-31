@@ -26,6 +26,16 @@ mv  $MYPATH/$1_tmp/$2/ol_prep.dat_tmp  $MYPATH/$1_tmp/$2/ol_prep.dat
 ########## end #######
  python $HOME_anu_test/Anu_src/run_openlogos.py $MYPATH/$1_tmp/$2/ol-EG-TR.diag
 
+############### Programms by ANS ################
+cd $HOME_anu_test/Anu_src
+
+./all_tran_pada.out  $MYPATH/$1_tmp/$2/ol-EG-TR.diag  $MYPATH/$1_tmp/$2/all_tran_pada.dat
+ mv $MYPATH/f_tid-rid.dat $MYPATH/$1_tmp/$2/f_tid-rid.dat
+
+ ./f_range.out   $MYPATH/$1_tmp/$2/ol-EG-TR.diag
+ mv $MYPATH/tmp-rel-facts.dat $MYPATH/$1_tmp/$2/tmp-rel-facts.dat
+ mv $MYPATH/resid-word.dat    $MYPATH/$1_tmp/$2/resid-word.dat
+########## end ###################################
 
 ####### added pada by sriram ############
 #cp  $MYPATH/$1_tmp/$2/ol_pada_tmp.dat $MYPATH/$1_tmp/$2/ol_pada_tmp-goru.dat
@@ -41,7 +51,9 @@ fi
 # cat sent_type.dat >>relations.dat
 grep -v "^$" < $MYPATH/$1_tmp/$2/ol_pada_tmp.dat > $MYPATH/$1_tmp/$2/ol_pada_tmp-new.dat
 if  [ -s $MYPATH/$1_tmp/$2/ol_pada_tmp-new.dat ] ; then
+ cd $MYPATH/$1_tmp/$2
  myclips -f $HOME_anu_test/Anu_clp_files/run_modules_ol.bat >  $1.error
+
 
   cd $HOME_anu_test/Anu_src/
  perl   FinalGenerate.pl $HOME_anu_test/bin/hi.gen.bin  $HOME_anu_test/Anu_databases/AllTam.gdbm  $MYPATH/ $1 $2 $HOME_anu_test/bin/hi.morf.bin < $MYPATH/$1_tmp/$2/id_Apertium_input.dat > $MYPATH/$1_tmp/$2/id_Apertium_output1.dat

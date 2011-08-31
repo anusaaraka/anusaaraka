@@ -99,6 +99,47 @@
                          "              After     - "?head" "?l" "?Mot" "?JJ" "(implode$ $?d) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (19-08-11) -- Suggested by Sukhada.
+;But the full effect on prices of the winter wheat now being planted will not be felt until the second half of next year.
+(defrule dont_rev_if_VP_ends_with_verb
+(declare (salience 1400))
+?f0<-(Head-Level-Mother-Daughters ?head ?l ?Mot $?d ?VP)
+(Head-Level-Mother-Daughters ?word ? ?VP ?verb)
+(Node-Category  ?Mot  VP)
+(Node-Category  ?VP  VP)
+(or (id-original_word ?id ?word)(id-root ?id ?word))
+(id-cat_coarse ?id verb)
+(not (Mother  ?Mot))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (retract ?f0)
+        (assert (Head-Level-Mother-Daughters ?head ?l ?Mot  $?d ?VP))
+        (assert (Mother  ?Mot))
+        (printout ?*order_debug-file* "(rule_name - dont_rev_if_VP_ends_with_verb " ?*count* " " crlf
+                         "              Before    - "?head" "?l" "?Mot" "(implode$  $?d)" "?VP crlf
+                         "              After     - "?head" "?l" "?Mot" "(implode$ $?d)" "?VP ")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (19-08-11) -- Suggested by Sukhada.
+;Some analysts saw the payment as an effort also to dispel takeover speculation. 
+(defrule dont_rev_if_S_goesto_ADVP_and_VP
+(declare (salience 1400))
+?f0<-(Head-Level-Mother-Daughters ?head ?l ?Mot ?ADVP ?VP)
+(Head-Level-Mother-Daughters also ? ?ADVP $?)
+(Node-Category  ?Mot S)
+(Node-Category  ?ADVP ADVP)
+(Node-Category  ?VP VP)
+(not (Mother  ?ADVP))
+=>
+	(bind ?*count* (+ ?*count* 1))
+        (retract ?f0)
+        (assert (Head-Level-Mother-Daughters ?head ?l ?Mot  ?ADVP ?VP))
+        (assert (Mother  ?ADVP))
+        (printout ?*order_debug-file* "(rule_name - dont_rev_if_S_goesto_ADVP_and_VP " ?*count* " " crlf
+                         "              Before    - "?head" "?l" "?Mot" "?ADVP" "?VP crlf
+                         "              After     - "?head" "?l" "?Mot" "?ADVP" "?VP ")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
 (defrule print_for_debugging2
 (declare (salience 1000))
 =>
@@ -144,13 +185,15 @@
 ;-----------------------------------------------------------------------------------------------------------------------
 ;;Ex. I gave her a book. I will tell you the story tomorrow. 
 ;Added by Shirisha Manju (11-08-11) Suggested by Sukhada
+; The root fact is loaded only for OL bcoz Ol shows head as root sometimes and word some times
 (defrule rev_VP_for_obj1_obj2
 (declare (salience 940))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d1 ?d $?rest)
 (Node-Category  ?Mot  VP)
-(id-original_word ?kri ?head) ;I gave Rama a book.
+(or (id-original_word ?kri ?head)(id-root ?kri ?head)) ;I gave Rama a book.The fact that he smiled at me gives me hope.
 (and (kriyA-object_2 ?kri ?obj2)  (kriyA-object_1 ?kri ?obj1))
-(id-original_word ?obj2 ?wrd) (id-original_word ?obj1 ?h)
+(or (id-original_word ?obj2 ?wrd)(id-root ?obj2 ?wrd))
+(or (id-original_word ?obj1 ?h)(id-root ?obj1 ?h))
 (Head-Level-Mother-Daughters  ?wrd ? ?d1  $?modf  ?y )
 (Head-Level-Mother-Daughters  ?h ? ?d  $?mod  ?x )
 (not (Mother  ?d1))
@@ -314,9 +357,9 @@
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl $?d ?ADVP $?d1 ?VP)
 ?f1<-(Head-Level-Mother-Daughters ?h ?l ?VP $?d2 ?V)
 (Head-Level-Mother-Daughters never ? ?ADVP $?)
-(Node-Category ?VP9 VP)
+(Node-Category ?VP VP)
 (Node-Category ?ADVP5 ADVP)
-(Node-Category ?V VBD)
+(or (Node-Category ?V VBD)(id-cat_coarse ?V verb));Ol -- for the above sentence only
 (not (Mother  ?ADVP))
 =>
 	(bind ?*count* (+ ?*count* 1))
@@ -324,6 +367,7 @@
         (assert (Head-Level-Mother-Daughters ?head ?lvl $?d $?d1 ?VP))
 	(assert (Head-Level-Mother-Daughters ?h ?l ?VP $?d2 ?ADVP ?V))
         (assert (Mother  ?ADVP))
+	(assert (Mother ?VP))
         (printout ?*order_debug-file* "(rule_name - move_negation_before_verb " ?*count* crlf
                          "              Before    - "?head" "?lvl" "(implode$ $?d)" "?ADVP" "(implode$ $?d1)" "?VP crlf
                          "              After     - "?head" "?lvl" "(implode$ $?d)" "(implode$ $?d1)" "?VP")" crlf crlf)
@@ -413,6 +457,7 @@
 (undefrule WHNP_rule)
 (undefrule prep_in_SBAR_rule)
 (undefrule rev_ADVP_goesto_RB)
+(undefrule rev_ADVP_1)
 )
 
 ;-----------------------------------------------------------------------------------------------------------------------
@@ -568,6 +613,29 @@
 	(printout ?*order_debug-file* "(rule_name - insert_jo_samAnAXikaraNa " ?*count* crlf
         	         "              Before    - "(implode$ $?id)" "?sub" "(implode$ $?id1)" "?k" "(implode$ $?daut) crlf
                 	 "              After     - "(implode$ $?id)"  10000 "?sub" " (implode$ $?id1)" "?k" "(implode$ $?daut) ")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
+; Added by Shirisha Manju (13-08-11) 
+; Do you think we should go to the party? 
+(defrule insert_conjunction
+(declare (salience 4))
+(kriyA-conjunction  ?k 10000)
+(kriyA-subject  ?k  ?sub)
+(Head-Level-Mother-Daughters ? ? ?NP $?ids)
+(Node-Category ?NP NP)
+;?f0<-(hindi_id_order $?id ?sub $?id1 ?k $?daut)
+?f0<-(hindi_id_order $?id $?ids $?id1 ?k $?daut)
+(not (conj_id_inserted ))
+(test (member$ ?sub $?ids))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (retract ?f0)
+       ; (assert (hindi_id_order $?id 10000 ?sub $?id1 ?k $?daut))
+        (assert (hindi_id_order $?id 10000 $?ids $?id1 ?k $?daut))
+        (assert (conj_id_inserted ))
+        (printout ?*order_debug-file* "(rule_name - insert_conjunction " ?*count* crlf
+                         "              Before    - "(implode$ $?id)" "?sub" "(implode$ $?id1)" "?k" "(implode$ $?daut) crlf
+                         "              After     - "(implode$ $?id)"  10000 "?sub" " (implode$ $?id1)" "?k" "(implode$ $?daut) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule end_order
