@@ -117,6 +117,10 @@
  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
  sh compile.sh
 
+ echo "Compiling RASP parser files"
+ cd $HOME_anu_test/Parsers/RASP/rasp3os/scripts/
+ sh comp.sh 
+
  echo "Creating binary files"
  cd $HOME_anu_test/Anu_clp_files
  myclips -f create_binary_files.clp  >/dev/null

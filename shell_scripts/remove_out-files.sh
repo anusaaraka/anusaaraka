@@ -22,6 +22,10 @@
  rm *.out
  rm lex.yy.c
 
+ echo "Removing RASP out files"
+ cd $HOME_anu_test/Parsers/RASP/rasp3os/scripts/
+ rm rasp_constituency_parse y.tab.c y.tab.h
+
  echo "Removing .out files"
  cd $HOME_anu_test/Anu_src
  rm *.out
