@@ -22,11 +22,6 @@
  rm *.out
  rm lex.yy.c
 
- echo "Removing RASP Parser binary files"
- cd $HOME_anu_test/Parsers/RASP/rasp3os/scripts/
- rm add_labels.out
- rm eng_aper_gen.out
-
  echo "Removing .out files"
  cd $HOME_anu_test/Anu_src
  rm *.out
