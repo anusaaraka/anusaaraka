@@ -1298,3 +1298,5 @@ gira	0
 howA	0
 howe	0
 howI	0
+wEra	0
+wErA	0

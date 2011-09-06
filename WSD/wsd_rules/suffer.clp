@@ -27,6 +27,10 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  suffer.clp  	suffer1   "  ?id "  vexanA )" crlf))
 )
 
+
+
+;Modified by Meena(2.9.11)
+;Fonda himself once again suffered the attribution of the word wooden. 
 (defrule suffer2
 (declare (salience 4800))
 (id-root ?id suffer)
@@ -34,9 +38,10 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id ko_Jela))
+(assert (id-wsd_root_mng ?id Jela))
+;(assert (id-wsd_root_mng ?id ko_Jela))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  suffer.clp 	suffer2   "  ?id "  ko_Jela )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  suffer.clp 	suffer2   "  ?id "  Jela )" crlf))
 )
 
 ;default_sense && category=verb	saha	0

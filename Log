@@ -2626,7 +2626,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         sd_verified (434)    ber_verified (385)
 25.Updated Log.
 
- 29-08-11
+ 06-09-11
  ========
  1. Added map_constituent_tree.sh , add_labels.clp ,get_rasp_constituency_tree.sh files.
  2. Modified run_rasp-parser.sh, Anusaaraka_rasp.sh files
@@ -2637,7 +2637,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         ir.lex                  rm_tags.lex                     eng_aper_gen.lex        get_word_cat.lex
         abbr.lex                abbr1.lex
  5. WSD: 
-	Modified: open.clp, award.clp 
+	Modified: open.clp	award.clp	hurdle.clp	search.clp	suffer.clp
+        Added   : accident.clp	band.clp	bury.clp	consume.clp	deaf.clp	disability.clp
+		  excess.clp	generous.clp	scrap.clp	seize.clp	wooden.clp	fascination.clp
  6. H_ordering_rules.clp :
         Added    : dont_rev_if_VP_ends_with_verb , dont_rev_if_S_goesto_ADVP_and_VP  and insert_conjunction rules
         Modified : rev_VP_for_obj1_obj2, move_negation_before_verb rules and undefrules
@@ -2651,11 +2653,13 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 12. Added the following c programs for generating constituents in OL Parser
         ALL_TRAN_PADA.c   f_range_wordarray_resarray.c   f_sen-range.c     f_tid-rid.c
 13. Modified run_sentence_ol.sh to call the above c-programs
-14. Updated Anusaaraka_stanford.sh 
-15. Updated anu_compile_64bit.sh
-16. Updated README
-17. Updated changes_in_databases 
-18. Modified ol_ver_output, sd_ver_output and verified_output
-19. Updated following files:
-        sd_verified (437)    OL_parser_fails (65)
-20. Updated Log
+14. Added rule  RaRTI_viSeRaNa-vise1 in modify_ol_relations.clp
+15. Updated Anusaaraka_stanford.sh 
+16. Updated anu_compile_64bit.sh
+17. Updated README
+18. Updated abbr1.lex
+19. Updated changes_in_databases 
+20. Modified ol_ver_output, sd_ver_output, ber_ver_output, verified_output and OL_parser_fails
+21. Updated following files:
+        sd_verified (437)   
+22. Updated Log
