@@ -367,6 +367,7 @@
 (load-facts "Node_category.dat")
 (load-facts "resid-word.dat")
 (load-facts "rev_all_tran.dat")
+(load-facts "relations.dat")
 (open "E_constituents_info.dat" e_const_fp "w")
 (open "Node_category.dat" node_fp1 "a")
 (run)

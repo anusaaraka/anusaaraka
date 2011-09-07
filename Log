@@ -2644,14 +2644,18 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 		  behaviour.clp	brilliant.clp
  6. H_ordering_rules.clp :
         Added    : dont_rev_if_VP_ends_with_verb , dont_rev_if_S_goesto_ADVP_and_VP  and insert_conjunction rules
-        Modified : rev_VP_for_obj1_obj2, move_negation_before_verb rules and undefrules
+		   convert_Q_sent_to_normal
+        Modified : rev_VP_for_obj1_obj2, move_negation_before_verb rules,replace_aux_with_head_VP, WHNP_rule,
+                   reverse-NP-Daughters, prep_in_SBAR_rule and undefrules 
+	Removed  : move_first_child_of_SQ_last
  7. Modified RaRTI_kA_vib_rule_1  and RaRTI_kA_vib_rule  in prepare_apertium_input.clp
- 8. Modified default_rule in hindi_sent_reorder.clp
+ 8. Modified default_rule and yes-no_question rules in hindi_sent_reorder.clp
  9. Modified run_modules_std.bat to load "cat_consistency_check.dat" in  H_ordering_rules module
 10. Modified anu_compile.sh to generate out files for c-programs related to OL
 11. run_modules_ol.bat
         Removed : pada_prawiniXi , hindi_position modules
         Added   : missing_wc, tmp_pada, Ol_constituents_level, ol_cons_in_sd_format and H_ordering_rules modules
+	
 12. Added the following c programs for generating constituents in OL Parser
         ALL_TRAN_PADA.c   f_range_wordarray_resarray.c   f_sen-range.c     f_tid-rid.c
 13. Modified run_sentence_ol.sh to call the above c-programs
@@ -2661,7 +2665,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 17. Updated README
 18. Updated abbr1.lex
 19. Updated changes_in_databases 
-20. Modified ol_ver_output, sd_ver_output, ber_ver_output, verified_output and OL_parser_fails
+20. Modified ol_ver_output, sd_ver_output, ber_ver_output, verified_output,link_ver_output and OL_parser_fails
 21. Updated following files:
-        sd_verified (437)   
+        sd_verified (437)   ol_verified (554)
 22. Updated Log

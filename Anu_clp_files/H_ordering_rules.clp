@@ -26,6 +26,7 @@
 (Node-Category  ?VB     MD|VB|VBN|VBZ|VBD|VBP|VBG|RB)
 (Node-Category  ?VP     VP)
 (Node-Category  ?VP1    ?CAT)
+(not (Mother  ?Mot));Is that the film in which he kills his mother? 
 =>
         (bind ?*count* (+ ?*count* 1))
         (if (eq ?CAT VP) then
@@ -289,12 +290,13 @@
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju(20-06-11) Suggested by Dipti mam
 ;How many people did you see? How much money did you earn? I wonder how much money you earned.
+;In which school do you study? I wonder how much you swim
 (defrule WHNP_rule
 (declare (salience 950))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  ?whnp ?sq)
 ?f1<-(Head-Level-Mother-Daughters ?h ?l ?sq $?dau ?vp)
 (Node-Category  ?Mot  SBARQ|SBAR)
-(Node-Category ?whnp WHNP)
+(Node-Category ?whnp WHNP|WHADJP|WHPP)
 (Node-Category ?sq  SQ|S)
 (Node-Category ?vp VP)
 (not (Mother  ?Mot))
@@ -313,24 +315,28 @@
                          "              After     - "?head" "?lev" "?Mot" "?sq ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-; Added by Shirisha Manju(27-05-11) Suggested by Sukhada
-; Is there life beyond the grave? Is this my book? 
-; Is my book in your room? Are you reading the book?
-(defrule move_first_child_of_SQ_last
+;Added by Shirisha Manju(27-05-11) Suggested by Sukhada
+;Is that the film in which he kills his mother? 
+(defrule convert_Q_sent_to_normal
 (declare (salience 950))
-?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  ?d $?daut)
+?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot ?vp ?np $?daut)
 (Node-Category  ?Mot  SQ)
-(Node-Category  ?d  MD|VB|VBN|VBZ|VBD|VBP|VBG)
+(Node-Category  ?vp   MD|VB|VBN|VBZ|VBD|VBP|VBG)
+(Head-Level-Mother-Daughters ?h ?l ?np $?d)
 (not (Mother  ?Mot))
 =>
-        (bind ?*count* (+ ?*count* 1))
-        (retract ?f0)
-        (assert (Head-Level-Mother-Daughters ?head ?lev ?Mot $?daut ?d))
-        (assert (Mother  ?Mot))
-	(printout ?*order_debug-file* "(rule_name - move_first_child_of_SQ_last " ?*count* " " crlf
-                         "              Before    - "?head" "?lev" "?Mot" "?d" "(implode$ $?daut) crlf
-                         "              After     - "?head" "?lev" "?Mot" "(implode$  $?daut)" " ?d ")" crlf)
-)
+	(bind ?*count* (+ ?*count* 1))
+	(retract ?f0)
+	(bind ?v (explode$ (str-cat "VPc" ?*count*)))
+	(assert (Head-Level-Mother-Daughters ?head ?lev ?Mot ?np ?v))
+	(assert (Head-Level-Mother-Daughters ?h ?l ?v ?vp $?daut))
+	(assert (Node-Category ?v VP))
+	(assert (Mother  ?Mot))
+	(printout ?*order_debug-file* "(rule_name - convert_Q_sent_to_normal " ?*count* " " crlf
+                         "              Before    - "?head" "?lev" "?Mot" "?vp" "?np" "(implode$ $?daut) crlf
+                         "              After 	  -  "?head" "?lev" "?Mot" "?np" "?v crlf
+					      	  "- " ?h" "?l" "?v" "?vp"  " (implode$ $?daut) crlf)	
+ )
 ;-----------------------------------------------------------------------------------------------------------------------
 ; Added by Shirisha Manju(28-05-11) Suggested by Sukhada
 ;This is the way to go. 
@@ -382,10 +388,9 @@
 ;PP: VP: Information International said it believes that the complaints, filed in federal court in Georgia, are without merit.
 (defrule reverse-NP-Daughters
 (declare (salience 800))
-?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot ?NP ?PP)
+?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot ?NP ?PP $?d)
 (Node-Category  ?mot  NP)
 (Node-Category  ?NP  NP)
-;(Node-Category  ?PP PP|SBAR)
 (Node-Category  ?PP PP|VP)
 (not (Mother  ?mot))
 (test (and (neq ?head lot)(neq ?head most)(neq ?head number)));And I think a lot of people will harp on program trading.
@@ -393,11 +398,11 @@
 =>      
         (bind ?*count* (+ ?*count* 1))
 	(retract ?f0)
-	(bind ?NP_rev (create$ ?head ?lvl (reverse_daughters ?mot ?NP ?PP)))
+	(bind ?NP_rev (create$ ?head ?lvl (reverse_daughters ?mot ?NP ?PP $?d)))
 	(assert (Head-Level-Mother-Daughters ?NP_rev))
 	(assert (Mother  ?mot))
 	(printout ?*order_debug-file* "(rule_name - reverse-NP-Daughters "  ?*count* crlf 
-                         "              Before    - "?head" "?lvl" "?mot" "?NP" "?PP crlf
+                         "              Before    - "?head" "?lvl" "?mot" "?NP" "?PP " "(implode$ $?d) crlf
 	                 "              After     - "(implode$ ?NP_rev) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
@@ -424,7 +429,7 @@
 (declare (salience 800))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?SBAR ?prep $?d)
 (Head-Level-Mother-Daughters ? ? ?prep ?id)
-(Node-Category ?SBAR SBAR)
+(Node-Category ?SBAR SBAR|PP)
 (Node-Category ?prep IN)
 (not (kriyA-conjunction  ? ?id));It was so dark that I could not see anything.
 (not (Mother  ?SBAR))
@@ -449,7 +454,6 @@
 (undefrule dont_rev_if_VP_goesto_TO)
 (undefrule rev_VP_or_PP_or_WHPP)
 (undefrule rev_ADJP_goesto_PP)
-(undefrule move_first_child_of_SQ_last)
 (undefrule move_S_last_child_first)
 (undefrule reverse-NP-Daughters)
 (undefrule replace_NP-daut_PDT)
