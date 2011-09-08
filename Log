@@ -2626,7 +2626,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         sd_verified (434)    ber_verified (385)
 25.Updated Log.
 
- 07-09-11
+ 08-09-11
  ========
  1. Added map_constituent_tree.sh , add_labels.clp ,get_rasp_constituency_tree.sh files.
  2. Modified run_rasp-parser.sh, Anusaaraka_rasp.sh files
