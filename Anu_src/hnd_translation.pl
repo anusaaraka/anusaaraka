@@ -59,7 +59,9 @@ sub final_translation{
           chomp($sen_wx=$_);
           $sen_wx =~ s/^\s*//g;
           $sen_wx =~ s/\s*$//g;
-          $sen_wx =~ s/-//g;
+         # $sen_wx =~ s/-//g; 
+          $sen_wx =~ s/-/-@/g; #Modified this pattern by Roja (08-09-11)Ex: Finger-pointing has already begun.
+                                                                  #     Ex: The Mughals ruled India in 1526-1761.
           $sen_wx =~ s/#0//g;
           $sen_wx =~ s/#//g;
           $sen_wx =~ s/\\//g;

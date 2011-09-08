@@ -2660,12 +2660,15 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         ALL_TRAN_PADA.c   f_range_wordarray_resarray.c   f_sen-range.c     f_tid-rid.c
 13. Modified run_sentence_ol.sh to call the above c-programs
 14. Added rule  RaRTI_viSeRaNa-vise1 in modify_ol_relations.clp
-15. Updated Anusaaraka_stanford.sh 
-16. Updated anu_compile_64bit.sh
-17. Updated README
-18. Updated abbr1.lex
-19. Updated changes_in_databases 
-20. Modified ol_ver_output, sd_ver_output, ber_ver_output, verified_output,link_ver_output and OL_parser_fails
-21. Updated following files:
+15. Modified hnd_translation.pl programme to handle hyphenated words like Finger-pointing, 1526-170 etc. in firefox.
+16. Modified abbr.sh, abbr_browser.sh to handle above patterns.
+17. Modified run_sentence_link.sh, run_sentence_ol.sh, run_sentence_stanford.sh to remove hindi_sentence_tmp.dat line.
+18. Updated Anusaaraka_stanford.sh 
+19. Updated anu_compile_64bit.sh
+20. Updated README
+21. Updated abbr1.lex
+22. Updated changes_in_databases 
+23. Modified ol_ver_output, sd_ver_output, ber_ver_output, verified_output,link_ver_output and OL_parser_fails
+24. Updated following files:
         sd_verified (437)   ol_verified (554)
-22. Updated Log
+25. Updated Log

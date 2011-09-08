@@ -27,8 +27,6 @@ cd $MYPATH/$1_tmp/$2
 
  cat linkage_count
 
- cp hindi_sentence.dat hindi_sentence_tmp.dat
-
  sh $HOME_anu_test/bin/abbr.sh  
 
  cp hindi_sentence1.dat  hindi_sentence.dat
