@@ -2672,3 +2672,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 24. Updated following files:
         sd_verified (437)   ol_verified (554)
 25. Updated Log
+
+ 09-09-11
+ ========
+ 1. Updated anu_compile64bit.sh
+ 2. Updated step-debug
+ 3. Updated Log.
