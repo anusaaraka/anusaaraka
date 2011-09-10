@@ -1,3 +1,5 @@
+;This file is written by Sukhada.
+
 (defglobal ?*ol_fp* = ol_rel_file)
 (defglobal ?*debug* = ol_rel_debug_file)
 
@@ -820,6 +822,22 @@
 (printout ?*debug* "(Rule-Rel-ids   RaRTI_viSeRaNa-vise   viSeRya-viSeRaNa   "?R"    "?x")"crlf)
 )
 
+;----------------------------------------------------------------------------------------------------------------------------
+
+;I was unable to word my feelings at the Ritu's husband's death. 
+(defrule RaRTI_viSeRaNa-vise1
+(prep_id-relation-parser_ids   -  viSeRya-RaRTI_viSeRaNa ?v ?R)
+?f1<-(prep_id-relation-parser_ids   -  viSeRya-RaRTI_viSeRaNa ?v ?x)
+(test  (> (string_to_integer ?R)  (string_to_integer ?x)))
+=>
+(retract ?f1)
+(assert (rel_has_been_deleted -  viSeRya-RaRTI_viSeRaNa    ?R    ?x))
+(printout ?*debug* "(rule-deleted_relation-ids    RaRTI_viSeRaNa-vise1   viSeRya-RaRTI_viSeRaNa    "?R"   " ?x")"crlf)
+(assert (prep_id-relation-parser_ids   -  viSeRya-RaRTI_viSeRaNa    ?R    ?x))
+(assert (rel_has_been_written  - viSeRya-RaRTI_viSeRaNa    ?R    ?x))
+(printout       ?*ol_fp*    "(prep_id-relation-parser_ids   -  viSeRya-RaRTI_viSeRaNa    "?R"    "?x")"crlf)
+(printout ?*debug* "(Rule-Rel-ids   RaRTI_viSeRaNa-vise1   viSeRya-RaRTI_viSeRaNa    "?R"   " ?x")"crlf)
+)
 ;----------------------------------------------------------------------------------------------------------------------------
 
 ;Added by sheetal

@@ -39,7 +39,7 @@ SPC [^a-zA-Z0-9]
 {SPC}a\.k\.a\.{SPC} 	{printf("%caABBRDOTABBRkABBRDOTABBRaABBRDOTABBR%c",yytext[0],yytext[7]);}
 
 [ ]Sr\.		{printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
-[ ]Jr\.		{printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
+[ ][jJ]r\.	{printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
 [ ]Dr\.		{printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
 [ ]Mr\.		{printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
 [ ]Mrs\.	{printf("%c%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2],yytext[3]); }
@@ -50,6 +50,7 @@ $[0-9]		{printf("ABBRdollar %c",yytext[1]);  }
 #[0-9]		{printf("ABBRsharp %c",yytext[1]);   }
 [ ]No\.         {printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
 Fig\.		{printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
+[ ]etc\.	{printf("%c%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2],yytext[3]);	}
 
 %%
 main()

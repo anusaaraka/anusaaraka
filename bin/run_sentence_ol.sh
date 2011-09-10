@@ -75,9 +75,6 @@ cat para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat chunk.
 sed -e 's/=/equal_to/g' < all_facts > all_facts_tmp
 mv all_facts_tmp all_facts
 
-
- cp hindi_sentence.dat hindi_sentence_tmp.dat
-
  sh $HOME_anu_test/bin/abbr.sh
 
  cp hindi_sentence1.dat  hindi_sentence.dat

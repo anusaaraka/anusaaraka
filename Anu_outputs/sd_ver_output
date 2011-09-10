@@ -1256,7 +1256,7 @@ muJe/muJako laMbe_samaya waka AScarya huA ki prawyeka vyakwi ne iwanA jyAxA usak
 
 Hindi meaning using Stanford parser 3.7
 Beautiful paintings adorned the walls of the palace. 
-sunxara kalAkqwi ne mahala kI xIvAreM sajAyIM/sajAIM.
+sunxara kalAkqwiyoM ne mahala kI xIvAreM sajAyIM/sajAIM.
 
 Hindi meaning using Stanford parser 3.8
 The leopard seizes its kill and begins to eat. 
@@ -1309,11 +1309,11 @@ Clinton ne maMgalavAra ko eka nirBIka naye praswAva kI GoRaNA kI.
 
 Hindi meaning using Stanford parser 3.20
 She said she did not approve of my behavior. 
-usane kahA ki usane mere AcaraNa ko pasaMxa_nahIM kiyA WA.
+usane kahA ki usane mere barwAva ko pasaMxa_nahIM kiyA WA.
 
 Hindi meaning using Stanford parser 3.21
 She decided to search her biological mother. 
-usane usakI sagI mAz walASa karane ke liye niScaya kiyA.
+usane usakI sagI mAz ko walASa karane ke liye niScaya kiyA.
 
 Hindi meaning using Stanford parser 3.22
 Monday sounds good for the meeting. 

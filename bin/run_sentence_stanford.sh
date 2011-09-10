@@ -28,11 +28,7 @@ sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id
  
  cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat parserid_wordid_mapping.dat lwg_info.dat relations.dat hindi_meanings.dat GNP_agmt_info.dat id_Apertium_output.dat  hindi_id_reorder.dat English_sentence.dat hindi_sentence.dat >>$MYPATH/$1_tmp/$2/all_facts
 
-
- cp hindi_sentence.dat hindi_sentence_tmp.dat
-
  sh $HOME_anu_test/bin/abbr.sh
-
 
  cp hindi_sentence1.dat  hindi_sentence.dat
 
@@ -42,7 +38,6 @@ sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id
  
  grep -B2 "FALSE" $1.error >> errors.txt
  cat errors.txt
-
 
  #for sentence by sent analysis for web debugging tutorial
  cat English_sentence.dat >> $MYPATH/$1_tmp/sent-by-sent

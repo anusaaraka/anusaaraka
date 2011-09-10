@@ -18843,7 +18843,7 @@ pressure	xAba
 pressurise	xAbAnukUla
 prestige	prawiRTA
 presto	kRipra
-presumably	saMBAvyawaH
+presumably	saMBAvawaH
 presumption	XAraNA
 presumptive	anumAniwa
 presumptuous	XqRta
@@ -68082,7 +68082,7 @@ peeing	peSAba_karanA
 peeler's	CilanevAlA
 peelers'	CilanevAlA
 peelers	CilanevAlA
-peel	CIla
+peel	Cila
 peeped	JAzkI
 peeping	JAzkI
 peep's	JAzkI

@@ -42,6 +42,17 @@
    
 
 ;---------------------------------------------------------------------------------------------------------------------------
+;Added by shirisha Manju (06-09-11)
+;It does not matter what Ted does.
+(defrule remove_repeated_fact
+(declare (salience 8))
+(tran-word-wc-typ-form-h_id-comp  ?tid    ?w    ?wc   ?t ?f ?hid $? ?id $?)
+?f0<-(tran-word-wc-typ-form-h_id-comp  ?tid   ?w1    ?   ?  ?    ?id $?)
+(test (neq ?w ?w1))
+=>
+        (retract ?f0)
+)
+
 ;Case2
 (defrule print 
 (declare (salience 7))

@@ -111,7 +111,7 @@
 
  echo "Compiling RASP parser files"
  cd $HOME_anu_test/Parsers/RASP/rasp3os/scripts/
- sh $HOME_anu_test/Anu_src/comp.sh eng_aper_gen
+ sh comp.sh 
 
  echo "Creating binary files"
  cd $HOME_anu_test/Anu_clp_files

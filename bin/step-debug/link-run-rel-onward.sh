@@ -14,13 +14,12 @@ sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id
 
 
 cd $MYPATH/$1_tmp/$2
+ cp $MYPATH/$1_tmp/underscore_hyphen_replace_info.txt  $MYPATH/$1_tmp/$2/underscore_hyphen_replace_info.dat
  myclips -f $HOME_anu_test/Anu_clp_files/run_H_gen_sen.bat >> $1.error
  
  cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat parserid_wordid_mapping.dat link_numeric_word.dat link_name_expand.dat lwg_info.dat relations.dat hindi_meanings.dat GNP_agmt_info.dat id_Apertium_output.dat  hindi_id_reorder.dat English_sentence.dat hindi_sentence.dat >>$MYPATH/$1_tmp/$2/all_facts
 
  cat linkage_count
-
- cp hindi_sentence.dat hindi_sentence_tmp.dat
 
  sh $HOME_anu_test/bin/abbr.sh  
 

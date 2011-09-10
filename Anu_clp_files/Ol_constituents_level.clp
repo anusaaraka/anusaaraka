@@ -225,23 +225,7 @@
  )
  ))
 ;------------------------------------Getting all missing ids-------------------------------------------------------------
-;(defrule resid
-;(declare (salience 6))
-;;?f1 <-(Res_id-WC-Word-Anu_id  ?rid ?wc $?word $?anuid )
-;?f1 <-(Res_id-WC-Word-Anu_id  ?rid ?wc $?word ?id $?anuid )
-;(test (numberp ?id))
-;(not (decided ?d ?id))
-;;(not (decided ?id&:(str-cat P ?rid)))
-;=>
-;        (retract ?f1)
-;        (bind ?d (explode$ (str-cat P ?rid)))
-;        (assert (Res_id-WC-Word-Anu_id  ?d ?wc $?word ?id $?anuid ))
-;	(assert (Res_id-anu_id ?d $?anuid))
-;;	(assert (decided ?d $?anuid))
-;	(assert (decided ?d ?id))
-;)
- 
-(defrule test
+(defrule add_P_to_ids
 (declare (salience 30))
 ?f<-(Head-Level-Mother-Daughters ?wrd&~Sen&~Root ?lev ?phrase $?daut)
 (not (phrase_mapped ?phrase))
@@ -261,7 +245,7 @@
         (assert (phrase_mapped ?phrase))
         (assert (Head-Level-Mother-Daughters ?wrd ?lev ?phrase $?daut1))
 )
-
+;-------------------------------------------------------------------------------------------------------------------------
 (defrule convert_res_anuid
 (declare (salience 25))
 ?f<-(Head-Level-Mother-Daughters ?wrd ?lev ?phrase $?pre ?rid $?post )
@@ -272,7 +256,7 @@
 (assert (Head-Level-Mother-Daughters ?wrd ?lev ?phrase $?pre $?anuid $?post))
 (printout t " "$?pre " "?anuid " "$?post crlf)
 )
-
+;-------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (30-08-11)
 ;Be careful, she said.
 (defrule get_punct_fact
@@ -285,32 +269,25 @@
 	(assert (Head-Level-Mother-Daughters  , ?l ?mot))
 )
 ;-------------------------------------To write S consist difeerent phrase in it. -------------------------------------------
+;Modified by Shirisha Manju (o2-09-11) added if condition
 (defrule Root
  (declare (salience 20))
  ?f1 <-(Sentence range is ?range)
 =>
- (retract ?f1)
- (assert (Head-Level-Mother-Daughters Sen 3 S1 ?*Slist*))
- (assert (Head-Level-Mother-Daughters Root 3 ROOT1 S1))
- (printout ?*node_fp* "(Node-Category " "ROOT1  ROOT )" crlf)
- (printout ?*node_fp* "(Node-Category " "S1   S)" crlf)
+	(retract ?f1)
+	(bind ?f_id (nth$ 1 ?*Slist*))
+	(if (eq ?f_id SQ1) then ;Did it all go according to the plan?
+		(bind $?list (delete-member$ ?*Slist* ?f_id))
+		(assert (Head-Level-Mother-Daughters Sen 3 SQ1 $?list))
+		(assert (Head-Level-Mother-Daughters Root 3 ROOT1 SQ1))
+	else
+		(assert (Head-Level-Mother-Daughters Sen 3 S1 ?*Slist*))
+		(assert (Head-Level-Mother-Daughters Root 3 ROOT1 S1))
+	)
+	(printout ?*node_fp* "(Node-Category " "ROOT1  ROOT )" crlf)
+	(printout ?*node_fp* "(Node-Category " "S1   S)" crlf)
 )
-
-
-
-;(defrule convert_res_anuid
-;(declare (salience 4))
-;?f1 <-(Res_id-WC-Word-Anu_id  ?rid ?wc ?word ?anuid )
-;
-;?f  <-(Head-Level-Mother-Daughters ?wrd ?lev ?phrase $?pre ?rid $?post ) 
-;?f2 <-(To_be_decided ?rid ?word)
-;(test (neq ?anuid 0))
-;=>
-;(retract ?f1 ?f ?f2)
-;(assert (Head-Level-Mother-Daughters ?wrd ?lev ?phrase $?pre ?anuid $?post))
-;(printout t " "$?pre " "?anuid " "$?post crlf)
-;)
-
+;-------------------------------------------------------------------------------------------------------------------------
 (defrule printall
 (declare (salience 3))
 ?f  <-(Head-Level-Mother-Daughters ?wrd ?lev ?phrase $?daughters ) 
@@ -318,8 +295,9 @@
 (retract  ?f)
 (printout  ?*const_fp*  "(Head-Level-Mother-Daughters  "?wrd "  "?lev "  "?phrase "	"(implode$ $?daughters) ")" crlf)
 )
-
+;-------------------------------------------------------------------------------------------------------------------------
 (defrule close_file
 =>
 	(close ?*const_fp*)
 )
+;-------------------------------------------------------------------------------------------------------------------------
