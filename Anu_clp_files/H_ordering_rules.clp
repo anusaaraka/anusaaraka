@@ -44,6 +44,29 @@
         )
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+;In Kashmir, fishing is a good business and the ideal season is from April to October. Added by Sukhada (12-9-11)
+(defrule from_to_PPs
+(declare (salience 1450))
+?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1 ?PP1 ?PP2 $?d2)
+(Head-Level-Mother-Daughters from ? ?PP1 $?d3)
+(Head-Level-Mother-Daughters to ? ?PP2 $?d4)
+(Node-Category  ?PP1    PP)
+(Node-Category  ?PP2    PP)
+(not (Mother  ?PP1))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (retract ?f)
+	(bind ?FromToPP (explode$ (str-cat FromToPP "c" ?*count* )))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1  ?FromToPP $?d2))
+	(assert (Head-Level-Mother-Daughters from ?lvl ?FromToPP ?PP1 ?PP2 ))
+	(assert (Node-Category ?FromToPP FromToPP))
+	(assert (Mother  ?PP1))
+        (printout ?*order_debug-file* "(rule_name - from_to_PPs  " ?*count* " " crlf
+                          "             Before    - "?head" "?lvl"  "?Mot"  "(implode$ $?d1)" "?PP1" "?PP2" "(implode$ $?d2) crlf
+                          "             After     - "?head" "?lvl"  "?Mot"  "(implode$ $?d1)" "?FromToPP" "(implode$ $?d2)")" crlf)
+)
+
+;-----------------------------------------------------------------------------------------------------------------------
 ; Mysore is also known as the city of palaces.
 ; Added by Shirisha Manju (12-08-11) Suggested by Sukhada
 ;If VP > ADVP VP1 and VP1 > x y z then this rule modifies VP as VP > ADVP xyz and removes the node VP1.

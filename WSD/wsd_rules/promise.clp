@@ -1,15 +1,20 @@
+;She promised me something. Mary promised the instructor to take that course. modified by Sukhada (12-9-11)
 (defrule promise0
 (declare (salience 5000))
 (id-root ?id promise)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id verb)
+(or (kriyA-object ?id ?obj) (kriyA-object_1 ?id ?obj))
+(or (id-root ?obj ?str&:(gdbm_lookup_p "eng-animate-list.gdbm" ?str)) (id-root ?obj ?str&:(gdbm_lookup_p "animate.gdbm" ?str )))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id vAxA_kara))
 (assert (kriyA_id-object_viBakwi ?id se))
+(assert (kriyA_id-object1_viBakwi ?id se))
+(assert (kriyA_id-object2_viBakwi ?id kA))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  promise.clp 	promise0   "  ?id "  vAxA_kara )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  promise.clp   promise0   "  ?id " se )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object1_viBakwi   " ?*wsd_dir* "  promise.clp   promise0   "  ?id " se )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object1_viBakwi   " ?*wsd_dir* "  promise.clp   promise0   "  ?id " kA )" crlf)
 )
 )
-
