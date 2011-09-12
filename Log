@@ -2673,11 +2673,14 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         sd_verified (437)   ol_verified (554)
 25. Updated Log
 
- 09-09-11
+ 12-09-11
  ========
  1. Modified "cc_rule" in sd_lwg_rules.clp -- added category info in rule part
  2. Added "nsubj_conj_1" rule in sd_relation_rules.clp
  3. Modified move_negation_before_verb in  H_ordering_rules.clp
- 4. Updated anu_compile64bit.sh
- 5. Updated step-debug
- 6. Updated Log.
+ 4. In f_range_wordarray_resarray.c, changed return type from 'void' to 'int' to avoid warnings in server
+ 5. Updated abbr_browser.sh to get Google Translation in firefox. 
+ 6. Updated anu_compile64bit.sh
+ 7. Updated step-debug
+ 8. Updated apertium_hn.dix
+ 9. Updated Log.

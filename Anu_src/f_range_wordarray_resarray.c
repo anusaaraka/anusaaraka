@@ -82,7 +82,7 @@ return range;
 }
 
 //*To run program independntly
-void main(int argc,char * argv[1])
+int main(int argc,char * argv[1])  //changed return type from 'void' to 'int' to avoid warnings in server
   { 
           FILE *fp;
           FILE *subject_fp;
