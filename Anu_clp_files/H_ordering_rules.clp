@@ -387,7 +387,7 @@
 ?f1<-(Head-Level-Mother-Daughters ?h ?l ?VP $?d2 ?V)
 (Head-Level-Mother-Daughters never ? ?ADVP $?)
 (Node-Category ?VP VP)
-(Node-Category ?ADVP5 ADVP)
+(Node-Category ?ADVP ADVP)
 (or (Node-Category ?V VBD)(id-cat_coarse ?V verb));Ol -- for the above sentence only
 (not (Mother  ?ADVP))
 =>

@@ -282,6 +282,7 @@
  (declare (salience 750))
  ?f<-(root-verbchunk-tam-parser_chunkids ?root ?verb_chunk  ?tam $?ids ?head)
  (rel_name-sids conj_or|conj_and ?head ?cc) 
+ (parser_id-cat_coarse  ?cc  verb);The City Palace was built by Maharaja Jai Singh II and is a synthesis of Mughal and Rajasthani architecture. 
  (not (grouped_head ?cc))
   =>
 	(assert (root-verbchunk-tam-parser_chunkids ?root ?verb_chunk  ?tam $?ids ?cc))

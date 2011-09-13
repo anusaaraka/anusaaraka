@@ -166,6 +166,7 @@
  (declare (salience 100))
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
  (rel_name-sids conj_and|conj_or|conj_but  ?kriyA ?kriyA1)
+ (parser_id-cat_coarse ?kriyA1 verb);The City Palace was built by Maharaja Jai Singh II and is a synthesis of Mughal and Rajasthani architecture.
  (not (rel_name-sids cop  ?kriyA ?v))
  (not (rel_name-sids nsubj  ?kriyA1 ?s))
  =>
@@ -177,6 +178,25 @@
  )
  ; Ex. He may drink milk or eat apples .
  ;------------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (07-09-11) Suggested by Sukhada
+ (defrule nsubj_conj_1
+ (declare (salience 100))
+ (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
+ (rel_name-sids conj_and|conj_or|conj_but  ?kriyA ?kriyA1)
+ (rel_name-sids cop ?kriyA1 ?s1)
+ (not (rel_name-sids cop  ?kriyA ?v))
+ (not (rel_name-sids nsubj  ?kriyA1 ?s))
+ =>
+ (assert (found_kriyA-sub_rel ?s1))
+ (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?s1"        "?sub")"crlf)
+ (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?kriyA"        "?sub")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj_conj    kriyA-subject      "?s1"        "?sub")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj_conj    kriyA-subject      "?kriyA"        "?sub")"crlf)
+ )
+ ; Ex. The City Palace was built by Maharaja Jai Singh II and is a synthesis of Mughal and Rajasthani architecture.
+ ;------------------------------------------------------------------------------------------------------------------------
+ 
+
  (defrule dobj_as_well_as
  (declare (salience 900))
  (rel_name-sids conj_and|conj_or  ?ob ?ob1)
@@ -800,15 +820,6 @@ else
  ))
  ;Ex. Buyers stepped in to the futures pit.
  ;------------------------------------------------------------------------------------------------------------------------
-;-6     (rel_name-sids conj_or P11 P14)
-;-8     (rel_name-sids prep_such_as P7 P11)
-;-16    (basic_rel_name-sids mwe P9 P8)
-;-17    (basic_rel_name-sids prep P7 P9)
-;-18    (basic_rel_name-sids pobj P9 P11)
-;rel_name-sids  prep_such_as  P7  P12)
-;rel_name-sids  prep_such_as P7  P11)
-;rel_name-sids  prep_such_as P7  P14)
-
  (defrule duble_prep_conj
  (declare (salience 220))
  (basic_rel_name-sids prep  ?kri ?p)
