@@ -44,29 +44,6 @@
         )
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-;In Kashmir, fishing is a good business and the ideal season is from April to October. Added by Sukhada (12-9-11)
-(defrule from_to_PPs
-(declare (salience 1450))
-?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1 ?PP1 ?PP2 $?d2)
-(Head-Level-Mother-Daughters from ? ?PP1 $?d3)
-(Head-Level-Mother-Daughters to ? ?PP2 $?d4)
-(Node-Category  ?PP1    PP)
-(Node-Category  ?PP2    PP)
-(not (Mother  ?PP1))
-=>
-        (bind ?*count* (+ ?*count* 1))
-        (retract ?f)
-	(bind ?FromToPP (explode$ (str-cat FromToPP "c" ?*count* )))
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1  ?FromToPP $?d2))
-	(assert (Head-Level-Mother-Daughters from ?lvl ?FromToPP ?PP1 ?PP2 ))
-	(assert (Node-Category ?FromToPP FromToPP))
-	(assert (Mother  ?PP1))
-        (printout ?*order_debug-file* "(rule_name - from_to_PPs  " ?*count* " " crlf
-                          "             Before    - "?head" "?lvl"  "?Mot"  "(implode$ $?d1)" "?PP1" "?PP2" "(implode$ $?d2) crlf
-                          "             After     - "?head" "?lvl"  "?Mot"  "(implode$ $?d1)" "?FromToPP" "(implode$ $?d2)")" crlf)
-)
-
-;-----------------------------------------------------------------------------------------------------------------------
 ; Mysore is also known as the city of palaces.
 ; Added by Shirisha Manju (12-08-11) Suggested by Sukhada
 ;If VP > ADVP VP1 and VP1 > x y z then this rule modifies VP as VP > ADVP xyz and removes the node VP1.
@@ -131,6 +108,7 @@
 (Head-Level-Mother-Daughters ?word ? ?VP ?verb)
 (Node-Category  ?Mot  VP)
 (Node-Category  ?VP  VP)
+(parserid-wordid ?p_id ?id)
 (or (id-original_word ?id ?word)(id-root ?id ?word))
 (id-cat_coarse ?id verb)
 (not (Mother  ?Mot))
@@ -214,6 +192,8 @@
 (declare (salience 940))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d1 ?d $?rest)
 (Node-Category  ?Mot  VP)
+(parserid-wordid ?p_obj1 ?obj1)
+(parserid-wordid ?p_obj2 ?obj2)
 (or (id-original_word ?kri ?head)(id-root ?kri ?head)) ;I gave Rama a book.The fact that he smiled at me gives me hope.
 (and (kriyA-object_2 ?kri ?obj2)  (kriyA-object_1 ?kri ?obj1))
 (or (id-original_word ?obj2 ?wrd)(id-root ?obj2 ?wrd))
@@ -296,9 +276,10 @@
 (defrule rev_ADJP_goesto_RB
 (declare (salience 900))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d $?dt)
-(Head-Level-Mother-Daughters ? ? ?d ?id)
+(Head-Level-Mother-Daughters ? ? ?d ?p_id)
 (Node-Category  ?Mot  ADJP)
 (Node-Category  ?d  RB)
+(parserid-wordid ?p_id ?id)
 (id-original_word ?id not)
 (not (Mother  ?Mot))
 =>       
@@ -323,7 +304,7 @@
 (Node-Category ?sq  SQ|S)
 (Node-Category ?vp VP)
 (not (Mother  ?Mot))
-(not (viSeRya-jo_samAnAXikaraNa ? ?x));Added by Sukhada(9.8.11). Ex. I will show you the house which I bought. Phil gave me a sweater which he bought in Paris. 
+(not (viSeRya-jo_samAnAXikaraNa ? ?));Added by Sukhada(9.8.11). Ex. I will show you the house which I bought. Phil gave me a sweater which he bought in Paris. 
 =>
 	(bind ?*count* (+ ?*count* 1))
         (retract ?f0 ?f1)
@@ -383,25 +364,30 @@
 ; He never really recovered from the shock of his wife's death. 
 (defrule move_negation_before_verb
 (declare (salience 900))
-?f0<-(Head-Level-Mother-Daughters ?head ?lvl $?d ?ADVP $?d1 ?VP)
-?f1<-(Head-Level-Mother-Daughters ?h ?l ?VP $?d2 ?V)
+;?f0<-(Head-Level-Mother-Daughters ?head ?lvl $?d ?ADVP $?d1 ?VP)
+;?f1<-(Head-Level-Mother-Daughters ?h ?l ?VP $?d2 ?V)
+;(Head-Level-Mother-Daughters never ? ?ADVP $?)
+?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d ?ADVP $?d1) 
 (Head-Level-Mother-Daughters never ? ?ADVP $?)
+(Head-Level-Mother-Daughters ?h ?l ?mot $?d2 ?Mot $?d3 ?VP)
+?f1<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VP $?d4 ?V $?d5)
 (Node-Category ?VP VP)
 (Node-Category ?ADVP ADVP)
-(or (Node-Category ?V VBD)(id-cat_coarse ?V verb));Ol -- for the above sentence only
+;(parserid-wordid  ?V ?V_id)
+(or (and (Node-Category ?V VBD) (Parser_used Stanford-Parser))(and (id-cat_coarse ?V_id verb)(Parser_used Open-Logos-Parser)(parserid-wordid  ?V ?V_id)));Ol -- for the above sentence only
 (not (Mother  ?ADVP))
 =>
 	(bind ?*count* (+ ?*count* 1))
         (retract ?f0 ?f1)
-        (assert (Head-Level-Mother-Daughters ?head ?lvl $?d $?d1 ?VP))
-	(assert (Head-Level-Mother-Daughters ?h ?l ?VP $?d2 ?ADVP ?V))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d $?d1))
+	(assert (Head-Level-Mother-Daughters ?h1 ?l1 ?VP $?d4 ?ADVP ?V $?d5))
         (assert (Mother  ?ADVP))
 	(assert (Mother ?VP))
         (printout ?*order_debug-file* "(rule_name - move_negation_before_verb " ?*count* crlf
                          "              Before    - "?head" "?lvl" "(implode$ $?d)" "?ADVP" "(implode$ $?d1)" "?VP crlf
                          "              After     - "?head" "?lvl" "(implode$ $?d)" "(implode$ $?d1)" "?VP")" crlf crlf)
 	(printout ?*order_debug-file* "(rule_name - move_negation_before_verb " ?*count* crlf
-                         "              Before    - "?h" "?l" "?VP" "(implode$ $?d2)" "?V crlf
+                        "              Before    - "?h" "?l" "?VP" "(implode$ $?d2)" "?V crlf
                          "              After     - "?h" "?l" "?VP" "(implode$ $?d2)" "?ADVP" "?VP")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
@@ -451,9 +437,10 @@
 (defrule prep_in_SBAR_rule
 (declare (salience 800))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?SBAR ?prep $?d)
-(Head-Level-Mother-Daughters ? ? ?prep ?id)
+(Head-Level-Mother-Daughters ? ? ?prep ?p_id)
 (Node-Category ?SBAR SBAR|PP)
 (Node-Category ?prep IN)
+(parserid-wordid  ?p_id ?id)
 (not (kriyA-conjunction  ? ?id));It was so dark that I could not see anything.
 (not (Mother  ?SBAR))
 (test (and (neq ?head that)(neq ?head because))); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy.
@@ -503,7 +490,8 @@
 (Node-Category  ?Mot SBAR)
 (Node-Category  ?dat ?DAT)
 (Head-Level-Mother-Daughters ? ? ?m ?samA)
-(subject-subject_samAnAXikaraNa ? ?samA)
+(parserid-wordid ?samA ?samA_id)
+(subject-subject_samAnAXikaraNa ? ?samA_id)
 =>
         (bind ?*count* (+ ?*count* 1))
         (retract ?f)
@@ -561,9 +549,25 @@
                 	 "              After     - "?head1" "?level" "?mother1" "(implode$ $?pre)" "(implode$ $?daughters)" "(implode$ $?post) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+
+(defrule map_parserid_to_wrdid
+;(declare (salience -80))
+(declare (salience 600))
+?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?p_id $?pos)
+(parserid-wordid ?p_id $?w_id)
+=>
+        (retract ?f1)
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?w_id $?pos))
+)
+
+
+
+
+;-----------------------------------------------------------------------------------------------------------------------
 ;This rule delete's all the SBAR from ROOT
 (defrule rmv_sbar_from_root
-(declare (salience -80))
+;(declare (salience -85))
+(declare (salience 550))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut)
 ?f1<-(Head-Level-Mother-Daughters ? ? ?dat $?child)
 (Node-Category  ?Mot ROOT)
@@ -578,9 +582,21 @@
                  (bind $?daut (delete-member$ $?daut ?id)))
 	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut))
 )
+
+
+;(defrule map_parserid_to_wrdid
+;;(declare (salience -80))
+;(declare (salience 600))
+;?f1<-(Sen $?pre ?p_id $?pos)
+;(parserid-wordid ?p_id $?w_id)
+;=>
+;        (retract ?f1)
+;        (assert (Sen $?pre $?w_id $?pos))
+;)
+
 ;-----------------------------------------------------------------------------------------------------------------------
 ;The Master said, if I did not go, how would you ever see? 
-(defrule create_sen
+(defrule create_sen_SBAR
 (declare (salience -90))
 ?f1<-(Head-Level-Mother-Daughters ? ? ?dat $?child)
 (Node-Category  ?dat SBAR|SBARQ)
@@ -593,29 +609,39 @@
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Here ROOT category is changed to SBAR
 (defrule rename_ROOT_cat_to_SBAR
-(declare (salience -99))
+;(declare (salience -99))
+(declare (salience 500))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut)
 ?f1<-(Node-Category  ?Mot ROOT)
 =>
 	(retract ?f1)
 	(assert (Sen $?daut))
-	(assert (Node-Category  ?Mot SBAR))
-	(assert (hindi_id_order))
+;	(assert (Node-Category  ?Mot SBAR))
 )
+
+
+(defrule assert_dummy_fact
+(declare (salience -100))
+=>
+  (assert (hindi_id_order))
+)
+
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule hin_order
-(declare (salience -100))
+(declare (salience -101))
+?f1<-(hindi_id_order $?dau)
 ?f0<-(Sen $?daughters ?id)
 (not (Sen $? ?id1&:(> ?id ?id1)))
-?f1<-(hindi_id_order $?dau)
 ;(test (eq (member$ ?id $?dau) FALSE))
 =>
 	(retract ?f0 ?f1)
 	(assert (hindi_id_order $?dau $?daughters ?id))
 )
+
+
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule print_for_debugging4
-(declare (salience -101))
+(declare (salience -102))
 ?f1<-(hindi_id_order $?dau)
 =>
 (bind ?*count* (+ ?*count* 1))

@@ -382,6 +382,8 @@
  (load-facts "root.dat")
  (load-facts "E_constituents_info.dat")
  (load-facts "Node_category.dat")
+ (load-facts "parserid_wordid_mapping.dat")
+ (load-facts "parser_type.dat")
  (open "hin_order_debug.dat" order_debug "a")
  (run)
  (save-facts "hindi_id_order.dat" local hindi_id_order)

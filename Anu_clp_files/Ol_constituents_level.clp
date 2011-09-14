@@ -158,9 +158,9 @@
     )
     (retract ?f1)             ; Retract current fact insert new with updated phrase and grouping information.
     (assert (Head-Level-Mother-Daughters ?word ?lev  ?ph $?pre ?phrase $?post))  ;3rd level fact get modified.
-    (printout t "2(Head-Level-Mother-Daughters  " ?word " "?lev  "  "?ph "  "$?pre "  "?phrase "  "$?post")")
+    (printout t "(Head-Level-Mother-Daughters  " ?word " "?lev  "  "?ph "  "$?pre "  "?phrase "  "$?post")")
     (assert (Head-Level-Mother-Daughters ?wrd 2 ?phrase $?comlist))                 ;2nd level fact get inserted.
-    (printout t "2(Head-Level-Mother-Daughters  " ?wrd  " 2  " ?phrase "  "$?comlist")")
+    (printout t "(Head-Level-Mother-Daughters  " ?wrd  " 2  " ?phrase "  "$?comlist")")
 
  )
 )
@@ -246,16 +246,16 @@
         (assert (Head-Level-Mother-Daughters ?wrd ?lev ?phrase $?daut1))
 )
 ;-------------------------------------------------------------------------------------------------------------------------
-(defrule convert_res_anuid
-(declare (salience 25))
-?f<-(Head-Level-Mother-Daughters ?wrd ?lev ?phrase $?pre ?rid $?post )
-(parserid-wordid	?rid    $?anuid)
-(test (neq ?anuid 0))
-=>
-(retract ?f )
-(assert (Head-Level-Mother-Daughters ?wrd ?lev ?phrase $?pre $?anuid $?post))
-(printout t " "$?pre " "?anuid " "$?post crlf)
-)
+;(defrule convert_res_anuid
+;(declare (salience 25))
+;?f<-(Head-Level-Mother-Daughters ?wrd ?lev ?phrase $?pre ?rid $?post )
+;(parserid-wordid	?rid    $?anuid)
+;(test (neq ?anuid 0))
+;=>
+;(retract ?f )
+;(assert (Head-Level-Mother-Daughters ?wrd ?lev ?phrase $?pre $?anuid $?post))
+;(printout t " "$?pre " "?anuid " "$?post crlf)
+;)
 ;-------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (30-08-11)
 ;Be careful, she said.
@@ -294,6 +294,11 @@
 =>
 (retract  ?f)
 (printout  ?*const_fp*  "(Head-Level-Mother-Daughters  "?wrd "  "?lev "  "?phrase "	"(implode$ $?daughters) ")" crlf)
+; (printout  ?*const_fp*  "(Head-Level-Mother-Daughters  "?wrd "  "?lev "  "?phrase "    ")
+; (bind ?len (length $?daughters))
+; (loop-for-count (?i  1 ?len)
+;                 (bind ?j (nth$ ?i $?daughters)) 
+; 		 (printout  ?*const_fp*  " " (string_to_integer ?j)))
 )
 ;-------------------------------------------------------------------------------------------------------------------------
 (defrule close_file

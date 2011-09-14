@@ -51,7 +51,7 @@
  (test (= (string_to_integer ?rnode) ?rid))
  ?f4<-(parser_numeric_id-word =(+ (string_to_integer ?rnode) 1) ?word&'s)
   =>
-	(retract ?f2 ?f3 ?f4)
+	(retract ?f2 ?f3 ?f4 ?f2)
         (printout ?*nid_wrd_fp*  "(parser_numid-word-remark  " ?rid "  "?wrd1 ?word "  " ?word")" crlf)
         (printout ?*l_wrd_fp* "(parserid-word  "?rnode ?word" "?wrd1 ?word ")" crlf)
         (printout ?*l_cat_fp* "(id-sd_cat  "?rnode ?word" "?c ")" crlf)
@@ -130,6 +130,28 @@
         (retract ?f0)
         (printout ?*l_rel_fp* "(rel_name-sids  " ?lname "   "?lnode "  "?rnode")" crlf)
  )
+ ;-------------------------------------------------------------------------------------------------------------------
+ (defrule map_cons
+ ?f<-(Head-Level-Mother-Daughters 's ?lvl ?Mot $?pre ?NN ?POS $?post)
+ ?f1<-(Head-Level-Mother-Daughters ?h ?lvl1 ?NN ?noun)
+ ?f2<-(Head-Level-Mother-Daughters 's ?lvl1 ?POS ?child)
+ (Node-Category	?POS	POS|P_COM|P_DOT|P_QES|P_DQ|P_DQT)
+  =>
+  	(retract ?f ?f1 ?f2)
+  	(assert (Head-Level-Mother-Daughters 's ?lvl ?Mot $?pre ?NN $?post))
+        (bind ?noun (explode$ (str-cat ?noun 's)))
+        (assert (Head-Level-Mother-Daughters ?h ?lvl1 ?NN ?noun))
+ )
+ 
+ (defrule map_cons1
+ ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre ?PUNC $?post)
+ ?f1<-(Head-Level-Mother-Daughters ?h2 ?lvl1 ?PUNC ?child)
+ (Node-Category ?PUNC    P_COM|P_DOT|P_QES|P_DQ|P_DQT)
+  =>
+        (retract ?f ?f1)
+        (assert (Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre $?post))
+ )
+
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule end
  (declare (salience -50))

@@ -2,18 +2,24 @@
 (defglobal ?*node_fp1_file* = node_fp1)
 (defglobal ?*count* = 0)
 
+(deffunction string_to_integer (?parser_id)
+; Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
+ (string-to-field (sub-string 2 10000 ?parser_id)))
+
+
 ; Anne told me I would almost certainly be hired. 
 (defrule make_aux
 (declare (salience 50))
-?f0<-(Head-Level-Mother-Daughters  ?head  ?l  ?VP	$?v ?id $?v1)
-?f1<-(Res_id-WC-Word-Anu_id 	?  12	?w&~to ?id)
+?f0<-(Head-Level-Mother-Daughters  ?head  ?l  ?VP	$?v ?pid $?v1)
+?f1<-(Res_id-WC-Word-Anu_id 	?pid1  12	?w&~to ?id)
+(test (eq (string_to_integer ?pid) ?pid1))
 (not (Node-Category  ?VP MD))
 =>
 	(retract ?f0 ?f1)
 	(bind ?*count* (+ ?*count* 1))
         (bind ?md (explode$ (str-cat MDc ?*count*)))	
 	(assert (Head-Level-Mother-Daughters  ?head  ?l  ?VP ?md $?v $?v1))
-	(assert (Head-Level-Mother-Daughters  ?w ?l ?md ?id))
+	(assert (Head-Level-Mother-Daughters  ?w ?l ?md ?pid))
 	(assert (Node-Category ?md MD))
 )	
 ;-----------------------------------------------------------------------------------------------------------------
@@ -26,11 +32,13 @@
 (Node-Category ?CC1 CC)
 ?f1<-(Head-Level-Mother-Daughters ? ? ?X $? ?xid)
 (Head-Level-Mother-Daughters ? ? ?Y ?yid $?)
-(test (and (eq (numberp ?xid) TRUE)(eq (numberp ?yid) TRUE)))
+;(test (and (eq (numberp  (string_to_integer ?xid)) TRUE)(eq (numberp  (string_to_integer ?yid)) TRUE)))
+(not (Node-Category   ?xid ?))
+(not (Node-Category   ?yid ?))
 (not (id_got_ordered ?xid))
 =>
 	(assert (ordered_relative_clause))
-	(if (eq (+ ?xid 1) ?yid) then
+	(if (eq (+ (string_to_integer ?xid) 1) (string_to_integer ?yid)) then
 		(retract ?f0)
 		(assert (Head-Level-Mother-Daughters  Sen  3  S1 ?X  ?Y  $?d ?CC $?d1 ?CC1))
 		(assert (id_got_ordered ?xid))
@@ -45,11 +53,13 @@
 ?f1<-(Head-Level-Mother-Daughters ? ? ?X $? ?xid)
 (Head-Level-Mother-Daughters ? ? ?y ?yid $?)
 (not (id_got_ordered ?xid))
-(test (and (eq (numberp ?xid) TRUE)(eq (numberp ?yid) TRUE))) ;He heard the sound of rain from the kitchen.
+(not (Node-Category   ?xid ?))
+(not (Node-Category   ?yid ?))
+;(test (and (eq (numberp (string_to_integer ?xid)) TRUE)(eq (numberp (string_to_integer ?yid)) TRUE))) ;He heard the sound of rain from the kitchen.
 (not (ordered_relative_clause))
 (not (ordered_switch))
 =>
-	(if (eq (+ ?xid 1) ?yid) then
+	(if (eq (+ (string_to_integer ?xid) 1) (string_to_integer ?yid)) then
 		(retract ?f0)
 		(assert (Head-Level-Mother-Daughters  Sen  ?l  ?S $?d ?X  ?y $?d1 $?d2))
 		(assert (id_got_ordered ?xid))
@@ -64,11 +74,13 @@
 ?f1<-(Head-Level-Mother-Daughters ? ? ?Y ?Y1 $?)
 (Head-Level-Mother-Daughters ? ? ?Y1 $? ?yid $?ids)
 (not (id_got_ordered ?yid))
-(test (and (eq (numberp ?xid) TRUE)(eq (numberp ?yid) TRUE))) 
+(not (Node-Category   ?xid ?))
+(not (Node-Category   ?yid ?))
+;(test (and (eq (numberp  (string_to_integer ?xid)) TRUE)(eq (numberp  (string_to_integer ?yid)) TRUE))) 
 (not (ordered_relative_clause))
 (not (ordered_switch))
 =>
-        (if (> ?xid ?yid) then
+        (if (> (string_to_integer  ?xid) (string_to_integer ?yid)) then
                 (retract ?f0)
                 (assert (Head-Level-Mother-Daughters  Sen  ?l  ?S $?d ?Y  ?X $?d1 $?d2))
 		(assert (id_got_ordered ?yid))
@@ -82,13 +94,15 @@
 ?f0<-(Head-Level-Mother-Daughters  Sen  ?l  ?S $?d ?X $?d1 ?Y $?d2)
 ?f2<-(Head-Level-Mother-Daughters ? ? ?X ?xid $? )
 (Head-Level-Mother-Daughters ? ? ?Y $?ids ?yid)
+(not (Node-Category   ?xid ?))
+(not (Node-Category   ?yid ?))
 (not (id_got_ordered ?yid))
 (not (id_got_ordered ?xid))
-(test (and (eq (numberp ?xid) TRUE)(eq (numberp ?yid) TRUE)))
+;(test (and (eq (numberp (string_to_integer ?xid)) TRUE)(eq (numberp (string_to_integer ?yid)) TRUE)))
 (not (ordered_relative_clause))
 (not (ordered_switch))
 =>
-        (if (eq (- ?xid 1) ?yid) then
+        (if (eq (- (string_to_integer ?xid) 1) (string_to_integer ?yid)) then
                 (retract ?f0)
                 (assert (Head-Level-Mother-Daughters  Sen  ?l  ?S $?d ?Y  ?X $?d1 $?d2))
                 (assert (id_got_ordered ?yid))
@@ -103,11 +117,13 @@
  (Head-Level-Mother-Daughters ?h ?l ?X $? ?xid $?)
 ?f1<-(Head-Level-Mother-Daughters Sen 3 Sc11 $?s ?VP)
 (Head-Level-Mother-Daughters ? ? ?VP ?yid $?ids)
-(test (and (eq (numberp ?xid) TRUE)(eq (numberp ?yid) TRUE)))
+(not (Node-Category   ?xid ?))
+(not (Node-Category   ?yid ?))
+;(test (and (eq (numberp (string_to_integer ?xid)) TRUE)(eq (numberp (string_to_integer ?yid)) TRUE)))
 (not (ordered_relative_clause))
 (not (ordered_switch))
 =>
-	(if (> ?xid ?yid) then
+	(if (> (string_to_integer ?xid) (string_to_integer ?yid)) then
 		(retract ?f0 ?f1)
 		(assert (Head-Level-Mother-Daughters Sen 3 Sc11 $?s))
 		(assert (Head-Level-Mother-Daughters  Sen  3  Sc1 $?d ?X ?VP $?d1))
@@ -224,6 +240,7 @@
         (assert (Head-Level-Mother-Daughters  ?w  ?l1 ?VP $?da $?d1))
 	(assert (Mother ?VP))
 )
+
 ;-----------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (23-08-11)
 ;He told me why he was here and what he was doing.
@@ -273,17 +290,19 @@
 (declare (salience 13))
 ?f1<-(Head-Level-Mother-Daughters ?head ?level ?m $?c ?VP)
 (Node-Category ?VP VP)
-?f0<-(Head-Level-Mother-Daughters  ?w1  ?l  ?VP ?id $?d)
-(test (eq (numberp ?id) TRUE))
+?f0<-(Head-Level-Mother-Daughters  ?w1  ?l  ?VP ?pid $?d)
+(test (eq (numberp (string_to_integer ?pid)) TRUE))
+;(test (eq (string_to_integer ?id) 12))
 (tran-word-wc-typ-form-h_id-comp  ?l    ?w1    2    ? 28|38    $?)
-(Res_id-WC-Word-Anu_id ? 12 to ?id)
+(Res_id-WC-Word-Anu_id ?id1 12 to ?id)
+(test (eq (string_to_integer ?pid) ?id1))
 =>
         (retract ?f0 )
         (bind ?*count* (+ ?*count* 1))
         (bind ?TO (explode$ (str-cat TO "c" ?*count*)))
         (bind ?vp (explode$ (str-cat VP "c" ?*count*)))
 	(assert (Head-Level-Mother-Daughters ?w1  ?l  ?VP  ?TO ?vp))
-	(assert (Head-Level-Mother-Daughters to ?l ?TO ?id))
+	(assert (Head-Level-Mother-Daughters to ?l ?TO ?pid))
 	(assert (Head-Level-Mother-Daughters ?w1 ?l ?vp $?d))
 	(assert (Node-Category ?TO TO))
 	(assert (Node-Category ?vp VP))
@@ -313,11 +332,14 @@
 (defrule make_S_for_causitive
 (declare (salience 12))
 ?f2<-(Head-Level-Mother-Daughters ?h ?l ?VP ?id $?npd ?VP1)
-(test (eq (numberp ?id) TRUE))
+(test (eq (numberp (string_to_integer ?id)) TRUE))
 (Node-Category ?VP VP)
 (Node-Category ?VP1 VP)
 ?f1<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VP1 ?v1 $?)
-(kriyA-prayojya_karwA  ?v1 ?p)
+(Res_id-WC-Word-Anu_id  ?v  ? ?  ?v1_id)
+(test (eq (string_to_integer ?v1) ?v))
+(Res_id-WC-Word-Anu_id  ?p ? ?  ?p_id)
+(kriyA-prayojya_karwA  ?v1_id ?p_id)
 =>
         (retract ?f2)
         (bind ?*count* (+ ?*count* 1))
@@ -333,8 +355,10 @@
 (declare (salience 12))
 ?f0<-(Head-Level-Mother-Daughters  ?h ?l  ?ADJP  $?d ?id $?d1)
 (Node-Category ?ADJP ADJP)
-(test (eq (numberp ?id) TRUE))
-(Res_id-WC-Word-Anu_id  ?  ? than  ?id)
+(test (eq (numberp (string_to_integer ?id)) TRUE))
+;(Res_id-WC-Word-Anu_id  ?  ? than  ?id)
+(Res_id-WC-Word-Anu_id  ?id0  ? than  ?)
+(test (eq (string_to_integer ?id) ?id0))
 =>
 	(retract ?f0)
 	(bind ?*count* (+ ?*count* 1))
@@ -351,7 +375,9 @@
 ?f0<-(Head-Level-Mother-Daughters ?head ?l ?VP $?v ?NP)
 ?f1<-(Head-Level-Mother-Daughters ?h ?l ?NP $?d ?id $?d1)
 (tran-word-wc-typ-form-h_id-comp ?l ?h 1 ? 43 $?)
-?f2<-(Res_id-WC-Word-Anu_id ? ? than ?id)
+;?f2<-(Res_id-WC-Word-Anu_id ? ? than ?id)
+?f2<-(Res_id-WC-Word-Anu_id ?id0&:(string_to_integer ?id) ? than ?)
+(test (eq (string_to_integer ?id) ?id0))
 =>
 	(retract ?f0 ?f1 ?f2)
         (bind ?*count* (+ ?*count* 1))
@@ -371,8 +397,10 @@
 ; He has been frequently coming. Our team was easily beaten in the competition.
 (defrule make_ADVP
 (declare (salience 10))
-?f0<-(Head-Level-Mother-Daughters  ?head ?l  ?VP  $?pre ?id $?d)
-?f1<-(Res_id-WC-Word-Anu_id 	?pid 3|6	?w  ?id)
+;?f0<-(Head-Level-Mother-Daughters  ?head ?l  ?VP  $?pre ?id $?d)
+?f0<-(Head-Level-Mother-Daughters  ?head ?l  ?VP  $?pre ?pid $?d)
+?f1<-(Res_id-WC-Word-Anu_id 	?pid0 3|6	?w  ?id)
+(test (eq (string_to_integer ?pid) ?pid0))
 (test (neq ?head how))
 (not (Node-Category ?VP ADVP))
 =>
@@ -380,7 +408,7 @@
 	(bind ?*count* (+ ?*count* 1))
 	(bind ?phrase (explode$ (str-cat ADVP "c" ?*count* ))) ;There is a dog and a cat here.
 	(assert (Head-Level-Mother-Daughters	?head ?l  ?VP $?pre  ?phrase $?d))
-	(assert (Head-Level-Mother-Daughters  ?w  ?l ?phrase ?id))
+	(assert (Head-Level-Mother-Daughters  ?w  ?l ?phrase ?pid))
 	(assert (Node-Category ?phrase ADVP))
 )
 ;-----------------------------------------------------------------------------------------------------------------
@@ -389,14 +417,17 @@
 (defrule make_ADVP1
 (declare (salience 11))
 ?f2<-(Head-Level-Mother-Daughters ?h ?l1  ?VP	$?d ?NP)
-?f0<-(Head-Level-Mother-Daughters  ?head ?l  ?NP        ?id)
-?f1<-(Res_id-WC-Word-Anu_id     ?pid 3|6        ?w  ?id)
+;?f0<-(Head-Level-Mother-Daughters  ?head ?l  ?NP        ?id)
+?f0<-(Head-Level-Mother-Daughters  ?head ?l  ?NP        ?pid)
+?f1<-(Res_id-WC-Word-Anu_id     ?pid0 3|6        ?w  ?id)
+(test (eq (string_to_integer ?pid) ?pid0))
 =>
         (retract ?f0 ?f1 ?f2)
         (bind ?*count* (+ ?*count* 1))
         (bind ?phrase (explode$ (str-cat ADVP "c" ?*count* )))
         (assert (Head-Level-Mother-Daughters    ?h ?l ?VP  $?d ?phrase))
-	(assert (Head-Level-Mother-Daughters  ?w  ?l ?phrase ?id))
+;	(assert (Head-Level-Mother-Daughters  ?w  ?l ?phrase ?id))
+	(assert (Head-Level-Mother-Daughters  ?w  ?l ?phrase ?pid))
         (assert (Node-Category ?phrase ADVP))
 )
 ;----------------------------------------------------------------------------------------------------------------
@@ -424,32 +455,40 @@
 (declare (salience 10))
 ?f0<-(Head-Level-Mother-Daughters  ?h  ?l  ?mot	$?d  ?ADVP ?ADJP $?d1)
 ?f2<-(Head-Level-Mother-Daughters  ?  ?  ?ADVP   ?id )
-(test (eq (numberp ?id) TRUE))
-?f1<-(Head-Level-Mother-Daughters  ?h1  ?l1  ?ADJP	=(+ ?id 1)  $?c)
+(test (eq (numberp (string_to_integer ?id)) TRUE))
+?f1<-(Head-Level-Mother-Daughters  ?h1  ?l1  ?ADJP ?id1  $?c)
+(test (eq (numberp (string_to_integer ?id1)) TRUE))
+(test (= (string_to_integer ?id1) (+ (string_to_integer ?id) 1)))
 (Node-Category ?ADJP ADJP)
 (Node-Category ?ADVP ADVP)
 =>
 	(retract ?f0 ?f1 ?f2)
 	(assert (Head-Level-Mother-Daughters ?h ?l ?mot $?d ?ADJP $?d1))
-	(assert (Head-Level-Mother-Daughters ?h1 ?l1 ?ADJP ?id =(+ ?id 1)  $?c))
+	;(assert (Head-Level-Mother-Daughters ?h1 ?l1 ?ADJP ?id =(+ ?id 1)  $?c))
+	(assert (Head-Level-Mother-Daughters ?h1 ?l1 ?ADJP ?id ?id1  $?c))
 )
 ;----------------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju (16-08-11)
  ;All our sisters are coming. All his books are good.
  (defrule make_PDT
  (declare (salience 10))
- ?f0<-(Head-Level-Mother-Daughters  ?head ?l  ?NP ?id ?id1 $?d)
+ ;?f0<-(Head-Level-Mother-Daughters  ?head ?l  ?NP ?id ?id1 $?d)
+ ?f0<-(Head-Level-Mother-Daughters  ?head ?l  ?NP ?pid ?pid1 $?d)
  (Node-Category ?NP NP)
- ?f1<-(Res_id-WC-Word-Anu_id   ?pid 15  ?w&all|both  ?id) 
- ?f2<-(Res_id-WC-Word-Anu_id   ?pid1 15  ?wrd&his|her|my|your|our|its|their  ?id1)
+ ?f1<-(Res_id-WC-Word-Anu_id   ?pid0 15  ?w&all|both  ?id) 
+ (test (eq (string_to_integer ?pid) ?pid0))
+ ?f2<-(Res_id-WC-Word-Anu_id   ?pid10 15  ?wrd&his|her|my|your|our|its|their  ?id1)
+ (test (eq (string_to_integer ?pid1) ?pid10))
  =>
 	(retract ?f0 ?f1 ?f2)
         (bind ?*count* (+ ?*count* 1))
 	(bind ?phrase (explode$ (str-cat PDT "c" ?*count* )))
 	(bind ?phrase1 (explode$ (str-cat PRP$ "c" ?*count* )))
 	(assert (Head-Level-Mother-Daughters  ?head ?l  ?NP  ?phrase  ?phrase1 $?d))
-        (assert (Head-Level-Mother-Daughters  ?w  ?l ?phrase ?id))
-	(assert (Head-Level-Mother-Daughters  ?wrd  ?l ?phrase1 ?id1))
+        ;(assert (Head-Level-Mother-Daughters  ?w  ?l ?phrase ?id))
+        (assert (Head-Level-Mother-Daughters  ?w  ?l ?phrase ?pid))
+	;(assert (Head-Level-Mother-Daughters  ?wrd  ?l ?phrase1 ?id1))
+	(assert (Head-Level-Mother-Daughters  ?wrd  ?l ?phrase1 ?pid1))
         (assert (Node-Category ?phrase PDT))
 	(assert (Node-Category ?phrase1 PRP$))
  )
@@ -458,9 +497,11 @@
  ; Both of her parents are from India.
  (defrule make_PP
  (declare (salience 10))
- ?f0<-(Head-Level-Mother-Daughters  ?head ?l  ?NP $?ids ?id $?d)
+ ;?f0<-(Head-Level-Mother-Daughters  ?head ?l  ?NP $?ids ?id $?d)
+ ?f0<-(Head-Level-Mother-Daughters  ?head ?l  ?NP $?ids ?pid $?d)
  (Node-Category ?NP NP)
- ?f1<-(Res_id-WC-Word-Anu_id   ?pid ?wc&11|13  ?w  ?id)
+ ?f1<-(Res_id-WC-Word-Anu_id   ?pid0 ?wc&11|13  ?w  ?id)
+ (test (eq (string_to_integer ?pid) ?pid0))
  (test (neq (length $?ids) 0))
  =>
 	(retract ?f0 ?f1)
@@ -469,7 +510,8 @@
 	(bind ?phrase1 (explode$ (str-cat NP "c" ?*count*)))
 	(bind ?phrase2 (explode$ (str-cat NP "c1" ?*count*)))
 	(assert (Head-Level-Mother-Daughters  ?head ?l  ?NP  ?phrase1 ?phrase ))
-        (assert (Head-Level-Mother-Daughters  ?w  ?l ?phrase ?id ?phrase2))
+        ;(assert (Head-Level-Mother-Daughters  ?w  ?l ?phrase ?id ?phrase2))
+        (assert (Head-Level-Mother-Daughters  ?w  ?l ?phrase ?pid ?phrase2))
 	(assert (Head-Level-Mother-Daughters  ?head ?l ?phrase2  $?d))
 	(assert (Head-Level-Mother-Daughters  ?head ?l ?phrase1  $?ids))
 	(assert (Node-Category ?phrase PP))
@@ -482,8 +524,10 @@
  (defrule make_PP1
  (declare (salience 10))
  ?f0<-(Head-Level-Mother-Daughters  ?head ?l  ?mot $?d ?CC ?VP $?d1)
- ?f2<-(Head-Level-Mother-Daughters  ?prep ?  ?CC	?id)
- (Res_id-WC-Word-Anu_id ?pid 11|13  ?prep ?id)
+ ;?f2<-(Head-Level-Mother-Daughters  ?prep ?  ?CC	?id)
+ ?f2<-(Head-Level-Mother-Daughters  ?prep ?  ?CC	?pid)
+ (Res_id-WC-Word-Anu_id ?pid0 11|13  ?prep ?id)
+ (test (eq (string_to_integer ?pid) ?pid0))
  ?f1<-(tran-word-wc-typ-form-h_id-comp  ?l1    ?prep    20   ?   19   $?)
  (Head-Level-Mother-Daughters  ?w ?l1 ?VP $?)
  =>
@@ -492,7 +536,8 @@
         (bind ?pp (explode$ (str-cat PPc ?*count* )))
         (bind ?s (explode$ (str-cat Sc ?*count*)))
         (assert (Head-Level-Mother-Daughters  ?head ?l  ?mot  $?d ?pp))
-        (assert (Head-Level-Mother-Daughters  ?prep  ?l ?pp ?id  ?s))
+        ;(assert (Head-Level-Mother-Daughters  ?prep  ?l ?pp ?id  ?s))
+        (assert (Head-Level-Mother-Daughters  ?prep  ?l ?pp ?pid  ?s))
         (assert (Head-Level-Mother-Daughters  ?w ?l1 ?s ?VP $?d1))
         (assert (Node-Category ?pp PP))
         (assert (Node-Category ?s S))
@@ -502,15 +547,18 @@
 ;She is even more intelligent than her sister.
 (defrule make_NP
 (declare (salience 9))
-?f0<-(Head-Level-Mother-Daughters  ?h ?l  ?PP   ?id $?d)
+;?f0<-(Head-Level-Mother-Daughters  ?h ?l  ?PP   ?id $?d)
+?f0<-(Head-Level-Mother-Daughters  ?h ?l  ?PP   ?pid $?d)
 (Node-Category ?PP PP)
-(test (eq (numberp ?id) TRUE))
-?f1<-(Res_id-WC-Word-Anu_id   ?pid 19  ?w  ?id)
+(test (eq (numberp (string_to_integer ?pid)) TRUE))
+?f1<-(Res_id-WC-Word-Anu_id   ?pid0 19  ?w  ?id)
+ (test (eq (string_to_integer ?pid) ?pid0))
 =>
 	(retract ?f0 ?f1)
         (bind ?*count* (+ ?*count* 1))	
 	(bind ?np (explode$ (str-cat NP "c" ?*count*)))
-	(assert (Head-Level-Mother-Daughters  ?h ?l  ?PP ?id ?np))
+	;(assert (Head-Level-Mother-Daughters  ?h ?l  ?PP ?id ?np))
+	(assert (Head-Level-Mother-Daughters  ?h ?l  ?PP ?pid ?np))
 	(assert (Head-Level-Mother-Daughters  ?h ?l  ?np $?d))
 	(assert (Node-Category ?np NP))
 )
@@ -520,11 +568,14 @@
 (defrule make_WHNP
 (declare (salience 10))
 ?f1<-(Head-Level-Mother-Daughters  Sen  ?l1 $?c  ?Mot  $?c1 ?vp)
-?f0<-(Head-Level-Mother-Daughters  ?h ?l  ?Mot  $?d ?id $?d1)
+;?f0<-(Head-Level-Mother-Daughters  ?h ?l  ?Mot  $?d ?id $?d1)
+?f0<-(Head-Level-Mother-Daughters  ?h ?l  ?Mot  $?d ?pid $?d1)
 (Node-Category ?Mot CC)
 (Node-Category ?vp VP)
-(Res_id-WC-Word-Anu_id   ?pid ?wc  $?words  $?ids)
-(test (and (member$ ?id $?ids)(member$  how $?words)))
+(Res_id-WC-Word-Anu_id   ?pid0 ?wc  $?words  $?ids)
+(test (eq (string_to_integer ?pid) ?pid0))
+;(test (and (member$ ?id $?ids)(member$  how $?words)))
+(test (member$  how $?words))
 =>
 	(retract ?f0 ?f1)
 	(bind ?*count* (+ ?*count* 1))
@@ -533,8 +584,9 @@
 	(bind ?S (explode$ (str-cat S "c" ?*count* )))
 	(assert (Head-Level-Mother-Daughters Sen ?l1 $?c ?sbar $?c1))
 	(assert (Head-Level-Mother-Daughters ?h ?l ?sbar ?whnp ?S ))
-	(assert (Head-Level-Mother-Daughters how ?l ?whnp ?id))
-	(assert (Head-Level-Mother-Daughters ?h ?l ?S $?d1 ?vp))
+	;(assert (Head-Level-Mother-Daughters how ?l ?whnp ?id))
+	(assert (Head-Level-Mother-Daughters how ?l ?whnp $?d ?pid $?d1))
+	(assert (Head-Level-Mother-Daughters ?h ?l ?S ?vp))
 	(assert (Node-Category ?whnp WHNP))
 	(assert (Node-Category ?sbar SBAR))
 	(assert (Node-Category ?S S))
@@ -545,11 +597,12 @@
 (defrule make_SBAR
 (declare (salience 10))
 ?f0<-(Head-Level-Mother-Daughters  ?h ?l  ?mot $?d ?CC $?d1)
-?f1<-(Head-Level-Mother-Daughters ?h1 ?l1 ?CC ?id $?c)
+?f1<-(Head-Level-Mother-Daughters ?h1 ?l1 ?CC ?pid $?c)
 (Node-Category ?CC CC)
-(test (eq (numberp ?id) TRUE))
-(Res_id-WC-Word-Anu_id   ?pid 19  $?word  $?ids) ;She sold the house even though it was against his wishes.
-(test (member$ ?id $?ids))
+(test (eq (numberp (string_to_integer ?pid)) TRUE))
+(Res_id-WC-Word-Anu_id   ?pid0 19  $?word  $?ids) ;She sold the house even though it was against his wishes.
+(test (eq (string_to_integer ?pid) ?pid0))
+;(test (member$ ?id $?ids))
 =>
 	(retract ?f0 ?f1)
         (bind ?*count* (+ ?*count* 1))
@@ -557,7 +610,8 @@
         (bind ?S (explode$ (str-cat S "c" ?*count* )))
 	(assert (Head-Level-Mother-Daughters ?h ?l  ?mot $?d ?sbar ))
 	(assert (Head-Level-Mother-Daughters ?h ?l ?sbar ?S ))
-	(assert (Head-Level-Mother-Daughters ?h ?l ?S ?id $?c $?d1))
+	;(assert (Head-Level-Mother-Daughters ?h ?l ?S ?id $?c $?d1))
+	(assert (Head-Level-Mother-Daughters ?h ?l ?S ?pid $?c $?d1))
 	(assert (Node-Category ?sbar SBAR))
         (assert (Node-Category ?S S))
 )
@@ -574,6 +628,30 @@
 	(retract ?f0)
 	(assert (Head-Level-Mother-Daughters  ?h ?l  ?m  $?id1 $?id2))
 )
+
+
+(defrule add_P_to_ids
+(declare (salience 7))
+?f<-(Head-Level-Mother-Daughters ?wrd&~Sen&~Root ?lev ?phrase $?daut)
+(not (phrase_mapped ?phrase))
+=>
+        (retract ?f)
+        (bind $?daut1 (create$ ))
+        (bind ?len (length $?daut))
+        (loop-for-count (?i 1 ?len)
+                (bind ?j (nth$ ?i $?daut))
+                (if (numberp ?j) then
+                        (bind ?d (explode$ (str-cat P ?j)))
+                        (bind $?daut1 (create$ $?daut1 ?d))
+                else
+                        (bind $?daut1 (create$ $?daut1 ?j))
+                )
+        )
+        (assert (phrase_mapped ?phrase))
+        (assert (Head-Level-Mother-Daughters ?wrd ?lev ?phrase $?daut1))
+)
+
+
 ;-----------------------------------------------------------------------------------------------------------------	
 (defrule print_cons
 (declare (salience 5))

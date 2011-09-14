@@ -2673,7 +2673,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         sd_verified (437)   ol_verified (554)
 25. Updated Log
 
- 12-09-11
+ 14-09-11
  ========
  1. Modified "cc_rule" in sd_lwg_rules.clp -- added category info in rule part
  2. Added "nsubj_conj_1" rule in sd_relation_rules.clp
@@ -2683,4 +2683,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  6. Updated anu_compile64bit.sh
  7. Updated step-debug
  8. Updated apertium_hn.dix
- 9. Updated Log.
+ 9. Modified map_constituent_tree.sh , rasp_constituency_parse.l and run_rasp-parser.sh RASP parser files.
+ 10. Removed Tsurgen operation and handled it using clips rules
+      1. Modified existing rules and added new rules in H_ordering_rules.clp (Modified word-ids to Parser-ids)
+      2. Modified Ol_constituents_level.clp ,ol_cons_in_sd_format.clp run_modules_ol.bat and run_modules_std.bat files.
+      3. Removed tsurgen generation part from run_stanford-parser.sh file.
+      4. Added map_cons, map_cons1  rules in  sd_combining_apostrophe.clp
+      5. Modified constituency_parse.l , constituency_parse.y and Anusaaraka_stanford.sh files (for handling POS and punctuations)
+  10. Updated Log.

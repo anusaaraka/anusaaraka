@@ -101,13 +101,13 @@ sub_expression:
 	|
 	STRING { strcat(my_temp[my_level],$1); strcat(my_temp[my_level]," ");
                    count1=count1+1;
-        	           sprintf(buffer,"%d\0",count1);
+        	           sprintf(buffer,"P%d\0",count1);
                  strcat(my_daughters[my_level][current_sub_level[my_level]],buffer);
               }
 	|
 	sub_expression STRING {strcat(my_temp[my_level],$2);strcat(my_temp[my_level]," ");
                                      count1=count1+1;
-                                     sprintf(buffer,"%d\0",count1);
+                                     sprintf(buffer,"P%d\0",count1);
                                strcat(my_daughters[my_level][current_sub_level[my_level]],buffer);
                               }
 	;
