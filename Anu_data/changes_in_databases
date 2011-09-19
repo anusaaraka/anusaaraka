@@ -176,6 +176,8 @@
 	BalA_kara       m   Suggested by Meena vipin (25-01-11)Ex:Republican policies only benefit the rich and the powerful.
         Sarwa_lagA	f   Meena(5.4.11)
 	kE_kara 	f   Meena(2.5.11)
+	uwwara_xe	m   (Suggested by Sukhada (16-09-11) Ex: He studiously avoided answering the question.)	 
+	
 
 changes in samAsa-new.txt
   =========================
@@ -380,6 +382,7 @@ changes in samAsa-new.txt
 Modified:
         <e lm="belonging"><i>belonging</i><par n="house__n"/></e>   as    <e lm="belongings"><i>belongings</i><par n="personnel__n"/></e>   (Suggested by Meena ji 12-05-11)
         <e lm="box"><i>box</i><par n="bass__n"/></e>   as   <e lm="box"><i>box</i><par n="access__n"/></e>  (Suggested by Meena ji 10-08-11)
+        In case of Apa/__p paradigm modified the pattern from GPN to GNP in case of parsarg:kA
 
 
  Added new files:

@@ -29,10 +29,10 @@
  ;================================ PP pada for vibakthi=0 and vibhakti!=0 ======================================
 
  ; If "I"  then  gender=m number=s and peson=u
- (defrule PP_pada_for_I
+ (defrule PP_pada_for_I_me_and_my
  (declare (salience 1000))
  ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(group_ids $?ids)(vibakthi ?vib))
- (id-original_word ?pada_id I|i)
+ (id-original_word ?pada_id I|i|my|My|me)
  ?f0<-(pada_control_fact ?pada_id)
  =>
 	(retract ?f0)
@@ -41,7 +41,7 @@
         (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-per_src-case  " ?pada_id " PP_pada_for_I  m Direct_assignment s Direct_assignment u Direct_assignment d vibakthi_absent )" crlf)
 	else			
 	        (modify ?f1 (gender m)(number s)(person u)(case o))
-        (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-per_src-GNP-case  " ?pada_id " PP_pada_for_I m Direct_assignment s Direct_assignment u Direct_assignment d vibakyhi_present )" crlf)
+        (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-per_src-GNP-case  " ?pada_id " PP_pada_for_I_me_and_my m Direct_assignment s Direct_assignment u Direct_assignment d vibakyhi_present )" crlf)
 	)
  )
  ;----------------------------------------------------------------------------------------------------------------
@@ -79,10 +79,11 @@
 	)
  )
  ;----------------------------------------------------------------------------------------------------------------
- (defrule PP_pada_for_we
+ ;We had wasted our journey.
+ (defrule PP_pada_for_we_our_and_us
  (declare (salience 1000))
  ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(group_ids $?ids)(vibakthi ?vib))
- (id-original_word ?pada_id  We|we)
+ (id-original_word ?pada_id  We|we|our|Our|ours|us)
  (id-gender-src ?pada_id ?gen ?gen_src)
  ?f0<-(pada_control_fact ?pada_id)
  =>
@@ -92,14 +93,15 @@
         (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-per_src-case  " ?pada_id " PP_pada_for_we "?gen" "?gen_src " p Direct_assignment u Direct_assignment d vibakthi_absent )" crlf)
 	else
 		(modify ?f1 (gender ?gen)(number p)(person u)(case o))
-        (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-per_src-case  " ?pada_id " PP_pada_for_we  " ?gen " "?gen_src " p  Direct_assignment u Direct_assignment o vibakthi_present  )" crlf)
+        (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-per_src-case  " ?pada_id " PP_pada_for_we_our_and_us " ?gen " "?gen_src " p  Direct_assignment u Direct_assignment o vibakthi_present  )" crlf)
 	)
  )
  ;----------------------------------------------------------------------------------------------------------------
- (defrule PP_pada_for_they
+ ;Their belongings were flung about the room.
+ (defrule PP_pada_for_they_their_and_them
  (declare (salience 1000))
  ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(group_ids $?ids)(vibakthi ?vib))
- (id-original_word ?pada_id  They|they)
+ (id-original_word ?pada_id  They|they|their|Their|them)
  (id-gender-src ?pada_id ?gen ?gen_src)
  ?f0<-(pada_control_fact ?pada_id)
  =>
@@ -109,7 +111,7 @@
         (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-per_src-case  " ?pada_id " PP_pada_for_they  " ?gen " "?gen_src "  p Direct_assignment a Direct_assignment d vibakthi_absent)" crlf)
         else
                 (modify ?f1 (gender ?gen)(number p)(person a)(case o))
-       (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-per_src-case  " ?pada_id " PP_pada_for_they  "?gen" " ?gen_src "  p Direct_assignment u Direct_assignment o vibakthi_present)" crlf)
+       (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-per_src-case  " ?pada_id " PP_pada_for_they_their_and_them  "?gen" " ?gen_src "  p Direct_assignment u Direct_assignment o vibakthi_present)" crlf)
         )
  )
  ;----------------------------------------------------------------------------------------------------------------
@@ -319,22 +321,23 @@
  )
 
  ;===================================  verb with subject agreement ============================================
+ ;From your description, I do not think I would enjoy it.
  (defrule verb_sub_agmt
  (declare (salience 700))
  (verb_agrmt-subject_id-head_id subject ?sub_id ?kriyA)
  ?f1<-(pada_info (group_head_id ?kriyA)(group_cat VP))
- ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender ?gen)(number ?num)(person ?per))
+ ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender ?gen)(number ?num)(person ?per)(case ?c))
  ?f0<-(pada_control_fact ?kriyA)
  (id-number-src ?kriyA ?num1 ?src)
  =>
         (retract ?f0 )
 	(if (neq ?src Default) then
-	        (modify ?f1 (gender ?gen)(number ?num1)(person ?per))
+	        (modify ?f1 (gender ?gen)(number ?num1)(person ?per)(case ?c))
         	(modify ?f2 (number ?num1))
-		(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?kriyA " verb_sub_agmt "?gen" gender_from_subject "?num1"  number_from_verb "?per" person_from_subject)" crlf)
+		(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?kriyA " verb_sub_agmt "?gen" gender_from_subject "?num1"  number_from_verb "?per" person_from_subject  "?c "case_from_subject )" crlf)
 	else
-		(modify ?f1 (gender ?gen)(number ?num)(person ?per))
-		(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?kriyA " verb_sub_agmt "?gen" gender_from_subject "?num"  number_from_subject "?per" person_from_subject)" crlf)
+		(modify ?f1 (gender ?gen)(number ?num)(person ?per)(case ?c))
+		(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?kriyA " verb_sub_agmt "?gen" gender_from_subject "?num"  number_from_subject "?per" person_from_subject "?c "case_from_subject )" crlf)
         )
 ;        (modify ?f1 (gender ?gen)(number ?num)(person ?per))
  ;(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?kriyA " verb_sub_agmt "?gen" gender_from_subject "?num"  number_from_subject "?per" person_from_subject)" crlf)
@@ -345,12 +348,12 @@
  (declare (salience 700))
  (verb_agrmt-object_id-head_id object ?obj_id ?kriyA)
  ?f1<-(pada_info (group_head_id ?kriyA)(group_cat VP))
- (pada_info (group_head_id ?obj_id)(group_cat PP)(gender ?gen)(number ?num)(person ?per))
+ (pada_info (group_head_id ?obj_id)(group_cat PP)(gender ?gen)(number ?num)(person ?per)(case ?c))
  ?f0<-(pada_control_fact ?kriyA)
  =>
         (retract ?f0)
-        (modify ?f1 (gender ?gen)(number ?num)(person ?per))
-  (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?kriyA " verb_obj_agmt "?gen" gender_from_object "?num" number_from_object "?per" person_from_object)" crlf)
+        (modify ?f1 (gender ?gen)(number ?num)(person ?per)(case ?c))
+  (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?kriyA " verb_obj_agmt "?gen" gender_from_object "?num" number_from_object "?per" person_from_object  "?c "case_from_object  )" crlf)
  )
 
  ;=================================  verb with kriyA_mUla agreement =============================================
@@ -362,8 +365,8 @@
  ?f0<-(pada_control_fact ?pada_id)
  =>
         (retract ?f0)
-        (modify ?f1 (gender ?gen)(number ?num)(person a))
-  (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?pada_id " verb_kriyA_mUla_agmt  "?gen" gender_from_kriyA_mula "?num " "?num_src " a Direct_assignment)" crlf)
+        (modify ?f1 (gender ?gen)(number ?num)(person a)(case d))
+	(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?pada_id " verb_kriyA_mUla_agmt  "?gen" gender_from_kriyA_mula "?num " "?num_src " a Direct_assignment  d Direct_assignment)" crlf)
  )
 
  ;===================================  verb with default agreement and viSeRya-kqxanwa_viSeRaNa ===================
@@ -372,13 +375,13 @@
  (declare (salience 650))
  (verb_agrmt-head_id default ?pada_id)
  (prep_id-relation-anu_ids  ? viSeRya-kqxanwa_viSeRaNa ?vi ?pada_id)
- (pada_info (group_head_id ?vi)(gender ?gen) (number ?num)(person ?per))
+ (pada_info (group_head_id ?vi)(gender ?gen) (number ?num)(person ?per)(case ?case))
  ?f1<-(pada_info (group_head_id ?pada_id)(group_cat VP))
  ?f0<-(pada_control_fact ?pada_id)
  =>
 	(retract ?f0)
-	(modify ?f1 (gender ?gen)(number ?num)(person ?per))
- (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?pada_id " verb_with_viSeRya_kqxanwa_viSeRaNa "?gen" gender_from_viSeRya "?num "number_from_viSeRya " ?per "person_from_viSeRya)" crlf)
+	(modify ?f1 (gender ?gen)(number ?num)(person ?per)(case ?case))
+ (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?pada_id " verb_with_viSeRya_kqxanwa_viSeRaNa "?gen" gender_from_viSeRya "?num "number_from_viSeRya " ?per "person_from_viSeRya "?case "case_from_viSeRya)" crlf)
  )
  ;==================================  verb with default agreement =================================================
  (defrule verb_default_agmt1
@@ -388,8 +391,8 @@
  ?f0<-(pada_control_fact ?pada_id)
  =>
         (retract ?f0)
-        (modify ?f1 (gender m)(number s)(person a))
- (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?pada_id " verb_default_agmt m Default_assignment s Default_assignment a Default_assignment)" crlf)
+        (modify ?f1 (gender m)(number s)(person a)(case d))
+ (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?pada_id " verb_default_agmt m Default_assignment s Default_assignment a Default_assignment d  Default_assignment)" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
  ;America economic indicators fell sharply last month .

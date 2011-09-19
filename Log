@@ -2673,7 +2673,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         sd_verified (437)   ol_verified (554)
 25. Updated Log
 
- 14-09-11
+ 19-09-11
  ========
  1. Modified "cc_rule" in sd_lwg_rules.clp -- added category info in rule part
  2. Added "nsubj_conj_1" rule in sd_relation_rules.clp
@@ -2690,4 +2690,27 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
       3. Removed tsurgen generation part from run_stanford-parser.sh file.
       4. Added map_cons, map_cons1  rules in  sd_combining_apostrophe.clp
       5. Modified constituency_parse.l , constituency_parse.y and Anusaaraka_stanford.sh files (for handling POS and punctuations)
-  10. Updated Log.
+ 11. GNP_agreement.clp
+        Renamed  : PP_pada_for_I  as PP_pada_for_I_me_and_my and modified  to add me and my in the list
+                   PP_pada_for_we as PP_pada_for_we_our_and_us and modified  to add our and us in the list
+                   PP_pada_for_they as  PP_pada_for_they_their_and_them and modified  to add they and their in the list
+        Modified : verb_sub_agmt, verb_kriyA_mUla_agmt,  verb_with_viSeRya_kqxanwa_viSeRaNa and verb_default_agmt1
+                        (to add case information for VP pada)
+ 12. causative_verb_mng.clp
+        Added   : modify_mng
+        Renamed : Relative_clause  as mng_for_10000_id  and modified the rule
+        Deleted : Python_prog rule
+ 13. Modifie subject_insertion rule in link_relation_rules.clp
+ 14. prepare_apertium_input.clp
+        - Deleted all the rules for PP
+        - Modified : complete_sen_mng_with_vib, word_mng_with_vib, word_mng_rule, RaRTI_kA_vib_rule, RaRTI_kA_vib_rule_1
+                     PP_pronoun_rule_with_vib_kA , PP_rule_with_vib_for_those, PP_pronoun_rule_with_vib
+        - Added the following rules
+                kA_vib_rule1   kA_for_kriyA_mUla , PP_pronoun_rule_without_vib2, PP_pronoun_rule_without_vib1
+                PP_pronoun_rule_without_vib,  PP_rule_with_kA_vib_for_and_last_id , PP_rule_with_vib_for_and_last_id
+                PP_rule_with_vib_for_and,  PP_rule_without_vib_for_and , PP_rule_with_tam, PP_rule_with_vib_vAlA
+                PP_rule_with_vib_for_hnd_pronoun, PP_rule_with_vib_hid, PP_rule_default
+        - Deleted PP_rule_with_vib_for_Hid_them
+ 15. Modified ber_ver_output, link_ver_output, ol_ver_output, sd_ver_output and verified_output
+ 16. Updated changes_in_databases
+ 17. Updated Log
