@@ -2673,7 +2673,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         sd_verified (437)   ol_verified (554)
 25. Updated Log
 
- 19-09-11
+ 20-09-11
  ========
  1. Modified "cc_rule" in sd_lwg_rules.clp -- added category info in rule part
  2. Added "nsubj_conj_1" rule in sd_relation_rules.clp
@@ -2689,7 +2689,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
       2. Modified Ol_constituents_level.clp ,ol_cons_in_sd_format.clp run_modules_ol.bat and run_modules_std.bat files.
       3. Removed tsurgen generation part from run_stanford-parser.sh file.
       4. Added map_cons, map_cons1  rules in  sd_combining_apostrophe.clp
-      5. Modified constituency_parse.l , constituency_parse.y and Anusaaraka_stanford.sh files (for handling POS and punctuations)
+      5. Modified constituency_parse.l, constituency_parse.y, Anusaaraka_stanford.sh, Anusaaraka.sh & Anusaaraka_berkeley.sh          files (for handling POS and punctuations)
  11. GNP_agreement.clp
         Renamed  : PP_pada_for_I  as PP_pada_for_I_me_and_my and modified  to add me and my in the list
                    PP_pada_for_we as PP_pada_for_we_our_and_us and modified  to add our and us in the list
@@ -2711,6 +2711,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                 PP_rule_with_vib_for_and,  PP_rule_without_vib_for_and , PP_rule_with_tam, PP_rule_with_vib_vAlA
                 PP_rule_with_vib_for_hnd_pronoun, PP_rule_with_vib_hid, PP_rule_default
         - Deleted PP_rule_with_vib_for_Hid_them
- 15. Modified ber_ver_output, link_ver_output, ol_ver_output, sd_ver_output and verified_output
- 16. Updated changes_in_databases
- 17. Updated Log
+ 15. Modified morph.pl programme to handle patterns like "(sharda)", "(gram flour)" etc. 
+ 16. Moved 'wx2wx-normal.lex','wx2wx-small.lex'  from bin to Anu_src folder and added its compilation part in anu_compile.sh
+ 17. Updated README for stanford-parser.
+ 18. Updated README inside anu_testing.  
+ 19. Modified ber_ver_output, link_ver_output, ol_ver_output, sd_ver_output and verified_output.
+ 20. Updated changes_in_databases.
+ 21. Updated Log.

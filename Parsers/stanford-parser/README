@@ -19,9 +19,11 @@
 			comp.sh
 			run_stanford-parser.sh
 			run_stanford.sh
-			sd_category.py
 			stnford_relations.lex
-			stnford_word.lex
+                        get_word_cat.lex
+                        constituency_to_dependency.sh
+			run_lexicalize.sh
+			split-relations.py
 
        3.    Change the version of Stanford-parser in $HOME_anu_test/bin/ for Anusaaraka.sh ,  Anusaaraka_stanford.sh and
              $HOME_anu_test/shell_scripts for anu_compile.sh

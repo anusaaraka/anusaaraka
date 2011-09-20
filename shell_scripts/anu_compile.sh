@@ -67,7 +67,7 @@
  cd $HOME_anu_test/Anu_src
 
  gcc  -o file-wx_utf8.out file-wx_utf8.c 
- gcc -o word.out word.c 
+ gcc -o word.out word.c
  gcc -o all_tran_pada.out -g f_tid-rid.c f_sen-range.c  ALL_TRAN_PADA.c
  gcc -o f_range.out f_range_wordarray_resarray.c
 
@@ -79,6 +79,9 @@
  ./comp.sh aper_chunker 
  ./comp.sh rm_tags
  ./compile_bison.sh
+ ./comp.sh wx2wx-normal
+ ./comp.sh wx2wx-small
+ mv  wx2wx-normal.out  wx2wx-small.out $HOME_anu_test/bin/
 
  echo "Compiling Anu stdenglish source files"
  cd $HOME_anu_test/Anu/stdenglish
