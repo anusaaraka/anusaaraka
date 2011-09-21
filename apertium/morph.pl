@@ -24,7 +24,22 @@ for $i (0 .. $#lines){
 #for handling patterns $^5/5<num>$ where "$" is part of sentence.(The university spends $5 per student.)
 # soln is remove the "$" symbol.
 
-	if($words[$j] =~ /^\$\^/){ $words[$j] =~ s/^\$//;}
+	if($words[$j] =~ /^\$\^/){ $words[$j] =~ s/^\$//; }
+
+##Added below two patterns by Roja (16-09-11) 
+#Ex: In Kumaon, the Kail Ganga (sharda) flows down from the Nepal border through kumaon hills.
+##for handling patterns like  ^(/(<lpar>$^sharda/*sharda$^)/)<rpar>$   [input : (sharda) ]  
+#soln is removing  "(" and ")" symbols and just taking the word part.
+
+        if($words[$j] =~ /^(\^\(.*\$)(.*\$)(.*\$)/)
+              {  $words[$j] =~ s/^(\^\(.*\$)(.*\$)(.*\$)/\2/;  }
+
+#Ex: Because of its arid land, Rajasthan cannot sustain many vegetables; hence some of the state's best known vegetarian dishes rely on the use of Besan (gram flour).
+##for handling patterns like ^(/(<lpar>$^gram/gram<n><sg>$  [input : (gram flour) ]
+#soln is removing  "(" symbol and just taking the word part.
+
+        if($words[$j] =~ /^(\^\(.*\$)(.*\$)/)
+              {  $words[$j] =~ s/^(\^\(.*\$)(.*\$)/\2/;  }
 
 
 #for genitive case ^father/father<n><sg>/father<vblex><inf>/father<vblex><pres>$^'s/'s<gen>$

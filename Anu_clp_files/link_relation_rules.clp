@@ -1621,7 +1621,7 @@ else
 ;(printout       ?*hmng_fp*      "(id-HM-source-sub_id  10001   vaha    subject_insertion  "?id0")"       crlf))
 ;the HM 'vaha' is only for the sents where apertium analysis does not exist.
 
-(printout	?*open-word*	"(id-word 10001  "?word")"	crlf)	
+(printout	?*open-word*	"(id-word 10001  "(lowcase ?word)")"	crlf)	
 (printout       ?*open-orign*   "(id-original_word 10001  "?word")"       crlf)
 )
 ;Ex.  She was asked about the pay increase but made no comment .

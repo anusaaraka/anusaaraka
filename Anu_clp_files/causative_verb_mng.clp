@@ -136,6 +136,22 @@
                 (printout ?*caus_mng-file* "(id-HM-source   10001   "?h_mng "   " ?src")" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (14-09-11)
+ ;We had wasted our journey.I showed them how they should do it.
+ (defrule modify_mng
+ (declare (salience 700))
+ (id-original_word ?id  ?w&our|Our|ours|me|them|we|We|us|My|my)
+ ?f0<-(id-HM-source ?id ?h_mng ?src&~Database_compound_phrase_root_mng&~WSD_compound_phrase_root_mng)
+ ?mng<-(meaning_to_be_decided ?id)
+ =>
+	(if (eq ?w them) then
+		(printout ?*caus_mng-file* "(id-HM-source   "?id"   vaha   Word)" crlf)
+	else
+		(printout ?*caus_mng-file* "(id-HM-source   "?id"   mEM   Word)" crlf)
+	)
+        (retract ?mng)
+ )
+ ;----------------------------------------------------------------------------------------------------------------
  (defrule hnd_mng
  (declare (salience 100))
  (id-HM-source ?id ?h_mng ?src)
@@ -145,18 +161,14 @@
 	(retract ?mng)
  )
  ;----------------------------------------------------------------------------------------------------------------
- (defrule Relative_clause
- (id-HM-source  10000   ?mng    Relative_clause)
-  =>
-	 (printout ?*caus_mng-file* "(id-HM-source  10000 "?mng" Relative_clause)" crlf )
+ ; Modified by Shirisha Manju -- instead of values used variables
+ (defrule mng_for_10000_id
+ ?f0<-(id-HM-source  10000   ?mng    ?src)
+  =>	
+	(retract ?f0)
+	(printout ?*caus_mng-file* "(id-HM-source  10000 "?mng"  " ?src ")" crlf )
  )
  ;----------------------------------------------------------------------------------------------------------------
- ;I thought it is right to resign.I hope he comes to the party tomorrow.
- (defrule Python_prog
- (id-HM-source  10000   ki      Python_prog)
-  =>
-	 (printout ?*caus_mng-file* "(id-HM-source  10000 ki Python_prog)" crlf )
- )
  ;----------------------------------------------------------------------------------------------------------------
  (defrule end
  (declare (salience -1000))

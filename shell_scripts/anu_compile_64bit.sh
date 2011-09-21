@@ -79,6 +79,9 @@
  ./comp.sh aper_chunker 
  ./comp.sh rm_tags
  ./compile_bison.sh
+ ./comp.sh wx2wx-normal
+ ./comp.sh wx2wx-small
+ mv  wx2wx-normal.out  wx2wx-small.out $HOME_anu_test/bin/
 
  echo "Compiling Anu stdenglish source files"
  cd $HOME_anu_test/Anu/stdenglish

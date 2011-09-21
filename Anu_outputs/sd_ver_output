@@ -1003,7 +1003,7 @@ acCe pahanAvoM ne puraskAra prApwa kiye/kie.
 
 Hindi meaning using Stanford parser 2.245
 She is apparently an excellent pianist. 
-vaha UparI_wOra se uwwama piyAno bajAne vAlI hE.
+vaha UparI_wOra se uwwama piyAno_bajAne vAlI hE.
 
 Hindi meaning using Stanford parser 2.246
 There is a dog or a cat here. 
@@ -1064,7 +1064,7 @@ prawyeka vyakwi ko pqWvI para amana banAe raKanA/raKane cAhiye.
 
 Hindi meaning using Stanford parser 2.260
 It is true that you are my friend but I can not go along with you on this issue. 
-Apa mere miwra hEM yaha sawya hE paranwu mEM isa viRaya para Apa ke sAWa sahamawa_nahIM_ho sakawA hUz.
+Apa mere miwra hEM yaha sawya hE paranwu mEM isa viRaya para Apake_sAWa sahamawa_nahIM_ho sakawA hUz.
 yaha sawya hE ki Apa mere miwra hEM paranwu mEM isa viRaya para Apa ke sAWa sahamawa_nahIM_ho sakawA hUz.
 yaha sawya hE ki Apa mere miwra hEM paranwu mEM isa viRaya para Apake_sAWa sahamawa_nahIM_ho sakawA hUz.
 
