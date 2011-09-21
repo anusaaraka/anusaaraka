@@ -389,14 +389,14 @@
 ;------------------------------------------------------------------------------------------------------------------------ 
 (defrule nsubj+xcomp_1
 (rel_name-sids nsubj ?obj_s ?obj)
-(rel_name-sids xcomp ?kriyA ?obj_s)
+(rel_name-sids xcomp|ccomp ?kriyA ?obj_s)
 (parser_id-cat_coarse ?obj_s verb)
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-object     "?kriyA"        "?obj")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj+xcomp_1     kriyA-object     "?kriyA"        "?obj")"crlf)
 )
 ; Added by Shirisha Manju
-; Ex. The instructor persuaded Mary to take that course .
+; Ex. The instructor persuaded Mary to take that course . Help me finish translating this document. Help me to finish translating this document.
 ;------------------------------------------------------------------------------------------------------------------------
  
 (defrule dobj+iobj
