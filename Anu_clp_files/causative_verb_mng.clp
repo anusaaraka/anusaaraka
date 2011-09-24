@@ -141,7 +141,7 @@
  (defrule modify_mng
  (declare (salience 700))
  (id-original_word ?id  ?w&our|Our|ours|me|them|we|We|us|My|my)
- ?f0<-(id-HM-source ?id ?h_mng ?src&~Database_compound_phrase_root_mng&~WSD_compound_phrase_root_mng)
+ ?f0<-(id-HM-source ?id ?h_mng ?src&WSD_root_mng|Default)
  ?mng<-(meaning_to_be_decided ?id)
  =>
 	(if (eq ?w them) then

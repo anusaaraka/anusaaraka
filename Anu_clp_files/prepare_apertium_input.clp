@@ -140,8 +140,26 @@
         (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id " Compound_mng_with_Prep_id )" crlf)
  )
 
- ;======================================== KA vibakthi rules ===============================================================
-
+ ;======================================== KA vibakthi (viSeRya-RaRTI_viSeRaNa) rules =====================================
+ ; Added by Shirisha Manju (17-06-11)
+ ; Ex: He was awakened at dawn by the sound of crying .
+ ;     She awakened to the sound of birds' singing .
+ ;     Failure to comply may result in dismissal. 
+ (defrule RaRTI_kA_vib_rule_for_verbal_noun
+ (declare (salience 1001))
+ (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa|viSeRya-of_saMbanXI|saMjFA-to_kqxanwa ?f_id ?id)
+ (pada_info (group_head_id ?id)(vibakthi ?vib)(group_ids $?ids)(H_tam ?tam))
+ (or (make_verbal_noun ?id)(id-cat_coarse ?id verbal_noun))
+ ?f0<-(id-HM-source ?id ?hmng ?)
+ (pada_info (number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
+ (test (member$ ?f_id $?f_ids))
+ (test (or (eq ?tam kA)(eq ?vib kA)))
+ =>
+        (retract ?f0)
+        (printout ?*A_fp5* "(id-Apertium_input "?id " ^"?hmng"<cat:vn><case:o>$ ^kA<cat:sh><case:"?case1"><gen:"?gen1"><num:"?num1">$)"  crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  RaRTI_kA_vib_rule_for_verbal_noun  )"crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju (17-06-11) Suggested by Chaitanya Sir
  ; These are children's books. Mohan fell from the top of the house.
  (defrule RaRTI_kA_vib_rule
@@ -156,29 +174,10 @@
        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$ ^kA<cat:sh><case:"?case1"><gen:"?gen1"><num:"?num1">$)" crlf)
        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  RaRTI_kA_vib_rule )" crlf)
  )
- ;------------------------------------------------------------------------------------------------------------------------
- ; Added by Shirisha Manju (17-06-11)
- ; Ex: He was awakened at dawn by the sound of crying .
- ;     She awakened to the sound of birds' singing .
- ;     Failure to comply may result in dismissal. 
- (defrule RaRTI_kA_vib_rule_1
- (declare (salience 1000))
- (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa|viSeRya-of_saMbanXI|saMjFA-to_kqxanwa ?f_id ?id)
- (pada_info (group_head_id ?id)(vibakthi ?vib)(group_ids $?ids)(H_tam ?tam))
- (or (make_verbal_noun ?id)(id-cat_coarse ?id verbal_noun))
- ?f0<-(id-HM-source ?id ?hmng ?)
- (pada_info (number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
- (test (member$ ?f_id $?f_ids))
- (test (or (eq ?tam kA)(eq ?vib kA)))
- =>
-        (retract ?f0)
-        (printout ?*A_fp5* "(id-Apertium_input "?id " ^"?hmng"<cat:vn><case:o>$ ^kA<cat:sh><case:"?case1"><gen:"?gen1"><num:"?num1">$)"  crlf)
-        (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  RaRTI_kA_vib_rule_1  )"crlf)
- )
- ;------------------------------------------------------------------------------------------------------------------------
+ ;======================================= KA vibakthi (kriyA_id-object_viBakwi) rules =====================================
  ; Added by Shirisha Manju (17-06-11) Suggested by Chaitanya Sir
  ; Clinton announced on Tuesday a bold new proposal. 
- (defrule kA_vib_rule
+ (defrule kA_vib_from_obj_rule
  (declare (salience 1000))
  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(vibakthi kA))
  ?f0<-(id-HM-source ?pada_id ?h_word&~Ora&~yaha ?)
@@ -194,12 +193,13 @@
                 (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word"<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^kA<cat:sh><case:"?case"><gen:"?gen1"><num:"?num">$)"  crlf)
             )
             (retract ?f0)
-            (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  kA_vib_rule )" crlf)
+            (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  kA_vib_from_obj_rule )" crlf)
         )
  )
-
+ ;------------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (17-09-11)
  ; He studiously avoided answering the question. 
- (defrule kA_vib_rule1
+ (defrule kA_vib_from_obj_rule1
  (declare (salience 1001))
  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(vibakthi kA))
  ?f0<-(id-HM-source ?pada_id ?h_word&~Ora&~yaha ?)
@@ -219,14 +219,30 @@
                 (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word"<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^kA<cat:sh><case:"?case"><gen:"?gen1"><num:"?num">$)"  crlf)
             )
             (retract ?f0)
-            (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  kA_vib_rule1 )" crlf)
+            (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  kA_vib_from_obj_rule1 )" crlf)
         )
  )
-
-
- ;------------------------------------------------------------------------------------------------------------------------
+ ;======================================= KA vibakthi (kriyA_id-subject_viBakwi) rules =====================================
+ ; Added by Shirisha Manju (19-09-11)
+ ; You have no control over your emotions.
+ (defrule kA_vib_from_sub_rule
+ (declare (salience 951))
+ (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(person ?per)(vibakthi kA)(group_ids $?ids))
+ ?f0<-(id-HM-source ?pada_id ?h_word ?)
+ (id-word ?pada_id  ?w&he|she|their|i|those|your|you|our|my|me|they|its|we|it|him)
+ (prep_id-relation-anu_ids - kriyA-subject ?k_id ?pada_id)
+ (kriyA_id-subject_viBakwi ?k_id kA)
+ (hindi_id_order  $?start $?ids ?foll_pada_id $?)
+ (pada_info (group_head_id ?h)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
+ (test (member$ ?foll_pada_id $?f_ids))
+ =>
+	(retract ?f0)
+	(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><parsarg:kA><fnum:"?num1"><case:d><gen:"?gen1"><num:"?num"><per:"?per ">$)"  crlf)
+	(printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  kA_vib_from_sub_rule )" crlf)
+ )
+ ;======================================= KA vibakthi (viSeRya-jo_samAnAXikaraNa) rules ===================================
  ; Added by Shirisha Manju (09-09-11)
- ;The dog I chased was black.
+ ; The dog I chased was black.
  (defrule kA_for_jo_samAnAXikaraNa
  (declare (salience 1000))
  (prep_id-relation-anu_ids - viSeRya-jo_samAnAXikaraNa  ?  ?jo)
@@ -242,7 +258,8 @@
   )
  ;------------------------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju (13-09-11)
- ;That reeks of favoritism.
+ ; That reeks of favoritism.
+ ; KA vib pada followed by VP pada
  (defrule kA_for_kriyA_mUla
  (declare (salience 610))
  (pada_info (group_head_id ?id)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(vibakthi kA)(person ?per))
@@ -339,7 +356,7 @@
   (defrule PP_pronoun_rule_with_vib_kA
   (declare (salience 940))
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(person ?per)(vibakthi kA)(group_ids $?ids))
-  (id-word ?pada_id  ?w&he|she|their|i|those|your|you|our|my|me|they|its|we|it|him)
+  (id-word ?pada_id  ?w&he|she|their|i|those|your|you|our|my|me|they|its|we|it|him|this)
   (hindi_id_order  $?start $?ids ?foll_pada_id $?)
   (pada_info (group_head_id ?h)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
   (test (member$ ?foll_pada_id $?f_ids))
@@ -351,16 +368,26 @@
 	(if (eq ?word and) then ;They were discussing their hopes and dreams.
 		(if (eq ?gen -) then (bind ?gen m))
 		(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><parsarg:kA><fnum:"?num1"><case:"?case1"><gen:"?gen"><num:"?num"><per:"?per ">$)"  crlf)
-	else	(if (eq ?w you) then
-		 (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><parsarg:kA><fnum:"?num1"><case:d><gen:"?gen1"><num:"?num"><per:"?per ">$)"  crlf)
 	else	
 	        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><parsarg:kA><fnum:"?num1"><case:"?case1"><gen:"?gen1"><num:"?num"><per:"?per ">$)"  crlf)
-		)
 	)
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_with_vib_kA )" crlf)
   )
   ;------------------------------------------------------------------------------------------------------------------------
-  ; God helps those who help themselves . He marked these bottles. If you use that strategy, he will wipe you out.
+  ; Added by Shirisha Manju (21-09-11) suggested by Chaitanya Sir
+  ; She helped me. God helps those who help themselves. 
+  (defrule PP_pronoun_rule_with_vib_kI
+  (declare (salience 940))
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(person ?per)(vibakthi kI)(group_ids $?ids))
+  (or (id-word ?pada_id ?w&he|she|their|i|those|your|you|our|my|me|they|its|we|it|him|this)(id-original_word ?pada_id us|Us))
+  ?f0<-(id-HM-source ?pada_id ?h_word ?)
+  =>
+        (retract ?f0)
+        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><case:o><parsarg:kI><gen:f><num:"?num"><per:"?per">$)"  crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_with_vib_kI )" crlf)
+  )
+  ;------------------------------------------------------------------------------------------------------------------------
+  ; He marked these bottles. If you use that strategy, he will wipe you out.
   ; THE nearly 5 million people who attended enjoyed it.
   ; Added by Shirisha Manju (24-06-11)
   (defrule PP_rule_with_vib_for_those
@@ -397,10 +424,10 @@
 	)
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_with_vib )" crlf)
   )
-  
+  ;------------------------------------------------------------------------------------------------------------------------ 
   ;These are few sentences for Link Parser. ;But why did you send him that nasty note.
   ;It is good to eat less food these days.
-  (defrule PP_pronoun_rule_without_vib2
+  (defrule PP_pronoun_rule_without_vib
   (declare (salience 931))
   (pada_info (group_cat PP)(number ?num)(gender ?gen)(person ?per)(case ?case)(vibakthi 0)(group_ids $?ids))
   (id-word ?pada_id that|this|these)
@@ -413,14 +440,14 @@
        else
         (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><case:"?case"><gen:"?gen"><num:"?num"><per:"?per "><tam:0>$)"  crlf)
        )
-        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_without_vib2 )" crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_without_vib )" crlf)
   )
 
 
   ;------------------------------------------------------------------------------------------------------------------------
   ; Added by Shirisha Manju (13-09-11)
   ; These are children's books. Where did they come from? Can you tell us where those strange ideas came from? 
-  (defrule PP_pronoun_rule_without_vib
+  (defrule PP_pronoun_rule_without_vib1
   (declare (salience 930))
   (pada_info (group_cat PP)(number ?num)(gender ?gen)(person ?per)(case ?case)(vibakthi 0)(group_ids $?ids))
   (id-word ?pada_id  these|they|those)
@@ -429,13 +456,13 @@
   =>
         (retract ?f0)
         (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><case:"?case"><gen:"?gen"><num:"?num"><per:"?per "><tam:0>$)"  crlf)
-        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_without_vib )" crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_without_vib1 )" crlf)
   )
   ;------------------------------------------------------------------------------------------------------------------------
   ; Added by Shirisha Manju (14-09-11)
   ;If we heat iron it becomes red. The yield of kharif crops was not good this season. 
   ;The party that night was a big success. The law does not allow us to do it.
-  (defrule PP_pronoun_rule_without_vib1
+  (defrule PP_pronoun_rule_without_vib2
   (declare (salience 930))
   (pada_info (group_cat PP)(number ?num)(gender ?gen)(person ?per)(vibakthi 0)(group_ids $?ids))
   (id-word ?id  we|us)
@@ -444,7 +471,7 @@
   =>
         (retract ?f0)
 	(printout ?*A_fp5* "(id-Apertium_input "?id " ^"?h_word "<cat:p><case:o><parsarg:0><gen:"?gen"><num:"?num"><per:"?per ">$)"  crlf)
-	(printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_pronoun_rule_without_vib1 )" crlf)
+	(printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_pronoun_rule_without_vib2 )" crlf)
   )
 
  ;====================================== VP rule for root and tam =========================================================
@@ -825,7 +852,7 @@
         )
         (printout ?*aper_debug-file* "(id-Rule_name  "?id"  PP_rule_with_kA_vib_for_and_last_id )" crlf)
   )
-
+  ;-------------------------------------------------------------------------------------------------------------------------
   ; In the racing competition between the hare  and the tortoise, the tortoise finally won the race.
   ; Whenever agreement is done then pada head ids number information should not be passed to individual ids.
   ; (Suggested by Chaitanya Sir)

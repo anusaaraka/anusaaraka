@@ -44,6 +44,77 @@
         )
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+ ;In Kashmir, fishing is a good business and the ideal season is from April to October. Added by Sukhada (12-9-11)
+(defrule from_to_PPs
+(declare (salience 1450))
+?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1 ?PP1 ?PP2 $?d2)
+(Head-Level-Mother-Daughters from ? ?PP1 $?d3)
+(Head-Level-Mother-Daughters to ? ?PP2 $?d4)
+(Node-Category  ?PP1    PP)
+(Node-Category  ?PP2    PP)
+(not (Mother  ?PP1))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (retract ?f)
+	(bind ?FromToPP (explode$ (str-cat FromToPP "c" ?*count* )))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1  ?FromToPP $?d2))
+	(assert (Head-Level-Mother-Daughters from ?lvl ?FromToPP ?PP1 ?PP2 ))
+	(assert (Node-Category ?FromToPP FromToPP))
+	(assert (Mother  ?PP1))
+        (printout ?*order_debug-file* "(rule_name - from_to_PPs  " ?*count* " " crlf
+                          "             Before    - "?head" "?lvl"  "?Mot"  "(implode$ $?d1)" "?PP1" "?PP2" "(implode$ $?d2) crlf
+                          "             After     - "?head" "?lvl"  "?Mot"  "(implode$ $?d1)" "?FromToPP" "(implode$ $?d2)")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
+; October to March is the best time to visit the Jaipur city. Added by Sukhada (14-9-11)
+(defrule make_compPhrase
+(declare (salience 1450))
+?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1 ?NP1 ?PP2 $?d2)
+(Head-Level-Mother-Daughters ?h1 ? ?NP1 $?d3 )
+(Head-Level-Mother-Daughters to ? ?PP2 $?d4 ?np2)
+(Head-Level-Mother-Daughters ?h2 ? ?np2 $?d5)
+(test (or (and (neq (gdbm_lookup "time.gdbm" ?h1) "FALSE")(neq (gdbm_lookup "time.gdbm" ?h2) "FALSE"))
+          (and (neq (gdbm_lookup "place.gdbm" ?h1) "FALSE")(neq (gdbm_lookup "place.gdbm" ?h2) "FALSE"))))
+(Node-Category  ?NP1    NP)
+(Node-Category  ?PP2    PP)
+(not (Mother  ?NP1))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (retract ?f)
+        (bind ?compPhrase (explode$ (str-cat compound_phrases ?*count* )))
+	(assert (dont_reverse_compPhrases ?compPhrase))
+        (assert (Mother  ?NP1))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1  ?compPhrase $?d2))
+        (assert (Head-Level-Mother-Daughters from ?lvl ?compPhrase ?NP1 ?PP2 ))
+        (assert (Node-Category ?compPhrase compound_phrases))
+        (printout ?*order_debug-file* "(rule_name - make_compPhrase  " ?*count* " " crlf
+                          "             Before    - "?head" "?lvl"  "?Mot"  "(implode$ $?d1)" "?NP1" "?PP2" "(implode$ $?d2) crlf
+                          "             After     - "?head" "?lvl"  "?Mot"  "(implode$ $?d1)" "?compPhrase" "(implode$ $?d2)")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
+;The Fateh Prakash Palace is a perfect example of luxury and style that states Udaipur as a city of royal hospitalilty and culture. Added by Sukhada (13-9-11)
+(defrule move_BEandHAVE_b4_SBAR
+(declare (salience 1000))
+(viSeRya-jo_samAnAXikaraNa  ?vi ?samA)
+(subject-subject_samAnAXikaraNa  ?sub ?vi)
+(parserid-wordid   ?s_pid  ?sub)
+(parserid-wordid   ?vi_pid  ?vi)
+(Head-Level-Mother-Daughters ? ? ?mot $? ?s_pid $?)
+?f0<-(Head-Level-Mother-Daughters ?head ?lvl $?d ?mot $?d1)
+(parserid-wordid   ?samA_pid  ?samA)
+(id-original_word ?samA ?word)
+(id-original_word ?vi ?word1)
+?f1<-(Head-Level-Mother-Daughters ?word1 ?l $?d2 ?SBAR $?d3)
+(Head-Level-Mother-Daughters ?word ? ?SBAR $?)
+(Node-Category ?SBAR SBAR)
+=>
+	(bind ?*count* (+ ?*count* 1))
+	(retract ?f0 ?f1)
+	(assert (Head-Level-Mother-Daughters ?head ?lvl $?d ?mot $?d1 ?SBAR))
+	(assert	(Head-Level-Mother-Daughters ?word1 ?l $?d2 $?d3))
+	
+) 	
+;-----------------------------------------------------------------------------------------------------------------------
 ; Mysore is also known as the city of palaces.
 ; Added by Shirisha Manju (12-08-11) Suggested by Sukhada
 ;If VP > ADVP VP1 and VP1 > x y z then this rule modifies VP as VP > ADVP xyz and removes the node VP1.
@@ -361,19 +432,16 @@
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ; Added by Shirisha Manju(20-06-11) Suggested by Dipti mam
-; He never really recovered from the shock of his wife's death. 
+; He never really recovered from the shock of his wife's death. I have never played golf in my life.
 (defrule move_negation_before_verb
 (declare (salience 900))
-;?f0<-(Head-Level-Mother-Daughters ?head ?lvl $?d ?ADVP $?d1 ?VP)
-;?f1<-(Head-Level-Mother-Daughters ?h ?l ?VP $?d2 ?V)
-;(Head-Level-Mother-Daughters never ? ?ADVP $?)
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d ?ADVP $?d1) 
 (Head-Level-Mother-Daughters never ? ?ADVP $?)
-(Head-Level-Mother-Daughters ?h ?l ?mot $?d2 ?Mot $?d3 ?VP)
+;(Head-Level-Mother-Daughters ?h ?l ?mot $?d2 ?Mot $?d3 ?VP)
+(Head-Level-Mother-Daughters ?h ?l ?mot $?d2 $?d3 ?VP)
 ?f1<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VP $?d4 ?V $?d5)
 (Node-Category ?VP VP)
 (Node-Category ?ADVP ADVP)
-;(parserid-wordid  ?V ?V_id)
 (or (and (Node-Category ?V VBD) (Parser_used Stanford-Parser))(and (id-cat_coarse ?V_id verb)(Parser_used Open-Logos-Parser)(parserid-wordid  ?V ?V_id)));Ol -- for the above sentence only
 (not (Mother  ?ADVP))
 =>
@@ -402,8 +470,9 @@
 (Node-Category  ?NP  NP)
 (Node-Category  ?PP PP|VP)
 (not (Mother  ?mot))
-(test (and (neq ?head lot)(neq ?head most)(neq ?head number)));And I think a lot of people will harp on program trading.
+(test (and (neq ?head lot)(neq ?head most)(neq ?head number)(neq ?head spot)));And I think a lot of people will harp on program trading. This room would look big for a spot of paint.
 ;Chamba has a number of temples, palaces and stylized buildings
+
 =>      
         (bind ?*count* (+ ?*count* 1))
 	(retract ?f0)
@@ -510,9 +579,10 @@
 
 (defrule get_SBAR
 (declare (salience 730))
+?f0<-(Head-Level-Mother-Daughters ?h ?l ROOT1 $?r)
 (Head-Level-Mother-Daughters ? ? ?NP $?id ?Mot $?)
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?dat $?pos)
-(Head-Level-Mother-Daughters ? ? ?dat $?child)
+?f1<-(Head-Level-Mother-Daughters ? ? ?dat $?child)
 (Node-Category  ?Mot SBAR|SBARQ)
 (Node-Category  ?dat ?DAT)
 (Node-Category ?NP ?noun)
@@ -523,11 +593,14 @@
 		(assert (dont_separate_sbar ?Mot))
 	)
 	(if (and (or (eq ?DAT SBAR)(eq ?DAT SBARQ))(neq ?noun NP)) then
+	(retract ?f0)
 	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?pos))
+	(assert (Head-Level-Mother-Daughters ?h ?l ROOT1 $?r ?dat))
 	(printout ?*order_debug-file* "(rule_name - get_SBAR "  ?*count* crlf
         	         "              Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)"  "?dat" "(implode$ $?pos) crlf
                 	 "              After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?pos) ")" crlf)
 	else
+;	(retract ?f1)
 	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?child $?pos)))
 	(printout ?*order_debug-file* "(rule_name - get_SBAR "  ?*count* crlf
         	         "              Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)"  "?dat" "(implode$ $?pos) crlf
