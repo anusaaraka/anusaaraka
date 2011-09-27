@@ -2874,8 +2874,12 @@
 <e><p><l>unake</l><r>vaha<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:p"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/></r></p></e>
 <e><p><l>unake</l><r>vaha<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:s"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/></r></p></e>
 <e><p><l>unake</l><r>vaha<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:p"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/></r></p></e>
+<!-- 
 <e><p><l>unakI</l><r>vaha<s n="cat:p"/><s n="parsarg:kI"/><s n="fnum:s"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
 <e><p><l>unakI</l><r>vaha<s n="cat:p"/><s n="parsarg:kI"/><s n="fnum:s"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/></r></p></e>
+-->
+<e><p><l>unakI</l><r>vaha<s n="cat:p"/><s n="case:o"/><s n="parsarg:kI"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
+
 <e><p><l>unakI</l><r>vaha<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:s"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
 <e><p><l>unakI</l><r>vaha<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:p"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
 <e><p><l>unakI</l><r>vaha<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:s"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
@@ -2945,6 +2949,8 @@
 <e><p><l>erI</l><r>U<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:p"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/><s n="per:m"/></r></p></e>
 <e><p><l>erI</l><r>U<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:s"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/><s n="per:m"/></r></p></e>
 <e><p><l>erI</l><r>U<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:p"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/><s n="per:m"/></r></p></e>
+<e><p><l>erI</l><r>U<s n="cat:p"/><s n="case:o"/><s n="parsarg:kI"/><s n="gen:f"/><s n="num:s"/><s n="per:m"/></r></p></e>
+
 <e><p><l>umhArA</l><r>U<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:s"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/><s n="per:m"/></r></p></e>
 <e><p><l>umhAre</l><r>U<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:p"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/><s n="per:m"/></r></p></e>
 <e><p><l>umhAre</l><r>U<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:s"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/><s n="per:m"/></r></p></e>
@@ -2972,6 +2978,9 @@
 <e><p><l>umhArI</l><r>U<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:p"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/><s n="per:m"/></r></p></e>
 <e><p><l>umhArI</l><r>U<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:s"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/><s n="per:m"/></r></p></e>
 <e><p><l>umhArI</l><r>U<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:p"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/><s n="per:m"/></r></p></e>
+
+<!-- Added parsarg:kI -->
+<e><p><l>umhArI</l><r>uma<s n="cat:p"/><s n="case:o"/><s n="parsarg:kI"/><s n="gen:f"/><s n="num:p"/><s n="per:m"/></r></p></e>
 </pardef>
 <pardef n="Apa/__p">
 <e><p><l></l><r><s n="cat:p"/><s n="case:o"/><s n="parsarg:0"/><s n="gen:m"/><s n="num:s"/></r></p></e>
@@ -3170,6 +3179,10 @@
 <e><p><l>merI</l><r>mEM<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:p"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/><s n="per:u"/></r></p></e>
 <e><p><l>merI</l><r>mEM<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:s"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/><s n="per:u"/></r></p></e>
 <e><p><l>merI</l><r>mEM<s n="cat:p"/><s n="parsarg:kA"/><s n="fnum:p"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/><s n="per:u"/></r></p></e>
+<!--  Added parsarg: kI for following patterns -->
+<e><p><l>merI</l><r>mEM<s n="cat:p"/><s n="case:o"/><s n="parsarg:kI"/><s n="gen:f"/><s n="num:s"/><s n="per:u"/></r></p></e>
+<e><p><l>hamArI</l><r>mEM<s n="cat:p"/><s n="case:o"/><s n="parsarg:kI"/><s n="gen:f"/><s n="num:p"/><s n="per:u"/></r></p></e>
+
 <e><p><l>mere</l><r>mEM<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke"/><s n="gen:m"/><s n="num:s"/><s n="per:u"/></r></p></e>
 <e><p><l>mere</l><r>mEM<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke"/><s n="gen:f"/><s n="num:s"/><s n="per:u"/></r></p></e>
 <e><p><l>hamAre_liye</l><r>mEM<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke_liye"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/></r></p></e>
