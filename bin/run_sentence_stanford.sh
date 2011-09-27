@@ -36,7 +36,7 @@ sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id
 
  cp hindi_sentence1.dat  hindi_sentence.dat
 
-## cat hin_eng_sent.dat
+# cat hin_eng_sent.dat
 
  cat  hindi_sentence.dat
  

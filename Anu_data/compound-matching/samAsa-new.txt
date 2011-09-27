@@ -32839,7 +32839,7 @@ usance promissory note	mumawI_rukkA	mumawI_rukkA	noun	3	RM
 use plane	upayoga_swara	upayoga_swara	noun	2	RM
 use up	Kapawa_honA	Kapawa_honA	noun	2	RM
 use value	upayoga_mUlya	upayoga_mUlya	noun	2	RM
-used to	AxI	AxI	noun	2	RM
+#used to	AxI	AxI	noun	2	RM
 usenet cabal	yUjaneta_kebala	yUjaneta_kebala	noun	2	RM
 usenet news group	upayogajAla_samAcAra_samUha	upayogajAla_samAcAra_samUha	noun	3	RM
 usenet news	yUjaneta_samAcAra	yUjaneta_samAcAra	noun	2	RM

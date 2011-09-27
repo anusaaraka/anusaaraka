@@ -5076,3 +5076,4 @@ xOda	T
 muda	T
 pakada	T
 roka	T
+lAiseMsa_xe	T

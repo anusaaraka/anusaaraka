@@ -17,6 +17,23 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " use.clp  use00  "  ?id "  " (- ?id 1) "   " (- ?id 2) "  prayoga_hone_ke_liye  )" crlf))
 )
 
+;Added by Manju Suggested by Sukhada (24-09-11)
+;He used to work at night.
+(defrule be_used_to
+(declare (salience 5000))
+(id-root ?id use)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id used)
+(id-root =(- ?id 1) be)
+(to-infinitive  =(+ ?id 1) ?id1)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id  =(+ ?id 1)  AxI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " use.clp  be_used_to  "  ?id "  " (+ ?id 1) "  AxI )" crlf))
+)
+
+
 
 
 ;Added by Meena(19.11.10)
