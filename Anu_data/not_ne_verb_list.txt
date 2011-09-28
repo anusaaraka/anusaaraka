@@ -1049,7 +1049,6 @@ lUra	0
 leta	0
 loca	0
 lota	0
--pIta	0
 lopa	0
 loBa	0
 lohA	0
@@ -1071,7 +1070,6 @@ SaramA	0
 saMkuca	0
 sazBala	0
 saMsa	0
--kara	0
 saka	0
 sakapakA	0
 sakara	0
@@ -1104,7 +1102,7 @@ sAla	0
 sizka	0
 siJa	0
 sitapitA	0
--siXAra	0
+siXAra	0
 simata	0
 siyarA	0
 sisaka	0

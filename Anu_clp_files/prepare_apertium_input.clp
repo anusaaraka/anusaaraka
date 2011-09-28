@@ -407,6 +407,53 @@
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_Hid_those )" crlf)
   )
   ;------------------------------------------------------------------------------------------------------------------------
+  ; He is taller than me. Look at me. We ran after him, but he escaped. You will not go without me.
+  ; Who did you play tennis with? The man with whom I play tennis is here.
+  ; Added by Shirisha Manju (24-09-11) Suggested by Chaitanya Sir
+  (defrule PP_pronoun_rule_with_ke
+  (declare (salience 931))
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(case ?case)(vibakthi ?vib))
+  (or (id-word ?pada_id he|she|their|i|our|me|him|they|them|her|we|it|that|this|ours|who|whom)(id-original_word ?pada_id us|Us))
+  ?f0<-(id-HM-source ?pada_id ?h_word ?)
+  (test (neq ?vib 0))
+  (test (neq (str-index "_" ?vib)  FALSE))
+  (test (or (eq (sub-string 1 2 ?vib) "ke")(eq (sub-string 1 2 ?vib) "kI")))
+  =>
+        (retract ?f0)
+	(bind ?index (str-index "_" ?vib))
+        (bind ?v (sub-string 1 (- ?index 1) ?vib))
+	(bind ?vib1 (sub-string (+ ?index 1) (length ?vib) ?vib))
+	(if (eq ?v "kI") then
+		(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word"<cat:p><case:o><parsarg:"?v"><gen:f><num:"?num"><per:"?per ">$ ^" ?vib1   "<cat:prsg>$)"  crlf)
+	else
+		(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word"<cat:p><case:o><parsarg:"?v"><gen:m><num:"?num"><per:"?per ">$ ^" ?vib1   "<cat:prsg>$)"  crlf)
+	)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_with_ke )" crlf)
+  )
+  ;------------------------------------------------------------------------------------------------------------------------
+  ;Added by Shirisha Manju (24-09-11)
+  ;He will sing you good night. 
+  (defrule PP_pronoun_rule_for_you_with_ke
+  (declare (salience 931))
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(case ?case)(vibakthi ?vib))
+  (id-word ?pada_id your|you)
+  ?f0<-(id-HM-source ?pada_id ?h_word ?)
+  (test (neq ?vib 0))
+  (test (neq (str-index "_" ?vib)  FALSE))
+  (test (or (eq (sub-string 1 2 ?vib) "ke")(eq (sub-string 1 2 ?vib) "kI")))
+  =>
+        (retract ?f0)
+        (bind ?index (str-index "_" ?vib))
+        (bind ?v (sub-string 1 (- ?index 1) ?vib))
+        (bind ?vib1 (sub-string (+ ?index 1) (length ?vib) ?vib))
+        (if (eq ?v "kI") then
+                (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word"<cat:p><case:o><parsarg:"?v"><gen:f><num:"?num">$ ^" ?vib1   "<cat:prsg>$)"  crlf)
+        else
+                (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word"<cat:p><case:o><parsarg:"?v"><gen:m><num:"?num">$ ^" ?vib1   "<cat:prsg>$)"  crlf)
+        )
+        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_for_you_with_ke )" crlf)
+  )
+  ;------------------------------------------------------------------------------------------------------------------------
   ; Added by Shirisha Manju (24-06-11)
   ; I will tell you some interesting facts tomorrow. Their program is better than ours.
   (defrule PP_pronoun_rule_with_vib

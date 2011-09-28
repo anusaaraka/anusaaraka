@@ -68,7 +68,7 @@ kyA Apa makadiyoM se BayaBIwa hEM?
 Hindi meaning using Link parser 2.12
 (Found maximum of 3 linkages )
 Are you coming with us? 
-kyA Apa hamAre_sAWa A rahe hEM?
+kyA Apa hamAre sAWa A rahe hEM?
 
 Hindi meaning using Link parser 2.13
 (Found maximum of 1 linkages )
@@ -526,7 +526,7 @@ usane jAne ke liye unheM/unako rAjI kiyA.
 Hindi meaning using Link parser 2.104
 (Found maximum of 2 linkages )
 He prays with me daily. 
-vaha prawi xina mere_sAWa prArWanA karawA hE.
+vaha prawi xina mere sAWa prArWanA karawA hE.
 
 Hindi meaning using Link parser 2.105
 (Found maximum of 18 linkages )
@@ -640,7 +640,7 @@ vaha nahIM AyegA/AegA kyozki vaha vyaswa hE.
 Hindi meaning using Link parser 2.127
 (Found maximum of 2 linkages )
 He will sing you good night. 
-vaha Apake_liye SuBa rAwrI gAyegA/gAegA.
+vaha Apake liye SuBa rAwrI gAyegA/gAegA.
 
 Hindi meaning using Link parser 2.128
 (Found maximum of 3 linkages )
@@ -755,7 +755,7 @@ mEM Gara KarIxane ke liye Karca_nahIM_kara sakawA hUz.
 Hindi meaning using Link parser 2.150
 (Found maximum of 20 linkages )
 I challenge anyone here to race with me. 
-mEM mere_sAWa xOdane ke liye prawyeka ko yahAz cunOwI xewA hUz.
+mEM mere sAWa xOdane ke liye prawyeka ko yahAz cunOwI xewA hUz.
 
 Hindi meaning using Link parser 2.151
 (Found maximum of 3 linkages )
@@ -975,7 +975,7 @@ isane naxI ke aMxara pahale usakI nAka PazsAyI/PazsAI.
 Hindi meaning using Link parser 2.194
 (Found maximum of 9 linkages )
 It is true that you are my friend but I can not go along with you on this issue. 
-yaha sawya hE ki Apa mere miwra hEM paranwu mEM isa viRaya para Apake_sAWa sahamawa_nahIM_ho sakawA hUz.
+yaha sawya hE ki Apa mere miwra hEM paranwu mEM isa viRaya para Apake sAWa sahamawa_nahIM_ho sakawA hUz.
 
 Hindi meaning using Link parser 2.195
 (Found maximum of 7 linkages )
@@ -1371,7 +1371,7 @@ vaha wejasvI vicAroM se BarI huI hE.
 Hindi meaning using Link parser 2.273
 (Found maximum of 6 linkages )
 She is having her children cook dinner for her. 
-vaha usake_liye usake baccoM se rAwa_kA Bojana pakavA rahI hE.
+vaha usake liye usake baccoM se rAwa_kA Bojana pakavA rahI hE.
 
 Hindi meaning using Link parser 2.274
 (Found maximum of 3 linkages )
@@ -1421,7 +1421,7 @@ vaha usake baccoM ke liye cinwiwa WI.
 Hindi meaning using Link parser 2.283
 (Found maximum of 1 linkages )
 She was singing me a song. 
-vaha mere_liye gAnA gA rahI WI.
+vaha mere liye gAnA gA rahI WI.
 
 Hindi meaning using Link parser 2.284
 (Found maximum of 2 linkages )
@@ -1640,7 +1640,7 @@ meDakoM ke samUha jaMgala_meM_se yAwrA_kara rahe We Ora unameM_se xo eka gahare 
 Hindi meaning using Link parser 3.27
 (Found maximum of 1 linkages )
 The hat is too small for me. 
-topI mere_liye jyAxA hI CotI hE.
+topI mere liye jyAxA hI CotI hE.
 
 Hindi meaning using Link parser 3.28
 (Found maximum of 3 linkages )
@@ -1729,7 +1729,7 @@ Master ne kahA ki yaxi mEM nahIM gayA WA wo Apa kaBI BI kEse xeKeMge.
 Hindi meaning using Link parser 3.45
 (Found maximum of 1 linkages )
 The matter was explained by her. 
-viRaya usake_xvArA samaJAyA gayA WA.
+viRaya usake xvArA samaJAyA gayA WA.
 
 Hindi meaning using Link parser 3.46
 (Found maximum of 1 linkages )
@@ -2119,7 +2119,7 @@ hama aba jAnawe hEM ki xo hajAra wawwva hEM jinheM/jinako hama eka acCA vixyuwa 
 Hindi meaning using Link parser 4.23
 (Found maximum of 2 linkages )
 We ran after him, but he escaped. 
-hama usake_pICe xOde paranwu vaha BAga gayA.
+hama usake pICe xOde paranwu vaha BAga gayA.
 
 Hindi meaning using Link parser 4.24
 (Found maximum of 4 linkages )
@@ -2214,7 +2214,7 @@ Apa kOna se hAWa kA upayoga karawe hEM?
 Hindi meaning using Link parser 4.42
 (Found maximum of 3 linkages )
 Which one is right for me? 
-kOnasA vAlA mere_liye TIka hE?
+kOnasA vAlA mere liye TIka hE?
 
 Hindi meaning using Link parser 4.43
 (Found maximum of 1 linkages )
@@ -2370,5 +2370,14 @@ Hindi meaning using Stanford parser 4.73
 There is a lot of flu about. 
 bahuwa sArA PlU AsapAsa hE.
 AsapAsa PlU bahuwa sArA hE.
+
+Hindi meaning using Link parser 4.74
+(Found maximum of 12 linkages )
+Most of the inexpensive budget accommodation is in taj ganj. 
+kama KarcIle bajata AvAsa kA sabase aXika taj ganj meM hE.
+
+Hindi meaning using Stanford parser 4.75
+The glass house built on the lines of the crystal palace in london is the main attraction in this huge park. 
+landana meM sPatika mahala kI lAinoM para banA gilAsa Gara isa bqhaw uxyAna meM pramuKa AkarRaNa hE.
 
 Calling Interface related programs

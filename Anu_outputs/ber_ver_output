@@ -577,7 +577,7 @@ mEM jAnawA WA ki pArtI ko kOna AyegA/AegA.
 
 Hindi meaning using Berkeley parser 2.141
 He prays with me daily. 
-vaha prawi xina mere_sAWa prArWanA karawA hE.
+vaha prawi xina mere sAWa prArWanA karawA hE.
 
 Hindi meaning using Berkeley parser 2.142
 I felt terrible after our discussion. 
@@ -589,7 +589,7 @@ usane vivAxa kiyA ki hamArA progrAma variRTa WA.
 
 Hindi meaning using Berkeley parser 2.144
 The hat is too small for me. 
-topI mere_liye jyAxA hI CotI hE.
+topI mere liye jyAxA hI CotI hE.
 
 Hindi meaning using Berkeley parser 2.145
 He is a small man in eyes of his boss. 
@@ -605,7 +605,7 @@ sEnika yuxXa ke liye bulAye/bulAe gaye We.
 
 Hindi meaning using Berkeley parser 2.148
 We ran after him, but he escaped. 
-hama usake_pICe xOde paranwu vaha BAga gayA.
+hama usake pICe xOde paranwu vaha BAga gayA.
 
 Hindi meaning using Berkeley parser 2.149
 He lost his pen. 
@@ -788,7 +788,7 @@ usako/use xUsarI kaMpanI ke xvArA kAma xiyA jA rahA hE.
 
 Hindi meaning using Berkeley parser 2.193
 We picked out some beautiful flowers for her. 
-hamane usake_liye kuCa sunxara PUla cuna liye/lie.
+hamane usake liye kuCa sunxara PUla cuna liye/lie.
 
 Hindi meaning using Berkeley parser 2.194
 I am afraid that I have badly hurt him. 
@@ -999,7 +999,7 @@ prawyeka vyakwi ko pqWvI para amana banAe raKanA/raKane cAhiye.
 
 Hindi meaning using Berkeley parser 2.245
 It is true that you are my friend but I can not go along with you on this issue. 
-Apa mere miwra hEM yaha sawya hE paranwu mEM isa viRaya para Apake_sAWa sahamawa_nahIM_ho sakawA hUz.
+Apa mere miwra hEM yaha sawya hE paranwu mEM isa viRaya para Apake sAWa sahamawa_nahIM_ho sakawA hUz.
 yaha sawya hE ki Apa mere miwra hEM paranwu mEM isa viRaya para Apake_sAWa sahamawa_nahIM_ho sakawA hUz.
 
 Hindi meaning using Berkeley parser 2.246
@@ -1130,7 +1130,7 @@ vaha eka pUrI_waraha se nirarWaka yAwrA WI.
 
 Hindi meaning using Berkeley parser 2.277
 I do not have very much money. 
-mere_pAsa bahuwa jyAxA pEsA nahIM hE.
+mere pAsa bahuwa jyAxA pEsA nahIM hE.
 
 Hindi meaning using Berkeley parser 2.278
 Dalai Lama is the abbot of the Tibetian monastery. 
@@ -1584,5 +1584,41 @@ isa samaya para Dow lagaBaga 35 pOintsa nIce WA.
 Hindi meaning using Berkeley parser 3.85
 He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
 usane kahA ki Ese pariNAmoM ko Japan ke sAWa U.S. vyApAra GAtA GatAne meM dOlara Ora sEnta meM mApane yogya honA cAhiye.
+
+Hindi meaning using Berkeley parser 3.86
+Mandi is comparatively hotter than other hill stations of himachal pradesh. 
+Mandi himachal pradesh ke anya pahAdI steSanoM kI apekRA wulanAwmaka_xqRti se garama hE.
+
+Hindi meaning using Berkeley parser 3.87
+Most of the inexpensive budget accommodation is in taj ganj. 
+kama KarcIle bajata AvAsa kA sabase aXika taj ganj meM hE.
+
+Hindi meaning using Berkeley parser 3.88
+As we go from ooty to gudalur, the change in vegetation is striking. 
+jaba hama ooty se gudalur ko jAwe hEM pOXoM_kI vqxXi meM parivarwana XyAna_AkarRiwa_karanevAlA hE.
+
+Hindi meaning using Berkeley parser 3.89
+The glass house built on the lines of the crystal palace in london is the main attraction in this huge park. 
+landana meM sPatika mahala kI lAinoM para banA gilAsa Gara isa bqhaw uxyAna meM pramuKa AkarRaNa hE.
+
+Hindi meaning using Berkeley parser 3.90
+Mahadevi Verma wrote many poems. 
+Mahadevi Verma ne bahuwa sArI kaviwAyeM/kaviwAez liKIM.
+
+Hindi meaning using Berkeley parser 3.91
+Soccer is my most favourite sport. 
+PutabAla merA sabase aXika priya Kela hE.
+
+Hindi meaning using Berkeley parser 3.92
+The soup needs more salt. 
+Sorabe ko aXika namaka kI AvaSyakawA hE.
+
+Hindi meaning using Berkeley parser 3.93
+My car broke down when I reached Lalitpur. 
+merI gAdI KarAba_ho gayI/gaI mEM Lalitpur jaba pahuzcA.
+
+Hindi meaning using Berkeley parser 3.94
+His wife has had a baby. 
+usakI pawnI kA SiSU WA.
 
 Calling Interface related programs
