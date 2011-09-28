@@ -2710,20 +2710,26 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  10. H_ordering_rules.clp
         Added    : from_to_PPs , move_BEandHAVE_b4_SBAR
         Modified : move_negation_before_verb, reverse-NP-Daughters ,get_SBAR, move_negation_before_verb rules.
- 11. Modified morph.pl programme to handle patterns like "(sharda)", "(gram flour)" etc. 
- 12. Moved 'wx2wx-normal.lex','wx2wx-small.lex'  from bin to Anu_src folder and added its compilation part in anu_compile.sh
- 13. WSD : Modified : use.clp,better.clp
- 14. Modified run_penn.sh to display penn info in oneline.
- 15. Modified Anusaaraka_stanford.sh for above purpose.
- 16. Removed roman_to_iscii and utf8_iscii from bin folder.
- 17. Updated abbr_browser.sh to get Google Translation in firefox.
- 18. Updated anu_compile64bit.sh
- 19. Updated step-debug
- 20. Updated apertium_hn.dix
- 21. Updated README for stanford-parser.
- 22. Updated README inside anu_testing.  
- 23. Modified ber_ver_output, link_ver_output, ol_ver_output, sd_ver_output and verified_output.
- 24. Updated changes_in_databases.
- 25. Updated the following files
-        sd_verified (448)  ber_verified (394)  verified (475)
- 26. Updated Log.
+		   reverse-NP-Daughters
+ 11. Added not_rule1 rule in sd_lwg_rules.clp --to handle not in copula
+ 12. Modified morph.pl programme to handle patterns like "(sharda)", "(gram flour)" etc. 
+ 13. Moved 'wx2wx-normal.lex','wx2wx-small.lex'  from bin to Anu_src folder and added its compilation part in anu_compile.sh
+ 14. WSD : Modified : use.clp,better.clp
+ 15. Modified run_penn.sh to display penn info in oneline.
+ 16. Modified Anusaaraka_stanford.sh for above purpose.
+ 17. Removed roman_to_iscii and utf8_iscii from bin folder.
+ 18. Updated abbr_browser.sh to get Google Translation in firefox.
+ 19. Updated anu_compile64bit.sh
+ 20. Updated step-debug
+ 21. Updated apertium_hn.dix
+ 22. Updated README for stanford-parser.
+ 23. Updated README inside anu_testing.  
+ 24. Updated README for debugging.
+ 25. Modified ber_ver_output, link_ver_output, ol_ver_output, sd_ver_output and verified_output.
+ 26. Updated changes_in_databases.
+ 27. Updated the following files
+        sd_verified (450)  ber_verified (394)  verified (475)
+ 28. Updated Log.
+
+
+

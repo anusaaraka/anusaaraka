@@ -465,12 +465,12 @@
 ;PP: VP: Information International said it believes that the complaints, filed in federal court in Georgia, are without merit.
 (defrule reverse-NP-Daughters
 (declare (salience 800))
-?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot ?NP ?PP $?d)
+?f0<-(Head-Level-Mother-Daughters ?head&~lot&~most&~number&~spot&~kinds ?lvl ?mot ?NP ?PP $?d)
 (Node-Category  ?mot  NP)
 (Node-Category  ?NP  NP)
 (Node-Category  ?PP PP|VP)
 (not (Mother  ?mot))
-(test (and (neq ?head lot)(neq ?head most)(neq ?head number)(neq ?head spot)));And I think a lot of people will harp on program trading. This room would look big for a spot of paint.
+;(test (and (neq ?head lot)(neq ?head most)(neq ?head number)(neq ?head spot)));And I think a lot of people will harp on program trading. This room would look big for a spot of paint.
 ;Chamba has a number of temples, palaces and stylized buildings
 
 =>      

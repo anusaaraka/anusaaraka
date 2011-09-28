@@ -115,11 +115,11 @@
  (parserid-word ?id3 ?w1)
  (parser_id-root-category-suffix-number ?id3 ?root ? ?suf ?)
   =>
-        (retract ?f)
+ ;       (retract ?f)
         (bind ?chunk (string-to-field (str-cat (lowcase ?w)"_"?w1)))
         (bind ?tam   (string-to-field (str-cat (lowcase ?w)"_"?suf)))
         (assert (root-verbchunk-tam-parser_chunkids  ?root  ?chunk ?tam  ?id2 ?id3))
-        (assert (grouped_head ?head))
+        (assert (grouped_head ?id3))(assert (grouped_head ?head))
         (printout ?*lwg_debug_file* "(rule_name-grouped_ids   rule_3_2  "?id2"  "  ?id3 ")"  crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------------
@@ -276,6 +276,28 @@
 	(printout ?*lwg_debug_file* "(rule_name-grouped_ids   not_rule " ?head " "?not " "?id ")" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (27-09-11)
+ ; But that will not be easy. He should not be a student.
+ (defrule not_rule1
+ (declare (salience 800))
+ ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vbchunk  ?tam $?ids ?head)
+ (rel_name-sids cop ?id ?head)
+ (rel_name-sids neg ?id ?not)
+ ?f1<-(parserid-word ?not not)
+ (test (not (member$ ?not $?ids)))
+ (test (and (> (string_to_integer  ?not) (string_to_integer  (nth$ 1 $?ids))) (< (string_to_integer  ?not) (string_to_integer  ?head))))
+  =>
+        (retract ?f )
+        (bind ?id (string-to-field (implode$ $?ids)))
+        (bind ?index (str-index "_" ?tam))
+        (bind ?index1 (str-index "_" ?vbchunk))
+        (bind ?chunk (sym-cat (sub-string 1 ?index1 ?vbchunk)"not_" (sub-string (+ ?index1 1) 1000 ?vbchunk)))
+        (bind ?tam (sym-cat (sub-string 1 ?index ?tam) "not_" (sub-string (+ ?index 1) 1000 ?tam)))
+        (assert (root-verbchunk-tam-parser_chunkids ?root ?chunk  ?tam ?id ?not ?head ))
+        (printout ?*lwg_debug_file* "(rule_name-grouped_ids   not_rule " ?head " "?not " "?id ")" crlf)
+  )
+  ;-------------------------------------------------------------------------------------------------------------------------
+ ;
  ;He may drink milk or eat apples.
  ;I ate fruits, drank milk and slept.  
  (defrule cc_rule
