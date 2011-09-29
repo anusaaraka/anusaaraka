@@ -46,7 +46,7 @@
 (id-root ?id good)
 ;(id-root ?id better)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat ?id adjective|adjective_comparative|adjective_superlative)
+(or (id-cat ?id adjective|adjective_comparative|adjective_superlative) (id-cat_coarse ?id adjective)) ;Added cat_coarse fact by Roja for sd-pipeline
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id behawara))

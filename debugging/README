@@ -23,6 +23,15 @@
         step 5 : Reset (IT'S IMPORTANT TO RESET)
                  $sh $HOME_anu_test/debugging/provisional_Anu_databases/reset.sh
 
+  Steps to view Derived tree  ::
+  =========================== 
+  1. $ cd $HOME_anu_test/debugging/sentence_debug
+  2. $ sh ../view_derived_tree.sh  <file_name>   Ex: $ sh ../view_derived_tree.sh  mytest  
+  3. A new window opens
+  4. Go to File menu -> select Open Treebank
+  5. A new window opens  --> select the path upto sentence_debug (as mentioned in step 1)
+				and select mapped_constituents and select Open
+
 
   DepTreeeViewer ::
   ==============
