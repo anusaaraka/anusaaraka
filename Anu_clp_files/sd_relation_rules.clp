@@ -1,3 +1,5 @@
+; Written by Sukhada
+
 (open "relations_tmp.dat" open-file "a")
 (open "relations_debug.dat" debug_fp "a")
 (defglobal ?*fp* = open-file)
@@ -390,13 +392,16 @@
 (defrule nsubj+xcomp_1
 (rel_name-sids nsubj ?obj_s ?obj)
 (rel_name-sids xcomp|ccomp ?kriyA ?obj_s)
+(rel_name-sids aux ?obj_s ?to)
+(parserid-word ?to to);I knew who would come to the party.
 (parser_id-cat_coarse ?obj_s verb)
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-object     "?kriyA"        "?obj")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj+xcomp_1     kriyA-object     "?kriyA"        "?obj")"crlf)
 )
 ; Added by Shirisha Manju
-; Ex. The instructor persuaded Mary to take that course . Help me finish translating this document. Help me to finish translating this document.
+; Ex. The instructor persuaded Mary to take that course . 
+; Modified by Sukhada for Help me finish translating this document. Help me to finish translating this document. I knew who would come to the party.
 ;------------------------------------------------------------------------------------------------------------------------
  
 (defrule dobj+iobj

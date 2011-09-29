@@ -66,15 +66,20 @@
                           "             After     - "?head" "?lvl"  "?Mot"  "(implode$ $?d1)" "?FromToPP" "(implode$ $?d2)")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-; October to March is the best time to visit the Jaipur city. Added by Sukhada (14-9-11)
-(defrule make_compPhrase
+; October to March is the best time to visit the Jaipur city. Did you count ten to twelve. Added by Sukhada (14-9-11)
+(defrule make_compoundPhrase
 (declare (salience 1450))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1 ?NP1 ?PP2 $?d2)
 (Head-Level-Mother-Daughters ?h1 ? ?NP1 $?d3 )
 (Head-Level-Mother-Daughters to ? ?PP2 $?d4 ?np2)
 (Head-Level-Mother-Daughters ?h2 ? ?np2 $?d5)
+(id-original_word ?n1 ?h1) 
+(id-original_word ?n2 ?h2)
+(id-cat_coarse ?n1 ?num1) 
+(id-cat_coarse ?n2 ?num2)
 (test (or (and (neq (gdbm_lookup "time.gdbm" ?h1) "FALSE")(neq (gdbm_lookup "time.gdbm" ?h2) "FALSE"))
-          (and (neq (gdbm_lookup "place.gdbm" ?h1) "FALSE")(neq (gdbm_lookup "place.gdbm" ?h2) "FALSE"))))
+          (and (neq (gdbm_lookup "place.gdbm" ?h1) "FALSE")(neq (gdbm_lookup "place.gdbm" ?h2) "FALSE"))
+	  (and (eq ?num1 number) (eq ?num2 number)) ))
 (Node-Category  ?NP1    NP)
 (Node-Category  ?PP2    PP)
 (not (Mother  ?NP1))
@@ -112,12 +117,11 @@
 	(retract ?f0 ?f1)
 	(assert (Head-Level-Mother-Daughters ?head ?lvl $?d ?mot $?d1 ?SBAR))
 	(assert	(Head-Level-Mother-Daughters ?word1 ?l $?d2 $?d3))
-	
 ) 	
 ;-----------------------------------------------------------------------------------------------------------------------
 ; Mysore is also known as the city of palaces.
 ; Added by Shirisha Manju (12-08-11) Suggested by Sukhada
-;If VP > ADVP VP1 and VP1 > x y z then this rule modifies VP as VP > ADVP xyz and removes the node VP1.
+;If VP > ADVP VP1 and VP1 > x y z then this rule modifies VP as VP > ADVP x y z and removes the node VP1.
 (defrule merge_ADVP
 (declare (salience 1400))
 ?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP ?ADVP ?VP1)
@@ -220,8 +224,8 @@
 (printout ?*order_debug-file* "(debug_info  "?*count*" Applying Reversing rules )" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-;Have you ever seen Pasafic?  
-(defrule rev_ADVP_1
+;Have you ever seen Pacific?  Added by Sukhada
+(defrule move_ADVP_after_v
 (declare (salience 960))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot ?advp ?vp $?daut )
 (Node-Category  ?Mot  VP)
@@ -232,7 +236,7 @@
         (retract ?f0)
 	(assert (Mother  ?advp))
 	(assert (Head-Level-Mother-Daughters ?head ?lev ?Mot ?vp ?advp $?daut ))
-	(printout ?*order_debug-file* "(rule_name - rev_ADVP_1 " ?*count* " " crlf
+	(printout ?*order_debug-file* "(rule_name - move_ADVP_after_v " ?*count* " " crlf
                          "              Before    - "?head" " ?lev" "?Mot" "?advp" "?vp" "(implode$ $?daut) crlf
 	                 "              After     - "?head" " ?lev" "?Mot" "?vp" "?advp" "(implode$ $?daut) ")" crlf)
 )
@@ -512,7 +516,7 @@
 (parserid-wordid  ?p_id ?id)
 (not (kriyA-conjunction  ? ?id));It was so dark that I could not see anything.
 (not (Mother  ?SBAR))
-(test (and (neq ?head that)(neq ?head because))); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy.
+(test (and (neq ?head that)(neq ?head because) (neq ?head as))); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy. Some grammars are better than others, as we have proved. 
 =>
         (bind ?*count* (+ ?*count* 1))
         (retract ?f0)
@@ -540,7 +544,7 @@
 (undefrule WHNP_rule)
 (undefrule prep_in_SBAR_rule)
 (undefrule rev_ADVP_goesto_RB)
-(undefrule rev_ADVP_1)
+(undefrule move_ADVP_after_v)
 )
 
 ;-----------------------------------------------------------------------------------------------------------------------

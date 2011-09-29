@@ -21292,7 +21292,7 @@ somehow	kisI_waraha
 someone	koI
 someplace	kisI_jagaha
 somersault	palatA
-something	koI_cIja
+something	kuCa
 sometime	kuCa_samaya
 sometimes	kaBI_kaBI
 someway	kisI_prakAra_se
