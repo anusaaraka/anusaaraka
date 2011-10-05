@@ -649,7 +649,7 @@ hamane trePika jAma meM 30 minata Koye/Koe.
 
 Hindi meaning using Stanford parser 2.158
 I read about the train accident in today's paper. 
-mEMne Aja ke pawra meM rela xurGatanA ke bAre meM paDA.
+mEMne Aja ke samAcAra pawra meM rela xurGatanA ke bAre meM paDA.
 
 Hindi meaning using Stanford parser 2.159
 He is a devoted husband and a father. 
@@ -1856,5 +1856,65 @@ yaha karane ke liye jo cAhawA hE Jane hE.
 Hindi meaning using Stanford parser 4.50
 He stopped killing of animals and birds throughout his kingdom. 
 usane usake rAjya Bara meM paSuoM Ora cidiyoM kA GAwaka ko rokA.
+
+Hindi meaning using Stanford parser 4.51
+Experience is more important for this job than paper qualifications. 
+anuBava kagajI yogyawA kI apekRA isa kAma ke liye aXika mahawvapUrNa hE.
+
+Hindi meaning using Stanford parser 4.52
+He wrote the address on a piece of paper. 
+usane kAgaja_kA purje para pawA liKA.
+
+Hindi meaning using Stanford parser 4.53
+Dictionaries are usually printed on thin paper. 
+SabxakoRa pawale kAgaja para sAXAraNawayaH CApe gaye hEM.
+
+Hindi meaning using Stanford parser 4.54
+She works on paper because she hates computers. 
+vaha kAgaja para kAma karawI hE kyozki vaha saMgaNaka nApasanxa karawI hE.
+
+Hindi meaning using Stanford parser 4.55
+I read a recent paper in the Journal of Medicine. 
+mEMne Medicine ke Journal meM eka hAla kA leKapawra paDA.
+
+Hindi meaning using Stanford parser 4.56
+I read about the train robbery in today's paper. 
+mEMne Aja ke samAcAra pawra meM relagAdI dakEwI ke bAre meM paDA.
+
+Hindi meaning using Stanford parser 4.57
+I read about the train accident in Sunday paper. 
+mEMne ravivAra ke_samAcAra pawra meM rela xurGatanA ke bAre meM paDA.
+
+Hindi meaning using Stanford parser 4.58
+This journal is available in paper form. 
+yaha jarnala kagajI rUpa meM upalabXa hE.
+
+Hindi meaning using Stanford parser 4.59
+Almora is a small town in Uttarakhanda state. 
+Almora Uttarakhanda rAjya meM eka CotA nagara hE.
+
+Hindi meaning using Stanford parser 4.60
+This card is printed on recycled paper. 
+yaha kArda punarAvqwwa kAgaja para CApA huA hE.
+
+Hindi meaning using Stanford parser 4.61
+She had gotten her family to go against convention. 
+vaha paraMparA ke viruxXa jAne ke liye usake parivAra ko preriwa_kara cukI WI.
+
+Hindi meaning using Stanford parser 4.62
+She declared that out of love for the poor she had gotten her family to go against convention. 
+usane GoRiwa kiyA ki xInoM ke_prawi_prema_ke kAraNa vaha paraMparA ke viruxXa jAne ke liye usake parivAra ko preriwa_kara cukI WI.
+
+Hindi meaning using Stanford parser 4.63
+She got the book to read from the library. 
+usane puswakAlaya se paDane ke liye puswaka prApwa kI.
+
+Hindi meaning using Stanford parser 4.64
+He got a topic to speak at the forum. 
+usako/use janasaBA meM bolane ke liye viRaya milA.
+
+Hindi meaning using Stanford parser 4.65
+He finally got a topic to speak at the forum. 
+usako/use AKirakAra janasaBA meM bolane ke liye viRaya milA.
 
 Calling Interface related programs

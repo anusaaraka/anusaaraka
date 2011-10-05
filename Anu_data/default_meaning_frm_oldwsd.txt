@@ -19620,7 +19620,7 @@ recuperate	punaH_prApwa_kara
 recur	Pira_A
 recurrence	PirAva
 recurrent	xOrA_karane_vAlA
-recycle	prayoga_kI_gayI_vaswu_kA_punaH_prayoga
+recycle	punarAvqwwa
 reddish	kuCa_rakwa_varNa
 redeem	kRawi_pUrwi_kara
 redeemable	BugawAna_karake_vApasa_liyA_jA_sake
@@ -74299,11 +74299,7 @@ recurrenter	xOrA_karane_vAlA
 recurrentest	xOrA_karane_vAlA
 recurring	Pira_AnA
 recurs	Pira_AnA
-recycled	prayoga_kI_gayI_vaswu_kA_punaH_prayoga
-recycle's	prayoga_kI_gayI_vaswu_kA_punaH_prayoga
-recycles'	prayoga_kI_gayI_vaswu_kA_punaH_prayoga
-recycles	prayoga_kI_gayI_vaswu_kA_punaH_prayoga
-recycling	prayoga_kI_gayI_vaswu_kA_punaH_prayoga
+recycled	punarAvqwwa
 redcoat	azgreja_sEnika
 redded	kisI_ke_svAgawa_ke_liye_biCAI_gayI_xarI
 reddened	lAla_karanA_yA_honA
@@ -96627,3 +96623,4 @@ Jummamasjid	jummA_masjixa
 arms-dealing	SaswrAswra_kraya_vikraya
 ill-used	xurvyavahariwa_huA
 free-fall	besahArA_giranA
+small-town	sImiwa_jFAna_Ora_vicAroM_vAlA

@@ -29146,7 +29146,6 @@ small scale industries	laxu_uxyoga	laxu_uxyoga	noun	3	RM
 small scale industry	laxu_uxyoga	laxu_uxyoga	noun	3	RM
 small ticket item	kama_kImawI_vaswu	kama_kImawI_vaswu	noun	3	RM
 small time	anAvaSyaka	anAvaSyaka	noun	2	RM
-small town	sImiwa_jFAna_Ora_vicAroM_vAlA	sImiwa_jFAna_Ora_vicAroM_vAlA	noun	2	RM
 smaller than	se_CotA[alpa]	se_CotA[alpa]	noun	2	RM
 smart agents	cawura_ejeMta	cawura_ejeMta	noun	2	RM
 smart alec	sarvajFa_jEsA_praxarSana_karanevAlA	sarvajFa_jEsA_praxarSana_karanevAlA	noun	2	RM
@@ -34347,4 +34346,5 @@ free fall	besahArA_giranA	besahArA_giranA	noun	2	RM
 miles and miles	miloM	miloM	noun	3	WM
 a spot of	jarA_sA	jarA_sA	noun	2	RM 
 for the last time	AKirI_bAra	AKirI_bAra	noun	4	WM
-stop talking	bAweM_banxa_kIjiye	bAweM_banxa_kIjiye	noun	1	WM 
+stop talking	bAweM_banxa_kIjiye	bAweM_banxa_kIjiye	noun	1	WM
+diet book	AhAra_puswaka	AhAra_puwaka	noun	2	RM	

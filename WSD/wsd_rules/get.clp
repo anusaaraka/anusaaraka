@@ -1,12 +1,14 @@
 
 
 ;Added by Meena(12.3.10)
+;She had gotten her family to go against convention. 
 ;And she declared that out of love for the poor she had gotten her family to go against convention . 
 (defrule get0
 (declare (salience 5000))
 (id-root ?id get)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-object  ?id ?id1)
+(not(id-root ?id1 book|topic|chance))
 (saMjFA-to_kqxanwa  ?id1 ?id2);renamed saMjFA-kqxanwa as saMjFA-to_kqxanwa by Manju (05-02-11)
 (to-infinitive  =(+ ?id1 1) ?id2)
 =>
@@ -22,7 +24,8 @@
 
 
 
-
+;Modified by Meena(16.8.11)
+;He has got a cow and two dogs.
 (defrule get1
 (declare (salience 5000))
 (id-root ?id get)
@@ -30,16 +33,19 @@
 (id-word =(- ?id 1) is|have|has)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id hE_nahIM))
+(assert (id-wsd_root_mng ?id hE))
+;(assert (id-wsd_root_mng ?id hE_nahIM))
 (assert (kriyA_id-subject_viBakwi ?id ke_pAsa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  get.clp 	get1   "  ?id "  hE_nahIM )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  get.clp 	get1   "  ?id "  hE )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  get.clp       get1   "  ?id " ke_pAsa )" crlf)
 )
 )
 
 
 
+;Modified by Meena(17.8.11)
+;He had got a cow and two dogs.
 (defrule get2
 (declare (salience 4800))
 (id-root ?id get)
@@ -47,10 +53,11 @@
 (id-word =(- ?id 1) had)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id WA_nahIM))
+(assert (id-wsd_root_mng ?id WA))
+;(assert (id-wsd_root_mng ?id WA_nahIM))
 (assert (kriyA_id-subject_viBakwi ?id ke_pAsa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  get.clp 	get2   "  ?id "  WA_nahIM )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  get.clp 	get2   "  ?id "  WA )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  get.clp       get2   "  ?id " ke_pAsa )" crlf)
 )
 )
@@ -1281,7 +1288,33 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  get.clp 	get74   "  ?id "  pA )" crlf))
 )
 
+
+
+
+;Added by Meena(15.9.11)
+;He got a topic to speak at the forum. 
+;We did not even get a chance to do the programs we wanted to do. 
 (defrule get75
+(declare (salience -1600))
+(id-root ?id get)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 topic|chance)
+(kriyA-object ?id ?id1)
+(or(saMjFA-to_kqxanwa  ?id1 =(+ ?id1 2))(kriyA-kriyArWa_kriyA  ?id =(+ ?id1 2)))
+=>
+(retract ?mng)
+(assert (kriyA_id-subject_viBakwi ?id ko))
+(assert (id-wsd_root_mng ?id mila))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  get.clp       get75   "  ?id "  mila )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  get.clp      get75   "  ?id " ko )" crlf))
+)
+
+
+
+
+
+(defrule get76
 (declare (salience -4700))
 (id-root ?id get)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1291,11 +1324,11 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id lA_xe))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  get.clp 	get75   "  ?id "  lA_xe )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  get.clp 	get76   "  ?id "  lA_xe )" crlf))
 )
 
 
-(defrule get76
+(defrule get77
 (declare (salience -4900))
 (id-root ?id get)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1306,11 +1339,11 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 uTa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " get.clp	get76  "  ?id "  " ?id1 "  uTa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " get.clp	get77  "  ?id "  " ?id1 "  uTa  )" crlf))
 )
 
 
-(defrule get77
+(defrule get78
 (declare (salience -5700))
 (id-root ?id get)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1321,13 +1354,13 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 rukAvatoM_ke_bAvajUxa_pahuzca))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " get.clp	get77  "  ?id "  " ?id1 "  rukAvatoM_ke_bAvajUxa_pahuzca  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " get.clp	get78  "  ?id "  " ?id1 "  rukAvatoM_ke_bAvajUxa_pahuzca  )" crlf))
 )
 
 
 
 
-(defrule get78
+(defrule get79
 (declare (salience -6000))
 (id-root ?id get)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1338,11 +1371,11 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 bAhara_ho_jA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " get.clp	get78  "  ?id "  " ?id1 "  bAhara_ho_jA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " get.clp	get79  "  ?id "  " ?id1 "  bAhara_ho_jA  )" crlf))
 )
 
 
-(defrule get79
+(defrule get80
 (declare (salience -6200))
 (id-root ?id get)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1351,12 +1384,12 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id prApwa_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  get.clp 	get79   "  ?id "  prApwa_kara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  get.clp 	get80   "  ?id "  prApwa_kara )" crlf))
 )
 
 
 ;Added by sheetal(29-12-2009).
-(defrule get80
+(defrule get81
 (declare (salience 4950))
 (id-root ?id get)
 ?mng <-(meaning_to_be_decided ?id)
@@ -1365,7 +1398,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ho))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  get.clp      get80   "  ?id "  ho )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  get.clp      get81   "  ?id "  ho )" crlf))
 )
 ;Do not get wet in the rain .
 

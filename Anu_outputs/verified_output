@@ -900,7 +900,7 @@ Apa kisa vixyAlaya meM aXyayana karawe hEM.
 Hindi meaning using Link parser 2.179
 (Found maximum of 8 linkages )
 I read about the train accident in today's paper. 
-mEMne Aja ke pawra meM rela xurGatanA ke bAre meM paDA.
+mEMne Aja ke samAcAra pawra meM rela xurGatanA ke bAre meM paDA.
 
 Hindi meaning using Link parser 2.180
 (Found maximum of 1 linkages )
@@ -2129,7 +2129,7 @@ kyA ve aMgrejI meM bAwacIwa_kara rahe We.
 Hindi meaning using Link parser 4.25
 (Found maximum of 2 linkages )
 Were you aware that something was wrong. 
-kyA Apa avagawa We ki koI cIja galawa WI.
+kyA Apa avagawa We ki kuCa galawa WA.
 
 Hindi meaning using Link parser 4.26
 (Found maximum of 1 linkages )
@@ -2379,5 +2379,65 @@ kama KarcIle bajata AvAsa kA sabase aXika taj ganj meM hE.
 Hindi meaning using Stanford parser 4.75
 The glass house built on the lines of the crystal palace in london is the main attraction in this huge park. 
 landana meM sPatika mahala kI lAinoM para banA gilAsa Gara isa bqhaw uxyAna meM pramuKa AkarRaNa hE.
+
+Hindi meaning using Link parser 4.76
+(Found maximum of 3 linkages )
+He wrote the address on a piece of paper. 
+usane kAgaja_kA purje para pawA liKA.
+
+Hindi meaning using Link parser 4.77
+(Found maximum of 3 linkages )
+Dictionaries are usually printed on thin paper. 
+SabxakoRa pawale kAgaja para sAXAraNawayaH CApe gaye hEM.
+
+Hindi meaning using Link parser 4.78
+(Found maximum of 2 linkages )
+She works on paper because she hates computers. 
+vaha kAgaja para kAma karawI hE kyozki vaha saMgaNaka nApasanxa karawI hE.
+
+Hindi meaning using Link parser 4.79
+(Found maximum of 12 linkages )
+I read a recent paper in the Journal of Medicine. 
+mEMne Medicine ke Journal meM eka hAla kA leKapawra paDA.
+
+Hindi meaning using Link parser 4.80
+(Found maximum of 16 linkages )
+I read about the train accident in Sunday paper. 
+mEMne iwavAra ke_samAcAra pawra meM rela xurGatanA ke bAre meM paDA.
+
+Hindi meaning using Link parser 4.81
+(Found maximum of 2 linkages )
+Get the idea down on paper before you forget it. 
+kAgaja para vicAra Suru kariye/kIjiye isase_pahale ki Apa yaha BUla jAwe hEM.
+
+Hindi meaning using Link parser 4.82
+(Found maximum of 1 linkages )
+This journal is available in paper form. 
+yaha jarnala kagajI rUpa meM upalabXa hE.
+
+Hindi meaning using Link parser 4.83
+(Found maximum of 16 linkages )
+I read about the train robbery in today's paper. 
+mEMne Aja ke samAcAra pawra meM relagAdI dakEwI ke bAre meM paDA.
+
+Hindi meaning using Link parser 4.84
+(Found maximum of 1 linkages )
+This card is printed on recycled paper. 
+yaha kArda punarAvqwwa kAgaja para CApA huA hE.
+
+Hindi meaning using Link parser 4.85
+(Found maximum of 15 linkages )
+She got the book to read from the library. 
+usane puswakAlaya se paDane ke liye puswaka prApwa kI.
+
+Hindi meaning using Link parser 4.86
+(Found maximum of 7 linkages )
+He got a topic to speak at the forum. 
+usako/use janasaBA meM bolane ke liye viRaya milA.
+
+Hindi meaning using Link parser 4.87
+(Found maximum of 7 linkages )
+He finally got a topic to speak at the forum. 
+usako/use janasaBA meM bolane ke liye AKirakAra viRaya milA.
 
 Calling Interface related programs
