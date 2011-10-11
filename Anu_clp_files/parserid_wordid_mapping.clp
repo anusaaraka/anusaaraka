@@ -13,18 +13,23 @@
  )
  ;--------------------------------------------------------------------------------------------------------------------
  ;Women 's rights have been put back on the agenda .
+ ;Rule re-modified by Roja(10-10-11)
  (defrule id-link_id_map_for_first_word
  (declare (salience 1000))
  ?f<-(id-original_word 1 ?wrd)
  ?f1<-(parser_numid-word-remark 1 ?wrd1 ?remark)
  =>
-        (retract ?f ?f1)
-	(if (neq ?remark -) then
+        (if (neq ?wrd1 ``) then   ;Ex: "Who is he like?" ; Stanford stores the information of " as `` .  
+	  (if (neq ?remark -) then
 		(printout ?*link_map* "(parserid-wordid   P1"?remark"  1)" crlf)
-	else
+	  else
 		(printout ?*link_map* "(parserid-wordid   P1   1)" crlf)
-	)
-  (assert (current_id 2))
+	  )
+          (retract ?f ?f1)
+          (assert (current_id 2))
+        )
+        else
+             (assert (current_id 1)) ; Ex: "Who is he like?" 
  )
  ; Because Link-parser generally changes the case of the first letter of the first word, and since id=1 always gets mapped to   itself so it has been treated specially.
 

@@ -18,7 +18,7 @@
 (id-root ?id dark)
 ?mng <-(meaning_to_be_decided ?id)
 (id-root ?id1 get|be) ;Added by 'be' to the list and changed the fact (id-word) to (id-root)by sheetal. (2-01-10);It was so dark that I could not see anything .
-(id-cat ?id adjective|adjective_comparative|adjective_superlative)
+(or (id-cat ?id adjective|adjective_comparative|adjective_superlative)(id-cat_coarse ?id adjective)) ;Added cat_coarse fact by Roja (11-10-11) for sd-pipeline purpose.
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id aMXerA))

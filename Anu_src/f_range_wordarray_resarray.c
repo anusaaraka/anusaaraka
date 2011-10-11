@@ -40,7 +40,7 @@ while ((read = getline(&line, &len, fp)) != EOF)
       		{
 		 sscanf(line,"%d %s %d%d%d%d%d%d%d%d %s %d%d %s %d%d%d%d%d%d%d%d%d%d %s %d%d%d%d%d%d%d%d%d%d%d %[^\n]\n",&res[i][j+0],s1,&res[i][j+2],&res[i][j+3],&res[i][j+4],&res[i][j+5],&res[i][j+6],&res[i][j+7],&res[i][j+8],&res[i][j+9],s2,&res[i][j+11],&res[i][j+12],s3,&res[i][j+14],&res[i][j+15],&res[i][j+16],&res[i][j+17],&res[i][j+18],&res[i][j+19],&res[i][j+20],&res[i][j+21],&res[i][j+22],&res[i][j+23],s4,&res[i][j+25],&res[i][j+26],&res[i][j+27],&res[i][j+28],&res[i][j+29],&res[i][j+30],&res[i][j+31],&res[i][j+32],&res[i][j+33],&res[i][j+34],&res[i][j+35],&word[i][0]);
     strcpy(s5,word[i]); 
-     if(strstr(s5,")")!=NULL ||strstr(s5,"(")!=NULL ||strstr(s5,"$")!=NULL ||strstr(s5,",")!=NULL ||strstr(s5,".")!=NULL ||strstr(s5,":")!=NULL ||strstr(s5,";")!=NULL ||strstr(s5,"?")!=NULL ||strstr(s5,"!")!=NULL ||strstr(s5,"'")!=NULL||strstr(s5,"=")!=NULL)
+     if(strstr(s5,")")!=NULL ||strstr(s5,"(")!=NULL ||strstr(s5,"$")!=NULL ||strstr(s5,",")!=NULL ||strstr(s5,".")!=NULL ||strstr(s5,":")!=NULL ||strstr(s5,";")!=NULL ||strstr(s5,"?")!=NULL ||strstr(s5,"!")!=NULL ||strstr(s5,"'")!=NULL||strstr(s5,"=")!=NULL || strstr(s5,"=")!=NULL)  // Added '=' by Roja (10-10-11) Ex: He is very well-liked(= popular) at work.
      {
        fprintf(fp1,"(Res_id-WC-Word-Anu_id \t%d\t%d\tPunctuation mark 0)\n",res[i][j+0],res[i][j+2]);
        strcpy(word[i],"PunctuationMark"); 
@@ -59,7 +59,7 @@ while ((read = getline(&line, &len, fp)) != EOF)
     }
      i++;
 //If more than one word are combined in resolve
-      if((line[138]== '.') || (line[138] == '?') || (line[138] == '!'))
+      if((line[138]== '.') || (line[138] == '?') || (line[138] == '!') )
       	//if(line[136]== 0)
          {
 	   break;

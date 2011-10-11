@@ -116,9 +116,19 @@ while ((read = getline(&line, &len, fp)) != EOF)
 
 //To print OUTPUT ARRAY Information
   for(k=0;k<loopcount; k++)
-{fprintf(fp1,"(tran-word-wc-typ-form-h_id-comp  %d",cnt-1);
- fprintf(fp1,"\t%s\t",word[k]);
-      for(i=0,sort=0; i<4; i++)
+  {
+       fprintf(fp1,"(tran-word-wc-typ-form-h_id-comp  %d",cnt-1);
+       // Added below coding part for '(', ')', ';' and '=' by Roja (10-10-11) Ex: He is very well-liked(= popular) at work.
+       if(strcmp(word[k],"(") ==0) 
+             strcpy(word[k],"left_paren");
+       else if(strcmp(word[k],")") ==0)
+             strcpy(word[k],"right_paren");
+       else if(strcmp(word[k],";") ==0)
+             strcpy(word[k],"semicolon");
+       else if(strcmp(word[k],"=") ==0)
+             strcpy(word[k],"equal_to");
+       fprintf(fp1,"\t%s\t",word[k]);  
+       for(i=0,sort=0; i<4; i++)
         {for(j=0;p[k][i][j]!=9999; j++)
           { 
            
