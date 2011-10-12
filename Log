@@ -2732,17 +2732,23 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  28. Updated Log.
 
 
- 05-10-11
+ 11-10-11
  ========
-    1. WSD: 
-           Modified: like.clp, get.clp, state.clp
-           Added   : paper.clp 
-    2. Modified rule nsubj+xcomp_1 in sd_relation_rules.clp
-    3. In H_ordering_rules.clp,
-           Renamed : make_compPhrase  as  make_compoundPhrase ,  rev_ADVP_1  as  move_ADVP_after_v 
-           Modified: prep_in_SBAR_rule, make_compoundPhrase
-    4. Updated changes_in_databases
-    5. Modified and Updated ber_ver_output, ol_ver_output, sd_ver_output, verified_output
-    6. Updated following files:
+ 1. WSD: 
+         Modified: like.clp, get.clp, state.clp, are_ing_tam.clp, dark.clp
+         Added   : paper.clp 
+ 2. Modified rule nsubj+xcomp_1 in sd_relation_rules.clp
+ 3. In H_ordering_rules.clp,
+         Renamed : make_compPhrase  as  make_compoundPhrase ,  rev_ADVP_1  as  move_ADVP_after_v 
+         Modified: prep_in_SBAR_rule, make_compoundPhrase
+ 4. Added a rule in add_snt_mrkr.lex to handle sentence ending with double quotes.
+ 5. Modified 'id-link_id_map_for_first_word' rule to handle sentences starting with double quotes in parserid_wordid_mapping.clp
+ 6. Handled punctuations like '(', ')', ';', '=' in ALL_TRAN_PADA.c.
+ 7. Handled '=' in f_range_wordarray_resarray.c.
+ 8. Modified run_penn.sh and run_stanford.sh to handle 'americanize=false'.
+ 9. Updated Stanford_parser_fails
+10. Updated changes_in_databases
+11. Modified and Updated ber_ver_output, ol_ver_output, sd_ver_output, verified_output
+12. Updated following files:
              ber_verified(405)	ol_verified(565)  sd_verified(465)  verified(487)
-    7. Updated Log.
+13. Updated Log.
