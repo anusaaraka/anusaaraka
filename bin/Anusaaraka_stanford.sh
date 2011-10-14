@@ -65,7 +65,7 @@
  
   sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}"  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn 
 
-  sed 's/(, ,)/(P_COM COMMA)/g' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn | sed 's/(\. \.)/(P_DOT DOT)/g' |sed 's/(? ?)/(P_QES QUESTION_MARK)/g' | sed 's/(. ?)/(P_DQ DOT_QUESTION_MARK)/g' | sed 's/(`` ``)/(P_DQT DOUBLE_QUOTES)/g' | sed "s/('' '')/(P_DQT DOUBLE_QUOTES)/g" >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.cons
+  #sed 's/(, ,)/(P_COM COMMA)/g' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn | sed 's/(\. \.)/(P_DOT DOT)/g' |sed 's/(? ?)/(P_QES QUESTION_MARK)/g' | sed 's/(. ?)/(P_DQ DOT_QUESTION_MARK)/g' | sed 's/(`` ``)/(P_DQT DOUBLE_QUOTES)/g' | sed "s/('' '')/(P_DQT DOUBLE_QUOTES)/g" >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.cons
 
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 

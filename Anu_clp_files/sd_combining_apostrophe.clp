@@ -131,25 +131,34 @@
         (printout ?*l_rel_fp* "(rel_name-sids  " ?lname "   "?lnode "  "?rnode")" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
+ ;Modified by Shirisha Manju(13-10-11)
+ ; 
  (defrule map_cons
  ?f<-(Head-Level-Mother-Daughters 's ?lvl ?Mot $?pre ?NN ?POS $?post)
  ?f1<-(Head-Level-Mother-Daughters ?h ?lvl1 ?NN ?noun)
  ?f2<-(Head-Level-Mother-Daughters 's ?lvl1 ?POS ?child)
  (Node-Category	?POS	POS|P_COM|P_DOT|P_QES|P_DQ|P_DQT)
+ (id-original_word =(+ ?noun 1) ?word)
+ ?f3<-(Head-Level-Mother-Daughters ?word ?l $?d ?id)
   =>
-  	(retract ?f ?f1 ?f2)
-  	(assert (Head-Level-Mother-Daughters 's ?lvl ?Mot $?pre ?NN $?post))
-        (bind ?noun (explode$ (str-cat ?noun 's)))
-        (assert (Head-Level-Mother-Daughters ?h ?lvl1 ?NN ?noun))
+  	(retract ?f ?f1 ?f2 ?f3)
+	(bind ?noun1 (explode$ (str-cat ?h 's)))
+       	(assert (Head-Level-Mother-Daughters ?noun1 ?lvl ?Mot $?pre ?NN $?post))
+        (assert (Head-Level-Mother-Daughters ?noun1 ?lvl1 ?NN ?noun))
+	(assert (Head-Level-Mother-Daughters ?word ?l $?d (+ ?noun 1)))
+	(assert (current_id (+ ?noun 1)))
  )
- 
+
+ ;Added by Shirisha Manju (13-10-11) 
  (defrule map_cons1
- ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre ?PUNC $?post)
- ?f1<-(Head-Level-Mother-Daughters ?h2 ?lvl1 ?PUNC ?child)
- (Node-Category ?PUNC    P_COM|P_DOT|P_QES|P_DQ|P_DQT)
-  =>
-        (retract ?f ?f1)
-        (assert (Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre $?post))
+ (current_id ?id)
+ (id-original_word =(+ ?id 1) ?word)
+ ?f3<-(Head-Level-Mother-Daughters ?word ?l $?d =(+ ?id 2))
+ (test (eq (numberp ?id) TRUE))
+ =>
+	(retract ?f3)
+	(assert (Head-Level-Mother-Daughters ?word ?l $?d (+ ?id 1)))
+	(assert (current_id (+ ?id 1)))
  )
 
  ;-------------------------------------------------------------------------------------------------------------------

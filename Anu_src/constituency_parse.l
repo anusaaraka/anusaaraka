@@ -79,12 +79,13 @@ WHPP                    yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(
 X                       yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
 WHADVP                  yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
 UCP                     yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
-
+			/*                         
 P_DOT                   yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
 P_QES                   yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
 P_DQ                    yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
 P_DQT                   yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
 P_COM                   yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return TOK_CATEGORY;
+			*/
 
 [A-Za-z0-9%='][A-Za-z_0-9.,%'-]*    yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return STRING;
 \n                      /* ignore end of line */;

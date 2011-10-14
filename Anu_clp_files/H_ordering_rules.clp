@@ -102,11 +102,12 @@
 (declare (salience 1000))
 (viSeRya-jo_samAnAXikaraNa  ?vi ?samA)
 (subject-subject_samAnAXikaraNa  ?sub ?vi)
-(parserid-wordid   ?s_pid  ?sub)
-(parserid-wordid   ?vi_pid  ?vi)
-(Head-Level-Mother-Daughters ? ? ?mot $? ?s_pid $?)
+;(parserid-wordid   ?s_pid  ?sub)
+;(parserid-wordid   ?vi_pid  ?vi)
+;(Head-Level-Mother-Daughters ? ? ?mot $? ?s_pid $?)
+(Head-Level-Mother-Daughters ? ? ?mot $? ?sub $?)
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl $?d ?mot $?d1)
-(parserid-wordid   ?samA_pid  ?samA)
+;(parserid-wordid   ?samA_pid  ?samA)
 (id-original_word ?samA ?word)
 (id-original_word ?vi ?word1)
 ?f1<-(Head-Level-Mother-Daughters ?word1 ?l $?d2 ?SBAR $?d3)
@@ -117,6 +118,7 @@
 	(retract ?f0 ?f1)
 	(assert (Head-Level-Mother-Daughters ?head ?lvl $?d ?mot $?d1 ?SBAR))
 	(assert	(Head-Level-Mother-Daughters ?word1 ?l $?d2 $?d3))
+	
 ) 	
 ;-----------------------------------------------------------------------------------------------------------------------
 ; Mysore is also known as the city of palaces.
@@ -183,9 +185,9 @@
 (Head-Level-Mother-Daughters ?word ? ?VP ?verb)
 (Node-Category  ?Mot  VP)
 (Node-Category  ?VP  VP)
-(parserid-wordid ?p_id ?id)
-(or (id-original_word ?id ?word)(id-root ?id ?word))
-(id-cat_coarse ?id verb)
+;(parserid-wordid ?p_id ?id)
+;(or (id-original_word ?id ?word)(id-root ?id ?word))
+(id-cat_coarse ?verb verb)
 (not (Mother  ?Mot))
 =>
         (bind ?*count* (+ ?*count* 1))
@@ -267,8 +269,8 @@
 (declare (salience 940))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d1 ?d $?rest)
 (Node-Category  ?Mot  VP)
-(parserid-wordid ?p_obj1 ?obj1)
-(parserid-wordid ?p_obj2 ?obj2)
+;(parserid-wordid ?p_obj1 ?obj1)
+;(parserid-wordid ?p_obj2 ?obj2)
 (or (id-original_word ?kri ?head)(id-root ?kri ?head)) ;I gave Rama a book.The fact that he smiled at me gives me hope.
 (and (kriyA-object_2 ?kri ?obj2)  (kriyA-object_1 ?kri ?obj1))
 (or (id-original_word ?obj2 ?wrd)(id-root ?obj2 ?wrd))
@@ -351,10 +353,11 @@
 (defrule rev_ADJP_goesto_RB
 (declare (salience 900))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d $?dt)
-(Head-Level-Mother-Daughters ? ? ?d ?p_id)
+;(Head-Level-Mother-Daughters ? ? ?d ?p_id)
+(Head-Level-Mother-Daughters ? ? ?d ?id)
 (Node-Category  ?Mot  ADJP)
 (Node-Category  ?d  RB)
-(parserid-wordid ?p_id ?id)
+;(parserid-wordid ?p_id ?id)
 (id-original_word ?id not)
 (not (Mother  ?Mot))
 =>       
@@ -441,12 +444,12 @@
 (declare (salience 900))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d ?ADVP $?d1) 
 (Head-Level-Mother-Daughters never ? ?ADVP $?)
-;(Head-Level-Mother-Daughters ?h ?l ?mot $?d2 ?Mot $?d3 ?VP)
 (Head-Level-Mother-Daughters ?h ?l ?mot $?d2 $?d3 ?VP)
 ?f1<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VP $?d4 ?V $?d5)
 (Node-Category ?VP VP)
 (Node-Category ?ADVP ADVP)
-(or (and (Node-Category ?V VBD) (Parser_used Stanford-Parser))(and (id-cat_coarse ?V_id verb)(Parser_used Open-Logos-Parser)(parserid-wordid  ?V ?V_id)));Ol -- for the above sentence only
+(or (and (Node-Category ?V VBD) (Parser_used Stanford-Parser))(and (id-cat_coarse ?V verb)(Parser_used Open-Logos-Parser)));Ol -- for the above sentence only
+;(or (and (Node-Category ?V VBD) (Parser_used Stanford-Parser))(and (id-cat_coarse ?V_id verb)(Parser_used Open-Logos-Parser)(parserid-wordid  ?V ?V_id)));Ol -- for the above sentence only
 (not (Mother  ?ADVP))
 =>
 	(bind ?*count* (+ ?*count* 1))
@@ -510,10 +513,11 @@
 (defrule prep_in_SBAR_rule
 (declare (salience 800))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?SBAR ?prep $?d)
-(Head-Level-Mother-Daughters ? ? ?prep ?p_id)
+;(Head-Level-Mother-Daughters ? ? ?prep ?p_id)
+(Head-Level-Mother-Daughters ? ? ?prep ?id)
 (Node-Category ?SBAR SBAR|PP)
 (Node-Category ?prep IN)
-(parserid-wordid  ?p_id ?id)
+;(parserid-wordid  ?p_id ?id)
 (not (kriyA-conjunction  ? ?id));It was so dark that I could not see anything.
 (not (Mother  ?SBAR))
 (test (and (neq ?head that)(neq ?head because) (neq ?head as))); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy. Some grammars are better than others, as we have proved. 
@@ -563,8 +567,9 @@
 (Node-Category  ?Mot SBAR)
 (Node-Category  ?dat ?DAT)
 (Head-Level-Mother-Daughters ? ? ?m ?samA)
-(parserid-wordid ?samA ?samA_id)
-(subject-subject_samAnAXikaraNa ? ?samA_id)
+;(parserid-wordid ?samA ?samA_id)
+;(subject-subject_samAnAXikaraNa ? ?samA_id)
+(subject-subject_samAnAXikaraNa ? ?samA)
 =>
         (bind ?*count* (+ ?*count* 1))
         (retract ?f)
@@ -626,24 +631,8 @@
                 	 "              After     - "?head1" "?level" "?mother1" "(implode$ $?pre)" "(implode$ $?daughters)" "(implode$ $?post) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-
-(defrule map_parserid_to_wrdid
-;(declare (salience -80))
-(declare (salience 600))
-?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?p_id $?pos)
-(parserid-wordid ?p_id $?w_id)
-=>
-        (retract ?f1)
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?w_id $?pos))
-)
-
-
-
-
-;-----------------------------------------------------------------------------------------------------------------------
 ;This rule delete's all the SBAR from ROOT
 (defrule rmv_sbar_from_root
-;(declare (salience -85))
 (declare (salience 550))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut)
 ?f1<-(Head-Level-Mother-Daughters ? ? ?dat $?child)
@@ -659,18 +648,6 @@
                  (bind $?daut (delete-member$ $?daut ?id)))
 	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut))
 )
-
-
-;(defrule map_parserid_to_wrdid
-;;(declare (salience -80))
-;(declare (salience 600))
-;?f1<-(Sen $?pre ?p_id $?pos)
-;(parserid-wordid ?p_id $?w_id)
-;=>
-;        (retract ?f1)
-;        (assert (Sen $?pre $?w_id $?pos))
-;)
-
 ;-----------------------------------------------------------------------------------------------------------------------
 ;The Master said, if I did not go, how would you ever see? 
 (defrule create_sen_SBAR
