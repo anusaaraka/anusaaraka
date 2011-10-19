@@ -246,16 +246,16 @@
         (assert (Head-Level-Mother-Daughters ?wrd ?lev ?phrase $?daut1))
 )
 ;-------------------------------------------------------------------------------------------------------------------------
-;(defrule convert_res_anuid
-;(declare (salience 25))
-;?f<-(Head-Level-Mother-Daughters ?wrd ?lev ?phrase $?pre ?rid $?post )
-;(parserid-wordid	?rid    $?anuid)
-;(test (neq ?anuid 0))
-;=>
-;(retract ?f )
-;(assert (Head-Level-Mother-Daughters ?wrd ?lev ?phrase $?pre $?anuid $?post))
-;(printout t " "$?pre " "?anuid " "$?post crlf)
-;)
+(defrule convert_res_anuid
+(declare (salience 25))
+?f<-(Head-Level-Mother-Daughters ?wrd ?lev ?phrase $?pre ?rid $?post )
+(parserid-wordid	?rid    $?anuid)
+(test (neq ?anuid 0))
+=>
+(retract ?f )
+(assert (Head-Level-Mother-Daughters ?wrd ?lev ?phrase $?pre $?anuid $?post))
+(printout t " "$?pre " "?anuid " "$?post crlf)
+)
 ;-------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (30-08-11)
 ;Be careful, she said.
@@ -294,11 +294,6 @@
 =>
 (retract  ?f)
 (printout  ?*const_fp*  "(Head-Level-Mother-Daughters  "?wrd "  "?lev "  "?phrase "	"(implode$ $?daughters) ")" crlf)
-; (printout  ?*const_fp*  "(Head-Level-Mother-Daughters  "?wrd "  "?lev "  "?phrase "    ")
-; (bind ?len (length $?daughters))
-; (loop-for-count (?i  1 ?len)
-;                 (bind ?j (nth$ ?i $?daughters)) 
-; 		 (printout  ?*const_fp*  " " (string_to_integer ?j)))
 )
 ;-------------------------------------------------------------------------------------------------------------------------
 (defrule close_file

@@ -927,38 +927,135 @@
        (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_with_vib_for_and_last_id )" crlf)
   )	
   ;-------------------------------------------------------------------------------------------------------------------------
-  ; Added by Shirisha Manju (15-09-11)
-  ; He was an exotic creature with short red hair and brilliant green eyes. 
-  (defrule PP_rule_with_vib_for_and
+  (defrule PP_rule_for_and_head
   (declare (salience 550))
-  ?f0<-(id-HM-source ?id ?h_word ?)
-  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(person ?per)(group_ids $?ids ?id1)(case ?case))
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(person ?per)(case ?case))
   (id-word ?pada_id and|or)
-  (id-gender-src ?id ?gen ?)
-  (id-number-src ?id ?num ?)
+  ?f0<-(id-HM-source ?pada_id ?h_word ?)
+  =>
+        (retract ?f0)
+        (printout ?*A_fp5* "(id-Apertium_input "?pada_id" ^"?h_word "<cat:prsg>$)"crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id "  PP_rule_for_and_head )" crlf)
+  )
+
+  ;===================================== "and" with viSeRaNa and vib != null rules ======================================
+  ;Added by Shirisha Manju (18-10-11)
+  ;He was an exotic creature with short red hair and brilliant green eyes.
+  (defrule PP_rule_with_vib_for_and
+  (declare (salience 490))
+  (conjunction-components  ?pada_id $? ?h $?)
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(person ?per)(group_ids $?ids)(case ?case))
+  (prep_id-relation-anu_ids - viSeRya-viSeRaNa ?h ?id)
+  ?f0<-(id-HM-source ?id ?h_word ?)
+  (id-word ?pada_id and|or)
+  (id-gender-src ?h ?gen ?)
+  (id-number-src ?h ?num ?)
   (id-cat_coarse ?id ?cat)
-  (test (member$ ?id $?ids))
+  (test (and (member$ ?h $?ids)(member$ ?id $?ids)))
   (test (neq ?vib 0))
   =>
         (retract ?f0)
-	(if (eq ?gen -) then (bind ?gen m))
+        (if (eq ?gen -) then (bind ?gen m))
         (if (eq ?cat noun) then
                 (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)"crlf)
         else
-		(if (eq ?cat verbal_noun) then ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.Added by Roja (04-03-11) 
+                (if (eq ?cat verbal_noun) then ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.Added by Roja (04-03-11) 
                 (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word  "<cat:vn><case:"?case">$)"crlf)
               else
 
                 (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
-       		)
-	)
+                )
+        )
        (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_with_vib_for_and )" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
-  ; Added by Shirisha Manju (15-09-11)
-  ;Are a dog and a cat here?
-  (defrule PP_rule_without_vib_for_and
-  (declare (salience 550))
+  ;Added by Shirisha Manju (18-10-11)
+  ;He was an exotic creature with short red hair and brilliant green eyes.
+  (defrule PP_rule_with_vib_for_and_vi
+  (declare (salience 480))
+  (conjunction-components  ?pada_id $? ?h $?)
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(person ?per)(group_ids $?ids)(case ?case))
+  (prep_id-relation-anu_ids - viSeRya-viSeRaNa ?h ?id)
+  ?f0<-(id-HM-source ?h ?h_word ?)
+  (id-word ?pada_id and|or)
+  (id-gender-src ?h ?gen ?)
+  (id-number-src ?h ?num ?)
+  (id-cat_coarse ?h ?cat)
+  (test (member$ ?h $?ids))
+  (test (neq ?vib 0))
+  =>
+        (retract ?f0)
+        (if (eq ?gen -) then (bind ?gen m))
+        (if (eq ?cat noun) then
+                (printout ?*A_fp5* "(id-Apertium_input "?h" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)"crlf)
+        else
+                (if (eq ?cat verbal_noun) then ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.Added by Roja (04-03-11) 
+                (printout ?*A_fp5* "(id-Apertium_input "?h" ^"?h_word  "<cat:vn><case:"?case">$)"crlf)
+              else
+
+                (printout ?*A_fp5* "(id-Apertium_input "?h" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
+                )
+        )
+       (printout ?*aper_debug-file* "(id-Rule_name  " ?h "  PP_rule_with_vib_for_and_vi )" crlf)
+  )
+  ;===================================== "and" with "viSeRaNa" and "vib = 0" rules ======================================
+  (defrule PP_rule_withot_vib_for_and
+  (declare (salience 490))
+  (conjunction-components  ?pada_id $? ?h $?)
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi 0)(person ?per)(group_ids $?ids)(case ?case))
+  (prep_id-relation-anu_ids - viSeRya-viSeRaNa ?h ?id)
+  ?f0<-(id-HM-source ?id ?h_word ?)
+  (id-word ?pada_id and|or)
+  (id-gender-src ?h ?gen ?)
+  (id-number-src ?h ?num ?)
+  (id-cat_coarse ?id ?cat)
+  (test (and (member$ ?h $?ids)(member$ ?id $?ids)))
+  =>
+        (retract ?f0)
+        (if (eq ?gen -) then (bind ?gen m))
+        (if (eq ?cat noun) then
+                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)"crlf)
+        else
+                (if (eq ?cat verbal_noun) then 
+                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word  "<cat:vn><case:"?case">$)"crlf)
+              else
+
+                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
+                )
+        )
+       (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_without_vib_for_and )" crlf)
+  )
+  ;-------------------------------------------------------------------------------------------------------------------------
+  (defrule PP_rule_without_vib_for_and_vi
+  (declare (salience 480))
+  (conjunction-components  ?pada_id $? ?h $?)
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi 0)(person ?per)(group_ids $?ids)(case ?case))
+  (prep_id-relation-anu_ids - viSeRya-viSeRaNa ?h ?id)
+  ?f0<-(id-HM-source ?h ?h_word ?)
+  (id-word ?pada_id and|or)
+  (id-gender-src ?h ?gen ?)
+  (id-number-src ?h ?num ?)
+  (id-cat_coarse ?h ?cat)
+  (test (member$ ?h $?ids))
+  =>
+        (retract ?f0)
+        (if (eq ?gen -) then (bind ?gen m))
+        (if (eq ?cat noun) then
+                (printout ?*A_fp5* "(id-Apertium_input "?h" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)"crlf)
+        else
+                (if (eq ?cat verbal_noun) then ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.Added by Roja (04-03-11) 
+                (printout ?*A_fp5* "(id-Apertium_input "?h" ^"?h_word  "<cat:vn><case:"?case">$)"crlf)
+              else
+
+                (printout ?*A_fp5* "(id-Apertium_input "?h" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
+                )
+        )
+       (printout ?*aper_debug-file* "(id-Rule_name  " ?h "  PP_rule_without_vib_for_and_vi )" crlf)
+  )
+  ;-------------------------------------------------------------------------------------------------------------------------
+  ;Are a dog and a cat here? 
+  (defrule PP_rule_without_vib_for_and_default
+  (declare (salience 450))
   ?f0<-(id-HM-source ?id ?h_word ?)
   (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi 0)(person ?per)(group_ids $?ids)(case ?case))
   (id-word ?pada_id and|or)
@@ -968,19 +1065,48 @@
   (test (member$ ?id $?ids))
   =>
         (retract ?f0)
-	(if (eq ?gen -) then (bind ?gen m))
+       (if (eq ?gen -) then (bind ?gen m))
         (if (eq ?cat noun) then
                 (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word"<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
-        else
-                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
+        else	(if (eq ?cat verbal_noun) then ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.Added by Roja (04-03-11) 
+                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word  "<cat:vn><case:"?case">$)"crlf)
+		else		
+	                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
+		)
         )
-        (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_without_vib_for_and )" crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_without_vib_for_and_default )" crlf)
+  )
+  ;-------------------------------------------------------------------------------------------------------------------------
+  ; Added by Shirisha Manju (15-09-11)
+  ;They were discussing their hopes and dreams.
+  (defrule PP_rule_with_vib_for_and_default
+  (declare (salience 450))
+  ?f0<-(id-HM-source ?id ?h_word ?)
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(person ?per)(group_ids $?ids)(case ?case))
+  (id-word ?pada_id and|or)
+  (id-gender-src ?id ?gen ?)
+  (id-number-src ?id ?num ?)
+  (id-cat_coarse ?id ?cat)
+  (test (member$ ?id $?ids))
+  (test (neq ?vib 0))
+  =>
+        (retract ?f0)
+        (if (eq ?gen -) then (bind ?gen m))
+        (if (eq ?cat noun) then
+                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
+        else	(if (eq ?cat verbal_noun) then ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.Added by Roja (04-03-11) 
+                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word  "<cat:vn><case:"?case">$)"crlf)
+		else
+                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
+		)
+       )	
+       (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_with_vib_for_and_default )" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
   ; Added by Shirisha Manju (13-09-11)
   ; Broken windows need to be replaced. The painted doors look great. Invention of currency was done mainly for transaction. 
   (defrule PP_rule_with_tam
-  (declare (salience 500))
+  (declare (salience 450))
   ?f0<-(id-HM-source ?id ?h_word ?)
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?person)(group_ids $?ids)(H_tam ?tam))
   (test (member$ ?id $?ids))
@@ -997,7 +1123,7 @@
   ; added by Shirisha Manju (14-09-11)
   ; She is an excellent student with a bright future 
   (defrule PP_rule_with_vib_vAlA
-  (declare (salience 510))
+  (declare (salience 400))
   (pada_info (group_head_id ?pada_id)(group_cat PP) (number ?num)(case ?case)(gender ?gen)(vibakthi vAlA)(group_ids $?ids))
   ?f1<-(hindi_id_order $? $?ids ?foll_pada_id $?)
   (pada_info (group_cat PP)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
@@ -1012,7 +1138,7 @@
   ; Added by Shirisha Manju (14-09-11)
   ;I will show you the house which I bought.
   (defrule PP_rule_with_vib_for_hnd_pronoun
-  (declare (salience 510))
+  (declare (salience 400))
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(vibakthi ?vib))
   ?f0<-(id-HM-source ?pada_id ?h_word&wuma|kOna|jo|koI ?)
   (test (neq ?vib 0))
@@ -1024,7 +1150,7 @@
   ;-------------------------------------------------------------------------------------------------------------------------
   ; Added by Shirisha Manju (10-09-11)
   (defrule PP_rule_with_vib_hid
-  (declare (salience 500))
+  (declare (salience 350))
   (pada_info (group_cat PP) (group_ids $?ids ?id) (vibakthi ?vib)(number ?num)(case ?case)(gender ?gen) )
   ?f1<-(id-HM-source ?id ?h_word ?)
   (test (neq ?vib 0))
@@ -1037,7 +1163,7 @@
   ;-------------------------------------------------------------------------------------------------------------------------
   ; Added by Shirisha Manju (10-09-11)
   (defrule PP_rule_default
-  (declare (salience 450))
+  (declare (salience 300))
   (pada_info (group_cat PP) (group_ids $?ids)(number ?num)(case ?case)(gender ?gen) )
   ?f2<-(id-HM-source ?id1 ?h_word ?)
   (id-cat_coarse ?id1 ?cat)

@@ -2732,7 +2732,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  28. Updated Log.
 
 
- 14-10-11
+ 19-10-11
  ========
  1. WSD: 
          Modified: like.clp, get.clp, state.clp, are_ing_tam.clp, dark.clp
@@ -2752,12 +2752,22 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 10. Modified map_cons and map_cons1 rules in sd_combining_apostrophe.clp
 11. Modified constituency_parse.l (commented P_DOT ,P_QES, P_DQ, P_DQT, P_COM rules)
 12. Modified constituency_parse.y to remove "P" for ids.
-13. Modified run_stanford-parser.sh to give input as "penn" instead of "cons" for run_lexicalize.sh
-14. Modified Anusaaraka_stanford.sh to remove sed command to generate "cons" file
-15. Updated Stanford_parser_fails
-16. Updated changes_in_databases
-17. Modified and Updated ber_ver_output, ol_ver_output, sd_ver_output, verified_output
-18. Updated following files:
+13. Modified ol_cons_in_sd_format.clp to remove parserid-wordid condition
+14. Uncommented "convert_res_anuid" rule in Ol_constituents_level.clp
+15. prepare_apertium_input.clp  :
+        Added    : PP_rule_for_and_head, PP_rule_with_vib_for_and, PP_rule_with_vib_for_and_vi
+                   PP_rule_withot_vib_for_and , PP_rule_without_vib_for_and_vi
+        Renamed  : PP_rule_with_vib_for_and     as  PP_rule_with_vib_for_and_default
+                   PP_rule_without_vib_for_and  as  PP_rule_without_vib_for_and_default
+        Modified : PP_rule_default, PP_rule_with_vib_hid, PP_rule_with_vib_for_hnd_pronoun,PP_rule_with_vib_vAlA
+                   PP_rule_with_tam   (Modified salience)
+16. Modified run_stanford-parser.sh to give input as "penn" instead of "cons" for run_lexicalize.sh
+17. Modified Anusaaraka_stanford.sh to remove sed command to generate "cons" file
+18. Updated Stanford_parser_fails
+19. Updated changes_in_databases
+20. Modified and Updated ber_ver_output, ol_ver_output, sd_ver_output, verified_output
+21. Updated following files:
              ber_verified(405)	ol_verified(565)  sd_verified(465)  verified(487)
-19. Updated Log.
+22. Updated Log.
+
 
