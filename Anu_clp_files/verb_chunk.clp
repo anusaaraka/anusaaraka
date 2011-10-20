@@ -824,13 +824,14 @@
  ; They can eat
  ; I will give up smoking.  I do not go out as much now .
  ; I link with only aux verbs (not to handle I helped make some changes in the program.)
+ ; I cannot go home today. (Roja 17-10-11)
  (defrule S_I_rule
  (declare (salience 700))
  (link_name-link_expansion  ?I  I $?vars)
  (Non_interogative_sentence ?sl_node ?sr_node)
  (link_name-link_lnode-link_rnode ?I    ?sr_node  ?Ir_node)
  (not (link_name-link_expansion  ?I  I * j|f))
- (parserid-word  ?sr_node ?sword&will|would|shall|should|must|may|can|could|might|do|does|did )
+ (parserid-word  ?sr_node ?sword&will|would|shall|should|must|may|can|could|might|do|does|did|cannot) ;Added cannot by Roja.
  (parserid-word  ?Ir_node ?Iword )
  (parser_id-root ?Ir_node ?root)
  =>

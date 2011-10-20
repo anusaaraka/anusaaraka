@@ -83,6 +83,9 @@
  ./comp.sh wx2wx-small
  mv  wx2wx-normal.out  wx2wx-small.out $HOME_anu_test/bin/
 
+ cd $HOME_anu_test/debugging
+ sh compile_bison.sh
+
  echo "Compiling Anu stdenglish source files"
  cd $HOME_anu_test/Anu/stdenglish
  make all

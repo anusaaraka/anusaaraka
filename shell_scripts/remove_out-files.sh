@@ -55,5 +55,7 @@
  cd $HOME_anu_test/debugging/sentence_debug
  rm *.clp *.dat *.bat
 
- rm $HOME_anu_test/debugging/debug.mm
+ cd $HOME_anu_test/debugging/
+ rm debug.mm y.* lex.yy.c constituency_parse
+
  rm $HOME_anu_test/new_hnd_mo/hi_expanded

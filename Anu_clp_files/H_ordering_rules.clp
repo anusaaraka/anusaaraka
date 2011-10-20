@@ -77,6 +77,7 @@
 (id-original_word ?n2 ?h2)
 (id-cat_coarse ?n1 ?num1) 
 (id-cat_coarse ?n2 ?num2)
+(test (and (eq (numberp ?h1) "FALSE") (eq (numberp ?h2) "FALSE")));Added to avoid gdbm errors. By Roja(18-10-11)
 (test (or (and (neq (gdbm_lookup "time.gdbm" ?h1) "FALSE")(neq (gdbm_lookup "time.gdbm" ?h2) "FALSE"))
           (and (neq (gdbm_lookup "place.gdbm" ?h1) "FALSE")(neq (gdbm_lookup "place.gdbm" ?h2) "FALSE"))
 	  (and (eq ?num1 number) (eq ?num2 number)) ))

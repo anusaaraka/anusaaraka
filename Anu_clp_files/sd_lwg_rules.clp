@@ -211,7 +211,7 @@
  (not (rel_name-sids aux ?id ?)) ;But my efforts to win his heart have failed.
  (not (rel_name-sids conj_or ? ?id));He may drink milk or eat apples. (22-01-11)
  (not (rel_name-sids conj_and ? ?id))
- (rel_name-sids ?prepc ? ?id)
+ (rel_name-sids ?prepc&~root ? ?id) ;Do this in your room. (for new version)
  (test (neq (sub-string 1 6 ?prepc) "prepc_")) ;He made a mistake in inviting John.
  (not (grouped_head ?id))
  (parserid-word ?id ?w1)

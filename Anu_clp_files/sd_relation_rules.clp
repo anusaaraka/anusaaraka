@@ -562,7 +562,7 @@
 =>
 (if (eq ?When When) then
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-kriyA_viSeRaNa       "?kri"  "?kri_viSeRaNa")"crlf)
-(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -       nsubj_advmod    kriyA-conjunction    "?kri"  "?kri_viSeRaNa")"crlf)
+(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -       nsubj_advmod    kriyA-kriyA_viSeRaNa    "?kri"  "?kri_viSeRaNa")"crlf)
 else
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     kriyA-kriyA_viSeRaNa	"?kri"	"?kri_viSeRaNa")"crlf)	
 (printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	nsubj_advmod	kriyA-kriyA_viSeRaNa	"?kri"	"?kri_viSeRaNa")"crlf)	)

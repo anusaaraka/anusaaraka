@@ -2732,11 +2732,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  28. Updated Log.
 
 
- 19-10-11
+ 20-10-11
  ========
  1. WSD: 
-         Modified: like.clp, get.clp, state.clp, are_ing_tam.clp, dark.clp
-         Added   : paper.clp 
+         Modified: like.clp, get.clp, state.clp, are_ing_tam.clp, dark.clp, combat.clp
+         Added   : paper.clp, unannounced.clp 
  2. Modified rule nsubj+xcomp_1 in sd_relation_rules.clp
  3. In H_ordering_rules.clp,
         Renamed : make_compPhrase  as  make_compoundPhrase ,  rev_ADVP_1  as  move_ADVP_after_v 
@@ -2763,11 +2763,20 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                    PP_rule_with_tam   (Modified salience)
 16. Modified run_stanford-parser.sh to give input as "penn" instead of "cons" for run_lexicalize.sh
 17. Modified Anusaaraka_stanford.sh to remove sed command to generate "cons" file
-18. Updated Stanford_parser_fails
-19. Updated changes_in_databases
-20. Modified and Updated ber_ver_output, ol_ver_output, sd_ver_output, verified_output
-21. Updated following files:
+18. In sd_lwg_rules.clp, modified rule_1-2 to handle new stanford version.
+19. In sd_relation_rules.clp, modified debug statement in nsubj_advmod rule.
+20. In verb_chunk.clp, added 'cannot' in the S_I_rule.
+21. In debugging,
+             -> Updated README
+             -> Modified map_cons_tree.sh
+             -> Renamed view_derived_tree.sh as view_derivation_tree.sh
+             -> Added view_derived_tree.sh
+             -> Added constituency_parse.y, constituency_parse.l, compile_bison.sh
+22. Modified above debugging changes in anu_compile.sh, anu_compile_64bit.sh and remove_out-files.sh accordingly.
+23. Added utf8_iscii in bin folder.
+23. Updated Stanford_parser_fails
+24. Updated changes_in_databases
+25. Modified and Updated ber_ver_output, ol_ver_output, sd_ver_output, verified_output
+26. Updated following files:
              ber_verified(405)	ol_verified(565)  sd_verified(465)  verified(487)
-22. Updated Log.
-
-
+27. Updated Log.
