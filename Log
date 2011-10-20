@@ -2774,9 +2774,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
              -> Added constituency_parse.y, constituency_parse.l, compile_bison.sh
 22. Modified above debugging changes in anu_compile.sh, anu_compile_64bit.sh and remove_out-files.sh accordingly.
 23. Added utf8_iscii in bin folder.
-23. Updated Stanford_parser_fails
-24. Updated changes_in_databases
-25. Modified and Updated ber_ver_output, ol_ver_output, sd_ver_output, verified_output
-26. Updated following files:
+24. Modified ALL_TRAN_PADA.c file [Modified cnt=0 to 1].
+25. Updated Stanford_parser_fails
+26. Updated changes_in_databases
+27. Modified and Updated ber_ver_output, ol_ver_output, sd_ver_output, verified_output
+28. Updated following files:
              ber_verified(405)	ol_verified(565)  sd_verified(465)  verified(487)
-27. Updated Log.
+29. Updated Log.

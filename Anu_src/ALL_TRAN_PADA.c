@@ -21,7 +21,8 @@ int  main(int argc, char *argv[1])
             FILE * fp1;
             size_t len = 0;
             size_t read;
-            int n,i,ch,j,k,loopcount=0,m,q,range=0,sort=0,cnt=0,flag=0;
+            int n,i,ch,j,k,loopcount=0,m,q,range=0,sort=0,flag=0,cnt=1;//Modified cnt=0 to 1 by Mahalaxmi 20-10-2011
+                                                                       //As cnt here starts from cnt=1 in this prg.  
             char *cha,charcons;
             char word[100][100]; 
             char s1[]="             ***** OUTPUT TARGET ARRAYS IN tran1  *****\n";
