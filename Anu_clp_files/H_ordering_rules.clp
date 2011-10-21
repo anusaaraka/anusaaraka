@@ -114,12 +114,13 @@
 ?f1<-(Head-Level-Mother-Daughters ?word1 ?l $?d2 ?SBAR $?d3)
 (Head-Level-Mother-Daughters ?word ? ?SBAR $?)
 (Node-Category ?SBAR SBAR)
+(not (Mother ?head)) ; Added by Shirisha Manju (21-10-11) The anasager lake is an artificial lake that was constructed by raja anaji sometime in the 1150 a.d..
 =>
 	(bind ?*count* (+ ?*count* 1))
 	(retract ?f0 ?f1)
 	(assert (Head-Level-Mother-Daughters ?head ?lvl $?d ?mot $?d1 ?SBAR))
 	(assert	(Head-Level-Mother-Daughters ?word1 ?l $?d2 $?d3))
-	
+	(assert (Mother ?head))	
 ) 	
 ;-----------------------------------------------------------------------------------------------------------------------
 ; Mysore is also known as the city of palaces.

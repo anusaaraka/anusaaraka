@@ -44,7 +44,7 @@
  	(if (eq ?i ?conj) then
        		(retract ?f)
        		(assert (pada_info (group_head_id ?conj) (group_cat PP) (group_ids $?IDS)(pada_head ?conj)))
-       		(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids   conj_comp_rule   "?conj"  PP  " (implode$  $?IDS) ")"  crlf)
+       		(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids	   conj_comp_rule   "?conj"  PP  " (implode$  $?IDS) ")"  crlf)
     	)
     	(if (or (neq (member$ ?i $?id1) FALSE)(eq ?i ?id)) then
         	(retract ?f)
@@ -234,6 +234,7 @@
         )
  )
  ;-------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju
  (defrule viSeRaNa_pada
  (declare (salience 990))
  ?f0<-(prep_id-relation-anu_ids  ?id  ?rel ?viSeRya1 ?viSeRaNa)
@@ -241,6 +242,7 @@
  ?f<-(to_be_included_in_paxa ?viSeRaNa)
  ?f1<-(pada_info (group_head_id ?viSeRya)(group_ids  $?grp_ids)(group_cat ?gtype)(pada_head ?PH))
  (test (member$ ?viSeRya1 $?grp_ids))
+ (id-word ?viSeRya ?w) ;Added by Shirisha Manju (21-10-11)
  =>
 	(retract ?f)
 	(bind ?PH (str-cat ?PH ""))
@@ -248,14 +250,18 @@
 		(bind ?PH (string-to-field (str-cat ?viSeRya ".1")))
 	        (bind $?grp_ids (sort > (create$  $?grp_ids ?viSeRaNa)))
 		(modify ?f1 (group_ids $?grp_ids)(pada_head ?PH))
-        	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    viSeRaNa_pada " ?PH"   "?gtype "  " (implode$  $?grp_ids)  ")"  crlf)
+		(if (neq ?w and) then ;Added by Shirisha Manju 
+	       	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    viSeRaNa_pada " ?PH"   "?gtype "  " (implode$  $?grp_ids)  ")"  crlf)
+		)
 	else
 	        (bind ?pos (str-index "." ?PH))	;?PH=5.1 , ?pos=2
         	(bind ?sub-str (string-to-field (sub-string (+ ?pos 1) (length ?PH) ?PH))) ; ?sub-str=1
         	(bind ?PH (string-to-field (str-cat (sub-string 1 ?pos ?PH) (+ 1 ?sub-str)))); ?PH=5.2
 		(bind $?grp_ids (sort > (create$  $?grp_ids ?viSeRaNa)))
                 (modify ?f1 (group_ids $?grp_ids)(pada_head ?PH))
+		(if (neq ?w and) then  ;Added by Shirisha Manju 
                 (printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids   viSeRaNa_pada " ?PH"   "?gtype"  " (implode$  $?grp_ids) ")" crlf)
+		)
 	)
  )
  ;-------------------------------------------------------------------------------------------------------------
@@ -308,4 +314,23 @@
         (printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    default_pada   "?PP "   PP  "?PP  ")"  crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------- 
-
+ ;Added by Shirisha Manju (20-10-11)
+ ;Are a dog and a cat here? Your house and garden are very attractive.
+ (defrule pada_for_and
+ (declare (salience 800))
+ (pada_info (group_head_id ?and) (group_cat PP) (group_ids $?ids ?id ?and $?ids1 ?id1) )
+ ?f0<-(id-word ?and and) 
+ =>
+	(retract ?f0)
+	(bind ?len (length $?ids)) 
+	(bind ?len1 (length $?ids1))
+	(bind ?p_h (string-to-field (str-cat ?id "." ?len)))
+	(bind ?p_h1 (string-to-field (str-cat ?id1 "." ?len1)))
+	(assert (pada_info (group_head_id ?id) (group_cat PP_intermediate) (group_ids $?ids ?id ) (pada_head ?p_h)))
+	(assert (pada_info (group_head_id ?id1) (group_cat PP_intermediate) (group_ids $?ids1 ?id1 ) (pada_head ?p_h1)))
+	(assert (pada_info (group_head_id ?and) (group_cat PP_intermediate) (group_ids ?p_h ?and ?p_h1))) 
+	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    pada_for_and  " ?p_h"   "PP_intermediate "  " (implode$  $?ids)"  " ?id  ")"  crlf)
+	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    pada_for_and  " ?p_h1"   "PP_intermediate "  " (implode$  $?ids1)"  " ?id1  ")"  crlf)
+	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    pada_for_and  " ?and"   "PP "  " ?p_h "  " ?and "  "?p_h1  ")"  crlf)
+  )	
+  

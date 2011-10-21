@@ -33,8 +33,9 @@
  ; to generate id-current_id  and current_id-group_members facts
  (defrule get_current_id_grp_mems
  (declare (salience 1000))
- ?f0<-(pada_info (group_head_id ?id) (group_ids $?grp_ids) (pada_head ?PH))
+ ?f0<-(pada_info (group_head_id ?id) (group_ids $?grp_ids) (pada_head ?PH)(group_cat ?gtype))
  (not (has_been_decided ?id))
+ (test (neq ?gtype PP_intermediate))
  =>
         (assert (has_been_decided ?id))
         (assert (id-current_id ?id ?PH))

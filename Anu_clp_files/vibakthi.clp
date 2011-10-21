@@ -150,7 +150,7 @@
  ?f<-(pada_info (group_head_id ?root_id)(group_cat VP)(vibakthi ?vib)(H_tam ?tam)(tam_source Default))
  (prep_id-relation-anu_ids ? kriyA-subject  ?root_id ?sub_id)
  ?f0<-(pada_control_fact ?sub_id)
- ?f1<-(pada_info (group_head_id ?sub_id))
+ ?f1<-(pada_info (group_head_id ?sub_id)(group_cat PP))
  (test (neq ?vib 0))
  =>
 	(retract ?f0)
@@ -171,7 +171,7 @@
  (ids-cmp_mng-head-cat-mng_typ $?ids1 ?h_mng ?head_id ?grp_cat ?mng_typ)
  (test (and (eq ?src Compound_Phrase_gdbm) (member$ ?root_id $?ids1)))
  ?f0<-(pada_control_fact ?sub_id)
- ?f1<-(pada_info (group_ids $?ids))
+ ?f1<-(pada_info (group_ids $?ids)(group_cat PP))
  (test (member$ ?sub_id $?ids))
  =>
         (retract ?f0)
@@ -207,7 +207,7 @@
  (not (prep_id-relation-anu_ids ? kriyA-subject  ?root_id1&:(> ?root_id ?root_id1) ?sub_id))
  (id-HM-source ?root_id ?h_mng ?)
  ?f0<-(pada_control_fact ?sub_id)
- ?f1<-(pada_info (group_ids $?ids))
+ ?f1<-(pada_info (group_ids $?ids)(group_cat PP))
  (test (member$ ?sub_id $?ids))
  =>
         (retract ?f0)
@@ -242,7 +242,7 @@
                                    ;Ex: We lost 30 minutes in the traffic jam. 
  (test (eq (sub-string (- (length ?word) 1) (length ?word) ?word) "'s"))
  ?f1<-(pada_info (group_head_id ?id)(group_cat ?cat))
- (test (neq ?cat English_PP))
+ (test (and (neq ?cat English_PP)(neq ?cat PP_intermediate)))
  =>  
 	(retract ?f0)
 	(modify ?f1 (vibakthi kA))

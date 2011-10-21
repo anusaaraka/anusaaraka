@@ -374,6 +374,7 @@
   (test (and (neq ?id ?prep_id1)(neq ?id ?prep_id2)))
   (test (and (member$ ?h_id1 $?ids)(member$ ?h_id2 $?ids)))
   (test (and (neq ?gtype English_PP)(neq ?gtype1 English_PP)(neq ?gtype2 English_PP)))
+  (test (and (neq ?gtype PP_intermediate)(neq ?gtype1 PP_intermediate)(neq ?gtype2 PP_intermediate)));this condition is for "and" pada
   (not (Parser_used Stanford-Parser)) ;Added by Manju(31-05-11) restricted for stanford parser
   (not (Parser_used Open-Logos-Parser)) ;Added by Manju(31-08-11) restricted for open logos parser
   =>
@@ -389,7 +390,7 @@
  ;Added by Shirisha Manju (29-05-11)
  ;The people of Orissa are facing grave adversities due to the cyclone.
  (defrule rm_prep_id
- ?f<-(pada_info (preposition $?prep_ids))
+ ?f<-(pada_info (preposition $?prep_ids)(group_cat PP|infinitive))
  ?f1<-(hindi_id_order  $?ids ?pid $?ids1)
  (Parser_used Stanford-Parser|Open-Logos-Parser)
  (test (member$ ?pid $?prep_ids))
