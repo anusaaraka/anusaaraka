@@ -2732,7 +2732,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  28. Updated Log.
 
 
- 20-10-11
+ 21-10-11
  ========
  1. WSD: 
          Modified: like.clp, get.clp, state.clp, are_ing_tam.clp, dark.clp, combat.clp
@@ -2775,9 +2775,26 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 22. Modified above debugging changes in anu_compile.sh, anu_compile_64bit.sh and remove_out-files.sh accordingly.
 23. Added utf8_iscii in bin folder.
 24. Modified ALL_TRAN_PADA.c file [Modified cnt=0 to 1].
-25. Updated Stanford_parser_fails
-26. Updated changes_in_databases
-27. Modified and Updated ber_ver_output, ol_ver_output, sd_ver_output, verified_output
-28. Updated following files:
+25. Added rules to handle patterns like 'no.','rs.','Rs.' in abbr1.lex, abbr.sh and abbr_browser.sh
+26. Updated Stanford_parser_fails
+27. Updated changes_in_databases
+28. Modified and Updated ber_ver_output, ol_ver_output, sd_ver_output, verified_output
+29. Updated following files:
              ber_verified(405)	ol_verified(565)  sd_verified(465)  verified(487)
-29. Updated Log.
+30. Updated Log.
+
+
+ 21-10-11
+ ========
+ 1. Modified "move_BEandHAVE_b4_SBAR: rule in H_ordering_rules.clp (added not condition)
+ 2. agreement.clp
+        Modified : sub_agrmt ,sub_or_agr, obj_agrmt (added test condition for and pada)
+ 3. Modified rm_prep_id and default_rule rules in hindi_sent_reorder.clp
+ 4. pada.clp :  
+	Modified : viSeRaNa_pada
+        Added    : pada_for_and
+ 5. Modified "get_current_id_grp_mems" rule in pada_prawiniXi.clp (added test condition)
+ 6. Modified word_mng_with_vib ,kA_vib_from_sub_rule and PP_pronoun_rule_with_vib_kA rules in prepare_apertium_input.clp
+ 7. Modified vib_rule, vib_rule2, vib_rule1 and prefix_vib_rule rules in vibakthi.clp
+ 8. Updated Log
+

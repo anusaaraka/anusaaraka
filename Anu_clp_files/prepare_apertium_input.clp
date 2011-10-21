@@ -109,8 +109,9 @@
  (defrule word_mng_with_vib
  (declare (salience 1002))
  ?f0<-(id-HM-source ?id ?hmng WSD_compound_phrase_word_mng|Database_compound_phrase_word_mng|WSD_verb_phrase_word_mng|WSD_word_mng|Idiom_word_mng)
- (pada_info (group_head_id ?id)(vibakthi ?vib))
+ (pada_info (group_head_id ?id)(vibakthi ?vib)(group_cat ?cat))
  (test (and (neq ?vib 0) (neq ?vib -)))
+ (test (neq ?cat PP_intermediate))
   =>
        (retract ?f0)
        (printout ?*A_fp5* "(id-Apertium_input " ?id " "?hmng"_"?vib ")" crlf)
@@ -233,8 +234,9 @@
  (prep_id-relation-anu_ids - kriyA-subject ?k_id ?pada_id)
  (kriyA_id-subject_viBakwi ?k_id kA)
  (hindi_id_order  $?start $?ids ?foll_pada_id $?)
- (pada_info (group_head_id ?h)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
+ (pada_info (group_head_id ?h)(number ?num1)(case ?case1)(gender ?gen1)(group_cat ?gtype)(group_ids $?f_ids))
  (test (member$ ?foll_pada_id $?f_ids))
+ (test (neq ?gtype PP_intermediate))
  =>
 	(retract ?f0)
 	(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><parsarg:kA><fnum:"?num1"><case:d><gen:"?gen1"><num:"?num"><per:"?per ">$)"  crlf)
@@ -358,11 +360,12 @@
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(person ?per)(vibakthi kA)(group_ids $?ids))
   (id-word ?pada_id  ?w&he|she|their|i|those|your|you|our|my|me|they|its|we|it|him|this)
   (hindi_id_order  $?start $?ids ?foll_pada_id $?)
-  (pada_info (group_head_id ?h)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
+  (pada_info (group_head_id ?h)(number ?num1)(case ?case1)(gender ?gen1)(group_cat ?gtype)(group_ids $?f_ids))
   (test (member$ ?foll_pada_id $?f_ids))
   ?f0<-(id-HM-source ?pada_id ?h_word ?)
   (id-word ?h ?word)
   (id-gender-src ?foll_pada_id ?gen ?)  
+  (test (neq ?gtype PP_intermediate));Your house and garden are very attractive.
   =>
         (retract ?f0)
 	(if (eq ?word and) then ;They were discussing their hopes and dreams.
