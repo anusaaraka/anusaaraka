@@ -355,7 +355,6 @@
        (printout t "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" crlf)
        (assert (search_for_other_meaning ?id ?original_word ?word ?root ?exp_mng)) 
     else
-     (close file)
      (printout t "Rules matching Expected meaning are ::" crlf)
      (printout t "<=====================================>" crlf)
      (system "cat jnk")

@@ -66,7 +66,7 @@
  (declare (salience 98))
  ?f0<-(id-TAM ?id ?tam)
  =>
- (retract ?f0)
+ ;(retract ?f0)
  (printout t crlf "id :: " ?id "   TAM :: " ?tam  crlf)
  (assert (id-tam ?id ?tam))
  )
@@ -132,77 +132,111 @@
  )
 
 
- (defrule possible_mngs_for_tam
- (all_tam_mngs ?id ?tam)
- =>
-   (bind ?tam (str-cat ?tam ))
-   (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/" ?tam "_tam.clp >jnk")
-   (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/"?tam "_tam.clp >>jnk")
-   (open "jnk" fp "r")
-   (if (neq (read fp) EOF) then 
-   	(printout t crlf "All the possible meanings for the  "?tam " tam are ::" crlf crlf)
- 	(system "cat jnk")
-	(close fp)
-	(remove jnk)
-        (assert(get_expected_tam_mng ?id ?tam))
-   )
-   (bind ?tam_file (str-cat ?*path* "/WSD/wsd_rules/" ?tam "_tam.clp"))
-   (bind ?tam_file1 (str-cat ?*provisional_wsd_path* "/" ?tam "_tam.clp"))
-   (if (and (eq (load* ?tam_file) FALSE)(eq (load* ?tam_file1) FALSE) ) then
-           (printout t crlf "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" crlf )
-	   (printout t      "There is no rule file with tam \"" ?tam  "\"" )
-           (printout t crlf "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" crlf )    
-           (assert (ask_whether_to_write_a_rule ?id ?tam))
-           ;(printout t " Do you want to search for another tam (y/n) " crlf)
-           ;(bind ?reply (read))
-           ;(if (eq ?reply n) then
-           ;  (exit)
-           ;else 
-           ;   (assert (question "Enter the tam id ::  ")) 
-           ;)
-   )
-   (close fp)
- )
-
+ 
  (defrule expected_mng
- (get_expected_tam_mng ?id ?tam)
+ (declare (salience 70))
+ ?f<-(all_tam_mngs ?id ?tam)
  =>
- (printout  t crlf "What is your expected tam meaning" crlf)
+ (retract ?f)
+ (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/" ?tam "_tam.clp >jnk 2>error")
+ (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/"?tam "_tam.clp >>jnk 2>error")
+ (open "jnk" fp2 "r")
+ (if (eq (read fp2) EOF) then
+     (printout t crlf "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" crlf)
+     (printout t      "There is no clip file defined for this tam"     )
+     (printout t crlf "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" crlf)
+;     (close fp12)(remove jnk1)
+     (assert (ask_whether_to_write_a_rule ?id ?tam))
+ else
+ (printout  t crlf "What is your expected meaning" crlf)
  (bind ?reply (read))
- (assert (expected_mng ?id ?tam ?reply))
- )
+ (assert (expected_mng ?id ?tam ?reply)) 
+ (close fp2)(remove jnk)
+ ))
 
  (defrule expected_mng1
- ?f0<-(expected_mng ?id ?tam ?exp_mng)
+ (declare (salience 70))
+ ?f<-(expected_mng ?id ?tam ?exp_mng)
  =>
-         (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/" ?tam "_tam.clp >jnk")
-         (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/"?tam "_tam.clp >>jnk")
-         (system "grep -B2 \" " ?exp_mng"))\" jnk >jnk1")
-         (open "jnk1" fp1 "r")
-         (retract ?f0)
-         (if (eq (read fp1) EOF) then
-               (printout t crlf "There is no rule defined with the expected meaning" crlf)
-               (printout t "Do you want to search for other meaning(y/n)" crlf)
-               (bind ?reply (read))
-               (if (eq ?reply y) then
-                       (printout  t crlf "What is your expected tam meaning" crlf)
-		       (bind ?reply1 (read))
-       		       (assert (expected_mng ?id ?tam ?reply1))
-		else  (if (eq ?reply n) then
-		        (printout t "Exiting tam debugging ........" crlf)   
-;                        (exit)
-      		      else
-           		(assert(expected_mng ?id ?tam ?reply))
-		        (printout t "Legal answers are \"(y/n)\" " crlf)))
-              (close fp1)(remove jnk1)
-         else
-         (printout t crlf "Rule matching your meaning is :" crlf)
-         (printout t "------------------------------" crlf)
-         (system "cat jnk1")
-	 (assert (get-path ?id ?tam))
-         (close fp) (remove jnk)
-         )
+ (retract ?f)
+ (printout  t crlf "Do you want all possible meanings of the tam(y/n)" crlf)
+ (bind ?reply (read))
+ (if (eq ?reply y) then
+      (assert (print_all_possible_meanings ?id ?tam ?exp_mng))
+ else (if (eq ?reply n) then
+      (assert (print_only_expected_meaning ?id ?tam ?exp_mng))
+ else
+      (printout t "Legal answers are (y/n)" crlf)
+      (assert (expected_mng ?id ?tam ?exp_mng))
+     )
  )
+ )
+
+ (defrule print_all_possible_meanings
+ ?f<-(print_all_possible_meanings ?id ?tam ?exp_mng)
+ =>
+ (retract ?f)
+ ( system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/" ?tam "_tam.clp >jnk 2>error")
+ (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/"?tam "_tam.clp >>jnk 2>error")
+ (open "jnk" fp "r")
+ (if (neq (read fp) EOF) then
+ (system "grep -B2 \" " ?exp_mng"))\" jnk >jnk1")
+ (open "jnk1" fp1 "r")
+  (if (eq (read fp1) EOF) then
+     (printout t "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" crlf)
+     (printout t crlf "There is no rule defined with the expected meaning" crlf crlf)
+     (printout t "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" crlf)
+     (assert (get-path ?id ?tam))
+  )
+ (close fp1)(close fp)(remove jnk1)
+ (open "jnk" fp "r")
+ (printout t "Rules matching the tam are ::" crlf)
+ (printout t "<=====================================>" crlf)
+ (system "cat jnk")
+ (close fp)
+ (remove jnk)
+ (assert (get-path ?id ?tam))
+ ))
+
+ (defrule print_only_expected_meaning
+ ?f<-(print_only_expected_meaning ?id ?tam ?exp_mng)
+ =>
+ (retract ?f)
+ (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/" ?tam "_tam.clp | grep -B2  \" " ?exp_mng"))\">jnk 2>error")
+ (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/"?tam "_tam.clp | grep -B2  \" " ?exp_mng"))\">>jnk 2>error")
+ (open "jnk" file "r")
+ (if (eq (read file) EOF) then
+       (close file) (remove jnk)
+       (printout t "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" crlf)
+       (printout t crlf "There is no rule defined with the expected meaning" crlf crlf)
+       (printout t "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" crlf)
+       (assert (search_for_other_meaning ?id ?tam))
+    else
+     (printout t "Rules matching Expected meaning are ::" crlf)
+     (printout t "<=====================================>" crlf)
+     (system "cat jnk")
+     (close file)
+     (remove jnk)
+     (assert (get-path ?id ?tam))
+ ))
+
+ (defrule search_for_other_meaning
+ ?f<-(search_for_other_meaning ?id ?tam)
+ =>
+ (retract ?f)
+   (printout t "Do you want to search for other meaning(y/n)" crlf)
+   (bind ?reply (read))
+        (if (eq ?reply y) then
+        (assert(all_tam_mngs ?id ?tam))
+        else (if (eq ?reply n) then
+          (printout t "Exiting TAM debugging ............" crlf)
+          ;(exit)
+       else
+          (assert(search_for_other_meaning ?id ?tam))
+          (printout t "Legal answers are \"(y/n)\" " crlf))
+       )
+ )
+
 
   (defrule display_rule
   ?f<-(get-path ?id ?tam)
