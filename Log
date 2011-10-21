@@ -2796,5 +2796,6 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  5. Modified "get_current_id_grp_mems" rule in pada_prawiniXi.clp (added test condition)
  6. Modified word_mng_with_vib ,kA_vib_from_sub_rule and PP_pronoun_rule_with_vib_kA rules in prepare_apertium_input.clp
  7. Modified vib_rule, vib_rule2, vib_rule1 and prefix_vib_rule rules in vibakthi.clp
- 8. Updated Log
+ 8. Updated wsd_debug.clp and wsd_tam_debug.clp files.
+ 9. Updated Log
 
