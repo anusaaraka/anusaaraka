@@ -78,6 +78,26 @@
         (bind ?lnd (explode$ ?wrd1))
         (assert (id-Modified_id ?lnode ?lnd))
  )
+
+; (defrule word_rule_4_cannot
+; (declare (salience 100))
+; (rel_name-sids aux ?lnode ?rnode)
+; (rel_name-sids neg ?lnode ?rnode1)
+; ?f1<-(parserid-word ?rnode ?wrd)
+; ?f2<-(parserid-word ?rnode1 ?wrd1)
+; ?f3<-(parser_numeric_id-word ?rid ?w1&can)
+; ?f4<-(parser_numeric_id-word ?rid1  ?w2&not)
+; (test (= (string_to_integer ?rnode) ?rid))
+; (test (= (string_to_integer ?rnode1) ?rid1))
+; (test (= (+ ?rid 1) ?rid1))
+;  =>
+;        (retract ?f1 ?f2 ?f3 ?f4)
+;        (printout ?*nid_wrd_fp*  "(parser_numid-word-remark  " ?rid "  "?wrd ?wrd1 "  neg)" crlf)
+;        (printout ?*l_wrd_fp* "(parserid-word  "?rnode"neg "?wrd ?wrd1 ")" crlf)
+;        (bind ?w (explode$ (str-cat ?rnode "neg")))
+;        (assert (id-Modified_id ?rnode ?w))
+; )
+
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule word_rule
  (declare (salience 50))
@@ -131,36 +151,43 @@
         (printout ?*l_rel_fp* "(rel_name-sids  " ?lname "   "?lnode "  "?rnode")" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
- ;Modified by Shirisha Manju(13-10-11)
- ; 
  (defrule map_cons
  ?f<-(Head-Level-Mother-Daughters 's ?lvl ?Mot $?pre ?NN ?POS $?post)
  ?f1<-(Head-Level-Mother-Daughters ?h ?lvl1 ?NN ?noun)
  ?f2<-(Head-Level-Mother-Daughters 's ?lvl1 ?POS ?child)
- (Node-Category	?POS	POS|P_COM|P_DOT|P_QES|P_DQ|P_DQT)
- (id-original_word =(+ ?noun 1) ?word)
- ?f3<-(Head-Level-Mother-Daughters ?word ?l $?d ?id)
+ (Node-Category	?POS	POS)
   =>
-  	(retract ?f ?f1 ?f2 ?f3)
-	(bind ?noun1 (explode$ (str-cat ?h 's)))
-       	(assert (Head-Level-Mother-Daughters ?noun1 ?lvl ?Mot $?pre ?NN $?post))
-        (assert (Head-Level-Mother-Daughters ?noun1 ?lvl1 ?NN ?noun))
-	(assert (Head-Level-Mother-Daughters ?word ?l $?d (+ ?noun 1)))
-	(assert (current_id (+ ?noun 1)))
+  	(retract ?f ?f1 ?f2)
+  	(assert (Head-Level-Mother-Daughters 's ?lvl ?Mot $?pre ?NN $?post))
+        (bind ?noun (explode$ (str-cat ?noun 's)))
+        (assert (Head-Level-Mother-Daughters ?h ?lvl1 ?NN ?noun))
  )
+ 
 
- ;Added by Shirisha Manju (13-10-11) 
+; (defrule map_cannot
+; ?f<-(Head-Level-Mother-Daughters can ?l ?M $?pre ?Mot ?mot $?pos)
+; ?f1<-(Head-Level-Mother-Daughters can ?l1 ?Mot ?dat)
+; ?f2<-(Head-Level-Mother-Daughters not ?l1 ?mot ?Dat)
+; (Node-Category ?Mot  MD)
+; (Node-Category ?mot  RB)
+;  =>
+;	  (retract ?f ?f1 ?f2)
+;          (assert (Head-Level-Mother-Daughters cannot ?l ?M $?pre ?Mot $?pos))
+;          (bind ?dat (explode$ (str-cat ?dat "neg")))
+;          (assert (Head-Level-Mother-Daughters cannot ?l1 ?Mot ?dat))
+; )
+
+
  (defrule map_cons1
- (current_id ?id)
- (id-original_word =(+ ?id 1) ?word)
- ?f3<-(Head-Level-Mother-Daughters ?word ?l $?d =(+ ?id 2))
- (test (eq (numberp ?id) TRUE))
- =>
-	(retract ?f3)
-	(assert (Head-Level-Mother-Daughters ?word ?l $?d (+ ?id 1)))
-	(assert (current_id (+ ?id 1)))
+ ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre ?PUNC $?post)
+ ?f1<-(Head-Level-Mother-Daughters ?h2 ?lvl1 ?PUNC ?child)
+ (Node-Category ?PUNC    P_COM|P_DOT|P_QES|P_DQ|P_DQT|P_SEM|P_LB|P_RB)
+  =>
+        (retract ?f ?f1)
+        (assert (Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre $?post))
  )
 
+ 
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule end
  (declare (salience -50))
