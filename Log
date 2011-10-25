@@ -2801,5 +2801,6 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  10. Modified Ol_constituents_level.clp and ol_cons_in_sd_format.clp files to get constituents info in parser ids
  11. Modified run_modules_std.bat, sd_combining_apostrophe.clp, run_stanford-parser.sh, constituency_parse.l, 
     constituency_parse.y and Anusaaraka_stanford.sh files (for handling POS and punctuations)
- 12. Updated Log
+ 12. Added condition to handle words like [St. Francis] in get_word_cat.lex file.
+ 13. Updated Log
 
