@@ -2784,7 +2784,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 30. Updated Log.
 
 
- 24-10-11
+ 25-10-11
  ========
  1. Modified "move_BEandHAVE_b4_SBAR: rule in H_ordering_rules.clp (added not condition)
  2. agreement.clp
@@ -2798,7 +2798,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  7. Modified vib_rule, vib_rule2, vib_rule1 and prefix_vib_rule rules in vibakthi.clp
  8. Updated wsd_debug.clp and wsd_tam_debug.clp files.
  9. Modified existing rules in H_ordering_rules.clp (Modified ids to P-ids)
- 10.Modified run_modules_std.bat, sd_combining_apostrophe.clp, run_stanford-parser.sh, constituency_parse.l, 
+ 10. Modified Ol_constituents_level.clp and ol_cons_in_sd_format.clp files to get constituents info in parser ids
+ 11. Modified run_modules_std.bat, sd_combining_apostrophe.clp, run_stanford-parser.sh, constituency_parse.l, 
     constituency_parse.y and Anusaaraka_stanford.sh files (for handling POS and punctuations)
- 11. Updated Log
+ 12. Updated Log
 
