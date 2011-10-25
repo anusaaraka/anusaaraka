@@ -181,7 +181,7 @@
  (defrule map_cons1
  ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre ?PUNC $?post)
  ?f1<-(Head-Level-Mother-Daughters ?h2 ?lvl1 ?PUNC ?child)
- (Node-Category ?PUNC    P_COM|P_DOT|P_QES|P_DQ|P_DQT|P_SEM|P_LB|P_RB)
+ (Node-Category ?PUNC    P_COM|P_DOT|P_QES|P_DQ|P_DQT|P_SEM|P_LB|P_RB|P_SQT)
   =>
         (retract ?f ?f1)
         (assert (Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre $?post))
