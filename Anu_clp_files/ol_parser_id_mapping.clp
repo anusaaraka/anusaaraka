@@ -6,6 +6,7 @@
  (defglobal ?*rel-file1* = file1)
  (defglobal ?*rel-debug* = rel_debug)
  (defglobal ?*num-file* = num_fp)
+ (defglobal ?*e_cons_file* = e_cons_fp)
 
  (deffacts dummy_facts
  (parser_id-number)
@@ -355,6 +356,22 @@
  =>
       (printout ?*num-file* "(id-number-src  " ?wid  "  "   ?num  "  "  ?src ")" crlf)
  )
+ ;-------------------------------------------------------------------------------------------------------------------- 
+ (defrule map_constituents
+ (declare (salience 150))
+ ?f<-(Head-Level-Mother-Daughters  ?head  ?lvl  ?Mot $?pre ?pid $?pos)
+ (parserid-wordid    ?pid  $?wid)
+ =>
+        (retract ?f)
+        (assert (Head-Level-Mother-Daughters  ?head  ?lvl  ?Mot $?pre $?wid $?pos)))
+
+ (defrule print_constituents
+ (declare (salience 100))
+ ?f<-(Head-Level-Mother-Daughters  ?head  ?lvl  ?Mot $?dau)
+ =>
+        (printout ?*e_cons_file* "(Head-Level-Mother-Daughters  "?head"  "?lvl"  "?Mot"  "(implode$ $?dau)")" crlf)
+ )
+
  ;--------------------------------------------------------------------------------------------------------------------
  (defrule end
  (declare (salience -10))
@@ -367,5 +384,6 @@
 	(close ?*rel-file1*)
 	(close ?*rel-debug*)
         (close ?*num-file*)
+        (close ?*e_cons_file*)
  )
  ;--------------------------------------------------------------------------------------------------------------------

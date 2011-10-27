@@ -25,7 +25,7 @@
  (open "sd-relations_tmp1.dat" l_r_fp "a")
  (open "sd_category_tmp.dat" l_c_fp "a")
  (run)
- (save-facts "E_constituents_info.dat" local Head-Level-Mother-Daughters)
+ (save-facts "E_constituents_info_tmp1.dat" local Head-Level-Mother-Daughters)
  (save-facts "Node_category.dat" local  Node-Category)
  (clear)
  ;--------------------------------------------------------------------------------
@@ -130,6 +130,7 @@
  (load-facts "preferred_morph_tmp.dat")
  (load-facts "relations_tmp.dat")
  (load-facts "parser_pos_cat.dat")
+ (load-facts "E_constituents_info_tmp1.dat")
  (load-facts "parserid_wordid_mapping.dat")
  (open "root.dat" root_fp "a")
  (open "preferred_morph.dat" pre_morph_fp "a")
@@ -137,6 +138,7 @@
  (open "relations.dat" file "a")
  (open "relations_tmp1.dat" file1 "a")
  (open "cat_consistency_check.dat" cat_cons_fp "a")
+ (open "E_constituents_info.dat" e_cons_fp "a")
  (run)
  (clear)
  ;~~~~~~~~~~~~~~~~~~~~WSD MODULE ~~~~~~~~~~~~~~~~~~~~~~~~~~

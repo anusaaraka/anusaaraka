@@ -33,6 +33,7 @@
  (defglobal ?*rel-file1* = file1)
  (defglobal ?*l_rel-file* = l_rel_fp)
  (defglobal ?*num-file* = num_fp)
+ (defglobal ?*e_cons-file* = e_cons_fp)
 
  (deffunction string_to_integer (?parser_id); [Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
@@ -266,6 +267,21 @@
  =>
 	(printout ?*mng_dcd-file* "(meaning_has_been_decided  " ?wid ")" crlf)
  )
+
+ (defrule map_constituents
+ (declare (salience 150))
+ ?f<-(Head-Level-Mother-Daughters  ?head  ?lvl  ?Mot $?pre ?pid $?pos)
+ (parserid-wordid    ?pid  ?wid)
+ =>
+ 	(retract ?f)
+        (assert (Head-Level-Mother-Daughters  ?head  ?lvl  ?Mot $?pre ?wid $?pos)))
+
+ (defrule print_constituents
+ (declare (salience 100))
+ ?f<-(Head-Level-Mother-Daughters  ?head  ?lvl  ?Mot $?dau)
+ =>
+	(printout ?*e_cons-file* "(Head-Level-Mother-Daughters  "?head"  "?lvl"  "?Mot"  "(implode$ $?dau)")" crlf)
+ )
  ;====================================================================================================================
  (defrule end
  (declare (salience -10))
@@ -280,5 +296,6 @@
 	(close ?*id_expr-file*)
 	(close ?*mng_dcd-file*)
 	(close ?*num-file*)
+        (close ?*e_cons-file*)
  )
  ;-------------------------------------------------------------------------------------------------------------------

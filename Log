@@ -2784,7 +2784,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 30. Updated Log.
 
 
- 25-10-11
+ 27-10-11
  ========
  1. Modified "move_BEandHAVE_b4_SBAR: rule in H_ordering_rules.clp (added not condition)
  2. agreement.clp
@@ -2802,5 +2802,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  11. Modified run_modules_std.bat, sd_combining_apostrophe.clp, run_stanford-parser.sh, constituency_parse.l, 
     constituency_parse.y and Anusaaraka_stanford.sh files (for handling POS and punctuations)
  12. Added condition to handle words like [St. Francis] in get_word_cat.lex file.
- 13. Updated Log
+ 13.i) Modified (Changed the order) in run_modules_ol.bat and run_modules_std.bat such that ordering is done after parser id mapping.
+    ii) Modified and added new rules in H_ordering_rules.clp, ol_cons_in_sd_format.clp,ol_parser_id_mapping.clp,parser_id_mapping.clp.
+ 14. Updated Log
 
