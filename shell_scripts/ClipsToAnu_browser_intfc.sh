@@ -30,15 +30,11 @@ xsltproc $HOME_anu_test/Browser/src/xhtml_unicode_local.xsl - < $2/tmp/$1_tmp/$1
 $HOME_anu_test/Browser/src/add_translation_path.pl $1 < $2/tmp/$1_tmp/jnk > $2/tmp/$1_tmp/$1.html_tmp
 
 ###Added by Roja (13-07-11) To handle abbrevations in Browsers.
- sh $HOME_anu_test/bin/abbr_browser.sh $1.html_tmp $1.html
+ sh $HOME_anu_test/bin/abbr_browser.sh $2/tmp/$1_tmp/$1.html_tmp $3/$1.html
 
 
 cd $HOME_anu_test/Anu_src/
 perl hnd_translation.pl $1 $2
 
 ####Added by Roja (13-07-11) To handle abbrevations in Browsers.
-sh $HOME_anu_test/bin/abbr_browser.sh $2/tmp/$1_tmp/$1_trnsltn.html $2/tmp/$1_tmp/$1_trnsltn1.html
-
-cp $2/tmp/$1_tmp/$1_trnsltn1.html $2/tmp/$1_tmp/$1_trnsltn.html
-
-
+sh $HOME_anu_test/bin/abbr_browser.sh $2/tmp/$1_tmp/$1_trnsltn_tmp.html $3/$1_trnsltn.html

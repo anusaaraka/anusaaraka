@@ -25,7 +25,7 @@ undef $/;
 #$/="\n\n";
 
 open(TMP,"< $path_clips/tmp/tmp_save_format/$ARGV[0]\.fmt_split") || die "Can't open file $ARGV[0]\.fmt_split\n";
-open(TRANS,"> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn.html") || die "Can't open $ARGV[0]_trnsltn.html";
+open(TRANS,"> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn_tmp.html") || die "Can't open $ARGV[0]_trnsltn_tmp.html";
 print TRANS "<HTML><BODY>\n";
 print TRANS "<HTML lang=\"hi\"><BODY>\n<meta http-equiv=\"Content-Language\" content=\"hi\">\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n";
 close(TRANS);
@@ -48,7 +48,7 @@ sub final_translation{
 
     if (-e  $facts_filename) {
       if (-z $facts_filename){
-        open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn.html") || die "Can't open $ARGV[0]_trnsltn.html";
+        open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn_tmp.html") || die "Can't open $ARGV[0]_trnsltn_tmp.html";
         print TRANS "$ParaId.$SenId\tCould not translate the sentence. \n<BR>\n";
         close(TRANS);
         return;
@@ -67,7 +67,7 @@ sub final_translation{
           $sen_wx =~ s/\\//g;
           $sen_wx =~ s/\_/ /g;
           $sen_utf8=&wx_utf8($sen_wx);
-          open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn.html") || die "Can't open $ARGV[0]_trnsltn.html";
+          open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn_tmp.html") || die "Can't open $ARGV[0]_trnsltn_tmp.html";
           #
           print TRANS "$ParaId.$SenId\t$sen_utf8\n<BR>\n";
 

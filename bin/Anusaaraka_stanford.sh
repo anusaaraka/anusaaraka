@@ -1,4 +1,4 @@
- #/bin/sh
+#/bin/sh
  source ~/.bashrc
 
  export LC_ALL=
@@ -8,6 +8,12 @@
      echo $HOME_anu_tmp " directory does not exist "
      echo "Creating "$HOME_anu_tmp 
     mkdir $HOME_anu_tmp
+ fi
+
+ if ! [ -d $HOME_anu_output ] ; then
+     echo $HOME_anu_output " directory does not exist "
+     echo "Creating "$HOME_anu_output 
+    mkdir $HOME_anu_output
  fi
 
  MYPATH1=`pwd`
@@ -20,10 +26,10 @@
     mkdir $MYPATH/tmp
  fi
 
- if ! [ -d $MYPATH1/help ] ; then
+ if ! [ -d $HOME_anu_output/help ] ; then
     echo "help dir  does not exist "
     echo "Creating help dir"
-    mkdir $MYPATH1/help
+    mkdir $HOME_anu_output/help
  fi
 
  if  [ -e $MYPATH/tmp/$1_tmp ] ; then
@@ -60,7 +66,7 @@
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
   sh run_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
   sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}"  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp | sed -n -e "H;\${g;s/\n//g;p}" | sed 's/)(ROOT/)\n(ROOT/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn
-  sed 's/(, ,)/(P_COM COMMA)/g' < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn | sed 's/(\. \.)/(P_DOT DOT)/g' |sed 's/(? ?)/(P_QES QUESTION_MARK)/g' | sed 's/(. ?)/(P_DQ DOT_QUESTION_MARK)/g' | sed 's/(`` ``)/(P_DQT DOUBLE_QUOTES)/g' | sed "s/('' '')/(P_DQT DOUBLE_QUOTES)/g" | sed 's/(: ;)/(P_SEM SEMCOLN)/g' | sed "s/('' ')/(P_SQT SINGLE_QUOTE)/g" | sed 's/(-LRB- -LRB-)/(P_LB LFT_BRK)/g'|sed 's/(-RRB- -RRB-)/(P_RB RT_BRK)/g' >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.cons
+  sed 's/(, ,)/(P_COM COMMA)/g' < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn | sed 's/(\. \.)/(P_DOT DOT)/g' |sed 's/(? ?)/(P_QES QUESTION_MARK)/g' | sed 's/(. ?)/(P_DQ DOT_QUESTION_MARK)/g' | sed 's/(`` ``)/(P_DQT DOUBLE_QUOTES)/g' | sed "s/('' '')/(P_DQT DOUBLE_QUOTES)/g" | sed 's/(: ;)/(P_SEM SEMCOLN)/g' | sed 's/(: :)/(P_CLN COLN)/g' | sed 's/(: -)/(P_DSH PDASH)/g' |sed "s/('' ')/(P_SQT SINGLE_QUOTE)/g" | sed 's/(`` `)/(P_SQT SINGLE_QUOTE)/g' | sed "s/(\`\` ')/(P_SQT SINGLE_QUOTE)/g" | sed 's/(-LRB- -LRB-)/(P_LB LFT_BRK)/g'|sed 's/(-RRB- -RRB-)/(P_RB RT_BRK)/g' | sed 's/(. !)/(P_EXM EXCLAMATION)/g' >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.cons
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 
   #running stanford NER (Named Entity Recogniser) on whole text.
@@ -107,27 +113,4 @@
  echo "(defglobal ?*filename* = $1)" >> path_for_html.clp
 
  echo "Calling Interface related programs"
- sh $HOME_anu_test/shell_scripts/ClipsToAnu_browser_intfc.sh $1 $MYPATH
- echo "<html><body>" > $MYPATH/tmp/$1_tmp/$1.txt.html
- cat $MYPATH/$1 >>$MYPATH/tmp/$1_tmp/$1.txt.html
- echo "</body></html>" >> $MYPATH/tmp/$1_tmp/$1.txt.html
-
- cp $MYPATH/$1 $MYPATH/tmp/$1_tmp/
- sh $HOME_anu_test/shell_scripts/frame.sh $1 $MYPATH/tmp/$1_tmp/
-
-  mkdir $MYPATH/tmp/$1_tmp/anu_html
-  cp $HOME_anu_test/Browser/img.php $HOME_anu_test/Browser/val.js $MYPATH/tmp/$1_tmp/anu_html/
- 
-  cp *.html  $MYPATH1/. 
-  cd $HOME_anu_test/Browser
-  cp -r help/*htm $MYPATH1/help/
-  cd src
-  cp *.html *.js *.css $MYPATH1
-
-	#To add slashes before(',",(,) etc.. )  inside initialise function(used for google api)
-
-	cd $MYPATH1
-	perl $HOME_anu_test/Anu_src/change-html.pl < $1.html > $1-new.html
-	cp $1.html $1-old.html
-	cp $1-new.html $1.html
-
+ sh $HOME_anu_test/bin/run_anu_browser.sh $HOME_anu_test $1 $MYPATH $HOME_anu_output
