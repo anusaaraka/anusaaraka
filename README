@@ -27,6 +27,7 @@
         =========================================================
 
         export HOME_anu_test=path_of_anu_installation
+        export HOME_anu_output=path_for_anu_output
         export HOME_anu_tmp=path_for_tmp_dir
         export HOME_anu_provisional_wsd_rules=path_for_user_wsd_rules(provisional_wsd_rules)
 	export HOME_open_logos=path_openlogos_dir
@@ -43,6 +44,7 @@
         ==
 
         export HOME_anu_test=$HOME/anu_testing
+        export HOME_anu_output=$HOME/anu_output
 	export HOME_anu_tmp=$HOME/tmp_anu_dir
 	export HOME_anu_provisional_wsd_rules=$HOME/provisional_wsd_rules
 	export HOME_open_logos=$HOME/openlogos-package/openlogos-1.0.3
@@ -86,9 +88,8 @@
        
     To view the output, open html file through a browser by the command :
 
-               firefox <filename_frame.html>
-           Ex: firefox verified_frame.html   (html o/p can be viewed in the directory where you have run)
-
+               firefox $HOME_anu_output/<filename_frame.html>
+           Ex: firefox $HOME_anu_output/verified_frame.html   
 -------------------------------------------------------------------------------------------------------------------
 6. Linkage diagram:
     ===============   
