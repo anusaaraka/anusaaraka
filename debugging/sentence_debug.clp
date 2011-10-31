@@ -123,13 +123,15 @@
   (printout t " Enter \"7\" for ling_vachan_purush debugging." crlf)
   (printout t " Enter \"8\" for abhihita pada nirNaya debugging." crlf)
   (printout t " Enter \"9\" to exit from debugging." crlf)
-  (printout t " To exit from any of the debugging enter (exit) at the CLIPS prompt." crlf))  )
+  ;(printout t " To exit from any of the debugging enter (exit) at the CLIPS prompt." crlf)
+  ))
   
   (printout t  crlf " NOTE  ::" crlf)
   (printout t       " ========= "crlf)
   (printout t " i) To terminate the debugging process"crlf)
-  (printout t "     a) Enter (exit) at the CLIPS prompt.   \"OR\""  crlf)
-  (printout t "     b) Press Ctrl+c and enter (exit) at the CLIPS prompt.(If debugging is in the middle of execution.)"   crlf)
+  ;(printout t "     a) Enter (exit) at the CLIPS prompt.   \"OR\""  crlf)
+;  (printout t "     b) Press Ctrl+c and enter (exit) at the CLIPS prompt.(If debugging is in the middle of execution.)"   crlf)
+  (printout t "     b) Press Ctrl+c and enter (exit) at the CLIPS prompt."   crlf)
   (printout t " ii) You can also get help information in respective debugging module by entering (Help) command at the clips prompt. (i.e If you are in WSD debugging module, type (Help) at the clips prompt which will show you WSD related information )" crlf)
 
 
