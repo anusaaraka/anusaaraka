@@ -3,7 +3,16 @@ $prev_para=1;
 %para_txt="";
 $para=0;
 undef $/;
-$text=<STDIN>;
+if($ARGV[0] eq "REMOVE_TITLE"){
+$text_tmp=<STDIN>;
+@arr = split(/<\/form>/,$text_tmp);
+$arr[1] = "</div><form>";
+foreach $elm (@arr){
+	  $text = join('</form>',$text,$elm);
+	}
+} else {
+$text=<STDIN>;}
+
 @html_text=split(/\n/,$text);
 foreach $s (@html_text){
 	if($s =~ /<td class="[^>]+">.*onclick="javascript:initialize/){

@@ -17,6 +17,6 @@
 
  #To add slashes before(',",(,) etc.. )  inside initialise function(used for google api)
  cd $4
- perl $1/Anu_src/change-html.pl < $4/$2.html > $4/$2-new.html
+ perl $1/Anu_src/change-html.pl $5 < $4/$2.html > $4/$2-new.html
  cp $4/$2.html $4/$2-old.html
  cp $4/$2-new.html $4/$2.html
