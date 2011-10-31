@@ -2804,16 +2804,16 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  12. Added condition to handle words like [St. Francis] in get_word_cat.lex file.
  13.i) Modified (Changed the order) in run_modules_ol.bat and run_modules_std.bat such that ordering is done after parser id mapping.
     ii) Modified and added new rules in H_ordering_rules.clp, ol_cons_in_sd_format.clp,ol_parser_id_mapping.clp,parser_id_mapping.clp.
- 1.Modified Anusaaraka_berkeley.sh, Anusaaraka_link.sh, Anusaaraka_ol.sh, Anusaaraka_rasp.sh, Anusaaraka_stanford.sh
+ 14.Modified Anusaaraka_berkeley.sh, Anusaaraka_link.sh, Anusaaraka_ol.sh, Anusaaraka_rasp.sh, Anusaaraka_stanford.sh
     and Anusaaraka.sh files (Moving all the browser output files to $HOME_anu_output path)
       a) Added new file run_anu_browser.sh
         (Moved all the browser generation part from all the above files to run_anu_browser.sh).
       b) Added new shell variable $HOME_anu_output
       c) Shell variables and paths have been changed in hnd_translation.pl , ClipsToAnu_browser_intfc.sh.
- 14. Added new Punctuations in Anusaaraka_stanford.sh file.
- 15. Updated sentence_debug.clp file.
- 16. Removed change-html-remove-title.pl and handled it in change-html.pl
+ 15. Added new Punctuations in Anusaaraka_stanford.sh file.
+ 16. Updated sentence_debug.clp file.
+ 17. Removed change-html-remove-title.pl and handled it in change-html.pl
      (As Both files are same except removing TITLE information for site output (Anusaarak_site.sh))
- 17. Modified Anusaaraka_site.sh and run_anu_browser.sh in browser generation part .
- 18. Updated Log
+ 18. Modified Anusaaraka_site.sh and run_anu_browser.sh in browser generation part .
+ 19. Updated Log
 
