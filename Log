@@ -2784,7 +2784,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 30. Updated Log.
 
 
- 31-10-11
+ 1-11-11
  ========
  1. Modified "move_BEandHAVE_b4_SBAR: rule in H_ordering_rules.clp (added not condition)
  2. agreement.clp
@@ -2815,5 +2815,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  17. Removed change-html-remove-title.pl and handled it in change-html.pl
      (As Both files are same except removing TITLE information for site output (Anusaarak_site.sh))
  18. Modified Anusaaraka_site.sh and run_anu_browser.sh in browser generation part .
- 19. Updated Log
+ 19. Added "-" punctuation in get_word_cat.lex file.
+ 20. Added new punctuation "P_CLN, P_DSH, P_EXM" and Modified the files constituency_parse.l, sd_combining_apostrophe.clp accordingly.
+ 21. Added punctuations in id-link_id_map_for_first_word rule [(') and ('')] in parserid_wordid_mapping.clp
+ 22. Changed the array size from  my_daughters[100][100][100] to my_daughters[100][100][1000] in constituency_parse.y
+ 23. Updated Log
 

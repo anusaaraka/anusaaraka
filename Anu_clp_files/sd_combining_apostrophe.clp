@@ -44,12 +44,12 @@
  ; The parents documented every step of their child's development .
  (defrule word_rule_for_poss
  (declare (salience 100))
- (rel_name-sids poss ?lnode ?rnode)
+ (rel_name-sids poss|num|conj_and|conj_or|dep ?lnode ?rnode)
  ?f1<-(id-sd_cat ?rnode ?c)
  ?f2<-(parserid-word ?rnode ?wrd)
  ?f3<-(parser_numeric_id-word ?rid ?wrd1)
  (test (= (string_to_integer ?rnode) ?rid))
- ?f4<-(parser_numeric_id-word =(+ (string_to_integer ?rnode) 1) ?word&'s)
+ ?f4<-(parser_numeric_id-word =(+ (string_to_integer ?rnode) 1) ?word&'s|')
   =>
 	(retract ?f2 ?f3 ?f4 ?f2)
         (printout ?*nid_wrd_fp*  "(parser_numid-word-remark  " ?rid "  "?wrd1 ?word "  " ?word")" crlf)
@@ -152,14 +152,14 @@
  )
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule map_cons
- ?f<-(Head-Level-Mother-Daughters 's ?lvl ?Mot $?pre ?NN ?POS $?post)
+ ?f<-(Head-Level-Mother-Daughters ?pos1 ?lvl ?Mot $?pre ?NN ?POS $?post)
  ?f1<-(Head-Level-Mother-Daughters ?h ?lvl1 ?NN ?noun)
- ?f2<-(Head-Level-Mother-Daughters 's ?lvl1 ?POS ?child)
- (Node-Category	?POS	POS)
+ ?f2<-(Head-Level-Mother-Daughters ?pos&'s|' ?lvl1 ?POS ?child)
+ (Node-Category	?POS	POS|NNS|NN|CD)
   =>
   	(retract ?f ?f1 ?f2)
-  	(assert (Head-Level-Mother-Daughters 's ?lvl ?Mot $?pre ?NN $?post))
-        (bind ?noun (explode$ (str-cat ?noun 's)))
+  	(assert (Head-Level-Mother-Daughters ?pos1 ?lvl ?Mot $?pre ?NN $?post))
+        (bind ?noun (explode$ (str-cat ?noun ?pos)))
         (assert (Head-Level-Mother-Daughters ?h ?lvl1 ?NN ?noun))
  )
  
@@ -181,7 +181,7 @@
  (defrule map_cons1
  ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre ?PUNC $?post)
  ?f1<-(Head-Level-Mother-Daughters ?h2 ?lvl1 ?PUNC ?child)
- (Node-Category ?PUNC    P_COM|P_DOT|P_QES|P_DQ|P_DQT|P_SEM|P_LB|P_RB|P_SQT)
+ (Node-Category ?PUNC    P_COM|P_DOT|P_QES|P_DQ|P_DQT|P_SEM|P_LB|P_RB|P_SQT|P_CLN|P_DSH|P_EXM)
   =>
         (retract ?f ?f1)
         (assert (Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre $?post))
