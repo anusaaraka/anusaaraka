@@ -1,374 +1,410 @@
- (defglobal ?*lwg_debug_file* = lwg_db_fp)
- (deffunction string_to_integer (?parser_id); [Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
+ (deffunction string_to_integer (?parser_id)
+; Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
 
- (deftemplate word-morph(slot original_word)(slot morph_word)(slot root)(slot category)(slot suffix)(slot number))
- ;-------------------------------------------------------------------------------------------------------------------------
-; (defrule rule_5
-; (declare (salience 4000))
-; (rel_name-sids nsubj|nsubjpass ?head ?id1)
-; (rel_name-sids aux|auxpass ?head ?id2)
-; (rel_name-sids aux|auxpass ?head ?id3)
-; (rel_name-sids aux|auxpass ?head ?id4)
-; (rel_name-sids aux|auxpass ?head ?id5)
-; (test (and (<  (string_to_integer ?id1) (string_to_integer ?id2)) (< (string_to_integer ?id2) (string_to_integer ?id3)) (< (string_to_integer ?id3) (string_to_integer ?id4)) (< (string_to_integer ?id4) (string_to_integer ?id4))))
-; (not (grouped_head ?head))
-; (parserid-word 
-;  =>
-; (assert (root-verbchunk-tam-parser_chunkids  root_to_be_decided verb_chunk_to_be_decided  tam_to_be_decided ?id2 ?id3 ?id4 ?id5  ?head ))
-; (assert (grouped_head ?head))
-; (printout ?*lwg_debug_file* "(rule_name-grouped_ids rule_5  "?id2 "  "?id3"  "?id4"  "?id5"  "?head ")" crlf)
-; )
- ;-------------------------------------------------------------------------------------------------------------------------
- (defrule rule_4
- (declare (salience 3000))
- (rel_name-sids nsubj|nsubjpass ?head ?id1)
- (rel_name-sids aux|auxpass ?head ?id2)
- (rel_name-sids aux|auxpass ?head ?id3)
- (rel_name-sids aux|auxpass ?head ?id4)
- (test (and (<  (string_to_integer ?id1) (string_to_integer ?id2)) (< (string_to_integer ?id2) (string_to_integer ?id3)) (< (string_to_integer ?id3) (string_to_integer ?id4))))
- (not (grouped_head ?head))
- (parserid-word ?id2 ?w)
- (parserid-word ?id3 ?w1)
- (parserid-word ?id4 ?w2)
- (parserid-word ?head ?w3)
- (parser_id-root-category-suffix-number ?head ?root ? ?suf ?) 
- =>
-	(bind ?chunk (str-cat (lowcase ?w)"_"?w1"_"?w2"_"?w3))
-	(bind ?tam   (str-cat (lowcase ?w)"_"?w1"_"?w2"_"?suf))
-	(assert (root-verbchunk-tam-parser_chunkids  ?root  ?chunk ?tam  ?id2 ?id3 ?id4 ?head))
-	(assert (grouped_head ?head))
- 	(printout ?*lwg_debug_file* "(rule_name-grouped_ids rule_4  "?id2"  " ?id3"  " ?id4"  " ?head ")"crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------------------
- (defrule rule_4-1
- (declare (salience 2000))
- (rel_name-sids nsubj|nsubjpass ?kri ?id1)
- (rel_name-sids xcomp ?kri ?head)
- (rel_name-sids aux|auxpass ?head ?id2)
- (rel_name-sids aux|auxpass ?head ?id3)
- (test (and (<  (string_to_integer ?id1) (string_to_integer ?id2)) (< (string_to_integer ?id2) (string_to_integer ?id3))))
- (not (grouped_head ?head))
- (parserid-word ?kri ?w)  (parserid-word ?id2 ?w1)
- (parserid-word ?id3 ?w2) (parserid-word ?head ?w3)
- (parser_id-root-category-suffix-number ?head ?root ? ?suf ?)
-  =>
-        (bind ?chunk (str-cat (lowcase ?w)"_"?w1"_"?w2"_"?w3))
-        (bind ?tam   (str-cat (lowcase ?w)"_"?w1"_"?w2"_"?suf))
-        (assert (root-verbchunk-tam-parser_chunkids  ?root  ?chunk ?tam ?kri ?id2 ?id3 ?head))
-        (assert (grouped_head ?head))
-        (assert (grouped_head ?kri))
-        (printout ?*lwg_debug_file* "(rule_name-grouped_ids   rule_3-1  "?kri"  " ?id2" " ?id3"  " ?head ")" crlf)
- )
- ; Added by Shirisha Manju
- ;Broken windows need to be replaced .
- ;-------------------------------------------------------------------------------------------------------------------------
- (defrule rule_3
- (declare (salience 2000))
- (rel_name-sids nsubj|nsubjpass ?head ?id1)
- (rel_name-sids aux|auxpass ?head ?id2)
- (rel_name-sids aux|auxpass ?head ?id3)
- (test (and (<  (string_to_integer ?id1) (string_to_integer ?id2)) (< (string_to_integer ?id2) (string_to_integer ?id3))))
- (not (grouped_head ?head))
- (parserid-word ?id2 ?w)
- (parserid-word ?id3 ?w1)
- (parserid-word ?head ?w2)
- (parser_id-root-category-suffix-number ?head ?root ? ?suf ?)
-  =>
-	(bind ?chunk (str-cat (lowcase ?w)"_"?w1"_"?w2))
-        (bind ?tam   (str-cat (lowcase ?w)"_"?w1"_"?suf))
-	(assert (root-verbchunk-tam-parser_chunkids  ?root  ?chunk ?tam  ?id2 ?id3 ?head))
- 	(assert (grouped_head ?head))
-	(printout ?*lwg_debug_file* "(rule_name-grouped_ids  rule_3  "?id2"  " ?id3" " ?head ")" crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------------------
- ;A fat boy had to eat fruits. 
- ;Added by Shirisha Manju (26-05-11) Suggested by Sukhada
- (defrule rule_3_1
- (declare (salience 2000))
- (rel_name-sids nsubj|nsubjpass ?head ?id1)
- (rel_name-sids xcomp ?head ?id2)
- (rel_name-sids aux|auxpass ?id2 ?id3)
- (not (grouped_head ?head))
- (parserid-word ?id2 ?w)
- (parserid-word ?id3 ?w1)
- (parserid-word ?head had)
- (parser_id-root-category-suffix-number ?id2 ?root ? ?suf ?)
-  =>
-        (bind ?chunk (string-to-field (str-cat "had_"?w1"_"?w)))
-        (bind ?tam   (string-to-field (str-cat "had_"?w1"_"?suf)))
-        (assert (root-verbchunk-tam-parser_chunkids  ?root  ?chunk ?tam  ?head ?id3 ?id2))
-        (assert (grouped_head ?head))
-        (printout ?*lwg_debug_file* "(rule_name-grouped_ids  rule_3  "?head"  " ?id3" " ?id2 ")" crlf)
- )
- ;------------------------------------------------------------------------------------------------------------------------- 
- ;Added by Roja(17-08-11) To group 'should' and 'be'.
- ;He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan.
- (defrule rule_3_2
- (declare (salience 1100))
- (rel_name-sids nsubj|nsubjpass ?head ?id1)
- (rel_name-sids aux|auxpass ?head ?id2)
- ?f<-(rel_name-sids cop ?head ?id3)
- (test (< (string_to_integer ?id1) (string_to_integer ?id2)))
- (not (grouped_head ?head))
- (parserid-word ?id2 ?w)
- (parserid-word ?id3 ?w1)
- (parser_id-root-category-suffix-number ?id3 ?root ? ?suf ?)
-  =>
- ;       (retract ?f)
-        (bind ?chunk (string-to-field (str-cat (lowcase ?w)"_"?w1)))
-        (bind ?tam   (string-to-field (str-cat (lowcase ?w)"_"?suf)))
-        (assert (root-verbchunk-tam-parser_chunkids  ?root  ?chunk ?tam  ?id2 ?id3))
-        (assert (grouped_head ?id3))(assert (grouped_head ?head))
-        (printout ?*lwg_debug_file* "(rule_name-grouped_ids   rule_3_2  "?id2"  "  ?id3 ")"  crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------------------
- (defrule rule_2
- (declare (salience 1000))
- (rel_name-sids nsubj|nsubjpass ?head ?id1)
- (rel_name-sids aux|auxpass ?head ?id2)
- (test (< (string_to_integer ?id1) (string_to_integer ?id2)))
- (not (grouped_head ?head))
- (parserid-word ?id2 ?w&~to) ; Added by Shirisha Manju Ex :The instructor persuaded Mary to take that course .
- (parserid-word ?head ?w1)
- (parser_id-root-category-suffix-number ?head ?root ? ?suf ?)
-  =>
-        (bind ?chunk (string-to-field (str-cat (lowcase ?w)"_"?w1)))
-        (bind ?tam   (string-to-field (str-cat (lowcase ?w)"_"?suf)))
-        (assert (root-verbchunk-tam-parser_chunkids  ?root  ?chunk ?tam ?id2 ?head))
- 	(assert (grouped_head ?head))
-	(printout ?*lwg_debug_file* "(rule_name-grouped_ids   rule_2  "?id2"  "  ?head ")"  crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (14-05-11); Do not waste electricity.
- (defrule rule_2-1
- (declare (salience 900))
- (rel_name-sids aux|auxpass ?head ?id1)
- (not (rel_name-sids nsubj ?head ?))
- (not(rel_name-sids cop ?head ?))
- (not (grouped_head ?head))
- (parserid-word ?id1 ?w&~to)
- (parserid-word ?head ?w1)
- (parser_id-root-category-suffix-number ?head ?root ? ?suf ?)
-  =>
-        (bind ?chunk (string-to-field (str-cat (lowcase ?w)"_"?w1)))
-	(assert (root-verbchunk-tam-parser_chunkids  ?root  ?chunk imper_0  ?id1 ?head))
-  	(assert (grouped_head ?head))
-   	(assert (tam_imper_decided))
-	(printout ?*lwg_debug_file* "(rule_name-grouped_ids   rule_2-1  "?id1" " ?head ")" crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------------------
- (defrule rule_2-2
- (declare (salience 900))
- (rel_name-sids aux|auxpass ?head ?id1)
- (rel_name-sids nsubj ?head ?); added to deferentiate imer sentence
- (not(rel_name-sids cop ?head ?))
- (not (grouped_head ?head))
- (parserid-word ?id1 ?w&~to)
- (parserid-word ?head ?w1)
- (parser_id-root-category-suffix-number ?head ?root ? ?suf ?)
-  =>
-        (bind ?chunk (str-cat (lowcase ?w)"_"?w1))
-	(bind ?tam   (str-cat (lowcase ?w)"_"?suf))
-        (assert (root-verbchunk-tam-parser_chunkids  ?root  ?chunk ?tam ?id1 ?head))
- 	(assert (grouped_head ?head))
-	(printout ?*lwg_debug_file* "(rule_name-grouped_ids   rule_2-2  "?id1" " ?head ")" crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------------------
- ;Ex:-You are lucky I am here .
- (defrule rule_1
- (declare (salience 900))
- (rel_name-sids nsubj|auxpass ?head ?id1)
- (not(rel_name-sids cop|aux ?head ?)); Added "aux" by Shirisha Manju Ex :The instructor persuaded Mary to take that course .
- (not (parser_id-cat_coarse  ?head  adjective)) ; Added by Manju Ex :I consider him intelligent.
- (not (grouped_head ?head))
- (parserid-word ?head ?w1)
-  =>
-	(assert (root-verbchunk-tam-parser_chunkids  root_to_be_decided ?w1  tam_to_be_decided  ?head))
- 	(assert (grouped_head ?head))
- 	(printout ?*lwg_debug_file* "(rule_name-grouped_ids    rule_1  " ?head ")" crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------------------
- ;Ex:-You are lucky I am here .
- (defrule rule_1-1
- (declare (salience 901))
- (rel_name-sids nsubj|nsubjpass ?id ?id1)
- (rel_name-sids cop ?id ?head)
- (not (grouped_head ?head))
- (parserid-word ?head ?w1)
- =>
- 	(assert (root-verbchunk-tam-parser_chunkids  root_to_be_decided ?w1  tam_to_be_decided ?head))
- 	(assert (grouped_head ?head))
- 	(printout ?*lwg_debug_file* "(rule_name-grouped_ids  rule_1-1  " ?head ")" crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------------------
- ;Petu ran fast but missed the bus.
- ; Added by Shirisha Manju (20-01-11) suggested by sukhada
- (defrule rule_1-2
- (declare (salience 900))
- (rel_name-sids dobj ?id ?id1)
- (not (rel_name-sids nsubj ?id ?head))
- (not (rel_name-sids aux ?id ?)) ;But my efforts to win his heart have failed.
- (not (rel_name-sids conj_or ? ?id));He may drink milk or eat apples. (22-01-11)
- (not (rel_name-sids conj_and ? ?id))
- (rel_name-sids ?prepc&~root ? ?id) ;Do this in your room. (for new version)
- (test (neq (sub-string 1 6 ?prepc) "prepc_")) ;He made a mistake in inviting John.
- (not (grouped_head ?id))
- (parserid-word ?id ?w1)
- =>
- 	(assert (root-verbchunk-tam-parser_chunkids  root_to_be_decided ?w1  tam_to_be_decided ?id))
-	(assert (grouped_head ?id))
-	(printout ?*lwg_debug_file* "(rule_name-grouped_ids  rule_1-2  " ?id ")" crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------------------
- ;Are a dog and a cat here? 
- ; Added by Shirisha Manju (26-01-11) suggested by sukhada
- (defrule rule_1-3
- (declare (salience 850))
- (rel_name-sids cop ?id P1)
- (not (grouped_head P1))
- (parserid-word P1 ?w1)
- =>
- 	(assert (root-verbchunk-tam-parser_chunkids  root_to_be_decided ?w1 tam_to_be_decided P1))
-	(assert (grouped_head P1))	
-	(printout ?*lwg_debug_file* "(rule_name-grouped_ids  rule_1-3    P1)" crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------------------
- ; Do this in your room. Go home.
- ; Added by Shirisha Manju (13-05-11) suggested by sukhada
- (defrule rule_1-4
- (declare (salience 700))
- (rel_name-sids ?rel ?id1 ?id)
- (parser_id-cat_coarse  ?id1  verb)
- (not (rel_name-sids nsubj ?id1 ?))
- (not (rel_name-sids xcomp ? ?id1));He wasted his golden opportunity to play in the national team. 
- (not (rel_name-sids infmod ? ?id1));But my efforts to win his heart have failed.
- (not (basic_rel_name-sids pcomp ? ?id1));I yelled at her for going to the party.
- (not (rel_name-sids partmod ? ?id1)) ;I have been running about all morning trying to find you. (16-05-11)
- (not (grouped_head ?id1))
- (test (and (neq ?rel cop)(neq ?rel aux)(neq ?rel advmod)));He is a well known scientist.
- (parserid-word ?id1 ?w1)
- =>
-	(assert (root-verbchunk-tam-parser_chunkids  root_to_be_decided ?w1  imper ?id1))
-	(assert (grouped_head ?id1))
-	(assert (tam_imper_decided))
-	(printout ?*lwg_debug_file* "(rule_name-grouped_ids  rule_1-4    "?id1")" crlf)
- )
- ;------------------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (14-05-11)
- ; Do not waste electricity. Do not shut the door.
- ; Ex:-I will not do it . 
- (defrule not_rule
- (declare (salience 800))
- (rel_name-sids neg ?head ?not)
- ?f1<-(parserid-word ?not not)
- ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vbchunk  ?tam $?ids ?head)
- (test (not (member$ ?not $?ids)))
- (test (and (> (string_to_integer  ?not) (string_to_integer  (nth$ 1 $?ids))) (< (string_to_integer  ?not) (string_to_integer  ?head))))
-  =>
-  	(retract ?f )
-	(bind ?id (string-to-field (implode$ $?ids)))
-        (bind ?index (str-index "_" ?tam))
-        (bind ?index1 (str-index "_" ?vbchunk))
-	(bind ?chunk (sym-cat (sub-string 1 ?index1 ?vbchunk)"not_" (sub-string (+ ?index1 1) 1000 ?vbchunk)))
-	(bind ?tam (sym-cat (sub-string 1 ?index ?tam) "not_" (sub-string (+ ?index 1) 1000 ?tam)))
-  	(assert (root-verbchunk-tam-parser_chunkids ?root ?chunk  ?tam ?id ?not ?head ))
-	(printout ?*lwg_debug_file* "(rule_name-grouped_ids   not_rule " ?head " "?not " "?id ")" crlf)
-  )
-  ;-------------------------------------------------------------------------------------------------------------------------
- ; Added by Shirisha Manju (27-09-11)
- ; But that will not be easy. He should not be a student.
- (defrule not_rule1
- (declare (salience 800))
- ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vbchunk  ?tam $?ids ?head)
- (rel_name-sids cop ?id ?head)
- (rel_name-sids neg ?id ?not)
- ?f1<-(parserid-word ?not not)
- (test (not (member$ ?not $?ids)))
- (test (and (> (string_to_integer  ?not) (string_to_integer  (nth$ 1 $?ids))) (< (string_to_integer  ?not) (string_to_integer  ?head))))
-  =>
-        (retract ?f )
-        (bind ?id (string-to-field (implode$ $?ids)))
-        (bind ?index (str-index "_" ?tam))
-        (bind ?index1 (str-index "_" ?vbchunk))
-        (bind ?chunk (sym-cat (sub-string 1 ?index1 ?vbchunk)"not_" (sub-string (+ ?index1 1) 1000 ?vbchunk)))
-        (bind ?tam (sym-cat (sub-string 1 ?index ?tam) "not_" (sub-string (+ ?index 1) 1000 ?tam)))
-        (assert (root-verbchunk-tam-parser_chunkids ?root ?chunk  ?tam ?id ?not ?head ))
-        (printout ?*lwg_debug_file* "(rule_name-grouped_ids   not_rule " ?head " "?not " "?id ")" crlf)
-  )
-  ;-------------------------------------------------------------------------------------------------------------------------
- ;
- ;He may drink milk or eat apples.
- ;I ate fruits, drank milk and slept.  
- (defrule cc_rule
- (declare (salience 750))
- ?f<-(root-verbchunk-tam-parser_chunkids ?root ?verb_chunk  ?tam $?ids ?head)
- (rel_name-sids conj_or|conj_and ?head ?cc) 
- (parser_id-cat_coarse  ?cc  verb);The City Palace was built by Maharaja Jai Singh II and is a synthesis of Mughal and Rajasthani architecture. 
- (not (grouped_head ?cc))
-  =>
-	(assert (root-verbchunk-tam-parser_chunkids ?root ?verb_chunk  ?tam $?ids ?cc))
-	(assert (grouped_head ?cc))
-	(printout ?*lwg_debug_file* "(rule_name-grouped_ids cc_rule  "$?ids ?cc ")" crlf)
- ) 
- ;-------------------------------------------------------------------------------------------------------------------------
- ;She is making the girl feed the child .
- ;She made the girl feed the child .
- (defrule causitive_verb_rule
- (declare (salience 700))
- (rel_name-sids ccomp ?head ?cau_vrb)
- (parser_id-root-category-suffix-number  ?head ?root&get|make|have verb ? ?)
- ?f<-(root-verbchunk-tam-parser_chunkids ?rt ?vb_chunk  ?tam $?ids1 ?head)
- ?f1<-(root-verbchunk-tam-parser_chunkids root_to_be_decided ?verb_chunk  tam_to_be_decided ?cau_vrb)
- (not (causative_head ?cau_vrb))
-  =>
- 	(retract ?f ?f1)
- 	(assert(verb_type-verb-causative_verb-tam causative ?head ?cau_vrb ?tam))
- 	(bind ?chunk (string-to-field (str-cat ?vb_chunk"_"?verb_chunk)))
-	(bind ?root (string-to-field (str-cat ?root"_"?verb_chunk)))
- 	(assert(root-verbchunk-tam-parser_chunkids ?root ?chunk  ?tam $?ids1 ?head ?cau_vrb))
-	(assert (causative_head ?cau_vrb))
- 	(printout ?*lwg_debug_file* "(rule_name-grouped_ids   causitive_verb_rule " $?ids1 ?head ?cau_vrb ")" crlf)
- )
- ;-------------------------------------------------------------------------------------------------------------------------
- ;Ex:- What did he eat?
+;=====================================  Parser Correction Rules =========================================================
+;This rule removes the node SBAR whose daughter is S in the cases of causative verbs. The SBAR node should not be present gramatically in the parse.
+;She made the girl feed the child.
+;Added by Shirisha Manju (29-10-11)
+(defrule remove_sbar_from_causitive
+(declare (salience 1600))
+?f0<-(Head-Level-Mother-Daughters ?h&get|got|gets|getting|have|had|has|having|make|makes|making|made ?l ?Mot $?d ?Sb)
+(Node-Category ?Sb SBAR)
+?f1<-(Head-Level-Mother-Daughters ? ? ?Sb ?S)
+(Node-Category ?S S)
+=>
+        (retract ?f0 ?f1)
+        (assert (Head-Level-Mother-Daughters ?h ?l ?Mot $?d ?S))
+)
+;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (29-10-11)
+;The mother calmed the angry son.The jet zoomed across the sky.
+;This rule makes VBN as VBD in the sentences where Stanford parser incorrectly makes VBD as VBN.
+;Who translated the sentence for the student? The snake who swallowed the rat hissed loudly.
+(defrule make_VBN_as_VBD
+(declare (salience 1600))
+(Head-Level-Mother-Daughters ? ? ?S $? ?VP)
+(Node-Category ?S S|SQ)
+(Node-Category ?VP VP)
+?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP ?VBN $?d)
+?f1<-(Node-Category ?VBN VBN)
+?f2<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VBN ?id)
+=>
+	(retract ?f0 ?f1 ?f2)
+	(assert (Head-Level-Mother-Daughters ?h ?l ?VP VBD $?d))
+	(assert (Head-Level-Mother-Daughters ?h1 ?l1 VBD ?id))
+	(assert (Node-Category VBD VBD))
+)
+;==================================================  LWG rules  =========================================================
+;Added by Maha Laxmi (20-10-11)
+(defrule replace_aux_with_head_VP
+(declare (salience 1500))
+?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?VB $?daut ?VP)
+?f1<-(Head-Level-Mother-Daughters ? ? ?VP $?daut1 ?VP1)
+(Node-Category  ?Mot    VP|SQ)
+(Node-Category  ?VB     MD|VB|VBN|VBZ|VBD|VBP|VBG|RB)
+(Node-Category  ?VP     VP)
+(Node-Category  ?VP1    ?CAT)
+(Head-Level-Mother-Daughters ? ? ?VB ?id)
+(not (daughter ?VB ?id))
+=>
+        (if (eq ?CAT VP) then
+        (retract ?f ?f1)
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VB $?daut1 ?VP1))
+        (assert (daughter ?VB ?id))
+        else
+        (retract ?f)
+        (assert (daughter ?VB ?id))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VB ?VP))
+        )
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Maha Laxmi (20-10-11)
+;Modified by Shirisha Manju --- added if conditions to get suffix
+(defrule get_lwg_group
+(declare (salience 1100))
+?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?V $?pos)
+?f2<-(Head-Level-Mother-Daughters ?h ? ?V $?daut)
+(Node-Category  ?Mot    VP|SQ)
+(Node-Category  ?V     ?suf&MD|VB|VBN|VBZ|VBD|VBP|VBG|RB|VP)
+(not (Head-Level-Mother-Daughters to $? ?Mot)) ;Added by Shirisha Manju(25-10-11) Ex: She had gotten her family to go against convention. 
+=>
+       	(retract ?f1 ?f2)
+       	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?daut $?pos))
+ 	(if (eq ?suf VBG ) then
+                (assert (id-node-suf $?daut VBG ing))
+        else (if (eq ?suf VBN ) then
+		(assert (id-node-suf $?daut VBN  en))
+             else (if (eq ?suf VBD ) then
+			(assert (id-node-suf $?daut  VBD  ed))
+                  else  (if (eq ?suf VBP ) then
+				(assert (id-node-suf $?daut  VBP  0))
+        	          else  (if (eq ?suf VB )  then
+					(assert (id-node-suf $?daut  VB  0))
+				else (if (eq ?suf VBZ ) then
+                        	        (assert (id-node-suf $?daut  VBZ  s))
+					else (if (eq ?suf RB ) then
+	                        	        (assert (id-node-suf $?daut  RB  -))
+					     )
+				     )     
+			     	)
+                        )
+                  )
+             )
+        )
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (29-10-11)
+;A fat boy had to eat fruits. These smugglers are to be captured. Broken windows need to be replaced.
+(defrule get_lwg_group1
+(declare (salience 1000))
+?f1<-(Head-Level-Mother-Daughters ?head&are|had|need ?lvl ?Mot $?pre ?S $?pos)
+(Node-Category  ?Mot  VP)
+(Node-Category  ?S    S)
+(Head-Level-Mother-Daughters to ? ?S $? ?VP)
+(Head-Level-Mother-Daughters to ? ?VP $? ?TO $? ?VP1)
+(Node-Category  ?VP1  VP)
+?f2<-(Head-Level-Mother-Daughters ?h ? ?VP1 $?daut)
+?f3<-(Head-Level-Mother-Daughters to ? ?TO ?id)
+(Node-Category  ?VP1    ?suf&MD|VB|VBN|VBZ|VBD|VBP|VBG|RB|VP)
+=>
+	(retract ?f1 ?f2 ?f3)
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?id $?daut $?pos))
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (28-10-11)
+(defrule get_lwg_for_and
+(declare (salience 901))
+(Head-Level-Mother-Daughters ?h ?l ?Mot $?d ?CC $?d1)
+(Node-Category  ?Mot    VP|SQ)
+(Node-Category  ?CC CC)
+=>
+	(loop-for-count (?i 1 (length $?d))
+                (bind ?j (nth$ ?i $?d))
+                (if (numberp (string_to_integer ?j)) then
+			(assert (root-verbchunk-tam-parser_chunkids  root - ?j - ?j - ?j))
+                )
+        )
+	(loop-for-count (?i1 1 (length $?d1))
+                (bind ?j1 (nth$ ?i1 $?d1))
+                (if (numberp (string_to_integer ?j1)) then
+			(assert (root-verbchunk-tam-parser_chunkids  root - ?j1 - ?j1 - ?j1))
+                )
+        )
+	(assert (Mother ?Mot))
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (29-10-11)
+;He may drink milk or eat apples.
+(defrule get_lwg_for_and_with_aux
+(declare (salience 901))
+(Head-Level-Mother-Daughters ?h ?l ?Mot ?id $?d ?CC $?d1)
+(Node-Category ?CC CC)
+(daughter ? ?id)
+?f0<-(root-verbchunk-tam-parser_chunkids root - ?id - ?id - ?id)
+?f1<-(root-verbchunk-tam-parser_chunkids root - ?id1 - ?id1 - ?id1)
+(test (or (member$ ?id1 $?d)(member$ ?id1 $?d1)))
+=>
+	(retract ?f1)
+	(assert (root-verbchunk-tam-parser_chunkids root - ?id ?id1 - ?id ?id1 - ?id ?id1))
+	(assert (id_grouped ?id))
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (29-10-11)
+;He may drink milk or eat apples.
+(defrule remove_aux_lwg
+(declare (salience 900))
+(id_grouped ?id)
+?f0<-(root-verbchunk-tam-parser_chunkids root - ?id - ?id - ?id)
+=>
+	(retract ?f0)
+)
+;------------------------------------------------------------------------------------------------------------------------
+(defrule get_lwg
+(declare (salience 900))
+?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut)
+(Node-Category  ?Mot    VP|SQ)
+(not (Head-Level-Mother-Daughters to $? ?Mot)) ;He persuaded them to go.
+(not (Mother ?Mot))
+=>
+        (bind $?lwg (create$ ))
+        (loop-for-count (?i 1 (length $?daut))
+                (bind ?j (nth$ ?i $?daut))
+                (if (numberp (string_to_integer ?j)) then
+                    (bind $?lwg (create$ $?lwg ?j))
+                )
+        )
+        (assert (root-verbchunk-tam-parser_chunkids  root - $?lwg - $?lwg - $?lwg))
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (25-10-11)
+;He persuaded them to go.
+(defrule remove_S_node_from_lwg
+(declare (salience 900))
+?f0<-(root-verbchunk-tam-parser_chunkids  ?root - $?pre ?S $?po - $?pre ?S $?po - $?pre ?S $?po)
+(Node-Category ?S S)
+=>
+	(retract ?f0)
+	(assert (root-verbchunk-tam-parser_chunkids  ?root - $?pre $?po - $?pre $?po - $?pre $?po))
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (28-10-11) Suggested by Sukhada
+;He made a mistake in inviting John. 
+;The glass house built on the lines of the crystal palace in london is the main attraction in this huge park.
+(defrule remove_VBG_and_VBN_nodes_from_lwg
+(declare (salience 900))
+?f0<-(root-verbchunk-tam-parser_chunkids  ?root - ?id - ?id - ?id)
+(id-node-suf ?id VBG|VBN ?)
+=>
+	        (retract ?f0)
+)
+;------------------------------------------------------------------------------------------------------------------------
+;;Added by Shirisha Manju (29-10-11)
+;No, it was not Black Monday.
+(defrule remove_RB_node_in_the_end
+(declare (salience 900))
+?f0<-(root-verbchunk-tam-parser_chunkids  ?root - $?d ?S - $?d ?S - $?d ?S)
+(id-node-suf ?S RB ?)
+=>
+        (retract ?f0)
+	(assert (root-verbchunk-tam-parser_chunkids  ?root - $?d - $?d - $?d))
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (29-10-11)
+;She is making the girl feed the child.
+(defrule get_lwg_for_causitive
+(declare (salience 850))
+(Head-Level-Mother-Daughters ?h ?l ?Mot $? ?id $? ?S)
+(Node-Category ?Mot VP)
+(Node-Category ?S S)
+(parserid-word ?id ?w&get|make|have|making|made)
+(Head-Level-Mother-Daughters ?h1 ? ?S $? ?VP)
+(Node-Category ?VP VP)
+(parserid-word ?id1 ?h1)
+?f0<-(root-verbchunk-tam-parser_chunkids ?r1 - ?id1 - ?id1 - ?id1)
+?f1<-(root-verbchunk-tam-parser_chunkids ?r - $?d ?id - $?d ?id - $?d ?id)
+=>
+	(retract ?f0 ?f1)
+	(assert (root-verbchunk-tam-parser_chunkids  ?r - $?d ?id ?id1 - $?d ?id ?id1 - $?d ?id ?id1))
+	(assert (causitive_verb ?id1))
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (20-10-11)
+(defrule get_chk_and_tam
+(declare (salience 800))
+?f0<-(root-verbchunk-tam-parser_chunkids  ?root - $?pre ?pid $?po - $?pre ?pid $?po - $?ids)
+(parserid-word ?pid ?w)
+=>
+	(retract ?f0)
+	(bind ?w (lowcase ?w))
+	(if (eq (length $?ids) 1) then
+		(assert (root-verbchunk-tam-parser_chunkids ?root ?w  ?w  $?ids))
+	else
+		(assert (root-verbchunk-tam-parser_chunkids  ?root - $?pre ?w $?po - $?pre ?w $?po - $?ids))
+	)
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (29-10-11)
+;She is making the girl feed the child.
+(defrule get_chk_and_tam_for_causitive
+(declare (salience 750))
+?f0<-(root-verbchunk-tam-parser_chunkids  ?root - $?vc - $?tam - $?ids ?id)
+(causitive_verb ?id)
+=>
+        (retract ?f0)
+        (bind ?len (length $?vc))
+        (bind ?v (str-cat (nth$ 1 $?vc) "_"))
+        (bind ?t (str-cat (nth$ 1 $?vc) "_"))
+        (loop-for-count (?j 2 (- ?len 1))
+                (bind ?v (str-cat ?v (nth$ ?j $?vc) "_"))
+        )
+	(loop-for-count (?j 2 (- ?len 2))
+                (bind ?t (str-cat ?t (nth$ ?j $?vc) "_"))
+        )
+        (assert (root-verbchunk-tam-parser_chunkids  ?root ?v ?t $?ids ?id))
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (20-10-11)
+(defrule get_chk_and_tam1
+(declare (salience 700))
+?f0<-(root-verbchunk-tam-parser_chunkids  ?root - $?vc - $?tam - $?ids)
+(test (neq (length $?ids) 1))
+=>
+	(retract ?f0)
+	(bind ?len (length $?vc))
+	(bind ?v (str-cat (nth$ 1 $?vc) "_"))
+	(loop-for-count (?j 2 (- ?len 1))
+		(bind ?v (str-cat ?v (nth$ ?j $?vc) "_"))
+	)
+	(assert (root-verbchunk-tam-parser_chunkids  ?root ?v ?v $?ids))
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (29-10-11)
+;She is making the girl feed the child.
+(defrule phrase_causitive_lwg
+(declare (salience 600))
+?f0<-(root-verbchunk-tam-parser_chunkids  ?  ?vc  ?tam  $?ids ?id ?id1)
+(causitive_verb ?id1)
+(parserid-word ?id1 ?w1)
+(id-node-suf ?id ?n ?suf)
+?f1<-(parser_id-root-category-suffix-number  ?id  ?root $?)
+?f2<-(parser_id-root-category-suffix-number ?id1 ?root1 $?)
+=>
+        (retract ?f0 ?f1 ?f2)
+	(bind ?v (string-to-field (str-cat ?vc ?w1)))
+	(bind ?t (string-to-field (str-cat ?tam ?suf)))
+	(bind ?r (string-to-field (str-cat ?root"_"?root1)))
+	(if (neq (length $?ids) 0) then
+		(assert (root-verbchunk-tam-parser_chunkids  ?r ?v ?t $?ids ?id ?id1))
+		(assert (verb_type-verb-causative_verb-tam causative ?id ?id1 ?t))
+	else
+		(assert (root-verbchunk-tam-parser_chunkids  ?r ?v tam_to_be_decided $?ids ?id ?id1))
+		(assert (verb_type-verb-causative_verb-tam causative ?id ?id1 tam_to_be_decided))
+	)
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (20-10-11)
+(defrule phrase_lwg
+(declare (salience 6))
+?f0<-(root-verbchunk-tam-parser_chunkids  ?  ?vc  ?tam  $?ids ?id)
+(parserid-word ?id ?w)
+(id-node-suf ?id ?n ?suf)
+?f1<-(parser_id-root-category-suffix-number  ?id  ?root $?)
+=>
+	(retract ?f0 ?f1)
+	(if (neq (length $?ids) 0) then
+		(bind ?v (string-to-field (str-cat ?vc ?w)))
+		(bind ?t (string-to-field (str-cat ?tam ?suf)))
+		(assert (root-verbchunk-tam-parser_chunkids  ?root ?v ?t $?ids ?id))
+	else
+		(assert (root-verbchunk-tam-parser_chunkids root_to_be_decided ?vc tam_to_be_decided $?ids ?id))
+	)
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (21-10-11)
+;Do not waste electricity. Do not shut the door. 
+(defrule imper_rule
+(declare (salience 6))
+?f<-(root-verbchunk-tam-parser_chunkids ?root ?vc ?tam  ?id $?ids)
+(id-node-suf ?id VB 0)
+(not (imper_decided ?id))
+(test (neq (length $?ids) 0))
+=>
+	(retract ?f)
+	(bind ?index (str-index "_" ?tam))
+	(bind ?tam (sym-cat "imper_" (sub-string (+ ?index 1) 1000 ?tam)))
+	(assert (root-verbchunk-tam-parser_chunkids ?root ?vc ?tam  ?id $?ids))
+	(assert (imper_decided ?id))
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (29-10-11)
+;Go straight and take a right turn.
+(defrule imper_rule_for_and
+(declare (salience 5))
+(Head-Level-Mother-Daughters ? ? ?Mot ?VP $?)
+(Node-Category ?Mot S)
+(Node-Category ?VP VP)
+(Head-Level-Mother-Daughters ? ? ?VP $?d ?CC $?d1)
+(Node-Category ?CC CC)
+?f<-(root-verbchunk-tam-parser_chunkids ?root ?vc ?tam  ?id)
+(id-node-suf ?id VB 0)
+(test (or (member$ ?id $?d)(member$ ?id $?d1)))
+(not (imper_decided ?id))
+=>
+        (retract ?f)
+        (assert (root-verbchunk-tam-parser_chunkids ?root ?vc imper  ?id))
+        (assert (imper_decided ?id))
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (25-10-11)
+;Do this in your room.
+(defrule imper_rule1
+(declare (salience 4))
+(Head-Level-Mother-Daughters ? ? ?Mot ?VP $?)
+(Node-Category ?Mot S)
+(Node-Category ?VP VP)
+(Head-Level-Mother-Daughters ? ? ?VP ?id $?)
+?f<-(root-verbchunk-tam-parser_chunkids ?root ?vc ?tam  ?id)
+(id-node-suf ?id VB 0)
+(not (imper_decided ?id))
+=>
+        (retract ?f)
+        (assert (root-verbchunk-tam-parser_chunkids ?root ?vc imper  ?id))
+        (assert (imper_decided ?id))
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (29-10-11)
+;Please enclose a curriculum vitae with your letter of application. 
+(defrule imper_rule2
+(declare (salience 4))
+(Head-Level-Mother-Daughters ? ? ?Mot ?INTJ ?VP1 $?)
+(Node-Category ?Mot S)
+(Node-Category ?VP1 VP)
+(Node-Category ?INTJ INTJ)
+(Head-Level-Mother-Daughters ? ? ?VP1 ?id $?)
+?f<-(root-verbchunk-tam-parser_chunkids ?root ?vc ?tam  ?id)
+(id-node-suf ?id VB 0)
+(not (imper_decided ?id))
+=>
+        (retract ?f)
+        (assert (root-verbchunk-tam-parser_chunkids ?root ?vc imper  ?id))
+        (assert (imper_decided ?id))
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (21-10-11)
+;Ex:- What did he eat? How did John do it?
  (defrule q_tam
- (declare (salience 550))
+ (declare (salience 3))
  ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vrb_chunk ?tam ?head $?ids)
  (parser_id-root-category-suffix-number  ?head  ?root1 verb ?suf ?)
- (parserid-word ?head ?word1)
- (test (or(eq (lowcase ?word1) does)(eq (lowcase ?word1) do)(eq (lowcase ?word1) did)))
- (parserid-word P1 ?word)
- (test (or(eq (lowcase ?word) does)(eq (lowcase ?word) do)(eq (lowcase ?word) did)(eq (lowcase ?word) why)(eq (lowcase ?word) what)(eq (lowcase ?word) where)(eq (lowcase ?word) whose)(eq (lowcase ?word) how)(eq (lowcase ?word) who)(eq (lowcase ?word) when)(eq (lowcase ?word) are)(eq (lowcase ?word) am)(eq (lowcase ?word) is)))
+ (parserid-word ?head does|do|did|Did)
+ (parserid-word P1 Does|Do|Did|Why|What|Where|Whose|How|who|When|Are|Am|Is) 
  (not (q_tam_modified ?head))
- (not (tam_imper_decided)) ; Added by Shirisha Manju (13-05-11) ;Do this in your room.
+ (not (imper_decided ?head))
  =>
- 	(retract ?f)
-     	(bind ?vrb_chunk1 (explode$ (str-cat "q_" ?vrb_chunk )))
-     	(assert (root-verbchunk-tam-parser_chunkids ?root ?vrb_chunk1 ?suf ?head $?ids))
- 	(assert (q_tam_modified ?head))
- 	(printout ?*lwg_debug_file* "(rule_name-grouped_ids   q_tam  "?head $?ids ")" crlf)
+        (retract ?f)
+        (bind ?vrb_chunk1 (explode$ (str-cat "q_" ?vrb_chunk )))
+        (assert (root-verbchunk-tam-parser_chunkids ?root ?vrb_chunk1 ?suf ?head $?ids))
+        (assert (q_tam_modified ?head))
  )
- ;-------------------------------------------------------------------------------------------------------------------------
-; When a verb does not have a distinct participle form (e.g. come, cut, put etc.) we can decide it is used for the participle function if it is preceded by an auxiliary -- is, am, are,was, were, have, has, had.
-; It is likely they will come . 
- (defrule distinct_participle_tam
- (declare (salience 560))
- ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vrb_chunk ?tam $?ids ?id ?head)
- (word-morph (root      ?root)(category verb)(suffix    ?suf1))
- (word-morph (root      ?root)(category verb)(suffix    ?suf))
- (test (neq ?suf1 ?suf))
- (test (neq ?suf en))
- (test (eq ?root come))
- (not (parserid-word ?id ?word&is|am|are|was|were|have|has|had))
- (not (distinct_participle_check_id ?head))
-  =>
- 	(retract ?f)
- 	(assert (distinct_participle_check_id ?head))
- 	(bind ?index (str-index  "_" ?tam ))
- 	(bind ?sub_str (sub-string 1 ?index ?tam))
- 	(bind ?suf2 (explode$ (str-cat ?sub_str ?suf)))
- 	(assert (root-verbchunk-tam-parser_chunkids ?root ?vrb_chunk ?suf2 $?ids ?id ?head))
- 	(printout ?*lwg_debug_file* "(rule_name-grouped_ids  distinct_participle_tam " $?ids ?id ?head ")" crlf)
- ) 
- ;-------------------------------------------------------------------------------------------------------------------------
+;------------------------------------------------------------------------------------------------------------------------

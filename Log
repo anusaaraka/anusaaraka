@@ -2784,7 +2784,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 30. Updated Log.
 
 
- 1-11-11
+ 5-11-11
  ========
  1. Modified "move_BEandHAVE_b4_SBAR: rule in H_ordering_rules.clp (added not condition)
  2. agreement.clp
@@ -2819,5 +2819,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  20. Added new punctuation "P_CLN, P_DSH, P_EXM" and Modified the files constituency_parse.l, sd_combining_apostrophe.clp accordingly.
  21. Added punctuations in id-link_id_map_for_first_word rule [(') and ('')] in parserid_wordid_mapping.clp
  22. Changed the array size from  my_daughters[100][100][100] to my_daughters[100][100][1000] in constituency_parse.y
- 23. Updated Log
+ 23. Modified  sd_lwg_rules.clp  file --- to generate lwg from constituents instead from dependency
+ 24. Modified run_sd_lwg_rules.bat
+        Loaded  : sd_word.dat, E_constituents_info_tmp1.dat and Node_category.dat files
+        Removed : parser_pos_cat.dat, morph.dat, sd-relations_tmp1.dat, sd-basic_relations_tmp1.dat and sd_word_tmp.dat
+ 25. Updated Log
 
