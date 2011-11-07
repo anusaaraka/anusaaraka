@@ -53,6 +53,10 @@ Fig\.		{printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
 [ ]etc\.	{printf("%c%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2],yytext[3]);	}
 [ ][rR]s\.		{printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]);    }
 [ ]approx\.	{printf("%c%c%c%c%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2],yytext[3],yytext[4],yytext[5],yytext[6],yytext[7]);    }
+ca[.][ ]	{printf("%c%cABBRDOT ", yytext[0],yytext[1]);	}
+a[.]d[.][ ]	{printf("%cABBRDOT%cABBRDOT ", yytext[0],yytext[2]);	}
+b[.]c[.][ ]     {printf("%cABBRDOT%cABBRDOT ", yytext[0],yytext[2]);    }
+m[.]g[.][ ]     {printf("%cABBRDOT%cABBRDOT ", yytext[0],yytext[2]);    } 
 
 %%
 main()

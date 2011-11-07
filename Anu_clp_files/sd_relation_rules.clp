@@ -17,8 +17,14 @@
 (deffunction string_to_integer (?parser_id); [Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
 ;------------------------------------------------------------------------------------------------------------------------
-(deffunction my_string_cmp> (?a ?b)
-  (> (str-compare ?a ?b) 0))
+;(deffunction my_string_cmp> (?a ?b)
+;  (> (str-compare ?a ?b) 0))
+
+(deffunction my_string_cmp (?str1 ?str2)
+   (bind ?n1 (string-to-field (sub-string 2 (length ?str1) ?str1)))
+   (bind ?n2 (string-to-field (sub-string 2 (length ?str2) ?str2)))
+   (> ?n1 ?n2))
+
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule replace_left_head
  (declare (salience 9999))
@@ -222,7 +228,7 @@
  =>
    (bind ?plist (create$ ))
    (bind ?plist (create$ ?plist ?y))
-   (assert (rel_name-sids ?conj ?x (sort my_string_cmp> $?y1  ?plist)))
+   (assert (rel_name-sids ?conj ?x (sort my_string_cmp $?y1  ?plist)))
    (retract ?f ?f1)
  )
  ;Ex. Ulsoor lake is an ideal place for sightseeing, boating and shopping.

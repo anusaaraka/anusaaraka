@@ -2823,5 +2823,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  24. Modified run_sd_lwg_rules.bat
         Loaded  : sd_word.dat, E_constituents_info_tmp1.dat and Node_category.dat files
         Removed : parser_pos_cat.dat, morph.dat, sd-relations_tmp1.dat, sd-basic_relations_tmp1.dat and sd_word_tmp.dat
- 25. Updated Log
-
+ 25. Modified add_snt_mrkr.lex to handle the words which end with '.
+ 26. Modified deffunction my_string_cmp  and  decide_conj_rel in  sd_relation_rules.clp.
+ 27. Modified Makefile inside CLIPS such that it avoids linking errors in 11.10 version of Ubuntu.
+ 28. Modified abbr1.lex to handle patterns like 'ca.' , 'a.d.' , 'b.c.', 'm.g.'
+ 29. Updated  bin/abbr.sh and bin/abbr_browser.sh to handle above patterns.
+ 30. Updated Log

@@ -56,7 +56,7 @@ OBJS = agenda.o analysis.o argacces.o bload.o bmathfun.o bsave.o \
 
   # User defined functions are gdbm_lookup.c gdbm_lookup_p.c wx_utf8.c
 clips : $(OBJS) 
-	gcc -o myclips -Wall gdbm_lookup.c gdbm_lookup_p.c wx_utf8.c -lm -lgdbm $(OBJS)
+	gcc -o myclips -Wall gdbm_lookup.c gdbm_lookup_p.c wx_utf8.c $(OBJS) -lm -lgdbm
 
 clean :	
 	-rm *.o  
