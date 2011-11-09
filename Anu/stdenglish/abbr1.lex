@@ -46,6 +46,7 @@ SPC [^a-zA-Z0-9]
 [ ]Ms\.		{printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
 [ ]Inc\.	{printf("%c%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2],yytext[3]); }
 [0-9]%		{printf("%c ABBRpercent",yytext[0]); }
+[0-9][ ]%	{printf("%c ABBRpercent",yytext[0]); }
 $[0-9]		{printf("ABBRdollar %c",yytext[1]);  }
 #[0-9]		{printf("ABBRsharp %c",yytext[1]);   }
 [ ][nN]o\.      {printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
