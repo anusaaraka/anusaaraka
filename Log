@@ -2784,7 +2784,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 30. Updated Log.
 
 
- 08-11-11
+ 09-11-11
  ========
  1. Modified "move_BEandHAVE_b4_SBAR: rule in H_ordering_rules.clp (added not condition)
  2. agreement.clp
@@ -2828,4 +2828,5 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  27. Modified Makefile inside CLIPS such that it avoids linking errors in 11.10 version of Ubuntu.
  28. Modified abbr1.lex to handle patterns like 'ca.' , 'a.d.' , 'b.c.', 'm.g.'
  29. Updated  bin/abbr.sh and bin/abbr_browser.sh to handle above patterns.
- 30. Updated Log
+ 30. Updated change_in_databases.
+ 31. Updated Log

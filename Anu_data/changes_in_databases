@@ -381,6 +381,13 @@ changes in samAsa-new.txt
         <e><p><l>isake_pakRa_meM</l><r>yaha<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke_pakRa_meM"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>    				 (             "      11-08-11)
         <e><p><l>isake_pakRa_meM</l><r>yaha<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke_pakRa_meM"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/></r></p></e>				 (             "      11-08-11)
 
+	Added below 4 rules in k/Ona__p paradigm. 
+        <e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:o"/><s n="parsarg:0"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="tam:0"/></r></p></e> (Suggested by Sukhada 09-11-11)
+	<e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:d"/><s n="parsarg:0"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="tam:0"/></r></p></e> (Suggested by Sukhada 09-11-11)
+	<e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:o"/><s n="parsarg:0"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/><s n="tam:0"/></r></p></e> (Suggested by Sukhada 09-11-11)
+	<e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:d"/><s n="parsarg:0"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:0"/></r></p></e> (Suggested by Sukhada 09-11-11)
+
+
  Modified :
 	<e><p><l>we_hue</l>         as <e><p><l>owe_hue</l>      for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
 	<e><p><l>we_rahanA_hE</l>  as <e><p><l>owe_rahanA_hE</l> for tam:we_rahanA_hE  (Suggested by Sriram 21-06-11)
