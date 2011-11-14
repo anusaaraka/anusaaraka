@@ -2784,7 +2784,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 30. Updated Log.
 
 
- 09-11-11
+ 14-11-11
  ========
  1. Modified "move_BEandHAVE_b4_SBAR: rule in H_ordering_rules.clp (added not condition)
  2. agreement.clp
@@ -2825,8 +2825,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Removed : parser_pos_cat.dat, morph.dat, sd-relations_tmp1.dat, sd-basic_relations_tmp1.dat and sd_word_tmp.dat
  25. Modified add_snt_mrkr.lex to handle the words which end with '.
  26. Modified deffunction my_string_cmp  and  decide_conj_rel in  sd_relation_rules.clp.
- 27. Modified Makefile inside CLIPS such that it avoids linking errors in 11.10 version of Ubuntu.
- 28. Modified abbr1.lex to handle patterns like 'ca.' , 'a.d.' , 'b.c.', 'm.g.'
- 29. Updated  bin/abbr.sh and bin/abbr_browser.sh to handle above patterns.
- 30. Updated change_in_databases.
- 31. Updated Log
+ 27. Modified constituency_parse.l and constituency_parse.y programs.
+     Removed LEFT_BRACKET and  RIGHT_BRACKET sub-expressions and handle it in TOK_CATEGORY to differenciate between Tokens and string in sentences like
+    "The S does not stand for anything; therefore, his name was Harry S Truman."
+ 28. Modified Makefile inside CLIPS such that it avoids linking errors in 11.10 version of Ubuntu.
+ 29. Modified abbr1.lex to handle patterns like 'ca.' , 'a.d.' , 'b.c.', 'm.g.'
+ 30. Updated  bin/abbr.sh and bin/abbr_browser.sh to handle above patterns.
+ 31. Updated change_in_databases.
+ 32. Updated Log

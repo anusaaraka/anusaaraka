@@ -51,10 +51,11 @@ main(int argc,char *argv[])
 
 %}
 
-%token LEFT_PAREN RIGHT_PAREN LEFT_BRACKET SLASH RIGHT_BRACKET TOK_CATEGORY STRING
+%token LEFT_PAREN RIGHT_PAREN SLASH TOK_CATEGORY STRING
 
 %%
 /* Actions in Mid-rule style is followed here; so for deciding "n" in $n, actions are also to be counted */
+/* Removed LEFT_BRACKET and  RIGHT_BRACKET sub-expressions and handle it in TOK_CATEGORY to differenciate between Tokens and string in sentences like "The S does not stand for anything; therefore, his name was Harry S Truman." */
 expression: LEFT_PAREN {found=0;my_level++;current_sub_level[my_level]++;
                         for(j=0;j<index1;j++)
                         {if(my_index[j]==my_level)found=1;}
@@ -72,13 +73,11 @@ expression: LEFT_PAREN {found=0;my_level++;current_sub_level[my_level]++;
                          strcpy(node_cat[count],str3);
                         }
 
-	    LEFT_BRACKET
-	    STRING        {strcat(my_temp[my_level],$6);strcat(my_temp[my_level]," ");
+	    STRING        {strcat(my_temp[my_level],$5);strcat(my_temp[my_level]," ");
 
-                          strcpy(my_head[my_level][current_sub_level[my_level]],$6);}
+                          strcpy(my_head[my_level][current_sub_level[my_level]],$5);}
 	    SLASH
 	    TOK_CATEGORY
-	    RIGHT_BRACKET
             sub_expression
                         {
                           strncpy(my_temp[my_level]+my_opn_parn_loc[my_level]-9,$3,strlen($3));
