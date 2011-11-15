@@ -95,7 +95,7 @@
  while read line
  do
     echo "Hindi meaning using Stanford parser" $line
-    timeout 500 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
+    $HOME/timeout 500 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
  

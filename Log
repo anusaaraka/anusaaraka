@@ -2833,3 +2833,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  30. Updated  bin/abbr.sh and bin/abbr_browser.sh to handle above patterns.
  31. Updated change_in_databases.
  32. Updated Log
+
+ 15-11-11
+ ========
+ 1. Removed sed commands while getting one_sentence_per_line.txt.std.penn in Anusaaraka_stanford.sh file.
+ 2. Modified Anusaaraka_site.sh near timeout command.
+ 3. Updated Log.
