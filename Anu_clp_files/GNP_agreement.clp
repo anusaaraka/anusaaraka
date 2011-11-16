@@ -157,7 +157,7 @@
  ; default peson = a
  (defrule PP_pada
  (declare (salience 900))
- ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(group_ids $?ids)(vibakthi ?vib))
+ ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP|infinitive)(group_ids $?ids)(vibakthi ?vib))
  (id-original_word ?pada_id  ?pada_head)
  (id-gender-src ?pada_id ?gen ?gen_src)
  (id-number-src ?pada_id ?num ?num_src)
@@ -172,67 +172,39 @@
         (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-per_src-case  " ?pada_id " PP_pada  " ?gen" "?gen_src " "?num" "?num_src" a Direct_assignment o vibakthi_present)" crlf)
 	)
  )
- ;========================================= Infinitive pada ================================================
- (defrule PP_pada_vib_inf
- (declare (salience 900))
- ?f1<-(pada_info (group_head_id ?pada_id)(group_cat infinitive)(vibakthi ?vib))
- (id-original_word ?pada_id  ?pada_head)
- (id-gender-src ?pada_id ?gen ?gen_src)
- (id-number-src ?pada_id ?num ?num_src)
- ?f0<-(pada_control_fact ?pada_id)
- =>
-        (retract ?f0)
-	(if (eq ?vib 0 ) then
-	        (modify ?f1 (gender ?gen)(number ?num)(person a)(case d))
-        (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-per_src-case  " ?pada_id " PP_pada_vib_inf  " ?gen" "?gen_src " "?num" "?num_src" a Direct_assignment d vibakthi_absent)" crlf)
-	else 
-		(modify ?f1 (gender ?gen)(number ?num)(person a)(case o))
-        (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-per_src-case  " ?pada_id " PP_pada_vib_inf  " ?gen" "?gen_src " "?num" "?num_src" a Direct_assignment o vibakthi_present)" crlf)
-	)
- )
  ;================================== subject-subject_samAnAXikaraNa ==========================================
  ; if subject gen is "-" and samAnAXikaraNa gen is not equal to "-"
- (defrule samAnAXikaraNa_rule
+ (defrule samAnAXikaraNa_to_subj_rule
  (declare (salience 800))
  (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa|saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
  ?f1<-(pada_info (group_head_id ?samAnAXikaraNa_id)(group_cat PP)(gender ?gen)(number ?num1))
- ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender -)(number ?num)(person ?per)(case ?case))
+ ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender -)(number ?num)(person ?per))
+ (test (neq ?gen -))
  (not(samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
  =>
          (modify ?f1 (gender ?gen)(number ?num)(person ?per))
          (modify ?f2 (gender ?gen) )
-         (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " samAnAXikaraNa_rule "?gen" PV "?num" number_from_subject "?per " person_from_subject )" crlf)
+         (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " samAnAXikaraNa_to_subj_rule "?gen" PV "?num" number_from_subject "?per " person_from_subject )" crlf)
 	(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified  " ?sub_id " samAnAXikaraNa_rule "?gen" gender_from_samAnAXikaraNa  "?num" PV "?per " PV)" crlf)
 	(assert (samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
  )
-
+ ;----------------------------------------------------------------------------------------------------------------
  ; if  samAnAXikaraNa gen is "-" and subject gen is not equal to "-"
- (defrule samAnAXikaraNa_rule_1
+ (defrule sub_to_samAnAXikaraNa_rule
  (declare (salience 790))
  (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa|saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
  ?f1<-(pada_info (group_head_id ?samAnAXikaraNa_id)(group_cat PP)(vibakthi ?vib)(gender -)(number ?num1))
- ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender ?gen)(number ?num)(person ?per)(case ?case))
+ ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender ?gen)(number ?num)(person ?per))
+ (test (neq ?gen -))
  (not(samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
  =>
 	 (modify ?f1 (gender ?gen)(number ?num)(person ?per))
-         (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " samAnAXikaraNa_rule_1 "?gen " gender_from_subject "?num"  number_from_subject "?per"  person_from_subject)" crlf)
+         (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " sub_to_samAnAXikaraNa_rule "?gen " gender_from_subject "?num"  number_from_subject "?per"  person_from_subject)" crlf)
 	(assert (samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
  )
-	
- ; if  samAnAXikaraNa gen is "-" and subject gen is "-"
- (defrule samAnAXikaraNa_rule_2
- (declare (salience 780))
- (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa|saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
- ?f1<-(pada_info (group_head_id ?samAnAXikaraNa_id)(group_cat PP)(vibakthi ?vib)(gender -)(number ?num1))
- ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender -)(number ?num)(person ?per)(case ?case))
- (not(samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
- =>
-	 (modify ?f1 (gender -)(number ?num)(person ?per))
-         (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " samAnAXikaraNa_rule_2 - PV "?num"  number_from_subject "?per" person_from_subject )" crlf)
-	(assert (samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
- )
+ ;----------------------------------------------------------------------------------------------------------------
  ; if  samAnAXikaraNa gen is not equal to "-" and subject gen is not equal to "-" but the gender for both is same
- (defrule samAnAXikaraNa_rule_3
+ (defrule sub_and_samA_with_same_gender
  (declare (salience 770))
  (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa|saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
  ?f1<-(pada_info (group_head_id ?samAnAXikaraNa_id)(group_cat PP)(vibakthi ?vib)(gender ?gen1)(number ?num1))
@@ -241,25 +213,32 @@
  (test (and (neq ?gen1 -)(neq ?gen -)(eq ?gen ?gen1)))
  =>
 	(modify ?f1 (gender ?gen)(number ?num)(person ?per))
-	(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " samAnAXikaraNa_rule_3 "?gen" PV "?num" number_from_subject "?per" person_from_subject )" crlf)
+	(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " sub_and_samA_with_same_gender "?gen" PV "?num" number_from_subject "?per" person_from_subject )" crlf)
 	(assert (samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
  )
-  ; if  samAnAXikaraNa gen is not equal to "-" and subject gen is not equal to "-" but the gender for both is different
- (defrule samAnAXikaraNa_rule_4
+ ;----------------------------------------------------------------------------------------------------------------
+ ; if  samAnAXikaraNa gen is not equal to "-" and subject gen is not equal to "-" but the gender for both is different
+ (defrule sub_and_samA_with_different_gender
  (declare (salience 760))
  (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa|saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
  ?f1<-(pada_info (group_head_id ?samAnAXikaraNa_id)(group_cat PP)(vibakthi ?vib)(gender ?gen1)(number ?num1))
  ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender ?gen)(number ?num)(person ?per)(case ?case))
+ (id-original_word ?samAnAXikaraNa_id  ?word)
  (not(samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
  (test (and (neq ?gen1 -)(neq ?gen -)(neq ?gen ?gen1)))
  =>
-	 (printout  ?*error_file* crlf "The ids " ?sub_id " and " ?samAnAXikaraNa_id" have saMjFA-saMjFA_samAnAikaraNa relation "crlf "And the gender information for the ids are different ---------   " ?sub_id"-"?gen "  "?samAnAXikaraNa_id "-" ?gen1 crlf "if saMjFA id ("?sub_id") word is \"She\" then consider gender as f "crlf "else By default considering the samAnAXikaraNa id gender i.e., "?samAnAXikaraNa_id " - " ?gen1 crlf crlf)
-                 (close ?*error_file*)
-        (modify ?f1 (gender ?gen1)(number ?num)(person ?per))
-        (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " samAnAXikaraNa_rule_4 "?gen1" PV "?num " number_from_subject "?per"  person_from_subject )" crlf)
-	(assert (samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
+	(printout  ?*error_file* crlf "The ids " ?sub_id " and " ?samAnAXikaraNa_id" have saMjFA-saMjFA_samAnAikaraNa relation "crlf "And the gender information for the ids are different ---------   " ?sub_id"-"?gen "  "?samAnAXikaraNa_id "-" ?gen1 crlf "if saMjFA id ("?sub_id") word is \"She\" then consider gender as f "crlf "else By default considering the samAnAXikaraNa id gender i.e., "?samAnAXikaraNa_id " - " ?gen1 crlf crlf)
+	(close ?*error_file*)
+	(if (eq ?word She) then
+		(modify ?f1 (gender f)(number ?num)(person ?per))
+		(assert (samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
+		(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " sub_and_samA_with_different_gender  f from word She "?num " number_from_subject "?per"  person_from_subject )" crlf)
+	else
+		(modify ?f1 (gender ?gen1)(number ?num)(person ?per))
+	        (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-GNP_modified " ?samAnAXikaraNa_id " sub_and_samA_with_different_gender "?gen1" PV "?num " number_from_subject "?per"  person_from_subject )" crlf)
+		(assert (samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
+	)
  )
-
  ;========================================== Relative Clause Rule ==============================================
 
  (defrule jo_samAnAXikaraNa_rule
@@ -339,8 +318,6 @@
 		(modify ?f1 (gender ?gen)(number ?num)(person ?per)(case ?c))
 		(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?kriyA " verb_sub_agmt "?gen" gender_from_subject "?num"  number_from_subject "?per" person_from_subject "?c "case_from_subject )" crlf)
         )
-;        (modify ?f1 (gender ?gen)(number ?num)(person ?per))
- ;(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?kriyA " verb_sub_agmt "?gen" gender_from_subject "?num"  number_from_subject "?per" person_from_subject)" crlf)
  )
 
  ;=================================  verb with object agreement ================================================
@@ -426,8 +403,6 @@
  (id-gender-src ?id1 m  ?gen_src1)
  (test (and (member$ ?id $?ids) (member$ ?id1 $?ids)))
  (test (and (neq ?id ?pada_id)(neq ?id ?pada_id)))
- (not (prep_id-relation-anu_ids ?p subject-subject_samAnAXikaraNa ? ?pada_id))
- (not (prep_id-relation-anu_ids ?p saMjFA-saMjFA_samAnAikaraNa  ? ?pada_id))
  (not (prep_id-relation-anu_ids ?p viSeRya-jo_samAnAXikaraNa  ? ?pada_id))
  ?f2<-(id-original_word ?pada_id and|And)
  =>
@@ -439,12 +414,10 @@
  ;Her hard work and talent will take her to the top .
  ;if gender is - then check for the gen in group ids
  (defrule gender_for_hyphen
- (declare (salience 810))
+ (declare (salience 780))
  ?f1<-(pada_info (group_head_id ?pada_id)(gender -)(group_ids $?ids)(group_cat PP))
  (id-gender-src ?id ?gen ?gen_src)
  (test (member$ ?id $?ids))
- (not (prep_id-relation-anu_ids ?p subject-subject_samAnAXikaraNa ? ?pada_id))
- (not (prep_id-relation-anu_ids ?p saMjFA-saMjFA_samAnAikaraNa  ? ?pada_id))
  (not (prep_id-relation-anu_ids ?p viSeRya-jo_samAnAXikaraNa  ? ?pada_id))
  (test (neq ?gen -))
  =>

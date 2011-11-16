@@ -19,6 +19,22 @@
  (verb_type-verb-kriyA_mUla-tam)
  )
  ;------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (29-05-11)
+ ; The people of Orissa are facing grave adversities due to the cyclone.
+ (defrule rm_prep_id
+ (declare (salience 1000))
+ ?f<-(pada_info (preposition $?prep_ids)(group_cat PP|infinitive))
+ ?f1<-(hindi_id_order  $?ids ?pid $?ids1)
+ (Parser_used Stanford-Parser|Open-Logos-Parser)
+ (test (member$ ?pid $?prep_ids))
+ (not (pre_id_deleted ?pid))
+ =>
+        (retract ?f1)
+        (assert (hindi_id_order   $?ids $?ids1))
+        (printout ?*DBUG* "(Rule_Name-ids  rm_prep_id  (hindi_id_order " (implode$ $?ids)" "(implode$ $?ids1)"))" crlf)
+        (assert (pre_id_deleted ?pid))
+ )
+ ;------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (1-02-11)
  ;May I go outside ? Are you going? Did you take your breakfast?
  (defrule yes-no_question
@@ -67,22 +83,25 @@
  )
  ;------------------------------------------------------------------------------------------------------------------
  ;I finally figured out why this program is so slow .
+ ;Modified by Shirisha Manju (09-11-11) Suggested by Sukhada -- instead of moving wh word move the whole pada
  (defrule wh_without_aux-reorder1
  (declare (salience 10))
  (pada_info (group_head_id ?kriyA)(group_cat VP))
  ?f1<-(id-word ?wh_word  what|when|why|who|how|where)
+ (pada_info (group_head_id ?)(group_ids ?wh_word $?d))
+ ?f0<-(hindi_id_order  $?start ?wh_word $?d $?NP ?kriyA $?end)
  (not (prep_id-relation-anu_ids ?  kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?  ?wh_word)) ;Ex. How quickly did you run?
  (not (prep_id-relation-anu_ids ?  wall_conjunction ?wh_word))
- ;When we want to hear a music programme on the radio , we have to tune the radio to the correct station .
  (not (prep_id-relation-anu_ids ?  viSeRaNa-viSeRaka  ? ?wh_word)) ;I wonder how big the department is .
  (not (prep_id-relation-anu_ids ?  viSeRya-jo_samAnAXikaraNa  ? ?wh_word))
- ?f0<-(hindi_id_order  $?start ?wh_word $?NP ?kriyA $?end)
- (not (id-word =(+ ?wh_word 1) long));How long will it last ? 
+ (not (id-word =(+ ?wh_word 1) long));How long will it last ?
  (not (prep_id-relation-anu_ids - niReXawmaka_vAkya));When the dollar is in a free-fall, even central banks can not stop it.
+ (not (wh_movement_done ?wh_word))
  =>
-        (retract ?f0 ?f1)
-        (assert (hindi_id_order $?start  $?NP ?wh_word ?kriyA $?end))
-        (printout ?*DBUG* "(Rule_Name-ids      wh_without_aux-reorder1      (hindi_id_order  "   (implode$ (create$ $?start $?NP ?wh_word ?kriyA $?end))")" crlf)
+        (retract ?f0 )
+	(assert (wh_movement_done ?wh_word))
+        (assert (hindi_id_order $?start  $?NP ?wh_word $?d ?kriyA $?end))
+        (printout ?*DBUG* "(Rule_Name-ids      wh_without_aux-reorder1      (hindi_id_order  "   (implode$ (create$ $?start $?NP ?wh_word $?d ?kriyA $?end))")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
  ;Indirect questions
@@ -219,7 +238,6 @@
  (defrule rule_for_jisa_prakAra_se
  (prep_id-relation-anu_ids  ? kriyA-subject  ?kri ?sub)
  (or (prep_id-relation-anu_ids ? kriyA-kriyA_viSeRaNa|kriyA-object ?kri1  =(- ?sub 1))(prep_id-relation-anu_ids ? kriyA-object_2  ?kri1  ?way))
-; (or (kriyA-kriyA_viSeRaNa  ?kri1  =(- ?sub 1))(kriyA-object ?kri1  =(- ?sub 1))(kriyA-object_2  ?kri1  ?way))
  ?f1<- (id-root  =(- ?sub 1) way)
  ?f0 <-(hindi_id_order $?hin_order)
  (test (member$ ?sub $?hin_order))
@@ -279,7 +297,7 @@
  ;Added by Shirisha Manju (25-02-11) 
  ;When Mrs. Chitnis discovered that her husband was an adulterer she divorced him.
  (defrule wo_rule_for_when
- (declare (salience 1))
+ (declare (salience 15))
  (prep_id-relation-anu_ids ?  kriyA-conjunction  ?k 1)
  (prep_id-relation-anu_ids ?  kriyA-subject  ?k1 ?id)
  ?f1<-(id-word 1 when)  ;Modified by Meena (28-10-10) 
@@ -289,6 +307,22 @@
  =>
         (retract ?f0 ?f1)
         (assert (hindi_id_order  $?pre  wo ?id $?post))
+        (printout ?*DBUG* "(Rule_Name-ids   wo_rule_for_when   (hindi_id_order  "(implode$ (create$ $?pre ?k1 wo $?post))")"crlf)
+
+ )
+ ;------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (15-11-11)
+ ; When you stand on this rock and face the east, the waves of the bay of bengal lap your feet.
+ (defrule wo_rule_for_when1
+ (declare (salience 1))
+ (prep_id-relation-anu_ids ?  kriyA-kriyA_viSeRaNa  ?k 1)
+ (prep_id-relation-anu_ids ?  kriyA-subject  ?k1 ?id)
+ ?f1<-(id-word 1 when)   
+ ?f0 <-(hindi_id_order $?pre ?k1 $?post)
+ (test (> ?k1 ?k) )
+ =>
+        (retract ?f0 ?f1)
+        (assert (hindi_id_order  $?pre  ?k1 wo $?post))
         (printout ?*DBUG* "(Rule_Name-ids   wo_rule_for_when   (hindi_id_order  "(implode$ (create$ $?pre ?k1 wo $?post))")"crlf)
 
  )
@@ -385,21 +419,6 @@
   )
   (assert (hindi_id_order $?ids))
   (printout ?*DBUG* "(Rule_Name-ids default_rule (hindi_id_order " (implode$ $?ids)"))" crlf)
- )
- ;------------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (29-05-11)
- ;The people of Orissa are facing grave adversities due to the cyclone.
- (defrule rm_prep_id
- ?f<-(pada_info (preposition $?prep_ids)(group_cat PP|infinitive))
- ?f1<-(hindi_id_order  $?ids ?pid $?ids1)
- (Parser_used Stanford-Parser|Open-Logos-Parser)
- (test (member$ ?pid $?prep_ids))
- (not (pre_id_deleted ?pid))
- =>
-        (retract ?f1)
-        (assert (hindi_id_order   $?ids $?ids1))
-        (printout ?*DBUG* "(Rule_Name-ids  rm_prep_id  (hindi_id_order " (implode$ $?ids)" "(implode$ $?ids1)"))" crlf)
-	(assert (pre_id_deleted ?pid))
  )
  ;------------------------------------------------------------------------------------------------------------------
  (defrule hi_order

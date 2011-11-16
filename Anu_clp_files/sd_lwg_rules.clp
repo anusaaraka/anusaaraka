@@ -22,13 +22,14 @@
 ;This rule makes VBN as VBD in the sentences where Stanford parser incorrectly makes VBD as VBN.
 ;Who translated the sentence for the student? The snake who swallowed the rat hissed loudly.
 (defrule make_VBN_as_VBD
-(declare (salience 1600))
+(declare (salience 1400))
 (Head-Level-Mother-Daughters ? ? ?S $? ?VP)
 (Node-Category ?S S|SQ)
 (Node-Category ?VP VP)
 ?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP ?VBN $?d)
 ?f1<-(Node-Category ?VBN VBN)
 ?f2<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VBN ?id)
+(not (daughter ? ?v));.Have you ever seen the Pacific?
 =>
 	(retract ?f0 ?f1 ?f2)
 	(assert (Head-Level-Mother-Daughters ?h ?l ?VP VBD $?d))
@@ -325,9 +326,15 @@
 ;Do not waste electricity. Do not shut the door. 
 (defrule imper_rule
 (declare (salience 6))
+(Head-Level-Mother-Daughters ? ? ?ROOT ?S)
+(Node-Category ?ROOT ROOT)
+(Node-Category ?S S)
+(Head-Level-Mother-Daughters ? ? ?S ?VP $?)
+(Node-Category ?VP VP)
+(Head-Level-Mother-Daughters ? ? ?VP ?id $?)
 ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vc ?tam  ?id $?ids)
-(id-node-suf ?id VB 0)
 (not (imper_decided ?id))
+(not (Head-Level-Mother-Daughters ? ? SBAR ?S))
 (test (neq (length $?ids) 0))
 =>
 	(retract ?f)
@@ -341,13 +348,14 @@
 ;Go straight and take a right turn.
 (defrule imper_rule_for_and
 (declare (salience 5))
-(Head-Level-Mother-Daughters ? ? ?Mot ?VP $?)
-(Node-Category ?Mot S)
+(Head-Level-Mother-Daughters ? ? ?ROOT ?S)
+(Node-Category ?ROOT ROOT)
+(Node-Category ?S S)
+(Head-Level-Mother-Daughters ? ? ?S ?VP $?)
 (Node-Category ?VP VP)
 (Head-Level-Mother-Daughters ? ? ?VP $?d ?CC $?d1)
 (Node-Category ?CC CC)
 ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vc ?tam  ?id)
-(id-node-suf ?id VB 0)
 (test (or (member$ ?id $?d)(member$ ?id $?d1)))
 (not (imper_decided ?id))
 =>
@@ -360,12 +368,13 @@
 ;Do this in your room.
 (defrule imper_rule1
 (declare (salience 4))
-(Head-Level-Mother-Daughters ? ? ?Mot ?VP $?)
-(Node-Category ?Mot S)
+(Head-Level-Mother-Daughters ? ? ?ROOT ?S)
+(Node-Category ?ROOT ROOT)
+(Node-Category ?S S)
+(Head-Level-Mother-Daughters ? ? ?S ?VP $?)
 (Node-Category ?VP VP)
 (Head-Level-Mother-Daughters ? ? ?VP ?id $?)
 ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vc ?tam  ?id)
-(id-node-suf ?id VB 0)
 (not (imper_decided ?id))
 =>
         (retract ?f)
@@ -377,13 +386,14 @@
 ;Please enclose a curriculum vitae with your letter of application. 
 (defrule imper_rule2
 (declare (salience 4))
-(Head-Level-Mother-Daughters ? ? ?Mot ?INTJ ?VP1 $?)
-(Node-Category ?Mot S)
+(Head-Level-Mother-Daughters ? ? ?ROOT ?S)
+(Node-Category ?ROOT ROOT)
+(Node-Category ?S S)
+(Head-Level-Mother-Daughters ? ? ?S ?INTJ ?VP1 $?)
 (Node-Category ?VP1 VP)
 (Node-Category ?INTJ INTJ)
 (Head-Level-Mother-Daughters ? ? ?VP1 ?id $?)
 ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vc ?tam  ?id)
-(id-node-suf ?id VB 0)
 (not (imper_decided ?id))
 =>
         (retract ?f)

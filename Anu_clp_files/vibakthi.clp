@@ -161,80 +161,74 @@
  ;-------------------------------------------------------------------------------------------------------------
  ;The object turned out to be a big meteorite .
  ;Here Compound-phrase is "turned out to be" (generally  for a compound phrase meaning is assigned to the last word and all other as "-"), and in this case "turned" is "kriyA" and hindi meaning is "-" so vibakthi information for this types of phrases will go wrong by using rule vib_rule1 .So, in order to solve this problem we have added the below rule in which if verb is part of any phrase , phrase meaning is taken as verb meaning.
- (defrule vib_rule2
+ (defrule  ne_vib_rule1
  (declare (salience 850))
+ (prep_id-relation-anu_ids ? kriyA-subject  ?root_id ?sub_id)
  (pada_info (group_head_id ?root_id)(group_cat VP)(vibakthi 0)(H_tam ?tam))
  (yA-tam  ?tam)
- (prep_id-relation-anu_ids ? kriyA-subject  ?root_id ?sub_id)
- (not (prep_id-relation-anu_ids ? kriyA-subject  ?root_id1&:(> ?root_id ?root_id1) ?sub_id))
  (id-HM-source ?root_id ? ?src)
  (ids-cmp_mng-head-cat-mng_typ $?ids1 ?h_mng ?head_id ?grp_cat ?mng_typ)
- (test (and (eq ?src Compound_Phrase_gdbm) (member$ ?root_id $?ids1)))
- ?f0<-(pada_control_fact ?sub_id)
  ?f1<-(pada_info (group_ids $?ids)(group_cat PP))
+ ?f0<-(pada_control_fact ?sub_id)
+ (not (prep_id-relation-anu_ids ? kriyA-subject  ?root_id1&:(> ?root_id ?root_id1) ?sub_id))
+ (test (and (eq ?src Compound_Phrase_gdbm) (member$ ?root_id $?ids1)))
  (test (member$ ?sub_id $?ids))
  =>
-        (retract ?f0)
-        (if (neq (str-index "_" ?h_mng) FALSE) then
-                (bind ?index (str-index "_" ?h_mng))
-                (while (neq ?index FALSE)
-                (bind ?h_mng (sub-string (+ ?index 1) 1000 ?h_mng))
-                (bind ?index (str-index "_" ?h_mng)))
-                (bind ?a (gdbm_lookup "not_ne_verb_list.gdbm" ?h_mng))
-                (if (eq ?a "0") then
-                        (modify ?f1 (vibakthi 0))
-                else
-                        (modify ?f1 (vibakthi ne))
-                )
-        else
-                (bind ?a (gdbm_lookup "not_ne_verb_list.gdbm" ?h_mng))
-                (if (eq ?a "0") then
-                        (modify ?f1 (vibakthi 0))
-                else
-                        (modify ?f1 (vibakthi ne))
-                )
-       )
- )
 
+	(bind ?a (gdbm_lookup "not_ne_verb_list.gdbm" ?h_mng))
+        (if (neq ?a "0") then
+                (if (neq (str-index "_" ?h_mng) FALSE) then
+                        (bind ?index (str-index "_" ?h_mng))
+                        (while (neq ?index FALSE)
+                                (bind ?h_mng (sub-string (+ ?index 1) 1000 ?h_mng))
+                                (bind ?index (str-index "_" ?h_mng))
+                        )
+                        (bind ?a (gdbm_lookup "not_ne_verb_list.gdbm" ?h_mng))
+                        (if (neq ?a "0") then
+                                (modify ?f1 (vibakthi ne))
+                                (retract ?f0)
+                        )
+                else
+                        (modify ?f1 (vibakthi ne))
+                        (retract ?f0)
+                )
+        )
+ )
  ;-------------------------------------------------------------------------------------------------------
  ; I ate fruits , drank milk and slept . take the least verb id 
  ; They took them to policestation .
- (defrule vib_rule1
+ (defrule ne_vib_rule2
  (declare (salience 850))
+ (prep_id-relation-anu_ids ? kriyA-subject  ?root_id ?sub_id)
  (pada_info (group_head_id ?root_id)(group_cat VP)(vibakthi 0)(H_tam ?tam))
  (yA-tam  ?tam)
- (prep_id-relation-anu_ids ? kriyA-subject  ?root_id ?sub_id)
- (not (prep_id-relation-anu_ids ? kriyA-subject  ?root_id1&:(> ?root_id ?root_id1) ?sub_id))
  (id-HM-source ?root_id ?h_mng ?)
+ ?f1<-(pada_info (group_head_id ?sub_id)(group_ids $?ids)(group_cat PP))
  ?f0<-(pada_control_fact ?sub_id)
- ?f1<-(pada_info (group_ids $?ids)(group_cat PP))
- (test (member$ ?sub_id $?ids))
+ (not (prep_id-relation-anu_ids ? kriyA-subject  ?root_id1&:(> ?root_id ?root_id1) ?sub_id))
  =>
-        (retract ?f0)
-        (if (neq (str-index "_" ?h_mng) FALSE) then
-                (bind ?index (str-index "_" ?h_mng))
-                (while (neq ?index FALSE)
-                (bind ?h_mng (sub-string (+ ?index 1) 1000 ?h_mng))
-                (bind ?index (str-index "_" ?h_mng)))
-                (bind ?a (gdbm_lookup "not_ne_verb_list.gdbm" ?h_mng))
-                (if (eq ?a "0") then
- 			(modify ?f1 (vibakthi 0))
-                else
+	(bind ?a (gdbm_lookup "not_ne_verb_list.gdbm" ?h_mng))
+	(if (neq ?a "0") then
+		(if (neq (str-index "_" ?h_mng) FALSE) then
+			(bind ?index (str-index "_" ?h_mng))
+			(while (neq ?index FALSE)
+				(bind ?h_mng (sub-string (+ ?index 1) 1000 ?h_mng))
+				(bind ?index (str-index "_" ?h_mng))
+			)
+			(bind ?a (gdbm_lookup "not_ne_verb_list.gdbm" ?h_mng))
+			(if (neq ?a "0") then
+		                (modify ?f1 (vibakthi ne))
+                		(retract ?f0)
+			)
+		else
 			(modify ?f1 (vibakthi ne))
-                )
-        else
-                (bind ?a (gdbm_lookup "not_ne_verb_list.gdbm" ?h_mng))
-                (if (eq ?a "0") then
-			(modify ?f1 (vibakthi 0))
-                else
-			(modify ?f1 (vibakthi ne))
-                )
-       )
+                        (retract ?f0)
+		)
+	)
  )
-
  ;-------------------------- prefix vibakthi rule ---------------------------------------------
-
-; These are the boy 's books . These are children 's books .
+ ; Added by Shirisha Manju 
+ ; These are the boy 's books . These are children 's books .
  (defrule prefix_vib_rule
  (declare (salience 700))
  ?f0<-(id-original_word ?id ?word)

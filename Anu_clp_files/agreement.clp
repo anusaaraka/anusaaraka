@@ -38,45 +38,42 @@
  ;Ex. Are John or I invited ?
  (defrule sub_or_agr
  (declare (salience 1100))
- (pada_info (group_head_id ?root_id)(group_cat VP))
- (prep_id-relation-anu_ids  ? kriyA-subject|kriyA-aBihiwa ?root_id ?x)
- (pada_info (group_cat ?cat)(group_head_id ?x)(vibakthi 0) (group_ids $?ids ?last_id))
- (id-original_word ?x or)
- ?f0<-(agmt_control_fact ?root_id)
- (test (and (neq ?cat English_PP)(neq ?cat PP_intermediate))) ;the condition "PP_intermediate" is for "and" pada
+ (prep_id-relation-anu_ids  ? kriyA-subject|kriyA-aBihiwa ?kriyA_id ?sub_id)
+ (pada_info (group_head_id ?kriyA_id)(group_cat VP))
+ (pada_info (group_cat PP)(group_head_id ?sub_id)(vibakthi 0) (group_ids $?ids ?last_id))
+ (id-original_word ?sub_id or)
+ ?f0<-(agmt_control_fact ?kriyA_id)
  =>
         (retract ?f0)
-        (printout  ?*agrmt_file* "(verb_agrmt-subject_id-head_id  or_subject  "?last_id" "?root_id ")" crlf )
-	(printout ?*agrmt_debug* "(Rule_name-verb_agrmt-subject_id-head_id  sub_or_agr   or_subject  "?last_id" "?root_id ")" crlf )
+        (printout  ?*agrmt_file* "(verb_agrmt-subject_id-head_id  or_subject  "?last_id" "?kriyA_id ")" crlf )
+	(printout ?*agrmt_debug* "(Rule_name-verb_agrmt-subject_id-head_id  sub_or_agr   or_subject  "?last_id" "?kriyA_id ")" crlf )
  )
  ;--------------------------------------------------------------------------------------------------------------------
  ; Verb agrees with: With Subject(karwA), If it has 0 prasarg.
  ; if subject has vibhakti
  (defrule sub_agrmt
  (declare (salience 1000))
- (pada_info (group_head_id ?root_id)(group_cat VP))
- (prep_id-relation-anu_ids ? kriyA-subject|kriyA-aBihiwa ?root_id ?x)
- (pada_info (group_cat ?cat)(group_head_id ?x)(vibakthi 0))
- ?f0<-(agmt_control_fact ?root_id)
- (test (and (neq ?cat English_PP)(neq ?cat PP_intermediate)));the condition "PP_intermediate" is for "and" pada
+ (prep_id-relation-anu_ids ? kriyA-subject|kriyA-aBihiwa ?kriyA_id ?sub_id)
+ (pada_info (group_head_id ?kriyA_id)(group_cat VP))
+ (pada_info (group_cat PP)(group_head_id ?sub_id)(vibakthi 0))
+ ?f0<-(agmt_control_fact ?kriyA_id)
  =>
         (retract ?f0)
-        (printout  ?*agrmt_file* "(verb_agrmt-subject_id-head_id  subject  "?x" "?root_id ")" crlf )
-	(printout ?*agrmt_debug* "(Rule_name-verb_agrmt-subject_id-head_id  sub_agrmt   subject "?x" "?root_id ")" crlf )
+        (printout  ?*agrmt_file* "(verb_agrmt-subject_id-head_id  subject  "?sub_id" "?kriyA_id ")" crlf )
+	(printout ?*agrmt_debug* "(Rule_name-verb_agrmt-subject_id-head_id  sub_agrmt   subject "?sub_id" "?kriyA_id ")" crlf )
  )
  ;--------------------------------------------------------------------------------------------------------------------
  ;Verb agrees with:With Object(Karma), If it has 0 prasarg.
  (defrule obj_agrmt
  (declare (salience 900))
- (pada_info (group_head_id ?root_id)(group_cat VP))
- (prep_id-relation-anu_ids ?  kriyA-object|kriyA-object_2 ?root_id ?x)
- (pada_info (group_cat ?cat)(group_head_id ?x)(vibakthi 0))
- ?f0<-(agmt_control_fact ?root_id)
- (test (and (neq ?cat English_PP)(neq ?cat PP_intermediate))) ;the condition "PP_intermediate" is for "and" pada
+ (prep_id-relation-anu_ids ?  kriyA-object|kriyA-object_2 ?kriyA_id ?obj_id)
+ (pada_info (group_head_id ?kriyA_id)(group_cat VP))
+ (pada_info (group_cat PP)(group_head_id ?obj_id)(vibakthi 0))
+ ?f0<-(agmt_control_fact ?kriyA_id)
  =>
         (retract ?f0)
-        (printout ?*agrmt_file* "(verb_agrmt-object_id-head_id  object " ?x" " ?root_id ")" crlf )
-	(printout ?*agrmt_debug* "(Rule_name-verb_agrmt-object_id-head_id  obj_agrmt   object " ?x" " ?root_id ")" crlf )
+        (printout ?*agrmt_file* "(verb_agrmt-object_id-head_id  object " ?obj_id" " ?kriyA_id ")" crlf )
+	(printout ?*agrmt_debug* "(Rule_name-verb_agrmt-object_id-head_id  obj_agrmt   object " ?obj_id" " ?kriyA_id ")" crlf )
  )
  ;--------------------------------------------------------------------------------------------------------------------
  ;Verb agrees with:With kriyA_mUla
