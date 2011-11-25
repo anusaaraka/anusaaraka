@@ -1,3 +1,14 @@
+ (deffacts dummy_sd_com_apos_facts
+ (parser_numeric_id-word)
+ (parserid-word)
+ (id-word)
+ (rel_name-sids)
+ (id-sd_cat)
+ (Head-Level-Mother-Daughters)
+ (Node-Category)
+ )
+ 
+
  (deffunction string_to_integer (?parser_id) 
 ; Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
@@ -78,26 +89,6 @@
         (bind ?lnd (explode$ ?wrd1))
         (assert (id-Modified_id ?lnode ?lnd))
  )
-
-; (defrule word_rule_4_cannot
-; (declare (salience 100))
-; (rel_name-sids aux ?lnode ?rnode)
-; (rel_name-sids neg ?lnode ?rnode1)
-; ?f1<-(parserid-word ?rnode ?wrd)
-; ?f2<-(parserid-word ?rnode1 ?wrd1)
-; ?f3<-(parser_numeric_id-word ?rid ?w1&can)
-; ?f4<-(parser_numeric_id-word ?rid1  ?w2&not)
-; (test (= (string_to_integer ?rnode) ?rid))
-; (test (= (string_to_integer ?rnode1) ?rid1))
-; (test (= (+ ?rid 1) ?rid1))
-;  =>
-;        (retract ?f1 ?f2 ?f3 ?f4)
-;        (printout ?*nid_wrd_fp*  "(parser_numid-word-remark  " ?rid "  "?wrd ?wrd1 "  neg)" crlf)
-;        (printout ?*l_wrd_fp* "(parserid-word  "?rnode"neg "?wrd ?wrd1 ")" crlf)
-;        (bind ?w (explode$ (str-cat ?rnode "neg")))
-;        (assert (id-Modified_id ?rnode ?w))
-; )
-
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule word_rule
  (declare (salience 50))
@@ -162,22 +153,7 @@
         (bind ?noun (explode$ (str-cat ?noun ?pos)))
         (assert (Head-Level-Mother-Daughters ?h ?lvl1 ?NN ?noun))
  )
- 
-
-; (defrule map_cannot
-; ?f<-(Head-Level-Mother-Daughters can ?l ?M $?pre ?Mot ?mot $?pos)
-; ?f1<-(Head-Level-Mother-Daughters can ?l1 ?Mot ?dat)
-; ?f2<-(Head-Level-Mother-Daughters not ?l1 ?mot ?Dat)
-; (Node-Category ?Mot  MD)
-; (Node-Category ?mot  RB)
-;  =>
-;	  (retract ?f ?f1 ?f2)
-;          (assert (Head-Level-Mother-Daughters cannot ?l ?M $?pre ?Mot $?pos))
-;          (bind ?dat (explode$ (str-cat ?dat "neg")))
-;          (assert (Head-Level-Mother-Daughters cannot ?l1 ?Mot ?dat))
-; )
-
-
+ ;-------------------------------------------------------------------------------------------------------------------
  (defrule map_cons1
  ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre ?PUNC $?post)
  ?f1<-(Head-Level-Mother-Daughters ?h2 ?lvl1 ?PUNC ?child)
@@ -186,8 +162,6 @@
         (retract ?f ?f1)
         (assert (Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre $?post))
  )
-
- 
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule end
  (declare (salience -50))

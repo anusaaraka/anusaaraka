@@ -39,9 +39,9 @@
  (defrule sub_or_agr
  (declare (salience 1100))
  (prep_id-relation-anu_ids  ? kriyA-subject|kriyA-aBihiwa ?kriyA_id ?sub_id)
+ (id-original_word ?sub_id or)
  (pada_info (group_head_id ?kriyA_id)(group_cat VP))
  (pada_info (group_cat PP)(group_head_id ?sub_id)(vibakthi 0) (group_ids $?ids ?last_id))
- (id-original_word ?sub_id or)
  ?f0<-(agmt_control_fact ?kriyA_id)
  =>
         (retract ?f0)

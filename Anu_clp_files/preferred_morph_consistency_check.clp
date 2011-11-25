@@ -4,7 +4,6 @@
 
  (deffacts dummy_facts 
  (missing-level-id) 
- (id-original_word) 
  (id-number-src)
  (id-wsd_number)
  (affecting_id-affected_ids-wsd_group_root_mng)

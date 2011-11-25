@@ -69,16 +69,40 @@
  (assert (yA-tam  yA_huA_nahIM_hogA))
  (assert (impr_request  imper m_h2))
  )
-;========================================== default format for hindi mng "-" ==========================================
-
+ ;======================================== default gender for gender info =============================================
+ ; Added by Shirisha Manju on 19-11-11 in case of and pada we consider the individual gender info.so if gender is - then
+ ; make it as "m".
+ (defrule default_gender
+ (declare (salience 1500))
+ ?f0<-(id-gender-src ?id - ?src)
+ =>
+	(retract ?f0)
+	(assert (id-gender-src ?id m Default))
+ )
+ ;========================================== default format for hindi mng "-" ==========================================
  (defrule default_id
  (declare (salience 1500))
  ?f0<-(id-HM-source ?id - ?)
  (not (mng_has_been_decided ?id))
- =>
+ (pada_info (group_ids $? ?id $?)(vibakthi 0))
+  =>
         (retract ?f0)
         (printout ?*A_fp5* "(id-Apertium_input " ?id "  )" crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  "?id "  default_id )" crlf)
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju on 22-11-11
+ ;Is there life beyond the grave?
+ (defrule default_id1
+ (declare (salience 1500))
+ ?f0<-(id-HM-source ?id - ?)
+ (not (mng_has_been_decided ?id))
+ (pada_info (group_ids $?ids ?h ))
+ (test (and (member$ ?id $?ids) (neq ?id ?h)))
+  =>
+        (retract ?f0)
+        (printout ?*A_fp5* "(id-Apertium_input " ?id "  )" crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?id "  default_id1 )" crlf)
  )
  ;========================================== complete sent mng ========================================================
 
@@ -109,9 +133,8 @@
  (defrule word_mng_with_vib
  (declare (salience 1002))
  ?f0<-(id-HM-source ?id ?hmng WSD_compound_phrase_word_mng|Database_compound_phrase_word_mng|WSD_verb_phrase_word_mng|WSD_word_mng|Idiom_word_mng)
- (pada_info (group_head_id ?id)(vibakthi ?vib)(group_cat ?cat))
+ (pada_info (group_head_id ?id)(vibakthi ?vib)(group_cat PP|infinitive|VP))
  (test (and (neq ?vib 0) (neq ?vib -)))
- (test (neq ?cat PP_intermediate))
   =>
        (retract ?f0)
        (printout ?*A_fp5* "(id-Apertium_input " ?id " "?hmng"_"?vib ")" crlf)
@@ -130,14 +153,24 @@
  ;----------------------------------------------------------------------------------------------------------------------
  ; here prep_id itself is considered as the main meaning 
  ;Is there life beyond the grave? 
+ ;Modified by Shirisha Manju (23-11-11)
  (defrule Compound_mng_with_Prep_id
  (declare (salience 1003))
- ?f0<-(id-HM-source ?p_id ?hmng Database_compound_phrase_word_mng|Database_compound_phrase_root_mng)
- (pada_info (group_head_id ?pada_id)(group_cat PP)(group_ids $?ids) (vibakthi ?vib)(number ?num)(case ?case)(gender ?gen)(preposition ?p_id))
- (test(neq ?vib 0))
- =>
-        (retract ?f0)
-        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?hmng "<cat:prsg>$)"  crlf)
+ ?f0<-(id-HM-source ?p_id ?p_mng Database_compound_phrase_word_mng|Database_compound_phrase_root_mng)
+ (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(preposition ?p_id)(number ?num)(case ?case)(gender ?gen))
+ ?f1<-(id-HM-source ?pada_id ?h_mng ?)
+ (test (neq ?vib 0)) 
+  =>
+	(retract ?f0 ?f1)
+	(if (neq ?h_mng -) then  ;He came from inside the room.
+		(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_mng "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^" ?vib "<cat:prsg>$)"  crlf)
+	else (if (neq ?p_mng -) then ; Is there life beyond the grave?
+		(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?p_mng "<cat:prsg>$)"  crlf)
+	     else ;Each one of them recorded the narratives from twenty participants.
+			(printout ?*A_fp5* "(id-Apertium_input "?p_id " )" crlf)
+			(printout ?*A_fp5* "(id-Apertium_input "?pada_id " )" crlf)
+	     )
+	)
         (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id " Compound_mng_with_Prep_id )" crlf)
  )
 
@@ -149,8 +182,8 @@
  (defrule RaRTI_kA_vib_rule_for_verbal_noun
  (declare (salience 1001))
  (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa|viSeRya-of_saMbanXI|saMjFA-to_kqxanwa ?f_id ?id)
- (pada_info (group_head_id ?id)(vibakthi ?vib)(group_ids $?ids)(H_tam ?tam))
  (or (make_verbal_noun ?id)(id-cat_coarse ?id verbal_noun))
+ (pada_info (group_head_id ?id)(vibakthi ?vib)(H_tam ?tam))
  ?f0<-(id-HM-source ?id ?hmng ?)
  (pada_info (number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
  (test (member$ ?f_id $?f_ids))
@@ -166,10 +199,10 @@
  (defrule RaRTI_kA_vib_rule
  (declare (salience 1000))
  (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa|viSeRya-of_saMbanXI  ?foll_pada_id ?pada_id)
+ ?f0<-(id-HM-source ?pada_id ?h_word&~vaha&~usakA&~hamArA&~merA&~Apa&~yaha&~mEM&~Ora ?)
  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(vibakthi kA))
  (pada_info (group_cat PP)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
  (test (member$ ?foll_pada_id $?f_ids))
- ?f0<-(id-HM-source ?pada_id ?h_word&~vaha&~usakA&~hamArA&~merA&~Apa&~yaha&~mEM&~Ora ?)
   =>
        (retract ?f0)
        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$ ^kA<cat:sh><case:"?case1"><gen:"?gen1"><num:"?num1">$)" crlf)
@@ -206,9 +239,9 @@
  ?f0<-(id-HM-source ?pada_id ?h_word&~Ora&~yaha ?)
  (prep_id-relation-anu_ids - kriyA-object ?k_id ?pada_id)
  (kriyA_id-object_viBakwi ?k_id kA)
+ (or (make_verbal_noun ?k_id)(id-cat_coarse ?k_id verbal_noun))
  (pada_info (group_head_id ?k_id)(number ?num1)(case ?case1))
  (id-HM-source ?k_id ?hmng&~upayoga_karanA ?)
- (or (make_verbal_noun ?k_id)(id-cat_coarse ?k_id verbal_noun))
  (test (neq (str-index "_" ?hmng)  FALSE))
  =>
 	(bind ?str_len (length ?hmng))
@@ -229,14 +262,13 @@
  (defrule kA_vib_from_sub_rule
  (declare (salience 951))
  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(person ?per)(vibakthi kA)(group_ids $?ids))
- ?f0<-(id-HM-source ?pada_id ?h_word ?)
  (id-word ?pada_id  ?w&he|she|their|i|those|your|you|our|my|me|they|its|we|it|him)
+ ?f0<-(id-HM-source ?pada_id ?h_word ?)
  (prep_id-relation-anu_ids - kriyA-subject ?k_id ?pada_id)
  (kriyA_id-subject_viBakwi ?k_id kA)
  (hindi_id_order  $?start $?ids ?foll_pada_id $?)
- (pada_info (group_head_id ?h)(number ?num1)(case ?case1)(gender ?gen1)(group_cat ?gtype)(group_ids $?f_ids))
+ (pada_info (number ?num1)(gender ?gen1)(group_cat PP|infinitive|VP)(group_ids $?f_ids))
  (test (member$ ?foll_pada_id $?f_ids))
- (test (neq ?gtype PP_intermediate))
  =>
 	(retract ?f0)
 	(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><parsarg:kA><fnum:"?num1"><case:d><gen:"?gen1"><num:"?num"><per:"?per ">$)"  crlf)
@@ -248,10 +280,10 @@
  (defrule kA_for_jo_samAnAXikaraNa
  (declare (salience 1000))
  (prep_id-relation-anu_ids - viSeRya-jo_samAnAXikaraNa  ?  ?jo)
- (pada_info (group_head_id ?jo)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(vibakthi kA)(person ?per))
  ?f0<-(id-HM-source ?jo ?h_word&wuma|kOna|jo|koI|vaha ?)
+ (pada_info (group_head_id ?jo)(group_cat PP)(number ?num)(vibakthi kA)(person ?per))
  ?f1<-(hindi_id_order $? ?jo ?foll_pada_id $?)
- (pada_info (group_cat PP)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
+ (pada_info (group_cat PP)(number ?num1)(gender ?gen1)(group_ids $?f_ids))
  (test (member$ ?foll_pada_id $?f_ids))
   =>
         (retract ?f0)
@@ -264,10 +296,10 @@
  ; KA vib pada followed by VP pada
  (defrule kA_for_kriyA_mUla
  (declare (salience 610))
- (pada_info (group_head_id ?id)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(vibakthi kA)(person ?per))
+ (pada_info (group_head_id ?id)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(vibakthi kA))
  ?f0<-(id-HM-source ?id ?h_word ?)
  ?f1<-(hindi_id_order $? ?id ?foll_pada_id $?)
- (pada_info (group_cat VP)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
+ (pada_info (group_cat VP)(number ?num1)(case ?case1)(group_ids $?f_ids))
  (id-HM-source ?foll_pada_id ?hmng&~Ora ?)
  (test (member$ ?foll_pada_id $?f_ids))
   =>
@@ -281,10 +313,12 @@
 
  ;============================================ verbel-noun without vib ===================================================
  ; Running is good for health.
+ ; The wheels of the car began to turn . 
+ ; I want to go there .
  (defrule verbal_noun_without_vib
  (declare (salience 910))
  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi 0))
- (or (make_verbal_noun ?pada_id) (id_cat_coarse ?pada_id verbal_noun ?pada_id) (id_cat_coarse ?pada_id ))
+ (or (make_verbal_noun ?pada_id) (id_cat_coarse ?pada_id verbal_noun))
  ?f0<-(id-HM-source ?pada_id ?hmng ?)
   =>
         (retract ?f0)
@@ -306,8 +340,8 @@
         (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id "  verbal_noun_with_vib  )"crlf)
  )
  ;========================================== verbel-noun without tam =======================================================
- ; The wheels of the car began to turn . 
- ;I want to go there .
+; ; The wheels of the car began to turn . 
+; ;I want to go there .
  (defrule verbal_noun_without_tam
  (declare (salience 910))
  (pada_info (group_head_id ?pada_id)(group_cat infinitive)(H_tam ?vib))
@@ -339,11 +373,11 @@
   ; Modified by Manoj (03/09/2010)
   (defrule PP_rule_with_vib_for_his
   (declare (salience 950))
-  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(vibakthi ?vib)(person ?per))
   (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa  ?rel ?pada_id)
-  (pada_info (group_head_id ?rel) (group_cat PP) (number ?num1) (case ?case1) (gender ?gen1) (person ?per1))
-  ?f0<-(id-HM-source ?pada_id ?hmng ?)
   (id-original_word ?pada_id his|her|His|Her)
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(vibakthi ?vib)(person ?per))
+  (pada_info (group_head_id ?rel) (group_cat PP) (number ?num1) (case ?case1) (gender ?gen1))
+  ?f0<-(id-HM-source ?pada_id ?hmng ?)
   (test (neq ?vib 0))
   =>
         (retract ?f0)
@@ -359,17 +393,15 @@
   (declare (salience 940))
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(person ?per)(vibakthi kA)(group_ids $?ids))
   (id-word ?pada_id  ?w&he|she|their|i|those|your|you|our|my|me|they|its|we|it|him|this)
-  (hindi_id_order  $?start $?ids ?foll_pada_id $?)
-  (pada_info (group_head_id ?h)(number ?num1)(case ?case1)(gender ?gen1)(group_cat ?gtype)(group_ids $?f_ids))
-  (test (member$ ?foll_pada_id $?f_ids))
   ?f0<-(id-HM-source ?pada_id ?h_word ?)
+  (hindi_id_order  $?start $?ids ?foll_pada_id $?)
+  (pada_info (group_head_id ?h)(number ?num1)(case ?case1)(gender ?gen1)(group_cat PP|infinitive|VP)(group_ids $?f_ids))
+  (test (member$ ?foll_pada_id $?f_ids))
   (id-word ?h ?word)
   (id-gender-src ?foll_pada_id ?gen ?)  
-  (test (neq ?gtype PP_intermediate));Your house and garden are very attractive.
   =>
         (retract ?f0)
 	(if (eq ?word and) then ;They were discussing their hopes and dreams.
-		(if (eq ?gen -) then (bind ?gen m))
 		(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><parsarg:kA><fnum:"?num1"><case:"?case1"><gen:"?gen"><num:"?num"><per:"?per ">$)"  crlf)
 	else	
 	        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><parsarg:kA><fnum:"?num1"><case:"?case1"><gen:"?gen1"><num:"?num"><per:"?per ">$)"  crlf)
@@ -395,7 +427,7 @@
   ; Added by Shirisha Manju (24-06-11)
   (defrule PP_rule_with_vib_for_those
   (declare (salience 930))
-  (pada_info (group_cat PP)(case ?case)(gender ?gen)(vibakthi ?vib)(person ?per)(group_ids $?ids ?id)(number ?num))
+  (pada_info (group_cat PP)(gender ?gen)(vibakthi ?vib)(person ?per)(group_ids $?ids ?id)(number ?num))
   ?f1<-(id-word ?pada_id  Those|those|these|These|that|this|This|the)
   ?f0<-(id-HM-source ?pada_id ?h_word ?)
   (test (member$ ?pada_id $?ids))
@@ -912,7 +944,7 @@
   (declare (salience 550))
   ?f0<-(id-HM-source ?id ?h_word ?)
   (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(person ?per)(group_ids $?ids ?id)(case ?case))
-  (id-word ?pada_id and|or)
+  (id-word ?pada_id and|or|well)
   (id-gender-src ?id ?gen ?)
   (id-number-src ?id ?num ?) 
   (id-cat_coarse ?id ?cat)
@@ -947,8 +979,8 @@
   (defrule PP_rule_with_vib_for_and
   (declare (salience 490))
   (conjunction-components  ?pada_id $? ?h $?)
-  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(person ?per)(group_ids $?ids)(case ?case))
   (prep_id-relation-anu_ids - viSeRya-viSeRaNa ?h ?id)
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(person ?per)(group_ids $?ids)(case ?case))
   ?f0<-(id-HM-source ?id ?h_word ?)
   (id-word ?pada_id and|or)
   (id-gender-src ?h ?gen ?)
@@ -958,7 +990,6 @@
   (test (neq ?vib 0))
   =>
         (retract ?f0)
-        (if (eq ?gen -) then (bind ?gen m))
         (if (eq ?cat noun) then
                 (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)"crlf)
         else
@@ -988,7 +1019,6 @@
   (test (neq ?vib 0))
   =>
         (retract ?f0)
-        (if (eq ?gen -) then (bind ?gen m))
         (if (eq ?cat noun) then
                 (printout ?*A_fp5* "(id-Apertium_input "?h" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)"crlf)
         else
@@ -1015,7 +1045,6 @@
   (test (and (member$ ?h $?ids)(member$ ?id $?ids)))
   =>
         (retract ?f0)
-        (if (eq ?gen -) then (bind ?gen m))
         (if (eq ?cat noun) then
                 (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)"crlf)
         else
@@ -1042,7 +1071,6 @@
   (test (member$ ?h $?ids))
   =>
         (retract ?f0)
-        (if (eq ?gen -) then (bind ?gen m))
         (if (eq ?cat noun) then
                 (printout ?*A_fp5* "(id-Apertium_input "?h" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)"crlf)
         else
@@ -1068,7 +1096,6 @@
   (test (member$ ?id $?ids))
   =>
         (retract ?f0)
-       (if (eq ?gen -) then (bind ?gen m))
         (if (eq ?cat noun) then
                 (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word"<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
         else	(if (eq ?cat verbal_noun) then ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.Added by Roja (04-03-11) 
@@ -1086,7 +1113,7 @@
   (declare (salience 450))
   ?f0<-(id-HM-source ?id ?h_word ?)
   (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(person ?per)(group_ids $?ids)(case ?case))
-  (id-word ?pada_id and|or)
+  (id-word ?pada_id and|or|well)
   (id-gender-src ?id ?gen ?)
   (id-number-src ?id ?num ?)
   (id-cat_coarse ?id ?cat)
@@ -1094,7 +1121,6 @@
   (test (neq ?vib 0))
   =>
         (retract ?f0)
-        (if (eq ?gen -) then (bind ?gen m))
         (if (eq ?cat noun) then
                 (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
         else	(if (eq ?cat verbal_noun) then ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.Added by Roja (04-03-11) 

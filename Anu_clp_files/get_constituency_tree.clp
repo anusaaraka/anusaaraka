@@ -1,6 +1,6 @@
-;(load-facts "E_constituents_info.dat")
-;(assert (daughter ROOT1))
-;(assert (Cons-tree))
+(deffacts dummy_rev_cons_facts
+(Head-Level-Mother-Daughters)
+)
 
 (defrule print_mother_node
 (declare (salience 500))
@@ -36,7 +36,3 @@
 	(retract ?f1 ?f2)
 	(assert (daughter ?Mot))))
 )
-
-;(run)
-;(save-facts "constituency_tree.dat" local Cons-tree)
-

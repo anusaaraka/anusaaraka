@@ -1,3 +1,12 @@
+(deffacts dummy_order_facts
+(Head-Level-Mother-Daughters)
+(Node-Category)
+(id-original_word)
+(id-cat_coarse)
+(id-cat)
+(prep_id-relation-anu_ids)
+)
+
 (defglobal ?*order_debug-file* = order_debug)
 (defglobal ?*count*  = 0) 
 
@@ -101,11 +110,8 @@
 ;The Fateh Prakash Palace is a perfect example of luxury and style that states Udaipur as a city of royal hospitalilty and culture. Added by Sukhada (13-9-11)
 (defrule move_BEandHAVE_b4_SBAR
 (declare (salience 1000))
-(viSeRya-jo_samAnAXikaraNa  ?vi ?samA)
-(subject-subject_samAnAXikaraNa  ?sub ?vi)
-;(parserid-wordid   ?s_pid  ?sub)
-;(parserid-wordid   ?vi_pid  ?vi)
-;(Head-Level-Mother-Daughters ? ? ?mot $? ?s_pid $?)
+(prep_id-relation-anu_ids ? viSeRya-jo_samAnAXikaraNa  ?vi ?samA)
+(prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa  ?sub ?vi)
 (Head-Level-Mother-Daughters ? ? ?mot $? ?sub $?)
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?M $?d ?mot $?d1)
 (id-original_word ?samA ?word)
@@ -120,7 +126,6 @@
 	(assert (Head-Level-Mother-Daughters ?head ?lvl ?M $?d ?mot $?d1 ?SBAR))
 	(assert	(Head-Level-Mother-Daughters ?word1 ?l ?M1 $?d2 $?d3))
 	(assert (Mother ?head))	
-;        (printout ?*order_debug-file* "(rule_name - move_BEandHAVE_b4_SBAR  " ?*count* " " crlf)
         (printout ?*order_debug-file* "(rule_name - move_BEandHAVE_b4_SBAR " ?*count* " "crlf
                           "             Before    - "?head" "?lvl"  "?M"  "(implode$ $?d)" "?mot"  "(implode$ $?d1)"  "crlf
                           "             After     - "?head" "?lvl"  "?M"  "(implode$ $?d)" "?mot"  "(implode$ $?d1)" "?SBAR")"crlf)
@@ -192,13 +197,10 @@
 (defrule dont_rev_if_VP_ends_with_verb
 (declare (salience 1400))
 ?f0<-(Head-Level-Mother-Daughters ?head ?l ?Mot $?d ?VP)
-;(Head-Level-Mother-Daughters ?word ? ?VP ?verb)
 (Head-Level-Mother-Daughters ?word ? ?VP ?id)
 (Node-Category  ?Mot  VP)
 (Node-Category  ?VP  VP)
-;(parserid-wordid ?verb ?id)
 (or (id-original_word ?id ?word)(id-root ?id ?word))
-;(id-cat_coarse ?verb verb)
 (id-cat_coarse ?id verb)
 (not (Mother  ?Mot))
 =>
@@ -281,17 +283,15 @@
 (declare (salience 940))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d1 ?d $?rest)
 (Node-Category  ?Mot  VP)
-;(parserid-wordid ?p_obj1 ?obj1)
-;(parserid-wordid ?p_obj2 ?obj2)
 (or (id-original_word ?kri ?head)(id-root ?kri ?head)) ;I gave Rama a book.The fact that he smiled at me gives me hope.
-(and (kriyA-object_2 ?kri ?obj2)  (kriyA-object_1 ?kri ?obj1))
+(and (prep_id-relation-anu_ids ? kriyA-object_2 ?kri ?obj2)(prep_id-relation-anu_ids ? kriyA-object_1 ?kri ?obj1))
 (or (id-original_word ?obj2 ?wrd)(id-root ?obj2 ?wrd))
 (or (id-original_word ?obj1 ?h)(id-root ?obj1 ?h))
 (Head-Level-Mother-Daughters  ?wrd ? ?d1  $?modf  ?y )
 (Head-Level-Mother-Daughters  ?h ? ?d  $?mod  ?x )
 (not (Mother  ?d1))
 (not (Mother ?d))
-(not (viSeRya-jo_samAnAXikaraNa  ?obj2 ?));I will show you the house which I bought.
+(not (prep_id-relation-anu_ids ? viSeRya-jo_samAnAXikaraNa  ?obj2 ?));I will show you the house which I bought.
 =>
         (bind ?*count* (+ ?*count* 1))
         (retract ?f0)
@@ -365,11 +365,9 @@
 (defrule rev_ADJP_goesto_RB
 (declare (salience 900))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d $?dt)
-;(Head-Level-Mother-Daughters ? ? ?d ?p_id)
 (Head-Level-Mother-Daughters ? ? ?d ?id)
 (Node-Category  ?Mot  ADJP)
 (Node-Category  ?d  RB)
-;(parserid-wordid ?p_id ?id)
 (id-original_word ?id not)
 (not (Mother  ?Mot))
 =>       
@@ -394,7 +392,7 @@
 (Node-Category ?sq  SQ|S)
 (Node-Category ?vp VP)
 (not (Mother  ?Mot))
-(not (viSeRya-jo_samAnAXikaraNa ? ?));Added by Sukhada(9.8.11). Ex. I will show you the house which I bought. Phil gave me a sweater which he bought in Paris. 
+(not (prep_id-relation-anu_ids ? viSeRya-jo_samAnAXikaraNa ? ?));Added by Sukhada(9.8.11). Ex. I will show you the house which I bought. Phil gave me a sweater which he bought in Paris. 
 =>
 	(bind ?*count* (+ ?*count* 1))
         (retract ?f0 ?f1)
@@ -460,8 +458,6 @@
 ?f1<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VP $?d4 ?V $?d5)
 (Node-Category ?VP VP)
 (Node-Category ?ADVP ADVP)
-;(or (and (Node-Category ?V VBD) (Parser_used Stanford-Parser))(and (id-cat_coarse ?V verb)(Parser_used Open-Logos-Parser)));Ol -- for the above sentence only
-;(or (and (Node-Category ?V VBD) (Parser_used Stanford-Parser))(and (id-cat_coarse ?V_id verb)(Parser_used Open-Logos-Parser)(parserid-wordid  ?V ?V_id)));Ol -- for the above sentence only
 (or (Node-Category ?V VBD) (id-cat_coarse ?V verb))
 (not (Mother  ?ADVP))
 =>
@@ -526,12 +522,10 @@
 (defrule prep_in_SBAR_rule
 (declare (salience 800))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?SBAR ?prep $?d)
-;(Head-Level-Mother-Daughters ? ? ?prep ?p_id)
 (Head-Level-Mother-Daughters ? ? ?prep ?id)
 (Node-Category ?SBAR SBAR|PP)
 (Node-Category ?prep IN)
-;(parserid-wordid  ?p_id ?id)
-(not (kriyA-conjunction  ? ?id));It was so dark that I could not see anything.
+(not (prep_id-relation-anu_ids ? kriyA-conjunction  ? ?id));It was so dark that I could not see anything.
 (not (Mother  ?SBAR))
 (test (and (neq ?head that)(neq ?head because) (neq ?head as))); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy. Some grammars are better than others, as we have proved. 
 =>
@@ -547,6 +541,7 @@
 ;Here we undef all the rules (As this rule are firing again after the nodes are replaced with terminal)
 (defrule undefrules
 (declare (salience 799))
+;?f0<-(cntrl_fact_for_rev_order)
 =>
 (save-facts "hindi_rev_order.dat" local Head-Level-Mother-Daughters)
 (undefrule replace_aux_with_head_VP)
@@ -580,9 +575,7 @@
 (Node-Category  ?Mot SBAR)
 (Node-Category  ?dat ?DAT)
 (Head-Level-Mother-Daughters ? ? ?m ?samA)
-;(parserid-wordid ?samA ?samA_id)
-;(subject-subject_samAnAXikaraNa ? ?samA_id)
-(subject-subject_samAnAXikaraNa ? ?samA)
+(prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa ? ?samA)
 =>
         (bind ?*count* (+ ?*count* 1))
         (retract ?f)
@@ -644,17 +637,6 @@
                 	 "              After     - "?head1" "?level" "?mother1" "(implode$ $?pre)" "(implode$ $?daughters)" "(implode$ $?post) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-
-;(defrule map_parserid_to_wrdid
-;;(declare (salience -80))
-;(declare (salience 600))
-;?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?p_id $?pos)
-;(parserid-wordid ?p_id $?w_id)
-;=>
-;        (retract ?f1)
-;        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?w_id $?pos))
-;)
-;-----------------------------------------------------------------------------------------------------------------------
 ;This rule delete's all the SBAR from ROOT
 (defrule rmv_sbar_from_root
 (declare (salience 550))
@@ -687,14 +669,12 @@
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Here ROOT category is changed to SBAR
 (defrule rename_ROOT_cat_to_SBAR
-;(declare (salience -99))
 (declare (salience 500))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut)
 ?f1<-(Node-Category  ?Mot ROOT)
 =>
 	(retract ?f1)
 	(assert (Sen $?daut))
-;	(assert (Node-Category  ?Mot SBAR))
 )
 
 
@@ -710,13 +690,10 @@
 ?f1<-(hindi_id_order $?dau)
 ?f0<-(Sen $?daughters ?id)
 (not (Sen $? ?id1&:(> ?id ?id1)))
-;(test (eq (member$ ?id $?dau) FALSE))
 =>
 	(retract ?f0 ?f1)
 	(assert (hindi_id_order $?dau $?daughters ?id))
 )
-
-
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule print_for_debugging4
 (declare (salience -102))
@@ -732,9 +709,9 @@
 (defrule insert_jo_samAnAXikaraNa
 (declare (salience 4))
 ?f0<-(hindi_id_order $?id ?sub $?id1 ?k $?daut)
-(or (kriyA-object  ?k  10000)(kriyA-aXikaraNavAcI_avyaya  ?k  10000))
-(kriyA-subject  ?k ?sub)
-(viSeRya-jo_samAnAXikaraNa  ?  10000)
+(or (prep_id-relation-anu_ids ? kriyA-object  ?k  10000)(prep_id-relation-anu_ids ? kriyA-aXikaraNavAcI_avyaya  ?k  10000))
+(prep_id-relation-anu_ids ? kriyA-subject  ?k ?sub)
+(prep_id-relation-anu_ids ? viSeRya-jo_samAnAXikaraNa  ?  10000)
 (not (jo_samAn_id_inserted ))
 =>        
         (bind ?*count* (+ ?*count* 1))
@@ -750,18 +727,16 @@
 ; Do you think we should go to the party? 
 (defrule insert_conjunction
 (declare (salience 4))
-(kriyA-conjunction  ?k 10000)
-(kriyA-subject  ?k  ?sub)
+(prep_id-relation-anu_ids ? kriyA-conjunction  ?k 10000)
+(prep_id-relation-anu_ids ? kriyA-subject  ?k  ?sub)
 (Head-Level-Mother-Daughters ? ? ?NP $?ids)
 (Node-Category ?NP NP)
-;?f0<-(hindi_id_order $?id ?sub $?id1 ?k $?daut)
 ?f0<-(hindi_id_order $?id $?ids $?id1 ?k $?daut)
 (not (conj_id_inserted ))
 (test (member$ ?sub $?ids))
 =>
         (bind ?*count* (+ ?*count* 1))
         (retract ?f0)
-       ; (assert (hindi_id_order $?id 10000 ?sub $?id1 ?k $?daut))
         (assert (hindi_id_order $?id 10000 $?ids $?id1 ?k $?daut))
         (assert (conj_id_inserted ))
         (printout ?*order_debug-file* "(rule_name - insert_conjunction " ?*count* crlf

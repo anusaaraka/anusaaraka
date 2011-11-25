@@ -1,3 +1,10 @@
+ (deffacts dummy_sd_cat_facts
+ (id-sd_cat)
+ (parserid-word)
+ (word-wordid-nertype)
+ (parserid-wordid) 
+ )
+
  (defglobal ?*cat_fp* = sd_cat_fp) 
 
  (deffunction string_to_integer (?parser_id)

@@ -1,3 +1,28 @@
+ (deffacts dummy_number_facts
+ (id-word)
+ (id-last_word)
+ (id-wsd_root)
+ (id-wsd_number)
+ (id-wsd_root_mng)
+ (id-wsd_word_mng)
+ (affecting_id-affected_ids-wsd_group_root_mng)
+ (affecting_id-affected_ids-wsd_group_word_mng)
+ (kriyA_id-object_viBakwi)
+ (kriyA_id-object1_viBakwi)
+ (kriyA_id-object2_viBakwi)
+ (kriyA_id-subject_viBakwi)
+ (make_verbal_noun) 
+ (id-H_vib_mng)
+ (meaning_has_been_decided)
+ (id-root-category-suffix-number)
+ (root-verbchunk-tam-chunkids)
+ (verb_agrmt-subject_id-head_id)
+ (verb_agrmt-object_id-head_id)
+ (verb_type-verb-kriyA_mUla-tam)
+ (verb_type-verb-causative_verb-tam)
+ (verb_agrmt-head_id)
+ )
+
  ; Added by Roja.(06-11-10)
  ; Stanford parser, Number information was taken from morph(apertium).
  ; OL parser itself gives its own Number information.
@@ -33,7 +58,7 @@
  (declare (salience 950))
  (id-word ?id ?wrd)
  ?f1<-(id-number-src ?id ?num Default)
- ?f2<-(id-root-category-suffix-number  ?id ? ?morph_cat ?suf ?num1)
+ ?f2<-(id-root-category-suffix-number  ?id ? ? ? ?num1)
  (test (neq ?num1 -))
  =>
        (assert (id-number-src ?id  ?num1  Morph))
@@ -45,7 +70,7 @@
  (defrule verb_rule
  (declare (salience 960))
  ?f1<-(id-number-src ?id ?num Default)
- (root-verbchunk-tam-chunkids ?r ?v ?t ?id $? ?head)
+ (root-verbchunk-tam-chunkids ? ? ? ?id $? ?head)
  ?f2<-(id-root-category-suffix-number  ?id ? verb $?)
  (id-word ?id ?word)
  =>
@@ -64,7 +89,7 @@
  (declare (salience 900))
  ?f1<-(id-word ?kri are|were)
  (verb_agrmt-subject_id-head_id  subject  ?sub  ?kri)
- ?f2<- (id-number-src ?sub ?num ?)
+ ?f2<- (id-number-src ?sub ? ?)
  =>
 	(retract ?f1 ?f2)
 	(assert (id-number-src ?sub  p  OL))

@@ -93,16 +93,15 @@
  (defrule suff_ing
  (declare (salience 1000))
  (id-cat_coarse ?id adjective|noun)
+ (not (meaning_has_been_decided ?id))
  (id-original_word ?id ?word)
  (or (word-morph (original_word  ?word)(root ?root)(suffix	ing))(word-morph (original_word  ?word)(root ?root)(suffix      en))(word-morph (original_word  ?word)(root ?root)(suffix      ed)))
- (not (meaning_has_been_decided ?id))
  (not (file_loaded ?id))
   =>
-  (bind ?file (str-cat ?*path* "/WSD/wsd_rules/" ?root ".clp"))
-
+	(bind ?file (str-cat ?*path* "/WSD/wsd_rules/" ?root ".clp")	)
         (if (neq (load* ?file) FALSE) then
             (assert (file_loaded ?id))
-       )
+       	)
  ) 
  ;---------------------------------------------------------------------------------------------------------
  (defrule end

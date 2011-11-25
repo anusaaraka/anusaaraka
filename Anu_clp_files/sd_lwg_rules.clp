@@ -1,4 +1,12 @@
- (deffunction string_to_integer (?parser_id)
+
+(deffacts dummy_sd_lwg_facts
+(Head-Level-Mother-Daughters)
+(Node-Category)
+(parserid-word)
+(parser_id-root-category-suffix-number)
+)
+
+(deffunction string_to_integer (?parser_id)
 ; Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
 

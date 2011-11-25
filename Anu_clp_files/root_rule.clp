@@ -16,9 +16,9 @@
  ;-----------------------------------------------------------------------------------------------------------------------
  ; Anusaaraka shall allow users to access text in any Indian language after translation from the source language (i.e English or any other regional Indian language)
   (defrule that_is_rule
-  (parser_id-cat_coarse ?pid ?cat)
-  (parserid-wordid  ?pid ?wid)
   (id-original_word ?wid  ABBRThatis)
+  (parserid-wordid  ?pid ?wid)
+  (parser_id-cat_coarse ?pid ?cat)
   (word-morph (original_word ABBRThatis)(root ?root)(category  ?cat)(suffix ?suf)(number ?num))
   ?f0<-(morph_analysis_to_be_choosen ?wid)
   =>
@@ -36,11 +36,11 @@
  (declare (salience 200))
  (parser_id-cat_coarse  ?pid adjective)
  (parserid-wordid  ?pid ?wid)
- (id-original_word ?wid  ?word)
+ ?f0<-(morph_analysis_to_be_choosen ?wid)
+ (id-original_word ?wid  ?word&~left); Some people write with their left hand .
  (word-morph (original_word  ?word)(root ?root1)(category adjective)(suffix ?suf1)(number ?num1))
  (word-morph (original_word  ?word)(root ?root)(category  verb)(suffix ?suf)(number ?num))
- (test (neq ?word left)) ; Some people write with their left hand .
- ?f0<-(morph_analysis_to_be_choosen ?wid)
+; (test (neq ?word left)) ; Some people write with their left hand .
  (test (or (eq ?suf en)(eq ?suf ing)))
  =>
    (retract ?f0)

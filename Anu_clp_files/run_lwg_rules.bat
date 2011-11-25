@@ -11,3 +11,4 @@
  (open "lwg_info_tmp.dat" old_lwg_file "a")
  (run)
  (close old_lwg_file)
+ (clear)

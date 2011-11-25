@@ -1,38 +1,38 @@
 ; Written by Sukhada
 
-(open "relations_tmp.dat" open-file "a")
-(open "relations_debug.dat" debug_fp "a")
-(defglobal ?*fp* = open-file)
-(defglobal ?*dbug* = debug_fp)
-
- (open "word.dat" open-word "a")
- (open "original_word.dat" open-orign "a")
- (open "hindi_meanings_tmp.dat" hmng_fp "a")
-
+ (defglobal ?*fp* = open-file)
+ (defglobal ?*dbug* = debug_fp)
  (defglobal ?*open-word* = open-word)
  (defglobal ?*open-orign* = open-orign)
  (defglobal ?*hmng_fp* = hmng_fp)
  (defglobal ?*list* = (create$ ))
 
+ (deffacts dummy_sd_rel_info
+ (parserid-word)
+ (parserid-wordid)
+ (id-cat)
+ (propogation_rel_name-sids)
+ (rel_name-sids)
+ (root-verbchunk-tam-parser_chunkids)
+ (lwg_root-verbchunk-tam-chunkids)
+ )
+ 
+
 (deffunction string_to_integer (?parser_id); [Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
 ;------------------------------------------------------------------------------------------------------------------------
-;(deffunction my_string_cmp> (?a ?b)
-;  (> (str-compare ?a ?b) 0))
-
 (deffunction my_string_cmp (?str1 ?str2)
    (bind ?n1 (string-to-field (sub-string 2 (length ?str1) ?str1)))
    (bind ?n2 (string-to-field (sub-string 2 (length ?str2) ?str2)))
    (> ?n1 ?n2))
-
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule replace_left_head
  (declare (salience 9999))
+ (parserid-word ?id and|or)
  (propogation_rel_name-sids ?rel  ?x ?y)
  (propogation_rel_name-sids ?rel2  ?z ?y)
  (rel_name-sids ?rel1   ?x ?y)
  (rel_name-sids conj_and|conj_or  ?x ?z)
- (parserid-word ?id and|or)
  (test (and (> (string_to_integer ?id) (string_to_integer ?x)) (< (string_to_integer ?id) (string_to_integer ?z)) (neq ?rel conj_and) (neq ?rel conj_or) (neq ?rel2 conj_or) (neq ?rel2 conj_and) (eq ?rel ?rel1) (eq ?rel ?rel2) ))
  =>
  (assert (rel_name-sids ?rel  ?id  ?y))
@@ -46,11 +46,11 @@
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule replace_right_head
  (declare (salience 9999))
+ (parserid-word ?id and|or)
  (propogation_rel_name-sids ?rel  ?x ?y)
  (propogation_rel_name-sids ?rel2  ?x ?z)
  (rel_name-sids ?rel1   ?x ?y)
  (rel_name-sids conj_and|conj_or  ?y ?z)
- (parserid-word ?id and|or)
  (test (and (> (string_to_integer ?id) (string_to_integer ?y)) (< (string_to_integer ?id) (string_to_integer ?z)) (neq ?rel conj_and) (neq ?rel conj_or) (eq ?rel ?rel1) (eq ?rel ?rel2) ))
  =>
  (assert (rel_name-sids ?rel  ?x  ?id))
@@ -74,7 +74,7 @@
 ;------------------------------------------------------------------------------------------------------------------------ 
  (defrule expl
  (rel_name-sids expl ?kriyA ?dummy_sub)
- (parserid-word ?kriyA ?word is|are|was|were|be);I went there to buy a book.
+ (parserid-word ?kriyA ?word&is|are|was|were|be);I went there to buy a book.
  (not (sub_for_kriyA ?kriyA))
  =>
  (printout	?*fp*	"(prep_id-relation-parser_ids  -     kriyA-dummy_subject	"?kriyA"	"?dummy_sub")"crlf)	
@@ -83,10 +83,9 @@
  ; Ex. There is a ghost in the room.
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule expl_not_dummy
- (rel_name-sids  expl ?kriyA ?dum)
- (rel_name-sids  nsubj  ?k ?s)
+ (rel_name-sids  expl ?kriyA ?dum&~P1)
  (parserid-word ?dum there)
- (test(neq ?dum P1))
+ (rel_name-sids  nsubj  ?k ?s)
  =>
  (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-aXikaraNavAcI_avyaya   "?k"        "?dum")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   expl_not_dummy    kriyA-aXikaraNavAcI_avyaya     "?k"        "?dum")"crlf)
@@ -106,7 +105,7 @@
 
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -    kriyA-aBihiwa       "?kriyA"        "?sub")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj_expl   kriyA-aBihiwa   "?kriyA"        "?sub")"crlf)
- (assert (sub_for_kriyA ?kriyA  ?sub))
+ (assert (sub_for_kriyA ?kriyA ))
 )
 ;Ex. There was a red mark on the door . 
 ;------------------------------------------------------------------------------------------------------------------------
@@ -141,7 +140,7 @@
  =>
  (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?kriyA"        "?sub")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kriyA_sub_rule   kriyA-subject   "?kriyA"        "?sub")"crlf)
- (assert (sub_for_kriyA ?kriyA ?sub))
+ (assert (sub_for_kriyA ?kriyA))
  )
  ;Added by Shirisha Manju
  ; The boy has a computer . The train left on time .
@@ -172,8 +171,8 @@
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule nsubj_conj
  (declare (salience 100))
- (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
  (rel_name-sids conj_and|conj_or|conj_but  ?kriyA ?kriyA1)
+ (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
  (parser_id-cat_coarse ?kriyA1 verb);The City Palace was built by Maharaja Jai Singh II and is a synthesis of Mughal and Rajasthani architecture.
  (not (rel_name-sids cop  ?kriyA ?v))
  (not (rel_name-sids nsubj  ?kriyA1 ?s))
@@ -189,8 +188,8 @@
  ;Added by Shirisha Manju (07-09-11) Suggested by Sukhada
  (defrule nsubj_conj_1
  (declare (salience 100))
- (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
  (rel_name-sids conj_and|conj_or|conj_but  ?kriyA ?kriyA1)
+ (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
  (rel_name-sids cop ?kriyA1 ?s1)
  (not (rel_name-sids cop  ?kriyA ?v))
  (not (rel_name-sids nsubj  ?kriyA1 ?s))
@@ -203,8 +202,6 @@
  )
  ; Ex. The City Palace was built by Maharaja Jai Singh II and is a synthesis of Mughal and Rajasthani architecture.
  ;------------------------------------------------------------------------------------------------------------------------
- 
-
  (defrule dobj_as_well_as
  (declare (salience 900))
  (rel_name-sids conj_and|conj_or  ?ob ?ob1)
@@ -221,9 +218,8 @@
  ;SD gives multiple conj_and relations with different ids for same 'AND', So handling them in one single list.
  (defrule decide_conj_rel
  (declare (salience -900))
- ?f<-(rel_name-sids ?conj  ?x ?y)
- ?f1<-(rel_name-sids ?conj  ?x $?y1)
- (test (or (eq ?conj conj_and) (eq ?conj conj_or)))
+ ?f<-(rel_name-sids ?conj&conj_and|conj_or   ?x ?y)
+ ?f1<-(rel_name-sids ?conj&conj_and|conj_or  ?x $?y1)
  (test (eq (member$ ?y ?y1) FALSE))
  =>
    (bind ?plist (create$ ))
@@ -249,8 +245,9 @@
  ;------------------------------------------------------------------------------------------------------------------------
 (defrule nsubjpass/csubjpass
 (declare(salience 200))
-(rel_name-sids nsubjpass|csubjpass ?kriyA ?sub)
 ?f0<-(rel_name-sids agent ?kriyA ?by_sub)
+(rel_name-sids nsubjpass|csubjpass ?kriyA ?sub)
+(basic_rel_name-sids prep ?kriyA ?prep)
 (parserid-word ?prep  by);Added by manju (07-03-11)
 =>
 (retract ?f0)
@@ -357,9 +354,9 @@
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule cop+nsubj_for_it
  (declare(salience 101))
+ ?f0<-(parserid-word ?sub It)
  (rel_name-sids nsubj|nsubjpass ?samAnAXikaraNa  ?sub)
  (rel_name-sids cop  ?samAnAXikaraNa ?kriyA)
- ?f0<-(parserid-word ?sub It);|it)
  (not (rel_name-sids infmod ?samAnAXikaraNa ?))
  =>
  (retract ?f0)
@@ -451,80 +448,6 @@
  )
  ; Ex.  He is John's cousin. Sam is my brother.
 ;------------------------------------------------------------------------------------------------------------------------
- (defrule poss
- (rel_name-sids poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
- (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_viSeRaNa))
- =>
- (printout   ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
- (printout   ?*dbug* "(prep_id-Rule-Rel-ids  -   poss    viSeRya-RaRTI_viSeRaNa  "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
- )
- ; Ex.  He is John's cousin. Sam is my brother.
-;------------------------------------------------------------------------------------------------------------------------
- (defrule poss
- (rel_name-sids poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
- (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_viSeRaNa))
- =>
- (printout   ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
- (printout   ?*dbug* "(prep_id-Rule-Rel-ids  -   poss    viSeRya-RaRTI_viSeRaNa  "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
- )
- ; Ex.  He is John's cousin. Sam is my brother.
-;------------------------------------------------------------------------------------------------------------------------
- (defrule poss
- (rel_name-sids poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
- (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_viSeRaNa))
- =>
- (printout   ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
- (printout   ?*dbug* "(prep_id-Rule-Rel-ids  -   poss    viSeRya-RaRTI_viSeRaNa  "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
- )
- ; Ex.  He is John's cousin. Sam is my brother.
-;------------------------------------------------------------------------------------------------------------------------
- (defrule poss
- (rel_name-sids poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
- (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_viSeRaNa))
- =>
- (printout   ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
- (printout   ?*dbug* "(prep_id-Rule-Rel-ids  -   poss    viSeRya-RaRTI_viSeRaNa  "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
- )
- ; Ex.  He is John's cousin. Sam is my brother.
-;------------------------------------------------------------------------------------------------------------------------
- (defrule poss
- (rel_name-sids poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
- (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_viSeRaNa))
- =>
- (printout   ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
- (printout   ?*dbug* "(prep_id-Rule-Rel-ids  -   poss    viSeRya-RaRTI_viSeRaNa  "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
- )
- ; Ex.  He is John's cousin. Sam is my brother.
-;------------------------------------------------------------------------------------------------------------------------
- (defrule poss
- (rel_name-sids poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
- (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_viSeRaNa))
- =>
- (printout   ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
- (printout   ?*dbug* "(prep_id-Rule-Rel-ids  -   poss    viSeRya-RaRTI_viSeRaNa  "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
- )
- ; Ex.  He is John's cousin. Sam is my brother.
-;------------------------------------------------------------------------------------------------------------------------
- (defrule poss
- (rel_name-sids poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
- (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_viSeRaNa))
- =>
- (printout   ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
- (printout   ?*dbug* "(prep_id-Rule-Rel-ids  -   poss    viSeRya-RaRTI_viSeRaNa  "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
- )
- ; Ex.  He is John's cousin. Sam is my brother.
-;------------------------------------------------------------------------------------------------------------------------
- (defrule poss
- (rel_name-sids poss ?RaRTI_viSeRya ?RaRTI_viSeRaNa)
- (not (got_viSeRya-RaRTI_viSeRaNa ?RaRTI_viSeRaNa))
- =>
- (printout   ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-RaRTI_viSeRaNa   "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
- (printout   ?*dbug* "(prep_id-Rule-Rel-ids  -   poss    viSeRya-RaRTI_viSeRaNa  "?RaRTI_viSeRya"        "?RaRTI_viSeRaNa")"crlf)
- )
- ; Ex.  He is John's cousin. Sam is my brother.
-;------------------------------------------------------------------------------------------------------------------------
-;tmod(paper-10, today-8)
-;possessive(today-8, 's-9)
  (defrule tmod_poss
  (rel_name-sids tmod ?vi ?RaRTI_vi)
  (rel_name-sids possessive ?RaRTI_vi ?apos)
@@ -605,21 +528,10 @@ else
 )
  ;Ex. She works very carefully.
 ;------------------------------------------------------------------------------------------------------------------------
-(defrule advmod2
-(rel_name-sids advmod ?kriyA ?lupwa_p)
-(rel_name-sids ccomp|xcomp|pcomp ? ?kriyA);Modified by Manju (added pcomp in list Ex:By going there you can earn more money.)
-(parserid-word  ?lupwa_p  again|later|here|there|somewhere|anywhere|everywhere|now|outside|longer|alone|next|upstairs|downstairs|upwards|downwards|above|down);added on 13-01-11 by Sukhada
-=>
-(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-aXikaraNavAcI_avyaya     "?kriyA"        "?lupwa_p")"crlf)      
-(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   advmod2  kriyA-aXikaraNavAcI_avyaya    "?kriyA"        "?lupwa_p")"crlf)   ; kriyA-lupwa_prep_saMbanXI  is now changed to kriyA-aXikaraNavAcI_avyaya (Modified by Roja 28-12-10 Suggested by Sukhada)
-)
- ; Ex. I want to go there . 
- ; Added by Mahalaxmi.
-;------------------------------------------------------------------------------------------------------------------------
  (defrule advmd
  (declare (salience 100))
  (rel_name-sids advmod ?kriyA ?lupwa_p)
- (parser_id-cat_coarse ?kriyA verb)
+ (or (parser_id-cat_coarse ?kriyA verb)(basic_rel_name-sids pcomp ? ?kriyA))
  (parserid-word  ?lupwa_p  again|later|here|there|somewhere|anywhere|everywhere|now|outside|longer|alone|next|upstairs|downstairs|upwards|downwards|above|down)
  =>
  (assert (got_kriyA-aXikaraNavAcI_avyaya_rel_for ?lupwa_p))

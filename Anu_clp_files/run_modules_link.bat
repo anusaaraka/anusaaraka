@@ -252,14 +252,13 @@
  ;----------------------------------------------------------------------
  ; Generate tam for all verbs
  (load "global_path.clp")
- (bind ?*path* (str-cat ?*path* "/Anu_clp_files/vibakthi_id.bclp"))
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/tam_id.bclp"))
  (bload ?*path*)
  (load-facts "lwg_info.dat")
  (load-facts "meaning_to_be_decided.dat")
  (load-facts "revised_preferred_morph.dat")
  (load-facts "morph.dat")
  (load-facts "original_word.dat")
- (open "vibakthi_id.dat" vib_id_fp "a")
  (open "tam_id.dat" tam_id_fp "a")
  (run)
  (clear)
@@ -322,6 +321,7 @@
  (bload ?*path*)
  (load-facts "wsd_tam_facts_output.dat")
  (load-facts "lwg_info.dat")
+ (load-facts "tam_id.dat")
  (load-facts "wsd_facts_output.dat")
  (load-facts "pada_id_info.dat")
  (load-facts "meaning_to_be_decided.dat")
@@ -409,8 +409,8 @@
  ;----------------------------------------------------------------------
  ; Determine the number of each word.
  (load "global_path.clp")
- (bind ?*path* (str-cat ?*path* "/Anu_clp_files/number.clp"))
- (load ?*path*)
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/number.bclp"))
+ (bload ?*path*)
  (load-facts "number_tmp.dat")
  (load-facts "word.dat")
  (load-facts "revised_preferred_morph.dat")

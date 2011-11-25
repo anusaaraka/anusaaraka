@@ -1,6 +1,6 @@
  (load "global_path.clp")
- (bind ?*path* (str-cat ?*path* "/Anu_clp_files/English_sentence.clp"))
- (load ?*path*)
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/English_sentence.bclp"))
+ (bload ?*path*)
  (load-facts "word.dat")
  (load-facts "vibakthi_info.dat")
  (load-facts "punctuation_info.dat")
@@ -10,8 +10,8 @@
  (clear)
  ;----------------------------------------------------------------------
  (load "global_path.clp")
- (bind ?*path* (str-cat ?*path* "/Anu_clp_files/hindi_sentence.clp"))
- (load ?*path*)
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/hindi_sentence.bclp"))
+ (bload ?*path*)
  (load-facts "word.dat")
  (load-facts "hindi_meanings.dat")
  (load-facts "id_Apertium_output.dat")
@@ -22,5 +22,5 @@
  (open "hindi_sentence.dat" h_sen_fp "a")
  (run)
  (clear)
-(exit)
+ (exit)
 

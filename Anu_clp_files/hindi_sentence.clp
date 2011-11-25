@@ -1,3 +1,18 @@
+ ;Added by Shirisha Manju (19-11-11)
+ (deffacts dummy_hin_sen_facts
+ (hindi_id_order)
+ (id-attach_emphatic)
+ (id-Apertium_output)
+ (id-left_punctuation)
+ (id-right_punctuation)
+ (id-HM-source)
+ (id-inserted_sub_id)
+ (id-word)
+ (id-last_word)
+ (para_id-sent_id-word_id-original_word-hyphenated_word)
+ (id-original_word)
+ )
+
 (defglobal ?*hin_sen-file* = h_sen_fp)
  
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot preceeding_part_of_verb (default 0)) (slot preposition (default 0))(slot Hin_position (default 0)))
@@ -6,27 +21,24 @@
  ;When none worked satisfactorily , his assistant complained ," All our work is in vain ". 
  (defrule attach_emphatic
  (declare (salience 1010))
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
+ ?f1<-(id-attach_emphatic ?id ?wrd)
  (id-Apertium_output ?id $?wrd_analysis)
- ?f1<- (id-attach_emphatic ?id ?wrd)
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
  =>
         (retract ?f0 ?f1)
         (assert (hindi_id_order $?id1  $?wrd_analysis ?wrd $?id2))
  )
-
  ;======================== Generate hindi sentence using Apertium output and  punctuations ====================
  ;Added by Shirisha Manju (22-12-10)
  (defrule gene_sent_rt_lt
  (declare (salience 1001))
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
- (id-Apertium_output ?id $?wrd_analysis)
+ ?f1<-(id-Apertium_output ?id $?wrd_analysis)
  (id-left_punctuation ?id "left_paren")
  (id-right_punctuation ?id "right_paren")
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
  =>
 	(retract ?f0 )
-        (bind ?lp1 (string-to-field "left_paren"))
-        (bind ?rp1 (string-to-field "right_paren"))
-        (assert (hindi_id_order $?id1 ?lp1 $?wrd_analysis  ?rp1 $?id2))
+        (assert (hindi_id_order $?id1 left_paren $?wrd_analysis right_paren $?id2))
  )
  ;----------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (22-12-10)
@@ -35,44 +47,60 @@
  ;Ex: As can be seen from Figure 11.1 the functions printf(), and scanf() fall under the category of formatted console I per O functions.
  (defrule gene_sent_lt_NONE
  (declare (salience 1000))
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
- (id-Apertium_output ?id ?wrd $?wrd_analysis)
+ ?f1<-(id-Apertium_output ?id ?wrd $?wrd_analysis)
  (id-left_punctuation ?id "NONE")
  (id-right_punctuation ?id ?rp)
- (test (or (eq ?rp "left_paren")(eq ?rp "right_paren" )(eq ?rp "equal_to" )(eq ?rp "left_parenright_paren")(eq ?rp "left_parenright_paren,") )) 
+ (test (or (eq ?rp "left_paren")(eq ?rp "right_paren" )(eq ?rp "equal_to" )(eq ?rp "left_parenright_paren")(eq ?rp "left_parenright_paren,") ))
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
  =>
-  	(retract ?f0 )
-        (bind ?rp2 (string-to-field ?rp))
+  	(retract ?f0)
+	(bind ?rp1 (string-to-field ?rp))
 	(if (or (eq ?rp "left_paren" )(eq ?rp "right_paren" ) (eq ?rp "equal_to" )) then
-		(assert (hindi_id_order $?id1 ?wrd $?wrd_analysis ?rp2 $?id2))
-       		 else  (if (or (eq ?rp "left_parenright_paren")(eq ?rp "left_parenright_paren,")) then   
-                                (bind ?wrd (string-to-field(str-cat ?wrd ?rp2)))
-				(assert (hindi_id_order $?id1 ?wrd $?wrd_analysis $?id2))
-                       )
+		(assert (hindi_id_order $?id1 ?wrd $?wrd_analysis ?rp1 $?id2))
+	else  (if (or (eq ?rp "left_parenright_paren")(eq ?rp "left_parenright_paren,")) then   
+		        (bind ?wrd (string-to-field(str-cat ?wrd ?rp1)))
+			(assert (hindi_id_order $?id1 ?wrd $?wrd_analysis $?id2))
+              )
 	)
  )
  ;----------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (22-12-10) 	
  ;Ex: Mr. Smith (a lawyer for Kodak) refused to comment.
- (defrule gene_sent_rt_NONE
+ (defrule gen_sent_rt_NONE
  (declare (salience 1000))
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
- (id-Apertium_output ?id $?wrd_analysis)
+ ?f1<-(id-Apertium_output ?id $?wrd_analysis)
  (id-left_punctuation ?id ?lp)
- (id-right_punctuation ?id "NONE")
  (test (or (eq ?lp "left_paren")(eq ?lp "right_paren" )(eq ?lp "$" )))
+ (id-right_punctuation ?id "NONE")
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
  =>
         (retract ?f0 )
-        (bind ?lp1 (string-to-field ?lp))
+	(bind ?lp1 (string-to-field ?lp))
 	(assert (hindi_id_order $?id1 ?lp1 $?wrd_analysis  $?id2))
  )
- ;----------------------------------------------------------------------------------------------------------
+
+ ;Added by Shirisha Manju (21-11-11)
+ ; The inscription on the tomb of Michael-Faraday (1897-1990).
+ (defrule gen_sent_lt
+ (declare (salience 1000))
+ ?f1<-(id-Apertium_output ?id $?wrd_analysis)
+ (id-right_punctuation ?id ").")
+ (id-left_punctuation ?id "left_paren")
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
+ =>
+        (retract ?f0 )
+        (assert (hindi_id_order $?id1 left_paren $?wrd_analysis  right_paren $?id2))
+ )
+ 
+
+
+;----------------------------------------------------------------------------------------------------------
  ;Substituting Apertium output for the id(1000) 
  ;Added by Shirisha Manju (03-12-10)
  (defrule gene_sent1
  (declare (salience 950))
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
  (id-Apertium_output ?id $?wrd_analysis)
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
  =>
  	(retract ?f0) 
 	(assert (hindi_id_order $?id1  $?wrd_analysis  $?id2))
@@ -82,29 +110,27 @@
  ;Added by Shirisha Manju (22-12-10) 
  (defrule hnd_mng_rt_lt
  (declare (salience 910))
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
  ?f1<-(id-HM-source ?id ?hmng ?)
  (id-left_punctuation ?id "left_paren")
  (id-right_punctuation ?id "right_paren")
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
  =>
         (retract ?f0 ?f1)
-        (bind ?lp1 (string-to-field "left_paren"))
-        (bind ?rp1 (string-to-field "right_paren"))
-        (bind ?hmng (explode$ (str-cat ?lp1 ?hmng ?rp1)))
+        (bind ?hmng (explode$ (str-cat left_paren ?hmng right_paren)))
 	(assert (hindi_id_order $?id1 ?hmng $?id2))
  )
  ;---------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (22-12-10)
  (defrule hnd_mng_lt_NONE
  (declare (salience 900))
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
  ?f1<-(id-HM-source ?id ?hmng ?)
- (id-left_punctuation ?id "NONE")
  (id-right_punctuation ?id ?rp)
- (test (or (eq ?rp "left_paren")(eq ?rp "right_paren" )(eq ?rp "equal_to" ))) 
+ (test (or (eq ?rp "left_paren")(eq ?rp "right_paren" )(eq ?rp "equal_to" )))
+ (id-left_punctuation ?id "NONE")
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
  =>
         (retract ?f0 ?f1)
-        (bind ?rp1 (string-to-field ?rp))
+	(bind ?rp1 (string-to-field ?rp))
 	(bind ?hmng (explode$ (str-cat ?hmng ?rp1)))
 	(assert (hindi_id_order $?id1 ?hmng $?id2))
  )
@@ -112,15 +138,15 @@
  ;Added by Shirisha Manju (22-12-10)    
  (defrule hnd_mng_rt_NONE
  (declare (salience 1000))
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
  ?f1<-(id-HM-source ?id ?hmng ?)
  (id-left_punctuation ?id ?lp)
- (id-right_punctuation ?id "NONE")
  (test (or (eq ?lp "left_paren")(eq ?lp "right_paren" )))
+ (id-right_punctuation ?id "NONE")
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
  =>
         (retract ?f0 ?f1)
 	(bind ?lp1 (string-to-field ?lp))
-	(bind ?hmng (explode$ (str-cat ?hmng ?lp1)))
+	(bind ?hmng (explode$ (str-cat ?hmng" "?lp1)))
 	(assert (hindi_id_order $?id1 ?hmng $?id2))	
  )
  ;---------------------------------------------------------------------------------------------------------
@@ -128,8 +154,8 @@
  ;Added by Shirisha Manju (03-12-10)
  (defrule substitute_hnd_mng1
  (declare (salience 850))
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
  ?f1<-(id-HM-source ?id ?hmng ?)
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
  =>
         (retract ?f0 ?f1)
         (assert (hindi_id_order $?id1 ?hmng $?id2))
@@ -138,35 +164,72 @@
  ;================================ Substituting english word if hindi meaning is not present =================
 
  ;Modified by Shirisha Manju (01-12-10)
- (defrule substitute_eng_word 
+ (defrule substitute_eng_word_lt_paran 
  (declare (salience 800))
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
+ (id-left_punctuation ?id "left_paren")
+ (id-right_punctuation ?id "NONE")
  ?f1<-(id-word ?id ?wrd)
- (id-left_punctuation ?id ?lp)
- (id-right_punctuation ?id ?rp)
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
  =>
   	(retract ?f0 ?f1)
-	(bind ?lp1 (string-to-field ?lp))
-	(bind ?rp1 (string-to-field ?rp))
-	(if (and (eq ?rp "NONE" )(eq ?lp "left_paren" )) then
-	        (assert (hindi_id_order $?id1 ?lp1 ?wrd $?id2))
-	else    (if (and (eq ?lp "NONE" )(eq ?rp "right_paren" )) then
-	                (assert (hindi_id_order $?id1 ?wrd ?rp1 $?id2))
-		 else    (if (and (eq ?lp "left_paren")(eq ?rp "right_paren" )) then
-                                (assert (hindi_id_order $?id1 ?lp1 ?wrd ?rp1 $?id2))	
-	  	 	 else    (if (and (eq ?lp "NONE") (eq ?rp "equal_to" )) then 
-					(bind ?wrd (explode$ (str-cat ?wrd ?rp1)))
-					(assert (hindi_id_order $?id1 ?wrd $?id2))
-				else (if (and (eq ?lp "left_paren") (eq ?rp ")." )) then
-					(bind ?wrd (explode$ (str-cat ?lp1 ?wrd)))
-                                        (assert (hindi_id_order $?id1 ?wrd $?id2))
-				     else
-	        	                (assert (hindi_id_order $?id1 ?wrd $?id2)))					
-				 )
-                        )
-		)
-	)
+	(assert (hindi_id_order $?id1 left_paren ?wrd $?id2))
  )
+
+ (defrule substitute_eng_word_rt_paran
+ (declare (salience 800))
+ (id-right_punctuation ?id "right_paren")
+ (id-left_punctuation ?id "NONE")
+ ?f1<-(id-word ?id ?wrd)
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
+ =>
+        (retract ?f0 ?f1)
+	(assert (hindi_id_order $?id1 ?wrd right_paren $?id2))
+ )
+
+ (defrule substitute_eng_word_lt_and_rt_paran
+ (declare (salience 800))
+ (id-left_punctuation ?id "left_paren")
+ (id-right_punctuation ?id "right_paren")
+ ?f1<-(id-word ?id ?wrd)
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
+ =>
+        (retract ?f0 ?f1)
+        (assert (hindi_id_order $?id1 left_paren ?wrd right_paren $?id2))
+ )
+
+ (defrule substitute_eng_word_equal_paran
+ (declare (salience 800))
+ (id-right_punctuation ?id "equal_to")
+ (id-left_punctuation ?id "NONE")
+ ?f1<-(id-word ?id ?wrd)
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
+ =>
+        (retract ?f0 ?f1)
+        (assert (hindi_id_order $?id1 ?wrd equal_to $?id2))
+ )
+ (defrule substitute_eng_word_left_paran2
+ (declare (salience 800))
+ (id-right_punctuation ?id ").")
+ (id-left_punctuation ?id "left_paren")
+ ?f1<-(id-word ?id ?wrd)
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
+ =>
+        (retract ?f0 ?f1)
+        (bind ?wrd (explode$ (str-cat left_paren ?wrd)))
+        (assert (hindi_id_order $?id1 ?wrd $?id2))
+ )
+
+ (defrule substitute_eng_word
+ (declare (salience 750))
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
+ ?f1<-(id-word ?id ?wrd)
+ (id-left_punctuation ?id ?)
+ (id-right_punctuation ?id ?)
+ =>
+        (retract ?f0 ?f1)
+        (assert (hindi_id_order $?id1 ?wrd $?id2))
+ )
+
  ;---------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (07-02-11) 
  ; to deleted repeated ki in hindi sentence Ex: He thought that she may have missed the train.
@@ -212,7 +275,7 @@
                 (printout ?*hin_sen-file* (implode$ $?var) ?rp1 crlf)
               else 
 		(if (eq ?rp ").") then ;The inscription on the tomb of Michael-Faraday (1897-1990).
-	                (printout ?*hin_sen-file* (implode$ $?var) "right_paren." crlf)
+	                (printout ?*hin_sen-file* (implode$ $?var) "." crlf)
                 else
                   	(printout ?*hin_sen-file* (implode$ $?var) ?rp crlf)
                 )
