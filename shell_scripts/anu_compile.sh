@@ -52,15 +52,18 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/eng-animate-list.gdbm  < eng-animate-list.txt
  echo "Creating transitive-verb-list.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/transitive-verb-list.gdbm  < transitive-verb-list.txt
+ echo "Creating idioms.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/GIT/anu_testing/Anu_databases/idioms.gdbm < idioms.txt
+ echo "Creating compound_phrase.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/compound_phrase.gdbm < compound-matching/compound_phrase.txt
 
  cd vb_root
  echo "Creating ol_vb_root.gdbm"
  ./create_dbm.pl  $HOME_anu_test/Anu_databases/ol_vb_root.gdbm < openlogos_verb_root.txt
 
- echo "Creating compound.gdbm"
  cd $HOME_anu_test/Anu_data/compound-matching
  sh make-dict.sh
- mv compound.gdbm $HOME_anu_test/Anu_databases/.
+# mv compound.gdbm $HOME_anu_test/Anu_databases/.
  mv Complete_sentence.gdbm $HOME_anu_test/Anu_databases/.
 
  echo "Compiling c and flex programs"

@@ -1,0 +1,94 @@
+//Shabdanjali is kept in 26 functions in java script "fetchshabd[a-z]"
+//This speeds up the fetching process.
+function cautionwith(a) {
+		var contentshabd = document.getElementById('content');
+		var content1shabd = document.getElementById('content1caution');
+		content1shabd.innerHTML ='<div id="hnd"/>';
+		//contentshabd.innerHTML = '<div id="with"\><br\/\>"N","1.विदेशी-द्वेष"<br\/\>Some German patriots suffer from xenophobia.<br\/\><br\/\><\/div\>'
+		contentshabd.innerHTML = '<div id="with"\><br\/\><p\/\>अंग्रेजी के मूल भाषयों के लिये \'He is married with a sixteen years old girl.\' = (उसकी शादी हो गई और उसकी एक सोलह साल की लड़की है.) औ\'He is married to a sixteen years old girl.\' = (उसकी शादी एक सोलह साल की लड़की से हो गई.)लेकिन अन्य भाषी, \'He is married with a sixteen years old girl.\' = (उसकी शादी एक सोलह साल की लड़की से हो गई.) के रूप में समझ लेते है जोकिइस लिये , इस तरह के वाक्यों को देखने पर थोड़ा सा सावधान रहना चाहिये. नीचे दिये गये वाक्यों को देखिये.<ol type="1"\/\><li\/\> He is married with a sixteen years old girl.<li\/\> She\'s now married with a child and working with the Coalition Against Trafficking in Women.<li\/\> he is married with a blended family that includes her husband\'s children from a previous marriage.<li\/\> Now they\'re married with a baby.<li\/\> Confident and secure, and married with a 2-year-old daughter ......<li\/\> Next is comedian and actor Rick Younger, who\'s married with a son.<\/ol\/\><\/div\>'
+
+  var text = document.getElementById(a).innerHTML;
+
+		if(text){
+		var mngshabd = document.getElementById("hnd");
+		mngshabd.innerHTML = '<h3>' + a + '</h3>' + text;
+		}
+		else {
+
+		var mngshabd = document.getElementById("hnd");
+		mngshabd.innerHTML = '<h3>' + a + '</h3>' + 'Word not found';
+
+		}
+
+		}
+
+
+function cautioncharge(a) {
+		var contentshabd = document.getElementById('content');
+		var content1shabd = document.getElementById('content1caution');
+		content1shabd.innerHTML ='<div id="hnd"/>';
+		//contentshabd.innerHTML = '<div id="with"\><br\/\>"N","1.विदेशी-द्वेष"<br\/\>Some German patriots suffer from xenophobia.<br\/\><br\/\><\/div\>'
+		contentshabd.innerHTML = '<div id="charge"\><br\/\><p\/\> शब्द के लिये अभियोग लगाना, कार्यभार सौंपना, आदेश देना, हमला करना, भुगतान माँगना, चार्ज करना आदि कई सारे अर्थ हैं. संदर्भ के अनुसार उदाहरण के तौर पर, <br\/\> है..<ol type="a"\/\><li\/\>He charges ten dollars for a haircut. - (भुगतान माँगना) - \'charge\' +\'पैसा\'-&gt; भुगतान माँगना<li\/\>The police charged him with car theft. - (अभियोग लगाना) - \'charge\' + \'with\' + \'पुलिस् /अपराध/चोरी/न्यायालय/रिश्वत/ .......\' लगाना </ol\/\><p>साधारणतः, हम \'charge\' शब्द को \'पुलिस्\', \'न्यायालय\' आदि संदर्भों में देखने पर, इस का अर्थ \'अभियोग लगाना\' होगा सोचते है, लेकिन यह गलत हो सक दिये गये वाक्यों को देखिये. <br\/\><ol type="1"\/\> <li\/\>The September-October term jury had been charged by Fulton Superior Court Judge Durwood Pye to investigate reports of possible "irregularities" in the hard-fought primary which was won by Mayor-nominate Ivan Allen Jr&. - (आदेश_देना) - subject1 (कर्) charge/charge by subject2 (प्रेरक कर्ता) to + verb -&gt; आदेश_देना<li\/\>Her cousin had been charged by King James to bring the MacGregors to justice for their crimes and for the past few years had made it his mission. (आदेश_देना) - subject1 (कर्ता) charge/charge by subject2 (प्रेरक कर्ता) to + verb -&gt; आदेश_देना<li\/\>They have been charged by the Bible to love Israel, love the Jews, and await the return of their Savior. (आदेश_देना) - subjct1 (कर्ता) charge/charge by subject2 (प्रेरक कर्ता) to + verb -&gt; आदेश_देना<li\/\>The bishops were charged by E.CE. to adapt the provisions of this apostolic constitution to the U.S. Context. (आदेश_देना) -subject1 (कर्ता) charge/charge by subject2 (प्रेरक कर्ता) to + verb -&gt; आदेश_देना <li\/\>There -- there was a committee and the committee was charged by the Department of Environmental Protection to oversee noise. (जिम्मेदारी_सौंपा_जाना) - subject1 (कर्ता) charge/charge by subject2 (प्रेरक कर्ता) to + verb -&gt; जिम्मेदारी_सौंपा_जाना<\/ol\/\><\/div\>'
+
+  var text = document.getElementById(a).innerHTML;
+
+		if(text){
+		var mngshabd = document.getElementById("hnd");
+		mngshabd.innerHTML = '<h3>' + a + '</h3>' + text;
+		}
+		else {
+
+		var mngshabd = document.getElementById("hnd");
+		mngshabd.innerHTML = '<h3>' + a + '</h3>' + 'Word not found';
+
+		}
+
+		}
+
+
+
+function cautionconstructs(a) {
+		var contentshabd = document.getElementById('content');
+		var content1shabd = document.getElementById('content1caution');
+		content1shabd.innerHTML ='<div id="hnd"/>';
+		contentshabd.innerHTML = '<div id="constructs"\><br\/\><p\/\>\'Constructs\' शब्द को अगर व्याकरण की दृष्टि से देखा जाय तो एक संदिग्ध शब्द है. वह संज्ञा भी है और क्रिया भी है. अगर यह शब्द संज्ञा है, तो साधारणतः इस शब्द को हिंदी में \'निर्माण\' तुल्यार्थ शब्द देकर अनुवाद करते है. लेकिन यह संकल्पना हमेशा स्थूल नहीं होता, कभी-कभी मानसिक संकल्पना भी हो सकता है. इस तरह के धारणाओं को अनुवाद करते समय अनुवादक \'निर्माण\' के अलावा कुछ बेहतर विकल्प सोच सकते हैं. नीचे दिया गया वाक्य को देखिये. <ol type="1"\/\><li\/\> A shell allows execution of gnu commands, both synchronously and asynchronously. The shell waits for synchronous commands to complete before accepting more input; asynchronous commands continue to execute in parallel with the shell while it reads and executes additional commands. The redirection constructs permit fine-grained control of the input and output of those commands. Moreover, the shell allows control over the contents of commands\' environments.</ol\/\><br\/\><\/ol\/\><\/div\>'
+
+  var text = document.getElementById(a).innerHTML;
+
+		if(text){
+		var mngshabd = document.getElementById("hnd");
+		mngshabd.innerHTML = '<h3>' + a + '</h3>' + text;
+		}
+		else {
+
+		var mngshabd = document.getElementById("hnd");
+		mngshabd.innerHTML = '<h3>' + a + '</h3>' + 'Word not found';
+
+		}
+
+		}
+
+
+
+function cautionpay(a) {
+		var contentshabd = document.getElementById('content');
+		var content1shabd = document.getElementById('content1caution');
+		content1shabd.innerHTML ='<div id="hnd"/>';
+		contentshabd.innerHTML = '<div id="pay"\><br\/\><p\/\>ज़्यादातर, \'you pay\' पद को एक आज्ञार्थक पद के रूप में प्रयोग किया जाता है. उदाहरण के लिये नीचे दिये गये वाक्य देखिये:<ol type="1"\/\><li\/\>. .... if you\'re the leader of the free world , you pay attention to Iran-Contra.(अगर आप आजाद दुनिया का नेता है, तो आप इरान-कोन्ट्रा को ध्यान से सुनिये.)<li\/\> Therefore , you pay the $1,800.(इसलिये, आप $1,800 अदा कीजिये.)<li\/\> Where he\'s from, when you\'re on the ice , you pay attention.(जब तुम बर्फ़ पर थे, वह कहाँ से आया, तुम ध्यान दो.)</ol\/\><p\/\>लेकिन कुछ संदरभों में यह \'you pay\' पद एक सामान्य सूचक पद की तरह काम करता है. नीचे दिये गये संदर्भों को देखिये.<ol type="1"\/\><li\/\> On a day when G is low, you pay for the energy needed to lift a large mass up high. (जिस दिन G कमज़ोर होता है, एक भारी वजन को ऊपर उठाने के लिये आवशयक शक्ति के लये आप अपना शक्ति देते है.)<li\/\> Sir , you pay me to drive horses, not flying machines! (साहब, आप मुझे घोडों को चलाने के लिये पैसे देते हैं, मशीन चलाने के लिये नहीं.)<li\/\> Well , you pay really good attention.(हूँ! आप अच्छा ध्यान देते हैं.)<li\/\> In several foreign countries , you pay VAT on everything you buy, from hotel rooms and meals to souvenirs. (बहुत से विदेशो में, आप जो कुछ भी खरीदते हैं होटल के कमरे, भोजन से लेकर स्मारिका तक आप VAT देते हैं.) <ol\/\><p\/\>इसलिये, अनुवाद करते समय इस तरह के उदाहरणों को ध्यान में रखकर सही विकल्पों को चुनना ज़रूरी है. \' <\/div\>'
+
+  var text = document.getElementById(a).innerHTML;
+
+		if(text){
+		var mngshabd = document.getElementById("hnd");
+		mngshabd.innerHTML = '<h3>' + a + '</h3>' + text;
+		}
+		else {
+
+		var mngshabd = document.getElementById("hnd");
+		mngshabd.innerHTML = '<h3>' + a + '</h3>' + 'Word not found';
+
+		}
+
+		}
+
+

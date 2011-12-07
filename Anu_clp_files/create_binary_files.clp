@@ -1,3 +1,6 @@
+(load*  "compound_phrase.clp")
+(bsave  "compound_phrase.bclp")
+(clear)
 (load* "word_without_adverb.clp")
 (bsave "word_without_adverb.bclp")
 (clear)

@@ -4,32 +4,35 @@ Configuration file for English-Hinid language specifics
 
 var rows_visibility = [
 1, // row1
-0, // row2
+1, // row2
 0, // row3
 0, // row4
-1, // row5
-0, // row6
-1, // row7
-0, // row8
-1, // row9
+0, // row5
+1, // row6
+0, // row7
+1, // row8
+0, // row9
+1, // row10
 0, // last row will be the suggestions row
 ]; // The array can be of different size than the number of rows at hand
 
 var row_labels = [
 "English (A)",
-"Root (B)",
-"POS tag (C)",
-"Chunker Marking (D)",
-"Hindi padasutra (E)",
-"Word Grouping (LINK PARSER) (F)",
-"Sense Disambiguation (G)",
-"Preposition Movement (PARSER)(H)",
-"Hindi Generation (I)",
-"Suggestions (J)"
+"Cautionary Signs (B)",
+"Root (C)",
+"POS tag (D)",
+"Chunker Marking (E)",
+"Hindi padasutra (F)",
+"Word Grouping (LINK PARSER) (G)",
+"Sense Disambiguation (H)",
+"Preposition Movement (PARSER)(I)",
+"Hindi Generation (J)",
+"Suggestions (K)"
 ];
 
 var row_descriptions = [
 "Original English text",
+"Shows the cautionary sign for a word indicating a condition requiring special attention",
 "Shows root word(s) corresponding to the English word",
 "Shows the best probable Part Of Speech in a given context",
 "Shows the names of phrases (noun phrase, verb phrase, etc)",

@@ -2834,7 +2834,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  31. Updated change_in_databases.
  32. Updated Log
 
- 25-11-11
+ 7-12-11
  ========
  1. Removed sed commands while getting one_sentence_per_line.txt.std.penn in Anusaaraka_stanford.sh file.
  2. GNP_agreement.clp : 	Removed  : PP_pada_vib_inf and  samAnAXikaraNa_rule_2
@@ -2890,4 +2890,36 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 22. Modified Anusaaraka_site.sh near timeout command.
 23. Updated changes_in_databases
 24. Updated Link_parser_fails, Stanford_parser_fails
-25. Updated Log.
+25. Removed files from anusaaraka system:
+      i) Anu_src/change-html.pl
+     ii) Browser/consecutive_same_color.pl
+    iii) Browser/src/xhtml_unicode_local.xsl , Browser/src/xhtml_unicode.xsl , Browser/src/xhtml_unicode_pos.xsl ,Browser/src/xhtml_unicode_server.xsl
+     iv) Browser/src/google.js (removed google translate from firefox  output)
+     v)  Anu_data/compound-matching/samAsa-new.txt
+    vi)  Anu_src/Compound-dict.pl
+   vii)  Browser/src/add_translation_path.pl
+26. Added new files to anusaaraka system :
+      i) Browser/src/cautions.js
+     ii) Anu_clp_files/idioms.clp
+    iii) Anu_data/idioms.txt
+     iv) Anu_data/compound-matching/compound_phrase.txt
+         (Renamed and modified samAsa-new.txt format)
+      v) Anu_clp_files/compound_phrase.clp
+     vi) Anu_clp_files/catastrophe.clp
+27. Modified Anusaaraka_stanford.sh, Anusaaraka_all.sh, Anusaaraka_berkeley.sh, Anusaaraka_link.sh, Anusaaraka_ol.sh, Anusaaraka_rasp.sh, Anusaaraka.sh, Anusaaraka_site.sh files.
+     (Removed code for compound matching from Anusaaraka_stanford.sh and handled it using clips rules.)
+28. Added code for creating compound_phrase.clp binary file in create_binary_file.clp .
+29. Modified create_xml_file.clp
+     Removed "consecutive_same_color.pl", "xhtml_unicode_local.xsl" and  "add_translation_path.pl " files and handled it using clips rules and accordingly all the rules have been modified.
+     Added new rules for hanldling cautions and idioms
+30.Removed the "copy-right" information and the code for running  "consecutive_same_color.pl", "xhtml_unicode_local.xsl" and  "add_translation_path.pl from ClipsToAnu_browser_intfc.sh
+31. Added code for catastrope.clp ,idioms.clp  and compound_phrase.clp in run_modules_std.bat,run_modules_link.bat and run_modules_ol.bat
+32. Added new row (2nd-row) "Cautionary Signs" and so the following files. have been changed accordingly
+      i) english_hindi.css
+     ii) english_hindi.js
+    iii) create_xml_file.clp
+33. Modified run_sentence_stanford.sh, run_sentence_link.sh and run_sentence_ol.sh
+   (Removing of hindi_sentence.dat and concatenating catastrophe.dat files to all_facts file)
+34. Added code for generating idioms.gdbm and compound_phrase.gdbm in anu_compile.sh file.
+35. Modified run_create_xml_file.bat
+36. Updated Log.
