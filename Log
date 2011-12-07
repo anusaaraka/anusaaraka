@@ -2922,4 +2922,6 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
    (Removing of hindi_sentence.dat and concatenating catastrophe.dat files to all_facts file)
 34. Added code for generating idioms.gdbm and compound_phrase.gdbm in anu_compile.sh file.
 35. Modified run_create_xml_file.bat
-36. Updated Log.
+36. Modified Anu_data/compound-matching/make-dict.sh (removed compilation part for compound_phrase database)
+37. Modified bin/run_anu_browser.sh 
+38. Updated Log.
