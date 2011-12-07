@@ -53,7 +53,7 @@
  echo "Creating transitive-verb-list.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/transitive-verb-list.gdbm  < transitive-verb-list.txt
  echo "Creating idioms.gdbm"
- ./create-gdbm.pl $HOME_anu_test/GIT/anu_testing/Anu_databases/idioms.gdbm < idioms.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/idioms.gdbm < idioms.txt
  echo "Creating compound_phrase.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/compound_phrase.gdbm < compound-matching/compound_phrase.txt
 
