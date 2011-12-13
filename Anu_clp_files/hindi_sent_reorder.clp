@@ -106,16 +106,31 @@
         (printout ?*DBUG* "(Rule_Name-ids  let_me  (hindi_id_order  "(implode$ (create$ ?object $?pre ?kriyA ?let))")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
- ; You are lucky that there is no exam today
- ; Apa #BAgyavAna hEM #ki #Aja #parIkRA #nahIM hE
+ ;Added by Shirisha Manju, Suggested by Sukhada 30-11-11
+ ;I have no money, still I can help you. 
+ (defrule det_viSeRaNa_rule1
+ (declare (salience 10))
+ (prep_id-relation-anu_ids ? viSeRya-det_viSeRaNa  ?v_id ?vn_id)
+ ?f1<-(id-word ?vn_id no)
+ (prep_id-relation-anu_ids ?  ?  ?kriyA ?v_id)
+ (id-cat_coarse ?kriyA verb)
+ ?f0 <-(hindi_id_order $?pre ?vn_id $?mid ?v_id  $?post ?kriyA $?p)
+ =>
+        (retract ?f0 ?f1)
+        (assert (hindi_id_order  $?pre  $?mid $?post ?v_id ?vn_id ?kriyA $?p))
+        (printout  ?*DBUG* "(Rule_Name-ids       det_viSeRaNa_rule1   (hindi_id_order  "(implode$ (create$  $?pre  $?mid $?post ?v_id ?vn_id ?kriyA $?p)) ")" crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------
+ ; You are lucky that there is no exam today .
+ ; Apa #BAgyavAna hEM #ki #Aja #parIkRA #nahIM hE 
  (defrule det_viSeRaNa_rule
  (prep_id-relation-anu_ids ? viSeRya-det_viSeRaNa  ?v_id ?vn_id)
  ?f1<-(id-word ?vn_id no)
  ?f0 <-(hindi_id_order $?pre ?vn_id $?mid ?v_id  $?post ?kriyA)
  =>
         (retract ?f0 ?f1)
-        (assert (hindi_id_order  $?pre  $?mid $?post ?v_id ?vn_id ?kriyA))
-        (printout  ?*DBUG* "(Rule_Name-ids       det_viSeRaNa_rule   (hindi_id_order  "(implode$ (create$  $?pre  $?mid $?post ?v_id ?vn_id ?kriyA)) ")" crlf)
+        (assert (hindi_id_order  $?pre  $?mid $?post ?v_id ?vn_id ?kriyA ))
+        (printout  ?*DBUG* "(Rule_Name-ids       det_viSeRaNa_rule   (hindi_id_order  "(implode$ (create$  $?pre  $?mid $?post ?v_id ?vn_id ?kriyA )) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju
@@ -131,7 +146,23 @@
         (assert (hindi_id_order $?pre ?sub ?id $?ids $?post ?kriyA))
         (printout  ?*DBUG* "(Rule_Name-ids   always_rule  (hindi_id_order  "(implode$ (create$  $?pre ?sub ?id $?ids $?post ?kriyA)) ")" crlf)
  )
- 
+
+ ;------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju.  Suggested by Sukhada (30-11-11)
+ ;Hyderabad is also famous for pearls and pearl jewellery.
+ (defrule move_adv_b4_sub_sama
+ (prep_id-relation-anu_ids ? kriyA-subject ?kriyA ?sub)
+ (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa  ?sub ?sub_sama)
+ (pada_info (group_head_id ?sub_sama)(group_ids $?ids))
+ (prep_id-relation-anu_ids ? viSeRya-viSeRaka  ?sub_sama ?advp)
+ ?f0 <-(hindi_id_order $?pre $?ids $?post ?advp ?kriyA)
+ (id-cat_coarse ?advp adverb)
+ =>
+	(retract ?f0)
+	(assert (hindi_id_order $?pre ?advp $?ids $?post ?kriyA))
+        (printout  ?*DBUG* "(Rule_Name-ids   move_adv_b4_sub_sama  (hindi_id_order  "(implode$ (create$  $?pre ?advp $?ids $?post ?kriyA)) ")" crlf)
+ )
+
  ;======================================== New word insertion rules =======================================================
  ;Added by Shirisha Manju (1-02-11)
  ;May I go outside ? Are you going? Did you take your breakfast?

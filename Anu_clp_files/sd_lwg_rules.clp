@@ -371,6 +371,32 @@
         (assert (root-verbchunk-tam-parser_chunkids ?root ?vc imper  ?id))
         (assert (imper_decided ?id))
 )
+
+;Either go to bed or open your book to read.
+(defrule imper_rule_for_and1
+(declare (salience 5))
+(Head-Level-Mother-Daughters ? ? ?ROOT ?S)
+(Node-Category ?ROOT ROOT)
+(Node-Category ?S S)
+(Head-Level-Mother-Daughters ? ? ?S ?CC ?VP $?)
+(Node-Category ?CC CC)
+(Node-Category ?VP VP)
+(Head-Level-Mother-Daughters ? ? ?VP $?d ?CC1 $?d1)
+(Node-Category ?CC1 CC)
+?f<-(root-verbchunk-tam-parser_chunkids ?root ?vc ?tam  ?id)
+(test (or (member$ ?id $?d)(member$ ?id $?d1)))
+(not (imper_decided ?id))
+=>
+        (retract ?f)
+        (assert (root-verbchunk-tam-parser_chunkids ?root ?vc imper  ?id))
+        (assert (imper_decided ?id))
+)
+
+
+
+
+
+
 ;------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (25-10-11)
 ;Do this in your room.

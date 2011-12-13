@@ -233,6 +233,24 @@
                          "              After     - "?head" "?l" "?Mot" "?ADVP" "?VP ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (29-11-11) -- Suggested by Sukhada.
+;They accused him of the crime.
+(defrule dont_rev_if_VP_head_accused
+(declare (salience 1400))
+?f0<-(Head-Level-Mother-Daughters ?head&accused ?l ?Mot ?ADVP $?d ?VP)
+(Node-Category  ?Mot VP)
+(not (Mother  ?Mot))
+=>
+	(bind ?*count* (+ ?*count* 1))
+        (retract ?f0)
+        (assert (Head-Level-Mother-Daughters ?head ?l ?Mot $?d ?VP ?ADVP))
+        (assert (Mother  ?Mot))
+        (printout ?*order_debug-file* "(rule_name - dont_rev_if_VP_head_accused " ?*count* " " crlf
+                         "              Before    - "?head" "?l" "?Mot" "?ADVP" "(implode$ $?d)" "?VP crlf
+                         "              After     - "?head" "?l" "?Mot" "(implode$ $?d)" "?VP" "?ADVP ")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
+
 (defrule print_for_debugging2
 (declare (salience 1000))
 =>

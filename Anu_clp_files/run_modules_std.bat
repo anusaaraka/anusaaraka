@@ -316,7 +316,7 @@
  (load-facts "cat_consistency_check.dat")
  (load-facts "original_word.dat")
  (load-facts "hindi_meanings.dat")
- (open "gender.dat" gen_fp "a")
+ (open "gender_tmp.dat" gen_fp "a")
  (run)
  (clear)
  ;----------------------------------------------------------------------
@@ -375,14 +375,16 @@
  (load-facts "original_word.dat")
  (load-facts "relations_tmp1.dat")
  (load-facts "number.dat")
- (load-facts "gender.dat")
+ (load-facts "gender_tmp.dat")
  (load-facts "hindi_meanings.dat")
  (load-facts "pada_control_fact.dat")
  (open "GNP_errors.txt" err_fp "a")
  (open "GNP_debug.dat" gnp_fp "a")
+ (open "gender.dat" gender_fp "a")
  (run)
  (save-facts "GNP_agmt_info.dat" local pada_info)
  (close gnp_fp)
+ (close gender_fp)
  (clear)
  ;-------------------------------------------------------------------------------
  ; Across paxa ordering

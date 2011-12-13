@@ -44,12 +44,13 @@
  ;Added by Shirisha Manju (05-11-11)
  ;The painted doors look great.A big, black, ugly dog chased me. By going there you can earn more money. 
  ;Three quarters of a million people in this city have no health insurance. They threw him in the swimming pool.
+ ;She is beautiful and intelligent.
  (defrule get_NP_group
  (declare (salience 1500))
  ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?NP $?pos)
  ?f2<-(Head-Level-Mother-Daughters ?h ? ?NP $?daut)
- (Node-Category  ?Mot    NP|WHNP)
- (Node-Category  ?NP     NN|DT|JJ|JJS|JJR|NNS|VBN|ADJP|NNP|PDT|RBS|RB|EX|CD|WDT|VBG|QP)
+ (Node-Category  ?Mot    NP|WHNP|ADJP|PRT|ADVP)
+ (Node-Category  ?NP     NN|DT|JJ|JJS|JJR|NNS|VBN|ADJP|NNP|PDT|RBS|RB|EX|CD|WDT|VBG|QP|FW)
  =>
 	(retract ?f1 ?f2)
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?daut $?pos))
@@ -60,7 +61,7 @@
  (defrule get_and_NP_group
  (declare (salience 1400))
  ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?NP $?pos ?CC $?p1 ?NP1 $?p2)
- (Node-Category  ?Mot    NP)
+ (Node-Category  ?Mot    NP|ADJP|PRT|ADVP)
  (Node-Category  ?NP    NP)
  (Node-Category  ?NP1   NP)
  (Node-Category  ?CC    CC|CONJP)
@@ -77,10 +78,10 @@
  (defrule get_and_NP_group1
  (declare (salience 1300))
  ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?NP $?pos ?CC $?d)
- (Node-Category  ?Mot    NP)
+ (Node-Category  ?Mot    NP|ADJP|PRT|ADVP)
  (Node-Category  ?NP    NP)
  (Node-Category  ?CC    CC|CONJ)
- ?f2<-(Head-Level-Mother-Daughters ? ? ?NP $?daut)
+ ?f2<-(Head-Level-Mother-Daughters ?w&~'s ? ?NP $?daut)
  ?f3<-(Head-Level-Mother-Daughters ? ? ?CC $?con ?c)
  =>
         (retract ?f1 ?f2 ?f3 )
@@ -92,7 +93,7 @@
  (defrule get_and_NP_group2
  (declare (salience 1200))
  ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?id ?CC $?id1 )
- (Node-Category  ?Mot    NP)
+ (Node-Category  ?Mot    NP|ADJP|PRT|ADVP)
  (Node-Category  ?CC    CC|CONJP)
  ?f2<-(Head-Level-Mother-Daughters and|or|well ? ?CC $?con ?c)
  =>
@@ -179,11 +180,11 @@
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (05-11-11)
- ;The painted doors look great.
+ ;The painted doors look great.She is beautiful and intelligent.
  (defrule PP_pada
  (declare (salience 800))
  (Head-Level-Mother-Daughters  ?  ? ?PP $?ids ?id)
- (Node-Category ?PP NP|NNP|NNPS|RB|RBS|PRP|NNS|PRP$|WP|CC|JJ|JJS|VP|WRB|CD|WDT|WHNP)
+ (Node-Category ?PP NP|NNP|NNPS|RB|RBS|PRP|NNS|PRP$|WP|CC|JJ|JJS|VP|WRB|CD|WDT|WHNP|ADJP|PRT|ADVP)
  ?f<-(to_be_included_in_paxa ?id)
   =>
 	(retract ?f)
@@ -205,10 +206,11 @@
  ;Mary promised the instructor to take that course. But my efforts to win his heart have failed. 
  ;He made a mistake in inviting John. 
  ;He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
+ ;The hat is too small for me.(ADJP grp)
  (defrule PP_pada1
  (declare (salience 700))
  (Head-Level-Mother-Daughters  ?  ? ?PP $?ids ?id $?S)
- (Node-Category ?PP NP|VP)
+ (Node-Category ?PP NP|VP|ADJP|PRT|ADVP)
  ?f<-(to_be_included_in_paxa ?id)
   =>
         (retract ?f)

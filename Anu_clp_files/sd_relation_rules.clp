@@ -352,6 +352,17 @@
 )
 ; ; Ex. Bill is big.
 ;------------------------------------------------------------------------------------------------------------------------
+(defrule cop+nsubj_2
+(declare (salience 1000))
+(rel_name-sids nsubj|nsubjpass ?samA  ?sub)
+(rel_name-sids cop  ?samA ?kriyA)
+(rel_name-sids nsubj ?samA1 ?sub)
+=>
+(printout      ?*fp*   "(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa   "?sub"  "?samA1")"crlf)
+(printout      ?*dbug* "(prep_id-Rule-Rel-ids  -   cop+nsubj_2      subject-subject_samAnAXikaraNa  "?sub"  "?samA1")"crlf)
+)
+; ; Ex. Bill is big and honest.
+;------------------------------------------------------------------------------------------------------------------------
  (defrule cop+nsubj_for_it
  (declare(salience 101))
  ?f0<-(parserid-word ?sub It)
@@ -666,17 +677,28 @@ else
  ;Added by Shirisha Manju
  ;Ex: John is more intelligent than Tom.
  ;------------------------------------------------------------------------------------------------------------------------
- (defrule prep+than+pobj
- (declare(salience 1000))
- (rel_name-sids prep  ?m-up ?than)
- (rel_name-sids pobj  ?than ?t-up)
- ?f0<-(parserid-word ?than than)
- =>
- (retract ?f0)
- (printout     ?*fp*   "(prep_id-relation-parser_ids   "?than"     more_upameya-than_upamAna        "?m-up"  "?t-up")"crlf)
- (printout     ?*dbug* "(prep_id-Rule-Rel-ids  "?than"   prep+than+pobj       more_upameya-than_upamAna       "?m-up"  "?t-up")"crlf)
- )
- ; Ex.My talk at the university was more appreciated by the students than the faculty .Added by Mahalaxmi (18-12-09)
+;Modifed by Sukhada on 29-10-11
+(defrule prep+than+pobj
+(declare(salience 1000))
+(basic_rel_name-sids prep  ?m-up ?than)
+(basic_rel_name-sids pobj ?than ?t-up)
+?f0<-(parserid-word ?than than)
+(parserid-word ?mr ?more)
+(test (eq (- (string_to_integer ?m-up) 1) (string_to_integer ?mr)))
+=>
+(if (eq ?more more) then
+(retract ?f0)
+(printout     ?*fp*   "(prep_id-relation-parser_ids   "?than"     more_upameya-than_upamAna       "?m-up"  "?t-up")"crlf)
+(printout     ?*dbug* "(prep_id-Rule-Rel-ids  "?than"   prep+than+pobj    more_upameya-than_upamAna  "?m-up"  "?t-up")"crlf)
+)
+(if (eq ?more less) then
+(retract ?f0)
+(printout     ?*fp*   "(prep_id-relation-parser_ids   "?than"     less_upameya-than_upamAna       "?m-up"  "?t-up")"crlf)
+(printout     ?*dbug* "(prep_id-Rule-Rel-ids  "?than"   prep+than+pobj    less_upameya-than_upamAna  "?m-up"  "?t-up")"crlf)
+)
+)
+; Ex.My talk at the university was more appreciated by the students than the faculty .Added by Mahalaxmi (18-12-09)
+; Ex.My talk at the university was less appreciated by the students than the faculty 
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule single_prep_1
  (declare (salience 10))
@@ -1241,7 +1263,14 @@ else
 )
  ; Ex. The Dow industrials were down 55 points at 3 p.m. before the futures-trading halt.
 ;------------------------------------------------------------------------------------------------------------------------
- 
+(defrule parataxis
+(rel_name-sids parataxis ?va ?k)
+=>
+(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-vAkyakarma   "?k"    "?va")"crlf)
+(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -      parataxis  kriyA-vAkyakarma  "?k"    "?va")"crlf)
+)
+; Ex. The guy, John said, left early in the morning.
+;------------------------------------------------------------------------------------------------------------------------
 
 ;rel+nsubj rel+nsubj+wh rules are not working properly. Check them.
 

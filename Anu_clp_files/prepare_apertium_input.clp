@@ -69,16 +69,6 @@
  (assert (yA-tam  yA_huA_nahIM_hogA))
  (assert (impr_request  imper m_h2))
  )
- ;======================================== default gender for gender info =============================================
- ; Added by Shirisha Manju on 19-11-11 in case of and pada we consider the individual gender info.so if gender is - then
- ; make it as "m".
- (defrule default_gender
- (declare (salience 1500))
- ?f0<-(id-gender-src ?id - ?src)
- =>
-	(retract ?f0)
-	(assert (id-gender-src ?id m Default))
- )
  ;========================================== default format for hindi mng "-" ==========================================
  (defrule default_id
  (declare (salience 1500))
@@ -104,6 +94,7 @@
         (printout ?*A_fp5* "(id-Apertium_input " ?id "  )" crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  "?id "  default_id1 )" crlf)
  )
+ 
  ;========================================== complete sent mng ========================================================
 
  ;This contradicts the assumption that the fluid was in equilibrium.
@@ -152,11 +143,11 @@
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ; here prep_id itself is considered as the main meaning 
- ;Is there life beyond the grave? 
+ ;Is there life beyond the grave? Either go to bed or open your book to read.
  ;Modified by Shirisha Manju (23-11-11)
  (defrule Compound_mng_with_Prep_id
  (declare (salience 1003))
- ?f0<-(id-HM-source ?p_id ?p_mng Database_compound_phrase_word_mng|Database_compound_phrase_root_mng)
+ ?f0<-(id-HM-source ?p_id ?p_mng Database_compound_phrase_word_mng|Database_compound_phrase_root_mng|WSD_compound_phrase_root_mng)
  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(preposition ?p_id)(number ?num)(case ?case)(gender ?gen))
  ?f1<-(id-HM-source ?pada_id ?h_mng ?)
  (test (neq ?vib 0)) 

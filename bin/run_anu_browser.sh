@@ -1,8 +1,9 @@
+#/bin/sh
 
-  if [[ $5 == REMOVE_TITLE ]] ;
-    then  
-  echo "(REMOVE_TITLE_FROM_HTML)" >> $3/tmp/$2_tmp/1.1/all_facts
-  fi
+#  if [ $5 -eq REMOVE_TITLE ] ;
+ #   then  
+ # echo "(REMOVE_TITLE_FROM_HTML)" >> $3/tmp/$2_tmp/1.1/all_facts
+ # fi
 
 
  sh $1/shell_scripts/ClipsToAnu_browser_intfc.sh $2 $3 $4
