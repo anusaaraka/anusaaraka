@@ -32,7 +32,7 @@
 (defrule eliptical1
 (id-word ?id after|although|as|before|if|though|till|unless|until|when|whenever|where|wherever|while)
 (root-verbchunk-tam-chunkids ? ? ? $? ?k1)
-(not (root-verbchunk-tam-chunkids ? ? ? $? ?k2&:(> ?k2 ?k1)))
+(not (root-verbchunk-tam-chunkids ? ? ? $? ?k2&:(< ?k2 ?k1)))
 ?f<-(comma_list $?pre ?id2 $?pos)
 (test (and (< ?id ?id2) (< ?id2 ?k1)))
 =>
