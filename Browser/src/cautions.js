@@ -92,3 +92,27 @@ function cautionpay(a) {
 		}
 
 
+
+function cautioneliptical(a) {
+                var contentshabd = document.getElementById('content');
+                var content1shabd = document.getElementById('content1eliptical');
+                content1shabd.innerHTML ='<div id="hnd"/>';
+                contentshabd.innerHTML = '<div id="eliptical"\><br\/\><p\/\>अंग्रेजी भाषा में, यदि वाक्य के दो खण्ड (प्रधान वाक्य और उपवाक्य) हैं और किसी एक खण्ड में \'subordinate conjunctions\' के बाद \'adjectival phrase, या present participal phrase (-ing phrase), या past participal phrase (-ed phrase), या prepositional phrase, या noun\' आ रहा है तो वाक्य का एक खण्ड में क्रिया का लोप होगा|  ऐसे वाक्यों को अंग्रेजी में \'Truncated clauses\' कहते हैं| नीचे दिया गया उदाहरण को देखिये,<br\/\>Ex:(a). <b\>Though old<\/b\>, the Jones Study supports our conclusion.<br\/\>ऊपर (a). वाक्य में \'Though\' शब्द \'subordinate conjunction\' है और \'old\' शब्द\'adjective\' है| इन दोनो शब्दों के बीच आने वाली सहायक क्रिया \'is\' का लोप हो गया है| जिस से वह वाक्य अपूर्ण लग रहा है | ऐसे वाक्यों का अनुवाद करते समय, उस वाक्य में प्रयोग किया गया काल का अनुमान लगाके उस काल के अनुसार, लुप्त क्रियाओं के स्थान में \'finite verb\' रखना एक अच्छा उपाय हो सकता है| उदाहरण के लिये,<br\/\>ex:<br\/\>1. <b\>Though old<\/b\>, the Jones Study supports our conclusion.<br\/\>   (यद्यपि पुराना है, जोन्स् अध्ययन अपना निष्कर्ष का समर्थन करता है|)<br\/\>2. <b\>When deciding<\/b\> these issues, the personnel officer considers three factors.<br\/\>     (जब इन मुद्दो पर निर्णय ले रहा है, तो  पर्सनल् आफीसर् तीन अंशों को ग़ौर करता है) <br\/\><br\/\>NOTE: subordinate conjunctions = after, although, as, as if, as though, before, if, though, till, unless, until, when, whenever, where, wherever, while इत्यादि <br\/\><br\/\>कुछ और उदाहरण देखिये:<br\/\>3. <b\>Though tortured<\/b\> in its reasoning, this theory does have one advantage.<br\/\>      (यद्यपि उसका सिद्धांत का तर्क वितर्क में यातना देता है, यह सिद्धांत का एक फ़ायदा भी है| )<br\/\>4. <b\>When in<\/b\> Rome, do as the Romans do.      (रोम् में रोमन्स् की तरह बर्ताव कीजिये|) <br\/\>5. <b\>Though a fair<\/b\> man, the senator often required his staff to work far into the night.<br\/\>    (यद्यपि उचित आदमी था, सेनेटर् को अपने कर्मचारियों से अक्सर आधी रात तक काम करवाना पडता था|)<br\/\>6. "The other man, carrying a package, jumped aboard the car but seemed unsteady <b\>as if about<\/b\> to fall".<br\/\>    (पुलिन्दा उठा रहा दूसरा आदमी, कार में कूदकर बैठा लेकिन नीचे गिर जायेगा जैसे अस्थिर लग रहा था|)<br\/\><br\/\><b\>Rule:<\/b\><br\/\>1. If<br\/\>   Subordinate conjunction + adjective/-ing phrase/-ed phrase/prepositional phrase/noun<br\/\>   then<br\/\>   place finite verb as per inferred tense of the sentence<\/div\>'
+
+                var text = document.getElementById(a).innerHTML;
+
+                if(text){
+                var mngshabd = document.getElementById("hnd");
+                //mngshabd.innerHTML = '<h3>' + a + '</h3>' + text;
+                mngshabd.innerHTML =  text;
+                }
+                else {
+
+                var mngshabd = document.getElementById("hnd");
+                //mngshabd.innerHTML = '<h3>' + a + '</h3>' + 'Word not found';
+                mngshabd.innerHTML = 'Word not found';
+
+                }
+
+                }
+

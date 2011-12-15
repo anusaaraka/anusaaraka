@@ -467,6 +467,8 @@
  (load-facts "lwg_info.dat")
  (load-facts "relations.dat")
  (load-facts "root.dat")
+ (load-facts "punctuation_info.dat")
+ (assert (comma_list )) 
  (assert (index 1))
  (assert (English-list))
  (run)

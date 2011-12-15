@@ -1,3 +1,14 @@
+(defrule comma_list
+(declare (salience 1050))
+(id-right_punctuation ?id ",")
+?f<-(comma_list $?ids)
+(test (eq (member$ ?id  $?ids) FALSE))
+=>
+       (retract ?f)
+       (bind $?ids (sort > (create$ $?ids ?id)))
+       (assert (comma_list $?ids))
+)
+
 ;He is married with a sixteen years old girl. 
 (defrule caution_marry_with
 (id-word ?id married)
@@ -17,3 +28,14 @@
 (test (neq ?sub1 ?sub2))
 =>
 (assert (sen_type-id-phrase catastrophe ?id caharge)))
+
+(defrule eliptical1
+(id-word ?id after|although|as|before|if|though|till|unless|until|when|whenever|where|wherever|while)
+(root-verbchunk-tam-chunkids ? ? ? $? ?k1)
+(not (root-verbchunk-tam-chunkids ? ? ? $? ?k2&:(> ?k2 ?k1)))
+?f<-(comma_list $?pre ?id2 $?pos)
+(test (and (< ?id ?id2) (< ?id2 ?k1)))
+=>
+=>
+(assert (sen_type-id-phrase eliptical ?id -))
+)

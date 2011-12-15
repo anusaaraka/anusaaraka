@@ -2834,7 +2834,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  31. Updated change_in_databases.
  32. Updated Log
 
- 7-12-11
+ 15-12-11
  ========
  1. Removed sed commands while getting one_sentence_per_line.txt.std.penn in Anusaaraka_stanford.sh file.
  2. GNP_agreement.clp : 	Removed  : PP_pada_vib_inf and  samAnAXikaraNa_rule_2
@@ -2861,7 +2861,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  7. vibakthi.clp
         Renamed : vib_rule1  as ne_vib_rule1 and vib_rule2 as ne_vib_rule2 and modified the rules
  8. Added sd_pada.clp to get pada information from Constituents.
- 9. Added dummy facts rule in the following files
+ 9. Added dummy facts in the following files
         English_sentence.clp    get_constituency_tree.clp    preferred_morph_consistency_check.clp   number.clp
         sd_category.clp         sd_combining_apostrophe.clp  sd_lwg_rules.clp   sd_pada.clp  sd_relation_rules.clp
 10. Modified H_ordering_rules.clp (to modify the relation pattern -- used prep_id-relation-anu_ids) and
@@ -2927,13 +2927,21 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 32. Added small_sent_verified_sd and small_sent_ver_output_sd files
 33. Modified Anusaaraka_stanford.sh, Anusaaraka_all.sh, Anusaaraka_berkeley.sh, Anusaaraka_link.sh, Anusaaraka_ol.sh,
      Anusaaraka_rasp.sh, Anusaaraka.sh, Anusaaraka_site.sh files.
+    -- Removed code for compound matching from Anusaaraka_stanford.sh and handled it using clips rules.
 34. Modified run_sentence_stanford.sh, run_sentence_link.sh and run_sentence_ol.sh
+    -- Removing of hindi_sentence.dat and concatenating catastrophe.dat files to all_facts file
 35. Modified bin/run_anu_browser.sh  bin/abbr.sh
 36. Modified Anusaaraka_site.sh near timeout command.
-37. Modified sd_ver_output, verified, verified_output,sd_verified , ber_ver_output, link_ver_output, ol_ver_output 
-38. Updated changes_in_databases
-39. Updated Link_parser_fails, Stanford_parser_fails
-     (Removed code for compound matching from Anusaaraka_stanford.sh and handled it using clips rules.)
-   (Removing of hindi_sentence.dat and concatenating catastrophe.dat files to all_facts file)
-40. Updated Log.
+37. Following files have been modified for handling eliptical sentences ::
+ 	1. Added new rule "eliptical1" in Anu_clp_files/catastrophe.clp.
+	2. Displaying caution information for handling eliptical sentences rules have been modified accordingly in create_xml_file.clp
+	3. run_modules_std.bat, run_modules_link.bat, run_modules_ol.bat.
+        4. cautions.js
+38.Modified file format Anu_data/idioms.txt
+   key value         ========= > key key::value
+39. Modified bin/run_anu_browser.sh 
+40. Modified sd_ver_output, verified, verified_output,sd_verified , ber_ver_output, link_ver_output, ol_ver_output 
+41. Updated changes_in_databases
+42. Updated Link_parser_fails, Stanford_parser_fails
+43. Updated Log.
 

@@ -42,6 +42,7 @@
  =>
  (assert (chunk-ids U ?id)))
 
+ ;Adding new field "?chnk_type" to all chunk facts
  (defrule modify_chunk_fct_for_html
  (declare (salience 2990))
  ?f<-(chunk-ids ?chnk_type $?ids ?id)
@@ -52,6 +53,7 @@
  (assert (chunk_cntrl_fact_for_html ?id))
  )
 
+ ;Modifying  the chunk color of the second chunk if there are two consecutive same chunks
  (defrule change_chunk_consecutive_same_color
  (declare (salience 2900))
  (chunk-ids ?chnk_type ?chnk $?ch1 ?id)
@@ -160,6 +162,7 @@
  (assert (id_padasuthra_mng_modified ?id))
  )
  ;---------------------------------------------------------------------------------------------------
+ ;modifying the symbol ">" to "&gt;" and "<" to "&lt;" for html display
  (defrule test_gt_for_apertium_output
  (declare (salience 2000))
  ?f<-(id-Apertium_output ?id ?mng)
@@ -288,7 +291,7 @@
  (defrule sent_start1.1_dont_print_title_info
  (declare (salience 1004))
  (REMOVE_TITLE_FROM_HTML)
- (para_id-sent_id-no_of_words 1 1 1)
+ (para_id-sent_id-no_of_words 1 1 ?)
  ?f<-(id-original_word 1 ?original_word)
  (id-word ?id ?word)
  (id-root ?id ?root)
@@ -358,6 +361,15 @@
  (printout fp "<a class=\"popup_closebox\" href=\"#\">Close box</a>" crlf)
  (printout fp "</p>" crlf)
  (printout fp "</div>" crlf)
+ (printout fp "<div id=\"popup_4\" class=\"popup popup_draghandle\">" crlf)
+ (printout fp "<h3> Eliptical Sentences </h3>" crlf)
+ (printout fp "<div id=\"content1eliptical\"></div>" crlf)
+ (printout fp "<script type=\"text/javascript\">" crlf)
+ (printout fp "new Popup('popup_6','popup_link_11',{position:'below',trigger:'click'})" crlf)
+ (printout fp "new Popup('popup_8','popup_link_12',{position:'below',trigger:'click'})" crlf)
+ (printout fp "</script>" crlf)
+ (printout fp "<p><a class=\"popup_closebox\" href=\"#\">Close box</a></p>" crlf)
+ (printout fp "</div>" crlf)
  (printout fp "<div id=\"navigation\">" crlf)
  (printout fp "<form action=\"\" onsubmit=\"goto_section(); return false;\">" crlf)
  (printout fp "<p><a id=\"translation\" href=\""?*filename*"_trnsltn.html\" target=\"_new\"> Translation </a><a id=\"help\" href=\"help.html\" target=\"_new\">Help</a><input type=\"text\" name=\"goto_section_value\" size=\"5\" /><input type=\"button\" value=\"Goto\" onclick=\"goto_section()\" /><input type=\"hidden\" name=\"no_of_rows\" value=\"10\" /><input type=\"button\" value=\"Show/Hide Rows...\" onclick=\"window.open('rows.html','ShowHideRowsWindow','top=200,left=200,height=500,width=300,location=no,menubar=no,toolbar=no,directories=no,statusbar=no');\" /><input type=\"checkbox\" name=\"numbers_value\" checked=\"checked\" onchange=\"toggle_numbers()\" />Numbers<input type=\"checkbox\" name=\"border_value\" checked=\"checked\" onchange=\"toggle_borders()\" />Borders</p>" crlf)
@@ -387,10 +399,11 @@
  )
 
  ;;printing title information
- (defrule sent_start1.1_with_no_linkage
+ (defrule sent_start1.1
  (declare (salience 1003))
- (para_id-sent_id-no_of_words 1 1 1)
- ?f<-(id-original_word 1 ?original_word)
+ (para_id-sent_id-no_of_words 1 1 ?n_words)
+ ?f<-(id-original_word ?id ?original_word)
+ (test (= ?id 1))
  (id-word ?id ?word)
  (id-root ?id ?root)
  (id-cat_coarse ?id ?cat)
@@ -466,6 +479,15 @@
  (printout fp "<a class=\"popup_closebox\" href=\"#\">Close box</a>" crlf)
  (printout fp "</p>" crlf)
  (printout fp "</div>" crlf)
+ (printout fp "<div id=\"popup_4\" class=\"popup popup_draghandle\">" crlf)
+ (printout fp "<h3> Eliptical Sentences </h3>" crlf)
+ (printout fp "<div id=\"content1eliptical\"></div>" crlf)
+ (printout fp "<script type=\"text/javascript\">" crlf)
+ (printout fp "new Popup('popup_6','popup_link_11',{position:'below',trigger:'click'})" crlf)
+ (printout fp "new Popup('popup_8','popup_link_12',{position:'below',trigger:'click'})" crlf)
+ (printout fp "</script>" crlf)
+ (printout fp "<p><a class=\"popup_closebox\" href=\"#\">Close box</a></p>" crlf)
+ (printout fp "</div>" crlf)
  (printout fp "<div id=\"navigation\">" crlf)
  (printout fp "<form action=\"\" onsubmit=\"goto_section(); return false;\">" crlf)
  (printout fp "<p><a id=\"translation\" href=\""?*filename*"_trnsltn.html\" target=\"_new\"> Translation </a><a id=\"help\" href=\"help.html\" target=\"_new\">Help</a><input type=\"text\" name=\"goto_section_value\" size=\"5\" /><input type=\"button\" value=\"Goto\" onclick=\"goto_section()\" /><input type=\"hidden\" name=\"no_of_rows\" value=\"10\" /><input type=\"button\" value=\"Show/Hide Rows...\" onclick=\"window.open('rows.html','ShowHideRowsWindow','top=200,left=200,height=500,width=300,location=no,menubar=no,toolbar=no,directories=no,statusbar=no');\" /><input type=\"checkbox\" name=\"numbers_value\" checked=\"checked\" onchange=\"toggle_numbers()\" />Numbers<input type=\"checkbox\" name=\"border_value\" checked=\"checked\" onchange=\"toggle_borders()\" />Borders</p>" crlf)
@@ -475,7 +497,10 @@
  (bind ?fetch (sub-string 0 1 (implode$ (create$ ?root))))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
  (printout fp "<tr class=\"row1\">" crlf)
- (printout fp "<td class=\"number\">1.A<a name=\"sentence_1\" id=\"sentence_1\"></a></td><td class=\""?chnk_fr_htm"\"> <a onclick=\"javascript:  fetchshabd"?fetch"('"?root"')\"> <span id=\"popup_link_1_1_"?original_word"\" class=\"popup_link\">"?l_punc ?original_word ?r_punc"</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_1_1_"?original_word "',{position:'below',trigger:'click'}); </script>   </a> </td></tr>" crlf)
+ (if (eq ?sen_type eliptical) then
+ (printout fp "<td class=\"number\">1.A<a onclick=\"javascript: cautioneliptical('eliptical')\"> <span id=\"popup_link_1_1_eliptical\" class=\"popup_link\">&#9761;</span> <script type=\"text/javascript\"> new Popup('popup_4','popup_link_1_1_eliptical',{position:'below',trigger:'click'}); </script>   </a><a name=\"sentence_1\" id=\"sentence_1\"></a></td><td class=\""?chnk_fr_htm"\"> <a onclick=\"javascript:  fetchshabd"?fetch"('"?root"')\"> <span id=\"popup_link_1_1_"?original_word"\" class=\"popup_link\">"?l_punc ?original_word ?r_punc"</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_1_1_"?original_word "',{position:'below',trigger:'click'}); </script>   </a> </td></tr>" crlf)
+ else
+ (printout fp "<td class=\"number\">1.A<a name=\"sentence_1\" id=\"sentence_1\"></a></td><td class=\""?chnk_fr_htm"\"> <a onclick=\"javascript:  fetchshabd"?fetch"('"?root"')\"> <span id=\"popup_link_1_1_"?original_word"\" class=\"popup_link\">"?l_punc ?original_word ?r_punc"</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_1_1_"?original_word "',{position:'below',trigger:'click'}); </script>   </a> </td></tr>" crlf))
  (if (eq ?sen_type idiom) then
  (printout fp "<tr class=\"row2\">" crlf "<td class=\"number\">1.B</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'"?idiom_des"\')\">&#9761;</a></td>" crlf "</tr>" crlf)
  else (if (eq ?sen_type catastrophe) then
@@ -493,7 +518,7 @@
  (printout fp "<tr class=\"row11\"><td class=\"number\">&nbsp;</td><td class=\""?chnk_fr_htm"\"><input name=\"suggestion_1.1\" type=\"text\" class=\"suggestion\" size=\"1\" value=\" "?mng" \" /></td></tr>" crlf)
  (printout fp "</table><div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form>" crlf "<div class=\"float_clear\"/>" crlf crlf)
 
- (assert (id-index (+ ?id 1) 0))
+ (assert (id-index (+ ?id 1) (- ?n_words 1)))
  )
  ;---------------------------------------------------------------------------------------------------
  ;;printing sentence start information
@@ -508,6 +533,7 @@
  (id-right_punctuation 1 ?r_punc)
  (id-left_punctuation  1 ?l_punc )
  (id-original_word 1 ?original_word)
+ (sen_type-id-phrase ?sen_type 1 ?)
  (Eng_sen ?Eng_sen)
  =>
  (if (eq ?r_punc "NONE") then (bind ?r_punc ""))
@@ -517,7 +543,10 @@
  (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\"><table cellspacing=\"0\">" crlf)
  (printout fp "<tr class=\"row1\">" crlf)
  ;(printout fp "<td class=\"number\"> <a onclick=\"javascript:initialize('-----'); initializep('====')\"> <span id=\"popup_link_"?p_id"_"?s_id"-sen\" class=\"popup_link\">"?p_id"."?s_id".A </span><script type=\"text/javascript\"> new Popup('popup_3','popup_link_"?p_id"_"?s_id"-sen',{position:'below',trigger:'click'}); </script>  </a> <a  name=\"sentence_"?p_id"."?s_id"\" id=\"sentence_"?p_id"."?s_id"\"></a></td><td class=\""?chnk_fr_htm"\"> <a  onclick=\"javascript:fetchshab"?fetch"('"?root"') \"> <span id=\"popup_link_"?p_id"_"?s_id"\"  class=\"popup_link\">"?original_word"</span> <script type=\"text/javascript\"> new Popup('popup_"?p_id"','popup_link_"?p_id"_"?s_id"',{position:'below',trigger:'click'}); </script>  </a> </td>" crlf "</tr>" crlf)
- (printout fp "<td class=\"number\"> "?p_id"."?s_id".A </a> <a  name=\"sentence_"?p_id"."?s_id"\" id=\"sentence_"?p_id"."?s_id"\"></a></td><td class=\""?chnk_fr_htm"\"> <a  onclick=\"javascript:fetchshab"?fetch"('"?root"') \"> <span id=\"popup_link_"?p_id"_"?s_id"\"  class=\"popup_link\">"?original_word"</span> <script type=\"text/javascript\"> new Popup('popup_"?p_id"','popup_link_"?p_id"_"?s_id"',{position:'below',trigger:'click'}); </script>  </a> </td>" crlf "</tr>" crlf)
+(if (eq ?sen_type eliptical) then
+(printout fp "<td class=\"number\"> "?p_id"."?s_id".A <a onclick=\"javascript: cautioneliptical('eliptical')\"> <span id=\"popup_link_"?p_id"_"?s_id"_eliptical\" class=\"popup_link\">&#9761;</span> <script type=\"text/javascript\"> new Popup('popup_4','popup_link_"?p_id"_"?s_id"_eliptical',{position:'below',trigger:'click'}); </script>   </a><a  name=\"sentence_"?p_id"."?s_id"\" id=\"sentence_"?p_id"."?s_id"\"></a></td><td class=\""?chnk_fr_htm"\"> <a  onclick=\"javascript:fetchshab"?fetch"('"?root"') \"> <span id=\"popup_link_"?p_id"_"?s_id"\"  class=\"popup_link\">"?original_word"</span> <script type=\"text/javascript\"> new Popup('popup_"?p_id"','popup_link_"?p_id"_"?s_id"',{position:'below',trigger:'click'}); </script>  </a> </td>" crlf "</tr>" crlf)
+else 
+ (printout fp "<td class=\"number\"> "?p_id"."?s_id".A </a> <a  name=\"sentence_"?p_id"."?s_id"\" id=\"sentence_"?p_id"."?s_id"\"></a></td><td class=\""?chnk_fr_htm"\"> <a  onclick=\"javascript:fetchshab"?fetch"('"?root"') \"> <span id=\"popup_link_"?p_id"_"?s_id"\"  class=\"popup_link\">"?original_word"</span> <script type=\"text/javascript\"> new Popup('popup_"?p_id"','popup_link_"?p_id"_"?s_id"',{position:'below',trigger:'click'}); </script>  </a> </td>" crlf "</tr>" crlf))
 
  (assert (id-index 1 ?n_words))
  )
@@ -595,6 +624,7 @@
 
  (printout fp "<tr class=\"row11\"><td class=\"number\">&nbsp;</td><td class=\""?chnk_fr_htm"\"><input name=\"suggestion_"?p_id"."?s_id"."?id"\" type=\"text\" class=\"suggestion\" size=\"1\" value=\" -- \" /></td></tr>" crlf)
  (printout fp "</table>" crlf crlf)
+ ;(printout fp "</table>"crlf"<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form>" crlf "<div class=\"float_clear\"/>" crlf crlf)
  else
  (if (eq ?sen_type idiom) then
  (printout fp "<tr class=\"row2\">" crlf "<td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'"?idiom_des"\')\">&#9761;</a></td>" crlf "</tr>" crlf)
@@ -619,6 +649,7 @@
 
  (printout fp "<tr class=\"row11\"></td><td class=\""?chnk_fr_htm"\"><input name=\"suggestion_"?p_id"."?s_id"."?id"\" type=\"text\" class=\"suggestion\" size=\"1\" value=\" -- \" /></td></tr>" crlf)
 (printout fp "</table>" crlf crlf))
+; (printout fp "</table>"crlf"<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form>" crlf "<div class=\"float_clear\"/>" crlf crlf))
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
  )
@@ -744,6 +775,7 @@
  (printout fp "<tr class=\"row10\">" crlf "<td class=\""?chnk_fr_htm"\"> ~ </td>" crlf "</tr>" crlf)
  (printout fp "<tr class=\"row11\"><td class=\"number\">&nbsp;</td><td class=\""?chnk_fr_htm"\"><input name=\"suggestion_"?p_id"."?s_id"."?pp_id"\" type=\"text\" class=\"suggestion\" size=\"1\" value=\" ~ \" /></td></tr>" crlf)
  (printout fp "</table>" crlf crlf)
+ ;(printout fp "</table>"crlf"<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form>" crlf "<div class=\"float_clear\"/>" crlf crlf)
  else
  (if (eq ?sen_type idiom) then
  (printout fp "<tr class=\"row2\">" crlf "<td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'"?idiom_des"\')\">&#9761;</a></td>" crlf "</tr>" crlf)
@@ -766,6 +798,7 @@
  (printout fp "<tr class=\"row10\">" crlf "<td class=\""?chnk_fr_htm"\"> ~ </td>" crlf "</tr>" crlf)
  (printout fp "<tr class=\"row11\"><td class=\""?chnk_fr_htm"\"><input name=\"suggestion_"?p_id"."?s_id"."?pp_id"\" type=\"text\" class=\"suggestion\" size=\"1\" value=\" ~ \" /></td></tr>" crlf)
  (printout fp "</table>" crlf crlf))
+ ;(printout fp "</table>"crlf"<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form>" crlf "<div class=\"float_clear\"/>" crlf crlf))
  
  (assert (id-index (+ ?pp_id 1) (- ?n_words 1)))
  )
@@ -808,6 +841,7 @@
  (printout fp "<tr class=\"row10\">" crlf "<td class=\"number\">"?p_id"."?s_id".J</td><td class=\""?chnk_fr_htm"\"> "?l_punc ?Apertium_output ?r_punc" </td>" crlf "</tr>" crlf)
  (printout fp "<tr class=\"row11\"><td class=\"number\">&nbsp;</td><td class=\""?chnk_fr_htm"\"><input name=\"suggestion_"?p_id"."?s_id"."?id"\" type=\"text\" class=\"suggestion\" size=\"1\" value=\" "?l_punc ?Apertium_output ?r_punc" \" /></td></tr>" crlf)
  (printout fp "</table>" crlf crlf)
+ ;(printout fp "</table>"crlf"<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form>" crlf "<div class=\"float_clear\"/>" crlf crlf)
  else
  (if (eq ?sen_type idiom) then
  (printout fp "<tr class=\"row2\">" crlf "<td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'"?idiom_des"\')\">&#9761;</a></td>" crlf "</tr>" crlf)
@@ -825,6 +859,7 @@
  (printout fp "<tr class=\"row10\">" crlf "<td class=\""?chnk_fr_htm"\"> "?l_punc ?Apertium_output ?r_punc" </td>" crlf "</tr>" crlf)
  (printout fp "<tr class=\"row11\"><td class=\""?chnk_fr_htm"\"><input name=\"suggestion_"?p_id"."?s_id"."?id"\" type=\"text\" class=\"suggestion\" size=\"1\" value=\" "?l_punc ?Apertium_output ?r_punc" \" /></td></tr>" crlf)
  (printout fp "</table>" crlf crlf))
+ ;(printout fp "</table>"crlf"<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form>" crlf "<div class=\"float_clear\"/>" crlf crlf))
 
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -867,6 +902,7 @@
  (printout fp "<tr class=\"row10\">" crlf "<td class=\"number\">"?p_id"."?s_id".J</td><td class=\""?chnk_fr_htm"\"> "?l_punc ?h_mng ?r_punc" </td>" crlf "</tr>" crlf)
  (printout fp "<tr class=\"row11\"><td class=\"number\">&nbsp;</td><td class=\""?chnk_fr_htm"\"><input name=\"suggestion_"?p_id"."?s_id"."?id"\" type=\"text\" class=\"suggestion\" size=\"1\" value=\" "?l_punc ?h_mng ?r_punc" \" /></td></tr>" crlf)
  (printout fp "</table>" crlf crlf)
+ ;(printout fp "</table>"crlf"<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form>" crlf "<div class=\"float_clear\"/>" crlf crlf)
  else
  (if (eq ?sen_type idiom) then
  (printout fp "<tr class=\"row2\">" crlf "<td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'"?idiom_des"\')\">&#9761;</a></td>" crlf "</tr>" crlf)
@@ -884,6 +920,7 @@
  (printout fp "<tr class=\"row10\">" crlf "<td class=\""?chnk_fr_htm"\"> "?l_punc ?h_mng ?r_punc" </td>" crlf "</tr>" crlf)
  (printout fp "<tr class=\"row11\"><td class=\""?chnk_fr_htm"\"><input name=\"suggestion_"?p_id"."?s_id"."?id"\" type=\"text\" class=\"suggestion\" size=\"1\" value=\" "?l_punc ?h_mng ?r_punc" \" /></td></tr>" crlf)
  (printout fp "</table>" crlf crlf))
+ ;(printout fp "</table>"crlf"<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form>" crlf "<div class=\"float_clear\"/>" crlf crlf))
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
  )
@@ -924,6 +961,7 @@
  (printout fp "<tr class=\"row10\">" crlf "<td class=\"number\">"?p_id"."?s_id".J</td><td class=\""?chnk_fr_htm"\"> - </td>" crlf "</tr>" crlf)
  (printout fp "<tr class=\"row11\"><td class=\"number\">&nbsp;</td><td class=\""?chnk_fr_htm"\"><input name=\"suggestion_"?p_id"."?s_id"."?id"\" type=\"text\" class=\"suggestion\" size=\"1\" value=\" - \" /></td></tr>" crlf)
  (printout fp "</table>" crlf crlf)
+ ;(printout fp "</table>"crlf"<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form>" crlf "<div class=\"float_clear\"/>" crlf crlf)
  else
  (if (eq ?sen_type idiom) then
  (printout fp "<tr class=\"row2\">" crlf "<td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'"?idiom_des"\')\">&#9761;</a></td>" crlf "</tr>" crlf)
@@ -941,6 +979,7 @@
  (printout fp "<tr class=\"row10\">" crlf "<td class=\""?chnk_fr_htm"\"> - </td>" crlf "</tr>" crlf)
  (printout fp "<tr class=\"row11\"><td class=\""?chnk_fr_htm"\"><input name=\"suggestion_"?p_id"."?s_id"."?id"\" type=\"text\" class=\"suggestion\" size=\"1\" value=\" - \" /></td></tr>" crlf)
  (printout fp "</table>" crlf crlf))
+ ;(printout fp "</table>"crlf"<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form>" crlf "<div class=\"float_clear\"/>" crlf crlf))
  
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
  )
@@ -970,6 +1009,7 @@
  (printout fp "<tr class=\"row10\">" crlf "<td class=\"number\">"?p_id"."?s_id".J</td><td class=\""?chnk_fr_htm"\"> - </td>" crlf "</tr>" crlf)
  (printout fp "<tr class=\"row11\"><td class=\"number\">&nbsp;</td><td class=\""?chnk_fr_htm"\"><input name=\"suggestion_"?p_id"."?s_id"."?id"\" type=\"text\" class=\"suggestion\" size=\"1\" value=\" - \" /></td></tr>" crlf)
  (printout fp "</table>" crlf crlf)
+ ;(printout fp "</table>"crlf"<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form>" crlf "<div class=\"float_clear\"/>" crlf crlf)
  else
  (printout fp "<tr class=\"row2\">" crlf "<td class=\""?chnk_fr_htm"\"> - </td>" crlf "</tr>" crlf)
  (printout fp "<tr class=\"row3\">" crlf "<td class=\""?chnk_fr_htm"\"> "?l_punc ?word ?r_punc" </td>" crlf "</tr>" crlf)
@@ -982,6 +1022,7 @@
  (printout fp "<tr class=\"row10\">" crlf "<td class=\""?chnk_fr_htm"\"> - </td>" crlf "</tr>" crlf)
  (printout fp "<tr class=\"row11\"><td class=\""?chnk_fr_htm"\"><input name=\"suggestion_"?p_id"."?s_id"."?id"\" type=\"text\" class=\"suggestion\" size=\"1\" value=\" - \" /></td></tr>" crlf)
  (printout fp "</table>" crlf crlf))
+  ;(printout fp "</table>"crlf"<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form>" crlf "<div class=\"float_clear\"/>" crlf crlf))
  
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
  )
@@ -992,6 +1033,8 @@
  ?f<-(id-index ?id 0)
  =>
  (retract ?f)
+ (printout fp "<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form> " crlf)
+
  ;(if (neq ?p_id 1) then
 ;	(printout fp "</nextline>" crlf)
 ; )
@@ -1006,7 +1049,6 @@
 	;		(printout fp "</p>" crlf)
 ;		)
 ;		(printout fp "</rt>" crlf)
-           (printout fp "<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form> " crlf)
            (printout fp "<div class=\"float_clear\"/>" crlf)
            (printout fp "<div class=\"bottom\"></div>" crlf)
            (printout fp "</body>" crlf)
