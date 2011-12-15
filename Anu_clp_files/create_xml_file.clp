@@ -771,8 +771,8 @@ else
  (printout fp "<tr class=\"row9\">" crlf "<td class=\"number\">"?p_id"."?s_id".I</td><td class=\""?chnk_fr_htm"\"> (+"?sign") --&gt; "?pp_h_mng  " </td>" crlf "</tr>" crlf)
  else
  (printout fp "<tr class=\"row8\">" crlf "<td class=\"number\">"?p_id"."?s_id".H</td><td class=\""?chnk_fr_htm"\"> "?pp_h_mng" &lt;-- </td>" crlf "</tr>" crlf)
- (printout fp "<tr class=\"row9\">" crlf "<td class=\"number\">"?p_id"."?s_id".J</td><td class=\""?chnk_fr_htm"\"> " ?pp_h_mng " &lt;-- ("?sign") </td>" crlf "</tr>" crlf))
- (printout fp "<tr class=\"row10\">" crlf "<td class=\""?chnk_fr_htm"\"> ~ </td>" crlf "</tr>" crlf)
+ (printout fp "<tr class=\"row9\">" crlf "<td class=\"number\">"?p_id"."?s_id".I</td><td class=\""?chnk_fr_htm"\"> " ?pp_h_mng " &lt;-- ("?sign") </td>" crlf "</tr>" crlf))
+ (printout fp "<tr class=\"row10\">" crlf "<td class=\"number\">"?p_id"."?s_id".J</td><td class=\""?chnk_fr_htm"\"> ~ </td>" crlf "</tr>" crlf)
  (printout fp "<tr class=\"row11\"><td class=\"number\">&nbsp;</td><td class=\""?chnk_fr_htm"\"><input name=\"suggestion_"?p_id"."?s_id"."?pp_id"\" type=\"text\" class=\"suggestion\" size=\"1\" value=\" ~ \" /></td></tr>" crlf)
  (printout fp "</table>" crlf crlf)
  ;(printout fp "</table>"crlf"<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form>" crlf "<div class=\"float_clear\"/>" crlf crlf)
