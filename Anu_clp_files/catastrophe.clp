@@ -29,6 +29,7 @@
 =>
 (assert (sen_type-id-phrase catastrophe ?id caharge)))
 
+;Though old, the Jones Study supports our conclusion. 
 (defrule eliptical1
 (id-word ?id after|although|as|before|if|though|till|unless|until|when|whenever|where|wherever|while)
 (root-verbchunk-tam-chunkids ? ? ? $? ?k1)

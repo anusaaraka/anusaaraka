@@ -1,11 +1,8 @@
-//Shabdanjali is kept in 26 functions in java script "fetchshabd[a-z]"
-//This speeds up the fetching process.
 function cautionwith(a) {
 		var contentshabd = document.getElementById('content');
 		var content1shabd = document.getElementById('content1caution');
 		content1shabd.innerHTML ='<div id="hnd"/>';
-		//contentshabd.innerHTML = '<div id="with"\><br\/\>"N","1.विदेशी-द्वेष"<br\/\>Some German patriots suffer from xenophobia.<br\/\><br\/\><\/div\>'
-		contentshabd.innerHTML = '<div id="with"\><br\/\><p\/\><h4\/\>\'.... married with ...\':<\/h4\/\><br\/\>अंग्रेजी के मूल भाषियों के लिये \'He is married with a sixteen years old girl.\' = (उसकी शादी हो गई और उसकी एक सोलह साल की लड़की है.) और <br\/\>\'He is married to a sixteen years old girl.\' = (उसकी शादी एक सोलह साल की लड़की से हो गई.) <br\/\>लेकिन अन्य भाषी, \'He is married with a sixteen years old girl.\' = (उसकी शादी एक सोलह साल की लड़की से हो गई.) के रूप में समझ लेते है जोकि गलत है. <br\/\>इस लिये , इस तरह के वाक्यों को देखने पर थोड़ा सा सावधान रहना चाहिये. नीचे दिये गये वाक्यों को देखिये.<br\/\><br\/\>1. He is married with a sixteen years old girl.(उसकी शादी हो गई और उसकी एक सोलह साल की लड़की है.) <br\/\>2. She\'s now married with a child and working with the Coalition Against Trafficking in Women.(अब उसकी  शादी हो गई, एक बच्चा है और औरतों का सौदा के विरुद्ध काम करने वाली एक संस्था के साथ काम कर रही है.)  <br\/\>3. She is married with a blended family that includes her husband\'s children from a previous marriage.(उसकी शादी हो गई, और उसका पति का पहला शादी से हुए बच्चों के साथ उसका एक मिश्रित परिवार है.)<br\/\>4. Now they\'re married with a baby. (अब उनकी शादी हो गई है और उनका एक बच्चा भी है.)<br\/\>5. Confident and secure, and married with a 2-year-old daughter ...... (निडर और सुरक्षित, शादी शुदा और 2 साल की बेटी है ......) <br\/\>6. Next is comedian and actor Rick Younger, who\'s married with a son. (इस के बाद हास्य अभिनेता और अभिनेता रिक् यंगर है, जिस की शादी शुदा है और एक बेटा है.)<br\/\><br\/\><\/div\>'
+		contentshabd.innerHTML = '<div id="with"\><h3\/\>\'.... married with ...\':<\/h3\/\><p\/\>अंग्रेजी के मूल भाषियों के लिये \'He is married with a sixteen years old girl.\' = (उसकी शादी हो गई और उसकी एक सोलह साल की लड़की है.) और <br\/\>\'He is married to a sixteen years old girl.\' = (उसकी शादी एक सोलह साल की लड़की से हो गई.) <br\/\>लेकिन अन्य भाषी, \'He is married with a sixteen years old girl.\' = (उसकी शादी एक सोलह साल की लड़की से हो गई.) के रूप में समझ लेते है जोकि गलत है. <br\/\>इस लिये , इस तरह के वाक्यों को देखने पर थोड़ा सा सावधान रहना चाहिये. नीचे दिये गये वाक्यों को देखिये.<br\/\><br\/\>1. He is married with a sixteen years old girl.(उसकी शादी हो गई और उसकी एक सोलह साल की लड़की है.) <br\/\>2. She\'s now married with a child and working with the Coalition Against Trafficking in Women.(अब उसकी  शादी हो गई, एक बच्चा है और औरतों का सौदा के विरुद्ध काम करने वाली एक संस्था के साथ काम कर रही है.)  <br\/\>3. She is married with a blended family that includes her husband\'s children from a previous marriage.(उसकी शादी हो गई, और उसका पति का पहला शादी से हुए बच्चों के साथ उसका एक मिश्रित परिवार है.)<br\/\>4. Now they\'re married with a baby. (अब उनकी शादी हो गई है और उनका एक बच्चा भी है.)<br\/\>5. Confident and secure, and married with a 2-year-old daughter ...... (निडर और सुरक्षित, शादी शुदा और 2 साल की बेटी है ......) <br\/\>6. Next is comedian and actor Rick Younger, who\'s married with a son. (इस के बाद हास्य अभिनेता और अभिनेता रिक् यंगर है, जिस की शादी शुदा है और एक बेटा है.)<br\/\><br\/\><\/div\>'
 
   var text = document.getElementById(a).innerHTML;
 
@@ -27,7 +24,6 @@ function cautioncharge(a) {
 		var contentshabd = document.getElementById('content');
 		var content1shabd = document.getElementById('content1caution');
 		content1shabd.innerHTML ='<div id="hnd"/>';
-		//contentshabd.innerHTML = '<div id="with"\><br\/\>"N","1.विदेशी-द्वेष"<br\/\>Some German patriots suffer from xenophobia.<br\/\><br\/\><\/div\>'
 		contentshabd.innerHTML = '<div id="charge"\><br\/\><p\/\>\'Charge\' शब्द के लिये अभियोग लगाना, कार्यभार सौंपना, आदेश देना, हमला करना, भुगतान माँगना, चार्ज करना आदि कई सारे अर्थ हैं. संदर्भ के अनुसार इन अर्थों का प्रयोग होता है. उदाहरण के तौर पर,<br\/\>a. He charges ten dollars for a haircut. - (वह बाल काटने के लिये दस डालर भुगतान माँगता है) - \'charge\' + \'पैसा\' -> भुगतान माँगना <br\/\>b. The police charged him with car theft. - (पुलिस् उस पर कार चोरी करने का अभियोग लगाया) - \'charge\' + \'with\' + \'पुलिस् /अपराध/चोरी/न्यायालय/रिश्वत/ ....... \' -> अभियोग लगाना <br\/\><br\/\>साधारणतः, हम \'charge\' शब्द को \'पुलिस्\', \'न्यायालय\' आदि संदर्भों में देखने पर, इस का अर्थ \'अभियोग लगाना\' होगा सोचते है, लेकिन यह गलत हो सकता है. उदाहरण के लिये, नीचे दिये गये वाक्यों को देखिये. <br\/\> <br\/\> 1. The September-October term jury had been charged by Fulton Superior Court Judge Durwood Pye to investigate reports of possible \"irregularities\" in the hard-fought primary which was won by Mayor-nominate Ivan Allen Jr&. - (मेयर के लिये नामांकित इवान अल्लेन् जूनियर द्वारा कठिनाई से जीता गया चुनाव में मुमकिन \"अनियमितियाँ\" पर आये खबरों का जाँच के लिये फुलटन उच्चतम न्यायालय का न्यायाधीश डरवुड पै के द्वारा सितम्बर -अकतूबर का न्यायाधीश मंडल को  आदेश दिया गया था) - subject1 (कर्ता) charge/charge by subject2 (प्रेरक कर्ता) to + verb -> आदेश_देना<br\/\>2. Her cousin had been charged by King James to bring the MacGregors to justice for their crimes and for the past few years had made it his mission. (माकग्रेगर्स को अपने अपराधों के लिये न्यायस्थान लाने उसका ममेरा भाई को  किंग जेम्स् द्वारा आदेश दिया गया था, पिछले कुछ वर्षों से वह उसे अपना जीवन का ध्येय बना लिया.) - subject1 (कर्ता) charge/charge by subject2 (प्रेरक कर्ता) to + verb -> आदेश_देना<br\/\>3. They have been charged by the Bible to love Israel, love the Jews, and await the return of their Savior. (उन्हें इज़राइल और यहूदियों को प्रेम करने, और उन्हें उनका उद्धारक का इंतजार करने के लिये बाइबिल द्वारा आदेश दिया गया है) - subject1 (कर्ता) charge/charge by subject2 (प्रेरक कर्ता) to + verb -> आदेश_देना <br\/\>4. The bishops were charged by E.CE. to adapt the provisions of this apostolic constitution to the U.S. Context. (पोप विषयक संविधान के इन प्रावधानों को यू.एस् संदर्भ के अनुकूल बनाने के लिये धर्माध्यक्ष गण को ई.सीई. द्वारा आदेश दिया गया था) - subject1 (कर्ता) charge/charge by subject2 (प्रेरक कर्ता) to + verb -> आदेश_देना<br\/\>5. There -- there was a committee and the committee was charged by the Department of Environmental Protection to oversee noise. (एक कमिटी है और कमिटी को पर्यावरण संरक्षण विभाग द्वारा शोर का निरीक्षण करने की जिम्मेदारी_सौंपा_गया है) - subject1 (कर्ता) charge/charge by subject2 (प्रेरक कर्ता) to + verb -> जिम्मेदारी_सौंपा_जाना<\/div\>'
 
   var text = document.getElementById(a).innerHTML;
@@ -44,31 +40,6 @@ function cautioncharge(a) {
 		}
 
 		}
-
-
-
-function cautionconstructs(a) {
-		var contentshabd = document.getElementById('content');
-		var content1shabd = document.getElementById('content1caution');
-		content1shabd.innerHTML ='<div id="hnd"/>';
-		contentshabd.innerHTML = '<div id="constructs"\><br\/\><p\/\>\'Constructs\' शब्द को अगर व्याकरण की दृष्टि से देखा जाय तो एक संदिग्ध शब्द है. वह संज्ञा भी है और क्रिया भी है. अगर यह शब्द संज्ञा है, तो साधारणतः इस शब्द को हिंदी में \'निर्माण\' तुल्यार्थ शब्द देकर अनुवाद करते है. लेकिन यह संकल्पना हमेशा स्थूल नहीं होता, कभी-कभी मानसिक संकल्पना भी हो सकता है. इस तरह के धारणाओं को अनुवाद करते समय अनुवादक \'निर्माण\' के अलावा कुछ बेहतर विकल्प सोच सकते हैं. नीचे दिया गया वाक्य को देखिये.  1. A shell allows execution of gnu commands, both synchronously and asynchronously. The shell waits for synchronous commands to complete before accepting more input; asynchronous commands continue to execute in parallel with the shell while it reads and executes additional commands. The redirection constructs permit fine-grained control of the input and output of those commands. Moreover, the shell allows control over the contents of commands\' environments. </ol\/\><br\/\><\/ol\/\><\/div\>'
-
-  var text = document.getElementById(a).innerHTML;
-
-		if(text){
-		var mngshabd = document.getElementById("hnd");
-		mngshabd.innerHTML = '<h3>' + a + '</h3>' + text;
-		}
-		else {
-
-		var mngshabd = document.getElementById("hnd");
-		mngshabd.innerHTML = '<h3>' + a + '</h3>' + 'Word not found';
-
-		}
-
-		}
-
-
 
 function cautionpay(a) {
 		var contentshabd = document.getElementById('content');
