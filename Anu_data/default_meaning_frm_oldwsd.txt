@@ -13225,7 +13225,7 @@ genealogy	vaMSAvalI
 general	janarala
 generalization	sAXAraNIkaraNa
 generalize	vyApaka_banA
-generally	prAya
+generally	prAyaH
 generate	uwpanna_kara
 generation	pIDI
 generative	uwpAxaka
@@ -79242,8 +79242,8 @@ sharecropper's	batAIxAra
 sharecroppers'	batAIxAra
 sharecroppers	batAIxAra
 shared	sAJA_karanA
-shareholder	ihassexAra
-shareholding	ihassexArI
+shareholder	hissexAra
+shareholding	hissexArI
 share's	sAJA_karanA
 shares'	sAJA_karanA
 shares	sAJA_karanA

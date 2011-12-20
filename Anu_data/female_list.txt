@@ -17253,7 +17253,6 @@ baDawa	f
 baDawI	f
 baDanI	f
 baDavAri	f
-baDiyA	f
 baDela	f
 baDowarI	f
 baNigvIWI	f

@@ -76,22 +76,23 @@
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ; October to March is the best time to visit the Jaipur city. Did you count ten to twelve. Added by Sukhada (14-9-11)
+;In the south, jammu is a transition zone from the indian plains to the himalayas.
 (defrule make_compoundPhrase
 (declare (salience 1450))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1 ?NP1 ?PP2 $?d2)
+(Node-Category  ?NP1    NP)
+(Node-Category  ?PP2    PP)
 (Head-Level-Mother-Daughters ?h1 ? ?NP1 $?d3 )
+(id-original_word ?n1 ?h1) 
+(id-cat_coarse ?n1 ?num1) 
 (Head-Level-Mother-Daughters to ? ?PP2 $?d4 ?np2)
 (Head-Level-Mother-Daughters ?h2 ? ?np2 $?d5)
-(id-original_word ?n1 ?h1) 
 (id-original_word ?n2 ?h2)
-(id-cat_coarse ?n1 ?num1) 
 (id-cat_coarse ?n2 ?num2)
-(test (and (eq (numberp ?h1) "FALSE") (eq (numberp ?h2) "FALSE")));Added to avoid gdbm errors. By Roja(18-10-11)
+(test (and (eq (numberp ?h1) FALSE) (eq (numberp ?h2) FALSE)));Added to avoid gdbm errors. By Roja(18-10-11)
 (test (or (and (neq (gdbm_lookup "time.gdbm" ?h1) "FALSE")(neq (gdbm_lookup "time.gdbm" ?h2) "FALSE"))
           (and (neq (gdbm_lookup "place.gdbm" ?h1) "FALSE")(neq (gdbm_lookup "place.gdbm" ?h2) "FALSE"))
 	  (and (eq ?num1 number) (eq ?num2 number)) ))
-(Node-Category  ?NP1    NP)
-(Node-Category  ?PP2    PP)
 (not (Mother  ?NP1))
 =>
         (bind ?*count* (+ ?*count* 1))
@@ -586,6 +587,7 @@
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;This is the place I live. This is the place I met him. 
+;These shoes that I bought will look nice with that hat.
 (defrule get_SBAR_copula
 (declare (salience 730))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?dat $?pos)
@@ -598,7 +600,7 @@
         (bind ?*count* (+ ?*count* 1))
         (retract ?f)
         (if (or (eq ?DAT SBAR)(eq ?DAT SBARQ)) then
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?pos))
+       (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?pos))
         (printout ?*order_debug-file* "(rule_name - get_SBAR_copula "  ?*count* crlf
                          "              Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)"  "?dat" "(implode$ $?pos) crlf
                          "              After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?pos) ")" crlf)

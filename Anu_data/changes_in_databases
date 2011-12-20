@@ -51,7 +51,9 @@
 	sorry	Kexa			as 	kRamA kIjiye	(Rajini 08-12-11)
 	thanks  XanyavAxa_xenA		as      XanyavAxa       (Rajini 09-12-11)
 	afternoon       xopahara_bAxa   as	xopahara	(Rajini 09-12-11)
-
+	generally 	prAya		as	prAyaH		(Rajini 19-12-11) 
+	shareholder     ihassexAra	as	hissexAra	(Rajini 19-12-11)
+	shareholding    ihassexArI	as	hissexArI	(Rajini 19-12-11)
  2. Added :: 
 	attorney-at-law   pramANiwa_aBikarwA
 	Delhi	          xillI
@@ -132,6 +134,7 @@
            "GanA"   (29.7.11)    Meena ex.Uttar pradesh is a land of cultural and geographical diversity, which is blessed by an innumerable perennial rivers, dense forests, and fertile soil.
            "GAtA"   (18.8.11)    Meena Ex.He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan.
            "harA"   (04-10-11)   Meena Ex:The paper turned from red to green.  
+	   "baDiyA" (16-11-12)   Sukhada Ex:The venture's importance for Thomson is great.  
 
   changes in Phrv.txt 
   ===================
@@ -443,6 +446,14 @@ Modified:
          year	1  (        "                )
 
   Removed: month_day.txt and merged all its contents in time.txt (Suggested by Sukhada 08-03-11)
+
+
+ changes in place.txt
+ ====================
+ Added   :
+		himalayas       1  (Added by Sukhada 19-12-11)
+		plains  	1  (Added by Sukhada 19-12-11)
+
 
  Changes in hindi_default_tam.txt
  ==================================

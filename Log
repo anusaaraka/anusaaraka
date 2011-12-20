@@ -2945,3 +2945,19 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 42. Updated Link_parser_fails, Stanford_parser_fails
 43. Updated Log.
 
+ 20-12-11
+ ========
+
+ 1. Modified make_compoundPhrase rule in H_ordering_rules.clp
+ 2. Modified rule_for_ki rule in hindi_sent_reorder.clp
+ 3. sd_pada.clp
+        Modified : get_NP_group, get_and_NP_group, get_and_NP_group1, get_and_NP_group2, PP_pada and PP_pada1 rules
+                   --- added NX in the list             
+ 4. Modified sd_ver_output, ber_ver_output,link_ver_output, ol_ver_output, verified_output, small_sent_ver_output
+ 5. Modified Anusaaraka_stanford.sh
+ 6. Updated changes_in_databases
+ 7. Updated Stanford_parser_fails
+ 8. Updated the following files
+           sd_verified (480)        small_sent_verified_sd  (64)
+ 9. Updated Log
+

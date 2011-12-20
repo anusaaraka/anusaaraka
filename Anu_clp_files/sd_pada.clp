@@ -49,7 +49,7 @@
  (declare (salience 1500))
  ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?NP $?pos)
  ?f2<-(Head-Level-Mother-Daughters ?h ? ?NP $?daut)
- (Node-Category  ?Mot    NP|WHNP|ADJP|PRT|ADVP)
+ (Node-Category  ?Mot    NP|WHNP|ADJP|PRT|ADVP|NX)
  (Node-Category  ?NP     NN|DT|JJ|JJS|JJR|NNS|VBN|ADJP|NNP|PDT|RBS|RB|EX|CD|WDT|VBG|QP|FW)
  =>
 	(retract ?f1 ?f2)
@@ -58,12 +58,13 @@
  ;----------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (07-11-11)
  ;Are a dog and a cat here?  I like dogs as well as cats
+ ;CityFed's president and chief executive officer, John Atherton, said the loss stems from several factors.
  (defrule get_and_NP_group
  (declare (salience 1400))
  ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?NP $?pos ?CC $?p1 ?NP1 $?p2)
- (Node-Category  ?Mot    NP|ADJP|PRT|ADVP)
- (Node-Category  ?NP    NP)
- (Node-Category  ?NP1   NP)
+ (Node-Category  ?Mot    NP|ADJP|PRT|ADVP|NX)
+ (Node-Category  ?NP    NP|NX)
+ (Node-Category  ?NP1   NP|NX)
  (Node-Category  ?CC    CC|CONJP)
  ?f2<-(Head-Level-Mother-Daughters ? ? ?NP $?daut)
  ?f3<-(Head-Level-Mother-Daughters ? ? ?NP1 $?daut1)
@@ -78,8 +79,8 @@
  (defrule get_and_NP_group1
  (declare (salience 1300))
  ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?NP $?pos ?CC $?d)
- (Node-Category  ?Mot    NP|ADJP|PRT|ADVP)
- (Node-Category  ?NP    NP)
+ (Node-Category  ?Mot    NP|ADJP|PRT|ADVP|NX)
+ (Node-Category  ?NP    NP|NX)
  (Node-Category  ?CC    CC|CONJ)
  ?f2<-(Head-Level-Mother-Daughters ?w&~'s ? ?NP $?daut)
  ?f3<-(Head-Level-Mother-Daughters ? ? ?CC $?con ?c)
@@ -93,7 +94,7 @@
  (defrule get_and_NP_group2
  (declare (salience 1200))
  ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?id ?CC $?id1 )
- (Node-Category  ?Mot    NP|ADJP|PRT|ADVP)
+ (Node-Category  ?Mot    NP|ADJP|PRT|ADVP|NX)
  (Node-Category  ?CC    CC|CONJP)
  ?f2<-(Head-Level-Mother-Daughters and|or|well ? ?CC $?con ?c)
  =>
@@ -184,7 +185,7 @@
  (defrule PP_pada
  (declare (salience 800))
  (Head-Level-Mother-Daughters  ?  ? ?PP $?ids ?id)
- (Node-Category ?PP NP|NNP|NNPS|RB|RBS|PRP|NNS|PRP$|WP|CC|JJ|JJS|VP|WRB|CD|WDT|WHNP|ADJP|PRT|ADVP)
+ (Node-Category ?PP NP|NNP|NNPS|RB|RBS|PRP|NNS|PRP$|WP|CC|JJ|JJS|VP|WRB|CD|WDT|WHNP|ADJP|PRT|ADVP|NX)
  ?f<-(to_be_included_in_paxa ?id)
   =>
 	(retract ?f)
@@ -210,7 +211,7 @@
  (defrule PP_pada1
  (declare (salience 700))
  (Head-Level-Mother-Daughters  ?  ? ?PP $?ids ?id $?S)
- (Node-Category ?PP NP|VP|ADJP|PRT|ADVP)
+ (Node-Category ?PP NP|VP|ADJP|PRT|ADVP|NX)
  ?f<-(to_be_included_in_paxa ?id)
   =>
         (retract ?f)

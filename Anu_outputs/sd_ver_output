@@ -799,7 +799,6 @@ mEM cinwiwa hUz Apa pUrI_waraha se praSna galawa_samaJa cuke hEM.
 Hindi meaning using Stanford parser 2.194
 The big question on everybody's mind is who killed OJ. 
 prawyeka vyakwi ke mana meM badA praSna hE ki OJ ko kisane mArA.
-PlU AsapAsa bahuwa sArA hE.
 
 Hindi meaning using Stanford parser 2.195
 Last Tuesday was really fun. 
@@ -1258,7 +1257,7 @@ muJe/muJako AScarya howA hE ki jOYna ne yaha kEse kiyA.
 
 Hindi meaning using Stanford parser 3.6
 I told Margaret on Tuesday that I thought she would probably be hired. 
-mEMne maMgalavAra ko Margaret ko bawAyA ki mEMne socA usako/use saMBavawaH kAma xiyA jAegA.
+mEMne maMgalavAra ko Margaret ko bawAyA ki mEMne socA ki usako/use saMBavawaH kAma xiyA jAegA.
 
 Hindi meaning using Stanford parser 3.7
 High income taxes are important. 
@@ -1868,5 +1867,113 @@ mEM yahAz usase nahIM milA WA.
 Hindi meaning using Stanford parser 4.53
 How many kids do you have? 
 Apake kiwane bacce hEM?
+
+Hindi meaning using Stanford parser 4.54
+It is good to eat less food these days. 
+ina xinoM kama AhAra KAnA acCA hE.
+
+Hindi meaning using Stanford parser 4.55
+The purpose of this note is to give simple sentences for translation. 
+isa tippaNI kA uxxeSya anuvAxa ke liye sarala vAkya xenA hE.
+
+Hindi meaning using Stanford parser 4.56
+The journey takes about three hours. 
+yAwrA lagaBaga wIna GaMte lewI hE.
+
+Hindi meaning using Stanford parser 4.57
+Why are they sitting around the fire? 
+ve Aga ke cAroM ora kyoM bETe hEM?
+
+Hindi meaning using Stanford parser 4.58
+Did you send a birthday card to Sheela? 
+kyA Apane Sheela ko janmaxina_kA kArda BejA?
+
+Hindi meaning using Stanford parser 4.59
+Perhaps he will attend the meeting. 
+SAyaxa vaha bETaka meM upasWiwa hogA.
+
+Hindi meaning using Stanford parser 4.60
+You must not drink this. 
+Apako yaha nahIM pInA cAhiye.
+
+Hindi meaning using Stanford parser 4.61
+These potatoes do not peel easily. 
+ye AlU AsAnI se nahIM Cilawe hEM.
+
+Hindi meaning using Stanford parser 4.62
+Did the noise wake you up? 
+kyA AvAja ne Apako jagAyA?
+
+Hindi meaning using Stanford parser 4.63
+Can you reach the ceiling fan? 
+kyA Apa panKe waka pahuzca sakawe hEM?
+
+Hindi meaning using Stanford parser 4.64
+In which school do you study? 
+Apa kOna sA vixyAlaya meM aXyayana karawe hEM?
+
+Hindi meaning using Stanford parser 4.65
+It is night and the moon is shining in the sky. 
+rAwa hE Ora canxramA AsamAna meM camaka rahA hE.
+
+Hindi meaning using Stanford parser 4.66
+The swimmer swam across the river. 
+wErAka naxI meM wErA.
+
+Hindi meaning using Stanford parser 4.67
+I heard from him twice since he went away. 
+mEMne xo bAra usase sunA jaba_se vaha gayA.
+
+Hindi meaning using Stanford parser 4.68
+I am inviting my friend tomorrow. 
+mEM kala mere miwra ko AmaMwriwa_kara rahA hUz.
+
+Hindi meaning using Stanford parser 4.69
+There was a football match in the school yesterday. 
+kala vixyAlaya meM eka PutabAla mEca WA.
+
+Hindi meaning using Stanford parser 4.70
+The advantages of science are many. 
+vijFAna ke PAyaxe bahuwa sAre hEM.
+
+Hindi meaning using Stanford parser 4.71
+I am busy with my studies. 
+mEM mere aXyayana meM vyaswa hUz.
+
+Hindi meaning using Stanford parser 4.72
+Rama said that Radha told a lie. 
+Rama ne kahA ki Radha ne JUTa bawAyA.
+
+Hindi meaning using Stanford parser 4.73
+The dog who chased me was black. 
+jisane merA pICA kiyA vaha kuwwA kAlA WA.
+
+Hindi meaning using Stanford parser 4.74
+The book I was reading is wonderful. 
+jise/jisako mEM paDa rahA WA vaha puswaka axBuwa hE.
+
+Hindi meaning using Stanford parser 4.75
+I saw the man who you love. 
+mEMne usa AxamI ko jise/jisako Apa pasanxa karawe hEM xeKA.
+
+Hindi meaning using Stanford parser 4.76
+The place where you are staying is very congested. 
+jahAz Apa raha rahe hEM vaha sWAna awyaMwa saMkuliwa hE.
+
+Hindi meaning using Stanford parser 4.77
+I will show you the house where I met your mother. 
+mEM vaha Gara jahAz mEM ApakI mAz se milA Apako xiKAUzgA.
+
+Hindi meaning using Stanford parser 4.78
+The dalai lama presented some beautiful tankhas. 
+dalai lama ne kuCa sunxara tankhas xiyA.
+
+Hindi meaning using Stanford parser 4.79
+Things had just gone too far. 
+parisWiwiyAz_kuCa_jyAxA_hI_KarAba_ho_gayI.
+
+Hindi meaning using Stanford parser 4.80
+SOUTH AFRICA FREED the ANC's Sisulu and seven other political prisoners. 
+SOUTH AFRICA ne ANC ke Sisulu Ora sAwa anya rAjanEwika banxI mukwa kiye/kie.
 
 Calling Interface related programs

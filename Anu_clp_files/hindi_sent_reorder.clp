@@ -190,7 +190,6 @@
  ?f0 <-(hindi_id_order $?pre ?kri $?post)
  (test (< ?kri ?kri_1))
  (not (hindi_id_order $?ids ?kri));The Master said , if I did not go , how would you ever see ?
- (not (prep_id-relation-anu_ids ?  kriyA-conjunction ?kri ?))
  (not (prep_id-relation-anu_ids ?  kriyA-object  ?kri ?));I saw him telling her about the party. 
  (not (prep_id-relation-anu_ids ?  kriyA-conjunction  ?kri_1 10000));Do you think we should go to the party? 
  =>
