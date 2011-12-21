@@ -87,6 +87,7 @@
 
   $HOME_anu_test/Anu_src/split_file.out $HOME_anu_tmp/tmp/$1_tmp/transformed_word_id_all.dat  dir_names.txt transformed_word_id.dat
 
+  grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt
   perl $HOME_anu_test/Anu_src/Match-sen.pl $HOME_anu_test/Anu_databases/Complete_sentence.gdbm  $1.snt one_sentence_per_line.txt > sen_phrase.txt
   $HOME_anu_test/Anu_src/split_file.out sen_phrase.txt dir_names.txt sen_phrase.dat
 
