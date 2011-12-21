@@ -137,7 +137,7 @@
  ;She is always in a hurry
  (defrule always_rule
  ?f1<-(id-word ?id  always)
- (prep_id-relation-anu_ids ?  kriyA-subject  ?kriya  ?sub)
+ (prep_id-relation-anu_ids ?  kriyA-subject  ?kriyA  ?sub)
  (prep_id-relation-anu_ids ?  kriyA-kriyA_viSeRaNa  ?kriyA ?id)
  (test(> ?id ?sub))
  ?f0 <-(hindi_id_order $?pre ?sub $?ids ?id $?post ?kriyA)

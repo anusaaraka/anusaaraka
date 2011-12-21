@@ -538,6 +538,7 @@
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju(13-07-11) Suggested by Sukhada
 ;Several fund managers expect a rough market this morning before prices stabilize.
+;Marriage deals are also fixed under the tree, though this practice is disapproved by the temple authorities.
 (defrule prep_in_SBAR_rule
 (declare (salience 800))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?SBAR ?prep $?d)
@@ -546,7 +547,7 @@
 (Node-Category ?prep IN)
 (not (prep_id-relation-anu_ids ? kriyA-conjunction  ? ?id));It was so dark that I could not see anything.
 (not (Mother  ?SBAR))
-(test (and (neq ?head that)(neq ?head because) (neq ?head as))); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy. Some grammars are better than others, as we have proved. 
+(test (and (neq ?head that)(neq ?head because) (neq ?head as)(neq ?head though))); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy. Some grammars are better than others, as we have proved. 
 =>
         (bind ?*count* (+ ?*count* 1))
         (retract ?f0)

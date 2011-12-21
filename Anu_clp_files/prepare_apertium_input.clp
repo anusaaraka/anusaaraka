@@ -768,6 +768,31 @@
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  VP_rule_ne_kA_or_ne_se )" crlf)
   )
   ;--------------------------------------------------------------------------------------------------------------------------
+  ;Added by Shirisha Manju (21-12-11) Suggested by Sukhada)
+  ;He need not stay here. 
+  (defrule VP_rule_for_before_verb_for_need
+  (declare (salience 651))
+  (id-word  ?id  need)
+  (pada_info (group_head_id ?pada_id)(group_cat VP)(group_ids ?id $?d) (number ?num)(gender ?gen)(person ?person)(H_tam ?H_tam)(preceeding_part_of_verb ?vb))
+  ?f0<-(id-HM-source ?pada_id ?g_head ?)
+  (test (and (neq ?vb 0)(neq ?H_tam 0)))
+  (test (neq (str-index "_" ?H_tam) FALSE)) 
+  =>
+	(bind ?len 0)
+        (bind ?str1 ?H_tam)
+        (bind ?str_len (length ?H_tam))
+        (while (neq (str-index "_" ?H_tam) FALSE)
+        	(bind ?index (str-index "_" ?H_tam))
+                (bind ?H_tam (sub-string (+ ?index (+ ?len 1)) ?str_len ?str1) )
+                (bind ?len (+ ?index ?len))
+        )
+        (bind ?str4 (sub-string 1 ?len ?str1))
+        (bind ?str5 (str-cat ?str4 ?vb (sub-string ?len ?str_len ?str1)))
+        (printout  ?*A_fp5* "(id-Apertium_input "?pada_id " root:"?g_head",tam:"?str5",gen:"?gen",num:"?num ",per:"?person")"  crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  VP_rule_for_before_verb_for_need )" crlf)
+        (retract ?f0)
+  )
+  ;--------------------------------------------------------------------------------------------------------------------------
   ; This job will not take much effort . I do not go out as much now .
   (defrule VP_rule_for_before_verb
   (declare (salience 650))
@@ -793,6 +818,9 @@
                 (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  VP_rule_for_before_verb )" crlf))
                 (retract ?f0)
    )
+  
+   
+
   ;--------------------------------------------------------------------------------------------------------------------------
   ;There was a marked difference in the prices of dishes .
   ;She was afraid for her children .
