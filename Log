@@ -2954,10 +2954,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Modified : get_NP_group, get_and_NP_group, get_and_NP_group1, get_and_NP_group2, PP_pada and PP_pada1 rules
                    --- added NX in the list             
  4. Modified sd_ver_output, ber_ver_output,link_ver_output, ol_ver_output, verified_output, small_sent_ver_output
- 5. Modified Anusaaraka_stanford.sh
+ 5. Modified Anusaaraka_stanford.sh, Anusaaraka_link.sh, Anusaaraka_ol.sh, Anusaaraka_rasp.sh, Anusaaraka_site.sh --> At complete sentence Matching
  6. Updated changes_in_databases
  7. Updated Stanford_parser_fails
- 8. Updated the following files
+ 8. Modified create_xml_file.clp (created deffunctions print_first_row ...... print_eleventh_row and calling this functions in all rules)
+ 9. Modified run_modules_std.bat
+ 10. Updated the following files
            sd_verified (480)        small_sent_verified_sd  (64)
- 9. Updated Log
+ 11. Updated Log
 

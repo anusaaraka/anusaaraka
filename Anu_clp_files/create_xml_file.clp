@@ -71,12 +71,12 @@
  (deffunction print_second_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (printout fp "<tr class=\"row2\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".B"))
- (if (eq ?sen_type eliptical) then
- (printout fp "<a onclick=\"javascript: cautioneliptical('eliptical')\"> <span id=\"popup_link_"?p_id"_"?s_id"_eliptical\" class=\"popup_link\">&#9761;</span> <script type=\"text/javascript\"> new Popup('popup_4','popup_link_"?p_id"_"?s_id"_eliptical',{position:'below',trigger:'click'}); </script>   </a></td> <td class=\""?chnk_fr_htm"\"> - </td>" crlf "</tr>" crlf)
+ (if (or (eq ?sen_type eliptical) (eq ?sen_type noun_absolute))then
+ (printout fp "<a onclick=\"javascript: cautioneliptical('"?sen_type"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_eliptical\" class=\"popup_link\"><blink>&#9761;</blink></span> <script type=\"text/javascript\"> new Popup('popup_4','popup_link_"?p_id"_"?s_id"_eliptical',{position:'below',trigger:'click'}); </script>   </a></td> <td class=\""?chnk_fr_htm"\"> - </td>" crlf "</tr>" crlf)
   else (if (eq ?sen_type idiom) then
- (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'"?idiom_des"\')\">&#9761;</a></td>" crlf "</tr>" crlf)
+ (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'"?idiom_des"\')\"><blink>&#9761;</blink></a></td>" crlf "</tr>" crlf)
  else (if (eq ?sen_type catastrophe) then
- (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  caution"?root"('"?root"')\"> <span id=\"popup_link_1_1_caution\" class=\"popup_link\">&#9761;</span> <script type=\"text/javascript\"> new Popup('popup_3','popup_link_1_1_caution',{position:'below',trigger:'click'}); </script>   </a></td>" crlf "</tr>" crlf)
+ (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  caution"?root"('"?root"')\"> <span id=\"popup_link_1_1_caution\" class=\"popup_link\"><blink>&#9761;</blink></span> <script type=\"text/javascript\"> new Popup('popup_3','popup_link_1_1_caution',{position:'below',trigger:'click'}); </script>   </a></td>" crlf "</tr>" crlf)
  else
  (printout fp "</td><td class=\""?chnk_fr_htm"\"> - </td>" crlf "</tr>" crlf))))
  )

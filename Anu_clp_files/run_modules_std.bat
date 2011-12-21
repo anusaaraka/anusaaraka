@@ -481,6 +481,7 @@
  (load-facts "relations.dat")
  (load-facts "root.dat")
  (load-facts "punctuation_info.dat")
+ (load-facts "revised_preferred_morph.dat")
  (assert (comma_list ))
  (assert (index 1))
  (assert (English-list))
