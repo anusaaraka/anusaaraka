@@ -1168,7 +1168,7 @@
         )
   )
   ;-------------------------------------------------------------------------------------------------------------------------
-  ; added by Shirisha Manju (14-09-11)
+  ; Added by Shirisha Manju (14-09-11)
   ; She is an excellent student with a bright future 
   (defrule PP_rule_with_vib_vAlA
   (declare (salience 400))
@@ -1186,7 +1186,7 @@
   ; Added by Shirisha Manju (14-09-11)
   ;I will show you the house which I bought.
   (defrule PP_rule_with_vib_for_hnd_pronoun
-  (declare (salience 400))
+  (declare (salience 401))
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(vibakthi ?vib))
   ?f0<-(id-HM-source ?pada_id ?h_word&wuma|kOna|jo|koI ?)
   (test (neq ?vib 0))
@@ -1194,6 +1194,20 @@
         (retract ?f0)
         (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><case:o><parsarg:"?vib "><gen:"?gen"><num:"?num"><per:"?per ">$)"  crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_hnd_pronoun )" crlf)
+  )
+  ;-------------------------------------------------------------------------------------------------------------------------
+  ; Added by Shirisha Manju (21-12-11) Suggested by Sukhada
+  ; But nobody knows at what level the futures and stocks will open today.
+  ; The book does not make any mention of his love affair.
+  (defrule PP_rule_with_vib_for_hnd_pronoun1
+  (declare (salience 400))
+  ?f0<-(id-HM-source ?id ?h_word&wuma|kOna|jo|koI|kyA ?)
+  (pada_info (group_ids $?ids ?h)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(vibakthi ?vib))
+  (test (member$ ?id $?ids))
+  =>
+        (retract ?f0)
+        (printout ?*A_fp5* "(id-Apertium_input "?id " ^"?h_word "<cat:p><case:o><parsarg:0><gen:"?gen"><num:"?num"><per:"?per "><tam:0>$)"  crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_with_vib_for_hnd_pronoun1 )" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
   ; Added by Shirisha Manju (10-09-11)

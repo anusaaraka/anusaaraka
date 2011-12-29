@@ -1910,7 +1910,7 @@ kyA Apa panKe waka pahuzca sakawe hEM?
 
 Hindi meaning using Stanford parser 4.64
 In which school do you study? 
-Apa kOna sA vixyAlaya meM aXyayana karawe hEM?
+Apa kOna se vixyAlaya meM aXyayana karawe hEM?
 
 Hindi meaning using Stanford parser 4.65
 It is night and the moon is shining in the sky. 
@@ -1975,5 +1975,9 @@ parisWiwiyAz_kuCa_jyAxA_hI_KarAba_ho_gayI.
 Hindi meaning using Stanford parser 4.80
 SOUTH AFRICA FREED the ANC's Sisulu and seven other political prisoners. 
 SOUTH AFRICA ne ANC ke Sisulu Ora sAwa anya rAjanEwika banxI mukwa kiye/kie.
+
+Hindi meaning using Stanford parser 4.81
+If John was with Lisa last night, who went to the movie with Diane. 
+yaxi jOYna piCalI rAwa Lisa ke sAWa WA wo Diane ke sAWa calaciwra kOna gayA.
 
 Calling Interface related programs

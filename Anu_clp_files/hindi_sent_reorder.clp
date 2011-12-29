@@ -18,7 +18,98 @@
  (root-verbchunk-tam-chunkids)
  (verb_type-verb-kriyA_mUla-tam)
  )
- ;------------------------------------------ Removing prep id from order ---------------------------------------------
+ ;============================================ Stanford Parser Rules ===================================================
+
+ ;-------------------------------- new  word/id  insertion rules ------------------------------------------------------------
+ ;The girl you met yesterday is here. The dog I chased was black.
+ (defrule insert_jo_samAnAXikaraNa
+ (declare (salience 1100))
+ (Parser_used Stanford-Parser|Open-Logos-Parser)
+ (prep_id-relation-anu_ids ? viSeRya-jo_samAnAXikaraNa  ?  10000)
+ (or (prep_id-relation-anu_ids ? kriyA-object  ?k  10000)(prep_id-relation-anu_ids ? kriyA-aXikaraNavAcI_avyaya  ?k  10000))
+ (prep_id-relation-anu_ids ? kriyA-subject  ?k ?sub)
+ ?f0<-(hindi_id_order $?id ?sub $?id1 ?k $?daut)
+ (not (jo_samAn_id_inserted ))
+  =>
+        (retract ?f0)
+        (assert (hindi_id_order $?id 10000 ?sub $?id1 ?k $?daut))
+        (assert (jo_samAn_id_inserted ))
+        (printout ?*DBUG* "(Rule_Name-ids insert_jo_samAnAXikaraNa  (hindi_id_order  "(implode$ (create$ $?id 10000 ?sub $?id1 ?k $?daut)) ")" crlf)
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (13-08-11) 
+ ; Do you think we should go to the party? 
+ (defrule insert_conjunction
+ (declare (salience 1100))
+ (prep_id-relation-anu_ids ? kriyA-conjunction  ?k 10000)
+ (prep_id-relation-anu_ids ? kriyA-subject  ?k  ?sub)
+ (Head-Level-Mother-Daughters ? ? ?NP $?ids)
+ (Node-Category ?NP NP)
+ ?f0<-(hindi_id_order $?id $?ids $?id1 ?k $?daut)
+ (not (conj_id_inserted ))
+ (test (member$ ?sub $?ids))
+ =>
+        (retract ?f0)
+        (assert (hindi_id_order $?id 10000 $?ids $?id1 ?k $?daut))
+        (assert (conj_id_inserted ))
+        (printout ?*DBUG* "(Rule_Name-ids  insert_conjunction  (hindi_id_order  "(implode$ (create$ $?id 10000 $?ids $?id1 ?k $?daut)) ")"  crlf)
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (22-12-11) Suggested by Sukhada
+ ; If the USA were to be invaded by another country, would it really matter?
+ (defrule insert_wo_for_yes_no_question
+ (declare (salience 1150))
+ (id-word ?id if|when)
+ (Head-Level-Mother-Daughters ? ? ?SBAR $?ids)
+ (Node-Category ?SBAR SBAR)
+ (Head-Level-Mother-Daughters ? ? ?SQ $?ids $?sq_ids)
+ (Node-Category ?SQ SQ)
+ ?f0<-(hindi_id_order $?pre $?ids $?sq_ids $?post)
+ (not (wo_inserted ))
+ =>
+        (retract ?f0)
+        (assert (hindi_id_order $?pre $?ids wo kyA $?sq_ids $?post))
+        (assert (wo_inserted ))
+        (printout ?*DBUG* "(Rule_Name-ids   insert_wo_for_yes_no_question   (hindi_id_order  "(implode$ (create$ $?pre $?ids wo kyA $?sq_ids $?post)) ")" crlf)
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (22-12-11) Suggested by Sukhada
+ ;When Mrs. Chitnis discovered that her husband was an adulterer she divorced him.
+ (defrule insert_wo
+ (declare (salience 1100))
+ (id-word ?id when)
+ (sbar-mother-dau ?sbar ?SBAR-dau)
+ (Node-Category ?sbar SBAR)
+ (Node-Category ?SBAR-dau SBAR)
+ (Head-Level-Mother-Daughters ? ? ?sbar $?m_ids)
+ (Head-Level-Mother-Daughters ? ? ?SBAR-dau $?ids)
+ ?f0<-(hindi_id_order $?pre $?ids $?post)
+ (test (member$ ?id $?m_ids))
+ (not (wo_inserted ))
+ =>
+        (retract ?f0)
+        (assert (hindi_id_order $?pre $?ids wo $?post))
+        (assert (wo_inserted ))
+        (printout ?*DBUG* "(Rule_Name-ids  insert_wo (hindi_id_order  "(implode$ (create$ $?pre $?ids wo $?post)) ")" crlf)
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (22-12-11) Suggested by Sukhada
+ ;When the dollar is in a free-fall, even central banks can not stop it.
+ (defrule insert_wo1
+  (declare (salience 1000))
+ (id-word ?id if|when)
+ (Head-Level-Mother-Daughters ? ? ?SBAR $?ids)
+ (Node-Category ?SBAR SBAR)
+ ?f0<-(hindi_id_order $?pre $?ids $?post)
+ (test (and (member$ ?id $?ids)(neq (length $?post) 0))) ;My car broke down when I reached Lalitpur.
+ (not (wo_inserted ))
+ =>
+        (retract ?f0)
+        (assert (hindi_id_order $?pre $?ids wo $?post))
+        (assert (wo_inserted ))
+        (printout ?*DBUG* "(Rule_Name-ids  insert_wo1 (hindi_id_order  "(implode$ (create$ $?pre $?ids wo $?post)) ")" crlf)
+ )
+ ;------------------------------------ Removing prep id from order------------------------------------------------------
  ; Added by Shirisha Manju (29-05-11)
  ; The people of Orissa are facing grave adversities due to the cyclone.
  (defrule rm_prep_id
@@ -34,9 +125,7 @@
         (printout ?*DBUG* "(Rule_Name-ids  rm_prep_id  (hindi_id_order " (implode$ $?ids)" "(implode$ $?ids1)"))" crlf)
         (assert (pre_id_deleted ?pid))
  )
-
  ;====================================  id movement rules ===============================================================
-
  ; What colour is your shirt?
  (defrule wh_without_aux-reorder2
  (declare (salience 100))
@@ -125,6 +214,7 @@
  ; Apa #BAgyavAna hEM #ki #Aja #parIkRA #nahIM hE 
  (defrule det_viSeRaNa_rule
  (prep_id-relation-anu_ids ? viSeRya-det_viSeRaNa  ?v_id ?vn_id)
+ (prep_id-relation-anu_ids ? ?  ?kriyA ?v_id)
  ?f1<-(id-word ?vn_id no)
  ?f0 <-(hindi_id_order $?pre ?vn_id $?mid ?v_id  $?post ?kriyA)
  =>
@@ -282,6 +372,7 @@
  (prep_id-relation-anu_ids  ? kriyA-praSnavAcI  ?k ?p)
  (prep_id-relation-anu_ids  ? kriyA-subject ?k1 ?p)
  ?f0 <-(hindi_id_order $?pre ?k1 $?post)
+ (not (wo_inserted ))
  =>
         (retract ?f0 ?f1)
         (assert (hindi_id_order  $?pre ?k1 wo $?post))
@@ -296,6 +387,7 @@
  (defrule wo_rule_for_if1
  (declare (salience 1))
  ?f1<-(id-word ?id if)  ;Modified by Meena (28-10-10) 
+ (not (wo_inserted )) ;restricted for Stanford Parser bcoz "wo" is generated using constituents.
  (prep_id-relation-anu_ids  ? kriyA-conjunction  ?k ?id)
  ?f0 <-(hindi_id_order $?pre ?k $?post)
  (not (hindi_id_order $? ?k))
@@ -310,6 +402,7 @@
  (defrule wo_rule_for_when
  (declare (salience 15))
  ?f1<-(id-word 1 when)  ;Modified by Meena (28-10-10) 
+ (not (wo_inserted )) ;restricted for Stanford Parser bcoz "wo" is generated using constituents.
  (prep_id-relation-anu_ids ?  kriyA-conjunction  ?k 1)
  (prep_id-relation-anu_ids ?  kriyA-subject  ?k1 ?id)
  ?f0 <-(hindi_id_order $?pre ?id $?post)
@@ -321,20 +414,39 @@
         (printout ?*DBUG* "(Rule_Name-ids   wo_rule_for_when   (hindi_id_order  "(implode$ (create$ $?pre ?k1 wo $?post))")"crlf)
 
  )
- ;------------------------------------------------------------------------------------------------------------------
- ; Added by Shirisha Manju (15-11-11)
- ; When you stand on this rock and face the east, the waves of the bay of bengal lap your feet.
+ ;-------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (15-11-11)
+ ;When Mrs. Chitnis discovered that her husband was an adulterer she divorced him.
  (defrule wo_rule_for_when1
+ (declare (salience 2))
+ ?f1<-(id-word 1 when)
+ (not (wo_inserted )) ;restricted for Stanford Parser bcoz "wo" is generated using constituents.
+ (prep_id-relation-anu_ids ?  kriyA-kriyA_viSeRaNa  ?k 1)
+ (prep_id-relation-anu_ids ?  kriyA-conjunction  ?k1 ?sub)
+ (test (> ?k1 ?k) )
+ ?f0 <-(hindi_id_order $?pre ?k1 $?post)
+ =>
+        (retract ?f0 ?f1)
+        (assert (hindi_id_order  $?pre ?k1 wo $?post))
+        (printout ?*DBUG* "(Rule_Name-ids   wo_rule_for_when1  (hindi_id_order  "(implode$ (create$ $?pre ?k1 wo $?post))")"crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (22-12-11)
+ ; When the dollar is in a free-fall, even central banks can not stop it.
+ ; When you stand on this rock and face the east, the waves of the bay of bengal lap your feet.
+ (defrule wo_rule_for_when2
  (declare (salience 1))
- ?f1<-(id-word 1 when)   
+ ?f1<-(id-word 1 when)
+ (not (wo_inserted ))   
  (prep_id-relation-anu_ids ?  kriyA-kriyA_viSeRaNa  ?k 1)
  (prep_id-relation-anu_ids ?  kriyA-subject  ?k1 ?id)
- ?f0 <-(hindi_id_order $?pre ?k1 $?post)
+ (pada_info (group_head_id ?id) (group_cat PP) (group_ids $?d))
+ ?f0 <-(hindi_id_order $?pre $?d $?post)
  (test (> ?k1 ?k) )
  =>
         (retract ?f0 ?f1)
-        (assert (hindi_id_order  $?pre  ?k1 wo $?post))
-        (printout ?*DBUG* "(Rule_Name-ids   wo_rule_for_when   (hindi_id_order  "(implode$ (create$ $?pre ?k1 wo $?post))")"crlf)
+        (assert (hindi_id_order  $?pre wo $?d $?post))
+        (printout ?*DBUG* "(Rule_Name-ids   wo_rule_for_when2  (hindi_id_order  "(implode$ (create$ $?pre wo $?d $?post))")"crlf)
 
  )
  ;------------------------------------------------------------------------------------------------------------------
@@ -362,23 +474,6 @@
   	(retract ?f ?f1)
 	(assert (hindi_id_order  $?list ?id $?list1 nahIM ?kri))
   	(printout  ?*DBUG* "(Rule_Name-ids   insert_nahIM   (hindi_id_order  "(implode$ (create$ $?list  ?id $?list1 nahIM ?kri)) ")" crlf)
- )
- ;------------------------------------------------------------------------------------------------------------------
- ; If the USA were to be invaded by another country, would it really matter? 
- ; Added by Shirisha Manju (8-07-11) suggested by Sukhada
- (defrule kyA_rule
- (Head-Level-Mother-Daughters ? ? ?ROOT ?SQ )
- (Node-Category ?ROOT   ROOT)
- (Head-Level-Mother-Daughters ? ? ?SQ ?SBAR ?M $?)
- (Node-Category ?SQ     SQ)
- (Node-Category ?SBAR  SBAR)
- (Head-Level-Mother-Daughters ?aux ? ?M ?id)
- ?f<-(hindi_id_order $?list ?id $?list1)
- ?f1<-(id-word ?id ?)
-  =>
-  	(retract ?f ?f1)
-  	(assert (hindi_id_order  $?list  kyA ?id $?list1))
-  	(printout  ?*DBUG* "(Rule_Name-ids   kyA_rule   (hindi_id_order  "(implode$ (create$ $?list kyA  ?id)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
  (defrule remove_ordered_ids

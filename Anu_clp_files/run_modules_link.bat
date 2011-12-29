@@ -471,7 +471,7 @@
  (load-facts "pada_info.dat")
  (open "hin_pos_debug.dat" hin_pos_debug "a")
  (run)
- (save-facts "hindi_id_order.dat" local hindi_id_order)
+ (save-facts "hindi_id_order_tmp.dat" local hindi_id_order)
  (save-facts "hindi_position.dat" local pada_info)
  (clear)
  ;---------------------------------------------------------------------------------
@@ -484,12 +484,12 @@
  (load-facts "revised_root.dat")
  (load-facts "cat_consistency_check.dat")
  (load-facts "GNP_agmt_info.dat")
- (load-facts "hindi_id_order.dat")
+ (load-facts "hindi_id_order_tmp.dat")
  (load-facts "lwg_info.dat")
  (load-facts "parser_type.dat")
  (open "hindi_id_reorder_debug.dat" h_id_reorder_fp "a")
  (run)
- (save-facts "hindi_id_reorder.dat" local hindi_id_order)
+ (save-facts "hindi_id_order.dat" local hindi_id_order)
  (clear)
  ;--------------------------------------------------------------------------
  ; prepare Apertium input for final hindi word generation.
@@ -505,7 +505,7 @@
  (load-facts "relations_tmp1.dat")
  (load-facts "wsd_facts_output.dat")
  (load-facts "wsd_tam_facts_output.dat")
- (load-facts "hindi_id_reorder.dat")
+ (load-facts "hindi_id_order.dat")
  (load-facts "verb_agreement.dat")
  (load-facts "number.dat")
  (load-facts "gender.dat")

@@ -5,7 +5,11 @@
   (root-verbchunk-tam-chunkids)
   (verb_type-verb-causative_verb-tam)
   (id-last_word)
-  (id-word)
+  (id-word) 
+  (id-left_punctuation)
+  (id-right_punctuation)  
+  (conjunction-components)
+  (prep_id-relation-anu_ids)
   )
 
   (defglobal ?*debug* = pada_info_debug)
@@ -102,6 +106,23 @@
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?id $?con ?c $?id1))
  )
  ;----------------------------------------------------------------------------------------------------------------------
+; (defrule get_NP_group_for_comma
+; (declare (salience 1200))
+; ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d ?NP ?NP1)
+; (Node-Category  ?Mot    NP)
+; (Node-Category  ?NP    NP)
+; (Node-Category  ?NP1   NP)
+; (Head-Level-Mother-Daughters ? ? ?NP $?d1 ?id)
+; ?f2<-(Head-Level-Mother-Daughters ? ? ?NP1 $?d2)
+; (id-right_punctuation  ?id ",")
+; =>
+;        (retract ?f1 ?f2)
+;        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d ?NP $?d2 ))
+; )
+ ;----------------------------------------------------------------------------------------------------------------------
+
+
+
  ;Added by Shirisha Manju (07-11-11)
  ;This is the way to go.  The game of life is played for winning. 
  (defrule get_non_finite_kri_group
@@ -135,9 +156,9 @@
  (defrule get_PP_group
  (declare (salience 1100))
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?PP $?d ?JJ $?d1 ?NP)
- (Node-Category  ?PP  PP)
+ (Node-Category  ?PP  PP|WHPP)
  (Node-Category  ?JJ  JJ|TO|IN)
- (Node-Category  ?NP  NP|S)
+ (Node-Category  ?NP  NP|S|WHNP)
 ?f0<-(Head-Level-Mother-Daughters ? ? ?JJ ?prep)
  =>
  	(retract ?f0 ?f1)
@@ -359,6 +380,19 @@
 	(print_in_ctrl_fact_files  ?id)
 	(modify ?f1 (group_head_id ?id)(pada_head ?id))
   )
+  ;----------------------------------------------------------------------------------------------------------------------
+  ;The consortium was put together by Hoare Govett, the London-based investment banking company that is a subsidiary of Security Pacific Corp.
+  (defrule pada_for_comma
+  (declare (salience 300))
+  (prep_id-relation-anu_ids   -   saMjFA-saMjFA_samAnAXikaraNa  ?saMjFA ?samA)
+  ?f0<-(pada_info (group_head_id ?saMjFA) (group_cat PP) (group_ids $?id ) (preposition ?prep))
+  ?f1<-(pada_info (group_head_id ?samA) (group_cat PP) (group_ids $?id1)) 
+  =>
+	(retract ?f0 ?f1)
+        (print_in_ctrl_fact_files  ?samA)
+        (modify ?f1 (group_ids $?id $?id1)(preposition ?prep))
+	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    pada_for_comma    "?samA"  PP	"(implode$ $?id)" "(implode$ $?id1)"  "?prep ")" crlf)
+  )	
   ;----------------------------------------------------------------------------------------------------------------------
   ;Added by Shirisha Manju (09-11-11)
   ;The girl you met yesterday is here. The dog I chased was black.

@@ -2972,6 +2972,34 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 
  22-12-11
  ========
- 1. For running specific parse in stanford ::
-   	1.Anusaaraka_stanford.sh file has be modified.
-   	2.Added new files run_multiple_parse_penn.sh and preffered_parse.py . 
+ 1. H_ordering_rules.clp
+        Added    : move_first_RB_in_NP_to_last
+        Modified : reverse-NP-Daughters, prep_in_SBAR_rule
+        Deleted  : insert_conjunction, insert_jo_samAnAXikaraNa and print_for_debugging4
+ 2. hindi_sent_reorder.clp
+        Added    : insert_jo_samAnAXikaraNa, insert_conjunction, insert_wo_for_yes_no_question, insert_wo, insert_wo1
+        Modified : det_viSeRaNa_rule, wo_rule_for_if1, wo_rule_for_when
+        Deleted  : kyA_rule
+ 3. Added PP_rule_with_vib_for_hnd_pronoun1 rule in prepare_apertium_input.clp
+ 4. run_modules_ol.bat and run_modules_std.bat
+        i.   renamed hindi_id_order.dat  as hindi_id_order_tmp.dat in H_ordering_rules module
+        ii.  generated ordered_constituents.dat file in H_ordering_rules module
+        iii. loaded ordered_constituents.dat and Node_category.dat files in hindi_sent_reorder module
+ 5. Loaded hindi_id_order.dat file instead hindi_id_reorder.dat in
+        run_H_gen_sen.bat   run_modules_link.bat  run_modules_ol.bat  run_modules_std.bat
+ 6. Modified remove_S_node_from_lwg rule in sd_lwg_rules.clp
+ 7. sd_pada.clp
+        Added    : pada_for_comma
+        Modified : get_PP_group
+ 8. Removed move_sub_vib_to_saMjFA_samAnAXikaraNa rule in vibakthi.clp
+ 9. Modified hindi_id_reorder.dat as hindi_id_order.dat in
+        run_sentence_link.sh run_sentence_ol.sh run_sentence_stanford.sh
+ 10. For running specific parse in stanford ::
+        1.Anusaaraka_stanford.sh file has be modified.
+        2.Added new files run_multiple_parse_penn.sh and preffered_parse.py .
+
+ 11. Modified ol_ver_output, sd_ver_output and sd_verified
+ 12. Udated abbr.sh and abbr_browser.sh
+ 13. Updated sd_verified (481)
+ 14. Updated Log
+

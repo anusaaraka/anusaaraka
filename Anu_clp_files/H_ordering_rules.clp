@@ -494,6 +494,24 @@
                          "              After     - "?h" "?l" "?VP" "(implode$ $?d2)" "?ADVP" "?VP")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+; Added by Shirisha Manju(20-06-11) Suggested by Sukhada
+;When the dollar is in a free-fall, even central banks can not stop it.
+(defrule move_first_RB_in_NP_to_last
+(declare (salience 900))
+?f0<-(Head-Level-Mother-Daughters ?h ?l ?Mot ?RB $?d)
+(Node-Category ?Mot NP)
+(Head-Level-Mother-Daughters even ? ?RB ?id)
+(not (Mother ?Mot))
+=>
+	(bind ?*count* (+ ?*count* 1))
+        (retract ?f0 )
+	(assert (Head-Level-Mother-Daughters ?h ?l ?Mot $?d ?RB))
+	(assert (Mother ?Mot))
+        (printout ?*order_debug-file* "(rule_name - first_RB_in_NP_to_last " ?*count* crlf
+                         "              Before    - "?h" "?l" "?Mot" "?RB"  "(implode$ $?d) crlf
+                         "              After     - "?h" "?l" "?Mot"  "(implode$ $?d)" "?RB")" crlf crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
 ;The;Assumptions while writing this rule:
 ;If the daughters of the NP are not numbers then only this rule fires.
 ;These are given assuming that if first daughter of the Mother-NP is NP the rest daughters will never be numbers
@@ -505,7 +523,7 @@
 (Node-Category  ?NP  NP)
 (Node-Category  ?PP PP|VP)
 (not (Mother  ?mot))
-;(test (and (neq ?head lot)(neq ?head most)(neq ?head number)(neq ?head spot)));And I think a lot of people will harp on program trading. This room would look big for a spot of paint.
+;And I think a lot of people will harp on program trading. This room would look big for a spot of paint.
 ;Chamba has a number of temples, palaces and stylized buildings
 
 =>      
@@ -547,7 +565,7 @@
 (Node-Category ?prep IN)
 (not (prep_id-relation-anu_ids ? kriyA-conjunction  ? ?id));It was so dark that I could not see anything.
 (not (Mother  ?SBAR))
-(test (and (neq ?head that)(neq ?head because) (neq ?head as)(neq ?head though))); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy. Some grammars are better than others, as we have proved. 
+(test (and (neq ?head that)(neq ?head because) (neq ?head as)(neq ?head though)(neq ?head although)(neq ?head If)(neq ?head unless))); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy. Some grammars are better than others, as we have proved. 
 =>
         (bind ?*count* (+ ?*count* 1))
         (retract ?f0)
@@ -601,6 +619,7 @@
         (bind ?*count* (+ ?*count* 1))
         (retract ?f)
         (if (or (eq ?DAT SBAR)(eq ?DAT SBARQ)) then
+ 	(assert (sbar-mother-dau ?Mot ?dat))
        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?pos))
         (printout ?*order_debug-file* "(rule_name - get_SBAR_copula "  ?*count* crlf
                          "              Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)"  "?dat" "(implode$ $?pos) crlf
@@ -631,6 +650,7 @@
 	(if (and (or (eq ?DAT SBAR)(eq ?DAT SBARQ))(neq ?noun NP)) then
 	(retract ?f0)
 	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?pos))
+	(assert (sbar-mother-dau ?Mot ?dat))
 	(assert (Head-Level-Mother-Daughters ?h ?l ROOT1 $?r ?dat))
 	(printout ?*order_debug-file* "(rule_name - get_SBAR "  ?*count* crlf
         	         "              Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)"  "?dat" "(implode$ $?pos) crlf
@@ -676,18 +696,6 @@
 	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut))
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-;The Master said, if I did not go, how would you ever see? 
-(defrule create_sen_SBAR
-(declare (salience -90))
-?f1<-(Head-Level-Mother-Daughters ? ? ?dat $?child)
-(Node-Category  ?dat SBAR|SBARQ)
-(not (sent $?child))
-(not (dont_separate_sbar ?dat))
-=>
-	(assert (Sen  $?child))
-	(assert (sen  $?child))
-)
-;-----------------------------------------------------------------------------------------------------------------------
 ;Here ROOT category is changed to SBAR
 (defrule rename_ROOT_cat_to_SBAR
 (declare (salience 500))
@@ -697,17 +705,28 @@
 	(retract ?f1)
 	(assert (Sen $?daut))
 )
-
-
+;-----------------------------------------------------------------------------------------------------------------------
+;The Master said, if I did not go, how would you ever see? 
+(defrule create_sen_SBAR
+(declare (salience 100))
+?f1<-(Head-Level-Mother-Daughters ? ? ?dat $?child)
+(Node-Category  ?dat SBAR|SBARQ)
+(not (sbar_ids $?child))
+(not (dont_separate_sbar ?dat))
+=>
+        (assert (Sen  $?child))
+        (assert (sbar_ids $?child))
+)
+;-----------------------------------------------------------------------------------------------------------------------
 (defrule assert_dummy_fact
-(declare (salience -100))
+(declare (salience 90))
 =>
   (assert (hindi_id_order))
 )
 
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule hin_order
-(declare (salience -101))
+(declare (salience 80))
 ?f1<-(hindi_id_order $?dau)
 ?f0<-(Sen $?daughters ?id)
 (not (Sen $? ?id1&:(> ?id ?id1)))
@@ -716,54 +735,18 @@
 	(assert (hindi_id_order $?dau $?daughters ?id))
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-(defrule print_for_debugging4
-(declare (salience -102))
-?f1<-(hindi_id_order $?dau)
-=>
-(bind ?*count* (+ ?*count* 1))
-(printout ?*order_debug-file* "(debug_info  "?*count*"  Hindi-order  " (implode$ $?dau)")" crlf)
-(bind ?*count* (+ ?*count* 1))
-(printout ?*order_debug-file* "(debug_info  "?*count*"  Word Insertion rules)" crlf)
-)
-;-----------------------------------------------------------------------------------------------------------------------
-;The girl you met yesterday is here. The dog I chased was black.
-(defrule insert_jo_samAnAXikaraNa
-(declare (salience 4))
-?f0<-(hindi_id_order $?id ?sub $?id1 ?k $?daut)
-(or (prep_id-relation-anu_ids ? kriyA-object  ?k  10000)(prep_id-relation-anu_ids ? kriyA-aXikaraNavAcI_avyaya  ?k  10000))
-(prep_id-relation-anu_ids ? kriyA-subject  ?k ?sub)
-(prep_id-relation-anu_ids ? viSeRya-jo_samAnAXikaraNa  ?  10000)
-(not (jo_samAn_id_inserted ))
-=>        
-        (bind ?*count* (+ ?*count* 1))
-        (retract ?f0)
-        (assert (hindi_id_order $?id 10000 ?sub $?id1 ?k $?daut))
-        (assert (jo_samAn_id_inserted ))
-	(printout ?*order_debug-file* "(rule_name - insert_jo_samAnAXikaraNa " ?*count* crlf
-        	         "              Before    - "(implode$ $?id)" "?sub" "(implode$ $?id1)" "?k" "(implode$ $?daut) crlf
-                	 "              After     - "(implode$ $?id)"  10000 "?sub" " (implode$ $?id1)" "?k" "(implode$ $?daut) ")" crlf)
-)
-;-----------------------------------------------------------------------------------------------------------------------
-; Added by Shirisha Manju (13-08-11) 
-; Do you think we should go to the party? 
-(defrule insert_conjunction
-(declare (salience 4))
-(prep_id-relation-anu_ids ? kriyA-conjunction  ?k 10000)
-(prep_id-relation-anu_ids ? kriyA-subject  ?k  ?sub)
-(Head-Level-Mother-Daughters ? ? ?NP $?ids)
-(Node-Category ?NP NP)
-?f0<-(hindi_id_order $?id $?ids $?id1 ?k $?daut)
-(not (conj_id_inserted ))
-(test (member$ ?sub $?ids))
-=>
-        (bind ?*count* (+ ?*count* 1))
-        (retract ?f0)
-        (assert (hindi_id_order $?id 10000 $?ids $?id1 ?k $?daut))
-        (assert (conj_id_inserted ))
-        (printout ?*order_debug-file* "(rule_name - insert_conjunction " ?*count* crlf
-                         "              Before    - "(implode$ $?id)" "?sub" "(implode$ $?id1)" "?k" "(implode$ $?daut) crlf
-                         "              After     - "(implode$ $?id)"  10000 "?sub" " (implode$ $?id1)" "?k" "(implode$ $?daut) ")" crlf)
-)
+;(defrule substitute_punc_info1
+;(declare (salience 70))
+;(mother-punct_head-punctuation ?Mot ?p_h ?punc&~P_DQ&~P_DOT)
+;(Head-Level-Mother-Daughters ?h ?l  ?Mot $?d)
+;?f0<-(hindi_id_order $?pre $?d $?post)
+;(not (punc_inserted ?p_h))
+;=>
+;       	(bind ?*count* (+ ?*count* 1))
+;	(retract ?f0)
+; 	(assert (hindi_id_order $?pre $?d ?punc $?post))
+;       	(assert (punc_inserted ?p_h))
+;)
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule end_order
 (declare (salience -200))

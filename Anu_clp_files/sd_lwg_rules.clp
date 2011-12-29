@@ -59,7 +59,7 @@
 =>
         (if (eq ?CAT VP) then
         (retract ?f ?f1)
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VB $?daut1 ?VP1))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot ?VB $?daut  $?daut1 ?VP1))
         (assert (daughter ?VB ?id))
         else
         (retract ?f)
@@ -193,8 +193,12 @@
 ?f0<-(root-verbchunk-tam-parser_chunkids  ?root - $?pre ?S $?po - $?pre ?S $?po - $?pre ?S $?po)
 (Node-Category ?S S)
 =>
-	(retract ?f0)
-	(assert (root-verbchunk-tam-parser_chunkids  ?root - $?pre $?po - $?pre $?po - $?pre $?po))
+	(if (and (eq (length $?pre) 0) (eq (length $?pre) 0)) then ;The leopard seizes its kill and begins to eat.
+		(retract ?f0)
+	else 
+		(retract ?f0)
+		(assert (root-verbchunk-tam-parser_chunkids  ?root - $?pre $?po - $?pre $?po - $?pre $?po))
+	)
 )
 ;------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (28-10-11) Suggested by Sukhada

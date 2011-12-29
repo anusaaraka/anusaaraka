@@ -227,19 +227,6 @@
 	)
  )
  ;-------------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (20-12-11) Suggested by Sukhada
- ;"We have been very disappointed in the performance of natural gas prices," said Mr. Cox, Phillips's president. 
- (defrule move_sub_vib_to_saMjFA_samAnAXikaraNa
- (declare (salience 750))
- (prep_id-relation-anu_ids   -   kriyA-subject  ? ?sub)
- (prep_id-relation-anu_ids   -   saMjFA-saMjFA_samAnAXikaraNa  ?sub ?saMjFA)
- ?f0<-(pada_info (group_head_id ?sub) (group_cat PP) (vibakthi ?vib))
- ?f1<-(pada_info (group_head_id ?saMjFA) (group_cat PP) (vibakthi 0))
- (test (neq ?vib 0))
- =>
-	(modify ?f0 (vibakthi 0))
-	(modify ?f1 (vibakthi ?vib))
- )
  ;-------------------------- prefix vibakthi rule ---------------------------------------------
  ; Added by Shirisha Manju 
  ; These are the boy 's books . These are children 's books .
