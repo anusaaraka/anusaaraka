@@ -2970,7 +2970,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 13. Updated Log
 
 
- 22-12-11
+ 04-01-12
  ========
  1. H_ordering_rules.clp
         Added    : move_first_RB_in_NP_to_last
@@ -2990,16 +2990,17 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  6. Modified remove_S_node_from_lwg rule in sd_lwg_rules.clp
  7. sd_pada.clp
         Added    : pada_for_comma
-        Modified : get_PP_group
+        Modified : get_PP_group, get_NP_group
  8. Removed move_sub_vib_to_saMjFA_samAnAXikaraNa rule in vibakthi.clp
  9. Modified hindi_id_reorder.dat as hindi_id_order.dat in
         run_sentence_link.sh run_sentence_ol.sh run_sentence_stanford.sh
  10. For running specific parse in stanford ::
         1.Anusaaraka_stanford.sh file has be modified.
         2.Added new files run_multiple_parse_penn.sh and preffered_parse.py .
-
- 11. Modified ol_ver_output, sd_ver_output and sd_verified
- 12. Udated abbr.sh and abbr_browser.sh
- 13. Updated sd_verified (481)
- 14. Updated Log
-
+ 11. Modified  ClipsToAnu_browser_intfc.sh and run_anu_browser.sh to handle timeout command both in local and server.
+ 12. Added ir.lex in the Anu_src directory. 
+ 13. Modified ol_ver_output, sd_ver_output and sd_verified
+ 14. Upated abbr.sh and abbr_browser.sh
+ 15. Updated README inside stanford-parser.
+ 16. Updated sd_verified (481)
+ 17. Updated Log

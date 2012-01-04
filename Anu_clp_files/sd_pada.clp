@@ -53,8 +53,8 @@
  (declare (salience 1500))
  ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?NP $?pos)
  ?f2<-(Head-Level-Mother-Daughters ?h ? ?NP $?daut)
- (Node-Category  ?Mot    NP|WHNP|ADJP|PRT|ADVP|NX)
- (Node-Category  ?NP     NN|DT|JJ|JJS|JJR|NNS|VBN|ADJP|NNP|PDT|RBS|RB|EX|CD|WDT|VBG|QP|FW)
+ (Node-Category  ?Mot    NP|WHNP|ADJP|PRT|ADVP|NX) 
+ (Node-Category  ?NP     NN|DT|JJ|JJS|JJR|NNS|VBN|ADJP|NNP|PDT|RBS|RB|EX|CD|WDT|VBG|QP|FW|NX) ;Added NX by Roja for latest stanford version-2011-12-22. Ex : He could hear a faint sound from the bushes.
  =>
 	(retract ?f1 ?f2)
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?daut $?pos))
