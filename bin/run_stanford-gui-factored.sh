@@ -1,0 +1,1 @@
+java -mx800m -cp "$HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/stanford-parser.jar:" edu.stanford.nlp.parser.ui.Parser $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/englishFactored.ser.gz

@@ -2970,7 +2970,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 13. Updated Log
 
 
- 04-01-12
+ 05-01-12
  ========
  1. H_ordering_rules.clp
         Added    : move_first_RB_in_NP_to_last
@@ -2998,9 +2998,14 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         1.Anusaaraka_stanford.sh file has be modified.
         2.Added new files run_multiple_parse_penn.sh and preffered_parse.py .
  11. Modified  ClipsToAnu_browser_intfc.sh and run_anu_browser.sh to handle timeout command both in local and server.
- 12. Added ir.lex in the Anu_src directory. 
- 13. Modified ol_ver_output, sd_ver_output and sd_verified
- 14. Upated abbr.sh and abbr_browser.sh
- 15. Updated README inside stanford-parser.
- 16. Updated sd_verified (481)
- 17. Updated Log
+ 12. Added ir.lex in the Anu_src directory.
+ 13. Renamed run_penn.sh as run_penn-pcfg.sh and updated the same in Anusaaraka_stanford.sh.
+ 14. Renamed run_stanford-gui.sh as run_stanford-gui-pcfg.sh.
+ 15. Added Anusaaraka_stanford-Factored.sh and run_stanford-gui-factored.sh in bin folder.
+ 16. Added run_penn-factored.sh inside stanford parser.
+ 17. Updated roman_iscii file.
+ 18. Modified ol_ver_output, sd_ver_output and sd_verified
+ 19. Upated abbr.sh and abbr_browser.sh
+ 20. Updated README inside stanford-parser.
+ 21. Updated sd_verified (481)
+ 22. Updated Log

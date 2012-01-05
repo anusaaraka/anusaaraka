@@ -24,9 +24,10 @@
                         constituency_to_dependency.sh
 			run_lexicalize.sh
 			split-relations.py
-			run_penn.sh
+			run_penn-pcfg.sh
 			run_multiple_parse_penn.sh 
-			preffered_parse.py	
+			preffered_parse.py
+			run_penn-factored.sh
 
        3.    Change the version of Stanford-parser in $HOME_anu_test/bin/ for Anusaaraka.sh ,  Anusaaraka_stanford.sh , 
 	     Anusaaraka_site.sh , run_stanford-gui.sh and $HOME_anu_test/shell_scripts for anu_compile.sh
