@@ -1,4 +1,24 @@
-(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
+ (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
+
+; (deffacts dummy_facts
+; (para_id-sent_id-no_of_words)
+; (id-original_word)
+; (id-word)
+; (id-last_word)
+; (id-left_punctuation)
+; (id-right_punctuation)
+; (chunk-ids)
+; (id-cat)
+; (id-cat_coarse)
+; (id-padasuthra)
+; (id-root)
+; (id-root-category-suffix-number)
+; (parserid-wordid)
+; (root-verbchunk-tam-chunkids)
+; (id-HM-source)
+; (id-Apertium_output)
+; (Eng_sen)
+; )
 
  (deffunction string_to_integer (?parser_id)
  (string-to-field (sub-string 2 10000 ?parser_id)))
@@ -24,10 +44,10 @@
  (printout fp "<title>anusAraka</title>" crlf)
  (printout fp "</head>" crlf)
  (printout fp "<body onload=\"register_keys()\">" crlf)
- (printout fp "<div id=\"popup_8\" class=\"popup popup_draghandle\">" crlf)
+ (printout fp "<div id=\"popup_8\" class=\"popup popup_draghandle\" style=\"display:none\">" crlf)
  (printout fp "<div id=\"content\"></div>" crlf)
  (printout fp "</div>" crlf)
- (printout fp "<div id=\"popup_2\" class=\"popup popup_draghandle\">" crlf)
+ (printout fp "<div id=\"popup_2\" class=\"popup popup_draghandle\" style=\"display:none\">" crlf)
  (printout fp "<h3> Shabdanjali </h3>" crlf)
  (printout fp "<div id=\"content1shabd\"></div>" crlf)
  (printout fp "<script type=\"text/javascript\">" crlf)
@@ -65,38 +85,38 @@
 
  (deffunction print_first_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?root ?original_word ?sen_type ?fetch)
  (printout fp "<tr class=\"row1\">" crlf)
- (printout fp "<td class=\"number\">"?p_id"."?s_id".A<a name=\"sentence_"?p_id"_"?s_id"\" id=\"sentence_"?p_id"_"?s_id"\"></a></td><td class=\""?chnk_fr_htm"\"> <a onclick=\"javascript:  fetchshabd"?fetch"('"?root"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?original_word"\" class=\"popup_link\">"?l_punc ?original_word ?r_punc"</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_"?p_id"_"?s_id"_"?original_word "',{position:'below',trigger:'click'}); </script>   </a> </td>"crlf"</tr>" crlf)
+ (printout fp "<td class=\"number\">"?p_id"."?s_id".A<a name=\"sentence_"?p_id"_"?s_id"_"?w_id"\" id=\"sentence_"?p_id"_"?s_id"_"?w_id"\"></a></td><td class=\""?chnk_fr_htm"\"> <a onclick=\"javascript:  fetchshabd"?fetch"('"?root"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?w_id"_"?original_word"\" class=\"popup_link\">"?l_punc ?original_word ?r_punc"</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_"?p_id"_"?s_id"_"?w_id"_"?original_word "',{position:'below',trigger:'click'}); </script>   </a> </td>"crlf"</tr>" crlf)
  )
 
  (deffunction print_second_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (printout fp "<tr class=\"row2\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".B"))
- (if (or (eq ?sen_type eliptical) (eq ?sen_type noun_absolute))then
- (printout fp "<a onclick=\"javascript: cautioneliptical('"?sen_type"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_eliptical\" class=\"popup_link\"><blink>&#9761;</blink></span> <script type=\"text/javascript\"> new Popup('popup_4','popup_link_"?p_id"_"?s_id"_eliptical',{position:'below',trigger:'click'}); </script>   </a></td> <td class=\""?chnk_fr_htm"\"> - </td>" crlf "</tr>" crlf)
+ (if (or (eq ?sen_type truncated) (eq ?sen_type noun_absolute))then
+ (printout fp "<a onclick=\"javascript: caution_"?sen_type"('"?sen_type"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?w_id"_eliptical\" class=\"popup_link\"><blink>&#9761;</blink></span> <script type=\"text/javascript\"> new Popup('popup_4','popup_link_"?p_id"_"?s_id"_"?w_id"_eliptical',{position:'below',trigger:'click'}); </script>   </a></td> <td class=\""?chnk_fr_htm"\"> - </td>" crlf "</tr>" crlf)
   else (if (eq ?sen_type idiom) then
  (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'"?idiom_des"\')\"><blink>&#9761;</blink></a></td>" crlf "</tr>" crlf)
  else (if (eq ?sen_type catastrophe) then
- (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  caution"?root"('"?root"')\"> <span id=\"popup_link_1_1_caution\" class=\"popup_link\"><blink>&#9761;</blink></span> <script type=\"text/javascript\"> new Popup('popup_3','popup_link_1_1_caution',{position:'below',trigger:'click'}); </script>   </a></td>" crlf "</tr>" crlf)
+ (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  caution"?root"('"?root"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?w_id"_caution\" class=\"popup_link\"><blink>&#9761;</blink></span> <script type=\"text/javascript\"> new Popup('popup_3','popup_link_"?p_id"_"?s_id"_"?w_id"_caution',{position:'below',trigger:'click'}); </script>   </a></td>" crlf "</tr>" crlf)
  else
  (printout fp "</td><td class=\""?chnk_fr_htm"\"> - </td>" crlf "</tr>" crlf))))
  )
 
-  (deffunction print_third_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?root)
-  (printout fp "<tr class=\"row3\">" crlf)
-  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".C</td>"))
-  (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_punc ?root ?r_punc" </td>" crlf "</tr>" crlf)
-  )
-  
-  (deffunction print_fourth_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?cat)
-  (printout fp "<tr class=\"row4\">" crlf)
-  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".D</td>"))
-  (printout fp "<td class=\""?chnk_fr_htm"\"> "?cat" </td>" crlf "</tr>" crlf)
-  )
+ (deffunction print_third_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?root)
+ (printout fp "<tr class=\"row3\">" crlf)
+ (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".C</td>"))
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_punc ?root ?r_punc" </td>" crlf "</tr>" crlf)
+ )
+ 
+ (deffunction print_fourth_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?cat)
+ (printout fp "<tr class=\"row4\">" crlf)
+ (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".D</td>"))
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "?cat" </td>" crlf "</tr>" crlf)
+ )
 
-  (deffunction print_fifth_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?chunk_type)
-  (printout fp "<tr class=\"row5\">" crlf)
-  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".E</td>"))
-  (printout fp "<td class=\""?chnk_fr_htm"\"> "?chunk_type" </td>" crlf "</tr>" crlf))
+ (deffunction print_fifth_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?chunk_type)
+ (printout fp "<tr class=\"row5\">" crlf)
+ (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".E</td>"))
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "?chunk_type" </td>" crlf "</tr>" crlf))
 
  (deffunction print_sixth_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?padasuthra)
  (printout fp "<tr class=\"row6\">" crlf)
@@ -166,7 +186,7 @@
  (printout fp "<tr class=\"row11\">" crlf )
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">&nbsp;</td>"))
  (printout fp "<td class=\""?chnk_fr_htm"\"><input name=\"suggestion_1.1\" type=\"text\" class=\"suggestion\" size=\"1\" value=\"")
- (if (eq ?id_type LWG) then (printout fp " -- \" /></td></tr>" crlf) else (printout fp ?l_punc ?aper_op ?r_punc "\" /></td></tr>" crlf))
+ (if (eq ?id_type AUX_VERB) then (printout fp " -- \" /></td></tr>" crlf) else (printout fp ?l_punc ?aper_op ?r_punc "\" /></td></tr>" crlf))
  (printout fp "</table>" crlf)
  )
 
@@ -225,7 +245,7 @@
  (declare (salience 2900))
  (chunk-ids ?chnk_type ?chnk $?ch1 ?id)
  ?f1<-(chunk-ids ?chnk_type ?chnk ?id1 $?ch2)
- (test (= ?id1 (+ ?id 1)))
+ (test (and (neq ?chnk REP)(= ?id1 (+ ?id 1))))
  =>
  (retract ?f1)
  (assert (chunk-ids ?chnk_type REP ?id1 $?ch2)))
@@ -565,7 +585,7 @@
 
  (printout fp "<table cellspacing=\"0\">" crlf)
  (printout fp "<tr class=\"row1\">" crlf)
- (printout fp "<td class=\""?chnk_fr_htm"\"> <a onclick=\"javascript:  fetchshabd"?fetch"('"?root"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?original_word"\" class=\"popup_link\">"?l_punc ?original_word ?l_punc"</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_"?p_id"_"?s_id"_"?original_word"',{position:'below',trigger:'click'}); </script>   </a> </td></tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> <a onclick=\"javascript:  fetchshabd"?fetch"('"?root"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?id"_"?original_word"\" class=\"popup_link\">"?l_punc ?original_word ?r_punc"</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_"?p_id"_"?s_id"_"?id"_"?original_word"',{position:'below',trigger:'click'}); </script>   </a> </td></tr>" crlf)
 
  )
  ;---------------------------------------------------------------------------------------------------
@@ -603,12 +623,13 @@
  (print_eigth_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng ?h_tam MAIN_VERB)
  (print_ninth_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng ?h_tam MAIN_VERB -)
  (print_tenth_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output MAIN_VERB)
+ (print_eleventh_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output MAIN_VERB) 
  else
  (print_seventh_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_tam ?padasuthra AUX_VERB)
  (print_eigth_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng ?h_tam AUX_VERB)
  (print_ninth_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng ?h_tam AUX_VERB -)
- (print_tenth_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - AUX_VERB))
- (print_eleventh_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output LWG) 
+ (print_tenth_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - AUX_VERB)
+ (print_eleventh_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output AUX_VERB)) 
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
  )

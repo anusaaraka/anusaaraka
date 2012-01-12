@@ -8,13 +8,14 @@ function cautionwith(a) {
 
 		if(text){
 		var mngshabd = document.getElementById("hnd");
-		mngshabd.innerHTML = '<h3>' + a + '</h3>' + text;
+		//mngshabd.innerHTML = '<h3>' + a + '</h3>' + text;
+                 mngshabd.innerHTML = text;
 		}
 		else {
 
 		var mngshabd = document.getElementById("hnd");
-		mngshabd.innerHTML = '<h3>' + a + '</h3>' + 'Word not found';
-
+		//mngshabd.innerHTML = '<h3>' + a + '</h3>' + 'Word not found';
+                mngshabd.innerHTML = 'Word not found';
 		}
 
 		}
@@ -64,26 +65,53 @@ function cautionpay(a) {
 
 
 
-function cautioneliptical(a) {
+function caution_truncated(a) {
                 var contentshabd = document.getElementById('content');
                 var content1shabd = document.getElementById('content1eliptical');
                 content1shabd.innerHTML ='<div id="hnd"/>';
-                contentshabd.innerHTML = '<div id="eliptical"\><br\/\><p\/\>अंग्रेजी भाषा में, यदि वाक्य के दो खण्ड (प्रधान वाक्य और उपवाक्य) हैं और किसी एक खण्ड में \'subordinate conjunctions\' के बाद \'adjectival phrase, या present participal phrase (-ing phrase), या past participal phrase (-ed phrase), या prepositional phrase, या noun\' आ रहा है तो वाक्य का एक खण्ड में क्रिया का लोप होगा|  ऐसे वाक्यों को अंग्रेजी में \'Truncated clauses\' कहते हैं| नीचे दिया गया उदाहरण को देखिये,<br\/\>Ex:(a). <b\>Though old<\/b\>, the Jones Study supports our conclusion.<br\/\>ऊपर (a). वाक्य में \'Though\' शब्द \'subordinate conjunction\' है और \'old\' शब्द\'adjective\' है| इन दोनो शब्दों के बीच आने वाली सहायक क्रिया \'is\' का लोप हो गया है| जिस से वह वाक्य अपूर्ण लग रहा है | ऐसे वाक्यों का अनुवाद करते समय, उस वाक्य में प्रयोग किया गया काल का अनुमान लगाके उस काल के अनुसार, लुप्त क्रियाओं के स्थान में \'finite verb\' रखना एक अच्छा उपाय हो सकता है| उदाहरण के लिये,<br\/\>ex:<br\/\>1. <b\>Though old<\/b\>, the Jones Study supports our conclusion.<br\/\>   (यद्यपि पुराना है, जोन्स् अध्ययन अपना निष्कर्ष का समर्थन करता है|)<br\/\>2. <b\>When deciding<\/b\> these issues, the personnel officer considers three factors.<br\/\>     (जब इन मुद्दो पर निर्णय ले रहा है, तो  पर्सनल् आफीसर् तीन अंशों को ग़ौर करता है) <br\/\><br\/\>NOTE: subordinate conjunctions = after, although, as, as if, as though, before, if, though, till, unless, until, when, whenever, where, wherever, while इत्यादि <br\/\><br\/\>कुछ और उदाहरण देखिये:<br\/\>3. <b\>Though tortured<\/b\> in its reasoning, this theory does have one advantage.<br\/\>      (यद्यपि उसका सिद्धांत का तर्क वितर्क में यातना देता है, यह सिद्धांत का एक फ़ायदा भी है| )<br\/\>4. <b\>When in<\/b\> Rome, do as the Romans do.      (रोम् में रोमन्स् की तरह बर्ताव कीजिये|) <br\/\>5. <b\>Though a fair<\/b\> man, the senator often required his staff to work far into the night.<br\/\>    (यद्यपि उचित आदमी था, सेनेटर् को अपने कर्मचारियों से अक्सर आधी रात तक काम करवाना पडता था|)<br\/\>6. "The other man, carrying a package, jumped aboard the car but seemed unsteady <b\>as if about<\/b\> to fall".<br\/\>    (पुलिन्दा उठा रहा दूसरा आदमी, कार में कूदकर बैठा लेकिन नीचे गिर जायेगा जैसे अस्थिर लग रहा था|)<br\/\><br\/\><b\>Rule:<\/b\><br\/\>1. If<br\/\>   Subordinate conjunction + adjective/-ing phrase/-ed phrase/prepositional phrase/noun<br\/\>   then<br\/\>   place finite verb as per inferred tense of the sentence<\/div\>'
+                contentshabd.innerHTML = '<div id="truncated"\><br\/\><p\/\>अंग्रेजी भाषा में, यदि वाक्य के दो खण्ड (प्रधान वाक्य और उपवाक्य) हैं और किसी एक खण्ड में \'subordinate conjunctions\' के बाद \'adjectival phrase, या present participal phrase (-ing phrase), या past participal phrase (-ed phrase), या prepositional phrase, या noun\' आ रहा है तो वाक्य का एक खण्ड में क्रिया का लोप होगा|  ऐसे वाक्यों को अंग्रेजी में \'Truncated clauses\' कहते हैं| नीचे दिया गया उदाहरण को देखिये,<br\/\>Ex:(a). <b\>Though old<\/b\>, the Jones Study supports our conclusion.<br\/\>ऊपर (a). वाक्य में \'Though\' शब्द \'subordinate conjunction\' है और \'old\' शब्द\'adjective\' है| इन दोनो शब्दों के बीच आने वाली सहायक क्रिया \'is\' का लोप हो गया है| जिस से वह वाक्य अपूर्ण लग रहा है | ऐसे वाक्यों का अनुवाद करते समय, उस वाक्य में प्रयोग किया गया काल का अनुमान लगाके उस काल के अनुसार, लुप्त क्रियाओं के स्थान में \'finite verb\' रखना एक अच्छा उपाय हो सकता है| उदाहरण के लिये,<br\/\>ex:<br\/\>1. <b\>Though old<\/b\>, the Jones Study supports our conclusion.<br\/\>   (यद्यपि पुराना है, जोन्स् अध्ययन अपना निष्कर्ष का समर्थन करता है|)<br\/\>2. <b\>When deciding<\/b\> these issues, the personnel officer considers three factors.<br\/\>     (जब इन मुद्दो पर निर्णय ले रहा है, तो  पर्सनल् आफीसर् तीन अंशों को ग़ौर करता है) <br\/\><br\/\>NOTE: subordinate conjunctions = after, although, as, as if, as though, before, if, though, till, unless, until, when, whenever, where, wherever, while इत्यादि <br\/\><br\/\>कुछ और उदाहरण देखिये:<br\/\>3. <b\>Though tortured<\/b\> in its reasoning, this theory does have one advantage.<br\/\>      (यद्यपि उसका सिद्धांत का तर्क वितर्क में यातना देता है, यह सिद्धांत का एक फ़ायदा भी है| )<br\/\>4. <b\>When in<\/b\> Rome, do as the Romans do.      (रोम् में रोमन्स् की तरह बर्ताव कीजिये|) <br\/\>5. <b\>Though a fair<\/b\> man, the senator often required his staff to work far into the night.<br\/\>    (यद्यपि उचित आदमी था, सेनेटर् को अपने कर्मचारियों से अक्सर आधी रात तक काम करवाना पडता था|)<br\/\>6. "The other man, carrying a package, jumped aboard the car but seemed unsteady <b\>as if about<\/b\> to fall".<br\/\>    (पुलिन्दा उठा रहा दूसरा आदमी, कार में कूदकर बैठा लेकिन नीचे गिर जायेगा जैसे अस्थिर लग रहा था|)<br\/\><br\/\><b\>Rule:<\/b\><br\/\>1. If<br\/\>   Subordinate conjunction + adjective/-ing phrase/-ed phrase/prepositional phrase/noun<br\/\>   then<br\/\>   place finite verb as per inferred tense of the sentence<\/div\>'
 
                 var text = document.getElementById(a).innerHTML;
 
                 if(text){
                 var mngshabd = document.getElementById("hnd");
-                //mngshabd.innerHTML = '<h3>' + a + '</h3>' + text;
-                mngshabd.innerHTML =  text;
+                mngshabd.innerHTML = '<h3>' + 'Truncated sentences ::' + '</h3>' + text;
+    //            mngshabd.innerHTML =  text;
                 }
                 else {
 
                 var mngshabd = document.getElementById("hnd");
-                //mngshabd.innerHTML = '<h3>' + a + '</h3>' + 'Word not found';
-                mngshabd.innerHTML = 'Word not found';
+                mngshabd.innerHTML = '<h3>' + 'Truncated sentences ::' + '</h3>' ;
+      //          mngshabd.innerHTML = 'Word not found';
 
                 }
 
                 }
+
+
+
+
+function caution_noun_absolute(a) {
+                var contentshabd = document.getElementById('content');
+                var content1shabd = document.getElementById('content1eliptical');
+                content1shabd.innerHTML ='<div id="hnd"/>';
+                contentshabd.innerHTML = '<div id="noun_absolute"\><br\/\>अंग्रेजी भाषा में, यदि वाक्य के दो खण्ड (प्रधान वाक्य और उपवाक्य) हैं और किसी एक खण्ड में \'Noun/pronoun\' के बाद\'adjectival phrase, या present participal phrase (-ing phrase), या past participal phrase (-ed phrase), या prepositional phrase, या noun\' आ रहा है तो वाक्य का एक खण्ड में क्रिया का लोप होगा|  ऐसे वाक्यों को अंग्रेजी में \'Noun Absolutes\' कहते हैं| नीचे दिया गया उदाहरण को देखिये,<br\/\><br\/\>(a). Her research complete, the student began to write her thesis.<br\/\>ऊपर (a). वाक्य में \'research\' शब्द noun है और \'complete\' शब्द \'adjective\' है| इन दोनो शब्दों के बीच आने वाली सहायक क्रिया \'was\' का लोप हो गया है| जिस से वह वाक्य अपूर्ण लग रहा है, और प्रधान वाक्य में मौज़ूद \'Her\' शब्द उपवाक्य में मौज़ूद \'the student\' को संकेत कर रहा है या नहीं स्पष्ट नहीं है| ऐसे वाक्यों का अनुवाद करते समय, उस वाक्य में प्रयोग किया गया काल का अनुमान लगाके उस काल के अनुसार, लुप्त क्रियाओं के स्थान में \'finite verb\' रखना एक अच्छा उपाय हो सकता है| उदाहरण के लिये,<br\/\>ex:<br\/\>(a). Her <b\/\>research complete,<\/b\/\>, the student began to write her thesis.<br\/\>उसका शोध पूरा हुआ, विद्यार्थिनी अपना थीसिस लिखना शुरू कर दी| <br\/\>(b). Nelson came out, his <b\/\>face red<\/b\/\> and glowing.<br\/\> नेल्सन बाहर आया, उसका चेहरा लाल था और दमक रहा था|<br\/\><br\/\><br\/\>कुछ और उदाहरण देखिये:<br\/\>1. The student asserts two theories, <b\/\>one relying<\/b\/\> on the Jones Study, the <b\/\>other citing<\/b\/\> a variety of sources.   (विद्यार्थी दो सिद्धांतों को जोर देकर कहता है, एक जोन्स् अध्ययन पर निर्भर होना है, दूसरा विविध स्रोतों को उदाहरण के रूप में बताना है|)<br\/\>2. The trial was held in the Superior Court, <b\/\>Judge Wegner presiding<\/b\/\>.<br\/\>   (सुनवाई उच्चतम न्यायालय में हुई थी, न्यायाधीश वेगनर् संचालन कर रहे थे|)<br\/\>3. "A well-regulated <b\/\>militia being<\/b\/\> necessary to the national defense, the right to bear arms, shall not be infringed."<br\/\>   (राष्ट्रीय सुरक्षा के लिये एक सुव्यवस्थित नागरिक सेना की ज़रूरत है, हथियार रखने का अधिकार का उल्लंघन नहीं होगा|) <br\/\>4. The taxpayer loses on this point as well, <b\/\>his argument grounded<\/b\/\> in theories rejected by the IRS.<br\/\>  (करदाता इस बिंदु पर भी हार जाता है, उसका तर्क IRS द्वारा खारिज किया गया सिद्धांतो पर आधारित है|)<br\/\>5. "He lay flat on ... the floor of the forest, <b\/\>his chin on<\/b\/\> his folded arms."<br\/\>    ("वह अपने मोडे हुए हाथों पर अपना ठुड्डी को रखकर, जंगल के फर्श पर ... सो गया|")<br\/\>6. The attorney ignores precedent, <b\/\>her theories a wish list<\/b\/\> of insupportable propositions.  <br\/\>   (उसके सिद्धांतो को एक असंगत प्रस्तावों का इच्छा सूची मानकर, प्रतिनिधि पूर्व उदाहरणों को अनदेखा करता है)<br\/\><br\/\>Rule:<br\/\>1. If<br\/\>   Noun/pronoun + adjective/-ing phrase/-ed phrase/prepositional phrase/noun   <br\/\>   then<br\/\>   place finite verb as per inferred tense of the sentence<br\/\><\/div\>'
+
+                var text = document.getElementById(a).innerHTML;
+
+                if(text){
+                var mngshabd = document.getElementById("hnd");
+                mngshabd.innerHTML = '<h3>' + 'Noun absolutes::' + '</h3>' + text;
+//                mngshabd.innerHTML =  text;
+                }
+                else {
+
+                var mngshabd = document.getElementById("hnd");
+                mngshabd.innerHTML = '<h3>' + 'Noun absolutes::' + '</h3>' + 'Word not found';
+  //              mngshabd.innerHTML = 'Word not found';
+
+                }
+
+                }
+
 

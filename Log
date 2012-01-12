@@ -2970,7 +2970,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 13. Updated Log
 
 
- 05-01-12
+ 12-01-12
  ========
  1. H_ordering_rules.clp
         Added    : move_first_RB_in_NP_to_last
@@ -3003,9 +3003,21 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  14. Renamed run_stanford-gui.sh as run_stanford-gui-pcfg.sh.
  15. Added Anusaaraka_stanford-Factored.sh and run_stanford-gui-factored.sh in bin folder.
  16. Added run_penn-factored.sh inside stanford parser.
- 17. Updated roman_iscii file.
- 18. Modified ol_ver_output, sd_ver_output and sd_verified
- 19. Upated abbr.sh and abbr_browser.sh
- 20. Updated README inside stanford-parser.
- 21. Updated sd_verified (481)
- 22. Updated Log
+ 17. Added pattern {[.]["][ ][ ][A-Z]} in add_snt_mrkr.lex to handle sentences like
+     1."A well-regulated militia being necessary to the national defense, the right to bear arms, shall not be infringed."
+     2."He lay flat on ... the floor of the forest, his chin on his folded arms."
+ 18. Modified rule name "eliptical" to "truncated_sentences" and added new rule noun_absolute in catastrophe.clp
+ 19. Updated create_xml_file.clp and run_create_xml_file.bat.
+ 20. Added code to handle dot_double_quote in word.c program and to hanlde {<p><s>"} punctuation 
+    [ i.e removing para and sen tag and passing the punctuation only.]
+ 21. Added caution_noun_absolute() function in cautions.js file.
+ 22. Added code for handling "CC" phrase in style.css
+ 23. Added debug info for "id-E_tam-H_tam_mng" for did_not_0_tam0 and did_not_0_tam1 rule in did_not_0_tam.clp.
+ 24. Added "'s/dot_double_quote/.\"/g'" and 's/DOTDOTDOT/.../g' and removed 's/float_clear"><\/div>/float_clear"\/>/g' in abbr_browser.sh file.
+ 25. Modified the test condition in NN_to_NNP rule in sd_category.clp file.
+ 26. Updated roman_iscii file.
+ 27. Modified ol_ver_output, sd_ver_output and sd_verified
+ 28. Upated abbr.sh and abbr_browser.sh
+ 29. Updated README inside stanford-parser.
+ 30. Updated sd_verified (481)
+ 30. Updated Log
