@@ -171,7 +171,7 @@ mEM mere kamare meM so rahA WA.
 
 Hindi meaning using Berkeley parser 2.41
 If you use that strategy, he will wipe you out. 
-yaxi Apa usa raNanIwi kA upayoga karawe hEM wo vaha Apako mitA xegA.
+yaxi Apa usa raNanIwi kA upayoga karawe hEM , wo vaha Apako mitA xegA.
 
 Hindi meaning using Berkeley parser 2.42
 I want to go there. 
@@ -328,7 +328,7 @@ Apa BAgyavAna hEM mEM yahAz hUz.
 
 Hindi meaning using Berkeley parser 2.80
 A big, black, ugly dog chased me. 
-eka bade kAle kurUpa kuwwe ne merA pICA kiyA.
+eka bade , kAle , kurUpa kuwwe ne merA pICA kiyA.
 
 Hindi meaning using Berkeley parser 2.81
 She is very careful about her work. 
@@ -604,7 +604,7 @@ sEnika yuxXa ke liye bulAye/bulAe gaye We.
 
 Hindi meaning using Berkeley parser 2.148
 We ran after him, but he escaped. 
-hama usake pICe xOde paranwu vaha BAga gayA.
+hama usake pICe xOde , paranwu vaha BAga gayA.
 
 Hindi meaning using Berkeley parser 2.149
 He lost his pen. 
@@ -657,7 +657,7 @@ vaha eka jAnA mAnA vEjFAnika hE.
 
 Hindi meaning using Berkeley parser 2.161
 I did not think he would do it, but he did. 
-vaha yaha karegA mEMne nahIM socA WA paranwu usane kiyA.
+vaha yaha karegA , mEMne nahIM socA WA paranwu usane kiyA.
 mEMne nahIM socA WA ki vaha yaha karegA paranwu usane kiyA.
 
 Hindi meaning using Berkeley parser 2.162
@@ -1250,7 +1250,7 @@ merI wIna bahaneM agale sapwAha A rahIM hEM.
 
 Hindi meaning using Berkeley parser 3.7
 There was a problem, but we solved it. 
-samasyA WI paranwu hamane isako hala kiyA.
+samasyA WI , paranwu hamane isako hala kiyA.
 
 Hindi meaning using Berkeley parser 3.8
 It was interesting to hear about school life in Britain. 
@@ -1258,7 +1258,7 @@ britana meM vixyAlaya jIvana ke bAre meM sunanA rucikara WA.
 
 Hindi meaning using Berkeley parser 3.9
 The Master said, if I did not go, how would you ever see? 
-Master ne kahA ki yaxi mEM nahIM gayA WA wo Apa kaBI BI kEse xeKeMge?
+Master ne kahA , ki yaxi mEM nahIM gayA WA , wo Apa kaBI BI kEse xeKeMge?
 
 Hindi meaning using Berkeley parser 3.10
 The letter was clearly the product of a twisted mind. 
@@ -1295,7 +1295,7 @@ paranwu Apa unheM/unako kahAz se prApwa kareMge.
 
 Hindi meaning using Berkeley parser 3.18
 From your description, I do not think I would enjoy it. 
-Apake varNana se mEM nahIM socawA hUz ki mEM isakA Ananxa uTAUzgA.
+Apake varNana se , mEM nahIM socawA hUz ki mEM isakA Ananxa uTAUzgA.
 mEM Apake varNana se nahIM socawA hUz ki mEM isakA Ananxa uTAUzgA.
 
 Hindi meaning using Berkeley parser 3.19
@@ -1365,7 +1365,7 @@ muJe/muJako AScarya howA hE ki kyA hameM/hamako jAnA cAhiye.
 
 Hindi meaning using Berkeley parser 3.35
 He told them about the accident, presumably. 
-usane saMBavawaH xurGatanA ke bAre meM unheM/unako bawAyA.
+usane saMBavawaH , xurGatanA ke bAre meM unheM/unako bawAyA.
 usane xurGatanA ke bAre meM saMBavawaH unheM/unako bawAyA.
 
 Hindi meaning using Berkeley parser 3.36
@@ -1404,7 +1404,7 @@ vaha jaMgala_meM sEra ke liye jA cukI hE.
 
 Hindi meaning using Berkeley parser 3.44
 Since I know English, he spoke to me. 
-kyoMki mEM aMgrejI jAnawA hUz isaliye vaha muJase bolA.
+kyoMki mEM aMgrejI jAnawA hUz , isaliye vaha muJase bolA.
 
 Hindi meaning using Berkeley parser 3.45
 Mysore is also known as the city of palaces. 
@@ -1490,7 +1490,7 @@ sevAoM meM ye kAta viSeRa_rUpa se vqxXoM ko praBAviwa kareMgI.
 
 Hindi meaning using Berkeley parser 3.62
 A slow, balmy breeze from the south engulfed everyone in the audience. 
-xakRiNa se eka XIme suKaxAyaka manxa samIra ne SrowAxala meM prawyeka vyakwi ko nimagna kiyA.
+xakRiNa se eka XIme , suKaxAyaka manxa samIra ne SrowAxala meM prawyeka vyakwi ko nimagna kiyA.
 
 Hindi meaning using Berkeley parser 3.63
 His reputation was tarnished by his misdeeds. 
@@ -1550,7 +1550,7 @@ praxarSana sAwa baje Suru howA hE.
 
 Hindi meaning using Berkeley parser 3.77
 No, it was not Black Monday. 
-nahIM vaha aSuBa somavAra nahIM WA.
+nahIM , vaha aSuBa somavAra nahIM WA.
 
 Hindi meaning using Berkeley parser 3.78
 The President's address to the nation was broadcasted across the country. 
@@ -1558,7 +1558,7 @@ rARtra ke liye President kA saMboXana pUre_xeSa meM prasAriwa kiyA gayA WA.
 
 Hindi meaning using Berkeley parser 3.79
 Still, fund groups are not taking any chances. 
-aBI BI pUzjI samUha KawarA_mola_nahIM_le rahe hEM.
+aBI BI , pUzjI samUha KawarA_mola_nahIM_le rahe hEM.
 
 Hindi meaning using Berkeley parser 3.80
 The accord expired yesterday. 
@@ -1578,7 +1578,7 @@ mEM kala Apako kuCa rucikara waWya bawAUzgA.
 
 Hindi meaning using Berkeley parser 3.84
 At this point, the Dow was down about 35 points. 
-isa samaya para Dow lagaBaga 35 pOintsa nIce WA.
+isa samaya para , Dow lagaBaga 35 pOintsa nIce WA.
 
 Hindi meaning using Berkeley parser 3.85
 He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
@@ -1594,7 +1594,7 @@ kama KarcIle bajata AvAsa kA sabase aXika taj ganj meM hE.
 
 Hindi meaning using Berkeley parser 3.88
 As we go from ooty to gudalur, the change in vegetation is striking. 
-jaba hama ooty se gudalur ko jAwe hEM pOXoM_kI vqxXi meM parivarwana XyAna_AkarRiwa_karanevAlA hE.
+jaba hama ooty se gudalur ko jAwe hEM , pOXoM_kI vqxXi meM parivarwana XyAna_AkarRiwa_karanevAlA hE.
 
 Hindi meaning using Berkeley parser 3.89
 The glass house built on the lines of the crystal palace in london is the main attraction in this huge park. 

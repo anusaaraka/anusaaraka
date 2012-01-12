@@ -735,19 +735,6 @@
 	(assert (hindi_id_order $?dau $?daughters ?id))
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-;(defrule substitute_punc_info1
-;(declare (salience 70))
-;(mother-punct_head-punctuation ?Mot ?p_h ?punc&~P_DQ&~P_DOT)
-;(Head-Level-Mother-Daughters ?h ?l  ?Mot $?d)
-;?f0<-(hindi_id_order $?pre $?d $?post)
-;(not (punc_inserted ?p_h))
-;=>
-;       	(bind ?*count* (+ ?*count* 1))
-;	(retract ?f0)
-; 	(assert (hindi_id_order $?pre $?d ?punc $?post))
-;       	(assert (punc_inserted ?p_h))
-;)
-;-----------------------------------------------------------------------------------------------------------------------
 (defrule end_order
 (declare (salience -200))
 (hindi_id_order $?dau)

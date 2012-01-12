@@ -2979,12 +2979,16 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  2. hindi_sent_reorder.clp
         Added    : insert_jo_samAnAXikaraNa, insert_conjunction, insert_wo_for_yes_no_question, insert_wo, insert_wo1
         Modified : det_viSeRaNa_rule, wo_rule_for_if1, wo_rule_for_when
-        Deleted  : kyA_rule
+        Deleted  : kyA_rule ,rm_prep_id
  3. Added PP_rule_with_vib_for_hnd_pronoun1 rule in prepare_apertium_input.clp
  4. run_modules_ol.bat and run_modules_std.bat
-        i.   renamed hindi_id_order.dat  as hindi_id_order_tmp.dat in H_ordering_rules module
-        ii.  generated ordered_constituents.dat file in H_ordering_rules module
-        iii. loaded ordered_constituents.dat and Node_category.dat files in hindi_sent_reorder module
+        1.   renamed hindi_id_order.dat  as hindi_id_order_tmp.dat in H_ordering_rules module
+        2.  generated ordered_constituents.dat file in H_ordering_rules module
+        3. loaded ordered_constituents.dat and Node_category.dat files in hindi_sent_reorder module
+	4. Added save-facts to generate new file "parser_punctuation_info.dat" in  sd_combining_apostrophe module
+        5. loaded ordered_constituents.dat instead E_constituents_info.dat and renamed hindi_id_order.dat as
+           hindi_id_order_tmp1.dat in hindi_sent_reorder module
+        6. Added insert_punctuation module to get hindi order with punctuations
  5. Loaded hindi_id_order.dat file instead hindi_id_reorder.dat in
         run_H_gen_sen.bat   run_modules_link.bat  run_modules_ol.bat  run_modules_std.bat
  6. Modified remove_S_node_from_lwg rule in sd_lwg_rules.clp
@@ -3015,9 +3019,17 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  23. Added debug info for "id-E_tam-H_tam_mng" for did_not_0_tam0 and did_not_0_tam1 rule in did_not_0_tam.clp.
  24. Added "'s/dot_double_quote/.\"/g'" and 's/DOTDOTDOT/.../g' and removed 's/float_clear"><\/div>/float_clear"\/>/g' in abbr_browser.sh file.
  25. Modified the test condition in NN_to_NNP rule in sd_category.clp file.
- 26. Updated roman_iscii file.
- 27. Modified ol_ver_output, sd_ver_output and sd_verified
- 28. Upated abbr.sh and abbr_browser.sh
- 29. Updated README inside stanford-parser.
- 30. Updated sd_verified (481)
- 30. Updated Log
+ 26. Added : get_mng2 , get_mng1 and get_mng rules in hindi_sentence.clp
+ 27. Modified run_H_gen_sen.bat to load "parser_type.dat" file in hindi_sentence module
+ 28. sd_combining_apostrophe.clp
+        Added    : map_cons3 and map_cons2 rules
+        Modified : map_cons1
+ 29. Updated roman_iscii file.
+ 30. Modified ol_ver_output, sd_ver_output, ber_ver_output,small_sent_ver_output_sd, verified_output and sd_verified
+ 31. Upated abbr.sh and abbr_browser.sh
+ 32. Updated README inside stanford-parser.
+ 33. Updated sd_verified (481)
+ 34. Updated Log
+
+
+

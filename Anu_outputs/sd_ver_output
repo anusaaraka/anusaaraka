@@ -118,7 +118,7 @@ vaha subaha calA gayA.
 
 Hindi meaning using Stanford parser 2.28
 I ate fruits, drank milk and slept. 
-mEMne Pala KAye/KAe xUXa piyA Ora soyA.
+mEMne Pala KAye/KAe , xUXa piyA Ora soyA.
 
 Hindi meaning using Stanford parser 2.29
 The army studied the stills from the security video. 
@@ -146,7 +146,7 @@ mEM mere kamare meM so rahA WA.
 
 Hindi meaning using Stanford parser 2.35
 If you use that strategy, he will wipe you out. 
-yaxi Apa usa raNanIwi kA upayoga karawe hEM wo vaha Apako mitA xegA.
+yaxi Apa usa raNanIwi kA upayoga karawe hEM , wo vaha Apako mitA xegA.
 
 Hindi meaning using Stanford parser 2.36
 I want to go there. 
@@ -256,7 +256,7 @@ Apa BAgyavAna hEM mEM yahAz hUz.
 
 Hindi meaning using Stanford parser 2.62
 A big, black, ugly dog chased me. 
-eka bade kAle kurUpa kuwwe ne merA pICA kiyA.
+eka bade , kAle , kurUpa kuwwe ne merA pICA kiyA.
 
 Hindi meaning using Stanford parser 2.63
 She is very careful about her work. 
@@ -269,7 +269,7 @@ yaha samBava hE ve AyeMge/Aezge.
 Hindi meaning using Stanford parser 2.65
 Have you ever seen the Pacific? 
 kyA Apa Pacific ko kaBI BI xeKa cuke hEM?
-kyA Apa kaBI BI Pacific ko xeKa cuke hEM?
+kyA?Apa kaBI BI Pacific ko xeKa cuke hEM?
 
 Hindi meaning using Stanford parser 2.66
 How many people did you see? 
@@ -307,7 +307,7 @@ denmArka vAsI acCe loga hEM.
 Hindi meaning using Stanford parser 2.74
 People use espresso to make other coffee drinks. 
 loga espreso kOYPI kA anya kOYPI_peya_yA Sarabawa banAne ke liye upayoga karawe hEM.
-loga anya kOYPI_peya_yA Sarabawa banAne ke liye espreso kOYPI kA upayoga karawe hEM.
+loga anya kOYPI_peya_yA?Sarabawa banAne ke liye espreso kOYPI kA upayoga karawe hEM.
 
 Hindi meaning using Stanford parser 2.75
 The Zongle of Bongle Dongle resigned today. 
@@ -328,7 +328,7 @@ kuCa anya pahanAve vAswava meM KarAba We.
 Hindi meaning using Stanford parser 2.79
 Do you think we should go to the party? 
 kyA Apa socawe hEM ki hameM/hamako pArtI ko jAnA cAhiye?
-kyA Apa socawe hEM ki hameM/hamako pArtI meM jAnA cAhiye?
+kyA?Apa socawe hEM ki hameM/hamako pArtI meM jAnA cAhiye?
 
 Hindi meaning using Stanford parser 2.80
 Where did you put the milk? 
@@ -393,7 +393,7 @@ yaha mahawvapUrNa_nahIM howA hE Ted kyA karawA hE.
 Hindi meaning using Stanford parser 2.95
 Are a dog and a cat here? 
 kyA yahAz kuwwA Ora billI hEM?
-kyA kuwwA Ora billI yahAz hEM?
+kyA?kuwwA Ora billI yahAz hEM?
 
 Hindi meaning using Stanford parser 2.96
 There is a dog and a cat here. 
@@ -492,7 +492,7 @@ sEnika yuxXa ke liye bulAye/bulAe gaye We.
 
 Hindi meaning using Stanford parser 2.119
 We ran after him, but he escaped. 
-hama usake pICe xOde paranwu vaha BAga gayA.
+hama usake pICe xOde , paranwu vaha BAga gayA.
 
 Hindi meaning using Stanford parser 2.120
 We lost 30 minutes in the traffic jam. 
@@ -513,7 +513,7 @@ Sita jalapAna ke liye breda sezka rahI hE.
 Hindi meaning using Stanford parser 2.124
 Last week I saw a great movie. 
 piCale sapwAha mEMne eka baDiyA calaciwra xeKA.
-mEMne piCale sapwAha eka baDiyA calaciwra xeKA.
+mEMne piCale sapwAha eka baDiyA?calaciwra xeKA.
 
 Hindi meaning using Stanford parser 2.125
 The idol was a beautiful piece of excellent workmanship. 
@@ -541,7 +541,7 @@ vaha eka jAnA mAnA vEjFAnika hE.
 
 Hindi meaning using Stanford parser 2.131
 I did not think he would do it, but he did. 
-vaha yaha karegA mEMne nahIM socA WA paranwu usane kiyA.
+vaha yaha karegA , mEMne nahIM socA WA paranwu usane kiyA.
 mEMne nahIM socA WA ki vaha yaha karegA paranwu usane kiyA.
 
 Hindi meaning using Stanford parser 2.132
@@ -839,7 +839,7 @@ vaha UparI_wOra se uwwama piyAno_bajAne vAlI hE.
 Hindi meaning using Stanford parser 2.204
 There is a dog or a cat here. 
 yahAz kuwwA yA billI hE.
-kuwwA yA billI yahAz hE.
+kuwwA yA?billI yahAz hE.
 
 Hindi meaning using Stanford parser 2.205
 It is important to fix the problem. 
@@ -979,7 +979,7 @@ cora Kule xvAra meM se BAga gayA.
 Hindi meaning using Stanford parser 2.238
 The land was zoned for industrial purposes. 
 BUmi Oxyogika uxxeSyoM ke liye kRewroM_meM_viBAjiwa kI gayI WI.
-sWala Oxyogika uxxeSyoM ke liye kRewroM_meM_viBAjiwa kiyA gayA WA.
+sWala Oxyogika uxxeSyoM ke liye kRewroM_meM_viBAjiwa kiyA?gayA WA.
 
 Hindi meaning using Stanford parser 2.239
 The child is weeping for his mother. 
@@ -1152,7 +1152,7 @@ merI wIna bahaneM agale sapwAha A rahIM hEM.
 
 Hindi meaning using Stanford parser 2.281
 There was a problem, but we solved it. 
-samasyA WI paranwu hamane isako hala kiyA.
+samasyA WI , paranwu hamane isako hala kiyA.
 
 Hindi meaning using Stanford parser 2.282
 It was interesting to hear about school life in Britain. 
@@ -1168,7 +1168,7 @@ kharif pExAvAra kI upaja isa qwu acCI nahIM WI.
 
 Hindi meaning using Stanford parser 2.285
 The Master said, if I did not go, how would you ever see? 
-Master ne kahA ki yaxi mEM nahIM gayA WA wo Apa kaBI BI kEse xeKeMge?
+Master ne kahA , ki yaxi mEM nahIM gayA WA , wo Apa kaBI BI kEse xeKeMge?
 
 Hindi meaning using Stanford parser 2.286
 The letter was clearly the product of a twisted mind. 
@@ -1231,13 +1231,13 @@ hama usake bacapana ke bAre meM awyaMwa Wode jAnawe hEM.
 
 Hindi meaning using Stanford parser 2.300
 From your description, I do not think I would enjoy it. 
-Apake varNana se mEM nahIM socawA hUz ki mEM isakA Ananxa uTAUzgA.
+Apake varNana se , mEM nahIM socawA hUz ki mEM isakA Ananxa uTAUzgA.
 mEM Apake varNana se nahIM socawA hUz ki mEM isakA Ananxa uTAUzgA.
 
 Hindi meaning using Stanford parser 3.1
 The lawyer pointed out that Clinton did not actually kiss Monica. 
 vakIla ne XyAna_AkarRiwa kiyA ki Clinton ne Monica ko vAswava meM nahIM cUmA WA.
-vakIla ne XyAna_AkarRiwa kiyA ki Clinton ne vAswava meM Monica ko nahIM cUmA WA.
+vakIla ne XyA?na_AkarRiwa kiyA ki Clinton ne vAswava meM Monica ko nahIM cUmA WA.
 
 Hindi meaning using Stanford parser 3.2
 I finally figured out why this program is so slow. 
@@ -1310,7 +1310,7 @@ muJe/muJako AScarya howA hE ki kyA hameM/hamako jAnA cAhiye.
 
 Hindi meaning using Stanford parser 3.19
 He told them about the accident, presumably. 
-usane saMBavawaH xurGatanA ke bAre meM unheM/unako bawAyA.
+usane saMBavawaH , xurGatanA ke bAre meM unheM/unako bawAyA.
 usane xurGatanA ke bAre meM saMBavawaH unheM/unako bawAyA.
 
 Hindi meaning using Stanford parser 3.20
@@ -1353,7 +1353,7 @@ vaha jaMgala_meM sEra ke liye jA cukI hE.
 
 Hindi meaning using Stanford parser 3.29
 Since I know English, he spoke to me. 
-kyoMki mEM aMgrejI jAnawA hUz isaliye vaha muJase bolA.
+kyoMki mEM aMgrejI jAnawA hUz , isaliye vaha muJase bolA.
 
 Hindi meaning using Stanford parser 3.30
 Mysore is also known as the city of palaces. 
@@ -1366,7 +1366,7 @@ Kufri shimla ke nikata eka CotA parvawIya sWAna hE.
 Hindi meaning using Stanford parser 3.32
 The girl who you called yesterday has arrived. 
 vaha ladakI Apane kala jise/jisako bulAyA pahuzca gayI/gaI.
-Apane kala jise/jisako bulAyA vaha ladakI pahuzca gayI/gaI.
+Apane kala jise/jisako bulAyA?vaha ladakI pahuzca gayI/gaI.
 
 Hindi meaning using Stanford parser 3.33
 The snake who swallowed the rat hissed loudly. 
@@ -1381,10 +1381,10 @@ Chris ne jise/jisako KarIxA vaha kuwwA vAswava meM kurUpa hE.
 Hindi meaning using Stanford parser 3.35
 Phil gave me a sweater which he bought in Paris. 
 Phil ne vaha svetara jise/jisako usane Paris meM KarIxA muJe/muJako xiyA.
-Phil ne vaha svetara muJe/muJako xiyA usane jise/jisako Paris meM KarIxA.
-Phil ne vaha svetara muJe/muJako xiyA jise/jisako usane Paris meM KarIxA.
+Phil ne vaha svetara muJe/muJako xiyA?usane jise/jisako Paris meM KarIxA.
+Phil ne vaha svetara muJe/muJako xiyA?jise/jisako usane Paris meM KarIxA.
 Phil ne jise/jisako usane Paris meM KarIxA vaha svetara muJe/muJako xiyA.
-Phil ne muJe/muJako vaha svetara xiyA jise/jisako usane Paris meM KarIxA.
+Phil ne muJe/muJako vaha svetara xiyA?jise/jisako usane Paris meM KarIxA.
 
 Hindi meaning using Stanford parser 3.36
 The boy who came yesterday from Delhi is my friend. 
@@ -1452,7 +1452,7 @@ sevAoM meM ye kAta viSeRa_rUpa se vqxXoM ko praBAviwa kareMgI.
 
 Hindi meaning using Stanford parser 3.50
 A slow, balmy breeze from the south engulfed everyone in the audience. 
-xakRiNa se eka XIme suKaxAyaka manxa samIra ne SrowAxala meM prawyeka vyakwi ko nimagna kiyA.
+xakRiNa se eka XIme , suKaxAyaka manxa samIra ne SrowAxala meM prawyeka vyakwi ko nimagna kiyA.
 
 Hindi meaning using Stanford parser 3.51
 Is there life beyond the grave? 
@@ -1460,7 +1460,7 @@ kyA mqwyu uparAMwa jIvana hE?
 
 Hindi meaning using Stanford parser 3.52
 When you stand on this rock and face the east, the waves of the bay of bengal lap your feet. 
-Apa isa cattAna para jaba Kade howe hEM Ora pUrva kI ora muzha karawe hEM wo bengal kI KAdI kI lahareM Apake pAzvoM se XIre_se takarAwI hEM.
+Apa isa cattAna para jaba Kade howe hEM Ora pUrva kI ora muzha karawe hEM , wo bengal kI KAdI kI lahareM Apake pAzvoM se XIre_se takarAwI hEM.
 
 Hindi meaning using Stanford parser 3.53
 His reputation was tarnished by his misdeeds. 
@@ -1505,7 +1505,7 @@ xaravAjA banxa_mawa kariye/kIjiye.
 Hindi meaning using Stanford parser 3.63
 I have been running about all morning trying to find you. 
 mEM Apako pAne ke liye prayAsa karwe_hue pUrI subaha iXara-uXara xOdawA rahA hUz.
-mEM pUrI subaha meM iXara-uXara Apako pAne ke liye prayAsa karwe_hue xOdawA rahA hUz.
+mEM pUrI subaha meM iXara-uXara Apako pAne ke liye prayA?sa karwe_hue xOdawA rahA hUz.
 
 Hindi meaning using Stanford parser 3.64
 She is making the girl feed the child. 
@@ -1550,11 +1550,11 @@ asala meM vaha piCale kuCa xinoM se WakA_huA Ora vamanakArI mahasUsa karawI rahI
 
 Hindi meaning using Stanford parser 3.74
 At the end of the day, 251.2 million shares were traded. 
-xina ke anwa meM 251.2 xasa-lAKa SeyaroM kA vyApAra kiyA gayA WA.
+xina ke anwa meM , 251.2 xasa-lAKa SeyaroM kA vyApAra kiyA gayA WA.
 
 Hindi meaning using Stanford parser 3.75
 No, it was not Black Monday. 
-nahIM vaha aSuBa somavAra nahIM WA.
+nahIM , vaha aSuBa somavAra nahIM WA.
 
 Hindi meaning using Stanford parser 3.76
 The President's address to the nation was broadcasted across the country. 
@@ -1562,7 +1562,7 @@ rARtra ke liye President kA saMboXana pUre_xeSa meM prasAriwa kiyA gayA WA.
 
 Hindi meaning using Stanford parser 3.77
 Still, fund groups are not taking any chances. 
-aBI BI pUzjI samUha KawarA_mola_nahIM_le rahe hEM.
+aBI BI , pUzjI samUha KawarA_mola_nahIM_le rahe hEM.
 
 Hindi meaning using Stanford parser 3.78
 But fund managers say they are ready. 
@@ -1578,7 +1578,7 @@ mEM kala Apako kuCa rucikara waWya bawAUzgA.
 
 Hindi meaning using Stanford parser 3.81
 At this point, the Dow was down about 35 points. 
-isa samaya para Dow lagaBaga 35 pOintsa nIce WA.
+isa samaya para , Dow lagaBaga 35 pOintsa nIce WA.
 
 Hindi meaning using Stanford parser 3.82
 Do not send the message by radio. 
@@ -1590,7 +1590,7 @@ viRaya usake xvArA samaJAyA gayA WA.
 
 Hindi meaning using Stanford parser 3.84
 He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
-usane kahA ki Ese pariNAmoM ko Japan ke sAWa U.S. vyApAra GAtA GatAne meM dOlara Ora sEnta meM mApane yogya honA cAhiye.
+usane kahA ki Ese pariNAmoM ko Japan ke sAWa U.S. vyApAra GAtA GatAne meM " dOlara Ora sEnta meM mApane yogya honA cAhiye ".
 
 Hindi meaning using Stanford parser 3.85
 Go straight and take a right turn. 
@@ -1618,7 +1618,7 @@ kama KarcIle bajata AvAsa kA sabase aXika taj ganj meM hE.
 
 Hindi meaning using Stanford parser 3.91
 As we go from ooty to gudalur, the change in vegetation is striking. 
-jaba hama ooty se gudalur ko jAwe hEM pOXoM_kI vqxXi meM parivarwana XyAna_AkarRiwa_karanevAlA hE.
+jaba hama ooty se gudalur ko jAwe hEM , pOXoM_kI vqxXi meM parivarwana XyAna_AkarRiwa_karanevAlA hE.
 
 Hindi meaning using Stanford parser 3.92
 The glass house built on the lines of the crystal palace in london is the main attraction in this huge park. 
@@ -1718,7 +1718,7 @@ usako/use AKirakAra janasaBA meM bolane ke liye viRaya milA.
 
 Hindi meaning using Stanford parser 4.16
 The main states of southern india are tamilnadu, kerala, maharashtra, andhrapradesh and karnataka. 
-xakRiNI BArawa ke pramuKa rAjya tamilnadu kerala maharashtra andhrapradesh Ora karnataka hEM.
+xakRiNI BArawa ke pramuKa rAjya tamilnadu , kerala , maharashtra , andhrapradesh Ora karnataka hEM.
 
 Hindi meaning using Stanford parser 4.17
 He will not come because he is busy. 
@@ -1726,7 +1726,7 @@ vaha nahIM AyegA/AegA kyozki vaha vyaswa hE.
 
 Hindi meaning using Stanford parser 4.18
 He neither plays, nor reads. 
-vaha na hI KelawA hE na paDawA hE.
+vaha na hI KelawA hE , na paDawA hE.
 
 Hindi meaning using Stanford parser 4.19
 The kullu valley is also known as the valley of the gods. 
@@ -1798,7 +1798,7 @@ yaha purAnA kilA 16th SawAbxI meM sher SAha ke xvArA banAyA gayA WA.
 
 Hindi meaning using Stanford parser 4.36
 During the first world war, it was used as a hospital. 
-praWama mahAyuxXa ke xOrAna yaha aspawAla ke jEsA upayoga kiyA gayA WA.
+praWama mahAyuxXa ke xOrAna , yaha aspawAla ke jEsA upayoga kiyA gayA WA.
 
 Hindi meaning using Stanford parser 4.37
 The chenna kesava temple of belur built 900 years ago is an exquisite example of hoysala art. 
@@ -1818,7 +1818,7 @@ vaha kurUpa Ora motI hE.
 
 Hindi meaning using Stanford parser 4.41
 Her mom was beautiful, talented and sweet. 
-usakI mAz sunxara prawiBASAlI Ora mITI WI.
+usakI mAz sunxara , prawiBASAlI Ora mITI WI.
 
 Hindi meaning using Stanford parser 4.42
 She is beautiful and intelligent. 
@@ -1826,7 +1826,7 @@ vaha sunxara Ora buxXimAna hE.
 
 Hindi meaning using Stanford parser 4.43
 Mary, Joe, Sita, Geeta and Louise are coming to the party. 
-Mary Joe Sita Geeta Ora Louise pArtI ko A rahIM hEM.
+Mary , Joe , Sita , Geeta Ora Louise pArtI ko A rahIM hEM.
 
 Hindi meaning using Stanford parser 4.44
 The government's action was unusual. 
@@ -1978,6 +1978,6 @@ SOUTH AFRICA ne ANC ke Sisulu Ora sAwa anya rAjanEwika banxI mukwa kiye/kie.
 
 Hindi meaning using Stanford parser 4.81
 If John was with Lisa last night, who went to the movie with Diane. 
-yaxi jOYna piCalI rAwa Lisa ke sAWa WA wo Diane ke sAWa calaciwra kOna gayA.
+yaxi jOYna piCalI rAwa Lisa ke sAWa WA , wo Diane ke sAWa calaciwra kOna gayA.
 
 Calling Interface related programs

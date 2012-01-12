@@ -155,13 +155,43 @@
  )
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule map_cons1
- ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre ?PUNC $?post)
+ (declare (salience 1))
+ ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre ?head ?PUNC $?post)
+ (Node-Category ?PUNC    ?p&P_COM|P_DOT|P_QES|P_DQ|P_DQT|P_SEM|P_LB|P_RB|P_SQT|P_CLN|P_DSH|P_EXM)
  ?f1<-(Head-Level-Mother-Daughters ?h2 ?lvl1 ?PUNC ?child)
- (Node-Category ?PUNC    P_COM|P_DOT|P_QES|P_DQ|P_DQT|P_SEM|P_LB|P_RB|P_SQT|P_CLN|P_DSH|P_EXM)
   =>
         (retract ?f ?f1)
+	(assert (mother-punct_head-punctuation ?head ?PUNC ?p))
+        (assert (Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre ?head $?post))
+ )
+ ;-------------------------------------------------------------------------------------------------------------------
+ ; Added by shirisha Manju
+ ; "It screwed things up," said one major specialist. 
+ (defrule map_cons2
+ (declare (salience 2))
+ ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre ?PUNC $?post)
+ (Node-Category ?PUNC    P_DQT)
+ ?f1<-(Head-Level-Mother-Daughters ?h2 ?lvl1 ?PUNC P1)
+  =>
+        (retract ?f ?f1)
+        (assert (mother-punct_head-punctuation initial ?PUNC P_DQT))
         (assert (Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre $?post))
  )
+ ;-------------------------------------------------------------------------------------------------------------------
+ ; Added by shirisha Manju
+ ; Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival. 
+ (defrule map_cons3
+ ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre ?PUNC $?post)
+ (Node-Category ?PUNC   ?p&P_COM|P_DOT|P_QES|P_DQ|P_DQT|P_SEM|P_LB|P_RB|P_SQT|P_CLN|P_DSH|P_EXM)
+ ?f1<-(Head-Level-Mother-Daughters ?h2 ?lvl1 ?PUNC ?)
+  =>
+        (retract ?f ?f1)
+        (assert (mother-punct_head-punctuation ?Mot ?PUNC ?p))
+        (assert (Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre $?post))
+ )
+
+
+
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule end
  (declare (salience -50))

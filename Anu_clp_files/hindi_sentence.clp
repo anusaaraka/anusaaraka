@@ -16,7 +16,40 @@
 (defglobal ?*hin_sen-file* = h_sen_fp)
  
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot preceeding_part_of_verb (default 0)) (slot preposition (default 0))(slot Hin_position (default 0)))
- 
+
+ ;Added by Shirisha Manju (10-12-2011)
+ (defrule get_mng
+ (declare (salience 2500))
+ (Parser_used Stanford-Parser)
+ ?f1<-(id-Apertium_output ?id $?wrd_analysis)
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
+ =>
+	(retract ?f0 ?f1)
+        (assert (hindi_id_order $?id1  $?wrd_analysis $?id2))
+ )
+ ;----------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (10-12-2011)
+ (defrule get_mng1
+ (declare (salience 2400))
+ (Parser_used Stanford-Parser)
+ ?f1<-(id-HM-source ?id ?hmng ?)
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
+ =>
+        (retract ?f0 ?f1)
+        (assert (hindi_id_order $?id1  ?hmng $?id2))
+ )
+ ;----------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (10-12-2011)
+ (defrule get_mng2
+ (declare (salience 2300))
+ (Parser_used Stanford-Parser)
+ ?f1<-(id-word ?id ?mng)
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
+ =>
+        (retract ?f0 ?f1)
+        (assert (hindi_id_order $?id1  ?mng $?id2))
+ )
+ ;----------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju
  ;When none worked satisfactorily , his assistant complained ," All our work is in vain ". 
  (defrule attach_emphatic
@@ -91,9 +124,6 @@
         (retract ?f0 )
         (assert (hindi_id_order $?id1 left_paren $?wrd_analysis  right_paren $?id2))
  )
- 
-
-
 ;----------------------------------------------------------------------------------------------------------
  ;Substituting Apertium output for the id(1000) 
  ;Added by Shirisha Manju (03-12-10)
