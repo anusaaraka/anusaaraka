@@ -106,23 +106,6 @@
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?id $?con ?c $?id1))
  )
  ;----------------------------------------------------------------------------------------------------------------------
-; (defrule get_NP_group_for_comma
-; (declare (salience 1200))
-; ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d ?NP ?NP1)
-; (Node-Category  ?Mot    NP)
-; (Node-Category  ?NP    NP)
-; (Node-Category  ?NP1   NP)
-; (Head-Level-Mother-Daughters ? ? ?NP $?d1 ?id)
-; ?f2<-(Head-Level-Mother-Daughters ? ? ?NP1 $?d2)
-; (id-right_punctuation  ?id ",")
-; =>
-;        (retract ?f1 ?f2)
-;        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d ?NP $?d2 ))
-; )
- ;----------------------------------------------------------------------------------------------------------------------
-
-
-
  ;Added by Shirisha Manju (07-11-11)
  ;This is the way to go.  The game of life is played for winning. 
  (defrule get_non_finite_kri_group
@@ -255,6 +238,7 @@
  (defrule PP_pada2
  (declare (salience 650))
  (Head-Level-Mother-Daughters  ?  ? ?PP ?id)
+; (Node-Category ?PP PRT|TO|INTJ|UH|IN|RBR|JJ)
  (Node-Category ?PP PRT|TO|INTJ)
  ?f<-(to_be_included_in_paxa ?id)
   =>
