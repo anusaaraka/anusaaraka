@@ -11,6 +11,7 @@
  (id-last_word)
  (para_id-sent_id-word_id-original_word-hyphenated_word)
  (id-original_word)
+ (Parser_used)
  )
 
 (defglobal ?*hin_sen-file* = h_sen_fp)
