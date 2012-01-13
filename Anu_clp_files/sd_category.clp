@@ -21,7 +21,8 @@
   ?f0<-(id-sd_cat   ?pid NN)
   (parserid-word ?pid ?word)
   (test (neq ?pid P1))
-  (test (or (eq (sub-string 1 1 ?word) "A")(eq (sub-string 1 1 ?word) "B")(eq (sub-string 1 1 ?word) "C")(eq (sub-string 1 1 ?word) "D")(eq (sub-string 1 1 ?word) "E")(eq (sub-string 1 1 ?word) "F")(eq (sub-string 1 1 ?word) "G")(eq (sub-string 1 1 ?word) "H")(eq (sub-string 1 1 ?word) "I")(eq (sub-string 1 1 ?word) "J")(eq (sub-string 1 1 ?word) "K")(eq (sub-string 1 1 ?word) "L")(eq (sub-string 1 1 ?word) "M")(eq (sub-string 1 1 ?word) "N")(eq (sub-string 1 1 ?word) "O")(eq (sub-string 1 1 ?word) "P")(eq (sub-string 1 1 ?word) "Q")(eq (sub-string 1 1 ?word) "R")(eq (sub-string 1 1 ?word) "S")(eq (sub-string 1 1 ?word) "T")(eq (sub-string 1 1 ?word) "U")(eq (sub-string 1 1 ?word) "V")(eq (sub-string 1 1 ?word) "W")(eq (sub-string 1 1 ?word) "X")(eq (sub-string 1 1 ?word) "Y")(eq (sub-string 1 1 ?word) "Z")))
+;  (test (or (eq (sub-string 1 1 ?word) "A")(eq (sub-string 1 1 ?word) "B")(eq (sub-string 1 1 ?word) "C")(eq (sub-string 1 1 ?word) "D")(eq (sub-string 1 1 ?word) "E")(eq (sub-string 1 1 ?word) "F")(eq (sub-string 1 1 ?word) "G")(eq (sub-string 1 1 ?word) "H")(eq (sub-string 1 1 ?word) "I")(eq (sub-string 1 1 ?word) "J")(eq (sub-string 1 1 ?word) "K")(eq (sub-string 1 1 ?word) "L")(eq (sub-string 1 1 ?word) "M")(eq (sub-string 1 1 ?word) "N")(eq (sub-string 1 1 ?word) "O")(eq (sub-string 1 1 ?word) "P")(eq (sub-string 1 1 ?word) "Q")(eq (sub-string 1 1 ?word) "R")(eq (sub-string 1 1 ?word) "S")(eq (sub-string 1 1 ?word) "T")(eq (sub-string 1 1 ?word) "U")(eq (sub-string 1 1 ?word) "V")(eq (sub-string 1 1 ?word) "W")(eq (sub-string 1 1 ?word) "X")(eq (sub-string 1 1 ?word) "Y")(eq (sub-string 1 1 ?word) "Z")))
+ (test (eq (upcase (sub-string 1 1 ?word)) (sub-string 1 1 ?word)))
   =>
  	(retract ?f0)
 	(assert (id-sd_cat   ?pid NNP))

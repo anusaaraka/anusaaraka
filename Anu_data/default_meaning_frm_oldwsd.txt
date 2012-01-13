@@ -6141,7 +6141,7 @@ sonic_boom	weja_Xvani
 sop	riyAyawa
 sopping	bahuwa_gIlA
 sorrow	xuHKa
-sorry	Kexa
+sorry	kRamA_kIjiye
 sort	prakAra
 sotto_voice	XIme_svara_meM
 soul-destroying	Ananxa_rahiwa_kAma
@@ -7978,7 +7978,7 @@ afterbirth	jera
 afterglow	lAlA
 afterlife	punarjanma
 aftermath	pariNAma
-afternoon	xopahara_bAxa
+afternoon	xopahara
 afters	KAne_ke_bAxa_KAye_jAne_vAlA_Pala_miTAI
 aftershave	APtaraSeva_loSana
 afterthought	uwwaraciMwana
@@ -13225,7 +13225,7 @@ genealogy	vaMSAvalI
 general	janarala
 generalization	sAXAraNIkaraNa
 generalize	vyApaka_banA
-generally	prAya
+generally	prAyaH
 generate	uwpanna_kara
 generation	pIDI
 generative	uwpAxaka
@@ -79242,8 +79242,8 @@ sharecropper's	batAIxAra
 sharecroppers'	batAIxAra
 sharecroppers	batAIxAra
 shared	sAJA_karanA
-shareholder	ihassexAra
-shareholding	ihassexArI
+shareholder	hissexAra
+shareholding	hissexArI
 share's	sAJA_karanA
 shares'	sAJA_karanA
 shares	sAJA_karanA
@@ -86320,7 +86320,7 @@ thanklessest	kqwaGna
 thanksgiving's	XanyavAxa_xenA
 thanksgivings'	XanyavAxa_xenA
 thanksgivings	XanyavAxa_xenA
-thanks	XanyavAxa_xenA
+thanks	XanyavAxa
 thatched	Cappara_dAlanA
 thatches'	Cappara_dAlanA
 thatches	Cappara_dAlanA

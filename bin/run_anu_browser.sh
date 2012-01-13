@@ -1,11 +1,12 @@
+#/bin/sh
 
-  if [[ $5 == REMOVE_TITLE ]] ;
+  if [ "$5" = "REMOVE_TITLE" ] ;
     then  
   echo "(REMOVE_TITLE_FROM_HTML)" >> $3/tmp/$2_tmp/1.1/all_facts
   fi
 
 
- sh $1/shell_scripts/ClipsToAnu_browser_intfc.sh $2 $3 $4
+ sh $1/shell_scripts/ClipsToAnu_browser_intfc.sh $2 $3 $4 $5 #Added $5 by Roja(04-01-12) 
  echo "<html><body>" > $4/$2.txt.html
  cat $3/$2 >>$4/$2.txt.html
  echo "</body></html>" >> $4/$2.txt.html

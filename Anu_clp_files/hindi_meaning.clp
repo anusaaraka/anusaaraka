@@ -1,4 +1,5 @@
  (defglobal ?*hin_mng_file* = fp)
+ (defglobal ?*hin_mng_file1* = fp1)
 
  (deffacts dummy_facts 
  (prep_id-relation-anu_ids)
@@ -88,6 +89,7 @@
                 (assert (mng_has_been_decided ?id1)))
   )
   (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?mng"    WSD_compound_phrase_word_mng)" crlf)
+  (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?mng"    WSD_compound_phrase_word_mng" ?id" "(implode$ $?ids)")" crlf) 
   else
   (loop-for-count (?i  1 ?cmp_length)
                 (bind ?id1 (nth$ ?i $?cmp_ids))
@@ -101,8 +103,10 @@
   )
   (if (eq ?mng_typ RM) then
   (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?mng1"    Database_compound_phrase_root_mng)" crlf)
+  (printout  "(id-HM-source-grp_ids  " ?id "  "?mng1"    Database_compound_phrase_root_mng "(implode$ $?cmp_ids)")" crlf)
   else 
-  (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?mng1"    Database_compound_phrase_word_mng)" crlf))
+  (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?mng1"    Database_compound_phrase_word_mng)" crlf)
+  (printout ?*hin_mng_file* "(id-HM-source-grp_ids  " ?id "  "?mng1"    Database_compound_phrase_word_mng "(implode$ $?cmp_ids)")" crlf))
   ))
   ;--------------------------------------------------------------------------------------------------------------
   ;Comparing wsd_MWE_mng and database_mng and deciding the meaning
@@ -128,6 +132,7 @@
                 (assert (mng_has_been_decided ?id1)))
   )
   (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?mng"    WSD_compound_phrase_root_mng)" crlf)
+  (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?mng"    WSD_compound_phrase_root_mng "?id" "(implode$ $?ids)")" crlf)
   else
   (loop-for-count (?i  1 ?cmp_length)
                 (bind ?id1 (nth$ ?i $?cmp_ids))
@@ -140,8 +145,10 @@
   ))
   (if (eq ?mng_typ RM) then
   (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?mng1"    Database_compound_phrase_root_mng)" crlf)
+  (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?mng1"    Database_compound_phrase_root_mng "(implode$ $?cmp_ids)")" crlf)
   else
-  (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?mng1"    Database_compound_phrase_word_mng)" crlf))
+  (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?mng1"    Database_compound_phrase_word_mng)" crlf)
+  (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?mng1"    Database_compound_phrase_word_mng "(implode$ $?cmp_ids)")" crlf))
   )
   )
   ;--------------------------------------------------------------------------------------------------------------
@@ -167,8 +174,10 @@
                 (bind ?index (str-index "[" ?cmp_mng))
                 (bind ?str (sub-string 1 (- ?index 1) ?cmp_mng))
                 (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?str"    WSD_compound_phrase_word_mng)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?str"    WSD_compound_phrase_word_mng "?id" "(implode$ $?ids)")" crlf)
         else
                 (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?cmp_mng"    WSD_compound_phrase_word_mng)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    WSD_compound_phrase_word_mng "?id" "(implode$ $?ids)")" crlf)
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
@@ -194,8 +203,10 @@
                 (bind ?index (str-index "[" ?cmp_mng))
                 (bind ?str (sub-string 1 (- ?index 1) ?cmp_mng))
                 (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?str"    WSD_compound_phrase_root_mng)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?str"    WSD_compound_phrase_root_mng "?id" "(implode$ $?ids)")" crlf)
         else
                 (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?cmp_mng"    WSD_compound_phrase_root_mng)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    WSD_compound_phrase_root_mng "?id" "(implode$ $?ids)")" crlf)
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
@@ -219,23 +230,27 @@
                 else
                 (printout ?*hin_mng_file* "(id-HM-source  " ?id1 "  -    Database_compound_phrase_word_mng)" crlf))
                 (assert (mng_has_been_decided ?id1))
-     )
+     ))
         (bind ?str_len (length ?cmp_mng))
         (if (neq (str-index "[" ?cmp_mng) FALSE) then
 		(bind ?index (str-index "[" ?cmp_mng))
 		(bind ?str (sub-string 1 (- ?index 1) ?cmp_mng))
                 (if (eq ?mng_typ RM) then
                 (printout ?*hin_mng_file* "(id-HM-source  " (nth$ ?head_id $?ids) "  "?str"    Database_compound_phrase_root_mng)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " (nth$ ?head_id $?ids) "  "?str"    Database_compound_phrase_root_mng "(implode$ $?ids)")" crlf)
                else
-               (printout ?*hin_mng_file* "(id-HM-source  " (nth$ ?head_id $?ids) "  "?str"    Database_compound_phrase_word_mng)" crlf))
+               (printout ?*hin_mng_file* "(id-HM-source  " (nth$ ?head_id $?ids) "  "?str"    Database_compound_phrase_word_mng)" crlf)
+               (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " (nth$ ?head_id $?ids) "  "?str"    Database_compound_phrase_word_mng "(implode$ $?ids)")" crlf))
 	else 
                (if (eq ?mng_typ RM) then
                (printout ?*hin_mng_file* "(id-HM-source  " (nth$ ?head_id $?ids) "  "?cmp_mng"    Database_compound_phrase_root_mng)" crlf)
+               (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " (nth$ ?head_id $?ids) "  "?cmp_mng"    Database_compound_phrase_root_mng "(implode$ $?ids)")" crlf)
                else
               (printout ?*hin_mng_file* "(id-HM-source  " (nth$ ?head_id $?ids) "  "?cmp_mng"    Database_compound_phrase_word_mng)" crlf)
+              (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " (nth$ ?head_id $?ids) "  "?cmp_mng"    Database_compound_phrase_word_mng "(implode$ $?ids)")" crlf)
               )
 
-	)))
+	))
  ;--------------------------------------------------------------------------------------------------------------
  ;WSD verb phrase mng
  ;The landlord had to back down .
@@ -249,6 +264,7 @@
   (retract ?mng ?mng1)
   (printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?grp_mng "  WSD_verb_phrase_word_mng)" crlf)
   (printout ?*hin_mng_file* "(id-HM-source   "?id1"   -    WSD_verb_phrase_word_mng)" crlf)
+  (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id1"   "?grp_mng"    WSD_verb_phrase_word_mng "?id" "?id1")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;WSD verb phrase mng
@@ -263,6 +279,7 @@
   (retract ?mng ?mng1)
   (printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?grp_mng "  WSD_verb_phrase_root_mng)" crlf)
   (printout ?*hin_mng_file* "(id-HM-source   "?id1"   -    WSD_verb_phrase_root_mng)" crlf)
+  (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?grp_mng "  WSD_verb_phrase_root_mng "?id" "?id1")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;database verb_phrase mng
@@ -281,6 +298,7 @@
 	(if (neq ?a "FALSE") then
 		(printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?a "   Verb_Phrase_gdbm)" crlf)
 		(printout ?*hin_mng_file* "(id-HM-source   "?id1"   -    Verb_Phrase_gdbm)" crlf)
+		(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?a "   Verb_Phrase_gdbm "?id" "?id1")" crlf)
 		(retract ?mng ?mng1)
   	)
  )
@@ -294,6 +312,7 @@
   =>
         (retract ?f ?f0)
         (printout ?*hin_mng_file* "(id-HM-source   "?affecting_id"   "?grp_mng "  WSD_compound_phrase_word_mng)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?affecting_id"   "?grp_mng "  WSD_compound_phrase_word_mng "?affecting_id" "(implode$ $?affected_ids)")" crlf)
         (bind ?len $?affected_ids)
         (loop-for-count (?i 1 ?len)
                         (bind ?j (nth$ ?i $?affected_ids))
@@ -311,6 +330,7 @@
   =>
         (retract ?f ?f0)
         (printout ?*hin_mng_file* "(id-HM-source   "?affecting_id"   "?grp_mng "  WSD_compound_phrase_root_mng)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?affecting_id"   "?grp_mng "  WSD_compound_phrase_root_mng "?affecting_id" "(implode$ $?affected_ids)")" crlf)
         (bind ?len $?affected_ids)
         (loop-for-count (?i 1 ?len)
                         (bind ?j (nth$ ?i $?affected_ids))
@@ -328,8 +348,11 @@
         (retract ?f)
         (if (eq ?id ?affecting_id) then
         (printout ?*hin_mng_file* "(id-HM-source   "?affecting_id"  "?grp_mng"  WSD_word_mng)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?affecting_id"  "?grp_mng"  WSD_word_mng "?affecting_id")" crlf)
         else
-        (printout ?*hin_mng_file* "(id-HM-source   "?id"    -  WSD_word_mng)" crlf))
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"    -  WSD_word_mng)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"    -  WSD_word_mng "?id")" crlf)
+        )
   )
   ;--------------------------------------------------------------------------------------------------------------
  (defrule over_write_root
@@ -341,8 +364,10 @@
        (retract ?f)
        (if (eq ?id ?affecting_id) then
        (printout ?*hin_mng_file* "(id-HM-source   "?affecting_id"  "?grp_mng"  WSD_root_mng)" crlf)
+       (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?affecting_id"  "?grp_mng"  WSD_root_mng "?affecting_id")" crlf)
        else
-       (printout ?*hin_mng_file* "(id-HM-source   "?id"    -  WSD_root_mng)" crlf))
+       (printout ?*hin_mng_file* "(id-HM-source   "?id"    -  WSD_root_mng)" crlf)
+       (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"    -  WSD_root_mng "?id")" crlf))
  )
  ;--------------------------------------------------------------------------------------------------------------
  (defrule idiom_word_mng
@@ -352,6 +377,7 @@
  =>
 	(retract ?mng)
 	(printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?HM "   Idiom_word_mng)" crlf)
+	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?HM "   Idiom_word_mng "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  (defrule wsd_word_mng
@@ -362,6 +388,7 @@
 	(retract ?mng)
 	(bind ?h_word (implode$ $?hword))
 	(printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?h_word "    WSD_word_mng)" crlf)
+	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?h_word "    WSD_word_mng "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  (defrule idiom_root_mng
@@ -371,6 +398,7 @@
  =>
 	(retract ?mng)
 	(printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?HM "   Idiom_root_mng)" crlf)
+	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?HM "   Idiom_root_mng "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  (defrule wsd_root_mng
@@ -381,6 +409,7 @@
 	(retract ?mng)
 	(bind ?h_word (implode$ $?hword))
 	(printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?h_word "   WSD_root_mng)" crlf)
+	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?h_word "   WSD_root_mng "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  (defrule default_mng
@@ -394,11 +423,14 @@
                 (bind ?a (gdbm_lookup "default_meaning_frm_oldwsd.gdbm" ?rt))
                 (if (eq ?a "FALSE") then
                         (printout ?*hin_mng_file* "(id-HM-source   "?id"    @"?original_wrd"   Original_word)" crlf)
+                        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"    @"?original_wrd"   Original_word "?id")" crlf)
                 else
                         (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?a"   Default)" crlf)
+                        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?a"   Default "?id")" crlf)
                 )
         else
                 (printout ?*hin_mng_file* "(id-HM-source   "?id"    @"?original_wrd"   Original_word)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"    @"?original_wrd"   Original_word "?id")" crlf)
         )
  )
  ;--------------------------------------------------------------------------------------------------------------

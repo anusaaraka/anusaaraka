@@ -2834,7 +2834,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  31. Updated change_in_databases.
  32. Updated Log
 
- 7-12-11
+ 15-12-11
  ========
  1. Removed sed commands while getting one_sentence_per_line.txt.std.penn in Anusaaraka_stanford.sh file.
  2. GNP_agreement.clp : 	Removed  : PP_pada_vib_inf and  samAnAXikaraNa_rule_2
@@ -2843,25 +2843,29 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 		                	   samAnAXikaraNa_rule_3  as sub_and_samA_with_same_gender
                    		           samAnAXikaraNa_rule_1  as sub_to_samAnAXikaraNa_rule
                    		           samAnAXikaraNa_rule    as samAnAXikaraNa_to_subj_rule
+				Added    : modify_gender_for_and  and  default_gender_m_for_id
  3. agreement.clp
         Modified : sub_or_agr, sub_agrmt, obj_agrmt --- removed test condition to check pada category
  4. hindi_sent_reorder.clp
         Modified : wh_without_aux-reorder1 -instead of wh word whole pada is moved, default rule
-        Added    : wo_rule_for_when1
+        Added    : wo_rule_for_when1 , det_viSeRaNa_rule1 and move_adv_b4_sub_sama
 	-- splitted the rules as "movement rules" and "new word insertion" rules
         -- modified the variable names
  5. Modified run_modules_std.bat -- to load E_constituents_info.dat and Node_category.dat files and
                                    to remove cat_consistency_check.dat and relations_tmp1.dat files in pada module
+				   to open gender.dat in append mode to modify gender info in case of conjun in GNP module
  6. sd_lwg_rules.clp
         Modified : make_VBN_as_VBD --added not condition,
                    imper_rule, imper_rule_for_and, imper_rule1 and imper_rule2  --- added "S" from "Root" in rule part
+	Added    : imper_rule_for_and1
  7. vibakthi.clp
         Renamed : vib_rule1  as ne_vib_rule1 and vib_rule2 as ne_vib_rule2 and modified the rules
  8. Added sd_pada.clp to get pada information from Constituents.
- 9. Added dummy facts rule in the following files
+ 9. Added dummy facts in the following files
         English_sentence.clp    get_constituency_tree.clp    preferred_morph_consistency_check.clp   number.clp
         sd_category.clp         sd_combining_apostrophe.clp  sd_lwg_rules.clp   sd_pada.clp  sd_relation_rules.clp
-10. Modified H_ordering_rules.clp (to modify the relation pattern -- used prep_id-relation-anu_ids)
+10. Modified H_ordering_rules.clp (to modify the relation pattern -- used prep_id-relation-anu_ids) and
+    Added dont_rev_if_VP_head_accused rule 
 11. Modified create_binary_files.clp to make binary file for the following files
         sd_relation_rules.clp   sd_combining_apostrophe.clp    sd_category.clp       sd_lwg_rules.clp
         sd_pada.clp             get_constituency_tree.clp      English_sentence.clp
@@ -2875,22 +2879,21 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 14. prepare_apertium_input.clp
         Added    : default_gender,  default_id1  rules
         Modified : default_id , word_mng_with_vib  , Compound_mng_with_Prep_id,  kA_vib_from_sub_rule
-                   verbal_noun_without_vib, PP_rule_with_vib_for_and_last_id, PP_rule_with_vib_for_and_default
+                   verbal_noun_without_vib, PP_rule_with_vib_for_and_last_id, PP_rule_with_vib_for_and_default,
+		   Compound_mng_with_Prep_id
+	Removed  : default_gender
 15. Modified the following files to use "bload" instead of  "load"
         run_H_gen_sen.bat   run_modules_std.bat  run_modules_link.bat  and  run_modules_ol.bat
 16. Renamed "vibakthi_id.clp" as "tam_id.clp" and removed the print stmts to generate vibakthi_id.dat file
 17. Removed load_lwg_rules and lwg_consistency_check modules from run_modules_std.bat
 18. sd_relation_rules.clp
-        Removed  : advmod2 and poss rules       Modified : advmd
+        Removed  : advmod2 and poss rules       Modified : advmd ,prep+than+pobj
+        Added    : cop+nsubj_2 and parataxis  rules
 19. tam_meaning.clp
         Removed  : rule_for_tam-0,  default_tam_mng rules
         Modified : get_tam_from_database
 20. Modified split-relations.py to add "prt" to get prep
-21. Modified sd_ver_output, verified, verified_output
-22. Modified Anusaaraka_site.sh near timeout command.
-23. Updated changes_in_databases
-24. Updated Link_parser_fails, Stanford_parser_fails
-25. Removed files from anusaaraka system:
+21. Removed files from anusaaraka system:
       i) Anu_src/change-html.pl
      ii) Browser/consecutive_same_color.pl
     iii) Browser/src/xhtml_unicode_local.xsl , Browser/src/xhtml_unicode.xsl , Browser/src/xhtml_unicode_pos.xsl ,Browser/src/xhtml_unicode_server.xsl
@@ -2898,7 +2901,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
      v)  Anu_data/compound-matching/samAsa-new.txt
     vi)  Anu_src/Compound-dict.pl
    vii)  Browser/src/add_translation_path.pl
-26. Added new files to anusaaraka system :
+22. Added new files to anusaaraka system :
       i) Browser/src/cautions.js
      ii) Anu_clp_files/idioms.clp
     iii) Anu_data/idioms.txt
@@ -2906,22 +2909,130 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
          (Renamed and modified samAsa-new.txt format)
       v) Anu_clp_files/compound_phrase.clp
      vi) Anu_clp_files/catastrophe.clp
-27. Modified Anusaaraka_stanford.sh, Anusaaraka_all.sh, Anusaaraka_berkeley.sh, Anusaaraka_link.sh, Anusaaraka_ol.sh, Anusaaraka_rasp.sh, Anusaaraka.sh, Anusaaraka_site.sh files.
-     (Removed code for compound matching from Anusaaraka_stanford.sh and handled it using clips rules.)
-28. Added code for creating compound_phrase.clp binary file in create_binary_file.clp .
-29. Modified create_xml_file.clp
-     Removed "consecutive_same_color.pl", "xhtml_unicode_local.xsl" and  "add_translation_path.pl " files and handled it using clips rules and accordingly all the rules have been modified.
-     Added new rules for hanldling cautions and idioms
-30.Removed the "copy-right" information and the code for running  "consecutive_same_color.pl", "xhtml_unicode_local.xsl" and  "add_translation_path.pl from ClipsToAnu_browser_intfc.sh
-31. Added code for catastrope.clp ,idioms.clp  and compound_phrase.clp in run_modules_std.bat,run_modules_link.bat and run_modules_ol.bat
-32. Added new row (2nd-row) "Cautionary Signs" and so the following files. have been changed accordingly
+23. Added code for creating compound_phrase.clp binary file in create_binary_file.clp .
+24. Modified create_xml_file.clp
+     -- Removed "consecutive_same_color.pl", "xhtml_unicode_local.xsl" and  "add_translation_path.pl " files and handled it using clips rules and accordingly all the rules have been modified.
+     -- Added new rules for hanldling cautions and idioms
+25. Removed the "copy-right" information and the code for running  "consecutive_same_color.pl", "xhtml_unicode_local.xsl" and  "add_translation_path.pl from ClipsToAnu_browser_intfc.sh
+26. Added code for catastrope.clp ,idioms.clp  and compound_phrase.clp in run_modules_std.bat,run_modules_link.bat and
+    run_modules_ol.bat
+27. Added new row (2nd-row) "Cautionary Signs" and so the following files. have been changed accordingly
       i) english_hindi.css
      ii) english_hindi.js
     iii) create_xml_file.clp
-33. Modified run_sentence_stanford.sh, run_sentence_link.sh and run_sentence_ol.sh
-   (Removing of hindi_sentence.dat and concatenating catastrophe.dat files to all_facts file)
-34. Added code for generating idioms.gdbm and compound_phrase.gdbm in anu_compile.sh file.
-35. Modified run_create_xml_file.bat
-36. Modified Anu_data/compound-matching/make-dict.sh (removed compilation part for compound_phrase database)
-37. Modified bin/run_anu_browser.sh 
-38. Updated Log.
+28. Added code for generating idioms.gdbm and compound_phrase.gdbm in anu_compile.sh file.
+29. WSD : Modified : thank.clp
+30. Modified run_create_xml_file.bat
+31. Modified Anu_data/compound-matching/make-dict.sh (removed compilation part for compound_phrase database)
+32. Added small_sent_verified_sd and small_sent_ver_output_sd files
+33. Modified Anusaaraka_stanford.sh, Anusaaraka_all.sh, Anusaaraka_berkeley.sh, Anusaaraka_link.sh, Anusaaraka_ol.sh,
+     Anusaaraka_rasp.sh, Anusaaraka.sh, Anusaaraka_site.sh files.
+    -- Removed code for compound matching from Anusaaraka_stanford.sh and handled it using clips rules.
+34. Modified run_sentence_stanford.sh, run_sentence_link.sh and run_sentence_ol.sh
+    -- Removing of hindi_sentence.dat and concatenating catastrophe.dat files to all_facts file
+35. Modified bin/run_anu_browser.sh  bin/abbr.sh
+36. Modified Anusaaraka_site.sh near timeout command.
+37. Following files have been modified for handling eliptical sentences ::
+ 	1. Added new rule "eliptical1" in Anu_clp_files/catastrophe.clp.
+	2. Displaying caution information for handling eliptical sentences rules have been modified accordingly in create_xml_file.clp
+	3. run_modules_std.bat, run_modules_link.bat, run_modules_ol.bat.
+        4. cautions.js
+38.Modified file format Anu_data/idioms.txt
+   key value         ========= > key key::value
+39. Modified bin/run_anu_browser.sh 
+40. Modified sd_ver_output, verified, verified_output,sd_verified , ber_ver_output, link_ver_output, ol_ver_output 
+41. Updated changes_in_databases
+42. Updated Link_parser_fails, Stanford_parser_fails
+43. Updated Log.
+
+ 21-12-11
+ ========
+
+ 1. H_ordering_rules.clp
+	Modified  : make_compoundPhrase ,prep_in_SBAR_rule 
+ 2. hindi_sent_reorder.clp 
+	Modified : rule_for_ki , always_rule
+ 3. sd_pada.clp
+        Modified : get_NP_group, get_and_NP_group, get_and_NP_group1, get_and_NP_group2, PP_pada and PP_pada1 rules
+                   --- added NX in the list             
+ 4. Added move_sub_vib_to_saMjFA_samAnAXikaraNa rule in vibakthi.clp
+ 5. Added VP_rule_for_before_verb_for_need rule in prepare_apertium_input.clp
+ 6. Modified create_xml_file.clp
+	 (created deffunctions print_first_row ...... print_eleventh_row and calling this functions in all rules)
+ 7. Modified run_modules_std.bat
+ 8. Modified sd_ver_output, ber_ver_output,link_ver_output, ol_ver_output, verified_output, small_sent_ver_output
+ 9. Modified Anusaaraka_stanford.sh, Anusaaraka_link.sh, Anusaaraka_ol.sh, Anusaaraka_rasp.sh, Anusaaraka_site.sh 
+	--> At complete sentence Matching
+10. Updated changes_in_databases
+11. Updated Stanford_parser_fails
+12. Updated the following files
+           sd_verified (480)        small_sent_verified_sd  (64)
+13. Updated Log
+
+
+ 13-01-12
+ ========
+ 1. H_ordering_rules.clp
+        Added    : move_first_RB_in_NP_to_last
+        Modified : reverse-NP-Daughters, prep_in_SBAR_rule
+        Deleted  : insert_conjunction, insert_jo_samAnAXikaraNa and print_for_debugging4
+ 2. hindi_sent_reorder.clp
+        Added    : insert_jo_samAnAXikaraNa, insert_conjunction, insert_wo_for_yes_no_question, insert_wo, insert_wo1
+        Modified : det_viSeRaNa_rule, wo_rule_for_if1, wo_rule_for_when
+        Deleted  : kyA_rule ,rm_prep_id
+ 3. Added PP_rule_with_vib_for_hnd_pronoun1 rule in prepare_apertium_input.clp
+ 4. run_modules_ol.bat and run_modules_std.bat
+        1.   renamed hindi_id_order.dat  as hindi_id_order_tmp.dat in H_ordering_rules module
+        2.  generated ordered_constituents.dat file in H_ordering_rules module
+        3. loaded ordered_constituents.dat and Node_category.dat files in hindi_sent_reorder module
+	4. Added save-facts to generate new file "parser_punctuation_info.dat" in  sd_combining_apostrophe module
+        5. loaded ordered_constituents.dat instead E_constituents_info.dat and renamed hindi_id_order.dat as
+           hindi_id_order_tmp1.dat in hindi_sent_reorder module
+        6. Added insert_punctuation module to get hindi order with punctuations
+ 5. Loaded hindi_id_order.dat file instead hindi_id_reorder.dat in
+        run_H_gen_sen.bat   run_modules_link.bat  run_modules_ol.bat  run_modules_std.bat
+ 6. Modified remove_S_node_from_lwg rule in sd_lwg_rules.clp
+ 7. sd_pada.clp
+        Added    : pada_for_comma
+        Modified : get_PP_group, get_NP_group
+ 8. Removed move_sub_vib_to_saMjFA_samAnAXikaraNa rule in vibakthi.clp
+ 9. Modified run_sentence_link.sh run_sentence_ol.sh run_sentence_stanford.sh
+          1.hindi_id_reorder.dat as hindi_id_order.dat in
+          2.Modified run_sentence_stanford.sh [Changed near myclips command ,user_wsd_info.clp --> user_info.bat]
+ 10. For running specific parse in stanford ::
+        1.Anusaaraka_stanford.sh file has be modified.
+        2.Added new files run_multiple_parse_penn.sh and preffered_parse.py .
+ 11. Modified  ClipsToAnu_browser_intfc.sh and run_anu_browser.sh to handle timeout command both in local and server.
+ 12. Added ir.lex in the Anu_src directory.
+ 13. Renamed run_penn.sh as run_penn-pcfg.sh and updated the same in Anusaaraka_stanford.sh and Anusaaraka_site.sh.
+ 14. Renamed run_stanford-gui.sh as run_stanford-gui-pcfg.sh.
+ 15. Added Anusaaraka_stanford-Factored.sh and run_stanford-gui-factored.sh in bin folder.
+ 16. Added run_penn-factored.sh inside stanford parser.
+ 17. Added pattern {[.]["][ ][ ][A-Z]} in add_snt_mrkr.lex to handle sentences like
+     1."A well-regulated militia being necessary to the national defense, the right to bear arms, shall not be infringed."
+     2."He lay flat on ... the floor of the forest, his chin on his folded arms."
+ 18. Modified rule name "eliptical" to "truncated_sentences" and added new rule noun_absolute in catastrophe.clp
+ 19. Updated create_xml_file.clp and run_create_xml_file.bat.
+ 20. Added code to handle dot_double_quote in word.c program and to hanlde {<p><s>"} punctuation 
+    [ i.e removing para and sen tag and passing the punctuation only.]
+ 21. Added caution_noun_absolute() function in cautions.js file.
+ 22. Added code for handling "CC" phrase in style.css
+ 23. Added debug info for "id-E_tam-H_tam_mng" for did_not_0_tam0 and did_not_0_tam1 rule in did_not_0_tam.clp.
+ 24. Added "'s/dot_double_quote/.\"/g'" and 's/DOTDOTDOT/.../g' and removed 's/float_clear"><\/div>/float_clear"\/>/g' in abbr_browser.sh file.
+ 25. Modified the test condition in NN_to_NNP rule in sd_category.clp file.
+ 26. Added : get_mng2 , get_mng1 and get_mng rules in hindi_sentence.clp
+ 27. Modified run_H_gen_sen.bat to load "parser_type.dat" file in hindi_sentence module
+ 28. sd_combining_apostrophe.clp
+        Added    : map_cons3 and map_cons2 rules
+        Modified : map_cons1
+ 29. Modified hindi_meaning.clp [Creating new file hindi_meanings_tmp1.dat].
+ 30. Added new files eng_hin_pos.clp and user_info.bat.
+ 29. Updated roman_iscii file.
+ 30. Modified ol_ver_output, sd_ver_output, ber_ver_output,small_sent_ver_output_sd, verified_output and sd_verified
+ 31. Upated abbr.sh and abbr_browser.sh
+ 32. Updated README inside stanford-parser.
+ 33. Updated sd_verified (481)
+ 34. Updated Log
+
+
+

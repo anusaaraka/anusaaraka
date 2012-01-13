@@ -23,7 +23,7 @@ cd $MYPATH/$1_tmp/$2
  cp $MYPATH/$1_tmp/underscore_hyphen_replace_info.txt  $MYPATH/$1_tmp/$2/underscore_hyphen_replace_info.dat
  myclips -f $HOME_anu_test/Anu_clp_files/run_H_gen_sen.bat >> $1.error
  
- cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat parserid_wordid_mapping.dat link_numeric_word.dat link_name_expand.dat lwg_info.dat relations.dat hindi_meanings.dat GNP_agmt_info.dat id_Apertium_output.dat  hindi_id_reorder.dat catastrophe.dat English_sentence.dat  >>$MYPATH/$1_tmp/$2/all_facts
+ cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat parserid_wordid_mapping.dat link_numeric_word.dat link_name_expand.dat lwg_info.dat relations.dat hindi_meanings.dat GNP_agmt_info.dat id_Apertium_output.dat  hindi_id_order.dat catastrophe.dat English_sentence.dat  >>$MYPATH/$1_tmp/$2/all_facts
 
  cat linkage_count
 
@@ -43,6 +43,6 @@ cd $MYPATH/$1_tmp/$2
  1,$s/#//g' >> $MYPATH/$1_tmp/sent-by-sent
  echo "" >> $MYPATH/$1_tmp/sent-by-sent
 
- myclips -f $HOME_anu_test/Anu_clp_files/user_wsd_info.clp > /dev/null
+ myclips -f $HOME_anu_test/Anu_clp_files/user_info.bat > /dev/null
  mv user_wsd_info.dat $MYPATH/$1_$2_user_wsd_info.dat
 

@@ -10,6 +10,7 @@
 (assert (id-preceeding_part_of_verb ?id nahIM))
 (assert (id-E_tam-H_tam_mng ?id did_not_0 wA_WA))
 (if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-preceeding_part_of_verb "?*wsd_dir* "  did_not_0_tam.clp         did_not_0_tam0  "?id" nahIM)" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  did_not_0_tam.clp  	did_not_0_tam0  "  ?id "  wA_WA )" crlf))
 )
 
@@ -23,6 +24,7 @@
 (assert (id-preceeding_part_of_verb ?id nahIM))
 (assert (id-E_tam-H_tam_mng ?id did_not_0 yA_WA))
 (if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-preceeding_part_of_verb "?*wsd_dir* "  did_not_0_tam.clp         did_not_0_tam1  "?id" nahIM)" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  did_not_0_tam.clp  	did_not_0_tam1  "  ?id "  yA_WA )" crlf))
 )
 

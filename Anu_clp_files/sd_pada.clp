@@ -5,7 +5,11 @@
   (root-verbchunk-tam-chunkids)
   (verb_type-verb-causative_verb-tam)
   (id-last_word)
-  (id-word)
+  (id-word) 
+  (id-left_punctuation)
+  (id-right_punctuation)  
+  (conjunction-components)
+  (prep_id-relation-anu_ids)
   )
 
   (defglobal ?*debug* = pada_info_debug)
@@ -44,12 +48,13 @@
  ;Added by Shirisha Manju (05-11-11)
  ;The painted doors look great.A big, black, ugly dog chased me. By going there you can earn more money. 
  ;Three quarters of a million people in this city have no health insurance. They threw him in the swimming pool.
+ ;She is beautiful and intelligent.
  (defrule get_NP_group
  (declare (salience 1500))
  ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?NP $?pos)
  ?f2<-(Head-Level-Mother-Daughters ?h ? ?NP $?daut)
- (Node-Category  ?Mot    NP|WHNP)
- (Node-Category  ?NP     NN|DT|JJ|JJS|JJR|NNS|VBN|ADJP|NNP|PDT|RBS|RB|EX|CD|WDT|VBG|QP)
+ (Node-Category  ?Mot    NP|WHNP|ADJP|PRT|ADVP|NX) 
+ (Node-Category  ?NP     NN|DT|JJ|JJS|JJR|NNS|VBN|ADJP|NNP|PDT|RBS|RB|EX|CD|WDT|VBG|QP|FW|NX) ;Added NX by Roja for latest stanford version-2011-12-22. Ex : He could hear a faint sound from the bushes.
  =>
 	(retract ?f1 ?f2)
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?daut $?pos))
@@ -57,12 +62,13 @@
  ;----------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (07-11-11)
  ;Are a dog and a cat here?  I like dogs as well as cats
+ ;CityFed's president and chief executive officer, John Atherton, said the loss stems from several factors.
  (defrule get_and_NP_group
  (declare (salience 1400))
  ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?NP $?pos ?CC $?p1 ?NP1 $?p2)
- (Node-Category  ?Mot    NP)
- (Node-Category  ?NP    NP)
- (Node-Category  ?NP1   NP)
+ (Node-Category  ?Mot    NP|ADJP|PRT|ADVP|NX)
+ (Node-Category  ?NP    NP|NX)
+ (Node-Category  ?NP1   NP|NX)
  (Node-Category  ?CC    CC|CONJP)
  ?f2<-(Head-Level-Mother-Daughters ? ? ?NP $?daut)
  ?f3<-(Head-Level-Mother-Daughters ? ? ?NP1 $?daut1)
@@ -77,10 +83,10 @@
  (defrule get_and_NP_group1
  (declare (salience 1300))
  ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?NP $?pos ?CC $?d)
- (Node-Category  ?Mot    NP)
- (Node-Category  ?NP    NP)
+ (Node-Category  ?Mot    NP|ADJP|PRT|ADVP|NX)
+ (Node-Category  ?NP    NP|NX)
  (Node-Category  ?CC    CC|CONJ)
- ?f2<-(Head-Level-Mother-Daughters ? ? ?NP $?daut)
+ ?f2<-(Head-Level-Mother-Daughters ?w&~'s ? ?NP $?daut)
  ?f3<-(Head-Level-Mother-Daughters ? ? ?CC $?con ?c)
  =>
         (retract ?f1 ?f2 ?f3 )
@@ -92,7 +98,7 @@
  (defrule get_and_NP_group2
  (declare (salience 1200))
  ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?id ?CC $?id1 )
- (Node-Category  ?Mot    NP)
+ (Node-Category  ?Mot    NP|ADJP|PRT|ADVP|NX)
  (Node-Category  ?CC    CC|CONJP)
  ?f2<-(Head-Level-Mother-Daughters and|or|well ? ?CC $?con ?c)
  =>
@@ -133,9 +139,9 @@
  (defrule get_PP_group
  (declare (salience 1100))
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?PP $?d ?JJ $?d1 ?NP)
- (Node-Category  ?PP  PP)
+ (Node-Category  ?PP  PP|WHPP)
  (Node-Category  ?JJ  JJ|TO|IN)
- (Node-Category  ?NP  NP|S)
+ (Node-Category  ?NP  NP|S|WHNP)
 ?f0<-(Head-Level-Mother-Daughters ? ? ?JJ ?prep)
  =>
  	(retract ?f0 ?f1)
@@ -179,11 +185,11 @@
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (05-11-11)
- ;The painted doors look great.
+ ;The painted doors look great.She is beautiful and intelligent.
  (defrule PP_pada
  (declare (salience 800))
  (Head-Level-Mother-Daughters  ?  ? ?PP $?ids ?id)
- (Node-Category ?PP NP|NNP|NNPS|RB|RBS|PRP|NNS|PRP$|WP|CC|JJ|JJS|VP|WRB|CD|WDT|WHNP)
+ (Node-Category ?PP NP|NNP|NNPS|RB|RBS|PRP|NNS|PRP$|WP|CC|JJ|JJS|VP|WRB|CD|WDT|WHNP|ADJP|PRT|ADVP|NX)
  ?f<-(to_be_included_in_paxa ?id)
   =>
 	(retract ?f)
@@ -205,10 +211,11 @@
  ;Mary promised the instructor to take that course. But my efforts to win his heart have failed. 
  ;He made a mistake in inviting John. 
  ;He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
+ ;The hat is too small for me.(ADJP grp)
  (defrule PP_pada1
  (declare (salience 700))
  (Head-Level-Mother-Daughters  ?  ? ?PP $?ids ?id $?S)
- (Node-Category ?PP NP|VP)
+ (Node-Category ?PP NP|VP|ADJP|PRT|ADVP|NX)
  ?f<-(to_be_included_in_paxa ?id)
   =>
         (retract ?f)
@@ -231,6 +238,7 @@
  (defrule PP_pada2
  (declare (salience 650))
  (Head-Level-Mother-Daughters  ?  ? ?PP ?id)
+; (Node-Category ?PP PRT|TO|INTJ|UH|IN|RBR|JJ)
  (Node-Category ?PP PRT|TO|INTJ)
  ?f<-(to_be_included_in_paxa ?id)
   =>
@@ -356,6 +364,19 @@
 	(print_in_ctrl_fact_files  ?id)
 	(modify ?f1 (group_head_id ?id)(pada_head ?id))
   )
+  ;----------------------------------------------------------------------------------------------------------------------
+  ;The consortium was put together by Hoare Govett, the London-based investment banking company that is a subsidiary of Security Pacific Corp.
+  (defrule pada_for_comma
+  (declare (salience 300))
+  (prep_id-relation-anu_ids   -   saMjFA-saMjFA_samAnAXikaraNa  ?saMjFA ?samA)
+  ?f0<-(pada_info (group_head_id ?saMjFA) (group_cat PP) (group_ids $?id ) (preposition ?prep))
+  ?f1<-(pada_info (group_head_id ?samA) (group_cat PP) (group_ids $?id1)) 
+  =>
+	(retract ?f0 ?f1)
+        (print_in_ctrl_fact_files  ?samA)
+        (modify ?f1 (group_ids $?id $?id1)(preposition ?prep))
+	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    pada_for_comma    "?samA"  PP	"(implode$ $?id)" "(implode$ $?id1)"  "?prep ")" crlf)
+  )	
   ;----------------------------------------------------------------------------------------------------------------------
   ;Added by Shirisha Manju (09-11-11)
   ;The girl you met yesterday is here. The dog I chased was black.

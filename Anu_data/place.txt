@@ -2810,3 +2810,5 @@ countries of origin	1
 Duchies	1
 Northwest	1
 Archipelago	1
+himalayas	1
+plains	1

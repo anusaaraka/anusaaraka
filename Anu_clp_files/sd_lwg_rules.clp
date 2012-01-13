@@ -59,7 +59,7 @@
 =>
         (if (eq ?CAT VP) then
         (retract ?f ?f1)
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VB $?daut1 ?VP1))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot ?VB $?daut  $?daut1 ?VP1))
         (assert (daughter ?VB ?id))
         else
         (retract ?f)
@@ -193,8 +193,12 @@
 ?f0<-(root-verbchunk-tam-parser_chunkids  ?root - $?pre ?S $?po - $?pre ?S $?po - $?pre ?S $?po)
 (Node-Category ?S S)
 =>
-	(retract ?f0)
-	(assert (root-verbchunk-tam-parser_chunkids  ?root - $?pre $?po - $?pre $?po - $?pre $?po))
+	(if (and (eq (length $?pre) 0) (eq (length $?pre) 0)) then ;The leopard seizes its kill and begins to eat.
+		(retract ?f0)
+	else 
+		(retract ?f0)
+		(assert (root-verbchunk-tam-parser_chunkids  ?root - $?pre $?po - $?pre $?po - $?pre $?po))
+	)
 )
 ;------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (28-10-11) Suggested by Sukhada
@@ -371,6 +375,32 @@
         (assert (root-verbchunk-tam-parser_chunkids ?root ?vc imper  ?id))
         (assert (imper_decided ?id))
 )
+
+;Either go to bed or open your book to read.
+(defrule imper_rule_for_and1
+(declare (salience 5))
+(Head-Level-Mother-Daughters ? ? ?ROOT ?S)
+(Node-Category ?ROOT ROOT)
+(Node-Category ?S S)
+(Head-Level-Mother-Daughters ? ? ?S ?CC ?VP $?)
+(Node-Category ?CC CC)
+(Node-Category ?VP VP)
+(Head-Level-Mother-Daughters ? ? ?VP $?d ?CC1 $?d1)
+(Node-Category ?CC1 CC)
+?f<-(root-verbchunk-tam-parser_chunkids ?root ?vc ?tam  ?id)
+(test (or (member$ ?id $?d)(member$ ?id $?d1)))
+(not (imper_decided ?id))
+=>
+        (retract ?f)
+        (assert (root-verbchunk-tam-parser_chunkids ?root ?vc imper  ?id))
+        (assert (imper_decided ?id))
+)
+
+
+
+
+
+
 ;------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (25-10-11)
 ;Do this in your room.

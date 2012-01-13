@@ -1,4 +1,4 @@
- #/bin/sh
+#/bin/sh
  source ~/.bashrc
 
  export LC_ALL=
@@ -62,17 +62,20 @@
   cd $HOME_anu_test/Anu_src
   ./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
-  echo "Calling Berkeley parser" 
-  cd $HOME_anu_test/Parsers/berkeley-parser/
-  java -mx500m  -jar berkeleyParser.jar -gr eng_sm6.gr -tokenize -inputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt -outputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley
- sed 's/(())/( (S ))\n/g' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley | sed 's/^(/(ROOT/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 
-# sed 's/^(/(ROOT/g' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn
-
   echo "Calling Stanford parser"
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
-  sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}"  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp | sed -n -e "H;\${g;s/\n//g;p}" | sed 's/)(ROOT/)\n(ROOT/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn
-  sed 's/(, ,)/(P_COM COMMA)/g' < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn | sed 's/(\. \.)/(P_DOT DOT)/g' |sed 's/(? ?)/(P_QES QUESTION_MARK)/g' | sed 's/(. ?)/(P_DQ DOT_QUESTION_MARK)/g' | sed 's/(`` ``)/(P_DQT DOUBLE_QUOTES)/g' | sed "s/('' '')/(P_DQT DOUBLE_QUOTES)/g" | sed 's/(: ;)/(P_SEM SEMCOLN)/g' | sed "s/('' ')/(P_SQT SINGLE_QUOTE)/g" | sed 's/(-LRB- -LRB-)/(P_LB LFT_BRK)/g'|sed 's/(-RRB- -RRB-)/(P_RB RT_BRK)/g' >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.cons
-  ./run_stanford-parser.sh $1 $MYPATH > /dev/null
+ # cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2011-12-22/
+  if [ "$2" != "" ] ;
+  then
+  sh run_multiple_parse_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1 2>/dev/null  
+  python preffered_parse.py $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1 $2 > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
+  else 
+  sh run_penn-factored.sh  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
+  fi
+  sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}"  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn
+
+  sed 's/(, ,)/(P_COM COMMA)/g' < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn | sed 's/(\. \.)/(P_DOT DOT)/g' |sed 's/(? ?)/(P_QES QUESTION_MARK)/g' | sed 's/(. ?)/(P_DQ DOT_QUESTION_MARK)/g' | sed 's/(`` ``)/(P_DQT DOUBLE_QUOTES)/g' | sed "s/('' '')/(P_DQT DOUBLE_QUOTES)/g" | sed 's/(: ;)/(P_SEM SEMCOLN)/g' | sed 's/(: :)/(P_CLN COLN)/g' | sed 's/(: -)/(P_DSH PDASH)/g' |sed "s/('' ')/(P_SQT SINGLE_QUOTE)/g" | sed 's/(`` `)/(P_SQT SINGLE_QUOTE)/g' | sed "s/(\`\` ')/(P_SQT SINGLE_QUOTE)/g" | sed 's/(-LRB- -LRB-)/(P_LB LFT_BRK)/g'|sed 's/(-RRB- -RRB-)/(P_RB RT_BRK)/g' | sed 's/(. !)/(P_EXM EXCLAMATION)/g' >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.cons
+  sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 
   #running stanford NER (Named Entity Recogniser) on whole text.
   echo "Finding NER... "
@@ -95,14 +98,15 @@
   $HOME_anu_test/Anu_src/split_file.out sd-original-relations.txt  dir_names.txt  sd-original-relations.dat
 
   grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt
-  perl $HOME_anu_test/Anu_src/Match-sen.pl $HOME_anu_test/Anu_databases/Complete_sentence.gdbm  ../$1.snt one_sentence_per_line.txt > sen_phrase.txt
+  perl $HOME_anu_test/Anu_src/Match-sen.pl $HOME_anu_test/Anu_databases/Complete_sentence.gdbm  $1.snt one_sentence_per_line.txt > sen_phrase.txt
+
   $HOME_anu_test/Anu_src/split_file.out sen_phrase.txt dir_names.txt sen_phrase.dat
  
  cd $HOME_anu_test/bin
  while read line
  do
-    echo "Hindi meaning using Berkeley parser" $line
-   timeout 180 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
+    echo "Hindi meaning using Stanford parser" $line
+    timeout 500 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
  

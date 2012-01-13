@@ -1,5 +1,6 @@
 (defglobal ?*error_file* = err_fp)
 (defglobal ?*gnp_debug* = gnp_fp)
+(defglobal ?*gender* = gender_fp)
 
 
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
@@ -434,3 +435,31 @@
   (printout ?*gnp_debug* "(pada_id-rule_name-gen_src " ?pada_id " default_gender_m_for_pada  m Default_assignment)" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju Suggested by Sukhada (08-12-11)
+ ;She is beautiful and intelligent.
+ (defrule modify_gender_for_and
+ (declare (salience 5))
+ (id-original_word ?pada_id and)
+ (prep_id-relation-anu_ids - subject-subject_samAnAXikaraNa ?sub ?pada_id)
+ (pada_info (group_head_id ?pada_id)(group_ids $?d)(gender ?gen))
+ ?f1<-(id-gender-src ?id ? ?gen_src)
+ (test (member$ ?id $?d))
+ =>
+	(retract ?f1)
+	(printout ?*gender* "(id-gender-src "?id "  "?gen"   subject-subject_samAnAXikaraNa)" crlf)
+	(printout ?*gnp_debug* "(pada_id-rule_name-gen_src " ?pada_id "modify_gender_for_and "?gen" subject-subject_samAnAXikaraNa)" crlf)
+ )
+ ;-------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju  (08-12-11)
+ (defrule default_gender_m_for_id
+ (declare (salience 3))
+ ?f1<-(id-gender-src ?id ?gen ?gen_src)
+ =>
+	(retract ?f1)
+	(if (eq ?gen -) then
+		(printout ?*gender* "(id-gender-src "?id "  m   Default)" crlf)
+	else
+		(printout ?*gender* "(id-gender-src "?id "  "?gen"  "?gen_src ")" crlf)
+	)
+	(printout ?*gnp_debug* "(pada_id-rule_name-gen_src " ?id "default_gender_m_for_id  m Default_assignment)" crlf)
+ )

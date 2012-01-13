@@ -25,7 +25,8 @@ td.ADVP		{ background-color: rgb(127,255,212); /*aquamarine*/	}
 td.PP		{ background-color: rgb(255,218,185); /*peach*/		}
 td.SBAR		{ background-color: rgb(198,226,255); /*slategray*/	}
 td.PRT		{ background-color: rgb(135,206,235); /*skyblue*/	}
-td.CONJP	{ background-color: rgb(192,255,193); /*darkseagreen*/	}
+td.CC		{ background-color: rgb(192,255,193); /*darkseagreen  Added by S.Maha Laxmi(27-12-11) for stanford parser*/	}
+td.CONJP        { background-color: rgb(192,255,193); /*darkseagreen*/  }
 td.INTJ		{ background-color: rgb(255,240,245); /*lavender*/	}
 td.UCP		{ background-color: rgb(173,216,230); /*lightblue*/	}
 td.LST		{ background-color: rgb(240,255,240); /*honeydew*/	}

@@ -7,20 +7,20 @@
 #define MAX_NO_OF_LINES 500 //Increased to 500 from 200 by Roja(14-06-11) for a big sentence from "calculate" file in SENSEVAL TRAIN
 #define INPUT_LENGTH MAX_LINE_LENGTH*MAX_NO_OF_LINES
 
-char *punct_short[]={",",".",";",":","'","\"","?","!","(",")","$","=","()",").","(),","'.","''"};
-char *punct_long[]={"comma","full_stop","semi_colon","colon","single_quote","double_quote","question_mark","exclamation","open_parenthesis","closed_parenthesis","dollar","equal_to","open-closed_parenthesis","closed_paren-dot","open-closed_paren-comma","single_quote-comma,","2_single_quotes"};
+char *punct_short[]={",",".",";",":","'","\"","?","!","(",")","$","=","()",").","(),","'.","''",".\""};
+char *punct_long[]={"comma","full_stop","semi_colon","colon","single_quote","double_quote","question_mark","exclamation","open_parenthesis","closed_parenthesis","dollar","equal_to","open-closed_parenthesis","closed_paren-dot","open-closed_paren-comma","single_quote-comma,","2_single_quotes","dot_double_quote"};
 
 int get_punct_full(char *ps)
 {
   int i,len;
   char *punct_str;
   FILE  *punct_clp;
-  for(i=0;i<16;i++)
+  for(i=0;i<=17;i++)
     {
       if(strncmp(ps,punct_short[i],5)==0)  
-	return i;  
+          	return i;  
     } 
-  if(strncmp(ps,punct_short[16],2)==0) return 12;
+  if(strncmp(ps,punct_short[17],2)==0) return 12;
   return -1;
 }
 
@@ -76,7 +76,7 @@ int main(int argc,char **argv)
 {
   FILE  *word_clp,*new_text,*morph_input,*paxa_input,*dir_names,*word1_clp,*meaning_clp,*word2_clp,*punct_clp;
   FILE  *root_word_picked_up,*tolower_word_clp,*paxa_clp,*para_sent,*eng_fp;
-  int   i=0,j,index,flag,map[MAX_NO_OF_LINES][2],lag,file_end,wrd_len=0,first_cap_flag=0,all_cap_flag=0,punct_len;
+  int   i=0,j,index,flag,map[MAX_NO_OF_LINES][2],lag,file_end,wrd_len=0,first_cap_flag=0,all_cap_flag=0,punct_len=0;
   char  temp_left_punct[5],temp_right_punct[5],*temp_ptr,*str_tolower,str1[100],str2[100];
   char  *para_no,*line_no,*prev_para,*prev_line;
   char  *ptr,c,*word[MAX_NO_OF_LINES],*left_punct[MAX_NO_OF_LINES],*right_punct[MAX_NO_OF_LINES];
@@ -152,7 +152,7 @@ int main(int argc,char **argv)
           sprintf(filename,"%s/%s_tmp/%s.%s",argv[1],argv[2],prev_para,prev_line);
   	  sprintf(filename,"%s/para_sent_id_info.dat",filename);
           para_sent=fopen(filename,"w");
-          if(para_sent==NULL) {printf("Could not open para_sent for writing\n");exit(1);}
+          if(para_sent==NULL) {printf("Could not open para_sent_id_info.dat for writing\n");exit(1);}
           fprintf(para_sent,"(para_id-sent_id-no_of_words\t%s\t%s\t%d)\n",prev_para,prev_line,index-1);
 
 
@@ -243,6 +243,12 @@ int main(int argc,char **argv)
               fprintf(root_word_picked_up,"(morph_analysis_to_be_choosen %d )\n",i);
               fprintf(paxa_clp,"(to_be_included_in_paxa %d )\n",i);
               fprintf(eng_fp," %d ",i);
+
+               if(strstr(left_punct[i],"s>")) //added by S.Maha Laxmi (27-12-11) to hanlde {<p><s>"} i.e removing para and sen tag and passing the punctuation only 
+               { left_punct[i]=left_punct[i]+strcspn(left_punct[i],"s");
+                 left_punct[i]=left_punct[i]+strcspn(left_punct[i],">");
+                *left_punct[i]='\0';left_punct[i]++;}
+
     	      if((j=get_punct_full(left_punct[i]))==-1)
 		lp=none;
 	      else  lp=punct_short[j];
@@ -258,13 +264,11 @@ To handle more than one punctuation for a word in a sentence following steps are
               strncpy(str2,right_punct[i],punct_len);
               str2[punct_len]='\0';
               strcpy(right_punct[i],str2);
-
 /**** end *******/
 
 	      if((j=get_punct_full(right_punct[i]))==-1)
 		rp=none;
 	      else rp=punct_short[j];
-
 
               //Added by Shirisha Manju
               //---------------------------------------------------------------------  
@@ -299,6 +303,8 @@ To handle more than one punctuation for a word in a sentence following steps are
                   fprintf(punct_clp,"(id-right_punctuation %d\t\"left_parenright_paren,\")\n",i,rp);
               else if(strcmp(rp,"\"")==0)
                   fprintf(punct_clp,"(id-right_punctuation %d\t\"\\%s\")\n",i,rp);
+              else if(strcmp(rp,".\"")==0)
+                  fprintf(punct_clp,"(id-right_punctuation %d\t\"dot_double_quote\")\n",i,rp);
               //----------------------------------------------------------------------
 
 	      else

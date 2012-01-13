@@ -4,7 +4,6 @@ Saving morph information
 Calling POS Tagger and Chunker (APERTIUM)
 Calling Link Parser
 Finding NER... 
-matching compounds......
 Hindi meaning using Link parser 1.1
 (Found maximum of 2 linkages )
 These are few sentences for Link Parser. 
@@ -483,7 +482,7 @@ mEMne teliPona_se usako/use bawAyA ki mEM kAra_se A rahA WA.
 Hindi meaning using Link parser 2.95
 (Found maximum of 6 linkages )
 I told Margaret on Tuesday that I thought she would probably be hired. 
-mEMne maMgalavAra ko Margaret ko bawAyA ki mEMne socA usako/use saMBavawaH kAma xiyA jAegA.
+mEMne maMgalavAra ko Margaret ko bawAyA ki mEMne socA ki usako/use saMBavawaH kAma xiyA jAegA.
 
 Hindi meaning using Link parser 2.96
 (Found maximum of 2 linkages )
@@ -976,126 +975,121 @@ It may not be possible to fix the problem.
 samasyA ko sulaJAnA SAyaxa samBava nahIM hE.
 
 Hindi meaning using Link parser 2.194
-(Found maximum of 4 linkages )
-I told Margaret that I thought she would probably be hired. 
-mEMne Margaret ko bawAyA ki mEMne socA usako/use saMBavawaH kAma xiyA jAegA.
-
-Hindi meaning using Link parser 2.195
 (Found maximum of 2 linkages )
 It turns out that Clinton did not actually kiss Monica. 
 yaha nikalakar AwA hE ki Clinton ne vAswava meM Monica ko nahIM cUmA WA.
 
-Hindi meaning using Link parser 2.196
+Hindi meaning using Link parser 2.195
 (Found maximum of 1 linkages )
 Many were angered by the hearings. 
 bahuwa sAre sunavAI_se kroXiwa huye/hue.
 
-Hindi meaning using Link parser 2.197
+Hindi meaning using Link parser 2.196
 (Found maximum of 8 linkages )
 Metals futures prices rose in heavy trading today. 
 XAwu BaviRya mUlya Aja BArI lena-xena meM uTe.
 
-Hindi meaning using Link parser 2.198
+Hindi meaning using Link parser 2.197
 (Found maximum of 20 linkages )
 Oil company stock prices rose in heavy trading today. 
 wela kaMpanI wijArawI mAla mUlya Aja BArI lena-xena meM uTe.
 
-Hindi meaning using Link parser 2.199
+Hindi meaning using Link parser 2.198
 (Found maximum of 2 linkages )
 Other costumes were really bad. 
 anya pahanAve vAswava meM KarAba We.
 
-Hindi meaning using Link parser 2.200
+Hindi meaning using Link parser 2.199
 (Found maximum of 1 linkages )
 Our program works better than yours. 
 hamArA progrAma Apa kI wulanA meM behawara_warIke se kAma karawA hE.
 
-Hindi meaning using Link parser 2.201
+Hindi meaning using Link parser 2.200
 (Found maximum of 2 linkages )
 She knew one thing: that she would be a professional skater. 
 vaha eka cIja jAnawI WI vaha vaha eka vyAvasAyika skater hogI.
 
-Hindi meaning using Link parser 2.202
+Hindi meaning using Link parser 2.201
 (Found maximum of 2 linkages )
 Some grammars are better than others, as we have proved. 
 kuCa vyAkaraNa anya kI wulanA meM behawara hEM hama jEsA sixXa_kara cuke hEM.
 
-Hindi meaning using Link parser 2.203
+Hindi meaning using Link parser 2.202
 (Found maximum of 2 linkages )
 The better the program is, the more people will like it. 
 progrAma jiwanA behawara_warIke se hE loga uwanA aXika isako pasaMxa kareMge.
 
-Hindi meaning using Link parser 2.204
+Hindi meaning using Link parser 2.203
 (Found maximum of 2 linkages )
 The boys' bedrooms will be enlarged. 
 ladakoM ke sone_kA kamare baDAye/baDAe jAezge.
 
-Hindi meaning using Link parser 2.205
+Hindi meaning using Link parser 2.204
 (Found maximum of 1 linkages )
 The dog that we eventually bought was very expensive. 
 jise/jisako hamane aMwa meM KarIxA vaha kuwwA awyaMwa mahazgA WA.
 
-Hindi meaning using Link parser 2.206
+Hindi meaning using Link parser 2.205
 (Found maximum of 2 linkages )
 The earth, Copernicus reasoned, must revolve around the sun. 
 Copernicus ne warka kiyA pqWvI ko sUrya ke cAroM ora GUmanA/GUmane cAhiye.
 
-Hindi meaning using Link parser 2.207
+Hindi meaning using Link parser 2.206
 (Found maximum of 1 linkages )
 The excitement over the trial is because he is extremely famous. 
 mukaxame ke Upara halacala hE kyozki vaha awyaXika prasixXa hE.
 
-Hindi meaning using Link parser 2.208
+Hindi meaning using Link parser 2.207
 (Found maximum of 2 linkages )
 The man it is likely that John hit died. 
 yaha samBava hE jisapara ki jOYna ne prahAra kiyA vaha AxamI mara gayA.
 
-Hindi meaning using Link parser 2.209
+Hindi meaning using Link parser 2.208
 (Found maximum of 1 linkages )
 The nearly 5 million people who attended enjoyed it. 
 jo upasWiwa huye/hue una karIba karIba 5 xasa-lAKa logoM ne isakA Ananxa uTAyA.
 
-Hindi meaning using Link parser 2.210
+Hindi meaning using Link parser 2.209
 (Found maximum of 2 linkages )
 This is because he is extremely famous. 
 yaha hE kyozki vaha awyaXika prasixXa hE.
 
-Hindi meaning using Link parser 2.211
+Hindi meaning using Link parser 2.210
 (Found maximum of 1 linkages )
 U.S. economic indicators fell sharply last month. 
 U.S. arWaSAswrIya sUcaka piCale mahIne wejI_se gire.
 
-Hindi meaning using Link parser 2.212
+Hindi meaning using Link parser 2.211
 (Found maximum of 2 linkages )
 We informed at the meeting the new employees. 
 hamane bETaka meM naye karmacAriyoM ko sUcanA xI.
 
-Hindi meaning using Link parser 2.213
+Hindi meaning using Link parser 2.212
 (Found maximum of 4 linkages )
 We like to eat at restaurants, particularly on weekends. 
 hama sapwAhAnwa para viSeRa_rUpa se jalapAna gqhoM meM KAnA pasaMxa karawe hEM.
 
-Hindi meaning using Link parser 2.214
+Hindi meaning using Link parser 2.213
 (Found maximum of 4 linkages )
 We like to eat at restaurants, usually on weekends. 
 hama sapwAhAnwa para sAXAraNawayaH jalapAna gqhoM meM KAnA pasaMxa karawe hEM.
 
-Hindi meaning using Link parser 2.215
+Hindi meaning using Link parser 2.214
 (Found maximum of 1 linkages )
 What did John say he thought you should do. 
 jOYna ne kahA ki usane socA ki Apako kyA karanA cAhiye.
 
-Hindi meaning using Link parser 2.216
+Hindi meaning using Link parser 2.215
 (Found maximum of 1 linkages )
 Which dog did you chase? 
 Apane kOna se kuwwe kA pICA kiyA?
 
-Hindi meaning using Link parser 2.217
+Hindi meaning using Link parser 2.216
 (Found maximum of 10 linkages )
 Alan bet me five dollars Clinton would lose the election. 
 Alan ne muJase pAzca dOlara kI Sarwa lagAyI/lagAI ki Clinton cunAva hAregA.
 
-Hindi meaning using Link parser 2.218
+Hindi meaning using Link parser 2.217
 (Found maximum of 2 linkages )
 A bunch of dogs is in the yard. 
 kuwwoM kA JuMzda ahAwe meM hE.

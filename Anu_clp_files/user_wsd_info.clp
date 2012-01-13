@@ -1,12 +1,3 @@
- (load-facts "cat_consistency_check.dat")
- (load-facts "word.dat")
- (load-facts "root.dat")
- (load-facts "relations_tmp1.dat")
- (load-facts "original_word.dat")
- (load-facts "English_sentence.dat")
- (open "user_wsd_info.dat" rel_wd_fp "a")
- (assert (next_id 1))
-
  (defglobal ?*rel-word-file* = rel_wd_fp) 
  ;----------------------------------------------------------------------------------------------------------------
  (defrule display_eng_sen
@@ -71,6 +62,4 @@
     (printout ?*rel-word-file* "(id-word-root-category  " ?id "  "?word"         "?root"        "?cat ")" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------
- (run)
- (exit)
 

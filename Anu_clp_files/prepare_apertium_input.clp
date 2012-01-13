@@ -69,16 +69,6 @@
  (assert (yA-tam  yA_huA_nahIM_hogA))
  (assert (impr_request  imper m_h2))
  )
- ;======================================== default gender for gender info =============================================
- ; Added by Shirisha Manju on 19-11-11 in case of and pada we consider the individual gender info.so if gender is - then
- ; make it as "m".
- (defrule default_gender
- (declare (salience 1500))
- ?f0<-(id-gender-src ?id - ?src)
- =>
-	(retract ?f0)
-	(assert (id-gender-src ?id m Default))
- )
  ;========================================== default format for hindi mng "-" ==========================================
  (defrule default_id
  (declare (salience 1500))
@@ -104,6 +94,7 @@
         (printout ?*A_fp5* "(id-Apertium_input " ?id "  )" crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  "?id "  default_id1 )" crlf)
  )
+ 
  ;========================================== complete sent mng ========================================================
 
  ;This contradicts the assumption that the fluid was in equilibrium.
@@ -152,11 +143,11 @@
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ; here prep_id itself is considered as the main meaning 
- ;Is there life beyond the grave? 
+ ;Is there life beyond the grave? Either go to bed or open your book to read.
  ;Modified by Shirisha Manju (23-11-11)
  (defrule Compound_mng_with_Prep_id
  (declare (salience 1003))
- ?f0<-(id-HM-source ?p_id ?p_mng Database_compound_phrase_word_mng|Database_compound_phrase_root_mng)
+ ?f0<-(id-HM-source ?p_id ?p_mng Database_compound_phrase_word_mng|Database_compound_phrase_root_mng|WSD_compound_phrase_root_mng)
  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(preposition ?p_id)(number ?num)(case ?case)(gender ?gen))
  ?f1<-(id-HM-source ?pada_id ?h_mng ?)
  (test (neq ?vib 0)) 
@@ -777,6 +768,31 @@
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  VP_rule_ne_kA_or_ne_se )" crlf)
   )
   ;--------------------------------------------------------------------------------------------------------------------------
+  ;Added by Shirisha Manju (21-12-11) Suggested by Sukhada)
+  ;He need not stay here. 
+  (defrule VP_rule_for_before_verb_for_need
+  (declare (salience 651))
+  (id-word  ?id  need)
+  (pada_info (group_head_id ?pada_id)(group_cat VP)(group_ids ?id $?d) (number ?num)(gender ?gen)(person ?person)(H_tam ?H_tam)(preceeding_part_of_verb ?vb))
+  ?f0<-(id-HM-source ?pada_id ?g_head ?)
+  (test (and (neq ?vb 0)(neq ?H_tam 0)))
+  (test (neq (str-index "_" ?H_tam) FALSE)) 
+  =>
+	(bind ?len 0)
+        (bind ?str1 ?H_tam)
+        (bind ?str_len (length ?H_tam))
+        (while (neq (str-index "_" ?H_tam) FALSE)
+        	(bind ?index (str-index "_" ?H_tam))
+                (bind ?H_tam (sub-string (+ ?index (+ ?len 1)) ?str_len ?str1) )
+                (bind ?len (+ ?index ?len))
+        )
+        (bind ?str4 (sub-string 1 ?len ?str1))
+        (bind ?str5 (str-cat ?str4 ?vb (sub-string ?len ?str_len ?str1)))
+        (printout  ?*A_fp5* "(id-Apertium_input "?pada_id " root:"?g_head",tam:"?str5",gen:"?gen",num:"?num ",per:"?person")"  crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  VP_rule_for_before_verb_for_need )" crlf)
+        (retract ?f0)
+  )
+  ;--------------------------------------------------------------------------------------------------------------------------
   ; This job will not take much effort . I do not go out as much now .
   (defrule VP_rule_for_before_verb
   (declare (salience 650))
@@ -802,6 +818,9 @@
                 (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  VP_rule_for_before_verb )" crlf))
                 (retract ?f0)
    )
+  
+   
+
   ;--------------------------------------------------------------------------------------------------------------------------
   ;There was a marked difference in the prices of dishes .
   ;She was afraid for her children .
@@ -1149,7 +1168,7 @@
         )
   )
   ;-------------------------------------------------------------------------------------------------------------------------
-  ; added by Shirisha Manju (14-09-11)
+  ; Added by Shirisha Manju (14-09-11)
   ; She is an excellent student with a bright future 
   (defrule PP_rule_with_vib_vAlA
   (declare (salience 400))
@@ -1167,7 +1186,7 @@
   ; Added by Shirisha Manju (14-09-11)
   ;I will show you the house which I bought.
   (defrule PP_rule_with_vib_for_hnd_pronoun
-  (declare (salience 400))
+  (declare (salience 401))
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(vibakthi ?vib))
   ?f0<-(id-HM-source ?pada_id ?h_word&wuma|kOna|jo|koI ?)
   (test (neq ?vib 0))
@@ -1175,6 +1194,20 @@
         (retract ?f0)
         (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><case:o><parsarg:"?vib "><gen:"?gen"><num:"?num"><per:"?per ">$)"  crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_hnd_pronoun )" crlf)
+  )
+  ;-------------------------------------------------------------------------------------------------------------------------
+  ; Added by Shirisha Manju (21-12-11) Suggested by Sukhada
+  ; But nobody knows at what level the futures and stocks will open today.
+  ; The book does not make any mention of his love affair.
+  (defrule PP_rule_with_vib_for_hnd_pronoun1
+  (declare (salience 400))
+  ?f0<-(id-HM-source ?id ?h_word&wuma|kOna|jo|koI|kyA ?)
+  (pada_info (group_ids $?ids ?h)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(vibakthi ?vib))
+  (test (member$ ?id $?ids))
+  =>
+        (retract ?f0)
+        (printout ?*A_fp5* "(id-Apertium_input "?id " ^"?h_word "<cat:p><case:o><parsarg:0><gen:"?gen"><num:"?num"><per:"?per "><tam:0>$)"  crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_with_vib_for_hnd_pronoun1 )" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
   ; Added by Shirisha Manju (10-09-11)

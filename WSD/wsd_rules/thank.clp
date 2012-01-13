@@ -11,10 +11,10 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id XanyavAxa_xe))
-(assert (kriyA_id-object_viBakwi ?id ko))
+;(assert (kriyA_id-object_viBakwi ?id ko))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  thank.clp       thank0   "  ?id "  XanyavAxa_xe )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  thank.clp      thank0   "  ?id " ko )" crlf)
+;(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  thank.clp      thank0   "  ?id " ko )" crlf)
 )
 )
 

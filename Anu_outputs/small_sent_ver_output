@@ -4,7 +4,7 @@ Saving morph information
 Calling POS Tagger and Chunker (APERTIUM)
 Calling Link Parser
 Calling Stanford parser
-matching compounds......
+Finding NER... 
 Hindi meaning using Stanford parser 1.1
 Test. 
 parIkRA.
@@ -24,13 +24,12 @@ Hindi meaning using Link parser 2.3
 Biking feels good. 
 sAikila calAne se acCA mahasUsa howA hE.
 
-Hindi meaning using Link parser 2.4
-(Found maximum of 2 linkages )
+Hindi meaning using Stanford parser 2.4
 Bill does not drive. 
-bila kAra_nahIM calAwA hE.
+Bill kAra_nahIM calAwA hE.
 
 Hindi meaning using Link parser 2.5
-(Found maximum of 3 linkages )
+(Found maximum of 6 linkages )
 Boys are eating fruits. 
 ladake Pala KA rahe hEM.
 
@@ -50,7 +49,7 @@ Do not waste electricity.
 vixyuwa Sakwi vyarWa_meM_barabAxa_mawa kariye/kIjiye.
 
 Hindi meaning using Link parser 2.9
-(Found maximum of 3 linkages )
+(Found maximum of 2 linkages )
 Dry sand absorbs water. 
 sUKI rewa pAnI soKa lewI hE.
 
@@ -90,7 +89,7 @@ He marked these bottles.
 usane ina bowaloM ko cihniwa kiyA.
 
 Hindi meaning using Link parser 2.17
-(Found maximum of 4 linkages )
+(Found maximum of 2 linkages )
 Her heart beats fast. 
 usakA hqxaya weja XadakawA hE.
 
@@ -175,7 +174,7 @@ I will invite Rama.
 mEM Rama ko AmaMwriwa karUzgA.
 
 Hindi meaning using Link parser 2.34
-(Found maximum of 2 linkages )
+(Found maximum of 3 linkages )
 Jane is soon coming. 
 jena SIGra A rahA hE.
 
@@ -200,7 +199,7 @@ Mary's shoes are red.
 Mary ke jUwe lAla hEM.
 
 Hindi meaning using Link parser 2.39
-(Found maximum of 2 linkages )
+(Found maximum of 1 linkages )
 May I come in? 
 kyA mEM aMxara_A sakawA hUz?
 
@@ -265,7 +264,7 @@ The machine needs oiling.
 maSIna ko wela kI AvaSyakawA hE.
 
 Hindi meaning using Link parser 2.52
-(Found maximum of 6 linkages )
+(Found maximum of 4 linkages )
 The Moon is shining. 
 canxramA camaka rahA hE.
 
