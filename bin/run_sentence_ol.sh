@@ -90,6 +90,6 @@ mv all_facts_tmp all_facts
  1,$s/#//g' >> $MYPATH/$1_tmp/sent-by-sent
  echo "" >> $MYPATH/$1_tmp/sent-by-sent
 
- myclips -f $HOME_anu_test/Anu_clp_files/user_wsd_info.clp > /dev/null
+ myclips -f $HOME_anu_test/Anu_clp_files/user_info.bat > /dev/null
  mv user_wsd_info.dat $MYPATH/$1_$2_user_wsd_info.dat
 

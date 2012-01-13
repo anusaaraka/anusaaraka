@@ -292,6 +292,7 @@
  (load-facts "lwg_info.dat")
  (load-facts "original_word.dat")
  (open "hindi_meanings_tmp.dat" fp "a")
+ (open "hindi_meanings_tmp1.dat" fp1 "a")
  (run)
  (clear)
  ;----------------------------------------------------------------------
@@ -502,4 +503,7 @@
  (assert (English-list))
  (run)
  (save-facts "catastrophe.dat" local sen_type-id-phrase)
+ (clear)
+ ;--------------------------------------------------------------------------
  (exit)
+ 

@@ -2970,7 +2970,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 13. Updated Log
 
 
- 12-01-12
+ 13-01-12
  ========
  1. H_ordering_rules.clp
         Added    : move_first_RB_in_NP_to_last
@@ -2996,8 +2996,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Added    : pada_for_comma
         Modified : get_PP_group, get_NP_group
  8. Removed move_sub_vib_to_saMjFA_samAnAXikaraNa rule in vibakthi.clp
- 9. Modified hindi_id_reorder.dat as hindi_id_order.dat in
-        run_sentence_link.sh run_sentence_ol.sh run_sentence_stanford.sh
+ 9. Modified run_sentence_link.sh run_sentence_ol.sh run_sentence_stanford.sh
+          1.hindi_id_reorder.dat as hindi_id_order.dat in
+          2.Modified run_sentence_stanford.sh [Changed near myclips command ,user_wsd_info.clp --> user_info.bat]
  10. For running specific parse in stanford ::
         1.Anusaaraka_stanford.sh file has be modified.
         2.Added new files run_multiple_parse_penn.sh and preffered_parse.py .
@@ -3024,6 +3025,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  28. sd_combining_apostrophe.clp
         Added    : map_cons3 and map_cons2 rules
         Modified : map_cons1
+ 29. Modified hindi_meaning.clp [Creating new file hindi_meanings_tmp1.dat].
+ 30. Added new files eng_hin_pos.clp and user_info.bat.
  29. Updated roman_iscii file.
  30. Modified ol_ver_output, sd_ver_output, ber_ver_output,small_sent_ver_output_sd, verified_output and sd_verified
  31. Upated abbr.sh and abbr_browser.sh
