@@ -269,7 +269,7 @@ yaha samBava hE ve AyeMge/Aezge.
 Hindi meaning using Stanford parser 2.65
 Have you ever seen the Pacific? 
 kyA Apa Pacific ko kaBI BI xeKa cuke hEM?
-kyA?Apa kaBI BI Pacific ko xeKa cuke hEM?
+kyA Apa kaBI BI Pacific ko xeKa cuke hEM?
 
 Hindi meaning using Stanford parser 2.66
 How many people did you see? 
@@ -307,7 +307,7 @@ denmArka vAsI acCe loga hEM.
 Hindi meaning using Stanford parser 2.74
 People use espresso to make other coffee drinks. 
 loga espreso kOYPI kA anya kOYPI_peya_yA Sarabawa banAne ke liye upayoga karawe hEM.
-loga anya kOYPI_peya_yA?Sarabawa banAne ke liye espreso kOYPI kA upayoga karawe hEM.
+loga anya kOYPI_peya_yA Sarabawa banAne ke liye espreso kOYPI kA upayoga karawe hEM.
 
 Hindi meaning using Stanford parser 2.75
 The Zongle of Bongle Dongle resigned today. 
@@ -328,7 +328,7 @@ kuCa anya pahanAve vAswava meM KarAba We.
 Hindi meaning using Stanford parser 2.79
 Do you think we should go to the party? 
 kyA Apa socawe hEM ki hameM/hamako pArtI ko jAnA cAhiye?
-kyA?Apa socawe hEM ki hameM/hamako pArtI meM jAnA cAhiye?
+kyA Apa socawe hEM ki hameM/hamako pArtI meM jAnA cAhiye?
 
 Hindi meaning using Stanford parser 2.80
 Where did you put the milk? 
@@ -393,7 +393,7 @@ yaha mahawvapUrNa_nahIM howA hE Ted kyA karawA hE.
 Hindi meaning using Stanford parser 2.95
 Are a dog and a cat here? 
 kyA yahAz kuwwA Ora billI hEM?
-kyA?kuwwA Ora billI yahAz hEM?
+kyA kuwwA Ora billI yahAz hEM?
 
 Hindi meaning using Stanford parser 2.96
 There is a dog and a cat here. 
@@ -513,7 +513,7 @@ Sita jalapAna ke liye breda sezka rahI hE.
 Hindi meaning using Stanford parser 2.124
 Last week I saw a great movie. 
 piCale sapwAha mEMne eka baDiyA calaciwra xeKA.
-mEMne piCale sapwAha eka baDiyA?calaciwra xeKA.
+mEMne piCale sapwAha eka baDiyA calaciwra xeKA.
 
 Hindi meaning using Stanford parser 2.125
 The idol was a beautiful piece of excellent workmanship. 
@@ -839,7 +839,7 @@ vaha UparI_wOra se uwwama piyAno_bajAne vAlI hE.
 Hindi meaning using Stanford parser 2.204
 There is a dog or a cat here. 
 yahAz kuwwA yA billI hE.
-kuwwA yA?billI yahAz hE.
+kuwwA yA billI yahAz hE.
 
 Hindi meaning using Stanford parser 2.205
 It is important to fix the problem. 
@@ -979,7 +979,7 @@ cora Kule xvAra meM se BAga gayA.
 Hindi meaning using Stanford parser 2.238
 The land was zoned for industrial purposes. 
 BUmi Oxyogika uxxeSyoM ke liye kRewroM_meM_viBAjiwa kI gayI WI.
-sWala Oxyogika uxxeSyoM ke liye kRewroM_meM_viBAjiwa kiyA?gayA WA.
+sWala Oxyogika uxxeSyoM ke liye kRewroM_meM_viBAjiwa kiyA gayA WA.
 
 Hindi meaning using Stanford parser 2.239
 The child is weeping for his mother. 
@@ -1189,231 +1189,227 @@ Who translated the sentence for the student?
 vixyArWI ke liye vAkya kisane anuvAxa kiyA?
 
 Hindi meaning using Stanford parser 2.290
-The five best costumes got prizes. 
-pAzca acCe pahanAvoM ne puraskAra prApwa kiye/kie.
-
-Hindi meaning using Stanford parser 2.291
 Espresso is a coffee drink. 
 Espresso eka kOYPI peya_yA Sarabawa hE.
 
-Hindi meaning using Stanford parser 2.292
+Hindi meaning using Stanford parser 2.291
 I gave him for his birthday a very expensive present. 
 mEMne usake janmaxina ke liye eka awyaMwa mahazgA upahAra usako/use xiyA.
 
-Hindi meaning using Stanford parser 2.293
+Hindi meaning using Stanford parser 2.292
 Where were you coming from? 
 Apa kahAz se A rahe We?
 
-Hindi meaning using Stanford parser 2.294
+Hindi meaning using Stanford parser 2.293
 Your house and garden are very attractive. 
 Apake Gara Ora uxyAna awyaMwa mohaka hEM.
 
-Hindi meaning using Stanford parser 2.295
+Hindi meaning using Stanford parser 2.294
 He is more intelligent than John. 
 vaha jOYna kI apekRA aXika buxXimAna hE.
 
-Hindi meaning using Stanford parser 2.296
+Hindi meaning using Stanford parser 2.295
 I yelled at her for going to the party. 
 mEM pArtI ko jAne ke liye usapara cillAyA.
 
-Hindi meaning using Stanford parser 2.297
+Hindi meaning using Stanford parser 2.296
 This computer is relatively more expensive. 
 yaha saMgaNaka wulanAwmaka_rUpa se aXika mahazgA hE.
 
-Hindi meaning using Stanford parser 2.298
+Hindi meaning using Stanford parser 2.297
 But where will you get them from. 
 paranwu Apa unheM/unako kahAz se prApwa kareMge.
 
-Hindi meaning using Stanford parser 2.299
+Hindi meaning using Stanford parser 2.298
 Of her childhood we know very little. 
 usake bacapana ke bAre meM hama awyaMwa Wode jAnawe hEM.
 hama usake bacapana ke bAre meM awyaMwa Wode jAnawe hEM.
 
-Hindi meaning using Stanford parser 2.300
+Hindi meaning using Stanford parser 2.299
 From your description, I do not think I would enjoy it. 
 Apake varNana se , mEM nahIM socawA hUz ki mEM isakA Ananxa uTAUzgA.
 mEM Apake varNana se nahIM socawA hUz ki mEM isakA Ananxa uTAUzgA.
 
-Hindi meaning using Stanford parser 3.1
+Hindi meaning using Stanford parser 2.300
 The lawyer pointed out that Clinton did not actually kiss Monica. 
 vakIla ne XyAna_AkarRiwa kiyA ki Clinton ne Monica ko vAswava meM nahIM cUmA WA.
-vakIla ne XyA?na_AkarRiwa kiyA ki Clinton ne vAswava meM Monica ko nahIM cUmA WA.
+vakIla ne XyAna_AkarRiwa kiyA ki Clinton ne vAswava meM Monica ko nahIM cUmA WA.
 
-Hindi meaning using Stanford parser 3.2
+Hindi meaning using Stanford parser 3.1
 I finally figured out why this program is so slow. 
 mEMne AKirakAra pawA lagAyA yaha progrAma iwanA XImA kyoM hE.
 
-Hindi meaning using Stanford parser 3.3
+Hindi meaning using Stanford parser 3.2
 He was an exotic creature with short red hair and brilliant green eyes. 
 vaha Cote lAla keSa/keSoM Ora wejomaya harI AzKoM vAlA AkarRaka prANI WA.
 
-Hindi meaning using Stanford parser 3.4
+Hindi meaning using Stanford parser 3.3
 The best five costumes got prizes. 
 acCe pAzca pahanAvoM ne puraskAra prApwa kiye/kie.
 
-Hindi meaning using Stanford parser 3.5
+Hindi meaning using Stanford parser 3.4
 I wonder how John did it. 
 muJe/muJako AScarya howA hE ki jOYna ne yaha kEse kiyA.
 
-Hindi meaning using Stanford parser 3.6
+Hindi meaning using Stanford parser 3.5
 I told Margaret on Tuesday that I thought she would probably be hired. 
 mEMne maMgalavAra ko Margaret ko bawAyA ki mEMne socA ki usako/use saMBavawaH kAma xiyA jAegA.
 
-Hindi meaning using Stanford parser 3.7
+Hindi meaning using Stanford parser 3.6
 High income taxes are important. 
 aXika Aya kara mahawvapUrNa hEM.
 
-Hindi meaning using Stanford parser 3.8
+Hindi meaning using Stanford parser 3.7
 There is a heap of garbage near the house. 
 Gara ke nikata kUde kA Dera hE.
 
-Hindi meaning using Stanford parser 3.9
+Hindi meaning using Stanford parser 3.8
 It was so dark that I could not see anything. 
 iwanA aMXerA WA ki mEM kuCa BI nahIM_xeKa sakA.
 
-Hindi meaning using Stanford parser 3.10
+Hindi meaning using Stanford parser 3.9
 I heard a yelp from the hostel last night. 
 mEMne piCalI rAwa CAwrAvAsa se cIKa sunI.
 
-Hindi meaning using Stanford parser 3.11
+Hindi meaning using Stanford parser 3.10
 Criminal charges will be brought against the driver. 
 aparAXI aBiyoga cAlaka ke viruxXa lagAye/lagAe jAezge.
 
-Hindi meaning using Stanford parser 3.12
+Hindi meaning using Stanford parser 3.11
 The school admits only 50 students at a time. 
 vixyAlaya eka sAWa sirPa 50 vixyArWiyoM ko svIkAra karawA hE.
 
-Hindi meaning using Stanford parser 3.13
+Hindi meaning using Stanford parser 3.12
 Buying of shares was brisk on Wall Street today. 
 SeyaroM kA KarIxanA Aja Wall Street para weja WA.
 SeyaroM kA KarIxanA Wall Street para Aja weja WA.
 
-Hindi meaning using Stanford parser 3.14
+Hindi meaning using Stanford parser 3.13
 The playing of the piano really bothers John. 
 piyAno kA bajanA vAswava meM jOYna ko waMga karawA hE.
 
-Hindi meaning using Stanford parser 3.15
+Hindi meaning using Stanford parser 3.14
 Many people can speak but only a few can act. 
 bahuwa sAre loga bola sakawe hEM paranwu sirPa kuCa kara sakawe hEM.
 
-Hindi meaning using Stanford parser 3.16
+Hindi meaning using Stanford parser 3.15
 Actress Whoopi Goldberg and singer Michael Jackson attended the ceremony. 
 Actress Whoopi Goldberg Ora gAyaka Michael Jackson samAroha meM upasWiwa huye/hue.
 
-Hindi meaning using Stanford parser 3.17
+Hindi meaning using Stanford parser 3.16
 Failure to comply may result in dismissal. 
 anupAlana karane kI asaPalawA baraKAswagI meM pariNAmiwa_ho sakawI hE.
 
-Hindi meaning using Stanford parser 3.18
+Hindi meaning using Stanford parser 3.17
 I wonder whether we should go. 
 muJe/muJako AScarya howA hE ki kyA hameM/hamako jAnA cAhiye.
 
-Hindi meaning using Stanford parser 3.19
+Hindi meaning using Stanford parser 3.18
 He told them about the accident, presumably. 
 usane saMBavawaH , xurGatanA ke bAre meM unheM/unako bawAyA.
 usane xurGatanA ke bAre meM saMBavawaH unheM/unako bawAyA.
 
-Hindi meaning using Stanford parser 3.20
+Hindi meaning using Stanford parser 3.19
 The doctor is tending the injured. 
 dAktara GAyaloM kI xeKaBAla_kara rahA hE.
 
-Hindi meaning using Stanford parser 3.21
+Hindi meaning using Stanford parser 3.20
 He gave up his lucrative law practice for the sake of the country. 
 usane xeSa ke lie usakI lABakara vakAlawa Coda xI.
 
-Hindi meaning using Stanford parser 3.22
+Hindi meaning using Stanford parser 3.21
 She is an excellent student with a bright future. 
 vaha eka ujjvala BaviRya vAlI uwwama vixyArWI hE.
 
-Hindi meaning using Stanford parser 3.23
+Hindi meaning using Stanford parser 3.22
 Someone laughed suddenly and the spell was broken. 
 koI acAnaka hazsA Ora mAhOla BaMga_ho gayA WA.
 
-Hindi meaning using Stanford parser 3.24
+Hindi meaning using Stanford parser 3.23
 To the people of India he is the symbol of mature wisdom. 
 BArawa ke logoM ke liye vaha paripakva buxXimawwA kA prawIka hE.
 vaha BArawa ke logoM ke liye paripakva buxXimawwA kA prawIka hE.
 
-Hindi meaning using Stanford parser 3.25
+Hindi meaning using Stanford parser 3.24
 I enclose three documents herewith. 
 mEM isake sAWa wIna xaswAveja BejawA hUz.
 
-Hindi meaning using Stanford parser 3.26
+Hindi meaning using Stanford parser 3.25
 He never really recovered from the shock of his wife's death. 
 vaha vAswava meM usakI pawnI kI mqwyu ke saxame se kaBI nahIM uBara pAyA.
 vaha usakI pawnI kI mqwyu ke saxame se vAswava meM kaBI nahIM uBara pAyA.
 
-Hindi meaning using Stanford parser 3.27
+Hindi meaning using Stanford parser 3.26
 He was well aware of the problem. 
 vaha samasyA se acCI waraha avagawa WA.
 
-Hindi meaning using Stanford parser 3.28
+Hindi meaning using Stanford parser 3.27
 She has gone for a walk in the woods. 
 vaha jaMgala_meM sEra ke liye jA cukI hE.
 
-Hindi meaning using Stanford parser 3.29
+Hindi meaning using Stanford parser 3.28
 Since I know English, he spoke to me. 
 kyoMki mEM aMgrejI jAnawA hUz , isaliye vaha muJase bolA.
 
-Hindi meaning using Stanford parser 3.30
+Hindi meaning using Stanford parser 3.29
 Mysore is also known as the city of palaces. 
 Mysore mahaloM ke Sahara ke nAma se BI jAnA jAwA hE.
 
-Hindi meaning using Stanford parser 3.31
+Hindi meaning using Stanford parser 3.30
 Kufri is a small hill station near shimla. 
 Kufri shimla ke nikata eka CotA parvawIya sWAna hE.
 
-Hindi meaning using Stanford parser 3.32
+Hindi meaning using Stanford parser 3.31
 The girl who you called yesterday has arrived. 
 vaha ladakI Apane kala jise/jisako bulAyA pahuzca gayI/gaI.
-Apane kala jise/jisako bulAyA?vaha ladakI pahuzca gayI/gaI.
+Apane kala jise/jisako bulAyA vaha ladakI pahuzca gayI/gaI.
 
-Hindi meaning using Stanford parser 3.33
+Hindi meaning using Stanford parser 3.32
 The snake who swallowed the rat hissed loudly. 
 vaha sAzpa jisane cUhA nigalA Uzce_svara meM PuPakArA.
 jisane cUhA nigalA vaha sAzpa Uzce_svara meM PuPakArA.
 
-Hindi meaning using Stanford parser 3.34
+Hindi meaning using Stanford parser 3.33
 The dog which Chris bought is really ugly. 
 jise/jisako Chris ne KarIxA vaha kuwwA vAswava meM kurUpa hE.
 Chris ne jise/jisako KarIxA vaha kuwwA vAswava meM kurUpa hE.
 
-Hindi meaning using Stanford parser 3.35
+Hindi meaning using Stanford parser 3.34
 Phil gave me a sweater which he bought in Paris. 
 Phil ne vaha svetara jise/jisako usane Paris meM KarIxA muJe/muJako xiyA.
-Phil ne vaha svetara muJe/muJako xiyA?usane jise/jisako Paris meM KarIxA.
-Phil ne vaha svetara muJe/muJako xiyA?jise/jisako usane Paris meM KarIxA.
+Phil ne vaha svetara muJe/muJako xiyA usane jise/jisako Paris meM KarIxA.
+Phil ne vaha svetara muJe/muJako xiyA jise/jisako usane Paris meM KarIxA.
 Phil ne jise/jisako usane Paris meM KarIxA vaha svetara muJe/muJako xiyA.
-Phil ne muJe/muJako vaha svetara xiyA?jise/jisako usane Paris meM KarIxA.
+Phil ne muJe/muJako vaha svetara xiyA jise/jisako usane Paris meM KarIxA.
 
-Hindi meaning using Stanford parser 3.36
+Hindi meaning using Stanford parser 3.35
 The boy who came yesterday from Delhi is my friend. 
 jo xillI se kala AyA vaha ladakA merA miwra hE.
 
-Hindi meaning using Stanford parser 3.37
+Hindi meaning using Stanford parser 3.36
 The girl you met yesterday is here. 
 vaha ladakI jise/jisako Apa kala mile yahAz hE.
 jise/jisako Apa kala mile vaha ladakI yahAz hE.
 
-Hindi meaning using Stanford parser 3.38
+Hindi meaning using Stanford parser 3.37
 The dog I chased was black. 
 jisakA mEMne pICA kiyA vaha kuwwA kAlA WA.
 
-Hindi meaning using Stanford parser 3.39
+Hindi meaning using Stanford parser 3.38
 The man you saw is intelligent. 
 jise/jisako Apane xeKA vaha AxamI buxXimAna hE.
 
-Hindi meaning using Stanford parser 3.40
+Hindi meaning using Stanford parser 3.39
 This is the place I live. 
 yaha vahI sWAna hE jahAz mEM rahawA hUz.
 yaha jahAz mEM rahawA hUz vaha sWAna hE.
 
-Hindi meaning using Stanford parser 3.41
+Hindi meaning using Stanford parser 3.40
 This is the place I met him. 
 yaha vahI sWAna hE jahAz mEM usase milA.
 yaha jahAz mEM usase milA vaha sWAna hE.
 
-Hindi meaning using Stanford parser 3.42
+Hindi meaning using Stanford parser 3.41
 I will show you the house which I bought. 
 mEM vaha Gara jise/jisako mEMne KarIxA Apako xiKAUzgA.
 mEM vaha Gara Apako xiKAUzgA mEMne jise/jisako KarIxA.
@@ -1421,563 +1417,560 @@ mEM vaha Gara Apako xiKAUzgA jise/jisako mEMne KarIxA.
 mEM jise/jisako mEMne KarIxA vaha Gara Apako xiKAUzgA.
 mEM Apako vaha Gara xiKAUzgA jise/jisako mEMne KarIxA.
 
-Hindi meaning using Stanford parser 3.43
+Hindi meaning using Stanford parser 3.42
 Shivaji was one of the most powerful rulers in 1600. 
 Shivaji 1600 meM sabase aXika SakwiSAlI SAsakoM meM se eka WA.
 
-Hindi meaning using Stanford parser 3.44
+Hindi meaning using Stanford parser 3.43
 Ayodhya during ancient times was known as kaushaldesa. 
 prAcIna kAla ke xOrAna Ayodhya kaushaldesa ke nAma se jAnA jAwA WA.
 
-Hindi meaning using Stanford parser 3.45
+Hindi meaning using Stanford parser 3.44
 Golconda fort is situated on the western outskirts of hyderabad. 
 Golconda kilA hyderabad ke paScimI bAharI hisse meM hE.
 
-Hindi meaning using Stanford parser 3.46
+Hindi meaning using Stanford parser 3.45
 Jumma masjid is considered to be one of the most beautiful mosques in western india. 
 jummA masjixa paScimI BArawa meM sabase aXika sunxara masjixoM meM se eka samaJI jAwI hE.
 
-Hindi meaning using Stanford parser 3.47
+Hindi meaning using Stanford parser 3.46
 I like dogs as well as cats. 
 mEM kuwwoM vEse hI billiyoM ko pasaMxa karawA hUz.
 
-Hindi meaning using Stanford parser 3.48
+Hindi meaning using Stanford parser 3.47
 He was imprisoned in 1945 for the brutal murder of a sixty year old man. 
 vaha eka sATa varRa ke AxamI ke nirmama KUna ke liye 1945 meM kExa kiyA gayA WA.
 
-Hindi meaning using Stanford parser 3.49
+Hindi meaning using Stanford parser 3.48
 These cuts in services will particularly affect the old. 
 sevAoM meM ye kAta vqxXoM ko viSeRa_rUpa se praBAviwa kareMgI.
 sevAoM meM ye kAta viSeRa_rUpa se vqxXoM ko praBAviwa kareMgI.
 
-Hindi meaning using Stanford parser 3.50
+Hindi meaning using Stanford parser 3.49
 A slow, balmy breeze from the south engulfed everyone in the audience. 
 xakRiNa se eka XIme , suKaxAyaka manxa samIra ne SrowAxala meM prawyeka vyakwi ko nimagna kiyA.
 
-Hindi meaning using Stanford parser 3.51
+Hindi meaning using Stanford parser 3.50
 Is there life beyond the grave? 
 kyA mqwyu uparAMwa jIvana hE?
 
-Hindi meaning using Stanford parser 3.52
+Hindi meaning using Stanford parser 3.51
 When you stand on this rock and face the east, the waves of the bay of bengal lap your feet. 
 Apa isa cattAna para jaba Kade howe hEM Ora pUrva kI ora muzha karawe hEM , wo bengal kI KAdI kI lahareM Apake pAzvoM se XIre_se takarAwI hEM.
 
-Hindi meaning using Stanford parser 3.53
+Hindi meaning using Stanford parser 3.52
 His reputation was tarnished by his misdeeds. 
 usakI prawiRTA usake xuRkarmoM se kalaMkiwa_ho gayI WI.
 
-Hindi meaning using Stanford parser 3.54
+Hindi meaning using Stanford parser 3.53
 The debate was a pretty disappointing affair. 
 bahasa bahuwa nirASAjanaka WI.
 
-Hindi meaning using Stanford parser 3.55
+Hindi meaning using Stanford parser 3.54
 She wore a long black velvet affair. 
 usane laMbI kAlI maKamalI cIja pahanI.
 
-Hindi meaning using Stanford parser 3.56
+Hindi meaning using Stanford parser 3.55
 The book does not make any mention of his love affair. 
 puswaka usake prema saMbanXa kA koI ulleKa nahIM karawI hE.
 
-Hindi meaning using Stanford parser 3.57
+Hindi meaning using Stanford parser 3.56
 He sat under a wonderful velvet sky. 
 vaha eka axBuwa maKamalI AsamAna ke nIce bETA.
 
-Hindi meaning using Stanford parser 3.58
+Hindi meaning using Stanford parser 3.57
 Do this in your room. 
 Apake kamare meM yaha kariye/kIjiye.
 
-Hindi meaning using Stanford parser 3.59
-Their belongings were flung about the room. 
-unake sAmAna kamare meM iXara-uXara PeMke gaye We.
-
-Hindi meaning using Stanford parser 3.60
+Hindi meaning using Stanford parser 3.58
 The suspect was about 2 meters tall. 
 sanxigXa lagaBaga 2 mItara laMbA WA.
 
-Hindi meaning using Stanford parser 3.61
+Hindi meaning using Stanford parser 3.59
 Leave your coat in the hall. 
 hOYla meM Apake kota ko Coda jAiye.
 
-Hindi meaning using Stanford parser 3.62
+Hindi meaning using Stanford parser 3.60
 Do not shut the door. 
 xaravAjA banxa_mawa kariye/kIjiye.
 
-Hindi meaning using Stanford parser 3.63
+Hindi meaning using Stanford parser 3.61
 I have been running about all morning trying to find you. 
 mEM Apako pAne ke liye prayAsa karwe_hue pUrI subaha iXara-uXara xOdawA rahA hUz.
-mEM pUrI subaha meM iXara-uXara Apako pAne ke liye prayA?sa karwe_hue xOdawA rahA hUz.
+mEM pUrI subaha meM iXara-uXara Apako pAne ke liye prayAsa karwe_hue xOdawA rahA hUz.
 
-Hindi meaning using Stanford parser 3.64
+Hindi meaning using Stanford parser 3.62
 She is making the girl feed the child. 
 vaha ladakI se bacce ko KAnA_KilavA rahI hE.
 
-Hindi meaning using Stanford parser 3.65
+Hindi meaning using Stanford parser 3.63
 She made the girl feed the child. 
 usane ladakI se bacce ko KAnA KilavAyA.
 
-Hindi meaning using Stanford parser 3.66
+Hindi meaning using Stanford parser 3.64
 A fat boy had to eat fruits. 
 eka mote ladake ko Pala KAne pade.
 
-Hindi meaning using Stanford parser 3.67
+Hindi meaning using Stanford parser 3.65
 A fat boy had to do various exercises. 
 eka mote ladake ko viBinna vyAyAma karane pade.
 
-Hindi meaning using Stanford parser 3.68
+Hindi meaning using Stanford parser 3.66
 Applicants for posts are called for interview. 
 paxoM ke liye prArWI sAkRAwkAra ke liye bulAye/bulAe gaye hEM.
 
-Hindi meaning using Stanford parser 3.69
+Hindi meaning using Stanford parser 3.67
 The interview lasted about an hour. 
 sAkRAwkAra eka GaMte lagaBaga calawA rahA.
 
-Hindi meaning using Stanford parser 3.70
+Hindi meaning using Stanford parser 3.68
 The performance starts at seven. 
 praxarSana sAwa baje Suru howA hE.
 
-Hindi meaning using Stanford parser 3.71
+Hindi meaning using Stanford parser 3.69
 She was just 3 weeks old. 
 vaha sirPa 3 sapwAha kI WI.
 
-Hindi meaning using Stanford parser 3.72
+Hindi meaning using Stanford parser 3.70
 There is a lot of flu about. 
 bahuwa sArA PlU AsapAsa hE.
 PlU AsapAsa bahuwa sArA hE.
 
-Hindi meaning using Stanford parser 3.73
+Hindi meaning using Stanford parser 3.71
 In fact she had been feeling tired and queasy for the past few days. 
 asala meM vaha piCale kuCa xinoM se WakA_huA Ora vamanakArI mahasUsa karawI rahI WI.
 
-Hindi meaning using Stanford parser 3.74
+Hindi meaning using Stanford parser 3.72
 At the end of the day, 251.2 million shares were traded. 
 xina ke anwa meM , 251.2 xasa-lAKa SeyaroM kA vyApAra kiyA gayA WA.
 
-Hindi meaning using Stanford parser 3.75
+Hindi meaning using Stanford parser 3.73
 No, it was not Black Monday. 
 nahIM , vaha aSuBa somavAra nahIM WA.
 
-Hindi meaning using Stanford parser 3.76
+Hindi meaning using Stanford parser 3.74
 The President's address to the nation was broadcasted across the country. 
 rARtra ke liye President kA saMboXana pUre_xeSa meM prasAriwa kiyA gayA WA.
 
-Hindi meaning using Stanford parser 3.77
+Hindi meaning using Stanford parser 3.75
 Still, fund groups are not taking any chances. 
 aBI BI , pUzjI samUha KawarA_mola_nahIM_le rahe hEM.
 
-Hindi meaning using Stanford parser 3.78
+Hindi meaning using Stanford parser 3.76
 But fund managers say they are ready. 
 paranwu pUzjI prabaMXaka kahawe hEM ki ve wEyAra hEM.
 
-Hindi meaning using Stanford parser 3.79
+Hindi meaning using Stanford parser 3.77
 The test may come today. 
 parIkRA Aja ho sakawI hE.
 
-Hindi meaning using Stanford parser 3.80
+Hindi meaning using Stanford parser 3.78
 I will tell you some interesting facts tomorrow. 
 mEM kala Apako kuCa rucikara waWya bawAUzgA.
 
-Hindi meaning using Stanford parser 3.81
+Hindi meaning using Stanford parser 3.79
 At this point, the Dow was down about 35 points. 
 isa samaya para , Dow lagaBaga 35 pOintsa nIce WA.
 
-Hindi meaning using Stanford parser 3.82
+Hindi meaning using Stanford parser 3.80
 Do not send the message by radio. 
 redio se saMxeSa mawa Bejiye.
 
-Hindi meaning using Stanford parser 3.83
+Hindi meaning using Stanford parser 3.81
 The matter was explained by her. 
 viRaya usake xvArA samaJAyA gayA WA.
 
-Hindi meaning using Stanford parser 3.84
+Hindi meaning using Stanford parser 3.82
 He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
 usane kahA ki Ese pariNAmoM ko Japan ke sAWa U.S. vyApAra GAtA GatAne meM " dOlara Ora sEnta meM mApane yogya honA cAhiye ".
 
-Hindi meaning using Stanford parser 3.85
+Hindi meaning using Stanford parser 3.83
 Go straight and take a right turn. 
 sIXA jAiye Ora xAzyA moda lIjiye.
 
-Hindi meaning using Stanford parser 3.86
+Hindi meaning using Stanford parser 3.84
 Both of her parents are from India. 
 usake mAz bApa xono BArawa se hEM.
 
-Hindi meaning using Stanford parser 3.87
+Hindi meaning using Stanford parser 3.85
 Please enclose a curriculum vitae with your letter of application. 
 kqpayA Apake Avexana pawra ke sAWa CV Bejiye.
 
-Hindi meaning using Stanford parser 3.88
+Hindi meaning using Stanford parser 3.86
 Fifty people voted against the new proposal. 
 pacAsa logoM ne naye praswAva ke viruxXa mawa xiyA.
 
-Hindi meaning using Stanford parser 3.89
+Hindi meaning using Stanford parser 3.87
 Mandi is comparatively hotter than other hill stations of himachal pradesh. 
 Mandi himachal pradesh ke anya pahAdI steSanoM kI apekRA wulanAwmaka_xqRti se garama hE.
 
-Hindi meaning using Stanford parser 3.90
+Hindi meaning using Stanford parser 3.88
 Most of the inexpensive budget accommodation is in taj ganj. 
 kama KarcIle bajata AvAsa kA sabase aXika taj ganj meM hE.
 
-Hindi meaning using Stanford parser 3.91
+Hindi meaning using Stanford parser 3.89
 As we go from ooty to gudalur, the change in vegetation is striking. 
 jaba hama ooty se gudalur ko jAwe hEM , pOXoM_kI vqxXi meM parivarwana XyAna_AkarRiwa_karanevAlA hE.
 
-Hindi meaning using Stanford parser 3.92
+Hindi meaning using Stanford parser 3.90
 The glass house built on the lines of the crystal palace in london is the main attraction in this huge park. 
 landana meM sPatika mahala kI lAinoM para banA gilAsa Gara isa bqhaw uxyAna meM pramuKa AkarRaNa hE.
 
-Hindi meaning using Stanford parser 3.93
+Hindi meaning using Stanford parser 3.91
 Mahadevi Verma wrote many poems. 
 Mahadevi Verma ne bahuwa sArI kaviwAyeM/kaviwAez liKIM.
 
-Hindi meaning using Stanford parser 3.94
+Hindi meaning using Stanford parser 3.92
 Soccer is my most favourite sport. 
 PutabAla merA sabase aXika priya Kela hE.
 
-Hindi meaning using Stanford parser 3.95
+Hindi meaning using Stanford parser 3.93
 He persuaded them to go. 
 usane unheM/unako jAne ke liye rAjI kiyA.
 
-Hindi meaning using Stanford parser 3.96
+Hindi meaning using Stanford parser 3.94
 The soup needs more salt. 
 Sorabe ko aXika namaka kI AvaSyakawA hE.
 
-Hindi meaning using Stanford parser 3.97
+Hindi meaning using Stanford parser 3.95
 My car broke down when I reached Lalitpur. 
 merI gAdI KarAba_ho gayI/gaI mEM Lalitpur jaba pahuzcA.
 
-Hindi meaning using Stanford parser 3.98
+Hindi meaning using Stanford parser 3.96
 His wife has had a baby. 
 usakI pawnI kA SiSU WA.
 
-Hindi meaning using Stanford parser 3.99
+Hindi meaning using Stanford parser 3.97
 It is Jane who wants to do it. 
 yaha karane ke liye jo cAhawA hE Jane hE.
 
-Hindi meaning using Stanford parser 3.100
+Hindi meaning using Stanford parser 3.98
 He stopped killing of animals and birds throughout his kingdom. 
 usane usake rAjya Bara meM paSuoM Ora cidiyoM kA GAwaka ko rokA.
 
-Hindi meaning using Stanford parser 4.1
+Hindi meaning using Stanford parser 3.99
 Experience is more important for this job than paper qualifications. 
 anuBava kagajI yogyawA kI apekRA isa kAma ke liye aXika mahawvapUrNa hE.
 
-Hindi meaning using Stanford parser 4.2
+Hindi meaning using Stanford parser 3.100
 He wrote the address on a piece of paper. 
 usane kAgaja_kA purje para pawA liKA.
 
-Hindi meaning using Stanford parser 4.3
+Hindi meaning using Stanford parser 4.1
 Dictionaries are usually printed on thin paper. 
 SabxakoRa pawale kAgaja para sAXAraNawayaH CApe gaye hEM.
 
-Hindi meaning using Stanford parser 4.4
+Hindi meaning using Stanford parser 4.2
 She works on paper because she hates computers. 
 vaha kAgaja para kAma karawI hE kyozki vaha saMgaNaka nApasanxa karawI hE.
 
-Hindi meaning using Stanford parser 4.5
+Hindi meaning using Stanford parser 4.3
 I read a recent paper in the Journal of Medicine. 
 mEMne Medicine ke Journal meM eka hAla kA leKapawra paDA.
 
-Hindi meaning using Stanford parser 4.6
+Hindi meaning using Stanford parser 4.4
 I read about the train robbery in today's paper. 
 mEMne Aja ke samAcAra pawra meM relagAdI dakEwI ke bAre meM paDA.
 
-Hindi meaning using Stanford parser 4.7
+Hindi meaning using Stanford parser 4.5
 I read about the train accident in Sunday paper. 
 mEMne ravivAra ke_samAcAra pawra meM rela xurGatanA ke bAre meM paDA.
 
-Hindi meaning using Stanford parser 4.8
+Hindi meaning using Stanford parser 4.6
 This journal is available in paper form. 
 yaha jarnala kagajI rUpa meM upalabXa hE.
 
-Hindi meaning using Stanford parser 4.9
+Hindi meaning using Stanford parser 4.7
 Almora is a small town in Uttarakhanda state. 
 Almora Uttarakhanda rAjya meM eka CotA nagara hE.
 
-Hindi meaning using Stanford parser 4.10
+Hindi meaning using Stanford parser 4.8
 This card is printed on recycled paper. 
 yaha kArda punarAvqwwa kAgaja para CApA huA hE.
 
-Hindi meaning using Stanford parser 4.11
+Hindi meaning using Stanford parser 4.9
 She had gotten her family to go against convention. 
 vaha paraMparA ke viruxXa jAne ke liye usake parivAra ko preriwa_kara cukI WI.
 
-Hindi meaning using Stanford parser 4.12
+Hindi meaning using Stanford parser 4.10
 She declared that out of love for the poor she had gotten her family to go against convention. 
 usane GoRiwa kiyA ki xInoM ke_prawi_prema_ke kAraNa vaha paraMparA ke viruxXa jAne ke liye usake parivAra ko preriwa_kara cukI WI.
 
-Hindi meaning using Stanford parser 4.13
+Hindi meaning using Stanford parser 4.11
 She got the book to read from the library. 
 usane puswakAlaya se paDane ke liye puswaka prApwa kI.
 
-Hindi meaning using Stanford parser 4.14
+Hindi meaning using Stanford parser 4.12
 He got a topic to speak at the forum. 
 usako/use janasaBA meM bolane ke liye viRaya milA.
 
-Hindi meaning using Stanford parser 4.15
+Hindi meaning using Stanford parser 4.13
 He finally got a topic to speak at the forum. 
 usako/use AKirakAra janasaBA meM bolane ke liye viRaya milA.
 
-Hindi meaning using Stanford parser 4.16
+Hindi meaning using Stanford parser 4.14
 The main states of southern india are tamilnadu, kerala, maharashtra, andhrapradesh and karnataka. 
 xakRiNI BArawa ke pramuKa rAjya tamilnadu , kerala , maharashtra , andhrapradesh Ora karnataka hEM.
 
-Hindi meaning using Stanford parser 4.17
+Hindi meaning using Stanford parser 4.15
 He will not come because he is busy. 
 vaha nahIM AyegA/AegA kyozki vaha vyaswa hE.
 
-Hindi meaning using Stanford parser 4.18
+Hindi meaning using Stanford parser 4.16
 He neither plays, nor reads. 
 vaha na hI KelawA hE , na paDawA hE.
 
-Hindi meaning using Stanford parser 4.19
+Hindi meaning using Stanford parser 4.17
 The kullu valley is also known as the valley of the gods. 
 kullu GAtI ISvara kI GAtI ke nAma se BI jAnI jAwI hE.
 
-Hindi meaning using Stanford parser 4.20
+Hindi meaning using Stanford parser 4.18
 Chaturbhuj temple is built on a massive stone platform. 
 Chaturbhuj maMxira eka BArI pawWara pletaPOYrma para banAyA huA hE.
 
-Hindi meaning using Stanford parser 4.21
+Hindi meaning using Stanford parser 4.19
 Puri is one of the most important pilgrimage centres for the hindus. 
 Puri hindus ke liye awi mahawvapUrNa wIrWayAwrA kenxra meM se eka hE.
 
-Hindi meaning using Stanford parser 4.22
+Hindi meaning using Stanford parser 4.20
 He went to Agra and saw the Tajmahal. 
 vaha Agra ko gayA Ora Tajmahal ko xeKA.
 
-Hindi meaning using Stanford parser 4.23
+Hindi meaning using Stanford parser 4.21
 They accused him of the crime. 
 unhoMne usapara aparAXa kA Aropa lagAyA.
 
-Hindi meaning using Stanford parser 4.24
+Hindi meaning using Stanford parser 4.22
 The garden provides a spectacular view of the city. 
 uxyAna Sahara kA eka SAnaxAra xqRtikoNa xewA hE.
 
-Hindi meaning using Stanford parser 4.25
+Hindi meaning using Stanford parser 4.23
 The kullu valley is also known as the valley of the gods. 
 kullu GAtI ISvara kI GAtI ke nAma se BI jAnI jAwI hE.
 
-Hindi meaning using Stanford parser 4.26
+Hindi meaning using Stanford parser 4.24
 Queen victoria opened blackfriars bridge in november 1869. 
 Queen victoria ne navambara 1869 meM blackfriars pula KolA.
 
-Hindi meaning using Stanford parser 4.27
+Hindi meaning using Stanford parser 4.25
 Srinagar is the capital city of Jammu and Kashmir and one of the most popular hill stations. 
 Srinagar Jammu Ora Kashmir kA pUMjI Sahara Ora sabase aXika lokapriya pahAdI steSanoM meM se eka hE.
 
-Hindi meaning using Stanford parser 4.28
+Hindi meaning using Stanford parser 4.26
 The toltecs were the predominant civilization of this time. 
 toltecs isa samaya ke sarvAXika saBya samAja We.
 
-Hindi meaning using Stanford parser 4.29
+Hindi meaning using Stanford parser 4.27
 How shall we collect the money? 
 hama pEsA kEse iktTA kareMge?
 
-Hindi meaning using Stanford parser 4.30
+Hindi meaning using Stanford parser 4.28
 Rahul was the son of buddha and the name lahaul is derived from rahul. 
 Rahul buddha kA betA WA Ora nAma lahaul rahul se viSleRaNa huA hE.
 
-Hindi meaning using Stanford parser 4.31
+Hindi meaning using Stanford parser 4.29
 The white marbled moti masjid or the pearl mosque was the private mosque for aurangzeb. 
 saPexa saMgamaramara moti masjid yA mowI masjixa aurangzeb ke liye vyakwigawa masjixa WI.
 
-Hindi meaning using Stanford parser 4.32
+Hindi meaning using Stanford parser 4.30
 Sarpa yakshi and Naga yakshi are the beloved consorts of Nagaraja. 
 Sarpa yakshi Ora Naga yakshi Nagaraja kI priya pawniyAz hEM.
 
-Hindi meaning using Stanford parser 4.33
+Hindi meaning using Stanford parser 4.31
 Rainwear is a must if you are visiting between june and september. 
 Rainwear AvaSyaka hE yaxi Apa jUna Ora siwambara ke bIca xeKane_jA rahe hEM.
 
-Hindi meaning using Stanford parser 4.34
+Hindi meaning using Stanford parser 4.32
 Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival. 
-Allahabad usakI vArRika magh mela ( CotA kumbh mela ) Ora raMgIna dussehra wyOhAra ke liye BI jAnA jAwA hE.
+Allahabad usake vArRika magh mele ( Cote kumbh mele ) Ora raMgIna dussehra wyOhAra ke liye BI jAnA jAwA hE.
 
-Hindi meaning using Stanford parser 4.35
+Hindi meaning using Stanford parser 4.33
 This old fort was built by sher shah in the 16th century. 
 yaha purAnA kilA 16th SawAbxI meM sher SAha ke xvArA banAyA gayA WA.
 
-Hindi meaning using Stanford parser 4.36
+Hindi meaning using Stanford parser 4.34
 During the first world war, it was used as a hospital. 
 praWama mahAyuxXa ke xOrAna , yaha aspawAla ke jEsA upayoga kiyA gayA WA.
 
-Hindi meaning using Stanford parser 4.37
+Hindi meaning using Stanford parser 4.35
 The chenna kesava temple of belur built 900 years ago is an exquisite example of hoysala art. 
 900 varRa pahale banA belur kA chenna kesava maMxira hoysala kalA kA uwkqRta uxAharaNa hE.
 
-Hindi meaning using Stanford parser 4.38
+Hindi meaning using Stanford parser 4.36
 This beautiful building is 245 ft in length and 156 ft in width. 
 yaha sunxara imArawa lambAI meM 245 ft Ora cOdAI meM 156 ft hE.
 
-Hindi meaning using Stanford parser 4.39
+Hindi meaning using Stanford parser 4.37
 One can reach kumbhalgarh by road from udaipur (84km) and ranakpur which is 18km from kumbhalgarh. 
 koI BI udaipur ( 84km ) Ora ranakpur se sadaka se kumbhalgarh waka pahuzca sakawA hE jo kumbhalgarh se 18km hE.
 
-Hindi meaning using Stanford parser 4.40
+Hindi meaning using Stanford parser 4.38
 She is ugly and fat. 
 vaha kurUpa Ora motI hE.
 
-Hindi meaning using Stanford parser 4.41
+Hindi meaning using Stanford parser 4.39
 Her mom was beautiful, talented and sweet. 
 usakI mAz sunxara , prawiBASAlI Ora mITI WI.
 
-Hindi meaning using Stanford parser 4.42
+Hindi meaning using Stanford parser 4.40
 She is beautiful and intelligent. 
 vaha sunxara Ora buxXimAna hE.
 
-Hindi meaning using Stanford parser 4.43
+Hindi meaning using Stanford parser 4.41
 Mary, Joe, Sita, Geeta and Louise are coming to the party. 
 Mary , Joe , Sita , Geeta Ora Louise pArtI ko A rahIM hEM.
 
-Hindi meaning using Stanford parser 4.44
+Hindi meaning using Stanford parser 4.42
 The government's action was unusual. 
 sarakAra kI kriyA asAmAnya WI.
 
-Hindi meaning using Stanford parser 4.45
+Hindi meaning using Stanford parser 4.43
 It would open a can of worms. 
 yaha kIdoM kA kEna KolegA.
 
-Hindi meaning using Stanford parser 4.46
+Hindi meaning using Stanford parser 4.44
 Everybody was trying to do the same thing at the same time. 
 prawyeka vyakwi eka_hI_samaya para vahI cIja karane ke liye prayAsa_kara rahA WA.
 
-Hindi meaning using Stanford parser 4.47
+Hindi meaning using Stanford parser 4.45
 I will tell you the story tomorrow. 
 mEM kala Apako kahAnI bawAUzgA.
 
-Hindi meaning using Stanford parser 4.48
+Hindi meaning using Stanford parser 4.46
 He does not always play tennis. 
 vaha hameSA tenisa nahIM KelawA hE.
 
-Hindi meaning using Stanford parser 4.49
+Hindi meaning using Stanford parser 4.47
 I gave her a book. 
 mEMne usako/use puswaka xI.
 
-Hindi meaning using Stanford parser 4.50
+Hindi meaning using Stanford parser 4.48
 She spoke slowly and softly. 
 vaha XIre se Ora komalawA se bolI.
 
-Hindi meaning using Stanford parser 4.51
+Hindi meaning using Stanford parser 4.49
 But I heard the same words over and over in my mind. 
 paranwu mEMne mere mana meM bArabAra vahI Sabxa sune.
 
-Hindi meaning using Stanford parser 4.52
+Hindi meaning using Stanford parser 4.50
 I did not see him here. 
 mEM yahAz usase nahIM milA WA.
 
-Hindi meaning using Stanford parser 4.53
+Hindi meaning using Stanford parser 4.51
 How many kids do you have? 
 Apake kiwane bacce hEM?
 
-Hindi meaning using Stanford parser 4.54
+Hindi meaning using Stanford parser 4.52
 It is good to eat less food these days. 
 ina xinoM kama AhAra KAnA acCA hE.
 
-Hindi meaning using Stanford parser 4.55
+Hindi meaning using Stanford parser 4.53
 The purpose of this note is to give simple sentences for translation. 
 isa tippaNI kA uxxeSya anuvAxa ke liye sarala vAkya xenA hE.
 
-Hindi meaning using Stanford parser 4.56
+Hindi meaning using Stanford parser 4.54
 The journey takes about three hours. 
 yAwrA lagaBaga wIna GaMte lewI hE.
 
-Hindi meaning using Stanford parser 4.57
+Hindi meaning using Stanford parser 4.55
 Why are they sitting around the fire? 
 ve Aga ke cAroM ora kyoM bETe hEM?
 
-Hindi meaning using Stanford parser 4.58
+Hindi meaning using Stanford parser 4.56
 Did you send a birthday card to Sheela? 
 kyA Apane Sheela ko janmaxina_kA kArda BejA?
 
-Hindi meaning using Stanford parser 4.59
+Hindi meaning using Stanford parser 4.57
 Perhaps he will attend the meeting. 
 SAyaxa vaha bETaka meM upasWiwa hogA.
 
-Hindi meaning using Stanford parser 4.60
+Hindi meaning using Stanford parser 4.58
 You must not drink this. 
 Apako yaha nahIM pInA cAhiye.
 
-Hindi meaning using Stanford parser 4.61
+Hindi meaning using Stanford parser 4.59
 These potatoes do not peel easily. 
 ye AlU AsAnI se nahIM Cilawe hEM.
 
-Hindi meaning using Stanford parser 4.62
+Hindi meaning using Stanford parser 4.60
 Did the noise wake you up? 
 kyA AvAja ne Apako jagAyA?
 
-Hindi meaning using Stanford parser 4.63
+Hindi meaning using Stanford parser 4.61
 Can you reach the ceiling fan? 
 kyA Apa panKe waka pahuzca sakawe hEM?
 
-Hindi meaning using Stanford parser 4.64
+Hindi meaning using Stanford parser 4.62
 In which school do you study? 
 Apa kOna se vixyAlaya meM aXyayana karawe hEM?
 
-Hindi meaning using Stanford parser 4.65
+Hindi meaning using Stanford parser 4.63
 It is night and the moon is shining in the sky. 
 rAwa hE Ora canxramA AsamAna meM camaka rahA hE.
 
-Hindi meaning using Stanford parser 4.66
+Hindi meaning using Stanford parser 4.64
 The swimmer swam across the river. 
 wErAka naxI meM wErA.
 
-Hindi meaning using Stanford parser 4.67
+Hindi meaning using Stanford parser 4.65
 I heard from him twice since he went away. 
 mEMne xo bAra usase sunA jaba_se vaha gayA.
 
-Hindi meaning using Stanford parser 4.68
+Hindi meaning using Stanford parser 4.66
 I am inviting my friend tomorrow. 
 mEM kala mere miwra ko AmaMwriwa_kara rahA hUz.
 
-Hindi meaning using Stanford parser 4.69
+Hindi meaning using Stanford parser 4.67
 There was a football match in the school yesterday. 
 kala vixyAlaya meM eka PutabAla mEca WA.
 
-Hindi meaning using Stanford parser 4.70
+Hindi meaning using Stanford parser 4.68
 The advantages of science are many. 
 vijFAna ke PAyaxe bahuwa sAre hEM.
 
-Hindi meaning using Stanford parser 4.71
+Hindi meaning using Stanford parser 4.69
 I am busy with my studies. 
 mEM mere aXyayana meM vyaswa hUz.
 
-Hindi meaning using Stanford parser 4.72
+Hindi meaning using Stanford parser 4.70
 Rama said that Radha told a lie. 
 Rama ne kahA ki Radha ne JUTa bawAyA.
 
-Hindi meaning using Stanford parser 4.73
+Hindi meaning using Stanford parser 4.71
 The dog who chased me was black. 
 jisane merA pICA kiyA vaha kuwwA kAlA WA.
 
-Hindi meaning using Stanford parser 4.74
+Hindi meaning using Stanford parser 4.72
 The book I was reading is wonderful. 
 jise/jisako mEM paDa rahA WA vaha puswaka axBuwa hE.
 
-Hindi meaning using Stanford parser 4.75
+Hindi meaning using Stanford parser 4.73
 I saw the man who you love. 
 mEMne usa AxamI ko jise/jisako Apa pasanxa karawe hEM xeKA.
 
-Hindi meaning using Stanford parser 4.76
+Hindi meaning using Stanford parser 4.74
 The place where you are staying is very congested. 
 jahAz Apa raha rahe hEM vaha sWAna awyaMwa saMkuliwa hE.
 
-Hindi meaning using Stanford parser 4.77
+Hindi meaning using Stanford parser 4.75
 I will show you the house where I met your mother. 
 mEM vaha Gara jahAz mEM ApakI mAz se milA Apako xiKAUzgA.
 
-Hindi meaning using Stanford parser 4.78
+Hindi meaning using Stanford parser 4.76
 The dalai lama presented some beautiful tankhas. 
 dalai lama ne kuCa sunxara tankhas xiyA.
 
-Hindi meaning using Stanford parser 4.79
+Hindi meaning using Stanford parser 4.77
 Things had just gone too far. 
 parisWiwiyAz_kuCa_jyAxA_hI_KarAba_ho_gayI.
 
-Hindi meaning using Stanford parser 4.80
+Hindi meaning using Stanford parser 4.78
 SOUTH AFRICA FREED the ANC's Sisulu and seven other political prisoners. 
 SOUTH AFRICA ne ANC ke Sisulu Ora sAwa anya rAjanEwika banxI mukwa kiye/kie.
 
-Hindi meaning using Stanford parser 4.81
+Hindi meaning using Stanford parser 4.79
 If John was with Lisa last night, who went to the movie with Diane. 
+yaxi jOYna , piCalI rAwa Lisa ke sAWa WA wo Diane ke sAWa calaciwra kOna gayA.
 yaxi jOYna piCalI rAwa Lisa ke sAWa WA , wo Diane ke sAWa calaciwra kOna gayA.
 
 Calling Interface related programs

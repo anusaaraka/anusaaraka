@@ -32,7 +32,7 @@
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?VB $?daut ?VP)
 ?f1<-(Head-Level-Mother-Daughters ? ? ?VP $?daut1 ?VP1)
 (Node-Category  ?Mot    VP|SQ)
-(Node-Category  ?VB     MD|VB|VBN|VBZ|VBD|VBP|VBG|RB)
+(Node-Category  ?VB     MD|VB|VBN|VBZ|VBD|VBP|VBG|RB|TO)
 (Node-Category  ?VP     VP)
 (Node-Category  ?VP1    ?CAT)
 (not (Mother  ?Mot));Is that the film in which he kills his mother? 

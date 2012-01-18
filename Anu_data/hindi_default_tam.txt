@@ -319,3 +319,8 @@ would_not_be_ing	0_rahA_hogA-0-nahIM
 would_not_have_been_en	yA_hogA-0-nahIM
 would_not_have_en	yA_howA-0-nahIM
 would_not_have_to_be_en	nA_hogA-0-nahIM
+used_to_be_en	yA_jAwA_WA-0-0
+needs_to_be_en	yA_jAnA_hE-0-0
+############################### tams with examples #############################################
+#are_to_be_en	nA_ke_liye_hE-0-0  Ex: All these fruits are to be eaten.
+#were_to_be_en   nA_ke_liye_WA-0-0  Ex: All these fruits were to be eaten.

@@ -96624,3 +96624,4 @@ arms-dealing	SaswrAswra_kraya_vikraya
 ill-used	xurvyavahariwa_huA
 free-fall	besahArA_giranA
 small-town	sImiwa_jFAna_Ora_vicAroM_vAlA
+mela	melA

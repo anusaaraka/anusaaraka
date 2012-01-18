@@ -76,7 +76,7 @@
 ?f2<-(Head-Level-Mother-Daughters ?h ? ?V $?daut)
 (Node-Category  ?Mot    VP|SQ)
 (Node-Category  ?V     ?suf&MD|VB|VBN|VBZ|VBD|VBP|VBG|RB|VP)
-(not (Head-Level-Mother-Daughters to $? ?Mot)) ;Added by Shirisha Manju(25-10-11) Ex: She had gotten her family to go against convention. 
+(not (Head-Level-Mother-Daughters to|To $? ?Mot)) ;Added by Shirisha Manju(25-10-11) Ex: She had gotten her family to go against convention. 
 =>
        	(retract ?f1 ?f2)
        	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?daut $?pos))
@@ -104,23 +104,47 @@
 )
 ;------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (29-10-11)
-;A fat boy had to eat fruits. These smugglers are to be captured. Broken windows need to be replaced.
+;These smugglers are to be captured. Broken windows need to be replaced. 
+;That is the way business used to be done and that is the way business needs to be done.
 (defrule get_lwg_group1
 (declare (salience 1000))
-?f1<-(Head-Level-Mother-Daughters ?head&are|had|need ?lvl ?Mot $?pre ?S $?pos)
+?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?verb ?S $?pos)
 (Node-Category  ?Mot  VP)
 (Node-Category  ?S    S)
+(parserid-word  ?pid  ?head)
+(parser_id-root-category-suffix-number ?pid be|have|need|use $?)
 (Head-Level-Mother-Daughters to ? ?S $? ?VP)
 (Head-Level-Mother-Daughters to ? ?VP $? ?TO $? ?VP1)
 (Node-Category  ?VP1  VP)
-?f2<-(Head-Level-Mother-Daughters ?h ? ?VP1 $?daut)
+?f2<-(Head-Level-Mother-Daughters be ? ?VP1 $?daut)
 ?f3<-(Head-Level-Mother-Daughters to ? ?TO ?id)
 (Node-Category  ?VP1    ?suf&MD|VB|VBN|VBZ|VBD|VBP|VBG|RB|VP)
 =>
 	(retract ?f1 ?f2 ?f3)
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?id $?daut $?pos))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot ?verb ?id $?daut $?pos))
 )
 ;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (16-01-12)
+;A fat boy had to eat fruits. 
+(defrule get_lwg_group2
+(declare (salience 1000))
+?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?verb ?S $?pos)
+(Node-Category  ?Mot  VP)
+(Node-Category  ?S    S)
+(parserid-word  ?pid  ?head)
+(parser_id-root-category-suffix-number ?pid have $?)
+(Head-Level-Mother-Daughters to ? ?S $? ?VP)
+(Head-Level-Mother-Daughters to ? ?VP $? ?TO $? ?VP1)
+(Node-Category  ?VP1  VP)
+?f2<-(Head-Level-Mother-Daughters ? ? ?VP1 $?daut)
+?f3<-(Head-Level-Mother-Daughters to ? ?TO ?id)
+(Node-Category  ?VP1    ?suf&MD|VB|VBN|VBZ|VBD|VBP|VBG|RB|VP)
+=>
+        (retract ?f1 ?f2 ?f3)
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot ?verb ?id $?daut $?pos))
+)
+;------------------------------------------------------------------------------------------------------------------------
+
 ;Added by Shirisha Manju (28-10-11)
 (defrule get_lwg_for_and
 (declare (salience 901))

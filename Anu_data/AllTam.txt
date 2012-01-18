@@ -10,6 +10,7 @@
 0_wA_rahawA_hE,m,s,a	wA_rahawA_hE
 0_wA_rahawA_hE,m,s,m	wA_rahawA_hE
 0_wA_rahawA_hE,m,s,u	wA_rahawA_hUM
+
 we_rahanA_hE,f,p,a	rahanA_hE
 we_rahanA_hE,f,p,m	rahanA_hE
 we_rahanA_hE,f,p,u	rahanA_hE
@@ -22,6 +23,7 @@ we_rahanA_hE,m,p,u	rahanA_hE
 we_rahanA_hE,m,s,a	rahanA_hE
 we_rahanA_hE,m,s,m	rahanA_hE
 we_rahanA_hE,m,s,u	rahanA_hE
+
 0_pAwA_hE,f,p,a	pAwI_hEM
 0_pAwA_hE,f,p,m	pAwI_ho
 0_pAwA_hE,f,p,u	pAwI_hEM
@@ -34,6 +36,7 @@ we_rahanA_hE,m,s,u	rahanA_hE
 0_pAwA_hE,m,s,a	pAwA_hE
 0_pAwA_hE,m,s,m	pAwA_hE
 0_pAwA_hE,m,s,u	pAwA_hUz
+
 0_pAwA_wA,f,p,a	pAwI_WIM
 0_pAwA_wA,f,p,m	pAwI_WIM
 0_pAwA_wA,f,p,u	pAwI_WIM
@@ -46,6 +49,7 @@ we_rahanA_hE,m,s,u	rahanA_hE
 0_pAwA_wA,m,s,a	pAwA_WA
 0_pAwA_wA,m,s,m	pAwA_WA
 0_pAwA_wA,m,s,u	pAwA_WA
+
 0_pAyegA,f,p,a	pAyeMgI
 0_pAyegA,f,p,m	pAogI
 0_pAyegA,f,p,u	pAyeMgI
@@ -58,6 +62,7 @@ we_rahanA_hE,m,s,u	rahanA_hE
 0_pAyegA,m,s,a	pAyegA
 0_pAyegA,m,s,m	pAyegA
 0_pAyegA,m,s,u	pAUzgA
+
 wA_rahUzgA,f,p,a	raheMgI
 wA_rahUzgA,f,p,m	raheMgI
 wA_rahUzgA,f,p,u	raheMgI
@@ -70,6 +75,7 @@ wA_rahUzgA,m,p,u	raheMge
 wA_rahUzgA,m,s,a	rahegA
 wA_rahUzgA,m,s,m	rahegA
 wA_rahUzgA,m,s,u	rahUMgA
+
 yA_huA_hE,f,p,a	huI_hEM
 yA_huA_hE,f,p,m	huI_ho
 yA_huA_hE,f,p,u	huI_hEM
@@ -82,6 +88,7 @@ yA_huA_hE,m,p,u	hue_hEM
 yA_huA_hE,m,s,a	huA_hE
 yA_huA_hE,m,s,m	huA_ho
 yA_huA_hE,m,s,u	huA_hUz
+
 wA_huA,f,p,a	huIM
 wA_huA,f,p,m	huIM
 wA_huA,f,p,u	huIM
@@ -94,6 +101,7 @@ wA_huA,m,p,u	hue
 wA_huA,m,s,a	huA
 wA_huA,m,s,m	huA
 wA_huA,m,s,u	huA
+
 ne_xiyA_jAye,f,p,a	xiyA_jAye
 ne_xiyA_jAye,f,p,m	xiyA_jAye
 ne_xiyA_jAye,f,p,u	xiyA_jAye
@@ -106,6 +114,7 @@ ne_xiyA_jAye,m,p,u	xiyA_jAye
 ne_xiyA_jAye,m,s,a	xiyA_jAye
 ne_xiyA_jAye,m,s,m	xiyA_jAye
 ne_xiyA_jAye,m,s,u	xiyA_jAye
+
 nA_kI_jarUrawa_hE,m,s,a	kI_jarUrawa_hE
 nA_kI_jarUrawa_hE,f,s,a	kI_jarUrawa_hE
 nA_kI_jarUrawa_hE,m,p,a	kI_jarUrawa_hE
@@ -118,6 +127,7 @@ nA_kI_jarUrawa_hE,m,s,m	kI_jarUrawa_hE
 nA_kI_jarUrawa_hE,m,p,m	kI_jarUrawa_hE
 nA_kI_jarUrawa_hE,f,s,m	kI_jarUrawa_hE
 nA_kI_jarUrawa_hE,f,p,m	kI_jarUrawa_hE
+
 nA_kI_jarUrawa_nahIM_hE,m,s,a	kI_jarUrawa_nahIM_hE
 nA_kI_jarUrawa_nahIM_hE,f,s,a	kI_jarUrawa_nahIM_hE
 nA_kI_jarUrawa_nahIM_hE,m,p,a	kI_jarUrawa_nahIM_hE
@@ -130,6 +140,7 @@ nA_kI_jarUrawa_nahIM_hE,m,s,m	kI_jarUrawa_nahIM_hE
 nA_kI_jarUrawa_nahIM_hE,m,p,m	kI_jarUrawa_nahIM_hE
 nA_kI_jarUrawa_nahIM_hE,f,s,m	kI_jarUrawa_nahIM_hE
 nA_kI_jarUrawa_nahIM_hE,f,p,m	kI_jarUrawa_nahIM_hE
+
 ne_xo,m,s,a	xo
 ne_xo,f,s,a	xo
 ne_xo,m,p,a	xo
@@ -142,6 +153,7 @@ ne_xo,m,s,m	xo
 ne_xo,m,p,m	xo
 ne_xo,f,s,m	xo
 ne_xo,f,p,m	xo
+
 ne_kI_sWiwi_meM_ho,m,s,a	kI_sWiwi_meM_hE
 ne_kI_sWiwi_meM_ho,f,s,a	kI_sWiwi_meM_hE
 ne_kI_sWiwi_meM_ho,m,p,a	kI_sWiwi_meM_hEM
@@ -154,6 +166,7 @@ ne_kI_sWiwi_meM_ho,m,s,m	kI_sWiwi_meM_ho
 ne_kI_sWiwi_meM_ho,m,p,m	kI_sWiwi_meM_ho
 ne_kI_sWiwi_meM_ho,f,s,m	kI_sWiwi_meM_ho
 ne_kI_sWiwi_meM_ho,f,p,m	kI_sWiwi_meM_ho
+
 yA_jAnA_hE,m,s,a	jAnA_hE
 yA_jAnA_hE,f,s,a	jAnI_hE
 yA_jAnA_hE,m,p,a	jAne_hEM
@@ -166,6 +179,7 @@ yA_jAnA_hE,m,s,m	jAne_ho
 yA_jAnA_hE,m,p,m	jAne_ho
 yA_jAnA_hE,f,s,m	jAne_ho
 yA_jAnA_hE,f,p,m	jAne_ho
+
 nA_cAhawA_hE,m,s,a	cAhawA_hE
 nA_cAhawA_hE,f,s,a	cAhawI_hE
 nA_cAhawA_hE,m,p,a	cAhawe_hEM
@@ -178,6 +192,7 @@ nA_cAhawA_hE,m,s,m	cAhawe_ho
 nA_cAhawA_hE,m,p,m	cAhawe_ho
 nA_cAhawA_hE,f,s,m	cAhawe_ho
 nA_cAhawA_hE,f,p,m	cAhawI_ho
+
 ne_kA_niScaya_kiyA,m,s,a	kA_niScaya_kiyA
 ne_kA_niScaya_kiyA,f,s,a	kI_niScaya_kI
 ne_kA_niScaya_kiyA,m,p,a	kA_niScaya_kiye
@@ -190,6 +205,7 @@ ne_kA_niScaya_kiyA,m,s,m	kA_niScaya_kiye
 ne_kA_niScaya_kiyA,m,p,m	kA_niScaya_kiye
 ne_kA_niScaya_kiyA,f,s,m	kI_niScaya_kI
 ne_kA_niScaya_kiyA,f,p,m	kI_niScaya_kiye
+
 wA_WA,m,s,a	WA
 wA_WA,f,s,a	WI
 wA_WA,m,p,a	We
@@ -202,6 +218,7 @@ wA_WA,m,s,m	We
 wA_WA,m,p,m	We
 wA_WA,f,s,m	WI
 wA_WA,f,p,m	WI
+
 nA_cAhawA_hE,m,s,a	cAhawA_hE
 nA_cAhawA_hE,f,s,a	cAhawI_hE
 nA_cAhawA_hE,m,p,a	cAhawe_hEM
@@ -214,6 +231,7 @@ nA_cAhawA_hE,m,s,m	cAhawe_ho
 nA_cAhawA_hE,m,p,m	cAhawe_ho
 nA_cAhawA_hE,f,s,m	cAhawI_ho
 nA_cAhawA_hE,f,p,m	cAhawI_ho
+
 nA_vAlA_hE,m,s,a	vAlA_hE
 nA_vAlA_hE,f,s,a	vAlII_hE
 nA_vAlA_hE,m,p,a	vAle_hEM
@@ -226,6 +244,7 @@ nA_vAlA_hE,m,s,m	vAle_ho
 nA_vAlA_hE,m,p,m	vAle_ho
 nA_vAlA_hE,f,s,m	vAlI_ho
 nA_vAlA_hE,f,p,m	vAle_ho
+
 0_cukA_hE,f,p,a	cukIM_hEM
 0_cukA_hE,f,p,m	cukIM_ho
 0_cukA_hE,f,p,u	cukIM_hEM
@@ -264,6 +283,7 @@ nA_vAlA_hE,f,p,m	vAle_ho
 0_cukA_hogA,m,s,a	cukA_hogA
 0_cukA_hogA,m,s,m	cukA_hogA
 0_cukA_hogA,m,s,u	cukA_hoUzgA
+
 0_cukane_ke_bAxa,f,p,a	cukane_ke_bAxa
 0_cukane_ke_bAxa,f,p,m	cukane_ke_bAxa
 0_cukane_ke_bAxa,f,p,u	cukane_ke_bAxa
@@ -276,6 +296,7 @@ nA_vAlA_hE,f,p,m	vAle_ho
 0_cukane_ke_bAxa,m,s,a	cukane_ke_bAxa
 0_cukane_ke_bAxa,m,s,m	cukane_ke_bAxa
 0_cukane_ke_bAxa,m,s,u	cukane_ke_bAxa
+
 0_cukA_WA,f,p,a	cukIM_WIM
 0_cukA_WA,f,p,m	cukIM_WIM
 0_cukA_WA,f,p,u	cukIM_WIM
@@ -288,6 +309,7 @@ nA_vAlA_hE,f,p,m	vAle_ho
 0_cukA_WA,m,s,a	cukA_WA
 0_cukA_WA,m,s,m	cukA_WA
 0_cukA_WA,m,s,u	cukA_WA
+
 0_ho_jAwA_hE,f,p,a	0_ho_jAwA_hE
 0_ho_jAwA_hE,f,p,m	0_ho_jAwA_hE
 0_ho_jAwA_hE,f,p,u	0_ho_jAwA_hE
@@ -300,6 +322,7 @@ nA_vAlA_hE,f,p,m	vAle_ho
 0_ho_jAwA_hE,m,s,a	0_ho_jAwA_hE
 0_ho_jAwA_hE,m,s,m	0_ho_jAwA_hE
 0_ho_jAwA_hE,m,s,u	0_ho_jAwA_hE
+
 0_jAnA_cAhiye,f,p,a	jAnA_cAhiye
 0_jAnA_cAhiye,f,p,m	jAnA_cAhiye
 0_jAnA_cAhiye,f,p,u	jAnA_cAhiye
@@ -312,6 +335,7 @@ nA_vAlA_hE,f,p,m	vAle_ho
 0_jAnA_cAhiye,m,s,a	jAnA_cAhiye
 0_jAnA_cAhiye,m,s,m	jAnA_cAhiye
 0_jAnA_cAhiye,m,s,u	jAnA_cAhiye
+
 0_kara,f,p,a	kara
 0_kara,f,p,m	kara
 0_kara,f,p,u	kara
@@ -324,6 +348,7 @@ nA_vAlA_hE,f,p,m	vAle_ho
 0_kara,m,s,a	kara
 0_kara,m,s,m	kara
 0_kara,m,s,u	kara
+
 0_liyA_hogA,f,p,a	lIM_hoMgI
 0_liyA_hogA,f,p,m	lIM_hoMgI
 0_liyA_hogA,f,p,u	lIM_hoMgI
@@ -336,6 +361,7 @@ nA_vAlA_hE,f,p,m	vAle_ho
 0_liyA_hogA,m,s,a	liyA_hogA
 0_liyA_hogA,m,s,m	liyA_hogA
 0_liyA_hogA,m,s,u	liyA_hogA
+
 0_rahA_hE,f,p,a	rahIM_hEM
 0_rahA_hE,f,p,m	rahIM_ho
 0_rahA_hE,f,p,u	rahIM_hEM
@@ -348,6 +374,7 @@ nA_vAlA_hE,f,p,m	vAle_ho
 0_rahA_hE,m,s,a	rahA_hE
 0_rahA_hE,m,s,m	rahA_hE
 0_rahA_hE,m,s,u	rahA_hUz
+
 0_rahA_hogA,f,p,a	rahIM_hoMgI
 0_rahA_hogA,f,p,m	rahIM_hoogI
 0_rahA_hogA,f,p,u	rahIM_hoMgI
@@ -360,6 +387,7 @@ nA_vAlA_hE,f,p,m	vAle_ho
 0_rahA_hogA,m,s,a	rahA_hogA
 0_rahA_hogA,m,s,m	rahA_hogA
 0_rahA_hogA,m,s,u	rahA_hoUzgA
+
 0_rahA_WA,f,p,a	rahIM_WIM
 0_rahA_WA,f,p,m	rahIM_WIM
 0_rahA_WA,f,p,u	rahIM_WIM
@@ -372,6 +400,7 @@ nA_vAlA_hE,f,p,m	vAle_ho
 0_rahA_WA,m,s,a	rahA_WA
 0_rahA_WA,m,s,m	rahA_WA
 0_rahA_WA,m,s,u	rahA_WA
+
 0_sakA,f,p,a	sakIM
 0_sakA,f,p,m	sakIM
 0_sakA,f,p,u	sakIM
@@ -384,6 +413,7 @@ nA_vAlA_hE,f,p,m	vAle_ho
 0_sakA,m,s,a	sakA
 0_sakA,m,s,m	sakA
 0_sakA,m,s,u	sakA
+
 0_sakawA_hE,f,p,a	sakawIM_hEM
 0_sakawA_hE,f,p,m	sakawIM_ho
 0_sakawA_hE,f,p,u	sakawIM_hEM
@@ -396,6 +426,7 @@ nA_vAlA_hE,f,p,m	vAle_ho
 0_sakawA_hE,m,s,a	sakawA_hE
 0_sakawA_hE,m,s,m	sakawA_hE
 0_sakawA_hE,m,s,u	sakawA_hUz
+
 0_sakawA_,f,p,a	0_sakawA_
 0_sakawA,f,p,a	sakawIM
 0_sakawA_,f,p,m	0_sakawA_
@@ -1515,6 +1546,18 @@ yA_jAnA_WA,m,p,u	jAne_We
 yA_jAnA_WA,m,s,a	jAnA_WA
 yA_jAnA_WA,m,s,m	jAnA_WA
 yA_jAnA_WA,m,s,u	jAnA_WA
+yA_jAnA,f,p,a	jAnIM
+yA_jAnA,f,p,m	jAneM
+yA_jAnA,f,p,u	jAnIM
+yA_jAnA,f,s,a	jAnI
+yA_jAnA,f,s,m	jAnI
+yA_jAnA,f,s,u	jAnI
+yA_jAnA,m,p,a	jAne
+yA_jAnA,m,p,m	jAne
+yA_jAnA,m,p,u	jAne
+yA_jAnA,m,s,a	jAnA
+yA_jAnA,m,s,m	jAnA
+yA_jAnA,m,s,u	jAnA
 yA_jA_rahA_hE,f,p,a	jA_rahIM_hEM
 yA_jA_rahA_hE,f,p,m	jA_rahIM_hEM
 yA_jA_rahA_hE,f,p,u	jA_rahIM_hEM

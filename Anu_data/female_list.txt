@@ -20857,7 +20857,6 @@ merAja	f
 meruxevI	f
 mela	f
 melatrena	f
-melA	f
 melAnaMxA	f
 mevAtI	f
 meRavallI	f
@@ -32041,7 +32040,6 @@ variRTasaBA	f
 vAgXArA	f
 vAyuparicArikA	f
 vAyubAlA	f
-vArRika	f
 vikalAMgawA	f
 vijayakAmanA	f
 vijayaSrI	f

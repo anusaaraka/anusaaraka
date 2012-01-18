@@ -273,6 +273,7 @@
  (load-facts "wsd_facts_output.dat")
  (load-facts "pada_id_info.dat")
  (load-facts "meaning_to_be_decided.dat")
+ (load-facts "cat_consistency_check.dat")
  (run)
  (save-facts "hindi_tam_info.dat" local pada_info)
  (clear)
@@ -434,7 +435,7 @@
  (run)
  (save-facts "hindi_id_order_tmp1.dat" local hindi_id_order)
  (clear)
-
+ ;---------------------------------------------------------------------------------
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/insert_punctuation.clp"))
  (load ?*path*)
@@ -504,6 +505,5 @@
  (run)
  (save-facts "catastrophe.dat" local sen_type-id-phrase)
  (clear)
- ;--------------------------------------------------------------------------
  (exit)
- 
+ ;--------------------------------------------------------------------------

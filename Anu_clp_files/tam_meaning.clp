@@ -23,38 +23,86 @@
  (root-verbchunk-tam-chunkids)
  (verb_type-verb-kriyA_mUla-tam)
  (id-TAM)
+ (id-cat)
+ (id-cat_coarse)
  )
- 
- ;---------------------------------------------------------------------------------------------------------------------
- (defrule wsd_tam_mng1
- (declare (salience 6000))
- (id-E_tam-H_tam_mng ?id ?E_tam ?H_tam)
- ?f1<-(pada_info (group_ids $? ?id $?))
+
+ ;Added by Shirisha Manju
+ (defrule wsd_tam_mng_verb
+ (declare (salience 7000))
+ (id-preceeding_part_of_verb ?id ?verb)
+ (id-E_tam-H_tam_mng ?id  ?E_tam ?H_tam)
+ (id-cat_coarse ?id verb) 
+ ?f1<-(pada_info (group_head_id ?id))
  ?mng<-(meaning_to_be_decided ?id)
  =>
-	(retract ?mng)
-        (modify ?f1 (H_tam ?H_tam)(tam_source WSD))
+        (retract ?mng)
+        (modify ?f1 (H_tam ?H_tam)(preceeding_part_of_verb ?verb)(tam_source WSD))
  )
  ;---------------------------------------------------------------------------------------------------------------------
- (defrule wsd_tam_mng2
- (declare (salience 7000))
+ ;Added by Shirisha Manju
+ ;He wasted his golden opportunity to play in the national team. 
+ (defrule wsd_tam_mng_verb1
+ (declare (salience 6000))
+ (id-H_vib_mng ?id ?H_tam)
+ (id-cat_coarse ?id verb)
+ ?f1<-(pada_info (group_head_id ?id))
+ ?mng<-(meaning_to_be_decided ?id)
+ =>
+ 	(retract ?mng)
+        (modify ?f1 (H_tam ?H_tam)(tam_source WSD))
+	(assert (tam_decided  ?id))
+ )
+ ;---------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju
+ (defrule wsd_tam_mng_verb2
+ (declare (salience 5000))
+ (id-E_tam-H_tam_mng ?id ?E_tam ?H_tam)
+ (id-cat_coarse ?id verb)
+ ?f1<-(pada_info (group_head_id ?id))
+ ?mng<-(meaning_to_be_decided ?id)
+ =>
+        (retract ?mng)
+        (modify ?f1 (H_tam ?H_tam)(tam_source WSD))
+        (assert (tam_decided  ?id))
+ )
+ ;---------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju
+ (defrule wsd_tam_mng1
+ (declare (salience 4000))
  (id-E_tam-H_tam_mng ?id  ?E_tam ?H_tam)
  (id-preceeding_part_of_verb ?id ?verb)
- ?f1<-(pada_info (group_ids $? ?id $?))
+ ?f1<-(pada_info (group_head_id ?h)(group_ids $? ?id $?))
  ?mng<-(meaning_to_be_decided ?id)
+ (not (tam_decided  ?h))
  =>
 	(retract ?mng)
         (modify ?f1 (H_tam ?H_tam)(preceeding_part_of_verb ?verb)(tam_source WSD))
  )
  ;---------------------------------------------------------------------------------------------------------------------
- (defrule wsd_tam_mng3
- (declare (salience 7000))
- (id-H_vib_mng ?id ?H_vib)
- ?f1<-(pada_info (group_ids $? ?id $?))
+ ;Added by Shirisha Manju
+ ;BROKEN WINDOWS need to be replaced.
+ (defrule wsd_tam_mng2
+ (declare (salience 3000))
+ (id-H_vib_mng ?id ?H_tam)
+ ?f1<-(pada_info (group_head_id ?h)(group_ids $? ?id $?))
  ?mng<-(meaning_to_be_decided ?id)
+ (not (tam_decided  ?h))
  =>
         (retract ?mng)
-        (modify ?f1 (H_tam ?H_vib)(tam_source WSD))
+        (modify ?f1 (H_tam ?H_tam)(tam_source WSD))
+ )
+ ;---------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju
+ (defrule wsd_tam_mng3
+ (declare (salience 2000))
+ (id-E_tam-H_tam_mng ?id ?E_tam ?H_tam)
+ ?f1<-(pada_info (group_head_id ?h)(group_ids $? ?id $?))
+ ?mng<-(meaning_to_be_decided ?id)
+ (not (tam_decided  ?h))
+ =>
+        (retract ?mng)
+        (modify ?f1 (H_tam ?H_tam)(tam_source WSD))
  )
  ;---------------------------------------------------------------------------------------------------------------------
  ;Added by Roja(10-03-11)
@@ -77,5 +125,4 @@
 	    (modify ?f2 (H_tam ?h_tam)(vibakthi ?sub_v)(preceeding_part_of_verb ?v)(tam_source Default))
         )
  )
- ;---------------------------------------------------------------------------------------------------------------------
  ;---------------------------------------------------------------------------------------------------------------------
