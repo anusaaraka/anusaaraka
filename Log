@@ -3004,7 +3004,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         2.Added new files run_multiple_parse_penn.sh and preffered_parse.py .
  11. Modified  ClipsToAnu_browser_intfc.sh and run_anu_browser.sh to handle timeout command both in local and server.
  12. Added ir.lex in the Anu_src directory.
- 13. Renamed run_penn.sh as run_penn-pcfg.sh and updated the same in Anusaaraka_stanford.sh and Anusaaraka_site.sh.
+ 13. Renamed run_penn.sh as run_penn-pcfg.sh and updated the same in Anusaaraka_stanford.sh, Anusaaraka.sh and                    Anusaaraka_site.sh.
  14. Renamed run_stanford-gui.sh as run_stanford-gui-pcfg.sh.
  15. Added Anusaaraka_stanford-Factored.sh and run_stanford-gui-factored.sh in bin folder.
  16. Added run_penn-factored.sh inside stanford parser.
