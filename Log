@@ -3055,11 +3055,14 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  11. Modified map_cons rule in sd_combining_apostrophe.clp [Added "NNP" category to POS list]
  12. Modified run_multiple_parse_penn.sh file [changed -printPCFGkBest 100  ==> -printPCFGkBest 25 ]
  13. Modified preffered_parse.py file [Removed sys.exit() statement]
- 14. Modified Anusaaraka_rasp.sh, Anusaaraka_site.sh, Anusaaraka_stanford.sh, Anusaaraka_berkeley.sh files. [Removed apertium chunker generation part and handled with sd_chunker.clp file]
- 15. Modified sd_ver_output and sd_verified
- 16. Updated changes_in_databases
- 17. Updated abbr.sh and abbr_browser.sh
- 18. Updated Log
+ 14. Modified Anusaaraka_rasp.sh, Anusaaraka_site.sh, Anusaaraka_stanford.sh, Anusaaraka_berkeley.sh files. [Removed apertium     chunker generation part and handled with sd_chunker.clp file]
+ 15. Modified "to_be_en" tam in tam.csv file.
+ 16. Modified code in wx_utf8.c programme inside CLIPS to handle words like "jOYna", "sOYPtaveyara" etc.
+ 17. Modified Stanford_parser_fails such that each failure sentence is provided with reasons under it. 
+ 18. Modified sd_ver_output and sd_verified
+ 19. Updated changes_in_databases
+ 20. Updated abbr.sh and abbr_browser.sh
+ 21. Updated Log
 ~                                                                                                                            
 ~                                   
 

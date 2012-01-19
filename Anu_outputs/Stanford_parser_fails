@@ -1,18 +1,41 @@
-<TITLE> Test. </TITLE>
-<p>
-The main entrance, the delhi gate, is now closed.
-At one time, there were almost 360 forts out of which only 10 are left. 
+Stanford Parser Failure sentences with reasons ::
+==============================================
+At one time, there were almost 360 forts out of which only 10 are left.
+--> "out of" should be in one chunk 
+
 There are eight vehicular ways and two footpaths on this bridge on the river hooghly.
+--> "on this bridge on the river hooghly" should be at VP level
+
 Uttar pradesh is a land of cultural and geographical diversity, which is blessed by an innumerable perennial rivers, dense forests, and fertile soil. 
+-->"nsubj(land-5, pradesh-2)" wrong relation
+
 Within the relationship he feels ill-used most of the time.
+-->"dep(ill-used-6, most-7)" wrong relation. parse wrong in 2010-11-30. better in 2012-01-06.
+
 He told me why he was here and what he was doing.
+--> "dep(told-2, was-6)" wrong relation
+
 The lights in the street turn on only during night.
-I gave a book to Dashrath, the king of Ayodhya. 
+-->"turn on" wrong in 2010-11-30. gud in 2012-01-06.
+
+I gave a book to Dashrath, the king of Ayodhya.
+--> "Dashrath, the king of Ayodhya" should come in PP 
+
 There are three boys and four girls in the park.
+--> "in the park" shoudl come in VP
+
 I saw her again a year and a half later. 
-Some people take a lot of time to acclimatize themselves to the new environment. 
+-->"again" should come in VP
+
+Some people take a lot of time to acclimatize themselves to the new environment.
+-->"NP-a lot of time" should be at S level 
+
 We were dropped off about five miles from where my friend's obedient car.
+--> "from where" should be grouped
+
 For her to have survived such an ordeal was remarkable.
+--> "For her" should be grouped as PP
+
 Why are you talking about me like that? 
-CityFed's president and chief executive officer, John Atherton, said the loss stems from several factors.
-</p> 
+--> "about me" should be one chunk.
+

@@ -262,8 +262,8 @@ sriram
 "should_not_have_en";"को:नहीं+ना_चाहिये_था";
 "to_0";"ने_के_लिये";
 "to_be_en";"या_हुआ_होना{passive}";
-"#This book is to be read ( yaha puswaka paDane ke liye hE-> yaha puswaka hE paDI huI honI)";;
-"to_be_ing";"ता_हुआ_[होना]";
+"#This book is to be read ( yaha puswaka paDane ke liye hE-> yaha puswaka hE paDI huI honI)";;---???  yaha puswaka paDI jAnI hE. --then tam should be yA_jAnA (Tam Suggested by Chaitanya Sir. )
+"to_be_ing";"ता_हुआ_[होना]"; --???    (      "            "  This tam need to be verified.)
 "towards_ing";"ने_के_लिये";
 "used_to_0";"या_करता_था";
 "was_being_en";"या_जा_रहा_था{passive}";
