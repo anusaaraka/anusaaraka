@@ -505,5 +505,16 @@
  (run)
  (save-facts "catastrophe.dat" local sen_type-id-phrase)
  (clear)
- (exit)
  ;--------------------------------------------------------------------------
+ (load "global_path.clp")
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/sd_chunker.clp"))
+ (load ?*path*)
+ (load-facts "E_constituents_info.dat")
+ (load-facts "Node_category.dat")
+ (load-facts "lwg_info.dat")
+ (load-facts "word.dat")
+ (run)
+ (save-facts "sd_chunk.dat" local chunk-ids)
+ (clear)
+ ;--------------------------------------------------------------------------
+ (exit)

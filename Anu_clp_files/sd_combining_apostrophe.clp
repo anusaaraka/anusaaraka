@@ -146,7 +146,7 @@
  ?f<-(Head-Level-Mother-Daughters ?pos1 ?lvl ?Mot $?pre ?NN ?POS $?post)
  ?f1<-(Head-Level-Mother-Daughters ?h ?lvl1 ?NN ?noun)
  ?f2<-(Head-Level-Mother-Daughters ?pos&'s|' ?lvl1 ?POS ?child)
- (Node-Category	?POS	POS|NNS|NN|CD)
+ (Node-Category	?POS	POS|NNS|NN|CD|NNP)
   =>
   	(retract ?f ?f1 ?f2)
   	(assert (Head-Level-Mother-Daughters ?pos1 ?lvl ?Mot $?pre ?NN $?post))

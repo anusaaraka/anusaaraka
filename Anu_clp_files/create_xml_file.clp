@@ -865,7 +865,7 @@
  (if (and (= ?p_id 1) (= ?s_id 1)) then (printout fp "<div class=\"float_clear\"/>" crlf))
  (printout fp "<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form> " crlf)
 
- (retract *)
+ (reset)
  (bind ?path (str-cat ?p_id "." (+ ?s_id 1) "/" all_facts))
  (bind ?rt_value (load-facts ?path))
  (if (eq ?rt_value FALSE) then
