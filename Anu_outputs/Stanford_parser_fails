@@ -39,3 +39,10 @@ For her to have survived such an ordeal was remarkable.
 Why are you talking about me like that? 
 --> "about me" should be one chunk.
 
+The five best costumes got prizes.
+--> "five best costumes" should be the daughters of same NP
+
+Their belongings were flung about the room.
+-->  the category for "flung"  should be VBN instead of VBG so that we can get lwg as were_en
+
+

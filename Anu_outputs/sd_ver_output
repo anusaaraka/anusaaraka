@@ -1973,4 +1973,16 @@ If John was with Lisa last night, who went to the movie with Diane.
 yaxi jOYna , piCalI rAwa Lisa ke sAWa WA wo Diane ke sAWa calaciwra kOna gayA.
 yaxi jOYna piCalI rAwa Lisa ke sAWa WA , wo Diane ke sAWa calaciwra kOna gayA.
 
+Hindi meaning using Stanford parser 4.80
+Let her go to the market. 
+usako/use bAjAra jAne xo.
+
+Hindi meaning using Stanford parser 4.81
+Let them do the work. 
+unheM/unako kArya karane xo.
+
+Hindi meaning using Stanford parser 4.82
+The Hawa mahal was built by the Maharaja Sawai Pratap Singh in 1799 AD and Lal Chand Usta was the architect. 
+Hawa mahal 1799 AD meM mahArAjA Sawai Pratap Singh ke xvArA banAyA gayA WA Ora Lal Chand Usta vAswukAra WA.
+
 Calling Interface related programs

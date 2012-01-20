@@ -163,12 +163,6 @@ keeps_on_ing	wA_rahawA_hE-0-0
 kept_ing	wA_rahA-0-0
 kept_on_ing	wA_rahA-0-0
 let_0	ne_xo-0-0
-Let_her_0	nA_usako_xo-0-0
-Let_him_0	nA_usako_xo-0-0
-Let_me_0	wA_hUz_mEM_lAie-0-0
-Let_them_0	nA_unako_xo-0-0
-Let_us_0	caliye_hama-0-subj
-let_us_0	subj-0-caliye_hama
 liked_to_0	nA_pasanxa_karawA_WA-0-0
 likes_to_0	nA_pasanxa_karawA_hE-0-0
 like_to_0	nA_pasanxa_karawA_hE-0-0

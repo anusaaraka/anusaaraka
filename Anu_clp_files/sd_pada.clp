@@ -366,17 +366,21 @@
 	(modify ?f1 (group_head_id ?id)(pada_head ?id))
   )
   ;----------------------------------------------------------------------------------------------------------------------
-  ;The consortium was put together by Hoare Govett, the London-based investment banking company that is a subsidiary of Security Pacific Corp.
+  ; Added by Shirisha Manju Suggested by Chaitanya Sir
+  ; The consortium was put together by Hoare Govett, the London-based investment banking company that is a subsidiary of Security Pacific Corp.
+  ; Modified the rule to check "saMjFA" in group_ids instead of head id for the sentence below : 
+  ;            Kaufman and Broad, a home building company, declined to identify the institutional investors. 
   (defrule pada_for_comma
   (declare (salience 300))
   (prep_id-relation-anu_ids   -   saMjFA-saMjFA_samAnAXikaraNa  ?saMjFA ?samA)
-  ?f0<-(pada_info (group_head_id ?saMjFA) (group_cat PP) (group_ids $?id ) (preposition ?prep))
+  ?f0<-(pada_info (group_head_id ?h)(group_cat PP) (group_ids $?d ?saMjFA $?d1)(preposition ?prep)) 
   ?f1<-(pada_info (group_head_id ?samA) (group_cat PP) (group_ids $?id1)) 
+  (test (neq ?h ?samA))
   =>
 	(retract ?f0 ?f1)
         (print_in_ctrl_fact_files  ?samA)
-        (modify ?f1 (group_ids $?id $?id1)(preposition ?prep))
-	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    pada_for_comma    "?samA"  PP	"(implode$ $?id)" "(implode$ $?id1)"  "?prep ")" crlf)
+        (modify ?f1 (group_ids $?d ?saMjFA $?d1  $?id1)(preposition ?prep))
+	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    pada_for_comma    "?samA"  PP	"(implode$ $?d)" "?saMjFA"  "(implode$ $?d1)" "(implode$ $?id1)"  "?prep ")" crlf)
   )	
   ;----------------------------------------------------------------------------------------------------------------------
   ;Added by Shirisha Manju (09-11-11)

@@ -8464,7 +8464,6 @@ combined_write_head	saMyujFagwalq_leKana_SIrRa#saMyujFagwalq_leKana_SIrRa#noun#3
 combing_operation	cappA_cappA_Koja#cappA_cappA_Koja#noun#2#RM
 combo_box	saMmikRaNa_petI#saMmikRaNa_petI#noun#2#RM
 combodian_unit	kambodiyAWa_ekaka#kambodiyAWa_ekaka#noun#2#RM
-come_back	vApasa_AnA#vApasa_AnA#noun#2#RM
 come_into_force	lAgU_honA#lAgU_honA#noun#3#RM
 come_into_operation	cAlU_honA#cAlU_honA#noun#3#RM
 come_to_light	nA#nA#noun#3#RM
