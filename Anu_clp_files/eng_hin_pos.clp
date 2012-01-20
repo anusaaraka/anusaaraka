@@ -1,5 +1,20 @@
 (defglobal ?*pos-file* = pos_fp)
+
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
+
+
+(deffunction sort_grp($?ids)
+        (bind ?len (length $?ids))
+        (bind $?new_ids (create$ ))
+        (bind $?ids (sort > $?ids))
+        (while (> (length $?ids) 0)
+                        (bind ?id (nth$ 1 $?ids))
+                        (bind $?ids (delete-member$ $?ids ?id))
+                        (bind $?new_ids (create$ $?new_ids ?id))
+        )
+       (bind $?ids $?new_ids)
+)
+
 
  (defrule delete_affected_ids
  (declare (salience 2000))
@@ -98,6 +113,7 @@
         (retract ?f)
  	(bind ?j (member$ ?head_id $?hin_ord))
         (bind $?aux_chunk (create$ $?aux_chunk ?head_id))
+        (bind $?aux_chunk (sort_grp $?aux_chunk))
         (assert(hin_pos-src-eng_ids ?j - $?aux_chunk))        
         (bind ?len (length $?aux_chunk))
 	(loop-for-count (?i 1 ?len)
@@ -122,7 +138,7 @@
                  (retract ?f)
                  (bind $?eng_ord (create$ $?prev ?p_id $?post))
                  (bind ?pos (member$ ?id $?hin_ord))
-                 (bind $?grp_ids (sort > (create$ $?grp_ids $?prep_id)))
+                 (bind $?grp_ids (sort_grp (create$ $?grp_ids $?prep_id)))
                  (assert (hin_pos-src-eng_ids ?pos - $?grp_ids))
                  (loop-for-count (?i 1 (length $?grp_ids))
                                 (bind ?g_id (nth$ ?i $?grp_ids))
@@ -153,6 +169,7 @@
                  (retract ?f)
                  (bind $?eng_ord (create$ $?prev ?id $?post))
                  (bind ?pos (member$ ?id $?hin_ord))
+                 (bind $?grp_ids (sort_grp $?grp_ids))
                  (assert (hin_pos-src-eng_ids ?pos - $?grp_ids))
                  (loop-for-count (?i 1 (length $?grp_ids))
                                  (bind ?g_id (nth$ ?i $?grp_ids))
@@ -191,6 +208,7 @@
                  (bind $?hin_ord (create$ $?prev ?id $?post))
                  (bind ?pos (member$ ?id $?hin_ord))
                  (assert (id-pos ?id))
+                 (bind $?grp_ids (sort_grp $?grp_ids))
                  (assert(hin_pos-src-eng_ids ?pos - $?grp_ids))
  )
  
