@@ -400,7 +400,6 @@
  (load-facts "E_constituents_info.dat")
  (load-facts "Node_category.dat")
  (load-facts "cat_consistency_check.dat")
-; (load-facts "parser_punctuation_info.dat")
  (open "hin_order_debug.dat" order_debug "a")
  (run)
  (save-facts "ordered_constituents.dat" local Head-Level-Mother-Daughters)

@@ -45,6 +45,33 @@
 	(assert (Node-Category VBD VBD))
 )
 ;==================================================  LWG rules  =========================================================
+;Added by Shirisha Manju (19-01-12) (suggested by Sukhada)
+;Let her go to the market. Let us go to the market.
+(defrule Let_rule
+(declare (salience 1501))
+?f<-(Head-Level-Mother-Daughters Let ?lvl ?Mot ?VB $?daut ?S)
+(and (Node-Category  ?Mot    VP)(Node-Category  ?VB    VB)(Node-Category  ?S  S))
+?f1<-(Head-Level-Mother-Daughters  ?  ?  ?S ?NP ?VP)
+(and (Node-Category  ?NP  NP)(Node-Category  ?VP  VP))
+=>
+	(retract ?f ?f1)
+	(assert (Head-Level-Mother-Daughters Let ?lvl ?Mot ?VB $?daut ?NP ?VP))
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (19-01-12) (suggested by Sukhada)
+;Let them do the work.
+(defrule Let_rule1
+(declare (salience 1501))
+?f<-(Head-Level-Mother-Daughters Let ?lvl ?Mot ?VB $?daut ?Sbar)
+(and (Node-Category  ?Mot    VP)(Node-Category  ?VB    VB)(Node-Category  ?Sbar  SBAR))
+?f1<-(Head-Level-Mother-Daughters  ?  ?  ?Sbar ?S)
+?f2<-(Head-Level-Mother-Daughters  ?  ?  ?S ?NP ?VP)
+(and (Node-Category  ?NP  NP)(Node-Category  ?VP  VP))
+=>
+        (retract ?f ?f1 ?f2)
+        (assert (Head-Level-Mother-Daughters Let ?lvl ?Mot ?VB $?daut ?NP ?VP))
+)
+;------------------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi (20-10-11)
 (defrule replace_aux_with_head_VP
 (declare (salience 1500))

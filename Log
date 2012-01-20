@@ -3043,9 +3043,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
          loaded "cat_consistency_check.dat" file in tam_meaning module
   4. sd_lwg_rules.clp
          Modified : get_lwg_group, get_lwg_group1
-         Added    : get_lwg_group2
+         Added    : get_lwg_group2 , Let_rule and Let_rule1 
   5. sd_pada.clp
-         Modified : get_NP_group, get_and_NP_group , get_and_NP_group1 and  get_non_finite_kri_group rules
+         Modified : get_NP_group, get_and_NP_group , get_and_NP_group1 and  get_non_finite_kri_group 
+		    pada_for_comma  rules
   6. tam_meaning.clp
          Added     : wsd_tam_mng_verb, wsd_tam_mng_verb1 and wsd_tam_mng_verb2 rules
   7. Modified sent_end rule in create_xml_file.clp [(retract *) ==> (reset)]
@@ -3072,10 +3073,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  22. Modified run_anu_browser.sh [copying of files english_hindi_tran.js and english_hindi_tran.css to output dir]
  23. Modified run_sentence_stanford.sh [Concatenating position.dat file to all_facts file]
  24. Added code for running run_hnd_ord_html.bat ClipsToAnu_browser_intfc.sh
- 25. Modified sd_ver_output and sd_verified
+ 25. Modified sd_ver_output , ber_ver_output , small_sent_ver_output_sd  and sd_verified
  26. Updated changes_in_databases
  27. Updated abbr.sh and abbr_browser.sh
- 28. Updated Log
+ 28. Updated the following files
+        sd_verified (482)       small_sent_verified_sd  (65)    ber_verified(407)
+ 29. Updated Log
 ~                                                                                                                            
 ~                                   
 

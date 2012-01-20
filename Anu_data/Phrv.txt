@@ -69,3 +69,4 @@ usher_in	prAraMBa_karanA
 warm_up	joSa_meM_AnA
 wind_up	lapetanA
 calm_down	SAMwa_rahanA
+come_back	vApasa_AnA

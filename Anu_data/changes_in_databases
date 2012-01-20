@@ -142,7 +142,8 @@
   changes in Phrv.txt 
   ===================
   1.  Added
-       divide_up       bAzta_xe
+	divide_up       bAzta_xe
+	come back       vApasa_AnA  (suggested by (Rajini 20.01.12)) Ex : Let Abraham come back.
 
 
   changes in hindi_tam_rules.clp (tam.csv)
@@ -251,6 +252,7 @@ changes in samAsa-new.txt
 	open to	ke_liye_KolanA	ke_liye_KolanA	noun	2	RM	(Sukhada 29.8.11)
 	used to         AxI            AxI      noun    2       RM      (suggested by (Sukhada 24.9.11))
 	small town      sImiwa_jFAna_Ora_vicAroM_vAlA   sImiwa_jFAna_Ora_vicAroM_vAlA   noun    2       RM
+	come back	vApasa_AnA  vApasa_AnA	noun	2	RM     (suggested by (Rajini 20.01.12))
 
 
  3. Modified
@@ -316,8 +318,17 @@ changes in samAsa-new.txt
   Modified :
 	yA_huA_hE,m,s,u huA_hEM"  as  "yA_huA_hE,m,s,u huA_hUz (Suggested by sheetal(10-12-09))
 	for all cases (Meena 13.4.11)
-  
+
+  Removed  : 
+	0_sakawA_               (all the entries for 0_sakawA_         ) Suggested by sukhada(19-01-12)
+	nA_kI_himmahE           (       "          nA_kI_himmahE       )          "
+	nahIM_cAhiye_honA_kA_nA (       "    nahIM_cAhiye_honA_kA_nA   )          "
+	ne_kI_jarUWawa_pada_sakawI_hE ( " ne_kI_jarUWawa_pada_sakawI_hE) Suggested by Rajini(19-01-12)
+
   Removed yA_jAnA_hE and yA_jAnA_WA (all the entries) and Added yA_jAnA  (Suggested by Chaitanya Sir (13-01-2012) Ex: They were to be captured. )
+  Removed the following repeated entries:  (Done by Manju (19-01-12))
+	nA_padegA	ne_kI_jarUrawa_hE	wA_rahanA_cAhiye_WA	nA_cAhawA_hE
+	nA_cAhiye	yA_jAnA_cAhiye		nA_hE			nA_hogA
 	 
   
   changes in animate_list.txt
@@ -467,12 +478,24 @@ Modified:
  Changes in hindi_default_tam.txt
  ==================================
  Modified :
+ --------
         may_need_to_0   nA_kI_jarUWawa_pada_sakawI_hE-0-0   as  may_need_to_0   ne_kI_jarUWawa_pada_sakawI_hE-ko-0 (by Meena 13-04-11)                     
 
  Added    :
+ -----
  	0			wA_hE
 	used_to_be_en	yA_jAwA_WA-0-0  (Suggested by Rajini 17-01-12) Ex: She used to be organized.
 	needs_to_be_en	yA_jAnA_hE-0-0              "                  Ex: That's the way business used to be done and that is the way business needs to be done.
 
+ Removed :
+ -------
+	1. Removed the below tams to get only let_0 tam and the pronouns/nouns/Proper_nouns meaning are handled in WSD
+	   Suggested by Chaitanya Sir (20-01-12)
+	 	Let_her_0       nA_usako_xo-0-0
+		Let_him_0       nA_usako_xo-0-0
+		Let_me_0        wA_hUz_mEM_lAie-0-0
+		Let_them_0      nA_unako_xo-0-0
+		Let_us_0        caliye_hama-0-subj
+		let_us_0        subj-0-caliye_hama
 
 
