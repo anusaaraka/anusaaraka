@@ -3034,7 +3034,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  33. Updated sd_verified (481)
  34. Updated Log
 
- 19-01-12
+ 20-01-12
  ========
   1. Modified replace_aux_with_head_VP rule in H_ordering_rules.clp
   2. insert_punctuation.clp
@@ -3058,11 +3058,24 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  14. Modified Anusaaraka_rasp.sh, Anusaaraka_site.sh, Anusaaraka_stanford.sh, Anusaaraka_berkeley.sh files. [Removed apertium     chunker generation part and handled with sd_chunker.clp file]
  15. Modified "to_be_en" tam in tam.csv file.
  16. Modified code in wx_utf8.c programme inside CLIPS to handle words like "jOYna", "sOYPtaveyara" etc.
- 17. Modified Stanford_parser_fails such that each failure sentence is provided with reasons under it. 
- 18. Modified sd_ver_output and sd_verified
- 19. Updated changes_in_databases
- 20. Updated abbr.sh and abbr_browser.sh
- 21. Updated Log
+ 17. Modified Stanford_parser_fails such that each failure sentence is provided with reasons under it.
+ 18. Renamed files ::
+           1)  create_xml_file.clp ==> create_eng_ord_html.clp
+	   2)  run_create_xml_file.bat ==> run_eng_ord_html.bat 
+ 19. Added files :: [Generating layered ouput in hindi order]
+           1) create_hnd_ord_html.clp
+           2) run_hnd_ord_html.bat
+           3) english_hindi_tran.js
+           4) english_hindi_tran.css
+ 20. Modified print_user_info rule in eng_hin_pos.clp.
+ 21. Modified files run_H_gen_sen.bat and user_info.bat[moved eng_hin_pos.clp module from user_info.bat to run_H_gen_sen.bat]
+ 22. Modified run_anu_browser.sh [copying of files english_hindi_tran.js and english_hindi_tran.css to output dir]
+ 23. Modified run_sentence_stanford.sh [Concatenating position.dat file to all_facts file]
+ 24. Added code for running run_hnd_ord_html.bat ClipsToAnu_browser_intfc.sh
+ 25. Modified sd_ver_output and sd_verified
+ 26. Updated changes_in_databases
+ 27. Updated abbr.sh and abbr_browser.sh
+ 28. Updated Log
 ~                                                                                                                            
 ~                                   
 

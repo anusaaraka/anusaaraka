@@ -20,7 +20,7 @@
 
  (defrule get_eng_word_list
  (declare (salience 1950))
- (id-word ?id ?word)
+ (id-original_word ?id ?word)
  ?f1<-(index ?id)
  ?f<-(English $?Eng_list)
  =>
@@ -36,6 +36,9 @@
  ?f<-(index ?id)
   =>
  (retract ?f)
+ (bind ?len (length $?order))
+ (assert (hindi_order_length ?len))
+ (printout ?*pos-file*  "(hindi_order_length "?len")" crlf)
  (assert (Hindi $?order)))
 
  (defrule get_hin_word_list1
@@ -119,20 +122,23 @@
                  (retract ?f)
                  (bind $?eng_ord (create$ $?prev ?p_id $?post))
                  (bind ?pos (member$ ?id $?hin_ord))
-                 (assert (hin_pos-src-eng_ids ?pos - $?prep_id $?grp_ids))
+                 (bind $?grp_ids (sort > (create$ $?grp_ids $?prep_id)))
+                 (assert (hin_pos-src-eng_ids ?pos - $?grp_ids))
                  (loop-for-count (?i 1 (length $?grp_ids))
                                 (bind ?g_id (nth$ ?i $?grp_ids))
                                 (bind ?pos1 (member$ ?g_id $?eng_ord))
+                                (printout t ?pos1 "-------" crlf)
     		                (bind $?eng_ord (delete-member$ $?eng_ord ?g_id))
                    		(bind $?eng_ord (insert$ $?eng_ord ?pos1 "-"))
                                 (assert (id-pos ?g_id)))
-                (bind ?prep_len (length $?prep_id))
-                (loop-for-count (?i 1 ?prep_len)
-                               (bind ?prep_id1 (nth$ ?i $?prep_id))
-                               (bind ?prep_pos (member$ ?prep_id1 $?eng_ord))
-                               (bind $?eng_ord (delete-member$ $?eng_ord ?prep_id1))
-		               (bind $?eng_ord (insert$ $?eng_ord ?prep_pos "-"))
-                (assert (id-pos ?prep_id1)))
+;                (bind ?prep_len (length $?prep_id))
+;                (loop-for-count (?i 1 ?prep_len)
+;                               (bind ?prep_id1 (nth$ ?i $?prep_id))
+;                               (bind ?prep_pos (member$ ?prep_id1 $?eng_ord))
+;                               (printout t ?prep_pos "-------" crlf)
+;                               (bind $?eng_ord (delete-member$ $?eng_ord ?prep_id1))
+;		               (bind $?eng_ord (insert$ $?eng_ord ?prep_pos "-"))
+;		               (assert (id-pos ?prep_id1)))
 		(assert (expr  $?eng_ord)) 
  )
                 
@@ -203,6 +209,10 @@
      (bind ?eng_pos_val (str-cat ""))
      (loop-for-count (?i 1 (length $?ids))
                       (bind ?id (nth$ ?i $?ids))
-                      (bind ?eng_pos_val (str-cat ?eng_pos_val " " (nth$ ?id $?eng_list)))))
+                      (if (eq ?i 1) then
+                             (bind ?eng_pos_val (nth$ ?id $?eng_list))
+                        else
+                            (bind ?eng_pos_val (str-cat ?eng_pos_val "_" (nth$ ?id $?eng_list))))))
+;                      (bind ?eng_pos_val (str-cat ?eng_pos_val " " (nth$ ?id $?eng_list)))))
       (printout ?*pos-file* "(hin_pos-hin_mng-eng_ids-eng_words " ?pos" "?hin_pos_val" "(implode$ $?ids)" "?eng_pos_val")" crlf)
  )
