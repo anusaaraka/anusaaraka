@@ -2,7 +2,7 @@
 
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
-
+;sort_grp function sorts  the given ids and make each id unique i.e; if i/p [9 3 4 3 5] ==> o/p [3 4 5 9]
 (deffunction sort_grp($?ids)
         (bind ?len (length $?ids))
         (bind $?new_ids (create$ ))
@@ -14,8 +14,8 @@
         )
        (bind $?ids $?new_ids)
 )
-
-
+;----------------------------------------------------------------------------------------------------------------------------
+ ;As group head has a meaning and all others are given as "-" removing that ids from hindi_id_order.
  (defrule delete_affected_ids
  (declare (salience 2000))
  (id-HM-source-grp_ids   ?id  ?  ? $?ids)
@@ -32,7 +32,8 @@
  (assert (hindi_id_order  $?hin_order))
  (assert (id-checked ?id)) 
  )         
-
+;----------------------------------------------------------------------------------------------------------------------------
+ ;Creating genglish word list fact for a sentence.
  (defrule get_eng_word_list
  (declare (salience 1950))
  (id-original_word ?id ?word)
@@ -44,8 +45,9 @@
  (bind ?id (+ ?id 1))
  (assert (index ?id))
  )
-
- (defrule dummy_rule
+;---------------------------------------------------------------------------------------------------------------------------
+ ;Asserting (hindi_order_length) and (Hindi) facts for further use in other rules
+ (defrule find_length
  (declare (salience 1940))
  (hindi_id_order  $?order)
  ?f<-(index ?id)
@@ -56,6 +58,9 @@
  (printout ?*pos-file*  "(hindi_order_length "?len")" crlf)
  (assert (Hindi $?order)))
 
+;---------------------------------------------------------------------------------------------------------------------------
+ ;Creating hindi sentence fact.
+ ;replacing id with apertium_output .
  (defrule get_hin_word_list1
  (declare (salience 1900))
  (hindi_id_order  $?pre ?id $?pos)
@@ -73,6 +78,8 @@
   	(assert (Hindi $?pre1 ?aper $?pos1))
  )
 
+;---------------------------------------------------------------------------------------------------------------------------
+ ;replacing id with hindi_meaning .
  (defrule get_hin_word_list2
  (declare (salience 1800))
  (hindi_id_order  $?pre ?id $?pos)
@@ -89,6 +96,10 @@
         (assert (Hindi $?pre1 ?hmng $?pos1))
 )
 
+;---------------------------------------------------------------------------------------------------------------------------
+ ;Finding the position and adding source information for newly inserted words in the hindi order { source ==> "-A-"[Added]}
+ ;(hindi_id_order kyA 2 3 ki 4 8 9 6)
+ ;Ex Do you think we should go to the party? ==>o/p [kyA] Apa socawe hEM [ki] hameM/hamako pArtI ko jAnA cAhiye?
  (defrule position_of_newly_added_word
  (declare (salience 200))
  (hindi_id_order  $?pre ?id $?pos)
@@ -102,12 +113,14 @@
         (assert (id-pos ?id))
  )
 
+;---------------------------------------------------------------------------------------------------------------------------
+ ;Finding the position of the lwg_group
  (defrule lwg_group_pos
  (declare (salience 100))
  (root-verbchunk-tam-chunkids ? ? ? $?aux_chunk ?head_id)
  (hindi_id_order  $?hin_ord)
  ?f<-(expr  $?eng_ord)
- (test (member$ ?head_id $?eng_ord))
+ (test (and (member$ ?head_id $?eng_ord)(member$ ?head_id $?hin_ord)))
  (not (id-pos ?head_id))
  =>
         (retract ?f)
@@ -126,6 +139,9 @@
        (assert (expr  $?eng_ord))
  )
 
+ 
+;---------------------------------------------------------------------------------------------------------------------------
+ ;Find the position of prepositional phrase
  (defrule prep_pos
  (declare (salience 50))
  (pada_info (group_head_id ?id) (group_cat PP)(preposition $?prep_id))
@@ -147,17 +163,12 @@
     		                (bind $?eng_ord (delete-member$ $?eng_ord ?g_id))
                    		(bind $?eng_ord (insert$ $?eng_ord ?pos1 "-"))
                                 (assert (id-pos ?g_id)))
-;                (bind ?prep_len (length $?prep_id))
-;                (loop-for-count (?i 1 ?prep_len)
-;                               (bind ?prep_id1 (nth$ ?i $?prep_id))
-;                               (bind ?prep_pos (member$ ?prep_id1 $?eng_ord))
-;                               (printout t ?prep_pos "-------" crlf)
-;                               (bind $?eng_ord (delete-member$ $?eng_ord ?prep_id1))
-;		               (bind $?eng_ord (insert$ $?eng_ord ?prep_pos "-"))
-;		               (assert (id-pos ?prep_id1)))
 		(assert (expr  $?eng_ord)) 
  )
+
                 
+;---------------------------------------------------------------------------------------------------------------------------
+ ;Find the position of infinitive phrase
  (defrule infinitive_pos
  (declare (salience 50))
  (pada_info (group_head_id ?id) (group_cat infinitive)(group_ids $?grp_ids))
@@ -180,13 +191,14 @@
                  (assert (expr  $?eng_ord))
  )
  
-
-
+;---------------------------------------------------------------------------------------------------------------------------
+ ;Find the position of the dropped words and giving src as { [-D-] ==> dropped } 
  (defrule dropped_words
  (declare (salience 40))
  ?f<-(expr  $?prev ?id $?post)
  (hindi_id_order $?hin_prev ?id $?hin_post)
- (id-HM-source ?id - WSD_root_mng)
+ ;(id-HM-source ?id - WSD_root_mng)
+ (id-HM-source ?id - WSD_root_mng|WSD_word_mng)
  =>
    	(retract ?f)
         (bind $?eng_ord (create$ $?prev ?id $?post))
@@ -198,7 +210,8 @@
         (assert (expr  $?eng_ord))(assert (id-pos ?id))
  )
 
-
+;---------------------------------------------------------------------------------------------------------------------------
+ ;find the position of remaing words
  (defrule find_pos
  (expr  $?pr ?id $?po)
  (hindi_id_order $?prev ?id $?post)
@@ -212,6 +225,8 @@
                  (assert(hin_pos-src-eng_ids ?pos - $?grp_ids))
  )
  
+;---------------------------------------------------------------------------------------------------------------------------
+ ;Print to a file 
  (defrule print_for_user
  (hin_pos-src-eng_ids ?pos ?src $?ids)
  (English $?eng_list)
