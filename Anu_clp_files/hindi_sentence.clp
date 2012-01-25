@@ -299,21 +299,22 @@
  (id-last_word ?id ?wrd)
  (id-right_punctuation   ?id  ?rp)
  (hindi_id_order $?var)
+ (last_id ?end)
  =>
 	(if (eq ?rp "NONE") then ;Ex:  That incident took place in 1800 B.C.
 		(printout ?*hin_sen-file* (implode$ $?var) crlf)
-		(printout ?*punct_file* "(id-left_punct-right_punct	"?id "	-	-)" crlf)
+		(printout ?*punct_file* "(id-left_punct-right_punct	"?end "	-	-)" crlf)
         else (if (eq ?rp "'.") then ;Ex: It was the centre of most powerful buddhist sect of northern india known as 'sarvastivada '. (Added by Roja 11-01-11)
                 (bind ?rp1 (string-to-field (sub-string (+ (str-index "'" ?rp) 1) (length ?rp) ?rp)))
                 (printout ?*hin_sen-file* (implode$ $?var) ?rp1 crlf)
-		(printout ?*punct_file* "(id-left_punct-right_punct	"?id "	-	"?rp1")" crlf)
+		(printout ?*punct_file* "(id-left_punct-right_punct	"?end "	-	\""?rp1"\")" crlf)
               else 
 		(if (eq ?rp ").") then ;The inscription on the tomb of Michael-Faraday (1897-1990).
 	                (printout ?*hin_sen-file* (implode$ $?var) "." crlf)
-			 (printout ?*punct_file* "(id-left_punct-right_punct	"?id "	-	.)" crlf)
+			 (printout ?*punct_file* "(id-left_punct-right_punct	"?end "	-	.)" crlf)
                 else
                   	(printout ?*hin_sen-file* (implode$ $?var) ?rp crlf)
-			 (printout ?*punct_file* "(id-left_punct-right_punct	"?id "	-	"?rp ")" crlf)
+			 (printout ?*punct_file* "(id-left_punct-right_punct	"?end "	-	\""?rp "\")" crlf)
                 )
              )
         )

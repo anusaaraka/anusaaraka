@@ -507,9 +507,10 @@
  ;----------------------------------------------- final order -----------------------------------------------------
  (defrule hi_order
  (declare (salience -700))
- (hindi_id_order  $?ids)
+ (hindi_id_order  $?ids ?last_id)
  =>
-        (assert (hindi_id_order   $?ids))
+        (assert (hindi_id_order   $?ids ?last_id))
+	(assert (last_id ?last_id))
         (printout ?*DBUG* "(Rule_Name-ids  hi_order  (hindi_id_order " (implode$ $?ids)"))" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------

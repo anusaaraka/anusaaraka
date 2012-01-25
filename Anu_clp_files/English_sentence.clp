@@ -4,6 +4,7 @@
  (id-last_word)
  (id-right_punctuation)
  (id-left_punctuation)
+ (last_id)
  )
 
 (defglobal ?*eng_sen-file* = e_sen_fp) 

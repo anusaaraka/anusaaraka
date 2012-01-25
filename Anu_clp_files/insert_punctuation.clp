@@ -2,10 +2,11 @@
 
  ;A slow, balmy breeze from the south engulfed everyone in the audience. No, it was not Black Monday.
  ;The main states of southern india are tamilnadu, kerala, maharashtra, andhrapradesh and karnataka.
+ ;I go left, right, up, down, back and forth.
  (defrule punct_info_for_JJ
  (declare (salience 1150))
  (mother-punct_head-punctuation ?mot ?p_h ?punct&~P_DOT)
- (Node-Category  ?mot  JJ|UH|NN|NNP)
+ (Node-Category  ?mot  JJ|UH|NN|NNP|PP|ADVP)
  (Head-Level-Mother-Daughters ? ? ?mot ?id)
  ?f0<-(hindi_id_order $?pre ?id $?post)
  (not (punc_inserted ?p_h))
@@ -72,7 +73,7 @@
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?PP $?d ?JJ $?d1)
  (Node-Category  ?PP  ADJP|PP|NP|ADVP|INTJ|VP)
 ; (Node-Category  ?JJ  JJ|IN|PRP$|NN|NP|RB|UH|VBZ|PP|NNS|CC|VB|VBD|VBP|VBN) ;vb,vbd,vbp,vbn for p_dot
- (Node-Category  ?JJ  JJ|IN|PRP$|NN|NP|RB|UH|VBZ|PP|NNS|CC|NNP) 
+ (Node-Category  ?JJ  JJ|IN|PRP$|NN|NP|RB|UH|VBZ|PP|NNS|CC|NNP|RP) 
 ?f0<-(Head-Level-Mother-Daughters ? ? ?JJ $?prep)
  =>
         (retract ?f0 ?f1)

@@ -3044,8 +3044,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	Added    : punc_for_S_grp, get_phrase_group
   3. run_modules_std.bat , run_modules_ol.bat, run_modules_link.bat
          loaded "cat_consistency_check.dat" file in tam_meaning module
- 	 generated new file hindi_punctuation.dat -- punctuation info in hindi order in insert_punctuation module only in 
-		run_modules_std.bat
+ 	 generated new file hindi_punctuation.dat -- punctuation info in hindi order in insert_punctuation module 
+	 Modified save-facts to get last_id of hindi_order in hindi_sent_reorder and insert_punctuation modules
   4. sd_lwg_rules.clp
          Modified : get_lwg_group, get_lwg_group1
          Added    : get_lwg_group2 , Let_rule and Let_rule1 
@@ -3059,7 +3059,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   8. Added new file sd_chunker.clp .  [replaced apertium chunker with stanford chunker]
   9. Added sd_chunker.clp module in run_modules_std.bat
  10. Modified run_sentence_stanford.sh [ replaced  chunk.dat file with sd_chunk.dat at concatenation to all_facts file]
- 11. Modified map_cons rule in sd_combining_apostrophe.clp [Added "NNP" category to POS list]
+ 11. sd_combining_apostrophe.clp 
+ 	Modified  : map_cons rule  [Added "NNP" category to POS list] 
+	Added     : gt_left_right_punc
  12. Modified run_multiple_parse_penn.sh file [changed -printPCFGkBest 100  ==> -printPCFGkBest 25 ]
  13. Modified preffered_parse.py file [Removed sys.exit() statement]
  14. Modified Anusaaraka_rasp.sh, Anusaaraka_site.sh, Anusaaraka_stanford.sh, Anusaaraka_berkeley.sh files. [Removed apertium     chunker generation part and handled with sd_chunker.clp file]
@@ -3081,13 +3083,14 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
      [Concatenating position.dat file to all_facts file]
  24. Added code for running run_hnd_ord_html.bat ClipsToAnu_browser_intfc.sh
  25. Added sort_grop deffunction in eng_hin_pos.clp
- 26. Added "gt_left_right_punc" rule in  sd_combining_apostrophe.clp
- 27. opened hindi_punctuation.dat file in append mode in run_H_gen_sen.bat and modified the match_exp rule in hindi_sentence
+ 26. Modified hi_order rule in hindi_sent_reorder.clp to get last_id of hindi order
+ 27. Added dummy fact last_id in prepare_apertium_input.clp and English_sentence.clp
+ 28. opened hindi_punctuation.dat file in append mode in run_H_gen_sen.bat and modified the match_exp rule in hindi_sentence
      module to get last punctuation.
- 28. Updated Anusaaraka README.
- 29. Modified sd_ver_output , ber_ver_output , small_sent_ver_output_sd  and sd_verified
- 30. Updated changes_in_databases
- 31. Updated abbr.sh and abbr_browser.sh
- 32. Updated the following files
+ 29. Updated Anusaaraka README.
+ 30. Modified sd_ver_output , ber_ver_output , small_sent_ver_output_sd  and sd_verified
+ 31. Updated changes_in_databases
+ 32. Updated abbr.sh and abbr_browser.sh
+ 33. Updated the following files
         sd_verified (482)       small_sent_verified_sd  (65)    ber_verified(407)
- 33. Updated Log
+ 34. Updated Log
