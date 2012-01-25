@@ -15,6 +15,7 @@
  )
 
 (defglobal ?*hin_sen-file* = h_sen_fp)
+(defglobal ?*punct_file* = punct_fp)
  
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot preceeding_part_of_verb (default 0)) (slot preposition (default 0))(slot Hin_position (default 0)))
 
@@ -301,14 +302,18 @@
  =>
 	(if (eq ?rp "NONE") then ;Ex:  That incident took place in 1800 B.C.
 		(printout ?*hin_sen-file* (implode$ $?var) crlf)
+		(printout ?*punct_file* "(id-left_punct-right_punct	"?id "	-	-)" crlf)
         else (if (eq ?rp "'.") then ;Ex: It was the centre of most powerful buddhist sect of northern india known as 'sarvastivada '. (Added by Roja 11-01-11)
                 (bind ?rp1 (string-to-field (sub-string (+ (str-index "'" ?rp) 1) (length ?rp) ?rp)))
                 (printout ?*hin_sen-file* (implode$ $?var) ?rp1 crlf)
+		(printout ?*punct_file* "(id-left_punct-right_punct	"?id "	-	"?rp1")" crlf)
               else 
 		(if (eq ?rp ").") then ;The inscription on the tomb of Michael-Faraday (1897-1990).
 	                (printout ?*hin_sen-file* (implode$ $?var) "." crlf)
+			 (printout ?*punct_file* "(id-left_punct-right_punct	"?id "	-	.)" crlf)
                 else
                   	(printout ?*hin_sen-file* (implode$ $?var) ?rp crlf)
+			 (printout ?*punct_file* "(id-left_punct-right_punct	"?id "	-	"?rp ")" crlf)
                 )
              )
         )
@@ -340,5 +345,6 @@
  (declare (salience -10))
  =>
         (close ?*hin_sen-file* )
+	(close ?*punct_file*)
  )
  ;---------------------------------------------------------------------------------------------------------

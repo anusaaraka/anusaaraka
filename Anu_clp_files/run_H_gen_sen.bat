@@ -21,6 +21,7 @@
  (load-facts "original_word.dat")
  (load-facts "underscore_hyphen_replace_info.dat")
  (open "hindi_sentence.dat" h_sen_fp "a")
+ (open "hindi_punctuation.dat" punct_fp "a")
  (run)
  (clear)
  ;--------------------------------------------------------------------------
