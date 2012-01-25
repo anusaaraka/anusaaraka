@@ -88,8 +88,25 @@
        
     To view the output, open html file through a browser by the command :
 
-               firefox $HOME_anu_output/<filename_frame.html>
-           Ex: firefox $HOME_anu_output/verified_frame.html   
+             1)  firefox $HOME_anu_output/<filename_frame.html>
+             Ex: firefox $HOME_anu_output/verified_frame.html  
+	         This frame opens three different html files i.e; 
+    				1) English file
+                                2) Layered output according to English sentence
+                                3) Hindi translation 
+            
+             2)  firefox $HOME_anu_output/<filename.html>
+             Ex: firefox $HOME_anu_output/verified.html
+                 (Layered output according to English sentence i.e; In english word order)
+               
+             3)  firefox $HOME_anu_output/<filename_tran.html>
+             Ex: firefox $HOME_anu_output/verified_tran.html
+                 (Layered output according to hindi translation 1.e; In hindi word order)
+ 
+             4)  firefox $HOME_anu_output/<filename_trnsltn.html>
+             Ex: firefox $HOME_anu_output/sd_verified_trnsltn.html
+                 (Contains Hindi translated sentences)
+               
 -------------------------------------------------------------------------------------------------------------------
 6. Linkage diagram:
     ===============   
