@@ -142,6 +142,21 @@
         (printout ?*l_rel_fp* "(rel_name-sids  " ?lname "   "?lnode "  "?rnode")" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
+ ; Added by shirisha Manju
+ (defrule get_left_right_punc
+ (declare (salience 4))
+ ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre ?PUNC ?head  ?PUNC1 $?post)
+ (Node-Category ?PUNC    ?p&P_DQT|P_SQT)
+ (Node-Category ?PUNC1   ?p1&P_DQT|P_SQT)
+ ?f1<-(Head-Level-Mother-Daughters ?h1 ?lvl1 ?PUNC ?child)
+ ?f2<-(Head-Level-Mother-Daughters ?h2 ?lvl2 ?PUNC1 ?child1)
+  =>
+        (retract ?f ?f1 ?f2)
+        (assert (mother-punct_head-left_punctuation ?head ?PUNC ?p))
+        (assert (mother-punct_head-right_punctuation ?head ?PUNC1 ?p1))
+        (assert (Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre ?head $?post))
+ )
+ ;-------------------------------------------------------------------------------------------------------------------
  (defrule map_cons
  ?f<-(Head-Level-Mother-Daughters ?pos1 ?lvl ?Mot $?pre ?NN ?POS $?post)
  ?f1<-(Head-Level-Mother-Daughters ?h ?lvl1 ?NN ?noun)
@@ -189,9 +204,6 @@
         (assert (mother-punct_head-punctuation ?Mot ?PUNC ?p))
         (assert (Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre $?post))
  )
-
-
-
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule end
  (declare (salience -50))

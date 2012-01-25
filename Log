@@ -3034,19 +3034,25 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  33. Updated sd_verified (481)
  34. Updated Log
 
- 20-01-12
+ 25-01-12
  ========
   1. Modified replace_aux_with_head_VP rule in H_ordering_rules.clp
   2. insert_punctuation.clp
-        Modified : punct_info_for_JJ,  get_NP_group_for_PRN, get_VP_group rules
+        Modified : punct_info_for_JJ,  get_NP_group_for_PRN, get_VP_group rules, substitute_punc_info
+	Renamed  : get_NP_group_for_PRN as get_PRN_group
+	Removed  : get_VP_group, get_PP_group, substitute_initial_punc, substitute_punc_for_VP, substitute_rt_lt_paren_punc
+	Added    : punc_for_S_grp, get_phrase_group
   3. run_modules_std.bat , run_modules_ol.bat, run_modules_link.bat
          loaded "cat_consistency_check.dat" file in tam_meaning module
+ 	 generated new file hindi_punctuation.dat -- punctuation info in hindi order in insert_punctuation module only in 
+		run_modules_std.bat
   4. sd_lwg_rules.clp
          Modified : get_lwg_group, get_lwg_group1
          Added    : get_lwg_group2 , Let_rule and Let_rule1 
   5. sd_pada.clp
          Modified : get_NP_group, get_and_NP_group , get_and_NP_group1 and  get_non_finite_kri_group 
 		    pada_for_comma  rules
+ 	 Renamed "pada_for_comma" as "pada_for_samAnAXikaraNa" and modified the rule
   6. tam_meaning.clp
          Added     : wsd_tam_mng_verb, wsd_tam_mng_verb1 and wsd_tam_mng_verb2 rules
   7. Modified sent_end rule in create_xml_file.clp [(retract *) ==> (reset)]
@@ -3073,12 +3079,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  22. Modified run_anu_browser.sh [copying of files english_hindi_tran.js and english_hindi_tran.css to output dir]
  23. Modified run_sentence_stanford.sh [Concatenating position.dat file to all_facts file]
  24. Added code for running run_hnd_ord_html.bat ClipsToAnu_browser_intfc.sh
- 25. Modified sd_ver_output , ber_ver_output , small_sent_ver_output_sd  and sd_verified
- 26. Updated changes_in_databases
- 27. Updated abbr.sh and abbr_browser.sh
- 28. Updated the following files
+ 25. Added "gt_left_right_punc" rule in  sd_combining_apostrophe.clp
+ 26. Modified sd_ver_output , ber_ver_output , small_sent_ver_output_sd  and sd_verified
+ 27. Updated changes_in_databases
+ 28. Updated abbr.sh and abbr_browser.sh
+ 29. Updated the following files
         sd_verified (482)       small_sent_verified_sd  (65)    ber_verified(407)
- 29. Updated Log
-~                                                                                                                            
-~                                   
-
+ 30. Updated Log

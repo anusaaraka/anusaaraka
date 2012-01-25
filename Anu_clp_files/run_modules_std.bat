@@ -36,7 +36,7 @@
  (run)
  (save-facts "E_constituents_info_tmp1.dat" local Head-Level-Mother-Daughters)
  (save-facts "Node_category.dat" local  Node-Category)
- (save-facts "parser_punctuation_info.dat" local mother-punct_head-punctuation)
+ (save-facts "parser_punctuation_info.dat" local mother-punct_head-left_punctuation mother-punct_head-right_punctuation mother-punct_head-punctuation)
  (clear)
  ;--------------------------------------------------------------------------------
  ; mapping between parser-generated id and original word id
@@ -445,6 +445,7 @@
  (load-facts "GNP_agmt_info.dat")
  (run)
  (save-facts "hindi_id_order.dat" local hindi_id_order)
+ (save-facts "hindi_punctuation.dat" local id-left_punct-right_punct)
  (clear)
  ;--------------------------------------------------------------------------
  ; prepare Apertium input for final hindi word generation.
