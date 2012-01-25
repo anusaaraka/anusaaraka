@@ -3081,13 +3081,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
      [Concatenating position.dat file to all_facts file]
  24. Added code for running run_hnd_ord_html.bat ClipsToAnu_browser_intfc.sh
  25. Added sort_grop deffunction in eng_hin_pos.clp
- 26. Updated Anusaaraka README.
- 27. Modified sd_ver_output , ber_ver_output , small_sent_ver_output_sd  and sd_verified
- 28. Updated changes_in_databases
- 29. Updated abbr.sh and abbr_browser.sh
- 30. Updated the following files
+ 26. Added "gt_left_right_punc" rule in  sd_combining_apostrophe.clp
+ 27. Updated Anusaaraka README.
+ 28. Modified sd_ver_output , ber_ver_output , small_sent_ver_output_sd  and sd_verified
+ 29. Updated changes_in_databases
+ 30. Updated abbr.sh and abbr_browser.sh
+ 31. Updated the following files
         sd_verified (482)       small_sent_verified_sd  (65)    ber_verified(407)
- 31. Updated Log
-~                                                                                                                            
-~                                   
-
+ 32. Updated Log
