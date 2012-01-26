@@ -6,9 +6,9 @@
 (id-cat ?id proper_noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id bOYyakOYta))
+(assert (id-wsd_root_mng ?id boYyakoYta))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  boycott.clp 	boycott0   "  ?id "  bOYyakOYta )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  boycott.clp 	boycott0   "  ?id "  boYyakoYta )" crlf))
 )
 
 (defrule boycott1

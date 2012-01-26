@@ -3096,3 +3096,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  36. Updated the following files
         sd_verified (482)       small_sent_verified_sd  (65)    ber_verified(407)
  37. Updated Log
+
+ 26-01-12
+ ========
+ 1. Modified 'OY' as 'oY' in following WSD files for patterns like 'jOYna' 
+	boss.clp	boycott.clp	john.clp	lounge.clp
+	polish.clp	spotlight.clp	torch.clp	box.clp
+ 2. Updated changes_in_databases
+ 3. Updated Log.

@@ -7,9 +7,9 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id bOYksiMga))
+(assert (id-wsd_word_mng ?id boYksiMga))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  box.clp  	box0   "  ?id "  bOYksiMga )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  box.clp  	box0   "  ?id "  boYksiMga )" crlf))
 )
 
 (defrule box1

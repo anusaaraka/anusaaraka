@@ -36,9 +36,9 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id pOYliSa))
+(assert (id-wsd_root_mng ?id poYliSa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  polish.clp 	polish2   "  ?id "  pOYliSa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  polish.clp 	polish2   "  ?id "  poYliSa )" crlf))
 )
 
 (defrule polish3

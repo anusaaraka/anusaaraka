@@ -6,12 +6,12 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id tOYrca))
+(assert (id-wsd_root_mng ?id toYrca))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  torch.clp 	torch0   "  ?id "  tOYrca )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  torch.clp 	torch0   "  ?id "  toYrca )" crlf))
 )
 
-;"torch","N","1.tOYrca"
+;"torch","N","1.toYrca"
 ;Torch is handy when there is a power failure.
 ;--"2.maSAla"
 ;Tribals living in the forests use torch to scare the wild animals.
