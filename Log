@@ -3065,7 +3065,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  13. Modified preffered_parse.py file [Removed sys.exit() statement]
  14. Modified Anusaaraka_rasp.sh, Anusaaraka_site.sh, Anusaaraka_stanford.sh, Anusaaraka_berkeley.sh files. [Removed apertium     chunker generation part and handled with sd_chunker.clp file]
  15. Modified "to_be_en" tam in tam.csv file.
- 16. Modified code in wx_utf8.c programme inside CLIPS to handle words like "jOYna", "sOYPtaveyara" etc.
+ 16. Modified code in wx_utf8.c programme inside CLIPS to handle words like "joYna", "soYPtaveyara" etc.
  17. Modified Stanford_parser_fails such that each failure sentence is provided with reasons under it.
  18. Renamed files ::
            1)  create_xml_file.clp ==> create_eng_ord_html.clp
@@ -3082,13 +3082,17 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
      [Concatenating position.dat file to all_facts file]
  24. Added code for running run_hnd_ord_html.bat ClipsToAnu_browser_intfc.sh
  25. Added sort_grop deffunction in eng_hin_pos.clp
- 26. Modified word.c to get "?" as "question_mark"
- 27. opened hindi_punctuation.dat file in append mode in run_H_gen_sen.bat and modified the match_exp rule in hindi_sentence
+ 26. Modified hi_order rule in hindi_sent_reorder.clp to get last_id of hindi order
+ 27. Added dummy fact last_id in prepare_apertium_input.clp and English_sentence.clp
+ 28. opened hindi_punctuation.dat file in append mode in run_H_gen_sen.bat and modified the match_exp rule in hindi_sentence
      module to get last punctuation.
- 28. Updated Anusaaraka README.
- 29. Modified sd_ver_output , ber_ver_output , small_sent_ver_output_sd  and sd_verified
- 30. Updated changes_in_databases
- 31. Updated abbr.sh and abbr_browser.sh
- 32. Updated the following files
+ 29. Modified word.c to get "?" as "question_mark"
+ 30. Renamed ri.lex as ra_d8_wp_r.lex and modified it to handle words like "joYna"
+ 31. Updated Anusaaraka README.
+ 32. Modified sd_ver_output , ber_ver_output , small_sent_ver_output_sd, ol_ver_output, link_ver_output, verified_output and      sd_verified
+ 33. Updated changes_in_databases
+ 34. Updated abbr.sh and abbr_browser.sh
+ 35. Updated roman_iscii file.
+ 36. Updated the following files
         sd_verified (482)       small_sent_verified_sd  (65)    ber_verified(407)
- 33. Updated Log
+ 37. Updated Log

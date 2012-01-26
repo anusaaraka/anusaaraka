@@ -49,7 +49,7 @@
                          (printout ?*punct_file* "(id-left_punct-right_punct    "?end " -       .)" crlf)
 			(assert (hindi_id_order $?var .))
                 else
-                        (printout ?*punct_file* "(id-left_punct-right_punct    "?end " -       \""rp "\")" crlf)
+                        (printout ?*punct_file* "(id-left_punct-right_punct    "?end " -       \""?rp "\")" crlf)
 			(bind ?p (string-to-field ?rp))
 			(printout t ?p crlf)
 			(assert (hindi_id_order $?var ?p))

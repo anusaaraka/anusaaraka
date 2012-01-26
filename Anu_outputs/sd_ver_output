@@ -282,7 +282,7 @@ usane xurGatanA ke bAre meM wawkAla unheM/unako bawAyA .
 
 Hindi meaning using Stanford parser 2.68
 He made a mistake in inviting John. 
-usane jOYna ko AmaMwriwa karane meM galawI kI .
+usane joYna ko AmaMwriwa karane meM galawI kI .
 
 Hindi meaning using Stanford parser 2.69
 Did you put the milk in the refrigerator? 
@@ -306,8 +306,8 @@ denmArka vAsI acCe loga hEM .
 
 Hindi meaning using Stanford parser 2.74
 People use espresso to make other coffee drinks. 
-loga espreso kOYPI kA anya kOYPI_peya_yA Sarabawa banAne ke liye upayoga karawe hEM .
-loga anya kOYPI_peya_yA Sarabawa banAne ke liye espreso kOYPI kA upayoga karawe hEM .
+loga espreso koYPI kA anya koYPI_peya_yA Sarabawa banAne ke liye upayoga karawe hEM .
+loga anya koYPI_peya_yA Sarabawa banAne ke liye espreso koYPI kA upayoga karawe hEM .
 
 Hindi meaning using Stanford parser 2.75
 The Zongle of Bongle Dongle resigned today. 
@@ -352,11 +352,11 @@ usakI saba puswakeM acCI hEM .
 
 Hindi meaning using Stanford parser 2.85
 He made a mistake in the inviting of John. 
-usane jOYna ko AmaMwriwa karane meM galawI kI .
+usane joYna ko AmaMwriwa karane meM galawI kI .
 
 Hindi meaning using Stanford parser 2.86
 John is quite certainly a better choice. 
-jOYna sacamuca niSciwa_rUpa se eka behawara vikalpa hE .
+joYna sacamuca niSciwa_rUpa se eka behawara vikalpa hE .
 
 Hindi meaning using Stanford parser 2.87
 Petu ran fast but missed the bus. 
@@ -384,7 +384,7 @@ vaha Ora mEM miwra hEM .
 
 Hindi meaning using Stanford parser 2.93
 John Stuart Mill is an important author. 
-jOYna Stuart Mill mahawvapUrNa leKaka hE .
+joYna Stuart Mill mahawvapUrNa leKaka hE .
 
 Hindi meaning using Stanford parser 2.94
 It does not matter what Ted does. 
@@ -455,7 +455,7 @@ usane usakI umra kA anxAja lagAne ke liye muJe/muJako pUCA .
 
 Hindi meaning using Stanford parser 2.110
 John is less fat than Tom. 
-jOYna Tom kI apekRA kama motA hE .
+joYna Tom kI apekRA kama motA hE .
 
 Hindi meaning using Stanford parser 2.111
 I knew who would come to the party. 
@@ -480,7 +480,7 @@ topI mere liye jyAxA hI CotI hE .
 
 Hindi meaning using Stanford parser 2.116
 He is a small man in eyes of his boss. 
-vaha usake bOYsa kI AzKoM meM eka CotA AxamI hE .
+vaha usake boYsa kI AzKoM meM eka CotA AxamI hE .
 
 Hindi meaning using Stanford parser 2.117
 We camped on Nilgiri hills during summer. 
@@ -525,7 +525,7 @@ pAnI hamAre kanXe ke Upara AyA .
 
 Hindi meaning using Stanford parser 2.127
 John's family is renovating their kitchen. 
-jOYna kA parivAra unakA rasoIGara navIkaraNa_kara rahA hE .
+joYna kA parivAra unakA rasoIGara navIkaraNa_kara rahA hE .
 
 Hindi meaning using Stanford parser 2.128
 How do you operate this machine? 
@@ -591,7 +591,7 @@ usane tikatoM kI puswaka KarIxI .
 
 Hindi meaning using Stanford parser 2.143
 I should have talked to you before inviting John. 
-muJe/muJako jOYna ko AmaMwriwa karane se pahale Apase bAwacIwa karanI cAhiye WI .
+muJe/muJako joYna ko AmaMwriwa karane se pahale Apase bAwacIwa karanI cAhiye WI .
 
 Hindi meaning using Stanford parser 2.144
 Can you tell us where those strange ideas came from? 
@@ -769,7 +769,7 @@ vaha Lata kI eka badI praSaMsaka hE .
 
 Hindi meaning using Stanford parser 2.187
 He was a football fan. 
-vaha eka PutabOYla praSaMsaka WA .
+vaha eka PutaboYla praSaMsaka WA .
 
 Hindi meaning using Stanford parser 2.188
 A warm breeze fanned her cheeks. 
@@ -814,7 +814,7 @@ hamane piCale sapwAha Joe ke Diner meM KAyA .
 
 Hindi meaning using Stanford parser 2.198
 How did John do it? 
-jOYna ne yaha kEse kiyA ?
+joYna ne yaha kEse kiyA ?
 
 Hindi meaning using Stanford parser 2.199
 The punch caught him in the stomach. 
@@ -851,7 +851,7 @@ vaha isa viRaya para AKIra meM bolA .
 
 Hindi meaning using Stanford parser 2.207
 I should have talked to you before the inviting of John. 
-muJe/muJako jOYna ko AmaMwriwa karane se pahale Apase bAwacIwa karanI cAhiye WI .
+muJe/muJako joYna ko AmaMwriwa karane se pahale Apase bAwacIwa karanI cAhiye WI .
 
 Hindi meaning using Stanford parser 2.208
 The sleeping of students can ruin a lecture. 
@@ -905,7 +905,7 @@ yaxi hama lohA garama karawe hEM wo yaha lAla howA hE .
 
 Hindi meaning using Stanford parser 2.220
 John is more intelligent than Tom. 
-jOYna Tom kI apekRA aXika buxXimAna hE .
+joYna Tom kI apekRA aXika buxXimAna hE .
 
 Hindi meaning using Stanford parser 2.221
 The sparrow made a beautiful nest. 
@@ -1059,7 +1059,7 @@ Inspector ne vixyAlaya kA Akasmika nirIkRaNa kiyA .
 
 Hindi meaning using Stanford parser 2.258
 The priest granted absolution for John's sins. 
-purohiwa ne jOYna ke pApoM ke liye kRamAxAna xiyA .
+purohiwa ne joYna ke pApoM ke liye kRamAxAna xiyA .
 
 Hindi meaning using Stanford parser 2.259
 There are abundant natural resources in our country. 
@@ -1119,7 +1119,7 @@ xUsare pAzca pahanAvoM ne puraskAra prApwa kiye/kie .
 
 Hindi meaning using Stanford parser 2.273
 I wonder where John is. 
-muJe/muJako AScarya howA hE ki jOYna kahAz hE .
+muJe/muJako AScarya howA hE ki joYna kahAz hE .
 
 Hindi meaning using Stanford parser 2.274
 Clinton announced on Tuesday a bold new proposal. 
@@ -1190,7 +1190,7 @@ vixyArWI ke liye vAkya kisane anuvAxa kiyA ?
 
 Hindi meaning using Stanford parser 2.290
 Espresso is a coffee drink. 
-Espresso eka kOYPI peya_yA Sarabawa hE .
+Espresso eka koYPI peya_yA Sarabawa hE .
 
 Hindi meaning using Stanford parser 2.291
 I gave him for his birthday a very expensive present. 
@@ -1206,7 +1206,7 @@ Apake Gara Ora uxyAna awyaMwa mohaka hEM .
 
 Hindi meaning using Stanford parser 2.294
 He is more intelligent than John. 
-vaha jOYna kI apekRA aXika buxXimAna hE .
+vaha joYna kI apekRA aXika buxXimAna hE .
 
 Hindi meaning using Stanford parser 2.295
 I yelled at her for going to the party. 
@@ -1249,7 +1249,7 @@ acCe pAzca pahanAvoM ne puraskAra prApwa kiye/kie .
 
 Hindi meaning using Stanford parser 3.4
 I wonder how John did it. 
-muJe/muJako AScarya howA hE ki jOYna ne yaha kEse kiyA .
+muJe/muJako AScarya howA hE ki joYna ne yaha kEse kiyA .
 
 Hindi meaning using Stanford parser 3.5
 I told Margaret on Tuesday that I thought she would probably be hired. 
@@ -1286,7 +1286,7 @@ SeyaroM kA KarIxanA Wall Street para Aja weja WA .
 
 Hindi meaning using Stanford parser 3.13
 The playing of the piano really bothers John. 
-piyAno kA bajanA vAswava meM jOYna ko waMga karawA hE .
+piyAno kA bajanA vAswava meM joYna ko waMga karawA hE .
 
 Hindi meaning using Stanford parser 3.14
 Many people can speak but only a few can act. 
@@ -1488,7 +1488,7 @@ sanxigXa lagaBaga 2 mItara laMbA WA .
 
 Hindi meaning using Stanford parser 3.59
 Leave your coat in the hall. 
-hOYla meM Apake kota ko Coda jAiye .
+hoYla meM Apake kota ko Coda jAiye .
 
 Hindi meaning using Stanford parser 3.60
 Do not shut the door. 
@@ -1726,7 +1726,7 @@ kullu GAtI ISvara kI GAtI ke nAma se BI jAnI jAwI hE .
 
 Hindi meaning using Stanford parser 4.18
 Chaturbhuj temple is built on a massive stone platform. 
-Chaturbhuj maMxira eka BArI pawWara pletaPOYrma para banAyA huA hE .
+Chaturbhuj maMxira eka BArI pawWara pletaPoYrma para banAyA huA hE .
 
 Hindi meaning using Stanford parser 4.19
 Puri is one of the most important pilgrimage centres for the hindus. 
@@ -1970,8 +1970,8 @@ SOUTH AFRICA ne ANC ke Sisulu Ora sAwa anya rAjanEwika banxI mukwa kiye/kie .
 
 Hindi meaning using Stanford parser 4.79
 If John was with Lisa last night, who went to the movie with Diane. 
-yaxi jOYna , piCalI rAwa Lisa ke sAWa WA wo Diane ke sAWa calaciwra kOna gayA.
-yaxi jOYna piCalI rAwa Lisa ke sAWa WA , wo Diane ke sAWa calaciwra kOna gayA .
+yaxi joYna piCalI rAwa Lisa ke sAWa WA , wo Diane ke sAWa calaciwra kOna gayA .
+yaxi joYna , piCalI rAwa Lisa ke sAWa WA wo Diane ke sAWa calaciwra kOna gayA.
 
 Hindi meaning using Stanford parser 4.80
 Let her go to the market. 

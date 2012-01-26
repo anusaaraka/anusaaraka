@@ -82,7 +82,8 @@ while(*(wx_string+i) != '\0') {
   			//for cases "sOYPtaveyara" "सॉफ्टवेयर"
                         //Modified below code by Roja(18-01-12) to handle words like "jOYna", "sOYPtaveyara" etc.
                         //original code insied 'else if' is commented and added below code.
-			else if((ch_next == 'O') && (ch_next_next == 'Y')){
+			else if((ch_next == 'o') && (ch_next_next == 'Y')){  /*Changed "ch_next == 'o'" to "ch_next == 'O'"
+                                                                               (Suggested by Chaitanya Sir) 25-01-12*/
                                         sprintf(utf8_string+j,"%s",con_hnd[con_ind]);
 	                                j=j+3;
 				//	sprintf(utf8_string+j,"ॉ",con_hnd[con_ind]);
