@@ -25,12 +25,15 @@
 
 ;-------------------------------------------------------------------------------------------------
 
- (deffunction print_first_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?aper_op)
+ (deffunction print_first_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_p ?r_p ?aper_op)
+ (if (eq ?r_p -) then (bind ?r_p ""))
+ (if (eq ?l_p -) then (bind ?l_p ""))
+
  (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
  (printout fp "<table cellspacing=\"0\">"crlf"<tr class=\"row1\">" crlf )
  (if (= ?w_id 1) then
  (printout fp "<td class=\"number\">"?p_id"."?s_id".A</td>"))
- (printout fp "<td class=\""?chnk_fr_htm"\"> " ?aper_op" </td>" crlf "</tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_p ?aper_op ?r_p" </td>" crlf "</tr>" crlf)
  )
 
 ;-------------------------------------------------------------------------------------------------
@@ -43,16 +46,26 @@
 
 ;-------------------------------------------------------------------------------------------------
 
- (deffunction print_third_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?aper_op )
+ (deffunction print_third_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_p ?r_p ?aper_op )
+ (if (eq ?r_p -) then (bind ?r_p ""))
+ (if (eq ?l_p -) then (bind ?l_p ""))
  (printout fp "<tr class=\"row3\">" crlf )
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">&nbsp;</td>"))
  (printout fp "<td class=\""?chnk_fr_htm"\"><input name=\"suggestion_1.1\" type=\"text\" class=\"suggestion\" size=\"1\" value=\"")
- (printout fp ?aper_op "\" /></td></tr>" crlf)
+ (printout fp ?l_p ?aper_op ?r_p"\" /></td></tr>" crlf)
  (printout fp "</table>" crlf)
  )
  
 ;============================= Asserting control facts and modifying the original facts ====================================
 
+ (defrule default_punct_facts
+ (declare (salience 6000))
+ ;(hindi_order $? ?id $?)
+ (id-word ?id ?)
+ (not (id-left_punct-right_punct ?id ? ?)) 
+ =>
+ 	(assert (id-left_punct-right_punct ?id - -))
+ )
  
  (defrule cntrl_fact_for_chunk
  (declare (salience 6000))
@@ -125,14 +138,16 @@
  (declare (salience 4900))
  (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
  ?f<-(id-len ?id ?len)
- (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?eng)
+ (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng)
+ (id-left_punct-right_punct ?id1 ?l_p ?r_p)
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
- (test (member$ (nth$ (length $?grp) $?grp) $?ids))
+ ;(test (member$ (nth$ (length $?grp) $?grp) $?ids))
+ (test (member$ ?id1 $?ids))
  =>
          (retract ?f)
-         (print_first_row  ?p_id ?s_id ?id ?chnk_fr_htm ?hin)
+         (print_first_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_p ?r_p ?hin)
          (print_second_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng)
-         (print_third_row  ?p_id ?s_id ?id ?chnk_fr_htm ?hin)
+         (print_third_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_p ?r_p ?hin)
          (assert (id-len (+ ?id 1) (- ?len 1))) 
  )
 
@@ -142,14 +157,14 @@
  (defrule new_words
  (declare (salience 4850))
  (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
- (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?eng)
  ?f<-(id-len ?id ?len)
+ (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?eng)
  (test (!= ?len 0))
  =>
          (retract ?f)
-         (print_first_row  ?p_id ?s_id ?id U ?hin)
+         (print_first_row  ?p_id ?s_id ?id U - - ?hin)
          (print_second_row  ?p_id ?s_id ?id U ?eng)
-         (print_third_row  ?p_id ?s_id ?id U ?hin)
+         (print_third_row  ?p_id ?s_id ?id U - - ?hin)
          (assert (id-len (+ ?id 1) (- ?len 1)))
  )
 
@@ -161,9 +176,9 @@
  (test (!= ?len 0)) 
  =>
          (retract ?f)
-         (print_first_row  ?p_id ?s_id ?id U - )
+         (print_first_row  ?p_id ?s_id ?id U - - - )
          (print_second_row  ?p_id ?s_id ?id U - )
-         (print_third_row  ?p_id ?s_id ?id U -)
+         (print_third_row  ?p_id ?s_id ?id U - - -)
          (assert (id-len (+ ?id 1) (- ?len 1)))
  )
 

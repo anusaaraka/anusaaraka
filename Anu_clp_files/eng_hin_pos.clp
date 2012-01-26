@@ -33,20 +33,20 @@
  (assert (id-checked ?id)) 
  )         
 ;----------------------------------------------------------------------------------------------------------------------------
- ;Creating genglish word list fact for a sentence.
+ ;Creating english word list fact .
  (defrule get_eng_word_list
  (declare (salience 1950))
  (id-original_word ?id ?word)
  ?f1<-(index ?id)
- ?f<-(English $?Eng_list)
+ ?f<-(English_Sen $?Eng_list)
  =>
  (retract ?f ?f1)
- (assert (English $?Eng_list ?word))
+ (assert (English_Sen $?Eng_list ?word))
  (bind ?id (+ ?id 1))
  (assert (index ?id))
  )
 ;---------------------------------------------------------------------------------------------------------------------------
- ;Asserting (hindi_order_length) and (Hindi) facts for further use in other rules
+ ;Asserting (hindi_order_length) and (Hindi_sen) facts for further use in other rules
  (defrule find_length
  (declare (salience 1940))
  (hindi_id_order  $?order)
@@ -56,7 +56,7 @@
  (bind ?len (length $?order))
  (assert (hindi_order_length ?len))
  (printout ?*pos-file*  "(hindi_order_length "?len")" crlf)
- (assert (Hindi $?order)))
+ (assert (Hindi_sen $?order)))
 
 ;---------------------------------------------------------------------------------------------------------------------------
  ;Creating hindi sentence fact.
@@ -64,7 +64,7 @@
  (defrule get_hin_word_list1
  (declare (salience 1900))
  (hindi_id_order  $?pre ?id $?pos)
- ?f<-(Hindi $?pre1 ?id $?pos1)
+ ?f<-(Hindi_sen $?pre1 ?id $?pos1)
  (id-Apertium_output ?id $?aper_op)
  =>
  	(retract ?f)
@@ -75,7 +75,7 @@
                         else 
                             (bind ?aper (str-cat ?aper "_" ?val))) )
         (if (eq (length $?aper_op) 0) then (bind ?aper ""))
-  	(assert (Hindi $?pre1 ?aper $?pos1))
+  	(assert (Hindi_sen $?pre1 ?aper $?pos1))
  )
 
 ;---------------------------------------------------------------------------------------------------------------------------
@@ -83,17 +83,30 @@
  (defrule get_hin_word_list2
  (declare (salience 1800))
  (hindi_id_order  $?pre ?id $?pos)
- ?f<-(Hindi $?pre1 ?id $?pos1)
- (id-HM-src ?id $?hin_mng ?)
+ ?f<-(Hindi_sen $?pre1 ?id $?pos1)
+ (id-HM-source-grp_ids ?id ?hmng ? $?grp_ids)
  =>
         (retract ?f)
-        (loop-for-count (?i 1 (length $?hin_mng))
-                        (bind ?val (nth$ ?i $?hin_mng))
-                        (if (eq ?i 1) then
-                             (bind ?hmng (str-cat ?val ""))
-                        else
-                            (bind ?hmng (str-cat ?hmng "_" ?val))) )
-        (assert (Hindi $?pre1 ?hmng $?pos1))
+;        (loop-for-count (?i 1 (length $?hin_mng))
+;                        (bind ?val (nth$ ?i $?hin_mng))
+;                        (if (eq ?i 1) then
+;                             (bind ?hmng (str-cat ?val ""))
+;                        else
+;                            (bind ?hmng (str-cat ?hmng "_" ?val))) )
+        (bind ?hmng (str-cat ?hmng ""))
+        (assert (Hindi_sen $?pre1 ?hmng $?pos1))
+)
+
+;replacing id with english word if apertium_output or hindi_meaning is not found for any id
+ (defrule get_hin_word_list3
+ (declare (salience 1799))
+ (hindi_id_order  $?pre ?id $?pos)
+ ?f<-(Hindi_sen $?pre1 ?id $?pos1)
+ (id-original_word ?id ?word)
+ =>
+        (retract ?f)
+        (assert (Hindi_sen $?pre1 ?word $?pos1))
+        (assert (id-HM-source-grp_ids   ?id  ?word - ?id))
 )
 
 ;---------------------------------------------------------------------------------------------------------------------------
@@ -159,7 +172,7 @@
                  (loop-for-count (?i 1 (length $?grp_ids))
                                 (bind ?g_id (nth$ ?i $?grp_ids))
                                 (bind ?pos1 (member$ ?g_id $?eng_ord))
-                                (printout t ?pos1 "-------" crlf)
+                                ;(printout t ?pos1 "-------" crlf)
     		                (bind $?eng_ord (delete-member$ $?eng_ord ?g_id))
                    		(bind $?eng_ord (insert$ $?eng_ord ?pos1 "-"))
                                 (assert (id-pos ?g_id)))
@@ -198,7 +211,7 @@
  ?f<-(expr  $?prev ?id $?post)
  (hindi_id_order $?hin_prev ?id $?hin_post)
  ;(id-HM-source ?id - WSD_root_mng)
- (id-HM-source ?id - WSD_root_mng|WSD_word_mng)
+ (id-HM-source-grp_ids ?id - WSD_root_mng|WSD_word_mng)
  =>
    	(retract ?f)
         (bind $?eng_ord (create$ $?prev ?id $?post))
@@ -229,8 +242,8 @@
  ;Print to a file 
  (defrule print_for_user
  (hin_pos-src-eng_ids ?pos ?src $?ids)
- (English $?eng_list)
- (Hindi $?hin_list)
+ (English_Sen $?eng_list)
+ (Hindi_sen $?hin_list)
  =>
      (if (eq ?src D) then (bind ?hin_pos_val -D-)
      else
