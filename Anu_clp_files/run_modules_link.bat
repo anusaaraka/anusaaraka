@@ -491,7 +491,7 @@
  (load-facts "parser_type.dat")
  (open "hindi_id_reorder_debug.dat" h_id_reorder_fp "a")
  (run)
- (save-facts "hindi_id_order.dat" local hindi_id_order last_id)
+ (save-facts "hindi_id_order.dat" local hindi_id_order) 
  (clear)
  ;--------------------------------------------------------------------------
  ; prepare Apertium input for final hindi word generation.

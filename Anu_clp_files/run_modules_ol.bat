@@ -420,7 +420,7 @@
  (load-facts "Node_category.dat")
  (open "hindi_id_reorder_debug.dat" h_id_reorder_fp "a")
  (run)
- (save-facts "hindi_id_order_tmp1.dat" local hindi_id_order last_id)
+ (save-facts "hindi_id_order_tmp1.dat" local hindi_id_order)
  (clear)
  ;--------------------------------------------------------------------------
  (load "global_path.clp")
@@ -432,7 +432,7 @@
  (load-facts "hindi_id_order_tmp1.dat")
  (load-facts "GNP_agmt_info.dat")
  (run)
- (save-facts "hindi_id_order.dat" local hindi_id_order last_id)
+ (save-facts "hindi_id_order.dat" local hindi_id_order)
  (clear)
  ;--------------------------------------------------------------------------
  ; prepare Apertium input for final hindi word generation.
