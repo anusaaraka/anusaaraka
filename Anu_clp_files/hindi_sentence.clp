@@ -51,7 +51,6 @@
                 else
                         (printout ?*punct_file* "(id-left_punct-right_punct    "?end " -       \""?rp "\")" crlf)
 			(bind ?p (string-to-field ?rp))
-			(printout t ?p crlf)
 			(assert (hindi_id_order $?var ?p))
                 )
              )
@@ -61,25 +60,24 @@
  ;Added by Roja (29-06-11)
  ;To replace hyphen(-) with underscore(_) only in cases where we get underscore in the sentence. 
  ;Ex: Child_abuse is the physical or emotional or sexual mistreatment of children. (Note: used for WordNet purpose)
+ ; Modified by Shirisha Manju -- removed for hindi meaning (27-01-12)
  (defrule replace_hyphen_with_underscore
  (declare (salience  2600))
  ?f0<-(para_id-sent_id-word_id-original_word-hyphenated_word  ?para_id  ?sent_id  ?wid  ?org_wrd $? ?hyp_wrd $?)
  (id-original_word  ?wid  ?hyp_wrd)
  (hindi_id_order $? ?wid $?)
- ?f1<-(id-HM-source ?wid ?hmng ?src)
  ?f2<-(id-Apertium_output ?wid ?wrd_analysis $?wrd)
  =>
-   (bind ?hyp_word (string-to-field (str-cat "@" ?hyp_wrd)))
-   (bind ?hyp_wd   (string-to-field (str-cat "\@" ?hyp_wrd)))
-   (if (or (eq ?hmng ?hyp_word) (eq $?wrd_analysis  ?hyp_word)  (eq $?wrd_analysis  ?hyp_wd)) then
-      (assert (id-HM-source  ?wid ?org_wrd ?src))
-      (assert (id-Apertium_output ?wid ?org_wrd $?wrd))
-      (retract ?f0 ?f1  ?f2)
-   )
+	(bind ?hyp_word (string-to-field (str-cat @ ?hyp_wrd)))
+	(bind ?hyp_wd   (string-to-field (str-cat \@ ?hyp_wrd)))
+   	(if (or (eq $?wrd_analysis  ?hyp_word)  (eq $?wrd_analysis  ?hyp_wd)) then
+      		(assert (id-Apertium_output ?wid ?org_wrd $?wrd))
+      		(retract ?f0 ?f2)
+   	)
  )
  ;----------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (10-12-2011)
- (defrule get_mng
+ (defrule get_apertium_mng
  (declare (salience 2500))
  (Parser_used Stanford-Parser)
  ?f1<-(id-Apertium_output ?id $?wrd_analysis)
@@ -90,18 +88,7 @@
  )
  ;----------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (10-12-2011)
- (defrule get_mng1
- (declare (salience 2400))
- (Parser_used Stanford-Parser)
- ?f1<-(id-HM-source ?id ?hmng ?)
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
- =>
-        (retract ?f0 ?f1)
-        (assert (hindi_id_order $?id1  ?hmng $?id2))
- )
- ;----------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (10-12-2011)
- (defrule get_mng2
+ (defrule get_word_mng
  (declare (salience 2300))
  (Parser_used Stanford-Parser)
  ?f1<-(id-word ?id ?mng)
@@ -196,62 +183,6 @@
  	(retract ?f0) 
 	(assert (hindi_id_order $?id1  $?wrd_analysis  $?id2))
  )
-
- ;=========================== Substituting hindi_meaning if Apertium ouput is not present ===================
- ;Added by Shirisha Manju (22-12-10) 
- (defrule hnd_mng_rt_lt
- (declare (salience 910))
- ?f1<-(id-HM-source ?id ?hmng ?)
- (id-left_punctuation ?id "left_paren")
- (id-right_punctuation ?id "right_paren")
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
- =>
-        (retract ?f0 ?f1)
-        (bind ?hmng (explode$ (str-cat left_paren ?hmng right_paren)))
-	(assert (hindi_id_order $?id1 ?hmng $?id2))
- )
- ;---------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (22-12-10)
- (defrule hnd_mng_lt_NONE
- (declare (salience 900))
- ?f1<-(id-HM-source ?id ?hmng ?)
- (id-right_punctuation ?id ?rp)
- (test (or (eq ?rp "left_paren")(eq ?rp "right_paren" )(eq ?rp "equal_to" )))
- (id-left_punctuation ?id "NONE")
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
- =>
-        (retract ?f0 ?f1)
-	(bind ?rp1 (string-to-field ?rp))
-	(bind ?hmng (explode$ (str-cat ?hmng ?rp1)))
-	(assert (hindi_id_order $?id1 ?hmng $?id2))
- )
- ;---------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (22-12-10)    
- (defrule hnd_mng_rt_NONE
- (declare (salience 1000))
- ?f1<-(id-HM-source ?id ?hmng ?)
- (id-left_punctuation ?id ?lp)
- (test (or (eq ?lp "left_paren")(eq ?lp "right_paren" )))
- (id-right_punctuation ?id "NONE")
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
- =>
-        (retract ?f0 ?f1)
-	(bind ?lp1 (string-to-field ?lp))
-	(bind ?hmng (explode$ (str-cat ?hmng" "?lp1)))
-	(assert (hindi_id_order $?id1 ?hmng $?id2))	
- )
- ;---------------------------------------------------------------------------------------------------------
- ;Substituting hindi_meaning for the id(10000)  
- ;Added by Shirisha Manju (03-12-10)
- (defrule substitute_hnd_mng1
- (declare (salience 850))
- ?f1<-(id-HM-source ?id ?hmng ?)
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
- =>
-        (retract ?f0 ?f1)
-        (assert (hindi_id_order $?id1 ?hmng $?id2))
-  )
-
  ;================================ Substituting english word if hindi meaning is not present =================
 
  ;Modified by Shirisha Manju (01-12-10)

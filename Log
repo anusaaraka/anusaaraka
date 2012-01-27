@@ -3108,10 +3108,18 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Added    :  left_punct_for_JJ ,punc_for_S_grp1
         Removed  :  rm_prep_id, get_PRN_group
  4. sd_combining_apostrophe.clp
-        Modified :  map_cons2, map_cons1
-        Added    :  get_left_right_punc1
- 5. Updated changes_in_databases
- 6. Updated abbr.sh abbr_browser.sh
- 7. Modified verified_output
- 8. Updated Log
+        Modified :  map_cons2, map_cons1	Added    :  get_left_right_punc1
+ 5. hindi_sentence.clp
+        Modified : replace_hyphen_with_underscore
+        Removed  : get_mng1,  hnd_mng_rt_lt, hnd_mng_lt_NONE, hnd_mng_rt_NONE and substitute_hnd_mng1
+        Renamed  : get_mng  as get_apertium_mng  and get_mng2 as get_word_mng
+ 6. prepare_apertium_input.clp
+        Modified :  verbal_adjective_breaking_tam ,default_id and default_id1
+        Added    :  default_hnd_mng_rule
+ 7. Removed to load "hindi_meanings.dat" file for hindi_sentence module in run_H_gen_sen.bat
+ 8. Updated changes_in_databases
+ 9. Updated abbr.sh abbr_browser.sh
+ 10. Modified verified_output ber_ver_output and sd_ver_output
+ 11. Updated Log
+ 12. Updated sd_verified (483)
 

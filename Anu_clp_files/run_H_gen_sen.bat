@@ -14,7 +14,6 @@
  (bload ?*path*)
  (load-facts "word.dat")
  (load-facts "parser_type.dat")
- (load-facts "hindi_meanings.dat")
  (load-facts "id_Apertium_output.dat")
  (load-facts "hindi_id_order.dat")
  (load-facts "punctuation_info.dat")

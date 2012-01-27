@@ -9,7 +9,8 @@
 (defglobal ?*eng_sen-file* = e_sen_fp) 
 
  (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
-
+ 
+ ;Added by Shirisha Manju (24-06-2011)
  (defrule pn_vib
  (declare (salience 950))
  (pada_info (group_head_id ?id)(vibakthi kA))
@@ -27,6 +28,7 @@
 	)
   )
  ;---------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (29-06-2011)
  (defrule substitute_tam
  (declare (salience 900))
  (pada_info (group_head_id ?id)(H_tam  ?vib))
@@ -39,6 +41,7 @@
         (assert (hindi_id_order $?id1 ?word $?id2))
   )
  ;---------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (22-06-2011)
  (defrule substitute_vib
  (declare (salience 900))
  (pada_info (group_head_id ?id)(vibakthi ?vib))
@@ -51,6 +54,7 @@
         (assert (hindi_id_order $?id1 ?word $?id2))
   )
  ;---------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (22-06-2011)
  (defrule substitute_eng_wrd
  (declare (salience 850))
  ?f0<-(hindi_id_order $?id1 ?id $?id2)
@@ -60,6 +64,7 @@
         (assert (hindi_id_order $?id1 ?word $?id2))
   )
  ;---------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (22-06-2011)
  (defrule get_sentence
  (declare (salience 690))
  (id-last_word ?id ?wrd)
