@@ -3097,10 +3097,21 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         sd_verified (482)       small_sent_verified_sd  (65)    ber_verified(407)
  37. Updated Log
 
- 26-01-12
+ 27-01-12
  ========
  1. Modified 'OY' as 'oY' in following WSD files for patterns like 'jOYna' 
 	boss.clp	boycott.clp	john.clp	lounge.clp
 	polish.clp	spotlight.clp	torch.clp	box.clp
- 2. Updated changes_in_databases
- 3. Updated Log.
+ 2. Addedd "rm_prep_id" rule  in hindi_sent_reorder.clp
+ 3. insert_punctuation.clp
+        Modified :  punct_info_for_JJ, substitute_left_paren, get_phrase_group
+        Added    :  left_punct_for_JJ ,punc_for_S_grp1
+        Removed  :  rm_prep_id, get_PRN_group
+ 4. sd_combining_apostrophe.clp
+        Modified :  map_cons2, map_cons1
+        Added    :  get_left_right_punc1
+ 5. Updated changes_in_databases
+ 6. Updated abbr.sh abbr_browser.sh
+ 7. Modified verified_output
+ 8. Updated Log
+
