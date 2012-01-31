@@ -14,7 +14,9 @@
        -- clips
        -- OpenLogos MT (OpenLogos package contains README, steps to Install it)
        -- timeout    (this command is used to exit the CLIPS environment in the specific time.)
-    (NOTE:  Anusaaraka uses 'bash' instead of 'dash')
+       -- goldendict (optional but desirable to use for viewing dictionaries)
+    (NOTE:Check Readme for using 'goldendic' in miscellaneous/Dictionarys/Readme  
+          Anusaaraka uses 'bash' instead of 'dash')
 --------------------------------------------------------------------------------------------------------------
  2. Install:
     ========

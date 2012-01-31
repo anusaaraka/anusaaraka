@@ -77,6 +77,8 @@
  flex ir.lex
  gcc -o ir lex.yy.c -lfl 
  mv ir $HOME_anu_test/bin/
+ ./comp.sh ra_d8_wp_r
+ mv ra_d8_wp_r.out $HOME_anu_test/bin/roman_iscii
  gcc -o split_file.out   split_file.c 
  gcc -o chunker.out  chunker.c 
  ./comp.sh aper_chunker 
