@@ -17,7 +17,7 @@
  (printout fp "<body onload=\"register_keys()\">" crlf)
  (printout fp "<div id=\"navigation\">" crlf)
  (printout fp "<form action=\"\" onsubmit=\"goto_section(); return false;\">" crlf)
- (printout fp "<p><a id=\"translation\" href=\""?*filename*".html\" target=\"_new\"> Layered Output [English-order] </a><a id=\"help\" href=\"help.html\" target=\"_new\">Help</a><input type=\"text\" name=\"goto_section_value\" size=\"5\" /><input type=\"button\" value=\"Goto\" onclick=\"goto_section()\" /><input type=\"hidden\" name=\"no_of_rows\" value=\"2\" /><input type=\"button\" value=\"Show/Hide Rows...\" onclick=\"window.open('rows.html','ShowHideRowsWindow','top=200,left=200,height=500,width=300,location=no,menubar=no,toolbar=no,directories=no,statusbar=no');\" /><input type=\"checkbox\" name=\"numbers_value\" checked=\"checked\" onchange=\"toggle_numbers()\" />Numbers<input type=\"checkbox\" name=\"border_value\" checked=\"checked\" onchange=\"toggle_borders()\" />Borders</p>" crlf)
+ (printout fp "<p><a id=\"english_order\" href=\""?*filename*".html\" target=\"_new\">Layered Output [English-order]</a><a id=\"translation\" href=\""?*filename*"_trnsltn.html\" target=\"_new\"> Translation </a><a id=\"help\" href=\"help.html\" target=\"_new\">Help</a><input type=\"text\" name=\"goto_section_value\" size=\"5\" /><input type=\"button\" value=\"Goto\" onclick=\"goto_section()\" /><input type=\"hidden\" name=\"no_of_rows\" value=\"2\" /><input type=\"button\" value=\"Show/Hide Rows...\" onclick=\"window.open('rows.html','ShowHideRowsWindow','top=200,left=200,height=500,width=300,location=no,menubar=no,toolbar=no,directories=no,statusbar=no');\" /><input type=\"checkbox\" name=\"numbers_value\" checked=\"checked\" onchange=\"toggle_numbers()\" />Numbers<input type=\"checkbox\" name=\"border_value\" checked=\"checked\" onchange=\"toggle_borders()\" />Borders</p>" crlf)
  (printout fp "</form>" crlf)
  (printout fp "</div>" crlf)
  (printout fp "<div class=\"float_clear\"/>" crlf crlf)
@@ -25,23 +25,23 @@
 
 ;-------------------------------------------------------------------------------------------------
 
- (deffunction print_first_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_p ?r_p ?aper_op)
- (if (eq ?r_p -) then (bind ?r_p ""))
- (if (eq ?l_p -) then (bind ?l_p ""))
-
+ (deffunction print_first_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?eng_op)
  (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
- (printout fp "<table cellspacing=\"0\">"crlf"<tr class=\"row1\">" crlf )
- (if (= ?w_id 1) then
- (printout fp "<td class=\"number\">"?p_id"."?s_id".A</td>"))
- (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_p ?aper_op ?r_p" </td>" crlf "</tr>" crlf)
+ (printout fp "<table cellspacing=\"0\">"crlf"<tr class=\"row1\">" crlf)
+ (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".B</td>"))
+ (printout fp "<td class=\""?chnk_fr_htm"\">" ?eng_op "</td>"crlf"</tr>" crlf)
  )
 
 ;-------------------------------------------------------------------------------------------------
- 
-(deffunction print_second_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?eng_op)
- (printout fp "<tr class=\"row2\">" crlf)
- (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".B</td>"))
- (printout fp "<td class=\""?chnk_fr_htm"\">" ?eng_op "</td>"crlf"</tr>" crlf)
+
+ (deffunction print_second_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_p ?r_p ?aper_op)
+ (if (eq ?r_p -) then (bind ?r_p ""))
+ (if (eq ?l_p -) then (bind ?l_p ""))
+ (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
+ (printout fp "<tr class=\"row2\">" crlf )
+ (if (= ?w_id 1) then
+ (printout fp "<td class=\"number\">"?p_id"."?s_id".A</td>"))
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_p ?aper_op ?r_p" </td>" crlf "</tr>" crlf)
  )
 
 ;-------------------------------------------------------------------------------------------------
@@ -145,8 +145,8 @@
  (test (member$ ?id1 $?ids))
  =>
          (retract ?f)
-         (print_first_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_p ?r_p ?hin)
-         (print_second_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng)
+         (print_first_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng)
+         (print_second_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_p ?r_p ?hin)
          (print_third_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_p ?r_p ?hin)
          (assert (id-len (+ ?id 1) (- ?len 1))) 
  )
@@ -162,8 +162,8 @@
  (test (!= ?len 0))
  =>
          (retract ?f)
-         (print_first_row  ?p_id ?s_id ?id U - - ?hin)
-         (print_second_row  ?p_id ?s_id ?id U ?eng)
+         (print_first_row  ?p_id ?s_id ?id U ?eng)
+         (print_second_row  ?p_id ?s_id ?id U - - ?hin)
          (print_third_row  ?p_id ?s_id ?id U - - ?hin)
          (assert (id-len (+ ?id 1) (- ?len 1)))
  )
@@ -176,8 +176,8 @@
  (test (!= ?len 0)) 
  =>
          (retract ?f)
-         (print_first_row  ?p_id ?s_id ?id U - - - )
-         (print_second_row  ?p_id ?s_id ?id U - )
+         (print_first_row  ?p_id ?s_id ?id U - )
+         (print_second_row  ?p_id ?s_id ?id U - - - )
          (print_third_row  ?p_id ?s_id ?id U - - -)
          (assert (id-len (+ ?id 1) (- ?len 1)))
  )
@@ -191,7 +191,7 @@
  ?f<-(id-len ? 0)
  =>
  (retract ?f)
- (printout t "para-id " ?p_id " " ?s_id  crlf)
+ ;(printout t "para-id " ?p_id " " ?s_id  crlf)
  (if (and (= ?p_id 1) (= ?s_id 1)) then (printout fp "<div class=\"float_clear\"/>" crlf))
  (printout fp "<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form> " crlf)
 

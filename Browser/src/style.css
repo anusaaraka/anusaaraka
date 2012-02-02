@@ -107,3 +107,23 @@ div.bottom {
 div.float_clear {
   clear: both;
 }
+
+
+#translation
+{
+  float: right;
+  margin-right: 2em;
+}
+
+#english_order
+{
+  float: right;
+  margin-right: 2em;
+}
+
+#hindi_order
+{
+  float: right;
+  margin-right: 2em;
+}
+

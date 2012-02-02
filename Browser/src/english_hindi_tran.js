@@ -9,13 +9,13 @@ var rows_visibility = [
 ]; // The array can be of different size than the number of rows at hand
 
 var row_labels = [
-"Hindi  (A)",
-"English  (B)",
+"English  (A)",
+"Hindi  (B)",
 "Suggestions (C)"
 ];
 
 var row_descriptions = [
-"Shows Hindi Generation ",
 "Original English text",
+"Shows Hindi Generation ",
 "Shows the user suggestion"
 ];

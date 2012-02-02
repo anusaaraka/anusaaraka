@@ -74,7 +74,11 @@
                              (bind ?aper (str-cat ?val ""))
                         else 
                             (bind ?aper (str-cat ?aper "_" ?val))) )
-        (if (eq (length $?aper_op) 0) then (bind ?aper ""))
+        (if (eq (length $?aper_op) 0) then (bind ?aper "-D-")
+        (bind ?pos (member$ ?id (create$ $?pre ?id $?pos)))
+        (assert (hin_pos-src-eng_ids ?pos D ?id))
+        (assert (id-pos ?id))
+        )
   	(assert (Hindi_sen $?pre1 ?aper $?pos1))
  )
 

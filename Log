@@ -3097,37 +3097,40 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         sd_verified (482)       small_sent_verified_sd  (65)    ber_verified(407)
  37. Updated Log
 
- 31-01-12
+ 02-02-12
  ========
- 1. Modified 'OY' as 'oY' in following WSD files for patterns like 'jOYna' 
+  1. Modified 'OY' as 'oY' in following WSD files for patterns like 'jOYna' 
 	boss.clp	boycott.clp	john.clp	lounge.clp
 	polish.clp	spotlight.clp	torch.clp	box.clp
- 2. Addedd "rm_prep_id" rule  in hindi_sent_reorder.clp
- 3. insert_punctuation.clp
+  2. Addedd "rm_prep_id" rule  in hindi_sent_reorder.clp
+  3. insert_punctuation.clp
         Modified :  punct_info_for_JJ, substitute_left_paren, get_phrase_group
         Added    :  left_punct_for_JJ ,punc_for_S_grp1
         Removed  :  rm_prep_id, get_PRN_group
- 4. sd_combining_apostrophe.clp
+  4. sd_combining_apostrophe.clp
         Modified :  map_cons2, map_cons1	Added    :  get_left_right_punc1
- 5. hindi_sentence.clp
+  5. hindi_sentence.clp
         Modified : replace_hyphen_with_underscore
         Removed  : get_mng1,  hnd_mng_rt_lt, hnd_mng_lt_NONE, hnd_mng_rt_NONE and substitute_hnd_mng1
         Renamed  : get_mng  as get_apertium_mng  and get_mng2 as get_word_mng
- 6. prepare_apertium_input.clp
+  6. prepare_apertium_input.clp
         Modified :  verbal_adjective_breaking_tam ,default_id and default_id1
         Added    :  default_hnd_mng_rule
- 7. Removed to load "hindi_meanings.dat" file for hindi_sentence module in run_H_gen_sen.bat
- 8. Added miscellaneous directory inside anu_testing. 
+  7. Removed to load "hindi_meanings.dat" file for hindi_sentence module in run_H_gen_sen.bat
+  8. Added translation link in create_eng_ord_html.clp and create_hin_ord_html.clp file.
+  9. Changed the order in layered output so, modified english_hindi_tran.js and eng_hin_pos.clp files. 
+ 10. Added code for #english_order and #hindi_order instyle.css.
+ 11. Added miscellaneous directory inside anu_testing. 
      *It contains Dictionarys and TREES directories.
           --> Dictionarys :: iit-bombay, shabdanjali and wordnet along with Readme.
           --> TREES	  :: tree_viewer along with Readme. 
- 9. Updated anu_testing/README 
-10. Added default-iit-bombay-shabdanjali-dic.txt in Anu_data
-11. Removed ri.lex file
-12. Added code to generate roman_iscii in anu_compile.sh and anu_compile_64bit.sh. 
-13. Updated changes_in_databases
-14. Updated abbr.sh abbr_browser.sh
-15. Modified verified_output ber_ver_output and sd_ver_output
-16. Updated remove_out-files.sh
-17. Updated sd_verified (483)
-18. Updated Log
+ 12. Updated anu_testing/README 
+ 13. Added default-iit-bombay-shabdanjali-dic.txt in Anu_data
+ 14. Removed ri.lex file
+ 15. Added code to generate roman_iscii in anu_compile.sh and anu_compile_64bit.sh. 
+ 16. Updated changes_in_databases
+ 17. Updated abbr.sh abbr_browser.sh
+ 18. Modified verified_output ber_ver_output and sd_ver_output
+ 19. Updated remove_out-files.sh
+ 20. Updated sd_verified (483)
+ 21. Updated Log
