@@ -1453,18 +1453,18 @@ yA_huA_honA,m,s,a	huA_honA
 yA_huA_honA,m,s,m	huA_honA
 yA_huA_honA,m,s,u	huA_honA
 
-yA_huA_ho_sakawA_hE,f,p,a	yA_huA_ho_sakawA_hE
-yA_huA_ho_sakawA_hE,f,p,m	yA_huA_ho_sakawA_hE
-yA_huA_ho_sakawA_hE,f,p,u	yA_huA_ho_sakawA_hE
-yA_huA_ho_sakawA_hE,f,s,a	yA_huA_ho_sakawA_hE
-yA_huA_ho_sakawA_hE,f,s,m	yA_huA_ho_sakawA_hE
-yA_huA_ho_sakawA_hE,f,s,u	yA_huA_ho_sakawA_hE
-yA_huA_ho_sakawA_hE,m,p,a	yA_huA_ho_sakawA_hE
-yA_huA_ho_sakawA_hE,m,p,m	yA_huA_ho_sakawA_hE
-yA_huA_ho_sakawA_hE,m,p,u	yA_huA_ho_sakawA_hE
-yA_huA_ho_sakawA_hE,m,s,a	yA_huA_ho_sakawA_hE
-yA_huA_ho_sakawA_hE,m,s,m	yA_huA_ho_sakawA_hE
-yA_huA_ho_sakawA_hE,m,s,u	yA_huA_ho_sakawA_hE
+yA_huA_ho_sakawA_hE,f,p,a	huI_ho_sakawI_hEM
+yA_huA_ho_sakawA_hE,f,p,m	huI_ho_sakawI_ho
+yA_huA_ho_sakawA_hE,f,p,u	huI_ho_sakawI_hEM
+yA_huA_ho_sakawA_hE,f,s,a	huI_ho_sakawI_hE
+yA_huA_ho_sakawA_hE,f,s,m	huI_ho_sakawI_hE
+yA_huA_ho_sakawA_hE,f,s,u	huI_ho_sakawI_hUM
+yA_huA_ho_sakawA_hE,m,p,a	hue_ho_sakawe_hEM
+yA_huA_ho_sakawA_hE,m,p,m	hue_ho_sakawe_ho
+yA_huA_ho_sakawA_hE,m,p,u	hue_ho_sakawe_hEM
+yA_huA_ho_sakawA_hE,m,s,a	huA_ho_sakawA_hE
+yA_huA_ho_sakawA_hE,m,s,m	huA_ho_sakawA_hE
+yA_huA_ho_sakawA_hE,m,s,u	huA_ho_sakawA_hUM
 
 yA_jAwA_hE,f,p,a	jAwIM_hEM
 yA_jAwA_hE,f,p,m	jAwIM_hEM

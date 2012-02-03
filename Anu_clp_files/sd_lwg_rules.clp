@@ -171,10 +171,9 @@
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot ?verb ?id $?daut $?pos))
 )
 ;------------------------------------------------------------------------------------------------------------------------
-
 ;Added by Shirisha Manju (28-10-11)
 (defrule get_lwg_for_and
-(declare (salience 901))
+(declare (salience 902))
 (Head-Level-Mother-Daughters ?h ?l ?Mot $?d ?CC $?d1)
 (Node-Category  ?Mot    VP|SQ)
 (Node-Category  ?CC CC)
@@ -192,21 +191,56 @@
                 )
         )
 	(assert (Mother ?Mot))
+	(assert (aux_grp -))
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (31-01-12) 
+;She might have been reading and writing the book.
+;Until this year, the company had been steadily lowering its accident rate and picking up trade-group safety awards. 
+(defrule get_multiple_aux
+(declare (salience 901))
+?f2<-(daughter ? ?id)
+(Head-Level-Mother-Daughters ?h ?l ?Mot $? ?id $?d ?id1 ?CC $?d1)
+(Node-Category ?CC CC)
+?f1<-(root-verbchunk-tam-parser_chunkids root - ?id - ?id - ?id)
+?f0<-(aux_grp $?ids)
+=>
+	(retract ?f0 ?f1 ?f2)
+	(assert (aux_grp $?ids ?id))
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (31-01-12) 
+;She might have been reading and writing the book.
+;Until this year, the company had been steadily lowering its accident rate and picking up trade-group safety awards. 
+(defrule get_lwg_for_and_with_multiple_aux
+(declare (salience 900))
+(aux_grp - $?ids)
+(Head-Level-Mother-Daughters ?h ?l ?Mot $?ids $?d1 ?CC $?d2)
+(Node-Category ?CC CC)
+?f0<-(root-verbchunk-tam-parser_chunkids root - ?id - ?id - ?id)
+(test (or (member$ ?id $?d1)(member$ ?id $?d2)))
+(not (daughter ? $?id1))
+(test (neq (length $?ids) 0));I ate fruits, drank milk and slept.
+=>
+        (retract ?f0)
+        (assert (root-verbchunk-tam-parser_chunkids root - $?ids ?id - $?ids ?id - $?ids ?id))
+        (assert (id_grouped ?id))
 )
 ;------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (29-10-11)
 ;He may drink milk or eat apples.
 (defrule get_lwg_for_and_with_aux
-(declare (salience 901))
+(declare (salience 899))
 (Head-Level-Mother-Daughters ?h ?l ?Mot ?id $?d ?CC $?d1)
 (Node-Category ?CC CC)
 (daughter ? ?id)
 ?f0<-(root-verbchunk-tam-parser_chunkids root - ?id - ?id - ?id)
-?f1<-(root-verbchunk-tam-parser_chunkids root - ?id1 - ?id1 - ?id1)
+?f1<-(root-verbchunk-tam-parser_chunkids root - $?id1 - $?id1 - $?id1)
 (test (or (member$ ?id1 $?d)(member$ ?id1 $?d1)))
+(not (daughter ? $?id1))
 =>
 	(retract ?f1)
-	(assert (root-verbchunk-tam-parser_chunkids root - ?id ?id1 - ?id ?id1 - ?id ?id1))
+	(assert (root-verbchunk-tam-parser_chunkids root - ?id $?id1 - ?id $?id1 - ?id $?id1))
 	(assert (id_grouped ?id))
 )
 ;------------------------------------------------------------------------------------------------------------------------

@@ -3097,7 +3097,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         sd_verified (482)       small_sent_verified_sd  (65)    ber_verified(407)
  37. Updated Log
 
- 02-02-12
+ 03-02-12
  ========
   1. Modified 'OY' as 'oY' in following WSD files for patterns like 'jOYna' 
 	boss.clp	boycott.clp	john.clp	lounge.clp
@@ -3116,21 +3116,25 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
   6. prepare_apertium_input.clp
         Modified :  verbal_adjective_breaking_tam ,default_id and default_id1
         Added    :  default_hnd_mng_rule
-  7. Removed to load "hindi_meanings.dat" file for hindi_sentence module in run_H_gen_sen.bat
-  8. Added translation link in create_eng_ord_html.clp and create_hin_ord_html.clp file.
-  9. Changed the order in layered output so, modified english_hindi_tran.js and eng_hin_pos.clp files. 
- 10. Added code for #english_order and #hindi_order instyle.css.
- 11. Added miscellaneous directory inside anu_testing. 
+  7. sd_lwg_rules.clp
+        Added    : get_multiple_aux   get_lwg_for_and_with_multiple_aux
+        Modified : get_lwg_for_and_with_aux
+  8. Removed to load "hindi_meanings.dat" file for hindi_sentence module in run_H_gen_sen.bat
+  9. Added translation link in create_eng_ord_html.clp and create_hin_ord_html.clp file.
+ 10. Changed the order in layered output so, modified english_hindi_tran.js and eng_hin_pos.clp files. 
+ 11. Added code for #english_order and #hindi_order instyle.css.
+ 12. Added miscellaneous directory inside anu_testing. 
      *It contains Dictionarys and TREES directories.
           --> Dictionarys :: iit-bombay, shabdanjali and wordnet along with Readme.
           --> TREES	  :: tree_viewer along with Readme. 
- 12. Updated anu_testing/README 
- 13. Added default-iit-bombay-shabdanjali-dic.txt in Anu_data
- 14. Removed ri.lex file
- 15. Added code to generate roman_iscii in anu_compile.sh and anu_compile_64bit.sh. 
- 16. Updated changes_in_databases
- 17. Updated abbr.sh abbr_browser.sh
- 18. Modified verified_output ber_ver_output and sd_ver_output
- 19. Updated remove_out-files.sh
- 20. Updated sd_verified (483)
- 21. Updated Log
+ 13. Updated anu_testing/README 
+ 14. Added default-iit-bombay-shabdanjali-dic.txt in Anu_data
+ 15. Removed ri.lex file
+ 16. Added code to generate roman_iscii in anu_compile.sh and anu_compile_64bit.sh. 
+ 17. Updated changes_in_databases
+ 18. Updated abbr.sh abbr_browser.sh
+ 19. Modified verified_output ber_ver_output and sd_ver_output
+ 20. Updated remove_out-files.sh
+ 21. Updated sd_verified (483)
+ 22. Updated Log
+
