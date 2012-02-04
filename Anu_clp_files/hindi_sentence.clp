@@ -87,17 +87,6 @@
         (assert (hindi_id_order $?id1  $?wrd_analysis $?id2))
  )
  ;----------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (10-12-2011)
- (defrule get_word_mng
- (declare (salience 2300))
- (Parser_used Stanford-Parser)
- ?f1<-(id-word ?id ?mng)
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
- =>
-        (retract ?f0 ?f1)
-        (assert (hindi_id_order $?id1  ?mng $?id2))
- )
- ;----------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju
  ;When none worked satisfactorily , his assistant complained ," All our work is in vain ". 
  (defrule attach_emphatic
@@ -183,75 +172,6 @@
  	(retract ?f0) 
 	(assert (hindi_id_order $?id1  $?wrd_analysis  $?id2))
  )
- ;================================ Substituting english word if hindi meaning is not present =================
-
- ;Modified by Shirisha Manju (01-12-10)
- (defrule substitute_eng_word_lt_paran 
- (declare (salience 800))
- (id-left_punctuation ?id "left_paren")
- (id-right_punctuation ?id "NONE")
- ?f1<-(id-word ?id ?wrd)
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
- =>
-  	(retract ?f0 ?f1)
-	(assert (hindi_id_order $?id1 left_paren ?wrd $?id2))
- )
-
- (defrule substitute_eng_word_rt_paran
- (declare (salience 800))
- (id-right_punctuation ?id "right_paren")
- (id-left_punctuation ?id "NONE")
- ?f1<-(id-word ?id ?wrd)
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
- =>
-        (retract ?f0 ?f1)
-	(assert (hindi_id_order $?id1 ?wrd right_paren $?id2))
- )
-
- (defrule substitute_eng_word_lt_and_rt_paran
- (declare (salience 800))
- (id-left_punctuation ?id "left_paren")
- (id-right_punctuation ?id "right_paren")
- ?f1<-(id-word ?id ?wrd)
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
- =>
-        (retract ?f0 ?f1)
-        (assert (hindi_id_order $?id1 left_paren ?wrd right_paren $?id2))
- )
-
- (defrule substitute_eng_word_equal_paran
- (declare (salience 800))
- (id-right_punctuation ?id "equal_to")
- (id-left_punctuation ?id "NONE")
- ?f1<-(id-word ?id ?wrd)
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
- =>
-        (retract ?f0 ?f1)
-        (assert (hindi_id_order $?id1 ?wrd equal_to $?id2))
- )
- (defrule substitute_eng_word_left_paran2
- (declare (salience 800))
- (id-right_punctuation ?id ").")
- (id-left_punctuation ?id "left_paren")
- ?f1<-(id-word ?id ?wrd)
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
- =>
-        (retract ?f0 ?f1)
-        (bind ?wrd (explode$ (str-cat left_paren ?wrd)))
-        (assert (hindi_id_order $?id1 ?wrd $?id2))
- )
-
- (defrule substitute_eng_word
- (declare (salience 750))
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
- ?f1<-(id-word ?id ?wrd)
- (id-left_punctuation ?id ?)
- (id-right_punctuation ?id ?)
- =>
-        (retract ?f0 ?f1)
-        (assert (hindi_id_order $?id1 ?wrd $?id2))
- )
-
  ;---------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (07-02-11) 
  ; to deleted repeated ki in hindi sentence Ex: He thought that she may have missed the train.

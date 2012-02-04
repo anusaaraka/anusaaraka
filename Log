@@ -3097,7 +3097,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         sd_verified (482)       small_sent_verified_sd  (65)    ber_verified(407)
  37. Updated Log
 
- 03-02-12
+ 04-02-12
  ========
   1. Modified 'OY' as 'oY' in following WSD files for patterns like 'jOYna' 
 	boss.clp	boycott.clp	john.clp	lounge.clp
@@ -3111,30 +3111,34 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Modified :  map_cons2, map_cons1	Added    :  get_left_right_punc1
   5. hindi_sentence.clp
         Modified : replace_hyphen_with_underscore
-        Removed  : get_mng1,  hnd_mng_rt_lt, hnd_mng_lt_NONE, hnd_mng_rt_NONE and substitute_hnd_mng1
         Renamed  : get_mng  as get_apertium_mng  and get_mng2 as get_word_mng
+        Removed  : get_mng1,  hnd_mng_rt_lt, hnd_mng_lt_NONE, hnd_mng_rt_NONE and substitute_hnd_mng1
+ 		   get_word_mng, substitute_eng_word_lt_paran, substitute_eng_word_rt_paran, substitute_eng_word
+                   substitute_eng_word_lt_and_rt_paran, substitute_eng_word_equal_paran, substitute_eng_word_left_paran2
   6. prepare_apertium_input.clp
         Modified :  verbal_adjective_breaking_tam ,default_id and default_id1
         Added    :  default_hnd_mng_rule
   7. sd_lwg_rules.clp
         Added    : get_multiple_aux   get_lwg_for_and_with_multiple_aux
         Modified : get_lwg_for_and_with_aux
-  8. Removed to load "hindi_meanings.dat" file for hindi_sentence module in run_H_gen_sen.bat
-  9. Added translation link in create_eng_ord_html.clp and create_hin_ord_html.clp file.
- 10. Changed the order in layered output so, modified english_hindi_tran.js and eng_hin_pos.clp files. 
- 11. Added code for #english_order and #hindi_order instyle.css.
- 12. Added miscellaneous directory inside anu_testing. 
+  8. hindi_meaning.clp
+        Renamed default_mng as default_hindi_mng and Modified the rule
+        Added default_mng
+  9. Removed to load "hindi_meanings.dat" file for hindi_sentence module in run_H_gen_sen.bat
+ 10. Added translation link in create_eng_ord_html.clp and create_hin_ord_html.clp file.
+ 11. Changed the order in layered output so, modified english_hindi_tran.js and eng_hin_pos.clp files. 
+ 12. Added code for #english_order and #hindi_order instyle.css.
+ 13. Added miscellaneous directory inside anu_testing. 
      *It contains Dictionarys and TREES directories.
           --> Dictionarys :: iit-bombay, shabdanjali and wordnet along with Readme.
           --> TREES	  :: tree_viewer along with Readme. 
- 13. Updated anu_testing/README 
- 14. Added default-iit-bombay-shabdanjali-dic.txt in Anu_data
- 15. Removed ri.lex file
- 16. Added code to generate roman_iscii in anu_compile.sh and anu_compile_64bit.sh. 
- 17. Updated changes_in_databases
- 18. Updated abbr.sh abbr_browser.sh
- 19. Modified verified_output ber_ver_output and sd_ver_output
- 20. Updated remove_out-files.sh
- 21. Updated sd_verified (483)
- 22. Updated Log
-
+ 14. Updated anu_testing/README 
+ 15. Added default-iit-bombay-shabdanjali-dic.txt in Anu_data
+ 16. Removed ri.lex file
+ 17. Added code to generate roman_iscii in anu_compile.sh and anu_compile_64bit.sh. 
+ 18. Updated changes_in_databases
+ 19. Updated abbr.sh abbr_browser.sh
+ 20. Modified verified_output ber_ver_output and sd_ver_output
+ 21. Updated remove_out-files.sh
+ 22. Updated sd_verified (484)
+ 23. Updated Log
