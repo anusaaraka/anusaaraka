@@ -3097,7 +3097,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         sd_verified (482)       small_sent_verified_sd  (65)    ber_verified(407)
  37. Updated Log
 
- 04-02-12
+ 09-02-12
  ========
   1. Modified 'OY' as 'oY' in following WSD files for patterns like 'jOYna' 
 	boss.clp	boycott.clp	john.clp	lounge.clp
@@ -3134,11 +3134,18 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
           --> TREES	  :: tree_viewer along with Readme. 
  14. Updated anu_testing/README 
  15. Added default-iit-bombay-shabdanjali-dic.txt in Anu_data
- 16. Removed ri.lex file
- 17. Added code to generate roman_iscii in anu_compile.sh and anu_compile_64bit.sh. 
- 18. Updated changes_in_databases
- 19. Updated abbr.sh abbr_browser.sh
- 20. Modified verified_output ber_ver_output and sd_ver_output
- 21. Updated remove_out-files.sh
- 22. Updated sd_verified (484)
- 23. Updated Log
+ 16. Added default-iit-bombay-shabdanjali-dic_firefox.txt dictionary in Anu_data,
+     Added file     : default-iit-bombay-shabdanjali-dic.clp
+     Modified files : run_modules_std.bat, run_modules_ol.bat, run_modules_link.bat, anu_compile.sh, run_modules_link.bat, run_modules_ol.bat, anu_compile_64bit.sh. 
+ 17. Changed the order and added a new layer (Dictionary) in layered output and added translation link ,
+     Modified  :: create_eng_ord_html.clp,create_hin_ord_html.clp, english_hindi.css and english_hindi.js files.
+ 18. Updated compound_phrase.txt file Added "#_Structure_of_the_file:" information.
+ 19. Added new file frame_tran.sh and updated anu_browser.sh file. 
+ 20. Removed ri.lex file
+ 21. Added code to generate roman_iscii in anu_compile.sh and anu_compile_64bit.sh. 
+ 22. Updated changes_in_databases
+ 23. Updated abbr.sh abbr_browser.sh
+ 24. Modified verified_output ber_ver_output and sd_ver_output
+ 25. Updated remove_out-files.sh
+ 26. Updated sd_verified (484)
+ 27. Updated Log
