@@ -66,6 +66,22 @@
  =>
  	(assert (id-left_punct-right_punct ?id - -))
  )
+
+ ;---------------------------------------------------------------------------------------------------
+ ;convert Apertium_output wx notation to utf8.
+ (defrule convert_wx_to_utf8
+ (declare (salience 5999))
+ ?f<-(hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng)
+ (not (id_wx_to_utf_converted ?id))
+ (test (and (neq ?hin -D-) (neq ?hin -U-)))
+ =>
+ (retract ?f)
+        (bind ?wx_to_utf8 (wx_utf8 ?hin))
+        (assert (hin_pos-hin_mng-eng_ids-eng_words ?id ?wx_to_utf8 $?grp ?id1 ?eng))
+        (assert (id_wx_to_utf_converted ?id))
+ )
+ ;---------------------------------------------------------------------------------------------------
+
  
  (defrule cntrl_fact_for_chunk
  (declare (salience 6000))

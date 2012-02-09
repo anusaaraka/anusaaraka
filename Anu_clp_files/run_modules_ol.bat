@@ -490,4 +490,13 @@
  (assert (English-list))
  (run)
  (save-facts "catastrophe.dat" local sen_type-id-phrase)
+ ;--------------------------------------------------------------------------
+ (load "global_path.clp")
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/default-iit-bombay-shabdanjali-dic.clp"))
+ (load ?*path*)
+ (load-facts "revised_root.dat")
+ (run)
+ (save-facts "dictionay_mng.dat" local)
+ (clear)
+ ;--------------------------------------------------------------------------
  (exit)

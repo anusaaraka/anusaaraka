@@ -1,3 +1,5 @@
+#_Structure_of_the_file:        
+#English-compound-word	Hindi-meaning	Hindi-paxasUwra	category	Head_position	Root/Word-meaning(meaning-type)
 americanize	amarIkI_jEsA_bananA#amarIkI_jEsA_bananA#noun#1#RM
 americanise	amarIkI_jEsA_bananA#amarIkI_jEsA_bananA#noun#1#RM
 ,_in_short_,	saMkRipwa_meM#saMkRipwa_meM#noun#4#RM
