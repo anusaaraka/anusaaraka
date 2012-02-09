@@ -13,6 +13,7 @@
 
  cp $3/$2 $3/tmp/$2_tmp/
  sh $1/shell_scripts/frame.sh $2 $4
+ sh $1/shell_scripts/frame_tran.sh $2 $4
 
  mkdir $3/tmp/$2_tmp/anu_html
  #cp $1/Browser/img.php $1/Browser/val.js $3/tmp/$2_tmp/anu_html/
