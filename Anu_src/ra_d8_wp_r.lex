@@ -4,12 +4,12 @@ OPERATOR_V V
 OPERATOR_Y Y
 SPECIAL_CATEGORY [zMH]
 VOWEL_A a
-VOWEL_REMAINING [AiIuUqiQLeEoO]
+VOWEL_REMAINING [AiIuUqeEoO]
 CONSONANT [kKgGfcCjJFtTdDNwWxXnpPbBmyrlvSRsh]
-ROM_WORD [A-Za-z0-9]+
+ROM_WORD @[A-Za-z0-9]+
 %x CONS 
 %%
-@{ROM_WORD}				{printf("%s",yytext+1);}
+{ROM_WORD}				{ECHO;}
 
 {CONSONANT}				{
 					printf("%c",map[yytext[0]]);BEGIN CONS;
@@ -90,11 +90,5 @@ ROM_WORD [A-Za-z0-9]+
 
 {VOWEL_A}{OPERATOR_Y}+			{
 					printf("%c",map[yytext[0]]+yyleng);
-					}
-\.Y					{
-					printf("κι");
-					}
-\.					{
-					printf("%c",yytext[0]);
 					}
 

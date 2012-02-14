@@ -54,6 +54,10 @@
 	generally 	prAya		as	prAyaH		(Rajini 19-12-11) 
 	shareholder     ihassexAra	as	hissexAra	(Rajini 19-12-11)
 	shareholding    ihassexArI	as	hissexArI	(Rajini 19-12-11)
+        Substituted "OY" as "oY" in 318 entries like		(suggested by Chaitanya Sir (26-01-12)
+		John	jOYna	as	joYna
+		MC	kOYMgaresa_saxasya	as	koYMgaresa_saxasya
+
  2. Added :: 
 	attorney-at-law   pramANiwa_aBikarwA
 	Delhi	          xillI
@@ -66,6 +70,9 @@
 	ill-used        xurvyavahariwa_huA (Meena 2.6.11) Ex.Within the relationship he feels ill-used most of the time.
 	free-fall       besahArA_giranA    (Meena 28.7.11)
         small-town      sImiwa_jFAna_Ora_vicAroM_vAlA (Meena 14.9.11)
+	mela		melA (suggested by  Rajini (17-01-12)
+			Ex: Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival
+	viewer  	xarSaka (suggested by  Rajini (04-02-12) Ex: CNN wants to change its viewers' habits. 
   3. Removed ::
 
         motion pravarwana_kara 				(suggested by Meenaji (19-11-10))
@@ -118,28 +125,30 @@
         "pANdulipi"       f      Meena(13.4.11)  
         "SrqMKalA         f      Meena(23.4.11)
   3. Removed :
-           "mana"   (19-11-09)   Suggested by sheetal Eg: The big question on everybody's mind is who killed OJ .
-           "vAlA"   (24-11-09)   Suggested by Meenaji Eg: Which one is right for me ?  
-           "lAla"   (09-12-09)   Suggested by Sheetal Eg: If we heat iron it becomes red .
-           "yA"     (05-02-10)   Suggested by sukhada 
-           "pawi"   (24-02-10)   Suggested by sukhada 
-           "mAmalA  (02-03-10)
-           "kala"   (10-03-10)   Suggested by sukhada
-           "mAla"   (17-04-10)   Suggested by sukhada & Chaitanya Sir Eg:They are building a gigantic mall five miles from here . 
-           "nIlA"   (20-04-10)   Suggested by sukhada  Eg:The sky is blue , so it is likely that Joe will come .
-           "hIrA"   (25-01-11)   Suggested by Meena    Eg:Diamonds are valuable. 
-           "mEca"   (24.02.11)   Suggested by sukhada  Eg:There was a football match in the school yesterday.
-       "jvAlAmuKI"  (24-02-11)   Suggested by Venna 24-02-11 Eg: Volcano could erupt at any time.
-	   "xevawA" (25-06-11)   Suggested by Chaitanya Sir Eg: God helps those who help themselves .
-           "GanA"   (29.7.11)    Meena ex.Uttar pradesh is a land of cultural and geographical diversity, which is blessed by an innumerable perennial rivers, dense forests, and fertile soil.
-           "GAtA"   (18.8.11)    Meena Ex.He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan.
-           "harA"   (04-10-11)   Meena Ex:The paper turned from red to green.  
-	   "baDiyA" (16-11-12)   Sukhada Ex:The venture's importance for Thomson is great.  
+	"mana"   (19-11-09)   Suggested by sheetal Eg: The big question on everybody's mind is who killed OJ .
+        "vAlA"   (24-11-09)   Suggested by Meenaji Eg: Which one is right for me ?  
+        "lAla"   (09-12-09)   Suggested by Sheetal Eg: If we heat iron it becomes red .
+        "yA"     (05-02-10)   Suggested by sukhada 
+        "pawi"   (24-02-10)   Suggested by sukhada 
+        "mAmalA  (02-03-10)
+        "kala"   (10-03-10)   Suggested by sukhada
+        "mAla"   (17-04-10)   Suggested by sukhada & Chaitanya Sir Eg:They are building a gigantic mall five miles from here         "nIlA"   (20-04-10)   Suggested by sukhada  Eg:The sky is blue , so it is likely that Joe will come .
+        "hIrA"   (25-01-11)   Suggested by Meena    Eg:Diamonds are valuable. 
+        "mEca"   (24.02.11)   Suggested by sukhada  Eg:There was a football match in the school yesterday.
+ 	"jvAlAmuKI"  (24-02-11)   Suggested by Venna 24-02-11 Eg: Volcano could erupt at any time.
+	"xevawA" (25-06-11)   Suggested by Chaitanya Sir Eg: God helps those who help themselves .
+        "GanA"   (29.7.11)    Meena ex.Uttar pradesh is a land of cultural and geographical diversity, which is blessed by an innumerable perennial rivers, dense forests, and fertile soil.
+        "GAtA"   (18.8.11)    Meena Ex.He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan.
+        "harA"   (04-10-11)   Meena Ex:The paper turned from red to green.  
+	"baDiyA" (16-12-11)   Sukhada Ex:The venture's importance for Thomson is great.  
+	"melA"   (17-01-12)   Suggested by Sukhada Ex: Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival. 	   
+	"vArRika"			" same example as mentioned above"
 
   changes in Phrv.txt 
   ===================
   1.  Added
-       divide_up       bAzta_xe
+	divide_up       bAzta_xe
+	come back       vApasa_AnA  (suggested by (Rajini 20.01.12)) Ex : Let Abraham come back.
 
 
   changes in hindi_tam_rules.clp (tam.csv)
@@ -248,6 +257,7 @@ changes in samAsa-new.txt
 	open to	ke_liye_KolanA	ke_liye_KolanA	noun	2	RM	(Sukhada 29.8.11)
 	used to         AxI            AxI      noun    2       RM      (suggested by (Sukhada 24.9.11))
 	small town      sImiwa_jFAna_Ora_vicAroM_vAlA   sImiwa_jFAna_Ora_vicAroM_vAlA   noun    2       RM
+	come back	vApasa_AnA  vApasa_AnA	noun	2	RM     (suggested by (Rajini 20.01.12))
 
 
  3. Modified
@@ -291,7 +301,9 @@ changes in samAsa-new.txt
      deficit financing		xAte_kI_vwwi_vyavasWA	as	deficit financing	GAte_kI_vwwi_vyavasWA  (   "  )
      overall deficit		samagra_xAtA		as	overall deficit		samagra_GAtA           (   "  )
      revenue deficit		rAjasva_xAtA		as	revenue deficit		rAjasva_GAtA           (   "  )
-
+ 13. Substituted "OY" as "oY" in 503 entries like            (suggested by Chaitanya Sir (26-01-12)
+	ASCII_font      AskI_PZOYnta#AskI_PZOYnta#noun#2#RM  as AskI_PZoYnta#AskI_PZoYnta#noun#2#RM
+ 
 
  changes in Complete_sentence.txt
  ================================
@@ -313,6 +325,21 @@ changes in samAsa-new.txt
   Modified :
 	yA_huA_hE,m,s,u huA_hEM"  as  "yA_huA_hE,m,s,u huA_hUz (Suggested by sheetal(10-12-09))
 	for all cases (Meena 13.4.11)
+	yA_huA_ho_sakawA_hE,f,p,a	yA_huA_ho_sakawA_hE  as huI_ho_sakawI_hEM
+					Similarly for all the entries according to GNP suggested by Sukhada
+
+
+  Removed  : 
+	0_sakawA_               (all the entries for 0_sakawA_         ) Suggested by sukhada(19-01-12)
+	nA_kI_himmahE           (       "          nA_kI_himmahE       )          "
+	nahIM_cAhiye_honA_kA_nA (       "    nahIM_cAhiye_honA_kA_nA   )          "
+	ne_kI_jarUWawa_pada_sakawI_hE ( " ne_kI_jarUWawa_pada_sakawI_hE) Suggested by Rajini(19-01-12)
+
+  Removed yA_jAnA_hE and yA_jAnA_WA (all the entries) and Added yA_jAnA  (Suggested by Chaitanya Sir (13-01-2012) Ex: They were to be captured. )
+  Removed the following repeated entries:  (Done by Manju (19-01-12))
+	nA_padegA	ne_kI_jarUrawa_hE	wA_rahanA_cAhiye_WA	nA_cAhawA_hE
+	nA_cAhiye	yA_jAnA_cAhiye		nA_hE			nA_hogA
+	 
   
   changes in animate_list.txt
   ===========================
@@ -369,7 +396,9 @@ changes in samAsa-new.txt
    (removed "/" at the  end. Due to this we get problem in loading this in Clips. Eg: The delicately lyrical tone of the cello contrasted with the fiercely percussive piano chords.)
 
    industrials    Oxyogika~prawiBUwiyAM		as	Seyara{Oxyogika_kampaniyoM_ke} (Suggested by Meenaji 24-05-11)
-
+   Substituted 'OY' as 'oY' in 488 entries like 	(Suggested by Chaitanya Sir (26-01-12)
+	       microsoft	mAikrosOYPta	as	mAikrosoYPta	
+	       John's		jOYna~kA	as	joYna~kA	
   Changes in verbal_adj.txt
   =========================
   Added :  sWiwa	1 (suggested by Meena 04-03-11)
@@ -460,8 +489,26 @@ Modified:
 
  Changes in hindi_default_tam.txt
  ==================================
- Modified        may_need_to_0   nA_kI_jarUWawa_pada_sakawI_hE-0-0   as  may_need_to_0   ne_kI_jarUWawa_pada_sakawI_hE-ko-0 (by Meena 13-04-11)                     
- Added 		0		wA_hE
+ Modified :
+ --------
+        may_need_to_0   nA_kI_jarUWawa_pada_sakawI_hE-0-0   as  may_need_to_0   ne_kI_jarUWawa_pada_sakawI_hE-ko-0 (by Meena 13-04-11)                     
+	may_need_to_0  ne_kI_jarUWawa_pada_sakawI_hE-ko-0  as  may_need_to_0 ne_kI_jarUrawa_pada_sakawI_hE-ko-0 (by Manju 26-01-12)
 
+ Added    :
+ -----
+ 	0			wA_hE
+	used_to_be_en	yA_jAwA_WA-0-0  (Suggested by Rajini 17-01-12) Ex: She used to be organized.
+	needs_to_be_en	yA_jAnA_hE-0-0              "                  Ex: That's the way business used to be done and that is the way business needs to be done.
+
+ Removed :
+ -------
+	1. Removed the below tams to get only let_0 tam and the pronouns/nouns/Proper_nouns meaning are handled in WSD
+	   Suggested by Chaitanya Sir (20-01-12)
+	 	Let_her_0       nA_usako_xo-0-0
+		Let_him_0       nA_usako_xo-0-0
+		Let_me_0        wA_hUz_mEM_lAie-0-0
+		Let_them_0      nA_unako_xo-0-0
+		Let_us_0        caliye_hama-0-subj
+		let_us_0        subj-0-caliye_hama
 
 

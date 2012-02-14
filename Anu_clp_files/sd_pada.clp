@@ -54,7 +54,7 @@
  ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?NP $?pos)
  ?f2<-(Head-Level-Mother-Daughters ?h ? ?NP $?daut)
  (Node-Category  ?Mot    NP|WHNP|ADJP|PRT|ADVP|NX) 
- (Node-Category  ?NP     NN|DT|JJ|JJS|JJR|NNS|VBN|ADJP|NNP|PDT|RBS|RB|EX|CD|WDT|VBG|QP|FW|NX) ;Added NX by Roja for latest stanford version-2011-12-22. Ex : He could hear a faint sound from the bushes.
+ (Node-Category  ?NP     NN|DT|JJ|JJS|JJR|NNS|VBN|ADJP|NNP|PDT|RBS|RB|EX|CD|WDT|VBG|QP|FW|NX|PRN) ;Added NX by Roja for latest stanford version-2011-12-22. Ex : He could hear a faint sound from the bushes.
  =>
 	(retract ?f1 ?f2)
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?daut $?pos))
@@ -64,7 +64,7 @@
  ;Are a dog and a cat here?  I like dogs as well as cats
  ;CityFed's president and chief executive officer, John Atherton, said the loss stems from several factors.
  (defrule get_and_NP_group
- (declare (salience 1400))
+ (declare (salience 1410))
  ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?NP $?pos ?CC $?p1 ?NP1 $?p2)
  (Node-Category  ?Mot    NP|ADJP|PRT|ADVP|NX)
  (Node-Category  ?NP    NP|NX)
@@ -80,17 +80,18 @@
  ;----------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (09-11-11)
  ;Uttar pradesh is a land of cultural and geographical diversity, which is blessed by an innumerable perennial rivers, dense forests, and fertile soil. 
+ ;By Road Agra is connected to Mathura (56 kms), Delhi (203 kms), Gwalior (118 kms), Jaipur (237 kms) and several other major cities.
  (defrule get_and_NP_group1
  (declare (salience 1300))
  ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?NP $?pos ?CC $?d)
  (Node-Category  ?Mot    NP|ADJP|PRT|ADVP|NX)
  (Node-Category  ?NP    NP|NX)
  (Node-Category  ?CC    CC|CONJ)
- ?f2<-(Head-Level-Mother-Daughters ?w&~'s ? ?NP $?daut)
+ ?f2<-(Head-Level-Mother-Daughters ?w&~'s ? ?NP $?daut) ;SOUTH AFRICA FREED the ANC's Sisulu and seven other political prisoners. 
  ?f3<-(Head-Level-Mother-Daughters ? ? ?CC $?con ?c)
  =>
-        (retract ?f1 ?f2 ?f3 )
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?daut $?pos $?con ?c $?d))
+        (retract ?f1 ?f2)
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?daut $?pos ?CC $?d))
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (08-11-11)
@@ -113,7 +114,7 @@
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?VP $?pre ?VP1 $?pos)
  (Node-Category  ?VP  VP)
  ?f2<-(Head-Level-Mother-Daughters ? ? ?VP1 ?d)
- (Node-Category  ?VP1    VB|VBG)
+ (Node-Category  ?VP1    VB|VBG|VBN)
  =>
         (retract ?f1 ?f2)
         (assert (Head-Level-Mother-Daughters ?h ?l ?VP $?pre ?d $?pos))
@@ -168,7 +169,7 @@
  ;----------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (07-11-11)
  ;This is the way to go. I gave a book to him.
- (defrule to-infinitive_pada
+ (defrule to_infinitive_pada
  (declare (salience 900))
  (Head-Level-Mother-Daughters  ?  ?  $? ?TO ?VP)
  (Node-Category ?TO TO)
@@ -365,17 +366,24 @@
 	(modify ?f1 (group_head_id ?id)(pada_head ?id))
   )
   ;----------------------------------------------------------------------------------------------------------------------
-  ;The consortium was put together by Hoare Govett, the London-based investment banking company that is a subsidiary of Security Pacific Corp.
-  (defrule pada_for_comma
+  ; Added by Shirisha Manju Suggested by Chaitanya Sir
+  ; The consortium was put together by Hoare Govett, the London-based investment banking company that is a subsidiary of Security Pacific Corp.
+  ; Modified the rule to check "saMjFA" in group_ids instead of head id for the sentence below : 
+  ;            Kaufman and Broad, a home building company, declined to identify the institutional investors. 
+  (defrule pada_for_samAnAXikaraNa
   (declare (salience 300))
   (prep_id-relation-anu_ids   -   saMjFA-saMjFA_samAnAXikaraNa  ?saMjFA ?samA)
-  ?f0<-(pada_info (group_head_id ?saMjFA) (group_cat PP) (group_ids $?id ) (preposition ?prep))
+;  ?f0<-(pada_info (group_head_id ?h)(group_cat PP) (group_ids $?d ?saMjFA $?d1)(preposition ?prep)) 
+  ?f0<-(pada_info (group_head_id ?saMjFA)(group_cat PP) (group_ids $?d)(preposition ?prep)) 
   ?f1<-(pada_info (group_head_id ?samA) (group_cat PP) (group_ids $?id1)) 
+;  (test (neq ?h ?samA))
   =>
-	(retract ?f0 ?f1)
+	(retract ?f1) 
         (print_in_ctrl_fact_files  ?samA)
-        (modify ?f1 (group_ids $?id $?id1)(preposition ?prep))
-	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    pada_for_comma    "?samA"  PP	"(implode$ $?id)" "(implode$ $?id1)"  "?prep ")" crlf)
+;        (modify ?f0 (group_ids $?d ?saMjFA $?d1  $?id1)(preposition ?prep))
+        (modify ?f0 (group_ids $?d $?id1)(preposition ?prep))
+;	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    pada_for_comma    "?samA"  PP	"(implode$ $?d)" "?saMjFA"  "(implode$ $?d1)" "(implode$ $?id1)"  "?prep ")" crlf)
+	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    pada_for_comma    "?samA"  PP	"(implode$ $?d)" "(implode$ $?id1)"  "?prep ")" crlf)
   )	
   ;----------------------------------------------------------------------------------------------------------------------
   ;Added by Shirisha Manju (09-11-11)

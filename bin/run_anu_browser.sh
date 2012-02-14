@@ -13,6 +13,7 @@
 
  cp $3/$2 $3/tmp/$2_tmp/
  sh $1/shell_scripts/frame.sh $2 $4
+ sh $1/shell_scripts/frame_tran.sh $2 $4
 
  mkdir $3/tmp/$2_tmp/anu_html
  #cp $1/Browser/img.php $1/Browser/val.js $3/tmp/$2_tmp/anu_html/
@@ -23,5 +24,5 @@
 # cp cautions.js $4
  cd src
 # cp *.html *.js *.css $4
- cp style.css english_hindi.css script.js open.js english_hindi.js shabdanjali.js rows.html help.html popup.css effects.js prototype.js dragdrop.js popup.js cautions.js $4
+ cp style.css english_hindi.css script.js open.js english_hindi.js shabdanjali.js rows.html help.html popup.css effects.js prototype.js dragdrop.js popup.js cautions.js english_hindi_tran.js english_hindi_tran.css $4
 

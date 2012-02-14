@@ -334,6 +334,7 @@
  (load-facts "wsd_facts_output.dat")
  (load-facts "pada_id_info.dat")
  (load-facts "meaning_to_be_decided.dat")
+ (load-facts "cat_consistency_check.dat")
  (run)
  (save-facts "hindi_tam_info.dat" local pada_info)
  (clear)
@@ -354,6 +355,7 @@
  (load-facts "idiomatic_expr.dat")
  (load-facts "original_word.dat")
  (open "hindi_meanings_tmp.dat" fp "a")
+ (open "hindi_meanings_tmp1.dat" fp1 "a")
  (run)
  (clear)
  ;----------------------------------------------------------------------
@@ -489,7 +491,7 @@
  (load-facts "parser_type.dat")
  (open "hindi_id_reorder_debug.dat" h_id_reorder_fp "a")
  (run)
- (save-facts "hindi_id_order.dat" local hindi_id_order)
+ (save-facts "hindi_id_order.dat" local hindi_id_order) 
  (clear)
  ;--------------------------------------------------------------------------
  ; prepare Apertium input for final hindi word generation.
@@ -547,4 +549,14 @@
  (assert (English-list))
  (run)
  (save-facts "catastrophe.dat" local sen_type-id-phrase)
+ ;--------------------------------------------------------------------------
+ (load "global_path.clp")
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/default-iit-bombay-shabdanjali-dic.clp"))
+ (load ?*path*)
+ (load-facts "revised_root.dat")
+ (run)
+ (save-facts "dictionay_mng.dat" local)
+ (clear)
+ ;--------------------------------------------------------------------------
  (exit)
+

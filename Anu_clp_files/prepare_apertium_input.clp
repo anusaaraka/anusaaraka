@@ -73,7 +73,6 @@
  (defrule default_id
  (declare (salience 1500))
  ?f0<-(id-HM-source ?id - ?)
- (not (mng_has_been_decided ?id))
  (pada_info (group_ids $? ?id $?)(vibakthi 0))
   =>
         (retract ?f0)
@@ -86,7 +85,6 @@
  (defrule default_id1
  (declare (salience 1500))
  ?f0<-(id-HM-source ?id - ?)
- (not (mng_has_been_decided ?id))
  (pada_info (group_ids $?ids ?h ))
  (test (and (member$ ?id $?ids) (neq ?id ?h)))
   =>
@@ -550,6 +548,8 @@
  ;====================================== VP rule for root and tam =========================================================
  ;Added by Mahalaxmi (23-09-09)
  ;He is not related to me.
+ ;Modified by Shirisha Manju (27-01-12) --removed loop to retract the ids and changed the input pattern
+ ;At Quantum, which is based in New York, the trouble is magnified by the company's heavy dependence on plastics.
  (defrule verbal_adjective_breaking_tam
  (declare (salience 800))
  (id-word ?id ?word)
@@ -559,19 +559,12 @@
  (test (neq (gdbm_lookup "verbal_adj.gdbm" ?hnd_mng) "FALSE"))
  (test (neq (gdbm_lookup "verbal_adj_tams.gdbm" ?suf) "FALSE"))
  =>
-     (retract ?f0)
-     (bind ?str1 (gdbm_lookup "verbal_adj_tams.gdbm" ?suf))
-     (printout ?*A_fp5* "(id-Apertium_input " ?id " "?hnd_mng")" crlf)
-     (printout ?*A_fp5* "(id-Apertium_input " (nth$ (length $?ids) $?ids) " ^"?str1"<cat:v><gen:"?gen"><num:"?num"><per:"?per"><tam:"?str1">$)" crlf)
-     (printout ?*aper_debug-file* "(id-Rule_name  "?id "  verbal_adjective1 )" crlf)
-     (printout ?*aper_debug-file* "(id-Rule_name  "(nth$ (length $?ids) $?ids) "  verbal_adjective1 )" crlf)
-     (assert (mng_has_been_decided (nth$ (length $?ids) $?ids)))
-     (loop-for-count (?i 1 (- (length $?ids) 1))
-                     (bind ?j (nth$ ?i $?ids))
-                     (assert (mng_has_been_decided ?j))
-                     (printout ?*A_fp5* "(id-Apertium_input " ?j "  )" crlf)
-       )
-    )
+     	(retract ?f0)
+     	(bind ?str1 (gdbm_lookup "verbal_adj_tams.gdbm" ?suf))
+	(printout ?*A_fp5* "(id-Apertium_input "?id " root:"?hnd_mng"_"?str1",tam:"?str1",gen:"?gen",num:"?num ",per:"?per")"  crlf) 
+     	(printout ?*aper_debug-file* "(id-Rule_name  "?id "  verbal_adjective1 )" crlf)
+     	(printout ?*aper_debug-file* "(id-Rule_name  "(nth$ (length $?ids) $?ids) "  verbal_adjective1 )" crlf)
+  )
   ;------------------------------------------------------------------------------------------------------------------------
   ; I saw him telling her about the party .
   ; Added 'viSeRya-kqxanwa_viSeRaNa'  ex. I have been running about all morning trying to find you. (Meena 12.5.11)
@@ -1239,4 +1232,16 @@
 	)
 	(printout ?*aper_debug-file* "(id-Rule_name  "?id1 "  PP_rule_default )" crlf)
   )
-
+ ;------------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (27-01-12)
+ ;If you use that strategy, he will wipe you out.
+ (defrule default_hnd_mng_rule
+ (declare (salience -300))
+ ?f1<-(id-HM-source ?id ?h_word ?)
+ =>
+        (retract ?f1)
+        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?h_word ")" crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?id "  default_hnd_mng_rule)" crlf)
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ 

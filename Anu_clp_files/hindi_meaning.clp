@@ -412,26 +412,33 @@
 	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?h_word "   WSD_root_mng "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
- (defrule default_mng
+ ;Modified by Shirisha Manju (04-02-12) removed if condition to check for "number" in action part instead added in rule part
+ (defrule default_hindi_mng
  (declare (salience 5500))
  (id-root ?id ?rt)
  (id-original_word ?id  ?original_wrd)
  ?mng<-(meaning_to_be_decided ?id)
+ (test (neq (numberp ?rt) TRUE))
+ =>
+	(bind ?a (gdbm_lookup "default_meaning_frm_oldwsd.gdbm" ?rt))
+        (if (neq ?a "FALSE") then
+		 (retract ?mng)
+                 (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?a"   Default)" crlf)
+                 (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?a"   Default "?id")" crlf)
+        )
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (04-02-12)
+ ;That would be the lowest level since the early 1970s.
+ ;Seven of nine states have grown each year since 1980, including New York, which lost 4% of its population during the 1970s.
+ (defrule default_mng
+ (declare (salience 1000))
+ (id-original_word ?id  ?original_wrd)
+ ?mng<-(meaning_to_be_decided ?id)
  =>
         (retract ?mng)
-        (if (neq (numberp ?rt) TRUE) then ;Modified by Roja (11-03-11). Instead of ?original_wrd testing with ?rt. Ex: The idea of predators lurking on street corners was simply something that was not part of the collective consciousness of early 1960's America.
-                (bind ?a (gdbm_lookup "default_meaning_frm_oldwsd.gdbm" ?rt))
-                (if (eq ?a "FALSE") then
-                        (printout ?*hin_mng_file* "(id-HM-source   "?id"    @"?original_wrd"   Original_word)" crlf)
-                        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"    @"?original_wrd"   Original_word "?id")" crlf)
-                else
-                        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?a"   Default)" crlf)
-                        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?a"   Default "?id")" crlf)
-                )
-        else
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"    @"?original_wrd"   Original_word)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"    @"?original_wrd"   Original_word "?id")" crlf)
-        )
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"    @"?original_wrd"   Original_word)" crlf)
+	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"    @"?original_wrd"   Original_word "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  (defrule end

@@ -6,12 +6,12 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id lOYMja))
+(assert (id-wsd_root_mng ?id loYMja))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lounge.clp 	lounge0   "  ?id "  lOYMja )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lounge.clp 	lounge0   "  ?id "  loYMja )" crlf))
 )
 
-;"lounge","N","1.lOYMja"
+;"lounge","N","1.loYMja"
 ;A lot of people were waiting at the airport lounge to get some news of the hijacked plane.
 ;--"2.bETaka"
 ;She has furnished her lounge very tastefully.

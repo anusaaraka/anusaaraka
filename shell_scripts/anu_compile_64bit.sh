@@ -56,6 +56,8 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/idioms.gdbm < idioms.txt
  echo "Creating compound_phrase.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/compound_phrase.gdbm < compound-matching/compound_phrase.txt
+ echo "Creating default-iit-bombay-shabdanjali-dic.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic.gdbm < default-iit-bombay-shabdanjali-dic.txt
 
  cd vb_root
  echo "Creating ol_vb_root.gdbm"
@@ -77,6 +79,8 @@
  flex ir.lex
  gcc -o ir lex.yy.c -lfl 
  mv ir $HOME_anu_test/bin/
+ ./comp.sh ra_d8_wp_r
+ mv ra_d8_wp_r.out $HOME_anu_test/bin/roman_iscii
  gcc -o split_file.out   split_file.c 
  gcc -o chunker.out  chunker.c 
  ./comp.sh aper_chunker 

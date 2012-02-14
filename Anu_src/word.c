@@ -294,6 +294,11 @@ To handle more than one punctuation for a word in a sentence following steps are
                   fprintf(punct_clp,"(id-right_punctuation %d\t\"left_paren\")\n",i,rp);
 	      //----------------------------------------------------------------------
 
+	     //Added by Shirisha Manju
+              //---------------------------------------------------------------------  
+              if(strcmp(rp,"?")==0)
+                fprintf(punct_clp,"(id-right_punctuation %d\t\"question_mark\")\n",i);
+              //----------------------------------------------------------------------
               //Added by Roja(07-01-11)
               else if(strcmp(rp,"=")==0)
                   fprintf(punct_clp,"(id-right_punctuation %d\t\"equal_to\")\n",i,rp);

@@ -36,7 +36,7 @@
  (run)
  (save-facts "E_constituents_info_tmp1.dat" local Head-Level-Mother-Daughters)
  (save-facts "Node_category.dat" local  Node-Category)
- (save-facts "parser_punctuation_info.dat" local mother-punct_head-punctuation)
+ (save-facts "parser_punctuation_info.dat" local mother-punct_head-left_punctuation mother-punct_head-right_punctuation mother-punct_head-punctuation)
  (clear)
  ;--------------------------------------------------------------------------------
  ; mapping between parser-generated id and original word id
@@ -273,6 +273,7 @@
  (load-facts "wsd_facts_output.dat")
  (load-facts "pada_id_info.dat")
  (load-facts "meaning_to_be_decided.dat")
+ (load-facts "cat_consistency_check.dat")
  (run)
  (save-facts "hindi_tam_info.dat" local pada_info)
  (clear)
@@ -399,7 +400,6 @@
  (load-facts "E_constituents_info.dat")
  (load-facts "Node_category.dat")
  (load-facts "cat_consistency_check.dat")
-; (load-facts "parser_punctuation_info.dat")
  (open "hin_order_debug.dat" order_debug "a")
  (run)
  (save-facts "ordered_constituents.dat" local Head-Level-Mother-Daughters)
@@ -434,7 +434,7 @@
  (run)
  (save-facts "hindi_id_order_tmp1.dat" local hindi_id_order)
  (clear)
-
+ ;---------------------------------------------------------------------------------
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/insert_punctuation.clp"))
  (load ?*path*)
@@ -445,6 +445,7 @@
  (load-facts "GNP_agmt_info.dat")
  (run)
  (save-facts "hindi_id_order.dat" local hindi_id_order)
+ (save-facts "hindi_punctuation.dat" local id-left_punct-right_punct)
  (clear)
  ;--------------------------------------------------------------------------
  ; prepare Apertium input for final hindi word generation.
@@ -505,5 +506,23 @@
  (save-facts "catastrophe.dat" local sen_type-id-phrase)
  (clear)
  ;--------------------------------------------------------------------------
+ (load "global_path.clp")
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/sd_chunker.clp"))
+ (load ?*path*)
+ (load-facts "E_constituents_info.dat")
+ (load-facts "Node_category.dat")
+ (load-facts "lwg_info.dat")
+ (load-facts "word.dat")
+ (run)
+ (save-facts "sd_chunk.dat" local chunk-ids)
+ (clear)
+ ;--------------------------------------------------------------------------
+ (load "global_path.clp")
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/default-iit-bombay-shabdanjali-dic.clp"))
+ (load ?*path*)
+ (load-facts "revised_root.dat") 
+ (run)
+ (save-facts "dictionay_mng.dat" local)
+ (clear)
+ ;--------------------------------------------------------------------------
  (exit)
- 

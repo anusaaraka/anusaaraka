@@ -1,0 +1,51 @@
+1. Pre requisites ::
+   ==============
+   stanford-parser (Version 1.6.9 or latter)
+   Download http://nlp.stanford.edu/software/lex-parser.shtml
+   bison
+   clips
+   java (version: 1.6 or above)
+
+2. Set the path for Java in .bashrc/.bash_profile 
+	export PATH= path for java
+         Ex:   export PATH=$HOME/jdk1.6.0_03/bin:$PATH
+
+3. Set the path for Stanford parser in .bashrc/.bash_profile
+        export STANFORD_PATH=path for stanford parser
+
+        Ex: export STANFORD_PATH=$HOME/stanford-parser-2011-09-14
+
+4. Source bashrc 
+         source ~/.bashrc
+
+ Note: This version handles only one sentence at a time. A sample input file named "test" is provided with this package. 
+-------------------------------------------------------------------------------------------------------------------
+To view Derived Tree, Derivation Tree & Dependecy Tree ::
+=========================================================
+
+Inside tree_viewer directory :: 
+----------------------------
+
+1. Compile bison programme :
+ 
+         bash compile_bison.sh
+
+2. Run view_trees.sh:
+         bash view_trees.sh <input-file>
+           Ex:  bash view_trees.sh test
+  
+  Two windows would open
+         i)  Constituency Tree Viewer ---> For viewing derived tree and derivation tree. 
+         ii) Dependency Tree Viewer   ---> For viewing dependency tree.
+ 
+         Steps to view trees:
+ 	  Go to File menu -> select Open Treebank
+ 	  (A new window opens)  --> select the path upto working directory and then 
+	 		   	   a.  select <input-file>_derived_tree file and Click Open
+                                         Ex: test_derived_tree 
+                                   b.  select <input-file>_derivation_tree file and Click Open
+                                         Ex: test_derivation_tree
+		                   c.  select <input-file>_dependency_tree and Click Open
+                                         Ex: test_dependency_tree 
+
+-------------------------------------------------------------------------------------------------------------------

@@ -163,12 +163,6 @@ keeps_on_ing	wA_rahawA_hE-0-0
 kept_ing	wA_rahA-0-0
 kept_on_ing	wA_rahA-0-0
 let_0	ne_xo-0-0
-Let_her_0	nA_usako_xo-0-0
-Let_him_0	nA_usako_xo-0-0
-Let_me_0	wA_hUz_mEM_lAie-0-0
-Let_them_0	nA_unako_xo-0-0
-Let_us_0	caliye_hama-0-subj
-let_us_0	subj-0-caliye_hama
 liked_to_0	nA_pasanxa_karawA_WA-0-0
 likes_to_0	nA_pasanxa_karawA_hE-0-0
 like_to_0	nA_pasanxa_karawA_hE-0-0
@@ -178,7 +172,7 @@ may_be_en	yA_jA_sakawA_hE-0-0
 may_have_been_en	yA_gayA_hogA-0-0
 may_have_been_ing	wA_rahA_ho-0-ho_sakawA_hE
 may_have_en	yA_hogA-ne-0
-may_need_to_0	ne_kI_jarUWawa_pada_sakawI_hE-ko-0
+may_need_to_0	ne_kI_jZarUrawa_pada_sakawI_hE-ko-0
 may_not_0	0_sakawA-0-nahIM
 may_not_be_en	yA_jA_sakawA_hE-0-nahIM
 may_not_have_been_en	yA_gayA_hogA-0-nahIM
@@ -319,3 +313,8 @@ would_not_be_ing	0_rahA_hogA-0-nahIM
 would_not_have_been_en	yA_hogA-0-nahIM
 would_not_have_en	yA_howA-0-nahIM
 would_not_have_to_be_en	nA_hogA-0-nahIM
+used_to_be_en	yA_jAwA_WA-0-0
+needs_to_be_en	yA_jAnA_hE-0-0
+############################### tams with examples #############################################
+#are_to_be_en	nA_ke_liye_hE-0-0  Ex: All these fruits are to be eaten.
+#were_to_be_en   nA_ke_liye_WA-0-0  Ex: All these fruits were to be eaten.
