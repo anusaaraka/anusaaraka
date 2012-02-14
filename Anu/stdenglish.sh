@@ -12,6 +12,7 @@ else
     mkdir $PATH2/tmp_stdenglish
     cd $PATH2/tmp_stdenglish
   fi
+#######################################  Currently disabled ########################################################
 
 ### Removed join_hard_hyphen.lex  and rm_joined_hard_hyphens.lex because Now  we get morph information from apertium.
  
@@ -27,10 +28,7 @@ else
 # rm_joined_hard_hyphens.lex looks at all the occurances of w1-w2, and removes the hyphen if a a character sequence w1w2 exists in English morph database.
 #$PATH1/rm_joined_hard_hyphens.out $HOME_anu_test/Anu_databases/morph.dbm > $1.tmp
 
-# abbr.lex expands the standard abbreviations with single apostophe such as I'm
-#$PATH1/abbr.out < $1.tmp > $1.tmp1
-
-####################################################################################
+#####################################################################################################################
 # This program checks the input format for unprintable characters, and
 # special characters such as '[^#&~`*]' which have special meanings either 
 # in bash or in regular expressions.
@@ -48,14 +46,15 @@ else
 
 sed -e 's/ / /g' <  $2/$1 | sed -e "s/’/'/g" | sed -e 's/“/"/g' | sed -e 's/”/"/g' | sed -e "s/‘/'/g"| sed -e 's/﻿/ /g'  > $1.tmp 
 
-####################################################################################
 
+# abbr.lex expands the standard abbreviations with single apostophe  such as I'm  ---> I am
 $PATH1/abbr.out < $1.tmp > $1.tmp1
 
-# abbr1.lex handles standard abbreviations such as 'i.e.', 'e.g.', etc.
+# abbr1.lex handles standard abbreviations such as 'i.e.', 'e.g.','U.S.A', 'Mr.' etc.
 # Better solution for this is necessary
 $PATH1/abbr1.out < $1.tmp1 > $1.tmp2
 
+# This program handles special characters : Ex : change '&' to 'and' , Replace '...' by one word 'DOTDOTDOT'
 $PATH1/chk_input_format.pl < $1.tmp2  > $1.tmp3
 
 #The program sentence_boundary.pl takes as an input a text file, and generates as

@@ -32175,3 +32175,5 @@ jummA_masjixa	f
 pANdulipi	f
 SrqMKalA	f
 kalAkqwi	f 
+kalpanA	f	
+saMkalpanA	f

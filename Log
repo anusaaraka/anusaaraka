@@ -3149,3 +3149,39 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  25. Updated remove_out-files.sh
  26. Updated sd_verified (484)
  27. Updated Log
+
+ 14-02-12
+ ========
+ 1. Added comments to the following files
+        save_format.sh   gen_table.pl  stdenglish.sh
+ 2. Modified "abbr1.lex" and "chk_input_format.pl" files to simplify the abbrivation names
+ 3. Modified the following files to change the punctuation name
+        English_sentence.clp   create_eng_ord_html.clp   hindi_position.clp
+ 4. hindi_sentence.clp
+        Removed  : get_last_id
+        Modified : match_exp
+        Added    : get_apertium_mng_with_lt_and_rt_punc, get_apertium_mng_with_left_punc and
+                   get_apertium_mng_with_right_punc
+ 5. insert_punctuation.clp
+        Modified : all the rules to remove punctuation information in hindi order
+        Added    : combine_multiple_right_punc, combine_multiple_left_punc
+ 6. Modified "id-link_id_map_for_first_word" rule in parserid_wordid_mapping.clp
+ 7. run_H_gen_sen.bat
+        i.  loaded "hindi_punctuation.dat" file in hindi_sentence module
+        ii. loaded "hindi_id_order.dat" instead "hindi_id_order_tmp1.dat" in eng_hin_pos module
+ 8. Generated a dummy file "hindi_punctuation.dat" file for "hindi_sent_reorder" module in run_modules_link.bat
+ 9. run_modules_std.bat
+        i.   Renamed hindi_id_order_tmp1.dat as hindi_id_order.dat in  hindi_sent_reorder module
+        ii.  loaded hindi_id_order.dat file and modified save-facts in insert_punctuation module
+ 10. sd_combining_apostrophe.clp
+        Removed  : handling_punctuations
+        Modified : get_left_right_punc1, map_cons1, map_cons2, map_cons3
+        Added    : get_left_punc
+ 11. Modified ber_ver_output, sd_ver_output and verified_output
+ 12. Modified run_stanford-parser.sh to take "cons_file" as input instead "penn_file" for get_word_cat.lex program
+ 13. Updated the following files for punctuations
+        add_snt_mrkr.lex,  constituency_parse.l,   get_word_cat.lex
+        Anusaaraka.sh   ,  Anusaaraka_stanford.sh, Anusaaraka_berkeley.sh  
+        abbr.sh         ,  abbr_browser.sh       , run_sentence_stanford.sh  
+        remove_out-files.sh  and changes_in_databases
+ 14. Updated Log

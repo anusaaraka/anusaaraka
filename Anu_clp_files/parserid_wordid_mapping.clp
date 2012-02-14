@@ -19,7 +19,7 @@
  ?f<-(id-original_word 1 ?wrd)
  ?f1<-(parser_numid-word-remark 1 ?wrd1 ?remark)
  =>
-        (if (and (neq ?wrd1 ``) (neq ?wrd1 `)(neq ?wrd1 ''))then   ;Ex: "Who is he like?" ; Stanford stores the information of " as `` .  
+        (if (and (neq ?wrd1 ``) (neq ?wrd1 `)(neq ?wrd1 '')(neq ?wrd1 PUNCT-DoubleQuote)(neq ?wrd1 PUNCT-SingleQuote)) then   ;Ex: "Who is he like?" ; Stanford stores the information of " as `` .  
 	  (if (neq ?remark -) then
 		(printout ?*link_map* "(parserid-wordid   P1"?remark"  1)" crlf)
 	  else

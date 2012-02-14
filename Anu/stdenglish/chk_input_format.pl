@@ -28,13 +28,11 @@ while($in = <STDIN>){
 	   $in =~ s/[\*	 ]//g;
 	#Special case for GUTENBERG texts.
         }
-#	if($in =~ /[#\^\~\`\*€-ÿ_]/){
-	if($in =~ /[#\^\~\`\*€-ÿ]/){
+	if($in =~ /[#\^\~\`\*Â€-Ã¿]/){
 	   print STDERR "\tTEXT CONTAINS SOME SPECIAL CHARACTERS. \n";
            print STDERR "\tTHEY ARE REMOVED TO RUN THE TEXT SMOOTHLY.\n";
            print STDERR "\t$in\n";
-	  # $in =~ s/[#\^\~\`\*€-ÿ_]//g;
-	   $in =~ s/[#\^\~\`\*€-ÿ]//g;
+	   $in =~ s/[#\^\~\`\*Â€-Ã¿]//g;
         }
 # Remove non printable characters outside the range 32 to 127
 	$in =~ s/[^ -\n\t]/ /g;
@@ -47,22 +45,22 @@ while($in = <STDIN>){
 	$in =~ s/[ \t]+\n/\n/g;
 	$in =~ s/\n[ \t]+/\n/g;
 # Replace --- by DOTDOTDOT
-	$in =~ s/\-\-+/ DOTDOTDOT/g;
+	$in =~ s/\-\-+/ PUNCT-DotDotDot/g;
 # Replace ... by one word DOTDOTDOT
-	$in =~ s/\.\.\.+/ DOTDOTDOT /g;
-	$in =~ s/\. \. \.+/ ABBRDOTDOTDOT /g;
+	$in =~ s/\.\.\.+/ PUNCT-DotDotDot /g;
+	$in =~ s/\. \. \.+/ PUNCT-DotDotDot /g;
 ## Replace more than two consecutive spaces by two spaces.
 	$in =~ s/[ ][ ][ ]+/  /g;
 # Replace starting single quote by normal quote reason:shell gives error
 #$in =~ s/`/'/g;(commented for senseval purpose)
 # After '?' there should be two spaces, not a single.
 	$in =~ s/\? ([^ ])/\?  $1/g;
-## Preserve ' before executing next line
-        $in =~ s/'s$/QQUUOOTTEEs/;
-        $in =~ s/'s([^a-zA-Z0-9])/QQUUOOTTEEs$1/g;
-        $in =~ s/o'clock/oQQUUOOTTEEclock/g;
+## Preserve ' before executing next line   Modified by Shiriaha Manju renamed QQUUOOTTEE as ABBR-SingleQuote
+        $in =~ s/'s$/ABBR-SingleQuotes/;
+        $in =~ s/'s([^a-zA-Z0-9])/ABBR-SingleQuotes$1/g;
+        $in =~ s/o'clock/oABBR-SingleQuoteclock/g;
         $in =~ s/o'([^ \t\n])/of$1/g;
-        $in =~ s/s'([^a-zA-Z0-9])/sQQUUOOTTEE$1/g;
+        $in =~ s/s'([^a-zA-Z0-9])/sABBR-SingleQuote$1/g;
 # Insert space after the punctuation marks.
 	$in =~ s/([a-zA-Z])([^a-zA-Z \t\n\-]+)([a-zA-Z])/$1$2 $3/g;
 	$in =~ s/([A-Z])([^a-zA-Z \t\n\-]+)[ ]([A-Z])/$1$2$3/g;  #Added for senseval

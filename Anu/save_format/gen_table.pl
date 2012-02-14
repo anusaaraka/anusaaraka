@@ -31,16 +31,16 @@ if($#ARGV >= 2) {
 
 &init_count();
 
-#$wrd = "[a-zA-Z0-9\-¡-þ%_]+";
-$wrd = "[a-zA-Z0-9\-¡-þ_]+";
+#$wrd = "[a-zA-Z0-9\-Â¡-Ã¾%_]+";
+$wrd = "[a-zA-Z0-9\-Â¡-Ã¾_]+";
 $start_tag = "<$wrd>";
 $end_tag = "<\\\/$wrd>";
 $number = "[+-]?[0-9]+([,.][0-9]+)?";
 $section_number = "[+-]?[0-9]+([,.][0-9]+)+";
 $hr_min = "[0-9]+[:][0-9]+";
 $hr_min_sec = "[0-9]+[:][0-9]+[:][0-9]+";
-#$punct = "[^a-zA-Z0-9\-¡-þ%_]";
-$punct = "[^a-zA-Z0-9\-¡-þ_]";
+#$punct = "[^a-zA-Z0-9\-Â¡-Ã¾%_]";
+$punct = "[^a-zA-Z0-9\-Â¡-Ã¾_]";
 $abbr = "[A-Za-z][A-Za-z]?\\.(?:[A-Za-z]\\.)+";
 
 $para_no=1; $word_no = 1; $sent_no = 1;
@@ -76,7 +76,7 @@ while($in = <STDIN>){
 		$sent_no++; $word_no = 1;
 	}
 
-	$content =~ s/QQUUOOTTEE/'/;
+	$content =~ s/ABBR-SingleQuote/'/;
 	print TMP $para_no,".",$sent_no,".",$word_no,"\t",$pre_tag,$content,$post_tag,"\n";
 	print TMP1 $para_no,".",$sent_no,".",$word_no,"\t",$pre_tag,"\t",$content,"\t",$post_tag,"\n";
   }

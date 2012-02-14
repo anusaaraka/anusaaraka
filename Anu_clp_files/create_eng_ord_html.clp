@@ -323,7 +323,7 @@
  (id-word ?id ?word)
  (not (id-right_punctuation ?id ?r_punc))
   =>
- (assert (id-right_punctuation ?id "NONE"))
+ (assert (id-right_punctuation ?id NONE))
  )
  ;---------------------------------------------------------------------------------------------------
  ;Asserting a dummy left_punctuation if not present for any word.
@@ -332,7 +332,7 @@
  (id-word ?id ?word)
  (not (id-left_punctuation  ?id ?l_punc ))
  =>
- (assert (id-left_punctuation  ?id "NONE"))
+ (assert (id-left_punctuation  ?id NONE))
  )
 
  ;======================================= Converting wx fields to utf8 ==================================
@@ -480,7 +480,7 @@
  (id-word ?id ?wrd)
  (not (sen_type-id-phrase ? ?id ?) )
  =>
- (assert (sen_type-id-phrase "NONE" ?id -))
+ (assert (sen_type-id-phrase NONE ?id -))
  )
  ;========================================= Generating html format ========================================
  ;;printing title information
@@ -503,8 +503,8 @@
  (Eng_sen ?Eng_sen)
  =>
  (retract ?f)
- (if (eq ?r_punc "NONE") then (bind ?r_punc ""))
- (if (eq ?l_punc "NONE") then (bind ?l_punc ""))   
+ (if (eq ?r_punc NONE) then (bind ?r_punc ""))
+ (if (eq ?l_punc NONE) then (bind ?l_punc ""))   
  (print_head_info)
  (assert (id-index (+ ?id 1) 0))
  )
@@ -530,8 +530,8 @@
  (Eng_sen ?Eng_sen)
  =>
  (retract ?f)
- (if (eq ?r_punc "NONE") then (bind ?r_punc ""))
- (if (eq ?l_punc "NONE") then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc ""))
+ (if (eq ?l_punc NONE) then (bind ?l_punc ""))
  (print_head_info)
  (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\"><table cellspacing=\"0\">" crlf)
  (bind ?fetch (sub-string 0 1 (implode$ (create$ ?root))))
@@ -567,8 +567,8 @@
  (sen_type-id-phrase ?sen_type 1 ?)
  (Eng_sen ?Eng_sen)
  =>
- (if (eq ?r_punc "NONE") then (bind ?r_punc ""))
- (if (eq ?l_punc "NONE") then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc ""))
+ (if (eq ?l_punc NONE) then (bind ?l_punc ""))
  (bind ?fetch (sub-string 0 1 (implode$ (create$ ?root))))
  (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\"><table cellspacing=\"0\">" crlf)
  (print_eng_wrd_row  ?p_id ?s_id 1 ?chnk_fr_htm ?l_punc ?r_punc ?root ?original_word ?sen_type ?fetch)
@@ -590,8 +590,8 @@
  (id-left_punctuation  ?id ?l_punc )
  (Eng_sen ?Eng_sen)
  =>
- (if (eq ?r_punc "NONE") then (bind ?r_punc ""))
- (if (eq ?l_punc "NONE") then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc ""))
+ (if (eq ?l_punc NONE) then (bind ?l_punc ""))
  (bind ?fetch (sub-string 0 1 (implode$ (create$ ?root))))
 
  (printout fp "<table cellspacing=\"0\">" crlf)
@@ -622,8 +622,8 @@
  (sen_type-id-phrase ?sen_type ?id ?phrase)
  =>
  (retract ?f)
- (if (eq ?r_punc "NONE") then (bind ?r_punc ""))
- (if (eq ?l_punc "NONE") then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc ""))
+ (if (eq ?l_punc NONE) then (bind ?l_punc ""))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
  (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?padasuthra)
@@ -676,8 +676,8 @@
  (sen_type-id-phrase ?sen_type ?id ?phrase)
  =>
  (retract ?f)
- (if (eq ?r_punc "NONE") then (bind ?r_punc ""))
- (if (eq ?l_punc "NONE") then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc ""))
+ (if (eq ?l_punc NONE) then (bind ?l_punc ""))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
  (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?padasuthra)
@@ -722,8 +722,8 @@
  =>
  (retract ?f)
  (bind ?sign (- ?id ?pp_id))
- (if (eq ?r_punc "NONE") then (bind ?r_punc ""))
- (if (eq ?l_punc "NONE") then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc ""))
+ (if (eq ?l_punc NONE) then (bind ?l_punc ""))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))  
  (print_caution_row ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?pp_root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?pp_padasuthra)
@@ -763,8 +763,8 @@
  (sen_type-id-phrase ?sen_type ?id ?phrase)
  =>
  (retract ?f)
- (if (eq ?r_punc "NONE") then (bind ?r_punc ""))
- (if (eq ?l_punc "NONE") then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc ""))
+ (if (eq ?l_punc NONE) then (bind ?l_punc ""))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
  (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?padasuthra)
@@ -799,8 +799,8 @@
  (sen_type-id-phrase ?sen_type ?id ?phrase)
  =>
  (retract ?f)
- (if (eq ?r_punc "NONE") then (bind ?r_punc ""))
- (if (eq ?l_punc "NONE") then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc ""))
+ (if (eq ?l_punc NONE) then (bind ?l_punc ""))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
  (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?padasuthra)
@@ -834,8 +834,8 @@
  (No complete linkages found)
  =>
  (retract ?f)
- (if (eq ?r_punc "NONE") then (bind ?r_punc ""))
- (if (eq ?l_punc "NONE") then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc ""))
+ (if (eq ?l_punc NONE) then (bind ?l_punc ""))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
  (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?padasuthra)
@@ -863,8 +863,8 @@
  (id-left_punctuation  ?id ?l_punc )
  =>
  (retract ?f)
- (if (eq ?r_punc "NONE") then (bind ?r_punc ""))
- (if (eq ?l_punc "NONE") then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc ""))
+ (if (eq ?l_punc NONE) then (bind ?l_punc ""))
  (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - - -s)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc -)
  (print_dictionary_row  ?p_id ?s_id ?id ?chnk_fr_htm - -)
