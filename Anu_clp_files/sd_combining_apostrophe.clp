@@ -157,8 +157,8 @@
  (defrule get_left_right_punc
  (declare (salience 4))
  ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre ?PUNC ?head  ?PUNC1 $?post)
- (Node-Category ?PUNC    ?p&P_DQT|P_SQT|P_LB)
- (Node-Category ?PUNC1   ?p1&P_DQT|P_SQT|P_RB)
+ (Node-Category ?PUNC    ?p&P_DQT|P_SQT|P_LB|P_DSH)
+ (Node-Category ?PUNC1   ?p1&P_DQT|P_SQT|P_RB|P_DSH)
  ?f1<-(Head-Level-Mother-Daughters ?h1 ?lvl1 ?PUNC ?child)
  ?f2<-(Head-Level-Mother-Daughters ?h2 ?lvl2 ?PUNC1 ?child1)
   =>
@@ -173,7 +173,7 @@
  (defrule get_left_punc
  (declare (salience 3))
  ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre ?PUNC ?head $?post)
- (Node-Category ?PUNC    ?p&P_DQT|P_SQT|P_LB|P_DOL)
+ (Node-Category ?PUNC    ?p&P_DQT|P_SQT|P_LB|P_DOL|P_DSH)
  ?f1<-(Head-Level-Mother-Daughters ?h1 ?lvl1 ?PUNC ?child)
  =>
 	(retract ?f ?f1)

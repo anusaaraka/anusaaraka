@@ -36,7 +36,7 @@
  (defrule substitute_left_paren
  (declare (salience 1150))
  (mother-punct_head-left_punctuation ?mot ?p_h ?punc)
- (Node-Category  ?p_h P_LB|P_DQT)
+ (Node-Category  ?p_h P_LB|P_DQT|P_DSH)
  (Head-Level-Mother-Daughters ? ? ?mot ?id $?)
  ?f0<-(hindi_id_order $?pre ?id $?post)
  (not (punc_inserted ?p_h))
@@ -57,7 +57,7 @@
  (not (Node-Category ?p_h P_QES))
  (not (Node-Category ?p_h P_DQ))
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?PP $?d ?JJ $?d1)
- (Node-Category  ?JJ  JJ|IN|PRP$|PRP|NN|RB|UH|VBZ|PP|NNS|CC|NNP|RP|NP|CD) 
+ (Node-Category  ?JJ  JJ|IN|PRP$|PRP|NN|RB|UH|VBZ|PP|NNS|CC|NNP|RP|NP|CD|FW|DT) 
 ?f0<-(Head-Level-Mother-Daughters ? ? ?JJ $?prep)
  =>
         (retract ?f0 ?f1)
@@ -140,17 +140,21 @@
         (assert (punc_inserted ?p_h))
  )
  ;---------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju
+ ;"This is good." she said.
  (defrule combine_multiple_right_punc
  (declare (salience 600))
  ?f0<-(hid-right_punctuation ?id  ?p)
  ?f1<-(hid-right_punctuation ?id  ?p1)
  (test (neq ?p ?p1))
+ (not (hindi_id_order $? ?id))
  =>
 	(retract ?f0 ?f1)
 	(bind ?punc (string-to-field (str-cat ?p1 ?p)))
 	(assert (hid-right_punctuation ?id ?punc))
  )	
- 
+ ;--------------------------------------------------------------------------------------------------------------- 
+ ;Added by Shirisha Manju
  (defrule combine_multiple_left_punc
  (declare (salience 600))
  ?f0<-(hid-left_punctuation ?id  ?p)
@@ -161,5 +165,4 @@
 	(bind ?punc (string-to-field (str-cat ?p ?p1)))
         (assert (hid-left_punctuation ?id ?punc))
  )
-
- 
+ ;---------------------------------------------------------------------------------------------------------------

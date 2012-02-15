@@ -44,13 +44,15 @@ else
 #5. RDQM    \342 200\
 #6. LSQM    \342 200\
 
-sed -e 's/ / /g' <  $2/$1 | sed -e "s/’/'/g" | sed -e 's/“/"/g' | sed -e 's/”/"/g' | sed -e "s/‘/'/g"| sed -e 's/﻿/ /g'  > $1.tmp 
+#7. Replacing EmDash (2014) with - 
+
+sed -e 's/ / /g' <  $2/$1 | sed -e "s/’/'/g" | sed -e 's/“/"/g' | sed -e 's/”/"/g' | sed -e "s/‘/'/g"| sed -e 's/﻿/ /g' | sed -e "s/—/-/g" > $1.tmp 
 
 
 # abbr.lex expands the standard abbreviations with single apostophe  such as I'm  ---> I am
 $PATH1/abbr.out < $1.tmp > $1.tmp1
 
-# abbr1.lex handles standard abbreviations such as 'i.e.', 'e.g.','U.S.A', 'Mr.' etc.
+# abbr1.lex handles standard abbreviations such as 'i.e.', 'e.g.','U.S.A',  etc.
 # Better solution for this is necessary
 $PATH1/abbr1.out < $1.tmp1 > $1.tmp2
 
