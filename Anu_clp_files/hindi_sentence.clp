@@ -28,12 +28,12 @@
  (declare (salience 3000))
  ?f1<-(id-last_word ?id ?wrd)
  (id-right_punctuation   ?id  ?rp)
- ?f<-(hindi_id_order $?var)
+ ?f<-(hindi_id_order $?var ?lid)
  (test (neq ?rp NONE))
  =>
 	(retract ?f ?f1)
-	(printout ?*punct_file* "(hid-right_punctuation     "?id " 	"?rp ")" crlf)
-        (assert (hindi_id_order $?var ?rp))
+	(printout ?*punct_file* "(hid-right_punctuation     "?lid " 	"?rp ")" crlf)
+        (assert (hindi_id_order $?var ?lid ?rp))
  )
  ;----------------------------------------------------------------------------------------------------------
  ;Added by Roja (29-06-11)
