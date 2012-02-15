@@ -3163,7 +3163,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Added    : get_apertium_mng_with_lt_and_rt_punc, get_apertium_mng_with_left_punc and
                    get_apertium_mng_with_right_punc
  5. insert_punctuation.clp
-        Modified : all the rules to remove punctuation information in hindi order
+        Modified all the rules to remove punctuation information in hindi order
+	Modified : get_phrase_group, substitute_left_paren
         Added    : combine_multiple_right_punc, combine_multiple_left_punc
  6. Modified "id-link_id_map_for_first_word" rule in parserid_wordid_mapping.clp
  7. run_H_gen_sen.bat
@@ -3175,13 +3176,16 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         ii.  loaded hindi_id_order.dat file and modified save-facts in insert_punctuation module
  10. sd_combining_apostrophe.clp
         Removed  : handling_punctuations
-        Modified : get_left_right_punc1, map_cons1, map_cons2, map_cons3
+        Modified : get_left_right_punc1, map_cons1, map_cons2, map_cons3, get_left_punc, get_left_right_punc
         Added    : get_left_punc
- 11. Modified ber_ver_output, sd_ver_output and verified_output
- 12. Modified run_stanford-parser.sh to take "cons_file" as input instead "penn_file" for get_word_cat.lex program
- 13. Updated the following files for punctuations
+ 11. sd_lwg_rules.clp
+        Modified : replace_aux_with_head_VP , get_lwg_group, get_lwg and imper_rule
+        Added    : get_lwg_group_with_RB ,get_lwg_for_and_with_aux, get_lwg_for_and_with_aux1
+ 12. Modified ber_ver_output, sd_ver_output and verified_output
+ 13. Modified run_stanford-parser.sh to take "cons_file" as input instead "penn_file" for get_word_cat.lex program
+ 14. Updated the following files for punctuations
         add_snt_mrkr.lex,  constituency_parse.l,   get_word_cat.lex
         Anusaaraka.sh   ,  Anusaaraka_stanford.sh, Anusaaraka_berkeley.sh  
         abbr.sh         ,  abbr_browser.sh       , run_sentence_stanford.sh  
         remove_out-files.sh  and changes_in_databases
- 14. Updated Log
+ 15. Updated Log
