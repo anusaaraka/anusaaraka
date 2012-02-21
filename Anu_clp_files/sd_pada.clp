@@ -53,8 +53,8 @@
  (declare (salience 1500))
  ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?NP $?pos)
  ?f2<-(Head-Level-Mother-Daughters ?h ? ?NP $?daut)
- (Node-Category  ?Mot    NP|WHNP|ADJP|PRT|ADVP|NX) 
- (Node-Category  ?NP     NN|DT|JJ|JJS|JJR|NNS|VBN|ADJP|NNP|PDT|RBS|RB|EX|CD|WDT|VBG|QP|FW|NX|PRN) ;Added NX by Roja for latest stanford version-2011-12-22. Ex : He could hear a faint sound from the bushes.
+ (Node-Category  ?Mot    NP|WHNP|ADJP|PRT|ADVP|NX|WHADVP) 
+ (Node-Category  ?NP     NN|DT|JJ|JJS|JJR|NNS|VBN|ADJP|NNP|PDT|RBS|RB|EX|CD|WDT|VBG|QP|FW|NX|PRN|PRP|WRB|WHADJP) ;Added NX by Roja for latest stanford version-2011-12-22. Ex : He could hear a faint sound from the bushes.
  =>
 	(retract ?f1 ?f2)
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?daut $?pos))
@@ -139,14 +139,13 @@
  ;We have very different ideas about disciplining children.
  (defrule get_PP_group
  (declare (salience 1100))
- ?f1<-(Head-Level-Mother-Daughters ?h ?l ?PP $?d ?JJ $?d1 ?NP)
+ ?f1<-(Head-Level-Mother-Daughters ?h ?l ?PP $?d ?JJ $?d1)
  (Node-Category  ?PP  PP|WHPP)
  (Node-Category  ?JJ  JJ|TO|IN)
- (Node-Category  ?NP  NP|S|WHNP)
 ?f0<-(Head-Level-Mother-Daughters ? ? ?JJ ?prep)
  =>
  	(retract ?f0 ?f1)
-	(assert (Head-Level-Mother-Daughters ?h ?l ?PP $?d ?prep $?d1 ?NP))
+	(assert (Head-Level-Mother-Daughters ?h ?l ?PP $?d ?prep $?d1))
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (05-11-11)
@@ -190,7 +189,7 @@
  (defrule PP_pada
  (declare (salience 800))
  (Head-Level-Mother-Daughters  ?  ? ?PP $?ids ?id)
- (Node-Category ?PP NP|NNP|NNPS|RB|RBS|PRP|NNS|PRP$|WP|CC|JJ|JJS|VP|WRB|CD|WDT|WHNP|ADJP|PRT|ADVP|NX)
+ (Node-Category ?PP NP|NNP|NNPS|RB|RBS|PRP|NNS|PRP$|WP|CC|JJ|JJS|VP|WHADVP|CD|WDT|WHNP|ADJP|PRT|ADVP|NX)
  ?f<-(to_be_included_in_paxa ?id)
   =>
 	(retract ?f)
@@ -239,7 +238,6 @@
  (defrule PP_pada2
  (declare (salience 650))
  (Head-Level-Mother-Daughters  ?  ? ?PP ?id)
-; (Node-Category ?PP PRT|TO|INTJ|UH|IN|RBR|JJ)
  (Node-Category ?PP PRT|TO|INTJ)
  ?f<-(to_be_included_in_paxa ?id)
   =>
@@ -249,110 +247,159 @@
         (printout ?*debug* "(Rule_name-group_head_id-pada_type-gids   PP_pada2  "?id"   PP  "?id ")" crlf)
  )
  ;---------------------------------------------------------------------------------------------------------------------- 
- ; Added by Shirisha Manju (22-11-11)
- ; It is true that you are my friend but I can not go along with you on this issue. 
- (defrule multiple_prep
- (declare (salience 650))
- (Head-Level-Mother-Daughters ? ? $?d ?PRT ?PP $?d1)
- (Node-Category ?PRT PRT) 
+ (defrule get_eng_word_list
+ (declare (salience 500))
+ (id-original_word ?id ?word)
+ ?f1<-(index ?id)
+ ?f<-(English-list $?Eng_list)
+ =>
+ (retract ?f ?f1)
+ (assert (English-list $?Eng_list ?word))
+ (bind ?id (+ ?id 1))
+ (assert (index ?id))
+ )
+
+ (defrule chk_for_prep
+ (declare (salience 400))
+ ?f<-(English-list $?Eng_list)
+ (index ?id)
+ =>
+	(bind ?len (length $?Eng_list))
+ 	(loop-for-count (?i 1 ?len) 
+        	(bind ?flag 1)
+                (loop-for-count (?j ?i ?len)
+                	(bind ?k (nth$ ?j $?Eng_list))
+                        (if (numberp ?k) then (bind ?k (implode$ (create$ ?k))))
+                        (if (eq ?flag 1) then
+                        	(bind ?str ?k)
+	                        (bind $?grp_ids ?j)
+        			(bind ?flag 0)
+                        else
+                        	(bind ?str (str-cat ?str "_" ?k))
+                                (bind $?grp_ids (create$ $?grp_ids ?j)))
+                                (bind ?lkup (gdbm_lookup "preposition.gdbm"  ?str))
+				(if (neq ?lkup "FALSE") then
+                                        (assert (prep_ids $?grp_ids))
+				)
+		)
+  	)
+ )
+ (defrule chk_for_largest_match
+ (declare (salience 350))
+ ?f<-(prep_ids  $?grp_ids )
+ ?f1<-(prep_ids $?grp_ids1 )
+ (test (neq (length $?grp_ids) (length $?grp_ids)))
+ (test (or (member$ $?grp_ids $?grp_ids1)(member$ $?grp_ids1 $?grp_ids)))
+ =>
+  	(if (> (length $?grp_ids) (length $?grp_ids1)) then
+  		(retract ?f1)
+  	else
+  		(retract ?f)
+ 	)
+ )
+
+ ; The people of Orissa are facing grave adversities due to the cyclone.
+ (defrule multiple_prep_rule
+ (declare (salience 330))
+ (prep_ids $?ids ?prep)
+ ?f<-(Head-Level-Mother-Daughters ? ? ?PP $? ?prep ?NP)
  (Node-Category ?PP PP)
- (Head-Level-Mother-Daughters ? ? ?PRT ?id)
- (Head-Level-Mother-Daughters ? ? ?PP ?id1 ?NP $?)
+ (Node-Category ?NP NP)
+ (Head-Level-Mother-Daughters ? ? ?NP $? ?id)
+ ?f1<-(pada_info (group_head_id ?id)(preposition 0))
+ ?f0<-(to_be_included_in_paxa ?prep)
+ =>
+	(retract ?f0)
+	(modify ?f1  (preposition  $?ids ?prep))
+	(loop-for-count (?i 1 (length $?ids)) do
+		(bind ?j (nth$ ?i $?ids))
+		(assert (has_been_included_in_paxa ?j))
+	)
+ )
+
+ ;Young children are taken to the temples and are introduced to the letters of the alphabet in front of saraswati, the goddess of wisdom and learning. 
+ (defrule multiple_prep_rule1
+ (declare (salience 330))
+ (prep_ids $?ids ?prep)
+ ?f<-(Head-Level-Mother-Daughters ? ? ?PP $? ?prep ?NP)
+ (Node-Category ?PP PP)
  (Node-Category ?NP NP)
  (Head-Level-Mother-Daughters ? ? ?NP ?NP1 $?)
- (Node-Category ?NP1 NP|NNP|VP|PRP)
- (Head-Level-Mother-Daughters ? ? ?NP1 $? ?head $?)
- ?f1<-(pada_info (group_head_id ?head)(preposition 0))
- ?f<-(to_be_included_in_paxa ?id)
- ?f2<-(to_be_included_in_paxa ?id1)
-  =>
-        (retract ?f ?f2)
-	(modify ?f1 (preposition ?id ?id1))
-        (printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    multiple_prep    "?head " "?id "  "?id1")" crlf)
-  )
- ;----------------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (22-11-11)
- ;The people of Orissa are facing grave adversities due to the cyclone.
- (defrule multiple_prep1
- (declare (salience 650))
- (Head-Level-Mother-Daughters ? ? ?PP $?d ?NP)
- (Node-Category ?PP PP)
- (Node-Category ?NP NP)
- (Head-Level-Mother-Daughters ? ? ?NP $? ?head $?)
- ?f1<-(pada_info (group_head_id ?head)(preposition 0))
- (test (neq (length $?d) 1))
-  =>
-        (bind $?p_ids (create$ ))
-        (bind ?len (length $?d))
-        (loop-for-count (?i 1 ?len)
-                (bind ?j (nth$ ?i $?d))
-                (if (numberp ?j) then
-                        (assert (has_been_included_in_paxa ?j))
-                        (bind $?p_ids (create$ $?p_ids ?j))
-                )
+ (Node-Category ?NP1 NP)
+ (Head-Level-Mother-Daughters ? ? ?NP1 $? ?id)
+ ?f1<-(pada_info (group_head_id ?id)(preposition 0))
+ ?f0<-(to_be_included_in_paxa ?prep)
+ =>
+        (retract ?f0)
+        (modify ?f1  (preposition  $?ids ?prep))
+        (loop-for-count (?i 1 (length $?ids)) do
+                (bind ?j (nth$ ?i $?ids))
+                (assert (has_been_included_in_paxa ?j))
         )
-        (modify ?f1 (preposition $?p_ids))
-        (printout ?*debug* "(Rule_name-group_head_id-pada_type-gids   multiple_prep1 "?head"   "(implode$ $?p_ids)  ")" crlf)
  )
-  ;----------------------------------------------------------------------------------------------------------------------
-  ;Added by Shirisha Manju (22-11-11)
-  ;This is a sample sentence for Anusaraka. The game of life is played for winning. I gave a book to him. 
-  (defrule single_prep
-  (declare (salience 600))
-  (Head-Level-Mother-Daughters ? ? ?PP ?prep ?NP)
-  (Node-Category ?PP PP|WHPP)
-  (Node-Category ?NP NP|S)
-  (Head-Level-Mother-Daughters ? ? ?NP ?NP1 $?)
-  (Node-Category ?NP1 NP|NNP|VP|PRP)
-  (Head-Level-Mother-Daughters ? ? ?NP1 $? ?id $?)
-  ?f1<-(pada_info (group_head_id ?id)(preposition 0))
-  ?f<-(to_be_included_in_paxa ?prep)
+
+
+ ;This is a sample sentence for Anusaraka.In which school do you study? 
+ (defrule single_prep
+ (declare (salience 320))
+ ?f<-(Head-Level-Mother-Daughters ? ? ?PP ?prep ?NP)
+ (Node-Category ?PP PP|WHPP)
+ (Node-Category ?NP NP|WHNP)
+ (Head-Level-Mother-Daughters ? ? ?NP $? ?id)
+ ?f1<-(pada_info (group_head_id ?id)(preposition 0))
+ ?f0<-(to_be_included_in_paxa ?prep)
+ =>
+	(retract ?f0)
+	(modify ?f1  (preposition  ?prep))
+ )
+
+ ;Mohan fell from the top of the house. The game of life is played for winning.
+ (defrule single_prep1
+ (declare (salience 320))
+ ?f<-(Head-Level-Mother-Daughters ? ? ?PP ?prep ?NP)
+ (Node-Category ?PP PP)
+ (Node-Category ?NP NP|S)
+ (Head-Level-Mother-Daughters ? ? ?NP ?NP1 $?)
+ (Node-Category ?NP1 NP|VP)
+; (Head-Level-Mother-Daughters ? ? ?NP1 $? ?id)
+ (Head-Level-Mother-Daughters ? ? ?NP1 $? ?id $?) ;He made a mistake in inviting John. 
+ ?f1<-(pada_info (group_head_id ?id)(preposition 0))
+ ?f0<-(to_be_included_in_paxa ?prep)
+ =>
+        (retract ?f0)
+        (modify ?f1  (preposition  ?prep))
+ )
+
+ ;Where were you coming from? Can you tell us where those strange ideas came from? 
+ (defrule standard_prep_rule
+ (declare (salience 320))
+ (Head-Level-Mother-Daughters ? ? ?PP ?prep)
+ (Node-Category ?PP PP)
+ (id-last_word ?prep ?)  
+ (Head-Level-Mother-Daughters ? ? ?VP $? ?PP $?)
+ (Node-Category ?VP VP)
+ (Head-Level-Mother-Daughters ? ? ?SQ $? ?VP $?)
+ (Node-Category ?SQ SQ|S)
+ (Head-Level-Mother-Daughters ? ? $? ?WH ?SQ $?)
+ (Node-Category ?WH WHADVP)
+ (Head-Level-Mother-Daughters ? ? ?WH ?id )
+ ?f1<-(pada_info (group_head_id ?id)(preposition 0))
+ ?f<-(to_be_included_in_paxa ?prep)
   =>
-        (retract ?f)
+	(retract ?f)
         (modify ?f1 (preposition ?prep))
-        (printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    single_prep    "?id " "?prep ")" crlf)
+        (printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    prep_rule    "?id " "?prep ")" crlf)
   )
-  ;----------------------------------------------------------------------------------------------------------------------
-  ;Added by Shirisha Manju (22-11-11)
-  ;Mohan fell from the top of the house.
-  (defrule single_prep1
-  (declare (salience 600))
-  (Head-Level-Mother-Daughters ? ? ?PP ?prep ?NP)
-  (Node-Category ?PP PP|WHPP)
-  (Node-Category ?NP NP|WHNP)
-  (Head-Level-Mother-Daughters ? ? ?NP $? ?id)
-  ?f1<-(pada_info (group_head_id ?id)(preposition 0))
-  ?f<-(to_be_included_in_paxa ?prep)
-  =>
-        (retract ?f)
-        (modify ?f1 (preposition ?prep))
-        (printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    single_prep1    "?id " "?prep ")" crlf)
-  )
-  ;----------------------------------------------------------------------------------------------------------------------
-  ; Added by Shirisha Manju (07-11-11) Suggested by Sukhada
-  ; Where did they come from? Where are you coming from?
-  ; Can you tell us where those strange ideas came from? But where will you get them from?
-  ; Added  "SBAR" and "WHADVP" in rule part to handle standard prep ; Modified by Shirisha Manju (15-11-11) 
-  (defrule prep_rule
-  (declare (salience 400))
-  (Head-Level-Mother-Daughters ? ? ?PP ?IN)
-  (Node-Category ?PP PP)
-  (Node-Category ?IN IN)
-  (Head-Level-Mother-Daughters ? ? ?IN ?prep)
-  (id-last_word ?prep ?)  
-  (Head-Level-Mother-Daughters ? ? ?S $? ?WH $?)
-  (Node-Category ?S SBARQ|SBAR)
-  (Node-Category ?WH WHADVP)
-  (Head-Level-Mother-Daughters ? ? ?WH $? ?W $?)
-  (Node-Category ?W WRB)
-  (Head-Level-Mother-Daughters ? ? ?W ?id)
-  ?f1<-(pada_info (group_head_id ?id)(preposition 0))
-  ?f<-(to_be_included_in_paxa ?prep)
-  =>
-        (retract ?f)
-        (modify ?f1 (preposition ?prep))
-	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    prep_rule    "?id " "?prep ")" crlf)
-  )
+
+
+ ;She declared that out of love for the poor she had gotten her family to go against convention. 
+ (defrule del_prep_with_pada_head
+ (declare (salience 310))
+ (pada_info (group_head_id ?h)(preposition $? ?id $?))
+ ?f0<-(pada_info (group_head_id ?id))
+ =>
+	(retract ?f0)
+ )
   ;----------------------------------------------------------------------------------------------------------------------
   ;Added by Shirisha Manju (07-11-11)
   ;Are a dog and a cat here?  I like dogs as well as cats
@@ -373,17 +420,13 @@
   (defrule pada_for_samAnAXikaraNa
   (declare (salience 300))
   (prep_id-relation-anu_ids   -   saMjFA-saMjFA_samAnAXikaraNa  ?saMjFA ?samA)
-;  ?f0<-(pada_info (group_head_id ?h)(group_cat PP) (group_ids $?d ?saMjFA $?d1)(preposition ?prep)) 
-  ?f0<-(pada_info (group_head_id ?saMjFA)(group_cat PP) (group_ids $?d)(preposition ?prep)) 
+  ?f0<-(pada_info (group_head_id ?saMjFA)(group_cat PP) (group_ids $?d)(preposition $?prep)) 
   ?f1<-(pada_info (group_head_id ?samA) (group_cat PP) (group_ids $?id1)) 
-;  (test (neq ?h ?samA))
   =>
 	(retract ?f1) 
         (print_in_ctrl_fact_files  ?samA)
-;        (modify ?f0 (group_ids $?d ?saMjFA $?d1  $?id1)(preposition ?prep))
-        (modify ?f0 (group_ids $?d $?id1)(preposition ?prep))
-;	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    pada_for_comma    "?samA"  PP	"(implode$ $?d)" "?saMjFA"  "(implode$ $?d1)" "(implode$ $?id1)"  "?prep ")" crlf)
-	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    pada_for_comma    "?samA"  PP	"(implode$ $?d)" "(implode$ $?id1)"  "?prep ")" crlf)
+        (modify ?f0 (group_ids $?d $?id1)(preposition $?prep))
+	(printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    pada_for_comma    "?samA"  PP	"(implode$ $?d)" "(implode$ $?id1)"  "(implode$ $?prep) ")" crlf)
   )	
   ;----------------------------------------------------------------------------------------------------------------------
   ;Added by Shirisha Manju (09-11-11)
