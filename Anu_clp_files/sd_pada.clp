@@ -247,6 +247,7 @@
         (printout ?*debug* "(Rule_name-group_head_id-pada_type-gids   PP_pada2  "?id"   PP  "?id ")" crlf)
  )
  ;---------------------------------------------------------------------------------------------------------------------- 
+ ;Added by Shirisha Manju (20-02-12)
  (defrule get_eng_word_list
  (declare (salience 500))
  (id-original_word ?id ?word)
@@ -258,7 +259,8 @@
  (bind ?id (+ ?id 1))
  (assert (index ?id))
  )
-
+ ;---------------------------------------------------------------------------------------------------------------------- 
+ ;Added by Shirisha Manju (20-02-12)
  (defrule chk_for_prep
  (declare (salience 400))
  ?f<-(English-list $?Eng_list)
@@ -284,6 +286,8 @@
 		)
   	)
  )
+ ;---------------------------------------------------------------------------------------------------------------------- 
+ ;Added by Shirisha Manju (20-02-12)
  (defrule chk_for_largest_match
  (declare (salience 350))
  ?f<-(prep_ids  $?grp_ids )
@@ -297,7 +301,8 @@
   		(retract ?f)
  	)
  )
-
+ ;---------------------------------------------------------------------------------------------------------------------- 
+ ;Added by Shirisha Manju (20-02-12)
  ; The people of Orissa are facing grave adversities due to the cyclone.
  (defrule multiple_prep_rule
  (declare (salience 330))
@@ -316,7 +321,8 @@
 		(assert (has_been_included_in_paxa ?j))
 	)
  )
-
+ ;---------------------------------------------------------------------------------------------------------------------- 
+ ;Added by Shirisha Manju (20-02-12)
  ;Young children are taken to the temples and are introduced to the letters of the alphabet in front of saraswati, the goddess of wisdom and learning. 
  (defrule multiple_prep_rule1
  (declare (salience 330))
@@ -337,14 +343,15 @@
                 (assert (has_been_included_in_paxa ?j))
         )
  )
-
-
+ ;---------------------------------------------------------------------------------------------------------------------- 
+ ;Added by Shirisha Manju (20-02-12)
  ;This is a sample sentence for Anusaraka.In which school do you study? 
+ ;At present it houses office of jawahar lal nehru fund and a children school for creative art.
  (defrule single_prep
  (declare (salience 320))
  ?f<-(Head-Level-Mother-Daughters ? ? ?PP ?prep ?NP)
  (Node-Category ?PP PP|WHPP)
- (Node-Category ?NP NP|WHNP)
+ (Node-Category ?NP NP|WHNP|ADJP)
  (Head-Level-Mother-Daughters ? ? ?NP $? ?id)
  ?f1<-(pada_info (group_head_id ?id)(preposition 0))
  ?f0<-(to_be_included_in_paxa ?prep)
@@ -352,7 +359,8 @@
 	(retract ?f0)
 	(modify ?f1  (preposition  ?prep))
  )
-
+ ;---------------------------------------------------------------------------------------------------------------------- 
+ ;Added by Shirisha Manju (20-02-12
  ;Mohan fell from the top of the house. The game of life is played for winning.
  (defrule single_prep1
  (declare (salience 320))
@@ -369,7 +377,8 @@
         (retract ?f0)
         (modify ?f1  (preposition  ?prep))
  )
-
+ ;---------------------------------------------------------------------------------------------------------------------- 
+ ;Added by Shirisha Manju (20-02-12
  ;Where were you coming from? Can you tell us where those strange ideas came from? 
  (defrule standard_prep_rule
  (declare (salience 320))
@@ -390,8 +399,8 @@
         (modify ?f1 (preposition ?prep))
         (printout ?*debug*   "(Rule_name-group_head_id-pada_type-gids    prep_rule    "?id " "?prep ")" crlf)
   )
-
-
+ ;---------------------------------------------------------------------------------------------------------------------- 
+ ;Added by Shirisha Manju (20-02-12
  ;She declared that out of love for the poor she had gotten her family to go against convention. 
  (defrule del_prep_with_pada_head
  (declare (salience 310))
