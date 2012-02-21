@@ -10,6 +10,10 @@
 ; Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
 
+(deffunction my_string_cmp (?str1 ?str2)
+   (bind ?n1 (string-to-field (sub-string 2 (length ?str1) ?str1)))
+   (bind ?n2 (string-to-field (sub-string 2 (length ?str2) ?str2)))
+   (> ?n1 ?n2))
 ;=====================================  Parser Correction Rules =========================================================
 ;This rule removes the node SBAR whose daughter is S in the cases of causative verbs. The SBAR node should not be present gramatically in the parse.
 ;She made the girl feed the child.
@@ -78,7 +82,7 @@
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?VB $?daut ?VP)
 ?f1<-(Head-Level-Mother-Daughters ? ? ?VP $?daut1 ?VP1)
 (Node-Category  ?Mot    VP|SQ)
-(Node-Category  ?VB     MD|VB|VBN|VBZ|VBD|VBP|VBG|RB)
+(Node-Category  ?VB     MD|VB|VBN|VBZ|VBD|VBP|VBG)
 (Node-Category  ?VP     VP)
 (Node-Category  ?VP1    ?CAT)
 (Head-Level-Mother-Daughters ? ? ?VB ?id)
@@ -91,18 +95,33 @@
         else
         (retract ?f)
         (assert (daughter ?VB ?id))
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VB ?VP))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot ?VB $?daut ?VP))
         )
 )
 ;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju  (14-02-12)
+;Your mother was clearly not impressed by our behaviour in the restaurant.
+;Do not shut the door. Do not send the message by radio.
+(defrule get_lwg_group_with_RB
+(declare (salience 1101))
+?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?V $?pos ?VP)
+(Node-Category  ?Mot    VP|SQ)
+(Node-Category  ?V     RB)
+(Node-Category  ?VP    VP)
+?f2<-(Head-Level-Mother-Daughters ?h&not ? ?V ?id)
+=>
+	(retract ?f1 ?f2)
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?id $?pos ?VP))
+)
+
 ;Added by Maha Laxmi (20-10-11)
-;Modified by Shirisha Manju --- added if conditions to get suffix
+;Modified by Shirisha Manju --- added if conditions to get suffix , Removed RB in the list (14-02-12)
 (defrule get_lwg_group
 (declare (salience 1100))
 ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?V $?pos)
 ?f2<-(Head-Level-Mother-Daughters ?h ? ?V $?daut)
 (Node-Category  ?Mot    VP|SQ)
-(Node-Category  ?V     ?suf&MD|VB|VBN|VBZ|VBD|VBP|VBG|RB|VP)
+(Node-Category  ?V     ?suf&MD|VB|VBN|VBZ|VBD|VBP|VBG|VP)
 (not (Head-Level-Mother-Daughters to|To $? ?Mot)) ;Added by Shirisha Manju(25-10-11) Ex: She had gotten her family to go against convention. 
 =>
        	(retract ?f1 ?f2)
@@ -119,9 +138,6 @@
 					(assert (id-node-suf $?daut  VB  0))
 				else (if (eq ?suf VBZ ) then
                         	        (assert (id-node-suf $?daut  VBZ  s))
-					else (if (eq ?suf RB ) then
-	                        	        (assert (id-node-suf $?daut  RB  -))
-					     )
 				     )     
 			     	)
                         )
@@ -171,12 +187,44 @@
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot ?verb ?id $?daut $?pos))
 )
 ;------------------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (28-10-11)
+;Added by Shirisha Manju (15-02-12)
+;Young children are taken to the temples and are introduced to the letters of the alphabet in front of saraswati, the goddess of wisdom and learning.
+;get lwg group with conj "and" aux need not to be shared -> with 2 aux i.e "aux ... and aux ... "
+(defrule get_lwg_for_and_with_aux
+(declare (salience 904))
+?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP ?aid $?d ?CC ?aid1 $?d1)
+(Node-Category  ?VP  VP)
+(Node-Category  ?CC  CC)
+?f1<-(daughter ? ?aid)
+?f2<-(daughter ? ?aid1)
+=>
+	(retract ?f0)
+	(assert (Head-Level-Mother-Daughters ?h ?l ?VP ?aid $?d))
+	(assert (Head-Level-Mother-Daughters ?h ?l ?VP ?aid1 $?d1))
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (15-02-12) 
+;Jaipur is an important centre on indian airlines north india network, and is connected with daily flights from delhi, jodhpur, udaipur, aurangabad and mumbai.
+;get lwg group with conj "and" aux need not to be shared -> with 1 aux on right "... and aux ..."
+(defrule get_lwg_for_and_with_aux1
+(declare (salience 903))
+?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP $?d ?CC ?aid1 $?d1)
+(Node-Category  ?VP  VP)
+(Node-Category  ?CC  CC)
+?f2<-(daughter ? ?aid1)
+=>
+        (retract ?f0)
+        (assert (Head-Level-Mother-Daughters ?h ?l ?VP $?d))
+        (assert (Head-Level-Mother-Daughters ?h ?l ?VP ?aid1 $?d1))
+)
+;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (28-10-11) Suggested by Sukhada
 (defrule get_lwg_for_and
 (declare (salience 902))
 (Head-Level-Mother-Daughters ?h ?l ?Mot $?d ?CC $?d1)
 (Node-Category  ?Mot    VP|SQ)
 (Node-Category  ?CC CC)
+(not (grouped_conj ?CC))
 =>
 	(loop-for-count (?i 1 (length $?d))
                 (bind ?j (nth$ ?i $?d))
@@ -229,7 +277,7 @@
 ;------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (29-10-11)
 ;He may drink milk or eat apples.
-(defrule get_lwg_for_and_with_aux
+(defrule get_lwg_with_aux
 (declare (salience 899))
 (Head-Level-Mother-Daughters ?h ?l ?Mot ?id $?d ?CC $?d1)
 (Node-Category ?CC CC)
@@ -254,6 +302,7 @@
 	(retract ?f0)
 )
 ;------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 
 (defrule get_lwg
 (declare (salience 900))
 ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut)
@@ -265,7 +314,7 @@
         (loop-for-count (?i 1 (length $?daut))
                 (bind ?j (nth$ ?i $?daut))
                 (if (numberp (string_to_integer ?j)) then
-                    (bind $?lwg (create$ $?lwg ?j))
+                    (bind $?lwg (sort my_string_cmp (create$ $?lwg ?j)))
                 )
         )
         (assert (root-verbchunk-tam-parser_chunkids  root - $?lwg - $?lwg - $?lwg))
@@ -428,7 +477,7 @@
 (Node-Category ?S S)
 (Head-Level-Mother-Daughters ? ? ?S ?VP $?)
 (Node-Category ?VP VP)
-(Head-Level-Mother-Daughters ? ? ?VP ?id $?)
+(Head-Level-Mother-Daughters ?h&~Let ? ?VP ?id $?) ;Let her go to the market.
 ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vc ?tam  ?id $?ids)
 (not (imper_decided ?id))
 (not (Head-Level-Mother-Daughters ? ? SBAR ?S))

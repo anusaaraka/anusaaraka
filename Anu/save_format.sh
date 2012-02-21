@@ -36,8 +36,6 @@ else
     cd $PATH2/tmp_save_format
   fi
 
-#Generates a table in $1.fmt in the following format
-# para_sent_word_no \t pre_tag,content,post_tag
 #Generates a table in $1.fmt_split in the following format
 # para_sent_word_no \t pre_tag \t content \t post_tag
 $PATH1/gen_table.pl $1.fmt $1.fmt_split_tmp < ../$1.pre-processed
@@ -46,9 +44,9 @@ $PATH1/gen_table.pl $1.fmt $1.fmt_split_tmp < ../$1.pre-processed
 # To replace underscore (_) with hyphens (-)  (for WordNet purpose ) Ex: Child_abuse 
 python $PATH1/replace_underscore_with_hyphen.py   $1.fmt_split_tmp  $PATH2/$1_tmp/underscore_hyphen_replace_info.txt  $1.fmt_split
 
-
-
+#########################  Currently Disabled #########################################
 #$PATH1/report_error.pl < $1.fmt_split
+#######################################################################################
 
 ## This program generates sentences per line from the formatted output
 ## Puts the tags and punctuation marks in other file.

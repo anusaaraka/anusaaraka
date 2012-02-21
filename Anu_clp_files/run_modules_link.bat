@@ -490,8 +490,10 @@
  (load-facts "lwg_info.dat")
  (load-facts "parser_type.dat")
  (open "hindi_id_reorder_debug.dat" h_id_reorder_fp "a")
+ (open "hindi_punctuation.dat" h_fp "a")
  (run)
  (save-facts "hindi_id_order.dat" local hindi_id_order) 
+ (close h_fp)
  (clear)
  ;--------------------------------------------------------------------------
  ; prepare Apertium input for final hindi word generation.

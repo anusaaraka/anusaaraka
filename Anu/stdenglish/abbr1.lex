@@ -26,39 +26,39 @@
  #include<string.h>
 SPC [^a-zA-Z0-9]
 %%
-^i\.e\.$	{printf("ABBRThatis");}
-^i\.e\.{SPC}	{printf("ABBRThatis%c",yytext[4]);}
-{SPC}i\.e\.{SPC}	{printf("%cABBRThatis%c",yytext[0],yytext[5]);}
-^e\.g\.$	{printf("eABBRDOTABBRgABBRDOTABBR");}
-^e\.g\.{SPC}	{printf("eABBRDOTABBRgABBRDOTABBR%c",yytext[4]);}
-{SPC}e\.g\.{SPC}	{printf("%ceABBRDOTABBRgABBRDOTABBR%c",yytext[0],yytext[5]);}
-{SPC}U\.S\.A\.{SPC}	{printf("%cUABBRDOTABBRSABBRDOTABBRAABBRDOTABBR%c",yytext[0],yytext[7]);}
-{SPC}U\.S\.{SPC}	{printf("%cUABBRDOTABBRSABBRDOTABBR%c",yytext[0],yytext[5]);}
-{SPC}U\.K\.{SPC}	{printf("%cUABBRDOTABBRKABBRDOTABBR%c",yytext[0],yytext[5]);}
-{SPC}A\.D\.{SPC}	{printf("%cAABBRDOTABBRDABBRDOTABBR%c",yytext[0],yytext[5]);}
-{SPC}a\.k\.a\.{SPC} 	{printf("%caABBRDOTABBRkABBRDOTABBRaABBRDOTABBR%c",yytext[0],yytext[7]);}
+^i\.e\.$	{printf("ABBR-ThatIs");}
+^i\.e\.{SPC}	{printf("ABBR-ThatIs%c",yytext[4]);}
+{SPC}i\.e\.{SPC}	{printf("%cABBR_ThatIs%c",yytext[0],yytext[5]);}
+^e\.g\.$	{printf("ABBR-Example");}
+^e\.g\.{SPC}	{printf("ABBR-Example%c",yytext[4]);}
+{SPC}e\.g\.{SPC}	{printf("%cABBR-Example%c",yytext[0],yytext[5]);}
+{SPC}U\.S\.A\.{SPC}	{printf("%cABBR-USA%c",yytext[0],yytext[7]);}
+{SPC}U\.S\.{SPC}	{printf("%cABBR-US%c",yytext[0],yytext[5]);}
+{SPC}U\.K\.{SPC}	{printf("%cABBR-UK%c",yytext[0],yytext[5]);}
+{SPC}A\.D\.{SPC}	{printf("%cABBR-AD%c",yytext[0],yytext[5]);}
+{SPC}a\.k\.a\.{SPC} 	{printf("%cABBR-aka%c",yytext[0],yytext[7]);}
 
-[ ]Sr\.		{printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
-[ ][jJ]r\.	{printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
-[ ]Dr\.		{printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
-[ ]Mr\.		{printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
-[ ]Mrs\.	{printf("%c%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2],yytext[3]); }
-[ ]Ms\.		{printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
-[ ]Inc\.	{printf("%c%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2],yytext[3]); }
-[0-9]%		{printf("%c ABBRpercent",yytext[0]); }
-[0-9][ ]%	{printf("%c ABBRpercent",yytext[0]); }
-$[0-9]		{printf("ABBRdollar %c",yytext[1]);  }
-#[0-9]		{printf("ABBRsharp %c",yytext[1]);   }
-[ ][nN]o\.      {printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
-Fig\.		{printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]); }
-[ ]etc\.	{printf("%c%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2],yytext[3]);	}
-[ ][rR]s\.		{printf("%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2]);    }
-[ ]approx\.	{printf("%c%c%c%c%c%c%cABBRDOT", yytext[0],yytext[1],yytext[2],yytext[3],yytext[4],yytext[5],yytext[6],yytext[7]);    }
-ca[.][ ]	{printf("%c%cABBRDOT ", yytext[0],yytext[1]);	}
-a[.]d[.][ ]	{printf("%cABBRDOT%cABBRDOT ", yytext[0],yytext[2]);	}
-b[.]c[.][ ]     {printf("%cABBRDOT%cABBRDOT ", yytext[0],yytext[2]);    }
-m[.]g[.][ ]     {printf("%cABBRDOT%cABBRDOT ", yytext[0],yytext[2]);    } 
-
+[ ]Sr\.		{printf("%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2]); }
+[ ][jJ]r\.	{printf("%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2]); }
+[ ]Dr\.		{printf("%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2]); }
+[ ]Mr\.		{printf("%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2]); }
+[ ]Mrs\.	{printf("%c%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2],yytext[3]); }
+[ ]Ms\.		{printf("%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2]); }
+[ ]Inc\.	{printf("%c%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2],yytext[3]); }
+[0-9]%		{printf("%cSYM-Percent",yytext[0]); }
+[0-9][ ]%	{printf("%cSYM-Percent",yytext[0]); }
+$[0-9]		{printf("SYM-Dollar%c",yytext[1]);  }
+#[0-9]		{printf("SYM-Sharp%c",yytext[1]);   }
+[ ][nN]o\.      {printf("%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2]); }
+Fig\.		{printf("%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2]); }
+[ ]etc\.	{printf("%c%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2],yytext[3]);	}
+[ ][rR]s\.		{printf("%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2]);    }
+[ ]approx\.	{printf("%c%c%c%c%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2],yytext[3],yytext[4],yytext[5],yytext[6],yytext[7]);    }
+ca[.][ ]	{printf("%c%cABBR-Dot ", yytext[0],yytext[1]);	}
+a[.]d[.][ ]	{printf("%cABBR-Dot%cABBR-Dot ", yytext[0],yytext[2]);	}
+b[.]c[.][ ]     {printf("%cABBR-Dot%cABBR-Dot ", yytext[0],yytext[2]);    }
+m[.]g[.][ ]     {printf("%cABBR-Dot%cABBR-Dot ", yytext[0],yytext[2]);   /* } 
+\—		{printf("SYM-EmDash");*/}
 %%
 main()
 {

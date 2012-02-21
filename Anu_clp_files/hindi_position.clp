@@ -52,7 +52,7 @@
  ;--------------------------------------------------------------------------------------------------------------- 
  (defrule comma_list_for_sent_opener
  (declare (salience 1050))
- (id-right_punctuation ?id ",")
+ (id-right_punctuation ?id PUNCT-Comma)
  ?f<-(comma_list_for_sent_opener $?ids)
  (test (eq (member$ ?id  $?ids) FALSE))
  =>

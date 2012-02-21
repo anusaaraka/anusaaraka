@@ -5,6 +5,8 @@
  (id-Apertium_output)
  (id-left_punctuation)
  (id-right_punctuation)
+ (hid-left_punctuation)
+ (hid-right_punctuation)
  (id-HM-source)
  (id-inserted_sub_id)
  (id-word)
@@ -19,42 +21,19 @@
  
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot preceeding_part_of_verb (default 0)) (slot preposition (default 0))(slot Hin_position (default 0)))
 
- ;Added by Shirisha Manju to get last id of hindi order (25-01-12)
- (defrule get_last_id
- (declare (salience 3010))
- (hindi_id_order $?var ?last_id)
- (not (last_id ?))
- =>
-	(assert (last_id ?last_id))
- )
  ;----------------------------------------------------------------------------------------------------------
  ;Modified by Shirisha Manju to get punctuation (01-12-10)
+ ;Removed if conditions and simplified the rule (10-02-12) by Shirisha Manju
  (defrule match_exp
  (declare (salience 3000))
  ?f1<-(id-last_word ?id ?wrd)
  (id-right_punctuation   ?id  ?rp)
- ?f<-(hindi_id_order $?var)
- (last_id ?end)
+ ?f<-(hindi_id_order $?var ?lid)
+ (test (neq ?rp NONE))
  =>
 	(retract ?f ?f1)
-        (if (eq ?rp "NONE") then ;Ex:  That incident took place in 1800 B.C.
-                (printout ?*punct_file* "(id-left_punct-right_punct     "?end " -       -)" crlf)
-		(assert (hindi_id_order $?var))
-        else (if (eq ?rp "'.") then ;Ex: It was the centre of most powerful buddhist sect of northern india known as 'sarvastivada '. (Added by Roja 11-01-11)
-                (bind ?rp1 (string-to-field (sub-string (+ (str-index "'" ?rp) 1) (length ?rp) ?rp)))
-		(assert (hindi_id_order $?var ?rp1 ))
-                (printout ?*punct_file* "(id-left_punct-right_punct     "?end " -       \""?rp1"\")" crlf)
-              else
-                (if (eq ?rp ").") then ;The inscription on the tomb of Michael-Faraday (1897-1990).
-                         (printout ?*punct_file* "(id-left_punct-right_punct    "?end " -       .)" crlf)
-			(assert (hindi_id_order $?var .))
-                else
-                        (printout ?*punct_file* "(id-left_punct-right_punct    "?end " -       \""?rp "\")" crlf)
-			(bind ?p (string-to-field ?rp))
-			(assert (hindi_id_order $?var ?p))
-                )
-             )
-       ) 
+	(printout ?*punct_file* "(hid-right_punctuation     "?lid " 	"?rp ")" crlf)
+        (assert (hindi_id_order $?var ?lid ?rp))
  )
  ;----------------------------------------------------------------------------------------------------------
  ;Added by Roja (29-06-11)
@@ -76,6 +55,46 @@
    	)
  )
  ;----------------------------------------------------------------------------------------------------------
+ ;One can reach kumbhalgarh by road from udaipur (84km) and ranakpur which is 18km from kumbhalgarh. 
+ (defrule get_apertium_mng_with_lt_and_rt_punc
+ (declare (salience 2520))
+ (Parser_used Stanford-Parser)
+ (hid-right_punctuation ?id ?rp)
+ (hid-left_punctuation ?id ?lp)
+ ?f1<-(id-Apertium_output ?id $?wrd_analysis)
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
+ =>
+        (retract ?f0 ?f1)
+        (assert (hindi_id_order $?id1 ?lp $?wrd_analysis ?rp $?id2))
+ )
+
+ ;Revenue totaled $5 million.
+ (defrule get_apertium_mng_with_left_punc
+ (declare (salience 2510))
+ (Parser_used Stanford-Parser)
+ (hid-left_punctuation ?id ?punc $?p )
+ ?f1<-(id-Apertium_output ?id ?w $?wrd_analysis)
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
+ =>
+        (retract ?f0 ?f1)
+	(bind ?w (string-to-field (str-cat ?punc ?w)))
+        (assert (hindi_id_order $?id1 ?w $?p $?wrd_analysis $?id2))
+ )
+
+ ;Added by Shirisha Manju (08-02-2012)
+ ;If you are a technician, obey the signals.
+ (defrule get_apertium_mng_with_right_punc
+ (declare (salience 2510))
+ (Parser_used Stanford-Parser)
+ (hid-right_punctuation ?id ?punc $?p)
+ ?f1<-(id-Apertium_output ?id $?wrd_analysis ?w)
+ ?f0<-(hindi_id_order $?id1 ?id $?id2)
+  =>
+        (retract ?f0 ?f1)
+        (bind ?w (string-to-field (str-cat ?w ?punc)))
+        (assert (hindi_id_order $?id1 $?wrd_analysis ?w $?p $?id2))
+ )
+
  ;Added by Shirisha Manju (10-12-2011)
  (defrule get_apertium_mng
  (declare (salience 2500))

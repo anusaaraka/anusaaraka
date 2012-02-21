@@ -8,7 +8,7 @@
 #define INPUT_LENGTH MAX_LINE_LENGTH*MAX_NO_OF_LINES
 
 char *punct_short[]={",",".",";",":","'","\"","?","!","(",")","$","=","()",").","(),","'.","''",".\""};
-char *punct_long[]={"comma","full_stop","semi_colon","colon","single_quote","double_quote","question_mark","exclamation","open_parenthesis","closed_parenthesis","dollar","equal_to","open-closed_parenthesis","closed_paren-dot","open-closed_paren-comma","single_quote-comma,","2_single_quotes","dot_double_quote"};
+char *punct_long[]={"PUNCT-Comma","PUNCT-Dot","PUNCT-Semicolon","PUNCT-Colon","PUNCT-SingleQuote","PUNCT-DoubleQuote","PUNCT-QuestionMark","PUNCT-Exclamation","PUNCT-OpenParen","PUNCT-ClosedParen","SYM-Dollar","PUNCT-EqualTo","PUNCT-OpenClosedParen","PUNCT-ClosedParenDot","PUNCT-OpenClosedParenComma","PUNCT-SingleQuoteComma","PUNCT-TwoSingleQuotes","PUNCT-DotDoubleQuote"};
 
 int get_punct_full(char *ps)
 {
@@ -84,6 +84,7 @@ int main(int argc,char **argv)
   char  *input,*none="NONE",*lp,*rp,*ZERO="0";
   char  filename[500],filename1[500],filename2[100],filename3[100],filename4[100];
 
+  char 	*lp1,*rp1;
   read_file(&input);
   index=1;
   flag=1;
@@ -249,9 +250,11 @@ int main(int argc,char **argv)
                  left_punct[i]=left_punct[i]+strcspn(left_punct[i],">");
                 *left_punct[i]='\0';left_punct[i]++;}
 
-    	      if((j=get_punct_full(left_punct[i]))==-1)
+    	      if((j=get_punct_full(left_punct[i]))==-1){
 		lp=none;
-	      else  lp=punct_short[j];
+		lp1=none;} //Added by Shirisha Manju
+	      else  {lp=punct_short[j];
+		    lp1=punct_long[j];} //Added by Shirisha Manju
 
 /***************  Added by Roja Lakshmi(11-01-11)
 Ex1: As can be seen from Figure 11.1 the functions printf(), and scanf() fall under the category of formatted console I per O functions.
@@ -266,54 +269,15 @@ To handle more than one punctuation for a word in a sentence following steps are
               strcpy(right_punct[i],str2);
 /**** end *******/
 
-	      if((j=get_punct_full(right_punct[i]))==-1)
+	      if((j=get_punct_full(right_punct[i]))==-1){ 
 		rp=none;
-	      else rp=punct_short[j];
+		rp1=none;}  //Added by Shirisha Manju
+	      else {rp=punct_short[j];
+		 //Added by Shirisha Manju
+		   rp1=punct_long[j]; } 
 
-              //Added by Shirisha Manju
-              //---------------------------------------------------------------------  
-              if(strcmp(lp,"(")==0)
-                fprintf(punct_clp,"(id-left_punctuation  %d\t\"left_paren\")\n",i,lp);
-              else if(strcmp(lp,")")==0)
-                fprintf(punct_clp,"(id-left_punctuation  %d\t\"right_paren\")\n",i,lp);
-              //----------------------------------------------------------------------
-              //Added by Roja(07-01-10)
-              else if(strcmp(lp,"=")==0)
-                fprintf(punct_clp,"(id-left_punctuation  %d\t\"equal_to\")\n",i,lp);
-              else if(strcmp(lp,"\"")==0)
-                fprintf(punct_clp,"(id-left_punctuation  %d\t\"\\%s\")\n",i,lp);
-              //----------------------------------------------------------------------
-              else
-                fprintf(punct_clp,"(id-left_punctuation  %d\t\"%s\")\n",i,lp);
-
-             //Added by Shirisha Manju
-              //---------------------------------------------------------------------  
-              if(strcmp(rp,")")==0)
-                fprintf(punct_clp,"(id-right_punctuation %d\t\"right_paren\")\n",i,rp);
-              else if(strcmp(rp,"(")==0)
-                  fprintf(punct_clp,"(id-right_punctuation %d\t\"left_paren\")\n",i,rp);
-	      //----------------------------------------------------------------------
-
-	     //Added by Shirisha Manju
-              //---------------------------------------------------------------------  
-              if(strcmp(rp,"?")==0)
-                fprintf(punct_clp,"(id-right_punctuation %d\t\"question_mark\")\n",i);
-              //----------------------------------------------------------------------
-              //Added by Roja(07-01-11)
-              else if(strcmp(rp,"=")==0)
-                  fprintf(punct_clp,"(id-right_punctuation %d\t\"equal_to\")\n",i,rp);
-              else if(strcmp(rp,"()")==0) 
-                  fprintf(punct_clp,"(id-right_punctuation %d\t\"left_parenright_paren\")\n",i,rp); 
-              else if(strcmp(rp,"(),")==0)
-                  fprintf(punct_clp,"(id-right_punctuation %d\t\"left_parenright_paren,\")\n",i,rp);
-              else if(strcmp(rp,"\"")==0)
-                  fprintf(punct_clp,"(id-right_punctuation %d\t\"\\%s\")\n",i,rp);
-              else if(strcmp(rp,".\"")==0)
-                  fprintf(punct_clp,"(id-right_punctuation %d\t\"dot_double_quote\")\n",i,rp);
-              //----------------------------------------------------------------------
-
-	      else
-                fprintf(punct_clp,"(id-right_punctuation %d\t\"%s\")\n",i,rp);
+		fprintf(punct_clp,"(id-left_punctuation   %d\t%s)\n",i,lp1);
+		fprintf(punct_clp,"(id-right_punctuation  %d\t%s)\n",i,rp1);
 	    }
 	
 	  fprintf(eng_fp, ")\n");

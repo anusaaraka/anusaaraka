@@ -71,18 +71,10 @@
  (id-right_punctuation   ?id  ?rp)
  (hindi_id_order $?var)
  =>
-        (if (eq ?rp "NONE") then 
+        (if (eq ?rp NONE) then 
                 (printout ?*eng_sen-file* (implode$ $?var) crlf )
-        else (if (eq ?rp "'.") then 
-                (bind ?rp1 (string-to-field (sub-string (+ (str-index "'" ?rp) 1) (length ?rp) ?rp)))
-                (printout ?*eng_sen-file* (implode$ $?var) ?rp1 crlf )
-              else
-                (if (eq ?rp ").") then 
-                        (printout ?*eng_sen-file* (implode$ $?var) "right_paren." crlf )
-                else
-                        (printout ?*eng_sen-file* (implode$ $?var) ?rp crlf )
-                )
-             )
+        else
+                (printout ?*eng_sen-file* (implode$ $?var) ?rp crlf )
         )
  )
  ;---------------------------------------------------------------------------------------------------------
