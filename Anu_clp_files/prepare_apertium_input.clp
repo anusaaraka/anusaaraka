@@ -70,10 +70,13 @@
  (assert (impr_request  imper m_h2))
  )
  ;========================================== default format for hindi mng "-" ==========================================
+ ;if vibakthi neq 0 then dont delete the hindi meaning id 
+ ;becoz we can get hindi meaning from database with prep as head and head mng as -
+ ;Ex:She declared that out of love for the poor she had gotten her family to go against convention.
  (defrule default_id
- (declare (salience 1500))
+ (declare (salience 1501))
  ?f0<-(id-HM-source ?id - ?)
- (pada_info (group_ids $? ?id $?)(vibakthi 0))
+ (or (pada_info (group_ids $? ?id $?)(vibakthi 0)) (pada_info (preposition $? ?id $?)(vibakthi 0)))
   =>
         (retract ?f0)
         (printout ?*A_fp5* "(id-Apertium_input " ?id "  )" crlf)
@@ -81,12 +84,13 @@
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju on 22-11-11
+ ;She declared that out of love for the poor she had gotten her family to go against convention.
  ;Is there life beyond the grave?
  (defrule default_id1
  (declare (salience 1500))
  ?f0<-(id-HM-source ?id - ?)
- (pada_info (group_ids $?ids ?h ))
- (test (and (member$ ?id $?ids) (neq ?id ?h)))
+ (or (pada_info (group_head_id ?h)(group_ids $?ids)(vibakthi ?v))(pada_info (group_head_id ?h)(preposition $?ids)(vibakthi ?v)))
+ (test (and (member$ ?id $?ids) (neq ?id ?h)(neq ?v 0)))
   =>
         (retract ?f0)
         (printout ?*A_fp5* "(id-Apertium_input " ?id "  )" crlf)
@@ -146,19 +150,19 @@
  (defrule Compound_mng_with_Prep_id
  (declare (salience 1003))
  ?f0<-(id-HM-source ?p_id ?p_mng Database_compound_phrase_word_mng|Database_compound_phrase_root_mng|WSD_compound_phrase_root_mng)
- (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(preposition ?p_id)(number ?num)(case ?case)(gender ?gen))
+ (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(preposition $? ?p_id $?)(number ?num)(case ?case)(gender ?gen))
  ?f1<-(id-HM-source ?pada_id ?h_mng ?)
- (test (neq ?vib 0)) 
+ (test (and (neq ?vib 0)(neq ?vib kA) (or (neq (sub-string 1 2 ?vib) "ke")(neq (sub-string 1 2 ?vib) "kI"))))
   =>
 	(retract ?f0 ?f1)
 	(if (neq ?h_mng -) then  ;He came from inside the room.
 		(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_mng "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^" ?vib "<cat:prsg>$)"  crlf)
-	else (if (neq ?p_mng -) then ; Is there life beyond the grave?
-		(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?p_mng "<cat:prsg>$)"  crlf)
-	     else ;Each one of them recorded the narratives from twenty participants.
-			(printout ?*A_fp5* "(id-Apertium_input "?p_id " )" crlf)
+	else 
+		(if (neq ?p_mng -) then ; Is there life beyond the grave?
+			(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?p_mng "<cat:prsg>$)"  crlf)
+		else ;Each one of them recorded the narratives from twenty participants.
 			(printout ?*A_fp5* "(id-Apertium_input "?pada_id " )" crlf)
-	     )
+		)
 	)
         (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id " Compound_mng_with_Prep_id )" crlf)
  )
