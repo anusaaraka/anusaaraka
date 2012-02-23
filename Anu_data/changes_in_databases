@@ -57,6 +57,7 @@
         Substituted "OY" as "oY" in 318 entries like		(suggested by Chaitanya Sir (26-01-12)
 		John	jOYna	as	joYna
 		MC	kOYMgaresa_saxasya	as	koYMgaresa_saxasya
+	establishment	sWApanA		as	aXiRTAna(Meena 06-02-12)
 
  2. Added :: 
 	attorney-at-law   pramANiwa_aBikarwA
@@ -475,6 +476,7 @@ Modified:
  5.transitive-verb-list.txt(     "                        )
  6.eng-animate-list.txt    (     "                        )
  7.hindi_default_tam.txt   (Added by Roja 11-03-11 . Suggested by Chaitanya Sir)
+ 8.default-iit-bombay-shabdanjali-dic.txt (Added by Roja 31-01-12 . Suggested by Chaitanya Sir)
 
  Changes in time.txt:
  ===================
@@ -516,4 +518,10 @@ Modified:
 		Let_us_0        caliye_hama-0-subj
 		let_us_0        subj-0-caliye_hama
 
-
+ Changes in default-iit-bombay-shabdanjali-dic.txt
+ =================================================
+ Modified :
+ --------
+	establishment	noun	aXiRTAna/sWApanA/parivAra/sWAna/sWApana/saMsWApana/nIMva/xaPwara/saMsWA 
+ 					as
+	establishment	noun	sWApanA/parivAra/AXiRTAna/sWAna/sWApana/saMsWApana/nIMva/xaPwara/saMsWA (Suggested by Meena(07-02-12)

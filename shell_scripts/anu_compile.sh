@@ -79,6 +79,10 @@
  gcc -o word.out word.c
  gcc -o all_tran_pada.out -g f_tid-rid.c f_sen-range.c  ALL_TRAN_PADA.c
  gcc -o f_range.out f_range_wordarray_resarray.c
+ gcc -o converting-dic-format.out converting-dic-format.c 
+ ./converting-dic-format.out $HOME_anu_test/Anu_data/default-iit-bombay-shabdanjali-dic.txt > $HOME_anu_test/Anu_data/default-iit-bombay-shabdanjali-dic_firefox.txt
+ ./comp.sh converting-dic-format-to-js
+ ./converting-dic-format-to-js < $HOME_anu_test/Anu_data/default-iit-bombay-shabdanjali-dic_firefox.txt > $HOME_anu_test/Browser/src/Dictionary.js
 
  flex ir.lex
  gcc -o ir lex.yy.c -lfl 

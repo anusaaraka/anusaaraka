@@ -12088,7 +12088,7 @@ essence	sAra
 essential	AvaSyaka
 essentially	mUlaBUwa_rUpa_se
 establish	sWApiwa_kara
-establishment	sWApanA
+establishment	aXiRTAna	
 estate	riyAsawa
 estimable	bahumUlya
 estimation	mUlya_nirUpaNa

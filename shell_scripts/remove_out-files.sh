@@ -30,7 +30,7 @@
  cd $HOME_anu_test/Anu_src
  rm *.out
  rm ir
- rm lex.yy.c y.tab.c  y.tab.h jnk constituency_parse
+ rm lex.yy.c y.tab.c  y.tab.h jnk constituency_parse f_tid-rid.h
  
 
  cd $HOME_anu_test/apertium

@@ -3150,11 +3150,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  26. Updated sd_verified (484)
  27. Updated Log
 
- 14-02-12
+ 23-02-12
  ========
  1. Added comments to the following files
         save_format.sh   gen_table.pl  stdenglish.sh
- 2. Modified "abbr1.lex" and "chk_input_format.pl" files to simplify the abbrivation names
+ 2. Modified "abbr1.lex" and "chk_input_format.pl" files to simplify the abbrevation names
  3. Modified the following files to change the punctuation name
         English_sentence.clp   create_eng_ord_html.clp   hindi_position.clp
  4. hindi_sentence.clp
@@ -3188,4 +3188,14 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Anusaaraka.sh   ,  Anusaaraka_stanford.sh, Anusaaraka_berkeley.sh  
         abbr.sh         ,  abbr_browser.sh       , run_sentence_stanford.sh  
         remove_out-files.sh  and changes_in_databases
- 15. Updated Log
+ 15. Modified the pattern in default-iit-bombay-shabdanjali-dic.txt 
+       Ex: aback	adjective	cakiwa 
+  	             as
+	   aback	adjective::cakiwa
+ 16. Deleted default-iit-bombay-shabdanjali-dic_firefox.txt
+ 17. Added converting-dic-format-to-js.lex and converting-dic-format.c to generate 'dictionary format' in  txt as well as in 	  js format.
+ 18. Added code to compile and run above programs in anu_compile.sh
+ 19. Modified pada_openlogos.pl to generate ol_pada_debug.dat  in tmp_anu_dir
+ 20. Updated in changes_in_databases
+ 21. Updated remove_out-files.sh
+ 22. Updated Log
