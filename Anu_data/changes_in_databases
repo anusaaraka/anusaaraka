@@ -439,14 +439,15 @@ changes in samAsa-new.txt
   4.	<e lm="saMkalpanA"><i>saMkalpan</i><par n="regular__adj-noun"/></e> 
 				 as  
         <e lm="saMkalpanA"><i>saMkalpanA</i><par n="ASA/__n"/></e>	(Suggested by Rajini (11-02-12))
+  5.    Modified dictionary file to avoid generation of one form . Ex:  kiye/kie. 
 
  Removed : 
-	   Removed the following parsarg paradigms and its related patterns
+	  1.  Removed the following parsarg paradigms and its related patterns
 		kI_wulanA_meM  ke_liye  ke_sAWa  ke_pAsa  ke_pICe   ke_Upara   ke_bAre_meM   ke_pakRa_meM   ke_xvArA
 		Ex:  paradigm        : <sdef n="parsarg:ke_sAWa" c="ke_sAWa"/>  
 		     related pattern : <e><p><l>isake_sAWa</l><r>yaha<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke_sAWa"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>
+          2.  Removed vAl/A__n paradigm (Suggested by Chaitanya Sir).
 
-	
  Changes in apertium-en-hi.en.metadix 
  =====================================
  Added  :
