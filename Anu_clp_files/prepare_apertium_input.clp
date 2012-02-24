@@ -73,32 +73,32 @@
  ;if vibakthi neq 0 then dont delete the hindi meaning id 
  ;becoz we can get hindi meaning from database with prep as head and head mng as -
  ;Ex:She declared that out of love for the poor she had gotten her family to go against convention.
+ ;I like dogs as well as cats.
  (defrule default_id
  (declare (salience 1501))
  ?f0<-(id-HM-source ?id - ?)
- (or (pada_info (group_ids $? ?id $?)(vibakthi 0)) (pada_info (preposition $? ?id $?)(vibakthi 0)))
+ (or (pada_info (group_ids $? ?id $?)(vibakthi 0))(pada_info (group_ids $? ?id $?)(preposition 0)))
   =>
         (retract ?f0)
         (printout ?*A_fp5* "(id-Apertium_input " ?id "  )" crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  "?id "  default_id )" crlf)
  )
- ;----------------------------------------------------------------------------------------------------------------------
+ ;----------------------------------------------------------------------------------------------------------------------- 
  ;Added by Shirisha Manju on 22-11-11
  ;She declared that out of love for the poor she had gotten her family to go against convention.
  ;Is there life beyond the grave?
+ ;If prep_id is present then dont delete pada_head mng fact 
  (defrule default_id1
  (declare (salience 1500))
  ?f0<-(id-HM-source ?id - ?)
- (or (pada_info (group_head_id ?h)(group_ids $?ids)(vibakthi ?v))(pada_info (group_head_id ?h)(preposition $?ids)(vibakthi ?v)))
- (test (and (member$ ?id $?ids) (neq ?id ?h)(neq ?v 0)))
-  =>
+ (or (pada_info (group_head_id ?h)(group_ids $?ids))(pada_info (group_head_id ?h)(preposition $?ids)))
+ (test (and (member$ ?id $?ids) (neq ?id ?h)))
+ =>
         (retract ?f0)
         (printout ?*A_fp5* "(id-Apertium_input " ?id "  )" crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  "?id "  default_id1 )" crlf)
  )
- 
  ;========================================== complete sent mng ========================================================
-
  ;This contradicts the assumption that the fluid was in equilibrium.
  ;Added by Shirisha Manju on 24-11-10
  (defrule complete_sen_mng_with_vib

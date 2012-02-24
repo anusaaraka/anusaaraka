@@ -1,5 +1,16 @@
  (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
+ ;Added by Shirisha Manju
+ ;I showed them how they should do it.
+ (defrule get_last_punc_with_S
+ (declare (salience 1200))
+ ?f0<-(mother-punct_head-right_punctuation S2|SQ2|SINV2 ?p_h ?punc)
+ (hindi_id_order $? ?id)
+ =>
+	(retract ?f0)
+	(assert (hid-right_punctuation ?id ?punc))
+ )
+ ;---------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju 
  ;A slow, balmy breeze from the south engulfed everyone in the audience. No, it was not Black Monday.
  ;The main states of southern india are tamilnadu, kerala, maharashtra, andhrapradesh and karnataka.
@@ -20,7 +31,7 @@
  ; During the 'state of siege', political opponents were imprisoned (and many of them 'disappeared'), censorship was systematic and all non-government political activity banned. 
  (defrule left_punct_for_JJ
  (declare (salience 1150))
- (mother-punct_head-left_punctuation  ?mot ?p_h ?punc&~PUNCT-Dot&~PUNCT-QuestionMark)
+ (mother-punct_head-left_punctuation  ?mot ?p_h ?punc)
  (Node-Category  ?mot  JJ|UH|NN|NNP|PP|ADVP|CD)
  (Head-Level-Mother-Daughters ? ? ?mot ?id)
  ?f0<-(hindi_id_order $?pre ?id $?post)
@@ -53,11 +64,8 @@
  (declare (salience 1100))
  (or (mother-punct_head-punctuation ?PP ?p_h ?punc)(mother-punct_head-right_punctuation ?PP ?p_h ?punc)(mother-punct_head-left_punctuation ?PP ?p_h ?punc))
  (Node-Category  ?PP  ADJP|PP|NP|ADVP|INTJ|VP|QP)
- (not (Node-Category ?p_h P_DOT))
- (not (Node-Category ?p_h P_QES))
- (not (Node-Category ?p_h P_DQ))
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?PP $?d ?JJ $?d1)
- (Node-Category  ?JJ  JJ|IN|PRP$|PRP|NN|RB|UH|VBZ|PP|NNS|CC|NNP|RP|NP|CD|FW|DT) 
+ (Node-Category  ?JJ  JJ|IN|PRP$|PRP|NN|RB|UH|VBZ|PP|NNS|CC|NNP|RP|NP|CD|FW|DT|VBN) 
 ?f0<-(Head-Level-Mother-Daughters ? ? ?JJ $?prep)
  =>
         (retract ?f0 ?f1)
@@ -68,7 +76,7 @@
  ;Says Mr. Mosettig: CNN is my wire service; they are on top of everything.
  (defrule punc_for_S_grp1
  (declare (salience 1150))
- (mother-punct_head-punctuation ?Mot ?p_h ?punc&~PUNCT-Dot&~PUNCT-QuestionMark)
+ (mother-punct_head-punctuation ?Mot ?p_h ?punc)
  (Node-Category  ?Mot  S)
  (Head-Level-Mother-Daughters ?h ?l ?Mot $?d ?VP)
  (Head-Level-Mother-Daughters ?h1 ?l1 ?VP $?d1 ?VP1)
@@ -85,7 +93,7 @@
  ;I did not think he would do it, but he did. 
  (defrule punc_for_S_grp
  (declare (salience 1150))
- (mother-punct_head-punctuation ?Mot ?p_h ?punc&~PUNCT-Dot&~PUNCT-QuestionMark)
+ (mother-punct_head-punctuation ?Mot ?p_h ?punc)
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?Mot $?d ?id $?d1)
  (Node-Category  ?Mot  S)
  ?f2<-(Head-Level-Mother-Daughters ?h1 ?l1 ?Sbar $?d1)
@@ -101,7 +109,7 @@
  ;From your description, I do not think I would enjoy it.
  (defrule punc_for_PP_grp
  (declare (salience 1000))
- (mother-punct_head-punctuation ?Mot ?p_h ?punc&~PUNCT-Dot&~PUNCT-QuestionMark)
+ (mother-punct_head-punctuation ?Mot ?p_h ?punc)
  (Node-Category  ?Mot  PP)
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?Mot $?d ?id ?prep)
  (hindi_id_order $?pre ?id $?post)
@@ -116,7 +124,7 @@
  ;He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
  (defrule substitute_punc_for_sbar
  (declare (salience 1000)) 
- (or (mother-punct_head-punctuation ?Mot ?p_h ?punc&~PUNCT-Dot&~PUNCT-QuestionMark)(mother-punct_head-right_punctuation ?Mot ?p_h ?punc&~PUNCT-Dot&~PUNCT-QuestionMark))
+ (or (mother-punct_head-punctuation ?Mot ?p_h ?punc)(mother-punct_head-right_punctuation ?Mot ?p_h ?punc))
  (Head-Level-Mother-Daughters ? ? ?Mot $?d)
  (Head-Level-Mother-Daughters ? ? ?FRAG $? $?d $? ?id)
  (Node-Category  ?FRAG FRAG|SBAR)
@@ -127,11 +135,23 @@
         (assert (punc_inserted ?p_h))
  )
  ;---------------------------------------------------------------------------------------------------------------
+ ;I showed them how they should do it.
+ (defrule sub_punc_Dot
+ (declare (salience 750))
+ (or (mother-punct_head-punctuation ?Mot ?p_h PUNCT-Dot)(mother-punct_head-right_punctuation ?Mot ?p_h PUNCT-Dot))
+ (Head-Level-Mother-Daughters ? ? ?SBAR  $?d ?id)
+ (Node-Category ?SBAR SBAR)
+ (Head-Level-Mother-Daughters ? ? ?Mot  $? $?d ?id $?)
+ =>
+	(assert (hid-right_punctuation ?id PUNCT-Dot))
+       (assert (punc_inserted ?p_h))
+ )
+ ;---------------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju
  ;I ate fruits, drank milk and slept.
  (defrule substitute_punc_info
  (declare (salience 700))
- (or (mother-punct_head-punctuation ?Mot ?p_h ?punc&~PUNCT-Dot&~PUNCT-QuestionMark)(mother-punct_head-right_punctuation ?Mot ?p_h ?punc&~PUNCT-Dot&~PUNCT-QuestionMark))
+ (or (mother-punct_head-punctuation ?Mot ?p_h ?punc)(mother-punct_head-right_punctuation ?Mot ?p_h ?punc))
  (Head-Level-Mother-Daughters ?h ?l  ?Mot $?d ?id)
  ?f0<-(hindi_id_order $?pre ?id $?post)
  (not (punc_inserted ?p_h))
@@ -147,10 +167,9 @@
  ?f0<-(hid-right_punctuation ?id  ?p)
  ?f1<-(hid-right_punctuation ?id  ?p1)
  (test (neq ?p ?p1))
- (not (hindi_id_order $? ?id))
  =>
 	(retract ?f0 ?f1)
-	(bind ?punc (string-to-field (str-cat ?p1 ?p)))
+	(bind ?punc (string-to-field (str-cat ?p ?p1)))
 	(assert (hid-right_punctuation ?id ?punc))
  )	
  ;--------------------------------------------------------------------------------------------------------------- 

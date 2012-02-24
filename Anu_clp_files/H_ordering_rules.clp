@@ -53,6 +53,19 @@
         )
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (23-02-12)
+;Broken windows need to be replaced.A fat boy had to do various exercises.
+(defrule replace_aux_with_head_VP1
+(declare (salience 1500))
+?f<-(Head-Level-Mother-Daughters ?h&need|are|be|have|had|making ?lvl ?VP ?VB ?S)
+(Node-Category  ?VP    VP)
+(Node-Category  ?VB    VBP|VBD|VBG)
+(Node-Category  ?S    S)
+=>
+	(retract ?f)
+	(assert (Head-Level-Mother-Daughters ?h ?lvl ?VP ?S))
+ )
+;-----------------------------------------------------------------------------------------------------------------------
  ;In Kashmir, fishing is a good business and the ideal season is from April to October. Added by Sukhada (12-9-11)
 (defrule from_to_PPs
 (declare (salience 1450))
@@ -596,7 +609,6 @@
 (undefrule rev_ADVP_goesto_RB)
 (undefrule move_ADVP_after_v)
 )
-
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule print_for_debugging3
 (declare (salience 750))

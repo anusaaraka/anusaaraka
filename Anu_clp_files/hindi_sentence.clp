@@ -20,21 +20,7 @@
 (defglobal ?*punct_file* = punct_fp)
  
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot preceeding_part_of_verb (default 0)) (slot preposition (default 0))(slot Hin_position (default 0)))
-
  ;----------------------------------------------------------------------------------------------------------
- ;Modified by Shirisha Manju to get punctuation (01-12-10)
- ;Removed if conditions and simplified the rule (10-02-12) by Shirisha Manju
- (defrule match_exp
- (declare (salience 3000))
- ?f1<-(id-last_word ?id ?wrd)
- (id-right_punctuation   ?id  ?rp)
- ?f<-(hindi_id_order $?var ?lid)
- (test (neq ?rp NONE))
- =>
-	(retract ?f ?f1)
-	(printout ?*punct_file* "(hid-right_punctuation     "?lid " 	"?rp ")" crlf)
-        (assert (hindi_id_order $?var ?lid ?rp))
- )
  ;----------------------------------------------------------------------------------------------------------
  ;Added by Roja (29-06-11)
  ;To replace hyphen(-) with underscore(_) only in cases where we get underscore in the sentence. 
@@ -55,6 +41,21 @@
    	)
  )
  ;----------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (23-02-12)
+ ;Things had just gone too far.
+ (defrule get_punt_if_no_aper_mng
+ (declare (salience 2530))
+ (Parser_used Stanford-Parser)
+ (hid-right_punctuation ?id ?rp)
+ ?f1<-(id-Apertium_output ?id $?wrd_analysis) 
+ ?f0<-(hindi_id_order $?id1 ?id)
+ (test (eq (length $?wrd_analysis) 0))
+ =>
+	(retract ?f1 ?f0)
+	(assert (hindi_id_order $?id1 ?rp))
+ )
+ ;----------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju
  ;One can reach kumbhalgarh by road from udaipur (84km) and ranakpur which is 18km from kumbhalgarh. 
  (defrule get_apertium_mng_with_lt_and_rt_punc
  (declare (salience 2520))
@@ -67,7 +68,8 @@
         (retract ?f0 ?f1)
         (assert (hindi_id_order $?id1 ?lp $?wrd_analysis ?rp $?id2))
  )
-
+ ;----------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju
  ;Revenue totaled $5 million.
  (defrule get_apertium_mng_with_left_punc
  (declare (salience 2510))
@@ -80,7 +82,7 @@
 	(bind ?w (string-to-field (str-cat ?punc ?w)))
         (assert (hindi_id_order $?id1 ?w $?p $?wrd_analysis $?id2))
  )
-
+ ;----------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (08-02-2012)
  ;If you are a technician, obey the signals.
  (defrule get_apertium_mng_with_right_punc
@@ -94,7 +96,7 @@
         (bind ?w (string-to-field (str-cat ?w ?punc)))
         (assert (hindi_id_order $?id1 $?wrd_analysis ?w $?p $?id2))
  )
-
+ ;----------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (10-12-2011)
  (defrule get_apertium_mng
  (declare (salience 2500))
@@ -222,6 +224,18 @@
         (assert (hindi_id_order $?var1))
  )
  ;---------------------------------------------------------------------------------------------------------
+ (defrule match_exp
+ (declare (salience 500))
+ ?f1<-(id-last_word ?id ?wrd)
+ (not (Parser_used Stanford-Parser) )
+ (id-right_punctuation   ?id  ?rp)
+ ?f<-(hindi_id_order $?var ?lid)
+ =>
+       (retract ?f ?f1)
+       (printout ?*punct_file* "(hid-right_punctuation     "?lid "     "?rp ")" crlf)
+        (assert (hindi_id_order $?var ?lid ?rp))
+ )
+
  ;Added by Shirisha Manju (25-01-12)
  (defrule print_sen
  (declare (salience 100))

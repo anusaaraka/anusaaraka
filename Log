@@ -3150,22 +3150,22 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  26. Updated sd_verified (484)
  27. Updated Log
 
- 23-02-12
+ 24-02-12
  ========
  1. Added comments to the following files
         save_format.sh   gen_table.pl  stdenglish.sh
- 2. Modified "abbr1.lex" and "chk_input_format.pl" files to simplify the abbrevation names
+ 2. Modified "abbr1.lex" and "chk_input_format.pl" files to simplify the abbrivation names
  3. Modified the following files to change the punctuation name
         English_sentence.clp   create_eng_ord_html.clp   hindi_position.clp
  4. hindi_sentence.clp
         Removed  : get_last_id
         Modified : match_exp
         Added    : get_apertium_mng_with_lt_and_rt_punc, get_apertium_mng_with_left_punc and
-                   get_apertium_mng_with_right_punc
+                   get_apertium_mng_with_right_punc, get_punt_if_no_aper_mng
  5. insert_punctuation.clp
         Modified all the rules to remove punctuation information in hindi order
 	Modified : get_phrase_group, substitute_left_paren
-        Added    : combine_multiple_right_punc, combine_multiple_left_punc
+        Added    : combine_multiple_right_punc, combine_multiple_left_punc, get_last_punc_with_S
  6. Modified "id-link_id_map_for_first_word" rule in parserid_wordid_mapping.clp
  7. run_H_gen_sen.bat
         i.  loaded "hindi_punctuation.dat" file in hindi_sentence module
@@ -3174,28 +3174,38 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  9. run_modules_std.bat
         i.   Renamed hindi_id_order_tmp1.dat as hindi_id_order.dat in  hindi_sent_reorder module
         ii.  loaded hindi_id_order.dat file and modified save-facts in insert_punctuation module
+ 	iii. Removed  word_without_adverb  and lwgid_wordid_mapping  modules
+	iv.  Modified sd_pada module to add assert command
  10. sd_combining_apostrophe.clp
-        Removed  : handling_punctuations
+        Removed  : handling_punctuations, get_left_right_punc1, map_cons1, map_cons2, map_cons3, get_left_punc,
+		   get_left_right_punc
         Modified : get_left_right_punc1, map_cons1, map_cons2, map_cons3, get_left_punc, get_left_right_punc
         Added    : get_left_punc
  11. sd_lwg_rules.clp
         Modified : replace_aux_with_head_VP , get_lwg_group, get_lwg and imper_rule
         Added    : get_lwg_group_with_RB ,get_lwg_for_and_with_aux, get_lwg_for_and_with_aux1
- 12. Modified ber_ver_output, sd_ver_output and verified_output
- 13. Modified run_stanford-parser.sh to take "cons_file" as input instead "penn_file" for get_word_cat.lex program
- 14. Updated the following files for punctuations
+ 12. sd_pada.clp
+        Modified : get_NP_group, get_PP_group, PP_pada, single_prep
+        Added    : get_eng_word_list, chk_for_prep, chk_for_largest_match, multiple_prep_rule, multiple_prep_rule1
+                   single_prep1, standard_prep_rule and del_prep_with_pada_head
+ 13. Added  preposition.txt in Anu_data
+ 14. Modified ber_ver_output, sd_ver_output and verified_output
+ 15. Modified run_stanford-parser.sh to take "cons_file" as input instead "penn_file" for get_word_cat.lex program
+ 16. Updated the following files for punctuations
         add_snt_mrkr.lex,  constituency_parse.l,   get_word_cat.lex
         Anusaaraka.sh   ,  Anusaaraka_stanford.sh, Anusaaraka_berkeley.sh  
         abbr.sh         ,  abbr_browser.sh       , run_sentence_stanford.sh  
         remove_out-files.sh  and changes_in_databases
- 15. Modified the pattern in default-iit-bombay-shabdanjali-dic.txt 
+ 17. Modified the pattern in default-iit-bombay-shabdanjali-dic.txt 
        Ex: aback	adjective	cakiwa 
   	             as
 	   aback	adjective::cakiwa
- 16. Deleted default-iit-bombay-shabdanjali-dic_firefox.txt
- 17. Added converting-dic-format-to-js.lex and converting-dic-format.c to generate 'dictionary format' in  txt as well as in 	  js format.
- 18. Added code to compile and run above programs in anu_compile.sh
- 19. Modified pada_openlogos.pl to generate ol_pada_debug.dat  in tmp_anu_dir
- 20. Updated in changes_in_databases
- 21. Updated remove_out-files.sh
- 22. Updated Log
+ 18. Deleted default-iit-bombay-shabdanjali-dic_firefox.txt
+ 19. Added converting-dic-format-to-js.lex and converting-dic-format.c to generate 'dictionary format' in  txt as well as in 	  js format.
+ 20. Added code to compile and run above programs in anu_compile.sh
+ 21. Modified pada_openlogos.pl to generate ol_pada_debug.dat  in tmp_anu_dir
+ 22. Added new rule "replace_aux_with_head_VP1" H_ordering_rules.clp
+ 23. Added new module handling_punctuations in run_modules_std.bat
+ 24. Updated in changes_in_databases
+ 25. Updated remove_out-files.sh 
+ 26. Updated Log
