@@ -44,35 +44,7 @@
 	(assert (mother-punct_head-left_punctuation ?s ?P_H ?punc))
 	(assert (mother-punct_head-right_punctuation ?s ?P_H1 ?punc1))
  )
-
-
-
- ; Added by shirisha Manju (26-01-12)
- ;"We have been very disappointed in the performance of natural gas prices," said Mr. Cox, Phillips's president.
- ; During the 'state of siege', political opponents were imprisoned (and many of them 'disappeared'), censorship was systematic and all non-government political activity banned.
- ; If first punct is COMMA then retract the fact else substitute daut of P in Mot fact
-; (defrule get_left_right_punc1
-; (declare (salience 5))
-; ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre ?PUNC ?head ?P ?PUNC1 $?post)
-; (Node-Category ?PUNC    ?p&P_DQT|P_SQT|P_LB)
-; (Node-Category ?P       ?p2&P_COM|FRAG)
-; (Node-Category ?PUNC1   ?p1&P_DQT|P_SQT|P_RB)
-; ?f1<-(Head-Level-Mother-Daughters ?h1 ?lvl1 ?PUNC ?child)
-; ?f2<-(Head-Level-Mother-Daughters ?h2 ?lvl2 ?PUNC1 ?child1)
-; ?f3<-(Head-Level-Mother-Daughters ?h3 ? ?P $?d ?d1)
-;  =>
-;        (retract ?f ?f1 ?f2 ?f3)
-;        (assert (mother-punct_head-left_punctuation ?head ?PUNC ?h1))
-;        (if (eq ?p2 FRAG) then
-;                (assert (Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre ?head $?d ?d1 $?post))
-;                (assert (mother-punct_head-right_punctuation ?d1 ?PUNC1 ?h2))
-;        else
-;                (assert (Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre ?head $?post))
-;                (assert (mother-punct_head-punctuation ?head ?P ?h3))
-;                (assert (mother-punct_head-right_punctuation ?head ?PUNC1 ?h2))
-;        )
-; )
-; 
+ ;Because of its unusual geography, chile has a hugely varied climate ranging from the world's driest desert in the north, through a mediterranean climate in the centre, to a snow-prone alpine climate in the south.
  ; He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
  ; Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival. 
  ; Added by shirisha Manju

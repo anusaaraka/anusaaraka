@@ -82,7 +82,7 @@
  gcc -o converting-dic-format.out converting-dic-format.c 
  ./converting-dic-format.out $HOME_anu_test/Anu_data/default-iit-bombay-shabdanjali-dic.txt > $HOME_anu_test/Anu_data/default-iit-bombay-shabdanjali-dic_firefox.txt
  ./comp.sh converting-dic-format-to-js
- ./converting-dic-format-to-js < $HOME_anu_test/Anu_data/default-iit-bombay-shabdanjali-dic_firefox.txt > $HOME_anu_test/Browser/src/Dictionary.js
+ ./converting-dic-format-to-js.out < $HOME_anu_test/Anu_data/default-iit-bombay-shabdanjali-dic_firefox.txt > $HOME_anu_test/Browser/src/dictionary.js
 
  flex ir.lex
  gcc -o ir lex.yy.c -lfl 
