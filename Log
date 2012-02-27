@@ -3213,7 +3213,18 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  21. Modified pada_openlogos.pl to generate ol_pada_debug.dat  in tmp_anu_dir
  22. Added new rule "replace_aux_with_head_VP1" H_ordering_rules.clp
  23. Added new module handling_punctuations in run_modules_std.bat
- 24. Updated in changes_in_databases
- 25. Updated remove_out-files.sh 
- 26. Updated Log
+ 24. Updated eng_hin_pos.clp file
+ 25. Modified wx_utf8.c program (accepting numbers within non-ascii characters "@123am" ==> 123am previously it converts "@123am" ==> "123अम्")
+ 26. Added comments and modified sd_chunker.clp rules.
+ 27. Updated anusaaraka README.
+ 28. Modified to_have rule in have.clp
+ 29. Moidified rule names and row names in create_hin_ord_html.clp
+ 30. Removed default-iit-bombay-shabdanjali-dic.clp and handled it using dictionary.js(fully not functional) file following files have been modified,
+    run_modules_ol.bat run_modules_std.bat run_modules_link.bat run_sentence_link.sh run_sentence_ol.sh run_sentence_stanford.sh
+ 31. Modified "print_dictionary_row" function and removed fact "id-default_mng-iit_bombay_shabdanjali_dic_mng" from all the rules in create_eng_ord_html.clp.
+ 32. Added code for creating default-iit-bombay-shabdanjali-dic_firefox1.txt and default-iit-bombay-shabdanjali-dic_firefox1.gdbm and removed code for creating default-iit-bombay-shabdanjali-dic_firefox.gdbm in anu_compile.sh file.
+ 33.Updated run_anu_browser.sh (Coping dictionary.js file to output diredtory)
+ 34. Updated in changes_in_databases
+ 35. Updated remove_out-files.sh 
+ 36. Updated Log
 

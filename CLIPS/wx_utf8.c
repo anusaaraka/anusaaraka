@@ -125,7 +125,7 @@ while(*(wx_string+i) != '\0') {
                 sprintf(utf8_string+j,"%c",ch);
                 j = j+1;
                 i++;
-                while(((ch_next >= 'A') && (ch_next <= 'Z')) || ((ch_next >= 'a') && (ch_next <= 'z')) || (ch_next == '-'))
+                while(((ch_next >= 'A') && (ch_next <= 'Z')) || ((ch_next >= 'a') && (ch_next <= 'z')) || (ch_next == '-')||((ch_next >= '0') && (ch_next <= '9')))
                 {
                 sprintf(utf8_string+j,"%c",ch_next);
                 j = j+1;

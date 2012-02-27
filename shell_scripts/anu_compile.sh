@@ -60,8 +60,9 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/preposition.gdbm < preposition.txt
  echo "Creating default-iit-bombay-shabdanjali-dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic.gdbm < default-iit-bombay-shabdanjali-dic.txt
- echo "Creating default-iit-bombay-shabdanjali-dic_firefox.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_firefox.gdbm < default-iit-bombay-shabdanjali-dic_firefox.txt
+ sed 's/\(.*\)\t\(.*\)::/\1_\2\t/g' default-iit-bombay-shabdanjali-dic.txt > default-iit-bombay-shabdanjali-dic_firefox1.txt
+ echo "Creating default-iit-bombay-shabdanjali-dic_firefox1.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_firefox1.gdbm < default-iit-bombay-shabdanjali-dic_firefox1.txt
 
  cd vb_root
  echo "Creating ol_vb_root.gdbm"
