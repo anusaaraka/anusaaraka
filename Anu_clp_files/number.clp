@@ -21,6 +21,8 @@
  (verb_type-verb-kriyA_mUla-tam)
  (verb_type-verb-causative_verb-tam)
  (verb_agrmt-head_id)
+ (id-attach_emphatic)
+ (id-preceeding_part_of_verb)
  )
 
  ; Added by Roja.(06-11-10)

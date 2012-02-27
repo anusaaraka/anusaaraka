@@ -57,6 +57,7 @@
         Substituted "OY" as "oY" in 318 entries like		(suggested by Chaitanya Sir (26-01-12)
 		John	jOYna	as	joYna
 		MC	kOYMgaresa_saxasya	as	koYMgaresa_saxasya
+	establishment	sWApanA		as	aXiRTAna(Meena 06-02-12)
 
  2. Added :: 
 	attorney-at-law   pramANiwa_aBikarwA
@@ -245,6 +246,7 @@ changes in samAsa-new.txt
          for the last time           ----- AKirI_bAra      AKirI_bAra      4       WM (Meena 10.8.11)
          stop talking                ----- bAweM_banxa_kIjiye      bAweM_banxa_kIjiye      noun    1       WM (Meena 10.8.11)
          diet book                   ----- AhAra_puswaka   AhAra_puwaka    noun    2       RM       (Meena 19.9.11)
+ 	 as_before       	     ----- pahale_kI_Waraha	pahale_kI_Waraha  adverb   2  WM   (suggested by Sukhada)
 
 
  2. Removed/commented
@@ -438,14 +440,15 @@ changes in samAsa-new.txt
   4.	<e lm="saMkalpanA"><i>saMkalpan</i><par n="regular__adj-noun"/></e> 
 				 as  
         <e lm="saMkalpanA"><i>saMkalpanA</i><par n="ASA/__n"/></e>	(Suggested by Rajini (11-02-12))
+  5.    Modified dictionary file to avoid generation of one form . Ex:  kiye/kie. 
 
  Removed : 
-	   Removed the following parsarg paradigms and its related patterns
+	  1.  Removed the following parsarg paradigms and its related patterns
 		kI_wulanA_meM  ke_liye  ke_sAWa  ke_pAsa  ke_pICe   ke_Upara   ke_bAre_meM   ke_pakRa_meM   ke_xvArA
 		Ex:  paradigm        : <sdef n="parsarg:ke_sAWa" c="ke_sAWa"/>  
 		     related pattern : <e><p><l>isake_sAWa</l><r>yaha<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke_sAWa"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>
+          2.  Removed vAl/A__n paradigm (Suggested by Chaitanya Sir).
 
-	
  Changes in apertium-en-hi.en.metadix 
  =====================================
  Added  :
@@ -468,13 +471,15 @@ Modified:
 
  Added new files:
  ===============
- 1.ol_parser_unused_words.txt (Added by Roja 06-11-10 suggested by Chaitanya sir)
- 2.month_day.txt (Added by Roja 20-11-10 suggested by Meena ji)
- 3.place.txt (Added by Roja 11-02-11. suggested by Sukhada)
- 4.time.txt  (                   "                        )
- 5.transitive-verb-list.txt(     "                        )
- 6.eng-animate-list.txt    (     "                        )
- 7.hindi_default_tam.txt   (Added by Roja 11-03-11 . Suggested by Chaitanya Sir)
+ 1. ol_parser_unused_words.txt (Added by Roja 06-11-10 suggested by Chaitanya sir)
+ 2. month_day.txt (Added by Roja 20-11-10 suggested by Meena ji)
+ 3. place.txt (Added by Roja 11-02-11. suggested by Sukhada)
+ 4. time.txt  (                   "                        )
+ 5. transitive-verb-list.txt(     "                        )
+ 6. eng-animate-list.txt    (     "                        )
+ 7. hindi_default_tam.txt   (Added by Roja 11-03-11 . Suggested by Chaitanya Sir)
+ 8. default-iit-bombay-shabdanjali-dic.txt (Added by Roja 31-01-12 . Suggested by Chaitanya Sir)
+ 9. preposition.txt (Added by Manju 24-02-12.  Suggested by Chaitanya Sir)
 
  Changes in time.txt:
  ===================
@@ -516,4 +521,15 @@ Modified:
 		Let_us_0        caliye_hama-0-subj
 		let_us_0        subj-0-caliye_hama
 
+ Changes in default-iit-bombay-shabdanjali-dic.txt
+ =================================================
+ Modified :
+ --------
+	establishment	noun	aXiRTAna/sWApanA/parivAra/sWAna/sWApana/saMsWApana/nIMva/xaPwara/saMsWA 
+ 					as
+	establishment	noun	sWApanA/parivAra/AXiRTAna/sWAna/sWApana/saMsWApana/nIMva/xaPwara/saMsWA (Suggested by Meena(07-02-12)
 
+ changes in preposition.txt
+ ==========================
+ Added  :
+	as_before 	---	Suggested by Rajini (25-02-12)

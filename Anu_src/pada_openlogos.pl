@@ -193,7 +193,7 @@ sub process{
   @scon2d=@{$refscon2d};
   @trg_tran=@{$reftrg_tran};
 
-  open(ERR,">ol_pada_debug.dat") || die "Can't open file ol_pada_debug.dat for opening\n";
+  open(ERR,">$ARGV[0]/ol_pada_debug.dat") || die "Can't open file ol_pada_debug.dat for opening\n";
 
   foreach $line (@trg_tran){
     if($line =~ /\s+(\d+)\s+EOS\s+/){$maxid=$1;}

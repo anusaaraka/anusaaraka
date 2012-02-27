@@ -25,7 +25,7 @@
 
 ;-------------------------------------------------------------------------------------------------
 
- (deffunction print_first_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?eng_op)
+ (deffunction print_eng_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?eng_op)
  (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
  (printout fp "<table cellspacing=\"0\">"crlf"<tr class=\"row1\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".B</td>"))
@@ -34,7 +34,7 @@
 
 ;-------------------------------------------------------------------------------------------------
 
- (deffunction print_second_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_p ?r_p ?aper_op)
+ (deffunction print_hindi_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_p ?r_p ?aper_op)
  (if (eq ?r_p -) then (bind ?r_p ""))
  (if (eq ?l_p -) then (bind ?l_p ""))
  (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
@@ -46,7 +46,7 @@
 
 ;-------------------------------------------------------------------------------------------------
 
- (deffunction print_third_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_p ?r_p ?aper_op )
+ (deffunction print_suggestion_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_p ?r_p ?aper_op )
  (if (eq ?r_p -) then (bind ?r_p ""))
  (if (eq ?l_p -) then (bind ?l_p ""))
  (printout fp "<tr class=\"row3\">" crlf )
@@ -58,14 +58,14 @@
  
 ;============================= Asserting control facts and modifying the original facts ====================================
 
- (defrule default_punct_facts
- (declare (salience 6000))
- ;(hindi_order $? ?id $?)
- (id-word ?id ?)
- (not (id-left_punct-right_punct ?id ? ?)) 
- =>
- 	(assert (id-left_punct-right_punct ?id - -))
- )
+; (defrule default_punct_facts
+; (declare (salience 6000))
+; ;(hindi_order $? ?id $?)
+; (id-word ?id ?)
+; (not (id-left_punct-right_punct ?id ? ?)) 
+; =>
+; 	(assert (id-left_punct-right_punct ?id - -))
+; )
 
  ;---------------------------------------------------------------------------------------------------
  ;convert Apertium_output wx notation to utf8.
@@ -150,21 +150,69 @@
 
 ;--------------------------------------------------------------------------------------------
  ;Printing to html file
- (defrule print_to_html
+ (defrule print_to_html_with_left_and_right_punc
  (declare (salience 4900))
  (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
  ?f<-(id-len ?id ?len)
  (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng)
- (id-left_punct-right_punct ?id1 ?l_p ?r_p)
+; (id-left_punct-right_punct ?id1 ?l_p ?r_p)
+ (hid-right_punctuation ?id1 ?r_p)
+ (hid-left_punctuation ?id1 ?l_p)
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
- ;(test (member$ (nth$ (length $?grp) $?grp) $?ids))
  (test (member$ ?id1 $?ids))
  =>
          (retract ?f)
-         (print_first_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng)
-         (print_second_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_p ?r_p ?hin)
-         (print_third_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_p ?r_p ?hin)
+         (print_eng_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng)
+         (print_hindi_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_p ?r_p ?hin)
+         (print_suggestion_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_p ?r_p ?hin)
          (assert (id-len (+ ?id 1) (- ?len 1))) 
+ )
+
+ (defrule print_to_html_with_left_punc
+ (declare (salience 4899))
+ (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
+ ?f<-(id-len ?id ?len)
+ (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng)
+ (hid-left_punctuation ?id1 ?l_p)
+ (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
+ (test (member$ ?id1 $?ids))
+ =>
+         (retract ?f)
+         (print_eng_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng)
+         (print_hindi_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_p - ?hin)
+         (print_suggestion_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_p - ?hin)
+         (assert (id-len (+ ?id 1) (- ?len 1)))
+ )
+
+ (defrule print_to_html_with_right_punc
+ (declare (salience 4899))
+ (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
+ ?f<-(id-len ?id ?len)
+ (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng)
+ (hid-right_punctuation ?id1 ?r_p)
+ (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
+ (test (member$ ?id1 $?ids))
+ =>
+         (retract ?f)
+         (print_eng_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng)
+         (print_hindi_row  ?p_id ?s_id ?id ?chnk_fr_htm - ?r_p ?hin)
+         (print_suggestion_row  ?p_id ?s_id ?id ?chnk_fr_htm - ?r_p ?hin)
+         (assert (id-len (+ ?id 1) (- ?len 1)))
+ )
+
+ (defrule print_to_html_with_no_punc
+ (declare (salience 4898))
+ (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
+ ?f<-(id-len ?id ?len)
+ (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng)
+ (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
+ (test (member$ ?id1 $?ids))
+ =>
+         (retract ?f)
+         (print_eng_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng)
+         (print_hindi_row  ?p_id ?s_id ?id ?chnk_fr_htm - - ?hin)
+         (print_suggestion_row  ?p_id ?s_id ?id ?chnk_fr_htm - - ?hin)
+         (assert (id-len (+ ?id 1) (- ?len 1)))
  )
 
 ;--------------------------------------------------------------------------------------------
@@ -178,9 +226,9 @@
  (test (!= ?len 0))
  =>
          (retract ?f)
-         (print_first_row  ?p_id ?s_id ?id U ?eng)
-         (print_second_row  ?p_id ?s_id ?id U - - ?hin)
-         (print_third_row  ?p_id ?s_id ?id U - - ?hin)
+         (print_eng_row  ?p_id ?s_id ?id U ?eng)
+         (print_hindi_row  ?p_id ?s_id ?id U - - ?hin)
+         (print_suggestion_row  ?p_id ?s_id ?id U - - ?hin)
          (assert (id-len (+ ?id 1) (- ?len 1)))
  )
 
@@ -192,9 +240,9 @@
  (test (!= ?len 0)) 
  =>
          (retract ?f)
-         (print_first_row  ?p_id ?s_id ?id U - )
-         (print_second_row  ?p_id ?s_id ?id U - - - )
-         (print_third_row  ?p_id ?s_id ?id U - - -)
+         (print_eng_row  ?p_id ?s_id ?id U - )
+         (print_hindi_row  ?p_id ?s_id ?id U - - - )
+         (print_suggestion_row  ?p_id ?s_id ?id U - - -)
          (assert (id-len (+ ?id 1) (- ?len 1)))
  )
 

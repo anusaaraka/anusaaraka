@@ -34346,3 +34346,4 @@ a_spot_of	jarA_sA#jarA_sA#noun#2#RM
 for_the_last_time	AKirI_bAra#AKirI_bAra#noun#4#WM
 stop_talking	bAweM_banxa_kIjiye#bAweM_banxa_kIjiye#noun#1#WM
 diet_book	AhAra_puswaka#AhAra_puwaka#noun#2#RM#
+as_before	pahale_kI_Waraha#pahale_kI_Waraha#adverb#2#WM

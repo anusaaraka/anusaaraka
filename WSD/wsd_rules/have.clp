@@ -901,10 +901,9 @@ else
 (id-root =(- ?id 1) to)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id -))
-(assert (id-wsd_root_mng =(- ?id 1) -))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id (- ?id 1) -));Modified by S.Maha Laxmi(24-2-2012)(previously meanings were given separately as (assert (id-wsd_root_mng ?id -)) (assert (id-wsd_root_mng =(- ?id 1) -)))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp    to_have   "  ?id "  - )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " have.clp  to_have  "  ?id "  " (- ?id 1) "  -  )" crlf))
 )
 
 

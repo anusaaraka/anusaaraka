@@ -59,7 +59,7 @@
         ========
 
         cd anu_testing
-	  shell_scripts/anu_compile.sh
+	sh shell_scripts/anu_compile.sh
 
       Note :: Please run  remove_out-files.sh before recompiling.
           
@@ -70,7 +70,7 @@
 4. How to run Anusaaraka:
    =====================
 
-	i. Copy the below text in a "sample"
+	i. Copy the below text in a file "sample"
          
 	      <TITLE> test. </TITLE>
 	      <p>
@@ -96,16 +96,22 @@
     				1) English file
                                 2) Layered output according to English sentence
                                 3) Hindi translation 
-            
-             2)  firefox $HOME_anu_output/<filename.html>
+
+             2)  firefox $HOME_anu_output/<filename_tran_frame.html>
+             Ex: firefox $HOME_anu_output/verified_tran_frame.html
+                 This frame opens two different html files i.e;
+                                1) English file
+                                2) Layered output according to hindi translation 
+
+             3)  firefox $HOME_anu_output/<filename.html>
              Ex: firefox $HOME_anu_output/verified.html
                  (Layered output according to English sentence i.e; In english word order)
                
-             3)  firefox $HOME_anu_output/<filename_tran.html>
+             4)  firefox $HOME_anu_output/<filename_tran.html>
              Ex: firefox $HOME_anu_output/verified_tran.html
                  (Layered output according to hindi translation 1.e; In hindi word order)
  
-             4)  firefox $HOME_anu_output/<filename_trnsltn.html>
+             5)  firefox $HOME_anu_output/<filename_trnsltn.html>
              Ex: firefox $HOME_anu_output/sd_verified_trnsltn.html
                  (Contains Hindi translated sentences)
                
@@ -129,12 +135,17 @@
 	4.  To run Rasp Parser       -- Anusaaraka_rasp.sh <file_name>
 	5.  To run Link Parser 	     -- Anusaaraka_link.sh  <file_name>			
                                          
-    To run the sentence for partucular linkage in Link parser:
-     --------------------------------------------------------
+    To run the sentence for partucular linkage in Link parser :
+    ---------------------------------------------------------
 
                      Anusaaraka_link.sh  <file_name> <linkage_number>
                Ex :  Anusaaraka_link.sh  test 2    --- running test file for second linkage.
 
+   To run the sentence for partucular parse in Stanford parser :
+   ----------------------------------------------------------
+
+                     Anusaaraka_stanford.sh  <file_name> <parse_number>
+               Ex :  Anusaaraka_stanford.sh  test 2    --- running test file for second parse.
 -------------------------------------------------------------------------------------------------------------------
  8. Debugging 
     ========= 

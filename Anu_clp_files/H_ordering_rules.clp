@@ -1,11 +1,4 @@
-(deffacts dummy_order_facts
-(Head-Level-Mother-Daughters)
-(Node-Category)
-(id-original_word)
-(id-cat_coarse)
-(id-cat)
-(prep_id-relation-anu_ids)
-)
+(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
 (defglobal ?*order_debug-file* = order_debug)
 (defglobal ?*count*  = 0) 
@@ -52,6 +45,19 @@
                           "             After     - "?head" "?lvl"  "?Mot"  "(implode$ $?daut)" "?VP ")"crlf)
         )
 )
+;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (23-02-12)
+;Broken windows need to be replaced.A fat boy had to do various exercises.
+(defrule replace_aux_with_head_VP1
+(declare (salience 1500))
+?f<-(Head-Level-Mother-Daughters ?h&need|are|be|have|had|making ?lvl ?VP ?VB ?S)
+(Node-Category  ?VP    VP)
+(Node-Category  ?VB    VBP|VBD|VBG)
+(Node-Category  ?S    S)
+=>
+	(retract ?f)
+	(assert (Head-Level-Mother-Daughters ?h ?lvl ?VP ?S))
+ )
 ;-----------------------------------------------------------------------------------------------------------------------
  ;In Kashmir, fishing is a good business and the ideal season is from April to October. Added by Sukhada (12-9-11)
 (defrule from_to_PPs
@@ -596,7 +602,6 @@
 (undefrule rev_ADVP_goesto_RB)
 (undefrule move_ADVP_after_v)
 )
-
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule print_for_debugging3
 (declare (salience 750))
@@ -713,6 +718,7 @@
 (Node-Category  ?dat SBAR|SBARQ)
 (not (sbar_ids $?child))
 (not (dont_separate_sbar ?dat))
+(not (Mother ?dat))
 =>
         (assert (Sen  $?child))
         (assert (sbar_ids $?child))
@@ -733,6 +739,42 @@
 =>
 	(retract ?f0 ?f1)
 	(assert (hindi_id_order $?dau $?daughters ?id))
+)
+;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju(27-02-12)
+(defrule rm_prep_id_in_order
+(declare (salience 60))
+?f<-(pada_info (preposition $?prep_ids))
+?f1<-(hindi_id_order  $?ids ?pid $?ids1)
+(test (member$ ?pid $?prep_ids))
+(not (pre_id_deleted ?pid))
+=>
+        (retract ?f1)
+        (assert (hindi_id_order   $?ids $?ids1))
+        (assert (pre_id_deleted ?pid))
+)
+;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju(27-02-12)
+(defrule rm_prep_node_in_cons
+(declare (salience 60))
+?f0<-(Head-Level-Mother-Daughters ?h ?l ?Mot $?d ?IN)
+(Node-Category ?IN IN)
+?f1<-(Head-Level-Mother-Daughters ? ? ?IN ?id)
+=>
+	(retract ?f0 ?f1)
+	(assert (Head-Level-Mother-Daughters ?h ?l ?Mot $?d))
+)
+;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju(27-02-12)
+(defrule rm_prep_id_in_cons
+(declare (salience 55))
+(pada_info (preposition $?prep_ids))
+?f0<-(Head-Level-Mother-Daughters ?h ?l ?Mot $?d ?pid $?d1)
+(test (member$ ?pid $?prep_ids))
+=>
+        (retract ?f0)
+        (assert (Head-Level-Mother-Daughters ?h ?l ?Mot $?d $?d1))
+        (assert (Mother ?Mot))
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule end_order

@@ -18,10 +18,13 @@
  ;As group head has a meaning and all others are given as "-" removing that ids from hindi_id_order.
  (defrule delete_affected_ids
  (declare (salience 2000))
+ ;(declare (salience 45))
  (id-HM-source-grp_ids   ?id  ?  ? $?ids)
  ?f<-(hindi_id_order  $?hin_order)
  (test (> (length $?ids) 1))
  (not (id-checked ?id))
+ (not (pada_info (group_cat infinitive)(group_ids $? ?id $?)))
+ ;(test (eq (member$ ?id $?grp_ids) FALSE))
   =>
   (retract ?f)
   (loop-for-count (?i 1 (length $?ids))
@@ -66,6 +69,7 @@
  (hindi_id_order  $?pre ?id $?pos)
  ?f<-(Hindi_sen $?pre1 ?id $?pos1)
  (id-Apertium_output ?id $?aper_op)
+ (test (neq  (length $?aper_op) 0))
  =>
  	(retract ?f)
         (loop-for-count (?i 1 (length $?aper_op))
@@ -143,7 +147,7 @@
         (retract ?f)
  	(bind ?j (member$ ?head_id $?hin_ord))
         (bind $?aux_chunk (create$ $?aux_chunk ?head_id))
-        (bind $?aux_chunk (sort_grp $?aux_chunk))
+        (bind $?aux_chunk (sort < $?aux_chunk))
         (assert(hin_pos-src-eng_ids ?j - $?aux_chunk))        
         (bind ?len (length $?aux_chunk))
 	(loop-for-count (?i 1 ?len)
@@ -171,15 +175,16 @@
                  (retract ?f)
                  (bind $?eng_ord (create$ $?prev ?p_id $?post))
                  (bind ?pos (member$ ?id $?hin_ord))
-                 (bind $?grp_ids (sort_grp (create$ $?grp_ids $?prep_id)))
+                 ;(bind $?grp_ids (sort_grp (create$ $?grp_ids $?prep_id)))
+                 (bind $?grp_ids (create$ $?grp_ids $?prep_id))
                  (assert (hin_pos-src-eng_ids ?pos - $?grp_ids))
                  (loop-for-count (?i 1 (length $?grp_ids))
                                 (bind ?g_id (nth$ ?i $?grp_ids))
                                 (bind ?pos1 (member$ ?g_id $?eng_ord))
-                                ;(printout t ?pos1 "-------" crlf)
+                                (if (neq ?pos1 FALSE) then
     		                (bind $?eng_ord (delete-member$ $?eng_ord ?g_id))
                    		(bind $?eng_ord (insert$ $?eng_ord ?pos1 "-"))
-                                (assert (id-pos ?g_id)))
+                                (assert (id-pos ?g_id))))
 		(assert (expr  $?eng_ord)) 
  )
 
@@ -192,12 +197,13 @@
  ?f<-(expr  $?prev ?id $?post)
  (hindi_id_order $?hin_ord)
  (test (member$ ?id  $?grp_ids))
+ (test (member$ ?id $?hin_ord))
  (not (id-pos ?id))
  =>
                  (retract ?f)
                  (bind $?eng_ord (create$ $?prev ?id $?post))
                  (bind ?pos (member$ ?id $?hin_ord))
-                 (bind $?grp_ids (sort_grp $?grp_ids))
+                 ;(bind $?grp_ids (sort_grp $?grp_ids))
                  (assert (hin_pos-src-eng_ids ?pos - $?grp_ids))
                  (loop-for-count (?i 1 (length $?grp_ids))
                                  (bind ?g_id (nth$ ?i $?grp_ids))
@@ -228,8 +234,25 @@
  )
 
 ;---------------------------------------------------------------------------------------------------------------------------
- ;find the position of remaing words
+ ;I will give up smoking. [will_give + up]
  (defrule find_pos
+ (declare (salience 30))
+ (expr  $?pr ?id $?po)
+ (id-HM-source-grp_ids   ?id1  ?  ? $?grp_ids)
+ ?f<-(hin_pos-src-eng_ids ?h_pos ?src $?ids)
+ (test (member$ ?id $?grp_ids))
+ (test (member$ ?id1 $?ids))
+ (not (id-pos ?id))
+ =>
+                 (retract ?f)
+                 (assert (id-pos ?id))
+                 (bind $?ids (sort_grp $?ids ?id))
+                 (bind $?ids (sort_grp $?ids ?id))
+                 (assert(hin_pos-src-eng_ids ?h_pos ?src $?ids))
+ )
+
+ ;find the position of remaing words
+ (defrule find_pos1
  (expr  $?pr ?id $?po)
  (hindi_id_order $?prev ?id $?post)
  (id-HM-source-grp_ids   ?id  ?  ? $?grp_ids)
@@ -248,6 +271,7 @@
  (hin_pos-src-eng_ids ?pos ?src $?ids)
  (English_Sen $?eng_list)
  (Hindi_sen $?hin_list)
+ (test (neq ?pos FALSE))
  =>
      (if (eq ?src D) then (bind ?hin_pos_val -D-)
      else
