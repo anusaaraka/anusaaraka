@@ -3150,7 +3150,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  26. Updated sd_verified (484)
  27. Updated Log
 
- 24-02-12
+ 27-02-12
  ========
  1. Added comments to the following files
         save_format.sh   gen_table.pl  stdenglish.sh
@@ -3164,9 +3164,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                    get_apertium_mng_with_right_punc, get_punt_if_no_aper_mng, get_apertium_mng_with_lt_and_rt_punc1
  5. insert_punctuation.clp
         Modified all the rules to remove punctuation information in hindi order
-	Modified : get_phrase_group, substitute_left_paren, punc_for_PP_grp
-        Added    : combine_multiple_right_punc, combine_multiple_left_punc, get_last_punc_with_S, get_s_grp
-	Removed  : punc_for_S_grp1 ,substitute_punc_for_sbar
+	Modified : get_phrase_group, substitute_left_paren, punct_info_for_JJ,  
+        Added    : combine_multiple_right_punc, combine_multiple_left_punc, get_last_punc_with_S, get_s_grp, split_PP
+	Removed  : punc_for_S_grp1 ,substitute_punc_for_sbar, Removed  : punc_for_PP_grp
  6. Modified "id-link_id_map_for_first_word" rule in parserid_wordid_mapping.clp
  7. run_H_gen_sen.bat
         i.  loaded "hindi_punctuation.dat" file in hindi_sentence module
@@ -3183,6 +3183,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 		- compound_phrase module before hindi_meaning module
 		- sd_pada module befor WSD module
                 - H_ordering_rules and get_constituency_tree modules before gender module
+ 	vii. Loaded hindi_tam_info.dat file for H_ordering_rules module 
+	viii. Added new module handling_punctuations
  10. sd_combining_apostrophe.clp
         Removed  : handling_punctuations, get_left_right_punc1, map_cons1, map_cons2, map_cons3, get_left_punc,
 		   get_left_right_punc
@@ -3192,7 +3194,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Modified : replace_aux_with_head_VP , get_lwg_group, get_lwg and imper_rule
         Added    : get_lwg_group_with_RB ,get_lwg_for_and_with_aux, get_lwg_for_and_with_aux1
  12. sd_pada.clp
-        Modified : get_NP_group, get_PP_group, PP_pada, single_prep
+        Modified : get_NP_group, get_PP_group, PP_pada, single_prep 
         Added    : get_eng_word_list, chk_for_prep, chk_for_largest_match, multiple_prep_rule, multiple_prep_rule1
                    single_prep1, standard_prep_rule and del_prep_with_pada_head
  13. Added  preposition.txt in Anu_data
@@ -3211,8 +3213,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  19. Added converting-dic-format-to-js.lex and converting-dic-format.c to generate 'dictionary format' in  txt as well as in 	  js format.
  20. Added code to compile and run above programs in anu_compile.sh
  21. Modified pada_openlogos.pl to generate ol_pada_debug.dat  in tmp_anu_dir
- 22. Added new rule "replace_aux_with_head_VP1" H_ordering_rules.clp
- 23. Added new module handling_punctuations in run_modules_std.bat
+ 22. H_ordering_rules.clp
+	Modified : create_sen_SBAR
+        Added    : rm_prep_id_in_order, rm_prep_node_in_cons,rm_prep_id_in_cons, replace_aux_with_head_VP1
+ 23. Removed "rm_prep_id" rule in hindi_sent_reorder.clp
  24. Updated eng_hin_pos.clp file
  25. Modified wx_utf8.c program (accepting numbers within non-ascii characters "@123am" ==> 123am previously it converts "@123am" ==> "123अम्")
  26. Added comments and modified sd_chunker.clp rules.
@@ -3227,4 +3231,6 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  34. Updated in changes_in_databases
  35. Updated remove_out-files.sh 
  36. Updated Log
+
+
 

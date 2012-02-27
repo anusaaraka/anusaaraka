@@ -250,7 +250,7 @@
  ;Added by Shirisha Manju (20-02-12)
  (defrule get_eng_word_list
  (declare (salience 500))
- (id-original_word ?id ?word)
+ (id-word ?id ?word)
  ?f1<-(index ?id)
  ?f<-(English-list $?Eng_list)
  =>
@@ -351,7 +351,7 @@
  (declare (salience 320))
  ?f<-(Head-Level-Mother-Daughters ? ? ?PP ?prep ?NP)
  (Node-Category ?PP PP|WHPP)
- (Node-Category ?NP NP|WHNP|ADJP)
+ (Node-Category ?NP NP|WHNP|ADJP|ADVP)
  (Head-Level-Mother-Daughters ? ? ?NP $? ?id)
  ?f1<-(pada_info (group_head_id ?id)(preposition 0))
  ?f0<-(to_be_included_in_paxa ?prep)

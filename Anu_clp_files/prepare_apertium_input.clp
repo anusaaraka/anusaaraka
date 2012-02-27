@@ -1242,6 +1242,7 @@
  (defrule default_hnd_mng_rule
  (declare (salience -300))
  ?f1<-(id-HM-source ?id ?h_word ?)
+ (hindi_id_order $? ?id $?)
  =>
         (retract ?f1)
         (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?h_word ")" crlf)

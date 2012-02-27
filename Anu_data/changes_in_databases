@@ -246,6 +246,7 @@ changes in samAsa-new.txt
          for the last time           ----- AKirI_bAra      AKirI_bAra      4       WM (Meena 10.8.11)
          stop talking                ----- bAweM_banxa_kIjiye      bAweM_banxa_kIjiye      noun    1       WM (Meena 10.8.11)
          diet book                   ----- AhAra_puswaka   AhAra_puwaka    noun    2       RM       (Meena 19.9.11)
+ 	 as_before       	     ----- pahale_kI_Waraha	pahale_kI_Waraha  adverb   2  WM   (suggested by Sukhada)
 
 
  2. Removed/commented
@@ -470,14 +471,15 @@ Modified:
 
  Added new files:
  ===============
- 1.ol_parser_unused_words.txt (Added by Roja 06-11-10 suggested by Chaitanya sir)
- 2.month_day.txt (Added by Roja 20-11-10 suggested by Meena ji)
- 3.place.txt (Added by Roja 11-02-11. suggested by Sukhada)
- 4.time.txt  (                   "                        )
- 5.transitive-verb-list.txt(     "                        )
- 6.eng-animate-list.txt    (     "                        )
- 7.hindi_default_tam.txt   (Added by Roja 11-03-11 . Suggested by Chaitanya Sir)
- 8.default-iit-bombay-shabdanjali-dic.txt (Added by Roja 31-01-12 . Suggested by Chaitanya Sir)
+ 1. ol_parser_unused_words.txt (Added by Roja 06-11-10 suggested by Chaitanya sir)
+ 2. month_day.txt (Added by Roja 20-11-10 suggested by Meena ji)
+ 3. place.txt (Added by Roja 11-02-11. suggested by Sukhada)
+ 4. time.txt  (                   "                        )
+ 5. transitive-verb-list.txt(     "                        )
+ 6. eng-animate-list.txt    (     "                        )
+ 7. hindi_default_tam.txt   (Added by Roja 11-03-11 . Suggested by Chaitanya Sir)
+ 8. default-iit-bombay-shabdanjali-dic.txt (Added by Roja 31-01-12 . Suggested by Chaitanya Sir)
+ 9. preposition.txt (Added by Manju 24-02-12.  Suggested by Chaitanya Sir)
 
  Changes in time.txt:
  ===================
@@ -526,3 +528,8 @@ Modified:
 	establishment	noun	aXiRTAna/sWApanA/parivAra/sWAna/sWApana/saMsWApana/nIMva/xaPwara/saMsWA 
  					as
 	establishment	noun	sWApanA/parivAra/AXiRTAna/sWAna/sWApana/saMsWApana/nIMva/xaPwara/saMsWA (Suggested by Meena(07-02-12)
+
+ changes in preposition.txt
+ ==========================
+ Added  :
+	as_before 	---	Suggested by Rajini (25-02-12)
