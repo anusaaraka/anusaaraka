@@ -3150,7 +3150,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  26. Updated sd_verified (484)
  27. Updated Log
 
- 27-02-12
+ 28-02-12
  ========
  1. Added comments to the following files
         save_format.sh   gen_table.pl  stdenglish.sh
@@ -3185,14 +3185,19 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                 - H_ordering_rules and get_constituency_tree modules before gender module
  	vii. Loaded hindi_tam_info.dat file for H_ordering_rules module 
 	viii. Added new module handling_punctuations
+	ix.  Added assert command for sd_lwg_rules module 
  10. sd_combining_apostrophe.clp
         Removed  : handling_punctuations, get_left_right_punc1, map_cons1, map_cons2, map_cons3, get_left_punc,
 		   get_left_right_punc
         Modified : get_left_right_punc1, map_cons1, map_cons2, map_cons3, get_left_punc, get_left_right_punc
         Added    : get_left_punc
  11. sd_lwg_rules.clp
-        Modified : replace_aux_with_head_VP , get_lwg_group, get_lwg and imper_rule
-        Added    : get_lwg_group_with_RB ,get_lwg_for_and_with_aux, get_lwg_for_and_with_aux1
+        Modified : get_lwg_group, get_lwg and imper_rule, get_lwg_with_aux
+	Added    : replace_aux, get_aux, retract_aux_VP, relace_verb, get_lwg_group_with_RB
+        Removed  : replace_aux_with_head_VP ,get_lwg_for_and,  get_lwg_for_and_with_aux1, get_lwg_for_and_with_aux
+                   get_multiple_aux, get_lwg_for_and_with_multiple_aux, remove_aux_lwg,imper_rule_for_and
+                   imper_rule_for_and1
+        Renamed  : get_lwg_group1  as TO_rule  and  get_lwg_group2  as  had_rule
  12. sd_pada.clp
         Modified : get_NP_group, get_PP_group, PP_pada, single_prep 
         Added    : get_eng_word_list, chk_for_prep, chk_for_largest_match, multiple_prep_rule, multiple_prep_rule1
@@ -3231,6 +3236,3 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  34. Updated in changes_in_databases
  35. Updated remove_out-files.sh 
  36. Updated Log
-
-
-

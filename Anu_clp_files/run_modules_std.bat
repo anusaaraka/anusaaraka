@@ -83,6 +83,7 @@
   (load-facts "Node_category.dat")
   (load-facts "preferred_morph_tmp.dat")
   (load-facts "sd_word.dat")
+  (assert (aux_grp -))
   (run)
   (save-facts "lwg_info_tmp.dat" local root-verbchunk-tam-parser_chunkids verb_type-verb-causative_verb-tam)
   (clear)
