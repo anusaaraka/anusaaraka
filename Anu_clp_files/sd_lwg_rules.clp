@@ -161,12 +161,13 @@
 ;The royal hospital was founded in 1682 by charles ii and houses the chelsea pensioners( distinguished ex-servicemen) who you will probably see strolling around the streets of chelsea in their bright red coats and tricorn hats.
 (defrule split_Conj_VP
 (declare (salience 1530))
-?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP $?d ?CC $?d1)
+?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP $?d ?CC $?d1 ?VP1)
 (and (Node-Category ?VP VP)(Node-Category ?CC CC))
+(Node-Category ?VP1 VP|VBN)
 =>
 	(retract ?f0)
 	(assert (Head-Level-Mother-Daughters ?h ?l ?VP $?d))
-	(assert (Head-Level-Mother-Daughters ?h ?l ?VP $?d1))
+	(assert (Head-Level-Mother-Daughters ?h ?l ?VP $?d1 ?VP1))
 )
 ;------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju  (14-02-12)
@@ -249,12 +250,14 @@
 (defrule get_lwg_with_aux
 (declare (salience 1400))
 ?f0<-(aux_grp - $?ids)
-?f1<-(root-verbchunk-tam-parser_chunkids root - $?d - $?d - $?d)
+?f2<-(aux_grp-head_VP $? ?VP)
+(Head-Level-Mother-Daughters ? ? ?VP $?vids)
+?f1<-(root-verbchunk-tam-parser_chunkids root - $?d ?h - $?d ?h - $?d ?h)
 (test (neq (length $?ids) 0))
-(test (eq (member$ $?ids $?d) FALSE))
+(test (or (member$ $?d $?vids) (eq ?h $?vids)))
 =>
 	(retract ?f1)
-  	(assert (root-verbchunk-tam-parser_chunkids root - $?ids $?d - $?ids $?d - $?ids $?d))	
+  	(assert (root-verbchunk-tam-parser_chunkids root - $?ids $?d ?h - $?ids $?d ?h - $?ids $?d ?h))	
 )
 ;------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (25-10-11)
