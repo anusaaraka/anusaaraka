@@ -159,15 +159,16 @@
 ;------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (24-02-12)
 ;The royal hospital was founded in 1682 by charles ii and houses the chelsea pensioners( distinguished ex-servicemen) who you will probably see strolling around the streets of chelsea in their bright red coats and tricorn hats.
+;She might have been reading and writing the book.
 (defrule split_Conj_VP
 (declare (salience 1530))
-?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP $?d ?CC $?d1 ?VP1)
+?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP $?d ?CC $?d1 ?VP1 $?d2)
 (and (Node-Category ?VP VP)(Node-Category ?CC CC))
-(Node-Category ?VP1 VP|VBN)
+(Node-Category ?VP1 VP|VBN|VBG)
 =>
 	(retract ?f0)
 	(assert (Head-Level-Mother-Daughters ?h ?l ?VP $?d))
-	(assert (Head-Level-Mother-Daughters ?h ?l ?VP $?d1 ?VP1))
+	(assert (Head-Level-Mother-Daughters ?h ?l ?VP $?d1 ?VP1 $?d2))
 )
 ;------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju  (14-02-12)
