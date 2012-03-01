@@ -82,7 +82,7 @@ usane rARtriya tIma meM Kelane kA usakA sunaharA mOkA vyarWa_meM_barabAxa kiyA.
 
 Hindi meaning using Stanford parser 2.19
 The blacksmith made an assay of iron ore. 
-luhAra ne lohe_kI_Kanija mittI kI eka paraKa banAyI/banAI.
+luhAra ne lohe_kI_Kanija mittI kI eka paraKa banAI.
 
 Hindi meaning using Stanford parser 2.20
 He could hear a faint sound from the bushes. 
@@ -231,8 +231,8 @@ gAdI ke pahiyoM ne mudanA AramBa kiyA.
 
 Hindi meaning using Stanford parser 2.56
 Our team was easily beaten in the competition. 
-hamArI tIma sparXA meM AsAnI se harAyI/harAI gayI WI.
-hamArI tIma AsAnI se sparXA meM harAyI/harAI gayI WI.
+hamArI tIma sparXA meM AsAnI se harAI gayI WI.
+hamArI tIma AsAnI se sparXA meM harAI gayI WI.
 
 Hindi meaning using Stanford parser 2.57
 She carefully prepared the dinner. 
@@ -269,7 +269,7 @@ yaha samBava hE ve AyeMge/Aezge.
 Hindi meaning using Stanford parser 2.65
 Have you ever seen the Pacific? 
 kyA Apa Pacific ko kaBI BI xeKa cuke hEM?
-kyA Apa kaBI BI Pacific ko xeKa cuke hEM ?
+kyA Apa kaBI BI Pacific ko xeKa cuke hEM?
 
 Hindi meaning using Stanford parser 2.66
 How many people did you see? 
@@ -328,7 +328,7 @@ kuCa anya pahanAve vAswava meM KarAba We.
 Hindi meaning using Stanford parser 2.79
 Do you think we should go to the party? 
 kyA Apa socawe hEM ki hameM/hamako pArtI ko jAnA cAhiye?
-kyA Apa socawe hEM ki hameM/hamako pArtI meM jAnA cAhiye ?
+kyA Apa socawe hEM ki hameM/hamako pArtI meM jAnA cAhiye?
 
 Hindi meaning using Stanford parser 2.80
 Where did you put the milk? 
@@ -393,7 +393,7 @@ yaha mahawvapUrNa_nahIM howA hE Ted kyA karawA hE.
 Hindi meaning using Stanford parser 2.95
 Are a dog and a cat here? 
 kyA yahAz kuwwA Ora billI hEM?
-kyA kuwwA Ora billI yahAz hEM ?
+kyA kuwwA Ora billI yahAz hEM?
 
 Hindi meaning using Stanford parser 2.96
 There is a dog and a cat here. 
@@ -402,7 +402,7 @@ kuwwA Ora billI yahAz hE.
 
 Hindi meaning using Stanford parser 2.97
 Where did the car come from? 
-gAdI kahAz se AyI/AI?
+gAdI kahAz se AI?
 
 Hindi meaning using Stanford parser 2.98
 Where do the words come from? 
@@ -619,8 +619,8 @@ unhoMne baccoM ke bIca meM pEsA bAzta xiyA.
 
 Hindi meaning using Stanford parser 2.150
 It plunged first its nose into the river. 
-isane naxI ke aMxara usakI nAka pahale PazsAyI/PazsAI.
-isane naxI ke aMxara pahale usakI nAka PazsAyI/PazsAI.
+isane naxI ke aMxara usakI nAka pahale PazsAI.
+isane naxI ke aMxara pahale usakI nAka PazsAI.
 
 Hindi meaning using Stanford parser 2.151
 I will finish my work first. 
@@ -697,7 +697,7 @@ ve SanivAra ko Liverpool ke viruxXa mahawvapUrNa mEca Kela rahe hEM.
 
 Hindi meaning using Stanford parser 2.169
 I was told the whole story by Maybeline. 
-muJe/muJako Maybeline ke xvArA pUrI kahAnI bawAyI/bawAI gayI WI.
+muJe/muJako Maybeline ke xvArA pUrI kahAnI bawAI gayI WI.
 
 Hindi meaning using Stanford parser 2.170
 She is full of bright ideas. 
@@ -871,7 +871,7 @@ visPota ne usakI SravaNa_Sakwi_ko bigAdA.
 
 Hindi meaning using Stanford parser 2.212
 Many people were angered by the hearings. 
-bahuwa sAre loga sunavAI_se kroXiwa huye/hue.
+bahuwa sAre loga sunavAI_se kroXiwa hue.
 
 Hindi meaning using Stanford parser 2.213
 I am in New York and I would like to see you. 
@@ -1294,7 +1294,7 @@ bahuwa sAre loga bola sakawe hEM paranwu sirPa kuCa kara sakawe hEM.
 
 Hindi meaning using Stanford parser 3.15
 Actress Whoopi Goldberg and singer Michael Jackson attended the ceremony. 
-Actress Whoopi Goldberg Ora gAyaka Michael Jackson samAroha meM upasWiwa huye/hue.
+Actress Whoopi Goldberg Ora gAyaka Michael Jackson samAroha meM upasWiwa hue.
 
 Hindi meaning using Stanford parser 3.16
 Failure to comply may result in dismissal. 
@@ -1501,7 +1501,7 @@ mEM pUrI subaha meM iXara-uXara Apako pAne ke liye prayAsa karwe_hue xOdawA rahA
 
 Hindi meaning using Stanford parser 3.62
 She is making the girl feed the child. 
-vaha ladakI se bacce ko KAnA_KilavA rahI hE.
+vaha ladakI se bacce ko KAnA_KilavA rahI hE .
 
 Hindi meaning using Stanford parser 3.63
 She made the girl feed the child. 
@@ -1618,7 +1618,7 @@ landana meM sPatika mahala kI lAinoM para banA gilAsa Gara isa bqhaw uxyAna meM 
 
 Hindi meaning using Stanford parser 3.91
 Mahadevi Verma wrote many poems. 
-Mahadevi Verma ne bahuwa sArI kaviwAyeM/kaviwAez liKIM.
+Mahadevi Verma ne bahuwa sArI kaviwAez liKIM.
 
 Hindi meaning using Stanford parser 3.92
 Soccer is my most favourite sport. 
@@ -1969,8 +1969,8 @@ SOUTH AFRICA FREED the ANC's Sisulu and seven other political prisoners.
 SOUTH AFRICA ne ANC ke Sisulu Ora sAwa anya rAjanEwika banxI mukwa kiye/kie.
 
 Hindi meaning using Stanford parser 4.79
-If John was with Lisa last night, who went to the movie with Diane? 
-yaxi joYna piCalI rAwa Lisa ke sAWa WA, wo Diane ke sAWa calaciwra kOna gayA?
+If John was with Lisa last night, who went to the movie with Diane. 
+yaxi joYna piCalI rAwa Lisa ke sAWa WA, wo Diane ke sAWa calaciwra kOna gayA.
 yaxi joYna , piCalI rAwa Lisa ke sAWa WA wo Diane ke sAWa calaciwra kOna gayA.
 
 Hindi meaning using Stanford parser 4.80
