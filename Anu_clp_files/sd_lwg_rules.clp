@@ -34,7 +34,7 @@
 ;Who translated the sentence for the student? The snake who swallowed the rat hissed loudly.
 (defrule make_VBN_as_VBD
 (declare (salience 1600))
-(Head-Level-Mother-Daughters ? ? ?S $? ?VP)
+(or (Head-Level-Mother-Daughters ? ? ?S $? ?VP ?)(Head-Level-Mother-Daughters ? ? ?S $? ?VP))
 (Node-Category ?S S|SQ)
 (Node-Category ?VP VP)
 ?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP ?VBN $?d)
@@ -131,13 +131,14 @@
         (assert (Head-Level-Mother-Daughters ?h1 ?l1 ?VP $?a $?a1 ?c ?VP2))
 )
 ;------------------------------------------------------------------------------------------------------------------------
+;You can go shopping on the fashionable mall , visit its neo-gothic churches , the grand former vice-regal lodge or the ce    meteries . The site was first prepared , and blocks of stone were transported and placed .
 ;Added by Shirisha Manju (24-02-12)
 (defrule get_aux
 (declare (salience 1560))
 ?f<-(Head-Level-Mother-Daughters ?h ?l ?VP ?aux $?a ?VP1)
 (and (Node-Category ?VP VP)(Node-Category ?VP1 VP))
 (Head-Level-Mother-Daughters ?h1 ?l1 ?VP1 $?d ?CC $?d1)
-(Node-Category ?CC CC)
+(or (Node-Category ?CC CC)(Node-Category ?CC P_COM))
 ?f1<-(Head-Level-Mother-Daughters ? ? ?aux ?aid)
 ?f0<-(aux_grp $?ids)
 =>
@@ -160,11 +161,13 @@
 ;Added by Shirisha Manju (24-02-12)
 ;The royal hospital was founded in 1682 by charles ii and houses the chelsea pensioners( distinguished ex-servicemen) who you will probably see strolling around the streets of chelsea in their bright red coats and tricorn hats.
 ;She might have been reading and writing the book.
+;You can go shopping on the fashionable mall , visit its neo-gothic churches , the grand former vice-regal lodge or the ce    meteries .
 (defrule split_Conj_VP
 (declare (salience 1530))
 ?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP $?d ?CC $?d1 ?VP1 $?d2)
-(and (Node-Category ?VP VP)(Node-Category ?CC CC))
-(Node-Category ?VP1 VP|VBN|VBG)
+(Node-Category ?VP VP)
+(or (Node-Category ?CC CC)(Node-Category ?CC P_COM) )
+(Node-Category ?VP1 VP|VBN|VBG|VBD)
 =>
 	(retract ?f0)
 	(assert (Head-Level-Mother-Daughters ?h ?l ?VP $?d))
@@ -186,15 +189,18 @@
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?id $?pos ?VP))
 )
 ;------------------------------------------------------------------------------------------------------------------------
+;You can go shopping on the fashionable mall , visit its neo-gothic churches , the grand former vice-regal lodge or the ce    meteries .
 ;Added by Shirisha Manju (27-02-12)
 (defrule relace_verb
 (declare (salience 1525))
-?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?V)
+;?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?V)
+?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?V $?post)
 (and (Node-Category  ?Mot    VP|SQ)(Node-Category  ?V    VP))
 ?f<-(Head-Level-Mother-Daughters ?h ?l ?V $?dau)
 =>
 	(retract ?f ?f1)
-	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre  $?dau))
+;	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre  $?dau))
+	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre  $?dau $?post))
 )
 ;------------------------------------------------------------------------------------------------------------------------
 ; Added by Shirisha Manju
@@ -251,7 +257,7 @@
 (defrule get_lwg_with_aux
 (declare (salience 1450))
 ?f0<-(aux_grp - $?ids)
-?f2<-(aux_grp-head_VP $? ?VP)
+(aux_grp-head_VP $? ?VP)
 (Head-Level-Mother-Daughters ? ? ?VP $? ?h $?)
 ?f1<-(root-verbchunk-tam-parser_chunkids root - ?h - ?h  - ?h )
 (test (neq (length $?ids) 0))
