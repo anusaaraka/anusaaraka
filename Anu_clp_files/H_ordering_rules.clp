@@ -50,9 +50,9 @@
 ;Broken windows need to be replaced.A fat boy had to do various exercises.
 (defrule replace_aux_with_head_VP1
 (declare (salience 1500))
-?f<-(Head-Level-Mother-Daughters ?h&need|are|be|have|had ?lvl ?VP ?VB ?S)
+?f<-(Head-Level-Mother-Daughters ?h&need|are|be|have|had|has ?lvl ?VP ?VB ?S)
 (Node-Category  ?VP    VP)
-(Node-Category  ?VB    VBP|VBD|VBG)
+(Node-Category  ?VB    VBP|VBD|VBG|VBZ)
 (Node-Category  ?S    S)
 =>
 	(retract ?f)

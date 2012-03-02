@@ -3237,5 +3237,17 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  35. Updated remove_out-files.sh 
  36. Modified ber_ver_output, sd_ver_output.
  37. Updated Log
+ 
+ 2-03-12
+ =======
+ 1. sd_lwg_rules.clp 
+        Modified : make_VBN_as_VBD  , get_aux, split_Conj_VP and relace_verb rules
+                        ( to treat COMMA as CC)
+ 2. run_modules_std.bat
+        1. Moved handling punctuations module after sd_lwg_rules module
+        2. loaded E_constituents_info_tmp1.dat instead E_constituents_info_tmp2.dat
+                (E_constituents_info_tmp1.dat file contains punct info)
+ 3. Modified "replace_aux_with_head_VP1" in H_ordering_rules.clp
+ 4. Updated Log
 
-
+ 
