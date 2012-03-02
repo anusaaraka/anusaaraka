@@ -718,7 +718,6 @@
 (Node-Category  ?dat SBAR|SBARQ)
 (not (sbar_ids $?child))
 (not (dont_separate_sbar ?dat))
-(not (Mother ?dat))
 =>
         (assert (Sen  $?child))
         (assert (sbar_ids $?child))
@@ -739,6 +738,12 @@
 =>
 	(retract ?f0 ?f1)
 	(assert (hindi_id_order $?dau $?daughters ?id))
+)
+;-----------------------------------------------------------------------------------------------------------------------
+(defrule undef
+(declare (salience 70))
+=>
+(undefrule  create_sen_SBAR)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju(27-02-12)
@@ -774,7 +779,6 @@
 =>
         (retract ?f0)
         (assert (Head-Level-Mother-Daughters ?h ?l ?Mot $?d $?d1))
-        (assert (Mother ?Mot))
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule end_order

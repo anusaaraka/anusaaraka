@@ -113,7 +113,7 @@
  (if (eq ?def_mng "-") then
  (printout fp "<td class=\""?chnk_fr_htm"\">  -  </td>" crlf "</tr>" crlf)
  else
- (printout fp "<td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  fetchdict"?root"(\'"?root"\')\"> <span id=\"popup_link_D_"?p_id"_"?s_id"_"?w_id"\" class=\"popup_link\">"?def_mng"</span><script type=\"text/javascript\"> new Popup('popup_5','popup_link_D_"?p_id"_"?s_id"_"?w_id"',{position:'below',trigger:'click'}); </script></a> </td>" crlf "</tr>" crlf))
+ (printout fp "<td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  fetchdict"?root"(\'"?root"\')\"> <span id=\"popup_link_D_"?p_id"_"?s_id"_"?w_id"\" class=\"popup_link\">"(wx_utf8 ?def_mng)"</span><script type=\"text/javascript\"> new Popup('popup_5','popup_link_D_"?p_id"_"?s_id"_"?w_id"',{position:'below',trigger:'click'}); </script></a> </td>" crlf "</tr>" crlf))
  )
 
  (deffunction print_root_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?root)

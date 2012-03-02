@@ -521,7 +521,7 @@ HIgh-court	noun::ucca_nyAyAlaya
 HP	noun::harsapavara/aSvaSakwi[iMjana_kI]
 HQ	noun::muKyAlaya
 Ha	noun::eca_e
-Habegger	-::Habegger
+Habegger	noun::Habegger
 Hallowe'en	noun::hEloIna
 Halloween	noun::hEloIna/hElovIna/31_akwUbara_meM_mqwakoM_ke_AwmA_kA_uTane_kA_xivasa
 Hammurabi	noun::hamurAbI
@@ -1440,7 +1440,7 @@ Urania	noun::yUreniyA
 Uranius	noun::uraNa
 Uranus	noun::yUrenasa/varuNa/aruNa
 Urdu	adjective::urxU_kA
-Urdu	noun::urxU/^
+Urdu	noun::urxU
 Usbeg	noun::ujZbeka
 Usbek	noun::ujZbeka
 Utopia	noun::nil/yUtopiyA/AxarSa_rAjya/AxarSa-rAjya
@@ -7643,7 +7643,7 @@ clique	noun::guta
 clitoris	noun::Baga-SiSna
 cloaca	noun::mala-jala_nikAsa_pAipa
 cloak	noun::labAxA/AdZa
-cloak-and-dagger	adjective::sAhasa,rahasya_Axi_se_yukwa_kucakra_praXAna/gupwa
+cloak-and-dagger	adjective::sAhasa/rahasya_Axi_se_yukwa_kucakra_praXAna/gupwa
 cloaked	adjective::veRtiwa/AcCAxiwa
 cloakroom	noun::sAmAna-kakRa
 clobber	noun::sAmAna
@@ -8280,7 +8280,7 @@ conduct	verb::saMcAliwa_karanA/saMcAlana_karanA/mArgaxarSana_karanA/AcaraNa_kara
 conduction	noun::cAlana
 conductive	adjective::cAlakIya
 conductivity	noun::cAlakawA
-conductor	noun::saMvewa_gAna,_vAXAxi_kA_nirxeSaka/saMvewa_gAna,vAXAxi_kA_nirxeSak/kaNdaktara/gArda/cAlaka
+conductor	noun::saMvewa_gAna/vAXAxi_kA_nirxeSaka/kaNdaktara/gArda/cAlaka
 conduit	noun::vAhaka
 cone	noun::xevaxArU_kA_Pala/saMku/kona
 cone	verb::saMku_AkAra_se_GeranA
@@ -8925,7 +8925,7 @@ courting	noun::praNaya_nivexana
 courtly	adjective::susaBya/saBya
 courtship	noun::praNaya_nivexana/vivAhArWa_milanA_julanA
 courtyard	noun::Azgana
-cousin	noun::cacerA,mamerA,PuPerA_yA_mOserA_BAi_yA_bahana/cacerA,_mamerA,_PuPerA_yA_mOserA_BAi_yA_bahana/cacerA_BAII/cacerA_BAI/cacerA_mamerA_mOserA_yA_PuPerA_BAI_yA_bahana
+cousin	noun::cacerA_mamerA_mOserA_yA_PuPerA_BAI_yA_bahana
 couture	noun::PZESanebala_kapadZoM_kA_nirmANa/PZESanebala_kapadZA
 couturier	noun::PZESanebala_vaswra-nirmAwA
 cove	noun::CotI_KAdZI
@@ -10478,7 +10478,7 @@ dethrone	verb::gaxxI_se_uwAranA/gaxxIpara_se_uwAranA
 detonate	verb::visPotiwa_honA/visPota_karanA/XamAkA_karanA/honA
 detonation	noun::visPota/XamAkA
 detonator	noun::visPotaka/bama_Axi_banAne_kA_upakaraNa
-detour	-::cakkaraxAra_mArga
+detour	noun::cakkaraxAra_mArga
 detour	noun::cakkara/kahIM_jAne_ke_lie_laMbA_paWa
 detour	verb::cakkara_lagA_kara_jAnA
 detract	verb::kama_karanA/kalaMkiwa_honA
@@ -14110,7 +14110,8 @@ filibuster	adjective::kArya_meM_vilamba_karavAne_saMbaMXI
 filibuster	noun::kArya_meM_vilamba_karavAnA
 filigree	noun::jZaraxojZI/mahIna_jAlI_kA_kAma
 filing-cabinet	noun::PAileM_raKane_kI_alamArI
-filing-clerk	file_clerk_{US}::noun/PAileM_raKane_vAlA_kaMrmacArI
+filing-clerk	noun::PAileM_raKane_vAlA_kaMrmacArI
+file-clerk	noun::PAileM_raKane_vAlA_kaMrmacArI
 filings	noun::cUrA/burAxA
 fill	noun::pUrNa/pUrA/saMwuRti
 fill	verb::uciwa_xavA_xenA/tqpwa_karanA/pUrA_karanA/pAla_have_se_Bare_rahanA/KilAnA/KAnA_KilAnA/KAnA/dAlanA/CA_jAnA/bawAnA/BaranA/Bara_jAnA/aMxara_dAlanA
@@ -14899,7 +14900,7 @@ foolish	adjective::nAsamaJa/mUrKawApUrNa/mUrKa/bewakUPa/bevakUPa
 foolishly	adverb::mUrKawA_se
 foolishness	noun::mUrKawA
 foolproof	adjective::viSvasanIya_Ora_AsAna/pakkA
-foolscap	noun::PulaskEpa/kAgajZa_kA_eka_nApa{lagaBaga_300*200_or_400mm}
+foolscap	noun::PulaskEpa/kAgajZa_kA_eka_nApa
 foot	noun::PZutaa/Puta/pEra/pAzva/pAyA/pahAdZa_kI_warAI/nicalA_sirA/AXAra/Puta{nApa}/pAxa/caraNa{kaviwA_meM}
 foot	verb::lAwa_mAranA/cukAnA/BUgawAna_karanA
 footage	noun::PZutamAna/PZilma_kA_hissA/PutamAna
@@ -19319,7 +19320,7 @@ inattentive	adjective::lAparavAha/asAvaXAna
 inattentively	adverb::beXyAnI_meM
 inaudibility	noun::aSravyawA
 inaudible	adjective::na_sunAI_xene_vAlA/aSravya/aSrAvya
-inaudibly	adverb::sunAI_na_padZe,Ese_DaMga_se
+inaudibly	adverb::XImI_Avaja_meM
 inaugural	adjective::uxGAtanAwmaka/AramBa
 inaugural	noun::uxGAtana-BARaNa/OpacArika_aXiRTApana
 inaugurate	verb::uxGAtana_karanA/SuBAraMBa_karanA/praWama_paricaya_karavAnA/uxGAtana_karanA
@@ -19952,7 +19953,7 @@ inordinately	adverb::bahuwa_jZyAxA
 inorganic	adjective::akArbanika/ajEva/jada
 inorganic-chemistry	noun::ajEva_rasAyana_vijFAna
 input	noun::sahayoga/niveSa/inapUta/Agawa/kampyUtara_meM_BarI_sAmagrI
-input	verb::dAlanA/kampyUtara_meM`saMgaNana_karanA
+input	verb::dAlanA/kampyUtara_meM_detA_dAlanA
 inputs	noun::niveSa
 inquest	noun::jAzca-padZawAla/anvIkRaNa/kisI_kI_mqwyu_ke_kAraNoM_kI_nyAyika_jAzca
 inquire	verb::pUCa-wACa_karanA/pUCa-wACaa/pUCanA/praSna_pUCanA/pawA_lagAnA/jAzca-padZawAla_karanA/CAnabIna_karanA/pUCa-wACa_karanA
@@ -20555,7 +20556,7 @@ irrelevantly	adverb::binA_kisI_prasaMga_ke
 irreligious	adjective::aXArmika
 irremediable	adjective::asuXArya
 irreparable	adjective::apUraNIya/jise_suXArA_na_jA_sake
-irreparably	adverb::marammawa_na_kI_jA_sake,_isa_waraha_se
+irreparably	adverb::marammawa_na_kI_jA_sake{isa_waraha_se}
 irreplaceable	adjective::anamola/aprawisWApya
 irrepressible	adjective::axamanIya
 irreproachable	adjective::aniMxya/niRkalaMka
@@ -20635,7 +20636,6 @@ its	pronoun::usakA/usak/isakA
 itself	pronoun::svayaM/apane_Apa/svayam
 itsy-bitsy	adjective::bahuwa_CotA_sA
 itty-bitty	adjective::bahuwa_CotA_sA
-itumail@itu.ch	E-MAIL::itumail@itu.ch
 ivory	adjective::hAWI_xAzwa_kA
 ivory	noun::pIwaSuBra_varNa/hAWI-xAMwa_kI_banI_vaswu/hAWI_xAMwa/gajaxaMwa
 ivy	noun::AivI_lawA/eka_prakAra_kI_lawA/vixvawwApUrNa_mAnaka
@@ -21268,7 +21268,7 @@ know-it-all	noun::sarvajFa
 knowing	adjective::suvicAriwa/suSikRiwa/jAnakAra/jAna-bUJa_kara_kiyA_huA/BijFa
 knowing	noun::jAnanA
 knowing	verb::jAnawe_huye
-knowingly	adverb::jEse_rahasya_se_pariciwa_ho,_isa__waraha_se/jAnabUJa_kara/jAna-bUJa_kara/jAnabUJakara
+knowingly	adverb::jAnabUJa_kara
 knowledgable	adjective::jAnakAra/vixvAna
 knowledge	noun::pratiBA/jFAna/jAnakArI
 knowledgeable	adjective::suSikRiwa/BijFa
@@ -21417,7 +21417,7 @@ lament	verb::para_Soka_karanA/Soka_prakata_karanA
 lamentable	adjective::nirASAjanaka/Soka_yogya
 lamentably	adverb::SocanIya_DaMga_se/burI_waraha_se
 lamentation	noun::vilApa/vilaya
-lamented	adjective::xivaMgawa/jisakI_kamI_Kale,_EsA/Kexa_yogya
+lamented	adjective::xivaMgawa/Kexa_yogya
 lamenting	adjective::vilApa_karane_vAlA
 lamia	noun::rakwacURaka
 laminate	noun::pataliwa_vaswu
@@ -22152,7 +22152,7 @@ listless	adjective::niruwsAhiwa/niUwsAhiwa
 listlessly	adverb::niruwsAhI_DaMga_se
 listlessness	noun::suswI
 lit	adjective::prakASiwa
-litancy	noun::girajAGara_meM_paDI_jAne_vAlI_prArWanAez/ubAne_vAlI_GatanAoM,_kAraNoM_Axi_kA_lambA_vivaraNa
+litancy	noun::prArWanAez/lambA_vivaraNa
 litany	noun::swuwi-mAlA/sUcI
 liter	noun::lItara
 literacy	noun::sAkRarawA
@@ -23464,7 +23464,7 @@ meltdown	noun::paramANu_xurGatanA
 melting	adjective::sahAnuBUwi_jagAwA_huA/piGalawA_huA
 melting-point	noun::galanAMka
 melting-point	noun::wApamAna_jisa_para_paxArWa_piGalawA_hE
-melting-pot	noun::viBinna_saMskqwi,_loga_waWA_vicAroM_kA_AxAna-praxAna_sWala/Binna-Binna_vicAroM_para_carcA_kI_sWiwi
+melting-pot	noun::meltiMga_pAta{viBinna_saMskqwi_loga_waWA_vicAroM_kA_AxAna-praxAna_sWala/Binna-Binna_vicAroM_para_carcA_kI_sWiwi}
 member	noun::xala/tukadZA/saxasyA/saxasya/sAWI/sahayOgI/nAgarika/ikAI/hissA/DAzcA/aMga
 membership	noun::saxasyawA/saxasya-varga/saxasya-saMKyA/saxasyawA
 membrane	noun::JillI
@@ -24355,7 +24355,7 @@ monovalent	adjective::eka_saMyojaka
 monoxide	noun::ekala_AksEdZa
 monsignor	noun::mahAmAnyavara
 monsoon	noun::mAnasUnI_havA/mAnasUna-kAla/mAnasUna/barasAwI_pavana
-monster	-::BImakAya
+monster	noun::BImakAya
 monster	noun::xEwya/awi_krUra_vyakwi/virUpa_prANI
 monstrosity	noun::awivirUpawA/BImakAya_prANi
 monstrous	adjective::sarAsara_galawa/BayAnaka/aprAkqwika
@@ -26437,7 +26437,6 @@ organist	noun::OYrgana_vAxaka
 organization	noun::vyavasWApana/saMsWA/saMracanA/saMgaTana/banAvata
 organizational	adjective::vyavasWApana_saMbaMXI/saMgaTana-saMbaMXI
 organize	verb::yojanA_banAnA/suvyavasWiwa_karanA/suniyojiwa_karanA/saMgaTiwa_karanA/saMgaTiwa_honA/Ayojiwa_karanA
-organized	-::saMgaTiwa
 organized	adjective::vyavasWiwa/suniyojiwa/saMgaTiwa/ekIkqwa
 organizer	noun::vyavasWiwa_DaMga_se_kAma_karane_vAlA/saMgaTaka/nijI_saMgaNakIya_sahAyaka/Ayojaka
 orgasm	noun::kAmonmAxa
@@ -26712,7 +26711,7 @@ overdrawn	adjective::aXika_rASi_nikAlA_huA
 overdressed	adjective::BadZkIle_kapadZe_pahanA_huA
 overdrive	noun::UzcA_giyara/awyaXika_gawiviXi_kI_avasWA
 overdrive	verb::jZyAxA_kAma_meM_lAnA/awyaXika_WakA_xenA/awi_upayoga_karanA
-overdue	adjective::vilaMbiwa/jo_bahuwa_pahale_hI_ho_jAnA_cAhiye_WA,_vaha
+overdue	adjective::vilaMbiwa
 overeat	verb::jZyAxA_KAnA
 overemphasis	noun::awyaXika_bala
 overemphasise	verb::awyaXika_bala_xenA
@@ -28425,7 +28424,7 @@ pipette	noun::pipeta/nalikA/pipeta/nallikA
 pipework	noun::pAipa-waMtra
 piping	adjective::wIKA/karNaBexI/sItI_jEsA
 piping	adverb::KaxabaxAwA_huA/bahuwa_aXika
-piping	noun::pAipiMga/pAipa/krIma_kI_XArI/bAzsurIvAxana/bAzsurI_kI_AvAjZa/viSeRa`nApa_kA_pAipa/gota
+piping	noun::pAipiMga/pAipa/krIma_kI_XArI/bAzsurI_kI_AvAjZa/gota
 pipit	noun::wulikA/cacarI
 pippin	noun::pipina/seba
 pipsqueak	noun::mAmUlI_AxamI/mahawvahIna_vyakwi
@@ -32460,10 +32459,10 @@ rifle-shot	noun::rAyaPala_kA_niSAnA
 rifleman	noun::baMxUkaXArI_sEnika/baMxUkaXArI
 rift	noun::xarAra/anabana
 rift-valley	noun::viBraMSa-GAtI
-rig	noun::XoKA/trelara_traka/sAja-sAmAna/riga/poSAka/maswUla,_pAla_Axi_kI_sajjA/maCalI_pakadZane_kA_sAja-sAmAna/cAra_pahiyoM_vAlI_GodZAgAdZI/badZI_larI/badZA_traka
+rig	noun::XoKA/trelara_traka/sAja-sAmAna/riga/poSAka/maswUla_kI_sajjA/maCalI_pakadZane_kA_sAja-sAmAna/cAra_pahiyoM_vAlI_GodZAgAdZI/badZI_larI/badZA_traka
 rig	verb::pAla_lagAnA/hera-Pera_karanA/gupwa_rUpa_se_lagAnA
 rigamarole	noun::nIrasa_Ora_nirarWaka_prakriyA/anApa-SanApa
-rigging	noun::maswUla,_pAla_Axi_kI_sajjA/maswUla,_pAla_Axi_kA_sAja-sAmAna
+rigging	noun::maswUla_kI_sajjA/maswUla_kA_sAja-sAmAna
 right	adjective::yogya/yaWArWa/xAhinA/uciwa/TIka_hAlawa_meM/TIka/svasWa/sIXA/satIka/samuciwa/samalaMba/sahI/munAsiba
 right	adverb::wuraMwa/uciwa_rUpa_se/TIka_waraha_se/sIXe/pUrI_waraha_se/ImAnaxArI_se
 right	noun::xakRiNa_panWa/xAhinI/svawvAXikAra/aXikAra
@@ -32475,7 +32474,7 @@ right-handed	adverb::XAyeM_hAWa_se
 right-hander	noun::xAyeM_hAWa_kA_prahAra/xAyaMhaWWA
 right-minded	adjective::samaJaxAra/sahI_DaMga_se_vicAra_vAlA/nyAyasaMgawa_vicAra_vAlA
 right-of-centre	adjective::rUDIvAxI
-right-oh!	INDC::hAz,_hAz_mEM_wEyAra_hUz
+right-oh!	interjection::hAz_mEM_wEyAra_hUz
 right-on	adjective::jAgarUka
 right-wing	adjective::xakRiNapaMWI
 right-winger	noun::xAyIM_waraPZa_KelanevAlA_KilAdZI/xakRINapaMWI
@@ -33024,8 +33023,8 @@ sabotage	verb::wodZa-PodZa_karanA
 saboteur	noun::xeSaxrohI/wodZa-PodZa_karane_vAlA/viXvaMsaka
 sabre	noun::walavAra/katAra
 sabre	verb::walavAra_se_mAra_dAlanA/walavAra_se_GAyala_kara_xenA
-sabre-rattling	-::sEnya_noka-JoMka/noka-JoMka
-sabre-toothed	-::lambe_GumAvaxAra_xAzwoM_vAl
+sabre-rattling	noun::sEnya_noka-JoMka/noka-JoMka
+sabre-toothed	adjective::lambe_GumAvaxAra_xAzwoM_vAlA
 sac	noun::WElI/sAka/puta/koSa/baMxa_sWAna
 saccharose	noun::SarkarA
 sack	noun::vinASa/borA/biswara/baraKZAswagI
@@ -34368,7 +34367,7 @@ shaking	adjective::kAzpawA_huA
 shaking	noun::kaMpana/JaKaJoranA
 shaky	adjective::kAzpawA_huA/dAzvAzdola/asWira
 shale	noun::Sela
-shall	noun::gA,ge,gI
+shall	noun::gA/ge/gI
 shallot	noun::Cote_pyAjZa_kA_pOXA/CotA_pyAjZa
 shallow	adjective::oCA/halkI/CiCalA
 shallow	noun::CiCalA_pAnI
@@ -34677,7 +34676,7 @@ shot	adjective::vinASa_yogya/raMga_biraMgA/GisA-pitA/baraKAswa
 shot	noun::xqSya/xeya/xAzva/xaMda/suI/PZoto/prayawna/prayasa/Pilma_KaMda/niSAnebAjZa/niSAnebAja/niSAnA/mAra/kOSalayukwa_prayawna/golI/golA/GAva/citraa/citra/CarrA/astra/anumAna
 shot	verb::xAgZanA/Tokara_mAranA/mAranA/golI_mAranA
 shotgun	noun::banxUka
-should	verb::howAnA/gA,ge,gIInA/cAhieenA
+should	verb::nA_cAhiye
 shoulder	noun::putaTA/patarI/pahAdZa/kaMXA/bowala
 shoulder	verb::XakkA_xenA/boJa_uTAnA/boJa_lenA/Age_baDanA
 shoulder-bag	noun::bagala-WElA
@@ -38646,7 +38645,7 @@ taciturnly	adverb::KAmoSI_se/binA_AvAjZa_kiye
 tack	noun::xiSA-parivarwana/ruKZa/kaccA_tAzkA/jahAja_ke_maswUla_kI_rassI/jahAja_kA_teDZA-meDZA_rAswA/havA_kI_xiSA/GodZe_kA_sAjZa-sAmAna/drAiMga_pina/CotI_kIla
 tack	verb::pEMwarA_baxalanA/lagAnA/kacce_tAzke_se_jodZanA/jahAja_kI_xiSA_baxalanA/havA_kI_xiSA_meM_le_jAnA/CotI_kIla_se_Toka_xenA
 tackiness	noun::cipacipAhata
-tackle	noun::Xara_pakadZa/maswUla,_pAla_Axi_kA_sAja-sAmAna/maCalI_pakadZane_kA_sAja-sAmAna/GiranI
+tackle	noun::Xara_pakadZa/maswUla_kA_sAja-sAmAna/maCalI_pakadZane_kA_sAja-sAmAna/GiranI
 tackle	verb::spaRtIkaraNa_mAzganA/sAmanA_karanA/rokanA/CInanA
 tackler	noun::CInane_vAlA
 tacky	adjective::cipacipA/BaxxA/BadZakIlA
@@ -42436,7 +42435,7 @@ unmatched	adjective::binA_jodZI_kA/axviwIya/anupama
 unmated	adjective::binA_jodZI_kA/asaMBukwa
 unmeaning	adjective::arWahIna
 unmeasurable	adjective::aparimeya
-unmeasured	adjective::na_napA,huA/asImiwa
+unmeasured	adjective::na_napA_huA/asImiwa
 unmechanical	adjective::ayAMwrika
 unmechanised	adjective::ayaMwracAliwa
 unmechanized	adjective::ayaMwracAliwa
@@ -43504,7 +43503,7 @@ urbanization	noun::SaharIkaraNa
 urbanize	verb::SaharIkaraNa_karanA
 urbanized	adjective::SaharIkqwa
 urchin	noun::lAvArisa_SarArawI_baccA/jalasAhI/CokarA
-urea	noun::yUriyA/^
+urea	noun::yUriyA
 uremia	noun::yUrImiyA
 uremic	adjective::yUrImiyA_saMbaMXI
 urethra	noun::mUwramArga
@@ -43689,7 +43688,7 @@ valueless	adjective::nirmUlya/bekImawa
 valuelessness	noun::nirmUlyawA
 valuer	noun::mUlya-nirXAraka
 values	noun::mAnyawA
-valve	noun::kapAtikA/kapAta/Cixra/vAlva{eka`ora_Kulane_vAlA_vAyu_gEsa_xrava_ke_saMcAra_kA_yaMwra}/hqxaya_meM_rakwa_vAhaka_vAlva
+valve	noun::kapAtikA/kapAta/Cixra/vAlva/hqxaya_meM_rakwa_vAhaka_vAlva
 valved	adjective::Cixrayukwa
 valvelet	noun::kRuxra_kapAtikA
 valvotomy	noun::kapAtikACexana
@@ -44596,7 +44595,7 @@ vote-of-thanks	noun::XanyavAxa_praswAva
 voteless	adjective::mawAXikArahIna
 voter	noun::mawaxAwA/mawa_xene_vAlA
 voting	noun::mawaxAna
-votive	adjective::vrawAnuRTiwa/mannawa_kA/mannawa`kA
+votive	adjective::vrawAnuRTiwa/mannawa_kA
 vouch	verb::uwwaraxAyiwva_lenA/pramANiwa_karanA/gAraMtI_xenA/axAlawa_meM_bulAnA
 vouch-for	verb::gavAhI_xenA/viSvAsa_xilAnA
 vouchee	noun::sAkRI/gavAha
@@ -46020,7 +46019,7 @@ windlass	noun::haswaGarGarI/belana-caraKI/sAmAna_uTAne_kA_upakaraNa{rassI_yA_jaM
 windless	adjective::pavanarahiwa
 windlessness	noun::pavanarahiwawA/havAhInawA
 windmill	noun::vAyujaniwra/pavana-cakkI/pavana_cakkI
-window	noun::xarIcA/viMdo/KidZakI_kA_kAzca/KidZakI
+window	noun::KidZakI_kA_kAzca/KidZakI/xarIcA/viMdo
 window-box	noun::saMxUkanumA_gamalA
 window-dress	verb::xiKAvatI_wAma-JAma_se_AkarRaka_banAanA
 window-dressing	noun::UparI_xiKAvata/praxarSana_kalA
@@ -46820,10 +46819,9 @@ yellow	noun::pIwaka/pIliyA/pIlA_raMga/pIlA_kapadZA/jZaraxI
 yellow	verb::SAxI_karanA/pIlA_padZa_jAnA/pIlA_kara_xenA/pIlA_karanA/hAwa_pIlA_kara_xenA
 yellow-bellied	adjective::kAyara/darapoka
 yellow-blindness	noun::pIwAMXawA
-yellow-card	noun::^
 yellow-card	noun::pIlA_kArda
 yellow-fever	noun::pIwajvara{eka_prakAra_kA_buKAra}
-yellow-line	noun::^
+yellow-line	noun::pIlI_lakIra
 yellow-press	noun::romAMcakArI_samAcArapawra
 yellowed	adjective::pIlA_huA
 yellowhammer	noun::wUwI/pIlA_paWaraciratA/pIle_raMga_kI_pakRI

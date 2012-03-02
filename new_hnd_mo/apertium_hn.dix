@@ -205,8 +205,8 @@
 
 <e><p><l>Uz</l><r><s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:u"/><s n="tam:subj"/></r></p></e>
 <e><p><l>Uz</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:u"/><s n="tam:subj"/></r></p></e>
-<e><p><l>ye</l><r><s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m"/><s n="tam:subj"/></r></p></e>
-<e><p><l>ye</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:m"/><s n="tam:subj"/></r></p></e>
+<e r="LR"><p><l>ye</l><r><s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m"/><s n="tam:subj"/></r></p></e>
+<e r="LR"><p><l>ye</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:m"/><s n="tam:subj"/></r></p></e>
 <e><p><l>e</l><r><s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m"/><s n="tam:subj"/></r></p></e>
 <e><p><l>e</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:m"/><s n="tam:subj"/></r></p></e>
 <e><p><l>iye</l><r><s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m_h"/><s n="tam:subj"/></r></p></e>
@@ -280,10 +280,10 @@
 <e><p><l>I</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:m"/><s n="tam:yA"/></r></p></e>
 <e><p><l>I</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="tam:yA"/></r></p></e>
 <e><p><l>I</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:m_h"/><s n="tam:yA"/></r></p></e>
-<e><p><l>yI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:u"/><s n="tam:yA"/></r></p></e>
-<e><p><l>yI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:m"/><s n="tam:yA"/></r></p></e>
-<e><p><l>yI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="tam:yA"/></r></p></e>
-<e><p><l>yI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:m_h"/><s n="tam:yA"/></r></p></e>
+<e r="LR"><p><l>yI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:u"/><s n="tam:yA"/></r></p></e>
+<e r="LR"><p><l>yI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:m"/><s n="tam:yA"/></r></p></e>
+<e r="LR"><p><l>yI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="tam:yA"/></r></p></e>
+<e r="LR"><p><l>yI</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:m_h"/><s n="tam:yA"/></r></p></e>
 <e><p><l>IM</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:u"/><s n="tam:yA"/></r></p></e>
 <e><p><l>IM</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:m"/><s n="tam:yA"/></r></p></e>
 <e><p><l>IM</l><r><s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="tam:yA"/></r></p></e>
@@ -461,7 +461,7 @@
 <e><p><l>iyA</l><r>ara<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m"/><s n="tam:yA"/></r></p></e>
 <e><p><l>iyA</l><r>ara<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/><s n="tam:yA"/></r></p></e>
 <e><p><l>iyA</l><r>ara<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m_h"/><s n="tam:yA"/></r></p></e>
-<e><p><l>iye</l><r>ara<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/><s n="tam:yA"/></r></p></e>
+<e r="LR"><p><l>iye</l><r>ara<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/><s n="tam:yA"/></r></p></e>
 <e><p><l>iye</l><r>ara<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m"/><s n="tam:yA"/></r></p></e>
 <e><p><l>iye</l><r>ara<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:yA"/></r></p></e>
 <e><p><l>iye</l><r>ara<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m_h"/><s n="tam:yA"/></r></p></e>
@@ -919,10 +919,10 @@
 <e><p><l>ue</l><r>o<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m"/><s n="tam:yA"/></r></p></e>
 <e><p><l>ue</l><r>o<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:yA"/></r></p></e>
 <e><p><l>ue</l><r>o<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m_h"/><s n="tam:yA"/></r></p></e>
-<e><p><l>uye</l><r>o<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/><s n="tam:yA"/></r></p></e>
-<e><p><l>uye</l><r>o<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m"/><s n="tam:yA"/></r></p></e>
-<e><p><l>uye</l><r>o<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:yA"/></r></p></e>
-<e><p><l>uye</l><r>o<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m_h"/><s n="tam:yA"/></r></p></e>
+<e r="LR"><p><l>uye</l><r>o<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:u"/><s n="tam:yA"/></r></p></e>
+<e r="LR"><p><l>uye</l><r>o<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m"/><s n="tam:yA"/></r></p></e>
+<e r="LR"><p><l>uye</l><r>o<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:yA"/></r></p></e>
+<e r="LR"><p><l>uye</l><r>o<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m_h"/><s n="tam:yA"/></r></p></e>
 <e><p><l>uI</l><r>o<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:u"/><s n="tam:yA"/></r></p></e>
 <e><p><l>uI</l><r>o<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:m"/><s n="tam:yA"/></r></p></e>
 <e><p><l>uI</l><r>o<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="tam:yA"/></r></p></e>
@@ -1801,7 +1801,7 @@
 <e><p><l>iye</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m_h2"/><s n="tam:imper"/></r></p></e>
 <e><p><l>iye</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m_h2"/><s n="tam:imper"/></r></p></e>
 <e><p><l>iye</l><r>a<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:m_h2"/><s n="tam:imper"/></r></p></e>
-<e><p><l>anA</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:u"/><s n="tam:nA"/></r></p></e>
+<e r="LR" ><p><l>anA</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:u"/><s n="tam:nA"/></r></p></e>
 <e><p><l>anA</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m"/><s n="tam:nA"/></r></p></e>
 <e><p><l>anA</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/><s n="tam:nA"/></r></p></e>
 <e><p><l>anA</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m_h"/><s n="tam:nA"/></r></p></e>
@@ -2198,8 +2198,8 @@
 </pardef>					
 <pardef n="ASA/__n">					
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
-<e><p><l>yeM</l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
-<e><p><l>ez</l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
+<e r ="LR"><p><l>yeM</l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
+<e><p><l>ez</l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e> 
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>oM</l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>					
@@ -2313,6 +2313,7 @@
 <e><p><l>oM</l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 </pardef>	
 
+<!-- Suggested by Chaitanya Sir
 <pardef n="vAl/A__n">					
 <e><p><l>A</l><r>A<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>e</l><r>A<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
@@ -2322,7 +2323,8 @@
 <e><p><l>iyAz</l><r>A<s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l>I</l><r>A<s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>iyoM</l><r>A<s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
-</pardef>					
+</pardef> 
+-->
 				
 <pardef n="loh/A__n">					
 <e><p><l>A</l><r>A<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
@@ -2580,8 +2582,8 @@
 <e><p><l>inhoMne</l><r>Ona<s n="cat:p"/><s n="case:o"/><s n="parsarg:ne"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
 <e><p><l>inheM</l><r>Ona<s n="cat:p"/><s n="case:o"/><s n="parsarg:ko"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/></r></p></e>
 <e><p><l>inheM</l><r>Ona<s n="cat:p"/><s n="case:o"/><s n="parsarg:ko"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
-<e><p><l>inako</l><r>Ona<s n="cat:p"/><s n="case:o"/><s n="parsarg:ko"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/></r></p></e>
-<e><p><l>inako</l><r>Ona<s n="cat:p"/><s n="case:o"/><s n="parsarg:ko"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
+<e r="LR"><p><l>inako</l><r>Ona<s n="cat:p"/><s n="case:o"/><s n="parsarg:ko"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/></r></p></e>
+<e r="LR"><p><l>inako</l><r>Ona<s n="cat:p"/><s n="case:o"/><s n="parsarg:ko"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
 <e><p><l>inase</l><r>Ona<s n="cat:p"/><s n="case:o"/><s n="parsarg:se"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/></r></p></e>
 <e><p><l>inase</l><r>Ona<s n="cat:p"/><s n="case:o"/><s n="parsarg:se"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
 <e><p><l>inake</l><r>Ona<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/></r></p></e>
@@ -2938,7 +2940,7 @@
 <pardef n="regular__adj-noun">
  <e>           <p><l></l>      <r></r></p><par n="kAl/A__adj"/></e>
  <e>           <p><l></l>      <r></r></p><par n="kAl/A__n"/></e>
-  <e>           <p><l></l>      <r></r></p><par n="vAl/A__n"/></e>
+<!--  <e>           <p><l></l>      <r></r></p><par n="vAl/A__n"/></e> -->
   <e>           <p><l></l>      <r></r></p><par n="vAl/A__adj"/></e>
   <e>           <p><l></l>      <r></r></p><par n="ladak/A__n"/></e>
   <e>           <p><l></l>      <r></r></p><par n="ladak/I__n"/></e>
@@ -8910,7 +8912,7 @@
 <e lm="bARpAkula"><i>bARpAkula</i><par n="amIra/__adj"/></e>
 <e lm="barPAnI"><i>barPAnI</i><par n="ajAwI/__adj"/></e>
 <e lm="barPI"><i>barPI</i><par n="AjAxI/__n"/></e>
-<e lm="barPIlA"><i>barPIl</i><par n="regular__adj-noun"/></e>
+<e lm="barPIlA"><i>barPIl</i><par n="vAl/A__adj"/></e>
 <e lm="barrA"><i>barrA</i><par n="KA/__v"/></e>
 <e lm="BarrA"><i>BarrA</i><par n="KA/__v"/></e>
 <e lm="bArUxa"><i>bArUxa</i><par n="BIda/__n"/></e>
@@ -9640,7 +9642,7 @@
 <e lm="bo"><i>bo</i><par n="so/__v"/></e>
 <e lm="boJa"><i>boJa</i><par n="kroXa/__n"/></e>
 <e lm="Boja"><i>Boj</i><par n="Gar/a__n"/></e>
-<e lm="boJA"><i>boJ</i><par n="regular__adj-noun"/></e>
+<e lm="boJA"><i>boJ</i><par n="ladak/A__n"/></e>
 <e lm="boJAI"><i>boJAI</i><par n="AjAxI/__n"/></e>
 <e lm="BOjAI"><i>BOjA</i><par n="ladak/I__n"/></e>
 <e lm="Bojaka"><i>Bojaka</i><par n="kroXa/__n"/></e>
@@ -17817,7 +17819,7 @@
 <e lm="manovinoxa"><i>manovinoxa</i><par n="kroXa/__n"/></e>
 <e lm="manovqwwi"><i>manovqwwi</i><par n="Apawwi/__n"/></e>
 <e lm="manOwI"><i>manOw</i><par n="ladak/I__n"/></e>
-<e lm="manoxaSA"><i>manoxaS</i><par n="regular__adj-noun"/></e>
+<e lm="manoxaSA"><i>manoxaSA</i><par n="ASA/__n"/></e>
 <e lm="manoyoga"><i>manoyoga</i><par n="kroXa/__n"/></e>
 <e lm="mansvaMwara"><i>mansvaMwara</i><par n="kroXa/__n"/></e>
 <e lm="manuhAra"><i>manuhAr</i><par n="Gar/a__n"/></e>
@@ -20562,7 +20564,8 @@
 <e lm="PalIBUwa"><i>PalIBUwa</i><par n="amIra/__adj"/></e>
 <e lm="pAli"><i>pAli</i><par n="kavi/__n"/></e>
 <e lm="PalI"><i>Pal</i><par n="ladak/I__n"/></e>
-<e lm="pAlikA"><i>pAlik</i><par n="regular__adj-noun"/></e>
+<!--<e lm="pAlikA"><i>pAlik</i><par n="regular__adj-noun"/></e>-->
+<e lm="pAlikA"><i>pAlikA</i><par n="ASA/__n"/></e>
 <e lm="pAliSa"><i>pAliS</i><par n="rAw/a__n"/></e>
 <e lm="palisI"><i>palisI</i><par n="AjAxI/__n"/></e>
 <e lm="pAlisI"><i>pAlis</i><par n="ladak/I__n"/></e>
@@ -21487,7 +21490,7 @@
 <e lm="paviwrI"><i>paviwr</i><par n="ladak/I__n"/></e>
 <e lm="paviwrIkaraNa"><i>paviwrIkaraNa</i><par n="kroXa/__n"/></e>
 <e lm="paviwriwa"><i>paviwriwa</i><par n="amIra/__adj"/></e>
-<e lm="PavvArA"><i>PavvAr</i><par n="regular__adj-noun"/></e>
+<e lm="PavvArA"><i>PavvAr</i><par n="ladak/A__n"/></e>
 <e lm="Pawaha"><i>Pawah</i><par n="rAw/a__n"/></e>
 <e lm="pAWa"><i>pAWa</i><par n="kroXa/__n"/></e>
 <e lm="paWa"><i>paW</i><par n="Gar/a__n"/></e>
@@ -22020,7 +22023,7 @@
 <e lm="potalI"><i>potal</i><par n="ladak/I__n"/></e>
 <e lm="potASa"><i>potASa</i><par n="kroXa/__n"/></e>
 <e lm="PotogrAPa"><i>PotogrAPa</i><par n="kroXa/__n"/></e>
-<e lm="PotogrAPara"><i>PotogrAPara</i><par n="kroXa/__n"/></e>
+<!--<e lm="PotogrAPara"><i>PotogrAPara</i><par n="kroXa/__n"/></e> -->
 <e lm="PotogrAPara"><i>PotogrAPar</i><par n="Gar/a__n"/></e>
 <e lm="PotogrAPI"><i>PotogrAPI</i><par n="AjAxI/__n"/></e>
 <e lm="Poto"><i>Poto</i><par n="redio/__n"/></e>
@@ -23280,7 +23283,7 @@
 <e lm="pura"><i>pura</i><par n="kroXa/__n"/></e>
 <e lm="pURa"><i>pURa</i><par n="kroXa/__n"/></e>
 <e lm="purA"><i>pur</i><par n="regular__adj-noun"/></e>
-<e lm="pUrA"><i>pUr</i><par n="regular__adj-noun"/></e>
+<e lm="pUrA"><i>pUr</i><par n="vAl/A__adj"/></e>
 <e lm="Pura"><i>Pur</i><par n="rAw/a__n"/></e>
 <e lm="purajA"><i>puraj</i><par n="regular__adj-noun"/></e>
 <e lm="pUraka"><i>pUrak</i><par n="Gar/a__n"/></e>
@@ -29577,14 +29580,14 @@
 <e lm="vAlAgra"><i>vAlAgra</i><par n="kroXa/__n"/></e>
 <e lm="valAhaka"><i>valAhaka</i><par n="kroXa/__n"/></e>
 <e lm="vAla"><i>vAla</i><par n="kroXa/__n"/></e>
-<e lm="vAlA"><i>vAl</i><par n="regular__adj-noun"/></e>
+<e lm="vAlA"><i>vAl</i><par n="vAl/A__adj"/></e>
 <e lm="valAkA"><i>valAkA</i><par n="ASA/__n"/></e>
 <e lm="valAkI"><i>valAkI</i><par n="ajAwI/__adj"/></e>
 <e lm="vAlaMtiyara"><i>vAlaMtiyar</i><par n="Gar/a__n"/></e>
 <e lm="valaya"><i>valay</i><par n="Gar/a__n"/></e>
 <e lm="valI"><i>valI</i><par n="AjAxI/__n"/></e>
 <e lm="vali"><i>vali</i><par n="SAnwi/__n"/></e>
-<e lm="vAlI"><i>vAl</i><par n="ladak/I__n"/></e>
+<!--<e lm="vAlI"><i>vAl</i><par n="ladak/I__n"/></e> -->
 <e lm="vAlIvAla"><i>vAlIvAla</i><par n="BIda/__n"/></e>
 <e lm="valIvarxa"><i>valIvarxa</i><par n="kroXa/__n"/></e>
 <e lm="vAlkala"><i>vAlkala</i><par n="amIra/__adj"/></e>
