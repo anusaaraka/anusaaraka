@@ -249,16 +249,15 @@
 ;Added by Shirisha Manju (24-02-12)
 ;She might have been reading and writing the book.
 (defrule get_lwg_with_aux
-(declare (salience 1400))
+(declare (salience 1450))
 ?f0<-(aux_grp - $?ids)
 ?f2<-(aux_grp-head_VP $? ?VP)
-(Head-Level-Mother-Daughters ? ? ?VP $?vids)
-?f1<-(root-verbchunk-tam-parser_chunkids root - $?d ?h - $?d ?h - $?d ?h)
+(Head-Level-Mother-Daughters ? ? ?VP $? ?h $?)
+?f1<-(root-verbchunk-tam-parser_chunkids root - ?h - ?h  - ?h )
 (test (neq (length $?ids) 0))
-(test (or (member$ $?d $?vids) (eq ?h $?vids)))
 =>
 	(retract ?f1)
-  	(assert (root-verbchunk-tam-parser_chunkids root - $?ids $?d ?h - $?ids $?d ?h - $?ids $?d ?h))	
+  	(assert (root-verbchunk-tam-parser_chunkids root - $?ids ?h - $?ids ?h - $?ids ?h))	
 )
 ;------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (25-10-11)
