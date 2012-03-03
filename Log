@@ -3238,7 +3238,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  36. Modified ber_ver_output, sd_ver_output.
  37. Updated Log
  
- 2-03-12
+ 03-03-12
  =======
  1. sd_lwg_rules.clp 
         Modified : make_VBN_as_VBD  , get_aux, split_Conj_VP and relace_verb rules
@@ -3248,6 +3248,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         2. loaded E_constituents_info_tmp1.dat instead E_constituents_info_tmp2.dat
                 (E_constituents_info_tmp1.dat file contains punct info)
  3. Modified "replace_aux_with_head_VP1" in H_ordering_rules.clp
- 4. Updated Log
-
- 
+ 4. Added default-iit-bombay-shabdanjali-dic_firefox.txt, dictionaryA-R.js and dictionaryS-Z.js files.
+ 5. Modified create_eng_ord_html.clp file to add dictionary  file.
+ 6. Modified colors in converting-dic-format-to-js.lex file.
+ 7. Modified run_anu_browser.sh to call dictionaryA-R.js and dictionaryS-Z.js files.
+ 8. Removed coding part of creating firefox dictionary and generating js files in anu_compile.sh.
+ 9. Updated Log

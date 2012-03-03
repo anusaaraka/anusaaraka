@@ -27,20 +27,20 @@ FILE *fp;
 
 							if(strcmp(cat,"@@noun")==0)
 							   strcpy(color, "cadetblue");
-							if(strcmp(cat,"@@verb")==0)
+							else if(strcmp(cat,"@@verb")==0)
 							   strcpy(color, "lightpink");
-							if(strcmp(cat,"@@adjective")==0)
-							   strcpy(color, "lightgolden");
-							if(strcmp(cat,"@@adverb")==0)
-							   strcpy(color, "aquamarine");
-							if(strcmp(cat,"@@conjunction")==0)
+							else if(strcmp(cat,"@@adjective")==0)
+							   strcpy(color, "yellow");
+							else if(strcmp(cat,"@@adverb")==0)
+							   strcpy(color, "green");
+							else if(strcmp(cat,"@@conjunction")==0)
 							   strcpy(color, "darkseagreen");
-							if(strcmp(cat,"@@preposition")==0)
+							else if(strcmp(cat,"@@preposition")==0)
 							   strcpy(color, "peach");
-							if(strcmp(cat,"@@determiner")==0)
+							else if(strcmp(cat,"@@determiner")==0)
                                                            strcpy(color, "red");
  							else
-							   strcpy(color, "green");
+							   strcpy(color, "black");
 
   fprintf(fp,"<font color=\"%s\">@%s::%s<br\\>", color, cat, mng);
 						}
@@ -52,20 +52,20 @@ FILE *fp;
                                                         s1=strchr(yytext, ':')+2;
                                                         if(strcmp(cat,"@@noun")==0)
                                                            strcpy(color, "cadetblue");
-                                                        if(strcmp(cat,"@@verb")==0)
+                                                        else if(strcmp(cat,"@@verb")==0)
                                                            strcpy(color, "lightpink");
-                                                        if(strcmp(cat,"@@adjective")==0)
-                                                           strcpy(color, "lightgolden");
-                                                        if(strcmp(cat,"@@adverb")==0)
-                                                           strcpy(color, "aquamarine");
-                                                        if(strcmp(cat,"@@conjunction")==0)
+                                                        else if(strcmp(cat,"@@adjective")==0)
+                                                           strcpy(color, "yellow");
+                                                        else if(strcmp(cat,"@@adverb")==0)
+                                                           strcpy(color, "green");
+                                                        else if(strcmp(cat,"@@conjunction")==0)
                                                            strcpy(color, "darkseagreen");
-                                                        if(strcmp(cat,"@@preposition")==0)
+                                                        else if(strcmp(cat,"@@preposition")==0)
                                                            strcpy(color, "peach");
-                                                        if(strcmp(cat,"@@determiner")==0)
+                                                        else if(strcmp(cat,"@@determiner")==0)
                                                            strcpy(color, "red");
 							else
-							   strcpy(color, "green");
+							   strcpy(color, "black");
 
   fprintf(fp,"<font color=\"%s\">@%s::%s<br\\>", color, cat, s1);
   fprintf(fp,"<\\/div\\>'\n\t\tvar text = document.getElementById(a).innerHTML;\n\t\tif(text){\n\t\t\tvar mngshabd = document.getElementById(\"hnd\");\n\t\t\tmngshabd.innerHTML = '<h3>' + a + '</h3>' + text;\n\t\t}\n\t\telse {\n\t\t\tvar mngshabd = document.getElementById(\"hnd\");\n\t\t\tmngshabd.innerHTML = '<h3>' + a + '</h3>' + 'Word not found';\n\t\t}\n}\n\n");
