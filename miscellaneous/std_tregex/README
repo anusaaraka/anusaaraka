@@ -1,0 +1,14 @@
+
+  Run ::
+  ===
+  sh run_tregex.sh <file_name>
+  Eg: sh run_tregex.sh file
+ 
+  With the above command "Tregex" tree viewer tool opens
+
+  To view the Parse trees 
+ 
+  1) Open File Menu
+  2) select "load trees .... " option
+  3) Select the parsed tree file (Here it will be <file_name_output> e.g: file_output) 
+  

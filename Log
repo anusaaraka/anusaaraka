@@ -3253,4 +3253,6 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  6. Modified colors in converting-dic-format-to-js.lex file.
  7. Modified run_anu_browser.sh to call dictionaryA-R.js and dictionaryS-Z.js files.
  8. Removed coding part of creating firefox dictionary and generating js files in anu_compile.sh.
- 9. Updated Log
+ 9. Added stanford tregex directory in $HOME_anu_test/miscellaneous/std_tregex .
+ 10. Added code for untar(stanford-tregex-2012-01-06.tgz) in anu_compile.sh .
+ 11. Updated Log

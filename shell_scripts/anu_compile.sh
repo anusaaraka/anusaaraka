@@ -158,3 +158,7 @@
  sh compile.sh
 
  cp $HOME_anu_test/debugging/sentence_debug.sh $HOME_anu_test/bin/.
+ 
+ 
+ cd $HOME_anu_test/miscellaneous/std_tregex/
+ tar -xvf stanford-tregex-2012-01-06.tgz 
