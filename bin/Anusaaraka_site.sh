@@ -29,7 +29,11 @@
  mkdir $MYPATH/tmp/$1_tmp
  mkdir $MYPATH1/help
 
- 
+ if [ "$3" == "True" ] ; then 
+    echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
+ else
+    echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
+ fi
  echo "Saving Format info ..."
 
  $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
@@ -98,6 +102,7 @@
  while read line
  do
     echo "Hindi meaning using Stanford parser" $line
+    cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
     $HOME/timeout 500 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt

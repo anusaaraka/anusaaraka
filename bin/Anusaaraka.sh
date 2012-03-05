@@ -1,4 +1,4 @@
- #/bin/sh
+#/bin/sh
  source ~/.bashrc
 
  export LC_ALL=
@@ -16,7 +16,6 @@
     mkdir $HOME_anu_output
  fi
 
- MYPATH1=`pwd`
  MYPATH=$HOME_anu_tmp
  cp $1 $MYPATH/. 
 
@@ -38,6 +37,12 @@
 
  mkdir $MYPATH/tmp/$1_tmp
 
+###Added below loop for server purpose.
+ if [ "$3" == "True" ] ; then 
+    echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
+ else
+    echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
+ fi
  echo "Saving Format info ..."
 
  $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
@@ -74,8 +79,7 @@
  # sh run_stanford-parser.sh $1 $MYPATH > /dev/null
   sh run_penn-pcfg.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
   sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}"  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp | sed -n -e "H;\${g;s/\n//g;p}" | sed 's/)(ROOT/)\n(ROOT/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn
-   sed 's/(, ,)/(P_COM PUNCT-Comma)/g' < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn | sed 's/(\. \.)/(P_DOT PUNCT-Dot)/g' |sed 's/(? ?)/(P_QES  PUNCT-QuestionMark)/g' | sed 's/(. ?)/(P_DQ PUNCT-QuestionMark)/g' | sed 's/(`` ``)/(P_DQT PUNCT-DoubleQuote)/g' | sed "s/('' '')/(P_DQT PUNCT-DoubleQuote)/g" | sed 's/(: ;)/(P_SEM PUNCT-Semicolon)/g' | sed 's/(: :)/(P_CLN PUNCT-Colon)/g' | sed 's/(: -)/(P_DSH PUNCT-Hyphen)/g' |sed "s/('' ')/(P_SQT PUNCT-SingleQuote)/g" | sed 's/(`` `)/(P_SQT PUNCT-SingleQuote)/g' | sed "s/(\`\` ')/(P_SQT PUNCT-SingleQuote)/g" | sed 's/(-LRB- -LRB-)/(P_LB PUNCT-OpenParen)/g'|sed 's/(-RRB- -RRB-)/(P_RB PUNCT-ClosedParen)/g' | sed 's/(. !)/(P_EXM PUNCT-Exclamation)/g' >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.cons
-
+  sed 's/(, ,)/(P_COM PUNCT-Comma)/g' < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn | sed 's/(\. \.)/(P_DOT PUNCT-Dot)/g' |sed 's/(? ?)/(P_QES  PUNCT-QuestionMark)/g' | sed 's/(. ?)/(P_DQ PUNCT-QuestionMark)/g' | sed 's/(`` ``)/(P_DQT PUNCT-DoubleQuote)/g' | sed "s/('' '')/(P_DQT PUNCT-DoubleQuote)/g" | sed 's/(: ;)/(P_SEM PUNCT-Semicolon)/g' | sed 's/(: :)/(P_CLN PUNCT-Colon)/g' | sed 's/(: -)/(P_DSH PUNCT-Hyphen)/g' |sed "s/('' ')/(P_SQT PUNCT-SingleQuote)/g" | sed 's/(`` `)/(P_SQT PUNCT-SingleQuote)/g' | sed "s/(\`\` ')/(P_SQT PUNCT-SingleQuote)/g" | sed 's/(-LRB- -LRB-)/(P_LB PUNCT-OpenParen)/g'|sed 's/(-RRB- -RRB-)/(P_RB PUNCT-ClosedParen)/g' | sed 's/(. !)/(P_EXM PUNCT-Exclamation)/g' | sed 's/($ $)/(P_DOL SYM-Dollar)/g' >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.cons
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 
   #running stanford NER (Named Entity Recogniser) on whole text.
@@ -123,6 +127,7 @@
 
                 then
     			echo "Hindi meaning using Stanford parser" $line
+			cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
 			timeout 180 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
 			echo ""
 		else 

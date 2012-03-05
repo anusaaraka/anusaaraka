@@ -1,4 +1,4 @@
- #/bin/sh
+#/bin/sh
  source ~/.bashrc
 
  export LC_ALL=
@@ -16,7 +16,6 @@
     mkdir $HOME_anu_output
  fi
 
- MYPATH1=`pwd`
  MYPATH=$HOME_anu_tmp
  cp $1 $MYPATH/. 
 
@@ -38,6 +37,12 @@
 
  mkdir $MYPATH/tmp/$1_tmp
 
+###Added below loop for server purpose. As stanford parser is used here internally below code is added to make uniform.
+ if [ "$2" == "True" ] ; then 
+    echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
+ else
+    echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
+ fi
  echo "Saving Format info ..."
 
  $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
@@ -51,7 +56,7 @@
 
   echo "Saving morph information"
   cd $HOME_anu_test/apertium/
-  sed 's/\([^0-9]\)\.\([^0-9]*\)/\1 \.\2/g'  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | sed 's/?/ ?/g'| sed 's/\"/\" /g'  | sed 's/!/ !/g'  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp
+  sed 's/\([^0-9]\)\.\([^0-9]*\)/\1 \.\2/g'  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | sed 's/?/ ?/g'| sed 's/\"/\" /g'  | sed 's/!/ !/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp
   apertium-destxt $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp  | lt-proc -a en.morf.bin | apertium-retxt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph
   perl morph.pl $MYPATH $1 < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph
 
@@ -59,14 +64,19 @@
   cd $HOME_anu_test/apertium
   sh run_chunker_and_tagger.sh $1
 
-  #cd $HOME_anu_test/Anu_src
-  #./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
+#  cd $HOME_anu_test/Anu_src
+#  ./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
   echo "Calling RASP parser" 
   cd $HOME_anu_test/Parsers/RASP/rasp3os/scripts/
   sh map_constituent_tree.sh $MYPATH $1 one_sentence_per_line.txt
   sh run_rasp-parser.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt
-  sed 's/(, ,)/(P_COM COMMA)/g' < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn | sed 's/(\. \.)/(P_DOT DOT)/g' |sed 's/(? ?)/(P_QES QUESTION_MARK)/g' | sed 's/(. ?)/(P_DQ DOT_QUESTION_MARK)/g' | sed 's/(`` ``)/(P_DQT DOUBLE_QUOTES)/g' | sed "s/('' '')/(P_DQT DOUBLE_QUOTES)/g" | sed 's/(: ;)/(P_SEM SEMCOLN)/g' | sed 's/(: :)/(P_CLN COLN)/g' | sed 's/(: -)/(P_DSH PDASH)/g' |sed "s/('' ')/(P_SQT SINGLE_QUOTE)/g" | sed 's/(`` `)/(P_SQT SINGLE_QUOTE)/g' | sed "s/(\`\` ')/(P_SQT SINGLE_QUOTE)/g" | sed 's/(-LRB- -LRB-)/(P_LB LFT_BRK)/g'|sed 's/(-RRB- -RRB-)/(P_RB RT_BRK)/g' | sed 's/(. !)/(P_EXM EXCLAMATION)/g' >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.cons
+  
+  sed 's/(, ,)/(P_COM PUNCT-Comma)/g' < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn | sed 's/(\. \.)/(P_DOT PUNCT-Dot)/g' |sed 's/(? ?)/(P_QES  PUNCT-QuestionMark)/g' | sed 's/(. ?)/(P_DQ PUNCT-QuestionMark)/g' | sed 's/(`` ``)/(P_DQT PUNCT-DoubleQuote)/g' | sed "s/('' '')/(P_DQT PUNCT-DoubleQuote)/g" | sed 's/(: ;)/(P_SEM PUNCT-Semicolon)/g' | sed 's/(: :)/(P_CLN PUNCT-Colon)/g' | sed 's/(: -)/(P_DSH PUNCT-Hyphen)/g' |sed "s/('' ')/(P_SQT PUNCT-SingleQuote)/g" | sed 's/(`` `)/(P_SQT PUNCT-SingleQuote)/g' | sed "s/(\`\` ')/(P_SQT PUNCT-SingleQuote)/g" | sed 's/(-LRB- -LRB-)/(P_LB PUNCT-OpenParen)/g'|sed 's/(-RRB- -RRB-)/(P_RB PUNCT-ClosedParen)/g' | sed 's/(. !)/(P_EXM PUNCT-Exclamation)/g' | sed 's/($ $)/(P_DOL SYM-Dollar)/g' >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.cons
+
+
+
+#sed 's/(, ,)/(P_COM COMMA)/g' < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn | sed 's/(\. \.)/(P_DOT DOT)/g' |sed 's/(? ?)/(P_QES QUESTION_MARK)/g' | sed 's/(. ?)/(P_DQ DOT_QUESTION_MARK)/g' | sed 's/(`` ``)/(P_DQT DOUBLE_QUOTES)/g' | sed "s/('' '')/(P_DQT DOUBLE_QUOTES)/g" | sed 's/(: ;)/(P_SEM SEMCOLN)/g' | sed 's/(: :)/(P_CLN COLN)/g' | sed 's/(: -)/(P_DSH PDASH)/g' |sed "s/('' ')/(P_SQT SINGLE_QUOTE)/g" | sed 's/(`` `)/(P_SQT SINGLE_QUOTE)/g' | sed "s/(\`\` ')/(P_SQT SINGLE_QUOTE)/g" | sed 's/(-LRB- -LRB-)/(P_LB LFT_BRK)/g'|sed 's/(-RRB- -RRB-)/(P_RB RT_BRK)/g' | sed 's/(. !)/(P_EXM EXCLAMATION)/g' >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.cons
 
 
   echo "Calling Stanford parser"
@@ -82,7 +92,7 @@
   cd $MYPATH/tmp/$1_tmp
   sed 's/&/\&amp;/g' one_sentence_per_line.txt|sed -e s/\'/\\\'/g |sed 's/\"/\&quot;/g' |sed  "s/^/(Eng_sen \"/" |sed -n '1h;2,$H;${g;s/\n/\")\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/$/\")\n;~~~~~~~~~~\n/g;p}' > one_sentence_per_line_tmp.txt
   $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line_tmp.txt dir_names.txt English_sentence.dat
-#  $HOME_anu_test/Anu_src/split_file.out chunk.txt dir_names.txt chunk.dat 
+  #$HOME_anu_test/Anu_src/split_file.out chunk.txt dir_names.txt chunk.dat
   $HOME_anu_test/Anu_src/split_file.out sd-lexicalize_info.txt dir_names.txt sd-lexicalize_info.dat
   $HOME_anu_test/Anu_src/split_file.out sd-tree_relation.txt dir_names.txt sd-tree_relations_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out sd-basic_relation.txt dir_names.txt sd-basic_relations_tmp1.dat
@@ -94,13 +104,15 @@
 
   grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt
   perl $HOME_anu_test/Anu_src/Match-sen.pl $HOME_anu_test/Anu_databases/Complete_sentence.gdbm  $1.snt one_sentence_per_line.txt > sen_phrase.txt
+
   $HOME_anu_test/Anu_src/split_file.out sen_phrase.txt dir_names.txt sen_phrase.dat
  
  cd $HOME_anu_test/bin
  while read line
  do
     echo "Hindi meaning using RASP parser" $line
-   timeout 180 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
+    cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
+    timeout 180 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
  

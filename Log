@@ -3238,7 +3238,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  36. Modified ber_ver_output, sd_ver_output.
  37. Updated Log
  
- 03-03-12
+ 05-03-12
  =======
  1. sd_lwg_rules.clp 
         Modified : make_VBN_as_VBD  , get_aux, split_Conj_VP and relace_verb rules
@@ -3255,4 +3255,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  8. Removed coding part of creating firefox dictionary and generating js files in anu_compile.sh.
  9. Added stanford tregex directory in $HOME_anu_test/miscellaneous/std_tregex .
  10. Added code for untar(stanford-tregex-2012-01-06.tgz) in anu_compile.sh .
- 11. Updated Log
+ 11. Added code in following files to give priority for provisional_wsd_rules:
+	Anusaaraka_berkeley.sh	Anusaaraka_rasp.sh	Anusaaraka_site.sh	
+	Anusaaraka_stanford.sh	Anusaaraka_link.sh
+ 12. Modified load_user_org_word_file, load_user_word_file and load_user_root_file rules im wsd_meaning.clp for above purpose 13. Loaded sand_box.dat inside WSD module in run_modules_std.bat
+ 14. Updated Log

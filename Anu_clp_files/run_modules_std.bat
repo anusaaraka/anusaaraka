@@ -176,6 +176,7 @@
  (load-facts "cat_consistency_check.dat")
  (load-facts "preferred_morph.dat")
  (load* "global_path.clp")
+ (load-facts "sand_box.dat")
  (defmodule WSD_MODULE (export ?ALL)
                        (import MAIN ?ALL)
                        (import MAIN deftemplate ?ALL))

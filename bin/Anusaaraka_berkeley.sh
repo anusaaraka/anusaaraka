@@ -1,4 +1,4 @@
- #/bin/sh
+#/bin/sh
  source ~/.bashrc
 
  export LC_ALL=
@@ -16,7 +16,6 @@
     mkdir $HOME_anu_output
  fi
 
- MYPATH1=`pwd`
  MYPATH=$HOME_anu_tmp
  cp $1 $MYPATH/. 
 
@@ -38,6 +37,12 @@
 
  mkdir $MYPATH/tmp/$1_tmp
 
+###Added below loop for server purpose. As stanford parser is used here internally below code is added to make uniform.
+ if [ "$2" == "True" ] ; then 
+    echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
+ else
+    echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
+ fi
  echo "Saving Format info ..."
 
  $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
@@ -97,14 +102,16 @@
   $HOME_anu_test/Anu_src/split_file.out sd-original-relations.txt  dir_names.txt  sd-original-relations.dat
 
   grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt
-  perl $HOME_anu_test/Anu_src/Match-sen.pl $HOME_anu_test/Anu_databases/Complete_sentence.gdbm  ../$1.snt one_sentence_per_line.txt > sen_phrase.txt
+  perl $HOME_anu_test/Anu_src/Match-sen.pl $HOME_anu_test/Anu_databases/Complete_sentence.gdbm  $1.snt one_sentence_per_line.txt > sen_phrase.txt
+
   $HOME_anu_test/Anu_src/split_file.out sen_phrase.txt dir_names.txt sen_phrase.dat
  
  cd $HOME_anu_test/bin
  while read line
  do
     echo "Hindi meaning using Berkeley parser" $line
-   timeout 180 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
+    cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
+    timeout 180 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
  
