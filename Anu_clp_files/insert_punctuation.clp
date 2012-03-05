@@ -2,7 +2,7 @@
  ;I showed them how they should do it.
  (defrule get_last_punc_with_S
  (declare (salience 1200))
- ?f0<-(mother-punct_head-right_punctuation S2|SQ2|SINV2 ?p_h ?punc)
+ ?f0<-(mother-punct_head-right_punctuation S2|SQ2|SINV2|SBARQ2 ?p_h ?punc)
  (hindi_id_order $? ?id)
  =>
 	(retract ?f0)

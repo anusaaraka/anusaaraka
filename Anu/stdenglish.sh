@@ -12,21 +12,6 @@ else
     mkdir $PATH2/tmp_stdenglish
     cd $PATH2/tmp_stdenglish
   fi
-#######################################  Currently disabled ########################################################
-
-### Removed join_hard_hyphen.lex  and rm_joined_hard_hyphens.lex because Now  we get morph information from apertium.
- 
-# join_hard_hyphen.lex joins the two words that are split with hard hyphen.
-# It checks for the pattern '{WRD}\-[ ]*$', removes the white spaces following the hyphen.
-# It also removes '' from the dos format files.
-#$PATH1/join_hard_hyphen.out < $PATH2/$1 |\
-#$PATH1/join_hard_hyphen.out < $2/$1 |\
-
-
-# rm_joined_hard_hyphens.lex looks at all the occurances of w1-w2, and removes the hyphen if a a character sequence w1w2 exists in English morph database.
-
-# rm_joined_hard_hyphens.lex looks at all the occurances of w1-w2, and removes the hyphen if a a character sequence w1w2 exists in English morph database.
-#$PATH1/rm_joined_hard_hyphens.out $HOME_anu_test/Anu_databases/morph.dbm > $1.tmp
 
 #####################################################################################################################
 # This program checks the input format for unprintable characters, and
@@ -49,15 +34,18 @@ else
 sed -e 's/ / /g' <  $2/$1 | sed -e "s/’/'/g" | sed -e 's/“/"/g' | sed -e 's/”/"/g' | sed -e "s/‘/'/g"| sed -e 's/﻿/ /g' | sed -e "s/—/-/g" > $1.tmp 
 
 
-# abbr.lex expands the standard abbreviations with single apostophe  such as I'm  ---> I am
-$PATH1/abbr.out < $1.tmp > $1.tmp1
+# enclitics.lex expands the standard abbreviations with single apostophe  such as I'm  ---> I am
+$PATH1/enclitics.out < $1.tmp > $1.tmp1
 
-# abbr1.lex handles standard abbreviations such as 'i.e.', 'e.g.','U.S.A',  etc.
+# abbrevations.lex handles standard abbreviations such as 'i.e.', 'e.g.','U.S.A',  etc.
 # Better solution for this is necessary
-$PATH1/abbr1.out < $1.tmp1 > $1.tmp2
+$PATH1/abbrevations.out < $1.tmp1 > $1.tmp2
+
+# honorifics.lex handles standard honorifics such as "Dr,Mr,Mrs .... "
+$PATH1/honorifics.out < $1.tmp2 > $1.tmp3
 
 # This program handles special characters : Ex : change '&' to 'and' , Replace '...' by one word 'DOTDOTDOT'
-$PATH1/chk_input_format.pl < $1.tmp2  > $1.tmp3
+$PATH1/chk_input_format.pl < $1.tmp3  > $1.tmp4
 
 #The program sentence_boundary.pl takes as an input a text file, and generates as
 #output another text file in which each line contains only one sentence. Blank
@@ -65,7 +53,7 @@ $PATH1/chk_input_format.pl < $1.tmp2  > $1.tmp3
 #still present in the output file. It requires a honorifics file as an argument.#A sample honorifics file is provided. This file MUST contain honorifics, not
 #abbreviations. The program detects abbreviations using regular expressions.
 
-$PATH1/sentence-boundary.pl -d $PATH1/HONORIFICS -i $1.tmp3 -o ../$1.std
+$PATH1/sentence-boundary.pl -d $PATH1/HONORIFICS -i $1.tmp4 -o ../$1.std
 
 cd ../
 fi
