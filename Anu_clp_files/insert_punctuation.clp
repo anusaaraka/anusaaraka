@@ -54,22 +54,6 @@
         (assert (punc_inserted ?p_h))
  )
  ;---------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (25-02-12)
- ;Because of its unusual geography, chile has a hugely varied climate ranging from the world's driest desert in the north, through a mediterranean climate in the centre, to a snow-prone alpine climate in the south. 
-; (defrule split_PP
-; (declare (salience 1110))
-; (or (mother-punct_head-punctuation ?PP ?p_h ?punc)(mother-punct_head-right_punctuation ?PP ?p_h ?punc)(mother-punct_head-left_punctuation ?PP ?p_h ?punc))
-; (or (mother-punct_head-punctuation ?PP1 ?p_h1 ?punc1)(mother-punct_head-right_punctuation ?PP1 ?p_h1 ?punc1)(mother-punct_head-left_punctuation ?PP1 ?p_h1 ?punc1))
-; (Node-Category  ?PP  PP)
-; (Node-Category  ?PP1  PP)
-; ?f1<-(Head-Level-Mother-Daughters ?h ?l ?PP $?d ?PP1)
-; ?f2<-(Head-Level-Mother-Daughters ?h1 ?l1 ?PP1 $?d1)
-; =>
-;	(retract ?f1 ?f2)
-;	(assert (Head-Level-Mother-Daughters ?h ?l ?PP $?d))
-;	(assert (Head-Level-Mother-Daughters ?h1 ?l1 ?PP1 $?d1))
-; )	
- ;---------------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju (23-01-12)
  ;I did not think he would do it, but he did. 
  (defrule punc_for_S_grp
@@ -124,20 +108,20 @@
  (or (mother-punct_head-punctuation ?PP ?p_h ?punc)(mother-punct_head-right_punctuation ?PP ?p_h ?punc)(mother-punct_head-left_punctuation ?PP ?p_h ?punc))
  (Node-Category  ?PP  NP|PP|ADJP|ADVP)
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?PP $?d ?JJ $?d1)
- (Node-Category  ?JJ  PRN|NP|NN|PP|TO|QP)
+ (Node-Category  ?JJ  PRN|NP|NN|PP|TO|QP|ADJP)
 ?f0<-(Head-Level-Mother-Daughters ? ? ?JJ $?prep)
  =>
         (retract ?f0 ?f1)
         (assert (Head-Level-Mother-Daughters ?h ?l ?PP $?d $?prep $?d1))
  )
  ;---------------------------------------------------------------------------------------------------------------
- ;The interpreter will print a blurb about your Python version; simply check that you are running Python 2.4 or greater (here it is 2.5.1):
+ ;The interpreter will print a blurb about your Python version; simply check that you are running Python 2.4 or greater (here it is 2.5.1): The lavish entertainment of their friends, 'the marlborough house set' was legendary.
  (defrule get_s_grp
  (declare (salience 650))
  (or (mother-punct_head-left_punctuation ?S $?)(mother-punct_head-punctuation ?S $?))
  (Node-Category ?S S)
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?S $?d ?VP $?d1)
- (Node-Category  ?VP  VP|VBZ|ADVP|RB|VBN)
+ (Node-Category  ?VP  VP|VBZ|ADVP|RB|VBN|NP)
  ?f0<-(Head-Level-Mother-Daughters ? ? ?VP $?dau)
  =>
         (retract ?f0 ?f1)
