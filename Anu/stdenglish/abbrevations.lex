@@ -23,7 +23,7 @@
 ############### NOTE:  Any changes done in this file should be updated in bin/abbr.sh file and bin/abbr_browser.sh also.
 
 */
- #include<string.h>
+ # include<string.h>
 SPC [^a-zA-Z0-9]
 %%
 ^i\.e\.$	{printf("ABBR-ThatIs");}
@@ -35,15 +35,8 @@ SPC [^a-zA-Z0-9]
 {SPC}U\.S\.A\.{SPC}	{printf("%cABBR-USA%c",yytext[0],yytext[7]);}
 {SPC}U\.S\.{SPC}	{printf("%cABBR-US%c",yytext[0],yytext[5]);}
 {SPC}U\.K\.{SPC}	{printf("%cABBR-UK%c",yytext[0],yytext[5]);}
-{SPC}A\.D\.{SPC}	{printf("%cABBR-AD%c",yytext[0],yytext[5]);}
+{SPC}[aA][.][dD][.]{SPC}	{printf("%cABBR-Dot%cABBR-Dot",yytext[0],yytext[1],yytext[3],yytext[5]);}
 {SPC}a\.k\.a\.{SPC} 	{printf("%cABBR-aka%c",yytext[0],yytext[7]);}
-
-[ ]Sr\.		{printf("%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2]); }
-[ ][jJ]r\.	{printf("%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2]); }
-[ ]Dr\.		{printf("%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2]); }
-[ ]Mr\.		{printf("%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2]); }
-[ ]Mrs\.	{printf("%c%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2],yytext[3]); }
-[ ]Ms\.		{printf("%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2]); }
 [ ]Inc\.	{printf("%c%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2],yytext[3]); }
 [0-9]%		{printf("%cSYM-Percent",yytext[0]); }
 [0-9][ ]%	{printf("%cSYM-Percent",yytext[0]); }
@@ -54,11 +47,11 @@ Fig\.		{printf("%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2]); }
 [ ]etc\.	{printf("%c%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2],yytext[3]);	}
 [ ][rR]s\.		{printf("%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2]);    }
 [ ]approx\.	{printf("%c%c%c%c%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2],yytext[3],yytext[4],yytext[5],yytext[6],yytext[7]);    }
+viz[.]		{printf("%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2]); }
 ca[.][ ]	{printf("%c%cABBR-Dot ", yytext[0],yytext[1]);	}
 a[.]d[.][ ]	{printf("%cABBR-Dot%cABBR-Dot ", yytext[0],yytext[2]);	}
 b[.]c[.][ ]     {printf("%cABBR-Dot%cABBR-Dot ", yytext[0],yytext[2]);    }
-m[.]g[.][ ]     {printf("%cABBR-Dot%cABBR-Dot ", yytext[0],yytext[2]);   /* } 
-\—		{printf("SYM-EmDash");*/}
+m[.]g[.][ ]     {printf("%cABBR-Dot%cABBR-Dot ", yytext[0],yytext[2]);    } 
 %%
 main()
 {

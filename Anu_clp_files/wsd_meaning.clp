@@ -16,6 +16,7 @@
  (id-original_word ?id ?word)
  (not (meaning_has_been_decided ?id))
  (not (file_loaded ?id))
+ (not (not_SandBox)) ;Added for server purpose. (Suggested by Chaitanya Sir, dded by Roja(05-03-11))
  =>
         (bind ?file (str-cat ?*provisional_wsd_path* "/" ?word ".clp"))
         (if (neq (load* ?file) FALSE) then
@@ -29,6 +30,7 @@
  (id-word ?id ?word)
  (not (meaning_has_been_decided ?id))
  (not (file_loaded ?id))
+ (not (not_SandBox)) ;Added for server purpose. (Suggested by Chaitanya Sir, dded by Roja(05-03-11))
  =>
         (bind ?file (str-cat ?*provisional_wsd_path* "/" ?word ".clp"))
         (if (neq (load* ?file) FALSE) then
@@ -42,6 +44,7 @@
  (id-root ?id ?root)
  (not (meaning_has_been_decided ?id))
  (not (file_loaded ?id))
+ (not (not_SandBox)) ;Added for server purpose. (Suggested by Chaitanya Sir, dded by Roja(05-03-11))
  =>
         (bind ?file (str-cat ?*provisional_wsd_path* "/" ?root ".clp"))
         (if (neq (load* ?file) FALSE) then

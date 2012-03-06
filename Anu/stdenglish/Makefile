@@ -1,6 +1,6 @@
 SHELL = /bin/sh
 
-TARGETS = abbr.out abbr1.out join_hard_hyphen.out rm_joined_hard_hyphens.out
+TARGETS = enclitics.out abbrevations.out honorifics.out insert_period.out
 
 all: $(TARGETS)
 
@@ -20,17 +20,17 @@ $(CC) $(CFLAGS) $@ lex.yy.c -lfl
 rm lex.yy.c
 endef
 
-abbr.out: abbr.lex
+enclitics.out: enclitics.lex
 	$(run_flex)
 
-abbr1.out: abbr1.lex
+abbrevations.out: abbrevations.lex
 	$(run_flex)
 
-join_hard_hyphen.out: join_hard_hyphen.lex
-	$(run_flex_gdbm)
+honorifics.out: honorifics.lex
+	$(run_flex)
 
-rm_joined_hard_hyphens.out: rm_joined_hard_hyphens.lex
-	$(run_flex_gdbm)
+insert_period.out: insert_period.lex
+	$(run_flex)
 
 .PHONY: all
 

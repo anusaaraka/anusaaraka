@@ -16,7 +16,6 @@
     mkdir $HOME_anu_output
  fi
 
- MYPATH1=`pwd`
  MYPATH=$HOME_anu_tmp
  cp $1 $MYPATH/. 
 
@@ -38,6 +37,12 @@
 
  mkdir $MYPATH/tmp/$1_tmp
 
+###Added below loop for server purpose.
+ if [ "$3" == "True" ] ; then 
+    echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
+ else
+    echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
+ fi
  echo "Saving Format info ..."
 
  $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
@@ -106,6 +111,7 @@
  while read line
  do
     echo "Hindi meaning using Stanford parser" $line
+    cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
     timeout 500 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt

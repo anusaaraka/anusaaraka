@@ -3238,7 +3238,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  36. Modified ber_ver_output, sd_ver_output.
  37. Updated Log
  
- 2-03-12
+ 06-03-12
  =======
  1. sd_lwg_rules.clp 
         Modified : make_VBN_as_VBD  , get_aux, split_Conj_VP and relace_verb rules
@@ -3248,6 +3248,27 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         2. loaded E_constituents_info_tmp1.dat instead E_constituents_info_tmp2.dat
                 (E_constituents_info_tmp1.dat file contains punct info)
  3. Modified "replace_aux_with_head_VP1" in H_ordering_rules.clp
- 4. Updated Log
+ 4. Added default-iit-bombay-shabdanjali-dic_firefox.txt, dictionaryA-R.js and dictionaryS-Z.js files.
+ 5. Modified create_eng_ord_html.clp file to add dictionary  file.
+ 6. Modified colors in converting-dic-format-to-js.lex file.
+ 7. Modified run_anu_browser.sh to call dictionaryA-R.js and dictionaryS-Z.js files.
+ 8. Removed coding part of creating firefox dictionary and generating js files in anu_compile.sh.
+ 9. Added stanford tregex directory in $HOME_anu_test/miscellaneous/std_tregex .
+ 10. Added code for untar(stanford-tregex-2012-01-06.tgz) in anu_compile.sh .
+ 11. Added code in following files to give priority for provisional_wsd_rules:
+        Anusaaraka_berkeley.sh  Anusaaraka_rasp.sh      Anusaaraka_site.sh
+        Anusaaraka_stanford.sh  Anusaaraka_link.sh
+ 12. Modified load_user_org_word_file, load_user_word_file and load_user_root_file rules im wsd_meaning.clp for above purpose 13. Loaded sand_box.dat inside WSD module in run_modules_std.bat
+ 14. Removed compound_phrase.txt in Anu/stdenglish
+ 15. Anu/stdenglish
+        - Renamed abbr.lex as enclitics.lex  and abbr1.lex as abbrevations.lex
+        - Added honorifics.lex file to handle honorifics
+        - Modified Makefile to add honorifics.lex and insert_period.lex
+        - Removed join_hard_hyphen.lex and rm_joined_hard_hyphens.lex files (moved to miscellaneous)
+	- Added insert_period.lex file to insert dot at the end of sentence
+ 16. Modified Anu/stdenglish.sh to run honorifics.lex and insert_period.lex
+ 17. Modified get_last_punc_with_S rule in insert_punctuation.clp
+ 18. Added Programs directory in miscellaneous
+ 19. Updated Log
 
- 
+

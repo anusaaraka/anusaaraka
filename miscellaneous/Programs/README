@@ -1,0 +1,19 @@
+  1. join_hard_hyphen.lex
+	- join_hard_hyphen.lex joins the two words that are split with hard hyphen.
+	- It checks for the pattern '{WRD}\-[ ]*$', removes the white spaces following the hyphen.
+	- It also removes '^M' from the dos format files.
+	- to run : 
+		- Move join_hard_hyphen.lex to Anu/stdenglish/
+		- Add the following commands in Anu/stdenglish.sh  
+			$PATH1/join_hard_hyphen.out < $PATH2/$1 |\
+			$PATH1/join_hard_hyphen.out < $2/$1 |\
+		- Add join_hard_hyphen.lex in Anu/stdenglish/Makefile
+ 2. rm_joined_hard_hyphens.lex
+	- looks at all the occurances of w1-w2, and removes the hyphen if a character sequence w1w2 exists in English
+	  morph database.
+	- to run :
+		- Move rm_joined_hard_hyphens.lex to Anu/stdenglish/
+		- Add the following commands in Anu/stdenglish.sh
+			$PATH1/rm_joined_hard_hyphens.out $HOME_anu_test/Anu_databases/morph.dbm > $1.tmp
+		- Add rm_joined_hard_hyphens.lex in Anu/stdenglish/Makefile
+ 3. 

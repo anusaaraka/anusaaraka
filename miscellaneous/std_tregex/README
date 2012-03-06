@@ -1,0 +1,21 @@
+
+  Run ::
+  ===
+  sh run_tregex.sh <file_name>
+  Eg: sh run_tregex.sh file
+ 
+  With the above command "Tregex" tree viewer tool opens
+
+  To view the Parse trees 
+ 
+  1) Open File Menu
+  2) select "load trees .... " option
+  3) Select the parsed tree file (Here it will be <file_name_output> e.g: file_output) 
+
+  Example::
+  Sen            ::   I gave a book to Dashrath, the king of Ayodhya.
+  default_parse  ::   splits "Dashrath" and "the king of Ayodhya" as different phrases (NP && NP)
+
+  needed_parse   ::   "Dashrath the king of Ayodhya" should be within one phrase (NP)          
+ 		 -->   Regular expression for this parse is 
+		       S < ( VP < ( PP [< NP [<< Ayodhya & << Dashrath]  & < TO]))
