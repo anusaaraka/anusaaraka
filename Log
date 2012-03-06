@@ -3267,7 +3267,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         - Removed join_hard_hyphen.lex and rm_joined_hard_hyphens.lex files (moved to miscellaneous)
 	- Added insert_period.lex file to insert dot at the end of sentence
  16. Modified Anu/stdenglish.sh to run honorifics.lex and insert_period.lex
- 17. Modified get_last_punc_with_S rule in insert_punctuation.clp
+ 17. insert_punctuation.clp
+	 Modified  : get_last_punc_with_S , get_s_grp and get_phrase_group1 rules 
  18. Modified replace_aux_with_head_VP in H_ordering_rules.clp
  19. Added Programs directory in miscellaneous
  20. Updated Log
