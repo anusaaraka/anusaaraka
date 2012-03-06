@@ -16,7 +16,7 @@
   Writing regular Expressions:
   Example::
   Sen            ::   I gave a book to Dashrath, the king of Ayodhya.
-  default_parse  ::   splits "Dashrath" and "the king of Ayodhya" as different phrases (NP && NP)
+  default_parse  ::   splits "Dashrath" and "the king of Ayodhya" in to two different phrases (NP && NP)
 
   needed_parse   ::   "Dashrath the king of Ayodhya" should be within one phrase (NP)          
  		 -->   Regular expression for this parse is 
