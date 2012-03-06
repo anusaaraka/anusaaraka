@@ -3271,6 +3271,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	 Modified  : get_last_punc_with_S , get_s_grp and get_phrase_group1 rules 
  18. Modified replace_aux_with_head_VP in H_ordering_rules.clp
  19. Added Programs directory in miscellaneous
- 20. Updated Log
+ 20. Updated firefox help.html and std_trgex README files.
+ 21. Updated Log
 
 
