@@ -14,7 +14,7 @@
 (create$ (first$ ?a) (reverse (rest$ ?a)))))
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule print_for_debugging1
-(declare (salience 1501))
+(declare (salience 1502))
 =>
 (bind ?*count* (+ ?*count* 1))
 (printout ?*order_debug-file* "(debug_info  "?*count*" Removing auxillary verbs from the sentence)" crlf)
@@ -25,9 +25,10 @@
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?VB $?daut ?VP)
 ?f1<-(Head-Level-Mother-Daughters ? ? ?VP $?daut1 ?VP1)
 (Node-Category  ?Mot    VP|SQ)
-(Node-Category  ?VB     MD|VB|VBN|VBZ|VBD|VBP|VBG|RB|TO)
+(Node-Category  ?VB     ?aux&MD|VB|VBN|VBZ|VBD|VBP|VBG|RB|TO)
 (Node-Category  ?VP     VP)
 (Node-Category  ?VP1    ?CAT)
+?f2<-(Head-Level-Mother-Daughters ?h ?l ?VB $?)
 (not (Mother  ?Mot));Is that the film in which he kills his mother? 
 =>
         (bind ?*count* (+ ?*count* 1))
@@ -38,12 +39,22 @@
                           "             Before    - "?head" "?lvl"  "?Mot"  "?VB" "(implode$ $?daut)" "?VP"  "crlf
                           "             After     - "?head" "?lvl"  "?Mot"  "(implode$ $?daut)"  "(implode$ $?daut1)" "?VP1 ")" crlf)
         else
-        (retract ?f)
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP))
-        (printout ?*order_debug-file* "(rule_name - replace_aux_with_head_VP " ?*count* " "crlf
+	(if (eq ?aux RB) then ;Tours to coorg as a lesser-known hill station in india is all set to razzle-dazzle a wary soul when he embarks on a tour to coorg, a lovely hill station in india.
+		(if (eq ?h not) then
+			(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP))
+			(retract ?f)
+			(printout ?*order_debug-file* "(rule_name - replace_aux_with_head_VP " ?*count* " "crlf
+                          "             Before    - "?head" "?lvl"  "?Mot"  "?VB" "(implode$ $?daut)" "?VP"  "crlf
+                          "             After     - "?head" "?lvl"  "?Mot"  "(implode$ $?daut)" "?VP ")"crlf)
+		)
+	else 
+		(retract ?f)
+	        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP))
+        	(printout ?*order_debug-file* "(rule_name - replace_aux_with_head_VP " ?*count* " "crlf
                           "             Before    - "?head" "?lvl"  "?Mot"  "?VB" "(implode$ $?daut)" "?VP"  "crlf
                           "             After     - "?head" "?lvl"  "?Mot"  "(implode$ $?daut)" "?VP ")"crlf)
         )
+	)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (23-02-12)
