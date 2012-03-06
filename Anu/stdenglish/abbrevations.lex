@@ -35,7 +35,7 @@ SPC [^a-zA-Z0-9]
 {SPC}U\.S\.A\.{SPC}	{printf("%cABBR-USA%c",yytext[0],yytext[7]);}
 {SPC}U\.S\.{SPC}	{printf("%cABBR-US%c",yytext[0],yytext[5]);}
 {SPC}U\.K\.{SPC}	{printf("%cABBR-UK%c",yytext[0],yytext[5]);}
-{SPC}[aA][.][dD][.]{SPC}	{printf("%cABBR-Dot%cABBR-Dot",yytext[0],yytext[1],yytext[3],yytext[5]);}
+{SPC}[aA][.][dD][.]{SPC}	{printf("%c%cABBR-Dot%cABBR-Dot%c",yytext[0],yytext[1],yytext[3],yytext[5]);}
 {SPC}a\.k\.a\.{SPC} 	{printf("%cABBR-aka%c",yytext[0],yytext[7]);}
 [ ]Inc\.	{printf("%c%c%c%cABBR-Dot", yytext[0],yytext[1],yytext[2],yytext[3]); }
 [0-9]%		{printf("%cSYM-Percent",yytext[0]); }
