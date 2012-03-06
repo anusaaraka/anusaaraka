@@ -1,6 +1,6 @@
 SHELL = /bin/sh
 
-TARGETS = enclitics.out abbrevations.out honorifics.out
+TARGETS = enclitics.out abbrevations.out honorifics.out insert_period.out
 
 all: $(TARGETS)
 
@@ -27,6 +27,9 @@ abbrevations.out: abbrevations.lex
 	$(run_flex)
 
 honorifics.out: honorifics.lex
+	$(run_flex)
+
+insert_period.out: insert_period.lex
 	$(run_flex)
 
 .PHONY: all
