@@ -55,58 +55,64 @@ Anusaaraka interface presents the output at all these <a href="#sec1.2">intermed
 <hr />
 <h2><a name="sec1.2"> What does each row specify? </a></h2>
 <ul>
-<li><b>Row 1: Original English sentence</b></li>
-<li><b>Row 2: Word level substitution</b>
-	<ul>
-	<li> Least fragile layer.</li>
-	<li> contains Hindi <a href="http://ltrc.iiit.net/~anusaaraka/SabdasUtra/Words/UTF-8/SabxasUtra.htm.utf8">padasutra (word formula)</a> for each English words.
-	<br />
-	 E.g. small -&gt; <i>chotaa^alpa</i>
-	<br />
-	      rats  -&gt; <i>cuuhaa{s}</i>
-	<br />
-	</li>
-	</ul>
+<li><b>Row 1: Original English sentence (A)</b></li>
+<li><b>Row 2: Cautionary Signs (B)</b><ul><li>Shows the cautionary sign for a word indicating special attention.</li></ul></li>
+<li><b>Row 3: Hindi padasutra (C)</b>
+    <ul>
+    <li> Least fragile layer.</li>
+        <li> contains Hindi <a href="http://ltrc.iiit.net/~anusaaraka/SabdasUtra/Words/UTF-8/SabxasUtra.htm.utf8">padasutra (word formula)</a> for each English words.
+        <br />
+         E.g. small -&gt; <i>chotaa^alpa</i>
+        <br />
+              rats  -&gt; <i>cuuhaa{s}</i>
+        <br />
+        </li>
+        </ul>
 </li>
-<li><b>Row 3: Word Grouping</b>
-	<ul>
-	<li> The group of words which as a group give some new meaning(e.g. compounding) are grouped together.
-	<br />
-	For example, in the above sentence,
-	<br />
-	are + ing = <i>0_rahaa_hai</i>
-	<br />
-	</li>
-	</ul>
+<li><b>Row 4: Root (D)</b><ul><li>Shows root corresponding to the English word.</li></ul></li>
+<li><b>Row 5: Dictionary (E)</b><ul><li>Shows all the meanings.</li></ul></li>
+<li><b>Row 6: POS tag (F)</b><ul><li>Shows the best probable Part Of Speech in a given context.</li></ul></li>
+<li><b>Row 7: Chunker Marking (G)</b><ul><li>Shows the names of phrases (noun phrase, verb phrase, etc).</li></ul></li>
+<li><b>Row 8: Word Grouping (H)</b>
+	      <ul>
+        <li> The group of words which as a group give some new meaning(e.g. compounding) are grouped together.
+        <br />
+        For example, in the above sentence,
+        <br />
+        are + ing = <i>0_rahaa_hai</i>
+        <br />
+        </li>
+        </ul>
 </li>
-<li><b>Row 4: Word Sense Disambiguation</b>
-	<ul>
-	<li> Attempts to select the appropriate sense according to the context.
-	<br />
-	For example, bank of the river -&gt; <i>kinaaraa</i> nadii kaa
-	</li>
-	</ul>
+<li><b>Row 9: Sense Disambiguation (I)</b>
+<ul>
+        <li> Attempts to select the appropriate sense according to the context.
+        <br />
+        For example, bank of the river -&gt; <i>kinaaraa</i> nadii kaa
+        </li>
+        </ul>
 </li>
-<li><b>Row 5: Preposition Movement</b>
+<li><b>Row 10: Preposition Movement (J)</b>
 	<ul>
-	<li> The prepositions are moved to their correct Hindi positions.
-	<br />
-	     <table border="1">
-	     <tr><td>on</td><td>the</td><td>bank</td><td> <font color="red">Original English </font></td></tr> 
-	     <tr><td>-&gt;para</td><td>--</td><td>kinaaraa</td><td><font color="red">After Word Sense Disambiguation</font></td></tr>
-	     <tr><td>--+2</td><td>---</td><td>kinaare_para</td><td><font color="red">After Prep Movement</font></td></tr>
-	     </table>
-	</li>
-	</ul>
+        <li> The prepositions are moved to their correct Hindi positions.
+        <br />
+             <table border="1">
+             <tr><td>on</td><td>the</td><td>bank</td><td> <font color="red">Original English </font></td></tr>
+             <tr><td>-&gt;para</td><td>--</td><td>kinaaraa</td><td><font color="red">After Word Sense Disambiguation</font></td></tr>
+             <tr><td>--+2</td><td>---</td><td>kinaare_para</td><td><font color="red">After Prep Movement</font></td></tr>
+             </table>
+        </li>
+        </ul>
 </li>
-<li><b>Row 6: Hindi Word Generation</b>
-	<ul>
-	<li> Correct forms of Hindi words are generated using the gender number person agreement information.
-	<br />
-	E.g. '<i>cuuhaa{s}</i>' is changed to '<i>cuuhe</i>'.
-	</li>
-	</ul>
+<li><b>Row 11: Hindi Generation (K)</b>
+ <ul>
+        <li> Correct forms of Hindi words are generated using the gender number person agreement information.
+        <br />
+        E.g. '<i>cuuhaa{s}</i>' is changed to '<i>cuuhe</i>'.
+        </li>
+        </ul>
 </li>
+<li><b>Row 12: Suggestions (L)</b></li>
 </ul>
 <p><a href="#top"> Top </a></p>
 <hr />
