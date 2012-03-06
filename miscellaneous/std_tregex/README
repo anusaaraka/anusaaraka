@@ -11,7 +11,9 @@
   1) Open File Menu
   2) select "load trees .... " option
   3) Select the parsed tree file (Here it will be <file_name_output> e.g: file_output) 
-
+  4) Clik the "Browse trees" It will show list of all the trees.
+  
+  Writing regular Expressions:
   Example::
   Sen            ::   I gave a book to Dashrath, the king of Ayodhya.
   default_parse  ::   splits "Dashrath" and "the king of Ayodhya" as different phrases (NP && NP)
@@ -19,3 +21,7 @@
   needed_parse   ::   "Dashrath the king of Ayodhya" should be within one phrase (NP)          
  		 -->   Regular expression for this parse is 
 		       S < ( VP < ( PP [< NP [<< Ayodhya & << Dashrath]  & < TO]))
+
+  NOTE:-
+ 1) By default it generates 25 parses for a sentence, if one want to see more parsers change the "-printPCFGkBest 25" option     to desired number in "$HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/run_multiple_parse_penn.sh" file.
+
