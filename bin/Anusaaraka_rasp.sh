@@ -38,7 +38,7 @@
  mkdir $MYPATH/tmp/$1_tmp
 
 ###Added below loop for server purpose. As stanford parser is used here internally below code is added to make uniform.
- if [ "$2" == "True" ] ; then 
+ if [ "$3" == "True" ] ; then 
     echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
  else
     echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat

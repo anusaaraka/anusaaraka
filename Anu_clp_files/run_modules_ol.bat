@@ -195,6 +195,7 @@
  (load-facts "preferred_morph.dat")
  (load-facts "sent_type.dat")
  (load* "global_path.clp")
+ (load-facts "sand_box.dat")
  (defmodule WSD_MODULE (export ?ALL)
                        (import MAIN ?ALL)
                        (import MAIN deftemplate ?ALL))

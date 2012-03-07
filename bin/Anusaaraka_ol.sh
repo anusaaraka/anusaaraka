@@ -1,14 +1,13 @@
- #/bin/sh
+#/bin/sh
  source ~/.bashrc
 
  export LC_ALL=
  export LC_ALL=en_US.UTF-8
 
-
  if ! [ -d $HOME_anu_tmp ] ; then
      echo $HOME_anu_tmp " directory does not exist "
      echo "Creating "$HOME_anu_tmp 
-    mkdir $HOME_anu_tmp
+     mkdir $HOME_anu_tmp
  fi
 
  if ! [ -d $HOME_anu_output ] ; then
@@ -17,7 +16,6 @@
     mkdir $HOME_anu_output
  fi
 
- MYPATH1=`pwd`
  MYPATH=$HOME_anu_tmp
  cp $1 $MYPATH/. 
 
@@ -39,6 +37,12 @@
 
  mkdir $MYPATH/tmp/$1_tmp
 
+###Added below loop for server purpose.
+ if [ "$3" == "True" ] ; then 
+    echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
+ else
+    echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
+ fi
  echo "Saving Format info ..."
 
  $HOME_anu_test/Anu/ol_stdenglish.sh $1 $MYPATH
@@ -52,14 +56,14 @@
 
   echo "Saving morph information"
   cd $HOME_anu_test/apertium/
-   sed 's/\([^0-9]\)\.\([^0-9]*\)/\1 \.\2/g'  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | sed 's/?/ ?/g'| sed 's/\"/\" /g' | sed 's/!/ !/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp
-  apertium-destxt $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp | lt-proc -a en.morf.bin | apertium-retxt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph
+  sed 's/\([^0-9]\)\.\([^0-9]*\)/\1 \.\2/g'  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | sed 's/?/ ?/g'| sed 's/\"/\" /g'  | sed 's/!/ !/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp
+  apertium-destxt $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp  | lt-proc -a en.morf.bin | apertium-retxt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph
   perl morph.pl $MYPATH $1 < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph
 
   echo "Calling POS Tagger and Chunker (APERTIUM)" 
   cd $HOME_anu_test/apertium
   sh run_chunker_and_tagger.sh $1
-  
+
   cd $HOME_anu_test/Anu_src
   ./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
@@ -73,7 +77,7 @@
   cd $HOME_anu_tmp
   sed 's/ABBRDOT/./g' $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt_tmp  #Ex: He was called simply Clint Jr. because his Daddy was Clint Sr.. 
   mv $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt_tmp  $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt
-  cp  $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt   $HOME_anu_tmp/apitest.input
+  cp $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt   $HOME_anu_tmp/apitest.input
   sh testolgs.sh >/dev/null
   cp apitest.input-EG-TR.diag $MYPATH/tmp/$1_tmp/one_sentence_per_line-diag.txt 
 
@@ -89,16 +93,18 @@
 
   grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt
   perl $HOME_anu_test/Anu_src/Match-sen.pl $HOME_anu_test/Anu_databases/Complete_sentence.gdbm  $1.snt one_sentence_per_line.txt > sen_phrase.txt
+
   $HOME_anu_test/Anu_src/split_file.out sen_phrase.txt dir_names.txt sen_phrase.dat
-
-
+ 
  cd $HOME_anu_test/bin
  while read line
  do
     echo "Hindi meaning using Open Logos" $line
-   timeout 180 ./run_sentence_ol.sh $1 $line 1 $MYPATH
+    cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
+    timeout 180 ./run_sentence_ol.sh $1 $line 1 $MYPATH
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
+ 
  cd $MYPATH/tmp/$1_tmp/
  echo "(defglobal ?*path* = $HOME_anu_test)" > path_for_html.clp
  echo "(defglobal ?*mypath* = $MYPATH)" >> path_for_html.clp
