@@ -56,8 +56,13 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/idioms.gdbm < idioms.txt
  echo "Creating compound_phrase.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/compound_phrase.gdbm < compound-matching/compound_phrase.txt
+ echo "Creating preposition.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/preposition.gdbm < preposition.txt
  echo "Creating default-iit-bombay-shabdanjali-dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic.gdbm < default-iit-bombay-shabdanjali-dic.txt
+ sed 's/\(.*\)\t\(.*\)::/\1_\2\t/g' default-iit-bombay-shabdanjali-dic.txt > default-iit-bombay-shabdanjali-dic_firefox1.txt
+ echo "Creating default-iit-bombay-shabdanjali-dic_firefox1.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_firefox1.gdbm < default-iit-bombay-shabdanjali-dic_firefox1.txt
 
  cd vb_root
  echo "Creating ol_vb_root.gdbm"
