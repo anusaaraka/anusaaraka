@@ -2,7 +2,8 @@
 
  rm  E_constituents_info.dat Node_category_info.dat cons_tree.dat $1.error $1_* 
 
- java  -mx900m -cp "$STANFORD_PATH/stanford-parser.jar:" edu.stanford.nlp.parser.lexparser.LexicalizedParser -sentences "newline" -outputFormat oneline -outputFormatOptions "treeDependencies" $STANFORD_PATH/grammar/englishPCFG.ser.gz  $1 > $1_derived_tree  2> /dev/null
+# java  -mx900m -cp "$STANFORD_PATH/stanford-parser.jar:" edu.stanford.nlp.parser.lexparser.LexicalizedParser -sentences "newline" -outputFormat oneline -outputFormatOptions "treeDependencies" $STANFORD_PATH/grammar/englishPCFG.ser.gz  $1 > $1_derived_tree  2> /dev/null
+ java  -mx900m -cp "$STANFORD_PATH/stanford-parser.jar:" edu.stanford.nlp.parser.lexparser.LexicalizedParser -sentences "newline" -outputFormat oneline -outputFormatOptions "treeDependencies" -printPCFGkBest 25 $STANFORD_PATH/englishPCFG.ser.gz  $1 > $1_derived_tree  2> /dev/null
 
  java -mx800m -cp "$STANFORD_PATH/stanford-parser.jar:" edu.stanford.nlp.trees.EnglishGrammaticalStructure -treeFile $1_derived_tree  -CCprocessed -conllx -keepPunct -lexicalize  > $1_dependency_tree
 

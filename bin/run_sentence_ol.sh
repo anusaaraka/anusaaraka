@@ -71,7 +71,7 @@ if ! [ -s $MYPATH/$1_tmp/$2/ol_pada_tmp-new.dat ] ; then
  sed -e 's/(id-original_word 1/\@/' $MYPATH/$1_tmp/$2/original_word.dat | sed -e 's/)//' | sed -e 's/\s\+//' > $MYPATH/$1_tmp/$2/hindi_sentence.dat
 fi
 
-cat para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat parserid_wordid_mapping.dat  ol_numeric_word.dat relations.dat hindi_meanings.dat GNP_agmt_info.dat id_Apertium_output.dat  hindi_id_order_tmp1.dat position.dat catastrophe.dat English_sentence.dat  >>$MYPATH/$1_tmp/$2/all_facts
+cat para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat parserid_wordid_mapping.dat  ol_numeric_word.dat relations.dat hindi_meanings.dat GNP_agmt_info.dat id_Apertium_output.dat  hindi_id_order.dat position.dat catastrophe.dat English_sentence.dat  >>$MYPATH/$1_tmp/$2/all_facts
 sed -e 's/=/equal_to/g' < all_facts > all_facts_tmp
 mv all_facts_tmp all_facts
 

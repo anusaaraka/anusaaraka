@@ -27,7 +27,6 @@
 ## Add Sentence marker tag <s>,</s> to mark the beginning and end of a sentence.
 
 PATH1=$HOME_anu_test/Anu/std_format
-#PATH2=$HOME_anu_test/../tmp
 PATH2=$2/tmp/
 
 if [ -f "$PATH2/tmp_std_format"  ] ; then

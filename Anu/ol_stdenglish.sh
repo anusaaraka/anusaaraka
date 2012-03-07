@@ -55,7 +55,7 @@ sed -e 's/ / /g'  <  $2/$1  | sed -e "s/’/'/g" | sed -e 's/“/"/g' | sed -e 
 
 ###################################################################################
 
-$PATH1/abbr.out < $1.tmp > $1.tmp1
+$PATH1/enclitics.out < $1.tmp > $1.tmp1
 
 # abbr1.lex handles standard abbreviations such as 'i.e.', 'e.g.', etc.
 # Better solution for this is necessary
