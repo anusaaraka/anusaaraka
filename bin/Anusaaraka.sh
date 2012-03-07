@@ -7,7 +7,7 @@
  if ! [ -d $HOME_anu_tmp ] ; then
      echo $HOME_anu_tmp " directory does not exist "
      echo "Creating "$HOME_anu_tmp 
-    mkdir $HOME_anu_tmp
+     mkdir $HOME_anu_tmp
  fi
 
  if ! [ -d $HOME_anu_output ] ; then
@@ -72,13 +72,20 @@
   cd $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/link-grammar
   ./link-parser $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt 
 # cd $HOME_anu_test/Parsers/LINK/link-grammar-4.7.4/link-grammar
- # ./link-parser $HOME_anu_test/Parsers/LINK/link-grammar-4.7.4/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt
+# ./link-parser $HOME_anu_test/Parsers/LINK/link-grammar-4.7.4/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt
 
   echo "Calling Stanford parser"
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
  # sh run_stanford-parser.sh $1 $MYPATH > /dev/null
+  if [ "$2" != "" ] ;
+  then
+  sh run_multiple_parse_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1 2>/dev/null  
+  python preffered_parse.py $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1 $2 > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
+  else 
   sh run_penn-pcfg.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
-  sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}"  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp | sed -n -e "H;\${g;s/\n//g;p}" | sed 's/)(ROOT/)\n(ROOT/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn
+  fi
+  sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}"  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn
+
   sed 's/(, ,)/(P_COM PUNCT-Comma)/g' < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn | sed 's/(\. \.)/(P_DOT PUNCT-Dot)/g' |sed 's/(? ?)/(P_QES  PUNCT-QuestionMark)/g' | sed 's/(. ?)/(P_DQ PUNCT-QuestionMark)/g' | sed 's/(`` ``)/(P_DQT PUNCT-DoubleQuote)/g' | sed "s/('' '')/(P_DQT PUNCT-DoubleQuote)/g" | sed 's/(: ;)/(P_SEM PUNCT-Semicolon)/g' | sed 's/(: :)/(P_CLN PUNCT-Colon)/g' | sed 's/(: -)/(P_DSH PUNCT-Hyphen)/g' |sed "s/('' ')/(P_SQT PUNCT-SingleQuote)/g" | sed 's/(`` `)/(P_SQT PUNCT-SingleQuote)/g' | sed "s/(\`\` ')/(P_SQT PUNCT-SingleQuote)/g" | sed 's/(-LRB- -LRB-)/(P_LB PUNCT-OpenParen)/g'|sed 's/(-RRB- -RRB-)/(P_RB PUNCT-ClosedParen)/g' | sed 's/(. !)/(P_EXM PUNCT-Exclamation)/g' | sed 's/($ $)/(P_DOL SYM-Dollar)/g' >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.cons
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 
@@ -107,15 +114,10 @@
 
   $HOME_anu_test/Anu_src/split_file.out sd-original-relations.txt  dir_names.txt  sd-original-relations.dat
 
- # echo 'matching compounds......'
-  #grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt
-##NOTE: While 'matching compounds', using one_sentence_per_line.txt_tmp problem occured when we get punctuations in between the sentence. Ex: I am warning you for the last time, stop talking! 
-## So '$1.snt' file which contains only sentences without punctuations is used. (Modified by Roja (11-08-11)) 
-  #perl $HOME_anu_test/Anu_src/Compound-dict.pl $HOME_anu_test/Anu_databases/compound.gdbm  $1.snt > compound_phrase.txt
-  perl $HOME_anu_test/Anu_src/Match-sen.pl $HOME_anu_test/Anu_databases/Complete_sentence.gdbm  ../$1.snt one_sentence_per_line.txt > sen_phrase.txt
+  grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt
+  perl $HOME_anu_test/Anu_src/Match-sen.pl $HOME_anu_test/Anu_databases/Complete_sentence.gdbm  $1.snt one_sentence_per_line.txt > sen_phrase.txt
 
   $HOME_anu_test/Anu_src/split_file.out sen_phrase.txt dir_names.txt sen_phrase.dat
-  #$HOME_anu_test/Anu_src/split_file.out compound_phrase.txt dir_names.txt compound_phrase.dat
  
  cd $HOME_anu_test/bin
  while read line
@@ -132,6 +134,7 @@
 			echo ""
 		else 
     			echo "Hindi meaning using Link parser" $line
+			cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
 			timeout 180 ./run_sentence_link.sh $1 $line 1 $MYPATH
 			echo ""
                 fi

@@ -16,7 +16,6 @@
     mkdir $HOME_anu_output
  fi
 
- MYPATH1=`pwd`
  MYPATH=$HOME_anu_tmp
  cp $1 $MYPATH/. 
 
@@ -38,6 +37,12 @@
 
  mkdir $MYPATH/tmp/$1_tmp
 
+###Added below loop for server purpose.
+ if [ "$3" == "True" ] ; then 
+    echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
+ else
+    echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
+ fi
  echo "Saving Format info ..."
 
  $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
@@ -59,12 +64,12 @@
   cd $HOME_anu_test/apertium
   sh run_chunker_and_tagger.sh $1
 
-  cd $HOME_anu_test/Anu_src
-  ./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
+#  cd $HOME_anu_test/Anu_src
+#  ./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
   echo "Calling Stanford parser"
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
- # cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2011-12-22/
+ #cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2012-01-06/
   if [ "$2" != "" ] ;
   then
   sh run_multiple_parse_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1 2>/dev/null  
@@ -74,7 +79,7 @@
   fi
   sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}"  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn
 
-  sed 's/(, ,)/(P_COM COMMA)/g' < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn | sed 's/(\. \.)/(P_DOT DOT)/g' |sed 's/(? ?)/(P_QES QUESTION_MARK)/g' | sed 's/(. ?)/(P_DQ DOT_QUESTION_MARK)/g' | sed 's/(`` ``)/(P_DQT DOUBLE_QUOTES)/g' | sed "s/('' '')/(P_DQT DOUBLE_QUOTES)/g" | sed 's/(: ;)/(P_SEM SEMCOLN)/g' | sed 's/(: :)/(P_CLN COLN)/g' | sed 's/(: -)/(P_DSH PDASH)/g' |sed "s/('' ')/(P_SQT SINGLE_QUOTE)/g" | sed 's/(`` `)/(P_SQT SINGLE_QUOTE)/g' | sed "s/(\`\` ')/(P_SQT SINGLE_QUOTE)/g" | sed 's/(-LRB- -LRB-)/(P_LB LFT_BRK)/g'|sed 's/(-RRB- -RRB-)/(P_RB RT_BRK)/g' | sed 's/(. !)/(P_EXM EXCLAMATION)/g' >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.cons
+  sed 's/(, ,)/(P_COM PUNCT-Comma)/g' < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn | sed 's/(\. \.)/(P_DOT PUNCT-Dot)/g' |sed 's/(? ?)/(P_QES  PUNCT-QuestionMark)/g' | sed 's/(. ?)/(P_DQ PUNCT-QuestionMark)/g' | sed 's/(`` ``)/(P_DQT PUNCT-DoubleQuote)/g' | sed "s/('' '')/(P_DQT PUNCT-DoubleQuote)/g" | sed 's/(: ;)/(P_SEM PUNCT-Semicolon)/g' | sed 's/(: :)/(P_CLN PUNCT-Colon)/g' | sed 's/(: -)/(P_DSH PUNCT-Hyphen)/g' |sed "s/('' ')/(P_SQT PUNCT-SingleQuote)/g" | sed 's/(`` `)/(P_SQT PUNCT-SingleQuote)/g' | sed "s/(\`\` ')/(P_SQT PUNCT-SingleQuote)/g" | sed 's/(-LRB- -LRB-)/(P_LB PUNCT-OpenParen)/g'|sed 's/(-RRB- -RRB-)/(P_RB PUNCT-ClosedParen)/g' | sed 's/(. !)/(P_EXM PUNCT-Exclamation)/g' | sed 's/($ $)/(P_DOL SYM-Dollar)/g' >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.cons
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 
   #running stanford NER (Named Entity Recogniser) on whole text.
@@ -85,7 +90,7 @@
   cd $MYPATH/tmp/$1_tmp
   sed 's/&/\&amp;/g' one_sentence_per_line.txt|sed -e s/\'/\\\'/g |sed 's/\"/\&quot;/g' |sed  "s/^/(Eng_sen \"/" |sed -n '1h;2,$H;${g;s/\n/\")\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/$/\")\n;~~~~~~~~~~\n/g;p}' > one_sentence_per_line_tmp.txt
   $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line_tmp.txt dir_names.txt English_sentence.dat
-  $HOME_anu_test/Anu_src/split_file.out chunk.txt dir_names.txt chunk.dat
+  #$HOME_anu_test/Anu_src/split_file.out chunk.txt dir_names.txt chunk.dat
   $HOME_anu_test/Anu_src/split_file.out sd-lexicalize_info.txt dir_names.txt sd-lexicalize_info.dat
   $HOME_anu_test/Anu_src/split_file.out sd-tree_relation.txt dir_names.txt sd-tree_relations_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out sd-basic_relation.txt dir_names.txt sd-basic_relations_tmp1.dat
@@ -106,6 +111,7 @@
  while read line
  do
     echo "Hindi meaning using Stanford parser" $line
+    cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
     timeout 500 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt

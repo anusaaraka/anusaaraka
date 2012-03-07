@@ -3239,7 +3239,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  37. Updated Log
  
  07-03-12
- =======
+ ========
  1. sd_lwg_rules.clp 
         Modified : make_VBN_as_VBD  , get_aux, split_Conj_VP and relace_verb rules
                         ( to treat COMMA as CC)
@@ -3257,8 +3257,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  10. Added code for untar(stanford-tregex-2012-01-06.tgz) in anu_compile.sh .
  11. Added code in following files to give priority for provisional_wsd_rules:
         Anusaaraka_berkeley.sh  Anusaaraka_rasp.sh      Anusaaraka_site.sh
-        Anusaaraka_stanford.sh  Anusaaraka_link.sh
- 12. Modified load_user_org_word_file, load_user_word_file and load_user_root_file rules im wsd_meaning.clp for above purpose 13. Loaded sand_box.dat inside WSD module in run_modules_std.bat
+        Anusaaraka_stanford.sh  Anusaaraka_link.sh	Anusaaraka_ol.sh
+	Anusaaraka_all.sh	Anusaaraka.sh		Anusaaraka_stanford-Factored.sh
+ 12. Modified load_user_org_word_file, load_user_word_file and load_user_root_file rules im wsd_meaning.clp for above purpose 13. Loaded sand_box.dat inside WSD module in following files:
+	run_modules_std.bat	run_modules_ol.bat	run_modules.link.bat
  14. Removed compound_phrase.txt in Anu/stdenglish
  15. Anu/stdenglish
         - Renamed abbr.lex as enclitics.lex  and abbr1.lex as abbrevations.lex
@@ -3273,6 +3275,15 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  19. Added Programs directory in miscellaneous
  20. Updated firefox help.html and std_trgex README files.
  21. Updated bin/abbr.sh
- 22. Updated Log
+ 22. Updated Anu/ol_stdenglish.sh as Anu/stdenglish.sh.
+ 23. Updated README in anu_testing
+ 24. Updated anu_compile_64bit.sh accordingly with anu_compile.sh
+ 25. Updated Log
 
+ 07-03-12
+ ========
+ 1. Modified "get_aux" rule in sd_lwg_rules.clp
+ 2. insert_punctuation
+     Modified :  get_phrase_group, get_phrase_group1  and get_s_grp
+ 3. Updated Log
 

@@ -5,33 +5,44 @@
  export LC_ALL=en_US.UTF-8
 
  if ! [ -d $HOME_anu_tmp ] ; then
- 		echo $HOME_anu_tmp " directory does not exist "
- 		echo "Creating "$HOME_anu_tmp 
- 		mkdir $HOME_anu_tmp
+     echo $HOME_anu_tmp " directory does not exist "
+     echo "Creating "$HOME_anu_tmp 
+     mkdir $HOME_anu_tmp
  fi
 
- MYPATH1=`pwd`
+ if ! [ -d $HOME_anu_output ] ; then
+     echo $HOME_anu_output " directory does not exist "
+     echo "Creating "$HOME_anu_output 
+    mkdir $HOME_anu_output
+ fi
+
  MYPATH=$HOME_anu_tmp
  cp $1 $MYPATH/. 
 
  if ! [ -d $MYPATH/tmp ] ; then
- 		echo "tmp  does not exist "
- 		echo " Creating tmp "
- 		mkdir $MYPATH/tmp
+    echo "tmp  does not exist "
+    echo " Creating tmp "
+    mkdir $MYPATH/tmp
  fi
 
- if ! [ -d $MYPATH1/help ] ; then
- 		echo "help dir  does not exist "
- 		echo "Creating help dir"
- 		mkdir $MYPATH1/help
+ if ! [ -d $HOME_anu_output/help ] ; then
+    echo "help dir  does not exist "
+    echo "Creating help dir"
+    mkdir $HOME_anu_output/help
  fi
 
  if  [ -e $MYPATH/tmp/$1_tmp ] ; then
- 		rm -rf $MYPATH/tmp/$1_tmp
+    rm -rf $MYPATH/tmp/$1_tmp
  fi
 
  mkdir $MYPATH/tmp/$1_tmp
 
+###Added below loop for server purpose.
+ if [ "$3" == "True" ] ; then 
+    echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
+ else
+    echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
+ fi
  echo "Saving Format info ..."
 
  $HOME_anu_test/Anu/ol_stdenglish.sh $1 $MYPATH
@@ -62,30 +73,39 @@
  
   echo "Calling Stanford parser"
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
-  sh ./run_stanford-parser.sh $1 $MYPATH > /dev/null
+  if [ "$2" != "" ] ;
+  then
+  sh run_multiple_parse_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1 2>/dev/null  
+  python preffered_parse.py $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1 $2 > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
+  else 
+  sh run_penn-pcfg.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
+  fi
+  sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}"  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn
 
-   #running stanford NER (Named Entity Recogniser) on whole text.
+  sed 's/(, ,)/(P_COM PUNCT-Comma)/g' < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn | sed 's/(\. \.)/(P_DOT PUNCT-Dot)/g' |sed 's/(? ?)/(P_QES  PUNCT-QuestionMark)/g' | sed 's/(. ?)/(P_DQ PUNCT-QuestionMark)/g' | sed 's/(`` ``)/(P_DQT PUNCT-DoubleQuote)/g' | sed "s/('' '')/(P_DQT PUNCT-DoubleQuote)/g" | sed 's/(: ;)/(P_SEM PUNCT-Semicolon)/g' | sed 's/(: :)/(P_CLN PUNCT-Colon)/g' | sed 's/(: -)/(P_DSH PUNCT-Hyphen)/g' |sed "s/('' ')/(P_SQT PUNCT-SingleQuote)/g" | sed 's/(`` `)/(P_SQT PUNCT-SingleQuote)/g' | sed "s/(\`\` ')/(P_SQT PUNCT-SingleQuote)/g" | sed 's/(-LRB- -LRB-)/(P_LB PUNCT-OpenParen)/g'|sed 's/(-RRB- -RRB-)/(P_RB PUNCT-ClosedParen)/g' | sed 's/(. !)/(P_EXM PUNCT-Exclamation)/g' | sed 's/($ $)/(P_DOL SYM-Dollar)/g' >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.cons
+  sh run_stanford-parser.sh $1 $MYPATH > /dev/null
+
+  #running stanford NER (Named Entity Recogniser) on whole text.
   echo "Finding NER... "
-  cd $HOME_anu_test/stanford-parser/stanford-ner-2008-05-07/
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2008-05-07/
   sh run-ner.sh $1
  
   echo "Calling OPEN-LOGOS"
   cd $HOME_anu_test/Anu_src
- 
- python transform_words.py $HOME_anu_tmp/tmp/$1_tmp/one_sentence_per_line.txt $HOME_anu_test/Anu_data/transformed_words.txt $HOME_anu_tmp/tmp/$1_tmp/one_sentence_per_line_changed.txt $HOME_anu_tmp/tmp/$1_tmp/transformed_word_id_all.dat
- 
- cd $HOME_open_logos/testapi
- cp testolgs.sh TransL_JobControlArguments apitest_settings.txt $HOME_anu_tmp/
- cd $HOME_anu_tmp
- sed 's/ABBRDOT/./g' $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt_tmp  #Ex: He was called simply Clint Jr. because his Daddy was Clint Sr.. 
- mv $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt_tmp  $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt
- cp $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt $HOME_anu_tmp/apitest.input
- sh testolgs.sh >/dev/null
- cp apitest.input-EG-TR.diag $MYPATH/tmp/$1_tmp/one_sentence_per_line-diag.txt 
- 
- 
- cd $MYPATH/tmp/$1_tmp
- sed 's/&/\&amp;/g' one_sentence_per_line.txt|sed -e s/\'/\\\'/g |sed 's/\"/\&quot;/g' |sed  "s/^/(Eng_sen \"/" |sed -n '1h;2,$H;${g;s/\n/\")\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/$/\")\n;~~~~~~~~~~\n/g;p}' > one_sentence_per_line_tmp.txt
+  python transform_words.py $HOME_anu_tmp/tmp/$1_tmp/one_sentence_per_line.txt $HOME_anu_test/Anu_data/transformed_words.txt $HOME_anu_tmp/tmp/$1_tmp/one_sentence_per_line_changed.txt $HOME_anu_tmp/tmp/$1_tmp/transformed_word_id_all.dat
+
+
+  cd $HOME_open_logos/testapi
+  cp testolgs.sh TransL_JobControlArguments apitest_settings.txt $HOME_anu_tmp/
+  cd $HOME_anu_tmp
+  sed 's/ABBRDOT/./g' $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt_tmp  #Ex: He was called simply Clint Jr. because his Daddy was Clint Sr.. 
+  mv $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt_tmp  $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt
+  cp $MYPATH/tmp/$1_tmp/one_sentence_per_line_changed.txt   $HOME_anu_tmp/apitest.input
+  sh testolgs.sh >/dev/null
+  cp apitest.input-EG-TR.diag $MYPATH/tmp/$1_tmp/one_sentence_per_line-diag.txt 
+
+  cd $MYPATH/tmp/$1_tmp
+  sed 's/&/\&amp;/g' one_sentence_per_line.txt|sed -e s/\'/\\\'/g |sed 's/\"/\&quot;/g' |sed  "s/^/(Eng_sen \"/" |sed -n '1h;2,$H;${g;s/\n/\")\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/$/\")\n;~~~~~~~~~~\n/g;p}' > one_sentence_per_line_tmp.txt
   $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line_tmp.txt dir_names.txt English_sentence.dat
   $HOME_anu_test/Anu_src/split_file.out link_relation_info.txt dir_names.txt link_relation_info_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out link_name_expand.txt dir_names.txt link_name_expand.dat
@@ -104,20 +124,13 @@
    perl  $HOME_anu_test/Anu_src/pre-split.pl < $MYPATH/tmp/$1_tmp/one_sentence_per_line-diag.txt   >tmp1
    $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line.txt.ner dir_names.txt ner.dat
  
- $HOME_anu_test/Anu_src/split_file.out tmp1  dir_names.txt ol-EG-TR.diag
+   $HOME_anu_test/Anu_src/split_file.out tmp1  dir_names.txt ol-EG-TR.diag
+   $HOME_anu_test/Anu_src/split_file.out $HOME_anu_tmp/tmp/$1_tmp/transformed_word_id_all.dat  dir_names.txt transformed_word_id.dat
  
- $HOME_anu_test/Anu_src/split_file.out $HOME_anu_tmp/tmp/$1_tmp/transformed_word_id_all.dat  dir_names.txt transformed_word_id.dat
- 
-# echo 'matching compounds......'
-#   grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt  
-##NOTE: While 'matching compounds', using one_sentence_per_line.txt_tmp problem occured when we get punctuations in between the sentence. Ex: I am warning you for the last time, stop talking! 
-## So '$1.snt' file which contains only sentences without punctuations is used. (Modified by Roja (11-08-11)) 
-# perl $HOME_anu_test/Anu_src/Compound-dict.pl $HOME_anu_test/Anu_databases/compound.gdbm  $1.snt > compound_phrase.txt
- perl $HOME_anu_test/Anu_src/Match-sen.pl $HOME_anu_test/Anu_databases/Complete_sentence.gdbm  ../$1.snt one_sentence_per_line.txt > sen_phrase.txt
- 
- $HOME_anu_test/Anu_src/split_file.out sen_phrase.txt dir_names.txt sen_phrase.dat
- #$HOME_anu_test/Anu_src/split_file.out compound_phrase.txt dir_names.txt compound_phrase.dat
- 
+  grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt
+  perl $HOME_anu_test/Anu_src/Match-sen.pl $HOME_anu_test/Anu_databases/Complete_sentence.gdbm  $1.snt one_sentence_per_line.txt > sen_phrase.txt
+
+  $HOME_anu_test/Anu_src/split_file.out sen_phrase.txt dir_names.txt sen_phrase.dat
  
  cd $HOME_anu_test/bin
  
@@ -125,48 +138,37 @@
  
  while read line
  do
-
-
- 		python $HOME_anu_test/Anu_src/check_ol_failure.py $MYPATH/tmp/$1_tmp/$line/ol-EG-TR.diag $MYPATH/tmp/$1_tmp/$line/ol_status.txt
- 		while read line1
- 		do
- 
- 				echo "$line1" | grep -q 'failed' 
+ 	python $HOME_anu_test/Anu_src/check_ol_failure.py $MYPATH/tmp/$1_tmp/$line/ol-EG-TR.diag $MYPATH/tmp/$1_tmp/$line/ol_status.txt
+ 	while read line1
+ 	do
+ 		echo "$line1" | grep -q 'failed' 
+ 		if [[ $? -eq 0 ]] ;
+ 		then
+ 			while read line2
+ 			do
+ 				echo "$line2" | grep -q 'of 0 linkages'
  				if [[ $? -eq 0 ]] ;
- 				then
- 
- 						while read line2
- 						do
- 
- 								echo "$line2" | grep -q 'of 0 linkages'
- 								if [[ $? -eq 0 ]] ;
-
- 								then
- 										echo "Hindi meaning using Stanford parser" $line
- 										timeout 180 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
- 										echo ""
-								else
- 										echo "Hindi meaning using Link parser" $line
- 										timeout 180 ./run_sentence_link.sh $1 $line 1 $MYPATH
- 										echo ""
+				then
+					echo "Hindi meaning using Stanford parser" $line
+					cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/										
+ 					timeout 180 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
+ 					echo ""
+				else
+ 					echo "Hindi meaning using Link parser" $line
+					cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
+ 					timeout 180 ./run_sentence_link.sh $1 $line 1 $MYPATH
+ 					echo ""
  								fi
+ 			done < $HOME_anu_tmp/tmp/$1_tmp/$line/linkage_count
  
- 						done < $HOME_anu_tmp/tmp/$1_tmp/$line/linkage_count
- 
- 
- 				else
- 						echo "Hindi meaning using Open Logos" $line
- 						timeout 180 ./run_sentence_ol.sh $1 $line 1 $MYPATH
- 						echo ""
- 
- 				fi
- 
+ 		else
+ 			echo "Hindi meaning using Open Logos" $line
+			cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
+			timeout 180 ./run_sentence_ol.sh $1 $line 1 $MYPATH
+			echo ""
+		fi
  		done < $HOME_anu_tmp/tmp/$1_tmp/$line/ol_status.txt
- 
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
- 
- ##########################
- 
  
  cd $MYPATH/tmp/$1_tmp/
  echo "(defglobal ?*path* = $HOME_anu_test)" > path_for_html.clp
@@ -174,28 +176,4 @@
  echo "(defglobal ?*filename* = $1)" >> path_for_html.clp
 
  echo "Calling Interface related programs"
- sh $HOME_anu_test/shell_scripts/ClipsToAnu_browser_intfc.sh $1 $MYPATH
- echo "<html><body>" > $MYPATH/tmp/$1_tmp/$1.txt.html
- cat $MYPATH/$1 >>$MYPATH/tmp/$1_tmp/$1.txt.html
- echo "</body></html>" >> $MYPATH/tmp/$1_tmp/$1.txt.html
-
- cp $MYPATH/$1 $MYPATH/tmp/$1_tmp/
- sh $HOME_anu_test/shell_scripts/frame.sh $1 $MYPATH/tmp/$1_tmp/
-
- mkdir $MYPATH/tmp/$1_tmp/anu_html
- cp $HOME_anu_test/Browser/img.php $HOME_anu_test/Browser/val.js $MYPATH/tmp/$1_tmp/anu_html/
- 
- cp *.html  $MYPATH1/. 
- cd $HOME_anu_test/Browser
- cp -r help/*htm $MYPATH1/help/
- cd src
- cp *.html *.js *.css $MYPATH1
-
-
- #To add slashes before(',",(,) etc.. )  inside initialise function(used for google api)
-
- cd $MYPATH1
- perl $HOME_anu_test/Anu_src/change-html.pl < $1.html > $1-new.html
- cp $1.html $1-old.html
- cp $1-new.html $1.html
- 
+ sh $HOME_anu_test/bin/run_anu_browser.sh $HOME_anu_test $1 $MYPATH $HOME_anu_output
