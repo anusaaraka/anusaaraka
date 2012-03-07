@@ -78,6 +78,10 @@
 	      </p>
        ii. Anusaaraka_stanford.sh  sample
 
+   User has an option to Enable/Disable provisional directory.
+    --> To Enable::	Anusaaraka_stanford.sh  sample 1 True
+    --> To Disable::	Anusaaraka_stanford.sh  sample
+        NOTE::  Where '1' is to get first parse (as default option)
 -----------------------------------------------------------------------------------------------------------------
 5. Output :
    ======
