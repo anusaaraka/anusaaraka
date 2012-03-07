@@ -137,8 +137,11 @@
 (declare (salience 1560))
 ?f<-(Head-Level-Mother-Daughters ?h ?l ?VP ?aux $?a ?VP1)
 (and (Node-Category ?VP VP)(Node-Category ?VP1 VP))
-(Head-Level-Mother-Daughters ?h1 ?l1 ?VP1 $?d ?CC $?d1)
+(Node-Category  ?aux MD|VB|VBN|VBZ|VBD|VBP|VBG|TO)
+;(Head-Level-Mother-Daughters ?h1 ?l1 ?VP1 $?d ?CC $?d1)
+(Head-Level-Mother-Daughters ?h1 ?l1 ?VP1 $?d ?CC ?VP2 $?d1)
 (or (Node-Category ?CC CC)(Node-Category ?CC P_COM))
+(Node-Category ?VP2 VP|VBN|VBD|VBG)
 ?f1<-(Head-Level-Mother-Daughters ? ? ?aux ?aid)
 ?f0<-(aux_grp $?ids)
 =>
