@@ -3280,10 +3280,20 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  24. Updated anu_compile_64bit.sh accordingly with anu_compile.sh
  25. Updated Log
 
- 07-03-12
+ 08-03-12
  ========
  1. Modified "get_aux" rule in sd_lwg_rules.clp
  2. insert_punctuation
      Modified :  get_phrase_group, get_phrase_group1  and get_s_grp
- 3. Updated Log
-
+ 3. In stdenglish.sh and ol_stdenglish.sh
+	-->Removed sed code of replacing non ascii characters with ascii characters and 
+	   handled it using a flex programme --> "replacing-non_ascii_chars-to-ascii_chars.lex" 
+     	-->Added code to generate .out for above flex file in Makefile of stdenglish 
+ 4. Removed sed code of mapping punctuations in following files 
+	Anusaaraka_all.sh	Anusaaraka_berkeley.sh	Anusaaraka_rasp.sh	Anusaaraka_stanford-Factored.sh
+	Anusaaraka_site.sh	Anusaaraka_stanford.sh	Anusaaraka.sh
+ 5. Handled above mapping punctuations using a flex programme mapping-punctuations.lex
+ 6. Added code to run above flex programme in run_stanford-parser.sh.
+ 7. Modified compile.sh to generate out file for mapping-punctuations.lex
+ 8. Updated in changes_in_databases
+ 9. Updated Log

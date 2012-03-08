@@ -29587,7 +29587,9 @@
 <e lm="valaya"><i>valay</i><par n="Gar/a__n"/></e>
 <e lm="valI"><i>valI</i><par n="AjAxI/__n"/></e>
 <e lm="vali"><i>vali</i><par n="SAnwi/__n"/></e>
-<!--<e lm="vAlI"><i>vAl</i><par n="ladak/I__n"/></e> -->
+
+<e lm="vAlA"><i>vAl</i><par n="kAl/A__n"/></e> 
+
 <e lm="vAlIvAla"><i>vAlIvAla</i><par n="BIda/__n"/></e>
 <e lm="valIvarxa"><i>valIvarxa</i><par n="kroXa/__n"/></e>
 <e lm="vAlkala"><i>vAlkala</i><par n="amIra/__adj"/></e>

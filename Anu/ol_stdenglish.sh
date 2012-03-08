@@ -18,26 +18,8 @@ else
     cd $PATH2/tmp_stdenglish
   fi
 
-#####################################################################################################################
-# This program checks the input format for unprintable characters, and
-# special characters such as '[^#&~`*]' which have special meanings either 
-# in bash or in regular expressions.
-# It removes these special characters.
-
-#Replacing the non-breakable space (NBSP) which has octal value (\302 240\) with normal ascii space character.
-#Replacing the zero width non-breakable space (ZWNBSP) which has octal value (\357 273\) with normal ascii space character.
-#Further such non-ascii characters can be included in this sed list.
-#1. NBSP    \302 240\
-#2. ZWNBSP  \357 273\
-#3. RSQM    \342 200\   
-#4. LDQM    \342 200\
-#5. RDQM    \342 200\
-#6. LSQM    \342 200\
-
-#7. Replacing EmDash (2014) with - 
-
-sed -e 's/ / /g' <  $2/$1 | sed -e "s/’/'/g" | sed -e 's/“/"/g' | sed -e 's/”/"/g' | sed -e "s/‘/'/g"| sed -e 's/﻿/ /g' | sed -e "s/—/-/g" > $1.tmp 
-
+#Replacing Non-ASCII characters with ASCII characters.  Ex: “ is replaced with "
+$PATH1/replacing-non_ascii_chars-to-ascii_chars.out <  $2/$1  > $1.tmp
 
 # enclitics.lex expands the standard abbreviations with single apostophe  such as I'm  ---> I am
 $PATH1/enclitics.out < $1.tmp > $1.tmp1

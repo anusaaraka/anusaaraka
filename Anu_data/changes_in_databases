@@ -426,11 +426,20 @@ changes in samAsa-new.txt
         <e><p><l>isake_pakRa_meM</l><r>yaha<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke_pakRa_meM"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>    				 (             "      11-08-11)
         <e><p><l>isake_pakRa_meM</l><r>yaha<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke_pakRa_meM"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/></r></p></e>				 (             "      11-08-11)
 
-	Added below 4 rules in k/Ona__p paradigm. 
+     Added below 4 rules in k/Ona__p paradigm. 
         <e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:o"/><s n="parsarg:0"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="tam:0"/></r></p></e> (Suggested by Sukhada 09-11-11)
 	<e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:d"/><s n="parsarg:0"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="tam:0"/></r></p></e> (Suggested by Sukhada 09-11-11)
 	<e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:o"/><s n="parsarg:0"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/><s n="tam:0"/></r></p></e> (Suggested by Sukhada 09-11-11)
 	<e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:d"/><s n="parsarg:0"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:0"/></r></p></e> (Suggested by Sukhada 09-11-11)
+     Modified following entries regular__adj-noun paradigm :: (Modified by Roja , Suggested by Meena(18-02-12)
+        <e lm="barPIlA"><i>barPIl</i><par n="vAl/A__adj"/></e>
+        <e lm="boJA"><i>boJ</i><par n="ladak/A__n"/></e>
+        <e lm="manoxaSA"><i>manoxaSA</i><par n="ASA/__n"/></e>
+        <e lm="pAlikA"><i>pAlikA</i><par n="ASA/__n"/></e>
+        <e lm="PavvArA"><i>PavvAr</i><par n="ladak/A__n"/></e>
+        <e lm="pUrA"><i>pUr</i><par n="vAl/A__adj"/></e>
+        <e lm="vAlA"><i>vAl</i><par n="vAl/A__adj"/></e>
+	<e lm="vAlA"><i>vAl</i><par n="kAl/A__n"/></e> (Added by Roja(08-03-12), Suggested by Sukhada)
 
 
  Modified :
@@ -448,6 +457,11 @@ changes in samAsa-new.txt
 		Ex:  paradigm        : <sdef n="parsarg:ke_sAWa" c="ke_sAWa"/>  
 		     related pattern : <e><p><l>isake_sAWa</l><r>yaha<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke_sAWa"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>
           2.  Removed vAl/A__n paradigm (Suggested by Chaitanya Sir).
+          3.  Removed Generation for following entries::
+	        KAye, KAyI, kiye, huye, uTanA, ASAyeM, kinako   (Modified by Roja , Suggested by Meena(18-02-12
+        	Removed vAl/A__n paradigm.      (Modified by Roja , Suggested by Meena(18-02-12
+	        <e lm="PotogrAPara"><i>PotogrAPara</i><par n="kroXa/__n"/></e>  (Modified by Roja,Suggested by Meena(18-02-12
+        	<e lm="vAlI"><i>vAl</i><par n="ladak/I__n"/></e>        (Modified by Roja , Suggested by Meena(18-02-12
 
  Changes in apertium-en-hi.en.metadix 
  =====================================
@@ -463,34 +477,18 @@ changes in samAsa-new.txt
         <e lm="unannounce"><i>unannounc</i><par n="liv/e__vblex"/></e> (     "  14-10-11)
         <e lm="stride"><i>str</i><par n="ab/ide__vblex"/></e>    (     "        14-10-11)
 
- 
 Modified:
         <e lm="belonging"><i>belonging</i><par n="house__n"/></e>   as    <e lm="belongings"><i>belongings</i><par n="personnel__n"/></e>   (Suggested by Meena ji 12-05-11)
         <e lm="box"><i>box</i><par n="bass__n"/></e>   as   <e lm="box"><i>box</i><par n="access__n"/></e>  (Suggested by Meena ji 10-08-11)
- 	Modified following entries regular__adj-noun paradigm :: (Modified by Roja , Suggested by Meena(18-02-12)
-	<e lm="barPIlA"><i>barPIl</i><par n="vAl/A__adj"/></e>
-	<e lm="boJA"><i>boJ</i><par n="ladak/A__n"/></e>
-	<e lm="manoxaSA"><i>manoxaSA</i><par n="ASA/__n"/></e>
-	<e lm="pAlikA"><i>pAlikA</i><par n="ASA/__n"/></e>
-	<e lm="PavvArA"><i>PavvAr</i><par n="ladak/A__n"/></e>
-	<e lm="pUrA"><i>pUr</i><par n="vAl/A__adj"/></e>
-	<e lm="vAlA"><i>vAl</i><par n="vAl/A__adj"/></e>
 	
-Removed :
-	Removed Generation for following entries:: 
-	KAye, KAyI, kiye, huye, uTanA, ASAyeM, kinako	(Modified by Roja , Suggested by Meena(18-02-12
-        Removed vAl/A__n paradigm.	(Modified by Roja , Suggested by Meena(18-02-12
-	<e lm="PotogrAPara"><i>PotogrAPara</i><par n="kroXa/__n"/></e> 	(Modified by Roja , Suggested by Meena(18-02-12
-	<e lm="vAlI"><i>vAl</i><par n="ladak/I__n"/></e> 	(Modified by Roja , Suggested by Meena(18-02-12
-
  Added new files:
  ===============
  1. ol_parser_unused_words.txt (Added by Roja 06-11-10 suggested by Chaitanya sir)
  2. month_day.txt (Added by Roja 20-11-10 suggested by Meena ji)
- 3. place.txt (Added by Roja 11-02-11. suggested by Sukhada)
- 4. time.txt  (                   "                        )
- 5. transitive-verb-list.txt(     "                        )
- 6. eng-animate-list.txt    (     "                        )
+ 3. place.txt 		    (Added by Roja 11-02-11. suggested by Sukhada)
+ 4. time.txt  		    (     	"                  )
+ 5. transitive-verb-list.txt(     	"                  )
+ 6. eng-animate-list.txt    (     	"                  )
  7. hindi_default_tam.txt   (Added by Roja 11-03-11 . Suggested by Chaitanya Sir)
  8. default-iit-bombay-shabdanjali-dic.txt (Added by Roja 31-01-12 . Suggested by Chaitanya Sir)
  9. preposition.txt (Added by Manju 24-02-12.  Suggested by Chaitanya Sir)
