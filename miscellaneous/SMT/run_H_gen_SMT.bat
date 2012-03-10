@@ -25,7 +25,7 @@
  (clear)
  ;--------------------------------------------------------------------------
  (load "global_path.clp")
- (bind ?*path* (str-cat ?*path* "/Anu_clp_files/eng_hin_pos.clp"))
+ (bind ?*path* (str-cat ?*path* "/miscellaneous/SMT/eng_hin_pos.clp"))
  (load ?*path*)
  (load-facts "Eng_id_order.dat")
  (load-facts "hindi_id_order.dat")
@@ -42,5 +42,21 @@
  (close pos_fp)
  (clear)
  ;--------------------------------------------------------------------------
+ (load "global_path.clp")
+ (bind ?*path* (str-cat ?*path* "/miscellaneous/SMT/eng_id_in_hin_ord.clp"))
+ (load ?*path*)
+ (load-facts "hindi_punctuation.dat")
+ (load-facts "position.dat")
+ (load-facts "parserid_wordid_mapping.dat")
+ (load-facts "E_constituents_info_tmp.dat")
+ (load-facts "Node_category_tmp.dat")
+ (load-facts "sd_word_tmp.dat")
+ (load-facts "sd-basic_relations_tmp1.dat")
+ (open "eng_id_in_hin_ord.dat" fp3 "a")
+ (assert (index 1))
+ (assert (hindi_order ))
+ (run)
+ (close fp3)
+ (clear)
+ ;--------------------------------------------------------------------------
  (exit)
-

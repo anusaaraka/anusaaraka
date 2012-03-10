@@ -204,7 +204,7 @@
 	kE_kara 	f   Meena(2.5.11)
 	uwwara_xe	m   (Suggested by Sukhada (16-09-11) Ex: He studiously avoided answering the question.)	 
 
-changes in samAsa-new.txt
+changes in compound_phrase.txt  
   =========================
   1. Added 
 	 train accident              ----  rela_xurGatanA
@@ -307,8 +307,11 @@ changes in samAsa-new.txt
      revenue deficit		rAjasva_xAtA		as	revenue deficit		rAjasva_GAtA           (   "  )
  13. Substituted "OY" as "oY" in 503 entries like            (suggested by Chaitanya Sir (26-01-12)
 	ASCII_font      AskI_PZOYnta#AskI_PZOYnta#noun#2#RM  as AskI_PZoYnta#AskI_PZoYnta#noun#2#RM
+ 14. out_of_which	jisameM_se#jisameM_se#noun#1#RM  	as 	jisameM_se#jisameM_se#noun#3#RM  		(suggested by Rajini 10-03-12)
+ 15. pertaining_to	se_saMbaMXiwa#se_saMbaMXiwa#noun#2#RM  	as	se_saMbaMXiwa#se_saMbaMXiwa#noun#1#RM		(       " 	)
+ 16. way_of_life	jIne_kA_DaMga#jIne_kA_DaMga#noun#1#RM  	as	jIne_kA_DaMga#jIne_kA_DaMga#noun#3#RM		(	"	)
+ 17. quality_of_goods   mAla_kI_gupravawwA_Aisma#mAla_kI_gupravawwA_Aisma#noun#1#RM      as  mAla_kI_guNavawwA#mAla_kI_guNavawwA#noun#3#RM	( " )
  
-
  changes in Complete_sentence.txt
  ================================
   1. Added  

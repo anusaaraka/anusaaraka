@@ -196,6 +196,7 @@
  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(vibakthi kA))
  (pada_info (group_cat PP)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
  (test (member$ ?foll_pada_id $?f_ids))
+ (id-word ?pada_id ?w&~and&~or);Now try generating random text in the style of an inaugural address or an internet chat room.
   =>
        (retract ?f0)
        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$ ^kA<cat:sh><case:"?case1"><gen:"?gen1"><num:"?num1">$)" crlf)
@@ -937,10 +938,10 @@
   (id-word ?pada_id and|or)
   (hindi_id_order  $?start ?id ?foll_id $?)
   (pada_info (group_head_id ?f_pada_id)(group_cat VP)(group_ids $?f_ids))
+  (test(member$ ?foll_id $?f_ids))
   (id-HM-source ?f_pada_id ?hmng1 ?)
   (id-number-src ?id ?num ?)
   (id-number-src ?foll_id ?num1 ?)
-  (test(member$ ?foll_id $?f_ids))
   =>
 	(bind ?gen2 (gdbm_lookup "kriyA_mUla-gender.gdbm" ?hmng1))
         (if (neq ?gen2 "FALSE") then
@@ -949,6 +950,26 @@
                 (retract ?f0)
         )
         (printout ?*aper_debug-file* "(id-Rule_name  "?id"  PP_rule_with_kA_vib_for_and_last_id )" crlf)
+  )
+  ;-------------------------------------------------------------------------------------------------------------------------
+  ;Now try generating random text in the style of an inaugural address or an internet chat room.
+  ;Added by Shirisha Manju (07-03-11)
+  (defrule PP_rule_with_kA_vib_for_and_last_id1
+  (declare (salience 560))
+  ?f0<-(id-HM-source ?id ?h_word ?)
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi kA)(group_ids $?ids ?id)(case ?case))
+  (id-word ?pada_id and|or)
+  (hindi_id_order  $?start ?id ?foll_id $?)
+  (pada_info (group_head_id ?f_pada_id)(group_ids $?f_ids))
+  (test(member$ ?foll_id $?f_ids))
+  (id-gender-src ?foll_id ?gen1 ?)
+  (id-number-src ?foll_id ?num1 ?)
+  (id-number-src ?id ?num ?)
+  (id-gender-src ?id ?gen ?)
+  =>
+	(printout ?*A_fp5* "(id-Apertium_input "?id " ^"?h_word"<cat:n><case:"?case"><gen:"?gen"><num:"?num">$	^kA<cat:sh><case:d><gen:"?gen1"><num:"?num1">$)"  crlf)
+        (retract ?f0)
+       (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_with_vib_for_and_last_id1 )" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
   ; In the racing competition between the hare  and the tortoise, the tortoise finally won the race.

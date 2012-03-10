@@ -6,8 +6,8 @@
  (hindi_id_order $? ?id)
  =>
 	(retract ?f0)
-	(assert (hid-right_punctuation ?id ?punc))
-;	(assert (hid-punc_head-right_punctuation ?id ?p_h ?punc))
+;	(assert (hid-right_punctuation ?id ?punc))
+	(assert (hid-punc_head-right_punctuation ?id ?p_h ?punc))
  )
  ;---------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju 
@@ -20,8 +20,8 @@
  ?f0<-(hindi_id_order $?pre ?id $?post)
  (not (punc_inserted ?p_h))
  =>
-;	(assert (hid-punc_head-right_punctuation ?id ?p_h ?punc))
-	(assert (hid-right_punctuation ?id ?punc))
+	(assert (hid-punc_head-right_punctuation ?id ?p_h ?punc))
+;	(assert (hid-right_punctuation ?id ?punc))
         (assert (punc_inserted ?p_h))
  )
  ;---------------------------------------------------------------------------------------------------------------
@@ -34,8 +34,8 @@
  ?f0<-(hindi_id_order $?pre ?id $?post)
  (not (punc_inserted ?p_h))
  =>
-;	(assert (hid-punc_head-left_punctuation ?id ?p_h ?punc))
-        (assert (hid-left_punctuation ?id ?punc))
+	(assert (hid-punc_head-left_punctuation ?id ?p_h ?punc))
+;        (assert (hid-left_punctuation ?id ?punc))
         (assert (punc_inserted ?p_h))
  )
  ;---------------------------------------------------------------------------------------------------------------
@@ -49,8 +49,8 @@
  ?f0<-(hindi_id_order $?pre ?id $?post)
  (not (punc_inserted ?p_h))
  =>
-;	(assert (hid-punc_head-left_punctuation ?id ?p_h ?punc))
-        (assert (hid-left_punctuation ?id ?punc))
+	(assert (hid-punc_head-left_punctuation ?id ?p_h ?punc))
+;        (assert (hid-left_punctuation ?id ?punc))
         (assert (punc_inserted ?p_h))
  )
  ;---------------------------------------------------------------------------------------------------------------
@@ -66,8 +66,8 @@
  (hindi_id_order $?pre ?id $?post)
  (not (punc_inserted ?p_h))
  =>
-;	(assert (hid-punc_head-right_punctuation ?id ?p_h ?punc))
-	(assert (hid-right_punctuation ?id ?punc))
+	(assert (hid-punc_head-right_punctuation ?id ?p_h ?punc))
+;	(assert (hid-right_punctuation ?id ?punc))
         (assert (punc_inserted ?p_h))
  )
  ;---------------------------------------------------------------------------------------------------------------
@@ -80,8 +80,8 @@
  ?f0<-(hindi_id_order $?pre ?id $?post)
  (not (punc_inserted ?p_h))
  =>
-;	(assert (hid-punc_head-right_punctuation ?id ?p_h ?punc))
-	(assert (hid-right_punctuation ?id ?punc))
+	(assert (hid-punc_head-right_punctuation ?id ?p_h ?punc))
+;	(assert (hid-right_punctuation ?id ?punc))
         (assert (punc_inserted ?p_h))
  )
  ;---------------------------------------------------------------------------------------------------------------
@@ -94,7 +94,7 @@
  (or (mother-punct_head-punctuation ?PP ?p_h ?punc)(mother-punct_head-right_punctuation ?PP ?p_h ?punc)(mother-punct_head-left_punctuation ?PP ?p_h ?punc))
  (Node-Category  ?PP  NP|S|PP|ADJP|INTJ|ADVP|VP|FRAG)
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?PP $?d ?JJ $?d1)
- (Node-Category  ?JJ  CD|NN|NNS|NNP|VBG|DT|JJ|UH|RB|VBZ|PRP|VBD|FW|VBN|VB|VBP|IN)
+ (Node-Category  ?JJ  CD|NN|NNS|NNP|VBG|DT|JJ|JJS|UH|RB|VBZ|PRP|PRP$|VBD|FW|VBN|VB|VBP|IN)
 ?f0<-(Head-Level-Mother-Daughters ? ? ?JJ $?prep)
  =>
         (retract ?f0 ?f1)
@@ -108,8 +108,9 @@
  (or (mother-punct_head-punctuation ?PP ?p_h ?punc)(mother-punct_head-right_punctuation ?PP ?p_h ?punc)(mother-punct_head-left_punctuation ?PP ?p_h ?punc))
  (Node-Category  ?PP  PP|NP|ADJP|ADVP|VP|FRAG)
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?PP $?d ?JJ $?d1)
- (Node-Category  ?JJ  PRN|NP|NN|PP|TO|QP|ADJP|ADVP)
+ (Node-Category  ?JJ  PRN|NP|NN|PP|TO|QP|ADJP|ADVP|VP|S)
 ?f0<-(Head-Level-Mother-Daughters ? ? ?JJ $?prep)
+ (not (punc_inserted ?p_h))
  =>
         (retract ?f0 ?f1)
         (assert (Head-Level-Mother-Daughters ?h ?l ?PP $?d $?prep $?d1))

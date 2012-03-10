@@ -23246,7 +23246,7 @@ out_of_turn_allotment	bina_bArI_AbaMtana#bina_bArI_AbaMtana#noun#1#RM
 out_of_turn_promotion	binA_pArI_paxo_onawi#binA_pArI_paxo_onawi#noun#1#RM
 out_of_turn	bina_bArI#bina_bArI#noun#1#RM
 out_of_view	najZara_se_xUra#najZara_se_xUra#noun#1#RM
-out_of_which	jisameM_se#jisameM_se#noun#1#RM
+out_of_which	jisameM_se#jisameM_se#noun#3#RM
 out_pass	Auta_pAsa#Auta_pAsa#noun#2#RM
 out_port_customs	CotA_sImA_Sulka_banxaragAha#CotA_sImA_Sulka_banxaragAha#noun#3#RM
 out_station	bAharI_Inya_sWAna#bAharI_Inya_sWAna#noun#2#RM
@@ -24184,7 +24184,7 @@ persons_of_indian_origin	BArawIya_mUla_ke_vyikwa#BArawIya_mUla_ke_vyikwa#noun#1#
 perspective_projection	saMxarSa_prakRepa#saMxarSa_prakRepa#noun#2#RM
 perssonel_officer	kArmika_aXikArI#kArmika_aXikArI#noun#2#RM
 perssonel_relations_officer	kArmika_saMparka_aXikArI#kArmika_saMparka_aXikArI#noun#3#RM
-pertaining_to	se_saMbaMXiwa#se_saMbaMXiwa#noun#2#RM
+pertaining_to	se_saMbaMXiwa#se_saMbaMXiwa#noun#1#RM
 pertinent_area	saMbaMxXa_kRewra#saMbaMxXa_kRewra#noun#2#RM
 pessimistic_prediction	nirASAvAxI_pUrva_kaWana#nirASAvAxI_pUrva_kaWana#noun#2#RM
 pest_control_officer	pesta_niyaMwraNa_aXikArI#pesta_niyaMwraNa_aXikArI#noun#3#RM
@@ -25962,7 +25962,7 @@ quality_claims_on_exports	niryAwoM_para_kisma_aupravawwA_saMbaMXI_xAve#niryAwoM_
 quality_control_officer	guprawA_niyaMwraNa_aXikArI#guprawA_niyaMwraNa_aXikArI#noun#3#RM
 quality_control	guNawA_niyaMwraNa#guNawA_niyaMwraNa#noun#2#RM
 quality_marketing_office	guprawA_aMkana_aXikArI#guprawA_aMkana_aXikArI#noun#3#RM
-quality_of_goods	mAla_kI_gupravawwA_Aisma#mAla_kI_gupravawwA_Aisma#noun#1#RM
+quality_of_goods	mAla_kI_guNavawwA#mAla_kI_guNavawwA#noun#3#RM
 quality_of_work	kArya_kI_koti#kArya_kI_koti#noun#1#RM
 quality_product	baDi_iyA_mAla#baDi_iyA_mAla#noun#2#RM
 quality_seeds	uwwma_bIja#uwwma_bIja#noun#2#RM
@@ -33477,7 +33477,7 @@ wavelength_multiplexing	waraMga_xErXya_bahusaMkewana#waraMga_xErXya_bahusaMkewan
 wavelength_of_light	prakASa_waraMgaxEXrya#prakASa_waraMgaxEXrya#noun#1#RM
 waving_of_recovery	vasUlI_CodZa_xenA#vasUlI_CodZa_xenA#noun#1#RM
 way_bill	yAwrA_vivaraNI#yAwrA_vivaraNI#noun#2#RM
-way_of_life	jIne_kA_DaMga#jIne_kA_DaMga#noun#1#RM
+way_of_life	jIne_kA_DaMga#jIne_kA_DaMga#noun#3#RM
 way_out	bAhara#bAhara#noun#2#RM
 ways_and_means_advances	aWorpAya_agrima#aWorpAya_agrima#noun#4#RM
 ways_and_means_committee	arWopAya_samiwi#arWopAya_samiwi#noun#4#RM

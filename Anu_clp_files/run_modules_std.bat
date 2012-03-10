@@ -452,7 +452,8 @@
  (load-facts "hindi_id_order.dat")
  (load-facts "word.dat")
  (run)
- (save-facts "hindi_punctuation.dat" local hid-left_punctuation hid-right_punctuation)
+; (save-facts "hindi_punctuation.dat" local hid-left_punctuation hid-right_punctuation)
+ (save-facts "hindi_punctuation.dat" local  hid-punc_head-left_punctuation hid-punc_head-right_punctuation)
  (clear)
  ;--------------------------------------------------------------------------
  ; prepare Apertium input for final hindi word generation.

@@ -22,6 +22,7 @@
         (if (and (neq ?wrd1 ``) (neq ?wrd1 `)(neq ?wrd1 '')(neq ?wrd1 PUNCT-DoubleQuote)(neq ?wrd1 PUNCT-SingleQuote)) then   ;Ex: "Who is he like?" ; Stanford stores the information of " as `` .  
 	  (if (neq ?remark -) then
 		(printout ?*link_map* "(parserid-wordid   P1"?remark"  1)" crlf)
+		(printout ?*link_map* "(parserid-wordid   P2   1)" crlf)
 	  else
 		(printout ?*link_map* "(parserid-wordid   P1   1)" crlf)
 	  )

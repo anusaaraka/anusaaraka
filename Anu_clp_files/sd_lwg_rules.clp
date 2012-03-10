@@ -451,12 +451,13 @@
 ;------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (29-10-11)
 ;Please enclose a curriculum vitae with your letter of application. 
+;Now try generating random text in the style of an inaugural address or an internet chat room.
 (defrule imper_rule2
 (declare (salience 4))
 (Head-Level-Mother-Daughters ? ? ?ROOT ?S)
 (and (Node-Category ?ROOT ROOT) (Node-Category ?S S))
 (Head-Level-Mother-Daughters ? ? ?S ?INTJ ?VP1 $?)
-(and (Node-Category ?VP1 VP)(Node-Category ?INTJ INTJ))
+(and (Node-Category ?VP1 VP)(Node-Category ?INTJ INTJ|ADVP|PP|CC))
 (Head-Level-Mother-Daughters ? ? ?VP1 ?id $?)
 ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vc ?tam  ?id)
 (not (imper_decided ?id))

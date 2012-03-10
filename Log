@@ -3294,7 +3294,24 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	Anusaaraka_site.sh	Anusaaraka_stanford.sh	Anusaaraka.sh
  5. Handled above mapping punctuations using a flex programme mapping-punctuations.lex
  6. Added code to run above flex programme in run_stanford-parser.sh.
- 7. Modified compile.sh to generate out file for mapping-punctuations.lex
- 8. Updated in changes_in_databases
- 9. Remove "morph_tam" in tam_id.clp file and handled it with "morph_root" in root_rule.clp file.
- 10. Updated Log
+ 7. Remove "morph_tam" in tam_id.clp file and handled it with "morph_root" in root_rule.clp file.
+ 8. Modified compile.sh to generate out file for mapping-punctuations.lex
+ 9. Anu/stdenglish
+        1. Renamed honorifics.lex as titles.lex
+        2. Added initialisms.lex and standard_abbrevations.lex
+        3. Modified Makefile to add initialisms.lex and standard_abbrevations.lex
+ 10. Added the following files for SMT  :
+        1. miscellaneous/eng_hin_pos.clp
+        2. miscellaneous/eng_id_in_hin_ord.clp
+        3. miscellaneous/run_H_gen_SMT.bat
+        4. bin/Anusaaraka_stanford_SMT.sh
+        5. bin/run_sentence_stanford_SMT.sh
+ 11. Modified Anu/stdenglish.sh to run initialisms.lex and standard_abbrevations.lex
+ 12. Modified "id-link_id_map_for_first_word" rule in parserid_wordid_mapping.clp
+ 13. Modified "imper_rule2" rule in sd_lwg_rules.clp
+ 14. Modified "hid-right_punctuation" fact as "hid-punc_head-right_punctuation" in
+        1. insert_punctuation   2. run_modules_std.bat
+ 15. Added "PP_rule_with_kA_vib_for_and_last_id1" rule in prepare_apertium_input.clp
+ 16. Added "possesive" in split-relations.py
+ 17. Updated changes_in_databases
+ 18. Updated Log
