@@ -3280,7 +3280,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  24. Updated anu_compile_64bit.sh accordingly with anu_compile.sh
  25. Updated Log
 
- 08-03-12
+ 10-03-12
  ========
  1. Modified "get_aux" rule in sd_lwg_rules.clp
  2. insert_punctuation
@@ -3296,4 +3296,5 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  6. Added code to run above flex programme in run_stanford-parser.sh.
  7. Modified compile.sh to generate out file for mapping-punctuations.lex
  8. Updated in changes_in_databases
- 9. Updated Log
+ 9. Remove "morph_tam" in tam_id.clp file and handled it with "morph_root" in root_rule.clp file.
+ 10. Updated Log
