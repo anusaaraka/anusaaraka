@@ -3280,7 +3280,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  24. Updated anu_compile_64bit.sh accordingly with anu_compile.sh
  25. Updated Log
 
- 10-03-12
+ 13-03-12
  ========
  1. Modified "get_aux" rule in sd_lwg_rules.clp
  2. insert_punctuation
@@ -3313,5 +3313,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         1. insert_punctuation   2. run_modules_std.bat
  15. Added "PP_rule_with_kA_vib_for_and_last_id1" rule in prepare_apertium_input.clp
  16. Added "possesive" in split-relations.py
- 17. Updated changes_in_databases
- 18. Updated Log
+ 17. Modified converting-dic-format-to-js.lex file to get the dictionary.js in utf8 format.
+ 18. Updated dictionaryA-R.js and  dictionaryS-Z.js in utf8.
+ 19. Modified file-wx_utf8.c accordingly with wx_utf8.c programme.
+ 20. Updated changes_in_databases
+ 21. Updated Log

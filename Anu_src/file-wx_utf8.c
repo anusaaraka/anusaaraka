@@ -78,9 +78,21 @@ while(*(wx_string+i) != '\0') {
 					i=i+2;
 				}	
 			}
-			
-			//for cases "sOYPtaveyara" "सॉफ्टवेयर" and "keYt"  "कॉट"
-			else if((ch_next == 'O') && (ch_next_next == 'Y')){
+  			//for cases "sOYPtaveyara" "सॉफ्टवेयर"
+                        //Modified below code by Roja(18-01-12) to handle words like "jOYna", "sOYPtaveyara" etc.
+                        //original code insied 'else if' is commented and added below code.
+			else if((ch_next == 'o') && (ch_next_next == 'Y')){  /*Changed "ch_next == 'o'" to "ch_next == 'O'"
+                                                                               (Suggested by Chaitanya Sir) 25-01-12*/
+                                        sprintf(utf8_string+j,"%s",con_hnd[con_ind]);
+	                                j=j+3;
+				//	sprintf(utf8_string+j,"ॉ",con_hnd[con_ind]);
+					sprintf(utf8_string+j,"ॉ", vow_hnd_matra[vow_ind]);
+					j=j+3;
+				//    	i=i+2;
+					i=i+3;
+					
+			}
+	/*		else if((ch_next == 'e') && (ch_next_next == 'Y')){
 		
 				sprintf(utf8_string+j,"%s",con_hnd[con_ind]);
 				j=j+3;
@@ -89,17 +101,8 @@ while(*(wx_string+i) != '\0') {
 				j=j+3;
 				i=i+3;
 					
-			}
-			else if((ch_next == 'e') && (ch_next_next == 'Y')){
-		
-				sprintf(utf8_string+j,"%s",con_hnd[con_ind]);
-				j=j+3;
-
-				sprintf(utf8_string+j,"ॉ");
-				j=j+3;
-				i=i+3;
-					
-			}
+			} Commented by Roja(13-03-12) as 'oY' is used to get "ॉ"
+	*/
 
 
 
@@ -135,7 +138,7 @@ while(*(wx_string+i) != '\0') {
                 sprintf(utf8_string+j,"%c",ch);
                 j = j+1;
                 i++;
-                while(((ch_next >= 'A') && (ch_next <= 'Z')) || ((ch_next >= 'a') && (ch_next <= 'z')) || (ch_next == '-'))
+                while(((ch_next >= 'A') && (ch_next <= 'Z')) || ((ch_next >= 'a') && (ch_next <= 'z')) || (ch_next == '-')||((ch_next >= '0') && (ch_next <= '9')))
                 {
                 sprintf(utf8_string+j,"%c",ch_next);
                 j = j+1;
@@ -156,6 +159,7 @@ while(*(wx_string+i) != '\0') {
 return utf8_string;
 //return (AddSymbol(utf8_string));
 }
+//To run individually this programme then uncomment main programme 
 
 int main(int argc ,char *argv[])
 {
@@ -182,4 +186,4 @@ if (my_string == NULL) { printf("Can't allocate memory\n"); exit;}
 }
  free (utf8_string);
   return 0;
-}
+} 

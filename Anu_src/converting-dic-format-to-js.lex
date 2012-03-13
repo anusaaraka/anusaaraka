@@ -2,9 +2,14 @@
 /*Added by Roja (16-02-11).*/
 
 %{
-char eng_wrd[1000], cat[1000], mng[1000], color[1000], *s1, *s2;
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stddef.h>
+char eng_wrd[1000], cat[1000], mng[1000], color[1000], *mng1, *s1, *s2;
 int len, len1;
 FILE *fp;
+extern char * wx_utf8(char *wx_string);
 %}
 
 
@@ -24,7 +29,8 @@ FILE *fp;
 							len1=strcspn(s1, "@");
 							strncpy(mng,s1,len1);
 							mng[len1]='\0';
-
+						
+							mng1=wx_utf8(mng);  
 							if(strcmp(cat,"@@noun")==0)
 							   strcpy(color, "cadetblue");
 							else if(strcmp(cat,"@@verb")==0)
@@ -42,7 +48,7 @@ FILE *fp;
  							else
 							   strcpy(color, "black");
 
-  fprintf(fp,"<font color=\"%s\">@%s::%s<br\\>", color, cat, mng);
+  fprintf(fp,"<font color=\"%s\">@%s::%s<br\\>", color, cat, mng1);
 						}
 
 @@[A-Za-z_-]*::[A-Za-z\/{}\(\)0-9!?\[\].:'_-]*         {	len1=strcspn(yytext, ":");
@@ -50,6 +56,9 @@ FILE *fp;
                                                         cat[len1]='\0';
 
                                                         s1=strchr(yytext, ':')+2;
+							len=strlen(s1);
+							strncpy(mng, s1, len);
+							mng1=wx_utf8(mng);
                                                         if(strcmp(cat,"@@noun")==0)
                                                            strcpy(color, "cadetblue");
                                                         else if(strcmp(cat,"@@verb")==0)
@@ -67,7 +76,7 @@ FILE *fp;
 							else
 							   strcpy(color, "black");
 
-  fprintf(fp,"<font color=\"%s\">@%s::%s<br\\>", color, cat, s1);
+  fprintf(fp,"<font color=\"%s\">@%s::%s<br\\>", color, cat, mng1);
   fprintf(fp,"<\\/div\\>'\n\t\tvar text = document.getElementById(a).innerHTML;\n\t\tif(text){\n\t\t\tvar mngshabd = document.getElementById(\"hnd\");\n\t\t\tmngshabd.innerHTML = '<h3>' + a + '</h3>' + text;\n\t\t}\n\t\telse {\n\t\t\tvar mngshabd = document.getElementById(\"hnd\");\n\t\t\tmngshabd.innerHTML = '<h3>' + a + '</h3>' + 'Word not found';\n\t\t}\n}\n\n");
 
                                                 }
