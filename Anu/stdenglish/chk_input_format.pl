@@ -62,10 +62,10 @@ while($in = <STDIN>){
         $in =~ s/o'([^ \t\n])/of$1/g;
         $in =~ s/s'([^a-zA-Z0-9])/sABBR-SingleQuote$1/g;
 # Insert space after the punctuation marks.
-	$in =~ s/([a-zA-Z])([^a-zA-Z \t\n\-]+)([a-zA-Z])/$1$2 $3/g;
+	$in =~ s/([a-zA-Z])([^a-zA-Z0-9 \t\n\-]+)([a-zA-Z])/$1$2 $3/g; #The colonial area laid out in grid pattern during the [mid19th] century holds remnants of the raj era.(Added by Mahalaxmi, 0-9 in the second expression)
 	$in =~ s/([A-Z])([^a-zA-Z \t\n\-]+)[ ]([A-Z])/$1$2$3/g;  #Added for senseval
 # Insert space after the punctuation marks followed by -.
-	$in =~ s/([a-zA-Z])(\-[^a-zA-Z \t\n\-]+)([a-zA-Z])/$1$2 $3/g;
+	$in =~ s/([a-zA-Z])(\-[^a-zA-Z0-9 \t\n\-]+)([a-zA-Z])/$1$2 $3/g;#A crafts museum is at pragati maidan grounds open from 10am-5pm daily.
 # Join DANGLING punctuation marks to the right of the word, if it is at the beginning of a sentence.
 	$in =~ s/^([^a-zA-Z0-9]+)[ \t]+([a-zA-Z0-9])/$1$2/;
 # Join DANGLING punctuation marks to the left of the word in all other cases

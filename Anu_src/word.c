@@ -7,21 +7,30 @@
 #define MAX_NO_OF_LINES 500 //Increased to 500 from 200 by Roja(14-06-11) for a big sentence from "calculate" file in SENSEVAL TRAIN
 #define INPUT_LENGTH MAX_LINE_LENGTH*MAX_NO_OF_LINES
 
-char *punct_short[]={",",".",";",":","'","\"","?","!","(",")","$","=","()",").","(),","'.","''",".\""};
-char *punct_long[]={"PUNCT-Comma","PUNCT-Dot","PUNCT-Semicolon","PUNCT-Colon","PUNCT-SingleQuote","PUNCT-DoubleQuote","PUNCT-QuestionMark","PUNCT-Exclamation","PUNCT-OpenParen","PUNCT-ClosedParen","SYM-Dollar","PUNCT-EqualTo","PUNCT-OpenClosedParen","PUNCT-ClosedParenDot","PUNCT-OpenClosedParenComma","PUNCT-SingleQuoteComma","PUNCT-TwoSingleQuotes","PUNCT-DotDoubleQuote"};
+char punct_short[100]={',','.',';',':','\'','"','?','!','(',')','$','='};
+char punct_long[100][100]={"PUNCT-Comma","PUNCT-Dot","PUNCT-Semicolon","PUNCT-Colon","PUNCT-SingleQuote","PUNCT-DoubleQuote","PUNCT-QuestionMark","PUNCT-Exclamation","PUNCT-OpenParen","PUNCT-ClosedParen","SYM-Dollar","PUNCT-EqualTo"};
 
-int get_punct_full(char *ps)
+char *get_punct_full(char *ps)
 {
-  int i,len;
-  char *punct_str;
-  FILE  *punct_clp;
-  for(i=0;i<=17;i++)
-    {
-      if(strncmp(ps,punct_short[i],5)==0)  
-          	return i;  
-    } 
-  if(strncmp(ps,punct_short[17],2)==0) return 12;
-  return -1;
+  int i,len=0,j;
+  char punc[1000];
+  char *str=malloc(strlen(ps) *50);
+
+ strcpy(str,"\0");
+ strcpy(punc,ps);
+ len=strlen(punc);
+ 
+ 	for(i=0;i<=len;i++)
+	 { for(j=0;j<=11;j++)
+	   {
+		 if(punc[i]==punct_short[j]) strcat(str,punct_long[j]);
+	 }}
+  if(strcmp(str,"\0")==0)
+  return "NONE";
+  else
+  return str;
+  free(str);
+
 }
 
 
@@ -81,7 +90,7 @@ int main(int argc,char **argv)
   char  *para_no,*line_no,*prev_para,*prev_line;
   char  *ptr,c,*word[MAX_NO_OF_LINES],*left_punct[MAX_NO_OF_LINES],*right_punct[MAX_NO_OF_LINES];
   char  word_tmp[MAX_NO_OF_LINES][MAX_NO_OF_LINES];
-  char  *input,*none="NONE",*lp,*rp,*ZERO="0";
+  char  *input,*lp,*rp,*ZERO="0";
   char  filename[500],filename1[500],filename2[100],filename3[100],filename4[100];
 
   char 	*lp1,*rp1;
@@ -245,39 +254,10 @@ int main(int argc,char **argv)
               fprintf(paxa_clp,"(to_be_included_in_paxa %d )\n",i);
               fprintf(eng_fp," %d ",i);
 
-               if(strstr(left_punct[i],"s>")) //added by S.Maha Laxmi (27-12-11) to hanlde {<p><s>"} i.e removing para and sen tag and passing the punctuation only 
-               { left_punct[i]=left_punct[i]+strcspn(left_punct[i],"s");
-                 left_punct[i]=left_punct[i]+strcspn(left_punct[i],">");
-                *left_punct[i]='\0';left_punct[i]++;}
-
-    	      if((j=get_punct_full(left_punct[i]))==-1){
-		lp=none;
-		lp1=none;} //Added by Shirisha Manju
-	      else  {lp=punct_short[j];
-		    lp1=punct_long[j];} //Added by Shirisha Manju
-
-/***************  Added by Roja Lakshmi(11-01-11)
-Ex1: As can be seen from Figure 11.1 the functions printf(), and scanf() fall under the category of formatted console I per O functions.
-Here printf() and scanf() have both open and closed parenthesis at right side.
-Ex2: Agra is well connected by excellent train services to delhi such as the shatabdi express ( 2.5 hrs ) , inter city express ( 3hrs ) .
-Here '3hrs' has in its right side ').' 
-To handle more than one punctuation for a word in a sentence following steps are added.****************/
-
-              punct_len=strcspn(right_punct[i],"<");    // all the punctuations upto '</s>' are considered
-              strncpy(str2,right_punct[i],punct_len);
-              str2[punct_len]='\0';
-              strcpy(right_punct[i],str2);
-/**** end *******/
-
-	      if((j=get_punct_full(right_punct[i]))==-1){ 
-		rp=none;
-		rp1=none;}  //Added by Shirisha Manju
-	      else {rp=punct_short[j];
-		 //Added by Shirisha Manju
-		   rp1=punct_long[j]; } 
-
-		fprintf(punct_clp,"(id-left_punctuation   %d\t%s)\n",i,lp1);
-		fprintf(punct_clp,"(id-right_punctuation  %d\t%s)\n",i,rp1);
+                 lp1=get_punct_full(left_punct[i]);
+		     fprintf(punct_clp,"(id-left_punctuation   %d\t%s)\n",i,lp1);
+                 rp1=get_punct_full(right_punct[i]);
+		     fprintf(punct_clp,"(id-right_punctuation  %d\t%s)\n",i,rp1);
 	    }
 	
 	  fprintf(eng_fp, ")\n");

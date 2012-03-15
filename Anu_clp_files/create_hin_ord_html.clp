@@ -28,7 +28,7 @@
  (deffunction print_eng_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?eng_op)
  (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
  (printout fp "<table cellspacing=\"0\">"crlf"<tr class=\"row1\">" crlf)
- (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".B</td>"))
+ (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".A</td>"))
  (printout fp "<td class=\""?chnk_fr_htm"\">" ?eng_op "</td>"crlf"</tr>" crlf)
  )
 
@@ -40,7 +40,7 @@
  (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
  (printout fp "<tr class=\"row2\">" crlf )
  (if (= ?w_id 1) then
- (printout fp "<td class=\"number\">"?p_id"."?s_id".A</td>"))
+ (printout fp "<td class=\"number\">"?p_id"."?s_id".B</td>"))
  (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_p ?aper_op ?r_p" </td>" crlf "</tr>" crlf)
  )
 

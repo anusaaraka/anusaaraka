@@ -42,7 +42,7 @@ int len=0;
 $[0-9]		{printf("SYM-Dollar%c",yytext[1]);  }
 #[0-9]		{printf("SYM-Sharp%c",yytext[1]);  }
 
-(L.T.|n.m.|B.C.|A.D.|B.C.E.|C.E.|B.A|B.S.) 	{
+(L[.]T[.]|n[.]m[.]|B[.]C[.]|A[.]D[.]|B[.]C[.]E[.]|C[.]E[.]|B[.]A[.]|B[.]S[.]) 	{
 							while((len=strcspn(yytext,".")) < strlen(yytext))
                  		                        {
                                   			     	strncat(str,yytext,len);
@@ -53,12 +53,12 @@ $[0-9]		{printf("SYM-Dollar%c",yytext[1]);  }
                                        			printf("%s",str);strcpy(str,"\0");
                                        		}
 
-^(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|Sun|Mon|Tu|Tue|Tues|Wed|Th|Thu|Thur|Thurs|Fri|Sat|sec|min|hr|wk|mo|yr|cent|Acad|bbl|cu|doz|F|fl|ft|gal|gr|gro|in|kt|lb|mi|oz|pt|qt|sq|T|tbsp|tsp|yd|alt|apt|Assn|Ave|Blvd|ctr|c|ca|circ|Cpl|Corp|Ct|dept|div|ed|Ft|Gen|Gov|hwy|in|Lk|Ln|lat|lib|Lt|Ltd|long|mt|mus|no|No|p|pl|pop|Rd|Sta|St|ste|Ter|Tpk|Univ|vol|wt|viz|etc|approx|fig|Inc|inc)[.] {
+^[{\[(]*(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|Sun|Mon|Tu|Tue|Tues|Wed|Th|Thu|Thur|Thurs|Fri|Sat|sec|min|hr|wk|mo|yr|cent|Acad|bbl|cu|doz|F|fl|ft|gal|gr|gro|in|kt|lb|mi|oz|pt|qt|sq|T|tbsp|tsp|yd|alt|apt|Assn|Ave|Blvd|ctr|c|ca|circ|Cpl|Corp|Ct|dept|div|ed|Ft|Gen|Gov|hwy|in|Lk|Ln|lat|lib|Lt|Ltd|long|mt|mus|no|No|p|pl|pop|Rd|Sta|St|ste|Ter|Tpk|Univ|vol|wt|viz|etc|approx|fig|Inc|inc)[.] {
                                 len=strlen(yytext);
                                 strncpy(str,yytext,len-1);
                                 str[len-1]='\0';
                                 printf("%sABBR-Dot", str);}
-[ ](Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|Sun|Mon|Tu|Tue|Tues|Wed|Th|Thu|Thur|Thurs|Fri|Sat|sec|min|hr|wk|mo|yr|cent|Acad|bbl|cu|doz|F|fl|ft|gal|gr|gro|in|kt|lb|mi|oz|pt|qt|sq|T|tbsp|tsp|yd|alt|apt|Assn|Ave|Blvd|ctr|c|ca|circ|Cpl|Corp|Ct|dept|div|ed|Ft|Gen|Gov|hwy|in|Lk|Ln|lat|lib|Lt|Ltd|long|mt|mus|no|No|p|pl|pop|Rd|Sta|St|ste|Ter|Tpk|Univ|vol|wt|viz|etc|approx|fig|Inc|inc)[.] {
+[ {\[(]+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec|Sun|Mon|Tu|Tue|Tues|Wed|Th|Thu|Thur|Thurs|Fri|Sat|sec|min|hr|wk|mo|yr|cent|Acad|bbl|cu|doz|F|fl|ft|gal|gr|gro|in|kt|lb|mi|oz|pt|qt|sq|T|tbsp|tsp|yd|alt|apt|Assn|Ave|Blvd|ctr|c|ca|circ|Cpl|Corp|Ct|dept|div|ed|Ft|Gen|Gov|hwy|in|Lk|Ln|lat|lib|Lt|Ltd|long|mt|mus|no|No|p|pl|pop|Rd|Sta|St|ste|Ter|Tpk|Univ|vol|wt|viz|etc|approx|fig|Inc|inc)[.] {
                                 len=strlen(yytext);
                                 strncpy(str,yytext,len-1);
                                 str[len-1]='\0';

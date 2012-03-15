@@ -136,6 +136,7 @@
  ?f0<-(hindi_id_order  $?start ?wh_word $?ids ?kriyA $?end)
  (not (prep_id-relation-anu_ids ?  kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?  ?wh_word)) ;Ex. How quickly did you run?
  (not (prep_id-relation-anu_ids ?  wall_conjunction ?wh_word)) ;When we want to hear a music programme on the radio , we have to tune the radio to the correct station .
+ (not (prep_id-relation-anu_ids ? viSeRya-jo_samAnAXikaraNa ? ?wh_word));It is Jane who wants to do it. 
  (test (and (neq ?wh_word 10000)(neq ?wh_word 10001)))
  =>
         (retract ?f0 ?f1)

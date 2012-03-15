@@ -61,8 +61,9 @@
  (declare (salience 998))
  ?f0<-(current_id ?id)
  ?f1<-(id-original_word ?id ?wrd)
- ?f2<-(parser_numid-word-remark ?l_id&:(>= ?l_id ?id) ?WRD&:(lowcase (lexemep ?wrd)) ?remark)
- (not (parser_numid-word-remark ?l_id1&:(and (>= ?l_id1 ?id) (> ?l_id ?l_id1)) ?WRD&:(lowcase (lexemep ?wrd)) ?remark))
+ (test (eq (numberp ?wrd) FALSE))
+ ?f2<-(parser_numid-word-remark ?l_id&:(>= ?l_id ?id) ?WRD&:(lowcase  ?wrd) ?remark)
+ (not (parser_numid-word-remark ?l_id1&:(and (>= ?l_id1 ?id) (> ?l_id ?l_id1)) ?WRD&:(lowcase ?wrd) ?remark))
  =>
         (retract ?f0 ?f1 ?f2)
         (if (neq ?remark -) then

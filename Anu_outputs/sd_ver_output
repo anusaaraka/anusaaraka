@@ -1361,6 +1361,7 @@ Kufri shimla ke nikata eka CotA parvawIya sWAna hE.
 
 Hindi meaning using Stanford parser 3.31
 The girl who you called yesterday has arrived. 
+jise/jisako Apane kala bulAyA vaha ladakI pahuzca gayI/gaI.
 vaha ladakI Apane kala jise/jisako bulAyA pahuzca gayI/gaI.
 Apane kala jise/jisako bulAyA vaha ladakI pahuzca gayI/gaI.
 
@@ -1642,6 +1643,7 @@ usakI pawnI kA SiSU WA.
 
 Hindi meaning using Stanford parser 3.97
 It is Jane who wants to do it. 
+Jane hE jo yaha karane ke liye cAhawA hE.
 yaha karane ke liye jo cAhawA hE Jane hE.
 
 Hindi meaning using Stanford parser 3.98
@@ -1946,6 +1948,7 @@ jise/jisako mEM paDa rahA WA vaha puswaka axBuwa hE.
 
 Hindi meaning using Stanford parser 4.73
 I saw the man who you love. 
+mEMne usa AxamI ko xeKA jise/jisako Apa pasanxa karawe hEM.
 mEMne usa AxamI ko jise/jisako Apa pasanxa karawe hEM xeKA.
 
 Hindi meaning using Stanford parser 4.74
@@ -1954,6 +1957,7 @@ jahAz Apa raha rahe hEM vaha sWAna awyaMwa saMkuliwa hE.
 
 Hindi meaning using Stanford parser 4.75
 I will show you the house where I met your mother. 
+mEM vaha Gara Apako xiKAUzgA jahAz mEM ApakI mAz se milA.
 mEM vaha Gara jahAz mEM ApakI mAz se milA Apako xiKAUzgA.
 
 Hindi meaning using Stanford parser 4.76

@@ -70,8 +70,7 @@
   echo "Calling Berkeley parser" 
   cd $HOME_anu_test/Parsers/berkeley-parser/
   java -mx500m  -jar berkeleyParser.jar -gr eng_sm6.gr -tokenize -inputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt -outputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley
- sed 's/(())/( (S ))\n/g' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley | sed 's/^(/(ROOT/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 
-# sed 's/^(/(ROOT/g' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn
+ sed 's/(())/( (S ))\n/g' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley | sed 's/^(/(ROOT/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn 
 
   echo "Calling Stanford parser"
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
