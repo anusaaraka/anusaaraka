@@ -3316,23 +3316,23 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  17. Modified converting-dic-format-to-js.lex file to get the dictionary.js in utf8 format.
  18. Updated dictionaryA-R.js and  dictionaryS-Z.js in utf8.
  19. Modified file-wx_utf8.c accordingly with wx_utf8.c programme.
-  1. Modified ckp_input_format.pl file.(Added 0-9 in the second expression)
+ 20. Modified chk_input_format.pl file.(Added 0-9 in the second expression)
   $in =~ s/([a-zA-Z])([^a-zA-Z \t\n\-]+)([a-zA-Z])/$1$2 $3/g; ===> $in =~ s/([a-zA-Z])([^a-zA-Z0-9 \t\n\-]+)([a-zA-Z])/$1$2 $3/g;
      Eg:-The colonial area laid out in grid pattern during the [mid19th] century holds remnants of the raj era.
 
- 20. Updated abbrevations.lex, standard_abbrevations.lex and titles.lex files.
+ 21. Updated abbrevations.lex, standard_abbrevations.lex and titles.lex files.
   3. Removed rule get_SBAR_copula and Modified get_SBAR, rmv_sbar_from_root and create_sen_SBAR rules in H_ordering_rules.clp file.
- 21. Interchanged root and dictionary row.
+ 22. Interchanged root and dictionary row.
      Modified
      1) create_eng_ord_html.clp
      2) english_hindi.js
- 22. Corrected the mistake [printing layer A-->B and B-->A] in create_hin_ord_html.clp
- 23. Modified wh-reorder1 rule in hindi_sent_reorder.clp.
- 24 . Modified "id-link_id_map_for_lowercase" rule in parserid_wordid_mapping.clp (removed (lexemep ?wrd) condition and checking it with (numberp ) function)
+ 23. Corrected the mistake [printing layer A-->B and B-->A] in create_hin_ord_html.clp
+ 24. Modified wh-reorder1 rule in hindi_sent_reorder.clp.
+ 25 . Modified "id-link_id_map_for_lowercase" rule in parserid_wordid_mapping.clp (removed (lexemep ?wrd) condition and checking it with (numberp ) function)
      Sen:- Nestled amongst the dense rishikesh badrinath highway at an altitude of 380 mts., here the mighty water of ganga is ideal for white water rafting there is also ample opportunity to view wildlife in its natural habitat.
- 24 . Modified "get_punct_full" function and accordingly the program has been changed in word.c file.
- 25 . Updated eng_hin_pos.clp.
- 26. Modified Anusaaraka_berkeley.sh [Changed  one_sentence_per_line.txt.std.penn_tmp -- one_sentence_per_line.txt.std.penn]
- 27. Updated sd_ver_output, ber_ver_output, ol_ver_output and link_ver_output
- 28. Updated changes_in_databases
- 29. Updated Log
+ 26 . Modified "get_punct_full" function and accordingly the program has been changed in word.c file.
+ 27 . Updated eng_hin_pos.clp.
+ 28. Modified Anusaaraka_berkeley.sh [Changed  one_sentence_per_line.txt.std.penn_tmp -- one_sentence_per_line.txt.std.penn]
+ 29. Updated sd_ver_output, ber_ver_output, ol_ver_output and link_ver_output
+ 30. Updated changes_in_databases
+ 31. Updated Log
