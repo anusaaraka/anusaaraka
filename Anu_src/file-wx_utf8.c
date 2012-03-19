@@ -11,6 +11,7 @@ char con_hnd[][4]=
 char vow_hnd_matra[][4] = {{"ा"},{""},{""},{""},{"ै"},{""},{""},{"ः"},{"ी"},{""},{""},{""},{"ं"},{""},{"ौ"},{""},{"ॄ"},{""},{""},{""},{"ू"},{""},{""},{""},{""},{"़"},{""},{""},{""},{""},{""},{""},{""},{""},{""},{""},{"े"},{""},{""},{""},{"ि"},{""},{""},{""},{""},{""},{"ो"},{""},{"ृ"},{""},{""},{""},{"ु"},{""},{""},{""},{""},{"ँ"}};
 char alphebet_info[][4] = {{"vow"},{"con"},{"con"},{"con"},{"vow"},{"con"},{"con"},{"vow"},{"vow"},{"con"},{"con"},{""},{"vow"},{"con"},{"vow"},{"con"},{"vow"},{"con"},{"con"},{"con"},{"vow"},{""},{"con"},{"con"},{""},{"vow"},{""},{""},{""},{""},{""},{""},{"vow"},{"con"},{"con"},{"con"},{"vow"},{"con"},{"con"},{"con"},{"vow"},{"con"},{"con"},{"con"},{"con"},{"con"},{"vow"},{"con"},{"vow"},{"con"},{"con"},{"con"},{"vow"},{"con"},{"con"},{"con"},{"con"},{"vow"}};
 
+//char *utf8_string=NULL;
 char *utf8_string;
 
 char * wx_utf8(char *wx_string)
@@ -156,12 +157,14 @@ while(*(wx_string+i) != '\0') {
               }
 
 }
+//printf("%s", wx_utf8(wx_string));
+
+//free(utf8_string);
 return utf8_string;
 //return (AddSymbol(utf8_string));
 }
 //To run individually this programme then uncomment main programme 
-
-int main(int argc ,char *argv[])
+/*int main(int argc ,char *argv[])
 {
   int bytes_read;
   int nbytes = 10000;
@@ -186,4 +189,4 @@ if (my_string == NULL) { printf("Can't allocate memory\n"); exit;}
 }
  free (utf8_string);
   return 0;
-} 
+}*/
