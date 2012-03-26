@@ -3280,9 +3280,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  24. Updated anu_compile_64bit.sh accordingly with anu_compile.sh
  25. Updated Log
 
- 19-03-12
+ 26-03-12
  ========
- 1. Modified "get_aux" rule in sd_lwg_rules.clp
+ 1. Modified : "get_aux" and "imper_rule2" rules in sd_lwg_rules.clp
  2. insert_punctuation
      Modified :  get_phrase_group, get_phrase_group1  and get_s_grp
  3. In stdenglish.sh and ol_stdenglish.sh
@@ -3308,33 +3308,39 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         5. bin/run_sentence_stanford_SMT.sh
  11. Modified Anu/stdenglish.sh to run initialisms.lex and standard_abbrevations.lex
  12. Modified "id-link_id_map_for_first_word" rule in parserid_wordid_mapping.clp
- 13. Modified "imper_rule2" rule in sd_lwg_rules.clp
- 14. Modified "hid-right_punctuation" fact as "hid-punc_head-right_punctuation" in
+ 13. Modified "hid-right_punctuation" fact as "hid-punc_head-right_punctuation" in
         1. insert_punctuation   2. run_modules_std.bat
- 15. Added "PP_rule_with_kA_vib_for_and_last_id1" rule in prepare_apertium_input.clp
- 16. Added "possesive" in split-relations.py
- 17. Added '@' infront of each and every english word while generating function in converting-dic-format-to-js.lex file.
- 18. Updated dictionaryA-R.js and  dictionaryS-Z.js in utf8.
- 19. Modified ra_d8_wp_r.lex  to remove '@' infront of an english word.
- 20. Modified file-wx_utf8.c accordingly with wx_utf8.c programme.
- 21. Removed coding part to generate sent-by-sent analysis in the following files:
+ 14. Added "PP_rule_with_kA_vib_for_and_last_id1" rule in prepare_apertium_input.clp
+ 15. Added "possesive" in split-relations.py
+ 16. Added '@' infront of each and every english word while generating function in converting-dic-format-to-js.lex file.
+ 17. Updated dictionaryA-R.js and  dictionaryS-Z.js in utf8.
+ 18. Modified ra_d8_wp_r.lex  to remove '@' infront of an english word.
+ 19. Modified file-wx_utf8.c accordingly with wx_utf8.c programme.
+ 20. Removed coding part to generate sent-by-sent analysis in the following files:
 	run_sentence_ol.sh	run_sentence_links.sh 	run_sentence_stanford.sh
- 22. Modified chk_input_format.pl file.(Added 0-9 in the second expression)
+ 21. Modified chk_input_format.pl file.(Added 0-9 in the second expression)
   $in =~ s/([a-zA-Z])([^a-zA-Z \t\n\-]+)([a-zA-Z])/$1$2 $3/g; ===> $in =~ s/([a-zA-Z])([^a-zA-Z0-9 \t\n\-]+)([a-zA-Z])/$1$2 $3/g;
      Eg:-The colonial area laid out in grid pattern during the [mid19th] century holds remnants of the raj era.
- 23. Updated abbrevations.lex, standard_abbrevations.lex and titles.lex files.
- 24. Removed rule get_SBAR_copula and Modified get_SBAR, rmv_sbar_from_root and create_sen_SBAR rules in H_ordering_rules.clp file.
- 25. Interchanged root and dictionary row.
+ 22. Updated abbrevations.lex, standard_abbrevations.lex and titles.lex files.
+ 23. Removed rule get_SBAR_copula and Modified get_SBAR, rmv_sbar_from_root and create_sen_SBAR rules in H_ordering_rules.clp file.
+ 24. Interchanged root and dictionary row.
      Modified
      1) create_eng_ord_html.clp
      2) english_hindi.js
- 26. Corrected the mistake [printing layer A-->B and B-->A] in create_hin_ord_html.clp
- 27. Modified wh-reorder1 rule in hindi_sent_reorder.clp.
- 28. Modified "id-link_id_map_for_lowercase" rule in parserid_wordid_mapping.clp (removed (lexemep ?wrd) condition and checking it with (numberp ) function)
+ 25. Corrected the mistake [printing layer A-->B and B-->A] in create_hin_ord_html.clp
+ 26. Modified wh-reorder1 rule in hindi_sent_reorder.clp.
+ 27. Modified "id-link_id_map_for_lowercase" rule in parserid_wordid_mapping.clp (removed (lexemep ?wrd) condition and checking it with (numberp ) function)
      Sen:- Nestled amongst the dense rishikesh badrinath highway at an altitude of 380 mts., here the mighty water of ganga is ideal for white water rafting there is also ample opportunity to view wildlife in its natural habitat.
- 29. Modified "get_punct_full" function and accordingly the program has been changed in word.c file.
- 30. Updated eng_hin_pos.clp.
- 31. Modified Anusaaraka_berkeley.sh [Changed  one_sentence_per_line.txt.std.penn_tmp -- one_sentence_per_line.txt.std.penn]
- 32. Updated sd_ver_output, ber_ver_output, ol_ver_output and link_ver_output
- 33. Updated changes_in_databases
- 34. Updated Log
+ 28. Modified "get_punct_full" function and accordingly the program has been changed in word.c file.
+ 29. Updated eng_hin_pos.clp.
+ 30. Added Node-category to save-facts for H_ordering_rules.clp in run_modules_std.bat
+ 31. Modified "make_compoundPhrase" rule in H_ordering_rules.clp
+ 32. Modified anu_compile.sh (to remove compilation for link 4.7.4) and remove_out-files.sh (to remove out files of link 4.7.4)
+ 33. Modified Anusaaraka_berkeley.sh [Changed  one_sentence_per_line.txt.std.penn_tmp -- one_sentence_per_line.txt.std.penn]
+ 34. Updated sd_ver_output, ber_ver_output, ol_ver_output, verified_output and link_ver_output 
+ 35. Updated the following files
+        ol_stdenglish.sh   abbrevations.lex  standard_abbrevations.lex
+ 36. Updated changes_in_databases
+ 37. Updated Log
+
+
