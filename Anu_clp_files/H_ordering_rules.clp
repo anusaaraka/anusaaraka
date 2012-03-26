@@ -114,12 +114,12 @@
 =>
         (bind ?*count* (+ ?*count* 1))
         (retract ?f)
-        (bind ?compPhrase (explode$ (str-cat compound_phrases ?*count* )))
+        (bind ?compPhrase (explode$ (str-cat COMP_PH ?*count* )))
 	(assert (dont_reverse_compPhrases ?compPhrase))
         (assert (Mother  ?NP1))
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1  ?compPhrase $?d2))
         (assert (Head-Level-Mother-Daughters from ?lvl ?compPhrase ?NP1 ?PP2 ))
-        (assert (Node-Category ?compPhrase compound_phrases))
+        (assert (Node-Category ?compPhrase COMP_PH))
         (printout ?*order_debug-file* "(rule_name - make_compPhrase  " ?*count* " " crlf
                           "             Before    - "?head" "?lvl"  "?Mot"  "(implode$ $?d1)" "?NP1" "?PP2" "(implode$ $?d2) crlf
                           "             After     - "?head" "?lvl"  "?Mot"  "(implode$ $?d1)" "?compPhrase" "(implode$ $?d2)")" crlf)

@@ -6,7 +6,6 @@
  (hindi_id_order $? ?id)
  =>
 	(retract ?f0)
-;	(assert (hid-right_punctuation ?id ?punc))
 	(assert (hid-punc_head-right_punctuation ?id ?p_h ?punc))
  )
  ;---------------------------------------------------------------------------------------------------------------
@@ -21,7 +20,6 @@
  (not (punc_inserted ?p_h))
  =>
 	(assert (hid-punc_head-right_punctuation ?id ?p_h ?punc))
-;	(assert (hid-right_punctuation ?id ?punc))
         (assert (punc_inserted ?p_h))
  )
  ;---------------------------------------------------------------------------------------------------------------
@@ -35,7 +33,6 @@
  (not (punc_inserted ?p_h))
  =>
 	(assert (hid-punc_head-left_punctuation ?id ?p_h ?punc))
-;        (assert (hid-left_punctuation ?id ?punc))
         (assert (punc_inserted ?p_h))
  )
  ;---------------------------------------------------------------------------------------------------------------
@@ -50,7 +47,6 @@
  (not (punc_inserted ?p_h))
  =>
 	(assert (hid-punc_head-left_punctuation ?id ?p_h ?punc))
-;        (assert (hid-left_punctuation ?id ?punc))
         (assert (punc_inserted ?p_h))
  )
  ;---------------------------------------------------------------------------------------------------------------
@@ -67,7 +63,6 @@
  (not (punc_inserted ?p_h))
  =>
 	(assert (hid-punc_head-right_punctuation ?id ?p_h ?punc))
-;	(assert (hid-right_punctuation ?id ?punc))
         (assert (punc_inserted ?p_h))
  )
  ;---------------------------------------------------------------------------------------------------------------
@@ -81,7 +76,6 @@
  (not (punc_inserted ?p_h))
  =>
 	(assert (hid-punc_head-right_punctuation ?id ?p_h ?punc))
-;	(assert (hid-right_punctuation ?id ?punc))
         (assert (punc_inserted ?p_h))
  )
  ;---------------------------------------------------------------------------------------------------------------
@@ -92,9 +86,9 @@
  (defrule get_phrase_group
  (declare (salience 900))
  (or (mother-punct_head-punctuation ?PP ?p_h ?punc)(mother-punct_head-right_punctuation ?PP ?p_h ?punc)(mother-punct_head-left_punctuation ?PP ?p_h ?punc))
- (Node-Category  ?PP  NP|S|PP|ADJP|INTJ|ADVP|VP|FRAG)
+ (Node-Category  ?PP  NP|S|PP|ADJP|INTJ|ADVP|VP|FRAG|PRT|PRN)
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?PP $?d ?JJ $?d1)
- (Node-Category  ?JJ  CD|NN|NNS|NNP|VBG|DT|JJ|JJS|UH|RB|VBZ|PRP|PRP$|VBD|FW|VBN|VB|VBP|IN)
+ (Node-Category  ?JJ  CD|NN|NNS|NNP|VBG|DT|JJ|JJS|JJR|UH|RB|VBZ|PRP|PRP$|VBD|FW|VBN|VB|VBP|IN|UCP|RP)
 ?f0<-(Head-Level-Mother-Daughters ? ? ?JJ $?prep)
  =>
         (retract ?f0 ?f1)
@@ -106,9 +100,9 @@
  (defrule get_phrase_group1
  (declare (salience 850))
  (or (mother-punct_head-punctuation ?PP ?p_h ?punc)(mother-punct_head-right_punctuation ?PP ?p_h ?punc)(mother-punct_head-left_punctuation ?PP ?p_h ?punc))
- (Node-Category  ?PP  PP|NP|ADJP|ADVP|VP|FRAG)
+ (Node-Category  ?PP  PP|NP|ADJP|ADVP|VP|FRAG|UCP|PRN)
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?PP $?d ?JJ $?d1)
- (Node-Category  ?JJ  PRN|NP|NN|PP|TO|QP|ADJP|ADVP|VP|S)
+ (Node-Category  ?JJ  PRN|NP|NN|PP|TO|QP|ADJP|ADVP|VP|S|COMP_PH)
 ?f0<-(Head-Level-Mother-Daughters ? ? ?JJ $?prep)
  (not (punc_inserted ?p_h))
  =>
@@ -122,7 +116,7 @@
  (or (mother-punct_head-left_punctuation ?S $?)(mother-punct_head-punctuation ?S $?))
  (Node-Category ?S S)
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?S $?d ?VP $?d1)
- (Node-Category  ?VP  VP|VBZ|ADVP|RB|VBN|NP|PP)
+ (Node-Category  ?VP  VP|VBZ|ADVP|RB|VBN|NP|PP|ADJP)
  ?f0<-(Head-Level-Mother-Daughters ? ? ?VP $?dau)
  =>
         (retract ?f0 ?f1)

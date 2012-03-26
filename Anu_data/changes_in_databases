@@ -204,7 +204,7 @@
 	kE_kara 	f   Meena(2.5.11)
 	uwwara_xe	m   (Suggested by Sukhada (16-09-11) Ex: He studiously avoided answering the question.)	 
 
-changes in compound_phrase.txt  
+changes in compound_phrase.txt  (samAsa.txt)
   =========================
   1. Added 
 	 train accident              ----  rela_xurGatanA
@@ -311,6 +311,10 @@ changes in compound_phrase.txt
  15. pertaining_to	se_saMbaMXiwa#se_saMbaMXiwa#noun#2#RM  	as	se_saMbaMXiwa#se_saMbaMXiwa#noun#1#RM		(       " 	)
  16. way_of_life	jIne_kA_DaMga#jIne_kA_DaMga#noun#1#RM  	as	jIne_kA_DaMga#jIne_kA_DaMga#noun#3#RM		(	"	)
  17. quality_of_goods   mAla_kI_gupravawwA_Aisma#mAla_kI_gupravawwA_Aisma#noun#1#RM      as  mAla_kI_guNavawwA#mAla_kI_guNavawwA#noun#3#RM	( " )
+ 18. arts_and_crafts kalA_Ora_Silpa#kalA_Ora_Silpa#noun#3#RM  as arts_and_crafts  kalA_Ora_Silpa#kalA_Ora_Silpa#noun#2#RM
+ 19. as_well_as	 vEse_hI#vEse_hI#noun#1#RM   as as_well_as	vEse_hI#vEse_hI#noun#2#RM (Suggested by Sukhada 23-03-12)
+ 20. so_as_to	jisase#jisase#noun#3#RM   as  so_as_to	jisase#jisase#noun#2#RM           (           "                 )  
+
  
  changes in Complete_sentence.txt
  ================================

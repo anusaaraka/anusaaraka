@@ -43,7 +43,7 @@
  else
     echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
  fi
- echo "Saving Format info ..."
+ echo "Saving Format info..."
 
  $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
  $HOME_anu_test/Anu/pre_process.sh $1 $MYPATH

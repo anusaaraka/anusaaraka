@@ -70,7 +70,6 @@
 
  cd $HOME_anu_test/Anu_data/compound-matching
  sh make-dict.sh
-# mv compound.gdbm $HOME_anu_test/Anu_databases/.
  mv Complete_sentence.gdbm $HOME_anu_test/Anu_databases/.
 
  echo "Compiling c and flex programs"
@@ -121,21 +120,21 @@
  cd $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/
  ./configure
  make
- cd $HOME_anu_test/Parsers/LINK/link-grammar-4.7.4/
- ./configure
- make
+ #cd $HOME_anu_test/Parsers/LINK/link-grammar-4.7.4/
+ #./configure
+ #make
 
  echo " Compiling Original Link Parser files"
  cd $HOME_anu_test/Anu
  tar -xzf link-grammar-4.5.7.tar.gz 
- tar -xzf link-grammar-4.7.4.tar.gz 
+# tar -xzf link-grammar-4.7.4.tar.gz 
  cd $HOME_anu_test/Anu/link-grammar-4.5.7/
  ./configure
  make
 
- cd $HOME_anu_test/Anu/link-grammar-4.7.4/
- ./configure
- make
+# cd $HOME_anu_test/Anu/link-grammar-4.7.4/
+# ./configure
+# make
 
  echo "Compiling stanford parser files"
  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/

@@ -7,7 +7,7 @@ Calling Stanford parser
 Finding NER... 
 Hindi meaning using Stanford parser 1.1
 Test. 
-parIkRA .
+parIkRA.
 
 Hindi meaning using Link parser 2.1
 (Found maximum of 1 linkages )
@@ -101,7 +101,7 @@ eka garma manxa samIra ne usake gAloM ko panKA kiyA .
 
 Hindi meaning using Stanford parser 2.19
 Ayodhya during ancient times was known as kaushaldesa. 
-prAcIna kAla ke xOrAna Ayodhya kaushaldesa ke nAma se jAnA jAwA WA .
+prAcIna kAla ke xOrAna Ayodhya kaushaldesa ke nAma se jAnA jAwA WA.
 
 Hindi meaning using Link parser 2.20
 (Found maximum of 2 linkages )
@@ -291,7 +291,7 @@ yahAz_waka ki eka baccA yaha samaJa sakawA hE .
 Hindi meaning using Link parser 2.57
 (Found maximum of 4 linkages )
 Events of this type rarely go according to the plan. 
-isa prakAra kI GatanAyeM/GatanAez yojanA ke anusAra kaxAciwa howI hEM .
+isa prakAra kI GatanAez yojanA ke anusAra kaxAciwa howI hEM .
 
 Hindi meaning using Link parser 2.58
 (Found maximum of 4 linkages )
@@ -330,7 +330,7 @@ puswaka pUrNa_kara cukane ke bAxa vaha vixyAlaya gayI/gaI .
 
 Hindi meaning using Stanford parser 2.65
 He always bitches about Tanya. 
-vaha hameSA Tanya ke bAre meM burAI karawA hE .
+vaha hameSA Tanya ke bAre meM burAI karawA hE.
 
 Hindi meaning using Link parser 2.66
 (Found maximum of 1 linkages )
@@ -629,7 +629,7 @@ vaha Nobel Prize jIwane vAlA praWama eSiyAvAsI vEjFAnika WA .
 
 Hindi meaning using Stanford parser 2.125
 He was well aware of the problem. 
-vaha samasyA se acCI waraha avagawa WA .
+vaha samasyA se acCI waraha avagawa WA.
 
 Hindi meaning using Link parser 2.126
 (Found maximum of 2 linkages )
@@ -964,12 +964,12 @@ akelA KAnA acCA vyavahAra nahIM hE .
 Hindi meaning using Link parser 2.192
 (Found maximum of 1 linkages )
 I told Jim a story. 
-mEMne Jim ko kahAnI bawAyI/bawAI .
+mEMne Jim ko kahAnI bawAI .
 
 Hindi meaning using Link parser 2.193
 (Found maximum of 2 linkages )
 It plunged first its nose into the river. 
-isane naxI ke aMxara pahale usakI nAka PazsAyI/PazsAI .
+isane naxI ke aMxara pahale usakI nAka PazsAI .
 
 Hindi meaning using Link parser 2.194
 (Found maximum of 7 linkages )
@@ -1024,7 +1024,7 @@ mEM mere kamare meM so rahA WA .
 Hindi meaning using Link parser 2.204
 (Found maximum of 4 linkages )
 I was told the whole story by Maybeline. 
-muJe/muJako Maybeline ke xvArA pUrNa kahAnI bawAyI/bawAI gayI WI .
+muJe/muJako Maybeline ke xvArA pUrNa kahAnI bawAI gayI WI .
 
 Hindi meaning using Link parser 2.205
 (Found maximum of 2 linkages )
@@ -1189,7 +1189,7 @@ Sachin usake piwA kI mqwyu ke samAcAra sunane para BArawa ko vApisa lOtA .
 Hindi meaning using Link parser 2.237
 (Found maximum of 1 linkages )
 Our team was easily beaten in the competition. 
-hamArI tIma sparXA meM AsAnI se harAyI/harAI gayI WI .
+hamArI tIma sparXA meM AsAnI se harAI gayI WI .
 
 Hindi meaning using Link parser 2.238
 (Found maximum of 2 linkages )
@@ -1329,7 +1329,7 @@ vaha jaMgala_meM sEra ke liye jA cukI hE .
 Hindi meaning using Link parser 2.265
 (Found maximum of 3 linkages )
 She hurt her arm in the fall and lost the use of her fingers temporarily. 
-usane girane meM usakI bAhu ko kRawi pahuzcAyI/pahuzcAI Ora usane asWAyI_rUpa se usakI uMgaliyoM kI upayogitA KoyI/KoI .
+usane girane meM usakI bAhu ko kRawi pahuzcAI Ora usane asWAyI_rUpa se usakI uMgaliyoM kI upayogitA KoyI/KoI .
 usane girane meM usakI bAhu ko kRawi pahuzcAyI/pahuzcAI Ora asWAyI_rUpa se usakI uMgaliyoM kI upayogitA KoyI/KoI .
 
 Hindi meaning using Link parser 2.266
@@ -1464,7 +1464,7 @@ kuCa Pala rasa awyaMwa amlIya hEM .
 
 Hindi meaning using Stanford parser 2.292
 Someone laughed suddenly and the spell was broken. 
-koI acAnaka hazsA Ora mAhOla BaMga_ho gayA WA .
+koI acAnaka hazsA Ora mAhOla BaMga_ho gayA WA.
 
 Hindi meaning using Link parser 2.293
 (Found maximum of 7 linkages )
@@ -1514,7 +1514,7 @@ luhAra ne XAwu ko haTOde_se_Toka_kara_barAbara kiyA .
 Hindi meaning using Link parser 3.2
 (Found maximum of 2 linkages )
 The blacksmith made an assay of iron ore. 
-luhAra ne lohe_kI_Kanija mittI kI eka paraKa banAyI/banAI .
+luhAra ne lohe_kI_Kanija mittI kI eka paraKa banAI .
 
 Hindi meaning using Link parser 3.3
 (Found maximum of 2 linkages )
@@ -1614,6 +1614,7 @@ xukAna kI ora xOdawI huI ladakI merI miwra hE .
 Hindi meaning using Link parser 3.22
 (Found maximum of 4 linkages )
 The girl who you called yesterday has arrived. 
+jise/jisako Apane kala bulAyA vaha ladakI pahuzca gayI/gaI .
 Apane kala jise/jisako bulAyA vaha ladakI pahuzca gayI/gaI .
 
 Hindi meaning using Link parser 3.23
@@ -1699,7 +1700,7 @@ kAnUna yaha karane ke liye hama anumawi_nahIM xewA hE .
 
 Hindi meaning using Stanford parser 3.39
 The leopard seizes its kill and begins to eat. 
-weMxuA usake SikAra ko pakadawA hE Ora KAnA AramBa karawA hE .
+weMxuA usake SikAra ko pakadawA hE Ora KAnA AramBa karawA hE.
 
 Hindi meaning using Link parser 3.40
 (Found maximum of 1 linkages )
@@ -1718,7 +1719,7 @@ AxamI pulIsa ke xvArA mArA gayA hE .
 
 Hindi meaning using Stanford parser 3.43
 The Master said, if I did not go, how would you ever see. 
-Master ne kahA, ki yaxi mEM nahIM gayA WA, wo Apa kaBI BI kEse xeKeMge .
+Master ne kahA, ki yaxi mEM nahIM gayA WA, wo Apa kaBI BI kEse xeKeMge.
 
 Hindi meaning using Link parser 3.44
 (Found maximum of 1 linkages )
@@ -2173,7 +2174,7 @@ Apa kahAz se A rahe hEM ?
 Hindi meaning using Link parser 4.34
 (Found maximum of 1 linkages )
 Where did the car come from? 
-gAdI kahAz se AyI/AI ?
+gAdI kahAz se AI ?
 
 Hindi meaning using Link parser 4.35
 (Found maximum of 1 linkages )
@@ -2263,7 +2264,7 @@ usane muTTI ke aMxara usakI uMgaliyAz ekawra kIM .
 Hindi meaning using Link parser 4.52
 (Found maximum of 2 linkages )
 The monkeys bunched together in their cage. 
-baMxara unake pinjare meM ekawra huye/hue .
+baMxara unake pinjare meM ekawra hue .
 
 Hindi meaning using Link parser 4.53
 (Found maximum of 2 linkages )
@@ -2273,12 +2274,12 @@ hama kamare ke pICe ekawra_ho gaye We .
 Hindi meaning using Link parser 4.54
 (Found maximum of 4 linkages )
 The frightened children bunched together in the corner of the classroom. 
-BayaBIwa bacce kakRA ke kone meM ekawra huye/hue .
+BayaBIwa bacce kakRA ke kone meM ekawra hue .
 
 Hindi meaning using Link parser 4.55
 (Found maximum of 4 linkages )
 His publishers made him revise his manuscript three times. 
-usake prakASakoM ne usase usakI wIna bAra pANdulipi saMSoXiwa karavAyI/karavAI .
+usake prakASakoM ne usase usakI wIna bAra pANdulipi saMSoXiwa karavAI .
 
 Hindi meaning using Link parser 4.56
 (Found maximum of 24 linkages )
@@ -2353,7 +2354,7 @@ sanxigXa lagaBaga 2 mItara laMbA WA .
 Hindi meaning using Link parser 4.70
 (Found maximum of 2 linkages )
 The Dow Jones industrials closed at 2569.26. 
-Dow Jones Seyara 2569.26 para baMxa huye/hue .
+Dow Jones Seyara 2569.26 para baMxa hue .
 
 Hindi meaning using Link parser 4.71
 (Found maximum of 1 linkages )
@@ -2362,7 +2363,7 @@ praxarSana sAwa baje Suru howA hE .
 
 Hindi meaning using Stanford parser 4.72
 There is a lot of flu about. 
-bahuwa sArA PlU AsapAsa hE .
+bahuwa sArA PlU AsapAsa hE.
 AsapAsa PlU bahuwa sArA hE .
 
 Hindi meaning using Link parser 4.73
@@ -2372,7 +2373,7 @@ kama KarcIle bajata AvAsa kA sabase aXika taj ganj meM hE .
 
 Hindi meaning using Stanford parser 4.74
 The glass house built on the lines of the crystal palace in london is the main attraction in this huge park. 
-landana meM sPatika mahala kI lAinoM para banA gilAsa Gara isa bqhaw uxyAna meM pramuKa AkarRaNa hE .
+landana meM sPatika mahala kI lAinoM para banA gilAsa Gara isa bqhaw uxyAna meM pramuKa AkarRaNa hE.
 
 Hindi meaning using Link parser 4.75
 (Found maximum of 3 linkages )

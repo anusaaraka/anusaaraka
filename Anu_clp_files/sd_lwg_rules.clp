@@ -34,13 +34,12 @@
 ;Who translated the sentence for the student? The snake who swallowed the rat hissed loudly.
 (defrule make_VBN_as_VBD
 (declare (salience 1600))
-(or (Head-Level-Mother-Daughters ? ? ?S $? ?VP ?)(Head-Level-Mother-Daughters ? ? ?S $? ?VP))
+(or (Head-Level-Mother-Daughters ? ? ?S $? ?VP ?)(Head-Level-Mother-Daughters ? ? ?S ?VP))
 (Node-Category ?S S|SQ)
 (Node-Category ?VP VP)
 ?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP ?VBN $?d)
 ?f1<-(Node-Category ?VBN VBN)
 ?f2<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VBN ?id)
-(not (daughter ? ?v));.Have you ever seen the Pacific?
 =>
 	(retract ?f0 ?f1 ?f2)
 	(assert (Head-Level-Mother-Daughters ?h ?l ?VP VBD $?d))

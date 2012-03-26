@@ -4495,7 +4495,7 @@ artificial_respiration_centre	kqwrima_Svasana_keMxra#kqwrima_Svasana_keMxra#noun
 artificial_transanctions	kqwrima_lenaxena#kqwrima_lenaxena#noun#2#RM
 artificial_variable	kqwrima_cara#kqwrima_cara#noun#2#RM
 artillery_fire	wopa_xAganA#wopa_xAganA#noun#2#RM
-arts_and_crafts	kalA_Ora_Silpa#kalA_Ora_Silpa#noun#3#RM
+arts_and_crafts	kalA_Ora_Silpa#kalA_Ora_Silpa#noun#2#RM
 arts_application_data_bank	kalA_anuprayoga_AMkadZA_baMEka#kalA_anuprayoga_AMkadZA_baMEka#noun#4#RM
 arts_application_pattern_generation	kalA_anuprayoga_prawirUpa_janana#kalA_anuprayoga_prawirUpa_janana#noun#4#RM
 as_a_result	pariNAmasvarUpa#pariNAmasvarUpa#noun#3#RM
@@ -4573,7 +4573,7 @@ as_unwrought_copper	anagaDe_wAMbe_ke_rUpa_meM#anagaDe_wAMbe_ke_rUpa_meM#noun#3#R
 as_usual	hameSA_kI_waraha#hameSA_kI_waraha#noun#2#RM
 as_verbally_instructed	mOKika_AxeSAnusAra#mOKika_AxeSAnusAra#noun#3#RM
 as_well	acCA_hI_hE#acCA_hI_hE#noun#2#RM
-as_well_as	vEse_hI#vEse_hI#noun#1#RM
+as_well_as	vEse_hI#vEse_hI#noun#2#RM
 as_whole	samagra#samagra#noun#2#RM
 as_you_know	jEsA_ki_Apa_jAnawe_ho#jEsA_ki_Apa_jAnawe_ho#noun#3#RM
 asbestos_abatement	EsbestoYsa_upaSamana#EsbestoYsa_upaSamana#noun#2#RM
@@ -29192,7 +29192,7 @@ snowy_egret	saPexa_bagulA#saPexa_bagulA#noun#2#RM
 snuff_box	suMGanI_kI_dibiyA#suMGanI_kI_dibiyA#noun#2#RM
 so_and_so	amuka#amuka#noun#3#RM
 so_as_to_ensure	wAki_vaha_suniSciwa_ho#wAki_vaha_suniSciwa_ho#noun#4#RM
-so_as_to	jisase#jisase#noun#3#RM
+so_as_to	jisase#jisase#noun#2#RM
 so_called	waWAkaWiwa[-]#waWAkaWiwa[-]#noun#2#RM
 so_far_as_may_be	jahAM_waka_ho_sake#jahAM_waka_ho_sake#noun#5#RM
 so_far_as_possible	yaWAsaMBava#yaWAsaMBava#noun#4#RM
