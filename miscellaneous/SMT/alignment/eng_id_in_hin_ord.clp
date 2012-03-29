@@ -115,6 +115,6 @@
 ?f<-(order $?order)
 =>
 	(retract ?f)
-        (printout ?*fp* (implode$ $?order) crlf)
+        (printout ?*fp* "(eng_id_in_hin_ord "(implode$ $?order)")" crlf)
 )
 
