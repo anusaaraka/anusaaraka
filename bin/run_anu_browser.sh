@@ -24,5 +24,5 @@
 # cp cautions.js $4
  cd src
 # cp *.html *.js *.css $4
- cp style.css english_hindi.css script.js open.js english_hindi.js shabdanjali.js rows.html help.html popup.css effects.js prototype.js dragdrop.js popup.js cautions.js english_hindi_tran.js english_hindi_tran.css dictionaryA-R.js dictionaryS-Z.js $4
+ cp style.css english_hindi.css script.js open.js english_hindi.js shabdanjali.js rows.html help.html popup.css effects.js prototype.js dragdrop.js popup.js cautions.js english_hindi_tran.js english_hindi_tran.css $4
 
