@@ -3280,7 +3280,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  24. Updated anu_compile_64bit.sh accordingly with anu_compile.sh
  25. Updated Log
 
- 29-03-12
+ 30-03-12
  ========
  1. Modified : "get_aux" and "imper_rule2" rules in sd_lwg_rules.clp
  2. insert_punctuation
@@ -3352,7 +3352,18 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         4) Modified program Anu_src/converting-dic-format.c
         5) anu_compile.sh and anu_compile_64bit.sh      
  38. Modified change_chunk_consecutive_same_color  rule in Anu_clp_files/create_hin_ord_html.clp
- 39. Updated changes_in_databases
- 40. Updated Log
-
-
+ 39. Added converters folder in miscellaneous directory. 
+	- Added Mapping-IASTUnicode-wx.lex inside converters.
+	- Added Mapping-wx-IASTUnicode.lex inside  "
+	- Added Readme inside  converters.
+ 40. Moved following files to miscellaneous/Programs/
+	- file-wx_utf8.c
+	- dictionaryA-R.js
+	- dictionaryS-Z.js
+	- default-iit-bombay-shabdanjali-dic.txt
+	- default-iit-bombay-shabdanjali-dic_firefox.txt
+	- converting-dic-format-to-js.lex
+ 41. Updated miscellaneous/Programs/README.
+ 42. Modified Anusaaraka_berkeley.sh and ber_ver_output
+ 43. Updated changes_in_databases
+ 44. Updated Log

@@ -16,4 +16,34 @@
 		- Add the following commands in Anu/stdenglish.sh
 			$PATH1/rm_joined_hard_hyphens.out $HOME_anu_test/Anu_databases/morph.dbm > $1.tmp
 		- Add rm_joined_hard_hyphens.lex in Anu/stdenglish/Makefile
- 3. 
+ 3. file-wx_utf8.c
+	- converts wx to utf8
+	- used to generate sent-by-sent analysis in run_sentence_stanford.sh (and in all parsers)
+	- to run :
+		 - Move file-wx_utf8.c to Anu_src/
+                 - Add below command in shell_scripts/anu_compile.sh
+			gcc -o file-wx_utf8.out file-wx_utf8.c
+		 - uncomment below lines in run_sentence_stanford.sh 
+			# cat English_sentence.dat >> $MYPATH/$1_tmp/sent-by-sent
+			# cat  hindi_sentence.dat | $HOME_anu_test/Anu_src/file-wx_utf8.out | sed -e '1,$s/\\@//g
+			# 1,$s/#//g' >> $MYPATH/$1_tmp/sent-by-sent
+			# echo "" >> $MYPATH/$1_tmp/sent-by-sent
+
+4. converting-dic-format-to-js.lex 
+	- converts default dictionary to .js format which is used in 'Dictionary layer(E)' layer in the firefox.
+	- Problems using js files(patterns which are not handled in the functions)::
+	  ------------------------------------------------------------------------
+		1. Hyphenated words not accepting.	Ex: A-OK
+		2. Dot in b/w the words  		Ex: A.D.                 
+		3. apostrophe cases 			Ex: ABC's       
+		4. Excalamation cases 			Ex: Heaven! 
+	- Removed this programme and handled using tooltips.
+ 	- to run :
+		 - Move converting-dic-format-to-js.lex to Anu_src/
+		 - Add below command in shell_scripts/anu_compile.sh
+			./comp.sh converting-dic-format-to-js
+			./converting-dic-format-to-js.out $HOME_anu_test/Browser/src/dictionary_wx.js < $HOME_anu_test/Anu_data/default-iit-bombay-shabdanjali-dic_firefox.txt   
+			wx_utf8 $HOME_anu_test/Browser/src/dictionary_wx.js  > $HOME_anu_test/Browser/src/dictionary.js
+	- (Note: dictionary.js need to be splitted into two parts.
+		 default-iit-bombay-shabdanjali-dic_firefox.txt, dictionaryA-R.js and dictionaryS-Z.js are provided here)
+

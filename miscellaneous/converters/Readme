@@ -1,0 +1,21 @@
+#Readme to Run Mapping-IASTUnicode-wx.lex and  Mapping-wx-IASTUnicode.lex 
+#########################################################################
+
+Mapping-IASTUnicode-wx.lex
+--------------------------
+#To Compile::
+$HOME_anu_test/Anu_src/./comp.sh  Mapping-IASTUnicode-wx 
+#To Run::
+./Mapping-IASTUnicode-wx.out < input > output
+(where input is a file which is need to be convereted.
+       output is a file which is generated after conversion.)
+
+
+Mapping-wx-IASTUnicode.lex
+--------------------------
+#To Compile::
+$HOME_anu_test/Anu_src/./comp.sh  Mapping-wx-IASTUnicode
+#To Run::
+./Mapping-wx-IASTUnicode.out < input > output
+(where input is a file which is need to be convereted.
+       output is a file which is generated after conversion.)
