@@ -3343,7 +3343,16 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  34. Updated sd_ver_output, ber_ver_output, ol_ver_output, verified_output and link_ver_output 
  35. Updated the following files
         ol_stdenglish.sh   abbrevations.lex  standard_abbrevations.lex
- 36. Updated changes_in_databases
- 37. Updated Log
+ 36. Modified file default-iit-bombay-shabdanjali-dic.txt
+     #Eng-wrd  Category::IIT-Bombay/Shabdanjali meaning ==> #Eng-wrd_Category  IIT-Bombay/Shabdanjali meaning
+ 37. Modified tooltip information for dictionary row (showing the tooltip information using gdbm rather than dictionar*.js file) ,accordingly following files have been modified
+        1) Removed Anu_data/default-iit-bombay-shabdanjali-dic_firefox.txt from git and generating it using  c prog
+        2) Modified print_head_info, and print_dictionary_row functions in create_eng_ord_html.clp.
+        3) Updated Browser/src/style.css file [Added tooltip information]
+        4) Modified program Anu_src/converting-dic-format.c
+        5) anu_compile.sh and anu_compile_64bit.sh      
+ 38. Modified change_chunk_consecutive_same_color  rule in Anu_clp_files/create_hin_ord_html.clp
+ 39. Updated changes_in_databases
+ 40. Updated Log
 
 

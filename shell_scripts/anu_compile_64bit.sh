@@ -60,9 +60,6 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/preposition.gdbm < preposition.txt
  echo "Creating default-iit-bombay-shabdanjali-dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic.gdbm < default-iit-bombay-shabdanjali-dic.txt
- sed 's/\(.*\)\t\(.*\)::/\1_\2\t/g' default-iit-bombay-shabdanjali-dic.txt > default-iit-bombay-shabdanjali-dic_firefox1.txt
- echo "Creating default-iit-bombay-shabdanjali-dic_firefox1.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_firefox1.gdbm < default-iit-bombay-shabdanjali-dic_firefox1.txt
 
  cd vb_root
  echo "Creating ol_vb_root.gdbm"
@@ -70,7 +67,6 @@
 
  cd $HOME_anu_test/Anu_data/compound-matching
  sh make-dict.sh
-# mv compound.gdbm $HOME_anu_test/Anu_databases/.
  mv Complete_sentence.gdbm $HOME_anu_test/Anu_databases/.
 
  echo "Compiling c and flex programs"
@@ -80,7 +76,6 @@
  gcc -o word.out word.c
  gcc -o all_tran_pada.out -g f_tid-rid.c f_sen-range.c  ALL_TRAN_PADA.c
  gcc -o f_range.out f_range_wordarray_resarray.c
-
  flex ir.lex
  gcc -o ir lex.yy.c -lfl 
  mv ir $HOME_anu_test/bin/
@@ -95,6 +90,17 @@
  ./comp.sh wx2wx-small
  mv  wx2wx-normal.out  wx2wx-small.out $HOME_anu_test/bin/
 
+
+ cd $HOME_anu_test/Anu_data
+ echo "Creating default-iit-bombay-shabdanjali-dic_firefox.gdbm"
+ cut -f1 default-iit-bombay-shabdanjali-dic.txt > word_field
+ cut -f2 default-iit-bombay-shabdanjali-dic.txt > mng_field
+ wx_utf8 mng_field > mng_utf8
+ paste word_field mng_utf8 > default-iit-bombay-shabdanjali-dic_firefox_tmp.txt
+ gcc -o $HOME_anu_test/Anu_src/converting-dic-format.out $HOME_anu_test/Anu_src/converting-dic-format.c 
+ $HOME_anu_test/Anu_src/converting-dic-format.out default-iit-bombay-shabdanjali-dic_firefox_tmp.txt > default-iit-bombay-shabdanjali-dic_firefox.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_firefox.gdbm < default-iit-bombay-shabdanjali-dic_firefox.txt
+ 
  cd $HOME_anu_test/debugging
  sh compile_bison.sh
 
@@ -146,3 +152,6 @@
  sh compile.sh
 
  cp $HOME_anu_test/debugging/sentence_debug.sh $HOME_anu_test/bin/.
+ 
+ cd $HOME_anu_test/miscellaneous/std_tregex/
+ tar -xvf stanford-tregex-2012-01-06.tgz 

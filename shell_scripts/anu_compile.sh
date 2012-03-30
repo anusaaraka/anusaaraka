@@ -60,9 +60,6 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/preposition.gdbm < preposition.txt
  echo "Creating default-iit-bombay-shabdanjali-dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic.gdbm < default-iit-bombay-shabdanjali-dic.txt
- sed 's/\(.*\)\t\(.*\)::/\1_\2\t/g' default-iit-bombay-shabdanjali-dic.txt > default-iit-bombay-shabdanjali-dic_firefox1.txt
- echo "Creating default-iit-bombay-shabdanjali-dic_firefox1.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_firefox1.gdbm < default-iit-bombay-shabdanjali-dic_firefox1.txt
 
  cd vb_root
  echo "Creating ol_vb_root.gdbm"
@@ -93,13 +90,17 @@
  ./comp.sh wx2wx-small
  mv  wx2wx-normal.out  wx2wx-small.out $HOME_anu_test/bin/
 
-# gcc -o converting-dic-format.out converting-dic-format.c 
-# ./converting-dic-format.out $HOME_anu_test/Anu_data/default-iit-bombay-shabdanjali-dic.txt > $HOME_anu_test/Anu_data/default-iit-bombay-shabdanjali-dic_firefox.txt
-#./comp.sh converting-dic-format-to-js
-# ./converting-dic-format-to-js.out $HOME_anu_test/Browser/src/dictionary_wx.js < $HOME_anu_test/Anu_data/default-iit-bombay-shabdanjali-dic_firefox.txt   
-#wx_utf8 $HOME_anu_test/Browser/src/dictionary_wx.js  > $HOME_anu_test/Browser/src/dictionary.js
- 
 
+ cd $HOME_anu_test/Anu_data
+ echo "Creating default-iit-bombay-shabdanjali-dic_firefox.gdbm"
+ cut -f1 default-iit-bombay-shabdanjali-dic.txt > word_field
+ cut -f2 default-iit-bombay-shabdanjali-dic.txt > mng_field
+ wx_utf8 mng_field > mng_utf8
+ paste word_field mng_utf8 > default-iit-bombay-shabdanjali-dic_firefox_tmp.txt
+ gcc -o $HOME_anu_test/Anu_src/converting-dic-format.out $HOME_anu_test/Anu_src/converting-dic-format.c 
+ $HOME_anu_test/Anu_src/converting-dic-format.out default-iit-bombay-shabdanjali-dic_firefox_tmp.txt > default-iit-bombay-shabdanjali-dic_firefox.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_firefox.gdbm < default-iit-bombay-shabdanjali-dic_firefox.txt
+ 
  cd $HOME_anu_test/debugging
  sh compile_bison.sh
 

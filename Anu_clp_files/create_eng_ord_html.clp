@@ -20,8 +20,6 @@
  (printout fp "<script src=\"popup.js\" type=\"text/javascript\"></script>" crlf)
  (printout fp "<script src=\"shabdanjali.js\" type=\"text/javascript\"></script>" crlf)
  (printout fp "<script src=\"cautions.js\" type=\"text/javascript\"></script>" crlf)
- (printout fp "<script src=\"dictionaryA-R.js\" type=\"text/javascript\"></script>" crlf);Splitted dictionary file into two files (Suggested by Chaitanya Sir , Added by Roja (03-03-12)
- (printout fp "<script src=\"dictionaryS-Z.js\" type=\"text/javascript\"></script>" crlf);;Splitted dictionary file into two files (Suggested by Chaitanya Sir , Added by Roja (03-03-12)
  (printout fp "<link rel=\"stylesheet\" href=\"popup.css\" type=\"text/css\" />" crlf)
  (printout fp "<title>anusAraka</title>" crlf)
  (printout fp "</head>" crlf)
@@ -103,19 +101,30 @@
  (deffunction print_dictionary_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?pos ?root)
  (printout fp "<tr class=\"row5\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".E</td>"))
- (if (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic_firefox1.gdbm" (str-cat ?root "_" ?pos)) "FALSE") then
-          (bind ?mng1 (gdbm_lookup "default-iit-bombay-shabdanjali-dic_firefox1.gdbm" (str-cat ?root "_" ?pos)))
-          (if (numberp (str-index "/" ?mng1)) then
-          (bind ?def_mng (sub-string 1 (- (str-index "/" ?mng1) 1) ?mng1))
-          (bind ?def_mng (str-cat ?def_mng " ..."))
+ (bind ?root (implode$ (create$ ?root)))
+ (if (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic_firefox.gdbm" ?root) "FALSE") then
+          (bind ?mng1 (gdbm_lookup "default-iit-bombay-shabdanjali-dic_firefox.gdbm" ?root))
+          (bind ?mng2 (sub-string (+ (str-index "::" ?mng1) 2) (length ?mng1) ?mng1))
+          (bind ?slh_index (str-index "/" ?mng2)) (bind ?lt_index (str-index "<" ?mng2))
+          (if (and (numberp ?slh_index) (numberp ?lt_index)) then
+          	(if (< ?slh_index ?lt_index) then
+        	  (bind ?def_mng (sub-string 1 (- ?slh_index 1)?mng2))
+	          (bind ?def_mng (str-cat ?def_mng " ..."))
+        	else 
+	          (bind ?def_mng (sub-string 1 (- ?lt_index 1) ?mng2))
+        	  (bind ?def_mng (str-cat ?def_mng " ...")))
           else
-          (bind ?def_mng ?mng1))
- else (bind ?def_mng "-"))
- (if (eq ?def_mng "-") then
+          (bind ?mng2 (sub-string (+ (str-index "::" ?mng1) 2) (length ?mng1) ?mng1))
+          (bind ?def_mng (sub-string 1 (- ?lt_index 1) ?mng2))
+          (bind ?def_mng (str-cat ?def_mng " ..."))
+          )
+ else (bind ?def_mng -))
+ (if (eq ?def_mng -) then
  (printout fp "<td class=\""?chnk_fr_htm"\">  -  </td>" crlf "</tr>" crlf)
  else
- (printout fp "<td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  fetchdict"?root"(\'"?root"\')\"> <span id=\"popup_link_D_"?p_id"_"?s_id"_"?w_id"\" class=\"popup_link\">"(wx_utf8 ?def_mng)"</span><script type=\"text/javascript\"> new Popup('popup_5','popup_link_D_"?p_id"_"?s_id"_"?w_id"',{position:'below',trigger:'click'}); </script></a> </td>" crlf "</tr>" crlf))
+ (printout fp "<td class=\""?chnk_fr_htm"\" > <a class=\"tooltip\" href=\"#\">"(wx_utf8 ?def_mng)"<span>"?mng1"</span></a>"" </td>" crlf "</tr>" crlf))
  )
+
 
  (deffunction print_root_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?root ?suf ?num)
  (bind ?suf -)(bind ?num -) ;the values of suffix and number are made (-), this is temporarily and kept for discussion about how to show the morph information in that row [especially for pronouns].
@@ -265,6 +274,7 @@
  (declare (salience 2900))
  (chunk-ids ?chnk_type ?chnk $?ch1 ?id)
  ?f1<-(chunk-ids ?chnk_type ?chnk ?id1 $?ch2)
+ (test (and (numberp ?id) (numberp ?id1)))
  (test (and (neq ?chnk REP)(= ?id1 (+ ?id 1))))
  =>
  (retract ?f1)

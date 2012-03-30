@@ -120,6 +120,7 @@
  (declare (salience 5700))
  (chunk-ids ?chnk_type ?chnk $?ch1 ?id)
  ?f1<-(chunk-ids ?chnk_type ?chnk ?id1 $?ch2)
+ (test (and (numberp ?id) (numberp ?id1)))
  (test (and (neq ?chnk REP)(= ?id1 (+ ?id 1))))
  =>
  (retract ?f1)
