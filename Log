@@ -3365,5 +3365,6 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	- converting-dic-format-to-js.lex
  41. Updated miscellaneous/Programs/README.
  42. Modified Anusaaraka_berkeley.sh and ber_ver_output
+ 43. Removed coding part to compile file-wx_utf8.c in anu_compile.sh and anu_compile_64bit.sh
  43. Updated changes_in_databases
  44. Updated Log
