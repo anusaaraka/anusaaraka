@@ -2,7 +2,7 @@
 
 print "<map version=\"0.7.1\">\n";
 print "<node TEXT=\"run_sentences.sh\">\n";
-print "<node TEXT=\"run_modules.bat\">\n";
+print "<node TEXT=\"run_modules_std.bat\">\n";
 $i=0;
 while(<STDIN>){
 	if(($_ =~ /([^\/"]*\.[b]?clp)"/) && ($_ !~ /^;/) && ($_ !~ /global_path/)) {

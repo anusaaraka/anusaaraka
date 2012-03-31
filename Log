@@ -3369,3 +3369,13 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  44. Removed dictionaryA-R.js and dictionaryS-Z.js from bin/run_anu_browser.sh
  45. Updated changes_in_databases
  46. Updated Log
+
+ 31-03-12
+ ========
+ 1. Created directories 'original_files' and 'removed_files' in anu_testing/miscellaneous/Programs
+      i) Moved all the files from anu_testing/miscellaneous/Programs to anu_testing/miscellaneous/Programs/removed_files
+      ii) Added README and ra_d8_wp_r.lex  in original_files
+ 2. Cleaned the file Anu_src/converting-dic-format.c and added spme comments.
+ 3. Updated debugging/make_freemind.pl debugging/wsd_tam_debug.clp files.
+ 4. Updated Log.
+
