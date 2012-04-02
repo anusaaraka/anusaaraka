@@ -1,4 +1,3 @@
- char *s;
  char map[]="01234567890123456789012345678901234567890123456789012345678901234⁄Àπ¿‚º∂£‹ª¥L¢¡Ê…Q÷’æﬁV√≈YÈ      § ∏ø·∑µÿ€∫≥—Ã∆Â»ﬂœ◊Ω›‘¬ƒÕ° ";
 NUKTA Z
 OPERATOR_V V
@@ -8,10 +7,9 @@ VOWEL_A a
 VOWEL_REMAINING [AiIuUqeEoO]
 CONSONANT [kKgGfcCjJFtTdDNwWxXnpPbBmyrlvSRsh]
 ROM_WORD @[A-Za-z0-9]+
-%x CONS
+%x CONS 
 %%
-{ROM_WORD}                              {ECHO;
-					}
+{ROM_WORD}				{ECHO;}
 
 {CONSONANT}				{
 					printf("%c",map[yytext[0]]);BEGIN CONS;
@@ -93,3 +91,4 @@ ROM_WORD @[A-Za-z0-9]+
 {VOWEL_A}{OPERATOR_Y}+			{
 					printf("%c",map[yytext[0]]+yyleng);
 					}
+
