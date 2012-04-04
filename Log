@@ -3370,15 +3370,18 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  45. Updated changes_in_databases
  46. Updated Log
 
- 02-04-12
+ 04-04-12
  ========
  1. Created directories 'original_files' and 'removed_files' in anu_testing/miscellaneous/Programs
       i) Moved all the files from anu_testing/miscellaneous/Programs to anu_testing/miscellaneous/Programs/removed_files
       ii) Added README and ra_d8_wp_r.lex  in original_files
- 2. Cleaned the file Anu_src/converting-dic-format.c and added some comments.
+ 2. Updated converting-dic-format.c program [Writing output to a file by passing argument to the function rather than redirecting to a file].
  3. Updated debugging/make_freemind.pl debugging/wsd_tam_debug.clp files.
  4. Renamed  miscellaneous/Dictionarys/ name to  miscellaneous/Dictionaries/
- 5. Added src dir inside cellaneous/Dictionaries/iit-bombay/ and moved following files into src/
+ 5. Added src dir inside miscellaneous/Dictionaries/iit-bombay/ and moved following files into src/
 	comp.sh		iit-bombay.txt		iit-bombay.txt1  
 	Ontology.lex	2011_01_31_Ontology_Developed_by_IIT-B_384.doc
- 6. Updated Log.
+ 6. Added new file converting-dic-to-smt_format.c (for SMT purpose)
+ 7. Updated miscellaneous/std_tregex/README.
+ 8. Added compilation part for converting-dic-to-smt_format.c in anu_compile.sh and anu_compile_64bit.sh.
+ 9. Updated Log.

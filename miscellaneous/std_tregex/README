@@ -8,20 +8,36 @@
 
   To view the Parse trees 
  
-  1) Open File Menu
+  1) Open "File" Menu
   2) select "load trees .... " option
-  3) Select the parsed tree file (Here it will be <file_name_output> e.g: file_output) 
+  3) Select the parsed tree file (Here it will be <filename_output> e.g: file_output) 
   4) Clik the "Browse trees" It will show list of all the trees.
   
-  Writing regular Expressions:
-  Example::
-  Sen            ::   I gave a book to Dashrath, the king of Ayodhya.
-  default_parse  ::   splits "Dashrath" and "the king of Ayodhya" in to two different phrases (NP && NP)
+  Writing Regular Expressions:
+  ===========================
+  1) Write the Regular expression in the "Pattern:" field  
+  2) Click the "Search" button 
+  3) At the bottom of the "Search pattern" block shows the "Match stats".
 
-  needed_parse   ::   "Dashrath the king of Ayodhya" should be within one phrase (NP)          
+  RE 1 ::
+  Example Sen	::   I gave a book to Dashrath, the king of Ayodhya.
+  default_parse ::   splits "Dashrath" and "the king of Ayodhya" in to two different phrases (NP && NP)
+
+  needed_parse  ::   "Dashrath the king of Ayodhya" should be within one phrase (NP)          
  		 -->   Regular expression for this parse is 
 		       S < ( VP < ( PP [< NP [<< Ayodhya & << Dashrath]  & < TO]))
 
-  NOTE:-
- 1) By default it generates 25 parses for a sentence, if one want to see more parsers change the "-printPCFGkBest 25" option     to desired number in "$HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/run_multiple_parse_penn.sh" file.
+  RE 2 ::
+  		If one want to search for a sub tree ,
+  Example Sen	:: There were 360 forts out of which 10 are left.
+  default_parse	:: represents "out" and "of which" are daughters of two different sub-trees ("out" in ADVP &  and "of which" in SBAR)
+  needed_parse	:: "out of which" as one sub tree
+		--> Regular expression for this parse is
+                 __=name3 [<, (__=name1 <<, out) & <- ( __=name2  <<-  which) ] 
+		==>"out" is a leftmost descendent of name1 & "which" is a rightmost descendent of name2 & name1 should be the first child(<,) of name3 & name2 should be the last child(>-) of name3.
+                ==> '__' (double-hypen) implies any node.
+                ==> name1 ,name2, name3 are the variable names given for the matching nodes.
+                Above expression can also be written as __ [<, (__ <<, out) & <- ( __  <<-  which) ] (with out using variable names)
 
+  NOTE:-
+ 1) By default we get 25 parses for a sentence, if one want to see more parse trees change the "-printPCFGkBest 25" option  to desired number in "$HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/run_multiple_parse_penn.sh" file.
