@@ -98,6 +98,7 @@
  paste word_field mng_utf8 > default-iit-bombay-shabdanjali-dic_firefox_tmp.txt
  gcc -o $HOME_anu_test/Anu_src/converting-dic-format.out $HOME_anu_test/Anu_src/converting-dic-format.c 
  $HOME_anu_test/Anu_src/converting-dic-format.out default-iit-bombay-shabdanjali-dic_firefox_tmp.txt default-iit-bombay-shabdanjali-dic_firefox.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_firefox.gdbm < default-iit-bombay-shabdanjali-dic_firefox.txt
  gcc -o $HOME_anu_test/Anu_src/converting-dic-to-smt_format.out $HOME_anu_test/Anu_src/converting-dic-to-smt_format.c
  $HOME_anu_test/Anu_src/converting-dic-to-smt_format.out default-iit-bombay-shabdanjali-dic.txt default-iit-bombay-shabdanjali-dic_smt.txt
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_smt.gdbm < default-iit-bombay-shabdanjali-dic_smt.txt
