@@ -10,7 +10,7 @@
   For testing purpose
   ===================
        	1. file-name 		 ===	test_sent
-	2. manual_hin_sen	 ===	test_hi
+	2. manual_hin_sen	 ===	test_hi_sent
 	3. shallow_parser_output === 	test_shallow_output
 	4. wx_output		 ===	test_wx_output	
 
@@ -18,7 +18,7 @@
    ========================
 	Anusaaraka_stanford_SMT.sh <file-name> <parse_no> <sand_box_option> < manual_hin_sen> < shallow_parser_output> < wx_output>
 
-  	Ex  :	Anusaaraka_stanford_SMT.sh test_sent 1 false  test_hi test_shallow_output test_wx_output
+  	Ex  :	Anusaaraka_stanford_SMT.sh test_sent 1 false  test_hi_sent test_shallow_output test_wx_output
 
   File name to check for alignment is   :  
   ===================================
