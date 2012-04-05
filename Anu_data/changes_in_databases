@@ -313,7 +313,8 @@ changes in compound_phrase.txt  (samAsa.txt)
  17. quality_of_goods   mAla_kI_gupravawwA_Aisma#mAla_kI_gupravawwA_Aisma#noun#1#RM      as  mAla_kI_guNavawwA#mAla_kI_guNavawwA#noun#3#RM	( " )
  18. arts_and_crafts kalA_Ora_Silpa#kalA_Ora_Silpa#noun#3#RM  as arts_and_crafts  kalA_Ora_Silpa#kalA_Ora_Silpa#noun#2#RM
  19. as_well_as	 vEse_hI#vEse_hI#noun#1#RM   as as_well_as	vEse_hI#vEse_hI#noun#2#RM (Suggested by Sukhada 23-03-12)
- 20. so_as_to	jisase#jisase#noun#3#RM   as  so_as_to	jisase#jisase#noun#2#RM           (           "                 )  
+ 20. so_as_to	jisase#jisase#noun#3#RM   as  so_as_to	jisase#jisase#noun#2#RM           (           "                 )
+ 21. lush_green      harA_BarA#harA_BarA#adjective#2#RM		(Suggested by Chaitanya Sir 05-04-12)
 
  
  changes in Complete_sentence.txt
@@ -417,28 +418,40 @@ changes in compound_phrase.txt  (samAsa.txt)
  Changes in apertium_hn.dix
  ==========================
  Added  :
-	<e lm="uMgalI"><i>uMgal</i><par n="ladak/I__n"/></e>   (Added by Meenaji (12.1.11))
-	<e lm="giranA"><i>giran</i><par n="ladak/A__n"/></e>   (Suggested by Meenaji (13.1.11))
-        <e lm="BUrA"><i>BUr</i><par n="regular__adj-noun"/></e>(     "              (16-02-11))
-        vAl/A__adj paradigm                                 (Suggested by Meenaji 22-03-11)
-        <e> <p><l></l>  <r></r></p><par n="vAl/A__n"/></e>  (      "                      )
-        <e> <p><l></l>  <r></r></p><par n="vAl/A__adj"/></e>(      "                      )
-        <e lm="kA"><i>k</i><par n="regular__adj-noun"/></e> (      "                      )
-        <e lm="xoharavA"><i>xoharavA</i><par n="KA/__v"/></e>(     "              25-03-11)
-        <e lm="pinjarA"><i>pinjar</i><par n="regular__adj-noun"/></e>(    "       31-03-11)
-        <e lm="rahanA"><i>rahan</i><par n="loh/A__n"/></e>   (             "      26-04-11)
-        <e lm="prawi"><i>prawi</i><par n="Apawwi/__n"/></e>  (             "      09-08-11)
-
-        <sdef n="parsarg:ke_pakRa_meM" c="ke_pakRa_meM"/>  (added new parsarg 'ke_pakRa_meM')   (             "      11-08-11)
-        <e><p><l>isake_pakRa_meM</l><r>yaha<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke_pakRa_meM"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>    				 (             "      11-08-11)
-        <e><p><l>isake_pakRa_meM</l><r>yaha<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke_pakRa_meM"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/></r></p></e>				 (             "      11-08-11)
-
-     Added below 4 rules in k/Ona__p paradigm. 
+  1.	<e lm="uMgalI"><i>uMgal</i><par n="ladak/I__n"/></e>   (Added by Meenaji (12.1.11))
+  2.	<e lm="giranA"><i>giran</i><par n="ladak/A__n"/></e>   (Suggested by Meenaji (13.1.11))
+  3.	<e lm="BUrA"><i>BUr</i><par n="regular__adj-noun"/></e>(     "              (16-02-11))
+  4.	vAl/A__adj paradigm                                 (Suggested by Meenaji 22-03-11)
+  5.	<e> <p><l></l>  <r></r></p><par n="vAl/A__n"/></e>  (      "                      )
+  6.	<e> <p><l></l>  <r></r></p><par n="vAl/A__adj"/></e>(      "                      )
+  7.	<e lm="kA"><i>k</i><par n="regular__adj-noun"/></e> (      "                      )
+  8.	<e lm="xoharavA"><i>xoharavA</i><par n="KA/__v"/></e>(     "              25-03-11)
+  9.	<e lm="pinjarA"><i>pinjar</i><par n="regular__adj-noun"/></e>(    "       31-03-11)
+ 10.	<e lm="rahanA"><i>rahan</i><par n="loh/A__n"/></e>   (             "      26-04-11)
+ 11.	<e lm="prawi"><i>prawi</i><par n="Apawwi/__n"/></e>  (             "      09-08-11)
+ 12.	<sdef n="parsarg:ke_pakRa_meM" c="ke_pakRa_meM"/>  (added new parsarg 'ke_pakRa_meM')   (             "     11-08-11)
+ 13.	<e><p><l>isake_pakRa_meM</l><r>yaha<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke_pakRa_meM"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>    				 (             "      11-08-11)
+ 14.	<e><p><l>isake_pakRa_meM</l><r>yaha<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke_pakRa_meM"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/></r></p></e>				 (             "      11-08-11)
+ 15.    Added below 4 rules in k/Ona__p paradigm. 
         <e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:o"/><s n="parsarg:0"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="tam:0"/></r></p></e> (Suggested by Sukhada 09-11-11)
 	<e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:d"/><s n="parsarg:0"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="tam:0"/></r></p></e> (Suggested by Sukhada 09-11-11)
 	<e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:o"/><s n="parsarg:0"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/><s n="tam:0"/></r></p></e> (Suggested by Sukhada 09-11-11)
 	<e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:d"/><s n="parsarg:0"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:0"/></r></p></e> (Suggested by Sukhada 09-11-11)
-     Modified following entries regular__adj-noun paradigm :: (Modified by Roja , Suggested by Meena(18-02-12)
+ 16.	<e lm="vAlA"><i>vAl</i><par n="kAl/A__n"/></e> (Added by Roja(08-03-12), Suggested by Sukhada)
+ 17.	Added new paradigm "jyAx/A__adj" (Suggested by Chaitanya Sir 04-04-12)
+ 18.	In "kAl/A__n" added below two rules (Suggested by Sukhada 04-04-12) 
+	<e><p><l>oM</l><r>A<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
+	<e><p><l>iyoM</l><r>A<s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
+ 19.	<e lm="haraPanamOlA"><i>haraPanamOl</i><par n="jyAx/A__adj"/></e>  (Suggested by Chaitanya Sir 04-04-12)
+
+Modified :
+  1.	<e><p><l>we_hue</l>	as	<e><p><l>owe_hue</l>       for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
+  2.	<e><p><l>we_rahanA_hE</l>   as	<e><p><l>owe_rahanA_hE</l> for tam:we_rahanA_hE  (Suggested by Sriram 21-06-11)
+  3.	In case of Apa/__p paradigm modified the pattern from GPN to GNP in case of parsarg:kA	
+  4.	<e lm="saMkalpanA"><i>saMkalpan</i><par n="regular__adj-noun"/></e> 
+				 as  
+        <e lm="saMkalpanA"><i>saMkalpanA</i><par n="ASA/__n"/></e>	(Suggested by Rajini (11-02-12))
+  5.    Modified following entries regular__adj-noun paradigm :: (Modified by Roja , Suggested by Meena(18-02-12)
         <e lm="barPIlA"><i>barPIl</i><par n="vAl/A__adj"/></e>
         <e lm="boJA"><i>boJ</i><par n="ladak/A__n"/></e>
         <e lm="manoxaSA"><i>manoxaSA</i><par n="ASA/__n"/></e>
@@ -446,17 +459,9 @@ changes in compound_phrase.txt  (samAsa.txt)
         <e lm="PavvArA"><i>PavvAr</i><par n="ladak/A__n"/></e>
         <e lm="pUrA"><i>pUr</i><par n="vAl/A__adj"/></e>
         <e lm="vAlA"><i>vAl</i><par n="vAl/A__adj"/></e>
-	<e lm="vAlA"><i>vAl</i><par n="kAl/A__n"/></e> (Added by Roja(08-03-12), Suggested by Sukhada)
-
-
- Modified :
-  1.	<e><p><l>we_hue</l>         as <e><p><l>owe_hue</l>      for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
-  2.	<e><p><l>we_rahanA_hE</l>  as <e><p><l>owe_rahanA_hE</l> for tam:we_rahanA_hE  (Suggested by Sriram 21-06-11)
-  3.	In case of Apa/__p paradigm modified the pattern from GPN to GNP in case of parsarg:kA	
-  4.	<e lm="saMkalpanA"><i>saMkalpan</i><par n="regular__adj-noun"/></e> 
-				 as  
-        <e lm="saMkalpanA"><i>saMkalpanA</i><par n="ASA/__n"/></e>	(Suggested by Rajini (11-02-12))
-  5.    Modified dictionary file to avoid generation of one form . Ex:  kiye/kie. 
+	<e lm="jyAxA"><i>jyAx</i><par n="jyAx/A__adj"/></e>
+  6.	<e lm="PotogrAPara"><i>PotogrAPara</i><par n="kroXa/__n"/></e>  (Modified by Roja,Suggested by Meena(18-02-12
+  7.	<e lm="vAlI"><i>vAl</i><par n="ladak/I__n"/></e>        (Modified by Roja , Suggested by Meena(18-02-12)
 
  Removed : 
 	  1.  Removed the following parsarg paradigms and its related patterns
@@ -464,11 +469,12 @@ changes in compound_phrase.txt  (samAsa.txt)
 		Ex:  paradigm        : <sdef n="parsarg:ke_sAWa" c="ke_sAWa"/>  
 		     related pattern : <e><p><l>isake_sAWa</l><r>yaha<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke_sAWa"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>
           2.  Removed vAl/A__n paradigm (Suggested by Chaitanya Sir).
-          3.  Removed Generation for following entries::
-	        KAye, KAyI, kiye, huye, uTanA, ASAyeM, kinako   (Modified by Roja , Suggested by Meena(18-02-12
-        	Removed vAl/A__n paradigm.      (Modified by Roja , Suggested by Meena(18-02-12
-	        <e lm="PotogrAPara"><i>PotogrAPara</i><par n="kroXa/__n"/></e>  (Modified by Roja,Suggested by Meena(18-02-12
-        	<e lm="vAlI"><i>vAl</i><par n="ladak/I__n"/></e>        (Modified by Roja , Suggested by Meena(18-02-12
+          3.  Removed Generation for following entries:: (Modified by Roja , Suggested by Meena(18-02-12
+	        KAye, KAyI, kiye, huye, uTanA, ASAyeM, kinako, KAyeM, KAyIM , KAyega, KAyeMge, KAyegI, KAyeMgI,
+		kariye, liye, huyI, huyIM, KoyI, Koye, rakanA, gayI, jisako, jinako, kisako, use, unheM,
+		muJako, hamako, 
+	  4.  Removed  <e lm="keSa"><i>keS</i><par n="Gar/a__n"/></e> (Suggested by Chaitanya Sir 04-04-12)
+
 
  Changes in apertium-en-hi.en.metadix 
  =====================================

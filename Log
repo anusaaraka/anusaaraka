@@ -3370,7 +3370,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  45. Updated changes_in_databases
  46. Updated Log
 
- 04-04-12
+ 05-04-12
  ========
  1. Created directories 'original_files' and 'removed_files' in anu_testing/miscellaneous/Programs
       i) Moved all the files from anu_testing/miscellaneous/Programs to anu_testing/miscellaneous/Programs/removed_files
@@ -3384,4 +3384,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  6. Added new file converting-dic-to-smt_format.c (for SMT purpose)
  7. Updated miscellaneous/std_tregex/README.
  8. Added compilation part for converting-dic-to-smt_format.c in anu_compile.sh and anu_compile_64bit.sh.
- 9. Updated Log.
+ 9. Modified FinalGenerate.pl to handle words having "_" in b/w them. Ex: harA_BarA
+10. Replaced wordnet dir inside miscellaneous/Dictionaries.
+11. Modified paper.clp
+12. Modified ber_ver_output, link_ver_output, ol_ver_output, sd_ver_output and verified_output
+13. Modified apertium_hn.dix to handle patterns which have multiple generations.
+14. Modified and updated changes_in_databses.
+15. Updated Stanford_parser_fails.
+16. Removed one sentence from sd_verified.
+17. Updated Log.

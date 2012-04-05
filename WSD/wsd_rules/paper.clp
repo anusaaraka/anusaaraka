@@ -19,10 +19,10 @@
 (bind ?word (string-to-field (sub-string 1 (- ?len 2) ?wrd)))
 (if(or(eq ?wrd sunday)(eq ?wrd monday)(eq ?wrd tuesday)(eq ?wrd wednesday)(eq ?wrd thursday)(eq ?wrd friday)(eq ?wrd saturday)(eq ?wrd daily)(eq ?wrd evening)(eq ?wrd local)(eq ?wrd national)(eq ?wrd monthly)(eq ?wrd weekly))then
 (if (eq ?cat preposition) then 
-(assert (id-wsd_root_mng ?id ke_samAcAra_pawra))
+(assert (id-wsd_root_mng ?id kA_samAcAra_pawra)) ;Modified meaning from "kA_samAcAra_pawra" to "ke_samAcAra_pawra" by Roja(04-04-12)
 (retract ?mng)
     (if ?*debug_flag* then
-    (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  paper.clp       paper0  " ?id "  ke_samAcAra_pawra )" crlf)))
+    (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  paper.clp       paper0  " ?id "  kA_samAcAra_pawra )" crlf)))
 else  
 (if(or(eq ?word today)(eq ?word tomorrow)(eq ?word yesterday))then
 (assert (id-wsd_root_mng ?id samAcAra_pawra))
