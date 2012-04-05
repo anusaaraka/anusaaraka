@@ -14,6 +14,8 @@
 	3. shallow_parser_output === 	test_shallow_output
 	4. wx_output		 ===	test_wx_output	
 
+  (Note :  These files are in SMT/dump )
+
   To run alignment for SMT
    ========================
 	Anusaaraka_stanford_SMT.sh <file-name> <parse_no> <sand_box_option> < manual_hin_sen> < shallow_parser_output> < wx_output>
