@@ -3396,7 +3396,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 16. get_man_grp_mng.clp
         Added   : modify_wrd_mng_for_VP_kriyAmUla, get_grp_info
         Removed : get_verb_info, get_NP_mng
-17. Added add-suf-into-chunks.py -- to get suf in the group from shallow parser output
+17. Added
+	 add-suf-into-chunks.py -- to get suf in the group from shallow parser output
+ 	 test_hi_sent , test_sent, test_shallow_output, test_wx_output  --- for testing SMT
 18. Modified Anusaaraka_stanford_SMT.sh to run the above python program
 19. Added miscellaneous/SMT/alignment/README , miscellaneous/SMT/dump/wx_output  
 20. Updated the following files
