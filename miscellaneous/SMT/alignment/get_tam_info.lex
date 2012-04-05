@@ -5,7 +5,7 @@ int len=0,comma_cnt=0,len1=0;
 char id[100],node[20],root[100],cat[20],gen[20],num[20],per[20],cas[20],tam[50],new_tam[50],*t,new_text[100];
 %}
 %%
-[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9_,+]*'[ ]head=\"[a-zA-Z,._]*\"[ ]vpos=\"[a-z0-9_]*\">  {
+[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9_,+]*'[ ]head=\"[a-zA-Z,._0-9]*\"[ ]vpos=\"[a-z0-9_]*\">  {
 					comma_cnt = 0;
 					len = strcspn(yytext,"\t");
                                         strncpy(id,yytext,len);
@@ -38,7 +38,7 @@ char id[100],node[20],root[100],cat[20],gen[20],num[20],per[20],cas[20],tam[50],
 		fprintf(fp,"(id-node-root-cat-gen-num-per-case-tam %s %s %s %s %s %s %s %s %s)\n",id,node,root,cat,gen,num,per,cas,new_tam);
 		*id='\0';*root='\0';*node='\0';*cat='\0';*gen='\0';*num='\0';*per='\0';*cas='\0';*tam='\0';*new_tam='\0';*t='\0';
 		}
-[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9_,+]*'[ ]head=\"[A-Za-z,._]*\"> { comma_cnt = 0;
+[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9_,+]*'[ ]head=\"[A-Za-z,._0-9]*\"> { comma_cnt = 0;
                                         len = strcspn(yytext,"\t");
                                         strncpy(id,yytext,len);
                                         id[len]='\0';
@@ -102,7 +102,7 @@ char id[100],node[20],root[100],cat[20],gen[20],num[20],per[20],cas[20],tam[50],
  *id='\0';*root='\0';*node='\0';*cat='\0';*gen='\0';*num='\0';*per='\0';*cas='\0';*tam='\0';*new_tam='\0';*t='\0';
 }
 
-[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9_,+]*'[ ]poslcat=\"[A-Z]*\"[ ]head=\"[a-zA-Z_,.]*\"> {
+[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9_,+]*'[ ]poslcat=\"[A-Z]*\"[ ]head=\"[a-zA-Z_,.0-9]*\"> {
   comma_cnt = 0;
                                         len = strcspn(yytext,"\t");
                                         strncpy(id,yytext,len);

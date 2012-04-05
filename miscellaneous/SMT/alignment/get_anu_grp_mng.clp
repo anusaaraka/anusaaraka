@@ -13,6 +13,7 @@
         (bind ?mng (string-to-field (sub-string (+ ?index 1) (length ?mng) ?mng)))
         (assert (id-HM-source ?id ?mng Original_word))
  )
+ ;-------------------------------------------------------------------------------------------------
  (defrule delete@in_aper_out
  (declare (salience 20))
  ?f0<-(id-Apertium_output ?id ?mng $?w)
@@ -24,7 +25,7 @@
         (bind ?mng (string-to-field (sub-string (+ ?index 1) (length ?mng) ?mng)))
         (assert (id-Apertium_output ?id ?mng $?w))
  )
-
+ ;-------------------------------------------------------------------------------------------------
  (defrule get_dummy_fact_Verb
  (declare (salience 10))
  (pada_info (group_head_id ?h)(group_cat VP)(group_ids $?ids)(H_tam ?tam))
@@ -32,7 +33,7 @@
  =>
 	(assert (anu_id-node-word-root-tam ?h VP $?ids - ?root - ?tam))
  )
-
+ ;-------------------------------------------------------------------------------------------------
  (defrule get_dummy_fact
  (declare (salience 9))
  (pada_info (group_head_id ?h)(group_cat ?node)(group_ids $?ids)(vibakthi ?tam))
@@ -41,21 +42,7 @@
  =>
         (assert (anu_id-node-word-root-tam ?h ?node $?ids - ?root - ?tam))
  )
-
- ;Young children are taken to the temples and are introduced to the letters of the alphabet in front of saraswati, the goddess of wisdom and learning.
- (defrule modify_AND_head
- (declare (salience 7))
- ?f1<-(anu_id-node-word-root-tam ?h ?node $?ids ?id - ?root - ?tam)
- (id-HM-source ?h Ora  ?)
- (id-HM-source ?id ?mng ?)
- (test (neq (length $?ids) 0))
- (not (modified_and_id ?h))
- =>
-	(retract ?f1)
-	(assert (anu_id-node-word-root-tam ?h ?node $?ids ?id - ?mng - ?tam))
-	(assert (modified_and_id ?h))
- )
-
+ ;-------------------------------------------------------------------------------------------------
  (defrule get_grp_mng
  (declare (salience 5))
  ?f<-(id-Apertium_output ?id $?mng) 
@@ -64,10 +51,12 @@
 	(retract ?f1)
         (assert (anu_id-node-word-root-tam ?h ?node $?pre $?mng $?pos - ?root - ?tam))
  )
- 
+ ;-------------------------------------------------------------------------------------------------
  (defrule print_grp_mng
  ?f0<-(anu_id-node-word-root-tam ?id ?node $?mng)
  =>
 	(retract ?f0)
 	(printout ?*aper_fp* "(anu_id-node-word-root-tam   " ?id"   "?node"   "(implode$ $?mng)")" crlf)
  )
+ ;-------------------------------------------------------------------------------------------------
+

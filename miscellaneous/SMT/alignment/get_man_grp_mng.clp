@@ -30,49 +30,30 @@
         (assert (manual_id-left_punc ?id ?punc))
  )
 
-  
- (defrule get_verb_info
+ ;The area has got the digamber jain temple which houses the birds hospital.
+ (defrule modify_wrd_mng_for_VP_kriyAmUla
+ (declare (salience 90))
+ ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN kara ?cat ?g ?no ?p ?c ?suf)
+ ?f0<-(position-cat-man_grp_mng   ?id ?node	$?word	- -)
+?f1<-(id-node-root-cat-gen-num-per-case-tam =(- ?id 1) ?n ?r ? ? ? ? ? ?)
+ ?f2<-(position-cat-man_grp_mng =(- ?id 1) ?n $?word1 - -)
+ (not (modified_word_id ?id))
+ =>
+	(retract ?f ?f0 ?f1 ?f2)
+	(bind ?root (string-to-field (str-cat ?r"_kara")))
+	(assert (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ?g ?no ?p ?c ?suf))
+	(assert (position-cat-man_grp_mng   ?id ?node $?word1 $?word  - -))
+	(assert (modified_word_id ?id))
+ )
+
+ (defrule get_grp_info
  (declare (salience 50))
- (id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN ?root ?cat ? ? ? ? ?tam)
+ (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ? ? ? ? ?suf)
  (position-cat-man_grp_mng    ?id ?node $?wrd_mng ? ?)
  =>
-	(assert (manual_id-node-word-root-tam ?id ?node $?wrd_mng - ?root - ?tam ))
-	(assert (id_decided ?id))
- )
-
-  ;imArawa n f pl 3 o 0_kA)
- (defrule get_NP_mng
- (declare (salience 40))
- (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ?g ?n ?p ?c ?vib)
- ?f0<-(position-cat-man_grp_mng  ?id  ?node $?grp_mng - -)
- (not (id_decided ?id))
- =>
-        (retract ?f0)
-	(assert (manual_id-node-word-root-tam ?id ?node $?grp_mng - ?root - ?vib))
+	(assert (manual_id-node-word-root-tam ?id ?node $?wrd_mng - ?root - ?suf ))
  )
  
- ;Apa pn f sg any d kA)
-; (defrule get_NP_mng1
-; (declare (salience 40))
-; (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ?g ?n ?p ?c ?vib&~0&~-)
-; ?f0<-(position-cat-man_grp_mng  ?id  ?node $?grp_mng - -)
-; (not (id_decided ?id))
-; =>
-;        (retract ?f0)
-;;        (assert (position-cat-man_grp_mng  ?id  ?node $?grp_mng - $?grp_mng ?vib) )
-;	(assert (manual_id-node-word-root-tam ?id ?node $?grp_mng  - ?root - ?vib))
-; )
-
-; (defrule default_rule
-; (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ?g ?n ?p ?c ?vib&0|-|any)
-; ?f0<-(position-cat-man_grp_mng  ?id  ?node $?grp_mng - -)
-; =>
-;        (retract ?f0)
-; ;       (assert (position-cat-man_grp_mng   ?id  ?node $?grp_mng - $?grp_mng))
-;	(assert (manual_id-node-word-root-tam ?id ?node $?grp_mng - ?root - ?vib))
-; )
-;
-
  (defrule print_man_grp_mng
  (declare (salience -10))
  ?f0<-(manual_id-node-word-root-tam  ?id  ?node $?d)
@@ -80,13 +61,4 @@
 	(retract ?f0 )
 	(printout ?*vb_file* "(manual_id-node-word-root-tam  " ?id "   "?node"   "(implode$ $?d) ")" crlf)
  )
-
-;(defrule default_rule
-;(declare (salience -10))
-;?f0<-(position-cat-man_grp_mng  ?id  ?node $?grp_mng - 0|-|any)
-;=>
-;        (retract ?f0)
-;        (assert (position-cat-man_grp_mng   ?id  ?node $?grp_mng - $?grp_mng))
-;)
-
 

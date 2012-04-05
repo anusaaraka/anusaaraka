@@ -9774,7 +9774,7 @@ crushing_season	perAWa_mOsama#perAWa_mOsama#noun#2#RM
 cryogenic_storage	nimnawApa_BaMdAraNa#nimnawApa_BaMdAraNa#noun#2#RM
 cryptographic_algorithm	guDZAleKI_elgoriWma#guDZAleKI_elgoriWma#noun#2#RM
 cryptographic_principle	kriptogrAPika_sixXAnwa#kriptogrAPika_sixXAnwa#noun#2#RM
-crystal_clear	susaWaupaRta#susaWaupaRta#noun#2#RM
+crystal_clear	suspaRta#suspaRta#noun#2#RM
 crystal_gazing	BaviRyavANI_karane_kA_aByAsa#BaviRyavANI_karane_kA_aByAsa#noun#2#RM
 csma\	csma\#csma\#2#RM
 csma\	csma\#csma\#2#RM

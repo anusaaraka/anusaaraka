@@ -23,7 +23,7 @@
 sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id_Apertium_output.dat
 
  cd $MYPATH/$1_tmp/$2
-
+ sh $HOME_anu_test/Anu_src/comp.sh $HOME_anu_test/miscellaneous/SMT/alignment/get_tam_info
  sh $HOME_anu_test/miscellaneous/SMT/alignment/get_group_mng.sh shallow_parser_output.dat
  $HOME_anu_test/miscellaneous/SMT/alignment/get_tam_info.out shallow_parser_GNP_info.dat < shallow_parser_output.dat > /dev/null
 
@@ -49,17 +49,9 @@ sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id
  echo ")" >> hindi_sentence_SMT_tmp.dat
  sed 's/&/\&amp;/g' hindi_sentence_SMT_tmp.dat|sed -e s/\'/\\\'/g |sed 's/\"/\&quot;/g'  >hindi_sentence_SMT.dat
 
-
-# echo "(hin_sen " > manual_hin_sen_SMT_tmp.dat
-# cat manual_hindi_sen.dat >> manual_hin_sen_SMT_tmp.dat
-# echo ")" >> manual_hin_sen_SMT_tmp.dat
-# sed 's/&/\&amp;/g' manual_hin_sen_SMT_tmp.dat|sed -e s/\'/\\\'/g |sed 's/\"/\&quot;/g'  >manual_hin_sen_SMT.dat
-
  grep -B2 "FALSE" $1.error >> errors.txt
  cat errors.txt
 
-# sh $HOME_anu_test/miscellaneous/SMT/get_group_mng.sh shallow_parser_output.dat
-# $HOME_anu_test/miscellaneous/SMT/get_tam_info.out shallow_parser_GNP_info.dat < shallow_parser_output.dat > /dev/null 
 
  #for sentence by sent analysis for web debugging tutorial
 # cat English_sentence.dat >> $MYPATH/$1_tmp/sent-by-sent

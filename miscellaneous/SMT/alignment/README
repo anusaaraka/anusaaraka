@@ -1,0 +1,8 @@
+   To run alignment for SMT
+   ========================
+	Anusaaraka_stanford_SMT.sh <file-nae> <parse_no> <sand_box option> < manual_hin_sen> < shallow_parser_output> < wx_output>
+
+  	Ex  :	Anusaaraka_stanford_SMT.sh smt 1 false hi shallow_output wx_output
+
+  File name to check for alignment is   :   alignment.dat
+  ===================================

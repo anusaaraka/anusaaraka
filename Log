@@ -3389,7 +3389,20 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 11. Modified paper.clp
 12. Modified ber_ver_output, link_ver_output, ol_ver_output, sd_ver_output and verified_output
 13. Modified apertium_hn.dix to handle patterns which have multiple generations.
-14. Modified and updated changes_in_databses.
-15. Updated Stanford_parser_fails.
-16. Removed one sentence from sd_verified.
-17. Updated Log.
+14. alignment.clp
+        Removed : modify_wrd_mng_for_VP, deffunction get_tam_info
+        Modified : Modified all the rules to remove function
+15. Removed "modify_AND_head" rule in get_anu_grp_mng.clp
+16. get_man_grp_mng.clp
+        Added   : modify_wrd_mng_for_VP_kriyAmUla, get_grp_info
+        Removed : get_verb_info, get_NP_mng
+17. Added add-suf-into-chunks.py -- to get suf in the group from shallow parser output
+18. Modified Anusaaraka_stanford_SMT.sh to run the above python program
+19. Added miscellaneous/SMT/alignment/README   
+20. Updated the following files
+        get_group_mng.sh, run_H_gen_SMT.bat, run_sentence_stanford_SMT.sh, get_tam_info.lex, cln-train.hi and
+        cln-train.hi.out
+21. Modified and updated changes_in_databses.
+22. Updated Stanford_parser_fails.
+23. Removed one sentence from sd_verified.
+24. Updated Log.
