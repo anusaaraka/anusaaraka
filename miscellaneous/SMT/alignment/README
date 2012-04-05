@@ -1,4 +1,13 @@
-   To run alignment for SMT
+  Required files
+  ==============
+	1. Shallow parser output File  ---- cln-train.hi.out
+	2. Manual hindi sentences File ---- cln-train.hi
+	3. Wx_output File	       ---- wx_output
+	4. Original sentences File     ---- cln-train_h_ordr.en_detoken
+
+   (Note : These files are in SMT/dump)
+
+  To run alignment for SMT
    ========================
 	Anusaaraka_stanford_SMT.sh <file-nae> <parse_no> <sand_box option> < manual_hin_sen> < shallow_parser_output> < wx_output>
 
@@ -6,3 +15,5 @@
 
   File name to check for alignment is   :   alignment.dat
   ===================================
+
+ 
