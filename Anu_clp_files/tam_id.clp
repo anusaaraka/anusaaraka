@@ -1,15 +1,15 @@
  (defglobal ?*tam_id_file* = tam_id_fp)
  (deftemplate word-morph(slot original_word)(slot morph_word)(slot root)(slot category)(slot suffix)(slot number))
 
-(deffacts dummy_facts 
- (missing-level-id) 
- (id-original_word)
- (root-verbchunk-tam-chunkids)
- (verb_type-verb-causative_verb-tam)
- (verb_type-verb-kriyA_mUla-tam)
- (id-root-category-suffix-number)
- (meaning_to_be_decided)
-)
+ (deffunction never-called ()
+ (assert (missing-level-id) )
+ (assert (id-original_word))
+ (assert (root-verbchunk-tam-chunkids))
+ (assert (verb_type-verb-causative_verb-tam))
+ (assert (verb_type-verb-kriyA_mUla-tam))
+ (assert (id-root-category-suffix-number))
+ (assert (meaning_to_be_decided))
+ )
 ;------------------------------------------------------------------------------------------------------------------
 (defrule dont_load_chunkids
 (declare (salience 950))

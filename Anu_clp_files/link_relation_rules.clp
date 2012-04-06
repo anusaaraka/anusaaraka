@@ -11,17 +11,17 @@
  (deffunction my_string_cmp> (?a ?b)
   (> (str-compare ?a ?b) 0))
  ;------------------------------------------------------------------------------------------------------------------
- (deffacts dummy_facts 
- (missing-level-id) 
- (id-original_word)
- (verb_type-verb-causative_verb-tam)
- (verb_type-verb-kriyA_mUla-tam)
- (No complete linkages found)
- (link_name-link_expansion)
- (link_name-link_lnode-link_rnode)
- (root-verbchunk-tam-parser_chunkids)
- (lwg_root-verbchunk-tam-chunkids)
- (link_id-root)
+ (deffunction never-called ()
+ (assert (missing-level-id) )
+ (assert (id-original_word))
+ (assert (verb_type-verb-causative_verb-tam))
+ (assert (verb_type-verb-kriyA_mUla-tam))
+ (assert (No complete linkages found))
+ (assert (link_name-link_expansion))
+ (assert (link_name-link_lnode-link_rnode))
+ (assert (root-verbchunk-tam-parser_chunkids))
+ (assert (lwg_root-verbchunk-tam-chunkids))
+ (assert (link_id-root))
  )
  ;----------------------------------------------------------------------------------------------------------------
  (defrule end

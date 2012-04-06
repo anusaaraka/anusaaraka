@@ -1,14 +1,14 @@
  (defglobal ?*gen-file*  = gen_fp)
 
- (deffacts dummy_facts
- (id-inserted_sub_id)
- (missing-level-id) 
- (id-original_word)
- (id-HM-source)
- (meaning_to_be_decided)
- (id-original_word)
- (id-cat_coarse)
- (id-cat)
+ (deffunction never-called ()
+ (assert (id-inserted_sub_id))
+ (assert (missing-level-id) )
+ (assert (id-original_word))
+ (assert (id-HM-source))
+ (assert (meaning_to_be_decided))
+ (assert (id-original_word))
+ (assert (id-cat_coarse))
+ (assert (id-cat))
  )
  ;----------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju(29-03-11)

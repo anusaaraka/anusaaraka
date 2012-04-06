@@ -7,14 +7,14 @@
  (defglobal ?*hmng_fp* = hmng_fp)
  (defglobal ?*list* = (create$ ))
 
- (deffacts dummy_sd_rel_info
- (parserid-word)
- (parserid-wordid)
- (id-cat)
- (propogation_rel_name-sids)
- (rel_name-sids)
- (root-verbchunk-tam-parser_chunkids)
- (lwg_root-verbchunk-tam-chunkids)
+ (deffunction never-called ()
+ (assert (parserid-word))
+ (assert (parserid-wordid))
+ (assert (id-cat))
+ (assert (propogation_rel_name-sids))
+ (assert (rel_name-sids))
+ (assert (root-verbchunk-tam-parser_chunkids))
+ (assert (lwg_root-verbchunk-tam-chunkids))
  )
  
 
@@ -1006,6 +1006,7 @@ else
 (rel_name-sids  rcmod   ?vi  ?rv)
 (not (got_viSeRya-jo_samAnAXikaraNa  ?vi))
 (not (rel_name-sids  rel   ?rv  ?))
+(not (rel_name-sids  advmod   ?rv  ?))
 =>
     (printout       ?*fp*   "(prep_id-relation-parser_ids  -   viSeRya-jo_samAnAXikaraNa       "?vi"   10000)"crlf)
     (printout       ?*dbug*    "(prep_id-Rule-Rel-ids  -   insert-which1  viSeRya-jo_samAnAXikaraNa      "?vi"    10000)"crlf)

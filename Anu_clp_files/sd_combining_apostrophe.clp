@@ -1,11 +1,11 @@
- (deffacts dummy_sd_com_apos_facts
- (parser_numeric_id-word)
- (parserid-word)
- (id-word)
- (rel_name-sids)
- (id-sd_cat)
- (Head-Level-Mother-Daughters)
- (Node-Category)
+ (deffunction never-called ()
+ (assert (parser_numeric_id-word))
+ (assert (parserid-word))
+ (assert (id-word))
+ (assert (rel_name-sids))
+ (assert (id-sd_cat))
+ (assert (Head-Level-Mother-Daughters))
+ (assert (Node-Category))
  )
  
 

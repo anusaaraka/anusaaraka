@@ -21,12 +21,12 @@
  (deftemplate word-morph(slot original_word)(slot morph_word)(slot root)(slot category)(slot suffix)(slot number))
 
 
- (deffacts dummy_facts 
- (id-word)
- (id-last_word)
- (parserid-wordid)
- (ol_res_id-word_id-word)
- (current_id-group_members)
+ (deffunction never-called ()
+ (assert (id-word))
+ (assert (id-last_word))
+ (assert (parserid-wordid))
+ (assert (ol_res_id-word_id-word))
+ (assert (current_id-group_members))
  )
 
 ;=======================================================================================================================

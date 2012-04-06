@@ -2,17 +2,17 @@
  (defglobal ?*lwg-diff-file* = lwg_diff_fp)
  (defglobal ?*revised-lwg-file* = revised_lwg_fp)
  
- (deffacts dummy_facts 
- (missing-level-id) 
- (id-original_word)
- (id-last_word )
- (root-verbchunk-tam-parser_chunkids)
- (parserid-wordid )
- (lwg_root-verbchunk-tam-chunkids)
- (verb_type-verb-causative_verb-tam)
- (verb_type-verb-kriyA_mUla-tam)
- (link_name-link_lnode-link_rnode)
- (id-word)
+ (deffunction never-called ()
+ (assert (missing-level-id) )
+ (assert (id-original_word))
+ (assert (id-last_word ))
+ (assert (root-verbchunk-tam-parser_chunkids))
+ (assert (parserid-wordid ))
+ (assert (lwg_root-verbchunk-tam-chunkids))
+ (assert (verb_type-verb-causative_verb-tam))
+ (assert (verb_type-verb-kriyA_mUla-tam))
+ (assert (link_name-link_lnode-link_rnode))
+ (assert (id-word))
  )
  ;-----------------------------------------------------------------------------------------------------------------
  (defrule lwg_idiom_rule

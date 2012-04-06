@@ -1,15 +1,15 @@
  (defglobal ?*ol_rel_fp* = ol_rel )
  (defglobal ?*ol_lwg_f* = ol_lwg_fp )
  
- (deffacts dummy_facts
- (parser_id-root)
- (verb_type-verb-causative_verb-tam)
- (prep_id-relation-parser_ids )
- (ol_res_id-word_id-word)
- (root-verbchunk-tam-parser_chunkids)
- (current_id-group_members)
- (addition-level-word-sid)
- (split_tranlevel-ptype-headid-grpids)
+ (deffunction never-called ()
+ (assert (parser_id-root))
+ (assert (verb_type-verb-causative_verb-tam))
+ (assert (prep_id-relation-parser_ids ))
+ (assert (ol_res_id-word_id-word))
+ (assert (root-verbchunk-tam-parser_chunkids))
+ (assert (current_id-group_members))
+ (assert (addition-level-word-sid))
+ (assert (split_tranlevel-ptype-headid-grpids))
  )
  ;---------------------------------------------------------------------------------------------------------
  ;;I am quite excited about next week. 

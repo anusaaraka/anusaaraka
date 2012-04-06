@@ -1,9 +1,9 @@
  (defglobal ?*link_map* = link_word_fp)
 
- (deffacts dummy_linkid_id_mapping
- (id-original_word)
- (parser_numid-word-remark)
- (No complete linkages found)
+ (deffunction never-called ()
+ (assert (id-original_word))
+ (assert (parser_numid-word-remark))
+ (assert (No complete linkages found))
  )
  ;--------------------------------------------------------------------------------------------------------------------
  (defrule end

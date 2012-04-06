@@ -17,15 +17,15 @@
 
  (defglobal ?*paxasUwra_fp* = paxasUwra_fp)
 
- (deffacts dummy_facts
- (id-inserted_sub_id) 
- (id-last_word)
- (id-word)
- (id-cat)
- (id-cat_coarse)
- (id-original_word)
- (id-HM-source)
- (id-root)
+ (deffunction never-called ()
+ (assert (id-inserted_sub_id) )
+ (assert (id-last_word))
+ (assert (id-word))
+ (assert (id-cat))
+ (assert (id-cat_coarse))
+ (assert (id-original_word))
+ (assert (id-HM-source))
+ (assert (id-root))
  )
  ;----------------------------------------------------------------------------------------------------  
  ;Added by Shirisha Manju (17-12-10)

@@ -1,11 +1,11 @@
  (defglobal ?*cat_fp* = cat_fp)
 
- (deffacts cat_info
- (id-cat)
- (id-cat_coarse)
- (parserid-wordid)
- (parser_id-cat_coarse)
- (No complete linkages found)
+ (deffunction never-called ()
+ (assert (id-cat))
+ (assert (id-cat_coarse))
+ (assert (parserid-wordid))
+ (assert (parser_id-cat_coarse))
+ (assert (No complete linkages found))
  )
  ;-----------------------------------------------------------------------------------------------------------------
  ;POS fine cat
