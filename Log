@@ -3370,7 +3370,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  45. Updated changes_in_databases
  46. Updated Log
 
- 05-04-12
+ 06-04-12
  ========
  1. Created directories 'original_files' and 'removed_files' in anu_testing/miscellaneous/Programs
       i) Moved all the files from anu_testing/miscellaneous/Programs to anu_testing/miscellaneous/Programs/removed_files
@@ -3381,30 +3381,29 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  5. Added src dir inside miscellaneous/Dictionaries/iit-bombay/ and moved following files into src/
 	comp.sh		iit-bombay.txt		iit-bombay.txt1  
 	Ontology.lex	2011_01_31_Ontology_Developed_by_IIT-B_384.doc
- 6. Added new file converting-dic-to-smt_format.c (for SMT purpose)
- 7. Updated miscellaneous/std_tregex/README.
- 8. Added compilation part for converting-dic-to-smt_format.c in anu_compile.sh and anu_compile_64bit.sh.
- 9. Modified FinalGenerate.pl to handle words having "_" in b/w them. Ex: harA_BarA
-10. Replaced wordnet dir inside miscellaneous/Dictionaries.
-11. Modified paper.clp
-12. Modified ber_ver_output, link_ver_output, ol_ver_output, sd_ver_output and verified_output
-13. Modified apertium_hn.dix to handle patterns which have multiple generations.
-14. alignment.clp
+ 6. Updated miscellaneous/std_tregex/README.
+ 7. Modified FinalGenerate.pl to handle words having "_" in b/w them. Ex: harA_BarA
+ 8. Replaced wordnet dir inside miscellaneous/Dictionaries.
+ 9. Modified paper.clp
+ 10. Modified ber_ver_output, link_ver_output, ol_ver_output, sd_ver_output and verified_output
+ 11. Modified apertium_hn.dix to handle patterns which have multiple generations.
+ 12. alignment.clp
         Removed : modify_wrd_mng_for_VP, deffunction get_tam_info
         Modified : Modified all the rules to remove function
-15. Removed "modify_AND_head" rule in get_anu_grp_mng.clp
-16. get_man_grp_mng.clp
+ 13. Removed "modify_AND_head" rule in get_anu_grp_mng.clp
+ 14. get_man_grp_mng.clp
         Added   : modify_wrd_mng_for_VP_kriyAmUla, get_grp_info
         Removed : get_verb_info, get_NP_mng
-17. Added
+ 15. Added
 	 add-suf-into-chunks.py -- to get suf in the group from shallow parser output
  	 test_hi_sent , test_sent, test_shallow_output, test_wx_output  --- for testing SMT
-18. Modified Anusaaraka_stanford_SMT.sh to run the above python program
-19. Added miscellaneous/SMT/alignment/README , miscellaneous/SMT/dump/wx_output  
-20. Updated the following files
+ 16. Modified Anusaaraka_stanford_SMT.sh to run the above python program
+ 17. Added miscellaneous/SMT/alignment/README , miscellaneous/SMT/dump/wx_output  
+ 18. Updated the following files
         get_group_mng.sh, run_H_gen_SMT.bat, run_sentence_stanford_SMT.sh, get_tam_info.lex, cln-train.hi and
         cln-train.hi.out  cln-train_h_ordr.en_detoken
-21. Modified and updated changes_in_databses.
-22. Updated Stanford_parser_fails.
-23. Removed one sentence from sd_verified.
-24. Updated Log.
+ 19. Modified converting-dic-format.c program to generate dictionary file for SMT purpose and updated anu_compile.sh anu_compile_64.sh files accordingly.
+ 20. Modified and updated changes_in_databses.
+ 21. Updated Stanford_parser_fails.
+ 22. Removed one sentence from sd_verified.
+ 23. Updated Log.
