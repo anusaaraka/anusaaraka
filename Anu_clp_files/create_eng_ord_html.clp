@@ -122,7 +122,7 @@
  (if (eq ?def_mng -) then
  (printout fp "<td class=\""?chnk_fr_htm"\">  -  </td>" crlf "</tr>" crlf)
  else
- (printout fp "<td class=\""?chnk_fr_htm"\" > <a class=\"tooltip\" href=\"#\">"(wx_utf8 ?def_mng)"<span>"?mng1"</span></a>"" </td>" crlf "</tr>" crlf))
+ (printout fp "<td class=\""?chnk_fr_htm"\" > <a class=\"tooltip\" href=\"#\">"?def_mng"<span>"?mng1"</span></a>"" </td>" crlf "</tr>" crlf))
  )
 
 

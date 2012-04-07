@@ -3404,7 +3404,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         cln-train.hi.out  cln-train_h_ordr.en_detoken
  19. Modified converting-dic-format.c program to generate dictionary file for SMT purpose and updated anu_compile.sh anu_compile_64.sh files accordingly.
  20. Removed all the dummy deffact function in all the .bclp files and handled it using deffunction  [deffunction never-called()].
- 21. Modified and updated changes_in_databses.
- 22. Updated Stanford_parser_fails.
- 23. Removed one sentence from sd_verified.
- 24. Updated Log.
+ 21. Updated create_eng_ord_html.clp file
+ 22. Updated Anu_outputs/Stanford_parser_fails   file.
+ 23. Added debug information in alignment.clp file and accordingly run_H_gen_SMT.bat file has been updated
+ 24. Modified and updated changes_in_databses.
+ 25. Updated Stanford_parser_fails.
+ 26. Removed one sentence from sd_verified.
+ 27. Updated Log.

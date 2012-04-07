@@ -1,3 +1,5 @@
+(defglobal ?*alg_file* = alig_fp)
+
 (defrule same_grp_mng
 (declare (salience 110))
 ?f<-(manual_id-node-word-root-tam ?m_id ? $?grp_mng - ? - ?)
@@ -7,6 +9,7 @@
         (retract ?f0 ?f ?f1)
         (assert (anu_id-manual_id-anu_grp_mng-man_grp_mng  ?a_id ?m_id $?grp_mng - $?grp_mng))
         (assert (manual_hin_sen $?pre $?post))
+        (printout ?*alg_file* "(mid-aid-r_name-agm-mgm	"?a_id" "?m_id" same_grp_mng "$?grp_mng" "$?grp_mng")" crlf)
 )
 ;--------------------------------------------------------------------------------
 (defrule vb_exact_mng
@@ -18,6 +21,7 @@
 	(retract ?f0 ?f ?f1)
 	(assert (anu_id-manual_id-anu_grp_mng-man_grp_mng  ?a_id ?m_id $?w1 - $?w))
         (assert (manual_hin_sen $?pre $?post))
+        (printout ?*alg_file* "(mid-aid-r_name-agm-mgm	"?a_id" "?m_id" vb_exact_mng "$?w1" "$?w")" crlf)
 )
 ;--------------------------------------------------------------------------------
 (defrule vb_with_same_tam
@@ -29,6 +33,7 @@
 	(retract ?f0 ?f ?f1)
 	(assert (anu_id-manual_id-anu_grp_mng-man_grp_mng  ?a_id ?m_id $?w1 - $?word))
         (assert (manual_hin_sen $?pre $?post))
+        (printout ?*alg_file* "(mid-aid-r_name-agm-mgm	"?a_id" "?m_id" vb_with_same_tam "$?w1" "$?word")" crlf)
 )
 ;--------------------------------------------------------------------------------
 (defrule vb_with_same_root
@@ -40,6 +45,7 @@
 	(retract ?f0 ?f ?f1)
 	(assert (anu_id-manual_id-anu_grp_mng-man_grp_mng  ?a_id ?m_id $?w1 - $?word))
         (assert (manual_hin_sen $?pre $?post))
+        (printout ?*alg_file* "(mid-aid-r_name-agm-mgm	"?a_id" "?m_id" vb_with_same_root "$?w1" "$?word")" crlf)
 ) 
 ;--------------------------------------------------------------------------------
 ;Young children are taken to the temples and are introduced to the letters of the alphabet in front of saraswati, the goddess of wisdom and learning.
@@ -52,6 +58,7 @@
         (retract ?f0 ?f ?f1)
 	(assert (anu_id-manual_id-anu_grp_mng-man_grp_mng  ?a_id ?m_id $?w1 - $?word))
         (assert (manual_hin_sen $?pre $?post))
+        (printout ?*alg_file* "(mid-aid-r_name-agm-mgm	"?a_id" "?m_id" np_with_same_head "$?w1" "$?word")" crlf)
 )
 ;--------------------------------------------------------------------------------
 (defrule get_wx_match_for_org_wrd_for_head
@@ -65,6 +72,7 @@
         (retract ?f0 ?f ?f1)
 	(assert (anu_id-manual_id-anu_grp_mng-man_grp_mng  ?a_id ?m_id $?w1 - $?word))
         (assert (manual_hin_sen $?pre $?post))
+        (printout ?*alg_file* "(mid-aid-r_name-agm-mgm	"?a_id" "?m_id" get_wx_match_for_org_wrd_for_head "$?w1" "$?word")" crlf)
 )
 ;--------------------------------------------------------------------------------
 (defrule get_Ora_exact_match
@@ -80,6 +88,7 @@
 	(bind $?m_mng (create$ ?w $?word ?v))
         (assert (anu_id-manual_id-anu_grp_mng-man_grp_mng  ?a_id $?a_mng - $?m_mng))
         (assert (manual_hin_sen $?pre $?post))
+        (printout ?*alg_file* "(mid-aid-r_name-agm-mgm	"?a_id" "?m_id" get_Ora_exact_match "$?a_mng" "$?m_mng")" crlf)
 )
 
 ;Places where a tourist can whiz past his worries include gulmarg in jammu and kashmir, auli in grawhal, kufri and narkanda in himachal pradesh.
@@ -97,6 +106,7 @@
         (bind $?m_mng (create$ ?wx $?word ?v))
         (assert (anu_id-manual_id-anu_grp_mng-man_grp_mng  ?a_id ?m_id $?a_mng - $?m_mng))
         (assert (manual_hin_sen $?pre $?post))
+        (printout ?*alg_file* "(mid-aid-r_name-agm-mgm	"?a_id" "?m_id" get_Ora_match1 "$?a_mng" "$?m_mng")" crlf)
 )
 
 ;--------------------------------------------------------------------------------
@@ -127,6 +137,7 @@
         (bind $?m_mng (create$ $?d ?wrd $?d1 ?h $?m ?wrd1 $?m1 ))
 	(assert (manual_hin_sen $?pre $?post))
 	(assert (anu_id-manual_id-anu_grp_mng-man_grp_mng  ?a_id ?m_id $?a_mng - $?m_mng))
+        (printout ?*alg_file* "(mid-aid-r_name-agm-mgm	"?a_id" "?m_id" get_Ora_rt_match "$?a_mng" "$?m_mng")" crlf)
 )
 
 ;Young children are taken to the temples and are introduced to the letters of the alphabet in front of saraswati, the goddess of wisdom and learning. 
@@ -143,6 +154,7 @@
         (bind $?m_mng (create$ ?word ?h $?m ?wrd1 $?m1 ))
         (assert (manual_hin_sen $?pre $?post))
         (assert (anu_id-manual_id-anu_grp_mng-man_grp_mng  ?aid ?mid $?a_mng - $?m_mng))
+        (printout ?*alg_file* "(mid-aid-r_name-agm-mgm	"?aid" "?mid" get_default_Ora_match "$?a_mng" "$?m_mng")" crlf)
 )
 
 (defrule np_with_some_same_mng
@@ -157,6 +169,7 @@
 	(bind $?a_word (create$ $?a ?wrd $?a1))
 	(assert (anu_id-manual_id-anu_grp_mng-man_grp_mng  ?a_id ?m_id $?a_word - $?word))
         (assert (manual_hin_sen $?pre $?post))
+        (printout ?*alg_file* "(mid-aid-r_name-agm-mgm	"?a_id" "?m_id" np_with_some_same_mng "$?a_word" "$?word")" crlf)
 )
 ;--------------------------------------------------------------------------------
 ;Ayodhya during ancient times was known as kaushaldesa.
@@ -173,6 +186,7 @@
 	(bind $?a_word (create$ $?a ?wrd $?a1))
 	(assert (anu_id-manual_id-anu_grp_mng-man_grp_mng  ?a_id ?m_id $?a_word - $?word))
         (assert (manual_hin_sen $?pre $?post))
+        (printout ?*alg_file* "(mid-aid-r_name-agm-mgm	"?a_id" "?m_id" np_with_some_same_mng_with_wx "$?a_word" "$?word")" crlf)
 )
 ;--------------------------------------------------------------------------------
 ;(defrule np_with_some_same_mng_with_dic
@@ -184,7 +198,7 @@
 ;?f0<-(manual_hin_sen $?pre $?m ?wrd $?m1 $?pos)
 ;=>
 ;	(bind ?new_mng "")
-;;	(printout t ?word " " ?wrd crlf)
+;;	(printout ?*alg_file* ?word " " ?wrd crlf)
 ;	(bind ?mng (gdbm_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?root))
 ;	(bind ?slh_index (str-index "/" ?mng))
 ;	(if (neq ?slh_index FALSE) then
@@ -198,7 +212,7 @@
 ;		(bind ?new_mng ?mng)
 ;	)
 ;	(bind $?default_mngs (explode$ ?new_mng))
-;	(printout t $?default_mngs crlf ?word "------" ?wrd crlf)
+;	(printout ?*alg_file* $?default_mngs crlf ?word "------" ?wrd crlf)
 ; 	(if (and (member$ ?word $?default_mngs)  (member$ ?wrd $?default_mngs)) then
 ;		(retract ?f1 ?f ?f0)
 ;		(bind $?m_word (create$ $?m ?wrd $?m1))
@@ -229,7 +243,7 @@
 ;        	else
 ;        		(bind ?min (- ?agrep_len ?w_len))
 ;		)
-;	(printout t "min  "?min "  err" ?err crlf)
+;	(printout ?*alg_file* "min  "?min "  err" ?err crlf)
 ;        	(if (and (< ?min ?err) (<= ?err 2)) then
 ;			(retract ?f0 ?f ?f1)
 ;			(assert (anu_id-manual_id-anu_grp_mng-man_grp_mng  ?a_id ?m_id $?w1 - $?word))

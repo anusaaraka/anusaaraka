@@ -1,7 +1,7 @@
 Stanford Parser Failure sentences with reasons ::
 ==============================================
 At one time, there were almost 360 forts out of which only 10 are left.
---> "out of" should be in one chunk 
+--> "out of which" should be in one chunk 
 
 There are eight vehicular ways and two footpaths on this bridge on the river hooghly.
 --> "on this bridge on the river hooghly" should be at VP level
@@ -11,6 +11,7 @@ Uttar pradesh is a land of cultural and geographical diversity, which is blessed
 
 The lights in the street turn on only during night.
 -->"turn on" wrong in 2010-11-30. gud in 2012-01-06.
+-->Even if the parser fails give help to user in firefox output that turn_on can have {all_the possible_mngs_here}.
 
 I gave a book to Dashrath, the king of Ayodhya.
 --> "Dashrath, the king of Ayodhya" should come in PP 
@@ -24,30 +25,36 @@ I saw her again a year and a half later.
 Some people take a lot of time to acclimatize themselves to the new environment.
 -->"NP-a lot of time" should be at S level 
 
-We were dropped off about five miles from where my friend's obedient car.
+***We were dropped off about five miles from where my friend's obedient car.
 --> "from where" should be grouped
+--> from where this sentence have been taken?
 
 For her to have survived such an ordeal was remarkable.
---> "For her" should be grouped as PP
+--> "For her" should be grouped as PP 
+--> kept for discussion?
 
 Why are you talking about me like that? 
 --> "about me" should be one chunk.
+mng of "like that" should be isa_waraha if "that" itself is an NP
 
 The five best costumes got prizes.
 --> "five best costumes" should be the daughters of same NP
+"the five best" --> pAzca_sabase_acCe (should be generalised for all numbers)
 
 Their belongings were flung about the room.
 -->  the category for "flung"  should be VBN instead of VBG so that we can get lwg as were_en
-
-Did you send a birthday card to Sheela?
---> "tmod(send-3, card-6)"  wrong relation (Note:: instead of "birthday" , "marriage" is given then we get correct relation)
-
+--> Solved
 
 Failures due to 'dep' link ::
 ==========================
 
 Within the relationship he feels ill-used most of the time.
 -->"dep(ill-used-6, most-7)" wrong relation. parse wrong in 2010-11-30. better in 2012-01-06.
+-->mng of "ill-used" ang grouping of "Within the relationship" is kept for discussion
 
 He told me why he was here and what he was doing.
 --> "dep(told-2, was-6)" wrong relation
+
+Did you send a birthday card to Sheela?
+--> "tmod(send-3, card-6)"  wrong relation (Note:: instead of "birthday" , "marriage" is given then we get correct relation)
+
