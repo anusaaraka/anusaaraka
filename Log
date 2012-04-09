@@ -3370,7 +3370,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  45. Updated changes_in_databases
  46. Updated Log
 
- 06-04-12
+ 09-04-12
  ========
  1. Created directories 'original_files' and 'removed_files' in anu_testing/miscellaneous/Programs
       i) Moved all the files from anu_testing/miscellaneous/Programs to anu_testing/miscellaneous/Programs/removed_files
@@ -3400,14 +3400,15 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  16. Modified Anusaaraka_stanford_SMT.sh to run the above python program
  17. Added miscellaneous/SMT/alignment/README , miscellaneous/SMT/dump/wx_output  
  18. Updated the following files
-        get_group_mng.sh, run_H_gen_SMT.bat, run_sentence_stanford_SMT.sh, get_tam_info.lex, cln-train.hi and
-        cln-train.hi.out  cln-train_h_ordr.en_detoken
+        get_group_mng.sh, run_H_gen_SMT.bat, run_sentence_stanford_SMT.sh, get_tam_info.lex, 
+	cln-train.hi and, cln-train.hi.out,  cln-train_h_ordr.en_detoken
  19. Modified converting-dic-format.c program to generate dictionary file for SMT purpose and updated anu_compile.sh anu_compile_64.sh files accordingly.
  20. Removed all the dummy deffact function in all the .bclp files and handled it using deffunction  [deffunction never-called()].
  21. Updated create_eng_ord_html.clp file
- 22. Updated Anu_outputs/Stanford_parser_fails   file.
- 23. Added debug information in alignment.clp file and accordingly run_H_gen_SMT.bat file has been updated
- 24. Modified and updated changes_in_databses.
- 25. Updated Stanford_parser_fails.
- 26. Removed one sentence from sd_verified.
- 27. Updated Log.
+ 22. Added debug information in alignment.clp file and accordingly run_H_gen_SMT.bat file has been updated
+ 23. Modified hnd_translation.pl to remove translation of "Test." in server.(1.1 sentence)
+ 24. In ClipsToAnu_browser_intfc.sh moved the code to run "hnd_translation.pl"  inside if-else loop for above purpose.
+ 25. Modified and updated changes_in_databses.
+ 26. Updated Stanford_parser_fails.
+ 27. Removed one sentence from sd_verified.
+ 28. Updated Log.

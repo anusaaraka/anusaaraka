@@ -44,6 +44,11 @@ sub final_translation{
   local $/="\n";
   if($myline =~ /(\d+)\.(\d+)\.(\d+)/){
     $ParaId=$1;$SenId=$2;
+
+   ##Added below two lines to avoid 1.1 translation in server (Roja 09-04-12)
+   if(defined $ARGV[2] && length $ARGV[2] > 0) {
+   if(($ARGV[2] eq "REMOVE_TITLE") && ($ParaId == 1 && $SenId == 1))  { return; } }
+
     local $facts_filename = $path_clips."/tmp/$ARGV[0]_tmp/".$ParaId.".".$SenId."/hindi_sentence_tmp.dat";
 
     if (-e  $facts_filename) {
