@@ -3,7 +3,7 @@ cd $2/tmp/$1_tmp/
  if [ "$4" = "REMOVE_TITLE" ] ;  ##Added if-else loop to differentiate b/w server and local   
     then
 $HOME/timeout 300 myclips -f $HOME_anu_test/Anu_clp_files/run_eng_ord_html.bat > $2/tmp/$1_tmp/xml.err
-$HOME/timeout 300 myclips -f $HOME_anu_test/Anu_clp_files/run_eng_ord_html.bat > $2/tmp/$1_tmp/xml.err
+$HOME/timeout 300 myclips -f $HOME_anu_test/Anu_clp_files/run_hin_ord_html.bat >> $2/tmp/$1_tmp/xml.err
 perl $HOME_anu_test/Anu_src/hnd_translation.pl $1 $2 $4 
 
 else
