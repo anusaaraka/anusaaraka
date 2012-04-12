@@ -3370,7 +3370,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  45. Updated changes_in_databases
  46. Updated Log
 
- 09-04-12
+ 12-04-12
  ========
  1. Created directories 'original_files' and 'removed_files' in anu_testing/miscellaneous/Programs
       i) Moved all the files from anu_testing/miscellaneous/Programs to anu_testing/miscellaneous/Programs/removed_files
@@ -3395,7 +3395,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Added   : modify_wrd_mng_for_VP_kriyAmUla, get_grp_info
         Removed : get_verb_info, get_NP_mng
  15. Added
-	 add-suf-into-chunks.py -- to get suf in the group from shallow parser output
+	 add-suf-into-chunks.py -- to get suf in the group from shallow parser output  word_alignment.clp
  	 test_hi_sent , test_sent, test_shallow_output, test_wx_output  --- for testing SMT
  16. Modified Anusaaraka_stanford_SMT.sh to run the above python program
  17. Added miscellaneous/SMT/alignment/README , miscellaneous/SMT/dump/wx_output  

@@ -20,9 +20,10 @@
  cd $HOME_anu_test/Anu_src/
  perl   FinalGenerate.pl $HOME_anu_test/bin/hi.gen.bin  $HOME_anu_test/Anu_databases/AllTam.gdbm  $MYPATH/ $1 $2 $HOME_anu_test/bin/hi.morf.bin < $MYPATH/$1_tmp/$2/id_Apertium_input.dat > $MYPATH/$1_tmp/$2/id_Apertium_output1.dat
 
-sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id_Apertium_output.dat
+ sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat  | sed 's/\\@//g' > $MYPATH/$1_tmp/$2/id_Apertium_output.dat
 
  cd $MYPATH/$1_tmp/$2
+
  sh $HOME_anu_test/Anu_src/comp.sh $HOME_anu_test/miscellaneous/SMT/alignment/get_tam_info
  sh $HOME_anu_test/miscellaneous/SMT/alignment/get_group_mng.sh shallow_parser_output.dat
  $HOME_anu_test/miscellaneous/SMT/alignment/get_tam_info.out shallow_parser_GNP_info.dat < shallow_parser_output.dat > /dev/null
@@ -30,7 +31,7 @@ sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id
  cp $MYPATH/$1_tmp/underscore_hyphen_replace_info.txt  $MYPATH/$1_tmp/$2/underscore_hyphen_replace_info.dat
  myclips -f $HOME_anu_test/miscellaneous/SMT/alignment/run_H_gen_SMT.bat >> $1.error
  
- cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat sd_chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat parserid_wordid_mapping.dat lwg_info.dat relations.dat hindi_meanings.dat GNP_agmt_info.dat id_Apertium_output.dat  hindi_id_order.dat position.dat hindi_punctuation.dat catastrophe.dat English_sentence.dat >>$MYPATH/$1_tmp/$2/all_facts
+ cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat sd_chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat parserid_wordid_mapping.dat lwg_info.dat relations.dat hindi_meanings.dat GNP_agmt_info.dat id_Apertium_output.dat  hindi_id_order.dat position.dat hindi_punctuation.dat catastrophe.dat English_sentence.dat word_alignment.dat >>$MYPATH/$1_tmp/$2/all_facts
 
  cat eng_id_in_hin_ord.dat >> $MYPATH/$1_tmp/$1_ordered_file
  cp hindi_sentence.dat hindi_sentence_tmp.dat
