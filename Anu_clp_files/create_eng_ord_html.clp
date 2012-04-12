@@ -364,7 +364,7 @@
  (not (id_padasuthra_mng_modified ?id))
  =>
  (retract ?f)
- (bind ?mng (wx_utf8 ?mng))
+ (if (not (numberp ?mng)) then (bind ?mng (wx_utf8 ?mng)))
  (while (str-index ">" ?mng) do
 	(bind ?length (str-length ?mng))
 	(bind ?index (str-index ">" ?mng))
@@ -387,7 +387,7 @@
  (not (id_apertium_mng_modified ?id))
  =>
  (retract ?f)
- (bind ?mng (wx_utf8 ?mng))
+ (bind ?mng (string-to-field (x_utf8 (implode$ (create$ ?mng)))))
  (while (str-index ">" ?mng) do
  	(bind ?length (str-length ?mng))
 	(bind ?index (str-index ">" ?mng))
@@ -409,7 +409,7 @@
  (not (id_HM_mng_modified ?id))
  =>
  (retract ?f)
- (bind ?mng (wx_utf8 ?mng))
+ (if (not (numberp ?str)) then (bind ?mng (wx_utf8 ?mng)))
  (while (str-index ">" ?mng) do
 	(bind ?length (str-length ?mng))
 	(bind ?index (str-index ">" ?mng))
@@ -458,7 +458,7 @@
  (test (neq ?h_tam 0))
  (not (id_pada_hin_tam_mng_modified ?id))
  =>
- (bind ?h_tam (wx_utf8 ?h_tam))
+ (if (not (numberp ?h_tam)) then (bind ?h_tam (implode$ (create$ ?h_tam))))
  (modify ?f (H_tam ?h_tam))
  (assert (id_pada_hin_tam_mng_modified ?id))
  )
@@ -470,7 +470,7 @@
  (test (neq ?vib 0))
  (not (id_pada_vib_modified ?id))
  =>
- (bind ?vib (wx_utf8 ?vib))
+ (if (not (numberp ?vib)) then (bind ?vib (wx_utf8 ?vib)))
  (modify ?f (vibakthi ?vib))
  (assert (id_pada_vib_modified ?id))
  )
@@ -479,7 +479,7 @@
  (defrule test_symbol_for_Aper_output
  (declare (salience 1900))
  ?f<-(id-Apertium_output   ?id   ?mng)
- (test (eq (sub-string 1 2 ?mng) "\\@"))
+ (test (eq (sub-string 1 2 (implode$ (create$ ?mng))) "\\@"))
  =>
  (retract ?f)
  (bind ?h_mng (str-cat (sub-string 3 1000 ?mng)))

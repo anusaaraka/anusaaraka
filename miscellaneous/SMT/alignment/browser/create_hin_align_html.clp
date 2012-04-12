@@ -8,66 +8,85 @@
  (printout fp "<head>" crlf)
  (printout fp "<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\" />" crlf)
  (printout fp "<link href=\"style.css\" type=\"text/css\" rel=\"stylesheet\" />" crlf)
- (printout fp "<link href=\"english_hindi_tran.css\" type=\"text/css\" rel=\"stylesheet\" />" crlf)
+ (printout fp "<link href=\"hindi_alignment.css\" type=\"text/css\" rel=\"stylesheet\" />" crlf)
  (printout fp "<script src=\"script.js\" type=\"text/javascript\"></script>" crlf)
  (printout fp "<script src=\"open.js\" type=\"text/javascript\"></script>" crlf)
- (printout fp "<script src=\"english_hindi_tran.js\" type=\"text/javascript\"></script>" crlf)
- (printout fp "<title>anusAraka</title>" crlf)
+ (printout fp "<script src=\"hindi_alignment.js\" type=\"text/javascript\"></script>" crlf)
+ (printout fp "<title>anusAraka alignment</title>" crlf)
  (printout fp "</head>" crlf)
  (printout fp "<body onload=\"register_keys()\">" crlf)
  (printout fp "<div id=\"navigation\">" crlf)
  (printout fp "<form action=\"\" onsubmit=\"goto_section(); return false;\">" crlf)
- (printout fp "<p><a id=\"english_order\" href=\""?*filename*".html\" target=\"_new\">Layered Output [English-order]</a><a id=\"translation\" href=\""?*filename*"_trnsltn.html\" target=\"_new\"> Translation </a><a id=\"help\" href=\"help.html\" target=\"_new\">Help</a><input type=\"text\" name=\"goto_section_value\" size=\"5\" /><input type=\"button\" value=\"Goto\" onclick=\"goto_section()\" /><input type=\"hidden\" name=\"no_of_rows\" value=\"2\" /><input type=\"button\" value=\"Show/Hide Rows...\" onclick=\"window.open('rows.html','ShowHideRowsWindow','top=200,left=200,height=500,width=300,location=no,menubar=no,toolbar=no,directories=no,statusbar=no');\" /><input type=\"checkbox\" name=\"numbers_value\" checked=\"checked\" onchange=\"toggle_numbers()\" />Numbers<input type=\"checkbox\" name=\"border_value\" checked=\"checked\" onchange=\"toggle_borders()\" />Borders</p>" crlf)
+ (printout fp "<p><a id=\"english_order\" href=\""?*filename*".html\" target=\"_new\">Layered Output [English-order]</a><a id=\"translation\" href=\""?*filename*"_trnsltn.html\" target=\"_new\"> Translation </a><a id=\"help\" href=\"help.html\" target=\"_new\">Help</a><input type=\"text\" name=\"goto_section_value\" size=\"5\" /><input type=\"button\" value=\"Goto\" onclick=\"goto_section()\" /><input type=\"hidden\" name=\"no_of_rows\" value=\"3\" /><input type=\"button\" value=\"Show/Hide Rows...\" onclick=\"window.open('rows.html','ShowHideRowsWindow','top=200,left=200,height=500,width=300,location=no,menubar=no,toolbar=no,directories=no,statusbar=no');\" /><input type=\"checkbox\" name=\"numbers_value\" checked=\"checked\" onchange=\"toggle_numbers()\" />Numbers<input type=\"checkbox\" name=\"border_value\" checked=\"checked\" onchange=\"toggle_borders()\" />Borders</p>" crlf)
  (printout fp "</form>" crlf)
  (printout fp "</div>" crlf)
  (printout fp "<div class=\"float_clear\"/>" crlf crlf)
  )
 
 ;-------------------------------------------------------------------------------------------------
-
- (deffunction print_eng_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?eng_op)
+ 
+ (deffunction print_anu_eng_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?anu_eng)
  (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
  (printout fp "<table cellspacing=\"0\">"crlf"<tr class=\"row1\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".A</td>"))
- (printout fp "<td class=\""?chnk_fr_htm"\">" ?eng_op "</td>"crlf"</tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\">" ?anu_eng "</td>"crlf"</tr>" crlf)
  )
 
 ;-------------------------------------------------------------------------------------------------
-
- (deffunction print_hindi_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_p ?r_p ?aper_op)
- (if (eq ?r_p -) then (bind ?r_p ""))
- (if (eq ?l_p -) then (bind ?l_p ""))
+ 
+ (deffunction print_anu_tran_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?anu_op)
  (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
  (printout fp "<tr class=\"row2\">" crlf )
- (if (= ?w_id 1) then
- (printout fp "<td class=\"number\">"?p_id"."?s_id".B</td>"))
- (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_p ?aper_op ?r_p" </td>" crlf "</tr>" crlf)
+ (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".B</td>"))
+ (printout fp "<td class=\""?chnk_fr_htm"\">" ?anu_op "</td>"crlf"</tr>" crlf)
  )
 
 ;-------------------------------------------------------------------------------------------------
 
- (deffunction print_suggestion_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_p ?r_p ?aper_op )
- (if (eq ?r_p -) then (bind ?r_p ""))
- (if (eq ?l_p -) then (bind ?l_p ""))
+ (deffunction print_man_tran_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?man_op)
+ (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
  (printout fp "<tr class=\"row3\">" crlf )
+ (if (= ?w_id 1) then
+ (printout fp "<td class=\"number\">"?p_id"."?s_id".C</td>"))
+ (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op " </td>" crlf "</tr>" crlf)
+ )
+
+;-------------------------------------------------------------------------------------------------
+
+ (deffunction print_suggestion_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?man_op)
+ (printout fp "<tr class=\"row4\">" crlf )
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">&nbsp;</td>"))
  (printout fp "<td class=\""?chnk_fr_htm"\"><input name=\"suggestion_1.1\" type=\"text\" class=\"suggestion\" size=\"1\" value=\"")
- (printout fp ?l_p ?aper_op ?r_p"\" /></td></tr>" crlf)
+ (printout fp ?man_op"\" /></td></tr>" crlf)
  (printout fp "</table>" crlf)
  )
  
 ;============================= Asserting control facts and modifying the original facts ====================================
 
-; (defrule default_punct_facts
-; (declare (salience 6000))
-; ;(hindi_order $? ?id $?)
-; (id-word ?id ?)
-; (not (id-left_punct-right_punct ?id ? ?)) 
-; =>
-; 	(assert (id-left_punct-right_punct ?id - -))
-; )
+ (defrule replace_spc_with_underscore
+ (declare (salience 6000))
+ ?f<-(anu_id-anu_mng-sep-man_id-man_mng ?id $?anu_grp_mng - ?id $?man_grp_mng)
+ (test (numberp ?id))
+ =>
+ (retract ?f)
+; (printout t ?id"-----"$?anu_grp_mng"--------"?mid"--------" $?man_grp_mng crlf)
+ (loop-for-count (?i 1 (length $?anu_grp_mng))
+                 (bind ?str (nth$ ?i $?anu_grp_mng))
+                 (if (not (numberp ?str)) then (bind ?str (wx_utf8 ?str)))
+                 (if (eq ?i 1) then
+                 (bind ?anu_gp_mng ?str)
+                 else
+                 (bind ?anu_gp_mng (str-cat  ?anu_gp_mng "_" ?str))))
+ (loop-for-count (?i 1 (length $?man_grp_mng))
+                 (bind ?str (nth$ ?i $?man_grp_mng))
+                 (if (not (numberp ?str)) then (bind ?str (wx_utf8 ?str)))
+                 (if (eq ?i 1) then
+                 (bind ?man_gp_mng ?str)
+                 else
+                 (bind ?man_gp_mng (str-cat  ?man_gp_mng "_" ?str))))
+ (assert (anu_id-anu_mng-man_id-man_mng ?id ?anu_gp_mng ?id ?man_gp_mng))
+ )
 
- ;---------------------------------------------------------------------------------------------------
  ;convert Apertium_output wx notation to utf8.
  (defrule convert_wx_to_utf8
  (declare (salience 5999))
@@ -76,7 +95,8 @@
  (test (and (neq ?hin -D-) (neq ?hin -U-)))
  =>
  (retract ?f)
-        (if (not (numberp ?hin)) then (bind ?hin (wx_utf8 ?hin)))
+        (if (not (numberp ?hin)) then
+        (bind ?hin (wx_utf8 ?hin)))
         (assert (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng))
         (assert (id_wx_to_utf_converted ?id))
  )
@@ -143,76 +163,43 @@
  (defrule sen_first_word
  (declare (salience 5001))
  (hindi_order_length ?len)
- (not (asserted_start_id))
  =>
  (assert (id-len 1 ?len));here hindi position starts from 1 , as it moves through the rules position gets increased and length gets decreased and finally when length=0 it fires sent_end rule and moves to next sentence.
- (assert (asserted_start_id))
  )
 
 ;--------------------------------------------------------------------------------------------
  ;Printing to html file
- (defrule print_to_html_with_left_and_right_punc
+ (defrule print_to_html
  (declare (salience 4900))
  (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
  ?f<-(id-len ?id ?len)
- (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng)
-; (id-left_punct-right_punct ?id1 ?l_p ?r_p)
- (hid-right_punctuation ?id1 ?r_p)
- (hid-left_punctuation ?id1 ?l_p)
+ (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin_mng $?eng_ids ?eng)
+ (anu_id-anu_mng-man_id-man_mng ?id1 ?anu_mng ?mid ?man_mng)
+ (test (member$ ?id1 $?eng_ids))
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
- (test (member$ ?id1 $?ids))
+ (test (member$ (nth$ (length $?eng_ids) $?eng_ids) $?ids))
  =>
          (retract ?f)
-         (print_eng_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng)
-         (print_hindi_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_p ?r_p ?hin)
-         (print_suggestion_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_p ?r_p ?hin)
+         (print_anu_eng_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng)
+         (print_anu_tran_row  ?p_id ?s_id ?id ?chnk_fr_htm ?hin_mng)
+         (print_man_tran_row  ?p_id ?s_id ?id ?chnk_fr_htm ?man_mng)
+         (print_suggestion_row  ?p_id ?s_id ?id ?chnk_fr_htm ?man_mng)
          (assert (id-len (+ ?id 1) (- ?len 1))) 
  )
 
- (defrule print_to_html_with_left_punc
- (declare (salience 4899))
- (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
- ?f<-(id-len ?id ?len)
- (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng)
- (hid-left_punctuation ?id1 ?l_p)
- (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
- (test (member$ ?id1 $?ids))
- =>
-         (retract ?f)
-         (print_eng_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng)
-         (print_hindi_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_p - ?hin)
-         (print_suggestion_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_p - ?hin)
-         (assert (id-len (+ ?id 1) (- ?len 1)))
- )
-
- (defrule print_to_html_with_right_punc
- (declare (salience 4899))
- (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
- ?f<-(id-len ?id ?len)
- (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng)
- (hid-right_punctuation ?id1 ?r_p)
- (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
- (test (member$ ?id1 $?ids))
- =>
-         (retract ?f)
-         (print_eng_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng)
-         (print_hindi_row  ?p_id ?s_id ?id ?chnk_fr_htm - ?r_p ?hin)
-         (print_suggestion_row  ?p_id ?s_id ?id ?chnk_fr_htm - ?r_p ?hin)
-         (assert (id-len (+ ?id 1) (- ?len 1)))
- )
-
- (defrule print_to_html_with_no_punc
+ (defrule default_print_to_html
  (declare (salience 4898))
  (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
  ?f<-(id-len ?id ?len)
- (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng)
+ (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?eng_ids ?id1 ?eng)
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
  (test (member$ ?id1 $?ids))
  =>
          (retract ?f)
-         (print_eng_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng)
-         (print_hindi_row  ?p_id ?s_id ?id ?chnk_fr_htm - - ?hin)
-         (print_suggestion_row  ?p_id ?s_id ?id ?chnk_fr_htm - - ?hin)
+         (print_anu_eng_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng)
+         (print_anu_tran_row  ?p_id ?s_id ?id ?chnk_fr_htm ?hin)
+         (print_man_tran_row  ?p_id ?s_id ?id ?chnk_fr_htm -)
+         (print_suggestion_row  ?p_id ?s_id ?id ?chnk_fr_htm -)
          (assert (id-len (+ ?id 1) (- ?len 1)))
  )
 
@@ -227,9 +214,10 @@
  (test (!= ?len 0))
  =>
          (retract ?f)
-         (print_eng_row  ?p_id ?s_id ?id U ?eng)
-         (print_hindi_row  ?p_id ?s_id ?id U - - ?hin)
-         (print_suggestion_row  ?p_id ?s_id ?id U - - ?hin)
+         (print_anu_eng_row  ?p_id ?s_id ?id U ?eng)
+         (print_anu_tran_row  ?p_id ?s_id ?id U ?hin)
+         (print_man_tran_row  ?p_id ?s_id ?id U -)
+         (print_suggestion_row  ?p_id ?s_id ?id U -)
          (assert (id-len (+ ?id 1) (- ?len 1)))
  )
 
@@ -241,9 +229,10 @@
  (test (!= ?len 0)) 
  =>
          (retract ?f)
-         (print_eng_row  ?p_id ?s_id ?id U - )
-         (print_hindi_row  ?p_id ?s_id ?id U - - - )
-         (print_suggestion_row  ?p_id ?s_id ?id U - - -)
+         (print_anu_eng_row  ?p_id ?s_id ?id U - )
+         (print_anu_tran_row  ?p_id ?s_id ?id U - )
+         (print_man_tran_row  ?p_id ?s_id ?id U - )
+         (print_suggestion_row  ?p_id ?s_id ?id U -)
          (assert (id-len (+ ?id 1) (- ?len 1)))
  )
 
