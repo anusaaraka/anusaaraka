@@ -138,3 +138,4 @@
 
  echo "Calling Interface related programs"
  sh $HOME_anu_test/bin/run_anu_browser.sh $HOME_anu_test $1 $MYPATH $HOME_anu_output
+ sh $HOME_anu_test/miscellaneous/SMT/alignment/browser/run_align_browser.sh $HOME_anu_test $1 $MYPATH $HOME_anu_output

@@ -409,7 +409,7 @@
  (not (id_HM_mng_modified ?id))
  =>
  (retract ?f)
- (if (not (numberp ?str)) then (bind ?mng (wx_utf8 ?mng)))
+ (if (not (numberp ?mng)) then (bind ?mng (wx_utf8 ?mng)))
  (while (str-index ">" ?mng) do
 	(bind ?length (str-length ?mng))
 	(bind ?index (str-index ">" ?mng))
@@ -479,10 +479,10 @@
  (defrule test_symbol_for_Aper_output
  (declare (salience 1900))
  ?f<-(id-Apertium_output   ?id   ?mng)
- (test (eq (sub-string 1 2 (implode$ (create$ ?mng))) "\\@"))
+ (test (eq (sub-string 1 2 ?mng) "\@"))
  =>
  (retract ?f)
- (bind ?h_mng (str-cat (sub-string 3 1000 ?mng)))
+ (bind ?h_mng (str-cat (sub-string 2 1000 ?mng)))
  (assert (id-Apertium_output   ?id   ?h_mng))
  )
  ;------------------------------------------------------------------------------------------------------
