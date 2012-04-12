@@ -3382,9 +3382,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	comp.sh		iit-bombay.txt		iit-bombay.txt1  
 	Ontology.lex	2011_01_31_Ontology_Developed_by_IIT-B_384.doc
  6. Updated miscellaneous/std_tregex/README.
- 7. Modified FinalGenerate.pl to handle words having "_" in b/w them. Ex: harA_BarA
+ 7. Modified FinalGenerate.pl to handle words having "_" in b/w them. Ex: harA_BarA (Considering only adjective cases)
  8. Replaced wordnet dir inside miscellaneous/Dictionaries.
- 9. Modified paper.clp
+ 9. Modified paper.clp and enlarge.clp
  10. Modified ber_ver_output, link_ver_output, ol_ver_output, sd_ver_output and verified_output
  11. Modified apertium_hn.dix to handle patterns which have multiple generations.
  12. alignment.clp
@@ -3406,7 +3406,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  20. Removed all the dummy deffact function in all the .bclp files and handled it using deffunction  [deffunction never-called()].
  21. Updated create_eng_ord_html.clp file
  22. Added debug information in alignment.clp file and accordingly run_H_gen_SMT.bat file has been updated
- 23. Modified hnd_translation.pl to remove translation of "Test." in server.(1.1 sentence)
+ 23. Modified hnd_translation.pl to remove translation of "Test." in server.(1.1 sentence) and also to handle patterns like       "U.S", "A.D." etc. converting to utf8 in firefox. 
  24. In ClipsToAnu_browser_intfc.sh moved the code to run "hnd_translation.pl"  inside if-else loop for above purpose.
  25. Modified and updated changes_in_databses.
  26. Updated Stanford_parser_fails.

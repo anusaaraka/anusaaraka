@@ -42,18 +42,16 @@ while(<STDIN>){
 						
 						&generate($root,$tam,$gen,$num,$per);
 					}
-					else{   
-#Modified this else part by Roja (05-04-12) 
+				#	else{   
+#Added else if part by Roja (05-04-12) (considering "adjective" case only) 
 #Ex:Udaipur, the city of lakes and palaces are surrounded by lush green aravali range and crystal clear water lake.
 #lush green --> ^harA_BarA<cat:adj><case:o><gen:f><num:s>$ 
 #Modified the i/p sent to apertium as shown::
 #Before :: harA ^BarA<cat:adj><case:o><gen:f><num:s>$
 #Now	:: ^harA<cat:adj><case:o><gen:f><num:s>$ ^BarA<cat:adj><case:o><gen:f><num:s>$ 
 #O/p	:: harI BarI
-						$word =~ /(\^([^<]+)<([^ ]+))([ ]*)(\^([^<]+)<([^ ]+))/;
-						@word = split(/\s+/, $word);
-						foreach $words(@word) {
-						  $words =~ /\^([^<]+)<([^ ]+)/;
+					        elsif($word =~ /(\^([^<]+)<cat:adj>([^ ]+))/) {
+						  $word =~ /\^([^<]+)<([^ ]+)/;
 						  $wrd=$1; $analysis="<".$2; 
 						  $wrd =~ s/_/ /g;
 						  @mng=split(/\s+/,$wrd);
@@ -65,9 +63,20 @@ while(<STDIN>){
 						  system("lt-proc -cg $ARGV[0] < $tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/tmp_aper_input");
 						  print " ";
 					        }}
-				}}
-				else{
-					$aper_input=$word;
+
+                                             elsif($word =~ /\^([^<]+)_(.*)/) {
+                                                $kriyA_mula=$1;
+                                                $aper_input="^".$2;
+                                                open(APER_TMP,">$tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/tmp_aper_input") || die "Can't open file tmp_aper_input\n";
+                                                print APER_TMP "$aper_input";
+                                                close(APER_TMP);
+                                                print "$kriyA_mula ";
+                                                system("lt-proc -cg $ARGV[0] < $tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/tmp_aper_input");
+                                                print " ";
+                                     }
+
+				}
+				elsif($aper_input=$word) {
 					open(APER_TMP,">$tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/tmp_aper_input") || die "Can't open file tmp_aper_input\n";
 					print APER_TMP "$aper_input";
 					close(APER_TMP);
