@@ -3404,11 +3404,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	cln-train.hi and, cln-train.hi.out,  cln-train_h_ordr.en_detoken
  19. Modified converting-dic-format.c program to generate dictionary file for SMT purpose and updated anu_compile.sh anu_compile_64.sh files accordingly.
  20. Removed all the dummy deffact function in all the .bclp files and handled it using deffunction  [deffunction never-called()].
- 21. Updated create_eng_ord_html.clp file
- 22. Added debug information in alignment.clp file and accordingly run_H_gen_SMT.bat file has been updated
- 23. Modified hnd_translation.pl to remove translation of "Test." in server.(1.1 sentence) and also to handle patterns like       "U.S", "A.D." etc. converting to utf8 in firefox. 
- 24. In ClipsToAnu_browser_intfc.sh moved the code to run "hnd_translation.pl"  inside if-else loop for above purpose.
- 25. Modified and updated changes_in_databses.
- 26. Updated Stanford_parser_fails.
- 27. Removed one sentence from sd_verified.
- 28. Updated Log.
+ 21. Updated create_eng_ord_html.clp and create_hin_ord_html.clp file
+ 22. Added debug information in alignment.clp file and accordingly run_H_gen_SMT.bat file has been updated.
+ 23. Added new folder "browser" in  miscellaneous/SMT/alignment/ for generating alignment o/p in html format for SMT.
+ 24. Modified hnd_translation.pl to remove translation of "Test." in server.(1.1 sentence) and also to handle patterns like       "U.S", "A.D." etc. converting to utf8 in firefox. 
+ 25. In ClipsToAnu_browser_intfc.sh moved the code to run "hnd_translation.pl"  inside if-else loop for above purpose.
+ 26. Modified and updated changes_in_databses.
+ 27. Updated Stanford_parser_fails.
+ 28. Removed one sentence from sd_verified.
+ 29. Updated Log.
