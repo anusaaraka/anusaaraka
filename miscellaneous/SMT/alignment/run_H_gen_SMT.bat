@@ -96,7 +96,7 @@
  (assert (index 1))
  (run)
  (close alig_fp)
- (save-facts "alignment.dat" local anu_id-manual_id-a_grp_mng-m_grp_mng)
+ (save-facts "alignment.dat" local anu_id-a_grp_mng-manual_id-m_grp_mng)
  (save-facts "final_maual_sen.dat" local manual_hin_sen)
  (clear)
  ;--------------------------------------------------------------------------
@@ -108,6 +108,6 @@
  (load-facts "id_Apertium_output.dat")
  (load-facts "pada_id_info.dat")
  (run)
- (save-facts "word_alignment.dat" local anu_id-man_id-anu_mng-man_mng)
+ (save-facts "word_alignment.dat" local anu_id-anu_mng-man_id-man_mng)
  (clear)
  (exit)
