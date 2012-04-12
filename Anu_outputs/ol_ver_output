@@ -105,7 +105,7 @@ usane rARtriya tIma meM Kelane kA usakA sunaharA mOkA vyarWa_meM_barabAxa kiyA .
 
 Hindi meaning using Open Logos 2.25
 The blacksmith made an assay of iron ore. 
-luhAra ne lohe kI Kanija mittI kI eka paraKa banAI .
+luhAra ne lohe_kI_Kanija mittI kI eka paraKa banAI .
 
 Hindi meaning using Open Logos 2.26
 He could hear a faint sound from the bushes. 
@@ -278,8 +278,8 @@ hamArI tIma sparXA meM AsAnI se harAI gayI WI .
 
 Hindi meaning using Open Logos 2.68
 She carefully prepared the dinner. 
-usane rAwa kA Bojana sAvaXAnI se wEyAra kiyA .
-usane sAvaXAnI se rAwa kA Bojana wEyAra kiyA .
+usane rAwa_kA Bojana sAvaXAnI se wEyAra kiyA .
+usane sAvaXAnI se rAwa_kA Bojana wEyAra kiyA .
 
 Hindi meaning using Open Logos 2.69
 There are many tissues of fat in our body. 
@@ -381,11 +381,11 @@ denmArka vAsI acCe loga hEM .
 
 Hindi meaning using Open Logos 2.93
 People use espresso to make other coffee drinks. 
-loga anya koYPI peya yA Sarabawa banAne ke liye espreso koYPI kA upayoga karawe hEM .
+loga anya koYPI_peya_yA Sarabawa banAne ke liye espreso koYPI kA upayoga karawe hEM .
 
 Hindi meaning using Open Logos 2.94
 Espresso is a coffee drink. 
-espreso koYPI eka koYPI peya yA Sarabawa hE .
+espreso koYPI eka koYPI peya_yA Sarabawa hE .
 
 Hindi meaning using Open Logos 2.95
 I gave my brother an expensive present. 
@@ -780,7 +780,7 @@ mEMne AKirakAra pawA lagAyA yaha progrAma iwanA XImA kyoM hE .
 
 Hindi meaning using Open Logos 2.189
 Each one of them recorded the narratives from twenty participants. 
-unameM se prawyeka ne bIsa BAga lene vAloM se varNaNAwmaka kahAniyAz rajistara_mez_xarja kIM .
+unameM se prawyeka ne bIsa BAga_lene vAloM se varNaNAwmaka kahAniyAz rajistara_mez_xarja kIM .
 
 Hindi meaning using Open Logos 2.190
 They were discussing their hopes and dreams. 
@@ -836,8 +836,8 @@ jaba hama redio para saMgIwa kAryakrama sunanA cAhawe hEM wo hameM sahI steSana 
 
 Hindi meaning using Open Logos 2.203
 She is having her children cook dinner for her. 
-vaha usake baccoM se usake liye rAwa kA Bojana pakavA rahI hE .
-vaha usake_liye usake baccoM se rAwa kA Bojana pakavA rahI hE .
+vaha usake baccoM se usake liye rAwa_kA Bojana pakavA rahI hE .
+vaha usake_liye usake baccoM se rAwa_kA Bojana pakavA rahI hE .
 
 Hindi meaning using Open Logos 2.204
 The old woman was sitting in a chair. 
@@ -1009,7 +1009,7 @@ vaha wejasvI vicAroM se BarI huI hE .
 
 Hindi meaning using Open Logos 2.245
 I thought it is right to resign. 
-mEMne socA ki wyAga pawra xenA TIka hE .
+mEMne socA ki wyAga_pawra xenA TIka hE .
 
 Hindi meaning using Open Logos 2.246
 It is not a good idea to drive for hours without a rest. 
@@ -1164,7 +1164,7 @@ jo kuCa BI pariNAma hE mEM niSciwa hUz ki vaha aBI BI lokapriya hogA .
 
 Hindi meaning using Open Logos 2.283
 She is apparently an excellent pianist. 
-vaha UparI wOra se uwwama piyAno bajAne vAlI hE .
+vaha UparI wOra se uwwama piyAno_bajAne vAlI hE .
 
 Hindi meaning using Open Logos 2.284
 Are John or I invited? 
@@ -1355,7 +1355,7 @@ Apako mArkar pEna se mahawvapUrNa vAkya golIkqwa karane cAhiye .
 
 Hindi meaning using Open Logos 3.30
 He opened a conversation on the issue of animal rights. 
-usane paSuoM ke aXikAroM ke viRaya para vArwAlApa AramBa kiyA .
+usane paSuoM_ke aXikAroM ke viRaya para vArwAlApa AramBa kiyA .
 
 Hindi meaning using Open Logos 3.31
 They threw him in the swimming pool. 
@@ -1582,7 +1582,7 @@ hamane Gara ke liye AKirI basa pakadI .
 
 Hindi meaning using Open Logos 3.86
 The last part of the course was hard because I was running against the wind. 
-xOdane ke liye bane mArga kA AKirI BAga kaTina WA kyozki mEM havA ke viruxXa xOda rahA WA .
+xOdane_ke_liye_bane mArga kA AKirI BAga kaTina WA kyozki mEM havA ke viruxXa xOda rahA WA .
 
 Hindi meaning using Open Logos 3.87
 The school admits only 50 students at a time. 
@@ -1699,7 +1699,7 @@ kyA Apa socawe hEM ki ye xo raMga mela KAwe hEM ?
 
 Hindi meaning using Open Logos 4.14
 Her hard work and talent will take her to the top. 
-usakI kadI mehanawa Ora prawiBA SAlI vyakwiwva sarvocca sWAna para usako le jAezgI .
+usakI kadI mehanawa Ora prawiBA_SAlI vyakwiwva sarvocca sWAna para usako le jAezgI .
 
 Hindi meaning using Open Logos 4.15
 If you know who did it, you should tell the teacher. 
@@ -1911,6 +1911,7 @@ Apake Avexana pawra ke sAWa kqpayA CV Beje .
 Hindi meaning using Open Logos 4.66
 The park that encloses the monument has recently been enlarged. 
 jo smAraka ko GerawA hE vaha uxyAna hAla meM baDAyA gayA hE .
+jo smAraka ko GerawA hE vaha uxyAna hAla meM badA kiyA gayA hE .
 
 Hindi meaning using Open Logos 4.67
 He never really recovered from the shock of his wife's death. 
@@ -1983,7 +1984,7 @@ PutabAla merA sabase aXika priya Kela hE .
 
 Hindi meaning using Open Logos 4.84
 Did you send a birthday card to Sheela? 
-kyA Apane Sheela ko janmaxina kA kArda BejA ?
+kyA Apane Sheela ko janmaxina_kA kArda BejA ?
 
 Hindi meaning using Open Logos 4.85
 My father fought in the last war. 
@@ -2120,7 +2121,7 @@ merI gAdI KarAba_ho gaI mEM Lalitpur jaba pahuzcA .
 
 Hindi meaning using Open Logos 5.18
 Shall I help you to carry the luggage? 
-kyA mEM sAmAna uTA le jAne ke liye Apa sahAyawA karUzgA ?
+kyA mEM sAmAna uTA_le jAne ke liye Apa sahAyawA karUzgA ?
 
 Hindi meaning using Open Logos 5.19
 He does not dare to ignore me. 
@@ -2170,7 +2171,7 @@ Ulsoor JIla sErasapAtA nOkA-vihAra karane Ora KarIxArI karane ke liye AxarSa sWA
 
 Hindi meaning using Open Logos 5.30
 I was unable to word my feelings at the Ritu's husband's death. 
-mEM Ritu ke pawi kI mqwyu para mere BAva SabxoM meM prakata karane ke liye asamarWa WA .
+mEM Ritu ke pawi kI mqwyu para mere BAva SabxoM_meM_prakata karane ke liye asamarWa WA .
 
 Hindi meaning using Open Logos 5.31
 Golconda fort is situated on the western outskirts of hyderabad. 
@@ -2272,7 +2273,7 @@ joYna ko AmaMwriwa karane se pahale muJe Apase bAwacIwa karanI cAhiye WI .
 
 Hindi meaning using Open Logos 5.55
 He wrote the address on a piece of paper. 
-usane kAgaja ke purje para pawA liKA .
+usane kAgaja_ke purje para pawA liKA .
 
 Hindi meaning using Open Logos 5.56
 Dictionaries are usually printed on thin paper. 
@@ -2288,7 +2289,7 @@ mEMne Medicine ke Journal meM eka hAla kA leKapawra paDA .
 
 Hindi meaning using Open Logos 5.59
 I read about the train accident in Sunday paper. 
-mEMne ravivAra ke samAcAra pawra meM rela xurGatanA ke bAre meM paDA .
+mEMne ravivAra ke_samAcAra pawra meM rela xurGatanA ke bAre meM paDA .
 
 Hindi meaning using Open Logos 5.60
 I read about the train robbery in today's paper. 

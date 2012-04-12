@@ -71,6 +71,12 @@ sub final_translation{
           $sen_wx =~ s/#//g;
           $sen_wx =~ s/\\//g;
           $sen_wx =~ s/\_/ /g;
+#Added below two patterns by Roja (12-04-12).
+#Ex:  He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan.
+#To handle pattrens like "U.S." , "A.D." etc 
+#Adding '@' before 'S'. Else it converts to utf8.
+	  $sen_wx =~ s/[.]([^ ])/.@ $1/; 
+          $sen_wx =~ s/@[ ]/@/;         
           $sen_utf8=&wx_utf8($sen_wx);
           open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn_tmp.html") || die "Can't open $ARGV[0]_trnsltn_tmp.html";
           #

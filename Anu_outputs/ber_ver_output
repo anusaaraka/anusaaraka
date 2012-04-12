@@ -300,7 +300,7 @@ hamArI tIma sparXA meM AsAnI se harAI gayI WI.
 
 Hindi meaning using Berkeley parser 2.73
 She carefully prepared the dinner. 
-usane sAvaXAnI se rAwa kA Bojana wEyAra kiyA.
+usane sAvaXAnI se rAwa_kA Bojana wEyAra kiyA.
 
 Hindi meaning using Berkeley parser 2.74
 There are many tissues of fat in our body. 
@@ -389,7 +389,7 @@ denmArka vAsI acCe loga hEM.
 
 Hindi meaning using Berkeley parser 2.95
 People use espresso to make other coffee drinks. 
-loga anya koYPI peya yA Sarabawa banAne ke liye espreso koYPI kA upayoga karawe hEM.
+loga anya koYPI_peya_yA Sarabawa banAne ke liye espreso koYPI kA upayoga karawe hEM.
 
 Hindi meaning using Berkeley parser 2.96
 The Zongle of Bongle Dongle resigned today. 
@@ -937,7 +937,7 @@ acCe pahanAvoM ne puraskAra prApwa kie.
 
 Hindi meaning using Berkeley parser 2.230
 She is apparently an excellent pianist. 
-vaha UparI wOra se uwwama piyAno bajAne vAlI hE.
+vaha UparI wOra se uwwama piyAno_bajAne vAlI hE.
 
 Hindi meaning using Berkeley parser 2.231
 There is a dog or a cat here. 
@@ -1071,7 +1071,7 @@ Apako mArkar pEna se mahawvapUrNa vAkya golIkqwa karane cAhiye.
 
 Hindi meaning using Berkeley parser 2.263
 He opened a conversation on the issue of animal rights. 
-usane paSuoM ke aXikAroM ke viRaya para vArwAlApa AramBa kiyA.
+usane paSuoM_ke aXikAroM ke viRaya para vArwAlApa AramBa kiyA.
 
 Hindi meaning using Berkeley parser 2.264
 They threw him in the swimming pool. 
@@ -1177,7 +1177,7 @@ kuCa Pala rasa awyaMwa amlIya hEM.
 
 Hindi meaning using Berkeley parser 2.289
 I wondered for a long time why everyone liked her so much. 
-muJe laMbe samaya waka AScarya huA ki prawyeka vyakwi ne iwanA jyAxA usako kyoM pasaMxa kiyA.
+muJe laMbe_samaya waka AScarya huA ki prawyeka vyakwi ne iwanA jyAxA usako kyoM pasaMxa kiyA.
 
 Hindi meaning using Berkeley parser 2.290
 Beautiful paintings adorned the walls of the palace. 
@@ -1201,7 +1201,7 @@ hamane Gara ke liye AKirI basa pakadI.
 
 Hindi meaning using Berkeley parser 2.295
 The last part of the course was hard because I was running against the wind. 
-xOdane ke liye bane mArga kA AKirI BAga kaTina WA kyozki mEM havA ke viruxXa xOda rahA WA.
+xOdane_ke_liye_bane mArga kA AKirI BAga kaTina WA kyozki mEM havA ke viruxXa xOda rahA WA.
 
 Hindi meaning using Berkeley parser 2.296
 He commented that the two essays were rather similar. 
@@ -1555,7 +1555,7 @@ nahIM, vaha aSuBa somavAra nahIM WA.
 
 Hindi meaning using Berkeley parser 3.78
 The President's address to the nation was broadcasted across the country. 
-rARtra ke liye President kA saMboXana pUre xeSa meM prasAriwa kiyA gayA WA.
+rARtra ke liye President kA saMboXana pUre_xeSa meM prasAriwa kiyA gayA WA.
 
 Hindi meaning using Berkeley parser 3.79
 Still, fund groups are not taking any chances. 
@@ -1595,7 +1595,7 @@ kama KarcIle bajata AvAsa kA sabase aXika taj ganj meM hE.
 
 Hindi meaning using Berkeley parser 3.88
 As we go from ooty to gudalur, the change in vegetation is striking. 
-jaba hama ooty se gudalur ko jAwe hEM, pOXoM kI vqxXi meM parivarwana XyAna_AkarRiwa_karanevAlA hE.
+jaba hama ooty se gudalur ko jAwe hEM, pOXoM_kI vqxXi meM parivarwana XyAna_AkarRiwa_karanevAlA hE.
 
 Hindi meaning using Berkeley parser 3.89
 The glass house built on the lines of the crystal palace in london is the main attraction in this huge park. 
@@ -1627,7 +1627,7 @@ anuBava kagajI yogyawA kI apekRA isa kAma ke liye aXika mahawvapUrNa hE.
 
 Hindi meaning using Berkeley parser 3.96
 He wrote the address on a piece of paper. 
-usane kAgaja ke purje para pawA liKA.
+usane kAgaja_ke purje para pawA liKA.
 
 Hindi meaning using Berkeley parser 3.97
 Dictionaries are usually printed on thin paper. 
@@ -1643,7 +1643,7 @@ mEMne Medicine ke Journal meM eka hAla kA leKapawra paDA.
 
 Hindi meaning using Berkeley parser 3.100
 I read about the train accident in Sunday paper. 
-mEMne ravivAra ke samAcAra pawra meM rela xurGatanA ke bAre meM paDA.
+mEMne ravivAra ke_samAcAra pawra meM rela xurGatanA ke bAre meM paDA.
 
 Hindi meaning using Berkeley parser 4.1
 I read about the train robbery in today's paper. 
