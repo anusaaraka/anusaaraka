@@ -387,7 +387,7 @@
  (not (id_apertium_mng_modified ?id))
  =>
  (retract ?f)
- (bind ?mng (string-to-field (x_utf8 (implode$ (create$ ?mng)))))
+ (if (not (numberp ?mng)) then (bind ?mng (wx_utf8 ?mng)))
  (while (str-index ">" ?mng) do
  	(bind ?length (str-length ?mng))
 	(bind ?index (str-index ">" ?mng))
