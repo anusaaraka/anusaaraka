@@ -69,7 +69,6 @@
  (test (numberp ?id))
  =>
  (retract ?f)
-; (printout t ?id"-----"$?anu_grp_mng"--------"?mid"--------" $?man_grp_mng crlf)
  (loop-for-count (?i 1 (length $?anu_grp_mng))
                  (bind ?str (nth$ ?i $?anu_grp_mng))
                  (if (not (numberp ?str)) then (bind ?str (wx_utf8 ?str)))
@@ -84,6 +83,8 @@
                  (bind ?man_gp_mng ?str)
                  else
                  (bind ?man_gp_mng (str-cat  ?man_gp_mng "_" ?str))))
+ (if (= (length $?man_grp_mng) 0) then (bind ?man_gp_mng "-"))
+ (if (= (length $?anu_grp_mng) 0) then (bind ?anu_gp_mng "-"))
  (assert (anu_id-anu_mng-man_id-man_mng ?id ?anu_gp_mng ?id ?man_gp_mng))
  )
 
@@ -95,8 +96,8 @@
  (test (and (neq ?hin -D-) (neq ?hin -U-)))
  =>
  (retract ?f)
-        (if (not (numberp ?hin)) then
-        (bind ?hin (wx_utf8 ?hin)))
+        (if (not (numberp ?hin)) then (bind ?hin (wx_utf8 ?hin))
+        (if (eq (sub-string 1 2 ?hin) "\\@") then (bind ?hin (str-cat (sub-string 3 1000 ?hin)))))
         (assert (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng))
         (assert (id_wx_to_utf_converted ?id))
  )

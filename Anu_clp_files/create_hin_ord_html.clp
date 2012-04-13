@@ -76,13 +76,13 @@
  (test (and (neq ?hin -D-) (neq ?hin -U-)))
  =>
  (retract ?f)
-        (if (not (numberp ?hin)) then (bind ?hin (wx_utf8 ?hin)))
+        (if (not (numberp ?hin)) then (bind ?hin (wx_utf8 ?hin))
+        (if (eq (sub-string 1 2 ?hin) "\\@") then (bind ?hin (str-cat (sub-string 3 1000 ?hin)))))
         (assert (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng))
         (assert (id_wx_to_utf_converted ?id))
  )
  ;---------------------------------------------------------------------------------------------------
 
- 
  (defrule cntrl_fact_for_chunk
  (declare (salience 6000))
  (id-word ?id ?word)
@@ -127,6 +127,20 @@
  (assert (chunk-ids ?chnk_type REP ?id1 $?ch2)))
 
 ;============================== Printing to  html file  ===================================================================
+
+ (defrule dont_print_title_info
+ (declare (salience 5003))
+ (REMOVE_TITLE_FROM_HTML)
+ (para_id-sent_id-no_of_words 1 1 ?n_wrds)
+ ?f<-(hindi_order_length ?len)
+ (not (printed_head_info))
+ =>
+ (retract ?f)
+ (print_head_info)
+ (assert(printed_head_info))
+ (bind ?n_wrds (+ ?n_wrds 1))
+ (assert (id-len ?n_wrds 0))
+ )
 
  ;Printing html head information 
  (defrule print_head_info_to_html
