@@ -3416,10 +3416,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  29. Removed one sentence from sd_verified.
  30. Updated Log.
 
- 13-04-12
+ 14-04-12
  ========
  1) Modified some rules in create_eng_ord_html.clp [Added if (numberp) condition in all wx_utf8 calls]
  2) Modified rule "convert_wx_to_utf8" in create_hin_ord_html.clp [Added if (numberp) condition near  wx_utf8 call],and added new rule "dont_print_title_info" .
  3) Updated create_hin_align_html.clp file.
  4) Updated run_sentence_stanford_SMT.sh [Remove sed operation for handling "\\@"]
- 5) Updated Log file.
+ 5) Updated get_tam_info.lex program. 
+ 6) Updated Log file.
