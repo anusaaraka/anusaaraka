@@ -523,7 +523,6 @@
  (id-left_punctuation  ?id ?l_punc )
  (id-Apertium_output   ?id   ?mng)
  (sen_type-id-phrase ?sen_type ?id ?phrase)
- (Eng_sen ?Eng_sen)
  =>
  (retract ?f)
  (if (eq ?r_punc NONE) then (bind ?r_punc ""))
@@ -550,7 +549,6 @@
  (id-left_punctuation  ?id ?l_punc )
  (id-Apertium_output   ?id   ?apertium_output)
  (sen_type-id-phrase ?sen_type ?id ?phrase)
- (Eng_sen ?Eng_sen)
  =>
  (retract ?f)
  (if (eq ?r_punc NONE) then (bind ?r_punc ""))
@@ -589,7 +587,6 @@
  (id-left_punctuation  1 ?l_punc )
  (id-original_word 1 ?original_word)
  (sen_type-id-phrase ?sen_type 1 ?)
- (Eng_sen ?Eng_sen)
  =>
  (if (eq ?r_punc NONE) then (bind ?r_punc ""))
  (if (eq ?l_punc NONE) then (bind ?l_punc ""))
@@ -613,7 +610,6 @@
  (id-original_word ?id ?original_word)
  (id-right_punctuation ?id ?r_punc)
  (id-left_punctuation  ?id ?l_punc )
- (Eng_sen ?Eng_sen)
  =>
  (if (eq ?r_punc NONE) then (bind ?r_punc ""))
  (if (eq ?l_punc NONE) then (bind ?l_punc ""))
@@ -917,17 +913,16 @@
  (printout fp "<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form> " crlf)
 
  (reset)
- (bind ?path (str-cat ?p_id "." (+ ?s_id 1) "/" all_facts))
+ (bind ?path (str-cat ?p_id "." (+ ?s_id 1) "/" facts_for_eng_html))
  (bind ?rt_value (load-facts ?path))
  (if (eq ?rt_value FALSE) then
-	(bind ?path (str-cat  (+ ?p_id 1) ".1/" all_facts))
+	(bind ?path (str-cat  (+ ?p_id 1) ".1/" facts_for_eng_html))
 	(bind ?rt_value1 (load-facts ?path))
 	(if (eq ?rt_value1 FALSE) then
            (printout fp "<div class=\"float_clear\"/>" crlf)
            (printout fp "<div class=\"bottom\"></div>" crlf)
            (printout fp "</body>" crlf)
            (printout fp "</html>" crlf)
-		(exit)
 	)
  )
  

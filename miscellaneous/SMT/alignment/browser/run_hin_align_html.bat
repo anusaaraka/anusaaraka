@@ -6,7 +6,7 @@
 (bind ?path2 (str-cat ?*mypath* "/tmp/" ?*filename* "_tmp/dir_names.txt"))
 (open ?path2  op_fp "r")
 (bind ?s_no (readline op_fp))
-(bind ?*mypath* (str-cat ?*mypath* "/tmp/" ?*filename* "_tmp/"?s_no"/all_facts"))
+(bind ?*mypath* (str-cat ?*mypath* "/tmp/" ?*filename* "_tmp/"?s_no"/facts_for_align_html"))
 (close op_fp)
 (load-facts ?*mypath*)
 (bind ?mypath1 (str-cat ?*filename* "_align_tmp.html"))

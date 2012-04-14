@@ -37,7 +37,7 @@
  (deffunction print_hindi_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_p ?r_p ?aper_op)
  (if (eq ?r_p -) then (bind ?r_p ""))
  (if (eq ?l_p -) then (bind ?l_p ""))
- (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
+; (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
  (printout fp "<tr class=\"row2\">" crlf )
  (if (= ?w_id 1) then
  (printout fp "<td class=\"number\">"?p_id"."?s_id".B</td>"))
@@ -97,7 +97,7 @@
  ; Asserting default chunk if not present
  (defrule test_for_chunk
  (declare (salience 5900))
- (id-original_word ?id ?word)
+ (id-word ?id ?word)
  (not (chunk_cntrl_fact ?id))
  =>
  (assert (chunk-ids U ?id)))
@@ -171,8 +171,10 @@
  ?f<-(id-len ?id ?len)
  (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng)
 ; (id-left_punct-right_punct ?id1 ?l_p ?r_p)
- (hid-right_punctuation ?id1 ?r_p)
- (hid-left_punctuation ?id1 ?l_p)
+ ;(hid-right_punctuation ?id1 ?r_p)
+ (hid-punc_head-right_punctuation ?id1 ? ?r_p)
+ ;(hid-left_punctuation ?id1 ?l_p)
+ (hid-punc_head-left_punctuation ?id1 ? ?l_p)
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
  (test (member$ ?id1 $?ids))
  =>
@@ -188,7 +190,8 @@
  (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
  ?f<-(id-len ?id ?len)
  (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng)
- (hid-left_punctuation ?id1 ?l_p)
+ ;(hid-left_punctuation ?id1 ?l_p)
+ (hid-punc_head-left_punctuation ?id1 ? ?l_p)
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
  (test (member$ ?id1 $?ids))
  =>
@@ -204,7 +207,8 @@
  (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
  ?f<-(id-len ?id ?len)
  (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng)
- (hid-right_punctuation ?id1 ?r_p)
+ ;(hid-right_punctuation ?id1 ?r_p)
+ (hid-punc_head-right_punctuation ?id1 ? ?r_p)
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
  (test (member$ ?id1 $?ids))
  =>
@@ -271,21 +275,21 @@
  =>
  (retract ?f)
  ;(printout t "para-id " ?p_id " " ?s_id  crlf)
- (if (and (= ?p_id 1) (= ?s_id 1)) then (printout fp "<div class=\"float_clear\"/>" crlf))
  (printout fp "<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form> " crlf)
+ (if (and (= ?p_id 1) (= ?s_id 1)) then (printout fp "<div class=\"float_clear\"/>" crlf))
 
  (reset)
- (bind ?path (str-cat ?p_id "." (+ ?s_id 1) "/" all_facts))
+ (bind ?path (str-cat ?p_id "." (+ ?s_id 1) "/" facts_for_tran_html))
  (bind ?rt_value (load-facts ?path))
  (if (eq ?rt_value FALSE) then
-        (bind ?path (str-cat  (+ ?p_id 1) ".1/" all_facts))
+        (bind ?path (str-cat  (+ ?p_id 1) ".1/" facts_for_tran_html))
         (bind ?rt_value1 (load-facts ?path))
         (if (eq ?rt_value1 FALSE) then
            (printout fp "<div class=\"float_clear\"/>" crlf)
            (printout fp "<div class=\"bottom\"></div>" crlf)
            (printout fp "</body>" crlf)
            (printout fp "</html>" crlf)
-                (exit)
+;                (exit)
         )
  )
  (load-facts ?path)

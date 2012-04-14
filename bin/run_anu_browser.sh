@@ -2,7 +2,8 @@
 
   if [ "$5" = "REMOVE_TITLE" ] ;
     then  
-  echo "(REMOVE_TITLE_FROM_HTML)" >> $3/tmp/$2_tmp/1.1/all_facts
+  echo "(REMOVE_TITLE_FROM_HTML)" >> $3/tmp/$2_tmp/1.1/facts_for_eng_html
+  echo "(REMOVE_TITLE_FROM_HTML)" >> $3/tmp/$2_tmp/1.1/facts_for_tran_html
   fi
 
 

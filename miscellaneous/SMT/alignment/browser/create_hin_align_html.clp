@@ -17,7 +17,7 @@
  (printout fp "<body onload=\"register_keys()\">" crlf)
  (printout fp "<div id=\"navigation\">" crlf)
  (printout fp "<form action=\"\" onsubmit=\"goto_section(); return false;\">" crlf)
- (printout fp "<p><a id=\"english_order\" href=\""?*filename*".html\" target=\"_new\">Layered Output [English-order]</a><a id=\"translation\" href=\""?*filename*"_trnsltn.html\" target=\"_new\"> Translation </a><a id=\"help\" href=\"help.html\" target=\"_new\">Help</a><input type=\"text\" name=\"goto_section_value\" size=\"5\" /><input type=\"button\" value=\"Goto\" onclick=\"goto_section()\" /><input type=\"hidden\" name=\"no_of_rows\" value=\"3\" /><input type=\"button\" value=\"Show/Hide Rows...\" onclick=\"window.open('rows.html','ShowHideRowsWindow','top=200,left=200,height=500,width=300,location=no,menubar=no,toolbar=no,directories=no,statusbar=no');\" /><input type=\"checkbox\" name=\"numbers_value\" checked=\"checked\" onchange=\"toggle_numbers()\" />Numbers<input type=\"checkbox\" name=\"border_value\" checked=\"checked\" onchange=\"toggle_borders()\" />Borders</p>" crlf)
+ (printout fp "<p><a id=\"english_order\" href=\""?*filename*".html\" target=\"_new\">Layered Output [English-order]</a><a id=\"translation\" href=\""?*filename*"_trnsltn.html\" target=\"_new\"> Translation </a><a id=\"help\" href=\"help.html\" target=\"_new\">Help</a><input type=\"text\" name=\"goto_section_value\" size=\"5\" /><input type=\"button\" value=\"Goto\" onclick=\"goto_section()\" /><input type=\"hidden\" name=\"no_of_rows\" value=\"4\" /><input type=\"button\" value=\"Show/Hide Rows...\" onclick=\"window.open('rows.html','ShowHideRowsWindow','top=200,left=200,height=500,width=300,location=no,menubar=no,toolbar=no,directories=no,statusbar=no');\" /><input type=\"checkbox\" name=\"numbers_value\" checked=\"checked\" onchange=\"toggle_numbers()\" />Numbers<input type=\"checkbox\" name=\"border_value\" checked=\"checked\" onchange=\"toggle_borders()\" />Borders</p>" crlf)
  (printout fp "</form>" crlf)
  (printout fp "</div>" crlf)
  (printout fp "<div class=\"float_clear\"/>" crlf crlf)
@@ -26,7 +26,9 @@
 ;-------------------------------------------------------------------------------------------------
  
  (deffunction print_anu_eng_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?anu_eng)
- (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
+ (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf) 
+                      (printout fp "<table border=\"1\"><tr><td>" crlf))
+                      
  (printout fp "<table cellspacing=\"0\">"crlf"<tr class=\"row1\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".A</td>"))
  (printout fp "<td class=\""?chnk_fr_htm"\">" ?anu_eng "</td>"crlf"</tr>" crlf)
@@ -35,7 +37,7 @@
 ;-------------------------------------------------------------------------------------------------
  
  (deffunction print_anu_tran_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?anu_op)
- (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
+ ;(if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
  (printout fp "<tr class=\"row2\">" crlf )
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".B</td>"))
  (printout fp "<td class=\""?chnk_fr_htm"\">" ?anu_op "</td>"crlf"</tr>" crlf)
@@ -44,7 +46,7 @@
 ;-------------------------------------------------------------------------------------------------
 
  (deffunction print_man_tran_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?man_op)
- (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
+ ;(if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
  (printout fp "<tr class=\"row3\">" crlf )
  (if (= ?w_id 1) then
  (printout fp "<td class=\"number\">"?p_id"."?s_id".C</td>"))
@@ -53,8 +55,19 @@
 
 ;-------------------------------------------------------------------------------------------------
 
- (deffunction print_suggestion_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?man_op)
+ (deffunction print_confidence_lvl_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?confd_lvl)
+ ;(if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
  (printout fp "<tr class=\"row4\">" crlf )
+ (if (= ?w_id 1) then
+ (printout fp "<td class=\"number\">"?p_id"."?s_id".D</td>"))
+ (printout fp "<td class=\""?chnk_fr_htm"\"> " - " </td>" crlf "</tr>" crlf)
+ )
+
+;-------------------------------------------------------------------------------------------------
+
+
+ (deffunction print_suggestion_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?man_op)
+ (printout fp "<tr class=\"row5\">" crlf )
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">&nbsp;</td>"))
  (printout fp "<td class=\""?chnk_fr_htm"\"><input name=\"suggestion_1.1\" type=\"text\" class=\"suggestion\" size=\"1\" value=\"")
  (printout fp ?man_op"\" /></td></tr>" crlf)
@@ -62,6 +75,25 @@
  )
  
 ;============================= Asserting control facts and modifying the original facts ====================================
+
+ (defrule create_dummy_confd_lvl
+ (declare (salience 6000))
+ (id-word ?id ?word)
+ (not (id-confidence_level ?id ?confd_lvl))
+ =>
+ 	(assert (id-confidence_level ?id -)))
+
+ (defrule create_dummy_eng_sen
+ (declare (salience 6000))
+ (not (Eng_sen $?sen))
+ =>
+ (assert (Eng_sen "---")))
+
+ (defrule create_dummy_man_sen
+ (declare (salience 6000))
+ (not (manual_hin_sen $?sen))
+ =>
+ (assert (manual_hin_sen "---")))
 
  (defrule replace_spc_with_underscore
  (declare (salience 6000))
@@ -118,7 +150,7 @@
  ; Asserting default chunk if not present
  (defrule test_for_chunk
  (declare (salience 5900))
- (id-original_word ?id ?word)
+ (id-word ?id ?word)
  (not (chunk_cntrl_fact ?id))
  =>
  (assert (chunk-ids U ?id)))
@@ -179,11 +211,13 @@
  (test (member$ ?id1 $?eng_ids))
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
  (test (member$ (nth$ (length $?eng_ids) $?eng_ids) $?ids))
+ (id-confidence_level ?id ?confd_lvl)
  =>
          (retract ?f)
          (print_anu_eng_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng)
          (print_anu_tran_row  ?p_id ?s_id ?id ?chnk_fr_htm ?hin_mng)
          (print_man_tran_row  ?p_id ?s_id ?id ?chnk_fr_htm ?man_mng)
+         (print_confidence_lvl_row ?p_id ?s_id ?id ?chnk_fr_htm ?confd_lvl)
          (print_suggestion_row  ?p_id ?s_id ?id ?chnk_fr_htm ?man_mng)
          (assert (id-len (+ ?id 1) (- ?len 1))) 
  )
@@ -195,11 +229,13 @@
  (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?eng_ids ?id1 ?eng)
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
  (test (member$ ?id1 $?ids))
+ (id-confidence_level ?id ?confd_lvl)
  =>
          (retract ?f)
          (print_anu_eng_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng)
          (print_anu_tran_row  ?p_id ?s_id ?id ?chnk_fr_htm ?hin)
          (print_man_tran_row  ?p_id ?s_id ?id ?chnk_fr_htm -)
+         (print_confidence_lvl_row ?p_id ?s_id ?id ?chnk_fr_htm ?confd_lvl)
          (print_suggestion_row  ?p_id ?s_id ?id ?chnk_fr_htm -)
          (assert (id-len (+ ?id 1) (- ?len 1)))
  )
@@ -213,11 +249,13 @@
  ?f<-(id-len ?id ?len)
  (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?eng)
  (test (!= ?len 0))
+ (id-confidence_level ?id ?confd_lvl)
  =>
          (retract ?f)
          (print_anu_eng_row  ?p_id ?s_id ?id U ?eng)
          (print_anu_tran_row  ?p_id ?s_id ?id U ?hin)
          (print_man_tran_row  ?p_id ?s_id ?id U -)
+         (print_confidence_lvl_row ?p_id ?s_id ?id U ?confd_lvl)
          (print_suggestion_row  ?p_id ?s_id ?id U -)
          (assert (id-len (+ ?id 1) (- ?len 1)))
  )
@@ -227,12 +265,13 @@
  (declare (salience 4800))
  (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
  ?f<-(id-len ?id ?len)
- (test (!= ?len 0)) 
+ (test (!= ?len 0))
  =>
          (retract ?f)
          (print_anu_eng_row  ?p_id ?s_id ?id U - )
          (print_anu_tran_row  ?p_id ?s_id ?id U - )
          (print_man_tran_row  ?p_id ?s_id ?id U - )
+         (print_confidence_lvl_row ?p_id ?s_id ?id U -)
          (print_suggestion_row  ?p_id ?s_id ?id U -)
          (assert (id-len (+ ?id 1) (- ?len 1)))
  )
@@ -244,24 +283,30 @@
  (declare (salience 5000))
  (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
  ?f<-(id-len ? 0)
+ (manual_hin_sen $?man_sen)
+ (Eng_sen $?eng_sen)
  =>
  (retract ?f)
  ;(printout t "para-id " ?p_id " " ?s_id  crlf)
+ (printout fp "<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div> " crlf)
+ (printout fp "</td></tr>" crlf)
+ (printout fp "<tr><td>"(implode$ $?eng_sen)"</td></tr>" crlf)
+ (printout fp "<tr><td>"(wx_utf8 (implode$ $?man_sen))"</td></tr>" crlf)
+ (printout fp "</table></form>")
  (if (and (= ?p_id 1) (= ?s_id 1)) then (printout fp "<div class=\"float_clear\"/>" crlf))
- (printout fp "<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form> " crlf)
 
  (reset)
- (bind ?path (str-cat ?p_id "." (+ ?s_id 1) "/" all_facts))
+ (bind ?path (str-cat ?p_id "." (+ ?s_id 1) "/" facts_for_align_html))
  (bind ?rt_value (load-facts ?path))
  (if (eq ?rt_value FALSE) then
-        (bind ?path (str-cat  (+ ?p_id 1) ".1/" all_facts))
+        (bind ?path (str-cat  (+ ?p_id 1) ".1/" facts_for_align_html))
         (bind ?rt_value1 (load-facts ?path))
         (if (eq ?rt_value1 FALSE) then
            (printout fp "<div class=\"float_clear\"/>" crlf)
            (printout fp "<div class=\"bottom\"></div>" crlf)
            (printout fp "</body>" crlf)
            (printout fp "</html>" crlf)
-                (exit)
+                ;(exit)
         )
  )
  (load-facts ?path)
