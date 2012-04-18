@@ -1,19 +1,20 @@
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
+ (defglobal ?*aper_grp_fp* = ap_grp_fp)
  (defglobal ?*aper_fp* = ap_fp)
- (defglobal ?*h_file* = h_m_fp )
+; (defglobal ?*h_file* = h_m_fp )
 
- (defrule delete@in_hmng
- (declare (salience 20))
- ?f0<-(id-HM-source ?id ?mng Original_word)
- (test (neq (str-index "@" (implode$ (create$ ?mng))) FALSE))
- =>
-        (retract ?f0)
-	(bind ?mng (implode$ (create$ ?mng)))
-        (bind ?index (str-index "@" ?mng))
-        (bind ?mng (string-to-field (sub-string (+ ?index 1) (length ?mng) ?mng)))
-        (assert (id-HM-source ?id ?mng Original_word))
- )
+; (defrule delete@in_hmng
+; (declare (salience 20))
+; ?f0<-(id-HM-source ?id ?mng Original_word)
+; (test (neq (str-index "@" (implode$ (create$ ?mng))) FALSE))
+; =>
+;        (retract ?f0)
+;	(bind ?mng (implode$ (create$ ?mng)))
+;        (bind ?index (str-index "@" ?mng))
+;        (bind ?mng (string-to-field (sub-string (+ ?index 1) (length ?mng) ?mng)))
+;        (assert (id-HM-source ?id ?mng Original_word))
+; )
  ;-------------------------------------------------------------------------------------------------
  (defrule delete@in_aper_out
  (declare (salience 20))
@@ -57,13 +58,15 @@
  ?f0<-(anu_id-node-word-root-tam ?id ?node $?mng)
  =>
 	(retract ?f0)
-	(printout ?*aper_fp* "(anu_id-node-word-root-tam   " ?id"   "?node"   "(implode$ $?mng)")" crlf)
+	(printout ?*aper_grp_fp* "(anu_id-node-word-root-tam   " ?id"   "?node"   "(implode$ $?mng)")" crlf)
  )
  (defrule print_mng
- ?f1<-(id-HM-source ?id ?hmng ?s)
+; ?f1<-(id-HM-source ?id ?hmng ?s)
+ ?f<- (id-Apertium_output ?id $?mng)
  =>
-	(retract ?f1)
-	(printout ?*h_file* "(id-HM-source " ?id"  "?hmng"    " ?s")" crlf)
+	(retract ?f)
+	(printout ?*aper_fp* "(id-Apertium_output "  ?id "  " (implode$ $?mng)")" crlf)
+;	(printout ?*h_file* "(id-HM-source " ?id"  "?hmng"    " ?s")" crlf)
  )
  ;-------------------------------------------------------------------------------------------------
 
