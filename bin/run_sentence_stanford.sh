@@ -32,16 +32,13 @@ sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id
 
  cat  para_sent_id_info.dat word.dat sd_chunk.dat position.dat hindi_punctuation.dat >>$MYPATH/$1_tmp/$2/facts_for_tran_html
 
- #cp hindi_sentence.dat hindi_sentence_tmp.dat
+ cp hindi_sentence.dat hindi_sentence_tmp.dat
 
  sh $HOME_anu_test/bin/abbr.sh
-
-
- #cp hindi_sentence1.dat  hindi_sentence.dat
-
-# cat hin_eng_sent.dat
-
- #cat  hindi_sentence.dat
+ 
+ cp hindi_sentence1.dat  hindi_sentence.dat
+ # cat hin_eng_sent.dat
+ cat  hindi_sentence.dat
  
  grep -B2 "FALSE" $1.error >> errors.txt
  cat errors.txt
