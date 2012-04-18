@@ -166,13 +166,17 @@
 ;You can go shopping on the fashionable mall , visit its neo-gothic churches , the grand former vice-regal lodge or the ce    meteries .
 (defrule split_Conj_VP
 (declare (salience 1530))
-?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP $?d ?CC $?d1 ?VP1 $?d2)
+?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP $?d ?Pre_CC ?CC $?d1 ?VP1 $?d2)
 (Node-Category ?VP VP)
-(or (Node-Category ?CC CC)(Node-Category ?CC P_COM) )
+(Node-Category ?CC CC|P_COM)
+(Node-Category ?Pre_CC ?p_cc);Added by Maha Laxmi (18-04-2012), Ex:- Marine drive extends from nariman point to malabar hill past the famous chowpatty beach, and is built on land reclaimed from back bay along the arabian sea. 
 (Node-Category ?VP1 VP|VBN|VBG|VBD)
 =>
 	(retract ?f0)
+        (if (eq ?p_cc P_COM) then
 	(assert (Head-Level-Mother-Daughters ?h ?l ?VP $?d))
+        else
+	(assert (Head-Level-Mother-Daughters ?h ?l ?VP $?d ?Pre_CC)))
 	(assert (Head-Level-Mother-Daughters ?h ?l ?VP $?d1 ?VP1 $?d2))
 )
 ;------------------------------------------------------------------------------------------------------------------------
@@ -241,7 +245,7 @@
 (declare (salience 1500))
 ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut)
 (Node-Category  ?Mot    VP|SQ)
-(not (Head-Level-Mother-Daughters to $? ?Mot)) ;He persuaded them to go.
+(not (Head-Level-Mother-Daughters to|To $? ?Mot)) ;He persuaded them to go.
 (not (Mother ?Mot))
 =>
         (bind $?lwg (create$ ))

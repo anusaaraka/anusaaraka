@@ -3418,18 +3418,19 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 
  14-04-12
  ========
- 1) Modified rules in create_eng_ord_html.clp [Added if (numberp) condition in all wx_utf8 calls]
- 2) Modified rule "convert_wx_to_utf8" in create_hin_ord_html.clp [Added if (numberp) condition near  wx_utf8 call],and added new rule "dont_print_title_info" .
- 3) Updated run_sentence_stanford_SMT.sh [Remove sed operation for handling "\\@"]
- 4) Updated get_tam_info.lex program. 
- 5) Removed run_eng_ord_html.bat and run_hin_ord_html.bat and added run_html.bat.
+ 1. Modified rules in create_eng_ord_html.clp [Added if (numberp) condition in all wx_utf8 calls]
+ 2. Modified rule "convert_wx_to_utf8" in create_hin_ord_html.clp [Added if (numberp) condition near  wx_utf8 call],and added new rule "dont_print_title_info" .
+ 3. Updated run_sentence_stanford_SMT.sh [Remove sed operation for handling "\\@"]
+ 4. Updated get_tam_info.lex program. 
+ 5. Removed run_eng_ord_html.bat and run_hin_ord_html.bat and added run_html.bat.
             i)  Modified run_anu_browser.sh file     
             ii) Modified ClipsToAnu_browser_intfc.sh
- 6) Modified sent_end rule in create_eng_ord_html.clp , create_eng_ord_html.clp and create_hin_align_html.clp
- 7) Added code for displaying English_sentence row ,mannual_sentence and confidence level row for the firefox output in run_hin_align_html.bat.
- 8) Creating facts_for_eng_html[English-layered-output], facts_for_tran_html[hindi-layered-output] and facts_for_align_html[hindi-alignment-output] separately for respective html outputs , so following files have been modified
+ 6. Modified sent_end rule in create_eng_ord_html.clp , create_eng_ord_html.clp and create_hin_align_html.clp
+ 7. Added code for displaying English_sentence row ,mannual_sentence and confidence level row for the firefox output in run_hin_align_html.bat.
+ 8. Creating facts_for_eng_html[English-layered-output], facts_for_tran_html[hindi-layered-output] and facts_for_align_html[hindi-alignment-output] separately for respective html outputs , so following files have been modified
          i)       bin/run_sentence_link.sh
         ii)       bin/run_sentence_ol.sh
        iii)       bin/run_sentence_stanford.sh
         iv)       bin/run_sentence_stanford_SMT.sh
- 9) Updated Log file.
+ 9. Modified rule "split_Conj_VP" in sd_lwg_rules.clp. [Ex:-Marine drive extends from nariman point to malabar hill past the famous chowpatty beach, and is built on land reclaimed from back bay along the arabian sea.]
+ 10. Updated Log file.
