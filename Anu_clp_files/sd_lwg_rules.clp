@@ -169,7 +169,7 @@
 ?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP $?d ?Pre_CC ?CC $?d1 ?VP1 $?d2)
 (Node-Category ?VP VP)
 (Node-Category ?CC CC|P_COM)
-(Node-Category ?Pre_CC ?p_cc);Added by Maha Laxmi (18-04-2012), Ex:- Marine drive extends from nariman point to malabar hill past the famous chowpatty beach, and is built on land reclaimed from back bay along the arabian sea. 
+(Node-Category ?Pre_CC ?p_cc);Added by Mahalaxmi (18-04-12), Ex:- Marine drive extends from nariman point to malabar hill past the famous chowpatty beach, and is built on land reclaimed from back bay along the arabian sea. 
 (Node-Category ?VP1 VP|VBN|VBG|VBD)
 =>
 	(retract ?f0)
@@ -255,7 +255,8 @@
                     (bind $?lwg (sort my_string_cmp (create$ $?lwg ?j)))
                 )
         )
-        (assert (root-verbchunk-tam-parser_chunkids  root - $?lwg - $?lwg - $?lwg))
+        (if (neq (length $?lwg) 0) then ;Added by Mahalaxmi(18-04-12) Eg:- Close to hampstead heath stands high gate hill and on top of the hill, the pleasant village of high gate.
+        (assert (root-verbchunk-tam-parser_chunkids  root - $?lwg - $?lwg - $?lwg)))
 )
 ;------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (24-02-12)
