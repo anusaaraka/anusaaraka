@@ -3425,7 +3425,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  5. Removed run_eng_ord_html.bat and run_hin_ord_html.bat and added run_html.bat.
             i)  Modified run_anu_browser.sh file     
             ii) Modified ClipsToAnu_browser_intfc.sh
- 6. Modified sent_end rule in create_eng_ord_html.clp , create_eng_ord_html.clp and create_hin_align_html.clp
+ 6. Modified sent_end rule in create_eng_ord_html.clp , create_eng_ord_html.clp and create_hin_align_html.clp and updated preposition rules in create_eng_ord_html.clp [For handling multiple prepositions] .
  7. Added code for displaying English_sentence row ,mannual_sentence and confidence level row for the firefox output in run_hin_align_html.bat.
  8. Creating facts_for_eng_html[English-layered-output], facts_for_tran_html[hindi-layered-output] and facts_for_align_html[hindi-alignment-output] separately for respective html outputs , so following files have been modified
          i)       bin/run_sentence_link.sh
@@ -3433,8 +3433,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
        iii)       bin/run_sentence_stanford.sh
         iv)       bin/run_sentence_stanford_SMT.sh
  9. Modified rule "split_Conj_VP" and "get_lwg" in sd_lwg_rules.clp. [Ex:-Marine drive extends from nariman point to malabar hill past the famous chowpatty beach, and is built on land reclaimed from back bay along the arabian sea.]
-10. Added miscellaneous/SMT/alignment/get_wx.clp
-11. Updated the following files
+ 10. Added miscellaneous/SMT/alignment/get_wx.clp
+ 11. Updated the following files
         alignment.clp   get_anu_grp_mng.clp   word_alignment.clp
-12. Modified run_H_gen_SMT.bat to get_wx module
-13. Updated Log file.
+ 12. Modified run_H_gen_SMT.bat to get_wx module
+ 13. Updated sd_chunker.clp [For handling SINV POS]
+ 14. Updated get_tam_info.lex [added new regular expression for getting root information for all words]
+ 15. Updated Log file.
