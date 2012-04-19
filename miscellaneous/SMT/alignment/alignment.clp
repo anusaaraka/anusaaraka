@@ -32,7 +32,8 @@
 ?f<-(manual_id-node-word-root-tam ?m_id ? $?grp_mng - ? - ?)
 ?f1<-(anu_id-node-word-root-tam ?a_id ? $?grp_mng - ? - ?)
 ?f0<-(manual_hin_sen $?pre $?grp_mng $?post)
-(not (anu_id-node-word-root-tam ? ? $?a_mng - $?grp_mng - ?))
+(test (and (eq (member$ Ora $?grp_mng) FALSE)(eq (member$ yA $?grp_mng) FALSE)))
+;(not (anu_id-node-word-root-tam ? ? $?a_mng - $?grp_mng - ?))
 =>
         (retract ?f0 ?f ?f1)
         (assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng  ?a_id  $?grp_mng - ?m_id $?grp_mng))
@@ -121,8 +122,15 @@
         (printout ?*alg_file* "(mid-aid-r_name-a_mng-m_mng      "?a_id" "?m_id" get_Ora_wx_lt_match  "$?m_mng")" crlf)
 )
 ;-------------------------------------------------------------------------------------------------------------------------
+(defrule get_Ora_fact
+(declare (salience 69))
+(anu_id-node-word-root-tam  $? - Ora|yA - ?)
+=>
+	(assert (left_Ora_fact))
+)
 (defrule get_left_match_for_Ora
 (declare (salience 69))
+(left_Ora_fact)
 ?f<-(anu_id-node-word-root-tam  ?a_id ?n ?w $?a Ora|yA $?a1 - Ora|yA - ?)
 ?f1<-(manual_id-node-word-root-tam ?m_id ?n1 $? - ?h&Ora|waWA|evaM|yA - ?)
 (id-Apertium_output ?wid ?w)
@@ -266,15 +274,22 @@
         (printout ?*alg_file* "(mid-aid-r_name-a_mng-m_mng      "?m_id" "?a_id"  get_wx_match_for_np_head  "$?a_word" "$?m_word")" crlf)
 )
 ;-------------------------------------------------------------------------------------------------------------------------
+ (defrule get_fact_for_np_head
+ (declare (salience 56))
+ =>
+	(assert (np_head_match))
+ )
  ;Young children are taken to the temples and are introduced to the letters of the alphabet in front of saraswati, the goddess of wisdom and learning.
  ;Places where a tourist can whiz past his worries include gulmarg in jammu and kashmir, auli in grawhal, kufri and narkanda in himachal pradesh.
  (defrule get_match_for_np_head
  (declare (salience 55))
+ (np_head_match)
  ?f0<-(anu_id-node-word-root-tam  ?a_id ?n1&~VP $?a_word - ?head&~Ora&~yA - ?)
  ?f1<-(manual_id-node-word-root-tam ?m_id ?n&~VGF&~VGNN $?m_word - ?h&~Ora&~waWA&~evaM&~yA  - ?)
  (id-root ?a_id ?root)
  ?f2<-(manual_hin_sen $?pre $?m_word $?post)
  (not (modified_sen_with_default))
+ (not (modified_sen_with_np))
  =>
         (bind $?matches (match ?head ?h ?root))
         (if (eq (nth$ 1 $?matches) 1) then
@@ -352,14 +367,22 @@
 	(assert (modified_sen_with_wx))
 )
 ;-------------------------------------------------------------------------------------------------------------------------
+(defrule get_some_match_fact
+(declare (salience 51))
+=>
+	(assert (match_for_some_mng))
+)
+
 ;Places where a tourist can whiz past his worries include gulmarg in jammu and kashmir, auli in grawhal, kufri and narkanda in himachal pradesh.
 (defrule np_with_some_same_mng
 (declare (salience 50))
+(match_for_some_mng)
 ?f<-(manual_id-node-word-root-tam ?m_id ?n $?m ?wrd $?m1 - ?head - ?tam)
 ?f1<-(anu_id-node-word-root-tam  ?a_id ?n1 $?a ?wrd1 $?a1 - ?head1 - ?tam1)
 (id-Apertium_output ?wid ?wrd1)
 (id-root ?wid ?root)
 ?f0<-(manual_hin_sen $?pre $?m ?wrd $?m1 $?post)
+(not (modified_sen_default))
 =>
         (bind $?m_word (create$ $?m ?wrd $?m1))
         (bind $?a_word (create$ $?a ?wrd1 $?a1))
@@ -368,11 +391,13 @@
                 (retract ?f ?f1 ?f0)
                 (assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng  ?a_id  $?a_word - ?m_id $?m_word))
                 (assert (manual_hin_sen $?pre $?post))
+		(assert (modified_sen_with_np))	
                 (printout ?*alg_file* "(mid-aid-r_name-a_mng-m_mng      "?a_id" "?m_id" np_with_some_same_mng "$?a_word" "$?m_word")" crlf)
         else    (if (eq (nth$ 2 $?matches) 2) then
                         (retract ?f ?f1 ?f0)
                         (assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng  ?a_id  $?a_word - ?m_id $?m_word))
                         (assert (manual_hin_sen $?pre $?post))
+			(assert (modified_sen_with_np))
                         (printout ?*alg_file* "(mid-aid-r_name-a_mng-m_mng      "?a_id" "?m_id" np_with_some_same_mng "$?a_word" "$?m_word")" crlf)
                 )
         )
@@ -412,6 +437,7 @@
 ?f0<-(manual_id-node-word-root-tam ?id ? $?m ?w $?m1 - ?h - ?v)
 ?f1<-(anu_id-a_grp_mng-sep-manual_id-m_grp_mng ?aid $?a ?w - ?mid  $?mng)
 ?f2<-(manual_hin_sen $?pre $?m ?w $?m1 $?post)
+;(test (neq ?w 
 =>
         (retract ?f1 ?f0 ?f2)
         (bind ?m_mng (create$ $?mng $?m ?w $?m1))
@@ -431,5 +457,39 @@
 	(retract ?f1 ?f0 ?f2)
 	(assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng  $?a - =(+ ?id 1) $?m $?m1))
 	(assert (manual_hin_sen $?pre $?post))
+)
+;-------------------------------------------------------------------------------------------------------------------------
+(defrule last_fact
+(manual_hin_sen $?sen .)
+(test (neq (length $?sen) 0))
+=>
+	(assert (run_default_rules))
+)
+;This beacon resonates the image of gustave eiffel's tower itself as a universal and symbolic landmark.
+;(8 gustave eiffel's kI - 8 gesteva ePila toYvara kI)
+(defrule default_rule
+(declare (salience 10))
+(run_default_rules)
+?f<-(manual_id-node-word-root-tam  ?id   ?  $?m_mng - ? - ?)
+?f1<-(anu_id-node-word-root-tam   ?id   ?   $?a_mng - ? - ?)
+?f2<-(manual_hin_sen $?pre $?m_mng $?post)
+=>
+        (retract ?f ?f1 ?f2 )
+        (assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng  ?id  $?a_mng - ?id $?m_mng))
+        (assert (manual_hin_sen $?pre $?post))
+        (assert (modified_sen_default))
+)
+;-------------------------------------------------------------------------------------------------------------------------
+(defrule default_rule2
+(declare (salience 5))
+(run_default_rules)
+?f<-(manual_id-node-word-root-tam  ?id   ?  $?m_mng - ? - ?)
+?f1<-(anu_id-node-word-root-tam   ?id1   ?   $?a_mng - ? - ?)
+?f2<-(manual_hin_sen $?pre $?m_mng $?post)
+=>
+        (retract ?f1 ?f1 ?f2 )
+        (assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng  ?id  $?a_mng - ?id1 $?m_mng))
+        (assert (manual_hin_sen $?pre $?post))
+        (assert (modified_sen_default2))
 )
 
