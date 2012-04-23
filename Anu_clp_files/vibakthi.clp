@@ -167,7 +167,7 @@
  (pada_info (group_head_id ?root_id)(group_cat VP)(vibakthi 0)(H_tam ?tam))
  (yA-tam  ?tam)
  (id-HM-source ?root_id ? ?src)
- (ids-cmp_mng-head-cat-mng_typ $?ids1 ?h_mng ?head_id ?grp_cat ?mng_typ)
+ (ids-cmp_mng-head-cat-mng_typ-priority $?ids1 ?h_mng ?head_id ?grp_cat ?mng_typ ?)
  ?f1<-(pada_info (group_ids $?ids)(group_cat PP))
  ?f0<-(pada_control_fact ?sub_id)
  (not (prep_id-relation-anu_ids ? kriyA-subject  ?root_id1&:(> ?root_id ?root_id1) ?sub_id))
