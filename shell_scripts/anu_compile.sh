@@ -54,8 +54,14 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/transitive-verb-list.gdbm  < transitive-verb-list.txt
  echo "Creating idioms.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/idioms.gdbm < idioms.txt
- echo "Creating compound_phrase.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/compound_phrase.gdbm < compound-matching/compound_phrase.txt
+ echo "Creating acronyms-common_noun_compounds.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/acronyms-common_noun_compounds.gdbm < compound-matching/acronyms-common_noun_compounds.txt
+ echo "Creating proper_noun-common_noun_compounds.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/proper_noun-common_noun_compounds.gdbm < compound-matching/proper_noun-common_noun_compounds.txt
+ echo "Creating named_entities.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/named_entities.gdbm < compound-matching/named_entities.txt
+ echo "Creating multi_word_expressions.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/multi_word_expressions.gdbm < compound-matching/multi_word_expressions.txt
  echo "Creating preposition.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/preposition.gdbm < preposition.txt
  echo "Creating default-iit-bombay-shabdanjali-dic.gdbm"

@@ -3416,7 +3416,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  29. Removed one sentence from sd_verified.
  30. Updated Log.
 
- 18-04-12
+ 23-04-12
  ========
  1. Modified rules in create_eng_ord_html.clp [Added if (numberp) condition in all wx_utf8 calls]
  2. Modified rule "convert_wx_to_utf8" in create_hin_ord_html.clp [Added if (numberp) condition near  wx_utf8 call],and added new rule "dont_print_title_info" .
@@ -3439,4 +3439,23 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  12. Modified run_H_gen_SMT.bat to get_wx module
  13. Updated sd_chunker.clp [For handling SINV POS]
  14. Updated get_tam_info.lex [added new regular expression for getting root information for all words]
- 15. Updated Log file.
+ 15. Based on the type of the phrase, compound_phrase.txt file has been divided in to 
+    	 i) acronyms-common_noun_compounds.txt
+    	ii) proper_noun-common_noun_compounds.txt
+       iii) named_entities.txt
+    	iv) multi_word_expressions.txt
+    accordingly, following files have been modified
+         i) compound_phrase.clp
+           * Renamed this file to multi_word_expressions.clp
+                >> Updated create_binary_files.clp file.
+           * Added deffunction "mwe_lookup" and rules "chk_for_highest_priority" and "chk_for_mwe" and removed chk_for_cmp_phrase rule.
+           * Modified fact "ids-cmp_mng-head-cat-mng_typ" to  "ids-cmp_mng-head-cat-mng_typ-priority"
+                >> Updated hindi_meaning.clp file 
+                >> Updated vibakthi.clp
+                >> run_modules_std.bat
+                >> run_modules_link.bat
+                >> run_modules_ol.bat
+	   * renamed compound_phrase.dat to multi_word_expressions.dat
+       ii) anu_compile.sh and anu_compile_64bit.sh file [Added code for creating .gdbm files]
+ 16. Updated changes_in_databases file.
+ 17. Updated Log file.

@@ -11,7 +11,7 @@
  (assert (affecting_id-affected_ids-wsd_group_word_mng))
  (assert (id-wsd_number) )
  (assert (id-wsd_root))
- (assert (ids-cmp_mng-head-cat-mng_typ))
+ (assert (ids-cmp_mng-head-cat-mng_typ-priority))
  (assert (verb_type-verb-kriyA_mUla-tam))
  (assert (id-sen_mng))
  (assert (id-tam_type))
@@ -72,7 +72,7 @@
  (defrule compare_wsd_and_db_MWE_word_mng
  (declare (salience 8701))
  (affecting_id-affected_ids-wsd_group_word_mng  ?id  $?ids ?mng)
- (ids-cmp_mng-head-cat-mng_typ $?cmp_ids ?mng1 ?head_id ?grp_cat ?mng_typ)
+ (ids-cmp_mng-head-cat-mng_typ-priority $?cmp_ids ?mng1 ?head_id ?grp_cat ?mng_typ ?)
  (root-verbchunk-tam-chunkids   ?pada_head  ?  ?tam  $?ids1)
  (test (not (member$ ?id $?ids1)));; Assuming lwg_ids (verb-verb connection) will not be part of compound phrase (noun-noun connection)
  ?f<-(meaning_to_be_decided ?id)
@@ -115,7 +115,7 @@
  (defrule compare_wsd_and_db_MWE_root_mng
  (declare (salience 8700))
  (affecting_id-affected_ids-wsd_group_root_mng  ?id  $?ids ?mng)
- (ids-cmp_mng-head-cat-mng_typ $?cmp_ids ?mng1 ?head_id ?grp_cat ?mng_typ)
+ (ids-cmp_mng-head-cat-mng_typ-priority $?cmp_ids ?mng1 ?head_id ?grp_cat ?mng_typ ?)
  (root-verbchunk-tam-chunkids   ?pada_head  ?  ?tam  $?ids1)
  (test (not (member$ ?id $?ids1)));; Assuming lwg_ids (verb-verb connection) will not be part of compound phrase (noun-noun connection)
  ?f<-(meaning_to_be_decided ?id)
@@ -214,7 +214,7 @@
  ;I live in New York City .
  (defrule database_cmp_phrase_mng
  (declare (salience 8600))
- (ids-cmp_mng-head-cat-mng_typ $?ids ?cmp_mng ?head_id ?grp_cat ?mng_typ)
+ (ids-cmp_mng-head-cat-mng_typ-priority $?ids ?cmp_mng ?head_id ?grp_cat ?mng_typ ?)
  (root-verbchunk-tam-chunkids   ?pada_head  ?  ?tam  $?ids1); Assuming lwg_ids (verb-verb connection) will not be part of compound phrase (noun-noun connection)
  (test (not (member$ (nth$ ?head_id $?ids) $?ids1)))
  ?mng<-(meaning_to_be_decided ?head)

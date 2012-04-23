@@ -204,7 +204,7 @@
 	kE_kara 	f   Meena(2.5.11)
 	uwwara_xe	m   (Suggested by Sukhada (16-09-11) Ex: He studiously avoided answering the question.)	 
 
-changes in compound_phrase.txt  (samAsa.txt)
+  changes in compound_phrase.txt  (samAsa.txt)
   =========================
   1. Added 
 	 train accident              ----  rela_xurGatanA
@@ -655,3 +655,25 @@ Removed::
  ==========================
  Added  :
 	as_before 	---	Suggested by Rajini (25-02-12)
+
+
+
+-------------------------- compound_phrase.txt -----------------------------------
+ Based on the type of the phrase, compound_phrase.txt file has been splitted in to four different files,(Suggested by Chaitanya ji 23-04-12)
+        i) acronyms-common_noun_compounds.txt
+       ii) proper_noun-common_noun_compounds.txt
+      iii) named_entities.txt
+       iv) multi_word_expressions.txt
+
+    proper_noun-common_noun_compounds.txt 
+    =====================================
+    Added   ::
+    Wall_Street     voYl_strIta#voYl_strIta#noun#2#WM
+                    [previously it was present in multi_word_expressions.txt as "wall_street     galI[_banxa_sadaka]#galI[_banxa_sadaka]#noun#2#RM" which is wrong so removed made entry in proper_noun-common_noun_compounds.txt as above, Suggested by Chaitanya ji and Dipti Madam. 23-04-12]
+    
+
+    multi_word_expressions.txt
+    ==========================
+    Removed  :: 
+    wall_street     galI[_banxa_sadaka]#galI[_banxa_sadaka]#noun#2#RM
+                    [Suggested by Chaitanya ji and Dipti Madam. 23-04-12]
