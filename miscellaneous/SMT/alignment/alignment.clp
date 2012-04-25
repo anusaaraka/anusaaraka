@@ -33,7 +33,6 @@
 ?f1<-(anu_id-node-word-root-tam ?a_id ? $?grp_mng - ? - ?)
 ?f0<-(manual_hin_sen $?pre $?grp_mng $?post)
 (test (and (eq (member$ Ora $?grp_mng) FALSE)(eq (member$ yA $?grp_mng) FALSE)))
-;(not (anu_id-node-word-root-tam ? ? $?a_mng - $?grp_mng - ?))
 =>
         (retract ?f0 ?f ?f1)
         (assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng  ?a_id  $?grp_mng - ?m_id $?grp_mng))
@@ -128,17 +127,21 @@
 =>
 	(assert (left_Ora_fact))
 )
+
 (defrule get_left_match_for_Ora
 (declare (salience 69))
 (left_Ora_fact)
 ?f<-(anu_id-node-word-root-tam  ?a_id ?n ?w $?a Ora|yA $?a1 - Ora|yA - ?)
 ?f1<-(manual_id-node-word-root-tam ?m_id ?n1 $? - ?h&Ora|waWA|evaM|yA - ?)
 (id-Apertium_output ?wid ?w)
+(id-HM-source   ?wid   ?h_root ?)
 (id-root ?wid ?root)
 ?f2<-(manual_id-node-word-root-tam  ?id  ? $?m ?w1 $?m1 - ? - ?)
+(id-node-word-root ? ? ?w1 ?m_root)
 (test (and (< ?id ?m_id)(neq ?id ?m_id)))
 =>
-        (bind $?matches (match ?w ?w1 ?root))
+;        (bind $?matches (match ?w ?w1 ?root))
+        (bind $?matches (match ?h_root ?m_root ?root))
         (bind $?m_mng (create$ $?m ?w1 $?m1))
         (if (eq (nth$ 1 $?matches) 1) then
                 (retract ?f1 ?f2)
@@ -184,9 +187,42 @@
 	)
 )
 ;-------------------------------------------------------------------------------------------------------------------------
+;(defrule get_ora_lt_fact
+;(declare (salience 67))
+;(man_head-anu_word-Ora_grp-Ora_grp_id-Ora $?)
+;=>
+;	(assert (ora_fact))
+;)
+;
+;(defrule get_Ora_lt_grp1
+;(declare (salience 67))
+;(ora_fact)
+;(anu_id-node-word-root-tam  ?a_id ? $? ?w $? ?a_w $? ?a_h&Ora|yA $? - Ora|yA - ?)
+;?f1<-(man_head-anu_word-Ora_grp-Ora_grp_id-Ora ?m_h ?a_w $?m_mng ?id ?h)
+;(id-Apertium_output ?wid ?w)
+;(id-root ?wid ?root)
+;?f2<-(manual_id-node-word-root-tam ?id1 ? $?m ?word $?m1 - ? - ?)
+;(id-node-word-root ? ? ?word ?h_rt)
+;(not (default_Ora_grp))
+;=>
+;	(bind $?matches (match ?w ?h_rt ?root))
+;        (if (eq (nth$ 1 $?matches) 1) then
+;        	(bind $?m_mng (create$ $?m ?word $?m1 $?m_mng))
+;                (retract ?f1 ?f2)
+;		(assert (man_head-anu_word-Ora_grp-Ora_grp_id-Ora ?m_h ?w $?m_mng ?id1 ?h))
+;        else    (if (eq (nth$ 2 $?matches) 2) then
+;	                (bind $?m_mng (create$ $?m ?word $?m1 $?m_mng))
+;                        (retract ?f1 ?f2)
+;			(assert (man_head-anu_word-Ora_grp-Ora_grp_id-Ora ?m_h ?w  $?m_mng ?id1 ?h))
+;                )
+;        )
+;)
+
+
+
 ;lagaBaga saba buddhist vAswukalA saMbaXI rUpa stupa chaitya "maMxiroM" Ora maTa kA
 (defrule default_Ora_lt_match
-(declare (salience 67))
+(declare (salience 66))
 ?f<-(anu_id-node-word-root-tam  ?a_id ?n $?a ?w $?a1 - Ora|yA - ?)
 ?f1<-(man_head-anu_word-Ora_grp-Ora_grp_id-Ora ?m_h ?w $?m_mng ?id ?h)
 ?f2<-(manual_id-node-word-root-tam =(- ?m_h 1)  ? $?m ?w1 $?m1 - ? - ?)
@@ -201,7 +237,7 @@
 ;-------------------------------------------------------------------------------------------------------------------------
 ;buxXimawwA Ora  ===> buXxi evaM
 (defrule default_Ora_lt_match1
-(declare (salience 67))
+(declare (salience 66))
 ?f<-(anu_id-node-word-root-tam  ?a_id ? ?w $?a - Ora|yA - ?)
 ?f1<-(manual_id-node-word-root-tam ?m_id ? $? - ?h&Ora|waWA|evaM|yA - ?)
 ?f2<-(manual_id-node-word-root-tam =(- ?m_id 1)  ? $?m - ? - ?)
@@ -215,7 +251,7 @@
 ;-------------------------------------------------------------------------------------------------------------------------
 ;Places where a tourist can whiz past his worries include gulmarg in jammu and "kashmir", auli in grawhal, kufri and narkanda in himachal pradesh.
 (defrule get_Ora_rt_match
-(declare (salience 66))
+(declare (salience 65))
 ?f<-(anu_id-node-word-root-tam  ?a_id ? $?a ?w $?a1 ?a_h&Ora|yA $?a2 ?wrd - Ora|yA - ?)
 ?f1<-(man_head-anu_word-Ora_grp-Ora_grp_id-Ora ?m_id  ?w $?mng  ? ?h&Ora|waWA|evaM|yA)
 ?f2<-(manual_id-node-word-root-tam ?id ? $?m ?wrd $?m1 - ? - ?)
@@ -229,9 +265,8 @@
 	(assert  (manual_hin_sen $?pre $?post))
 )
 ;-------------------------------------------------------------------------------------------------------------------------
-;68 Kms from bhopal, sanchi has the distinction of having the finest specimens of almost all buddhist architectural forms, stupa, chaitya, temples and monasteries dating from 3rd century bcABBR-Dot.
 (defrule default_Ora_rt_match
-(declare (salience 65))
+(declare (salience 64))
 ?f<-(anu_id-node-word-root-tam  ?a_id ? $?a ?w $?a1 ?a_h&Ora|yA $?a2 ?wrd $?a3 - Ora|yA - ?)
 ?f1<-(man_head-anu_word-Ora_grp-Ora_grp_id-Ora ?m_id  ?w $?mng  ? ?h&Ora|waWA|evaM|yA)
 (id-Apertium_output ?wid ?wrd $?w1)
@@ -245,8 +280,26 @@
         (assert  (manual_hin_sen $?pre $?post))
 )
 ;-------------------------------------------------------------------------------------------------------------------------
+;68 Kms from bhopal, sanchi has the distinction of having the finest specimens of almost all buddhist architectural forms, stupa, chaitya, temples and monasteries dating from 3rd century bcABBR-Dot.
 (defrule default_Ora_rt_match1
 (declare (salience 63))
+?f<-(anu_id-node-word-root-tam  ?a_id ? $?a ?w $?a1 ?a_h&Ora|yA $?a2 ?wrd $?a3 - Ora|yA - ?)
+?f1<-(man_head-anu_word-Ora_grp-Ora_grp_id-Ora ?m_id  ?w  ?mng $?mng1  ? ?h&Ora|waWA|evaM|yA)
+(id-Apertium_output ?wid ?wrd $?w1)
+?f2<-(manual_id-node-word-root-tam ?id ? $?m ?wrd $?m1 - ? - ?)
+?f0<-(manual_hin_sen $?pre ?mng $? ?h $?m ?wrd $?m1 $?post)
+=>
+        (retract ?f ?f1 ?f2 ?f0)
+        (bind $?a_mng (create$ $?a ?w $?a1 ?a_h $?a2 ?wrd $?a3))
+        (bind $?m_mng (create$ ?mng $?mng1 ?h $?m ?wrd $?m1))
+        (assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng  ?a_id  $?a_mng - ?m_id $?m_mng))
+        (assert  (manual_hin_sen $?pre $?post))
+)
+
+
+
+(defrule default_Ora_rt_match2
+(declare (salience 62))
 ?f<-(anu_id-node-word-root-tam  ?a_id ? $?a ?w $?a1 - Ora|yA - ?)
 ?f1<-(man_head-anu_word-Ora_grp-Ora_grp_id-Ora ?m_id  ?w $?mng  ? ?h&Ora|waWA|evaM|yA)
 ?f2<-(manual_id-node-word-root-tam =(+ ?m_id 1) ? $?m  - ? - ?t)
@@ -290,6 +343,8 @@
  ?f2<-(manual_hin_sen $?pre $?m_word $?post)
  (not (modified_sen_with_default))
  (not (modified_sen_with_np))
+ (not (modified_sen_with_wx))
+ (not (modified_sen_rem_grp))
  =>
         (bind $?matches (match ?head ?h ?root))
         (if (eq (nth$ 1 $?matches) 1) then
@@ -383,6 +438,7 @@
 (id-root ?wid ?root)
 ?f0<-(manual_hin_sen $?pre $?m ?wrd $?m1 $?post)
 (not (modified_sen_default))
+(not (modified_sen_rem_grp))
 =>
         (bind $?m_word (create$ $?m ?wrd $?m1))
         (bind $?a_word (create$ $?a ?wrd1 $?a1))
@@ -413,54 +469,127 @@
 =>
         (retract ?f1 ?f0)
 	(assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng  ?a_id ?a $?w - ?m_id ?a $?m))
+	(assert (modified_sen_rem_grp))
 )
 ;-------------------------------------------------------------------------------------------------------------------------
 ;Young children are taken to the temples and are introduced to the letters of the alphabet in front of saraswati, the goddess of wisdom and learning.
 ;paricaya kie gaye hEM(anu) == karavAyA jAwA hE(man) ===> paricaya kie gaye hEM(anu) ==  unakA paricaya karavAyA jAwA hE(man)
 (defrule get_rem_group_of_man_from_anu_first
 (declare (salience 46))
-?f0<-(manual_id-node-word-root-tam ?id ? $?m ?w $?m1 - ?h - ?v)
 ?f1<-(anu_id-a_grp_mng-sep-manual_id-m_grp_mng ?aid ?w $?a - ?mid  $?mng)
+?f0<-(manual_id-node-word-root-tam ?id ?n&~VGF $?m ?w $?m1 - ?h - ?v)
 ?f2<-(manual_hin_sen $?pre $?m ?w $?m1 $?post)
 =>
         (retract ?f1 ?f0 ?f2)
 	(bind ?m_mng (create$ $?m ?w $?m1 $?mng))
         (assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng ?aid ?w $?a - ?mid  $?m_mng))
         (assert (manual_hin_sen $?pre $?post))
+	(assert (modified_sen_rem_grp))
 )
 ;-------------------------------------------------------------------------------------------------------------------------
+;Prayag Sangeet Samiti - saMgIwa samiwi  ==> Prayag Sangeet Samiti - prayAga saMgIwa samiwi
+(defrule get_rem_group_of_man_from_anu_wx_first
+(declare (salience 46))
+?f1<-(anu_id-a_grp_mng-sep-manual_id-m_grp_mng ?aid ?w $?a - ?mid  $?mng)
+(eng_word-man_wx_word ?w ?wx_word)
+?f0<-(manual_id-node-word-root-tam ?id ? $?m ?wx_word $?m1 - ?h - ?v)
+?f2<-(manual_hin_sen $?pre $?m ?wx_word $?m1 $?post)
+=>
+        (retract ?f1 ?f0 ?f2)
+        (bind ?m_mng (create$ $?m ?wx_word $?m1 $?mng))
+        (assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng ?aid ?w $?a - ?mid  $?m_mng))
+        (assert (manual_hin_sen $?pre $?post))
+	(assert (modified_sen_rem_grp))
+)
+;-------------------------------------------------------------------------------------------------------------------------
+
 ;Mandi is comparatively hotter than other hill stations of himachal pradesh.
 ;anya pahAdI steSanoM kI apekRA == anya pahAdI steSanoM kI
 ;anya pahAdI steSanoM kI apekRA == anya pahAdI steSanoM kI apekRA
 (defrule get_rem_group_of_man_from_anu_last
 (declare (salience 46))
-?f0<-(manual_id-node-word-root-tam ?id ? $?m ?w $?m1 - ?h - ?v)
 ?f1<-(anu_id-a_grp_mng-sep-manual_id-m_grp_mng ?aid $?a ?w - ?mid  $?mng)
+?f0<-(manual_id-node-word-root-tam ?id ? $?m ?w $?m1 - ?h - ?v&0|-)
 ?f2<-(manual_hin_sen $?pre $?m ?w $?m1 $?post)
-;(test (neq ?w 
 =>
         (retract ?f1 ?f0 ?f2)
         (bind ?m_mng (create$ $?mng $?m ?w $?m1))
         (assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng ?aid $?a ?w - ?mid  $?m_mng))
         (assert (manual_hin_sen $?pre $?post))
+	(assert (modified_sen_rem_grp))
 )
 ;-------------------------------------------------------------------------------------------------------------------------
-;Places where a tourist can whiz past his worries include gulmarg in jammu and kashmir, auli in grawhal, kufri and narkanda in himachal pradesh.
-; gaDavAla meM is left so it is added to the next word
-(defrule get_default_rem_group_of_man_from_anu
+;yaha AkASaxIpa - yaha  ==> yaha AkASaxIpa - yaha  sAMkewika jvAlA
+(defrule get_rem_group_of_man_from_anu_last1
 (declare (salience 45))
-?f0<-(manual_id-node-word-root-tam ?id ? $?m - ?h - ?v)
-(not (anu_id-node-word-root-tam $?))
-?f1<-(anu_id-a_grp_mng-sep-manual_id-m_grp_mng  $?a - =(+ ?id 1) $?m1)
-?f2<-(manual_hin_sen $?pre $?m $?post)
+?f1<-(anu_id-a_grp_mng-sep-manual_id-m_grp_mng ?aid ?a ?w - ?mid ?a)
+(id-node-word-root ? ? ?a ?rt)
+(id-node-root-cat-gen-num-per-case-tam ?id ? ?rt $?)
+?f0<-(manual_id-node-word-root-tam =(+ ?id 1) ? $?w1 - ?h - ?v)
+?f2<-(manual_hin_sen $?pre $?m $?w1 $?m1 $?post)
 =>
-	(retract ?f1 ?f0 ?f2)
-	(assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng  $?a - =(+ ?id 1) $?m $?m1))
-	(assert (manual_hin_sen $?pre $?post))
+        (retract ?f1 ?f0 ?f2)
+        (assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng ?aid ?a ?w - ?mid  ?a $?w1))
+        (assert (manual_hin_sen $?pre $?post))
+	(assert (modified_sen_rem_grp))
 )
+;bhopal sanchi se - BopAla se ==> bhopal sanchi se -  BopAla sAMcI se
+(defrule get_rem_group_of_man_from_anu
+(declare (salience 44))
+?f1<-(anu_id-a_grp_mng-sep-manual_id-m_grp_mng ?aid ?w ?w1 $?a - ?mid ?mng $?m)
+(eng_word-man_wx_word ?w1 ?wx_word)
+?f0<-(manual_id-node-word-root-tam ?id ?node $?n ?wx_word $?n1 - ?h - ?v)
+?f2<-(manual_hin_sen $?pre ?wx_word $?post)
+=>
+        (retract ?f1 ?f0 ?f2)
+	(bind $?a_mng (create$ ?w ?w1 $?a))
+        (bind $?m_mng (create$ ?mng ?wx_word $?m))
+        (assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng ?aid $?a_mng - ?mid  $?m_mng))
+        (assert (manual_hin_sen $?pre $?post))
+	(assert (manual_id-node-word-root-tam ?id ?node $?n $?n1 - ?h - ?v))
+        (assert (modified_sen_rem_grp))
+)
+;-------------------------------------------------------------------------------------------------------------------------
+
+
+;(defrule get_rem_grp_fact
+;(declare (salience 44))
+;(manual_hin_sen $?sen .)
+;(test (neq (length $?sen) 0))
+;=>
+;	(assert (get_rem_grp))
+;)
+;
+;
+;(defrule get_rem_grp_of_man_frm_anu_with_root
+;(declare (salience 44))
+;(get_rem_grp)
+;?f1<-(anu_id-a_grp_mng-sep-manual_id-m_grp_mng ?aid $?a ?w  $?a1 - ?mid $?mng)
+;(id-Apertium_output ?id ?w)
+;(id-root ?id ?root)
+;?f0<-(manual_id-node-word-root-tam ?id1  ? $?m ?w1 $?m1  - ?h - ?v)
+;(id-node-word-root ? ? ?w1 ?rt)
+;?f2<-(manual_hin_sen $?pre $?m ?w1 $?m1 $?post)
+;=>
+;	(bind $?matches (match ?w ?rt ?root))
+;	(if (eq (nth$ 1 $?matches) 1) then
+;                (retract ?f2 ?f1 ?f0)
+;                (assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng  ?aid  $?a ?w  $?a1 - ?mid $?mng $?m ?w1 $?m1))
+;                (assert (manual_hin_sen $?pre $?post))
+;                (assert (modified_sen_rem_grp))
+;        else    (if (eq (nth$ 2 $?matches) 2) then
+;                        (retract ?f2 ?f1 ?f0)
+;                        (assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng  ?aid  $?a ?w  $?a1 - ?mid $?mng $?m ?w1 $?m1))
+;                        (assert (manual_hin_sen $?pre $?post))
+;                        (assert (modified_sen_rem_grp))
+;                )
+;        )
+;)
+
+
 ;-------------------------------------------------------------------------------------------------------------------------
 (defrule last_fact
-(manual_hin_sen $?sen .)
+(manual_hin_sen $?sen ?)
 (test (neq (length $?sen) 0))
 =>
 	(assert (run_default_rules))
@@ -477,19 +606,50 @@
         (retract ?f ?f1 ?f2 )
         (assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng  ?id  $?a_mng - ?id $?m_mng))
         (assert (manual_hin_sen $?pre $?post))
-        (assert (modified_sen_default))
+        (assert (modified_sen_with_default))
 )
 ;-------------------------------------------------------------------------------------------------------------------------
-(defrule default_rule2
+(defrule default_rule1
 (declare (salience 5))
 (run_default_rules)
-?f<-(manual_id-node-word-root-tam  ?id   ?  $?m_mng - ? - ?)
-?f1<-(anu_id-node-word-root-tam   ?id1   ?   $?a_mng - ? - ?)
+?f<-(manual_id-node-word-root-tam  ?id   ?  $?m_mng - ? - ?v&0|-)
+?f1<-(anu_id-node-word-root-tam   ?id1   ?   $?a_mng - ? - ?v1&0|-)
 ?f2<-(manual_hin_sen $?pre $?m_mng $?post)
 =>
-        (retract ?f1 ?f1 ?f2 )
+        (retract ?f ?f1 ?f2 )
         (assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng  ?id  $?a_mng - ?id1 $?m_mng))
         (assert (manual_hin_sen $?pre $?post))
-        (assert (modified_sen_default2))
+        (assert (modified_sen_with_default))
 )
+
+(defrule default_rule2
+(declare (salience 4))
+(run_default_rules)
+?f<-(manual_id-node-word-root-tam  ?id   ?  $?m_mng - ? - ?v)
+?f1<-(anu_id-node-word-root-tam   ?id1   ?   $?a_mng - ? - ?v1)
+;?f2<-(manual_hin_sen $?pre $?m_mng $?post)
+=>
+ ;       (retract ?f ?f1 ?f2 )
+        (retract ?f ?f1 )
+        (assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng  ?id1  $?a_mng - ?id))
+;        (assert (manual_hin_sen $?pre $?post))
+        (assert (modified_sen_with_default))
+)
+(defrule last_fact1
+(manual_hin_sen ?)
+=>
+        (assert (run_def_rule))
+)
+
+
+;1.1 What is physics? 
+(defrule default_rule3
+(declare (salience 1))
+(run_def_rule)
+?f1<-(anu_id-node-word-root-tam   ?id1   ?   $?a_mng - ? - ?v1)
+=>
+        (retract ?f1 )
+        (assert (anu_id-a_grp_mng-sep-manual_id-m_grp_mng  ?id1  $?a_mng - ?id1))
+)
+
 

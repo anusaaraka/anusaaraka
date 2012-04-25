@@ -14,7 +14,7 @@
 
  (defrule delete_right_punc
  (declare (salience 100))
- ?f0<-(position-cat-man_grp_mng  ?id ?node $?wrd_mng  ?punc&.|,|right_paren - -)
+ ?f0<-(position-cat-man_grp_mng  ?id ?node $?wrd_mng  ?punc&.|,|right_paren|question_mark - -)
  =>
 	(retract ?f0)
 	(assert (position-cat-man_grp_mng  ?id ?node $?wrd_mng  - -))

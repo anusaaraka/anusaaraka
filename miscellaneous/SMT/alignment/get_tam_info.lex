@@ -5,7 +5,7 @@ int len=0,comma_cnt=0,len1=0;
 char id[100],node[20],root[100],cat[20],gen[20],num[20],per[20],cas[20],tam[50],new_tam[50],*t,new_text[100],word[50];
 %}
 %%
-[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9_,+]*'[ ] {
+[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9._,+]*'[ ] {
 					comma_cnt = 0;
 					len = strcspn(yytext,"\t");
                                         strncpy(id,yytext,len);

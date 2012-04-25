@@ -3416,7 +3416,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  29. Removed one sentence from sd_verified.
  30. Updated Log.
 
- 23-04-12
+ 25-04-12
  ========
  1. Modified rules in create_eng_ord_html.clp [Added if (numberp) condition in all wx_utf8 calls]
  2. Modified rule "convert_wx_to_utf8" in create_hin_ord_html.clp [Added if (numberp) condition near  wx_utf8 call],and added new rule "dont_print_title_info" .
@@ -3435,8 +3435,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  9. Modified rule "split_Conj_VP" and "get_lwg" in sd_lwg_rules.clp. [Ex:-Marine drive extends from nariman point to malabar hill past the famous chowpatty beach, and is built on land reclaimed from back bay along the arabian sea.]
  10. Added miscellaneous/SMT/alignment/get_wx.clp
  11. Updated the following files
-        alignment.clp   get_anu_grp_mng.clp   word_alignment.clp
- 12. Modified run_H_gen_SMT.bat to get_wx module
+        alignment.clp   get_anu_grp_mng.clp   word_alignment.clp get_tam_info.lex get_group_mng.sh
+ 12. Modified run_H_gen_SMT.bat
+		-- to run get_wx module
+		-- to load shallow_parser_root.dat in word_alignment and alignment modules
  13. Updated sd_chunker.clp [For handling SINV POS]
  14. Updated get_tam_info.lex [added new regular expression for getting root information for all words]
  15. Based on the type of the phrase, compound_phrase.txt file has been divided in to 
@@ -3458,4 +3460,5 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	   * renamed compound_phrase.dat to multi_word_expressions.dat
        ii) anu_compile.sh and anu_compile_64bit.sh file [Added code for creating .gdbm files]
  16. Updated changes_in_databases file.
- 17. Updated Log file.
+ 17. Updated add_snt_mrkr.lex
+ 18. Updated Log file.
