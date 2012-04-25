@@ -1,6 +1,6 @@
 %{
 #include<string.h>
-FILE *fp;
+FILE *fp, *fp1;
 int len=0,comma_cnt=0,len1=0;
 char id[100],node[20],root[100],cat[20],gen[20],num[20],per[20],cas[20],tam[50],new_tam[50],*t,new_text[100],word[50];
 %}
@@ -39,7 +39,7 @@ char id[100],node[20],root[100],cat[20],gen[20],num[20],per[20],cas[20],tam[50],
 		*id='\0';*root='\0';*node='\0';*cat='\0';*gen='\0';*num='\0';*per='\0';*cas='\0';*tam='\0';*new_tam='\0';*t='\0';
 		}
 
-[0-9][.][0-9]\t[A-Za-z]*\t[A-Z]*\t<fs[ ]af=['][A-Za-z]*[,] {
+[0-9]*[.][0-9]*\t[A-Za-z]*\t[A-Z]*\t<fs[ ]af=['][A-Za-z]*[,] {
  					len = strcspn(yytext,"\t");   
                                         strncpy(id,yytext,len);
                                         id[len]='\0';
@@ -56,7 +56,7 @@ char id[100],node[20],root[100],cat[20],gen[20],num[20],per[20],cas[20],tam[50],
  					len = strcspn(yytext,",");   
                                         strncpy(root,yytext,len);
                                         root[len]='\0';
-                                        fprintf(fp,"(id-node-word-root %s %s %s %s)\n",id,node,word,root);
+                                        fprintf(fp1,"(id-node-word-root %s %s %s %s)\n",id,node,word,root);
                 *id='\0';*root='\0';*node='\0';*word='\0';
 
 					}
@@ -67,6 +67,8 @@ char id[100],node[20],root[100],cat[20],gen[20],num[20],per[20],cas[20],tam[50],
 main(int argc, char* argv[])
 {
 fp= fopen(argv[1],"w");
+fp1= fopen(argv[2],"w");
 yylex();
 fclose(fp);
+fclose(fp1);
 }
