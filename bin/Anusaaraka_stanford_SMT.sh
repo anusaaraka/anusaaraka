@@ -104,14 +104,13 @@
   #################   SMT ####################
   cd $HOME_anu_test/miscellaneous/SMT/alignment
   sh $HOME_anu_test/Anu_src/comp.sh $HOME_anu_test/miscellaneous/SMT/alignment/get_tam_info 
-# python add-suf-into-chunks.py $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp.txt > $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp1.txt
+ python add-suf-into-chunks.py $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp.txt > $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp1.txt
 
   cd $MYPATH/tmp/$1_tmp
-   sed 's/&/\&amp;/g' 	one_sen_per_line_manual_hindi_sen_tmp.txt |sed -e s/\'/\\\'/g |sed 's/\"/\&quot;/g' | sed 's/(/ left_paren /g' |sed 's/)/ right_paren /g' |sed 's/?/ question_mark /g' |sed  "s/^/(manual_hin_sen /" |sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}' > one_sen_per_line_manual_hindi_sen.txt
+  sed 's/,/ @PUNCT-Comma/g'  one_sen_per_line_manual_hindi_sen_tmp.txt  |  sed 's/\([^0-9]\)\./\1 @PUNCT-Dot/g' | sed 's/?/ @PUNCT-QuestionMark/g' | sed 's/``/ @PUNCT-DoubleQuote/g' | sed "s/''/ @PUNCT-DoubleQuote/g" | sed 's/;/ @PUNCT-Semicolon/g' | sed 's/:/ @PUNCT-Colon/g' |  sed "s/[\'\`\']/ @PUNCT-SingleQuote/g" | sed 's/(/ @PUNCT-OpenParen/g' | sed 's/)/ @PUNCT-ClosedParen/g' | sed 's/!/ @PUNCT-Exclamation/g' | sed 's/\$/ @SYM-Dollar/g' |  sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}' > one_sen_per_line_manual_hindi_sen.txt
 
   $HOME_anu_test/Anu_src/split_file.out one_sen_per_line_manual_hindi_sen.txt dir_names.txt manual_hindi_sen.dat
-  sed 's/<\/Sentence>/<\/Sentence>\n;~~~~~~~~~~\n/g' shallow_parser_output_tmp.txt > shallow_parser_output.txt
-#  sed 's/<\/Sentence>/<\/Sentence>\n;~~~~~~~~~~\n/g' shallow_parser_output_tmp1.txt > shallow_parser_output.txt
+  sed 's/<\/Sentence>/<\/Sentence>\n;~~~~~~~~~~\n/g' shallow_parser_output_tmp1.txt > shallow_parser_output.txt
 
   $HOME_anu_test/Anu_src/split_file.out shallow_parser_output.txt dir_names.txt shallow_parser_output.dat
   $HOME_anu_test/Anu_src/split_file.out wx_output.txt dir_names.txt wx_output.dat

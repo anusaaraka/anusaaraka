@@ -3,7 +3,8 @@
 
  (defrule delete_lt_rt_punc
  (declare (salience 101))
- ?f0<-(position-cat-man_grp_mng  ?id ?node  ?p&left_paren $?wrd_mng  ?punc&.|,|right_paren - -)
+; ?f0<-(position-cat-man_grp_mng  ?id ?node  ?p&left_paren $?wrd_mng  ?punc&.|,|right_paren - -)
+ ?f0<-(position-cat-man_grp_mng  ?id ?node  ?p&@PUNCT-OpenParen $?wrd_mng  ?punc&@PUNCT-Comma|@PUNCT-Dot|@PUNCT-QuestionMark|@PUNCT-DoubleQuote|@PUNCT-DoubleQuote|@PUNCT-Semicolon|@PUNCT-Colon|@PUNCT-SingleQuote|@PUNCT-OpenParen|@PUNCT-ClosedParen|@PUNCT-Exclamation|@SYM-Dollar - -)
  =>
         (retract ?f0)
         (assert (position-cat-man_grp_mng  ?id ?node $?wrd_mng  - -))
@@ -14,7 +15,8 @@
 
  (defrule delete_right_punc
  (declare (salience 100))
- ?f0<-(position-cat-man_grp_mng  ?id ?node $?wrd_mng  ?punc&.|,|right_paren|question_mark - -)
+; ?f0<-(position-cat-man_grp_mng  ?id ?node $?wrd_mng  ?punc&.|,|right_paren|question_mark - -)
+ ?f0<-(position-cat-man_grp_mng  ?id ?node $?wrd_mng  ?punc&@PUNCT-Comma|@PUNCT-Dot|@PUNCT-QuestionMark|@PUNCT-DoubleQuote|@PUNCT-DoubleQuote|@PUNCT-Semicolon|@PUNCT-Colon|@PUNCT-SingleQuote|@PUNCT-OpenParen|@PUNCT-ClosedParen|@PUNCT-Exclamation|@SYM-Dollar - -)
  =>
 	(retract ?f0)
 	(assert (position-cat-man_grp_mng  ?id ?node $?wrd_mng  - -))
@@ -23,7 +25,8 @@
 
  (defrule delete_left_punc
  (declare (salience 100))
- ?f0<-(position-cat-man_grp_mng  ?id ?node ?punc&left_paren  $?wrd_mng - -)
+; ?f0<-(position-cat-man_grp_mng  ?id ?node ?punc&left_paren  $?wrd_mng - -)
+ ?f0<-(position-cat-man_grp_mng  ?id ?node ?punc&@PUNCT-OpenParen  $?wrd_mng - -)
  =>
         (retract ?f0)
         (assert (position-cat-man_grp_mng  ?id ?node $?wrd_mng  - -))
