@@ -3416,7 +3416,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  29. Removed one sentence from sd_verified.
  30. Updated Log.
 
- 27-04-12
+ 28-04-12
  ========
  1. Modified rules in create_eng_ord_html.clp [Added if (numberp) condition in all wx_utf8 calls]
  2. Modified rule "convert_wx_to_utf8" in create_hin_ord_html.clp [Added if (numberp) condition near  wx_utf8 call],and added new rule "dont_print_title_info" .
@@ -3463,6 +3463,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  17. Updated add-suf-into-chunks.py
  18. Added punctuations full forms in following files:
 	get_group_mng.sh	get_man_grp_mng.clp	Anusaaraka_stanford_SMT.sh
- 19. Added " sed 's/@PUNCT/PUNCT/g' " in abbr_browser.sh to handle punctuations in firefox.
- 20. Updated add_snt_mrkr.lex
- 21. Updated Log file.
+ 19. Added " sed 's/@PUNCT/PUNCT/g' " in abbr_browser.sh to handle punctuations in firefox [while converting wx_utf8 for manual_hin_sent.dat in SMT].
+ 20. Updated default_meaning_frm_oldwsd.txt [Corrected some mistakes]
+ 21. Updated add_snt_mrkr.lex
+ 22. Updated changes_in_databases
+ 23. Updated Log file.

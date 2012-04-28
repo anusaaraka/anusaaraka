@@ -96008,7 +96008,7 @@ semi-@government	arXasarakArI
 semiliguda	similigudZA
 semi-@rural	arXa-grAmINa
 semi-@skilled	arXa-kuSala
-semi-@urban	arXa-nagarIyacurriculum vitaecurriculum vitae
+semi-@urban	arXa-nagarIya
 seniority	variRTawA
 seniority-@cum-@fitness	variRTawA_saha_upayukwA
 sensitiveness	samvexanaSIlawA
@@ -96040,11 +96040,11 @@ seventy-@one	ikahawwara
 seventy-@seven	sawahawwara
 seventy-@six	Cihawwara
 seventy-@three	wihawwara
-seventy-@two	bahAwwaracurriculum vitae
+seventy-@two	bahAwwara
 sexual	yOna
 sexualest	yOna
 shamelessness	nirlajjawA
-shannor	SEnanacurriculum vitae
+shannor	SEnana
 shapeless	AkArahIna
 shaper	AkqwikAra
 shockest	XakkA
@@ -96088,7 +96088,7 @@ sixes'	CaH
 sixfold	CaH_gunA
 six-@hundred	CesO
 six's	CaH
-sixteenth	solahavAzcurriculum vitae
+sixteenth	solahavAz
 sixtieth	sATavAz
 sixty-@eight	adZasaTa
 sixty-@five	pEMsaTa
@@ -96116,7 +96116,7 @@ snobol	snoboYla@DataBase-@System
 so-@called	waWAkaWiwa
 so-@calledest	waWAkaWiwa
 softfill	komala_BaraNa
-softness	narmIcurriculum vitae
+softness	naramI
 solemnly	sawyaniRTA_se
 solvency	SoXana-kRamawA
 #@some	koI
@@ -96144,7 +96144,7 @@ space_@probe	anwarikRa_Koja
 spacewar	aMwarikRa_yuxva
 specialization	viSeSasyawA
 specifically	KAsawOra_para
-speculator	vicAraSIlcurriculum vitaea
+speculator	vicAraSIla
 speechless	avAk
 speed-@up	raPwAra
 speed-@up's	raPwAra
@@ -96157,7 +96157,7 @@ sponserer	prAyojiwa_karanevAlA
 spot-@check	cihniwa_kara
 spreadest	PElAnA2
 spreadsheet	viswqwa_spredaSIta
-sprintnet	_sprintaneta
+sprintnet	sprintaneta
 spunest	kAwA_huA
 spuns	kAwA_huA
 spun's	kAwA_huA
@@ -96168,7 +96168,7 @@ squad's	tukadZI
 squads'	tukadZI
 stagnation	gawihInawA
 stairs's	sIDZI
-stand-@incurriculum vitae	kataGarA
+stand-@in	kataGarA
 #@standing	prawiRTA
 stand-@in's	kataGarA
 state-@level	rAjya-swarIya
