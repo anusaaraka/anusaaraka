@@ -28,6 +28,7 @@
 			run_multiple_parse_penn.sh 
 			preffered_parse.py
 			run_penn-factored.sh
+			mapping-punctuations.lex
 
        3.    Change the version of Stanford-parser in $HOME_anu_test/bin/ for Anusaaraka.sh ,  Anusaaraka_stanford.sh , 
 	     Anusaaraka_site.sh , run_stanford-gui.sh and $HOME_anu_test/shell_scripts for anu_compile.sh

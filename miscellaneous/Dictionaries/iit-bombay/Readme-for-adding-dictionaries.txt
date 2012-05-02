@@ -49,8 +49,8 @@ Steps to add dictionaries in GoldenDict
    		These Ontologies are mapped in Ontology.lex file.
                         Ex:  ANIMT is mapped as Animated .
            -->Mapped file is passed as i/p for step-4. '
-                  (NOTE:: I/p: file is 'iit-bombay.txt'. Any changes done in this should be compiled with flex file
-                          and this output is passed to Step-4)
+                  (NOTE:: I/p: file is 'iit-bombay.txt'. Any changes done in this should be compiled with flex file,                                        Ontology.lex and this output is passed to Step-4.
+                          Programs are available in src folder.)
 
 
 ***Any modifications to be done in iit-bombay dictionary should be done in iit-bombay.txt1 which is in src/ and Step 4 need to be followed.

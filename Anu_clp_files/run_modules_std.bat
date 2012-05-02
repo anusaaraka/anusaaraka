@@ -523,4 +523,12 @@
  (run)
  (save-facts "sd_chunk.dat" local chunk-ids)
  ;--------------------------------------------------------------------------
+ (load "global_path.clp")
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/get_all_possible_roots.clp"))
+ (load ?*path*)
+ (load-facts "morph.dat")
+ (load-facts "revised_root.dat")
+ (load-facts "original_word.dat")
+ (open "get_all_roots.dat" get_fp "a");
+ (run)
  (exit)
