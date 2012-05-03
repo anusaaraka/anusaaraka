@@ -355,9 +355,12 @@
  (load-facts "lwg_info.dat")
  (load-facts "idiomatic_expr.dat")
  (load-facts "original_word.dat")
+ (load-facts "word.dat")
+ (open "proper_nouns.dat" p_noun "w")
  (open "hindi_meanings_tmp.dat" fp "a")
  (open "hindi_meanings_tmp1.dat" fp1 "a")
  (run)
+ (close p_noun)
  (clear)
  ;----------------------------------------------------------------------
  ; modify the hindi verb root to causative form (e.g KAnA_kilA --> KAnA-KilavA)

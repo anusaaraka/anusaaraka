@@ -97,7 +97,6 @@
   $HOME_anu_test/Anu_src/split_file.out sd_numeric_word.txt dir_names.txt sd_numeric_word_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out sd_category.txt dir_names.txt sd_category.dat
   $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line.txt.ner dir_names.txt ner.dat
-
   $HOME_anu_test/Anu_src/split_file.out sd-original-relations.txt  dir_names.txt  sd-original-relations.dat
 
   grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt
@@ -113,6 +112,20 @@
     timeout 500 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
+
+ echo "Calling Transliteration"
+ cut -f5 $MYPATH/tmp/$1_tmp/proper_nouns_list_tmp > $MYPATH/tmp/$1_tmp/proper_nouns_list
+ cd $HOME_anu_test/miscellaneous/transliteration/work
+ sh transliteration-script.sh $MYPATH/tmp/$1_tmp proper_nouns_list 2> /dev/null
+ wx_utf8 $MYPATH/tmp/$1_tmp/proper_nouns_list.wx > $MYPATH/tmp/$1_tmp/proper_nouns_list.utf8
+ paste $MYPATH/tmp/$1_tmp/proper_nouns_list_tmp $MYPATH/tmp/$1_tmp/proper_nouns_list.wx |sed 's/\(.*\)\t\(.*\)/@PropN\1PropN\t\2/g'|uniq  > $MYPATH/tmp/$1_tmp/proper_nouns.txt
+ paste $MYPATH/tmp/$1_tmp/proper_nouns_list_tmp $MYPATH/tmp/$1_tmp/proper_nouns_list.utf8 |sed 's/\(.*\)\t\(.*\)/@PropN\1PropN\t\2/g'|uniq  > $MYPATH/tmp/$1_tmp/proper_nouns_utf8.txt
+ echo "sed 's/dummy_sed//g' < \$1 |" > $MYPATH/tmp/$1_tmp/jnk 
+ sed  "s/\(.*\)\t\(.*\)/sed 's\/\1\/\2\/g' |/g" < $MYPATH/tmp/$1_tmp/proper_nouns.txt |tr '\n' ' ' |sed 's/@/[@]\*/g' | sed 's/| $//g' > $MYPATH/tmp/$1_tmp/proper_nouns_tmp.txt
+ sed  "s/\(.*\)\t\(.*\)/sed 's\/\1\/\2\/g' |/g" < $MYPATH/tmp/$1_tmp/proper_nouns_utf8.txt |tr '\n' ' ' |sed 's/@/[@]\*/g' | sed 's/| $//g' > $MYPATH/tmp/$1_tmp/proper_nouns_utf8_tmp.txt
+ cat $MYPATH/tmp/$1_tmp/jnk $MYPATH/tmp/$1_tmp/proper_nouns_tmp.txt > $MYPATH/tmp/$1_tmp/proper_nouns.sh
+ cat $MYPATH/tmp/$1_tmp/jnk $MYPATH/tmp/$1_tmp/proper_nouns_utf8_tmp.txt > $MYPATH/tmp/$1_tmp/proper_nouns_utf8.sh
+
  
  cd $MYPATH/tmp/$1_tmp/
  echo "(defglobal ?*path* = $HOME_anu_test)" > path_for_html.clp

@@ -1,3 +1,4 @@
+ (defglobal ?*PropN_file* =  p_noun)
  (defglobal ?*hin_mng_file* = fp)
  (defglobal ?*hin_mng_file1* = fp1)
 
@@ -30,6 +31,9 @@
  (assert (root-verbchunk-tam-chunkids))
  (assert (id-attach_emphatic))
  (assert (conjunction-components))
+ (assert (E_word-wx_word))
+ (assert (id-last_word))
+ (assert (id-word))
  )
 
  ;for MWE meaning will be assinged to the last word (single mng will be given to all words).So,by this rule we are retracting cntrl facts for remaining ids.
@@ -426,6 +430,21 @@
                  (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?a"   Default)" crlf)
                  (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?a"   Default "?id")" crlf)
         )
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+  (defrule test_for_PropN
+  (declare (salience 5400))
+  (id-cat_coarse ?id PropN)
+  (id-word ?id ?word)
+  (id-original_word ?id  ?original_wrd)
+  ?mng<-(meaning_to_be_decided ?id)
+  =>
+       (retract ?mng)
+       (if (str-index "'s" ?word) then (bind ?word (sub-string 1 (- (str-index "'s" ?word) 1) ?word)))
+       (bind ?wx_notation (str-cat "@PropN" ?word "PropN")) 
+       (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?wx_notation"   transliterate_mng)" crlf)
+       (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?wx_notation"   transliterate_mng "?id")" crlf)
+       (printout ?*PropN_file* ?word crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (04-02-12)

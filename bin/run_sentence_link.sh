@@ -30,6 +30,8 @@ sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id
 
  cat  para_sent_id_info.dat word.dat chunk.dat position.dat >>$MYPATH/$1_tmp/$2/facts_for_tran_html
 
+ cat proper_nouns.dat >> $MYPATH/$1_tmp/proper_nouns_list_tmp
+
  cat linkage_count
 
  sh $HOME_anu_test/bin/abbr.sh  

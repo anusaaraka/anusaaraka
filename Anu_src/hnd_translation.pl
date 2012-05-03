@@ -26,8 +26,8 @@ undef $/;
 
 open(TMP,"< $path_clips/tmp/tmp_save_format/$ARGV[0]\.fmt_split") || die "Can't open file $ARGV[0]\.fmt_split\n";
 open(TRANS,"> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn_tmp.html") || die "Can't open $ARGV[0]_trnsltn_tmp.html";
-print TRANS "<HTML><BODY>\n";
-print TRANS "<HTML lang=\"hi\"><BODY>\n<meta http-equiv=\"Content-Language\" content=\"hi\">\n<meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n";
+print TRANS "<\@HTML><\@BODY>\n";
+print TRANS "<\@HTML \@lang=\"\@hi\"><\@BODY>\n<\@meta \@http-\@equiv=\"\@Content-\@Language\" \@content=\"\@hi\">\n<\@meta \@http-\@equiv=\"\@Content-\@Type\" \@content=\"\@text/\@html; \@charset=\@UTF-\@8\">\n";
 close(TRANS);
 
 
@@ -54,7 +54,7 @@ sub final_translation{
     if (-e  $facts_filename) {
       if (-z $facts_filename){
         open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn_tmp.html") || die "Can't open $ARGV[0]_trnsltn_tmp.html";
-        print TRANS "$ParaId.$SenId\tCould not translate the sentence. \n<BR>\n";
+        print TRANS "$ParaId.$SenId\t\@Could \@not \@translate \@the \@sentence. \n<\@BR>\n";
         close(TRANS);
         return;
       }
@@ -80,7 +80,7 @@ sub final_translation{
           $sen_utf8=&wx_utf8($sen_wx);
           open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn_tmp.html") || die "Can't open $ARGV[0]_trnsltn_tmp.html";
           #
-          print TRANS "$ParaId.$SenId\t$sen_utf8\n<BR>\n";
+          print TRANS "$ParaId.$SenId\t$sen_utf8\n<\@BR>\n";
 
           close(TRANS);
           return;
@@ -89,7 +89,7 @@ sub final_translation{
     }
     else {
       open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn_tmp.html") || die "Can't open $ARGV[0]_trnsltn.html";
-      print TRANS "$ParaId.$SenId\tCould not translate the sentence. \n<BR>\n";
+      print TRANS "$ParaId.$SenId\t\@Could \@not \@translate \@the \@sentence. \n<\@BR>\n";
       close(TRANS);
 
     }
@@ -102,12 +102,12 @@ sub wx_utf8 {
     open(WX,"> $path_clips\/tmp/$ARGV[0]_tmp/tmp_wx") || die "Can't open file tmp_wx\n";
     print WX "$wx";
     close(WX);
-    system("wx_utf8 $path_clips\/tmp/$ARGV[0]_tmp/tmp_wx > $path_clips\/tmp/$ARGV[0]_tmp/tmp_utf8");
-    open(UTF,"< $path_clips\/tmp/$ARGV[0]_tmp/tmp_utf8") || die "Can't open file tmp_isc\n";
+#    system("wx_utf8 $path_clips\/tmp/$ARGV[0]_tmp/tmp_wx > $path_clips\/tmp/$ARGV[0]_tmp/tmp_utf8");
+    open(UTF,"< $path_clips\/tmp/$ARGV[0]_tmp/tmp_wx") || die "Can't open file tmp_isc\n";
     chomp($utf=<UTF>);return $utf;
 }
 
 
 open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn_tmp.html") || die "Can't open $ARGV[0]_trnsltn.html";
-print TRANS "</BODY></HTML>\n";
+print TRANS "</\@BODY></\@HTML>\n";
 close(TRANS);

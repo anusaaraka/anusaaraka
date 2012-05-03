@@ -27,6 +27,7 @@
 	(assert (root-verbchunk-tam-chunkids ?root1 ?vc1 ?tam1 ?id2))
  )
 
+ ;Jaipur, popularly known as the pink city, is the capital of rajasthan state, india.
  (defrule combine_padas_of_compounds
  (declare (salience 2002))
  ?f<-(id-HM-source-grp_ids   ?  ?hmng  ?src $?g1 ?id $?g2 ?id1 $?g3)

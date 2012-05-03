@@ -2,6 +2,10 @@
  cd $HOME_anu_test/Anu_databases
  rm  *.gdbm 
 
+ cd $HOME_anu_test/Anu_data
+ rm word_field mng_field mng_utf8 default-iit-bombay-shabdanjali-dic_firefox_tmp.txt default-iit-bombay-shabdanjali-dic_firefox.txt default-iit-bombay-shabdanjali-dic_smt_tmp.txt default-iit-bombay-shabdanjali-dic_smt.txt
+
+
  echo "Removing .bclp files"
  cd $HOME_anu_test/Anu_clp_files
  rm *.bclp
@@ -59,3 +63,10 @@
  rm debug.mm y.* lex.yy.c constituency_parse
 
  rm $HOME_anu_test/new_hnd_mo/hi_expanded
+
+ echo "Removing transliteration files"
+ cd $HOME_anu_test/miscellaneous/transliteration/
+ rm -r phrasal.Beta2 stanford-corenlp-2011-06-08
+ cd work
+ rm path_for_transliteration phrasal-mert/phrasal.test.ini_tmp phrasal-mert/phrasal.test.ini_tmp1 phrasal-mert/phrasal.test.ini
+

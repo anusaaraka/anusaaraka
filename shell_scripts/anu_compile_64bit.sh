@@ -1,6 +1,6 @@
  echo "#define ABS_ANU_PATH \"$HOME_anu_test/Anu_databases/\"" > $HOME_anu_test/CLIPS/gdbm_lookup.h
  echo "#define ABS_PATH \"$HOME_anu_tmp/tmp/\"" > $HOME_anu_test/Anu_src/f_tid-rid.h
- 
+
  cd $HOME_anu_test/Anu_data
  echo "Creating paxasUwra.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/total-paxasUwra.gdbm < total-paxasUwra.txt 
@@ -162,3 +162,18 @@
  
  cd $HOME_anu_test/miscellaneous/std_tregex/
  tar -xvf stanford-tregex-2012-01-06.tgz 
+
+ echo "Creating Transliteration files"
+ cd  $HOME_anu_test/miscellaneous/transliteration/
+ tar -xvzf phrasal.Beta2.tar.gz
+ tar -xvzf stanford-corenlp-v1.0.4.tgz
+ sed 's/JAVA_OPTS="-XX:+UseCompressedOops -Xmx$MEM -Xms$MEM"/JAVA_OPTS="-Xmx$MEM -Xms$MEM"/g' < phrasal.Beta2/scripts/decode > phrasal.Beta2/scripts/decode_tmp
+ mv phrasal.Beta2/scripts/decode_tmp phrasal.Beta2/scripts/decode
+ chmod +x phrasal.Beta2/scripts/decode
+ chmod +x phrasal.Beta2/scripts/split-table
+ echo "$HOME_anu_test/miscellaneous/transliteration/work/phrasal-mert/phrasal.final.binwts" > work/path_for_transliteration
+ cp work/phrasal-mert/phrasal.final.ini work/phrasal-mert/phrasal.test.ini_tmp
+
+ sed '$d' < work/phrasal-mert/phrasal.test.ini_tmp > work/phrasal-mert/phrasal.test.ini_tmp1
+ cat work/phrasal-mert/phrasal.test.ini_tmp1 work/path_for_transliteration  > work/phrasal-mert/phrasal.test.ini
+
