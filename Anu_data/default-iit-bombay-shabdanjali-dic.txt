@@ -588,7 +588,7 @@ II_number	II
 IL_noun	unacAsa
 IMF_noun	aMwarrARtrIya_viwwIya_niXi/International_monetary_fund
 IQ_noun	bOxXika_swara
-ITU-R_noun	AI_tI_yU_-_Ara
+ITU-R_noun	AI_tI_yU_Ara
 ITU_noun	AI_tI_yU
 ITV_noun	AI_tI_vI
 IUD_noun	aMwargarBASayI_yaMwra
@@ -1836,7 +1836,7 @@ Xmas_noun	krisamasa/IsA_masIha_ke_janma_xina_kA_uwsava
 Xylocaine_noun	jZAilokena
 Y-chromosome_noun	vAya_guNasutra
 Y-fronts_noun	jAMGiyA
-YAK_noun	surAgAya/_eka_jAwi_kA_bEla
+YAK_noun	surAgAya/eka_jAwi_kA_bEla
 YHA_noun	yuvA_AvAsa_saMGa
 YMCA_noun	yuvA_puruRa_IsAI_saMGa
 YWCA_noun	yuvA_mahilA_IsAI_saMGa
@@ -1922,7 +1922,7 @@ Zulu_adjective	jZUlU
 Zulu_noun	jZUlU/xakRiNI_aPrIkA_kI_janajAwI
 a'larm-clock_noun	alArma_GadI
 a-few_adverb	kuCa
-a-few_determiner	kuCa/_In_the_party_only_a_few_persons_were_known_to_me
+a-few_determiner	kuCa
 a-la-carte_adjective	vyaMjana_sUcI_se
 a-la-mode_adjective	PESana_priya
 a-la_preposition	kI_SElI_meM
@@ -3333,7 +3333,7 @@ alum_noun	PitakarI
 aluminium_noun	ElyumIniyama/alyuminiyama/alamuniyama
 alumna_noun	BUwapUrva_CAwrA/snAwikA/CAwrA
 alumni_noun	BUwapUrva_CAwra
-alumnus_noun	BUwapUrva_CAwra/snAwaka/_CAwra
+alumnus_noun	BUwapUrva_CAwra/snAwaka/CAwra
 alveolar_adjective	kUpikIya/varwsya
 alveolar_noun	kUpikIya_vyaMjana
 always_adverb	saxEva/saxA/kaBI_BI/hameSA
@@ -3957,11 +3957,10 @@ arc_noun	kamAna-AkAra/cinagArI/cApa/vqwwAMSa
 arc_verb	vqwwAkAra_meM_GUmanA/vqwwAkAraanA/Arka_banAnA
 arcade_noun	AcCAxiwa_mArga/woraNa_paWa
 arcane_adjective	gupwa
-arch-_adjective	praXAna
 arch-enemy_noun	muKya_Satru/mahASawru
 arch-rival_noun	muKya_prawisparXI/pramuKa_Sawru
 arch-way_noun	meharAbaxAra_paWa
-arch_adjective	XUrwawApUrNa/nataKata/muKya/kutila/GqNAspaxa/burI/vakra
+arch_adjective	praXAna/XUrwawApUrNa/nataKata/muKya/kutila/GqNAspaxa/burI/vakra
 arch_noun	woraNa_paWa/meharAba/cApa
 arch_verb	cApAkAra_meM_uTAnA/cApAkAra_meM_PElanA/cApa_jEsA_banAnA
 archaeological_adjective	purAwAwwvika/purAwawva
@@ -5500,13 +5499,13 @@ binge_verb	raMgaraliyAz_manAnA/jZyAxA_KAnA
 binocular_noun	xUrabIna
 binoculars_noun	xUrabIna
 binomial_noun	xvipaxa
-biochemical_adjective	jEva_-_rAsAyanika
-biochemist_noun	jIva_-_rasAyanajFa
+biochemical_adjective	jEva_rAsAyanika
+biochemist_noun	jIva_rasAyanajFa
 biochemistry_noun	jIva-rasAyana/jEvarAsAyanikI
 biodegradable_adjective	svABAvika_warIke_se_sadZanaSIla
 bioethics_noun	jEva-nIwiSAswra
 bioflavinoid_noun	bAyoPZlEvinOida
-biographer_noun	jIvanI_-_leKaka/jIvanI_leKaka
+biographer_noun	jIvanI_leKaka/jIvanI_leKaka
 biographic_adjective	jIvana_saMbaMXI
 biographical_adjective	jIvana_saMbaMXI
 biography_noun	jIvanI-sAhiwya/jIvanacariwa/jIvanI
@@ -5514,7 +5513,7 @@ biological_adjective	jIva-vijFAna_saMbaMXI/jEvika/jEvavEjFAnika
 biologist_noun	jIva_vijFAnI
 biology_noun	jIva-vijFAna/jIvavijFAna
 biomass_noun	jEva_IMXana/jEva_BAra
-biopic_noun	jIvanI-_calaciwra
+biopic_noun	jIvanI_calaciwra
 biopsy_noun	bAyopsI
 biosphere_noun	jIva_maNdala
 biotechnology_noun	jEva_prOxyogikI/bAyowakanIkI
@@ -5759,7 +5758,7 @@ blowtorch_noun	XamanaxIpa
 blowy_adjective	wUPZAnI
 blowzy_adjective	PUhadZa/lAla_Baxxe_cehare_vAlI
 blubber_noun	wimivasA/hvela_maCalI_kI_carabI
-blubber_verb	bilaKanA/ronA_-_bilaKanA
+blubber_verb	bilaKanA/ronA_bilaKanA
 blubbery_adjective	awyaXika_sWUlakAya/carabIxAra/motA/sUjA_huA
 bludgeon_noun	gaxA/daMdA
 bludgeon_verb	lATI_se_aMXAXuMXa_mAranA
@@ -5853,7 +5852,7 @@ bobby_noun	pulisavAlA/pulisa_aPasara{anOpacArika}
 bobsled_noun	himaSakata
 bobsleigh_noun	himaSakata/barPa_para_calAne_vAlI_resa_kI_badZI_gAdZI
 bode_verb	Sakuna_bawAnA/BaviRya_sUciwa_karanA_
-bodeful_adjective	aSuBa_-_sUcaka
+bodeful_adjective	aSuBa_sUcaka
 bodement_noun	BaviRya_kaWana
 bodice_noun	colI/azgiyA
 bodied_adjective	viSeRa_prakAra_kA_SarIra_raKane_vAlA
@@ -5945,7 +5944,7 @@ book-plate_noun	puswaka_ke_anxara_CapI_nAma_pattikA
 book-token_noun	puswakamUlya_kA_upahAra_kUpana
 book_noun	SIta/Sarwa_lagAnevAlA/Sarwa/sarga/saMgraha/saMgIwa_puswikA/puswakeM_liKanevAlA/puswaka/pannA/niyamAvalI/leKA-bahI/kiwAba/jIvana-iwihAsa/haswalipi/Dera/buka/bAibila/bahI_KAwA/bahI
 book_verb	xarjZa_karanA/surakRiwa_kara_lenA/Sarwa_lagAnA/niyukwa_karanA/niyawa_karanA/niSciwa_karanA/nAma_xarjZa_karanA/liKanA/lenA/buka_karanA/bAjZI_lagAnA/bahI_meM_xarjZa_karanA/BAdZe_para_lenA
-bookable_adjective	ArakRaNa_-_yogya/AcArasaMhiwA_ke_anusAra_xaMdanIya
+bookable_adjective	ArakRaNa_yogya/AcArasaMhiwA_ke_anusAra_xaMdanIya
 bookbinder_noun	jilxasAjZa
 bookbinding_noun	jilxasAjZI
 bookcase_noun	kiwAboM_kI_alamArI
@@ -6026,7 +6025,7 @@ borne_verb	janma_xiyA
 borough_noun	baro/upanagara
 borrow_verb	uXAra_lenA/qNa_lenA/nakZala_karanA/mAzga_lenA/lenA/karjZa_lenA/anukaraNa_karanA/uXAra_liyA_huA
 borrower_noun	karjaxAra/qNI
-borrowing_noun	uXAra_-_grahaNa/BARA_-_grahaNa/qNa_lenA
+borrowing_noun	uXAra_grahaNa/BARA_grahaNa/qNa_lenA
 borstal_noun	bAla_suXAra_gqha
 bosh_noun	anApa-SanApaa
 bosom_noun	CAwI/hqxaya
@@ -6060,7 +6059,7 @@ bottom_noun	walI/walahatI/wala/vAswavikawA/saccAI/peMxI/pAyajAmA/PAla/niwamba/ni
 bottom_verb	wala_meM_pahuzcanA/samuxra_ke_wata_para_lAnA/pawA_lagAnA/para_AXAriwa_karanA/BalI_BAzwi_samaJanA/Asana_lagAnA
 bottomless_adjective	aWAha/agama
 bottommost_adjective	nimnawama
-boudoir_noun	SqMgAra_-_kakRa
+boudoir_noun	SqMgAra_kakRa
 bough_noun	SAKA/dAl/dAla/tahanI
 bouillon_noun	sUpa/rasA/Jola/SorabA
 boulder_noun	gola_SilAKaMda/gola_pawWara
@@ -6069,7 +6068,7 @@ boulvard_noun	muKya_mArga/cOdZA_rAswA/badZI_sadZaka
 bounce_noun	uwsAha/ullAsa/uCAla/CalAMga
 bounce_verb	uCAlanA/uCalanA/uCala-kUxa_karanA/takarA_kara_lOtanA/raxxa_honA/hacakanA/uCala_padZanA/vApisa_AnA/mAranA
 bouncer_noun	bAunsara
-bouncing_adjective	joSIlA/hqRta_-_puRta
+bouncing_adjective	joSIlA/hqRta_puRta
 bouncy_adjective	uwsAha_se_BarA/uCAlaxAra/joSIlA/acCI_waraha_se_uCalane_vAlA
 bound_adjective	sImiwa/ko_jAnevAlA/jilxabanxa/jAnevAlA/bAXya/avaSya/avarUXxa/lAcAra/vivaSa/jilxavAle/gujZaranevAlA
 bound_noun	kUxa/CalAzga/CalAMga/uCala_kUxa/sImA
@@ -6289,7 +6288,7 @@ bridal_noun	vivAha/vivAhowsava
 bride_noun	xulhana/navavaXU
 bridecake_noun	vivAhowsava_keka
 bridegroom_noun	xUlhA/xulhA/vara
-bridesmaid_noun	vaXU_-_saKI/xulhana_kI_sahelI
+bridesmaid_noun	vaXU_saKI/xulhana_kI_sahelI
 bridge_noun	wASa_kA_Kela/uwwara_merU/sewu/saMparka/saMbaMXa/pula/nAsAxaMda/laGu-paWa/kqwrima_xAMwa/GodZI/cabUwarA/cabuwarA/brija/bAzsA/bAyeM_hAWa_kA_sahArA/ArAma/wASa_kA_eka_Kela
 bridge_verb	sewu_banAnA/pUrA_karanA/pula_bAzXanA/pula_bAMXanA/kama_karanA/aMwara_mitAnA
 bridgehead_noun	suxqDZa_sWiwi/moracA
@@ -6412,7 +6411,7 @@ broth_noun	SorabA
 brothel_noun	veSyAlaya/cakalA
 brother-in-law_noun	xevara/sAlA/sADZU/sADU/nanxoI/jIjA/jeTa/bahanoI
 brother_noun	xeSa-BAI/hamavawanaa/braxara/baMXu/BAI
-brotherhood_noun	BrAwqwva/BrAwq_-_saMGa/BAIcArA/banXuwva
+brotherhood_noun	BrAwqwva/BrAwq_saMGa/BAIcArA/banXuwva
 brotherly_adjective	BrAwqvaw/BrAwqsaxqSa
 brougham_noun	baMxa_GodZAgAdZI
 brouhaha_noun	ho-hallA
@@ -6445,7 +6444,7 @@ brush-up_verb	punaH_aByAsa_karanA
 brush-wood_noun	pedZa_kI_tUtI_huI_dZAliyAz_yA_lakadZiyAz
 brush_noun	XulAI/wUlikA/vivAxa/saPZAI/pUzCa/nevara/muTaBedZa/mArjanI/kUzcI/KaroMca/Juramuta/JagadZA/JAdZIxAra_mExAna/JAdZI/JAdU/halkA_sparSa/gatTA/ciwrakArI/buruSa/braSa/lomadZI_kI_pUzCa/halakA_sparSa/BidaMwa
 brush_verb	XonA/XIre_se_sparRa_karanA/TIka-TAka_karanA/sazvAranA/sAPZa_karanA/saPZAI_se_JAdZanA/saMsparSa_karanA/sajAnA/ragadZanA/ragadZakara_XonA/ragadZakara_sAPZa_karanA/pOzCanA/JadZanA/CUkara_nikala_jAnA/calA_jAnA/bruSa_se_JAdanA_yA_sAPa_karanA
-brushwood_noun	JAdZa_-_JaMKAdZa
+brushwood_noun	JAdZa_JaMKAdZa
 brushwork_noun	wUlikA-kOSala
 brusque_adjective	rUKA/aSiRta
 brusquely_adverb	rUKepana_se/ruKAI_se
@@ -6504,7 +6503,7 @@ buff_noun	pAMdu_carma/BEMsa_Axi_kA_camadZA
 buffallo_noun	BEMsa
 buffalo_noun	BEMsA
 buffer_adjective	maXyavarwI
-buffer_noun	upAhAra_-_kakRa/prawiroXaka/mUrKa_bUDZA
+buffer_noun	upAhAra_kakRa/prawiroXaka/mUrKa_bUDZA
 buffer_verb	prawiroXa_karanA
 buffet_noun	buPZe/alamArI/buPe
 buffet_verb	Xakke_mAranA/XakkA_mukkI_karanA
@@ -6539,7 +6538,7 @@ bulk_adjective	Woka
 bulk_noun	Woka/viSAla_AkAra/SarIra/reSexAra_wawva/aXikAMSa
 bulk_verb	xiKanA
 bulkhead_noun	powaBiwwi
-bulky_adjective	BArI_-_Barakama/badZA/sWUla
+bulky_adjective	BArI_Barakama/badZA/sWUla
 bull's-eye_noun	svAxiRta_miTAI/cAMxamArI_kA_niSAnA/cAMxamArI
 bull_adjective	weja/nara
 bull_noun	wejZadiyA/sAzdZa/sattebAjZa/rASi_mazdala/niSAnA/nar_hAWI/nara/lakRya-keMxra/JutI_bAwa/bEla/bakavAsa/AxeSa_patra/AxeSa/ArakRaka/anuciwa_vyavahAra/anApa-SanApa_bAwa
@@ -6590,7 +6589,7 @@ bumpkinly_adjective	gazvAra
 bumptious_adjective	akKadZa
 bumptiously_adverb	akKadZapana_se
 bumptiousness_noun	AkrAmaka_xqDEYwA/akKadZapana
-bumpy_adjective	UbadZa_-_KAbadZa
+bumpy_adjective	UbadZa_KAbadZa
 bums_noun	piCAdZI
 bun_noun	mITI_rotI/judZA/pAvabana
 bunce_noun	aprawyASiwa_lABa
@@ -6642,7 +6641,7 @@ burgundy_adjective	baragaMdI
 burgundy_noun	baragaMdI
 burial_noun	xaPZana-kriyA/xaPZana/SavAXAna/samAXi/kabra/aMwayoRti-kriyA/xaPana_karanA/mittI_xenA
 burke_verb	galA_GoMta_kara_mAranA
-burlesque_adjective	prahasana_-_saMbaMXI/parihAsya/wamASe_kA
+burlesque_adjective	prahasana_saMbaMXI/parihAsya/wamASe_kA
 burlesque_noun	vixrUpikA/hAsyajanaka_kqwi/hAsyajanaka_aBinaya/parihAsa
 burlesque_verb	parihAsa_karanA
 burlesquer_noun	vixrUpiwa_karane_vAlA
@@ -6734,7 +6733,7 @@ buttonhole_verb	jZabarxaswI_pakadZa_kara_sunAnA
 buttress_noun	sahArA/puSwA
 buttress_verb	majZabUwa_banA
 butty_noun	sEMdavica
-buxom_adjective	sWUla/gola_-_matola/BArI_vakRa-sWala_vAlI
+buxom_adjective	sWUla/gola_matola/BArI_vakRa-sWala_vAlI
 buy-out_noun	pUre_Seyara_KarIxa_kara_niyaMtraNa_prApwaA
 buy_noun	mola-BAva/KarIxArI/KarIxa
 buy_verb	svIkAra_karanA/prApwa_karanA/KarIxanA/KarIxa_lenA/GUsa_xekara_KarIxanA/KZarIxanA
@@ -7039,7 +7038,7 @@ caprimulgid_noun	CapakA
 capsicum_noun	SimalA_mirca
 capsize_verb	ulata_xenA/ulata_jAnA/ulata-pulata_jAnA
 capsule_noun	saMputa/saMkRepaNa/kEpsUla/bIjakoSa/kEpasUla
-captain_noun	vimAna_cAlaka/senApawi/saraxAra/praXAna_vetara/praXana_vetara/praXAna/pramuKa_bErA/pramuKa/PoramEna/niyaMwA/newA/nAyaka/muKiyA/mahAna_sEnika/kapwAna/jamAxAra/jahAjZaa/balapawi/aXipawi/aXikArI/aPZasara/jahAjZa_kA_aXyakRa/
+captain_noun	vimAna_cAlaka/senApawi/saraxAra/praXAna_vetara/praXana_vetara/praXAna/pramuKa_bErA/pramuKa/PoramEna/niyaMwA/newA/nAyaka/muKiyA/mahAna_sEnika/kapwAna/jamAxAra/jahAjZaa/balapawi/aXipawi/aXikArI/aPZasara/jahAjZa_kA_aXyakRa
 captain_verb	saMcAlana_karanA/rAswA_xiKAnA/newqwva_karanA/mArga_praxarSana_karanA/kapwAnI_karanA/kapwAna_honA
 caption_noun	anuSIrRaka
 caption_verb	anuSIrRaka_xenA
@@ -7238,9 +7237,8 @@ cataract_noun	mowiyAbiMxa/mahAjalaprapAwa/mowiyAbinxa/badZA_JaranA
 catastrophe_noun	pralaya/xurgawi
 catastrophic_adjective	vinASakArI/ApAwI/anarWakArI
 catastrophically_adverb	anarWakArI_rUpa_se
-catch-22_adjective	jatila
 catch-all_adjective	bahuarWIya/arWaboXaka
-catch_adjective	pecIxA/jatila/AkarRaka
+catch_adjective	jatila/pecIxA/jatila/AkarRaka
 catch_noun	XyAnAkarRI_Sabxa/xoRa/samavewa_gAna/pqRTa_kA_aMwima_Sabxa/PAzsane_lAyaka_vyakwi/kEYca_aEYNda_Wro/kEYca/KatakA/Jola/jodZIxAra/huka/giraPZwArI/geMxa_lokanA_kA_Kela/adZAnI/pakadZa
 catch_verb	xeKanA/WAmanA/WAma_lenA/sunanA/suna_lenA/samaJanA/rokanA/roka_lenA/PAzsanA/PazsAnA/PazsanA/Pazsa_jAnA/pAnA/pakadZanA/pakadZa_lenA/lenA/lapaka_lenA/laganA/kEYca_pakadZanA/kasakara_pakadZanA/jIwa_lenA/jAna_lenA/jalanA/jakadZa_lenAenA/jakadZa_lenA/honA/ho_jAnA/galawI_karawe_hue_pakadZanA/DuzDanA/curA_lenA/CInanA/calanA/BugawanA/AkarRiwa_karanA/Aga_pakadZanA
 catch_verbal_noun	pakadZanA
@@ -8083,7 +8081,7 @@ climbing_noun	ArohaNa
 clime_noun	jalavAyu
 clinch_noun	pakadZa
 clinch_verb	waya_karanA/waya_ho_jAnA/prApwa_kara_lenA/karakara_pakadZanA
-cling_verb	lipata_jAnA/jakadZA_honA/cipaka_jAnA/kasakara_lipata_jAnA/bane_rahanA/_cipake_rahanA/tike_rahanA
+cling_verb	lipata_jAnA/jakadZA_honA/cipaka_jAnA/kasakara_lipata_jAnA/bane_rahanA/cipake_rahanA/tike_rahanA
 clinging_adjective	satA_rahane_vAA/cipakane_vAlA/SarIra_se_cipakA_huA/BAvAwmaka_rUpa_se_nirBara
 clinic_noun	klInika/cikiwsAlaya
 clinical_adjective	roga-viRayaka/BAvaSUnya/asajjiwa/BAva_Avega_ke_binA/nExAnika/sAxagI
@@ -8142,7 +8140,7 @@ close-set_adjective	gaTA_huA/satA_huA
 close-up_noun	nikata_Sata/nikatacitra/badZA_evaM_pAsa
 close-up_verb	kuCa_samaya_kelie_banxa_karanA
 close-with_verb	Amane_sAmane_honA
-close_adjective	xamaGotU/waMga/saMvqwa/saccA/nikata/najZaxIkI/najZaxIka/karIbI/karIba/kaMjUsa/judZA_huA/Gutana_BarA/gupwa/GanI/gaharI/gaharA/gahana/CipAU/bArIkI_se/barAbarI_kA/barabarI_kA/baMxa/bAlabAla/bahuwahI/AsapAsa_kA/aMXI/acCI_warahase/pAsa/samAna/sUkRma/barAbara_kA/ekasAWa/bArIka/banxa/gopanIya/1savqwa/1kaMjUsa
+close_adjective	xamaGotU/waMga/saMvqwa/saccA/nikata/najZaxIkI/najZaxIka/karIbI/karIba/kaMjUsa/judZA_huA/Gutana_BarA/gupwa/GanI/gaharI/gaharA/gahana/CipAU/bArIkI_se/barAbarI_kA/barabarI_kA/baMxa/bAlabAla/bahuwahI/AsapAsa_kA/aMXI/acCI_warahase/pAsa/samAna/sUkRma/barAbara_kA/ekasAWa/bArIka/banxa/gopanIya/savqwa/kaMjUsa
 close_adverb	sawarkawApUrvaka/pAsa/najZaxIka/kasakara/AsapAsa/pAsa_meM
 close_noun	samApwII/aMwaa/aMwa/samApwi
 close_verb	XyAna_nahIM_xenA/samApwa_karanA/samApwa_honA/pUrNa_karanA/pUrA_karanA/pUrA/moMxanA/lipatanA/Kawma_karanA/Kawma_honA/karIba_jAnA/GeranA/ekatra_karanA/DAMkanA/BaranA/baMxa_karanA/baMxa_honA/banxa_karanA/banxa_honA/najZaxIka_AnA
@@ -8527,7 +8525,7 @@ come-on_noun	AkarRaNa
 come-out_verb	bAhara_AnA
 come-through_verb	saPalawA_se_nikala_jAnA/sAPa_xiKAI_padZanA
 come-up_verb	bIca_meM_AnA/kisI_GatanA_ke_hone_kA_samaya_najZaxIka_AnA
-come_verb	ximAga_meM_AnA/waya_karanA/uganA/pAra_karanA/pajuzcanA/pahuzcanA/pahuMZcanA/padZanA/nikalanA/nawIjZA_nikalanA/milanA/laganA/honA/AnA/yAwrA_karanA/eka_niSciwa_sWalala_ko_AnA/eka_niSciwa_sWAna_gqhaNa_karanA/upalabXa_honA/banakara_AnA/warka_para_pahuzcanA/praSna_meM_prayoga_karanA/aBinaya_karanA/1kAmowwApa_karanA/1kisI_xaSA_kA_AnA
+come_verb	ximAga_meM_AnA/waya_karanA/uganA/pAra_karanA/pajuzcanA/pahuzcanA/pahuMZcanA/padZanA/nikalanA/nawIjZA_nikalanA/milanA/laganA/honA/AnA/yAwrA_karanA/eka_niSciwa_sWalala_ko_AnA/eka_niSciwa_sWAna_gqhaNa_karanA/upalabXa_honA/banakara_AnA/warka_para_pahuzcanA/praSna_meM_prayoga_karanA/aBinaya_karanA/kAmowwApa_karanA/kisI_xaSA_kA_AnA
 comeback_noun	vApasI/prawyuwwara
 comedian_noun	hAsya_aBinewA/hazsAnevAlA
 comedienne_noun	hAsya_aBinewrI
@@ -9591,7 +9589,7 @@ court-card_noun	wAsa_kA_citravAlA_pawwA
 court-house_noun	praSAsakIya_Bavana/nyAyAlaya_Bavana
 court-martial_noun	senA_nyAyAlaya
 court-martial_verb	korta_mArSala_honA
-court_noun	vakIla/rAjaxarabAra/nyAyAlaya/niwAsa-sWAna/namaskAra/mExAna/mArga/korta/bETaka/AMgana/ajAyabaGara/xarabAra/kacaharI/axAlawa/jaja_loga/nyAyAXISa//Azgana/Axara
+court_noun	vakIla/rAjaxarabAra/nyAyAlaya/niwAsa-sWAna/namaskAra/mExAna/mArga/korta/bETaka/AMgana/ajAyabaGara/xarabAra/kacaharI/axAlawa/jaja_loga/nyAyAXISaAzgana/Axara
 court_verb	XyAna_xenA/uTAnA/sAWa_rahanA/samarWana_mAzganA/riJAnA/prema_nivexana_karanA/prema_jawAnA/pExA_karanA/pAne_kA_prayawna_karanA/bulAnA/banane_kA_prayawna_karanA/bahalAnA/cAhanA
 courteous_adjective	SAlIna/Baxra/vinIwa
 courteously_adverb	SiRtawApUrvaka
@@ -9736,7 +9734,7 @@ creak_verb	caracarAnA/caramarAnA/kadZakadZAnA
 creaking_noun	caracarAhata
 creaky_adjective	jIrNa/jarjara/caramarAwA_huA/caramarAne_vAlA/caramarAwA
 cream_adjective	xUXiyA/svAxiRta/sUXiyA/saPexa/krIma
-cream_noun	xUXiyA/sarvowwama/sAra/rasA/prawiRTiwa_loga/malAI/lepa/krIma/sarvowma_aMSa//eka_prakAra_kI_sOnxaryavarXaka_vaswu
+cream_noun	xUXiyA/sarvowwama/sAra/rasA/prawiRTiwa_loga/malAI/lepa/krIma/sarvowma_aMSaeka_prakAra_kI_sOnxaryavarXaka_vaswu
 cream_verb	malAI_bananA/wEyAra_karanA/rasa_nikAlanA/parAjiwa_karanA/milAnA/malAI_nikAlanA/kutanA/harAnA/dZalanA/malAI_uwAranA/sawa_nikAla_lenA
 creamery_noun	makKana_kI_xUkAna/makKana_GI_Axi_banAne_kA_kAraKAnA
 creamy_adjective	malAIxAra/uwwama
@@ -10439,7 +10437,7 @@ deafeningly_adverb	bahuwa_wejZa
 deafness_noun	baharApana/baXirawA
 deal_adjective	xevaxAra_vqkRa_kI_lakadZI_kA
 deal_noun	xevaxAra_vqkRa_kI_lakadZI/vyavahAraa/sOxA/samaJOwA/narama_lakadZI/baztAI/barwAvaa/baMtAI/bahuwa_sArA/dIla
-deal_verb	xenA/vyApAra_karanA/sOxA_karanA/saMboXiwa_karanA/peSa_AnA/pawwe_bAztanA/muRtiprahAra_karanAnA/mAranA/hala_karanA/calAnA/bAztanA/barwAva_karanA/bAMtanA/vyavahAra_karanA/varNana_karanA/sAmanA_karanA/
+deal_verb	xenA/vyApAra_karanA/sOxA_karanA/saMboXiwa_karanA/peSa_AnA/pawwe_bAztanA/muRtiprahAra_karanAnA/mAranA/hala_karanA/calAnA/bAztanA/barwAva_karanA/bAMtanA/vyavahAra_karanA/varNana_karanA/sAmanA_karanA
 dealer_noun	vyApArI/pawwA_bAMtane_vAlA/lena_xena_karanevAlA
 dealing_noun	lena_xena/kraya_vikraya
 dealings_noun	lena_xena/AcaraNa
@@ -12218,7 +12216,7 @@ dragonfly_noun	ek_waraha_kA_pawaMga
 dragoon_noun	GudZasavAra_sipAhI
 drain_noun	nikAsa_nalI/nikAsana/nAlI/JazJarI/pawanAlA/bahAva
 drain_verb	suKAnA/KAlI_karanA/bahanA/baha_jAnA/nikala_jAnA/KAlI_karanA[honA]
-drainage_noun	nikAsa/apavahana-kRewra/pAnI_kA_nikAsa/morI/
+drainage_noun	nikAsa/apavahana-kRewra/pAnI_kA_nikAsa/morI
 drainboard_noun	apavahana-patta
 draining-board_noun	apavahana-patta
 drainpipe_noun	nikAsa_nalI
@@ -12255,7 +12253,7 @@ draw-bridge_noun	KIMca_kara_pula_ko_bazxa_karane_vAlA_waKwA
 draw-string_noun	karRaNa_dorI/WElA_Axi_bazxa_karane_kI_dorI
 draw-up_verb	KAkA_wEyAra_karanA/Akara_rukanA
 draw_noun	niRkAsana/drAA/citrAmkanaa/lAtarI/nambara_nikalanA/droY{prawiyogiwA_jisakI_hAra_jIwa_kA_nirNaya_na_ho}/BIdZa_ko_ekawriwa_karane_hewu_kArya_yA_GatanA/xerI_se_kisI_vaswu_ko_samaJa_pAnA
-draw_verb	XUzvA_nikAlanA/wEyAra_karanA/varNana_karanA/prApwa_karanA/nikAlnA/nikAlanAnA/nikAlanA/nikalanA/milanA/liKanA/lenA/le_jAnA/lABa_kamAnA/KulavAnA/KIMcnA/KIMcanA/KIMca_lenA/KIMca_kara_le_jAnA/kAtanA/kasa_mAranA/karanA/grahaNa_karanA/ciwriwa_karanA/citra_banAnA/cAhanA/bawAnA/BaranA/banAnA/bahAnA/Azwe_nikAlanA/anirNiwa_karanA/anirniwa_karanA/AnA/AkqRta_karanA/AkarRiwa_karanA/AkarRaNanA/ciwra_banAnA/[bAhara]_nikAlanA/KIMca_kara_nikAlanA/niRkarRa_nikAlanA/ekawriwa_karanA/nambara_yA_kArda_yA_tikata_uTA_kara_vijayI_GoRiwa_karanA/gaharI_sAzsa_lenA/1nirASa_ho_jAnA/1bahAnA/1liKanA/1eka_sWAna_para_sImiwa_raKanA/1pAnI_kI_niSciwa_sawaha/1KIMcakara_baDZAnA
+draw_verb	XUzvA_nikAlanA/wEyAra_karanA/varNana_karanA/prApwa_karanA/nikAlnA/nikAlanAnA/nikAlanA/nikalanA/milanA/liKanA/lenA/le_jAnA/lABa_kamAnA/KulavAnA/KIMcnA/KIMcanA/KIMca_lenA/KIMca_kara_le_jAnA/kAtanA/kasa_mAranA/karanA/grahaNa_karanA/ciwriwa_karanA/citra_banAnA/cAhanA/bawAnA/BaranA/banAnA/bahAnA/Azwe_nikAlanA/anirNiwa_karanA/anirniwa_karanA/AnA/AkqRta_karanA/AkarRiwa_karanA/AkarRaNanA/ciwra_banAnA/[bAhara]_nikAlanA/KIMca_kara_nikAlanA/niRkarRa_nikAlanA/ekawriwa_karanA/nambara_yA_kArda_yA_tikata_uTA_kara_vijayI_GoRiwa_karanA/gaharI_sAzsa_lenA/nirASa_ho_jAnA/bahAnA/liKanA/eka_sWAna_para_sImiwa_raKanA/pAnI_kI_niSciwa_sawaha/KIMcakara_baDZAnA
 draw_verbal_noun	kasa_mAranA
 drawback_noun	kamI
 drawbridge_noun	uTAU_pula
@@ -12296,7 +12294,7 @@ dreary_adjective	nirASAjanaka/nIrasa/manxa-uxAsa
 dredge_verb	walakarRaNa_karanA/CidZakanA/naxI_ke_wala_se_mitatI_KIMcanA-KIMca_kara_nikAlanA/CidZakAnA-PElAnA
 dredger_noun	nikarRaNa_yaMwra/nikarRaNa_powa/KIMca_nikAlanevAlA_yaMwra
 dregs_adjective	bacA-KucA
-dregs_noun	walaCata/kUdZA-karakta/walaCata-_guzja/AKirI_xama_waka/bekAra_hissA
+dregs_noun	walaCata/kUdZA-karakta/walaCata_guzja/AKirI_xama_waka/bekAra_hissA
 drench_verb	BigonA/BigAnA/gIlA_karanA
 drenched_adjective	pUrI_waraha_se_BIgA_huA
 drenching_noun	dubakI
@@ -12458,7 +12456,7 @@ dug_noun	Wana
 dugong_noun	eMgAMga
 duke_noun	rAjakumAra/dyUka/rAjA{iMglEMda_meM_paxavI}
 dukedom_noun	dyUka_paxa/dyUka_kA_kRewra
-dull_adjective	XuMXalA/WodZA/saMvexanASUnya/PIkA/nIrasa/meGAcCAxiwa/manxaA/maMxabuxXi/maMxA/maMxa/BoWarA/arUcikara/aMXakAramaya/AlasI/suswa/mUDZa/halkA/kuMxa/niruwsAha/
+dull_adjective	XuMXalA/WodZA/saMvexanASUnya/PIkA/nIrasa/meGAcCAxiwa/manxaA/maMxabuxXi/maMxA/maMxa/BoWarA/arUcikara/aMXakAramaya/AlasI/suswa/mUDZa/halkA/kuMxa/niruwsAha
 dull_verb	XuzXalA_karanA/XAra_kama_karanA/nikAlanA/maMxa_honA/kRINa_honA/kama_karanA/suswa_karanA
 dulled_adjective	saMvexanASUnya/PZIkA/BoWarA
 dullness_noun	XuzXalApana/nIrasawA/mawimaMxawA/BoWarApana/suswI/niruwsAhawA/XuMXalApana
@@ -12684,7 +12682,7 @@ eclipse_noun	SrIhInawA/grahaNa
 eclipse_verb	nisweja_karanA/grahaNa_lagAnA
 ecological_adjective	paryAvaraNIya/parisWiwi-vijFAna_saMbaMXI/pArisWiwika
 ecologically_adverb	pArisWiwika_rUpa_se
-ecologist_noun	parisWiwi_vEjFAnika/pArisWiwikI-_samarWaka/parisWiwi_vijFAnI
+ecologist_noun	parisWiwi_vEjFAnika/pArisWiwikI_samarWaka/parisWiwi_vijFAnI
 ecology_noun	paryAvaraNa/parisWiwi-vijFAna/parisWiwi_vijFAna{pOXoM_waWA_prANiyoM_kA_Apasa_meM_waWA_pariveSa_se_sambanXa}
 economic_adjective	ArWika/arWaSAswrIya
 economical_adjective	alpavyaya_sambanXI/kiPZAyawI/alpavyayI/kamaKarcevAlA
@@ -15077,7 +15075,7 @@ flat-fish_noun	capatI_maCalI
 flat-fish_noun	eka_waraha_kI_maCalI
 flat-footed_adjective	pEra_meM_GumAva_na_honA/PUhadZa/PZIkA/kAlpanika/capate_pEra_vAlA
 flat-racing_noun	samawala_BUmI_para_GudZa-xOdZa/samawala_jagaha_para_GudZaxOdZa
-flat_adjective	spaRta/sIXAsAxA/sAxA/sapAta/samawala/samAnya/samAna_xara_kA/PIkA/paMcara/nirjIva/nIrasa/nIcA/ekaBAva/cOrasa/ciwa_padZA_huA/capatI/capatA/besvAxa/barAbara/binA_uwAra_caDZAvavAlA/maMxa/eka_samAna/saMgIwa_kA_eka_nota/purAnA_huA_peya/paMkcara_huA/KarAba_honA/binA_GumAva_kA_honA/1PIkA
+flat_adjective	spaRta/sIXAsAxA/sAxA/sapAta/samawala/samAnya/samAna_xara_kA/PIkA/paMcara/nirjIva/nIrasa/nIcA/ekaBAva/cOrasa/ciwa_padZA_huA/capatI/capatA/besvAxa/barAbara/binA_uwAra_caDZAvavAlA/maMxa/eka_samAna/saMgIwa_kA_eka_nota/purAnA_huA_peya/paMkcara_huA/KarAba_honA/binA_GumAva_kA_honA/PIkA
 flat_adverb	pUrI_waraha_se/nIrasa/besura/girA_xenA/sIXA_raKanA/binA_uwAra_caDZAva_ke/anumAniwa
 flat_noun	vAsakakRa/samawala_BUmi/samawala_BAga/paMcara_tAyara/Palaka/nIce_surakA_sUcaka_cinha/nIce_sura_kA_sUcaka_cinha/komala_svara/besura_AvAjZa/Gara/samuxra_kinAre_kA_samawala_BAga
 flatfish_noun	capatI_maCalI
@@ -15441,7 +15439,7 @@ follow-through_verb	aMwa_waka
 follow-up_noun	niraMwarawA
 follow-up_verb	jAnakArI_lenA
 follow_noun	anugawi
-follow_verb	sAWa_xenA/pICe-pICe_calanA/pICA_karanA/pariNAma_nikalanA/pAlana_karanA/cAlU_raKanA/anusaraNa_karanA/anukaraNa_karanA/anugamaNa_karanA/pICe_jAnA/AjFA_mAnanA/anugamana_karanA/samaJanA/XyAna_se_sunanA/varNana_karanA/Gatiwa_honA/1arWa_nikalanA
+follow_verb	sAWa_xenA/pICe-pICe_calanA/pICA_karanA/pariNAma_nikalanA/pAlana_karanA/cAlU_raKanA/anusaraNa_karanA/anukaraNa_karanA/anugamaNa_karanA/pICe_jAnA/AjFA_mAnanA/anugamana_karanA/samaJanA/XyAna_se_sunanA/varNana_karanA/Gatiwa_honA/arWa_nikalanA
 follower_noun	anuyAyI/anusaraNakarwA/anugAmI
 following_adjective	sahAyaka/nimnAMkiwa/nimnaliKiwa/anugAmI/AgAmI/agalA/Age_xiyA_huA
 following_noun	SiRya-samuxAya
@@ -16378,7 +16376,7 @@ gaol_verb	jel_ho_jAnA
 gaolbird_noun	kExI
 gaoler_noun	jelara
 gap_noun	xarAra/rikw/Parka/kamI/GAta/anwarAla/anwara/aMwara
-gape_verb	pUrI_waraha_se_KulA_honA/muzha_bAye_xeKanA/muzha_bAye_honA/KulA_honA/ekataka_GUranA/
+gape_verb	pUrI_waraha_se_KulA_honA/muzha_bAye_xeKanA/muzha_bAye_honA/KulA_honA/ekataka_GUranA
 gaping_adjective	KulA_huA
 garage_noun	motAraGara/gEreja/gErAja/motara_gAdZI_Axi_suXArane_kI_jagaha
 garage_verb	gEraja_meM_raKanA/gAdZIKAnA_meM_raKanA
@@ -17660,7 +17658,7 @@ half-note_noun	arXasvara/aXUrI_sUcanA
 half-pint_noun	nAtA
 half-price_adverb	AXe_mUlya_para/AXA_mUlya
 half-sister_noun	sOwelI_bahana
-half-term_noun	arXa-vArRika_CuttI/arXa-_sawra
+half-term_noun	arXa-vArRika_CuttI/arXa_sawra
 half-timbered_adjective	lakadZI_miSriwa_pakkA/imArawa_meM_lakadZI_kA_kAma
 half-time_noun	maXyAnwara
 half-tone_noun	arXasvaraka/binxu_ciwra
@@ -18291,7 +18289,7 @@ henceforth_adverb	isake_bAxa_se/BaviRya_meM
 henceforward_adverb	isake_bAxa_se
 henchman_noun	vaPZAxAra_sevaka/vaPAxAra_samarWaka
 henna_noun	meMhaxI
-hennaed_adjective	/eMhaxI_se_raMgA/meMhaxI_ke_raMga_me_raMgA_huA
+hennaed_adjective	eMhaxI_se_raMgA/meMhaxI_ke_raMga_me_raMgA_huA
 henpecked_adjective	xabbU/pawnI_xvArA_niyanwriwa
 hepatitis_noun	yakqwa-SoWa/yakqwa_SoWa
 hepatoflavin_noun	hepEtoPZlAvina
@@ -18554,7 +18552,7 @@ hiss_noun	sIwkAra/PuPakAra/sisakArI/PuPakArI
 hiss_verb	PuPakAranA/PuPakAra_kara_kahanA/hUta_karanA/sisakAranA
 histamine_noun	histamIna
 historian_noun	iwihAsakAra
-historic_adjective	EwihAsika/iwihAsa-_prasiXxa
+historic_adjective	EwihAsika/iwihAsa_prasiXxa
 historical_adjective	iwihAsa-vAxI/iwihAsa-sambanXI/EwihAsika
 historical_noun	iwihAsa-viRayaka/iwihAsa-sambanXI/EwihAsika
 historically_adverb	EwihAsika_rUpa_se
@@ -18689,7 +18687,7 @@ home-rule_noun	surAjya
 home-truth_noun	katusawya
 homeWard_adjective	Gara_kI_ora
 home_adjective	svaxeSowpanna/svaxeSIya/svaxeSa_saMcAliwa/svaxeSa/nijI/GarelU/Gara_para/Gara_kI_ora/gaharAI_waka/besabola_meM_eka_hI_Sota_meM_cAra_rana_banAnA
-home_adverb	GarelUpana/3parivAra_meM
+home_adverb	GarelUpana/parivAra_meM
 home_noun	vawana/TikAnA/svaxeSa/mAwqBUmI/janmaBUmI/janmaBUmi/gqha-viBAga/gqha/gola_ke_sAmane/gola/Gara/Bavana/ballebAjEYa_kA_nirXAriwa_sXAna/AvAsa
 home_verb	sahI_niSAnA_para_laganA/sahI_jagaha_para_jAnA/Gara_lOtanA
 homebody_noun	Gara_para_rahanA_pasaMxa_karane_vAlA
@@ -19103,7 +19101,7 @@ hunch_noun	aMwarjFAna
 hunch_verb	JukAnA
 hunchback_noun	kubadZA
 hunched_adjective	JukA_huA/JukAyA
-hundred-weight_noun	0pOMda{wOla_kI_amerikI_ikAI}
+hundred-weight_noun	pOMda{wOla_kI_amerikI_ikAI}
 hundred_adjective	sO
 hundred_noun	sEkadZA/sO/Sawa
 hundreds_noun	sEkadZoM/sEMkadZoM
@@ -21995,7 +21993,7 @@ lassie_noun	ladZakI
 lassitude_noun	WakAna/SiWilawA{SArIrika_aWavA_mAnasika}
 lasso_noun	PaMxA
 lasso_verb	PaMxe_meM_PAzsanA
-last_adjective	tikAU/sabase_nicale_xaraje_kA/saba_ke_bAxa_kA/piCalA/nayA_baccA/lAsta/aMwima/aMwa-pUrva/AKirI/AKarI/anwima/gawa/avaSiRta/??/carama/aXama
+last_adjective	tikAU/sabase_nicale_xaraje_kA/saba_ke_bAxa_kA/piCalA/nayA_baccA/lAsta/aMwima/aMwa-pUrva/AKirI/AKarI/anwima/gawa/avaSiRta/carama/aXama
 last_adverb	AKira_meM/sabase_bAxa_meM/anwima_bAra
 last_noun	kalabUwa
 last_verb	tikanA/TaharanA/kZAyama_rahanA/calanA/calawe_rahanA/jIviwa_rahanA
@@ -22452,7 +22450,7 @@ ligature_noun	pattI/rajjuka
 light-aircraft_noun	CotA_vAyuyAna
 light-fingered_adjective	CotI_cIjZe_curAne_kA_SOkZIna
 light-headed_adjective	bahakA_huA/naSe_meM
-light-hearted_adjective	prasanna_ciwwa/halkA//gamBIrawA_rahiwa
+light-hearted_adjective	prasanna_ciwwa/halkAgamBIrawA_rahiwa
 light-heartedly_adverb	prasannawA_se
 light-pen_noun	lAita-pena
 light-year_noun	prakASa_varRaa
@@ -22534,7 +22532,7 @@ linden_noun	nIbU_kI_lakadZI/nIbU_kA_pedZa
 line-drawing_noun	reKA-citra
 line-shooter_noun	SeKIbAjZa
 line-up_noun	SqMKalA/paMkwi/kZawAra
-line_noun	xiSA/XAgA/wAra/vaMSakrama/vaMSa/storI_lAina/SrqMKalA/sImAreKA/sImA/SElI/rUpa-reKA/reKA/rassI/praNAlI/pMakwi/patarI/paMkwibaxXakaraNa/paMkwi/pAipa_lAina/nasla/nAlA/mAXyama/mArga/lAina/laGu_kaviwA/kRewra/krama/kisma/kawAra/KAnaxAna/JurrI/dorI/caraNa/BUmaXya_reKA/BARASreNI/aswara/sImA-reKA/surakRA-paMkwiyAz/vaMSAvalI/parivahana_kampanI/1vyavasAya/1kRewra/1viSeRa_xUrasaMcAra_sevA
+line_noun	xiSA/XAgA/wAra/vaMSakrama/vaMSa/storI_lAina/SrqMKalA/sImAreKA/sImA/SElI/rUpa-reKA/reKA/rassI/praNAlI/pMakwi/patarI/paMkwibaxXakaraNa/paMkwi/pAipa_lAina/nasla/nAlA/mAXyama/mArga/lAina/laGu_kaviwA/kRewra/krama/kisma/kawAra/KAnaxAna/JurrI/dorI/caraNa/BUmaXya_reKA/BARASreNI/aswara/sImA-reKA/surakRA-paMkwiyAz/vaMSAvalI/parivahana_kampanI/vyavasAya/kRewra/viSeRa_xUrasaMcAra_sevA
 line_verb	reKA_KIMcanA/reKA_KiMcanA/pMakwi_bannA/mAranA/lakIra_bannA/kawAra_meZ_calanA/JurriyAz_padZanA/DakanA/BaranA/bannA/aswara_cadZnA/aswara_lagAnA
 lineage_noun	vaMSAvalI
 lineal_adjective	vaMSagawa
@@ -23444,7 +23442,7 @@ map_noun	mAncitra/mAnaciwra
 map_verb	sambaxXa_karanA/nakSA_bannA/mancitra_bannA/yojanA_banAnA
 maple_noun	xviPa_vqkRa/mEpil_kI_lakadZI/xviPala
 mapping_noun	prawiciwraNa/pawA_lagAnA
-mar-_noun	bigAdZanA
+mar_noun	bigAdZanA
 mar_verb	xURiwa_karanA/bigAdZa_xenA
 marathon_noun	Sakwi-parIkRaNa/laMbI_xOdZa/lambI_xOdZa/bahuwa_lambA
 maraud_noun	hamalA
@@ -24281,7 +24279,7 @@ mind-set_noun	mAnasikawA
 mind_adjective	cOkannA
 mind_noun	XyAna/ximAgI_AxamI/ximAga/xila/vicAra/smqwi/smaraNa/rAya/mawa/maswiRka/manoxaSA/irAxA/buxXi/AwmA/manaHsWiwi/buxXiSIla{vyakwi}/mana
 mind_verb	yAxa_raKanA/XyAna_xenA/XyAna_meM_raKanA/xeKanA/smaraNa_raKanA/KabaraxAra_rahanA/irAxA_kara_lenA/cinwA_karanA/Apawwi_karanA/Apawwi_honA[karanA]
-minded_adjective	wEyAra/pravqwwa/-buxXi/ximAga_vAlA
+minded_adjective	wEyAra/pravqwwa/buxXi/ximAga_vAlA
 minder_noun	XyAna_raKane_vAlA
 mindful_adjective	sacewa/sAvaXAna
 mindfully_adverb	sAvaXAnI_se
@@ -25844,7 +25842,7 @@ nightcap_noun	Sayana_topI/rAwri_peya/rAwa_meM_peya_maxirApAna
 nightclothes_noun	rAtri-poSAka
 nightclub_noun	nAitaklaba
 nightcrawler_noun	keMcuA
-nightdress-_nightgown	noun/gAuna
+nightdress_nightgown	noun/gAuna
 nightdress_noun	rAtri_poRAka/nAitI
 nightfall_noun	SAma/sanXyA_samaya
 nightgown_noun	nAitI
@@ -27339,7 +27337,7 @@ overseer_noun	sarvekRaka/nirIkRaka/paryavekRaka
 oversexed_adjective	awi_kAmuka
 overshadow_verb	PIkA_kara_xenA/niRpraBa_kara_xenA/CAyA_karanA/mahawva_meM_baDZa_caDZakara_honA/sAyA_karanA
 overshoot_verb	pAra_kara_jAnA/kA_awikramaNa_karanA/lakRya_se_bAhara_cale_jAnA_yA_PeMkanA
-oversight_noun	jimmexArI/xqRtiBrama/_nirIkRaNa
+oversight_noun	jimmexArI/xqRtiBrama/nirIkRaNa
 oversight_verb	BUla
 oversimplification_noun	awyaXika_saralIkaraNa
 oversimplified_adjective	awisaralIkqwa
@@ -27525,7 +27523,7 @@ painless_adjective	pIdZArahiwa/kleSarahiwa/xarxarahiwa
 painlessly_adverb	binA_kaRta_ke
 painstaking_adjective	bahuwa_hI_sAvaXAnIpUrvaka_kiyA_gayA/bahuwa_hI_mehanawI/pariSramapUrNa
 painstakingly_adverb	kadZI_mehanawa_se
-paint_noun	raMga/peMta/mekapa/raMgalepa//*
+paint_noun	raMga/peMta/mekapa/raMgalepa
 paint_verb	SqMgAra_karanA/sajIva_varNana_karanA/sajAnA/razganA/raMganA/praswuwa_karanA/peMta_karanA/nirUpiwa_karanA/liKanA/ciwriwa_karanA/ciwraNa_karanA/ciwrakArI_karanA/ciwra_banAnA/banAnA/raMga_lagAnA[honA]
 paintbox_noun	raMgoM_kA_dibbA
 paintbrush_noun	wUlikA/raMga_karane_kA_braSa/raMgane_vAlA_braSa
@@ -27576,9 +27574,7 @@ palish_adjective	halkA_pIlA_sA
 pall_noun	parxA/kaPZana/bAxala/labAxA
 pall_verb	Waka_jAnA/raMga_Ora_KushbU_Ko_xenA/parxe_se_DAzkk_xenA/nIrasa_ho_jAnA/himmawa_Ko_xenA
 pallbearer_noun	kaPZana_uTAne_vAlA
-pallet1_noun	sAmAna_le_jAne_yA_raKane_ke_liye_KAzcA
-pallet2_noun	wqNaSayyA
-pallet_noun	wqNaSEyA/WApI/raMgapattikA/priya_raMga/KulA_baksA
+pallet_noun	sAmAna_le_jAne_yA_raKane_ke_liye_KAzcA/wqNaSayyA/wqNaSEyA/WApI/raMgapattikA/priya_raMga/KulA_baksA
 palliate_verb	kama_karanA
 palliative_adjective	praSAmaka/laGukArI/upaSAmaka
 palliative_noun	upaSAmaka/praSAmaka_upacAra/praSAmaka_ORaXia
@@ -27615,7 +27611,7 @@ pan-handle_noun	eka_rAjya_kA_BUBAga_jo_xUsare_rAjya_meM_ho
 pan-handle_verb	BIKa_mAzganA
 pan-pipes_noun	pEna-pAipa
 pan_noun	wulApAtra/wavA/wasalA/raMga_kI_pyAlI/PrAiMga_pEna/pEna_PiSa/pEna/paladZA/mAlapuA/kapAla/kadZAhI/dastapEna/bArUxa_kI_pyAlI
-pan_verb	Xokara_sAPZa_karanA/Xokara_sAPa_karanA/svarNayukwa_mittI_ko_Xokara_sonA_nikAlanA/sonA_nikAlanA/katu_AlocanA_karanA/GumAnA/wasale_meM_kuCa_XonA/
+pan_verb	Xokara_sAPZa_karanA/Xokara_sAPa_karanA/svarNayukwa_mittI_ko_Xokara_sonA_nikAlanA/sonA_nikAlanA/katu_AlocanA_karanA/GumAnA/wasale_meM_kuCa_XonA
 panacea_noun	rAmabANa_xavA/sarva_roga_nASaka_ORaXI
 panache_noun	manohara_DaMga/kalagI/kalazgI
 panalella_noun	eka_pawalA_laMbA_sigAra
@@ -29389,7 +29385,7 @@ point-blank_adjective	awyanwa_nikata_se/sIXA/spaRta/muzhaPZata
 point-blank_adverb	sAPZa-sAPZa
 point-duty_noun	trEPika_pulisa_kI_dyUtI
 point-to-point_noun	kRetra_pAra_xOdZa
-point_noun	xiSAbinxu/waWya/vixyuwa_paiMta/ulleKa/swara/sWAna/sWala/sUI/sparSasWala/sparSabinxu/saXA_huA_svara/sArAMSa/sAra/purNa_virAma/pAZita_sAijZa/pAZita/paiMta_para_wEnAwa_KilAdZI/paiMta/nukIlA_Sastra/noka/muxxA/muKyabinxu/mawalaba/kRaNa/kenxrabinxu/kAMtA/kAla/jagaha/ikAI/cinha/binxu/biMxu/ASaya/aMwima_binxu/aMka/agraxala/anI/xvigbiMxu/aMsa/viSeRawA/vixyuw_sAzketa/patariyAz/1kAztA
+point_noun	xiSAbinxu/waWya/vixyuwa_paiMta/ulleKa/swara/sWAna/sWala/sUI/sparSasWala/sparSabinxu/saXA_huA_svara/sArAMSa/sAra/purNa_virAma/pAZita_sAijZa/pAZita/paiMta_para_wEnAwa_KilAdZI/paiMta/nukIlA_Sastra/noka/muxxA/muKyabinxu/mawalaba/kRaNa/kenxrabinxu/kAMtA/kAla/jagaha/ikAI/cinha/binxu/biMxu/ASaya/aMwima_binxu/aMka/agraxala/anI/xvigbiMxu/aMsa/viSeRawA/vixyuw_sAzketa/patariyAz/kAztA
 point_verb	xiKAnA/xarSnA/wAnanA/uTnA/tIpa_karanA/saMkewa_karanA/pEroM_kI_uMgliyoM_para_nAcanA/niSAnA_lagnA/nirxeSa_karanA/lakRya_sAXanA/jodZa_karanA/jodEYa_BaranA/iSArA_karanA/iMgiwa_karanA/niSAnA_bAzXanA/lakRya_karanA/kI_ora_honA/mahawwva_xenA
 pointed_adjective	suspaRta/nukIlA
 pointedly_adverb	suspaRta_DaMga_se/sAragarBiwa_DaMga_se/lakRya_karawe_hue
@@ -29518,7 +29514,7 @@ polytetrafluoroethylene_noun	palItetrAPZloro_EWilIna
 polytheism_noun	bahuxevavAxa
 polytheistic_adjective	bahuxevavAxI
 polythene_noun	paliWina/pAliWIna
-polyunsaturated_adjective	bahu-asaMwqpwa/_
+polyunsaturated_adjective	bahu-asaMwqpwa
 polyurethane_noun	polIyUraWena/raMgo_ke_liye_prayukwa_honevAlA_plAstika
 pom-pom_noun	PuMxanA
 pomander_noun	gulAbaxAnI
@@ -29766,7 +29762,7 @@ pot-holer_noun	pawWaroM_meM_padZe_gaDDoM_ko_DUzDanevAlA
 pot-pourri_noun	gulakanxa/ekatrIkaraNa/sUKI_sugaMXiwa_pawwiyoM_kA_miSraNa
 pot-shot_noun	anAyAsa_niSAnA
 pot_noun	woxUmala/puraskAraa/pAtra_wAPaka/pAtra/pataa/pata/mArijuAnA/kAlA_sIsA/CotA_SikAra/CIkA/awula_sampawwi/amiwa_XanarASi/barawana/gamalA/cAyaxAnI
-pot_verb	raKanA/niSAne_me_maraanA/niSAnA_lagAnA/gamale_me_ropanA/BexanA/gamale_meM_lagAnA/pilAnA/
+pot_verb	raKanA/niSAne_me_maraanA/niSAnA_lagAnA/gamale_me_ropanA/BexanA/gamale_meM_lagAnA/pilAnA
 potable_adjective	peya/pIne_yogya
 potash_noun	potESa
 potassium_noun	potESiyama
@@ -30684,7 +30680,7 @@ protestant_noun	protestEnta
 protestation_noun	prawijFApana/prakaWana/viroXa
 protester_noun	viroXakarwA/praxarSanakArI/viroXaka
 proto_adjective	Axya
-protocol_noun	vijFapwi/protokola/nayAcAra/aMwarrARtrIya_saMXi_kA_mUla_pawra/
+protocol_noun	vijFapwi/protokola/nayAcAra/aMwarrARtrIya_saMXi_kA_mUla_pawra
 proton_noun	protrAna/aNu_kA_eka_CotA_BAga
 protoplasm_noun	jIvaxravya
 prototype_noun	prawimAna/prAWamika_avasWA/BUlarUpa
@@ -30697,7 +30693,7 @@ protrude_verb	nikalA_huA_honA/bAhara_nikalA_huA_honA/bAhara_nikalA_huA_honA_yA_n
 protrusion_noun	uBAra/bahiH_saraNa
 protuberance_noun	uBAra
 protuberant_adjective	uBarA_huA
-proud_adjective	viSAla/svABimAnI/garvI/GamaNdI/ahaMkArI/garviwa/
+proud_adjective	viSAla/svABimAnI/garvI/GamaNdI/ahaMkArI/garviwa
 proud_adverb	gOravAnviwa/SAnaxAra
 proud_noun	mAna
 proudly_adverb	SAnaxAra_DaMga_se/sagarva/sABimAna/garva_se/aBimAnapUrvaka
@@ -32378,7 +32374,7 @@ reminiscent_adjective	yAxa_xilAne_vAlA/yAxa_karAne_vAlA
 remiss_adjective	lAparavAha/AlasI
 remission_noun	suXAra/preRaNa/pApamukwi/kamI/GatAva/BejI_huI_rakama/mAPI/CUta
 remit_noun	niyanwraNa_yA_praBAva_ke_bAhara
-remit_verb	sOMpanA/mAPZa_karanA/kRamA_karanA/kama_karanA/GatAnA/CUta_xenA/CodZa_xenA/BejanA/rupayA_BejanA_/_xaMda_yA_qNa_se_CutakArA
+remit_verb	sOMpanA/mAPZa_karanA/kRamA_karanA/kama_karanA/GatAnA/CUta_xenA/CodZa_xenA/BejanA/rupayA_BejanA/xaMda_yA_qNa_se_CutakArA
 remitment_noun	preRaNa/BejI_huI_rakama
 remittal_noun	preRaNa/pApamukwi/kamI/GatAva/BejI_huI_rakama
 remittance_noun	preRaNa/BejI_huI_rakama/BejA_huA_rupayA
@@ -35104,7 +35100,7 @@ set-to_noun	hAWApAI
 set-up_noun	vyavasWA/saMgaTana/PAzsI_kA_PanxA
 set_adjective	xqDZa/wEyAra/Tosa/sWiwa/siWAra/samUha/pakkA/OpacArika/niyawa/niyamiwa/nirXAriwa/kaTora/GisA-pitA/dUbA/DqDa/banA_huA/atala/aswagawa/aswa/acala/niSciwa/kqwrima
 set_noun	wEyAra/varga/tolI/sWiwi/svABAvika_sWiwi/sUryaswa/SIGrawA/seta/samUha/pravqwi/pOXA/maMca/DAcA/BAva/Asana/Akqwi/xqSyabanXa/samuccaya
-set_verb	xqSya_baXxa_karanA/wEyAra_karanA/wEyara_karanA/waya_karanA/vyavasWiwa_karanA/uwpanna_karanA/uwAranA/ugnA/TIka_waraha_se_jamanA/sWApiwa_karanA/SurU_karanA/siWawa_karanA/niSciwa_karanA/milnA/majabUwanA/majabUra_karanA/liKanA/le_jnA/lAgnA/lagnA/laganA/kasanA/karanA/jamnA/jadZanA/GatanA/dUbanA/data_kara_viroXa_karane_kA_TAna_l_karanA/CodZanA/biCnA/bETnA/beTnA/betnA/bETanA/bEtanA/baxalanA/bannA/atala_rahanA/raKa_xenA/lipibaxXa_karanA/TIka_karanA/pravarwiwa_karanA/xqDZa_ho_jAnA/kaTora_ho_jAnA/bETAnA/1kampojZa_karanA/1aswa_ho_jAnA
+set_verb	xqSya_baXxa_karanA/wEyAra_karanA/wEyara_karanA/waya_karanA/vyavasWiwa_karanA/uwpanna_karanA/uwAranA/ugnA/TIka_waraha_se_jamanA/sWApiwa_karanA/SurU_karanA/siWawa_karanA/niSciwa_karanA/milnA/majabUwanA/majabUra_karanA/liKanA/le_jnA/lAgnA/lagnA/laganA/kasanA/karanA/jamnA/jadZanA/GatanA/dUbanA/data_kara_viroXa_karane_kA_TAna_l_karanA/CodZanA/biCnA/bETnA/beTnA/betnA/bETanA/bEtanA/baxalanA/bannA/atala_rahanA/raKa_xenA/lipibaxXa_karanA/TIka_karanA/pravarwiwa_karanA/xqDZa_ho_jAnA/kaTora_ho_jAnA/bETAnA/kampojZa_karanA/aswa_ho_jAnA
 setaceous_adjective	kaztIlA
 setose_adjective	kaztIlA
 settee_noun	setI/CotA_soPZ
@@ -36868,7 +36864,7 @@ solecism_noun	behUxagI/aSuxXa_prayoga/aSiRtawA/anOciwya/baxawamIjZI
 solely_adverb	pUrI_waraha_se
 solemn_adjective	saviXi/SAnwa/samArohI/rIwika/pavitra/OpcArika/OpacArika/mahAna/gamBIra/paviwra/gaMBIra
 solemness_noun	gaMBIrawA
-solemnise_verb	viXipUrvaka_saMpAxiwa_karanA/gaMBIra_banA_xenA/-_
+solemnise_verb	viXipUrvaka_saMpAxiwa_karanA/gaMBIra_banA_xenA
 solemnity_noun	OpacArikawA/gaMBIrawA/gAmBIrya
 solemnize_verb	viXipUrvaka_saMpAxiwa_karanA/gaMBIra_banA_xenA
 solfa_noun	saragama
@@ -37491,7 +37487,7 @@ splotchy_adjective	XabbexAra
 splurge_noun	pEse_udZAne_kI_Xuna/Karca_karanA
 splurge_verb	xiKAvA_karanA/pEse_udZAnA
 splutter_noun	wadZawadZAhata/gussA-BarI_badZabadZAhata
-splutter_verb	gusse_meM_badZabadZAnA/jalxI_Ora_beTikAne_bolanA/
+splutter_verb	gusse_meM_badZabadZAnA/jalxI_Ora_beTikAne_bolanA
 spoil_noun	lUta/lABa/PZAyaxA_munAPA
 spoil_verb	xURiwa_karanA/KZarAba_kara_xenA/Kayala_raKanA/KarAba_ho_jAnA/bigAdZa_xenA/aXika_XyAna_xenA/bigAdZaxenA/KarAba_kara_xenA/lAdZa-pyAra_se_bigAdZanA
 spoilables_noun	vikArI_KAxya
@@ -38996,7 +38992,7 @@ summertime_noun	grIRma_qwu/garmI
 summery_adjective	garamI_ke_lAyaka/garamI_jEsA
 summing-up_noun	aMwima_aBivacana
 summit_noun	SiKara_sammelana/SiKara/sammelana/SIrRa_sammelana
-summon_verb	wEyAra_raKanA/sammana_xenA/mAzganA/ikatTA_karanA/bulAnA/bulA_BejanA/Ayojana_karanA/pukAranA/_samana_BejanA
+summon_verb	wEyAra_raKanA/sammana_xenA/mAzganA/ikatTA_karanA/bulAnA/bulA_BejanA/Ayojana_karanA/pukAranA/samana_BejanA
 summons_noun	sammana/bulAvA/AhvAhana_pawra
 summons_verb	sammana_xenA
 sumo_noun	sUmo/eka_prakAra_kI_kuswI
@@ -40184,7 +40180,7 @@ tent-fly_noun	waMbU_kA_xaravAjZA
 tent_noun	wambU/tEMta/CotI-CawarI/ColaxArI
 tent_verb	wambU_se_DazkanA/wambU_meM_TaharanA/waMbU_lagAnA/derA_lagA
 tentacle_noun	sparSaka/SikaMjA/pahuzca
-tentative_adjective	aniSciwa_-_sA/AjZamAiSI/AjamAiSI
+tentative_adjective	aniSciwa_sA/AjZamAiSI/AjamAiSI
 tentatively_adverb	AjZamAiSI_wOra_para
 tentativeness_noun	aniScaya
 tented_adjective	waMbUxAra/waMbU_jEsA
@@ -41012,7 +41008,7 @@ toffy_noun	taPZI
 tofu_noun	toPZU
 toga_noun	cogA
 together_adjective	mila_kara/ikatTA/eka_sAWa
-together_adverb	sAWa_meM/milA_kara/mila-jula_kara/ikataTe/eka-sAWa/eka_sAWa/_eka_sAWa/ikaTTA/barAbara
+together_adverb	sAWa_meM/milA_kara/mila-jula_kara/ikataTe/eka-sAWa/eka_sAWa/eka_sAWa/ikaTTA/barAbara
 togetherness_noun	nikatawA/GaniRTawA
 toggle_noun	tagala/svica/KUztI
 toggle_verb	tagala_se_bAzXanA/tagala_lagAnA/bAzXanA
@@ -42051,7 +42047,7 @@ tumultuousness_noun	haMgAmA
 tumulus_noun	kabra-swUpa
 tun_noun	lakadZI_kA_pIpA/eka_badZA_pIpA
 tun_verb	pIpoM_meM_raKanA
-tuna_noun	tyUnA/kAztexAra_nASapAwI/_eka_prakAra_kI_samuxrI_maCalI
+tuna_noun	tyUnA/kAztexAra_nASapAwI/eka_prakAra_kI_samuxrI_maCalI
 tundra_noun	uwwara-XruvIya_himapraxeSa/tuMdrA/uwwaraXruvIya_anurvara_praxeSa
 tune-in_verb	lagAnA
 tune_noun	Xunaa/Xuna/sura/laya
