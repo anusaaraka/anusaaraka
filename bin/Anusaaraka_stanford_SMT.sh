@@ -38,7 +38,7 @@
  mkdir $MYPATH/tmp/$1_tmp
  cp $4 $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt
  cp $5 $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp.txt
- #cp $6 $MYPATH/tmp/$1_tmp/wx_output.txt
+ cp $6 $MYPATH/tmp/$1_tmp/wx_output.txt
 
 ###Added below loop for server purpose.
  if [ "$3" == "True" ] ; then 
@@ -113,7 +113,7 @@
   sed 's/<\/Sentence>/<\/Sentence>\n;~~~~~~~~~~\n/g' shallow_parser_output_tmp1.txt > shallow_parser_output.txt
 
   $HOME_anu_test/Anu_src/split_file.out shallow_parser_output.txt dir_names.txt shallow_parser_output.dat
-#  $HOME_anu_test/Anu_src/split_file.out wx_output.txt dir_names.txt wx_output.dat
+  $HOME_anu_test/Anu_src/split_file.out wx_output.txt dir_names.txt wx_output.dat
   #########################################
 
   $HOME_anu_test/Anu_src/split_file.out sd-original-relations.txt  dir_names.txt  sd-original-relations.dat
