@@ -3489,5 +3489,6 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  . Added example sentence for rule combine_padas_of_compounds in miscellaneous/SMT/alignment/eng_hin_pos.clp
  32. Updated default_meaning_frm_oldwsd.txt [Corrected some mistakes]
  33. Updated add_snt_mrkr.lex
- 34. Updated changes_in_databases
- 35. Updated Log file.
+ 34. Added Physics-dictionary in Anu_data/ 
+ 35. Updated changes_in_databases
+ 36. Updated Log file.
