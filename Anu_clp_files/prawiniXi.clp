@@ -24,7 +24,7 @@
 (declare (salience 2001))
 ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre)
 (not (Mother_modified ?Mot))
-(not (prev_n-pres_n ? ?Mot))
+(not (prawiniXi_id-Node ?Mot ?))
 =>
         (assert (Mother_modified ?Mot))
         (assert (Head-Level-Mother-Daughters_new_fact ?h ?lvl ?Mot $?pre))
@@ -64,18 +64,18 @@
 (defrule test
 ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pid1 ?id)
 (or (parserid-wordid   ?pid   ?id) (prw-id-hid ?id ?))
-(not (prev_n-pres_n ? ?Mot))
+(not (prawiniXi_id-Node ?Mot ?))
 =>
    (retract ?f)
    (bind $?grp (create$ $?pid1 ?id))
    (bind ?praw_id (find_head_count ?h $?grp))
    (assert (prw-id-hid ?praw_id ?h))
-   (assert (prev_n-pres_n ?Mot ?praw_id))
+   (assert (prawiniXi_id-Node ?praw_id ?Mot))
    (assert (Head-Level-Mother-Daughters ?h ?lvl ?praw_id $?pid1 ?id))
 )
 
 (defrule replace_daughters
-(prev_n-pres_n ?Mot ?praw_id)
+(prawiniXi_id-Node ?praw_id ?Mot)
 ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot1 $?pre ?Mot $?pos)
 (not (Mot_replaced ?Mot1 ?Mot))
 =>
