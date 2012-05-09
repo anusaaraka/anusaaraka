@@ -4,6 +4,7 @@
  (load-facts "E_constituents_info_tmp2.dat")
  (load-facts "parserid_wordid_mapping.dat")
  (load-facts "sd_word.dat")
+ (load-facts "Node_category.dat")
  (run)
  (save-facts "prawiniXi.dat" local head_id-prawiniXi_id-grp_ids prawiniXi_id-node-category)
  (clear)
