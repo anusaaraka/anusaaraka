@@ -5,7 +5,7 @@
  (load-facts "parserid_wordid_mapping.dat")
  (load-facts "sd_word.dat")
  (run)
- (save-facts "prawiniXi.dat" local head_id-prawiniXi_id-grp_ids prawiniXi_id-Node)
+ (save-facts "prawiniXi.dat" local head_id-prawiniXi_id-grp_ids prawiniXi_id-node-category)
  (clear)
  ;----------------------------------------------------------------------
  (load "global_path.clp")
