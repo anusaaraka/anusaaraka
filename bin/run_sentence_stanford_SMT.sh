@@ -36,7 +36,7 @@
  cat  para_sent_id_info.dat word.dat sd_chunk.dat position.dat hindi_punctuation.dat >>$MYPATH/$1_tmp/$2/facts_for_tran_html
  cat para_sent_id_info.dat word.dat sd_chunk.dat position.dat hindi_punctuation.dat catastrophe.dat English_sentence.dat word_alignment.dat manual_hindi_sen.dat >>$MYPATH/$1_tmp/$2/facts_for_align_html
 
- cat proper_nouns.dat >> $MYPATH/$1_tmp/proper_nouns_list_tmp
+ cat proper_nouns.dat >> $MYPATH/$1_tmp/proper_nouns_list
 
  cat eng_id_in_hin_ord.dat >> $MYPATH/$1_tmp/$1_ordered_file
  cp hindi_sentence.dat hindi_sentence_tmp.dat
