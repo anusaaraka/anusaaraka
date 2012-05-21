@@ -4,6 +4,7 @@
  (assert (id-last_word))
  (assert (id-right_punctuation))
  (assert (id-left_punctuation))
+ (assert (conj_head-left_head-right_head))
  )
 
 (defglobal ?*eng_sen-file* = e_sen_fp) 

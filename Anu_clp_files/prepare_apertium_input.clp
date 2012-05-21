@@ -45,6 +45,7 @@
  (assert (root-verbchunk-tam-chunkids))
  (assert (id-attach_emphatic))
  (assert (id-TAM))
+ (assert (conj_head-left_head-right_head))
  )
 
 
@@ -173,7 +174,7 @@
  ;     She awakened to the sound of birds' singing .
  ;     Failure to comply may result in dismissal. 
  (defrule RaRTI_kA_vib_rule_for_verbal_noun
- (declare (salience 1001))
+ (declare (salience 1002))
  (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa|viSeRya-of_saMbanXI|saMjFA-to_kqxanwa ?f_id ?id)
  (or (make_verbal_noun ?id)(id-cat_coarse ?id verbal_noun))
  (pada_info (group_head_id ?id)(vibakthi ?vib)(H_tam ?tam))
@@ -189,7 +190,7 @@
  ;------------------------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju (17-06-11) Suggested by Chaitanya Sir
  ; These are children's books. Mohan fell from the top of the house.
- (defrule RaRTI_kA_vib_rule
+ (defrule RaRTI_kA_vib_rule1
  (declare (salience 1000))
  (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa|viSeRya-of_saMbanXI  ?foll_pada_id ?pada_id)
  ?f0<-(id-HM-source ?pada_id ?h_word&~vaha&~usakA&~hamArA&~merA&~Apa&~yaha&~mEM&~Ora ?)
@@ -200,7 +201,7 @@
   =>
        (retract ?f0)
        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$ ^kA<cat:sh><case:"?case1"><gen:"?gen1"><num:"?num1">$)" crlf)
-       (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  RaRTI_kA_vib_rule )" crlf)
+       (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  RaRTI_kA_vib_rule1 )" crlf)
  )
  ;======================================= KA vibakthi (kriyA_id-object_viBakwi) rules =====================================
  ; Added by Shirisha Manju (17-06-11) Suggested by Chaitanya Sir
@@ -1186,6 +1187,24 @@
         )
   )
   ;-------------------------------------------------------------------------------------------------------------------------
+  ; Added by Shirisha Manju (21-05-12)
+  ;He was an exotic creature with short red hair and brilliant green eyes.
+  (defrule PP_rule_with_vib_vAlA1
+  (declare (salience 401))
+  (pada_info (group_head_id ?pada_id)(group_cat PP) (number ?num)(case ?case)(gender ?gen)(vibakthi vAlA)(group_ids $?ids))
+  ?f1<-(hindi_id_order $? $?ids ?conj $?)
+  (conj_head-left_head-right_head ?conj ?pada_id ?foll_pada_id)
+  (hindi_id_order $? ?foll_pada_id ?f_id $?)
+  (pada_info (group_cat PP)(number ?num1)(case ?case1)(gender ?gen1)(group_ids $?f_ids))
+  (test (member$ ?f_id $?f_ids))
+  ?f0<-(id-HM-source ?pada_id ?h_word ?)
+  =>
+        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^vAlA<cat:n><case:"?case1"><gen:"?gen1"><num:"?num1">$)" crlf)
+        (retract ?f0)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_vAlA1 )" crlf)
+  )
+
+
   ; Added by Shirisha Manju (14-09-11)
   ; She is an excellent student with a bright future 
   (defrule PP_rule_with_vib_vAlA

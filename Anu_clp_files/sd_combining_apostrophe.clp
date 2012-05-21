@@ -117,9 +117,10 @@
  (Node-Category	?POS	POS|NNS|NN|CD|NNP)
   =>
   	(retract ?f ?f1 ?f2)
-  	(assert (Head-Level-Mother-Daughters ?pos1 ?lvl ?Mot $?pre ?NN $?post))
         (bind ?noun (explode$ (str-cat ?noun ?pos)))
-        (assert (Head-Level-Mother-Daughters ?h ?lvl1 ?NN ?noun))
+	(bind ?head (sym-cat ?h ?pos))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl1 ?NN ?noun))
+  	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?NN $?post))
  )
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule end

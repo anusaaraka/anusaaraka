@@ -7,3 +7,5 @@ Shyam	m
 Bella	f
 Ellie	f
 Kate	f
+Sanskrit	f
+Louise	f

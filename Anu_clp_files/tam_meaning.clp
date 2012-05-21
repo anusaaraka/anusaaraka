@@ -25,6 +25,7 @@
  (id-TAM)
  (id-cat)
  (id-cat_coarse)
+ (conj_head-left_head-right_head)
  )
 
  ;Added by Shirisha Manju
