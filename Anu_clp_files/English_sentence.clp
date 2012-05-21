@@ -1,9 +1,9 @@
- (deffacts dummy_eng_sen_facts
- (hindi_id_order)
- (id-word) 
- (id-last_word)
- (id-right_punctuation)
- (id-left_punctuation)
+ (deffunction never-called () 
+ (assert (hindi_id_order))
+ (assert (id-word) )
+ (assert (id-last_word))
+ (assert (id-right_punctuation))
+ (assert (id-left_punctuation))
  )
 
 (defglobal ?*eng_sen-file* = e_sen_fp) 

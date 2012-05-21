@@ -3280,10 +3280,220 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  24. Updated anu_compile_64bit.sh accordingly with anu_compile.sh
  25. Updated Log
 
- 07-03-12
+ 30-03-12
  ========
- 1. Modified "get_aux" rule in sd_lwg_rules.clp
+ 1. Modified : "get_aux" and "imper_rule2" rules in sd_lwg_rules.clp
  2. insert_punctuation
      Modified :  get_phrase_group, get_phrase_group1  and get_s_grp
- 3. Updated Log
+ 3. In stdenglish.sh and ol_stdenglish.sh
+	-->Removed sed code of replacing non ascii characters with ascii characters and 
+	   handled it using a flex programme --> "replacing-non_ascii_chars-to-ascii_chars.lex" 
+     	-->Added code to generate .out for above flex file in Makefile of stdenglish 
+ 4. Removed sed code of mapping punctuations in following files 
+	Anusaaraka_all.sh	Anusaaraka_berkeley.sh	Anusaaraka_rasp.sh	Anusaaraka_stanford-Factored.sh
+	Anusaaraka_site.sh	Anusaaraka_stanford.sh	Anusaaraka.sh
+ 5. Handled above mapping punctuations using a flex programme mapping-punctuations.lex
+ 6. Added code to run above flex programme in run_stanford-parser.sh.
+ 7. Remove "morph_tam" in tam_id.clp file and handled it with "morph_root" in root_rule.clp file.
+ 8. Modified compile.sh to generate out file for mapping-punctuations.lex
+ 9. Anu/stdenglish
+        1. Renamed honorifics.lex as titles.lex
+        2. Added initialisms.lex and standard_abbrevations.lex
+        3. Modified Makefile to add initialisms.lex and standard_abbrevations.lex
+ 10. Added the following files for SMT  --
+       miscellaneous/SMT/alignment/ :
+        1. eng_hin_pos.clp             2. eng_id_in_hin_ord.clp         3. run_H_gen_SMT.bat
+	4. Anusaaraka_stanford_SMT.sh  5. run_sentence_stanford_SMT.sh	6. alignment.clp 
+        7. get_anu_grp_mng.clp 	       8. get_man_grp_mng.clp           9. get_group_mng.sh
+       10.  count.sh                  11. get_tam_info.lex             12. modify_dic_fact.lex
+       miscellaneous/SMT/dump
+	1. cln-train.hi  2. cln-train.hi.out  3. cln-train_h_ordr.en    4. cln-train_h_ordr.en_detoken
+        5. news-commentary.tok.en  6. ssf-guide-4oct07.pdf  7. test.clp 8. real.txt
+ 11. Modified Anu/stdenglish.sh to run initialisms.lex and standard_abbrevations.lex
+ 12. Modified "id-link_id_map_for_first_word" rule in parserid_wordid_mapping.clp
+ 13. Modified "hid-right_punctuation" fact as "hid-punc_head-right_punctuation" in
+        1. insert_punctuation   2. run_modules_std.bat
+ 14. Added "PP_rule_with_kA_vib_for_and_last_id1" rule in prepare_apertium_input.clp
+ 15. Added "possesive" in split-relations.py
+ 16. Added '@' infront of each and every english word while generating function in converting-dic-format-to-js.lex file.
+ 17. Updated dictionaryA-R.js and  dictionaryS-Z.js in utf8.
+ 18. Modified ra_d8_wp_r.lex  to remove '@' infront of an english word.
+ 19. Modified file-wx_utf8.c accordingly with wx_utf8.c programme.
+ 20. Removed coding part to generate sent-by-sent analysis in the following files:
+	run_sentence_ol.sh	run_sentence_links.sh 	run_sentence_stanford.sh
+ 21. Modified chk_input_format.pl file.(Added 0-9 in the second expression)
+  $in =~ s/([a-zA-Z])([^a-zA-Z \t\n\-]+)([a-zA-Z])/$1$2 $3/g; ===> $in =~ s/([a-zA-Z])([^a-zA-Z0-9 \t\n\-]+)([a-zA-Z])/$1$2 $3/g;
+     Eg:-The colonial area laid out in grid pattern during the [mid19th] century holds remnants of the raj era.
+ 22. Updated abbrevations.lex, standard_abbrevations.lex and titles.lex files.
+ 23. Removed rule get_SBAR_copula and Modified get_SBAR, rmv_sbar_from_root and create_sen_SBAR rules in H_ordering_rules.clp file.
+ 24. Interchanged root and dictionary row.
+     Modified
+     1) create_eng_ord_html.clp
+     2) english_hindi.js
+ 25. Corrected the mistake [printing layer A-->B and B-->A] in create_hin_ord_html.clp
+ 26. Modified wh-reorder1 rule in hindi_sent_reorder.clp.
+ 27. Modified "id-link_id_map_for_lowercase" rule in parserid_wordid_mapping.clp (removed (lexemep ?wrd) condition and checking it with (numberp ) function)
+     Sen:- Nestled amongst the dense rishikesh badrinath highway at an altitude of 380 mts., here the mighty water of ganga is ideal for white water rafting there is also ample opportunity to view wildlife in its natural habitat.
+ 28. Modified "get_punct_full" function and accordingly the program has been changed in word.c file.
+ 29. Updated eng_hin_pos.clp.
+ 30. Added Node-category to save-facts for H_ordering_rules.clp in run_modules_std.bat
+ 31. Modified "make_compoundPhrase" rule in H_ordering_rules.clp
+ 32. Modified anu_compile.sh (to remove compilation for link 4.7.4) and remove_out-files.sh (to remove out files of link 4.7.4)
+ 33. Modified Anusaaraka_berkeley.sh [Changed  one_sentence_per_line.txt.std.penn_tmp -- one_sentence_per_line.txt.std.penn]
+ 34. Updated sd_ver_output, ber_ver_output, ol_ver_output, verified_output and link_ver_output 
+ 35. Updated the following files
+        ol_stdenglish.sh   abbrevations.lex  standard_abbrevations.lex
+ 36. Modified file default-iit-bombay-shabdanjali-dic.txt
+     #Eng-wrd  Category::IIT-Bombay/Shabdanjali meaning ==> #Eng-wrd_Category  IIT-Bombay/Shabdanjali meaning
+ 37. Modified tooltip information for dictionary row (showing the tooltip information using gdbm rather than dictionar*.js file) ,accordingly following files have been modified
+        1) Removed Anu_data/default-iit-bombay-shabdanjali-dic_firefox.txt from git and generating it using  c prog
+        2) Modified print_head_info, and print_dictionary_row functions in create_eng_ord_html.clp.
+        3) Updated Browser/src/style.css file [Added tooltip information]
+        4) Modified program Anu_src/converting-dic-format.c
+        5) anu_compile.sh and anu_compile_64bit.sh      
+ 38. Modified change_chunk_consecutive_same_color  rule in Anu_clp_files/create_hin_ord_html.clp
+ 39. Added converters folder in miscellaneous directory. 
+	- Added Mapping-IASTUnicode-wx.lex inside converters.
+	- Added Mapping-wx-IASTUnicode.lex inside  "
+	- Added Readme inside  converters.
+ 40. Moved following files to miscellaneous/Programs/
+	- file-wx_utf8.c
+	- dictionaryA-R.js
+	- dictionaryS-Z.js
+	- default-iit-bombay-shabdanjali-dic.txt
+	- default-iit-bombay-shabdanjali-dic_firefox.txt
+	- converting-dic-format-to-js.lex
+ 41. Updated miscellaneous/Programs/README.
+ 42. Modified Anusaaraka_berkeley.sh and ber_ver_output
+ 43. Removed coding part to compile file-wx_utf8.c in anu_compile.sh and anu_compile_64bit.sh
+ 44. Removed dictionaryA-R.js and dictionaryS-Z.js from bin/run_anu_browser.sh
+ 45. Updated changes_in_databases
+ 46. Updated Log
 
+ 13-04-12
+ ========
+ 1. Created directories 'original_files' and 'removed_files' in anu_testing/miscellaneous/Programs
+      i) Moved all the files from anu_testing/miscellaneous/Programs to anu_testing/miscellaneous/Programs/removed_files
+      ii) Added README and ra_d8_wp_r.lex  in original_files
+ 2. Updated converting-dic-format.c program [Writing output to a file by passing argument to the function rather than redirecting to a file].
+ 3. Updated debugging/make_freemind.pl debugging/wsd_tam_debug.clp files.
+ 4. Renamed  miscellaneous/Dictionarys/ name to  miscellaneous/Dictionaries/
+ 5. Added src dir inside miscellaneous/Dictionaries/iit-bombay/ and moved following files into src/
+	comp.sh		iit-bombay.txt		iit-bombay.txt1  
+	Ontology.lex	2011_01_31_Ontology_Developed_by_IIT-B_384.doc
+ 6. Updated miscellaneous/std_tregex/README.
+ 7. Modified FinalGenerate.pl to handle words having "_" in b/w them. Ex: harA_BarA (Considering only adjective cases)
+ 8. Replaced wordnet dir inside miscellaneous/Dictionaries.
+ 9. Modified paper.clp and enlarge.clp
+ 10. Modified ber_ver_output, link_ver_output, ol_ver_output, sd_ver_output and verified_output
+ 11. Modified apertium_hn.dix to handle patterns which have multiple generations.
+ 12. alignment.clp
+        Removed : modify_wrd_mng_for_VP, deffunction get_tam_info
+        Modified : Modified all the rules to remove function
+ 13. Removed "modify_AND_head" rule in get_anu_grp_mng.clp
+ 14. get_man_grp_mng.clp
+        Added   : modify_wrd_mng_for_VP_kriyAmUla, get_grp_info
+        Removed : get_verb_info, get_NP_mng
+ 15. Added
+	 add-suf-into-chunks.py -- to get suf in the group from shallow parser output  word_alignment.clp
+ 	 test_hi_sent , test_sent, test_shallow_output, test_wx_output  --- for testing SMT
+ 16. Modified Anusaaraka_stanford_SMT.sh to run the above python program
+ 17. Added miscellaneous/SMT/alignment/README , miscellaneous/SMT/dump/wx_output  
+ 18. Updated the following files
+        get_group_mng.sh, run_H_gen_SMT.bat, run_sentence_stanford_SMT.sh, get_tam_info.lex, 
+	cln-train.hi and, cln-train.hi.out,  cln-train_h_ordr.en_detoken
+ 19. Modified converting-dic-format.c program to generate dictionary file for SMT purpose and updated anu_compile.sh anu_compile_64.sh files accordingly.
+ 20. Removed all the dummy deffact function in all the .bclp files and handled it using deffunction  [deffunction never-called()].
+ 21. Updated create_eng_ord_html.clp and create_hin_ord_html.clp file
+ 22. Added debug information in alignment.clp file and accordingly run_H_gen_SMT.bat file has been updated.
+ 23. Added new folder "browser" in  miscellaneous/SMT/alignment/ for generating alignment o/p in html format for SMT.
+ 24. Added new file  Anu_clp_files/prawiniXi.clp [pada-point-concept] .
+    i) Added prawiniXi.clp module in miscellaneous/SMT/alignment/run_H_gen_SMT.bat
+ 25. Modified hnd_translation.pl to remove translation of "Test." in server.(1.1 sentence) and also to handle patterns like       "U.S", "A.D." etc. converting to utf8 in firefox. 
+ 26. In ClipsToAnu_browser_intfc.sh moved the code to run "hnd_translation.pl"  inside if-else loop for above purpose.
+ 27. Modified and updated changes_in_databses.
+ 28. Updated Stanford_parser_fails.
+ 29. Removed one sentence from sd_verified.
+ 30. Updated Log.
+
+ 15-05-12
+ ========
+ 1. Modified rules in create_eng_ord_html.clp [Added if (numberp) condition in all wx_utf8 calls]
+ 2. Modified rule "convert_wx_to_utf8" in create_hin_ord_html.clp [Added if (numberp) condition near  wx_utf8 call],and added new rule "dont_print_title_info" .
+ 3. Updated run_sentence_stanford_SMT.sh [Remove sed operation for handling "\\@"]
+ 4. Updated get_tam_info.lex program. 
+ 5. Removed run_eng_ord_html.bat and run_hin_ord_html.bat and added run_html.bat.
+            i)  Modified run_anu_browser.sh file     
+            ii) Modified ClipsToAnu_browser_intfc.sh
+ 6. Modified sent_end rule in create_eng_ord_html.clp , create_eng_ord_html.clp and create_hin_align_html.clp and updated preposition rules in create_eng_ord_html.clp [For handling multiple prepositions] .
+ 7. Added code for displaying English_sentence row ,mannual_sentence and confidence level row for the firefox output in run_hin_align_html.bat.
+ 8. Creating facts_for_eng_html[English-layered-output], facts_for_tran_html[hindi-layered-output] and facts_for_align_html[hindi-alignment-output] separately for respective html outputs , so following files have been modified
+         i)       bin/run_sentence_link.sh
+        ii)       bin/run_sentence_ol.sh
+       iii)       bin/run_sentence_stanford.sh
+        iv)       bin/run_sentence_stanford_SMT.sh
+ 9. Modified rule "split_Conj_VP" and "get_lwg" in sd_lwg_rules.clp. [Ex:-Marine drive extends from nariman point to malabar hill past the famous chowpatty beach, and is built on land reclaimed from back bay along the arabian sea.]
+ 10. Added miscellaneous/SMT/alignment/get_wx.clp
+ 11. Updated the following files
+        alignment.clp   get_anu_grp_mng.clp   word_alignment.clp get_tam_info.lex get_group_mng.sh
+ 12. Modified run_H_gen_SMT.bat
+		-- to run get_wx module
+		-- to load shallow_parser_root.dat in word_alignment and alignment modules
+ 13. Updated sd_chunker.clp [For handling SINV POS]
+ 14. Updated get_tam_info.lex [added new regular expression for getting root information for all words]
+ 15. Based on the type of the phrase, compound_phrase.txt file has been divided in to 
+    	 i) acronyms-common_noun_compounds.txt
+    	ii) proper_noun-common_noun_compounds.txt
+       iii) named_entities.txt
+    	iv) multi_word_expressions.txt
+    accordingly, following files have been modified
+         i) compound_phrase.clp
+           * Renamed this file to multi_word_expressions.clp
+                >> Updated create_binary_files.clp file.
+           * Added deffunction "mwe_lookup" and rules "chk_for_highest_priority" and "chk_for_mwe" and removed chk_for_cmp_phrase rule.
+           * Modified fact "ids-cmp_mng-head-cat-mng_typ" to  "ids-cmp_mng-head-cat-mng_typ-priority"
+                >> Updated hindi_meaning.clp file 
+                >> Updated vibakthi.clp
+                >> run_modules_std.bat
+                >> run_modules_link.bat
+                >> run_modules_ol.bat
+	   * renamed compound_phrase.dat to multi_word_expressions.dat
+       ii) anu_compile.sh and anu_compile_64bit.sh file [Added code for creating .gdbm files]
+ 16. Updated changes_in_databases file.
+ 17. Updated add-suf-into-chunks.py
+ 18. Added punctuations full forms in following files:
+	get_group_mng.sh	get_man_grp_mng.clp	Anusaaraka_stanford_SMT.sh
+ 19. Added " sed 's/@PUNCT/PUNCT/g' " in abbr_browser.sh to handle punctuations in firefox [while converting wx_utf8 for manual_hin_sent.dat in SMT].
+ 20. Added get_all_possible_roots.clp to get all possible roots in one field.
+ 21. Added code to run 'get_all_possible_roots.clp' in run run_modules_std.bat 
+ 22. Updated Stanford Parser README.
+ 23. In iit-bombay dictionary ::
+           --> Updated Readme-for-adding-dictionaries.txt
+	   --> Updated iit-bombay.dict
+	   --> Updated iit-bombay.index
+           --> Modified src/iit-bombay.txt
+           --> Updated src/iit-bombay.txt1
+ 24. Added miscellaneous/transliteration directory in anu_testing.
+ 25. Added rule "test_for_PropN" in hindi_meaning.clp file
+ 26. Modified run_modules_std.bat, run_modules_link.bat, and run_modules_ol.bat
+    --loading word.dat and opening & closing a new file proper_nouns.dat in hindi_meaning.clp module.
+ 27. Added code for running transliteration in all th below files
+    Anusaaraka.sh       Anusaaraka_all.sh       Anusaaraka_berkeley.sh          Anusaaraka_link.sh
+    Anusaaraka_ol.sh    Anusaaraka_site.sh      Anusaaraka_stanford.sh          Anusaaraka_rasp.sh
+    Anusaaraka_stanford-Factored.sh             Anusaaraka_stanford_SMT.sh      run_sentence_stanford.sh
+    run_sentence_ol.sh  run_sentence_link.sh
+ 28. Added code for creating path_for_transliteration and phrasal.test.ini files in anu_compile.sh  and anu_compile_64bit.sh for transliteration purpose.
+ 29. Added code for removing path_for_transliteration, phrasal.test.ini files and removing temporary files when creating default-iit-bombay-shabdanjali-dic_firefox.txt and default-iit-bombay-shabdanjali-dic_smt.txt in  remove_out-files.sh.
+ 30. Modified Anu_src/hnd_translation.pl program [Removed wx_utf8 conversion and added @symbols for all the english words generated by that file (here wx_utf8 conversion is done on the whole output rather than for a single sentence)]
+ 31. Updated shell_scripts/ClipsToAnu_browser_intfc.sh to transliterate proper nouns in Browsers.
+ . Added example sentence for rule combine_padas_of_compounds in miscellaneous/SMT/alignment/eng_hin_pos.clp
+ 32. Added new file miscellaneous/transliteration/work/run_transliteration.sh 
+     Modified all bin/anusaaraka.*.sh files [Copied all the transliteration script code to the new file run_transliteration.sh    and claa this file in all the files]
+ 33. Added new file anu_testing/Anu_clp_files/parse_scope.clp.
+ 34. Moved prawiniXi module from run_H_gen_sen.bat to run_modules_std.bat
+ 35. Added clips code for running parse_scope.clp in run_modules_std.bat
+ 36. Updated default_meaning_frm_oldwsd.txt [Corrected some mistakes]
+ 37. Updated add_snt_mrkr.lex
+ 38. Added Physics-dictionary in Anu_data/ 
+ 39. Updated changes_in_databases
+ 40. Updated Log file.

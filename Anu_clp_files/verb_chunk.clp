@@ -2,13 +2,13 @@
  (defglobal ?*lwg_debug_file* = lwg_db_fp)
  (deftemplate word-morph(slot original_word)(slot morph_word)(slot root)(slot category)(slot suffix)(slot number))
 
- (deffacts dummy_lwg_info
- (link_name-link_expansion)
- (link_name-link_lnode-link_rnode)
- (parserid-word)
- (parser_id-root)
- (parser_id-root-category-suffix-number)
- (No complete linkages found)
+ (deffunction never-called ()
+ (assert (link_name-link_expansion))
+ (assert (link_name-link_lnode-link_rnode))
+ (assert (parserid-word))
+ (assert (parser_id-root))
+ (assert (parser_id-root-category-suffix-number))
+ (assert (No complete linkages found))
  )
  ;------------------------------------------------------------------------------------------------------------------------
  ; checks whether I is "not" present in the S link expansion.

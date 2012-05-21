@@ -1,8 +1,8 @@
- (deffacts dummy_sd_cat_facts
- (id-sd_cat)
- (parserid-word)
- (word-wordid-nertype)
- (parserid-wordid) 
+ (deffunction never-called ()
+ (assert (id-sd_cat))
+ (assert (parserid-word))
+ (assert (word-wordid-nertype))
+ (assert (parserid-wordid) )
  )
 
  (defglobal ?*cat_fp* = sd_cat_fp) 

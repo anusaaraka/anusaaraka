@@ -114,12 +114,12 @@
 =>
         (bind ?*count* (+ ?*count* 1))
         (retract ?f)
-        (bind ?compPhrase (explode$ (str-cat compound_phrases ?*count* )))
+        (bind ?compPhrase (explode$ (str-cat COMP_PH ?*count* )))
 	(assert (dont_reverse_compPhrases ?compPhrase))
         (assert (Mother  ?NP1))
         (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1  ?compPhrase $?d2))
         (assert (Head-Level-Mother-Daughters from ?lvl ?compPhrase ?NP1 ?PP2 ))
-        (assert (Node-Category ?compPhrase compound_phrases))
+        (assert (Node-Category ?compPhrase COMP_PH))
         (printout ?*order_debug-file* "(rule_name - make_compPhrase  " ?*count* " " crlf
                           "             Before    - "?head" "?lvl"  "?Mot"  "(implode$ $?d1)" "?NP1" "?PP2" "(implode$ $?d2) crlf
                           "             After     - "?head" "?lvl"  "?Mot"  "(implode$ $?d1)" "?compPhrase" "(implode$ $?d2)")" crlf)
@@ -623,29 +623,29 @@
 ;-----------------------------------------------------------------------------------------------------------------------
 ;This is the place I live. This is the place I met him. 
 ;These shoes that I bought will look nice with that hat.
-(defrule get_SBAR_copula
-(declare (salience 730))
-?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?dat $?pos)
-(Head-Level-Mother-Daughters ? ? ?dat $?child)
-(Node-Category  ?Mot SBAR)
-(Node-Category  ?dat ?DAT)
-(Head-Level-Mother-Daughters ? ? ?m ?samA)
-(prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa ? ?samA)
-=>
-        (bind ?*count* (+ ?*count* 1))
-        (retract ?f)
-        (if (or (eq ?DAT SBAR)(eq ?DAT SBARQ)) then
- 	(assert (sbar-mother-dau ?Mot ?dat))
-       (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?pos))
-        (printout ?*order_debug-file* "(rule_name - get_SBAR_copula "  ?*count* crlf
-                         "              Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)"  "?dat" "(implode$ $?pos) crlf
-                         "              After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?pos) ")" crlf)
-        else
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?child $?pos)))
-        (printout ?*order_debug-file* "(rule_name - get_SBAR_copula "  ?*count* crlf
-                         "              Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)"  "?dat" "(implode$ $?pos) crlf
-                         "              After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?child)" "(implode$ $?pos) ")" crlf)
-)
+;(defrule get_SBAR_copula
+;(declare (salience 730))
+;?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?dat $?pos)
+;(Head-Level-Mother-Daughters ? ? ?dat $?child)
+;(Node-Category  ?Mot SBAR)
+;(Node-Category  ?dat ?DAT)
+;(Head-Level-Mother-Daughters ? ? ?m ?samA)
+;(prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa ? ?samA)
+;=>
+;        (bind ?*count* (+ ?*count* 1))
+;        (retract ?f)
+;        (if (or (eq ?DAT SBAR)(eq ?DAT SBARQ)) then
+; 	(assert (sbar-mother-dau ?Mot ?dat))
+;       (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?pos))
+;        (printout ?*order_debug-file* "(rule_name - get_SBAR_copula "  ?*count* crlf
+;                         "              Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)"  "?dat" "(implode$ $?pos) crlf
+;                         "              After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?pos) ")" crlf)
+;        else
+;        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?child $?pos)))
+;        (printout ?*order_debug-file* "(rule_name - get_SBAR_copula "  ?*count* crlf
+;                         "              Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)"  "?dat" "(implode$ $?pos) crlf
+;                         "              After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?child)" "(implode$ $?pos) ")" crlf)
+;)
 ;-----------------------------------------------------------------------------------------------------------------------
 
 (defrule get_SBAR
@@ -660,13 +660,13 @@
 =>
 	(bind ?*count* (+ ?*count* 1))
 	(retract ?f)
-	(if (eq ?noun NP) then
-		(assert (dont_separate_sbar ?Mot))
-	)
-	(if (and (or (eq ?DAT SBAR)(eq ?DAT SBARQ))(neq ?noun NP)) then
+	;(if (eq ?noun NP) then
+	;	(assert (dont_separate_sbar ?Mot))
+	;)
+	(if (or (eq ?DAT SBAR)(eq ?DAT SBARQ)) then
 	(retract ?f0)
 	(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?pos))
-	(assert (sbar-mother-dau ?Mot ?dat))
+;	(assert (sbar-mother-dau ?Mot ?dat))
 	(assert (Head-Level-Mother-Daughters ?h ?l ROOT1 $?r ?dat))
 	(printout ?*order_debug-file* "(rule_name - get_SBAR "  ?*count* crlf
         	         "              Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)"  "?dat" "(implode$ $?pos) crlf
@@ -702,7 +702,8 @@
 (Node-Category  ?Mot ROOT)
 (Node-Category  ?dat SBAR|SBARQ)
 (test (member$ $?child $?daut))
-(not (dont_separate_sbar ?dat)) ;The boy who came yesterday from Delhi is my friend.
+(test (neq (length $?child) 0))
+;(not (dont_separate_sbar ?dat)) ;The boy who came yesterday from Delhi is my friend.
 =>
 	(retract ?f)
 	(assert (Sen  $?child))
@@ -728,7 +729,7 @@
 ?f1<-(Head-Level-Mother-Daughters ? ? ?dat $?child)
 (Node-Category  ?dat SBAR|SBARQ)
 (not (sbar_ids $?child))
-(not (dont_separate_sbar ?dat))
+;(not (dont_separate_sbar ?dat))
 =>
         (assert (Sen  $?child))
         (assert (sbar_ids $?child))

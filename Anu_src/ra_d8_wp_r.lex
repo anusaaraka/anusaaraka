@@ -1,3 +1,4 @@
+ char *s;
  char map[]="01234567890123456789012345678901234567890123456789012345678901234⁄Àπ¿‚º∂£‹ª¥L¢¡Ê…Q÷’æﬁV√≈YÈ      § ∏ø·∑µÿ€∫≥—Ã∆Â»ﬂœ◊Ω›‘¬ƒÕ° ";
 NUKTA Z
 OPERATOR_V V
@@ -7,9 +8,10 @@ VOWEL_A a
 VOWEL_REMAINING [AiIuUqeEoO]
 CONSONANT [kKgGfcCjJFtTdDNwWxXnpPbBmyrlvSRsh]
 ROM_WORD @[A-Za-z0-9]+
-%x CONS 
+%x CONS
 %%
-{ROM_WORD}				{ECHO;}
+{ROM_WORD}				{s=strchr(yytext, '@')+1; printf("%s", s); //Replaced ECHO with this statements. To remove '@' before an english word. Modified by Roja(19-03-12).
+					}
 
 {CONSONANT}				{
 					printf("%c",map[yytext[0]]);BEGIN CONS;

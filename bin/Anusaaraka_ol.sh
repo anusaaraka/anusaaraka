@@ -104,6 +104,10 @@
     timeout 180 ./run_sentence_ol.sh $1 $line 1 $MYPATH
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
+
+ echo "Calling Transliteration"
+ cd $HOME_anu_test/miscellaneous/transliteration/work
+ sh run_transliteration.sh $MYPATH/tmp $1
  
  cd $MYPATH/tmp/$1_tmp/
  echo "(defglobal ?*path* = $HOME_anu_test)" > path_for_html.clp

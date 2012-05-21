@@ -1,14 +1,14 @@
  (defglobal ?*ol_fp* = ol_cat_file)
 
- (deffacts dummy_facts 
- (prep_id-relation-parser_ids )
- (parserid-wordid)
- (ol_res_id-word_id-word)
- (root-verbchunk-tam-parser_chunkids)
- (current_id-group_members)
- (addition-level-word-sid)
- (split_tranlevel-ptype-headid-grpids)
- (parser_id-cat_coarse)
+ (deffunction never-called ()
+ (assert (prep_id-relation-parser_ids ))
+ (assert (parserid-wordid))
+ (assert (ol_res_id-word_id-word))
+ (assert (root-verbchunk-tam-parser_chunkids))
+ (assert (current_id-group_members))
+ (assert (addition-level-word-sid))
+ (assert (split_tranlevel-ptype-headid-grpids))
+ (assert (parser_id-cat_coarse))
  )
  ;----------------------------------------------------------------------------------------------------------------
 ;Added by sheetal

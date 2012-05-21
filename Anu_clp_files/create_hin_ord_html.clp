@@ -28,7 +28,7 @@
  (deffunction print_eng_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?eng_op)
  (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
  (printout fp "<table cellspacing=\"0\">"crlf"<tr class=\"row1\">" crlf)
- (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".B</td>"))
+ (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".A</td>"))
  (printout fp "<td class=\""?chnk_fr_htm"\">" ?eng_op "</td>"crlf"</tr>" crlf)
  )
 
@@ -37,10 +37,10 @@
  (deffunction print_hindi_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_p ?r_p ?aper_op)
  (if (eq ?r_p -) then (bind ?r_p ""))
  (if (eq ?l_p -) then (bind ?l_p ""))
- (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
+; (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf))
  (printout fp "<tr class=\"row2\">" crlf )
  (if (= ?w_id 1) then
- (printout fp "<td class=\"number\">"?p_id"."?s_id".A</td>"))
+ (printout fp "<td class=\"number\">"?p_id"."?s_id".B</td>"))
  (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_p ?aper_op ?r_p" </td>" crlf "</tr>" crlf)
  )
 
@@ -76,13 +76,13 @@
  (test (and (neq ?hin -D-) (neq ?hin -U-)))
  =>
  (retract ?f)
-        (bind ?wx_to_utf8 (wx_utf8 ?hin))
-        (assert (hin_pos-hin_mng-eng_ids-eng_words ?id ?wx_to_utf8 $?grp ?id1 ?eng))
+        (if (not (numberp ?hin)) then (bind ?hin (wx_utf8 ?hin))
+        (if (eq (sub-string 1 2 ?hin) "\\@") then (bind ?hin (str-cat (sub-string 3 1000 ?hin)))))
+        (assert (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng))
         (assert (id_wx_to_utf_converted ?id))
  )
  ;---------------------------------------------------------------------------------------------------
 
- 
  (defrule cntrl_fact_for_chunk
  (declare (salience 6000))
  (id-word ?id ?word)
@@ -97,7 +97,7 @@
  ; Asserting default chunk if not present
  (defrule test_for_chunk
  (declare (salience 5900))
- (id-original_word ?id ?word)
+ (id-word ?id ?word)
  (not (chunk_cntrl_fact ?id))
  =>
  (assert (chunk-ids U ?id)))
@@ -120,12 +120,27 @@
  (declare (salience 5700))
  (chunk-ids ?chnk_type ?chnk $?ch1 ?id)
  ?f1<-(chunk-ids ?chnk_type ?chnk ?id1 $?ch2)
+ (test (and (numberp ?id) (numberp ?id1)))
  (test (and (neq ?chnk REP)(= ?id1 (+ ?id 1))))
  =>
  (retract ?f1)
  (assert (chunk-ids ?chnk_type REP ?id1 $?ch2)))
 
 ;============================== Printing to  html file  ===================================================================
+
+ (defrule dont_print_title_info
+ (declare (salience 5003))
+ (REMOVE_TITLE_FROM_HTML)
+ (para_id-sent_id-no_of_words 1 1 ?n_wrds)
+ ?f<-(hindi_order_length ?len)
+ (not (printed_head_info))
+ =>
+ (retract ?f)
+ (print_head_info)
+ (assert(printed_head_info))
+ (bind ?n_wrds (+ ?n_wrds 1))
+ (assert (id-len ?n_wrds 0))
+ )
 
  ;Printing html head information 
  (defrule print_head_info_to_html
@@ -156,8 +171,10 @@
  ?f<-(id-len ?id ?len)
  (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng)
 ; (id-left_punct-right_punct ?id1 ?l_p ?r_p)
- (hid-right_punctuation ?id1 ?r_p)
- (hid-left_punctuation ?id1 ?l_p)
+ ;(hid-right_punctuation ?id1 ?r_p)
+ (hid-punc_head-right_punctuation ?id1 ? ?r_p)
+ ;(hid-left_punctuation ?id1 ?l_p)
+ (hid-punc_head-left_punctuation ?id1 ? ?l_p)
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
  (test (member$ ?id1 $?ids))
  =>
@@ -173,7 +190,8 @@
  (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
  ?f<-(id-len ?id ?len)
  (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng)
- (hid-left_punctuation ?id1 ?l_p)
+ ;(hid-left_punctuation ?id1 ?l_p)
+ (hid-punc_head-left_punctuation ?id1 ? ?l_p)
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
  (test (member$ ?id1 $?ids))
  =>
@@ -189,7 +207,8 @@
  (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
  ?f<-(id-len ?id ?len)
  (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng)
- (hid-right_punctuation ?id1 ?r_p)
+ ;(hid-right_punctuation ?id1 ?r_p)
+ (hid-punc_head-right_punctuation ?id1 ? ?r_p)
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
  (test (member$ ?id1 $?ids))
  =>
@@ -256,21 +275,21 @@
  =>
  (retract ?f)
  ;(printout t "para-id " ?p_id " " ?s_id  crlf)
- (if (and (= ?p_id 1) (= ?s_id 1)) then (printout fp "<div class=\"float_clear\"/>" crlf))
  (printout fp "<div class=\"submit_button_block\"><input class=\"submit_button\" type=\"submit\" value=\"Submit\" /></div></form> " crlf)
+ (if (and (= ?p_id 1) (= ?s_id 1)) then (printout fp "<div class=\"float_clear\"/>" crlf))
 
  (reset)
- (bind ?path (str-cat ?p_id "." (+ ?s_id 1) "/" all_facts))
+ (bind ?path (str-cat ?p_id "." (+ ?s_id 1) "/" facts_for_tran_html))
  (bind ?rt_value (load-facts ?path))
  (if (eq ?rt_value FALSE) then
-        (bind ?path (str-cat  (+ ?p_id 1) ".1/" all_facts))
+        (bind ?path (str-cat  (+ ?p_id 1) ".1/" facts_for_tran_html))
         (bind ?rt_value1 (load-facts ?path))
         (if (eq ?rt_value1 FALSE) then
            (printout fp "<div class=\"float_clear\"/>" crlf)
            (printout fp "<div class=\"bottom\"></div>" crlf)
            (printout fp "</body>" crlf)
            (printout fp "</html>" crlf)
-                (exit)
+;                (exit)
         )
  )
  (load-facts ?path)

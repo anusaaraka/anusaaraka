@@ -2,11 +2,11 @@
 ; Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
 
- (deffacts combining_apostrophe_info
- (link_name-link_lnode-link_rnode)
- (parser_numid-word-remark)
- (parser_numeric_id-word)
- (parserid-word)
+ (deffunction never-called ()
+ (assert (link_name-link_lnode-link_rnode))
+ (assert (parser_numid-word-remark))
+ (assert (parser_numeric_id-word))
+ (assert (parserid-word))
  )
  
  (defglobal ?*nid_wrd_fp* =  l_n_w_fp)

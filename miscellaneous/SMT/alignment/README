@@ -1,0 +1,32 @@
+  Required files
+  ==============
+	1. Shallow parser output File  ---- cln-train.hi.out
+	2. Manual hindi sentences File ---- cln-train.hi
+	3. Wx_output File	       ---- cln-train_wx_output
+	4. Original sentences File     ---- cln-train_h_ordr.en_detoken
+
+   (Note : These files are in SMT/dump which contains above 12000 sentences)
+
+  For testing purpose
+  ===================
+       	1. file-name 		 ===	test_sent
+	2. manual_hin_sen	 ===	test_hi_sent
+	3. shallow_parser_output === 	test_shallow_output
+	4. wx_output		 ===	test_wx_output	
+
+  (Note :  These files are in SMT/dump )
+
+  To run alignment for SMT
+   ========================
+	Anusaaraka_stanford_SMT.sh <file-name> <parse_no> <sand_box_option> < manual_hin_sen> < shallow_parser_output> < wx_output>
+
+  	Ex  :	Anusaaraka_stanford_SMT.sh test_sent 1 false  test_hi_sent test_shallow_output test_wx_output
+
+  File name to check for alignment is   :  
+  ===================================
+			 $HOME_anu_tmp/tmp/$1_tmp/$2/alignment.dat
+		Ex: 	 $HOME_anu_tmp/tmp/test_sent_tmp/2.1/alignment.dat
+
+	(Note : Percentage will be displayed along with the hindi translation on the terminal) 
+
+ 

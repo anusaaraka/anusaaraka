@@ -138,8 +138,8 @@
  ?f<-(all_tam_mngs ?id ?tam)
  =>
  (retract ?f)
- (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/" ?tam "_tam.clp >jnk 2>error")
- (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/"?tam "_tam.clp >>jnk 2>error")
+ (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/" (implode$ (create$ ?tam)) "_tam.clp >jnk 2>error")
+ (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/"(implode$ (create$ ?tam)) "_tam.clp >>jnk 2>error")
  (open "jnk" fp2 "r")
  (if (eq (read fp2) EOF) then
      (printout t crlf "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" crlf)
@@ -176,8 +176,8 @@
  ?f<-(print_all_possible_meanings ?id ?tam ?exp_mng)
  =>
  (retract ?f)
- ( system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/" ?tam "_tam.clp >jnk 2>error")
- (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/"?tam "_tam.clp >>jnk 2>error")
+ ( system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/" (implode$ (create$ ?tam)) "_tam.clp >jnk 2>error")
+ (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/"(implode$ (create$ ?tam)) "_tam.clp >>jnk 2>error")
  (open "jnk" fp "r")
  (if (neq (read fp) EOF) then
  (system "grep -B2 \" " ?exp_mng"))\" jnk >jnk1")

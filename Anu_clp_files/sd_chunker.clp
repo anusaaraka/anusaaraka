@@ -1,8 +1,8 @@
-;Retract facts whose mothers are (S|SBAR|ROOT|SBARQ|SQ|FRAG)
+;Retract facts whose mothers are (S|SBAR|ROOT|SBARQ|SQ|FRAG|SINV)
 (defrule delete_phrases0
 (declare (salience 103))
 ?f<-(Head-Level-Mother-Daughters  ?h  ?l  ?mot  $?child)
-(Node-Category ?mot ?cat&S|SBAR|ROOT|SBARQ|SQ|FRAG)
+(Node-Category ?mot ?cat&S|SBAR|ROOT|SBARQ|SQ|FRAG|SINV)
 =>
         (retract ?f)
 )

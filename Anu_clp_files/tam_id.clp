@@ -1,15 +1,15 @@
  (defglobal ?*tam_id_file* = tam_id_fp)
  (deftemplate word-morph(slot original_word)(slot morph_word)(slot root)(slot category)(slot suffix)(slot number))
 
-(deffacts dummy_facts 
- (missing-level-id) 
- (id-original_word)
- (root-verbchunk-tam-chunkids)
- (verb_type-verb-causative_verb-tam)
- (verb_type-verb-kriyA_mUla-tam)
- (id-root-category-suffix-number)
- (meaning_to_be_decided)
-)
+ (deffunction never-called ()
+ (assert (missing-level-id) )
+ (assert (id-original_word))
+ (assert (root-verbchunk-tam-chunkids))
+ (assert (verb_type-verb-causative_verb-tam))
+ (assert (verb_type-verb-kriyA_mUla-tam))
+ (assert (id-root-category-suffix-number))
+ (assert (meaning_to_be_decided))
+ )
 ;------------------------------------------------------------------------------------------------------------------
 (defrule dont_load_chunkids
 (declare (salience 950))
@@ -211,25 +211,25 @@
  ;------------------------------------------------------------------------------------------------------------------
 ; He saw the broken window. Broken windows need to be replaced
 ; He handed his son a beautiful wrapped gift box . (here morph does'nt have analysis with category adjective (word--wrapped)) 
- (defrule morph_tam
- (declare (salience 800))
- (id-root-category-suffix-number ?id ? adjective ?  ?)
- (id-original_word ?id  ?word)
-;(word-morph (original_word  ?word)(root ?root1)(category adjective)) ;Commented by Mahalaxmi(6-10-09) suggested by Chaitanya sir.
- (word-morph (original_word  ?word)(root ?root)(category  verb)(suffix ?suf))
- ?mng <-(meaning_to_be_decided ?id)
- (not (grouped_id ?id))
- (test (or (eq ?suf ing)(eq ?suf en)))
- =>
- 	(retract ?mng)
-        (if (eq ?suf en) then
-		(printout ?*tam_id_file* "(id-TAM " ?id " en)" crlf)
-        else
-		(if (eq ?suf ing ) then
-                        (printout ?*tam_id_file* "(id-TAM " ?id " ing)" crlf)
-                )
-        )
- )
+; (defrule morph_tam
+; (declare (salience 800))
+; (id-root-category-suffix-number ?id ? adjective ?  ?)
+; (id-original_word ?id  ?word)
+;;(word-morph (original_word  ?word)(root ?root1)(category adjective)) ;Commented by Mahalaxmi(6-10-09) suggested by Chaitanya sir.
+; (word-morph (original_word  ?word)(root ?root)(category  verb)(suffix ?suf))
+; ?mng <-(meaning_to_be_decided ?id)
+; (not (grouped_id ?id))
+; (test (or (eq ?suf ing)(eq ?suf en)))
+; =>
+; 	(retract ?mng)
+;        (if (eq ?suf en) then
+;		(printout ?*tam_id_file* "(id-TAM " ?id " en)" crlf)
+;        else
+;		(if (eq ?suf ing ) then
+;                        (printout ?*tam_id_file* "(id-TAM " ?id " ing)" crlf)
+;                )
+;        )
+; )
  ;------------------------------------------------------------------------------------------------------------------
  (defrule end
  (declare (salience 100))

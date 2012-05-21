@@ -2,21 +2,21 @@
 
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
- (deffacts dummy_facts 
- (No complete linkages found)
- (missing-level-id) 
- (verb_type-verb-causative_verb-tam) 
- (addition-level-word-sid) 
- (prep_id-relation-anu_ids)
- (conjunction-components)
- (hindi_id_order)
- (id-word)
- (id-last_word)
- (id-root)
- (id-cat_coarse)
- (id-cat)
- (root-verbchunk-tam-chunkids)
- (verb_type-verb-kriyA_mUla-tam)
+ (deffunction never-called ()
+ (assert (No complete linkages found))
+ (assert (missing-level-id) )
+ (assert (verb_type-verb-causative_verb-tam) )
+ (assert (addition-level-word-sid) )
+ (assert (prep_id-relation-anu_ids))
+ (assert (conjunction-components))
+ (assert (hindi_id_order))
+ (assert (id-word))
+ (assert (id-last_word))
+ (assert (id-root))
+ (assert (id-cat_coarse))
+ (assert (id-cat))
+ (assert (root-verbchunk-tam-chunkids))
+ (assert (verb_type-verb-kriyA_mUla-tam))
  )
  ;============================================ Stanford Parser Rules ===================================================
 
@@ -136,6 +136,7 @@
  ?f0<-(hindi_id_order  $?start ?wh_word $?ids ?kriyA $?end)
  (not (prep_id-relation-anu_ids ?  kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?  ?wh_word)) ;Ex. How quickly did you run?
  (not (prep_id-relation-anu_ids ?  wall_conjunction ?wh_word)) ;When we want to hear a music programme on the radio , we have to tune the radio to the correct station .
+ (not (prep_id-relation-anu_ids ? viSeRya-jo_samAnAXikaraNa ? ?wh_word));It is Jane who wants to do it. 
  (test (and (neq ?wh_word 10000)(neq ?wh_word 10001)))
  =>
         (retract ?f0 ?f1)

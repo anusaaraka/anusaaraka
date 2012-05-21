@@ -1,15 +1,15 @@
 (deftemplate word-morph(slot original_word)(slot morph_word)(slot root)(slot category)(slot suffix)(slot number))
 
-(deffacts dummy_facts 
- (missing-level-id) 
- (id-original_word)
- (id_w_adv-word)
- (id-original_word)
- (parser_id-root-category-suffix-number)
- (parser_id-root)
- (id-root-tam)
- (linkid-word-node_cat)
-)
+ (deffunction never-called ()
+ (assert (missing-level-id) )
+ (assert (id-original_word))
+ (assert (id_w_adv-word))
+ (assert (id-original_word))
+ (assert (parser_id-root-category-suffix-number))
+ (assert (parser_id-root))
+ (assert (id-root-tam))
+ (assert (linkid-word-node_cat))
+ )
 ;--------------------------------------------------------------------------------------------------------------------------
 ;we are using "(parserid-wordid )" fact in every rule in this file, and this fact is generated iff parser runs successfully, but if parser fails we will not get this fact. so none of the rules in this file will work, but then also we will do sentence analysis on some other basis then we need this fact to get these rules run, therefore  by this rule we are generatting this fact.Asumming linkid is equal to word-id Eg:- if word id is 4 link-id is L4 
 

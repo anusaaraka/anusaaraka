@@ -1,14 +1,14 @@
  (deffunction string_to_integer (?parser_id); [Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
  (string-to-field (sub-string 2 10000 ?parser_id)))
 
- (deffacts dunmmy_facts 
- (root-verbchunk-tam-link_chunkids)
- (parserid-word)
- (modified_root-verbchunk-chunkids)
- (Eng_kriyA_mUla_root-verbchunk-chunkids)
- (link_name-link_expansion)
- (link_name-link_lnode-link_rnode)
- (No complete linkages found)
+ (deffunction never-called ()
+ (assert (root-verbchunk-tam-link_chunkids))
+ (assert (parserid-word))
+ (assert (modified_root-verbchunk-chunkids))
+ (assert (Eng_kriyA_mUla_root-verbchunk-chunkids))
+ (assert (link_name-link_expansion))
+ (assert (link_name-link_lnode-link_rnode))
+ (assert (No complete linkages found))
  )
  ;----------------------------------------------------------------------------------------------------------------------
  (defrule lwg_not_rule_N_link

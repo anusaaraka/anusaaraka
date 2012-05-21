@@ -1,0 +1,16 @@
+Steps to add dictionaries in GoldenDict
+=======================================
+1.From Synaptic package Manager install the following packages
+        goldendict
+
+2.In terminal enter goldendict
+  ---> GoldenDict opens  (By default we can find English Wikipedia added)
+  ---> To add any dictionary
+           |
+           V
+           ===>  Go to Edit --> Dictionaries -->Add --> Click on checkbox to make Recurive --> Rescan now
+                 (Note:  1. Only path of the dictionary need to be added .
+                            EX: /home/guest/.goldendict/shabdanjali
+                         2. Presently this package provides Wordnet, Shabdanjali and iit-bombay dictionaries
+                 )
+3. Click OK.

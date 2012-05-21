@@ -7,7 +7,7 @@
  if ! [ -d $HOME_anu_tmp ] ; then
      echo $HOME_anu_tmp " directory does not exist "
      echo "Creating "$HOME_anu_tmp 
-    mkdir $HOME_anu_tmp
+     mkdir $HOME_anu_tmp
  fi
 
  if ! [ -d $HOME_anu_output ] ; then
@@ -37,7 +37,7 @@
 
  mkdir $MYPATH/tmp/$1_tmp
 
-###Added below loop for server purpose. As stanford parser is used here internally below code is added to make uniform.
+###Added below loop for server purpose.
  if [ "$3" == "True" ] ; then 
     echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
  else
@@ -72,23 +72,15 @@
   sh map_constituent_tree.sh $MYPATH $1 one_sentence_per_line.txt
   sh run_rasp-parser.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt
   
-  sed 's/(, ,)/(P_COM PUNCT-Comma)/g' < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn | sed 's/(\. \.)/(P_DOT PUNCT-Dot)/g' |sed 's/(? ?)/(P_QES  PUNCT-QuestionMark)/g' | sed 's/(. ?)/(P_DQ PUNCT-QuestionMark)/g' | sed 's/(`` ``)/(P_DQT PUNCT-DoubleQuote)/g' | sed "s/('' '')/(P_DQT PUNCT-DoubleQuote)/g" | sed 's/(: ;)/(P_SEM PUNCT-Semicolon)/g' | sed 's/(: :)/(P_CLN PUNCT-Colon)/g' | sed 's/(: -)/(P_DSH PUNCT-Hyphen)/g' |sed "s/('' ')/(P_SQT PUNCT-SingleQuote)/g" | sed 's/(`` `)/(P_SQT PUNCT-SingleQuote)/g' | sed "s/(\`\` ')/(P_SQT PUNCT-SingleQuote)/g" | sed 's/(-LRB- -LRB-)/(P_LB PUNCT-OpenParen)/g'|sed 's/(-RRB- -RRB-)/(P_RB PUNCT-ClosedParen)/g' | sed 's/(. !)/(P_EXM PUNCT-Exclamation)/g' | sed 's/($ $)/(P_DOL SYM-Dollar)/g' >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.cons
-
-
-
-#sed 's/(, ,)/(P_COM COMMA)/g' < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn | sed 's/(\. \.)/(P_DOT DOT)/g' |sed 's/(? ?)/(P_QES QUESTION_MARK)/g' | sed 's/(. ?)/(P_DQ DOT_QUESTION_MARK)/g' | sed 's/(`` ``)/(P_DQT DOUBLE_QUOTES)/g' | sed "s/('' '')/(P_DQT DOUBLE_QUOTES)/g" | sed 's/(: ;)/(P_SEM SEMCOLN)/g' | sed 's/(: :)/(P_CLN COLN)/g' | sed 's/(: -)/(P_DSH PDASH)/g' |sed "s/('' ')/(P_SQT SINGLE_QUOTE)/g" | sed 's/(`` `)/(P_SQT SINGLE_QUOTE)/g' | sed "s/(\`\` ')/(P_SQT SINGLE_QUOTE)/g" | sed 's/(-LRB- -LRB-)/(P_LB LFT_BRK)/g'|sed 's/(-RRB- -RRB-)/(P_RB RT_BRK)/g' | sed 's/(. !)/(P_EXM EXCLAMATION)/g' >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.cons
-
-
   echo "Calling Stanford parser"
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
-  ./run_stanford-parser.sh $1 $MYPATH > /dev/null
- 
+  sh run_stanford-parser.sh $1 $MYPATH > /dev/null
+
   #running stanford NER (Named Entity Recogniser) on whole text.
   echo "Finding NER... "
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2008-05-07/
   sh run-ner.sh $1
 
-  
   cd $MYPATH/tmp/$1_tmp
   sed 's/&/\&amp;/g' one_sentence_per_line.txt|sed -e s/\'/\\\'/g |sed 's/\"/\&quot;/g' |sed  "s/^/(Eng_sen \"/" |sed -n '1h;2,$H;${g;s/\n/\")\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/$/\")\n;~~~~~~~~~~\n/g;p}' > one_sentence_per_line_tmp.txt
   $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line_tmp.txt dir_names.txt English_sentence.dat
@@ -115,6 +107,10 @@
     timeout 180 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
+
+ echo "Calling Transliteration"
+ cd $HOME_anu_test/miscellaneous/transliteration/work
+ sh run_transliteration.sh $MYPATH/tmp $1
  
  cd $MYPATH/tmp/$1_tmp/
  echo "(defglobal ?*path* = $HOME_anu_test)" > path_for_html.clp

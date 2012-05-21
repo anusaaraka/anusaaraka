@@ -1,6 +1,6 @@
 SHELL = /bin/sh
 
-TARGETS = enclitics.out abbrevations.out honorifics.out insert_period.out
+TARGETS = enclitics.out standard_abbrevations.out abbrevations.out titles.out insert_period.out replacing-non_ascii_chars-to-ascii_chars.out initialisms.out
 
 all: $(TARGETS)
 
@@ -23,13 +23,22 @@ endef
 enclitics.out: enclitics.lex
 	$(run_flex)
 
+standard_abbrevations.out: standard_abbrevations.lex
+	$(run_flex)
+
 abbrevations.out: abbrevations.lex
 	$(run_flex)
 
-honorifics.out: honorifics.lex
+titles.out: titles.lex
 	$(run_flex)
 
 insert_period.out: insert_period.lex
+	$(run_flex)
+
+replacing-non_ascii_chars-to-ascii_chars.out: replacing-non_ascii_chars-to-ascii_chars.lex
+	$(run_flex)
+
+initialisms.out: initialisms.lex
 	$(run_flex)
 
 .PHONY: all

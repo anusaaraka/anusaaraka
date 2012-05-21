@@ -1,7 +1,3 @@
- (deffacts dummy_facts
- (parserid-word)
- )
- 
  (bind ?*path1* (str-cat ?*path1* "/Anu_clp_files"))
 
  (defrule lwg_rule

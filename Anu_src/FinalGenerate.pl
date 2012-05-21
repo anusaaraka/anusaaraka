@@ -21,7 +21,7 @@ while(<STDIN>){
 
 				#for  nouns having more than one words.
 				if($word =~ /\^([^<]+)_.*/){
-
+#					print "$word\n";
 					#for adjectival participle , where the form has a tam "yA_huA" e.g BarA_huA. Make it to verb-form and generate as a verb.
 					if($word =~ /\^([^_]+)_huA<cat:adj><case:(.+)>.*<gen:(.+)>.*<num:(.+)>/){
 	
@@ -42,21 +42,41 @@ while(<STDIN>){
 						
 						&generate($root,$tam,$gen,$num,$per);
 					}
-					else{
-					
-						$word =~ /\^([^<]+)_(.*)/;
-						$kriyA_mula=$1;
-						$aper_input="^".$2;
-						open(APER_TMP,">$tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/tmp_aper_input") || die "Can't open file tmp_aper_input\n";
-						print APER_TMP "$aper_input";
-						close(APER_TMP);
-						print "$kriyA_mula ";
-						system("lt-proc -cg $ARGV[0] < $tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/tmp_aper_input");
-						print " ";
-					}
+				#	else{   
+#Added else if part by Roja (05-04-12) (considering "adjective" case only) 
+#Ex:Udaipur, the city of lakes and palaces are surrounded by lush green aravali range and crystal clear water lake.
+#lush green --> ^harA_BarA<cat:adj><case:o><gen:f><num:s>$ 
+#Modified the i/p sent to apertium as shown::
+#Before :: harA ^BarA<cat:adj><case:o><gen:f><num:s>$
+#Now	:: ^harA<cat:adj><case:o><gen:f><num:s>$ ^BarA<cat:adj><case:o><gen:f><num:s>$ 
+#O/p	:: harI BarI
+					        elsif($word =~ /(\^([^<]+)<cat:adj>([^ ]+))/) {
+						  $word =~ /\^([^<]+)<([^ ]+)/;
+						  $wrd=$1; $analysis="<".$2; 
+						  $wrd =~ s/_/ /g;
+						  @mng=split(/\s+/,$wrd);
+					        foreach $mngs (@mng){
+						  $aper_input="^".$mngs.$analysis;  
+	   				          open(APER_TMP,">$tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/tmp_aper_input") || die "Can't open file tmp_aper_input\n";
+						  print APER_TMP "$aper_input";
+						  close(APER_TMP);
+						  system("lt-proc -cg $ARGV[0] < $tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/tmp_aper_input");
+						  print " ";
+					        }}
+
+                                             elsif($word =~ /\^([^<]+)_(.*)/) {
+                                                $kriyA_mula=$1;
+                                                $aper_input="^".$2;
+                                                open(APER_TMP,">$tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/tmp_aper_input") || die "Can't open file tmp_aper_input\n";
+                                                print APER_TMP "$aper_input";
+                                                close(APER_TMP);
+                                                print "$kriyA_mula ";
+                                                system("lt-proc -cg $ARGV[0] < $tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/tmp_aper_input");
+                                                print " ";
+                                     }
+
 				}
-				else{
-					$aper_input=$word;
+				elsif($aper_input=$word) {
 					open(APER_TMP,">$tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/tmp_aper_input") || die "Can't open file tmp_aper_input\n";
 					print APER_TMP "$aper_input";
 					close(APER_TMP);
@@ -79,7 +99,7 @@ while(<STDIN>){
 				&generate($root,$tam,$gen,$num,$per);
 				print " ";
 			}
-			else{print "$word";print " ";}
+			else{print "$word"; print " ";}
 		}
 		print ")";
 	}     

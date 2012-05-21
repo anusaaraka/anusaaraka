@@ -1,9 +1,9 @@
  (defglobal ?*link_map* = link_word_fp)
 
- (deffacts dummy_linkid_id_mapping
- (id-original_word)
- (parser_numid-word-remark)
- (No complete linkages found)
+ (deffunction never-called ()
+ (assert (id-original_word))
+ (assert (parser_numid-word-remark))
+ (assert (No complete linkages found))
  )
  ;--------------------------------------------------------------------------------------------------------------------
  (defrule end
@@ -22,6 +22,7 @@
         (if (and (neq ?wrd1 ``) (neq ?wrd1 `)(neq ?wrd1 '')(neq ?wrd1 PUNCT-DoubleQuote)(neq ?wrd1 PUNCT-SingleQuote)) then   ;Ex: "Who is he like?" ; Stanford stores the information of " as `` .  
 	  (if (neq ?remark -) then
 		(printout ?*link_map* "(parserid-wordid   P1"?remark"  1)" crlf)
+		(printout ?*link_map* "(parserid-wordid   P2   1)" crlf)
 	  else
 		(printout ?*link_map* "(parserid-wordid   P1   1)" crlf)
 	  )
@@ -60,8 +61,9 @@
  (declare (salience 998))
  ?f0<-(current_id ?id)
  ?f1<-(id-original_word ?id ?wrd)
- ?f2<-(parser_numid-word-remark ?l_id&:(>= ?l_id ?id) ?WRD&:(lowcase (lexemep ?wrd)) ?remark)
- (not (parser_numid-word-remark ?l_id1&:(and (>= ?l_id1 ?id) (> ?l_id ?l_id1)) ?WRD&:(lowcase (lexemep ?wrd)) ?remark))
+ (test (eq (numberp ?wrd) FALSE))
+ ?f2<-(parser_numid-word-remark ?l_id&:(>= ?l_id ?id) ?WRD&:(lowcase  ?wrd) ?remark)
+ (not (parser_numid-word-remark ?l_id1&:(and (>= ?l_id1 ?id) (> ?l_id ?l_id1)) ?WRD&:(lowcase ?wrd) ?remark))
  =>
         (retract ?f0 ?f1 ?f2)
         (if (neq ?remark -) then

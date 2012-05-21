@@ -1,9 +1,9 @@
-(deffacts dummy_sd_lwg_facts
-(Head-Level-Mother-Daughters)
-(Node-Category)
-(parserid-word)
-(parser_id-root-category-suffix-number)
-)
+ (deffunction never-called ()
+ (assert (Head-Level-Mother-Daughters))
+ (assert (Node-Category))
+ (assert (parserid-word))
+ (assert (parser_id-root-category-suffix-number))
+ )
 
 (deffunction string_to_integer (?parser_id)
 ; Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
@@ -34,13 +34,12 @@
 ;Who translated the sentence for the student? The snake who swallowed the rat hissed loudly.
 (defrule make_VBN_as_VBD
 (declare (salience 1600))
-(or (Head-Level-Mother-Daughters ? ? ?S $? ?VP ?)(Head-Level-Mother-Daughters ? ? ?S $? ?VP))
+(or (Head-Level-Mother-Daughters ? ? ?S $? ?VP ?)(Head-Level-Mother-Daughters ? ? ?S ?VP))
 (Node-Category ?S S|SQ)
 (Node-Category ?VP VP)
 ?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP ?VBN $?d)
 ?f1<-(Node-Category ?VBN VBN)
 ?f2<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VBN ?id)
-(not (daughter ? ?v));.Have you ever seen the Pacific?
 =>
 	(retract ?f0 ?f1 ?f2)
 	(assert (Head-Level-Mother-Daughters ?h ?l ?VP VBD $?d))
@@ -167,13 +166,17 @@
 ;You can go shopping on the fashionable mall , visit its neo-gothic churches , the grand former vice-regal lodge or the ce    meteries .
 (defrule split_Conj_VP
 (declare (salience 1530))
-?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP $?d ?CC $?d1 ?VP1 $?d2)
+?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP $?d ?Pre_CC ?CC $?d1 ?VP1 $?d2)
 (Node-Category ?VP VP)
-(or (Node-Category ?CC CC)(Node-Category ?CC P_COM) )
+(Node-Category ?CC CC|P_COM)
+(Node-Category ?Pre_CC ?p_cc);Added by Mahalaxmi (18-04-12), Ex:- Marine drive extends from nariman point to malabar hill past the famous chowpatty beach, and is built on land reclaimed from back bay along the arabian sea. 
 (Node-Category ?VP1 VP|VBN|VBG|VBD)
 =>
 	(retract ?f0)
+        (if (eq ?p_cc P_COM) then
 	(assert (Head-Level-Mother-Daughters ?h ?l ?VP $?d))
+        else
+	(assert (Head-Level-Mother-Daughters ?h ?l ?VP $?d ?Pre_CC)))
 	(assert (Head-Level-Mother-Daughters ?h ?l ?VP $?d1 ?VP1 $?d2))
 )
 ;------------------------------------------------------------------------------------------------------------------------
@@ -242,7 +245,7 @@
 (declare (salience 1500))
 ?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut)
 (Node-Category  ?Mot    VP|SQ)
-(not (Head-Level-Mother-Daughters to $? ?Mot)) ;He persuaded them to go.
+(not (Head-Level-Mother-Daughters to|To $? ?Mot)) ;He persuaded them to go.
 (not (Mother ?Mot))
 =>
         (bind $?lwg (create$ ))
@@ -252,7 +255,8 @@
                     (bind $?lwg (sort my_string_cmp (create$ $?lwg ?j)))
                 )
         )
-        (assert (root-verbchunk-tam-parser_chunkids  root - $?lwg - $?lwg - $?lwg))
+        (if (neq (length $?lwg) 0) then ;Added by Mahalaxmi(18-04-12) Eg:- Close to hampstead heath stands high gate hill and on top of the hill, the pleasant village of high gate.
+        (assert (root-verbchunk-tam-parser_chunkids  root - $?lwg - $?lwg - $?lwg)))
 )
 ;------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (24-02-12)
@@ -451,12 +455,13 @@
 ;------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (29-10-11)
 ;Please enclose a curriculum vitae with your letter of application. 
+;Now try generating random text in the style of an inaugural address or an internet chat room.
 (defrule imper_rule2
 (declare (salience 4))
 (Head-Level-Mother-Daughters ? ? ?ROOT ?S)
 (and (Node-Category ?ROOT ROOT) (Node-Category ?S S))
 (Head-Level-Mother-Daughters ? ? ?S ?INTJ ?VP1 $?)
-(and (Node-Category ?VP1 VP)(Node-Category ?INTJ INTJ))
+(and (Node-Category ?VP1 VP)(Node-Category ?INTJ INTJ|ADVP|PP|CC))
 (Head-Level-Mother-Daughters ? ? ?VP1 ?id $?)
 ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vc ?tam  ?id)
 (not (imper_decided ?id))

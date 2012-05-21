@@ -1,23 +1,22 @@
  ;Added by Shirisha Manju (19-11-11)
- (deffacts dummy_hin_sen_facts
- (hindi_id_order)
- (id-attach_emphatic)
- (id-Apertium_output)
- (id-left_punctuation)
- (id-right_punctuation)
- (hid-left_punctuation)
- (hid-right_punctuation)
- (id-HM-source)
- (id-inserted_sub_id)
- (id-word)
- (id-last_word)
- (para_id-sent_id-word_id-original_word-hyphenated_word)
- (id-original_word)
- (Parser_used)
+ (deffunction never-called ()
+ (assert (hindi_id_order))
+ (assert (id-attach_emphatic))
+ (assert (id-Apertium_output))
+ (assert (id-left_punctuation))
+ (assert (id-right_punctuation))
+ (assert (hid-punc_head-left_punctuation))
+ (assert (hid-punc_head-right_punctuation))
+ (assert (id-HM-source))
+ (assert (id-inserted_sub_id))
+ (assert (id-word))
+ (assert (id-last_word))
+ (assert (para_id-sent_id-word_id-original_word-hyphenated_word))
+ (assert (id-original_word))
+ (assert (Parser_used))
  )
 
 (defglobal ?*hin_sen-file* = h_sen_fp)
-(defglobal ?*punct_file* = punct_fp)
  
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot preceeding_part_of_verb (default 0)) (slot preposition (default 0))(slot Hin_position (default 0)))
  ;----------------------------------------------------------------------------------------------------------
@@ -45,7 +44,8 @@
  (defrule get_rt_punt_if_no_aper_mng
  (declare (salience 2530))
  (Parser_used Stanford-Parser)
- (or (hid-right_punctuation ?id ?punc)(hid-left_punctuation ?id ?punc))
+ (or (hid-punc_head-right_punctuation ?id ? ?punc)(hid-punc_head-left_punctuation ?id ? ?punc))
+; (or (hid-right_punctuation ?id ?punc)(hid-left_punctuation ?id ?punc))
  ?f1<-(id-Apertium_output ?id $?wrd_analysis) 
  ?f0<-(hindi_id_order $?id1 ?id $?d1)
  (test (eq (length $?wrd_analysis) 0))
@@ -57,8 +57,9 @@
  (defrule get_apertium_mng_with_lt_and_rt_punc
  (declare (salience 2521))
  (Parser_used Stanford-Parser)
- (hid-right_punctuation ?id ?rp)
- (hid-left_punctuation ?id ?lp)
+ (hid-punc_head-right_punctuation ?id ? ?rp)
+; (hid-left_punctuation ?id ?lp)
+ (hid-punc_head-left_punctuation ?id ? ?lp)
  ?f1<-(id-Apertium_output ?id ?w $?wrd_analysis ?w1)
  ?f0<-(hindi_id_order $?id1 ?id $?id2)
  =>
@@ -73,8 +74,8 @@
  (defrule get_apertium_mng_with_lt_and_rt_punc1
  (declare (salience 2520))
  (Parser_used Stanford-Parser)
- (hid-right_punctuation ?id ?rp)
- (hid-left_punctuation ?id ?lp)
+ (hid-punc_head-right_punctuation ?id ? ?rp)
+ (hid-punc_head-left_punctuation ?id ? ?lp)
  ?f1<-(id-Apertium_output ?id ?wrd)
  ?f0<-(hindi_id_order $?id1 ?id $?id2)
  =>
@@ -88,7 +89,7 @@
  (defrule get_apertium_mng_with_left_punc
  (declare (salience 2510))
  (Parser_used Stanford-Parser)
- (hid-left_punctuation ?id ?punc $?p )
+ (hid-punc_head-left_punctuation ?id ? ?punc $?p )
  ?f1<-(id-Apertium_output ?id ?w $?wrd_analysis)
  ?f0<-(hindi_id_order $?id1 ?id $?id2)
  =>
@@ -102,7 +103,7 @@
  (defrule get_apertium_mng_with_right_punc
  (declare (salience 2510))
  (Parser_used Stanford-Parser)
- (hid-right_punctuation ?id ?punc $?p)
+ (hid-punc_head-right_punctuation ?id ? ?punc $?p)
  ?f1<-(id-Apertium_output ?id $?wrd_analysis ?w)
  ?f0<-(hindi_id_order $?id1 ?id $?id2)
   =>
@@ -246,10 +247,9 @@
  ?f<-(hindi_id_order $?var ?lid)
  =>
        (retract ?f ?f1)
-       (printout ?*punct_file* "(hid-right_punctuation     "?lid "     "?rp ")" crlf)
-        (assert (hindi_id_order $?var ?lid ?rp))
+       (assert (hindi_id_order $?var ?lid ?rp))
  )
-
+ ;---------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (25-01-12)
  (defrule print_sen
  (declare (salience 100))
@@ -263,6 +263,5 @@
  (declare (salience -10))
  =>
         (close ?*hin_sen-file* )
-	(close ?*punct_file*)
  )
  ;---------------------------------------------------------------------------------------------------------

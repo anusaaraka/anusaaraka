@@ -54,15 +54,18 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/transitive-verb-list.gdbm  < transitive-verb-list.txt
  echo "Creating idioms.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/idioms.gdbm < idioms.txt
- echo "Creating compound_phrase.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/compound_phrase.gdbm < compound-matching/compound_phrase.txt
+ echo "Creating acronyms-common_noun_compounds.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/acronyms-common_noun_compounds.gdbm < compound-matching/acronyms-common_noun_compounds.txt
+ echo "Creating proper_noun-common_noun_compounds.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/proper_noun-common_noun_compounds.gdbm < compound-matching/proper_noun-common_noun_compounds.txt
+ echo "Creating named_entities.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/named_entities.gdbm < compound-matching/named_entities.txt
+ echo "Creating multi_word_expressions.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/multi_word_expressions.gdbm < compound-matching/multi_word_expressions.txt
  echo "Creating preposition.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/preposition.gdbm < preposition.txt
  echo "Creating default-iit-bombay-shabdanjali-dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic.gdbm < default-iit-bombay-shabdanjali-dic.txt
- sed 's/\(.*\)\t\(.*\)::/\1_\2\t/g' default-iit-bombay-shabdanjali-dic.txt > default-iit-bombay-shabdanjali-dic_firefox1.txt
- echo "Creating default-iit-bombay-shabdanjali-dic_firefox1.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_firefox1.gdbm < default-iit-bombay-shabdanjali-dic_firefox1.txt
 
  cd vb_root
  echo "Creating ol_vb_root.gdbm"
@@ -70,21 +73,14 @@
 
  cd $HOME_anu_test/Anu_data/compound-matching
  sh make-dict.sh
-# mv compound.gdbm $HOME_anu_test/Anu_databases/.
  mv Complete_sentence.gdbm $HOME_anu_test/Anu_databases/.
 
  echo "Compiling c and flex programs"
  cd $HOME_anu_test/Anu_src
 
- gcc  -o file-wx_utf8.out file-wx_utf8.c 
  gcc -o word.out word.c
  gcc -o all_tran_pada.out -g f_tid-rid.c f_sen-range.c  ALL_TRAN_PADA.c
  gcc -o f_range.out f_range_wordarray_resarray.c
-# gcc -o converting-dic-format.out converting-dic-format.c 
-# ./converting-dic-format.out $HOME_anu_test/Anu_data/default-iit-bombay-shabdanjali-dic.txt > $HOME_anu_test/Anu_data/default-iit-bombay-shabdanjali-dic_firefox.txt
-# ./comp.sh converting-dic-format-to-js
-# ./converting-dic-format-to-js.out $HOME_anu_test/Browser/src/dictionary.js < $HOME_anu_test/Anu_data/default-iit-bombay-shabdanjali-dic_firefox.txt  < $HOME_anu_test/Anu_data/default-iit-bombay-shabdanjali-dic_firefox.txt 
- 
  flex ir.lex
  gcc -o ir lex.yy.c -lfl 
  mv ir $HOME_anu_test/bin/
@@ -99,6 +95,19 @@
  ./comp.sh wx2wx-small
  mv  wx2wx-normal.out  wx2wx-small.out $HOME_anu_test/bin/
 
+
+ cd $HOME_anu_test/Anu_data
+ echo "Creating default-iit-bombay-shabdanjali-dic_firefox.gdbm"
+ cut -f1 default-iit-bombay-shabdanjali-dic.txt > word_field
+ cut -f2 default-iit-bombay-shabdanjali-dic.txt > mng_field
+ wx_utf8 mng_field > mng_utf8
+ paste word_field mng_utf8 > default-iit-bombay-shabdanjali-dic_firefox_tmp.txt
+ gcc -o $HOME_anu_test/Anu_src/converting-dic-format.out $HOME_anu_test/Anu_src/converting-dic-format.c
+ $HOME_anu_test/Anu_src/converting-dic-format.out default-iit-bombay-shabdanjali-dic_firefox_tmp.txt default-iit-bombay-shabdanjali-dic_firefox.txt default-iit-bombay-shabdanjali-dic_smt_tmp.txt
+ utf8_wx default-iit-bombay-shabdanjali-dic_smt_tmp.txt > default-iit-bombay-shabdanjali-dic_smt.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_firefox.gdbm < default-iit-bombay-shabdanjali-dic_firefox.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_smt.gdbm < default-iit-bombay-shabdanjali-dic_smt.txt
+ 
  cd $HOME_anu_test/debugging
  sh compile_bison.sh
 
@@ -119,21 +128,21 @@
  cd $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/
  ./configure
  make
- cd $HOME_anu_test/Parsers/LINK/link-grammar-4.7.4/
- ./configure
- make
+ #cd $HOME_anu_test/Parsers/LINK/link-grammar-4.7.4/
+ #./configure
+ #make
 
  echo " Compiling Original Link Parser files"
  cd $HOME_anu_test/Anu
  tar -xzf link-grammar-4.5.7.tar.gz 
- tar -xzf link-grammar-4.7.4.tar.gz 
+# tar -xzf link-grammar-4.7.4.tar.gz 
  cd $HOME_anu_test/Anu/link-grammar-4.5.7/
  ./configure
  make
 
- cd $HOME_anu_test/Anu/link-grammar-4.7.4/
- ./configure
- make
+# cd $HOME_anu_test/Anu/link-grammar-4.7.4/
+# ./configure
+# make
 
  echo "Compiling stanford parser files"
  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
@@ -159,6 +168,20 @@
 
  cp $HOME_anu_test/debugging/sentence_debug.sh $HOME_anu_test/bin/.
  
- 
  cd $HOME_anu_test/miscellaneous/std_tregex/
  tar -xvf stanford-tregex-2012-01-06.tgz 
+
+ echo "Creating Transliteration files"
+ cd  $HOME_anu_test/miscellaneous/transliteration/
+ tar -xvzf phrasal.Beta2.tar.gz
+ tar -xvzf stanford-corenlp-v1.0.4.tgz
+ sed 's/JAVA_OPTS="-XX:+UseCompressedOops -Xmx$MEM -Xms$MEM"/JAVA_OPTS="-Xmx$MEM -Xms$MEM"/g' < phrasal.Beta2/scripts/decode > phrasal.Beta2/scripts/decode_tmp
+ mv phrasal.Beta2/scripts/decode_tmp phrasal.Beta2/scripts/decode
+ chmod +x phrasal.Beta2/scripts/decode
+ chmod +x phrasal.Beta2/scripts/split-table
+ echo "$HOME_anu_test/miscellaneous/transliteration/work/phrasal-mert/phrasal.final.binwts" > work/path_for_transliteration
+ cp work/phrasal-mert/phrasal.final.ini work/phrasal-mert/phrasal.test.ini_tmp
+
+ sed '$d' < work/phrasal-mert/phrasal.test.ini_tmp > work/phrasal-mert/phrasal.test.ini_tmp1
+ cat work/phrasal-mert/phrasal.test.ini_tmp1 work/path_for_transliteration  > work/phrasal-mert/phrasal.test.ini
+

@@ -1,12 +1,8 @@
-; (defglobal ?*link_num-file* = link_num_fp) 
-
- 
-
- (deffacts link_num_info
- (parserid-word)
- (link_name-link_expansion)
- (link_name-link_lnode-link_rnode)
- (No complete linkages found)
+ (deffunction never-called ()
+ (assert (parserid-word))
+ (assert (link_name-link_expansion))
+ (assert (link_name-link_lnode-link_rnode))
+ (assert (No complete linkages found))
  )
 
  ;------------------------------------------------------------------------------------------------
