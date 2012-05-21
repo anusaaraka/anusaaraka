@@ -26,44 +26,47 @@
    (bind ?n2 (string-to-field (sub-string 2 (length ?str2) ?str2)))
    (> ?n1 ?n2))
 ;------------------------------------------------------------------------------------------------------------------------
- (defrule replace_left_head
+ ;Added by Shirisha Manju
+ ;A dog and a cat are here.
+ (defrule replace_head
  (declare (salience 9999))
- (parserid-word ?id and|or)
- (propogation_rel_name-sids ?rel  ?x ?y)
- (propogation_rel_name-sids ?rel2  ?z ?y)
- (rel_name-sids ?rel1   ?x ?y)
- (rel_name-sids conj_and|conj_or  ?x ?z)
- (test (and (> (string_to_integer ?id) (string_to_integer ?x)) (< (string_to_integer ?id) (string_to_integer ?z)) (neq ?rel conj_and) (neq ?rel conj_or) (neq ?rel2 conj_or) (neq ?rel2 conj_and) (eq ?rel ?rel1) (eq ?rel ?rel2) ))
+ ?f<-(rel_name-sids ?rel   ?x ?y)
+ (basic_rel_name-sids cc ?y ?and)
  =>
- (assert (rel_name-sids ?rel  ?id  ?y))
- (assert (rel_name-sids ?rel1  ?x  ?y))
- (assert (rel_name-sids ?rel2  ?z  ?y))
- (printout       ?*dbug* "(rel_name-sids  "?rel"  "?id"  "?y")"crlf)
- (printout       ?*dbug* "(prep_id-Rule-Rel-ids    replace_left_head  "?rel"  "?id"  "?y")"crlf)
- (printout       ?*dbug* "(rule-deleted_Relation-ids    replace_left_head  "?rel"  "?x"  "?y")"crlf)
+ (retract ?f)
+ (assert (rel_name-sids ?rel  ?x  ?and))
+ (printout       ?*dbug* "(rel_name-sids  "?rel" "?x"  "?and")"crlf)
+ (printout       ?*dbug* "(rule-deleted_Relation-ids    replace_head  "?rel"  "?x"  "?and")"crlf)
  )
- ; Ex. Bell, based in Los Angeles, makes and distributes electronic, computer and building products. 
-;------------------------------------------------------------------------------------------------------------------------
- (defrule replace_right_head
+ ;Added by Shirisha Manju
+ ; Are a dog and a cat here?
+ (defrule replace_head_with_cop
  (declare (salience 9999))
- (parserid-word ?id and|or)
- (propogation_rel_name-sids ?rel  ?x ?y)
- (propogation_rel_name-sids ?rel2  ?x ?z)
- (rel_name-sids ?rel1   ?x ?y)
- (rel_name-sids conj_and|conj_or  ?y ?z)
- (test (and (> (string_to_integer ?id) (string_to_integer ?y)) (< (string_to_integer ?id) (string_to_integer ?z)) (neq ?rel conj_and) (neq ?rel conj_or) (eq ?rel ?rel1) (eq ?rel ?rel2) ))
+ ?f<-(rel_name-sids cop   ?y ?x)
+ (basic_rel_name-sids cc ?y ?and)
+ (not (modified ?y))
  =>
- (assert (rel_name-sids ?rel  ?x  ?id))
- (assert (rel_name-sids ?rel1  ?x  ?y))
- (assert (rel_name-sids ?rel2  ?x  ?z))
- (printout       ?*dbug* "(rel_name-sids  "?rel"  "?x"  "?id")"crlf)
- (printout       ?*dbug* "(rel_name-sids  "?rel1" "?x"  "?y")"crlf)
- (printout       ?*dbug* "(rel_name-sids  "?rel2" "?x"  "?z")"crlf)
- (printout       ?*dbug* "(prep_id-Rule-Rel-ids    replace_right_head  "?rel"  "?x"  "?id")"crlf)
- (printout       ?*dbug* "(rule-deleted_Relation-ids    replace_right_head  "?rel"  "?x"  "?id")"crlf)
+ (retract ?f)
+ (assert (rel_name-sids cop  ?and  ?x))
+ (printout       ?*dbug* "(rel_name-sids  cop "?x"  "?and")"crlf)
+ (printout       ?*dbug* "(rule-deleted_Relation-ids    replace_head  cop  "?x"  "?and")"crlf)
+ (assert (modified ?y))
  )
- ; Ex. Bell, based in Los Angeles, makes and distributes electronic, computer and building products.  
+ ;Added by Shirisha Manju
+ ;She is ugly and fat.
+ (defrule sub_samA_with_cop
+ (declare (salience 9888))
+ (rel_name-sids nsubj|nsubjpass ?x  ?sub)
+ (basic_rel_name-sids cc ?x ?samA)
+=>
+(printout      ?*fp*   "(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa   "?sub"  "?samA")"crlf)
+(printout      ?*dbug* "(prep_id-Rule-Rel-ids  -   sub_samA_with_cop     subject-subject_samAnAXikaraNa  "?sub"  "?samA")"crlf)
+)
+
+; ; Ex. Bell, based in Los Angeles, makes and distributes electronic, computer and building products.  
 ;------------------------------------------------------------------------------------------------------------------------
+
+
 (defrule abbrev
 (rel_name-sids abbrev ?nAma ?saMkRipwa_nAma)
 =>

@@ -33,6 +33,7 @@
  (assert (id-cat_coarse))
  (assert (id-word))
  (assert (root-verbchunk-tam-chunkids))
+ (assert (conj_head-left_head-right_head))
  )
 
 
@@ -249,9 +250,11 @@
  ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(preposition ?pp_id ))
  ?f2<-(id-HM-source ?pp_id ?h_mng ?)
  (test (neq ?h_mng -))
+ (not (modified_pada_with_prep ?pada_id)) ;He stopped killing of animals and birds throughout his kingdom.
   =>
 	(modify ?f1 (vibakthi ?h_mng))
-	(retract ?f2)
+;	(retract ?f2)
+	(assert (modified_pada_with_prep ?pada_id))
  )
  ;-------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (15-03-11)	 

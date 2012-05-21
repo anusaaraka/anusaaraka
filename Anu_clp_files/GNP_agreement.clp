@@ -25,6 +25,9 @@
  (assert (id-original_word))
  (assert (id-HM-source))
  (assert (No complete linkages found))
+ (assert (conj_head-left_head-right_head))
+ (assert (id-cat))
+ (assert (id-cat_coarse))
  )
 
  ;================================ PP pada for vibakthi=0 and vibhakti!=0 ======================================
@@ -240,6 +243,25 @@
 		(assert (samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
 	)
  )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;sharing gender and number info of "and" to the "and components" if they are adjective
+ ;She is ugly and fat.
+ (defrule sub_and_samA_with_and
+ (declare (salience 750))
+ (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa|saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
+ (id-original_word ?samAnAXikaraNa_id and)
+ (conj_head-left_head-right_head ?samAnAXikaraNa_id ?lt_h ?rt_h)
+ (pada_info (group_head_id ?samAnAXikaraNa_id) (group_cat PP) (gender ?gen) (number ?num))
+ ?f0<-(pada_info (group_head_id ?lt_h))
+ ?f1<-(pada_info (group_head_id ?rt_h))
+ (and (id-cat_coarse ?lt_h adjective)(id-cat_coarse ?rt_h adjective))
+ (not (modified_and_compnents ?samAnAXikaraNa_id))
+ =>
+	(retract ?f0 ?f1)
+	(modify ?f0 (gender ?gen) (number ?num))
+	(modify ?f1 (gender ?gen) (number ?num))
+	(assert (modified_and_compnents ?samAnAXikaraNa_id))
+ )
  ;========================================== Relative Clause Rule ==============================================
 
  (defrule jo_samAnAXikaraNa_rule
@@ -438,7 +460,7 @@
  ;Added by Shirisha Manju Suggested by Sukhada (08-12-11)
  ;She is beautiful and intelligent.
  (defrule modify_gender_for_and
- (declare (salience 5))
+ (declare (salience 710))
  (id-original_word ?pada_id and)
  (prep_id-relation-anu_ids - subject-subject_samAnAXikaraNa ?sub ?pada_id)
  (pada_info (group_head_id ?pada_id)(group_ids $?d)(gender ?gen))
@@ -449,6 +471,22 @@
 	(printout ?*gender* "(id-gender-src "?id "  "?gen"   subject-subject_samAnAXikaraNa)" crlf)
 	(printout ?*gnp_debug* "(pada_id-rule_name-gen_src " ?pada_id "modify_gender_for_and "?gen" subject-subject_samAnAXikaraNa)" crlf)
  )
+ ;Added by Shirisha Manju Suggested by Chaitanya Sir (19-05-12)
+ ; Mary, Joe, Sita, Geeta and Louise are coming to the party.  
+ (defrule modify_gender_for_and1
+ (declare (salience 711))
+ (id-original_word ?pada_id and)
+ ?f<-(pada_info (group_head_id ?pada_id))
+ (conj_head-left_head-right_head ?pada_id ?com1 ?com2)
+ (pada_info (group_head_id ?com1)(gender ?gen))
+ (pada_info (group_head_id ?com2)(gender ?gen))
+ (not (modified_and ?pada_id))
+ =>
+        (retract ?f)
+	(assert (modified_and ?pada_id))
+	(modify ?f (gender ?gen))
+        (printout ?*gnp_debug* "(pada_id-rule_name-gen_src " ?pada_id "modify_gender_for_and1 "?gen" and_components)" crlf)
+ )
  ;-------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju  (08-12-11)
  (defrule default_gender_m_for_id
@@ -458,8 +496,9 @@
 	(retract ?f1)
 	(if (eq ?gen -) then
 		(printout ?*gender* "(id-gender-src "?id "  m   Default)" crlf)
+		(printout ?*gnp_debug* "(pada_id-rule_name-gen_src " ?id "default_gender_m_for_id  m Default_assignment)" crlf)
 	else
 		(printout ?*gender* "(id-gender-src "?id "  "?gen"  "?gen_src ")" crlf)
+		(printout ?*gnp_debug* "(pada_id-rule_name-gen_src " ?id "default_gender_m_for_id  m Default_assignment)" crlf)
 	)
-	(printout ?*gnp_debug* "(pada_id-rule_name-gen_src " ?id "default_gender_m_for_id  m Default_assignment)" crlf)
  )

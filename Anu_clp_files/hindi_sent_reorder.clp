@@ -17,6 +17,9 @@
  (assert (id-cat))
  (assert (root-verbchunk-tam-chunkids))
  (assert (verb_type-verb-kriyA_mUla-tam))
+ (assert (id-kA_vib-gen-num-case))
+ (assert (id-cat-mng-gen-num-per-case-vib ))
+ (assert (conj_head-left_head-right_head))
  )
  ;============================================ Stanford Parser Rules ===================================================
 
