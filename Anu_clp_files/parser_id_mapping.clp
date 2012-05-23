@@ -274,7 +274,17 @@
  (parserid-wordid    ?pid  ?wid)
  =>
  	(retract ?f)
-        (assert (Head-Level-Mother-Daughters  ?head  ?lvl  ?Mot $?pre ?wid $?pos)))
+        (assert (Head-Level-Mother-Daughters  ?head  ?lvl  ?Mot $?pre ?wid $?pos))
+ )
+
+ (defrule map_constituents_head_id
+ (declare (salience 150))
+ ?f<-(Head-Level-Mother-Daughters  ?pid  ?lvl  ?Mot $?daut)
+ (parserid-wordid    ?pid  ?wid)
+ =>
+ (retract ?f)
+        (assert (Head-Level-Mother-Daughters  ?wid  ?lvl  ?Mot $?daut))
+ )
 
  (defrule print_constituents
  (declare (salience 100))

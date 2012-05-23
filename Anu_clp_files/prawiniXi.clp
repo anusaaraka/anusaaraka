@@ -20,45 +20,6 @@
 )
 
 
-(defrule cp_fact
-(declare (salience 2001))
-?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre)
-(not (Mother_modified ?Mot))
-(not (prawiniXi_id-Node ?Mot ?))
-=>
-        (assert (Mother_modified ?Mot))
-        (assert (Head-Level-Mother-Daughters_new_fact ?h ?lvl ?Mot $?pre))
-)
-
-
-(defrule replace-daughters
-(declare (salience 1500))
-?used2<-(Head-Level-Mother-Daughters_new_fact ?head1 ?level ?mother1 $?pre ?mother $?post)
-?used1<-(Head-Level-Mother-Daughters_new_fact ?head ?lvl ?mother $?daughters)
-=>
-        (retract ?used2)
-        (assert (Head-Level-Mother-Daughters_new_fact ?head1 ?level ?mother1 $?pre $?daughters $?post))
-)
-
-(defrule replace_head_word_with_id
-(declare (salience 1001))
-?f<-(Head-Level-Mother-Daughters_new_fact ?head ?lvl ?Mot $?pre1 ?ph $?pos1)
-?f1<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?dau)
-(parserid-wordid  ?ph  ?h)
-(parserid-word ?ph ?head)
-=>
-        (retract ?f ?f1)
-        (assert (Head-Level-Mother-Daughters ?h ?lvl ?Mot $?dau))
-)
-
-(defrule replace_parserid_with_anu_id
-(declare (salience 999))
-?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?ph)
-(parserid-wordid  ?ph  ?h)
-=>
-        (retract ?f)
-        (assert (Head-Level-Mother-Daughters ?h ?lvl ?Mot ?h))
-)
 
 (defrule find_highest_level
 (declare (salience 998))
@@ -72,7 +33,7 @@
 (declare (salience 997))
 ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pid1 ?id)
 (get_prawiniXi_id_for_level ?lvl)
-(or (parserid-wordid   ?pid   ?id) (prw-id-hid ?id ?))
+(or (id-word   ?id   ?) (prw-id-hid ?id ?))
 (not (prawiniXi_id-Node ?Mot ?))
 =>
    (retract ?f)

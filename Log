@@ -3416,7 +3416,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  29. Removed one sentence from sd_verified.
  30. Updated Log.
 
- 15-05-12
+ 23-05-12
  ========
  1. Modified rules in create_eng_ord_html.clp [Added if (numberp) condition in all wx_utf8 calls]
  2. Modified rule "convert_wx_to_utf8" in create_hin_ord_html.clp [Added if (numberp) condition near  wx_utf8 call],and added new rule "dont_print_title_info" .
@@ -3492,8 +3492,27 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  33. Added new file anu_testing/Anu_clp_files/parse_scope.clp.
  34. Moved prawiniXi module from run_H_gen_sen.bat to run_modules_std.bat
  35. Added clips code for running parse_scope.clp in run_modules_std.bat
- 36. Updated default_meaning_frm_oldwsd.txt [Corrected some mistakes]
- 37. Updated add_snt_mrkr.lex
- 38. Added Physics-dictionary in Anu_data/ 
- 39. Updated changes_in_databases
- 40. Updated Log file.
+ 36. H_ordering_rules.clp
+        i)  Removed  ::replace_aux_with_head_VP , replace_aux_with_head_VP1 rules
+        ii) Modified ::replaced "Head"(from word) information in (Head-Level-Mother-Daughters) facts with "Head"(to id) so accordingly following rules have been modified.
+            from_to_PPs , make_compoundPhrase, merge_ADVP , dont_rev_if_VP_ends_with_verb, dont_rev_if_S_goesto_ADVP_and_VP, dont_rev_if_VP_head_accused, move_ADVP_after_v, rev_VP_or_PP_or_WHPP, rev_VP_for_obj1_obj2, rev_ADVP, rev_ADVP_goesto_RB, move_negation_before_verb, move_first_RB_in_NP_to_last, reverse-NP-Daughters, prep_in_SBAR_rule
+ 37. handling_punctuations.clp
+         i) Modified :: replaced "Head"(from word) information in (Head-Level-Mother-Daughters) facts with "Head"(to id) so accordingly following rules have been modified.
+            create_new_node_for_lt_rt_punct, get_P_Dot_punc, get_lt_rt_punc, get_left_right_punc, get_left_punc, map_cons1, map_cons2, map_cons3
+ 38. multi_word_expressions.clp
+         Modified rule "chk_for_highest_priority" (in test condition)
+ 39. parse_scope.clp
+         i) Removed :: rm_repeated_VP, replace_aux_word_with_head_word, replace_head_word_with_id, remove_leaf_nodes rules.
+ 40. Added new file Anu_clp_files/replace_head_word_with_id.clp
+ 41. parser_id_mapping.clp
+         Added :: map_constituents_head_id rule.
+ 42. prawiniXi.clp
+         Removed :: cp_fact, replace-daughters, replace_head_word_with_id and replace_parserid_with_anu_id rules
+         Modified :: get_prawiniXi_id rule
+ 43. Added new module replace_head_word_with_id.clp in run_modules_std.bat
+ 44. Modified whole sd_lwg_rules.clp file [ti preserve the tree structure]
+ 45. Updated default_meaning_frm_oldwsd.txt [Corrected some mistakes]
+ 46. Updated add_snt_mrkr.lex
+ 47. Added Physics-dictionary in Anu_data/ 
+ 48. Updated changes_in_databases
+ 49. Updated Log file.
