@@ -33,3 +33,32 @@
         (if (eq ?r_punc NONE) then (bind ?r_punc -))
 	(assert (mot-cat-head-level-praW_id-first_id-last_id-l_punc-r_punc ?mother ?cat ?head ?lvl ?praw_id ?first_id ?last_id ?l_punc ?r_punc))
 )
+
+(defrule largest_scope
+(declare (salience 100))
+(mot-cat-head-level-praW_id-first_id-last_id-l_punc-r_punc ?Mot PP|NP ?head ?lvl ?praw_id ?f_id ?l_id ?l_p ?r_p)
+(not (mot-cat-head-level-praW_id-first_id-last_id-l_punc-r_punc ?Mot1 PP|NP ?head1 ?lvl1&:(> ?lvl ?lvl1) ?praw_id1 ?f_id1 ?l_id ?l_p1 ?r_p1))
+(mot-cat-head-level-praW_id-first_id-last_id-l_punc-r_punc ? S ? ? ? ?f_id1 ?l_id ? ?)
+(not (id-grouped ?f_id))
+(not (id-grouped ?l_id))
+=>
+
+        (assert (mot-praW_id-largest_scope ?Mot ?praw_id ?f_id (- ?f_id1 1)))
+        (loop-for-count (?i ?f_id (- ?f_id1 1))
+                        (assert (id-grouped ?i))
+        )
+)
+
+(defrule largest_scope1
+(declare (salience 50))
+(mot-cat-head-level-praW_id-first_id-last_id-l_punc-r_punc ?Mot PP|NP ?head ?lvl ?praw_id ?f_id ?l_id ?l_p ?r_p)
+(not (mot-cat-head-level-praW_id-first_id-last_id-l_punc-r_punc ?Mot1 PP|NP ?head1 ?lvl1&:(> ?lvl ?lvl1) ?praw_id1 ?f_id1 ?l_id ?l_p1 ?r_p1))
+(not (id-grouped ?f_id))
+(not (id-grouped ?l_id))
+=>
+        (assert (mot-praW_id-largest_scope ?Mot ?praw_id ?f_id ?l_id))
+        (loop-for-count (?i ?f_id ?l_id)
+                        (assert (id-grouped ?i))
+        )
+)
+

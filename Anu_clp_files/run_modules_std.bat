@@ -161,7 +161,7 @@
  (load-facts "prawiniXi.dat")
  (load-facts "word.dat")
  (run)
- (save-facts "sd_scope.dat" local mot-cat-head-level-praW_id-first_id-last_id-l_punc-r_punc)
+ (save-facts "sd_scope.dat" local mot-cat-head-level-praW_id-first_id-last_id-l_punc-r_punc mot-praW_id-largest_scope)
  (clear)
  ;----------------------------------------------------------------------
  ; Generate hindi Pada for the sentence.
