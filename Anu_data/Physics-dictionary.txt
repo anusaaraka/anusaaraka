@@ -604,3 +604,4 @@ Isochoric	samaAyawanika
 Conduction	saMcaraNa
 Convection	saMvahana
 Radiation	vikiraNa
+Physics	BOwikI

@@ -9305,7 +9305,7 @@ brisket	jAnavara_kI_CAwI
 briskly	PurwI_se
 brittle	BaMgura
 broaden	cOdA_kara
-broadly	viswqwa_waraha_se
+broadly	mote_wOra_para
 broadside	nOkA_kA_eka_pakRa
 brocade	brokeda
 broker	xalAla

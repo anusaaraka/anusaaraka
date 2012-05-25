@@ -66,7 +66,7 @@
 	speculator	vicAraSIlcurriculum vitaea	as	vicAraSIla (corrected the meaning Sugested by Sukhada (27-04-12))
 	sprintnet	_sprintaneta	as	sprintaneta (corrected the meaning Sugested by Sukhada (27-04-12))
 	stand-@incurriculum vitae	as	kataGarA (corrected the meaning Sugested by Sukhada (27-04-12))
-	
+ 	broadly		viswqwa_waraha_se	as	mote_wOra_para  (Sugested by Sukhada (18-05-12))
 
  2. Added :: 
 	attorney-at-law   pramANiwa_aBikarwA
@@ -643,6 +643,9 @@ Modified:
 				as
 	input   verb::dAlanA/kampyUtara_meM_detA_dAlanA
 	Modified spellings 'OY' as 'oY' . ex: 'sOYPtaveyara' as 'soYPtaveyara' (Modified by Roja(13-03-12))
+	scope_noun	xolana-xarSI/viswAra/kRewra/kAryakRetra/guMjAiSa/guMjAiRa
+					as
+	scope_noun	xolana-xarSI/viswAra/kRewra/kAryakRewra/guMjAiSa/guMjAiRa  (Suggested by Sukhada)
 
 Removed::
 	itumail@itu.ch  E-MAIL::itumail@itu.ch	(Suggested by Rajini(29-02-12))
@@ -653,6 +656,7 @@ Removed::
  ==========================
  Added  :
 	as_before 	---	Suggested by Rajini (25-02-12)
+	in_terms_of     ---	Suggested by Chaitanya Sir (25-05-12) 
 
 
 

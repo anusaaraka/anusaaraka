@@ -34247,7 +34247,7 @@ scoop_noun	sanasanI_Keja_Kabara/munAPA/kalaCI/belacI/hawaWA/anUTI_Kabara/wagadZA
 scoop_verb	sa_baDZa_kara_honA/pAnA/pahale_hI_Kabara_xenA/kalaCI_se_nikAlanA/Jata_se_uTAnA/banAnA
 scoot_verb	xOdZa_kara_jAnA/nikala_BAganA
 scooter_noun	skUtara/KilOnA_skUtara/hima_skUtara
-scope_noun	xolana-xarSI/viswAra/kRewra/kAryakRetra/guMjAiSa/guMjAiRa
+scope_noun	xolana-xarSI/viswAra/kRewra/kAryakRewra/guMjAiSa/guMjAiRa
 scorch_verb	wejZI_se_jAnA/JulasA_xenA/Julasa_jAnA/jalA_xenA/jalanA/jalA_kara_rAKa_kara_xenA/barabAxa_kara_xenA
 scorched_adjective	JulasA_huA
 scorcher_noun	jZabarxaswa_prahAra/bahuwa_garama_xina/garamI_xina/jZoraxAra_mAra

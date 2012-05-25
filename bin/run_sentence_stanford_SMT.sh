@@ -38,7 +38,7 @@
 
  cat proper_nouns.dat >> $MYPATH/$1_tmp/proper_nouns_list
 
- cat eng_id_in_hin_ord.dat >> $MYPATH/$1_tmp/$1_ordered_file
+# cat eng_id_in_hin_ord.dat >> $MYPATH/$1_tmp/$1_ordered_file
  cp hindi_sentence.dat hindi_sentence_tmp.dat
 
  sh $HOME_anu_test/bin/abbr.sh
