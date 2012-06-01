@@ -1,0 +1,836 @@
+
+
+
+
+1 Notation
+
+notation <list:notation>
+
+In the present corpus, each bracket is labeled for at least 1 
+syntactic category but may have as many as 4 function tags. function tags
+ In previous Treebank releases, only standard syntactic labels 
+(e.g. NP, ADVP, PP, etc.) syntactic labels were used to label 
+constituents; every bracket had just one label. The limitations 
+of this system become apparent when a word or phrase that belongs 
+to one syntactic category is used for some other function or when 
+it plays a role that is not easily identified without special 
+annotation.
+
+In addition to the function tags, we have also augmented our 
+annotation with the coindexation of null elements and several 
+varieties of “pseudo-attach”.
+
+1.1 Bracket labels
+
+bracket labels
+
+1.1.1 Clause level
+
+See  for a fuller explanation of the use(s) of each of these 
+labels.
+
+
+
+ .2 ex plus .1 ex minus .1 ex 
+
+  S --- Simple declarative clause, i.e. one that is not 
+  introduced by a (possibly empty) subordinating conjunction or 
+  -word and that does not exhibit subject-verb inversion. 
+
+  SBAR --- Clause introduced by a (possibly empty) subordinating 
+  conjunction. 
+
+  SBARQ --- Direct question introduced by a -word or -phrase. See 
+  . Indirect questions and relative clauses should be bracketed 
+  as SBAR, not SBARQ. 
+
+  SINV --- Inverted declarative sentence, i.e. one in which the 
+  subject follows the tensed verb or modal. 
+
+  SQ --- Inverted yes/no question, or main clause of a -question, 
+  following the -phrase in SBARQ. S SBAR SBARQ SINV SQ 
+
+1.1.2 Phrase level
+
+bracket labels
+
+ .2 ex plus .1 ex minus .1 ex 
+
+  ADJP --- Adjective Phrase. Phrasal category headed by an 
+  adjective (including comparative and superlative adjectives). 
+  Example: outrageously expensive. ADJP 
+
+  ADVP --- Adverb Phrase. Phrasal category headed by an adverb 
+  (including comparative and superlative adverbs). Examples: 
+  rather timidly, very well indeed, rapidly. ADVP 
+
+  CONJP --- Conjunction Phrase. Used to mark certain “multi-word” 
+  conjunctions, such as as well as, instead of. CONJP 
+
+  FRAG --- Fragment. (see ) FRAG 
+
+  INTJ --- Interjection. Corresponds approximately to the 
+  part-of-speech tag UH (see ). INTJ 
+
+  LST --- List marker. Includes surrounding punctuation. (see ) LST
+   
+
+  NAC --- Not A Constituent; used to show the scope of certain 
+  prenominal modifiers within a noun phrase. NAC 
+
+  NP --- Noun Phrase. Phrasal category that includes all 
+  constituents that depend on a head noun. NP 
+
+  NX --- Used within certain complex noun phrases to mark the 
+  head of the noun phrase. Corresponds very roughly to N-bar 
+  level but used quite differently. NX 
+
+  PP --- Prepositional Phrase. Phrasal category headed by a 
+  preposition. PP 
+
+  PRN --- Parenthetical. (See section [list:notation:PRN] below 
+  for a complete description.) PRN 
+
+  PRT --- Particle. Category for words that should be tagged RP, 
+  as described in , with some guidance from  sections 16.3-16 in 
+  tricky ADVP vs. PRT decisions (but note that the Treebank 
+  notion of particle is somewhat different from that of Quirk et 
+  al.). PRT 
+
+  QP --- Quantifier Phrase (i.e., complex measure/amount phrase); 
+  used within NP. (see ) QP 
+
+  RRC --- Reduced Relative Clause. (see ) RRC 
+
+  UCP --- Unlike Coordinated Phrase. UCP 
+
+  VP --- Verb Phrase. Phrasal category headed a verb. VP 
+
+  WHADJP --- Wh-adjective Phrase. Adjectival phrase containing a 
+  -adverb, as in how hot. WHADJP 
+
+  WHADVP --- Wh-adverb Phrase. Introduces a clause with an ADVP 
+  gap. May be null (containing the 0 complementizer) or lexical, 
+  containing a -adverb such as how or why. WHADVP 
+
+  WHNP --- Wh-noun Phrase. Introduces a clause with an NP gap. 
+  May be null (containing the 0 complementizer) or lexical, 
+  containing some -word, e.g. who, which book, whose daughter, 
+  none of which, or how many leopards. WHNP 
+
+  WHPP --- Wh-prepositional Phrase. Prepositional phrase 
+  containing a -noun phrase (such as of which or by whose 
+  authority) that either introduces a PP gap or is contained by a 
+  WHNP. WHPP 
+
+  X --- Unknown, uncertain, or unbracketable. X is often used for 
+  bracketing typos and in bracketing the...the-constructions (see 
+   and ). X 
+
+1.2 Function tags
+
+function tags
+
+1.2.1 Form/function discrepancies
+
+form/function discrepancies
+
+  -ADV (adverbial) ADV@-ADV --- marks a constituent other than 
+  ADVP or PP when it is used adverbially (e.g., NPs or free (“
+  headless”) relatives). However, constituents that themselves 
+  are modifying an ADVP generally do not get -ADV.
+
+   (ADJP (NP-ADV a little bit) angry)
+
+  
+
+   (S (NP-SBJ You) (VP can (VP leave (SBAR-ADV if (S (NP-SBJ-8 
+  you) (ADVP really) (VP want (S (NP-SBJ *-8) (VP to (VP 
+  go)))))))))
+
+  
+
+  If there is a more specific adverbial tag available (i.e. one 
+  of the tags listed in section [list:function-tags:adverbials] 
+  below), the more specific tag is assumed to imply -ADV and is 
+  used alone. Thus in the following example, the -TMP tag on 
+  yesterday implies -ADV.
+
+   (S (NP-SBJ He) (VP left (NP-TMP yesterday))) 
+
+  NOT:
+
+   (NP-ADV-TMP yesterday) 
+
+  Nouns such as today, which often behave adverbially, are 
+  labeled NP when they appear in argument position.
+
+  
+
+   (S (NP-SBJ Today) (VP is (NP-PRD (NP the first day) (PP of (NP 
+  (NP the rest) (PP of (NP your life)))))))
+
+  
+
+  -NOM (nominal) --- marks free (“headless”) relatives and 
+  gerunds when they act nominally. (See  for more information 
+  about free relatives, and  for more information about gerunds.) 
+  NOM@-NOM
+
+   (S (SBAR-NOM-SBJ (WHNP-10 What) (S (NP-SBJ I) (ADVP really) 
+  (VP like (NP *T*-10)))) (VP is (NP-PRD chocolate)))
+
+  
+
+   (S (S-NOM-SBJ (NP-SBJ *) (VP Baking (NP pies))) (VP is 
+  (ADJP-PRD fun)))
+
+  
+
+   (S (NP-SBJ I) (VP do not (VP mind (PP about (S-NOM (NP-SBJ 
+  your) (VP leaving (ADVP-TMP early)))))))
+
+   
+
+  Note that other non-NP constituents are not tagged -NOM when 
+  they appear in argument positions (e.g., infinitivals, PPs), 
+  though they do get -SBJ when they occur in subject position.
+
+   (S (S-SBJ (NP-SBJ *) (VP To (VP have (VP refused)))) (VP would 
+  (VP have (VP been (NP-PRD political suicide)))))
+
+  
+
+   (S (PP-SBJ (PP From (NP proud pool-owners)) (PP to (NP 
+  perpetual hosts and handymen))) (VP was (NP-PRD a short step)))
+
+  
+
+1.2.2 Grammatical role
+
+  -DTV (dative) --- marks the dative object in the unshifted form 
+  of the double object construction. DTV@-DTV dative PPs <list:notation:grammatical-role:DTV>
+
+  If the preposition introducing the “dative” object is for, it 
+  is considered benefactive (see -BNF on page [list:notation:grammatical-role:BNF]
+  ).
+
+  
+
+   (S (NP-SBJ I) (VP asked (NP a question) (PP-DTV of (NP the 
+  president))))
+
+  
+
+   (S (NP-SBJ Aristotle) (VP gave (NP the book) (PP-DTV to (NP 
+  Plato))))
+
+  
+
+  Compare with the shifted dative shift
+
+   (S (NP-SBJ Aristotle) (VP gave (NP Plato) (NP the book)))
+
+  
+
+  Other verbs have semantically similar complements that could be 
+  considered “dative” objects. However, -DTV (or -BNF) is only 
+  used after verbs that can undergo dative shift. Other putative 
+  datives are annotated with -CLR.
+
+   (S (NP-SBJ He) (VP donated (NP money) (PP-CLR to (NP the 
+  museum))))
+
+  
+
+  -LGS (logical subject) --- is used to mark the logical subject 
+  in passives. It attaches to the NP object of by and not to the 
+  PP node itself. LGS@-LGS subject!logical
+
+   (S (NP-SBJ-7 That) (VP was (VP painted (NP *-7) (PP by (NP-LGS 
+  Mark)))))
+
+  
+
+  -PRD (predicate) --- marks any predicate that is not VP. PRD@-PRD
+   predicate!function tag for
+
+   (S (NP-SBJ I) (VP consider (S (NP-SBJ Kris) (NP-PRD a fool))))
+
+  
+
+   (SQ Was (NP-SBJ he) (ADVP-TMP ever) (ADJP-PRD successful) ?)
+
+  
+
+  In do so constructions, the so is annotated as a predicate. so@{ so} as in { do so
+
+   (S (NP-SBJ They) (ADVP also) (VP did (ADVP-PRD so)))
+
+  
+
+   (SINV and (ADVP-PRD-TPC-1 so) (VP did (ADVP-PRD *T*-1)) 
+  (NP-SBJ the hippopotamuses))
+
+  
+
+  -PUT --- marks the locative complement of put. PUT@-PUT <list:notation:grammatical-role:PUT>
+
+   (S (NP-SBJ John) (VP put (NP the book) (PP-PUT on (NP the 
+  table))))
+
+  
+
+   (S (NP-SBJ John) (VP put (NP the book) (ADVP-PUT there)))
+
+  
+
+  It does not go on just any complement or child of put:
+
+   (S (NP-SBJ They) (VP put (NP the baby) (PRT down)))
+
+  
+
+   (S (NP-SBJ She) (VP put (NP it) (ADVP-MNR bluntly)))
+
+  
+
+  
+
+  -SBJ (surface subject) --- marks the structural surface subject 
+  of both matrix and embedded clauses, including those with null 
+  subjects. SBJ@-SBJ subject!surface
+
+  -TPC (“topicalized”) --- marks elements that appear before the 
+  subject in a declarative sentence, but in two cases only: TPC@-TPC
+   fronted constituents
+
+  (i) if the fronted element is associated with a *T* in the 
+  position of the gap.
+
+  (ii) if the fronted element is left-dislocated (i.e., it is 
+  associated with a resumptive pronoun in the position of the 
+  gap). (See the section on fronted elements in  for more details 
+  on the treatment of fronted elements and the section on *T* 
+  with fronted elements in  for more details on the distribution 
+  of *T*.) left-dislocation
+
+  
+
+   (S (PP-TPC-12 Of (NP (NP the 500 barbers) (PP-LOC in (NP 
+  Philadelphia)))) , (NP-SBJ (NP (QP only 10)) (PP *T*-12)) (VP 
+  know (SBAR (WHNP-13 what) (S (NP-SBJ they) (VP are (VP doing 
+  (NP *T*-13)))))))
+
+  
+
+  -VOC (vocative) --- marks nouns of address, regardless of their 
+  position in the sentence. It is not coindexed to the subject 
+  and does not get -TPC when it is sentence-initial. VOC@-VOC
+
+   (SQ (NP-VOC Mike) , would (NP-SBJ you) (INTJ please) (VP close 
+  (NP the door)) ?)
+
+   
+
+1.2.3 Adverbials
+
+adverbials <list:function-tags:adverbials>
+
+Adverbials are generally VP adjuncts.
+
+  -BNF (benefactive) --- marks the beneficiary of an action 
+  (attaches to NP or PP). BNF@-BNF benefactives <list:notation:grammatical-role:BNF>
+
+  This tag is used  only when (1) the verb can undergo dative 
+  shift and (2) the prepositional variant (with the same meaning) 
+  uses for. The prepositional objects of dative-shifting verbs 
+  with other prepositions than for (such as to or of) are 
+  annotated -DTV. dative shift
+
+   (S (NP-SBJ I) (VP baked (NP-BNF Doug) (NP a cake)))
+
+  
+
+   (S (NP-SBJ I) (VP baked (NP a cake) (PP-BNF for (NP Doug))))
+
+  
+
+  -DIR (direction) --- marks adverbials that answer the questions 
+  “from where?” and “to where?” It implies motion, which can be 
+  metaphorical as in “...rose 5 pts. to 57-1/2” or “increased 70% 
+  to 5.8 billion yen” (see ). -DIR is most often used with verbs 
+  of motion/transit and financial verbs: DIR@-DIR
+
+   (S (NP-SBJ I) (VP flew (PP-DIR from (NP Tokyo)) (PP-DIR to (NP 
+  New York))))
+
+  
+
+  -EXT (extent) --- marks adverbial phrases that describe the 
+  spatial extent of an activity. -EXT was incorporated primarily 
+  for cases of movement in financial space, but is also used in 
+  analogous situations elsewhere. EXT@-EXT
+
+   (S (NP-SBJ the Dow Jones Industrial Average) (VP plunged 
+  (NP-EXT 190.58 points)))
+
+  
+
+   (S (NP-SBJ She) (VP walked (NP-EXT 5 miles)))
+
+  
+
+  Obligatory complements do not receive -EXT: 
+
+   (S (NP-SBJ The sumo wrestler) (VP gained (NP 80 pounds)))
+
+  
+
+  Words such as fully and completely are absolutes and do not 
+  receive -EXT.
+
+  -LOC (locative) --- marks adverbials that indicate 
+  place/setting of the event. LOC@-LOC locatives
+
+   (PP-LOC on (NP the moon))
+
+  
+
+  -LOC may also indicate metaphorical location. For example, the 
+  following receive the -LOC tag:
+
+   (PP-LOC amongst (NP yourselves))
+
+  
+
+   (NP (NP a drop) (PP-LOC in domestic truck sales))
+
+  
+
+  
+
+  whereas these do not:
+
+   (NP (NP interest) (PP in anthropology))
+
+  
+
+   (NP (NP 5 dollars) (PP in (NP stocks)))
+
+  
+
+   (PP on (NP (NP grounds) (PP of ...)))
+
+  
+
+   (PP in (NP other respects))
+
+  
+
+   (PP under (NP pressure))
+
+  
+
+   (PP under (NP the gun))
+
+  
+
+  There is likely to be some variation in the use of -LOC due to 
+  differing annotator interpretations. In cases where the 
+  annotator is faced with choosing between -LOC or -TMP, the 
+  default is -LOC: LOC@-LOC!vs. -TMP locatives TMP@-TMP!vs. -LOC
+
+   (PP-LOC in (NP an interview))
+
+  
+
+   (PP-LOC in (NP active trading))
+
+  
+
+  In cases of apposition involving SBAR, the SBAR should not be 
+  labeled -LOC.
+
+  
+
+  (NP (NP Minneapolis) , (SBAR (WHADVP-1 where) (S (NP-SBJ it) 
+  (VP is (ADJP-PRD cold) (ADVP-LOC *T*-1))))) 
+
+  -LOC has some uses that are not adverbial, such as with place 
+  names that are adjoined to other NPs and NAC-LOC premodifiers 
+  of NPs (see ). The special tag -PUT, listed on page [list:notation:grammatical-role:PUT]
+  , is used for the locative argument of put. LOC@-LOC!non-adverbial uses of
+
+  
+
+  -MNR (manner) --- marks adverbials that indicate manner, 
+  including instrument phrases. MNR@-MNR instrument phrases
+
+   (S (NP She) (VP waited (ADVP-MNR impatiently)))
+
+  
+
+   (S (NP-SBJ She) (VP hit (NP the nail) (PP-MNR with (NP a 
+  hammer))))
+
+  
+
+   (S (NP-SBJ-14 She) (VP surprised (NP him) (PP-MNR by (S-NOM 
+  (NP-SBJ *-14) (VP eating (NP a horse) (ADVP-MNR alone))))))
+
+  
+
+  -PRP (purpose or reason) --- marks purpose or reason clauses 
+  and PPs. PRP@-PRP purpose clauses reason clauses
+
+   (S (NP-SBJ-1 Chevron) (VP had (S (NP-SBJ *-1) (VP to (VP shut 
+  (PRT down) (NP (NP a crude-oil pipeline) (PP-LOC in (NP the Bay 
+  area)))))) (S-PRP (NP-SBJ *-1) (VP to (VP check (PP-CLR for (NP 
+  leaks)))))))
+
+  
+
+   (S (NP-SBJ the Dow Jones Transportation Average) (VP went 
+  (ADVP-DIR down) , (PP-PRP due (ADVP largely) (PP to (NP (NP 
+  further selling) (PP-LOC in (NP UAL)))))))
+
+  
+
+   (S (NP-SBJ-1 (NP activity) (PP-LOC at (NP (NP a number) (PP of 
+  (NP (ADJP San Francisco-based) brokerage houses))))) (VP was 
+  (VP curtailed (NP *-1) (PP-PRP as (NP (NP a result) (PP of (NP 
+  the earthquake)))))))
+
+  
+
+  -TMP (temporal) --- marks temporal or aspectual adverbials that 
+  answer the questions when, how often, or how long. It has some 
+  uses that are not strictly adverbial, such as with dates that 
+  modify other NPs (see ). TMP@-TMP
+
+  
+
+  at S- or VP-level:
+
+   (S (NP-SBJ Egg bread) (VP loses (NP some zip) (SBAR-TMP 
+  (WHADVP-2 when) (S (NP-SBJ the eggs) (VP come (PP-LOC-CLR in 
+  (NP 30-pound cans) (ADVP-TMP *T*-2)))))))
+
+  
+
+   (S (ADVP-TMP Meanwhile) , (NP-SBJ (NP the bottom end) (PP of 
+  (NP the market))) (VP is (VP becoming (ADJP-PRD less loyal))))
+
+  
+
+   (S (NP-SBJ Brand loyalty) (VP has (VP eroded (PP-TMP during 
+  (NP the 1980s)))))
+
+  
+
+   (S (NP-SBJ-2 it) (VP will (VP remove (NP the objectionable 
+  tropical oil) (PP-TMP by (NP year end)))))
+
+  
+
+  modifying NPs:
+
+   (S (NP-SBJ the 26-man Politburo) (VP had (VP asked (PP-CLR for 
+  (NP his resignation)) (PP-LOC at (NP (NP a separate meeting) 
+  (NP-TMP late Tuesday))))))
+
+  
+
+   (NP (NP his (ADJP first and only) state visit) (PP to (NP 
+  Bonn)) (ADVP-TMP (NP two years) ago))
+
+  
+
+  In cases of apposition involving SBAR, the SBAR should not be 
+  labeled -TMP.  (PP-TMP in (NP (NP 1992) , (SBAR (WHADVP-4 when) 
+  (S (NP-SBJ I) (ADVP-TMP first) (VP learned (SBAR 0 (S (NP-SBJ 
+  I) (VP was (NP-PRD a Martian) (ADVP-TMP *T*-4))))))))) 
+
+  in ADJP:
+
+   (NP (NP (NP Penn Treebank Corp. 's) (ADJP 14.7  bonds) (ADJP 
+  due (NP-TMP 2009)))
+
+  
+
+  Only in “financialspeak,” and only when the dominating PP is a 
+  PP-DIR, may temporal modifiers be put at PP object level, as in 
+  this example: TMP@-TMP!in ``financialspeak''
+
+   (S (NP-SBJ unconsolidated pretax profit) (VP increased (PP-DIR 
+  to (NP (QP 12.12 billion) yen)) , (PP-DIR from (NP (QP 7.12 
+  billion) yen) (ADVP-TMP (NP a year) ago))))
+
+  
+
+  Note that -TMP is not used in possessive phrases:
+
+   (NP (NP 1950 's) conservative tendencies)
+
+   
+
+1.2.4 Miscellaneous
+
+  -CLR (closely related) CLR@-CLR --- marks constituents that 
+  occupy some middle ground between argument and adjunct of the 
+  verb phrase. These roughly correspond to “predication adjuncts” 
+  predication adjuncts, prepositional ditransitives ditransitives!prepositional
+  , and some “phrasal verbs” phrasal verbs, as defined in .
+
+  Although constituents marked with -CLR are not strictly 
+  speaking complements, they are treated as complements whenever 
+  it makes a bracketing difference (see the section on fronting 
+  in  and *RNR*-attach in ).
+
+  The precise meaning of -CLR depends somewhat on the category of 
+  its phrase:
+
+  on S or SBAR --- These categories are usually arguments, so the 
+    -CLR tag indicates that the clause is more adverbial than 
+    normal clausal arguments. The most common case is the 
+    infinitival semicomplement of use, but there are a variety of 
+    other cases (see ).
+
+  on PP, ADVP, SBAR-PRP, etc. --- On categories that are 
+    ordinarily interpreted as (adjunct) adverbials, -CLR 
+    indicates a somewhat closer relationship to the verb. For 
+    example:
+
+    • Prepositional Ditransitives ditransitives!prepositional
+
+      In order to ensure consistency, the Treebank recognizes 
+      only a limited class of verbs that take more than one 
+      complement, as described in this section (-DTV on page [list:notation:grammatical-role:DTV]
+       and -PUT on page [list:notation:grammatical-role:PUT]) and 
+      in . Verbs that fall outside these classes (including most 
+      of the prepositional ditransitive verbs in class [D2] in ) 
+      are often annotated with -CLR:
+
+       (VP associate (NP snow) (PP-CLR with (NP winter)))
+
+      
+
+       (VP donate (NP your time) (PP-CLR to (NP a good cause)))
+
+      
+
+    • Phrasal verbs phrasal verbs
+
+      Phrasal verbs are also annotated with -CLR or a combination 
+      of PRT and PP-CLR.
+
+       (VP pay (PP-CLR for (NP 500 shares)))
+
+      
+
+       (VP adjust (PP-CLR for (NP inflation)))
+
+      
+
+       (VP put (PRT up) (PP-CLR with (NP the nuisance)))
+
+      
+
+      Words that are considered borderline between particle and 
+      adverb are often bracketed with ADVP-CLR.
+
+       (VP looking (ADVP-CLR forward) (PP-CLR to (NP their winter 
+      meeting)))
+
+      
+
+    • Predication Adjuncts predication adjuncts
+
+      Many of Quirk's predication adjuncts (see , especially 
+      sections 8.27--35, 15.22, & 16.48) are annotated with -CLR.
+
+       (VP place (NP the flour) (PP-LOC-CLR in (NP the sifter)))
+
+      
+
+       (S (NP-SBJ She) (VP sat (PP-LOC-CLR in (NP the chair))))
+
+      
+
+       (S (NP-SBJ He) (VP kissed (NP his mother) (PP-CLR on (NP 
+      the cheek))))
+
+      
+
+  on NP --- To the extent that -CLR is used on noun phrases, it 
+    indicates that the NP is part of some kind of “fixed phrase” 
+    or expression, such as take care of.
+
+     (VP taking (NP-CLR care) (PP-CLR of (NP the problem)))
+
+    
+
+     (S (NP-SBJ their meeting) (ADVP-TMP never) (VP took (NP-CLR 
+    place)))
+
+    
+
+    Variation is more likely for NPs than for other uses of -CLR.
+
+  -CLF (cleft) --- marks it-clefts (“true” clefts) and may be 
+  added to the labels S, SINV, or SQ. See . CLF@-CLF
+
+   (SQ-CLF Was (NP-SBJ it) (NP-PRD (NP John's) car) (SBAR (WHNP-6 
+  0) (S (NP-SBJ you) (VP borrowed (NP *T*-6)))) ?)
+
+  
+
+  -HLN (headline) --- marks headlines and datelines. Note that 
+  headlines and datelines always constitute a unit of text that 
+  is structurally independent from the following sentence. HLN@-HLN
+   headlines
+
+   ( (NP-HLN (NP The end) (PP of (NP Trujillo)))) ( (S (NP-SBJ 
+  (NP Assassination) (PRN , (PP (ADVP even) of (NP a tyrant)) ,)) 
+  (VP is (ADJP-PRD repulsive (PP to (NP (NP men) (PP of (NP good 
+  conscience)))))) .))
+
+  
+
+   ( (NP-HLN (NP-LOC Chicago , IL) , (NP-TMP May 8) --)) ( (S A 
+  fire broke out in an abandoned building .))
+
+  
+
+  -TTL (title) --- is attached to the top node of a title when 
+  this title appears inside running text.-TTL implies -NOM. The 
+  internal structure of the title is bracketed as usual. (See  
+  for more information about the bracketing of titles.) TTL@-TTL titles
+
+   (SQ Have (NP-SBJ you) (VP read (S-TTL (NP-SBJ *) (VP To (VP 
+  Kill (NP A Mockingbird))))) ?)
+
+  
+
+   (S “ (NP-TTL-SBJ-1 Omphalos) ” (VP was (VP painted (NP *-1) 
+  (PP by (NP-LGS Mark)))))
+
+   
+
+1.3 Null elements
+
+See  for more on the annotation of null elements.
+
+ .2 ex plus .1 ex minus .1 ex 
+
+  *T* --- trace of A^{\prime}-movement 
+
+  (NP *) --- arbitrary PRO, controlled PRO, and trace of 
+  A-movement 
+
+  0 --- the null complementizer 
+
+  *U* --- unit 
+
+  *?* --- placeholder for ellipsed material 
+
+  *NOT* --- anti-placeholder in template gapping 
+
+The “pseudo-attach” elements (listed in section [list:notation:pseudo-attach]
+) are also essentially null elements.
+
+1.4 Coindexing
+
+coindexing
+
+See  for more detailed information.
+
+1.4.1 The identity index
+
+identity index
+
+The number that follows a  bracket tag serves as an  identity 
+index (ID number) for that constituent:(WHNP-1 What). Identity 
+indices only appear when necessary, e.g., when there is a 
+corresponding null element.
+
+1.4.2 The reference index
+
+reference index
+
+The number that follows the null element is called its  reference 
+index: (NP *T*-1). It should correspond to the identity index of 
+the constituent with which the null is associated. If the null is 
+not associated with a constituent in the same sentence, it does 
+not receive an index.
+
+ (S (NP-SBJ Willie) (VP knew (SBAR (WHNP-1 who) (S (NP-SBJ *T*-1) 
+(VP threw (NP the ball))))))
+
+
+
+ (SBARQ (WHNP-1 Who) (SQ was (NP-SBJ-2 *T*-1) (VP believed (S 
+(NP-SBJ-3 *-2) (VP to (VP have (VP been (VP shot (NP *-3)))))))) 
+?)
+
+
+
+1.5 Pseudo-attach
+
+pseudo-attach <list:notation:pseudo-attach>
+
+Pseudo-attach is a method of showing that non-adjacent 
+constituents are related. There are four different types of 
+pseudo-attach, each of which is described in detail in . The 
+pseudo attach copy bears a reference index corresponding to the 
+identity index of the displaced constituent. The different types 
+of pseudo-attach are:
+
+ .2 ex plus .1 ex minus .1 ex 
+
+  *EXP* --- Expletive (extraposition) 
+
+  *ICH* --- Interpret Constituent Here (discontinuous dependency) 
+
+  *PPA* --- Permanent Predictable Ambiguity (ambiguity) 
+
+  *RNR* --- Right Node Raising (shared complements) 
+
+
+
+1.6 Parentheticals
+
+parentheticals PRN <list:notation:PRN>
+
+Parenthetical elements are dominated by a node labeled PRN. 
+Punctuation marks that set off a parenthetical (i.e., commas, 
+dashes, parentheses (-LRB- and -RRB-)) are contained within the 
+PRN node. Use of PRN is determined ultimately by individual 
+annotator intuition, though the presence of dashes or parentheses 
+strongly suggests a parenthetical. RRB@-RRB- LRB@-LRB- parentheses
+
+
+
+ (S (NP-SBJ (NP Assassination) (PRN , (PP (ADVP even) of (NP a 
+tyrant)) ,)) (VP is (ADJP-PRD repulsive) (PP to (NP (NP men) (PP 
+of (NP good conscience))))))
+
+
+
+ (S (NP-TMP (NP Every day) (SBAR (WHNP-1 0) (S (NP-SBJ you) (VP 
+delay (NP-TMP *T*-1))))) , (NP-SBJ (NP (NP a savings institution 
+'s) health) (PRN -- and (NP the federal budget deficit) --)) (VP 
+grows (ADJP-PRD worse)))
+
+
+
+ (S (NP-SBJ Casey) (VP threw (NP the (ADJP red (PRN (S (ADVP at 
+least) (NP-SBJ I) (VP think (SBAR 0 (S (NP-SBJ it) (VP was 
+(ADJP-PRD red))))))) and green (PRN or (S (ADVP maybe) (NP-SBJ 
+it) (VP was (ADJP-PRD blue))))) ball)))
+
+
+
+
+
