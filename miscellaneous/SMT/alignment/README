@@ -6,13 +6,17 @@
 
    (Note : These files are in SMT/dump which contains above 12000 sentences)
 
+  Dictionaries :  Dictionaries used for alignment are in $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries directory
+  ============
+
   For testing purpose
   ===================
-       	1. file-name 		 ===	test_sent
-	2. manual_hin_sen	 ===	test_hi_sent
-	3. shallow_parser_output === 	test_shallow_output
+       	1. file-name 		 ===	phy_verified
+	2. manual_hin_sen	 ===	phy_verified_hi
+	3. shallow_parser_output === 	phy_verified_hi_shallow_out
+	
 
-  (Note :  These files are in SMT/dump )
+  (Note :  These files are in SMT/align_output )
 
   compile:
   ========
@@ -21,23 +25,27 @@
 
   To run alignment for SMT
   ========================
-	Anusaaraka_stanford_SMT.sh <file-name> <parse_no> <sand_box_option> < manual_hin_sen> < shallow_parser_output> 
+	cd $HOME_anu_test/miscellaneous/SMT/alignment/align_output
+	   
+	      Anusaaraka_stanford_SMT.sh <file-name> <parse_no> <sand_box_option> < manual_hin_sen> < shallow_parser_output> 
 
-  	Ex  :	Anusaaraka_stanford_SMT.sh test_sent 0 false  test_hi_sent test_shallow_output 
+  	Ex  :	Anusaaraka_stanford_SMT.sh phy_verified 0 false phy_verified_hi phy_verified_hi_shallow_out
+
 	(Note : parser_no "0" implies default parse)
-
+	
   File to check for group alignment is :  
   =====================================
 			 $HOME_anu_tmp/tmp/$1_tmp/$2/alignment.dat
-		Ex: 	 $HOME_anu_tmp/tmp/test_sent_tmp/2.1/alignment.dat
+		Ex: 	 $HOME_anu_tmp/tmp/phy_verified_tmp/2.1/alignment.dat
 
   File to check for word alignment is :       
   ====================================
                          $HOME_anu_tmp/tmp/$1_tmp/$2/word_alignment.dat
-                Ex:      $HOME_anu_tmp/tmp/test_sent_tmp/2.1/word_alignment.dat
+                Ex:      $HOME_anu_tmp/tmp/phy_verified_tmp/2.1/word_alignment.dat
 
   To view the firefox for alignment :
   =================================
   			firefox $HOME_anu_output/[file_name]_align.html 
  		Ex:	firefox $HOME_anu_output/phy_verified_align.html
  
+  
