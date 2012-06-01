@@ -23381,7 +23381,7 @@ manicurist_noun	naKa-prasAXikA/naKa-prasAXaka
 manifest_adjective	spaRta/suspaRta/vyakwa_karanA/mAlasUcI
 manifest_noun	yAwrIsUcI/mAlasUcI
 manifest_verb	spaRta_ho_jAnA/sAPZa_xiKAI_xenA/praxarSiwa_karanA/nAKuna_prasAXana_karanA
-manifestation_noun	prawyakRIkaraNa/AvirBAva
+manifestation_noun	prawyakRIkaraNa/AvirBAva/aBivyakwi
 manifestly_adverb	sAPZa_wOra_para
 manifesto_noun	GoRaNApawra/GoRaNA_pawra
 manifold_adjective	viviXa/aneka/bahuviXa

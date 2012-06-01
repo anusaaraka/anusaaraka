@@ -1,23 +1,23 @@
 
  ; Added by shirisha Manju (22-02-12) Suggested by Chaitanya sir
  ; In the "computing with language" sections we will take on some linguistically-motivated programming tasks without necessarily understanding how they work.
- (defrule create_new_node_for_lt_rt_punct
- (declare (salience 100))
- ?f<-(Head-Level-Mother-Daughters ?punc_id ?l ?Mot $?d ?P ?s ?s1 $?d1 ?P1 $?d2)
- (Node-Category ?P    ?punc&P_DQT|P_SQT|P_LB)
- (Node-Category ?P1   ?punc1&P_DQT|P_SQT|P_LB)
- (Node-Category ?Mot ?m)
- (not (Node-Category ?s1 P_COM|P_DQT|P_SQT|P_LB|P_DSH))
- (parserid-word  ?punc_id  ?h)
- (not (head ?h))
- =>
-	(retract ?f)
-	(assert (Head-Level-Mother-Daughters ?h ?l ?Mot $?d ?s ?s1 $?d1 $?d2))
-	(bind ?node (explode$ (str-cat ?Mot "c")))
-	(assert (Head-Level-Mother-Daughters ?h ?l ?node ?P ?Mot ?P1))
-	(assert (Node-Category ?node ?m))
-	(assert (head ?h))
- )
+; (defrule create_new_node_for_lt_rt_punct
+; (declare (salience 100))
+; ?f<-(Head-Level-Mother-Daughters ?punc_id ?l ?Mot $?d ?P ?s ?s1 $?d1 ?P1 $?d2)
+; (Node-Category ?P    ?punc&P_DQT|P_SQT|P_LB)
+; (Node-Category ?P1   ?punc1&P_DQT|P_SQT|P_LB)
+; (Node-Category ?Mot ?m)
+; (not (Node-Category ?s1 P_COM|P_DQT|P_SQT|P_LB|P_DSH))
+; (parserid-word  ?punc_id  ?h)
+; (not (head ?h))
+; =>
+;	(retract ?f)
+;	(assert (Head-Level-Mother-Daughters ?h ?l ?Mot $?d ?s ?s1 $?d1 $?d2))
+;	(bind ?node (explode$ (str-cat ?Mot "c")))
+;	(assert (Head-Level-Mother-Daughters ?h ?l ?node ?P ?Mot ?P1))
+;	(assert (Node-Category ?node ?m))
+;	(assert (head ?h))
+; )
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule get_P_Dot_punc
  (declare (salience 90)) 

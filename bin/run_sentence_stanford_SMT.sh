@@ -43,13 +43,13 @@
 
  sh $HOME_anu_test/bin/abbr.sh
 
- sh $HOME_anu_test/miscellaneous/SMT/alignment/count.sh 
+# sh $HOME_anu_test/miscellaneous/SMT/alignment/count.sh 
  cp hindi_sentence1.dat  hindi_sentence.dat
 
 # cat hin_eng_sent.dat
 
  cat  hindi_sentence.dat
- cat  percentage.dat
+# cat  percentage.dat
  echo "(hin_sen " > hindi_sentence_SMT_tmp.dat 
  cat hindi_sentence.dat >> hindi_sentence_SMT_tmp.dat
  echo ")" >> hindi_sentence_SMT_tmp.dat

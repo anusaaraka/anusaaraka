@@ -17,7 +17,7 @@
  ;-------------------------------------------------------------------------------------------------
  (defrule del_underscore_in_aper_out
  (declare (salience 20))
- ?f0<-(id-Apertium_output ?id ?mng $?w)
+ ?f0<-(id-Apertium_output ?id $?w ?mng $?w1)
  (test (neq (str-index "_" (implode$ (create$ ?mng))) FALSE))
  =>
         (retract ?f0)
@@ -26,7 +26,7 @@
 	(bind ?str (string-to-field (sub-string 1 (- ?index 1) ?mng)))
         (bind ?str1 (string-to-field (sub-string (+ ?index 1) (length ?mng) ?mng)))
 	(bind ?mng (create$ ?str ?str1))
-        (assert (id-Apertium_output ?id ?mng $?w))
+        (assert (id-Apertium_output ?id $?w ?mng $?w1))
  )
  ;-------------------------------------------------------------------------------------------------
  (defrule get_dummy_fact_Verb

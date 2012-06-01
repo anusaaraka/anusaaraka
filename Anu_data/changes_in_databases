@@ -67,6 +67,7 @@
 	sprintnet	_sprintaneta	as	sprintaneta (corrected the meaning Sugested by Sukhada (27-04-12))
 	stand-@incurriculum vitae	as	kataGarA (corrected the meaning Sugested by Sukhada (27-04-12))
  	broadly		viswqwa_waraha_se	as	mote_wOra_para  (Sugested by Sukhada (18-05-12))
+	own		apa		as	apanA 	(Suggested by Chaitanya Sir (30-05-12))
 
  2. Added :: 
 	attorney-at-law   pramANiwa_aBikarwA
@@ -646,7 +647,8 @@ Modified:
 	scope_noun	xolana-xarSI/viswAra/kRewra/kAryakRetra/guMjAiSa/guMjAiRa
 					as
 	scope_noun	xolana-xarSI/viswAra/kRewra/kAryakRewra/guMjAiSa/guMjAiRa  (Suggested by Sukhada)
-
+	manifestation_noun      prawyakRIkaraNa/AvirBAva 	as	prawyakRIkaraNa/AvirBAva/aBivyakwi (Suggested by Sukhada (29-05-12))
+			
 Removed::
 	itumail@itu.ch  E-MAIL::itumail@itu.ch	(Suggested by Rajini(29-02-12))
 	organized       -::saMgaTiwa	(Suggested by Rajini(29-02-12))

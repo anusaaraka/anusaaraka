@@ -3436,9 +3436,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  10. Added miscellaneous/SMT/alignment/get_wx.clp
  11. Updated the following files
         alignment.clp   get_anu_grp_mng.clp   word_alignment.clp get_tam_info.lex get_group_mng.sh
+	run_sentence_stanford_SMT.sh    get_man_grp_mng.clp  get_wx.clp
  12. Modified run_H_gen_SMT.bat
 		-- to run get_wx module
 		-- to load shallow_parser_root.dat in word_alignment and alignment modules
+		-- added new module get_dbase_mng
+                -- loaded database_mng.dat file in  alignment and word_alignment modules
  13. Updated sd_chunker.clp [For handling SINV POS]
  14. Updated get_tam_info.lex [added new regular expression for getting root information for all words]
  15. Based on the type of the phrase, compound_phrase.txt file has been divided in to 
@@ -3516,8 +3519,31 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  47. Added  PennTreeBankNotation/ folder inside Doc/
  48. Added  Provisional_data folder inside Doc/
  49. Added  Science-dictionary.txt inside miscellaneous/SMT/alignment/dictionaries/
- 50. Updated README inside anu_testing
- 51. Modified apertium_hn.dix
- 52. In anu_compile.sh , added code to copy Provisional_data files inside $HOME_anu_provisional_wsd_rules/
- 53. Updated changes_in_databases
- 54. Updated Log file.
+ 50. Modified the following files to assert the new fact (conj_head-left_head-right_head)
+        English_sentence.clp        GNP_agreement.clp    agreement.clp   hindi_sent_reorder.clp
+        prepare_apertium_input.clp
+ 51. Added "sub_and_samA_with_and" in  GNP_agreement.clp
+ 52. Modified "sub_or_agr" rule in agreement.clp
+ 53. Added "PP_rule_with_vib_vAlA1" rule in prepare_apertium_input.clp 
+ 54. Modified sd_pada.clp === generated pada using prawiniXi info
+ 55. Modified run_modules_std.bat
+        1. loaded "cat_consistency_check.dat" file in GNP_agreement module
+        2. modified save-facts to save conj_head-left_head-right_head in
+                tam_meaning  vibakthi  GNP_agreement modules
+ 56. Modified "map_cons" rule in sd_combining_apostrophe.clp (to get apos word Ex. today's as a single word)
+ 57. sd_relation_rules.clp
+        Deleted : replace_left_head    replace_right_head
+        Added   : replace_head   replace_head_with_cop  sub_samA_with_cop
+ 58. Modified split-relations.py to get cc in basic relations
+ 59. Added "modify_and_vib" rule in vibakthi.clp
+ 60. Added "align_output" and "dictionaries" dir in  miscellaneous/SMT/alignment
+ 61. Added smt_compile.sh in miscellaneous/SMT/alignment
+ 62. Modified the following files (to check the default parser no --> " " or "0")
+        Anusaaraka.sh  Anusaaraka_all.sh  Anusaaraka_stanford.sh Anusaaraka_stanford_SMT.sh
+ 63. Modified apertium_hn.dix
+ 64. In anu_compile.sh , added code to copy Provisional_data files inside $HOME_anu_provisional_wsd_rules/
+ 65. Updated README inside anu_testing
+ 66. Updated miscellaneous/SMT/alignment/README
+ 67. Updated changes_in_databases
+ 68. Updated sd_ver_output
+ 69. Updated Log file.
