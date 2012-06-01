@@ -1,38 +1,34 @@
-  Required files
-  ==============
-	1. Shallow parser output File  ---- cln-train.hi.out
-	2. Manual hindi sentences File ---- cln-train.hi
-	3. Original sentences File     ---- cln-train_h_ordr.en_detoken
+1. Prerequisites::
+   =============
+  	1. English Sentence File.
+  	2. Hindi Sentence File (WX Notation)
+	3. Shallow parser output for above hindi sentences.
 
-   (Note : These files are in SMT/dump which contains above 12000 sentences)
+2. compile:
+   ========
+	1. cd $HOME_anu_test
+           shell_scripts/remove_out-files.sh
+           shell_scripts/anu_compile.sh
+        2. cd $HOME_anu_test/miscellaneous/SMT/alignment
+	   sh smt_compile.sh
 
-  Dictionaries :  Dictionaries used for alignment are in $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries directory
-  ============
-
-  For testing purpose
-  ===================
-       	1. file-name 		 ===	phy_verified
-	2. manual_hin_sen	 ===	phy_verified_hi
-	3. shallow_parser_output === 	phy_verified_hi_shallow_out
-	
-
-  (Note :  These files are in SMT/align_output )
-
-  compile:
-  ========
-	cd $HOME_anu_test/miscellaneous/SMT/alignment
-	sh smt_compile.sh
-
-  To run alignment for SMT
-  ========================
+3. To run alignment for SMT
+   ========================
 	cd $HOME_anu_test/miscellaneous/SMT/alignment/align_output
 	   
 	      Anusaaraka_stanford_SMT.sh <file-name> <parse_no> <sand_box_option> < manual_hin_sen> < shallow_parser_output> 
 
   	Ex  :	Anusaaraka_stanford_SMT.sh phy_verified 0 false phy_verified_hi phy_verified_hi_shallow_out
 
-	(Note : parser_no "0" implies default parse)
-	
+	(Note : parser_no "0" implies default parse
+                false is used to Disable provisional directory.
+                True  is used to Enable provisional directory.
+        )
+
+
+  Dictionaries :  Dictionaries used for alignment are in $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries directory
+  ============
+
   File to check for group alignment is :  
   =====================================
 			 $HOME_anu_tmp/tmp/$1_tmp/$2/alignment.dat
@@ -48,4 +44,11 @@
   			firefox $HOME_anu_output/[file_name]_align.html 
  		Ex:	firefox $HOME_anu_output/phy_verified_align.html
  
-  
+ 
+  Sample files 
+  ==============
+        1. Shallow parser output File  ---- cln-train.hi.out
+        2. Manual hindi sentences File ---- cln-train.hi
+        3. Original sentences File     ---- cln-train_h_ordr.en_detoken
+
+   (Note : These files are in SMT/dump which contains above 12000 sentences)
