@@ -20,6 +20,5 @@ sh $HOME_anu_test/bin/abbr_browser.sh $2/tmp/$1_tmp/$1_trnsltn_tmp.html $2/tmp/$
 ###Added by Mahalaxmi. (3-05-12) To transliterate proper nouns in Browsers.
 sh $2/tmp/$1_tmp/proper_nouns_utf8.sh $2/tmp/$1_tmp/$1_tmp1.html > $3/$1.html
 sh $2/tmp/$1_tmp/proper_nouns_utf8.sh $2/tmp/$1_tmp/$1_tran_tmp1.html > $3/$1_tran.html
-sh $2/tmp/$1_tmp/proper_nouns.sh $2/tmp/$1_tmp/$1_trnsltn_tmp1.html > $3/$1_trnsltn_tmp2.html
-wx_utf8 $3/$1_trnsltn_tmp2.html > $3/$1_trnsltn.html
-
+wx_utf8 $2/tmp/$1_tmp/$1_trnsltn_tmp1.html > $2/tmp/$1_tmp/$1_trnsltn_tmp2.html
+sh $2/tmp/$1_tmp/proper_nouns_utf8.sh $2/tmp/$1_tmp/$1_trnsltn_tmp2.html > $3/$1_trnsltn.html

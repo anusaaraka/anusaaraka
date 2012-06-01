@@ -38,7 +38,7 @@
  mkdir $MYPATH/tmp/$1_tmp
  cp $4 $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt
  cp $5 $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp.txt
- cp $6 $MYPATH/tmp/$1_tmp/wx_output.txt
+# cp $6 $MYPATH/tmp/$1_tmp/wx_output.txt
 
 ###Added below loop for server purpose.
  if [ "$3" == "True" ] ; then 
@@ -51,6 +51,12 @@
  $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
  $HOME_anu_test/Anu/pre_process.sh $1 $MYPATH
  $HOME_anu_test/Anu/save_format.sh $1 $MYPATH
+
+ sed 's/ /\n/g' $MYPATH/tmp/$1.snt |sed -n '/^[a-z0-9]/ !p' >$MYPATH/tmp/$1_tmp/proper_nouns_list_tmp.txt
+ tr 'A-Z' 'a-z' < $MYPATH/tmp/$1_tmp/proper_nouns_list_tmp.txt > $MYPATH/tmp/$1_tmp/proper_nouns_list.txt
+ cd $HOME_anu_test/miscellaneous/transliteration/work
+ sh transliteration-script.sh $MYPATH/tmp/$1_tmp proper_nouns_list.txt 2>/dev/null 
+ paste $MYPATH/tmp/$1_tmp/proper_nouns_list_tmp.txt $MYPATH/tmp/$1_tmp/proper_nouns_list.txt.wx |sed 's/^/(eng_word-man_wx_word\t/g' |sed 's/$/)/g' |sed 's/(eng_word-man_wx_word\t\t)/;~~~~~~~~~~/g' > $MYPATH/tmp/$1_tmp/wx_output.txt
 
  echo "Saving word information"
  cd $HOME_anu_test/Anu_src
