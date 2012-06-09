@@ -3547,3 +3547,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  67. Updated changes_in_databases
  68. Updated sd_ver_output
  69. Updated Log file.
+
+ 09-06-12
+ ========
+ 1. Slight modification has been done in displaying of prepositions in firefox output.
+         Ex: previously output in firefox    ::  of_physics 
+             present output  will be         ::  physics_{of}
+ 2. Updated Log 

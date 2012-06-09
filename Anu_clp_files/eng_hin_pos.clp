@@ -175,8 +175,8 @@
                  (retract ?f)
                  (bind $?eng_ord (create$ $?prev ?p_id $?post))
                  (bind ?pos (member$ ?id $?hin_ord))
-                 (bind $?grp_ids (sort_grp (create$ $?grp_ids $?prep_id)))
-                 ;(bind $?grp_ids (create$ $?grp_ids $?prep_id))
+                 ;(bind $?grp_ids (sort_grp (create$ $?grp_ids $?prep_id)))
+                 (bind $?grp_ids (create$ $?grp_ids $?prep_id))
                  (assert (hin_pos-src-eng_ids ?pos - $?grp_ids))
                  (loop-for-count (?i 1 (length $?grp_ids))
                                 (bind ?g_id (nth$ ?i $?grp_ids))
@@ -253,6 +253,7 @@
 
  ;find the position of remaing words
  (defrule find_pos1
+ (declare (salience 25))
  (expr  $?pr ?id $?po)
  (hindi_id_order $?prev ?id $?post)
  (id-HM-source-grp_ids   ?id  ?  ? $?grp_ids)
@@ -267,12 +268,53 @@
  
 ;---------------------------------------------------------------------------------------------------------------------------
  ;Print to a file 
+ (defrule print_for_user1
+ (declare (salience 20))
+ (pada_info (group_head_id ?id) (group_cat PP)(preposition $?prep_id))
+ (hin_pos-src-eng_ids ?pos ?src $?ids)
+ (test (member$ $?prep_id $?ids))
+ (English_Sen $?eng_list)
+ (Hindi_sen $?hin_list)
+ (test (neq ?pos FALSE))
+ (not (meaning_has_been_printed ?pos))
+ =>
+     (assert (meaning_has_been_printed ?pos))
+     (if (eq ?src D) then (bind ?hin_pos_val -D-)
+     else
+     (bind ?hin_pos_val (nth$ ?pos $?hin_list)))
+     (if (eq ?hin_pos_val "") then (bind ?hin_pos_val "-U-"))
+     (bind ?eng_val (implode$ $?ids))
+     (bind $?ids (delete-member$ $?ids $?prep_id))
+     
+     (bind ?eng_pos_val (str-cat ""))
+     (loop-for-count (?i 1 (length $?ids))
+                      (bind ?id (nth$ ?i $?ids))
+                      (if (eq ?i 1) then
+                             (bind ?eng_pos_val (nth$ ?id $?eng_list))
+                        else
+                            (bind ?eng_pos_val (str-cat ?eng_pos_val "_" (nth$ ?id $?eng_list)))))
+;                      (bind ?eng_pos_val (str-cat ?eng_pos_val " " (nth$ ?id $?eng_list)))))
+      (loop-for-count (?i 1 (length $?prep_id))
+                      (bind ?id (nth$ ?i $?prep_id))
+                            (if (eq ?i 1) then
+                            (bind ?eng_pos_val (str-cat ?eng_pos_val "_{" (nth$ ?id $?eng_list)))
+                            else
+                            (bind ?eng_pos_val (str-cat ?eng_pos_val "_" (nth$ ?id $?eng_list)))))
+      (bind ?eng_pos_val (str-cat ?eng_pos_val "}"))
+
+      (printout ?*pos-file* "(hin_pos-hin_mng-eng_ids-eng_words " ?pos" "?hin_pos_val" "(implode$ (create$ $?ids $?prep_id))" "?eng_pos_val")" crlf)
+ )
+
+
+ ;Print to a file 
  (defrule print_for_user
  (hin_pos-src-eng_ids ?pos ?src $?ids)
  (English_Sen $?eng_list)
  (Hindi_sen $?hin_list)
  (test (neq ?pos FALSE))
+ (not (meaning_has_been_printed ?pos))
  =>
+     (assert (meaning_has_been_printed ?pos))
      (if (eq ?src D) then (bind ?hin_pos_val -D-)
      else
      (bind ?hin_pos_val (nth$ ?pos $?hin_list)))
