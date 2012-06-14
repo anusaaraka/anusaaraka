@@ -3548,9 +3548,18 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  68. Updated sd_ver_output
  69. Updated Log file.
 
- 09-06-12
+ 14-06-12
  ========
  1. Slight modification has been done in displaying of prepositions in firefox output.
          Ex: previously output in firefox    ::  of_physics 
              present output  will be         ::  physics_{of}
- 2. Updated Log 
+ 2. Modified abbrevations.lex to handle patterns like Eq., Eqs., Figs. 
+ 3. Modified enclitics.lex to handle "cannot" (as stanford parser splits it into two words "can not")
+ 4. Added sed command to replace 'ABBR-SingleQuote' in abbr.sh , abbr_browser.sh and PUNCT-Hyphen in abbr_browser.sh.
+ 5. Modified sed command in get_group_mng.sh (replacing "))" ).
+ 6. Modified meaning of 'govern' in goldendict, iit-bombay dictionary and updated following files:
+    	iit-bombay.dict		iit-bombay.index	iit-bombay.txt		iit-bombay.txt1
+ 7. In default-iit-bombay-shabdanjali-dic.txt removed 'nA' in case of verbs. Ex: abash_verb	SarmiMxA_karanA
+ 8. Updated standard_abbrevations.lex
+ 9. Updated changes_in_databases.
+ 10.Updated Log 
