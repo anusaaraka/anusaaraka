@@ -563,93 +563,98 @@ Modified:
  =================================================
  Modified :
  --------
-	establishment	noun	aXiRTAna/sWApanA/parivAra/sWAna/sWApana/saMsWApana/nIMva/xaPwara/saMsWA 
+	1.establishment	noun	aXiRTAna/sWApanA/parivAra/sWAna/sWApana/saMsWApana/nIMva/xaPwara/saMsWA 
  					as
-	establishment	noun	sWApanA/parivAra/AXiRTAna/sWAna/sWApana/saMsWApana/nIMva/xaPwara/saMsWA (Suggested by Meena(07-02-12)
-	Habegger        -::Habegger	as	Habegger        noun::Habegger (Suggested by Chaitanya Sir(29-02-12))
-	cloak-and-dagger        adjective::sAhasa,rahasya_Axi_se_yukwa_kucakra_praXAna/gupwa
+	  establishment	noun	sWApanA/parivAra/AXiRTAna/sWAna/sWApana/saMsWApana/nIMva/xaPwara/saMsWA (Suggested by Meena(07-02-12)
+	2.Habegger        -::Habegger	as	Habegger        noun::Habegger (Suggested by Chaitanya Sir(29-02-12))
+	3.cloak-and-dagger        adjective::sAhasa,rahasya_Axi_se_yukwa_kucakra_praXAna/gupwa
 					as
-	cloak-and-dagger        adjective::sAhasa/rahasya_Axi_se_yukwa_kucakra_praXAna/gupwa (Suggested by Sukhada(29-02-12))
-	conductor       noun::saMvewa_gAna,vAXAxi_kA_nirxeSaka/saMvewa_gAna,vAXAxi_kA_nirxeSak/kaNdaktara/gArda/cAlaka
+	  cloak-and-dagger        adjective::sAhasa/rahasya_Axi_se_yukwa_kucakra_praXAna/gupwa (Suggested by Sukhada(29-02-12))
+	4.conductor       noun::saMvewa_gAna,vAXAxi_kA_nirxeSaka/saMvewa_gAna,vAXAxi_kA_nirxeSak/kaNdaktara/gArda/cAlaka
 					as
-	conductor       noun::saMvewa_gAna/vAXAxi_kA_nirxeSaka/kaNdaktara/gArda/cAlaka	(Suggested by Sukhada(29-02-12))
-	cousin  noun::cacerA,mamerA,PuPerA_yA_mOserA_BAi_yA_bahana/cacerA,_mamerA,_PuPerA_yA_mOserA_BAi_yA_bahana/cacerA_BAII/cacerA_BAI/cacerA_mamerA_mOserA_yA_PuPerA_BAI_yA_bahana
+	  conductor       noun::saMvewa_gAna/vAXAxi_kA_nirxeSaka/kaNdaktara/gArda/cAlaka	(Suggested by Sukhada(29-02-12))
+	5.cousin  noun::cacerA,mamerA,PuPerA_yA_mOserA_BAi_yA_bahana/cacerA,_mamerA,_PuPerA_yA_mOserA_BAi_yA_bahana/cacerA_BAII/cacerA_BAI/cacerA_mamerA_mOserA_yA_PuPerA_BAI_yA_bahana
 					as
-	cousin  noun::cacerA_mamerA_mOserA_yA_PuPerA_BAI_yA_bahana	(Suggested by Rajini(29-02-12))
-	detour  -::cakkaraxAra_mArga	as	detour  noun::cakkaraxAra_mArga	(Suggested by Rajini(29-02-12))
-        filing-clerk    file-clerk {US}::noun/PAileM_raKane_vAlA_kaMrmacArI
+	  cousin  noun::cacerA_mamerA_mOserA_yA_PuPerA_BAI_yA_bahana	(Suggested by Rajini(29-02-12))
+	6.detour  -::cakkaraxAra_mArga	as	detour  noun::cakkaraxAra_mArga	(Suggested by Rajini(29-02-12))
+        7.filing-clerk    file-clerk {US}::noun/PAileM_raKane_vAlA_kaMrmacArI
                         		as
-	file-clerk      noun::PAileM_raKane_vAlA_kaMrmacArI
-	filing-clerk    noun::PAileM_raKane_vAlA_kaMrmacArI	(Suggested by Rajini(29-02-12))
-	foolscap        noun::PulaskEpa/kAgajZa_kA_eka_nApa{lagaBaga_300*200_or_400mm}
+	  file-clerk      noun::PAileM_raKane_vAlA_kaMrmacArI
+	  filing-clerk    noun::PAileM_raKane_vAlA_kaMrmacArI	(Suggested by Rajini(29-02-12))
+	8.foolscap        noun::PulaskEpa/kAgajZa_kA_eka_nApa{lagaBaga_300*200_or_400mm}
 					as
-	foolscap        noun::PulaskEpa/kAgajZa_kA_eka_nApa
-	window  noun::xarIcA/viMdo/KidZakI_kA_kAzca/KidZakI
+	  foolscap        noun::PulaskEpa/kAgajZa_kA_eka_nApa
+	9.window  noun::xarIcA/viMdo/KidZakI_kA_kAzca/KidZakI
 					as
-	window  noun::KidZakI_kA_kAzca/KidZakI/xarIcA/viMdo	(Suggested by Chaitanya Sir (29-02-12))
-	inaudibly       adverb::sunAI_na_padZe,Ese_DaMga_se
+	  window  noun::KidZakI_kA_kAzca/KidZakI/xarIcA/viMdo	(Suggested by Chaitanya Sir (29-02-12))
+	10.inaudibly       adverb::sunAI_na_padZe,Ese_DaMga_se
 					as
-	inaudibly       adverb::XImI_Avaja_meM/sunAI_na_padZe	(Suggested by Rajini(29-02-12))
-	irreparably     adverb::marammawa_na_kI_jA_sake,_isa_waraha_se
+	   inaudibly       adverb::XImI_Avaja_meM/sunAI_na_padZe	(Suggested by Rajini(29-02-12))
+	11.irreparably     adverb::marammawa_na_kI_jA_sake,_isa_waraha_se
 					as
-	irreparably     adverb::marammawa_na_kI_jA_sake{isa_waraha_se}	(Suggested by Rajini(29-02-12))
-	knowingly       adverb::jEse_rahasya_se_pariciwa_ho,_isa__waraha_se/jAnabUJa_kara/jAna-bUJa_kara/jAnabUJakara
+	   irreparably     adverb::marammawa_na_kI_jA_sake{isa_waraha_se}	(Suggested by Rajini(29-02-12))
+	12.knowingly       adverb::jEse_rahasya_se_pariciwa_ho,_isa__waraha_se/jAnabUJa_kara/jAna-bUJa_kara/jAnabUJakara
 					as
-	knowingly       adverb::jAnabUJa_kara/jEse_rahasya_se_pariciwa_ho,_isa__waraha_se/jAna-bUJa_kara/jAnabUJakara	(Suggested by Rajini(29-02-12))
-	monster -::BImakAya	as	monster noun::BImakAya	(Suggested by Rajini(29-02-12))
-	overdue adjective::vilaMbiwa/jo_bahuwa_pahale_hI_ho_jAnA_cAhiye_WA,_vaha
+	   knowingly       adverb::jAnabUJa_kara/jEse_rahasya_se_pariciwa_ho,_isa__waraha_se/jAna-bUJa_kara/jAnabUJakara                 	(Suggested by Rajini(29-02-12))
+    	13.monster -::BImakAya	as	monster noun::BImakAya	(Suggested by Rajini(29-02-12))
+	14.overdue adjective::vilaMbiwa/jo_bahuwa_pahale_hI_ho_jAnA_cAhiye_WA,_vaha
 					as
-	overdue adjective::vilaMbiwa	(Suggested by Rajini(29-02-12))
-	piping  noun::pAipiMga/pAipa/krIma_kI_XArI/bAzsurIvAxana/bAzsurI_kI_AvAjZa/viSeRa`nApa_kA_pAipa/gota
+	   overdue adjective::vilaMbiwa	(Suggested by Rajini(29-02-12))
+	15.piping  noun::pAipiMga/pAipa/krIma_kI_XArI/bAzsurIvAxana/bAzsurI_kI_AvAjZa/viSeRa`nApa_kA_pAipa/gota
 					as
-	piping  noun::pAipiMga/pAipa/krIma_kI_XArI/bAzsurI_kI_AvAjZa/gota	(Suggested by Rajini(29-02-12))
-	rig     noun::XoKA/trelara_traka/sAja-sAmAna/riga/poSAka/maswUla,_pAla_Axi_kI_sajjA/maCalI_pakadZane_kA_sAja-sAmAna/cAra_pahiyoM_vAlI_GodZAgAdZI/badZI_larI/badZA_traka/viSeRa_upakaraNa
+	   piping  noun::pAipiMga/pAipa/krIma_kI_XArI/bAzsurI_kI_AvAjZa/gota	(Suggested by Rajini(29-02-12))
+	16.rig     noun::XoKA/trelara_traka/sAja-sAmAna/riga/poSAka/maswUla,_pAla_Axi_kI_sajjA/maCalI_pakadZane_kA_sAja-sAmAna/cAra_pahiyoM_vAlI_GodZAgAdZI/badZI_larI/badZA_traka/viSeRa_upakaraNa
 					as
-	rig     noun::XoKA/trelara_traka/sAja-sAmAna/riga/poSAka/maswUla_kI_sajjA/maCalI_pakadZane_kA_sAja-sAmAna/cAra_pahiyoM_vAlI_GodZAgAdZI/badZI_larI/badZA_traka/viSeRa_upakaraNa	(Suggested by Rajini(29-02-12))
-	rigging noun::maswUla,_pAla_Axi_kI_sajjA/maswUla,_pAla_Axi_kA_sAja-sAmAna/jahAjZa_kI_rassI
+	   rig     noun::XoKA/trelara_traka/sAja-sAmAna/riga/poSAka/maswUla_kI_sajjA/maCalI_pakadZane_kA_sAja-sAmAna/cAra_pahiyoM_vAlI_GodZAgAdZI/badZI_larI/badZA_traka/viSeRa_upakaraNa	(Suggested by Rajini(29-02-12))
+	17.rigging noun::maswUla,_pAla_Axi_kI_sajjA/maswUla,_pAla_Axi_kA_sAja-sAmAna/jahAjZa_kI_rassI
 					as
-	rigging noun::maswUla_kI_sajjA/maswUla_kA_sAja-sAmAna/jahAjZa_kI_rassI	(Suggested by Rajini(29-02-12))
-	right-oh!       INDC::hAz,_hAz_mEM_wEyAra_hUz
+	   rigging noun::maswUla_kI_sajjA/maswUla_kA_sAja-sAmAna/jahAjZa_kI_rassI	(Suggested by Rajini(29-02-12))
+	18.right-oh!       INDC::hAz,_hAz_mEM_wEyAra_hUz
 					as
-	right-oh!       interjection::hAz_mEM_wEyAra_hUz
-	sabre-rattling  -::sEnya_noka-JoMka/noka-JoMka
+	   right-oh!       interjection::hAz_mEM_wEyAra_hUz
+	19.sabre-rattling  -::sEnya_noka-JoMka/noka-JoMka
 					as
-	sabre-rattling  noun::sEnya_noka-JoMka/noka-JoMka	(Suggested by Rajini(29-02-12))
-	sabre-toothed   -::lambe_GumAvaxAra_xAzwoM_vAl
+	   sabre-rattling  noun::sEnya_noka-JoMka/noka-JoMka	(Suggested by Rajini(29-02-12))
+	20.sabre-toothed   -::lambe_GumAvaxAra_xAzwoM_vAl
 					as
-	sabre-toothed   adjective::lambe_GumAvaxAra_xAzwoM_vAlA	(Suggested by Rajini(29-02-12))
-	shall   noun::gA,ge,gI	as	shall   noun::gA/ge/gI	(Suggested by Rajini(29-02-12))
-	should  verb::howAnA/gA,ge,gIInA/cAhieenA
+	   sabre-toothed   adjective::lambe_GumAvaxAra_xAzwoM_vAlA	(Suggested by Rajini(29-02-12))
+	21.shall   noun::gA,ge,gI	as	shall   noun::gA/ge/gI	(Suggested by Rajini(29-02-12))
+	22.should  verb::howAnA/gA,ge,gIInA/cAhieenA
 					as
-	should  verb::nA_cAhiye	(Suggested by Rajini(29-02-12))
-	tackle  noun::Xara_pakadZa/maswUla,_pAla_Axi_kA_sAja-sAmAna/maCalI_pakadZane_kA_sAja-sAmAna/GiranI
+	   should  verb::nA_cAhiye	(Suggested by Rajini(29-02-12))
+	23.tackle  noun::Xara_pakadZa/maswUla,_pAla_Axi_kA_sAja-sAmAna/maCalI_pakadZane_kA_sAja-sAmAna/GiranI
 					as
-	tackle  noun::Xara_pakadZa/maswUla_kA_sAja-sAmAna/maCalI_pakadZane_kA_sAja-sAmAna/GiranI  (Suggested by Rajini(29-02-12))
-	unmeasured      adjective::na_napA,huA/asImiwa
+	   tackle  noun::Xara_pakadZa/maswUla_kA_sAja-sAmAna/maCalI_pakadZane_kA_sAja-sAmAna/GiranI  (Suggested by Rajini(29-02-12))
+	24.unmeasured      adjective::na_napA,huA/asImiwa
 					as
-	unmeasured      adjective::na_napA_huA/asImiwa	(Suggested by Rajini(29-02-12))
-	valve   noun::kapAtikA/kapAta/Cixra/vAlva{eka`ora_Kulane_vAlA_vAyu_gEsa_xrava_ke_saMcAra_kA_yaMwra}/hqxaya_meM_rakwa_vAhaka_vAlva
+	   unmeasured      adjective::na_napA_huA/asImiwa	(Suggested by Rajini(29-02-12))
+	25.valve   noun::kapAtikA/kapAta/Cixra/vAlva{eka`ora_Kulane_vAlA_vAyu_gEsa_xrava_ke_saMcAra_kA_yaMwra}/hqxaya_meM_rakwa_vAhaka_vAlva
 					as
-	valve   noun::kapAtikA/kapAta/Cixra/vAlva/hqxaya_meM_rakwa_vAhaka_vAlva	(Suggested by Rajini(29-02-12))
-	votive  adjective::vrawAnuRTiwa/mannawa_kA/mannawa`kA
+	   valve   noun::kapAtikA/kapAta/Cixra/vAlva/hqxaya_meM_rakwa_vAhaka_vAlva	(Suggested by Rajini(29-02-12))
+	26.votive  adjective::vrawAnuRTiwa/mannawa_kA/mannawa`kA
 					as
-	votive  adjective::vrawAnuRTiwa/mannawa_kA	(Suggested by Rajini(29-02-12))
-	yellow-line     noun::^	as	yellow-line     noun::pIlI_lakIra	(Suggested by Rajini(29-02-12))
-	Urdu    noun::urxU/^	as	Urdu    noun::urxU	(Suggested by Rajini(29-02-12))	
-	urea    noun::yUriyA/^	as	urea    noun::yUriyA	(Suggested by Rajini(29-02-12))
-	melting-pot     noun::viBinna_saMskqwi_loga_waWA_vicAroM_kA_AxAna-praxAna_sWala/Binna-Binna_vicAroM_para_carcA_kI_sWiwi
+	   votive  adjective::vrawAnuRTiwa/mannawa_kA	(Suggested by Rajini(29-02-12))
+	27.yellow-line     noun::^	as	yellow-line     noun::pIlI_lakIra	(Suggested by Rajini(29-02-12))
+	28.Urdu    noun::urxU/^	as	Urdu    noun::urxU	(Suggested by Rajini(29-02-12))	
+	29.urea    noun::yUriyA/^	as	urea    noun::yUriyA	(Suggested by Rajini(29-02-12))
+	30.melting-pot     noun::viBinna_saMskqwi_loga_waWA_vicAroM_kA_AxAna-praxAna_sWala/Binna-Binna_vicAroM_para_carcA_kI_sWiwi
 				as
-	melting-pot     noun::meltiMga_pAta{viBinna_saMskqwi_loga_waWA_vicAroM_kA_AxAna-praxAna_sWala/Binna-Binna_vicAroM_para_carcA_kI_sWiwi}	(Suggested by Rajini(29-02-12))
-	input	verb::dAlanA/kampyUtara_meM_`saMgaNana_karanA
+	   melting-pot     noun::meltiMga_pAta{viBinna_saMskqwi_loga_waWA_vicAroM_kA_AxAna-praxAna_sWala/Binna-Binna_vicAroM_para_carcA_kI_sWiwi}	(Suggested by Rajini(29-02-12))
+	31.input	verb::dAlanA/kampyUtara_meM_`saMgaNana_karanA
 				as
-	input   verb::dAlanA/kampyUtara_meM_detA_dAlanA
-	Modified spellings 'OY' as 'oY' . ex: 'sOYPtaveyara' as 'soYPtaveyara' (Modified by Roja(13-03-12))
-	scope_noun	xolana-xarSI/viswAra/kRewra/kAryakRetra/guMjAiSa/guMjAiRa
+	   input   verb::dAlanA/kampyUtara_meM_detA_dAlanA
+	32.Modified spellings 'OY' as 'oY' . ex: 'sOYPtaveyara' as 'soYPtaveyara' (Modified by Roja(13-03-12))
+	33.scope_noun	xolana-xarSI/viswAra/kRewra/kAryakRetra/guMjAiSa/guMjAiRa
 					as
-	scope_noun	xolana-xarSI/viswAra/kRewra/kAryakRewra/guMjAiSa/guMjAiRa  (Suggested by Sukhada)
-	manifestation_noun      prawyakRIkaraNa/AvirBAva 	as	prawyakRIkaraNa/AvirBAva/aBivyakwi (Suggested by Sukhada (29-05-12))
+	   scope_noun	xolana-xarSI/viswAra/kRewra/kAryakRewra/guMjAiSa/guMjAiRa  (Suggested by Sukhada)
+	34.manifestation_noun      prawyakRIkaraNa/AvirBAva 	as	prawyakRIkaraNa/AvirBAva/aBivyakwi (Suggested by Sukhada (29-05-12))
+
+	35.Modified verb entries by removing 'nA'  Ex :abash_verb	SarmiMxA_karanA	 to	abash_verb	SarmiMxA_kara
+	36.Modified govern entry :	niyantriwa_kara		to 	niyanwriwa_kara (Suggested by Mahalaxmi 14-06-12)
+
 			
 Removed::
+-------
 	itumail@itu.ch  E-MAIL::itumail@itu.ch	(Suggested by Rajini(29-02-12))
 	organized       -::saMgaTiwa	(Suggested by Rajini(29-02-12))
 	yellow-card     noun::^	(Suggested by Rajini(29-02-12))

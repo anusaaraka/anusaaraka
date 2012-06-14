@@ -2,7 +2,7 @@ cut -f2 $1 >$1.tmp
 cut -f1 $1 >$1.tmp1
 cut -f3 $1 >$1.tmp2
 paste $1.tmp1 $1.tmp2 >$1.tmp3
-sed -n '1h;2,$H;${g;s/\n/ /g;p}'  $1.tmp | sed 's/<Sentence id="1">//g' | sed 's/<\/Sentence>//g' |sed 's/((/(position-cat-man_grp_mng\t/g' | sed -n '1h;2,$H;${g;s/))/\t)\n/g;p}' | sed -e 's/^[ ]*//g' > $1.tmp4
+sed -n '1h;2,$H;${g;s/\n/ /g;p}'  $1.tmp | sed 's/<Sentence id="1">//g' | sed 's/<\/Sentence>//g' |sed 's/((/(position-cat-man_grp_mng\t/g' | sed 's/))/\t)\n/g' | sed -e 's/^[ ]*//g' > $1.tmp4
 
 sed 's/[0-9]*[.][0-9]*.*//g' $1.tmp3 | sed 's/^xx//g' | sed 's/^yy//g' | sed 's/<Sentence id="1">.*//g' | sed 's/<\/Sentence>//g' |sed 's/^\t//g' |sed '/^$/d' > $1.tmp5
 

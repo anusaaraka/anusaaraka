@@ -23,7 +23,6 @@
 ############### NOTE:  Any changes done in this file should be updated in bin/abbr.sh file and bin/abbr_browser.sh also.
 
 */
- # include<string.h>
 SPC [^a-zA-Z0-9]
 %{
 #include<string.h>
