@@ -90,6 +90,8 @@
 		Anusaaraka_stanford.sh  sample 0 True physics
 		[ Note : sample is file name , 0 for default parse , True is to use provisional and
 	 	         physics is to define physics domain ]
+
+  (NOTE : Path for alignment README is miscellaneous/SMT/alignment/README )
 -----------------------------------------------------------------------------------------------------------------
 5. Output :
    ======
