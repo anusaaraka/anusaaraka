@@ -20,7 +20,7 @@
 
 ##############################################################################
 
-############### NOTE:  Any changes done in this file should be updated in bin/abbr.sh file and bin/abbr_browser.sh also.
+########### NOTE:  Any changes done in this file should be updated in bin/abbr.sh file and bin/replace-abbrevations.sh also.
 
 */
 SPC [^a-zA-Z0-9]
@@ -36,10 +36,12 @@ int len=0;
 ^e\.g\.$	{printf("ABBR-Example");}
 ^e\.g\.{SPC}	{printf("ABBR-Example%c",yytext[4]);}
 {SPC}e\.g\.{SPC}	{printf("%cABBR-Example%c",yytext[0],yytext[5]);}
-[0-9]%		{printf("%cSYM-Percent",yytext[0]); }
-[0-9][ ]%	{printf("%cSYM-Percent",yytext[0]); }
-$[0-9]		{printf("SYM-Dollar%c",yytext[1]);  }
-#[0-9]		{printf("SYM-Sharp%c",yytext[1]);  }
+[0-9]%		{printf("%c SYM-Percent",yytext[0]); }
+[0-9][ ]%	{printf("%c SYM-Percent",yytext[0]); }
+$[0-9]		{printf("SYM-Dollar %c",yytext[1]);  }
+#[0-9]		{printf("SYM-Sharp %c",yytext[1]);  }
+=		{printf("SYM-EqualTo");		}	
+\+		{printf("SYM-Plus");		}
 
 (L[.]T[.]|n[.]m[.]|B[.]C[.]|A[.]D[.]|B[.]C[.]E[.]|C[.]E[.]|B[.]A[.]|B[.]S[.])[ ] 	{
 							while((len=strcspn(yytext,".")) < strlen(yytext))

@@ -3548,18 +3548,26 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  68. Updated sd_ver_output
  69. Updated Log file.
 
- 14-06-12
+ 16-06-12
  ========
  1. Slight modification has been done in displaying of prepositions in firefox output.
          Ex: previously output in firefox    ::  of_physics 
              present output  will be         ::  physics_{of}
  2. Modified abbrevations.lex to handle patterns like Eq., Eqs., Figs. 
  3. Modified enclitics.lex to handle "cannot" (as stanford parser splits it into two words "can not")
- 4. Added sed command to replace 'ABBR-SingleQuote' in abbr.sh , abbr_browser.sh and PUNCT-Hyphen in abbr_browser.sh.
- 5. Modified sed command in get_group_mng.sh (replacing "))" ).
- 6. Modified meaning of 'govern' in goldendict, iit-bombay dictionary and updated following files:
+ 4. Modified sed command in get_group_mng.sh (replacing "))" ).
+ 5. Modified meaning of 'govern' in goldendict, iit-bombay dictionary and updated following files:
     	iit-bombay.dict		iit-bombay.index	iit-bombay.txt		iit-bombay.txt1
- 7. In default-iit-bombay-shabdanjali-dic.txt removed 'nA' in case of verbs. Ex: abash_verb	SarmiMxA_karanA
- 8. Updated standard_abbrevations.lex
- 9. Updated changes_in_databases.
- 10.Updated Log 
+ 6. In default-iit-bombay-shabdanjali-dic.txt removed 'nA' in case of verbs. Ex: abash_verb	SarmiMxA_karanA
+ 7. In standard_abbrevations.lex , mapped symbols like '=', '+' and modified rules for %,# and $ symbol. 
+ 8. In word.c, removed '$' and '=' from punctuation field.
+:q
+ 9. Renamed 'P_Dol' to 'S_Dol' in constituency_parse.l
+ 10. In sd_category.clp,  added a test condition in  NN_to_NNP rule to handle symbols from converting from (NN to NNP)
+ 11. Added SYM-EqualTo, SYM-PLUS and SYM-PERC in mapping-punctuations.lex
+ 12. Added code to replace abbrevations and symbols in one_sentence_per_line.txt before sending to Stanford Parser. 
+ 13. Added sed command to replace SYM-Plus ,SYM-EqualTo, ABBR-SingleQuote  in abbr.sh , abbr_browser.sh and PUNCT-Hyphen in       abbr_browser.sh.
+ 14. Renamed abbr_browser.sh to replace-abbrevations.sh and renamed it in ClipsToAnu_browser_intfc.sh
+ 15. In gen_table.pl , removed ¡-þ range in word and punct field.  
+ 16. Updated changes_in_databases.
+ 17. Updated Log 

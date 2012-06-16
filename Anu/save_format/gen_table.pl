@@ -31,16 +31,18 @@ if($#ARGV >= 2) {
 
 &init_count();
 
-#$wrd = "[a-zA-Z0-9\-¡-þ%_]+";
-$wrd = "[a-zA-Z0-9\-¡-þ_]+";
+#$wrd = "[a-zA-Z0-9\-¡-þ_]+";
+#¡-þ  is latin code 161 - 254 of iscii characters. Now these characters are not used so these are removed from word field.
+$wrd = "[a-zA-Z0-9\-_]+";  
 $start_tag = "<$wrd>";
 $end_tag = "<\\\/$wrd>";
 $number = "[+-]?[0-9]+([,.][0-9]+)?";
 $section_number = "[+-]?[0-9]+([,.][0-9]+)+";
 $hr_min = "[0-9]+[:][0-9]+";
 $hr_min_sec = "[0-9]+[:][0-9]+[:][0-9]+";
-#$punct = "[^a-zA-Z0-9\-¡-þ%_]";
-$punct = "[^a-zA-Z0-9\-¡-þ_]";
+#$punct = "[^a-zA-Z0-9\-¡-þ_]";
+#¡-þ  is latin code 161 - 254 of iscii characters. Now these characters are not used so these are removed from punct field.
+$punct = "[^a-zA-Z0-9\-_]";
 $abbr = "[A-Za-z][A-Za-z]?\\.(?:[A-Za-z]\\.)+";
 
 $para_no=1; $word_no = 1; $sent_no = 1;
