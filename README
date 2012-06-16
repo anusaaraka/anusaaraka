@@ -81,10 +81,15 @@
 	      </p>
        ii. Anusaaraka_stanford.sh  sample
 
-   User has an option to Enable/Disable provisional directory.
-    --> To Enable::	Anusaaraka_stanford.sh  sample 0 True
-    --> To Disable::	Anusaaraka_stanford.sh  sample
+   User has an option to use provisional directory.
+     To use  :	Anusaaraka_stanford.sh  sample 0 True
         NOTE::  Where '0' is default parse
+
+   To run Domain specific 
+	Ex : To run Anusaaraka for "physics" domain then
+		Anusaaraka_stanford.sh  sample 0 True physics
+		[ Note : sample is file name , 0 for default parse , True is to use provisional and
+	 	         physics is to define physics domain ]
 -----------------------------------------------------------------------------------------------------------------
 5. Output :
    ======

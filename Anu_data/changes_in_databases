@@ -343,15 +343,16 @@
 	0_jAyegA     (Suggested by Meenaji Eg: There is still a ray of hope that the missing child will be found .)
 	yA_jAwA_WA   (Meena(18.2.11) Ex: Ayodhya during ancient times was known as kaushaldesa.
 	ne_kI_jarUWawa_pada_sakawI_hE,f,p,a     kI_jarUWawa_pada_sakawI_hE
-	nA_kI_jZarUrawa_nahIM_hE  kI_jZarUrawa_nahIM_hE  for all cases (Msuggested by Sukhada 21.12.11) He need not stay here
+	nA_kI_jZarUrawa_nahIM_hE  kI_jZarUrawa_nahIM_hE  for all cases (suggested by Sukhada 21.12.11) He need not stay here
 
   Modified :
-	yA_huA_hE,m,s,u huA_hEM"  as  "yA_huA_hE,m,s,u huA_hUz (Suggested by sheetal(10-12-09))
-	for all cases (Meena 13.4.11)
-	yA_huA_ho_sakawA_hE,f,p,a	yA_huA_ho_sakawA_hE  as huI_ho_sakawI_hEM
+	1. yA_huA_hE,m,s,u huA_hEM"  as  "yA_huA_hE,m,s,u huA_hUz (Suggested by sheetal(10-12-09))
+	    for all cases (Meena 13.4.11)
+	2. yA_huA_ho_sakawA_hE,f,p,a	yA_huA_ho_sakawA_hE  as huI_ho_sakawI_hEM
 					Similarly for all the entries according to GNP suggested by Sukhada
-
-
+	3.  ne_kI_jarUrawa_nahIM_hE,f,p,a   ne_kI_jarUrawa_nahIM_hE  	as 
+	    ne_kI_jarUrawa_nahIM_hE,f,p,a   kI_jarUrawa_nahIM_hE  (Similarly for all the entries according to GNP suggested by Sukhada)
+			
   Removed  : 
 	0_sakawA_               (all the entries for 0_sakawA_         ) Suggested by sukhada(19-01-12)
 	nA_kI_himmahE           (       "          nA_kI_himmahE       )          "
@@ -541,6 +542,8 @@ Modified:
  --------
         may_need_to_0   nA_kI_jarUWawa_pada_sakawI_hE-0-0   as  may_need_to_0   ne_kI_jarUWawa_pada_sakawI_hE-ko-0 (by Meena 13-04-11)                     
 	may_need_to_0  ne_kI_jarUWawa_pada_sakawI_hE-ko-0  as  may_need_to_0 ne_kI_jarUrawa_pada_sakawI_hE-ko-0 (by Manju 26-01-12)
+	need_not_0      nA_kI_jZarUrawa_hE-ko-nahIM 	as ne_kI_jZarUrawa_hE-ko-nahIM (suggested by Chaitanya Sir 2-6-12)
+	need_to_0       nA_kI_jZarUrawa_hE-ko-0		as	ne_kI_jZarUrawa_hE-ko-0	(suggested by Chaitanya Sir 2-6-12)
 
  Added    :
  -----

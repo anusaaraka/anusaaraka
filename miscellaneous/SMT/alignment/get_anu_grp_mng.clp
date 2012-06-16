@@ -3,11 +3,24 @@
  (defglobal ?*aper_grp_fp* = ap_grp_fp)
  (defglobal ?*aper_fp* = ap_fp)
 
+ (deffunction remove_character(?char ?str ?replace_char)
+                        (bind ?new_str "")
+                        (bind ?index (str-index ?char ?str))
+                        (if (neq ?index FALSE) then
+                        (while (neq ?index FALSE)
+                        (bind ?new_str (str-cat ?new_str (sub-string 1 (- ?index 1) ?str) ?replace_char))
+                        (bind ?str (sub-string (+ ?index 1) (length ?str) ?str))
+                        (bind ?index (str-index ?char ?str))
+                        )
+                        )
+                (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
+)
+
  ;-------------------------------------------------------------------------------------------------
  (defrule del_@PropN_in_aper_out
- (declare (salience 21))
+ (declare (salience 2001))
  ?f0<-(id-Apertium_output ?id ?mng $?w)
- (test (neq (str-index "@" (implode$ (create$ ?mng))) FALSE))
+ (test (neq (str-index "@PropN" (implode$ (create$ ?mng))) FALSE))
  =>
         (retract ?f0)
         (bind ?mng (implode$ (create$ ?mng)))
@@ -15,19 +28,34 @@
         (assert (id-Apertium_output ?id ?mng $?w))
  )
  ;-------------------------------------------------------------------------------------------------
- (defrule del_underscore_in_aper_out
- (declare (salience 20))
- ?f0<-(id-Apertium_output ?id $?w ?mng $?w1)
- (test (neq (str-index "_" (implode$ (create$ ?mng))) FALSE))
+ (defrule rm_underscore_in_aper_op
+ (declare (salience 2000))
+ ?f<-(id-Apertium_output ?a_id $?a_grp)
+ (not (id-modified ?a_id))
  =>
-        (retract ?f0)
-        (bind ?mng (implode$ (create$ ?mng)))
-        (bind ?index (str-index "_" ?mng))
-	(bind ?str (string-to-field (sub-string 1 (- ?index 1) ?mng)))
-        (bind ?str1 (string-to-field (sub-string (+ ?index 1) (length ?mng) ?mng)))
-	(bind ?mng (create$ ?str ?str1))
-        (assert (id-Apertium_output ?id $?w ?mng $?w1))
+        (retract ?f)
+        (bind ?a_op "")
+        (bind ?a_op (remove_character "\\@" (implode$ (create$  $?a_grp)) " "))        
+        (bind ?a_op (remove_character "\@" (implode$ (create$  ?a_op)) " "))        
+        (bind ?a_op (remove_character "-" (implode$ (create$  ?a_op)) " "))        
+        (bind ?a_op (remove_character "_" (implode$ (create$  ?a_op)) " "))        
+        (assert (id-Apertium_output ?a_id  ?a_op))
+        (assert (id-modified ?a_id))
  )
+
+; (defrule del_underscore_in_aper_out
+; (declare (salience 20))
+; ?f0<-(id-Apertium_output ?id $?pre ?mng $?pos)
+; (test (neq (str-index "_" (implode$ (create$ ?mng))) FALSE))
+; =>
+;        (retract ?f0)
+;        (bind ?mng (implode$ (create$ ?mng)))
+;        (bind ?index (str-index "_" ?mng))
+;	(bind ?str (string-to-field (sub-string 1 (- ?index 1) ?mng)))
+;        (bind ?str1 (string-to-field (sub-string (+ ?index 1) (length ?mng) ?mng)))
+;	(bind ?mng (create$ ?str ?str1))
+;        (assert (id-Apertium_output ?id $?pre ?mng $?pos))
+; )
  ;-------------------------------------------------------------------------------------------------
  (defrule get_dummy_fact_Verb
  (declare (salience 10))
@@ -97,7 +125,9 @@
  (declare (salience 5))
  ?f<-(id-Apertium_output ?id $?mng) 
  ?f1<-(anu_id-node-word-root-tam ?h ?node $?pre ?id $?pos - ?root - ?tam)
+ (not (grouping_done ?id))
  =>
+	(assert (grouping_done ?id))
 	(retract ?f1)
         (assert (anu_id-node-word-root-tam ?h ?node $?pre $?mng $?pos - ?root - ?tam))
  )

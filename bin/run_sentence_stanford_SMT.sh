@@ -10,6 +10,7 @@
  echo "(defglobal ?*path* = $HOME_anu_test)" > global_path.clp
  echo "(defglobal ?*provisional_wsd_path* = $HOME_anu_provisional_wsd_rules)" >> global_path.clp
  echo "(Parser_used Stanford-Parser)" >> parser_type.dat
+ echo "(Domain $5)" >> domain.dat
  
  cd $HOME_anu_test/Anu_src/
  ./constituency_parse $MYPATH/$1_tmp/$2/E_constituents_info_tmp.dat  $MYPATH/$1_tmp/$2/Node_category_tmp.dat < $MYPATH/$1_tmp/$2/sd-lexicalize_info.dat
@@ -24,7 +25,7 @@
 
  cd $MYPATH/$1_tmp/$2
  sh $HOME_anu_test/miscellaneous/SMT/alignment/get_group_mng.sh shallow_parser_output.dat
- $HOME_anu_test/miscellaneous/SMT/alignment/get_tam_info.out shallow_parser_GNP_info.dat shallow_parser_root.dat < shallow_parser_output.dat > /dev/null
+ $HOME_anu_test/miscellaneous/SMT/alignment/get_tam_info.out shallow_parser_GNP_info.dat shallow_parser_root_tmp.dat < shallow_parser_output.dat > /dev/null
 
  cp $MYPATH/$1_tmp/underscore_hyphen_replace_info.txt  $MYPATH/$1_tmp/$2/underscore_hyphen_replace_info.dat
  myclips -f $HOME_anu_test/miscellaneous/SMT/alignment/run_H_gen_SMT.bat >> $1.error
@@ -34,7 +35,7 @@
  cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat sd_chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat lwg_info.dat hindi_meanings.dat GNP_agmt_info.dat id_Apertium_output.dat catastrophe.dat  >>$MYPATH/$1_tmp/$2/facts_for_eng_html
 
  cat  para_sent_id_info.dat word.dat sd_chunk.dat position.dat hindi_punctuation.dat >>$MYPATH/$1_tmp/$2/facts_for_tran_html
- cat para_sent_id_info.dat word.dat sd_chunk.dat position.dat hindi_punctuation.dat catastrophe.dat English_sentence.dat word_alignment.dat manual_hindi_sen.dat >>$MYPATH/$1_tmp/$2/facts_for_align_html
+ cat para_sent_id_info.dat word.dat sd_chunk.dat position.dat hindi_punctuation.dat catastrophe.dat English_sentence.dat word_alignment.dat manual_hindi_sen.dat confidence_level.dat >>$MYPATH/$1_tmp/$2/facts_for_align_html
 
  cat proper_nouns.dat >> $MYPATH/$1_tmp/proper_nouns_list
 
@@ -43,7 +44,6 @@
 
  sh $HOME_anu_test/bin/abbr.sh
 
-# sh $HOME_anu_test/miscellaneous/SMT/alignment/count.sh 
  cp hindi_sentence1.dat  hindi_sentence.dat
 
 # cat hin_eng_sent.dat

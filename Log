@@ -3561,13 +3561,31 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  6. In default-iit-bombay-shabdanjali-dic.txt removed 'nA' in case of verbs. Ex: abash_verb	SarmiMxA_karanA
  7. In standard_abbrevations.lex , mapped symbols like '=', '+' and modified rules for %,# and $ symbol. 
  8. In word.c, removed '$' and '=' from punctuation field.
-:q
  9. Renamed 'P_Dol' to 'S_Dol' in constituency_parse.l
  10. In sd_category.clp,  added a test condition in  NN_to_NNP rule to handle symbols from converting from (NN to NNP)
  11. Added SYM-EqualTo, SYM-PLUS and SYM-PERC in mapping-punctuations.lex
  12. Added code to replace abbrevations and symbols in one_sentence_per_line.txt before sending to Stanford Parser. 
  13. Added sed command to replace SYM-Plus ,SYM-EqualTo, ABBR-SingleQuote  in abbr.sh , abbr_browser.sh and PUNCT-Hyphen in       abbr_browser.sh.
- 14. Renamed abbr_browser.sh to replace-abbrevations.sh and renamed it in ClipsToAnu_browser_intfc.sh
+ 14. Renamed abbr_browser.sh to replace-abbrevations.sh and renamed it in 
+	ClipsToAnu_browser_intfc.sh   run_align_browser.sh
  15. In gen_table.pl , removed ¡-þ range in word and punct field.  
- 16. Updated changes_in_databases.
- 17. Updated Log 
+ 16. WSD  ::  Added : phenomena.clp  law.clp
+ 17. Modified get_conj_pada rule in sd_pada.clp
+ 18. Added the following files man_noun_lwg.clp in miscellaneous/SMT/alignment
+        change_manual_id.clp   default_word_alignment.clp     man_noun_lwg.clp
+        replace_wrd_with_id.c
+ 19. Modified run_modules_std.bat to load domain.dat file in WSD
+ 20. Modified Anusaaraka_stanford.sh  Anusaaraka_stanford_SMT.sh  run_sentence_stanford.sh run_sentence_stanford_SMT.sh files
+     to accept domain argument
+ 21. Updated the following files
+        word_alignment.clp      get_anu_grp_mng.clp  get_dbase_mng.clp  get_man_grp_mng.clp
+        get_group_mng.sh        run_H_gen_SMT.bat       run_sentence_stanford_SMT.sh
+ 22. Updated the following browser files for alignment
+        create_hin_align_html.clp       run_hin_align_html.bat
+ 23. Added smt directory in miscellaneous/Programs/removed_files
+ 24. Removed dump directory in miscellaneous/SMT
+ 25. Modified bin/utf8_wx to replace "OY" as "oY"
+ 26. Updated smt_compile.sh and phy_verified
+ 27. Updated alignment README ,anu_testing README and Provisional README
+ 28. Updated changes_in_databases.
+ 29. Updated Log

@@ -16,13 +16,22 @@
    ========================
 	cd $HOME_anu_test/miscellaneous/SMT/alignment/align_output
 	   
-	      Anusaaraka_stanford_SMT.sh <file-name> <parse_no> <sand_box_option> < manual_hin_sen> < shallow_parser_output> 
+	      Anusaaraka_stanford_SMT.sh <file-name> <parse_no> <sand_box_option> <domain_name> < manual_hin_sen> < shallow_parser_output> 
+  	Ex  :	Anusaaraka_stanford_SMT.sh phy_verified 0 false general phy_verified_hi phy_verified_hi_shallow_out
+	(Note : 0       :  default parse
+                false   :  not to use provisional directory.
+                general :  no domain
+        )
 
-  	Ex  :	Anusaaraka_stanford_SMT.sh phy_verified 0 false phy_verified_hi phy_verified_hi_shallow_out
+        Domain specific :  
+        ================   
+	To run Anusaaraka for physics domain then
 
-	(Note : parser_no "0" implies default parse
-                false is used to Disable provisional directory.
-                True  is used to Enable provisional directory.
+	Ex  :Anusaaraka_stanford_SMT.sh phy_verified 0 True physics phy_verified_hi phy_verified_hi_shallow_out
+		
+	(Note : 0       :  default parse
+                True    :  to use provisional directory.
+		physics :  physics domain
         )
 
 

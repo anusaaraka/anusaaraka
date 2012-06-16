@@ -521,7 +521,7 @@
  (head_id-prawiniXi_id-grp_ids ? ?p_id $? ?cc $?)
  (prawiniXi_id-node-category ?cc ?CC CC)
  (head_id-prawiniXi_id-grp_ids ?h ?cc ?)
- (id-word ?h and|or)
+ (id-word ?h and|or|but)
  =>
 	(print_pada_info ?h PP 0 ?h)	
 	(print_in_ctrl_fact_files  ?h)

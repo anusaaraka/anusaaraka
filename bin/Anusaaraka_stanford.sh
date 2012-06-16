@@ -110,7 +110,7 @@
  do
     echo "Hindi meaning using Stanford parser" $line
     cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
-    timeout 200 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
+    timeout 500 ./run_sentence_stanford.sh $1 $line 1 $MYPATH $4
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
 

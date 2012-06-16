@@ -438,6 +438,7 @@
   (id-word ?id ?word)
   (id-original_word ?id  ?original_wrd)
   ?mng<-(meaning_to_be_decided ?id)
+  (test (neq (numberp ?original_wrd) TRUE))
   =>
        (retract ?mng)
        (if (str-index "'s" ?word) then (bind ?word (sub-string 1 (- (str-index "'s" ?word) 1) ?word)))

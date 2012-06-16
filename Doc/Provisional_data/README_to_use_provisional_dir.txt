@@ -11,7 +11,6 @@ In order to check the existence of clp file :
 
 To Run Anusaaraka::
 -----------------
- User has an option to Enable/Disable provisional directory.
-    --> To Enable::     Anusaaraka_stanford.sh  sample 0 True
-    --> To Disable::    Anusaaraka_stanford.sh  sample
+ User has an option to Use provisional directory.
+    --> To Use  :     Anusaaraka_stanford.sh  sample 0 True
         NOTE::  Where '0' is to get default parse , sample is an input file to test.

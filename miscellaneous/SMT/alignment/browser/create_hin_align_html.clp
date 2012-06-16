@@ -25,9 +25,12 @@
 
 ;-------------------------------------------------------------------------------------------------
  
- (deffunction print_anu_eng_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?anu_eng)
- (if (= ?w_id 1) then (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf) 
-                      (printout fp "<table border=\"1\"><tr><td>" crlf))
+ (deffunction print_anu_eng_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?anu_eng $?eng_sen)
+ (if (= ?w_id 1) then ;(printout fp "<tr><td>"(implode$ $?eng_sen)"</td></tr>" crlf)
+                      (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf) 
+                      (printout fp "<table border=\"1\">" crlf)
+ 		      (printout fp "<tr><td>"(implode$ $?eng_sen)"</td></tr><tr><td>" crlf)
+ )
                       
  (printout fp "<table cellspacing=\"0\">"crlf"<tr class=\"row1\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".A</td>"))
@@ -60,7 +63,7 @@
  (printout fp "<tr class=\"row4\">" crlf )
  (if (= ?w_id 1) then
  (printout fp "<td class=\"number\">"?p_id"."?s_id".D</td>"))
- (printout fp "<td class=\""?chnk_fr_htm"\"> " - " </td>" crlf "</tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> " ?confd_lvl " </td>" crlf "</tr>" crlf)
  )
 
 ;-------------------------------------------------------------------------------------------------
@@ -78,10 +81,11 @@
 
  (defrule create_dummy_confd_lvl
  (declare (salience 6000))
- (id-word ?id ?word)
+ (manual_id-word ?id ?word)
  (not (id-confidence_level ?id ?confd_lvl))
  =>
- 	(assert (id-confidence_level ?id -)))
+ 	(assert (id-confidence_level ?id -))
+ )
 
  (defrule create_dummy_eng_sen
  (declare (salience 6000))
@@ -97,7 +101,7 @@
 
  (defrule replace_spc_with_underscore
  (declare (salience 6000))
- ?f<-(anu_id-anu_mng-sep-man_id-man_mng ?id $?anu_grp_mng - ?id $?man_grp_mng)
+ ?f<-(anu_id-anu_mng-sep-man_id-man_mng ?id $?anu_grp_mng - ?id1 $?man_grp_mng)
  (test (numberp ?id))
  =>
  (retract ?f)
@@ -117,7 +121,7 @@
                  (bind ?man_gp_mng (str-cat  ?man_gp_mng "_" ?str))))
  (if (= (length $?man_grp_mng) 0) then (bind ?man_gp_mng "-"))
  (if (= (length $?anu_grp_mng) 0) then (bind ?anu_gp_mng "-"))
- (assert (anu_id-anu_mng-man_id-man_mng ?id ?anu_gp_mng ?id ?man_gp_mng))
+ (assert (anu_id-anu_mng-man_id-man_mng ?id ?anu_gp_mng ?id1 ?man_gp_mng))
  )
 
  ;convert Apertium_output wx notation to utf8.
@@ -211,10 +215,11 @@
  (test (member$ ?id1 $?eng_ids))
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
  (test (member$ (nth$ (length $?eng_ids) $?eng_ids) $?ids))
- (id-confidence_level ?id ?confd_lvl)
+ (id-confidence_level ?mid ?confd_lvl)
+ (Eng_sen $?eng_sen)
  =>
          (retract ?f)
-         (print_anu_eng_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng)
+         (print_anu_eng_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng $?eng_sen)
          (print_anu_tran_row  ?p_id ?s_id ?id ?chnk_fr_htm ?hin_mng)
          (print_man_tran_row  ?p_id ?s_id ?id ?chnk_fr_htm ?man_mng)
          (print_confidence_lvl_row ?p_id ?s_id ?id ?chnk_fr_htm ?confd_lvl)
@@ -229,13 +234,14 @@
  (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?eng_ids ?id1 ?eng)
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
  (test (member$ ?id1 $?ids))
- (id-confidence_level ?id ?confd_lvl)
+; (id-confidence_level ?id1 ?confd_lvl)
+ (Eng_sen $?eng_sen)
  =>
          (retract ?f)
-         (print_anu_eng_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng)
+         (print_anu_eng_row  ?p_id ?s_id ?id ?chnk_fr_htm ?eng $?eng_sen)
          (print_anu_tran_row  ?p_id ?s_id ?id ?chnk_fr_htm ?hin)
          (print_man_tran_row  ?p_id ?s_id ?id ?chnk_fr_htm -)
-         (print_confidence_lvl_row ?p_id ?s_id ?id ?chnk_fr_htm ?confd_lvl)
+         (print_confidence_lvl_row ?p_id ?s_id ?id ?chnk_fr_htm -)
          (print_suggestion_row  ?p_id ?s_id ?id ?chnk_fr_htm -)
          (assert (id-len (+ ?id 1) (- ?len 1)))
  )
@@ -249,13 +255,14 @@
  ?f<-(id-len ?id ?len)
  (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?eng)
  (test (!= ?len 0))
- (id-confidence_level ?id ?confd_lvl)
+; (id-confidence_level ?id ?confd_lvl)
+ (Eng_sen $?eng_sen)
  =>
          (retract ?f)
-         (print_anu_eng_row  ?p_id ?s_id ?id U ?eng)
+         (print_anu_eng_row  ?p_id ?s_id ?id U ?eng $?eng_sen)
          (print_anu_tran_row  ?p_id ?s_id ?id U ?hin)
          (print_man_tran_row  ?p_id ?s_id ?id U -)
-         (print_confidence_lvl_row ?p_id ?s_id ?id U ?confd_lvl)
+         (print_confidence_lvl_row ?p_id ?s_id ?id U -)
          (print_suggestion_row  ?p_id ?s_id ?id U -)
          (assert (id-len (+ ?id 1) (- ?len 1)))
  )
@@ -266,9 +273,10 @@
  (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
  ?f<-(id-len ?id ?len)
  (test (!= ?len 0))
+ (Eng_sen $?eng_sen)
  =>
          (retract ?f)
-         (print_anu_eng_row  ?p_id ?s_id ?id U - )
+         (print_anu_eng_row  ?p_id ?s_id ?id U - $?eng_sen)
          (print_anu_tran_row  ?p_id ?s_id ?id U - )
          (print_man_tran_row  ?p_id ?s_id ?id U - )
          (print_confidence_lvl_row ?p_id ?s_id ?id U -)

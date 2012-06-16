@@ -855,18 +855,18 @@ ne_kI_jarUrawa_hE,m,s,a	ne_kI_jarUrawa_hE
 ne_kI_jarUrawa_hE,m,s,m	ne_kI_jarUrawa_hE
 ne_kI_jarUrawa_hE,m,s,u	ne_kI_jarUrawa_hE
 
-ne_kI_jZarUrawa_nahIM_hE,f,p,a	ne_kI_jZarUrawa_nahIM_hE
-ne_kI_jZarUrawa_nahIM_hE,f,p,m	ne_kI_jZarUrawa_nahIM_hE
-ne_kI_jZarUrawa_nahIM_hE,f,p,u	ne_kI_jZarUrawa_nahIM_hE
-ne_kI_jZarUrawa_nahIM_hE,f,s,a	ne_kI_jZarUrawa_nahIM_hE
-ne_kI_jZarUrawa_nahIM_hE,f,s,m	ne_kI_jZarUrawa_nahIM_hE
-ne_kI_jZarUrawa_nahIM_hE,f,s,u	ne_kI_jZarUrawa_nahIM_hE
-ne_kI_jZarUrawa_nahIM_hE,m,p,a	ne_kI_jZarUrawa_nahIM_hE
-ne_kI_jZarUrawa_nahIM_hE,m,p,m	ne_kI_jZarUrawa_nahIM_hE
-ne_kI_jZarUrawa_nahIM_hE,m,p,u	ne_kI_jZarUrawa_nahIM_hE
-ne_kI_jZarUrawa_nahIM_hE,m,s,a	ne_kI_jZarUrawa_nahIM_hE
-ne_kI_jZarUrawa_nahIM_hE,m,s,m	ne_kI_jZarUrawa_nahIM_hE
-ne_kI_jZarUrawa_nahIM_hE,m,s,u	ne_kI_jZarUrawa_nahIM_hE
+ne_kI_jarUrawa_nahIM_hE,f,p,a	kI_jarUrawa_nahIM_hE
+ne_kI_jarUrawa_nahIM_hE,f,p,m	kI_jarUrawa_nahIM_hE
+ne_kI_jarUrawa_nahIM_hE,f,p,u	kI_jarUrawa_nahIM_hE
+ne_kI_jarUrawa_nahIM_hE,f,s,a	kI_jarUrawa_nahIM_hE
+ne_kI_jarUrawa_nahIM_hE,f,s,m	kI_jarUrawa_nahIM_hE
+ne_kI_jarUrawa_nahIM_hE,f,s,u	kI_jarUrawa_nahIM_hE
+ne_kI_jarUrawa_nahIM_hE,m,p,a	kI_jarUrawa_nahIM_hE
+ne_kI_jarUrawa_nahIM_hE,m,p,m	kI_jarUrawa_nahIM_hE
+ne_kI_jarUrawa_nahIM_hE,m,p,u	kI_jarUrawa_nahIM_hE
+ne_kI_jarUrawa_nahIM_hE,m,s,a	kI_jarUrawa_nahIM_hE
+ne_kI_jarUrawa_nahIM_hE,m,s,m	kI_jarUrawa_nahIM_hE
+ne_kI_jarUrawa_nahIM_hE,m,s,u	kI_jarUrawa_nahIM_hE
 
 ne_kI_jarUrawa_pada_sakawI_hE,f,p,a	ne_kI_jarUrawa_pada_sakawI_hE
 ne_kI_jarUrawa_pada_sakawI_hE,f,p,m	ne_kI_jarUrawa_pada_sakawI_hE
