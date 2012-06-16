@@ -4,6 +4,8 @@ rm $HOME_anu_test/Anu_databases/provisional_PropN_dic.gdbm
 rm $HOME_anu_test/Anu_databases/provisional_word_dic.gdbm
 rm $HOME_anu_test/Anu_databases/provisional_root_dic.gdbm
 rm $HOME_anu_test/Anu_databases/Science-dictionary.gdbm
+rm $HOME_anu_test/Anu_databases/hindi_tam_dictionary.gdbm
+rm $HOME_anu_test/Anu_databases/preposition_dictionary.gdbm
 
 
 cd $HOME_anu_test/Anu_data
@@ -19,6 +21,8 @@ echo "Creating Science-dictionary"
 ./create-gdbm.pl $HOME_anu_test/Anu_databases/Science-dictionary.gdbm < $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries/Science-dictionary.txt
 echo "Creating hindi_tam_dictionary"
 ./create-gdbm.pl $HOME_anu_test/Anu_databases/hindi_tam_dictionary.gdbm < $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries/hindi_tam_dictionary.txt
+echo "Creating preposition_dictionary"
+./create-gdbm.pl $HOME_anu_test/Anu_databases/preposition_dictionary.gdbm < $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries/preposition_dictionary.txt
 
 cd $HOME_anu_test/miscellaneous/SMT/alignment
 echo "generating out file"
