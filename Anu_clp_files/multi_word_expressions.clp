@@ -62,7 +62,7 @@
  (declare (salience 100))
  ?f<-(ids-cmp_mng-head-cat-mng_typ-priority $?grp_ids ?mng ?h_id ?cat ?mng_typ ?rank1)
  ?f1<-(ids-cmp_mng-head-cat-mng_typ-priority $?grp_ids ?mng1 ?h_id1 ?cat1 ?mng_typ1 ?rank2)
- (test (neq ?mng ?mng1))
+ (test (neq ?rank1 ?rank2))
  =>
   (if (< ?rank1 ?rank2) then
   (retract ?f1)

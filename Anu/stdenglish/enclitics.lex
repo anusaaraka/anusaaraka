@@ -133,6 +133,7 @@
 o'clock		{printf("%s",yytext);}
 Hon'ble		{ printf("Honourable");	}
 [a-zA-Z]'[a-zA-Z]	{printf("%cQUOTE%c",yytext[0],yytext[2]);}
+[cC]annot	{printf("%can not",yytext[0]);}
 %%
 main()
 {

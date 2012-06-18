@@ -4627,7 +4627,7 @@ overwork	awyaXika_kArya_yA_pariSrama
 owe	qNI_ho
 owing	xeya
 owing_to	hewu_se
-own	apa
+own	apanA
 own_brand	nAma_aMkiwa_ho
 own_goal	apanI_waraPa_gola_dAla
 owner-_occupied	mAlika_kA_raha
@@ -9305,7 +9305,7 @@ brisket	jAnavara_kI_CAwI
 briskly	PurwI_se
 brittle	BaMgura
 broaden	cOdA_kara
-broadly	viswqwa_waraha_se
+broadly	mote_wOra_para
 broadside	nOkA_kA_eka_pakRa
 brocade	brokeda
 broker	xalAla

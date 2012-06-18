@@ -7,8 +7,8 @@
 #define MAX_NO_OF_LINES 500 //Increased to 500 from 200 by Roja(14-06-11) for a big sentence from "calculate" file in SENSEVAL TRAIN
 #define INPUT_LENGTH MAX_LINE_LENGTH*MAX_NO_OF_LINES
 
-char punct_short[100]={',','.',';',':','\'','"','?','!','(',')','$','='};
-char punct_long[100][100]={"PUNCT-Comma","PUNCT-Dot","PUNCT-Semicolon","PUNCT-Colon","PUNCT-SingleQuote","PUNCT-DoubleQuote","PUNCT-QuestionMark","PUNCT-Exclamation","PUNCT-OpenParen","PUNCT-ClosedParen","SYM-Dollar","PUNCT-EqualTo"};
+char punct_short[100]={',','.',';',':','\'','"','?','!','(',')'};
+char punct_long[100][100]={"PUNCT-Comma","PUNCT-Dot","PUNCT-Semicolon","PUNCT-Colon","PUNCT-SingleQuote","PUNCT-DoubleQuote","PUNCT-QuestionMark","PUNCT-Exclamation","PUNCT-OpenParen","PUNCT-ClosedParen"};
 
 char *get_punct_full(char *ps)
 {

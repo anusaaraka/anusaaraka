@@ -299,3 +299,19 @@
         (modify ?f0 (vibakthi kA))
  )
 ;------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (23-05-12)
+;Many fat boys, a tall girl and a small child ate fruits. 
+(defrule modify_and_vib
+(declare (salience 400))
+?f0<-(pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib))
+(test (neq ?vib 0))
+(id-original_word ?pada_id and|or)
+(conj_head-left_head-right_head ?pada_id ? ?rh)
+?f1<-(pada_info (group_head_id ?rh)(vibakthi 0))
+=>
+	(retract ?f0 ?f1)
+	(modify ?f0 (vibakthi 0))
+	(modify ?f1 (vibakthi ?vib))
+)
+;------------------------------------------------------------------------------------------
+

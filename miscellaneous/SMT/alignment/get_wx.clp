@@ -1,12 +1,22 @@
  (defrule delete@in_hmng
  (declare (salience 20))
+ ?f0<-(id-HM-source ?id ?mng transliterate_mng)
+ (test (neq (str-index "@" (implode$ (create$ ?mng))) FALSE))
+ =>
+        (retract ?f0)
+        (bind ?mng (implode$ (create$ ?mng)))
+	(bind ?mng (string-to-field (sub-string 8 (- (length ?mng) 6) ?mng)))
+        (assert (id-HM-source ?id ?mng Original_word))
+ )
+ ;---------------------------------------------------------------------------------------------
+ (defrule delete@in_hmng1
+ (declare (salience 20))
  ?f0<-(id-HM-source ?id ?mng Original_word)
  (test (neq (str-index "@" (implode$ (create$ ?mng))) FALSE))
  =>
         (retract ?f0)
         (bind ?mng (implode$ (create$ ?mng)))
-        (bind ?index (str-index "@" ?mng))
-        (bind ?mng (string-to-field (sub-string (+ ?index 1) (length ?mng) ?mng)))
+        (bind ?mng (string-to-field (sub-string 2 (length ?mng) ?mng)))
         (assert (id-HM-source ?id ?mng Original_word))
  )
  ;---------------------------------------------------------------------------------------------
@@ -46,3 +56,4 @@
        (close fp1)	
  )
  ;---------------------------------------------------------------------------------------------
+

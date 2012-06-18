@@ -20,62 +20,14 @@
 (printout ?*order_debug-file* "(debug_info  "?*count*" Removing auxillary verbs from the sentence)" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-(defrule replace_aux_with_head_VP
-(declare (salience 1500))
-?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot ?VB $?daut ?VP)
-?f1<-(Head-Level-Mother-Daughters ? ? ?VP $?daut1 ?VP1)
-(Node-Category  ?Mot    VP|SQ)
-(Node-Category  ?VB     ?aux&MD|VB|VBN|VBZ|VBD|VBP|VBG|RB|TO)
-(Node-Category  ?VP     VP)
-(Node-Category  ?VP1    ?CAT)
-?f2<-(Head-Level-Mother-Daughters ?h ?l ?VB $?)
-(not (Mother  ?Mot));Is that the film in which he kills his mother? 
-=>
-        (bind ?*count* (+ ?*count* 1))
-        (if (eq ?CAT VP) then
-	(retract ?f ?f1)
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut $?daut1 ?VP1))
-        (printout ?*order_debug-file* "(rule_name - replace_aux_with_head_VP  " ?*count* " " crlf 
-                          "             Before    - "?head" "?lvl"  "?Mot"  "?VB" "(implode$ $?daut)" "?VP"  "crlf
-                          "             After     - "?head" "?lvl"  "?Mot"  "(implode$ $?daut)"  "(implode$ $?daut1)" "?VP1 ")" crlf)
-        else
-	(if (eq ?aux RB) then ;Tours to coorg as a lesser-known hill station in india is all set to razzle-dazzle a wary soul when he embarks on a tour to coorg, a lovely hill station in india.
-		(if (eq ?h not) then
-			(assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP))
-			(retract ?f)
-			(printout ?*order_debug-file* "(rule_name - replace_aux_with_head_VP " ?*count* " "crlf
-                          "             Before    - "?head" "?lvl"  "?Mot"  "?VB" "(implode$ $?daut)" "?VP"  "crlf
-                          "             After     - "?head" "?lvl"  "?Mot"  "(implode$ $?daut)" "?VP ")"crlf)
-		)
-	else 
-		(retract ?f)
-	        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut ?VP))
-        	(printout ?*order_debug-file* "(rule_name - replace_aux_with_head_VP " ?*count* " "crlf
-                          "             Before    - "?head" "?lvl"  "?Mot"  "?VB" "(implode$ $?daut)" "?VP"  "crlf
-                          "             After     - "?head" "?lvl"  "?Mot"  "(implode$ $?daut)" "?VP ")"crlf)
-        )
-	)
-)
-;-----------------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (23-02-12)
-;Broken windows need to be replaced.A fat boy had to do various exercises.
-(defrule replace_aux_with_head_VP1
-(declare (salience 1500))
-?f<-(Head-Level-Mother-Daughters ?h&need|are|be|have|had|has ?lvl ?VP ?VB ?S)
-(Node-Category  ?VP    VP)
-(Node-Category  ?VB    VBP|VBD|VBG|VBZ)
-(Node-Category  ?S    S)
-=>
-	(retract ?f)
-	(assert (Head-Level-Mother-Daughters ?h ?lvl ?VP ?S))
- )
-;-----------------------------------------------------------------------------------------------------------------------
- ;In Kashmir, fishing is a good business and the ideal season is from April to October. Added by Sukhada (12-9-11)
+;In Kashmir, fishing is a good business and the ideal season is from April to October. Added by Sukhada (12-9-11)
 (defrule from_to_PPs
 (declare (salience 1450))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1 ?PP1 ?PP2 $?d2)
-(Head-Level-Mother-Daughters from ? ?PP1 $?d3)
-(Head-Level-Mother-Daughters to ? ?PP2 $?d4)
+(Head-Level-Mother-Daughters ?from ? ?PP1 $?d3)
+(Head-Level-Mother-Daughters ?to ? ?PP2 $?d4)
+(id-original_word ?from from)
+(id-original_word ?to to)
 (Node-Category  ?PP1    PP)
 (Node-Category  ?PP2    PP)
 (not (Mother  ?PP1))
@@ -102,7 +54,8 @@
 (Head-Level-Mother-Daughters ?h1 ? ?NP1 $?d3 )
 (id-original_word ?n1 ?h1) 
 (id-cat_coarse ?n1 ?num1) 
-(Head-Level-Mother-Daughters to ? ?PP2 $?d4 ?np2)
+(Head-Level-Mother-Daughters ?to_id ? ?PP2 $?d4 ?np2)
+(id-original_word ?to_id to)
 (Head-Level-Mother-Daughters ?h2 ? ?np2 $?d5)
 (id-original_word ?n2 ?h2)
 (id-cat_coarse ?n2 ?num2)
@@ -164,7 +117,7 @@
 (Node-Category  ?VP   VP)
 (Node-Category  ?VP1  VP)
 (Node-Category  ?ADVP ADVP)
-(test (neq ?h ?h1))
+;(test (neq ?h ?h1))
 =>
 	(bind ?*count* (+ ?*count* 1))
 	(retract ?f0 ?f1)
@@ -218,7 +171,6 @@
 (Head-Level-Mother-Daughters ?word ? ?VP ?id)
 (Node-Category  ?Mot  VP)
 (Node-Category  ?VP  VP)
-(or (id-original_word ?id ?word)(id-root ?id ?word))
 (id-cat_coarse ?id verb)
 (not (Mother  ?Mot))
 =>
@@ -236,7 +188,8 @@
 (defrule dont_rev_if_S_goesto_ADVP_and_VP
 (declare (salience 1400))
 ?f0<-(Head-Level-Mother-Daughters ?head ?l ?Mot ?ADVP ?VP)
-(Head-Level-Mother-Daughters also ? ?ADVP $?)
+(Head-Level-Mother-Daughters ?also_id ? ?ADVP $?)
+(id-original_word ?also_id also) 
 (Node-Category  ?Mot S)
 (Node-Category  ?ADVP ADVP)
 (Node-Category  ?VP VP)
@@ -255,7 +208,8 @@
 ;They accused him of the crime.
 (defrule dont_rev_if_VP_head_accused
 (declare (salience 1400))
-?f0<-(Head-Level-Mother-Daughters ?head&accused ?l ?Mot ?ADVP $?d ?VP)
+?f0<-(Head-Level-Mother-Daughters ?head ?l ?Mot ?ADVP $?d ?VP)
+(id-original_word ?head accused)
 (Node-Category  ?Mot VP)
 (not (Mother  ?Mot))
 =>
@@ -300,7 +254,8 @@
 (not (Node-Category  ?d CC));I ate fruits, drank milk and slept. 
 (not (Mother  ?Mot))
 (not (Daughters_replaced  ?Mot))
-(test (and (neq ?head think) (neq ?head thought) (neq ?head thinks) (neq ?head thinking) (neq ?head matter) (neq ?head wonder) (neq ?head say) (neq ?head said) (neq ?head says) (neq ?head saying) (neq ?head disputed) (neq ?head suppose) (neq ?head supposed) (neq ?head supposes) (neq ?head supposing) (neq ?head commented) (neq ?head figured) (neq ?head pointed))) ;Do you think we should go to the party?  He disputed that our program was superior.
+(id-original_word ?head ?wrd)
+(test (eq (member$ ?wrd (create$ think thought thinks thinking matter wonder say said says saying disputed suppose supposed supposes supposing commented figured pointed)) FALSE));Do you think we should go to the party?  He disputed that our program was superior.
 =>
         (bind ?*count* (+ ?*count* 1))	
         (retract ?f0)
@@ -319,12 +274,9 @@
 (declare (salience 940))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d1 ?d $?rest)
 (Node-Category  ?Mot  VP)
-(or (id-original_word ?kri ?head)(id-root ?kri ?head)) ;I gave Rama a book.The fact that he smiled at me gives me hope.
-(and (prep_id-relation-anu_ids ? kriyA-object_2 ?kri ?obj2)(prep_id-relation-anu_ids ? kriyA-object_1 ?kri ?obj1))
-(or (id-original_word ?obj2 ?wrd)(id-root ?obj2 ?wrd))
-(or (id-original_word ?obj1 ?h)(id-root ?obj1 ?h))
-(Head-Level-Mother-Daughters  ?wrd ? ?d1  $?modf  ?y )
-(Head-Level-Mother-Daughters  ?h ? ?d  $?mod  ?x )
+(and (prep_id-relation-anu_ids ? kriyA-object_2 ?head ?obj2)(prep_id-relation-anu_ids ? kriyA-object_1 ?head ?obj1))
+(Head-Level-Mother-Daughters  ?obj2 ? ?d1  $?modf  ?y )
+(Head-Level-Mother-Daughters  ?obj1 ? ?d  $?mod  ?x )
 (not (Mother  ?d1))
 (not (Mother ?d))
 (not (prep_id-relation-anu_ids ? viSeRya-jo_samAnAXikaraNa  ?obj2 ?));I will show you the house which I bought.
@@ -364,7 +316,8 @@
 (defrule rev_ADVP_goesto_RB
 (declare (salience 900))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut $?d1 ?d $?d2)
-(Head-Level-Mother-Daughters never|certainly|apparently|clearly|really  ? ?d $?)
+(Head-Level-Mother-Daughters ?head_id ? ?d $?)
+(id-original_word ?head_id ?wrd&never|certainly|apparently|clearly|really)
 (Node-Category  ?d  ADVP)
 (Node-Category  ?Mot  VP)
 (not (Mother ?d))
@@ -489,7 +442,8 @@
 (defrule move_negation_before_verb
 (declare (salience 900))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d ?ADVP $?d1) 
-(Head-Level-Mother-Daughters never ? ?ADVP $?)
+(Head-Level-Mother-Daughters ?never ? ?ADVP $?)
+(id-original_word ?never never)
 (Head-Level-Mother-Daughters ?h ?l ?mot $?d2 $?d3 ?VP)
 ?f1<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VP $?d4 ?V $?d5)
 (Node-Category ?VP VP)
@@ -517,7 +471,8 @@
 (declare (salience 900))
 ?f0<-(Head-Level-Mother-Daughters ?h ?l ?Mot ?RB $?d)
 (Node-Category ?Mot NP)
-(Head-Level-Mother-Daughters even ? ?RB ?id)
+(Head-Level-Mother-Daughters ?head ? ?RB ?id)
+(id-original_word ?head even)
 (not (Mother ?Mot))
 =>
 	(bind ?*count* (+ ?*count* 1))
@@ -535,14 +490,14 @@
 ;PP: VP: Information International said it believes that the complaints, filed in federal court in Georgia, are without merit.
 (defrule reverse-NP-Daughters
 (declare (salience 800))
-?f0<-(Head-Level-Mother-Daughters ?head&~lot&~most&~number&~spot&~kinds ?lvl ?mot ?NP ?PP $?d)
+?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot ?NP ?PP $?d)
+(id-original_word ?head ?wrd&~lot&~most&~number&~spot&~kinds)
 (Node-Category  ?mot  NP)
 (Node-Category  ?NP  NP)
 (Node-Category  ?PP PP|VP)
 (not (Mother  ?mot))
 ;And I think a lot of people will harp on program trading. This room would look big for a spot of paint.
 ;Chamba has a number of temples, palaces and stylized buildings
-
 =>      
         (bind ?*count* (+ ?*count* 1))
 	(retract ?f0)
@@ -582,7 +537,8 @@
 (Node-Category ?prep IN)
 (not (prep_id-relation-anu_ids ? kriyA-conjunction  ? ?id));It was so dark that I could not see anything.
 (not (Mother  ?SBAR))
-(test (and (neq ?head that)(neq ?head because) (neq ?head as)(neq ?head though)(neq ?head although)(neq ?head If)(neq ?head unless))); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy. Some grammars are better than others, as we have proved. 
+(id-original_word ?head ?wrd)
+(test (eq (member$ ?wrd (create$ that because as though although If unless)) FALSE)); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy. Some grammars are better than others, as we have proved.
 =>
         (bind ?*count* (+ ?*count* 1))
         (retract ?f0)

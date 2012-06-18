@@ -11,6 +11,8 @@
 (load-facts ?*mypath*)
 (bind ?mypath1 (str-cat ?*filename* "_align_tmp.html"))
 (open ?mypath1 fp "w")
+;(watch facts)
+;(watch rules)
 ;(watch all)
 (run)
 (close fp)

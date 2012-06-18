@@ -604,3 +604,5 @@ Isochoric	samaAyawanika
 Conduction	saMcaraNa
 Convection	saMvahana
 Radiation	vikiraNa
+Maxwell	mEksavela
+

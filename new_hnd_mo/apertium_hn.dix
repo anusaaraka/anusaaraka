@@ -3766,12 +3766,13 @@
 <e lm="aBAgA"><i>aBAg</i><par n="regular__adj-noun"/></e>
 <!--<e lm="aBAgA"><i>aBAg</i><par n="regular__adj-noun"/></e>
 <e lm="aBAgA"><i>aBAg</i><par n="ladak/A__n"/></e>-->
-<e lm="aBAgI"><i>aBAgI</i><par n="regular__adj-noun"/></e>
+<!--<e lm="aBAgI"><i>aBAgI</i><par n="regular__adj-noun"/></e> --> 
+<e lm="aBAgI"><i>aBAg</i><par n="regular__adj-noun"/></e>
 <e lm="aBagna"><i>aBagna</i><par n="amIra/__adj"/></e>
 <e lm="aBAgya"><i>aBAgya</i><par n="kroXa/__n"/></e>
 <e lm="abAhya"><i>abAhya</i><par n="amIra/__adj"/></e>
 <e lm="Aba"><i>Aba</i><par n="BIda/__n"/></e>
-<e lm="ABA"><i>AB</i><par n="regular__adj-noun"/></e>
+<e lm="ABA"><i>AB</i><par n="gudiy/A__n"/></e>
 <e lm="AbakArI"><i>AbakArI</i><par n="AjAxI/__n"/></e>
 <e lm="aBakRa"><i>aBakRa</i><par n="kroXa/__n"/></e>
 <e lm="aBakRaNa"><i>aBakRaNa</i><par n="kroXa/__n"/></e>
@@ -3859,7 +3860,7 @@
 <e lm="aBikoSa"><i>aBikoSa</i><par n="kroXa/__n"/></e>
 <e lm="aBikramaNa"><i>aBikramaNa</i><par n="kroXa/__n"/></e>
 <e lm="aBikraMxa"><i>aBikraMxa</i><par n="kroXa/__n"/></e>
-<e lm="aBikriyA"><i>aBikriy</i><par n="regular__adj-noun"/></e>
+<e lm="aBikriyA"><i>aBikriy</i><par n="gudiy/A__n"/></e>
 <e lm="aBiKyAna"><i>aBiKyAna</i><par n="kroXa/__n"/></e>
 <e lm="aBiKyAwa"><i>aBiKyAwa</i><par n="amIra/__adj"/></e>
 <e lm="aBilakRiwa"><i>aBilakRiwa</i><par n="amIra/__adj"/></e>
@@ -3984,7 +3985,7 @@
 <e lm="aBogI"><i>aBogI</i><par n="ajAwI/__adj"/></e>
 <e lm="aBogya"><i>aBogya</i><par n="amIra/__adj"/></e>
 <e lm="aBojya"><i>aBojya</i><par n="kroXa/__n"/></e>
-<e lm="aBokwA"><i>aBokw</i><par n="regular__adj-noun"/></e>
+<e lm="aBokwA"><i>aBokw</i><par n="rAjA/__n"/></e>
 <e lm="aBokwavya"><i>aBokwavya</i><par n="amIra/__adj"/></e>
 <e lm="abola"><i>abola</i><par n="amIra/__adj"/></e>
 <e lm="aBOwika"><i>aBOwika</i><par n="amIra/__adj"/></e>
@@ -4862,7 +4863,7 @@
 <e lm="AlIximAga"><i>AlIximAga</i><par n="amIra/__adj"/></e>
 <e lm="allAha"><i>allAha</i><par n="kroXa/__n"/></e>
 <e lm="allAhawAlA"><i>allAhawAlA</i><par n="viXAwA/__n"/></e>
-<e lm="allA"><i>all</i><par n="regular__adj-noun"/></e>
+<e lm="allA"><i>all</i><par n="gudiy/A__n"/></e>
 <e lm="Alocaka"><i>Alocak</i><par n="Gar/a__n"/></e>
 <e lm="alocana"><i>alocana</i><par n="amIra/__adj"/></e>
 <e lm="AlocanA"><i>AlocanA</i><par n="ASA/__n"/></e>
@@ -5122,7 +5123,7 @@
 <e lm="amlavarga"><i>amlavarga</i><par n="kroXa/__n"/></e>
 <e lm="amlavAtikA"><i>amlavAtikA</i><par n="ASA/__n"/></e>
 <e lm="amlavqkRa"><i>amlavqkR</i><par n="Gar/a__n"/></e>
-<e lm="amlawA"><i>amlaw</i><par n="regular__adj-noun"/></e>
+<e lm="amlawA"><i>amlaw</i><par n="gudiy/A__n"/></e>
 <e lm="amlawaru"><i>amlawaru</i><par n="Sawru/__n"/></e>
 <e lm="amlIya"><i>amlIy</i><par n="Gar/a__n"/></e>
 <e lm="ammAz"><i>ammAz</i><par n="mAz/__n"/></e>
@@ -5640,7 +5641,7 @@
 <e lm="anISvara"><i>anISvara</i><par n="amIra/__adj"/></e>
 <e lm="anivArya"><i>anivArya</i><par n="amIra/__adj"/></e>
 <e lm="anivArya"><i>anivArya</i><par n="kroXa/__n"/></e>
-<e lm="anivAryawA"><i>anivAryaw</i><par n="regular__adj-noun"/></e>
+<e lm="anivAryawA"><i>anivAryaw</i><par n="gudiy/A__n"/></e>
 <e lm="AnIwa"><i>AnIwa</i><par n="amIra/__adj"/></e>
 <e lm="anIwa"><i>anIwa</i><par n="BIda/__n"/></e>
 <e lm="aniwya"><i>aniwya</i><par n="amIra/__adj"/></e>
@@ -5754,11 +5755,11 @@
 <e lm="anukramaNI"><i>anukramaN</i><par n="ladak/I__n"/></e>
 <e lm="anukramaNikA"><i>anukramaNikA</i><par n="ASA/__n"/></e>
 <e lm="Anukramika"><i>Anukramika</i><par n="amIra/__adj"/></e>
-<e lm="anukriyA"><i>anukriy</i><par n="regular__adj-noun"/></e>
+<e lm="anukriyA"><i>anukriy</i><par n="gudiy/A__n"/></e>
 <e lm="anukUla"><i>anukUla</i><par n="amIra/__adj"/></e>
 <e lm="anukUlA"><i>anukUlA</i><par n="IrRyA/__n"/></e>
 <e lm="anukUlana"><i>anukUlana</i><par n="kroXa/__n"/></e>
-<e lm="anukUlawA"><i>anukUlaw</i><par n="regular__adj-noun"/></e>
+<e lm="anukUlawA"><i>anukUlaw</i><par n="gudiy/A__n"/></e>
 <e lm="AnukUlika"><i>AnukUlika</i><par n="amIra/__adj"/></e>
 <e lm="anukUlIkaraNa"><i>anukUlIkaraNa</i><par n="kroXa/__n"/></e>
 <e lm="anukUliwa"><i>anukUliwa</i><par n="amIra/__adj"/></e>
@@ -6466,7 +6467,7 @@
 <e lm="araxalI"><i>araxal</i><par n="Axam/I__n"/></e>
 <e lm="arAXanA"><i>arAXanA</i><par n="IrRyA/__n"/></e>
 <e lm="ArAXana"><i>ArAXana</i><par n="kroXa/__n"/></e>
-<e lm="ArAXanA"><i>ArAXan</i><par n="regular__adj-noun"/></e>
+<e lm="ArAXanA"><i>ArAXan</i><par n="gudiy/A__n"/></e>
 <e lm="ArAXanIya"><i>ArAXanIya</i><par n="amIra/__adj"/></e>
 <e lm="araxAsa"><i>araxAs</i><par n="rAw/a__n"/></e>
 <e lm="ArAXiwa"><i>ArAXiwa</i><par n="amIra/__adj"/></e>
@@ -6484,7 +6485,7 @@
 <e lm="areNu"><i>areNu</i><par n="anek/a__adj"/></e>
 <e lm="arGabqxXi"><i>arGabqxXi</i><par n="SAnwi/__n"/></e>
 <e lm="arGa"><i>arGa</i><par n="kroXa/__n"/></e>
-<e lm="arGA"><i>arG</i><par n="regular__adj-noun"/></e>
+<e lm="arGA"><i>arG</i><par n="gudiy/A__n"/></e>
 <e lm="argalA"><i>argalA</i><par n="ASA/__n"/></e>
 <e lm="arGapawana"><i>arGapawana</i><par n="kroXa/__n"/></e>
 <e lm="arGapAwra"><i>arGapAwr</i><par n="Gar/a__n"/></e>
@@ -6940,7 +6941,7 @@
 <e lm="aSUnya"><i>aSUnya</i><par n="amIra/__adj"/></e>
 <e lm="Asura"><i>Asura</i><par n="amIra/__adj"/></e>
 <e lm="asura"><i>asur</i><par n="Gar/a__n"/></e>
-<e lm="asurakRA"><i>asurakR</i><par n="regular__adj-noun"/></e>
+<e lm="asurakRA"><i>asurakR</i><par n="gudiy/A__n"/></e>
 <e lm="asurakRiwa"><i>asurakRiw</i><par n="Gar/a__n"/></e>
 <e lm="AsurI"><i>Asur</i><par n="ladak/I__n"/></e>
 <e lm="asuviXA"><i>asuviXA</i><par n="ASA/__n"/></e>
@@ -7031,7 +7032,7 @@
 <e lm="AswIna"><i>AswIn</i><par n="rAw/a__n"/></e>
 <e lm="asWipaMjara"><i>asWipaMjara</i><par n="kroXa/__n"/></e>
 <e lm="asWira"><i>asWira</i><par n="amIra/__adj"/></e>
-<e lm="asWirawA"><i>asWiraw</i><par n="regular__adj-noun"/></e>
+<e lm="asWirawA"><i>asWiraw</i><par n="gudiy/A__n"/></e>
 <e lm="asWisamarpaNa"><i>asWisamarpaNa</i><par n="kroXa/__n"/></e>
 <e lm="asWisaMBava"><i>asWisaMBava</i><par n="kroXa/__n"/></e>
 <e lm="asWisaMcaya"><i>asWisaMcaya</i><par n="kroXa/__n"/></e>
@@ -7308,7 +7309,7 @@
 <e lm="AveRtana"><i>AveRtana</i><par n="kroXa/__n"/></e>
 <e lm="AveRtiwa"><i>AveRtiwa</i><par n="amIra/__adj"/></e>
 <e lm="AveSa"><i>AveS</i><par n="Gar/a__n"/></e>
-<e lm="aveswA"><i>avesw</i><par n="regular__adj-noun"/></e>
+<e lm="aveswA"><i>avesw</i><par n="gudiy/A__n"/></e>
 <e lm="avEwanika"><i>avEwanika</i><par n="amIra/__adj"/></e>
 <e lm="avEXAcaraNa"><i>avEXAcaraN</i><par n="Gar/a__n"/></e>
 <e lm="avEXa"><i>avEXa</i><par n="amIra/__adj"/></e>
@@ -8304,7 +8305,7 @@
 <e lm="BaduA"><i>Badu</i><par n="regular__adj-noun"/></e>
 <e lm="badZa"><i>badZ</i><par n="Gar/a__n"/></e>
 <e lm="baDZawa"><i>baDZaw</i><par n="Gar/a__n"/></e>
-<e lm="baDZiyA"><i>baDZiy</i><par n="regular__adj-noun"/></e>
+<e lm="baDZiyA"><i>baDZiy</i><par n="gudiy/A__n"/></e>
 <e lm="bAgabAga"><i>bAgabAga</i><par n="amIra/__adj"/></e>
 <e lm="bAgabAna"><i>bAgabAn</i><par n="Gar/a__n"/></e>
 <e lm="bAgabAnI"><i>bAgabAnI</i><par n="AjAxI/__n"/></e>
@@ -8427,7 +8428,7 @@
 <e lm="bahu"><i>bahu</i><par n="Sawru/__n"/></e>
 <e lm="bAhu"><i>bAhu</i><par n="Sawru/__n"/></e>
 <e lm="bahula"><i>bahul</i><par n="Gar/a__n"/></e>
-<e lm="bahulawA"><i>bahulaw</i><par n="regular__adj-noun"/></e>
+<e lm="bahulawA"><i>bahulaw</i><par n="gudiy/A__n"/></e>
 <e lm="bAhulya"><i>bAhuly</i><par n="Gar/a__n"/></e>
 <e lm="bahumuKI"><i>bahumuKI</i><par n="ajAwI/__adj"/></e>
 <e lm="bAhuprasAra"><i>bAhuprasAra</i><par n="kroXa/__n"/></e>
@@ -8497,7 +8498,7 @@
 <e lm="BajanI"><i>BajanI</i><par n="ajAwI/__adj"/></e>
 <e lm="BajanIya"><i>BajanIya</i><par n="amIra/__adj"/></e>
 <e lm="BajanopaxeSaka"><i>BajanopaxeSak</i><par n="Gar/a__n"/></e>
-<e lm="BAjapA"><i>BAjap</i><par n="regular__adj-noun"/></e>
+<e lm="BAjapA"><i>BAjap</i><par n="gudiy/A__n"/></e>
 <e lm="bAjAraBAva"><i>bAjAraBAva</i><par n="kroXa/__n"/></e>
 <e lm="bAjAra"><i>bAjAr</i><par n="Gar/a__n"/></e>
 <e lm="bajarA"><i>bajar</i><par n="regular__adj-noun"/></e>
@@ -8517,10 +8518,10 @@
 <e lm="BAjya"><i>BAjya</i><par n="amIra/__adj"/></e>
 <e lm="BakaBakA"><i>BakaBakA</i><par n="KA/__v"/></e>
 <e lm="baka"><i>bak</i><par n="uT/a__v"/></e>
-<e lm="bAkalA"><i>bAkal</i><par n="regular__adj-noun"/></e>
+<e lm="bAkalA"><i>bAkal</i><par n="gudiy/A__n"/></e>
 <e lm="bakalasa"><i>bakalasa</i><par n="kroXa/__n"/></e>
 <e lm="baKAna"><i>baKAn</i><par n="uT/a__v"/></e>
-<e lm="BAkapA"><i>BAkap</i><par n="regular__adj-noun"/></e>
+<e lm="BAkapA"><i>BAkap</i><par n="gudiy/A__n"/></e>
 <e lm="bakarA"><i>bakar</i><par n="regular__adj-noun"/></e>
 <e lm="bakarama"><i>bakarama</i><par n="kroXa/__n"/></e>
 <e lm="bakarI"><i>bakar</i><par n="ladak/I__n"/></e>
@@ -8578,7 +8579,7 @@
 <e lm="BAla"><i>BAla</i><par n="kroXa/__n"/></e>
 <e lm="bAla"><i>bAl</i><par n="Gar/a__n"/></e>
 <e lm="BalA"><i>Bal</i><par n="regular__adj-noun"/></e>
-<e lm="bAlA"><i>bAl</i><par n="regular__adj-noun"/></e>
+<e lm="bAlA"><i>bAl</i><par n="gudiy/A__n"/></e>
 <e lm="BalA"><i>Bal</i><par n="regular__adj-noun"/></e>
 <e lm="BAlA"><i>BAl</i><par n="regular__adj-noun"/></e>
 <e lm="BalAI"><i>BalA</i><par n="ladak/I__n"/></e>
@@ -9140,7 +9141,7 @@
 <e lm="baXiyA"><i>baXiy</i><par n="regular__adj-noun"/></e>
 <e lm="Baxra"><i>Baxra</i><par n="amIra/__adj"/></e>
 <e lm="BAxra"><i>BAxra</i><par n="kroXa/__n"/></e>
-<e lm="BaxrA"><i>Baxr</i><par n="regular__adj-noun"/></e>
+<e lm="BaxrA"><i>Baxr</i><par n="gudiy/A__n"/></e>
 <e lm="BaxrakAlI"><i>BaxrakAlI</i><par n="AjAxI/__n"/></e>
 <e lm="BaxrakAraka"><i>BaxrakAraka</i><par n="amIra/__adj"/></e>
 <e lm="BaxrakASI"><i>BaxrakASI</i><par n="AjAxI/__n"/></e>
@@ -9157,7 +9158,7 @@
 <e lm="BaxxApana"><i>BaxxApana</i><par n="kroXa/__n"/></e>
 <e lm="baxXaprawijFa"><i>baxXaprawijFa</i><par n="amIra/__adj"/></e>
 <e lm="bAXya"><i>bAXya</i><par n="amIra/__adj"/></e>
-<e lm="bAXyawA"><i>bAXyaw</i><par n="regular__adj-noun"/></e>
+<e lm="bAXyawA"><i>bAXyaw</i><par n="gudiy/A__n"/></e>
 <e lm="bayAbAna"><i>bayAbAna</i><par n="kroXa/__n"/></e>
 <e lm="BayaBIwa"><i>BayaBIwa</i><par n="kroXa/__n"/></e>
 <e lm="Baya"><i>Baya</i><par n="kroXa/__n"/></e>
@@ -9191,8 +9192,8 @@
 <e lm="BazduA"><i>Bazdu</i><par n="regular__adj-noun"/></e>
 <e lm="bAzga"><i>bAzga</i><par n="BIda/__n"/></e>
 <e lm="BAzga"><i>BAzga</i><par n="BIda/__n"/></e>
-<e lm="bazgalA"><i>bazgal</i><par n="regular__adj-noun"/></e>
-<e lm="BazgarEyA"><i>BazgarEy</i><par n="regular__adj-noun"/></e>
+<e lm="bazgalA"><i>bazgal</i><par n="gudiy/A__n"/></e>
+<e lm="BazgarEyA"><i>BazgarEy</i><par n="gudiy/A__n"/></e>
 <e lm="bAzha"><i>bAzh</i><par n="Gar/a__n"/></e>
 <e lm="bAzJa"><i>bAzJa</i><par n="amIra/__adj"/></e>
 <e lm="BazjA"><i>BazjA</i><par n="KA/__v"/></e>
@@ -9309,7 +9310,7 @@
 <e lm="bElagAdI"><i>bElagAd</i><par n="ladak/I__n"/></e>
 <e lm="belagAma"><i>belagAma</i><par n="amIra/__adj"/></e>
 <e lm="bEla"><i>bEl</i><par n="Gar/a__n"/></e>
-<e lm="belA"><i>bel</i><par n="regular__adj-noun"/></e>
+<e lm="belA"><i>bel</i><par n="gudiy/A__n"/></e>
 <e lm="bela"><i>bel</i><par n="rAw/a__n"/></e>
 <e lm="bela"><i>bel</i><par n="uT/a__v"/></e>
 <e lm="belana"><i>belan</i><par n="Gar/a__n"/></e>
@@ -9331,7 +9332,7 @@
 <e lm="bEMkara"><i>bEMkar</i><par n="Gar/a__n"/></e>
 <e lm="BEMsa"><i>BEMs</i><par n="rAw/a__n"/></e>
 <e lm="BeMta"><i>BeMta</i><par n="BIda/__n"/></e>
-<e lm="BeMtavArwA"><i>BeMtavArw</i><par n="regular__adj-noun"/></e>
+<e lm="BeMtavArwA"><i>BeMtavArw</i><par n="gudiy/A__n"/></e>
 <e lm="beMwa"><i>beMw</i><par n="Gar/a__n"/></e>
 <e lm="benAma"><i>benAma</i><par n="amIra/__adj"/></e>
 <e lm="bEnAmA"><i>bEnAm</i><par n="regular__adj-noun"/></e>
@@ -9445,7 +9446,7 @@
 <e lm="biCavA"><i>biCavA</i><par n="KA/__v"/></e>
 <e lm="biCAvana"><i>biCAvan</i><par n="Gar/a__n"/></e>
 <e lm="bicCU"><i>bicC</i><par n="Al/U__n"/></e>
-<e lm="biCiyA"><i>biCiy</i><par n="regular__adj-noun"/></e>
+<e lm="biCiyA"><i>biCiy</i><par n="gudiy/A__n"/></e>
 <e lm="bicOliyA"><i>bicOliy</i><par n="regular__adj-noun"/></e>
 <e lm="biCOnA"><i>biCOn</i><par n="regular__adj-noun"/></e>
 <e lm="biCuda"><i>biCud</i><par n="uT/a__v"/></e>
@@ -9529,7 +9530,7 @@
 <e lm="billI"><i>bill</i><par n="ladak/I__n"/></e>
 <e lm="bilo"><i>bilo</i><par n="so/__v"/></e>
 <e lm="BIma"><i>BIma</i><par n="amIra/__adj"/></e>
-<e lm="BImA"><i>BIm</i><par n="regular__adj-noun"/></e>
+<e lm="BImA"><i>BIm</i><par n="gudiy/A__n"/></e>
 <e lm="bImA"><i>bIm</i><par n="loh/A__n"/></e>
 <e lm="BImakarmA"><i>BImakarm</i><par n="regular__adj-noun"/></e>
 <e lm="BImanAxa"><i>BImanAxa</i><par n="amIra/__adj"/></e>
@@ -9679,7 +9680,7 @@
 <e lm="BojyAnna"><i>BojyAnna</i><par n="amIra/__adj"/></e>
 <e lm="bOKalAhata"><i>bOKalAhata</i><par n="BIda/__n"/></e>
 <e lm="bOKalA"><i>bOKalA</i><par n="KA/__v"/></e>
-<e lm="BokwA"><i>Bokw</i><par n="regular__adj-noun"/></e>
+<e lm="BokwA"><i>Bokw</i><par n="rAjA/__n"/></e>
 <e lm="Bokwavya"><i>Bokwavya</i><par n="amIra/__adj"/></e>
 <e lm="Bokwqwva"><i>Bokwqwva</i><par n="kroXa/__n"/></e>
 <e lm="BolABAlA"><i>BolABAl</i><par n="regular__adj-noun"/></e>
@@ -10047,7 +10048,7 @@
 <e lm="burAIBalAI"><i>burAIBalA</i><par n="ladak/I__n"/></e>
 <e lm="burA"><i>bur</i><par n="regular__adj-noun"/></e>
 <e lm="burA"><i>bur</i><par n="regular__adj-noun"/></e>
-<e lm="BURA"><i>BUR</i><par n="regular__adj-noun"/></e>
+<e lm="BURA"><i>BUR</i><par n="gudiy/A__n"/></e>
 <e lm="BUrA"><i>BUr</i><par n="loh/A__n"/></e>
 <e lm="burAI"><i>burA</i><par n="ladak/I__n"/></e>
 <e lm="BUrAjasva"><i>BUrAjasva</i><par n="kroXa/__n"/></e>
@@ -10158,7 +10159,7 @@
 <e lm="bUzxI"><i>bUzx</i><par n="ladak/I__n"/></e>
 <e lm="byAha"><i>byAha</i><par n="kroXa/__n"/></e>
 <e lm="byAha"><i>byAh</i><par n="uT/a__v"/></e>
-<e lm="byAhawA"><i>byAhaw</i><par n="regular__adj-noun"/></e>
+<e lm="byAhawA"><i>byAhaw</i><par n="gudiy/A__n"/></e>
 <e lm="byAja"><i>byAja</i><par n="kroXa/__n"/></e>
 <e lm="byorA"><i>byor</i><par n="loh/A__n"/></e>
 <e lm="byorevAra"><i>byorevAra</i><par n="amIra/__adj"/></e>
@@ -10370,7 +10371,7 @@
 <e lm="caMxrabiMxu"><i>caMxrabiMxu</i><par n="katu/__n"/></e>
 <e lm="caMxragrahaNa"><i>caMxragrahaNa</i><par n="kroXa/__n"/></e>
 <e lm="caMxra"><i>caMxra</i><par n="kroXa/__n"/></e>
-<e lm="caMxrA"><i>caMxr</i><par n="regular__adj-noun"/></e>
+<e lm="caMxrA"><i>caMxr</i><par n="gudiy/A__n"/></e>
 <e lm="caMxrakalA"><i>caMxrakalA</i><par n="ASA/__n"/></e>
 <e lm="caMxrakAMwA"><i>caMxrakAMwA</i><par n="IrRyA/__n"/></e>
 <e lm="caMxrakAMwa"><i>caMxrakAMwa</i><par n="kroXa/__n"/></e>
@@ -10420,7 +10421,7 @@
 <e lm="capawa"><i>capaw</i><par n="rAw/a__n"/></e>
 <e lm="capAwI"><i>capAw</i><par n="ladak/I__n"/></e>
 <e lm="Capaxa"><i>Capaxa</i><par n="kroXa/__n"/></e>
-<e lm="capetA"><i>capet</i><par n="regular__adj-noun"/></e>
+<e lm="capetA"><i>capet</i><par n="gudiy/A__n"/></e>
 <e lm="capeta"><i>capet</i><par n="rAw/a__n"/></e>
 <e lm="capeta"><i>capet</i><par n="uT/a__v"/></e>
 <e lm="cappA"><i>capp</i><par n="regular__adj-noun"/></e>
@@ -10510,7 +10511,7 @@
 <e lm="cAta"><i>cAta</i><par n="BIda/__n"/></e>
 <e lm="CaTa"><i>CaTa</i><par n="BIda/__n"/></e>
 <e lm="catA"><i>catA</i><par n="KA/__v"/></e>
-<e lm="CatA"><i>Cat</i><par n="regular__adj-noun"/></e>
+<e lm="CatA"><i>Cat</i><par n="gudiy/A__n"/></e>
 <e lm="cata"><i>cat</i><par n="uT/a__v"/></e>
 <e lm="cAta"><i>cAt</i><par n="uT/a__v"/></e>
 <e lm="catAI"><i>catA</i><par n="ladak/I__n"/></e>
@@ -10631,7 +10632,7 @@
 <e lm="cekabuka"><i>cekabuk</i><par n="rAw/a__n"/></e>
 <e lm="ceka"><i>cek</i><par n="Gar/a__n"/></e>
 <e lm="Ceka"><i>Cek</i><par n="uT/a__v"/></e>
-<e lm="celA"><i>cel</i><par n="regular__adj-noun"/></e>
+<e lm="celA"><i>cel</i><par n="gudiy/A__n"/></e>
 <e lm="CElA"><i>CEl</i><par n="regular__adj-noun"/></e>
 <e lm="cEleMja"><i>cEleMja</i><par n="kroXa/__n"/></e>
 <e lm="ceMbara"><i>ceMbara</i><par n="kroXa/__n"/></e>
@@ -10890,7 +10891,7 @@
 <e lm="cOkadI"><i>cOkadI</i><par n="AjAxI/__n"/></e>
 <e lm="coka"><i>coka</i><par n="kroXa/__n"/></e>
 <e lm="cOka"><i>cOka</i><par n="kroXa/__n"/></e>
-<e lm="coKA"><i>coK</i><par n="regular__adj-noun"/></e>
+<e lm="coKA"><i>coK</i><par n="gudiy/A__n"/></e>
 <e lm="cOkA"><i>cOk</i><par n="regular__adj-noun"/></e>
 <e lm="cOkannA"><i>cOkann</i><par n="regular__adj-noun"/></e>
 <e lm="cokara"><i>cokara</i><par n="kroXa/__n"/></e>
@@ -10992,7 +10993,7 @@
 <e lm="cuBa"><i>cuB</i><par n="uT/a__v"/></e>
 <e lm="CUCA"><i>CUC</i><par n="regular__adj-noun"/></e>
 <e lm="CudA"><i>CudA</i><par n="KA/__v"/></e>
-<e lm="cUdA"><i>cUd</i><par n="regular__adj-noun"/></e>
+<e lm="cUdA"><i>cUd</i><par n="gudiy/A__n"/></e>
 <e lm="CudavA"><i>CudavA</i><par n="KA/__v"/></e>
 <e lm="cudEla"><i>cudEl</i><par n="rAw/a__n"/></e>
 <e lm="cudihArA"><i>cudihAr</i><par n="regular__adj-noun"/></e>
@@ -11055,7 +11056,7 @@
 <e lm="cuppI"><i>cuppI</i><par n="AjAxI/__n"/></e>
 <e lm="cUra"><i>cUra</i><par n="amIra/__adj"/></e>
 <e lm="curA"><i>curA</i><par n="KA/__v"/></e>
-<e lm="CurA"><i>Cur</i><par n="regular__adj-noun"/></e>
+<e lm="CurA"><i>Cur</i><par n="gudiy/A__n"/></e>
 <e lm="CUrA"><i>CUr</i><par n="regular__adj-noun"/></e>
 <e lm="cUrA"><i>cUr</i><par n="loh/A__n"/></e>
 <e lm="cUramA"><i>cUram</i><par n="regular__adj-noun"/></e>
@@ -11118,7 +11119,7 @@
 <e lm="DA"><i>DA</i><par n="KA/__v"/></e>
 <e lm="da"><i>d</i><par n="Gar/a__n"/></e>
 <e lm="Da"><i>D</i><par n="Gar/a__n"/></e>
-<e lm="dA"><i>d</i><par n="regular__adj-noun"/></e>
+<e lm="dA"><i>d</i><par n="gudiy/A__n"/></e>
 <e lm="DAI"><i>DAI</i><par n="ajAwI/__adj"/></e>
 <e lm="dAI"><i>dA</i><par n="ladak/I__n"/></e>
 <e lm="dAina"><i>dAin</i><par n="rAw/a__n"/></e>
@@ -11536,7 +11537,7 @@
 <e lm="gaganakusuma"><i>gaganakusuma</i><par n="kroXa/__n"/></e>
 <e lm="gaganavAtikA"><i>gaganavAtikA</i><par n="ASA/__n"/></e>
 <e lm="GaGarA"><i>GaGar</i><par n="regular__adj-noun"/></e>
-<e lm="GAGarA"><i>GAGar</i><par n="regular__adj-noun"/></e>
+<e lm="GAGarA"><i>GAGar</i><par n="gudiy/A__n"/></e>
 <e lm="gAgara"><i>gAgar</i><par n="rAw/a__n"/></e>
 <e lm="GaGarI"><i>GaGarI</i><par n="AjAxI/__n"/></e>
 <e lm="gagarI"><i>gagar</i><par n="ladak/I__n"/></e>
@@ -11625,8 +11626,8 @@
 <e lm="gaMgowwarI"><i>gaMgowwarI</i><par n="AjAxI/__n"/></e>
 <e lm="gAmI"><i>gAmI</i><par n="ajAwI/__adj"/></e>
 <e lm="gaMja"><i>gaMj</i><par n="Gar/a__n"/></e>
-<e lm="gaMjA"><i>gaMj</i><par n="regular__adj-noun"/></e>
-<e lm="gaMjA"><i>gaMj</i><par n="regular__adj-noun"/></e>
+<e lm="gaMjA"><i>gaMj</i><par n="gudiy/A__n"/></e>
+<e lm="gaMjA"><i>gaMj</i><par n="gudiy/A__n"/></e>
 <e lm="gaMjI"><i>gaMjI</i><par n="AjAxI/__n"/></e>
 <e lm="GamorI"><i>Gamor</i><par n="ladak/I__n"/></e>
 <e lm="GaMtAGara"><i>GaMtAGar</i><par n="Gar/a__n"/></e>
@@ -11671,7 +11672,7 @@
 <e lm="gaNa"><i>gaN</i><par n="Gar/a__n"/></e>
 <e lm="Gana"><i>Gan</i><par n="Gar/a__n"/></e>
 <e lm="GAna"><i>GAn</i><par n="Gar/a__n"/></e>
-<e lm="GanA"><i>Gan</i><par n="regular__adj-noun"/></e>
+<e lm="GanA"><i>Gan</i><par n="gudiy/A__n"/></e>
 <e lm="gAnA"><i>gAn</i><par n="regular__adj-noun"/></e>
 <e lm="gaNaka"><i>gaNak</i><par n="Gar/a__n"/></e>
 <e lm="GanamUla"><i>GanamUla</i><par n="kroXa/__n"/></e>
@@ -11807,7 +11808,7 @@
 <e lm="GatA"><i>GatA</i><par n="KA/__v"/></e>
 <e lm="Gata"><i>Gat</i><par n="Gar/a__n"/></e>
 <e lm="GAta"><i>GAt</i><par n="Gar/a__n"/></e>
-<e lm="GAtA"><i>GAt</i><par n="regular__adj-noun"/></e>
+<e lm="GAtA"><i>GAt</i><par n="gudiy/A__n"/></e>
 <e lm="gaTa"><i>gaT</i><par n="uT/a__v"/></e>
 <e lm="Gata"><i>Gat</i><par n="uT/a__v"/></e>
 <e lm="Gataka"><i>Gataka</i><par n="amIra/__adj"/></e>
@@ -11863,7 +11864,7 @@
 <e lm="gawimAna"><i>gawimAna</i><par n="amIra/__adj"/></e>
 <e lm="gawiroxa"><i>gawirox</i><par n="Gar/a__n"/></e>
 <e lm="gawiSIla"><i>gawiSIla</i><par n="amIra/__adj"/></e>
-<e lm="gawiSIlawA"><i>gawiSIlaw</i><par n="regular__adj-noun"/></e>
+<e lm="gawiSIlawA"><i>gawiSIlaw</i><par n="gudiy/A__n"/></e>
 <e lm="gAwra"><i>gAwra</i><par n="kroXa/__n"/></e>
 <e lm="gawwA"><i>gaww</i><par n="regular__adj-noun"/></e>
 <e lm="gawyavaroXa"><i>gawyavaroXa</i><par n="kroXa/__n"/></e>
@@ -11871,7 +11872,7 @@
 <e lm="gaxagaxa"><i>gaxagaxa</i><par n="amIra/__adj"/></e>
 <e lm="gaxagaxa"><i>gaxagaxa</i><par n="kroXa/__n"/></e>
 <e lm="gaxahA"><i>gaxah</i><par n="regular__adj-noun"/></e>
-<e lm="gaxA"><i>gax</i><par n="regular__adj-noun"/></e>
+<e lm="gaxA"><i>gax</i><par n="gudiy/A__n"/></e>
 <e lm="gaXA"><i>gaX</i><par n="regular__adj-noun"/></e>
 <e lm="gaXApana"><i>gaXApana</i><par n="kroXa/__n"/></e>
 <e lm="gaxarA"><i>gaxarA</i><par n="KA/__v"/></e>
@@ -11896,7 +11897,7 @@
 <e lm="GAyala"><i>GAyal</i><par n="Gar/a__n"/></e>
 <e lm="gAyana"><i>gAyan</i><par n="Gar/a__n"/></e>
 <e lm="gAyawrI"><i>gAyawrI</i><par n="AjAxI/__n"/></e>
-<e lm="gAyikA"><i>gAyik</i><par n="regular__adj-noun"/></e>
+<e lm="gAyikA"><i>gAyik</i><par n="gudiy/A__n"/></e>
 <e lm="gazdAsA"><i>gazdAs</i><par n="regular__adj-noun"/></e>
 <e lm="gazderI"><i>gazder</i><par n="ladak/I__n"/></e>
 <e lm="GAzGarA"><i>GAzGar</i><par n="regular__adj-noun"/></e>
@@ -12059,7 +12060,7 @@
 <e lm="gola"><i>gola</i><par n="amIra/__adj"/></e>
 <e lm="gola"><i>gol</i><par n="Gar/a__n"/></e>
 <e lm="Gola"><i>Gol</i><par n="Gar/a__n"/></e>
-<e lm="golA"><i>gol</i><par n="regular__adj-noun"/></e>
+<e lm="golA"><i>gol</i><par n="gudiy/A__n"/></e>
 <e lm="Gola"><i>Gol</i><par n="uT/a__v"/></e>
 <e lm="golAI"><i>golAI</i><par n="AjAxI/__n"/></e>
 <e lm="Golaka"><i>Golaka</i><par n="amIra/__adj"/></e>
@@ -12109,7 +12110,7 @@
 <e lm="gOra"><i>gOra</i><par n="kroXa/__n"/></e>
 <e lm="GoRa"><i>GoR</i><par n="Gar/a__n"/></e>
 <e lm="gorA"><i>gor</i><par n="regular__adj-noun"/></e>
-<e lm="gOrA"><i>gOr</i><par n="regular__adj-noun"/></e>
+<e lm="gOrA"><i>gOr</i><par n="gudiy/A__n"/></e>
 <e lm="goraKa"><i>goraKa</i><par n="kroXa/__n"/></e>
 <e lm="goraKA"><i>goraK</i><par n="regular__adj-noun"/></e>
 <e lm="goraKaXaMXA"><i>goraKaXaMX</i><par n="regular__adj-noun"/></e>
@@ -12293,7 +12294,7 @@
 <e lm="grIRma"><i>grIRma</i><par n="kroXa/__n"/></e>
 <e lm="grIRmakAla"><i>grIRmakAla</i><par n="kroXa/__n"/></e>
 <e lm="grIRmAvakASa"><i>grIRmAvakASa</i><par n="kroXa/__n"/></e>
-<e lm="grIvA"><i>grIv</i><par n="regular__adj-noun"/></e>
+<e lm="grIvA"><i>grIv</i><par n="gudiy/A__n"/></e>
 <e lm="grupa"><i>grup</i><par n="Gar/a__n"/></e>
 <e lm="gubAra"><i>gubAra</i><par n="kroXa/__n"/></e>
 <e lm="gubbArA"><i>gubbAr</i><par n="regular__adj-noun"/></e>
@@ -12464,7 +12465,7 @@
 <e lm="gupwagqha"><i>gupwagqh</i><par n="Gar/a__n"/></e>
 <e lm="guPwagU"><i>guPwagU</i><par n="bAlU/__n"/></e>
 <e lm="gupwa"><i>gupwa</i><par n="amIra/__adj"/></e>
-<e lm="gupwA"><i>gupw</i><par n="regular__adj-noun"/></e>
+<e lm="gupwA"><i>gupw</i><par n="gudiy/A__n"/></e>
 <e lm="gupwAMga"><i>gupwAMg</i><par n="Gar/a__n"/></e>
 <e lm="gupwaxAna"><i>gupwaxAna</i><par n="kroXa/__n"/></e>
 <e lm="gupwI"><i>gupwI</i><par n="AjAxI/__n"/></e>
@@ -12614,7 +12615,7 @@
 <e lm="hakImI"><i>hakImI</i><par n="AjAxI/__n"/></e>
 <e lm="hAkimI"><i>hAkimI</i><par n="AjAxI/__n"/></e>
 <e lm="hAkinI"><i>hAkinI</i><par n="AjAxI/__n"/></e>
-<e lm="hakkA"><i>hakk</i><par n="regular__adj-noun"/></e>
+<e lm="hakkA"><i>hakk</i><par n="gudiy/A__n"/></e>
 <e lm="halacala"><i>halacala</i><par n="BIda/__n"/></e>
 <e lm="halagrAhI"><i>halagrAhI</i><par n="ajAwI/__adj"/></e>
 <e lm="halAhala"><i>halAhala</i><par n="kroXa/__n"/></e>
@@ -12661,7 +12662,7 @@
 <e lm="hamavawana"><i>hamavawana</i><par n="kroXa/__n"/></e>
 <e lm="hamaxarxa"><i>hamaxarxa</i><par n="kroXa/__n"/></e>
 <e lm="hamaxarxI"><i>hamaxarxI</i><par n="AjAxI/__n"/></e>
-<e lm="haMdA"><i>haMd</i><par n="regular__adj-noun"/></e>
+<e lm="haMdA"><i>haMd</i><par n="gudiy/A__n"/></e>
 <e lm="haMdikA"><i>haMdikA</i><par n="ASA/__n"/></e>
 <e lm="haMdiyA"><i>haMdiy</i><par n="gudiy/A__n"/></e>
 <e lm="haMgAmA"><i>haMgAm</i><par n="regular__adj-noun"/></e>
@@ -12699,7 +12700,7 @@
 <e lm="hara"><i>hara</i><par n="amIra/__adj"/></e>
 <e lm="harA"><i>harA</i><par n="KA/__v"/></e>
 <e lm="hAra"><i>hAr</i><par n="Gar/a__n"/></e>
-<e lm="harA"><i>har</i><par n="regular__adj-noun"/></e>
+<e lm="harA"><i>har</i><par n="kAl/A__adj"/></e>
 <e lm="hAra"><i>hAr</i><par n="rAw/a__n"/></e>
 <e lm="hAra"><i>hAr</i><par n="uT/a__v"/></e>
 <e lm="harajAnA"><i>harajAn</i><par n="loh/A__n"/></e>
@@ -13153,7 +13154,7 @@
 <e lm="hiPAjawa"><i>hiPAjaw</i><par n="rAw/a__n"/></e>
 <e lm="hIrAAxamI"><i>hIrAAxam</i><par n="Axam/I__n"/></e>
 <e lm="hIra"><i>hIra</i><par n="kroXa/__n"/></e>
-<e lm="hIrA"><i>hIr</i><par n="regular__adj-noun"/></e>
+<e lm="hIrA"><i>hIr</i><par n="gudiy/A__n"/></e>
 <e lm="hIraka"><i>hIraka</i><par n="kroXa/__n"/></e>
 <e lm="hirana"><i>hiran</i><par n="Gar/a__n"/></e>
 <e lm="hiraNa"><i>hiraN</i><par n="Gar/a__n"/></e>
@@ -13217,7 +13218,7 @@
 <e lm="ho"><i>h</i><par n="h/o__v"/></e>
 <e lm="hOja"><i>hOj</i><par n="Gar/a__n"/></e>
 <e lm="hojarI"><i>hojarI</i><par n="AjAxI/__n"/></e>
-<e lm="holA"><i>hol</i><par n="regular__adj-noun"/></e>
+<e lm="holA"><i>hol</i><par n="gudiy/A__n"/></e>
 <e lm="holdAla"><i>holdAl</i><par n="Gar/a__n"/></e>
 <e lm="holdara"><i>holdar</i><par n="Gar/a__n"/></e>
 <e lm="holI"><i>holI</i><par n="AjAxI/__n"/></e>
@@ -13238,7 +13239,7 @@
 <e lm="hoMTa"><i>hoMT</i><par n="Gar/a__n"/></e>
 <e lm="honahAra"><i>honahAra</i><par n="amIra/__adj"/></e>
 <e lm="honI"><i>honI</i><par n="AjAxI/__n"/></e>
-<e lm="horA"><i>hor</i><par n="regular__adj-noun"/></e>
+<e lm="horA"><i>hor</i><par n="gudiy/A__n"/></e>
 <e lm="horI"><i>hor</i><par n="ladak/I__n"/></e>
 <e lm="hoSahavAsa"><i>hoSahavAsa</i><par n="kroXa/__n"/></e>
 <e lm="hoSa"><i>hoSa</i><par n="kroXa/__n"/></e>
@@ -13249,7 +13250,7 @@
 <e lm="hoSiyArI"><i>hoSiyArI</i><par n="AjAxI/__n"/></e>
 <e lm="hostala"><i>hostal</i><par n="Gar/a__n"/></e>
 <e lm="hotala"><i>hotal</i><par n="Gar/a__n"/></e>
-<e lm="hOvA"><i>hOv</i><par n="regular__adj-noun"/></e>
+<e lm="hOvA"><i>hOv</i><par n="gudiy/A__n"/></e>
 <e lm="howavya"><i>howavya</i><par n="amIra/__adj"/></e>
 <e lm="howqkarma"><i>howqkarma</i><par n="kroXa/__n"/></e>
 <e lm="howra"><i>howra</i><par n="kroXa/__n"/></e>
@@ -13330,7 +13331,7 @@
 <e lm="huliyA"><i>huliyA</i><par n="IrRyA/__n"/></e>
 <e lm="huliyAnAmA"><i>huliyAnAm</i><par n="regular__adj-noun"/></e>
 <e lm="hullada"><i>hullada</i><par n="kroXa/__n"/></e>
-<e lm="huMdA"><i>huMd</i><par n="regular__adj-noun"/></e>
+<e lm="huMdA"><i>huMd</i><par n="gudiy/A__n"/></e>
 <e lm="huMdIbahI"><i>huMdIbah</i><par n="ladak/I__n"/></e>
 <e lm="huMdI"><i>huMd</i><par n="ladak/I__n"/></e>
 <e lm="huMkAra"><i>huMkAr</i><par n="uT/a__v"/></e>
@@ -13415,7 +13416,7 @@
 <e lm="ikyAsI"><i>ikyAsI</i><par n="ajAwI/__adj"/></e>
 <e lm="ikyAvana"><i>ikyAvana</i><par n="amIra/__adj"/></e>
 <e lm="ilAhI"><i>ilAh</i><par n="ladak/I__n"/></e>
-<e lm="ilA"><i>il</i><par n="regular__adj-noun"/></e>
+<e lm="ilA"><i>il</i><par n="gudiy/A__n"/></e>
 <e lm="ilAja"><i>ilAja</i><par n="kroXa/__n"/></e>
 <e lm="ilajAma"><i>ilajAma</i><par n="kroXa/__n"/></e>
 <e lm="ilAkA"><i>ilAk</i><par n="regular__adj-noun"/></e>
@@ -13455,7 +13456,7 @@
 <e lm="iMjIniyarI"><i>iMjIniyarI</i><par n="AjAxI/__n"/></e>
 <e lm="iMjIniyariMga"><i>iMjIniyariMg</i><par n="Gar/a__n"/></e>
 <e lm="iMjIniyaring"><i>iMjIniyaring</i><par n="AjAxI/__n"/></e>
-<e lm="iMkA"><i>iMk</i><par n="regular__adj-noun"/></e>
+<e lm="iMkA"><i>iMk</i><par n="gudiy/A__n"/></e>
 <e lm="iMka"><i>iMk</i><par n="rAw/a__n"/></e>
 <e lm="iMkamEna"><i>iMkamEna</i><par n="kroXa/__n"/></e>
 <e lm="iMkapAta"><i>iMkapAta</i><par n="kroXa/__n"/></e>
@@ -13479,7 +13480,7 @@
 <e lm="iMwakAma"><i>iMwakAma</i><par n="kroXa/__n"/></e>
 <e lm="imwihAna"><i>imwihAn</i><par n="Gar/a__n"/></e>
 <e lm="IMXana"><i>IMXan</i><par n="Gar/a__n"/></e>
-<e lm="iMxirA"><i>iMxir</i><par n="regular__adj-noun"/></e>
+<e lm="iMxirA"><i>iMxir</i><par n="gudiy/A__n"/></e>
 <e lm="iMxra"><i>iMxra</i><par n="kroXa/__n"/></e>
 <e lm="iMxrajAlika"><i>iMxrajAlika</i><par n="kroXa/__n"/></e>
 <e lm="iMxraloka"><i>iMxraloka</i><par n="kroXa/__n"/></e>
@@ -13668,7 +13669,7 @@
 <e lm="jA"><i>jA</i><par n="KA/__v"/></e>
 <e lm="ja"><i>j</i><par n="Gar/a__n"/></e>
 <e lm="Ja"><i>J</i><par n="Gar/a__n"/></e>
-<e lm="JA"><i>J</i><par n="regular__adj-noun"/></e>
+<e lm="JA"><i>J</i><par n="gudiy/A__n"/></e>
 <e lm="jaja"><i>jaj</i><par n="Gar/a__n"/></e>
 <e lm="jajI"><i>jajI</i><par n="AjAxI/__n"/></e>
 <e lm="jajIrA"><i>jajIr</i><par n="regular__adj-noun"/></e>
@@ -13771,7 +13772,7 @@
 <e lm="jamaGata"><i>jamaGata</i><par n="kroXa/__n"/></e>
 <e lm="jamA"><i>jamA</i><par n="KA/__v"/></e>
 <e lm="jAma"><i>jAma</i><par n="kroXa/__n"/></e>
-<e lm="jAmA"><i>jAm</i><par n="regular__adj-noun"/></e>
+<e lm="jAmA"><i>jAm</i><par n="gudiy/A__n"/></e>
 <e lm="jama"><i>jam</i><par n="uT/a__v"/></e>
 <e lm="JamakA"><i>JamakA</i><par n="KA/__v"/></e>
 <e lm="Jamaka"><i>Jamak</i><par n="uT/a__v"/></e>
@@ -13828,7 +13829,7 @@
 <e lm="JaMkqwa"><i>JaMkqwa</i><par n="amIra/__adj"/></e>
 <e lm="JaMkqwi"><i>JaMkqwi</i><par n="Apawwi/__n"/></e>
 <e lm="jammU"><i>jamm</i><par n="Al/U__n"/></e>
-<e lm="jamunA"><i>jamun</i><par n="regular__adj-noun"/></e>
+<e lm="jamunA"><i>jamun</i><par n="gudiy/A__n"/></e>
 <e lm="jAmuna"><i>jAmun</i><par n="rAw/a__n"/></e>
 <e lm="jAmunI"><i>jAmunI</i><par n="ajAwI/__adj"/></e>
 <e lm="jaMwarI"><i>jaMwar</i><par n="ladak/I__n"/></e>
@@ -14025,7 +14026,7 @@
 <e lm="jayaGoRa"><i>jayaGoRa</i><par n="kroXa/__n"/></e>
 <e lm="jaya"><i>jaya</i><par n="kroXa/__n"/></e>
 <e lm="jAya"><i>jAy</i><par n="Gar/a__n"/></e>
-<e lm="jayA"><i>jay</i><par n="regular__adj-noun"/></e>
+<e lm="jayA"><i>jay</i><par n="gudiy/A__n"/></e>
 <e lm="jAyajA"><i>jAyaj</i><par n="regular__adj-noun"/></e>
 <e lm="jayajayakAra"><i>jayajayakAra</i><par n="kroXa/__n"/></e>
 <e lm="jAyakA"><i>jAyak</i><par n="regular__adj-noun"/></e>
@@ -14125,7 +14126,7 @@
 <e lm="jihAxa"><i>jihAx</i><par n="Gar/a__n"/></e>
 <e lm="jIhujUrI"><i>jIhujUrI</i><par n="AjAxI/__n"/></e>
 <e lm="jihvAgra"><i>jihvAgra</i><par n="kroXa/__n"/></e>
-<e lm="jihvA"><i>jihv</i><par n="regular__adj-noun"/></e>
+<e lm="jihvA"><i>jihv</i><par n="gudiy/A__n"/></e>
 <e lm="jI"><i>j</i><par n="p/I__v"/></e>
 <e lm="jIjA"><i>jIjA</i><par n="rAjA/__n"/></e>
 <e lm="JiJaka"><i>JiJaka</i><par n="BIda/__n"/></e>
@@ -14139,7 +14140,7 @@
 <e lm="jikra"><i>jikra</i><par n="kroXa/__n"/></e>
 <e lm="jilAaPasara"><i>jilAaPasar</i><par n="Gar/a__n"/></e>
 <e lm="jilA"><i>jilA</i><par n="KA/__v"/></e>
-<e lm="jilA"><i>jil</i><par n="regular__adj-noun"/></e>
+<e lm="jilA"><i>jil</i><par n="gudiy/A__n"/></e>
 <e lm="JIla"><i>JIl</i><par n="rAw/a__n"/></e>
 <e lm="jilAkacaharI"><i>jilAkacahar</i><par n="ladak/I__n"/></e>
 <e lm="jilAmajistreta"><i>jilAmajistret</i><par n="Gar/a__n"/></e>
@@ -14355,7 +14356,7 @@
 <e lm="JuzJalAhata"><i>JuzJalAhat</i><par n="rAw/a__n"/></e>
 <e lm="JuzJalA"><i>JuzJalA</i><par n="KA/__v"/></e>
 <e lm="jVAlA"><i>jVAlA</i><par n="ASA/__n"/></e>
-<e lm="jvAlA"><i>jvAl</i><par n="regular__adj-noun"/></e>
+<e lm="jvAlA"><i>jvAl</i><par n="gudiy/A__n"/></e>
 <e lm="jvAlAmuKI"><i>jvAlAmuK</i><par n="Axam/I__n"/></e>
 <e lm="jvalaMwa"><i>jvalaMwa</i><par n="amIra/__adj"/></e>
 <e lm="jvalana"><i>jvalana</i><par n="kroXa/__n"/></e>
@@ -14705,7 +14706,7 @@
 <e lm="kama"><i>kama</i><par n="amIra/__adj"/></e>
 <e lm="kamA"><i>kamA</i><par n="KA/__v"/></e>
 <e lm="kAma"><i>kAm</i><par n="Gar/a__n"/></e>
-<e lm="kAmA"><i>kAm</i><par n="regular__adj-noun"/></e>
+<e lm="kAmA"><i>kAm</i><par n="gudiy/A__n"/></e>
 <e lm="kamajora"><i>kamajora</i><par n="amIra/__adj"/></e>
 <e lm="kamajora"><i>kamajora</i><par n="kroXa/__n"/></e>
 <e lm="kamajorI"><i>kamajorI</i><par n="AjAxI/__n"/></e>
@@ -14719,7 +14720,7 @@
 <e lm="kamalagattA"><i>kamalagatt</i><par n="regular__adj-noun"/></e>
 <e lm="kamAla"><i>kamAla</i><par n="kroXa/__n"/></e>
 <e lm="kamala"><i>kamal</i><par n="Gar/a__n"/></e>
-<e lm="kamalA"><i>kamal</i><par n="regular__adj-noun"/></e>
+<e lm="kamalA"><i>kamal</i><par n="gudiy/A__n"/></e>
 <e lm="kAmalA"><i>kAmal</i><par n="regular__adj-noun"/></e>
 <e lm="kamalAkara"><i>kamalAkara</i><par n="kroXa/__n"/></e>
 <e lm="kamalAkRa"><i>kamalAkRa</i><par n="amIra/__adj"/></e>
@@ -14777,7 +14778,7 @@
 <e lm="KaMdahara"><i>KaMdahar</i><par n="Gar/a__n"/></e>
 <e lm="kAMda"><i>kAMda</i><par n="kroXa/__n"/></e>
 <e lm="KaMda"><i>KaMd</i><par n="Gar/a__n"/></e>
-<e lm="kaMdA"><i>kaMd</i><par n="regular__adj-noun"/></e>
+<e lm="kaMdA"><i>kaMd</i><par n="gudiy/A__n"/></e>
 <e lm="KaMdakAvya"><i>KaMdakAvy</i><par n="Gar/a__n"/></e>
 <e lm="KaMdakaWA"><i>KaMdakaWA</i><par n="ASA/__n"/></e>
 <e lm="kaMdaktara"><i>kaMdaktar</i><par n="Gar/a__n"/></e>
@@ -14854,7 +14855,7 @@
 <e lm="KAmoSI"><i>KAmoSI</i><par n="AjAxI/__n"/></e>
 <e lm="kAmoxxIpaka"><i>kAmoxxIpaka</i><par n="amIra/__adj"/></e>
 <e lm="kaMpa"><i>kaMpa</i><par n="kroXa/__n"/></e>
-<e lm="kaMpA"><i>kaMp</i><par n="regular__adj-noun"/></e>
+<e lm="kaMpA"><i>kaMp</i><par n="gudiy/A__n"/></e>
 <e lm="kaMpana"><i>kaMpana</i><par n="kroXa/__n"/></e>
 <e lm="kaMpanI"><i>kaMpan</i><par n="ladak/I__n"/></e>
 <e lm="kaMpAuMdara"><i>kaMpAuMdar</i><par n="Gar/a__n"/></e>
@@ -15128,7 +15129,7 @@
 <e lm="kArka"><i>kArk</i><par n="Gar/a__n"/></e>
 <e lm="karkareKA"><i>karkareKA</i><par n="IrRyA/__n"/></e>
 <e lm="karkaSa"><i>karkaSa</i><par n="amIra/__adj"/></e>
-<e lm="karkaSA"><i>karkaS</i><par n="regular__adj-noun"/></e>
+<e lm="karkaSA"><i>karkaS</i><par n="gudiy/A__n"/></e>
 <e lm="karkata"><i>karkata</i><par n="kroXa/__n"/></e>
 <e lm="karmaBUmi"><i>karmaBUmi</i><par n="SAnwi/__n"/></e>
 <e lm="karmacArI"><i>karmacAr</i><par n="Axam/I__n"/></e>
@@ -15234,7 +15235,7 @@
 <e lm="kAryapAlaka"><i>kAryapAlak</i><par n="Gar/a__n"/></e>
 <e lm="kAryapraNAlI"><i>kAryapraNAl</i><par n="ladak/I__n"/></e>
 <e lm="kAryaSakwi"><i>kAryaSakwi</i><par n="SAnwi/__n"/></e>
-<e lm="kAryaSAlA"><i>kAryaSAl</i><par n="regular__adj-noun"/></e>
+<e lm="kAryaSAlA"><i>kAryaSAl</i><par n="gudiy/A__n"/></e>
 <e lm="kAryasamiwi"><i>kAryasamiwi</i><par n="Apawwi/__n"/></e>
 <e lm="kAryasixXi"><i>kAryasixXi</i><par n="SAnwi/__n"/></e>
 <e lm="kAryavAhI"><i>kAryavAhI</i><par n="AjAxI/__n"/></e>
@@ -15334,7 +15335,7 @@
 <e lm="kaTina"><i>kaTina</i><par n="amIra/__adj"/></e>
 <e lm="kaTinawA"><i>kaTinawA</i><par n="IrRyA/__n"/></e>
 <e lm="kATinya"><i>kATinya</i><par n="kroXa/__n"/></e>
-<e lm="KatiyA"><i>Katiy</i><par n="regular__adj-noun"/></e>
+<e lm="KatiyA"><i>Katiy</i><par n="gudiy/A__n"/></e>
 <e lm="kATiyAvAda"><i>kATiyAvAda</i><par n="kroXa/__n"/></e>
 <e lm="kATiyAvAdI"><i>kATiyAvAd</i><par n="Axam/I__n"/></e>
 <e lm="KatolI"><i>KatolI</i><par n="AjAxI/__n"/></e>
@@ -15344,7 +15345,7 @@
 <e lm="katorI"><i>kator</i><par n="ladak/I__n"/></e>
 <e lm="kaTOwA"><i>kaTOw</i><par n="regular__adj-noun"/></e>
 <e lm="katOwI"><i>katOwI</i><par n="AjAxI/__n"/></e>
-<e lm="KattA"><i>Katt</i><par n="regular__adj-noun"/></e>
+<e lm="KattA"><i>Katt</i><par n="gudiy/A__n"/></e>
 <e lm="katTA"><i>katT</i><par n="regular__adj-noun"/></e>
 <e lm="kattara"><i>kattara</i><par n="amIra/__adj"/></e>
 <e lm="kattarawA"><i>kattarawA</i><par n="IrRyA/__n"/></e>
@@ -15381,7 +15382,7 @@
 <e lm="kaWA"><i>kaWA</i><par n="ASA/__n"/></e>
 <e lm="KawA"><i>KawA</i><par n="IrRyA/__n"/></e>
 <e lm="Kawa"><i>Kawa</i><par n="kroXa/__n"/></e>
-<e lm="KAwA"><i>KAw</i><par n="regular__adj-noun"/></e>
+<e lm="KAwA"><i>KAw</i><par n="gudiy/A__n"/></e>
 <e lm="kAwa"><i>kAw</i><par n="uT/a__v"/></e>
 <e lm="kaWaka"><i>kaWak</i><par n="Gar/a__n"/></e>
 <e lm="KawAkAra"><i>KawAkAra</i><par n="kroXa/__n"/></e>
@@ -15480,7 +15481,7 @@
 <e lm="Kazdahara"><i>Kazdahar</i><par n="Gar/a__n"/></e>
 <e lm="KAzda"><i>KAzda</i><par n="BIda/__n"/></e>
 <e lm="kazgalA"><i>kazgal</i><par n="regular__adj-noun"/></e>
-<e lm="kazganA"><i>kazgan</i><par n="regular__adj-noun"/></e>
+<e lm="kazganA"><i>kazgan</i><par n="gudiy/A__n"/></e>
 <e lm="KAz"><i>K</i><par n="ku/Az__n"/></e>
 <e lm="KazjadI"><i>Kazjad</i><par n="ladak/I__n"/></e>
 <e lm="kAzKa"><i>kAzK</i><par n="uT/a__v"/></e>
@@ -15567,7 +15568,7 @@
 <e lm="KevA"><i>Kev</i><par n="regular__adj-noun"/></e>
 <e lm="kEvalya"><i>kEvalya</i><par n="kroXa/__n"/></e>
 <e lm="kevata"><i>kevata</i><par n="kroXa/__n"/></e>
-<e lm="KevEyA"><i>KevEy</i><par n="regular__adj-noun"/></e>
+<e lm="KevEyA"><i>KevEy</i><par n="gudiy/A__n"/></e>
 <e lm="Kewa"><i>Kew</i><par n="Gar/a__n"/></e>
 <e lm="kewakI"><i>kewakI</i><par n="AjAxI/__n"/></e>
 <e lm="kewalI"><i>kewal</i><par n="ladak/I__n"/></e>
@@ -15778,7 +15779,7 @@
 <e lm="KOlA"><i>KOlA</i><par n="KA/__v"/></e>
 <e lm="kola"><i>kola</i><par n="kroXa/__n"/></e>
 <e lm="kOla"><i>kOl</i><par n="Gar/a__n"/></e>
-<e lm="kolA"><i>kol</i><par n="regular__adj-noun"/></e>
+<e lm="kolA"><i>kol</i><par n="gudiy/A__n"/></e>
 <e lm="Kola"><i>Kol</i><par n="uT/a__v"/></e>
 <e lm="KOla"><i>KOl</i><par n="uT/a__v"/></e>
 <e lm="kolawAra"><i>kolawAr</i><par n="Gar/a__n"/></e>
@@ -15827,7 +15828,7 @@
 <e lm="kOrava"><i>kOrav</i><par n="Gar/a__n"/></e>
 <e lm="koRAXyakRa"><i>koRAXyakR</i><par n="Gar/a__n"/></e>
 <e lm="korI"><i>kor</i><par n="ladak/I__n"/></e>
-<e lm="koriyA"><i>koriy</i><par n="regular__adj-noun"/></e>
+<e lm="koriyA"><i>koriy</i><par n="gudiy/A__n"/></e>
 <e lm="korsa"><i>korsa</i><par n="kroXa/__n"/></e>
 <e lm="korta"><i>korta</i><par n="kroXa/__n"/></e>
 <e lm="koRTa"><i>koRT</i><par n="Gar/a__n"/></e>
@@ -16082,7 +16083,7 @@
 <e lm="kriyAPala"><i>kriyAPala</i><par n="kroXa/__n"/></e>
 <e lm="kriyArWa"><i>kriyArWa</i><par n="amIra/__adj"/></e>
 <e lm="kriyASIla"><i>kriyASIla</i><par n="amIra/__adj"/></e>
-<e lm="kriyASIlawA"><i>kriyASIlaw</i><par n="regular__adj-noun"/></e>
+<e lm="kriyASIlawA"><i>kriyASIlaw</i><par n="gudiy/A__n"/></e>
 <e lm="kriyAvAcaka"><i>kriyAvAcaka</i><par n="amIra/__adj"/></e>
 <e lm="kriyAviSeRaNa"><i>kriyAviSeRaNa</i><par n="kroXa/__n"/></e>
 <e lm="kriyAviXi"><i>kriyAviXi</i><par n="kavi/__n"/></e>
@@ -16250,7 +16251,7 @@
 <e lm="kuMcana"><i>kuMcana</i><par n="kroXa/__n"/></e>
 <e lm="kuMciwa"><i>kuMciwa</i><par n="amIra/__adj"/></e>
 <e lm="kuMda"><i>kuMd</i><par n="Gar/a__n"/></e>
-<e lm="kuMdA"><i>kuMd</i><par n="regular__adj-noun"/></e>
+<e lm="kuMdA"><i>kuMd</i><par n="gudiy/A__n"/></e>
 <e lm="kuMdala"><i>kuMdal</i><par n="Gar/a__n"/></e>
 <e lm="kuMdalAkAra"><i>kuMdalAkAra</i><par n="amIra/__adj"/></e>
 <e lm="kuMdalI"><i>kuMdal</i><par n="ladak/I__n"/></e>
@@ -16484,7 +16485,7 @@
 <e lm="lABaxAyaka"><i>lABaxAyaka</i><par n="amIra/__adj"/></e>
 <e lm="labXacewA"><i>labXacew</i><par n="regular__adj-noun"/></e>
 <e lm="labXa"><i>labXa</i><par n="amIra/__adj"/></e>
-<e lm="labXA"><i>labX</i><par n="regular__adj-noun"/></e>
+<e lm="labXA"><i>labX</i><par n="gudiy/A__n"/></e>
 <e lm="labXAMka"><i>labXAMka</i><par n="kroXa/__n"/></e>
 <e lm="labXaprawiRTa"><i>labXaprawiRTa</i><par n="amIra/__adj"/></e>
 <e lm="labXAwiSaya"><i>labXAwiSaya</i><par n="amIra/__adj"/></e>
@@ -16838,7 +16839,7 @@
 <e lm="leKAbahI"><i>leKAbah</i><par n="ladak/I__n"/></e>
 <e lm="leKAciwra"><i>leKAciwr</i><par n="Gar/a__n"/></e>
 <e lm="leKa"><i>leK</i><par n="Gar/a__n"/></e>
-<e lm="leKA"><i>leK</i><par n="regular__adj-noun"/></e>
+<e lm="leKA"><i>leK</i><par n="gudiy/A__n"/></e>
 <e lm="leKaka"><i>leKak</i><par n="Gar/a__n"/></e>
 <e lm="leKAkarma"><i>leKAkarm</i><par n="Gar/a__n"/></e>
 <e lm="leKakI"><i>leKakI</i><par n="AjAxI/__n"/></e>
@@ -17093,7 +17094,7 @@
 <e lm="loRta"><i>loRta</i><par n="kroXa/__n"/></e>
 <e lm="loSana"><i>loSan</i><par n="Gar/a__n"/></e>
 <e lm="lOtA"><i>lOtA</i><par n="KA/__v"/></e>
-<e lm="lotA"><i>lot</i><par n="regular__adj-noun"/></e>
+<e lm="lotA"><i>lot</i><par n="gudiy/A__n"/></e>
 <e lm="lota"><i>lot</i><par n="uT/a__v"/></e>
 <e lm="lOta"><i>lOt</i><par n="uT/a__v"/></e>
 <e lm="loWadA"><i>loWad</i><par n="regular__adj-noun"/></e>
@@ -17374,9 +17375,9 @@
 <e lm="mAika"><i>mAik</i><par n="Gar/a__n"/></e>
 <e lm="mAikroPona"><i>mAikroPona</i><par n="kroXa/__n"/></e>
 <e lm="ma"><i>m</i><par n="Gar/a__n"/></e>
-<e lm="mA"><i>m</i><par n="regular__adj-noun"/></e>
+<e lm="mA"><i>m</i><par n="gudiy/A__n"/></e>
 <e lm="maIxivasa"><i>maIxivasa</i><par n="kroXa/__n"/></e>
-<e lm="maiyA"><i>maiy</i><par n="regular__adj-noun"/></e>
+<e lm="maiyA"><i>maiy</i><par n="gudiy/A__n"/></e>
 <e lm="majabUra"><i>majabUra</i><par n="amIra/__adj"/></e>
 <e lm="majabUra"><i>majabUr</i><par n="Gar/a__n"/></e>
 <e lm="majabUrI"><i>majabUr</i><par n="ladak/I__n"/></e>
@@ -17407,7 +17408,7 @@
 <e lm="majexAra"><i>majexAra</i><par n="amIra/__adj"/></e>
 <e lm="majIrA"><i>majIr</i><par n="regular__adj-noun"/></e>
 <e lm="majistreta"><i>majistret</i><par n="Gar/a__n"/></e>
-<e lm="majjA"><i>majj</i><par n="regular__adj-noun"/></e>
+<e lm="majjA"><i>majj</i><par n="gudiy/A__n"/></e>
 <e lm="maJolA"><i>maJol</i><par n="regular__adj-noun"/></e>
 <e lm="majUmaxAra"><i>majUmaxAr</i><par n="Gar/a__n"/></e>
 <e lm="majxUrI"><i>majxUrI</i><par n="AjAxI/__n"/></e>
@@ -17474,7 +17475,7 @@
 <e lm="malAra"><i>malAra</i><par n="kroXa/__n"/></e>
 <e lm="malaroXaka"><i>malaroXaka</i><par n="amIra/__adj"/></e>
 <e lm="malASaya"><i>malASaya</i><par n="kroXa/__n"/></e>
-<e lm="mAlavA"><i>mAlav</i><par n="regular__adj-noun"/></e>
+<e lm="mAlavA"><i>mAlav</i><par n="gudiy/A__n"/></e>
 <e lm="malAvaroXa"><i>malAvaroXa</i><par n="kroXa/__n"/></e>
 <e lm="malavisarjana"><i>malavisarjana</i><par n="kroXa/__n"/></e>
 <e lm="mAlavIya"><i>mAlavIy</i><par n="Gar/a__n"/></e>
@@ -17664,7 +17665,7 @@
 <e lm="maMxAgni"><i>maMxAgni</i><par n="SAnwi/__n"/></e>
 <e lm="maMxahAsya"><i>maMxahAsya</i><par n="kroXa/__n"/></e>
 <e lm="maMxa"><i>maMxa</i><par n="amIra/__adj"/></e>
-<e lm="maMxA"><i>maMx</i><par n="regular__adj-noun"/></e>
+<e lm="maMxA"><i>maMx</i><par n="gudiy/A__n"/></e>
 <e lm="maMxajvara"><i>maMxajvara</i><par n="kroXa/__n"/></e>
 <e lm="maMxakarmA"><i>maMxakarm</i><par n="regular__adj-noun"/></e>
 <e lm="maMxAkinI"><i>maMxAkinI</i><par n="AjAxI/__n"/></e>
@@ -17739,7 +17740,7 @@
 <e lm="manaScakRu"><i>manaScakRu</i><par n="Sawru/__n"/></e>
 <e lm="manasija"><i>manasija</i><par n="kroXa/__n"/></e>
 <e lm="mAnasika"><i>mAnasika</i><par n="amIra/__adj"/></e>
-<e lm="mAnasikawA"><i>mAnasikaw</i><par n="regular__adj-noun"/></e>
+<e lm="mAnasikawA"><i>mAnasikaw</i><par n="gudiy/A__n"/></e>
 <e lm="mAnasUna"><i>mAnasUna</i><par n="kroXa/__n"/></e>
 <e lm="manasvI"><i>manasvI</i><par n="ajAwI/__adj"/></e>
 <e lm="manasvinI"><i>manasvin</i><par n="ladak/I__n"/></e>
@@ -17775,7 +17776,7 @@
 <e lm="maNimaMdiwa"><i>maNimaMdiwa</i><par n="amIra/__adj"/></e>
 <e lm="maNipura"><i>maNipura</i><par n="kroXa/__n"/></e>
 <e lm="maNirAga"><i>maNirAga</i><par n="kroXa/__n"/></e>
-<e lm="manIRA"><i>manIR</i><par n="regular__adj-noun"/></e>
+<e lm="manIRA"><i>manIR</i><par n="gudiy/A__n"/></e>
 <e lm="maNirAja"><i>maNirAja</i><par n="kroXa/__n"/></e>
 <e lm="manIRI"><i>manIRI</i><par n="ajAwI/__adj"/></e>
 <e lm="maNiroga"><i>maNiroga</i><par n="kroXa/__n"/></e>
@@ -18139,7 +18140,7 @@
 <e lm="mAwulAnI"><i>mAwulAn</i><par n="ladak/I__n"/></e>
 <e lm="mAWura"><i>mAWura</i><par n="amIra/__adj"/></e>
 <e lm="mAWura"><i>mAWura</i><par n="kroXa/__n"/></e>
-<e lm="maWurA"><i>maWur</i><par n="regular__adj-noun"/></e>
+<e lm="maWurA"><i>maWur</i><par n="gudiy/A__n"/></e>
 <e lm="mawwa"><i>mawwa</i><par n="amIra/__adj"/></e>
 <e lm="mawWA"><i>mawW</i><par n="regular__adj-noun"/></e>
 <e lm="maxaBarA"><i>maxaBar</i><par n="regular__adj-noun"/></e>
@@ -18147,7 +18148,6 @@
 <e lm="maxahoSa"><i>maxahoSa</i><par n="amIra/__adj"/></e>
 <e lm="mAxA"><i>mAxA</i><par n="ASA/__n"/></e>
 <e lm="maxa"><i>maxa</i><par n="kroXa/__n"/></e>
-<e lm="mAxA"><i>mAx</i><par n="regular__adj-noun"/></e>
 <e lm="maxajala"><i>maxajala</i><par n="kroXa/__n"/></e>
 <e lm="maxajvara"><i>maxajvara</i><par n="kroXa/__n"/></e>
 <e lm="mAxaka"><i>mAxaka</i><par n="amIra/__adj"/></e>
@@ -18344,7 +18344,7 @@
 <e lm="mEla"><i>mEla</i><par n="kroXa/__n"/></e>
 <e lm="mela"><i>mel</i><par n="Gar/a__n"/></e>
 <e lm="mElA"><i>mEl</i><par n="regular__adj-noun"/></e>
-<e lm="melA"><i>mel</i><par n="regular__adj-noun"/></e>
+<e lm="melA"><i>mel</i><par n="kAl/A__n"/></e>
 <e lm="mElA"><i>mEl</i><par n="loh/A__n"/></e>
 <e lm="melana"><i>melana</i><par n="kroXa/__n"/></e>
 <e lm="melApaka"><i>melApaka</i><par n="kroXa/__n"/></e>
@@ -18393,7 +18393,7 @@
 <e lm="mEWunika"><i>mEWunika</i><par n="amIra/__adj"/></e>
 <e lm="mExA"><i>mExA</i><par n="IrRyA/__n"/></e>
 <e lm="meXa"><i>meXa</i><par n="kroXa/__n"/></e>
-<e lm="meXA"><i>meX</i><par n="regular__adj-noun"/></e>
+<e lm="meXA"><i>meX</i><par n="gudiy/A__n"/></e>
 <e lm="mExAna"><i>mExAn</i><par n="Gar/a__n"/></e>
 <e lm="mExAnejaMga"><i>mExAnejaMga</i><par n="kroXa/__n"/></e>
 <e lm="mExAnI"><i>mExAnI</i><par n="ajAwI/__adj"/></e>
@@ -18401,7 +18401,7 @@
 <e lm="meXAvI"><i>meXAvI</i><par n="ajAwI/__adj"/></e>
 <e lm="meXAvinI"><i>meXAvinI</i><par n="ajAwI/__adj"/></e>
 <e lm="mexinI"><i>mexin</i><par n="ladak/I__n"/></e>
-<e lm="mEyA"><i>mEy</i><par n="regular__adj-noun"/></e>
+<e lm="mEyA"><i>mEy</i><par n="gudiy/A__n"/></e>
 <e lm="meyara"><i>meyara</i><par n="kroXa/__n"/></e>
 <e lm="mEyawa"><i>mEyaw</i><par n="rAw/a__n"/></e>
 <e lm="mIAxa"><i>mIAx</i><par n="rAw/a__n"/></e>
@@ -18414,7 +18414,7 @@
 <e lm="midala"><i>midal</i><par n="Gar/a__n"/></e>
 <e lm="midila"><i>midila</i><par n="amIra/__adj"/></e>
 <e lm="midilaskUla"><i>midilaskUl</i><par n="Gar/a__n"/></e>
-<e lm="mIdiyA"><i>mIdiy</i><par n="regular__adj-noun"/></e>
+<e lm="mIdiyA"><i>mIdiy</i><par n="gudiy/A__n"/></e>
 <e lm="mIdZa"><i>mIdZ</i><par n="Gar/a__n"/></e>
 <e lm="miga"><i>mig</i><par n="Gar/a__n"/></e>
 <e lm="mihira"><i>mihira</i><par n="kroXa/__n"/></e>
@@ -18454,7 +18454,7 @@
 <e lm="mImAMsiwa"><i>mImAMsiwa</i><par n="amIra/__adj"/></e>
 <e lm="mImAMsya"><i>mImAMsya</i><par n="amIra/__adj"/></e>
 <e lm="mimiyA"><i>mimiyA</i><par n="KA/__v"/></e>
-<e lm="mInA"><i>mIn</i><par n="regular__adj-noun"/></e>
+<e lm="mInA"><i>mIn</i><par n="gudiy/A__n"/></e>
 <e lm="mIna"><i>mIn</i><par n="rAw/a__n"/></e>
 <e lm="mInakAra"><i>mInakAr</i><par n="Gar/a__n"/></e>
 <e lm="mInAkArI"><i>mInAkArI</i><par n="AjAxI/__n"/></e>
@@ -18881,7 +18881,7 @@
 <e lm="mUlyowkarRa"><i>mUlyowkarRa</i><par n="kroXa/__n"/></e>
 <e lm="mumakina"><i>mumakin</i><par n="Gar/a__n"/></e>
 <e lm="mUMCa"><i>mUMC</i><par n="rAw/a__n"/></e>
-<e lm="muMdA"><i>muMd</i><par n="regular__adj-noun"/></e>
+<e lm="muMdA"><i>muMd</i><par n="gudiy/A__n"/></e>
 <e lm="muMda"><i>muMd</i><par n="uT/a__v"/></e>
 <e lm="muMdamAlA"><i>muMdamAlA</i><par n="ASA/__n"/></e>
 <e lm="muMdamAlI"><i>muMdamAl</i><par n="Axam/I__n"/></e>
@@ -19224,7 +19224,7 @@
 <e lm="nalabAzsa"><i>nalabAzs</i><par n="Gar/a__n"/></e>
 <e lm="nala"><i>nal</i><par n="Gar/a__n"/></e>
 <e lm="nAla"><i>nAl</i><par n="Gar/a__n"/></e>
-<e lm="nAlA"><i>nAl</i><par n="regular__adj-noun"/></e>
+<e lm="nAlA"><i>nAl</i><par n="gudiy/A__n"/></e>
 <e lm="nalakA"><i>nalak</i><par n="regular__adj-noun"/></e>
 <e lm="nalakIla"><i>nalakIl</i><par n="rAw/a__n"/></e>
 <e lm="nalakUpa"><i>nalakUp</i><par n="Gar/a__n"/></e>
@@ -19235,7 +19235,7 @@
 <e lm="nAlAyaka"><i>nAlAyak</i><par n="Gar/a__n"/></e>
 <e lm="nalI"><i>nal</i><par n="ladak/I__n"/></e>
 <e lm="nAlI"><i>nAl</i><par n="ladak/I__n"/></e>
-<e lm="nalikA"><i>nalik</i><par n="regular__adj-noun"/></e>
+<e lm="nalikA"><i>nalik</i><par n="gudiy/A__n"/></e>
 <e lm="nalina"><i>nalina</i><par n="kroXa/__n"/></e>
 <e lm="nalinI"><i>nalin</i><par n="ladak/I__n"/></e>
 <e lm="nAliSa"><i>nAliSa</i><par n="BIda/__n"/></e>
@@ -19394,7 +19394,7 @@
 <e lm="narmagarma"><i>narmagarma</i><par n="amIra/__adj"/></e>
 <e lm="narma"><i>narm</i><par n="Gar/a__n"/></e>
 <e lm="nArmala"><i>nArmala</i><par n="amIra/__adj"/></e>
-<e lm="narmaxA"><i>narmax</i><par n="regular__adj-noun"/></e>
+<e lm="narmaxA"><i>narmax</i><par n="gudiy/A__n"/></e>
 <e lm="narmaxila"><i>narmaxila</i><par n="amIra/__adj"/></e>
 <e lm="narmI"><i>narmI</i><par n="AjAxI/__n"/></e>
 <e lm="narsa"><i>narsa</i><par n="kroXa/__n"/></e>
@@ -19807,7 +19807,7 @@
 <e lm="nirAhAra"><i>nirAhAra</i><par n="amIra/__adj"/></e>
 <e lm="nirAI"><i>nirAI</i><par n="AjAxI/__n"/></e>
 <e lm="nirA"><i>nirA</i><par n="KA/__v"/></e>
-<e lm="nIrA"><i>nIr</i><par n="regular__adj-noun"/></e>
+<e lm="nIrA"><i>nIr</i><par n="gudiy/A__n"/></e>
 <e lm="nIraja"><i>nIraj</i><par n="Gar/a__n"/></e>
 <e lm="nIrAjana"><i>nIrAjana</i><par n="kroXa/__n"/></e>
 <e lm="nirAkAMkRa"><i>nirAkAMkRa</i><par n="amIra/__adj"/></e>
@@ -20168,7 +20168,7 @@
 <e lm="nOjavAnI"><i>nOjavAnI</i><par n="AjAxI/__n"/></e>
 <e lm="nOjIvika"><i>nOjIvika</i><par n="kroXa/__n"/></e>
 <e lm="nOKA"><i>nOKA</i><par n="Gar/a__n"/></e>
-<e lm="nOkA"><i>nOk</i><par n="regular__adj-noun"/></e>
+<e lm="nOkA"><i>nOk</i><par n="gudiy/A__n"/></e>
 <e lm="noka"><i>nok</i><par n="rAw/a__n"/></e>
 <e lm="nokaJoMka"><i>nokaJoMka</i><par n="BIda/__n"/></e>
 <e lm="nOkara"><i>nOkar</i><par n="Gar/a__n"/></e>
@@ -20666,7 +20666,7 @@
 <e lm="pAMcoM"><i>pAMcoM</i><par n="sarasoM/__n"/></e>
 <e lm="paMcopacAra"><i>paMcopacAr</i><par n="Gar/a__n"/></e>
 <e lm="PaMda"><i>PaMda</i><par n="kroXa/__n"/></e>
-<e lm="paMdA"><i>paMd</i><par n="regular__adj-noun"/></e>
+<e lm="paMdA"><i>paMd</i><par n="gudiy/A__n"/></e>
 <e lm="paMdAla"><i>paMdAl</i><par n="Gar/a__n"/></e>
 <e lm="pAMdava"><i>pAMdav</i><par n="Gar/a__n"/></e>
 <e lm="pAMdeya"><i>pAMdey</i><par n="Gar/a__n"/></e>
@@ -20828,7 +20828,7 @@
 <e lm="parahiwa"><i>parahiwa</i><par n="kroXa/__n"/></e>
 <e lm="parAhNa"><i>parAhNa</i><par n="kroXa/__n"/></e>
 <e lm="Para"><i>Para</i><par n="kroXa/__n"/></e>
-<e lm="parA"><i>par</i><par n="regular__adj-noun"/></e>
+<e lm="parA"><i>par</i><par n="gudiy/A__n"/></e>
 <e lm="pArA"><i>pAr</i><par n="loh/A__n"/></e>
 <e lm="parajana"><i>parajan</i><par n="Gar/a__n"/></e>
 <e lm="parajAwa"><i>parajAwa</i><par n="amIra/__adj"/></e>
@@ -20930,7 +20930,7 @@
 <e lm="ParaSI"><i>ParaSI</i><par n="ajAwI/__adj"/></e>
 <e lm="pArasI"><i>pAras</i><par n="Axam/I__n"/></e>
 <e lm="PArasI"><i>PAras</i><par n="ladak/I__n"/></e>
-<e lm="parasparawA"><i>parasparaw</i><par n="regular__adj-noun"/></e>
+<e lm="parasparawA"><i>parasparaw</i><par n="gudiy/A__n"/></e>
 <e lm="pArasparika"><i>pArasparika</i><par n="kroXa/__n"/></e>
 <e lm="parASraya"><i>parASraya</i><par n="kroXa/__n"/></e>
 <e lm="parASrayI"><i>parASray</i><par n="ladak/I__n"/></e>
@@ -21235,7 +21235,7 @@
 <e lm="pariveRtana"><i>pariveRtana</i><par n="kroXa/__n"/></e>
 <e lm="pariveRtiwa"><i>pariveRtiwa</i><par n="amIra/__adj"/></e>
 <e lm="pariveSa"><i>pariveSa</i><par n="kroXa/__n"/></e>
-<e lm="parivIkRA"><i>parivIkR</i><par n="regular__adj-noun"/></e>
+<e lm="parivIkRA"><i>parivIkR</i><par n="gudiy/A__n"/></e>
 <e lm="parivyaya"><i>parivyaya</i><par n="kroXa/__n"/></e>
 <e lm="pAriwa"><i>pAriwa</i><par n="amIra/__adj"/></e>
 <e lm="pariwApa"><i>pariwApa</i><par n="kroXa/__n"/></e>
@@ -21401,9 +21401,9 @@
 <e lm="pata"><i>pata</i><par n="kroXa/__n"/></e>
 <e lm="pAta"><i>pAt</i><par n="Gar/a__n"/></e>
 <e lm="pATa"><i>pAT</i><par n="Gar/a__n"/></e>
-<e lm="PatA"><i>Pat</i><par n="regular__adj-noun"/></e>
+<e lm="PatA"><i>Pat</i><par n="gudiy/A__n"/></e>
 <e lm="patA"><i>pat</i><par n="regular__adj-noun"/></e>
-<e lm="pATA"><i>pAT</i><par n="regular__adj-noun"/></e>
+<e lm="pATA"><i>pAT</i><par n="gudiy/A__n"/></e>
 <e lm="pata"><i>pat</i><par n="uT/a__v"/></e>
 <e lm="pAta"><i>pAt</i><par n="uT/a__v"/></e>
 <e lm="Pata"><i>Pat</i><par n="uT/a__v"/></e>
@@ -21684,7 +21684,7 @@
 <e lm="pecIxA"><i>pecIx</i><par n="regular__adj-noun"/></e>
 <e lm="peda"><i>ped</i><par n="Gar/a__n"/></e>
 <e lm="pEda"><i>pEd</i><par n="Gar/a__n"/></e>
-<e lm="pedA"><i>ped</i><par n="regular__adj-noun"/></e>
+<e lm="pedA"><i>ped</i><par n="gudiy/A__n"/></e>
 <e lm="pEdala"><i>pEdal</i><par n="Gar/a__n"/></e>
 <e lm="pEdI"><i>pEd</i><par n="ladak/I__n"/></e>
 <e lm="pega"><i>peg</i><par n="Gar/a__n"/></e>
@@ -21894,7 +21894,7 @@
 <e lm="pITAsIna"><i>pITAsIna</i><par n="amIra/__adj"/></e>
 <e lm="pitavA"><i>pitavA</i><par n="KA/__v"/></e>
 <e lm="pITI"><i>pIT</i><par n="ladak/I__n"/></e>
-<e lm="pITikA"><i>pITik</i><par n="regular__adj-noun"/></e>
+<e lm="pITikA"><i>pITik</i><par n="gudiy/A__n"/></e>
 <e lm="PitiMga"><i>PitiMga</i><par n="BIda/__n"/></e>
 <e lm="pitTU"><i>pitT</i><par n="Al/U__n"/></e>
 <e lm="pIvara"><i>pIvara</i><par n="amIra/__adj"/></e>
@@ -21954,7 +21954,7 @@
 <e lm="PlEta"><i>PlEta</i><par n="kroXa/__n"/></e>
 <e lm="pleta"><i>plet</i><par n="rAw/a__n"/></e>
 <e lm="plEtaPArma"><i>plEtaPArma</i><par n="kroXa/__n"/></e>
-<e lm="plIhA"><i>plIh</i><par n="regular__adj-noun"/></e>
+<e lm="plIhA"><i>plIh</i><par n="gudiy/A__n"/></e>
 <e lm="PlU"><i>PlU</i><par n="lahU/__n"/></e>
 <e lm="pluwa"><i>pluwa</i><par n="amIra/__adj"/></e>
 <e lm="pOA"><i>pO</i><par n="regular__adj-noun"/></e>
@@ -22376,7 +22376,7 @@
 <e lm="pramANika"><i>pramANika</i><par n="amIra/__adj"/></e>
 <e lm="prAmANika"><i>prAmANika</i><par n="amIra/__adj"/></e>
 <e lm="pramANIkaraNa"><i>pramANIkaraNa</i><par n="kroXa/__n"/></e>
-<e lm="prAmANikawA"><i>prAmANikaw</i><par n="regular__adj-noun"/></e>
+<e lm="prAmANikawA"><i>prAmANikaw</i><par n="gudiy/A__n"/></e>
 <e lm="pramANIkqwa"><i>pramANIkqwa</i><par n="amIra/__adj"/></e>
 <e lm="pramANiwa"><i>pramANiwa</i><par n="amIra/__adj"/></e>
 <e lm="prAmANya"><i>prAmANya</i><par n="kroXa/__n"/></e>
@@ -22540,7 +22540,7 @@
 <e lm="prasakwi"><i>prasakwi</i><par n="Apawwi/__n"/></e>
 <e lm="prasaMga"><i>prasaMg</i><par n="Gar/a__n"/></e>
 <e lm="prAsaMgika"><i>prAsaMgika</i><par n="amIra/__adj"/></e>
-<e lm="prAsaMgikawA"><i>prAsaMgikaw</i><par n="regular__adj-noun"/></e>
+<e lm="prAsaMgikawA"><i>prAsaMgikaw</i><par n="gudiy/A__n"/></e>
 <e lm="praSaMsA"><i>praSaMsA</i><par n="IrRyA/__n"/></e>
 <e lm="praSaMsaka"><i>praSaMsak</i><par n="Gar/a__n"/></e>
 <e lm="praSaMsAmuKara"><i>praSaMsAmuKara</i><par n="amIra/__adj"/></e>
@@ -22630,7 +22630,7 @@
 <e lm="pravAha"><i>pravAha</i><par n="kroXa/__n"/></e>
 <e lm="pravAhiwa"><i>pravAhiwa</i><par n="amIra/__adj"/></e>
 <e lm="pravajana"><i>pravajana</i><par n="kroXa/__n"/></e>
-<e lm="pravakwA"><i>pravakw</i><par n="regular__adj-noun"/></e>
+<e lm="pravakwA"><i>pravakw</i><par n="rAjA/__n"/></e>
 <e lm="pravAla"><i>pravAl</i><par n="Gar/a__n"/></e>
 <e lm="pravaMcaka"><i>pravaMcaka</i><par n="amIra/__adj"/></e>
 <e lm="pravaMcanA"><i>pravaMcanA</i><par n="ASA/__n"/></e>
@@ -22758,7 +22758,7 @@
 <e lm="prawihArI"><i>prawihAr</i><par n="Axam/I__n"/></e>
 <e lm="prawihaswAkRariwa"><i>prawihaswAkRariwa</i><par n="amIra/__adj"/></e>
 <e lm="prawihawa"><i>prawihawa</i><par n="amIra/__adj"/></e>
-<e lm="prawihiMsA"><i>prawihiMs</i><par n="regular__adj-noun"/></e>
+<e lm="prawihiMsA"><i>prawihiMs</i><par n="gudiy/A__n"/></e>
 <e lm="prawijAgaraNa"><i>prawijAgaraNa</i><par n="kroXa/__n"/></e>
 <e lm="prawijalpa"><i>prawijalpa</i><par n="kroXa/__n"/></e>
 <e lm="prawijanma"><i>prawijanma</i><par n="kroXa/__n"/></e>
@@ -22937,7 +22937,7 @@
 <e lm="prawyapiwa"><i>prawyapiwa</i><par n="amIra/__adj"/></e>
 <e lm="prawyAropa"><i>prawyArop</i><par n="Gar/a__n"/></e>
 <e lm="prawyarpaNa"><i>prawyarpaNa</i><par n="kroXa/__n"/></e>
-<e lm="prawyASA"><i>prawyAS</i><par n="regular__adj-noun"/></e>
+<e lm="prawyASA"><i>prawyAS</i><par n="gudiy/A__n"/></e>
 <e lm="prawyAsanna"><i>prawyAsanna</i><par n="amIra/__adj"/></e>
 <e lm="prawyAsawwi"><i>prawyAsawwi</i><par n="SAnwi/__n"/></e>
 <e lm="prawyASiwa"><i>prawyASiwa</i><par n="amIra/__adj"/></e>
@@ -23121,9 +23121,9 @@
 <e lm="priyavAxI"><i>priyavAx</i><par n="Axam/I__n"/></e>
 <e lm="priyawA"><i>priyawA</i><par n="ASA/__n"/></e>
 <e lm="priyawama"><i>priyawama</i><par n="amIra/__adj"/></e>
-<e lm="priyawamA"><i>priyawam</i><par n="regular__adj-noun"/></e>
+<e lm="priyawamA"><i>priyawam</i><par n="gudiy/A__n"/></e>
 <e lm="prODa"><i>prOD</i><par n="Gar/a__n"/></e>
-<e lm="prODA"><i>prOD</i><par n="regular__adj-noun"/></e>
+<e lm="prODA"><i>prOD</i><par n="gudiy/A__n"/></e>
 <e lm="prODawA"><i>prODawA</i><par n="IrRyA/__n"/></e>
 <e lm="prODawva"><i>prODawva</i><par n="kroXa/__n"/></e>
 <e lm="prODi"><i>prODi</i><par n="SAnwi/__n"/></e>
@@ -23195,12 +23195,12 @@
 <e lm="PulavArI"><i>PulavAr</i><par n="ladak/I__n"/></e>
 <e lm="PUlaxAna"><i>PUlaxAn</i><par n="Gar/a__n"/></e>
 <e lm="PUlaxAra"><i>PUlaxAra</i><par n="amIra/__adj"/></e>
-<e lm="puliMxA"><i>puliMx</i><par n="regular__adj-noun"/></e>
+<e lm="puliMxA"><i>puliMx</i><par n="gudiy/A__n"/></e>
 <e lm="pulisa"><i>pulisa</i><par n="BIda/__n"/></e>
 <e lm="pulisakAryavAI"><i>pulisakAryavA</i><par n="ladak/I__n"/></e>
 <e lm="pulisamEna"><i>pulisamEn</i><par n="Gar/a__n"/></e>
 <e lm="pulisarAja"><i>pulisarAja</i><par n="kroXa/__n"/></e>
-<e lm="puliyA"><i>puliy</i><par n="regular__adj-noun"/></e>
+<e lm="puliyA"><i>puliy</i><par n="gudiy/A__n"/></e>
 <e lm="Pulla"><i>Pulla</i><par n="amIra/__adj"/></e>
 <e lm="Pullanayana"><i>Pullanayana</i><par n="kroXa/__n"/></e>
 <e lm="puMdarIka"><i>puMdarIka</i><par n="kroXa/__n"/></e>
@@ -23292,7 +23292,7 @@
 <e lm="puraHsara"><i>puraHsara</i><par n="kroXa/__n"/></e>
 <e lm="pura"><i>pura</i><par n="kroXa/__n"/></e>
 <e lm="pURa"><i>pURa</i><par n="kroXa/__n"/></e>
-<e lm="purA"><i>pur</i><par n="regular__adj-noun"/></e>
+<e lm="purA"><i>pur</i><par n="gudiy/A__n"/></e>
 <e lm="pUrA"><i>pUr</i><par n="vAl/A__adj"/></e>
 <e lm="Pura"><i>Pur</i><par n="rAw/a__n"/></e>
 <e lm="purajA"><i>puraj</i><par n="regular__adj-noun"/></e>
@@ -23422,7 +23422,7 @@
 <e lm="puswakAlaya"><i>puswakAlaya</i><par n="kroXa/__n"/></e>
 <e lm="puswakAXyakRa"><i>puswakAXyakR</i><par n="Gar/a__n"/></e>
 <e lm="puSwEnI"><i>puSwEnI</i><par n="ajAwI/__adj"/></e>
-<e lm="puswikA"><i>puswik</i><par n="regular__adj-noun"/></e>
+<e lm="puswikA"><i>puswik</i><par n="gudiy/A__n"/></e>
 <e lm="PutabAla"><i>PutabAl</i><par n="rAw/a__n"/></e>
 <e lm="puta"><i>puta</i><par n="kroXa/__n"/></e>
 <e lm="Puta"><i>Puta</i><par n="kroXa/__n"/></e>
@@ -23490,7 +23490,7 @@
 <e lm="PyUja"><i>PyUja</i><par n="kroXa/__n"/></e>
 <e lm="pyUpA"><i>pyUp</i><par n="regular__adj-noun"/></e>
 <e lm="PzalAnA"><i>PzalAn</i><par n="loh/A__n"/></e>
-<e lm="PZAwimA"><i>PZAwim</i><par n="regular__adj-noun"/></e>
+<e lm="PZAwimA"><i>PZAwim</i><par n="gudiy/A__n"/></e>
 <e lm="qcA"><i>qcA</i><par n="ASA/__n"/></e>
 <e lm="qgvexa"><i>qgvexa</i><par n="kroXa/__n"/></e>
 <e lm="q"><i>q</i><par n="BARAvix/__n"/></e>
@@ -23642,7 +23642,7 @@
 <e lm="raja"><i>raja</i><par n="kroXa/__n"/></e>
 <e lm="rAja"><i>rAja</i><par n="kroXa/__n"/></e>
 <e lm="rAjA"><i>rAjA</i><par n="rAjA/__n"/></e>
-<e lm="rajA"><i>raj</i><par n="regular__adj-noun"/></e>
+<e lm="rajA"><i>raj</i><par n="gudiy/A__n"/></e>
 <e lm="rAjAjFA"><i>rAjAjFA</i><par n="ASA/__n"/></e>
 <e lm="rajaka"><i>rajak</i><par n="Gar/a__n"/></e>
 <e lm="rAjakAja"><i>rAjakAja</i><par n="kroXa/__n"/></e>
@@ -23697,7 +23697,7 @@
 <e lm="rAjasiMhAsana"><i>rAjasiMhAsana</i><par n="kroXa/__n"/></e>
 <e lm="rAjaSrI"><i>rAjaSrI</i><par n="AjAxI/__n"/></e>
 <e lm="rAjasva"><i>rAjasva</i><par n="kroXa/__n"/></e>
-<e lm="rajasvalA"><i>rajasval</i><par n="regular__adj-noun"/></e>
+<e lm="rajasvalA"><i>rajasval</i><par n="gudiy/A__n"/></e>
 <e lm="rAjasvamaMwrI"><i>rAjasvamaMwr</i><par n="Axam/I__n"/></e>
 <e lm="rAjasvanyAyAlaya"><i>rAjasvanyAyAlay</i><par n="Gar/a__n"/></e>
 <e lm="rajavAdA"><i>rajavAd</i><par n="regular__adj-noun"/></e>
@@ -23753,7 +23753,7 @@
 <e lm="rAjyaloBa"><i>rAjyaloBa</i><par n="kroXa/__n"/></e>
 <e lm="rAjyapAla"><i>rAjyapAl</i><par n="Gar/a__n"/></e>
 <e lm="rAjyapariRaxa"><i>rAjyapariRax</i><par n="rAw/a__n"/></e>
-<e lm="rAjyasaBA"><i>rAjyasaB</i><par n="regular__adj-noun"/></e>
+<e lm="rAjyasaBA"><i>rAjyasaB</i><par n="gudiy/A__n"/></e>
 <e lm="rAjyasaMrakRaka"><i>rAjyasaMrakRak</i><par n="Gar/a__n"/></e>
 <e lm="rAjyasarakAra"><i>rAjyasarakAra</i><par n="kroXa/__n"/></e>
 <e lm="rAjyaSAsana"><i>rAjyaSAsana</i><par n="kroXa/__n"/></e>
@@ -23794,7 +23794,7 @@
 <e lm="rakRikA"><i>rakRikA</i><par n="ASA/__n"/></e>
 <e lm="rakRika"><i>rakRika</i><par n="kroXa/__n"/></e>
 <e lm="rakRiwa"><i>rakRiwa</i><par n="amIra/__adj"/></e>
-<e lm="rakRiwA"><i>rakRiw</i><par n="regular__adj-noun"/></e>
+<e lm="rakRiwA"><i>rakRiw</i><par n="gudiy/A__n"/></e>
 <e lm="rakRyamANa"><i>rakRyamANa</i><par n="amIra/__adj"/></e>
 <e lm="rakwacaMcu"><i>rakwacaMcu</i><par n="Sawru/__n"/></e>
 <e lm="rakwacaMxana"><i>rakwacaMxana</i><par n="kroXa/__n"/></e>
@@ -23973,7 +23973,7 @@
 <e lm="rasajFA"><i>rasajFA</i><par n="ASA/__n"/></e>
 <e lm="rasakeli"><i>rasakeli</i><par n="Apawwi/__n"/></e>
 <e lm="rasAla"><i>rasAla</i><par n="amIra/__adj"/></e>
-<e lm="rasAlA"><i>rasAl</i><par n="regular__adj-noun"/></e>
+<e lm="rasAlA"><i>rasAl</i><par n="gudiy/A__n"/></e>
 <e lm="rAsalIlA"><i>rAsalIlA</i><par n="ASA/__n"/></e>
 <e lm="rAsamaMdala"><i>rAsamaMdal</i><par n="Gar/a__n"/></e>
 <e lm="rAsamaMdalI"><i>rAsamaMdal</i><par n="ladak/I__n"/></e>
@@ -24250,7 +24250,7 @@
 <e lm="rocaka"><i>rocaka</i><par n="amIra/__adj"/></e>
 <e lm="rocamAna"><i>rocamAna</i><par n="amIra/__adj"/></e>
 <e lm="rocana"><i>rocana</i><par n="amIra/__adj"/></e>
-<e lm="rocanA"><i>rocan</i><par n="regular__adj-noun"/></e>
+<e lm="rocanA"><i>rocan</i><par n="gudiy/A__n"/></e>
 <e lm="roda"><i>roda</i><par n="BIda/__n"/></e>
 <e lm="rodA"><i>rod</i><par n="regular__adj-noun"/></e>
 <e lm="RodaSAha"><i>RodaSAha</i><par n="kroXa/__n"/></e>
@@ -24667,7 +24667,7 @@
 <e lm="sAinaborda"><i>sAinaborda</i><par n="kroXa/__n"/></e>
 <e lm="sa"><i>s</i><par n="Gar/a__n"/></e>
 <e lm="Sa"><i>S</i><par n="Gar/a__n"/></e>
-<e lm="sA"><i>s</i><par n="regular__adj-noun"/></e>
+<e lm="sA"><i>s</i><par n="kAl/A__adj"/></e>
 <e lm="sajaga"><i>sajag</i><par n="Gar/a__n"/></e>
 <e lm="SAja"><i>SAja</i><par n="amIra/__adj"/></e>
 <e lm="sajA"><i>sajA</i><par n="ASA/__n"/></e>
@@ -24693,7 +24693,7 @@
 <e lm="sAjiSI"><i>sAjiSI</i><par n="ajAwI/__adj"/></e>
 <e lm="sAjiSI"><i>sAjiSI</i><par n="rAw/a__n"/></e>
 <e lm="sajIva"><i>sajIva</i><par n="amIra/__adj"/></e>
-<e lm="sajIvawA"><i>sajIvaw</i><par n="regular__adj-noun"/></e>
+<e lm="sajIvawA"><i>sajIvaw</i><par n="gudiy/A__n"/></e>
 <e lm="sajjA"><i>sajjA</i><par n="IrRyA/__n"/></e>
 <e lm="sajjana"><i>sajjan</i><par n="Gar/a__n"/></e>
 <e lm="sajjanawA"><i>sajjanawA</i><par n="IrRyA/__n"/></e>
@@ -24819,7 +24819,7 @@
 <e lm="Sala"><i>Sala</i><par n="kroXa/__n"/></e>
 <e lm="SAla"><i>SAla</i><par n="kroXa/__n"/></e>
 <e lm="sAla"><i>sAl</i><par n="Gar/a__n"/></e>
-<e lm="sAlA"><i>sAl</i><par n="regular__adj-noun"/></e>
+<e lm="sAlA"><i>sAl</i><par n="gudiy/A__n"/></e>
 <e lm="SalAkA"><i>SalAkA</i><par n="ASA/__n"/></e>
 <e lm="salAKa"><i>salAK</i><par n="rAw/a__n"/></e>
 <e lm="SalAkApawra"><i>SalAkApawr</i><par n="Gar/a__n"/></e>
@@ -24889,7 +24889,7 @@
 <e lm="samagra"><i>samagra</i><par n="amIra/__adj"/></e>
 <e lm="sAmagrI"><i>sAmagrI</i><par n="AjAxI/__n"/></e>
 <e lm="samAhAra"><i>samAhAra</i><par n="kroXa/__n"/></e>
-<e lm="samAharwA"><i>samAharw</i><par n="regular__adj-noun"/></e>
+<e lm="samAharwA"><i>samAharw</i><par n="gudiy/A__n"/></e>
 <e lm="samAhiwa"><i>samAhiwa</i><par n="amIra/__adj"/></e>
 <e lm="samAhUwa"><i>samAhUwa</i><par n="amIra/__adj"/></e>
 <e lm="samAhvAna"><i>samAhvAna</i><par n="kroXa/__n"/></e>
@@ -24917,7 +24917,7 @@
 <e lm="samaJaxArI"><i>samaJaxArI</i><par n="AjAxI/__n"/></e>
 <e lm="sAmAjika"><i>sAmAjika</i><par n="amIra/__adj"/></e>
 <e lm="samAjIkaraNa"><i>samAjIkaraNa</i><par n="kroXa/__n"/></e>
-<e lm="sAmAjikawA"><i>sAmAjikaw</i><par n="regular__adj-noun"/></e>
+<e lm="sAmAjikawA"><i>sAmAjikaw</i><par n="gudiy/A__n"/></e>
 <e lm="samaJOwA"><i>samaJOw</i><par n="regular__adj-noun"/></e>
 <e lm="Samaka"><i>Samaka</i><par n="amIra/__adj"/></e>
 <e lm="SAmaka"><i>SAmaka</i><par n="amIra/__adj"/></e>
@@ -25513,7 +25513,7 @@
 <e lm="saMruxXaprajanana"><i>saMruxXaprajanana</i><par n="amIra/__adj"/></e>
 <e lm="saMSabxa"><i>saMSabxa</i><par n="kroXa/__n"/></e>
 <e lm="saMSabxana"><i>saMSabxana</i><par n="kroXa/__n"/></e>
-<e lm="SaMsA"><i>SaMs</i><par n="regular__adj-noun"/></e>
+<e lm="SaMsA"><i>SaMs</i><par n="gudiy/A__n"/></e>
 <e lm="saMsakwacewA"><i>saMsakwacew</i><par n="regular__adj-noun"/></e>
 <e lm="saMsakwa"><i>saMsakwa</i><par n="amIra/__adj"/></e>
 <e lm="saMsakwi"><i>saMsakwi</i><par n="Apawwi/__n"/></e>
@@ -25712,7 +25712,7 @@
 <e lm="saMvexanA"><i>saMvexanA</i><par n="ASA/__n"/></e>
 <e lm="saMvexana"><i>saMvexana</i><par n="kroXa/__n"/></e>
 <e lm="saMvexanaSIla"><i>saMvexanaSIla</i><par n="amIra/__adj"/></e>
-<e lm="saMvexanaSIlawA"><i>saMvexanaSIlaw</i><par n="regular__adj-noun"/></e>
+<e lm="saMvexanaSIlawA"><i>saMvexanaSIlaw</i><par n="gudiy/A__n"/></e>
 <e lm="saMvexanAvAxa"><i>saMvexanAvAxa</i><par n="kroXa/__n"/></e>
 <e lm="saMvEXAnika"><i>saMvEXAnika</i><par n="amIra/__adj"/></e>
 <e lm="saMvexanIya"><i>saMvexanIya</i><par n="amIra/__adj"/></e>
@@ -25742,7 +25742,7 @@
 <e lm="saMvyavahAra"><i>saMvyavahAra</i><par n="kroXa/__n"/></e>
 <e lm="SAMwa"><i>SAMwa</i><par n="amIra/__adj"/></e>
 <e lm="saMwa"><i>saMw</i><par n="Gar/a__n"/></e>
-<e lm="SAMwA"><i>SAMw</i><par n="regular__adj-noun"/></e>
+<e lm="SAMwA"><i>SAMw</i><par n="gudiy/A__n"/></e>
 <e lm="saMwAnagaNapawi"><i>saMwAnagaNapawi</i><par n="kavi/__n"/></e>
 <e lm="saMwAnagopAla"><i>saMwAnagopAla</i><par n="kroXa/__n"/></e>
 <e lm="saMwAna"><i>saMwAn</i><par n="Gar/a__n"/></e>
@@ -26030,7 +26030,7 @@
 <e lm="sara"><i>sara</i><par n="amIra/__adj"/></e>
 <e lm="sAra"><i>sAra</i><par n="kroXa/__n"/></e>
 <e lm="Sara"><i>Sar</i><par n="Gar/a__n"/></e>
-<e lm="sArA"><i>sAr</i><par n="regular__adj-noun"/></e>
+<e lm="sArA"><i>sAr</i><par n="kAl/A__adj"/></e>
 <e lm="SarajjyowsnA"><i>SarajjyowsnA</i><par n="IrRyA/__n"/></e>
 <e lm="sarakA"><i>sarakA</i><par n="KA/__v"/></e>
 <e lm="saraka"><i>sarak</i><par n="uT/a__v"/></e>
@@ -26041,7 +26041,7 @@
 <e lm="sarakArI"><i>sarakArI</i><par n="AjAxI/__n"/></e>
 <e lm="sarakasa"><i>sarakasa</i><par n="kroXa/__n"/></e>
 <e lm="sarala"><i>sarala</i><par n="kroXa/__n"/></e>
-<e lm="saralA"><i>saral</i><par n="regular__adj-noun"/></e>
+<e lm="saralA"><i>saral</i><par n="gudiy/A__n"/></e>
 <e lm="saralakARTa"><i>saralakART</i><par n="Gar/a__n"/></e>
 <e lm="saralareKA"><i>saralareKA</i><par n="ASA/__n"/></e>
 <e lm="saralawA"><i>saralawA</i><par n="IrRyA/__n"/></e>
@@ -26600,7 +26600,7 @@
 <e lm="sawyaSIla"><i>sawyaSIla</i><par n="amIra/__adj"/></e>
 <e lm="sawyavacana"><i>sawyavacana</i><par n="kroXa/__n"/></e>
 <e lm="sawyavAka"><i>sawyavAka</i><par n="kroXa/__n"/></e>
-<e lm="sawyavakwA"><i>sawyavakw</i><par n="regular__adj-noun"/></e>
+<e lm="sawyavakwA"><i>sawyavakw</i><par n="rAjA/__n"/></e>
 <e lm="sawyavawI"><i>sawyavaw</i><par n="ladak/I__n"/></e>
 <e lm="sawyavaxana"><i>sawyavaxana</i><par n="kroXa/__n"/></e>
 <e lm="sawyavAxI"><i>sawyavAxI</i><par n="AjAxI/__n"/></e>
@@ -27131,8 +27131,8 @@
 <e lm="Sira"><i>Sira</i><par n="kroXa/__n"/></e>
 <e lm="SIra"><i>SIra</i><par n="kroXa/__n"/></e>
 <e lm="sira"><i>sir</i><par n="Gar/a__n"/></e>
-<e lm="sirA"><i>sir</i><par n="regular__adj-noun"/></e>
-<e lm="sIrA"><i>sIr</i><par n="regular__adj-noun"/></e>
+<e lm="sirA"><i>sir</i><par n="gudiy/A__n"/></e>
+<e lm="sIrA"><i>sIr</i><par n="gudiy/A__n"/></e>
 <e lm="sirAja"><i>sirAj</i><par n="Gar/a__n"/></e>
 <e lm="SirAjAla"><i>SirAjAla</i><par n="kroXa/__n"/></e>
 <e lm="sirakA"><i>sirak</i><par n="loh/A__n"/></e>
@@ -27807,7 +27807,7 @@
 <e lm="strIta"><i>strIt</i><par n="Gar/a__n"/></e>
 <e lm="stUdiyo"><i>stUdiyo</i><par n="redio/__n"/></e>
 <e lm="stUla"><i>stUl</i><par n="Gar/a__n"/></e>
-<e lm="suA"><i>su</i><par n="regular__adj-noun"/></e>
+<e lm="suA"><i>su</i><par n="gudiy/A__n"/></e>
 <e lm="suara"><i>suar</i><par n="Gar/a__n"/></e>
 <e lm="sUara"><i>sUar</i><par n="Gar/a__n"/></e>
 <e lm="suavasara"><i>suavasar</i><par n="Gar/a__n"/></e>
@@ -27844,7 +27844,7 @@
 <e lm="SuBavAsana"><i>SuBavAsana</i><par n="kroXa/__n"/></e>
 <e lm="SuBaxarSana"><i>SuBaxarSana</i><par n="amIra/__adj"/></e>
 <e lm="SuBaxAyI"><i>SuBaxAyI</i><par n="ajAwI/__adj"/></e>
-<e lm="suBaxrA"><i>suBaxr</i><par n="regular__adj-noun"/></e>
+<e lm="suBaxrA"><i>suBaxr</i><par n="gudiy/A__n"/></e>
 <e lm="SuBekRaNa"><i>SuBekRaNa</i><par n="amIra/__adj"/></e>
 <e lm="sUbexAra"><i>sUbexAra</i><par n="kroXa/__n"/></e>
 <e lm="sUbexArI"><i>sUbexAr</i><par n="ladak/I__n"/></e>
@@ -27986,15 +27986,15 @@
 <e lm="SuMda"><i>SuMda</i><par n="kroXa/__n"/></e>
 <e lm="sumera"><i>sumer</i><par n="Gar/a__n"/></e>
 <e lm="SuMga"><i>SuMga</i><par n="kroXa/__n"/></e>
-<e lm="sumiwrA"><i>sumiwr</i><par n="regular__adj-noun"/></e>
+<e lm="sumiwrA"><i>sumiwr</i><par n="gudiy/A__n"/></e>
 <e lm="suMxarawA"><i>suMxarawA</i><par n="IrRyA/__n"/></e>
 <e lm="suMxarI"><i>suMxar</i><par n="ladak/I__n"/></e>
 <e lm="sunAI"><i>sunAI</i><par n="AjAxI/__n"/></e>
 <e lm="sunA"><i>sunA</i><par n="KA/__v"/></e>
-<e lm="sUnA"><i>sUn</i><par n="regular__adj-noun"/></e>
+<e lm="sUnA"><i>sUn</i><par n="kAl/A__adj"/></e>
 <e lm="sUnA"><i>sUn</i><par n="loh/A__n"/></e>
 <e lm="suna"><i>sun</i><par n="uT/a__v"/></e>
-<e lm="sunaMxA"><i>sunaMx</i><par n="regular__adj-noun"/></e>
+<e lm="sunaMxA"><i>sunaMx</i><par n="gudiy/A__n"/></e>
 <e lm="sunanevAlA"><i>sunanevAl</i><par n="regular__adj-noun"/></e>
 <e lm="sUnApana"><i>sUnApana</i><par n="kroXa/__n"/></e>
 <e lm="sunAra"><i>sunAr</i><par n="Gar/a__n"/></e>
@@ -28043,7 +28043,7 @@
 <e lm="surakRA"><i>surakRA</i><par n="IrRyA/__n"/></e>
 <e lm="surakRiwa"><i>surakRiw</i><par n="Gar/a__n"/></e>
 <e lm="suramA"><i>suram</i><par n="regular__adj-noun"/></e>
-<e lm="suRamA"><i>suRam</i><par n="regular__adj-noun"/></e>
+<e lm="suRamA"><i>suRam</i><par n="gudiy/A__n"/></e>
 <e lm="SUramAnI"><i>SUramAnI</i><par n="ajAwI/__adj"/></e>
 <e lm="suraMga"><i>suraMg</i><par n="rAw/a__n"/></e>
 <e lm="SUraNa"><i>SUraNa</i><par n="kroXa/__n"/></e>
@@ -28100,7 +28100,7 @@
 <e lm="susaMskqwa"><i>susaMskqw</i><par n="Gar/a__n"/></e>
 <e lm="suSikRiwa"><i>suSikRiw</i><par n="Gar/a__n"/></e>
 <e lm="suSIla"><i>suSIl</i><par n="Gar/a__n"/></e>
-<e lm="suSIlA"><i>suSIl</i><par n="regular__adj-noun"/></e>
+<e lm="suSIlA"><i>suSIl</i><par n="gudiy/A__n"/></e>
 <e lm="suSoBiwa"><i>suSoBiw</i><par n="Gar/a__n"/></e>
 <e lm="SuSrURA"><i>SuSrURA</i><par n="IrRyA/__n"/></e>
 <e lm="suSruwa"><i>suSruw</i><par n="Gar/a__n"/></e>
@@ -28146,9 +28146,9 @@
 <e lm="sUwWAna"><i>sUwWAna</i><par n="kroXa/__n"/></e>
 <e lm="suXa"><i>suXa</i><par n="BIda/__n"/></e>
 <e lm="sUxa"><i>sUxa</i><par n="kroXa/__n"/></e>
-<e lm="suXA"><i>suX</i><par n="regular__adj-noun"/></e>
+<e lm="suXA"><i>suX</i><par n="gudiy/A__n"/></e>
 <e lm="sUxaKorI"><i>sUxaKorI</i><par n="AjAxI/__n"/></e>
-<e lm="suxAmA"><i>suxAm</i><par n="regular__adj-noun"/></e>
+<e lm="suxAmA"><i>suxAm</i><par n="gudiy/A__n"/></e>
 <e lm="sUxana"><i>sUxana</i><par n="kroXa/__n"/></e>
 <e lm="suXAra"><i>suXAr</i><par n="Gar/a__n"/></e>
 <e lm="suXara"><i>suXar</i><par n="uT/a__v"/></e>
@@ -28190,10 +28190,10 @@
 <e lm="svacala"><i>svacal</i><par n="Gar/a__n"/></e>
 <e lm="svacAliwa"><i>svacAliw</i><par n="Gar/a__n"/></e>
 <e lm="svacCa"><i>svacC</i><par n="Gar/a__n"/></e>
-<e lm="svacCawA"><i>svacCaw</i><par n="regular__adj-noun"/></e>
+<e lm="svacCawA"><i>svacCaw</i><par n="gudiy/A__n"/></e>
 <e lm="svAgawa"><i>svAgaw</i><par n="Gar/a__n"/></e>
 <e lm="Svagraha"><i>Svagraha</i><par n="kroXa/__n"/></e>
-<e lm="svAhA"><i>svAh</i><par n="regular__adj-noun"/></e>
+<e lm="svAhA"><i>svAh</i><par n="gudiy/A__n"/></e>
 <e lm="sva"><i>sv</i><par n="Gar/a__n"/></e>
 <e lm="SvajIvikA"><i>SvajIvikA</i><par n="IrRyA/__n"/></e>
 <e lm="SvakaMtaka"><i>SvakaMtaka</i><par n="kroXa/__n"/></e>
@@ -28237,18 +28237,18 @@
 <e lm="svawva"><i>svawv</i><par n="Gar/a__n"/></e>
 <e lm="svAxa"><i>svAx</i><par n="Gar/a__n"/></e>
 <e lm="svAXIna"><i>svAXIn</i><par n="Gar/a__n"/></e>
-<e lm="svAXInawA"><i>svAXInaw</i><par n="regular__adj-noun"/></e>
+<e lm="svAXInawA"><i>svAXInaw</i><par n="gudiy/A__n"/></e>
 <e lm="svAxiRta"><i>svAxiRt</i><par n="Gar/a__n"/></e>
 <e lm="svAXyAya"><i>svAXyAy</i><par n="Gar/a__n"/></e>
 <e lm="svayaM"><i>svayaM</i><par n="sarasoM/__n"/></e>
 <e lm="svAyawwa"><i>svAyaww</i><par n="Gar/a__n"/></e>
-<e lm="svecCA"><i>svecC</i><par n="regular__adj-noun"/></e>
+<e lm="svecCA"><i>svecC</i><par n="gudiy/A__n"/></e>
 <e lm="svEcCika"><i>svEcCik</i><par n="Gar/a__n"/></e>
 <e lm="svetara"><i>svetar</i><par n="Gar/a__n"/></e>
 <e lm="SvewABa"><i>SvewABa</i><par n="amIra/__adj"/></e>
 <e lm="SvewacaMxana"><i>SvewacaMxana</i><par n="kroXa/__n"/></e>
 <e lm="Svewa"><i>Svewa</i><par n="amIra/__adj"/></e>
-<e lm="SvewA"><i>Svew</i><par n="regular__adj-noun"/></e>
+<e lm="SvewA"><i>Svew</i><par n="gudiy/A__n"/></e>
 <e lm="SvewajIraka"><i>SvewajIraka</i><par n="kroXa/__n"/></e>
 <e lm="Svewaka"><i>Svewaka</i><par n="kroXa/__n"/></e>
 <e lm="SvewakAMdA"><i>SvewakAMdA</i><par n="IrRyA/__n"/></e>
@@ -28280,14 +28280,14 @@
 <e lm="sWAnika"><i>sWAnik</i><par n="Gar/a__n"/></e>
 <e lm="sWAnIya"><i>sWAnIy</i><par n="Gar/a__n"/></e>
 <e lm="sWApana"><i>sWApan</i><par n="Gar/a__n"/></e>
-<e lm="sWApanA"><i>sWApan</i><par n="regular__adj-noun"/></e>
+<e lm="sWApanA"><i>sWApan</i><par n="gudiy/A__n"/></e>
 <e lm="sWApawya"><i>sWApawy</i><par n="Gar/a__n"/></e>
 <e lm="sWApiwa"><i>sWApiw</i><par n="Gar/a__n"/></e>
 <e lm="swara"><i>swar</i><par n="Gar/a__n"/></e>
 <e lm="swarIya"><i>swarIy</i><par n="Gar/a__n"/></e>
 <e lm="sWAyiwva"><i>sWAyiwv</i><par n="Gar/a__n"/></e>
 <e lm="sWira"><i>sWir</i><par n="Gar/a__n"/></e>
-<e lm="sWirawA"><i>sWiraw</i><par n="regular__adj-noun"/></e>
+<e lm="sWirawA"><i>sWiraw</i><par n="gudiy/A__n"/></e>
 <e lm="sWirIkaraNa"><i>sWirIkaraN</i><par n="Gar/a__n"/></e>
 <e lm="sWiwa"><i>sWiw</i><par n="Gar/a__n"/></e>
 <e lm="sWiwi"><i>sWiwi</i><par n="kavi/__n"/></e>
@@ -28647,7 +28647,7 @@
 <e lm="ugrA"><i>ugrA</i><par n="ASA/__n"/></e>
 <e lm="ugravAxa"><i>ugravAxa</i><par n="kroXa/__n"/></e>
 <e lm="ugravAxI"><i>ugravAx</i><par n="ladak/I__n"/></e>
-<e lm="ugrawA"><i>ugraw</i><par n="regular__adj-noun"/></e>
+<e lm="ugrawA"><i>ugraw</i><par n="gudiy/A__n"/></e>
 <e lm="UhanIya"><i>UhanIya</i><par n="amIra/__adj"/></e>
 <e lm="Uhya"><i>Uhya</i><par n="amIra/__adj"/></e>
 <e lm="U"><i></i><par n="Al/U__n"/></e>
@@ -28854,7 +28854,7 @@
 <e lm="upalabXi"><i>upalabXi</i><par n="Apawwi/__n"/></e>
 <e lm="upalaBya"><i>upalaBya</i><par n="amIra/__adj"/></e>
 <e lm="upala"><i>upala</i><par n="kroXa/__n"/></e>
-<e lm="upalA"><i>upal</i><par n="regular__adj-noun"/></e>
+<e lm="upalA"><i>upal</i><par n="gudiy/A__n"/></e>
 <e lm="upalakRaka"><i>upalakRaka</i><par n="kroXa/__n"/></e>
 <e lm="upalakRaNa"><i>upalakRaNa</i><par n="kroXa/__n"/></e>
 <e lm="upalakRiwa"><i>upalakRiwa</i><par n="amIra/__adj"/></e>
@@ -28978,7 +28978,7 @@
 <e lm="upasWiwi"><i>upasWiwi</i><par n="SAnwi/__n"/></e>
 <e lm="upaswrI"><i>upaswrI</i><par n="AjAxI/__n"/></e>
 <e lm="upAsya"><i>upAsya</i><par n="amIra/__adj"/></e>
-<e lm="upavakwA"><i>upavakw</i><par n="regular__adj-noun"/></e>
+<e lm="upavakwA"><i>upavakw</i><par n="rAjA/__n"/></e>
 <e lm="upavAkya"><i>upavAky</i><par n="Gar/a__n"/></e>
 <e lm="upavana"><i>upavan</i><par n="Gar/a__n"/></e>
 <e lm="upavapana"><i>upavapana</i><par n="kroXa/__n"/></e>
@@ -29005,7 +29005,7 @@
 <e lm="upawyakA"><i>upawyakA</i><par n="ASA/__n"/></e>
 <e lm="upaxAna"><i>upaxAn</i><par n="Gar/a__n"/></e>
 <e lm="upAxAna"><i>upAxAn</i><par n="Gar/a__n"/></e>
-<e lm="upaXArA"><i>upaXAr</i><par n="regular__adj-noun"/></e>
+<e lm="upaXArA"><i>upaXAr</i><par n="gudiy/A__n"/></e>
 <e lm="upaxeSa"><i>upaxeS</i><par n="Gar/a__n"/></e>
 <e lm="upaxeSaka"><i>upaxeSak</i><par n="Gar/a__n"/></e>
 <e lm="upaxeSana"><i>upaxeSana</i><par n="kroXa/__n"/></e>
@@ -29086,7 +29086,7 @@
 <e lm="uRNoRNa"><i>uRNoRNa</i><par n="amIra/__adj"/></e>
 <e lm="uRtra"><i>uRtra</i><par n="kroXa/__n"/></e>
 <e lm="urvara"><i>urvara</i><par n="amIra/__adj"/></e>
-<e lm="urvarA"><i>urvar</i><par n="regular__adj-noun"/></e>
+<e lm="urvarA"><i>urvar</i><par n="gudiy/A__n"/></e>
 <e lm="urvaraka"><i>urvaraka</i><par n="kroXa/__n"/></e>
 <e lm="urvaSI"><i>urvaSI</i><par n="AjAxI/__n"/></e>
 <e lm="urvI"><i>urvI</i><par n="AjAxI/__n"/></e>
@@ -29154,7 +29154,7 @@
 <e lm="uwpawwi"><i>uwpawwi</i><par n="SAnwi/__n"/></e>
 <e lm="uwpAxa"><i>uwpAx</i><par n="Gar/a__n"/></e>
 <e lm="uwpAxaka"><i>uwpAxak</i><par n="Gar/a__n"/></e>
-<e lm="uwpAxakawA"><i>uwpAxakaw</i><par n="regular__adj-noun"/></e>
+<e lm="uwpAxakawA"><i>uwpAxakaw</i><par n="gudiy/A__n"/></e>
 <e lm="uwpAxana"><i>uwpAxan</i><par n="Gar/a__n"/></e>
 <e lm="uwpAxiwa"><i>uwpAxiw</i><par n="Gar/a__n"/></e>
 <e lm="uwpIdana"><i>uwpIdana</i><par n="kroXa/__n"/></e>
@@ -29436,7 +29436,7 @@
 <e lm="vAgyamAna"><i>vAgyamAna</i><par n="kroXa/__n"/></e>
 <e lm="vAgyuxXa"><i>vAgyuxXa</i><par n="kroXa/__n"/></e>
 <e lm="vaha"><i></i><par n="/vaha__p"/></e>
-<e lm="vahA"><i>vah</i><par n="regular__adj-noun"/></e>
+<e lm="vahA"><i>vah</i><par n="gudiy/A__n"/></e>
 <e lm="vAhakaceka"><i>vAhakaceka</i><par n="kroXa/__n"/></e>
 <e lm="vAhaka"><i>vAhaka</i><par n="amIra/__adj"/></e>
 <e lm="vAhakanalikA"><i>vAhakanalikA</i><par n="ASA/__n"/></e>
@@ -29805,7 +29805,7 @@
 <e lm="vAriXara"><i>vAriXara</i><par n="amIra/__adj"/></e>
 <e lm="vAriXArA"><i>vAriXArA</i><par n="ASA/__n"/></e>
 <e lm="vAriyaMwra"><i>vAriyaMwr</i><par n="Gar/a__n"/></e>
-<e lm="varIyawA"><i>varIyaw</i><par n="regular__adj-noun"/></e>
+<e lm="varIyawA"><i>varIyaw</i><par n="gudiy/A__n"/></e>
 <e lm="varjana"><i>varjana</i><par n="kroXa/__n"/></e>
 <e lm="varjanIya"><i>varjanIya</i><par n="amIra/__adj"/></e>
 <e lm="varjayiwA"><i>varjayiw</i><par n="regular__adj-noun"/></e>
@@ -29940,7 +29940,7 @@
 <e lm="vAsaMwikawA"><i>vAsaMwikawA</i><par n="IrRyA/__n"/></e>
 <e lm="vasaMwowsava"><i>vasaMwowsava</i><par n="kroXa/__n"/></e>
 <e lm="vasana"><i>vasan</i><par n="Gar/a__n"/></e>
-<e lm="vAsanA"><i>vAsan</i><par n="regular__adj-noun"/></e>
+<e lm="vAsanA"><i>vAsan</i><par n="gudiy/A__n"/></e>
 <e lm="vAsaparyAya"><i>vAsaparyAya</i><par n="kroXa/__n"/></e>
 <e lm="vAsara"><i>vAsara</i><par n="kroXa/__n"/></e>
 <e lm="vAsasajjA"><i>vAsasajjA</i><par n="ASA/__n"/></e>
@@ -30166,14 +30166,14 @@
 <e lm="vExika"><i>vExik</i><par n="Gar/a__n"/></e>
 <e lm="vEXika"><i>vEXik</i><par n="Gar/a__n"/></e>
 <e lm="vExya"><i>vExy</i><par n="Gar/a__n"/></e>
-<e lm="vExyA"><i>vExy</i><par n="regular__adj-noun"/></e>
+<e lm="vExyA"><i>vExy</i><par n="gudiy/A__n"/></e>
 <e lm="vEyAkaraNa"><i>vEyAkaraNa</i><par n="kroXa/__n"/></e>
 <e lm="vEyakwika"><i>vEyakwika</i><par n="kroXa/__n"/></e>
 <e lm="vhiskI"><i>vhisk</i><par n="ladak/I__n"/></e>
 <e lm="viBAga"><i>viBAg</i><par n="Gar/a__n"/></e>
 <e lm="viBAgAXyakRa"><i>viBAgAXyakR</i><par n="Gar/a__n"/></e>
 <e lm="viBAgIya"><i>viBAgIy</i><par n="Gar/a__n"/></e>
-<e lm="viBA"><i>viB</i><par n="regular__adj-noun"/></e>
+<e lm="viBA"><i>viB</i><par n="gudiy/A__n"/></e>
 <e lm="viBAjaka"><i>viBAjak</i><par n="Gar/a__n"/></e>
 <e lm="viBAjana"><i>viBAjana</i><par n="kroXa/__n"/></e>
 <e lm="viBAjiwa"><i>viBAjiw</i><par n="Gar/a__n"/></e>
@@ -30185,7 +30185,7 @@
 <e lm="viBinna"><i>viBinn</i><par n="Gar/a__n"/></e>
 <e lm="viBinnawA"><i>viBinnawA</i><par n="IrRyA/__n"/></e>
 <e lm="viBIRaNa"><i>viBIRaN</i><par n="Gar/a__n"/></e>
-<e lm="viBIRikA"><i>viBIRik</i><par n="regular__adj-noun"/></e>
+<e lm="viBIRikA"><i>viBIRik</i><par n="gudiy/A__n"/></e>
 <e lm="viBora"><i>viBor</i><par n="Gar/a__n"/></e>
 <e lm="viBURiwa"><i>viBURiw</i><par n="Gar/a__n"/></e>
 <e lm="viBUwi"><i>viBUwi</i><par n="Apawwi/__n"/></e>
@@ -30259,7 +30259,7 @@
 <e lm="vicUrNiwa"><i>vicUrNiwa</i><par n="amIra/__adj"/></e>
 <e lm="vicyuwa"><i>vicyuwa</i><par n="amIra/__adj"/></e>
 <e lm="vicyuwi"><i>vicyuwi</i><par n="Apawwi/__n"/></e>
-<e lm="vidaMbanA"><i>vidaMban</i><par n="regular__adj-noun"/></e>
+<e lm="vidaMbanA"><i>vidaMban</i><par n="gudiy/A__n"/></e>
 <e lm="vigAha"><i>vigAha</i><par n="kroXa/__n"/></e>
 <e lm="vigahimAna"><i>vigahimAna</i><par n="amIra/__adj"/></e>
 <e lm="vigalana"><i>vigalana</i><par n="kroXa/__n"/></e>
@@ -30388,7 +30388,7 @@
 <e lm="vikala"><i>vikala</i><par n="amIra/__adj"/></e>
 <e lm="vikalA"><i>vikalA</i><par n="IrRyA/__n"/></e>
 <e lm="vikalAMga"><i>vikalAMga</i><par n="amIra/__adj"/></e>
-<e lm="vikalAMgawA"><i>vikalAMgaw</i><par n="regular__adj-noun"/></e>
+<e lm="vikalAMgawA"><i>vikalAMgaw</i><par n="gudiy/A__n"/></e>
 <e lm="vikalana"><i>vikalana</i><par n="amIra/__adj"/></e>
 <e lm="vikaleMxriya"><i>vikaleMxriya</i><par n="amIra/__adj"/></e>
 <e lm="vikalIkqwa"><i>vikalIkqwa</i><par n="amIra/__adj"/></e>
@@ -30490,7 +30490,7 @@
 <e lm="vikroSana"><i>vikroSana</i><par n="kroXa/__n"/></e>
 <e lm="vikroXa"><i>vikroXa</i><par n="amIra/__adj"/></e>
 <e lm="vikRubXa"><i>vikRubXa</i><par n="amIra/__adj"/></e>
-<e lm="viktoriyA"><i>viktoriy</i><par n="regular__adj-noun"/></e>
+<e lm="viktoriyA"><i>viktoriy</i><par n="gudiy/A__n"/></e>
 <e lm="vikUjana"><i>vikUjana</i><par n="kroXa/__n"/></e>
 <e lm="vikuMciwa"><i>vikuMciwa</i><par n="amIra/__adj"/></e>
 <e lm="vikuMTa"><i>vikuMTa</i><par n="amIra/__adj"/></e>
@@ -30515,7 +30515,7 @@
 <e lm="viloma"><i>vilom</i><par n="Gar/a__n"/></e>
 <e lm="vilupwa"><i>vilupw</i><par n="Gar/a__n"/></e>
 <e lm="vimala"><i>vimal</i><par n="Gar/a__n"/></e>
-<e lm="vimalA"><i>vimal</i><par n="regular__adj-noun"/></e>
+<e lm="vimalA"><i>vimal</i><par n="gudiy/A__n"/></e>
 <e lm="vimAna"><i>vimAn</i><par n="Gar/a__n"/></e>
 <e lm="vimAnana"><i>vimAnan</i><par n="Gar/a__n"/></e>
 <e lm="vimarSa"><i>vimarS</i><par n="Gar/a__n"/></e>
@@ -30555,7 +30555,7 @@
 <e lm="vipaNana"><i>vipaNan</i><par n="Gar/a__n"/></e>
 <e lm="vipawra"><i>vipawr</i><par n="Gar/a__n"/></e>
 <e lm="vipawwi"><i>vipawwi</i><par n="Apawwi/__n"/></e>
-<e lm="vipaxA"><i>vipax</i><par n="regular__adj-noun"/></e>
+<e lm="vipaxA"><i>vipax</i><par n="gudiy/A__n"/></e>
 <e lm="vipina"><i>vipin</i><par n="Gar/a__n"/></e>
 <e lm="viplava"><i>viplav</i><par n="Gar/a__n"/></e>
 <e lm="vipula"><i>vipul</i><par n="Gar/a__n"/></e>
@@ -30589,9 +30589,9 @@
 <e lm="viroXI"><i>viroX</i><par n="Axam/I__n"/></e>
 <e lm="vIrya"><i>vIry</i><par n="Gar/a__n"/></e>
 <e lm="viSAKa"><i>viSAK</i><par n="Gar/a__n"/></e>
-<e lm="viSAKA"><i>viSAK</i><par n="regular__adj-noun"/></e>
+<e lm="viSAKA"><i>viSAK</i><par n="gudiy/A__n"/></e>
 <e lm="viSAla"><i>viSAla</i><par n="amIra/__adj"/></e>
-<e lm="viSAlawA"><i>viSAlaw</i><par n="regular__adj-noun"/></e>
+<e lm="viSAlawA"><i>viSAlaw</i><par n="gudiy/A__n"/></e>
 <e lm="visaMgawi"><i>visaMgawi</i><par n="kavi/__n"/></e>
 <e lm="visaMkramaNa"><i>visaMkramaN</i><par n="Gar/a__n"/></e>
 <e lm="viSAraxa"><i>viSArax</i><par n="Gar/a__n"/></e>
@@ -30625,7 +30625,7 @@
 <e lm="viSvakoSa"><i>viSvakoS</i><par n="Gar/a__n"/></e>
 <e lm="viSvAsa"><i>viSvAsa</i><par n="kroXa/__n"/></e>
 <e lm="viSvasanIya"><i>viSvasanIy</i><par n="Gar/a__n"/></e>
-<e lm="viSvasanIyawA"><i>viSvasanIyaw</i><par n="regular__adj-noun"/></e>
+<e lm="viSvasanIyawA"><i>viSvasanIyaw</i><par n="gudiy/A__n"/></e>
 <e lm="viSvaswa"><i>viSvasw</i><par n="Gar/a__n"/></e>
 <e lm="viSvavixyAlaya"><i>viSvavixyAlay</i><par n="Gar/a__n"/></e>
 <e lm="visWApiwa"><i>visWApiw</i><par n="Gar/a__n"/></e>
@@ -30645,7 +30645,7 @@
 <e lm="vivAxa"><i>vivAx</i><par n="Gar/a__n"/></e>
 <e lm="vivAxAspaxa"><i>vivAxAspax</i><par n="Gar/a__n"/></e>
 <e lm="vivecana"><i>vivecan</i><par n="Gar/a__n"/></e>
-<e lm="vivecanA"><i>vivecan</i><par n="regular__adj-noun"/></e>
+<e lm="vivecanA"><i>vivecan</i><par n="gudiy/A__n"/></e>
 <e lm="vivecanAwmaka"><i>vivecanAwmak</i><par n="Gar/a__n"/></e>
 <e lm="vivecya"><i>vivecy</i><par n="Gar/a__n"/></e>
 <e lm="viveka"><i>viveka</i><par n="kroXa/__n"/></e>
@@ -30655,19 +30655,19 @@
 <e lm="viwaraNa"><i>viwaraN</i><par n="Gar/a__n"/></e>
 <e lm="viwariwa"><i>viwariw</i><par n="Gar/a__n"/></e>
 <e lm="viwarka"><i>viwark</i><par n="Gar/a__n"/></e>
-<e lm="viwqRNA"><i>viwqRN</i><par n="regular__adj-noun"/></e>
+<e lm="viwqRNA"><i>viwqRN</i><par n="gudiy/A__n"/></e>
 <e lm="viwwa"><i>viwwa</i><par n="kroXa/__n"/></e>
 <e lm="viwwIya"><i>viwwIy</i><par n="Gar/a__n"/></e>
 <e lm="vixagXa"><i>vixagX</i><par n="Gar/a__n"/></e>
 <e lm="vixAI"><i>vixAI</i><par n="AjAxI/__n"/></e>
-<e lm="vixA"><i>vix</i><par n="regular__adj-noun"/></e>
-<e lm="viXA"><i>viX</i><par n="regular__adj-noun"/></e>
+<e lm="vixA"><i>vix</i><par n="gudiy/A__n"/></e>
+<e lm="viXA"><i>viX</i><par n="gudiy/A__n"/></e>
 <e lm="viXAna"><i>viXAn</i><par n="Gar/a__n"/></e>
 <e lm="viXavA"><i>viXavA</i><par n="ASA/__n"/></e>
 <e lm="viXavApana"><i>viXavApana</i><par n="kroXa/__n"/></e>
 <e lm="viXAwA"><i>viXAwA</i><par n="viXAwA/__n"/></e>
 <e lm="viXAyaka"><i>viXAyak</i><par n="Gar/a__n"/></e>
-<e lm="viXAyikA"><i>viXAyik</i><par n="regular__adj-noun"/></e>
+<e lm="viXAyikA"><i>viXAyik</i><par n="gudiy/A__n"/></e>
 <e lm="vixeha"><i>vixeh</i><par n="Gar/a__n"/></e>
 <e lm="vixeSa"><i>vixeS</i><par n="Gar/a__n"/></e>
 <e lm="vixeSI"><i>vixeSI</i><par n="amIra/__adj"/></e>
@@ -30677,7 +30677,7 @@
 <e lm="viXi"><i>viXi</i><par n="Apawwi/__n"/></e>
 <e lm="viXika"><i>viXik</i><par n="Gar/a__n"/></e>
 <e lm="vixIrNa"><i>vixIrN</i><par n="Gar/a__n"/></e>
-<e lm="vixiSA"><i>vixiS</i><par n="regular__adj-noun"/></e>
+<e lm="vixiSA"><i>vixiS</i><par n="gudiy/A__n"/></e>
 <e lm="vix"><i>vix</i><par n="BARAvix/__n"/></e>
 <e lm="vixiwa"><i>vixiw</i><par n="Gar/a__n"/></e>
 <e lm="vixroha"><i>vixroh</i><par n="Gar/a__n"/></e>
@@ -30713,7 +30713,7 @@
 <e lm="vqwwi"><i>vqwwi</i><par n="Apawwi/__n"/></e>
 <e lm="vqxXA"><i>vqxXA</i><par n="ASA/__n"/></e>
 <e lm="vqxXa"><i>vqxX</i><par n="Gar/a__n"/></e>
-<e lm="vqxXAvasWA"><i>vqxXAvasW</i><par n="regular__adj-noun"/></e>
+<e lm="vqxXAvasWA"><i>vqxXAvasW</i><par n="gudiy/A__n"/></e>
 <e lm="vqxXi"><i>vqxXi</i><par n="SAnwi/__n"/></e>
 <e lm="vrawa"><i>vraw</i><par n="Gar/a__n"/></e>
 <e lm="vucuMbiwa"><i>vucuMbiwa</i><par n="amIra/__adj"/></e>
@@ -30732,7 +30732,7 @@
 <e lm="vyaMgya"><i>vyaMgy</i><par n="Gar/a__n"/></e>
 <e lm="vyaMjaka"><i>vyaMjak</i><par n="Gar/a__n"/></e>
 <e lm="vyaMjana"><i>vyaMjan</i><par n="Gar/a__n"/></e>
-<e lm="vyaMjanA"><i>vyaMjan</i><par n="regular__adj-noun"/></e>
+<e lm="vyaMjanA"><i>vyaMjan</i><par n="gudiy/A__n"/></e>
 <e lm="vyaMjiwa"><i>vyaMjiw</i><par n="Gar/a__n"/></e>
 <e lm="vyAmoha"><i>vyAmoh</i><par n="Gar/a__n"/></e>
 <e lm="vyApaka"><i>vyApak</i><par n="Gar/a__n"/></e>
@@ -30760,7 +30760,7 @@
 <e lm="vyavasWApana"><i>vyavasWApan</i><par n="Gar/a__n"/></e>
 <e lm="vyavasWiwa"><i>vyavasWiw</i><par n="Gar/a__n"/></e>
 <e lm="vyavaXAna"><i>vyavaXAn</i><par n="Gar/a__n"/></e>
-<e lm="vyaWA"><i>vyaW</i><par n="regular__adj-noun"/></e>
+<e lm="vyaWA"><i>vyaW</i><par n="gudiy/A__n"/></e>
 <e lm="vyawIwa"><i>vyawIw</i><par n="Gar/a__n"/></e>
 <e lm="vyaWiwa"><i>vyaWiw</i><par n="Gar/a__n"/></e>
 <e lm="vyAXi"><i>vyAXi</i><par n="kavi/__n"/></e>
@@ -30872,7 +30872,7 @@
 <e lm="Wala"><i>Wala</i><par n="kroXa/__n"/></e>
 <e lm="wAla"><i>wAl</i><par n="Gar/a__n"/></e>
 <e lm="WAla"><i>WAl</i><par n="Gar/a__n"/></e>
-<e lm="walA"><i>wal</i><par n="regular__adj-noun"/></e>
+<e lm="walA"><i>wal</i><par n="gudiy/A__n"/></e>
 <e lm="wAlA"><i>wAl</i><par n="regular__adj-noun"/></e>
 <e lm="WAlA"><i>WAl</i><par n="regular__adj-noun"/></e>
 <e lm="wala"><i>wal</i><par n="uT/a__v"/></e>
@@ -31046,7 +31046,7 @@
 <e lm="warAI"><i>warA</i><par n="ladak/I__n"/></e>
 <e lm="wAra"><i>wAr</i><par n="Gar/a__n"/></e>
 <e lm="Wara"><i>War</i><par n="Gar/a__n"/></e>
-<e lm="wArA"><i>wAr</i><par n="regular__adj-noun"/></e>
+<e lm="wArA"><i>wAr</i><par n="gudiy/A__n"/></e>
 <e lm="wara"><i>war</i><par n="uT/a__v"/></e>
 <e lm="warajIha"><i>warajIh</i><par n="rAw/a__n"/></e>
 <e lm="warAjU"><i>warAj</i><par n="Al/U__n"/></e>
@@ -31328,7 +31328,7 @@
 <e lm="wIvrajvAlA"><i>wIvrajvAlA</i><par n="ASA/__n"/></e>
 <e lm="wIvrasaMvega"><i>wIvrasaMvega</i><par n="kroXa/__n"/></e>
 <e lm="wIvravexanA"><i>wIvravexanA</i><par n="ASA/__n"/></e>
-<e lm="wIvrawA"><i>wIvraw</i><par n="regular__adj-noun"/></e>
+<e lm="wIvrawA"><i>wIvraw</i><par n="gudiy/A__n"/></e>
 <e lm="wiwalI"><i>wiwal</i><par n="ladak/I__n"/></e>
 <e lm="wiwara"><i>wiwar</i><par n="Gar/a__n"/></e>
 <e lm="wIwara"><i>wIwar</i><par n="Gar/a__n"/></e>
@@ -31338,7 +31338,7 @@
 <e lm="wiwwira"><i>wiwwira</i><par n="kroXa/__n"/></e>
 <e lm="Wiyetara"><i>Wiyetar</i><par n="Gar/a__n"/></e>
 <e lm="wobA"><i>wob</i><par n="regular__adj-noun"/></e>
-<e lm="wObA"><i>wOb</i><par n="regular__adj-noun"/></e>
+<e lm="wObA"><i>wOb</i><par n="gudiy/A__n"/></e>
 <e lm="wodAI"><i>wodAI</i><par n="AjAxI/__n"/></e>
 <e lm="WodA"><i>Wod</i><par n="regular__adj-noun"/></e>
 <e lm="WodA"><i>Wod</i><par n="loh/A__n"/></e>
@@ -31354,7 +31354,7 @@
 <e lm="wola"><i>wol</i><par n="uT/a__v"/></e>
 <e lm="wOla"><i>wOl</i><par n="uT/a__v"/></e>
 <e lm="wOlavA"><i>wOlavA</i><par n="KA/__v"/></e>
-<e lm="wOliyA"><i>wOliy</i><par n="regular__adj-noun"/></e>
+<e lm="wOliyA"><i>wOliy</i><par n="gudiy/A__n"/></e>
 <e lm="woMxa"><i>woMx</i><par n="rAw/a__n"/></e>
 <e lm="wopacI"><i>wopac</i><par n="Axam/I__n"/></e>
 <e lm="wopa"><i>wop</i><par n="rAw/a__n"/></e>
@@ -31395,7 +31395,7 @@
 <e lm="wqRNA"><i>wqRNA</i><par n="IrRyA/__n"/></e>
 <e lm="wqwIya"><i>wqwIya</i><par n="amIra/__adj"/></e>
 <e lm="wqwIya"><i>wqwIya</i><par n="kroXa/__n"/></e>
-<e lm="wqwIyA"><i>wqwIy</i><par n="regular__adj-noun"/></e>
+<e lm="wqwIyA"><i>wqwIy</i><par n="gudiy/A__n"/></e>
 <e lm="wqwIyAMSa"><i>wqwIyAMSa</i><par n="kroXa/__n"/></e>
 <e lm="wqwIyASrama"><i>wqwIyASrama</i><par n="kroXa/__n"/></e>
 <e lm="wra"><i>wr</i><par n="Gar/a__n"/></e>
@@ -31630,7 +31630,7 @@
 <e lm="xAI"><i>xA</i><par n="ladak/I__n"/></e>
 <e lm="xa"><i>x</i><par n="Gar/a__n"/></e>
 <e lm="Xa"><i>X</i><par n="Gar/a__n"/></e>
-<e lm="xA"><i>x</i><par n="regular__adj-noun"/></e>
+<e lm="xA"><i>x</i><par n="gudiy/A__n"/></e>
 <e lm="XA"><i>X</i><par n="regular__adj-noun"/></e>
 <e lm="XajjI"><i>Xajj</i><par n="ladak/I__n"/></e>
 <e lm="XAkada"><i>XAkada</i><par n="amIra/__adj"/></e>
@@ -31852,7 +31852,7 @@
 <e lm="XArA"><i>XArA</i><par n="ASA/__n"/></e>
 <e lm="XarA"><i>XarA</i><par n="IrRyA/__n"/></e>
 <e lm="xAra"><i>xAr</i><par n="Gar/a__n"/></e>
-<e lm="xArA"><i>xAr</i><par n="regular__adj-noun"/></e>
+<e lm="xArA"><i>xAr</i><par n="gudiy/A__n"/></e>
 <e lm="xara"><i>xar</i><par n="rAw/a__n"/></e>
 <e lm="XAra"><i>XAr</i><par n="rAw/a__n"/></e>
 <e lm="Xara"><i>Xar</i><par n="uT/a__v"/></e>
@@ -32190,7 +32190,7 @@
 <e lm="xevagiri"><i>xevagiri</i><par n="SAnwi/__n"/></e>
 <e lm="xeva"><i>xev</i><par n="Gar/a__n"/></e>
 <e lm="xEva"><i>xEv</i><par n="Gar/a__n"/></e>
-<e lm="xevA"><i>xev</i><par n="regular__adj-noun"/></e>
+<e lm="xevA"><i>xev</i><par n="gudiy/A__n"/></e>
 <e lm="xevakanyA"><i>xevakanyA</i><par n="ASA/__n"/></e>
 <e lm="xevakArya"><i>xevakArya</i><par n="kroXa/__n"/></e>
 <e lm="xevakI"><i>xevakI</i><par n="AjAxI/__n"/></e>
@@ -32302,7 +32302,7 @@
 <e lm="xInailAhI"><i>xInailAhI</i><par n="pAnI/__n"/></e>
 <e lm="xina"><i>xin</i><par n="Gar/a__n"/></e>
 <e lm="xIna"><i>xIn</i><par n="Gar/a__n"/></e>
-<e lm="xInA"><i>xIn</i><par n="regular__adj-noun"/></e>
+<e lm="xInA"><i>xIn</i><par n="gudiy/A__n"/></e>
 <e lm="xinakara"><i>xinakara</i><par n="kroXa/__n"/></e>
 <e lm="xinAMka"><i>xinAMk</i><par n="Gar/a__n"/></e>
 <e lm="xInAnAWa"><i>xInAnAWa</i><par n="kroXa/__n"/></e>
@@ -32346,7 +32346,7 @@
 <e lm="xIpyamAna"><i>xIpyamAna</i><par n="amIra/__adj"/></e>
 <e lm="XIracewA"><i>XIracew</i><par n="regular__adj-noun"/></e>
 <e lm="XIra"><i>XIra</i><par n="amIra/__adj"/></e>
-<e lm="XIrA"><i>XIr</i><par n="regular__adj-noun"/></e>
+<e lm="XIrA"><i>XIr</i><par n="gudiy/A__n"/></e>
 <e lm="XIraja"><i>XIraja</i><par n="kroXa/__n"/></e>
 <e lm="XIralaliwa"><i>XIralaliwa</i><par n="kroXa/__n"/></e>
 <e lm="XIrapraSAMwa"><i>XIrapraSAMwa</i><par n="kroXa/__n"/></e>
@@ -32790,7 +32790,7 @@
 <e lm="xussAhasa"><i>xussAhasa</i><par n="kroXa/__n"/></e>
 <e lm="xussAhasI"><i>xussAhasI</i><par n="AjAxI/__n"/></e>
 <e lm="xuvixA"><i>xuvixA</i><par n="ASA/__n"/></e>
-<e lm="xuviXA"><i>xuviX</i><par n="regular__adj-noun"/></e>
+<e lm="xuviXA"><i>xuviX</i><par n="gudiy/A__n"/></e>
 <e lm="xUwa"><i>xUw</i><par n="Gar/a__n"/></e>
 <e lm="xuwakAra"><i>xuwakAr</i><par n="uT/a__v"/></e>
 <e lm="xUwakarma"><i>xUwakarma</i><par n="kroXa/__n"/></e>
@@ -32807,7 +32807,7 @@
 <e lm="xuXArA"><i>xuXAr</i><par n="regular__adj-noun"/></e>
 <e lm="xUXavAlA"><i>xUXavAl</i><par n="regular__adj-noun"/></e>
 <e lm="xuXiyA"><i>xuXiyA</i><par n="ASA/__n"/></e>
-<e lm="xUXiyA"><i>xUXiy</i><par n="regular__adj-noun"/></e>
+<e lm="xUXiyA"><i>xUXiy</i><par n="gudiy/A__n"/></e>
 <e lm="XuzXalA"><i>XuzXal</i><par n="regular__adj-noun"/></e>
 <e lm="XuzXalApana"><i>XuzXalApana</i><par n="kroXa/__n"/></e>
 <e lm="XvajaBaMga"><i>XvajaBaMga</i><par n="kroXa/__n"/></e>
@@ -32903,7 +32903,7 @@
 <e lm="yAcanA"><i>yAcanA</i><par n="ASA/__n"/></e>
 <e lm="yAcana"><i>yAcana</i><par n="kroXa/__n"/></e>
 <e lm="yAcanaka"><i>yAcanaka</i><par n="kroXa/__n"/></e>
-<e lm="yAcikA"><i>yAcik</i><par n="regular__adj-noun"/></e>
+<e lm="yAcikA"><i>yAcik</i><par n="gudiy/A__n"/></e>
 <e lm="yAga"><i>yAga</i><par n="kroXa/__n"/></e>
 <e lm="yaha"><i></i><par n="/yaha__p"/></e>
 <e lm="yahUxI"><i>yahUx</i><par n="ladak/I__n"/></e>
@@ -32967,7 +32967,7 @@
 <e lm="yamaxUwa"><i>yamaxUw</i><par n="Gar/a__n"/></e>
 <e lm="yamaxvAra"><i>yamaxvAra</i><par n="kroXa/__n"/></e>
 <e lm="yAminI"><i>yAminI</i><par n="AjAxI/__n"/></e>
-<e lm="yamunA"><i>yamun</i><par n="regular__adj-noun"/></e>
+<e lm="yamunA"><i>yamun</i><par n="gudiy/A__n"/></e>
 <e lm="yaMwra"><i>yaMwr</i><par n="Gar/a__n"/></e>
 <e lm="yaMwrAlaya"><i>yaMwrAlay</i><par n="Gar/a__n"/></e>
 <e lm="yaMwramaMwra"><i>yaMwramaMwra</i><par n="kroXa/__n"/></e>
@@ -32998,8 +32998,8 @@
 <e lm="yaSasvI"><i>yaSasvI</i><par n="ajAwI/__adj"/></e>
 <e lm="yaSasvinI"><i>yaSasvin</i><par n="ladak/I__n"/></e>
 <e lm="yAska"><i>yAsk</i><par n="Gar/a__n"/></e>
-<e lm="yaSoxA"><i>yaSox</i><par n="regular__adj-noun"/></e>
-<e lm="yaSoXarA"><i>yaSoXar</i><par n="regular__adj-noun"/></e>
+<e lm="yaSoxA"><i>yaSox</i><par n="gudiy/A__n"/></e>
+<e lm="yaSoXarA"><i>yaSoXar</i><par n="gudiy/A__n"/></e>
 <e lm="yavAgU"><i>yavAg</i><par n="Al/U__n"/></e>
 <e lm="yava"><i>yava</i><par n="kroXa/__n"/></e>
 <e lm="yavana"><i>yavana</i><par n="kroXa/__n"/></e>

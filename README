@@ -4,16 +4,19 @@
        -- Java 1.6.0 
        -- perl,
        -- python,
-       -- flex,bison 
+       -- flex,
+       -- bison, 
        -- lttoolbox 3.1 or above
        -- apertium 3.1 or above
        -- xsltproc
-       -- libgdbm3, libgdbm-dev (to use gdbm), 
-       -- gcc , g++ ,  
-       -- ant ( Anusaaraka will run without ant also so one can ignore the errors found while compiling it )
+       -- libgdbm3, 
+       -- libgdbm-dev (to use gdbm), 
+       -- gcc,
+       -- g++ ,  
        -- clips
-       -- OpenLogos MT (OpenLogos package contains README, steps to Install it)
+       -- ant ( Anusaaraka will run without ant also so one can ignore the errors found while compiling it )
        -- timeout    (this command is used to exit the CLIPS environment in the specific time.)
+       -- OpenLogos MT (OpenLogos package contains README, steps to Install it)
        -- goldendict (optional but desirable to use for viewing dictionaries)
     (NOTE:Check Readme for using 'goldendict' in miscellaneous/Dictionaries/Readme  
           Anusaaraka uses 'bash' instead of 'dash')
@@ -25,8 +28,8 @@
 
 	tar -xvzf <file name>  (Ex : tar -xvzf anu_testing.tgz)
 
-        Add following line to your ~/.bash_profile (or) ~/.bashrc
-        =========================================================
+        Add following line to your ~/.bash_profile (or) ~/.bashrc  and then run source ~/.bashrc
+        ========================================================================================
 
         export HOME_anu_test=path_of_anu_installation
         export HOME_anu_output=path_for_anu_output
@@ -51,8 +54,8 @@
 	export HOME_anu_provisional_wsd_rules=$HOME/provisional_wsd_rules
 	export HOME_open_logos=$HOME/openlogos-package/openlogos-1.0.3
 
-        export PATH=$HOME/openlogos-package/jdk1.6.0_03/bin:$HOME_anu_test/bin:$PATH
-        export JAVA_HOME=$HOME/openlogos-package/jdk1.6.0_03
+        export PATH=$HOME/jdk1.6.0_03/bin:$HOME_anu_test/bin:$PATH
+        export JAVA_HOME=$HOME/jdk1.6.0_03
         export LD_LIBRARY_PATH=/usr/local/lib/
 
         compile:
@@ -78,10 +81,17 @@
 	      </p>
        ii. Anusaaraka_stanford.sh  sample
 
-   User has an option to Enable/Disable provisional directory.
-    --> To Enable::	Anusaaraka_stanford.sh  sample 1 True
-    --> To Disable::	Anusaaraka_stanford.sh  sample
-        NOTE::  Where '1' is to get first parse (as default option)
+   User has an option to use provisional directory.
+     To use  :	Anusaaraka_stanford.sh  sample 0 True
+        NOTE::  Where '0' is default parse
+
+   To run Domain specific 
+	Ex : To run Anusaaraka for "physics" domain then
+		Anusaaraka_stanford.sh  sample 0 True physics
+		[ Note : sample is file name , 0 for default parse , True is to use provisional and
+	 	         physics is to define physics domain ]
+
+  (NOTE : Path for alignment README is miscellaneous/SMT/alignment/README )
 -----------------------------------------------------------------------------------------------------------------
 5. Output :
    ======

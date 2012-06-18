@@ -1,4 +1,6 @@
 ;This file is added by Shirisha Manju (9-05-12)
+; Generates pada using praxiniXi
+
  (deffunction never-called ()
  (assert (verb_type-verb-causative_verb-tam))
  (assert (verb_type-verb-kriyA_mUla-tam))
@@ -63,15 +65,32 @@
         )
  )
  ;==================================== Generate pada prawiniXi info ===================================================
+ (defrule get_conj_group
+ (declare  (salience 4850))
+ (head_id-prawiniXi_id-grp_ids ?np_head ?np_id $?d ?cc $?d1)
+ (prawiniXi_id-node-category ?cc ?CC CC)
+ (head_id-prawiniXi_id-grp_ids ?wid ?cc ?)
+ (id-word ?wid and|or)
+ (not (modified_head ?np_id))
+ =>
+        (assert (pada_info (group_head_id ?np_id)(group_cat PP) (group_ids $?d ?cc $?d1)))
+       	(assert (conj_head-conj_id-components ?np_id ?cc $?d $?d1))
+	(assert (generated_conj_pada ?np_id))
+	(bind ?lh (nth$ 1 $?d))
+	(bind ?rh (nth$ (length $?d1) $?d1))
+	(assert (conj-lt_head-rt_head ?CC ?lh ?rh))
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
  (defrule get_pada_group
  (declare  (salience 4800))
  (head_id-prawiniXi_id-grp_ids ?np_head ?np_id $?grp_ids ?last_node)
  (prawiniXi_id-node-category ?np_id ?NP ?node)
  (to_be_included_in_paxa ?np_head)
  (test (neq (str-index "." (implode$ (create$ ?last_node))) FALSE))
- (not (modified_head ?np_id))
+ (not (modified_head ?np_id $?))
+ (not (generated_conj_pada ?np_id))
  =>
-        (assert (pada_info (group_head_id ?np_id)(group_cat PP) (group_ids $?grp_ids ?last_node)(pada_head ?last_node)))
+		(assert (pada_info (group_head_id ?np_id)(group_cat PP) (group_ids $?grp_ids ?last_node)(pada_head ?last_node)))
         (bind ?np_id (implode$ (create$ ?np_id)))
         (bind ?str_index (str-index "." ?np_id))
         (bind ?val (string-to-field (sub-string (+ ?str_index 1) (length ?np_id) ?np_id)))
@@ -91,7 +110,7 @@
  (prawiniXi_id-node-category ?pp ?PP PP|WHPP)
  (prawiniXi_id-node-category ?np_id ?NP NP|WHNP)
  (head_id-prawiniXi_id-grp_ids ?np_head ?np_id $?grp_ids ?last_node)
-?f1<-(pada_info (group_head_id ?np_id)(pada_head ?last_node)(preposition 0))
+?f1<-(pada_info (group_head_id ?np_id)(preposition 0))
  =>
         (modify ?f1  (preposition  $?ids ?prep))
  )
@@ -175,69 +194,33 @@
         (assert (id-grp_ids ?p_id $?a $?a1))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
- ;He stopped killing of animals and birds throughout his kingdom. 
- ;Actress Whoopi Goldberg and singer Michael Jackson attended the ceremony. 
- (defrule get_con_prep_zero_level
+ (defrule share_conj_prep
  (declare (salience 4300))
- ?f<-(pada_info (group_head_id ?hid)(group_ids $?d ?lt ?cc $?d1 ?rt) (preposition ?prep))
- (prawiniXi_id-node-category ?cc ?CC CC)
- ?f0<-(id-grp_ids ?hid $?d ?lt ?cc $?d1 ?rt)
- (head_id-prawiniXi_id-grp_ids ?lid ?lt ?)
- (head_id-prawiniXi_id-grp_ids ?rid ?rt ?)
+ (pada_info (group_head_id ?con_h)(preposition $?prep))
+ ?f<-(conj_head-conj_id-components ?con_h ?cid $?d ?id $?d1)
+ ?f0<-(pada_info (group_head_id ?id)(preposition 0))
  =>
-        (retract ?f ?f0)
-        (bind ?lh (sym-cat ?lid ".1"))
-        (bind ?rh (sym-cat ?rid ".1"))
-        (assert (pada_info (group_head_id ?lh) (group_cat PP)(group_ids $?d ?lt)(preposition ?prep)))
-        (assert (pada_info (group_head_id ?rh) (group_cat PP)(group_ids $?d1 ?rt)(preposition ?prep)))
-        (assert (id-grp_ids ?lh $?d ?lt))
-        (assert (id-grp_ids ?rh $?d1 ?rt))
-        (assert (conj-level ?CC 0))
-        (assert (conj-lt_head-rt_head ?CC ?lh ?rh))
+	(retract ?f ?f0)
+	(modify ?f0 (preposition $?prep))
+	(assert (conj_head-conj_id-components ?con_h ?cid $?d $?d1))
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
+ ; She is ugly and fat.
+ (defrule share_zero_level_conj_prep
+ (declare (salience 4250))
+ (pada_info (group_head_id ?con_h)(preposition $?prep))
+ ?f<-(conj_head-conj_id-components ?con_h ?cid $?d ?id $?d1)
+ (head_id-prawiniXi_id-grp_ids ?hid ?id ?no)
+ =>
+	(retract ?f)
+	(assert (conj_head-conj_id-components ?con_h ?cid $?d $?d1))
+	(bind ?head (string-to-field (sym-cat ?hid ".1")))
+;(bind ?head (sym-cat ?hid . 1))
+	(assert (pada_info (group_head_id ?head) (group_cat PP)(group_ids ?id)(preposition $?prep)))
+	(assert (id-grp_ids ?head ?id))
  )
  ;----------------------------------------------------------------------------------------------------------------------
- ;We can broadly describe physics as a study of the basic laws of nature and their manifestation in different natural phenomena .
- (defrule get_con_prep
- (declare (salience 4200))
- (pada_info (group_head_id ?hid)(group_ids ?lt ?cc ?rt) (preposition ?prep))
- (prawiniXi_id-node-category ?cc ?CC CC)
- (head_id-prawiniXi_id-grp_ids ?h ?cc ?)
- (pada_info (group_head_id ?lt)(group_ids ?np ?) )
- (prawiniXi_id-node-category ?np ?NP NP)
- (pada_info (group_head_id ?rt)(group_ids ?np1 ?) )
- (prawiniXi_id-node-category ?np1 ?NP1 NP)
- ?f0<-(pada_info (group_head_id ?np)(preposition 0))
- ?f1<-(pada_info (group_head_id ?np1)(preposition 0))
- (not (conj_modified ?cc))
- =>
-        (retract ?f0 ?f1)
-        (modify ?f0 (preposition ?prep))
-        (modify ?f1 (preposition ?prep))
- ;       (assert (pada_info (group_head_id ?cc)(group_ids ?h)))
-        (assert (conj-lt_head-rt_head ?CC ?np ?np1))
-        (assert (conj_modified ?cc))
-  ;      (printout ?*pada_file* "(pada_info (group_head_id  "?cc")(group_cat PP)(group_ids  "?h")(vibakthi 0) (gender 0) (number 0) (case 0) (person 0) (H_tam 0) (tam_source 0) (preceeding_part_of_verb 0) )" crlf)
- )
- ;-----------------------------------------------------------------------------------------------------------------------
- ;He was an exotic creature with short red hair and brilliant green eyes. 
- (defrule get_con_prep1
- (declare (salience 4100))
- (pada_info (group_head_id ?hid)(group_ids ?lt ?cc ?rt) (preposition ?prep))
- (prawiniXi_id-node-category ?cc ?CC CC)
- (head_id-prawiniXi_id-grp_ids ?h ?cc ?)
- ?f0<-(pada_info (group_head_id ?lt)(preposition 0))
- ?f1<-(pada_info (group_head_id ?rt)(preposition 0))
- (not (conj_modified ?cc))
- =>
-        (retract ?f0 ?f1)
-        (modify ?f0 (preposition ?prep))
-        (modify ?f1 (preposition ?prep))
-   ;     (assert (pada_info (group_head_id ?cc)(group_ids ?h)))
-        (assert (conj-lt_head-rt_head ?CC ?lt ?rt))
-    ;    (printout ?*pada_file* "(pada_info (group_head_id  "?cc")(group_cat PP)(group_ids  "?h")(vibakthi 0) (gender 0) (number 0) (case 0) (person 0) (H_tam 0) (tam_source 0) (preceeding_part_of_verb 0) )" crlf)
-        (assert (conj_modified ?cc))
- )
- ;-----------------------------------------------------------------------------------------------------------------------
+ ; Mohan fell from the top of the house.
  (defrule get_prep
  (declare (salience 4000))
  (pada_info (group_head_id ?hid)(group_ids ?np $?) (preposition ?prep))
@@ -251,6 +234,7 @@
  ;-----------------------------------------------------------------------------------------------------------------------
  (defrule save_praxiniWi_info
  (declare (salience 4000))
+ (initial-fact)
  =>
 	(save-facts "pada_prawiniXi_info.dat" local  pada_info)
  )
@@ -320,6 +304,45 @@
         (print_in_ctrl_fact_files  ?h)
  )
  ;----------------------------------------------------------------------------------------------------------------------
+ ;Suggested by Sukhada (29-05-12)
+ ; Share to id with conj VP to generate infinitive pada
+ ;"One kind of response from the earliest times has been to observe the physical environment carefully, look for any meaningful patterns and relations in natural phenomena, and build and use new tools to interact with nature ".
+ (defrule get_multiple_infinitive
+ (declare (salience 1200))
+ (head_id-prawiniXi_id-grp_ids ? ? ?to ?conj_h)
+ (prawiniXi_id-node-category ?to ?TO TO)
+ (head_id-prawiniXi_id-grp_ids ?to_id ?to ?)
+ (conj_head-conj_id-components ?conj_h $?)
+ (pada_info (group_head_id ?conj_h) (group_ids $?d ?id $?d1))
+ ?f0<-(id-grp_ids ?id ?v_h $?)
+ (prawiniXi_id-node-category ?v_h ? VB)
+ (head_id-prawiniXi_id-grp_ids ?v_id ?v_h ?)
+ =>
+	(retract ?f0)
+	(bind $?grp_ids (create$ ?to_id ?v_id))
+        (print_pada_info ?v_id infinitive 0 $?grp_ids)
+        (print_in_ctrl_fact_files  ?v_id)
+	(assert (inf_id-to_id ?id ?to_id))
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ ;"One kind of response from the earliest times has been to observe the physical environment carefully, look for any meaningful patterns and relations in natural phenomena, and build and use new tools to interact with nature ".
+ (defrule get_multiple_infinitive1
+ (declare (salience 1100))
+ ?f0<-(inf_id-to_id ?inf_id ?to_id)
+ (conj_head-conj_id-components ?inf_id $?)
+ (pada_info (group_head_id ?inf_id) (group_ids $?d ?id $?d1))
+ (prawiniXi_id-node-category ?id ?VB VB)
+ (head_id-prawiniXi_id-grp_ids ?v_id ?id ?)
+ (not (pada_info (group_head_id ?v_id)(group_cat infinitive)))
+ ?f<-(id-grp_ids ?h $?a ?id $?a1)
+ =>
+	(retract ?f)
+	(bind $?grp_ids (create$ ?to_id ?v_id))
+        (print_pada_info ?v_id infinitive 0 $?grp_ids)
+        (print_in_ctrl_fact_files  ?v_id)
+	(assert (id-grp_ids ?h $?a $?a1))
+ )	
+ ;----------------------------------------------------------------------------------------------------------------------
  ;He wasted his golden opportunity to play in the national team.
  (defrule get_infinitive_pada
  (declare  (salience 1000))
@@ -336,7 +359,7 @@
         (print_in_ctrl_fact_files  ?verb_id)
  )
  ;----------------------------------------------------------------------------------------------------------------------
- ;A big, black, ugly dog chased me
+ ;A big, black, ugly dog chased me.  I do not have very much money.
  ; Expand adjp in NP
  (defrule get_adjp_group
  (declare (salience 950))
@@ -344,23 +367,48 @@
  (prawiniXi_id-node-category ?p_id ?NP NP|WHNP)
  (prawiniXi_id-node-category ?adjp ?ADJP ADJP|WHADJP)
  ?f1<-(head_id-prawiniXi_id-grp_ids ? ?adjp ?id $?daut)
+ (not (adjp_head ?adjp))
  =>
 	(retract ?f0 ?f1 )
 	(assert (head_id-prawiniXi_id-grp_ids ?h ?p_id $?d ?id $?daut $?d1))
-	(assert (modified_head ?p_id))
+	(assert (modified_head ?p_id $?d ?id $?daut $?d1))
+	(assert (adjp_head ?adjp))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
- ; modify adjp grp_ids
- (defrule modify_grp_ids
- (declare (salience 900))
- (modified_head ?p_id)
- (head_id-prawiniXi_id-grp_ids ?h1 ?p_id $?d ?id $?d1)
- ?f0<-(id-grp_ids ?h $? ?id $?)
- (not (id_modified ?h1))
+ ;I do not have very much money.
+ (defrule rm_expanded_adjp_ids
+ (declare (salience 940))
+ ?f0<-(modified_head ?hid $?d ?id $?d1)
+ ?f1<-(id-grp_ids $?a ?id $?a1)
+ (not (asserted_adjp_fact))
  =>
-	(retract ?f0 )
-	(assert (id-grp_ids ?h $?d ?id $?d1))
-	(assert (id_modified ?h1))
+	(retract ?f1)
+	(assert (id-grp_ids $?a $?a1))
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
+ ;I do not have very much money.
+ (defrule get_modified_adjp_fact
+ (declare (salience 930))
+ (head_id-prawiniXi_id-grp_ids ? ?id $?ids)
+ (modified_head ?id $?)
+ ?f1<-(id-grp_ids ?id $? ?a $? )
+ (not (asserted_adjp_fact))
+ =>
+        (retract ?f1)
+        (assert (id-grp_ids ?id $?ids))	
+	(assert (asserted_adjp_fact))
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
+ ;How many people did you see? 
+ (defrule get_modified_adjp_fact1
+ (declare (salience 930))
+ (head_id-prawiniXi_id-grp_ids ? ?id $?ids)
+ (modified_head ?id $?)
+ (not (id-grp_ids ?id $?))
+ (not (asserted_adjp_fact))
+ =>
+        (assert (id-grp_ids ?id $?ids))
+        (assert (asserted_adjp_fact))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  (defrule get_pada
@@ -392,14 +440,14 @@
  (defrule rm_repeated_head_node
  (declare (salience 950))
  (get_pada)
- ?f0<-(id-grp_ids ?id $?ids ?pp_id)
- (id-grp_ids ?pp_id $?d)
+ ?f0<-(id-grp_ids ?id $?d ?pp_id $?d1)
+ (id-grp_ids ?pp_id $?ids)
  =>
 	(retract ?f0)
-	(assert (id-grp_ids ?id $?ids))
+	(assert (id-grp_ids ?id $?d $?d1))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
- ;He is not related to me.
+  ;He is not related to me.
  (defrule del_prep_with_pada_head
  (declare (salience 900))
  (get_pada)
@@ -407,8 +455,21 @@
  (prawiniXi_id-node-category ?pp_id ?PP PP)
  ?f1<-(pada_info (group_head_id ?pp_id) )
  =>
-	(retract ?f0 ?f1)
-	(assert (id-grp_ids ?id $?ids ))
+       (retract ?f0 ?f1)
+       (assert (id-grp_ids ?id $?ids ))
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
+ (defrule del_prep_in_pada_fact
+ (declare (salience 910))
+ (get_pada)
+ (pada_info (preposition $?d ?id $?d1))
+ (head_id-prawiniXi_id-grp_ids ? ?hid ?id)
+ ?f0<-(id-grp_ids $?a ?hid $?a1 )
+ (not (id_deleted ?id))
+ =>
+        (retract ?f0)
+        (assert (id-grp_ids $?a $?a1))
+	(assert (id_deleted ?id))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  (defrule del_verb_fact
@@ -416,11 +477,22 @@
  (get_pada)
  ?f0<-(id-grp_ids ?id ?id1)
  (prawiniXi_id-node-category ?id ?VP VP)
- (prawiniXi_id-node-category ?id1 ?NP NP)
+ (prawiniXi_id-node-category ?id1 ?NP NP|VP)
  =>
         (retract ?f0)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
+ (defrule del_to_inf_id
+ (declare (salience 850))
+ (get_pada)
+ (inf_id-to_id ? ?to_id)
+ (head_id-prawiniXi_id-grp_ids ?to_id ?to_h ?)
+ ?f0<-(id-grp_ids ?id $?d ?to_h $?d1)
+ =>
+	(retract ?f0)
+	(assert (id-grp_ids ?id $?d $?d1))
+ )
+
  (defrule replace_daut1
  (declare (salience 800))
  (get_pada)
@@ -449,14 +521,13 @@
  (head_id-prawiniXi_id-grp_ids ? ?p_id $? ?cc $?)
  (prawiniXi_id-node-category ?cc ?CC CC)
  (head_id-prawiniXi_id-grp_ids ?h ?cc ?)
- (not (id-grp_ids ?p_id $?))
+ (id-word ?h and|or|but)
  =>
 	(print_pada_info ?h PP 0 ?h)	
 	(print_in_ctrl_fact_files  ?h)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  ;The white marbled moti masjid or the pearl mosque was the private mosque for aurangzeb. 
- ; She is ugly and fat.
  (defrule get_or_verb_agmt_fact
  (declare (salience 650))
  (get_pada)
@@ -471,61 +542,22 @@
         (printout ?*pada_file* "(conj_head-left_head-right_head  " ?conj_id"   "?left_head"   "?right_head ")" crlf)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
- ;He stopped killing of animals and birds throughout his kingdom
- (defrule get_zero_level_conj_padas
- (declare (salience 600))
+ ; She is ugly and fat.
+ (defrule get_or_verb_agmt_fact_for_zero_lvl
+ (declare (salience 640))
  (get_pada)
- ?f0<-(conj-level ?CC 0)
  (conj-lt_head-rt_head ?CC ?lh ?rh)
- (id-grp_ids ?lh ? )
- (id-grp_ids ?rh ? )
+ (prawiniXi_id-node-category ?c_h ?CC CC)
+ (head_id-prawiniXi_id-grp_ids ?conj_id ?c_h ?)
+ (head_id-prawiniXi_id-grp_ids ?left_head ?lh ?)
+ (head_id-prawiniXi_id-grp_ids ?right_head ?rh ?)
+ (id-grp_ids ? $? ?left_head)
+ (id-grp_ids ? $? ?right_head)
+ (not (agreement_decided ?conj_id))
  =>
-	(retract ?f0)
+        (assert (agreement_decided ?conj_id))
+        (printout ?*pada_file* "(conj_head-left_head-right_head  " ?conj_id"   "?left_head"   "?right_head ")" crlf)
  )
- ;-----------------------------------------------------------------------------------------------------------------------
- (defrule get_zero_level_lt_conj_padas
- (declare (salience 550))
- (get_pada)
- (conj-level ?CC 0)
- (conj-lt_head-rt_head ?CC ?lh ?rh)
- ?f1<-(id-grp_ids ?lh $?d ?id $?d1)
- ?f0<-(pada_info (group_cat ?cat) (group_ids $?d ?id $?d1))
- =>
-	(if (and (eq (length $?d) 0) (eq (length $?d1) 0))then
-                (retract ?f1 ?f0)
-		(print_pada_info ?id ?cat 0 ?id)
-		(print_in_ctrl_fact_files   ?id)
-        else
-		(retract ?f1)
-                (modify ?f0 (group_ids $?d $?d1))
-		(assert (id-grp_ids ?lh $?d $?d1))
-		(print_pada_info ?id ?cat 0 ?id)
-                (print_in_ctrl_fact_files   ?id)
-        )
- )
- ;-----------------------------------------------------------------------------------------------------------------------
- (defrule get_zero_level_rt_conj_padas
- (declare (salience 500))
- (get_pada)
- (conj-level ?CC 0)
- (conj-lt_head-rt_head ?CC ?lh ?rh)
- ?f1<-(id-grp_ids ?rh $?d ?id $?d1 ?last_id)
- ?f0<-(pada_info (group_cat ?cat) (group_ids $?d ?id $?d1 ?last_id)(preposition ?prep))
- =>
-        (if (and (eq (length $?d) 0) (eq (length $?d1) 0))then
-                (retract ?f1 ?f0)
-		(print_pada_info ?id ?cat 0 ?id)
-		(print_pada_info ?last_id ?cat ?prep ?last_id)
-		(print_in_ctrl_fact_files   ?id)
-		(print_in_ctrl_fact_files   ?last_id)
-        else
-		(retract ?f1)
-                (modify ?f0 (group_ids $?d $?d1 ?last_id))        
-                (assert (id-grp_ids ?rh $?d $?d1 ?last_id))
-		(print_pada_info ?id ?cat 0 ?id)
-                (print_in_ctrl_fact_files   ?id)
-        )
- ) 
  ;-----------------------------------------------------------------------------------------------------------------------
  (defrule print_pada
  (declare (salience 100))
@@ -535,7 +567,6 @@
  =>
 	(retract ?f0)
 	(printout ?*pada_file* "(pada_info (group_head_id "?hid")(group_cat "?cat")(group_ids  "(implode$ $?grp_ids)")(preposition  "(implode$ $?prep)")(vibakthi 0) (gender 0) (number 0) (case 0) (person 0) (H_tam 0) (tam_source 0) (preceeding_part_of_verb 0) )" crlf)
-;	(print_pada_info ?hid ?cat $?prep $?grp_ids)
         (print_in_ctrl_fact_files   ?hid)
  )	
  ;-----------------------------------------------------------------------------------------------------------------------

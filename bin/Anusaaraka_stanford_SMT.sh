@@ -36,9 +36,8 @@
  fi
 
  mkdir $MYPATH/tmp/$1_tmp
- cp $4 $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt
- cp $5 $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp.txt
- cp $6 $MYPATH/tmp/$1_tmp/wx_output.txt
+ cp $5 $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt
+ cp $6 $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp.txt
 
 ###Added below loop for server purpose.
  if [ "$3" == "True" ] ; then 
@@ -51,6 +50,12 @@
  $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
  $HOME_anu_test/Anu/pre_process.sh $1 $MYPATH
  $HOME_anu_test/Anu/save_format.sh $1 $MYPATH
+
+ sed 's/ /\n/g' $MYPATH/tmp/$1.snt |sed -n '/^[a-z0-9]/ !p' >$MYPATH/tmp/$1_tmp/proper_nouns_list_tmp.txt
+ tr 'A-Z' 'a-z' < $MYPATH/tmp/$1_tmp/proper_nouns_list_tmp.txt > $MYPATH/tmp/$1_tmp/proper_nouns_list.txt
+ cd $HOME_anu_test/miscellaneous/transliteration/work
+ sh transliteration-script.sh $MYPATH/tmp/$1_tmp proper_nouns_list.txt 2>/dev/null 
+ paste $MYPATH/tmp/$1_tmp/proper_nouns_list_tmp.txt $MYPATH/tmp/$1_tmp/proper_nouns_list.txt.wx |sed 's/^/(eng_word-man_wx_word\t/g' |sed 's/$/)/g' |sed 's/(eng_word-man_wx_word\t\t)/;~~~~~~~~~~/g' > $MYPATH/tmp/$1_tmp/wx_output.txt
 
  echo "Saving word information"
  cd $HOME_anu_test/Anu_src
@@ -70,15 +75,16 @@
 #  cd $HOME_anu_test/Anu_src
 #  ./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
+  sh replace-abbrevations.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org  
   echo "Calling Stanford parser"
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
  #cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2012-01-06/
-  if [ "$2" != "" ] ;
+  if [ "$2" != "" -a "$2" != "0" ] ;
   then
-  sh run_multiple_parse_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1 2>/dev/null  
+  sh run_multiple_parse_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1 2>/dev/null  
   python preffered_parse.py $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1 $2 > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
   else 
-  sh run_penn-pcfg.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
+  sh run_penn-pcfg.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
   fi
   sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}"  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
@@ -128,7 +134,7 @@
  do
     echo "Hindi meaning using Stanford parser" $line
     cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
-    timeout 500 ./run_sentence_stanford_SMT.sh $1 $line 1 $MYPATH
+    timeout 500 ./run_sentence_stanford_SMT.sh $1 $line 1 $MYPATH $4
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
 

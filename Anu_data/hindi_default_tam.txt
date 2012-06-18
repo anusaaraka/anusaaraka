@@ -202,8 +202,8 @@ must_not_be_ing	wA_rahA-0-nahIM
 must_not_have_been_en	yA_gayA_hogA-0-nahIM
 must_not_have_been_ing	0_rahA_hogA-0-nahIM
 must_not_have_en	yA_hogA-0-nahIM
-need_not_0	nA_kI_jZarUrawa_hE-ko-nahIM
-need_to_0	nA_kI_jZarUrawa_hE-ko-0
+need_not_0	ne_kI_jZarUrawa_hE-ko-nahIM
+need_to_0	ne_kI_jZarUrawa_hE-ko-0
 need_to_be_en	yA_jAnA_hE-0-0
 NEG_PRES	nahIM-0-0
 never_0	0-0-kaBI_nahIM
