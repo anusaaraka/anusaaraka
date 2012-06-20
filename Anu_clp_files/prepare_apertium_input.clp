@@ -1,3 +1,4 @@
+;This file is written by Shirisha Manju
 
 (defglobal ?*A_fp5* = fp5)
 (defglobal ?*aper_debug-file* = aper_debug)
@@ -85,7 +86,6 @@
         (printout ?*aper_debug-file* "(id-Rule_name  "?id "  default_id )" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------- 
- ;Added by Shirisha Manju on 22-11-11
  ;She declared that out of love for the poor she had gotten her family to go against convention.
  ;Is there life beyond the grave?
  ;If prep_id is present then dont delete pada_head mng fact 
@@ -101,7 +101,6 @@
  )
  ;========================================== complete sent mng ========================================================
  ;This contradicts the assumption that the fluid was in equilibrium.
- ;Added by Shirisha Manju on 24-11-10
  (defrule complete_sen_mng_with_vib
  (declare (salience 1011))
  ?f0<-(id-HM-source ?id ?hmng Complete_sen_gdbm)
@@ -147,7 +146,6 @@
  ;----------------------------------------------------------------------------------------------------------------------
  ; here prep_id itself is considered as the main meaning 
  ;Is there life beyond the grave? Either go to bed or open your book to read.
- ;Modified by Shirisha Manju (23-11-11)
  (defrule Compound_mng_with_Prep_id
  (declare (salience 1003))
  ?f0<-(id-HM-source ?p_id ?p_mng Database_compound_phrase_word_mng|Database_compound_phrase_root_mng|WSD_compound_phrase_root_mng)
@@ -169,7 +167,6 @@
  )
 
  ;======================================== KA vibakthi (viSeRya-RaRTI_viSeRaNa) rules =====================================
- ; Added by Shirisha Manju (17-06-11)
  ; Ex: He was awakened at dawn by the sound of crying .
  ;     She awakened to the sound of birds' singing .
  ;     Failure to comply may result in dismissal. 
@@ -226,7 +223,6 @@
         )
  )
  ;------------------------------------------------------------------------------------------------------------------------
- ; Added by Shirisha Manju (17-09-11)
  ; He studiously avoided answering the question. 
  (defrule kA_vib_from_obj_rule1
  (declare (salience 1001))
@@ -252,7 +248,6 @@
         )
  )
  ;======================================= KA vibakthi (kriyA_id-subject_viBakwi) rules =====================================
- ; Added by Shirisha Manju (19-09-11)
  ; You have no control over your emotions.
  (defrule kA_vib_from_sub_rule
  (declare (salience 951))
@@ -270,7 +265,6 @@
 	(printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  kA_vib_from_sub_rule )" crlf)
  )
  ;======================================= KA vibakthi (viSeRya-jo_samAnAXikaraNa) rules ===================================
- ; Added by Shirisha Manju (09-09-11)
  ; The dog I chased was black.
  (defrule kA_for_jo_samAnAXikaraNa
  (declare (salience 1000))
@@ -286,7 +280,6 @@
         (printout ?*aper_debug-file* "(id-Rule_name  "?jo "  kA_for_jo_samAnAXikaraNa )" crlf)
   )
  ;------------------------------------------------------------------------------------------------------------------------
- ; Added by Shirisha Manju (13-09-11)
  ; That reeks of favoritism.
  ; KA vib pada followed by VP pada
  (defrule kA_for_kriyA_mUla
@@ -380,7 +373,6 @@
         (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id "  PP_rule_with_vib_for_his )" crlf)
   )
   ;------------------------------------------------------------------------------------------------------------------------
-  ; Added by Shirisha Manju (23-06-11)  
   ; vib kA -- for He,I,She ,They 
   ; Ex:  I asked him a question . She carefully prepared the dinner.
   ;      Discuss it among yourselves first . The leopard seizes its kill and begins to eat .
@@ -419,7 +411,6 @@
   ;------------------------------------------------------------------------------------------------------------------------
   ; He marked these bottles. If you use that strategy, he will wipe you out.
   ; THE nearly 5 million people who attended enjoyed it.
-  ; Added by Shirisha Manju (24-06-11)
   (defrule PP_rule_with_vib_for_those
   (declare (salience 930))
   (pada_info (group_cat PP)(gender ?gen)(vibakthi ?vib)(person ?per)(group_ids $?ids ?id)(number ?num))
@@ -461,7 +452,6 @@
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_with_ke )" crlf)
   )
   ;------------------------------------------------------------------------------------------------------------------------
-  ;Added by Shirisha Manju (24-09-11)
   ;He will sing you good night. 
   (defrule PP_pronoun_rule_for_you_with_ke
   (declare (salience 931))
@@ -484,7 +474,6 @@
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_for_you_with_ke )" crlf)
   )
   ;------------------------------------------------------------------------------------------------------------------------
-  ; Added by Shirisha Manju (24-06-11)
   ; I will tell you some interesting facts tomorrow. Their program is better than ours.
   (defrule PP_pronoun_rule_with_vib
   (declare (salience 931))
@@ -522,7 +511,6 @@
 
 
   ;------------------------------------------------------------------------------------------------------------------------
-  ; Added by Shirisha Manju (13-09-11)
   ; These are children's books. Where did they come from? Can you tell us where those strange ideas came from? 
   (defrule PP_pronoun_rule_without_vib1
   (declare (salience 930))
@@ -536,7 +524,6 @@
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_without_vib1 )" crlf)
   )
   ;------------------------------------------------------------------------------------------------------------------------
-  ; Added by Shirisha Manju (14-09-11)
   ;If we heat iron it becomes red. The yield of kharif crops was not good this season. 
   ;The party that night was a big success. The law does not allow us to do it.
   (defrule PP_pronoun_rule_without_vib2
@@ -767,7 +754,6 @@
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  VP_rule_ne_kA_or_ne_se )" crlf)
   )
   ;--------------------------------------------------------------------------------------------------------------------------
-  ;Added by Shirisha Manju (21-12-11) Suggested by Sukhada)
   ;He need not stay here. 
   (defrule VP_rule_for_before_verb_for_need
   (declare (salience 651))
@@ -929,77 +915,7 @@
         )
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  infinitive_rule )" crlf)
   )
-  ;===================================  NP rule for vibakthi not equal to nil ============================================
-  ;Ex. They were discussing their hopes and dreams.   The patient had complained of vague pains and backache.
-  ;    Republican policies only benefit the rich and the powerful.
-  (defrule PP_rule_with_kA_vib_for_and_last_id
-  (declare (salience 700))
-  ?f0<-(id-HM-source ?id ?h_word ?)
-  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi kA) (gender ?gen)(group_ids $?ids ?id)(case ?case))
-  (id-word ?pada_id and|or)
-  (hindi_id_order  $?start ?id ?foll_id $?)
-  (pada_info (group_head_id ?f_pada_id)(group_cat VP)(group_ids $?f_ids))
-  (test(member$ ?foll_id $?f_ids))
-  (id-HM-source ?f_pada_id ?hmng1 ?)
-  (id-number-src ?id ?num ?)
-  (id-number-src ?foll_id ?num1 ?)
-  =>
-	(bind ?gen2 (gdbm_lookup "kriyA_mUla-gender.gdbm" ?hmng1))
-        (if (neq ?gen2 "FALSE") then
-        	(if (eq ?gen2 -) then (bind ?gen2 m))
-                (printout ?*A_fp5* "(id-Apertium_input "?id " ^"?h_word"<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^kA<cat:sh><case:d><gen:"?gen2"><num:"?num1">$)"  crlf)
-                (retract ?f0)
-        )
-        (printout ?*aper_debug-file* "(id-Rule_name  "?id"  PP_rule_with_kA_vib_for_and_last_id )" crlf)
-  )
-  ;-------------------------------------------------------------------------------------------------------------------------
-  ;Now try generating random text in the style of an inaugural address or an internet chat room.
-  ;Added by Shirisha Manju (07-03-11)
-  (defrule PP_rule_with_kA_vib_for_and_last_id1
-  (declare (salience 560))
-  ?f0<-(id-HM-source ?id ?h_word ?)
-  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi kA)(group_ids $?ids ?id)(case ?case))
-  (id-word ?pada_id and|or)
-  (hindi_id_order  $?start ?id ?foll_id $?)
-  (pada_info (group_head_id ?f_pada_id)(group_ids $?f_ids))
-  (test(member$ ?foll_id $?f_ids))
-  (id-gender-src ?foll_id ?gen1 ?)
-  (id-number-src ?foll_id ?num1 ?)
-  (id-number-src ?id ?num ?)
-  (id-gender-src ?id ?gen ?)
-  =>
-	(printout ?*A_fp5* "(id-Apertium_input "?id " ^"?h_word"<cat:n><case:"?case"><gen:"?gen"><num:"?num">$	^kA<cat:sh><case:d><gen:"?gen1"><num:"?num1">$)"  crlf)
-        (retract ?f0)
-       (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_with_vib_for_and_last_id1 )" crlf)
-  )
-  ;-------------------------------------------------------------------------------------------------------------------------
-  ; In the racing competition between the hare  and the tortoise, the tortoise finally won the race.
-  ; Whenever agreement is done then pada head ids number information should not be passed to individual ids.
-  ; (Suggested by Chaitanya Sir)
-  ; He was an exotic creature with short red hair and brilliant green eyes. 
-  ; Modified by Shirisha Manju (15-09-11)
-  (defrule PP_rule_with_vib_for_and_last_id
-  (declare (salience 550))
-  ?f0<-(id-HM-source ?id ?h_word ?)
-  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(person ?per)(group_ids $?ids ?id)(case ?case))
-  (id-word ?pada_id and|or|well)
-  (id-gender-src ?id ?gen ?)
-  (id-number-src ?id ?num ?) 
-  (id-cat_coarse ?id ?cat)
-  (test (neq ?vib 0)) 
-  =>
-	(retract ?f0)
-	(if (eq ?cat noun) then
-        	(printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$ ^" ?vib "<cat:prsg>$)" crlf)
-        else (if (eq ?cat verbal_noun) then  
-                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word  "<cat:vn><case:"?case">$ ^" ?vib "<cat:prsg>$)"crlf)
-	      else
-                  (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$ ^" ?vib "<cat:prsg>$)" crlf)
-             )
-       )
-       (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_with_vib_for_and_last_id )" crlf)
-  )	
-  ;-------------------------------------------------------------------------------------------------------------------------
+  ;===================================  NP rules ============================================
   (defrule PP_rule_for_and_head
   (declare (salience 550))
   (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(person ?per)(case ?case))
@@ -1010,167 +926,7 @@
         (printout ?*A_fp5* "(id-Apertium_input "?pada_id" ^"?h_word "<cat:prsg>$)"crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id "  PP_rule_for_and_head )" crlf)
   )
-
-  ;===================================== "and" with viSeRaNa and vib != null rules ======================================
-  ;Added by Shirisha Manju (18-10-11)
-  ;He was an exotic creature with short red hair and brilliant green eyes.
-  (defrule PP_rule_with_vib_for_and
-  (declare (salience 490))
-  (conjunction-components  ?pada_id $? ?h $?)
-  (prep_id-relation-anu_ids - viSeRya-viSeRaNa ?h ?id)
-  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(person ?per)(group_ids $?ids)(case ?case))
-  ?f0<-(id-HM-source ?id ?h_word ?)
-  (id-word ?pada_id and|or)
-  (id-gender-src ?h ?gen ?)
-  (id-number-src ?h ?num ?)
-  (id-cat_coarse ?id ?cat)
-  (test (and (member$ ?h $?ids)(member$ ?id $?ids)))
-  (test (neq ?vib 0))
-  =>
-        (retract ?f0)
-        (if (eq ?cat noun) then
-                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)"crlf)
-        else
-                (if (eq ?cat verbal_noun) then ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.Added by Roja (04-03-11) 
-                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word  "<cat:vn><case:"?case">$)"crlf)
-              else
-
-                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
-                )
-        )
-       (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_with_vib_for_and )" crlf)
-  )
   ;-------------------------------------------------------------------------------------------------------------------------
-  ;Added by Shirisha Manju (18-10-11)
-  ;He was an exotic creature with short red hair and brilliant green eyes.
-  (defrule PP_rule_with_vib_for_and_vi
-  (declare (salience 480))
-  (conjunction-components  ?pada_id $? ?h $?)
-  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(person ?per)(group_ids $?ids)(case ?case))
-  (prep_id-relation-anu_ids - viSeRya-viSeRaNa ?h ?id)
-  ?f0<-(id-HM-source ?h ?h_word ?)
-  (id-word ?pada_id and|or)
-  (id-gender-src ?h ?gen ?)
-  (id-number-src ?h ?num ?)
-  (id-cat_coarse ?h ?cat)
-  (test (member$ ?h $?ids))
-  (test (neq ?vib 0))
-  =>
-        (retract ?f0)
-        (if (eq ?cat noun) then
-                (printout ?*A_fp5* "(id-Apertium_input "?h" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)"crlf)
-        else
-                (if (eq ?cat verbal_noun) then ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.Added by Roja (04-03-11) 
-                (printout ?*A_fp5* "(id-Apertium_input "?h" ^"?h_word  "<cat:vn><case:"?case">$)"crlf)
-              else
-
-                (printout ?*A_fp5* "(id-Apertium_input "?h" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
-                )
-        )
-       (printout ?*aper_debug-file* "(id-Rule_name  " ?h "  PP_rule_with_vib_for_and_vi )" crlf)
-  )
-  ;===================================== "and" with "viSeRaNa" and "vib = 0" rules ======================================
-  (defrule PP_rule_withot_vib_for_and
-  (declare (salience 490))
-  (conjunction-components  ?pada_id $? ?h $?)
-  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi 0)(person ?per)(group_ids $?ids)(case ?case))
-  (prep_id-relation-anu_ids - viSeRya-viSeRaNa ?h ?id)
-  ?f0<-(id-HM-source ?id ?h_word ?)
-  (id-word ?pada_id and|or)
-  (id-gender-src ?h ?gen ?)
-  (id-number-src ?h ?num ?)
-  (id-cat_coarse ?id ?cat)
-  (test (and (member$ ?h $?ids)(member$ ?id $?ids)))
-  =>
-        (retract ?f0)
-        (if (eq ?cat noun) then
-                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)"crlf)
-        else
-                (if (eq ?cat verbal_noun) then 
-                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word  "<cat:vn><case:"?case">$)"crlf)
-              else
-
-                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
-                )
-        )
-       (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_without_vib_for_and )" crlf)
-  )
-  ;-------------------------------------------------------------------------------------------------------------------------
-  (defrule PP_rule_without_vib_for_and_vi
-  (declare (salience 480))
-  (conjunction-components  ?pada_id $? ?h $?)
-  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi 0)(person ?per)(group_ids $?ids)(case ?case))
-  (prep_id-relation-anu_ids - viSeRya-viSeRaNa ?h ?id)
-  ?f0<-(id-HM-source ?h ?h_word ?)
-  (id-word ?pada_id and|or)
-  (id-gender-src ?h ?gen ?)
-  (id-number-src ?h ?num ?)
-  (id-cat_coarse ?h ?cat)
-  (test (member$ ?h $?ids))
-  =>
-        (retract ?f0)
-        (if (eq ?cat noun) then
-                (printout ?*A_fp5* "(id-Apertium_input "?h" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)"crlf)
-        else
-                (if (eq ?cat verbal_noun) then ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.Added by Roja (04-03-11) 
-                (printout ?*A_fp5* "(id-Apertium_input "?h" ^"?h_word  "<cat:vn><case:"?case">$)"crlf)
-              else
-
-                (printout ?*A_fp5* "(id-Apertium_input "?h" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
-                )
-        )
-       (printout ?*aper_debug-file* "(id-Rule_name  " ?h "  PP_rule_without_vib_for_and_vi )" crlf)
-  )
-  ;-------------------------------------------------------------------------------------------------------------------------
-  ;Are a dog and a cat here? 
-  (defrule PP_rule_without_vib_for_and_default
-  (declare (salience 450))
-  ?f0<-(id-HM-source ?id ?h_word ?)
-  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi 0)(person ?per)(group_ids $?ids)(case ?case))
-  (id-word ?pada_id and|or)
-  (id-gender-src ?id ?gen ?)
-  (id-number-src ?id ?num ?)
-  (id-cat_coarse ?id ?cat)
-  (test (member$ ?id $?ids))
-  =>
-        (retract ?f0)
-        (if (eq ?cat noun) then
-                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word"<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
-        else	(if (eq ?cat verbal_noun) then ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.Added by Roja (04-03-11) 
-                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word  "<cat:vn><case:"?case">$)"crlf)
-		else		
-	                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
-		)
-        )
-        (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_without_vib_for_and_default )" crlf)
-  )
-  ;-------------------------------------------------------------------------------------------------------------------------
-  ; Added by Shirisha Manju (15-09-11)
-  ;They were discussing their hopes and dreams.
-  (defrule PP_rule_with_vib_for_and_default
-  (declare (salience 450))
-  ?f0<-(id-HM-source ?id ?h_word ?)
-  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(person ?per)(group_ids $?ids)(case ?case))
-  (id-word ?pada_id and|or|well)
-  (id-gender-src ?id ?gen ?)
-  (id-number-src ?id ?num ?)
-  (id-cat_coarse ?id ?cat)
-  (test (member$ ?id $?ids))
-  (test (neq ?vib 0))
-  =>
-        (retract ?f0)
-        (if (eq ?cat noun) then
-                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
-        else	(if (eq ?cat verbal_noun) then ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.Added by Roja (04-03-11) 
-                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word  "<cat:vn><case:"?case">$)"crlf)
-		else
-                (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$)" crlf)
-		)
-       )	
-       (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  PP_rule_with_vib_for_and_default )" crlf)
-  )
-  ;-------------------------------------------------------------------------------------------------------------------------
-  ; Added by Shirisha Manju (13-09-11)
   ; Broken windows need to be replaced. The painted doors look great. Invention of currency was done mainly for transaction. 
   (defrule PP_rule_with_tam
   (declare (salience 450))
@@ -1187,7 +943,6 @@
         )
   )
   ;-------------------------------------------------------------------------------------------------------------------------
-  ; Added by Shirisha Manju (21-05-12)
   ;He was an exotic creature with short red hair and brilliant green eyes.
   (defrule PP_rule_with_vib_vAlA1
   (declare (salience 401))
@@ -1203,9 +958,7 @@
         (retract ?f0)
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_vAlA1 )" crlf)
   )
-
-
-  ; Added by Shirisha Manju (14-09-11)
+  ;-------------------------------------------------------------------------------------------------------------------------
   ; She is an excellent student with a bright future 
   (defrule PP_rule_with_vib_vAlA
   (declare (salience 400))
@@ -1220,7 +973,6 @@
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_vAlA )" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
-  ; Added by Shirisha Manju (14-09-11)
   ;I will show you the house which I bought.
   (defrule PP_rule_with_vib_for_hnd_pronoun
   (declare (salience 401))
@@ -1233,7 +985,6 @@
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_hnd_pronoun )" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
-  ; Added by Shirisha Manju (21-12-11) Suggested by Sukhada
   ; But nobody knows at what level the futures and stocks will open today.
   ; The book does not make any mention of his love affair.
   (defrule PP_rule_with_vib_for_hnd_pronoun1
@@ -1247,7 +998,6 @@
         (printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_with_vib_for_hnd_pronoun1 )" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
-  ; Added by Shirisha Manju (10-09-11)
   (defrule PP_rule_with_vib_hid
   (declare (salience 350))
   (pada_info (group_cat PP) (group_ids $?ids ?id) (vibakthi ?vib)(number ?num)(case ?case)(gender ?gen) )
@@ -1260,7 +1010,34 @@
 	(printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_with_vib_hid )" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
-  ; Added by Shirisha Manju (10-09-11)
+  ;The giraffe has the longest neck of any land mammal.
+  ;Added by Shirisha Manju (18-06-12)  Suggested by Chaitanya Sir 
+  (defrule PP_rule_adj_est
+  (declare (salience 340))
+  (pada_info (group_cat PP) (group_ids $?ids)(number ?num)(case ?case)(gender ?gen) )
+  ?f2<-(id-HM-source ?id ?h_word ?)
+  (id-root-category-suffix-number ?id ? adjective est ?)
+  (test (member$ ?id $?ids))
+  =>
+	(retract ?f2)
+	(bind ?h_word (str-cat "sabase_aXika_" ?h_word))
+	(printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$ )" crlf)
+  )
+  ;-------------------------------------------------------------------------------------------------------------------------
+  ;Mary is taller than Max.
+  ;Added by Shirisha Manju (19-06-12)  Suggested by Chaitanya Sir
+  (defrule PP_rule_adj_er
+  (declare (salience 340))
+  (pada_info (group_cat PP) (group_ids $?ids)(number ?num)(case ?case)(gender ?gen) )
+  ?f2<-(id-HM-source ?id ?h_word ?)
+  (id-root-category-suffix-number ?id ? adjective er ?)
+  (test (member$ ?id $?ids))
+  =>
+        (retract ?f2)
+        (bind ?h_word (str-cat "aXika_" ?h_word))
+        (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$ )" crlf)
+  )
+  ;-------------------------------------------------------------------------------------------------------------------------
   (defrule PP_rule_default
   (declare (salience 300))
   (pada_info (group_cat PP) (group_ids $?ids)(number ?num)(case ?case)(gender ?gen) )
@@ -1277,7 +1054,6 @@
 	(printout ?*aper_debug-file* "(id-Rule_name  "?id1 "  PP_rule_default )" crlf)
   )
  ;------------------------------------------------------------------------------------------------------------------------
- ; Added by Shirisha Manju (27-01-12)
  ;If you use that strategy, he will wipe you out.
  (defrule default_hnd_mng_rule
  (declare (salience -300))

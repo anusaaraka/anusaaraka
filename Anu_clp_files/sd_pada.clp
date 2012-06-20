@@ -1,4 +1,4 @@
-;This file is added by Shirisha Manju (9-05-12)
+;This file is written by Shirisha Manju (9-05-12)
 ; Generates pada using praxiniXi
 
  (deffunction never-called ()
@@ -215,7 +215,6 @@
 	(retract ?f)
 	(assert (conj_head-conj_id-components ?con_h ?cid $?d $?d1))
 	(bind ?head (string-to-field (sym-cat ?hid ".1")))
-;(bind ?head (sym-cat ?hid . 1))
 	(assert (pada_info (group_head_id ?head) (group_cat PP)(group_ids ?id)(preposition $?prep)))
 	(assert (id-grp_ids ?head ?id))
  )

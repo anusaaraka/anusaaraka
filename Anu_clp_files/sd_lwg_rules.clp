@@ -1,3 +1,5 @@
+;This file is written by Mahalaxmi
+
 (deffunction string_to_integer (?parser_id)
 (string-to-field (sub-string 2 10000 ?parser_id)))
  
@@ -15,24 +17,6 @@
 	(assert (Head-Level-Mother-Daughters_lwg ?h ?l ?M $?daut))
  )
 
-;--------------------------------------------------------------------------
- ;===============  Parser Correction Rule ==================================
- ;Added by Shirisha Manju (29-10-11)
- ;This rule makes VBN as VBD in the sentences where Stanford parser incorrectly makes VBD as VBN.
- ;The mother calmed the angry son.The jet zoomed across the sky.
- ;Who translated the sentence for the student? The snake who swallowed the rat hissed loudly.
- (defrule make_VBN_as_VBD
- (declare (salience 1600))
- (Head-Level-Mother-Daughters_lwg ? ? ?S $? ?VP $?)
- (Node-Category ?S S|SQ)
- (Node-Category ?VP VP)
- ?f0<-(Head-Level-Mother-Daughters_lwg ?h ?l ?VP ?VBN $?d)
- ?f1<-(Node-Category ?VBN VBN)
- ?f2<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VBN ?id)
- =>
-         (retract ?f1)
-         (assert (Node-Category ?VBN VBD));Simplified the action part by S.Maha Laxmi (18-05-12);Instead of changing ((Head-Level-Mother-Daughters) here just changed the category fact 
- )
 ;--------------------------------------------------------------------------
  ; Identifying the conjunction and asserting a conjunction list fact which is later used by "get_conj_symmetry_facts" rule.
  (defrule conjunction_rule
@@ -72,13 +56,11 @@
  )
 
 ;--------------------------------------------------------------------------
- ;=====================================  Parser Correction Rule ===========
  ;Replacing a VP mother whose child is  S|SBAR|SQ on checking the head word .
  ;Ex:-A fat boy [had to eat] fruits. 
  ;Ex:-She made the girl feed the child.[made_feed]
- (defrule replace_S
+ (defrule replace_S_for_causitive
  (declare (salience 100))
- ;?f<-(Head-Level-Mother-Daughters_lwg ?head&have|had|has|having|make|makes|making|made|need|Let|let|are|Are ?lvl ?Mot $?pre ?S $?pos)
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?S $?pos)
  (parserid-word ?head ?w&get|got|gets|getting|have|had|has|having|make|makes|making|made|need|Let|let|are|Are) 
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
@@ -89,9 +71,8 @@
         (retract ?f ?f1)
         (assert (Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre $?daut  $?pos))
  )
-
 ;--------------------------------------------------------------------------
- 
+
  (defrule get_lwg1
  (declare (salience 75))
  ?f0<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?VP ?VP1 ?VP2)

@@ -131,4 +131,7 @@
 (load*  "get_constituency_tree.clp")
 (bsave  "get_constituency_tree.bclp")
 (clear)
+(load*  "parser_correction_rules.clp")
+(bsave  "parser_correction_rules.bclp")
+(clear)
 (exit)

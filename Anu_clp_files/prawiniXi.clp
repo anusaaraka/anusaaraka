@@ -1,3 +1,5 @@
+; This file is written by Mahalaxmi
+
 (deffunction find_head_count(?praw_id $?grp)
              (bind ?flag 0) (bind ?new_cnt 0)
              (loop-for-count (?i 1 (length $?grp))
@@ -18,9 +20,7 @@
              )
  (bind ?new ?new_cnt)
 )
-
-
-
+;---------------------------------------------------------------------------------------------------------------
 (defrule find_highest_level
 (declare (salience 998))
 ?f<-(Head-Level-Mother-Daughters ? ?lvl $?ids)
@@ -28,7 +28,7 @@
 =>
       (assert (get_prawiniXi_id_for_level ?lvl))
 )
-
+;---------------------------------------------------------------------------------------------------------------
 (defrule get_prawiniXi_id
 (declare (salience 997))
 ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pid1 ?id)
@@ -43,7 +43,7 @@
    (assert (prawiniXi_id-Node ?praw_id ?Mot))
    (assert (Head-Level-Mother-Daughters ?h ?lvl ?praw_id $?pid1 ?id))
 )
-
+;---------------------------------------------------------------------------------------------------------------
 (defrule replace_node_with_prawiniXi_id
 (declare (salience 999))
 (prawiniXi_id-Node ?praw_id ?Mot)
@@ -54,7 +54,7 @@
         (assert (Mot_replaced ?Mot1 ?Mot))
 	(assert (Head-Level-Mother-Daughters ?h ?lvl  ?Mot1 $?pre ?praw_id $?pos))
 )
-
+;---------------------------------------------------------------------------------------------------------------
 (defrule find_next_level
 ?f<-(get_prawiniXi_id_for_level ?lvl)
 (test (> ?lvl 1))
@@ -62,8 +62,7 @@
         (bind ?lvl (- ?lvl 1))
         (assert (get_prawiniXi_id_for_level ?lvl))
 )
-
-
+;---------------------------------------------------------------------------------------------------------------
 (defrule print_to_user
 (declare (salience -100))
 ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?Mot $?dau)
@@ -71,8 +70,7 @@
 	(retract ?f)
         (assert (head_id-prawiniXi_id-grp_ids ?h ?Mot $?dau))
 )
-
-
+;---------------------------------------------------------------------------------------------------------------
 (defrule print_to_user1
 (declare (salience -200))
 (prawiniXi_id-Node ?praw_id ?node)
@@ -80,3 +78,4 @@
 =>
         (assert (prawiniXi_id-node-category ?praw_id ?node ?cat))
 )
+;---------------------------------------------------------------------------------------------------------------

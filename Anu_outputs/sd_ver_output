@@ -356,7 +356,7 @@ usane joYna ko AmaMwriwa karane meM galawI kI.
 
 Hindi meaning using Stanford parser 2.86
 John is quite certainly a better choice. 
-joYna sacamuca niSciwa rUpa se eka behawara vikalpa hE.
+joYna sacamuca niSciwa rUpa se eka aXika behawara vikalpa hE.
 
 Hindi meaning using Stanford parser 2.87
 Petu ran fast but missed the bus. 
@@ -830,7 +830,7 @@ hama graha PropN-gorpon-PropN se hEM.
 
 Hindi meaning using Stanford parser 2.202
 The best costumes got prizes. 
-acCe pahanAvoM ne puraskAra prApwa kie.
+sabase aXika acCe pahanAvoM ne puraskAra prApwa kie.
 
 Hindi meaning using Stanford parser 2.203
 She is apparently an excellent pianist. 
@@ -1246,7 +1246,7 @@ vaha Cote lAla keSa vAlA Ora wejomaya harI AzKoM vAlA AkarRaka prANI WA.
 
 Hindi meaning using Stanford parser 3.3
 The best five costumes got prizes. 
-acCe pAzca pahanAvoM ne puraskAra prApwa kie.
+sabase aXika acCe pAzca pahanAvoM ne puraskAra prApwa kie.
 
 Hindi meaning using Stanford parser 3.4
 I wonder how John did it. 
@@ -1605,7 +1605,7 @@ pacAsa logoM ne naye praswAva ke viruxXa mawa xiyA.
 
 Hindi meaning using Stanford parser 3.87
 Mandi is comparatively hotter than other hill stations of himachal pradesh. 
-PropN-mandi-PropN himachal pradesh ke anya pahAdI steSanoM kI apekRA wulanAwmaka xqRti se garama hE.
+PropN-mandi-PropN himachal pradesh ke anya pahAdI steSanoM kI apekRA wulanAwmaka xqRti se aXika garama hE.
 
 Hindi meaning using Stanford parser 3.88
 Most of the inexpensive budget accommodation is in taj ganj. 
@@ -1996,6 +1996,22 @@ vaha merA saMbanXiwa nahIM hE.
 Hindi meaning using Stanford parser 4.83
 When the dollar is in a free-fall, even central banks can not stop it. 
 jaba dOlara BArI girAvata meM ho, wo kenxrIya bEMka BI isako nahIM_roka sakawe hEM.
+
+Hindi meaning using Stanford parser 4.84
+Mary is taller than Max. 
+PropN-mary-PropN PropN-max-PropN kI apekRA aXika laMbI hE.
+
+Hindi meaning using Stanford parser 4.85
+Mary is the tallest of all the students. 
+PropN-mary-PropN saBI vixyArWiyoM meM se sabase aXika laMbI hE.
+
+Hindi meaning using Stanford parser 4.86
+My dog is the biggest of all the dogs in the neighborhood. 
+merA kuwwA padosa meM saBI kuwwoM meM se sabase aXika badA hE.
+
+Hindi meaning using Stanford parser 4.87
+Health is more important than money. 
+PropN-health-PropN pEse kI apekRA aXika mahawvapUrNa hE.
 
 Calling Transliteration
 Calling Interface related programs
