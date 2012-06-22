@@ -81,10 +81,10 @@
 
  (defrule create_dummy_confd_lvl
  (declare (salience 6000))
- (manual_id-word ?id ?word)
- (not (id-confidence_level ?id ?confd_lvl))
+ (anu_id-anu_mng-sep-man_id-man_mng ?id $? - ?mid $?)
+ (not (id-confidence_level ?mid ?confd_lvl))
  =>
- 	(assert (id-confidence_level ?id -))
+ 	(assert (id-confidence_level ?mid -))
  )
 
  (defrule create_dummy_eng_sen

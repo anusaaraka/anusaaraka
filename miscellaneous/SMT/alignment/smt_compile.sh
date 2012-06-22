@@ -23,6 +23,9 @@ echo "Creating hindi_tam_dictionary"
 ./create-gdbm.pl $HOME_anu_test/Anu_databases/hindi_tam_dictionary.gdbm < $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries/hindi_tam_dictionary.txt
 echo "Creating preposition_dictionary"
 ./create-gdbm.pl $HOME_anu_test/Anu_databases/preposition_dictionary.gdbm < $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries/preposition_dictionary.txt
+echo "Creating Hindi Wordnet dictionaries"
+./create-gdbm.pl $HOME_anu_test/Anu_databases/hindi_wordnet_dic1.gdbm < $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries/hindi_wordnet_dic1.txt
+./create-gdbm.pl $HOME_anu_test/Anu_databases/hindi_wordnet_dic2.gdbm < $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries/hindi_wordnet_dic2.txt
 
 cd $HOME_anu_test/miscellaneous/SMT/alignment
 echo "generating out file"

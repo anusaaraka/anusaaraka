@@ -1,9 +1,19 @@
-(defglobal ?*score1* = 8)
-(defglobal ?*score2* = 7)
-(defglobal ?*score3* = 5)
-
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
+(deffunction assert_control_fact(?fact_name $?ids)
+                (loop-for-count (?i 1 (length $?ids))
+                                (bind ?j (nth$ ?i $?ids))
+                                (if (eq ?fact_name mng_has_been_aligned) then
+	                                (assert (mng_has_been_aligned ?j))
+                                else (if (eq ?fact_name mng_has_been_filled) then
+        	                        (assert (mng_has_been_filled ?j))
+                                else (if (eq ?fact_name prov_mng_has_been_aligned) then
+                	                (assert (prov_mng_has_been_aligned ?j))
+                                else (if (eq ?fact_name prov_mng_has_been_filled) then
+                        	        (assert (prov_mng_has_been_filled ?j)))))
+                                )
+                 )
+)
 ;-------------------------------------------------------------------------------------
 ;Counts the number of verbs of anusaaraka sentence
 (defrule verb_count_of_anu
@@ -33,251 +43,272 @@
 )
 
 ;-------------------------------------------------------------------------------------
-;Checks if a word occurs more than once in the manual sentence and assigning a control fact for that word 
-(defrule check_for_more_than_one_poss_with_man_mng
-(declare (salience 1000))
-(manual_id-word-cat ?id $?word ?)
-(manual_id-word-cat ?id1 $?word ?)
-(test (neq ?id ?id1))
+(defglobal ?*count* = 0)
+
+(defrule get_current_word
+(manual_id-cat-word-root-vib-grp_ids ?mid $?)
+(not (manual_id-cat-word-root-vib-grp_ids ?mid1&:(< ?mid1 ?mid) $?))
 =>
-	(assert (more_than_one_possibility ?id))
-	(assert (more_than_one_possibility ?id1))
+        (assert (current_id ?mid))
+        (bind ?*count* 0)
+        (assert (count_fact 0))
+)
+
+(defrule update_count_fact
+(declare (salience 9022))
+(current_id ?mid)
+?f<-(count_fact ?count)
+?f1<-(update_count_fact ?new_count)
+=>
+	(retract ?f ?f1)
+        (assert (count_fact ?new_count))
 )
 
 ;-------------------------------------------------------------------------------------
+(defrule exact_match_with_aper_output ;[manual group match]
+(declare (salience 901))
+(current_id ?mid)
+(manual_id-node-word-root-tam ?h_mid ? $?mng - $? - $?)
+(head_id-grp_ids ?h_mid ?mid $?grp)
+(id-Apertium_output ?aid $?mng)
+(not (prov_assignment ?aid ?mid))
+=>
+        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?mng - ?mid $?mng))
+        (assert_control_fact prov_mng_has_been_aligned ?mid $?grp)
+        (assert_control_fact prov_mng_has_been_filled ?aid)
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (printout t "count = " ?*count* crlf)
+        (assert (anu_ids-sep-manual_ids ?aid - ?mid $?grp))
+        (assert (prov_assignment ?aid ?mid))
+)
+;-------------------------------------------------------------------------------------
+(defrule exact_match_with_aper_output1 ;[manual word match]
+(declare (salience 900))
+(current_id ?mid)
+(manual_id-word-cat ?mid $?mng ?)
+(id-Apertium_output ?aid $?mng)
+(not (prov_assignment ?aid ?mid))
+=>
+        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?mng - ?mid $?mng))
+        (assert_control_fact prov_mng_has_been_aligned ?mid)
+        (assert_control_fact prov_mng_has_been_filled ?aid)
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (printout t "count = " ?*count* crlf)
+        (assert (anu_ids-sep-manual_ids ?aid - ?mid))
+)
+;-------------------------------------------------------------------------------------
+;If only one verb is present in both the manual and anusaaraka sentences then make direct alignment.
+(defrule single_verb_group_match
+(declare (salience 890))
+(current_id ?mid)
+(anu_verb_count-verbs 1 ?aid)
+(man_verb_count-verbs 1 ?m_h_id)
+(manual_id-node-word-root-tam ?m_h_id VGF $?man_mng - $? - $?)
+(head_id-grp_ids ?m_h_id ?mid $?grp)
+(id-Apertium_output ?aid $?anu_mng)
+(not (prov_assignment ?aid ?mid))
+=>
+        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_mng))
+        (assert_control_fact prov_mng_has_been_aligned ?mid $?grp)
+        (assert_control_fact prov_mng_has_been_filled ?aid)
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (printout t "count = " ?*count* crlf)
+        (assert (anu_ids-sep-manual_ids ?aid - ?mid $?grp))
+        (assert (prov_assignment ?aid ?mid))
+     
+)
+;-------------------------------------------------------------------------------------
 ;Check for manual verb[root] and tam match in the dictionary
 (defrule verb_match_using_dic
-(declare (salience 990))
-(manual_id-node-word-root-tam  ?man_id   VGF   $?verb_mng - $?v_root - $?tam)
-(head_id-grp_ids ?man_id $?grp_ids)
+(declare (salience 880))
+(current_id ?mid)
+(manual_id-node-word-root-tam  ?man_g_id   VGF   $?verb_mng - $?v_root - $?tam)
+(head_id-grp_ids ?man_g_id ?mid $?grp_ids)
 (id-org_wrd-root-dbase_name-mng ? ? ?root ? $?v_root)
-(e_tam-id-dbase_name-mng ?e_tam ? hindi_tam_dictionary $?tam)
-(id-root ?e_verb_id ?root)
-(pada_info (group_head_id  ?e_verb_id))
-(not (more_than_one_possibility ?mid))
+(e_tam-id-dbase_name-mng ?e_tam ? ? $?tam)
+(id-Apertium_output ?aid $?anu_mng)
+(test (> (length $?anu_mng) 0))
+(id-root ?aid ?root)
+(not (prov_assignment ?aid ?mid))
 =>
-        (assert (eid-mid-score ?e_verb_id (nth$ 1 $?grp_ids) ?*score1*))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid  $?anu_mng - ?mid  $?v_root $?tam))
+        (assert_control_fact prov_mng_has_been_aligned ?mid $?grp_ids)
+        (assert_control_fact prov_mng_has_been_filled ?aid)
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (printout t "count = " ?*count* crlf)
+        (assert (anu_ids-sep-manual_ids ?aid - ?mid $?grp_ids))
+        (assert (prov_assignment ?aid ?mid))
 )
 
 ;-------------------------------------------------------------------------------------
 ;Check for manual word and vibakthi match in the dictionary
 (defrule word_and_vib_match_using_dic
-(declare (salience 980))
-(manual_id-word-cat ?mid $?grp_mng ?)
-(manual_id-noun-vib-grp_ids ?mid $?noun - $?vib - $?grp_ids)
+(declare (salience 870))
+(current_id ?mid)
+(or (manual_id-cat-word-root-vib-grp_ids ?mid ? $?noun - $? - $?vib - $?grp_ids) (manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?noun - $?vib - $?grp_ids))
+(test (neq $?vib 0))
 (id-org_wrd-root-dbase_name-mng ? ? ?e_noun ? $?noun)
 (id-org_wrd-root-dbase_name-mng ? ? ?e_vib ? $?vib)
-(id-word ?e_noun_id ?e_noun)
-(id-word ?e_vib_id ?e_vib)
-(not (more_than_one_possibility ?mid))
+(id-root ?e_noun_id ?e_noun)
+(id-root ?e_vib_id ?e_vib)
+(id-Apertium_output ?e_noun_id $?anu_mng)
+(pada_info (group_head_id  ?e_noun_id)(preposition ?e_vib_id))
+(not (prov_mng_has_been_aligned ?mid))
+(not (prov_mng_has_been_filled ?e_noun_id))
+(not (prov_assignment ?aid ?mid))
 =>
-	(assert (eid-mid-score ?e_noun_id ?mid ?*score1*))
-)
-
-;-------------------------------------------------------------------------------------
-;Check for manual root and vibakthi match in the dictionary
-(defrule root_and_vib_match_using_dic 
-(declare (salience 970))
-(manual_id-word-cat ?mid $? ?)
-(id-node-word-root ?mid ? $? - $?noun)
-(manual_id-noun-vib-grp_ids ?mid $? - $?vib - $?grp_ids)
-(id-org_wrd-root-dbase_name-mng ? ? ?e_noun ? $?noun)
-(id-org_wrd-root-dbase_name-mng ? ? ?e_vib ? $?vib)
-(id-word ?e_noun_id ?e_noun)
-(id-word ?e_vib_id ?e_vib)
-(not (more_than_one_possibility ?mid))
-
-=>
-        (assert (eid-mid-score ?e_noun_id ?mid ?*score1*))
+	(assert (anu_id-anu_mng-sep-man_id-man_mng ?e_noun_id  $?anu_mng - ?mid  $?noun $?vib))
+        (assert_control_fact prov_mng_has_been_aligned $?grp_ids)
+        (assert_control_fact prov_mng_has_been_filled ?e_noun_id)
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (printout t "count = " ?*count* crlf)
+        (assert (anu_ids-sep-manual_ids ?e_noun_id - $?grp_ids))
+        (assert (prov_assignment ?e_noun_id ?mid))
 )
 
 ;-------------------------------------------------------------------------------------
 ;Check for manual  word match in the dictionary
 (defrule noun-word_with_0_vib
-(declare (salience 960))
-(manual_id-word-cat ?mid $?mng ?)
-(not (manual_id-noun-vib-grp_ids ?mid $?))
+(declare (salience 850))
+(current_id ?mid)
+(or (manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng - $? - 0 - $?)(manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?mng - 0 - $?))
 (id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?mng)
-(id-word ?eid ?e_word)
-(not (more_than_one_possibility ?mid))
+(id-root ?eid ?e_word)
+(id-Apertium_output ?eid $?anu_mng)
+(not (prov_mng_has_been_aligned ?mid))
+(not (prov_mng_has_been_filled ?eid))
+(not (prov_assignment ?aid ?mid))
 =>
-        (assert (eid-mid-score ?eid ?mid ?*score1*))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng ?eid  $?anu_mng - ?mid  $?mng))
+        (assert_control_fact prov_mng_has_been_aligned ?mid)
+        (assert_control_fact prov_mng_has_been_filled ?eid)
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (printout t "count = " ?*count* crlf)
+        (assert (anu_ids-sep-manual_ids ?eid - ?mid))
+        (assert (prov_assignment ?eid ?mid))
 )
 
 ;-------------------------------------------------------------------------------------
 ;Check for manual word having vibakthi in the dictionary for which only match for word is found.
 (defrule noun-word_with_vib-pres-and-no-match
-(declare (salience 900))
-(manual_id-word-cat ?mid $? ?)
-(manual_id-noun-vib-grp_ids ?mid $?noun - $?vib - $?grp_ids)
+(declare (salience 840))
+(current_id ?mid)
+(or (manual_id-cat-word-root-vib-grp_ids ?mid ? $?noun - $? - $?vib - $?grp_ids)(manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?noun - $?vib - $?grp_ids))
+(test (neq $?vib 0))
+(not (manual_id-cat-word-root-vib-grp_ids ?mid1&:(neq ?mid1 ?mid) ? $?noun - $? - $? - $?))
 (id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?noun)
-(id-word ?eid ?e_word)
-(id-word ?e_vib_id ?e_vib)
 (not (id-org_wrd-root-dbase_name-mng ? ? ?e_vib ? $?vib))
-(not (more_than_one_possibility ?mid))
-=>
-        (assert (eid-mid-score ?eid ?mid ?*score2*))
-)
-
-;-------------------------------------------------------------------------------------
-;Check for manual word having vibakthi in the dictionary for which only match for word is found.
-(defrule noun-word_with_vib-pres-and-no-match1
-(declare (salience 900))
-(manual_id-word-cat ?mid $?noun ?)
-(id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?noun)
-(id-word ?eid ?e_word)
-(id-word ?e_vib_id ?e_vib)
-(not (id-org_wrd-root-dbase_name-mng ? ? ?e_vib ? $?vib))
-(not (more_than_one_possibility ?mid))
-=>
-        (assert (eid-mid-score ?eid ?mid ?*score2*))
-)
-
-;-------------------------------------------------------------------------------------
-;If two different match found for same word[english] then for the exact match  
-;Ex:-"For example, the same law of gravitation (given by Newton) describes the fall of an apple to the ground, the [motion 1] of the moon around the earth and the [motion 2] of planets around the sun. "
-;uxAharaNa ke lie  @PUNCT-Comma samAna guruwvAkarRaNa kA niyama  @PUNCT-OpenParen jise nyUtana ne prawipaxiwa kiyA  @PUNCT-ClosedParen pqWvI para kisI seba kA giranA  @PUNCT-Comma pqWvI ke pariwaH canxramA kI parikramA waWA sUrya ke pariwaH grahoM kI [gawi] jEsI pariGatanAoM kI vyAKyA karawA hE
-;(motion-1 gawi) 
-;(motion-2 gawi)
-(defrule check_for_group_match
-(declare (salience 800))
-(mot-cat-head-level-praW_id-first_id-last_id-l_punc-r_punc ? ? ? ? ? ?first ?last $?)
-(mot-cat-head-level-praW_id-first_id-last_id-l_punc-r_punc ? ? ? ? ? ?first1 ?last1 $?)
-?f<-(eid-mid-score ?eid ?mid ?)
-?f1<-(eid-mid-score ?eid1 ?mid ?)
-(test (and (neq ?eid ?eid1) (neq ?first ?first1) (neq ?last ?last1)))
-(test (or (and (> ?eid ?first) (< ?eid ?last)) (and (> ?eid1 ?first1) (< ?eid1 ?last1))))
-=>
-	(if (and (> ?eid ?first) (< ?eid ?last)) then (retract ?f)
-        else (if (and (> ?eid1 ?first1) (< ?eid1 ?last1)) then (retract ?f1)))
-)
-;-------------------------------------------------------------------------------------
-;If only one verb is present in both the manual and anusaaraka sentences then make direct alignment.
-(defrule single_verb_group_match
-(anu_verb_count-verbs 1 $?)
-(man_verb_count-verbs 1 $?)
-(manual_id-node-word-root-tam ?m_h_id VGF $?mng - $? - $?)
-(head_id-grp_ids ?m_h_id ?mid $?grp)
-(pada_info (group_cat VP)(group_head_id  ?eid))
-=>
-	(assert (eid-mid-score ?eid ?mid ?*score1*))
-        (assert (take_group_mng ?mid))
-        ;(assert_mng_decided_fact ?mid $?grp)
-)
-
-;-------------------------------------------------------------------------------------
-;Check for exact group match b/w manual_group and anu_group
-(defrule exact_match_with_aper_output
-(declare (salience 100))
-(manual_id-node-word-root-tam ?h_mid ? $?mng - $? - $?)
-(head_id-grp_ids ?h_mid ?mid $?grp)
-(id-Apertium_output ?eid $?mng)
-(not (more_than_one_possibility ?mid))
-=>
-        (assert (eid-mid-score ?eid ?mid ?*score2*))
-        (assert (take_group_mng ?mid))
-)
-;-------------------------------------------------------------------------------------
-;Check for exact group match of manual_group with dictionary
-(defrule exact_group_match_with_dic
-(declare (salience 70))
-(manual_id-node-word-root-tam ?h_mid ? $?mng - $? - $?)
-(id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?mng)
 (id-root ?eid ?e_word)
-(head_id-grp_ids ?h_mid ?mid $?grp)
+(id-root ?e_vib_id ?e_vib)
+(id-Apertium_output ?eid $?anu_mng)
+(pada_info (group_head_id  ?eid)(preposition ?e_vib_id))
+(not (prov_mng_has_been_aligned ?mid))
+(not (prov_mng_has_been_filled ?eid))
+(not (prov_assignment ?aid ?mid))
 =>
-        (assert (eid-mid-score ?eid ?mid ?*score3*))
-        (assert (take_group_mng ?mid))
+	(assert (anu_id-anu_mng-sep-man_id-man_mng ?eid  $?anu_mng - ?mid  $?noun $?vib))
+        (assert_control_fact prov_mng_has_been_aligned $?grp_ids)
+        (assert_control_fact prov_mng_has_been_filled ?eid)
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (printout t "count = " ?*count* crlf)
+        (assert (anu_ids-sep-manual_ids ?eid - $?grp_ids))
+        (assert (prov_assignment ?eid ?mid))
 )
 
 ;-------------------------------------------------------------------------------------
-;Check for possibility match using manual root 
-(defrule get_poss_anu_ids_for_man_rt_thr_dic_match
-(declare (salience 60))
-(id-node-word-root ?mid ? ?word - ?man_root)
-(id-org_wrd-root-dbase_name-mng ? ?e_word ? ? ?man_root)
-(id-word ?eid ?e_word)
-=>
-          (assert (eid-mid-score ?eid ?mid ?*score3*))
-)
-
-(defrule get_poss_anu_ids_for_man_rt_thr_dic_match1
-(declare (salience 60))
-(id-node-word-root ?mid ? ?word - ?man_root)
-(id-org_wrd-root-dbase_name-mng ? ? ?e_word ? ?man_root)
-(id-root ?eid ?e_word)
-=>
-          (assert (eid-mid-score ?eid ?mid ?*score3*))
-)
-
-;-------------------------------------------------------------------------------------
-;Check for possibility match using manual word
-(defrule get_poss_anu_ids_for_man_word
-(declare (salience 50))
-(manual_id-word-cat ?mid $?noun ?)
-(id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?noun)
-(or (id-word ?eid ?e_word)(id-original_word ?eid ?e_word))
-=>
-        (assert (eid-mid-score ?eid ?mid ?*score3*))
-)
-
 (defrule check_match_with_english_word
-(declare (salience 50))
-(manual_id-word-cat ?mid ?word ?)
+(declare (salience 830))
+(current_id ?mid)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? ?word - $? - $? - $?)
 (or (id-word ?eid ?word)(id-original_word ?eid ?word))
-(not (more_than_one_possibility ?mid))
+(id-Apertium_output ?eid $?anu_mng)
+(not (prov_mng_has_been_aligned ?mid))
+(not (prov_mng_has_been_filled ?eid))
+(not (prov_assignment ?aid ?mid))
 =>
-       (assert (eid-mid-score ?eid ?mid ?*score1*))
+	(assert (anu_id-anu_mng-sep-man_id-man_mng ?eid  $?anu_mng - ?mid  ?word))
+        (assert_control_fact prov_mng_has_been_aligned ?mid)
+        (assert_control_fact prov_mng_has_been_filled ?eid)
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (printout t "count = " ?*count* crlf)
+        (assert (anu_ids-sep-manual_ids ?eid - ?mid))
+        (assert (prov_assignment ?eid ?mid))
 )
 ;-------------------------------------------------------------------------------------
-;deciding the alignment based on the highest score [for nouns having vibakthi]
-(defrule assert_confidence_lvl_for_noun_vib
-(declare (salience -80))
-(eid-mid-score ?eid ?mid ?score)
-(not (eid-mid-score ?eid ?mid1 ?score1&:(< ?score ?score1)))
-(manual_id-noun-vib-grp_ids ?mid $? - $? - $?grp_ids)
-(id-Apertium_output ?eid $?mng)
-(manual_id-word-cat ?mid $?man_mng ?)
+(defrule check_count_1
+(declare (salience -50))
+?f<-(current_id ?hid)
+(count_fact 1)
+?f1<-(manual_id-cat-word-root-vib-grp_ids ?hid $?)
+(anu_ids-sep-manual_ids $?aids - $?mids)
+(test (member$ ?hid $?mids))
 =>
-        (assert (id-confidence_level ?mid ?score))
-        (assert (anu_id-anu_mng-sep-man_id-man_mng ?eid $?mng - ?mid $?man_mng))
-        (loop-for-count (?i 1 (length (create$ $?grp_ids)))
-                        (bind ?m (nth$ ?i (create$ $?grp_ids)))
-                        (assert (alignment_done ?m)))
+        (retract ?f1 ?f)
+        (assert_control_fact mng_has_been_aligned $?mids)
+        (assert_control_fact mng_has_been_filled $?aids)
+        (assert (id-confidence_level ?hid 8))
+;        (printout t "count_value ----"?*count* crlf)
+        (assert (provisional_id ?hid))
 )
+;-------------------------------------------------------------------------------------
 
-;-------------------------------------------------------------------------------------
-;deciding the alignment based on the highest score [for group match]
-(defrule assert_confidence_lvl_with_man_grp
-(declare (salience -90))
-(eid-mid-score ?eid ?mid ?score)
-(take_group_mng ?mid)
-(not (eid-mid-score ?eid ?mid1 ?score1&:(< ?score ?score1)))
-(id-Apertium_output ?eid $?mng)
-(manual_id-word-cat ?mid $? ?)
-(manual_id-node-word-root-tam ?h_mid ? $?man_mng - $? - $?)
-(head_id-grp_ids ?h_mid $? ?mid $?grp)
+(defrule check_count_value_gt_than_1
+(declare (salience -50))
+?f<-(current_id ?hid)
+(count_fact ?count)
+(test (> ?count 1))
+?f1<-(manual_id-cat-word-root-vib-grp_ids ?hid $?)
+(anu_ids-sep-manual_ids $?aid - $?mids)
+(test (member$ ?hid $?mids))
 =>
-        (assert (id-confidence_level ?mid ?score))
-        (assert (anu_id-anu_mng-sep-man_id-man_mng ?eid $?mng - ?mid $?man_mng))
-        (loop-for-count (?i 1 (length (create$ ?mid $?grp)))
-			(bind ?m (nth$ ?i (create$ ?mid $?grp)))
-			(assert (alignment_done ?m)))
+        (retract ?f1 ?f)
+        (assert (anu_ids-sep-potential_assignments  $?aid - $?mids))
+ ;       (printout t "count_value   ^^^"?*count* crlf)
+        (assert (potential_id ?hid))
 )
-
 ;-------------------------------------------------------------------------------------
-;deciding the alignment based on the highest score 
-(defrule assert_confidence_lvl
+
+(defrule check_count_value_0
 (declare (salience -100))
-(eid-mid-score ?eid ?mid ?score)
-(not (eid-mid-score ?eid ?mid1 ?score1&:(< ?score ?score1)))
-(id-Apertium_output ?eid $?mng)
-(manual_id-word-cat ?mid $?man_mng ?)
-(not (take_group_mng ?mid))
+?f<-(current_id ?hid)
+(count_fact 0)
+?f1<-(manual_id-cat-word-root-vib-grp_ids ?hid $?)
 =>
-        (assert (id-confidence_level ?mid ?score))
-	(assert (anu_id-anu_mng-sep-man_id-man_mng ?eid $?mng - ?mid $?man_mng))
-                        (assert (alignment_done ?mid))
-
+        (retract ?f ?f1)
+  ;      (printout t "count_value   %%%%"?*count* crlf)
 )
 ;-------------------------------------------------------------------------------------
+
+(defrule rm_potential_fact
+(declare (salience -200))
+(potential_id ?hid)
+?f<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?hid $?man_mng1)
+=>
+	(retract ?f)
+	(assert (potential_assignment_vacancy_id-candidate_id ?aid ?hid)) 
+)
+;-------------------------------------------------------------------------------------
+(defrule combine_group 
+(declare (salience -100))
+?f<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_mng)
+?f1<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid1 $?man_mng1)
+(test (neq ?mid ?mid1))
+?f2<-(id-confidence_level ?mid 8)
+?f3<-(id-confidence_level ?mid1 8)
+=>
+        (retract ?f ?f1)
+        (if (< ?mid ?mid1) then (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_mng $?man_mng1))
+                                (assert (id-confidence_level ?mid 7))
+		           else (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid1 $?man_mng1 $?man_mng))
+                                (assert (id-confidence_level ?mid1 7))
+        )
+)
+
