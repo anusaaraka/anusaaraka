@@ -3590,7 +3590,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  28. Updated changes_in_databases.
  29. Updated Log
 
- 20-06-11
+ 23-06-11
  ========
  1. prepare_apertium_input.clp :
         Added   : PP_rule_adj_est and  PP_rule_adj_er
@@ -3600,22 +3600,34 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                   PP_rule_without_vib_for_and_vi        PP_rule_without_vib_for_and_default
                   PP_rule_with_vib_for_and_default
  2. sd_lwg_rules.clp
-        Removed : make_VBN_as_VBD
-        Renamed : replace_S  as replace_S_for_causitive
- 3. Added new module parser_correction_rules
- 4. Modified create_binary_files.clp  to add parser_correction_rules module
+        Removed  : make_VBN_as_VBD
+        Renamed  : replace_S  as replace_S_for_causitive
+	Modified : get_lwg1 (removed VP in list)
+ 3. Added new modules :  parser_tree_correction_rules and  parser_tree_modification_rules
+ 4. Modified create_binary_files.clp  to add 
+	parser_tree_correction_rules and parser_tree_modification_rules module
  5. run_modules_std.bat
-        1. to add parser_correction_rules module
-        2. to modify file names in the following modules
+        1. to add parser_tree_correction_rules module
+	2. to add parser_tree_modification_rules module
+        3. to modify file names in the following modules
                 replace_head_word_with_id  handling_punctuations  sd_category  sd_lwg_rules and parser_id_mapping
  6. Removed jnk from the following files
         get_dbase_mng.clp  sd_pada.clp  sd_category.clp  gender_info.clp  agreement.clp  catastrophe.clp
         parse_scope.clp    prawiniXi.clp
  7. Modified Anusaaraka_stanford.sh , Anusaaraka_berkeley.sh and Anusaaraka_stanford_SMT.sh to rename sd_category.dat as 
     sd_category_tmp.dat
- 8. Modified ber_ver_output link_ver_output  sd_ver_output and verified_output
- 9. Updated Science-dictionary.txt and hindi_tam_dictionary.txt
- 10. Updated changes_in_databases
- 11. Updated sd_verified (487)
- 12. Updated Log
+ 8. H_ordering_rules.clp
+        Removed  : print_for_debugging1  from_to_PPs  make_compoundPhrase  dont_rev_if_VP_goesto_TO  get_SBAR_copula
+                   convert_Q_sent_to_normal
+        Modified : rev_VP_or_PP_or_WHPP
+ 9. vibakthi.clp
+        Modified : modify_and_vib
+        Added    :  kriya_obj_vibakthi_rule_from_dbase
+ 10. Modified get_conj_group and get_infinitive_pada rules in sd_pada.clp
+ 11. Modified anu_compile.sh and anu_compile_64bit.sh to generate kriyA_object_vib gdbm
+ 12. Modified ber_ver_output link_ver_output  sd_ver_output and verified_output
+ 13. Updated Science-dictionary.txt and hindi_tam_dictionary.txt
+ 14. Updated changes_in_databases
+ 15. Updated sd_verified (487)
+ 16. Updated Log
 

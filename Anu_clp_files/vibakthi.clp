@@ -1,6 +1,8 @@
+;This file is written by Shirisha Manju
+
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
-
+ ;Added by Mahalaxmi
  (deffunction never-called ()
  (assert (id-inserted_sub_id))
  (assert (prep_id-relation-anu_ids))
@@ -61,7 +63,7 @@
  (assert (yA-tam  yA_huA_nahIM_hogA))
  )
  ;---------------------------------- kA vib for RaRTI_viSeRaNa  ----------------------------------
- ;Added by Shirisha Manju (04-03-11)
+ ;Added on (04-03-11)
  ;Ex: We had wasted our journey.
  (defrule RaRTI_viSeRaNa_rule
  (declare (salience 1000))
@@ -85,7 +87,7 @@
  )
  ;---------------------------------verb-to-obj vibakthi -----------------------------------------------------
  ;I saw him telling her about the party .
- (defrule kriya_obj_vibakthi_rule
+ (defrule kriya_obj_vibakthi_rule_from_wsd
  (declare (salience 1000))
  (or (and (kriyA_id-object_viBakwi ?root_id ?vib)(prep_id-relation-anu_ids ? kriyA-object  ?root_id ?obj_id))(and (kriyA_id-object2_viBakwi ?root_id ?vib)(prep_id-relation-anu_ids ? kriyA-object_2  ?root_id ?obj_id))(and (kriyA_id-object1_viBakwi ?root_id ?vib)(prep_id-relation-anu_ids ? kriyA-object_1  ?root_id ?obj_id)))
  ?f0<-(pada_control_fact ?obj_id)
@@ -93,6 +95,22 @@
  =>
         (retract ?f0)
         (modify ?f1 (vibakthi ?vib))
+ )
+ ;---------------------------------------------------------------------------------------------------------------
+ ;Suggested by Chaitanya Sir (22-06-12)
+ ;I abhor terrorism. I abrogate our plan to visit Bhopal.
+ (defrule kriya_obj_vibakthi_rule_from_dbase
+ (declare (salience 990))
+ (prep_id-relation-anu_ids ? kriyA-object  ?root_id ?obj_id)
+ (id-HM-source	?root_id ?mng ?)
+ ?f0<-(pada_control_fact ?obj_id)
+ ?f1<-(pada_info (group_head_id ?obj_id)(group_cat PP)(vibakthi 0))
+ =>
+	(bind ?vib (string-to-field (gdbm_lookup "kriyA_object_vib.gdbm" ?mng)))
+	(if (neq ?vib FALSE) then
+		(retract ?f0)
+        	(modify ?f1 (vibakthi ?vib))
+	)
  )
  ;--------------------------------------- se vib for (kriyA-prayojya_karwA ) --------------------------------
  ; She is making the girl feed the child 
@@ -106,7 +124,7 @@
         (modify ?f1 (vibakthi se))
  )
 ;------------------------------------------- obj_1-vib -----------------------------------------------------
- ; Added by Shirisha Manju (12-08-11) Suggested by Sukhada
+ ; Suggested by Sukhada (12-08-11) 
  ; Ex: I gave Rama a book.
  (defrule obj_1_vibakthi_rule
  (declare (salience 970))
@@ -160,6 +178,7 @@
  )
 
  ;-------------------------------------------------------------------------------------------------------------
+ ; Added by Mahalaxmi
  ;The object turned out to be a big meteorite .
  ;Here Compound-phrase is "turned out to be" (generally  for a compound phrase meaning is assigned to the last word and all other as "-"), and in this case "turned" is "kriyA" and hindi meaning is "-" so vibakthi information for this types of phrases will go wrong by using rule vib_rule1 .So, in order to solve this problem we have added the below rule in which if verb is part of any phrase , phrase meaning is taken as verb meaning.
  (defrule  ne_vib_rule1
@@ -228,7 +247,6 @@
 	)
  )
  ;-------------------------- prefix vibakthi rule ---------------------------------------------
- ; Added by Shirisha Manju 
  ; These are the boy 's books . These are children 's books .
  (defrule prefix_vib_rule
  (declare (salience 700))
@@ -244,7 +262,7 @@
  )
  ;-------------------------------------------------------------------------------------------------------------------
  ;Eg: Mohan fell from the top of the house.
- ;Added by Shirisha Manju (11-03-11)
+ ;Added on (11-03-11)
  (defrule vib_for_single_prep
  (declare (salience 701))
  ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(preposition ?pp_id ))
@@ -257,7 +275,7 @@
 	(assert (modified_pada_with_prep ?pada_id))
  )
  ;-------------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (15-03-11)	 
+ ;Added on (15-03-11)	 
  ;The people of Orissa are facing grave adversities due to the cyclone. 
  ;He gave up his lucrative law practice for the sake of the country.
  (defrule vib_for_multiple_prep
@@ -299,7 +317,7 @@
         (modify ?f0 (vibakthi kA))
  )
 ;------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (23-05-12)
+;Added on (23-05-12)
 ;Many fat boys, a tall girl and a small child ate fruits. 
 (defrule modify_and_vib
 (declare (salience 400))
@@ -309,8 +327,8 @@
 (conj_head-left_head-right_head ?pada_id ? ?rh)
 ?f1<-(pada_info (group_head_id ?rh)(vibakthi 0))
 =>
-	(retract ?f0 ?f1)
-	(modify ?f0 (vibakthi 0))
+	(retract ?f1)
+;	(modify ?f0 (vibakthi 0))
 	(modify ?f1 (vibakthi ?vib))
 )
 ;------------------------------------------------------------------------------------------

@@ -66,6 +66,8 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/preposition.gdbm < preposition.txt
  echo "Creating default-iit-bombay-shabdanjali-dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic.gdbm < default-iit-bombay-shabdanjali-dic.txt
+ echo "Creating kriyA_object_vib.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/kriyA_object_vib.gdbm < kriyA_object_vib.txt
 
  cd vb_root
  echo "Creating ol_vb_root.gdbm"
