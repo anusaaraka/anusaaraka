@@ -1,3 +1,5 @@
+ ;This file is written by Shirisha Manju
+
  (defglobal ?*agrmt_file* = agrmt_fp)
  (defglobal ?*agrmt_debug* = agrmt_db)
 
@@ -35,7 +37,6 @@
         (close ?*agrmt_debug*)
  )
  ;--------------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (18-05-12)
  ;Verb agrees with last id of subject with head_id "or"
  ;Ex. Are John or I invited ?
  ;The white marbled moti masjid or the pearl mosque was the private mosque for aurangzeb. 
@@ -51,18 +52,6 @@
         (printout  ?*agrmt_file* "(verb_agrmt-subject_id-head_id  or_subject  "?last_id" "?kriyA_id ")" crlf )
         (printout ?*agrmt_debug* "(Rule_name-verb_agrmt-subject_id-head_id  sub_or_agr   or_subject  "?last_id" "?kriyA_id ")" crlf )
  )
-; (defrule sub_or_agr
-; (declare (salience 1100))
-; (prep_id-relation-anu_ids  ? kriyA-subject|kriyA-aBihiwa ?kriyA_id ?sub_id)
-; (id-original_word ?sub_id or)
-; (pada_info (group_head_id ?kriyA_id)(group_cat VP))
-; (pada_info (group_cat PP)(group_head_id ?sub_id)(vibakthi 0) (group_ids $?ids ?last_id))
-; ?f0<-(agmt_control_fact ?kriyA_id)
-; =>
-;        (retract ?f0)
-;        (printout  ?*agrmt_file* "(verb_agrmt-subject_id-head_id  or_subject  "?last_id" "?kriyA_id ")" crlf )
-;	(printout ?*agrmt_debug* "(Rule_name-verb_agrmt-subject_id-head_id  sub_or_agr   or_subject  "?last_id" "?kriyA_id ")" crlf )
-; )
  ;--------------------------------------------------------------------------------------------------------------------
  ; Verb agrees with: With Subject(karwA), If it has 0 prasarg.
  ; if subject has vibhakti

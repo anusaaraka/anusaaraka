@@ -389,7 +389,7 @@ about-turn	palata
 above	UzcA
 above_board	ImAnaxAra
 abrasive	cota_pahuzcAne_vAlA
-abridge	saMkRepaNa_kara
+abridge	saMkRipwa_kara
 abridged	saMkRipwa
 abrupt	Akasmika
 absent	anupasWiwa
@@ -7634,7 +7634,7 @@ absentee	anupasWiwa_jana
 absently	anupasWiwa_rUpa_se
 absolution	kRamAxAna
 absolutism	niraMkuSawA
-absolve	vimukwa_kara
+absolve	mukwa_kara
 absorbingly	xilacaspa_rUpa_se
 absorption	avaSoRiwa_karanA
 abstain	paraheja_kara

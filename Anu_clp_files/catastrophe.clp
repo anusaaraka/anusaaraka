@@ -1,3 +1,5 @@
+ ;This file is written by Mahalaxmi
+
  (defrule comma_list
  (declare (salience 1050))
  (id-right_punctuation ?id ",")
@@ -8,7 +10,7 @@
         (bind $?ids (sort > (create$ $?ids ?id)))
         (assert (comma_list $?ids))
  )
-
+ ;-------------------------------------------------------------------------------------------------------------
  ;He is married with a sixteen years old girl. 
  (defrule caution_marry_with
  (id-word ?id married)
@@ -17,7 +19,7 @@
  =>
  (assert (sen_type-id-phrase catastrophe ?id1 married_with))
  )
- 
+ ;-------------------------------------------------------------------------------------------------------------
  ;They have been charged by the Bible to love Israel, love the Jews, and await the return of their Savior.
  (defrule caution_charge
  (id-root ?id charge)
@@ -28,7 +30,7 @@
  (test (neq ?sub1 ?sub2))
  =>
  (assert (sen_type-id-phrase catastrophe ?id charge)))
- 
+ ;-------------------------------------------------------------------------------------------------------------
  ;Though old, the Jones Study supports our conclusion. 
  (defrule truncated_sentences 
  (id-word ?id after|although|as|before|if|though|till|unless|until|when|whenever|where|wherever|while)
@@ -39,7 +41,7 @@
  =>
  (assert (sen_type-id-phrase truncated 1 -))
  )
-
+ ;-------------------------------------------------------------------------------------------------------------
  ;A well-regulated militia being necessary to the national defense, the right to bear arms, shall not be infringed.
  (defrule noun_absolute
  (id-root-category-suffix-number ?id ? noun|pronoun ? ?)
@@ -50,7 +52,7 @@
  =>
  (assert (sen_type-id-phrase noun_absolute 1 -))
  )
-
+ ;-------------------------------------------------------------------------------------------------------------
 ; (defrule noun_absolute1
 ; (pada_info (group_head_id 2) 
 ; (not (kriyA-subject ? ?id))

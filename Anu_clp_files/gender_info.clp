@@ -1,3 +1,5 @@
+ ;This file is written by Shirisha Manju
+
  (defglobal ?*gen-file*  = gen_fp)
 
  (deffunction never-called ()
@@ -11,7 +13,6 @@
  (assert (id-cat))
  )
  ;----------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju(29-03-11)
  (defrule retract_id_with_no_hin_mng
  (declare (salience 1000))
  (id-HM-source ?id - ?src)
@@ -36,7 +37,6 @@
 	)
  )
  ;----------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (29-03-11)
  ;My many female friends were angered by the hearings. 
  (defrule get_female_gender
  (declare (salience 900))
@@ -48,7 +48,7 @@
        	(retract ?mng)
  )
  ;---------------------------------------------------------------------------------------------------------------
- ; Added by Shirisha Manju (29-03-11) to search kriyA mUla in the gdbm
+ ; To search kriyA mUla in the gdbm
  ; The patient had complained of vague pains and backache. (SikAyawa_kara) SikAyawa -- kriyA mUla, kara --- kriyA
  (defrule get_female_gender_with_cat
  (declare (salience 850))
@@ -82,7 +82,6 @@
 	)
  )
  ;----------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (29-03-11)
  (defrule get_male_gender
  (declare (salience 750))
  (id-HM-source ?id ?h_mng ?)
@@ -93,7 +92,7 @@
         (retract ?mng)
  )
  ;----------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (29-03-11) to search kriyA mUla in the gdbm
+ ;To search kriyA mUla in the gdbm
  ; Republican policies only benefit the rich and the powerful. (BalA kara)
  (defrule get_male_gender_with_cat
  (declare (salience 700))

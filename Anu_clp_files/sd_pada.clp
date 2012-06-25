@@ -1,4 +1,4 @@
-;This file is added by Shirisha Manju (9-05-12)
+;This file is written by Shirisha Manju (9-05-12)
 ; Generates pada using praxiniXi
 
  (deffunction never-called ()
@@ -64,7 +64,7 @@
                 (retract ?f)
         )
  )
- ;==================================== Generate pada prawiniXi info ===================================================
+ ;==================================== Generate pada using prawiniXi info ================================================
  (defrule get_conj_group
  (declare  (salience 4850))
  (head_id-prawiniXi_id-grp_ids ?np_head ?np_id $?d ?cc $?d1)
@@ -76,7 +76,7 @@
         (assert (pada_info (group_head_id ?np_id)(group_cat PP) (group_ids $?d ?cc $?d1)))
        	(assert (conj_head-conj_id-components ?np_id ?cc $?d $?d1))
 	(assert (generated_conj_pada ?np_id))
-	(bind ?lh (nth$ 1 $?d))
+	(bind ?lh (nth$ (length $?d) $?d))
 	(bind ?rh (nth$ (length $?d1) $?d1))
 	(assert (conj-lt_head-rt_head ?CC ?lh ?rh))
  )
@@ -90,7 +90,7 @@
  (not (modified_head ?np_id $?))
  (not (generated_conj_pada ?np_id))
  =>
-		(assert (pada_info (group_head_id ?np_id)(group_cat PP) (group_ids $?grp_ids ?last_node)(pada_head ?last_node)))
+	(assert (pada_info (group_head_id ?np_id)(group_cat PP) (group_ids $?grp_ids ?last_node)(pada_head ?last_node)))
         (bind ?np_id (implode$ (create$ ?np_id)))
         (bind ?str_index (str-index "." ?np_id))
         (bind ?val (string-to-field (sub-string (+ ?str_index 1) (length ?np_id) ?np_id)))
@@ -215,7 +215,6 @@
 	(retract ?f)
 	(assert (conj_head-conj_id-components ?con_h ?cid $?d $?d1))
 	(bind ?head (string-to-field (sym-cat ?hid ".1")))
-;(bind ?head (sym-cat ?hid . 1))
 	(assert (pada_info (group_head_id ?head) (group_cat PP)(group_ids ?id)(preposition $?prep)))
 	(assert (id-grp_ids ?head ?id))
  )
@@ -349,7 +348,7 @@
  ?f0<-(id-grp_ids ? ?to ?vp)
  (prawiniXi_id-node-category ?to ?TO TO)
  (head_id-prawiniXi_id-grp_ids ?to_id ?to ?)
- (prawiniXi_id-node-category ?vp ?VP VP)
+ (prawiniXi_id-node-category ?vp ?VP Inf_VP)
  ?f1<-(id-grp_ids ?vp ?verb $?)
  (head_id-prawiniXi_id-grp_ids ?verb_id ?verb ?)
  =>

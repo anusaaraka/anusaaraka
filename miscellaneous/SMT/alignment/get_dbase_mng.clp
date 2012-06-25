@@ -21,6 +21,59 @@
                 (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
 )
 
+
+;--------------------------------------------------------------------------------------------------------
+ (deffunction mwe_lookup(?gdbm ?rank $?Eng_sen)
+ (if (eq 2 ?rank) then (bind $?Eng_sen (explode$ (lowcase (implode$ (create$ $?Eng_sen))))))
+ (printout t $?Eng_sen ?gdbm "  " ?rank crlf)
+ (bind ?len (length $?Eng_sen))
+ (loop-for-count (?i 1 ?len)
+                   (bind ?flag 1)
+                   (loop-for-count (?j ?i ?len)
+                                    (bind ?k (nth$ ?j $?Eng_sen))
+                                    (if (numberp ?k) then (bind ?k (implode$ (create$ ?k))))
+                                    (if (eq ?flag 1) then
+                                    (bind ?str ?k)
+                                    (bind $?grp_ids ?j)
+                                    (bind ?flag 0)
+                                    else
+                                    (bind ?str (str-cat ?str "_" ?k))
+                                    (bind $?grp_ids (create$ $?grp_ids ?j)))
+                                    (bind ?lkup (gdbm_lookup ?gdbm  ?str))
+                                    (if (neq ?lkup "FALSE") then
+                                        (bind ?mng ?lkup)
+                                        (bind ?mng (remove_character "_" ?mng " "))
+                                        (bind ?str (remove_character "_" ?str " "))
+                                        (printout t (implode$ ?str) crlf)
+                                        (assert (multi_word_expression-dbase_name-mng ?str Physics_dictionary_gdbm ?mng))
+                                        (bind ?mng (remove_character "Z" (implode$ (create$ ?mng)) ""))
+                                        (assert (multi_word_expression-dbase_name-mng ?str Physics_dictionary_gdbm ?mng))
+                                      )
+                    )
+ )
+ )
+;--------------------------------------------------------------------------------------------------------
+ (defrule get_eng_word_list
+ (declare (salience 100))
+ (id-original_word ?id ?word)
+ ?f1<-(index ?id)
+ ?f<-(English-list $?Eng_list)
+ =>
+ (retract ?f ?f1)
+ (assert (English-list $?Eng_list ?word))
+ (bind ?id (+ ?id 1))
+ (assert (index ?id))
+ )
+;--------------------------------------------------------------------------------------------------------
+ (defrule chk_for_mwe
+ (declare (salience 60))
+ ?f<-(English-list $?Eng_list)
+  =>
+ 	(mwe_lookup "Physics-dictionary.gdbm" 1 $?Eng_list)
+ 	(mwe_lookup "Physics-dictionary.gdbm" 2 $?Eng_list)
+ )
+;--------------------------------------------------------------------------------------------------------
+
 (defrule get_mng_from_prov_PropN_dic
 (declare (salience 150))
 (id-original_word ?id ?word)

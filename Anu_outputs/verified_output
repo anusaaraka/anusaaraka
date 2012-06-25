@@ -72,12 +72,12 @@ kyA Apa hamAre sAWa A rahe hEM ?
 Hindi meaning using Link parser 2.13
 (Found maximum of 1 linkages )
 Ashoka ruled a large empire. 
-Ashoka ne eka bade sAmrAjya para SAsana kiyA .
+PropN-ashoka-PropN ne eka bade sAmrAjya para SAsana kiyA .
 
 Hindi meaning using Link parser 2.14
 (Found maximum of 2 linkages )
 As it is called now Chennai, Madras is known as the gateway of southern india. 
-jEsA ki yaha Chennai aba bulAyA jAwA hE Madras xakRiNI BArawa ke xvAramArga ke nAma se jAnA jAwA hE .
+jEsA ki yaha PropN-chennai-PropN aba bulAyA jAwA hE PropN-madras-PropN xakRiNI BArawa ke xvAramArga ke nAma se jAnA jAwA hE .
 
 Hindi meaning using Link parser 2.15
 (Found maximum of 2 linkages )
@@ -87,7 +87,7 @@ xakRiNa se eka XIme suKaxAyaka manxa samIra ne SrowAxala meM prawyeka vyakwi ko 
 Hindi meaning using Link parser 2.16
 (Found maximum of 6 linkages )
 As the Master grew old and infirm, the disciples begged him not to die. 
-jaba Master vqxXa Ora kamajora huA anuyAyiyoM ne nahIM marane ke liye usase vinawI kI .
+jaba PropN-master-PropN vqxXa Ora kamajora huA anuyAyiyoM ne nahIM marane ke liye usase vinawI kI .
 
 Hindi meaning using Link parser 2.17
 (Found maximum of 2 linkages )
@@ -136,7 +136,7 @@ Apa vahAz para jAne ke xvArA aXika pEsA kamA sakawe hEM .
 Hindi meaning using Link parser 2.26
 (Found maximum of 4 linkages )
 Cancer and heart disease are the UK's biggest killers. 
-kEMsara Ora hqxaya roga UK ke bade GAwaka roga hEM .
+kEMsara Ora hqxaya roga PropN-uk-PropN ke bade GAwaka roga hEM .
 
 Hindi meaning using Link parser 2.27
 (Found maximum of 2 linkages )
@@ -171,7 +171,7 @@ aparAXI aBiyoga cAlaka ke viruxXa lagAe jAezge .
 Hindi meaning using Link parser 2.33
 (Found maximum of 1 linkages )
 Dalai Lama is the abbot of the Tibetian monastery. 
-Dalai Lama Tibetian maTa kA maTAXyakRa hE .
+PropN-dalai-PropN PropN-lama-PropN Tibetian maTa kA maTAXyakRa hE .
 
 Hindi meaning using Link parser 2.34
 (Found maximum of 2 linkages )
@@ -206,7 +206,7 @@ kyA Apane mUlya pUCA ?
 Hindi meaning using Link parser 2.40
 (Found maximum of 5 linkages )
 Did you send a birthday card to Sheela? 
-kyA Apane Sheela ko janmaxina_kA kArda BejA ?
+kyA Apane PropN-sheela-PropN ko janmaxina_kA kArda BejA ?
 
 Hindi meaning using Link parser 2.41
 (Found maximum of 1 linkages )
@@ -306,7 +306,7 @@ AhAra hAnikAraka jIvANuoM ko mArane ke liye eka aXika wApamAna para garama karan
 Hindi meaning using Link parser 2.60
 (Found maximum of 18 linkages )
 Galelio was the first scentist to claim that the earth moves around the sun. 
-Galelio xAvA karane ke liye praWama scentist WA ki pqWvI sUrya ke cAroM ora GUmawI hE .
+PropN-galelio-PropN xAvA karane ke liye praWama scentist WA ki pqWvI sUrya ke cAroM ora GUmawI hE .
 
 Hindi meaning using Link parser 2.61
 (Found maximum of 4 linkages )
@@ -321,7 +321,7 @@ anxAja lagAiye ki mEMne piCalI rAwa pArtI meM kise xeKA .
 Hindi meaning using Link parser 2.63
 (Found maximum of 2 linkages )
 Have you seen the Tajmahal? 
-kyA Apa Tajmahal ko xeKa cuke hEM ?
+kyA Apa PropN-tajmahal-PropN ko xeKa cuke hEM ?
 
 Hindi meaning using Link parser 2.64
 (Found maximum of 1 linkages )
@@ -330,7 +330,7 @@ puswaka pUrNa_kara cukane ke bAxa vaha vixyAlaya gaI .
 
 Hindi meaning using Stanford parser 2.65
 He always bitches about Tanya. 
-vaha hameSA Tanya ke bAre meM burAI karawA hE.
+vaha hameSA PropN-tanya-PropN ke bAre meM burAI karawA hE.
 
 Hindi meaning using Link parser 2.66
 (Found maximum of 1 linkages )
@@ -445,7 +445,7 @@ vaha usake aXyayana ke bAre meM sAvaXAna hE .
 Hindi meaning using Link parser 2.88
 (Found maximum of 4 linkages )
 He is known as the Einstein of India. 
-vaha BArawa ke Einstein ke nAma se jAnA jAwA hE .
+vaha BArawa ke PropN-einstein-PropN ke nAma se jAnA jAwA hE .
 
 Hindi meaning using Link parser 2.89
 (Found maximum of 2 linkages )
@@ -475,7 +475,7 @@ vaha subaha calA gayA .
 Hindi meaning using Link parser 2.94
 (Found maximum of 8 linkages )
 He lives at Chandinichok in Delhi in India. 
-vaha BArawa meM xillI meM Chandinichok meM rahawA hE .
+vaha BArawa meM xillI meM PropN-chandinichok-PropN meM rahawA hE .
 
 Hindi meaning using Link parser 2.95
 (Found maximum of 4 linkages )
@@ -600,7 +600,7 @@ usako usake sAhasa ke liye puraskAra xiyA gayA WA .
 Hindi meaning using Link parser 2.119
 (Found maximum of 1 linkages )
 He was called simply Clint Jr. because his Daddy was Clint Sr.. 
-vaha sarala rUpa se Clint Jr. bulAyA jAwA WA kyozki usakA Daddy Clint Sr. WA .
+vaha sarala rUpa se PropN-clint-PropN Jr. bulAyA jAwA WA kyozki usakA Daddy Clint Sr. WA .
 
 Hindi meaning using Link parser 2.120
 (Found maximum of 12 linkages )
@@ -615,7 +615,7 @@ vaha anxara nahIM WA mEM vahAz para jaba pahuzcA isaliye vaha eka pUrI waraha se
 Hindi meaning using Link parser 2.122
 (Found maximum of 14 linkages )
 He was sitting next to Mohan's brother. 
-vaha Mohan ke BAI ke pAsa bETA WA .
+vaha PropN-mohan-PropN ke BAI ke pAsa bETA WA .
 
 Hindi meaning using Link parser 2.123
 (Found maximum of 38 linkages )
@@ -625,7 +625,7 @@ usane rARtriya tIma meM Kelane kA usakA sunaharA mOkA vyarWa_meM_barabAxa kiyA .
 Hindi meaning using Link parser 2.124
 (Found maximum of 8 linkages )
 He was the first Asian scientist to win the Nobel Prize. 
-vaha Nobel Prize jIwane vAlA praWama eSiyAvAsI vEjFAnika WA .
+vaha PropN-nobel-PropN PropN-prize-PropN jIwane vAlA praWama eSiyAvAsI vEjFAnika WA .
 
 Hindi meaning using Stanford parser 2.125
 He was well aware of the problem. 
@@ -654,7 +654,7 @@ vaha usake BUwapUrva KilAdiyoM ke viruxXa eka PutabAla mEca KelegA .
 Hindi meaning using Link parser 2.130
 (Found maximum of 1 linkages )
 He wrote the biography of Tagore. 
-usane Tagore kI jIvanI liKI .
+usane PropN-tagore-PropN kI jIvanI liKI .
 
 Hindi meaning using Link parser 2.131
 (Found maximum of 2 linkages )
@@ -859,7 +859,7 @@ mEM nyUyArka Sahara meM rahawA hUz .
 Hindi meaning using Link parser 2.171
 (Found maximum of 4 linkages )
 I live near the San Gabriel River. 
-mEM San Gabriel River ke nikata rahawA hUz .
+mEM PropN-san-PropN PropN-gabriel-PropN PropN-river-PropN ke nikata rahawA hUz .
 
 Hindi meaning using Link parser 2.172
 (Found maximum of 20 linkages )
@@ -964,7 +964,7 @@ akelA KAnA acCA vyavahAra nahIM hE .
 Hindi meaning using Link parser 2.192
 (Found maximum of 1 linkages )
 I told Jim a story. 
-mEMne Jim ko kahAnI bawAI .
+mEMne PropN-jim-PropN ko kahAnI bawAI .
 
 Hindi meaning using Link parser 2.193
 (Found maximum of 2 linkages )
@@ -1004,7 +1004,7 @@ iwanA aMXerA WA ki mEM kuCa BI nahIM_xeKa sakA .
 Hindi meaning using Link parser 2.200
 (Found maximum of 1 linkages )
 I waited for Seeta for hours. 
-mEMne GaMtoM waka Seeta ke liye prawIkRA kI .
+mEMne GaMtoM waka PropN-seeta-PropN ke liye prawIkRA kI .
 
 Hindi meaning using Link parser 2.201
 (Found maximum of 2 linkages )
@@ -1024,7 +1024,7 @@ mEM mere kamare meM so rahA WA .
 Hindi meaning using Link parser 2.204
 (Found maximum of 4 linkages )
 I was told the whole story by Maybeline. 
-muJe Maybeline ke xvArA pUrNa kahAnI bawAI gayI WI .
+muJe PropN-maybeline-PropN ke xvArA pUrNa kahAnI bawAI gayI WI .
 
 Hindi meaning using Link parser 2.205
 (Found maximum of 2 linkages )
@@ -1064,22 +1064,22 @@ mEM pArtI ko jAne ke liye usapara cillAyA .
 Hindi meaning using Link parser 2.212
 (Found maximum of 8 linkages )
 Jerry has more than five dollars. 
-Jerry ke pAsa pAzca dOlara se aXika hE .
+PropN-jerry-PropN ke pAsa pAzca dOlara se aXika hE .
 
 Hindi meaning using Link parser 2.213
 (Found maximum of 4 linkages )
 Joan Smith is the president of the company. 
-Joan Smith kaMpanI kA aXyakRa hE .
+PropN-joan-PropN PropN-smith-PropN kaMpanI kA aXyakRa hE .
 
 Hindi meaning using Link parser 2.214
 (Found maximum of 5 linkages )
 John is less fat than Tom. 
-joYna Tom kI wulanA meM kama motA hE .
+joYna PropN-tom-PropN kI wulanA meM kama motA hE .
 
 Hindi meaning using Link parser 2.215
 (Found maximum of 2 linkages )
 John is more intelligent than Tom. 
-joYna Tom kI wulanA meM aXika buxXimAna hE .
+joYna PropN-tom-PropN kI wulanA meM aXika buxXimAna hE .
 
 Hindi meaning using Link parser 2.216
 (Found maximum of 1 linkages )
@@ -1109,7 +1109,7 @@ sadaka ke_xAhinI waraPa rahiye .
 Hindi meaning using Link parser 2.221
 (Found maximum of 2 linkages )
 Kufri is a small hill station near shimla. 
-Kufri shimla ke nikata eka CotA parvawIya sWAna hE .
+PropN-kufri-PropN shimla ke nikata eka CotA parvawIya sWAna hE .
 
 Hindi meaning using Link parser 2.222
 (Found maximum of 1 linkages )
@@ -1129,7 +1129,7 @@ caliye hama bAjAra jAez .
 Hindi meaning using Link parser 2.225
 (Found maximum of 6 linkages )
 Mary promised the instructor to take that course. 
-Mary ne vaha pATyakrama lene ke liye upaxeSaka se vAxA kiyA .
+PropN-mary-PropN ne vaha pATyakrama lene ke liye upaxeSaka se vAxA kiyA .
 
 Hindi meaning using Link parser 2.226
 (Found maximum of 1 linkages )
@@ -1139,7 +1139,7 @@ kyA mEM Apase praSna pUCa sakawA hUz ?
 Hindi meaning using Link parser 2.227
 (Found maximum of 1 linkages )
 Mohan fell from the top of the house. 
-Mohan Gara ke sarvocca sWAna se girA .
+PropN-mohan-PropN Gara ke sarvocca sWAna se girA .
 
 Hindi meaning using Link parser 2.228
 (Found maximum of 2 linkages )
@@ -1149,7 +1149,7 @@ mere BAI ne mere kArya meM merA mArgaxarSana kiyA .
 Hindi meaning using Link parser 2.229
 (Found maximum of 2 linkages )
 My car broke down when I reached Lalitpur. 
-merI gAdI KarAba_ho gaI mEM Lalitpur jaba pahuzcA .
+merI gAdI KarAba_ho gaI mEM PropN-lalitpur-PropN jaba pahuzcA .
 
 Hindi meaning using Link parser 2.230
 (Found maximum of 4 linkages )
@@ -1164,7 +1164,7 @@ mere piwA ne AKirI yuxXa meM ladAI kI .
 Hindi meaning using Link parser 2.232
 (Found maximum of 1 linkages )
 Mysore is also known as the city of palaces. 
-Mysore mahaloM ke Sahara ke nAma se BI jAnA jAwA hE .
+PropN-mysore-PropN mahaloM ke Sahara ke nAma se BI jAnA jAwA hE .
 
 Hindi meaning using Link parser 2.233
 (Found maximum of 3 linkages )
@@ -1184,7 +1184,7 @@ eka bAra jaMgala_meM wIna peda pahAdI para We .
 Hindi meaning using Link parser 2.236
 (Found maximum of 88 linkages )
 On hearing the news of his father's death Sachin returned back to India. 
-Sachin usake piwA kI mqwyu ke samAcAra sunane para BArawa ko vApisa lOtA .
+PropN-sachin-PropN usake piwA kI mqwyu ke samAcAra sunane para BArawa ko vApisa lOtA .
 
 Hindi meaning using Link parser 2.237
 (Found maximum of 1 linkages )
@@ -1214,7 +1214,7 @@ SAyaxa vaha bETaka meM upasWiwa hogA .
 Hindi meaning using Link parser 2.242
 (Found maximum of 2 linkages )
 Petu ran fast but missed the bus. 
-Petu weja xOdA paranwu basa cUka gayA .
+PropN-petu-PropN weja xOdA paranwu basa cUka gayA .
 
 Hindi meaning using Link parser 2.243
 (Found maximum of 1 linkages )
@@ -1234,7 +1234,7 @@ pulIsa mqwa swrI ke hawyAre ko pAne kI aBI BI ASA_kara rahI hE .
 Hindi meaning using Link parser 2.246
 (Found maximum of 2 linkages )
 Political interference in defence matters is highly undesirable. 
-rakRA viRayoM meM rAjanEwika haswakRepa awyanwa avAzCanIya hE .
+rakRA viRayoM meM rAjanIwika haswakRepa awyanwa avAzCanIya hE .
 
 Hindi meaning using Link parser 2.247
 (Found maximum of 4 linkages )
@@ -1244,27 +1244,27 @@ mUlya hAla ke varRoM meM kama ho cuke hEM .
 Hindi meaning using Link parser 2.248
 (Found maximum of 4 linkages )
 Rama gave a book to Dasharat, the king of Ayodhya. 
-Rama ne Ayodhya kA rAjA Dasharat ko puswaka xI .
+PropN-rama-PropN ne PropN-ayodhya-PropN kA rAjA PropN-dasharat-PropN ko puswaka xI .
 
 Hindi meaning using Link parser 2.249
 (Found maximum of 3 linkages )
 Rama gave a book to Mohan. 
-Rama ne Mohan ko puswaka xI .
+PropN-rama-PropN ne PropN-mohan-PropN ko puswaka xI .
 
 Hindi meaning using Link parser 2.250
 (Found maximum of 1 linkages )
 Rama is a good boy. 
-Rama eka acCA ladakA hE .
+PropN-rama-PropN eka acCA ladakA hE .
 
 Hindi meaning using Link parser 2.251
 (Found maximum of 1 linkages )
 Rama is beating a boy. 
-Rama ladake ko pIta rahA hE .
+PropN-rama-PropN ladake ko pIta rahA hE .
 
 Hindi meaning using Link parser 2.252
 (Found maximum of 2 linkages )
 Rama said that Radha told a lie. 
-Rama ne kahA ki Radha ne JUTa bawAyA .
+PropN-rama-PropN ne kahA ki PropN-radha-PropN ne JUTa bawAyA .
 
 Hindi meaning using Link parser 2.253
 (Found maximum of 2 linkages )
@@ -1274,12 +1274,12 @@ xOdanA svAsWya ke liye acCA hE .
 Hindi meaning using Link parser 2.254
 (Found maximum of 8 linkages )
 Sam, my brother is coming. 
-Sam merA BAI A rahA hE .
+PropN-sam-PropN merA BAI A rahA hE .
 
 Hindi meaning using Link parser 2.255
 (Found maximum of 1 linkages )
 Sarla and Sudha are friends. 
-Sarla Ora Sudha miwra hEM .
+PropN-sarla-PropN Ora PropN-sudha-PropN miwra hEM .
 
 Hindi meaning using Link parser 2.256
 (Found maximum of 3 linkages )
@@ -1335,7 +1335,7 @@ usane girane meM usakI bAhu ko kRawi pahuzcAI Ora asWAyI rUpa se usakI uMgaliyoM
 Hindi meaning using Link parser 2.266
 (Found maximum of 1 linkages )
 She is a great fan of Lata. 
-vaha Lata kI eka badI praSaMsaka hE .
+vaha PropN-lata-PropN kI eka badI praSaMsaka hE .
 
 Hindi meaning using Link parser 2.267
 (Found maximum of 2 linkages )
@@ -1430,7 +1430,7 @@ usane koYleja saMyukwa karane se pahale kuCa_samaya waka vixyAlaya meM kAma kiyA
 Hindi meaning using Link parser 2.285
 (Found maximum of 12 linkages )
 Shivaji was one of the most powerful rulers in 1600. 
-Shivaji 1600 meM sabase_jyAxA SakwiSAlI SAsakoM meM se eka WA .
+PropN-shivaji-PropN 1600 meM sabase_jyAxA SakwiSAlI SAsakoM meM se eka WA .
 
 Hindi meaning using Link parser 2.286
 (Found maximum of 1 linkages )
@@ -1450,12 +1450,12 @@ kyoMki mEM aMgrejI jAnawA hUz isaliye vaha muJase bolA .
 Hindi meaning using Link parser 2.289
 (Found maximum of 1 linkages )
 Sita is a good girl. 
-Sita eka acCI ladakI hE .
+PropN-sita-PropN eka acCI ladakI hE .
 
 Hindi meaning using Link parser 2.290
 (Found maximum of 4 linkages )
 Sita is baking breads for breakfast. 
-Sita jalapAna ke liye breda sezka rahI hE .
+PropN-sita-PropN jalapAna ke liye breda sezka rahI hE .
 
 Hindi meaning using Link parser 2.291
 (Found maximum of 1 linkages )
@@ -1474,7 +1474,7 @@ kuCa vixyAlaya pATyakramewara kriyA kalApa ko mahawva nahIM xewe hEM .
 Hindi meaning using Link parser 2.294
 (Found maximum of 2 linkages )
 Suman and Sarika live next to each other. 
-Suman Ora Sarika eka xUsare ke pAsa rahawe hEM .
+Suman Ora PropN-sarika-PropN eka xUsare ke pAsa rahawe hEM .
 
 Hindi meaning using Link parser 2.295
 (Found maximum of 1 linkages )
@@ -1489,7 +1489,7 @@ AKirI rEka se puswaka lIjiye .
 Hindi meaning using Link parser 2.297
 (Found maximum of 3 linkages )
 Teddy will go home and study. 
-Teddy Gara jAegA Ora aXyayana karegA .
+PropN-teddy-PropN Gara jAegA Ora aXyayana karegA .
 
 Hindi meaning using Link parser 2.298
 (Found maximum of 2 linkages )
@@ -1655,12 +1655,12 @@ Ayakara praswAva nAmaMjUra kiyA gayA WA .
 Hindi meaning using Link parser 3.30
 (Found maximum of 2 linkages )
 The Inspector made an accidental inspection of the school. 
-Inspector ne vixyAlaya kA Akasmika nirIkRaNa kiyA .
+PropN-inspector-PropN ne vixyAlaya kA Akasmika nirIkRaNa kiyA .
 
 Hindi meaning using Link parser 3.31
 (Found maximum of 4 linkages )
 The instructor persuaded Mary to take that course. 
-upaxeSaka ne vaha pATyakrama lene ke liye Mary ko rAjI kiyA .
+upaxeSaka ne vaha pATyakrama lene ke liye PropN-mary-PropN ko rAjI kiyA .
 
 Hindi meaning using Link parser 3.32
 (Found maximum of 4 linkages )
@@ -1719,7 +1719,7 @@ AxamI pulIsa ke xvArA mArA gayA hE .
 
 Hindi meaning using Stanford parser 3.43
 The Master said, if I did not go, how would you ever see. 
-Master ne kahA, ki yaxi mEM nahIM gayA WA, wo Apa kaBI BI kEse xeKeMge.
+PropN-master-PropN ne kahA, ki yaxi mEM nahIM gayA WA, wo Apa kaBI BI kEse xeKeMge.
 
 Hindi meaning using Link parser 3.44
 (Found maximum of 1 linkages )
@@ -1769,7 +1769,7 @@ mAz bApa ne unake bacce ke vikAsa kA prawyeka caraNa liKA .
 Hindi meaning using Link parser 3.53
 (Found maximum of 1 linkages )
 The park that encloses the monument has recently been enlarged. 
-jo smAraka ko GerawA hE vaha uxyAna hAla meM baDAyA gayA hE .
+jo smAraka ko GerawA hE vaha uxyAna hAla meM badA kiyA gayA hE .
 
 Hindi meaning using Link parser 3.54
 (Found maximum of 4 linkages )
@@ -1974,7 +1974,7 @@ gAdI ke pahiyoM ne mudanA AramBa kiyA .
 Hindi meaning using Link parser 3.94
 (Found maximum of 7 linkages )
 They are playing an important match against Liverpool on Saturday. 
-ve SanivAra ko mahawvapUrNa mEca Liverpool ke viruxXa Kela rahe hEM .
+ve SanivAra ko mahawvapUrNa mEca PropN-liverpool-PropN ke viruxXa Kela rahe hEM .
 
 Hindi meaning using Link parser 3.95
 (Found maximum of 3 linkages )
@@ -2033,7 +2033,7 @@ unako KAnA hogA .
 
 Hindi meaning using Link parser 4.6
 (Found maximum of 2 linkages )
-This box cannot be lifted. 
+This box can not be lifted. 
 yaha baksA nahIM uTAyA jA sakawA hE .
 
 Hindi meaning using Link parser 4.7
@@ -2044,7 +2044,7 @@ yaha saMgaNaka wulanAwmaka rUpa se aXika mahazgA hE .
 Hindi meaning using Link parser 4.8
 (Found maximum of 2 linkages )
 This is a sample sentence for Anusaraka. 
-yaha Anusaraka ke liye eka namUnA vAkya hE .
+yaha PropN-anusaraka-PropN ke liye eka namUnA vAkya hE .
 
 Hindi meaning using Link parser 4.9
 (Found maximum of 2 linkages )
@@ -2079,7 +2079,7 @@ kyA vaha anwarikRa meM kuCa buxXimAna jIvoM se saMxeSa WA .
 Hindi meaning using Link parser 4.15
 (Found maximum of 3 linkages )
 We are waiting for Suresh. 
-hama Suresh ke liye prawIkRA_kara rahe hEM .
+hama PropN-suresh-PropN ke liye prawIkRA_kara rahe hEM .
 
 Hindi meaning using Link parser 4.16
 (Found maximum of 6 linkages )
@@ -2149,17 +2149,17 @@ hama Aja saMXyA Ane ke liye Apa sab ko XanyavAxa xewe hEM .
 Hindi meaning using Link parser 4.29
 (Found maximum of 2 linkages )
 We went to Paris on Sarah's advice. 
-hama Sarah kI salAha para Paris gaye .
+hama PropN-sarah-PropN kI salAha para PropN-paris-PropN gaye .
 
 Hindi meaning using Link parser 4.30
 (Found maximum of 1 linkages )
 What is the purpose of Dharma? 
-Dharma kA uxxeSya kyA hE ?
+PropN-dharma-PropN kA uxxeSya kyA hE ?
 
 Hindi meaning using Link parser 4.31
 (Found maximum of 1 linkages )
 When Mrs. Chitnis discovered that her husband was an adulterer she divorced him. 
-jaba Mrs. Chitnis ko pawA lagA ki usakA pawi eka vyaBicArI WA wo usane usako walAka xiyA .
+jaba Mrs. PropN-chitnis-PropN ko pawA lagA ki usakA pawi eka vyaBicArI WA wo usane usako walAka xiyA .
 
 Hindi meaning using Link parser 4.32
 (Found maximum of 45 linkages )
@@ -2314,7 +2314,7 @@ SaswrAswra kraya vikraya mAmalA gaMBIra_rUpa_se sarakAra kI prawiRTA ko bigAda c
 Hindi meaning using Link parser 4.62
 (Found maximum of 10 linkages )
 They accused the US of interfering in the internal affairs of other nations. 
-unhoMne anya rARtroM ke Anwarika mAmaloM meM xaKala xene kA US para Aropa lagAyA .
+unhoMne anya rARtroM ke Anwarika mAmaloM meM xaKala xene kA PropN-us-PropN para Aropa lagAyA .
 
 Hindi meaning using Link parser 4.63
 (Found maximum of 3 linkages )
@@ -2354,7 +2354,7 @@ sanxigXa lagaBaga 2 mItara laMbA WA .
 Hindi meaning using Link parser 4.70
 (Found maximum of 2 linkages )
 The Dow Jones industrials closed at 2569.26. 
-Dow Jones Seyara 2569.26 para baMxa hue .
+PropN-dow-PropN Jones Seyara 2569.26 para baMxa hue .
 
 Hindi meaning using Link parser 4.71
 (Found maximum of 1 linkages )
@@ -2369,6 +2369,7 @@ AsapAsa PlU bahuwa sArA hE .
 Hindi meaning using Link parser 4.73
 (Found maximum of 12 linkages )
 Most of the inexpensive budget accommodation is in taj ganj. 
+kama KarcIlA bajata AvAsa jyAxAwara taj ganj meM hE .
 kama KarcIle bajata AvAsa kA sabase aXika taj ganj meM hE .
 
 Hindi meaning using Stanford parser 4.74
@@ -2393,7 +2394,7 @@ vaha kAgaja para kAma karawI hE kyozki vaha saMgaNaka nApasanxa karawI hE .
 Hindi meaning using Link parser 4.78
 (Found maximum of 12 linkages )
 I read a recent paper in the Journal of Medicine. 
-mEMne Medicine ke Journal meM eka hAla kA leKapawra paDA .
+mEMne PropN-medicine-PropN ke PropN-journal-PropN meM eka hAla kA leKapawra paDA .
 
 Hindi meaning using Link parser 4.79
 (Found maximum of 16 linkages )
@@ -2435,4 +2436,5 @@ Hindi meaning using Link parser 4.86
 He finally got a topic to speak at the forum. 
 usako janasaBA meM bolane ke liye AKirakAra viRaya milA .
 
+Calling Transliteration
 Calling Interface related programs

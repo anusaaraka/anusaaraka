@@ -7,7 +7,7 @@ Finding NER...
 Hindi meaning using Link parser 1.1
 (Found maximum of 2 linkages )
 These are few sentences for Link Parser. 
-ye Link Parser ke liye kuCa vAkya hEM .
+ye PropN-link-PropN PropN-parser-PropN ke liye kuCa vAkya hEM .
 
 Hindi meaning using Link parser 2.1
 (Found maximum of 1 linkages )
@@ -17,12 +17,12 @@ eka bade kAle kurUpa kuwwe ne merA pICA kiyA .
 Hindi meaning using Link parser 2.2
 (Found maximum of 9 linkages )
 Abrams does like programming. 
-Abrams progrAming pasaMxa karawA hE .
+PropN-abrams-PropN progrAming pasaMxa karawA hE .
 
 Hindi meaning using Link parser 2.3
 (Found maximum of 4 linkages )
 Actress Whoopi Goldberg and singer Michael Jackson attended the ceremony. 
-Actress Whoopi Goldberg Ora gAyaka Michael Jackson samAroha meM upasWiwa hue .
+PropN-actress-PropN PropN-whoopi-PropN PropN-goldberg-PropN Ora gAyaka PropN-michael-PropN PropN-jackson-PropN samAroha meM upasWiwa hue .
 
 Hindi meaning using Link parser 2.4
 (Found maximum of 1 linkages )
@@ -47,7 +47,7 @@ Ayakara vqxXi AvaSyaka ho sakawI hE .
 Hindi meaning using Link parser 2.8
 (Found maximum of 4 linkages )
 Anne told me I would almost certainly be hired. 
-Anne ne muJe bawAyA ki muJe lagaBaga niSciwa rUpa se kAma xiyA jAegA .
+PropN-anne-PropN ne muJe bawAyA ki muJe lagaBaga niSciwa rUpa se kAma xiyA jAegA .
 
 Hindi meaning using Link parser 2.9
 (Found maximum of 4 linkages )
@@ -62,7 +62,7 @@ kyA joYna yA mEM AmaMwriwa kiyA gayA hUz ?
 Hindi meaning using Link parser 2.11
 (Found maximum of 1 linkages )
 Armenian is a wonderful language, Armenian food is great, and the Armenians are nice people. 
-Armenian eka axBuwa BARA hE Armenian AhAra bahuwa baDiyA hE Ora Armenians acCe loga hEM .
+PropN-armenian-PropN eka axBuwa BARA hE Armenian AhAra bahuwa baDiyA hE Ora PropN-armenians-PropN acCe loga hEM .
 
 Hindi meaning using Link parser 2.12
 (Found maximum of 1 linkages )
@@ -82,22 +82,23 @@ paranwu usakA hqxaya jIwane ke liye mere prayawna asaPala_ho cuke hEM .
 Hindi meaning using Link parser 2.15
 (Found maximum of 2 linkages )
 Buying of shares was brisk on Wall Street today. 
+SeyaroM kA KarIxanA Aja voYl_strIta_para weja WA .
 SeyaroM kA KarIxanA Aja Wall Street para weja WA .
 
 Hindi meaning using Link parser 2.16
 (Found maximum of 2 linkages )
 Clinton announced on Tuesday a bold new proposal. 
-Clinton ne maMgalavAra ko eka nirBIka naye praswAva kI GoRaNA kI .
+PropN-clinton-PropN ne maMgalavAra ko eka nirBIka naye praswAva kI GoRaNA kI .
 
 Hindi meaning using Link parser 2.17
 (Found maximum of 4 linkages )
 Danish is a wonderful language, Danish food is great, and the Danish are nice people. 
-Danish eka axBuwa BARA hE deniSa AhAra bahuwa baDiyA hE Ora Danish acCe loga hEM .
+PropN-danish-PropN eka axBuwa BARA hE deniSa AhAra bahuwa baDiyA hE Ora PropN-danish-PropN acCe loga hEM .
 
 Hindi meaning using Link parser 2.18
 (Found maximum of 2 linkages )
 Dick is important to fix the problem. 
-Dick samasyA ko sulaJAne ke liye mahawvapUrNa hE .
+PropN-dick-PropN samasyA ko sulaJAne ke liye mahawvapUrNa hE .
 
 Hindi meaning using Link parser 2.19
 (Found maximum of 1 linkages )
@@ -137,7 +138,7 @@ Apake varNana se mEM nahIM socawA hUz ki mEM isakA Ananxa uTAUzgA .
 Hindi meaning using Link parser 2.26
 (Found maximum of 2 linkages )
 Have you ever seen the Pacific? 
-kyA Apa kaBI BI Pacific ko xeKa cuke hEM ?
+kyA Apa kaBI BI PropN-pacific-PropN ko xeKa cuke hEM ?
 
 Hindi meaning using Link parser 2.27
 (Found maximum of 1 linkages )
@@ -302,7 +303,7 @@ kiwanA wela CalakA ?
 Hindi meaning using Link parser 2.59
 (Found maximum of 2 linkages )
 How quickly did Joe run? 
-Joe kiwanI PurwI se xOdA ?
+PropN-joe-PropN kiwanI PurwI se xOdA ?
 
 Hindi meaning using Link parser 2.60
 (Found maximum of 4 linkages )
@@ -332,7 +333,7 @@ mEMne AKirakAra pawA lagAyA yaha progrAma iwanA XImA kyoM hE .
 Hindi meaning using Link parser 2.65
 (Found maximum of 8 linkages )
 If John was with Lisa last night, who went to the movie with Diane. 
-yaxi joYna piCalI rAwa Lisa ke sAWa WA wo Diane ke sAWa calaciwra kOna gayA .
+yaxi joYna piCalI rAwa PropN-lisa-PropN ke sAWa WA wo PropN-diane-PropN ke sAWa calaciwra kOna gayA .
 
 Hindi meaning using Link parser 2.66
 (Found maximum of 5 linkages )
@@ -397,12 +398,12 @@ mEM jAnawA WA ki pArtI ko kOna AegA .
 Hindi meaning using Link parser 2.78
 (Found maximum of 5 linkages )
 I left the party after seeing Ann there. 
-mEM vahAz para Ann se milane ke bAxa Boja se calA gayA .
+mEM vahAz para PropN-ann-PropN se milane ke bAxa Boja se calA gayA .
 
 Hindi meaning using Link parser 2.79
 (Found maximum of 2 linkages )
 I live at 805 West Indiana Street. 
-mEM 805 West Indiana Street meM rahawA hUz .
+mEM 805 PropN-west-PropN PropN-indiana-PropN PropN-street-PropN meM rahawA hUz .
 
 Hindi meaning using Link parser 2.80
 (Found maximum of 8 linkages )
@@ -447,7 +448,7 @@ muJe joYna ko AmaMwriwa karane se pahale Apase bAwacIwa karanI cAhiye WI .
 Hindi meaning using Link parser 2.88
 (Found maximum of 2 linkages )
 It does not matter what Ted does. 
-yaha mahawvapUrNa_nahIM howA hE Ted kyA karawA hE .
+yaha mahawvapUrNa_nahIM howA hE PropN-ted-PropN kyA karawA hE .
 
 Hindi meaning using Link parser 2.89
 (Found maximum of 2 linkages )
@@ -457,7 +458,7 @@ yaha jEva_rAsAyaNika_xqRti_se rucikara prayoga hE .
 Hindi meaning using Link parser 2.90
 (Found maximum of 1 linkages )
 It is clear who killed Rod. 
-yaha spaRta hE Rod ko kisane mArA .
+yaha spaRta hE PropN-rod-PropN ko kisane mArA .
 
 Hindi meaning using Link parser 2.91
 (Found maximum of 4 linkages )
@@ -467,7 +468,7 @@ samasyA ko sulaJAnA mahawvapUrNa hE .
 Hindi meaning using Link parser 2.92
 (Found maximum of 2 linkages )
 It is likely that Rod died. 
-yaha samBava hE ki Rod mara gayA .
+yaha samBava hE ki PropN-rod-PropN mara gayA .
 
 Hindi meaning using Link parser 2.93
 (Found maximum of 2 linkages )
@@ -482,7 +483,7 @@ mEMne teliPona_se usako bawAyA ki mEM kAra_se A rahA WA .
 Hindi meaning using Link parser 2.95
 (Found maximum of 6 linkages )
 I told Margaret on Tuesday that I thought she would probably be hired. 
-mEMne maMgalavAra ko Margaret ko bawAyA ki mEMne socA ki usako saMBavawaH kAma xiyA jAegA .
+mEMne maMgalavAra ko PropN-margaret-PropN ko bawAyA ki mEMne socA ki usako saMBavawaH kAma xiyA jAegA .
 
 Hindi meaning using Link parser 2.96
 (Found maximum of 2 linkages )
@@ -522,7 +523,7 @@ muJe AScarya howA hE ki kyA hameM jAnA cAhiye .
 Hindi meaning using Link parser 2.103
 (Found maximum of 4 linkages )
 Joan Smith is president of the company. 
-Joan Smith kaMpanI kA aXyakRa hE .
+PropN-joan-PropN PropN-smith-PropN kaMpanI kA aXyakRa hE .
 
 Hindi meaning using Link parser 2.104
 (Found maximum of 2 linkages )
@@ -537,7 +538,7 @@ joYna kA parivAra unakA rasoIGara navIkaraNa_kara rahA hE .
 Hindi meaning using Link parser 2.106
 (Found maximum of 3 linkages )
 John Stuart Mill is an important author. 
-joYna Stuart Mill mahawvapUrNa leKaka hE .
+joYna PropN-stuart-PropN PropN-mill-PropN mahawvapUrNa leKaka hE .
 
 Hindi meaning using Link parser 2.107
 (Found maximum of 1 linkages )
@@ -557,7 +558,7 @@ merI bahuwa sI swrI_miwra sunavAI_se kroXiwa huIM .
 Hindi meaning using Link parser 2.110
 (Found maximum of 6 linkages )
 Phil gave me a sweater which he bought in Paris. 
-Phil ne muJe vaha svetara xiyA jise usane Paris meM KarIxA .
+PropN-phil-PropN ne muJe vaha svetara xiyA jise usane PropN-paris-PropN meM KarIxA .
 
 Hindi meaning using Link parser 2.111
 (Found maximum of 2 linkages )
@@ -612,12 +613,12 @@ CedanA awyaMwa Gawaka ho sakawA hE .
 Hindi meaning using Link parser 2.121
 (Found maximum of 2 linkages )
 The 5 thousand invited by Bob attended. 
-Bob ke xvArA AmaMwriwa 5 hajAra upasWiwa hue .
+PropN-bob-PropN ke xvArA AmaMwriwa 5 hajAra upasWiwa hue .
 
 Hindi meaning using Link parser 2.122
 (Found maximum of 4 linkages )
 The 5 thousand people invited by Bob attended. 
-Bob ke xvArA AmaMwriwa 5 hajAra loga upasWiwa hue .
+PropN-bob-PropN ke xvArA AmaMwriwa 5 hajAra loga upasWiwa hue .
 
 Hindi meaning using Link parser 2.123
 (Found maximum of 1 linkages )
@@ -632,7 +633,7 @@ acCe pAzca pahanAvoM ne puraskAra prApwa kie .
 Hindi meaning using Link parser 2.125
 (Found maximum of 1 linkages )
 The big question on everybody's mind is who killed OJ. 
-prawyeka vyakwi ke mana meM badA praSna hE ki OJ ko kisane mArA .
+prawyeka vyakwi ke mana meM badA praSna hE ki PropN-oj-PropN ko kisane mArA .
 
 Hindi meaning using Link parser 2.126
 (Found maximum of 1 linkages )
@@ -642,12 +643,12 @@ denmArka vAsI acCe loga hEM .
 Hindi meaning using Link parser 2.127
 (Found maximum of 4 linkages )
 The dog which Chris bought is really ugly. 
-jise Chris ne KarIxA vaha kuwwA vAswava meM kurUpa hE .
+jise PropN-chris-PropN ne KarIxA vaha kuwwA vAswava meM kurUpa hE .
 
 Hindi meaning using Link parser 2.128
 (Found maximum of 2 linkages )
 The earth must revolve around the sun, Copernicus reasoned. 
-pqWvI ko sUrya ke cAroM ora GUmane cAhiye Copernicus ne warka kiyA .
+pqWvI ko sUrya ke cAroM ora GUmane cAhiye PropN-copernicus-PropN ne warka kiyA .
 
 Hindi meaning using Link parser 2.129
 (Found maximum of 2 linkages )
@@ -677,12 +678,12 @@ unakA progrAma hamArI wulanA meM behawara hE .
 Hindi meaning using Link parser 2.134
 (Found maximum of 4 linkages )
 The lawyer pointed out that Clinton did not actually kiss Monica. 
-vakIla ne XyAna xilAyA ki Clinton ne vAswava meM Monica ko nahIM cUmA WA .
+vakIla ne XyAna xilAyA ki PropN-clinton-PropN ne vAswava meM PropN-monica-PropN ko nahIM cUmA WA .
 
 Hindi meaning using Link parser 2.135
 (Found maximum of 12 linkages )
 The man we saw when we went to Paris is here. 
-jise hamane xeKA hama Paris jaba gaye vaha AxamI yahAz hE .
+jise hamane xeKA hama PropN-paris-PropN jaba gaye vaha AxamI yahAz hE .
 
 Hindi meaning using Link parser 2.136
 (Found maximum of 2 linkages )
@@ -697,7 +698,7 @@ Nixon pattiyoM kA rahasya kaBI nahIM hala kiyA gayA WA .
 Hindi meaning using Link parser 2.138
 (Found maximum of 8 linkages )
 The new David Letterman is a happy, relaxed David Letterman. 
-nayA David Letterman KuSa wanAva_mukwa David Letterman hE .
+nayA PropN-david-PropN PropN-letterman-PropN KuSa wanAva_mukwa PropN-david-PropN PropN-letterman-PropN hE .
 
 Hindi meaning using Link parser 2.139
 (Found maximum of 1 linkages )
@@ -742,7 +743,7 @@ yahAz kuwwA yA billI hE .
 Hindi meaning using Link parser 2.147
 (Found maximum of 4 linkages )
 There was an attempt to kill Rod. 
-Rod ko mArane ke liye eka prayAsa WA .
+PropN-rod-PropN ko mArane ke liye eka prayAsa WA .
 
 Hindi meaning using Link parser 2.148
 (Found maximum of 2 linkages )
@@ -752,12 +753,12 @@ samasyA WI paranwu hamane usako hala kiyA .
 Hindi meaning using Link parser 2.149
 (Found maximum of 4 linkages )
 The Richard Milhous Nixon Library has been a big success. 
-Richard Milhous Nixon Library badA saPala ho cukA hE .
+PropN-richard-PropN PropN-milhous-PropN PropN-nixon-PropN PropN-library-PropN badA saPala ho cukA hE .
 
 Hindi meaning using Link parser 2.150
 (Found maximum of 4 linkages )
 The sky is blue, so it is likely that Joe will come. 
-AsamAna nIlA hE isaliye yaha samBava hE ki Joe AegA .
+AsamAna nIlA hE isaliye yaha samBava hE ki PropN-joe-PropN AegA .
 
 Hindi meaning using Link parser 2.151
 (Found maximum of 4 linkages )
@@ -782,12 +783,12 @@ ve yahAz se pAzca mIla xUra eka bahuwa badA mAla banA rahe hEM .
 Hindi meaning using Link parser 2.155
 (Found maximum of 8 linkages )
 The Zongle of Bongle Dongle resigned today. 
-Bongle Dongle ke Zongle ne Aja wyAga_pawra xiyA .
+PropN-bongle-PropN PropN-dongle-PropN ke PropN-zongle-PropN ne Aja wyAga_pawra xiyA .
 
 Hindi meaning using Link parser 2.156
 (Found maximum of 1 linkages )
 This is my friend Bob. 
-yaha merA miwra Bob hE .
+yaha merA miwra PropN-bob-PropN hE .
 
 Hindi meaning using Link parser 2.157
 (Found maximum of 2 linkages )
@@ -802,7 +803,7 @@ kala bETaka ke liye acCA samaya ho sakawA hE .
 Hindi meaning using Link parser 2.159
 (Found maximum of 2 linkages )
 We are from the planet Gorpon. 
-hama graha Gorpon se hEM .
+hama graha PropN-gorpon-PropN se hEM .
 
 Hindi meaning using Link parser 2.160
 (Found maximum of 4 linkages )
@@ -877,7 +878,7 @@ Hindi meaning using Link parser 2.173
 Hindi meaning using Link parser 2.174
 (Found maximum of 2 linkages )
 5 thousand invited by Bob attended. 
-Bob ke xvArA AmaMwriwa 5 hajAra upasWiwa hue .
+PropN-bob-PropN ke xvArA AmaMwriwa 5 hajAra upasWiwa hue .
 
 Hindi meaning using Link parser 2.175
 (Found maximum of 1 linkages )
@@ -932,7 +933,7 @@ kiwanA Ora wela CalakA ?
 Hindi meaning using Link parser 2.185
 (Found maximum of 4 linkages )
 How much more quickly did he run than Joe? 
-vaha Joe kI wulanA meM kiwanA Ora PurwI se xOdA ?
+vaha PropN-joe-PropN kI wulanA meM kiwanA Ora PurwI se xOdA ?
 
 Hindi meaning using Link parser 2.186
 (Found maximum of 3 linkages )
@@ -942,12 +943,12 @@ Apa kiwanA Ora PurwI se xOde ?
 Hindi meaning using Link parser 2.187
 (Found maximum of 1 linkages )
 I know you hate Bill, but why did you send him that nasty note. 
-mEM jAnawA hUz ki Apa Bill ko nApasanxa karawe hEM paranwu Apane usako vaha apriya tippaNI kyoM BejI .
+mEM jAnawA hUz ki Apa PropN-bill-PropN ko nApasanxa karawe hEM paranwu Apane usako vaha apriya tippaNI kyoM BejI .
 
 Hindi meaning using Link parser 2.188
 (Found maximum of 1 linkages )
 I left, therefore I did not see Ann. 
-mEM calA gayA isaliye mEM Ann se nahIM milA WA .
+mEM calA gayA isaliye mEM PropN-ann-PropN se nahIM milA WA .
 
 Hindi meaning using Link parser 2.189
 (Found maximum of 2 linkages )
@@ -967,7 +968,7 @@ kyA tukadA jyAxA hI AsAna Apake liye hE ?
 Hindi meaning using Link parser 2.192
 (Found maximum of 2 linkages )
 It has been said that Schubert ran out of the room when he met Beethoven; but we now know this is untrue. 
-yaha kahA gayA hE ki Schubert kamare meM se xOdA vaha Beethoven se jaba milA paranwu hama aba jAnawe hEM ki yaha asawya hE .
+yaha kahA gayA hE ki PropN-schubert-PropN kamare meM se xOdA vaha PropN-beethoven-PropN se jaba milA paranwu hama aba jAnawe hEM ki yaha asawya hE .
 
 Hindi meaning using Link parser 2.193
 (Found maximum of 6 linkages )
@@ -977,7 +978,7 @@ samasyA ko sulaJAnA SAyaxa samBava nahIM hE .
 Hindi meaning using Link parser 2.194
 (Found maximum of 2 linkages )
 It turns out that Clinton did not actually kiss Monica. 
-yaha nikalakar AwA hE ki Clinton ne vAswava meM Monica ko nahIM cUmA WA .
+yaha nikalakar AwA hE ki PropN-clinton-PropN ne vAswava meM PropN-monica-PropN ko nahIM cUmA WA .
 
 Hindi meaning using Link parser 2.195
 (Found maximum of 1 linkages )
@@ -1032,7 +1033,7 @@ jise hamane aMwa meM KarIxA vaha kuwwA awyaMwa mahazgA WA .
 Hindi meaning using Link parser 2.205
 (Found maximum of 2 linkages )
 The earth, Copernicus reasoned, must revolve around the sun. 
-Copernicus ne warka kiyA pqWvI ko sUrya ke cAroM ora GUmane cAhiye .
+PropN-copernicus-PropN ne warka kiyA pqWvI ko sUrya ke cAroM ora GUmane cAhiye .
 
 Hindi meaning using Link parser 2.206
 (Found maximum of 1 linkages )
@@ -1087,11 +1088,12 @@ Apane kOna se kuwwe kA pICA kiyA ?
 Hindi meaning using Link parser 2.216
 (Found maximum of 10 linkages )
 Alan bet me five dollars Clinton would lose the election. 
-Alan ne muJase pAzca dOlara kI Sarwa lagAI ki Clinton cunAva hAregA .
+Alan ne muJase pAzca dOlara kI Sarwa lagAI ki PropN-clinton-PropN cunAva hAregA .
 
 Hindi meaning using Link parser 2.217
 (Found maximum of 2 linkages )
 A bunch of dogs is in the yard. 
 kuwwoM kA JuMzda ahAwe meM hE .
 
+Calling Transliteration
 Calling Interface related programs

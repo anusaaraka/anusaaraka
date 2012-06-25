@@ -50,7 +50,7 @@ Bio-focal_lens	xviPokasI_leMsa
 Biological_magnification	jEva-AvarXana
 Biomass	jEva_mAwrA
 Bitter	kadZavA
-Boron	borOYna
+Boron	boroYna
 Bowmen's_capsule	bomana_saMputa
 Brain	maswiRka
 Bromine	bromIna
@@ -103,8 +103,8 @@ Converging	aBisArI
 Convex	uwwala
 Copies	prawirUpa
 Copy	prawikqwi
-Cornea	kOYrniyA/svacCamaMdala
-Corneal_blindness	kOYrniyA_aMXawA
+Cornea	koYrniyA/svacCamaMdala
+Corneal_blindness	koYrniyA_aMXawA
 Corrosion	saMkRAraNa
 Cross_pollination	para_parAgaNa
 Crystalline_lens	kristalIya_leMsa
@@ -313,7 +313,7 @@ Micelles	misela
 Micro-evolution	sUkRma-vikAsa
 Micro_organism	sUkRma_jIva
 Midbrain	maXya-maswiRka
-Milk_of_magnesia	milka_OYPa_mEgniSiyA
+Milk_of_magnesia	milka_oYPa_mEgniSiyA
 Mineral	Kanija
 Mirror	xarpaNa
 Moisture	Arxra
@@ -325,7 +325,7 @@ Multiple_fission	bahuKaMdana
 Myopia	xUraxqRti
 Natural_selection	prAkqwika_cayana
 Near_point	nikata_biMxu
-Neon	niOYna
+Neon	nioYna
 Nephron	vqkkANu
 Nerve_impulse	waMwrikA_Avega
 Nerve	waMwrikA
@@ -485,7 +485,7 @@ Stimulus	uxxIpana
 Stomach	AmASaya
 Stomata	raMXra
 Straight	sIXI
-Strontium	strOYnSiyama
+Strontium	stroYnSiyama
 Stung	daMkamArA
 Style	varwikA
 Substance	paxArWa
