@@ -3625,9 +3625,17 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Added    :  kriya_obj_vibakthi_rule_from_dbase
  10. Modified get_conj_group and get_infinitive_pada rules in sd_pada.clp
  11. Modified anu_compile.sh and anu_compile_64bit.sh to generate kriyA_object_vib gdbm
- 12. Modified ber_ver_output link_ver_output  sd_ver_output and verified_output
- 13. Updated Science-dictionary.txt and hindi_tam_dictionary.txt
- 14. Updated changes_in_databases
- 15. Updated sd_verified (487)
- 16. Updated Log
-
+ 12. Handled Non ascii characters ::
+	a) Added identify-nonascii-chars.c and replace_nonascii-chars.c in Anu_src.
+	b) Added code to generate .out files for the above programes in shell_scripts/anu_compile.sh and 
+           shell_scripts/anu_compile_64bit.sh
+	c) Added code to run identify-nonascii-chars.c inside  Anu/stdenglish.sh
+	d) Modified  Anusaaraka_stanford_SMT.sh to handle nonascii characters.
+	e) Added code to replace non ascii characters in browser files in shell_scripts/ClipsToAnu_browser_intfc.sh and 
+	   miscellaneous/SMT/alignment/browser/run_align_browser.sh
+ 13. Modified ber_ver_output link_ver_output  sd_ver_output and verified_output
+ 14. Modified apertium_hn.dix
+ 15. Updated Science-dictionary.txt and hindi_tam_dictionary.txt
+ 16. Updated changes_in_databases
+ 17. Updated sd_verified (487)
+ 18. Updated Log

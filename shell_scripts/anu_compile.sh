@@ -1,6 +1,6 @@
  echo "#define ABS_ANU_PATH \"$HOME_anu_test/Anu_databases/\"" > $HOME_anu_test/CLIPS/gdbm_lookup.h
  echo "#define ABS_PATH \"$HOME_anu_tmp/tmp/\"" > $HOME_anu_test/Anu_src/f_tid-rid.h
- 
+
  cd $HOME_anu_test/Anu_data
  echo "Creating paxasUwra.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/total-paxasUwra.gdbm < total-paxasUwra.txt 
@@ -96,7 +96,8 @@
  ./comp.sh wx2wx-normal
  ./comp.sh wx2wx-small
  mv  wx2wx-normal.out  wx2wx-small.out $HOME_anu_test/bin/
-
+ gcc -o replace_nonascii-chars.out replace_nonascii-chars.c
+ gcc -o identify-nonascii-chars.out identify-nonascii-chars.c 
 
  cd $HOME_anu_test/Anu_data
  echo "Creating default-iit-bombay-shabdanjali-dic_firefox.gdbm"
