@@ -9,6 +9,19 @@
         (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat ?w ?w1 - ?w ?w1 - 0 - ?id0 ?id1))
 ;        (assert (manual_id-noun-vib-grp_ids ?id0 ?w ?w1 - 0 - ?id0 ?id1))
 )
+
+;अबतक
+(defrule multi_word1
+(declare (salience 50))
+?f1<-(manual_id-word-cat ?id0 ?w&aba|taba|jaba|kaba ?cat&PRP)
+?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1)  ?w1&waka RP)
+=>
+        (retract ?f1 ?f2)
+;        (assert (manual_id-word-cat ?id0 ?w ?w1 ?cat))
+        (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat ?w ?w1 - ?w ?w1 - 0 - ?id0 ?id1))
+;        (assert (manual_id-noun-vib-grp_ids ?id0 ?w ?w1 - 0 - ?id0 ?id1))
+)
+
 ;-----------------------------------------------------------------------------------------
 ;ke rUpa meM, ke bAre meM
 (defrule ke_[word]_meM

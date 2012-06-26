@@ -11,10 +11,7 @@
                         (if (neq ?index FALSE) then
                         (while (neq ?index FALSE)
                         (bind ?new_str (str-cat ?new_str (sub-string 1  (- ?index 1) ?str) ?replace_char))
-;                        (bind ?new_index (+ ?index (length ?replace_char)))
-;                        (printout t ?new_index"----"?index"---"?str crlf)
                         (bind ?str (sub-string (+ ?index 1) (length ?str) ?str))
- ;                       (printout t ?new_index"----"?index"---"?str crlf)
                         (bind ?index (str-index ?char ?str))
                         )
                         )
@@ -40,15 +37,16 @@
                                     (bind ?str (str-cat ?str "_" ?k))
                                     (bind $?grp_ids (create$ $?grp_ids ?j)))
                                     (bind ?lkup (gdbm_lookup ?gdbm  ?str))
-                                    (if (neq ?lkup "FALSE") then
+                                    (if (and (neq ?lkup "FALSE") (> (length (create$ $?grp_ids)) 1)) then
+                                        (bind ?str1 ?str)
                                         (bind ?mng ?lkup)
                                         (bind ?mng (remove_character "_" ?mng " "))
-                                        (bind ?str (remove_character "_" ?str " "))
-                                        (printout t (implode$ ?str) crlf)
-                                        (assert (multi_word_expression-dbase_name-mng ?str Physics_dictionary_gdbm ?mng))
+                                        (bind ?str1 (remove_character "_" ?str1 " "))
+                                        (assert (multi_word_expression-dbase_name-mng (explode$ (lowcase (implode$ ?str1))) Physics_dictionary_gdbm ?mng))
                                         (bind ?mng (remove_character "Z" (implode$ (create$ ?mng)) ""))
-                                        (assert (multi_word_expression-dbase_name-mng ?str Physics_dictionary_gdbm ?mng))
-                                      )
+                                        (assert (multi_word_expression-dbase_name-mng (explode$ (lowcase (implode$ ?str1))) Physics_dictionary_gdbm ?mng))
+                                        (assert (multi_word_expression-grp_ids (explode$ (lowcase (implode$ ?str1))) $?grp_ids))
+                                    )
                     )
  )
  )
@@ -71,6 +69,11 @@
   =>
  	(mwe_lookup "Physics-dictionary.gdbm" 1 $?Eng_list)
  	(mwe_lookup "Physics-dictionary.gdbm" 2 $?Eng_list)
+        (mwe_lookup "acronyms-common_noun_compounds.gdbm" 1 $?Eng_list)
+        (mwe_lookup "named_entities.gdbm" 1 $?Eng_list)
+        (mwe_lookup "proper_noun-common_noun_compounds.gdbm" 1 $?Eng_list)
+        (mwe_lookup "multi_word_expressions.gdbm" 1 $?Eng_list)
+        (mwe_lookup "multi_word_expressions.gdbm" 2 $?Eng_list)
  )
 ;--------------------------------------------------------------------------------------------------------
 
@@ -135,18 +138,45 @@
 =>
         (bind ?count 0)
 	(if (not (numberp ?root)) then
-	(bind ?mng (string-to-field (gdbm_lookup "Physics-dictionary.gdbm" ?root)))
-        (if (eq ?mng FALSE) then
+	(bind ?new_mng (string-to-field (gdbm_lookup "Physics-dictionary.gdbm" ?root)))
+        (if (eq ?new_mng FALSE) then
                 (bind ?str  (sub-string 1 1 ?root))
                 (bind ?str (upcase ?str))
                 (bind ?n_word (str-cat ?str (sub-string 2 (length ?root) ?root)))
-                (bind ?mng (gdbm_lookup "Physics-dictionary.gdbm" ?n_word))
+                (bind ?new_mng (gdbm_lookup "Physics-dictionary.gdbm" ?n_word))
         )
-	(if (neq ?mng "FALSE") then
-                (bind ?count (+ ?count 1))
-		(assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root Physics_dictionary_gdbm (string-to-field ?mng)))
-	)
-	)
+        (if (eq ?new_mng "FALSE") then (bind ?new_mng ""))
+        (bind ?new_mng1 "")
+        (bind ?slh_index (str-index "/" ?new_mng))
+        (if (and (neq (length  ?new_mng) 0)(neq ?slh_index FALSE)) then
+                (while (neq ?slh_index FALSE)
+                        (bind ?count (+ ?count 1))
+                        (bind ?new_mng1 (sub-string 1 (- ?slh_index 1) ?new_mng))
+                        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
+                        (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
+                        (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root Physics_dictionary_gdbm ?new_mng1))
+                        (bind ?new_mng1 (remove_character "Z" (implode$ (create$ ?new_mng1)) ""))
+                        (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root Physics_dictionary_gdbm ?new_mng1))
+                        (bind ?new_mng (sub-string (+ ?slh_index 1) (length ?new_mng) ?new_mng))
+                        (bind ?slh_index (str-index "/" ?new_mng))
+                )
+        )
+        (bind ?new_mng1 (str-cat (sub-string 1 (length ?new_mng) ?new_mng)))
+                        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
+                        (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
+        (if (neq ?new_mng "") then
+                        (bind ?count (+ ?count 1))
+                        (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root Physics_dictionary_gdbm ?new_mng1))
+                        (bind ?new_mng1 (remove_character "Z" (implode$ (create$ ?new_mng1)) ""))
+                        (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root Physics_dictionary_gdbm ?new_mng1))
+        )
+        )
+
+;	(if (neq ?mng "FALSE") then
+;                (bind ?count (+ ?count 1))
+;		(assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root Physics_dictionary_gdbm (string-to-field ?mng)))
+;	)
+	
 )
 ;--------------------------------------------------------------------------------------------------------
 ;Modified by Mahalaxmi  -- Added provisional_root_dic.gdbm  and separated the meanings using ","
