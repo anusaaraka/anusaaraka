@@ -1,10 +1,12 @@
+ ; This file is written by Shirisha Manju (19-06-12)
+
  (deffunction get_no(?node ?o_cat ?m_cat)
 	(bind ?no (sub-string (+ (length ?o_cat) 1 ) (length ?node) ?node ))
         (bind ?no (explode$ (str-cat ?m_cat ?no)))
 	(bind ?new_no ?no)
  )
 
- ;==========================  Modify category info in category file and constituents file ================================
+ ;==========================================   Category correction rules =================================================
 
  ; if word is number then modify cat as CD
  ;The result of experiment of scattering of alpha particles by gold foil, in 1911 by Ernest Rutherford (1871 1937) established the nuclear model of the atom, which then became the basis of the quantum theory of hydrogen atom given in 1913 by Niels Bohr (1885 1962).
@@ -32,7 +34,7 @@
 	(assert (Head-Level-Mother-Daughters ?h1 ?l1 $?pre ?Mot $?pos))
 	(assert (Node-Category  ?Mot   ?m_cat))
  )
- ;======================================= LWG correction rules ==========================================
+ ;======================================= LWG correction rules ===================================================
 
  ;The mother calmed the angry son.The jet zoomed across the sky.
  ;Who translated the sentence for the student? The snake who swallowed the rat hissed loudly.

@@ -77,7 +77,7 @@
  (declare (salience 75))
  ?f0<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?VP ?VP1 ?VP2)
  ?f<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?VP2 $?dau)
- (Node-Category ?VP VP|SQ)
+ (Node-Category ?VP SQ)
  (Node-Category ?VP1 TO)
  =>
  	(retract ?f0 ?f)

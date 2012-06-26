@@ -13,71 +13,6 @@
  else
 (create$ (first$ ?a) (reverse (rest$ ?a)))))
 ;-----------------------------------------------------------------------------------------------------------------------
-(defrule print_for_debugging1
-(declare (salience 1502))
-=>
-(bind ?*count* (+ ?*count* 1))
-(printout ?*order_debug-file* "(debug_info  "?*count*" Removing auxillary verbs from the sentence)" crlf)
-)
-;-----------------------------------------------------------------------------------------------------------------------
-;In Kashmir, fishing is a good business and the ideal season is from April to October. Added by Sukhada (12-9-11)
-(defrule from_to_PPs
-(declare (salience 1450))
-?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1 ?PP1 ?PP2 $?d2)
-(Head-Level-Mother-Daughters ?from ? ?PP1 $?d3)
-(Head-Level-Mother-Daughters ?to ? ?PP2 $?d4)
-(id-original_word ?from from)
-(id-original_word ?to to)
-(Node-Category  ?PP1    PP)
-(Node-Category  ?PP2    PP)
-(not (Mother  ?PP1))
-=>
-        (bind ?*count* (+ ?*count* 1))
-        (retract ?f)
-	(bind ?FromToPP (explode$ (str-cat FromToPP "c" ?*count* )))
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1  ?FromToPP $?d2))
-	(assert (Head-Level-Mother-Daughters from ?lvl ?FromToPP ?PP1 ?PP2 ))
-	(assert (Node-Category ?FromToPP FromToPP))
-	(assert (Mother  ?PP1))
-        (printout ?*order_debug-file* "(rule_name - from_to_PPs  " ?*count* " " crlf
-                          "             Before    - "?head" "?lvl"  "?Mot"  "(implode$ $?d1)" "?PP1" "?PP2" "(implode$ $?d2) crlf
-                          "             After     - "?head" "?lvl"  "?Mot"  "(implode$ $?d1)" "?FromToPP" "(implode$ $?d2)")" crlf)
-)
-;-----------------------------------------------------------------------------------------------------------------------
-; October to March is the best time to visit the Jaipur city. Did you count ten to twelve. Added by Sukhada (14-9-11)
-;In the south, jammu is a transition zone from the indian plains to the himalayas.
-(defrule make_compoundPhrase
-(declare (salience 1450))
-?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1 ?NP1 ?PP2 $?d2)
-(Node-Category  ?NP1    NP)
-(Node-Category  ?PP2    PP)
-(Head-Level-Mother-Daughters ?h1 ? ?NP1 $?d3 )
-(id-original_word ?n1 ?h1) 
-(id-cat_coarse ?n1 ?num1) 
-(Head-Level-Mother-Daughters ?to_id ? ?PP2 $?d4 ?np2)
-(id-original_word ?to_id to)
-(Head-Level-Mother-Daughters ?h2 ? ?np2 $?d5)
-(id-original_word ?n2 ?h2)
-(id-cat_coarse ?n2 ?num2)
-(test (and (eq (numberp ?h1) FALSE) (eq (numberp ?h2) FALSE)));Added to avoid gdbm errors. By Roja(18-10-11)
-(test (or (and (neq (gdbm_lookup "time.gdbm" ?h1) "FALSE")(neq (gdbm_lookup "time.gdbm" ?h2) "FALSE"))
-          (and (neq (gdbm_lookup "place.gdbm" ?h1) "FALSE")(neq (gdbm_lookup "place.gdbm" ?h2) "FALSE"))
-	  (and (eq ?num1 number) (eq ?num2 number)) ))
-(not (Mother  ?NP1))
-=>
-        (bind ?*count* (+ ?*count* 1))
-        (retract ?f)
-        (bind ?compPhrase (explode$ (str-cat COMP_PH ?*count* )))
-	(assert (dont_reverse_compPhrases ?compPhrase))
-        (assert (Mother  ?NP1))
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1  ?compPhrase $?d2))
-        (assert (Head-Level-Mother-Daughters from ?lvl ?compPhrase ?NP1 ?PP2 ))
-        (assert (Node-Category ?compPhrase COMP_PH))
-        (printout ?*order_debug-file* "(rule_name - make_compPhrase  " ?*count* " " crlf
-                          "             Before    - "?head" "?lvl"  "?Mot"  "(implode$ $?d1)" "?NP1" "?PP2" "(implode$ $?d2) crlf
-                          "             After     - "?head" "?lvl"  "?Mot"  "(implode$ $?d1)" "?compPhrase" "(implode$ $?d2)")" crlf)
-)
-;-----------------------------------------------------------------------------------------------------------------------
 ;The Fateh Prakash Palace is a perfect example of luxury and style that states Udaipur as a city of royal hospitalilty and culture. Added by Sukhada (13-9-11)
 (defrule move_BEandHAVE_b4_SBAR
 (declare (salience 1000))
@@ -126,24 +61,6 @@
                           "             Before    - "?h" "?l"  "?VP"  "?ADVP" "?VP1"  "crlf
                           "             After     - "?h" "?l"  "?VP"  "?ADVP" "(implode$ $?daut) ")"crlf)
  )
-;-----------------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (1-06-11) -- Suggested by Sukhada.
-;Failure to comply may result in dismissal.
-(defrule dont_rev_if_VP_goesto_TO
-(declare (salience 1400))
-?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  ?d $?daut)
-(Node-Category  ?Mot  VP)
-(Node-Category  ?d TO)
-(not (Mother  ?Mot))
-=>      
-        (bind ?*count* (+ ?*count* 1))
-        (retract ?f0)
-        (assert (Head-Level-Mother-Daughters ?head ?lev ?Mot  ?d $?daut))
-        (assert (Mother  ?Mot))
-	(printout ?*order_debug-file* "(rule_name - dont_rev_if_VP_goesto_TO " ?*count* " " crlf
-                         "              Before    - "?head" "?lev" "?Mot" "?d" "(implode$  $?daut) crlf
-                         "              After     - "?head" "?lev" "?Mot" "?d" "(implode$ $?daut) ")" crlf)
-)
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (2-08-11) -- Suggested by Sukhada.
 ;The balance is supplied by a host of smaller exporters, such as Australia and Venezuela.
@@ -250,7 +167,7 @@
 (defrule rev_VP_or_PP_or_WHPP
 (declare (salience 950))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d ?d1 )
-(Node-Category  ?Mot  VP|PP|WHPP)
+(Node-Category  ?Mot  VP|PP|WHPP|Inf_VP)
 (not (Node-Category  ?d CC));I ate fruits, drank milk and slept. 
 (not (Mother  ?Mot))
 (not (Daughters_replaced  ?Mot))
@@ -396,29 +313,6 @@
                          "              After     - "?head" "?lev" "?Mot" "?sq ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju(27-05-11) Suggested by Sukhada
-;Is that the film in which he kills his mother? 
-(defrule convert_Q_sent_to_normal
-(declare (salience 950))
-?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot ?vp ?np $?daut)
-(Node-Category  ?Mot  SQ)
-(Node-Category  ?vp   MD|VB|VBN|VBZ|VBD|VBP|VBG)
-(Head-Level-Mother-Daughters ?h ?l ?np $?d)
-(not (Mother  ?Mot))
-=>
-	(bind ?*count* (+ ?*count* 1))
-	(retract ?f0)
-	(bind ?v (explode$ (str-cat "VPc" ?*count*)))
-	(assert (Head-Level-Mother-Daughters ?head ?lev ?Mot ?np ?v))
-	(assert (Head-Level-Mother-Daughters ?h ?l ?v ?vp $?daut))
-	(assert (Node-Category ?v VP))
-	(assert (Mother  ?Mot))
-	(printout ?*order_debug-file* "(rule_name - convert_Q_sent_to_normal " ?*count* " " crlf
-                         "              Before    - "?head" "?lev" "?Mot" "?vp" "?np" "(implode$ $?daut) crlf
-                         "              After 	  -  "?head" "?lev" "?Mot" "?np" "?v crlf
-					      	  "- " ?h" "?l" "?v" "?vp"  " (implode$ $?daut) crlf)	
- )
-;-----------------------------------------------------------------------------------------------------------------------
 ; Added by Shirisha Manju(28-05-11) Suggested by Sukhada
 ;This is the way to go. 
 (defrule move_S_last_child_first
@@ -555,7 +449,6 @@
 ;?f0<-(cntrl_fact_for_rev_order)
 =>
 (save-facts "hindi_rev_order.dat" local Head-Level-Mother-Daughters)
-(undefrule replace_aux_with_head_VP)
 (undefrule merge_ADVP)
 (undefrule dont_rev_if_VP_goesto_TO)
 (undefrule rev_VP_or_PP_or_WHPP)
@@ -577,33 +470,6 @@
 (printout ?*order_debug-file* "(debug_info  "?*count*"  Replacing Mother-Node with Child-Node  )" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-;This is the place I live. This is the place I met him. 
-;These shoes that I bought will look nice with that hat.
-;(defrule get_SBAR_copula
-;(declare (salience 730))
-;?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?dat $?pos)
-;(Head-Level-Mother-Daughters ? ? ?dat $?child)
-;(Node-Category  ?Mot SBAR)
-;(Node-Category  ?dat ?DAT)
-;(Head-Level-Mother-Daughters ? ? ?m ?samA)
-;(prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa ? ?samA)
-;=>
-;        (bind ?*count* (+ ?*count* 1))
-;        (retract ?f)
-;        (if (or (eq ?DAT SBAR)(eq ?DAT SBARQ)) then
-; 	(assert (sbar-mother-dau ?Mot ?dat))
-;       (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?pos))
-;        (printout ?*order_debug-file* "(rule_name - get_SBAR_copula "  ?*count* crlf
-;                         "              Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)"  "?dat" "(implode$ $?pos) crlf
-;                         "              After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?pos) ")" crlf)
-;        else
-;        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre $?child $?pos)))
-;        (printout ?*order_debug-file* "(rule_name - get_SBAR_copula "  ?*count* crlf
-;                         "              Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)"  "?dat" "(implode$ $?pos) crlf
-;                         "              After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?child)" "(implode$ $?pos) ")" crlf)
-;)
-;-----------------------------------------------------------------------------------------------------------------------
-
 (defrule get_SBAR
 (declare (salience 730))
 ?f0<-(Head-Level-Mother-Daughters ?h ?l ROOT1 $?r)
