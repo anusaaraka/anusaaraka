@@ -444,7 +444,7 @@
 =>
         (retract ?f ?f1)
         (bind ?conf_lvl (explode$ (str-cat ?conf_lvl , 3)))
-        (assert (id-confidence_level ?mid1 ?conf_lvl))
+        (assert (id-confidence_level ?mid2 ?conf_lvl))
         (assert_control_fact mng_has_been_aligned $?grp)
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid2 $?grp $?pre ?mid1 $?pos))
 )
