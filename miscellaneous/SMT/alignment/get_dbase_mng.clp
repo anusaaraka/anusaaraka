@@ -37,7 +37,7 @@
                                     (bind ?str (str-cat ?str "_" ?k))
                                     (bind $?grp_ids (create$ $?grp_ids ?j)))
                                     (bind ?lkup (gdbm_lookup ?gdbm  ?str))
-                                    (if (and (neq ?lkup "FALSE") (> (length (create$ $?grp_ids)) 1)) then
+                                    (if (and (neq (length ?lkup) 0)(neq ?lkup "FALSE") (> (length (create$ $?grp_ids)) 1)) then
                                         (bind ?str1 ?str)
                                         (bind ?mng ?lkup)
                                         (bind ?mng (remove_character "_" ?mng " "))
@@ -86,7 +86,7 @@
         (bind ?count 0)
 	(if (not (numberp ?word)) then
 		(bind ?mng (gdbm_lookup "provisional_PropN_dic.gdbm" ?word))
-		(if (neq ?mng "FALSE") then
+		(if (and (neq ?mng "FALSE") (neq (length ?mng) 0))then
                         (bind ?count (+ ?count 1))
 			(assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root provisional_PropN_gdbm (explode$ ?mng)))
         	)
@@ -102,11 +102,11 @@
         (bind ?count 0)
         (if (not (numberp ?word)) then
                 (bind ?mng (gdbm_lookup "provisional_word_dic.gdbm" ?word))
-                (if (neq ?mng "FALSE") then (bind ?new_mng (str-cat ?new_mng "/" ?mng)))
+                (if (and (neq ?mng "FALSE") (neq (length ?mng) 0)) then (bind ?new_mng (str-cat ?new_mng "/" ?mng)))
         )
         (bind ?new_mng1 "")
         (bind ?slh_index (str-index "/" ?new_mng))
-        (if (and (neq (length  ?new_mng) 0)(neq ?slh_index FALSE)) then
+        (if (and (neq (length ?new_mng) 0)(neq ?slh_index FALSE)) then
                 (while (neq ?slh_index FALSE)
                         (bind ?count (+ ?count 1))
                         (bind ?new_mng1 (sub-string 1 (- ?slh_index 1) ?new_mng))
@@ -139,13 +139,13 @@
         (bind ?count 0)
 	(if (not (numberp ?root)) then
 	(bind ?new_mng (string-to-field (gdbm_lookup "Physics-dictionary.gdbm" ?root)))
-        (if (eq ?new_mng FALSE) then
+        (if (eq ?new_mng "FALSE") then
                 (bind ?str  (sub-string 1 1 ?root))
                 (bind ?str (upcase ?str))
                 (bind ?n_word (str-cat ?str (sub-string 2 (length ?root) ?root)))
                 (bind ?new_mng (gdbm_lookup "Physics-dictionary.gdbm" ?n_word))
         )
-        (if (eq ?new_mng "FALSE") then (bind ?new_mng ""))
+        (if (and (neq ?new_mng "FALSE") (neq (length ?new_mng) 0)) then (bind ?new_mng ""))
         (bind ?new_mng1 "")
         (bind ?slh_index (str-index "/" ?new_mng))
         (if (and (neq (length  ?new_mng) 0)(neq ?slh_index FALSE)) then
@@ -189,11 +189,11 @@
         (bind ?count 0)
 	 (if (not (numberp ?root)) then
                 (bind ?mng (gdbm_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?root))
-                (if (neq ?mng "FALSE") then (bind ?new_mng (str-cat ?new_mng ?mng)))
+                (if (and (neq ?mng "FALSE") (neq (length ?mng) 0)) then (bind ?new_mng (str-cat ?new_mng ?mng)))
                 (bind ?mng1 (gdbm_lookup "default_meaning_frm_oldwsd.gdbm" ?root))
-                (if (neq ?mng1 "FALSE") then (bind ?new_mng (str-cat ?new_mng "/" ?mng1)))
+                (if (and (neq ?mng "FALSE") (neq (length ?mng) 0)) then (bind ?new_mng (str-cat ?new_mng "/" ?mng1)))
                 (bind ?mng2 (gdbm_lookup "provisional_root_dic.gdbm" ?root))
-                (if (neq ?mng2 "FALSE") then (bind ?new_mng (str-cat ?new_mng "/" ?mng2)) )
+                (if (and (neq ?mng "FALSE") (neq (length ?mng) 0)) then (bind ?new_mng (str-cat ?new_mng "/" ?mng2)) )
         )
 	(bind ?new_mng1 "")
         (bind ?slh_index (str-index "/" ?new_mng))
@@ -239,7 +239,7 @@
         (bind ?count 0)
                 (bind ?tam (implode$ (create$ ?tam)))
                 (bind ?mng (gdbm_lookup "hindi_tam_dictionary.gdbm" ?tam))
-                (if (neq ?mng "FALSE") then (bind ?new_mng (str-cat ?new_mng ?mng)))
+                (if (and (neq ?mng "FALSE") (neq (length ?mng) 0)) then (bind ?new_mng (str-cat ?new_mng ?mng)))
 		(bind ?new_mng1 "")
         (bind ?slh_index (str-index "/" ?new_mng))
         (if (and (neq (length  ?new_mng) 0)(neq ?slh_index FALSE)) then

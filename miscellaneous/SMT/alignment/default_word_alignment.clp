@@ -165,6 +165,27 @@
         (assert_control_fact mng_has_been_filled ?aid1)
         (assert (id-confidence_level (nth$ 1 (create$ $?mid_pre ?mid $?mid_pos)) 3))
 )       
+
+
+(defrule assign_poten_fact_using_neighbour_hood2
+(declare (salience 501))
+?f<-(potential_assignment_vacancy_id-candidate_id $?pre ?aid1 $?pos - ?mid)
+(head_id-grp_ids ?m_h_id $? ?mid $?)
+(not (mng_has_been_aligned ?mid))
+(hindi_id_order $? ?aid1 ?aid $?)
+(id-Apertium_output ?aid1 $?anu_mng1)
+(test (neq (length $?anu_mng1) 0))
+(manual_id-cat-word-root-vib-grp_ids ? ? $?word - $? - $? - $?mid_pre ?mid $?mid_pos)
+(head_id-grp_ids ?m_h_id1&:(eq ?m_h_id1 (- ?m_h_id 1)) $?pre1 ?mid2 $?pos1)
+(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ? $? ?mid2 $?)
+(not (mng_has_been_filled ?aid1))
+=>
+        (retract ?f)
+        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid1 $?anu_mng1 - ?mid $?mid_pre ?mid $?mid_pos))
+        (assert_control_fact mng_has_been_aligned $?mid_pre ?mid $?mid_pos)
+        (assert_control_fact mng_has_been_filled ?aid1)
+        (assert (id-confidence_level (nth$ 1 (create$ $?mid_pre ?mid $?mid_pos)) 3))
+)
 	
 ;-------------------------------------------------------------------------------------
 
@@ -299,6 +320,27 @@
        (assert (mng_has_been_filled ?aid2))
        (assert (id-confidence_level ?mid2 3))
 )
+
+(defrule fix_using_sen_order1
+(declare (salience 200))
+(manual_id-cat-word-root-vib-grp_ids ?mid2 ? $?m_word2 - $? - $? - $?)
+(not (mng_has_been_aligned ?mid2))
+(anu_id-anu_mng-sep-man_id-man_mng ?aid1 $?anu_mng1 - ?mid1 $?)
+(mng_has_been_filled ?aid1)
+(head_id-grp_ids ?m_hid2 $? ?mid2 $?)
+(head_id-grp_ids ?m_hid1&:(eq ?m_hid1 (- ?m_hid2 1))  $? ?mid1 $?)
+(hindi_id_order $?pre ?aid1 ?aid2 ?aid3 $?pos)
+(not (anu_id-anu_mng-sep-man_id-man_mng ?aid2 $?))
+(id-Apertium_output ?aid2 $?anu_mng2)
+(id-Apertium_output ?aid3)
+(not (mng_has_been_filled ?aid2))
+(test (> (length $?anu_mng2) 0))
+=>
+       (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid2 $?anu_mng2 - ?mid2 ?mid2))
+       (assert (mng_has_been_aligned ?mid2))
+       (assert (mng_has_been_filled ?aid2))
+       (assert (id-confidence_level ?mid2 3))
+)
 ;-------------------------------------------------------------------------------------
 
 (defrule single_verb_group_match1
@@ -338,7 +380,7 @@
 ;-------------------------------------------------------------------------------------
 (defrule chk_for_left_out_word_within_man_grp_match
 (declare (salience -310))
-(manual_id-cat-word-root-vib-grp_ids ?mid ? ?m_word - $? - $? - $?grp)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $?m_word - $? - $? - $?grp)
 (manual_id-cat-word-root-vib-grp_ids ?mid1 ? ?m_word1 - $? - $? - $?)
 (not (mng_has_been_aligned ?mid))
 (mng_has_been_aligned ?mid1)
@@ -375,28 +417,29 @@
         (assert_control_fact mng_has_been_aligned  $?grp_ids)
 	(assert_control_fact mng_has_been_filled ?aid1)
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid1 $?anu_mng1 - ?mid1 $?grp_ids))
+        (assert (id-confidence_level ?mid1 3))
 )
 
 (defrule chk_for_left_out_word_within_grp_match1
 (declare (salience -320))
-(manual_id-cat-word-root-vib-grp_ids ?mid ? ?m_word - $? - $? - $?grp)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $?m_word - $? - $? - $?grp)
 (not (mng_has_been_aligned ?mid))
 (mng_has_been_aligned ?mid1)
 (head_id-grp_ids ?m_hid $?grp_ids)
-?f<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid1 $?man_mng)
+?f<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid2 $?pre ?mid1 $?pos)
 (test (and (member$ ?mid $?grp_ids)(member$ ?mid1 $?grp_ids)))
-?f1<-(id-confidence_level ?mid1 ?conf_lvl)
+?f1<-(id-confidence_level ?mid2 ?conf_lvl)
 =>
         (retract ?f ?f1)
         (bind ?conf_lvl (explode$ (str-cat ?conf_lvl , 3)))
         (assert (id-confidence_level ?mid1 ?conf_lvl))
         (assert_control_fact mng_has_been_aligned $?grp)
-        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid1 $?grp $?man_mng))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid2 $?grp $?pre ?mid1 $?pos))
 )
 
 (defrule chk_for_left_out_word2
 (declare (salience -330))
-(manual_id-cat-word-root-vib-grp_ids ?mid ? ?m_word - $? - $? - $?grp)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $?m_word - $? - $? - $?grp)
 (head_id-grp_ids ?m_hid $?pre ?mid $?)
 (not (mng_has_been_aligned ?mid))
 (head_id-grp_ids ?m_hid1&:(eq ?m_hid1 (+ ?m_hid 1)) $? ?mid1 $?)
@@ -410,6 +453,53 @@
         (assert (id-confidence_level ?mid 3))
         (assert_control_fact mng_has_been_aligned $?grp)
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?grp))
+)
+
+(defrule undef_previous_rules
+(declare (salience -335))
+=>
+	(undefrule remove_manual_punct_facts)
+	(undefrule remove_manual_punct_facts1)
+	(undefrule grp_potential_fact)
+	(undefrule potential_fact_count1)
+	(undefrule rm_potential_assignment_fact0)
+	(undefrule rm_potential_assignment_fact)
+	(undefrule rm_potential_assignment_fact1)
+	(undefrule assign_using_potential_assignment_fact)
+	(undefrule assign_poten_fact_using_neighbour_hood)
+	(undefrule assign_poten_fact_using_neighbour_hood1)
+	(undefrule single_verb_group_match)
+	(undefrule partial_verb_group_match)
+	(undefrule verb_group_match_with_tam)
+	(undefrule lookup_man_word_in_hindi_wordnet)
+	(undefrule combine_noun_and_vib)
+	(undefrule combine_verb_and_tam)
+	(undefrule fix_using_sen_order)
+	(undefrule fix_using_sen_order1)
+	(undefrule single_verb_group_match1)
+	(undefrule mv_JJ_to_next_JJ_or_NN)
+	(undefrule chk_for_left_out_word_within_man_grp_match)
+	(undefrule chk_for_left_out_word_with_vib)
+	(undefrule chk_for_left_out_word_within_grp_match1)
+)
+
+
+(defrule mv_left_out_grp_with_next_word
+(declare (salience -340))
+;(manual_id-cat-word-root-vib-grp_ids ?mid ? $?m_word - $? - $? - $?grp)
+(manual_id-word-cat ?mid ? ~VIB)
+(head_id-grp_ids ?m_hid $? ?mid $?)
+(not (mng_has_been_aligned ?mid))
+(head_id-grp_ids ?m_hid1&:(eq ?m_hid1 (+ ?m_hid 1)) $? ?mid1 $?)
+(mng_has_been_aligned ?mid1)
+?f<-(anu_id-anu_mng-sep-man_id-man_mng ?aid1 $?anu_mng1 - ?hid $?pre1 ?mid1 $?pos1)
+?f1<-(id-confidence_level ?hid ?conf_lvl)
+=>
+        (retract ?f ?f1)
+	(assert_control_fact mng_has_been_aligned ?mid)
+        (bind ?conf_lvl (explode$ (str-cat ?conf_lvl , 3)))
+        (assert (id-confidence_level ?hid ?conf_lvl))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid1 $?anu_mng1 - ?hid ?mid $?pre1 ?mid1 $?pos1))
 )
 
 ;(defrule single_filled_and_single_aligned_fact_left
@@ -442,7 +532,7 @@
 ?f1<-(manual_id-word-cat ?id ?h_mng ?)
 =>
         (retract ?f ?f1)
-        (if (member$ ?h_mng (create$ @PUNCT-Comma @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-DoubleQuote @PUNCT-DoubleQuote @PUNCT-Semicolon @PUNCT-Colon @PUNCT-SingleQuote @PUNCT-OpenParen @PUNCT-ClosedParen @PUNCT-Exclamation @SYM-Dollar)) then
+        (if (member$ ?h_mng (create$ @PUNCT-Comma @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-DoubleQuote @PUNCT-DoubleQuote @PUNCT-Semicolon @PUNCT-Colon @PUNCT-SingleQuote @PUNCT-OpenParen @PUNCT-ClosedParen @PUNCT-Exclamation @SYM-Dollar -)) then
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?pre $?pos))
         else
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?pre ?h_mng $?pos)))

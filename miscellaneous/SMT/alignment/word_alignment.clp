@@ -231,7 +231,7 @@
 (defrule noun-word_with_0_vib
 (declare (salience 850))
 (current_id ?mid)
-(manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng - $? - 0 - $?)
+(manual_id-cat-word-root-vib-grp_ids ?mid ~VM $?mng - $? - 0 - $?)
 (id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?mng)
 (id-root ?eid ?e_word)
 (not (prov_assignment ?eid ?mid))
@@ -245,7 +245,7 @@
 (defrule noun-word_with_0_vib1
 (declare (salience 850))
 (current_id ?mid)
-(manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?mng - 0 - $?)
+(manual_id-cat-word-root-vib-grp_ids ?mid ~VM $? - $?mng - 0 - $?)
 (id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?mng)
 (id-root ?eid ?e_word)
 (not (prov_assignment ?eid ?mid))

@@ -1,7 +1,7 @@
 ;na wo, na hI, xUsarI ora
 (defrule multi_word
 (declare (salience 50))
-?f1<-(manual_id-word-cat ?id0 ?w&na|xUsarI ?cat&NEG|QO)
+?f1<-(manual_id-word-cat ?id0 ?w&na|xUsarI|cAroM|ya ?cat&NEG|QO|QC)
 ?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1)  ?w1&wo|hI|ora ?)
 =>
         (retract ?f1 ?f2)

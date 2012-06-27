@@ -6,6 +6,8 @@ rm $HOME_anu_test/Anu_databases/provisional_root_dic.gdbm
 rm $HOME_anu_test/Anu_databases/Science-dictionary.gdbm
 rm $HOME_anu_test/Anu_databases/hindi_tam_dictionary.gdbm
 rm $HOME_anu_test/Anu_databases/preposition_dictionary.gdbm
+rm $HOME_anu_test/Anu_databases/hindi_wordnet_dic1.gdbm
+rm $HOME_anu_test/Anu_databases/hindi_wordnet_dic2.gdbm
 
 
 cd $HOME_anu_test/Anu_data
