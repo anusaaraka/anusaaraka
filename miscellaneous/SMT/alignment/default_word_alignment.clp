@@ -52,6 +52,7 @@
 	(retract ?f ?f1)
 	(assert (potential_assignment_vacancy_id-candidate_id ?aid - ?mid ?mid1))
 )
+;-------------------------------------------------------------------------------------
 
 
 ;grouping potential fact [same manual_word mapping with different anu_words]
@@ -64,6 +65,7 @@
         (retract ?f ?f1)
         (assert (potential_assignment_vacancy_id-candidate_id ?aid ?aid1 - ?mid))
 )
+;-------------------------------------------------------------------------------------
 
 ;Remove the potential fact if any of the mapping length is 0
 (defrule rm_potential_assignment_fact0
@@ -73,7 +75,7 @@
 =>
         (retract ?f)
 )
-
+;-------------------------------------------------------------------------------------
 ;If any of the anu word has been filled , remove that id from potential assignment fact
 ;"For example, the same law of gravitation (given by Newton) describes the fall of an apple to the ground, the motion of the moon around the earth and the motion of planets around the sun. "
 ;उदाहरण के लिए , समान गुरुत्वाकर्षण का नियम ( जिसे न्यूटन ने प्रतिपदित किया ) पृथ्वी पर किसी सेब का गिरना , पृथ्वी के परितः चन्द्रमा की परिक्रमा तथा सूर्य के परितः ग्रहों की गति जैसी परिघटनाओं की व्याख्या करता है .
@@ -89,6 +91,7 @@
 	(assert (potential_assignment_vacancy_id-candidate_id $?aids - $?mids)) 
 )
 
+;-------------------------------------------------------------------------------------
 ;If any of the  manual word has been aligned , remove that id from potential assignment fact
 (defrule rm_potential_assignment_fact1
 (declare (salience 503))
@@ -103,6 +106,7 @@
 )
 
 
+;-------------------------------------------------------------------------------------
 ;If due to the above rules if potential fact becomes one-to-one mapping and still then make alignment b/w that two words.
 ;"A precise definition of this discipline is neither possible nor necessary. "
 ;isa viRaya kI yaWArWa pariBARA xenA na wo saMBava hE Ora na hI AvaSyaka .
@@ -120,9 +124,8 @@
         (assert_control_fact mng_has_been_aligned $?grp_ids)
         (assert (id-confidence_level ?mid 3))
 )
-
-
-;aligning using neighbouring slot [which have already been aligned] information and doing alignment
+;-------------------------------------------------------------------------------------
+;aligning using neighbouring slot [which have already been aligned] information [Here neighbourhood is -]
 ;This rule is to check if the previous word is "-".
 (defrule assign_poten_fact_using_neighbour_hood
 (declare (salience 501))
@@ -144,9 +147,9 @@
         (assert_control_fact mng_has_been_filled ?aid1)
         (assert (id-confidence_level (nth$ 1 (create$ $?mid_pre ?mid $?mid_pos)) 3))
 )
-
-;aligning using neighbouring slot [which have already been aligned] information and doing alignment
-(defrule assign_poten_fact_using_neighbour_hood1
+;-------------------------------------------------------------------------------------
+;aligning using neighbouring slot [which have already been aligned] information.
+(defrule assign_poten_fact_using_neighbour_hood1;[left_neighbour word is aligned]
 (declare (salience 501))
 ?f<-(potential_assignment_vacancy_id-candidate_id $?pre ?aid1 $?pos - ?mid)
 (head_id-grp_ids ?m_h_id $? ?mid $?)
@@ -165,9 +168,9 @@
         (assert_control_fact mng_has_been_filled ?aid1)
         (assert (id-confidence_level (nth$ 1 (create$ $?mid_pre ?mid $?mid_pos)) 3))
 )       
-
-
-(defrule assign_poten_fact_using_neighbour_hood2
+;-------------------------------------------------------------------------------------
+;aligning using neighbouring slot [which have already been aligned] information.
+(defrule assign_poten_fact_using_neighbour_hood2 ;[right_neighbour word is aligned]
 (declare (salience 501))
 ?f<-(potential_assignment_vacancy_id-candidate_id $?pre ?aid1 $?pos - ?mid)
 (head_id-grp_ids ?m_h_id $? ?mid $?)
@@ -188,7 +191,7 @@
 )
 	
 ;-------------------------------------------------------------------------------------
-
+;
 (defrule single_verb_group_match
 (declare (salience 502))
 (anu_verb_count-verbs 1 ?aid)
@@ -205,7 +208,8 @@
         (assert_control_fact mng_has_been_aligned $?pre ?mid $?pos)
         (assert (id-confidence_level ?mid 3))
 )
-
+;-------------------------------------------------------------------------------------
+;If part[Partial] of the word is matched and tam is exact
 (defrule partial_verb_group_match
 (declare (salience 501))
 (manual_id-node-word-root-tam ?m_h_id VGF $? $?mng $? - $? - $?tam)
@@ -222,7 +226,8 @@
         (assert_control_fact mng_has_been_filled ?aid)
         (assert (id-confidence_level ?mid 3))
 )
-
+;-------------------------------------------------------------------------------------
+;doing alignment with exact tam match.
 (defrule verb_group_match_with_tam
 (declare (salience 500))
 (manual_id-node-word-root-tam ?m_h_id VGF $? - $? - $?tam)
@@ -240,7 +245,7 @@
 )
 
 ;-------------------------------------------------------------------------------------
-
+;look for synonyms in hindi wordnet
 (defrule lookup_man_word_in_hindi_wordnet
 (declare (salience 500))
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $?word - $?h_root - $?)
@@ -299,7 +304,7 @@
         (assert (id-confidence_level (nth$ 1 (create$ $?pre ?mid1 $?pos)) ?conf_lvl))
 )
 ;-------------------------------------------------------------------------------------
-
+;
 (defrule fix_using_sen_order
 (declare (salience 200))
 (manual_id-cat-word-root-vib-grp_ids ?mid2 ? $?m_word2 - $? - $? - $?)
@@ -320,7 +325,7 @@
        (assert (mng_has_been_filled ?aid2))
        (assert (id-confidence_level ?mid2 3))
 )
-
+;-------------------------------------------------------------------------------------
 (defrule fix_using_sen_order1
 (declare (salience 200))
 (manual_id-cat-word-root-vib-grp_ids ?mid2 ? $?m_word2 - $? - $? - $?)
@@ -342,7 +347,9 @@
        (assert (id-confidence_level ?mid2 3))
 )
 ;-------------------------------------------------------------------------------------
-
+;"We can broadly [describe] physics as a study of the basic laws of nature and their manifestation in different natural phenomena. "
+;मोटे तौर पर हम भौतिकी का वर्णन प्रकृति के मूलभूत नियमों का अध्ययन तथा विभिन्न प्राकृतिक परिघटनाओं में इनकी अभिव्यक्ति के रूप में कर सकते हैं .
+;If any word is left out check if that word is part of verb in anusaaraka then move the word to that group.
 (defrule single_verb_group_match1
 (declare (salience 400))
 (anu_verb_count-verbs 1 ?aid)
@@ -360,7 +367,7 @@
         (assert (id-confidence_level ?mid 3))
 )
 ;-------------------------------------------------------------------------------------
-
+;Moving the left out adjectives with the next adjective/noun
 (defrule mv_JJ_to_next_JJ_or_NN
 (declare (salience 100))
 (manual_id-cat-word-root-vib-grp_ids ?mid JJ $?mng - $? - $? - $?grp)
@@ -378,6 +385,32 @@
 )
 
 ;-------------------------------------------------------------------------------------
+;Using anusaaraka hindi order , if next word is not alligned and next slot is not filled [but vibakthi is same for both the cases then align those words]
+(defrule chk_for_left_out_word_with_vib
+(declare (salience -300))
+(manual_id-cat-word-root-vib-grp_ids ?mid1 ? $? - $? - $?vib - $?grp_ids)
+(pada_info (group_head_id ?aid1)(preposition ?vib_id))
+(id-org_wrd-root-dbase_name-mng ? ? ?v_root ? $?vib)
+(id-root ?vib_id ?v_root)
+(not (mng_has_been_aligned ?mid1))
+(not (mng_has_been_filled ?aid1))
+(hindi_id_order $? ?aid ?aid1 $?)
+(mng_has_been_filled ?aid)
+(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_mng)
+(head_id-grp_ids ?m_hid $? ?mid $?)
+(head_id-grp_ids ?m_hid1&:(eq ?m_hid1 (+ ?m_hid 1)) $? ?mid1 $?)
+(id-Apertium_output ?aid1 $?anu_mng1)
+(test (> (length $?anu_mng1) 0))
+=>
+        (assert_control_fact mng_has_been_aligned  $?grp_ids)
+        (assert_control_fact mng_has_been_filled ?aid1)
+        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid1 $?anu_mng1 - ?mid1 $?grp_ids))
+        (assert (id-confidence_level ?mid1 3))
+)
+
+
+;-------------------------------------------------------------------------------------
+;Using anusaaraka hindi order , moving the left out word along with the group [manual_grouping]
 (defrule chk_for_left_out_word_within_man_grp_match
 (declare (salience -310))
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $?m_word - $? - $? - $?grp)
@@ -397,29 +430,8 @@
 	(assert_control_fact mng_has_been_aligned $?grp)
 	(assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid1 $?grp $?man_mng))
 )
-
-(defrule chk_for_left_out_word_with_vib
-(declare (salience -300))
-(manual_id-cat-word-root-vib-grp_ids ?mid1 ? $? - $? - $?vib - $?grp_ids)
-(pada_info (group_head_id ?aid1)(preposition ?vib_id))
-(id-org_wrd-root-dbase_name-mng ? ? ?v_root ? $?vib)
-(id-root ?vib_id ?v_root)
-(not (mng_has_been_aligned ?mid1))
-(not (mng_has_been_filled ?aid1))
-(hindi_id_order $? ?aid ?aid1 $?)
-(mng_has_been_filled ?aid)
-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_mng)
-(head_id-grp_ids ?m_hid $? ?mid $?)
-(head_id-grp_ids ?m_hid1&:(eq ?m_hid1 (+ ?m_hid 1)) $? ?mid1 $?)
-(id-Apertium_output ?aid1 $?anu_mng1)
-(test (> (length $?anu_mng1) 0))
-=>
-        (assert_control_fact mng_has_been_aligned  $?grp_ids)
-	(assert_control_fact mng_has_been_filled ?aid1)
-        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid1 $?anu_mng1 - ?mid1 $?grp_ids))
-        (assert (id-confidence_level ?mid1 3))
-)
-
+;-------------------------------------------------------------------------------------
+;moving the left out word along with the group [manual_grouping]
 (defrule chk_for_left_out_word_within_grp_match1
 (declare (salience -320))
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $?m_word - $? - $? - $?grp)
@@ -436,7 +448,8 @@
         (assert_control_fact mng_has_been_aligned $?grp)
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid2 $?grp $?pre ?mid1 $?pos))
 )
-
+;-------------------------------------------------------------------------------------
+;moving the left out word to the nearest group [manual_grouping]
 (defrule chk_for_left_out_word2
 (declare (salience -330))
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $?m_word - $? - $? - $?grp)
@@ -454,7 +467,8 @@
         (assert_control_fact mng_has_been_aligned $?grp)
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?grp))
 )
-
+;-------------------------------------------------------------------------------------
+;Removing all the rules before firing "mv_left_out_grp_with_next_word".
 (defrule undef_previous_rules
 (declare (salience -335))
 =>
@@ -483,10 +497,10 @@
 	(undefrule chk_for_left_out_word_within_grp_match1)
 )
 
-
+;-------------------------------------------------------------------------------------
+;
 (defrule mv_left_out_grp_with_next_word
 (declare (salience -340))
-;(manual_id-cat-word-root-vib-grp_ids ?mid ? $?m_word - $? - $? - $?grp)
 (manual_id-word-cat ?mid ? ~VIB)
 (head_id-grp_ids ?m_hid $? ?mid $?)
 (not (mng_has_been_aligned ?mid))
@@ -501,6 +515,7 @@
         (assert (id-confidence_level ?hid ?conf_lvl))
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid1 $?anu_mng1 - ?hid ?mid $?pre1 ?mid1 $?pos1))
 )
+;-------------------------------------------------------------------------------------
 
 ;(defrule single_filled_and_single_aligned_fact_left
 ;(declare (salience -320))
@@ -514,7 +529,8 @@
 ;	(assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng1 - ?mid $?grp_ids))
 ;)
 ;-------------------------------------------------------------------------------------
-
+;Sorting in assending order after alignment 
+; 3 4 2 1 ==>  1 2 3 4
 (defrule sort_manual_ids
 (declare (salience -400))
 ?f<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_grp)
@@ -526,6 +542,8 @@
 	(assert (manua_id_sorted ?mid))
 )
 
+;-------------------------------------------------------------------------------------
+;Replacing the id with word.
 (defrule replace_id_with_word
 (declare (salience -500))
 ?f<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?pre ?id $?pos)
