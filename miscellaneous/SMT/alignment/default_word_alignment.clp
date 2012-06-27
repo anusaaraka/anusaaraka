@@ -381,7 +381,7 @@
 	(assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?grp $?man_mng))
         (assert_control_fact mng_has_been_aligned $?grp)
         (bind ?conf_lvl (explode$ (str-cat ?conf_lvl , 3)))
-        (assert (id-confidence_level ?mid1 ?conf_lvl))
+        (assert (id-confidence_level ?mid ?conf_lvl))
 )
 
 ;-------------------------------------------------------------------------------------
