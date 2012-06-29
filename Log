@@ -3590,7 +3590,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  28. Updated changes_in_databases.
  29. Updated Log
 
- 26-06-11
+ 28-06-11
  ========
  1. prepare_apertium_input.clp :
         Added   : PP_rule_adj_est and  PP_rule_adj_er
@@ -3635,8 +3635,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	   miscellaneous/SMT/alignment/browser/run_align_browser.sh
  13. Modified ber_ver_output link_ver_output  sd_ver_output and verified_output
  14. Modified apertium_hn.dix
- 15. Added "irreversibility" in apertium-en-hi.en.metadix  
- 16. Updated Science-dictionary.txt and hindi_tam_dictionary.txt
- 17. Updated changes_in_databases
- 18. Updated sd_verified (487)
- 19. Updated Log
+ 15. Added "irreversibility" in apertium-en-hi.en.metadix 
+ 16. In add_snt_mrkr.lex, modified rule "'. " rule (to get sentence tag correctly)
+ 17. Added sed command to replace "(double quotes) in manual sentence. 
+ 18. Updated Science-dictionary.txt and hindi_tam_dictionary.txt
+ 19. Updated changes_in_databases
+ 20. Updated sd_verified (487)
+ 21. Updated Log
