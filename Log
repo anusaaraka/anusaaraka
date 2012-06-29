@@ -3590,7 +3590,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  28. Updated changes_in_databases.
  29. Updated Log
 
- 28-06-11
+ 29-06-11
  ========
  1. prepare_apertium_input.clp :
         Added   : PP_rule_adj_est and  PP_rule_adj_er
