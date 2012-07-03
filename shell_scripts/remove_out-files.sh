@@ -13,13 +13,10 @@
  echo "Cleaning link-parser "
  cd $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/
  make distclean
-# cd $HOME_anu_test/Parsers/LINK/link-grammar-4.7.4/
-# make distclean
 
  echo "Removing link-parser"
  cd $HOME_anu_test/Anu
  rm -rf link-grammar-4.5.7
-# rm -rf link-grammar-4.7.4
 
  echo "Removing stanford out files"
  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
@@ -33,7 +30,6 @@
  echo "Removing .out files"
  cd $HOME_anu_test/Anu_src
  rm *.out
-# rm ir
  rm lex.yy.c y.tab.c  y.tab.h jnk constituency_parse f_tid-rid.h
  
 
@@ -43,8 +39,7 @@
 
  echo "Removing CLIPS out files"
  cd $HOME_anu_test/CLIPS
- rm gdbm_lookup.h
- make clean
+ rm gdbm_lookup.h rm *.o
 
  cd $HOME_anu_test/bin
  rm myclips

@@ -3654,4 +3654,6 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  7. Modified compilation of CLIPS in anu_compile.sh
  8. Modified shell_scripts/remove_out-files.sh to remove out files inside CLIPS.
  9. Added '+' and 'β' in constituency_parse.l.
-10. Updated Log file.
+10. Modified compilation of CLIPS code in anu_compile.sh
+11. Modified removing outfiles inside CLIPS in remove_out-files.sh 
+12. Updated Log file.

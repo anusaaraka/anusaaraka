@@ -67,7 +67,7 @@
  echo "Creating default-iit-bombay-shabdanjali-dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic.gdbm < default-iit-bombay-shabdanjali-dic.txt
  echo "Creating kriyA_object_vib.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/kriyA_object_vib.gdbm < kriyA_object_vib.txt 
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/kriyA_object_vib.gdbm < kriyA_object_vib.txt
 
  cd vb_root
  echo "Creating ol_vb_root.gdbm"
@@ -124,28 +124,20 @@
 
  echo "Compiling CLIPS source files"
  cd $HOME_anu_test/CLIPS
- make
+ sh compile.sh
  mv myclips $HOME_anu_test/bin/.
 
  echo "Compiling Anusaraka Link Parser files"
  cd $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/
  ./configure
  make
- #cd $HOME_anu_test/Parsers/LINK/link-grammar-4.7.4/
- #./configure
- #make
 
  echo " Compiling Original Link Parser files"
  cd $HOME_anu_test/Anu
  tar -xzf link-grammar-4.5.7.tar.gz 
-# tar -xzf link-grammar-4.7.4.tar.gz 
  cd $HOME_anu_test/Anu/link-grammar-4.5.7/
  ./configure
  make
-
-# cd $HOME_anu_test/Anu/link-grammar-4.7.4/
-# ./configure
-# make
 
  echo "Compiling stanford parser files"
  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
