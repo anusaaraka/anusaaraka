@@ -70,6 +70,12 @@ extern int LIB$SPAWN();
 #include <unistd.h>
 #endif
 
+#if WIN_MVC || WIN_BTC
+#define _UNICODE
+#define UNICODE 
+#include <Windows.h>
+#endif
+
 #if WIN_MVC
 #include <sys\types.h>
 #include <sys\timeb.h>
@@ -207,6 +213,9 @@ struct systemDependentData
 */
 #if WIN_BTC || WIN_MVC
    int BinaryFileHandle;
+   unsigned char getcBuffer[7];
+   int getcLength;
+   int getcPosition;
 #endif
 #if (! WIN_BTC) && (! WIN_MVC)
    FILE *BinaryFP;
@@ -836,6 +845,98 @@ globle void VMSSystem(
 
 #endif
 
+/*******************************************/
+/* gengetchar: Generic routine for getting */
+/*    a character from stdin.              */
+/*******************************************/
+globle int gengetchar(
+  void *theEnv)
+  {
+#if WIN_BTC || WIN_MVC
+   if (SystemDependentData(theEnv)->getcLength ==
+       SystemDependentData(theEnv)->getcPosition)
+     {
+      TCHAR tBuffer = 0;
+      DWORD count = 0;
+      WCHAR wBuffer = 0;
+
+      ReadConsole(GetStdHandle(STD_INPUT_HANDLE),&tBuffer,1,&count,NULL);
+      
+      wBuffer = tBuffer;
+      
+      SystemDependentData(theEnv)->getcLength = 
+         WideCharToMultiByte(CP_UTF8,0,&wBuffer,1,
+                             (char *) SystemDependentData(theEnv)->getcBuffer,
+                             7,NULL,NULL);
+                             
+      SystemDependentData(theEnv)->getcPosition = 0;
+     }
+     
+   return SystemDependentData(theEnv)->getcBuffer[SystemDependentData(theEnv)->getcPosition++];
+#else
+   return(getc(stdin));
+#endif
+  }
+
+/***********************************************/
+/* genungetchar: Generic routine for ungetting */
+/*    a character from stdin.                  */
+/***********************************************/
+globle int genungetchar(
+  void *theEnv,
+  int theChar)
+  {
+#if WIN_BTC || WIN_MVC
+   if (SystemDependentData(theEnv)->getcPosition > 0)
+     { 
+      SystemDependentData(theEnv)->getcPosition--;
+      return theChar;
+     }
+   else
+     { return EOF; }
+#else
+   return(ungetc(theChar,stdin));
+#endif
+  }
+
+/****************************************************/
+/* genprintfile: Generic routine for print a single */
+/*   character string to a file (including stdout). */
+/****************************************************/
+globle void genprintfile(
+  void *theEnv,
+  FILE *fptr,
+  char *str)
+  {
+   if (fptr != stdout)
+     {
+      fprintf(fptr,"%s",str);
+      fflush(fptr);
+     }
+   else
+     {
+#if WIN_MVC
+/*
+      int rv;
+      wchar_t *wbuffer;
+      size_t len = strlen(str);
+
+      wbuffer = genalloc(theEnv,sizeof(wchar_t) * (len + 1));
+      rv = MultiByteToWideChar(CP_UTF8,MB_ERR_INVALID_CHARS,str,-1,wbuffer,len+1);
+      
+      fwprintf(fptr,L"%ls",wbuffer);
+      fflush(fptr);
+      genfree(theEnv,wbuffer,sizeof(wchar_t) * (len + 1));
+*/
+      fprintf(fptr,"%s",str);
+      fflush(fptr);
+#else
+      fprintf(fptr,"%s",str);
+      fflush(fptr);
+#endif
+     }
+  }
+  
 /***********************************************************/
 /* InitializeNonportableFeatures: Initializes non-portable */
 /*   features. Currently, the only non-portable feature    */

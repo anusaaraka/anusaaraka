@@ -3642,3 +3642,16 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  19. Updated changes_in_databases
  20. Updated sd_verified (487)
  21. Updated Log
+
+ 03-07-12
+ ========
+ 1. Added β in standard_abbrevations.lex 
+ 2. Added β in mapping-punctuations.lex and modified rules to handle '+', '=', '%'
+ 3. Added sed command to replace β, + and = in manual sentences fact in Anusaaraka_stanford_SMT.sh, get_group_mng.sh and         replace-abbrevations.sh
+ 4. Modified size of unsigned char variable in replace_nonascii-chars.c.
+ 5. Updated CLIPS (to 5/31/08) Beta version.
+ 6. Modified setup.h inside CLIPS to get "system" command. 
+ 7. Modified compilation of CLIPS in anu_compile.sh
+ 8. Modified shell_scripts/remove_out-files.sh to remove out files inside CLIPS.
+ 9. Added '+' and 'β' in constituency_parse.l.
+10. Updated Log file.

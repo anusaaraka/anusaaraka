@@ -189,6 +189,19 @@ globle void AppendCommandString(
    CommandLineData(theEnv)->CommandString = AppendToString(theEnv,str,CommandLineData(theEnv)->CommandString,&RouterData(theEnv)->CommandBufferInputCount,&CommandLineData(theEnv)->MaximumCharacters);
   }
 
+/******************************************************************************/
+/* InsertCommandString: Inserts a value in the contents of the CommandString. */
+/******************************************************************************/
+globle void InsertCommandString(
+  void *theEnv,
+  char *str,
+  unsigned int position)
+  {
+   CommandLineData(theEnv)->CommandString = 
+      InsertInString(theEnv,str,position,CommandLineData(theEnv)->CommandString,
+                     &RouterData(theEnv)->CommandBufferInputCount,&CommandLineData(theEnv)->MaximumCharacters);
+  }
+  
 /************************************************************/
 /* AppendNCommandString: Appends a value up to N characters */
 /*   to the contents of the CommandString.                  */
@@ -335,7 +348,7 @@ globle int CompleteCommand(
          default:
            if (depth == 0)
              {
-              if (isprint(inchar))
+              if (isprint(inchar) || IsUTF8MultiByteStart(inchar))
                 {
                  while ((inchar = mstring[i++]) != EOS)
                    {

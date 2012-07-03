@@ -45,11 +45,6 @@
 #include <dos.h>
 #endif
 
-#if WIN_BTC
-#define LLONG_MAX 0x7fffffffffffffffLL
-#define LLONG_MIN (~LLONG_MAX)
-#endif
-
 #ifdef LOCALE
 #undef LOCALE
 #endif
@@ -97,6 +92,10 @@
    LOCALE char                       *genstrcat(char *,const char *);
    LOCALE char                       *genstrncat(char *,const char *,size_t);
    LOCALE void                        SetJmpBuffer(void *,jmp_buf *);
+   LOCALE void                        genprintfile(void *,FILE *,char *);
+   LOCALE int                         gengetchar(void *);
+   LOCALE int                         genungetchar(void *,int);
+
 #if WIN_BTC
    LOCALE __int64 _RTLENTRY _EXPFUNC  strtoll(const char *,char **,int);
    LOCALE __int64 _RTLENTRY _EXPFUNC  llabs(__int64 val);

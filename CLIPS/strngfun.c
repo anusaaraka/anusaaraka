@@ -1,7 +1,7 @@
    /*******************************************************/
    /*      "C" Language Integrated Production System      */
    /*                                                     */
-   /*             CLIPS Version 6.23  01/31/05            */
+   /*             CLIPS Version 6.30  02/28/08            */
    /*                                                     */
    /*               STRING FUNCTIONS MODULE               */
    /*******************************************************/
@@ -20,6 +20,9 @@
 /*                                                           */
 /* Revision History:                                         */
 /*      6.23: Correction for FalseSymbol/TrueSymbol. DR0859  */
+/*                                                           */
+/*      6.30: Added support for UTF-8 strings to str-length, */
+/*            str-index, and sub-string functions.           */
 /*                                                           */
 /*************************************************************/
 
@@ -267,8 +270,8 @@ globle long long StrLengthFunction(
    /*============================================*/
    /* Return the length of the string or symbol. */
    /*============================================*/
-
-   return( (long long) strlen(DOToString(theArg)));
+   
+   return(UTF8Length(DOToString(theArg)));
   }
 
 /****************************************/
@@ -462,7 +465,7 @@ globle void *SubStringFunction(
   {
    DATA_OBJECT theArgument;
    char *tempString, *returnString;
-   int start, end, i, j;
+   size_t start, end, i, j, length;
    void *returnValue;
 
    /*===================================*/
@@ -475,30 +478,39 @@ globle void *SubStringFunction(
    if (EnvArgTypeCheck(theEnv,"sub-string",1,INTEGER,&theArgument) == FALSE)
      { return((void *) EnvAddSymbol(theEnv,"")); }
 
-   start = CoerceToInteger(theArgument.type,theArgument.value) - 1;
+   if (CoerceToLongInteger(theArgument.type,theArgument.value) < 1)
+     { start = 0; }
+   else
+     { start = (size_t) CoerceToLongInteger(theArgument.type,theArgument.value) - 1; }
 
    if (EnvArgTypeCheck(theEnv,"sub-string",2,INTEGER,&theArgument) == FALSE)
      {  return((void *) EnvAddSymbol(theEnv,"")); }
 
-   end = CoerceToInteger(theArgument.type,theArgument.value) - 1;
+   if (CoerceToLongInteger(theArgument.type,theArgument.value) < 1)
+     { return((void *) EnvAddSymbol(theEnv,"")); }
+   else
+     { end = (size_t) CoerceToLongInteger(theArgument.type,theArgument.value) - 1; }
 
    if (EnvArgTypeCheck(theEnv,"sub-string",3,SYMBOL_OR_STRING,&theArgument) == FALSE)
      { return((void *) EnvAddSymbol(theEnv,"")); }
-
+   
+   tempString = DOToString(theArgument);
+   
    /*================================================*/
    /* If parameters are out of range return an error */
    /*================================================*/
-
-   if (start < 0) start = 0;
-   if (end > (int) strlen(DOToString(theArgument)))
-     { end = (int) strlen(DOToString(theArgument)); }
+   
+   length = UTF8Length(tempString);
+   
+   if (end > length)
+     { end = length; }
 
    /*==================================*/
    /* If the start is greater than the */
    /* end, return a null string.       */
    /*==================================*/
 
-   if (start > end)
+   if ((start > end) || (length == 0))
      { return((void *) EnvAddSymbol(theEnv,"")); }
 
    /*=============================================*/
@@ -509,8 +521,10 @@ globle void *SubStringFunction(
 
    else
      {
+      start = UTF8Offset(tempString,start);
+      end = UTF8Offset(tempString,end + 1) - 1;
+      
       returnString = (char *) gm2(theEnv,(unsigned) (end - start + 2));  /* (end - start) inclusive + EOS */
-      tempString = DOToString(theArgument);
       for(j=0, i=start;i <= end; i++, j++)
         { *(returnString+j) = *(tempString+i); }
       *(returnString+j) = '\0';
@@ -534,7 +548,7 @@ globle void StrIndexFunction(
   DATA_OBJECT_PTR result)
   {
    DATA_OBJECT theArgument1, theArgument2;
-   char *strg1, *strg2;
+   char *strg1, *strg2, *strg3;
    size_t i, j;
 
    result->type = SYMBOL;
@@ -561,10 +575,11 @@ globle void StrIndexFunction(
    if (strlen(strg1) == 0)
      {
       result->type = INTEGER;
-      result->value = (void *) EnvAddLong(theEnv,(long long) strlen(strg2) + 1LL);
+      result->value = (void *) EnvAddLong(theEnv,(long long) UTF8Length(strg2) + 1LL);
       return;
      }
-
+     
+   strg3 = strg2;
    for (i=1; *strg2; i++, strg2++)
      {
       for (j=0; *(strg1+j) && *(strg1+j) == *(strg2+j); j++)
@@ -573,7 +588,7 @@ globle void StrIndexFunction(
       if (*(strg1+j) == '\0')
         {
          result->type = INTEGER;
-         result->value = (void *) EnvAddLong(theEnv,(long long) i);
+         result->value = (void *) EnvAddLong(theEnv,(long long) UTF8CharNum(strg3,i));
          return;
         }
      }

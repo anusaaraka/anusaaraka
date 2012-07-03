@@ -102,6 +102,7 @@ globle void MiscFunctionDefinitions(
    EnvDefineFunction2(theEnv,"mem-requests",     'g', PTIEF MemRequestsCommand,  "MemRequestsCommand", "00");
 #endif
    EnvDefineFunction2(theEnv,"options",          'v', PTIEF OptionsCommand,      "OptionsCommand", "00");
+   EnvDefineFunction2(theEnv,"operating-system", 'w', PTIEF OperatingSystemFunction,"OperatingSystemFunction", "00");
    EnvDefineFunction2(theEnv,"(expansion-call)", 'u', PTIEF ExpandFuncCall,      "ExpandFuncCall",NULL);
    EnvDefineFunction2(theEnv,"expand$",'u', PTIEF DummyExpandFuncMultifield,
                                            "DummyExpandFuncMultifield","11m");
@@ -791,6 +792,54 @@ EnvPrintRouter(theEnv,WDISPLAY,"Run time module is ");
 #endif
   }
 
+/***********************************************/
+/* OperatingSystemFunction: H/L access routine */
+/*   for the operating system function.        */
+/***********************************************/
+globle void *OperatingSystemFunction(
+  void *theEnv)
+  {
+   EnvArgCountCheck(theEnv,"operating-system",EXACTLY,0);
+
+#if GENERIC
+   return(EnvAddSymbol(theEnv,"UNKNOWN"));
+#endif
+
+#if VAX_VMS
+   return(EnvAddSymbol(theEnv,"VMS"));
+#endif
+
+#if UNIX_V
+   return(EnvAddSymbol(theEnv,"UNIX-V"));
+#endif
+
+#if UNIX_7
+   return(EnvAddSymbol(theEnv,"UNIX-7"));
+#endif
+
+#if LINUX
+   return(EnvAddSymbol(theEnv,"LINUX"));
+#endif
+
+#if DARWIN
+   return(EnvAddSymbol(theEnv,"DARWIN"));
+#endif
+
+#if MAC_XCD || MAC_MCW
+   return(EnvAddSymbol(theEnv,"MAC-OS-X"));
+#endif
+
+#if IBM && (! WINDOW_INTERFACE)
+   return(EnvAddSymbol(theEnv,"DOS"));
+#endif
+
+#if IBM && WINDOW_INTERFACE
+   return(EnvAddSymbol(theEnv,"WINDOWS"));
+#endif
+
+   return(EnvAddSymbol(theEnv,"UNKNOWN"));
+  }
+  
 /********************************************************************
   NAME         : ExpandFuncCall
   DESCRIPTION  : This function is a wrap-around for a normal
@@ -1357,7 +1406,7 @@ globle void CallFunction(
    
    if (GetType(theValue) == EXTERNAL_ADDRESS)
      { 
-      theEA = GetValue(theValue);
+      theEA = (struct externalAddressHashNode *) GetValue(theValue);
       
       theType = theEA->type;
       
@@ -1372,7 +1421,7 @@ globle void CallFunction(
   }
 
 /************************************/
-/* FindLanguateType:    */
+/* FindLanguageType:    */
 /************************************/
 static int FindLanguageType(
   void *theEnv,

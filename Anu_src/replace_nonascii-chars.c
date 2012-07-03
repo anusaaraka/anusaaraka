@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 
 	int c,i,n,sb,ck=1;
 	char p[8],t[3];
-	unsigned char a[3];
+	unsigned char a[7];
 	while((c=fgetc(fp1))!=EOF)
 	{
 		int flag=1;
