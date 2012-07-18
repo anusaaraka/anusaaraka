@@ -3703,8 +3703,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	* anu_compile.sh
 	* ClipsToAnu_browser_intfc.sh
 	* sd_ver_output
-	* shell_scripts/remove_out-files.sh 
-33.Changed the mode of replace-abbrevations.sh
-34.Updated changes_in_databases.
-35.Modified sd_ver_output.
-36.Updated Log.
+	* shell_scripts/remove_out-files.sh
+34.Added sed commands to replace ABBR in save_format.sh  to solve the problem of mapping Abbrevations liek etc.
+35.Modified 'that_is_rule' in root_rule.clp
+36.Changed the mode of replace-abbrevations.sh
+37.Added few entries in apertium-en-hi.en.metadix and updated in changes_in_databases. 
+38.Updated changes_in_databases.
+39.Modified sd_ver_output.
+40.Updated Log.
