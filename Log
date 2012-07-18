@@ -3703,6 +3703,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	* anu_compile.sh
 	* ClipsToAnu_browser_intfc.sh
 	* sd_ver_output
+	* shell_scripts/remove_out-files.sh 
 33.Changed the mode of replace-abbrevations.sh
 34.Updated changes_in_databases.
 35.Modified sd_ver_output.
