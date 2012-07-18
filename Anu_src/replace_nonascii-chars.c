@@ -1,4 +1,6 @@
-/*PROGRAM TO REPLACE BACK nonascii<no of bytes><value> BT THE CORRESPONDING CHARACTER*/
+/*PROGRAM TO REPLACE BACK nonascii<no of bytes><value> WITH THE CORRESPONDING CHARACTER*/
+/*Added by RACHIT KUMAR MNNIT-ALLAHABAD (4th year) */
+
 #include<stdio.h>
 #include<string.h>
 #include<math.h>
@@ -14,11 +16,11 @@ int main(int argc, char *argv[])
 
 	int c,i,n,sb,ck=1;
 	char p[8],t[3];
-	unsigned char a[7];
+	unsigned char a[7];  //Changed from a[3] to a[7] as amximum unsinged char is 6 bytes. As suggested by Chaitanya Sir
 	while((c=fgetc(fp1))!=EOF)
 	{
 		int flag=1;
-		if(c=='n')	//SEARCH FOR n OF nonacii
+		if(c=='n')	//SEARCH FOR n OF nonascii
 		{
 			fgets(p,8,fp1);
 			for(sb=0;sb<7;sb++)
@@ -31,7 +33,7 @@ int main(int argc, char *argv[])
 			}
 			if(flag)
 			{
-				if (!strcmp(p,"onascii"))	//COMPARING THE REMAINING onacii		
+				if (!strcmp(p,"onascii"))	//COMPARING THE REMAINING onascii		
 				{
 					c=fgetc(fp1);
 					n=c-48;				

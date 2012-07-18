@@ -1,0 +1,6 @@
+#Readme to get Canonical Form Dictionary::
+########################################
+
+RUN::
+ sh get_txt_files.sh
+ sh get_dictionary_in_canonical_form.sh

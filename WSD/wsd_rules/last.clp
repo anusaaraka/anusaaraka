@@ -1,4 +1,4 @@
-
+;Modified this rule by Roja(17-07-12). As the fact is (affecting_id-affected_id-mng_to_be_overwrite) not in use.
 (defrule last0
 (declare (salience 5000))
 (id-root ?id last)
@@ -8,11 +8,13 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_id-mng_to_be_overwrite ?id ?id1 -)) 
-(assert (id-wsd_root_mng ?id baca))
+;(assert (affecting_id-affected_id-mng_to_be_overwrite ?id ?id1 -)) 
+;(assert (id-wsd_root_mng ?id baca))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 baca))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_id-mng_to_be_overwrite   " ?*wsd_dir* "  last.clp       last0   "  ?id " " ?id1" - )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  last.clp 	last0   "  ?id "  baca )" crlf))
+;(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_id-mng_to_be_overwrite   " ?*wsd_dir* "  last.clp       last0   "  ?id " " ?id1" - )" crlf)
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  last.clp 	last0   "  ?id "  baca )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  last.clp       last0   "  ?id " " ?id1" baca)" crlf))
 )
 
 ;If you continue to eat at this rate,the chocolates are not going to last out the evening.

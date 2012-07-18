@@ -49,7 +49,10 @@ void UserFunctions(void);
 void EnvUserFunctions(void *);
 extern char   *gdbm_lookup(char *,char *);
 extern int    gdbm_lookup_p(char *,char *);
-extern char  *wx_utf8(char *);
+extern void   *wx_utf8(char *);
+//extern int  *myeq(char *,char *);
+
+//extern void   *Reverse();
 /*********************************************************/
 /* UserFunctions: Informs the expert system environment  */
 /*   of any user defined functions. In the default case, */
@@ -65,6 +68,8 @@ void UserFunctions()
     DefineFunction2("gdbm_lookup",'s', PTIF gdbm_lookup,"gdbm_lookup","22s");
     DefineFunction2("gdbm_lookup_p",'b', PTIF gdbm_lookup_p,"gdbm_lookup_p","22s");
     DefineFunction2("wx_utf8",'s', PTIF wx_utf8,"wx_utf8","11s");
+  //  DefineFunction2("reverse-str",'s',PTIF Reverse,"Reverse", "11s");
+  //  DefineFunction2("myeq",'b', PTIF myeq,"myeq","22s");
   }
   
 /***********************************************************/

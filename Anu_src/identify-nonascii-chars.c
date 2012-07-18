@@ -1,4 +1,6 @@
-/*PROGRAM TO REPLACE MORE THAN 1 BYTE CHARACTER WITH @nonascii<no of bytes><value>*/
+/*PROGRAM TO REPLACE MORE THAN 1 BYTE CHARACTER WITH nonascii<no of bytes><value>*/
+/*Added by RACHIT KUMAR MNNIT-ALLAHABAD (4th year) */
+
 #include<stdio.h>
 #include<string.h>
 #include<math.h>

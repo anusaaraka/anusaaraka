@@ -29,7 +29,7 @@ LAN_operating_system	lEna_saMcAlana_waMwra#lEna_saMcAlana_waMwra#noun#3#RM
 LAN_security_subcommittee	lEna_surakRA_upasamiwi#lEna_surakRA_upasamiwi#noun#3#RM
 LAN_server	lEna_parisevaka#lEna_parisevaka#noun#2#RM
 LIFO_search	liPo_anveRaNa#liPo_anveRaNa#noun#2#RM
-MAC_protocol	mEka_protokoYla_#mEka_protokoYla_#0#RM
+MAC_protocol	mEka_protokoYla#mEka_protokoYla#UNDEFINED#0#RM
 MIS_Planner	ema_AI_esa_(prabaMXana_sUcanA_waMwra_)Ayojana#ema_AI_esa_(prabaMXana_sUcanA_waMwra_)Ayojana#noun#2#RM
 N_P_completeness	ena_pI_saMpUrNarwA#ena_pI_saMpUrNarwA#noun#3#RM
 NEWS_briefing	samAcAra_kA_vivaraNa_xenA#samAcAra_kA_vivaraNa_xenA#noun#2#RM
@@ -47,7 +47,7 @@ PTL_employee	pItIela_karmacArI#pItIela_karmacArI#noun#2#RM
 S_N_A	esa_ena_e_(_waMwra_netavarka_sWApawya)#esa_ena_e_(_waMwra_netavarka_sWApawya)#noun#3#RM
 T_carrier	tI_vAhaka#tI_vAhaka#noun#2#RM
 T_cell	tI.sela#tI.sela#noun#2#RM
-T_flip-flop	tI_Plipa_PlEYApa_#tI_Plipa_PlEYApa_#0#RM
+T_flip-flop	tI_Plipa_PlEYApa#tI_Plipa_PlEYApa#UNDEFINED#0#RM
 T_form_organization	tICaAkAra_saMgaTana#tICaAkAra_saMgaTana#noun#3#RM
 T_type_flip-flop	tI_prakAra_kA_mAnaciwra#tI_prakAra_kA_mAnaciwra#noun#3#RM
 TV_audience	tI_vI_xarSaka#tI_vI_xarSaka#noun#2#RM

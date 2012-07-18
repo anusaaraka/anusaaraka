@@ -13,14 +13,18 @@ char vow_hnd_matra[][4] = {{"ा"},{""},{""},{""},{"ै"},{""},{""},{"ः"},{"�
 char alphebet_info[][4] = {{"vow"},{"con"},{"con"},{"con"},{"vow"},{"con"},{"con"},{"vow"},{"vow"},{"con"},{"con"},{""},{"vow"},{"con"},{"vow"},{"con"},{"vow"},{"con"},{"con"},{"con"},{"vow"},{""},{"con"},{"con"},{""},{"vow"},{""},{""},{""},{""},{""},{""},{"vow"},{"con"},{"con"},{"con"},{"vow"},{"con"},{"con"},{"con"},{"vow"},{"con"},{"con"},{"con"},{"con"},{"con"},{"vow"},{"con"},{"vow"},{"con"},{"con"},{"con"},{"vow"},{"con"},{"con"},{"con"},{"con"},{"vow"}};
 
 char *utf8_string;
+char *returnValue;  //Assigning returnValue;
 
-char * wx_utf8(char *wx_string)
+void * wx_utf8(char *wx_string)  //Changed from char * to void * as in Reverse() in apg.pdf
 {
       wx_string = RtnLexeme(1);
       if (ArgCountCheck("wx_utf8",EXACTLY,1) == -1)
       { return(AddSymbol(""));}
-	utf8_string = malloc(6*strlen(wx_string));
-// if (utf8_string == NULL) { printf("Can't allocate memory for utf8_string\n"); exit;}
+
+	//+1 is added to add a null character (same as Reverse() in apg.pdf)
+        //6 is added for a consonant with halant case Ex: क्  (क takes 3 bytes and halant takes 3 bytes)
+	utf8_string = malloc(6*strlen(wx_string)+1);
+        if (utf8_string == NULL) { printf("Can't allocate memory for utf8_string\n"); exit;}
 
 	
 int i=0,j=0,k=0,l=0,m=0,con_ind=0,vow_ind=0,next_vow_ind=0,first_vow_ind=0,flag_con,flag_vow,flag_first_vow,next_flag_vow;
@@ -79,9 +83,9 @@ while(*(wx_string+i) != '\0') {
 					i=i+2;
 				}	
 			}
-  			//for cases "sOYPtaveyara" "सॉफ्टवेयर"
-                        //Modified below code by Roja(18-01-12) to handle words like "jOYna", "sOYPtaveyara" etc.
-                        //original code insied 'else if' is commented and added below code.
+  			//for cases "soYPtaveyara" "सॉफ्टवेयर"
+                        //Modified below code by Roja(18-01-12) to handle words like "joYna", "soYPtaveyara" etc.
+                        //original code inside 'else if' is commented and added below code.
 			else if((ch_next == 'o') && (ch_next_next == 'Y')){  /*Changed "ch_next == 'o'" to "ch_next == 'O'"
                                                                                (Suggested by Chaitanya Sir) 25-01-12*/
                                         sprintf(utf8_string+j,"%s",con_hnd[con_ind]);
@@ -143,8 +147,10 @@ while(*(wx_string+i) != '\0') {
               }
 
 }
-//return utf8_string;
-return (AddSymbol(utf8_string));
+//To free utf8_string (Refer Reverse() in apg.pdf)
+returnValue = AddSymbol(utf8_string);
+free(utf8_string);
+return(returnValue);
 }
 
 /*int main(int argc ,char *argv[])

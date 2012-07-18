@@ -24,7 +24,7 @@
 )
 
 
-
+;Modified this rule by Roja(17-07-12). As the fact is (affecting_id-affected_id-mng_to_be_overwrite) not in use.
 (defrule see1
 (declare (salience 5000))
 (id-root ?id see)
@@ -34,16 +34,13 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_id-mng_to_be_overwrite ?id ?id1 -)) 
-(assert (id-wsd_root_mng ?id samaJa))
+;(assert (affecting_id-affected_id-mng_to_be_overwrite ?id ?id1 -)) 
+;(assert (id-wsd_root_mng ?id samaJa))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 samaJa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  see.clp       see1   "  ?id " " ?id1" - )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  see.clp 	see1   "  ?id "  samaJa )" crlf))
-)
-
-
-
-
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  see.clp       see1   "  ?id " " ?id1" samaJa )" crlf)
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  see.clp 	see1   "  ?id "  samaJa )" crlf))
+))
 
 ;Added by Meena(20.5.10)
 ;I must see about lunch .

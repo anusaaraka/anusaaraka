@@ -2,10 +2,6 @@
  cd $HOME_anu_test/Anu_databases
  rm  *.gdbm 
 
- cd $HOME_anu_test/Anu_data
- rm word_field mng_field mng_utf8 default-iit-bombay-shabdanjali-dic_firefox_tmp.txt default-iit-bombay-shabdanjali-dic_firefox.txt default-iit-bombay-shabdanjali-dic_smt_tmp.txt default-iit-bombay-shabdanjali-dic_smt.txt
-
-
  echo "Removing .bclp files"
  cd $HOME_anu_test/Anu_clp_files
  rm *.bclp
