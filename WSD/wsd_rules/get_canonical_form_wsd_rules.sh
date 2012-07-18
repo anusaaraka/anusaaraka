@@ -4,8 +4,8 @@
 #  If canonical_form_wsd_rules directory exists then remove it.
   if  [ -e canonical_form_wsd_rules ] ; then
         rm -r canonical_form_wsd_rules
-	mkdir canonical_form_wsd_rules
   fi
+	mkdir canonical_form_wsd_rules
 
 ls *.clp > list
 

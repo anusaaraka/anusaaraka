@@ -3690,6 +3690,20 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 29.Updated shell_scripts/remove_out-files.sh.
 30.Modified smt_compile.sh to generate SMT dictionaries in canonical form.
 31.Updated Anusaaraka_stanford.sh and Anusaaraka_stanford_SMT.sh
-32.Updated changes_in_databases.
-33.Modified sd_ver_output.
-34.Updated Log.
+32.Removed Transliteration folder and all its related work are commented in following files:
+	* hindi_meaning.clp
+	* run_modules_link.bat
+	* run_modules_ol.bat
+	* run_modules_std.bat
+	* run_sentence_stanford.sh
+	* run_sentence_stanford_SMT.sh
+	* Anusaaraka_stanford.sh
+	* Anusaaraka_stanford_SMT.sh
+	* run_align_browser.sh
+	* anu_compile.sh
+	* ClipsToAnu_browser_intfc.sh
+	* sd_ver_output
+33.Changed the mode of replace-abbrevations.sh
+34.Updated changes_in_databases.
+35.Modified sd_ver_output.
+36.Updated Log.

@@ -3,10 +3,10 @@ gcc -g -o get_canonical_form-dic.out get_canonical_form-dic.c  myeq.c
 #  If dictionaries directory exists then remove it.
   if  [ -e dictionaries ] ; then
         rm -r dictionaries
-        mkdir dictionaries
   fi
+  mkdir dictionaries
 
-cp create-gdbm.pl dictionaries/
+cp $HOME_anu_test/Anu_data/create-gdbm.pl dictionaries/
 while read line
 do
         cp $HOME_anu_test/Anu_data/$line".txt" .
