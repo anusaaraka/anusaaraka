@@ -3661,7 +3661,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	* Free the pointer *utf8_string
 11. In userfunctions.c , modified calling of wx_utf8.c as mentioned above.
 12. Modified 'Pre requisites' inside anu_testing README (removed clips and added comment near timeout)
-13. Modified compilation part in compile_bison.sh
+13. Modified compilation part in compile_bison.sh in Anu_src and debugging
+	* Similar changes have been done inside RASP/rasp3os/scripts/comp.sh
 14. Removed html_tag_sp.lex from pre-process.sh as its out dated ,
 	* moved html_tag_sp.lex file inside miscellaneous/Programs/removed_files
 15. Modified Makefile inside Anu/std_format/ to remove the compilation of html_tag_sp.lex
