@@ -13,6 +13,7 @@ int main(int argc, char *argv[])
 	FILE *fp1=fdopen(fpi,"r");
 	int fpo=open(argv[2],O_WRONLY|O_CREAT,0777);	//ARG2 FOR OUTPUT FILE
 	FILE *fp2=fdopen(fpo,"w");
+	if(fp1==NULL||fp2==NULL) printf("Could not open file\n");
 
 	int c,i,n,sb,ck=1;
 	char p[8],t[3];

@@ -73,14 +73,15 @@
 # cd $HOME_anu_test/Parsers/LINK/link-grammar-4.7.4/link-grammar
 # ./link-parser $HOME_anu_test/Parsers/LINK/link-grammar-4.7.4/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt
 
+  replace-abbrevations.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org  
   echo "Calling Stanford parser"
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
   if [ "$2" != "" -a "$2" != "0" ] ;
   then
-  sh run_multiple_parse_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1 2>/dev/null  
+  sh run_multiple_parse_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1 2>/dev/null  
   python preffered_parse.py $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1 $2 > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
   else 
-  sh run_penn-pcfg.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
+  sh run_penn-pcfg.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
   fi
   sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}"  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
@@ -105,9 +106,8 @@
   $HOME_anu_test/Anu_src/split_file.out sd-propagation_relations.txt dir_names.txt sd-propagation_relations_tmp1.dat
   $HOME_anu_test/Anu_src/split_file.out sd_word.txt dir_names.txt sd_word_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out sd_numeric_word.txt dir_names.txt sd_numeric_word_tmp.dat
-  $HOME_anu_test/Anu_src/split_file.out sd_category.txt dir_names.txt sd_category.dat
+  $HOME_anu_test/Anu_src/split_file.out sd_category.txt dir_names.txt sd_category_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line.txt.ner dir_names.txt ner.dat
-
   $HOME_anu_test/Anu_src/split_file.out sd-original-relations.txt  dir_names.txt  sd-original-relations.dat
 
   grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt
@@ -139,9 +139,9 @@
 
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
 
- echo "Calling Transliteration"
- cd $HOME_anu_test/miscellaneous/transliteration/work
- sh run_transliteration.sh $MYPATH/tmp $1
+# echo "Calling Transliteration"
+# cd $HOME_anu_test/miscellaneous/transliteration/work
+# sh run_transliteration.sh $MYPATH/tmp $1
  
  cd $MYPATH/tmp/$1_tmp/
  echo "(defglobal ?*path* = $HOME_anu_test)" > path_for_html.clp

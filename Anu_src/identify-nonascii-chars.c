@@ -33,6 +33,7 @@ int main(int argc, char *argv[])
 	FILE *fp1=fdopen(fpi,"r");
 	int fpo=open(argv[2],O_WRONLY|O_CREAT|O_TRUNC,0777); //ARG2 FOR OUTPUT FILE
 	FILE *fp2=fdopen(fpo,"w");
+        if(fp1==NULL || fp2==NULL) printf("Could not open file\n");
 
 	int c;
 	while((c=fgetc(fp1))!=EOF)

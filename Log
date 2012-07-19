@@ -3666,7 +3666,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 14. Removed html_tag_sp.lex from pre-process.sh as its out dated ,
 	* moved html_tag_sp.lex file inside miscellaneous/Programs/removed_files
 15. Modified Makefile inside Anu/std_format/ to remove the compilation of html_tag_sp.lex
-16. Added comments in identify-nonascii-chars.c and replace_nonascii-chars.c
+16. Modified identify-nonascii-chars.c and replace_nonascii-chars.c to check file pointer is NULL and also added comments
 17. To get canonical form dictionaries::
 	* Added a c-programme get_canonical_form-dic.c to convert a given file to canonical form.
 	* Added a get_dictionary_in_canonical_form.sh and get_txt_files.sh to generate canonical form dictionaries.
@@ -3707,10 +3707,16 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	* sd_ver_output
 	* shell_scripts/remove_out-files.sh
 	* run_H_gen_SMT.bat
+	* Anusaaraka.sh
+	* Anusaaraka_berkeley.sh
+	* Anusaaraka_link.sh 
+	* Anusaaraka_ol.sh
+	* run_sentence_link.sh
+	* run_sentence_ol.sh
 34.Added sed commands to replace ABBR in save_format.sh  to solve the problem of mapping Abbrevations liek etc.
 35.Modified 'that_is_rule' in root_rule.clp
 36.Changed the mode of replace-abbrevations.sh
 37.Added few entries in apertium-en-hi.en.metadix and updated in changes_in_databases. 
 38.Updated changes_in_databases.
-39.Modified sd_ver_output.
+39.Modified sd_ver_output, ber_ver_output, link_ver_output and verified_output
 40.Updated Log.
