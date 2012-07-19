@@ -3643,7 +3643,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  20. Updated sd_verified (487)
  21. Updated Log
 
- 18-07-12
+ 19-07-12
  ========
  1. Added β in standard_abbrevations.lex 
  2. Added β in mapping-punctuations.lex and modified rules to handle '+', '=', '%'
@@ -3704,6 +3704,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	* ClipsToAnu_browser_intfc.sh
 	* sd_ver_output
 	* shell_scripts/remove_out-files.sh
+	* run_H_gen_SMT.bat
 34.Added sed commands to replace ABBR in save_format.sh  to solve the problem of mapping Abbrevations liek etc.
 35.Modified 'that_is_rule' in root_rule.clp
 36.Changed the mode of replace-abbrevations.sh

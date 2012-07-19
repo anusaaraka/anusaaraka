@@ -121,7 +121,7 @@
   sed 's/<\/Sentence>/<\/Sentence>\n;~~~~~~~~~~\n/g' shallow_parser_output_tmp1.txt > shallow_parser_output.txt
 
   $HOME_anu_test/Anu_src/split_file.out shallow_parser_output.txt dir_names.txt shallow_parser_output.dat
-  $HOME_anu_test/Anu_src/split_file.out wx_output.txt dir_names.txt wx_output.dat
+#  $HOME_anu_test/Anu_src/split_file.out wx_output.txt dir_names.txt wx_output.dat
   #########################################
 
   $HOME_anu_test/Anu_src/split_file.out sd-original-relations.txt  dir_names.txt  sd-original-relations.dat

@@ -47,7 +47,7 @@
  (bind ?*path* (str-cat ?*path* "/miscellaneous/SMT/alignment/get_wx.clp"))
  (load ?*path*)
  (load-facts "hindi_meanings.dat")
- (load-facts "wx_output.dat")
+;(load-facts "wx_output.dat")
  (load-facts "word.dat")
  (run)
  (save-facts "hin_mng_without_@.dat" local id-HM-source)
