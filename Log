@@ -3675,6 +3675,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 18. To get canonical form in WSD::
 	* Added a flex programme get_canonical_form_in_wsd.lex 
 	* Added get_canonical_form_wsd_rules.sh to generate WSD rules in canonical form.
+	* Added compile.sh to compile flex programe.
 19.To get canonical form in apertium hindi dictionary.
 	* get_canonical_dic.sh
 20.Modified shell_scripts/anu_compile.sh to generate canonical form dictionaries, WSD rules and apertium hindi dictionary.
