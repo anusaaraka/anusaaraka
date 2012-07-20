@@ -14,11 +14,11 @@ vaha bahuXA AwA rahA hE.
 
 Hindi meaning using Stanford parser 2.2
 Rama is a good boy. 
-Rama eka acCA ladakA hE.
+PropN-rama-PropN eka acCA ladakA hE.
 
 Hindi meaning using Stanford parser 2.3
 This is a sample sentence for Anusaraka. 
-yaha Anusaraka ke lie eka namUnA vAkya hE.
+yaha PropN-anusaraka-PropN ke lie eka namUnA vAkya hE.
 
 Hindi meaning using Stanford parser 2.4
 I will give up smoking. 
@@ -38,7 +38,7 @@ vaha xUXa pI sakawA hE yA seba KA sakawA hE.
 
 Hindi meaning using Stanford parser 2.8
 Mohan fell from the top of the house. 
-Mohan Gara ke sarvocca sWAna se girA.
+PropN-mohan-PropN Gara ke sarvocca sWAna se girA.
 
 Hindi meaning using Stanford parser 2.9
 We had wasted our journey. 
@@ -50,7 +50,7 @@ usane rasoIGara se varRA kI AvAja sunI.
 
 Hindi meaning using Stanford parser 2.11
 Rama gave a book to Mohan. 
-Rama ne Mohan ko puswaka xI.
+PropN-rama-PropN ne PropN-mohan-PropN ko puswaka xI.
 
 Hindi meaning using Stanford parser 2.12
 There was a red mark on the door. 
@@ -58,11 +58,11 @@ xaravAje para eka lAla niSAna WA.
 
 Hindi meaning using Stanford parser 2.13
 The book was read by Meera. 
-puswaka Meera ke xvArA paDI gayI WI.
+puswaka PropN-meera-PropN ke xvArA paDI gayI WI.
 
 Hindi meaning using Stanford parser 2.14
 What is the purpose of Dharma? 
-Dharma kA uxxeSya kyA hE?
+PropN-dharma-PropN kA uxxeSya kyA hE?
 
 Hindi meaning using Stanford parser 2.15
 There was a marked difference in the prices of dishes. 
@@ -94,7 +94,7 @@ mEMne Cawa para varRA kI AvAja sunI.
 
 Hindi meaning using Stanford parser 2.22
 Rama is beating a boy. 
-Rama ladake ko pIta rahA hE.
+PropN-rama-PropN ladake ko pIta rahA hE.
 
 Hindi meaning using Stanford parser 2.23
 I went there with my mother. 
@@ -186,16 +186,16 @@ prAXyApaka ne puswaka liKane ke lie niScaya kiyA.
 
 Hindi meaning using Stanford parser 2.45
 The instructor persuaded Mary to take that course. 
-upaxeSaka ne Mary ko vaha pATyakrama lene ke lie rAjI kiyA.
+upaxeSaka ne PropN-mary-PropN ko vaha pATyakrama lene ke lie rAjI kiyA.
 upaxeSaka ne vaha pATyakrama lene ke lie Mary ko rAjI kiyA.
 
 Hindi meaning using Stanford parser 2.46
 Mary promised the instructor to take that course. 
-Mary ne vaha pATyakrama lene ke lie upaxeSaka se vAxA kiyA.
+PropN-mary-PropN ne vaha pATyakrama lene ke lie upaxeSaka se vAxA kiyA.
 
 Hindi meaning using Stanford parser 2.47
 We are waiting for Suresh. 
-hama Suresh ke lie prawIkRA_kara rahe hEM.
+hama PropN-suresh-PropN ke lie prawIkRA_kara rahe hEM.
 
 Hindi meaning using Stanford parser 2.48
 I showed them how they should do it. 
@@ -211,7 +211,7 @@ gaXA prawimA se lAxA gayA WA.
 
 Hindi meaning using Stanford parser 2.51
 Sita is a good girl. 
-Sita eka acCI ladakI hE.
+PropN-sita-PropN eka acCI ladakI hE.
 
 Hindi meaning using Stanford parser 2.52
 I gave a book to him. 
@@ -244,7 +244,7 @@ hamAre SarIra meM carbI ke bahuwa sAre Uwaka hEM.
 
 Hindi meaning using Stanford parser 2.59
 The mystery of the Nixon tapes was never solved. 
-Nixon pattiyoM kA rahasya kaBI nahIM hala kiyA gayA WA.
+PropN-nixon-PropN pattiyoM kA rahasya kaBI nahIM hala kiyA gayA WA.
 
 Hindi meaning using Stanford parser 2.60
 The income tax proposal was rejected. 
@@ -268,7 +268,7 @@ yaha samBava hE ve Aezge.
 
 Hindi meaning using Stanford parser 2.65
 Have you ever seen the Pacific? 
-kyA Apa Pacific ko kaBI BI xeKa cuke hEM?
+kyA Apa PropN-pacific-PropN ko kaBI BI xeKa cuke hEM?
 kyA Apa kaBI BI Pacific ko xeKa cuke hEM?
 
 Hindi meaning using Stanford parser 2.66
@@ -294,7 +294,7 @@ mEM nyUyArka Sahara meM rahawA hUz.
 
 Hindi meaning using Stanford parser 2.71
 I live near the San Gabriel River. 
-mEM San Gabriel River ke nikata rahawA hUz.
+mEM PropN-san-PropN PropN-gabriel-PropN PropN-river-PropN ke nikata rahawA hUz.
 
 Hindi meaning using Stanford parser 2.72
 There is a dog in the park. 
@@ -311,7 +311,7 @@ loga anya koYPI peya yA Sarabawa banAne ke lie espreso koYPI kA upayoga karawe h
 
 Hindi meaning using Stanford parser 2.75
 The Zongle of Bongle Dongle resigned today. 
-Bongle Dongle ke Zongle ne Aja wyAga_pawra xiyA.
+PropN-bongle-PropN PropN-dongle-PropN ke PropN-zongle-PropN ne Aja wyAga_pawra xiyA.
 
 Hindi meaning using Stanford parser 2.76
 I gave an expensive present. 
@@ -344,7 +344,7 @@ eka kIde ne bAhu para muJe kAtA.
 
 Hindi meaning using Stanford parser 2.83
 He wrote the biography of Tagore. 
-usane Tagore kI jIvanI liKI.
+usane PropN-tagore-PropN kI jIvanI liKI.
 
 Hindi meaning using Stanford parser 2.84
 All his books are good. 
@@ -360,7 +360,7 @@ joYna sacamuca niSciwa rUpa se eka aXika behawara vikalpa hE.
 
 Hindi meaning using Stanford parser 2.87
 Petu ran fast but missed the bus. 
-Petu weja xOdA paranwu basa cUka gayA.
+PropN-petu-PropN wejI se xOdA paranwu basa cUka gayA.
 
 Hindi meaning using Stanford parser 2.88
 Where did they go to? 
@@ -384,11 +384,11 @@ vaha Ora mEM miwra hEM.
 
 Hindi meaning using Stanford parser 2.93
 John Stuart Mill is an important author. 
-joYna Stuart Mill mahawvapUrNa leKaka hE.
+joYna PropN-stuart-PropN PropN-mill-PropN mahawvapUrNa leKaka hE.
 
 Hindi meaning using Stanford parser 2.94
 It does not matter what Ted does. 
-yaha mahawvapUrNa_nahIM howA hE Ted kyA karawA hE.
+yaha mahawvapUrNa_nahIM howA hE PropN-ted-PropN kyA karawA hE.
 
 Hindi meaning using Stanford parser 2.95
 Are a dog and a cat here? 
@@ -455,7 +455,7 @@ usane usakI umra kA anxAja lagAne ke lie muJe pUCA.
 
 Hindi meaning using Stanford parser 2.110
 John is less fat than Tom. 
-joYna Tom kI apekRA kama motA hE.
+joYna PropN-tom-PropN kI apekRA kama motA hE.
 
 Hindi meaning using Stanford parser 2.111
 I knew who would come to the party. 
@@ -484,7 +484,7 @@ vaha usake boYsa kI AzKoM meM eka CotA AxamI hE.
 
 Hindi meaning using Stanford parser 2.117
 We camped on Nilgiri hills during summer. 
-hamane grIRma ke xOrAna Nilgiri pahAdiyoM para padAva dAlA.
+hamane grIRma ke xOrAna PropN-nilgiri-PropN pahAdiyoM para padAva dAlA.
 
 Hindi meaning using Stanford parser 2.118
 The soldiers were called out for the war. 
@@ -508,7 +508,7 @@ vaha eka vaPAxAra pawi Ora piwA hE.
 
 Hindi meaning using Stanford parser 2.123
 Sita is baking breads for breakfast. 
-Sita jalapAna ke lie breda sezka rahI hE.
+PropN-sita-PropN jalapAna ke lie breda sezka rahI hE.
 
 Hindi meaning using Stanford parser 2.124
 Last week I saw a great movie. 
@@ -517,7 +517,7 @@ mEMne piCale sapwAha eka baDiyA calaciwra xeKA.
 
 Hindi meaning using Stanford parser 2.125
 The idol was a beautiful piece of excellent workmanship. 
-prawimA uwwama kArIgarI kI eka sunxara kalAkquwi WI.
+prawimA uwwama kArIgarI kI eka sunxara kalAkqwi WI.
 
 Hindi meaning using Stanford parser 2.126
 The water came above our shoulder. 
@@ -559,7 +559,7 @@ usane eka gahare kuze se pAnI bAhara nikAlA.
 
 Hindi meaning using Stanford parser 2.135
 We went to Paris on Sarah's advice. 
-hama Sarah kI salAha para Paris gaye.
+hama PropN-sarah-PropN kI salAha para PropN-paris-PropN gaye.
 
 Hindi meaning using Stanford parser 2.136
 She was afraid for her children. 
@@ -607,11 +607,11 @@ sipAhI policestation ko usako le gayA.
 
 Hindi meaning using Stanford parser 2.147
 It is likely that Rod died. 
-yaha samBava hE ki Rod mara gayA.
+yaha samBava hE ki PropN-rod-PropN mara gayA.
 
 Hindi meaning using Stanford parser 2.148
 He is known as the Einstein of India. 
-vaha BArawa ke Einstein ke nAma se jAnA jAwA hE.
+vaha BArawa ke PropN-einstein-PropN ke nAma se jAnA jAwA hE.
 
 Hindi meaning using Stanford parser 2.149
 They divided the money up among the children. 
@@ -632,7 +632,7 @@ xOda meM praWama kOna AyA?
 
 Hindi meaning using Stanford parser 2.153
 There was an attempt to kill Rod. 
-Rod ko mArane ke lie eka prayAsa WA.
+PropN-rod-PropN ko mArane ke lie eka prayAsa WA.
 
 Hindi meaning using Stanford parser 2.154
 The recent advertising campaign has had a marked effect on sales. 
@@ -673,11 +673,11 @@ mEM cinwiwa hUz ki mEM burI waraha se usako kRawi_pahuzcA cukA hUz.
 
 Hindi meaning using Stanford parser 2.163
 Dick is important to fix the problem. 
-Dick samasyA ko sulaJAne ke lie mahawvapUrNa hE.
+PropN-dick-PropN samasyA ko sulaJAne ke lie mahawvapUrNa hE.
 
 Hindi meaning using Stanford parser 2.164
 Anne told me I would almost certainly be hired. 
-Anne ne muJe bawAyA ki muJe lagaBaga niSciwa rUpa se kAma xiyA jAegA.
+PropN-anne-PropN ne muJe bawAyA ki muJe lagaBaga niSciwa rUpa se kAma xiyA jAegA.
 
 Hindi meaning using Stanford parser 2.165
 The shadow travels with the sun. 
@@ -693,11 +693,11 @@ vaha usake BUwapUrva KilAdiyoM ke viruxXa eka PutabAla mEca KelegA.
 
 Hindi meaning using Stanford parser 2.168
 They are playing an important match against Liverpool on Saturday. 
-ve SanivAra ko Liverpool ke viruxXa mahawvapUrNa mEca Kela rahe hEM.
+ve SanivAra ko PropN-liverpool-PropN ke viruxXa mahawvapUrNa mEca Kela rahe hEM.
 
 Hindi meaning using Stanford parser 2.169
 I was told the whole story by Maybeline. 
-muJe Maybeline ke xvArA pUrI kahAnI bawAI gayI WI.
+muJe PropN-maybeline-PropN ke xvArA pUrI kahAnI bawAI gayI WI.
 
 Hindi meaning using Stanford parser 2.170
 She is full of bright ideas. 
@@ -765,7 +765,7 @@ isane usa Cote Cexa meM se usakA SarIra nikAlane ke lie safGarRa kiyA.
 
 Hindi meaning using Stanford parser 2.186
 She is a great fan of Lata. 
-vaha Lata kI eka badI praSaMsaka hE.
+vaha PropN-lata-PropN kI eka badI praSaMsaka hE.
 
 Hindi meaning using Stanford parser 2.187
 He was a football fan. 
@@ -798,7 +798,7 @@ mEM cinwiwa hUz Apa pUrI waraha se praSna galawa_samaJa cuke hEM.
 
 Hindi meaning using Stanford parser 2.194
 The big question on everybody's mind is who killed OJ. 
-prawyeka vyakwi ke mana meM badA praSna hE ki OJ ko kisane mArA.
+prawyeka vyakwi ke mana meM badA praSna hE ki PropN-oj-PropN ko kisane mArA.
 
 Hindi meaning using Stanford parser 2.195
 Last Tuesday was really fun. 
@@ -806,11 +806,11 @@ piCalA mafgalavAra vAswava meM majA WA.
 
 Hindi meaning using Stanford parser 2.196
 This is my friend Bob. 
-yaha merA miwra Bob hE.
+yaha merA miwra PropN-bob-PropN hE.
 
 Hindi meaning using Stanford parser 2.197
 We ate at Joe's Diner last week. 
-hamane piCale sapwAha Joe ke Diner meM KAyA.
+hamane piCale sapwAha PropN-joe-PropN ke PropN-diner-PropN meM KAyA.
 
 Hindi meaning using Stanford parser 2.198
 How did John do it? 
@@ -822,11 +822,11 @@ mukkA peta meM usako lagA.
 
 Hindi meaning using Stanford parser 2.200
 It is clear who killed Rod. 
-yaha spaRta hE Rod ko kisane mArA.
+yaha spaRta hE PropN-rod-PropN ko kisane mArA.
 
 Hindi meaning using Stanford parser 2.201
 We are from the planet Gorpon. 
-hama graha Gorpon se hEM.
+hama graha PropN-gorpon-PropN se hEM.
 
 Hindi meaning using Stanford parser 2.202
 The best costumes got prizes. 
@@ -863,7 +863,7 @@ vixyArWiyoM kA sonA eka badI samasyA ho rahA hE.
 
 Hindi meaning using Stanford parser 2.210
 Joan Smith is the president of the company. 
-Joan Smith kampanI kA aXyakRa hE.
+PropN-joan-PropN PropN-smith-PropN kampanI kA aXyakRa hE.
 
 Hindi meaning using Stanford parser 2.211
 The explosion damaged his hearing. 
@@ -905,7 +905,7 @@ yaxi hama lohA garama karawe hEM wo yaha lAla howA hE.
 
 Hindi meaning using Stanford parser 2.220
 John is more intelligent than Tom. 
-joYna Tom kI apekRA aXika buxXimAna hE.
+joYna PropN-tom-PropN kI apekRA aXika buxXimAna hE.
 
 Hindi meaning using Stanford parser 2.221
 The sparrow made a beautiful nest. 
@@ -1015,7 +1015,7 @@ vaha eka badA Kela praSaMsaka hE.
 
 Hindi meaning using Stanford parser 2.247
 I live at 805 West Indiana Street. 
-mEM 805 West Indiana Street meM rahawA hUz.
+mEM 805 PropN-west-PropN PropN-indiana-PropN PropN-street-PropN meM rahawA hUz.
 
 Hindi meaning using Stanford parser 2.248
 It was a completely wasted journey. 
@@ -1027,7 +1027,7 @@ mere pAsa bahuwa jyAxA pEsA nahIM hE.
 
 Hindi meaning using Stanford parser 2.250
 Dalai Lama is the abbot of the Tibetian monastery. 
-Dalai Lama Tibetian maTa kA maTAXyakRa hE.
+PropN-dalai-PropN PropN-lama-PropN PropN-tibetian-PropN maTa kA maTAXyakRa hE.
 
 Hindi meaning using Stanford parser 2.251
 There is abject poverty in India. 
@@ -1055,7 +1055,7 @@ kuCa vixyAlaya pATyakramewara kriyA kalApa ko mahawva nahIM xewe hEM.
 
 Hindi meaning using Stanford parser 2.257
 The Inspector made an accidental inspection of the school. 
-Inspector ne vixyAlaya kA Akasmika nirIkRaNa kiyA.
+PropN-inspector-PropN ne vixyAlaya kA Akasmika nirIkRaNa kiyA.
 
 Hindi meaning using Stanford parser 2.258
 The priest granted absolution for John's sins. 
@@ -1099,7 +1099,7 @@ xOdane_ke_liye_bane mArga kA AKirI BAga kaTina WA kyozki mEM havA ke viruxXa xOd
 
 Hindi meaning using Stanford parser 2.268
 The people of Orissa are facing grave adversities due to the cyclone. 
-Orissa ke loga wUPAna ke kAraNa gamBIra kaTinAiyoM kA sAmanA_kara rahe hEM.
+PropN-orissa-PropN ke loga wUPAna ke kAraNa gamBIra kaTinAiyoM kA sAmanA_kara rahe hEM.
 
 Hindi meaning using Stanford parser 2.269
 He commented that the two essays were rather similar. 
@@ -1123,7 +1123,7 @@ muJe AScarya howA hE ki joYna kahAz hE.
 
 Hindi meaning using Stanford parser 2.274
 Clinton announced on Tuesday a bold new proposal. 
-Clinton ne eka nirBIka naye praswAva kI mafgalavAra ko GoRaNA kI.
+PropN-clinton-PropN ne eka nirBIka naye praswAva kI mafgalavAra ko GoRaNA kI.
 Clinton ne mafgalavAra ko eka nirBIka naye praswAva kI GoRaNA kI.
 
 Hindi meaning using Stanford parser 2.275
@@ -1168,7 +1168,7 @@ kharif pExAvAra kI upaja isa qwu acCI nahIM WI.
 
 Hindi meaning using Stanford parser 2.285
 The Master said, if I did not go, how would you ever see? 
-Master ne kahA, ki yaxi mEM nahIM gayA WA, wo Apa kaBI BI kEse xeKeMge?
+PropN-master-PropN ne kahA, ki yaxi mEM nahIM gayA WA, wo Apa kaBI BI kEse xeKeMge?
 
 Hindi meaning using Stanford parser 2.286
 The letter was clearly the product of a twisted mind. 
@@ -1182,7 +1182,7 @@ mEM aba uwanA aXika bAhara_nahIM jAwA hUz.
 
 Hindi meaning using Stanford parser 2.288
 He lives at Chandinichok in Delhi in India. 
-vaha BArawa meM xillI meM Chandinichok meM rahawA hE.
+vaha BArawa meM xillI meM PropN-chandinichok-PropN meM rahawA hE.
 
 Hindi meaning using Stanford parser 2.289
 Who translated the sentence for the student? 
@@ -1190,7 +1190,7 @@ vixyArWI ke lie vAkya kisane anuvAxa kiyA?
 
 Hindi meaning using Stanford parser 2.290
 Espresso is a coffee drink. 
-Espresso eka koYPI peya_yA Sarabawa hE.
+PropN-espresso-PropN eka koYPI peya_yA Sarabawa hE.
 
 Hindi meaning using Stanford parser 2.291
 I gave him for his birthday a very expensive present. 
@@ -1233,7 +1233,7 @@ mEM Apake varNana se nahIM socawA hUz ki mEM isakA Ananxa uTAUzgA.
 
 Hindi meaning using Stanford parser 2.300
 The lawyer pointed out that Clinton did not actually kiss Monica. 
-vakIla ne XyAna_AkarRiwa kiyA ki Clinton ne Monica ko vAswava meM nahIM cUmA WA.
+vakIla ne XyAna_AkarRiwa kiyA ki PropN-clinton-PropN ne PropN-monica-PropN ko vAswava meM nahIM cUmA WA.
 vakIla ne XyAna_AkarRiwa kiyA ki Clinton ne vAswava meM Monica ko nahIM cUmA WA.
 
 Hindi meaning using Stanford parser 3.1
@@ -1254,7 +1254,7 @@ muJe AScarya howA hE ki joYna ne yaha kEse kiyA.
 
 Hindi meaning using Stanford parser 3.5
 I told Margaret on Tuesday that I thought she would probably be hired. 
-mEMne mafgalavAra ko Margaret ko bawAyA ki mEMne socA ki usako samBavawaH kAma xiyA jAegA.
+mEMne mafgalavAra ko PropN-margaret-PropN ko bawAyA ki mEMne socA ki usako samBavawaH kAma xiyA jAegA.
 
 Hindi meaning using Stanford parser 3.6
 High income taxes are important. 
@@ -1295,7 +1295,7 @@ bahuwa sAre loga bola sakawe hEM paranwu sirPa kuCa kara sakawe hEM.
 
 Hindi meaning using Stanford parser 3.15
 Actress Whoopi Goldberg and singer Michael Jackson attended the ceremony. 
-Actress Whoopi Goldberg Ora gAyaka Michael Jackson samAroha meM upasWiwa hue.
+PropN-actress-PropN PropN-whoopi-PropN PropN-goldberg-PropN Ora gAyaka PropN-michael-PropN PropN-jackson-PropN samAroha meM upasWiwa hue.
 
 Hindi meaning using Stanford parser 3.16
 Failure to comply may result in dismissal. 
@@ -1354,11 +1354,11 @@ kyofki mEM afgrejI jAnawA hUz, isaliye vaha muJase bolA.
 
 Hindi meaning using Stanford parser 3.29
 Mysore is also known as the city of palaces. 
-Mysore mahaloM ke Sahara ke nAma se BI jAnA jAwA hE.
+PropN-mysore-PropN mahaloM ke Sahara ke nAma se BI jAnA jAwA hE.
 
 Hindi meaning using Stanford parser 3.30
 Kufri is a small hill station near shimla. 
-Kufri shimla ke nikata eka CotA parvawIya sWAna hE.
+PropN-kufri-PropN shimla ke nikata eka CotA parvawIya sWAna hE.
 
 Hindi meaning using Stanford parser 3.31
 The girl who you called yesterday has arrived. 
@@ -1373,12 +1373,12 @@ jisane cUhA nigalA vaha sAzpa Uzce_svara meM PuPakArA.
 
 Hindi meaning using Stanford parser 3.33
 The dog which Chris bought is really ugly. 
-jise Chris ne KarIxA vaha kuwwA vAswava meM kurUpa hE.
+jise PropN-chris-PropN ne KarIxA vaha kuwwA vAswava meM kurUpa hE.
 Chris ne jise KarIxA vaha kuwwA vAswava meM kurUpa hE.
 
 Hindi meaning using Stanford parser 3.34
 Phil gave me a sweater which he bought in Paris. 
-Phil ne vaha svetara jise usane Paris meM KarIxA muJe xiyA.
+PropN-phil-PropN ne vaha svetara muJe xiyA jise usane PropN-paris-PropN meM KarIxA.
 Phil ne vaha svetara muJe xiyA usane jise Paris meM KarIxA.
 Phil ne vaha svetara muJe xiyA jise usane Paris meM KarIxA.
 Phil ne jise usane Paris meM KarIxA vaha svetara muJe xiyA.
@@ -1421,7 +1421,7 @@ mEM Apako vaha Gara xiKAUzgA jise mEMne KarIxA.
 
 Hindi meaning using Stanford parser 3.42
 Shivaji was one of the most powerful rulers in 1600. 
-Shivaji 1600 meM sabase aXika SakwiSAlI SAsakoM meM se eka WA.
+PropN-shivaji-PropN 1600 meM sabase aXika SakwiSAlI SAsakoM meM se eka WA.
 
 Hindi meaning using Stanford parser 3.43
 Ayodhya during ancient times was known as kaushaldesa. 
@@ -1429,7 +1429,7 @@ prAcIna kAla ke xOrAna Ayodhya kaushaldesa ke nAma se jAnA jAwA WA.
 
 Hindi meaning using Stanford parser 3.44
 Golconda fort is situated on the western outskirts of hyderabad. 
-Golconda kilA hyderabad ke paScimI bAharI hisse meM hE.
+PropN-golconda-PropN kilA PropN-hyderabad-PropN ke paScimI bAharI hisse meM hE.
 
 Hindi meaning using Stanford parser 3.45
 Jumma masjid is considered to be one of the most beautiful mosques in western india. 
@@ -1553,7 +1553,7 @@ nahIM, vaha aSuBa somavAra nahIM WA.
 
 Hindi meaning using Stanford parser 3.74
 The President's address to the nation was broadcasted across the country. 
-rARtra ke lie President kA samboXana pUre_xeSa meM prasAriwa kiyA gayA WA.
+rARtra ke lie PropN-president-PropN kA samboXana pUre_xeSa meM prasAriwa kiyA gayA WA.
 
 Hindi meaning using Stanford parser 3.75
 Still, fund groups are not taking any chances. 
@@ -1573,7 +1573,7 @@ mEM kala Apako kuCa rucikara waWya bawAUzgA.
 
 Hindi meaning using Stanford parser 3.79
 At this point, the Dow was down about 35 points. 
-isa samaya para, Dow lagaBaga 35 pOintsa nIce WA.
+isa samaya para, PropN-dow-PropN lagaBaga 35 pOintsa nIce WA.
 
 Hindi meaning using Stanford parser 3.80
 Do not send the message by radio. 
@@ -1585,7 +1585,7 @@ viRaya usake xvArA samaJAyA gayA WA.
 
 Hindi meaning using Stanford parser 3.82
 He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
-usane kahA ki Ese pariNAmoM ko Japan ke sAWa U.S. vyApAra GAtA GatAne meM "dOlara meM Ora sEnta meM mApane yogya" honA cAhie.
+usane kahA ki Ese pariNAmoM ko PropN-japan-PropN ke sAWa PropN-u.s.-PropN vyApAra GAtA GatAne meM "dOlara meM Ora sEnta meM mApane yogya" honA cAhie.
 
 Hindi meaning using Stanford parser 3.83
 Go straight and take a right turn. 
@@ -1605,7 +1605,7 @@ pacAsa logoM ne naye praswAva ke viruxXa mawa xiyA.
 
 Hindi meaning using Stanford parser 3.87
 Mandi is comparatively hotter than other hill stations of himachal pradesh. 
-Mandi himachal pradesh ke anya pahAdI steSanoM kI apekRA wulanAwmaka xqRti se aXika garama hE.
+PropN-mandi-PropN himachal pradesh ke anya pahAdI steSanoM kI apekRA wulanAwmaka xqRti se aXika garama hE.
 
 Hindi meaning using Stanford parser 3.88
 Most of the inexpensive budget accommodation is in taj ganj. 
@@ -1622,7 +1622,7 @@ landana meM sPatika mahala kI lAinoM para banA gilAsa Gara isa bqhaw uxyAna meM 
 
 Hindi meaning using Stanford parser 3.91
 Mahadevi Verma wrote many poems. 
-Mahadevi Verma ne bahuwa sArI kaviwAez liKIM.
+PropN-mahadevi-PropN PropN-verma-PropN ne bahuwa sArI kaviwAez liKIM.
 
 Hindi meaning using Stanford parser 3.92
 Soccer is my most favourite sport. 
@@ -1638,7 +1638,7 @@ Sorabe ko aXika namaka kI AvaSyakawA hE.
 
 Hindi meaning using Stanford parser 3.95
 My car broke down when I reached Lalitpur. 
-merI gAdI KarAba_ho gaI mEM Lalitpur jaba pahuzcA.
+merI gAdI KarAba_ho gaI mEM PropN-lalitpur-PropN jaba pahuzcA.
 
 Hindi meaning using Stanford parser 3.96
 His wife has had a baby. 
@@ -1646,7 +1646,7 @@ usakI pawnI kA SiSU WA.
 
 Hindi meaning using Stanford parser 3.97
 It is Jane who wants to do it. 
-Jane hE jo yaha karane ke lie cAhawA hE.
+PropN-jane-PropN hE jo yaha karane ke lie cAhawA hE.
 yaha karane ke lie jo cAhawA hE Jane hE.
 
 Hindi meaning using Stanford parser 3.98
@@ -1671,7 +1671,7 @@ vaha kAgaja para kAma karawI hE kyozki vaha safgaNaka nApasanxa karawI hE.
 
 Hindi meaning using Stanford parser 4.3
 I read a recent paper in the Journal of Medicine. 
-mEMne Medicine ke Journal meM eka hAla kA leKapawra paDA.
+mEMne PropN-medicine-PropN ke PropN-journal-PropN meM eka hAla kA leKapawra paDA.
 
 Hindi meaning using Stanford parser 4.4
 I read about the train robbery in today's paper. 
@@ -1687,7 +1687,7 @@ yaha jarnala kagajI rUpa meM upalabXa hE.
 
 Hindi meaning using Stanford parser 4.7
 Almora is a small town in Uttarakhanda state. 
-Almora Uttarakhanda rAjya meM eka CotA nagara hE.
+PropN-almora-PropN PropN-uttarakhanda-PropN rAjya meM eka CotA nagara hE.
 
 Hindi meaning using Stanford parser 4.8
 This card is printed on recycled paper. 
@@ -1731,15 +1731,15 @@ kullu GAtI ISvara kI GAtI ke nAma se BI jAnI jAwI hE.
 
 Hindi meaning using Stanford parser 4.18
 Chaturbhuj temple is built on a massive stone platform. 
-Chaturbhuj manxira eka BArI pawWara pletaPoYrma para banAyA huA hE.
+PropN-chaturbhuj-PropN manxira eka BArI pawWara pletaPoYrma para banAyA huA hE.
 
 Hindi meaning using Stanford parser 4.19
 Puri is one of the most important pilgrimage centres for the hindus. 
-Puri hindus ke lie awi mahawvapUrNa wIrWayAwrA kenxroM meM se eka hE.
+PropN-puri-PropN hindus ke lie awi mahawvapUrNa wIrWayAwrA kenxroM meM se eka hE.
 
 Hindi meaning using Stanford parser 4.20
 He went to Agra and saw the Tajmahal. 
-vaha Agra ko gayA Ora Tajmahal ko xeKA.
+vaha PropN-agra-PropN ko gayA Ora PropN-tajmahal-PropN ko xeKA.
 
 Hindi meaning using Stanford parser 4.21
 They accused him of the crime. 
@@ -1755,11 +1755,11 @@ kullu GAtI ISvara kI GAtI ke nAma se BI jAnI jAwI hE.
 
 Hindi meaning using Stanford parser 4.24
 Queen victoria opened blackfriars bridge in november 1869. 
-Queen victoria ne navambara 1869 meM blackfriars pula KolA.
+PropN-queen-PropN PropN-victoria-PropN ne navambara 1869 meM blackfriars pula KolA.
 
 Hindi meaning using Stanford parser 4.25
 Srinagar is the capital city of Jammu and Kashmir and one of the most popular hill stations. 
-Srinagar Jammu kA Ora Kashmir kA pUFjI Sahara Ora sabase aXika lokapriya pahAdI steSanoM meM se eka hE.
+PropN-srinagar-PropN PropN-jammu-PropN kA Ora PropN-kashmir-PropN kA pUFjI Sahara Ora sabase aXika lokapriya pahAdI steSanoM meM se eka hE.
 
 Hindi meaning using Stanford parser 4.26
 The toltecs were the predominant civilization of this time. 
@@ -1771,7 +1771,7 @@ hama pEsA kEse iktTA kareMge?
 
 Hindi meaning using Stanford parser 4.28
 Rahul was the son of buddha and the name lahaul is derived from rahul. 
-Rahul buddha kA betA WA Ora nAma lahaul rahul se viSleRaNa huA hE.
+PropN-rahul-PropN buddha kA betA WA Ora nAma lahaul rahul se viSleRaNa huA hE.
 
 Hindi meaning using Stanford parser 4.29
 The white marbled moti masjid or the pearl mosque was the private mosque for aurangzeb. 
@@ -1779,15 +1779,15 @@ saPexa safgamaramara moti masjid yA mowI masjixa aurangzeb ke lie vyakwigawa mas
 
 Hindi meaning using Stanford parser 4.30
 Sarpa yakshi and Naga yakshi are the beloved consorts of Nagaraja. 
-Sarpa yakshi Ora Naga yakshi Nagaraja kI priya pawniyAz hEM.
+PropN-sarpa-PropN yakshi Ora PropN-naga-PropN yakshi PropN-nagaraja-PropN kI priya pawniyAz hEM.
 
 Hindi meaning using Stanford parser 4.31
 Rainwear is a must if you are visiting between june and september. 
-Rainwear AvaSyaka hE yaxi Apa jUna ke bIca Ora siwambara ke bIca xeKane_jA rahe hEM.
+PropN-rainwear-PropN AvaSyaka hE yaxi Apa jUna ke bIca Ora siwambara ke bIca xeKane_jA rahe hEM.
 
 Hindi meaning using Stanford parser 4.32
 Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival. 
-Allahabad usake vArRika magh mele ke lie (Cote kumbh mele) Ora rafgIna dussehra wyOhAra ke lie BI jAnA jAwA hE.
+PropN-allahabad-PropN usake vArRika magh mele ke lie (Cote kumbh mele) Ora rafgIna dussehra wyOhAra ke lie BI jAnA jAwA hE.
 
 Hindi meaning using Stanford parser 4.33
 This old fort was built by sher shah in the 16th century. 
@@ -1807,7 +1807,7 @@ yaha sunxara imArawa lambAI meM 245 ft Ora cOdAI meM 156 ft hE.
 
 Hindi meaning using Stanford parser 4.37
 One can reach kumbhalgarh by road from udaipur (84km) and ranakpur which is 18km from kumbhalgarh. 
-koI BI udaipur se (84km) Ora ranakpur se sadaka se kumbhalgarh waka pahuzca sakawA hE jo kumbhalgarh se 18km hE.
+koI BI udaipur se (PropN-84km-PropN) Ora ranakpur se sadaka se kumbhalgarh waka pahuzca sakawA hE jo kumbhalgarh se PropN-18km-PropN hE.
 
 Hindi meaning using Stanford parser 4.38
 She is ugly and fat. 
@@ -1823,7 +1823,7 @@ vaha sunxara Ora buxXimAna hE.
 
 Hindi meaning using Stanford parser 4.41
 Mary, Joe, Sita, Geeta and Louise are coming to the party. 
-Mary, Joe, Sita, Geeta Ora Louise pArtI ko A rahIM hEM.
+PropN-mary-PropN, PropN-joe-PropN, PropN-sita-PropN, PropN-geeta-PropN Ora PropN-louise-PropN pArtI ko A rahIM hEM.
 
 Hindi meaning using Stanford parser 4.42
 The government's action was unusual. 
@@ -1935,7 +1935,7 @@ mEM mere aXyayana meM vyaswa hUz.
 
 Hindi meaning using Stanford parser 4.69
 Rama said that Radha told a lie. 
-Rama ne kahA ki Radha ne JUTa bawAyA.
+PropN-rama-PropN ne kahA ki PropN-radha-PropN ne JUTa bawAyA.
 
 Hindi meaning using Stanford parser 4.70
 The dog who chased me was black. 
@@ -1969,12 +1969,12 @@ parisWiwiyAz_kuCa_jyAxA_hI_KarAba_ho_gayI .
 
 Hindi meaning using Stanford parser 4.77
 SOUTH AFRICA FREED the ANC's Sisulu and seven other political prisoners. 
-SOUTH AFRICA ne ANC kA Sisulu Ora sAwa anya rAjanEwika banxiyoM ko mukwa kiyA.
+PropN-south-PropN PropN-africa-PropN ne PropN-anc-PropN kA PropN-sisulu-PropN Ora sAwa anya rAjanEwika banxiyoM ko mukwa kiyA.
 SOUTH AFRICA ne ANC ke Sisulu Ora sAwa anya rAjanEwika banxI mukwa kie.
 
 Hindi meaning using Stanford parser 4.78
 If John was with Lisa last night, who went to the movie with Diane? 
-yaxi joYna piCalI rAwa Lisa ke sAWa WA, wo Diane ke sAWa calaciwra kOna gayA?
+yaxi joYna piCalI rAwa PropN-lisa-PropN ke sAWa WA, wo PropN-diane-PropN ke sAWa calaciwra kOna gayA?
 yaxi joYna , piCalI rAwa Lisa ke sAWa WA wo Diane ke sAWa calaciwra kOna gayA.
 
 Hindi meaning using Stanford parser 4.79
@@ -1987,7 +1987,7 @@ unako kArya karane xo.
 
 Hindi meaning using Stanford parser 4.81
 The Hawa mahal was built by the Maharaja Sawai Pratap Singh in 1799 AD and Lal Chand Usta was the architect. 
-Hawa mahal 1799 AD meM mahArAjA Sawai Pratap Singh ke xvArA banAyA gayA WA Ora Lal Chand Usta vAswukAra WA.
+PropN-hawa-PropN mahal 1799 PropN-ad-PropN meM mahArAjA PropN-sawai-PropN PropN-pratap-PropN PropN-singh-PropN ke xvArA banAyA gayA WA Ora PropN-lal-PropN PropN-chand-PropN PropN-usta-PropN vAswukAra WA.
 
 Hindi meaning using Stanford parser 4.82
 He is not related to me. 
@@ -1999,11 +1999,11 @@ jaba dOlara BArI girAvata meM ho, wo kenxrIya bEfka BI isako nahIM_roka sakawe h
 
 Hindi meaning using Stanford parser 4.84
 Mary is taller than Max. 
-Mary Max kI apekRA aXika lambI hE.
+PropN-mary-PropN PropN-max-PropN kI apekRA aXika lambI hE.
 
 Hindi meaning using Stanford parser 4.85
 Mary is the tallest of all the students. 
-Mary saBI vixyArWiyoM meM se sabase aXika lambI hE.
+PropN-mary-PropN saBI vixyArWiyoM meM se sabase aXika lambI hE.
 
 Hindi meaning using Stanford parser 4.86
 My dog is the biggest of all the dogs in the neighborhood. 
@@ -2011,6 +2011,7 @@ merA kuwwA padosa meM saBI kuwwoM meM se sabase aXika badA hE.
 
 Hindi meaning using Stanford parser 4.87
 Health is more important than money. 
-Health pEse kI apekRA aXika mahawvapUrNa hE.
+PropN-health-PropN pEse kI apekRA aXika mahawvapUrNa hE.
 
+Calling Transliteration
 Calling Interface related programs

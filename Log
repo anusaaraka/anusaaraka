@@ -3730,4 +3730,25 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 		phrasal.test.ini
 		phrasal.final.ini
 		phrasal.final.binwts
-2.Updated Log.	
+2.Uncommented transliteration related code in following files:
+	* Anu_clp_files/hindi_meaning.clp
+	* Anu_clp_files/run_modules_link.bat
+	* Anu_clp_files/run_modules_ol.bat
+	* Anu_clp_files/run_modules_std.bat
+	* Anu_outputs/sd_ver_output
+	* bin/Anusaaraka.sh
+	* bin/Anusaaraka_berkeley.sh
+	* bin/Anusaaraka_link.sh
+	* bin/Anusaaraka_stanford.sh
+	* bin/Anusaaraka_stanford_SMT.sh
+	* bin/run_sentence_link.sh
+	* bin/run_sentence_ol.sh
+	* bin/run_sentence_stanford.sh
+	* bin/run_sentence_stanford_SMT.sh
+	* miscellaneous/SMT/alignment/browser/run_align_browser.sh
+	* miscellaneous/transliteration/work/path_for_transliteration
+	* miscellaneous/transliteration/work/phrasal-mert/phrasal.test.ini
+	* shell_scripts/ClipsToAnu_browser_intfc.sh
+	* shell_scripts/anu_compile.sh
+3.In WSD: Modified piece.clp
+4.Updated Log.	

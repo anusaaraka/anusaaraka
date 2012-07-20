@@ -1,4 +1,4 @@
-; (defglobal ?*PropN_file* =  p_noun)
+ (defglobal ?*PropN_file* =  p_noun)
  (defglobal ?*hin_mng_file* = fp)
  (defglobal ?*hin_mng_file1* = fp1)
 
@@ -432,22 +432,22 @@
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
-;  (defrule test_for_PropN
-;  (declare (salience 5400))
-;  (id-cat_coarse ?id PropN)
-;  (id-word ?id ?word)
-;  (id-original_word ?id  ?original_wrd)
-;  ?mng<-(meaning_to_be_decided ?id)
-;  (test (neq (numberp ?original_wrd) TRUE))
-;  =>
-;       (retract ?mng)
-;       (if (str-index "'s" ?word) then (bind ?word (sub-string 1 (- (str-index "'s" ?word) 1) ?word)))
-;       (bind ?wx_notation (str-cat "@PropN-" ?word "-PropN")) 
-;       (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?wx_notation"   transliterate_mng)" crlf)
-;       (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?wx_notation"   transliterate_mng "?id")" crlf)
-;       (printout ?*PropN_file* ?word crlf)
-; )
-; ;--------------------------------------------------------------------------------------------------------------
+  (defrule test_for_PropN
+  (declare (salience 5400))
+  (id-cat_coarse ?id PropN)
+  (id-word ?id ?word)
+  (id-original_word ?id  ?original_wrd)
+  ?mng<-(meaning_to_be_decided ?id)
+  (test (neq (numberp ?original_wrd) TRUE))
+  =>
+       (retract ?mng)
+       (if (str-index "'s" ?word) then (bind ?word (sub-string 1 (- (str-index "'s" ?word) 1) ?word)))
+       (bind ?wx_notation (str-cat "@PropN-" ?word "-PropN")) 
+       (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?wx_notation"   transliterate_mng)" crlf)
+       (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?wx_notation"   transliterate_mng "?id")" crlf)
+       (printout ?*PropN_file* ?word crlf)
+ )
+ ;--------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (04-02-12)
  ;That would be the lowest level since the early 1970s.
  ;Seven of nine states have grown each year since 1980, including New York, which lost 4% of its population during the 1970s.

@@ -24,9 +24,9 @@
 (subject-subject_samAnAXikaraNa  ?id1  ?id)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id kalAkquwi))
+(assert (id-wsd_root_mng ?id kalAkqwi));Modified 'kalAkquwi to kalAkqwi' by Roja as Suggested by Chaitanya Sir(20-07-12)
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  piece.clp    piece2   "  ?id "   kalAkquwi )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  piece.clp    piece2   "  ?id "   kalAkqwi )" crlf))
 )
 
 ;"piece","N","1.tukadA"
