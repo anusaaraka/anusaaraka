@@ -77,7 +77,7 @@ cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat chunk
 
  cat  para_sent_id_info.dat word.dat chunk.dat position.dat >>$MYPATH/$1_tmp/$2/facts_for_tran_html
 
- cat proper_nouns.dat >> $MYPATH/$1_tmp/proper_nouns_list
+# cat proper_nouns.dat >> $MYPATH/$1_tmp/proper_nouns_list
 
  sed -e 's/=/equal_to/g' < all_facts > all_facts_tmp
  mv all_facts_tmp all_facts

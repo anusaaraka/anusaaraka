@@ -36,8 +36,10 @@
  fi
 
  mkdir $MYPATH/tmp/$1_tmp
- cp $5 $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt
- cp $6 $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp.txt
+ $HOME_anu_test/Anu_src/identify-nonascii-chars.out $5 $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt
+ $HOME_anu_test/Anu_src/identify-nonascii-chars.out $6 $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp.txt
+# cp $5 $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt
+# cp $6 $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp.txt
 
 ###Added below loop for server purpose.
  if [ "$3" == "True" ] ; then 
@@ -51,12 +53,12 @@
  $HOME_anu_test/Anu/pre_process.sh $1 $MYPATH
  $HOME_anu_test/Anu/save_format.sh $1 $MYPATH
 
- sed 's/ /\n/g' $MYPATH/tmp/$1.snt |sed -n '/^[a-z0-9]/ !p' >$MYPATH/tmp/$1_tmp/proper_nouns_list_tmp.txt
- tr 'A-Z' 'a-z' < $MYPATH/tmp/$1_tmp/proper_nouns_list_tmp.txt > $MYPATH/tmp/$1_tmp/proper_nouns_list.txt
- cd $HOME_anu_test/miscellaneous/transliteration/work
- sh transliteration-script.sh $MYPATH/tmp/$1_tmp proper_nouns_list.txt 2>/dev/null 
- paste $MYPATH/tmp/$1_tmp/proper_nouns_list_tmp.txt $MYPATH/tmp/$1_tmp/proper_nouns_list.txt.wx |sed 's/^/(eng_word-man_wx_word\t/g' |sed 's/$/)/g' |sed 's/(eng_word-man_wx_word\t\t)/;~~~~~~~~~~/g' > $MYPATH/tmp/$1_tmp/wx_output.txt
-
+# sed 's/ /\n/g' $MYPATH/tmp/$1.snt |sed -n '/^[a-z0-9]/ !p' >$MYPATH/tmp/$1_tmp/proper_nouns_list_tmp.txt
+# tr 'A-Z' 'a-z' < $MYPATH/tmp/$1_tmp/proper_nouns_list_tmp.txt > $MYPATH/tmp/$1_tmp/proper_nouns_list.txt
+# cd $HOME_anu_test/miscellaneous/transliteration/work
+# sh transliteration-script.sh $MYPATH/tmp/$1_tmp proper_nouns_list.txt 2>/dev/null 
+# paste $MYPATH/tmp/$1_tmp/proper_nouns_list_tmp.txt $MYPATH/tmp/$1_tmp/proper_nouns_list.txt.wx |sed 's/^/(eng_word-man_wx_word\t/g' |sed 's/$/)/g' |sed 's/(eng_word-man_wx_word\t\t)/;~~~~~~~~~~/g' > $MYPATH/tmp/$1_tmp/wx_output.txt
+#
  echo "Saving word information"
  cd $HOME_anu_test/Anu_src
  ./word.out < $MYPATH/tmp/tmp_save_format/$1.fmt_split $MYPATH/tmp $1
@@ -75,7 +77,7 @@
 #  cd $HOME_anu_test/Anu_src
 #  ./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
-  sh replace-abbrevations.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org  
+  replace-abbrevations.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org  
   echo "Calling Stanford parser"
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
  #cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2012-01-06/
@@ -113,13 +115,13 @@
  python add-suf-into-chunks.py $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp.txt > $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp1.txt
 
   cd $MYPATH/tmp/$1_tmp
-  sed 's/,/ @PUNCT-Comma/g'  one_sen_per_line_manual_hindi_sen_tmp.txt  |  sed 's/\([^0-9]\)\./\1 @PUNCT-Dot/g' | sed 's/?/ @PUNCT-QuestionMark/g' | sed 's/``/ @PUNCT-DoubleQuote/g' | sed "s/''/ @PUNCT-DoubleQuote/g" | sed 's/;/ @PUNCT-Semicolon/g' | sed 's/:/ @PUNCT-Colon/g' |  sed "s/[\'\`\']/ @PUNCT-SingleQuote/g" | sed 's/(/ @PUNCT-OpenParen/g' | sed 's/)/ @PUNCT-ClosedParen/g' | sed 's/!/ @PUNCT-Exclamation/g' | sed 's/\$/ @SYM-Dollar/g' |  sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}' > one_sen_per_line_manual_hindi_sen.txt
+  sed 's/,/ @PUNCT-Comma/g'  one_sen_per_line_manual_hindi_sen_tmp.txt  |  sed 's/\([^0-9]\)\./\1 @PUNCT-Dot/g' | sed 's/?/ @PUNCT-QuestionMark/g' | sed 's/``/ @PUNCT-DoubleQuote/g' | sed "s/''/ @PUNCT-DoubleQuote/g" | sed 's/;/ @PUNCT-Semicolon/g' | sed 's/:/ @PUNCT-Colon/g' |  sed "s/[\'\`\']/ @PUNCT-SingleQuote/g" | sed 's/"/ @PUNCT-DoubleQuote/g' | sed 's/(/ @PUNCT-OpenParen/g' | sed 's/)/ @PUNCT-ClosedParen/g' | sed 's/!/ @PUNCT-Exclamation/g' | sed 's/\$/ @SYM-Dollar/g' |  sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}' | sed 's/nonascii/@nonascii/g' | sed 's/+/ @SYM-Plus/g' | sed 's/=/ @SYM-EqualTo/g' | sed 's/%/ @SYM-Percent/g' | sed 's/β/ @SYM-Beta/g' > one_sen_per_line_manual_hindi_sen.txt
 
   $HOME_anu_test/Anu_src/split_file.out one_sen_per_line_manual_hindi_sen.txt dir_names.txt manual_hindi_sen.dat
   sed 's/<\/Sentence>/<\/Sentence>\n;~~~~~~~~~~\n/g' shallow_parser_output_tmp1.txt > shallow_parser_output.txt
 
   $HOME_anu_test/Anu_src/split_file.out shallow_parser_output.txt dir_names.txt shallow_parser_output.dat
-  $HOME_anu_test/Anu_src/split_file.out wx_output.txt dir_names.txt wx_output.dat
+#  $HOME_anu_test/Anu_src/split_file.out wx_output.txt dir_names.txt wx_output.dat
   #########################################
 
   $HOME_anu_test/Anu_src/split_file.out sd-original-relations.txt  dir_names.txt  sd-original-relations.dat
@@ -138,9 +140,9 @@
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
 
- echo "Calling Transliteration"
- cd $HOME_anu_test/miscellaneous/transliteration/work
- sh run_transliteration.sh $MYPATH/tmp $1
+# echo "Calling Transliteration"
+# cd $HOME_anu_test/miscellaneous/transliteration/work
+# sh run_transliteration.sh $MYPATH/tmp $1
  
  cd $MYPATH/tmp/$1_tmp/
  echo "(defglobal ?*path* = $HOME_anu_test)" > path_for_html.clp

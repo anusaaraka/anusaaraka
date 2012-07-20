@@ -69,7 +69,7 @@
 /***************************************/
 /* LOCAL INTERNAL FUNCTION DEFINITIONS */
 /***************************************/
-
+   long long int llabs(long long int num);
    static void                    RemoveHashNode(void *,GENERIC_HN *,GENERIC_HN **,int,int);
    static void                    AddEphemeralHashNode(void *,GENERIC_HN *,struct ephemeron **,
                                                        int,int);
@@ -820,6 +820,7 @@ globle unsigned long HashExternalAddress(
       unsigned uv;
      } fis;
  
+   fis.uv = 0;
    fis.vv = theExternalAddress;
    tally = (fis.uv / 256);
    

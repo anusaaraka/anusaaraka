@@ -1,6 +1,6 @@
 /*
 ##############################################################################
-#
+#  Copyright (C) 2002-2012 Amba Kulkarni (ambapradeep@gmail.com)
 #  This program is free software; you can redistribute it and/or
 #  modify it under the terms of the GNU General Public License
 #  as published by the Free Software Foundation; either
@@ -17,7 +17,6 @@
 #  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 ##############################################################################
 */
- #include<string.h>
  char map[] = "zMHaAiIuUqVeEYVoOYkKgGfcCjJFtTdDNwWxXnYpPbBmyYrYlYYvSRsh AiIuUqVeEYVoOY_Z.";
 SPECIAL_CATEGORY [¡¢£]
 VOWEL_ALL [¤¥¦§¨©ª«¬­®¯°±²]
@@ -26,6 +25,7 @@ VOWEL_DRVD [«¯]
 VOWEL_ENGL [®²]
 HALANT è
 NUKTA é
+DANDA ê
 VOWEL_MATRA_ALL [ÚÛÜÝÞßàáâãäåæç]
 VOWEL_MATRA [ÚÛÜÝÞßáâåæ]
 VOWEL_MATRA_DRVD [àä]
@@ -39,14 +39,14 @@ CONSONANT_SYLLABIC_yY Î
 CONSONANT_SYLLABIC_rY Ð
 CONSONANT_SYLLABIC_lY Ò
 CONSONANT_SYLLABIC_lYY Ó
-NUMBER [0-9]
-ROM_WORD [A-Za-z]+
+NUMBER [ñ-ú]
+ROM_WORD [A-Za-z0-9]+
 %%
 {ROM_WORD}				{
 					printf("@");ECHO;
 					}
 {NUMBER}				{
-					printf("%c", yytext[0]);
+					printf("%c", yytext[0]-193);
 					}
 {CONSONANT_SYLLABIC}			{
 					printf("%ca",map[95 + yytext[0] ]);
@@ -142,6 +142,10 @@ ROM_WORD [A-Za-z]+
 
 {NUKTA}					{
 					printf("%c",map[95 + yytext[0] ]);
+					}
+
+{DANDA}{NUKTA}				{
+					printf("Z");
 					}
 
 {CONSONANT_SYLLABIC}{NUKTA}		{

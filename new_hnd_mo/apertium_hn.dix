@@ -8575,7 +8575,7 @@
 <e lm="bAlahaTa"><i>bAlahaTa</i><par n="kroXa/__n"/></e>
 <e lm="balahIna"><i>balahIna</i><par n="amIra/__adj"/></e>
 <e lm="balA"><i>balA</i><par n="ASA/__n"/></e>
-<e lm="bala"><i>bala</i><par n="kroXa/__n"/></e>
+<e lm="bala"><i>bala</i><par n="Gar/a__n"/></e>
 <e lm="BAla"><i>BAla</i><par n="kroXa/__n"/></e>
 <e lm="bAla"><i>bAl</i><par n="Gar/a__n"/></e>
 <e lm="BalA"><i>Bal</i><par n="regular__adj-noun"/></e>
@@ -8721,6 +8721,7 @@
 <e lm="baMxIGara"><i>baMxIGar</i><par n="Gar/a__n"/></e>
 <e lm="baMxIgqha"><i>baMxIgqh</i><par n="Gar/a__n"/></e>
 <e lm="baMxI"><i>baMx</i><par n="Axam/I__n"/></e>
+<e lm="baMxI"><i>baMx</i><par n="ladak/I__n"/></e>
 <e lm="baMxIKAnA"><i>baMxIKAn</i><par n="regular__adj-noun"/></e>
 <e lm="baMxiprawyakRIkaraNa"><i>baMxiprawyakRIkaraNa</i><par n="kroXa/__n"/></e>
 <e lm="baMxiSa"><i>baMxiS</i><par n="rAw/a__n"/></e>
@@ -26031,6 +26032,7 @@
 <e lm="sAra"><i>sAra</i><par n="kroXa/__n"/></e>
 <e lm="Sara"><i>Sar</i><par n="Gar/a__n"/></e>
 <e lm="sArA"><i>sAr</i><par n="kAl/A__adj"/></e>
+<e lm="sArA"><i>sAr</i><par n="kAl/A__n"/></e>
 <e lm="SarajjyowsnA"><i>SarajjyowsnA</i><par n="IrRyA/__n"/></e>
 <e lm="sarakA"><i>sarakA</i><par n="KA/__v"/></e>
 <e lm="saraka"><i>sarak</i><par n="uT/a__v"/></e>

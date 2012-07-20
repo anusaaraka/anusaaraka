@@ -13,9 +13,9 @@
        -- libgdbm-dev (to use gdbm), 
        -- gcc,
        -- g++ ,  
-       -- clips
        -- ant ( Anusaaraka will run without ant also so one can ignore the errors found while compiling it )
-       -- timeout    (this command is used to exit the CLIPS environment in the specific time.)
+       -- timeout (Please note that recent coreutils (>= 7.5-1) provide a timeout binary in it)  
+          (this command is used to exit the CLIPS environment in the specific time.)
        -- OpenLogos MT (OpenLogos package contains README, steps to Install it)
        -- goldendict (optional but desirable to use for viewing dictionaries)
     (NOTE:Check Readme for using 'goldendict' in miscellaneous/Dictionaries/Readme  

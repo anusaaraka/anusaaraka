@@ -59,7 +59,7 @@
  (not (meaning_has_been_decided ?id))
  (not (file_loaded ?id))
  =>
-        (bind ?file (str-cat ?*path* "/WSD/wsd_rules/" ?word ".clp"))
+        (bind ?file (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/" ?word ".clp"))
         (if (neq (load* ?file) FALSE) then
             (assert (file_loaded ?id))
        )
@@ -72,7 +72,7 @@
  (not (meaning_has_been_decided ?id))
  (not (file_loaded ?id))
  =>
-	(bind ?file (str-cat ?*path* "/WSD/wsd_rules/" ?word ".clp"))        
+	(bind ?file (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/" ?word ".clp"))        
 	(if (neq (load* ?file) FALSE) then
         	(assert (file_loaded ?id))
 	)
@@ -85,7 +85,7 @@
  (not (meaning_has_been_decided ?id))
  (not (file_loaded ?id))
  =>
-        (bind ?file (str-cat ?*path* "/WSD/wsd_rules/" ?root ".clp"))
+        (bind ?file (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/" ?root ".clp"))
         (if (neq (load* ?file) FALSE) then
             (assert (file_loaded ?id))
        )
@@ -101,7 +101,7 @@
  (or (word-morph (original_word  ?word)(root ?root)(suffix	ing))(word-morph (original_word  ?word)(root ?root)(suffix      en))(word-morph (original_word  ?word)(root ?root)(suffix      ed)))
  (not (file_loaded ?id))
   =>
-	(bind ?file (str-cat ?*path* "/WSD/wsd_rules/" ?root ".clp")	)
+	(bind ?file (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/" ?root ".clp")	)
         (if (neq (load* ?file) FALSE) then
             (assert (file_loaded ?id))
        	)

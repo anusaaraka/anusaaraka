@@ -42,6 +42,7 @@ $[0-9]		{printf("SYM-Dollar %c",yytext[1]);  }
 #[0-9]		{printf("SYM-Sharp %c",yytext[1]);  }
 =		{printf("SYM-EqualTo");		}	
 \+		{printf("SYM-Plus");		}
+β		{printf("SYM-Beta");		}
 
 (L[.]T[.]|n[.]m[.]|B[.]C[.]|A[.]D[.]|B[.]C[.]E[.]|C[.]E[.]|B[.]A[.]|B[.]S[.])[ ] 	{
 							while((len=strcspn(yytext,".")) < strlen(yytext))

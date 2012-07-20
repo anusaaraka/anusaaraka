@@ -33,7 +33,7 @@ sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id
 
  cat  para_sent_id_info.dat word.dat sd_chunk.dat position.dat hindi_punctuation.dat >>$MYPATH/$1_tmp/$2/facts_for_tran_html
  
- cat proper_nouns.dat >> $MYPATH/$1_tmp/proper_nouns_list
+# cat proper_nouns.dat >> $MYPATH/$1_tmp/proper_nouns_list
 
  cp hindi_sentence.dat hindi_sentence_tmp.dat
 

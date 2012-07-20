@@ -1,0 +1,26 @@
+Changes done in CLIPS-64 bit to get "system" command.
+====================================================
+
+In setup.h,
+----------
+Line no: 74, changed 
+	#define LINUX   0
+		to
+	#define LINUX   1
+
+Line no: 369, changed
+	#define  EMACS_EDITOR 1
+		to
+	#define  EMACS_EDITOR 0
+
+	(To avoid this type of errors 
+		edbasic.c: In function ‘ttopen’:
+		edbasic.c:1549: error: ‘TIOCGETP’ undeclared (first use in this function)
+	)
+
+in compile.sh,
+-------------
+gcc *.o -lgdbm -lm -o myclips
+	to
+gcc *.o -lgdbm -lm -lrt -o myclips   
+(Note::  -lrt option is used to avoid this error "undefined reference to `clock_gettime")

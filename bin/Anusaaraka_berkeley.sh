@@ -67,10 +67,11 @@
 #  cd $HOME_anu_test/Anu_src
 #  ./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
+  replace-abbrevations.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org  
   echo "Calling Berkeley parser" 
   cd $HOME_anu_test/Parsers/berkeley-parser/
-  java -mx500m  -jar berkeleyParser.jar -gr eng_sm6.gr -tokenize -inputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt -outputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley
- sed 's/(())/( (S ))\n/g' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley | sed 's/^(/(ROOT/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn 
+  java -mx500m  -jar berkeleyParser.jar -gr eng_sm6.gr -tokenize -inputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org -outputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley
+  sed 's/(())/( (S ))\n/g' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley | sed 's/^(/(ROOT/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn 
 
   echo "Calling Stanford parser"
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
@@ -110,9 +111,9 @@
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
 
- echo "Calling Transliteration"
- cd $HOME_anu_test/miscellaneous/transliteration/work
- sh run_transliteration.sh $MYPATH/tmp $1
+# echo "Calling Transliteration"
+# cd $HOME_anu_test/miscellaneous/transliteration/work
+# sh run_transliteration.sh $MYPATH/tmp $1
  
  cd $MYPATH/tmp/$1_tmp/
  echo "(defglobal ?*path* = $HOME_anu_test)" > path_for_html.clp

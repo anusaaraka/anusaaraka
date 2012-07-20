@@ -16,10 +16,10 @@
  ;-----------------------------------------------------------------------------------------------------------------------
  ; Anusaaraka shall allow users to access text in any Indian language after translation from the source language (i.e English or any other regional Indian language)
   (defrule that_is_rule
-  (id-original_word ?wid  ABBRThatis)
+  (id-original_word ?wid  i.e.);Modified ABBRThatis to i.e.  by Roja(18-07-12)
   (parserid-wordid  ?pid ?wid)
   (parser_id-cat_coarse ?pid ?cat)
-  (word-morph (original_word ABBRThatis)(root ?root)(category  ?cat)(suffix ?suf)(number ?num))
+  (word-morph (original_word i.e.)(root ?root)(category  ?cat)(suffix ?suf)(number ?num))
   ?f0<-(morph_analysis_to_be_choosen ?wid)
   =>
         (retract ?f0)

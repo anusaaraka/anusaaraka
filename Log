@@ -3590,7 +3590,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  28. Updated changes_in_databases.
  29. Updated Log
 
- 23-06-11
+ 29-06-11
  ========
  1. prepare_apertium_input.clp :
         Added   : PP_rule_adj_est and  PP_rule_adj_er
@@ -3625,9 +3625,98 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Added    :  kriya_obj_vibakthi_rule_from_dbase
  10. Modified get_conj_group and get_infinitive_pada rules in sd_pada.clp
  11. Modified anu_compile.sh and anu_compile_64bit.sh to generate kriyA_object_vib gdbm
- 12. Modified ber_ver_output link_ver_output  sd_ver_output and verified_output
- 13. Updated Science-dictionary.txt and hindi_tam_dictionary.txt
- 14. Updated changes_in_databases
- 15. Updated sd_verified (487)
- 16. Updated Log
+ 12. Handled Non ascii characters ::
+	a) Added identify-nonascii-chars.c and replace_nonascii-chars.c in Anu_src.
+	b) Added code to generate .out files for the above programes in shell_scripts/anu_compile.sh and 
+           shell_scripts/anu_compile_64bit.sh
+	c) Added code to run identify-nonascii-chars.c inside  Anu/stdenglish.sh
+	d) Modified  Anusaaraka_stanford_SMT.sh to handle nonascii characters.
+	e) Added code to replace non ascii characters in browser files in shell_scripts/ClipsToAnu_browser_intfc.sh and 
+	   miscellaneous/SMT/alignment/browser/run_align_browser.sh
+ 13. Modified ber_ver_output link_ver_output  sd_ver_output and verified_output
+ 14. Modified apertium_hn.dix
+ 15. Added "irreversibility" in apertium-en-hi.en.metadix 
+ 16. In add_snt_mrkr.lex, modified rule "'. " rule (to get sentence tag correctly)
+ 17. Added sed command to replace "(double quotes) in manual sentence. 
+ 18. Updated Science-dictionary.txt and hindi_tam_dictionary.txt
+ 19. Updated changes_in_databases
+ 20. Updated sd_verified (487)
+ 21. Updated Log
 
+ 19-07-12
+ ========
+ 1. Added β in standard_abbrevations.lex 
+ 2. Added β in mapping-punctuations.lex and modified rules to handle '+', '=', '%'
+ 3. Added sed command to replace β, + and = in manual sentences fact in Anusaaraka_stanford_SMT.sh, get_group_mng.sh and         replace-abbrevations.sh
+ 4. Updated CLIPS (to 5/31/08) Beta version.
+ 5. Modified setup.h inside CLIPS to get "system" command. 
+ 6. Modified compilation of CLIPS in anu_compile.sh
+ 7. Modified shell_scripts/remove_out-files.sh to remove out files inside CLIPS.
+ 8. Added '+' and 'β' in constituency_parse.l.
+ 9. Modified removing outfiles inside CLIPS in remove_out-files.sh
+10. In wx_utf8.c programme, 
+	* Changed from char * to void *
+	* Allocation of *utf8_string 
+	* Assigned returnValue
+	* Free the pointer *utf8_string
+11. In userfunctions.c , modified calling of wx_utf8.c as mentioned above.
+12. Modified 'Pre requisites' inside anu_testing README (removed clips and added comment near timeout)
+13. Modified compilation part in compile_bison.sh in Anu_src and debugging
+	* Similar changes have been done inside RASP/rasp3os/scripts/comp.sh
+14. Removed html_tag_sp.lex from pre-process.sh as its out dated ,
+	* moved html_tag_sp.lex file inside miscellaneous/Programs/removed_files
+15. Modified Makefile inside Anu/std_format/ to remove the compilation of html_tag_sp.lex
+16. Modified identify-nonascii-chars.c and replace_nonascii-chars.c to check file pointer is NULL and also added comments
+17. To get canonical form dictionaries::
+	* Added a c-programme get_canonical_form-dic.c to convert a given file to canonical form.
+	* Added a get_dictionary_in_canonical_form.sh and get_txt_files.sh to generate canonical form dictionaries.
+	* Added a Readme to run above files.
+	* Added files : list-left, list-right, list-two-side-hindi, list_Anu_data, list_Anu_data_compound and list_SMT
+	* Added myeq.c programme. 
+18. To get canonical form in WSD::
+	* Added a flex programme get_canonical_form_in_wsd.lex 
+	* Added get_canonical_form_wsd_rules.sh to generate WSD rules in canonical form.
+	* Added compile.sh to compile flex programe.
+19.To get canonical form in apertium hindi dictionary.
+	* get_canonical_dic.sh
+20.Modified shell_scripts/anu_compile.sh to generate canonical form dictionaries, WSD rules and apertium hindi dictionary.
+21.Changes the path of WSD/wsd_rules to WSD/wsd_rules/canonical_form_wsd_rules/ in following files :
+	run_modules_std.bat	wsd_meaning.clp		wsd_tam_meaning.clp
+22.Added changes, missing_category and missing_info files inside Anu_data/compound-matching/
+23.Modified acronyms-common_noun_compounds.txt and multi_word_expressions.txt and updated the changes in changes file.
+24.Modified "baMxi" to "baMxI" in female_list.txt
+25.In WSD:: Modified : last.clp and see.clp
+26.Added an entry in apertium_hn.dix
+27.Modified compilation of apertium_hn.dix in new_hnd_mo/compile.sh
+28.Removed shell_scripts/anu_compile_64bit.sh (as no difference between anu_compile_64bit.sh and anu_compile.sh)
+29.Updated shell_scripts/remove_out-files.sh.
+30.Modified smt_compile.sh to generate SMT dictionaries in canonical form.
+31.Updated Anusaaraka_stanford.sh and Anusaaraka_stanford_SMT.sh
+32.Removed Transliteration folder and all its related work are commented in following files:
+	* hindi_meaning.clp
+	* run_modules_link.bat
+	* run_modules_ol.bat
+	* run_modules_std.bat
+	* run_sentence_stanford.sh
+	* run_sentence_stanford_SMT.sh
+	* Anusaaraka_stanford.sh
+	* Anusaaraka_stanford_SMT.sh
+	* run_align_browser.sh
+	* anu_compile.sh
+	* ClipsToAnu_browser_intfc.sh
+	* sd_ver_output
+	* shell_scripts/remove_out-files.sh
+	* run_H_gen_SMT.bat
+	* Anusaaraka.sh
+	* Anusaaraka_berkeley.sh
+	* Anusaaraka_link.sh 
+	* Anusaaraka_ol.sh
+	* run_sentence_link.sh
+	* run_sentence_ol.sh
+34.Added sed commands to replace ABBR in save_format.sh  to solve the problem of mapping Abbrevations liek etc.
+35.Modified 'that_is_rule' in root_rule.clp
+36.Changed the mode of replace-abbrevations.sh
+37.Added few entries in apertium-en-hi.en.metadix and updated in changes_in_databases. 
+38.Updated changes_in_databases.
+39.Modified sd_ver_output, ber_ver_output, link_ver_output and verified_output
+40.Updated Log.

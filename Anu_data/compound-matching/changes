@@ -1,0 +1,51 @@
+Adding UNDEFINED category if category not present.
+
+In acronyms-common_noun_compounds.txt :: 
+=====================================
+Adding  UNDEFINED category :
+--------------------------
+MAC_protocol    mEka_protokoYla_#mEka_protokoYla_#0#RM
+T_flip-flop     tI_Plipa_PlEYApa_#tI_Plipa_PlEYApa_#0#RM
+
+####################################################################
+
+Removing following entries in multi_word_expressions.txt
+========================================================
+along_with      ke_sAWa#ke_sAWa#noun#2#RM
+#all_over       pUre_[->meM]#pUre_[->meM]#noun#2#RM
+#came_in        AyA#AyA#noun#2#RM
+#get_up uTa#uTa#noun#2#RM
+#in_order_to    karane_ke_liye[wAki]#karane_ke_liye[wAki]#noun#3#RM
+#_keep on_is_phrasal_verb_so_comment_it.        #"keep on" is phrasal verb so comment it.
+#keep_on        jArI_raKanA#jArI_raKanA#noun#2#RM
+#kind_of        waraha_kA#waraha_kA#noun#2#RM
+#Since_preps_are_moved,_this_also_gets_moved,_hence_not_grouped_at_this_stage.  #Since preps are moved, this also gets moved, hence not grouped at this stage.#-#Since preps are moved, this also gets moved, hence not grouped at this stage.#noun#14#RM
+#kinds_of       waraha_ke#waraha_ke#noun#2#RM
+#Since_preps_are_moved,_this_also_gets_moved,_hence_not_grouped_at_this_stage.  #Since preps are moved, this also gets moved, hence not grouped at this stage.#-#Since preps are moved, this also gets moved, hence not grouped at this stage.#noun#14#RM
+#of_all saba_meM#saba_meM#noun#1#RM
+#problem_solving        samasyA_hala#samasyA_hala#noun#2#RM
+#stand_for      prawIka_honA#prawIka_honA#noun#2#RM
+#the_same       samAna_rUpa_se#samAna_rUpa_se#noun#2#RM
+#used_to        AxI#AxI#noun#2#RM
+####################################################################
+In multi_word_expressions.txt
+-----------------------------
+missing_category :: these are the entries in which UNDEFINED is added
+other changes::
+from_inside     ke_anxara_se#ke_anxara_se#-#2#RM
+		to
+from_inside     ke_anxara_se#ke_anxara_se#preposition#2#RM
+according_to    ke_anusAra#ke_anusAra#-#2#RM
+		to
+according_to    ke_anusAra#ke_anusAra#preposition#2#RM
+along_with      Apake_sAWa#Apake_sAWa#2#RM
+		to
+along_with      Apake_sAWa#Apake_sAWa#preposition#2#RM
+Each_one_of_us  hamameM_se_prawyeka#-#prawyeka#noun#2#RM
+		to
+Each_one_of_us  hamameM_se_prawyeka#hamameM_se_prawyeka#noun#2#RM
+health_insurance        svAsWya_bImA#svAsWya_bImA#noun#RM
+		to
+health_insurance        svAsWya_bImA#svAsWya_bImA#noun#1#RM
+
+Doubt -->  missing_info file is doubt (yet to be solved)

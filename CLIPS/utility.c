@@ -1,7 +1,7 @@
    /*******************************************************/
    /*      "C" Language Integrated Production System      */
    /*                                                     */
-   /*             CLIPS Version 6.24  06/05/06            */
+   /*             CLIPS Version 6.30  03/05/08            */
    /*                                                     */
    /*                   UTILITY MODULE                    */
    /*******************************************************/
@@ -17,10 +17,14 @@
 /*                                                           */
 /* Contributing Programmer(s):                               */
 /*      Brian Dantes                                         */
+/*      Jeff Bezanson                                        */
+/*         www.cprogramming.com/tutorial/unicode.html        */
 /*                                                           */
 /* Revision History:                                         */
 /*                                                           */
 /*      6.24: Renamed BOOLEAN macro type to intBool.         */
+/*                                                           */
+/*      6.30: Added UTF-8 routines.                          */
 /*                                                           */
 /*************************************************************/
 
@@ -416,17 +420,12 @@ globle char *AppendToString(
    /*=========================================*/
 
    length = strlen(appendStr);
-   if (length + *oldPos + 1 > *oldMax)
-     {
-      oldStr = (char *) genrealloc(theEnv,oldStr,*oldMax,length + *oldPos + 1);
-      *oldMax = length + *oldPos + 1;
-     }
 
    /*==============================================================*/
    /* Return NULL if the old string was not successfully expanded. */
    /*==============================================================*/
 
-   if (oldStr == NULL) { return(NULL); }
+   if ((oldStr = EnlargeString(theEnv,length,oldStr,oldPos,oldMax)) == NULL) { return(NULL); }
 
    /*===============================================*/
    /* Append the new string to the expanded string. */
@@ -438,6 +437,84 @@ globle char *AppendToString(
    /*============================================================*/
    /* Return the expanded string containing the appended string. */
    /*============================================================*/
+
+   return(oldStr);
+  }
+
+/**********************************************************/
+/* InsertInString: Inserts a string within another string */
+/*   (expanding the other string if necessary).           */
+/**********************************************************/
+globle char *InsertInString(
+  void *theEnv,
+  char *insertStr,
+  size_t position,
+  char *oldStr,
+  size_t *oldPos,
+  size_t *oldMax)
+  {
+   size_t length;
+
+   /*=========================================*/
+   /* Expand the old string so it can contain */
+   /* the new string (if necessary).          */
+   /*=========================================*/
+
+   length = strlen(insertStr);
+
+   /*==============================================================*/
+   /* Return NULL if the old string was not successfully expanded. */
+   /*==============================================================*/
+
+   if ((oldStr = EnlargeString(theEnv,length,oldStr,oldPos,oldMax)) == NULL) { return(NULL); }
+
+   /*================================================================*/
+   /* Shift the contents to the right of insertion point so that the */
+   /* new text does not overwrite what is currently in the string.   */
+   /*================================================================*/
+   
+   memmove(&oldStr[position],&oldStr[position+length],*oldPos - position);
+
+   /*===============================================*/
+   /* Insert the new string in the expanded string. */
+   /*===============================================*/
+
+   genstrncpy(&oldStr[*oldPos],insertStr,length);
+   *oldPos += (int) length;
+
+   /*============================================================*/
+   /* Return the expanded string containing the appended string. */
+   /*============================================================*/
+
+   return(oldStr);
+  }
+  
+/*******************************************************************/
+/* EnlargeString: Enlarges a string by the specified amount.       */
+/*******************************************************************/
+globle char *EnlargeString(
+  void *theEnv,
+  size_t length,
+  char *oldStr,
+  size_t *oldPos,
+  size_t *oldMax)
+  {
+   /*=========================================*/
+   /* Expand the old string so it can contain */
+   /* the new string (if necessary).          */
+   /*=========================================*/
+
+   if (length + *oldPos + 1 > *oldMax)
+     {
+      oldStr = (char *) genrealloc(theEnv,oldStr,*oldMax,length + *oldPos + 1);
+      *oldMax = length + *oldPos + 1;
+     }
+
+   /*==============================================================*/
+   /* Return NULL if the old string was not successfully expanded. */
+   /*==============================================================*/
+
+   if (oldStr == NULL) { return(NULL); }
 
    return(oldStr);
   }
@@ -528,6 +605,17 @@ globle char *ExpandStringWithChar(
     }
   else
     {
+     /*===========================================================*/
+     /* First delete any UTF-8 multibyte continuation characters. */
+     /*===========================================================*/
+
+     while ((*pos > 1) && IsUTF8MultiByteContinuation(str[*pos - 1]))
+       { (*pos)--; }
+     
+     /*===================================================*/
+     /* Now delete the first byte of the UTF-8 character. */
+     /*===================================================*/
+     
      if (*pos > 0) (*pos)--;
      str[*pos] = '\0';
     }
@@ -720,7 +808,7 @@ globle unsigned long ItemHashValue(
 /*   application responsiveness when CLIPS  */
 /*   is running in the background.          */
 /********************************************/
-void YieldTime(
+globle void YieldTime(
   void *theEnv)
   {
    if ((UtilityData(theEnv)->YieldTimeFunction != NULL) && UtilityData(theEnv)->YieldFunctionEnabled)
@@ -730,7 +818,7 @@ void YieldTime(
 /********************************************/
 /* SetGarbageCollectionHeuristics:         */
 /********************************************/
-short SetGarbageCollectionHeuristics(
+globle short SetGarbageCollectionHeuristics(
   void *theEnv,
   short newValue)
   {
@@ -767,7 +855,7 @@ globle void EnvDecrementGCLocks(
 /********************************************/
 /* EnablePeriodicFunctions:         */
 /********************************************/
-short EnablePeriodicFunctions(
+globle short EnablePeriodicFunctions(
   void *theEnv,
   short value)
   {
@@ -783,7 +871,7 @@ short EnablePeriodicFunctions(
 /********************************************/
 /* EnableYieldFunction:         */
 /********************************************/
-short EnableYieldFunction(
+globle short EnableYieldFunction(
   void *theEnv,
   short value)
   {
@@ -799,7 +887,7 @@ short EnableYieldFunction(
 /********************************************/
 /* AddTrackedMemory: */
 /********************************************/
-struct trackedMemory *AddTrackedMemory(
+globle struct trackedMemory *AddTrackedMemory(
   void *theEnv,
   void *theMemory,
   size_t theSize)
@@ -820,7 +908,7 @@ struct trackedMemory *AddTrackedMemory(
 /********************************************/
 /* RemoveTrackedMemory: */
 /********************************************/
-void RemoveTrackedMemory(
+globle void RemoveTrackedMemory(
   void *theEnv,
   struct trackedMemory *theTracker)
   {   
@@ -834,3 +922,82 @@ void RemoveTrackedMemory(
      
    rtn_struct(theEnv,trackedMemory,theTracker);
   }
+
+/******************************************/
+/* UTF8Length: Returns the logical number */
+/*   of characters in a UTF8 string.      */
+/******************************************/
+globle size_t UTF8Length(
+  char *s)
+  {
+   size_t i = 0, length = 0;
+   
+   while (s[i] != '\0')
+     { 
+      UTF8Increment(s,&i); 
+      length++;
+     }
+   
+   return(length);
+  }
+  
+/*********************************************/
+/* UTF8Increment: Finds the beginning of the */
+/*   next character in a UTF8 string.        */
+/*********************************************/
+globle void UTF8Increment(
+  char *s,
+  size_t *i)
+  {
+   (void) (IsUTF8Start(s[++(*i)]) || 
+           IsUTF8Start(s[++(*i)]) ||
+           IsUTF8Start(s[++(*i)]) || 
+           ++(*i));
+  }
+
+/****************************************************/
+/* UTF8Offset: Converts the logical character index */
+/*   in a UTF8 string to the actual byte offset.    */
+/****************************************************/
+globle size_t UTF8Offset(
+  char *str, 
+  size_t charnum)
+  {
+   size_t offs = 0;
+
+   while ((charnum > 0) && (str[offs])) 
+     {
+      (void) (IsUTF8Start(str[++offs]) || 
+              IsUTF8Start(str[++offs]) ||
+              IsUTF8Start(str[++offs]) || 
+              ++offs);
+              
+      charnum--;
+     }
+     
+   return offs;
+  }
+
+/*************************************************/
+/* UTF8CharNum: Converts the UTF8 character byte */ 
+/*   offset to the logical character index.      */
+/*************************************************/
+globle size_t UTF8CharNum(
+  char *s, 
+  size_t offset)
+  {
+   size_t charnum = 0, offs=0;
+
+   while ((offs < offset) && (s[offs])) 
+     {
+      (void) (IsUTF8Start(s[++offs]) ||
+              IsUTF8Start(s[++offs]) ||
+              IsUTF8Start(s[++offs]) || 
+              ++offs);
+              
+      charnum++;
+     }
+     
+   return charnum;
+  }
+

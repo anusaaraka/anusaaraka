@@ -23,7 +23,7 @@
  (id-TAM ?root_id ?tam)
  (not (file_loaded ?root_id))
  =>
-        (bind ?file (str-cat ?*path* "/WSD/wsd_rules/" ?tam "_tam.clp"))
+        (bind ?file (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/" ?tam "_tam.clp"))
         (bind ?file_load (load* ?file))
         (if (eq ?file_load TRUE) then
         (assert (file_loaded ?root_id)))

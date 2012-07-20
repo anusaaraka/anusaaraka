@@ -140,7 +140,7 @@ Access_structure	aBigama_saMracanA#aBigama_saMracanA#noun#2#RM
 Access_time	aBigama_kAla#aBigama_kAla#noun#2#RM
 Access_unit	aBigama_ekaka#aBigama_ekaka#noun#2#RM
 Account_number	KAwA_saMKyA#KAwA_saMKyA#noun#2#RM
-Account_package	leKA_pEkeja_#leKA_pEkeja_#0#RM
+Account_package	leKA_pEkeja#leKA_pEkeja#UNDEFINED#0#RM
 Acknowledge_frame	aBisvIkAra_Prema#aBisvIkAra_Prema#noun#2#RM
 Acoustic_coupler	Xvanika_yugmaka#Xvanika_yugmaka#noun#2#RM
 Acoustic_coupling	Xvanika_yugmana#Xvanika_yugmana#noun#2#RM
@@ -191,8 +191,8 @@ Address_size	pawA_AmApa#pawA_AmApa#noun#2#RM
 Address_space_identifier	pawA_sWAna_aBijFApaka#pawA_sWAna_aBijFApaka#noun#3#RM
 Address_space	pawA_sWAna#pawA_sWAna#noun#2#RM
 Address_stop	pawA_virAma#pawA_virAma#noun#2#RM
-Address_strategy_module	pawA_yukwi_moYdayUla_#pawA_yukwi_moYdayUla_#0#RM
-Address_trace	paricaya_anureKa_#paricaya_anureKa_#0#RM
+Address_strategy_module	pawA_yukwi_moYdayUla#pawA_yukwi_moYdayUla#UNDEFINED#0#RM
+Address_trace	paricaya_anureKa#paricaya_anureKa#UNDEFINED#0#RM
 Address_translation	pawA_anuvAxa#pawA_anuvAxa#noun#2#RM
 Address_translator	pawA_anuvAxaka#pawA_anuvAxaka#noun#2#RM
 Adjust_text_mode	samAyojya_pATyAMSa_viXA#samAyojya_pATyAMSa_viXA#noun#3#RM
@@ -200,7 +200,7 @@ Advance_interactive_executive	unnawa_aMwara_kriyA_kAryapAlaka#unnawa_aMwara_kriy
 Advance_program_to_program_communications	unnawa_progrAmaSaHsaMcAra#unnawa_progrAmaSaHsaMcAra#noun#5#RM
 Advance_set_up_option	unnawa_vyavasWA_vikalpa#unnawa_vyavasWA_vikalpa#noun#4#RM
 Algorithm_language	elgoriWma_BARA#elgoriWma_BARA#noun#2#RM
-Algorithm_routine	kalana_viXi_nemakA_#kalana_viXi_nemakA_#0#RM
+Algorithm_routine	kalana_viXi_nemakA#kalana_viXi_nemakA#UNDEFINED#0#RM
 Algorithm_theory	elgoriWma_sixXAMwa#elgoriWma_sixXAMwa#noun#2#RM
 All-purpose_computer	sarvoxxeSIya_aBikaliwra#sarvoxxeSIya_aBikaliwra#noun#2#RM
 Alpha_test	ElPA_parIkRaNa#ElPA_parIkRaNa#noun#2#RM
@@ -236,7 +236,7 @@ Analog_to_digital_encoder	anurUpa_aMkIya_kUta_leKana#anurUpa_aMkIya_kUta_leKana#
 Analog_transmission	anurUpa_saMcaraNa#anurUpa_saMcaraNa#noun#2#RM
 Analog_type	anurUpa_prakAra#anurUpa_prakAra#noun#2#RM
 Analytic_specification	viSleRaNAwmaka_viSeRIkaraNa#viSleRaNAwmaka_viSeRIkaraNa#noun#2#RM
-Anchor_record	laMgara_#laMgara_#0#RM
+Anchor_record	laMgara#laMgara#UNDEFINED#0#RM
 Answer_lamp	uwwara_xIpa#uwwara_xIpa#noun#2#RM
 Answer_list	uwwara_sUcI#uwwara_sUcI#noun#2#RM
 Answer_mode	uwwara_viXA#uwwara_viXA#noun#2#RM
@@ -284,7 +284,7 @@ Audio_trail	Sravya_sawyApana#Sravya_sawyApana#noun#2#RM
 Auto_-answer_modem	svawaH_uwwara_moYdema#svawaH_uwwara_moYdema#noun#3#RM
 Auto_index	svawaH_sUcakAMka#svawaH_sUcakAMka#noun#2#RM
 Auto_indexed	svawaH_sUcakiwa#svawaH_sUcakiwa#noun#2#RM
-Auto_logon	svawaH_loYgoYna_#svawaH_loYgoYna_#0#RM
+Auto_logon	svawaH_loYgoYna#svawaH_loYgoYna#UNDEFINED#0#RM
 Auto_sizing	svawaH_AmApana#svawaH_AmApana#noun#2#RM
 Auto_start_routine	svawaH_cAliwa_nemakA#svawaH_cAliwa_nemakA#noun#3#RM
 Auto-dial_mode	svawaH_dAyala_viXA#svawaH_dAyala_viXA#noun#2#RM
@@ -306,11 +306,11 @@ Automatic_dictionary	svawaH_raciwa_koSa#svawaH_raciwa_koSa#noun#2#RM
 Automatic_emulation_switching	svawaH_samAnukaraNa_svIcana#svawaH_samAnukaraNa_svIcana#noun#3#RM
 Automatic_equalization	svawaH__wulyIkaraNa#svawaH__wulyIkaraNa#noun#2#RM
 Automatic_error_correction	svawaH_wruti_saMSoXana#svawaH_wruti_saMSoXana#noun#3#RM
-Automatic_feed_punch	svawaH_BaraNa_paMca_#svawaH_BaraNa_paMca_#0#RM
+Automatic_feed_punch	svawaH_BaraNa_paMca#svawaH_BaraNa_paMca#UNDEFINED#0#RM
 Automatic_font_down_loading	svawaH_PoYta_AvaBAraNa#svawaH_PoYta_AvaBAraNa#noun#4#RM
 Automatic_function	svawaH_Palana#svawaH_Palana#noun#2#RM
 Automatic_gain_control	svawaH_labXi_niyaMwraNa#svawaH_labXi_niyaMwraNa#noun#3#RM
-Automatic_head_parking	svawaH_SIrRa_#svawaH_SIrRa_#0#RM
+Automatic_head_parking	svawaH_SIrRa#svawaH_SIrRa#UNDEFINED#0#RM
 Automatic_hyphenation	svawaH_netavarka_svican#svawaH_netavarka_svican#noun#2#RM
 Automatic_indexing	svawaH_sUcakIkaraNa#svawaH_sUcakIkaraNa#noun#2#RM
 Automatic_library_call	svawaH_saMgraha_AhvAna#svawaH_saMgraha_AhvAna#noun#3#RM
@@ -334,7 +334,7 @@ Automatic_stop	svawaH_virAma#svawaH_virAma#noun#2#RM
 Automatic_variable	svacara#svacara#noun#2#RM
 Automatic_volume_recognition	svawaH_prabalawA_aBijFAna#svawaH_prabalawA_aBijFAna#noun#3#RM
 Automatic_volume_switching	svawaH_prabalawA_svicana#svawaH_prabalawA_svicana#noun#3#RM
-Back_bone_network	merUxaMda_rIDZa_netavarka_#merUxaMda_rIDZa_netavarka_#0#RM
+Back_bone_network	merUxaMda_rIDZa_netavarka#merUxaMda_rIDZa_netavarka#UNDEFINED#0#RM
 Back_door	paSca_xvAra#paSca_xvAra#noun#2#RM
 Back_edge	paSca_Cora#paSca_Cora#noun#2#RM
 Back_end	paSca_sirA#paSca_sirA#noun#2#RM
@@ -348,7 +348,7 @@ Back_tracking	paSca_paWana#paSca_paWana#noun#2#RM
 Back_ward_error_recovery	paSca_wruti_prApwi#paSca_wruti_prApwi#noun#4#RM
 Back-end_processor	paSca_sirA_prakramaka#paSca_sirA_prakramaka#noun#2#RM
 Bad_&_doubtful_debts	nikqRta_waWA_saMxehAspaxa_qNa#nikqRta_waWA_saMxehAspaxa_qNa#noun#4#RM
-Balance_sheet_as_snapshot	wulana_pawra_kA_ASuciwra_#wulana_pawra_kA_ASuciwra_#0#RM
+Balance_sheet_as_snapshot	wulana_pawra_kA_ASuciwra#wulana_pawra_kA_ASuciwra#UNDEFINED#0#RM
 Balance_sheet	wulana_pawra#wulana_pawra#noun#2#RM
 Band_printer	baMEda_muxraka#baMEda_muxraka#noun#2#RM
 Band_stop_filter	bEMda_virAma_nisyaMxaka#bEMda_virAma_nisyaMxaka#noun#3#RM
@@ -358,31 +358,31 @@ Bank_account	bEMka_kA_KAwA#bEMka_kA_KAwA#noun#2#RM
 Bank_for_International_Settlement	aMwarrARRtrIya_nipatAna_bEMka#aMwarrARRtrIya_nipatAna_bEMka#noun#4#RM
 Bank_machine	bEMka_maSIna#bEMka_maSIna#noun#2#RM
 Bank_overdraft	bEMka_ovaradrAPta#bEMka_ovaradrAPta#noun#2#RM
-Bank_switching	bEMka_svIciMga_#bEMka_svIciMga_#0#RM
+Bank_switching	bEMka_svIciMga#bEMka_svIciMga#UNDEFINED#0#RM
 Banker's_algorithm	bEMkarsa_elgoriWma#bEMkarsa_elgoriWma#noun#2#RM
 Base_address_register	AXAra_pawA_paMjI#AXAra_pawA_paMjI#noun#3#RM
 Base_addressing	AXAra_pawABigamana#AXAra_pawABigamana#noun#2#RM
 Base_notation	AXAra_saMkewana#AXAra_saMkewana#noun#2#RM
 Base_number	AXAra_saMKyA#AXAra_saMKyA#noun#2#RM
-Base_register	AXAra_rajistara_#AXAra_rajistara_#0#RM
+Base_register	AXAra_rajistara#AXAra_rajistara#UNDEFINED#0#RM
 Base_storage_allocation	AXAra_BaMdAraNa_niyAwana#AXAra_BaMdAraNa_niyAwana#noun#3#RM
 Base_table	AXAra_sAraNI#AXAra_sAraNI#noun#2#RM
 Base_volume	mUla_KaMda#mUla_KaMda#noun#2#RM
-Batch_file	bEca_PAIla_#bEca_PAIla_#0#RM
+Batch_file	bEca_PAIla#bEca_PAIla#UNDEFINED#0#RM
 Batch_operating_system	bEca_pracAlana_waMwra#bEca_pracAlana_waMwra#noun#3#RM
 Batch_partition	bEca_viBAjana#bEca_viBAjana#noun#2#RM
 Batch_position	bEca_sWiwi#bEca_sWiwi#noun#2#RM
-Batch_processing	bEca_prakramana_#bEca_prakramana_#0#RM
-Batch_region	bEca_#bEca_#2#RM
-Batch_session	bEca_#bEca_#2#RM
-Batch_system	bEca_#bEca_#2#RM
-Batch_terminal	bEca_#bEca_#1#RM
+Batch_processing	bEca_prakramana#bEca_prakramana#UNDEFINED#0#RM
+Batch_region	bEca#bEca#UNDEFINED#2#RM
+Batch_session	bEca#bEca#UNDEFINED#2#RM
+Batch_system	bEca#bEca#UNDEFINED#2#RM
+Batch_terminal	bEca#bEca#UNDEFINED#1#RM
 Be_quick	jalxI_kara#jalxI_kara#noun#2#RM
 Big_o-notation	xIrGaCa0CasaMkewana#xIrGaCa0CasaMkewana#noun#3#RM
 Birds_of_a_feather	eka_samAna#eka_samAna#noun#1#RM
 Bite_the_hand_that_feeds	viSvAsaGAwa_karanA#viSvAsaGAwa_karanA#noun#5#RM
 Block_multiplexer	avaroXI_guNaka_(bloYka_saMkewaka)#avaroXI_guNaka_(bloYka_saMkewaka)#noun#2#RM
-Block_multiplexor_channel	KaMda_bahusaMkewaka_cEnala_#KaMda_bahusaMkewaka_cEnala_#0#RM
+Block_multiplexor_channel	KaMda_bahusaMkewaka_cEnala#KaMda_bahusaMkewaka_cEnala#UNDEFINED#0#RM
 Block_size	KaMdaka_AmApa#KaMdaka_AmApa#noun#2#RM
 Block_transfer	KaMda_aMwaraNa#KaMda_aMwaraNa#noun#2#RM
 Block_transmission	KaMdaka_saMcaraNa#KaMdaka_saMcaraNa#noun#2#RM
@@ -430,20 +430,20 @@ Class_variable	varga_cara#varga_cara#noun#2#RM
 Co-scheduling	saha_anusUcana#saha_anusUcana#noun#2#RM
 Co-axial_cable	samAkRIya_kebala#samAkRIya_kebala#noun#2#RM
 Code_division_multiple_access	kUta_viBAjana_bahu_aBigama#kUta_viBAjana_bahu_aBigama#noun#4#RM
-Code_frame	kUta_Prema_#kUta_Prema_#0#RM
-Code_generation	koda_janana_#koda_janana_#0#RM
-Code_generator	kUta_janaka_#kUta_janaka_#0#RM
-Code_hoisting	koda_uwWApana_#koda_uwWApana_#0#RM
-Code_independence	kUta_anASriwa_#kUta_anASriwa_#0#RM
+Code_frame	kUta_Prema#kUta_Prema#UNDEFINED#0#RM
+Code_generation	koda_janana#koda_janana#UNDEFINED#0#RM
+Code_generator	kUta_janaka#kUta_janaka#UNDEFINED#0#RM
+Code_hoisting	koda_uwWApana#koda_uwWApana#UNDEFINED#0#RM
+Code_independence	kUta_anASriwa#kUta_anASriwa#UNDEFINED#0#RM
 Code_independent_system	kUta_svawanwra_waMwra#kUta_svawanwra_waMwra#noun#3#RM
 Code_link	kUta_kadZI#kUta_kadZI#noun#2#RM
-Code_optimization	kUta_IRwamIkaraNa_#kUta_IRwamIkaraNa_#0#RM
-Code_page_file	kUta_pqRTa_saMcikA_#kUta_pqRTa_saMcikA_#0#RM
+Code_optimization	kUta_IRwamIkaraNa#kUta_IRwamIkaraNa#UNDEFINED#0#RM
+Code_page_file	kUta_pqRTa_saMcikA#kUta_pqRTa_saMcikA#UNDEFINED#0#RM
 Code_page	kUta_pqRTa#kUta_pqRTa#noun#2#RM
-Code_segment	kUta_KaMda_#kUta_KaMda_#0#RM
-Code_set	kUta_samuccaya_#kUta_samuccaya_#0#RM
-Code_snippet	kqta_snipeta_#kqta_snipeta_#0#RM
-Code_word	kUta_Sabxa_#kUta_Sabxa_#0#RM
+Code_segment	kUta_KaMda#kUta_KaMda#UNDEFINED#0#RM
+Code_set	kUta_samuccaya#kUta_samuccaya#UNDEFINED#0#RM
+Code_snippet	kqta_snipeta#kqta_snipeta#UNDEFINED#0#RM
+Code_word	kUta_Sabxa#kUta_Sabxa#UNDEFINED#0#RM
 Collate_to	parimilana_samAnukramiwa_karanA#parimilana_samAnukramiwa_karanA#noun#2#RM
 Come_down_on_one_side_of_the_fence_or_other	sAWa_xenA_yA_na_xenA#sAWa_xenA_yA_na_xenA#noun#15#RM
 Command_drive_program	AxeSa_cAliwa_progrAma#AxeSa_cAliwa_progrAma#noun#3#RM
@@ -530,7 +530,7 @@ Data_connection	AMkadZA_sambaMXana#AMkadZA_sambaMXana#noun#2#RM
 Data_consistency	AMkadZA_susaMgawawA#AMkadZA_susaMgawawA#noun#2#RM
 Data_constant	acara_AMkadZA#acara_AMkadZA#noun#2#RM
 Data_contamination	AMkadZA_saMxURaNa#AMkadZA_saMxURaNa#noun#2#RM
-Data_contol_block	AMkadZA_niyaMwraNa_KaMda_#AMkadZA_niyaMwraNa_KaMda_#0#RM
+Data_contol_block	AMkadZA_niyaMwraNa_KaMda#AMkadZA_niyaMwraNa_KaMda#UNDEFINED#0#RM
 Data_control	AMkadZA_niyaMwraNa#AMkadZA_niyaMwraNa#noun#2#RM
 Data_converter	AMkadZA_parivarwaka#AMkadZA_parivarwaka#noun#2#RM
 Data_crash	AkadZA_XvaMsa#AkadZA_XvaMsa#noun#2#RM
@@ -566,7 +566,7 @@ Data_fragmentation	AMkadZA_KaMdana#AMkadZA_KaMdana#noun#2#RM
 Data_graphics	AMkadZA_grAPiksa#AMkadZA_grAPiksa#noun#2#RM
 Data_hierarchy	AMkadZA_paxAnukrama#AMkadZA_paxAnukrama#noun#2#RM
 Data_in_voice	samavAka_AMkadZe#samavAka_AMkadZe#noun#3#RM
-Data_independence	AMkadZA_mukwawA_#AMkadZA_mukwawA_#0#RM
+Data_independence	AMkadZA_mukwawA#AMkadZA_mukwawA#UNDEFINED#0#RM
 Data_integrity	AMkadZA_samAgrawA#AMkadZA_samAgrawA#noun#2#RM
 Data_interchange	AMkadZA_vinimaya#AMkadZA_vinimaya#noun#2#RM
 Data_item	AMkadZA_maxa#AMkadZA_maxa#noun#2#RM
@@ -583,7 +583,7 @@ Data_management_system	AMkadZA_prabaMXana_waMwra#AMkadZA_prabaMXana_waMwra#noun#
 Data_management	AMkadZA_prabaMXana#AMkadZA_prabaMXana#noun#2#RM
 Data_manipulation_language	AMkadZA_prakalana_BARA#AMkadZA_prakalana_BARA#noun#3#RM
 Data_manipulation	AMkadZA_prakalana#AMkadZA_prakalana#noun#2#RM
-Data_mask	AMkadZA_mAska_#AMkadZA_mAska_#0#RM
+Data_mask	AMkadZA_mAska#AMkadZA_mAska#UNDEFINED#0#RM
 Data_masking	AMkadZA_AcCAxana#AMkadZA_AcCAxana#noun#2#RM
 Data_migration	AMkadZA_pravAsa#AMkadZA_pravAsa#noun#2#RM
 Data_mining	AMkadA_Kanana#AMkadA_Kanana#noun#2#RM
@@ -604,9 +604,9 @@ Data_output	detA_AMkadZA_nirgama#detA_AMkadZA_nirgama#noun#2#RM
 Data_path	AMkadZA_paWa#AMkadZA_paWa#noun#2#RM
 Data_phase	AMkadZA_prAvasWA#AMkadZA_prAvasWA#noun#2#RM
 Data_plotter	AMkadZA_aMkaka#AMkadZA_aMkaka#noun#2#RM
-Data_pointer	AMkadZA_saMkewaka_#AMkadZA_saMkewaka_#0#RM
+Data_pointer	AMkadZA_saMkewaka#AMkadZA_saMkewaka#UNDEFINED#0#RM
 Data_preparation_device	AMkadZA_wEyArI_yukwi#AMkadZA_wEyArI_yukwi#noun#3#RM
-Data_preparation	AMkadZA_wEyArI_#AMkadZA_wEyArI_#0#RM
+Data_preparation	AMkadZA_wEyArI#AMkadZA_wEyArI#UNDEFINED#0#RM
 Data_preprocessing	pUrvaprakramana#pUrvaprakramana#noun#2#RM
 Data_privacy	gopanIya_AMkadZA#gopanIya_AMkadZA#noun#2#RM
 Data_processing_cycle	AMkadZA_saMsAXana_cakra#AMkadZA_saMsAXana_cakra#noun#3#RM
@@ -690,13 +690,13 @@ Design_modem	aBikalpa_moYdema#aBikalpa_moYdema#noun#2#RM
 Design_secrecy	aBikalpa_gopanIyawA#aBikalpa_gopanIyawA#noun#2#RM
 Design_technique	aBikalpa_wakanIka#aBikalpa_wakanIka#noun#2#RM
 Desk_top_computer	deskaCatoYpa_kaMpyUtara#deskaCatoYpa_kaMpyUtara#noun#3#RM
-Desk_top_computing	deska_toYpa_aBikalana_#deska_toYpa_aBikalana_#0#RM
+Desk_top_computing	deska_toYpa_aBikalana#deska_toYpa_aBikalana#UNDEFINED#0#RM
 Desktop_publishing_package	deskatoYpa_prakASana_saMkula#deskatoYpa_prakASana_saMkula#noun#3#RM
 Desktop_publishing_system	deskatoYpa_prakASana_waMwra#deskatoYpa_prakASana_waMwra#noun#3#RM
 Develop_oriented_measures	vikAsonmuKI_upAya#vikAsonmuKI_upAya#noun#3#RM
 Device_co_ordinates	yukwi_nirxeSAMka#yukwi_nirxeSAMka#noun#3#RM
 Device_control_unit	yukwi_niyaMwraNa_ekaka#yukwi_niyaMwraNa_ekaka#noun#3#RM
-Di_bit	xvixvayaMka_#xvixvayaMka_#0#RM
+Di_bit	xvixvayaMka#xvixvayaMka#UNDEFINED#0#RM
 Diagnostic_technique	nixAna_wakanIka#nixAna_wakanIka#noun#2#RM
 Diagnostic_test	nixAnArWa_parIkRaNa#nixAnArWa_parIkRaNa#noun#2#RM
 Dial_exchange	dAyala_kenxra#dAyala_kenxra#noun#2#RM
@@ -719,7 +719,7 @@ Digital_computer	aMkIya_kaMpyUtara#aMkIya_kaMpyUtara#noun#2#RM
 Digital_read-out	aMkIya_paTana#aMkIya_paTana#noun#2#RM
 Digitize_tablet	aMkIya_patalikA#aMkIya_patalikA#noun#2#RM
 Direct_keying_device	prawyakRa_kuMjIyana_yukwi#prawyakRa_kuMjIyana_yukwi#noun#3#RM
-Direct_memory_access_controller	prawyakRa_smqwi_aBigama_niyaMwraka_#prawyakRa_smqwi_aBigama_niyaMwraka_#0#RM
+Direct_memory_access_controller	prawyakRa_smqwi_aBigama_niyaMwraka#prawyakRa_smqwi_aBigama_niyaMwraka#UNDEFINED#0#RM
 Direct_method	prawyakRa_viXi#prawyakRa_viXi#noun#2#RM
 Direct_processing	prawyakRa_prakramaNa#prawyakRa_prakramaNa#noun#2#RM
 Direct_transmission_satellite	prawyakRa_saMcaraNa_upagraha#prawyakRa_saMcaraNa_upagraha#noun#3#RM
@@ -758,8 +758,8 @@ Document_handling	praleKa_haswana#praleKa_haswana#noun#2#RM
 Document_image_processing	praleKa_prawibiMba_prakramaNa#praleKa_prawibiMba_prakramaNa#noun#3#RM
 Document_management_system	praleKa_prabanXana_waMwra#praleKa_prabanXana_waMwra#noun#3#RM
 Document_processing	praleKa_prakramaNa#praleKa_prakramaNa#noun#2#RM
-Document_retrieval	praleKa_prawiniyana_#praleKa_prawiniyana_#0#RM
-Document_window	praleKa_KidZakI_#praleKa_KidZakI_#0#RM
+Document_retrieval	praleKa_prawiniyana#praleKa_prawiniyana#UNDEFINED#0#RM
+Document_window	praleKa_KidZakI#praleKa_KidZakI#UNDEFINED#0#RM
 Donald_duck	donalda_bawwaKa#donalda_bawwaKa#noun#2#RM
 Dot-character_printer	binxu_saMprawIka_muxraka#binxu_saMprawIka_muxraka#noun#2#RM
 Double_right_angle_brackets	xviguNa_samakoNa_koRTaka#xviguNa_samakoNa_koRTaka#noun#4#RM
@@ -769,7 +769,7 @@ Double-pulse_recording	xvispaMxa_aBileKana#xvispaMxa_aBileKana#noun#2#RM
 Double-sheet_detector	xviparNa_saMsUcaka#xviparNa_saMsUcaka#noun#2#RM
 Double-sheet_ejector	xviparNa_uwkRepaka#xviparNa_uwkRepaka#noun#2#RM
 Double-sided_disk	xvipArSva_cakrikA#xvipArSva_cakrikA#noun#2#RM
-Down_loaded	aXaHBAraNa_#aXaHBAraNa_#0#RM
+Down_loaded	aXaHBAraNa#aXaHBAraNa#UNDEFINED#0#RM
 Down_loading	aXoBAraNa#aXoBAraNa#noun#2#RM
 Down_time	acewa_kAlAvaXi#acewa_kAlAvaXi#noun#2#RM
 Draw_tool	karRa_upakaraNa#karRa_upakaraNa#noun#2#RM
@@ -788,7 +788,7 @@ Dynamic_virtual_memory_system	gawika_aBAsI__smqwi_waMwra#gawika_aBAsI__smqwi_waM
 Easter_bunny	Istara_wyOhAra_kA_banI{KaragoSa_ke_lie_pyArakA_Sabxa}#Istara_wyOhAra_kA_banI{KaragoSa_ke_lie_pyArakA_Sabxa}#noun#2#RM
 Each_one_of_them	unameM_se_prawyeka#unameM_se_prawyeka#noun#2#RM
 Each_one_of_you	ApameM_se_prawyeka#ApameM_se_prawyeka#noun#2#RM
-Each_one_of_us	hamameM_se_prawyeka#-#prawyeka#noun#2#RM
+Each_one_of_us	hamameM_se_prawyeka#hamameM_se_prawyeka#noun#2#RM
 Edit_mode	saMpAxana_viXA#saMpAxana_viXA#noun#2#RM
 Education_co-ordinator	SikRA_samanvaya#SikRA_samanvaya#noun#2#RM
 Education_effort	SikRA_prayAsa#SikRA_prayAsa#noun#2#RM
@@ -880,7 +880,7 @@ Good_afternoon	SuBamaXyAhna#SuBamaXyAhna#noun#2#RM
 Good_by	acCA_namaskAra#acCA_namaskAra#noun#2#RM
 Good_evening	SuBasAzyakAla#SuBasAzyakAla#noun#2#RM
 Good_morning	supraBAwa{namaskAra}#supraBAwa{namaskAra}#noun#2#RM
-Grandfather-father-son_method	piwAmaha_#piwAmaha_#0#RM
+Grandfather-father-son_method	piwAmaha#piwAmaha#UNDEFINED#0#RM
 Grocery_chain	kirAne_sAmAna_kI_SrqMKalA#kirAne_sAmAna_kI_SrqMKalA#noun#2#RM
 Guinea_corn	bAjarA#bAjarA#noun#2#RM
 HIgh_court	ucca_nyAyAlaya#ucca_nyAyAlaya#noun#2#RM
@@ -891,7 +891,7 @@ How_about_this	isake_bAre_meM_kyA_vicAra_hE#isake_bAre_meM_kyA_vicAra_hE#noun#3#
 How_do_you_do	Apa_kEse_hEM#Apa_kEse_hEM#noun#4#RM
 How_often	kiwanI_bAra#kiwanI_bAra#noun#2#RM
 How_the_deuce	are_bAbA#are_bAbA#noun#3#RM
-I-node_table	aMwaH_noda_sAraNI_#aMwaH_noda_sAraNI_#0#RM
+I-node_table	aMwaH_noda_sAraNI#aMwaH_noda_sAraNI#UNDEFINED#0#RM
 If_so,	yaxi_EsA_ho_wo#yaxi_EsA_ho_wo#noun#3#RM
 Imperial_beard	nicale_hoMTa_ke_pAsa_bAloM_kA_gucCA#nicale_hoMTa_ke_pAsa_bAloM_kA_gucCA#noun#2#RM
 In_apple_pie_order	saPAI_pUrvaka_susajjiwa#saPAI_pUrvaka_susajjiwa#noun#4#RM
@@ -907,7 +907,7 @@ Index_hole	sUcaka_vivara#sUcaka_vivara#noun#2#RM
 Index_register	sUcaka_paMjI#sUcaka_paMjI#noun#2#RM
 Index_sequential	sUcaka_anukramika#sUcaka_anukramika#noun#2#RM
 Industrial_housing	Oxyogika_AvAsa#Oxyogika_AvAsa#noun#2#RM
-Infix_notation	aMwaligna_saMkewana_pUrvakriyA_#aMwaligna_saMkewana_pUrvakriyA_#0#RM
+Infix_notation	aMwaligna_saMkewana_pUrvakriyA#aMwaligna_saMkewana_pUrvakriyA#UNDEFINED#0#RM
 Instrumental_music	vAxya_saMgIwa#vAxya_saMgIwa#noun#2#RM
 Inter_block_gap	aMwarA_KaMdaka_aMwarAla#aMwarA_KaMdaka_aMwarAla#noun#3#RM
 Inter_block	aMwaHKaMdaka#aMwaHKaMdaka#noun#2#RM
@@ -932,8 +932,8 @@ Job_management	kArya_prabaMXana#kArya_prabaMXana#noun#2#RM
 Job_output_file	kArya_nirgama_saMcikA#kArya_nirgama_saMcikA#noun#3#RM
 Job_priority	kArya_prAWamikawA#kArya_prAWamikawA#noun#2#RM
 Job_processing	kArya_prakramaNa#kArya_prakramaNa#noun#2#RM
-Job_scheduling	kArya_anusUcana_#kArya_anusUcana_#0#RM
-Job_sequencing	kArya_anukramaNa_#kArya_anukramaNa_#0#RM
+Job_scheduling	kArya_anusUcana#kArya_anusUcana#UNDEFINED#0#RM
+Job_sequencing	kArya_anukramaNa#kArya_anukramaNa#UNDEFINED#0#RM
 Job_stream	kAryaXArA#kAryaXArA#noun#2#RM
 Job_table	kArya_sAraNI#kArya_sAraNI#noun#2#RM
 Job-flow_control	kArya_pravAha_niyaMwraNa#kArya_pravAha_niyaMwraNa#noun#2#RM
@@ -941,7 +941,7 @@ Job-oriented_language	kAryonmuKa_BARA#kAryonmuKa_BARA#noun#2#RM
 June_bug	jUna_ke_mahIne_meM_hone_vAlA_kIdZA#jUna_ke_mahIne_meM_hone_vAlA_kIdZA#noun#2#RM
 Just_in_time	TIka_samaya_para#TIka_samaya_para#noun#3#RM
 Kentucky_burgoo	kEMtakI_nAvikoM_kA_KAxya_viSeRa#kEMtakI_nAvikoM_kA_KAxya_viSeRa#noun#2#RM
-Key_bounce	kuMjI_uCAla_#kuMjI_uCAla_#0#RM
+Key_bounce	kuMjI_uCAla#kuMjI_uCAla#UNDEFINED#0#RM
 Key_click	kuMjI_klika#kuMjI_klika#noun#2#RM
 Key_compression	kuMjI_saMpIdana#kuMjI_saMpIdana#noun#2#RM
 Key_disk	kuMjI_diska#kuMjI_diska#noun#2#RM
@@ -993,17 +993,17 @@ Line_editing	paMkwi_saMpAxana#paMkwi_saMpAxana#noun#2#RM
 Line_feed_character	lAIna_BaraNa_saMprawIka#lAIna_BaraNa_saMprawIka#noun#3#RM
 Line_feed	lAIna_BaraNa#lAIna_BaraNa#noun#2#RM
 Line_generator	lAIna_janaka#lAIna_janaka#noun#2#RM
-Line_graph	paMkwi_AleKI_#paMkwi_AleKI_#0#RM
+Line_graph	paMkwi_AleKI#paMkwi_AleKI#UNDEFINED#0#RM
 Line_impedance	lAina_prawibAXA#lAina_prawibAXA#noun#2#RM
-Line_length	paMkwi_lambAI_#paMkwi_lambAI_#0#RM
+Line_length	paMkwi_lambAI#paMkwi_lambAI#UNDEFINED#0#RM
 Line_link_pulsing	lAina_SraMqKalana_spaMxana#lAina_SraMqKalana_spaMxana#noun#3#RM
 Line_mode_switching	lAina_viXA_svicana#lAina_viXA_svicana#noun#3#RM
-Line_monitor	paMkwi_parivekRaka_#paMkwi_parivekRaka_#0#RM
-Line_noise	lAina_kolAhala_#lAina_kolAhala_#0#RM
-Line_oriented	paMkwi_prAcya_#paMkwi_prAcya_#0#RM
+Line_monitor	paMkwi_parivekRaka#paMkwi_parivekRaka#UNDEFINED#0#RM
+Line_noise	lAina_kolAhala#lAina_kolAhala#UNDEFINED#0#RM
+Line_oriented	paMkwi_prAcya#paMkwi_prAcya#UNDEFINED#0#RM
 Line_printer	lAIna_muxraka#lAIna_muxraka#noun#2#RM
 Line_speed	lAina_cAla#lAina_cAla#noun#2#RM
-Line_surge	lAina_prowkarRa_#lAina_prowkarRa_#0#RM
+Line_surge	lAina_prowkarRa#lAina_prowkarRa#UNDEFINED#0#RM
 Line_width	paMkwi_cOdZAI#paMkwi_cOdZAI#noun#2#RM
 Line-end_zone	paMkwi_samApana_kRewra#paMkwi_samApana_kRewra#noun#2#RM
 Linear_interpolation	rEKika_aMwarveSana#rEKika_aMwarveSana#noun#2#RM
@@ -1018,9 +1018,9 @@ List_processing	sUcI_prakramana#sUcI_prakramana#noun#2#RM
 List_structure	sUcI_saMracanA#sUcI_saMracanA#noun#2#RM
 List-directed_transmission	sUcI_xiRta_saMcaraNa#sUcI_xiRta_saMcaraNa#noun#2#RM
 Load_module	BAra_mAdyUla#BAra_mAdyUla#noun#2#RM
-Load_sharing	BAra_sahayojana_#BAra_sahayojana_#0#RM
+Load_sharing	BAra_sahayojana#BAra_sahayojana#UNDEFINED#0#RM
 Local_memory	sWAnIya_smqwi#sWAnIya_smqwi#noun#2#RM
-Local_mode	sWAnIya_viXA_#sWAnIya_viXA_#0#RM
+Local_mode	sWAnIya_viXA#sWAnIya_viXA#UNDEFINED#0#RM
 Local_service_area	sWAnIya_sevA_kRewra#sWAnIya_sevA_kRewra#noun#3#RM
 Local_switching_facility	sWAnIya_svicana_suviXA#sWAnIya_svicana_suviXA#noun#3#RM
 Local_talk	sWAnIya_vArwA#sWAnIya_vArwA#noun#2#RM
@@ -1145,8 +1145,8 @@ Medicaid_reimbursement	cikiwsIya_pEsA_vApasI#cikiwsIya_pEsA_vApasI#noun#2#RM
 Medicaid_spending	cikiwsIya_sahAyawA_Karca#cikiwsIya_sahAyawA_Karca#noun#2#RM
 Memory_unit	smqwi_ekaka#smqwi_ekaka#noun#2#RM
 Memory_workspace	smqwi__kAryakRewra#smqwi__kAryakRewra#noun#2#RM
-Memory-Resident_package	smqwi_vAsI_pEkeja_#smqwi_vAsI_pEkeja_#0#RM
-Memory-resident_program	smqwi_vAsI_progrAma_#smqwi_vAsI_progrAma_#0#RM
+Memory-Resident_package	smqwi_vAsI_pEkeja#smqwi_vAsI_pEkeja#UNDEFINED#0#RM
+Memory-resident_program	smqwi_vAsI_progrAma#smqwi_vAsI_progrAma#UNDEFINED#0#RM
 Mend_fences	apane_mawaBexoM_ko_xUra_karanA#apane_mawaBexoM_ko_xUra_karanA#noun#2#RM
 Menu_selection	menU_cayana#menU_cayana#noun#2#RM
 Menu_tree	menU_vqkRa#menU_vqkRa#noun#2#RM
@@ -1154,14 +1154,14 @@ Menu-driven_program	menU_cAliwa_progrAma#menU_cAliwa_progrAma#noun#2#RM
 Mercantile_system_of_accounting	leKAviXi_kI_vyApArika_praNAlI#leKAviXi_kI_vyApArika_praNAlI#noun#2#RM
 Merge_exchange_sort	vilaya_vinimaya_CaMtAI#vilaya_vinimaya_CaMtAI#noun#3#RM
 Merge_order	saMvilaya_wakrama#saMvilaya_wakrama#noun#2#RM
-Merge_sort	CaMEYtAI_saMvilaya_#CaMEYtAI_saMvilaya_#0#RM
+Merge_sort	CaMEYtAI_saMvilaya#CaMEYtAI_saMvilaya#UNDEFINED#0#RM
 Meta_data	aXiCaAMkadZA#aXiCaAMkadZA#noun#2#RM
 Micro_code	sUkRma_kUta#sUkRma_kUta#noun#2#RM
 Micro_computer_specialist	mAikro_kaMpyUtara_viSeRajFa#mAikro_kaMpyUtara_viSeRajFa#noun#3#RM
 Micro_controller	mAikro_niyaMwraka#mAikro_niyaMwraka#noun#2#RM
 Micro_electronics	mAikro_ilektrAnikI#mAikro_ilektrAnikI#noun#2#RM
 Micro_instruction	sUkRma_anuxeSa#sUkRma_anuxeSa#noun#2#RM
-Micro_kernel	sUkRma_aRTi_#sUkRma_aRTi_#0#RM
+Micro_kernel	sUkRma_aRTi#sUkRma_aRTi#UNDEFINED#0#RM
 Micro_scheduler	mAikro_anusUcaka#mAikro_anusUcaka#noun#2#RM
 Micro_segmentation	mAikro_KaMdIkaraNa#mAikro_KaMdIkaraNa#noun#2#RM
 Microcomputer_word_processing	mAikrokaMpyUtara__Sabxa_prakramana#mAikrokaMpyUtara__Sabxa_prakramana#noun#3#RM
@@ -1176,7 +1176,7 @@ Mirror_site	xarpaNa_sWala#xarpaNa_sWala#noun#2#RM
 Mixed-radix_notation	miSrriwa_mUlAMka_aMkana#miSrriwa_mUlAMka_aMkana#noun#2#RM
 Mode_of_despatch	preRRaNa#preRRaNa#noun#1#RM
 Model_estimation	moYdala_Akalana#moYdala_Akalana#noun#2#RM
-Model_limitation	moYdala_parisImAna_#moYdala_parisImAna_#0#RM
+Model_limitation	moYdala_parisImAna#moYdala_parisImAna#UNDEFINED#0#RM
 Model_selection	moYdala_cayana#moYdala_cayana#noun#2#RM
 Model_statement	nixarSa_kaWana#nixarSa_kaWana#noun#2#RM
 Monitor_printer	moYnitara_muxraka#moYnitara_muxraka#noun#2#RM
@@ -1229,7 +1229,7 @@ Non_equivalence_gate	awulyawA_xvAra#awulyawA_xvAra#noun#3#RM
 Non_multiprogramming	bahu_kramAxeSana_rahiwa#bahu_kramAxeSana_rahiwa#noun#2#RM
 Non_preemptive_scheduling	arikwipUrva_anusUcana#arikwipUrva_anusUcana#noun#3#RM
 Non_prime	BAjya#BAjya#noun#2#RM
-Non_uniform_memory_access_machine	viRama_smqwi_aBigama_waMwra_#viRama_smqwi_aBigama_waMwra_#0#RM
+Non_uniform_memory_access_machine	viRama_smqwi_aBigama_waMwra#viRama_smqwi_aBigama_waMwra#UNDEFINED#0#RM
 Non-coherent_modulation_system	asaMsakwa_moYdulana_waMwra#asaMsakwa_moYdulana_waMwra#noun#3#RM
 Non-erasable_medium	amita_mAXyama#amita_mAXyama#noun#2#RM
 Non-erasable_programmable_device	amita_progrAmayogya_yukwi#amita_progrAmayogya_yukwi#noun#3#RM
@@ -1290,26 +1290,26 @@ Overdraft	ovaradrAPta#ovaradrAPta#noun#1#RM
 Page_end_character	pqRTa_aMwa_saMprawIka#pqRTa_aMwa_saMprawIka#noun#3#RM
 Page_exception_interrupt	pqRTa_apavAxa_aMAwarAyana#pqRTa_apavAxa_aMAwarAyana#noun#3#RM
 Page_failure	pqRTa_viPalawA#pqRTa_viPalawA#noun#2#RM
-Page_fault_frequency_algorithm	pqRTa_xoRa_Avqwi_kalana_viXi_#pqRTa_xoRa_Avqwi_kalana_viXi_#0#RM
+Page_fault_frequency_algorithm	pqRTa_xoRa_Avqwi_kalana_viXi#pqRTa_xoRa_Avqwi_kalana_viXi#UNDEFINED#0#RM
 Page_fault	pqRTa_xoRa#pqRTa_xoRa#noun#2#RM
 Page_fetch	pqRTa_Anayana#pqRTa_Anayana#noun#2#RM
 Page_fixing	pqRTa_niyawana#pqRTa_niyawana#noun#2#RM
 Page_footing	pqRTAMwaca_pqRTa_PutiMga#pqRTAMwaca_pqRTa_PutiMga#noun#2#RM
 Page_frame	pqRTa_Prema#pqRTa_Prema#noun#2#RM
 Page_heading	pqRTa_SIrRa#pqRTa_SIrRa#noun#2#RM
-Page_in	aMwargama_#aMwargama_#0#RM
+Page_in	aMwargama#aMwargama#UNDEFINED#0#RM
 Page_interrupt_condition	pqRTa_aMAwarAyana_xaSA#pqRTa_aMAwarAyana_xaSA#noun#3#RM
 Page_interrupt	pqRTa_aMAwarAyana#pqRTa_aMAwarAyana#noun#2#RM
 Page_key	pqRTa_kuMjI#pqRTa_kuMjI#noun#2#RM
 Page_lock	pqRTa_pASa#pqRTa_pASa#noun#2#RM
-Page_map_register	pqRTa_prawiciwra_paMjI_#pqRTa_prawiciwra_paMjI_#0#RM
+Page_map_register	pqRTa_prawiciwra_paMjI#pqRTa_prawiciwra_paMjI#UNDEFINED#0#RM
 Page_map_table_hybrid	pqRTa_prawiciwra_sAraNI_saMkara#pqRTa_prawiciwra_sAraNI_saMkara#noun#4#RM
 Page_map_table	pqRTa_prawiciwra_sAraNI#pqRTa_prawiciwra_sAraNI#noun#3#RM
 Page_out	nirgama_pqRTa#nirgama_pqRTa#noun#2#RM
 Page_pool	pqRTa_pUla#pqRTa_pUla#noun#2#RM
 Page_printer	pqRTa_muxrakra#pqRTa_muxrakra#noun#2#RM
 Page_reader	pqRTa_paTiwra#pqRTa_paTiwra#noun#2#RM
-Page_removal_algorithm	pqRTa_apanayana_kalana_viXi_#pqRTa_apanayana_kalana_viXi_#0#RM
+Page_removal_algorithm	pqRTa_apanayana_kalana_viXi#pqRTa_apanayana_kalana_viXi#UNDEFINED#0#RM
 Page_removal	pqRTa_apanayana#pqRTa_apanayana#noun#2#RM
 Page_replacement_algorithm	pqRTa_prawisWApana_elgoriWma#pqRTa_prawisWApana_elgoriWma#noun#3#RM
 Page_replacement	pqRTa_prawisWApana#pqRTa_prawisWApana#noun#2#RM
@@ -1326,7 +1326,7 @@ Paper_sensing	kAgawaja_saMvexana#kAgawaja_saMvexana#noun#2#RM
 Paper_sensor	kAgaja_saMvexaka#kAgaja_saMvexaka#noun#2#RM
 Paper_skip	kAgaja_pluwi#kAgaja_pluwi#noun#2#RM
 Paper_tap_recorder	kAgaja_tepa_aBileKaka#kAgaja_tepa_aBileKaka#noun#3#RM
-Paper_tape_channel	kAgaja_tepa_praNAla_#kAgaja_tepa_praNAla_#0#RM
+Paper_tape_channel	kAgaja_tepa_praNAla#kAgaja_tepa_praNAla#UNDEFINED#0#RM
 Paper_tape_code	kAgaja_tepa_kUta#kAgaja_tepa_kUta#noun#3#RM
 Paper_tape_reader	kAgaja_tepa_paTiwra#kAgaja_tepa_paTiwra#noun#3#RM
 Paper_tape_speed	kAgaja_tepa_cAla#kAgaja_tepa_cAla#noun#3#RM
@@ -1390,7 +1390,7 @@ Post-implementation_evaluation	paSca_kriyAnvayana_mUlyAMkana#paSca_kriyAnvayana_
 Power_management_signaling	vixyuwa_Sakwi_prabanXa_saMkewana#vixyuwa_Sakwi_prabanXa_saMkewana#noun#3#RM
 Power_of_Attorney	muKwAranAmA#muKwAranAmA#noun#1#RM
 Power_off	aviXuwa#aviXuwa#noun#2#RM
-Pre_emphasis	prAk_prabalana_#prAk_prabalana_#0#RM
+Pre_emphasis	prAk_prabalana#prAk_prabalana#UNDEFINED#0#RM
 Pre_filtering	pUrva_nisyaMxana#pUrva_nisyaMxana#noun#2#RM
 Prediction_model	prAgokwi_nirxeSa#prAgokwi_nirxeSa#noun#2#RM
 Preservation_of_records	aBileKoM_kA_parirakRaNa#aBileKoM_kA_parirakRaNa#noun#1#RM
@@ -1421,8 +1421,8 @@ Program_register	kramAxeSa_paMjI#kramAxeSa_paMjI#noun#2#RM
 Program_relocation	kramAxeSa_punaHsWApana#kramAxeSa_punaHsWApana#noun#2#RM
 Program_run	progrAma_calana#progrAma_calana#noun#2#RM
 Program_scheduler	kramAxeSa_anusUcaka#kramAxeSa_anusUcaka#noun#2#RM
-Program_tracing	progrAma_#progrAma_#0#RM
-Program_transformation	progrAma_#progrAma_#0#RM
+Program_tracing	progrAma#progrAma#UNDEFINED#0#RM
+Program_transformation	progrAma#progrAma#UNDEFINED#0#RM
 Programming_flow_diagram	kramAxeSa_pravAha_AreKa#kramAxeSa_pravAha_AreKa#noun#3#RM
 Pseudo_instruction	Caxama_anuxeSa#Caxama_anuxeSa#noun#2#RM
 Pseudo_language	Caxama_BARA#Caxama_BARA#noun#2#RM
@@ -1466,7 +1466,7 @@ Read_process-write	paTana_saMsAXana_leKana#paTana_saMsAXana_leKana#noun#2#RM
 Read_protection	paTana_rakRaNa#paTana_rakRaNa#noun#2#RM
 Read_rate	paTana_xara#paTana_xara#noun#2#RM
 Read_release	paTana_vimocana#paTana_vimocana#noun#2#RM
-Read_reverse	paTana_prawilomana_#paTana_prawilomana_#0#RM
+Read_reverse	paTana_prawilomana#paTana_prawilomana#UNDEFINED#0#RM
 Read_scatter	prakIrNa_paTana#prakIrNa_paTana#noun#2#RM
 Read_screen	skrIna_paTana#skrIna_paTana#noun#2#RM
 Read_station	kenxra_paTana#kenxra_paTana#noun#2#RM
@@ -1544,7 +1544,7 @@ Shift_out_character	saMprawIka_bAhya_visWApana#saMprawIka_bAhya_visWApana#noun#3
 Shift_reduce_parsing	visWApana_laGukaraNa_paxa_vinyAsa#visWApana_laGukaraNa_paxa_vinyAsa#noun#3#RM
 Shift_register	visWApana_paMjI#visWApana_paMjI#noun#2#RM
 Shire_horse	Kaccara#Kaccara#noun#2#RM
-Shliver_surface	kaMpana_pqRTa_#kaMpana_pqRTa_#0#RM
+Shliver_surface	kaMpana_pqRTa#kaMpana_pqRTa#UNDEFINED#0#RM
 Shooting_match	pUrA_mAmalA#pUrA_mAmalA#noun#2#RM
 Shop_floor	kAryaSAlA#kAryaSAlA#noun#2#RM
 Shop_soiled	KarAba#KarAba#noun#2#RM
@@ -1571,11 +1571,11 @@ Signal_ratio	saMkewa_anupAwa#saMkewa_anupAwa#noun#2#RM
 Signal_regeneration	saMkewa_punarjanana#saMkewa_punarjanana#noun#2#RM
 Signal_standardisation	saMkewa_mAnakIkaraNa#saMkewa_mAnakIkaraNa#noun#2#RM
 Signal_strength	saMkewa_sAmarWya#saMkewa_sAmarWya#noun#2#RM
-Signal_to_noise_ratio	saMkewaCaXvani_anupAwa_#saMkewaCaXvani_anupAwa_#0#RM
+Signal_to_noise_ratio	saMkewaCaXvani_anupAwa#saMkewaCaXvani_anupAwa#UNDEFINED#0#RM
 Signal_transformation	saMkewa_rUpAMwaraNa#saMkewa_rUpAMwaraNa#noun#2#RM
 Single_instruction	ekala_anuxeSa#ekala_anuxeSa#noun#2#RM
 Sit_on_the_fence	xUrI_banAye_raKanA#xUrI_banAye_raKanA#noun#4#RM
-Special_purpose_computer	viSeRa_uxxeSya_aBikaliwra_#viSeRa_uxxeSya_aBikaliwra_#0#RM
+Special_purpose_computer	viSeRa_uxxeSya_aBikaliwra#viSeRa_uxxeSya_aBikaliwra#UNDEFINED#0#RM
 Spread_spectrum_audio	viswqwa_prawibiMba_Sravya#viswqwa_prawibiMba_Sravya#noun#3#RM
 Star_topology	wAraka_sWAna_vijFAna#wAraka_sWAna_vijFAna#noun#2#RM
 Star_wired_LAN	wAraka_piroyA_huA_lEna#wAraka_piroyA_huA_lEna#noun#3#RM
@@ -1592,7 +1592,7 @@ Stop_loop	virAma_pASa#virAma_pASa#noun#2#RM
 Stop_signal	virAma_saMkewa#virAma_saMkewa#noun#2#RM
 Stop_time	virAma_kAla#virAma_kAla#noun#2#RM
 Stop-and-wait_protocol	virAma_evam_prawIkRA_protokoYla#virAma_evam_prawIkRA_protokoYla#noun#2#RM
-Structure_of_array	saraNI_saMracanA_#saraNI_saMracanA_#1#RM
+Structure_of_array	saraNI_saMracanA#saraNI_saMracanA#UNDEFINED#1#RM
 Sub-nyquist_sampling	nekvista_upaprawicayana#nekvista_upaprawicayana#noun#2#RM
 Super_type	mahAprakAra#mahAprakAra#noun#2#RM
 Super_user	sarvocca_prayokwA#sarvocca_prayokwA#noun#2#RM
@@ -1601,7 +1601,7 @@ Switch_register	svica_paMjI#svica_paMjI#noun#2#RM
 Symbol_manipulation	prawIka_prakalana#prawIka_prakalana#noun#2#RM
 Symbol_string	prawIka_rajju#prawIka_rajju#noun#2#RM
 Symbol_table	prawIka_sAraNI#prawIka_sAraNI#noun#2#RM
-System_board	waMwra_patala_#waMwra_patala_#0#RM
+System_board	waMwra_patala#waMwra_patala#UNDEFINED#0#RM
 System_call	waMwra_AhvAna#waMwra_AhvAna#noun#2#RM
 System_capacity	waMwra_kRamawA#waMwra_kRamawA#noun#2#RM
 System_chart	waMwra_saMciwra#waMwra_saMciwra#noun#2#RM
@@ -1710,10 +1710,10 @@ User_identification	prayokwA_pahacAna#prayokwA_pahacAna#noun#2#RM
 User_interface	upayokwA_aMwarapqRTa#upayokwA_aMwarapqRTa#noun#2#RM
 User_liaison	prayokwA_saMparka#prayokwA_saMparka#noun#2#RM
 User_login_script	prayokwA_sawrAraMBa_lipi#prayokwA_sawrAraMBa_lipi#noun#3#RM
-User_mode	prayokwA_paxvawi_#prayokwA_paxvawi_#0#RM
-User_profile	prayokwA_pArSvaka_#prayokwA_pArSvaka_#0#RM
+User_mode	prayokwA_paxvawi#prayokwA_paxvawi#UNDEFINED#0#RM
+User_profile	prayokwA_pArSvaka#prayokwA_pArSvaka#UNDEFINED#0#RM
 User_program	upayokwA_kramAxeSa#upayokwA_kramAxeSa#noun#2#RM
-User_state	prayokwA_avasWA_#prayokwA_avasWA_#0#RM
+User_state	prayokwA_avasWA#prayokwA_avasWA#UNDEFINED#0#RM
 User_structure	prayokwA_saMracanA#prayokwA_saMracanA#noun#2#RM
 User_terminal	upayokwA_tarminala#upayokwA_tarminala#noun#2#RM
 Valid_item	vEXa_maxa#vEXa_maxa#noun#2#RM
@@ -1730,7 +1730,7 @@ Voice-response_unit	vAk_anukriyA_ekaka#vAk_anukriyA_ekaka#noun#2#RM
 Wait_list	prawIkRA_sUcI#prawIkRA_sUcI#noun#2#RM
 Wait_operation	prawIkRA_pracAlana#prawIkRA_pracAlana#noun#2#RM
 Wait_primitive	prawIkRA_pUrvaga#prawIkRA_pUrvaga#noun#2#RM
-Wait_state	prawIkRA_avasWA_#prawIkRA_avasWA_#0#RM
+Wait_state	prawIkRA_avasWA#prawIkRA_avasWA#UNDEFINED#0#RM
 Wait_time	prawIkRA_kAla#prawIkRA_kAla#noun#2#RM
 Wait_wound	prawIkRA_kuMdaliwa#prawIkRA_kuMdaliwa#noun#2#RM
 Web_page	veba_pqRTa#veba_pqRTa#noun#2#RM
@@ -1850,7 +1850,7 @@ above_cited	upari_uxXqwa#upari_uxXqwa#noun#2#RM
 above_given	upariliKiwa#upariliKiwa#noun#2#RM
 above_mentioned	uparyukwa#uparyukwa#noun#2#RM
 above_par	aXimUlya_para#aXimUlya_para#noun#2#RM
-above_quoted	Upara_uxXqwa_#Upara_uxXqwa_#0#RM
+above_quoted	Upara_uxXqwa#Upara_uxXqwa#UNDEFINED#0#RM
 above_resolution_be_published_in_the_gazette	uparyukwa_saMkalpa_BArawa_ke_rAjapawra_meM_prakASiwa_kiyA_jAe#uparyukwa_saMkalpa_BArawa_ke_rAjapawra_meM_prakASiwa_kiyA_jAe#noun#7#RM
 above_said	uparyukwa#uparyukwa#noun#2#RM
 abraham_lincoln	abrAhama_liMkana#abrAhama_liMkana#noun#2#RM
@@ -2385,7 +2385,7 @@ adaptive_routing	anukUlaka_anumargaNa#anukUlaka_anumargaNa#noun#2#RM
 adaptive_sampling	anukUlana_prawixarSana#anukUlana_prawixarSana#noun#2#RM
 adaptive_spatial_subdivision	anukUlI_avakASiya_upaBAjana#anukUlI_avakASiya_upaBAjana#noun#3#RM
 adaptive_transversal	anukUlI_anuprasWa#anukUlI_anuprasWa#noun#2#RM
-adc_to_the_president	rARtrapawi_ke_e__dI__sI_#rARtrapawi_ke_e__dI__sI_#0#RM
+adc_to_the_president	rARtrapawi_ke_e__dI__sI#rARtrapawi_ke_e__dI__sI#UNDEFINED#0#RM
 add_file	yojI_saMcikA#yojI_saMcikA#noun#2#RM
 add_in_program	progrAma_meM_yojana#progrAma_meM_yojana#noun#3#RM
 add_mode	yoga_viXA#yoga_viXA#noun#2#RM
@@ -2596,7 +2596,7 @@ administrative_sanction	praSAsakIya_saMsvI#praSAsakIya_saMsvI#noun#2#RM
 administrative_section	praSAsana_anuBAga#praSAsana_anuBAga#noun#2#RM
 administrative_services	praSAsanika_sevAeM#praSAsanika_sevAeM#noun#2#RM
 administrative_support_system	praSAsanika_sahAya_waMwra#praSAsanika_sahAya_waMwra#noun#3#RM
-administrative_syst	praSAsana_paxXawi_#praSAsana_paxXawi_#0#RM
+administrative_syst	praSAsana_paxXawi#praSAsana_paxXawi#UNDEFINED#0#RM
 administrative_system	praSAsana_praprAlI_IaxXawi#praSAsana_praprAlI_IaxXawi#noun#2#RM
 administrator_general	mahANaSAsaka#mahANaSAsaka#noun#2#RM
 admiralty_law	nO-aXikaraNa_kAnUna#nO-aXikaraNa_kAnUna#noun#2#RM
@@ -3079,7 +3079,6 @@ all_of_you	wuma_saba#wuma_saba#noun#1#RM
 all_other_goods_not_elsewhere_specified	anyawra_vinirxiRta_kie_gae_saBI_anya_mAla#anyawra_vinirxiRta_kie_gae_saBI_anya_mAla#noun#6#RM
 all_out	Barasaka#Barasaka#noun#2#RM
 all_over_India	BArawa_Bara#BArawa_Bara#noun#3#RM
-#all_over	pUre_[->meM]#pUre_[->meM]#noun#2#RM
 all_purpose_computer	sarvoxxeSIya_aBikaliwra#sarvoxxeSIya_aBikaliwra#noun#3#RM
 all_purpose	bahu_prayojana#bahu_prayojana#noun#2#RM
 all_right_signal	abAXawA_saMkewa#abAXawA_saMkewa#noun#3#RM
@@ -3132,7 +3131,6 @@ alma_mater	jahAz_SikRA_pAI_vaha_saMsWA#jahAz_SikRA_pAI_vaha_saMsWA#noun#2#RM
 almond_cookie	bAxAma_biskuta#bAxAma_biskuta#noun#2#RM
 alms_box	xAna_pAwra#xAna_pAwra#noun#2#RM
 alms_dish	BikRA_pAwra#BikRA_pAwra#noun#2#RM
-along_with	ke_sAWa#ke_sAWa#noun#2#RM
 alpha_numeric_punch	akRarAMkIya_paMca#akRarAMkIya_paMca#noun#3#RM
 alpha_test	ElPA_parikRaNa#ElPA_parikRaNa#noun#2#RM
 alphabetic_character_set	akRarAwmaka_saMprawIka_samuccaya#akRarAwmaka_saMprawIka_samuccaya#noun#3#RM
@@ -4178,7 +4176,6 @@ astronomical_observatory	veXaSAlA#veXaSAlA#noun#2#RM
 astronomical_unit	KagolIya_ikAI#KagolIya_ikAI#noun#2#RM
 asymetrix_tool_book	esimetriksa_tUla_buka#esimetriksa_tUla_buka#noun#3#RM
 asymmetric_device	asamamiwa_yukwi#asamamiwa_yukwi#noun#2#RM
-asymmetric_i\	asymmetric i\#asymmetric i\#0#RM
 asymptotic_notation	asamamiwika_saMkewana#asamamiwika_saMkewana#noun#2#RM
 asynchronous_communication	awulyakAlika_saMcAra#awulyakAlika_saMcAra#noun#2#RM
 asynchronous_computer	awulyakAlika_aBikaliwra#awulyakAlika_aBikaliwra#noun#2#RM
@@ -4442,7 +4439,6 @@ auto_coder	svawaH_kUtaleKaka#svawaH_kUtaleKaka#noun#2#RM
 auto_correlation_coefficient	svawaH_sahasaMbaMXana_guNAMka#svawaH_sahasaMbaMXana_guNAMka#noun#3#RM
 auto_dial_mode	svawaH_dAyala_viXA#svawaH_dAyala_viXA#noun#3#RM
 auto_dial	svawaH_dAyalana#svawaH_dAyalana#noun#2#RM
-auto_dial\	auto dial\#auto dial\#0#RM
 auto_exchange_assistant	oYtokeMxra_sahAyaka#oYtokeMxra_sahAyaka#noun#3#RM
 auto_index	svawaH_sUcaka#svawaH_sUcaka#noun#2#RM
 auto_indexed	svawaH_sUcakiwa_pawABigamana#svawaH_sUcakiwa_pawABigamana#noun#2#RM
@@ -4634,7 +4630,7 @@ axiomatic_complexity	svayaM_sixXa_jatilawA#svayaM_sixXa_jatilawA#noun#2#RM
 axiomatic_definition	aBigqhIwa_pariBARA#aBigqhIwa_pariBARA#noun#2#RM
 axle_box	XurA_bAksa#XurA_bAksa#noun#2#RM
 axle_guard	XurA_rakRI#XurA_rakRI#noun#2#RM
-b_tree	bI_vqkRa_#bI_vqkRa_#0#RM
+b_tree	bI_vqkRa#bI_vqkRa#UNDEFINED#0#RM
 b_vitamin	vitAmina-bI#vitAmina-bI#noun#2#RM
 bERMUDa_buttercup	baramUdA_meM_pAyA_jAne_vAlA#baramUdA_meM_pAyA_jAne_vAlA#noun#2#RM
 baby_bed	SiSu_kA_biswara#SiSu_kA_biswara#noun#2#RM
@@ -5645,7 +5641,7 @@ boiler_maker_chargeman	bAEYyalara_mekara_cArjamEna#bAEYyalara_mekara_cArjamEna#n
 boiler_maker_foreman	bAEYyalara_mekara_PoramEna#bAEYyalara_mekara_PoramEna#noun#3#RM
 boiler_maker	bAEYyalara_mekara#bAEYyalara_mekara#noun#2#RM
 boiler_mechanic	bAEYyalara_mekEnika#bAEYyalara_mekEnika#noun#2#RM
-boiler_supervisor	bAEYyalara_paryavekRaka_#bAEYyalara_paryavekRaka_#0#RM
+boiler_supervisor	bAEYyalara_paryavekRaka#bAEYyalara_paryavekRaka#UNDEFINED#0#RM
 bold_letter	motA_akRara#motA_akRara#noun#2#RM
 bomb_blast	bama_visPota#bama_visPota#noun#2#RM
 bomb_calorimeter	bama_kElorImItara#bama_kElorImItara#noun#2#RM
@@ -6039,7 +6035,6 @@ buffalo_chip	baPElo_cipa#baPElo_cipa#noun#2#RM
 buffalo_clover	BEMsa_kA_wipawiyA#BEMsa_kA_wipawiyA#noun#2#RM
 buffer_conflict	baPara_aMwarviroXa#baPara_aMwarviroXa#noun#2#RM
 buffer_context_index_array	baPara_BaMdAra_sUcakAMka_saraNI#baPara_BaMdAra_sUcakAMka_saraNI#noun#4#RM
-buffer_i\	buffer i\#buffer i\#0#RM
 buffer_register	baPara_rajistara#baPara_rajistara#noun#2#RM
 buffer_stock_plan	samIkaraNa_aurakRiwa_BaMdAra_yojanA#samIkaraNa_aurakRiwa_BaMdAra_yojanA#noun#3#RM
 buffer_stock	baPara_BaMdAra#baPara_BaMdAra#noun#2#RM
@@ -6227,7 +6222,7 @@ by_leaps_and_bounds	xina_xunI_rAwa_cOgunI#xina_xunI_rAwa_cOgunI#noun#4#RM
 by_mates_and_bounds	mApa_Ora_sImAMkana_karake#mApa_Ora_sImAMkana_karake#noun#4#RM
 by_means_of	ke_xvArA#ke_xvArA#noun#2#RM
 by_mutual_agreement	paraspara_samaJOwe_xvArA#paraspara_samaJOwe_xvArA#noun#3#RM
-by_no_means	kaBI_nahIM_#kaBI_nahIM_#0#RM
+by_no_means	kaBI_nahIM#kaBI_nahIM#UNDEFINED#0#RM
 by_order	ke_AxeSa_se#ke_AxeSa_se#noun#2#RM
 by_pass_lines	upamArga_lAineM#upamArga_lAineM#noun#3#RM
 by_post	dAka_se#dAka_se#noun#2#RM
@@ -6328,7 +6323,6 @@ called_up_capital	mAMgI_IulAyI_gayI_pUMjI#mAMgI_IulAyI_gayI_pUMjI#noun#3#RM
 calling_over	praviiRta_aMxarAja_milAna#praviiRta_aMxarAja_milAna#noun#2#RM
 calm_air	SAnwa_havA#SAnwa_havA#noun#2#RM
 calorie_chart	kElorI_sAraNI#kElorI_sAraNI#noun#2#RM
-#came_in	AyA#AyA#noun#2#RM
 camera_angle	kEmarA_koNa#kEmarA_koNa#noun#2#RM
 camera_attendant	kEmarA_paricara#kEmarA_paricara#noun#2#RM
 camera_care	kEmare_kA_raKa_raKAva#kEmare_kA_raKa_raKAva#noun#2#RM
@@ -9115,8 +9109,6 @@ cryptographic_algorithm	guDZAleKI_elgoriWma#guDZAleKI_elgoriWma#noun#2#RM
 cryptographic_principle	kriptogrAPika_sixXAnwa#kriptogrAPika_sixXAnwa#noun#2#RM
 crystal_clear	suspaRta#suspaRta#noun#2#RM
 crystal_gazing	BaviRyavANI_karane_kA_aByAsa#BaviRyavANI_karane_kA_aByAsa#noun#2#RM
-csma\	csma\#csma\#2#RM
-csma\	csma\#csma\#2#RM
 cubic_centimeter	kyUbika_sentImItara#kyUbika_sentImItara#noun#2#RM
 cuckoo_bread	koyala_ko_KilAne_kI_rotI#koyala_ko_KilAne_kI_rotI#noun#2#RM
 cuckoo_clock	kUka_karane_vAlI_GaMtAGadI#kUka_karane_vAlI_GaMtAGadI#noun#2#RM
@@ -9294,7 +9286,7 @@ cypher_inspector	bIjaleKa_nirIkRaka#bIjaleKa_nirIkRaka#noun#2#RM
 cypher_operator	vIjaleKiwra_pracAlaka#vIjaleKiwra_pracAlaka#noun#2#RM
 cypher_telegram	bIjaleKa_wAra#bIjaleKa_wAra#noun#2#RM
 cystic_fibrosis	SvAsa_avayava_meM_saMkramaNa#SvAsa_avayava_meM_saMkramaNa#noun#2#RM
-cytological_assistant	koSikAvijFAna_sahAyaka_#koSikAvijFAna_sahAyaka_#0#RM
+cytological_assistant	koSikAvijFAna_sahAyaka#koSikAvijFAna_sahAyaka#UNDEFINED#0#RM
 dabbling_duck	Cidakane_vAlA_bawwaKa#Cidakane_vAlA_bawwaKa#noun#2#RM
 dafadar_major	xaPZAxAra_mejara#xaPZAxAra_mejara#noun#2#RM
 daignostic_system	nixAnI_waMwra#nixAnI_waMwra#noun#2#RM
@@ -10749,7 +10741,6 @@ disk_cartridge	cakrikA_kArtreja#cakrikA_kArtreja#noun#2#RM
 disk_controller_card	cakrikA_niyaMwraka_kArda#cakrikA_niyaMwraka_kArda#noun#3#RM
 disk_density	cakrikA_Ganawva#cakrikA_Ganawva#noun#2#RM
 disk_drive_controller	cakrikA_cAlaka_niyaMwraka#cakrikA_cAlaka_niyaMwraka#noun#3#RM
-disk_drive_interface\	disk drive interface\#disk drive interface\#0#RM
 disk_drive_magnetic	cakrikA_cAlaka_cuMbakIya#cakrikA_cAlaka_cuMbakIya#noun#3#RM
 disk_drive	cakrikA_cAlaka#cakrikA_cAlaka#noun#2#RM
 disk_file	cakrikA_saMcikA#cakrikA_saMcikA#noun#2#RM
@@ -10818,7 +10809,6 @@ dissolution_of_partnership	sAJexArI_kA_vixatana#sAJexArI_kA_vixatana#noun#1#RM
 distance_function	xUrI_Palana#xUrI_Palana#noun#2#RM
 distillery_inspector	AsavanI_nirIkRaka#AsavanI_nirIkRaka#noun#2#RM
 distination_field	gaMwavya_kRewra#gaMwavya_kRewra#noun#2#RM
-distinct_tcp\	distinct tcp\#distinct tcp\#0#RM
 distinguishable_state	viBexya_avasWA#viBexya_avasWA#noun#2#RM
 distress_sale	ApAwa_bikrI#ApAwa_bikrI#noun#2#RM
 distress_taccavi_loans	vipwwikAlIna_wakAvI_qNa#vipwwikAlIna_wakAvI_qNa#noun#3#RM
@@ -11119,7 +11109,7 @@ draft_day	drAPZta_xina#drAPZta_xina#noun#2#RM
 draft_dodger	POjZa_meM_gEra_kAnUnI_karAra_xene_vAlA_vyakwi#POjZa_meM_gEra_kAnUnI_karAra_xene_vAlA_vyakwi#noun#2#RM
 draft_drawn_under_letters_of_credit	sAKapawroM_ke_aXIna_Ahariwa_aAtA_gayA_drAPta#sAKapawroM_ke_aXIna_Ahariwa_aAtA_gayA_drAPta#noun#4#RM
 draft_for_approval	anumoxanArWa_prArUpa#anumoxanArWa_prArUpa#noun#3#RM
-draft_is_concurred_in	prArUpa_se_sahamawi_hE_#prArUpa_se_sahamawi_hE_#0#RM
+draft_is_concurred_in	prArUpa_se_sahamawi_hE#prArUpa_se_sahamawi_hE#UNDEFINED#0#RM
 draft_notes_comments	tippaprI_Ora_AlocanAoM_ke_masOxe_erArUpa#tippaprI_Ora_AlocanAoM_ke_masOxe_erArUpa#noun#3#RM
 draft_paid_without_advice	binA_sUcanA_ke_axA_kiyA_gayA_drAPta#binA_sUcanA_ke_axA_kiyA_gayA_drAPta#noun#4#RM
 draft_paper	masOxA_kAgaja#masOxA_kAgaja#noun#2#RM
@@ -11385,7 +11375,7 @@ dynamics_of_information_technology_industry	sUcanA_prOxyOgikI_uxyoga_kI#sUcanA_p
 dynamics_of_information	sUcana_gawikI#sUcana_gawikI#noun#1#RM
 dynamo_car_officer	dAyanamo_yAna_aXikArI#dAyanamo_yAna_aXikArI#noun#3#RM
 e_business	I_vyavasAya#I_vyavasAya#noun#2#RM
-e_commerce	I_kAmarsa_#I_kAmarsa_#0#RM
+e_commerce	I_kAmarsa#I_kAmarsa#UNDEFINED#0#RM
 e_mail	ilektroYnika_mela#ilektroYnika_mela#noun#2#RM
 each_other	eka_xUsare#eka_xUsare#noun#2#RM
 each_way	xono_waraPa{Sarwa_kA}#xono_waraPa{Sarwa_kA}#noun#2#RM
@@ -11686,7 +11676,7 @@ electronic_switching_system	ilektroYnika_svicana_waMwra#ilektroYnika_svicana_waM
 electronic_warfare	yAnwrikI_yuxXa#yAnwrikI_yuxXa#noun#2#RM
 electronics_chain	ilektrAnikI_SrqMKalA#ilektrAnikI_SrqMKalA#noun#2#RM
 electronics_company	ilektrAnikI_kampanI#ilektrAnikI_kampanI#noun#2#RM
-electronics_corporation_of_india_ltd.	BArawIya_ilektroYnika_nigama_li_#BArawIya_ilektroYnika_nigama_li_#2#RM
+electronics_corporation_of_india_ltd.	BArawIya_ilektroYnika_nigama_li#BArawIya_ilektroYnika_nigama_li#UNDEFINED#2#RM
 electronics_intelligence	ilEktroYnika_gupwa-sUcanA#ilEktroYnika_gupwa-sUcanA#noun#2#RM
 electrostatic_bond	siWira_vixyuwikI_sambanXa#siWira_vixyuwikI_sambanXa#noun#2#RM
 element_of_double_financing	xuhare_vwwipoRapra_kA_wawva_aMSa#xuhare_vwwipoRapra_kA_wawva_aMSa#noun#1#RM
@@ -12324,8 +12314,6 @@ export_based_industry	niryAwa_praXAna_uxyoga#niryAwa_praXAna_uxyoga#noun#3#RM
 export_bill_of_lading	niryAwa_laxAna_pawra#niryAwa_laxAna_pawra#noun#2#RM
 export_bill	niryAwa_bila#niryAwa_bila#noun#2#RM
 export_bills_credit_scheme	niryAwa_bila_qNa_yojanA#niryAwa_bila_qNa_yojanA#noun#4#RM
-export_bills_drawn_under_l\	export bills drawn under l\#export bills drawn under l\#0#RM
-export_bills_drawn_without_l\	export bills drawn without l\#export bills drawn without l\#0#RM
 export_cess	niryAwa_upakara#niryAwa_upakara#noun#2#RM
 export_contracts	niryAwa_Teke#niryAwa_Teke#noun#2#RM
 export_control	niryAwa_niyaMwraNa#niryAwa_niyaMwraNa#noun#2#RM
@@ -12487,7 +12475,6 @@ face_value	aMkiwa_mUlya#aMkiwa_mUlya#noun#2#RM
 facial_artery	AnanI_XamanI#AnanI_XamanI#noun#2#RM
 facility_of_payment	BugawAna_suviXA#BugawAna_suviXA#noun#1#RM
 facing_point	sammuKa_kAMtA#sammuKa_kAMtA#noun#2#RM
-facsimile_i\	facsimile i\#facsimile i\#0#RM
 facsimile_message	prawilipi_saMxeSa#prawilipi_saMxeSa#noun#2#RM
 facsimile_signature	prawikqwi_haswAkRara#prawikqwi_haswAkRara#noun#2#RM
 facsimile_system	prawikqwi_waMwra#prawikqwi_waMwra#noun#2#RM
@@ -12581,7 +12568,7 @@ false_imprisonment	kqwwima_kZArAvAsa#kqwwima_kZArAvAsa#noun#2#RM
 false_information	JUTI_sUcanA#JUTI_sUcanA#noun#2#RM
 false_pretence	Cala_kapata#Cala_kapata#noun#2#RM
 false_pretense	Cala_kapata#Cala_kapata#noun#2#RM
-false_statement	JUTA_vivaraNa_#JUTA_vivaraNa_#0#RM
+false_statement	JUTA_vivaraNa#JUTA_vivaraNa#UNDEFINED#0#RM
 family_allowance	kutuMba_BawwA#kutuMba_BawwA#noun#2#RM
 family_arrangement	pArivArika_samaJOwA_AyavasWA#pArivArika_samaJOwA_AyavasWA#noun#2#RM
 family_budget	pArivArika_bajata#pArivArika_bajata#noun#2#RM
@@ -13526,7 +13513,7 @@ food_aid	KAxya_sahAyawA#KAxya_sahAyawA#noun#2#RM
 food_allowance	AhAra_BawwA#AhAra_BawwA#noun#2#RM
 food_and_agricuture_division	KAxya_Ora_kqRi_praBAga#KAxya_Ora_kqRi_praBAga#noun#4#RM
 food_and_nutrition_board	KAxya_Ora_poRapra_borda#KAxya_Ora_poRapra_borda#noun#4#RM
-food_and_supplies_and_consumer_affairs	KAxya_pUrwi_evaM_upaBokwA_kArya_#KAxya_pUrwi_evaM_upaBokwA_kArya_#0#RM
+food_and_supplies_and_consumer_affairs	KAxya_pUrwi_evaM_upaBokwA_kArya#KAxya_pUrwi_evaM_upaBokwA_kArya#UNDEFINED#0#RM
 food_articles	KAxya_paxArWa#KAxya_paxArWa#noun#2#RM
 food_brand	KAxya_paxArWa_kA_baWaurEnda#KAxya_paxArWa_kA_baWaurEnda#noun#2#RM
 food_cache	KAne_kA_gupwa_BaMdAra#KAne_kA_gupwa_BaMdAra#noun#2#RM
@@ -14377,7 +14364,6 @@ general_treasury_section	sAmAnya_KajAnA_anuBAga#sAmAnya_KajAnA_anuBAga#noun#3#RM
 general_wages	sAmAnya_majaxUrI#sAmAnya_majaxUrI#noun#2#RM
 general_ward	sAmAnya_vArda#sAmAnya_vArda#noun#2#RM
 generalized_epilepsy	vyApaka_mirgI#vyApaka_mirgI#noun#2#RM
-generalized_i\	generalized i\#generalized i\#0#RM
 generalized_sequental_machine	sAmAnyIkqwa_anukramika_maSIna#sAmAnyIkqwa_anukramika_maSIna#noun#3#RM
 generalized_subroutine	vyApakIkqwa_upanemakA#vyApakIkqwa_upanemakA#noun#2#RM
 generally_speaking	sAmAnya_wOra_para_kaha_sakawe_hE_ki#sAmAnya_wOra_para_kaha_sakawe_hE_ki#noun#2#RM
@@ -14422,7 +14408,6 @@ gestetner_operator	gestetanara_oYparetara#gestetanara_oYparetara#noun#2#RM
 get_caught	pakadZe_jAnA#pakadZe_jAnA#noun#2#RM
 get_off_to_a_flying_start	AramBa_se_kAma_acCI_waraha_honA#AramBa_se_kAma_acCI_waraha_honA#noun#6#RM
 get_together	jamaGata#jamaGata#noun#2#RM
-#get_up	uTa#uTa#noun#2#RM
 getting_out	bAhara_nikalawA_[huA]#bAhara_nikalawA_[huA]#noun#2#RM
 ghat_inspector	xAta_nirIkRaka#xAta_nirIkRaka#noun#2#RM
 ghat_serang	xAta_serAMga#xAta_serAMga#noun#2#RM
@@ -15653,11 +15638,11 @@ honey_tongue	mITI_jubAna#mITI_jubAna#noun#2#RM
 honeydew_melon	KarabUjA#KarabUjA#noun#2#RM
 honky_tonk	eka_waraha_kA_pyAno_se_bajI_jAjZa_saMgIwa#eka_waraha_kA_pyAno_se_bajI_jAjZa_saMgIwa#noun#2#RM
 honorary_adviser_in_homeopathy	mAnaxa_homiyopEWI_salAhakAra#mAnaxa_homiyopEWI_salAhakAra#noun#4#RM
-honorary_air_aide_de_camp	mAnaxa_havAWa_e_dI_sI_#mAnaxa_havAWa_e_dI_sI_#0#RM
+honorary_air_aide_de_camp	mAnaxa_havAWa_e_dI_sI#mAnaxa_havAWa_e_dI_sI#UNDEFINED#0#RM
 honorary_capacity	avEwanika_hEsiyawa#avEwanika_hEsiyawa#noun#2#RM
 honorary_degree	sAmmAnika_upAXi#sAmmAnika_upAXi#noun#2#RM
 honorary_dental_advisor	mAnaxa_xaMwa_salAhakAra#mAnaxa_xaMwa_salAhakAra#noun#3#RM
-honorary_life_aide_dc_camp	mAnaxa_AjIvana_e_dI_sI_#mAnaxa_AjIvana_e_dI_sI_#0#RM
+honorary_life_aide_dc_camp	mAnaxa_AjIvana_e_dI_sI#mAnaxa_AjIvana_e_dI_sI#UNDEFINED#0#RM
 honorary_secretary	mAnaxa_saciva#mAnaxa_saciva#noun#2#RM
 honorary_statistical_advisor	mAnaxa_sAMKyikI_salAhakAra#mAnaxa_sAMKyikI_salAhakAra#noun#3#RM
 honorific_prefix	sammAna_Sabxa#sammAna_Sabxa#noun#2#RM
@@ -15715,7 +15700,6 @@ hospitality_allowance	sawkAra_BawwA#sawkAra_BawwA#noun#2#RM
 hospitality_grant	awiWya_anuxAna#awiWya_anuxAna#noun#2#RM
 host_address	paricAraka_pawA#paricAraka_pawA#noun#2#RM
 host_computer	paricAraka_kaMpyUtara#paricAraka_kaMpyUtara#noun#2#RM
-host_computer\	host computer\#host computer\#0#RM
 host_language	praXAna_BARA#praXAna_BARA#noun#2#RM
 host_name	paricAraka_nAma#paricAraka_nAma#noun#2#RM
 host_processor	paricAraka_prakramaka#paricAraka_prakramaka#noun#2#RM
@@ -16057,7 +16041,7 @@ improved_mobile_telephone_service	unnawa_cala_telIPena_sevA#unnawa_cala_telIPena
 improved_package_of_practices	viviXa_u_uZnawa_kArya_praprAliyAM#viviXa_u_uZnawa_kArya_praprAliyAM#noun#2#RM
 improved_seeds	vikasiwa_bIja#vikasiwa_bIja#noun#2#RM
 improvement_trust	suXAra_nyAsa#suXAra_nyAsa#noun#2#RM
-impulse_test_certificate	Avega_parIkRa_#Avega_parIkRa_#0#RM
+impulse_test_certificate	Avega_parIkRa#Avega_parIkRa#UNDEFINED#0#RM
 impure_segment	aSuxXa_KaMda#aSuxXa_KaMda#noun#2#RM
 in_a_bad_way	burI_hAlawa_meM#burI_hAlawa_meM#noun#4#RM
 in_a_fix	cakkara_meM_padZanA#cakkara_meM_padZanA#noun#3#RM
@@ -16187,13 +16171,12 @@ in_order_of_priority	prAWamikawA_ke_krama_se#prAWamikawA_ke_krama_se#noun#2#RM
 in_order_of	ke_krama_se#ke_krama_se#noun#2#RM
 in_order_that	jisase_ki#jisase_ki#noun#3#RM
 in_order_to_facilitate_timely_credit_of_customs_dues	sImA_Sulka_xeyoM_ke_yaWAsamaya_kredita_ko_suviXAjanaka_banAne_ke_uxxeSya_se#sImA_Sulka_xeyoM_ke_yaWAsamaya_kredita_ko_suviXAjanaka_banAne_ke_uxxeSya_se#noun#6#RM
-#in_order_to	karane_ke_liye[wAki]#karane_ke_liye[wAki]#noun#3#RM
 in_order	yaWAkrama#yaWAkrama#noun#2#RM
 in_other_respects	anya_bAwoM_meM#anya_bAwoM_meM#noun#3#RM
 in_other_words	anya_SabxoM_meM#anya_SabxoM_meM#noun#3#RM
 in_part	aMSawaH#aMSawaH#noun#2#RM
 in_partial_modification_of	kA_AMSika_ASoXana_karawe_hue#kA_AMSika_ASoXana_karawe_hue#noun#3#RM
-in_particular	viSeRawa:_#viSeRawa:_#0#RM
+in_particular	viSeRawa:#viSeRawa:#UNDEFINED#0#RM
 in_patient	aMwaraMga_rogI#aMwaraMga_rogI#noun#2#RM
 in_peril_of	ke_Kaware_se#ke_Kaware_se#noun#2#RM
 in_perpetuity	SASvawawaH#SASvawawaH#noun#2#RM
@@ -16231,7 +16214,7 @@ in_situ	mUla_sWAna_para#mUla_sWAna_para#noun#2#RM
 in_so_far_as	jahAz_waka_ki#jahAz_waka_ki#noun#4#RM
 in_spite_of	ke_bAvajUxa#ke_bAvajUxa#noun#2#RM
 in_succession_to	ke_uwwarAXikAra_meM#ke_uwwarAXikAra_meM#noun#3#RM
-in_succession	lagAwAra_#lagAwAra_#0#RM
+in_succession	lagAwAra#lagAwAra#UNDEFINED#0#RM
 in_supersession_of	kA_aXikramapra_karawe_hue#kA_aXikramapra_karawe_hue#noun#2#RM
 in_support_of	ke_samarwana_meM#ke_samarwana_meM#noun#2#RM
 in_supression_of	kA_aXikramapra_karawe_hue#kA_aXikramapra_karawe_hue#noun#2#RM
@@ -16459,7 +16442,6 @@ indian_agricultural_research_institute	BArawIya_kqRi_anusaMXAna_saMsWAna#BArawIy
 indian_agricultural_service	BArawIya_kqRi_sevA#BArawIya_kqRi_sevA#noun#3#RM
 indian_agricultural_statistics_research_institute	BArawIya_kqRi_sAMKyikI_anusaMXAna_saMsWAna#BArawIya_kqRi_sAMKyikI_anusaMXAna_saMsWAna#noun#5#RM
 indian_airlines_corporation	BArawIya_havAWa_kampanI#BArawIya_havAWa_kampanI#noun#3#RM
-indian_audit_account_service\deptt.	BArawIya_leKA_waWA_leKAparIkRA_sevA_AiBAga#BArawIya_leKA_waWA_leKAparIkRA_sevA_AiBAga#noun#4#RM
 indian_audit_accounts_services_probationer	GarawIya_leKA_waWA_leKAparIkRA_sevA_parivIkRAXIna_aixakArI#GarawIya_leKA_waWA_leKAparIkRA_sevA_parivIkRAXIna_aixakArI#noun#5#RM
 indian_bank's_association	BArawIya_bEMka_saMxa#BArawIya_bEMka_saMxa#noun#3#RM
 indian_bureau_of_mines	BArawIya_KAna_byUro#BArawIya_KAna_byUro#noun#2#RM
@@ -17664,8 +17646,6 @@ keel_arch	jahAjZa_ke_peMxe_kI_meharAba#jahAjZa_ke_peMxe_kI_meharAba#noun#2#RM
 keen_eyed	wIkRpra_iRta#wIkRpra_iRta#noun#2#RM
 keep_down	xabAe_raKanA#xabAe_raKanA#noun#2#RM
 keep_in_abeyance	prAsWagiwa_raKanA#prAsWagiwa_raKanA#noun#3#RM
-#_keep on_is_phrasal_verb_so_comment_it.	#"keep on" is phrasal verb so comment it.
-#keep_on	jArI_raKanA#jArI_raKanA#noun#2#RM
 keep_pending	laMbiwa_raKA_jAe#laMbiwa_raKA_jAe#noun#2#RM
 keep_the_flag_flying	mAna_banAe_raKo#mAna_banAe_raKo#noun#4#RM
 keep_with_the_file	ise_misila_ke_sAWa_raKie#ise_misila_ke_sAWa_raKie#noun#4#RM
@@ -17734,12 +17714,8 @@ kilobits_per_second	kilo_bita_prawi_sekenda#kilo_bita_prawi_sekenda#noun#3#RM
 kilogram_calorie	kilogrAma_kelorI#kilogrAma_kelorI#noun#2#RM
 kind_component	vaswu_xataka#vaswu_xataka#noun#2#RM
 kind_hearted	xayAlu#xayAlu#noun#2#RM
-#kind_of	waraha_kA#waraha_kA#noun#2#RM
-#Since_preps_are_moved,_this_also_gets_moved,_hence_not_grouped_at_this_stage.	#Since preps are moved, this also gets moved, hence not grouped at this stage.#-#Since preps are moved, this also gets moved, hence not grouped at this stage.#noun#14#RM
 kind_regards	snehamaya_SuBakAmanAez#snehamaya_SuBakAmanAez#noun#2#RM
 kindergarten_teacher	bAlabAdZI_SikRaka#bAlabAdZI_SikRaka#noun#2#RM
-#kinds_of	waraha_ke#waraha_ke#noun#2#RM
-#Since_preps_are_moved,_this_also_gets_moved,_hence_not_grouped_at_this_stage.	#Since preps are moved, this also gets moved, hence not grouped at this stage.#-#Since preps are moved, this also gets moved, hence not grouped at this stage.#noun#14#RM
 kinetic_energy	gawija_UrjA#gawija_UrjA#noun#2#RM
 king_cobra	nAgarAja#nAgarAja#noun#2#RM
 king_size	badZA_AkAra#badZA_AkAra#noun#2#RM
@@ -19657,9 +19633,6 @@ master_tape	praXAna_tepa#praXAna_tepa#noun#2#RM
 master_terminal	praXAna_aMwaka#praXAna_aMwaka#noun#2#RM
 master_warrent_officer	mAstara_vAraMta_aPZasara#mAstara_vAraMta_aPZasara#noun#3#RM
 master_weaver	praXAna_bunakara#praXAna_bunakara#noun#2#RM
-master\	master\#master\#0#RM
-master\	master\#master\#0#RM
-master\	master\#master\#0#RM
 match_book	xiyAsalAiyoM_kA_pawwA#xiyAsalAiyoM_kA_pawwA#noun#2#RM
 match_box	xiyAsalAI_kI_dibiyA#xiyAsalAI_kI_dibiyA#noun#2#RM
 match_maker	SAxI_waya_karane_vAlA_vyakwi#SAxI_waya_karane_vAlA_vyakwi#noun#2#RM
@@ -19773,7 +19746,6 @@ mean_time_between_failures	aMwarviPalawA_mAXya_kAla#aMwarviPalawA_mAXya_kAla#nou
 mean_time_to_failure	viPalawA_mAXya_kAla#viPalawA_mAXya_kAla#noun#4#RM
 mean_time_to_repair	marammwa_mAXya_kAla#marammwa_mAXya_kAla#noun#4#RM
 mean_value_function	mAXya_mUlya_Palana#mAXya_mUlya_Palana#noun#3#RM
-mean\	mean\#mean\#1#RM
 means_of_production	uwpAxana_ke_sAXana#uwpAxana_ke_sAXana#noun#1#RM
 means_of_subsistence	nirvAha_sAXana#nirvAha_sAXana#noun#1#RM
 measure_of_location	sWAnanirXAraNa_mApa#sWAnanirXAraNa_mApa#noun#1#RM
@@ -19940,7 +19912,6 @@ memory_management	smqwi_prabaMXana#smqwi_prabaMXana#noun#2#RM
 memory_manager	smqwi_prabaMXaka#smqwi_prabaMXaka#noun#2#RM
 memory_map	smqwi_prawiciwra#smqwi_prawiciwra#noun#2#RM
 memory_mapped_file	smqwi_prawiciwriwa_saMcikA#smqwi_prawiciwriwa_saMcikA#noun#3#RM
-memory_mapped_i\	memory mapped i\#memory mapped i\#0#RM
 memory_mapped_terminal	smqwi_mAnaciwra_tarminala#smqwi_mAnaciwra_tarminala#noun#3#RM
 memory_mapped_video	smqwi_prawiciwriwa_vIdiyo#smqwi_prawiciwriwa_vIdiyo#noun#3#RM
 memory_mapper_file	smqwi_prawiciwraNa_saMcikA#smqwi_prawiciwraNa_saMcikA#noun#3#RM
@@ -20114,7 +20085,6 @@ micro_kernel	mAikro_aRTi#mAikro_aRTi#noun#2#RM
 micro_organism	sUkRma_jIva#sUkRma_jIva#noun#2#RM
 micro_scheduler	mAikro_anusUcaka#mAikro_anusUcaka#noun#2#RM
 micro_segmentation	mAikro_KaMdIkaraNa#mAikro_KaMdIkaraNa#noun#2#RM
-micro\	micro\#micro\#1#RM
 microbiologist_department	sUkRmajIvavijFAna_viBAga#sUkRmajIvavijFAna_viBAga#noun#2#RM
 microcircuit_isolation	mAikro_paripaWa_vilagana#mAikro_paripaWa_vilagana#noun#2#RM
 microcom_networking_protocol	mAikro_netavarkiMga_protokoYla#mAikro_netavarkiMga_protokoYla#noun#3#RM
@@ -21565,7 +21535,6 @@ no-go_area	niRixXasWala#niRixXasWala#noun#2#RM
 noble_cane	uwkqRta_beMwa#uwkqRta_beMwa#noun#2#RM
 noblesse_oblige	UzcI_paxavI_vAloM_kI_bAXyawA#UzcI_paxavI_vAloM_kI_bAXyawA#noun#2#RM
 nodal_agency	keMxraka_aiBakaraNa#keMxraka_aiBakaraNa#noun#2#RM
-nodes_live\	nodes live\#nodes live\#0#RM
 noise_characteristic	rava_aBilakRaNa#rava_aBilakRaNa#noun#2#RM
 noise_conditions	AvAjZa_kA_hAla#AvAjZa_kA_hAla#noun#2#RM
 noise_factor	rava_kAraka#rava_kAraka#noun#2#RM
@@ -22006,7 +21975,6 @@ odd_parity_check	viRama_samawA_joYMca#viRama_samawA_joYMca#noun#3#RM
 odd_parity	viRama_samawA#viRama_samawA#noun#2#RM
 oddly_enough	anoKI_bAwa#anoKI_bAwa#noun#2#RM
 odds_and_ends	viviXa_vaswuyeM#viviXa_vaswuyeM#noun#3#RM
-#of_all	saba_meM#saba_meM#noun#1#RM
 of_being	hone_kA#hone_kA#noun#2#RM
 of_course	niSciwa_rUpa_se#niSciwa_rUpa_se#noun#2#RM
 of_fitness_certifcate	ArogyawA#ArogyawA#noun#3#RM
@@ -22847,7 +22815,6 @@ packaging_company	pEkiMga_kampanI#pEkiMga_kampanI#noun#2#RM
 packaging_machinery	pEka_karane_kA_waMwra#pEka_karane_kA_waMwra#noun#2#RM
 packed_array	saMkuliwasaraNI#saMkuliwasaraNI#noun#2#RM
 packed_format	saMkuliwa_saMrUpa#saMkuliwa_saMrUpa#noun#2#RM
-packet_assembler\	packet assembler\#packet assembler\#0#RM
 packet_assembly	pEketa_kodAMwaraNa#pEketa_kodAMwaraNa#noun#2#RM
 packet_disassembly	pEketa_vikodAMwaraNa#pEketa_vikodAMwaraNa#noun#2#RM
 packet_format	pEketa_saMrUpa#pEketa_saMrUpa#noun#2#RM
@@ -23020,7 +22987,6 @@ parallel_computer	yugapawa_aBikaliwra#yugapawa_aBikaliwra#noun#2#RM
 parallel_data_controller	yugapawa_AMkadZA_niyaMwraka#yugapawa_AMkadZA_niyaMwraka#noun#3#RM
 parallel_data_medium	samAMwara_AMkadZA_mAXyama#samAMwara_AMkadZA_mAXyama#noun#3#RM
 parallel_in_serial_out	samAMwara_niveSa_anukramika#samAMwara_niveSa_anukramika#noun#4#RM
-parallel_input\	parallel input\#parallel input\#0#RM
 parallel_interface	samAMwara_aMwarApqRTa#samAMwara_aMwarApqRTa#noun#2#RM
 parallel_mode	samaMAwara_viXA#samaMAwara_viXA#noun#2#RM
 parallel_operation	samAMwara_saMkriyA#samAMwara_saMkriyA#noun#2#RM
@@ -24677,7 +24643,6 @@ problem_file	samasyA_saMcikA#samasyA_saMcikA#noun#2#RM
 problem_input_tape	samasyA_niveSa_tepa#samasyA_niveSa_tepa#noun#3#RM
 problem_oriented_language	samasyAmUlaka_BARA#samasyAmUlaka_BARA#noun#3#RM
 problem_program	samasyA_kramAxeSa#samasyA_kramAxeSa#noun#2#RM
-#problem_solving	samasyA_hala#samasyA_hala#noun#2#RM
 problem_state	samasyAmUlaka_sWiwI#samasyAmUlaka_sWiwI#noun#2#RM
 procedural_abstraction	prakriyAwmaka_saMkRipwikaraNa#prakriyAwmaka_saMkRipwikaraNa#noun#2#RM
 procedural_argument	prakriyAwmaka_svawaMwra_cara#prakriyAwmaka_svawaMwra_cara#noun#2#RM
@@ -25616,8 +25581,6 @@ read_station	kenxra_paTana#kenxra_paTana#noun#2#RM
 read_time_language	paTana_kAla_BARA#paTana_kAla_BARA#noun#3#RM
 read_time	paTana_kAla#paTana_kAla#noun#2#RM
 read_write_channel	paTana_leKana_cEnala#paTana_leKana_cEnala#noun#3#RM
-read\	read\#read\#1#RM
-read\	read\#read\#1#RM
 reader_copier	pATaka_prawilipika#pATaka_prawilipika#noun#2#RM
 reader_interpreter	pATaka_nirvacaka#pATaka_nirvacaka#noun#2#RM
 reader_postman	vAcaka_dAkiyA#vAcaka_dAkiyA#noun#2#RM
@@ -25919,7 +25882,7 @@ reference_year	saMxaBar_vaRar#saMxaBar_vaRar#noun#2#RM
 referential_integrity	saMxarBika_ekawA#saMxarBika_ekawA#noun#2#RM
 referred_to_above	uparinirxiRta#uparinirxiRta#noun#3#RM
 referred_to_as	ke_nAma_se_nirxiRta#ke_nAma_se_nirxiRta#noun#3#RM
-refinance_corporation_for_industry	oExyogika_punarvwwi_nigama_#oExyogika_punarvwwi_nigama_#0#RM
+refinance_corporation_for_industry	oExyogika_punarvwwi_nigama#oExyogika_punarvwwi_nigama#UNDEFINED#0#RM
 refinance_deputy_director	punarvwwi_upanixeSaka#punarvwwi_upanixeSaka#noun#3#RM
 refinancing_schemes	punarvwwi_praxAna_karane_eunarvwwiIyana_kI_yojanAeM#punarvwwi_praxAna_karane_eunarvwwiIyana_kI_yojanAeM#noun#2#RM
 refined_diesel_oil_and_vaporising_oils	pariRkqwa_dIjala_wela_Ora_vARpaSIla_wela#pariRkqwa_dIjala_wela_Ora_vARpaSIla_wela#noun#6#RM
@@ -26293,7 +26256,6 @@ request_for_discussion	carcA_nivexana#carcA_nivexana#noun#3#RM
 request_for_proposal	praswAva_nivexana#praswAva_nivexana#noun#3#RM
 request_method	nivexana_viXi#nivexana_viXi#noun#2#RM
 request_reply_protocol	prawyujFalwalqAra_protokoYla#prawyujFalwalqAra_protokoYla#noun#3#RM
-request\	request\#request\#0#RM
 required_to_be_ratified	anusamarWana_apekRiwa_hE#anusamarWana_apekRiwa_hE#noun#4#RM
 required_to_be_rectified	pariSoXana_apekRiwa_hE#pariSoXana_apekRiwa_hE#noun#4#RM
 requirement_analysis	AvaSyakawA_viSleRaNa#AvaSyakawA_viSleRaNa#noun#2#RM
@@ -26890,7 +26852,7 @@ rural_works_programme_director	grAma_nirmANa_kAryakrama_nixeSaka#grAma_nirmANa_k
 rural_works_programme	grAma_nirmANa_kArya_kAryakrama#grAma_nirmANa_kArya_kAryakrama#noun#3#RM
 rush_of_expenditure	vyaya_kA_AXikya#vyaya_kA_AXikya#noun#1#RM
 russian_bank	wASa_kA_eka_Kela#wASa_kA_eka_Kela#noun#2#RM
-russian_roulette	eka_golI_se_piswOla_kI_KawaranAka_kalAbAjI_#eka_golI_se_piswOla_kI_KawaranAka_kalAbAjI_#0#RM
+russian_roulette	eka_golI_se_piswOla_kI_KawaranAka_kalAbAjI#eka_golI_se_piswOla_kI_KawaranAka_kalAbAjI#UNDEFINED#0#RM
 russian_unit	rUsI_ekaka#rUsI_ekaka#noun#2#RM
 rye_bread	rAI_kI_rotI#rAI_kI_rotI#noun#2#RM
 s_n_a	esa_ena_e#esa_ena_e#noun#3#RM
@@ -27931,7 +27893,7 @@ shipping_business	powaparivahana_kArobAra#powaparivahana_kArobAra#noun#2#RM
 shipping_clerk	nOvahana_klarka#nOvahana_klarka#noun#2#RM
 shipping_company	nOvahana_kampanI#nOvahana_kampanI#noun#2#RM
 shipping_coordination_officer	jahAjZarAnI_samanvaya_aXikArI#jahAjZarAnI_samanvaya_aXikArI#noun#3#RM
-shipping_corporation_of_india_ltd.	BArawIya_jahAjZarAnI_nigama_li_#BArawIya_jahAjZarAnI_nigama_li_#2#RM
+shipping_corporation_of_india_ltd.	BArawIya_jahAjZarAnI_nigama_li#BArawIya_jahAjZarAnI_nigama_li#UNDEFINED#2#RM
 shipping_day	laxAna_xina#laxAna_xina#noun#2#RM
 shipping_development_fund_committee	jahAjZarAnI_vikAsa_niXi_samiwi#jahAjZarAnI_vikAsa_niXi_samiwi#noun#4#RM
 shipping_documents	powalaxAna_praleKa#powalaxAna_praleKa#noun#2#RM
@@ -28430,7 +28392,6 @@ slip_day_book	parcI_roja_nAmacA#parcI_roja_nAmacA#noun#3#RM
 slip_emulator	cUka_yawraManukArI#cUka_yawraManukArI#noun#2#RM
 slip_knot	cUka_baMXana#cUka_baMXana#noun#2#RM
 slip_ledger	parcI_KAwA#parcI_KAwA#noun#2#RM
-slip_serial_line\	slip serial line\#slip serial line\#0#RM
 slip_stream	gAdZI_ke_pICe_kI_wejZa_havA#gAdZI_ke_pICe_kI_wejZa_havA#noun#2#RM
 slip_up's	Pisala[<saraka]{ba.}+kA#Pisala[<saraka]{ba.}+kA#noun#2#RM
 slip_up	Pisala[<saraka]#Pisala[<saraka]#noun#2#RM
@@ -29063,7 +29024,6 @@ stamping_of_document	praleKa_muxrAMkana#praleKa_muxrAMkana#noun#1#RM
 stand_alone	akele_[KadZA]_raha_sakanevAlA#akele_[KadZA]_raha_sakanevAlA#noun#2#RM
 stand_by_arrangements	uxyawa_vyavasWA#uxyawa_vyavasWA#noun#3#RM
 stand_by_nature	ApAwI_svarUpa#ApAwI_svarUpa#noun#3#RM
-#stand_for	prawIka_honA#prawIka_honA#noun#2#RM
 stand_in's	stEMda[<sWiwa^KadZA_honA]#stEMda[<sWiwa^KadZA_honA]#noun#2#RM
 stand_in	kI_jagaha_le_lenA#kI_jagaha_le_lenA#noun#2#RM
 stand_off	kisI_nawIjZe_para_na_pahuzcane_kI_sWiwi#kisI_nawIjZe_para_na_pahuzcane_kI_sWiwi#noun#2#RM
@@ -30292,7 +30252,7 @@ task_scheduler	kArya_niyojaka#kArya_niyojaka#noun#2#RM
 task_wage	niyawa_kArya_majaxUrI#niyawa_kArya_majaxUrI#noun#2#RM
 task_work_messenger	ujarawI_saMxeSavAhaka#ujarawI_saMxeSavAhaka#noun#3#RM
 taste_cell	svAxa_koSA#svAxa_koSA#noun#2#RM
-tata_institute_of_fundamental_research	tAtA_mUlaBUwa_anusaMXAna_saMsWAna_#tAtA_mUlaBUwa_anusaMXAna_saMsWAna_#2#RM
+tata_institute_of_fundamental_research	tAtA_mUlaBUwa_anusaMXAna_saMsWAna#tAtA_mUlaBUwa_anusaMXAna_saMsWAna#UNDEFINED#2#RM
 taungya_jamadar	tAzgiyA_jamAxAra#tAzgiyA_jamAxAra#noun#2#RM
 taungya_teacher	tAzgiyA_SikRaka#tAzgiyA_SikRaka#noun#2#RM
 tawny_eagle	campaI_gixXa#campaI_gixXa#noun#2#RM
@@ -30353,7 +30313,6 @@ taxation_inspector	karAXAna_nirIkRaka#karAXAna_nirIkRaka#noun#2#RM
 taxation_officer	karAXAna_aXikArI#karAXAna_aXikArI#noun#2#RM
 taxing_authorities	kara_prAXikArI#kara_prAXikArI#noun#2#RM
 tcp_connect	tI_sI_pI_jodZa#tI_sI_pI_jodZa#noun#2#RM
-tcp\	tcp\#tcp\#1#RM
 tea_bag	cAya_kI_WElI#cAya_kI_WElI#noun#2#RM
 tea_ball	cAyapawwI_ke_xAne#cAyapawwI_ke_xAne#noun#2#RM
 tea_biscuit	cAya_ke_sAWa_KAne_ke_biskuta#cAya_ke_sAWa_KAne_ke_biskuta#noun#2#RM
@@ -30726,7 +30685,6 @@ the_performance_exceeded_the_target	niRpAxana_lakRya_se_aXika_hE#niRpAxana_lakRy
 the_proposal_is_quite_in_order	yaha_praswAva_bilkula_niyamAnukUla_hE#yaha_praswAva_bilkula_niyamAnukUla_hE#noun#6#RM
 the_ravages	ujAdZa{s}#ujAdZa{s}#noun#2#RM
 the_required_papers_are_placed_below	apekRiwa_kAgZajZa_pawra_nIce_raKe_hEM#apekRiwa_kAgZajZa_pawra_nIce_raKe_hEM#noun#6#RM
-#the_same	samAna_rUpa_se#samAna_rUpa_se#noun#2#RM
 the_sick	bImAra_loga#bImAra_loga#noun#2#RM
 the_slow_progress_of_work_was_attributed_to	kArya_kI_XImI_pragawi_ke_nimnaliKiwa_kAraNa_bawAe_gaye_hEM#kArya_kI_XImI_pragawi_ke_nimnaliKiwa_kAraNa_bawAe_gaye_hEM#noun#3#RM
 the_son_of_God	IsAmasIha#IsAmasIha#noun#2#RM
@@ -30768,7 +30726,6 @@ thick_skinned	cikanA_GadZA{jisa_para_AlocanA_BarwsanA_kA_koI_asara_na_ho}#cikanA
 thick_stick	motI_lATI#motI_lATI#noun#2#RM
 thin_faced	picake_gAloMvAlA#picake_gAloMvAlA#noun#2#RM
 thin_file_memory	wanu_Pilma_smqwi#wanu_Pilma_smqwi#noun#3#RM
-think\	think\#think\#2#RM
 third_base	wriwIya_AXAra#wriwIya_AXAra#noun#2#RM
 third_class	burA{wIsare_xarje_kA}#burA{wIsare_xarje_kA}#noun#2#RM
 third_crusade	wqwIya-XarmayuxXa#wqwIya-XarmayuxXa#noun#2#RM
@@ -31239,7 +31196,7 @@ tractor_driver	trEktara_cAlaka#trEktara_cAlaka#noun#2#RM
 tractor_trailor	trEktara_ke_pICe_judZA_vAhana#trEktara_ke_pICe_judZA_vAhana#noun#2#RM
 trade_acceptance	vyApAra_svIkqwi#vyApAra_svIkqwi#noun#2#RM
 trade_agency	vyApAra-aBikaraNa#vyApAra-aBikaraNa#noun#2#RM
-trade_agent	vyApAra_aBikarwA_#vyApAra_aBikarwA_#0#RM
+trade_agent	vyApAra_aBikarwA#vyApAra_aBikarwA#UNDEFINED#0#RM
 trade_agreement	vyApAra_kZarAra#vyApAra_kZarAra#noun#2#RM
 trade_allowance	kadZaxA#kadZaxA#noun#2#RM
 trade_apprentice	vyavasAya_SikRu#vyavasAya_SikRu#noun#2#RM
@@ -31440,7 +31397,6 @@ transmission_code	saMcaraNa_kUta#saMcaraNa_kUta#noun#2#RM
 transmission_control_character	saMcaraNa_niyaMwraNa_saMprawIka#saMcaraNa_niyaMwraNa_saMprawIka#noun#3#RM
 transmission_control_layer	prasAraNa_niyaMwraNa_parawa#prasAraNa_niyaMwraNa_parawa#noun#3#RM
 transmission_control_protocol	prasAraNa_niyaMwraNa_protokoYla#prasAraNa_niyaMwraNa_protokoYla#noun#3#RM
-transmission_control_protocol\	transmission control protocol\#transmission control protocol\#0#RM
 transmission_deviation	saMcaraNa_vicalana#saMcaraNa_vicalana#noun#2#RM
 transmission_executive	prasAraNa_kAryapAlaka#prasAraNa_kAryapAlaka#noun#2#RM
 transmission_extension	saMcaraNa_viswAra#saMcaraNa_viswAra#noun#2#RM
@@ -31976,7 +31932,7 @@ uniform_balance_book	ekasamAna_wulana_bahI#ekasamAna_wulana_bahI#noun#3#RM
 uniform_code	samAna_kUta#samAna_kUta#noun#2#RM
 uniform_custom_practices	eka_jEsI_Ika_samAna_viXi_Ora_praprAlI#eka_jEsI_Ika_samAna_viXi_Ora_praprAlI#noun#3#RM
 uniform_force	ekasamAna_bala#ekasamAna_bala#noun#2#RM
-uniform_increase	eka_samAna_vqxXi_#eka_samAna_vqxXi_#0#RM
+uniform_increase	eka_samAna_vqxXi#eka_samAna_vqxXi#UNDEFINED#0#RM
 uniform_rate_of_exchange	ekarUpa_vinimaya_xara#ekarUpa_vinimaya_xara#noun#2#RM
 uniform_resource_locator	sama_srowa_nirXAraka#sama_srowa_nirXAraka#noun#3#RM
 uniform_slope	eka_sAra_DalAna#eka_sAra_DalAna#noun#2#RM
@@ -32173,7 +32129,6 @@ usance_promissory_note	mumawI_rukkA#mumawI_rukkA#noun#3#RM
 use_plane	upayoga_swara#upayoga_swara#noun#2#RM
 use_up	Kapawa_honA#Kapawa_honA#noun#2#RM
 use_value	upayoga_mUlya#upayoga_mUlya#noun#2#RM
-#used_to	AxI#AxI#noun#2#RM
 usenet_cabal	yUjaneta_kebala#yUjaneta_kebala#noun#2#RM
 usenet_news_group	upayogajAla_samAcAra_samUha#upayogajAla_samAcAra_samUha#noun#3#RM
 usenet_news	yUjaneta_samAcAra#yUjaneta_samAcAra#noun#2#RM
@@ -32260,7 +32215,7 @@ validity_period_of_the_licence	lAiseMsa_kI_vEXawA_avaXi#lAiseMsa_kI_vEXawA_avaXi
 validity_period	vEXawA_avaXi#vEXawA_avaXi#noun#2#RM
 valorisation_scheme	kImawarakRI_yojanA#kImawarakRI_yojanA#noun#2#RM
 valuation_account	mUlyAMkana_KAwA#mUlyAMkana_KAwA#noun#2#RM
-valuation_certificate	mUlyana_pa_amANapawra_#mUlyana_pa_amANapawra_#0#RM
+valuation_certificate	mUlyana_pa_amANapawra#mUlyana_pa_amANapawra#UNDEFINED#0#RM
 valuation_charges	mUlyana_Sulka_araBAra#mUlyana_Sulka_araBAra#noun#2#RM
 valuation_date	mUlyAMkana_kI_wArIKa#mUlyAMkana_kI_wArIKa#noun#2#RM
 valuation_of_assets	parisaMpiaRaaEM_Penwa_mUlyanirXAraNa<<#parisaMpiaRaaEM_Penwa_mUlyanirXAraNa<<#noun#1#RM
@@ -32551,7 +32506,7 @@ voice_grade_line	vAk_koti_reKA#vAk_koti_reKA#noun#3#RM
 voice_mail	vAk_dAka#vAk_dAka#noun#2#RM
 voice_message_switching	vAka_saMxeSa_svIcana#vAka_saMxeSa_svIcana#noun#3#RM
 voice_message	vANI_saMxeSa#vANI_saMxeSa#noun#2#RM
-voice_net	vAk_jAla_#vAk_jAla_#0#RM
+voice_net	vAk_jAla#vAk_jAla#UNDEFINED#0#RM
 voice_over	telivijana_yA_Pilma_meM_axqSya_bolanA#telivijana_yA_Pilma_meM_axqSya_bolanA#noun#2#RM
 voice_recognition	vAk_aBijFAmpalqAna#vAk_aBijFAmpalqAna#noun#2#RM
 voice_response_unit	vAk_anukriyA_ekaka#vAk_anukriyA_ekaka#noun#3#RM
@@ -33031,7 +32986,7 @@ white_paper	Svewa_pawra#Svewa_pawra#noun#2#RM
 white_sale	kapadZoM_kA_vikraya#kapadZoM_kA_vikraya#noun#2#RM
 whizz_kid	CotI_umra_meM_kuSalawA_va_yogyawA_prApwa_vyakwi#CotI_umra_meM_kuSalawA_va_yogyawA_prApwa_vyakwi#noun#2#RM
 who_where	kOna_kahAM#kOna_kahAM#noun#2#RM
-whole_coverage	pUrva_saMrakRaNa_#pUrva_saMrakRaNa_#0#RM
+whole_coverage	pUrva_saMrakRaNa#pUrva_saMrakRaNa#UNDEFINED#0#RM
 whole_hearted	pUre_hqxaya_se#pUre_hqxaya_se#noun#2#RM
 whole_life_policy_without_profit	AjIvana_pAlisI_lABa_rahiwa#AjIvana_pAlisI_lABa_rahiwa#noun#5#RM
 whole_lot	saba_kA_saba#saba_kA_saba#noun#2#RM
@@ -33629,30 +33584,30 @@ capital_punishment	mqwyu_xaMda#mqwyu_xaMda#noun#2#RM
 a_lot_of	bahuwa_sArA#bahuwa_sArA#noun#2#RM
 female_friends	swrI_miwra#swrI_miwr#noun#2#WM
 police_station	polisa_steSana#polisa_steSana#noun#2#RM
-from_left_to_right	bAzye_se xAzye#bAzye_se xAzye#4#RM
-from_right_to_left	xAzye_se_bAzye#xAzye_se_bAzye#4#RM
-traffic_lights	 trEPika_lAIta# trEPika_lAIta 2#RM 
+from_left_to_right	bAzye_se xAzye#bAzye_se xAzye#UNDEFINED#4#RM
+from_right_to_left	xAzye_se_bAzye#xAzye_se_bAzye#UNDEFINED#4#RM
+traffic_lights	 trEPika_lAIta#trEPika_lAIta#UNDEFINED#2#RM 
 traffic_jam	trePika_jAma#trePika_jAma#noun#2#RM
 very_little	awyaMwa_WodA#awyaMwa_WodA#noun#2#RM
 each_one	prawyeka#prawyeka#noun#2#RM
-from_inside	ke_anxara_se#ke_anxara_se#-#2#RM
+from_inside	ke_anxara_se#ke_anxara_se#preposition#2#RM
 how_much	kiwanA#kiwanA#noun#2#RM
-income_taxes	Aya_kara#Aya_kara#2#RM
-along_with	Apake_sAWa#Apake_sAWa#2#RM
+income_taxes	Aya_kara#Aya_kara#UNDEFINED#2#RM
+along_with	ke_sAWa#ke_sAWa#preposition#2#RM
 swimming_pool	waraNa_wAla#waraNa_wAla#noun#2#RM
 fruit_juices	Pala_rasa#Pala_rasa#noun#2#RM
-according_to	ke_anusAra#ke_anusAra#-#2#RM
+according_to	ke_anusAra#ke_anusAra#preposition#2#RM
 browser_window	brAujara_vindo#brAujara_vindo#noun#2#RM
 browsing_windows	brAujara_vindo#brAujara_vindo#noun#2#RM
 a_few	kuCa#kuCa#noun#2#RM
-health_insurance	svAsWya_bImA#svAsWya_bImA#noun#RM
+health_insurance	svAsWya_bImA#svAsWya_bImA#noun#1#RM
 pay_increase	vewana_vqxXi#vewana_vqxXi#noun#2#RM
 coffee_drinks	koYPI_peya_yA_Sarabawa#koYPI_peya_yA_Sarabawa#noun#2#RM
 on_the_right_side_of	ke_xAhinI_waraPa#ke_xAhinI_waraPa#noun#4#RM
 on_the_left_side_of	ke_bAyIz_waraPa#ke_bAyIz_waraPa#noun#4#RM
 eating_habits	KAnekI_Axawa#KAnekI_Axawa#noun#2#RM
 let_there_be	ho#ho#verb#3#RM
-any_time	kisI_BI_samaya#kisI_BI_samaya#2#RM
+any_time	kisI_BI_samaya#kisI_BI_samaya#UNDEFINED#2#RM
 anything_else	kisI_Ora_cIja#kisI_Ora_cIja#noun#1#RM
 by_law	kAnunana#kAnunana#noun#2#RM
 letter_of_application	Avexana_pawra#Avexana_pawra#noun#1#RM
