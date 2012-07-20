@@ -1,0 +1,62 @@
+#Created by MITALI HALDER dated : 27/04/2012
+#This document enable you to train the parallel corpus using Stanford Phrasal & deployment of it for transliteration purpose.
+
+1. PRE-REQUISITE
+	-Stanford Phrasal
+	-CoreNLP
+	-SRILM 
+
+2. DOWNLOAD & INSTALLATION
+
+     i)SRILM : it is used to build language model.You can install it from Synaptic Package Manager. 
+	i) Install srilm & srilm-doc. or
+	ii) Download from the site :
+	 http://www-speech.sri.com/projects/srilm/download.html
+
+    ii)Stanford Phrasal :You can install the package using following step :-
+	Step 1 : click on http://www-nlp.stanford.edu/software/phrasal/.
+	Step 2:  export PHRASAL=$PWD/phrasal.Beta2
+	Step 3:  tar -xzvf phrasal.Beta2.tar.gz 
+
+   iii)CoreNLP : You can install the package using following step :-
+	Step 1: click on http://nlp.stanford.edu/software/corenlp.shtml
+	Step 2: export CORENLP=$PWD/stanford-corenlp-2011-06-08
+	Step 3: tar -xzvf stanford-corenlp-v1.0.4.tgz
+
+NOTE: This training should be done once in the system & after that only work directory can be deployed for transliteration.
+
+3. TRAINING OF PARALLEL DATA USING STANFORD PHRASAL
+       
+	i)mkdir work
+       ii)copy aligner.conf & phrasal.conf in work directory  from the following link -
+	 http://www-nlp.stanford.edu/wiki/Software/Phrasal
+	-edit aligner.conf file : remove “lowercase” from file content
+	 (condition: only  if hindi file is in wx-notation)
+
+NOTE : Depend upon your parallel corpus change foreignSuffix & englishSuffix in aligner.conf file ( eg: en & hi for english & hindi)
+
+     iii)For automatic training of parallel corpus execute training-script.sh present in  work directory
+		sh training-script.sh
+
+NOTE: Once training is done, you just need to copy the work directory in target system with required software.
+
+4. To deploy the transliteration system to another machine :
+	Step 1: Install  Stanford Phrasal, CoreNLP in target system.
+	Step 2: Send work directory of training to the target system.
+        	    Edit file 
+	            work/phrasal-mert/phrasal.final.ini ,
+		    in it set the path of the directory to the current directory where 'work' is placed. 
+	Step 3: Change the permissions of the files
+        		chmod +x phrasal.Beta2/scripts/decode
+		        chmod +x phrasal.Beta2/scripts/split-table 
+	Step 4: Removed JAVA_OPTS '-XX:+UseCompressedOops' from 
+        	phrasal.Beta2/scripts/decode
+	        phrasal.Beta2/scripts/extract-phrases
+
+NOTE: the work directory consist of:
+		-training-script.sh
+		-transliteration-script.sh
+		-parallel corpus
+		-trained intermediate files( models, phrasal-mert,
+		 language model,aligner.conf, phrasal.conf)
+
