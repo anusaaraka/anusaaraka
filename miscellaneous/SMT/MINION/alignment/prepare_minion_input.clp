@@ -14,15 +14,15 @@
         (assert (anu_slot_candidate_ids ?aid ?mapped_id ?mapped_id1))
 )
 
-;(defrule potential_count_of_manual_id
-;(declare (salience 2000))
-;?f<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
-;?f1<-(potential_assignment_vacancy_id-candidate_id ?aid1 ?mid)
-;(test (neq ?aid ?aid1))
-;(not (man_id-candidate_slots ?mid $?))
-;=>
-;        (assert (man_id-candidate_slots ?mid ?aid ?aid1))
-;)
+(defrule potential_count_of_manual_id
+(declare (salience 2000))
+?f<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
+?f1<-(potential_assignment_vacancy_id-candidate_id ?aid1 ?mid)
+(test (neq ?aid ?aid1))
+(not (man_id-candidate_slots ?mid $?))
+=>
+        (assert (man_id-candidate_slots ?mid ?aid ?aid1))
+)
 
 (defrule potential_count_of_anu_id1
 (declare (salience 2000))
@@ -35,15 +35,15 @@
         (assert (anu_slot_candidate_ids ?aid $?mem ?mapped_id))
 )
 
-;(defrule potential_count_of_manual_id1
-;(declare (salience 2000))
-;(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
-;?f<-(man_id-candidate_slots ?mid $?mem)
-;(test (eq (member$ ?aid $?mem) FALSE))
-;=>
-;        (retract ?f)
-;        (assert (man_id-candidate_slots ?mid $?mem ?aid))
-;)
+(defrule potential_count_of_manual_id1
+(declare (salience 2000))
+(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
+?f<-(man_id-candidate_slots ?mid $?mem)
+(test (eq (member$ ?aid $?mem) FALSE))
+=>
+        (retract ?f)
+        (assert (man_id-candidate_slots ?mid $?mem ?aid))
+)
 
 ;(defrule map_potential_fact
 ;(declare (salience 1900))
@@ -113,15 +113,34 @@
 (hindi_id_order $?hin_order)
 (test (member$ ?aid $?hin_order))
 =>
+	(printout ?*minion_fp* " #anu_id-man_ids-hindi-order   "?aid"  "$?grp"  "$?hin_order  crlf)
 	(printout ?*minion_fp* " watched-or({" )
 	(loop-for-count (?i 1 (length $?grp))
 			(bind ?wrd_id (nth$ ?i $?grp))
 			(printout ?*minion_fp* "eq(ws["(- ?wrd_id 1)","(- (member$ ?aid $?hin_order) 1)"],1)")
                         (if (eq ?i (length $?grp)) then 
-			    (printout ?*minion_fp* "})" crlf)
+			    (printout ?*minion_fp* "})" crlf crlf)
 			else
 			    (printout ?*minion_fp* ","))
 	)
+)
+
+(defrule printf_potential_constraints1
+(declare (salience 965))
+(man_id-candidate_slots ?mid $?grp)
+(hindi_id_order $?hin_order)
+=>
+	(printout ?*minion_fp* " #man_id-anu_ids-hindi-order   "?mid"  "$?grp"  "$?hin_order crlf)
+        (printout ?*minion_fp* " watched-or({" )
+        (loop-for-count (?i 1 (length $?grp))
+                        (bind ?slot_id (nth$ ?i $?grp))
+			(if (neq (member$ ?slot_id $?hin_order) FALSE) then
+                        (printout ?*minion_fp* "eq(ws["(- ?mid 1)","(- (member$ ?slot_id $?hin_order) 1)"],1)")
+                        (if (eq ?i (length $?grp)) then
+                            (printout ?*minion_fp* "})" crlf crlf)
+                        else
+                            (printout ?*minion_fp* ",")))
+        )
 )
 
 (defrule print_default_assignment
