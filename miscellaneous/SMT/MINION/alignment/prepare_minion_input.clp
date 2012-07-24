@@ -1,7 +1,6 @@
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
 (defglobal ?*minion_fp*  = minion_fp)
-(defglobal ?*g_list* = (create$ ))
 
 (defrule potential_count_of_anu_id
 (declare (salience 2000))
@@ -151,24 +150,23 @@
 (test (> (length $?grp) 1))
 (hindi_id_order $?ids)
 =>
-        (printout t "#group : "(implode$ $?grp) " ---- ")
 	(bind $?g_list (create$))
         (loop-for-count (?i 1 (length $?grp))
                 (bind ?id (nth$ ?i $?grp))
                 (bind ?pos (member$ ?id $?ids))
                 (bind $?g_list (create$ $?g_list (- ?pos 1)))
         )
-;        (printout t (implode$ ?*g_list*) crlf)
-        (assert (get_grp_info $?g_list))
+        (assert (grp_ids-slot_ids $?grp - $?g_list))
 )
 
 (defrule generate_grp_info
 (declare (salience 940))
-?f0<-(get_grp_info $?grp)
+?f0<-(grp_ids-slot_ids $?anu_grp - $?grp)
 (manual_word_length  ?manual_word_len)
 (slot-length  ?anu_slot_len)
 =>
         (retract ?f0)
+	(printout ?*minion_fp* crlf " #group : "(implode$ $?anu_grp) " ---- " (implode$ $?grp))
         (printout ?*minion_fp*  crlf " watched-or({" crlf )
         (bind ?count 0)
         (loop-for-count (?k ?count (- ?manual_word_len 1))
@@ -196,7 +194,6 @@
                 (bind ?count (+ ?count 1))
         )
         (printout ?*minion_fp*  "})" crlf)
-        (bind ?*g_list* (create$ ))
 )
 
 (defrule print_EOF_info

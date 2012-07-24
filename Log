@@ -3721,8 +3721,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 39.Modified sd_ver_output, ber_ver_output, link_ver_output and verified_output
 40.Updated Log.
 
-20-07-12
-========
+ 24-07-12
+ ========
  1.Added transliteration folder after deleting following files:
 	1. stanford-corenlp-v1.0.4.tgz
 	2. stanford-corenlp-2011-06-08/stanford-corenlp-models-2011-06-08.jar
