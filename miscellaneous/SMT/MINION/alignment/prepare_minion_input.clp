@@ -19,9 +19,10 @@
 ?f<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
 ?f1<-(potential_assignment_vacancy_id-candidate_id ?aid1 ?mid)
 (test (neq ?aid ?aid1))
-(not (man_id-candidate_slots ?mid $?))
+(manual_id-mapped_id ?mid ?mapped_id)
+(not (man_id-candidate_slots ?mapped_id $?))
 =>
-        (assert (man_id-candidate_slots ?mid ?aid ?aid1))
+        (assert (man_id-candidate_slots ?mapped_id ?aid ?aid1))
 )
 
 (defrule potential_count_of_anu_id1
@@ -38,11 +39,12 @@
 (defrule potential_count_of_manual_id1
 (declare (salience 2000))
 (potential_assignment_vacancy_id-candidate_id ?aid ?mid)
-?f<-(man_id-candidate_slots ?mid $?mem)
+?f<-(man_id-candidate_slots ?mapped_id $?mem)
+(manual_id-mapped_id ?mid ?mapped_id)
 (test (eq (member$ ?aid $?mem) FALSE))
 =>
         (retract ?f)
-        (assert (man_id-candidate_slots ?mid $?mem ?aid))
+        (assert (man_id-candidate_slots ?mapped_id $?mem ?aid))
 )
 
 ;(defrule map_potential_fact
