@@ -31,7 +31,7 @@
  (defrule rm_underscore_in_aper_op
  (declare (salience 2000))
  ?f<-(id-Apertium_output ?a_id $?a_grp)
- (not (id-modified ?a_id))
+ (not (id_aper_op_modified ?a_id))
  =>
         (retract ?f)
         (bind ?a_op "")
@@ -40,8 +40,22 @@
         (bind ?a_op (remove_character "-" (implode$ (create$  ?a_op)) " "))        
         (bind ?a_op (remove_character "_" (implode$ (create$  ?a_op)) " "))        
         (assert (id-Apertium_output ?a_id  ?a_op))
-        (assert (id-modified ?a_id))
+        (assert (id_aper_op_modified ?a_id))
  )
+ 
+ (defrule hindi_mng
+ (declare (salience 2000))
+ ?f<-(id-HM-source   ?id   ?hmng&~-   ?src)
+ (not (id_hmng_modified ?id))
+ =>
+        (retract ?f)
+        (bind ?new_mng (remove_character "_" ?hmng " "))
+        (bind ?new_mng (remove_character "-" (implode$ (create$  ?new_mng)) " "))
+        (bind ?new_mng (remove_character "@" (implode$ (create$  ?new_mng)) ""))
+        (assert (id-HM-source ?id ?new_mng ?src))
+        (assert (id_hmng_modified ?id))
+ )
+     
 
 ; (defrule del_underscore_in_aper_out
 ; (declare (salience 20))

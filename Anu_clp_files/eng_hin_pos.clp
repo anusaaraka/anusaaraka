@@ -208,9 +208,10 @@
                  (loop-for-count (?i 1 (length $?grp_ids))
                                  (bind ?g_id (nth$ ?i $?grp_ids))
                                  (bind ?pos1 (member$ ?g_id $?eng_ord))
+				 (if (neq ?pos1 FALSE) then
                                  (bind $?eng_ord (delete-member$ $?eng_ord ?g_id))
                                  (bind $?eng_ord (insert$ $?eng_ord ?pos1 "-"))
-                                 (assert (id-pos ?g_id)))
+                                 (assert (id-pos ?g_id))))
                  (assert (expr  $?eng_ord))
  )
  

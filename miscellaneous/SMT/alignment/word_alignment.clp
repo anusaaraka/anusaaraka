@@ -14,6 +14,18 @@
                                 )
                  )
 )
+(deffunction remove_character(?char ?str ?replace_char)
+                        (bind ?new_str "")
+                        (bind ?index (str-index ?char ?str))
+                        (if (neq ?index FALSE) then
+                        (while (neq ?index FALSE)
+                        (bind ?new_str (str-cat ?new_str (sub-string 1 (- ?index 1) ?str) ?replace_char))
+                        (bind ?str (sub-string (+ ?index 1) (length ?str) ?str))
+                        (bind ?index (str-index ?char ?str))
+                        )
+                        )
+                (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
+)
 ;-------------------------------------------------------------------------------------
 ;Counts the number of verbs of anusaaraka sentence
 (defrule verb_count_of_anu
@@ -71,6 +83,8 @@
 (multi_word_expression-dbase_name-mng $?e_words ? $?mng)
 (multi_word_expression-grp_ids $?e_words $?aids)
 (manual_id-node-word-root-tam ?h_mid ? $?mng - $? - $?)
+;(manual_id-node-word-root-tam ?h_mid ? $?mng1 - $? - $?)
+;(test (myeq (implode$ (create$  $?mng1)) (implode$ (create$ $?mng))))
 (head_id-grp_ids ?h_mid ?mid $?grp)
 (not (prov_assignment ?aid ?mid))
 =>
@@ -86,6 +100,8 @@
 (multi_word_expression-dbase_name-mng $?e_words ? $?mng)
 (multi_word_expression-grp_ids $?e_words $?aids)
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng - $? -$? -$?)
+;(manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng1 - $? -$? -$?)
+;(test (myeq (implode$ (create$  $?mng1)) (implode$ (create$ $?mng))))
 (not (prov_assignment ?aid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
@@ -98,9 +114,11 @@
 (defrule exact_match_with_anu_output ;[manual group match]
 (declare (salience 901))
 (current_id ?mid)
-(manual_id-node-word-root-tam ?h_mid ? $?mng - $? - $?)
+(manual_id-node-word-root-tam ?h_mid ? $?mng1 - $? - $?)
 (head_id-grp_ids ?h_mid ?mid $?grp)
-(id-Apertium_output ?aid $?mng)
+(id-Apertium_output ?aid $?mng1)
+;(id-Apertium_output ?aid $?mng)
+;(test (myeq (implode$ (create$  $?mng1)) (implode$ (create$ $?mng))))
 (not (prov_assignment ?aid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
@@ -109,11 +127,15 @@
         (assert (prov_assignment ?aid ?mid))
 )
 ;-------------------------------------------------------------------------------------
-(defrule exact_match_with_anu_output1 ;[manual word match]
-(declare (salience 900))
+(defrule exact_match_with_anu_output1 ;[manual word match with vib]
+(declare (salience 901))
 (current_id ?mid)
-(manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng - $? -$? -$?)
-(id-Apertium_output ?aid $?mng)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng1 - $? - $?vib - $?)
+(id-Apertium_output ?aid $?mng1)
+;(id-Apertium_output ?aid $?mng)
+(test (neq $?vib 0))
+;(test (eq (implode$ (create$  $?mng)) (str-cat (implode$ (create$ $?mng1)) " " (implode$ (create$  $?vib)))))
+;(test (myeq (str-cat (implode$ (create$ $?mng1)) " " (implode$ (create$  $?vib))) (implode$ (create$ $?mng))))
 (not (prov_assignment ?aid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
@@ -121,6 +143,90 @@
         (assert (anu_ids-sep-manual_ids ?aid - ?mid))
         (assert (prov_assignment ?aid ?mid))
 )
+
+;-------------------------------------------------------------------------------------
+(defrule man_grp_match_with_dic
+(declare (salience 900))
+(current_id ?mid)
+(manual_id-node-word-root-tam ?h_mid ? $?mng1 - $? - $?)
+(head_id-grp_ids ?h_mid ?mid $?grp)
+(id-org_wrd-root-dbase_name-mng ? ? ?e_noun ? $?mng1)
+;(id-org_wrd-root-dbase_name-mng ? ? ?e_noun ? $?mng)
+;(test (myeq (implode$ (create$  $?mng1)) (implode$ (create$ $?mng))))
+(id-root ?aid ?e_noun)
+(not (prov_assignment ?aid ?mid))
+=>
+	(bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (assert (anu_ids-sep-manual_ids ?aid - ?mid $?grp))
+        (assert (prov_assignment ?aid ?mid))
+)
+;-------------------------------------------------------------------------------------
+(defrule exact_match_with_anu_output2 ;[manual word match]
+(declare (salience 900))
+(current_id ?mid)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng - $? - 0 - $?)
+(id-Apertium_output ?aid $?mng)
+;(id-Apertium_output ?aid $?mng1)
+;(test (myeq (implode$ (create$  $?mng1)) (implode$ (create$ $?mng))))
+(not (prov_assignment ?aid ?mid))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (assert (anu_ids-sep-manual_ids ?aid - ?mid))
+        (assert (prov_assignment ?aid ?mid))
+)
+
+;-------------------------------------------------------------------------------------
+;But, today's rapidly changing business environment has forced the accountants to reassess their roles and functions both within the organization and the society. 
+(defrule word_and_vib_match_with_anu_hindi_root
+(declare (salience 890))
+(current_id ?mid)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?noun - $?vib -  $?grp)
+(test (neq $?vib 0))
+(id-HM-source ?aid $?noun ?)
+(pada_info (group_head_id  ?aid)(vibakthi ?vib1))
+(test (eq (implode$ (create$ (remove_character "_" (implode$ (create$ ?vib1)) " "))) (implode$ (create$ $?vib))))
+;(test (myeq (implode$ (create$ $?noun)) (implode$ (create$ $?noun1))))
+;(test (myeq (implode$ (create$ (remove_character "_" (implode$ (create$ ?vib1)) " "))) (implode$ (create$ $?vib))))
+(not (prov_assignment ?aid ?mid))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (assert (anu_ids-sep-manual_ids ?aid - $?grp))
+        (assert (prov_assignment ?aid ?mid))
+)
+
+(defrule word_and_vib_match_with_anu_hindi_root1
+(declare (salience 890))
+(current_id ?mid)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?noun - $?vib -  $?grp)
+(test (neq $?vib 0))
+(id-HM-source ?aid $?noun ?)
+;(test (myeq (implode$ (create$ $?noun)) (implode$ (create$ $?noun1))))
+(not (prov_assignment ?aid ?mid))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (assert (anu_ids-sep-manual_ids ?aid - $?grp))
+        (assert (prov_assignment ?aid ?mid))
+)
+;-------------------------------------------------------------------------------------
+(defrule word_match_with_anu_hindi_root
+(declare (salience 890))
+(current_id ?mid)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?noun - 0 -  $?grp)
+(id-HM-source ?aid $?noun ?)
+(pada_info (group_head_id  ?aid)(vibakthi 0))
+;(test (myeq (implode$ (create$ $?noun)) (implode$ (create$ $?noun1))))
+(not (prov_assignment ?aid ?mid))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (assert (anu_ids-sep-manual_ids ?aid - $?grp))
+        (assert (prov_assignment ?aid ?mid))
+)
+
 ;-------------------------------------------------------------------------------------
 ;If only one verb is present in both the manual and anusaaraka sentences then make direct alignment.
 (defrule single_verb_group_match_with_anu
@@ -148,6 +254,8 @@
 (head_id-grp_ids ?man_g_id ?mid $?grp_ids)
 (id-org_wrd-root-dbase_name-mng ? ? ?root ? $?v_root)
 (e_tam-id-dbase_name-mng ?e_tam ? ? $?tam)
+;(test (myeq (implode$ (create$  $?v_root)) (implode$ (create$ $?v_root1))))
+;(test (myeq (implode$ (create$  $?tam)) (implode$ (create$ $?tam1))))
 (id-root ?aid ?root)
 (not (prov_assignment ?aid ?mid))
 =>
@@ -163,6 +271,7 @@
 (manual_id-node-word-root-tam  ?man_g_id   VGF   $?verb_mng - $?v_root - $?)
 (head_id-grp_ids ?man_g_id ?mid $?grp_ids)
 (id-org_wrd-root-dbase_name-mng ? ? ?root ? $?v_root)
+;(test (myeq (implode$ (create$  $?v_root)) (implode$ (create$ $?v_root1))))
 (id-root ?aid ?root)
 (not (prov_assignment ?aid ?mid))
 =>
@@ -197,6 +306,8 @@
 (test (neq $?vib 0))
 (id-org_wrd-root-dbase_name-mng ? ? ?e_noun ? $?noun)
 (id-org_wrd-root-dbase_name-mng ? ? ?e_vib ? $?vib)
+;(test (myeq (implode$ (create$  $?noun1)) (implode$ (create$ $?noun))))
+;(test (myeq (implode$ (create$  $?vib)) (implode$ (create$ $?vib1))))
 (id-root ?e_noun_id ?e_noun)
 (id-root ?e_vib_id ?e_vib)
 (pada_info (group_head_id  ?e_noun_id)(preposition ?e_vib_id))
@@ -215,6 +326,8 @@
 (test (neq $?vib 0))
 (id-org_wrd-root-dbase_name-mng ? ? ?e_noun ? $?noun)
 (id-org_wrd-root-dbase_name-mng ? ? ?e_vib ? $?vib)
+;(test (myeq (implode$ (create$  $?noun1)) (implode$ (create$ $?noun))))
+;(test (myeq (implode$ (create$  $?vib)) (implode$ (create$ $?vib1))))
 (id-root ?e_noun_id ?e_noun)
 (id-root ?e_vib_id ?e_vib)
 (pada_info (group_head_id  ?e_noun_id)(preposition ?e_vib_id))
@@ -233,6 +346,7 @@
 (current_id ?mid)
 (manual_id-cat-word-root-vib-grp_ids ?mid ~VM $?mng - $? - 0 - $?)
 (id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?mng)
+;(test (myeq (implode$ (create$  $?mng)) (implode$ (create$ $?mng1))))
 (id-root ?eid ?e_word)
 (not (prov_assignment ?eid ?mid))
 =>
@@ -247,6 +361,7 @@
 (current_id ?mid)
 (manual_id-cat-word-root-vib-grp_ids ?mid ~VM $? - $?mng - 0 - $?)
 (id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?mng)
+;(test (myeq (implode$ (create$  $?mng)) (implode$ (create$ $?mng1))))
 (id-root ?eid ?e_word)
 (not (prov_assignment ?eid ?mid))
 =>
@@ -264,10 +379,11 @@
 (or (manual_id-cat-word-root-vib-grp_ids ?mid ? $?noun - $? - $?vib - $?grp_ids)(manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?noun - $?vib - $?grp_ids))
 (test (neq $?vib 0))
 (id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?noun)
-(not (id-org_wrd-root-dbase_name-mng ? ? ?e_vib ? $?vib))
+;(test (myeq (implode$ (create$  $?noun1)) (implode$ (create$ $?noun))))
 (id-root ?eid ?e_word)
 (id-root ?e_vib_id ?e_vib)
 (pada_info (group_head_id  ?eid)(preposition ?e_vib_id))
+(not (id-org_wrd-root-dbase_name-mng ? ? ?e_vib ? $?vib))
 (not (prov_assignment ?eid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
@@ -298,6 +414,7 @@
 (multi_word_expression-dbase_name-mng $?e_words ? $?mng)
 (multi_word_expression-grp_ids $?e_words $?aids)
 (manual_id-node-word-root-tam ?h_mid ? $?pre $?mng $?pos - $? - $?)
+;(test (myeq (implode$ (create$  $?mng)) (implode$ (create$ $?mng1))))
 (head_id-grp_ids ?h_mid $?pre_id ?mid $?pos_id)
 (test (eq (length $?pre) (length $?pre_id)))
 (not (prov_assignment ?aid ?mid))
@@ -323,6 +440,7 @@
 ?f3<-(prov_assignment ?aid ?mid)
 (test (member$ ?aid $?aids))
 (id-Apertium_output ?aid $?anu_mng)
+(test (> (length $?anu_mng) 0))
 (test (member$ ?mid $?mids))
 =>
         (retract ?f2)
@@ -399,6 +517,42 @@
 ?f<-(mng_has_been_filled ?aid)
 =>
         (retract ?f)
+)
+
+;"As an [information system], it collects data and communicates economic information about the organization to a wide variety of users whose decisions and actions are related to its per for mance. "
+;एक [सूचना]प्रणाली के रूप में यह किसी भी संगठन की आर्थिक सूचनाओं से संबंधित आंकड़े एकत्रित कर उनका संप्रेषण उन विभिन्न उपयोगकत्र्ताओं तक करता है , जिनके निर्णय एवं क्रियाएं संगठन के प्रदर्शन को प्रभावित करती है .
+(defrule previous_wrd_match_with_anu
+(declare (salience -499))
+?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid ?id $?grp)
+?f1<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid ?id $?grp)
+(manual_id-word-cat ?mid1&:(eq ?mid1 (- ?id 1)) $?mng ?)
+(not (mng_has_been_aligned ?mid1))
+?f2<-(id-confidence_level ?mid ?conf_lvl)
+(test (subsetp $?mng $?anu_mng))
+=>
+        (retract ?f ?f1 ?f2)
+	(assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid ?mid1 ?id $?grp))
+	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid ?mid1 ?id $?grp))
+	(assert_control_fact mng_has_been_aligned ?mid1)
+	(bind ?conf_lvl (explode$ (str-cat ?conf_lvl , 7)))
+        (assert (id-confidence_level ?mid ?conf_lvl))
+)
+
+(defrule next_wrd_match_with_anu
+(declare (salience -499))
+?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?grp ?id)
+?f1<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?grp ?id)
+(manual_id-word-cat ?mid1&:(eq ?mid1 (+ ?id 1)) $?mng ?)
+(not (mng_has_been_aligned ?mid1))
+?f2<-(id-confidence_level ?mid ?conf_lvl)
+(test (subsetp $?mng $?anu_mng))
+=>
+        (retract ?f ?f1 ?f2)
+        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?grp ?id ?mid1))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?grp ?id ?mid1))
+	(assert_control_fact mng_has_been_aligned ?mid1)
+        (bind ?conf_lvl (explode$ (str-cat ?conf_lvl , 7)))
+        (assert (id-confidence_level ?mid ?conf_lvl))
 )
 ;-------------------------------------------------------------------------------------
 (defrule replace_id_with_word

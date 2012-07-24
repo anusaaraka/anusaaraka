@@ -9,6 +9,7 @@
    (> ?n1 ?n2))
 
 ;--------------------------------------------------------------------------
+ ;Copying temporary facts for verb_lwg (in order to not disturb the tree structure)
  (defrule cp_facts_for_lwg
  (declare (salience 1700))
  (Head-Level-Mother-Daughters ?h ?l ?M $?daut)
@@ -18,38 +19,69 @@
  )
 
 ;--------------------------------------------------------------------------
- ; Identifying the conjunction and asserting a conjunction list fact which is later used by "get_conj_symmetry_facts" rule.
- (defrule conjunction_rule
+ ;asserting a control fact in order to stop replacing the "VP" having conjunction "CC"
+ (defrule find_conj_head
+ (declare (salience 1701))
+ ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?VP1 $?pre1 ?CC $?pos1)
+ ?f2<-(Node-Category ?CC CC)
+ =>
+	(assert (dont_replace_VP ?VP1))
+ )
+
+;--------------------------------------------------------------------------
+ ;They are eating and dancing or sleeping or soring.
+ ;They have been eating, drinking and sleeping.
+ (defrule conjunction_rule0
  (declare (salience 1600))
- ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?VP ?VP1 $?pre ?CC $?pos)
- ?f2<-(Head-Level-Mother-Daughters_lwg ? ? ?VP1 $? ?VP1-dat)
- ?f1<-(Node-Category ?CC CC)
- (Node-Category ?VP1-dat ?cat)
- (not (conjunction-components ?CC $?))
- =>	
-         (bind $?verb_list (create$ ?VP1 $?pre ?CC $?pos))
+ ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?VP $?pre ?VP1 $?pos)
+ ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?VP1 $?pre1 ?CC $?pos1)
+ ?f2<-(Node-Category ?CC CC)
+ (Node-Category ?VP1 VP)
+ (Node-Category ?VP VP)
+ =>    
+	(retract ?f1 ?f)
+         (bind $?verb_list (create$ $?pre1 ?CC $?pos1))
          (bind $?conjs (create$ ))
          (bind ?len (length $?verb_list))
          (loop-for-count (?i 1 ?len)
                         (bind ?j (nth$ ?i $?verb_list))
-                         (if (eq (sub-string 1 1 ?j) "V") then
-                             (bind $?conjs (create$ $?conjs ?j))
+			  (if (member$ (explode$ (sub-string 1 2 ?j)) (create$ VP VB MD)) then
+			      (assert (Head-Level-Mother-Daughters_lwg ?head ?lvl ?VP $?pre ?j $?pos))
                           )
          )
-        (if (eq ?cat VP) then
-            (assert (dont_replace_VP ?VP))
-        else
-	(assert (conjunction-components ?CC ?VP $?conjs)))
+	 
  )
+;--------------------------------------------------------------------------
+;All green plants and certain bluegreen algae which can produce food by photosynthesis come under this category and are called the producers; Organisms depend on the producers either directly or indirectly for their sustenance?
+ (defrule conjunction_rule1
+ (declare (salience 1599))
+ ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?VP1 $?pre1 ?CC $?pos1)
+ ?f2<-(Node-Category ?CC CC)
+ (Node-Category ?VP1 VP)
+ =>
+         (retract  ?f1)
+         (bind $?verb_list (create$ $?pre1 ?CC $?pos1))
+         (bind $?conjs (create$ ))
+         (bind ?len (length $?verb_list))
+         (loop-for-count (?i 1 ?len)
+                        (bind ?j (nth$ ?i $?verb_list))
+                          (if (member$ (explode$ (sub-string 1 2 ?j)) (create$ VP VB MD)) then
+                              (assert (Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?VP1 ?j))
+                          )
+         )
+
+ )
+
 ;--------------------------------------------------------------------------
  ;Replacing a VP|SQ mother whose child is again a VP .
  (defrule replace_VP
- (declare (salience 90))
+ (declare (salience 1700))
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?VP $?pos)
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?VP $?daut)
  (Node-Category ?Mot VP|SQ)
  (Node-Category ?VP VP)
  (not (dont_replace_VP ?Mot))
+ (not (dont_replace_VP ?VP))
  =>
 	(retract ?f ?f1)
 	(assert (Head-Level-Mother-Daughters_lwg ?head1 ?lvl ?Mot $?pre $?daut  $?pos))
@@ -138,34 +170,34 @@
  )
 
 ;--------------------------------------------------------------------------
- ;Gets conjunction lwg facts
- ;Ex:-I ate fruits, drank milk and slept.
- ;(root-verbchunk-tam-parser_chunkids - ate drank slept - ed ed ed - P2 P5 P8) ==>
- ; ===> here it creates three different facts, as below
- ;(root-verbchunk-tam-parser_chunkids - ate - ed - P2)
- ;(root-verbchunk-tam-parser_chunkids - drank - ed - P5)
- ;(root-verbchunk-tam-parser_chunkids - slept - ed - P8)
- (defrule get_conj_symmetry_facts
- (declare (salience 55))
- ?f<-(Head-Level-Mother-Daughters_lwg ? ? ? $?pre ?CC ?verb $?pos)
- ?f1<-(Head-Level-Mother-Daughters ? ? ?verb ?id)
- (conjunction-components ?CC ? $?conjs)
- ?f0<-(root-verbchunk-tam-parser_chunkids - $?vc - $?tam - $?ids)
- (test (member$ ?id $?ids))
- (not (conjuction_modified ?CC))
- =>
-         (retract ?f0)
-         (bind ?len (length $?conjs))
-         (bind ?id_len (length $?ids))
-         (bind ?new_len (- ?id_len ?len))
-         (loop-for-count (?i 1 ?len)
-			 (bind $?new_vc (create$ (subseq$ $?vc 1 ?new_len) (nth$ (+ ?i ?new_len) $?vc)))
-			 (bind $?new_tam (create$ (subseq$ $?tam 1 ?new_len) (nth$ (+ ?i ?new_len) $?tam)))
-			 (bind $?new_chunk_ids (create$ (subseq$ $?ids 1 ?new_len) (nth$ (+ ?i ?new_len) $?ids)))
-         (assert (root-verbchunk-tam-parser_chunkids - $?new_vc - $?new_tam - $?new_chunk_ids))
-         )
-          (assert (conjuction_modified ?CC))
- )
+; ;Gets conjunction lwg facts
+; ;Ex:-I ate fruits, drank milk and slept.
+; ;(root-verbchunk-tam-parser_chunkids - ate drank slept - ed ed ed - P2 P5 P8) ==>
+; ; ===> here it creates three different facts, as below
+; ;(root-verbchunk-tam-parser_chunkids - ate - ed - P2)
+; ;(root-verbchunk-tam-parser_chunkids - drank - ed - P5)
+; ;(root-verbchunk-tam-parser_chunkids - slept - ed - P8)
+; (defrule get_conj_symmetry_facts
+; (declare (salience 55))
+; ?f<-(Head-Level-Mother-Daughters_lwg ? ? ? $?pre ?CC ?verb $?pos)
+; ?f1<-(Head-Level-Mother-Daughters ? ? ?verb ?id)
+; (conjunction-components ?CC ? $?conjs)
+; ?f0<-(root-verbchunk-tam-parser_chunkids - $?vc - $?tam - $?ids)
+; (test (member$ ?id $?ids))
+; (not (conjuction_modified ?CC))
+; =>
+;         (retract ?f0)
+;         (bind ?len (length $?conjs))
+;         (bind ?id_len (length $?ids))
+;         (bind ?new_len (- ?id_len ?len))
+;         (loop-for-count (?i 1 ?len)
+;			 (bind $?new_vc (create$ (subseq$ $?vc 1 ?new_len) (nth$ (+ ?i ?new_len) $?vc)))
+;			 (bind $?new_tam (create$ (subseq$ $?tam 1 ?new_len) (nth$ (+ ?i ?new_len) $?tam)))
+;			 (bind $?new_chunk_ids (create$ (subseq$ $?ids 1 ?new_len) (nth$ (+ ?i ?new_len) $?ids)))
+;         (assert (root-verbchunk-tam-parser_chunkids - $?new_vc - $?new_tam - $?new_chunk_ids))
+;         )
+;          (assert (conjuction_modified ?CC))
+; )
 ;--------------------------------------------------------------------------
  ;Gets verb_chunk and tam information
  ; (root-verbchunk-tam-parser_chunkids - has been coming - s en ing - P2 P3 P5) ==>
@@ -234,7 +266,8 @@
  (declare (salience -2))
  =>
  (undefrule cp_facts_for_lwg)
- (assert (test_for_not))
+ (assert (cntrl_fact_for_testing_not))
+ (assert (cntrl_fact_for_replacing_head_info))
  )
 ;--------------------------------------------------------------------------
  ;Identifying and inserting "not" to lwg 
@@ -247,7 +280,7 @@
  (Head-Level-Mother-Daughters ?not ? ?RB ?p_id)
  (parserid-word ?not not)
  (Node-Category ?RB RB)
- (test_for_not)
+ (cntrl_fact_for_testing_not)
  (not (RB-checked ?RB))
  (test (and (< (string_to_integer ?first) (string_to_integer ?p_id))(< (string_to_integer ?p_id) (string_to_integer ?last))))
 =>
@@ -431,7 +464,9 @@
  ;Removing auxiliary verbs
  (defrule remove_aux_and_modify_head_wrd
  (declare (salience -100))
+ (cntrl_fact_for_replacing_head_info)
  (root-verbchunk-tam-parser_chunkids ?r ?v ?t $?chunk_ids ?head)
+ (not (root-verbchunk-tam-parser_chunkids ? ? ? $?chunk_ids ?head1&:(< (string_to_integer ?head1) (string_to_integer ?head))))
  ?f<-(Head-Level-Mother-Daughters ? ? ?V ?id)
  (test (member$ ?id $?chunk_ids))
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?m $?pre ?V $?pos)
@@ -444,7 +479,9 @@
  ;i.e; replace auxiliary_id with head_id
  (defrule modify_head_id
  (declare (salience -100))
+ (cntrl_fact_for_replacing_head_info)
  (root-verbchunk-tam-parser_chunkids ?r ?v ?t $?chunk_ids ?head)
+ (not (root-verbchunk-tam-parser_chunkids ? ? ? $?chunk_ids ?head1&:(< (string_to_integer ?head1) (string_to_integer ?head))))
  ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?V $?daut)
  (test (member$ ?h $?chunk_ids))
  =>

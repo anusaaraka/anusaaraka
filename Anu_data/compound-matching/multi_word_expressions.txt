@@ -16656,7 +16656,7 @@ information_processing	sUcanA_prakrama#sUcanA_prakrama#noun#2#RM
 information_retrieval	sUcanA_punaH_prApwi#sUcanA_punaH_prApwi#noun#2#RM
 information_services_of_india	BArawIya_sUcanA_sevA#BArawIya_sUcanA_sevA#noun#2#RM
 information_source	sUcanA_srowa#sUcanA_srowa#noun#2#RM
-information_system	sUcanA_praprAlI#sUcanA_praprAlI#noun#2#RM
+information_system	sUcanA_praNAlI#sUcanA_praNAlI#noun#2#RM
 information_technology	sUcanA_prOxyogikI#sUcanA_prOxyogikI#noun#2#RM
 information_theory	sUcanA_sixXAMwa#sUcanA_sixXAMwa#noun#2#RM
 informed_of	se_avagawa#se_avagawa#noun#1#RM

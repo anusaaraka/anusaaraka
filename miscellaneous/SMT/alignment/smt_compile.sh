@@ -33,4 +33,4 @@ cd $HOME_anu_test/miscellaneous/SMT/alignment
 echo "generating out file"
 $HOME_anu_test/Anu_src/comp.sh get_tam_info
 gcc -o replace_wrd_with_id.out replace_wrd_with_id.c
-
+gcc -o line_count.out line_count.c 

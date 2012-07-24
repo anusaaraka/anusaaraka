@@ -3723,14 +3723,14 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 
 20-07-12
 ========
-1.Added transliteration folder after deleting following files:
+ 1.Added transliteration folder after deleting following files:
 	1. stanford-corenlp-v1.0.4.tgz
 	2. stanford-corenlp-2011-06-08/stanford-corenlp-models-2011-06-08.jar
 	3. all files from transliteration-b/work/phrasal-mert except following file:
 		phrasal.test.ini
 		phrasal.final.ini
 		phrasal.final.binwts
-2.Uncommented transliteration related code in following files:
+ 2.Uncommented transliteration related code in following files:
 	* Anu_clp_files/hindi_meaning.clp
 	* Anu_clp_files/run_modules_link.bat
 	* Anu_clp_files/run_modules_ol.bat
@@ -3748,5 +3748,21 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	* miscellaneous/SMT/alignment/browser/run_align_browser.sh
 	* shell_scripts/ClipsToAnu_browser_intfc.sh
 	* shell_scripts/anu_compile.sh
-3.In WSD: Modified piece.clp
-4.Updated Log.	
+ 3.In WSD: Modified piece.clp
+ 4.Modified "infinitive_pos"  rule in eng_hin_pos.clp file
+ 5.Modified sd_lwg_rules.clp
+   i)  Added new rules find_conj_head , conjunction_rule0 , conjunction_rule1.
+   ii) Removed get_conj_symmetry_facts rule.
+ 6.Corrected the meaning of "information_system" -- "sUcanA_praprAlI"  ==> "sUcanA_praNAlI"  in multi_word_expressions.txt
+ 7.Updated SMT alignment files.
+ 8.Added MINION to anusaarka (below are the new files added to anusaaraka related for minion)
+        1) Anusaaraka_stanford_minion.sh
+        2) run_sentence_stanford_minion.sh
+        3) Added MINION (minion-0.13 version) folder in anusaarka (miscellaneous/SMT/MINION) it includes
+                1) minion-0.13 and
+                2) alignment directories
+                        i) alignment.bat    ii) line_count.c         iii) minion_compile.sh     iv) README
+                        v) run_minion.sh    vi) get_slot_number.clp  vii) manual_lwg_new.clp  viii) run_H_gen_minion.bat
+                       ix) prepare_minion_input.clp
+ 9.Updated changes_in_databases.
+10.Updated Log.	

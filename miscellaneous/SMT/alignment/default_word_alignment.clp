@@ -43,152 +43,152 @@
 )
 ;-------------------------------------------------------------------------------------
 ;grouping potential fact [same anu_word mapping with different manual_words]
-(defrule grp_potential_fact
-(declare (salience 505))
-?f<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
-?f1<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid1)
-(test (neq ?mid ?mid1))
-=>
-	(retract ?f ?f1)
-	(assert (potential_assignment_vacancy_id-candidate_id ?aid - ?mid ?mid1))
-)
-;-------------------------------------------------------------------------------------
-
-
-;grouping potential fact [same manual_word mapping with different anu_words]
-(defrule potential_fact_count1
-(declare (salience 504))
-?f<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
-?f1<-(potential_assignment_vacancy_id-candidate_id ?aid1 ?mid)
-(test (neq ?aid ?aid1))
-=>
-        (retract ?f ?f1)
-        (assert (potential_assignment_vacancy_id-candidate_id ?aid ?aid1 - ?mid))
-)
-;-------------------------------------------------------------------------------------
-
-;Remove the potential fact if any of the mapping length is 0
-(defrule rm_potential_assignment_fact0
-(declare (salience 503))
-?f<-(potential_assignment_vacancy_id-candidate_id $?aids - $?mids)
-(test (or (eq (length $?aids) 0) (eq (length $?mids) 0))) 
-=>
-        (retract ?f)
-)
-;-------------------------------------------------------------------------------------
-;If any of the anu word has been filled , remove that id from potential assignment fact
-;"For example, the same law of gravitation (given by Newton) describes the fall of an apple to the ground, the motion of the moon around the earth and the motion of planets around the sun. "
-;उदाहरण के लिए , समान गुरुत्वाकर्षण का नियम ( जिसे न्यूटन ने प्रतिपदित किया ) पृथ्वी पर किसी सेब का गिरना , पृथ्वी के परितः चन्द्रमा की परिक्रमा तथा सूर्य के परितः ग्रहों की गति जैसी परिघटनाओं की व्याख्या करता है .
-(defrule rm_potential_assignment_fact
-(declare (salience 503))
-?f<-(potential_assignment_vacancy_id-candidate_id $?aids - $?mids)
-?f1<-(anu_id-anu_mng-sep-man_id-man_mng ?id $? - ? $?)
-(test (member$ ?id $?aids))
-(mng_has_been_filled ?id)
-=>
-	(retract ?f)
-        (bind $?aids (delete-member$ $?aids ?id))
-	(assert (potential_assignment_vacancy_id-candidate_id $?aids - $?mids)) 
-)
-
-;-------------------------------------------------------------------------------------
-;If any of the  manual word has been aligned , remove that id from potential assignment fact
-(defrule rm_potential_assignment_fact1
-(declare (salience 503))
-?f<-(potential_assignment_vacancy_id-candidate_id $?aids - $?mids)
-?f1<-(anu_id-anu_mng-sep-man_id-man_mng ? $? - ?id $?)
-(test (member$ ?id $?mids))
-(mng_has_been_aligned ?id)
-=>
-        (retract ?f)
-        (bind $?mids (delete-member$ $?mids ?id))
-        (assert (potential_assignment_vacancy_id-candidate_id $?aids - $?mids))
-)
-
-
-;-------------------------------------------------------------------------------------
-;If due to the above rules if potential fact becomes one-to-one mapping and still then make alignment b/w that two words.
-;"A precise definition of this discipline is neither possible nor necessary. "
-;isa viRaya kI yaWArWa pariBARA xenA na wo saMBava hE Ora na hI AvaSyaka .
-(defrule assign_using_potential_assignment_fact
-(declare (salience 502))
-?f<-(potential_assignment_vacancy_id-candidate_id ?aid - ?mid)
-(manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $? - $? - $?grp_ids)
-(id-Apertium_output ?aid $?anu_mng)
-(not (mng_has_been_filled ?aid))
-(not (mng_has_been_aligned ?mid))
-(not (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mng))
-=>
-        (retract ?f)
-        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?grp_ids))
-        (assert_control_fact mng_has_been_aligned $?grp_ids)
-        (assert (id-confidence_level ?mid 3))
-)
-;-------------------------------------------------------------------------------------
-;aligning using neighbouring slot [which have already been aligned] information [Here neighbourhood is -]
-;This rule is to check if the previous word is "-".
-(defrule assign_poten_fact_using_neighbour_hood
-(declare (salience 501))
-?f<-(potential_assignment_vacancy_id-candidate_id $?pre ?aid1 $?pos - ?mid)
-(head_id-grp_ids ?m_h_id $? ?mid $?)
-(not (mng_has_been_aligned ?mid))
-(hindi_id_order $? ?aid ?aid0 ?aid1 $?)
-(id-Apertium_output ?aid1 $?anu_mng1)
-(id-Apertium_output ?aid0);Usually for determiners 
-(test (neq (length $?anu_mng1) 0))
-(manual_id-cat-word-root-vib-grp_ids ? ? $?word - $? - $? - $?mid_pre ?mid $?mid_pos)
-(head_id-grp_ids ?m_h_id1&:(eq ?m_h_id1 (- ?m_h_id 1)) $?pre1 ?mid2 $?pos1)
-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ? $? ?mid2 $?)
-(not (mng_has_been_filled ?aid1))
-=>
-	(retract ?f)
-        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid1 $?anu_mng1 - ?mid $?mid_pre ?mid $?mid_pos))
-        (assert_control_fact mng_has_been_aligned $?mid_pre ?mid $?mid_pos)
-        (assert_control_fact mng_has_been_filled ?aid1)
-        (assert (id-confidence_level (nth$ 1 (create$ $?mid_pre ?mid $?mid_pos)) 3))
-)
-;-------------------------------------------------------------------------------------
-;aligning using neighbouring slot [which have already been aligned] information.
-(defrule assign_poten_fact_using_neighbour_hood1;[left_neighbour word is aligned]
-(declare (salience 501))
-?f<-(potential_assignment_vacancy_id-candidate_id $?pre ?aid1 $?pos - ?mid)
-(head_id-grp_ids ?m_h_id $? ?mid $?)
-(not (mng_has_been_aligned ?mid))
-(hindi_id_order $? ?aid ?aid1 $?)
-(id-Apertium_output ?aid1 $?anu_mng1)
-(test (neq (length $?anu_mng1) 0))
-(manual_id-cat-word-root-vib-grp_ids ? ? $?word - $? - $? - $?mid_pre ?mid $?mid_pos)
-(head_id-grp_ids ?m_h_id1&:(eq ?m_h_id1 (- ?m_h_id 1)) $?pre1 ?mid2 $?pos1)
-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ? $? ?mid2 $?)
-(not (mng_has_been_filled ?aid1))
-=>
-        (retract ?f)
-        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid1 $?anu_mng1 - ?mid $?mid_pre ?mid $?mid_pos))
-        (assert_control_fact mng_has_been_aligned $?mid_pre ?mid $?mid_pos)
-        (assert_control_fact mng_has_been_filled ?aid1)
-        (assert (id-confidence_level (nth$ 1 (create$ $?mid_pre ?mid $?mid_pos)) 3))
-)       
-;-------------------------------------------------------------------------------------
-;aligning using neighbouring slot [which have already been aligned] information.
-(defrule assign_poten_fact_using_neighbour_hood2 ;[right_neighbour word is aligned]
-(declare (salience 501))
-?f<-(potential_assignment_vacancy_id-candidate_id $?pre ?aid1 $?pos - ?mid)
-(head_id-grp_ids ?m_h_id $? ?mid $?)
-(not (mng_has_been_aligned ?mid))
-(hindi_id_order $? ?aid1 ?aid $?)
-(id-Apertium_output ?aid1 $?anu_mng1)
-(test (neq (length $?anu_mng1) 0))
-(manual_id-cat-word-root-vib-grp_ids ? ? $?word - $? - $? - $?mid_pre ?mid $?mid_pos)
-(head_id-grp_ids ?m_h_id1&:(eq ?m_h_id1 (- ?m_h_id 1)) $?pre1 ?mid2 $?pos1)
-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ? $? ?mid2 $?)
-(not (mng_has_been_filled ?aid1))
-=>
-        (retract ?f)
-        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid1 $?anu_mng1 - ?mid $?mid_pre ?mid $?mid_pos))
-        (assert_control_fact mng_has_been_aligned $?mid_pre ?mid $?mid_pos)
-        (assert_control_fact mng_has_been_filled ?aid1)
-        (assert (id-confidence_level (nth$ 1 (create$ $?mid_pre ?mid $?mid_pos)) 3))
-)
+;(defrule grp_potential_fact
+;(declare (salience 505))
+;?f<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
+;?f1<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid1)
+;(test (neq ?mid ?mid1))
+;=>
+;	(retract ?f ?f1)
+;	(assert (potential_assignment_vacancy_id-candidate_id ?aid - ?mid ?mid1))
+;)
+;;-------------------------------------------------------------------------------------
+;
+;
+;;grouping potential fact [same manual_word mapping with different anu_words]
+;(defrule potential_fact_count1
+;(declare (salience 504))
+;?f<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
+;?f1<-(potential_assignment_vacancy_id-candidate_id ?aid1 ?mid)
+;(test (neq ?aid ?aid1))
+;=>
+;        (retract ?f ?f1)
+;        (assert (potential_assignment_vacancy_id-candidate_id ?aid ?aid1 - ?mid))
+;)
+;;-------------------------------------------------------------------------------------
+;
+;;Remove the potential fact if any of the mapping length is 0
+;(defrule rm_potential_assignment_fact0
+;(declare (salience 503))
+;?f<-(potential_assignment_vacancy_id-candidate_id $?aids - $?mids)
+;(test (or (eq (length $?aids) 0) (eq (length $?mids) 0))) 
+;=>
+;        (retract ?f)
+;)
+;;-------------------------------------------------------------------------------------
+;;If any of the anu word has been filled , remove that id from potential assignment fact
+;;"For example, the same law of gravitation (given by Newton) describes the fall of an apple to the ground, the motion of the moon around the earth and the motion of planets around the sun. "
+;;उदाहरण के लिए , समान गुरुत्वाकर्षण का नियम ( जिसे न्यूटन ने प्रतिपदित किया ) पृथ्वी पर किसी सेब का गिरना , पृथ्वी के परितः चन्द्रमा की परिक्रमा तथा सूर्य के परितः ग्रहों की गति जैसी परिघटनाओं की व्याख्या करता है .
+;(defrule rm_potential_assignment_fact
+;(declare (salience 503))
+;?f<-(potential_assignment_vacancy_id-candidate_id $?aids - $?mids)
+;?f1<-(anu_id-anu_mng-sep-man_id-man_mng ?id $? - ? $?)
+;(test (member$ ?id $?aids))
+;(mng_has_been_filled ?id)
+;=>
+;	(retract ?f)
+;        (bind $?aids (delete-member$ $?aids ?id))
+;	(assert (potential_assignment_vacancy_id-candidate_id $?aids - $?mids)) 
+;)
+;
+;;-------------------------------------------------------------------------------------
+;;If any of the  manual word has been aligned , remove that id from potential assignment fact
+;(defrule rm_potential_assignment_fact1
+;(declare (salience 503))
+;?f<-(potential_assignment_vacancy_id-candidate_id $?aids - $?mids)
+;?f1<-(anu_id-anu_mng-sep-man_id-man_mng ? $? - ?id $?)
+;(test (member$ ?id $?mids))
+;(mng_has_been_aligned ?id)
+;=>
+;        (retract ?f)
+;        (bind $?mids (delete-member$ $?mids ?id))
+;        (assert (potential_assignment_vacancy_id-candidate_id $?aids - $?mids))
+;)
+;
+;
+;;-------------------------------------------------------------------------------------
+;;If due to the above rules if potential fact becomes one-to-one mapping and still then make alignment b/w that two words.
+;;"A precise definition of this discipline is neither possible nor necessary. "
+;;isa viRaya kI yaWArWa pariBARA xenA na wo saMBava hE Ora na hI AvaSyaka .
+;(defrule assign_using_potential_assignment_fact
+;(declare (salience 502))
+;?f<-(potential_assignment_vacancy_id-candidate_id ?aid - ?mid)
+;(manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $? - $? - $?grp_ids)
+;(id-Apertium_output ?aid $?anu_mng)
+;(not (mng_has_been_filled ?aid))
+;(not (mng_has_been_aligned ?mid))
+;(not (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mng))
+;=>
+;        (retract ?f)
+;        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?grp_ids))
+;        (assert_control_fact mng_has_been_aligned $?grp_ids)
+;        (assert (id-confidence_level ?mid 3))
+;)
+;;-------------------------------------------------------------------------------------
+;;aligning using neighbouring slot [which have already been aligned] information [Here neighbourhood is -]
+;;This rule is to check if the previous word is "-".
+;(defrule assign_poten_fact_using_neighbour_hood
+;(declare (salience 501))
+;?f<-(potential_assignment_vacancy_id-candidate_id $?pre ?aid1 $?pos - ?mid)
+;(head_id-grp_ids ?m_h_id $? ?mid $?)
+;(not (mng_has_been_aligned ?mid))
+;(hindi_id_order $? ?aid ?aid0 ?aid1 $?)
+;(id-Apertium_output ?aid1 $?anu_mng1)
+;(id-Apertium_output ?aid0);Usually for determiners 
+;(test (neq (length $?anu_mng1) 0))
+;(manual_id-cat-word-root-vib-grp_ids ? ? $?word - $? - $? - $?mid_pre ?mid $?mid_pos)
+;(head_id-grp_ids ?m_h_id1&:(eq ?m_h_id1 (- ?m_h_id 1)) $?pre1 ?mid2 $?pos1)
+;(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ? $? ?mid2 $?)
+;(not (mng_has_been_filled ?aid1))
+;=>
+;	(retract ?f)
+;        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid1 $?anu_mng1 - ?mid $?mid_pre ?mid $?mid_pos))
+;        (assert_control_fact mng_has_been_aligned $?mid_pre ?mid $?mid_pos)
+;        (assert_control_fact mng_has_been_filled ?aid1)
+;        (assert (id-confidence_level (nth$ 1 (create$ $?mid_pre ?mid $?mid_pos)) 3))
+;)
+;;-------------------------------------------------------------------------------------
+;;aligning using neighbouring slot [which have already been aligned] information.
+;(defrule assign_poten_fact_using_neighbour_hood1;[left_neighbour word is aligned]
+;(declare (salience 501))
+;?f<-(potential_assignment_vacancy_id-candidate_id $?pre ?aid1 $?pos - ?mid)
+;(head_id-grp_ids ?m_h_id $? ?mid $?)
+;(not (mng_has_been_aligned ?mid))
+;(hindi_id_order $? ?aid ?aid1 $?)
+;(id-Apertium_output ?aid1 $?anu_mng1)
+;(test (neq (length $?anu_mng1) 0))
+;(manual_id-cat-word-root-vib-grp_ids ? ? $?word - $? - $? - $?mid_pre ?mid $?mid_pos)
+;(head_id-grp_ids ?m_h_id1&:(eq ?m_h_id1 (- ?m_h_id 1)) $?pre1 ?mid2 $?pos1)
+;(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ? $? ?mid2 $?)
+;(not (mng_has_been_filled ?aid1))
+;=>
+;        (retract ?f)
+;        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid1 $?anu_mng1 - ?mid $?mid_pre ?mid $?mid_pos))
+;        (assert_control_fact mng_has_been_aligned $?mid_pre ?mid $?mid_pos)
+;        (assert_control_fact mng_has_been_filled ?aid1)
+;        (assert (id-confidence_level (nth$ 1 (create$ $?mid_pre ?mid $?mid_pos)) 3))
+;)       
+;;-------------------------------------------------------------------------------------
+;;aligning using neighbouring slot [which have already been aligned] information.
+;(defrule assign_poten_fact_using_neighbour_hood2 ;[right_neighbour word is aligned]
+;(declare (salience 501))
+;?f<-(potential_assignment_vacancy_id-candidate_id $?pre ?aid1 $?pos - ?mid)
+;(head_id-grp_ids ?m_h_id $? ?mid $?)
+;(not (mng_has_been_aligned ?mid))
+;(hindi_id_order $? ?aid1 ?aid $?)
+;(id-Apertium_output ?aid1 $?anu_mng1)
+;(test (neq (length $?anu_mng1) 0))
+;(manual_id-cat-word-root-vib-grp_ids ? ? $?word - $? - $? - $?mid_pre ?mid $?mid_pos)
+;(head_id-grp_ids ?m_h_id1&:(eq ?m_h_id1 (- ?m_h_id 1)) $?pre1 ?mid2 $?pos1)
+;(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ? $? ?mid2 $?)
+;(not (mng_has_been_filled ?aid1))
+;=>
+;        (retract ?f)
+;        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid1 $?anu_mng1 - ?mid $?mid_pre ?mid $?mid_pos))
+;        (assert_control_fact mng_has_been_aligned $?mid_pre ?mid $?mid_pos)
+;        (assert_control_fact mng_has_been_filled ?aid1)
+;        (assert (id-confidence_level (nth$ 1 (create$ $?mid_pre ?mid $?mid_pos)) 3))
+;)
 	
 ;-------------------------------------------------------------------------------------
 ;
