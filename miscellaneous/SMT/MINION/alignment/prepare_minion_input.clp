@@ -2,17 +2,17 @@
 
 (defglobal ?*minion_fp*  = minion_fp)
 
-(defrule potential_count_of_anu_id
-(declare (salience 2000))
-?f<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
-?f1<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid1)
-(test (neq ?mid ?mid1))
-(not (anu_slot_candidate_ids ?aid $?))
-(manual_id-mapped_id ?mid ?mapped_id)
-(manual_id-mapped_id ?mid1 ?mapped_id1)
-=>
-        (assert (anu_slot_candidate_ids ?aid ?mapped_id ?mapped_id1))
-)
+;(defrule potential_count_of_anu_id
+;(declare (salience 2000))
+;?f<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
+;?f1<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid1)
+;(test (neq ?mid ?mid1))
+;(not (anu_slot_candidate_ids ?aid $?))
+;(manual_id-mapped_id ?mid ?mapped_id)
+;(manual_id-mapped_id ?mid1 ?mapped_id1)
+;=>
+;        (assert (anu_slot_candidate_ids ?aid ?mapped_id ?mapped_id1))
+;)
 
 (defrule potential_count_of_manual_id
 (declare (salience 2000))
@@ -25,16 +25,16 @@
         (assert (man_id-candidate_slots ?mapped_id ?aid ?aid1))
 )
 
-(defrule potential_count_of_anu_id1
-(declare (salience 2000))
-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
-?f<-(anu_slot_candidate_ids ?aid $?mem)
-(manual_id-mapped_id ?mid ?mapped_id)
-(test (eq (member$ ?mapped_id $?mem) FALSE))
-=>
-        (retract ?f)
-        (assert (anu_slot_candidate_ids ?aid $?mem ?mapped_id))
-)
+;(defrule potential_count_of_anu_id1
+;(declare (salience 2000))
+;(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
+;?f<-(anu_slot_candidate_ids ?aid $?mem)
+;(manual_id-mapped_id ?mid ?mapped_id)
+;(test (eq (member$ ?mapped_id $?mem) FALSE))
+;=>
+;        (retract ?f)
+;        (assert (anu_slot_candidate_ids ?aid $?mem ?mapped_id))
+;)
 
 (defrule potential_count_of_manual_id1
 (declare (salience 2000))
@@ -44,7 +44,9 @@
 (test (eq (member$ ?aid $?mem) FALSE))
 =>
         (retract ?f)
-        (assert (man_id-candidate_slots ?mapped_id $?mem ?aid))
+	(bind $?mem (sort > (create$ $?mem ?aid)))
+;        (assert (man_id-candidate_slots ?mapped_id $?mem ?aid))
+        (assert (man_id-candidate_slots ?mapped_id $?mem))
 )
 
 ;(defrule map_potential_fact
@@ -120,11 +122,12 @@
 	(loop-for-count (?i 1 (length $?grp))
 			(bind ?wrd_id (nth$ ?i $?grp))
 			(printout ?*minion_fp* "eq(ws["(- ?wrd_id 1)","(- (member$ ?aid $?hin_order) 1)"],1)")
-                        (if (eq ?i (length $?grp)) then 
-			    (printout ?*minion_fp* "})" crlf crlf)
-			else
-			    (printout ?*minion_fp* ","))
+                        (if (neq ?i (length $?grp)) then 
+			 ;   (printout ?*minion_fp* "})" crlf crlf)
+			;else
+			     (printout ?*minion_fp* ","))
 	)
+	(printout ?*minion_fp* "})" crlf crlf)
 )
 
 (defrule printf_potential_constraints1
@@ -138,11 +141,12 @@
                         (bind ?slot_id (nth$ ?i $?grp))
 			(if (neq (member$ ?slot_id $?hin_order) FALSE) then
                         (printout ?*minion_fp* "eq(ws["(- ?mid 1)","(- (member$ ?slot_id $?hin_order) 1)"],1)")
-                        (if (eq ?i (length $?grp)) then
-                            (printout ?*minion_fp* "})" crlf crlf)
-                        else
+                        (if (neq ?i (length $?grp)) then
+                          ;  (printout ?*minion_fp* "})" crlf crlf)
+                       ; else
                             (printout ?*minion_fp* ",")))
         )
+	(printout ?*minion_fp* "})" crlf crlf)
 )
 
 (defrule print_default_assignment
@@ -164,12 +168,37 @@
         )
         (printout ?*minion_fp* crlf crlf)
 )
+(defrule rm_prep_id_from_scope
+(declare (salience 955))
+?f0<-(mot-cat-praW_id-largest_group ?m ?c ?p_id $?d ?id $?d1)
+(id-cat_coarse ?id preposition)
+(not (id-cat_coarse =(+ ?id 1) verb))
+=>
+	(retract ?f0)
+	(assert (mot-cat-praW_id-largest_group ?m ?c ?p_id $?d $?d1))
+)	
+
+(defrule print_prawiniXi_grp_info
+(declare (salience 954))
+(mot-cat-praW_id-largest_group ? ? ? $?grp)
+(hindi_id_order $?ids)
+=>
+        (bind $?g_list (create$))
+        (loop-for-count (?i 1 (length $?grp))
+                (bind ?id (nth$ ?i $?grp))
+                (bind ?pos (member$ ?id $?ids))
+		(bind $?g_list (sort > (create$ $?g_list (- ?pos 1))))
+        )
+        (assert (grp_ids-slot_ids $?grp - $?g_list))
+)
+
 
 (defrule print_grp_info
 (declare (salience 950))
 (pada_info (group_head_id ?id)(group_cat PP)(group_ids $?grp))
 (test (> (length $?grp) 1))
 (hindi_id_order $?ids)
+(not (grp_ids-slot_ids $?grp - $?))
 =>
 	(bind $?g_list (create$))
         (loop-for-count (?i 1 (length $?grp))
@@ -186,12 +215,11 @@
 (manual_word_length  ?manual_word_len)
 (slot-length  ?anu_slot_len)
 =>
-        (retract ?f0)
 	(printout ?*minion_fp* crlf " #group : "(implode$ $?anu_grp) " ---- " (implode$ $?grp))
         (printout ?*minion_fp*  crlf " watched-or({" crlf )
         (bind ?count 0)
         (loop-for-count (?k ?count (- ?manual_word_len 1))
-                (printout ?*minion_fp*  "   watched-and({" crlf "              sumgeq([")
+                (printout ?*minion_fp*  "	watched-and({" crlf "		sumgeq([")
                 (loop-for-count (?i ?count (- (+ (length $?grp) ?count ) 1))
                         (loop-for-count (?j 1 (length $?grp) )
                                 (bind ?s_id (nth$ ?j $?grp))
@@ -202,10 +230,10 @@
                         (if (eq ?i (- (+ (length $?grp) ?count ) 1 )) then
                                 (printout ?*minion_fp*  "],1)"crlf )
                         else
-                                 (printout ?*minion_fp*  "],1),"crlf "              sumgeq([")
+                                 (printout ?*minion_fp*  "],1),"crlf "		sumgeq([")
                         )
                 )
-                (printout ?*minion_fp*  "   })" )
+                (printout ?*minion_fp*  "	})" )
                 (if (eq (+ ?k (length $?grp)) ?manual_word_len )  then
 			(printout ?*minion_fp* crlf)
                         (break)
