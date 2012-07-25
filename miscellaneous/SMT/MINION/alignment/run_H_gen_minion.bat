@@ -172,6 +172,7 @@
  (load-facts "potential_assignment.dat")
  (load-facts "sd_scope.dat")
  (load-facts "pada_id_info.dat")
+ (load-facts "cat_consistency_check.dat")
  (open "minion_input.txt" minion_fp "w")
  (run)
  (close minion_fp) 
