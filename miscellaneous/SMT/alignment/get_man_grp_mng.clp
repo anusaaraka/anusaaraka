@@ -44,7 +44,7 @@
  )
  ;------------------------------------------------------------------------------------------------------------------------
  ;The area has got the digamber jain temple which houses the birds hospital.
- (defrule modify_wrd_mng_for_VP_kriyAmUla
+ (defrule modify_wrd_mng_for_VP_kriyAmUla_kara
  (declare (salience 90))
  ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN kara ?cat ?g ?no ?p ?c ?suf)
  ?f1<-(head_id-grp_ids ?id $?grp) ;?4
@@ -69,6 +69,35 @@
         (assert (id-node-word-root ?n2 ?cat2 ?word2 - ?root))
 	(assert (modified_word_id ?id))
  )
+
+
+
+ (defrule modify_wrd_mng_for_VP_kriyAmUla_ho
+ (declare (salience 90))
+ ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN ho ?cat ?g ?no ?p ?c ?suf)
+ ?f1<-(head_id-grp_ids ?id $?grp) ;?4
+ ?f2<-(position-cat-man_grp_mng   ?id ?node     $?word  - -);f0
+ ?f3<-(id-node-root-cat-gen-num-per-case-tam =(- ?id 1) ?n&NP ?r ? ? ? ? ? ?);f1
+ ?f4<-(head_id-grp_ids =(- ?id 1) $?grp1);f3
+ ?f5<-(position-cat-man_grp_mng =(- ?id 1) ?n $?word1 - -);f2
+ ?f7<-(id-node-word-root ?n1 ?cat2 ?word3 - ?root1)
+ (test (member$ ?n1 $?grp))
+ ?f6<-(id-node-word-root ?n2&=(- ?n1 1) ?cat1 ?word2 - ?root0)
+ (test (member$ ?n2 $?grp1))
+ (not (modified_word_id ?id))
+ =>
+;       (retract ?f ?f0 ?f1 ?f2)
+        (retract ?f ?f1 ?f2 ?f3 ?f4 ?f5 ?f6 ?f7)
+        (bind ?root (string-to-field (str-cat ?r"_kara")))
+        (assert (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ?g ?no ?p ?c ?suf))
+        (assert (position-cat-man_grp_mng   ?id ?node $?word1 $?word  - -))
+        (assert (head_id-grp_ids ?id $?grp1 $?grp))
+        (printout t ?word2"---"?word3 crlf)
+        (bind ?word2 (explode$ (str-cat ?word2 " " ?word3)))
+        (assert (id-node-word-root ?n2 ?cat2 ?word2 - ?root))
+        (assert (modified_word_id ?id))
+ )
+
  ;------------------------------------------------------------------------------------------------------------------------
  ;(position-cat-man_grp_mng 5 NP kuCa saMkalpanAoM) |
  ;(position-cat-man_grp_mng 6 CCP evaM )            | (position-cat-man_grp_mng 6 CCP  kuCa saMkalpanAoM evaM niyamoM ke)

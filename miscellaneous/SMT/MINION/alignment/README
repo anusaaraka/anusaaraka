@@ -2,3 +2,57 @@
  MINION Compilation : 
 	 For our work we are using the (already) compiled version of minion. 
 
+
+ 1. Prerequisites::
+   =============
+        1. English Sentence File.
+        2. Hindi Sentence File (WX Notation)
+        3. Shallow parser output for above hindi sentences.
+
+ 2. compile:
+   ========
+        1. cd $HOME_anu_test
+           shell_scripts/remove_out-files.sh
+           shell_scripts/anu_compile.sh
+        2. cd $HOME_anu_test/miscellaneous/SMT/MINION/alignment
+           sh minion_compile.sh
+
+ 3. To run alignment 
+   ========================
+
+        Anusaaraka_stanford_minion.sh <file-name> <parse_no> <sand_box_option> <domain_name> < manual_hin_sen> < shallow_parser_output>
+        Ex  :   Anusaaraka_stanford_minion.sh phy_verified 0 false general phy_verified_hi phy_verified_hi_shallow_out
+        (Note : 0       :  default parse
+                false   :  not to use provisional directory.
+                general :  no domain
+        )
+
+      Domain specific :
+      ================
+        To run Anusaaraka for physics domain then
+
+        Ex  :Anusaaraka_stanford_minion.sh phy_verified 0 True physics phy_verified_hi phy_verified_hi_shallow_out
+
+        (Note : 0       :  default parse
+                True    :  to use provisional directory.
+                physics :  physics domain
+        )
+
+
+  Dictionaries :  Dictionaries used for alignment are in $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries directory
+
+  File to check for group alignment is :
+  =====================================
+                         $HOME_anu_tmp/tmp/$1_tmp/$2/alignment.dat
+                Ex:      $HOME_anu_tmp/tmp/phy_verified_tmp/2.1/alignment.dat
+
+  File to check for word alignment is :
+  ====================================
+                         $HOME_anu_tmp/tmp/$1_tmp/$2/word_alignment.dat
+                Ex:      $HOME_anu_tmp/tmp/phy_verified_tmp/2.1/word_alignment.dat
+
+  To view the firefox for alignment :
+  =================================
+                        firefox $HOME_anu_output/[file_name]_align.html
+                Ex:     firefox $HOME_anu_output/phy_verified_align.html
+

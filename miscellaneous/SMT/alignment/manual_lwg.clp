@@ -62,7 +62,7 @@
 )
 ;-----------------------------------------------------------------------------------------
 (defrule verb_grouping
-(manual_id-node-word-root-tam  ?m_h_id   VGF  $?mng - $?root - $?tam)
+(manual_id-node-word-root-tam  ?m_h_id   VGF|VGNN  $?mng - $?root - $?tam)
 (head_id-grp_ids ?m_h_id ?mid $?ids)
 (manual_id-word-cat ?mid $?word ?cat)
 (not (lwg_done ?mid))
@@ -74,7 +74,8 @@
 			(assert (retract_manual_fact ?j))
 	)
          (assert (lwg_done ?mid))
-) 
+)
+
 ;-----------------------------------------------------------------------------------------
 (defrule retract_fact
 (retract_manual_fact ?mid)
@@ -86,7 +87,7 @@
 (defrule change_remaining_facts
 (declare (salience -10))
 (manual_id-word-cat ?mid $?word ?cat)
-(id-node-word-root ?mid ? $?word - $?root)
+(id-node-word-root ?mid ? $?word1 - $?root)
 =>
-	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word - $?root - 0 - ?mid))
+	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word1 - $?root - 0 - ?mid))
 )
