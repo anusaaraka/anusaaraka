@@ -6,6 +6,7 @@
  (load-facts "sd_word_tmp.dat")
  (load-facts "E_constituents_info_tmp.dat")
  (load-facts "Node_category_tmp.dat")
+ (load-facts "morph.dat")
  (run)
  (save-facts "E_constituents_info_tmp1.dat" local Head-Level-Mother-Daughters)
  (save-facts "Node_category_tmp1.dat" local  Node-Category)
@@ -192,8 +193,8 @@
  ; Generate hindi Pada for the sentence.
  ; with in paxa ordering (e.g to reach your potential --> hindi ((your) (potential)(to reach))
  (load "global_path.clp")
- (bind ?*path* (str-cat ?*path* "/Anu_clp_files/sd_pada.bclp"))
- (bload ?*path*)
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/sd_pada.clp"))
+ (load ?*path*)
  (load-facts "prawiniXi.dat")
  (load-facts "word.dat")
  (load-facts "lwg_info.dat")
@@ -579,6 +580,7 @@
  (load-facts "word.dat")
  (run)
  (save-facts "sd_chunk.dat" local chunk-ids)
+ (clear)
  ;--------------------------------------------------------------------------
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/get_all_possible_roots.clp"))

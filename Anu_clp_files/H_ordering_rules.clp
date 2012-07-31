@@ -450,7 +450,6 @@
 =>
 (save-facts "hindi_rev_order.dat" local Head-Level-Mother-Daughters)
 (undefrule merge_ADVP)
-(undefrule dont_rev_if_VP_goesto_TO)
 (undefrule rev_VP_or_PP_or_WHPP)
 (undefrule rev_ADJP_goesto_PP)
 (undefrule move_S_last_child_first)
@@ -557,12 +556,28 @@
         (assert (sbar_ids $?child))
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+(defrule rm_last_node_in_sen
+(declare (salience 95))
+?f0<-(Sen $?daughters ?id)
+(test (neq (numberp ?id) TRUE))
+=>
+        (retract ?f0)
+        (assert (Sen $?daughters))
+        (assert (removed_node))
+)
+;-----------------------------------------------------------------------------------------------------------------------
+(defrule print_eroor_msg_to_user
+(declare (salience 94))
+(removed_node)
+=>
+        (printout t "ERROR (Order Problem) : Not all the ids were substituted" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
 (defrule assert_dummy_fact
 (declare (salience 90))
 =>
   (assert (hindi_id_order))
 )
-
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule hin_order
 (declare (salience 80))
@@ -583,7 +598,7 @@
 ;Added by Shirisha Manju(27-02-12)
 (defrule rm_prep_id_in_order
 (declare (salience 60))
-?f<-(pada_info (preposition $?prep_ids))
+(pada_info (preposition $?prep_ids))
 ?f1<-(hindi_id_order  $?ids ?pid $?ids1)
 (test (member$ ?pid $?prep_ids))
 (not (pre_id_deleted ?pid))
@@ -591,6 +606,18 @@
         (retract ?f1)
         (assert (hindi_id_order   $?ids $?ids1))
         (assert (pre_id_deleted ?pid))
+)
+;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (30-07-12)
+(defrule rm_to_id_in_order
+(declare (salience 60))
+(pada_info (group_cat infinitive) (group_ids ?to_id ?))
+?f1<-(hindi_id_order  $?ids ?to_id $?ids1)
+(not (to_id_deleted ?to_id))
+=>
+        (retract ?f1)
+        (assert (hindi_id_order   $?ids $?ids1))
+        (assert (to_id_deleted ?to_id))
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju(27-02-12)

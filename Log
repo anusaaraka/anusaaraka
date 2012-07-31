@@ -3721,7 +3721,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 39.Modified sd_ver_output, ber_ver_output, link_ver_output and verified_output
 40.Updated Log.
 
- 24-07-12
+ 31-07-12
  ========
  1.Added transliteration folder after deleting following files:
 	1. stanford-corenlp-v1.0.4.tgz
@@ -3764,5 +3764,18 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                         i) alignment.bat    ii) line_count.c         iii) minion_compile.sh     iv) README
                         v) run_minion.sh    vi) get_slot_number.clp  vii) manual_lwg_new.clp  viii) run_H_gen_minion.bat
                        ix) prepare_minion_input.clp
- 9.Updated changes_in_databases.
-10.Updated Log.	
+ 9. H_ordering_rules.clp
+        Added    : rm_last_node_in_sen , print_eroor_msg_to_user and rm_to_id_in_order
+10. Added "modify_ADVP_as_NP" rule in parser_tree_correction_rules.clp
+11. Added "example sentenses" in parser_tree_modification_rules.clp
+12. Modified "PP_rule_with_tam" rule in prepare_apertium_input.clp  (added not condition of cat noun)
+13. run_modules_std.bat
+        1. loaded "morph.dat" in parser_tree_correction_rules module
+        2. removed bload for sd_pada module -- to save prawiniXi info
+14. sd_pada.clp
+        Modified  : get_conj_pada , get_pos_pada, get_single_prep , share_conj_prep ,
+                    get_or_verb_agmt_fact, get_or_verb_agmt_fact_for_zero_lvl and  get_pada_group
+        Added     : replace_conj_daut1 and replace_conj_daut
+15. Modified tam_meaning.clp to add dummy fact (conj_head-components)
+16. Updated changes_in_databases.
+17. Updated Log.	

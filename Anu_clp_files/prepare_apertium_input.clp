@@ -934,6 +934,7 @@
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?person)(group_ids $?ids)(H_tam ?tam))
   (test (member$ ?id $?ids))
   (test (neq ?tam 0))
+  (not (id-cat_coarse ?id noun)) ;Application and exploitation of physical laws to make useful devices is the most interesting and exciting part and requires great ingenuity and persistence of effort
   =>
         (bind ?a (gdbm_lookup "hindi_cat.gdbm" ?h_word))
         (if (eq ?a "T") then

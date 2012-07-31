@@ -15,7 +15,7 @@
 =>
         (assert (man_id-candidate_slots ?mapped_id $?anu_verbs))
 )
-
+;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
 (defrule potential_count_of_manual_id
 (declare (salience 2000))
@@ -63,14 +63,16 @@
 (declare (salience 999))
 (hindi_id_order $?hin_order)
 (Eng_sen $?sen)
+(manual_hin_sen $?m_sen)
 =>
 	(printout ?*minion_fp* " # Sen		: " (implode$ $?sen) crlf )
 	(printout ?*minion_fp* " # Order	: " (implode$ $?hin_order) crlf)
-	(printout ?*minion_fp* " # Slot_order	:" )
+	(printout ?*minion_fp* " # Slot_order	: " )
 	(loop-for-count (?i 0 (- (length $?hin_order) 1))
 		(printout ?*minion_fp*   ?i " " )
 	)
-	(printout ?*minion_fp* crlf " # potential facts : " crlf) 
+	(printout ?*minion_fp* crlf " # Manual sen : "(implode$ $?m_sen) crlf )
+	(printout ?*minion_fp*  " # potential facts : " crlf) 
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
@@ -85,7 +87,9 @@
 	(loop-for-count (?i 1 (length $?grp))
                 (bind ?id (nth$ ?i $?grp))
                 (bind ?pos (member$ ?id $?ids))
-                (bind $?g_list (sort > (create$ $?g_list (- ?pos 1))))
+		(if (neq ?pos FALSE) then
+                	(bind $?g_list (sort > (create$ $?g_list (- ?pos 1))))
+		)
         )
 	(printout ?*minion_fp* (implode$ $?g_list) crlf)
 )
@@ -122,33 +126,18 @@
 	(printout ?*minion_fp* " eq(ws["(- ?mapped_id 1)","(- (member$ ?aid $?hin_order) 1)"],1)" crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
-;(defrule potential_facts_for_article_the
-;(declare (salience 975))
-;(id-word ?aid the)
-;(manual_hin_sen $?man_sen)
-;(test (and (eq (member$ isa $?man_sen) FALSE)(eq (member$ vaha $?man_sen) FALSE)))
-;;(test (eq (member$ vaha $?man_sen) FALSE))
-;(manual_word_length ?man_word_len)
-;(hindi_id_order $?hin_order)
-;(test (neq (member$ ?aid $?hin_order) FALSE)) 
-;=>
-;	(loop-for-count(?i 0 (- ?man_word_len 1))
-;  			(printout ?*minion_fp* " eq(ws["?i","(- (member$ ?aid $?hin_order) 1)"],0)" crlf)
-;	)
-;)
-
+;Added by Maha Laxmi
 (defrule potential_facts_for_article_the
 (declare (salience 975))
 (id-word ?aid the)
-(manual_id-mng ?mid vaha|isa|usa)
+(manual_id-mng ?mapped_id vaha|isa|usa)
 (hindi_id_order $?hin_order)
 (test (neq (member$ ?aid $?hin_order) FALSE)) 
-(manual_id-mapped_id ?mid ?mapped_id)
 =>
-                   ;    (printout ?*minion_fp* " eq(ws["?i","(- (member$ ?aid $?hin_order) 1)"],0)" crlf)
                        (printout ?*minion_fp* " watched-or({ eq(ws["(- ?mapped_id 1)","(- (member$ ?aid $?hin_order) 1)"],1),sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)})" crlf)
 )
-
+;------------------------------------------------------------------------------------------------------------
+;Added by Maha Laxmi
 (defrule potential_facts_for_article_the1
 (declare (salience 975))
 (id-word ?aid the)
@@ -156,22 +145,21 @@
 (hindi_id_order $?hin_order)
 (test (neq (member$ ?aid $?hin_order) FALSE))
 =>
-                   ;    (printout ?*minion_fp* " eq(ws["?i","(- (member$ ?aid $?hin_order) 1)"],0)" crlf)
-                       (printout ?*minion_fp* " sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)" crlf)
+        (printout ?*minion_fp* " sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)" crlf)
 )
-
+;------------------------------------------------------------------------------------------------------------
+;Added by Maha Laxmi
 (defrule potential_facts_for_article_a_and_an
 (declare (salience 975))
 (id-word ?aid a|an)
-(manual_id-mng ?mid eka|koI)
+(manual_id-mng ?mapped_id eka|koI)
 (hindi_id_order $?hin_order)
 (test (neq (member$ ?aid $?hin_order) FALSE))
-(manual_id-mapped_id ?mid ?mapped_id)
 =>
-                   ;    (printout ?*minion_fp* " eq(ws["?i","(- (member$ ?aid $?hin_order) 1)"],0)" crlf)
-                       (printout ?*minion_fp* " watched-or({ eq(ws["(- ?mapped_id 1)","(- (member$ ?aid $?hin_order) 1)"],1),sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)})" crlf)
+        (printout ?*minion_fp* " watched-or({ eq(ws["(- ?mapped_id 1)","(- (member$ ?aid $?hin_order) 1)"],1),sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)})" crlf)
 )
-
+;------------------------------------------------------------------------------------------------------------
+;Added by Maha Laxmi
 (defrule potential_facts_for_article_a_and_an1
 (declare (salience 975))
 (id-word ?aid a|an)
@@ -179,10 +167,31 @@
 (hindi_id_order $?hin_order)
 (test (neq (member$ ?aid $?hin_order) FALSE))
 =>
-                   ;    (printout ?*minion_fp* " eq(ws["?i","(- (member$ ?aid $?hin_order) 1)"],0)" crlf)
-                       (printout ?*minion_fp* " sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)" crlf)
+	(printout ?*minion_fp* " sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)" crlf)
 )
-
+;------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (30-07-12)
+;Physicists try to discover the rules that are operating in nature, on the basis of observations, experimentation and analysis.
+(defrule potential_facts_for_that
+(declare (salience 975))
+(id-word ?aid that)
+(manual_id-mng ?mapped_id jo|isa|yaha|vaha|usa)
+(hindi_id_order $?hin_order)
+(test (neq (member$ ?aid $?hin_order) FALSE))
+=>
+	(printout ?*minion_fp* " watched-or({ eq(ws["(- ?mapped_id 1)","(- (member$ ?aid $?hin_order) 1)"],1),sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)})" crlf)
+)
+;------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (30-07-12)
+(defrule potential_facts_for_that1
+(declare (salience 975))
+(id-word ?aid that)
+(not (manual_id-mng ?mid jo|isa|yaha|vaha|usa))
+(hindi_id_order $?hin_order)
+(test (neq (member$ ?aid $?hin_order) FALSE))
+=>
+	(printout ?*minion_fp* " sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)" crlf)
+)
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
 (defrule print_poten_constr_info
@@ -198,15 +207,15 @@
 (man_id-candidate_slots ?mid $?grp)
 (hindi_id_order $?hin_order)
 =>
-        (printout ?*minion_fp* " watched-or({" )
+	(printout ?*minion_fp* " watched-or({" )
         (loop-for-count (?i 1 (length $?grp))
-                        (bind ?slot_id (nth$ ?i $?grp))
-			(if (neq (member$ ?slot_id $?hin_order) FALSE) then
-                        (printout ?*minion_fp* "eq(ws["(- ?mid 1)","(- (member$ ?slot_id $?hin_order) 1)"],1)")
+        	(bind ?slot_id (nth$ ?i $?grp))
+		(if (neq (member$ ?slot_id $?hin_order) FALSE) then
+                	(printout ?*minion_fp* "eq(ws["(- ?mid 1)","(- (member$ ?slot_id $?hin_order) 1)"],1)")
                         (if (neq ?i (length $?grp)) then
-                          ;  (printout ?*minion_fp* "})" crlf crlf)
-                       ; else
-                            (printout ?*minion_fp* ",")))
+                            (printout ?*minion_fp* ",")
+			)
+		)
         )
 	(printout ?*minion_fp* "})" crlf)
 )
@@ -243,10 +252,19 @@
 	(assert (mot-cat-praW_id-largest_group ?m ?c ?p_id $?d $?d1))
 )
 ;------------------------------------------------------------------------------------------------------------
+(defrule sort_conj_ids
+(declare (salience 955))
+(conj_head-components $?ids)
+=>
+        (bind ?g_ids (sort > ?ids))
+        (assert (conj_components ?g_ids))
+)
+
+
 ;Added by Shirisha Manju
 (defrule get_prawiniXi_grp_info
 (declare (salience 954))
-(mot-cat-praW_id-largest_group ? ? ? $?grp)
+(or (mot-cat-praW_id-largest_group ? ? ? $?grp) (conj_components $?grp))
 (hindi_id_order $?ids)
 (test (> (length $?grp) 1))
 =>
@@ -255,8 +273,8 @@
                 (bind ?id (nth$ ?i $?grp))
                 (bind ?pos (member$ ?id $?ids))
 		(if (neq ?pos FALSE) then
-;		(printout t " "(- ?pos 1) )
-		(bind $?g_list (sort > (create$ $?g_list (- ?pos 1)))))
+			(bind $?g_list (sort > (create$ $?g_list (- ?pos 1))))
+		)
         )
         (assert (grp_ids-slot_ids $?grp - $?g_list))
 )
@@ -357,31 +375,35 @@
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (25-07-12)
-(defrule get_conj_grp_info
-(declare (salience 951))
-(conj_head-left_head-right_head  ?con   ?lh  ?rh)
-(pada_info (group_head_id ?lh)(group_cat PP)(group_ids $?grp))
-(pada_info (group_head_id ?rh)(group_cat PP)(group_ids $?grp1))
-(hindi_id_order $?ids)
-(not (grp_ids-slot_ids $?grp - $?))
-(not (grp_ids-slot_ids $?grp1 - $?))
-=>
-	(bind $?g_list (create$))
-        (loop-for-count (?i 1 (length $?grp))
-                (bind ?id (nth$ ?i $?grp))
-                (bind ?pos (member$ ?id $?ids))
-                (bind $?g_list (create$ $?g_list (- ?pos 1)))
-        )
-	(bind $?g_list1 (create$))
-        (loop-for-count (?i 1 (length $?grp1))
-                (bind ?id (nth$ ?i $?grp1))
-                (bind ?pos (member$ ?id $?ids))
-                (bind $?g_list1 (create$ $?g_list1 (- ?pos 1)))
-        )
-	(bind $?slot_ids (create$ $?g_list (- (member$ ?con $?ids) 1) $?g_list1))
- 	(bind $?grp_ids (create$ $?grp ?con $?grp1))
-        (assert (grp_ids-slot_ids $?grp_ids - $?slot_ids))
-)
+;(defrule get_conj_grp_info
+;(declare (salience 951))
+;(conj_head-left_head-right_head  ?con   ?lh  ?rh)
+;(pada_info (group_head_id ?lh)(group_cat PP)(group_ids $?grp))
+;(pada_info (group_head_id ?rh)(group_cat PP)(group_ids $?grp1))
+;(hindi_id_order $?ids)
+;(not (grp_ids-slot_ids $?grp - $?))
+;(not (grp_ids-slot_ids $?grp1 - $?))
+;=>
+;	(bind $?g_list (create$))
+;        (loop-for-count (?i 1 (length $?grp))
+;                (bind ?id (nth$ ?i $?grp))
+;                (bind ?pos (member$ ?id $?ids))
+;		(if (neq ?pos FALSE) then
+;	                (bind $?g_list (create$ $?g_list (- ?pos 1)))
+;		)
+;        )
+;	(bind $?g_list1 (create$))
+;        (loop-for-count (?i 1 (length $?grp1))
+;                (bind ?id (nth$ ?i $?grp1))
+;                (bind ?pos (member$ ?id $?ids))
+;		(if (neq ?pos FALSE) then
+;	                (bind $?g_list1 (create$ $?g_list1 (- ?pos 1)))
+;		)
+;        )
+;	(bind $?slot_ids (create$ $?g_list (- (member$ ?con $?ids) 1) $?g_list1))
+; 	(bind $?grp_ids (create$ $?grp ?con $?grp1))
+;        (assert (grp_ids-slot_ids $?grp_ids - $?slot_ids))
+;)
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
 (defrule get_grp_info
@@ -396,7 +418,8 @@
                 (bind ?id (nth$ ?i $?grp))
                 (bind ?pos (member$ ?id $?ids))
 		(if (neq ?pos FALSE) then
-                (bind $?g_list (create$ $?g_list (- ?pos 1))))
+			(bind $?g_list (create$ $?g_list (- ?pos 1)))
+		)
         )
         (assert (grp_ids-slot_ids $?grp - $?g_list))
 )

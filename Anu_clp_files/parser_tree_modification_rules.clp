@@ -28,8 +28,8 @@
  )
  ;=======================================  Modifications for Pada  ===============================================
  ; Suggested by Chaitanya Sir
- ; to make " two principal thrusts " as one pada
  ; Here we remark on two principal thrusts in physics: unification and reduction. 
+ ; to make " two principal thrusts " as one pada
  (defrule remove_NX_node
  ?f0<-(Head-Level-Mother-Daughters ?h ?l ?Mot $?a ?NX)
  (Node-Category ?Mot NP)
@@ -42,7 +42,7 @@
  ;=======================================  Modifications for Order ===============================================
 
  ;In Kashmir, fishing is a good business and the ideal season is from April to October. 
- ;Suggested by Sukhada (12-9-11)
+ ;Suggested by Sukhada 
  (defrule from_to_PPs
  (declare (salience 10))
  ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1 ?PP1 ?PP2 $?d2)
@@ -61,7 +61,8 @@
         (assert (Mother  ?PP1))
  )
  ;----------------------------------------------------------------------------------------------------------------
- ;October to March is the best time to visit the Jaipur city. Did you count ten to twelve. Suggested by Sukhada (14-9-11)
+ ;Suggested by Sukhada
+ ;October to March is the best time to visit the Jaipur city. Did you count ten to twelve.  
  ;In the south, jammu is a transition zone from the indian plains to the himalayas.
  ;Ten to twelve is easy to count.
  (defrule make_compoundPhrase

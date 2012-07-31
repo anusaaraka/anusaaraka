@@ -1,13 +1,38 @@
  ; This file is written by Shirisha Manju (19-06-12)
 
+ (deftemplate word-morph(slot original_word)(slot morph_word)(slot root)(slot category)(slot suffix)(slot number))
+ 
  (deffunction get_no(?node ?o_cat ?m_cat)
 	(bind ?no (sub-string (+ (length ?o_cat) 1 ) (length ?node) ?node ))
         (bind ?no (explode$ (str-cat ?m_cat ?no)))
 	(bind ?new_no ?no)
  )
-
  ;==========================================   Category correction rules =================================================
-
+ ;Suggested by Chaitanya Sir (26-06-12)
+ ;All other engines involving irreversibility have lower efficiency than this .
+ (defrule modify_ADVP_as_NP
+ ?f0<-(Node-Category  ?ADVP   ADVP)
+ ?f<-(Head-Level-Mother-Daughters ?word ?l1 ?ADVP ?RB)
+ ?f1<-(Node-Category  ?RB   ?cat&RB)
+ ?f2<-(Head-Level-Mother-Daughters ?word ?l2 ?RB ?id)
+ ?f3<-(id-sd_cat  ?id  ?cat)
+ (word-morph (original_word  ?word)(category ?cat1))
+ (not (word-morph (original_word  ?word) (category adverb|I)))
+ ?f4<-(Head-Level-Mother-Daughters ?h ?l $?pre ?ADVP $?pos)
+ (test (neq ?h ?word))
+ =>
+	(retract ?f ?f0 ?f1 ?f2 ?f3 ?f4)
+	(if (eq ?cat1 noun) then (bind ?cat1 NP))
+	(bind ?NP (get_no ?ADVP ADVP NP))
+	(bind ?NN (get_no ?RB ?cat NN))
+	(assert (Head-Level-Mother-Daughters ?h ?l $?pre ?NP $?pos))
+	(assert (Head-Level-Mother-Daughters ?word ?l ?NP ?NN))
+	(assert (Node-Category ?NP NP))
+	(assert (Node-Category ?NN NN))
+	(assert (Head-Level-Mother-Daughters ?word ?l1 ?NN ?id))
+	(assert (id-sd_cat  ?id NN))
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
  ; if word is number then modify cat as CD
  ;The result of experiment of scattering of alpha particles by gold foil, in 1911 by Ernest Rutherford (1871 1937) established the nuclear model of the atom, which then became the basis of the quantum theory of hydrogen atom given in 1913 by Niels Bohr (1885 1962).
  (defrule modify_cat

@@ -52,9 +52,9 @@
 ;-----------------------------------------------------------------------------------------
 (defrule single_vib
 (declare (salience 10))
-?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN|NNP)
+?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN|NNP|PRP)
 (id-node-word-root ?id0 ? $? - $?root)
-?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM ?)
+?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie ?)
 =>
  (retract ?f1 ?f2)
  ;(assert (manual_id-word-cat ?id0 $?noun ?vib ?cat))
@@ -74,8 +74,7 @@
 			(assert (retract_manual_fact ?j))
 	)
          (assert (lwg_done ?mid))
-)
-
+) 
 ;-----------------------------------------------------------------------------------------
 (defrule retract_fact
 (retract_manual_fact ?mid)

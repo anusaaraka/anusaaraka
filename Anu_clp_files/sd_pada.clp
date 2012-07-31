@@ -87,6 +87,7 @@
  (prawiniXi_id-node-category ?np_id ?NP ?node)
  (to_be_included_in_paxa ?np_head)
  (test (neq (str-index "." (implode$ (create$ ?last_node))) FALSE))
+ (test (neq (str-index "." (implode$ (create$ ?np_id))) FALSE))
  (not (modified_head ?np_id $?))
  (not (generated_conj_pada ?np_id))
  =>
@@ -136,9 +137,10 @@
 	(assert (prep_id_decided ?prep))
  )
  ;----------------------------------------------------------------------------------------------------------------------
+ ;But, today's rapidly changing business environment has forced the accountants to reassess their roles and functions both within the organization and the society.
  (defrule get_single_prep
  (declare  (salience 4600))
- (head_id-prawiniXi_id-grp_ids ?hid ?pp ?prep_id ?np_id)
+ (or (head_id-prawiniXi_id-grp_ids ?hid ?pp ?prep_id ?np_id)(head_id-prawiniXi_id-grp_ids ?hid ?pp ? ?prep_id ?np_id))
  (prawiniXi_id-node-category ?pp ?PP PP|WHPP)
  (prawiniXi_id-node-category ?np_id ?NP NP|S|WHNP) ;The game of life is played for winning. 
  (head_id-prawiniXi_id-grp_ids ? ?prep_id ?prep)
@@ -178,31 +180,16 @@
         (modify ?f1 (preposition ?prep))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
- ;I read about the train robbery in today's paper.
- (defrule get_pos_pada
- (declare (salience 4400))
- (id-word ?pos ?word)
- (test (neq (str-index "'" ?word) FALSE))
- (head_id-prawiniXi_id-grp_ids ?pos ?pos_id ?)
- (head_id-prawiniXi_id-grp_ids ? ?pos_h $? ?pos_id $?)
- (head_id-prawiniXi_id-grp_ids ? ?p_id $? ?pos_h $?)
- ?f0<-(pada_info (group_head_id ?p_id)(group_ids $?d ?pos_h $?d1))
- ?f1<-(id-grp_ids ?p_id $?a ?pos_h $?a1)
- =>
-        (retract ?f0 ?f1)
-        (modify ?f0 (group_ids $?d $?d1))
-        (assert (id-grp_ids ?p_id $?a $?a1))
- )
- ;-----------------------------------------------------------------------------------------------------------------------
  (defrule share_conj_prep
  (declare (salience 4300))
  (pada_info (group_head_id ?con_h)(preposition $?prep))
  ?f<-(conj_head-conj_id-components ?con_h ?cid $?d ?id $?d1)
  ?f0<-(pada_info (group_head_id ?id)(preposition 0))
+ (test (neq (str-index "." (implode$ (create$ ?id))) FALSE))
+ (not (shared_conj_for_pada_id ?id))
  =>
-	(retract ?f ?f0)
 	(modify ?f0 (preposition $?prep))
-	(assert (conj_head-conj_id-components ?con_h ?cid $?d $?d1))
+	(assert (shared_conj_for_pada_id ?id))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  ; She is ugly and fat.
@@ -211,9 +198,9 @@
  (pada_info (group_head_id ?con_h)(preposition $?prep))
  ?f<-(conj_head-conj_id-components ?con_h ?cid $?d ?id $?d1)
  (head_id-prawiniXi_id-grp_ids ?hid ?id ?no)
+ (not (shared_conj_for_pada_id ?id))
  =>
-	(retract ?f)
-	(assert (conj_head-conj_id-components ?con_h ?cid $?d $?d1))
+	(assert (shared_conj_for_pada_id ?id))
 	(bind ?head (string-to-field (sym-cat ?hid ".1")))
 	(assert (pada_info (group_head_id ?head) (group_cat PP)(group_ids ?id)(preposition $?prep)))
 	(assert (id-grp_ids ?head ?id))
@@ -410,6 +397,23 @@
         (assert (asserted_adjp_fact))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
+ ;I read about the train robbery in today's paper.
+ (defrule get_pos_pada
+ (declare (salience 920))
+ (id-word ?pos ?word)
+ (test (neq (str-index "'" ?word) FALSE))
+ (head_id-prawiniXi_id-grp_ids ?pos ?pos_id ?)
+ (head_id-prawiniXi_id-grp_ids ? ?pos_h $? ?pos_id $?)
+ (head_id-prawiniXi_id-grp_ids ? ?p_id $? ?pos_h $?)
+ ?f0<-(pada_info (group_head_id ?p_id)(group_ids $?d ?pos_h $?d1))
+ ?f1<-(id-grp_ids ?p_id $?a ?pos_h $?a1)
+ =>
+        (retract ?f0 ?f1)
+        (modify ?f0 (group_ids $?d $?d1))
+        (assert (id-grp_ids ?p_id $?a $?a1))
+	(assert (id-grp_ids ?pos_h ?pos_id))
+ )
+
  (defrule get_pada
  (declare (salience 800))
  ?f0<-(index ?)
@@ -491,7 +495,21 @@
 	(retract ?f0)
 	(assert (id-grp_ids ?id $?d $?d1))
  )
-
+ ;-----------------------------------------------------------------------------------------------------------------------
+ ; Physicists try to discover the rules that are operating in nature, on the basis of observations, experimentation and analysis.
+ (defrule replace_conj_daut1
+ (declare (salience 810))
+ (get_pada)
+ ?f0<-(conj_head-conj_id-components ?h ?conj_id $?d ?id $?d1)
+ (shared_conj_for_pada_id ?id)
+ ?f1<-(id-grp_ids ?g_h ?id)
+ (head_id-prawiniXi_id-grp_ids ? ?id ?id1)
+ =>
+        (retract ?f0 ?f1)
+        (assert (conj_head-conj_id-components ?h ?conj_id $?d ?id1 $?d1))
+	(assert (id-grp_ids ?g_h ?id1))
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
  (defrule replace_daut1
  (declare (salience 800))
  (get_pada)
@@ -501,6 +519,18 @@
         (retract ?f0)
         (assert (id-grp_ids ?hid $?pre ?id $?post ))
  )
+ ;-----------------------------------------------------------------------------------------------------------------------
+; A fat ugly boy and a fat girl came here.
+ (defrule replace_conj_daut
+ (declare (salience 760))
+ (get_pada)
+?f0<-(conj_head-conj_id-components ?h ?conj_id $?d ?id $?d1)
+ (id-grp_ids ?id $?dau)
+ =>
+	(retract ?f0)
+	(assert (conj_head-conj_id-components ?h ?conj_id $?d $?dau $?d1))
+ )
+; Physicists try to discover the rules that are operating in nature, on the basis of observations, experimentation and analysis.
  ;-----------------------------------------------------------------------------------------------------------------------
  (defrule modify_pada
  (declare (salience 750))
@@ -514,24 +544,36 @@
 	(assert (id_decided ?h_id))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
+ ;He neither plays, nor reads.
  (defrule get_conj_pada
  (declare (salience 700))
  (get_pada)
  (head_id-prawiniXi_id-grp_ids ? ?p_id $? ?cc $?)
  (prawiniXi_id-node-category ?cc ?CC CC)
  (head_id-prawiniXi_id-grp_ids ?h ?cc ?)
- (id-word ?h and|or|but)
+ (id-word ?h and|or|but|nor)
  =>
 	(print_pada_info ?h PP 0 ?h)	
 	(print_in_ctrl_fact_files  ?h)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
+; (defrule merge_mul_conj
+; (declare (salience 630))
+; (get_pada)
+; ?f0<-(conj_head-left_head-right_head ?CC ?lh ?rh)
+; ?f1<-(conj_head-left_head-right_head ?CC1 ?rh ?rh1)
+; =>
+;	(retract ?f0 ?f1)
+;	(assert (conj_head-left_head-right_head ?CC ?lh ?rh1))
+; )
+
  ;The white marbled moti masjid or the pearl mosque was the private mosque for aurangzeb. 
  (defrule get_or_verb_agmt_fact
  (declare (salience 650))
  (get_pada)
  (conj-lt_head-rt_head ?CC ?lh ?rh)
  (prawiniXi_id-node-category ?c_h ?CC CC)
+ (conj_head-conj_id-components ? ?c_h $?daut)
  (head_id-prawiniXi_id-grp_ids ?conj_id ?c_h ?)
  (id-grp_ids ?lh $? ?left_head)
  (id-grp_ids ?rh $? ?right_head)
@@ -539,6 +581,7 @@
  =>
         (assert (agreement_decided ?conj_id))
         (printout ?*pada_file* "(conj_head-left_head-right_head  " ?conj_id"   "?left_head"   "?right_head ")" crlf)
+	(printout ?*pada_file* "(conj_head-components " ?conj_id "  "(implode$ $?daut) ")" crlf)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  ; She is ugly and fat.
@@ -547,6 +590,7 @@
  (get_pada)
  (conj-lt_head-rt_head ?CC ?lh ?rh)
  (prawiniXi_id-node-category ?c_h ?CC CC)
+ (conj_head-conj_id-components ? ?c_h $?daut)
  (head_id-prawiniXi_id-grp_ids ?conj_id ?c_h ?)
  (head_id-prawiniXi_id-grp_ids ?left_head ?lh ?)
  (head_id-prawiniXi_id-grp_ids ?right_head ?rh ?)
@@ -556,6 +600,7 @@
  =>
         (assert (agreement_decided ?conj_id))
         (printout ?*pada_file* "(conj_head-left_head-right_head  " ?conj_id"   "?left_head"   "?right_head ")" crlf)
+	(printout ?*pada_file* "(conj_head-components " ?conj_id "  "(implode$ $?daut) ")" crlf)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  (defrule print_pada

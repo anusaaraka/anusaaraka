@@ -24336,7 +24336,6 @@ zoological	jIva-vijFAna_se_saMbaMXiwa
 zoologist	jIva-vijFAnI
 zoology	jIva-vijFAna
 zucchini	pOXe_kA_gUxA_jise_sabjI_kI_waraha_KAyA_jAwA_hE
-
 aa	e_e
 abaci	ginawArA
 abaci's	ginawArA
@@ -24738,9 +24737,6 @@ accommodations'	samAyojana
 accommodations	samAyojana
 accompanied	saMgawa_karanA
 accompanies	saMgawa_karanA
-accompaniment's	
-accompaniments'	
-accompaniments	
 accompanist's	saMgawakAra
 accompanists'	saMgawakAra
 accompanists	saMgawakAra
@@ -30020,7 +30016,6 @@ biles'	piwwa
 biles	piwwa
 bilingual	xvEBARika
 bilious	piwwaxoRagraswa
-billboard	
 billed	coMca
 billiards's	biliyarda
 billing	coMca
@@ -31987,7 +31982,6 @@ bystander	wamASA
 by's	xvArA
 byword	paryAya
 byzantine	bA
-c	
 caballed	rAjanIwijFa_RadayaMwra
 caballing	rAjanIwijFa_RadayaMwra
 cabal's	rAjanIwijFa_RadayaMwra
@@ -34410,11 +34404,6 @@ coastlines	samuxrI_kinArA
 coast's	nIce_DAla_para_PisalanA
 coasts'	nIce_DAla_para_PisalanA
 coasts	nIce_DAla_para_PisalanA
-coated	
-coating	
-coat's	
-coats'	
-coats	
 coaxed	manAnA
 coaxes'	manAnA
 coaxes	manAnA
@@ -35723,8 +35712,6 @@ congregations	XArmika_saBA
 congresses'	vyavasWApikA_saBA
 congresses	vyavasWApikA_saBA
 congress's	vyavasWApikA_saBA
-congruenter	
-congruentest	
 conicer	SAMkva
 conicest	SAMkva
 conic's	SAMkva
@@ -36960,13 +36947,6 @@ coulters	hala_kA_PAla
 council-chamber's	kamarA_jisameM_pariRaxa_kI_bETaka_howI_hEM
 council-chambers'	kamarA_jisameM_pariRaxa_kI_bETaka_howI_hEM
 council-chambers	kamarA_jisameM_pariRaxa_kI_bETaka_howI_hEM
-councillor's	
-councillors'	
-councillors	
-councilor	
-councilor's	
-councilors'	
-councilors	
 council's	pariRaxa
 councils'	pariRaxa
 councils	pariRaxa
@@ -38460,7 +38440,6 @@ czar's	rUsa_kA_bAxaSAha
 czars'	rUsa_kA_bAxaSAha
 czars	rUsa_kA_bAxaSAha
 czechoslovakia	cekoslovAikaAA
-d	
 dabbed	cupadZanA
 dabbing	cupadZanA
 dabbled	KilavAdZa_karanA
@@ -41266,9 +41245,6 @@ disposablest	upayoga_karake_PEMkane_lAyaka
 disposable's	upayoga_karake_PEMkane_lAyaka
 disposables'	upayoga_karake_PEMkane_lAyaka
 disposables	upayoga_karake_PEMkane_lAyaka
-disposal's	
-disposals'	
-disposals	
 disposeder	koI_yA_kuCa_cIja_vyarWa_laganA
 disposedest	koI_yA_kuCa_cIja_vyarWa_laganA
 dispose's	TIka_raKanA
@@ -42039,9 +42015,6 @@ dragoon	GudZasavAra_sipAFa
 drag's	KIMcanA
 drags'	KIMcanA
 drags	KIMcanA
-drainage's	
-drainages'	
-drainages	
 drained	bahAva
 draining	bahAva
 drainpipe	nikAsa-nala
@@ -42599,7 +42572,6 @@ dyspeptics'	apacagraswa
 dyspeptics	apacagraswa
 dystrophy	xuyYarvakAsa
 dyvout	naRtaniXi
-e	
 eagerer	uwsuka
 eagerest	uwsuka
 eagernesses'	uwsukawA
@@ -48651,7 +48623,6 @@ fuzziest	aspaRta
 fuzziness	aspaCatawA
 fuzzing	GuzGarAle_bAla
 fuzz's	GuzGarAle_bAla
-G	
 gaan	gAna
 gabbed	badZabadZAnA
 gabbing	badZabadZAnA
@@ -48920,11 +48891,6 @@ gaoling	kArAvAsa_honA
 gaol's	kArAvAsa_honA
 gaols'	kArAvAsa_honA
 gaols	kArAvAsa_honA
-gaped	
-gape's	
-gapes'	
-gapes	
-gaping	
 gap's	anwarAla
 gaps'	anwarAla
 gaps	anwarAla
@@ -52596,7 +52562,6 @@ history's	iwihAsa
 histrionical	aBinaya_kA
 histrionicaler	aBinaya_kA
 histrionicalest	aBinaya_kA
-histrionically	
 histrionicer	aBinaya_kA
 histrionicest	aBinaya_kA
 histrionics	nAtakIya_vyavahAra
@@ -53498,7 +53463,6 @@ humors'	hAsyavqwwi
 humors	hAsyavqwwi
 humoured	hAsyavqwwi
 humouring	hAsyavqwwi
-humourless	
 humour's	hAsyavqwwi
 humours'	hAsyavqwwi
 humours	hAsyavqwwi
@@ -55061,7 +55025,6 @@ indexed	sUcipqRTa
 indexes'	sUcipqRTa
 indexes	sUcipqRTa
 indexing	sUcipqRTa
-index-linked	
 index's	sUcipqRTa
 indian	BArawIya
 Indianer	BArawIya
@@ -56923,13 +56886,8 @@ irradiating	camakAnA
 irradiation's	eksare_upacAra
 irradiations'	eksare_upacAra
 irradiations	eksare_upacAra
-irrationaler	
-irrationalest	
 irrationality	aviveka
 irrationally	avivekapUrNa_DaMga_se
-irrational's	
-irrationals'	
-irrationals	
 irrecognizable	anaBijFeya
 irreconcilabler	asaMgawa
 irreconcilable's	asaMgawa
@@ -57103,7 +57061,6 @@ ivories	gajaxaMwa
 ivoriest	gajaxaMwa
 ivory's	gajaxaMwa
 ivy's	vixvawwApUrNa_mAnaka
-j	
 jackal's	siyAra
 jackals'	siyAra
 jackals	siyAra
@@ -57754,7 +57711,6 @@ juxtaposition's	nikatawA
 juxtapositions'	nikatawA
 juxtapositions	nikatawA
 jyotirmaya	jyowirmaya
-K	
 kabi	kabi
 kabiraj	kavirAja
 kab's	tEksI
@@ -60519,7 +60475,6 @@ lynxes's	vana_bilAva
 lynxes'	vana_bilAva
 lynxes	vana_bilAva
 lynx's	vana_bilAva
-m	
 ma'am's	SrImawIjI
 ma'ams'	SrImawIjI
 ma'ams	SrImawIjI
@@ -66954,8 +66909,6 @@ oyster's	Sukwi
 oysters'	Sukwi
 oysters	Sukwi
 Oz	AuMsa
-p	
-P	
 paced	gawi
 pacemaker's	pesamekara
 pacemakers'	pesamekara
@@ -67260,11 +67213,9 @@ panics	sanwrAswa_honA
 panigrahi	pANigrAhI
 pankaj	pafkaja
 pank	pafka
-panned	
 pannier's	tokarA
 panniers'	tokarA
 panniers	tokarA
-panning	
 panoplies'	kavaca
 panoplies	kavaca
 panoply's	kavaca
@@ -67273,9 +67224,6 @@ panoramas'	xqSyapatala
 panoramas	xqSyapatala
 panoramicer	viSAlaxarSI
 panoramicest	viSAlaxarSI
-pan's	
-pans'	
-pans	
 pansari	paMsArI
 pansier	banaPUla
 pansies'	banaPUla
@@ -68170,7 +68118,6 @@ penance's	prAyaSciwwa
 penances'	prAyaSciwwa
 penances	prAyaSciwwa
 penancing	prAyaSciwwa
-pen-and-ink	
 pence's	pEnsa
 pences'	pEnsa
 pences	pEnsa
@@ -71413,7 +71360,6 @@ prise's	bala_se_alaga_karanA
 prises'	bala_se_alaga_karanA
 prises	bala_se_alaga_karanA
 prising	bala_se_alaga_karanA
-prismatic	
 prism's	raMgAvalI
 prisms'	raMgAvalI
 prisms	raMgAvalI
@@ -71423,7 +71369,6 @@ prisoners	banxI
 prison's	kArAgAra
 prisons'	kArAgAra
 prisons	kArAgAra
-prissy	
 pristiner	Axima
 pristinest	Axima
 privacy	gopanIyawA
@@ -71442,7 +71387,6 @@ privation's	aBAva
 privations'	aBAva
 privations	aBAva
 privatisation	nijIkaraNa
-privatise	
 privet's	eka_waraha_kI_JAda
 privets'	eka_waraha_kI_JAda
 privets	eka_waraha_kI_JAda
@@ -71987,7 +71931,6 @@ prosecutor's	aBiyokwA
 prosecutors'	aBiyokwA
 prosecutors	aBiyokwA
 prosed	gaxya
-proselytise	
 prose's	gaxya
 proses'	gaxya
 proses	gaxya
@@ -72094,9 +72037,6 @@ protestors	prawivAxI
 protest's	viroXa_karanA
 protests'	viroXa_karanA
 protests	viroXa_karanA
-protocol's	
-protocols'	
-protocols	
 proton's	aNu_kA_eka_CotA_BAga
 protons'	aNu_kA_eka_CotA_BAga
 protons	aNu_kA_eka_CotA_BAga
@@ -72127,8 +72067,6 @@ protrusions	bahiH_saraNa
 protuberance's	uBAra
 protuberances'	uBAra
 protuberances	uBAra
-prouder	
-proudest	
 provabler	sAXya
 provablest	sAXya
 proved	sixXa_karanA
@@ -72274,7 +72212,6 @@ pseuds	Caxma
 psoriasises'	CAlaroga
 psoriasises	CAlaroga
 psoriasis's	CAlaroga
-psst	
 psychedelicer	Bramiwa_karane_vAlA
 psychedelicest	Bramiwa_karane_vAlA
 psyched	praBAviwa_karanA
@@ -73166,7 +73103,6 @@ quotient's	BAgaPala
 quotients'	BAgaPala
 quotients	BAgaPala
 quoting	xAma_lagAnA
-r	
 rabbet	CUta_xenA_kama_karanA
 rabbeted	CUta_xenA_kama_karanA
 rabbeting	CUta_xenA_kama_karanA
@@ -74536,7 +74472,6 @@ refrigerating	TaNdA_karanA
 refrigeration's	TaNdA_karanA
 refrigerations'	TaNdA_karanA
 refrigerations	TaNdA_karanA
-refuel	
 refuged	SaraNa
 refugee's	SaraNArWI
 refugees'	SaraNArWI
@@ -74944,11 +74879,6 @@ remake's	Pira_banAnA
 remakes'	Pira_banAnA
 remakes	Pira_banAnA
 remaking	Pira_banAnA
-remanded	
-remanding	
-remand's	
-remands'	
-remands	
 remarkabler	ulleKanIya
 remarkablest	ulleKanIya
 remarked	XyAna_xenA
@@ -76943,8 +76873,6 @@ rutting	pahiye_kI_lakIra
 rye's	rAI
 ryes'	rAI
 ryes	rAI
-s	
-S	
 Sabbath's	viSrAmaxivasa
 Sabbaths'	viSrAmaxivasa
 Sabbaths	viSrAmaxivasa
@@ -79166,7 +79094,6 @@ shak	SAka
 shale's	stelI_pawWara
 shales'	stelI_pawWara
 shales	stelI_pawWara
-shall	
 shallot's	CotA_pyAjZa
 shallots'	CotA_pyAjZa
 shallots	CotA_pyAjZa
@@ -81390,7 +81317,6 @@ softie	darapoka
 softie's	darapoka
 softies'	darapoka
 softies	darapoka
-soft-soap	
 soft's	sAxA
 softs'	sAxA
 softs	sAxA
@@ -82274,11 +82200,6 @@ splurge's	Karca_karanA
 splurges'	Karca_karanA
 splurges	Karca_karanA
 splurging	Karca_karanA
-spluttered	
-spluttering	
-splutter's	
-splutters'	
-splutters	
 spoilage's	kUdZA
 spoilages'	kUdZA
 spoilages	kUdZA
@@ -90347,10 +90268,6 @@ urbanization	nagarIkaraNa
 urchin's	CokarA
 urchins'	CokarA
 urchins	CokarA
-Urdu's	
-urea's	
-ureas'	
-ureas	
 urethrae	mUwramArga
 urethrae's	mUwramArga
 urethra's	mUwramArga
@@ -90491,7 +90408,6 @@ utters	bola
 uvula's	alijihvA
 uvulas'	alijihvA
 uvulas	alijihvA
-v	
 vacancies'	vicAra_SUnyawA
 vacancies	vicAra_SUnyawA
 vacancy's	vicAra_SUnyawA
@@ -91603,7 +91519,6 @@ vyingest	sparXA_karawe_hue
 vying's	sparXA_karawe_hue
 vyings'	sparXA_karawe_hue
 vyings	sparXA_karawe_hue
-w	
 wadded	dAta_banAnA
 wadding	dAta_banAnA
 waddled	bawaKa_kI_waraha_calanA
@@ -93636,8 +93551,6 @@ zoos	cidiyAGara
 zucchini's	pOXe_kA_gUxA_jise_sabjI_kI_waraha_KAyA_jAwA_hE
 zucchinis'	pOXe_kA_gUxA_jise_sabjI_kI_waraha_KAyA_jAwA_hE
 zucchinis	pOXe_kA_gUxA_jise_sabjI_kI_waraha_KAyA_jAwA_hE
-
-
 abestos	ebestoYsa
 aboundant	awiSaya
 absconder	PZarArI
@@ -93833,7 +93746,6 @@ bacterial	jIvANu
 bacteriologist	jIvANu_vijFAnI
 baggy	WEle_jEsA
 bailment	apaniXAna
-balk	
 ballistic	prakRepAswrasaMbaMXI
 balls's	bakavAsa
 bandsman	bEMdamEna
@@ -94770,7 +94682,6 @@ gifting	upahAra
 gifts	upahAra
 gift's	upahAra
 gifts'	upahAra
-# @Girl @standing @in @front @of @me ..	
 glitch	viXArI
 glorious	yaSaskara
 gloriousest	yaSaskara
@@ -95789,7 +95700,6 @@ protostar	AxiwArA
 pro-@vice-@chancellor	sama-kulapawi
 provost	provo
 proximo	AgAmI_mAsa_kA
-pulme	
 pumpman	pampavAlA
 punctuality	samaya-pAbaMxI
 punctuation	virAma_cinhanana
@@ -96197,7 +96107,6 @@ strike-@off's	strAika
 stringency	waMgI
 structural	saMracanAwmaka
 structuralest	saMracanAwmaka
-#_@Structure_@of_@the_@file:	
 sub	upa
 subclass	upaSreNI
 sub-@committee	upa-samiwi
@@ -96311,7 +96220,6 @@ therapist	upacAra_nirXAraka
 therapists	upacAra_nirXAraka
 therapist's	upacAra_nirXAraka
 therapists'	upacAra_nirXAraka
-#@These_@are_@the_@people_@who_@most_@need_@our_@help.	
 thirdly	wIsarA
 thirties	wIsa
 thirties'	wIsa
@@ -96615,7 +96523,6 @@ Acharyas	AcAryoM
 dacoit	dAkU
 senator	senetara
 curriculum-vitae	CV
-the English	aMgrejZa
 sculpture	mUrwikalA
 mind-boggling	asAXAraNa
 mind-bogglingly	asAXAraNa_rUpa_se
