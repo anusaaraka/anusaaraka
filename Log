@@ -3721,7 +3721,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 39.Modified sd_ver_output, ber_ver_output, link_ver_output and verified_output
 40.Updated Log.
 
- 31-07-12
+ 7-08-12
  ========
  1.Added transliteration folder after deleting following files:
 	1. stanford-corenlp-v1.0.4.tgz
@@ -3776,6 +3776,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Modified  : get_conj_pada , get_pos_pada, get_single_prep , share_conj_prep ,
                     get_or_verb_agmt_fact, get_or_verb_agmt_fact_for_zero_lvl and  get_pada_group
         Added     : replace_conj_daut1 and replace_conj_daut
-15. Modified tam_meaning.clp to add dummy fact (conj_head-components)
-16. Updated changes_in_databases.
-17. Updated Log.	
+16. Updated SMT and MINION alignment files
+     Added new files
+               miscellaneous/SMT/alignment/morph.lex
+               miscellaneous/SMT/MINION/alignment/word_alignment.clp
+16. Modified tam_meaning.clp to add dummy fact (conj_head-components)
+17. Updated changes_in_databases.
+18. Updated Log.	
