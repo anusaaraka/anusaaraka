@@ -99,6 +99,39 @@
  =>
  (assert (manual_hin_sen "---")))
 
+ ;"He also gave an explicit form for the force for gravitational attraction between two bodies. "
+ ;Manual trans :unhoMne xo piNdoM ke bIca guruwvAkarRaNa bala ke lie suspaRta sUwra BI xiyA.
+ ;Anu trans : usane BI xo SarIroM ke bIca guruwvAkarRaNa ke lie bala ke lie spaRta rUpa xiyA.
+ ;(hin_pos-hin_mng-eng_ids-eng_words 5 guruwvAkarRaNa_ke_lie [11 12] 10 gravitational_attraction_{for})
+ ;(anu_id-anu_mng-sep-man_id-man_mng 11 - 3 piNdoM ke)
+ ;(anu_id-anu_mng-sep-man_id-man_mng 12 guruwvAkarRaNa ke lie - 4 guruwvAkarRaNa)
+ (defrule combine_words_pointing_to_same_slot
+ (declare (salience 5999))
+ ?f<-(anu_id-anu_mng-man_id-man_mng ?id ?anu_mng ?mid ?man_grp_mng)
+ ?f1<-(anu_id-anu_mng-man_id-man_mng ?id1 ?anu_mng1 ?mid1 ?man_grp_mng1)
+ (hin_pos-hin_mng-eng_ids-eng_words ? ?hin $?grp_ids ?eng)
+ (test (and (member$ ?id $?grp_ids) (member$ ?id1 $?grp_ids)))
+ (test (neq ?mid ?mid1))
+ =>
+	(if (< ?mid ?mid1) then
+	(bind ?man_grp_mng (str-cat ?man_grp_mng + ?man_grp_mng1))
+		(if (eq ?anu_mng "-") then
+		    (retract ?f ?f1)
+	   	    (assert (anu_id-anu_mng-man_id-man_mng ?id1 ?hin ?mid ?man_grp_mng))
+		else (if (eq ?anu_mng1 "-") then
+		    (retract ?f ?f1)
+		    (assert (anu_id-anu_mng-man_id-man_mng ?id ?hin ?mid ?man_grp_mng))))
+	else
+	(bind ?man_grp_mng (str-cat ?man_grp_mng1 + ?man_grp_mng))
+		(if (eq ?anu_mng "-") then
+        		(retract ?f ?f1)
+			(assert (anu_id-anu_mng-man_id-man_mng ?id1 ?hin ?mid1 ?man_grp_mng))
+        	else (if (eq ?anu_mng1 "-") then
+        		(retract ?f ?f1)
+			(assert (anu_id-anu_mng-man_id-man_mng ?id ?hin ?mid1 ?man_grp_mng))))
+	)
+ )
+
  (defrule replace_spc_with_underscore
  (declare (salience 6000))
  ?f<-(anu_id-anu_mng-sep-man_id-man_mng ?id $?anu_grp_mng - ?id1 $?man_grp_mng)

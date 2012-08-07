@@ -24,12 +24,14 @@
 
 ;-----------------------------------------------------------------------------------------
 ;ke rUpa meM, ke bAre meM
+;;Axya vicArakoM jEse araswU kI bala ke viRaya meM saMkalpanA galawa WI -- Early thinkers like Aristotle had wrong ideas about it.
+
 (defrule ke_[word]_meM
 (declare (salience 30))
 ?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN|NNP)
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ke ?)
-?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&rUpa|bAre ?)
+?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&rUpa|bAre|viRaya ?)
 ?f4<-(manual_id-word-cat ?id3&:(=(+ ?id0 3) ?id3) meM ?)
 =>
         (retract ?f1 ?f2 ?f3 ?f4)
@@ -50,11 +52,12 @@
  (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ke ?w - ?id0 ?id1 ?id2))
 )
 ;-----------------------------------------------------------------------------------------
+;Axya vicArakoM jEse araswU kI bala ke viRaya meM saMkalpanA galawa WI -- Early thinkers like Aristotle had wrong ideas about it.
 (defrule single_vib
 (declare (salience 10))
 ?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN|NNP|PRP)
 (id-node-word-root ?id0 ? $? - $?root)
-?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie ?)
+?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse ?)
 =>
  (retract ?f1 ?f2)
  ;(assert (manual_id-word-cat ?id0 $?noun ?vib ?cat))

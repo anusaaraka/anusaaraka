@@ -83,8 +83,6 @@
 (multi_word_expression-dbase_name-mng $?e_words ? $?mng)
 (multi_word_expression-grp_ids $?e_words $?aids)
 (manual_id-node-word-root-tam ?h_mid ? $?mng - $? - $?)
-;(manual_id-node-word-root-tam ?h_mid ? $?mng1 - $? - $?)
-;(test (myeq (implode$ (create$  $?mng1)) (implode$ (create$ $?mng))))
 (head_id-grp_ids ?h_mid ?mid $?grp)
 (not (prov_assignment ?aid ?mid))
 =>
@@ -107,9 +105,7 @@
         (assert (anu_ids-sep-manual_ids $?aids - ?mid))
         (assert (prov_assignment (nth$ (length $?aids) $?aids) ?mid))
 )
-;-------------------------------------------------------------------------------------
-;Basically, there are two [domains] of interest: macroscopic and microscopic. 
-;mUla rUpa se isake xo rucikara [praBAva kRewra]  : sWUla waWA sUkRma hEM  .
+
 (defrule exact_match_using_multi_word_dic4
 (declare (salience 902))
 (current_id ?mid)
@@ -405,6 +401,31 @@
 )
 
 ;-------------------------------------------------------------------------------------
+;look for synonyms in hindi wordnet
+(defrule lookup_man_word_in_hindi_wordnet
+(declare (salience 500))
+(current_id ?mid)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $?word - $?h_root - $? - $?grp_ids)
+(test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root))) "FALSE"))
+(id-org_wrd-root-dbase_name-mng ? ? ?e_root ? $?mng)
+(id-root ?aid ?e_root)
+(test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?mng))) "FALSE"))
+(not (prov_assignment ?aid ?mid))
+(not (anu_id-man_id ?aid ?mid))
+=>
+	(assert (anu_id-man_id ?aid ?mid))
+        (bind ?dic_val (gdbm_lookup "hindi_wordnet_dic1.gdbm" (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root)))))
+        (bind ?dic_val (remove_character "/" ?dic_val " "))
+        (if (neq ?dic_val "FALSE") then
+            (if (and (member$ $?h_root ?dic_val)(member$ $?mng ?dic_val)) then
+		(bind ?*count* (+ ?*count* 1))
+	        (assert (update_count_fact ?*count*))
+	        (assert (anu_ids-sep-manual_ids ?aid - $?grp_ids))
+	        (assert (prov_assignment ?aid ?mid))
+            )
+        )
+)
+;-------------------------------------------------------------------------------------
 (defrule check_match_with_english_word
 (declare (salience 830))
 (current_id ?mid)
@@ -520,6 +541,8 @@
 ;This causes a major upheaval in science. 
 ;yaha vijFAna meM eka muKya kAyApalata kA kAraNa howA hE.
 ;ये प्रेक्षण ही विज्ञान में महान क्रांति का कारण बनते हैं .
+;The macroscopic domain includes phenomena at the laboratory, terrestrial and astronomical scales.
+;sWUla praBAva kRewra meM prayogaSAlA  , pArWiva waWA KagolIya swara kI pariGatanAez sammiliwa howI hEM .
 (defrule combine_group 
 (declare (salience -99))
 ?f<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_ids)
@@ -527,17 +550,20 @@
 ?f1<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid1 $?man_ids1)
 ?f5<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid1 $?man_ids1)
 (test (neq ?mid ?mid1))
-(test (eq (+ (nth$ (length $?man_ids) $?man_ids) 1) (nth$ 1 $?man_ids1)))
+(test (or (eq (+ (nth$ (length $?man_ids) $?man_ids) 1) (nth$ 1 $?man_ids1)) (subsetp $?man_ids $?man_ids1) (subsetp $?man_ids $?man_ids1)))
 ?f2<-(id-confidence_level ?mid 8)
 ?f3<-(id-confidence_level ?mid1 8)
 =>
          (retract ?f ?f1 ?f4 ?f5)
-         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_ids $?man_ids1))
-         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?man_ids $?man_ids1))
-;	 (assert (potential_assignment_vacancy_id-candidate_id ?aid ?mid))
-;	 (assert (potential_assignment_vacancy_id-candidate_id ?aid ?mid1))
-;         (assert_control_fact rm_aligned_fact $?man_ids $?man_ids1)
-;         (assert_control_fact rm_filled_fact ?aid)
+	 (if (subsetp $?man_ids $?man_ids1) then
+		(assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid1 $?man_ids1))
+        	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid1 $?man_ids1))
+	else (if (subsetp $?man_ids $?man_ids1) then
+		(assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_ids))
+        	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?man_ids))
+	else
+	         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_ids $?man_ids1))
+        	 (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?man_ids $?man_ids1))))
 )
 
 (defrule combine_group2
@@ -551,8 +577,6 @@
 ?f3<-(id-confidence_level ?mid1 8)
 =>
           (retract ?f ?f1 ?f4 ?f5)
-;         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_ids $?man_ids1))
-;         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?man_ids $?man_ids1))
           (assert (potential_assignment_vacancy_id-candidate_id ?aid ?mid))
           (assert (potential_assignment_vacancy_id-candidate_id ?aid ?mid1))
           (assert_control_fact rm_aligned_fact $?man_ids $?man_ids1)

@@ -138,14 +138,13 @@
 =>
         (bind ?count 0)
 	(if (not (numberp ?root)) then
-	(bind ?new_mng (string-to-field (gdbm_lookup "Physics-dictionary.gdbm" ?root)))
+	(bind ?new_mng (gdbm_lookup "Physics-dictionary.gdbm" ?root))
         (if (eq ?new_mng "FALSE") then
                 (bind ?str  (sub-string 1 1 ?root))
                 (bind ?str (upcase ?str))
                 (bind ?n_word (str-cat ?str (sub-string 2 (length ?root) ?root)))
                 (bind ?new_mng (gdbm_lookup "Physics-dictionary.gdbm" ?n_word))
         )
-        (if (and (neq ?new_mng "FALSE") (neq (length ?new_mng) 0)) then (bind ?new_mng ""))
         (bind ?new_mng1 "")
         (bind ?slh_index (str-index "/" ?new_mng))
         (if (and (neq (length  ?new_mng) 0)(neq ?slh_index FALSE)) then
@@ -155,8 +154,6 @@
                         (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
                         (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
                         (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root Physics_dictionary_gdbm ?new_mng1))
-                       ; (bind ?new_mng1 (remove_character "Z" (implode$ (create$ ?new_mng1)) ""))
-                       ; (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root Physics_dictionary_gdbm ?new_mng1))
                         (bind ?new_mng (sub-string (+ ?slh_index 1) (length ?new_mng) ?new_mng))
                         (bind ?slh_index (str-index "/" ?new_mng))
                 )
@@ -164,19 +161,12 @@
         (bind ?new_mng1 (str-cat (sub-string 1 (length ?new_mng) ?new_mng)))
                         (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
                         (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
-        (if (neq ?new_mng "") then
+        (if (neq ?new_mng "FALSE") then
                         (bind ?count (+ ?count 1))
                         (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root Physics_dictionary_gdbm ?new_mng1))
-                        ;(bind ?new_mng1 (remove_character "Z" (implode$ (create$ ?new_mng1)) ""))
-                        ;(assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root Physics_dictionary_gdbm ?new_mng1))
         )
         )
 
-;	(if (neq ?mng "FALSE") then
-;                (bind ?count (+ ?count 1))
-;		(assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root Physics_dictionary_gdbm (string-to-field ?mng)))
-;	)
-	
 )
 ;--------------------------------------------------------------------------------------------------------
 ;Modified by Mahalaxmi  -- Added provisional_root_dic.gdbm  and separated the meanings using ","
@@ -204,10 +194,6 @@
                         (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
                         (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
                         (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root root_gdbms ?new_mng1))
-                        ;(bind ?new_mng1 (remove_character "Z" (implode$ (create$ ?new_mng1)) ""))
-                        ;(assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root root_gdbms ?new_mng1))
-                        ;(bind ?new_mng1 (remove_character "Mb" (implode$ (create$ ?new_mng1)) "mb"))
-                        ;(assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root root_gdbms ?new_mng1))
                         (bind ?new_mng (sub-string (+ ?slh_index 1) (length ?new_mng) ?new_mng))
                         (bind ?slh_index (str-index "/" ?new_mng))
                 )
@@ -218,8 +204,6 @@
         (if (neq ?new_mng "") then
                         (bind ?count (+ ?count 1))
 		        (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root root_gdbms ?new_mng1))
-                        ;(bind ?new_mng1 (remove_character "Z" (implode$ (create$ ?new_mng1)) ""))
-		        ;(assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root root_gdbms ?new_mng1))
         )
 )
 ;--------------------------------------------------------------------------------------------------------
@@ -249,8 +233,6 @@
                         (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
                         (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
                         (assert (e_tam-id-dbase_name-mng (explode$ ?tam) ?count hindi_tam_dictionary ?new_mng1))
-                        ;(bind ?new_mng1 (remove_character "Z" (implode$ (create$ ?new_mng1)) ""))
-                        ;(assert (e_tam-id-dbase_name-mng (explode$ ?tam) ?count hindi_tam_dictionary ?new_mng1))
                         (bind ?new_mng (sub-string (+ ?slh_index 1) (length ?new_mng) ?new_mng))
                         (bind ?slh_index (str-index "/" ?new_mng))
                 )
@@ -261,8 +243,6 @@
         (if (neq ?new_mng "") then
                         (bind ?count (+ ?count 1))
                         (assert (e_tam-id-dbase_name-mng (explode$ ?tam) ?count hindi_tam_dictionary ?new_mng1))
-                        ;(bind ?new_mng1 (remove_character "Z" (implode$ (create$ ?new_mng1)) ""))
-                        ;(assert (e_tam-id-dbase_name-mng (explode$ ?tam) ?count hindi_tam_dictionary ?new_mng1))
         )
 )
 ;--------------------------------------------------------------------------------------------------------

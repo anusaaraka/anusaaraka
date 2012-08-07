@@ -32,4 +32,5 @@ echo "Creating Hindi Wordnet dictionaries"
 cd $HOME_anu_test/miscellaneous/SMT/MINION/alignment
 echo "Compiling minion files"
 gcc -o line_count.out line_count.c
+$HOME_anu_test/Anu_src/comp.sh $HOME_anu_test/miscellaneous/SMT/alignment/morph
 

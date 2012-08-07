@@ -32,4 +32,5 @@ echo "Creating Hindi Wordnet dictionaries"
 cd $HOME_anu_test/miscellaneous/SMT/alignment
 echo "generating out file"
 $HOME_anu_test/Anu_src/comp.sh get_tam_info
+$HOME_anu_test/Anu_src/comp.sh morph 
 gcc -o replace_wrd_with_id.out replace_wrd_with_id.c

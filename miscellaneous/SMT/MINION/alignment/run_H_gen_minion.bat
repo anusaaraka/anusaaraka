@@ -123,7 +123,7 @@
  ;--------------------------------------------------------------------------
  ;confidence_level 8,7
  (load "global_path.clp")
- (bind ?*path* (str-cat ?*path* "/miscellaneous/SMT/alignment/word_alignment.clp"))
+ (bind ?*path* (str-cat ?*path* "/miscellaneous/SMT/MINION/alignment/word_alignment.clp"))
  (load ?*path*)
  (load-facts "word.dat")
  (load-facts "manual_word.dat")
@@ -138,6 +138,7 @@
  (load-facts "manual_group_mng.dat")
  (load-facts "revised_root.dat")
  (load-facts "wx_agrep_output.dat")
+ (load-facts "manual_hin.morph.dat")
  (assert (anu_verb_count-verbs 0))
  (assert (man_verb_count-verbs 0))
  ;(watch facts)
