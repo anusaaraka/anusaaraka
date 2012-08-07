@@ -118,6 +118,18 @@
  (load-facts "manual_ids.dat")
  (load-facts "shallow_parser_root.dat")
  (run)
+ (save-facts "manual_lwg_tmp.dat" local manual_id-cat-word-root-vib-grp_ids)
+ (clear)
+ ;--------------------------------------------------------------------------
+ (load "global_path.clp")
+ (bind ?*path* (str-cat ?*path* "/miscellaneous/SMT/MINION/alignment/multi_word_expressions.clp"))
+ (load ?*path*)
+ (load-facts "manual_lwg_tmp.dat")
+ (load-facts "manual_hindi_sen.dat")
+ (load-facts "multi_word_expressions.dat")
+ (open "man_multi_word.dat"  m_fp "w" )
+ (run)
+ (close m_fp)
  (save-facts "manual_lwg.dat" local manual_id-cat-word-root-vib-grp_ids)
  (clear)
  ;--------------------------------------------------------------------------

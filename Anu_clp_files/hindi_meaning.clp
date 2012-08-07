@@ -34,6 +34,7 @@
  (assert (E_word-wx_word))
  (assert (id-last_word))
  (assert (id-word))
+ (assert (Domain))
  )
 
  ;for MWE meaning will be assinged to the last word (single mng will be given to all words).So,by this rule we are retracting cntrl facts for remaining ids.
@@ -414,6 +415,37 @@
 	(bind ?h_word (implode$ $?hword))
 	(printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?h_word "   WSD_root_mng)" crlf)
 	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?h_word "   WSD_root_mng "?id")" crlf)
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (06-08-12) 
+ ;Basically, there are two domains of interest: macroscopic and microscopic.
+ (defrule default_mng_from_physics_domain
+ (declare (salience 5600))
+ ?mng<-(meaning_to_be_decided ?id)
+ (Domain physics)
+ (id-root ?id ?root)
+ (test (neq (numberp ?root) TRUE))
+ =>
+	(bind ?count 0)
+        (bind ?new_mng (gdbm_lookup "Physics-dictionary.gdbm" ?root))
+        (if (eq ?new_mng "FALSE") then
+                (bind ?str  (sub-string 1 1 ?root))
+                (bind ?str (upcase ?str))
+                (bind ?n_word (str-cat ?str (sub-string 2 (length ?root) ?root)))
+                (bind ?new_mng (gdbm_lookup "Physics-dictionary.gdbm" ?n_word))
+	)
+	(if (neq ?new_mng "FALSE") then
+		(bind ?slh_index (str-index "/" ?new_mng))
+		(if (neq ?slh_index FALSE) then
+			(bind ?new_mng1 (sub-string 1 (- ?slh_index 1) ?new_mng))
+			(printout ?*hin_mng_file* "(id-HM-source   "?id"   "?new_mng1"   Physics-dictionary.gdbm)" crlf)
+			(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?new_mng1" Physics-dictionary.gdbm "?id")" crlf)
+		else
+			(printout ?*hin_mng_file* "(id-HM-source   "?id"   "?new_mng"   Physics-dictionary.gdbm)" crlf)
+			(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?new_mng"  Physics-dictionary.gdbm "?id")" crlf)
+		)
+		(retract ?mng)
+	)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;Modified by Shirisha Manju (04-02-12) removed if condition to check for "number" in action part instead added in rule part

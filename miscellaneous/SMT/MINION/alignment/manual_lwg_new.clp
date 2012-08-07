@@ -1,5 +1,4 @@
 (defglobal ?*count* = 0)
-
 (deffunction assert_control_fact(?fact_name $?ids)
                 (loop-for-count (?i 1 (length $?ids))
                                 (bind ?j (nth$ ?i $?ids))
@@ -41,7 +40,8 @@
 	(bind ?*count* (+ ?*count* 1))
 	(assert (manual_id-mng ?*count* $?grp))
         (assert_control_fact delete_manual_fact $?grp)
-	(assert (manual_id-mapped_id ?mid ?*count*))
+;	(assert (manual_id-mapped_id ?mid ?*count*))
+	(assert (manual_id-mapped_id ?h_id ?*count*))
 )
 
 ;-------------------------------------------------------------------------------------
@@ -54,7 +54,8 @@
         (retract ?f ?f0)
 	(bind ?*count* (+ ?*count* 1))
         (assert (manual_id-mng ?*count* $?grp))
-	(assert (manual_id-mapped_id ?mid ?*count*))
+;	(assert (manual_id-mapped_id ?mid ?*count*))
+	(assert (manual_id-mapped_id ?h_id ?*count*))
 )
 ;-------------------------------------------------------------------------------------
 (defrule delete_manual_fact

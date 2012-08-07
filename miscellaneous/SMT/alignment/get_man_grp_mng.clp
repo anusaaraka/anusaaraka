@@ -88,7 +88,7 @@
  =>
 ;       (retract ?f ?f0 ?f1 ?f2)
         (retract ?f ?f1 ?f2 ?f3 ?f4 ?f5 ?f6 ?f7)
-        (bind ?root (string-to-field (str-cat ?r"_kara")))
+        (bind ?root (string-to-field (str-cat ?r"_ho")))
         (assert (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ?g ?no ?p ?c ?suf))
         (assert (position-cat-man_grp_mng   ?id ?node $?word1 $?word  - -))
         (assert (head_id-grp_ids ?id $?grp1 $?grp))

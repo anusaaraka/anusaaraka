@@ -430,11 +430,12 @@
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  ; Drop the S node which is not at zero level
+ ;Going from this intuitive notion to the proper scientific concept of force is not a trivial matter.
  (defrule rm_sen_from_pada
  (declare (salience 950))
  (get_pada)
  ?f0<-(id-grp_ids ?hid $?ids ?s_id) 
- (prawiniXi_id-node-category ?s_id ?S S)
+ (prawiniXi_id-node-category ?s_id ?S S|FromToPP)
  =>
 	(retract ?f0)
 	(assert (id-grp_ids ?hid $?ids))
@@ -530,7 +531,6 @@
 	(retract ?f0)
 	(assert (conj_head-conj_id-components ?h ?conj_id $?d $?dau $?d1))
  )
-; Physicists try to discover the rules that are operating in nature, on the basis of observations, experimentation and analysis.
  ;-----------------------------------------------------------------------------------------------------------------------
  (defrule modify_pada
  (declare (salience 750))

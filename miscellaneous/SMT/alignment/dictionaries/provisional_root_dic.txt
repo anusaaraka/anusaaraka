@@ -15,3 +15,5 @@ around	ke_pariwaH/ke_iXara_uXara
 financial	viwwa_saMbaMXiwa
 accounting	leKAMkana
 record-keeping	hisAba-kiwAb
+however	waWApi
+early	Axya

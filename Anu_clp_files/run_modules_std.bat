@@ -353,6 +353,7 @@
  (load-facts "lwg_info.dat")
  (load-facts "original_word.dat")
  (load-facts "word.dat")
+ (load-facts "domain.dat")
  (open "proper_nouns.dat" p_noun "w")
  (open "hindi_meanings_tmp.dat" fp "a")
  (open "hindi_meanings_tmp1.dat" fp1 "a")
