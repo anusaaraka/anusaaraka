@@ -3788,5 +3788,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	       miscellaneous/SMT/MINION/alignment/get_minion_output.py   and
                miscellaneous/SMT/MINION/alignment/multi_word_expressions.clp
 17. Modified tam_meaning.clp to add dummy fact (conj_head-components)
-18. Updated changes_in_databases.
-19. Updated Log.	
+18. Updated Anu_data/canonical_form_dictionary/list-left Anu_data/canonical_form_dictionary/list_SMT
+	- for new dic hindi_multi_word.txt
+19. Updated changes_in_databases.
+20. Updated Log.	
