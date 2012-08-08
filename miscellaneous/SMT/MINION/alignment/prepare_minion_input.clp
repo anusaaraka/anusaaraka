@@ -82,10 +82,11 @@
 ;Added by Maha Laxmi
 (defrule potential_count_of_manual_verb_id
 (declare (salience 2000))
-(man_verb_count-verbs ?man_verb_count $? ?man_verb $?)
-(anu_verb_count-verbs ?anu_verb_count $?anu_verbs)
+(man_verb_count-verbs ?man_verb_count&~0 $? ?man_verb $?)
+(anu_verb_count-verbs ?anu_verb_count&~0 $?anu_verbs)
 (manual_id-mapped_id ?man_verb ?mapped_id)
 (not (man_id-candidate_slots ?mapped_id $?))
+(not (ctrl_fact_for_poten_assignment ?mapped_id $? ?aid $?))
 =>
         (assert (man_id-candidate_slots ?mapped_id $?anu_verbs))
 )
@@ -165,9 +166,9 @@
                 	(bind $?g_list (sort > (create$ $?g_list (- ?pos 1))))
 		)
         )
-	(if (eq (length $?g_list) 0) then
+	(if (or (eq (length $?g_list) 0) (eq (length $?g_list) 1)) then
 		(retract ?f)
-		(assert (ctrl_fact_for_poten_assignment ?mid $?grp))
+		(assert (ctrl_fact_for_poten_assignment ?mid $?grp));asserting a control in order to stop firing rule "potential_count_of_manual_id1" again 
 	else	    
 	(printout ?*minion_fp* "        # man_w_id-anu_ids " ?mid " ---- " (implode$ $?grp))
         (printout ?*minion_fp* "   ==> " (- ?mid 1) " ---- " )
@@ -385,6 +386,7 @@
 (declare (salience 910))
 (man_id-candidate_slots ?mid $?grp)
 (hindi_id_order $?hin_order)
+(not (ctrl_fact_for_poten_assignment ?mid $?))
 =>
 	(printout ?*minion_fp* " watched-or({" )
         (loop-for-count (?i 1 (length $?grp))

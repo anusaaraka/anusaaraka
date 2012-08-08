@@ -42,8 +42,6 @@
 
 ;-------------------------------------------------------------------------------------
 ;Counts the number of verbs of manual sentence
-;"To some others, the challenge in carrying out imaginative new experiments to unlock the secrets of nature, to verify or refute theories, is thrilling. "  (VGNN prob)
-;kuCa anya ke lie prakqwi ke rahasyoM se parxA hatAne ke lie kalpanASIla navIna prayoga karane kI cunOwI  @PUNCT-Comma niyamoM kA sawyApana aWavA nirAkaraNa romAMcakArI ho sakawA hE  (VGNN prob)
 (defrule verb_count_of_manual
 (declare (salience 1001))
 (manual_id-node-word-root-tam  ?vid   VGF $?)
@@ -606,7 +604,8 @@
 (declare (salience -499))
 ?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid ?id $?grp)
 ?f1<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid ?id $?grp)
-(manual_id-word-cat ?mid1&:(eq ?mid1 (- ?id 1)) $?mng ?)
+(manual_id-word-cat ?mid1&:(eq ?mid1 (- ?id 1)) $?mng ?vib&~VIB)
+(not (manual_id-word-cat ?id1&:(member ?id1 $?grp) $?mng ?))
 (not (mng_has_been_aligned ?mid1))
 ?f2<-(id-confidence_level ?mid ?conf_lvl)
 (test (subsetp $?mng $?anu_mng))
@@ -623,8 +622,9 @@
 (declare (salience -499))
 ?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?grp ?id)
 ?f1<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?grp ?id)
-(manual_id-word-cat ?mid1&:(eq ?mid1 (+ ?id 1)) $?mng ?)
+(manual_id-word-cat ?mid1&:(eq ?mid1 (+ ?id 1)) $?mng ?vib&~VIB)
 (not (mng_has_been_aligned ?mid1))
+(not (manual_id-word-cat ?id1&:(member ?id1 $?grp) $?mng ?))
 ?f2<-(id-confidence_level ?mid ?conf_lvl)
 (test (subsetp $?mng $?anu_mng))
 =>

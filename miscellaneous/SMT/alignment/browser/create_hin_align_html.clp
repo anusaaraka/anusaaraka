@@ -111,6 +111,7 @@
  ?f1<-(anu_id-anu_mng-man_id-man_mng ?id1 ?anu_mng1 ?mid1 ?man_grp_mng1)
  (hin_pos-hin_mng-eng_ids-eng_words ? ?hin $?grp_ids ?eng)
  (test (and (member$ ?id $?grp_ids) (member$ ?id1 $?grp_ids)))
+ (test (and (integerp ?mid) (integerp ?mid1)))
  (test (neq ?mid ?mid1))
  =>
 	(if (< ?mid ?mid1) then

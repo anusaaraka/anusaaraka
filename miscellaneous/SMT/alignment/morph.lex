@@ -14,17 +14,19 @@ char *ptr;
 [\^][A-Za-z0-9]*          {   ptr=yytext;ptr=ptr+1;len=strlen(ptr);
 			      strncpy(word,ptr,len);word[len]='\0';}
 
-[A-Za-z0-9]*<cat:[a-z]>  {  len=strcspn(yytext,"<");
-                            strncpy(root,yytext,len);
+[A-Za-z0-9]*<cat:[a-z]>  {  ptr=yytext;
+			    len=strcspn(ptr,"<");
+                            strncpy(root,ptr,len);
                             root[len]='\0';
-                            yytext=yytext+len+1;
-                            len=strcspn(yytext,":");
-                            yytext=yytext+len+1;
-                            len=strcspn(yytext,">");
-                            strncpy(cat,yytext,len);
+                            ptr=ptr+len+1;
+                            len=strcspn(ptr,":");
+                            ptr=ptr+len+1;
+                            len=strcspn(ptr,">");
+                            strncpy(cat,ptr,len);
                             cat[len]='\0';
-			    fprintf(fp,"(man_word-root-cat	%s	%s	%s)\n",word,root,cat);}
-[\n]	{   fprintf(fp,";~~~~~~~~~~\n",yytext);}
+			    fprintf(fp,"(man_word-root-cat	%s	%s	%s)\n",word,root,cat);
+			  }
+[\n]			  {   fprintf(fp,";~~~~~~~~~~\n",yytext);}
 %%
 
 main(int argc, char* argv[])
