@@ -210,11 +210,11 @@
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
 (defrule get_prawiniXi_grp_info
-(declare (salience 990))
+(declare (salience 980))
 (mot-cat-praW_id-largest_group ? ? ? $?grp)
-;(or (mot-cat-praW_id-largest_group ? ? ? $?grp) (conj_components $?grp))
 (hindi_id_order $?ids)
 (test (> (length $?grp) 1))
+(not (grp_ids-slot_ids $?grp - $?))
 =>
         (bind $?g_list (create$))
         (loop-for-count (?i 1 (length $?grp))
@@ -229,11 +229,10 @@
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
 (defrule get_grp_info
-(declare (salience 980))
+(declare (salience 990))
 (or (pada_info (group_head_id ?id)(group_cat PP)(group_ids $?grp)) (conj_components $?grp))
 (test (> (length $?grp) 1))
 (hindi_id_order $?ids)
-(not (grp_ids-slot_ids $?grp - $?))
 =>
         (bind ?*total_count* (+ ?*total_count* 1))
         (bind $?g_list (create$))
@@ -260,7 +259,7 @@
 )	
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (3-08-12)
-(defrule print_cost_constraints1
+(defrule print_constraints
 (declare (salience 960))
 (print_constraint_info)
 =>
@@ -268,14 +267,7 @@
         (printout ?*minion_fp* " **SEARCH**" crlf) 
         (printout ?*minion_fp* " #MAXIMISING " crlf)
         (printout ?*minion_fp* " MAXIMISING total" crlf crlf)
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi
-(defrule print_constraints
-(declare (salience 950))
-(print_constraint_info)
-=>
-        (printout ?*minion_fp* " **CONSTRAINTS** " crlf crlf)
+	(printout ?*minion_fp* " **CONSTRAINTS** " crlf crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
@@ -288,11 +280,13 @@
 	(printout ?*minion_fp* " eq(ws["(- ?mapped_id 1)","(- (member$ ?aid $?hin_order) 1)"],1)" crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
+;yaha vahI UrjA hE jo nABikIya Sakwi janana waWA nABikIya kispotoM meM mukwa howI hE
+;This is the energy which is released in a nuclear power generation and nuclear explosions.
 ;Added by Maha Laxmi
 (defrule potential_facts_for_article_the
 (declare (salience 930))
 (id-word ?aid the)
-(manual_id-mng ?mapped_id vaha|isa|usa)
+(manual_id-mng ?mapped_id vaha|isa|usa|vahI)
 (hindi_id_order $?hin_order)
 (test (neq (member$ ?aid $?hin_order) FALSE)) 
 =>
@@ -303,7 +297,7 @@
 (defrule potential_facts_for_article_the1
 (declare (salience 930))
 (id-word ?aid the)
-(not (manual_id-mng ?mid vaha|isa|usa))
+(not (manual_id-mng ?mid vaha|isa|usa|vahI))
 (hindi_id_order $?hin_order)
 (test (neq (member$ ?aid $?hin_order) FALSE))
 =>
@@ -433,6 +427,7 @@
 (grp_ids-slot_ids $?anu_grp - $?grp)
 (manual_word_length  ?manual_word_len)
 (test (< (length $?grp) ?manual_word_len))
+(test (neq (length $?grp) 0))
 =>
         (bind ?total (str-cat "total" ?total))
         (printout ?*minion_fp*  crlf " #Generating cost facts " crlf)
@@ -491,6 +486,7 @@
         (printout ?*minion_fp*   crlf "})" crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (6-08-12)
 (defrule get_sum_fact_for_total
 (declare (salience 100))
 (print_constraint_info)
@@ -524,273 +520,4 @@
 =>
         (printout ?*minion_fp* crlf  crlf " **EOF**" crlf)
 )
-
-
-
-
-;;Added by Shirisha Manju
-;(defrule rm_prep_id_from_prawiniXi
-;(declare (salience 950))
-;?f0<-(mot-cat-praW_id-largest_group ?m ?c ?p_id $?d ?id $?d1)
-;(id-cat_coarse ?id preposition)
-;(not (id-cat_coarse =(+ ?id 1) verb))
-;=>
-;	(retract ?f0)
-;	(assert (mot-cat-praW_id-largest_group ?m ?c ?p_id $?d $?d1))
-;)
-;;------------------------------------------------------------------------------------------------------------
-;;Added by Shirisha Manju
-;(defrule sort_conj_ids
-;(declare (salience 940))
-;(conj_head-components $?ids)
-;=>
-;        (bind ?g_ids (sort > ?ids))
-;        (assert (conj_components ?g_ids))
-;)
 ;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju
-;(defrule get_prawiniXi_grp_info
-;(declare (salience 930))
-;(or (mot-cat-praW_id-largest_group ? ? ? $?grp) (conj_components $?grp))
-;(hindi_id_order $?ids)
-;(test (> (length $?grp) 1))
-;=>
-;        (bind $?g_list (create$))
-;        (loop-for-count (?i 1 (length $?grp))
-;                (bind ?id (nth$ ?i $?grp))
-;                (bind ?pos (member$ ?id $?ids))
-;		(if (neq ?pos FALSE) then
-;			(bind $?g_list (create$ $?g_list (- ?pos 1)))
-;		)
-;        )
-;        (assert (grp_ids-slot_ids $?grp - $?g_list))
-;)
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (03-08-12)
-;(deffunction get_or_facts (?index $?grp)
-;	(bind ?row ?index)
-;        (loop-for-count (?i 1 (length $?grp)  )
-;        	(bind ?s_id (nth$ ?i $?grp))
-;                (if (eq ?i (length $?grp) ) then
-;                	(printout ?*minion_fp*  "eq(ws["?row","?s_id "],1), sumleq(ws[_,"?s_id"],0) })," crlf )
-;                else
-;                	(printout ?*minion_fp*  "eq(ws["?row","?s_id "],1), sumleq(ws[_,"?s_id"],0) })," crlf )
-;                        (printout ?*minion_fp* "                watched-or({ ")
-;                )
-;                (bind ?row (+ ?row 1))
-;        )
-;	(bind ?new_row ?row)
-;)
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (03-08-12)
-;(deffunction get_main_or_lower_diagonal(?manual_word_len ?type ?total $?grp)
-;        (bind ?count 0)
-;        (loop-for-count (?k ?count (- ?manual_word_len 1) )
-;		(get_or_facts ?k $?grp)
-;                (if (>= (+ ?k (length $?grp)) ?manual_word_len )  then
-;                        (break)
-;                )
-;		(printout t ?total crlf)
-;	;	(printout t ?type crlf)
-;		(if (eq ?type main) then
-;			(printout ?*minion_fp* "		eq("?total",40)" crlf "		}), " crlf)
-;;			(printout ?*minion_fp* "		eq(total,40)" crlf "		}), " crlf)
-;		else
-;			(printout ?*minion_fp* "		eq("?total",30)" crlf "		}), " crlf)
-;;			(printout ?*minion_fp* "		eq(total,30)" crlf "		}), " crlf)
-;		)
-;		(printout ?*minion_fp* "	watched-and({"        crlf)
-;                (printout ?*minion_fp* "		watched-or({ ")
-;		(bind ?count (+ ?count 1))
-;        )
-;	(if (eq ?type main) then
-;;		(printout ?*minion_fp* "		eq(total,40)" crlf"		})," crlf)
-;		(printout ?*minion_fp* "		eq("?total",40)" crlf"		})," crlf)
-;	else
-;;		(printout ?*minion_fp* "		eq(total,30)" crlf"		})," crlf)
-;		(printout ?*minion_fp* "		eq("?total",30)" crlf"		})," crlf)
-;	)
-;)
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (03-08-12)
-;(deffunction get_upper_diagonal(?manual_word_len ?total $?grp)
-;        (bind ?count 0)
-;        (loop-for-count (?k ?count (- ?manual_word_len 1) )
-;		(get_or_facts ?k $?grp)
-;                (if (>= (+ ?k (length $?grp)) (- ?manual_word_len 1))  then 
-;                        (break) 
-;                )       
-;                (printout ?*minion_fp* "                eq("?total",30)" crlf "		}), " crlf)
-;                ;(printout ?*minion_fp* "                eq(total,30)" crlf "		}), " crlf)
-;                (printout ?*minion_fp* "        watched-and({"        crlf)
-;                (printout ?*minion_fp* "		watched-or({ ")
-;                (bind ?count (+ ?count 1))
-;        )
-;        (printout ?*minion_fp* "                eq("?total",30)" crlf"		})," crlf)
-;;        (printout ?*minion_fp* "                eq(total,30)" crlf"		})," crlf)
-;)
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (03-08-12)
-;(defrule print_cost
-;(declare (salience 920))
-;(declare (salience 850))
-;(grp_ids-slot_ids $?anu_grp - $?grp)
-;(manual_word_length  ?manual_word_len)
-;(test (< (length $?grp) ?manual_word_len))
-;=>
-;	(printout ?*minion_fp*  crlf " #Generating cost facts " crlf)
-;	(printout ?*minion_fp*  " #group : "(implode$ $?anu_grp) " ---- " (implode$ $?grp) crlf)
-;	(printout ?*minion_fp* "watched-or({" crlf "	watched-and({ " crlf)
-;	(printout ?*minion_fp* "		watched-or({ ")
-;        (get_main_or_lower_diagonal ?manual_word_len main $?grp)
-;	(if (> (length $?grp) 2) then
-;		(bind $?u_grp (subseq$ $?grp 2 (length $?grp)))
-;        	(printout ?*minion_fp* "	watched-and({ "crlf "		watched-or({ " )
-;        	(get_upper_diagonal ?manual_word_len $?u_grp)
-;		(bind $?l_grp (subseq$ $?grp 1 (- (length $?grp) 1)))
-;		(printout ?*minion_fp* "	watched-and({ "crlf "		watched-or({ " )
-; 		(get_main_or_lower_diagonal ?manual_word_len lower $?l_grp)
-;	)
-;	(printout ?*minion_fp* "        eq(total,0) "crlf "     })" crlf)
-;)
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju(27-07-12)
-;(deffunction print_weighted_values (?manual_word_len $?grp)
-;	(bind ?plus_ones (* (length $?grp) (length $?grp)))
-;	(bind ?minus_ones (* (length $?grp) ?manual_word_len))
-;	(loop-for-count (?i 1 ?plus_ones)
-;                (printout ?*minion_fp*  "1,")
-;        )
-;        (loop-for-count (?i 1 ?minus_ones)
-;                (printout ?*minion_fp* "-1" )
-;                (if (neq ?i ?minus_ones) then
-;                        (printout ?*minion_fp* "," )
-;                else
-;                        (printout ?*minion_fp* "],")
-;                )
-;        )
-;)
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (27-07-12)
-;(defrule print_grp_info
-;(declare (salience 910))
-;?f0<-(grp_ids-slot_ids $?anu_grp - $?grp)
-;(manual_word_length  ?manual_word_len)
-;(test (< (length $?grp) ?manual_word_len))
-;(slot-length  ?anu_slot_len)
-;(test (neq (length $?grp) 0))
-;=>
-;        (printout ?*minion_fp* crlf " #group : "(implode$ $?anu_grp) " ---- " (implode$ $?grp))
-;        (printout ?*minion_fp*  crlf " watched-or({" crlf "                weightedsumgeq([")
-;;	(printout t ?manual_word_len " " (length $?grp) " " ?diff "---" crlf)
-;	(print_weighted_values ?manual_word_len $?grp)
-;        (bind ?count 0)
-;	(loop-for-count (?k ?count (- ?manual_word_len 1) )
-;               (printout ?*minion_fp* "[")
-;               (loop-for-count (?i ?count (- (+ (length $?grp) ?count) 1))
-;                        (loop-for-count (?j 1 (length $?grp) )
-;                                (bind ?s_id (nth$ ?j $?grp))
-;                                (printout ?*minion_fp*  "ws["?i","?s_id "],")
-;                        )
-;                )
-;                (loop-for-count (?l 1 (length $?grp))
-;                        (bind ?s_id (nth$ ?l $?grp))
-;                        (printout ?*minion_fp* "ws[_,"?s_id "]")
-;                        (if (neq ?l (length $?grp)) then
-;                                (printout ?*minion_fp* ",")
-;                        )
-;                )
-;		(if (>= (+ ?k (length $?grp)) ?manual_word_len )  then
-;                	(printout ?*minion_fp* "],0)" crlf)
-;                        (break)
-;                else
-;                	(printout ?*minion_fp*  "],0)," crlf"              weightedsumgeq([" )
-;			(print_weighted_values ?manual_word_len $?grp)
-;                 )
-;                 (bind ?count (+ ?count 1))
-;        )
-;        (printout ?*minion_fp*   crlf "})" crlf)
-;)
-;;------------------------------------------------------------------------------------------------------------
-;;Added by Shirisha Manju
-;(defrule get_grp_info
-;(declare (salience 994))
-;;(declare (salience 900))
-;(pada_info (group_head_id ?id)(group_cat PP)(group_ids $?grp))
-;(test (> (length $?grp) 1))
-;(hindi_id_order $?ids)
-;(not (grp_ids-slot_ids $?grp - $?))
-;=>
-;	(bind ?*total_count* (+ ?*total_count* 1))
-;        (bind $?g_list (create$))
-;        (loop-for-count (?i 1 (length $?grp))
-;                (bind ?id (nth$ ?i $?grp))
-;                (bind ?pos (member$ ?id $?ids))
-;		(if (neq ?pos FALSE) then
-;			(bind $?g_list (create$ $?g_list (- ?pos 1)))
-;		)
-;        )
-;        (assert (grp_ids-slot_ids $?grp - $?g_list))
-;	(assert (get_cost_for_grp $?grp - ?*total_count*))
-;)
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (03-08-12)
-;(defrule print_cost
-;(declare (salience 920))
-;(get_cost_for_grp $?anu_grp - ?total)
-;;(get_cost_for_grp $?anu_grp)
-;(grp_ids-slot_ids $?anu_grp - $?grp)
-;(manual_word_length  ?manual_word_len)
-;(test (< (length $?grp) ?manual_word_len))
-;=>
-;;	(bind ?*total_count* (+ ?*total_count* 1))
-;	(bind ?total (str-cat "total" ?total))
-;        (printout ?*minion_fp*  crlf " #Generating cost facts " crlf)
-;        (printout ?*minion_fp*  " #group : "(implode$ $?anu_grp) " ---- " (implode$ $?grp) crlf)
-;        (printout ?*minion_fp* " watched-or({" crlf "    watched-and({ " crlf)
-;        (printout ?*minion_fp* "                watched-or({ ")
-;        (get_main_or_lower_diagonal ?manual_word_len main ?total $?grp)
-;        (if (> (length $?grp) 2) then
-;                (bind $?u_grp (subseq$ $?grp 2 (length $?grp)))
-;                (printout ?*minion_fp* "        watched-and({ "crlf "           watched-or({ " )
-;                (get_upper_diagonal ?manual_word_len ?total $?u_grp)
-;                (bind $?l_grp (subseq$ $?grp 1 (- (length $?grp) 1)))
-;                (printout ?*minion_fp* "        watched-and({ "crlf "           watched-or({ " )
-;                (get_main_or_lower_diagonal ?manual_word_len lower ?total $?l_grp)
-;        )
-;;        (printout ?*minion_fp* "        eq(total,0) "crlf "     })" crlf)
-;        (printout ?*minion_fp* "        eq("?total",0) "crlf "     })" crlf)
-;)
-;------------------------------------------------------------------------------------------------------------
-;(defrule get_sum_fact_for_total
-;(declare (salience 100))
-;(print_constraint_info)
-;=>
-;	(printout ?*minion_fp* crlf "sumgeq([" )
-;	(loop-for-count (?i 1 ?*total_count*)
-;		(printout ?*minion_fp* "total" ?i)
-;		(if (neq ?i ?*total_count*) then
-;			(printout ?*minion_fp* ",")
-;		else	
-;			(printout ?*minion_fp* "],total)" )
-;		)
-;	)
-;	(printout ?*minion_fp* crlf "sumleq([" )
-;	(loop-for-count (?i 1 ?*total_count*)
-;                (printout ?*minion_fp* "total" ?i)
-;                (if (neq ?i ?*total_count*) then
-;                        (printout ?*minion_fp* ",")
-;                else
-;                        (printout ?*minion_fp* "],total)" )
-;                )
-;        )
-;)
-
-
-;Added by Maha Laxmi
-;(defrule print_EOF_info
-;(declare (salience -100))
-;(print_constraint_info)
-;=>
-;	(printout ?*minion_fp* crlf  crlf " **EOF**" crlf)
-;)

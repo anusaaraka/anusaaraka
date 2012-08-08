@@ -42,9 +42,11 @@
 
 ;-------------------------------------------------------------------------------------
 ;Counts the number of verbs of manual sentence
+;"To some others, the challenge in carrying out imaginative new experiments to unlock the secrets of nature, to verify or refute theories, is thrilling. "  (VGNN prob)
+;kuCa anya ke lie prakqwi ke rahasyoM se parxA hatAne ke lie kalpanASIla navIna prayoga karane kI cunOwI  @PUNCT-Comma niyamoM kA sawyApana aWavA nirAkaraNa romAMcakArI ho sakawA hE  (VGNN prob)
 (defrule verb_count_of_manual
 (declare (salience 1001))
-(manual_id-node-word-root-tam  ?vid   VGF|VGNN $?)
+(manual_id-node-word-root-tam  ?vid   VGF $?)
 ?f<-(man_verb_count-verbs ?man_verb_count $?verbs)
 (head_id-grp_ids ?vid ?mid $?)
 (test (eq (member$ ?mid $?verbs) FALSE))

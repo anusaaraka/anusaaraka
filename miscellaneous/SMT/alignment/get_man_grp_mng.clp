@@ -71,15 +71,18 @@
  )
 
 
-
+ ;Terrestrial phenomena lie somewhere in the middle of this range.
+ ;pArWiva pariGatanAez isa parisara ke maXya meM kahIM howI hEM 
+ ; "kahIM howI hEM" should not be grouped here
  (defrule modify_wrd_mng_for_VP_kriyAmUla_ho
  (declare (salience 90))
  ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN ho ?cat ?g ?no ?p ?c ?suf)
  ?f1<-(head_id-grp_ids ?id $?grp) ;?4
  ?f2<-(position-cat-man_grp_mng   ?id ?node     $?word  - -);f0
- ?f3<-(id-node-root-cat-gen-num-per-case-tam =(- ?id 1) ?n&NP ?r ? ? ? ? ? ?);f1
+ ?f3<-(id-node-root-cat-gen-num-per-case-tam =(- ?id 1) ?n ?r ? ? ? ? ? ?);f1
  ?f4<-(head_id-grp_ids =(- ?id 1) $?grp1);f3
  ?f5<-(position-cat-man_grp_mng =(- ?id 1) ?n $?word1 - -);f2
+ (test (neq (implode$ (create$ $?word1)) "kahIM" ))
  ?f7<-(id-node-word-root ?n1 ?cat2 ?word3 - ?root1)
  (test (member$ ?n1 $?grp))
  ?f6<-(id-node-word-root ?n2&=(- ?n1 1) ?cat1 ?word2 - ?root0)

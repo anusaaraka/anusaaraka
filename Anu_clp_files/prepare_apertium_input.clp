@@ -1002,7 +1002,7 @@
   (defrule PP_rule_with_vib_hid
   (declare (salience 350))
   (pada_info (group_cat PP) (group_ids $?ids ?id) (vibakthi ?vib)(number ?num)(case ?case)(gender ?gen) )
-  ?f1<-(id-HM-source ?id ?h_word ?)
+  ?f1<-(id-HM-source ?id ?h_word&~- ?)
   (test (neq ?vib 0))
   (id-cat_coarse ?id ?cat)
   =>

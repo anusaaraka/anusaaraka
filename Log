@@ -3721,7 +3721,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 39.Modified sd_ver_output, ber_ver_output, link_ver_output and verified_output
 40.Updated Log.
 
- 7-08-12
+ 8-08-12
  ========
  1.Added transliteration folder after deleting following files:
 	1. stanford-corenlp-v1.0.4.tgz
@@ -3768,7 +3768,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Added    : rm_last_node_in_sen , print_eroor_msg_to_user and rm_to_id_in_order
 10. Added "modify_ADVP_as_NP" rule in parser_tree_correction_rules.clp
 11. Added "example sentenses" in parser_tree_modification_rules.clp
-12. Modified "PP_rule_with_tam" rule in prepare_apertium_input.clp  (added not condition of cat noun)
+12. prepare_apertium_input.clp
+	Modified :  "PP_rule_with_tam" rule  (added not condition of cat noun)
+	             "PP_rule_with_vib_hid" rule (added not condition for hindi mng)		
 13. run_modules_std.bat
         1. loaded "morph.dat" in parser_tree_correction_rules module
         2. removed bload for sd_pada module -- to save prawiniXi info
@@ -3782,6 +3784,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
      Added new files
                miscellaneous/SMT/alignment/morph.lex
                miscellaneous/SMT/MINION/alignment/word_alignment.clp
+	       miscellaneous/SMT/alignment/dictionaries/hindi_multi_word.txt
 	       miscellaneous/SMT/MINION/alignment/get_minion_output.py   and
                miscellaneous/SMT/MINION/alignment/multi_word_expressions.clp
 17. Modified tam_meaning.clp to add dummy fact (conj_head-components)
