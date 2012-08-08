@@ -85,8 +85,10 @@
  (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'"?idiom_des"\')\"><blink>&#9761;</blink></a></td>" crlf "</tr>" crlf)
  else (if (eq ?sen_type catastrophe) then
  (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  caution"?root"('"?root"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?w_id"_caution\" class=\"popup_link\"><blink>&#9761;</blink></span> <script type=\"text/javascript\"> new Popup('popup_3','popup_link_"?p_id"_"?s_id"_"?w_id"_caution',{position:'below',trigger:'click'}); </script>   </a></td>" crlf "</tr>" crlf)
+ else (if (eq ?sen_type Default_mng_with_different_category) then 
+ (printout fp "</td><td class=\""?chnk_fr_htm"\"><a onclick=\"javascript:  alert(\'Default_mng_with_different_category\')\"><blink>&#9761;</blink></a></td>" crlf "</tr>" crlf)
  else
- (printout fp "</td><td class=\""?chnk_fr_htm"\"> - </td>" crlf "</tr>" crlf))))
+ (printout fp "</td><td class=\""?chnk_fr_htm"\"> - </td>" crlf "</tr>" crlf)))))
  )
 
  (deffunction print_padasutra_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)

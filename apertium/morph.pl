@@ -20,26 +20,27 @@ for $i (0 .. $#lines){
   if(($words[$j] !~ /^\^\.\/\.\<sent\>["']*\$$/) && ($words[$j] !~ /^\^\?\/\?\<sent\>["']*\$$/)  && ($words[$j] !~ /^\^\?\/\?\<sent\>["']*\$\^\.\/\.\<sent\>["']*\$$/) &&($words[$j] !~ /^\^\,\/\,\<cm\>["']*\$$/)&&($words[$j] !~ /^\^\:\/\:\<sent\>["']*\$$/)&&($words[$j] !~ /^\^\'\/\'\<apos\>['"]*\$$/)&&($words[$j] !~ /^\"\^\.\/\.\<sent\>\$$/)&&($words[$j] !~ /^\"$/) && ($words[$j] !~ /^\"\^\:\/\:\<sent\>\$$/) && ($words[$j] !~ /^\^\?\/\?\<sent\>\$\^\'\/\'\<apos\>\$$/)){ 
 # This pattern ^?/?<sent>$^'/'<apos>$  added by Roja (09-08-11)
 
-
 #for handling patterns $^5/5<num>$ where "$" is part of sentence.(The university spends $5 per student.)
 # soln is remove the "$" symbol.
 
 	if($words[$j] =~ /^\$\^/){ $words[$j] =~ s/^\$//; }
 
 ##Added below two patterns by Roja (16-09-11) 
+##Below two rules re-modified by Roja (30-07-12) to handle [input : ((when ]
 #Ex: In Kumaon, the Kail Ganga (sharda) flows down from the Nepal border through kumaon hills.
 ##for handling patterns like  ^(/(<lpar>$^sharda/*sharda$^)/)<rpar>$   [input : (sharda) ]  
 #soln is removing  "(" and ")" symbols and just taking the word part.
 
-        if($words[$j] =~ /^(\^\(.*\$)(.*\$)(.*\$)/)
+        if($words[$j] =~ /^(\^\(.*\$)([^()]+\$)(.*\$)/)
               {  $words[$j] =~ s/^(\^\(.*\$)(.*\$)(.*\$)/\2/;  }
 
 #Ex: Because of its arid land, Rajasthan cannot sustain many vegetables; hence some of the state's best known vegetarian dishes rely on the use of Besan (gram flour).
 ##for handling patterns like ^(/(<lpar>$^gram/gram<n><sg>$  [input : (gram flour) ]
+##for handling patterns like ^(/(<lpar>$^(/(<lpar>$^when/when<cnjadv>/when<adv><itg>  [input : ((when ] 
 #soln is removing  "(" symbol and just taking the word part.
-
-        if($words[$j] =~ /^(\^\(.*\$)(.*\$)/)
-              {  $words[$j] =~ s/^(\^\(.*\$)(.*\$)/\2/;  }
+        
+	if($words[$j] =~ /^(\^\(.*\$)([^\(]+\$)/)
+              {  $words[$j] =~ s/^(\^\(.*\$)([^\(]+\$)/\2/;  }
 
 
 #for genitive case ^father/father<n><sg>/father<vblex><inf>/father<vblex><pres>$^'s/'s<gen>$

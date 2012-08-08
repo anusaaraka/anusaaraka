@@ -11,13 +11,13 @@ int main(int argc, char *argv[])
 {
 	int fpi=open(argv[1],O_RDONLY,0777);	//ARG1 FOR INPUT FILE 
 	FILE *fp1=fdopen(fpi,"r");
-	int fpo=open(argv[2],O_WRONLY|O_CREAT,0777);	//ARG2 FOR OUTPUT FILE
+	int fpo=open(argv[2],O_WRONLY|O_CREAT|O_TRUNC,0777);	//ARG2 FOR OUTPUT FILE
 	FILE *fp2=fdopen(fpo,"w");
 	if(fp1==NULL||fp2==NULL) printf("Could not open file\n");
 
 	int c,i,n,sb,ck=1;
 	char p[8],t[3];
-	unsigned char a[7];  //Changed from a[3] to a[7] as amximum unsinged char is 6 bytes. As suggested by Chaitanya Sir
+	unsigned char a[7];  //Changed from a[3] to a[7] as maximum unsinged char is 6 bytes. As suggested by Chaitanya Sir
 	while((c=fgetc(fp1))!=EOF)
 	{
 		int flag=1;

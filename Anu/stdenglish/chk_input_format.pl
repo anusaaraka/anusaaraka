@@ -76,6 +76,11 @@ while($in = <STDIN>){
 	$in =~ s/\&/ and /g;
 # add . in case of ABBR followed by two spaces.
 	$in =~ s/ABBR  /ABBR.  /g;
+
+#As suggested by Chaitanya Sir Added this pattern by Roja (08-08-12)
+#ex: I should have talked to you before the inviting of John. 
+#TODO: replacing 'inviting' as 'the inviting of' in english sentence fact need to done.
+	$in =~ s/ the inviting of / inviting /g; 
 print $in;
 }
 

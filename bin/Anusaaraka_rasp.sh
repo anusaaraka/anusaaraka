@@ -67,10 +67,11 @@
 #  cd $HOME_anu_test/Anu_src
 #  ./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
+  replace-abbrevations.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org  
   echo "Calling RASP parser" 
   cd $HOME_anu_test/Parsers/RASP/rasp3os/scripts/
-  sh map_constituent_tree.sh $MYPATH $1 one_sentence_per_line.txt
-  sh run_rasp-parser.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt
+  sh map_constituent_tree.sh $MYPATH $1 one_sentence_per_line.txt_org
+  sh run_rasp-parser.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
   
   echo "Calling Stanford parser"
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
@@ -91,8 +92,9 @@
   $HOME_anu_test/Anu_src/split_file.out sd-propagation_relations.txt dir_names.txt sd-propagation_relations_tmp1.dat
   $HOME_anu_test/Anu_src/split_file.out sd_word.txt dir_names.txt sd_word_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out sd_numeric_word.txt dir_names.txt sd_numeric_word_tmp.dat
-  $HOME_anu_test/Anu_src/split_file.out sd_category.txt dir_names.txt sd_category.dat
+  $HOME_anu_test/Anu_src/split_file.out sd_category.txt dir_names.txt sd_category_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line.txt.ner dir_names.txt ner.dat
+  $HOME_anu_test/Anu_src/split_file.out sd-original-relations.txt  dir_names.txt  sd-original-relations.dat
 
   grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt
   perl $HOME_anu_test/Anu_src/Match-sen.pl $HOME_anu_test/Anu_databases/Complete_sentence.gdbm  $1.snt one_sentence_per_line.txt > sen_phrase.txt
@@ -104,7 +106,7 @@
  do
     echo "Hindi meaning using RASP parser" $line
     cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
-    timeout 180 ./run_sentence_stanford.sh $1 $line 1 $MYPATH
+    timeout 180 ./run_sentence_stanford.sh $1 $line 1 $MYPATH $4
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
 

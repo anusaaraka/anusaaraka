@@ -159,7 +159,8 @@
 (declare (salience 4000))
 (id-root ?id which)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id determiner)
+(id-cat_coarse ?id wh-determiner) ; Modified category from 'determiner' to 'wh-determiner' by Roja (08-08-12)
+(viSeRya-det_viSeRaNa  ?id1  ?id) ; Added by Roja (08-08-12)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kOna_sA))

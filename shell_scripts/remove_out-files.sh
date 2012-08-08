@@ -26,7 +26,7 @@
  echo "Removing .out files"
  cd $HOME_anu_test/Anu_src
  rm *.out
- rm lex.yy.c y.tab.c  y.tab.h jnk constituency_parse f_tid-rid.h
+ rm lex.yy.c y.tab.c  y.tab.h constituency_parse f_tid-rid.h
  
 
  cd $HOME_anu_test/apertium
@@ -35,7 +35,7 @@
 
  echo "Removing CLIPS out files"
  cd $HOME_anu_test/CLIPS
- rm gdbm_lookup.h rm *.o
+ rm gdbm_lookup.h *.o
 
  cd $HOME_anu_test/bin
  rm myclips

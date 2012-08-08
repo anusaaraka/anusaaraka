@@ -129,6 +129,14 @@
         (retract ?f0)
  )
  ;------------------------------------------------------------------------------------------
+ ;Added by Roja(06-08-12)
+ (defrule WDT_rule
+ ?f0<-(id-sd_cat        ?id     WDT)
+ =>
+        (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  wh-determiner)" crlf)
+        (retract ?f0)
+ )
+ ;------------------------------------------------------------------------------------------
  (defrule close_cat_file
  (declare (salience -100))
  =>

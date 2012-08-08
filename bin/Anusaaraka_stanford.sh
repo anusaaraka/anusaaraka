@@ -43,6 +43,7 @@
  else
     echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
  fi
+
  echo "Saving Format info ..."
 
  $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
@@ -117,7 +118,7 @@
  echo "Calling Transliteration"
  cd $HOME_anu_test/miscellaneous/transliteration/work
  sh run_transliteration.sh $MYPATH/tmp $1
- 
+
  cd $MYPATH/tmp/$1_tmp/
  echo "(defglobal ?*path* = $HOME_anu_test)" > path_for_html.clp
  echo "(defglobal ?*mypath* = $MYPATH)" >> path_for_html.clp

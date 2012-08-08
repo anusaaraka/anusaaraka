@@ -166,7 +166,7 @@ transformation	rUpAMwaraNa
 Reactant	aBikAraka
 Product	uwpAxa
 Indestructible	avinASI
-Rearrangement	punavryavasWA
+Rearrangement	punarvyavasWA
 Exothermic	URmAkRepI
 Endothermic	URmASoRI
 Mass_defect	xravyamAna-kRawi

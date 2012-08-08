@@ -1,6 +1,7 @@
  (defglobal ?*PropN_file* =  p_noun)
  (defglobal ?*hin_mng_file* = fp)
  (defglobal ?*hin_mng_file1* = fp1)
+ (defglobal ?*catastrophe_file* = fp2)
 
  (deffunction never-called ()
  (assert (prep_id-relation-anu_ids))
@@ -448,20 +449,77 @@
 	)
  )
  ;--------------------------------------------------------------------------------------------------------------
+ ;Rule re-modified by Roja (01-08-12). 
+ ;Getting Hindi meaning from default dictionary when there is a same category 
+ ;Assuming first meaning always has 'Defualt'.
  ;Modified by Shirisha Manju (04-02-12) removed if condition to check for "number" in action part instead added in rule part
- (defrule default_hindi_mng
+ (defrule default_hindi_mng-same-cat
  (declare (salience 5500))
  (id-root ?id ?rt)
- (id-original_word ?id  ?original_wrd)
  ?mng<-(meaning_to_be_decided ?id)
+ (id-cat_coarse ?id ?cat)
  (test (neq (numberp ?rt) TRUE))
+ (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?rt "_" ?cat)) "FALSE"))
  =>
-	(bind ?a (gdbm_lookup "default_meaning_frm_oldwsd.gdbm" ?rt))
+        (bind ?a (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?rt "_" ?cat)))
         (if (neq ?a "FALSE") then
-		 (retract ?mng)
-                 (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?a"   Default)" crlf)
-                 (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?a"   Default "?id")" crlf)
-        )
+	   (if (neq (str-index "/" ?a) FALSE) then  
+		(bind ?h_mng (sub-string  1 (- (str-index "/" ?a) 1) ?a))
+            else
+                (bind ?h_mng  ?a)
+           )
+        (retract ?mng)
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?h_mng"   Default)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?h_mng"   Default "?id")" crlf)
+	)
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (01-08-12). 
+ ;Generating dummy categories.
+ (defrule generate_dummy_cat
+ (declare (salience 5100))
+ (default-cat)
+ =>
+ (assert (default-cat noun))
+ (assert (default-cat verb))
+ (assert (default-cat adverb))
+ (assert (default-cat adjective))
+ (assert (default-cat PropN))
+ (assert (default-cat conjunction))
+ (assert (default-cat pronoun))
+ (assert (default-cat determiner))
+ (assert (default-cat wh-adverb))
+ (assert (default-cat verbal_noun))
+ (assert (default-cat UNDEFINED))
+ (assert (default-cat wh-determiner))
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (01-08-12).
+ ;Getting Hindi meaning from default dictionary when there is a different category.
+ ;Also asserting a fact (sen_type-id-phrase Default_mng_with_different_category) as a warning message in catastrophe.dat
+ ;Assuming first meaning always has 'Defualt'.
+ (defrule default_hindi_mng-different-cat
+ (declare (salience 5400))
+ (id-root ?id ?rt)
+ ?mng<-(meaning_to_be_decided ?id)
+ (id-cat_coarse ?id ?cat)
+ (test (neq (numberp ?rt) TRUE))
+ (default-cat ?cat1)
+ (test (neq ?cat ?cat1))
+ (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?rt "_" ?cat1)) "FALSE"))
+ =>
+        (bind ?a (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?rt "_" ?cat1)))
+        (if (neq ?a "FALSE") then
+        	(if (neq (str-index "/" ?a) FALSE) then
+                	(bind ?h_mng (sub-string  1 (- (str-index "/" ?a) 1) ?a))
+                else
+                 	(bind ?h_mng  ?a)
+        	)
+        (retract ?mng)
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?h_mng"   Default)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?h_mng"   Default "?id")" crlf)
+	(printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?rt")" crlf)
+	)
  )
  ;--------------------------------------------------------------------------------------------------------------
   (defrule test_for_PropN

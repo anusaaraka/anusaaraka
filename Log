@@ -3721,7 +3721,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 39.Modified sd_ver_output, ber_ver_output, link_ver_output and verified_output
 40.Updated Log.
 
- 8-08-12
+ 08-08-12
  ========
  1.Added transliteration folder after deleting following files:
 	1. stanford-corenlp-v1.0.4.tgz
@@ -3748,7 +3748,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	* miscellaneous/SMT/alignment/browser/run_align_browser.sh
 	* shell_scripts/ClipsToAnu_browser_intfc.sh
 	* shell_scripts/anu_compile.sh
- 3.In WSD: Modified piece.clp
+	* Anusaaraka_all.sh
+	* bin/Anusaaraka_ol.sh
+	* bin/Anusaaraka_rasp.sh
+	* bin/Anusaaraka_stanford-Factored.sh
+	* bin/Anusaaraka_stanford_minion.sh
+ 3.In WSD: Modified piece.clp, which.clp
  4.Modified "infinitive_pos"  rule in eng_hin_pos.clp file
  5.Modified sd_lwg_rules.clp
    i)  Added new rules find_conj_head , conjunction_rule0 , conjunction_rule1.
@@ -3790,5 +3795,27 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 17. Modified tam_meaning.clp to add dummy fact (conj_head-components)
 18. Updated Anu_data/canonical_form_dictionary/list-left Anu_data/canonical_form_dictionary/list_SMT
 	- for new dic hindi_multi_word.txt
-19. Updated changes_in_databases.
-20. Updated Log.	
+
+19. In chk_input_format.pl, handled "the inviting of" as "inviting"
+20. In hindi_meaning.clp, 
+      Renamed : default_hindi_mng as default_hindi_mng-same-cat
+     Modified : default_hindi_mng-same-cat rule to get hindi meaning with same category.
+      Added   : generate_dummy_cat and default_hindi_mng-different-cat to get hindi meaning with different category.
+21. Added a rule to print the asserted facts in catastrophe.clp
+22. Added condition to handle the 'Default_mng_with_different_category' in create_eng_ord_html.clp
+23. In run_modules_std.bat, in hindi_meaning.clp  opened catastrophe.dat in write mode to print the fact "(sen_type-id-phrase Default_mng_with_different_category)
+24. Added a WDT_rule to print its category in sd_category.clp
+25. Added a pattern to handle "((when" in  morph.pl
+26. Removed sed commands related to 'ABBR'  in  replace-abbrevations.sh
+27. Modified some entries in iit-bombay dictionary for goldendict in following files:
+	miscellaneous/Dictionaries/iit-bombay/iit-bombay.dict
+	miscellaneous/Dictionaries/iit-bombay/iit-bombay.index
+	miscellaneous/Dictionaries/iit-bombay/src/iit-bombay.txt
+	miscellaneous/Dictionaries/iit-bombay/src/iit-bombay.txt1
+28. In transliteration, removed .transliteration-script.sh.swp, path_for_transliteration, phrasal.test.ini
+29. Modified and updated default-iit-bombay-shabdanjali-dic.txt, and integrated default_meaning_frm_oldwsd.txt in it.
+30. Updated replace_nonascii-chars.c
+31. Modified and updated sd_ver_output
+32. Updated remove_out-files.sh
+33. Updated changes_in_databases.
+34. Updated Log.	

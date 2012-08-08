@@ -375,6 +375,7 @@
   changes in animate_list.txt
   ===========================
   1. Added      vixyArWI  ----  Suggested by Manju Eg: The school admits only 50 students at a time .
+		saba	  ----  Added by Roja(08-08-12))
   2. Removed    mUrKa, mUrKa vyakwi ---- Suggested by Meenaji (29-04-10)
 
   changes in inanimate.txt
@@ -465,6 +466,7 @@
 	<e><p><l>iyoM</l><r>A<s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
  19.	<e lm="haraPanamOlA"><i>haraPanamOl</i><par n="jyAx/A__adj"/></e>  (Suggested by Chaitanya Sir 04-04-12)
  20.    <e lm="baMxI"><i>baMx</i><par n="ladak/I__n"/></e>  (Added by Roja(18-07-12) Suggested by Sukhada)
+ 21.	<e lm="sInetara"><i>sInetar</i><par n="Gar/a__n"/></e>   (Added by Roja(08-08-12)
 
 Modified :
   1.	<e><p><l>we_hue</l>	as	<e><p><l>owe_hue</l>       for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
@@ -484,6 +486,9 @@ Modified :
 	<e lm="jyAxA"><i>jyAx</i><par n="jyAx/A__adj"/></e>
   6.	<e lm="PotogrAPara"><i>PotogrAPara</i><par n="kroXa/__n"/></e>  (Modified by Roja,Suggested by Meena(18-02-12
   7.	<e lm="vAlI"><i>vAl</i><par n="ladak/I__n"/></e>        (Modified by Roja , Suggested by Meena(18-02-12)
+  8.	<e lm="bala"><i>bala</i><par n="Gar/a__n"/></e>
+				as
+	<e lm="bala"><i>bal</i><par n="Gar/a__n"/></e>		(Modified by Roja(08-08-12))
 
  Removed : 
 	  1.  Removed the following parsarg paradigms and its related patterns
@@ -709,3 +714,8 @@ Removed::
     
     Modified ::
     information_system --- sUcanA_praprAlI  ==> sUcanA_praNAlI (Suggested by Chaitanya ji(20-17-12)) 
+
+ changes in Physics-dictionary.txt 
+ =================================
+ Modified::
+	Rearrangement   punavryavasWA  as   punarvyavasWA  (Suggested by Chaitanya Sir (08-08-12))

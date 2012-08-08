@@ -1,4 +1,5 @@
  ;This file is written by Mahalaxmi
+ (defglobal ?*catastrophe_file* = catas_fp)
 
  (defrule comma_list
  (declare (salience 1050))
@@ -60,4 +61,11 @@
 ; =>
 ; (assert (sen_type-id-phrase noun_absolute 1 -))
 ; )
- 
+ ;-------------------------------------------------------------------------------------------------------------
+ (defrule print
+ ?f<- (sen_type-id-phrase ?sen_type ?id ?phrase) 
+ =>
+ (retract ?f)
+ (printout ?*catastrophe_file* "(sen_type-id-phrase	"?sen_type"	"?id"	"?phrase	")"crlf)
+ )
+ ;-------------------------------------------------------------------------------------------------------------

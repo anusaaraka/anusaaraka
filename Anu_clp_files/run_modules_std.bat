@@ -357,6 +357,8 @@
  (open "proper_nouns.dat" p_noun "w")
  (open "hindi_meanings_tmp.dat" fp "a")
  (open "hindi_meanings_tmp1.dat" fp1 "a")
+ (open "catastrophe.dat" fp2 "w")
+ (assert (default-cat)) 
  (run)
  (close p_noun)
  (clear)
@@ -568,8 +570,8 @@
  (assert (comma_list ))
  (assert (index 1))
  (assert (English-list))
+ (open "catastrophe.dat" catas_fp "a")
  (run)
- (save-facts "catastrophe.dat" local sen_type-id-phrase)
  (clear)
  ;--------------------------------------------------------------------------
  (load "global_path.clp")
