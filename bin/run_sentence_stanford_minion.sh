@@ -30,7 +30,7 @@
  cp $MYPATH/$1_tmp/underscore_hyphen_replace_info.txt  $MYPATH/$1_tmp/$2/underscore_hyphen_replace_info.dat
  myclips -f $HOME_anu_test/miscellaneous/SMT/MINION/alignment/run_H_gen_minion.bat >> $1.error
  
- timeout 120 sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/run_minion.sh minion_input.txt 
+ sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/run_minion.sh minion_input.txt 
  
  myclips -f $HOME_anu_test/miscellaneous/SMT/MINION/alignment/alignment.bat >> $1.error
  
@@ -42,6 +42,17 @@
  cat para_sent_id_info.dat word.dat sd_chunk.dat position.dat hindi_punctuation.dat catastrophe.dat English_sentence.dat word_alignment.dat manual_hindi_sen.dat confidence_level.dat >>$MYPATH/$1_tmp/$2/facts_for_align_html
 
  cat proper_nouns.dat >> $MYPATH/$1_tmp/proper_nouns_list
+
+ if [ -s "minion_output_tmp.dat" ] ;
+ then   echo $2 "  Solution Found" >> $MYPATH/$1_tmp/no_sol_found_tmp.txt
+ else
+	echo $2 "  No Solution Found" >> $MYPATH/$1_tmp/no_sol_found_tmp.txt
+ fi
+  
+ var="minion-resume-[0-9]*"
+ if [ -s $var  ] ; then
+ 	echo $2  "  Time-out"  >> $MYPATH/$1_tmp/no_sol_found_tmp.txt
+ fi
 
 # cat eng_id_in_hin_ord.dat >> $MYPATH/$1_tmp/$1_ordered_file
  cp hindi_sentence.dat hindi_sentence_tmp.dat
@@ -61,7 +72,6 @@
 
  grep -B2 "FALSE" $1.error >> errors.txt
  cat errors.txt
-
 
  #for sentence by sent analysis for web debugging tutorial
 # cat English_sentence.dat >> $MYPATH/$1_tmp/sent-by-sent

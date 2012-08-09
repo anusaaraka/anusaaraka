@@ -157,3 +157,14 @@
  echo "Calling Interface related programs"
  sh $HOME_anu_test/bin/run_anu_browser.sh $HOME_anu_test $1 $MYPATH $HOME_anu_output
  sh $HOME_anu_test/miscellaneous/SMT/alignment/browser/run_align_browser.sh $HOME_anu_test $1 $MYPATH $HOME_anu_output
+
+ echo "Print minion_statistics"
+ sed -n '1h;2,$H;${g;s/\([0-9.]*\)   Solution Found\n[0-9.]*   Time-out/\1   Time-out/g;p}' $MYPATH/tmp/$1_tmp/no_sol_found_tmp.txt > $MYPATH/tmp/$1_tmp/no_sol_found.txt 
+ echo "No Solution Found :" >> $MYPATH/tmp/$1_tmp/minion_statistics
+ grep "No Solution Found" $MYPATH/tmp/$1_tmp/no_sol_found.txt | wc  -l >> $MYPATH/tmp/$1_tmp/minion_statistics
+ echo "Time-out:" >> $MYPATH/tmp/$1_tmp/minion_statistics
+ grep "Time-out" no_sol_found.txt | wc -l >> $MYPATH/tmp/$1_tmp/minion_statistics
+ echo "Solution Found :" >> $MYPATH/tmp/$1_tmp/minion_statistics
+ grep "   Solution Found" $MYPATH/tmp/$1_tmp/no_sol_found.txt | wc  -l >> $MYPATH/tmp/$1_tmp/minion_statistics
+
+ cat $MYPATH/tmp/$1_tmp/minion_statistics
