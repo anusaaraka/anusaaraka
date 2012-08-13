@@ -3814,8 +3814,14 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	miscellaneous/Dictionaries/iit-bombay/src/iit-bombay.txt1
 28. In transliteration, removed .transliteration-script.sh.swp, path_for_transliteration, phrasal.test.ini
 29. Modified and updated default-iit-bombay-shabdanjali-dic.txt, and integrated default_meaning_frm_oldwsd.txt in it.
-30. Updated replace_nonascii-chars.c
-31. Modified and updated sd_ver_output
-32. Updated remove_out-files.sh
-33. Updated changes_in_databases.
-34. Updated Log.	
+30. To handle abbrevations which are not handled by Stanford parser ::
+	* Added handling_abbrevations.lex
+	* Added compilation of above file in compile.sh
+	* Added code to run above file in run_stanford-parser.sh
+	* Modified 'one_sentence_per_line.txt.std.penn' to 'one_sentence_per_line.txt.std.penn_tmp1' in :
+		Anusaaraka_stanford.sh, Anusaaraka_stanford_SMT.sh, Anusaaraka_stanford_minion.sh 
+31. Updated replace_nonascii-chars.c
+32. Modified and updated sd_ver_output
+33. Updated remove_out-files.sh
+34. Updated changes_in_databases.
+35. Updated Log.	

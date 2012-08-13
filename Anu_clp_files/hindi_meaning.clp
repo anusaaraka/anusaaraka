@@ -523,7 +523,7 @@
  )
  ;--------------------------------------------------------------------------------------------------------------
   (defrule test_for_PropN
-  (declare (salience 5400))
+  (declare (salience 5000))
   (id-cat_coarse ?id PropN)
   (id-word ?id ?word)
   (id-original_word ?id  ?original_wrd)
