@@ -25,7 +25,8 @@
 ;-------------------------------------------------------------------------------------
 (defrule remove_manual_punct_facts1
 (declare (salience 1001))
-?f<-(manual_id-cat-word-root-vib-grp_ids ?mid SYM $?)
+?f<-(manual_id-cat-word-root-vib-grp_ids ?mid SYM $?word)
+(test (eq $?word -));biMxu F xarpaNa kA muKya PZokasa kahalAwA hE ; here category of 'F' is SYM 
 =>
         (retract ?f)
 )
