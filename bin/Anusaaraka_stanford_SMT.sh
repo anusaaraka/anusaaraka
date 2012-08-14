@@ -112,7 +112,7 @@
 
   #################   SMT ####################
   cd $HOME_anu_test/bin/
-  apertium-destxt $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt  | lt-proc -a hi.morf.bin | apertium-retxt > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt.morph
+  apertium-destxt $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt  | lt-proc -ac hi.morf.bin | apertium-retxt > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt.morph
 
   cd $HOME_anu_test/miscellaneous/SMT/alignment
   $HOME_anu_test/miscellaneous/SMT/alignment/morph.out $MYPATH/tmp/$1_tmp/manual_hin.morph.txt < $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt.morph > /dev/null

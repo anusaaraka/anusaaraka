@@ -52,7 +52,7 @@
  )
 ;--------------------------------------------------------------------------------------------------------
  (defrule get_eng_word_list
- (declare (salience 100))
+ (declare (salience 1000))
  (id-original_word ?id ?word)
  ?f1<-(index ?id)
  ?f<-(English-list $?Eng_list)
@@ -61,6 +61,33 @@
  (assert (English-list $?Eng_list ?word))
  (bind ?id (+ ?id 1))
  (assert (index ?id))
+ )
+
+; ;These laws can be derived from [Newton's] laws of motion in mechanics. 
+; ;ina niyamoM ko yAMwrikI meM nyUtana ke gawi ke niyamoM se vyuwpanna kiyA jA sakawA hE.
+; ;here morph doesn't has entry for word Newton's as PropN, so for 
+; (defrule modify_PropN
+; (declare (salience 900))
+; (id-cat_coarse ?id PropN)
+; ?f<-(id-root ?id ?root)
+; ?f1<-(id-original_word ?id ?root)
+; (test (eq (sub-string (- (length ?root) 1) (length ?root) ?root) "'s"))
+; =>
+;	(retract ?f ?f1)
+;	(bind ?root (string-to-field (sub-string 1 (- (length ?root) 2) ?root)))
+;	(assert (id-root ?id ?root))	
+;	(assert (id-original_word ?id ?root))	
+; )
+ ;As aux ids are grouped in LWG individual word meaning is not necessary [Suggested by Chaitanya Sir (11-08-12)]
+ (defrule remove_aux_ids
+ (declare (salience 200))
+ ?f<-(root-verbchunk-tam-chunkids ? ? ? $?chunk_ids ?head_id)
+ (test (neq (length $?chunk_ids) 0))
+ ?f1<-(id-original_word ?id ?word)
+ ?f2<-(id-root ?id ?root)
+ (test (member$ ?id $?chunk_ids))
+ =>
+	(retract ?f1 ?f2)
  )
 ;--------------------------------------------------------------------------------------------------------
  (defrule chk_for_mwe
@@ -89,6 +116,13 @@
 		(if (and (neq ?mng "FALSE") (neq (length ?mng) 0))then
                         (bind ?count (+ ?count 1))
 			(assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root provisional_PropN_gdbm (explode$ ?mng)))
+		else (if (eq (sub-string (- (length ?word) 1) (length ?word) ?word) "'s") then ;These laws can be derived from [Newton's] laws of motion in mechanics. ;ina niyamoM ko yAMwrikI meM nyUtana ke gawi ke niyamoM se vyuwpanna kiyA jA sakawA hE. mplode$ (create$ ;here morph doesn't has entry for word Newton's as PropN, so for 
+			(bind ?word (string-to-field (sub-string 1 (- (length ?word) 2) ?word)))
+      			(bind ?mng (gdbm_lookup "provisional_PropN_dic.gdbm" ?word))
+			(if (and (neq ?mng "FALSE") (neq (length ?mng) 0))then
+                        (bind ?count (+ ?count 1))
+                        (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root provisional_PropN_gdbm (explode$ ?mng)))))
+			
         	)
 	)
 )
@@ -97,12 +131,21 @@
 (declare (salience 150))
 (id-original_word ?id ?word)
 (id-root ?id ?root)
+(id-cat_coarse ?id ?cat)
 =>
 	(bind ?new_mng "")
         (bind ?count 0)
         (if (not (numberp ?word)) then
-                (bind ?mng (gdbm_lookup "provisional_word_dic.gdbm" ?word))
-                (if (and (neq ?mng "FALSE") (neq (length ?mng) 0)) then (bind ?new_mng (str-cat ?new_mng "/" ?mng)))
+		(if (neq (gdbm_lookup "provisional_word_dic.gdbm" ?word) "FALSE") then
+                	 (bind ?mng (gdbm_lookup "provisional_word_dic.gdbm" ?word))
+                	 (if (and (neq ?mng "FALSE") (neq (length ?mng) 0)) then (bind ?new_mng ?mng))
+		else (if (neq (gdbm_lookup "provisional_word_dic.gdbm" ?root) "FALSE") then
+	                 (bind ?mng (gdbm_lookup "provisional_word_dic.gdbm" ?root))
+        	         (if (and (neq ?mng "FALSE") (neq (length ?mng) 0)) then (bind ?new_mng ?mng))
+                else (if (and (eq (sub-string (- (length (implode$ (create$ ?word))) 1) (length (implode$ (create$ ?word))) (implode$ (create$ ?word))) "'s") (eq ?cat PropN)) then
+                         (bind ?word (string-to-field (sub-string 1 (- (length (implode$ (create$ ?word))) 2) (implode$ (create$  ?word))))) 
+		         (bind ?mng (gdbm_lookup "provisional_word_dic.gdbm" ?word))
+                         (if (and (neq ?mng "FALSE") (neq (length ?mng) 0)) then (bind ?new_mng ?mng)))))
         )
         (bind ?new_mng1 "")
         (bind ?slh_index (str-index "/" ?new_mng))
@@ -113,8 +156,6 @@
                         (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
                         (bind ?new_mng1 (remove_character "-" (implode$ (create$  ?new_mng1)) " "))
                         (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root provisional_word_gdbm ?new_mng1))
-                        ;(bind ?new_mng1 (remove_character "Z" (implode$ (create$ ?new_mng1)) ""))
-                        ;(assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root provisional_word_gdbm ?new_mng1))
                         (bind ?new_mng (sub-string (+ ?slh_index 1) (length ?new_mng) ?new_mng))
                         (bind ?slh_index (str-index "/" ?new_mng))
                 )
@@ -125,8 +166,6 @@
         (if (neq ?new_mng "") then
                       (bind ?count (+ ?count 1))
                       (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root provisional_word_gdbm ?new_mng1))
-                      ;(bind ?new_mng1 (remove_character "Z" (implode$ (create$ ?new_mng1)) ""))
-                      ;(assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root provisional_word_gdbm ?new_mng1))
 
          )
 )
@@ -135,6 +174,7 @@
 (declare (salience 100))
 (id-original_word ?id ?word)
 (id-root ?id ?root)
+(id-cat_coarse ?id ?cat)
 =>
         (bind ?count 0)
 	(if (not (numberp ?root)) then
@@ -142,8 +182,13 @@
         (if (eq ?new_mng "FALSE") then
                 (bind ?str  (sub-string 1 1 ?root))
                 (bind ?str (upcase ?str))
-                (bind ?n_word (str-cat ?str (sub-string 2 (length ?root) ?root)))
+                (bind ?n_word (str-cat ?str (sub-string 2 (length (implode$ (create$ ?root))) (implode$ (create$ ?root)))))
                 (bind ?new_mng (gdbm_lookup "Physics-dictionary.gdbm" ?n_word))
+	)
+	(if (eq ?new_mng "FALSE") then
+	(if (and (eq (sub-string (- (length ?root) 1) (length ?root) ?root) "'s")(eq ?cat PropN)) then
+                     (bind ?n_word (string-to-field (sub-string 1 (- (length (implode$ (create$ ?root))) 2) (implode$ (create$ ?root)))))
+		     (bind ?new_mng (gdbm_lookup "Physics-dictionary.gdbm" ?n_word)))
         )
         (bind ?new_mng1 "")
         (bind ?slh_index (str-index "/" ?new_mng))
@@ -174,16 +219,35 @@
 (declare (salience 90))
 (id-original_word ?id ?word)
 (id-root ?id ?root)
+(id-cat_coarse ?id ?cat)
 =>
 	(bind ?new_mng "")
         (bind ?count 0)
-	 (if (not (numberp ?root)) then
+	(if (not (numberp ?root)) then
                 (bind ?mng (gdbm_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?root))
-                (if (and (neq ?mng "FALSE") (neq (length ?mng) 0)) then (bind ?new_mng (str-cat ?new_mng ?mng)))
+                (if (and (neq ?mng "FALSE") (neq (length ?mng) 0)) 
+			then (bind ?new_mng (str-cat ?new_mng ?mng))
+		else (if (and (eq (sub-string (- (length (implode$ (create$ ?root))) 1) (length (implode$ (create$ ?root))) (implode$ (create$ ?root))) "'s")(eq ?cat PropN)) then
+			(bind ?n_root (string-to-field (sub-string 1 (- (length (implode$ (create$ ?root))) 2) (implode$ (create$ ?root)))))
+			(bind ?mng (gdbm_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?n_root))
+			(if (and (neq ?mng "FALSE") (neq (length ?mng) 0)) then (bind ?new_mng (str-cat ?new_mng ?mng))))
+		)
                 (bind ?mng1 (gdbm_lookup "default_meaning_frm_oldwsd.gdbm" ?root))
-                (if (and (neq ?mng1 "FALSE") (neq (length ?mng1) 0)) then (bind ?new_mng (str-cat ?new_mng "/" ?mng1)))
+                (if (and (neq ?mng1 "FALSE") (neq (length ?mng1) 0)) then 
+			 (bind ?new_mng (str-cat ?new_mng "/" ?mng1))
+		else (if (and (eq (sub-string (- (length (implode$ (create$ ?root))) 1) (length (implode$ (create$ ?root))) (implode$ (create$ ?root))) "'s")(eq ?cat PropN)) then
+                        (bind ?n_root (string-to-field (sub-string 1 (- (length (implode$ (create$ ?root))) 2) (implode$ (create$ ?root)))))
+                        (bind ?mng1 (gdbm_lookup "default_meaning_frm_oldwsd.gdbm" ?n_root))
+                        (if (and (neq ?mng1 "FALSE") (neq (length ?mng1) 0)) then (bind ?new_mng (str-cat ?new_mng ?mng1))))
+                )
                 (bind ?mng2 (gdbm_lookup "provisional_root_dic.gdbm" ?root))
-                (if (and (neq ?mng2 "FALSE") (neq (length ?mng2) 0)) then (bind ?new_mng (str-cat ?new_mng "/" ?mng2)) )
+		(if (and (neq ?mng2 "FALSE") (neq (length ?mng2) 0)) then 
+			 (bind ?new_mng (str-cat ?new_mng "/" ?mng2))
+		else (if (and (eq (sub-string (- (length (implode$ (create$ ?root))) 1) (length (implode$ (create$ ?root))) (implode$ (create$ ?root))) "'s")(eq ?cat PropN)) then
+                        (bind ?n_root (string-to-field (sub-string 1 (- (length (implode$ (create$ ?root))) 2) (implode$ (create$ ?root)))))
+                        (bind ?mng2 (gdbm_lookup "provisional_root_dic.gdbm" ?n_root))
+                        (if (and (neq ?mng2 "FALSE") (neq (length ?mng2) 0)) then (bind ?new_mng (str-cat ?new_mng ?mng2))))
+		)
         )
 	(bind ?new_mng1 "")
         (bind ?slh_index (str-index "/" ?new_mng))
@@ -246,17 +310,3 @@
         )
 )
 ;--------------------------------------------------------------------------------------------------------
-;Modified by Mahalaxmi
-;(defrule rm_repeated_mng
-;(declare (salience 86))
-;?f0<-(id-org_wrd-root-dbase_name-mng ?id ?word ?root ?gdbm  $?w , ?mng  $?w1  ?mng , $?w2)
-;(test (and (eq (nth$ 1  $?w1) ,) (eq (nth$ (length  $?w1) $?w1) ,)))
-;(test (neq ?mng ,))
-;=>
-;        (retract ?f0)
-;        (assert (id-org_wrd-root-dbase_name-mng ?id ?word ?root ?gdbm $?w , ?mng  $?w1 $?w2))
-;)
-;--------------------------------------------------------------------------------------------------------
-
-
-

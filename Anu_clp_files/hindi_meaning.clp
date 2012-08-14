@@ -429,13 +429,13 @@
  =>
 	(bind ?count 0)
         (bind ?new_mng (gdbm_lookup "Physics-dictionary.gdbm" ?root))
-        (if (eq ?new_mng "FALSE") then
+        (if (and (eq ?new_mng "FALSE")(neq (length ?new_mng) 0)) then ;Added (neq (length ?new_mng) 0) by Maha Laxmi(10-08-12) If database in empty then length of ?new_mng = 0 
                 (bind ?str  (sub-string 1 1 ?root))
                 (bind ?str (upcase ?str))
                 (bind ?n_word (str-cat ?str (sub-string 2 (length ?root) ?root)))
                 (bind ?new_mng (gdbm_lookup "Physics-dictionary.gdbm" ?n_word))
 	)
-	(if (neq ?new_mng "FALSE") then
+	(if (and (neq ?new_mng "FALSE") (neq (length ?new_mng) 0))then
 		(bind ?slh_index (str-index "/" ?new_mng))
 		(if (neq ?slh_index FALSE) then
 			(bind ?new_mng1 (sub-string 1 (- ?slh_index 1) ?new_mng))

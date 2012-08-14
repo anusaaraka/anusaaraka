@@ -410,10 +410,12 @@
 (id-org_wrd-root-dbase_name-mng ? ? ?e_root ? $?mng)
 (id-root ?aid ?e_root)
 (test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?mng))) "FALSE"))
+(test (eq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root))) (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?mng)))))
 (not (prov_assignment ?aid ?mid))
 (not (anu_id-man_id ?aid ?mid))
 =>
 	(assert (anu_id-man_id ?aid ?mid))
+	(printout t "--------In HINDI WORDNET----------" crlf)
         (bind ?dic_val (gdbm_lookup "hindi_wordnet_dic1.gdbm" (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root)))))
         (bind ?dic_val (remove_character "/" ?dic_val " "))
         (if (neq ?dic_val "FALSE") then
@@ -598,8 +600,33 @@
         (retract ?f)
 )
 
+;The reflected ray simply retraces the path. 
+;Man tran :: parAvarwiwa kiraNa kevala apanA paWa [punaH] anureKiwa karawI hE .
+;Anu tran :: parAvarwiwa kiraNa sAxagI se paWa [Pira] nakSA uwArawI hE.
+(defrule previous_wrd_match_with_anu_using_hindi_wordnet
+(declare (salience -499))
+?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid ?id $?grp)
+?f1<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid ?id $?grp)
+(manual_id-word-cat ?mid1&:(eq ?mid1 (- ?id 1)) $?mng ?vib&~VIB)
+?f2<-(id-confidence_level ?mid ?conf_lvl)
+(not (manual_id-word-cat ?mid1&:(member ?mid1 $?grp) $?mng ?))
+(not (mng_has_been_aligned ?mid1))
+(test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?mng))) "FALSE"))
+(test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ (first$ $?anu_mng)))) "FALSE"))
+(test (eq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?mng))) (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ (first$ $?anu_mng))))))
+=>
+        (retract ?f ?f1 ?f2)
+        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid ?mid1 ?id $?grp))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid ?mid1 ?id $?grp))
+        (assert_control_fact mng_has_been_aligned ?mid1)
+        (bind ?conf_lvl (explode$ (str-cat ?conf_lvl , 7)))
+        (assert (id-confidence_level ?mid ?conf_lvl))
+)
+
+
+
 ;"As an [information system], it collects data and communicates economic information about the organization to a wide variety of users whose decisions and actions are related to its per for mance. "
-;एक [सूचना]प्रणाली के रूप में यह किसी भी संगठन की आर्थिक सूचनाओं से संबंधित आंकड़े एकत्रित कर उनका संप्रेषण उन विभिन्न उपयोगकत्र्ताओं तक करता है , जिनके निर्णय एवं क्रियाएं संगठन के प्रदर्शन को प्रभावित करती है .
+;Man tran ::eka [sUcanA praNAlI] ke rUpa meM yaha kisI BI saMgaTana kI ArWika sUcanAoM se saMbaMXiwa AMkadZe ekawriwa kara unakA saMpreRaNa una viBinna upayogakawrwAoM waka karawA hE , jinana ke praxarSana ko praBAviwa karawI hE .
 (defrule previous_wrd_match_with_anu
 (declare (salience -499))
 ?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid ?id $?grp)

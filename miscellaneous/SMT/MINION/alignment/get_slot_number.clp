@@ -29,6 +29,10 @@
 (test (eq ?aid (member$ ?aid1 $?order)))
 (manual_id-mng ?mid $?man_mng)
 =>
+	(if (eq (length $?anu_mng) 0) then (bind $?anu_mng (create$ -)));The reflected ray simply retraces the path. 
+						;Man tran :: parAvarwiwa kiraNa kevala [apanA] paWa punaH anureKiwa karawI hE .
+						;Anu tran :: parAvarwiwa kiraNa sAxagI se paWa Pira_nakSA uwArawI hE.
+
 	(assert (anu_id-anu_mng-sep-man_id-man_mng ?aid1 $?anu_mng - ?mid $?man_mng))
 )
 

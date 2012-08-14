@@ -93213,7 +93213,6 @@ the_adjective	vahI
 the_determiner	vaha
 the_adjective	vahI
 the_determiner	vaha
-the_UNDEFINED	English
 theater_noun	yuxXa_kRewra/Wiyetara/sinemA_hala/Salya-kakRa/nAtyaSAlA/nAtyakalA/nAtaka
 theater_UNDEFINED	rafgaSAlA
 theater's_UNDEFINED	rafgaSAlA

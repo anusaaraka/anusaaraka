@@ -19,7 +19,7 @@
  ?f<-(id-original_word 1 ?wrd)
  ?f1<-(parser_numid-word-remark 1 ?wrd1 ?remark)
  =>
-        (if (and (neq ?wrd1 ``) (neq ?wrd1 `)(neq ?wrd1 '')(neq ?wrd1 PUNCT-DoubleQuote)(neq ?wrd1 PUNCT-SingleQuote)) then   ;Ex: "Who is he like?" ; Stanford stores the information of " as `` .  
+        (if (and (neq ?wrd1 ``) (neq ?wrd1 `)(neq ?wrd1 '')(neq ?wrd1 PUNCT-OpenParen)(neq ?wrd1 PUNCT-DoubleQuote)(neq ?wrd1 PUNCT-SingleQuote)) then   ;Ex: "Who is he like?" Ex : (iv) The ray incident at any angle at the pole. ; Stanford stores the information of " as `` .  
 	  (if (neq ?remark -) then
 		(printout ?*link_map* "(parserid-wordid   P1"?remark"  1)" crlf)
 		(printout ?*link_map* "(parserid-wordid   P2   1)" crlf)

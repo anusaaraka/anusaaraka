@@ -1,3 +1,15 @@
+;A chemical reaction is basically a rearrangement of atoms among different molecules.
+;koI rAsAyanika aBikriyA mUla rUpa se viBinna aNuoM meM paramANuoM kI [punarvyavasWA hI] howI hE.
+(defrule hI_rule
+(declare (salience 50))
+?f1<-(manual_id-word-cat ?id0 ?w ?cat)
+?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1)  ?w1&hI ?)
+(not (id-word ? only))
+=>
+	(retract ?f1 ?f2)
+        (assert (manual_id-cat-word-root-vib-grp_ids ?id1 ?cat ?w ?w1 - ?w ?w1 - 0 - ?id0 ?id1))
+)
+
 ;na wo, na hI, xUsarI ora
 (defrule multi_word
 (declare (salience 50))
@@ -39,13 +51,13 @@
         (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ke ?w meM - ?id0 ?id1 ?id2 ?id3))
 )
 ;-----------------------------------------------------------------------------------------
-;ke liye , ke lie ,ke pariwaH ,ke sAWa
+;ke liye , ke lie ,ke pariwaH ,ke sAWa,[besides --> ke awirikwa]
 (defrule ke_[word]
 (declare (salience 20))
 ?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN|NNP)
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ke ?)
-?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|aMwargawa|ora ?)
+?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|aMwargawa|ora|awirikwa ?)
 =>
  (retract ?f1 ?f2 ?f3)
  ;(assert (manual_id-word-cat ?id0 $?noun ke ?w ?cat))

@@ -3721,7 +3721,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 39.Modified sd_ver_output, ber_ver_output, link_ver_output and verified_output
 40.Updated Log.
 
- 08-08-12
+ 12-08-12
  ========
  1.Added transliteration folder after deleting following files:
 	1. stanford-corenlp-v1.0.4.tgz
@@ -3820,8 +3820,27 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	* Added code to run above file in run_stanford-parser.sh
 	* Modified 'one_sentence_per_line.txt.std.penn' to 'one_sentence_per_line.txt.std.penn_tmp1' in :
 		Anusaaraka_stanford.sh, Anusaaraka_stanford_SMT.sh, Anusaaraka_stanford_minion.sh 
-31. Updated replace_nonascii-chars.c
-32. Modified and updated sd_ver_output
-33. Updated remove_out-files.sh
-34. Updated changes_in_databases.
-35. Updated Log.	
+31. Updated "default_mng_from_physics_domain" rule in hindi_meaning.clp file
+32. Updated "id-link_id_map_for_first_word" rule in parserid_wordid_mapping.clp file.
+33. Updated "prefix_vib_rule" [Removed 'English_PP' from test condition] in vibakthi.clp
+34. Removed the punctuation  pattern as all the punctuations have been mapped Eg:- (, ,) --> (P_COM PUNCT-Comma) from constituency_parse.l file
+35. Added new pattern in mapping-punctuations.lex file
+                \(:[ ]...\)             {       printf("(P_CLN PUNCT-DotDotDot)"); }
+36. Updated prepare_minion_input.clp file
+        Added ::
+        remove_aux_potential_fact       remove_prep_potential_fact      potential_facts_for_also
+        potential_facts_for_also1       potential_facts_for_too         potential_facts_for_too1
+        print_potential_constraints1
+        Modified ::
+        print_pot_info          print_dictionary_constarints            potential_facts_for_article_the
+        potential_facts_for_article_the1
+37. Added -c option at [lt-proc -ac hi.morf.bin] in Anusaaraka_stanford_minion.sh and Anusaaraka_stanford_SMT.sh
+38. changed the input file for get_tam_info.lex  from shallow_parser_output.dat to shallow_parser_output.dat.tmp9 in run_sentence_stanford_minion.sh and run_sentence_stanford_SMT.sh
+39. Updated replcae_anu_id_wrd_with_mng rule in get_slot_number.clp file
+40. Updated run_H_gen_minion.bat ,MINION/alignment/word_alignment.clp ,alignment/browser/create_hin_align_html.clp,Physics-dictionary.txt provisional_root_dic.txt provisional_word_dic.txt get_dbase_mng.clp get_group_mng.sh get_man_grp_mng.clp manual_lwg.clp files
+41. Removed meaning "the_UNDIFINED --> English " from default-iit-bombay-shabdanjali-dic.txt.
+41. Updated replace_nonascii-chars.c
+42. Modified and updated sd_ver_output
+43. Updated remove_out-files.sh
+44. Updated changes_in_databases.
+45. Updated Log.	

@@ -1,5 +1,7 @@
 ; This file is written by shirisha Manju
 
+(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
+
  (deffunction remove_character(?char ?str ?replace_char)
                         (bind ?new_str "")
                         (bind ?index (str-index ?char ?str))
@@ -64,10 +66,23 @@
 	(assert (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ?g ?no ?p ?c ?suf))
 	(assert (position-cat-man_grp_mng   ?id ?node $?word1 $?word  - -))
         (assert (head_id-grp_ids ?id $?grp1 $?grp))
-        (printout t ?word2"---"?word3 crlf)
         (bind ?word2 (explode$ (str-cat ?word2 " " ?word3)))
         (assert (id-node-word-root ?n2 ?cat2 ?word2 - ?root))
 	(assert (modified_word_id ?id))
+ )
+
+ ;The macroscopic domain includes phenomena at the laboratory, terrestrial and astronomical scales.
+ (defrule check_prev_word_of_ho_with_anu
+ (declare (salience 91))
+ ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN ho ?cat ?g ?no ?p ?c ?suf)
+ ?f5<-(position-cat-man_grp_mng =(- ?id 1) ?n $?word - -)
+ (or (root-verbchunk-tam-chunkids ? ? ? $? ?v_id)(pada_info (group_head_id ?v_id)(group_cat infinitive)))
+ (id-root ?v_id ?root)
+ (id-org_wrd-root-dbase_name-mng ? ? ?root ? $?word1)
+ (test (subsetp $?word $?word1))
+ (not (combine_prev_word_for_ho_id ?id))
+ =>
+        (assert (combine_prev_word_for_ho_id ?id))
  )
 
 
@@ -76,13 +91,14 @@
  ; "kahIM howI hEM" should not be grouped here
  (defrule modify_wrd_mng_for_VP_kriyAmUla_ho
  (declare (salience 90))
+ (combine_prev_word_for_ho_id ?id)
  ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN ho ?cat ?g ?no ?p ?c ?suf)
  ?f1<-(head_id-grp_ids ?id $?grp) ;?4
  ?f2<-(position-cat-man_grp_mng   ?id ?node     $?word  - -);f0
  ?f3<-(id-node-root-cat-gen-num-per-case-tam =(- ?id 1) ?n ?r ? ? ? ? ? ?);f1
  ?f4<-(head_id-grp_ids =(- ?id 1) $?grp1);f3
  ?f5<-(position-cat-man_grp_mng =(- ?id 1) ?n $?word1 - -);f2
- (test (neq (implode$ (create$ $?word1)) "kahIM" ))
+; (test (neq (implode$ (create$ $?word1)) "kahIM" ))
  ?f7<-(id-node-word-root ?n1 ?cat2 ?word3 - ?root1)
  (test (member$ ?n1 $?grp))
  ?f6<-(id-node-word-root ?n2&=(- ?n1 1) ?cat1 ?word2 - ?root0)

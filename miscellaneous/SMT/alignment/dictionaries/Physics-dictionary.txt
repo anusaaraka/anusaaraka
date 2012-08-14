@@ -219,7 +219,7 @@ Portable	subAhya
 Revolution	parikramA/ParivramaNa
 Path_length	paWa_laMbAI
 Coincide	saMpAwI
-Origin	mUla_¯biMxu
+Origin	mUla_biMxu
 Magnitude	parimANa
 Direction	xiSA
 Rectilinear_motion	sarala_reKIya_gawi
@@ -606,4 +606,5 @@ Convection	saMvahana
 Radiation	vikiraNa
 Maxwell	mEksavela
 Newton	nyUtana
+principal_axis	muKya_akRa
 #dimension	vima

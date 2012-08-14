@@ -255,7 +255,8 @@
                                    ;Ex: We lost 30 minutes in the traffic jam. 
  (test (eq (sub-string (- (length ?word) 1) (length ?word) ?word) "'s"))
  ?f1<-(pada_info (group_head_id ?id)(group_cat ?cat))
- (test (and (neq ?cat English_PP)(neq ?cat PP_intermediate)))
+ ;(test (and (neq ?cat English_PP)(neq ?cat PP_intermediate)))
+ (test (neq ?cat PP_intermediate))
  =>  
 	(retract ?f0)
 	(modify ?f1 (vibakthi kA))

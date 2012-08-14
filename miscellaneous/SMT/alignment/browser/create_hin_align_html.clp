@@ -137,6 +137,7 @@
  (declare (salience 6000))
  ?f<-(anu_id-anu_mng-sep-man_id-man_mng ?id $?anu_grp_mng - ?id1 $?man_grp_mng)
  (test (numberp ?id))
+ (test (and (neq (length $?anu_grp_mng) 0)(neq (length $?man_grp_mng) 0)))
  =>
  (retract ?f)
  (loop-for-count (?i 1 (length $?anu_grp_mng))

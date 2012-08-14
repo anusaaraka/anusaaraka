@@ -4,10 +4,9 @@
 #define YYSTYPE char*
 #include "y.tab.h"
 extern YYSTYPE yylval; 
+//[(][,.;'"`?:!\-\%LR][,.;'"`?:!\-/\[\]\%CRBL ]*[)]                  /*  */ This pattern is removed as all the punctuations have been mapped Eg:- (, ,) --> (P_COM PUNCT-Comma)
 %}
 %%
-[(][,.;'"`?:!\-\%LR][,.;'"`?:!\-/\[\]\%CRBL ]*[)]                  /*  */
-
 \/                      return SLASH;
 \(                      return LEFT_PAREN;
 \)                      return RIGHT_PAREN;
