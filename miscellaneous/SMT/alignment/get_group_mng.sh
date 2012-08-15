@@ -20,5 +20,5 @@ sed 's/\(.*\)\t\(.*\)\t\(.*\)\t\(.*\)\t\(.*\)/\1\t\4\t\5\t\2\t-\t-\3/g' $1.tmp8.
 
 cut -f1  $1.tmp3 |sed -n '1h;2,$H;${g;s/\n/))/g;p}'|sed 's/<Sentence id="1">//g' | sed 's/<\/Sentence>//g' |sed 's/^))))/(head_id-grp_ids\t/g' |sed 's/))))/\n(head_id-grp_ids\t/g' |sed 's/))/ /g' | sed 's/$/)/g' |sed 's/(head_id-grp_ids\t)//g' > manual_ids_tmp.dat
 
-cut -f2-4 $1 $1.intermediate > $1.intermediate
+cut -f2-4 $1 > $1.intermediate
 paste $1.tmp1.intermediate $1.intermediate > $1.tmp9
