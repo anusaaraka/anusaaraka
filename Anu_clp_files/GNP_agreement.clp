@@ -409,7 +409,7 @@
  ;------------------------------------------------------------------------------------------------------------------- 
  ; Sita and Gita came here .
  ; Rama and Sita came here .
- ; Added by S.Maha laxmi (17-04-10) Suggested by Sukhada.
+ ; Added by Mahalaxmi (17-04-10) Suggested by Sukhada.
  ;In case of a pada having 'and' as its head following are the GNP agreement rules:
  ;1. feminine (F): if all the componants are females. e.g.
  ;   F + F = F

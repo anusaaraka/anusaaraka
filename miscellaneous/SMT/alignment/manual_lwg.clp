@@ -1,13 +1,15 @@
-;A chemical reaction is basically a rearrangement of atoms among different molecules.
-;koI rAsAyanika aBikriyA mUla rUpa se viBinna aNuoM meM paramANuoM kI [punarvyavasWA hI] howI hE.
-(defrule hI_rule
-(declare (salience 50))
-?f1<-(manual_id-word-cat ?id0 ?w ?cat)
-?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1)  ?w1&hI ?)
-(not (id-word ? only))
+;It is mainly through light and the sense of vision that we know and interpret the world around us.
+;Man tran :: muKya rUpa se prakASa evaM xqRti kI saMvexanA ke kAraNa hI hama [apane cAroM ora] ke saMsAra ko samaJawe evaM usakI vyAKyA karawe hEM.
+;Anu tran :: yaha halake meM se waWA xUraxarSiwA kI saMvexanA meM se pramuKa rUpa se hE ki hama hamAre cAroM ora yuga vyAKyA kara waWA jAnawI hE.
+(defrule multi_word0
+(declare (salience 60))
+?f0<-(manual_id-word-cat ?id0 ?w&apane ?cat)
+?f1<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?w1&cAroM ?)
+?f2<-(manual_id-word-cat ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora ?)
+(id-node-word-root ?id0 ? $?word1 - $?root)
 =>
-	(retract ?f1 ?f2)
-        (assert (manual_id-cat-word-root-vib-grp_ids ?id1 ?cat ?w ?w1 - ?w ?w1 - 0 - ?id0 ?id1))
+        (retract ?f0 ?f1 ?f2)
+        (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat ?w  - $?root - ?w1 ?w2 - ?id0 ?id1 ?id2))
 )
 
 ;na wo, na hI, xUsarI ora
@@ -52,12 +54,15 @@
 )
 ;-----------------------------------------------------------------------------------------
 ;ke liye , ke lie ,ke pariwaH ,ke sAWa,[besides --> ke awirikwa]
+;xravyamAna kenxra kI pariBARA [jAnane ke bAxa] , aba hama isa sWiwi meM hEM ki kaNoM ke eka nikAya ke lie isake BOwika mahawva kI vivecanA kara sakeM.
+;It is mainly through light and the sense of vision that we know and interpret the world around us.--> muKya rUpa se prakASa evaM xqRti kI [saMvexanA ke kAraNa] hI hama apane cAroM ora ke saMsAra ko samaJawe evaM usakI vyAKyA karawe hEM
+
 (defrule ke_[word]
 (declare (salience 20))
 ?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN|NNP)
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ke ?)
-?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|aMwargawa|ora|awirikwa ?)
+?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|aMwargawa|ora|awirikwa|bAxa|kAraNa ?)
 =>
  (retract ?f1 ?f2 ?f3)
  ;(assert (manual_id-word-cat ?id0 $?noun ke ?w ?cat))

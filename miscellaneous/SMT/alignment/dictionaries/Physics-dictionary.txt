@@ -607,4 +607,5 @@ Radiation	vikiraNa
 Maxwell	mEksavela
 Newton	nyUtana
 principal_axis	muKya_akRa
+electromagnetic	vExyuwacumbakIya
 #dimension	vima

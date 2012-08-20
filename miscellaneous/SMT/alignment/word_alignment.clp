@@ -27,6 +27,17 @@
                 (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
 )
 ;-------------------------------------------------------------------------------------
+ ;As aux ids are grouped in LWG individual word alignment is not necessary.
+ (defrule remove_aux_ids
+ (declare (salience 2000))
+ ?f<-(root-verbchunk-tam-chunkids ? ? ? $?chunk_ids ?head_id)
+ (test (neq (length $?chunk_ids) 0))
+ ?f1<-(id-original_word ?id ?word)
+ ?f2<-(id-root ?id ?root)
+ (test (member$ ?id $?chunk_ids))
+ =>
+        (retract ?f1 ?f2)
+ )
 ;Counts the number of verbs of anusaaraka sentence
 (defrule verb_count_of_anu
 (declare (salience 1001))
@@ -110,6 +121,7 @@
 ;-------------------------------------------------------------------------------------
 ;Basically, there are two [domains] of interest: macroscopic and microscopic. 
 ;mUla rUpa se isake xo rucikara [praBAva kRewra]  : sWUla waWA sUkRma hEM  .
+;Presently this rule looks for two continuous words of manual sentence in the dictionary fact [better solution is need]
 (defrule exact_match_using_multi_word_dic4
 (declare (salience 902))
 (current_id ?mid)
@@ -551,8 +563,8 @@
 ?f3<-(id-confidence_level ?mid1 8)
 =>
           (retract ?f ?f1 ?f4 ?f5)
-;         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_ids $?man_ids1))
-;         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?man_ids $?man_ids1))
+          ;(assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_ids $?man_ids1))
+          ;(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?man_ids $?man_ids1))
           (assert (potential_assignment_vacancy_id-candidate_id ?aid ?mid))
           (assert (potential_assignment_vacancy_id-candidate_id ?aid ?mid1))
           (assert_control_fact rm_aligned_fact $?man_ids $?man_ids1)

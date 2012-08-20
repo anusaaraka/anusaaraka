@@ -176,6 +176,7 @@
  (load-facts "manual_lwg.dat")
  (load-facts "word_alignment_tmp.dat")
  (load-facts "manual_word.dat")
+ (load-facts "word.dat")
  (run)
  (save-facts "manual_lwg_new.dat" local manual_id-mng)
  (save-facts "manual_id_mapping.dat" local manual_id-mapped_id)

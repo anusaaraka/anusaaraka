@@ -22,7 +22,7 @@
 ;--------------------------------------------------------------------------------------------------------
  (deffunction mwe_lookup(?gdbm ?rank $?Eng_sen)
  (if (eq 2 ?rank) then (bind $?Eng_sen (explode$ (lowcase (implode$ (create$ $?Eng_sen))))))
- (printout t $?Eng_sen ?gdbm "  " ?rank crlf)
+ ;(printout t $?Eng_sen ?gdbm "  " ?rank crlf)
  (bind ?len (length $?Eng_sen))
  (loop-for-count (?i 1 ?len)
                    (bind ?flag 1)
@@ -38,13 +38,26 @@
                                     (bind $?grp_ids (create$ $?grp_ids ?j)))
                                     (bind ?lkup (gdbm_lookup ?gdbm  ?str))
                                     (if (and (neq (length ?lkup) 0)(neq ?lkup "FALSE") (> (length (create$ $?grp_ids)) 1)) then
-                                        (bind ?str1 ?str)
-                                        (bind ?mng ?lkup)
+					(bind ?str1 ?str)
+					(if (neq ?gdbm "Physics-dictionary.gdbm") then
+ 	                                    (bind ?count 1)
+					    (if (neq ?lkup "FALSE") then
+					    (while (neq (str-index "#" ?lkup) FALSE)
+                                               (if (eq ?count 1) then
+                                                   (bind ?mng (sub-string 1 (- (str-index "#" ?lkup) 1) ?lkup)))
+                                               (if (eq ?count 3) then
+                                                    (bind ?cat (explode$ (sub-string 1 (- (str-index "#" ?lkup) 1) ?lkup))))
+                                               (if (eq ?count 4) then
+                                                    (bind ?h_id (explode$ (sub-string 1 (- (str-index "#" ?lkup) 1) ?lkup))))
+                                               (bind ?count (+ ?count 1))
+                                               (bind ?lkup (sub-string (+ (str-index "#" ?lkup) 1) (length ?lkup) ?lkup))
+                                               )
+                                             )
+					else
+                                        (bind ?mng ?lkup))
                                         (bind ?mng (remove_character "_" ?mng " "))
                                         (bind ?str1 (remove_character "_" ?str1 " "))
                                         (assert (multi_word_expression-dbase_name-mng (explode$ (lowcase (implode$ ?str1))) Physics_dictionary_gdbm ?mng))
-                                    ;    (bind ?mng (remove_character "Z" (implode$ (create$ ?mng)) ""))
-                                    ;    (assert (multi_word_expression-dbase_name-mng (explode$ (lowcase (implode$ ?str1))) Physics_dictionary_gdbm ?mng))
                                         (assert (multi_word_expression-grp_ids (explode$ (lowcase (implode$ ?str1))) $?grp_ids))
                                     )
                     )

@@ -42,6 +42,7 @@
  cat para_sent_id_info.dat word.dat sd_chunk.dat position.dat hindi_punctuation.dat catastrophe.dat English_sentence.dat word_alignment.dat manual_hindi_sen.dat confidence_level.dat >>$MYPATH/$1_tmp/$2/facts_for_align_html
 
  cat proper_nouns.dat >> $MYPATH/$1_tmp/proper_nouns_list
+ cat minion_sen_dic.txt >> $MYPATH/$1_tmp/minion_dic.txt
 
  if [ -s "minion_output_tmp.dat" ] ;
  then   echo $2 "  Solution Found" >> $MYPATH/$1_tmp/no_sol_found_tmp.txt

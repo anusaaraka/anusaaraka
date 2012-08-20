@@ -31,6 +31,51 @@
         (retract ?f)
 )
 ;-------------------------------------------------------------------------------------
+;A chemical reaction is basically a rearrangement of atoms among different molecules.
+;koI rAsAyanika aBikriyA mUla rUpa se viBinna aNuoM meM paramANuoM kI [punarvyavasWA hI] howI hE.
+(defrule hI_rule
+(declare (salience 901))
+?f0<-(current_id ?mid)
+?f1<-(manual_id-mng ?cnt $?grp_ids)
+(test (eq ?cnt ?*count*))
+?f2<-(manual_id-cat-word-root-vib-grp_ids ?mid ? ?w&hI - ?r&hI - 0 - ?mid)
+(not (id-word ? only))
+=>
+        (retract ?f0 ?f1 ?f2)
+        (assert (manual_id-mng ?cnt $?grp_ids ?mid))
+        (assert_control_fact delete_manual_fact ?mid)
+)
+;-------------------------------------------------------------------------------------
+;Sen:-The size of the image relative to the size of the object is another important quantity to consider.
+;Man tran :-vaswu ke sAija ke sApekRa prawibimba kA sAija BI eka mahawvapUrNa vicAraNIya rASi hE
+;Anu tran :- vaswu ke AkAra ke lie sambanXiwa prawimA kA AkAra vicAra karane ke lie xUsarA mahawvapUrNa parimANa hE.
+(defrule BI_rule
+(declare (salience 901))
+?f0<-(current_id ?mid)
+?f1<-(manual_id-mng ?cnt $?grp_ids)
+(test (eq ?cnt ?*count*))
+?f2<-(manual_id-cat-word-root-vib-grp_ids ?mid ? ?w&BI - ?r&BI - 0 - ?mid)
+(not (id-word ? also))
+(not (id-word ? too))
+=>
+        (retract ?f0 ?f1 ?f2)
+        (assert (manual_id-mng ?cnt $?grp_ids ?mid))
+        (assert_control_fact delete_manual_fact ?mid)
+)
+;-------------------------------------------------------------------------------------
+(defrule ki_rule
+(declare (salience 901))
+?f0<-(current_id ?mid)
+?f1<-(manual_id-mng ?cnt $?grp_ids)
+(test (eq ?cnt ?*count*))
+?f2<-(manual_id-cat-word-root-vib-grp_ids ?mid ? ?w&ki - ?r&ki - 0 - ?mid)
+(not (id-word ? that))
+=>
+        (retract ?f0 ?f1 ?f2)
+        (assert (manual_id-mng ?cnt $?grp_ids ?mid))
+        (assert_control_fact delete_manual_fact ?mid)
+)
+;-------------------------------------------------------------------------------------
 (defrule rule1
 (declare (salience 900))
 ?f0<-(current_id ?mid)

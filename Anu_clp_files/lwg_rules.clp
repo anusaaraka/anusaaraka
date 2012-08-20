@@ -5241,7 +5241,7 @@
 ; Modified the print statement from
 ;(printout  old_lwg_file  "(lwg_root-verbchunk-tam-chunkids   "  ?rt   "     "?word" en  " ?ID0  ")"  crlf )  to
 ;(printout  old_lwg_file  "(lwg_root-verbchunk-tam-chunkids   "  ?rt   "     "?word" ed_en  " ?ID0  ")"  crlf )
-;(by Maha laxmi 22-09-09 Eg:"The page turned from red to green ." )
+;(by Mahalaxmi 22-09-09 Eg:"The page turned from red to green ." )
 (defrule rule311
 ?f0<-(id_w_adv-word ?id0 ?word)
 (id-original_word  ?x ?word)

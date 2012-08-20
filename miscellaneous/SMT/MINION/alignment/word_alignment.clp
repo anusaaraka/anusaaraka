@@ -1,5 +1,18 @@
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
+;sort_grp function sorts  the given ids and make each id unique i.e; if i/p [9 3 4 3 5] ==> o/p [3 4 5 9]
+(deffunction sort_grp($?ids)
+        (bind ?len (length $?ids))
+        (bind $?new_ids (create$ ))
+        (bind $?ids (sort > $?ids))
+        (while (> (length $?ids) 0)
+                        (bind ?id (nth$ 1 $?ids))
+                        (bind $?ids (delete-member$ $?ids ?id))
+                        (bind $?new_ids (create$ $?new_ids ?id))
+        )
+       (bind $?ids $?new_ids)
+)
+
 (deffunction assert_control_fact(?fact_name $?ids)
                 (loop-for-count (?i 1 (length $?ids))
                                 (bind ?j (nth$ ?i $?ids))
@@ -187,7 +200,7 @@
 (current_id ?mid)
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?noun - $?vib -  $?grp)
 (test (neq $?vib 0))
-(id-HM-source ?aid $?noun ?)
+(id-HM-source ?aid $?noun ?src&~Word)
 (pada_info (group_head_id  ?aid)(vibakthi ?vib1))
 (test (eq (implode$ (create$ (remove_character "_" (implode$ (create$ ?vib1)) " "))) (implode$ (create$ $?vib))))
 (not (prov_assignment ?aid ?mid))
@@ -203,7 +216,7 @@
 (current_id ?mid)
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?noun - $?vib -  $?grp)
 (test (neq $?vib 0))
-(id-HM-source ?aid $?noun ?)
+(id-HM-source ?aid $?noun ?src&~Word)
 (not (prov_assignment ?aid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
@@ -370,6 +383,21 @@
 (declare (salience 850))
 (current_id ?mid)
 (manual_id-cat-word-root-vib-grp_ids ?mid ~VM $? - $?mng - 0 - $?)
+(id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?mng)
+(id-root ?eid ?e_word)
+(not (prov_assignment ?eid ?mid))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (assert (anu_ids-sep-manual_ids ?eid - ?mid))
+        (assert (prov_assignment ?eid ?mid))
+)
+
+(defrule noun-word_with_0_vib2
+(declare (salience 850))
+(current_id ?mid)
+(manual_id-cat-word-root-vib-grp_ids ?mid ~VM $?word - $? - $? - $?)
+(man_word-root-cat      $?word   $?mng ?)
 (id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?mng)
 (id-root ?eid ?e_word)
 (not (prov_assignment ?eid ?mid))
@@ -568,6 +596,26 @@
         	 (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?man_ids $?man_ids1))))
 )
 
+
+;The reflected ray is parallel to the principal axis. 
+;Man tran :: parAvarwiwa kiraNa [muKya akRa ke] samAnwara gamana karawI hE.
+;Anu tran :: parAvarwiwa kiraNa [praXAna akRa ko] samAnAnwara hE.
+(defrule combine_group3
+(declare (salience -99))
+?f<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_ids)
+?f4<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?man_ids)
+?f1<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid1 $?man_ids1)
+?f5<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid1 $?man_ids1)
+(test (eq ?mid1 (+ ?mid 1)))
+?f2<-(id-confidence_level ?mid 8)
+?f3<-(id-confidence_level ?mid1 8)
+=>
+          (retract ?f ?f1 ?f4 ?f5)
+         (bind $?man_ids (sort_grp (create$ $?man_ids $?man_ids1)))
+         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_ids))
+         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?man_ids))
+)
+
 (defrule combine_group2
 (declare (salience -100))
 ?f<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_ids)
@@ -579,6 +627,9 @@
 ?f3<-(id-confidence_level ?mid1 8)
 =>
           (retract ?f ?f1 ?f4 ?f5)
+;	  (bind $?man_ids (sort > (create$ $?man_ids $?man_ids1)))
+;	  (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_ids))
+;         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?man_ids $?man_ids1))
           (assert (potential_assignment_vacancy_id-candidate_id ?aid ?mid))
           (assert (potential_assignment_vacancy_id-candidate_id ?aid ?mid1))
           (assert_control_fact rm_aligned_fact $?man_ids $?man_ids1)

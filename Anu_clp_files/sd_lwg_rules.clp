@@ -91,7 +91,10 @@
  ;Replacing a VP mother whose child is  S|SBAR|SQ on checking the head word .
  ;Ex:-A fat boy [had to eat] fruits. 
  ;Ex:-She made the girl feed the child.[made_feed]
- (defrule replace_S_for_causitive
+ ;These smugglers are to be captured. Broken windows need to be replaced. 
+ ;That is the way business used to be done and that is the way business needs to be done.
+
+ (defrule replace_S
  (declare (salience 100))
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?S $?pos)
  (parserid-word ?head ?w&get|got|gets|getting|have|had|has|having|make|makes|making|made|need|Let|let|are|Are) 
