@@ -18,7 +18,13 @@ record-keeping	hisAba-kiwAb
 however	waWApi
 early	Axya
 diverge	apasariwa
-quantity	rASi
-object	bimba
-paraxial	upAkRIya
+happen	pariNAma_ho
+assume	mAnakara_cala
+mechanism	yaMwra_vyavasWA
+rotational	GUrNana
+pioneer	paWa_praxarSaka
 propagation	saFcaraNa
+paraxial	upAkRIya
+object	bimba
+quantity	rASi
+elastic	prawyAsWa

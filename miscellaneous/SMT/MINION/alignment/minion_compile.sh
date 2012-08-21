@@ -9,6 +9,10 @@ rm $HOME_anu_test/Anu_databases/preposition_dictionary.gdbm
 rm $HOME_anu_test/Anu_databases/hindi_wordnet_dic1.gdbm
 rm $HOME_anu_test/Anu_databases/hindi_wordnet_dic2.gdbm
 
+cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
+sh get_txt_files.sh
+sh get_dictionary_in_canonical_form.sh
+
 
 cd $HOME_anu_test/Anu_data
 echo "Creating Physics-dictionary"
