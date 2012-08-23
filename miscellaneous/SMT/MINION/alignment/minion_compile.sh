@@ -35,6 +35,10 @@ echo "Creating Hindi Wordnet dictionaries"
 echo "Creating Hindi_multi_word dictionary"
 ./create-gdbm.pl $HOME_anu_test/Anu_databases/hindi_multi_word.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/hindi_multi_word_in_canonical_form.txt
 
+ echo "Creating multi_word_expressions.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/multi_word_expressions.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/multi_word_expressions_in_canonical_form.txt
+ echo "Creating default-iit-bombay-shabdanjali-dic.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/default-iit-bombay-shabdanjali-dic_in_canonical_form.txt
 
 cd $HOME_anu_test/miscellaneous/SMT/MINION/alignment
 echo "Compiling minion files"
