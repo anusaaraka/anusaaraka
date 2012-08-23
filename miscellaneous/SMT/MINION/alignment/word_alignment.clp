@@ -123,7 +123,7 @@
 (declare (salience 902))
 (current_id ?mid)
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng - $? - $? - $?grp_ids1)
-(manual_id-cat-word-root-vib-grp_ids ?mid1&:(+ ?mid 1) ? $?mng1 - $? - $?vib - $?grp_ids2)
+(manual_id-cat-word-root-vib-grp_ids ?mid1&:(= (+ ?mid 1) ?mid1) ? $?mng1 - $? - $?vib - $?grp_ids2)
 (id-org_wrd-root-dbase_name-mng ? ? ?root ? $?dic_mng)
 (id-root ?aid ?root)
 (test (eq (create$  $?mng $?mng1) (create$ $?dic_mng)))
@@ -502,7 +502,7 @@
 ?f3<-(prov_assignment ?aid ?mid)
 (test (member$ ?aid $?aids))
 (id-Apertium_output ?aid $?anu_mng)
-(test (> (length $?anu_mng) 0))
+;(test (> (length $?anu_mng) 0))
 (test (member$ ?mid $?mids))
 =>
         (retract ?f2)

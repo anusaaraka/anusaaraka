@@ -45,6 +45,46 @@
         (assert (manual_id-left_punc ?id ?punc))
  )
  ;------------------------------------------------------------------------------------------------------------------------
+;Added by Mahalaxmi (1-08-2012)
+; Eng sen ::It is mainly through light and the sense of vision that we know and interpret the world around us.
+; Man tra ::muKya rUpa se prakASa evaM xqRti kI saMvexanA ke kAraNa hI hama apane cAroM ora ke saMsAra ko samaJawe evaM [usakI vyAKyA karawe hEM] .
+; Anu trn ::yaha halake meM se waWA xUraxarSiwA kI saMvexanA meM se pramuKa rUpa se hE ki hama hamAre cAroM ora yuga vyAKyA kara waWA jAnawI hE.
+
+ (defrule modify_wrd_mng_for_VP_kriyAmUla_kara_with_modifier
+ (declare (salience 91))
+ ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN kara ?cat ?g ?no ?p ?c ?suf)
+ ?f1<-(head_id-grp_ids ?id $?grp) ;?4
+ ?f2<-(position-cat-man_grp_mng   ?id ?node     $?word  - -);f0
+ ?f3<-(id-node-root-cat-gen-num-per-case-tam =(- ?id 1) ?n ?r ?m_cat ?m_g ?m_n ?m_p ?m_c ?m_t);f1
+ ?f4<-(head_id-grp_ids =(- ?id 1) $?grp1);f3
+ ?f5<-(position-cat-man_grp_mng =(- ?id 1) ?n $?word1 - -);f2
+ ?f7<-(id-node-word-root ?n1 ?cat2 ?word3 - ?root1)
+ (test (member$ ?n1 $?grp))
+ ?f6<-(id-node-word-root ?n2&=(- ?n1 1) ?cat1 ?word2 - ?root0)
+ (id-node-word-root ?n3 ? ?modifier&usakI - $?m_root)
+ (test (and (member$ ?n2 $?grp1)(member$ ?n3 $?grp1))) 
+ (not (modified_word_id ?id))
+ =>
+;       (retract ?f ?f0 ?f1 ?f2)
+        (retract ?f ?f1 ?f2 ?f3 ?f4 ?f5 ?f6 ?f7)
+        (bind ?modifier_pos (member$ ?modifier $?word1))
+        (bind $?krimul_word (subseq$ $?word1 (+ ?modifier_pos 1) (length $?word1)))
+        (bind $?b_krimul_word (subseq$ $?word1 1 ?modifier_pos))
+        (bind $?b_krimul_word_ids (subseq$ $?grp1 1 ?modifier_pos))
+        (bind ?r1 (implode$ $?krimul_word))
+        (bind ?root (string-to-field (str-cat ?r1"_kara")))
+        (assert (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ?g ?no ?p ?c ?suf))
+        (assert (id-node-root-cat-gen-num-per-case-tam  =(- ?id 1) ?n $?m_root ?m_cat ?m_g ?m_n ?m_p ?m_c ?m_t))
+        (assert (position-cat-man_grp_mng   ?id ?node $?krimul_word $?word  - -))
+        (assert (position-cat-man_grp_mng   =(- ?id 1) ?n $?b_krimul_word  - -))
+        (assert (head_id-grp_ids ?id ?n2 $?grp))
+        (assert (head_id-grp_ids  =(- ?id 1) $?b_krimul_word_ids))
+        (bind ?word2 (explode$ (str-cat ?word2 " " ?word3)))
+        (assert (id-node-word-root ?n2 ?cat2 ?word2 - ?root))
+        (assert (modified_word_id ?id))
+ )
+
+
  ;The area has got the digamber jain temple which houses the birds hospital.
  (defrule modify_wrd_mng_for_VP_kriyAmUla_kara
  (declare (salience 90))
