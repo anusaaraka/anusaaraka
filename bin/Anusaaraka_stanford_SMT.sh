@@ -38,6 +38,7 @@
  mkdir $MYPATH/tmp/$1_tmp
  $HOME_anu_test/Anu_src/identify-nonascii-chars.out $5 $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt
  $HOME_anu_test/Anu_src/identify-nonascii-chars.out $6 $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp.txt
+ sh $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/run_tokenizer_fr.sh $5 > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tokenized.txt
 # cp $5 $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt
 # cp $6 $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp.txt
 
@@ -116,10 +117,10 @@
 
   cd $HOME_anu_test/miscellaneous/SMT/alignment
   $HOME_anu_test/miscellaneous/SMT/alignment/morph.out $MYPATH/tmp/$1_tmp/manual_hin.morph.txt < $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt.morph > /dev/null
-  python add-suf-into-chunks.py $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp.txt > $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp1.txt
+  python add-suf-into-chunks.py $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tokenized.txt $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp.txt > $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp1.txt
 
   cd $MYPATH/tmp/$1_tmp
-  sed 's/,/ @PUNCT-Comma/g'  one_sen_per_line_manual_hindi_sen_tmp.txt  |  sed 's/\([^0-9]\)\./\1 @PUNCT-Dot/g' | sed 's/?/ @PUNCT-QuestionMark/g' | sed 's/``/ @PUNCT-DoubleQuote/g' | sed "s/''/ @PUNCT-DoubleQuote/g" | sed 's/;/ @PUNCT-Semicolon/g' | sed 's/:/ @PUNCT-Colon/g' |  sed "s/[\'\`\']/ @PUNCT-SingleQuote/g" | sed 's/"/ @PUNCT-DoubleQuote/g' | sed 's/(/ @PUNCT-OpenParen/g' | sed 's/)/ @PUNCT-ClosedParen/g' | sed 's/!/ @PUNCT-Exclamation/g' | sed 's/\$/ @SYM-Dollar/g' |  sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}' | sed 's/nonascii/@nonascii/g' | sed 's/+/ @SYM-Plus/g' | sed 's/=/ @SYM-EqualTo/g' | sed 's/%/ @SYM-Percent/g' | sed 's/β/ @SYM-Beta/g' > one_sen_per_line_manual_hindi_sen.txt
+  sed 's/,/ @PUNCT-Comma /g'  one_sen_per_line_manual_hindi_sen_tmp.txt  |  sed 's/\([^0-9]\)\./\1 @PUNCT-Dot/g' | sed 's/?/ @PUNCT-QuestionMark /g' | sed 's/``/ @PUNCT-DoubleQuote /g' | sed "s/''/ @PUNCT-DoubleQuote /g" | sed 's/;/ @PUNCT-Semicolon /g' | sed 's/:/ @PUNCT-Colon /g' |  sed "s/[\'\`\']/ @PUNCT-SingleQuote /g" | sed 's/"/ @PUNCT-DoubleQuote /g' | sed 's/(/ @PUNCT-OpenParen /g' | sed 's/)/ @PUNCT-ClosedParen /g' | sed 's/!/ @PUNCT-Exclamation /g' | sed 's/\$/ @SYM-Dollar /g' |  sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}' | sed 's/nonascii/@nonascii/g' | sed 's/+/ @SYM-Plus /g' | sed 's/=/ @SYM-EqualTo /g' | sed 's/%/ @SYM-Percent /g' | sed 's/β/ @SYM-Beta /g' > one_sen_per_line_manual_hindi_sen.txt
 
   $HOME_anu_test/Anu_src/split_file.out one_sen_per_line_manual_hindi_sen.txt dir_names.txt manual_hindi_sen.dat
   sed 's/<\/Sentence>/<\/Sentence>\n;~~~~~~~~~~\n/g' shallow_parser_output_tmp1.txt > shallow_parser_output.txt
