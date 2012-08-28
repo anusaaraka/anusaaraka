@@ -1,3 +1,21 @@
+;Eng sen  :: [Thus] the observer sees a rainbow with red color on the top and violet on the bottom. 
+;Man tran :: [isa prakAra] prekRaka inxraXanuRa ke SIrRa para lAla varNa Ora pEnxI para bEfganI varNa xeKawA hE .
+;Anu tran :: [isa prakAra] prekRaka walI para UparI sawaha para waWA PUla lAla rafga se inxraXanuRa ko xeKawA hE.
+
+(defrule grouping_using_dic
+(declare (salience 70))
+(anu_id-manual_ids-sep-mng ? $?mids ?mid - $?mng)
+?f0<-(manual_id-word-cat ?mid ?w ?cat)
+=>
+	(retract ?f0)
+	(assert (manual_id-word-cat ?mid $?mng ?cat))
+	(assert (grp_head_id-grp_ids-mng ?mid - $?mids - $?mng)) 
+	(loop-for-count (?i 1 (length $?mids))
+                        (bind ?j (nth$ ?i (create$ $?mids)))
+                        (assert (retract_manual_fact ?j))
+        )
+)
+;-----------------------------------------------------------------------------------------------------
 ;It is mainly through light and the sense of vision that we know and interpret the world around us.
 ;Man tran :: muKya rUpa se prakASa evaM xqRti kI saMvexanA ke kAraNa hI hama [apane cAroM ora] ke saMsAra ko samaJawe evaM usakI vyAKyA karawe hEM.
 ;Anu tran :: yaha halake meM se waWA xUraxarSiwA kI saMvexanA meM se pramuKa rUpa se hE ki hama hamAre cAroM ora yuga vyAKyA kara waWA jAnawI hE.
@@ -102,6 +120,7 @@
 ) 
 ;-----------------------------------------------------------------------------------------
 (defrule retract_fact
+(declare (salience 80))
 (retract_manual_fact ?mid)
 ?f<-(manual_id-word-cat ?mid $?)
 =>
@@ -115,3 +134,14 @@
 =>
 	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word1 - $?root - 0 - ?mid))
 )
+;-----------------------------------------------------------------------------------------
+(defrule add_grp_mng
+(declare (salience -10))
+?f0<-(manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word1 - $?root - $?vib - $?grp)
+?f1<-(grp_head_id-grp_ids-mng ?mid - $?grp_ids - $?mng)
+=>
+	(retract ?f0 ?f1)
+	(bind $?grp_ids (sort > $?grp_ids $?grp))
+	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?mng - $?root - $?vib - $?grp_ids))
+)
+;-----------------------------------------------------------------------------------------

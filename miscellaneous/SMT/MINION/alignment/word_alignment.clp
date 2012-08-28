@@ -396,7 +396,7 @@
 (defrule noun-word_with_0_vib2
 (declare (salience 850))
 (current_id ?mid)
-(manual_id-cat-word-root-vib-grp_ids ?mid ~VM $?word - $? - $? - $?)
+(manual_id-cat-word-root-vib-grp_ids ?mid ~VM $?word - $? - $? - $?grp_ids)
 (man_word-root-cat      $?word   $?mng ?)
 (id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?mng)
 (id-root ?eid ?e_word)
@@ -404,7 +404,7 @@
 =>
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
-        (assert (anu_ids-sep-manual_ids ?eid - ?mid))
+        (assert (anu_ids-sep-manual_ids ?eid - $?grp_ids))
         (assert (prov_assignment ?eid ?mid))
 )
 
