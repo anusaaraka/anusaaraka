@@ -1,6 +1,5 @@
 ;This file is written by Maha Laxmi and Shirisha Manju
 
-(defglobal ?*total_count* = 0)
 (defglobal ?*minion_fp*  = minion_fp)
 
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
@@ -78,30 +77,29 @@
                 )
         )
 )
-;============================================================================================================
- ;Added by Maha Laxmi
- ;As aux ids are grouped in LWG individual word alignment is not necessary.
- (defrule remove_aux_potential_fact
- (declare (salience 2001))
- ?f<-(root-verbchunk-tam-chunkids ? ? ? $?chunk_ids ?head_id)
- (test (neq (length $?chunk_ids) 0))
- ?f1<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
- (test (member$ ?aid $?chunk_ids))
- =>
+;======================================== Remove/modify facts ================================================
+;Added by Maha Laxmi
+;As aux ids are grouped in LWG individual word alignment is not necessary.
+(defrule remove_aux_potential_fact
+(declare (salience 2001))
+?f<-(root-verbchunk-tam-chunkids ? ? ? $?chunk_ids ?head_id)
+(test (neq (length $?chunk_ids) 0))
+?f1<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
+(test (member$ ?aid $?chunk_ids))
+=>
         (retract ?f1)
 	(printout ?*minion_fp* " # Removed aux potential fact :: mid-aid: "?mid"--"?aid" As aux ids are grouped in LWG" crlf)
- )
-
- (defrule remove_prep_potential_fact
- (declare (salience 2001))
- (pada_info (group_head_id ?id)(group_cat PP)(preposition $? ?aid $?))
- ?f1<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
- =>
+)
+;------------------------------------------------------------------------------------------------------------
+(defrule remove_prep_potential_fact
+(declare (salience 2001))
+(pada_info (group_head_id ?id)(group_cat PP)(preposition $? ?aid $?))
+?f1<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
+=>
         (retract ?f1)
         (printout ?*minion_fp* " # Removed prep potential fact :: mid-aid: "?mid"--"?aid" As preositions ids are grouped with PP" crlf)
- )
-
-;------------------------------------------------------------------------------------------------------------
+)
+;==============================================================================================================
 ;Added by Maha Laxmi
 (defrule potential_count_of_manual_verb_id
 (declare (salience 2000))
@@ -139,6 +137,27 @@
         (retract ?f)
 	(bind $?mem (sort > (create$ $?mem ?aid))) ;Added by Shirisha Manju
         (assert (man_id-candidate_slots ?mapped_id $?mem))
+)
+;------------------------------------------------------------------------------------------------------------
+(defrule get_man_pot_ids
+(declare (salience 1900))
+(man_id-candidate_slots ?mid  $?sids)
+(man_id-candidate_slots ?mid1 $?sids)
+(test (neq ?mid ?mid1))
+=>
+	(bind $?mids (sort > (create$ ?mid ?mid1 )))
+	(assert (man_id-candidate_slots_tmp $?mids - $?sids))
+)
+;------------------------------------------------------------------------------------------------------------
+(defrule get_man_pot_ids1
+(declare (salience 1901))
+?f0<-(man_id-candidate_slots_tmp $?mids - $?sids)
+(man_id-candidate_slots ?mid  $?sids)
+(test (eq (member$ ?mid $?mids) FALSE))
+=>
+	(retract ?f0)
+        (bind $?mids (sort > (create$ $?mids ?mid)))
+        (assert (man_id-candidate_slots_tmp $?mids - $?sids))
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
@@ -195,9 +214,6 @@
 		(retract ?f)
 		(assert (ctrl_fact_for_poten_assignment ?mid $?grp));asserting a control in order to stop firing rule "potential_count_of_manual_id1" again 
 	else	    
-	;(retract ?f)
-	;(assert (man_id-candidate_slots ?mid $?g_list))
-	;(assert (ctrl_fact_for_poten_assignment ?mid $?grp))
 	(printout ?*minion_fp* "        # man_w_id-anu_ids " ?mid " ---- " (implode$ $?grp))
         (printout ?*minion_fp* "   ==> " (- ?mid 1) " ---- " )
 	(printout ?*minion_fp* (implode$ $?g_list) crlf))
@@ -216,87 +232,39 @@
  	(printout ?*minion_fp* " DISCRETE ws["?manual_word_len","?anu_slot_len"] {0..1}" crlf  )
 	(assert (print_constraint_info))
 )
-;----------------------------------------  Get group info ---------------------------------------------------
-;Added by Shirisha Manju
-(defrule rm_prep_id_from_prawiniXi
+;------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (20-08-12)
+(defrule print_total_constraints
 (declare (salience 1100))
-?f0<-(mot-cat-praW_id-largest_group ?m ?c ?p_id $?d ?id $?d1)
-(id-cat_coarse ?id preposition)
-(not (id-cat_coarse =(+ ?id 1) verb))
-=>
-        (retract ?f0)
-        (assert (mot-cat-praW_id-largest_group ?m ?c ?p_id $?d $?d1))
+(total_count ?t_count)
+=> 
+	(loop-for-count (?i 1 ?t_count)
+		(bind ?total (str-cat total ?i ))
+		(printout ?*minion_fp* " DISCRETE "?total "{0..100} " crlf)
+	)
 )
 ;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju
-(defrule sort_conj_ids
-(declare (salience 1000))
-(conj_head-components $?ids)
+;Added by Shirisha Manju (20-08-12)
+(defrule print_var_constraints
+(declare (salience 1050))
+(grp_hids-slot_ids-var_ids $? - $? - $?vars)
 =>
-        (bind ?g_ids (sort > ?ids))
-        (assert (conj_components ?g_ids))
+	(loop-for-count (?i 1 (length $?vars))
+               (bind ?id (nth$ ?i $?vars))
+               (printout ?*minion_fp* " DISCRETE  " ?id "{0..100} " crlf)
+       )
 )
 ;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju
-(defrule get_prawiniXi_grp_info
-(declare (salience 980))
-(mot-cat-praW_id-largest_group ? ? ? $?grp)
-(hindi_id_order $?ids)
-(test (> (length $?grp) 1))
-(not (grp_ids-slot_ids $?grp - $?))
-=>
-        (bind $?g_list (create$))
-        (loop-for-count (?i 1 (length $?grp))
-                (bind ?id (nth$ ?i $?grp))
-                (bind ?pos (member$ ?id $?ids))
-                (if (neq ?pos FALSE) then
-                        (bind $?g_list (create$ $?g_list (- ?pos 1)))
-                )
-        )
-        (assert (grp_ids-slot_ids $?grp - $?g_list))
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju
-(defrule get_grp_info
-(declare (salience 990))
-(or (pada_info (group_head_id ?id)(group_cat PP)(group_ids $?grp)) (conj_components $?grp))
-(test (> (length $?grp) 1))
-(hindi_id_order $?ids)
-=>
-        (bind ?*total_count* (+ ?*total_count* 1))
-        (bind $?g_list (create$))
-        (loop-for-count (?i 1 (length $?grp))
-                (bind ?id (nth$ ?i $?grp))
-                (bind ?pos (member$ ?id $?ids))
-                (if (neq ?pos FALSE) then
-                        (bind $?g_list (create$ $?g_list (- ?pos 1)))
-                )
-        )
-        (assert (grp_ids-slot_ids $?grp - $?g_list))
-        (assert (get_cost_for_grp $?grp - ?*total_count*))
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (6-08-12)
-(defrule print_cost_constraints
-(declare (salience 970))
-(get_cost_for_grp $?grp - ?t_val)
-(not (t_val_assigned ?t_val))
-=>
-	(bind ?total (str-cat "total" ?t_val ))
-	(printout ?*minion_fp* " DISCRETE "?total "{0..100} " crlf)
-	(assert (t_val_assigned ?t_val))
-)	
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (3-08-12)
+;Added by Shirisha Manju (20-08-12)
 (defrule print_constraints
-(declare (salience 960))
-(print_constraint_info)
+(declare (salience 1000))
+(total_count ?t_count)
 =>
-	(printout ?*minion_fp* " DISCRETE total{0.."?*total_count*"00} " crlf crlf) 
-        (printout ?*minion_fp* " **SEARCH**" crlf) 
+	(printout ?*minion_fp* " DISCRETE total{0.."?t_count"00} " crlf crlf)
+        (printout ?*minion_fp* " **SEARCH**" crlf)
         (printout ?*minion_fp* " #MAXIMISING " crlf)
         (printout ?*minion_fp* " MAXIMISING total" crlf crlf)
-	(printout ?*minion_fp* " **CONSTRAINTS** " crlf crlf)
+        (printout ?*minion_fp* " **CONSTRAINTS** " crlf crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
@@ -310,141 +278,56 @@
 	(printout ?*minion_fp* " eq(ws["(- ?mapped_id 1)","(- (member$ ?aid $?hin_order) 1)"],1)" crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
-;yaha vahI UrjA hE jo nABikIya Sakwi janana waWA nABikIya kispotoM meM mukwa howI hE
-;This is the energy which is released in a nuclear power generation and nuclear explosions.
-;The reflected ray simply retraces the path. -- parAvarwiwa kiraNa kevala [apanA] paWa punaH anureKiwa karawI hE .
-;Added by Maha Laxmi
-(defrule potential_facts_for_article_the
+;Added by Shirisha Manju (16-08-12)
+(defrule print_pot_fact_for_word
 (declare (salience 930))
-(id-word ?aid the)
-(manual_id-mng ?mapped_id vaha|isa|usa|vahI|isakA|uwanA|jiwanA|apanA)
-(hindi_id_order $?hin_order)
-(test (neq (member$ ?aid $?hin_order) FALSE)) 
+(fact_name-word_id-slot_id  eq_or_sumleq ?wid ?sid)
 =>
-        (printout ?*minion_fp* " watched-or({ eq(ws["(- ?mapped_id 1)","(- (member$ ?aid $?hin_order) 1)"],1),sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)})" crlf)
+	(printout ?*minion_fp* " watched-or({ eq(ws["?wid","?sid"],1),sumleq(ws[_,"?sid"],0)})" crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi
-(defrule potential_facts_for_article_the1
+;Added by Shirisha Manju (16-08-12)
+(defrule print_pot_fact_for_word1
 (declare (salience 930))
-(id-word ?aid the)
-(not (manual_id-mng ?mid vaha|isa|usa|vahI|isakA|uwanA|jiwanA|apanA))
-(hindi_id_order $?hin_order)
-(test (neq (member$ ?aid $?hin_order) FALSE))
+;(fact_name-word_id-slot_id  sumleq ?wid ?sid)
+(fact_name-word_id-slot_id  sumleq all_rows ?sid)
 =>
-        (printout ?*minion_fp* " sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)" crlf)
+        (printout ?*minion_fp* " sumleq(ws[_,"?sid"],0)" crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi
-(defrule potential_facts_for_article_a_and_an
-(declare (salience 930))
-(id-word ?aid a|an)
-(manual_id-mng ?mapped_id eka|koI)
+;;Added by Shirisha Manju (23-08-12)
+;;An incoming wave can be divided into two weaker waves at the boundary between air and water.
+;(defrule print_pot_fact_for_word2
+;(declare (salience 930))
+;(fact_name-word_id-slot_id  sumleq ?wid all_columns)
+;=>
+;        (printout ?*minion_fp* " sumleq(ws["?wid",_],0)" crlf)
+;	
+;)
+;------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (22-08-12)
+(defrule print_pot_fact_for_repeated_word
+(declare (salience 925))
+(repeated_id-word ?id ?w)
+(man_id-candidate_slots_tmp  $?mids - $? ?id $?)
+(manual_id-mng ?mid $?)
+(test (eq (member$ ?mid $?mids) FALSE))
 (hindi_id_order $?hin_order)
-(test (neq (member$ ?aid $?hin_order) FALSE))
 =>
-        (printout ?*minion_fp* " watched-or({ eq(ws["(- ?mapped_id 1)","(- (member$ ?aid $?hin_order) 1)"],1),sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)})" crlf)
+	(printout ?*minion_fp* " eq(ws["(- ?mid 1)","(- (member$ ?id $?hin_order) 1)"],0)" crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi
-(defrule potential_facts_for_article_a_and_an1
-(declare (salience 930))
-(id-word ?aid a|an)
-(not (manual_id-mng ?mid eka|koI))
+;Added by Shirisha Manju (23-08-12)
+;The normal in this case is to be taken as normal to the tangent to surface at the point of incidence. 
+(defrule print_pot_fact_for_repeated_word1
+(declare (salience 921))
+(repeated_id-word ?id ?w)
+(not (man_id-candidate_slots  ?mid  $? ?id $?))
+(not (man_id-candidate_slots_tmp  $?mids - $? ?id $?))
 (hindi_id_order $?hin_order)
-(test (neq (member$ ?aid $?hin_order) FALSE))
+(test (neq (member$ ?id $?hin_order) FALSE))
 =>
-	(printout ?*minion_fp* " sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)" crlf)
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (30-07-12)
-;Physicists try to discover the rules that are operating in nature, on the basis of observations, experimentation and analysis.
-(defrule potential_facts_for_that
-(declare (salience 930))
-(id-word ?aid that)
-(manual_id-mng ?mapped_id jo|isa|yaha|vaha|usa)
-(hindi_id_order $?hin_order)
-(test (neq (member$ ?aid $?hin_order) FALSE))
-=>
-	(printout ?*minion_fp* " watched-or({ eq(ws["(- ?mapped_id 1)","(- (member$ ?aid $?hin_order) 1)"],1),sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)})" crlf)
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (30-07-12)
-(defrule potential_facts_for_that1
-(declare (salience 930))
-(id-word ?aid that)
-(not (manual_id-mng ?mid jo|isa|yaha|vaha|usa))
-(hindi_id_order $?hin_order)
-(test (neq (member$ ?aid $?hin_order) FALSE))
-=>
-	(printout ?*minion_fp* " sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)" crlf)
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (02-08-12)
-(defrule potential_facts_for_there
-(declare (salience 930))
-(id-word ?aid there)
-(manual_id-mng ?mapped_id vahAz|vaha)
-(hindi_id_order $?hin_order)
-(test (neq (member$ ?aid $?hin_order) FALSE))
-=>
-        (printout ?*minion_fp* " watched-or({ eq(ws["(- ?mapped_id 1)","(- (member$ ?aid $?hin_order) 1)"],1),sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)})" crlf)
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (02-08-12)
-;There are also forces involving charged and magnetic bodies. 
-(defrule potential_facts_for_there1
-(declare (salience 930))
-(id-word ?aid there)
-(not (manual_id-mng ?mid vaha|vahAz))
-(hindi_id_order $?hin_order)
-(test (neq (member$ ?aid $?hin_order) FALSE))
-=>
-        (printout ?*minion_fp* " sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)" crlf)
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi 
-(defrule potential_facts_for_also
-(declare (salience 930))
-(id-word ?aid also)
-(manual_id-mng ?mapped_id BI|Ora)
-(hindi_id_order $?hin_order)
-(test (neq (member$ ?aid $?hin_order) FALSE))
-=>
-        (printout ?*minion_fp* " watched-or({ eq(ws["(- ?mapped_id 1)","(- (member$ ?aid $?hin_order) 1)"],1),sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)})" crlf)
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi 
-(defrule potential_facts_for_also1
-(declare (salience 930))
-(id-word ?aid also)
-(not (manual_id-mng ?mid BI|Ora))
-(hindi_id_order $?hin_order)
-(test (neq (member$ ?aid $?hin_order) FALSE))
-=>
-        (printout ?*minion_fp* " sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)" crlf)
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi 
-(defrule potential_facts_for_too
-(declare (salience 930))
-(id-word ?aid too)
-(manual_id-mng ?mapped_id BI)
-(hindi_id_order $?hin_order)
-(test (neq (member$ ?aid $?hin_order) FALSE))
-=>
-        (printout ?*minion_fp* " watched-or({ eq(ws["(- ?mapped_id 1)","(- (member$ ?aid $?hin_order) 1)"],1),sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)})" crlf)
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi 
-(defrule potential_facts_for_too1
-(declare (salience 930))
-(id-word ?aid too)
-(not (manual_id-mng ?mid BI))
-(hindi_id_order $?hin_order)
-(test (neq (member$ ?aid $?hin_order) FALSE))
-=>
-        (printout ?*minion_fp* " sumleq(ws[_,"(- (member$ ?aid $?hin_order) 1)"],0)" crlf)
+        (printout ?*minion_fp* " sumleq(ws[_,"(- (member$ ?id $?hin_order) 1)"],0)" crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
@@ -503,7 +386,33 @@
         (printout ?*minion_fp* crlf crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (03-08-12)
+;Added by Shirisha Manju (20-08-12)
+(defrule print_head_cost
+(declare (salience 896))
+(grp_hids-slot_ids-var_ids $?grp - $?sids - $?vids)
+=>
+	(printout ?*minion_fp* " #Generating cost facts for head ids " crlf)
+        (printout ?*minion_fp* " #head_ids-slot_ids-var_ids "(implode$ $?grp)" --- " (implode$ $?sids) " --- "(implode$ $?vids) crlf)
+        (loop-for-count (?i 1 (length $?sids))
+                (bind ?sid (nth$ ?i $?sids))
+                (bind ?vid (nth$ ?i $?vids))
+                (printout ?*minion_fp* "	element(ws[_,"?sid"],"?vid",1)" crlf)
+        )
+	(printout ?*minion_fp* crlf)
+)
+;------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (20-08-12)
+(defrule print_head_cost1
+(declare (salience 895))
+(hids-sids-slot1-slot2-total $? - $?sids - ?s1 - ?s2 - ?total)
+=>
+	(printout ?*minion_fp* "	watched-or({" crlf)
+	(printout ?*minion_fp* "		watched-and({ ineq("?s1", "?s2", 0) , eq("?total",20) })," crlf)
+	(printout ?*minion_fp* "		watched-and({ ineq("?s2", "?s1", 0) , eq("?total",0) })" )
+	(printout ?*minion_fp* crlf "	})" crlf)
+)
+;------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (20-08-12)
 (defrule print_cost
 (declare (salience 890))
 (get_cost_for_grp $?anu_grp - ?total)
@@ -512,7 +421,6 @@
 (test (< (length $?grp) ?manual_word_len))
 (test (neq (length $?grp) 0))
 =>
-        (bind ?total (str-cat "total" ?total))
         (printout ?*minion_fp*  crlf " #Generating cost facts " crlf)
         (printout ?*minion_fp*  " #group : "(implode$ $?anu_grp) " ---- " (implode$ $?grp) crlf)
         (printout ?*minion_fp* " watched-or({" crlf "    watched-and({ " crlf)
@@ -572,28 +480,27 @@
 ;Added by Shirisha Manju (6-08-12)
 (defrule get_sum_fact_for_total
 (declare (salience 100))
-(print_constraint_info)
+(total_count ?total)
+(test (neq ?total 0))
 =>
-	(if (neq ?*total_count* 0) then
-        	(printout ?*minion_fp* crlf "	sumgeq([" )
-        	(loop-for-count (?i 1 ?*total_count*)
-                	(printout ?*minion_fp* "total" ?i)
-                	(if (neq ?i ?*total_count*) then
-                        	(printout ?*minion_fp* ",")
-                	else
-                        	(printout ?*minion_fp* "],total)" )
-                	)
-        	)
-        	(printout ?*minion_fp* crlf "	sumleq([" )
-        	(loop-for-count (?i 1 ?*total_count*)
-                	(printout ?*minion_fp* "total" ?i)
-                	(if (neq ?i ?*total_count*) then
-                        	(printout ?*minion_fp* ",")
-                	else
-                        	(printout ?*minion_fp* "],total)" )
-                	)
-        	)
-	)
+	(printout ?*minion_fp* crlf "	sumgeq([" )
+       	(loop-for-count (?i 1 ?total)
+        	(printout ?*minion_fp* "total" ?i)
+                (if (neq ?i ?total) then
+                	(printout ?*minion_fp* ",")
+                else
+                       	(printout ?*minion_fp* "],total)" )
+                )
+        )
+        (printout ?*minion_fp* crlf "	sumleq([" )
+        (loop-for-count (?i 1 ?total)
+  		(printout ?*minion_fp* "total" ?i)
+                (if (neq ?i ?total) then
+                        (printout ?*minion_fp* ",")
+                else
+                       	(printout ?*minion_fp* "],total)" )
+                )
+        )
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi

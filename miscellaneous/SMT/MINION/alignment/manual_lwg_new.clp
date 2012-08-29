@@ -36,13 +36,13 @@
 (defrule hI_rule
 (declare (salience 901))
 ?f0<-(current_id ?mid)
-?f1<-(manual_id-mng ?cnt $?grp_ids)
-(test (eq ?cnt ?*count*))
+;?f1<-(manual_id-mng ?cnt $?grp_ids)
+;(test (eq ?cnt ?*count*))
 ?f2<-(manual_id-cat-word-root-vib-grp_ids ?mid ? ?w&hI - ?r&hI - 0 - ?mid)
 (not (id-word ? only))
 =>
-        (retract ?f0 ?f1 ?f2)
-        (assert (manual_id-mng ?cnt $?grp_ids ?mid))
+;        (retract ?f0 ?f1 ?f2)
+ ;       (assert (manual_id-mng ?cnt $?grp_ids ?mid))
         (assert_control_fact delete_manual_fact ?mid)
 )
 ;-------------------------------------------------------------------------------------
@@ -52,27 +52,27 @@
 (defrule BI_rule
 (declare (salience 901))
 ?f0<-(current_id ?mid)
-?f1<-(manual_id-mng ?cnt $?grp_ids)
-(test (eq ?cnt ?*count*))
+;?f1<-(manual_id-mng ?cnt $?grp_ids)
+;(test (eq ?cnt ?*count*))
 ?f2<-(manual_id-cat-word-root-vib-grp_ids ?mid ? ?w&BI - ?r&BI - 0 - ?mid)
 (not (id-word ? also))
 (not (id-word ? too))
 =>
-        (retract ?f0 ?f1 ?f2)
-        (assert (manual_id-mng ?cnt $?grp_ids ?mid))
+ ;       (retract ?f0 ?f1 ?f2)
+  ;      (assert (manual_id-mng ?cnt $?grp_ids ?mid))
         (assert_control_fact delete_manual_fact ?mid)
 )
 ;-------------------------------------------------------------------------------------
 (defrule ki_rule
 (declare (salience 901))
 ?f0<-(current_id ?mid)
-?f1<-(manual_id-mng ?cnt $?grp_ids)
-(test (eq ?cnt ?*count*))
+;?f1<-(manual_id-mng ?cnt $?grp_ids)
+;(test (eq ?cnt ?*count*))
 ?f2<-(manual_id-cat-word-root-vib-grp_ids ?mid ? ?w&ki - ?r&ki - 0 - ?mid)
 (not (id-word ? that))
 =>
-        (retract ?f0 ?f1 ?f2)
-        (assert (manual_id-mng ?cnt $?grp_ids ?mid))
+ ;       (retract ?f0 ?f1 ?f2)
+  ;      (assert (manual_id-mng ?cnt $?grp_ids ?mid))
         (assert_control_fact delete_manual_fact ?mid)
 )
 ;-------------------------------------------------------------------------------------

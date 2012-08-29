@@ -16,6 +16,23 @@
         )
 )
 ;-----------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (29-08-12)
+;Dispersion takes place because the refractive index of medium for different wavelengths (colors) is different.
+;parikRepaNa kA kAraNa yaha hE ki kisI mAXyama kA apavarwanAfka viBinna warafgaxErGyoM  @PUNCT-OpenParenvarNoM @PUNCT-ClosedParen ke lie Binna - Binna howA hE @PUNCT-Dot
+(defrule single_vib_for_dic
+(declare (salience 65))
+?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN)
+(id-node-word-root ?id0 ? $? - $?root)
+(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen SYM)
+(manual_id-word-cat ?id2 @PUNCT-ClosedParen SYM)
+(test (> ?id2 ?id1))
+(anu_id-manual_ids-sep-mng ?anu_id ?id3 $?ids - $?vib)
+(test (= ?id3 (+ ?id2 1)))
+=>
+        (retract ?f1)
+        (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun $?vib - $?root - $?vib - ?id0 ?id3 $?ids))
+)
+;-----------------------------------------------------------------------------------------
 ;It is mainly through light and the sense of vision that we know and interpret the world around us.
 ;Man tran :: muKya rUpa se prakASa evaM xqRti kI saMvexanA ke kAraNa hI hama [apane cAroM ora] ke saMsAra ko samaJawe evaM usakI vyAKyA karawe hEM.
 ;Anu tran :: yaha halake meM se waWA xUraxarSiwA kI saMvexanA meM se pramuKa rUpa se hE ki hama hamAre cAroM ora yuga vyAKyA kara waWA jAnawI hE.
@@ -78,6 +95,18 @@
         (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ke ?w meM - ?id0 ?id1 ?id2 ?id3))
 )
 ;-----------------------------------------------------------------------------------------
+(defrule kI_[word]_meM
+(declare (salience 30))
+?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN|NNP)
+(id-node-word-root ?id0 ? $? - $?root)
+?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) kI ?)
+?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&wulanA ?)
+?f4<-(manual_id-word-cat ?id3&:(=(+ ?id0 3) ?id3) meM ?)
+=>
+        (retract ?f1 ?f2 ?f3 ?f4)
+        (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ke ?w meM - ?id0 ?id1 ?id2 ?id3))
+)
+;-----------------------------------------------------------------------------------------
 ;ke liye , ke lie ,ke pariwaH ,ke sAWa,[besides --> ke awirikwa]
 ;xravyamAna kenxra kI pariBARA [jAnane ke bAxa] , aba hama isa sWiwi meM hEM ki kaNoM ke eka nikAya ke lie isake BOwika mahawva kI vivecanA kara sakeM.
 ;It is mainly through light and the sense of vision that we know and interpret the world around us.--> muKya rUpa se prakASa evaM xqRti kI [saMvexanA ke kAraNa] hI hama apane cAroM ora ke saMsAra ko samaJawe evaM usakI vyAKyA karawe hEM
@@ -93,6 +122,20 @@
  	(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ke ?w - ?id0 ?id1 ?id2))
 )
 ;-----------------------------------------------------------------------------------------
+;Added by Shirisha Manju (28-08-12)
+;Dispersion takes place because the refractive index of medium for different wavelengths (colors) is different.
+;parikRepaNa kA kAraNa yaha hE ki kisI mAXyama kA apavarwanAfka viBinna warafgaxErGyoM  @PUNCT-OpenParenvarNoM @PUNCT-ClosedParen ke lie Binna - Binna howA hE
+(defrule word_[hyphen]_word
+(declare (salience 20))
+?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
+(id-node-word-root ?id0 ? $? - $?root)
+?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) - SYM)
+?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w ?)
+=>
+        (retract ?f1 ?f2 ?f3)
+        (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun ?w  - $?root - 0 - ?id0 ?id1 ?id2))
+)
+;-----------------------------------------------------------------------------------------
 ;Axya vicArakoM jEse araswU kI bala ke viRaya meM saMkalpanA galawa WI -- Early thinkers like Aristotle had wrong ideas about it.
 ;yaxi Apa apanI BujAoM ko Pira SarIra ke pAsa le AyeM wo koNIya cAla Pira se baDZa jAwI hE -- If you bring back your arms closer to your body, the angular speed increases again. 
 (defrule single_vib
@@ -103,6 +146,21 @@
 =>
  	(retract ?f1 ?f2)
  	(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ?vib - ?id0 ?id1))
+)
+;-----------------------------------------------------------------------------------------
+;Dispersion takes place because the refractive index of medium for different wavelengths (colors) is different.
+;parikRepaNa kA kAraNa yaha hE ki kisI mAXyama kA apavarwanAfka viBinna warafgaxErGyoM  @PUNCT-OpenParenvarNoM @PUNCT-ClosedParen ke lie Binna - Binna howA hE @PUNCT-Dot
+(defrule single_vib1
+(declare (salience 5))
+?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN)
+(id-node-word-root ?id0 ? $? - $?root)
+(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen SYM)
+(manual_id-word-cat ?id2 @PUNCT-ClosedParen SYM)
+(test (> ?id2 ?id1))
+?f3<-(manual_id-word-cat ?id3&:(=(+ ?id2 1) ?id3) ?vib&ke|lie ?)
+=>
+	(retract ?f1 ?f3)
+	(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun ?vib - $?root - ?vib - ?id0 ?id3))
 )
 ;-----------------------------------------------------------------------------------------
 (defrule verb_grouping
@@ -127,10 +185,12 @@
 	(retract ?f)
 )
 ;-----------------------------------------------------------------------------------------
+;For example, the colors observed due to a thin film of oil on water. 
 (defrule change_remaining_facts
 (declare (salience -10))
 (manual_id-word-cat ?mid $?word ?cat)
 (id-node-word-root ?mid ? $?word1 - $?root)
+(test (neq ?cat SYM))
 =>
 	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word1 - $?root - 0 - ?mid))
 )

@@ -28,3 +28,10 @@ paraxial	upAkRIya
 object	bimba
 quantity	rASi
 elastic	prawyAsWa
+theorist	sixXAnwavAxI
+least	sabase_kama
+raindrop	varRA_kI_bUzxa
+sunlight	sUrya_kA_prakASa/sUrya_ke_prakASa
+refract	apavarwiwa_ho/apavarwiwa_kara
+therefore	isa prakAra
+debate	vAxa_vivAxa

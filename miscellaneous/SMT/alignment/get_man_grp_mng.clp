@@ -52,7 +52,7 @@
 
  (defrule modify_wrd_mng_for_VP_kriyAmUla_kara_with_modifier
  (declare (salience 91))
- ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN kara ?cat ?g ?no ?p ?c ?suf)
+ ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF kara|ho ?cat ?g ?no ?p ?c ?suf)
  ?f1<-(head_id-grp_ids ?id $?grp) ;?4
  ?f2<-(position-cat-man_grp_mng   ?id ?node     $?word  - -);f0
  ?f3<-(id-node-root-cat-gen-num-per-case-tam =(- ?id 1) ?n ?r ?m_cat ?m_g ?m_n ?m_p ?m_c ?m_t);f1
@@ -61,7 +61,7 @@
  ?f7<-(id-node-word-root ?n1 ?cat2 ?word3 - ?root1)
  (test (member$ ?n1 $?grp))
  ?f6<-(id-node-word-root ?n2&=(- ?n1 1) ?cat1 ?word2 - ?root0)
- (id-node-word-root ?n3 ? ?modifier&usakI - $?m_root)
+ (id-node-word-root ?n3 ? ?modifier&usakI|aXika - $?m_root)
  (test (and (member$ ?n2 $?grp1)(member$ ?n3 $?grp1))) 
  (not (modified_word_id ?id))
  =>
@@ -86,9 +86,10 @@
 
 
  ;The area has got the digamber jain temple which houses the birds hospital.
+ ;Sunlight is first refracted as it enters a raindrop, which causes the different wavelengths (colors) of white light to separate. --- sUrya kA prakASa sarvapraWama varRA kI bUzxa meM { praveSa karawe } samaya apavarwiwa howA hE , jisake kAraNa Svewa prakASa kI viBinna warafgaxErGya  (varNa) pqWaka ho jAwe hEM.
  (defrule modify_wrd_mng_for_VP_kriyAmUla_kara
  (declare (salience 90))
- ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN kara ?cat ?g ?no ?p ?c ?suf)
+ ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF kara ?cat ?g ?no ?p ?c ?suf)
  ?f1<-(head_id-grp_ids ?id $?grp) ;?4
  ?f2<-(position-cat-man_grp_mng   ?id ?node	$?word	- -);f0
  ?f3<-(id-node-root-cat-gen-num-per-case-tam =(- ?id 1) ?n ?r ? ? ? ? ? ?);f1
@@ -111,10 +112,11 @@
 	(assert (modified_word_id ?id))
  )
 
+ ;Added by Shirisha Manju
  ;The macroscopic domain includes phenomena at the laboratory, terrestrial and astronomical scales.
  (defrule check_prev_word_of_ho_with_anu
  (declare (salience 91))
- ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN ho ?cat ?g ?no ?p ?c ?suf)
+ ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF ho ?cat ?g ?no ?p ?c ?suf)
  ?f5<-(position-cat-man_grp_mng =(- ?id 1) ?n $?word - -)
  (or (root-verbchunk-tam-chunkids ? ? ? $? ?v_id)(pada_info (group_head_id ?v_id)(group_cat infinitive)))
  (id-root ?v_id ?root)
@@ -157,19 +159,6 @@
         (assert (modified_word_id ?id))
  )
 
- ;------------------------------------------------------------------------------------------------------------------------
- ;(position-cat-man_grp_mng 5 NP kuCa saMkalpanAoM) |
- ;(position-cat-man_grp_mng 6 CCP evaM )            | (position-cat-man_grp_mng 6 CCP  kuCa saMkalpanAoM evaM niyamoM ke)
- ;(position-cat-man_grp_mng 7 NP niyamoM ke )       |
-; (defrule get_conj_grp
-; (declare (salience 60))
-; ?f1<-(position-cat-man_grp_mng ?conj ?c ?and&evaM|Ora|yA|waWA - -)
-; ?f<-(position-cat-man_grp_mng =(- ?conj 1) ?n $?mng - -)
-; ?f2<-(position-cat-man_grp_mng =(+ ?conj 1) ?n1 $?mng1 - -)
-; =>
-;	(retract ?f ?f1 ?f2)
-;	(assert (position-cat-man_grp_mng ?conj ?c $?mng ?and $?mng1 - - ))
-; )
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule get_grp_info
  (declare (salience 50))

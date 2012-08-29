@@ -368,28 +368,28 @@
 (defrule noun-word_with_0_vib
 (declare (salience 850))
 (current_id ?mid)
-(manual_id-cat-word-root-vib-grp_ids ?mid ~VM $?mng - $? - 0 - $?)
+(manual_id-cat-word-root-vib-grp_ids ?mid ~VM $?mng - $? - 0 - $?gids)
 (id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?mng)
 (id-root ?eid ?e_word)
 (not (prov_assignment ?eid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
-        (assert (anu_ids-sep-manual_ids ?eid - ?mid))
+        (assert (anu_ids-sep-manual_ids ?eid - $?gids))
         (assert (prov_assignment ?eid ?mid))
 )
 
 (defrule noun-word_with_0_vib1
 (declare (salience 850))
 (current_id ?mid)
-(manual_id-cat-word-root-vib-grp_ids ?mid ~VM $? - $?mng - 0 - $?)
+(manual_id-cat-word-root-vib-grp_ids ?mid ~VM $? - $?mng - 0 - $?gids)
 (id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?mng)
 (id-root ?eid ?e_word)
 (not (prov_assignment ?eid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
-        (assert (anu_ids-sep-manual_ids ?eid - ?mid))
+        (assert (anu_ids-sep-manual_ids ?eid - $?gids))
         (assert (prov_assignment ?eid ?mid))
 )
 
