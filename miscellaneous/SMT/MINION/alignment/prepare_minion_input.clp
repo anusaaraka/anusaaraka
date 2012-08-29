@@ -1,7 +1,7 @@
 ;This file is written by Maha Laxmi and Shirisha Manju
 
 (defglobal ?*minion_fp*  = minion_fp)
-(defglobal ?*refiy_list* = (create$ ))
+(defglobal ?*non_refiy_list* = (create$ ))
 
 
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
@@ -112,6 +112,10 @@
 (not (ctrl_fact_for_poten_assignment ?mapped_id $? ?aid $?))
 =>
         (assert (man_id-candidate_slots ?mapped_id $?anu_verbs))
+	(if (eq (member$ (- ?mapped_id 1) ?*non_refiy_list*) FALSE) then
+	(bind ?*non_refiy_list* (create$ (- ?mapped_id 1) ?*non_refiy_list*)))
+	(printout t ?*non_refiy_list* crlf)
+
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
@@ -125,6 +129,10 @@
 (not (ctrl_fact_for_poten_assignment ?mapped_id $? ?aid $?))
 =>
         (assert (man_id-candidate_slots ?mapped_id ?aid ?aid1))
+	(if (eq (member$ (- ?mapped_id 1) ?*non_refiy_list*) FALSE) then
+	(bind ?*non_refiy_list* (create$ (- ?mapped_id 1) ?*non_refiy_list*)))
+	(printout t ?*non_refiy_list* crlf)
+
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
@@ -226,8 +234,9 @@
 (anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?)
 (manual_id-mapped_id ?mid ?mapped_id)
 =>
-        (bind ?*refiy_list* (create$ (- ?mapped_id 1) ?*refiy_list*))
-	(printout t ?*refiy_list* crlf)
+	(if (eq (member$ (- ?mapped_id 1) ?*non_refiy_list*) FALSE) then
+        (bind ?*non_refiy_list* (create$ (- ?mapped_id 1) ?*non_refiy_list*)))
+	(printout t ?*non_refiy_list* crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
@@ -241,8 +250,9 @@
 	(printout ?*minion_fp* " MINION 3" crlf crlf)
 	(printout ?*minion_fp* " **VARIABLES**" crlf)
  	(printout ?*minion_fp* " DISCRETE ws["?manual_word_len","?anu_slot_len"] {0..1}" crlf  )
+	(printout t ?*non_refiy_list* crlf)
 	(loop-for-count (?i 0 (- ?manual_word_len 1))
-		        (if (eq (member$ ?i (create$ ?*refiy_list*)) FALSE) then
+		        (if (eq (member$ ?i ?*non_refiy_list*) FALSE) then
 			(printout ?*minion_fp* " DISCRETE r"?i" {0..1}" crlf))
 	)
 	(assert (print_constraint_info))
@@ -275,7 +285,8 @@
 (declare (salience 1000))
 (total_count ?t_count)
 =>
-	(printout ?*minion_fp* " DISCRETE total{0.."?t_count"00} " crlf crlf)
+	(bind ?t_count_val (+ (* (length ?*non_refiy_list*) 10) (* ?t_count 100)))
+	(printout ?*minion_fp* " DISCRETE total{0.."?t_count_val"} " crlf crlf)
         (printout ?*minion_fp* " **SEARCH**" crlf)
         (printout ?*minion_fp* " #MAXIMISING " crlf)
         (printout ?*minion_fp* " MAXIMISING total" crlf crlf)
@@ -388,7 +399,7 @@
 =>
         (printout ?*minion_fp* crlf crlf)
 	(loop-for-count (?i 0 (- ?manual_word_len 1))
-			(if (eq (member$ ?i ?*refiy_list*) FALSE)then
+			(if (eq (member$ ?i ?*non_refiy_list*) FALSE)then
 			(printout ?*minion_fp* " reify(sumgeq(ws["?i",_],1),r"?i")" crlf)
 			else
 			(printout ?*minion_fp* " sumgeq(ws["?i",_],1)" crlf)
@@ -501,7 +512,7 @@
 (defrule get_sum_fact_for_total
 (declare (salience 100))
 (total_count ?total)
-(manual_word_length ?mid)
+(manual_word_length ?manual_word_len)
 (test (neq ?total 0))
 =>
 	(printout ?*minion_fp* crlf "	sumgeq([" )
@@ -511,8 +522,8 @@
                 	(printout ?*minion_fp* ",")
                 )
         )
-	(loop-for-count (?i 0 (- ?mid 1))
-		(if (eq (member$ ?i ?*refiy_list*) FALSE) then
+	(loop-for-count (?i 0 (- ?manual_word_len 1))
+		(if (eq (member$ ?i ?*non_refiy_list*) FALSE) then
 			(printout ?*minion_fp* ",r"?i))
       	)
 	(printout ?*minion_fp*"],total)")
@@ -523,8 +534,8 @@
                         (printout ?*minion_fp* ",")
                 )
         )
-	(loop-for-count (?i 0 (- ?mid 1))
-		(if (eq (member$ ?i ?*refiy_list*) FALSE) then
+	(loop-for-count (?i 0 (- ?manual_word_len 1))
+		(if (eq (member$ ?i ?*non_refiy_list*) FALSE) then
 			(printout ?*minion_fp* ",r"?i))
       	)
 	(printout ?*minion_fp*"],total)")
