@@ -1,6 +1,8 @@
 ;This file is written by Maha Laxmi and Shirisha Manju
 
 (defglobal ?*minion_fp*  = minion_fp)
+(defglobal ?*refiy_list* = (create$ ))
+
 
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
@@ -219,6 +221,15 @@
 	(printout ?*minion_fp* (implode$ $?g_list) crlf))
 )
 ;------------------------------------------------------------------------------------------------------------
+(defrule get_dictionary_constarints
+(declare (salience 1201))
+(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?)
+(manual_id-mapped_id ?mid ?mapped_id)
+=>
+        (bind ?*refiy_list* (create$ (- ?mapped_id 1) ?*refiy_list*))
+	(printout t ?*refiy_list* crlf)
+)
+;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
 (defrule print_array
 (declare (salience 1200))
@@ -230,6 +241,10 @@
 	(printout ?*minion_fp* " MINION 3" crlf crlf)
 	(printout ?*minion_fp* " **VARIABLES**" crlf)
  	(printout ?*minion_fp* " DISCRETE ws["?manual_word_len","?anu_slot_len"] {0..1}" crlf  )
+	(loop-for-count (?i 0 (- ?manual_word_len 1))
+		        (if (eq (member$ ?i (create$ ?*refiy_list*)) FALSE) then
+			(printout ?*minion_fp* " DISCRETE r"?i" {0..1}" crlf))
+	)
 	(assert (print_constraint_info))
 )
 ;------------------------------------------------------------------------------------------------------------
@@ -373,7 +388,12 @@
 =>
         (printout ?*minion_fp* crlf crlf)
 	(loop-for-count (?i 0 (- ?manual_word_len 1))
+			(if (eq (member$ ?i ?*refiy_list*) FALSE)then
+			(printout ?*minion_fp* " reify(sumgeq(ws["?i",_],1),r"?i")" crlf)
+			else
 			(printout ?*minion_fp* " sumgeq(ws["?i",_],1)" crlf)
+			)
+			;(printout ?*minion_fp* " sumgeq(ws["?i",_],1)" crlf)
         )
         (printout ?*minion_fp* crlf crlf)
 	(loop-for-count (?i 0 (- ?manual_word_len 1))
@@ -481,6 +501,7 @@
 (defrule get_sum_fact_for_total
 (declare (salience 100))
 (total_count ?total)
+(manual_word_length ?mid)
 (test (neq ?total 0))
 =>
 	(printout ?*minion_fp* crlf "	sumgeq([" )
@@ -488,19 +509,26 @@
         	(printout ?*minion_fp* "total" ?i)
                 (if (neq ?i ?total) then
                 	(printout ?*minion_fp* ",")
-                else
-                       	(printout ?*minion_fp* "],total)" )
                 )
         )
+	(loop-for-count (?i 0 (- ?mid 1))
+		(if (eq (member$ ?i ?*refiy_list*) FALSE) then
+			(printout ?*minion_fp* ",r"?i))
+      	)
+	(printout ?*minion_fp*"],total)")
         (printout ?*minion_fp* crlf "	sumleq([" )
         (loop-for-count (?i 1 ?total)
   		(printout ?*minion_fp* "total" ?i)
                 (if (neq ?i ?total) then
                         (printout ?*minion_fp* ",")
-                else
-                       	(printout ?*minion_fp* "],total)" )
                 )
         )
+	(loop-for-count (?i 0 (- ?mid 1))
+		(if (eq (member$ ?i ?*refiy_list*) FALSE) then
+			(printout ?*minion_fp* ",r"?i))
+      	)
+	(printout ?*minion_fp*"],total)")
+
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
