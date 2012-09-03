@@ -41,8 +41,6 @@
 ?f2<-(manual_id-cat-word-root-vib-grp_ids ?mid ? ?w&hI - ?r&hI - 0 - ?mid)
 (not (id-word ? only))
 =>
-;        (retract ?f0 ?f1 ?f2)
- ;       (assert (manual_id-mng ?cnt $?grp_ids ?mid))
         (assert_control_fact delete_manual_fact ?mid)
 )
 ;-------------------------------------------------------------------------------------
@@ -57,11 +55,11 @@
 ?f2<-(manual_id-cat-word-root-vib-grp_ids ?mid ? ?w&BI - ?r&BI - 0 - ?mid)
 (not (id-word ? also))
 (not (id-word ? too))
+(not (id-word ? even))
 =>
- ;       (retract ?f0 ?f1 ?f2)
-  ;      (assert (manual_id-mng ?cnt $?grp_ids ?mid))
         (assert_control_fact delete_manual_fact ?mid)
 )
+
 ;-------------------------------------------------------------------------------------
 (defrule ki_rule
 (declare (salience 901))
@@ -71,8 +69,6 @@
 ?f2<-(manual_id-cat-word-root-vib-grp_ids ?mid ? ?w&ki - ?r&ki - 0 - ?mid)
 (not (id-word ? that))
 =>
- ;       (retract ?f0 ?f1 ?f2)
-  ;      (assert (manual_id-mng ?cnt $?grp_ids ?mid))
         (assert_control_fact delete_manual_fact ?mid)
 )
 ;-------------------------------------------------------------------------------------

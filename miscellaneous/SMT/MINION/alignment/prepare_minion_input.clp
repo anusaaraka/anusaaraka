@@ -148,6 +148,38 @@
 	(bind $?mem (sort > (create$ $?mem ?aid))) ;Added by Shirisha Manju
         (assert (man_id-candidate_slots ?mapped_id $?mem))
 )
+
+;------------------------------------------------------------------------------------------------------------
+;Added by Maha Laxmi
+(defrule potential_count_of_anu_id
+(declare (salience 2000))
+?f<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
+?f1<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid1)
+(test (neq ?mid ?mid1))
+(manual_id-mapped_id ?mid ?mapped_id)
+(manual_id-mapped_id ?mid1 ?mapped_id1)
+(not (anu_id-candidate_words ?aid $? ?mapped_id $?))
+(not (anu_id-candidate_words ?aid $? ?mapped_id1 $?))
+(not (ctrl_fact_for_poten_assignment ?aid $? ?mapped_id $?))
+(not (ctrl_fact_for_poten_assignment ?aid $? ?mapped_id1 $?))
+=>
+        (assert (anu_id-candidate_words ?aid ?mapped_id ?mapped_id1))
+
+)
+;------------------------------------------------------------------------------------------------------------
+;Added by Maha Laxmi
+(defrule potential_count_of_anu_id1
+(declare (salience 2000))
+(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
+?f<-(anu_id-candidate_words ?aid $?mem)
+(manual_id-mapped_id ?mid ?mapped_id)
+(test (eq (member$ ?mapped_id $?mem) FALSE))
+(not (ctrl_fact_for_poten_assignment ?aid $? ?mid $?))
+=>
+        (retract ?f)
+        (bind $?mem (sort > (create$ $?mem ?mapped_id)))
+        (assert (anu_id-candidate_words ?aid $?mem))
+)
 ;------------------------------------------------------------------------------------------------------------
 (defrule get_man_pot_ids
 (declare (salience 1900))
@@ -307,10 +339,38 @@
 ;Added by Shirisha Manju (16-08-12)
 (defrule print_pot_fact_for_word
 (declare (salience 930))
-(fact_name-word_id-slot_id  eq_or_sumleq ?wid ?sid)
+(fact_name-word_id-slot_id  eq_or_sumleq $?wids ?sid)
 =>
-	(printout ?*minion_fp* " watched-or({ eq(ws["?wid","?sid"],1),sumleq(ws[_,"?sid"],0)})" crlf)
+	(printout ?*minion_fp* " watched-or({ " )
+        (loop-for-count (?i 1 (length $?wids))
+                        (bind ?id (nth$ ?i $?wids))
+                        (printout ?*minion_fp* "eq(ws["?id","?sid"],1),")
+        )
+	
+	(printout ?*minion_fp* "sumleq(ws[_,"?sid"],0)})" crlf)
+
+        (loop-for-count (?i 1 (length $?wids))
+                        (bind ?id (nth$ ?i $?wids))
+                        (printout ?*minion_fp* " watched-or( {eq(ws["?id","?sid"],1),sumleq(ws["?id",_],0)})" crlf)
+        )
+	;(printout ?*minion_fp* " watched-or({ eq(ws["?wid","?sid"],1),sumleq(ws[_,"?sid"],0)})" crlf)
 )
+
+;(defrule print_pot_fact_for_restricted_words
+;(declare (salience 929))
+;(fact_name-word_id-slot_id  eq_or_sumleq $?wids ?sid)
+;(hindi_id_order $?hin_order)
+;(id-word ?id ~is)
+;(test (neq (member$ ?id $?hin_order) FALSE))
+;(test (eq ?id (nth$ (+ ?sid 1) $?hin_order)))
+;;?id2&:(=(+ ?id1 1)
+;=>
+;
+;        (loop-for-count (?i 1 (length $?wids))
+;                        (bind ?id (nth$ ?i $?wids))
+;                        (printout ?*minion_fp* " watched-or( {eq(ws["?id","?sid"],1),sumleq(ws["?id",_],0)})" crlf)
+;        )
+;)
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (16-08-12)
 (defrule print_pot_fact_for_word1
@@ -323,13 +383,13 @@
 ;------------------------------------------------------------------------------------------------------------
 ;;Added by Shirisha Manju (23-08-12)
 ;;An incoming wave can be divided into two weaker waves at the boundary between air and water.
-;(defrule print_pot_fact_for_word2
-;(declare (salience 930))
-;(fact_name-word_id-slot_id  sumleq ?wid all_columns)
-;=>
-;        (printout ?*minion_fp* " sumleq(ws["?wid",_],0)" crlf)
-;	
-;)
+(defrule print_pot_fact_for_word2
+(declare (salience 930))
+(fact_name-word_id-slot_id  sumleq ?wid all_columns)
+=>
+        (printout ?*minion_fp* " sumleq(ws["?wid",_],0)" crlf)
+	
+)
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (22-08-12)
 (defrule print_pot_fact_for_repeated_word
@@ -339,6 +399,7 @@
 (manual_id-mng ?mid $?)
 (test (eq (member$ ?mid $?mids) FALSE))
 (hindi_id_order $?hin_order)
+(test (neq (member$ ?id $?hin_order) FALSE))
 =>
 	(printout ?*minion_fp* " eq(ws["(- ?mid 1)","(- (member$ ?id $?hin_order) 1)"],0)" crlf)
 )
@@ -388,8 +449,31 @@
                             (printout ?*minion_fp* ",")
                         )
 	)
-	(printout ?*minion_fp* "})" crlf)
+	(printout ?*minion_fp* ",sumleq(ws["(- ?mid 1)",_],0)})" crlf)
 )
+;------------------------------------------------------------------------------------------------------------
+;Added by Maha Laxmi
+;(defrule print_potential_constraints2
+;(declare (salience 910))
+;(anu_id-candidate_words ?aid $?grp)
+;(hindi_id_order $?hin_order)
+;(test (neq (length $?grp) 0))
+;(test (neq (member$ ?aid $?hin_order) FALSE))
+;(not (ctrl_fact_for_poten_assignment ?aid $?))
+;=>
+;        (printout ?*minion_fp* " watched-or({" )
+;	(bind ?sid (member$ ?aid $?hin_order))
+;        (loop-for-count (?i 1 (length $?grp))
+;                        (bind ?id (nth$ ?i $?grp))
+;                        (printout ?*minion_fp* "eq(ws["(- ?id 1)","(- ?sid 1)"],1)")
+;                        (if (neq ?i (length $?grp)) then
+;                            (printout ?*minion_fp* ",")
+;                        )
+;        )
+;        ;(printout ?*minion_fp* ",sumleq(ws[_,"(- ?sid 1)"],0)})" crlf)
+;        (printout ?*minion_fp* "})" crlf)
+;)
+
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
 (defrule print_default_assignment

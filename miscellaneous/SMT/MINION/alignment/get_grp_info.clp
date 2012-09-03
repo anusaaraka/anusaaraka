@@ -48,7 +48,8 @@
 (defrule get_large_grp_head_ids
 (declare (salience 1400))
 ?f0<-(grp_ids-head_ids-var_ids $?g_ids - $?h_ids - $?vars)
-(pada_info (group_head_id ?hid))
+(pada_info (group_head_id ?hid)(group_ids $?grp))
+(test (> (length $?grp) 1))
 (test (member$ ?hid $?g_ids))
 (test (eq (member$ ?hid $?h_ids) FALSE))
 ;(not (conj_components $?g_ids))

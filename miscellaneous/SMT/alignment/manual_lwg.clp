@@ -1,18 +1,40 @@
+;sort_grp function sorts  the given ids and make each id unique i.e; if i/p [9 3 4 3 5] ==> o/p [3 4 5 9]
+(deffunction sort_grp($?ids)
+        (bind ?len (length $?ids))
+        (bind $?new_ids (create$ ))
+        (bind $?ids (sort > $?ids))
+        (while (> (length $?ids) 0)
+                        (bind ?id (nth$ 1 $?ids))
+                        (bind $?ids (delete-member$ $?ids ?id))
+                        (bind $?new_ids (create$ $?new_ids ?id))
+        )
+       (bind $?ids $?new_ids)
+)
+
+
+
 ;Eng sen  :: [Thus] the observer sees a rainbow with red color on the top and violet on the bottom. 
 ;Man tran :: [isa prakAra] prekRaka inxraXanuRa ke SIrRa para lAla varNa Ora pEnxI para bEfganI varNa xeKawA hE .
 ;Anu tran :: [isa prakAra] prekRaka walI para UparI sawaha para waWA PUla lAla rafga se inxraXanuRa ko xeKawA hE.
+;Eng sen  :: Though the reason for [appearance] of spectrum is now common knowledge, it was a matter of much debate in the history of physics.
+;Man tran :: yaxyapi spektrama kA [xiKAI xenA] aba eka sAmAnya jFAna kI bAwa hE @PUNCT-Comma  paranwu BOwikI ke iwihAsa meM yaha eka bade vAxa - vivAxa kA viRaya WA.
+;Anu tran :: warafga kI upasWiwi ke lie kAraNa sAXAraNa pratiBA aba hE magara, vaha BOwika vijFAna ke vqwwAnwa meM bahuwa bahasa kA viRaya WA.
 
 (defrule grouping_using_dic
 (declare (salience 70))
-(anu_id-manual_ids-sep-mng ? $?mids ?mid - $?mng)
-?f0<-(manual_id-word-cat ?mid ?w ?cat)
+(anu_id-manual_ids-sep-mng ? $?mids - $?mng)
+?f0<-(manual_id-word-cat ?mid ?w ?cat&~VIB)
+(test (neq (member$ ?mid $?mids) FALSE))
+(not (manual_id-word-cat ?mid1&:(and (member$ ?mid1 $?mids) (> ?mid1 ?mid))  ? ?cat1&~VIB))
 =>
 	(retract ?f0)
 	(assert (manual_id-word-cat ?mid $?mng ?cat))
 	(assert (grp_head_id-grp_ids-mng ?mid - $?mids - $?mng)) 
 	(loop-for-count (?i 1 (length $?mids))
                         (bind ?j (nth$ ?i (create$ $?mids)))
+			(if (neq ?j ?mid) then
                         (assert (retract_manual_fact ?j))
+                        )
         )
 )
 ;-----------------------------------------------------------------------------------------------------
@@ -111,12 +133,13 @@
 ;xravyamAna kenxra kI pariBARA [jAnane ke bAxa] , aba hama isa sWiwi meM hEM ki kaNoM ke eka nikAya ke lie isake BOwika mahawva kI vivecanA kara sakeM.
 ;It is mainly through light and the sense of vision that we know and interpret the world around us.--> muKya rUpa se prakASa evaM xqRti kI [saMvexanA ke kAraNa] hI hama apane cAroM ora ke saMsAra ko samaJawe evaM usakI vyAKyA karawe hEM
 ;There is no loss of energy due to friction. [ke kAraNa]
+;The apparent flattening (oval shape) of the sun at sunset and sunrise is also due to the same phenomenon.--->sUryAswa waWA [sUryoxaya ke samaya] sUrya kA ABAsI capatApana (aNdAkAra Akqwi) BI isI pariGatanA ke kAraNa hI hE.
 (defrule ke_[word]
 (declare (salience 20))
 ?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN|NNP)
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ke ?)
-?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|aMwargawa|ora|awirikwa|bAxa|kAraNa ?)
+?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|aMwargawa|ora|awirikwa|bAxa|kAraNa|samaya ?)
 =>
  	(retract ?f1 ?f2 ?f3)
  	(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ke ?w - ?id0 ?id1 ?id2))
@@ -157,7 +180,7 @@
 (manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen SYM)
 (manual_id-word-cat ?id2 @PUNCT-ClosedParen SYM)
 (test (> ?id2 ?id1))
-?f3<-(manual_id-word-cat ?id3&:(=(+ ?id2 1) ?id3) ?vib&ke|lie ?)
+?f3<-(manual_id-word-cat ?id3&:(=(+ ?id2 1) ?id3) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA ?)
 =>
 	(retract ?f1 ?f3)
 	(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun ?vib - $?root - ?vib - ?id0 ?id3))
@@ -201,7 +224,7 @@
 ?f1<-(grp_head_id-grp_ids-mng ?mid - $?grp_ids - $?mng)
 =>
 	(retract ?f0 ?f1)
-	(bind $?grp_ids (sort > $?grp_ids $?grp))
+	(bind $?grp_ids (sort_grp (create$ $?grp_ids $?grp)))
 	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?mng - $?root - $?vib - $?grp_ids))
 )
 ;-----------------------------------------------------------------------------------------

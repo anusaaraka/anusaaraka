@@ -610,4 +610,9 @@ principal_axis	muKya_akRa
 electromagnetic	vExyuwacumbakIya
 dispersion	parikRepaNa
 point_of_view	xqRti
+wavelength	warafgaxErGya
+since	isalie
+transmit	preRiwa
 #dimension	vima
+##multi_word_expressions
+of_course	vAswava_meM
