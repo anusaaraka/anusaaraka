@@ -338,6 +338,14 @@
         (get_slot_and_word_id 0 ?mid sumleq -)
 )
 ;-------------------------------------------------------------------------------------
+;Added by Maha laxmi
+(defrule potential_facts_for_yA
+(manual_id-mng ?mid yA|aWavA|anyaWA)
+(not (id-word ?aid or))
+=>
+        (get_slot_and_word_id 0 ?mid sumleq -)
+)
+;-------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
 ;koI rAsAyanika aBikriyA mUla rUpa se viBinna aNuoM meM paramANuoM kI [punarvyavasWA hI] howI hE.
 (defrule hI_rule
