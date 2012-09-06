@@ -167,6 +167,21 @@
 	
 )
 ;------------------------------------------------------------------------------------------------------------
+(defrule print_null_slot_info
+(declare (salience 1299))
+(fact_name-slot_id sumleq ?sid)
+=>
+	(printout ?*minion_fp* "	# NULL slot :: " (- ?sid 1) crlf)
+)
+;------------------------------------------------------------------------------------------------------------
+(defrule print_null_word_info
+(declare (salience 1299))
+(fact_name-word_id sumleq ?wid)
+=>
+	(printout ?*minion_fp* "	# NULL word :: " (- ?wid 1) crlf)
+
+)
+;------------------------------------------------------------------------------------------------------------
 (defrule get_dictionary_constarints
 (declare (salience 1201))
 (anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?)
