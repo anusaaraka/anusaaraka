@@ -102,107 +102,6 @@
         (printout ?*minion_fp* " # Removed prep potential fact :: mid-aid: "?mid"--"?aid" As preositions ids are grouped with PP" crlf)
 )
 ;==============================================================================================================
-;Added by Maha Laxmi
-(defrule potential_count_of_manual_verb_id
-(declare (salience 2000))
-(man_verb_count-verbs ?man_verb_count&~0 $? ?man_verb $?)
-(anu_verb_count-verbs ?anu_verb_count&~0 $?anu_verbs)
-(manual_id-mapped_id ?man_verb ?mapped_id)
-(not (man_id-candidate_slots ?mapped_id $?))
-(not (ctrl_fact_for_poten_assignment ?mapped_id $? ?aid $?))
-=>
-        (assert (man_id-candidate_slots ?mapped_id $?anu_verbs))
-	(if (eq (member$ (- ?mapped_id 1) ?*non_refiy_list*) FALSE) then
-	(bind ?*non_refiy_list* (create$ (- ?mapped_id 1) ?*non_refiy_list*)))
-	(printout t ?*non_refiy_list* crlf)
-
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi
-(defrule potential_count_of_manual_id
-(declare (salience 2000))
-?f<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
-?f1<-(potential_assignment_vacancy_id-candidate_id ?aid1 ?mid)
-(test (neq ?aid ?aid1))
-(manual_id-mapped_id ?mid ?mapped_id)
-(not (man_id-candidate_slots ?mapped_id $?))
-(not (ctrl_fact_for_poten_assignment ?mapped_id $? ?aid $?))
-=>
-        (assert (man_id-candidate_slots ?mapped_id ?aid ?aid1))
-	(if (eq (member$ (- ?mapped_id 1) ?*non_refiy_list*) FALSE) then
-	(bind ?*non_refiy_list* (create$ (- ?mapped_id 1) ?*non_refiy_list*)))
-	(printout t ?*non_refiy_list* crlf)
-
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi
-(defrule potential_count_of_manual_id1
-(declare (salience 2000))
-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
-?f<-(man_id-candidate_slots ?mapped_id $?mem)
-(manual_id-mapped_id ?mid ?mapped_id)
-(test (eq (member$ ?aid $?mem) FALSE))
-(not (ctrl_fact_for_poten_assignment ?mapped_id $? ?aid $?))
-=>
-        (retract ?f)
-	(bind $?mem (sort > (create$ $?mem ?aid))) ;Added by Shirisha Manju
-        (assert (man_id-candidate_slots ?mapped_id $?mem))
-)
-
-;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi
-(defrule potential_count_of_anu_id
-(declare (salience 2000))
-?f<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
-?f1<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid1)
-(test (neq ?mid ?mid1))
-(manual_id-mapped_id ?mid ?mapped_id)
-(manual_id-mapped_id ?mid1 ?mapped_id1)
-(not (anu_id-candidate_words ?aid $? ?mapped_id $?))
-(not (anu_id-candidate_words ?aid $? ?mapped_id1 $?))
-(not (ctrl_fact_for_poten_assignment ?aid $? ?mapped_id $?))
-(not (ctrl_fact_for_poten_assignment ?aid $? ?mapped_id1 $?))
-=>
-        (assert (anu_id-candidate_words ?aid ?mapped_id ?mapped_id1))
-
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi
-(defrule potential_count_of_anu_id1
-(declare (salience 2000))
-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
-?f<-(anu_id-candidate_words ?aid $?mem)
-(manual_id-mapped_id ?mid ?mapped_id)
-(test (eq (member$ ?mapped_id $?mem) FALSE))
-(not (ctrl_fact_for_poten_assignment ?aid $? ?mid $?))
-=>
-        (retract ?f)
-        (bind $?mem (sort > (create$ $?mem ?mapped_id)))
-        (assert (anu_id-candidate_words ?aid $?mem))
-)
-;------------------------------------------------------------------------------------------------------------
-(defrule get_man_pot_ids
-(declare (salience 1900))
-(man_id-candidate_slots ?mid  $?sids)
-(man_id-candidate_slots ?mid1 $?sids)
-(test (neq ?mid ?mid1))
-=>
-	(bind $?mids (sort > (create$ ?mid ?mid1 )))
-	(assert (man_id-candidate_slots_tmp $?mids - $?sids))
-)
-;------------------------------------------------------------------------------------------------------------
-(defrule get_man_pot_ids1
-(declare (salience 1901))
-?f0<-(man_id-candidate_slots_tmp $?mids - $?sids)
-(man_id-candidate_slots ?mid  $?sids)
-(test (eq (member$ ?mid $?mids) FALSE))
-=>
-	(retract ?f0)
-        (bind $?mids (sort > (create$ $?mids ?mid)))
-        (assert (man_id-candidate_slots_tmp $?mids - $?sids))
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi
 (defrule manul_word_count
 (declare (salience 1500))
 (manual_id-mng ?mid $?)
@@ -237,28 +136,35 @@
 	(printout ?*minion_fp*  " # potential facts : " crlf) 
 )
 ;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju
 (defrule print_pot_info
-(declare (salience 1300))
-?f<-(man_id-candidate_slots ?mid $?grp)
-(hindi_id_order $?ids)
-(not (man_id-candidate_slots_ctrl_fact ?mid))
+(declare (salience 1301))
+(fact_name-man_id-slot_ids  eq_or_sumleq ?mid $?sids)
 =>
 	(bind $?g_list (create$))
-	(loop-for-count (?i 1 (length $?grp))
-                (bind ?id (nth$ ?i $?grp))
-                (bind ?pos (member$ ?id $?ids))
-		(if (neq ?pos FALSE) then
-                	(bind $?g_list (sort > (create$ $?g_list (- ?pos 1))))
-		)
+	(loop-for-count (?i 1 (length $?sids))
+                (bind ?id (nth$ ?i $?sids))
+		(bind $?g_list (sort > (create$ $?g_list (- ?id 1))))
+	)
+	(printout ?*minion_fp* "	# row_id-slot_ids " (- ?mid 1) " --- " (implode$ $?g_list) crlf)        
+	(if (eq (member$ (- ?mid 1) ?*non_refiy_list*) FALSE) then
+            (bind ?*non_refiy_list* (create$ (- ?mid 1) ?*non_refiy_list*)))
+	(printout t ?*non_refiy_list* crlf)
+)
+
+(defrule print_pot_info1
+(declare (salience 1300))
+(fact_name-slot_id-word_ids  eq_or_sumleq ?aid $?wids)
+=>
+        (bind $?g_list (create$))
+        (loop-for-count (?i 1 (length $?wids))
+                (bind ?id (nth$ ?i $?wids))
+                (bind $?g_list (sort > (create$ $?g_list (- ?id 1))))
+		(if (eq (member$ (- ?id 1) ?*non_refiy_list*) FALSE) then
+                (bind ?*non_refiy_list* (create$ (- ?id 1) ?*non_refiy_list*)))
+	(printout t ?*non_refiy_list* crlf)
         )
-	(if (or (eq (length $?g_list) 0) (eq (length $?g_list) 1)) then
-		(retract ?f)
-		(assert (ctrl_fact_for_poten_assignment ?mid $?grp));asserting a control in order to stop firing rule "potential_count_of_manual_id1" again 
-	else	    
-	(printout ?*minion_fp* "        # man_w_id-anu_ids " ?mid " ---- " (implode$ $?grp))
-        (printout ?*minion_fp* "   ==> " (- ?mid 1) " ---- " )
-	(printout ?*minion_fp* (implode$ $?g_list) crlf))
+        (printout ?*minion_fp* "        # slot_id-row_ids " (- ?aid 1 ) " ---- " (implode$ $?g_list) crlf)     
+	
 )
 ;------------------------------------------------------------------------------------------------------------
 (defrule get_dictionary_constarints
@@ -270,6 +176,7 @@
         (bind ?*non_refiy_list* (create$ (- ?mapped_id 1) ?*non_refiy_list*)))
 	(printout t ?*non_refiy_list* crlf)
 )
+
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
 (defrule print_array
@@ -339,82 +246,46 @@
 ;Added by Shirisha Manju (16-08-12)
 (defrule print_pot_fact_for_word
 (declare (salience 930))
-(fact_name-word_id-slot_id  eq_or_sumleq $?wids ?sid)
+(fact_name-man_id-slot_ids  eq_or_sumleq ?mid $?sids)
 =>
 	(printout ?*minion_fp* " watched-or({ " )
-        (loop-for-count (?i 1 (length $?wids))
-                        (bind ?id (nth$ ?i $?wids))
-                        (printout ?*minion_fp* "eq(ws["?id","?sid"],1),")
+        (loop-for-count (?i 1 (length $?sids))
+                        (bind ?sid (nth$ ?i $?sids))
+                        (printout ?*minion_fp* "eq(ws["(- ?mid 1)","(- ?sid 1)"],1),")
         )
-	
-	(printout ?*minion_fp* "sumleq(ws[_,"?sid"],0)})" crlf)
+	(printout ?*minion_fp* "sumleq(ws["(- ?mid 1)",_],0)})" crlf)
 
-        (loop-for-count (?i 1 (length $?wids))
-                        (bind ?id (nth$ ?i $?wids))
-                        (printout ?*minion_fp* " watched-or( {eq(ws["?id","?sid"],1),sumleq(ws["?id",_],0)})" crlf)
-        )
-	;(printout ?*minion_fp* " watched-or({ eq(ws["?wid","?sid"],1),sumleq(ws[_,"?sid"],0)})" crlf)
 )
 
-;(defrule print_pot_fact_for_restricted_words
-;(declare (salience 929))
-;(fact_name-word_id-slot_id  eq_or_sumleq $?wids ?sid)
-;(hindi_id_order $?hin_order)
-;(id-word ?id ~is)
-;(test (neq (member$ ?id $?hin_order) FALSE))
-;(test (eq ?id (nth$ (+ ?sid 1) $?hin_order)))
-;;?id2&:(=(+ ?id1 1)
-;=>
-;
-;        (loop-for-count (?i 1 (length $?wids))
-;                        (bind ?id (nth$ ?i $?wids))
-;                        (printout ?*minion_fp* " watched-or( {eq(ws["?id","?sid"],1),sumleq(ws["?id",_],0)})" crlf)
-;        )
-;)
+(defrule print_pot_fact_for_slot
+(declare (salience 930))
+(fact_name-slot_id-word_ids  eq_or_sumleq ?sid $?wids)
+=>
+        (printout ?*minion_fp* " watched-or({ " )
+        (loop-for-count (?i 1 (length $?wids))
+                        (bind ?mid (nth$ ?i $?wids))
+                        (printout ?*minion_fp* "eq(ws["(- ?mid 1)","(- ?sid 1)"],1),")
+        )
+
+        (printout ?*minion_fp* "sumleq(ws[_,"(- ?sid 1)"],0)})" crlf)
+)
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (16-08-12)
 (defrule print_pot_fact_for_word1
 (declare (salience 930))
-;(fact_name-word_id-slot_id  sumleq ?wid ?sid)
-(fact_name-word_id-slot_id  sumleq all_rows ?sid)
+(fact_name-slot_id sumleq ?sid)
 =>
-        (printout ?*minion_fp* " sumleq(ws[_,"?sid"],0)" crlf)
+        (printout ?*minion_fp* " sumleq(ws[_,"(- ?sid 1)"],0)" crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
 ;;Added by Shirisha Manju (23-08-12)
 ;;An incoming wave can be divided into two weaker waves at the boundary between air and water.
 (defrule print_pot_fact_for_word2
 (declare (salience 930))
-(fact_name-word_id-slot_id  sumleq ?wid all_columns)
+(fact_name-word_id sumleq ?wid)
 =>
-        (printout ?*minion_fp* " sumleq(ws["?wid",_],0)" crlf)
+        (printout ?*minion_fp* " sumleq(ws["(- ?wid 1)",_],0)" crlf)
 	
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (22-08-12)
-(defrule print_pot_fact_for_repeated_word
-(declare (salience 925))
-(repeated_id-word ?id ?w)
-(man_id-candidate_slots_tmp  $?mids - $? ?id $?)
-(manual_id-mng ?mid $?)
-(test (eq (member$ ?mid $?mids) FALSE))
-(hindi_id_order $?hin_order)
-(test (neq (member$ ?id $?hin_order) FALSE))
-=>
-	(printout ?*minion_fp* " eq(ws["(- ?mid 1)","(- (member$ ?id $?hin_order) 1)"],0)" crlf)
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (23-08-12)
-;The normal in this case is to be taken as normal to the tangent to surface at the point of incidence. 
-(defrule print_pot_fact_for_repeated_word1
-(declare (salience 921))
-(repeated_id-word ?id ?w)
-(not (man_id-candidate_slots  ?mid  $? ?id $?))
-(not (man_id-candidate_slots_tmp  $?mids - $? ?id $?))
-(hindi_id_order $?hin_order)
-(test (neq (member$ ?id $?hin_order) FALSE))
-=>
-        (printout ?*minion_fp* " sumleq(ws[_,"(- (member$ ?id $?hin_order) 1)"],0)" crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
@@ -426,56 +297,6 @@
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
-(defrule print_potential_constraints1
-(declare (salience 910))
-(man_id-candidate_slots ?mid $?grp)
-(hindi_id_order $?hin_order)
-(test (neq (length $?grp) 0))
-(not (ctrl_fact_for_poten_assignment ?mid $?))
-=>
-	(printout ?*minion_fp* " watched-or({" )
-	(bind $?list (create$ ))
-        (loop-for-count (?i 1 (length $?grp))
-        	(bind ?slot_id (nth$ ?i $?grp))
-		(if (neq (member$ ?slot_id $?hin_order) FALSE) then
-			(bind $?list (create$ $?list (member$ ?slot_id $?hin_order)))
-		)
-        )
-	
-	(loop-for-count (?i 1 (length $?list))
-			(bind ?id (nth$ ?i $?list))
-			(printout ?*minion_fp* "eq(ws["(- ?mid 1)","(- ?id 1)"],1)")
-			(if (neq ?i (length $?list)) then
-                            (printout ?*minion_fp* ",")
-                        )
-	)
-	(printout ?*minion_fp* ",sumleq(ws["(- ?mid 1)",_],0)})" crlf)
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi
-;(defrule print_potential_constraints2
-;(declare (salience 910))
-;(anu_id-candidate_words ?aid $?grp)
-;(hindi_id_order $?hin_order)
-;(test (neq (length $?grp) 0))
-;(test (neq (member$ ?aid $?hin_order) FALSE))
-;(not (ctrl_fact_for_poten_assignment ?aid $?))
-;=>
-;        (printout ?*minion_fp* " watched-or({" )
-;	(bind ?sid (member$ ?aid $?hin_order))
-;        (loop-for-count (?i 1 (length $?grp))
-;                        (bind ?id (nth$ ?i $?grp))
-;                        (printout ?*minion_fp* "eq(ws["(- ?id 1)","(- ?sid 1)"],1)")
-;                        (if (neq ?i (length $?grp)) then
-;                            (printout ?*minion_fp* ",")
-;                        )
-;        )
-;        ;(printout ?*minion_fp* ",sumleq(ws[_,"(- ?sid 1)"],0)})" crlf)
-;        (printout ?*minion_fp* "})" crlf)
-;)
-
-;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi
 (defrule print_default_assignment
 (declare (salience 900))
 (manual_word_length ?manual_word_len)
@@ -485,10 +306,10 @@
 	(loop-for-count (?i 0 (- ?manual_word_len 1))
 			(if (eq (member$ ?i ?*non_refiy_list*) FALSE)then
 			(printout ?*minion_fp* " reify(sumgeq(ws["?i",_],1),r"?i")" crlf)
+			(printout t ?i ?*non_refiy_list* crlf)
 			else
 			(printout ?*minion_fp* " sumgeq(ws["?i",_],1)" crlf)
 			)
-			;(printout ?*minion_fp* " sumgeq(ws["?i",_],1)" crlf)
         )
         (printout ?*minion_fp* crlf crlf)
 	(loop-for-count (?i 0 (- ?manual_word_len 1))

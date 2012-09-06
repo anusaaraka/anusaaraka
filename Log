@@ -3721,7 +3721,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 39.Modified sd_ver_output, ber_ver_output, link_ver_output and verified_output
 40.Updated Log.
 
- 28-08-12
+ 6-09-12
  ========
  1.Added transliteration folder after deleting following files:
 	1. stanford-corenlp-v1.0.4.tgz
@@ -3841,8 +3841,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 41. Removed meaning "the_UNDIFINED --> English " from default-iit-bombay-shabdanjali-dic.txt.
 42. Added new file miscellaneous/SMT/MINION/alignment/manual_word_grp_using_dic.clp and updated run_H_gen_minion.bat
 43. Added miscellaneous/HANDY_SCRIPTS folder.
-44. Updated replace_nonascii-chars.c
-45. Modified and updated sd_ver_output
-46. Updated remove_out-files.sh
-47. Updated changes_in_databases.
-48. Updated Log.	
+44. Added new dictionareis in minion
+    miscellaneous/SMT/alignment/dictionaries/restricted_hnd_words.txt
+    miscellaneous/SMT/alignment/dictionaries/restricted_eng_words.txt
+45. Updated replace_nonascii-chars.c
+46. Modified and updated sd_ver_output
+47. Updated remove_out-files.sh
+48. Updated changes_in_databases.
+49. Updated Log.	

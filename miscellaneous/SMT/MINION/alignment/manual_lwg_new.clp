@@ -108,10 +108,29 @@
 	(retract ?f1 ?f2)
 )
 ;-------------------------------------------------------------------------------------
+;Eng sen :: The near point may be as close as about 7 to 8 cm in a child ten years of age, and may increase to as much as 200 cm at 60 years of age.
+;Man tran :: 10 varRa ke bAlaka ke newra kA nikata binxu lagaBaga 7 se 8 bau waka howA hE jabaki 60 varRa kI Ayu waka pahuzcane para yaha lagaBaga 200 bau waka pahuzca sakawA hE.
+;++++++++[Should improve this rule]+++++++++
+(defrule replace_id_with_word_for_nos
+(declare (salience -5))
+?f<-(manual_id-mng ?mid $?pre ?id $?pos)
+?f1<-(manual_id-word-cat ?id ?h_mng ?)
+(test (numberp ?h_mng))
+(not (id-replaced ?mid ?h_mng))
+(not (id-replaced ?mid ?id))
+=>
+        (retract ?f ?f1)
+        (assert (manual_id-mng ?mid $?pre ?h_mng $?pos))
+	(assert (id-replaced ?mid ?h_mng))
+	(assert (id-replaced ?mid ?id))
+)
+;-------------------------------------------------------------------------------------
 (defrule replace_id_with_word
 (declare (salience -10))
 ?f<-(manual_id-mng ?mid $?pre ?id $?pos)
 ?f1<-(manual_id-word-cat ?id ?h_mng ?)
+(not (id-replaced ?mid ?h_mng))
+(not (id-replaced ?mid ?id))
 =>
         (retract ?f ?f1)
         (if (member$ ?h_mng (create$ @PUNCT-Comma @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-DoubleQuote @PUNCT-DoubleQuote @PUNCT-Semicolon @PUNCT-Colon @PUNCT-SingleQuote @PUNCT-OpenParen @PUNCT-ClosedParen @PUNCT-Exclamation @SYM-Dollar -)) then
@@ -119,4 +138,4 @@
         else
         (assert (manual_id-mng ?mid $?pre ?h_mng $?pos)))
 )
-
+;-------------------------------------------------------------------------------------
