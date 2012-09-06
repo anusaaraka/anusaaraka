@@ -8,6 +8,8 @@ rm $HOME_anu_test/Anu_databases/hindi_tam_dictionary.gdbm
 rm $HOME_anu_test/Anu_databases/preposition_dictionary.gdbm
 rm $HOME_anu_test/Anu_databases/hindi_wordnet_dic1.gdbm
 rm $HOME_anu_test/Anu_databases/hindi_wordnet_dic2.gdbm
+rm $HOME_anu_test/Anu_databases/restricted_eng_words.gdbm
+rm $HOME_anu_test/Anu_databases/restricted_hnd_words.gdbm
 
 cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
 sh get_txt_files.sh
