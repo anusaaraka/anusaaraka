@@ -258,12 +258,20 @@
 	(printout ?*minion_fp* " eq(ws["(- ?mapped_id 1)","(- (member$ ?aid $?hin_order) 1)"],1)" crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
+;Added by Maha Laxmi
+(defrule print_poten_constr_info
+(declare (salience 931))
+(print_constraint_info)
+=>
+        (printout ?*minion_fp* crlf crlf " #**PRINT POTENTIAL CONSTRAINTS** " crlf crlf)
+)
+;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (16-08-12)
 (defrule print_pot_fact_for_word
 (declare (salience 930))
 (fact_name-man_id-slot_ids  eq_or_sumleq ?mid $?sids)
 =>
-	(printout ?*minion_fp* " watched-or({ " )
+	(printout ?*minion_fp* " watched-or({" )
         (loop-for-count (?i 1 (length $?sids))
                         (bind ?sid (nth$ ?i $?sids))
                         (printout ?*minion_fp* "eq(ws["(- ?mid 1)","(- ?sid 1)"],1),")
@@ -276,7 +284,7 @@
 (declare (salience 930))
 (fact_name-slot_id-word_ids  eq_or_sumleq ?sid $?wids)
 =>
-        (printout ?*minion_fp* " watched-or({ " )
+        (printout ?*minion_fp* " watched-or({" )
         (loop-for-count (?i 1 (length $?wids))
                         (bind ?mid (nth$ ?i $?wids))
                         (printout ?*minion_fp* "eq(ws["(- ?mid 1)","(- ?sid 1)"],1),")
@@ -301,14 +309,6 @@
 =>
         (printout ?*minion_fp* " sumleq(ws["(- ?wid 1)",_],0)" crlf)
 	
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi
-(defrule print_poten_constr_info
-(declare (salience 920))
-(print_constraint_info)
-=>
-        (printout ?*minion_fp* crlf crlf " #**PRINT POTENTIAL CONSTRAINTS** " crlf crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
