@@ -120,10 +120,13 @@
 
  ;Added by Shirisha Manju
  ;The macroscopic domain includes phenomena at the laboratory, terrestrial and astronomical scales.
+ ;For example, when the muscle [is relaxed], the focal length is about 2.5 cm and objects at infinity are in sharp focus on the retina. 
+ ;uxAharaNa ke lie , jaba [peSiyAz SiWila howI hEM] wo newra leMsa kI Pokasa xUrI lagaBaga 2.5 bau howI hE waWA ananwa xUrI ke piNda xqRtipatala para spaRta Pokasiwa howe hEM.
  (defrule check_prev_word_of_ho_with_anu
  (declare (salience 91))
  ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF ho ?cat ?g ?no ?p ?c ?suf)
- ?f5<-(position-cat-man_grp_mng =(- ?id 1) ?n $?word - -)
+ ?f5<-(position-cat-man_grp_mng =(- ?id 1) ?n $? $?word - -)
+ (test (neq (length $?word) 0))
  (or (root-verbchunk-tam-chunkids ? ? ? $? ?v_id)(pada_info (group_head_id ?v_id)(group_cat infinitive)))
  (id-root ?v_id ?root)
  (id-org_wrd-root-dbase_name-mng ? ? ?root ? $?word1)

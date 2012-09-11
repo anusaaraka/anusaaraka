@@ -503,7 +503,7 @@ Pollen_grain	parAga_kaNa
 Root_mean_square_speed	varga-mAXyamUla_cAla
 Rigid_rotator	xqDZa-GUrNI
 Specific_heat	viSiRta_URmA
-Telescope	xUrabIna/xUraxarSI
+Telescope	xUrabIna/xUraxarSI/xUraxarSaka
 Vibrational_energy	kaMpanIya_UrjA
 Zig_zag	teDAZ-meDAZ
 Thermal	URmIya
@@ -607,12 +607,13 @@ Radiation	vikiraNa
 Maxwell	mEksavela
 Newton	nyUtana
 principal_axis	muKya_akRa
-electromagnetic	vExyuwacumbakIya
+electromagnetic	vExyuwacumbakIya/vExyuwa_cumbakIya
 dispersion	parikRepaNa
 point_of_view	xqRti
 wavelength	warafgaxErGya
 since	isalie
 transmit	preRiwa
+retina	xqRti_patala
 #dimension	vima
 ##multi_word_expressions
 of_course	vAswava_meM

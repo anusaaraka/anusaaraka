@@ -1,58 +1,16 @@
 ;This file is written by Maha Laxmi and Shirisha Manju
 
 (deffunction remove_character(?char ?str ?replace_char)
-                        (bind ?new_str "")
-                        (bind ?index (str-index ?char ?str))
-                        (if (neq ?index FALSE) then
-                        (while (neq ?index FALSE)
-                        (bind ?new_str (str-cat ?new_str (sub-string 1 (- ?index 1) ?str) ?replace_char))
+	(bind ?new_str "")
+        (bind ?index (str-index ?char ?str))
+        (if (neq ?index FALSE) then
+        	(while (neq ?index FALSE)
+                	(bind ?new_str (str-cat ?new_str (sub-string 1 (- ?index 1) ?str) ?replace_char))
                         (bind ?str (sub-string (+ ?index 1) (length ?str) ?str))
                         (bind ?index (str-index ?char ?str))
-                        )
-                        )
-                (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
-)
-
-
-;------------------------------------------------------------------------------------------------------------
-(defrule get_repeated_word
-(declare (salience 100))
-(id-word ?aid ?w)
-(or (id-word ?aid1 ?w)(repeated_id-word ?aid1 ?w))
-(test (neq ?aid ?aid1))
-(test (neq (gdbm_lookup "restricted_eng_words.gdbm" ?w) FALSE))
-=>
-        (assert (repeated_id-word ?aid ?w))
-	(assert (repeated_id-word ?aid1 ?w))
-)
-;------------------------------------------------------------------------------------------------------------
-(defrule retract_repeated_word
-(declare (salience 101))
-?f0<-(id-word ?aid ?w)
-(repeated_id-word ?aid ?w)
-=>
-        (retract ?f0)
-)
-;------------------------------------------------------------------------------------------------------------
-(defrule get_manual_rep_word
-(declare (salience 100))
-(manual_id-mng ?mapped_id $?mng)
-(manual_id-mapped_id ?mid ?mapped_id)
-(manual_id-mapped_id ?mid1 ?mapped_id1)
-(or (manual_id-mng ?mapped_id1 $?mng)(repeated_man_id-word ?mapped_id1 $?mng))
-(test (neq ?mid ?mid1))
-(test (neq (gdbm_lookup "restricted_hnd_words.gdbm" $?mng) FALSE))
-=>
-        (assert (repeated_man_id-word ?mid $?mng))
-        (assert (repeated_man_id-word ?mid1 $?mng))
-)
-;------------------------------------------------------------------------------------------------------------
-(defrule retract_manual_rep_word
-(declare (salience 101))
-?f0<-(manual_id-mng ?mid $?mng)
-(repeated_man_id-word ?mid $?mng)
-=>
-        (retract ?f0)
+                )
+        )
+        (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
 )
 ;------------------------------------------------------------------------------------------------------------
 (defrule manul_id_mapped_list
@@ -75,6 +33,7 @@
 (defrule get_eng_dic
 (declare (salience 2001))
 (id-word ?aid ?wrd)
+(test (eq (numberp ?wrd) FALSE ))
 (test (neq (gdbm_lookup "restricted_eng_words.gdbm" ?wrd) "FALSE"))
 =>
 	(bind $?dic_list (create$ ))
@@ -90,11 +49,11 @@
                         (bind ?slh_index (str-index "/" ?new_mng))
                 )
         )
-		(bind ?new_mng1 (str-cat (sub-string 1 (length ?new_mng) ?new_mng)))
-                        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
-                        (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
-			(bind $?dic_list (create$ $?dic_list ?new_mng1))
-			(assert (anu_id-word-possible_mngs ?aid ?wrd $?dic_list))
+	(bind ?new_mng1 (str-cat (sub-string 1 (length ?new_mng) ?new_mng)))
+        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
+        (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
+	(bind $?dic_list (create$ $?dic_list ?new_mng1))
+	(assert (anu_id-word-possible_mngs ?aid ?wrd $?dic_list))
 )
 ;------------------------------------------------------------------------------------------------------------
 
@@ -102,6 +61,7 @@
 (declare (salience 2001))
 (manual_id-mng ?mapped_id $?mng)
 (manual_id-mapped_id ?mid ?mapped_id)
+(test (eq (numberp (implode$ (create$ $?mng))) FALSE ))
 (test (neq (gdbm_lookup "restricted_hnd_words.gdbm" (implode$ (create$ $?mng))) "FALSE"))
 =>
 	(bind $?dic_list (create$ ))
@@ -118,11 +78,11 @@
                 )
 		
         )
-		(bind ?new_mng1 (str-cat (sub-string 1 (length ?new_mng) ?new_mng)))
-                        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
-                        (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
-			(bind $?dic_list (create$ $?dic_list ?new_mng1))
-                        (assert (man_id-word-possible_mngs ?mid $?mng $?dic_list))
+	(bind ?new_mng1 (str-cat (sub-string 1 (length ?new_mng) ?new_mng)))
+        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
+        (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
+	(bind $?dic_list (create$ $?dic_list ?new_mng1))
+        (assert (man_id-word-possible_mngs ?mid $?mng $?dic_list))
 )   
 ;------------------------------------------------------------------------------------------------------------
 ;yaha vahI UrjA hE jo nABikIya Sakwi janana waWA nABikIya kispotoM meM mukwa howI hE
@@ -153,13 +113,13 @@
 (hindi_id_order $?hin_order)
 (test (neq (member$ ?aid $?hin_order) FALSE))
 =>
-	(assert (man_id_anu_id ?mid ?aid))
+	(assert (man_id-anu_id ?mid ?aid))
 )
 ;------------------------------------------------------------------------------------------------------------
 (defrule potential_count_of_manual_id
 (declare (salience 1000))
 ?f<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
-(or (potential_assignment_vacancy_id-candidate_id ?aid1 ?mid) (man_id_anu_id ?mid ?aid1))
+(or (potential_assignment_vacancy_id-candidate_id ?aid1 ?mid) (man_id-anu_id ?mid ?aid1))
 (test (neq ?aid ?aid1))
 (not (man_id-candidate_ids ?mid $?))
 =>
@@ -169,7 +129,7 @@
 ;Added by Maha Laxmi
 (defrule potential_count_of_manual_id1
 (declare (salience 1000))
-(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid) (man_id_anu_id ?mid ?aid))
+(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid) (man_id-anu_id ?mid ?aid))
 ?f<-(man_id-candidate_ids ?mid $?mem)
 (test (eq (member$ ?aid $?mem) FALSE))
 =>
@@ -180,7 +140,7 @@
 ;------------------------------------------------------------------------------------------------------------
 (defrule potential_count_of_man_id2
 (declare (salience 900))
-(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid) (anu_id_man_id ?aid ?mid))
+(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid) (man_id-anu_id ?mid ?aid))
 (not (man_id-candidate_ids ?mid $?))
 (not (anu_id-candidate_ids ?aid $?))
 =>
@@ -190,7 +150,7 @@
 (defrule potential_count_of_anu_id
 (declare (salience 1000))
 (potential_assignment_vacancy_id-candidate_id ?aid ?mid)
-(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid1) (anu_id_man_id ?aid ?mid1))
+(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid1) (anu_id-man_id ?aid ?mid1))
 (test (neq ?mid ?mid1))
 (not (anu_id-candidate_ids ?aid $?))
 =>
@@ -200,7 +160,7 @@
 ;Added by Maha Laxmi
 (defrule potential_count_of_anu_id1
 (declare (salience 1000))
-(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid) (anu_id_man_id ?aid ?mid))
+(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid) (anu_id-man_id ?aid ?mid))
 ?f<-(anu_id-candidate_ids ?aid $?mem)
 (test (eq (member$ ?mid $?mem) FALSE))
 =>
@@ -211,7 +171,7 @@
 ;------------------------------------------------------------------------------------------------------------
 (defrule potential_count_of_anu_id2
 (declare (salience 900))
-(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid) (anu_id_man_id ?aid ?mid))
+(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid) (anu_id-man_id ?aid ?mid))
 (not (anu_id-candidate_ids ?aid $?))
 (not (man_id-candidate_ids ?mid $?))
 =>
@@ -228,15 +188,13 @@
 =>
 	(bind $?mapped_list (create$))
 	(bind ?slot_id (member$ ?aid $?hin_order))
-
 	(loop-for-count(?i 1 (length $?mids))
-			(bind ?id (nth$ ?i $?mids))
-			(bind ?pos (member$ ?id $?man_id_list))
-			(bind ?mapped_id (member$ ?pos $?mapped_id_list))
-			(printout t ?id "----" ?mapped_id crlf)
-			(bind $?mapped_list (create$ $?mapped_list ?mapped_id))
+		(bind ?id (nth$ ?i $?mids))
+		(bind ?pos (member$ ?id $?man_id_list))
+		(bind ?mapped_id (member$ ?pos $?mapped_id_list))
+;		(printout t ?id "----" ?mapped_id crlf)
+		(bind $?mapped_list (create$ $?mapped_list ?mapped_id))
 	)
-			
 	(assert (fact_name-slot_id-word_ids eq_or_sumleq ?slot_id $?mapped_list))
 )
 ;------------------------------------------------------------------------------------------------------------
@@ -248,10 +206,11 @@
 =>
 	(bind $?slot_ids (create$))
 	(loop-for-count(?i 1 (length $?aids))
-                        (bind ?id (nth$ ?i $?aids))
-                        (bind ?s_id (member$ ?id $?hin_order))
-			(if (neq ?s_id FALSE) then
-                        (bind $?slot_ids (create$ $?slot_ids ?s_id)))
+        	(bind ?id (nth$ ?i $?aids))
+                (bind ?s_id (member$ ?id $?hin_order))
+		(if (neq ?s_id FALSE) then
+                        (bind $?slot_ids (create$ $?slot_ids ?s_id))
+		)
         )
         (assert (fact_name-man_id-slot_ids eq_or_sumleq ?mapped_id $?slot_ids))
 )
@@ -263,34 +222,29 @@
 (manual_id-mapped_id ?man_verb ?mapped_id)
 (hindi_id_order $?hin_order)
 =>
-        (bind $?slot_ids (create$))
-        (loop-for-count(?i 1 (length $?anu_verbs))
-                        (bind ?id (nth$ ?i $?anu_verbs))
-                        (bind ?s_id (member$ ?id $?hin_order))
-                        (if (neq ?s_id FALSE) then
-                        (bind $?slot_ids (create$ $?slot_ids ?s_id)))
-        )
-        (assert (fact_name-man_id-slot_ids eq_or_sumleq ?mapped_id $?slot_ids))
+	(assert (man_id-candidate_ids ?man_verb $?anu_verbs))
 )
 ;------------------------------------------------------------------------------------------------------------
 (defrule get_fact_name_for_no_mng_for_eng_word
 (declare (salience 100))
 (id-word ?aid ?wrd)
-(not (repeated_id-word ?aid ?wrd))
+(not (anu_id-candidate_ids ?aid $?))
+(not (man_id-candidate_ids ? $? ?aid $?))
 (anu_id-word-possible_mngs ?aid ?wrd $?pos_mngs)
 (not (manual_id-mng ? $?man_mng&:(subsetp $?man_mng $?pos_mngs)))
 (hindi_id_order $?hin_order)
 (test (neq (member$ ?aid $?hin_order) FALSE))
 =>
-	(bind ?slot_id (member$ ?aid $?hin_order))
-	(assert (fact_name-slot_id sumleq ?slot_id))
+        (bind ?slot_id (member$ ?aid $?hin_order))
+        (assert (fact_name-slot_id sumleq ?slot_id))
 )
 ;------------------------------------------------------------------------------------------------------------
 (defrule get_fact_name_for_no_mng_for_man_word
 (declare (salience 100))
 (manual_id-mng ?mapped_id $?man_mng)
 (manual_id-mapped_id ?mid ?mapped_id)
-(not (repeated_man_id-word ?mid $?man_mng))
+(not (anu_id-candidate_ids ? $? ?mid $?))
+(not (man_id-candidate_ids ?mid $?))
 (man_id-word-possible_mngs ?mid $?man_mng $?pos_mngs)
 (not (id-word ? ?wrd&:(member$ ?wrd $?pos_mngs)))
 =>
