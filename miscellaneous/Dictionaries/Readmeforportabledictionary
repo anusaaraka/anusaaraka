@@ -1,0 +1,12 @@
+Please download GoldenDictPortable version from following link
+http://sourceforge.net/projects/portableapps/files/GoldenDict%20Portable/GoldenDictPortable_1.0.1.paf.exe/download
+
+then please follow the steps below:
+1. Install the file  GoldenDictPortable_1.0.1.paf.exe downloaded by providing portable device address.  
+   Once done, GoldenDictPortable folder is created
+2. Open GoldenDictPortable.exe file inside above folder
+3. unzip all the dictionaries inside
+      GoldenDictPortable/App/GoldenDict/content/
+4. In GoldenDict go to Edit->Dictionaries
+5. Click on Rescan now
+6. Click OK

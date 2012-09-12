@@ -3721,7 +3721,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 39.Modified sd_ver_output, ber_ver_output, link_ver_output and verified_output
 40.Updated Log.
 
- 6-09-12
+ 12-09-12
  ========
  1.Added transliteration folder after deleting following files:
 	1. stanford-corenlp-v1.0.4.tgz
@@ -3759,8 +3759,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
    i)  Added new rules find_conj_head , conjunction_rule0 , conjunction_rule1.
    ii) Removed get_conj_symmetry_facts rule.
  6.Corrected the meaning of "information_system" -- "sUcanA_praprAlI"  ==> "sUcanA_praNAlI"  in multi_word_expressions.txt
- 7.Updated SMT alignment files.
- 8.Added MINION to anusaarka (below are the new files added to anusaaraka related for minion)
+ 7.Added MINION to anusaarka (below are the new files added to anusaaraka related for minion)
         1) Anusaaraka_stanford_minion.sh
         2) run_sentence_stanford_minion.sh
         3) Added MINION (minion-0.13 version) folder in anusaarka (miscellaneous/SMT/MINION) it includes
@@ -3769,64 +3768,66 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                         i) alignment.bat    ii) line_count.c         iii) minion_compile.sh     iv) README
                         v) run_minion.sh    vi) get_slot_number.clp  vii) manual_lwg_new.clp  viii) run_H_gen_minion.bat
                        ix) prepare_minion_input.clp
- 9. H_ordering_rules.clp
+ 8. H_ordering_rules.clp
         Added    : rm_last_node_in_sen , print_eroor_msg_to_user and rm_to_id_in_order
-10. Added "modify_ADVP_as_NP" rule in parser_tree_correction_rules.clp
-11. Added "example sentenses" in parser_tree_modification_rules.clp
-12. prepare_apertium_input.clp
+ 9. Added "modify_ADVP_as_NP" rule in parser_tree_correction_rules.clp
+10. Added "example sentenses" in parser_tree_modification_rules.clp
+11. prepare_apertium_input.clp
 	Modified :  "PP_rule_with_tam" rule  (added not condition of cat noun)
-	             "PP_rule_with_vib_hid" rule (added not condition for hindi mng)		
-13. run_modules_std.bat
+	            "PP_rule_with_vib_hid" rule (added not condition for hindi mng)
+        	    "PP_pronoun_rule_with_ke" rule  (added you and your in word fact)
+        Added	 :  PP_pronoun_rule_without_vib3 to handle you and your when vibhati is 0.
+12. run_modules_std.bat
         1. loaded "morph.dat" in parser_tree_correction_rules module
         2. removed bload for sd_pada module -- to save prawiniXi info
 	3. loaded "domain.dat" in hindi_meaning module
-14. sd_pada.clp
+13. sd_pada.clp
         Modified  : get_conj_pada , get_pos_pada, get_single_prep , share_conj_prep ,  rm_sen_from_pada
                     get_or_verb_agmt_fact, get_or_verb_agmt_fact_for_zero_lvl and  get_pada_group
         Added     : replace_conj_daut1 and replace_conj_daut
-15. Added "default_mng_from_physics_domain" rule in hindi_meaning.clp
-16. Updated SMT and MINION alignment files
+14. Added "default_mng_from_physics_domain" rule in hindi_meaning.clp
+15. Updated SMT and MINION alignment files
      Added new files
                miscellaneous/SMT/alignment/morph.lex
                miscellaneous/SMT/MINION/alignment/word_alignment.clp
 	       miscellaneous/SMT/alignment/dictionaries/hindi_multi_word.txt
 	       miscellaneous/SMT/MINION/alignment/get_minion_output.py   and
                miscellaneous/SMT/MINION/alignment/multi_word_expressions.clp
-17. Modified tam_meaning.clp to add dummy fact (conj_head-components)
-18. Updated Anu_data/canonical_form_dictionary/list-left Anu_data/canonical_form_dictionary/list_SMT
+16. Modified tam_meaning.clp to add dummy fact (conj_head-components)
+17. Updated Anu_data/canonical_form_dictionary/list-left Anu_data/canonical_form_dictionary/list_SMT
 	- for new dic hindi_multi_word.txt
-
-19. In chk_input_format.pl, handled "the inviting of" as "inviting"
-20. In hindi_meaning.clp, 
+18. In chk_input_format.pl, handled "the inviting of" as "inviting" and 
+    Commented a pattern in chk_input_format.pl to handle patterns (X, Y, z)
+19. In hindi_meaning.clp, 
       Renamed : default_hindi_mng as default_hindi_mng-same-cat
      Modified : default_hindi_mng-same-cat rule to get hindi meaning with same category.
       Added   : generate_dummy_cat and default_hindi_mng-different-cat to get hindi meaning with different category.
-21. Added a rule to print the asserted facts in catastrophe.clp
-22. Added condition to handle the 'Default_mng_with_different_category' in create_eng_ord_html.clp
-23. In run_modules_std.bat, in hindi_meaning.clp  opened catastrophe.dat in write mode to print the fact "(sen_type-id-phrase Default_mng_with_different_category)
-24. Added a WDT_rule to print its category in sd_category.clp
-25. Added a pattern to handle "((when" in  morph.pl
-26. Removed sed commands related to 'ABBR'  in  replace-abbrevations.sh
-27. Modified some entries in iit-bombay dictionary for goldendict in following files:
+20. Added a rule to print the asserted facts in catastrophe.clp
+21. Added condition to handle the 'Default_mng_with_different_category' in create_eng_ord_html.clp
+22. In run_modules_std.bat, in hindi_meaning.clp  opened catastrophe.dat in write mode to print the fact "(sen_type-id-phrase Default_mng_with_different_category)
+23. Added a WDT_rule to print its category in sd_category.clp
+24. Added a pattern to handle "((when" in  morph.pl
+25. Removed sed commands related to 'ABBR'  in  replace-abbrevations.sh
+26. Modified some entries in iit-bombay dictionary for goldendict in following files:
 	miscellaneous/Dictionaries/iit-bombay/iit-bombay.dict
 	miscellaneous/Dictionaries/iit-bombay/iit-bombay.index
 	miscellaneous/Dictionaries/iit-bombay/src/iit-bombay.txt
 	miscellaneous/Dictionaries/iit-bombay/src/iit-bombay.txt1
-28. In transliteration, removed .transliteration-script.sh.swp, path_for_transliteration, phrasal.test.ini
-29. Modified and updated default-iit-bombay-shabdanjali-dic.txt, and integrated default_meaning_frm_oldwsd.txt in it.
-30. To handle abbrevations which are not handled by Stanford parser ::
+27. In transliteration, removed .transliteration-script.sh.swp, path_for_transliteration, phrasal.test.ini
+28. Modified and updated default-iit-bombay-shabdanjali-dic.txt, and integrated default_meaning_frm_oldwsd.txt in it.
+29. To handle abbrevations which are not handled by Stanford parser ::
 	* Added handling_abbrevations.lex
 	* Added compilation of above file in compile.sh
 	* Added code to run above file in run_stanford-parser.sh
 	* Modified 'one_sentence_per_line.txt.std.penn' to 'one_sentence_per_line.txt.std.penn_tmp1' in :
 		Anusaaraka_stanford.sh, Anusaaraka_stanford_SMT.sh, Anusaaraka_stanford_minion.sh 
-31. Updated "default_mng_from_physics_domain" rule in hindi_meaning.clp file
-32. Updated "id-link_id_map_for_first_word" rule in parserid_wordid_mapping.clp file.
-33. Updated "prefix_vib_rule" [Removed 'English_PP' from test condition] in vibakthi.clp
-34. Removed the punctuation  pattern as all the punctuations have been mapped Eg:- (, ,) --> (P_COM PUNCT-Comma) from constituency_parse.l file
-35. Added new pattern in mapping-punctuations.lex file
+30. Updated "default_mng_from_physics_domain" rule in hindi_meaning.clp file
+31. Updated "id-link_id_map_for_first_word" rule in parserid_wordid_mapping.clp file.
+32. Updated "prefix_vib_rule" [Removed 'English_PP' from test condition] in vibakthi.clp
+33. Removed the punctuation  pattern as all the punctuations have been mapped Eg:- (, ,) --> (P_COM PUNCT-Comma) from constituency_parse.l file
+34. Added new pattern in mapping-punctuations.lex file
                 \(:[ ]...\)             {       printf("(P_CLN PUNCT-DotDotDot)"); }
-36. Updated prepare_minion_input.clp file
+35. Updated prepare_minion_input.clp file
         Added ::
         remove_aux_potential_fact       remove_prep_potential_fact      potential_facts_for_also
         potential_facts_for_also1       potential_facts_for_too         potential_facts_for_too1
@@ -3834,18 +3835,26 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Modified ::
         print_pot_info          print_dictionary_constarints            potential_facts_for_article_the
         potential_facts_for_article_the1
-37. Added -c option at [lt-proc -ac hi.morf.bin] and Calling tokenizer.perl in Anusaaraka_stanford_minion.sh and Anusaaraka_stanford_SMT.sh
-38. changed the input file for get_tam_info.lex  from shallow_parser_output.dat to shallow_parser_output.dat.tmp9 in run_sentence_stanford_minion.sh and run_sentence_stanford_SMT.sh
-39. Updated replcae_anu_id_wrd_with_mng rule in get_slot_number.clp file
-40. Updated run_H_gen_minion.bat ,MINION/alignment/word_alignment.clp ,alignment/browser/create_hin_align_html.clp,Physics-dictionary.txt provisional_root_dic.txt provisional_word_dic.txt get_dbase_mng.clp get_group_mng.sh get_man_grp_mng.clp manual_lwg.clp files
-41. Removed meaning "the_UNDIFINED --> English " from default-iit-bombay-shabdanjali-dic.txt.
-42. Added new file miscellaneous/SMT/MINION/alignment/manual_word_grp_using_dic.clp and updated run_H_gen_minion.bat
-43. Added miscellaneous/HANDY_SCRIPTS folder.
-44. Added new dictionareis in minion
+36. Added -c option at [lt-proc -ac hi.morf.bin] and Calling tokenizer.perl in Anusaaraka_stanford_minion.sh and Anusaaraka_stanford_SMT.sh
+37. changed the input file for get_tam_info.lex  from shallow_parser_output.dat to shallow_parser_output.dat.tmp9 in run_sentence_stanford_minion.sh and run_sentence_stanford_SMT.sh
+38. Updated replcae_anu_id_wrd_with_mng rule in get_slot_number.clp file
+39. Updated run_H_gen_minion.bat ,MINION/alignment/word_alignment.clp ,alignment/browser/create_hin_align_html.clp,Physics-dictionary.txt provisional_root_dic.txt provisional_word_dic.txt get_dbase_mng.clp get_group_mng.sh get_man_grp_mng.clp manual_lwg.clp files
+40. Removed meaning "the_UNDIFINED --> English " from default-iit-bombay-shabdanjali-dic.txt.
+41. Added new file miscellaneous/SMT/MINION/alignment/manual_word_grp_using_dic.clp and updated run_H_gen_minion.bat
+42. Added miscellaneous/HANDY_SCRIPTS folder.
+43. Added new dictionareis in minion
     miscellaneous/SMT/alignment/dictionaries/restricted_hnd_words.txt
     miscellaneous/SMT/alignment/dictionaries/restricted_eng_words.txt
-45. Updated replace_nonascii-chars.c
-46. Modified and updated sd_ver_output
-47. Updated remove_out-files.sh
-48. Updated changes_in_databases.
-49. Updated Log.	
+44. Added Readmeforportabledictionary inside  miscellaneous/Dictionaries/
+45. Added hindi wordnet in goldendict fotmat in miscellaneous/Dictionaries/hindi-wordnet/
+46. Added Readme-to-edit-iit-bombay-dictionary.txt in miscellaneous/Dictionaries/iit-bombay/
+47. Renamed Readme-for-adding-dictionaries.txt to Notes.
+48. Modified Readme inside miscellaneous/Dictionaries
+49. Updated apertium_hn.dix and compile.sh 
+50. Updated default-iit-bombay-shabdanjali-dic.txt
+51. In abbr.sh, added  sed 's/@//g' in 'cat  hindi_sentence_tmp.dat'
+52. Updated replace_nonascii-chars.c
+53. Modified and updated sd_ver_output
+54. Updated remove_out-files.sh
+55. Updated changes_in_databases.
+56. Updated Log.

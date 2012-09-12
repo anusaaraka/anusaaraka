@@ -82,10 +82,10 @@
 <e><p><l>a</l><r>a<s n="cat:adj"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l>a</l><r>a<s n="cat:adj"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>a</l><r>a<s n="cat:adj"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
-<e><p><l>oM</l><r>a<s n="cat:adj"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
-<e><p><l>oM</l><r>a<s n="cat:adj"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
-<e><p><l>oM</l><r>a<s n="cat:adj"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
-<e><p><l>oM</l><r>a<s n="cat:adj"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
+<e><p><l>a</l><r>a<s n="cat:adj"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
+<e><p><l>a</l><r>a<s n="cat:adj"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
+<e><p><l>a</l><r>a<s n="cat:adj"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
+<e><p><l>a</l><r>a<s n="cat:adj"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>
 <pardef n="amIra/__adj">
 <e><p><l></l><r><s n="cat:adj"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
@@ -125,21 +125,24 @@
 <e><p><l>I</l><r>A<s n="cat:adj"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l>I</l><r>A<s n="cat:adj"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>				
-
+<!-- kAl/A__adj covers all the cases of vAl/A__adj so commenting this paradigm.Suggested by Chaitanya Sir 
 <pardef n="vAl/A__adj">
 <e><p><l>A</l><r>A<s n="cat:adj"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>e</l><r>A<s n="cat:adj"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l>e</l><r>A<s n="cat:adj"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>I</l><r>A<s n="cat:adj"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>I</l><r>A<s n="cat:adj"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
-</pardef>
+</pardef>   -->
 
 <pardef n="jyAx/A__adj">
 <e><p><l>A</l><r>A<s n="cat:adj"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>A</l><r>A<s n="cat:adj"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l>A</l><r>A<s n="cat:adj"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
+<e><p><l>A</l><r>A<s n="cat:adj"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l>A</l><r>A<s n="cat:adj"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
+<e><p><l>A</l><r>A<s n="cat:adj"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l>A</l><r>A<s n="cat:adj"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
+<e><p><l>A</l><r>A<s n="cat:adj"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>
 
 <pardef n="KA/__v">
@@ -2181,7 +2184,7 @@
 <e><p><l>gaIM</l><r>jA<s n="cat:v"/><s n="gen:f"/><s n="num:p"/><s n="per:m_h"/><s n="tam:yA1"/></r></p></e>
 </pardef>
 
-
+<!--vAl/A__n is covered by kAl/A__n except the case 'vAliyAz' . So removing vAl/A__n paradigm. Suggested by Chaitanya Sir.-->
 <pardef n="kAl/A__n">
 <e><p><l>A</l><r>A<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>e</l><r>A<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
@@ -2951,7 +2954,7 @@
  <e>           <p><l></l>      <r></r></p><par n="kAl/A__adj"/></e>
  <e>           <p><l></l>      <r></r></p><par n="kAl/A__n"/></e>
 <!--  <e>           <p><l></l>      <r></r></p><par n="vAl/A__n"/></e> -->
-  <e>           <p><l></l>      <r></r></p><par n="vAl/A__adj"/></e>
+<!--  <e>           <p><l></l>      <r></r></p><par n="vAl/A__adj"/></e> -->
   <e>           <p><l></l>      <r></r></p><par n="ladak/A__n"/></e>
   <e>           <p><l></l>      <r></r></p><par n="ladak/I__n"/></e>
   </pardef>
@@ -8300,7 +8303,7 @@
 <e lm="bAdI"><i>bAd</i><par n="ladak/I__n"/></e>
 <e lm="badIilAyacI"><i>badIilAyac</i><par n="ladak/I__n"/></e>
 <e lm="badImAwA"><i>badImAwA</i><par n="IrRyA/__n"/></e>
-<e lm="baDiyA"><i>baDiyA</i><par n="bAlikA/__adj"/></e>
+<e lm="baDiyA"><i>baDiy</i><par n="jyAx/A__adj"/></e>
 <e lm="baDowarI"><i>baDowar</i><par n="ladak/I__n"/></e>
 <e lm="BaduA"><i>Badu</i><par n="regular__adj-noun"/></e>
 <e lm="badZa"><i>badZ</i><par n="Gar/a__n"/></e>
@@ -8924,7 +8927,7 @@
 <e lm="bARpAkula"><i>bARpAkula</i><par n="amIra/__adj"/></e>
 <e lm="barPAnI"><i>barPAnI</i><par n="ajAwI/__adj"/></e>
 <e lm="barPI"><i>barPI</i><par n="AjAxI/__n"/></e>
-<e lm="barPIlA"><i>barPIl</i><par n="vAl/A__adj"/></e>
+<e lm="barPIlA"><i>barPIl</i><par n="kAl/A__adj"/></e>
 <e lm="barrA"><i>barrA</i><par n="KA/__v"/></e>
 <e lm="BarrA"><i>BarrA</i><par n="KA/__v"/></e>
 <e lm="bArUxa"><i>bArUxa</i><par n="BIda/__n"/></e>
@@ -23294,7 +23297,7 @@
 <e lm="pura"><i>pura</i><par n="kroXa/__n"/></e>
 <e lm="pURa"><i>pURa</i><par n="kroXa/__n"/></e>
 <e lm="purA"><i>pur</i><par n="gudiy/A__n"/></e>
-<e lm="pUrA"><i>pUr</i><par n="vAl/A__adj"/></e>
+<e lm="pUrA"><i>pUr</i><par n="kAl/A__adj"/></e>
 <e lm="Pura"><i>Pur</i><par n="rAw/a__n"/></e>
 <e lm="purajA"><i>puraj</i><par n="regular__adj-noun"/></e>
 <e lm="pUraka"><i>pUrak</i><par n="Gar/a__n"/></e>
@@ -29593,7 +29596,7 @@
 <e lm="vAlAgra"><i>vAlAgra</i><par n="kroXa/__n"/></e>
 <e lm="valAhaka"><i>valAhaka</i><par n="kroXa/__n"/></e>
 <e lm="vAla"><i>vAla</i><par n="kroXa/__n"/></e>
-<e lm="vAlA"><i>vAl</i><par n="vAl/A__adj"/></e>
+<e lm="vAlA"><i>vAl</i><par n="kAl/A__adj"/></e>
 <e lm="valAkA"><i>valAkA</i><par n="ASA/__n"/></e>
 <e lm="valAkI"><i>valAkI</i><par n="ajAwI/__adj"/></e>
 <e lm="vAlaMtiyara"><i>vAlaMtiyar</i><par n="Gar/a__n"/></e>

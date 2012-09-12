@@ -434,7 +434,7 @@
   (defrule PP_pronoun_rule_with_ke
   (declare (salience 931))
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(case ?case)(vibakthi ?vib))
-  (or (id-word ?pada_id he|she|their|i|our|me|him|they|them|her|we|it|that|this|ours|who|whom)(id-original_word ?pada_id us|Us))
+  (or (id-word ?pada_id he|she|their|i|our|me|him|they|them|her|we|it|that|this|ours|who|whom|you|your)(id-original_word ?pada_id us|Us))
   ?f0<-(id-HM-source ?pada_id ?h_word ?)
   (test (neq ?vib 0))
   (test (neq (str-index "_" ?vib)  FALSE))
@@ -537,6 +537,21 @@
 	(printout ?*A_fp5* "(id-Apertium_input "?id " ^"?h_word "<cat:p><case:o><parsarg:0><gen:"?gen"><num:"?num"><per:"?per ">$)"  crlf)
 	(printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_pronoun_rule_without_vib2 )" crlf)
   )
+  ;------------------------------------------------------------------------------------------------------------------------
+  ;Added by Roja (15-08-12) 
+  ;If you use that strategy, he will wipe you out.
+  (defrule PP_pronoun_rule_without_vib3
+  (declare (salience 929))
+  (pada_info (group_cat PP)(number ?num)(gender ?gen)(person ?per)(case ?case)(vibakthi 0)(group_ids $?ids))
+  (id-word ?pada_id you|your)
+  ?f0<-(id-HM-source ?pada_id ?h_word ?)
+  (test (member$ ?pada_id $?ids))
+  =>
+        (retract ?f0) 
+        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><case:"?case"><parsarg:0><gen:"?gen"><num:"?num">$)"  crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_without_vib3 )" crlf)
+  )
+  ;------------------------------------------------------------------------------------------------------------------------
 
  ;====================================== VP rule for root and tam =========================================================
  ;Added by Mahalaxmi (23-09-09)
@@ -1054,6 +1069,20 @@
 	)
 	(printout ?*aper_debug-file* "(id-Rule_name  "?id1 "  PP_rule_default )" crlf)
   )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;Below rule is commented. Need to check when this rule is needed.
+ ;Puri is one of the most important pilgrimage centres for the hindus.
+ ;(defrule PP_rule_for_samAsa
+ ;(declare (salience 360))
+ ;(prep_id-relation-anu_ids   - samAsa  ?id ?id1)
+ ;(pada_info (group_head_id ?h)(group_cat PP) (group_ids $?ids)(vibakthi ?vib)(number ?num)(case ?case)(gender ?gen) )
+ ;(test (and (member$ ?id $?ids)(member$ ?id1 $?ids)))
+ ;?f1<-(id-HM-source ?id1 ?hmng1 ?)
+ ;(test (neq ?vib 0))
+ ;=>
+ ;      (retract ?f1)
+ ;      (printout ?*A_fp5* "(id-Apertium_input "?id1 "  "?hmng1 ")" crlf)
+ ;)
  ;------------------------------------------------------------------------------------------------------------------------
  ;If you use that strategy, he will wipe you out.
  (defrule default_hnd_mng_rule

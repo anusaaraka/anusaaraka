@@ -29998,7 +29998,7 @@ snehavawI	f
 spaMxinI	f
 spaMxolikA	f
 sparxXA	f
-sparXa	f
+sparXA	f
 sparSaxiSA	f
 sparSareKA	f
 sparSalajjA	f
