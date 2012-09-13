@@ -3721,7 +3721,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 39.Modified sd_ver_output, ber_ver_output, link_ver_output and verified_output
 40.Updated Log.
 
- 12-09-12
+ 13-09-12
  ========
  1.Added transliteration folder after deleting following files:
 	1. stanford-corenlp-v1.0.4.tgz
@@ -3853,8 +3853,19 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 49. Updated apertium_hn.dix and compile.sh 
 50. Updated default-iit-bombay-shabdanjali-dic.txt
 51. In abbr.sh, added  sed 's/@//g' in 'cat  hindi_sentence_tmp.dat'
-52. Updated replace_nonascii-chars.c
-53. Modified and updated sd_ver_output
-54. Updated remove_out-files.sh
-55. Updated changes_in_databases.
-56. Updated Log.
+52. Added wx_utf8.lex converter in Anu_src/
+53. Following files are moved to miscellaneous/Programs/removed_files/
+	Anu_src/ra_d8_wp_r.lex 
+	bin/iscii2utf8.py
+	bin/wx_utf8
+54. Removed compilation of ra_d8_wp_r.lex and added compilation of wx_utf8.lex
+55. Passing file name to wx_utf8 as an standard input is modified in following files:
+        miscellaneous/transliteration/work/run_transliteration.sh
+        shell_scripts/ClipsToAnu_browser_intfc.sh
+        shell_scripts/anu_compile.sh
+56. Updated shell_scripts/remove_out-files.sh
+57. Updated replace_nonascii-chars.c
+58. Modified and updated sd_ver_output
+59. Updated remove_out-files.sh
+60. Updated changes_in_databases.
+61. Updated Log.
