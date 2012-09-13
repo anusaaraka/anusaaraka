@@ -1,7 +1,7 @@
  
  sh transliteration-script.sh $1/$2_tmp proper_nouns_list 2> /dev/null
  
- wx_utf8 $1/$2_tmp/proper_nouns_list.wx > $1/$2_tmp/proper_nouns_list.utf8
+ wx_utf8 < $1/$2_tmp/proper_nouns_list.wx > $1/$2_tmp/proper_nouns_list.utf8
 # paste $1/$2_tmp/proper_nouns_list $1/$2_tmp/proper_nouns_list.wx |sed 's/\(.*\)\t\(.*\)/@PropN-\1-PropN\t\2/g'|uniq  > $1/$2_tmp/proper_nouns.txt
  paste $1/$2_tmp/proper_nouns_list $1/$2_tmp/proper_nouns_list.utf8 |sed 's/\(.*\)\t\(.*\)/@PropN-@\1-@PropN\t\2/g'|uniq  > $1/$2_tmp/proper_nouns_utf8.txt
  

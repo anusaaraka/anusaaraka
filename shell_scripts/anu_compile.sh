@@ -98,8 +98,8 @@
  flex ir.lex
  gcc -o ir lex.yy.c -lfl 
  mv ir $HOME_anu_test/bin/
- ./comp.sh ra_d8_wp_r
- mv ra_d8_wp_r.out $HOME_anu_test/bin/roman_iscii
+ ./comp.sh wx_utf8 
+ mv wx_utf8.out $HOME_anu_test/bin/wx_utf8
  gcc -o split_file.out   split_file.c 
  gcc -o chunker.out  chunker.c 
  ./comp.sh aper_chunker 
@@ -115,7 +115,7 @@
  echo "Creating default-iit-bombay-shabdanjali-dic_firefox.gdbm"
  cut -f1 default-iit-bombay-shabdanjali-dic_in_canonical_form.txt > word_field
  cut -f2 default-iit-bombay-shabdanjali-dic_in_canonical_form.txt > mng_field
- wx_utf8 mng_field > mng_utf8
+ wx_utf8 < mng_field > mng_utf8
  paste word_field mng_utf8 > default-iit-bombay-shabdanjali-dic_firefox_tmp.txt
  gcc -o $HOME_anu_test/Anu_src/converting-dic-format.out $HOME_anu_test/Anu_src/converting-dic-format.c
  $HOME_anu_test/Anu_src/converting-dic-format.out default-iit-bombay-shabdanjali-dic_firefox_tmp.txt default-iit-bombay-shabdanjali-dic_firefox.txt default-iit-bombay-shabdanjali-dic_smt_tmp.txt
