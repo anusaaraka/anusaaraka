@@ -15,15 +15,16 @@ void canonical_form(char* str , char* new_str)
 {
 	char  *p1,*p2,*p3;
 	char ch;
-	int len=0,str_len=0,len_checked=0,new_str_len=0;
+	int len=0,str_len=0,len_checked=0,new_str_len=0, count=0, array_len;
+	char array[1000];
 
 	strcpy(new_str,str);
 	str_len = strlen(str);
-	p1 = new_str;
-	
- 	
+	p1 = new_str; //initialising p1
+
         while((len=strcspn(p1,"MZ")) < (str_len - len_checked))
 	{
+	   count++; *array='\0';
 		if(*(p1+len) == 'M')
 		{ 
 			ch = *(p1+1+len);
@@ -40,14 +41,19 @@ void canonical_form(char* str , char* new_str)
                                         	                                     break;
 					default  : break;
 			 }//switch end
+			len_checked = len_checked+len+1;
 		 } 
 		else //(*(p1+len) == 'Z')because it is not 'M' so it must be 'Z'
                       {
 				p2 = p1+len+1;
 				*(p1+len) =  '\0';
-				strcat(p1,p2);
+//				strcat(p1,p2);   Commenting this line Instead strcat is done to an array 
+				strcat(array, p1);
+				strcat(array,p2);
+				array_len=strlen(array);
+				strncpy(p1, array, array_len); *(p1+array_len) =  '\0';
+				len_checked = len_checked+len+2; //Adding size of  'Z' 
                       }       
-			len_checked = len_checked+len+1;
 			p1 = p1+len+1;
 
 	}// while end
@@ -59,7 +65,6 @@ void canonical_form(char* str , char* new_str)
 		*(p1+new_str_len-1)='\0';
 	}
 	
-
 } //function end
  
 /*int main(int argc , char* argv[])
