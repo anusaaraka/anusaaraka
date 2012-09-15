@@ -19,13 +19,14 @@
 ;Eng sen  :: Though the reason for [appearance] of spectrum is now common knowledge, it was a matter of much debate in the history of physics.
 ;Man tran :: yaxyapi spektrama kA [xiKAI xenA] aba eka sAmAnya jFAna kI bAwa hE @PUNCT-Comma  paranwu BOwikI ke iwihAsa meM yaha eka bade vAxa - vivAxa kA viRaya WA.
 ;Anu tran :: warafga kI upasWiwi ke lie kAraNa sAXAraNa pratiBA aba hE magara, vaha BOwika vijFAna ke vqwwAnwa meM bahuwa bahasa kA viRaya WA.
-
+;Eng sen : There are two things that we can intuitively mention about light from common experience.
+;Man tran :apane sAmAnya anuBava se hama prakASa ke viRaya meM apanI anwarxqRti xvArA xo bAwoM kA [ulleKa kara] sakawe hEM.
 (defrule grouping_using_dic
 (declare (salience 70))
 (anu_id-manual_ids-sep-mng ? $?mids - $?mng)
-?f0<-(manual_id-word-cat ?mid ?w ?cat&~VIB)
+?f0<-(manual_id-word-cat ?mid ?w&~kara ?cat&~VIB)
 (test (neq (member$ ?mid $?mids) FALSE))
-(not (manual_id-word-cat ?mid1&:(and (member$ ?mid1 $?mids) (> ?mid1 ?mid))  ? ?cat1&~VIB))
+(not (manual_id-word-cat ?mid1&:(and (member$ ?mid1 $?mids) (> ?mid1 ?mid))  ?w1&~kara ?cat1&~VIB))
 =>
 	(retract ?f0)
 	(assert (manual_id-word-cat ?mid $?mng ?cat))
@@ -122,8 +123,8 @@
 ?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN|NNP)
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ke ?)
-?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&rUpa|bAre|viRaya ?)
-?f4<-(manual_id-word-cat ?id3&:(=(+ ?id0 3) ?id3) meM ?)
+?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&rUpa|bAre|viRaya|AXAra ?)
+?f4<-(manual_id-word-cat ?id3&:(=(+ ?id0 3) ?id3) meM|para ?)
 =>
         (retract ?f1 ?f2 ?f3 ?f4)
         (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ke ?w meM - ?id0 ?id1 ?id2 ?id3))
@@ -202,7 +203,7 @@
 ;----------------------------------------------------------------------------------------------------------------
 (defrule verb_grouping
 (declare (salience 5))
-(manual_id-node-word-root-tam  ?m_h_id   VGF|VGNN  $?mng - $?root - $?tam)
+(manual_id-node-word-root-tam  ?m_h_id   VGF|VGNN|VGNF  $?mng - $?root - $?tam)
 (head_id-grp_ids ?m_h_id ?mid $?ids)
 (manual_id-word-cat ?mid $?word ?cat)
 (not (lwg_done ?mid))

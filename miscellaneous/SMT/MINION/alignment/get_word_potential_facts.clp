@@ -106,9 +106,8 @@
 (declare (salience 2000))
 (manual_id-mng ?mapped_id $?man_mng)
 (manual_id-mapped_id ?mid ?mapped_id)
-(man_id-word-mng ?mid $?man_mng ?wrd)
 (id-word ?aid ?wrd)
-(man_id-word-possible_mngs ?aid $?man_mng $?pos_mngs)
+(man_id-word-possible_mngs ?mid $?man_mng $?pos_mngs)
 (test (member$ ?wrd $?pos_mngs))
 (hindi_id_order $?hin_order)
 (test (neq (member$ ?aid $?hin_order) FALSE))
@@ -118,64 +117,55 @@
 ;------------------------------------------------------------------------------------------------------------
 (defrule potential_count_of_manual_id
 (declare (salience 1000))
-?f<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
-(or (potential_assignment_vacancy_id-candidate_id ?aid1 ?mid) (man_id-anu_id ?mid ?aid1))
-(test (neq ?aid ?aid1))
+(or (potential_assignment_vacancy_id-candidate_id ?aid1 ?mid) (man_id-anu_id ?mid ?aid1)(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?))
 (not (man_id-candidate_ids ?mid $?))
 =>
-        (assert (man_id-candidate_ids ?mid ?aid ?aid1))
+        (assert (man_id-candidate_ids ?mid))
 )
+;(defrule potential_count_of_manual_id
+;(declare (salience 1000))
+;(or (potential_assignment_vacancy_id-candidate_id ?aid1 ?mid) (man_id-anu_id ?mid ?aid1))
+;(or (potential_assignment_vacancy_id-candidate_id ?aid2 ?mid) (man_id-anu_id ?mid ?aid2))
+;(test (neq ?aid1 ?aid2))
+;(not (man_id-candidate_ids ?mid $?))
+;=>
+;        (assert (man_id-candidate_ids ?mid ?aid1 ?aid2))
+;)
 ;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi
 (defrule potential_count_of_manual_id1
 (declare (salience 1000))
-(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid) (man_id-anu_id ?mid ?aid))
+(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid) (man_id-anu_id ?mid ?aid)(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?))
 ?f<-(man_id-candidate_ids ?mid $?mem)
 (test (eq (member$ ?aid $?mem) FALSE))
 =>
         (retract ?f)
-        (bind $?mem (sort > (create$ $?mem ?aid))) ;Added by Shirisha Manju
+        (bind $?mem (sort > (create$ $?mem ?aid)))
         (assert (man_id-candidate_ids ?mid $?mem))
-)
-;------------------------------------------------------------------------------------------------------------
-(defrule potential_count_of_man_id2
-(declare (salience 900))
-(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid) (man_id-anu_id ?mid ?aid))
-(not (man_id-candidate_ids ?mid $?))
-(not (anu_id-candidate_ids ?aid $?))
-=>
-        (assert (man_id-candidate_ids ?mid ?aid))
 )
 ;------------------------------------------------------------------------------------------------------------
 (defrule potential_count_of_anu_id
 (declare (salience 1000))
-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
-(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid1) (anu_id-man_id ?aid ?mid1))
-(test (neq ?mid ?mid1))
+(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid1) (anu_id-man_id ?aid ?mid1)(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?))
+;(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid2) (anu_id-man_id ?aid ?mid2))
+;(test (neq ?mid1 ?mid2))
 (not (anu_id-candidate_ids ?aid $?))
+;(id-word ?aid ?word)
+;(test (neq (gdbm_lookup "restricted_eng_words.gdbm" ?word) "FALSE") )
 =>
-        (assert (anu_id-candidate_ids ?aid ?mid ?mid1))
+        (assert (anu_id-candidate_ids ?aid))
 )
 ;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi
 (defrule potential_count_of_anu_id1
 (declare (salience 1000))
-(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid) (anu_id-man_id ?aid ?mid))
+(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid) (anu_id-man_id ?aid ?mid)(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?))
 ?f<-(anu_id-candidate_ids ?aid $?mem)
 (test (eq (member$ ?mid $?mem) FALSE))
+(id-word ?aid ?word)
+;(test (neq (gdbm_lookup "restricted_eng_words.gdbm" ?word) "FALSE") )
 =>
         (retract ?f)
-        (bind $?mem (sort > (create$ $?mem ?mid))) ;Added by Shirisha Manju
+        (bind $?mem (sort > (create$ $?mem ?mid)))
         (assert (anu_id-candidate_ids ?aid $?mem))
-)
-;------------------------------------------------------------------------------------------------------------
-(defrule potential_count_of_anu_id2
-(declare (salience 900))
-(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid) (anu_id-man_id ?aid ?mid))
-(not (anu_id-candidate_ids ?aid $?))
-(not (man_id-candidate_ids ?mid $?))
-=>
-        (assert (anu_id-candidate_ids ?aid ?mid))
 )
 ;------------------------------------------------------------------------------------------------------------
 (defrule get_fact_name_and_mapped_ids_for_column
@@ -185,6 +175,7 @@
 (test (member$ ?aid $?hin_order))
 (manual_mapped_ids_list $?mapped_id_list)
 (manual_ids_list $?man_id_list)
+(id-word ?aid ?word)
 =>
 	(bind $?mapped_list (create$))
 	(bind ?slot_id (member$ ?aid $?hin_order))
@@ -192,10 +183,12 @@
 		(bind ?id (nth$ ?i $?mids))
 		(bind ?pos (member$ ?id $?man_id_list))
 		(bind ?mapped_id (member$ ?pos $?mapped_id_list))
-;		(printout t ?id "----" ?mapped_id crlf)
 		(bind $?mapped_list (create$ $?mapped_list ?mapped_id))
 	)
-	(assert (fact_name-slot_id-word_ids eq_or_sumleq ?slot_id $?mapped_list))
+	(if (neq (gdbm_lookup "restricted_eng_words.gdbm" ?word) "FALSE") then	
+		 (assert (fact_name-slot_id-word_ids restricted_eq_or_sumleq ?slot_id $?mapped_list))
+	else
+	(assert (fact_name-slot_id-word_ids eq_or_sumleq ?slot_id $?mapped_list)))
 )
 ;------------------------------------------------------------------------------------------------------------
 (defrule get_fact_name_anu_slot_ids_for_row
@@ -203,6 +196,7 @@
 (man_id-candidate_ids ?mid $?aids)
 (hindi_id_order $?hin_order)
 (manual_id-mapped_id ?mid ?mapped_id)
+(manual_id-mng ?mapped_id $?mng)
 =>
 	(bind $?slot_ids (create$))
 	(loop-for-count(?i 1 (length $?aids))
@@ -212,7 +206,10 @@
                         (bind $?slot_ids (create$ $?slot_ids ?s_id))
 		)
         )
-        (assert (fact_name-man_id-slot_ids eq_or_sumleq ?mapped_id $?slot_ids))
+	(if (neq (gdbm_lookup "restricted_hnd_words.gdbm" (implode$ (create$ $?mng))) "FALSE") then
+        	(assert (fact_name-man_id-slot_ids restricted_eq_or_sumleq ?mapped_id $?slot_ids))
+        else
+        	(assert (fact_name-man_id-slot_ids eq_or_sumleq ?mapped_id $?slot_ids)))
 )
 ;------------------------------------------------------------------------------------------------------------
 (defrule potential_count_of_manual_verb_id

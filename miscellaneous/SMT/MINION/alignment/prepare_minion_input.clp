@@ -1,7 +1,7 @@
 ;This file is written by Maha Laxmi and Shirisha Manju
 
 (defglobal ?*minion_fp*  = minion_fp)
-(defglobal ?*non_refiy_list* = (create$ ))
+;(defglobal ?*non_refiy_list* = (create$ ))
 
 
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
@@ -138,7 +138,7 @@
 ;------------------------------------------------------------------------------------------------------------
 (defrule print_pot_info
 (declare (salience 1301))
-(fact_name-man_id-slot_ids  eq_or_sumleq ?mid $?sids)
+(fact_name-man_id-slot_ids  ?fact_name ?mid $?sids)
 =>
 	(bind $?g_list (create$))
 	(loop-for-count (?i 1 (length $?sids))
@@ -146,22 +146,24 @@
 		(bind $?g_list (sort > (create$ $?g_list (- ?id 1))))
 	)
 	(printout ?*minion_fp* "	# row_id-slot_ids " (- ?mid 1) " --- " (implode$ $?g_list) crlf)        
-	(if (eq (member$ (- ?mid 1) ?*non_refiy_list*) FALSE) then
-            (bind ?*non_refiy_list* (create$ (- ?mid 1) ?*non_refiy_list*)))
-	(printout t ?*non_refiy_list* crlf)
+;	(if (and (eq (member$ (- ?mid 1) ?*non_refiy_list*) FALSE)(neq ?fact_name restricted_eq_or_sumleq))  then
+ ;           (bind ?*non_refiy_list* (create$ (- ?mid 1) ?*non_refiy_list*))
+;	)
+;	(printout t ?*non_refiy_list* crlf)
 )
 
 (defrule print_pot_info1
 (declare (salience 1300))
-(fact_name-slot_id-word_ids  eq_or_sumleq ?aid $?wids)
+(fact_name-slot_id-word_ids  ?fact_name ?aid $?wids)
 =>
         (bind $?g_list (create$))
         (loop-for-count (?i 1 (length $?wids))
                 (bind ?id (nth$ ?i $?wids))
                 (bind $?g_list (sort > (create$ $?g_list (- ?id 1))))
-		(if (eq (member$ (- ?id 1) ?*non_refiy_list*) FALSE) then
-                (bind ?*non_refiy_list* (create$ (- ?id 1) ?*non_refiy_list*)))
-	(printout t ?*non_refiy_list* crlf)
+;		(if (and (eq (member$ (- ?id 1) ?*non_refiy_list*) FALSE)(neq ?fact_name restricted_eq_or_sumleq)) then
+ ;               	(bind ?*non_refiy_list* (create$ (- ?id 1) ?*non_refiy_list*))
+;		)
+		;(printout t ?*non_refiy_list* crlf)
         )
         (printout ?*minion_fp* "        # slot_id-row_ids " (- ?aid 1 ) " ---- " (implode$ $?g_list) crlf)     
 	
@@ -182,16 +184,16 @@
 
 )
 ;------------------------------------------------------------------------------------------------------------
-(defrule get_dictionary_constarints
-(declare (salience 1201))
-(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?)
-(manual_id-mapped_id ?mid ?mapped_id)
-=>
-	(if (eq (member$ (- ?mapped_id 1) ?*non_refiy_list*) FALSE) then
-        (bind ?*non_refiy_list* (create$ (- ?mapped_id 1) ?*non_refiy_list*)))
-	(printout t ?*non_refiy_list* crlf)
-)
-
+;(defrule get_dictionary_constarints
+;(declare (salience 1201))
+;(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?)
+;(manual_id-mapped_id ?mid ?mapped_id)
+;=>
+;	(if (eq (member$ (- ?mapped_id 1) ?*non_refiy_list*) FALSE) then
+;        (bind ?*non_refiy_list* (create$ (- ?mapped_id 1) ?*non_refiy_list*)))
+;	(printout t ?*non_refiy_list* crlf)
+;)
+;
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
 (defrule print_array
@@ -204,10 +206,11 @@
 	(printout ?*minion_fp* " MINION 3" crlf crlf)
 	(printout ?*minion_fp* " **VARIABLES**" crlf)
  	(printout ?*minion_fp* " DISCRETE ws["?manual_word_len","?anu_slot_len"] {0..1}" crlf  )
-	(printout t ?*non_refiy_list* crlf)
+;	(printout t ?*non_refiy_list* crlf)
 	(loop-for-count (?i 0 (- ?manual_word_len 1))
-		        (if (eq (member$ ?i ?*non_refiy_list*) FALSE) then
-			(printout ?*minion_fp* " DISCRETE r"?i" {0..1}" crlf))
+;		        (if (eq (member$ ?i ?*non_refiy_list*) FALSE) then
+			(printout ?*minion_fp* " DISCRETE r"?i" {0..1}" crlf)
+	;)
 	)
 	(assert (print_constraint_info))
 )
@@ -238,8 +241,10 @@
 (defrule print_constraints
 (declare (salience 1000))
 (total_count ?t_count)
+(manual_word_length ?manual_word_len)
 =>
-	(bind ?t_count_val (+ (* (length ?*non_refiy_list*) 10) (* ?t_count 100)))
+	(bind ?t_count_val (+ (* ?manual_word_len 10) (* ?t_count 100)))
+;	(bind ?t_count_val (+ (* (length ?*non_refiy_list*) 10) (* ?t_count 100)))
 	(printout ?*minion_fp* " DISCRETE total{0.."?t_count_val"} " crlf crlf)
         (printout ?*minion_fp* " **SEARCH**" crlf)
         (printout ?*minion_fp* " #MAXIMISING " crlf)
@@ -248,15 +253,15 @@
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
-(defrule print_dictionary_constarints
-(declare (salience 940))
-(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?)
-(hindi_id_order $?hin_order)
-(manual_id-mapped_id ?mid ?mapped_id)
-(test (member$ ?aid $?hin_order))
-=>
-	(printout ?*minion_fp* " eq(ws["(- ?mapped_id 1)","(- (member$ ?aid $?hin_order) 1)"],1)" crlf)
-)
+;(defrule print_dictionary_constarints
+;(declare (salience 940))
+;(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?)
+;(hindi_id_order $?hin_order)
+;(manual_id-mapped_id ?mid ?mapped_id)
+;(test (member$ ?aid $?hin_order))
+;=>
+;	(printout ?*minion_fp* " eq(ws["(- ?mapped_id 1)","(- (member$ ?aid $?hin_order) 1)"],1)" crlf)
+;)
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
 (defrule print_poten_constr_info
@@ -269,28 +274,45 @@
 ;Added by Shirisha Manju (16-08-12)
 (defrule print_pot_fact_for_word
 (declare (salience 930))
-(fact_name-man_id-slot_ids  eq_or_sumleq ?mid $?sids)
+(fact_name-man_id-slot_ids  ?fact_name ?mid $?sids)
+(test (neq (length $?sids) 0));The intuitive notion that light travels in a straight line seems to contradict what we have learned in Chapter 8, that light is an electromagnetic wave of wavelength belonging to the visible part of the spectrum.
 =>
+	(printout t ?fact_name ?mid $?sids crlf)
 	(printout ?*minion_fp* " watched-or({" )
         (loop-for-count (?i 1 (length $?sids))
                         (bind ?sid (nth$ ?i $?sids))
-                        (printout ?*minion_fp* "eq(ws["(- ?mid 1)","(- ?sid 1)"],1),")
+                        (printout ?*minion_fp* "eq(ws["(- ?mid 1)","(- ?sid 1)"],1)")
+			(if (neq ?i (length $?sids)) then
+				(printout ?*minion_fp* ",")
+			)
+
         )
-	(printout ?*minion_fp* "sumleq(ws["(- ?mid 1)",_],0)})" crlf)
+	(if (eq ?fact_name restricted_eq_or_sumleq) then
+		(printout ?*minion_fp* ",sumleq(ws["(- ?mid 1)",_],0)})" crlf)
+	else
+		(printout ?*minion_fp* "})" crlf)
+	)
 
 )
 
 (defrule print_pot_fact_for_slot
 (declare (salience 930))
-(fact_name-slot_id-word_ids  eq_or_sumleq ?sid $?wids)
+(fact_name-slot_id-word_ids  ?fact_name ?sid $?wids)
 =>
+	(printout t ?fact_name ?sid $?wids crlf)
         (printout ?*minion_fp* " watched-or({" )
         (loop-for-count (?i 1 (length $?wids))
                         (bind ?mid (nth$ ?i $?wids))
-                        (printout ?*minion_fp* "eq(ws["(- ?mid 1)","(- ?sid 1)"],1),")
+                        (printout ?*minion_fp* "eq(ws["(- ?mid 1)","(- ?sid 1)"],1)")
+			(if (neq ?i (length $?wids)) then
+                                (printout ?*minion_fp* ",")
+                        )
         )
-
-        (printout ?*minion_fp* "sumleq(ws[_,"(- ?sid 1)"],0)})" crlf)
+	(if (eq ?fact_name restricted_eq_or_sumleq) then
+		(printout ?*minion_fp* ",sumleq(ws[_,"(- ?sid 1)"],0)})" crlf)
+	else
+		(printout ?*minion_fp* "})" crlf)
+	)
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (16-08-12)
@@ -319,12 +341,12 @@
 =>
         (printout ?*minion_fp* crlf crlf)
 	(loop-for-count (?i 0 (- ?manual_word_len 1))
-			(if (eq (member$ ?i ?*non_refiy_list*) FALSE)then
+	;		(if (eq (member$ ?i ?*non_refiy_list*) FALSE)then
 			(printout ?*minion_fp* " reify(sumgeq(ws["?i",_],1),r"?i")" crlf)
-			(printout t ?i ?*non_refiy_list* crlf)
-			else
-			(printout ?*minion_fp* " sumgeq(ws["?i",_],1)" crlf)
-			)
+	;		(printout t ?i ?*non_refiy_list* crlf)
+	;		else
+	;		(printout ?*minion_fp* " sumgeq(ws["?i",_],1)" crlf)
+	;		)
         )
         (printout ?*minion_fp* crlf crlf)
 	(loop-for-count (?i 0 (- ?manual_word_len 1))
@@ -443,8 +465,9 @@
                 )
         )
 	(loop-for-count (?i 0 (- ?manual_word_len 1))
-		(if (eq (member$ ?i ?*non_refiy_list*) FALSE) then
-			(printout ?*minion_fp* ",r"?i))
+	;	(if (eq (member$ ?i ?*non_refiy_list*) FALSE) then
+			(printout ?*minion_fp* ",r"?i	)
+	;)
       	)
 	(printout ?*minion_fp*"],total)")
         (printout ?*minion_fp* crlf "	sumleq([" )
@@ -455,8 +478,9 @@
                 )
         )
 	(loop-for-count (?i 0 (- ?manual_word_len 1))
-		(if (eq (member$ ?i ?*non_refiy_list*) FALSE) then
-			(printout ?*minion_fp* ",r"?i))
+	;	(if (eq (member$ ?i ?*non_refiy_list*) FALSE) then
+			(printout ?*minion_fp* ",r"?i)
+	;)
       	)
 	(printout ?*minion_fp*"],total)")
 

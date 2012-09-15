@@ -608,7 +608,7 @@ Maxwell	mEksavela
 Newton	nyUtana
 principal_axis	muKya_akRa
 electromagnetic	vExyuwacumbakIya/vExyuwa_cumbakIya
-dispersion	parikRepaNa
+dispersion	parikRepaNa/vikRepaNa
 point_of_view	xqRti
 wavelength	warafgaxErGya
 since	isalie

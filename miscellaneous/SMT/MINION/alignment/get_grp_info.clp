@@ -45,14 +45,15 @@
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (18-8-12)
+;The spectacle of color that [we] see around us all the time is possible only due to sunlight.
+;hamAre cAroM ora hara samaya xiKAI xene vAle Bavya rafga sUrya ke prakASa ke kAraNa hI samBava hEM.
 (defrule get_large_grp_head_ids
 (declare (salience 1400))
 ?f0<-(grp_ids-head_ids-var_ids $?g_ids - $?h_ids - $?vars)
 (pada_info (group_head_id ?hid)(group_ids $?grp))
-(test (> (length $?grp) 1))
+(id-word ?hid ?w&~he&~her&~him&~i&~it&~its&~me&~my&~our&~ours&~she&~that&~their&~them&~they&~this&~those&~we&~who&~whom&~you&~your)
 (test (member$ ?hid $?g_ids))
 (test (eq (member$ ?hid $?h_ids) FALSE))
-;(not (conj_components $?g_ids))
 =>
         (retract ?f0)
         (bind $?h_ids (sort > (create$ $?h_ids ?hid )))
