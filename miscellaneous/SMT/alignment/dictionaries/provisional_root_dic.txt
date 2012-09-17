@@ -41,3 +41,5 @@ enormous	awyaXika
 straight	sarala
 travel	gamana_kara
 construction	racanA
+rectilinear	sarala_reKA
+along	anuxiSa
