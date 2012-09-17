@@ -3721,7 +3721,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 39.Modified sd_ver_output, ber_ver_output, link_ver_output and verified_output
 40.Updated Log.
 
- 14-09-12
+ 17-09-12
  ========
  1.Added transliteration folder after deleting following files:
 	1. stanford-corenlp-v1.0.4.tgz
@@ -3862,11 +3862,21 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/transliteration/work/run_transliteration.sh
         shell_scripts/ClipsToAnu_browser_intfc.sh
         shell_scripts/anu_compile.sh
-55. Updated default-iit-bombay-shabdanjali-dic.txt
-56. Updated apertium_hn.dix and compile.sh 
-57. Updated shell_scripts/remove_out-files.sh
-58. Updated replace_nonascii-chars.c
-59. Modified and updated sd_ver_output
-60. Updated remove_out-files.sh
-61. Updated changes_in_databases.
-62. Updated Log.
+55.To send stanford parser original sentences, modified following files:
+	Anusaaraka_site.sh
+	Anusaaraka_stanford.sh
+	Anusaaraka_stanford_SMT.sh
+	Anusaaraka_stanford_minion.sh
+	run_stanford-parser.sh
+	stdenglish.sh
+56.Updated replacing-non_ascii_chars-to-ascii_chars.lex
+57.Commented 'β' rule in mapping-punctuations.lex.
+58.Removed miscellaneous/SMT/MINION/alignment/line_count.out
+59. Updated default-iit-bombay-shabdanjali-dic.txt
+60. Updated apertium_hn.dix and compile.sh 
+61. Updated shell_scripts/remove_out-files.sh
+62. Updated replace_nonascii-chars.c
+63. Modified and updated sd_ver_output
+64. Updated remove_out-files.sh
+65. Updated changes_in_databases.
+66. Updated Log.

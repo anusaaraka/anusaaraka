@@ -13,11 +13,12 @@ else
     cd $PATH2/tmp_stdenglish
   fi
 
-#Identifying nonascii characters
-$HOME_anu_test/Anu_src/identify-nonascii-chars.out $2/$1 $1.tmp_tmp
 
 #Replacing Non-ASCII characters with ASCII characters.  Ex: “ is replaced with "
-$PATH1/replacing-non_ascii_chars-to-ascii_chars.out <  $1.tmp_tmp  > $1.tmp 
+$PATH1/replacing-non_ascii_chars-to-ascii_chars.out <  $2/$1  > $1.tmp_tmp 
+
+#Identifying nonascii characters
+$HOME_anu_test/Anu_src/identify-nonascii-chars.out $1.tmp_tmp $1.tmp
 
 # enclitics.lex expands the standard abbreviations with single apostophe  such as I'm  ---> I am
 $PATH1/enclitics.out < $1.tmp > $1.tmp1

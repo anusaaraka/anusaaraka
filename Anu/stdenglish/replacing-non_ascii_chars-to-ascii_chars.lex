@@ -1,6 +1,6 @@
 /*******************************
 Added by Roja(08-03-12)
-Program to convert unprintable characters to noram ASCII characters.
+Program to convert unprintable characters to normal ASCII characters.
 Note: Removed sed and handling with Flex as Suggested by Chaitanya Sir.
 TODO: The characters replaced here need to re-mapped after final translation. 
       So information need to be stored.
