@@ -43,3 +43,4 @@ travel	gamana_kara
 construction	racanA
 rectilinear	sarala_reKA
 along	anuxiSa
+real-life	vAswavika_jIvana meM

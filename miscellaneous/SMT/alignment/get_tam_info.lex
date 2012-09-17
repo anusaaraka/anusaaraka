@@ -55,6 +55,9 @@ char id[100],node[20],root[100],cat[20],gen[20],num[20],per[20],cas[20],tam[50],
  					len = strcspn(yytext,",");   
                                         strncpy(root,yytext,len);
                                         root[len]='\0';
+					if(strcmp(root,"\0")==0) strcpy(root,"-");
+					if(strcmp(word,"\0")==0) strcpy(word,"-");
+					if(strcmp(node,"\0")==0) strcpy(node,"-");
                                         fprintf(fp1,"(id-node-word-root %s %s %s %s)\n",id,node,word,root);
                 *id='\0';*root='\0';*node='\0';*word='\0';
 
@@ -71,3 +74,6 @@ yylex();
 fclose(fp);
 fclose(fp1);
 }
+
+
+//[0-9]*[.][0-9]*\t[A-Za-z0-9._+=]*\t[A-Z]*\t<fs[ ]af=['][a-zA-Z0-9._,+]*[,]  ----- handle = and + ==> 3.2 + SYM
