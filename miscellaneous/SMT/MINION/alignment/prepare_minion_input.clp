@@ -209,7 +209,8 @@
 ;	(printout t ?*non_refiy_list* crlf)
 	(loop-for-count (?i 0 (- ?manual_word_len 1))
 ;		        (if (eq (member$ ?i ?*non_refiy_list*) FALSE) then
-			(printout ?*minion_fp* " DISCRETE r"?i" {0..1}" crlf)
+			(printout ?*minion_fp* " DISCRETE r"?i" {0..50}" crlf)
+;			(printout ?*minion_fp* " DISCRETE r"?i" {0..1}" crlf)
 	;)
 	)
 	(assert (print_constraint_info))
@@ -277,7 +278,7 @@
 (fact_name-man_id-slot_ids  ?fact_name ?mid $?sids)
 (test (neq (length $?sids) 0));The intuitive notion that light travels in a straight line seems to contradict what we have learned in Chapter 8, that light is an electromagnetic wave of wavelength belonging to the visible part of the spectrum.
 =>
-	(printout t ?fact_name ?mid $?sids crlf)
+;	(printout t ?fact_name ?mid $?sids crlf)
 	(printout ?*minion_fp* " watched-or({" )
         (loop-for-count (?i 1 (length $?sids))
                         (bind ?sid (nth$ ?i $?sids))
@@ -295,11 +296,13 @@
 
 )
 
+;To describe the rate of motion over the actual path, we introduce another quantity called average speed.
 (defrule print_pot_fact_for_slot
 (declare (salience 930))
 (fact_name-slot_id-word_ids  ?fact_name ?sid $?wids)
+(test (neq (length $?wids) 0))
 =>
-	(printout t ?fact_name ?sid $?wids crlf)
+;	(printout t ?fact_name ?sid $?wids crlf)
         (printout ?*minion_fp* " watched-or({" )
         (loop-for-count (?i 1 (length $?wids))
                         (bind ?mid (nth$ ?i $?wids))
@@ -342,7 +345,13 @@
         (printout ?*minion_fp* crlf crlf)
 	(loop-for-count (?i 0 (- ?manual_word_len 1))
 	;		(if (eq (member$ ?i ?*non_refiy_list*) FALSE)then
-			(printout ?*minion_fp* " reify(sumgeq(ws["?i",_],1),r"?i")" crlf)
+;		(printout ?*minion_fp* " reify(sumgeq(ws["?i",_],1),r"?i")" crlf)
+;----------------------------------------------------------------------------------------------------------
+			(printout ?*minion_fp* " watched-or({ " crlf)
+                       (printout ?*minion_fp* "	watched-and({sumgeq(ws["?i",_],1),eq(r"?i",50)})," crlf)
+                      (printout ?*minion_fp* "	watched-and({sumleq(ws["?i",_],0),eq(r"?i",0)})" crlf)
+             	(printout ?*minion_fp* " })" crlf)
+;----------------------------------------------------------------------------------------------------------
 	;		(printout t ?i ?*non_refiy_list* crlf)
 	;		else
 	;		(printout ?*minion_fp* " sumgeq(ws["?i",_],1)" crlf)

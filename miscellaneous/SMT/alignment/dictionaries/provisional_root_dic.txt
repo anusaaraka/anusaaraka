@@ -42,5 +42,7 @@ straight	sarala
 travel	gamana_kara
 construction	racanA
 rectilinear	sarala_reKA
-along	anuxiSa
+along	ke_anuxiSa
 real-life	vAswavika_jIvana meM
+such	isa_prakAra_kA
+thus	awaeva

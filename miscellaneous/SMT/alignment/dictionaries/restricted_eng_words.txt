@@ -3,20 +3,20 @@ a	eka/koI/prawi/kisI/eka_EsI
 an	eka/koI/prawi/kisI/eka_EsI
 that	jo/isa/yaha/vaha/usa/ki/jinheM
 there	vahAz/vaha
-also	BI/Ora
-too	BI
-which	kina/jo/jise/jinako/jisake/jinase/jisameM
-and	Ora/evaM/waWA
-is	howA_hE/hE/howI_hE/ho/howA_hEM
-it	yaha/vaha/isakA/usakI/isake
-even	BI/Ora BI/TIka/SAnwa/sannwuliwa/samawala/samAna/sama/eka_sA/cOrasa/kevala
-of	kA/se/ke_bAre_meM/meM_kA/meM_se
-this	yaha/isa/isese/iwanA
 them	unako/unakA/unake/unheM/ve
 they	unheM/ve_loga/ve
+this	yaha/isa/isese/iwanA
+also	BI/Ora
+too	BI
+even	BI/Ora BI/TIka/SAnwa/sannwuliwa/samawala/samAna/sama/eka_sA/cOrasa/kevala
+which	kina/jo/jise/jinako/jisake/jinase/jisameM
+and	Ora/evaM/waWA/va
+is	howA_hE/hE/howI_hE/ho/howA_hEM
 was	WA/WI/We
 were	hEM
+are	hEM
+it	yaha/vaha/isakA/usakI/isake
+of	kA/se/ke_bAre_meM/meM_kA/meM_se
 he	usane/unhoMne
 his	usakI/apane
-are	hEM
 we	hama/mEM/hameM/hamArA/hamane

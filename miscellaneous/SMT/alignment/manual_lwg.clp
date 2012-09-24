@@ -135,9 +135,11 @@
 ;Added by Shirisha Manju
 ;Dispersion takes place because the refractive index of medium for different wavelengths (colors) is different.
 ;parikRepaNa kA kAraNa yaha hE ki kisI mAXyama kA apavarwanAfka viBinna warafgaxErGyoM  @PUNCT-OpenParenvarNoM @PUNCT-ClosedParen ke lie Binna - Binna howA hE @PUNCT-Dot
+;Eng sen : Fig. 3.2 (b) shows the position-time graph of such a motion.
+;Man sen : isa prakAra kI gawi kA sWiwi - samaya grAPa ciwra 3.2 @PUNCT-OpenParen @b @PUNCT-ClosedParen [meM] xiKalAyA gayA hE  @PUNCT-Dot
 (defrule single_vib1
 (declare (salience 70))
-?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN)
+?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN|QC)
 (id-node-word-root ?id0 ? $? - $?root)
 (manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen SYM)
 (manual_id-word-cat ?id2 @PUNCT-ClosedParen SYM)
@@ -147,6 +149,24 @@
 =>
 	(retract ?f1 ?f3)
 	(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun ?vib - $?root - ?vib - ?id0 ?id3))
+)
+;----------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju(19-9-12)
+;We have seen earlier that the magnitude of displacement may be different from the actual path length.
+;hama yaha xeKa cuke hEM ki visWApana kA parimANa vAswavika [paWa - lambAI se] Binna ho sakawA hE.
+(defrule single_vib2
+(declare (salience 65))
+?f0<-(manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ?vib - $?ids ?id)
+?f1<-(manual_id-word-cat ?id1&:(=(+ ?id 1) ?id1) ?vib1&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA ?)
+=>
+	(retract ?f0 ?f1)
+	(if (eq ?vib 0) then
+		(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun ?vib1 - $?root - ?vib1 - $?ids ?id ?id1))
+	else
+		(bind ?n_vib (create$ ?vib ?vib1))
+		(bind $?word (delete-member$ $?noun ?vib))
+		(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?word ?n_vib - $?root - ?n_vib - $?ids ?id ?id1))
+	)
 )
 ;----------------------------------------------------------------------------------------------------------------
 (defrule verb_grouping

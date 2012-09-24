@@ -168,6 +168,8 @@
         (assert (anu_id-candidate_ids ?aid $?mem))
 )
 ;------------------------------------------------------------------------------------------------------------
+;For example, if the car starts from O, goes to P and then returns to O, the final position coincides with the initial position and the displacement is zero. --- Added if condition for pos 
+;Fig. 3.2 (b) shows the position-time graph of such a motion. --- Added if condition for word [3.2]
 (defrule get_fact_name_and_mapped_ids_for_column
 (declare (salience 800))
 ?f<-(anu_id-candidate_ids ?aid $?mids)
@@ -182,13 +184,21 @@
 	(loop-for-count(?i 1 (length $?mids))
 		(bind ?id (nth$ ?i $?mids))
 		(bind ?pos (member$ ?id $?man_id_list))
-		(bind ?mapped_id (member$ ?pos $?mapped_id_list))
-		(bind $?mapped_list (create$ $?mapped_list ?mapped_id))
+		(if (neq ?pos FALSE) then
+			(bind ?mapped_id (member$ ?pos $?mapped_id_list))
+			(bind $?mapped_list (create$ $?mapped_list ?mapped_id))
+		)
 	)
-	(if (neq (gdbm_lookup "restricted_eng_words.gdbm" ?word) "FALSE") then	
-		 (assert (fact_name-slot_id-word_ids restricted_eq_or_sumleq ?slot_id $?mapped_list))
-	else
-	(assert (fact_name-slot_id-word_ids eq_or_sumleq ?slot_id $?mapped_list)))
+	(if (eq (numberp ?word) FALSE) then
+	 	(bind ?mng (gdbm_lookup "restricted_eng_words.gdbm" ?word))
+		;	(if (neq (gdbm_lookup "restricted_eng_words.gdbm" ?word) "FALSE") then	
+		(if (neq ?mng "FALSE") then
+		 	(assert (fact_name-slot_id-word_ids restricted_eq_or_sumleq ?slot_id $?mapped_list))
+		else
+			(assert (fact_name-slot_id-word_ids eq_or_sumleq ?slot_id $?mapped_list))
+		)
+	else	(assert (fact_name-slot_id-word_ids eq_or_sumleq ?slot_id $?mapped_list))
+	)
 )
 ;------------------------------------------------------------------------------------------------------------
 (defrule get_fact_name_anu_slot_ids_for_row
@@ -248,6 +258,15 @@
         (assert (fact_name-word_id sumleq ?mapped_id))
 )
 ;------------------------------------------------------------------------------------------------------------
+;;11_03_C => Eng sen :Think! ; Man sen :socie!  ; Anu sen :sociye!
+;(defrule rm_repeated_fact
+;(declare (salience 10))
+;?f0<-(fact_name-slot_id-word_ids eq_or_sumleq ?id ?id1)
+;(fact_name-man_id-slot_ids eq_or_sumleq ?id ?id1)
+;=>
+;	(retract ?f0)
+;)
+
 
 ;This is the energy which is released in a nuclear power generation and nuclear explosions. --- yaha vahI UrjA hE jo nABikIya Sakwi janana waWA nABikIya kispotoM meM mukwa howI hE ---
 ;The reflected ray simply retraces the path. -- parAvarwiwa kiraNa kevala [apanA] paWa punaH anureKiwa karawI hE .
