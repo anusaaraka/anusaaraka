@@ -146,10 +146,6 @@
 		(bind $?g_list (sort > (create$ $?g_list (- ?id 1))))
 	)
 	(printout ?*minion_fp* "	# row_id-slot_ids " (- ?mid 1) " --- " (implode$ $?g_list) crlf)        
-;	(if (and (eq (member$ (- ?mid 1) ?*non_refiy_list*) FALSE)(neq ?fact_name restricted_eq_or_sumleq))  then
- ;           (bind ?*non_refiy_list* (create$ (- ?mid 1) ?*non_refiy_list*))
-;	)
-;	(printout t ?*non_refiy_list* crlf)
 )
 
 (defrule print_pot_info1
@@ -160,10 +156,6 @@
         (loop-for-count (?i 1 (length $?wids))
                 (bind ?id (nth$ ?i $?wids))
                 (bind $?g_list (sort > (create$ $?g_list (- ?id 1))))
-;		(if (and (eq (member$ (- ?id 1) ?*non_refiy_list*) FALSE)(neq ?fact_name restricted_eq_or_sumleq)) then
- ;               	(bind ?*non_refiy_list* (create$ (- ?id 1) ?*non_refiy_list*))
-;		)
-		;(printout t ?*non_refiy_list* crlf)
         )
         (printout ?*minion_fp* "        # slot_id-row_ids " (- ?aid 1 ) " ---- " (implode$ $?g_list) crlf)     
 	
@@ -184,17 +176,6 @@
 
 )
 ;------------------------------------------------------------------------------------------------------------
-;(defrule get_dictionary_constarints
-;(declare (salience 1201))
-;(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?)
-;(manual_id-mapped_id ?mid ?mapped_id)
-;=>
-;	(if (eq (member$ (- ?mapped_id 1) ?*non_refiy_list*) FALSE) then
-;        (bind ?*non_refiy_list* (create$ (- ?mapped_id 1) ?*non_refiy_list*)))
-;	(printout t ?*non_refiy_list* crlf)
-;)
-;
-;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
 (defrule print_array
 (declare (salience 1200))
@@ -206,12 +187,8 @@
 	(printout ?*minion_fp* " MINION 3" crlf crlf)
 	(printout ?*minion_fp* " **VARIABLES**" crlf)
  	(printout ?*minion_fp* " DISCRETE ws["?manual_word_len","?anu_slot_len"] {0..1}" crlf  )
-;	(printout t ?*non_refiy_list* crlf)
 	(loop-for-count (?i 0 (- ?manual_word_len 1))
-;		        (if (eq (member$ ?i ?*non_refiy_list*) FALSE) then
 			(printout ?*minion_fp* " DISCRETE r"?i" {0..50}" crlf)
-;			(printout ?*minion_fp* " DISCRETE r"?i" {0..1}" crlf)
-	;)
 	)
 	(assert (print_constraint_info))
 )
@@ -244,25 +221,13 @@
 (total_count ?t_count)
 (manual_word_length ?manual_word_len)
 =>
-	(bind ?t_count_val (+ (* ?manual_word_len 10) (* ?t_count 100)))
-;	(bind ?t_count_val (+ (* (length ?*non_refiy_list*) 10) (* ?t_count 100)))
-	(printout ?*minion_fp* " DISCRETE total{0.."?t_count_val"} " crlf crlf)
+;	(bind ?t_count_val (+ (* ?manual_word_len 50) (* ?t_count 100)))
+	(printout ?*minion_fp* " DISCRETE total{0.."10000"} " crlf crlf)
         (printout ?*minion_fp* " **SEARCH**" crlf)
         (printout ?*minion_fp* " #MAXIMISING " crlf)
         (printout ?*minion_fp* " MAXIMISING total" crlf crlf)
         (printout ?*minion_fp* " **CONSTRAINTS** " crlf crlf)
 )
-;------------------------------------------------------------------------------------------------------------
-;Added by Maha Laxmi
-;(defrule print_dictionary_constarints
-;(declare (salience 940))
-;(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?)
-;(hindi_id_order $?hin_order)
-;(manual_id-mapped_id ?mid ?mapped_id)
-;(test (member$ ?aid $?hin_order))
-;=>
-;	(printout ?*minion_fp* " eq(ws["(- ?mapped_id 1)","(- (member$ ?aid $?hin_order) 1)"],1)" crlf)
-;)
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
 (defrule print_poten_constr_info
@@ -278,7 +243,6 @@
 (fact_name-man_id-slot_ids  ?fact_name ?mid $?sids)
 (test (neq (length $?sids) 0));The intuitive notion that light travels in a straight line seems to contradict what we have learned in Chapter 8, that light is an electromagnetic wave of wavelength belonging to the visible part of the spectrum.
 =>
-;	(printout t ?fact_name ?mid $?sids crlf)
 	(printout ?*minion_fp* " watched-or({" )
         (loop-for-count (?i 1 (length $?sids))
                         (bind ?sid (nth$ ?i $?sids))
@@ -302,7 +266,6 @@
 (fact_name-slot_id-word_ids  ?fact_name ?sid $?wids)
 (test (neq (length $?wids) 0))
 =>
-;	(printout t ?fact_name ?sid $?wids crlf)
         (printout ?*minion_fp* " watched-or({" )
         (loop-for-count (?i 1 (length $?wids))
                         (bind ?mid (nth$ ?i $?wids))
@@ -344,18 +307,10 @@
 =>
         (printout ?*minion_fp* crlf crlf)
 	(loop-for-count (?i 0 (- ?manual_word_len 1))
-	;		(if (eq (member$ ?i ?*non_refiy_list*) FALSE)then
-;		(printout ?*minion_fp* " reify(sumgeq(ws["?i",_],1),r"?i")" crlf)
-;----------------------------------------------------------------------------------------------------------
 			(printout ?*minion_fp* " watched-or({ " crlf)
-                       (printout ?*minion_fp* "	watched-and({sumgeq(ws["?i",_],1),eq(r"?i",50)})," crlf)
-                      (printout ?*minion_fp* "	watched-and({sumleq(ws["?i",_],0),eq(r"?i",0)})" crlf)
-             	(printout ?*minion_fp* " })" crlf)
-;----------------------------------------------------------------------------------------------------------
-	;		(printout t ?i ?*non_refiy_list* crlf)
-	;		else
-	;		(printout ?*minion_fp* " sumgeq(ws["?i",_],1)" crlf)
-	;		)
+                       	(printout ?*minion_fp* "	watched-and({sumgeq(ws["?i",_],1),eq(r"?i",50)})," crlf)
+                      	(printout ?*minion_fp* "	watched-and({sumleq(ws["?i",_],0),eq(r"?i",0)})" crlf)
+             		(printout ?*minion_fp* " })" crlf)
         )
         (printout ?*minion_fp* crlf crlf)
 	(loop-for-count (?i 0 (- ?manual_word_len 1))
@@ -474,9 +429,7 @@
                 )
         )
 	(loop-for-count (?i 0 (- ?manual_word_len 1))
-	;	(if (eq (member$ ?i ?*non_refiy_list*) FALSE) then
 			(printout ?*minion_fp* ",r"?i	)
-	;)
       	)
 	(printout ?*minion_fp*"],total)")
         (printout ?*minion_fp* crlf "	sumleq([" )
@@ -487,9 +440,7 @@
                 )
         )
 	(loop-for-count (?i 0 (- ?manual_word_len 1))
-	;	(if (eq (member$ ?i ?*non_refiy_list*) FALSE) then
 			(printout ?*minion_fp* ",r"?i)
-	;)
       	)
 	(printout ?*minion_fp*"],total)")
 
