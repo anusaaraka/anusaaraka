@@ -10,6 +10,7 @@ rm $HOME_anu_test/Anu_databases/hindi_wordnet_dic1.gdbm
 rm $HOME_anu_test/Anu_databases/hindi_wordnet_dic2.gdbm
 rm $HOME_anu_test/Anu_databases/restricted_eng_words.gdbm
 rm $HOME_anu_test/Anu_databases/restricted_hnd_words.gdbm
+rm $HOME_anu_test/Anu_databases/numbers_dic.gdbm
 
 cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
 sh get_txt_files.sh
@@ -40,6 +41,9 @@ echo "Creating restricted_eng_words dictionary"
 ./create-gdbm.pl $HOME_anu_test/Anu_databases/restricted_eng_words.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/restricted_eng_words_in_canonical_form.txt
 echo "Creating restricted_hnd_words dictionary"
 ./create-gdbm.pl $HOME_anu_test/Anu_databases/restricted_hnd_words.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/restricted_hnd_words_in_canonical_form.txt
+echo "Creating numbers dictionary"
+./create-gdbm.pl $HOME_anu_test/Anu_databases/numbers_dic.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/numbers_dic_in_canonical_form.txt
+
 
  echo "Creating multi_word_expressions.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/multi_word_expressions.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/multi_word_expressions_in_canonical_form.txt

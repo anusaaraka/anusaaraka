@@ -5,6 +5,7 @@
 ;	5. default_meaning_frm_oldwsd.gdbm  and
 ;	6. default-iit-bombay-shabdanjali-dic_smt.gdbm 
 
+;Added by Mahalaxmi
 (deffunction remove_character(?char ?str ?replace_char)
                         (bind ?new_str "")
                         (bind ?index (str-index ?char ?str)) 
@@ -20,6 +21,7 @@
 
 
 ;--------------------------------------------------------------------------------------------------------
+;Added by Mahalaxmi
  (deffunction mwe_lookup(?gdbm ?rank $?Eng_sen)
  (if (eq 2 ?rank) then (bind $?Eng_sen (explode$ (lowcase (implode$ (create$ $?Eng_sen))))))
  ;(printout t $?Eng_sen ?gdbm "  " ?rank crlf)
@@ -64,6 +66,7 @@
  )
  )
 ;--------------------------------------------------------------------------------------------------------
+;Added by Mahalaxmi
  (defrule get_eng_word_list
  (declare (salience 1000))
  (id-original_word ?id ?word)
@@ -76,21 +79,7 @@
  (assert (index ?id))
  )
 
-; ;These laws can be derived from [Newton's] laws of motion in mechanics. 
-; ;ina niyamoM ko yAMwrikI meM nyUtana ke gawi ke niyamoM se vyuwpanna kiyA jA sakawA hE.
-; ;here morph doesn't has entry for word Newton's as PropN, so for 
-; (defrule modify_PropN
-; (declare (salience 900))
-; (id-cat_coarse ?id PropN)
-; ?f<-(id-root ?id ?root)
-; ?f1<-(id-original_word ?id ?root)
-; (test (eq (sub-string (- (length ?root) 1) (length ?root) ?root) "'s"))
-; =>
-;	(retract ?f ?f1)
-;	(bind ?root (string-to-field (sub-string 1 (- (length ?root) 2) ?root)))
-;	(assert (id-root ?id ?root))	
-;	(assert (id-original_word ?id ?root))	
-; )
+ ;Added by Mahalaxmi
  ;As aux ids are grouped in LWG individual word meaning is not necessary [Suggested by Chaitanya Sir (11-08-12)]
  (defrule remove_aux_ids
  (declare (salience 200))
@@ -103,6 +92,7 @@
 	(retract ?f1 ?f2)
  )
 ;--------------------------------------------------------------------------------------------------------
+ ;Added by Mahalaxmi
  (defrule chk_for_mwe
  (declare (salience 60))
  ?f<-(English-list $?Eng_list)
@@ -116,51 +106,13 @@
         (mwe_lookup "multi_word_expressions.gdbm" 2 $?Eng_list)
  )
 ;--------------------------------------------------------------------------------------------------------
-
-(defrule get_mng_from_prov_PropN_dic
-(declare (salience 150))
-(id-original_word ?id ?word)
-(id-root ?id ?root)
-(id-cat_coarse ?id PropN)
-=>
-        (bind ?count 0)
-	(if (not (numberp ?word)) then
-		(bind ?mng (gdbm_lookup "provisional_PropN_dic.gdbm" ?word))
-		(if (and (neq ?mng "FALSE") (neq (length ?mng) 0))then
-                        (bind ?count (+ ?count 1))
-			(assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root provisional_PropN_gdbm (explode$ ?mng)))
-		else (if (eq (sub-string (- (length ?word) 1) (length ?word) ?word) "'s") then ;These laws can be derived from [Newton's] laws of motion in mechanics. ;ina niyamoM ko yAMwrikI meM nyUtana ke gawi ke niyamoM se vyuwpanna kiyA jA sakawA hE. mplode$ (create$ ;here morph doesn't has entry for word Newton's as PropN, so for 
-			(bind ?word (string-to-field (sub-string 1 (- (length ?word) 2) ?word)))
-      			(bind ?mng (gdbm_lookup "provisional_PropN_dic.gdbm" ?word))
-			(if (and (neq ?mng "FALSE") (neq (length ?mng) 0))then
-                        (bind ?count (+ ?count 1))
-                        (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root provisional_PropN_gdbm (explode$ ?mng)))))
-			
-        	)
-	)
-)
-;--------------------------------------------------------------------------------------------------------
-(defrule get_mng_from_prov_word_dic
-(declare (salience 150))
-(id-original_word ?id ?word)
-(id-root ?id ?root)
-(id-cat_coarse ?id ?cat)
-=>
-	(bind ?new_mng "")
-        (bind ?count 0)
-        (if (not (numberp ?word)) then
-		(if (neq (gdbm_lookup "provisional_word_dic.gdbm" ?word) "FALSE") then
-                	 (bind ?mng (gdbm_lookup "provisional_word_dic.gdbm" ?word))
-                	 (if (and (neq ?mng "FALSE") (neq (length ?mng) 0)) then (bind ?new_mng ?mng))
-		else (if (neq (gdbm_lookup "provisional_word_dic.gdbm" ?root) "FALSE") then
-	                 (bind ?mng (gdbm_lookup "provisional_word_dic.gdbm" ?root))
-        	         (if (and (neq ?mng "FALSE") (neq (length ?mng) 0)) then (bind ?new_mng ?mng))
-                else (if (and (eq (sub-string (- (length (implode$ (create$ ?word))) 1) (length (implode$ (create$ ?word))) (implode$ (create$ ?word))) "'s") (eq ?cat PropN)) then
-                         (bind ?word (string-to-field (sub-string 1 (- (length (implode$ (create$ ?word))) 2) (implode$ (create$  ?word))))) 
-		         (bind ?mng (gdbm_lookup "provisional_word_dic.gdbm" ?word))
-                         (if (and (neq ?mng "FALSE") (neq (length ?mng) 0)) then (bind ?new_mng ?mng)))))
-        )
-        (bind ?new_mng1 "")
+ ;Added by Mahalaxmi
+(deffunction print_dic_mng(?gdbm ?word ?root ?new_mng)
+	(bind ?count 0)
+	(bind ?word (string-to-field ?word))
+        (bind ?root (string-to-field ?root))
+        (bind ?gdbm (string-to-field ?gdbm))
+        (bind ?new_mng1 (create$))
         (bind ?slh_index (str-index "/" ?new_mng))
         (if (and (neq (length ?new_mng) 0)(neq ?slh_index FALSE)) then
                 (while (neq ?slh_index FALSE)
@@ -168,122 +120,73 @@
                         (bind ?new_mng1 (sub-string 1 (- ?slh_index 1) ?new_mng))
                         (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
                         (bind ?new_mng1 (remove_character "-" (implode$ (create$  ?new_mng1)) " "))
-                        (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root provisional_word_gdbm ?new_mng1))
+                        (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root ?gdbm ?new_mng1))
                         (bind ?new_mng (sub-string (+ ?slh_index 1) (length ?new_mng) ?new_mng))
                         (bind ?slh_index (str-index "/" ?new_mng))
                 )
         )
         (bind ?new_mng1 (str-cat (sub-string 1 (length ?new_mng) ?new_mng)))
-	        	(bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
-	        	(bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
+                        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
+                        (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
         (if (neq ?new_mng "") then
                       (bind ?count (+ ?count 1))
-                      (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root provisional_word_gdbm ?new_mng1))
-
+                      (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root ?gdbm ?new_mng1))
          )
-)
-;--------------------------------------------------------------------------------------------------------
-(defrule get_mng_from_phy_dic
-(declare (salience 100))
-(id-original_word ?id ?word)
-(id-root ?id ?root)
-(id-cat_coarse ?id ?cat)
-=>
-        (bind ?count 0)
-	(if (not (numberp ?root)) then
-	(bind ?new_mng (gdbm_lookup "Physics-dictionary.gdbm" ?root))
-        (if (eq ?new_mng "FALSE") then
-                (bind ?str  (sub-string 1 1 ?root))
-                (bind ?str (upcase ?str))
-                (bind ?n_word (str-cat ?str (sub-string 2 (length (implode$ (create$ ?root))) (implode$ (create$ ?root)))))
-                (bind ?new_mng (gdbm_lookup "Physics-dictionary.gdbm" ?n_word))
-	)
-	(if (eq ?new_mng "FALSE") then
-	(if (and (eq (sub-string (- (length ?root) 1) (length ?root) ?root) "'s")(eq ?cat PropN)) then
-                     (bind ?n_word (string-to-field (sub-string 1 (- (length (implode$ (create$ ?root))) 2) (implode$ (create$ ?root)))))
-		     (bind ?new_mng (gdbm_lookup "Physics-dictionary.gdbm" ?n_word)))
-        )
-        (bind ?new_mng1 "")
-        (bind ?slh_index (str-index "/" ?new_mng))
-        (if (and (neq (length  ?new_mng) 0)(neq ?slh_index FALSE)) then
-                (while (neq ?slh_index FALSE)
-                        (bind ?count (+ ?count 1))
-                        (bind ?new_mng1 (sub-string 1 (- ?slh_index 1) ?new_mng))
-                        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
-                        (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
-                        (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root Physics_dictionary_gdbm ?new_mng1))
-                        (bind ?new_mng (sub-string (+ ?slh_index 1) (length ?new_mng) ?new_mng))
-                        (bind ?slh_index (str-index "/" ?new_mng))
-                )
-        )
-        (bind ?new_mng1 (str-cat (sub-string 1 (length ?new_mng) ?new_mng)))
-                        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
-                        (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
-        (if (neq ?new_mng "FALSE") then
-                        (bind ?count (+ ?count 1))
-                        (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root Physics_dictionary_gdbm ?new_mng1))
-        )
-        )
 
 )
 ;--------------------------------------------------------------------------------------------------------
-;Modified by Mahalaxmi  -- Added provisional_root_dic.gdbm  and separated the meanings using ","
-(defrule get_mng_from_iit-bombay_shab
-(declare (salience 90))
+ ;Added by Mahalaxmi
+;These laws can be derived from [Newton's] laws of motion in mechanics. ;ina niyamoM ko yAMwrikI meM nyUtana ke gawi ke niyamoM se vyuwpanna kiyA jA sakawA hE. ;here morph doesn't has entry for word Newton's as PropN, 
+(deffunction dic_lookup(?gdbm ?id ?word ?root ?cat)
+		
+	     (bind ?word (implode$ (create$ ?word)))
+	     (bind ?root (implode$ (create$ ?root)))
+	     (bind ?new_mng (create$))
+	     (bind ?new_mng "")
+
+	     (if (neq (gdbm_lookup ?gdbm ?root) "FALSE") then 
+		      (printout t "1st If con" crlf)
+		      (bind ?rt_mng (gdbm_lookup ?gdbm ?root))
+ 	     	      (if (and (neq ?rt_mng "FALSE") (neq (length ?rt_mng) 0)) then (bind ?new_mng ?rt_mng))
+		      (print_dic_mng ?gdbm ?word ?root ?new_mng)
+	     else (if (neq (gdbm_lookup ?gdbm ?word) "FALSE") then 
+		      (printout t "2nd If con" crlf)
+		      (bind ?wrd_mng (gdbm_lookup ?gdbm ?word))
+                      (if (and (neq ?wrd_mng "FALSE") (neq (length ?wrd_mng) 0)) then (bind ?new_mng ?wrd_mng))
+		       (print_dic_mng ?gdbm ?word ?root ?new_mng)
+	     else (if (eq (sub-string (- (length ?word) 1) (length ?word) ?word) "'s") then
+			(printout t "3rd If con" crlf)
+                        (bind ?word (string-to-field (sub-string 1 (- (length ?word) 2) ?word)))
+                        (bind ?apos_mng (gdbm_lookup ?gdbm ?word))
+             		(if (and (neq ?apos_mng "FALSE") (neq (length ?apos_mng) 0)) then (bind ?new_mng ?apos_mng))
+		        (print_dic_mng ?gdbm ?word ?root ?new_mng)
+             else (if  (and (eq ?id 1)(eq (upcase (sub-string 1 1 ?root)) (sub-string 1 1 ?root))(eq ?cat "PropN")) then
+			(printout t "4th If con" crlf)
+                        (bind ?str (lowcase (sub-string 1 1 ?root)))
+             		(bind ?n_root (str-cat ?str (sub-string 2 (length (implode$ (create$ ?root))) (implode$ (create$ ?root)))))
+	                (bind ?n_rt_mng (gdbm_lookup ?gdbm ?n_root))
+             		(if (and (neq ?n_rt_mng "FALSE") (neq (length ?n_rt_mng) 0)) then (bind ?new_mng ?n_rt_mng))
+                        (print_dic_mng ?gdbm ?word ?root ?new_mng)
+	     ))))
+)
+;--------------------------------------------------------------------------------------------------------
+(defrule get_mng_from_all_dic
+(declare (salience 150))
 (id-original_word ?id ?word)
 (id-root ?id ?root)
 (id-cat_coarse ?id ?cat)
 =>
-	(bind ?new_mng "")
-        (bind ?count 0)
-	(if (not (numberp ?root)) then
-                (bind ?mng (gdbm_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?root))
-                (if (and (neq ?mng "FALSE") (neq (length ?mng) 0)) 
-			then (bind ?new_mng (str-cat ?new_mng ?mng))
-		else (if (and (eq (sub-string (- (length (implode$ (create$ ?root))) 1) (length (implode$ (create$ ?root))) (implode$ (create$ ?root))) "'s")(eq ?cat PropN)) then
-			(bind ?n_root (string-to-field (sub-string 1 (- (length (implode$ (create$ ?root))) 2) (implode$ (create$ ?root)))))
-			(bind ?mng (gdbm_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?n_root))
-			(if (and (neq ?mng "FALSE") (neq (length ?mng) 0)) then (bind ?new_mng (str-cat ?new_mng ?mng))))
-		)
-                (bind ?mng1 (gdbm_lookup "default_meaning_frm_oldwsd.gdbm" ?root))
-                (if (and (neq ?mng1 "FALSE") (neq (length ?mng1) 0)) then 
-			 (bind ?new_mng (str-cat ?new_mng "/" ?mng1))
-		else (if (and (eq (sub-string (- (length (implode$ (create$ ?root))) 1) (length (implode$ (create$ ?root))) (implode$ (create$ ?root))) "'s")(eq ?cat PropN)) then
-                        (bind ?n_root (string-to-field (sub-string 1 (- (length (implode$ (create$ ?root))) 2) (implode$ (create$ ?root)))))
-                        (bind ?mng1 (gdbm_lookup "default_meaning_frm_oldwsd.gdbm" ?n_root))
-                        (if (and (neq ?mng1 "FALSE") (neq (length ?mng1) 0)) then (bind ?new_mng (str-cat ?new_mng ?mng1))))
-                )
-                (bind ?mng2 (gdbm_lookup "provisional_root_dic.gdbm" ?root))
-		(if (and (neq ?mng2 "FALSE") (neq (length ?mng2) 0)) then 
-			 (bind ?new_mng (str-cat ?new_mng "/" ?mng2))
-		else (if (and (eq (sub-string (- (length (implode$ (create$ ?root))) 1) (length (implode$ (create$ ?root))) (implode$ (create$ ?root))) "'s")(eq ?cat PropN)) then
-                        (bind ?n_root (string-to-field (sub-string 1 (- (length (implode$ (create$ ?root))) 2) (implode$ (create$ ?root)))))
-                        (bind ?mng2 (gdbm_lookup "provisional_root_dic.gdbm" ?n_root))
-                        (if (and (neq ?mng2 "FALSE") (neq (length ?mng2) 0)) then (bind ?new_mng (str-cat ?new_mng ?mng2))))
-		)
-        )
-	(bind ?new_mng1 "")
-        (bind ?slh_index (str-index "/" ?new_mng))
-        (if (and (neq (length  ?new_mng) 0)(neq ?slh_index FALSE)) then
-                (while (neq ?slh_index FALSE)
-                        (bind ?count (+ ?count 1)) 
-                        (bind ?new_mng1 (sub-string 1 (- ?slh_index 1) ?new_mng))
-                        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
-                        (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
-                        (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root root_gdbms ?new_mng1))
-                        (bind ?new_mng (sub-string (+ ?slh_index 1) (length ?new_mng) ?new_mng))
-                        (bind ?slh_index (str-index "/" ?new_mng))
-                )
-        )
-        (bind ?new_mng1 (str-cat (sub-string 1 (length ?new_mng) ?new_mng)))
-		        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
-                        (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
-        (if (neq ?new_mng "") then
-                        (bind ?count (+ ?count 1))
-		        (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root root_gdbms ?new_mng1))
-        )
+
+		(dic_lookup "provisional_word_dic.gdbm" ?id ?word ?root ?cat)
+		(dic_lookup "Physics-dictionary.gdbm" ?id ?word ?root ?cat)
+		(dic_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?id ?word ?root ?cat)
+		(dic_lookup "default_meaning_frm_oldwsd.gdbm" ?id ?word ?root ?cat)
+		(dic_lookup "provisional_root_dic.gdbm" ?id ?word ?root ?cat)
+		(dic_lookup "provisional_PropN_dic.gdbm" ?id ?word ?root "PropN")
+		(dic_lookup "numbers_dic.gdbm" ?id ?word ?root ?cat)
 )
 ;--------------------------------------------------------------------------------------------------------
+;Added by Mahalaxmi
 (defrule check_for_single_tam
 (declare (salience 90))
 (root-verbchunk-tam-chunkids ? ? tam_to_be_decided $?chunkids)
@@ -292,6 +195,8 @@
 	(assert (get_tam_mng_for ed))
 )
 
+;--------------------------------------------------------------------------------------------------------
+;Added by Mahalaxmi
 (defrule get_mng_for_verb_lwg
 (or (root-verbchunk-tam-chunkids ? ? ?tam $?chunkids)(get_tam_mng_for ?tam))
 (test (neq ?tam tam_to_be_decided))

@@ -8,6 +8,7 @@ rm $HOME_anu_test/Anu_databases/hindi_tam_dictionary.gdbm
 rm $HOME_anu_test/Anu_databases/preposition_dictionary.gdbm
 rm $HOME_anu_test/Anu_databases/hindi_wordnet_dic1.gdbm
 rm $HOME_anu_test/Anu_databases/hindi_wordnet_dic2.gdbm
+rm $HOME_anu_test/Anu_databases/numbers_dic.gdbm
 
 
 cd $HOME_anu_test/Anu_data
@@ -28,6 +29,8 @@ echo "Creating preposition_dictionary"
 echo "Creating Hindi Wordnet dictionaries"
 ./create-gdbm.pl $HOME_anu_test/Anu_databases/hindi_wordnet_dic1.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/hindi_wordnet_dic1_in_canonical_form.txt
 ./create-gdbm.pl $HOME_anu_test/Anu_databases/hindi_wordnet_dic2.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/hindi_wordnet_dic2_in_canonical_form.txt
+echo "Creating numbers dictionary"
+./create-gdbm.pl $HOME_anu_test/Anu_databases/numbers_dic.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/numbers_dic_in_canonical_form.txt
 
 cd $HOME_anu_test/miscellaneous/SMT/alignment
 echo "generating out file"
