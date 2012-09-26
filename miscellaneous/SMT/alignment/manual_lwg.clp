@@ -93,7 +93,7 @@
 ?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN|NNP)
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ke ?)
-?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|aMwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA ?)
+?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|aMwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra ?)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 =>
@@ -124,7 +124,7 @@
 (declare (salience 70))
 ?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
-?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA ?)
+?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA ?c&~VM)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 =>
@@ -137,18 +137,29 @@
 ;parikRepaNa kA kAraNa yaha hE ki kisI mAXyama kA apavarwanAfka viBinna warafgaxErGyoM  @PUNCT-OpenParenvarNoM @PUNCT-ClosedParen ke lie Binna - Binna howA hE @PUNCT-Dot
 ;Eng sen : Fig. 3.2 (b) shows the position-time graph of such a motion.
 ;Man sen : isa prakAra kI gawi kA sWiwi - samaya grAPa ciwra 3.2 @PUNCT-OpenParen @b @PUNCT-ClosedParen [meM] xiKalAyA gayA hE  @PUNCT-Dot
+
+;Eng sen :Acceleration, therefore, may result from a change in [speed (magnitude)], a change in direction or changes in both.
+;Man sen : awaH yA wo [cAla]  @PUNCT-OpenParen parimANa @PUNCT-ClosedParen [meM] parivarwana @PUNCT-Comma  xiSA meM parivarwana aWavA ina xonoM meM parivarwana se wvaraNa kA uxBava ho sakawA hE  @PUNCT-Dot
 (defrule single_vib1
 (declare (salience 70))
 ?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN|QC)
+?f0<-(head_id-grp_ids ?h ?id0 $?d1)
+?f4<-(manual_id-node-word-root-tam ?h ?c $?noun1 - $?root - $?vib1)
 (id-node-word-root ?id0 ? $? - $?root)
 (manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen SYM)
 (manual_id-word-cat ?id2 @PUNCT-ClosedParen SYM)
 (test (> ?id2 ?id1))
 ?f3<-(manual_id-word-cat ?id3&:(=(+ ?id2 1) ?id3) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA ?)
+?f2<-(head_id-grp_ids ?h1 ?id3 $?d2)
 (not (retract_manual_fact ?id0))
 =>
-	(retract ?f1 ?f3)
-	(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun ?vib - $?root - ?vib - ?id0 ?id3))
+	(retract ?f1 ?f3 ?f0 ?f2 ?f4)
+	(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ?vib - ?id0 ?id3))
+	(assert (head_id-grp_ids ?h ?id0 $?d1 ?id3))
+ 	(assert (manual_id-node-word-root-tam ?h ?c $?noun1 - $?root - $?vib1 ?vib))
+	(if (neq (length $?d2) 0) then
+		(assert (head_id-grp_ids ?h1 $?d2))
+	)
 )
 ;----------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju(19-9-12)

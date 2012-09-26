@@ -79,17 +79,18 @@
 (not (id-replaced ?mid ?id))
 =>
         (retract ?f ?f1)
+	(bind ?h_mng (string-to-field (str-cat ?h_mng "-REPLACE_NO")))
         (assert (manual_id-mng ?mid $?pre ?h_mng $?pos))
-	(assert (id-replaced ?mid ?h_mng))
-	(assert (id-replaced ?mid ?id))
+;	(assert (id-mng_replaced ?mid ?h_mng))
+;	(assert (id-replaced ?mid ?id))
 )
 ;-------------------------------------------------------------------------------------
 (defrule replace_id_with_word
 (declare (salience -10))
 ?f<-(manual_id-mng ?mid $?pre ?id $?pos)
 ?f1<-(manual_id-word-cat ?id ?h_mng ?)
-(not (id-replaced ?mid ?h_mng))
-(not (id-replaced ?mid ?id))
+;(not (id-mng_replaced ?mid ?h_mng))
+;(not (id-replaced ?mid ?id))
 =>
         (retract ?f ?f1)
         (if (member$ ?h_mng (create$ @PUNCT-Comma @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-DoubleQuote @PUNCT-DoubleQuote @PUNCT-Semicolon @PUNCT-Colon @PUNCT-SingleQuote @PUNCT-OpenParen @PUNCT-ClosedParen @PUNCT-Exclamation @SYM-Dollar -)) then
@@ -98,3 +99,17 @@
         (assert (manual_id-mng ?mid $?pre ?h_mng $?pos)))
 )
 ;-------------------------------------------------------------------------------------
+;Eng sen : This problem is discussed in detail in Chapter 6.
+;Man sen : isa samasyA para aXyAya 6 meM viswAra se carcA kI gaI hE
+(defrule rm_REPLACE_NO_from_num
+(declare (salience -11))
+?f<-(manual_id-mng ?mid $?pre ?mng $?post)
+(test (neq (str-index "-" (implode$ (create$ ?mng))) FALSE))
+(test (eq (sub-string (str-index "-" (implode$ (create$ ?mng))) (length ?mng) ?mng) "-REPLACE_NO"))
+=>
+	(retract ?f)
+	(bind ?mng (string-to-field (sub-string 1 (- (str-index "-" ?mng) 1) ?mng)))
+	(assert (manual_id-mng ?mid $?pre ?mng $?post))
+)
+
+
