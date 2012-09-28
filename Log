@@ -3880,3 +3880,14 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 64. Updated remove_out-files.sh
 65. Updated changes_in_databases.
 66. Updated Log.
+
+ 25-09-12
+ ========
+ 1. Added new dictionary numbers_dic.txt in  miscellaneous/SMT/alignment/dictionaries/ so updated the following files
+               
+   i) Anu_data/canonical_form_dictionary/list-right
+  ii) Anu_data/canonical_form_dictionary/list_SMT
+ iii) miscellaneous/SMT/MINION/alignment/minion_compile.sh
+  iv) miscellaneous/SMT/alignment/get_dbase_mng.clp (Modified all the rules added functions "print_dic_mng" and "dic_lookup")
+   v) miscellaneous/SMT/alignment/smt_compile.sh
+ 2. Updated Log file
