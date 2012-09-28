@@ -67,7 +67,7 @@ VBP[\[\]]             	yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(y
 VBZ[\[\]]             	yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
 WDT[\[\]]             	yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
 WP[\[\]]              	yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
-WP[$][\[\]]             	yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
+WP[$][\[\]]           	yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
 WHNP[\[\]]              yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
 WHADJP[\[\]]            yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
 WRB[\[\]]             	yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
@@ -90,6 +90,7 @@ P_DSH[\[\]]             yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(
 P_EXM[\[\]]             yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
 S_DOL[\[\]]             yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
 S_SHARP[\[\]]           yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
+P_DDSH[\[\]]            yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
 		
 
 [A-Za-z0-9%='β\+][A-Za-z_0-9.,%'β\+-]*    yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return STRING;
