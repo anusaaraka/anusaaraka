@@ -679,6 +679,11 @@ Modified:
 
 	35.Modified verb entries by removing 'nA'  Ex :abash_verb	SarmiMxA_karanA	 to	abash_verb	SarmiMxA_kara
 	36.Modified govern entry :	niyantriwa_kara		to 	niyanwriwa_kara (Suggested by Sukhada 14-06-12)
+	37.Modified following entries by Roja(26-09-12)
+		U.N._noun	yU._ena.	to 	U.N._noun       yU.ena.
+		U.S.A._noun	yU._esa._e.	to	U.S.A._noun     yU.esa.e.
+		U.S.S.R._noun	yU.esa.esa_Ara.	to	U.S.S.R._noun   yU.esa.esa.Ara.
+		U.S._noun	yU._esa.	to	U.S._noun       yU.esa.
 
 			
 Removed::

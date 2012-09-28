@@ -4,3 +4,24 @@
 RUN::
  sh get_txt_files.sh
  sh get_dictionary_in_canonical_form.sh
+
+
+Steps to Add New Dictionary ::
+---------------------------
+Right now Dictionaries are present at three different places:
+  1. Anu_data/
+  2. Anu_data/compound-matching/
+  3. miscellaneous/SMT/alignment/dictionaries/
+
+=>To add a new dictionary in , 
+	Anu_data/					then    name of the dictionary need to be added in list_Anu_data
+	Anu_data/compound-matching/			then		"	list_Anu_data_compound
+	miscellaneous/SMT/alignment/dictionaries/	then		"	list_SMT 
+ 
+=>To get the newly added dictionary in canonical form ::
+  (Assumming dictionary to be in Key and Value format)
+  If left side of the dictionary need to be canonical then add the name of the dictionary in 'list-left'
+  If right side		"		"			"                            'list-right'
+  If both side		"		"			"	               	     'list-two-side-hindi'
+
+Note:: If newly added dictionary is present in any other path specified above , then edit the get_txt_files.sh accordingly.

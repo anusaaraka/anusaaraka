@@ -55,11 +55,11 @@ while($in = <STDIN>){
 #$in =~ s/`/'/g;(commented for senseval purpose)
 # After '?' there should be two spaces, not a single.
 	$in =~ s/\? ([^ ])/\?  $1/g;
-## Preserve ' before executing next line   Modified by Shiriaha Manju renamed QQUUOOTTEE as ABBR-SingleQuote
+## Preserve ' before executing next line   Modified by Shirisha Manju renamed QQUUOOTTEE as ABBR-SingleQuote
         $in =~ s/'s$/ABBR-SingleQuotes/;
         $in =~ s/'s([^a-zA-Z0-9])/ABBR-SingleQuotes$1/g;
         $in =~ s/o'clock/oABBR-SingleQuoteclock/g;
-        $in =~ s/o'([^ \t\n])/of$1/g;
+        $in =~ s/o'([^ \t\n\.])/of$1/g; #Added dot(.) in the pattern Ex: The southern state of Johor offers its famed 'nasi biryani , ' 'laksa Johor , ' 'mee bandung' and 'soto'.
         $in =~ s/s'([^a-zA-Z0-9])/sABBR-SingleQuote$1/g;
 
 # Insert space after the punctuation marks.

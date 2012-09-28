@@ -12,4 +12,5 @@ python $HOME_anu_test/miscellaneous/transliteration/work/split-char.py $1/$2 > $
 
 time $HOME_anu_test/miscellaneous/transliteration/phrasal.Beta2/scripts/decode 1g $HOME_anu_test/miscellaneous/transliteration/work/phrasal-mert/phrasal.test.ini < $1/$2_tmp-clean-word > $1/$2_intermediate_out
 
-sed 's/ //g' <  $1/$2_intermediate_out > $1/$2.wx
+sed 's/ //g' <  $1/$2_intermediate_out | sed 's/OY/oY/g'   > $1/$2.wx
+#Replacing 'OY' with 'oY' as Suggested by Chaitanya Sir. Added by Roja(26-09-12)

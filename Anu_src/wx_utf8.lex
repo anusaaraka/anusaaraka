@@ -39,8 +39,9 @@ oY	{	printf("ऑ");	}
 <consonant>oY	{	printf("ॉ");	BEGIN INITIAL;	}
 H		{	printf("ः");	BEGIN INITIAL;	}
 M		{	printf("ं");	BEGIN INITIAL;	}
-z		{	printf("ँ");	BEGIN INITIAL;	}
-Z		{	printf("़");	BEGIN INITIAL;	}
+z		{	printf("ँ");	BEGIN INITIAL;	/*}
+Z		{	printf("़");	BEGIN INITIAL;	*/}
+<consonant>Z	{	printf("़");	BEGIN consonant;	}
 
 
 k	{	printf("क"); BEGIN consonant;	}
