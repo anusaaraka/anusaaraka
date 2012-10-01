@@ -262,7 +262,7 @@
 (defrule verb_match_using_dic
 (declare (salience 880))
 (current_id ?mid)
-(manual_id-node-word-root-tam  ?man_g_id   VGF   $?verb_mng - $?v_root - $?tam)
+(manual_id-node-word-root-tam  ?man_g_id   VGF|VGNF|VGNN   $?verb_mng - $?v_root - $?tam)
 (head_id-grp_ids ?man_g_id ?mid $?grp_ids)
 (id-org_wrd-root-dbase_name-mng ? ? ?root ? $?v_root)
 (e_tam-id-dbase_name-mng ?e_tam ? ? $?tam)
@@ -278,7 +278,7 @@
 (defrule verb_with_only_root_match_using_dic
 (declare (salience 879))
 (current_id ?mid)
-(manual_id-node-word-root-tam  ?man_g_id   VGF   $?verb_mng - $?v_root - $?)
+(manual_id-node-word-root-tam  ?man_g_id   VGF|VGNF|VGNN   $?verb_mng - $?v_root - $?)
 (head_id-grp_ids ?man_g_id ?mid $?grp_ids)
 (id-org_wrd-root-dbase_name-mng ? ? ?root ? $?v_root)
 (id-root ?aid ?root)

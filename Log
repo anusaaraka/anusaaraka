@@ -3904,4 +3904,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  14.Updated canonical_form_dictionary/Readme , canonical_form_dictionary/list-left and canonical_form_dictionary/list-right
  15.Updated Complete_sentence.txt
  16.Added comments in stdenglish.sh
- 17.Updated Log file
+ 17.Added SHALLOW_PARSER in anu_testing/miscellaneous and the following files have been updated accordingly,
+           i) miscellaneous/SMT/alignment/add-suf-into-chunks.py
+          ii) miscellaneous/SMT/alignment/get_group_mng.sh
+         iii) miscellaneous/SMT/alignment/replace_wrd_with_id.c
+          iv) miscellaneous/SMT/MINION/alignment/README
+           v) miscellaneous/SMT/MINION/alignment/minion_compile.sh
+          vi) README (anusaaraka readme)
+ 18.Updated Log file

@@ -11,9 +11,9 @@ void main(int argc, char *argv[]){
     fp1 = fopen(argv[2],"r");
     fp2 = fopen(argv[3],"w");
     fp3 = fopen(argv[4],"w");
+//    fgets(str1,1000,fp);fprintf(fp2,"%s",str1);
     fgets(str1,1000,fp);fprintf(fp2,"%s",str1);
-    fgets(str1,1000,fp);fprintf(fp2,"%s",str1);
-    fgets(str3,1000,fp1);fprintf(fp3,"%s",str3);
+//    fgets(str3,1000,fp1);fprintf(fp3,"%s",str3);
     fgets(str3,1000,fp1);fprintf(fp3,"%s",str3);
     while(fgets(str1,1000,fp)!=NULL)
   { 

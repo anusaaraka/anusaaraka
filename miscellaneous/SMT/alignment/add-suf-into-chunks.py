@@ -13,6 +13,10 @@ suf = []
 lst=[]
 for line in xrange(len(sp)):
 	mylst = sp[line].split()
+	if sp[line].startswith(";~~~~~~~~~~"): #indicates end of sentence
+		print sp[line],
+		sent_c += 1
+                continue
 	if sp[line].startswith("</Sentence>"):
 		c = 0
 	if "((" in sp[line] and '_' in sp[line]:
@@ -26,7 +30,7 @@ for line in xrange(len(sp)):
 
 	if sp[line].startswith("<Sentence id="):
 		orig_sent = f[sent_c].split()
-		sent_c += 1
+#		sent_c += 1
 	
 	if  ("((" not in sp[line]) and ("))" not in sp[line]) and (not sp[line].startswith("<Sentence id=")) and (not sp[line].startswith("</Sentence>")):
 
