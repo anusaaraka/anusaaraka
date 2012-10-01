@@ -3881,7 +3881,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 65. Updated changes_in_databases.
 66. Updated Log.
 
- 28-09-12
+ 01-10-12
  ========
  1. Added new dictionary numbers_dic.txt in  miscellaneous/SMT/alignment/dictionaries/ so updated the following files
    i) Anu_data/canonical_form_dictionary/list-right
@@ -3911,4 +3911,5 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
           iv) miscellaneous/SMT/MINION/alignment/README
            v) miscellaneous/SMT/MINION/alignment/minion_compile.sh
           vi) README (anusaaraka readme)
+         vii) bin/Anusaaraka_stanford_minion.sh
  18.Updated Log file
