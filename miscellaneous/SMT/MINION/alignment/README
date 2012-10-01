@@ -17,7 +17,6 @@
     =============
         1. English Sentence File.
         2. Hindi Sentence File (WX Notation)
-        3. Shallow parser output for above hindi sentences.
 
  4. compile :
     ========
@@ -30,8 +29,8 @@
  5. To run alignment :
     =================
 
-        Anusaaraka_stanford_minion.sh <file-name> <parse_no> <sand_box_option> <domain_name> < manual_hin_sen> < shallow_parser_output>
-        Ex  :   Anusaaraka_stanford_minion.sh phy_verified 0 false general phy_verified_hi phy_verified_hi_shallow_out
+        Anusaaraka_stanford_minion.sh <file-name> <parse_no> <sand_box_option> <domain_name> < manual_hin_sen> 
+        Ex  :   Anusaaraka_stanford_minion.sh phy_verified 0 false general phy_verified_hi 
         (Note : 0       :  default parse
                 false   :  not to use provisional directory.
                 general :  no domain
@@ -41,7 +40,7 @@
    ================
         To run Anusaaraka for physics domain then
 
-        Ex  :Anusaaraka_stanford_minion.sh phy_verified 0 True physics phy_verified_hi phy_verified_hi_shallow_out
+        Ex  :Anusaaraka_stanford_minion.sh phy_verified 0 True physics phy_verified_hi
 
         (Note : 0       :  default parse
                 True    :  to use provisional directory.
@@ -65,6 +64,4 @@
    =================================
                         firefox $HOME_anu_output/[file_name]_align.html
                 Ex:     firefox $HOME_anu_output/phy_verified_align.html
-
-
 
