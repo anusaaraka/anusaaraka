@@ -102,7 +102,7 @@
 
   echo "Running Shallow Parser ..."
   cd  $HOME_anu_test/miscellaneous/SHALLOW_PARSER
-  sh run_shallow_parser_sukhada.sh $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt 
+  sh run_shallow_parser.sh $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt 
   $HOME_anu_test/Anu_src/identify-nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt.out $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp.txt
 
   cd $MYPATH/tmp/$1_tmp
