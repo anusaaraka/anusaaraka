@@ -5,16 +5,39 @@
  ;======================================  Modifications for LWG and Order =========================================
  ; He wasted his golden opportunity to play in the national team. 
  ; Rename VP as Inf_VP   to avoid --- grouping VP and reversing VP
+ ; The normal in this case is to be taken as normal to the tangent to surface at the point of incidence.
+; (defrule rename_VP_for_To
+; (declare (salience 30))
+; ?f<-(Head-Level-Mother-Daughters to ?l ?VP ?TO ?VP1)
+; ?f0<-(Node-Category ?VP VP)
+; (Node-Category ?TO TO)
+; ?f1<-(Node-Category ?VP1 VP)	
+; ?f2<-(Head-Level-Mother-Daughters to ?l1 ?S $?a ?VP)
+; (or (Head-Level-Mother-Daughters ?head ?lv $? ?S)(Head-Level-Mother-Daughters ?head ?lv $? ?S ?p))
+; (test (eq (member$ ?head (create$ had need are Are is was were)) FALSE ))
+; ?f3<-(Head-Level-Mother-Daughters ?h&~be ?l2 ?VP1 $?d)
+; =>
+;	(retract ?f ?f0 ?f1 ?f2 ?f3)	 
+;	(bind ?*count* (+ ?*count* 1))
+;	(bind ?toVP (explode$ (str-cat TO_VP ?*count* )))
+;	(bind ?infVP (explode$ (str-cat Inf_VP ?*count* )))
+;	(assert (Head-Level-Mother-Daughters to ?l ?toVP ?TO ?infVP)) 
+;	(assert (Head-Level-Mother-Daughters to ?l1 ?S $?a ?toVP))
+;	(assert (Head-Level-Mother-Daughters ?h ?l2 ?infVP $?d))
+;	(assert (Node-Category ?toVP  TO_VP))
+;	(assert (Node-Category ?infVP Inf_VP))
+; )
  (defrule rename_VP_for_To
  (declare (salience 30))
- ?f<-(Head-Level-Mother-Daughters to ?l ?VP ?TO ?VP1)
+ ?f2<-(Head-Level-Mother-Daughters to|To ?l1 ?S $?a ?VP)
  ?f0<-(Node-Category ?VP VP)
+ ?f<-(Head-Level-Mother-Daughters to|To ?l ?VP ?TO ?VP1)
  (Node-Category ?TO TO)
  ?f1<-(Node-Category ?VP1 VP)	
- ?f2<-(Head-Level-Mother-Daughters to ?l1 ?S $?a ?VP)
- (Head-Level-Mother-Daughters ?head ?lv $? ?S)
- (test (eq (member$ ?head (create$ had need are Are)) FALSE ))
- ?f3<-(Head-Level-Mother-Daughters ?h ?l2 ?VP1 $?d)
+ (Head-Level-Mother-Daughters ?head ?lv $? ?S $?)
+ (test (neq ?lv ?l1))
+ (test (eq (member$ ?head (create$ had need are Are is was were)) FALSE ))
+ ?f3<-(Head-Level-Mother-Daughters ?h&~be ?l2 ?VP1 $?d)
  =>
 	(retract ?f ?f0 ?f1 ?f2 ?f3)	 
 	(bind ?*count* (+ ?*count* 1))

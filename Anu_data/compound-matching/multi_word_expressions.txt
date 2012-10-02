@@ -33638,3 +33638,5 @@ stop_talking	bAweM_banxa_kIjiye#bAweM_banxa_kIjiye#noun#1#WM
 diet_book	AhAra_puswaka#AhAra_puwaka#noun#2#RM#
 as_before	pahale_kI_Waraha#pahale_kI_Waraha#adverb#2#WM
 lush_green	harA_BarA#harA_BarA#adjective#2#RM
+straight_line	sarala_reKA#sarala_reKA#noun#2#RM
+path_length	paWa_lambAI#paWa_lambAI#noun#2#WM
