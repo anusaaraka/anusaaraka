@@ -27,10 +27,11 @@
         (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat ?w  - $?root - ?w1 ?w2 - ?id0 ?id1 ?id2))
 )
 ;----------------------------------------------------------------------------------------------------------------
-;na wo, na hI, xUsarI ora
+;na wo, na hI, xUsarI ora,kI ora
+;To throw a stone upwards, one has to give it an upward push.-->kisI pawWara ko Upara kI ora Pefkane ke lie, hameM use Upara kI ora prakRepiwa karanA padawA hE .
 (defrule multi_word
 (declare (salience 100))
-?f1<-(manual_id-word-cat ?id0 ?w&na|xUsarI|cAroM|ya ?cat&NEG|QO|QC)
+?f1<-(manual_id-word-cat ?id0 ?w&na|xUsarI|cAroM|ya|kI ?cat)
 ?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1)  ?w1&wo|hI|ora ?)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
@@ -44,7 +45,7 @@
 (defrule multi_word1
 (declare (salience 100))
 ?f1<-(manual_id-word-cat ?id0 ?w ?cat)
-?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1)  ?w1&waka RP)
+?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1)  ?w1&waka ?)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 =>
@@ -56,7 +57,7 @@
 ;;Axya vicArakoM jEse araswU kI bala ke viRaya meM saMkalpanA galawa WI -- Early thinkers like Aristotle had wrong ideas about it.
 (defrule ke_[word]_meM
 (declare (salience 90))
-?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN|NNP)
+?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ke ?)
 ?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&rUpa|bAre|viRaya|AXAra ?)
@@ -71,7 +72,7 @@
 ;Added by Shirisha Manju
 (defrule kI_[word]_meM
 (declare (salience 90))
-?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN|NNP)
+?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) kI ?)
 ?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&wulanA ?)
@@ -88,9 +89,10 @@
 ;It is mainly through light and the sense of vision that we know and interpret the world around us.--> muKya rUpa se prakASa evaM xqRti kI [saMvexanA ke kAraNa] hI hama apane cAroM ora ke saMsAra ko samaJawe evaM usakI vyAKyA karawe hEM
 ;There is no loss of energy due to friction. [ke kAraNa]
 ;The apparent flattening (oval shape) of the sun at sunset and sunrise is also due to the same phenomenon.--->sUryAswa waWA [sUryoxaya ke samaya] sUrya kA ABAsI capatApana (aNdAkAra Akqwi) BI isI pariGatanA ke kAraNa hI hE.
+;The restoring muscular forces again come into play and bring the body to rest.----- >prawyAnayanI peSIya baloM ke kAryarawa hone [ke kAraNa] SarIra virAma avasWA meM A jAwI hE
 (defrule ke_[word]
 (declare (salience 80))
-?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN|NNP)
+?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ke ?)
 ?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|aMwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra ?)
@@ -142,7 +144,7 @@
 ;Man sen : awaH yA wo [cAla]  @PUNCT-OpenParen parimANa @PUNCT-ClosedParen [meM] parivarwana @PUNCT-Comma  xiSA meM parivarwana aWavA ina xonoM meM parivarwana se wvaraNa kA uxBava ho sakawA hE  @PUNCT-Dot
 (defrule single_vib1
 (declare (salience 70))
-?f1<-(manual_id-word-cat ?id0 $?noun ?cat&NN|QC)
+?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
 ?f0<-(head_id-grp_ids ?h ?id0 $?d1)
 ?f4<-(manual_id-node-word-root-tam ?h ?c $?noun1 - $?root - $?vib1)
 (id-node-word-root ?id0 ? $? - $?root)
