@@ -3881,7 +3881,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 65. Updated changes_in_databases.
 66. Updated Log.
 
- 02-10-12
+ 03-10-12
  ========
  1. Added new dictionary numbers_dic.txt in  miscellaneous/SMT/alignment/dictionaries/ so updated the following files
    i) Anu_data/canonical_form_dictionary/list-right
@@ -3913,4 +3913,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
           vi) README (anusaaraka readme)
          vii) bin/Anusaaraka_stanford_minion.sh
  18.Modified "rename_VP_for_To" in parser_tree_modification_rules.clp (added "To" in list)
- 19.Updated Log file
+ 19.Added new rules "introduce_new_VP_for_CC_node" and "modify_level" in parser_tree_modification_rules.clp file
+ 20.Modified "remove_aux_and_modify_head_wrd","modify_head_id" and "replace_S" and added new rule replace_S1 in sd_lwg_rules.
+clp
+ 21.Modified the pattern "[0-9]*\)\)[ ]\([A-Z]*[ ]nonascii[0-9]*\)" to "[0-9]+\)\)[ ]\([A-Z]*[ ]nonascii[0-9]*\)" in handling_abbrevations.lex file.
+ 22.Modified "get_fact_name_for_no_mng_for_eng_word" and "get_fact_name_for_no_mng_for_man_word" rules in get_word_potential_facts.clp file
+ 23.Updated Log file
