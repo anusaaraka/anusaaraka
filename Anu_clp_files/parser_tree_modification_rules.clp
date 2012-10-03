@@ -152,3 +152,32 @@
         (assert (Mother  ?Mot))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
+ ;Added by Mahalaxmi (15-09-12)
+ ;It is mainly through light and the sense of vision that we [know and interpret] the world around us.
+ (defrule introduce_new_VP_for_CC_node
+ ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot $?pre ?CC ?vp ?np $?daut)
+ (Node-Category  ?Mot  VP)
+ (Node-Category  ?CC  CC)
+ (Node-Category  ?vp   MD|VB|VBN|VBZ|VBD|VBP|VBG)
+ =>
+        (retract ?f0)
+        (bind ?*count* (+ ?*count* 1))
+        (bind ?v (explode$ (str-cat "VPc" ?*count*)))
+        (bind ?l (+ ?lev 1))
+        (assert (Head-Level-Mother-Daughters ?head ?lev ?Mot ?v ?np $?daut))
+        (assert (Head-Level-Mother-Daughters ?head ?l ?v $?pre ?CC ?vp))
+        (assert (Node-Category ?v VP))
+	(assert (modifiy_node_levels $?pre ?CC ?vp))
+ )
+
+ ;Added by Mahalaxmi (15-09-12)
+ (defrule modify_level
+ ?f0<-(modifiy_node_levels $?pre ?Mot $?pos)
+ ?f1<-(Head-Level-Mother-Daughters  ?head ?level ?Mot $?daut)
+ =>
+	(retract ?f0 ?f1)
+	(bind ?level (+ ?level 1))
+	(assert (Head-Level-Mother-Daughters  ?head ?level ?Mot $?daut))
+	(assert (modifiy_node_levels $?pre $?pos)) 
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------

@@ -97,10 +97,24 @@
  (defrule replace_S
  (declare (salience 100))
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?S $?pos)
- (parserid-word ?head ?w&get|got|gets|getting|have|had|has|having|make|makes|making|made|need|Let|let|are|Are) 
+ (parserid-word ?head ?w&get|got|gets|getting|have|had|has|having|make|makes|making|made|need|are|Are|is|was|were) 
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
  (Node-Category ?Mot VP)
  (Node-Category ?S SBAR|S|SQ)
+ (not (dont_replace_VP ?Mot))
+ =>
+        (retract ?f ?f1)
+        (assert (Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre $?daut  $?pos))
+ )
+;--------------------------------------------------------------------------
+ ;Replacing a VP mother whose child is  S on checking the head word "Let".
+ (defrule replace_S1
+ (declare (salience 100))
+ ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?S $?pos)
+ (parserid-word ?head ?w&Let|let)
+ ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
+ (Node-Category ?Mot VP)
+ (Node-Category ?S S)
  (not (dont_replace_VP ?Mot))
  =>
         (retract ?f ?f1)
@@ -469,6 +483,7 @@
  (declare (salience -100))
  (cntrl_fact_for_replacing_head_info)
  (root-verbchunk-tam-parser_chunkids ?r ?v ?t $?chunk_ids ?head)
+ (test (numberp (string_to_integer ?head)));In order to avoid "Function > expected argument #1 to be of type integer or float" error we have added this condition
  (not (root-verbchunk-tam-parser_chunkids ? ? ? $?chunk_ids ?head1&:(< (string_to_integer ?head1) (string_to_integer ?head))))
  ?f<-(Head-Level-Mother-Daughters ? ? ?V ?id)
  (test (member$ ?id $?chunk_ids))
@@ -484,9 +499,10 @@
  (declare (salience -100))
  (cntrl_fact_for_replacing_head_info)
  (root-verbchunk-tam-parser_chunkids ?r ?v ?t $?chunk_ids ?head)
+ (test (numberp (string_to_integer ?head)));In order to avoid "Function > expected argument #1 to be of type integer or float" error we have added this condition
  (not (root-verbchunk-tam-parser_chunkids ? ? ? $?chunk_ids ?head1&:(< (string_to_integer ?head1) (string_to_integer ?head))))
  ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?V $?daut)
- (test (member$ ?h $?chunk_ids))
+ (test (member$ ?h $?chunk_ids) )
  =>
 	(retract ?f)
 	(assert (Head-Level-Mother-Daughters ?head ?lvl ?V $?daut))
