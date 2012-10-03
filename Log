@@ -3918,4 +3918,5 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 clp
  21.Modified the pattern "[0-9]*\)\)[ ]\([A-Z]*[ ]nonascii[0-9]*\)" to "[0-9]+\)\)[ ]\([A-Z]*[ ]nonascii[0-9]*\)" in handling_abbrevations.lex file.
  22.Modified "get_fact_name_for_no_mng_for_eng_word" and "get_fact_name_for_no_mng_for_man_word" rules in get_word_potential_facts.clp file
- 23.Updated Log file
+ 23.Added new file anu_testing/miscellaneous/SMT/MINION/alignment/dic_compile.sh and modified minion_compile.sh accordingly.
+ 24.Updated Log file
