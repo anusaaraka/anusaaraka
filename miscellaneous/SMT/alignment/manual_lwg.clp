@@ -17,7 +17,7 @@
 ;Man tran :: muKya rUpa se prakASa evaM xqRti kI saMvexanA ke kAraNa hI hama [apane cAroM ora] ke saMsAra ko samaJawe evaM usakI vyAKyA karawe hEM.
 ;Anu tran :: yaha halake meM se waWA xUraxarSiwA kI saMvexanA meM se pramuKa rUpa se hE ki hama hamAre cAroM ora yuga vyAKyA kara waWA jAnawI hE.
 (defrule multi_word0
-(declare (salience 100))
+(declare (salience 110))
 ?f0<-(manual_id-word-cat ?id0 ?w&apane ?cat)
 ?f1<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?w1&cAroM ?)
 ?f2<-(manual_id-word-cat ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora ?)
@@ -27,9 +27,20 @@
         (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat ?w  - $?root - ?w1 ?w2 - ?id0 ?id1 ?id2))
 )
 ;----------------------------------------------------------------------------------------------------------------
-;na wo, na hI, xUsarI ora,kI ora
 ;To throw a stone upwards, one has to give it an upward push.-->kisI pawWara ko Upara kI ora Pefkane ke lie, hameM use Upara kI ora prakRepiwa karanA padawA hE .
-(defrule multi_word
+(defrule multi_word1
+(declare (salience 110))
+?f0<-(manual_id-word-cat ?id0 ?w ?cat)
+?f1<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?w1&kI ?)
+?f2<-(manual_id-word-cat ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora ?)
+(id-node-word-root ?id0 ? $?word1 - $?root)
+=>
+        (retract ?f0 ?f1 ?f2)
+        (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat ?w  - $?root - ?w1 ?w2 - ?id0 ?id1 ?id2))
+)
+;----------------------------------------------------------------------------------------------------------------
+;na wo, na hI, xUsarI ora,kI ora
+(defrule multi_word2
 (declare (salience 100))
 ?f1<-(manual_id-word-cat ?id0 ?w&na|xUsarI|cAroM|ya|kI ?cat)
 ?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1)  ?w1&wo|hI|ora ?)
@@ -42,7 +53,7 @@
 ;----------------------------------------------------------------------------------------------------------------
 ;अबतक
 ;However, we shall restrict our discussion to the special case of curved surfaces, that is, spherical surfaces.
-(defrule multi_word1
+(defrule multi_word3
 (declare (salience 100))
 ?f1<-(manual_id-word-cat ?id0 ?w ?cat)
 ?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1)  ?w1&waka ?)
@@ -50,7 +61,7 @@
 (not (retract_manual_fact ?id1))
 =>
         (retract ?f1 ?f2)
-        (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat ?w ?w1 - ?w  - ?w1 - ?id0 ?id1))
+        (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat ?w ?w1 - ?w  - 0 - ?id0 ?id1))
 )
 ;----------------------------------------------------------------------------------------------------------------
 ;ke rUpa meM, ke bAre meM
@@ -226,48 +237,57 @@
 (declare (salience 50))
 (anu_id-manual_ids-sep-mng ? $?mids - $?mng)
 ?f0<-(manual_id-word-cat ?mid ?w&~kara ?cat&~VIB)
-(test (neq (member$ ?mid $?mids) FALSE))
+(test (member$ ?mid $?mids))
 (not (manual_id-word-cat ?mid1&:(and (member$ ?mid1 $?mids) (> ?mid1 ?mid))  ?w1&~kara ?cat1&~VIB))
+(not (grp_head_id-grp_ids-mng ? - $? ?mid $? - $?))
 =>
         (retract ?f0)
         (assert (manual_id-word-cat ?mid $?mng ?cat))
         (assert (grp_head_id-grp_ids-mng ?mid - $?mids - $?mng))
-        (loop-for-count (?i 1 (length $?mids))
-                (bind ?j (nth$ ?i (create$ $?mids)))
-                (assert (retract_manual_fact ?j))
-        )
 )
 ;----------------------------------------------------------------------------------------------------------------
 (defrule add_grp_mng
 (declare (salience 5))
-?f1<-(grp_head_id-grp_ids-mng ?mid - $? ?mid1 $? - $?mng)
+?f1<-(grp_head_id-grp_ids-mng ?mid - $?pre ?mid1 $?post - $?mng)
 ?f0<-(manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word - $?root - $?vib - $?grp)
 ?f2<-(manual_id-cat-word-root-vib-grp_ids ?mid1 ?cat1 $?word1 - $?root1 - $?vib1 - $?grp1)
 (test (neq ?mid ?mid1))
+(not (contro_fact_for_grp_mng ?mid1))
 =>
 	(retract ?f0 ?f2)	
+	(assert (contro_fact_for_grp_mng ?mid1))
 	(bind $?s_grp (create$ ))
-	(if (neq (implode$ (create$ $?vib)) "0") then
-		(bind $?n_word (create$ $?word $?vib $?word1))
-		(bind $?n_root (create$ $?word $?vib $?root1))
-	else
-		(bind $?n_word (create$ $?word  $?word1))
-                (bind $?n_root (create$ $?word  $?root1))
-	)
 	(bind $?grp_ids (sort > $?grp $?grp1))
 	(loop-for-count (?i 1 (length $?grp_ids))
                 (bind ?j (nth$ ?i $?grp_ids))
                 (if (eq (member$ ?j $?s_grp) FALSE) then
                         (bind $?s_grp (create$ $?s_grp  ?j))
-                )
+                )	
         )
-	(if (neq (implode$ (create$ $?vib1)) "0") then
-		(bind $?w (create$ $?n_word $?vib1))
-	else	(bind $?w (create$ $?n_word ))
+ 	(bind $?ids (create$ $?pre ?mid1 $?post))
+	(if (> ?mid ?mid1) then
+		(if (eq ?mid (nth$ (length $?ids) $?ids)) then
+			(assert (last_id-word-root-vib ?mid $?word - $?root - $?vib))
+		)
+	else
+		(if (eq ?mid1 (nth$ (length $?ids) $?ids)) then
+                        (assert (last_id-word-root-vib ?mid1 $?word1 - $?root1 - $?vib1))
+                )
 	)
-	(if (eq $?w $?mng) then
-		(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?mng - $?mng - 0 - $?s_grp))
- 	else
-        	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?n_word - $?n_root - $?vib1 - $?s_grp))
-	)
+	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?mng - $?mng - $?vib - $?s_grp))
 )
+;----------------------------------------------------------------------------------------------------------------
+(defrule modify_root_for_dic_grp
+(grp_head_id-grp_ids-mng ?hid - $?ids ?last_id - $?mng)
+?f0<-(manual_id-cat-word-root-vib-grp_ids ?hid ?cat $?mng - $?mng - $?vib - $?grp_ids)
+(last_id-word-root-vib ?last_id $? - $? - $?vib1)
+(id-node-word-root ?last_id ? $?word - $?root)
+(not (modified_root ?hid))
+=>
+	(retract ?f0 )
+	(bind $?n_wrd (subseq$ $?mng 1 (- (length $?mng) (length $?word))  ))
+	(bind $?n_wrd (create$ $?n_wrd $?root))
+	(assert (manual_id-cat-word-root-vib-grp_ids ?hid ?cat $?mng - $?n_wrd - $?vib1 - $?grp_ids))
+	(assert (modified_root ?hid))
+)
+

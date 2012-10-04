@@ -51,3 +51,5 @@ friction	GarRaNa_bala
 breeze	manxa_pavana
 preceding	piCale
 signal	safkewa_xe
+likewise	isI_prakAra
+retard	manxa_kara

@@ -5,8 +5,8 @@
 ;	5. default_meaning_frm_oldwsd.gdbm  and
 ;	6. default-iit-bombay-shabdanjali-dic_smt.gdbm 
 
-;Added by Mahalaxmi
-(deffunction remove_character(?char ?str ?replace_char)
+ ;Added by Mahalaxmi
+ (deffunction remove_character(?char ?str ?replace_char)
                         (bind ?new_str "")
                         (bind ?index (str-index ?char ?str)) 
                         (if (neq ?index FALSE) then
@@ -17,14 +17,11 @@
                         )
                         )
                 (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
-)
-
-
-;--------------------------------------------------------------------------------------------------------
-;Added by Mahalaxmi
+ )
+ ;--------------------------------------------------------------------------------------------------------
+ ;Added by Mahalaxmi
  (deffunction mwe_lookup(?gdbm ?rank $?Eng_sen)
  (if (eq 2 ?rank) then (bind $?Eng_sen (explode$ (lowcase (implode$ (create$ $?Eng_sen))))))
- ;(printout t $?Eng_sen ?gdbm "  " ?rank crlf)
  (bind ?len (length $?Eng_sen))
  (loop-for-count (?i 1 ?len)
                    (bind ?flag 1)
@@ -65,8 +62,8 @@
                     )
  )
  )
-;--------------------------------------------------------------------------------------------------------
-;Added by Mahalaxmi
+ ;--------------------------------------------------------------------------------------------------------
+ ;Added by Mahalaxmi
  (defrule get_eng_word_list
  (declare (salience 1000))
  (id-original_word ?id ?word)
@@ -78,7 +75,7 @@
  (bind ?id (+ ?id 1))
  (assert (index ?id))
  )
-
+ ;--------------------------------------------------------------------------------------------------------
  ;Added by Mahalaxmi
  ;As aux ids are grouped in LWG individual word meaning is not necessary [Suggested by Chaitanya Sir (11-08-12)]
  (defrule remove_aux_ids
@@ -91,7 +88,7 @@
  =>
 	(retract ?f1 ?f2)
  )
-;--------------------------------------------------------------------------------------------------------
+ ;--------------------------------------------------------------------------------------------------------
  ;Added by Mahalaxmi
  (defrule chk_for_mwe
  (declare (salience 60))
@@ -105,9 +102,9 @@
         (mwe_lookup "multi_word_expressions.gdbm" 1 $?Eng_list)
         (mwe_lookup "multi_word_expressions.gdbm" 2 $?Eng_list)
  )
-;--------------------------------------------------------------------------------------------------------
+ ;--------------------------------------------------------------------------------------------------------
  ;Added by Mahalaxmi
-(deffunction print_dic_mng(?gdbm ?word ?root ?new_mng)
+ (deffunction print_dic_mng(?gdbm ?word ?root ?new_mng)
 	(bind ?count 0)
 	(bind ?word (string-to-field ?word))
         (bind ?root (string-to-field ?root))
@@ -133,11 +130,11 @@
                       (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root ?gdbm ?new_mng1))
          )
 
-)
-;--------------------------------------------------------------------------------------------------------
+ )
+ ;--------------------------------------------------------------------------------------------------------
  ;Added by Mahalaxmi
-;These laws can be derived from [Newton's] laws of motion in mechanics. ;ina niyamoM ko yAMwrikI meM nyUtana ke gawi ke niyamoM se vyuwpanna kiyA jA sakawA hE. ;here morph doesn't has entry for word Newton's as PropN, 
-(deffunction dic_lookup(?gdbm ?id ?word ?root ?cat)
+ ;These laws can be derived from [Newton's] laws of motion in mechanics. ;ina niyamoM ko yAMwrikI meM nyUtana ke gawi ke niyamoM se vyuwpanna kiyA jA sakawA hE. ;here morph doesn't has entry for word Newton's as PropN, 
+ (deffunction dic_lookup(?gdbm ?id ?word ?root ?cat)
 		
 	     (bind ?word (implode$ (create$ ?word)))
 	     (bind ?root (implode$ (create$ ?root)))
@@ -168,14 +165,14 @@
              		(if (and (neq ?n_rt_mng "FALSE") (neq (length ?n_rt_mng) 0)) then (bind ?new_mng ?n_rt_mng))
                         (print_dic_mng ?gdbm ?word ?root ?new_mng)
 	     ))))
-)
-;--------------------------------------------------------------------------------------------------------
-(defrule get_mng_from_all_dic
-(declare (salience 150))
-(id-original_word ?id ?word)
-(id-root ?id ?root)
-(id-cat_coarse ?id ?cat)
-=>
+ )
+ ;--------------------------------------------------------------------------------------------------------
+ (defrule get_mng_from_all_dic
+ (declare (salience 150))
+ (id-original_word ?id ?word)
+ (id-root ?id ?root)
+ (id-cat_coarse ?id ?cat)
+ =>
 
 		(dic_lookup "provisional_word_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "Physics-dictionary.gdbm" ?id ?word ?root ?cat)
@@ -184,23 +181,22 @@
 		(dic_lookup "provisional_root_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "provisional_PropN_dic.gdbm" ?id ?word ?root "PropN")
 		(dic_lookup "numbers_dic.gdbm" ?id ?word ?root ?cat)
-)
-;--------------------------------------------------------------------------------------------------------
-;Added by Mahalaxmi
-(defrule check_for_single_tam
-(declare (salience 90))
-(root-verbchunk-tam-chunkids ? ? tam_to_be_decided $?chunkids)
-=>
+ )
+ ;--------------------------------------------------------------------------------------------------------
+ ;Added by Mahalaxmi
+ (defrule check_for_single_tam
+ (declare (salience 90))
+ (root-verbchunk-tam-chunkids ? ? tam_to_be_decided $?chunkids)
+ =>
 	(assert (get_tam_mng_for s))
 	(assert (get_tam_mng_for ed))
-)
-
-;--------------------------------------------------------------------------------------------------------
-;Added by Mahalaxmi
-(defrule get_mng_for_verb_lwg
-(or (root-verbchunk-tam-chunkids ? ? ?tam $?chunkids)(get_tam_mng_for ?tam))
-(test (neq ?tam tam_to_be_decided))
-=>
+ )
+ ;--------------------------------------------------------------------------------------------------------
+ ;Added by Mahalaxmi
+ (defrule get_mng_for_verb_lwg
+ (or (root-verbchunk-tam-chunkids ? ? ?tam $?chunkids)(get_tam_mng_for ?tam))
+ (test (neq ?tam tam_to_be_decided))
+ =>
 	(bind ?new_mng "")
         (bind ?count 0)
                 (bind ?tam (implode$ (create$ ?tam)))
@@ -226,5 +222,17 @@
                         (bind ?count (+ ?count 1))
                         (assert (e_tam-id-dbase_name-mng (explode$ ?tam) ?count hindi_tam_dictionary ?new_mng1))
         )
-)
-;--------------------------------------------------------------------------------------------------------
+ )
+ ;--------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (3-10-12)
+ ;So far so good.
+ (defrule get_mng_from_complete_sen_gdbm
+ (head_id-sen_mng-g_ids ?id ?mng&~- $?)
+ (id-original_word ?id ?word)
+ (id-root ?id ?root)
+ =>
+	(bind ?new_mng (remove_character "_" ?mng " "))
+	(bind ?new_mng (remove_character "-" (implode$ (create$ ?new_mng)) " "))
+	(assert (id-org_wrd-root-dbase_name-mng ?id ?word ?root Complete_sentence.gdbm ?new_mng))
+ )
+ ;--------------------------------------------------------------------------------------------------------

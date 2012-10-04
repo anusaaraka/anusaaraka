@@ -50,11 +50,19 @@
  ; meaning for the whole sentence
  (defrule complete_sen_trans
  (declare (salience 9500))
- (id-sen_mng ?id ?sen_mng)
+ (head_id-sen_mng-g_ids ?hid ?sen_mng $?grp_ids)
  ?mng<-(meaning_to_be_decided ?id)
  =>
 	(retract ?mng)
-	(printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?sen_mng"   Complete_sen_gdbm)" crlf)
+	(loop-for-count (?i  1 (length $?grp_ids))
+                (bind ?id1 (nth$ ?i $?grp_ids))
+                (if (neq ?id1 ?hid ) then
+                	(printout ?*hin_mng_file* "(id-HM-source  " ?id1 "  -    Complete_sen_gdbm)" crlf)
+                	(assert (mng_has_been_decided ?id1))
+		)
+  	)
+  	(printout ?*hin_mng_file* "(id-HM-source  " ?hid "  "?sen_mng"    Complete_sen_gdbm)" crlf)
+  	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?hid "  "?sen_mng"    Complete_sen_gdbm " (implode$ $?grp_ids)")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ; In LWG meaning meaning for the head word is taken (as other words become tam part).

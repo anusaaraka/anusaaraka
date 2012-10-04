@@ -9,6 +9,8 @@ BI	also/too/even
 ki	that
 isa	the/this
 eka	a/an
+koI	a/an
+kisI	a/an
 hE	is
 apane	his
 usakI	his

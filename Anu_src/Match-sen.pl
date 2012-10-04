@@ -55,10 +55,12 @@ sub search {
 							#print "(";
 							for($j=$cindex;$j<$nindex;$j++){
 								$k=$j+1;
-								if($j eq $nindex-1){ print "(id-sen_mng $k $hnd_mng)\n";}
-								else{print "(id-sen_mng $k -)\n"; }
+								if($j eq $nindex-1){ print "(head_id-sen_mng-g_ids $k $hnd_mng";}
+						#		else{print "(id-sen_mng $k -)\n"; }
 							}
-							#print " )\n";
+#								if($j eq $nindex-1){ print "(id-sen_mng $k $hnd_mng)\n";}
+							for($j=$cindex;$j<$nindex;$j++){ $k=$j+1; print " $k"; }
+							print ")\n";
 							return;
 						}
 

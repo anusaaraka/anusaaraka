@@ -90,6 +90,7 @@
  (load-facts "original_word.dat") 
  (load-facts "cat_consistency_check.dat")
  (load-facts "lwg_info.dat")
+ (load-facts "sen_phrase.dat")
  (assert (index 1))
  (assert (English-list))
  (run)
