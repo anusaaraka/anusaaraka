@@ -36,9 +36,10 @@
  fi
 
  mkdir $MYPATH/tmp/$1_tmp
- $HOME_anu_test/Anu_src/identify-nonascii-chars.out $5 $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt
- #$HOME_anu_test/Anu_src/identify-nonascii-chars.out $6 $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp.txt
- sh $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/run_tokenizer_fr.sh $5 > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tokenized.txt
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/./canonical_form.out   < $5  >  $5_in_canonical_form_tmp
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/./replacing_canonical.out  < $5_in_canonical_form_tmp  > $5_in_canonical_form
+ $HOME_anu_test/Anu_src/identify-nonascii-chars.out $5_in_canonical_form $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt
+ sh $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/run_tokenizer_fr.sh $5_in_canonical_form > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tokenized.txt  2>/dev/null
 
 ###Added below loop for server purpose.
  if [ "$3" == "True" ] ; then 

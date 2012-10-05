@@ -16,7 +16,9 @@ rm $HOME_anu_test/Anu_databases/numbers_dic.gdbm
 cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
 sh get_txt_files.sh
 sh get_dictionary_in_canonical_form.sh
-
+flex canonical_form.lex
+gcc -o canonical_form.out lex.yy.c -lfl myeq.c
+$HOME_anu_test/Anu_src/comp.sh replacing_canonical
 
 cd $HOME_anu_test/Anu_data
 echo "Creating Physics-dictionary"
