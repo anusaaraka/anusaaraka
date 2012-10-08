@@ -121,6 +121,7 @@
  (load-facts "word.dat")
  (load-facts "manual_hindi_sen.dat")
  (load-facts "database_mng.dat")
+ (load-facts "shallow_parser_root.dat")
  (run)
  (save-facts "manual_grouping_using_dic.txt" local anu_id-manual_ids-sep-mng)
  (clear)
