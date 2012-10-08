@@ -1,5 +1,4 @@
 cd $HOME_anu_test/miscellaneous/SMT/MINION/alignment
-rm *.out
 rm $HOME_anu_test/Anu_databases/Physics-dictionary.gdbm
 rm $HOME_anu_test/Anu_databases/provisional_PropN_dic.gdbm
 rm $HOME_anu_test/Anu_databases/provisional_word_dic.gdbm
