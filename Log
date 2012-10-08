@@ -3881,7 +3881,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 65. Updated changes_in_databases.
 66. Updated Log.
 
- 05-10-12
+ 08-10-12
  ========
  1. Added new dictionary numbers_dic.txt in  miscellaneous/SMT/alignment/dictionaries/ so updated the following files
    i) Anu_data/canonical_form_dictionary/list-right
@@ -3932,5 +3932,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  29. Updated canonical_form_dictionary/Readme , canonical_form_dictionary/list-left and canonical_form_dictionary/list-right
  30. Added comments in stdenglish.sh
  31. Updated iit-bombay dic in goldendict.
- 32. Updated changes_in_databases
- 33. Updated Log file
+ 32. To get canonical form in verbs modified :
+	compile.sh
+	get_canonical_dic.sh
+	replacing_canonical.lex
+ 33. Updated changes_in_databases
+ 34. Updated Log file
