@@ -55,9 +55,9 @@
 
  rm $HOME_anu_test/new_hnd_mo/hi_expanded
 
-# echo "Removing transliteration files"
-# cd $HOME_anu_test/miscellaneous/transliteration/
-# rm -r phrasal.Beta2 stanford-corenlp-2011-06-08
-# cd work
-# rm path_for_transliteration phrasal-mert/phrasal.test.ini_tmp phrasal-mert/phrasal.test.ini_tmp1 phrasal-mert/phrasal.test.ini
-#
+ echo "Removing transliteration files"
+ cd $HOME_anu_test/miscellaneous/transliteration/
+ rm -r phrasal.Beta2 
+ cd work
+ rm path_for_transliteration phrasal-mert/phrasal.test.ini_tmp phrasal-mert/phrasal.test.ini_tmp1 phrasal-mert/phrasal.test.ini
+

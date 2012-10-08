@@ -3881,7 +3881,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 65. Updated changes_in_databases.
 66. Updated Log.
 
- 04-10-12
+ 05-10-12
  ========
  1. Added new dictionary numbers_dic.txt in  miscellaneous/SMT/alignment/dictionaries/ so updated the following files
    i) Anu_data/canonical_form_dictionary/list-right
@@ -3900,10 +3900,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  10. Added sed command to replace 'OY' to 'oY' in transliteration-script.sh
  11. In hnd_translation.pl, handled patterns which are not converting to utf8 (like दस-lAKa, कि.mI.)
  12. Added S_SHARP in constituency_parse.l
- 13. Updated abbr.sh and replace-abbrevations.sh
- 14. Updated canonical_form_dictionary/Readme , canonical_form_dictionary/list-left and canonical_form_dictionary/list-right
- 15. Added comments in stdenglish.sh
- 16. Added SHALLOW_PARSER in anu_testing/miscellaneous and the following files have been updated accordingly,
+ 13. Added SHALLOW_PARSER in anu_testing/miscellaneous and the following files have been updated accordingly,
            i) miscellaneous/SMT/alignment/add-suf-into-chunks.py
           ii) miscellaneous/SMT/alignment/get_group_mng.sh
          iii) miscellaneous/SMT/alignment/replace_wrd_with_id.c
@@ -3911,21 +3908,29 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
            v) miscellaneous/SMT/MINION/alignment/minion_compile.sh
           vi) README (anusaaraka readme)
          vii) bin/Anusaaraka_stanford_minion.sh
- 17. parser_tree_modification_rules.clp
+ 14. parser_tree_modification_rules.clp
         Modified : "rename_VP_for_To" (added "To" in list)
 	Added    : rename_VP_for_To1 , introduce_new_VP_for_CC_node  and modify_level rules
- 18. sd_lwg_rules :
+ 15. sd_lwg_rules :
 	Modified : "remove_aux_and_modify_head_wrd", "modify_head_id" and "replace_S" 
 	Added    :  replace_S1 
- 19. Modified the pattern "[0-9]*\)\)[ ]\([A-Z]*[ ]nonascii[0-9]*\)" to "[0-9]+\)\)[ ]\([A-Z]*[ ]nonascii[0-9]*\)" in handling_abbrevations.lex file.
- 20. Modified "get_fact_name_for_no_mng_for_eng_word" and "get_fact_name_for_no_mng_for_man_word" rules in get_word_potential_facts.clp file
- 21. Added new file anu_testing/miscellaneous/SMT/MINION/alignment/dic_compile.sh and modified minion_compile.sh accordingly.
- 22. Modified Match-sen.pl program to modify the fact "id-sen_mng" as "head_id-sen_mng-g_ids" and modified the code accordingly.
- 23. Modified "complete_sen_trans" rule in hindi_meaning.clp
- 24. Modified prepare_apertium_input.clp -- removed the dummy fact id-sen_mng
- 25. run_modules_std.bat
+ 16. Modified the pattern "[0-9]*\)\)[ ]\([A-Z]*[ ]nonascii[0-9]*\)" to "[0-9]+\)\)[ ]\([A-Z]*[ ]nonascii[0-9]*\)" in handling_abbrevations.lex file.
+ 17. Modified "get_fact_name_for_no_mng_for_eng_word" and "get_fact_name_for_no_mng_for_man_word" rules in get_word_potential_facts.clp file
+ 18. Added new file anu_testing/miscellaneous/SMT/MINION/alignment/dic_compile.sh and modified minion_compile.sh accordingly.
+ 19. Modified Match-sen.pl program to modify the fact "id-sen_mng" as "head_id-sen_mng-g_ids" and modified the code accordingly.
+ 20. Modified "complete_sen_trans" rule in hindi_meaning.clp
+ 21. Modified prepare_apertium_input.clp -- removed the dummy fact id-sen_mng
+ 22. run_modules_std.bat
         i.  loaded hindi_meanings.dat file hindi_sent_reorder module
         ii. removed sen_phrase.dat from prepare_apertium_input module
- 26. Updated Anu/stdenglish/insert_period.lex
- 27. Updated changes_in_databases
- 28. Updated Log file
+ 23. Updated Anu/stdenglish/insert_period.lex
+ 24. Added canonical_form.lex and replacing_canonical.lex in Anu_data/canonical_form_dictionary/
+ 25. Added compilation of above flex files in dic_compile.sh and anu_compile.sh
+ 26. Added code to generate canonical_form for manual sentence in Anusaaraka_stanford_minion.sh
+ 27. Uncommented transliteration related code in remove_out-files.sh
+ 28. Updated abbr.sh and replace-abbrevations.sh
+ 29. Updated canonical_form_dictionary/Readme , canonical_form_dictionary/list-left and canonical_form_dictionary/list-right
+ 30. Added comments in stdenglish.sh
+ 31. Updated iit-bombay dic in goldendict.
+ 32. Updated changes_in_databases
+ 33. Updated Log file
