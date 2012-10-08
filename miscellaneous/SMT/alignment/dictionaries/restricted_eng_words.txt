@@ -4,7 +4,7 @@ an	eka/koI/prawi/kisI/eka_EsI
 that	jo/isa/yaha/vaha/usa/ki/jinheM
 there	vahAz/vaha
 them	unako/unakA/unake/unheM/ve
-they	unheM/ve_loga/ve
+they	unheM/ve_loga/ve/unhoMne
 this	yaha/isa/isese/iwanA
 also	BI/Ora
 too	BI
@@ -13,11 +13,13 @@ which	kina/jo/jise/jinako/jisake/jinase/jisameM
 and	Ora/evaM/waWA/va
 is	howA_hE/hE/howI_hE/ho/howA_hEM
 was	WA/WI/We
-were	hEM
+were	hEM/WA
 are	hEM
 it	yaha/vaha/isakA/usakI/isake
 of	kA/se/ke_bAre_meM/meM_kA/meM_se
-he	usane/unhoMne
-his	usakI/apane
-we	hama/mEM/hameM/hamArA/hamane
-you	Apa
+he	usane/unhoMne/vaha
+she	usane/vaha
+his	usakI/apane/usake
+we	hama/mEM/hameM/hamArA/hamane/hame
+you	Apa/wumheM/Apako/ApakA/Apake
+i	mEM/muje/mEMne

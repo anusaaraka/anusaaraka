@@ -12,5 +12,9 @@ eka	a/an
 koI	a/an
 kisI	a/an
 hE	is
-apane	his
+apane	his/its
 usakI	his
+usake	his
+unakA	them
+merA	i/me
+vaha	she/he/the/her

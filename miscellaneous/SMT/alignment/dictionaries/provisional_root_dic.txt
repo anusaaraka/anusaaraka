@@ -53,3 +53,6 @@ preceding	piCale
 signal	safkewa_xe
 likewise	isI_prakAra
 retard	manxa_kara
+distance	xUra
+wait	iMwajAra_kara
+beat	parAjiwa_kara/parAjiwa_ho
