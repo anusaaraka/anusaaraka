@@ -3931,5 +3931,6 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  28. Updated abbr.sh and replace-abbrevations.sh
  29. Updated canonical_form_dictionary/Readme , canonical_form_dictionary/list-left and canonical_form_dictionary/list-right
  30. Added comments in stdenglish.sh
- 31. Updated changes_in_databases
- 32. Updated Log file
+ 31. Updated iit-bombay dic in goldendict.
+ 32. Updated changes_in_databases
+ 33. Updated Log file
