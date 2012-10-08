@@ -49,6 +49,35 @@
         (retract ?f)
 )
 ;--------------------------------------------------------------------------------------------------------
+;Eng sen  :: She turned her ankle on the rocks and [had to hobble] back to camp.
+;Man tran :: usakA taKanA cattAna para muda gayA Ora use vApisa Sivira waka [lafgadA kara calanA] padZA.
+;Anu tran :: usane cattAnoM para usakA taKanA modA Ora Sivira ko vApisa [lafgadA_kara calane] padA.
+(defrule test_for_occurence_of_match_in_sen1
+(declare (salience -99))
+(manual_hin_sen $?man_sen)
+?f<-(anu_id-man-id-mng ?id ?pos $?db_mng ?last_word_root)
+(id-node-word-root ?last_id ? ? - ?last_word_root)
+(test (> (length $?db_mng) 0))
+=>
+        (bind $?man_ids (create$ ))
+        (bind ?len (+ (length $?db_mng) (- ?pos 1)))
+        (loop-for-count (?i ?pos ?len)
+                        (bind ?m_word (nth$ ?i $?man_sen))
+                        (if (eq ?i ?pos) then
+                        (bind ?mng  ?m_word)
+                        (bind $?man_ids ?i)
+                        else
+                        (bind ?mng (str-cat ?mng " " ?m_word))
+                        (bind $?man_ids (create$ $?man_ids ?i))
+                        )
+        )
+        (if (neq ?mng (implode$ $?db_mng)) then (retract ?f)
+        else
+        (retract ?f)
+        (assert (anu_id-manual_ids-sep-mng ?id $?man_ids (+ (nth$ (length $?man_ids) $?man_ids) 1) - $?db_mng ?last_word_root))
+        )
+)
+;--------------------------------------------------------------------------------------------------------
 ;Eng sen  :: [Thus] the observer sees a rainbow with red color on the top and violet on the bottom. 
 ;Man tran :: [isa prakAra] prekRaka inxraXanuRa ke SIrRa para lAla varNa Ora pEnxI para bEfganI varNa xeKawA hE .
 ;Anu tran :: [isa prakAra] prekRaka walI para UparI sawaha para waWA PUla lAla rafga se inxraXanuRa ko xeKawA hE.
@@ -76,5 +105,4 @@
 	(assert (anu_id-manual_ids-sep-mng ?id $?man_ids - $?db_mng))
 	)
 )
-
 ;--------------------------------------------------------------------------------------------------------
