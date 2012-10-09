@@ -6,7 +6,7 @@
 
 %%
 
-[ ]KIFc	{	printf(" KIzc"); /* KIFca    becomes KIzca   */	}
+KIFc	{	printf("KIzc");  /* KIFca    becomes KIzca   */	}
 arefg	{	printf("arezg"); /* kareMge  becomes karezge */	}
 efg	{	printf("ezg"); /* xeKefge  becomes xeKezge */	}
 yefg	{	printf("yezg");	 /* KAyefge  becomes KAyezge */ }
