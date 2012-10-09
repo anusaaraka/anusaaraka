@@ -3881,7 +3881,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 65. Updated changes_in_databases.
 66. Updated Log.
 
- 08-10-12
+ 09-10-12
  ========
  1. Added new dictionary numbers_dic.txt in  miscellaneous/SMT/alignment/dictionaries/ so updated the following files
    i) Anu_data/canonical_form_dictionary/list-right
@@ -3936,5 +3936,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	compile.sh
 	get_canonical_dic.sh
 	replacing_canonical.lex
+	get_dictionary_in_canonical_form.sh
+	get_canonical_form_wsd_rules.sh
  33. Updated changes_in_databases
- 34. Updated Log file
+ 34. Updated sd_ver_output
+ 35. Updated Log file

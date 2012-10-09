@@ -8,6 +8,6 @@
 
 [ ]KIFc	{	printf(" KIzc"); /* KIFca    becomes KIzca   */	}
 arefg	{	printf("arezg"); /* kareMge  becomes karezge */	}
-eKefg	{	printf("eKezg"); /* xeKefge  becomes xeKezge */	}
+efg	{	printf("ezg"); /* xeKefge  becomes xeKezge */	}
 yefg	{	printf("yezg");	 /* KAyefge  becomes KAyezge */ }
 %%

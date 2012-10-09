@@ -1170,7 +1170,7 @@ kharif pExAvAra kI upaja isa qwu acCI nahIM WI.
 
 Hindi meaning using Stanford parser 2.285
 The Master said, if I did not go, how would you ever see? 
-PropN-master-PropN ne kahA, ki yaxi mEM nahIM gayA WA, wo Apa kaBI BI kEse xeKeMge?
+PropN-master-PropN ne kahA, ki yaxi mEM nahIM gayA WA, wo Apa kaBI BI kEse xeKezge?
 
 Hindi meaning using Stanford parser 2.286
 The letter was clearly the product of a twisted mind. 
@@ -1221,7 +1221,7 @@ yaha safgaNaka wulanAwmaka rUpa se aXika mahazgA hE.
 
 Hindi meaning using Stanford parser 2.297
 But where will you get them from. 
-paranwu Apa unako kahAz se prApwa kareMge.
+paranwu Apa unako kahAz se prApwa karezge.
 
 Hindi meaning using Stanford parser 2.298
 Of her childhood we know very little. 
@@ -1449,8 +1449,8 @@ vaha eka sATa varRa ke AxamI ke nirmama KUna ke lie 1945 meM kExa kiyA gayA WA.
 
 Hindi meaning using Stanford parser 3.48
 These cuts in services will particularly affect the old. 
-sevAoM meM ye kAta vqxXoM ko viSeRa rUpa se praBAviwa kareMgI.
-sevAoM meM ye kAta viSeRa rUpa se vqxXoM ko praBAviwa kareMgI.
+sevAoM meM ye kAta vqxXoM ko viSeRa rUpa se praBAviwa karezgI.
+sevAoM meM ye kAta viSeRa rUpa se vqxXoM ko praBAviwa karezgI.
 
 Hindi meaning using Stanford parser 3.49
 A slow, balmy breeze from the south engulfed everyone in the audience. 
@@ -1487,7 +1487,7 @@ vaha eka axBuwa maKamalI AsamAna ke nIce bETA.
 
 Hindi meaning using Stanford parser 3.57
 Do this in your room. 
-Apake kamare meM yaha kIjiye.
+Apake kamare meM yaha kIjie.
 
 Hindi meaning using Stanford parser 3.58
 The suspect was about 2 meters tall. 
@@ -1495,11 +1495,11 @@ sanxigXa lagaBaga 2 mItara lambA WA.
 
 Hindi meaning using Stanford parser 3.59
 Leave your coat in the hall. 
-hoYla meM Apake kota ko Coda jAiye.
+hoYla meM Apake kota ko Coda jAie.
 
 Hindi meaning using Stanford parser 3.60
 Do not shut the door. 
-xaravAjA banxa_mawa kIjiye.
+xaravAjA banxa_mawa kIjie.
 
 Hindi meaning using Stanford parser 3.61
 I have been running about all morning trying to find you. 
@@ -1581,7 +1581,7 @@ isa samaya para, PropN-dow-PropN lagaBaga 35 pOintsa nIce WA.
 
 Hindi meaning using Stanford parser 3.80
 Do not send the message by radio. 
-redio se sanxeSa mawa Bejiye.
+redio se sanxeSa mawa Bejie.
 
 Hindi meaning using Stanford parser 3.81
 The matter was explained by her. 
@@ -1593,7 +1593,7 @@ usane kahA ki Ese pariNAmoM ko jApAna ke sAWa yU.esa. vyApAra GAtA GatAne meM "d
 
 Hindi meaning using Stanford parser 3.83
 Go straight and take a right turn. 
-sIXA jAiye Ora xAzyA moda lIjiye.
+sIXA jAie Ora xAzyA moda lIjie.
 
 Hindi meaning using Stanford parser 3.84
 Both of her parents are from India. 
@@ -1601,7 +1601,7 @@ usake mAz bApa xono BArawa se hEM.
 
 Hindi meaning using Stanford parser 3.85
 Please enclose a curriculum vitae with your letter of application. 
-kqpayA Apake Avexana pawra ke sAWa CV Bejiye.
+kqpayA Apake Avexana pawra ke sAWa CV Bejie.
 
 Hindi meaning using Stanford parser 3.86
 Fifty people voted against the new proposal. 
@@ -1778,7 +1778,7 @@ toltecs isa samaya ke sarvAXika saBya samAja We.
 
 Hindi meaning using Stanford parser 4.27
 How shall we collect the money? 
-hama pEsA kEse iktTA kareMge?
+hama pEsA kEse iktTA karezge?
 
 Hindi meaning using Stanford parser 4.28
 Rahul was the son of buddha and the name lahaul is derived from rahul. 
