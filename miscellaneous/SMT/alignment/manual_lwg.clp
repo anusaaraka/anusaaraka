@@ -39,11 +39,12 @@
         (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat ?w  - $?root - ?w1 ?w2 - ?id0 ?id1 ?id2))
 )
 ;----------------------------------------------------------------------------------------------------------------
+;bahuwa sI sWiwiyoM meM , jEse kisI maSIna , jisameM viBinna [kala purje] gawi karawe hoM , meM GarRaNa kI qNAwmaka BUmikA howI hE .
 ;na wo, na hI, xUsarI ora,kI ora ,hamArI ora
 (defrule multi_word2
 (declare (salience 100))
-?f1<-(manual_id-word-cat ?id0 ?w&na|xUsarI|cAroM|ya|kI|hamArI ?cat)
-?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1)  ?w1&wo|hI|ora ?)
+?f1<-(manual_id-word-cat ?id0 ?w&na|xUsarI|cAroM|ya|kI|hamArI|kala ?cat)
+?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1)  ?w1&wo|hI|ora|purje ?)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 =>
@@ -106,7 +107,7 @@
 ?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ke ?)
-?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|aMwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra ?)
+?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|aMwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara ?)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 =>
@@ -137,7 +138,7 @@
 (declare (salience 70))
 ?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
-?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA ?c&~VM)
+?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA ?c&~VM)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 =>
@@ -209,11 +210,13 @@
          (assert (lwg_done ?mid))
 ) 
 ;----------------------------------------------------------------------------------------------------------------
+;She turned to face him. --- vaha usakA sAmanA karane ke lie mudI  @PUNCT-OpenParen GUmI @PUNCT-ClosedParen @PUNCT-Dot
 (defrule change_remaining_facts
 (declare (salience 55))
 (manual_id-word-cat ?mid $?word ?cat)
 (id-node-word-root ?mid ? $?word1 - $?root)
 (not (retract_manual_fact ?mid))
+(test (eq (member$ $?word (create$ @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-Exclamation )) FALSE)) 
 =>
 	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word1 - $?root - 0 - ?mid))
 )
@@ -222,7 +225,7 @@
 ;Riot police beat back the crowds of demonstrators.---- praxarSanakAriyoM kI BIda ko pulisa ne [pICe] Xakela xiyA
 (defrule change_remaining_facts1
 (declare (salience 54))
-(manual_id-word-cat ?mid $?word ?cat&VIB)
+(manual_id-word-cat ?mid $?word ?cat)
 (not (manual_id-cat-word-root-vib-grp_ids ? ? $? - $? - $? - $? ?mid $?))
 (not (retract_manual_fact ?mid))
 =>

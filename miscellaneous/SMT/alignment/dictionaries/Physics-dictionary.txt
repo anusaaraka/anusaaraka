@@ -617,3 +617,4 @@ retina	xqRti_patala
 #dimension	vima
 ##multi_word_expressions
 of_course	vAswava_meM
+relative	ApekRa

@@ -108,6 +108,7 @@
  (load-facts "lwg_info.dat")
  (load-facts "revised_root.dat")
  (load-facts "GNP_agmt_info.dat")
+ (load-facts "cat_consistency_check.dat")
  (open  "manual_group_mng.dat" vb_fp "a")
  (run)
  (save-facts "manual_ids.dat" local head_id-grp_ids)

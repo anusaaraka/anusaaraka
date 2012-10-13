@@ -53,13 +53,11 @@
  ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF ho|kara ?cat ?g ?no ?p ?c ?suf)
  ?f5<-(position-cat-man_grp_mng =(- ?id 1) ?n $? $?word - -)
  (test (neq (length $?word) 0))
- (or (root-verbchunk-tam-chunkids ? ? ? $? ?v_id)(pada_info (group_head_id ?v_id)(group_cat infinitive)))
+ (or (root-verbchunk-tam-chunkids ? ? ? $? ?v_id)(pada_info (group_head_id ?v_id)(group_cat infinitive))(id-cat_coarse ?v_id verb))
  (id-root ?v_id ?root)
- (id-org_wrd-root-dbase_name-mng ? ? ?root ? $?word1)
- (test (subsetp $?word $?word1))
- (not (combine_prev_word_for_ho_id-prev_word ?id $?))
+ (id-org_wrd-root-dbase_name-mng ? ? ?root ? $?word ?kar&kara|ho)
  =>
-        (assert (combine_prev_word_for_ho_id-prev_word ?id $?word1))
+        (assert (combine_prev_word_for_ho_id-prev_word ?id $?word ?kar))
  )
  ;------------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (02-10-12)
