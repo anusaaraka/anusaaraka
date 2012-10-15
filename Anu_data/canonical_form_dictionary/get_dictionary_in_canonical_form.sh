@@ -6,9 +6,10 @@ while read line
 do
         cut -f1 $line".txt"  > $line".hindi"
         cut -f2 $line".txt"  > $line".eng"
-	./get_canonical_form-dic.out  $line".hindi" > $line".canonical_form"
+	./get_canonical_form-dic.out  $line".hindi" > $line".canonical_form_tmp"
+        ./replacing_canonical.out  < $line".canonical_form_tmp" > $line".canonical_form"
 	paste  $line".canonical_form" $line".eng" > dictionaries/$line"_in_canonical_form.txt"
-	rm $line".txt" $line".hindi" $line".eng" $line".canonical_form"
+	rm $line".txt" $line".hindi" $line".eng" $line".canonical_form" $line".canonical_form_tmp"
         echo "Generated $line"_in_canonical_form.txt"" 
 done < list-left
 ###########################################
@@ -17,9 +18,10 @@ while read line
 do
         cut -f1 $line".txt"  > $line".eng"
         cut -f2 $line".txt"  > $line".hindi"
-	./get_canonical_form-dic.out  $line".hindi" > $line".canonical_form"
+	./get_canonical_form-dic.out  $line".hindi" > $line".canonical_form_tmp"
+        ./replacing_canonical.out  < $line".canonical_form_tmp" > $line".canonical_form"
         paste  $line".eng" $line".canonical_form"  > dictionaries/$line"_in_canonical_form.txt"
-        rm $line".txt" $line".eng" $line".hindi" $line".canonical_form"
+        rm $line".txt" $line".eng" $line".hindi" $line".canonical_form" $line".canonical_form_tmp"
         echo "Generated $line"_in_canonical_form.txt"" 
 done < list-right
 ###########################################
@@ -28,10 +30,12 @@ while read line
 do
 	cut -f1 $line".txt"  > $line".hnd"
         cut -f2 $line".txt"  > $line".hindi"
-        ./get_canonical_form-dic.out  $line".hnd"   > $line".hnd1.canonical_form"
-        ./get_canonical_form-dic.out  $line".hindi" > $line".hnd2.canonical_form"
+        ./get_canonical_form-dic.out  $line".hnd"   > $line".hnd1.canonical_form_tmp"
+        ./get_canonical_form-dic.out  $line".hindi" > $line".hnd2.canonical_form_tmp"
+        ./replacing_canonical.out  < $line".hnd1.canonical_form_tmp" > $line".hnd1.canonical_form"
+        ./replacing_canonical.out  < $line".hnd2.canonical_form_tmp" > $line".hnd2.canonical_form"
 	paste $line".hnd1.canonical_form"  $line".hnd2.canonical_form" > dictionaries/$line"_in_canonical_form.txt"
-	rm $line".txt" $line".hnd" $line".hindi" $line".hnd1.canonical_form" $line".hnd2.canonical_form"
+	rm $line".txt" $line".hnd" $line".hindi" $line".hnd1.canonical_form" $line".hnd2.canonical_form" $line".hnd1.canonical_form_tmp" $line".hnd2.canonical_form_tmp"
 	echo "Generated $line"_in_canonical_form.txt""
 done < list-two-side-hindi
 ###########################################

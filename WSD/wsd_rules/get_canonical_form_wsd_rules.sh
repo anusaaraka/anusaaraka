@@ -11,6 +11,9 @@ ls *.clp > list
 
 while read line
 do
-./get_canonical_form_in_wsd.out  < $HOME_anu_test/WSD/wsd_rules/$line  >   canonical_form_wsd_rules/$line
+./get_canonical_form_in_wsd.out  < $HOME_anu_test/WSD/wsd_rules/$line  >   canonical_form_wsd_rules/$line.1
+$HOME_anu_test/Anu_data/canonical_form_dictionary/./replacing_canonical.out < canonical_form_wsd_rules/$line.1 > canonical_form_wsd_rules/$line
 done < list
+
+rm canonical_form_wsd_rules/*.1
 

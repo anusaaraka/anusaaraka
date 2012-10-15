@@ -685,7 +685,7 @@ Modified:
 		U.S.A._noun	yU._esa._e.	to	U.S.A._noun     yU.esa.e.
 		U.S.S.R._noun	yU.esa.esa_Ara.	to	U.S.S.R._noun   yU.esa.esa.Ara.
 		U.S._noun	yU._esa.	to	U.S._noun       yU.esa.
-
+	38.Modified smell_noun      sUzGanA/ganxa/bAsa to	sUzGanA/ganXa/bAsa (Suggested by Chaitanya Sir 05-10-12)
 			
 Removed::
 -------
@@ -728,6 +728,8 @@ Removed::
     Added ::
     straight_line   sarala_reKA#sarala_reKA#noun#2#RM	(Suggested by Chaitanya Sir 05-09-12)
     path_length     paWa_lambAI#paWa_lambAI#noun#2#WM	(Suggested by Chaitanya Sir 05-09-12)
+    able_to_walk    cala_pA#cala_pA#verb#3#RM	        (Suggested by Chaitanya Sir 09-10-12)
+    able to handle  hala_karane_meM_sakRama#hala_karane_meM_sakRama#verb#3#WM (Suggested by Chaitanya Sir 09-10-12)
 
  changes in Physics-dictionary.txt 
  =================================

@@ -22,7 +22,6 @@
  (assert (affecting_id-affected_ids-wsd_group_root_mng))
  (assert (affecting_id-affected_ids-wsd_group_word_mng))
  (assert (id-last_word) )
- (assert (id-sen_mng))
  (assert (id-tam_type))
  (assert (kriyA_id-object2_viBakwi))
  (assert (kriyA_id-object1_viBakwi))

@@ -432,7 +432,7 @@
 (not (prep_id-relation-anu_ids ? kriyA-conjunction  ? ?id));It was so dark that I could not see anything.
 (not (Mother  ?SBAR))
 (id-original_word ?head ?wrd)
-(test (eq (member$ ?wrd (create$ that because as though although If unless)) FALSE)); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy. Some grammars are better than others, as we have proved.
+(test (eq (member$ ?wrd (create$ that because as though although If if unless ) ) FALSE)); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy. Some grammars are better than others, as we have proved.
 =>
         (bind ?*count* (+ ?*count* 1))
         (retract ?f0)
@@ -519,7 +519,8 @@
 (defrule rmv_sbar_from_root
 (declare (salience 550))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut)
-?f1<-(Head-Level-Mother-Daughters ? ? ?dat $?child)
+?f1<-(Head-Level-Mother-Daughters ?h ? ?dat $?child)
+(id-original_word ?h ?word&~while);The cyclist will slip while taking the circular turn.
 (Node-Category  ?Mot ROOT)
 (Node-Category  ?dat SBAR|SBARQ)
 (test (member$ $?child $?daut))
@@ -547,7 +548,8 @@
 ;The Master said, if I did not go, how would you ever see? 
 (defrule create_sen_SBAR
 (declare (salience 100))
-?f1<-(Head-Level-Mother-Daughters ? ? ?dat $?child)
+?f1<-(Head-Level-Mother-Daughters ?head ? ?dat $?child)
+(id-original_word ?head ?word&~while);The cyclist will slip while taking the circular turn.
 (Node-Category  ?dat SBAR|SBARQ)
 (not (sbar_ids $?child))
 ;(not (dont_separate_sbar ?dat))

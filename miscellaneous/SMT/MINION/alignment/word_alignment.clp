@@ -596,6 +596,26 @@
         	 (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?man_ids $?man_ids1))))
 )
 
+;Eng sen  :: She turned the vase over to look for the price. 
+;Man tran :: usane [xAma  (kImawa)]  xeKane ke lie gulaxAna ko GumAyA.
+;Anu tran :: vaha mUlya Koja karanA PUlaxAna ulatI.
+(defrule combine_group1
+(declare (salience -99))
+?f<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_ids)
+?f4<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?man_ids)
+?f1<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid2 $?man_ids1)
+?f5<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid2 $?man_ids1)
+(manual_id-word-cat ?mid1 @PUNCT-OpenParen SYM)
+(manual_id-word-cat ?mid3 @PUNCT-ClosedParen SYM)
+(test (eq ?mid1 (+ (nth$ (length $?man_ids) $?man_ids) 1)))
+(test (eq (+ (nth$ (length $?man_ids1) $?man_ids1) 1) ?mid3))
+?f2<-(id-confidence_level ?mid 8)
+?f3<-(id-confidence_level ?mid2 8)
+=>
+         (retract ?f ?f1 ?f4 ?f5)
+         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?man_ids ?mid1 $?man_ids1 ?mid3))
+         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?man_ids ?mid1 $?man_ids1 ?mid3))
+)
 
 ;The reflected ray is parallel to the principal axis. 
 ;Man tran :: parAvarwiwa kiraNa [muKya akRa ke] samAnwara gamana karawI hE.

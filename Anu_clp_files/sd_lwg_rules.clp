@@ -97,7 +97,7 @@
  (defrule replace_S
  (declare (salience 100))
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?S $?pos)
- (parserid-word ?head ?w&get|got|gets|getting|have|had|has|having|make|makes|making|made|need|are|Are|is|was|were) 
+ (parserid-word ?head ?w&get|got|gets|getting|have|had|has|having|make|makes|making|made|need) 
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
  (Node-Category ?Mot VP)
  (Node-Category ?S SBAR|S|SQ)
@@ -107,11 +107,25 @@
         (assert (Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre $?daut  $?pos))
  )
 ;--------------------------------------------------------------------------
- ;Replacing a VP mother whose child is  S on checking the head word "Let".
- (defrule replace_S1
+ ;Replacing a VP mother whose child is  S|SBAR on checking the head word "Let".
+ (defrule replace_S1_Let
  (declare (salience 100))
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?S $?pos)
  (parserid-word ?head ?w&Let|let)
+ ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
+ (Node-Category ?Mot VP)
+ (Node-Category ?S S|SBAR)
+ (not (dont_replace_VP ?Mot))
+ =>
+        (retract ?f ?f1)
+        (assert (Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre $?daut  $?pos))
+ )
+;--------------------------------------------------------------------------
+ ;Replacing a VP mother whose child is  S on checking the head word "are|Are|is|was|were".
+ (defrule replace_S1
+ (declare (salience 100))
+ ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?S $?pos)
+ (parserid-word ?head ?w&are|Are|is|was|were)
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
  (Node-Category ?Mot VP)
  (Node-Category ?S S)
@@ -121,7 +135,6 @@
         (assert (Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre $?daut  $?pos))
  )
 ;--------------------------------------------------------------------------
-
  (defrule get_lwg1
  (declare (salience 75))
  ?f0<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?VP ?VP1 ?VP2)

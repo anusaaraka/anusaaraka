@@ -1,5 +1,6 @@
 ;This file is written by Maha Laxmi and Shirisha Manju
 
+
 (deffunction remove_character(?char ?str ?replace_char)
 	(bind ?new_str "")
         (bind ?index (str-index ?char ?str))
@@ -232,10 +233,12 @@
 	(assert (man_id-candidate_ids ?man_verb $?anu_verbs))
 )
 ;------------------------------------------------------------------------------------------------------------
+;The nationalists were narrowly beaten in the local election.---rARtravAxI sWAnIya cunAva meM badZe hI kama aMwara se hAre.
+; in the above sentence the word "the" is repeated twice and has no mng in manual sentence.
 (defrule get_fact_name_for_no_mng_for_eng_word
 (declare (salience 100))
 (id-word ?aid ?wrd)
-(not (id-word ?aid1&:(neq ?aid1 ?aid) ?wrd))
+;(not (id-word ?aid1&:(neq ?aid1 ?aid) ?wrd))
 ;(not (anu_id-candidate_ids ?aid $?))
 ;(not (man_id-candidate_ids ? $? ?aid $?));The second law of motion refers to the general situation when there is a net external force acting on the body.-->Man sen :: gawi kA xviwIya niyama una vyApaka sWiwiyoM se sambanXa raKawA hE @PUNCT-Comma  jinameM piNda para koI neta bAhya bala laga rahA ho -->Anu tran :: gawi kA xUsarA niyama vyApaka hAlawa ko sanxarBa xewA hE SarIra para kArya karwe_hue eka vAswavika bAharI bala jaba hE.
 (anu_id-word-possible_mngs ?aid ?wrd $?pos_mngs)
@@ -250,10 +253,10 @@
 (defrule get_fact_name_for_no_mng_for_man_word
 (declare (salience 100))
 (manual_id-mng ?mapped_id $?man_mng)
-(not (manual_id-mng ?mapped_id1&:(neq ?mapped_id1 ?mapped_id) $?man_mng))
+;(not (manual_id-mng ?mapped_id1&:(neq ?mapped_id1 ?mapped_id) $?man_mng))
 ;(manual_id-mapped_id ?mid ?mapped_id)
 ;(not (anu_id-candidate_ids ? $? ?mid $?))
-(not (man_id-candidate_ids ?mid $?))
+;(not (man_id-candidate_ids ?mid $?))
 (man_id-word-possible_mngs ?mid $?man_mng $?pos_mngs)
 (not (id-word ? ?wrd&:(member$ ?wrd $?pos_mngs)))
 =>

@@ -1,5 +1,4 @@
 cd $HOME_anu_test/miscellaneous/SMT/MINION/alignment
-rm *.out
 rm $HOME_anu_test/Anu_databases/Physics-dictionary.gdbm
 rm $HOME_anu_test/Anu_databases/provisional_PropN_dic.gdbm
 rm $HOME_anu_test/Anu_databases/provisional_word_dic.gdbm
@@ -14,9 +13,12 @@ rm $HOME_anu_test/Anu_databases/restricted_hnd_words.gdbm
 rm $HOME_anu_test/Anu_databases/numbers_dic.gdbm
 
 cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
+flex canonical_form.lex
+gcc -o canonical_form.out lex.yy.c -lfl myeq.c
+$HOME_anu_test/Anu_src/comp.sh replacing_canonical
+
 sh get_txt_files.sh
 sh get_dictionary_in_canonical_form.sh
-
 
 cd $HOME_anu_test/Anu_data
 echo "Creating Physics-dictionary"

@@ -1,6 +1,6 @@
 %{
 #include<string.h>
-FILE *fp, *fp1;
+FILE *fp, *fp1 ,*fp2;
 int len=0,comma_cnt=0,len1=0;
 char id[100],node[20],root[100],cat[20],gen[20],num[20],per[20],cas[20],tam[50],new_tam[50],*t,new_text[100],word[50];
 %}
@@ -26,6 +26,7 @@ char id[100],node[20],root[100],cat[20],gen[20],num[20],per[20],cas[20],tam[50],
                 if (comma_cnt == 5) { strncpy(per,yytext,len);  per[len]='\0'; if(strcmp(per,"\0")==0) strcpy(per,"-");}
 	        if (comma_cnt == 6) { strncpy(cas,yytext,len);  cas[len]='\0'; if(strcmp(cas,"\0")==0) strcpy(cas,"-");}
 	        if (comma_cnt == 7) { strncpy(tam,yytext,len);  tam[len]='\0'; t=tam; 
+				    fprintf(fp2,"(id-node-tam %s %s %s)\n" ,id,node,tam);
                                     while ((len1 = strcspn(t,"+"))>0 && len1<strlen(t)) { 
                                     strncat(new_tam,t,len1);
                                     t=t+len1+1; 
@@ -70,9 +71,11 @@ main(int argc, char* argv[])
 {
 fp= fopen(argv[1],"w");
 fp1= fopen(argv[2],"w");
+fp2= fopen(argv[3],"w");
 yylex();
 fclose(fp);
 fclose(fp1);
+fclose(fp2);
 }
 
 

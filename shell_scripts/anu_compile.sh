@@ -5,6 +5,9 @@
  echo "Creating Canonical form dictionaries"
  sh get_txt_files.sh
  sh get_dictionary_in_canonical_form.sh
+ flex canonical_form.lex
+ gcc -o canonical_form.out lex.yy.c -lfl myeq.c
+ $HOME_anu_test/Anu_src/comp.sh replacing_canonical
 
  echo "Creating Canonical form WSD rules"
  cd $HOME_anu_test/WSD/wsd_rules/

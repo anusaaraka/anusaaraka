@@ -3881,7 +3881,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 65. Updated changes_in_databases.
 66. Updated Log.
 
- 03-10-12
+ 13-10-12
  ========
  1. Added new dictionary numbers_dic.txt in  miscellaneous/SMT/alignment/dictionaries/ so updated the following files
    i) Anu_data/canonical_form_dictionary/list-right
@@ -3889,22 +3889,18 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  iii) miscellaneous/SMT/MINION/alignment/minion_compile.sh
   iv) miscellaneous/SMT/alignment/get_dbase_mng.clp (Modified all the rules added functions "print_dic_mng" and "dic_lookup")
    v) miscellaneous/SMT/alignment/smt_compile.sh
- 2.Corrected conversion of Nukta in wx_utf8.lex
- 3.Added "'." rule in add_snt_mrkr.lex
- 4.Added distt. and M.G.Road in abbrevations.lex
- 5.Modified "o'" pattern in chk_input_format.pl
- 6.In handling_abbrevations.lex, added a rule to handle nonascii characters in penn output.
- 7.In run_stanford-parser.sh, running identify-nonascii-chars.c before handling_abbrevations.lex to avoid nonascii problems     in penn output.
- 8.Added patterns (: --) and (# #) in mapping-punctuations.lex
- 9.Modified few entries in default-iit-bombay-shabdanjali-dic.txt and updated teh same in changes_in_databases
- 10.Added sed command to replace 'OY' to 'oY' in transliteration-script.sh
- 11.In hnd_translation.pl, handled patterns which are not converting to utf8 (like दस-lAKa, कि.mI.)
- 12.Added S_SHARP in constituency_parse.l
- 13.Updated abbr.sh and replace-abbrevations.sh
- 14.Updated canonical_form_dictionary/Readme , canonical_form_dictionary/list-left and canonical_form_dictionary/list-right
- 15.Updated changes_in_databases
- 16.Added comments in stdenglish.sh
- 17.Added SHALLOW_PARSER in anu_testing/miscellaneous and the following files have been updated accordingly,
+ 2. Corrected conversion of Nukta in wx_utf8.lex
+ 3. Added "'." rule in add_snt_mrkr.lex
+ 4. Added distt. and M.G.Road in abbrevations.lex
+ 5. Modified "o'" pattern in chk_input_format.pl
+ 6. In handling_abbrevations.lex, added a rule to handle nonascii characters in penn output.
+ 7. In run_stanford-parser.sh, running identify-nonascii-chars.c before handling_abbrevations.lex to avoid nonascii problems     in penn output.
+ 8. Added patterns (: --) and (# #) in mapping-punctuations.lex
+ 9. Modified few entries in default-iit-bombay-shabdanjali-dic.txt and updated teh same in changes_in_databases
+ 10. Added sed command to replace 'OY' to 'oY' in transliteration-script.sh
+ 11. In hnd_translation.pl, handled patterns which are not converting to utf8 (like दस-lAKa, कि.mI.)
+ 12. Added S_SHARP in constituency_parse.l
+ 13. Added SHALLOW_PARSER in anu_testing/miscellaneous and the following files have been updated accordingly,
            i) miscellaneous/SMT/alignment/add-suf-into-chunks.py
           ii) miscellaneous/SMT/alignment/get_group_mng.sh
          iii) miscellaneous/SMT/alignment/replace_wrd_with_id.c
@@ -3912,11 +3908,37 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
            v) miscellaneous/SMT/MINION/alignment/minion_compile.sh
           vi) README (anusaaraka readme)
          vii) bin/Anusaaraka_stanford_minion.sh
- 18.Modified "rename_VP_for_To" in parser_tree_modification_rules.clp (added "To" in list)
- 19.Added new rules "introduce_new_VP_for_CC_node" and "modify_level" in parser_tree_modification_rules.clp file
- 20.Modified "remove_aux_and_modify_head_wrd","modify_head_id" and "replace_S" and added new rule replace_S1 in sd_lwg_rules.
-clp
- 21.Modified the pattern "[0-9]*\)\)[ ]\([A-Z]*[ ]nonascii[0-9]*\)" to "[0-9]+\)\)[ ]\([A-Z]*[ ]nonascii[0-9]*\)" in handling_abbrevations.lex file.
- 22.Modified "get_fact_name_for_no_mng_for_eng_word" and "get_fact_name_for_no_mng_for_man_word" rules in get_word_potential_facts.clp file
- 23.Added new file anu_testing/miscellaneous/SMT/MINION/alignment/dic_compile.sh and modified minion_compile.sh accordingly.
- 24.Updated Log file
+ 14. parser_tree_modification_rules.clp
+        Modified : "rename_VP_for_To" (added "To" in list)
+	Added    : rename_VP_for_To1 , introduce_new_VP_for_CC_node  and modify_level rules
+ 15. sd_lwg_rules :
+	Modified : "remove_aux_and_modify_head_wrd", "modify_head_id" and "replace_S" 
+	Added    :  replace_S1 
+ 16. Modified the pattern "[0-9]*\)\)[ ]\([A-Z]*[ ]nonascii[0-9]*\)" to "[0-9]+\)\)[ ]\([A-Z]*[ ]nonascii[0-9]*\)" in handling_abbrevations.lex file.
+ 17. Modified "get_fact_name_for_no_mng_for_eng_word" and "get_fact_name_for_no_mng_for_man_word" rules in get_word_potential_facts.clp file
+ 18. Added new file anu_testing/miscellaneous/SMT/MINION/alignment/dic_compile.sh and modified minion_compile.sh accordingly.
+ 19. Modified Match-sen.pl program to modify the fact "id-sen_mng" as "head_id-sen_mng-g_ids" and modified the code accordingly.
+ 20. Modified "complete_sen_trans" rule in hindi_meaning.clp
+ 21. Modified prepare_apertium_input.clp -- removed the dummy fact id-sen_mng
+ 22. run_modules_std.bat
+        i.  loaded hindi_meanings.dat file hindi_sent_reorder module
+        ii. removed sen_phrase.dat from prepare_apertium_input module
+ 23. Updated Anu/stdenglish/insert_period.lex
+ 24. Added canonical_form.lex and replacing_canonical.lex in Anu_data/canonical_form_dictionary/
+ 25. Added compilation of above flex files in dic_compile.sh and anu_compile.sh
+ 26. Added code to generate canonical_form for manual sentence in Anusaaraka_stanford_minion.sh
+ 27. Uncommented transliteration related code in remove_out-files.sh
+ 28. Updated abbr.sh and replace-abbrevations.sh
+ 29. Updated canonical_form_dictionary/Readme , canonical_form_dictionary/list-left and canonical_form_dictionary/list-right
+ 30. Added comments in stdenglish.sh
+ 31. Updated iit-bombay dic in goldendict.
+ 32. Modified "rmv_sbar_from_root" and "create_sen_SBAR" rules in H_ordering_rules.clp
+ 33. To get canonical form in verbs modified :
+	compile.sh
+	get_canonical_dic.sh
+	replacing_canonical.lex
+	get_dictionary_in_canonical_form.sh
+	get_canonical_form_wsd_rules.sh
+ 34. Updated changes_in_databases
+ 35. Updated sd_ver_output
+ 36. Updated Log file
