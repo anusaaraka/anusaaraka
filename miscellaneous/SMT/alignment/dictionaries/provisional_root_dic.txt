@@ -64,4 +64,5 @@ etc.	Axi
 many	bahuwa_sI
 clearly	spaRta_hE_ki
 move	gawi_kara
-
+only	eka_hI
+#box	boYksa
