@@ -64,7 +64,7 @@
 (or (id-cat_coarse ?id adverb)(viSeRya-saMKyA_viSeRaNa  =(+ ?id 2) =(+ ?id 1)));"viSeRya-saMKyA_viSeRaNa" added by sheetal
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id sirPZa))
+(assert (id-wsd_root_mng ?id sirPa))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  only.clp 	only4   "  ?id "  sirPZa )" crlf))
 )
@@ -72,3 +72,16 @@
 ;"only","Adv","1.sirPZa"
 ;He arrived only to find his wife dead.
 ;
+
+;I will go to the market only after eating an apple. Added by Sukhada (14-10-12)
+(defrule only5
+(declare (salience 4900))
+(id-root ?id only)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse =(+ ?id 1) preposition)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id hI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  only.clp  only5   "  ?id "  hI )" crlf))
+)
