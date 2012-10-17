@@ -67,10 +67,13 @@
  ; It is mainly through light and the sense of vision that we know and interpret the world around us.
  ; Man tra ::muKya rUpa se prakASa evaM xqRti kI saMvexanA ke kAraNa hI hama apane cAroM ora ke saMsAra ko samaJawe evaM [usakI vyAKyA karawe hEM] .
  ; Anu trn ::yaha halake meM se waWA xUraxarSiwA kI saMvexanA meM se pramuKa rUpa se hE ki hama hamAre cAroM ora yuga vyAKyA kara waWA jAnawI hE.
+ ;Using the basic laws of reflection and refraction, we shall study the image formation by plane and spherical reflecting and refracting surfaces. 
+ ;Anu tran :: prawibimba ke Ora apavarwana ke buniyAxI niyamoM kA upayoga kara, hama UparI wala xarSA huA Ora modawA huA samawala waka Ora golIya waka prawimA suvyavasWiwa kramaa kA aXyayana karezge.
+ ;Amn tran :: parAvarwana waWA apavarwana ke mUla niyamoM kA upayoga karawe hue hama samawala waWA golIya parAvarwI evaM apavarwI pqRToM xvArA prawibimboM kI racanA kA aXyayana karezge.
  (defrule modify_wrd_mng_for_VP_kriyAmUla_ho_and_kara
  (declare (salience 90))
  (combine_prev_word_for_ho_id-prev_word ?id $?prev_word ?)
- ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN ?rt&ho|kara ?cat ?gen ?num ?per ?case ?suf)
+ ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF ?rt&ho|kara ?cat ?gen ?num ?per ?case ?suf)
  ?f1<-(head_id-grp_ids ?id $?grp) ;?4
  ?f2<-(position-cat-man_grp_mng   ?id ?node     $?word  - -);f0
  ?f3<-(id-node-root-cat-gen-num-per-case-tam =(- ?id 1) ?n ?r ?ct ?g ?no ?p ?c ?s);f1

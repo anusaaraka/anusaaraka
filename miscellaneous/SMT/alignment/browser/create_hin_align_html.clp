@@ -105,6 +105,9 @@
  ;(hin_pos-hin_mng-eng_ids-eng_words 5 guruwvAkarRaNa_ke_lie [11 12] 10 gravitational_attraction_{for})
  ;(anu_id-anu_mng-sep-man_id-man_mng 11 - 3 piNdoM ke)
  ;(anu_id-anu_mng-sep-man_id-man_mng 12 guruwvAkarRaNa ke lie - 4 guruwvAkarRaNa)
+ ;An object released near the surface of the Earth is accelerated downward under the influence of the force of gravity.
+ ;Manual trans : yaxi XarawI kI sawaha se WodI UFcAI para se koI vaswu Coda xI jAe wo vaha pqWvI kI ora [guruwva bala ke kAraNa] wvariwa hogI.
+ ;Anu trans    : PropN-earth-PropN ke UparI wala ke nikata Coda eka vaswu [guruwvAkarRaNa bala ke] praBAva ke nIce aXogAmI cAla baDAI huI hE.
  (defrule combine_words_pointing_to_same_slot
  (declare (salience 5999))
  ?f<-(anu_id-anu_mng-man_id-man_mng ?id ?anu_mng ?mid ?man_grp_mng)

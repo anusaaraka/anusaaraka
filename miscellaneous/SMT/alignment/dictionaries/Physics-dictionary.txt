@@ -618,3 +618,5 @@ retina	xqRti_patala
 ##multi_word_expressions
 of_course	vAswava_meM
 relative	ApekRa
+force_of_gravity	guruwva_bala
+reaction_force	aBilamba_bala
