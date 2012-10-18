@@ -1,6 +1,6 @@
 SHELL = /bin/sh
 
-TARGETS = enclitics.out standard_abbrevations.out abbrevations.out titles.out insert_period.out replacing-non_ascii_chars-to-ascii_chars.out initialisms.out
+TARGETS = enclitics.out standard_abbrevations.out abbrevations.out titles.out insert_period.out replacing-non_ascii_chars-to-ascii_chars.out initialisms.out mapping-symbols.out
 
 all: $(TARGETS)
 
@@ -41,6 +41,8 @@ replacing-non_ascii_chars-to-ascii_chars.out: replacing-non_ascii_chars-to-ascii
 initialisms.out: initialisms.lex
 	$(run_flex)
 
+mapping-symbols.out: mapping-symbols.lex 
+	$(run_flex)   
 .PHONY: all
 
 clean:

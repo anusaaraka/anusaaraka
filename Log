@@ -3881,7 +3881,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 65. Updated changes_in_databases.
 66. Updated Log.
 
- 13-10-12
+ 18-10-12
  ========
  1. Added new dictionary numbers_dic.txt in  miscellaneous/SMT/alignment/dictionaries/ so updated the following files
    i) Anu_data/canonical_form_dictionary/list-right
@@ -3941,4 +3941,22 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	get_canonical_form_wsd_rules.sh
  34. Updated changes_in_databases
  35. Updated sd_ver_output
- 36. Updated Log file
+ 36. Added mapping-symbols.lex to map all the symbols with its name
+ 37. Added code to run mapping-symbols.lex in stdenglish.sh
+ 38. Added compilation of mapping-symbols.lex in stdenglish/Makefile
+ 39. Mapping Symbols like '+', '#' etc is commented in following files:
+	insert_period.lex
+	standard_abbrevations.lex
+	constituency_parse.l
+	handling_abbrevations.lex
+	mapping-punctuations.lex
+	abbr.sh
+	replace-abbrevations.sh
+	get_group_mng.sh
+ 40. Added code to replace symbols with names with original symbol for html files in ClipsToAnu_browser_intfc.sh and run_align_browser.sh
+ 41. Removed mapping of '—' with '-' in replacing-non_ascii_chars-to-ascii_chars.lex and handled it in mapping-symbols.lex
+ 42. Modified Node category 'P_DQ' to 'P_QES' in convert_Q_sent_to_normal rule in parser_tree_modification_rules.clp
+ 43. Added a condition to avoid conversion of SYMBOL words into NNP category in NN_to_NNP rule in sd_category.clp
+ 44. Added code to map symbols in manual sentence in Anusaaraka_stanford_minion.sh
+ 45.Updated  run_shallow_parser.sh
+ 46. Updated Log file

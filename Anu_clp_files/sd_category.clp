@@ -24,7 +24,7 @@
   (parserid-word ?pid ?word)
   (test (neq ?pid P1))
   (test (eq (upcase (sub-string 1 1 ?word)) (sub-string 1 1 ?word)))
-  (test (neq (sub-string 1 4 ?word) "SYM-")) ;Added for Symbols like , =, + etc. (Added by Roja 15-06-12)As of now no example sentence. Added to avoid errors.
+  (test (neq (sub-string 1 6 ?word) "SYMBOL"));Added this condition to avoid words with SYMBOL to convert to NNP category (Added by Roja 18-10-12) EX:  In one-dimensional motion, there are only two directions (backward and forward, upward and downward) in which an object can move, and these two directions can easily be specified by + and — signs. 
   =>
  	(retract ?f0)
 	(assert (id-sd_cat   ?pid NNP))

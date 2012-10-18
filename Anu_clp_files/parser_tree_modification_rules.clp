@@ -122,7 +122,7 @@
  (defrule convert_Q_sent_to_normal
  (declare (salience 10))
  ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot ?vp ?np $?daut ?p)
- (Node-Category  ?p  P_DQ)
+ (Node-Category  ?p  P_QES);Modified 'P_DQ' to 'P_QES'
  (Node-Category  ?Mot  SQ)
  (Node-Category  ?vp   MD|VB|VBN|VBZ|VBD|VBP|VBG)
  (Head-Level-Mother-Daughters ?h ?l ?np $?d)

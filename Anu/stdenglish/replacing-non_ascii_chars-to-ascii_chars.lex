@@ -22,10 +22,10 @@ TODO: The characters replaced here need to re-mapped after final translation.
 ‘	{	printf("\'");/* Replacing Left Single Quotation Mark(LSQM with octal value \342 200 230\) with normal single quote */
 	}
 
-﻿	{	printf(" "); /* Replacing Zero Width No-Breakable Space(ZWNBSP with octal value \357 273 277\) with noraml space */
+﻿	{	printf(" "); /* Replacing Zero Width No-Breakable Space(ZWNBSP with octal value \357 273 277\) with noraml space 
 	}
 
-—	{	printf("-"); /* Replacing Em Dash (with octal value \342 200 224\) with normal hyphen */
+—	{	printf("-"); * Replacing Em Dash (with octal value \342 200 224\) with normal hyphen */
 	}
 
 %%

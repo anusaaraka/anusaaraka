@@ -17,8 +17,10 @@ else
 #Replacing Non-ASCII characters with ASCII characters.  Ex: “ is replaced with "
 $PATH1/replacing-non_ascii_chars-to-ascii_chars.out <  $2/$1  > $1.tmp_tmp 
 
+$PATH1/mapping-symbols.out  $HOME_anu_tmp/tmp/$1_tmp/Symbols.txt_tmp < $1.tmp_tmp > $1.tmp_tmp1
+
 #Identifying nonascii characters
-$HOME_anu_test/Anu_src/identify-nonascii-chars.out $1.tmp_tmp $1.tmp
+$HOME_anu_test/Anu_src/identify-nonascii-chars.out $1.tmp_tmp1 $1.tmp
 
 # enclitics.lex expands the standard abbreviations with single apostophe  such as I'm  ---> I am
 $PATH1/enclitics.out < $1.tmp > $1.tmp1

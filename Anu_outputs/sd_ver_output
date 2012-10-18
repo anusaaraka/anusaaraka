@@ -1548,8 +1548,8 @@ In fact she had been feeling tired and queasy for the past few days.
 asala meM vaha piCale kuCa xinoM se WakA_huA Ora vamanakArI mahasUsa karawI rahI WI.
 
 Hindi meaning using Stanford parser 3.72
-At the end of the day, 251.2 million shares were traded. 
-xina ke anwa meM, 251.2 xasa-lAKa SeyaroM kA vyApAra kiyA gayA WA.
+At the end of the day, 251SYMBOL-DOT2 million shares were traded. 
+xina ke anwa meM, 251SYMBOL-DOT2 xasa-lAKa SeyaroM kA vyApAra kiyA gayA WA.
 
 Hindi meaning using Stanford parser 3.73
 No, it was not Black Monday. 
