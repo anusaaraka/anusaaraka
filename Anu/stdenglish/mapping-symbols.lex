@@ -1,7 +1,7 @@
 /* Ex: The average annual rainfall ranges from 2,000 mm to 3,000 mm , with temperatures ranging from 25 to 30° Celsius.
    In above example '°' symbol applies to both 25 and 30. So instead of combining '°' to 30 in Stanford penn o/p,  Chaitanya Sir suggested to consider all the Symbols as 'SYMBOL-NAME' and restore 'SYMBOL-NAME' back again with original Symbol.
-   Ex: '°' is mapped to SYMBOL-DEGREE-SIGN and at the end SYMBOL-DEGREE-SIGN is replaced with °	*/
-
+   Ex: '°' is mapped to SYMBOL-DEGREE-SIGN and at the end SYMBOL-DEGREE-SIGN is replaced with °	
+   Added by Roja (17-08-12) */
 %{
 #include <string.h>
 char str[1000], *s1;
