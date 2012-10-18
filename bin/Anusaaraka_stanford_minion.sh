@@ -41,7 +41,8 @@
  $HOME_anu_test/Anu/stdenglish/mapping-symbols.out  $HOME_anu_tmp/tmp/$1_tmp/Symbols.txt_tmp < $MYPATH/tmp/$1_tmp/$5_in_canonical_form > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt 
  sed 's/SYMBOL/@SYMBOL/g'  $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp1.txt 
  $HOME_anu_test/Anu_src/identify-nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp1.txt $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp2.txt
- sh $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/run_tokenizer_fr.sh $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp1.txt > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tokenized.txt  2>/dev/null
+ sh $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/run_tokenizer_fr.sh $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp1.txt > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tokenized.txt_tmp  2>/dev/null 
+ sed 's/-/ - /g' $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tokenized.txt_tmp > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tokenized.txt
 
 ###Added below loop for server purpose.
  if [ "$3" == "True" ] ; then 
