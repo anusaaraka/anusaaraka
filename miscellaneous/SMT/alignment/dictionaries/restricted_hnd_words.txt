@@ -11,7 +11,7 @@ isa	the/this
 eka	a/an
 koI	a/an
 kisI	a/an
-hE	is
+hE	is/have
 apane	his/its
 usakI	his
 usake	his

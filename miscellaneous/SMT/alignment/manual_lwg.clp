@@ -18,7 +18,7 @@
 ;Anu tran :: yaha halake meM se waWA xUraxarSiwA kI saMvexanA meM se pramuKa rUpa se hE ki hama hamAre cAroM ora yuga vyAKyA kara waWA jAnawI hE.
 (defrule multi_word0
 (declare (salience 110))
-?f0<-(manual_id-word-cat ?id0 ?w&apane ?cat)
+?f0<-(manual_id-word-cat ?id0 ?w&apane|unake ?cat)
 ?f1<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?w1&cAroM ?)
 ?f2<-(manual_id-word-cat ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora ?)
 (id-node-word-root ?id0 ? $?word1 - $?root)
@@ -66,13 +66,14 @@
 )
 ;----------------------------------------------------------------------------------------------------------------
 ;ke rUpa meM, ke bAre meM
-;;Axya vicArakoM jEse araswU kI bala ke viRaya meM saMkalpanA galawa WI -- Early thinkers like Aristotle had wrong ideas about it.
+;;Axya vicArakoM jEse araswU kI bala [ke viRaya meM] saMkalpanA galawa WI -- Early thinkers like Aristotle had wrong ideas about it.
+;BOwikI ke anwargawa hama viviXa BOwika pariGatanAoM kI vyAKyA kuCa safkalpanAoM evaM niyamoM [ke paxoM meM] karane kA prayAsa karawe hEM --- In Physics, we attempt to explain diverse physical phenomena in terms of a few concepts and laws. 
 (defrule ke_[word]_meM
 (declare (salience 90))
 ?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ke ?)
-?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&rUpa|bAre|viRaya|AXAra|wOra ?)
+?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&rUpa|bAre|viRaya|AXAra|wOra|paxoM ?)
 ?f4<-(manual_id-word-cat ?id3&:(=(+ ?id0 3) ?id3) meM|para ?)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
@@ -96,6 +97,21 @@
         (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - kI ?w meM - ?id0 ?id1 ?id2 ?id3))
 )
 ;----------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (17-10-12)
+;Since the electromagnetic force is so much stronger than the gravitational force, it dominates all phenomena at atomic and molecular scales. -- cUfki vixyuwa cumbakIya bala guruwvAkarRaNa bala kI apekRA kahIM aXika prabala howA hE yaha ANvika waWA paramANvIya pEmAne kI saBI pariGatanAoM para CAyA rahawA hE
+(defrule kI_[word]
+(declare (salience 80))
+?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
+(id-node-word-root ?id0 ? $? - $?root)
+?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) kI ?)
+?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&apekRA ?)
+(not (retract_manual_fact ?id0))
+(not (retract_manual_fact ?id1))
+=>
+        (retract ?f1 ?f2 ?f3)
+        (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - kI ?w - ?id0 ?id1 ?id2))
+)
+;----------------------------------------------------------------------------------------------------------------
 ;ke liye , ke lie ,ke pariwaH ,ke sAWa,[besides --> ke awirikwa]
 ;xravyamAna kenxra kI pariBARA [jAnane ke bAxa] , aba hama isa sWiwi meM hEM ki kaNoM ke eka nikAya ke lie isake BOwika mahawva kI vivecanA kara sakeM.
 ;It is mainly through light and the sense of vision that we know and interpret the world around us.--> muKya rUpa se prakASa evaM xqRti kI [saMvexanA ke kAraNa] hI hama apane cAroM ora ke saMsAra ko samaJawe evaM usakI vyAKyA karawe hEM
@@ -107,7 +123,7 @@
 ?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ke ?)
-?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|aMwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara ?)
+?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara ?)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 =>

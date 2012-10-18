@@ -61,7 +61,7 @@ binding_energy	baMXana_UrjA
 annihilation	vilopana
 classical_physics	cirasammawa_BOwikI
 equilibrium	saMwulana/sAmyAvasWA
-electrodynamics	vExyuwagawikI/vixyuw-gawikI
+electrodynamics	vExyuwagawikI/vixyuw-gawikI/vExyuwa_gawikI
 optics	prakASikI
 thermodynamics	URmAgawikI
 magnetic_field	cuMbakIya_kRewra

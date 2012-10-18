@@ -65,7 +65,6 @@ many	bahuwa_sI
 clearly	spaRta_hE_ki
 move	gawi_kara/gawiSIla_kara
 only	eka_hI
-#box	boYksa
 management	praSAsana 
 telly	telIvijana
 workplace	xaPwara_ke_kAmakAja
@@ -73,3 +72,7 @@ let	Aie
 return	vicAra_kara
 accompany	saMlagna_ho
 learn	aXyayana_kara
+indicate	ifgiwa_kara
+astonish	AScaryacakiwa_kara
+include	sammiliwa_ho
+same	samAna
