@@ -3955,8 +3955,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  39. Added code to map symbols in manual sentence in Anusaaraka_stanford_minion.sh
  40. Modified 'test_for_PropN' to add '@' before and after a word in hindi_meaning.clp
  41. Handled hyphenated eng words to convert into utf8 in hnd_translation.pl
- 42. Deleted miscellaneous/transliteration/work/phrasal-mert/phrasal.test.ini_tmp
- 43. Modified sed command to generate 'proper_nouns_utf8.sh' in run_transliteration.sh
+ 42. In run_transliteration.sh, sorted proper_nouns_list before sending to transliteration and modified some sed commands.
+ 43. Deleted miscellaneous/transliteration/work/phrasal-mert/phrasal.test.ini_tmp
  44. Updated  run_shallow_parser.sh
  45. Updated canonical_form_dictionary/Readme , canonical_form_dictionary/list-left and canonical_form_dictionary/list-right
  46. Updated changes_in_databases
