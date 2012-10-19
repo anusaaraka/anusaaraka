@@ -540,7 +540,7 @@
   =>
        (retract ?mng)
        (if (str-index "'s" ?word) then (bind ?word (sub-string 1 (- (str-index "'s" ?word) 1) ?word)))
-       (bind ?wx_notation (str-cat "@PropN-" ?word "-PropN")) 
+       (bind ?wx_notation (str-cat "@PropN-@" ?word "-@PropN")) 
        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?wx_notation"   transliterate_mng)" crlf)
        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?wx_notation"   transliterate_mng "?id")" crlf)
        (printout ?*PropN_file* ?word crlf)

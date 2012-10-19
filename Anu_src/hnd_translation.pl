@@ -65,13 +65,11 @@ sub final_translation{
           $sen_wx =~ s/^\s*//g;
           $sen_wx =~ s/\s*$//g;
          # $sen_wx =~ s/-//g;
-	  #Modified above pattern as shown below by Roja (24-09-12)
+	  #Modified above pattern as shown below by Roja (24-09-12) This rule should be improved by writing a loop to get all hyphens in a word.
 	  if($sen_wx =~ /@([^\s+-]+)[-]/) #Ex: Finger-pointing has already begun. The Mughals ruled India in 1526-1761. 
 	  {
-	    if($1 =~ /PropN/) {
-               $sen_wx =~ s/-/-@/g; } #Ex: Singapore has been voted the Best Business City in the World for the fifth year running by readers of the Business Traveller Asia-Pacific magazine .
-            else {
-               $sen_wx =~ s/@([^\s+-]+)[-]/\@$1-@/g; }
+               $sen_wx =~ s/@([^\s+-]+)[-]/\@$1-@/g; 
+                 #Ex: Singapore has been voted the Best Business City in the World for the fifth year running by readers of the Business Traveller Asia-Pacific magazine .
           }
           $sen_wx =~ s/#0//g;
           $sen_wx =~ s/#//g;
