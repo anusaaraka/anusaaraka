@@ -24,7 +24,9 @@
  =>
         (retract ?f0)
         (bind ?mng (implode$ (create$ ?mng)))
-        (bind ?mng (string-to-field (sub-string 9 (- (length ?mng) 6) ?mng)))
+	(printout t ?mng crlf)
+        (bind ?mng (string-to-field (sub-string 11 (- (length ?mng) 8) ?mng))) ;Ex: \@PropN-\@newton-\@PropN
+	(printout t ?mng crlf)
         (assert (id-Apertium_output ?id ?mng $?w))
  )
  ;-------------------------------------------------------------------------------------------------
