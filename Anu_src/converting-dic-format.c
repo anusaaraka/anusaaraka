@@ -20,7 +20,7 @@
            FILE 	* fp , *fp1 , *fp2;
            char 	* line = NULL;
            size_t	len1 = 0; 
-           char		eng_wrd[10000], eng_nxt_wrd[10000], mng[1000],cat[1000], nxt_mng1[10000],mng1[10000];
+           char		eng_wrd[10000], eng_nxt_wrd[10000], mng[10000],cat[1000], nxt_mng1[10000],mng1[10000];
            int		i=0,len=0;
  
            fp  = fopen(argv[1], "r");

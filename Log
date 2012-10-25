@@ -3965,5 +3965,15 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  49. Updated iit-bombay dic in goldendict.
  50. Updated Log file
 
- 19-10-12
+ 25-10-12
  ========
+ 1. Added a pattern to handle when 's becomes 'is' in chk_input_format.pl
+ 2. In converting-dic-format.c, increased variable mng[1000] to mng[10000] as it fails to create firefox dictionary.
+ 3. Added code for removal of canonical files in shell_scripts/remove_out-files.sh
+ 4. Updated Anusaaraka_stanford-Factored.sh and Anusaaraka_berkeley.sh accordingly with Anusaaraka_stanford.sh
+ 5. Updated Parsers/stanford-parser/README
+ 6. Updated Stanford_parser_fails 
+ 7. Deleted following files: 
+	run_sd_lwg_rules.bat	Anu_data/penn_treebank_pos.html		Anu_src/path_for_help_files
+	Browser/open.js		apertium/jnk.c				apertium/one_sentence_per_line.txt_tmp1
+ 8. Updated Log

@@ -55,6 +55,10 @@ while($in = <STDIN>){
 #$in =~ s/`/'/g;(commented for senseval purpose)
 # After '?' there should be two spaces, not a single.
 	$in =~ s/\? ([^ ])/\?  $1/g;
+#Replacing 's as is when it is followed by an article. Suggested by Chaitanya Sir. Added by Roja(19-10-12)
+#Ex: Ireland's a haven of top-class accommodation with something to suit everyone from the most decadent castles and hotels to B and Bs that ooze charm. 
+	$in =~ s/([a-zA-Z]+)'[sS][ ](a|an|the) /$1 is $2 /g;
+ 
 ## Preserve ' before executing next line   Modified by Shirisha Manju renamed QQUUOOTTEE as ABBR-SingleQuote
         $in =~ s/'s$/ABBR-SingleQuotes/;
         $in =~ s/'s([^a-zA-Z0-9])/ABBR-SingleQuotes$1/g;
@@ -88,6 +92,8 @@ while($in = <STDIN>){
 #ex: I should have talked to you before the inviting of John. 
 #TODO: replacing 'inviting' as 'the inviting of' in english sentence fact need to done.
 	$in =~ s/ the inviting of / inviting /g; 
+
+#
 print $in;
 }
 

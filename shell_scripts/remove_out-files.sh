@@ -61,3 +61,14 @@
  cd work
  rm path_for_transliteration phrasal-mert/phrasal.test.ini_tmp phrasal-mert/phrasal.test.ini_tmp1 phrasal-mert/phrasal.test.ini
 
+ echo "Removing canonical files"
+ cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
+ rm replacing_canonical.out get_canonical_form-dic.out canonical_form.out lex.yy.c
+ rm -r dictionaries 
+
+ cd $HOME_anu_test/WSD/wsd_rules/
+ rm -r canonical_form_wsd_rules get_canonical_form_in_wsd.out lex.yy.c
+
+ cd $HOME_anu_test/new_hnd_mo
+ rm apertium_hn_in_canonical_form.dix
+

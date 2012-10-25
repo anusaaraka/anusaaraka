@@ -45,6 +45,9 @@ Their belongings were flung about the room.
 -->  the category for "flung"  should be VBN instead of VBG so that we can get lwg as were_en
 --> Solved
 
+From the high-brow elegance of  Northern Ireland's Houses and Gardens to the comfort of a spectacular  self-drive around some of the country's most exceptional scenic sights .
+--> 's category should be POS
+
 Failures due to 'dep' link ::
 ==========================
 
