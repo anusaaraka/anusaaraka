@@ -28,11 +28,12 @@
 )
 ;----------------------------------------------------------------------------------------------------------------
 ;To throw a stone upwards, one has to give it an upward push.-->kisI pawWara ko Upara kI ora Pefkane ke lie, hameM use Upara kI ora prakRepiwa karanA padawA hE .
+;The resolution of such an electron microscope is limited finally by the fact that electrons can also behave as waves. ---> isa prakAra ke ilektroYna - sUkRmaxarSI kA viBexana BI anwawaH isI waWya xvArA sImiwa howA hE ki ilektroYna BI warafgoM kI waraha vyavahAra kara sakawe hEM.
 (defrule multi_word1
 (declare (salience 110))
 ?f0<-(manual_id-word-cat ?id0 ?w ?cat)
 ?f1<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?w1&kI ?)
-?f2<-(manual_id-word-cat ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora ?)
+?f2<-(manual_id-word-cat ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora|waraha ?)
 (id-node-word-root ?id0 ? $?word1 - $?root)
 =>
         (retract ?f0 ?f1 ?f2)

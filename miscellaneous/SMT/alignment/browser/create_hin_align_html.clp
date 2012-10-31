@@ -265,6 +265,24 @@
          (assert (id-len (+ ?id 1) (- ?len 1))) 
  )
 
+ (defrule print_to_html1
+ (declare (salience 4900))
+ (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
+ ?f<-(id-len ?id ?len)
+ (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin_mng - -A-)
+ (anu_id-anu_mng-man_id-man_mng ?id1 ?hin_mng ?mid ?man_mng)
+ (count_of_inserted_word-position ?id1 ?id)
+ (Eng_sen $?eng_sen)
+ =>
+         (retract ?f)
+         (print_anu_eng_row  ?p_id ?s_id ?id U -A- $?eng_sen)
+         (print_anu_tran_row  ?p_id ?s_id ?id U ?hin_mng)
+         (print_man_tran_row  ?p_id ?s_id ?id U ?man_mng)
+         (print_confidence_lvl_row ?p_id ?s_id ?id U -)
+         (print_suggestion_row  ?p_id ?s_id ?id U ?man_mng)
+         (assert (id-len (+ ?id 1) (- ?len 1)))
+ )
+
  (defrule default_print_to_html
  (declare (salience 4898))
  (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)

@@ -60,21 +60,22 @@
 (test (> (length $?db_mng) 0))
 =>
         (bind $?man_ids (create$ ))
+        (bind $?mng (create$))
         (bind ?len (+ (length $?db_mng) (- ?pos 1)))
         (loop-for-count (?i ?pos ?len)
                         (bind ?m_word (nth$ ?i $?man_sen))
                         (if (eq ?i ?pos) then
-                        (bind ?mng  ?m_word)
+                        (bind $?mng (create$ ?m_word))
                         (bind $?man_ids ?i)
                         else
-                        (bind ?mng (str-cat ?mng " " ?m_word))
+                        (bind $?mng (create$ $?mng ?m_word))
                         (bind $?man_ids (create$ $?man_ids ?i))
                         )
         )
-        (if (neq ?mng (implode$ $?db_mng)) then (retract ?f)
+        (if (neq $?mng $?db_mng) then (retract ?f)
         else
         (retract ?f)
-        (assert (anu_id-manual_ids-sep-mng ?id $?man_ids (+ (nth$ (length $?man_ids) $?man_ids) 1) - $?db_mng ?last_word_root))
+        (assert (anu_id-manual_ids-sep-mng ?id $?man_ids (+ (nth$ (length$ (create$ $?man_ids)) (create$ $?man_ids)) 1) - $?db_mng ?last_word_root))
         )
 )
 ;--------------------------------------------------------------------------------------------------------
@@ -88,18 +89,19 @@
 (test (> (length $?db_mng) 1))
 =>
 	(bind $?man_ids (create$ ))
+        (bind $?mng (create$))
         (bind ?len (+ (length $?db_mng) (- ?pos 1)))
         (loop-for-count (?i ?pos ?len)
                         (bind ?m_word (nth$ ?i $?man_sen))
  			(if (eq ?i ?pos) then
-                        (bind ?mng  ?m_word)
+                        (bind $?mng (create$ ?m_word))
 			(bind $?man_ids ?i)
                         else
-                        (bind ?mng (str-cat ?mng " " ?m_word))
+                        (bind $?mng (create$ $?mng ?m_word))
 			(bind $?man_ids (create$ $?man_ids ?i))
 			)
         )
-        (if (neq ?mng (implode$ $?db_mng)) then (retract ?f)
+        (if (neq $?mng $?db_mng) then (retract ?f)
 	else
 	(retract ?f)
 	(assert (anu_id-manual_ids-sep-mng ?id $?man_ids - $?db_mng))

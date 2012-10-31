@@ -42,7 +42,8 @@
  (id-original_word ?wid  ?word&~left); Some people write with their left hand .
 ;(word-morph (original_word  ?word)(root ?root1)(category adjective)(suffix ?suf1)(number ?num1));Commented by Mahalaxmi(6-10-09) suggested by Chaitanya sir.
  (word-morph (original_word  ?word)(root ?root)(category  verb)(suffix ?suf)(number ?num))
- (test (or (eq ?suf en)(eq ?suf ing)))
+ ;(test (or (eq ?suf en)(eq ?suf ing))) ;removed 'ing' from test condition Commented by Mahalaxmi(19-10-12) suggested by Chaitanya sir. -- Eg:- For this, we use the following procedure.
+ (test (eq ?suf en)) 
  =>
    (retract ?f0)
    ;(printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?root" adjective "?suf1"  "?num1 ")" crlf)

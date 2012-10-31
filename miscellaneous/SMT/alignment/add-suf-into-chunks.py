@@ -36,10 +36,15 @@ for line in xrange(len(sp)):
 
 		#if (len(suf) >= 1) and (c < len(orig_sent)) and (len(my_cat) >= 1) and( len(mylst) >= 1) and (mylst[1] != orig_sent[c]): 
 		if (len(suf) >= 1) and ( len(mylst) >= 1) and (mylst[1] != orig_sent[c]): 
-			for each in xrange(len(suf)-1):
-				print 'xx\t', orig_sent[c]
+			if suf[0].endswith('nahIM'):
+				print 'xx\t', 'nahIM'
 				c += 1
-				suf = []
+				del suf[0]
+			else:
+				for each in xrange(len(suf)-1):
+					print 'xx\t', orig_sent[c]
+					c += 1
+					suf = []
 
 		if mylst[1] == orig_sent[c] :
 			print sp[line],

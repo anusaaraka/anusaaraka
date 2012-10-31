@@ -33646,3 +33646,6 @@ the_force_of_friction	GarRaNa_bala#GarRaNa_bala#noun#4#WM
 since_time_immemorial	anAxi_kAla_se_hI#anAxi_kAla_se_hI#noun#2#WM
 at_the_other_end	isake viparIwa#isake viparIwa#noun#4#WM
 some_of_these	inameM_se_kuCa#inameM_se_kuCa#determiner#1#WM
+reaction_force	aBilamba_bala#aBilamba_bala#noun#2#RM
+electron_beam	ilektroYna_puFja#ilektroYna_puFja#noun#2#RM
+a_way	isa_prakAra#isa_prakAra#noun#2#RM

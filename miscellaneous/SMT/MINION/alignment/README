@@ -7,6 +7,20 @@
  		export PATH=$PATH:$SHALLOW_PARSER_HIN/bin/sys/hin/
 	  2. and then run
 		source ~/.bashrc		
+          
+          Note :: If one gets the following error while installation,
+		 --- error while loading shared libraries: libgdbm.so.2: cannot open shared object file: No such file or directory
+                 Follow these steps:
+		 1) locate libgdbm
+		     >> locate libgdbm
+                        The output will be ....
+                     >> /usr/lib/libgdbm.so
+                     >> /usr/lib/libgdbm.so.3 
+                         ans so on ....
+                 2) Accordingly make a soft link to the existing one to libgdbm.so.2
+                       For Eg:-
+                     >> sudo ln -s /usr/lib/libgdbm.so /usr/lib/libgdbm.so.2
+
 
  2.  MINION Compilation : 
      ==================

@@ -44,7 +44,7 @@
         (assert (manual_id-left_punc ?id ?punc))
  )
  ;------------------------------------------------------------------------------------------------------------------------
- (defrule rule
+ (defrule  incrementing_id_for_just_after_the_splitted_verb
  (declare (salience 1001))
  ?f<-(map_prev-id-pres-id ?prev_id ?pres_id)
  ?f0<-(position-cat-man_grp_mng ?prev_id $?w)
@@ -124,12 +124,12 @@
  ;uxAharaNa ke lie , jaba [peSiyAz SiWila howI hEM] wo newra leMsa kI Pokasa xUrI lagaBaga 2.5 bau howI hE waWA ananwa xUrI ke piNda xqRtipatala para spaRta Pokasiwa howe hEM.
  (defrule check_prev_word_of_kara_and_ho_with_anu
  (declare (salience 91))
- ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF ho|kara ?cat ?g ?no ?p ?c ?suf)
+ ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF ho|kara|karA|xe ?cat ?g ?no ?p ?c ?suf)
  ?f5<-(position-cat-man_grp_mng =(- ?id 1) ?n $? $?word - -)
  (test (neq (length $?word) 0))
  (or (root-verbchunk-tam-chunkids ? ? ? $? ?v_id)(pada_info (group_head_id ?v_id)(group_cat infinitive))(id-cat_coarse ?v_id verb))
  (id-root ?v_id ?root)
- (id-org_wrd-root-dbase_name-mng ? ? ?root ? $?word ?kar&kara|ho)
+ (id-org_wrd-root-dbase_name-mng ? ? ?root ? $?word ?kar&kara|ho|karA|xe)
  =>
         (assert (combine_prev_word_for_ho_id-prev_word ?id $?word ?kar))
  )
@@ -143,11 +143,18 @@
  ; Anu trn ::yaha halake meM se waWA xUraxarSiwA kI saMvexanA meM se pramuKa rUpa se hE ki hama hamAre cAroM ora yuga vyAKyA kara waWA jAnawI hE.
  ;Using the basic laws of reflection and refraction, we shall study the image formation by plane and spherical reflecting and refracting surfaces. 
  ;Anu tran :: prawibimba ke Ora apavarwana ke buniyAxI niyamoM kA upayoga kara, hama UparI wala xarSA huA Ora modawA huA samawala waka Ora golIya waka prawimA suvyavasWiwa kramaa kA aXyayana karezge.
- ;Amn tran :: parAvarwana waWA apavarwana ke mUla niyamoM kA upayoga karawe hue hama samawala waWA golIya parAvarwI evaM apavarwI pqRToM xvArA prawibimboM kI racanA kA aXyayana karezge.
+ ;Man tran :: parAvarwana waWA apavarwana ke mUla niyamoM kA upayoga karawe hue hama samawala waWA golIya parAvarwI evaM apavarwI pqRToM xvArA prawibimboM kI racanA kA aXyayana karezge.
+ ;Eng sen  :: In principle they provide portable standard.
+ ;Anu tran :: sixXAnwawaH ve suvAhya AxarSa xewe hEM.
+ ;Man tran :: sixXAnwawaH ve eka subAhya mAnaka upalabXa karAwI hEM.
+ ;Eng sen  :: Hence clock 2 is to be preferred to clock 1.
+ ;Anu tran :: isa kAraNa se GadI 2 GadI 1 ko pasanxa kiyA jAnA hE.
+ ;Man tran :: awaH GadI 1 kI wulanA meM GadI 2 ko varIyawA xI jAegI.
+ 
  (defrule modify_wrd_mng_for_VP_kriyAmUla_ho_and_kara
  (declare (salience 90))
  (combine_prev_word_for_ho_id-prev_word ?id $?prev_word ?)
- ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF ?rt&ho|kara ?cat ?gen ?num ?per ?case ?suf)
+ ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF ?rt&ho|kara|karA|xe ?cat ?gen ?num ?per ?case ?suf)
  ?f1<-(head_id-grp_ids ?id $?grp) ;?4
  ?f2<-(position-cat-man_grp_mng   ?id ?node     $?word  - -);f0
  ?f3<-(id-node-root-cat-gen-num-per-case-tam =(- ?id 1) ?n ?r ?ct ?g ?no ?p ?c ?s);f1

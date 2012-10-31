@@ -2,6 +2,8 @@
 
  (defglobal ?*aper_grp_fp* = ap_grp_fp)
  (defglobal ?*aper_fp* = ap_fp)
+ (defglobal ?*count_of_inserted_words* = 2000)
+
 
  (deffunction remove_character(?char ?str ?replace_char)
                         (bind ?new_str "")
@@ -24,10 +26,21 @@
  =>
         (retract ?f0)
         (bind ?mng (implode$ (create$ ?mng)))
-	(printout t ?mng crlf)
         (bind ?mng (string-to-field (sub-string 11 (- (length ?mng) 8) ?mng))) ;Ex: \@PropN-\@newton-\@PropN
 	(printout t ?mng crlf)
         (assert (id-Apertium_output ?id ?mng $?w))
+ )
+ ;-------------------------------------------------------------------------------------------------
+ (defrule align_extra_inserted_words_in_anusaarak
+ (declare (salience 2001))
+ ?f<-(hindi_id_order $?pre ?insert_word $?post)
+ (test (eq (numberp ?insert_word) FALSE))
+ =>
+        (retract ?f)
+        (bind ?*count_of_inserted_words* (+ ?*count_of_inserted_words* 1))
+        (assert (hindi_id_order $?pre ?*count_of_inserted_words* $?post))
+        (assert (id-Apertium_output ?*count_of_inserted_words* ?insert_word))
+        (assert (count_of_inserted_word-position ?*count_of_inserted_words* (member$ ?insert_word (create$ $?pre ?insert_word $?post))))
  )
  ;-------------------------------------------------------------------------------------------------
  (defrule rm_underscore_in_aper_op
@@ -44,7 +57,7 @@
         (assert (id-Apertium_output ?a_id  ?a_op))
         (assert (id_aper_op_modified ?a_id))
  )
- 
+ ;-------------------------------------------------------------------------------------------------
  (defrule hindi_mng
  (declare (salience 2000))
  ?f<-(id-HM-source   ?id   ?hmng&~-   ?src)
