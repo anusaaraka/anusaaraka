@@ -61,21 +61,20 @@
 =>
         (bind $?man_ids (create$ ))
         (bind $?mng (create$))
-        (bind ?len (+ (length $?db_mng) (- ?pos 1)))
+        (bind ?len (+ (length $?db_mng) ?pos))
+        (printout t ?len crlf)
         (loop-for-count (?i ?pos ?len)
                         (bind ?m_word (nth$ ?i $?man_sen))
-                        (if (eq ?i ?pos) then
-                        (bind $?mng (create$ ?m_word))
-                        (bind $?man_ids ?i)
-                        else
                         (bind $?mng (create$ $?mng ?m_word))
                         (bind $?man_ids (create$ $?man_ids ?i))
-                        )
+                        (printout t $?mng crlf)
         )
+        (bind $?db_mng (create$ $?db_mng ?last_word_root))
+        (printout t $?mng $?db_mng crlf)
         (if (neq $?mng $?db_mng) then (retract ?f)
         else
         (retract ?f)
-        (assert (anu_id-manual_ids-sep-mng ?id $?man_ids (+ (nth$ (length$ (create$ $?man_ids)) (create$ $?man_ids)) 1) - $?db_mng ?last_word_root))
+        (assert (anu_id-manual_ids-sep-mng ?id $?man_ids - $?db_mng))
         )
 )
 ;--------------------------------------------------------------------------------------------------------
@@ -93,14 +92,10 @@
         (bind ?len (+ (length $?db_mng) (- ?pos 1)))
         (loop-for-count (?i ?pos ?len)
                         (bind ?m_word (nth$ ?i $?man_sen))
- 			(if (eq ?i ?pos) then
-                        (bind $?mng (create$ ?m_word))
-			(bind $?man_ids ?i)
-                        else
                         (bind $?mng (create$ $?mng ?m_word))
 			(bind $?man_ids (create$ $?man_ids ?i))
-			)
         )
+        (printout t $?mng $?db_mng crlf)
         (if (neq $?mng $?db_mng) then (retract ?f)
 	else
 	(retract ?f)
