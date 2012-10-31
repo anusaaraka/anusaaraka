@@ -1,10 +1,11 @@
+(defglobal ?*count_of_inserted_words* = 2000)
+
 (defrule create_anu_slot_mapping
 (declare (salience 1000))
 (hindi_id_order $?order)
 =>
 	(loop-for-count(?i 1 (length$ $?order))
-			;(assert (anu_slot-minion_slot (member$ ?i $?order) (member$ ?i $?order)))
-			(assert (anu_slot-minion_slot ?i ?i))
+		(assert (anu_slot-minion_slot ?i ?i))
 	)
 )
 

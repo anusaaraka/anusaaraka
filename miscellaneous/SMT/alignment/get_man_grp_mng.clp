@@ -44,6 +44,80 @@
         (assert (manual_id-left_punc ?id ?punc))
  )
  ;------------------------------------------------------------------------------------------------------------------------
+ (defrule rule
+ (declare (salience 1001))
+ ?f<-(map_prev-id-pres-id ?prev_id ?pres_id)
+ ?f0<-(position-cat-man_grp_mng ?prev_id $?w)
+ ?f1<-(id-node-root-cat-gen-num-per-case-tam ?prev_id1 ?node ?root ?c ?g ?n ?p ?case ?t)
+ ?f4<-(id-node-root-cat-gen-num-per-case-tam ?prev_id ?node1 ?root1 ?c1 ?g1 ?n1 ?p1 ?case1 ?t1)
+ ?f2<-(head_id-grp_ids ?prev_id $?gids)
+ (test (eq ?prev_id1 ?prev_id))
+ (test (neq ?root ?root1))
+ ?f3<-(modified_id-word ?prev_id ?root)
+ =>
+	(retract ?f ?f0 ?f2 ?f4)
+        (assert (position-cat-man_grp_mng ?pres_id $?w))
+        (assert (id-node-root-cat-gen-num-per-case-tam ?pres_id ?node1 ?root1 ?c1 ?g1 ?n1 ?p1 ?c1 ?t1))
+        (assert (head_id-grp_ids ?pres_id $?gids))
+        (assert (map_prev-id-pres-id ?pres_id =(+ ?pres_id 1)))
+        (assert (mapped_prev-id-pres-id ?prev_id ?pres_id))
+        (assert (modified_id-word1 ?pres_id ?root1))
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ (defrule increment_id
+ (declare (salience 1000))
+ ?f<-(map_prev-id-pres-id ?prev_id ?pres_id)
+ ?f0<-(position-cat-man_grp_mng ?prev_id $?w)
+ ?f1<-(id-node-root-cat-gen-num-per-case-tam ?prev_id ?node ?root ?c ?g ?n ?p ?case ?t)
+ ?f2<-(head_id-grp_ids ?prev_id $?gids)
+ (not (modified_id-word1 ?prev_id ?root))
+ (not (modified_id-word ?prev_id ?root))
+ =>
+	(retract ?f ?f0 ?f1 ?f2)
+	(assert (position-cat-man_grp_mng ?pres_id $?w))
+        (assert (id-node-root-cat-gen-num-per-case-tam ?pres_id ?node ?root ?c ?g ?n ?p ?c ?t))
+        (assert (head_id-grp_ids ?pres_id $?gids))
+        (assert (map_prev-id-pres-id ?pres_id =(+ ?pres_id 1)))
+        (assert (mapped_prev-id-pres-id ?prev_id ?pres_id))
+	(assert (modified_id-word1 ?pres_id ?root))
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ (defrule rm_modify_id
+ (declare (salience 900))
+ ?f<-(map_prev-id-pres-id $?)
+ ?f1<-(modified_id-word ?pres_id ?root)
+ =>
+ 	(retract ?f ?f1)
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ (defrule rm_modify_id1
+ (declare (salience 900))
+ ?f<-(map_prev-id-pres-id $?)
+ ?f1<-(modified_id-word1 ?pres_id ?root)
+ =>
+        (retract ?f ?f1)
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;Obviously, these tables are not exhaustive. 
+ ;spaRta hE ki ye sUciyAz viswqwa nahIM hEM.
+ (defrule shallow_parser_correction_rule
+ (declare (salience 92))
+ ?f<-(position-cat-man_grp_mng ?id ?node&VGF|VGNN|VGNF $?word ?a ?b)
+ (test (or (eq $?word (create$ nahIM hEM)) (eq $?word (create$  nahIM hE))))
+ ?f1<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF ?root ?cat ?g ?no ?p ?c ?suf)
+ ?f2<-(head_id-grp_ids ?id ?nahIM_id ?hEM_id $?grp_ids)
+ =>
+	(retract ?f ?f1 ?f2)
+	(assert (position-cat-man_grp_mng ?id POS nahIM - -))	 
+	(assert (position-cat-man_grp_mng =(+ ?id 1) ?node hEM ?a ?b))
+	(assert (id-node-root-cat-gen-num-per-case-tam ?id POS nahIM - - - - - -))	 
+	(assert (id-node-root-cat-gen-num-per-case-tam =(+ ?id 1) ?node ?root ?cat ?g ?no ?p ?c 0))	 
+        (assert (head_id-grp_ids ?id ?nahIM_id))
+        (assert (head_id-grp_ids  =(+ ?id 1) ?hEM_id $?grp_ids))
+	(assert (map_prev-id-pres-id =(+ ?id 1) =(+ ?id 2)))
+	(assert (modified_id-word =(+ ?id 1) ?root))
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju
  ;The macroscopic domain includes phenomena at the laboratory, terrestrial and astronomical scales.
  ;For example, when the muscle [is relaxed], the focal length is about 2.5 cm and objects at infinity are in sharp focus on the retina. 

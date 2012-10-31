@@ -1,10 +1,10 @@
-the	vaha/isa/usa/vahI/isakA/uwanA/jiwanA/apanA
+the	vaha/isa/usa/vahI/isakA/uwanA/jiwanA/apanA/yaha
 a	eka/koI/prawi/kisI/eka_EsI
 an	eka/koI/prawi/kisI/eka_EsI
 that	jo/isa/yaha/vaha/usa/ki/jinheM
 there	vahAz/vaha
 them	unako/unakA/unake/unheM/ve
-they	unheM/ve_loga/ve/unhoMne
+they	unheM/ve_loga/ve/unhoMne/ye
 this	yaha/isa/isese/iwanA/isake_lie
 also	BI/Ora
 too	BI

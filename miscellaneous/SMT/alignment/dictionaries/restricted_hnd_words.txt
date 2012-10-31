@@ -19,3 +19,6 @@ unakA	them
 merA	i/me
 vaha	she/he/the/her
 yahAz	here
+yaha	the/that/this/it
+isakA	the/it
+jinakA	which

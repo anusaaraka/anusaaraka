@@ -76,3 +76,12 @@ indicate	ifgiwa_kara
 astonish	AScaryacakiwa_kara
 include	sammiliwa_ho
 same	samAna
+describe	vyAKyA_kara
+familiar	supariciwa
+unify	ekIkqwa_kara
+underlie	mUla_meM_ho
+Obviously	spaRta_hE_ki
+introduce	praswuwa_kara
+enormously	kahIM_aXika
+bind	bAnXe_raKa
+recent	piCalA 

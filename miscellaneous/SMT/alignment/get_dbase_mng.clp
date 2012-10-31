@@ -56,7 +56,7 @@
                                         (bind ?mng ?lkup))
                                         (bind ?mng (remove_character "_" ?mng " "))
                                         (bind ?str1 (remove_character "_" ?str1 " "))
-                                        (assert (multi_word_expression-dbase_name-mng (explode$ (lowcase (implode$ ?str1))) Physics_dictionary_gdbm ?mng))
+                                        (assert (multi_word_expression-dbase_name-mng (explode$ (lowcase (implode$ ?str1))) ?gdbm ?mng))
                                         (assert (multi_word_expression-grp_ids (explode$ (lowcase (implode$ ?str1))) $?grp_ids))
                                     )
                     )
@@ -135,33 +135,32 @@
  ;Added by Mahalaxmi
  ;These laws can be derived from [Newton's] laws of motion in mechanics. ;ina niyamoM ko yAMwrikI meM nyUtana ke gawi ke niyamoM se vyuwpanna kiyA jA sakawA hE. ;here morph doesn't has entry for word Newton's as PropN, 
  (deffunction dic_lookup(?gdbm ?id ?word ?root ?cat)
-		
 	     (bind ?word (implode$ (create$ ?word)))
 	     (bind ?root (implode$ (create$ ?root)))
-	     (bind ?new_mng (create$))
+	    ; (bind ?new_mng (create$))
 	     (bind ?new_mng "")
 
 	     (if (neq (gdbm_lookup ?gdbm ?root) "FALSE") then 
-		      (printout t "1st If con" crlf)
+	;	      (printout t "1st If con" crlf)
 		      (bind ?rt_mng (gdbm_lookup ?gdbm ?root))
  	     	      (if (and (neq ?rt_mng "FALSE") (neq (length ?rt_mng) 0)) then (bind ?new_mng ?rt_mng))
 		      (print_dic_mng ?gdbm ?word ?root ?new_mng)
 	     else (if (neq (gdbm_lookup ?gdbm ?word) "FALSE") then 
-		      (printout t "2nd If con" crlf)
+	;	      (printout t "2nd If con" crlf)
 		      (bind ?wrd_mng (gdbm_lookup ?gdbm ?word))
                       (if (and (neq ?wrd_mng "FALSE") (neq (length ?wrd_mng) 0)) then (bind ?new_mng ?wrd_mng))
 		       (print_dic_mng ?gdbm ?word ?root ?new_mng)
 	     else (if (eq (sub-string (- (length ?word) 1) (length ?word) ?word) "'s") then
-			(printout t "3rd If con" crlf)
+	;		(printout t "3rd If con" crlf)
                         (bind ?word (string-to-field (sub-string 1 (- (length ?word) 2) ?word)))
                         (bind ?apos_mng (gdbm_lookup ?gdbm ?word))
              		(if (and (neq ?apos_mng "FALSE") (neq (length ?apos_mng) 0)) then (bind ?new_mng ?apos_mng))
 		        (print_dic_mng ?gdbm ?word ?root ?new_mng)
-             else (if  (and (eq ?id 1)(eq (upcase (sub-string 1 1 ?root)) (sub-string 1 1 ?root))(eq ?cat "PropN")) then
-			(printout t "4th If con" crlf)
+             else (if  (and (eq ?id 1)(eq (upcase (sub-string 1 1 ?root)) (sub-string 1 1 ?root))(eq ?cat PropN)) then
+	;		(printout t "4th If con" crlf)
                         (bind ?str (lowcase (sub-string 1 1 ?root)))
-             		(bind ?n_root (str-cat ?str (sub-string 2 (length (implode$ (create$ ?root))) (implode$ (create$ ?root)))))
-	                (bind ?n_rt_mng (gdbm_lookup ?gdbm ?n_root))
+             		(bind ?n_root (str-cat ?str (sub-string 2 (length ?root)  ?root)))
+		        (bind ?n_rt_mng (gdbm_lookup ?gdbm  ?n_root))
              		(if (and (neq ?n_rt_mng "FALSE") (neq (length ?n_rt_mng) 0)) then (bind ?new_mng ?n_rt_mng))
                         (print_dic_mng ?gdbm ?word ?root ?new_mng)
 	     ))))
@@ -179,7 +178,7 @@
 		(dic_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "default_meaning_frm_oldwsd.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "provisional_root_dic.gdbm" ?id ?word ?root ?cat)
-		(dic_lookup "provisional_PropN_dic.gdbm" ?id ?word ?root "PropN")
+		(dic_lookup "provisional_PropN_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "numbers_dic.gdbm" ?id ?word ?root ?cat)
  )
  ;--------------------------------------------------------------------------------------------------------

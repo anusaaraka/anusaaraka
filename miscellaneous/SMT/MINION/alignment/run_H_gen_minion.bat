@@ -211,6 +211,7 @@
  (assert (manual_ids_list))
  (run)
  (save-facts "man_potential_facts.dat" local fact_name-slot_id-word_ids fact_name-man_id-slot_ids fact_name-slot_id fact_name-word_id)
+ (save-facts "restricted_word_mngs.dat" local man_id-word-possible_mngs anu_id-word-possible_mngs)
  (clear)
  ;-------------------------------------------------------------------------------------
  (load "global_path.clp")

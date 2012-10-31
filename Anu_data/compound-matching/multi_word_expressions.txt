@@ -33641,4 +33641,8 @@ lush_green	harA_BarA#harA_BarA#adjective#2#RM
 straight_line	sarala_reKA#sarala_reKA#noun#2#RM
 path_length	paWa_lambAI#paWa_lambAI#noun#2#WM
 able_to_walk	cala_pA#cala_pA#verb#3#RM
-able to handle	hala_karane_meM_sakRama#hala_karane_meM_sakRama#verb#3#WM
+able_to_handle	hala_karane_meM_sakRama#hala_karane_meM_sakRama#verb#3#WM
+the_force_of_friction	GarRaNa_bala#GarRaNa_bala#noun#4#WM
+since_time_immemorial	anAxi_kAla_se_hI#anAxi_kAla_se_hI#noun#2#WM
+at_the_other_end	isake viparIwa#isake viparIwa#noun#4#WM
+some_of_these	inameM_se_kuCa#inameM_se_kuCa#determiner#1#WM

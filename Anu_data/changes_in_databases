@@ -699,6 +699,7 @@ Removed::
  Added  :
 	as_before 	---	Suggested by Rajini (25-02-12)
 	in_terms_of     ---	Suggested by Chaitanya Sir (25-05-12) 
+	in_contrast_to  ---     Suggested by Sukhada
 
 
 
@@ -729,7 +730,11 @@ Removed::
     straight_line   sarala_reKA#sarala_reKA#noun#2#RM	(Suggested by Chaitanya Sir 05-09-12)
     path_length     paWa_lambAI#paWa_lambAI#noun#2#WM	(Suggested by Chaitanya Sir 05-09-12)
     able_to_walk    cala_pA#cala_pA#verb#3#RM	        (Suggested by Chaitanya Sir 09-10-12)
-    able to handle  hala_karane_meM_sakRama#hala_karane_meM_sakRama#verb#3#WM (Suggested by Chaitanya Sir 09-10-12)
+    able_to_handle  hala_karane_meM_sakRama#hala_karane_meM_sakRama#verb#3#WM (Suggested by Chaitanya Sir 09-10-12)
+    the_force_of_friction   GarRaNa_bala#GarRaNa_bala#noun#4#WM  (Suggested by Sukhada 13-10-12)
+    since_time_immemorial   anAxi_kAla_se_hI#anAxi_kAla_se_hI#noun#2#W (Suggested by Chaitanya Sir 18-10-12)
+    at_the_other_end        isake viparIwa#isake viparIwa#noun#4#WM    (Suggested by Sukhada 20-10-12)
+    some_of_these   inameM_se_kuCa#inameM_se_kuCa#determiner#1#WM      (         "                   )
 
  changes in Physics-dictionary.txt 
  =================================

@@ -26,6 +26,13 @@
 ;        (printout ?*dic_fp* ?eng_words"	"(implode$ $?man_mng)"	POTEN" crlf)
 ;)
 
+(defrule print_comment
+(declare (salience 2500))
+=>
+	(printout ?*dic_fp*  "------------- minion aligned meanings ---------------" crlf)
+)
+
+
 (defrule possible_assignment
 (declare (salience 2000))
 (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mapped_id $?man_mng)
