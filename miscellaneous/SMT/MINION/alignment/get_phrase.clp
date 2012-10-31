@@ -1,14 +1,47 @@
 ;This file is written by Shirisha Manju (08-10-12)
 (defglobal ?*dic_fp1*  = dic_fp1)
-
-
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
+
+
+;(deffunction remove_character(?char ?str ?replace_char)
+;                        (bind ?new_str "")
+;                        (bind ?index (str-index ?char ?str))
+;                        (if (neq ?index FALSE) then
+;                        (while (neq ?index FALSE)
+;                        (bind ?new_str (str-cat ?new_str (sub-string 1 (- ?index 1) ?str) ?replace_char))
+;                        (bind ?str (sub-string (+ ?index 1) (length ?str) ?str))
+;                        (bind ?index (str-index ?char ?str))
+;                        )
+;                        )
+;                (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
+; )
+;
+;
+;(defrule get_anu_tam
+;(declare (salience 100))
+;(pada_info (group_head_id ?hid)(group_ids $?ids) (H_tam ?tam&~0))
+;=>
+;	(if (neq (str-index "_" ?tam) FALSE) then
+;		(bind ?tam (remove_character "_" (implode$ (create$  ?tam)) " "))
+;	else
+;		(bind ?tam ?tam)
+;	)
+;	(assert (id-tam ?hid ?tam)) 
+;)
+
+(defrule print_com1
+(declare (salience 100))
+=>
+        (printout  ?*dic_fp1* "----------------- phrases with some logic -------------" crlf)
+)
+
 
 ;Plants tend to turn [towards the source of light]. -- pOXe [roSanI kI ora] muda jAwe hE.
 (defrule get_phrase_with_vib
-(declare (salience 10))
+(declare (salience 90))
 (pada_info (group_head_id ?hid)(group_ids $?ids ?l_id)(preposition  ?pid))
 (id-HM-source  ?pid   $?vib  ?)
+(test (and (neq $?vib (create$ kA))(neq $?vib (create$ meM))))
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng - $?root - $?vib - $?)
 (id-org_wrd-root-dbase_name-mng ? ?word ? ? $?root)
 (id-original_word ?id ?word)
@@ -24,7 +57,7 @@
 )
 ;---------------------------------------------------------------------------------------------------------------
 ;Plants [tend to turn] towards the source of light. -- pOXe roSanI kI ora [muda jAwe hE].
-(defrule get_phrase_with_tam
+(defrule get_phrase_with_tam1
 (declare (salience 10))
 (pada_info (group_head_id ?hid)(group_ids $?ids) (H_tam ?tam&~yA))
 (id-node-tam ?mid ? ?tam1&~0)

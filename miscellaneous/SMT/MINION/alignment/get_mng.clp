@@ -42,6 +42,7 @@
 (anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ? $?pre ?wrd $?pos)
 (hindi_id_order $? ?aid $?)
 (hin_pos-hin_mng-eng_ids-eng_words ? ?hnd_mng  $? ?aid $? ?eng_wrds)
+(test (and (neq ?eng_wrds is)(neq ?eng_wrds are)))
 =>
 
         (printout  ?*dic_fp1*  ?eng_wrds" :: " (implode$ (create$ $?mng1 $?pre ?wrd $?pos)) crlf)
@@ -343,11 +344,3 @@
 	(retract ?f0)
         (printout ?*dic_fp1*  ?eng_wrds1" :: "(implode$ (create$ $?mng1 $?mng)) crlf)
 )
-
-(defrule print_com
-(declare (salience 1))
-=>
-        (printout  ?*dic_fp1* "----------------- phrases with some logic -------------" crlf)
-)
-
-
