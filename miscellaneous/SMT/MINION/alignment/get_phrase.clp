@@ -1,5 +1,5 @@
 ;This file is written by Shirisha Manju (08-10-12)
-(defglobal ?*dic_fp1*  = dic_fp1)
+(defglobal ?*dic_fp2*  = dic_fp2)
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
 
@@ -32,7 +32,7 @@
 (defrule print_com1
 (declare (salience 100))
 =>
-        (printout  ?*dic_fp1* "----------------- phrases with some logic -------------" crlf)
+        (printout  ?*dic_fp2* "----------------- phrases with some logic -------------" crlf)
 )
 
 
@@ -135,6 +135,6 @@
 ?f0<-(phrase-mng $?word - $?mng)
 =>
 	(retract ?f0)
-	(printout ?*dic_fp1* (implode$ $?word) " -- "(implode$ $?mng) crlf)
+	(printout ?*dic_fp2* (implode$ $?word) " -- "(implode$ $?mng) crlf)
 )
 

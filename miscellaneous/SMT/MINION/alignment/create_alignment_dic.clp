@@ -45,7 +45,7 @@
 =>
  ;       (printout t "eng_word-anu_tran-man_tran      "?eng_words"---"?h_mng"---"(implode$ $?man_mng) crlf)
         ;(printout ?*dic_fp* ?eng_words"	"(implode$ $?man_mng)"	MINION" crlf)
-        (printout ?*dic_fp* ?eng_words"	"(implode$ $?man_mng) crlf)
+        (printout ?*dic_fp* ?eng_words" = "(implode$ $?man_mng) crlf)
 )
 
 
