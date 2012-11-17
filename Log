@@ -3993,7 +3993,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  15. In constituency_parse.l, added two new nodes(P_DOL and SYM_SLASH)
  16. In hnd_translation.pl, deleted the code to add '@' in English hyphenated words and English abbreviated words.
  17. Instead handled above cases in 'add-@_in-hindi_sentence.py' prog.
- 18. Added code to run 'add-@_in-hindi_sentence.py' prog in run_sentence_stanford.sh
+ 18. Added code to run 'add-@_in-hindi_sentence.py' prog in run_sentence_stanford.sh and run_sentence_stanford_minion.sh
  19. In mapping-punctuations.lex, added rules to handle patterns like \(:[ ]\'\) , \(\$[ ]Rs\)  and  slash(/) 
  20. Removed mapping of PUNCT-EqualTo and PUNCT-HyphenHyphen in replace-abbrevations.sh and also added '[@]' for pattern starting with PUNCT.
  21. Modified Browser/sent.pl to split html files in server.
