@@ -35,9 +35,12 @@ sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id
  
  cat proper_nouns.dat >> $MYPATH/$1_tmp/proper_nouns_list
 
- cp hindi_sentence.dat hindi_sentence_tmp.dat
-
  sh $HOME_anu_test/bin/abbr.sh
+
+ python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  hindi_sentence.dat hindi_sentence_tmp.dat
+# cat hindi_sentence_tmp.dat
+# cp hindi_sentence.dat hindi_sentence_tmp.dat
+
  
  cp hindi_sentence1.dat  hindi_sentence.dat
  # cat hin_eng_sent.dat
@@ -49,12 +52,13 @@ sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id
 #####Commented below lines as sent-by-sent is not used anywhere.
 #for sentence by sent analysis for web debugging tutorial
 # cat English_sentence.dat >> $MYPATH/$1_tmp/sent-by-sent
-# cat  hindi_sentence.dat | $HOME_anu_test/Anu_src/file-wx_utf8.out | sed -e '1,$s/\\@//g
+## cat  hindi_sentence.dat | $HOME_anu_test/Anu_src/file-wx_utf8.out | sed -e '1,$s/\\@//g
+# cat  hindi_sentence.dat | wx_utf8 | sed -e '1,$s/\\@//g
 # 1,$s/#//g' >> $MYPATH/$1_tmp/sent-by-sent
 # echo "" >> $MYPATH/$1_tmp/sent-by-sent
 
- myclips -f $HOME_anu_test/Anu_clp_files/user_info.bat > /dev/null
- mv user_wsd_info.dat $MYPATH/$1_$2_user_wsd_info.dat
+# myclips -f $HOME_anu_test/Anu_clp_files/user_info.bat > /dev/null
+# mv user_wsd_info.dat $MYPATH/$1_$2_user_wsd_info.dat
 
  sed  's/LB /(/g' $MYPATH/$1_tmp/$2/rev_constituency_tree.dat |sed 's/RB /)/g' |sed 's/RB)$/))/g'> $MYPATH/$1_tmp/$2/rev_constituency_tree1.dat
 cat $MYPATH/$1_tmp/$2/rev_constituency_tree1.dat >>$MYPATH/$1_tmp/rev_constituency_tree2.dat

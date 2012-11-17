@@ -29,6 +29,20 @@
  	(retract ?f0)
 	(assert (id-sd_cat   ?pid NNP))
   )
+  ;------------------------------------------------------------------------------------------
+  ;Added by Roja (26-10-12)
+  ;Modifying category of SYMBOLS  from 'NNP' to 'NN'. To avoid sending SYMBOLS to Tranliteration.
+  ;Ex: Coriander Leaf Cooking Studio is located at 3A Merchant Court ,  #02-12 River Valley Road ,  Clarke Quay .
+  ;Here '#' is sent to Stanford as SYMBOL-SHARP.
+  (defrule NNP_to_NN
+  (declare (salience 11))
+  ?f0<-(id-sd_cat   ?pid NNP)
+  (parserid-word ?pid ?word)
+  (test (str-index "SYMBOL-" ?word))
+  =>
+     (retract ?f0)
+        (assert (id-sd_cat   ?pid NN))
+  )
   ;------------------------------------------------------------------------------------------ 
   (defrule PropN_rule
   (declare (salience 10))

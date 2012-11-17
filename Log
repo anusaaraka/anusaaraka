@@ -3965,40 +3965,47 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  49. Updated iit-bombay dic in goldendict.
  50. Updated Log file
 
- 31-10-12
+ 17-11-12
  ========
- 1. Added a pattern to handle when 's becomes 'is' in chk_input_format.pl
+ 1. Added a pattern to handle when 's becomes 'is' in chk_input_format.pl and commented the pattern '/' to per 
  2. In converting-dic-format.c, increased variable mng[1000] to mng[10000] as it fails to create firefox dictionary.
  3. Added code for removal of canonical files in shell_scripts/remove_out-files.sh
- 4. Updated Anusaaraka_stanford-Factored.sh and Anusaaraka_berkeley.sh accordingly with Anusaaraka_stanford.sh
- 5. Updated Parsers/stanford-parser/README
- 6. Updated Stanford_parser_fails 
- 7. Deleted following files: 
+ 4. Deleted following files: 
 	run_sd_lwg_rules.bat	Anu_data/penn_treebank_pos.html		Anu_src/path_for_help_files
 	Browser/open.js		apertium/jnk.c				apertium/one_sentence_per_line.txt_tmp1
- 8. Modified "morph_root" rule in root_rule.clp.
+ 5. Modified "morph_root" rule in root_rule.clp.
     [Modified this condition "(test (or (eq ?suf en)(eq ?suf ing)))" ;removed 'ing' from test condition Commented by Mahalaxmi(19-10-12) suggested by Chaitanya sir. -- Eg:- For this, we use the following procedure.]
- 9. Added new list to Anu_data/compound-matching/multi_word_expressions.txt file
-    reaction_force      aBilamba_bala#aBilamba_bala#noun#2#RM
-    electron_beam       ilektroYna_puFja#ilektroYna_puFja#noun#2#RM
-    a_way       isa_prakAra#isa_prakAra#noun#2#RM
- 10. Corrected the meaning for the word in default-iit-bombay-shabdanjali-dic.txt
-    unit_noun   ikAI/yunita/viBAga/tukadI/mAtraka/KaNda/IkAI/ekaka ------------>
-                unit_noun       ikAI/yunita/viBAga/tukadI/mAwraka/KaNda/IkAI/ekaka [mAtraka-->mAwraka]
- 11. modified run_sentence_stanford_minion.sh
+ 6. Modified run_sentence_stanford_minion.sh
     [concatenated hindi_id_order_for_minion.dat to facts_for_align_html file]
- 12. Updated miscellaneous/SMT/MINION/alignment/README file
- 13. Updated phy_align_verified_hnd and phy_align_verified_eng files.
- 14. Creating hindi_id_order_for_minion.dat for handling extra words like [wo,kI etc.] following files have been updated
+ 7. Creating hindi_id_order_for_minion.dat for handling extra words like [wo,kI etc.] following files have been updated
     [in html  alignment for this words were not handled -A- presently rule are written for this cases]
               i) Updated alignment.bat file
              ii) run_H_gen_minion.bat
             iii) create_hin_align_html.clp [added new rule "print_to_html1"]
              iv) get_anu_grp_mng.clp [added new rule "align_extra_inserted_words_in_anusaarak"]
- 15. Modified the rules test_for_occurence_of_match_in_sen1 and test_for_occurence_of_match_in_sen in manual_word_grp_using_dic.clp.
- 16. Updated miscellaneous/SMT/alignment/add-suf-into-chunks.py file.
- 17. Updated provisional_root_dic.txt and provisional_word_dic.txt files.
- 18. added "kAra and xe" to the list in "check_prev_word_of_kara_and_ho_with_anu"  and "modify_wrd_mng_for_VP_kriyAmUla_ho_and_kara" rules in get_man_grp_mng.clp file
- 19. Added "waraha" to the list in "multi_word1" rule in manual_lwg.clp file
- 20. Updated Anu_data/changes_in_databases file
- 21. Updated Log
+ 8. Modified the rules test_for_occurence_of_match_in_sen1 and test_for_occurence_of_match_in_sen in manual_word_grp_using_dic.clp.
+ 9. Added "kAra and xe" to the list in "check_prev_word_of_kara_and_ho_with_anu"  and "modify_wrd_mng_for_VP_kriyAmUla_ho_and_kara" rules in get_man_grp_mng.clp file
+ 10. Added "waraha" to the list in "multi_word1" rule in manual_lwg.clp file
+ 11. In mapping-symbols.lex, added a rule to handle '/' and also modified all the rules to store the original information accordingly.
+ 12. In hindi_meaning.clp, removed '@' in printing PropN fact in test_for_PropN rule.
+ 13. In sd_category.clp, added 'NNP_to_NN' rule to change the category from NNP to NN for words starting with 'SYMBOL-'. 
+ 14. In replacing_canonical.lex, added rule to change 'UFcAI' to 'UzcAI' and 'kyofki' to 'kyozki'.
+ 15. In constituency_parse.l, added two new nodes(P_DOL and SYM_SLASH)
+ 16. In hnd_translation.pl, deleted the code to add '@' in English hyphenated words and English abbreviated words.
+ 17. Instead handled above cases in 'add-@_in-hindi_sentence.py' prog.
+ 18. Added code to run 'add-@_in-hindi_sentence.py' prog in run_sentence_stanford.sh
+ 19. In mapping-punctuations.lex, added rules to handle patterns like \(:[ ]\'\) , \(\$[ ]Rs\)  and  slash(/) 
+ 20. Removed mapping of PUNCT-EqualTo and PUNCT-HyphenHyphen in replace-abbrevations.sh and also added '[@]' for pattern starting with PUNCT.
+ 21. Modified Browser/sent.pl to split html files in server.
+ 22. Updated ClipsToAnu_browser_intfc.sh accordingly with add-@_in-hindi_sentence.py prog.
+ 23. Updated README inside anu_testing
+ 24. Updated provisional_root_dic.txt and provisional_word_dic.txt files.
+ 25. Updated miscellaneous/SMT/alignment/add-suf-into-chunks.py file.
+ 26. Updated phy_align_verified_hnd and phy_align_verified_eng files.
+ 27. Updated miscellaneous/SMT/MINION/alignment/README file
+ 28. Updated Stanford_parser_fails 
+ 29. Updated Parsers/stanford-parser/README
+ 30. Updated Anusaaraka_stanford-Factored.sh and Anusaaraka_berkeley.sh accordingly with Anusaaraka_stanford.sh
+ 31. Updated Anu_data/changes_in_databases file
+ 32. Modified sd_ver_output.
+ 33. Updated Log

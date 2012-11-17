@@ -36,9 +36,10 @@ while($in = <STDIN>){
         }
 # Remove non printable characters outside the range 32 to 127
 	$in =~ s/[^ -\n\t]/ /g;
+#Handled '/' in mapping-symbols.lex file. Commented by Roja(14-11-12)
 # Replace forward slash in science/maths by 'per'. 
 # It is a misnomer and temp fix. Once the info that it is a math formula is available, that line will not be processed.
-	$in =~ s/([^<])\//$1 per /g;
+#	$in =~ s/([^<])\//$1 per /g;
 ## Remove all the spaces in the beginning of a line.
 	$in =~ s/^[\n \t]+//;
 # Remove all the trailing spaces

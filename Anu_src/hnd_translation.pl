@@ -65,23 +65,11 @@ sub final_translation{
           $sen_wx =~ s/^\s*//g;
           $sen_wx =~ s/\s*$//g;
          # $sen_wx =~ s/-//g;
-	  #Modified above pattern as shown below by Roja (24-09-12) This rule should be improved by writing a loop to get all hyphens in a word.
-	  if($sen_wx =~ /@([^\s+-]+)[-]/) #Ex: Finger-pointing has already begun. The Mughals ruled India in 1526-1761. 
-	  {
-               $sen_wx =~ s/@([^\s+-]+)[-]/\@$1-@/g; 
-                 #Ex: Singapore has been voted the Best Business City in the World for the fifth year running by readers of the Business Traveller Asia-Pacific magazine .
-          }
+         # Commented above pattern and handled it in add-@_in-hindi_sentence.py prog
           $sen_wx =~ s/#0//g;
           $sen_wx =~ s/#//g;
           $sen_wx =~ s/\\//g;
           $sen_wx =~ s/\_/ /g;
-#Added below two patterns by Roja (24-09-12).
-#Ex:  He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan.
-#To handle pattrens like "U.S." , "A.D." etc 
-#Adding '@' before 'S'. Else it converts to utf8.
-	  $sen_wx =~ s/@([^\s+\.])[.]/\@$1.@/; 
-          $sen_wx =~ s/@[ ]/@/;         
-#	  print "$sen_wx\n";
           $sen_utf8=&wx_utf8($sen_wx);
           open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn_tmp.html") || die "Can't open $ARGV[0]_trnsltn_tmp.html";
           print TRANS "$ParaId.$SenId\t$sen_utf8\n<\@BR>\n";

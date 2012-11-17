@@ -686,6 +686,8 @@ Modified:
 		U.S.S.R._noun	yU.esa.esa_Ara.	to	U.S.S.R._noun   yU.esa.esa.Ara.
 		U.S._noun	yU._esa.	to	U.S._noun       yU.esa.
 	38.Modified smell_noun      sUzGanA/ganxa/bAsa to	sUzGanA/ganXa/bAsa (Suggested by Chaitanya Sir 05-10-12)
+	39.Modified unit_noun	ikAI/yunita/viBAga/tukadI/mAtraka/KaNda/IkAI/ekaka  to unit_noun       ikAI/yunita/viBAga/tukadI/mAwraka/KaNda/IkAI/ekaka [mAtraka-->mAwraka] (Modified by Mahalaxmi.(31-10-12))
+
 			
 Removed::
 -------
@@ -700,8 +702,33 @@ Removed::
 	as_before 	---	Suggested by Rajini (25-02-12)
 	in_terms_of     ---	Suggested by Chaitanya Sir (25-05-12) 
 	in_contrast_to  ---     Suggested by Sukhada
-
-
+	as_far_as	---	Added below entries upto with_respect_to from Wikepedia 
+                                (As Suggested by Chaitanya Sir (30-10-12))
+	as_long_as
+	as_of
+	as_opposed_to
+	as_regards
+	as_soon_as
+	back_to
+	by_virtue_of
+	far_from 
+	for_the_sake_of
+	in_accordance_with
+	in_order_to
+	in_place_of
+	in_point_of
+	inside_of
+	in_to
+	left_of
+	on_to
+	out_from 
+	pursuant_to
+	right_of 
+	subsequent_to
+	that_of
+	where_as 
+	with_a_view_to
+	with_respect_to
 
 -------------------------- compound_phrase.txt -----------------------------------
  Based on the type of the phrase, compound_phrase.txt file has been splitted in to four different files,(Suggested by Chaitanya ji 23-04-12)
@@ -724,7 +751,8 @@ Removed::
                     [Suggested by Chaitanya ji and Dipti Madam. 23-04-12]
     
     Modified ::
-    information_system --- sUcanA_praprAlI  ==> sUcanA_praNAlI (Suggested by Chaitanya ji(20-17-12)) 
+    information_system --- sUcanA_praprAlI  ==> sUcanA_praNAlI (Suggested by Chaitanya ji(20-17-12))
+    curriculum_vitae   --- CV#CV#noun#2#RM  ==> @CV#@CV#noun#2#RM (Added by Roja (15-11-12))
      
     Added ::
     straight_line   sarala_reKA#sarala_reKA#noun#2#RM	(Suggested by Chaitanya Sir 05-09-12)

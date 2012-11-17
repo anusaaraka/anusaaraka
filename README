@@ -16,7 +16,7 @@
        -- ant ( Anusaaraka will run without ant also so one can ignore the errors found while compiling it )
        -- timeout (Please note that recent coreutils (>= 7.5-1) provide a timeout binary in it)  
           (this command is used to exit the CLIPS environment in the specific time.)
-       -- OpenLogos MT (OpenLogos package contains README, steps to Install it)
+       -- OpenLogos MT (optional but desirable to use OpenLogos parser. Package contains steps to Install.)
        -- goldendict (optional but desirable to use for viewing dictionaries)
     	  (NOTE: Check Readme for using 'goldendict' in miscellaneous/Dictionaries/Readme)
        -- graphviz (optional but desirable for alignment work -->for installing Shallow parser)

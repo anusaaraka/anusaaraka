@@ -9207,7 +9207,7 @@ current_scrip	cAlU_FaprawiBUwita_pacaba#cAlU_FaprawiBUwita_pacaba#noun#2#RM
 current_session	cAlU_sawra#cAlU_sawra#noun#2#RM
 current_value	varwamAna_mAna#varwamAna_mAna#noun#2#RM
 current_window	varwamAna_viMdo#varwamAna_viMdo#noun#2#RM
-curriculum_vitae	CV#CV#noun#2#RM
+curriculum_vitae	@CV#@CV#noun#2#RM
 curry_powder	masAlA#masAlA#noun#2#RM
 cursor_control_key	prasaMkewaka_niyaMwraNa_kuMjI#prasaMkewaka_niyaMwraNa_kuMjI#noun#3#RM
 cursor_graphics	prasaMkewaka_AleKI#prasaMkewaka_AleKI#noun#2#RM
