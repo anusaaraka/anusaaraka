@@ -20757,7 +20757,8 @@ movie_camera	calaciwra_kEmarA#calaciwra_kEmarA#noun#2#RM
 movie_star	Pilma_siwarA#Pilma_siwarA#noun#2#RM
 movie_theater_chain	sinemA_Wiyetara_SrqMKalA#sinemA_Wiyetara_SrqMKalA#noun#3#RM
 moving_average	cala_Osawa#cala_Osawa#noun#2#RM
-moving_in	aXikAra_meM_karane_kI_kriyA#aXikAra_meM_karane_kI_kriyA#noun#2#RM
+#moving_in	aXikAra_meM_karane_kI_kriyA#aXikAra_meM_karane_kI_kriyA#noun#2#RM
+#The ball is moving in negative y direction.
 moving_picture	cala_ciwra#cala_ciwra#noun#2#RM
 moving_school	cala_vixyAla#cala_vixyAla#noun#2#RM
 moving_staircase	calawI_sIDZI#calawI_sIDZI#noun#2#RM

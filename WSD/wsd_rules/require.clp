@@ -8,9 +8,9 @@
 (or(kriyA-kqxanwa_karma  ?id ?id1)(kriyA-for_saMbanXI  ?id ?id1)(kriyA-subject ?id ?id1))
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id  jarUrI_hE))
+(assert (id-wsd_root_mng ?id  jarUrI_ho))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  require.clp   require00   "  ?id "  jarUrI_hE)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  require.clp   require00   "  ?id "  jarUrI_ho)" crlf))
 )
 
 (defrule require01

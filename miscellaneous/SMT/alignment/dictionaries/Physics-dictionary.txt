@@ -621,3 +621,4 @@ relative	ApekRa
 force_of_gravity	guruwva_bala
 reaction_force	aBilamba_bala
 electromagnetism	vixyuwa_cumbakawva
+nonuniform	asamAna

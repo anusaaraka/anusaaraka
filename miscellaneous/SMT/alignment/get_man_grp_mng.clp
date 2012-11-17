@@ -26,12 +26,14 @@
 	(assert (manual_id-right_punc ?id ?punc))
  )
  ;------------------------------------------------------------------------------------------------------------------------
+ ;For the car of a particular make, the braking distance was found to be 10 m, 20 m, 34 m and 50 m corresponding to velocities of 11, 15, 20 and 25 m per s which are nearly consistent with the above formula.
+ ;kAra ke kisI viSiRta moYdala ke lie viBinna vegoM [11 @PUNCT-Comma  15 @PUNCT-Comma  20 ] waWA 25 @m/@s ke safgawa avaroXana xUriyAz kramaSaH 10 @m @PUNCT-Comma  20 @m @PUNCT-Comma  34 @m waWA 50 @m pAI gaI hEM jo uparokwa samIkaraNa se prApwa mAnoM ke lagaBaga safgawa hEM  @PUNCT-Dot
  (defrule delete_right_punc
  (declare (salience 100))
- ?f0<-(position-cat-man_grp_mng  ?id ?node $?wrd_mng  ?punc&@PUNCT-Comma|@PUNCT-Dot|@PUNCT-QuestionMark|@PUNCT-DoubleQuote|@PUNCT-DoubleQuote|@PUNCT-Semicolon|@PUNCT-Colon|@PUNCT-SingleQuote|@PUNCT-OpenParen|@PUNCT-ClosedParen|@PUNCT-Exclamation|@SYM-Dollar - -)
+ ?f0<-(position-cat-man_grp_mng  ?id ?node $?wrd_mng  ?punc&@PUNCT-Comma|@PUNCT-Dot|@PUNCT-QuestionMark|@PUNCT-DoubleQuote|@PUNCT-DoubleQuote|@PUNCT-Semicolon|@PUNCT-Colon|@PUNCT-SingleQuote|@PUNCT-OpenParen|@PUNCT-ClosedParen|@PUNCT-Exclamation|@SYM-Dollar $?w - -)
  =>
 	(retract ?f0)
-	(assert (position-cat-man_grp_mng  ?id ?node $?wrd_mng  - -))
+	(assert (position-cat-man_grp_mng  ?id ?node $?wrd_mng  $?w - -))
 	(assert (manual_id-right_punc ?id ?punc))
  )
  ;------------------------------------------------------------------------------------------------------------------------
@@ -186,6 +188,43 @@
         (assert (modified_word_id ?id))
  )
  ;------------------------------------------------------------------------------------------------------------------------
+ ;Note that the second method is better since we do not have to worry about the path of the motion as the motion is under constant acceleration.
+ ;XyAna xIjie ki xUsarI viXi pahalI se SreRTa hE kyofki isameM hameM gawi ke paWa kI [cinwA nahIM karanI hE] kyofki vaswu sWira wvaraNa se gawimAna hE.
+ (defrule modify_wrd_mng_for_VP_kriyAmUla_ho_and_kara_with_nahIM
+ (declare (salience 90))
+ (combine_prev_word_for_ho_id-prev_word ?id $?prev_word ?)
+ ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF ?rt&ho|kara|karA|xe ?cat ?gen ?num ?per ?case ?suf)
+ ?f1<-(head_id-grp_ids ?id ?nahIM_id $?grp) ;?4
+ ?f2<-(position-cat-man_grp_mng   ?id ?node   nahIM $?word  - -);f0
+ ?f3<-(id-node-root-cat-gen-num-per-case-tam =(- ?id 1) ?n ?r ?ct ?g ?no ?p ?c ?s);f1
+ ?f4<-(head_id-grp_ids =(- ?id 1) $?grp1);f3
+ ?f5<-(position-cat-man_grp_mng =(- ?id 1) ?n $?pre $?prev_word $?post - -);f2
+ ?f7<-(id-node-word-root ?n1 ?cat2 ?word3 - ?root1)
+ (test (member$ ?n1 $?grp))
+ ?f6<-(id-node-word-root ?n2&=(- ?nahIM_id 1) ?cat1 ?word2 - ?root0)
+ (test (member$ ?n2 $?grp1))
+ (not (modified_word_id ?id))
+ =>
+        (retract ?f ?f1 ?f2 ?f3 ?f4 ?f5 ?f6 ?f7)
+        (bind ?root (string-to-field (str-cat ?r"_"?rt)))
+        (assert (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ?gen ?num ?per ?case ?suf))
+        (assert (position-cat-man_grp_mng   ?id ?node $?prev_word $?post nahIM $?word  - -))
+        (bind ?pos (member$ ?n2 $?grp1))
+        (bind $?n_grp1 (subseq$ $?grp1 1 (- ?pos 1))) ; starting to the previous_word_id
+        (bind $?n_grp (subseq$ $?grp1 ?pos (length $?grp1))); previous_word_id to the end of group_ids
+        (assert (head_id-grp_ids ?id $?n_grp ?nahIM_id $?grp))
+        (if (neq (length $?n_grp1) 0) then
+                (assert (head_id-grp_ids =(- ?id 1) $?n_grp1))
+                (assert (id-node-root-cat-gen-num-per-case-tam =(- ?id 1) ?n $?pre ?ct ?g ?no ?p ?c ?s))
+                (assert (position-cat-man_grp_mng =(- ?id 1) ?n $?pre - -))
+        )
+        (bind ?word2 (explode$ (str-cat ?word2 " nahIM " ?word3)))
+        (bind ?root (remove_character "_" (implode$ (create$  ?root)) " "))
+        (bind ?root (remove_character "-" (implode$ (create$  ?root)) " "))
+        (assert (id-node-word-root ?n2 ?cat2 ?word2 - ?root))
+        (assert (modified_word_id ?id))
+ )
+ ;------------------------------------------------------------------------------------------------------------------------ 
  (defrule get_grp_info
  (declare (salience 50))
  (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ? ? ? ? ?suf)

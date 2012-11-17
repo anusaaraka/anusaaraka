@@ -1,4 +1,6 @@
 ;The rule beat0 can be removed as "beat off/ sb off" is a phrasal verb.(Meena:20.12.08) 
+;She beat off her attacker by hitting him with her handbag.
+;This rule need to be change. (suggested by Chaitanya Sir)
 (defrule beat0
 (declare (salience 5000))
 (id-root ?id beat)
@@ -13,14 +15,12 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " beat.clp	beat0  "  ?id "  " ?id1 "  bacAva_meM_saPala_ho  )" crlf))
 )
-
-
-
-
-
-
 ;The beggar beat off the children who attacked him.
 ;BiKArI baccoM ke prahAra se (apane bacAva meM)saPala ho gayA
+
+
+
+
 ;The rule beat1 can be removed as "beat sb up" is a phrasal verb.(Meena:20.12.08) 
 (defrule beat1
 (declare (salience 4900))

@@ -80,7 +80,7 @@ describe	vyAKyA_kara
 familiar	supariciwa
 unify	ekIkqwa_kara
 underlie	mUla_meM_ho
-Obviously	spaRta_hE_ki
+obviously	spaRta_hE_ki
 introduce	praswuwa_kara
 enormously	kahIM_aXika
 bind	bAnXe_raKa
@@ -88,3 +88,9 @@ recent	piCalA
 foundation	mUlAXAra
 report	praswuwa_kara
 involve	sammiliwa_ho
+accelerate	wvariwa_ho
+represent	vyakwa_kara
+establish	prawipAxiwa_kara
+as	nimna_prakAra
+look	xiKalAI_xe
+involve	nihiwa_ho

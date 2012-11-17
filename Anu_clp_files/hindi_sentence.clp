@@ -209,36 +209,6 @@
 	(assert (hindi_id_order $?id1  $?wrd_analysis  $?id2))
  )
  ;---------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (07-02-11) 
- ; to deleted repeated ki in hindi sentence Ex: He thought that she may have missed the train.
- (defrule rm_repeated_ki
- (declare (salience 700))
- ?f0<-(hindi_id_order $?var ki ki $?var1)
- =>
-	(retract ?f0)
-	(assert (hindi_id_order $?var ki $?var1))
- )
- ;---------------------------------------------------------------------------------------------------------
- ;I did not think he would do it, but he did. Added by Shirisha Manju (21-06-11)
- (defrule rm_repeated_ki_1
- (declare (salience 700))
- ?f0<-(hindi_id_order $?var ki ?con $?var1)
- (test (eq ?con paranwu))
- =>
-        (retract ?f0)
-        (assert (hindi_id_order $?var ?con $?var1))
- )
- ;---------------------------------------------------------------------------------------------------------
- ;It is true that you are my friend but I can not go along with you on this issue. 
- ; Added by Shirisha Manju (21-06-11)
- (defrule rm_ki_if_sent_first
- (declare (salience 700))
- ?f0<-(hindi_id_order ki $?var1)
- =>
-        (retract ?f0)
-        (assert (hindi_id_order $?var1))
- )
- ;---------------------------------------------------------------------------------------------------------
  (defrule match_exp
  (declare (salience 500))
  ?f1<-(id-last_word ?id ?wrd)

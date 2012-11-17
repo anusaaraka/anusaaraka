@@ -172,7 +172,7 @@
 (not (Mother  ?Mot))
 (not (Daughters_replaced  ?Mot))
 (id-original_word ?head ?wrd)
-(test (eq (member$ ?wrd (create$ think thought thinks thinking matter wonder say said says saying disputed suppose supposed supposes supposing commented figured pointed)) FALSE));Do you think we should go to the party?  He disputed that our program was superior.
+(test (eq (member$ ?wrd (create$ think thought thinks thinking matter wonder say said says saying disputed suppose supposed supposes supposing commented figured pointed assume)) FALSE));Do you think we should go to the party?  He disputed that our program was superior.We [assume] that the motion is in y-direction, more correctly in — y-direction because we choose upward direction as positive.
 =>
         (bind ?*count* (+ ?*count* 1))	
         (retract ?f0)
@@ -382,13 +382,14 @@
 ;If the daughters of the NP are not numbers then only this rule fires.
 ;These are given assuming that if first daughter of the Mother-NP is NP the rest daughters will never be numbers
 ;PP: VP: Information International said it believes that the complaints, filed in federal court in Georgia, are without merit.
+;RRC :These equations give the velocity and the distance traveled as a function of time and also the variation of velocity with distance. 
 (defrule reverse-NP-Daughters
 (declare (salience 800))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot ?NP ?PP $?d)
 (id-original_word ?head ?wrd&~lot&~most&~number&~spot&~kinds)
 (Node-Category  ?mot  NP)
 (Node-Category  ?NP  NP)
-(Node-Category  ?PP PP|VP)
+(Node-Category  ?PP PP|VP|RRC)
 (not (Mother  ?mot))
 ;And I think a lot of people will harp on program trading. This room would look big for a spot of paint.
 ;Chamba has a number of temples, palaces and stylized buildings

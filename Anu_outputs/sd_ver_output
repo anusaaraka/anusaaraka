@@ -1623,7 +1623,7 @@ jaba hama ooty se gudalur ko jAwe hEM, pOXoM_kI vqxXi meM parivarwana XyAna_Akar
 
 Hindi meaning using Stanford parser 3.90
 The glass house built on the lines of the crystal palace in london is the main attraction in this huge park. 
-landana meM sPatika mahala kI lAinoM para banA gilAsa Gara isa viSAla uxyAna meM pramuKa AkarRaNa hE.
+landana meM sPatika mahala kI lAinoM para banA huA gilAsa Gara isa viSAla uxyAna meM pramuKa AkarRaNa hE.
 
 Hindi meaning using Stanford parser 3.91
 Mahadevi Verma wrote many poems. 
@@ -1810,7 +1810,7 @@ praWama mahAyuxXa ke xOrAna, yaha aspawAla ke jEsA upayoga kiyA gayA WA.
 
 Hindi meaning using Stanford parser 4.35
 The chenna kesava temple of belur built 900 years ago is an exquisite example of hoysala art. 
-900 varRa pahale banA belur kA chenna kesava manxira hoysala kalA kA uwkqRta uxAharaNa hE.
+900 varRa pahale banA huA belur kA chenna kesava manxira hoysala kalA kA uwkqRta uxAharaNa hE.
 
 Hindi meaning using Stanford parser 4.36
 This beautiful building is 245 ft in length and 156 ft in width. 
@@ -2023,6 +2023,10 @@ merA kuwwA padosa meM saBI kuwwoM meM se sabase aXika badA hE.
 Hindi meaning using Stanford parser 4.87
 Health is more important than money. 
 PropN-health-PropN pEse kI apekRA aXika mahawvapUrNa hE.
+
+Hindi meaning using Stanford parser 4.88
+I know a woman who has two children. 
+mEM eka EsI swrI ko jAnawA hUz jisake xo bacce hEM.
 
 Calling Transliteration
 Calling Interface related programs

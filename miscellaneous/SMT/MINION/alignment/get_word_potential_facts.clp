@@ -231,6 +231,7 @@
 (hindi_id_order $?hin_order)
 =>
 	(assert (man_id-candidate_ids ?man_verb $?anu_verbs))
+        (assert (man_verb_id-mapped_id ?man_verb ?mapped_id))
 )
 ;------------------------------------------------------------------------------------------------------------
 ;The nationalists were narrowly beaten in the local election.---rARtravAxI sWAnIya cunAva meM badZe hI kama aMwara se hAre.
@@ -261,6 +262,44 @@
 (not (id-word ? ?wrd&:(member$ ?wrd $?pos_mngs)))
 =>
         (assert (fact_name-word_id sumleq ?mapped_id))
+)
+;------------------------------------------------------------------------------------------------------------
+(defrule change_the_fact_name_if_two_words_pointing_to_same_slot
+(declare (salience 90))
+?f<-(fact_name-man_id-slot_ids ?f_n ?mid $?slot_id)
+?f1<-(fact_name-man_id-slot_ids ?f_n1 ?mid1 $?slot_id)
+(test (and  (neq ?f_n restricted_eq_or_sumleq) (neq ?f_n1 restricted_eq_or_sumleq)))
+(test (neq ?mid ?mid1))
+(not (man_verb_id-mapped_id ? $? ?mid $?))
+(not (man_verb_id-mapped_id ? $? ?mid1 $?))
+(not (slot_ids-man_ids $?slot_id - $?))
+=>
+	(assert (slot_ids-man_ids $?slot_id - ?mid ?mid1))
+)
+;------------------------------------------------------------------------------------------------------------
+(defrule change_the_fact_name_if_two_words_pointing_to_same_slot1
+(fact_name-man_id-slot_ids ?f_n ?mid $?slot_id)
+?f<-(slot_ids-man_ids $?slot_id - $?mids)
+(test (eq (member$ ?mid $?mids) FALSE))
+(not (man_verb_id-mapped_id ? $? ?mid $?))
+;(not (man_verb_id-mapped_id ? $? ?mid1 $?))
+=>
+        (retract ?f)
+        (assert (slot_ids-man_ids $?slot_id - $?mids ?mid))
+)
+;------------------------------------------------------------------------------------------------------------
+;Eng Sen  :: Automobiles and planes carry people from one [place] to the other.
+;Man tran :: motaragAdI Ora vAyuyAna yAwriyoM ko eka [sWAna se] xUsare [sWAna ko] le jAwe hEM.
+;Anu tran :: motara-gAdI Ora samawala xUsare ko eka sWAna se logoM ko uTA_le jAwe hEM.
+(defrule change_the_fact_name_if_two_words_pointing_to_same_slot2
+?f<-(fact_name-man_id-slot_ids ?f_n ?mid $?slot_id)
+(slot_ids-man_ids $?slot_id - $?mids)
+(test (neq (length $?slot_id) (length $?mids)))
+(test (member$ ?mid $?mids))
+(test (neq ?f_n restricted_eq_or_sumleq))
+=>
+	(retract ?f)
+        (assert (fact_name-man_id-slot_ids restricted_eq_or_sumleq ?mid $?slot_id))
 )
 ;------------------------------------------------------------------------------------------------------------
 ;;11_03_C => Eng sen :Think! ; Man sen :socie!  ; Anu sen :sociye!

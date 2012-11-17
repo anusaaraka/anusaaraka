@@ -44,7 +44,7 @@
  ;---------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (22-06-2011)
  (defrule substitute_vib
- (declare (salience 900))
+ (declare (salience 910))
  (pada_info (group_head_id ?id)(vibakthi ?vib))
  ?f0<-(hindi_id_order $?id1 ?id $?id2)
  ?f1<-(id-word ?id ?word&~and)

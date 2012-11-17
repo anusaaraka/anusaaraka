@@ -368,24 +368,9 @@
         (modify ?f1 (gender ?gen)(number ?num)(person a)(case d))
 	(printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?pada_id " verb_kriyA_mUla_agmt  "?gen" gender_from_kriyA_mula "?num " "?num_src " a Direct_assignment  d Direct_assignment)" crlf)
  )
-
- ;===================================  verb with default agreement and viSeRya-kqxanwa_viSeRaNa ===================
- ;The girl running to the shop is my friend .                      
- (defrule verb_with_viSeRya_kqxanwa_viSeRaNa
- (declare (salience 650))
- (verb_agrmt-head_id default ?pada_id)
- (prep_id-relation-anu_ids  ? viSeRya-kqxanwa_viSeRaNa ?vi ?pada_id)
- (pada_info (group_head_id ?vi)(gender ?gen) (number ?num)(person ?per)(case ?case))
- ?f1<-(pada_info (group_head_id ?pada_id)(group_cat VP))
- ?f0<-(pada_control_fact ?pada_id)
- =>
-	(retract ?f0)
-	(modify ?f1 (gender ?gen)(number ?num)(person ?per)(case ?case))
- (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?pada_id " verb_with_viSeRya_kqxanwa_viSeRaNa "?gen" gender_from_viSeRya "?num "number_from_viSeRya " ?per "person_from_viSeRya "?case "case_from_viSeRya)" crlf)
- )
  ;==================================  verb with default agreement =================================================
  (defrule verb_default_agmt1
- (declare (salience 600))
+ (declare (salience 650))
  (verb_agrmt-head_id default ?pada_id)
  ?f1<-(pada_info (group_head_id ?pada_id)(group_cat VP))
  ?f0<-(pada_control_fact ?pada_id)
@@ -393,6 +378,20 @@
         (retract ?f0)
         (modify ?f1 (gender m)(number s)(person a)(case d))
  (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?pada_id " verb_default_agmt m Default_assignment s Default_assignment a Default_assignment d  Default_assignment)" crlf)
+ )
+ ;===================================  verb agreement with viSeRya-kqxanwa_viSeRaNa ==============================
+ ; The girl running to the shop is my friend .                      
+ ; Some doors broken by the wind have been repaired.
+ (defrule verb_with_viSeRya_kqxanwa_viSeRaNa
+ (declare (salience 600))
+ (prep_id-relation-anu_ids  ? viSeRya-kqxanwa_viSeRaNa ?vi ?pada_id)
+ (pada_info (group_head_id ?vi)(gender ?gen) (number ?num)(person ?per)(case ?case))
+ ?f1<-(pada_info (group_head_id ?pada_id))
+ ?f0<-(id-cat_coarse ?pada_id verb)
+ =>
+        (retract ?f0)
+        (modify ?f1 (gender ?gen)(number ?num)(person ?per)(case ?case))
+ (printout ?*gnp_debug* "(pada_id-rule_name-gen_src-num_src-person_src-VRB_GNP " ?pada_id " verb_with_viSeRya_kqxanwa_viSeRaNa "?gen" gender_from_viSeRya "?num "number_from_viSeRya " ?per "person_from_viSeRya "?case "case_from_viSeRya)" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
  ;America economic indicators fell sharply last month .

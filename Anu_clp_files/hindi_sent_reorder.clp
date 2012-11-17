@@ -113,42 +113,12 @@
         (printout ?*DBUG* "(Rule_Name-ids  insert_wo1 (hindi_id_order  "(implode$ (create$ $?pre $?ids wo $?post)) ")" crlf)
  )
  ;====================================  id movement rules ===============================================================
- ; What colour is your shirt?
- (defrule wh_without_aux-reorder2
- (declare (salience 100))
- ?f1<-(id-word ?wh_word  what)
- (prep_id-relation-anu_ids ?  kriyA-subject  ?kriyA ?sub)
- (pada_info (group_head_id ?sub)(group_cat PP)(group_ids $?grp_ids))
- ?f0<-(hindi_id_order  $?start $?grp_ids $?ids ?kriyA $?end)
- (test (member$ ?wh_word $?grp_ids))
- =>
-        (retract ?f0 ?f1)
-        (assert (hindi_id_order $?start  $?ids  $?grp_ids ?kriyA $?end))
-        (printout ?*DBUG* "(Rule_Name-ids      wh_without_aux-reorder2      (hindi_id_order  "   (implode$ (create$ $?start $?ids $?grp_ids ?kriyA $?end))")" crlf)
- )
  ;------------------------------------------------------------------------------------------------------------------
- ; What did you eat? O/P:  you What eat.  What did you say? O/P: you What say? 
+ ; I finally figured out why this program is so slow .
+ ; Modified by Shirisha Manju (09-11-11) Suggested by Sukhada -- instead of moving wh word move the whole pada
+ ; What colour is your shirt? What did you eat? O/P:  you What eat.  What did you say? O/P: you What say? 
  ; What have the students done. 
- ; In second condition "have and has" are added to handle such sentences.
  ; Where did you put the milk.  ;I know a woman who has two children .
- (defrule wh-reorder1
- (declare (salience 200))
- ?f1<-(id-word ?wh_word  what|when|why|who|how|where)
- (id-word ?aux do|does|did|have|has)
- (pada_info (group_head_id ?kriyA)(group_cat VP))
- ?f0<-(hindi_id_order  $?start ?wh_word $?ids ?kriyA $?end)
- (not (prep_id-relation-anu_ids ?  kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?  ?wh_word)) ;Ex. How quickly did you run?
- (not (prep_id-relation-anu_ids ?  wall_conjunction ?wh_word)) ;When we want to hear a music programme on the radio , we have to tune the radio to the correct station .
- (not (prep_id-relation-anu_ids ? viSeRya-jo_samAnAXikaraNa ? ?wh_word));It is Jane who wants to do it. 
- (test (and (neq ?wh_word 10000)(neq ?wh_word 10001)))
- =>
-        (retract ?f0 ?f1)
-        (assert (hindi_id_order $?start  $?ids ?wh_word ?kriyA $?end))
-        (printout ?*DBUG* "(Rule_Name-ids       wh-reorder1      (hindi_id_order  "   (implode$ (create$ $?start $?ids ?wh_word ?kriyA $?end))")" crlf)
- )
- ;------------------------------------------------------------------------------------------------------------------
- ;I finally figured out why this program is so slow .
- ;Modified by Shirisha Manju (09-11-11) Suggested by Sukhada -- instead of moving wh word move the whole pada
  (defrule wh_without_aux-reorder1
  (declare (salience 10))
  ?f1<-(id-word ?wh_word  what|when|why|who|how|where)
@@ -235,6 +205,7 @@
  (prep_id-relation-anu_ids ? viSeRya-viSeRaka  ?sub_sama ?advp)
  ?f0 <-(hindi_id_order $?pre $?ids $?post ?advp ?kriyA)
  (id-cat_coarse ?advp adverb)
+ (id-word ?advp ?w&~thus)
  =>
 	(retract ?f0)
 	(assert (hindi_id_order $?pre ?advp $?ids $?post ?kriyA))
@@ -372,17 +343,23 @@
  ; If you were a middle-class American without a job , who would you vote for .
  ; If we heat iron it becomes red .
  ; If you use that strategy , he will wipe you out .
+ ; Although acceleration can vary with time, our study in this chapter will be restricted to motion with constant acceleration.
  (defrule wo_rule_for_if1
  (declare (salience 1))
- ?f1<-(id-word ?id if)  ;Modified by Meena (28-10-10) 
+ ?f1<-(id-word ?id ?word&if|although)  ;Modified by Meena (28-10-10) 
  (not (wo_inserted )) ;restricted for Stanford Parser bcoz "wo" is generated using constituents.
  (prep_id-relation-anu_ids  ? kriyA-conjunction  ?k ?id)
  ?f0 <-(hindi_id_order $?pre ?k $?post)
  (not (hindi_id_order $? ?k))
  =>
         (retract ?f0 ?f1)
-        (assert (hindi_id_order  $?pre ?k wo $?post))  
-        (printout ?*DBUG* "(Rule_Name-ids  wo_rule_for_if1  (hindi_id_order  "(implode$ (create$ $?pre ?k wo $?post))")" crlf)
+	(if (eq ?word if) then
+	        (assert (hindi_id_order  $?pre ?k wo $?post))  
+		(printout ?*DBUG* "(Rule_Name-ids  wo_rule_for_if1  (hindi_id_order  "(implode$ (create$ $?pre ?k wo $?post))")" crlf)
+	else
+		(assert (hindi_id_order  $?pre ?k paranwu $?post))
+	        (printout ?*DBUG* "(Rule_Name-ids  wo_rule_for_if1  (hindi_id_order  "(implode$ (create$ $?pre ?k paranwu $?post))")" crlf)
+	)
  )
  ;------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (25-02-11) 
@@ -464,6 +441,17 @@
   	(printout  ?*DBUG* "(Rule_Name-ids   insert_nahIM   (hindi_id_order  "(implode$ (create$ $?list  ?id $?list1 nahIM ?kri)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju(7-11-12) Suggested by Chaitanya Sir
+ ; Free fall is thus a case of motion with uniform acceleration. 
+ (defrule mv_thus_to_sent_start
+ (declare (salience -450))
+ ?f0<-(hindi_id_order $?pre ?id $?post)
+ ?f1<-(id-word ?id thus)
+ =>
+        (retract ?f0 ?f1)
+        (assert (hindi_id_order ?id $?pre $?post))
+ )
+ ;------------------------------------------------------------------------------------------------------------------
  (defrule remove_ordered_ids
  (declare (salience -500))
  ?f0<-(id-word ?id ?)
@@ -508,6 +496,30 @@
   	(assert (hindi_id_order $?ids))
   	(printout ?*DBUG* "(Rule_Name-ids default_rule (hindi_id_order " (implode$ $?ids)"))" crlf)
  )
+ ;------------------------------------------- remove repeated "ki" -----------------------------------------------
+ ; Added by Shirisha Manju (21-06-11)
+ ; to delete repeated ki in hindi sentence 
+ ; Ex: He thought that she may have missed the train. I did not think he would do it, but he did.
+ ; We know that the translational motion of a system of particles is the motion of its center of mass.
+ (defrule rm_repeated_ki
+ (declare (salience -650))
+ ?f0<-(hindi_id_order $?var ki ?con $?var1)
+ (id-HM-source  ?con  paranwu|ki  ?)
+ =>
+        (retract ?f0)
+        (assert (hindi_id_order $?var ?con $?var1))
+ )
+ ;----------------------------------------------------------------------------------------------------------------
+ ;It is true that you are my friend but I can not go along with you on this issue. 
+ ; Added by Shirisha Manju (21-06-11)
+ (defrule rm_ki_if_sent_first
+ (declare (salience -650))
+ ?f0<-(hindi_id_order ?id $?var1)
+ (id-HM-source  ?id  ki  ?)
+ =>
+        (retract ?f0)
+        (assert (hindi_id_order $?var1))
+ )
  ;----------------------------------------------- final order -----------------------------------------------------
  (defrule hi_order
  (declare (salience -700))
@@ -516,7 +528,7 @@
         (assert (hindi_id_order   $?ids))
         (printout ?*DBUG* "(Rule_Name-ids  hi_order  (hindi_id_order " (implode$ $?ids)"))" crlf)
  )
- ;------------------------------------------------------------------------------------------------------------------
+ ;----------------------------------------------------------------------------------------------------------------
  (defrule end
  (declare (salience -800))
  =>

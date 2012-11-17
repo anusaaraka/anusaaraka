@@ -273,6 +273,8 @@
  (load-facts "revised_preferred_morph.dat")
  (load-facts "morph.dat")
  (load-facts "original_word.dat")
+ (load-facts "E_constituents_info.dat")
+ (load-facts "Node_category.dat")
  (open "tam_id.dat" tam_id_fp "a")
  (run)
  (clear)

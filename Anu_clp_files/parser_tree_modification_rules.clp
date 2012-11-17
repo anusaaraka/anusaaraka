@@ -6,6 +6,7 @@
  ; He wasted his golden opportunity to play in the national team. 
  ; Rename VP as Inf_VP   to avoid --- grouping VP and reversing VP
  ; The normal in this case is to be taken as normal to the tangent to surface at the point of incidence.
+ ; We have to turn down the next road on the right.
  (defrule rename_VP_for_To
  (declare (salience 30))
  ?f2<-(Head-Level-Mother-Daughters ?word&to|To ?l1 ?S $?a ?VP)
@@ -15,7 +16,7 @@
  ?f1<-(Node-Category ?VP1 VP)	
  (Head-Level-Mother-Daughters ?head ?lv $? ?S $?)
  (test (neq ?lv ?l1))
- (test (eq (member$ ?head (create$ had need are Are)) FALSE ))
+ (test (eq (member$ ?head (create$ had has have need are Are)) FALSE ))
  ?f3<-(Head-Level-Mother-Daughters ?h&~be ?l2 ?VP1 $?d)
  =>
 	(retract ?f ?f0 ?f1 ?f2 ?f3)	 

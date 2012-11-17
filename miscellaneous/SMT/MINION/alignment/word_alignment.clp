@@ -71,7 +71,7 @@
 (defglobal ?*count* = 0)
 
 (defrule get_current_word
-(manual_id-cat-word-root-vib-grp_ids ?mid $?)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $? - $? - $?gids)
 (not (manual_id-cat-word-root-vib-grp_ids ?mid1&:(< ?mid1 ?mid) $?))
 =>
         (assert (current_id ?mid))
@@ -105,17 +105,18 @@
         (assert (prov_assignment (nth$ (length $?aids) $?aids) ?mid))
 )
 
+;Free fall is thus a case of motion with uniform acceleration. 
 (defrule exact_match_using_multi_word_dic2
 (declare (salience 902))
 (current_id ?mid)
 (multi_word_expression-dbase_name-mng $?e_words ? $?mng)
 (multi_word_expression-grp_ids $?e_words $?aids)
-(manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng - $? - $? - $?)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng - $? - $? - $?ids)
 (not (prov_assignment ?aid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
-        (assert (anu_ids-sep-manual_ids $?aids - ?mid))
+        (assert (anu_ids-sep-manual_ids $?aids - $?ids))
         (assert (prov_assignment (nth$ (length $?aids) $?aids) ?mid))
 )
 

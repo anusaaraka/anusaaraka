@@ -546,6 +546,11 @@ Modified:
  9. preposition.txt (Added by Manju 24-02-12.  Suggested by Chaitanya Sir)
 10. Physics-dictionary  (Added by Roja 04-05-12. Suggested by Chaitanya Sir)
 
+ Changes in ol_parser_unused_words.txt
+ =====================================
+ Added :
+         and   1  (Added by Manju)
+
  Changes in time.txt:
  ===================
   Added:
@@ -687,7 +692,6 @@ Modified:
 		U.S._noun	yU._esa.	to	U.S._noun       yU.esa.
 	38.Modified smell_noun      sUzGanA/ganxa/bAsa to	sUzGanA/ganXa/bAsa (Suggested by Chaitanya Sir 05-10-12)
 	39.Modified unit_noun	ikAI/yunita/viBAga/tukadI/mAtraka/KaNda/IkAI/ekaka  to unit_noun       ikAI/yunita/viBAga/tukadI/mAwraka/KaNda/IkAI/ekaka [mAtraka-->mAwraka] (Modified by Mahalaxmi.(31-10-12))
-
 			
 Removed::
 -------
@@ -749,7 +753,10 @@ Removed::
     Removed  :: 
     wall_street     galI[_banxa_sadaka]#galI[_banxa_sadaka]#noun#2#RM
                     [Suggested by Chaitanya ji and Dipti Madam. 23-04-12]
-    
+    Commented ::
+    #moving_in      aXikAra_meM_karane_kI_kriyA#aXikAra_meM_karane_kI_kriyA#noun#2#RM
+                    #The ball is moving in negative y direction. (Suggested by Sukhada) 
+
     Modified ::
     information_system --- sUcanA_praprAlI  ==> sUcanA_praNAlI (Suggested by Chaitanya ji(20-17-12))
     curriculum_vitae   --- CV#CV#noun#2#RM  ==> @CV#@CV#noun#2#RM (Added by Roja (15-11-12))
@@ -769,5 +776,7 @@ Removed::
 
  changes in Physics-dictionary.txt 
  =================================
- Modified::
+ Modified :
 	Rearrangement   punavryavasWA  as   punarvyavasWA  (Suggested by Chaitanya Sir (08-08-12))
+ Added :
+	nonuniform	asamAna

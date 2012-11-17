@@ -125,7 +125,7 @@
 ?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ke ?)
-?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara ?)
+?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna ?)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 =>
@@ -137,7 +137,7 @@
 ;Dispersion takes place because the refractive index of medium for different wavelengths (colors) is different.
 ;parikRepaNa kA kAraNa yaha hE ki kisI mAXyama kA apavarwanAfka viBinna warafgaxErGyoM  @PUNCT-OpenParenvarNoM @PUNCT-ClosedParen ke lie Binna - Binna howA hE
 (defrule word_[hyphen]_word
-(declare (salience 80))
+(declare (salience 81))
 ?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) - SYM)
@@ -156,7 +156,7 @@
 (declare (salience 70))
 ?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
-?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA ?c&~VM)
+?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle ?c&~VM)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 =>
@@ -204,12 +204,27 @@
 =>
 	(retract ?f0 ?f1)
 	(if (eq ?vib 0) then
-		(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun ?vib1 - $?root - ?vib1 - $?ids ?id ?id1))
+		(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ?vib1 - $?ids ?id ?id1))
 	else
 		(bind ?n_vib (create$ ?vib ?vib1))
-		(bind $?word (delete-member$ $?noun ?vib))
-		(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?word ?n_vib - $?root - ?n_vib - $?ids ?id ?id1))
+;		(bind $?word (delete-member$ $?noun ?vib))
+		(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ?n_vib - $?ids ?id ?id1))
 	)
+)
+;----------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju(10-11-12)
+;Although acceleration can vary with time, our study in this chapter will be restricted to motion with constant acceleration.
+;yaxyapi gawimAna vaswu kA wvaraNa [samaya ke sAWa - sAWa] baxala sakawA hE , paranwu suviXA ke lie isa aXyAya meM gawi sambanXI hamArA aXyayana mAwra sWira wvaraNa waka hI sImiwa rahegA.
+(defrule single_vib3
+(declare (salience 65))
+?f0<-(manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - $?vib - $?ids ?id)
+(not (id-node-word-root ?id $?))
+?f1<-(manual_id-word-cat ?id1&:(=(+ ?id 1) ?id1) - SYM)
+?f2<-(manual_id-word-cat ?id2&:(=(+ ?id 2) ?id2) ?w ?)
+=>
+        (retract ?f0 ?f1 ?f2)
+        (bind $?n_vib (create$ $?vib ?w))
+        (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - $?n_vib - $?ids ?id ?id1 ?id2))
 )
 ;----------------------------------------------------------------------------------------------------------------
 (defrule verb_grouping

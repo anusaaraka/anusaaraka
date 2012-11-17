@@ -70,6 +70,7 @@
  ?f0<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VP ?VBN $?d)
  ?f1<-(Node-Category ?VBN VBN)
  ?f2<-(Head-Level-Mother-Daughters ?h2 ?l2 ?VBN ?id)
+ (test (eq ?h2 ?h));What have the students done?
  ?f<-(id-sd_cat  ?id  ?cat)
  =>
 	(retract ?f ?f0 ?f1 ?f2)

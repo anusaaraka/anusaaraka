@@ -6,12 +6,16 @@
 (deffunction sort_grp($?ids)
         (bind ?len (length $?ids))
         (bind $?new_ids (create$ ))
-        (bind $?ids (sort > $?ids))
-        (while (> (length $?ids) 0)
+ 	(while (> (length $?ids) 0)
                         (bind ?id (nth$ 1 $?ids))
-                        (bind $?ids (delete-member$ $?ids ?id))
-                        (bind $?new_ids (create$ $?new_ids ?id))
+			(if (numberp ?id)  then
+ 	                       (bind $?ids (delete-member$ $?ids ?id))
+				(bind $?new_ids (create$ $?new_ids ?id))
+			else
+				(bind $?ids (delete-member$ $?ids ?id))
+			)
         )
+       (bind $?ids (sort > $?new_ids))
        (bind $?ids $?new_ids)
 )
 ;----------------------------------------------------------------------------------------------------------------------------
@@ -85,8 +89,7 @@
         )
   	(assert (Hindi_sen $?pre1 ?aper $?pos1))
  )
-
-;---------------------------------------------------------------------------------------------------------------------------
+ ;---------------------------------------------------------------------------------------------------------------------------
  ;replacing id with hindi_meaning .
  (defrule get_hin_word_list2
  (declare (salience 1800))

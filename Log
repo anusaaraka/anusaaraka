@@ -3984,28 +3984,61 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
             iii) create_hin_align_html.clp [added new rule "print_to_html1"]
              iv) get_anu_grp_mng.clp [added new rule "align_extra_inserted_words_in_anusaarak"]
  8. Modified the rules test_for_occurence_of_match_in_sen1 and test_for_occurence_of_match_in_sen in manual_word_grp_using_dic.clp.
- 9. Added "kAra and xe" to the list in "check_prev_word_of_kara_and_ho_with_anu"  and "modify_wrd_mng_for_VP_kriyAmUla_ho_and_kara" rules in get_man_grp_mng.clp file
- 10. Added "waraha" to the list in "multi_word1" rule in manual_lwg.clp file
- 11. In mapping-symbols.lex, added a rule to handle '/' and also modified all the rules to store the original information accordingly.
- 12. In hindi_meaning.clp, removed '@' in printing PropN fact in test_for_PropN rule.
- 13. In sd_category.clp, added 'NNP_to_NN' rule to change the category from NNP to NN for words starting with 'SYMBOL-'. 
- 14. In replacing_canonical.lex, added rule to change 'UFcAI' to 'UzcAI' and 'kyofki' to 'kyozki'.
- 15. In constituency_parse.l, added two new nodes(P_DOL and SYM_SLASH)
- 16. In hnd_translation.pl, deleted the code to add '@' in English hyphenated words and English abbreviated words.
- 17. Instead handled above cases in 'add-@_in-hindi_sentence.py' prog.
- 18. Added code to run 'add-@_in-hindi_sentence.py' prog in run_sentence_stanford.sh and run_sentence_stanford_minion.sh
- 19. In mapping-punctuations.lex, added rules to handle patterns like \(:[ ]\'\) , \(\$[ ]Rs\)  and  slash(/) 
- 20. Removed mapping of PUNCT-EqualTo and PUNCT-HyphenHyphen in replace-abbrevations.sh and also added '[@]' for pattern starting with PUNCT.
- 21. Modified Browser/sent.pl to split html files in server.
- 22. Updated ClipsToAnu_browser_intfc.sh accordingly with add-@_in-hindi_sentence.py prog.
- 23. Updated README inside anu_testing
- 24. Updated provisional_root_dic.txt and provisional_word_dic.txt files.
- 25. Updated miscellaneous/SMT/alignment/add-suf-into-chunks.py file.
- 26. Updated phy_align_verified_hnd and phy_align_verified_eng files.
- 27. Updated miscellaneous/SMT/MINION/alignment/README file
- 28. Updated Stanford_parser_fails 
- 29. Updated Parsers/stanford-parser/README
- 30. Updated Anusaaraka_stanford-Factored.sh and Anusaaraka_berkeley.sh accordingly with Anusaaraka_stanford.sh
- 31. Updated Anu_data/changes_in_databases file
- 32. Modified sd_ver_output.
- 33. Updated Log
+ 9. manual_lwg.clp :
+        Added    : single_vib3
+        Modified : multi_word1 -- Added "waraha" to the list 
+ 10. In mapping-symbols.lex, added a rule to handle '/' and also modified all the rules to store the original information accordingly.
+ 11. In hindi_meaning.clp, removed '@' in printing PropN fact in test_for_PropN rule.
+ 12. In sd_category.clp, added 'NNP_to_NN' rule to change the category from NNP to NN for words starting with 'SYMBOL-'. 
+ 13. In replacing_canonical.lex, added rule to change 'UFcAI' to 'UzcAI' and 'kyofki' to 'kyozki'.
+ 14. In constituency_parse.l, added two new nodes(P_DOL and SYM_SLASH)
+ 15. In hnd_translation.pl, deleted the code to add '@' in English hyphenated words and English abbreviated words.
+ 16. Instead handled above cases in 'add-@_in-hindi_sentence.py' prog.
+ 17. Added code to run 'add-@_in-hindi_sentence.py' prog in run_sentence_stanford.sh and run_sentence_stanford_minion.sh
+ 18. In mapping-punctuations.lex, added rules to handle patterns like \(:[ ]\'\) , \(\$[ ]Rs\)  and  slash(/) 
+ 19. Removed mapping of PUNCT-EqualTo and PUNCT-HyphenHyphen in replace-abbrevations.sh and also added '[@]' for pattern starting with PUNCT.
+ 20. Modified Browser/sent.pl to split html files in server.
+ 21. Updated ClipsToAnu_browser_intfc.sh accordingly with add-@_in-hindi_sentence.py prog.
+ 22. Updated README inside anu_testing
+ 23. Updated the following dictionaries:
+	miscellaneous/SMT/alignment/dictionaries/Physics-dictionary.txt
+        miscellaneous/SMT/alignment/dictionaries/provisional_root_dic.txt
+        miscellaneous/SMT/alignment/dictionaries/restricted_eng_words.txt
+        miscellaneous/SMT/alignment/dictionaries/restricted_hnd_words.txt
+	miscellaneous/SMT/alignment/dictionaries/provisional_word_dic.txt 
+ 24. get_word_potential_facts.clp:
+      Added : change_the_fact_name_if_two_words_pointing_to_same_slot , 
+              change_the_fact_name_if_two_words_pointing_to_same_slot1 and 
+              change_the_fact_name_if_two_words_pointing_to_same_slot2
+ 25. get_man_grp_mng.clp:
+       Added    : modify_wrd_mng_for_VP_kriyAmUla_ho_and_kara_with_nahIM rule (to handle nahIM with kara)
+       Modified : check_prev_word_of_kara_and_ho_with_anu and modify_wrd_mng_for_VP_kriyAmUla_ho_and_kara 
+                    (added "kAra and xe" to the list)
+ 26. Modified "substitute_vib" rule in English_sentence.clp
+ 27. Modified "verb_with_viSeRya_kqxanwa_viSeRaNa" rule in GNP_agreement.clp (used category instead verb agreement)
+ 28. H_ordering_rules.clp :
+        Modified : rev_VP_or_PP_or_WHPP  (added "assume in the list)
+                   reverse-NP-Daughters  (added "RRC" in the list)
+ 29. Updated deffunction "sort_grp" in eng_hin_pos.clp
+ 30.  hindi_sent_reorder.clp:
+        Added    : mv_thus_to_sent_start , rm_repeated_ki and rm_ki_if_sent_first
+        Modified : wo_rule_for_if1 (added 'although' and modified the rule accordingly)
+        Removed  : wh-reorder1,  wh_without_aux-reorder2
+ 31. Removed "rm_repeated_ki" , "rm_repeated_ki_1" and "rm_ki_if_sent_first" rules from hindi_sentence.clp
+ 32. Modified make_VBN_as_VBD (added test condition) in parser_tree_correction_rules.clp
+ 33. Modified rename_VP_for_To (added 'have' and 'has' in the list) in parser_tree_modification_rules.clp
+ 34. run_modules_std.bat : Loaded "E_constituents_info.dat" and "Node_category.dat" files in tam_id module
+ 35. Added "tam_id_for_en_from_constituents" rule in tam_id.clp
+ 36. WSD : Modified : beat.clp   build.clp   require.clp
+ 37. Updated miscellaneous/SMT/alignment/add-suf-into-chunks.py file.
+ 38. Updated miscellaneous/SMT/MINION/alignment/README file
+ 39. Updated Stanford_parser_fails 
+ 40. Updated Parsers/stanford-parser/README
+ 41. Updated Anusaaraka_stanford-Factored.sh and Anusaaraka_berkeley.sh accordingly with Anusaaraka_stanford.sh
+ 42. Updated Anu_data/changes_in_databases 
+ 43. Modified sd_ver_output.
+ 44. Updated phy_align_verified_hnd and phy_align_verified_eng files.
+ 45. Modified run_H_gen_minion.bat -- to generate "manual_ids.dat" in manual_lwg module
+ 46. Updated miscellaneous/SMT/MINION/alignment/word_alignment.clp
+ 47. Updated sd_verified (488)
+ 48. Updated Log

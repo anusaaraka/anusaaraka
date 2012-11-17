@@ -71,6 +71,21 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  build.clp 	build3   "  ?id "  banA )" crlf))
 )
 
+;Added by Shirisha Manju (8-11-12) Suggested by Chaitanya Sir
+;The chenna kesava temple of belur built 900 years ago is an exquisite example of hoysala art.
+(defrule build4_0
+(declare (salience 4500))
+(id-root ?id build)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(viSeRya-kqxanwa_viSeRaNa  ? ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bana))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  build.clp     build4_0   "  ?id "  bana )" crlf))
+)
+
 
 ;Added by Meena(26.7.11)
 ;Hooker's philosophy was to build and sell.

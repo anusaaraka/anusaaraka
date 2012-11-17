@@ -167,8 +167,26 @@
 	(printout ?*tam_id_file* "(id-TAM " ?id " ing)" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
- (defrule tam_id_for_en
+ ;Added by Shirisha Manju(7-11-12) Suggested by Chaitanya Sir
+ ;An object [released] near the surface of the Earth is accelerated downward under the influence of the force of gravity.
+ (defrule tam_id_for_en_from_constituents
  (declare (salience 700))
+ (Head-Level-Mother-Daughters ? ? ?Mot ?NP ?VP)
+ (Node-Category ?Mot NP)
+ (Node-Category ?NP NP)
+ (Node-Category ?VP VP)
+ (Head-Level-Mother-Daughters ? ? ?VP ?VBN $?)
+ (Node-Category ?VBN VBN)
+ (Head-Level-Mother-Daughters ? ? ?VBN ?id)
+ ?mng <-(meaning_to_be_decided ?id)
+ (not (grouped_id ?id))
+ =>
+        (retract ?mng)
+        (printout ?*tam_id_file* "(id-TAM " ?id " en)" crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------
+ (defrule tam_id_for_en
+ (declare (salience 650))
  (id-root-category-suffix-number ?id ?root ? en ?)
  (word-morph (root ?root) (suffix ed))
  ?mng <-(meaning_to_be_decided ?id)
@@ -179,7 +197,7 @@
  )
  ;------------------------------------------------------------------------------------------------------------------
  (defrule tam_id_for_ed
- (declare (salience 700))
+ (declare (salience 650))
  (id-root-category-suffix-number ?id ?root ? ed ?)
  (word-morph (root ?root) (suffix en))
  ?mng <-(meaning_to_be_decided ?id)
