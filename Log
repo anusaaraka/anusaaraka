@@ -3965,7 +3965,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  49. Updated iit-bombay dic in goldendict.
  50. Updated Log file
 
- 17-11-12
+ 19-11-12
  ========
  1. Added a pattern to handle when 's becomes 'is' in chk_input_format.pl and commented the pattern '/' to per 
  2. In converting-dic-format.c, increased variable mng[1000] to mng[10000] as it fails to create firefox dictionary.
@@ -4030,15 +4030,17 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  34. run_modules_std.bat : Loaded "E_constituents_info.dat" and "Node_category.dat" files in tam_id module
  35. Added "tam_id_for_en_from_constituents" rule in tam_id.clp
  36. WSD : Modified : beat.clp   build.clp   require.clp
- 37. Updated miscellaneous/SMT/alignment/add-suf-into-chunks.py file.
- 38. Updated miscellaneous/SMT/MINION/alignment/README file
- 39. Updated Stanford_parser_fails 
- 40. Updated Parsers/stanford-parser/README
- 41. Updated Anusaaraka_stanford-Factored.sh and Anusaaraka_berkeley.sh accordingly with Anusaaraka_stanford.sh
- 42. Updated Anu_data/changes_in_databases 
- 43. Modified sd_ver_output.
- 44. Updated phy_align_verified_hnd and phy_align_verified_eng files.
- 45. Modified run_H_gen_minion.bat -- to generate "manual_ids.dat" in manual_lwg module
- 46. Updated miscellaneous/SMT/MINION/alignment/word_alignment.clp
- 47. Updated sd_verified (488)
- 48. Updated Log
+ 37. Added tokenizer option 'escapeForwardSlashAsterisk' in run_penn-pcfg.sh to avoid escape character in front of slash and asterisk.
+ 38. Update ClipsToAnu_browser_intfc.sh to handle SYMBOL-NAME in final html file.
+ 39. Updated miscellaneous/SMT/alignment/add-suf-into-chunks.py file.
+ 40. Updated miscellaneous/SMT/MINION/alignment/README file
+ 41. Updated Stanford_parser_fails 
+ 42. Updated Parsers/stanford-parser/README
+ 43. Updated Anusaaraka_stanford-Factored.sh and Anusaaraka_berkeley.sh accordingly with Anusaaraka_stanford.sh
+ 44. Updated Anu_data/changes_in_databases 
+ 45. Modified sd_ver_output.
+ 46. Updated phy_align_verified_hnd and phy_align_verified_eng files.
+ 47. Modified run_H_gen_minion.bat -- to generate "manual_ids.dat" in manual_lwg module
+ 48. Updated miscellaneous/SMT/MINION/alignment/word_alignment.clp
+ 49. Updated sd_verified (488)
+ 50. Updated Log
