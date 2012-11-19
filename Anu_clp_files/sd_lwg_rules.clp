@@ -120,13 +120,17 @@
         (retract ?f ?f1)
         (assert (Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre $?daut  $?pos))
  )
+
 ;--------------------------------------------------------------------------
  ;Replacing a VP mother whose child is  S on checking the head word "are|Are|is|was|were".
+ ; The normal in this case is to be taken as normal to the tangent to surface at the point of incidence.
+ ;;If air resistance is neglected, the object [is said to be] in free fall.
  (defrule replace_S1
  (declare (salience 100))
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?S $?pos)
- (parserid-word ?head ?w&are|Are|is|was|were)
+ (parserid-word ?head ?w&are|Are|is|was|were|said)
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
+ (parserid-word ?head1 ?w1&to)
  (Node-Category ?Mot VP)
  (Node-Category ?S S)
  (not (dont_replace_VP ?Mot))
@@ -256,7 +260,15 @@
         (assert (root-verbchunk-tam-parser_chunkids root_to_be_decided $?vc tam_to_be_decided $?ids))
        )
  )
-
+;--------------------------------------------------------------------------
+ (defrule modify_head_wrd1
+ (declare (salience 49))
+ ?f0<-(root-verbchunk-tam-parser_chunkids be is_said_to_be is_said_to_0 ?is ?said ?to ?be)
+ ?f1<-(parser_id-root-category-suffix-number  ?said  ?root $?)
+ =>
+   (retract ?f0)
+   (assert (root-verbchunk-tam-parser_chunkids ?root is_said_to_be is_said_to_0 ?is ?to ?be ?said ))
+ )
 ;--------------------------------------------------------------------------
  ;Added by Shirisha Manju (28-10-11) Suggested by Sukhada
  ;Ex:-He made a mistake in [inviting] John. 

@@ -8,7 +8,7 @@ hI	only
 BI	also/too/even
 ki	that
 isa	the/this
-eka	a/an
+eka	a/an/one
 koI	a/an
 kisI	a/an
 hE	is/have

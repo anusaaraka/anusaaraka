@@ -99,18 +99,19 @@
  ; Added by Shirisha Manju (22-12-11) Suggested by Sukhada
  ;When the dollar is in a free-fall, even central banks can not stop it.
  (defrule insert_wo1
-  (declare (salience 1000))
+ (declare (salience 1000))
  (id-word ?id if|when)
  (Head-Level-Mother-Daughters ? ? ?SBAR $?ids)
  (Node-Category ?SBAR SBAR)
- ?f0<-(hindi_id_order $?pre $?ids $?post)
+ ?f0<-(hindi_id_order $?pre $?ids ?that_id $?post)
+ (id-word ?that_id ?that&~that&~then);For example, when you say that a car is moving on a road, you are describing the car with respect to a frame of reference attached to you or to the ground.
  (test (and (member$ ?id $?ids)(neq (length $?post) 0))) ;My car broke down when I reached Lalitpur.
  (not (wo_inserted ))
  =>
         (retract ?f0)
-        (assert (hindi_id_order $?pre $?ids wo $?post))
+        (assert (hindi_id_order $?pre $?ids wo ?that_id $?post))
         (assert (wo_inserted ))
-        (printout ?*DBUG* "(Rule_Name-ids  insert_wo1 (hindi_id_order  "(implode$ (create$ $?pre $?ids wo $?post)) ")" crlf)
+        (printout ?*DBUG* "(Rule_Name-ids  insert_wo1 (hindi_id_order  "(implode$ (create$ $?pre $?ids wo ?that_id $?post)) ")" crlf)
  )
  ;====================================  id movement rules ===============================================================
  ;------------------------------------------------------------------------------------------------------------------

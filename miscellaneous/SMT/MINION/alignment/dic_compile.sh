@@ -11,6 +11,8 @@ rm $HOME_anu_test/Anu_databases/hindi_wordnet_dic2.gdbm
 rm $HOME_anu_test/Anu_databases/restricted_eng_words.gdbm
 rm $HOME_anu_test/Anu_databases/restricted_hnd_words.gdbm
 rm $HOME_anu_test/Anu_databases/numbers_dic.gdbm
+rm $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic.gdbm
+
 
 cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
 flex canonical_form.lex

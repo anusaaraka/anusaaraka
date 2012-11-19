@@ -780,3 +780,9 @@ Removed::
 	Rearrangement   punavryavasWA  as   punarvyavasWA  (Suggested by Chaitanya Sir (08-08-12))
  Added :
 	nonuniform	asamAna
+
+ changes in hindi_multi_word.txt
+ ================================
+ Corrected :: isake viparIwa      at_the_other_end ---> isake_viparIwa      at_the_other_end
+ Added     :: nirxeSa_wanwra      frame_of_reference
+

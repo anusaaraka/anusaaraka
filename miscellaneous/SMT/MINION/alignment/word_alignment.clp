@@ -460,13 +460,13 @@
 (defrule check_match_with_english_word
 (declare (salience 830))
 (current_id ?mid)
-(manual_id-cat-word-root-vib-grp_ids ?mid ? $?word - $? - $? - $?)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $?word - $? - $? - $?gids)
 (or (id-word ?eid $?word)(id-original_word ?eid $?word))
 (not (prov_assignment ?eid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
-        (assert (anu_ids-sep-manual_ids ?eid - ?mid))
+        (assert (anu_ids-sep-manual_ids ?eid - $?gids))
         (assert (prov_assignment ?eid ?mid))
 )
 
