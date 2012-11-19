@@ -43,7 +43,7 @@
  $HOME_anu_test/Anu_src/identify-nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp2.txt
  #sed 's/;/ @SEMICOLON /g' $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp1.txt |sed 's/nonascii/@nonascii/g' > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp2.txt 
  wx_utf8 < $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp2.txt > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp3.txt
- $HOME/roja/adding@-for-eng-words.out < $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp3.txt > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4.txt
+ $HOME_anu_test/miscellaneous/SMT/MINION/alignment/adding@-for-eng-words.out < $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp3.txt > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4.txt
   
   cd  $HOME_anu_test/miscellaneous/SHALLOW_PARSER
   sh run_shallow_parser.sh $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4.txt
@@ -69,7 +69,7 @@
  
  $HOME_anu_test/miscellaneous/SMT/alignment/morph.out $MYPATH/tmp/$1_tmp/manual_hin.morph.txt < $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt.morph > /dev/null
 
- sed 's/,/ @PUNCT-Comma /g'  $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4_wx.txt  |sed 's/,/ @PUNCT-Comma /g'| sed 's/\([^0-9]\)\./\1 @PUNCT-Dot/g' | sed 's/?/ @PUNCT-QuestionMark /g' | sed 's/``/ @PUNCT-DoubleQuote /g' | sed "s/''/ @PUNCT-DoubleQuote /g" | sed 's/;/ @PUNCT-Semicolon /g' | sed 's/:/ @PUNCT-Colon /g' |  sed "s/[\'\`\']/ @PUNCT-SingleQuote /g" | sed 's/"/ @PUNCT-DoubleQuote /g' | sed 's/ punctOPENPAREN / @PUNCT-OpenParen /g' | sed 's/ punctCLOSEPAREN / @PUNCT-ClosedParen /g' | sed 's/!/ @PUNCT-Exclamation /g' | sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}' | sed 's/ABBRENGBEFORE/@/g' | sed 's/ABBRENGAFTER//g' |sh $MYPATH/tmp/$1_tmp/Symbols_man.sh |sed 's/SYMBOL/@SYMBOL/g' |sed 's/[^@]PUNCT-/ @PUNCT/g' | sed 's/nonascii/@nonascii/g' > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen.txt
+ sed 's/,/ @PUNCT-Comma /g'  $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4_wx.txt  |sed 's/,/ @PUNCT-Comma /g'| sed 's/\([^0-9]\)\./\1 @PUNCT-Dot/g' | sed 's/?/ @PUNCT-QuestionMark /g' | sed 's/``/ @PUNCT-DoubleQuote /g' | sed "s/''/ @PUNCT-DoubleQuote /g" | sed 's/;/ @PUNCT-Semicolon /g' | sed 's/:/ @PUNCT-Colon /g' |  sed "s/[\'\`\']/ @PUNCT-SingleQuote /g" | sed 's/"/ @PUNCT-DoubleQuote /g' | sed 's/ punctOPENPAREN / @PUNCT-OpenParen /g' | sed 's/ punctCLOSEPAREN / @PUNCT-ClosedParen /g' | sed 's/!/ @PUNCT-Exclamation /g' | sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}' | sed 's/ABBRENGBEFORE/@/g' | sed 's/ABBRENGAFTER//g' |sh $MYPATH/tmp/$1_tmp/Symbols_man.sh |sed 's/SYMBOL/@SYMBOL/g' |sed 's/[^@]PUNCT-/ @PUNCT-/g' | sed 's/nonascii/@nonascii/g' > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen.txt
 
 
  ###Added below loop for server purpose.
