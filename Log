@@ -4040,7 +4040,13 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  45. Updated miscellaneous/SMT/MINION/alignment/word_alignment.clp
  46. Updated "replace_S1" rule and added new rule "modify_head_wrd1" in Anu_clp_files/sd_lwg_rules.clp.
  47. miscellaneous/SMT/MINION/alignment/dic_compile.sh [Added code for removing default-iit-bombay-shabdanjali-dic.gdbm]
- 48. Updated Anu_data/changes_in_databases 
- 49. Modified sd_ver_output.
- 50. Updated sd_verified (488)
- 51. Updated Log
+ 48. Input for shallow_parser has been modified from wx to utf so the following files have been updated
+           and a new file has been added mapping-symbols_manual.lex
+           i) bin/Anusaaraka_stanford_minion.sh
+          ii) miscellaneous/SHALLOW_PARSER/run_shallow_parser.py
+         iii) miscellaneous/SMT/MINION/alignment/minion_compile.sh
+          iv) miscellaneous/SMT/alignment/add-suf-into-chunks.py
+ 49. Updated Anu_data/changes_in_databases 
+ 50. Modified sd_ver_output.
+ 51. Updated sd_verified (488)
+ 52. Updated Log

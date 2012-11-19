@@ -8,7 +8,8 @@ out_f = sys.argv[1]
 out_file = str(out_f) + '.out'
 rm_out_file = 'rm ' +  out_file
 commands.getoutput(rm_out_file)
-run_parser_cmd = "timeout 30 shallow_parser_hin --in_encoding=wx --out_encoding=wx <tmp >>" + out_file + " 2>error"
+#run_parser_cmd = "timeout 30 shallow_parser_hin --in_encoding=wx --out_encoding=wx <tmp >>" + out_file + " 2>error"
+run_parser_cmd = "timeout 30 shallow_parser_hin --in_encoding=utf --out_encoding=utf --input=tmp >>" + out_file + " 2>error"
 
 for i in file(sys.argv[1]):
 	fw = open('tmp', 'w')

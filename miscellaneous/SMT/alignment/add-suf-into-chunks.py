@@ -20,6 +20,11 @@ for line in xrange(len(sp)):
 	if sp[line].startswith("</Sentence>"):
 		c = 0
 	if "((" in sp[line] and '_' in sp[line]:
+            if 'vpos=' in sp[line] and 'head=' in sp[line]:
+		dum_suf = sp[line].split('vpos=')
+                suf = dum_suf[0].split('_')
+                my_cat = dum_suf[0].split(',')
+	    if 'vpos=' not in sp[line] and 'head=' in sp[line]:
 		dum_suf = sp[line].split('head=')
 		suf = dum_suf[0].split('_')
 		my_cat = dum_suf[0].split(',')
@@ -36,15 +41,10 @@ for line in xrange(len(sp)):
 
 		#if (len(suf) >= 1) and (c < len(orig_sent)) and (len(my_cat) >= 1) and( len(mylst) >= 1) and (mylst[1] != orig_sent[c]): 
 		if (len(suf) >= 1) and ( len(mylst) >= 1) and (mylst[1] != orig_sent[c]): 
-			if suf[0].endswith('nahIM'):
-				print 'xx\t', 'nahIM'
+			for each in xrange(len(suf)-1):
+				print 'xx\t', orig_sent[c]
 				c += 1
-				del suf[0]
-			else:
-				for each in xrange(len(suf)-1):
-					print 'xx\t', orig_sent[c]
-					c += 1
-					suf = []
+				suf = []
 
 		if mylst[1] == orig_sent[c] :
 			print sp[line],
