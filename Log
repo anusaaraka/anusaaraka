@@ -3965,7 +3965,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  49. Updated iit-bombay dic in goldendict.
  50. Updated Log file
 
- 19-11-12
+ 24-11-12
  ========
  1. Added a pattern to handle when 's becomes 'is' in chk_input_format.pl and commented the pattern '/' to per 
  2. In converting-dic-format.c, increased variable mng[1000] to mng[10000] as it fails to create firefox dictionary.
@@ -3987,7 +3987,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Modified : multi_word1 -- Added "waraha" to the list 
  9. In mapping-symbols.lex, added a rule to handle '/' and also modified all the rules to store the original information accordingly.
  10. In hindi_meaning.clp, removed '@' in printing PropN fact in test_for_PropN rule.
- 11. In sd_category.clp, added 'NNP_to_NN' rule to change the category from NNP to NN for words starting with 'SYMBOL-'. 
+ 11. In sd_category.clp, added 'NNP_to_NN' rule to change the category from NNP to NN for words starting with 'SYMBOL-'.          and added test condition in 'NN_to_NNP' rule to avoid numbers converted into NNP category. Ex: 84kms 
  12. In replacing_canonical.lex, added rule to change 'UFcAI' to 'UzcAI' and 'kyofki' to 'kyozki'.
  13. In constituency_parse.l, added two new nodes(P_DOL and SYM_SLASH)
  14. In hnd_translation.pl, deleted the code to add '@' in English hyphenated words and English abbreviated words.
@@ -4028,8 +4028,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  33. run_modules_std.bat : Loaded "E_constituents_info.dat" and "Node_category.dat" files in tam_id module
  34. Added "tam_id_for_en_from_constituents" rule in tam_id.clp
  35. WSD : Modified : beat.clp   build.clp   require.clp
- 36. Added tokenizer option 'escapeForwardSlashAsterisk' in run_penn-pcfg.sh to avoid escape character in front of slash and asterisk.
- 37. Update ClipsToAnu_browser_intfc.sh to handle SYMBOL-NAME in final html file.
+ 36. Added tokenizer option 'escapeForwardSlashAsterisk' to avoid escape character in front of slash & asterisk in following      files ::  run_penn-pcfg.sh, run_penn-factored.sh and run_multiple_parse_penn.sh
+ 37. Update ClipsToAnu_browser_intfc.sh and run_align_browser.sh to handle SYMBOL-NAME in final html file.
  38. Updated miscellaneous/SMT/alignment/add-suf-into-chunks.py file.
  39. Updated miscellaneous/SMT/MINION/alignment/README file
  40. Updated Stanford_parser_fails 
@@ -4046,7 +4046,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
           ii) miscellaneous/SHALLOW_PARSER/run_shallow_parser.py
          iii) miscellaneous/SMT/MINION/alignment/minion_compile.sh
           iv) miscellaneous/SMT/alignment/add-suf-into-chunks.py
- 49. Updated Anu_data/changes_in_databases 
- 50. Modified sd_ver_output.
- 51. Updated sd_verified (488)
- 52. Updated Log
+ 49. Updated Anu_data/changes_in_databases
+ 50. Updated entry in iit-bombay dictionary for goldendict. 
+ 51. Modified sd_ver_output.
+ 52. Updated sd_verified (488)
+ 53. Updated Log

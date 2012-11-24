@@ -24,6 +24,7 @@
   (parserid-word ?pid ?word)
   (test (neq ?pid P1))
   (test (eq (upcase (sub-string 1 1 ?word)) (sub-string 1 1 ?word)))
+  (test (eq (numberp (string-to-field (sub-string 1 1 ?word))) FALSE));Ex: One can reach kumbhalgarh by road from udaipur (84km) and ranakpur which is 18km from kumbhalgarh. (Added by Roja 19-11-12) 
   (test (eq (str-index "SYMBOL-" ?word) FALSE));Added this condition to avoid words with SYMBOL to convert to NNP category (Added by Roja 18-10-12) EX:  In one-dimensional motion, there are only two directions (backward and forward, upward and downward) in which an object can move, and these two directions can easily be specified by + and — signs. 
   =>
  	(retract ?f0)
