@@ -175,13 +175,22 @@
 (test (eq (member$ ?wrd (create$ think thought thinks thinking matter wonder say said says saying disputed suppose supposed supposes supposing commented figured pointed assume)) FALSE));Do you think we should go to the party?  He disputed that our program was superior.We [assume] that the motion is in y-direction, more correctly in — y-direction because we choose upward direction as positive.
 =>
         (bind ?*count* (+ ?*count* 1))	
-        (retract ?f0)
-	(bind ?rev_daut (create$ ?head ?lev (reverse_daughters ?Mot $?daut ?d ?d1)))
-	(assert (Head-Level-Mother-Daughters ?rev_daut))
-	(assert (Mother  ?Mot))
-	(printout ?*order_debug-file* "(rule_name - rev_VP_or_PP_or_WHPP " ?*count* " " crlf
+	(bind ?note "reverse") ;In the second case, the car moves from O to P and then moves back from P to Q .
+	(loop-for-count (?i 1 (length $?daut))
+		(bind ?id (nth$ ?i $?daut))
+		(if (eq (sub-string 1 2 ?id) "CC") then
+			(bind ?note "dont_reverse")
+		)
+	)
+	(if (neq ?note "dont_reverse") then
+        	(retract ?f0)
+	       	(bind ?rev_daut (create$ ?head ?lev (reverse_daughters ?Mot $?daut ?d ?d1)))
+		(assert (Head-Level-Mother-Daughters ?rev_daut))
+		(assert (Mother  ?Mot))
+		(printout ?*order_debug-file* "(rule_name - rev_VP_or_PP_or_WHPP " ?*count* " " crlf
                          "              Before    - "?head" " ?lev" "?Mot" "(implode$ $?daut)" " ?d" "?d1 crlf
 	                 "              After     - "(implode$ ?rev_daut) ")" crlf)
+	)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;;Ex. I gave her a book. I will tell you the story tomorrow. 
@@ -386,7 +395,7 @@
 (defrule reverse-NP-Daughters
 (declare (salience 800))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot ?NP ?PP $?d)
-(id-original_word ?head ?wrd&~lot&~most&~number&~spot&~kinds)
+(id-original_word ?head ?wrd&~lot&~most&~number&~spot&~kinds&~set)
 (Node-Category  ?mot  NP)
 (Node-Category  ?NP  NP)
 (Node-Category  ?PP PP|VP|RRC)

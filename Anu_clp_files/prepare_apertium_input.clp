@@ -941,8 +941,21 @@
         (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id "  PP_rule_for_and_head )" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
-  ; Broken windows need to be replaced. The painted doors look great. Invention of currency was done mainly for transaction. 
+  ;What causes motion described in this chapter and the next chapter forms the subject matter of Chapter 5.
   (defrule PP_rule_with_tam
+  (declare (salience 460))
+  (viSeRya-kqxanwa_viSeRaNa  ?vi ?kq_id)
+  ?f0<-(id-HM-source ?kq_id ?h_word ?)
+  (pada_info (group_head_id ?kq_id)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(group_ids $?ids)(H_tam ?tam))
+  (test (neq ?tam 0))
+  =>
+	(retract ?f0)
+        (printout ?*A_fp5* "(id-Apertium_input "?kq_id" root:"?h_word ",tam:"?tam",gen:"?gen",num:"?num ",per:"?per")" crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?kq_id "  PP_rule_with_tam )" crlf)
+   )
+  ;-------------------------------------------------------------------------------------------------------------------------
+  ; Broken windows need to be replaced. The painted doors look great. Invention of currency was done mainly for transaction. 
+  (defrule PP_rule_with_tam1
   (declare (salience 450))
   ?f0<-(id-HM-source ?id ?h_word ?)
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?person)(group_ids $?ids)(H_tam ?tam))
@@ -954,7 +967,7 @@
         (if (eq ?a "T") then
                 (retract ?f0)
                 (printout ?*A_fp5* "(id-Apertium_input "?id" root:"?h_word ",tam:"?tam",gen:"?gen",num:"?num ",per:"?person")" crlf)
-                (printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_without_vib_for_vb )" crlf)
+                (printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_with_tam1 )" crlf)
         )
   )
   ;-------------------------------------------------------------------------------------------------------------------------

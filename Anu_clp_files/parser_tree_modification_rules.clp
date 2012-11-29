@@ -11,6 +11,7 @@
  (declare (salience 30))
  ?f2<-(Head-Level-Mother-Daughters ?word&to|To ?l1 ?S $?a ?VP)
  ?f0<-(Node-Category ?VP VP)
+ (Node-Category ?S S)
  ?f<-(Head-Level-Mother-Daughters ?word1&to|To ?l ?VP ?TO ?VP1)
  (Node-Category ?TO TO)
  ?f1<-(Node-Category ?VP1 VP)	

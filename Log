@@ -4015,16 +4015,20 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  25. Modified "substitute_vib" rule in English_sentence.clp
  26. Modified "verb_with_viSeRya_kqxanwa_viSeRaNa" rule in GNP_agreement.clp (used category instead verb agreement)
  27. H_ordering_rules.clp :
-        Modified : rev_VP_or_PP_or_WHPP  (added "assume in the list)
-                   reverse-NP-Daughters  (added "RRC" in the list)
+        Modified : 1. rev_VP_or_PP_or_WHPP  
+                      (added "assume in the list and modified action part to dont reverse if VP contains "CC" as daut)
+                   2. reverse-NP-Daughters  (added "RRC and set" in the lists)
  28. Updated deffunction "sort_grp" in eng_hin_pos.clp
  29.  hindi_sent_reorder.clp:
         Added    : mv_thus_to_sent_start , rm_repeated_ki and rm_ki_if_sent_first
         Modified : wo_rule_for_if1 (added 'although' and modified the rule accordingly) and insert_wo1 rule
         Removed  : wh-reorder1,  wh_without_aux-reorder2
  30. Removed "rm_repeated_ki" , "rm_repeated_ki_1" and "rm_ki_if_sent_first" rules from hindi_sentence.clp
- 31. Modified make_VBN_as_VBD (added test condition) in parser_tree_correction_rules.clp
- 32. Modified rename_VP_for_To (added 'have' and 'has' in the list) in parser_tree_modification_rules.clp
+ 31. parser_tree_correction_rules.clp:
+	Modified : make_VBN_as_VBD (added test condition) 
+	Added 	 : modify_JJ_as_VBN  rule
+ 32. parser_tree_modification_rules.clp:
+  	Modified : rename_VP_for_To ( added 'have' and 'has' in the list and added Node category for S )
  33. run_modules_std.bat : Loaded "E_constituents_info.dat" and "Node_category.dat" files in tam_id module
  34. Added "tam_id_for_en_from_constituents" rule in tam_id.clp
  35. WSD : Modified : beat.clp   build.clp   require.clp
@@ -4046,8 +4050,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
           ii) miscellaneous/SHALLOW_PARSER/run_shallow_parser.py
          iii) miscellaneous/SMT/MINION/alignment/minion_compile.sh
           iv) miscellaneous/SMT/alignment/add-suf-into-chunks.py
- 49. Updated Anu_data/changes_in_databases
- 50. Updated entry in iit-bombay dictionary for goldendict. 
- 51. Modified sd_ver_output.
- 52. Updated sd_verified (488)
- 53. Updated Log
+ 49. Added new file simplify_english.pl (to simplify the english sentence)
+ 50. Modified stdenglish.sh to add the above program.
+ 51. Modified chk_input_format.pl to remove modifying "the inviting of" as "inviting" , as it is handled in simplify_english.pl
+ 52. Added "PP_rule_with_tam" rule in prepare_apertium_input.clp
+ 53. Updated Anu_data/changes_in_databases
+ 54. Updated entry in iit-bombay dictionary for goldendict. 
+ 55. Modified sd_ver_output.
+ 56. Updated sd_verified (488)
+ 57. Updated Log

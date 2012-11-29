@@ -44,13 +44,15 @@ $PATH1/insert_period.out < $1.tmp5 > $1.tmp6
 # This program handles special characters : Ex : change '&' to 'and' , Replace '...' by one word 'DOTDOTDOT'
 $PATH1/chk_input_format.pl < $1.tmp6  > $1.tmp7
 
+$PATH1/simplify_english.pl < $1.tmp7 > $1.tmp8
+
 #The program sentence_boundary.pl takes as an input a text file, and generates as
 #output another text file in which each line contains only one sentence. Blank
 #lines in the input file are considered to make the end of paragraphs, and are
 #still present in the output file. It requires a honorifics file as an argument.#A sample honorifics file is provided. This file MUST contain honorifics, not
 #abbreviations. The program detects abbreviations using regular expressions.
 
-$PATH1/sentence-boundary.pl -d $PATH1/HONORIFICS -i $1.tmp7 -o ../$1.std
+$PATH1/sentence-boundary.pl -d $PATH1/HONORIFICS -i $1.tmp8 -o ../$1.std
 
 cd ../
 fi

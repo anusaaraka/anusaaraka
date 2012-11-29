@@ -8,6 +8,34 @@
 	(bind ?new_no ?no)
  )
  ;==========================================   Category correction rules =================================================
+ ;Suggested by Chaitanya Sir (21-11-12)
+ ;The figure [has been redrawn] in Fig. 3.6 choosing different scales to facilitate the calculation. 
+ (defrule modify_JJ_as_VBN
+ (Head-Level-Mother-Daughters has ? ?VP ?VB ?VP1 )
+ (Node-Category  ?VP   VP)
+ (Node-Category  ?VB   ?c&VBZ)
+ (Node-Category  ?VP1  VP)
+ (Head-Level-Mother-Daughters been ? ?VP1 ?VBN ?VP2)
+ (Node-Category  ?VBN  VBN)
+ (Node-Category  ?VP2  VP)
+ ?f0<-(Head-Level-Mother-Daughters ?word ?l ?VP2 ?JJ $?post)
+ ?f1<-(Node-Category  ?JJ   ?c1&JJ)
+ ?f2<-(Head-Level-Mother-Daughters ?word ?l1 ?JJ ?id)
+ (word-morph (original_word  ?word)(category verb)(suffix ?s&en|ing))
+ (word-morph (original_word  ?word)(category adjective))
+ ?f3<-(id-sd_cat  ?id  ?cat)
+ =>
+	(retract  ?f0 ?f1 ?f2 ?f3)
+	(if (eq ?s en) then (bind ?cat VBN)
+	else (bind ?cat VBG)
+	)
+	(bind ?new_VBN (get_no ?JJ ?c1 ?cat))
+	(assert (Head-Level-Mother-Daughters ?word ?l ?VP2 ?new_VBN $?post))
+	(assert (Node-Category  ?new_VBN   ?cat))
+	(assert (Head-Level-Mother-Daughters ?word ?l1 ?new_VBN ?id))
+	(assert (id-sd_cat  ?id  ?cat))
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
  ;Suggested by Chaitanya Sir (26-06-12)
  ;All other engines involving irreversibility have lower efficiency than this .
  (defrule modify_ADVP_as_NP
@@ -21,16 +49,16 @@
  ?f4<-(Head-Level-Mother-Daughters ?h ?l $?pre ?ADVP $?pos)
  (test (neq ?h ?word))
  =>
-	(retract ?f ?f0 ?f1 ?f2 ?f3 ?f4)
-	(if (eq ?cat1 noun) then (bind ?cat1 NP))
-	(bind ?NP (get_no ?ADVP ADVP NP))
-	(bind ?NN (get_no ?RB ?cat NN))
-	(assert (Head-Level-Mother-Daughters ?h ?l $?pre ?NP $?pos))
-	(assert (Head-Level-Mother-Daughters ?word ?l ?NP ?NN))
-	(assert (Node-Category ?NP NP))
-	(assert (Node-Category ?NN NN))
-	(assert (Head-Level-Mother-Daughters ?word ?l1 ?NN ?id))
-	(assert (id-sd_cat  ?id NN))
+        (retract ?f ?f0 ?f1 ?f2 ?f3 ?f4)
+        (if (eq ?cat1 noun) then (bind ?cat1 NP))
+        (bind ?NP (get_no ?ADVP ADVP NP))
+        (bind ?NN (get_no ?RB ?cat NN))
+        (assert (Head-Level-Mother-Daughters ?h ?l $?pre ?NP $?pos))
+        (assert (Head-Level-Mother-Daughters ?word ?l ?NP ?NN))
+        (assert (Node-Category ?NP NP))
+        (assert (Node-Category ?NN NN))
+        (assert (Head-Level-Mother-Daughters ?word ?l1 ?NN ?id))
+        (assert (id-sd_cat  ?id NN))
  )
  ;------------------------------------------------------------------------------------------------------------------------
  ; if word is number then modify cat as CD
