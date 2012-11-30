@@ -24,3 +24,6 @@ gcc *.o -lgdbm -lm -o myclips
 	to
 gcc *.o -lgdbm -lm -lrt -o myclips   
 (Note::  -lrt option is used to avoid this error "undefined reference to `clock_gettime")
+
+
+Updated factmch.c file as suggested in CLIPS Support forum. (Refer to mail posted on Nov16th from CLIPS Support)

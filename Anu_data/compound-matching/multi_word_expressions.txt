@@ -5556,7 +5556,7 @@ blood_relative	rakwa_sambanXI#rakwa_sambanXI#noun#2#RM
 blood_transfusion_officer	rawAXAna_aXikArI#rawAXAna_aXikArI#noun#3#RM
 blood_transfusion	rakwa_caDZAne_kI_kriyA#rakwa_caDZAne_kI_kriyA#noun#2#RM
 blood_vessel	rakwa_vAhikA#rakwa_vAhikA#noun#2#RM
-blood_vessels	rakwa_vAhikA#rakwa_vAhikA#noun#2 #RM
+blood_vessels	rakwa_vAhikA#rakwa_vAhikA#noun#2#RM
 blotting_paper	syAhIsoKa#syAhIsoKa#noun#2#RM
 blow_hole	vAyuCixra#vAyuCixra#noun#2#RM
 blow_off's	PUzkanA[>udZanA]^XakkA[>GUzsA]{ba.}+kA#PUzkanA[>udZanA]^XakkA[>GUzsA]{ba.}+kA#noun#2#RM

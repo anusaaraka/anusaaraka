@@ -183,10 +183,15 @@ globle void FactPatternMatch(
               
             if (tempPtr != NULL)
               {
-               if (tempPtr->header.stopNode)
-                 { ProcessFactAlphaMatch(theEnv,theFact,markers,tempPtr); }
+               if (SkipFactPatternNode(theEnv,tempPtr))
+                 { patternPtr = GetNextFactPatternNode(theEnv,TRUE,patternPtr); }
+               else
+                 {
+                  if (tempPtr->header.stopNode)
+                    { ProcessFactAlphaMatch(theEnv,theFact,markers,tempPtr); }
                
-               patternPtr = GetNextFactPatternNode(theEnv,FALSE,tempPtr);
+                  patternPtr = GetNextFactPatternNode(theEnv,FALSE,tempPtr);
+                 }
               }
             else
               { patternPtr = GetNextFactPatternNode(theEnv,TRUE,patternPtr); }
@@ -872,4 +877,5 @@ globle void FactsIncrementalReset(
   }
 
 #endif /* DEFTEMPLATE_CONSTRUCT && DEFRULE_CONSTRUCT */
+
 

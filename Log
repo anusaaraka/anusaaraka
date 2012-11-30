@@ -3965,7 +3965,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  49. Updated iit-bombay dic in goldendict.
  50. Updated Log file
 
- 24-11-12
+ 30-11-12
  ========
  1. Added a pattern to handle when 's becomes 'is' in chk_input_format.pl and commented the pattern '/' to per 
  2. In converting-dic-format.c, increased variable mng[1000] to mng[10000] as it fails to create firefox dictionary.
@@ -4054,8 +4054,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  50. Modified stdenglish.sh to add the above program.
  51. Modified chk_input_format.pl to remove modifying "the inviting of" as "inviting" , as it is handled in simplify_english.pl
  52. Added "PP_rule_with_tam" rule in prepare_apertium_input.clp
- 53. Updated Anu_data/changes_in_databases
- 54. Updated entry in iit-bombay dictionary for goldendict. 
- 55. Modified sd_ver_output.
- 56. Updated sd_verified (488)
- 57. Updated Log
+ 53. Removed manual sentence processing from Anusaaraka_stanford_minion.sh and added in a new file miscellaneous/SMT/MINION/alignment/processing_manual_sentences.sh
+ 54. Updated Anusaaraka_stanford.sh
+ 55. Added comments in stdenglish.sh
+ 56. Updated CLIPS/factmch.c as suggested in CLIPS Support forum. and noted this changes in Changes_done file.
+ 57. Updated entry in iit-bombay dictionary for goldendict. 
+ 58. Updated changes_in_databases
+ 59. Modified sd_ver_output.
+ 60. Updated sd_verified (488)
+ 61. Updated Log
