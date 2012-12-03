@@ -94,8 +94,9 @@
  (declare (salience 60))
  ?f<-(English-list $?Eng_list)
   =>
- 	(mwe_lookup "Physics-dictionary.gdbm" 1 $?Eng_list)
- 	(mwe_lookup "Physics-dictionary.gdbm" 2 $?Eng_list)
+; 	(mwe_lookup "Physics-dictionary.gdbm" 1 $?Eng_list)
+ ;	(mwe_lookup "Physics-dictionary.gdbm" 2 $?Eng_list)
+        (mwe_lookup "phy_eng_multi_word_dic.gdbm" 1 $?Eng_list)
         (mwe_lookup "acronyms-common_noun_compounds.gdbm" 1 $?Eng_list)
         (mwe_lookup "named_entities.gdbm" 1 $?Eng_list)
         (mwe_lookup "proper_noun-common_noun_compounds.gdbm" 1 $?Eng_list)
@@ -174,12 +175,83 @@
  =>
 
 		(dic_lookup "provisional_word_dic.gdbm" ?id ?word ?root ?cat)
-		(dic_lookup "Physics-dictionary.gdbm" ?id ?word ?root ?cat)
-		(dic_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?id ?word ?root ?cat)
-		(dic_lookup "default_meaning_frm_oldwsd.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "provisional_root_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "provisional_PropN_dic.gdbm" ?id ?word ?root ?cat)
+		(dic_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?id ?word ?root ?cat)
+		(dic_lookup "default_meaning_frm_oldwsd.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "numbers_dic.gdbm" ?id ?word ?root ?cat)
+ )
+ ;--------------------------------------------------------------------------------------------------------
+ ;Added by Roja (01-08-12). 
+ ;Generating dummy categories.
+ (defrule generate_dummy_cat
+ (declare (salience 9900))
+ (default-cat)
+ =>
+ (assert (default-cat noun))
+ (assert (default-cat verb))
+ (assert (default-cat adverb))
+ (assert (default-cat adjective))
+ (assert (default-cat PropN))
+ (assert (default-cat conjunction))
+ (assert (default-cat pronoun))
+ (assert (default-cat determiner))
+ (assert (default-cat wh-adverb))
+ (assert (default-cat verbal_noun))
+ (assert (default-cat UNDEFINED))
+ (assert (default-cat wh-determiner))
+ )
+ ;--------------------------------------------------------------------------------------------------------
+ ; get mng from physics dic with same category
+ (defrule get_mng_from_phy_dic
+ (declare (salience 140))
+ ?f0<-(id-original_word ?id ?word)
+ (id-root ?id ?rt)
+ (id-cat_coarse ?id ?cat)
+ (test (neq (numberp ?rt) TRUE))
+ (test (neq (gdbm_lookup "phy_dictionary.gdbm" (str-cat ?rt "_" ?cat)) "FALSE"))
+ =>
+        (bind ?mng (gdbm_lookup "phy_dictionary.gdbm" (str-cat ?rt "_" ?cat)))
+        (if (neq ?mng "FALSE") then
+		(print_dic_mng phy_dictionary.gdbm ?word ?rt ?mng)
+		(retract ?f0)
+        )
+ )
+ ;--------------------------------------------------------------------------------------------------------
+ ; get mng from physics dic with different category
+ (defrule get_mng_from_phy_dic1
+ (declare (salience 130))
+ ?f0<-(id-original_word ?id ?word)
+ (id-root ?id ?rt)
+ (id-cat_coarse ?id ?cat)
+ (default-cat ?cat1)
+ (test (neq ?cat ?cat1))
+ (test (neq (numberp ?rt) TRUE))
+ (test (neq (gdbm_lookup "phy_dictionary.gdbm" (str-cat ?rt "_" ?cat1)) "FALSE"))
+ =>
+        (bind ?mng (gdbm_lookup "phy_dictionary.gdbm" (str-cat ?rt "_" ?cat1)))
+        (if (neq ?mng "FALSE") then
+                (print_dic_mng phy_dictionary.gdbm ?word ?rt ?mng)
+		(retract ?f0)
+        )
+ )
+ ;--------------------------------------------------------------------------------------------------------
+ ; get mng from physics dic with different category and with lowcase root
+ (defrule get_mng_from_phy_dic2
+ (declare (salience 120))
+?f0<-(id-original_word ?id ?word)
+ (id-root ?id ?rt)
+ (id-cat_coarse ?id ?cat)
+ (test (neq (numberp ?rt) TRUE))
+ (default-cat ?cat1)
+ (test (neq ?cat ?cat1))
+ (test (neq (gdbm_lookup "phy_dictionary.gdbm" (str-cat (lowcase ?rt) "_" ?cat1)) "FALSE"))
+ =>
+        (bind ?mng (gdbm_lookup "phy_dictionary.gdbm" (str-cat (lowcase ?rt) "_" ?cat1)))
+	(if (neq ?mng "FALSE") then
+                (print_dic_mng phy_dictionary.gdbm ?word ?rt ?mng)
+		(retract ?f0)
+        )
  )
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Mahalaxmi

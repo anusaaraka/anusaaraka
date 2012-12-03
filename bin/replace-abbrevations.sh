@@ -6,3 +6,5 @@ sed 's/@PUNCT/PUNCT/g'  $1 |  sed  's/{number:/{/g' | sed 's/{vib:/{/g' | sed 's
 #Removed following sed commands from above list 
 #sed 's/ABBR-ThatIs/i.e./g' | sed 's/ABBR-Example/e.g./g' | sed 's/ABBR-USA/U.S.A./g' | sed 's/ABBR-US/U.S./g' | sed 's/ABBR-UK/U.K./g' | sed 's/ABBR-AD/A.D./g' | sed 's/ABBR-aka/a.k.a/g'| sed 's/ABBR-Dot/./g' | sed "s/ABBR-SingleQuote/'/g" 
 #sed 's/[ ]*SYM-Percent/%/g' | sed 's/SYM-Dollar /$/g' |sed 's/SYM-Sharp /#/g'  | sed 's/SYM-Plus/+/g' | sed 's/SYM-EqualTo/=/g' | sed 's/SYM-Beta/β/g' | sed 's/PUNCT-[@]*EqualTo/=/g' | sed 's/PUNCT-[@]*HyphenHyphen/—/g'
+ 
+#sed 's/ \.\./ \./g' ----- ?

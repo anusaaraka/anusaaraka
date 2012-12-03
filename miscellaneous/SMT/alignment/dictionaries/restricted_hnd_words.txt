@@ -1,4 +1,4 @@
-Ora	and
+Ora	and/other
 evaM	and
 waWA	and
 yA	or
@@ -13,6 +13,7 @@ koI	a/an
 kisI	a/an
 hE	is/have
 apane	his/its
+apanI	the/our
 usakI	his
 usake	his
 unakA	them

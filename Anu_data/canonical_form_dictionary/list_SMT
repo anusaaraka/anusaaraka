@@ -1,6 +1,5 @@
 hindi_wordnet_dic2
 hindi_tam_dictionary
-Physics-dictionary
 provisional_root_dic
 hindi_wordnet_dic1
 preposition_dictionary
@@ -11,3 +10,6 @@ hindi_multi_word
 restricted_eng_words
 restricted_hnd_words
 numbers_dic
+phy_dictionary
+phy_eng_multi_word_dic
+phy_hnd_multi_word_dic

@@ -1503,7 +1503,7 @@ xaravAjA banxa_mawa kIjie.
 
 Hindi meaning using Stanford parser 3.61
 I have been running about all morning trying to find you. 
-mEM Apako pAne ke lie prayAsa karwe_hue pUrI subaha iXara-uXara xOdawA rahA hUz.
+mEM Apako pAne ke lie prayAsa karawe_hue pUrI subaha iXara-uXara xOdawA rahA hUz.
 mEM pUrI subaha meM iXara-uXara Apako pAne ke lie prayAsa karwe_hue xOdawA rahA hUz.
 
 Hindi meaning using Stanford parser 3.62
@@ -1818,7 +1818,7 @@ yaha sunxara imArawa lambAI meM 245 ft Ora cOdAI meM 156 ft hE.
 
 Hindi meaning using Stanford parser 4.37
 One can reach kumbhalgarh by road from udaipur (84km) and ranakpur which is 18km from kumbhalgarh. 
-koI BI udaipur se (PropN-84km-PropN) Ora ranakpur se sadaka se kumbhalgarh waka pahuzca sakawA hE jo kumbhalgarh se PropN-18km-PropN hE.
+koI BI udaipur se (84km) Ora ranakpur se sadaka se kumbhalgarh waka pahuzca sakawA hE jo kumbhalgarh se 18km hE.
 
 Hindi meaning using Stanford parser 4.38
 She is ugly and fat. 

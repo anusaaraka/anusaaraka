@@ -18,9 +18,9 @@
 ;Anu tran :: yaha halake meM se waWA xUraxarSiwA kI saMvexanA meM se pramuKa rUpa se hE ki hama hamAre cAroM ora yuga vyAKyA kara waWA jAnawI hE.
 (defrule multi_word0
 (declare (salience 110))
-?f0<-(manual_id-word-cat ?id0 ?w&apane|unake ?cat)
-?f1<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?w1&cAroM ?)
-?f2<-(manual_id-word-cat ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora ?)
+?f0<-(man_id-word-cat ?id0 ?w&apane|unake ?cat)
+?f1<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?w1&cAroM ?)
+?f2<-(man_id-word-cat ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora ?)
 (id-node-word-root ?id0 ? $?word1 - $?root)
 =>
         (retract ?f0 ?f1 ?f2)
@@ -31,9 +31,9 @@
 ;The resolution of such an electron microscope is limited finally by the fact that electrons can also behave as waves. ---> isa prakAra ke ilektroYna - sUkRmaxarSI kA viBexana BI anwawaH isI waWya xvArA sImiwa howA hE ki ilektroYna BI warafgoM kI waraha vyavahAra kara sakawe hEM.
 (defrule multi_word1
 (declare (salience 110))
-?f0<-(manual_id-word-cat ?id0 ?w ?cat)
-?f1<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?w1&kI ?)
-?f2<-(manual_id-word-cat ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora|waraha ?)
+?f0<-(man_id-word-cat ?id0 ?w ?cat)
+?f1<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?w1&kI ?)
+?f2<-(man_id-word-cat ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora|waraha ?)
 (id-node-word-root ?id0 ? $?word1 - $?root)
 =>
         (retract ?f0 ?f1 ?f2)
@@ -44,8 +44,8 @@
 ;na wo, na hI, xUsarI ora,kI ora ,hamArI ora
 (defrule multi_word2
 (declare (salience 100))
-?f1<-(manual_id-word-cat ?id0 ?w&na|xUsarI|cAroM|ya|kI|hamArI|kala ?cat)
-?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1)  ?w1&wo|hI|ora|purje ?)
+?f1<-(man_id-word-cat ?id0 ?w&na|xUsarI|cAroM|ya|kI|hamArI|kala ?cat)
+?f2<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1)  ?w1&wo|hI|ora|purje ?)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 =>
@@ -55,12 +55,14 @@
 ;----------------------------------------------------------------------------------------------------------------
 ;अबतक
 ;However, we shall restrict our discussion to the special case of curved surfaces, that is, spherical surfaces.
+;xUsarI sWiwi meM kAra pahale @O se [@P waka] jAwI hE Ora Pira @P se @Q para vApasa A jAwI hE
 (defrule multi_word3
 (declare (salience 100))
-?f1<-(manual_id-word-cat ?id0 ?w ?cat)
-?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1)  ?w1&waka ?)
+?f1<-(man_id-word-cat ?id0 ?w ?cat)
+?f2<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1)  ?w1&waka ?)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
+(test (eq (member$ ?w (create$ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)) FALSE))
 =>
         (retract ?f1 ?f2)
         (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat ?w ?w1 - ?w  - 0 - ?id0 ?id1))
@@ -72,11 +74,11 @@
 ;;xqSya prakASa ke sWAna para hama, ilektroYna - puFja kA upayoga kara sakawe hEM.---Instead of visible light, we can use an electron beam.
 (defrule ke_[word]_meM
 (declare (salience 90))
-?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
+?f1<-(man_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
-?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ke ?)
-?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&rUpa|bAre|viRaya|AXAra|wOra|paxoM|sWAna ?)
-?f4<-(manual_id-word-cat ?id3&:(=(+ ?id0 3) ?id3) meM|para ?)
+?f2<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ke ?)
+?f3<-(man_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&rUpa|bAre|viRaya|AXAra|wOra|paxoM|sWAna ?)
+?f4<-(man_id-word-cat ?id3&:(=(+ ?id0 3) ?id3) meM|para ?)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 =>
@@ -87,11 +89,11 @@
 ;Added by Shirisha Manju
 (defrule kI_[word]_meM
 (declare (salience 90))
-?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
+?f1<-(man_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
-?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) kI ?)
-?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&wulanA ?)
-?f4<-(manual_id-word-cat ?id3&:(=(+ ?id0 3) ?id3) meM ?)
+?f2<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) kI ?)
+?f3<-(man_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&wulanA ?)
+?f4<-(man_id-word-cat ?id3&:(=(+ ?id0 3) ?id3) meM ?)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 =>
@@ -103,10 +105,10 @@
 ;Since the electromagnetic force is so much stronger than the gravitational force, it dominates all phenomena at atomic and molecular scales. -- cUfki vixyuwa cumbakIya bala guruwvAkarRaNa bala kI apekRA kahIM aXika prabala howA hE yaha ANvika waWA paramANvIya pEmAne kI saBI pariGatanAoM para CAyA rahawA hE
 (defrule kI_[word]
 (declare (salience 80))
-?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
+?f1<-(man_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
-?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) kI ?)
-?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&apekRA ?)
+?f2<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) kI ?)
+?f3<-(man_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&apekRA ?)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 =>
@@ -122,10 +124,10 @@
 ;The restoring muscular forces again come into play and bring the body to rest.----- >prawyAnayanI peSIya baloM ke kAryarawa hone [ke kAraNa] SarIra virAma avasWA meM A jAwI hE
 (defrule ke_[word]
 (declare (salience 80))
-?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
+?f1<-(man_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
-?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ke ?)
-?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna ?)
+?f2<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ke ?)
+?f3<-(man_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna ?)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 =>
@@ -138,10 +140,10 @@
 ;parikRepaNa kA kAraNa yaha hE ki kisI mAXyama kA apavarwanAfka viBinna warafgaxErGyoM  @PUNCT-OpenParenvarNoM @PUNCT-ClosedParen ke lie Binna - Binna howA hE
 (defrule word_[hyphen]_word
 (declare (salience 81))
-?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
+?f1<-(man_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
-?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) - SYM)
-?f3<-(manual_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w ?)
+?f2<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) - SYM)
+?f3<-(man_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w ?)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 (not (retract_manual_fact ?id2))
@@ -154,9 +156,9 @@
 ;yaxi Apa apanI BujAoM ko Pira SarIra ke pAsa le AyeM wo koNIya cAla Pira se baDZa jAwI hE -- If you bring back your arms closer to your body, the angular speed increases again. 
 (defrule single_vib
 (declare (salience 70))
-?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
+?f1<-(man_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
-?f2<-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle ?c&~VM)
+?f2<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle ?c&~VM)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 =>
@@ -174,23 +176,26 @@
 ;Man sen : awaH yA wo [cAla]  @PUNCT-OpenParen parimANa @PUNCT-ClosedParen [meM] parivarwana @PUNCT-Comma  xiSA meM parivarwana aWavA ina xonoM meM parivarwana se wvaraNa kA uxBava ho sakawA hE  @PUNCT-Dot
 (defrule single_vib1
 (declare (salience 70))
-?f1<-(manual_id-word-cat ?id0 $?noun ?cat)
-?f0<-(head_id-grp_ids ?h ?id0 $?d1)
+?f1<-(man_id-word-cat ?id0 $?noun ?cat)
+?f0<-(head_id-grp_ids ?h $?d ?id0 $?d1)
+;?f0<-(head_id-grp_ids ?h ?id0 $?d1)
 ?f4<-(manual_id-node-word-root-tam ?h ?c $?noun1 - $?root - $?vib1)
 (id-node-word-root ?id0 ? $? - $?root)
-(manual_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen SYM)
-(manual_id-word-cat ?id2 @PUNCT-ClosedParen SYM)
+(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen ?)
+(man_id-word-cat ?id2 @PUNCT-ClosedParen ?)
 (test (> ?id2 ?id1))
-?f3<-(manual_id-word-cat ?id3&:(=(+ ?id2 1) ?id3) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA ?)
-?f2<-(head_id-grp_ids ?h1 ?id3 $?d2)
+?f3<-(man_id-word-cat ?id3&:(=(+ ?id2 1) ?id3) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA ?)
+?f2<-(head_id-grp_ids ?h1 $?d2 ?id3 $?d3)
+;?f2<-(head_id-grp_ids ?h1  ?id3 $?d3)
 (not (retract_manual_fact ?id0))
 =>
 	(retract ?f1 ?f3 ?f0 ?f2 ?f4)
 	(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ?vib - ?id0 ?id3))
-	(assert (head_id-grp_ids ?h ?id0 $?d1 ?id3))
+	(assert (head_id-grp_ids ?h $?d ?id0 $?d1 $?d2 ?id3))
+;	(assert (head_id-grp_ids ?h ?id0 $?d1 ?id3))
  	(assert (manual_id-node-word-root-tam ?h ?c $?noun1 - $?root - $?vib1 ?vib))
-	(if (neq (length $?d2) 0) then
-		(assert (head_id-grp_ids ?h1 $?d2))
+	(if (neq (length $?d3) 0) then
+		(assert (head_id-grp_ids ?h1 $?d3))
 	)
 )
 ;----------------------------------------------------------------------------------------------------------------
@@ -200,14 +205,13 @@
 (defrule single_vib2
 (declare (salience 65))
 ?f0<-(manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ?vib - $?ids ?id)
-?f1<-(manual_id-word-cat ?id1&:(=(+ ?id 1) ?id1) ?vib1&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA ?)
+?f1<-(man_id-word-cat ?id1&:(=(+ ?id 1) ?id1) ?vib1&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|waka ?)
 =>
 	(retract ?f0 ?f1)
 	(if (eq ?vib 0) then
 		(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ?vib1 - $?ids ?id ?id1))
 	else
 		(bind ?n_vib (create$ ?vib ?vib1))
-;		(bind $?word (delete-member$ $?noun ?vib))
 		(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ?n_vib - $?ids ?id ?id1))
 	)
 )
@@ -219,8 +223,8 @@
 (declare (salience 65))
 ?f0<-(manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - $?vib - $?ids ?id)
 (not (id-node-word-root ?id $?))
-?f1<-(manual_id-word-cat ?id1&:(=(+ ?id 1) ?id1) - SYM)
-?f2<-(manual_id-word-cat ?id2&:(=(+ ?id 2) ?id2) ?w ?)
+?f1<-(man_id-word-cat ?id1&:(=(+ ?id 1) ?id1) - SYM)
+?f2<-(man_id-word-cat ?id2&:(=(+ ?id 2) ?id2) ?w ?)
 =>
         (retract ?f0 ?f1 ?f2)
         (bind $?n_vib (create$ $?vib ?w))
@@ -231,7 +235,7 @@
 (declare (salience 60))
 (manual_id-node-word-root-tam  ?m_h_id   VGF|VGNN|VGNF  $?mng - $?root - $?tam)
 (head_id-grp_ids ?m_h_id ?mid $?ids)
-(manual_id-word-cat ?mid $?word ?cat)
+(man_id-word-cat ?mid $?word ?cat)
 (not (lwg_done ?mid))
 (not (retract_manual_fact ?mid))
 =>
@@ -246,7 +250,7 @@
 ;She turned to face him. --- vaha usakA sAmanA karane ke lie mudI  @PUNCT-OpenParen GUmI @PUNCT-ClosedParen @PUNCT-Dot
 (defrule change_remaining_facts
 (declare (salience 55))
-(manual_id-word-cat ?mid $?word ?cat)
+(man_id-word-cat ?mid $?word ?cat)
 (id-node-word-root ?mid ? $?word1 - $?root)
 (not (retract_manual_fact ?mid))
 (test (eq (member$ $?word (create$ @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-Exclamation )) FALSE)) 
@@ -258,7 +262,7 @@
 ;Riot police beat back the crowds of demonstrators.---- praxarSanakAriyoM kI BIda ko pulisa ne [pICe] Xakela xiyA
 (defrule change_remaining_facts1
 (declare (salience 54))
-(manual_id-word-cat ?mid $?word ?cat)
+(man_id-word-cat ?mid $?word ?cat)
 (not (manual_id-cat-word-root-vib-grp_ids ? ? $? - $? - $? - $? ?mid $?))
 (not (retract_manual_fact ?mid))
 =>
@@ -283,13 +287,13 @@
 (defrule grouping_using_dic
 (declare (salience 50))
 (anu_id-manual_ids-sep-mng ? $?mids - $?mng)
-?f0<-(manual_id-word-cat ?mid ?w&~kara ?cat&~VIB)
+?f0<-(man_id-word-cat ?mid ?w&~kara&~ho ?cat&~VIB)
 (test (member$ ?mid $?mids))
-(not (manual_id-word-cat ?mid1&:(and (member$ ?mid1 $?mids) (> ?mid1 ?mid))  ?w1&~kara ?cat1&~VIB))
+(not (man_id-word-cat ?mid1&:(and (member$ ?mid1 $?mids) (> ?mid1 ?mid))  ?w1&~kara&~ho ?cat1&~VIB))
 (not (grp_head_id-grp_ids-mng ? - $? ?mid $? - $?))
 =>
         (retract ?f0)
-        (assert (manual_id-word-cat ?mid $?mng ?cat))
+        (assert (man_id-word-cat ?mid $?mng ?cat))
         (assert (grp_head_id-grp_ids-mng ?mid - $?mids - $?mng))
 )
 ;----------------------------------------------------------------------------------------------------------------

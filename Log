@@ -3965,7 +3965,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  49. Updated iit-bombay dic in goldendict.
  50. Updated Log file
 
- 30-11-12
+ 03-12-12
  ========
  1. Added a pattern to handle when 's becomes 'is' in chk_input_format.pl and commented the pattern '/' to per 
  2. In converting-dic-format.c, increased variable mng[1000] to mng[10000] as it fails to create firefox dictionary.
@@ -3985,8 +3985,17 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  8. manual_lwg.clp :
         Added    : single_vib3
         Modified : multi_word1 -- Added "waraha" to the list 
+	Modified "manual_id-word-cat" as "man_id-word-cat" 
  9. In mapping-symbols.lex, added a rule to handle '/' and also modified all the rules to store the original information accordingly.
- 10. In hindi_meaning.clp, removed '@' in printing PropN fact in test_for_PropN rule.
+ 10.  hindi_meaning.clp :
+        Added    : get_mng_from_phy_dic_with_same_cat , get_compound_mng_for_physics_domain,
+                   get_mng_from_phy_dic_with_diff_cat , get_mng_from_phy_dic_with_diff_cat1, rm_cmp_mng_if_head_is_verb
+
+        Modified : lwg_mng (added test condition) ,
+                   removed test condition for lwg in following rules :
+                           compare_wsd_and_db_MWE_word_mng , compare_wsd_and_db_MWE_root_mng
+                           wsd_cmp_phrase_mng_word_mng , wsd_cmp_phrase_mng_root_mng  and database_cmp_phrase_mng
+		   removed '@' in printing PropN fact in test_for_PropN rule.
  11. In sd_category.clp, added 'NNP_to_NN' rule to change the category from NNP to NN for words starting with 'SYMBOL-'.          and added test condition in 'NN_to_NNP' rule to avoid numbers converted into NNP category. Ex: 84kms 
  12. In replacing_canonical.lex, added rule to change 'UFcAI' to 'UzcAI' and 'kyofki' to 'kyozki'.
  13. In constituency_parse.l, added two new nodes(P_DOL and SYM_SLASH)
@@ -4004,6 +4013,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/alignment/dictionaries/restricted_eng_words.txt
         miscellaneous/SMT/alignment/dictionaries/restricted_hnd_words.txt
 	miscellaneous/SMT/alignment/dictionaries/provisional_word_dic.txt 
+        miscellaneous/SMT/alignment/dictionaries/hindi_multi_word.txt
  23. get_word_potential_facts.clp:
       Added : change_the_fact_name_if_two_words_pointing_to_same_slot , 
               change_the_fact_name_if_two_words_pointing_to_same_slot1 and 
@@ -4029,19 +4039,29 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	Added 	 : modify_JJ_as_VBN  rule
  32. parser_tree_modification_rules.clp:
   	Modified : rename_VP_for_To ( added 'have' and 'has' in the list and added Node category for S )
- 33. run_modules_std.bat : Loaded "E_constituents_info.dat" and "Node_category.dat" files in tam_id module
+ 33. run_modules_std.bat :
+		1. Loaded "E_constituents_info.dat" and "Node_category.dat" files in tam_id module
+		2. Added save-facts for phy dic facts in multi_word_expressions module
  34. Added "tam_id_for_en_from_constituents" rule in tam_id.clp
  35. WSD : Modified : beat.clp   build.clp   require.clp
  36. Added tokenizer option 'escapeForwardSlashAsterisk' to avoid escape character in front of slash & asterisk in following      files ::  run_penn-pcfg.sh, run_penn-factored.sh and run_multiple_parse_penn.sh
- 37. Update ClipsToAnu_browser_intfc.sh and run_align_browser.sh to handle SYMBOL-NAME in final html file.
+ 37. Updated ClipsToAnu_browser_intfc.sh and run_align_browser.sh to handle SYMBOL-NAME in final html file.
  38. Updated miscellaneous/SMT/alignment/add-suf-into-chunks.py file.
  39. Updated miscellaneous/SMT/MINION/alignment/README file
  40. Updated Stanford_parser_fails 
  41. Updated Parsers/stanford-parser/README
  42. Updated Anusaaraka_stanford-Factored.sh and Anusaaraka_berkeley.sh accordingly with Anusaaraka_stanford.sh
  43. Updated phy_align_verified_hnd and phy_align_verified_eng files.
- 44. Modified run_H_gen_minion.bat -- to generate "manual_ids.dat" in manual_lwg module
- 45. Updated miscellaneous/SMT/MINION/alignment/word_alignment.clp
+ 44. run_H_gen_minion.bat 
+		i) generated "manual_ids.dat"  file in manual_lwg module
+	       ii) Added (save-facts "manual_word_without_@.dat" local man_id-word-cat) in change_manual_id module
+              iii) Added (assert (default-cat)) in get_dbase_mng module
+               iv) Loaded "manual_word_without_@.dat" file instead of "manual_word.dat" in manual_lwg module
+                v) Loaded "manual_word_without_@.dat" file in word_alignment module
+               vi) Loaded "multi_word_expressions.dat" and "man_multi_word.dat" files in get_grp_info module
+ 45. Modified "manual_id-word-cat" as "man_id-word-cat" in the following rules in word_alignment.clp
+        previous_wrd_match_with_anu_using_hindi_wordnet,  previous_wrd_match_with_anu next_wrd_match_with_anu
+        combine_group1
  46. Updated "replace_S1" rule and added new rule "modify_head_wrd1" in Anu_clp_files/sd_lwg_rules.clp.
  47. miscellaneous/SMT/MINION/alignment/dic_compile.sh [Added code for removing default-iit-bombay-shabdanjali-dic.gdbm]
  48. Input for shallow_parser has been modified from wx to utf so the following files have been updated
@@ -4053,13 +4073,38 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  49. Added new file simplify_english.pl (to simplify the english sentence)
  50. Modified stdenglish.sh to add the above program.
  51. Modified chk_input_format.pl to remove modifying "the inviting of" as "inviting" , as it is handled in simplify_english.pl
- 52. Added "PP_rule_with_tam" rule in prepare_apertium_input.clp
- 53. Removed manual sentence processing from Anusaaraka_stanford_minion.sh and added in a new file miscellaneous/SMT/MINION/alignment/processing_manual_sentences.sh
- 54. Updated Anusaaraka_stanford.sh
- 55. Added comments in stdenglish.sh
- 56. Updated CLIPS/factmch.c as suggested in CLIPS Support forum. and noted this changes in Changes_done file.
- 57. Updated entry in iit-bombay dictionary for goldendict. 
- 58. Updated changes_in_databases
- 59. Modified sd_ver_output.
- 60. Updated sd_verified (488)
- 61. Updated Log
+ 52. Modified insert_period.lex to add space before ABBR
+ 53. Anu_clp_files/multi_word_expressions.clp
+        Modified :  chk_for_mwe (added phy_eng_multi_word_dic.gdbm to lookup)
+        Added    :  rm_repeated_mng
+        Modified deffunction to insert different fact name in case of physics dictionary
+ 54. Added "PP_rule_with_tam" rule in prepare_apertium_input.clp
+ 55. Added "rm_2nd_level_info_from_zero_level" rule in sd_pada.clp
+ 56. Asserted dummy fact "ids-phy_cmp_mng-head-cat-mng_typ-priority" in vibakthi.clp
+ 57. Added "phy_hnd_multi_word_dic" in Anu_data/canonical_form_dictionary/list-left
+ 58. Added phy_dictionary and phy_eng_multi_word_dic instead of Physics-dictionary in Anu_data/canonical_form_dictionary/list-right
+ 59. Added the following file names instead of Physics-dictionary in  Anu_data/canonical_form_dictionary/list_SMT
+       phy_dictionary, phy_eng_multi_word_dic and phy_hnd_multi_word_dic
+ 60. MINION/alignment/multi_word_expressions.clp :
+        Added    : modify_mng , get_match_with_anu_for_phy, chk_for_largest_match_with_phy
+                   and deffunction sort_grp
+        Modified : deffunction mwe_lookup - to assert new fact for physics
+                   chk_for_mwe and get_mng
+ 61. Added "rm_head_id_from_compound" rule in get_grp_info.clp
+ 62. change_manual_id.clp:
+        Added    : del_@_from_word, get_remaining_facts
+        Modified : change_id (added not condition)
+ 63. Modified "del_@PropN_in_aper_out" rule in get_anu_grp_mng.clp
+ 64. get_dbase_mng.clp:
+        Modified : chk_for_mwe and get_mng_from_all_dic
+        Added    : generate_dummy_cat , get_mng_from_phy_dic , get_mng_from_phy_dic1  and get_mng_from_phy_dic2
+ 65. Removed manual sentence processing from Anusaaraka_stanford_minion.sh and added in a new file miscellaneous/SMT/MINION/alignment/processing_manual_sentences.sh
+ 66. Updated bin/replace-abbrevations.sh
+ 67. Updated Anusaaraka_stanford.sh
+ 68. Added comments in stdenglish.sh
+ 69. Updated CLIPS/factmch.c as suggested in CLIPS Support forum. and noted this changes in Changes_done file.
+ 70. Updated entry in iit-bombay dictionary for goldendict. 
+ 71. Updated changes_in_databases
+ 72. Modified sd_ver_output and small_sent_ver_output_sd
+ 73. Updated sd_verified (488)
+ 74. Updated Log

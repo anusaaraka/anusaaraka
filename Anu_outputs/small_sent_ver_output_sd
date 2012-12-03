@@ -6,207 +6,207 @@ Calling Stanford parser
 Finding NER... 
 Hindi meaning using Stanford parser 1.1
 Test. 
-parIkRA .
+parIkRA.
 
 Hindi meaning using Stanford parser 2.1
 She is sleeping. 
-vaha so rahI hE .
+vaha so rahI hE.
 
 Hindi meaning using Stanford parser 2.2
 I am eating fruits. 
-mEM Pala KA rahA hUz .
+mEM Pala KA rahA hUz.
 
 Hindi meaning using Stanford parser 2.3
 He attacked the enemy. 
-usane Sawru para hamalA kiyA .
+usane Sawru para hamalA kiyA.
 
 Hindi meaning using Stanford parser 2.4
 What is your name? 
-ApakA nAma kyA hE ?
+ApakA nAma kyA hE?
 
 Hindi meaning using Stanford parser 2.5
 Rama married Sita. 
-Rama ne Sita se vivAha kiyA .
+PropN-rama-PropN ne PropN-sita-PropN se vivAha kiyA.
 
 Hindi meaning using Stanford parser 2.6
 He signed the cheque. 
-usane ceka para haswAkRara kiyA .
+usane ceka para haswAkRara kiyA.
 
 Hindi meaning using Stanford parser 2.7
 He marked these bottles. 
-usane ina bowaloM ko cihniwa kiyA .
+usane ina bowaloM ko cihniwa kiyA.
 
 Hindi meaning using Stanford parser 2.8
 Rama ate some sweets. 
-Rama ne kuCa miTAiyAz KAyIM/KAIM .
+PropN-rama-PropN ne kuCa miTAiyAz KAIM.
 
 Hindi meaning using Stanford parser 2.9
 What does he eat? 
-vaha kyA KAwA hE ?
+vaha kyA KAwA hE?
 
 Hindi meaning using Stanford parser 2.10
 Her heart beats fast. 
-usakA hqxaya weja XadakawA hE .
+usakA hqxaya weja XadakawA hE.
 
 Hindi meaning using Stanford parser 2.11
 I like running. 
-mEM xOdanA pasaMxa karawA hUz .
+mEM xOdanA pasanxa karawA hUz.
 
 Hindi meaning using Stanford parser 2.12
 The Moon is shining. 
-canxramA camaka rahA hE .
+canxramA camaka rahA hE.
 
 Hindi meaning using Stanford parser 2.13
 I have three brothers. 
-mere wIna BAI hEM .
+mere wIna BAI hEM.
 
 Hindi meaning using Stanford parser 2.14
 The baby is crying. 
-SiSU ro rahA hE .
+SiSU ro rahA hE.
 
 Hindi meaning using Stanford parser 2.15
 She is beating him. 
-vaha usako/use pIta rahI hE .
+vaha usako pIta rahI hE.
 
 Hindi meaning using Stanford parser 2.16
 Boys are eating fruits. 
-ladake Pala KA rahe hEM .
+ladake Pala KA rahe hEM.
 
 Hindi meaning using Stanford parser 2.17
 This is our book. 
-yaha hamArI puswaka hE .
+yaha hamArI puswaka hE.
 
 Hindi meaning using Stanford parser 2.18
 Her name is Sita. 
-usakA nAma Sita hE .
+usakA nAma PropN-sita-PropN hE.
 
 Hindi meaning using Stanford parser 2.19
 What did he eat? 
-usane kyA KAyA ?
+usane kyA KAyA?
 
 Hindi meaning using Stanford parser 2.20
 Jane is soon coming. 
-Jane SIGra A rahA hE .
+PropN-jane-PropN SIGra A rahA hE.
 
 Hindi meaning using Stanford parser 2.21
 They are good boys. 
-ve acCe ladake hEM .
+ve acCe ladake hEM.
 
 Hindi meaning using Stanford parser 2.22
 They have social prestige. 
-unakI sAmAjika prawiRTA hE .
+unakI sAmAjika prawiRTA hE.
 
 Hindi meaning using Stanford parser 2.23
 A million people attended. 
-xasa-lAKa loga upasWiwa huye/hue .
+xasa-lAKa loga upasWiwa hue.
 
 Hindi meaning using Stanford parser 2.24
 A few people attended. 
-kuCa loga upasWiwa huye/hue .
+kuCa loga upasWiwa hue.
 
 Hindi meaning using Stanford parser 2.25
 How many people died? 
-kiwane loga mara gaye ?
+kiwane loga mara gaye?
 
 Hindi meaning using Stanford parser 2.26
 How many dogs ran? 
-kiwane kuwwe xOde ?
+kiwane kuwwe xOde?
 
 Hindi meaning using Stanford parser 2.27
 She works very carefully. 
-vaha awyaMwa sAvaXAnI se kAma karawI hE .
+vaha awyanwa sAvaXAnI se kAma karawI hE.
 
 Hindi meaning using Stanford parser 2.28
 I will invite Rama. 
-mEM Rama ko AmaMwriwa karUzgA .
+mEM PropN-rama-PropN ko Amanwriwa karUzgA.
 
 Hindi meaning using Stanford parser 2.29
 These are children's books. 
-ye baccoM kI puswakeM hEM .
+ye baccoM kI puswakeM hEM.
 
 Hindi meaning using Stanford parser 2.30
 Sita is my daughter. 
-Sita merI betI hE .
+PropN-sita-PropN merI betI hE.
 
 Hindi meaning using Stanford parser 2.31
 I am doing fine. 
-mEM baDiyA kara rahA hUz .
+mEM baDiyA kara rahA hUz.
 
 Hindi meaning using Stanford parser 2.32
 It is going terribly. 
-yaha BayAnakawA se jA rahA hE .
+yaha BayAnakawA se jA rahA hE.
 
 Hindi meaning using Stanford parser 2.33
 It is going well. 
-yaha acCI waraha jA rahA hE .
+yaha acCI waraha jA rahA hE.
 
 Hindi meaning using Stanford parser 2.34
 Mary's shoes are red. 
-Mary ke jUwe lAla hEM .
+Mary ke jUwe lAla hEM.
 
 Hindi meaning using Stanford parser 2.35
 How can I participate? 
-mEM kEse BAga_le sakawA hUz ?
+mEM kEse BAga_le sakawA hUz?
 
 Hindi meaning using Stanford parser 2.36
 I have started working. 
-mEM kAma karanA Suru_kara cukA hUz .
+mEM kAma karanA Suru_kara cukA hUz.
 
 Hindi meaning using Stanford parser 2.37
 He lost his pen. 
-usane usakI kalama KoyI/KoI .
+usane usakI kalama KoI.
 
 Hindi meaning using Stanford parser 2.38
 I know some people. 
-mEM kuCa logoM ko jAnawA hUz .
+mEM kuCa logoM ko jAnawA hUz.
 
 Hindi meaning using Stanford parser 2.39
 The letter disturbed me. 
-pawra ne muJe/muJako pareSAna kiyA .
+pawra ne muJe pareSAna kiyA.
 
 Hindi meaning using Stanford parser 2.40
 I biked Johnson Creek. 
-mEMne Johnson Creek ko bAika_para GumAyA .
+mEMne PropN-johnson-PropN PropN-creek-PropN ko bAika_para GumAyA.
 
 Hindi meaning using Stanford parser 2.41
 That reeks of favoritism. 
-usase pakRapAwa kI bU AwI hE .
+usase pakRapAwa kI bU AwI hE.
 
 Hindi meaning using Stanford parser 2.42
 This sentence parses badly. 
-isa vAkya kA bahuwa KarAba SAbxaboXa howA hE .
+isa vAkya kA bahuwa KarAba SAbxaboXa howA hE.
 
 Hindi meaning using Stanford parser 2.43
 She looks beautiful. 
-vaha sunxara xiKawI hE .
+vaha sunxara xiKawI hE.
 
 Hindi meaning using Stanford parser 2.44
 Kennedy has been killed. 
-Kennedy mArA gayA hE .
+PropN-kennedy-PropN mArA gayA hE.
 
 Hindi meaning using Stanford parser 2.45
 How much more spilled? 
-kiwanA aXika CalakA ?
+kiwanA aXika CalakA?
 
 Hindi meaning using Stanford parser 2.46
 She began singing. 
-usane gAnA gAnA AramBa kiyA .
+usane gAnA gAnA AramBa kiyA.
 
 Hindi meaning using Stanford parser 2.47
 Do not waste electricity. 
-vixyuwa Sakwi vyarWa_meM_barabAxa_mawa kariye/kIjiye .
+vixyuwa Sakwi vyarWa_meM_barabAxa_mawa kariye/kIjiye.
 
 Hindi meaning using Stanford parser 2.48
 The accord expired yesterday. 
-anubanXa kala samApwa huA .
+anubanXa kala samApwa huA.
 
 Hindi meaning using Stanford parser 2.49
 She is fat. 
-vaha motI hE .
+vaha motI hE.
 
 Hindi meaning using Stanford parser 2.50
 Yes, he did. 
-hAz, usane kiyA .
+hAz, usane kiyA.
 
 Hindi meaning using Stanford parser 2.51
 How are you? 
@@ -218,35 +218,35 @@ ApakI_kyA_umra_hE ?
 
 Hindi meaning using Stanford parser 2.53
 Excuse me. 
-muJe/muJako kRamA_kara xIjiye .
+muJe/muJako kRamA_kara xIjiye.
 
 Hindi meaning using Stanford parser 2.54
 Where is Railway Station? 
-Railway Station kahAz hE ?
+Railway Station kahAz hE?
 
 Hindi meaning using Stanford parser 2.55
 I love birds. 
-mEM cidiyoM ko pasanxa karawA hUz .
+mEM cidiyoM ko pasanxa karawA hUz.
 
 Hindi meaning using Stanford parser 2.56
 I like Bengali sweets. 
-mEM Bengali miTAiyoM ko pasaMxa karawA hUz .
+mEM PropN-bengali-PropN miTAiyoM ko pasanxa karawA hUz.
 
 Hindi meaning using Stanford parser 2.57
 That building is tall. 
-vaha imArawa laMbI hE .
+vaha imArawa laMbI hE.
 
 Hindi meaning using Stanford parser 2.58
 Where do you live? 
-Apa kahAz rahawe hEM ?
+Apa kahAz rahawe hEM?
 
 Hindi meaning using Stanford parser 2.59
 Wish you happy new year. 
-Apako naye varRa kI SuBakAmanAez .
+Apako naye varRa kI SuBakAmanAez.
 
 Hindi meaning using Stanford parser 2.60
 Congratulations on your marriage. 
-ApakI SAxI para baXAiyAz .
+ApakI SAxI para baXAiyAz.
 
 Hindi meaning using Stanford parser 2.61
 It is really pretty. 
@@ -254,18 +254,19 @@ yaha_saca_meM_suMxara_hE .
 
 Hindi meaning using Stanford parser 2.62
 He can hardly walk. 
-vaha muSkila se cala sakawA hE .
+vaha muSkila se cala sakawA hE.
 
 Hindi meaning using Stanford parser 2.63
 She helped me. 
-usane merI sahAyawA kI .
+usane merI sahAyawA kI.
 
 Hindi meaning using Stanford parser 2.64
 This has no meaning. 
-isakA koI_arWa nahIM hE .
+isakA koI_arWa nahIM hE.
 
 Hindi meaning using Stanford parser 2.65
 Let us play. 
-caliye hama KeleM .
+caliye hama KeleM.
 
+Calling Transliteration
 Calling Interface related programs

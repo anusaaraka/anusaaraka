@@ -20757,8 +20757,6 @@ movie_camera	calaciwra_kEmarA#calaciwra_kEmarA#noun#2#RM
 movie_star	Pilma_siwarA#Pilma_siwarA#noun#2#RM
 movie_theater_chain	sinemA_Wiyetara_SrqMKalA#sinemA_Wiyetara_SrqMKalA#noun#3#RM
 moving_average	cala_Osawa#cala_Osawa#noun#2#RM
-#moving_in	aXikAra_meM_karane_kI_kriyA#aXikAra_meM_karane_kI_kriyA#noun#2#RM
-#The ball is moving in negative y direction.
 moving_picture	cala_ciwra#cala_ciwra#noun#2#RM
 moving_school	cala_vixyAla#cala_vixyAla#noun#2#RM
 moving_staircase	calawI_sIDZI#calawI_sIDZI#noun#2#RM
@@ -33645,8 +33643,11 @@ able_to_walk	cala_pA#cala_pA#verb#3#RM
 able_to_handle	hala_karane_meM_sakRama#hala_karane_meM_sakRama#verb#3#WM
 the_force_of_friction	GarRaNa_bala#GarRaNa_bala#noun#4#WM
 since_time_immemorial	anAxi_kAla_se_hI#anAxi_kAla_se_hI#noun#2#WM
-at_the_other_end	isake viparIwa#isake viparIwa#noun#4#WM
+at_the_other_end	isake_viparIwa#isake_viparIwa#noun#4#WM
 some_of_these	inameM_se_kuCa#inameM_se_kuCa#determiner#1#WM
 reaction_force	aBilamba_bala#aBilamba_bala#noun#2#RM
 electron_beam	ilektroYna_puFja#ilektroYna_puFja#noun#2#RM
 a_way	isa_prakAra#isa_prakAra#noun#2#RM
+frame_of_reference	nirxeSa_wanwra#nirxeSa_wanwra#noun#1#RM 
+note_that	XyAna_xIjie_ki#XyAna_xIjie_ki#verb#1#WM
+is_said_to_be	kaha_jAwA_hE#kaha_jAwA_hE#verb#2#RM		

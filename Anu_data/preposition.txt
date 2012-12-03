@@ -80,3 +80,5 @@ that_of	1
 where_as	1
 with_a_view_to	1
 with_respect_to	1
+into_and_out_of	1
+in_contact_with	1

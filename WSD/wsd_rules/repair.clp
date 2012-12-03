@@ -22,9 +22,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id marammawa_kara))
+(assert (id-wsd_root_mng ?id kA_marammawa_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  repair.clp 	repair1   "  ?id "  marammawa_kara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  repair.clp 	repair1   "  ?id "  kA_marammawa_kara )" crlf))
 )
 
 ;"repair","V","1.marammawa_karanA[vApasa_jA]"

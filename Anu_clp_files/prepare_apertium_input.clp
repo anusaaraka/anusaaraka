@@ -944,7 +944,7 @@
   ;What causes motion described in this chapter and the next chapter forms the subject matter of Chapter 5.
   (defrule PP_rule_with_tam
   (declare (salience 460))
-  (viSeRya-kqxanwa_viSeRaNa  ?vi ?kq_id)
+  (prep_id-relation-anu_ids ? viSeRya-kqxanwa_viSeRaNa  ?vi ?kq_id)
   ?f0<-(id-HM-source ?kq_id ?h_word ?)
   (pada_info (group_head_id ?kq_id)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(group_ids $?ids)(H_tam ?tam))
   (test (neq ?tam 0))

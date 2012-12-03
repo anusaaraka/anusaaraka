@@ -114,7 +114,6 @@
         (printout ?*DBUG* "(Rule_Name-ids  insert_wo1 (hindi_id_order  "(implode$ (create$ $?pre $?ids wo ?that_id $?post)) ")" crlf)
  )
  ;====================================  id movement rules ===============================================================
- ;------------------------------------------------------------------------------------------------------------------
  ; I finally figured out why this program is so slow .
  ; Modified by Shirisha Manju (09-11-11) Suggested by Sukhada -- instead of moving wh word move the whole pada
  ; What colour is your shirt? What did you eat? O/P:  you What eat.  What did you say? O/P: you What say? 

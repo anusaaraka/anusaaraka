@@ -36,6 +36,7 @@
  (assert (id-word))
  (assert (root-verbchunk-tam-chunkids))
  (assert (conj_head-left_head-right_head))
+ (assert (ids-phy_cmp_mng-head-cat-mng_typ-priority)) 
  )
 
 

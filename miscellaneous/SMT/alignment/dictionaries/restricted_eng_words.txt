@@ -1,4 +1,4 @@
-the	vaha/isa/usa/vahI/isakA/uwanA/jiwanA/apanA/yaha
+the	vaha/isa/usa/vahI/isakA/uwanA/jiwanA/apanA/yaha/apanI
 a	eka/koI/prawi/kisI/eka_EsI
 an	eka/koI/prawi/kisI/eka_EsI
 that	jo/isa/yaha/vaha/usa/ki/jinheM
@@ -11,7 +11,7 @@ too	BI
 even	BI/Ora BI/TIka/SAnwa/sannwuliwa/samawala/samAna/sama/eka_sA/cOrasa/kevala
 which	kina/jo/jise/jinako/jisake/jinase/jisameM
 and	Ora/evaM/waWA/va
-is	howA_hE/hE/howI_hE/ho/howA_hEM
+is	howA_hE/hE/howI_hE/ho/howA_hEM/howe_hEM
 was	WA/WI/We
 were	hEM/WA
 are	hEM/howe_hEM/howA_hE
@@ -21,6 +21,6 @@ he	usane/unhoMne/vaha
 she	usane/vaha
 his	usakI/apane/usake
 we	hama/mEM/hameM/hamArA/hamane/hame
-you	Apa/wumheM/Apako/ApakA/Apake
+you	Apa/wumheM/Apako/ApakA/Apake/Apane
 i	mEM/muje/mEMne
 one	eka	

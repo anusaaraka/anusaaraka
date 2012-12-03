@@ -1,5 +1,5 @@
 ##Added by Roja (04-05-12)
-##Physics Compound Dictionary .
+##Physics Compound and single word Dictionary .
 ##Extracted from 'Class11_Physics2_Glossary_NCERT_TextBook_HindiEdition.pdf'
 #physics_word	Hindi_word_in_wx
 ############################################################################

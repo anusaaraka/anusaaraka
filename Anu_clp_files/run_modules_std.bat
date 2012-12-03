@@ -337,7 +337,7 @@
  (assert (index 1))
  (assert (English-list))
  (run)
- (save-facts "multi_word_expressions.dat" local ids-cmp_mng-head-cat-mng_typ-priority)
+ (save-facts "multi_word_expressions.dat" local ids-cmp_mng-head-cat-mng_typ-priority ids-phy_cmp_mng-head-cat-mng_typ-priority)
  (clear)
  ;-----------------------------------------------------------------------
  ; Generate hindi meaning for every english word (priority -> compl.sen, compound,wsd,default etc..)

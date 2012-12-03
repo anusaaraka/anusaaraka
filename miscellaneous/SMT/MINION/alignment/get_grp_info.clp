@@ -60,6 +60,31 @@
         (assert (grp_ids-head_ids-var_ids $?g_ids - $?h_ids - $?vars ))
 )
 ;------------------------------------------------------------------------------------------------------------
+;The choice of a set of axes in a frame of reference depends upon the situation.
+;(ids-phy_cmp_mng-head-cat-mng_typ-priority 10 11 12 nirxeSa_wanwra 1 noun RM 1) -- frame of reference
+;here 10 and 12 are heads and the meaning head is 10 . so rm 12 from the head list
+(defrule rm_head_id_from_compound
+(declare (salience 1350))
+?f0<-(grp_ids-head_ids-var_ids $?g_ids - $?h_ids - $?vars)
+(or (and (ids-phy_cmp_mng-eng_mng $? ?mng ?)(ids-phy_cmp_mng-head-cat-mng_typ-priority $?ids ?mng ?head ? ? ?))(and (ids-cmp_mng-eng_mng $? ?mng ?)(ids-cmp_mng-head-cat-mng_typ-priority $?ids ?mng ?head ? ? ?)))
+(test (member$ (nth$ ?head $?ids) $?h_ids))
+(not (modified_head ?head))
+=>
+	(bind ?h (nth$ ?head $?ids))
+	(loop-for-count (?i 1 (length $?ids))
+		(bind ?id (nth$ ?i $?ids))
+		(if (neq ?id ?h) then
+			(if (neq (member$ ?id $?h_ids) "FALSE") then
+				(retract ?f0)
+				(bind $?h_ids (delete-member$ $?h_ids ?id))
+				(bind $?g_ids (delete-member$ $?g_ids ?id))
+				(assert (grp_ids-head_ids-var_ids $?g_ids - $?h_ids - $?vars))
+				(assert (modified_head ?head))
+			)
+		)	
+	)
+)
+;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (18-8-12)
 (defrule get_var_ids_for_large_grp_head_ids
 (declare (salience 1300))

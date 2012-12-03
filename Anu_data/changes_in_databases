@@ -493,6 +493,7 @@ Modified :
   8.	<e lm="bala"><i>bala</i><par n="Gar/a__n"/></e>
 				as
 	<e lm="bala"><i>bal</i><par n="Gar/a__n"/></e>		(Modified by Roja(08-08-12))
+  9.    In k/ara__v paradigm modified "karwe"  as "karawe"      (Modified by Shirisha Manju Suggested by Sukhada(30-11-12))
 
  Removed : 
 	  1.  Removed the following parsarg paradigms and its related patterns
@@ -528,6 +529,8 @@ Modified :
 	<e lm="A.D."><i>A.D.</i><par n="Linux__np"/></e>	(	"	"	)
 	<e lm="a.k.a"><i>a.k.a</i><par n="Linux__np"/></e>	(	"	"	)
 	<e lm="U.S.A"><i>U.S.A</i><par n="Barcelona__np"/></e>	(	"	"	)
+	<e lm="redraw"><i>redr</i><par n="dr/aw__vblex"/></e>   (Added by Manju Suggested by Chaitanya Sir (22-11-12))
+	<e lm="redrawn"><i>redrawn</i><par n="long/__adj"/></e> (       "          "    )
 
 Modified:
         <e lm="belonging"><i>belonging</i><par n="house__n"/></e>   as    <e lm="belongings"><i>belongings</i><par n="personnel__n"/></e>   (Suggested by Meena ji 12-05-11)
@@ -545,6 +548,9 @@ Modified:
  8. default-iit-bombay-shabdanjali-dic.txt (Added by Roja 31-01-12 . Suggested by Chaitanya Sir)
  9. preposition.txt (Added by Manju 24-02-12.  Suggested by Chaitanya Sir)
 10. Physics-dictionary  (Added by Roja 04-05-12. Suggested by Chaitanya Sir)
+     This file is splitted into two files
+     i. phy_dictionary.txt   and   ii. phy_eng_multi_word_dic.txt
+     
 
  Changes in ol_parser_unused_words.txt
  =====================================
@@ -692,6 +698,7 @@ Modified:
 		U.S._noun	yU._esa.	to	U.S._noun       yU.esa.
 	38.Modified smell_noun      sUzGanA/ganxa/bAsa to	sUzGanA/ganXa/bAsa (Suggested by Chaitanya Sir 05-10-12)
 	39.Modified unit_noun	ikAI/yunita/viBAga/tukadI/mAtraka/KaNda/IkAI/ekaka  to unit_noun       ikAI/yunita/viBAga/tukadI/mAwraka/KaNda/IkAI/ekaka [mAtraka-->mAwraka] (Modified by Mahalaxmi.(31-10-12))
+	40. Modified real-life_adjective     vAswavika    as  real-life_adjective     vAswavika_jIvana  (Suggested by Chaitanya Sir 23-11-12) 
 			
 Removed::
 -------
@@ -706,33 +713,19 @@ Removed::
 	as_before 	---	Suggested by Rajini (25-02-12)
 	in_terms_of     ---	Suggested by Chaitanya Sir (25-05-12) 
 	in_contrast_to  ---     Suggested by Sukhada
-	as_far_as	---	Added below entries upto with_respect_to from Wikepedia 
+	as_far_as	---	Added below entries from Wikepedia 
                                 (As Suggested by Chaitanya Sir (30-10-12))
-	as_long_as
-	as_of
-	as_opposed_to
-	as_regards
-	as_soon_as
-	back_to
-	by_virtue_of
-	far_from 
-	for_the_sake_of
-	in_accordance_with
-	in_order_to
-	in_place_of
-	in_point_of
-	inside_of
-	in_to
-	left_of
-	on_to
-	out_from 
-	pursuant_to
-	right_of 
-	subsequent_to
-	that_of
-	where_as 
-	with_a_view_to
-	with_respect_to
+		as_long_as    	as_of    		as_opposed_to
+		as_regards 	as_soon_as		back_to
+		by_virtue_of	far_from 		for_the_sake_of	
+		in_order_to	in_accordance_with	in_place_of
+		in_point_of	inside_of		in_to
+		left_of		on_to			out_from
+		pursuant_to	right_of 		subsequent_to
+		that_of		where_as 		with_a_view_to	
+		with_respect_to
+	into_and_out_of --- 	Suggested by Chaitanya Sir (22-11-12)
+	in_contact_with	---	Suggested by Sukhada
 
 -------------------------- compound_phrase.txt -----------------------------------
  Based on the type of the phrase, compound_phrase.txt file has been splitted in to four different files,(Suggested by Chaitanya ji 23-04-12)
@@ -748,39 +741,46 @@ Removed::
                     [previously it was present in multi_word_expressions.txt as "wall_street     galI[_banxa_sadaka]#galI[_banxa_sadaka]#noun#2#RM" which is wrong so removed made entry in proper_noun-common_noun_compounds.txt as above, Suggested by Chaitanya ji and Dipti Madam. 23-04-12]
     
 
-    multi_word_expressions.txt
-    ==========================
+ multi_word_expressions.txt
+ ==========================
     Removed  :: 
-    wall_street     galI[_banxa_sadaka]#galI[_banxa_sadaka]#noun#2#RM
-                    [Suggested by Chaitanya ji and Dipti Madam. 23-04-12]
-    Commented ::
-    #moving_in      aXikAra_meM_karane_kI_kriyA#aXikAra_meM_karane_kI_kriyA#noun#2#RM
-                    #The ball is moving in negative y direction. (Suggested by Sukhada) 
+ 	wall_street     galI[_banxa_sadaka]#galI[_banxa_sadaka]#noun#2#RM
+        	            [Suggested by Chaitanya ji and Dipti Madam. 23-04-12]
+    	moving_in   	aXikAra_meM_karane_kI_kriyA#aXikAra_meM_karane_kI_kriyA#noun#2#RM
+                    	#The ball is moving in negative y direction. (Suggested by Sukhada) 
 
     Modified ::
-    information_system --- sUcanA_praprAlI  ==> sUcanA_praNAlI (Suggested by Chaitanya ji(20-17-12))
-    curriculum_vitae   --- CV#CV#noun#2#RM  ==> @CV#@CV#noun#2#RM (By Roja (15-11-12))
-    blood_vessels      --- rakwa_vAhikA#rakwa_vAhikA#noun#2 #RM => rakwa_vAhikA#rakwa_vAhikA#noun#2#RM (By Roja (30-11-12))
+    	information_system --- sUcanA_praprAlI  ==> sUcanA_praNAlI (Suggested by Chaitanya ji(20-17-12))
+    	curriculum_vitae   --- CV#CV#noun#2#RM  ==> @CV#@CV#noun#2#RM (Added by Roja (15-11-12))
+     	blood_vessels      --- rakwa_vAhikA#rakwa_vAhikA#noun#2 #RM => rakwa_vAhikA#rakwa_vAhikA#noun#2#RM (By Roja (30-11-12))
 
     Added ::
-    straight_line   sarala_reKA#sarala_reKA#noun#2#RM	(Suggested by Chaitanya Sir 05-09-12)
-    path_length     paWa_lambAI#paWa_lambAI#noun#2#WM	(Suggested by Chaitanya Sir 05-09-12)
-    able_to_walk    cala_pA#cala_pA#verb#3#RM	        (Suggested by Chaitanya Sir 09-10-12)
-    able_to_handle  hala_karane_meM_sakRama#hala_karane_meM_sakRama#verb#3#WM (Suggested by Chaitanya Sir 09-10-12)
-    the_force_of_friction   GarRaNa_bala#GarRaNa_bala#noun#4#WM  (Suggested by Sukhada 13-10-12)
-    since_time_immemorial   anAxi_kAla_se_hI#anAxi_kAla_se_hI#noun#2#W (Suggested by Chaitanya Sir 18-10-12)
-    at_the_other_end        isake viparIwa#isake viparIwa#noun#4#WM    (Suggested by Sukhada 20-10-12)
-    some_of_these   inameM_se_kuCa#inameM_se_kuCa#determiner#1#WM      (         "                   )
-    reaction_force      aBilamba_bala#aBilamba_bala#noun#2#RM
-    electron_beam       ilektroYna_puFja#ilektroYna_puFja#noun#2#RM
-    a_way               isa_prakAra#isa_prakAra#noun#2#RM
+    	straight_line   sarala_reKA#sarala_reKA#noun#2#RM	(Suggested by Chaitanya Sir 05-09-12)
+    	path_length     paWa_lambAI#paWa_lambAI#noun#2#WM	(Suggested by Chaitanya Sir 05-09-12)
+    	able_to_walk    cala_pA#cala_pA#verb#3#RM	        (Suggested by Chaitanya Sir 09-10-12)
+    	able_to_handle  hala_karane_meM_sakRama#hala_karane_meM_sakRama#verb#3#WM (Suggested by Chaitanya Sir 09-10-12)
+    	the_force_of_friction   GarRaNa_bala#GarRaNa_bala#noun#4#WM  (Suggested by Sukhada 13-10-12)
+    	since_time_immemorial   anAxi_kAla_se_hI#anAxi_kAla_se_hI#noun#2#W (Suggested by Chaitanya Sir 18-10-12)
+    	at_the_other_end        isake_viparIwa#isake_viparIwa#noun#4#WM    (Suggested by Sukhada 20-10-12)
+    	some_of_these   inameM_se_kuCa#inameM_se_kuCa#determiner#1#WM      (         "                   )
+    	reaction_force      aBilamba_bala#aBilamba_bala#noun#2#RM
+    	electron_beam       ilektroYna_puFja#ilektroYna_puFja#noun#2#RM
+    	a_way               isa_prakAra#isa_prakAra#noun#2#RM
 
- changes in Physics-dictionary.txt 
- =================================
- Modified :
-	Rearrangement   punavryavasWA  as   punarvyavasWA  (Suggested by Chaitanya Sir (08-08-12))
+ changes in phy_dictionary.txt
+ =============================
  Added :
 	nonuniform	asamAna
+	position-time_Noun      sWiwi_samaya (Added by Manju (19-11-12))
+ Modified :
+        rearrangement_Noun   punavryavasWA  as   punarvyavasWA  (Suggested by Chaitanya Sir (08-08-12))
+        modified "Xx" as "xX" in the following words 
+                   SuxXa_gawika, SuxXa_gawikI, prasara_koNa_xEGryavqxXi, ruxXoRma, pariSuxXawA and saMbaxXa
+ changes in phy_eng_multi_word_dic.txt
+ =====================================
+  Modified :
+		frame_of_reference      nirxeSa-waMwra#nirxeSa-waMwra#noun#1#RM as nirxeSa_waMwra#nirxeSa_waMwra#noun#1#RM
+			
 
  changes in hindi_multi_word.txt
  ================================

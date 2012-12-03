@@ -6,16 +6,16 @@
 
 
  (deffunction remove_character(?char ?str ?replace_char)
-                        (bind ?new_str "")
-                        (bind ?index (str-index ?char ?str))
-                        (if (neq ?index FALSE) then
-                        (while (neq ?index FALSE)
-                        (bind ?new_str (str-cat ?new_str (sub-string 1 (- ?index 1) ?str) ?replace_char))
+ 	(bind ?new_str "")
+        (bind ?index (str-index ?char ?str))
+        (if (neq ?index FALSE) then
+        	(while (neq ?index FALSE)
+                  	(bind ?new_str (str-cat ?new_str (sub-string 1 (- ?index 1) ?str) ?replace_char))
                         (bind ?str (sub-string (+ ?index 1) (length ?str) ?str))
                         (bind ?index (str-index ?char ?str))
-                        )
-                        )
-                (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
+                 )
+        )
+        (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
 )
 
  ;-------------------------------------------------------------------------------------------------
@@ -26,8 +26,9 @@
  =>
         (retract ?f0)
         (bind ?mng (implode$ (create$ ?mng)))
-        (bind ?mng (string-to-field (sub-string 11 (- (length ?mng) 8) ?mng))) ;Ex: \@PropN-\@newton-\@PropN
-	(printout t ?mng crlf)
+        (bind ?mng (string-to-field (sub-string 9 (- (length ?mng) 6) ?mng))) ;Ex: \@PropN-newton-PropN
+        (bind ?mng (string-to-field (str-cat "@" (upcase (sub-string 1 1 ?mng)) (sub-string 2 (length ?mng) ?mng)))) ;Ex:Newton
+;        (bind ?mng (string-to-field (sub-string 11 (- (length ?mng) 8) ?mng))) ;Ex: \@PropN-\@newton-\@PropN
         (assert (id-Apertium_output ?id ?mng $?w))
  )
  ;-------------------------------------------------------------------------------------------------

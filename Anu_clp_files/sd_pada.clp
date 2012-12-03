@@ -511,6 +511,17 @@
 	(assert (id-grp_ids ?g_h ?id1))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
+ (defrule rm_2nd_level_info_from_zero_level
+ (declare (salience 840))
+ (get_pada)
+ ?f0<-(id-grp_ids $?ids ?id)
+ (test (neq (str-index "." (implode$ (create$ ?id))) FALSE))
+ (test (neq (string-to-field (sub-string (+ (str-index "." (implode$ (create$ ?id))) 1) (length (implode$ (create$ ?id))) (implode$ (create$ ?id)))) 0))
+ =>
+	(retract ?f0)
+	(assert (id-grp_ids $?ids))
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
  (defrule replace_daut1
  (declare (salience 800))
  (get_pada)

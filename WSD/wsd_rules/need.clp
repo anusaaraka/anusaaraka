@@ -85,8 +85,13 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id jarUrawa_ho))
+(assert (kriyA_id-object_viBakwi ?id kI))
+(assert (kriyA_id-subject_viBakwi ?id ko))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  need.clp 	need4   "  ?id "  jarUrawa_ho )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  need.clp      need4   "  ?id " kI )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  need.clp      need4   "  ?id " ko )" crlf)
+
 )
 
 ;"need","VTI","1.jarUrawa_honA"

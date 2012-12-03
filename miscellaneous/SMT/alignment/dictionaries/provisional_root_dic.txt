@@ -94,3 +94,4 @@ establish	prawipAxiwa_kara
 as	nimna_prakAra
 look	xiKalAI_xe
 involve	nihiwa_ho
+specify	nirXAraNa
