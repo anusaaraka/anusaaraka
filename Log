@@ -4001,7 +4001,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  13. In constituency_parse.l, added two new nodes(P_DOL and SYM_SLASH)
  14. In hnd_translation.pl, deleted the code to add '@' in English hyphenated words and English abbreviated words.
  15. Instead handled above cases in 'add-@_in-hindi_sentence.py' prog.
- 16. Added code to run 'add-@_in-hindi_sentence.py' prog in run_sentence_stanford.sh and run_sentence_stanford_minion.sh
+ 16. Added code to run 'add-@_in-hindi_sentence.py' prog in following file ::
+	run_sentence_stanford.sh	run_sentence_stanford_minion.sh		run_sentence_link.sh	
+	run_sentence_ol.sh		run_sentence_stanford_SMT.sh	
  17. In mapping-punctuations.lex, added rules to handle patterns like \(:[ ]\'\) , \(\$[ ]Rs\)  and  slash(/) 
  18. Removed mapping of PUNCT-EqualTo and PUNCT-HyphenHyphen in replace-abbrevations.sh and also added '[@]' for pattern starting with PUNCT.
  19. Modified Browser/sent.pl to split html files in server.
@@ -4093,21 +4095,24 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Modified : deffunction mwe_lookup - to assert new fact for physics
                    chk_for_mwe and get_mng
  61. Added "rm_head_id_from_compound" rule in get_grp_info.clp
- 62. change_manual_id.clp:
+ 62. Loaded domain.dat in multi_word_expressions module in following bat files:
+        run_modules_link.bat    run_modules_std.bat     run_modules_ol.bat
+ 63. Added chk_for_mwe_for_domain_specific rule in multi_word_expressions.clp to load domain specific gdbm.
+ 64. change_manual_id.clp:
         Added    : del_@_from_word, get_remaining_facts
         Modified : change_id (added not condition)
- 63. Modified "del_@PropN_in_aper_out" rule in get_anu_grp_mng.clp
- 64. get_dbase_mng.clp:
+ 65. Modified "del_@PropN_in_aper_out" rule in get_anu_grp_mng.clp
+ 66. get_dbase_mng.clp:
         Modified : chk_for_mwe and get_mng_from_all_dic
         Added    : generate_dummy_cat , get_mng_from_phy_dic , get_mng_from_phy_dic1  and get_mng_from_phy_dic2
- 65. Removed manual sentence processing from Anusaaraka_stanford_minion.sh and added in a new file miscellaneous/SMT/MINION/alignment/processing_manual_sentences.sh
- 66. Updated bin/replace-abbrevations.sh
- 67. Updated Anusaaraka_stanford.sh
- 68. Added comments in stdenglish.sh
- 69. Added phy_align_verified_out phy_align_verified_eng_align.html
- 70. Updated CLIPS/factmch.c as suggested in CLIPS Support forum. and noted this changes in Changes_done file.
- 71. Updated entry in iit-bombay dictionary for goldendict. 
- 72. Updated changes_in_databases
- 73. Modified sd_ver_output and small_sent_ver_output_sd
- 74. Updated sd_verified (488)
- 75. Updated Log
+ 67. Removed manual sentence processing from Anusaaraka_stanford_minion.sh and added in a new file miscellaneous/SMT/MINION/alignment/processing_manual_sentences.sh
+ 68. Updated bin/replace-abbrevations.sh
+ 69. Updated Anusaaraka_stanford.sh
+ 70. Added comments in stdenglish.sh
+ 71. Added phy_align_verified_out phy_align_verified_eng_align.html
+ 72. Updated CLIPS/factmch.c as suggested in CLIPS Support forum. and noted this changes in Changes_done file.
+ 73. Updated entry in iit-bombay dictionary for goldendict. 
+ 74. Updated changes_in_databases
+ 75. Modified sd_ver_output and small_sent_ver_output_sd
+ 76. Updated sd_verified (488)
+ 77. Updated Log

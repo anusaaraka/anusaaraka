@@ -44,6 +44,7 @@
 
  sh $HOME_anu_test/bin/abbr.sh
 
+ python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  hindi_sentence.dat hindi_sentence_tmp.dat
  cp hindi_sentence1.dat  hindi_sentence.dat
 
 # cat hin_eng_sent.dat

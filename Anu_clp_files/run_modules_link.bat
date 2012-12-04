@@ -2,6 +2,7 @@
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/multi_word_expressions.bclp"))
  (bload ?*path*)
  (load-facts "original_word.dat")
+ (load-facts "domain.dat")
  (assert (index 1))
  (assert (English-list))
  (run)

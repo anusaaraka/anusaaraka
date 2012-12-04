@@ -18,9 +18,8 @@
 
 sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id_Apertium_output.dat
 
-
  cd $MYPATH/$1_tmp/$2
- cp hindi_id_order.dat hindi_id_order_tmp1.dat #As puctuations are not handled in link parser we are temporarily copying hindi_id_order.dat to hindi_id_order_tmp1.dat as this file is later used for html file generation.
+ cp hindi_id_order.dat hindi_id_order_tmp1.dat #As punctuations are not handled in link parser we are temporarily copying hindi_id_order.dat to hindi_id_order_tmp1.dat as this file is later used for html file generation.
  cp $MYPATH/$1_tmp/underscore_hyphen_replace_info.txt  $MYPATH/$1_tmp/$2/underscore_hyphen_replace_info.dat
  myclips -f $HOME_anu_test/Anu_clp_files/run_H_gen_sen.bat >> $1.error
 
@@ -36,10 +35,11 @@ sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id
 
  sh $HOME_anu_test/bin/abbr.sh  
 
+ python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  hindi_sentence.dat hindi_sentence_tmp.dat
  cp hindi_sentence1.dat  hindi_sentence.dat
 
- cat  hindi_sentence.dat  
-
+ cat  hindi_sentence.dat
+ 
  grep -B2 "FALSE" $1.error >> errors.txt
  cat errors.txt
 

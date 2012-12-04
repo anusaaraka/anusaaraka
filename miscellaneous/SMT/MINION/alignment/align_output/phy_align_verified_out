@@ -1,4 +1,6 @@
+Pre-proccessing manual file ...
 Running Shallow Parser ...
+Tokenizing manual sentence
 Saving Format info ...
 Saving word information
 Saving morph information
@@ -75,7 +77,7 @@ hama aba cihna sammelana lAgU karawe hEM.
 
 Hindi meaning using Stanford parser 2.17
 Hence, all the three will have negative signs. 
-isa kAraNa se, saBI wIna kA nakArAwmaka cihna hEM.
+isa kAraNa se, saBI wIna kA qNAwmaka cihna hEM.
 
 Hindi meaning using Stanford parser 2.18
 We are familiar with the laws of reflection. 
@@ -131,7 +133,7 @@ isa prakAra SarIra kA parimANa mahawvapUrNa gaNiwa_meM_sWira rASI hE jo usakI ga
 
 Hindi meaning using Stanford parser 2.31
 Using the basic laws of reflection and refraction, we shall study the image formation by plane and spherical reflecting and refracting surfaces. 
-prawibimba ke Ora apavarwana ke buniyAxI niyamoM kA upayoga karwe_hue, hama UparI wala xarSA huA Ora modawA huA samawala waka Ora golIya waka prawimA suvyavasWiwa kramaa kA aXyayana karezge.
+prawibimba ke Ora apavarwana ke buniyAxI niyamoM kA upayoga karawe_hue, hama UparI wala xarSA huA Ora modawA huA samawala waka Ora golIya waka prawimA suvyavasWiwa kramaa kA aXyayana karezge.
 
 Hindi meaning using Stanford parser 2.32
 What is the physical meaning of a zero vector? 
@@ -199,7 +201,7 @@ Apa agale aXyAya meM saxiSa ke bAre meM paDezge.
 
 Hindi meaning using Stanford parser 2.48
 The negative sign indicates the direction of displacement. 
-nakArAwmaka cihna visWApana kI xiSA sUciwa karawA hE.
+qNAwmaka cihna visWApana kI xiSA sUciwa karawA hE.
 
 Hindi meaning using Stanford parser 2.49
 Instead of visible light, we can use an electron beam. 

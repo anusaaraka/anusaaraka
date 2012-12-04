@@ -84,10 +84,11 @@ cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat chunk
 
  sh $HOME_anu_test/bin/abbr.sh
 
+ python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  hindi_sentence.dat hindi_sentence_tmp.dat
  cp hindi_sentence1.dat  hindi_sentence.dat
 
  cat  hindi_sentence.dat
-
+ 
  grep -B2 "FALSE" $1.error >> errors.txt
  cat errors.txt
 

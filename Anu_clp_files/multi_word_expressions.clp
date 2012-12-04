@@ -50,11 +50,19 @@
  	(assert (index ?id))
  )
  ;--------------------------------------------------------------------------------------------------------------------------
+ (defrule chk_for_mwe_for_domain_specific
+ (declare (salience 60))
+ ?f<-(English-list $?Eng_list)
+ (Domain ?dom&~general)
+ =>
+    (if (eq ?dom physics) then
+                (mwe_lookup "phy_eng_multi_word_dic.gdbm" 1 $?Eng_list)
+    )
+ ;--------------------------------------------------------------------------------------------------------------------------
  (defrule chk_for_mwe
  (declare (salience 60))
  ?f<-(English-list $?Eng_list)
  =>
-	(mwe_lookup "phy_eng_multi_word_dic.gdbm" 1 $?Eng_list)
 	(mwe_lookup "acronyms-common_noun_compounds.gdbm" 2 $?Eng_list)
 	(mwe_lookup "named_entities.gdbm" 3 $?Eng_list)
         (mwe_lookup "proper_noun-common_noun_compounds.gdbm" 4 $?Eng_list)
