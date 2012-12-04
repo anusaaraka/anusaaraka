@@ -4104,9 +4104,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  66. Updated bin/replace-abbrevations.sh
  67. Updated Anusaaraka_stanford.sh
  68. Added comments in stdenglish.sh
- 69. Updated CLIPS/factmch.c as suggested in CLIPS Support forum. and noted this changes in Changes_done file.
- 70. Updated entry in iit-bombay dictionary for goldendict. 
- 71. Updated changes_in_databases
- 72. Modified sd_ver_output and small_sent_ver_output_sd
- 73. Updated sd_verified (488)
- 74. Updated Log
+ 69. Added phy_align_verified_out phy_align_verified_eng_align.html
+ 70. Updated CLIPS/factmch.c as suggested in CLIPS Support forum. and noted this changes in Changes_done file.
+ 71. Updated entry in iit-bombay dictionary for goldendict. 
+ 72. Updated changes_in_databases
+ 73. Modified sd_ver_output and small_sent_ver_output_sd
+ 74. Updated sd_verified (488)
+ 75. Updated Log

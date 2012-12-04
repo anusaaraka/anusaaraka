@@ -1,0 +1,260 @@
+Running Shallow Parser ...
+Saving Format info ...
+Saving word information
+Saving morph information
+Calling POS Tagger and Chunker (APERTIUM)
+Calling Stanford parser
+Finding NER... 
+Hindi meaning using Stanford parser 1.1
+Test. 
+parIkRA.
+
+Hindi meaning using Stanford parser 2.1
+It is impossible for a car to move on a very slippery road. 
+eka awyanwa PisalanevAlA jagaha sadaka para calanA gAdI ke bAxa asamBava hE.
+
+Hindi meaning using Stanford parser 2.2
+In many practical situations, however, friction is critically needed. 
+bahuwa sArI vyAvahArika hAlawa meM, PiraBI, GarRaNa cinwApUrNa rUpa se AvaSyakawA hE.
+
+Hindi meaning using Stanford parser 2.3
+Displacement has both magnitude and direction. 
+visWApana kA xono parimANa Ora xiSA hEM.
+
+Hindi meaning using Stanford parser 2.4
+How does the position change with time? 
+sWiwi samaya ke sAWa kEse baxalawI hE?
+
+Hindi meaning using Stanford parser 2.5
+In this chapter, we shall learn how to describe motion. 
+isa aXyAya meM, hama sIKezge kEse gawi varNana karanA.
+
+Hindi meaning using Stanford parser 2.6
+For this, we develop the concepts of velocity and acceleration. 
+isake lie, hama vega kI Ora wvaraNa kI XAraNAoM kA vikAsa karawe hEM.
+
+Hindi meaning using Stanford parser 2.7
+Finally, to understand the relative nature of motion, we introduce the concept of relative velocity. 
+AKirakAra, gawi kI ApekRa prakqwi samaJane ke lie, hama ApekRa vega kI XAraNA paricaya karAwe hEM.
+
+Hindi meaning using Stanford parser 2.8
+The speed of light in vacuum is the highest speed attainable in nature. 
+SUnya sWAna meM prakASa kI raPwAra - aXika raPwAra prakqwi meM prApya hE.
+
+Hindi meaning using Stanford parser 2.9
+He made pioneering contributions in the field of optics. 
+usane prakASikI ke kRewra meM mArga_praSaswa_karanevAlA yogaxAna banAe.
+
+Hindi meaning using Stanford parser 2.10
+In these examples, the external agency of force (hands, wind, stream, etc) is in contact with the object. 
+ina uxAharaNoM meM, bala kI (hAWa, havAez Jarane, Axi) bAharI saMsWA vaswu ke samparka meM hE.
+
+Hindi meaning using Stanford parser 2.11
+You should now be able to handle a large variety of problems in mechanics. 
+Apako yAnwrikI meM samasyAoM kI eka badI viviXawA hala_karane_meM_sakRama aba honA cAhie.
+
+Hindi meaning using Stanford parser 2.12
+This is the energy which is released in a nuclear power generation and nuclear explosions. 
+yaha vahI UrjA hE jo eka nABikIya GAwAfka pIDI meM Ora nABikIya visPotoM meM CodI huI hE.
+
+Hindi meaning using Stanford parser 2.13
+Energy is a scalar quantity. 
+PropN-energy-PropN eka axiSa parimANa hE.
+
+Hindi meaning using Stanford parser 2.14
+These laws can be derived from Newton's laws of motion in mechanics. 
+ye niyama yAnwrikI meM gawi ke PropN-newton-PropN ke niyamoM se viSleRaNa jA sakawe hEM.
+
+Hindi meaning using Stanford parser 2.15
+The reflected ray follows laws of reflection. 
+parAvarwiwa kiraNa prawibimba ke niyamoM kA anusaraNa karawI hE.
+
+Hindi meaning using Stanford parser 2.16
+We now apply the sign convention. 
+hama aba cihna sammelana lAgU karawe hEM.
+
+Hindi meaning using Stanford parser 2.17
+Hence, all the three will have negative signs. 
+isa kAraNa se, saBI wIna kA nakArAwmaka cihna hEM.
+
+Hindi meaning using Stanford parser 2.18
+We are familiar with the laws of reflection. 
+hama prawibimba ke niyamoM se jAnA-mAnA hEM.
+
+Hindi meaning using Stanford parser 2.19
+Terrestrial phenomena lie somewhere in the middle of this range. 
+pArWiva pariGatanA isa parAsa ke maXyasWala meM kahIM JUTa bolawA hE.
+
+Hindi meaning using Stanford parser 2.20
+Physics is exciting in many ways. 
+PropN-physics-PropN bahuwa sAre mArgoM meM uwwejiwa karanA hE.
+
+Hindi meaning using Stanford parser 2.21
+Great progress usually accompanies changes in our basic perceptions. 
+baDiyA pragawi Ama wOra para hamAre buniyAxI prawyakRa jFAna meM parivarwana sAWa xewI hE.
+
+Hindi meaning using Stanford parser 2.22
+We shall discuss uniform circular motion in some detail. 
+hama kuCa byOrA meM ekasamAna_vqwwIya gawi kI carcA karezge.
+
+Hindi meaning using Stanford parser 2.23
+The length of each side is a scalar and the perimeter is also a scalar. 
+eka eka waraPa kI lambAI axiSa hE Ora parimApa BI axiSa hE.
+
+Hindi meaning using Stanford parser 2.24
+What is a vector? 
+saxiSa kyA hE?
+
+Hindi meaning using Stanford parser 2.25
+An arrow is marked at the head of this line. 
+eka wIra isa lAina ke sira meM wila huA huA hE.
+
+Hindi meaning using Stanford parser 2.26
+Physics is the study of nature and natural phenomena. 
+PropN-physics-PropN prakqwi kA Ora prAkqwika pariGatanA kA aXyayana hE.
+
+Hindi meaning using Stanford parser 2.27
+What is the nature of physical laws? 
+SArIrika niyamoM kI prakqwi kyA hE?
+
+Hindi meaning using Stanford parser 2.28
+The macroscopic domain includes phenomena at the laboratory, terrestrial and astronomical scales. 
+sWUla praBAvakRewra prayogaSAlA, pArWiva Ora KagolIya CilakoM meM pariGatanA sammiliwa karawA hE.
+
+Hindi meaning using Stanford parser 2.29
+By the first law of motion the acceleration of the astronaut is zero. 
+gawi ke praWama niyama ke xvArA anwarikRa yAwrI kA wvaraNa SUnya hE.
+
+Hindi meaning using Stanford parser 2.30
+The mass of a body is thus an important parameter that determines the effect of force on its motion. 
+isa prakAra SarIra kA parimANa mahawvapUrNa gaNiwa_meM_sWira rASI hE jo usakI gawi para bala kA praBAva niScaya karawA hE.
+
+Hindi meaning using Stanford parser 2.31
+Using the basic laws of reflection and refraction, we shall study the image formation by plane and spherical reflecting and refracting surfaces. 
+prawibimba ke Ora apavarwana ke buniyAxI niyamoM kA upayoga karwe_hue, hama UparI wala xarSA huA Ora modawA huA samawala waka Ora golIya waka prawimA suvyavasWiwa kramaa kA aXyayana karezge.
+
+Hindi meaning using Stanford parser 2.32
+What is the physical meaning of a zero vector? 
+SUnya saxiSa kA SArIrika arWa kyA hE?
+
+Hindi meaning using Stanford parser 2.33
+The curiosity to learn about the world, unravelling the secrets of nature is the first step towards the discovery of science. 
+prakqwi ke rahasya uXedanA viSva ke bAre meM, sIKane ke lie jijFAsA vijFAna kI Koja kI ora praWama kaxama hE.
+
+Hindi meaning using Stanford parser 2.34
+Science is ever dynamic. 
+PropN-science-PropN kaBI BI gawiSIla hE.
+
+Hindi meaning using Stanford parser 2.35
+The scope of physics is described briefly in the next section. 
+BOwika vijFAna kA kRewra agale BAga meM safkRipwa_rUpa meM varNana kiyA huA hE.
+
+Hindi meaning using Stanford parser 2.36
+The efficiency of heat engines and refrigerators, the direction of a physical or chemical process, etc., are problems of interest in thermodynamics. 
+URmA iFjanoM kI Ora praSIwaka, eka BOwika yA rasAyanika xravya prakriyA kI, etc. xiSAez xakRawA URmAgawikI meM rUci kI samasyAez hEM.
+
+Hindi meaning using Stanford parser 2.37
+He also gave an explicit form for the force for gravitational attraction between two bodies. 
+usane BI xo SarIroM ke bIca guruwvAkarRaNa ke lie bala ke lie spaRta rUpa xiyA.
+
+Hindi meaning using Stanford parser 2.38
+The origin of these derived forces is, however, very complex. 
+ina viSleRaNa baloM kA mUla binxu PiraBI, awyanwa jatila hE.
+
+Hindi meaning using Stanford parser 2.39
+It is a universal force. 
+yaha eka sArvawrika bala hE.
+
+Hindi meaning using Stanford parser 2.40
+We all have an intuitive notion of force. 
+hamAre saba bala kI sahajajFAna sambanXI XAraNA hE.
+
+Hindi meaning using Stanford parser 2.41
+Since the electromagnetic force is so much stronger than the gravitational force, it dominates all phenomena at atomic and molecular scales. 
+uwanA vExyuwacumbakIya bala guruwvAkarRI bala kI apekRA iwanA jyAxA aXika saSakwa hE jaba se, yaha paramANvika meM Ora ANvika meM CilakoM meM saba pariGatanA varcasva raKawA hE.
+
+Hindi meaning using Stanford parser 2.42
+Matter is mostly electrically neutral (net charge is zero). 
+PropN-matter-PropN vixyuw se uxAsIna prAyaH hE (neta aBiyoga SUnya hE)
+
+Hindi meaning using Stanford parser 2.43
+Physicists explore the universe. 
+BOwikavix viSva Koja karawe hEM.
+
+Hindi meaning using Stanford parser 2.44
+In any physical phenomenon governed by different forces, several quantities may change with time. 
+alaga baloM ke xvArA vaSA_meM kI huI kisI SArIrika xqgviRaya meM, viBinna parimANa samaya ke sAWa baxala sakawe hEM.
+
+Hindi meaning using Stanford parser 2.45
+The general law of energy conservation, however, is still applicable. 
+UrjA saMrakRaNa kA vyApaka niyama, PiraBI, aBI BI lAgU honA hE.
+
+Hindi meaning using Stanford parser 2.46
+To measure time, we position a clock in this system. 
+samaya nApa hama isa nikAya meM GadI raKa xewe hEM.
+
+Hindi meaning using Stanford parser 2.47
+You will read about vectors in the next chapter. 
+Apa agale aXyAya meM saxiSa ke bAre meM paDezge.
+
+Hindi meaning using Stanford parser 2.48
+The negative sign indicates the direction of displacement. 
+nakArAwmaka cihna visWApana kI xiSA sUciwa karawA hE.
+
+Hindi meaning using Stanford parser 2.49
+Instead of visible light, we can use an electron beam. 
+xqSya prakASa kI jagaha meM, hama awisUkRma paramANu puFja kA upayoga_kara sakawe hEM.
+
+Hindi meaning using Stanford parser 2.50
+A simple method for estimating the molecular size of oleic acid is given below. 
+oleic amla kA ANvika AkAra anxAja lagAne ke lie eka sarala praNAlI ke nIce xI huI hE.
+
+Hindi meaning using Stanford parser 2.51
+Mass is a basic property of matter. 
+PropN-mass-PropN viRaya kI eka buniyAxI sampawwi hE.
+
+Hindi meaning using Stanford parser 2.52
+In principle they provide portable standard. 
+sixXAnwawaH ve subAhya AxarSa xewe hEM.
+
+Hindi meaning using Stanford parser 2.53
+Such standards are available in many laboratories. 
+Ese AxarSa bahuwa sAre prayogaSAlA meM upalabXa hEM.
+
+Hindi meaning using Stanford parser 2.54
+Measurement is the foundation of all experimental science and technology. 
+mApana saba prAyogika vijFAna meM se Ora prAxyogikI meM se mUla vicAra hE.
+
+Hindi meaning using Stanford parser 2.55
+This uncertainty is called error. 
+yaha aniScaya BUla bulAyA jAwA hE.
+
+Hindi meaning using Stanford parser 2.56
+Hence clock 2 is to be preferred to clock 1. 
+isa kAraNa se GadI 2 GadI 1 ko pasanxa kiyA jAnA hE.
+
+Hindi meaning using Stanford parser 2.57
+For this, we use the following procedure. 
+isake lie, hama anusaraNa karanA kAryaviXi kA upayoga karawe hEM.
+
+Hindi meaning using Stanford parser 2.58
+As discussed above, every measurement involves errors. 
+Upara carcA kI jEsA ki, prawyeka mApana BUleM SAmila howA hE.
+
+Hindi meaning using Stanford parser 2.59
+All these numbers have the same number of significant figures (digits 2, 3, 0, 8), namely four. 
+ina saba afkoM kA vahI afka sArWaka afkoM kA (afka 2, 3, 0, 8, jEse cAra hE.
+
+Hindi meaning using Stanford parser 2.60
+In the preceding observations, the vector character of momentum has not been evident. 
+se pahale Ane yA Gatiwa ho prekRaNa meM, saMvega kA saxiSa cariwra spaRta nahIM_ho cukA hE.
+
+Calling Transliteration
+Calling Interface related programs
+Print minion_statistics
+No Solution Found :
+0
+Time-out:
+0
+Solution Found :
+60
