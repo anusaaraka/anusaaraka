@@ -3965,7 +3965,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  49. Updated iit-bombay dic in goldendict.
  50. Updated Log file
 
- 03-12-12
+ 04-12-12
  ========
  1. Added a pattern to handle when 's becomes 'is' in chk_input_format.pl and commented the pattern '/' to per 
  2. In converting-dic-format.c, increased variable mng[1000] to mng[10000] as it fails to create firefox dictionary.
@@ -4063,7 +4063,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         previous_wrd_match_with_anu_using_hindi_wordnet,  previous_wrd_match_with_anu next_wrd_match_with_anu
         combine_group1
  46. Updated "replace_S1" rule and added new rule "modify_head_wrd1" in Anu_clp_files/sd_lwg_rules.clp.
- 47. miscellaneous/SMT/MINION/alignment/dic_compile.sh [Added code for removing default-iit-bombay-shabdanjali-dic.gdbm]
+ 47.  Added    generate_hin_multi_word_dic.sh:
+      Removed  hindi_multi_word.txt and
+      Splitted Physics-dictionary.txt into  phy_dictionary.txt and phy_eng_multi_word_dic.txt
  48. Input for shallow_parser has been modified from wx to utf so the following files have been updated
            and a new files has been added mapping-symbols_manual.lex, miscellaneous/SMT/MINION/alignment/adding@-for-eng-words.lex
            i) bin/Anusaaraka_stanford_minion.sh

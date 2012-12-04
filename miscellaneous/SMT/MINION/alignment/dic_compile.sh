@@ -23,6 +23,9 @@ rm $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic.gdbm
 rm $HOME_anu_test/Anu_databases/multi_word_expressions.gdbm
 rm $HOME_anu_test/Anu_databases/preposition.gdbm
 
+rm $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries/phy_hnd_multi_word_dic.txt
+rm $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries/hindi_multi_word.txt
+
 echo "Creating phy_hnd_multi_word_dic.txt"
 cd $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries
 sh generate_hin_multi_word_dic.sh phy_eng_multi_word_dic.txt phy_hnd_multi_word_dic.txt
