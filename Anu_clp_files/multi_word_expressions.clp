@@ -58,6 +58,7 @@
     (if (eq ?dom physics) then
                 (mwe_lookup "phy_eng_multi_word_dic.gdbm" 1 $?Eng_list)
     )
+ )
  ;--------------------------------------------------------------------------------------------------------------------------
  (defrule chk_for_mwe
  (declare (salience 60))
