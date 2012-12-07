@@ -4116,3 +4116,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  75. Modified sd_ver_output and small_sent_ver_output_sd
  76. Updated sd_verified (488)
  77. Updated Log
+
+ 07-12-12
+ ========
+ 1. In anu_compile.sh, added code to generate phy_hnd_multi_word_dic.txt & hindi_multi_word_dic.txt before canonical form 
+ 2. Added code to remove phy_hnd_multi_word_dic.txt and hindi_multi_word_dic.txt in remove_out-files.sh
+ 3. Included string.h in mapping-punctuations.lex to avoid warnings
+ 4. Updated Log

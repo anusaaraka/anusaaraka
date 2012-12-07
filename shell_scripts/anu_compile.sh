@@ -1,6 +1,12 @@
  echo "#define ABS_ANU_PATH \"$HOME_anu_test/Anu_databases/\"" > $HOME_anu_test/CLIPS/gdbm_lookup.h
  echo "#define ABS_PATH \"$HOME_anu_tmp/tmp/\"" > $HOME_anu_test/Anu_src/f_tid-rid.h
 
+ echo "Creating phy_hnd_multi_word_dic.txt"
+ cd $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries
+ sh generate_hin_multi_word_dic.sh phy_eng_multi_word_dic.txt phy_hnd_multi_word_dic.txt
+ echo "Creating hindi_multi_word_dic.txt"
+ sh generate_hin_multi_word_dic.sh $HOME_anu_test/Anu_data/compound-matching/multi_word_expressions.txt hindi_multi_word.txt
+
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
  echo "Creating Canonical form dictionaries"
  sh get_txt_files.sh
