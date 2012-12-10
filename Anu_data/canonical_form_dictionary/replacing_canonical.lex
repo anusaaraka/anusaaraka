@@ -12,4 +12,5 @@ efg	{	printf("ezg");   /* xeKefge  becomes xeKezge */	}
 yefg	{	printf("yezg");	 /* KAyefge  becomes KAyezge */ }
 UFcAI	{	printf("UzcAI"); /* UFcAI    becomes UzcAI   */	}
 kyofki 	{	printf("kyozki");/* kyofki   becomes kyozki  */	}
+cUfki	{	printf("cUzki"); /* cUfki    becomes cUzki   */	}
 %%

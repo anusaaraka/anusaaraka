@@ -21,8 +21,8 @@ nonascii      {       printf("@symbolnonascii ");
 \(	{	printf("@punctOPENPAREN ");
 		fprintf(fp, "@punctOPENPAREN	PUNCT-OpenParen\n");
 	}
-\)	{	printf("@punctCLOSEPAREN ");
-		fprintf(fp, "@punctCLOSEPAREN	PUNCT-ClosedParen\n");
+\)	{	printf(" @punctCLOSEPAREN ");
+		fprintf(fp, "[ ]*@punctCLOSEPAREN	PUNCT-ClosedParen\n");
 	}
 ¡	{	printf("@symbolINVERTEDEXCLAMATIONMARK");
 		fprintf(fp, "@symbolINVERTEDEXCLAMATIONMARK	 SYMBOL-INVERTED-EXCLAMATION-MARK \n");
@@ -159,7 +159,7 @@ nonascii      {       printf("@symbolnonascii ");
 
 				s1=strchr(yytext, '.')+1;
 				printf("%s@symbolDOT%s", str, s1);
-				fprintf(fp, "@symbolDOT	 SYMBOL-DOT \n");
+				fprintf(fp, "@symbolDOT	SYMBOL-DOT\n");
 			}	
 
 %%

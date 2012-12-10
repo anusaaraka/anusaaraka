@@ -9,7 +9,7 @@ non_alphabets   [^a-zA-Z]
 
 %%
 
-{alphabets}		{	printf(" ABBRENGBEFORE"); ECHO; printf("ABBRENGAFTER"); BEGIN eng;	}
+{alphabets}		{	printf("ABBRENGBEFORE"); ECHO; printf("ABBRENGAFTER"); BEGIN eng;	}
 
 <eng>symbol|punct	{	printf("ABBRENGBEFORE");  ECHO; /*Ex: tsymbolequalto0[t=0] */	}
 

@@ -4117,9 +4117,17 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  76. Updated sd_verified (488)
  77. Updated Log
 
- 07-12-12
+ 10-12-12
  ========
- 1. In anu_compile.sh, added code to generate phy_hnd_multi_word_dic.txt & hindi_multi_word_dic.txt before canonical form 
+ 1. In anu_compile.sh, added code to generate phy_hnd_multi_word_dic.txt & hindi_multi_word_dic.txt before canonical form and    also added code to generate phy_dictionary.gdbm and phy_eng_multi_word_dic.gdbm 
  2. Added code to remove phy_hnd_multi_word_dic.txt and hindi_multi_word_dic.txt in remove_out-files.sh
  3. Included string.h in mapping-punctuations.lex to avoid warnings
- 4. Updated Log
+ 4. In replacing_canonical.lex, added kyofki and cUfki.
+ 5. Modified punctCLOSEPAREN and symbolDOT rules in mapping-symbols_manual.lex
+ 6. Added sed command to handle SYMBOL-DOT patterns in run_align_browser.sh
+ 7. Updated adding@-for-eng-words.lex .
+ 8. Updated phy_align_verified_eng_align.html
+ 9. Updated processing_manual_sentences.sh
+ 10. Updated iit-bombay dic in goldendict.
+ 11. Updated in changes_in_databases
+ 12. Updated Log

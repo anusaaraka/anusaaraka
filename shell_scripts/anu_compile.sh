@@ -21,6 +21,11 @@
  sh get_canonical_form_wsd_rules.sh
 
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries
+ echo "Creating phy_dictionary.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/phy_dictionary.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/phy_dictionary_in_canonical_form.txt
+ echo "Creating phy_eng_multi_word_dic.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/phy_eng_multi_word_dic.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/phy_eng_multi_word_dic_in_canonical_form.txt
+
  echo "Creating paxasUwra.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/total-paxasUwra.gdbm < total-paxasUwra_in_canonical_form.txt 
  echo "Creating verbal_adj.gdbm"
