@@ -133,8 +133,9 @@
  ; In these examples, the external agency of force (hands, wind, stream, etc) is in contact with the object.-> ina uxAharaNoM meM, bala kA bAhya sAXana  (hAWa, vAyu, jalaXArA, Axi ) piNda ke samparka meM hE.     
  (defrule modify_mng
  (declare (salience 25))
- ?f1<-(manual_id-cat-word-root-vib-grp_ids ? ? ke $?mng - $? - $? - ?id $?post)
+ ?f1<-(manual_id-cat-word-root-vib-grp_ids ?h1 ? ke $?mng - $? - $? - ?id $?post)
  ?f0<-(manual_id-cat-word-root-vib-grp_ids ?h ?cat $?word - $?root - $?vib - $?pre ?id)
+ (test (neq ?h ?h1))
  =>
 	(retract ?f0 ?f1)
 	(bind $?g_ids (create$ $?pre ?id $?post))
