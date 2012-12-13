@@ -135,6 +135,9 @@ FILE *fp;
 [ ]*β[ ]*	{	printf(" SYMBOL-BETA ");
 			fprintf(fp, " SYMBOL-BETA 	%s\n", yytext);	
 		}
+[ ]*\~[ ]*	{	printf(" SYMBOL-TELDA ");
+			fprintf(fp, " SYMBOL-TELDA 	%s\n", yytext);	
+		}
 [ ]*[a-zA-Z0-9]+[/][a-zA-Z0-9]* { 	len=strcspn(yytext, "/");
 				strncpy(str, yytext, len); str[len]='\0';
 

@@ -32,7 +32,7 @@
  (load-facts "lwg_info.dat")
  (load-facts "GNP_agmt_info.dat")
  (load-facts "hindi_meanings.dat")
- (load-facts "hindi_meanings_tmp1.dat")
+ (load-facts "hindi_meanings_tmp2.dat")
  (load-facts "original_word.dat")
  (load-facts "id_Apertium_output.dat")
  (assert (index 1))

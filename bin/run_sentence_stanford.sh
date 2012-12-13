@@ -17,13 +17,17 @@
 
  cd $MYPATH/$1_tmp/$2
  myclips -f $HOME_anu_test/Anu_clp_files/run_modules_std.bat >  $1.error
+ #Following two files are added to change 
+ python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  hindi_meanings_tmp1.dat hindi_meanings_tmp2.dat
+ sed 's/id-HM-source-grp_ids/id-HM-source/g' hindi_meanings_tmp2.dat | sed 's/[ ][0-9]*)/ )/g' > hindi_meanings.dat
  
  cd $HOME_anu_test/Anu_src/
  perl   FinalGenerate.pl $HOME_anu_test/bin/hi.gen.bin  $HOME_anu_test/Anu_databases/AllTam.gdbm  $MYPATH/ $1 $2 $HOME_anu_test/bin/hi.morf.bin < $MYPATH/$1_tmp/$2/id_Apertium_input.dat > $MYPATH/$1_tmp/$2/id_Apertium_output1.dat
 
-sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id_Apertium_output.dat
-
  cd $MYPATH/$1_tmp/$2
+ python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  id_Apertium_output1.dat id_Apertium_output2.dat
+ sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output2.dat > $MYPATH/$1_tmp/$2/id_Apertium_output.dat
+
  cp $MYPATH/$1_tmp/underscore_hyphen_replace_info.txt  $MYPATH/$1_tmp/$2/underscore_hyphen_replace_info.dat
  myclips -f $HOME_anu_test/Anu_clp_files/run_H_gen_sen.bat >> $1.error
  
@@ -32,7 +36,6 @@ sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id
  cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat sd_chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat lwg_info.dat hindi_meanings.dat GNP_agmt_info.dat id_Apertium_output.dat catastrophe.dat  >>$MYPATH/$1_tmp/$2/facts_for_eng_html 
 
  cat  para_sent_id_info.dat word.dat sd_chunk.dat position.dat hindi_punctuation.dat >>$MYPATH/$1_tmp/$2/facts_for_tran_html
- 
  cat proper_nouns.dat >> $MYPATH/$1_tmp/proper_nouns_list
 
  sh $HOME_anu_test/bin/abbr.sh
@@ -45,7 +48,7 @@ sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id
  cp hindi_sentence1.dat  hindi_sentence.dat
  # cat hin_eng_sent.dat
  cat  hindi_sentence.dat
- 
+
  grep -B2 "FALSE" $1.error >> errors.txt
  cat errors.txt
 

@@ -4117,7 +4117,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  76. Updated sd_verified (488)
  77. Updated Log
 
- 10-12-12
+ 13-12-12
  ========
  1. In anu_compile.sh, added code to generate phy_hnd_multi_word_dic.txt & hindi_multi_word_dic.txt before canonical form and    also added code to generate phy_dictionary.gdbm and phy_eng_multi_word_dic.gdbm 
  2. Added code to remove phy_hnd_multi_word_dic.txt and hindi_multi_word_dic.txt in remove_out-files.sh
@@ -4125,9 +4125,15 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  4. In replacing_canonical.lex, added kyofki and cUfki.
  5. Modified punctCLOSEPAREN and symbolDOT rules in mapping-symbols_manual.lex
  6. Added sed command to handle SYMBOL-DOT patterns in run_align_browser.sh
- 7. Updated adding@-for-eng-words.lex .
- 8. Updated phy_align_verified_eng_align.html
- 9. Updated processing_manual_sentences.sh
- 10. Updated iit-bombay dic in goldendict.
- 11. Updated in changes_in_databases
- 12. Updated Log
+ 7. To handle substitution of PropN-name-PropN pattern in firefox modified following files:
+      -> run_sentence_stanford.sh , run_sentence_stanford_minion.sh 
+ 8. Loaded hindi_meanings_tmp2.dat instead of hindi_meanings_tmp1.dat in eng_hin_pos.clp module in run_H_gen_sen.bat and run_H_gen_minion.bat for above purpose.
+ 9. Added not condition to add '@' for patterns 'SYMBOL-NAME' in add-@_in-hindi_sentence.py
+ 10. Added SYMBOL-TELDA to map '~' in mapping-symbols.lex and updated accordingly in mapping-symbols_manual.lex
+ 11. Updated ClipsToAnu_browser_intfc.sh 
+ 12. Updated adding@-for-eng-words.lex .
+ 13. Updated phy_align_verified_eng_align.html
+ 14. Updated processing_manual_sentences.sh
+ 15. Updated iit-bombay dic in goldendict.
+ 16. Updated in changes_in_databases
+ 17. Updated Log

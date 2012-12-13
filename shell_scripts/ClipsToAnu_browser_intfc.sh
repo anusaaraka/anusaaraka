@@ -35,8 +35,9 @@ $HOME_anu_test/Anu_src/replace_nonascii-chars.out $2/tmp/$1_tmp/$1_trnsltn_tmp.h
 
 sh $HOME_anu_test/bin/replace-abbrevations.sh $2/tmp/$1_tmp/$1_trnsltn_tmp1.html $2/tmp/$1_tmp/$1_trnsltn_tmp2.html
 
-wx_utf8 < $2/tmp/$1_tmp/$1_trnsltn_tmp2.html > $2/tmp/$1_tmp/$1_trnsltn_tmp3.html
-
 #Replacing SYMBOL-NAME etc with original Symbols in translation file. Added by Roja(18-10-12) 
-sed 's/@SYMBOL/SYMBOL/g'  $2/tmp/$1_tmp/$1_trnsltn_tmp3.html | sh Symbols.sh  > $2/tmp/$1_tmp/$1_trnsltn_tmp4.html
+sed 's/@SYMBOL/SYMBOL/g'  $2/tmp/$1_tmp/$1_trnsltn_tmp2.html | sh Symbols.sh  > $2/tmp/$1_tmp/$1_trnsltn_tmp3.html
+
+wx_utf8 < $2/tmp/$1_tmp/$1_trnsltn_tmp3.html > $2/tmp/$1_tmp/$1_trnsltn_tmp4.html
+
 sh $2/tmp/$1_tmp/proper_nouns_utf8.sh $2/tmp/$1_tmp/$1_trnsltn_tmp4.html > $3/$1_trnsltn.html

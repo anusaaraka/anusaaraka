@@ -17,13 +17,16 @@
 
  cd $MYPATH/$1_tmp/$2
  myclips -f $HOME_anu_test/Anu_clp_files/run_modules_std.bat >  $1.error
+ python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  hindi_meanings_tmp1.dat hindi_meanings_tmp2.dat
+ sed 's/id-HM-source-grp_ids/id-HM-source/g' hindi_meanings_tmp2.dat | sed 's/[ ][0-9]*)/ )/g' > hindi_meanings.dat
  
  cd $HOME_anu_test/Anu_src/
  perl   FinalGenerate.pl $HOME_anu_test/bin/hi.gen.bin  $HOME_anu_test/Anu_databases/AllTam.gdbm  $MYPATH/ $1 $2 $HOME_anu_test/bin/hi.morf.bin < $MYPATH/$1_tmp/$2/id_Apertium_input.dat > $MYPATH/$1_tmp/$2/id_Apertium_output1.dat
 
-sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id_Apertium_output.dat
-
  cd $MYPATH/$1_tmp/$2
+ python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  id_Apertium_output1.dat id_Apertium_output2.dat
+ sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output2.dat > $MYPATH/$1_tmp/$2/id_Apertium_output.dat
+
  sh $HOME_anu_test/miscellaneous/SMT/alignment/get_group_mng.sh shallow_parser_output.dat
  $HOME_anu_test/miscellaneous/SMT/alignment/get_tam_info.out shallow_parser_GNP_info.dat shallow_parser_root_tmp.dat shallow_parser_tam.dat < shallow_parser_output.dat.tmp9 > /dev/null
 
@@ -34,12 +37,12 @@ sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id
  
  myclips -f $HOME_anu_test/miscellaneous/SMT/MINION/alignment/alignment.bat >> $1.error
  
- cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat sd_chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat parserid_wordid_mapping.dat lwg_info.dat relations.dat hindi_meanings.dat GNP_agmt_info.dat id_Apertium_output1.dat  hindi_id_order.dat position.dat hindi_punctuation.dat catastrophe.dat English_sentence.dat word_alignment.dat >>$MYPATH/$1_tmp/$2/all_facts
+ cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat sd_chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat parserid_wordid_mapping.dat lwg_info.dat relations.dat hindi_meanings.dat GNP_agmt_info.dat id_Apertium_output.dat  hindi_id_order.dat position.dat hindi_punctuation.dat catastrophe.dat English_sentence.dat word_alignment.dat >>$MYPATH/$1_tmp/$2/all_facts
 
  cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat sd_chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat lwg_info.dat hindi_meanings.dat GNP_agmt_info.dat id_Apertium_output.dat catastrophe.dat  >>$MYPATH/$1_tmp/$2/facts_for_eng_html 
 
  cat  para_sent_id_info.dat word.dat sd_chunk.dat position.dat hindi_punctuation.dat >>$MYPATH/$1_tmp/$2/facts_for_tran_html
- cat para_sent_id_info.dat word.dat sd_chunk.dat position.dat hindi_punctuation.dat catastrophe.dat English_sentence.dat word_alignment.dat manual_hindi_sen.dat confidence_level.dat hindi_id_order_for_minion.dat >$MYPATH/$1_tmp/$2/facts_for_align_html
+ cat  para_sent_id_info.dat word.dat sd_chunk.dat position.dat hindi_punctuation.dat catastrophe.dat English_sentence.dat word_alignment.dat manual_hindi_sen.dat confidence_level.dat hindi_id_order_for_minion.dat >$MYPATH/$1_tmp/$2/facts_for_align_html
  cat proper_nouns.dat >> $MYPATH/$1_tmp/proper_nouns_list
  cat minion_sen_dic.txt >> $MYPATH/$1_tmp/minion_dic.txt
 

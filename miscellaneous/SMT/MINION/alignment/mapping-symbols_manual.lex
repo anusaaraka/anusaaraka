@@ -147,6 +147,10 @@ nonascii      {       printf("@symbolnonascii ");
 β	{	printf("@symbolBETA");
 		fprintf(fp, "@symbolBETA	 SYMBOL-BETA \n");	
 	}
+\~	{	printf("@symbolTELDA ");
+		fprintf(fp, "@symbolTELDA	 SYMBOL-TELDA \n");
+	}
+
 [ ][a-zA-Z0-9]*[/][a-zA-Z0-9]* {	len=strcspn(yytext, "/");
 				strncpy(str,yytext, len); str[len]='\0';
 
