@@ -17,12 +17,13 @@
 
  cd $MYPATH/$1_tmp/$2
  myclips -f $HOME_anu_test/Anu_clp_files/run_modules_std.bat >  $1.error
+ #Following two files are added to handle PropN fact and SYMBOL facts in layered o/p 
  python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  hindi_meanings_tmp1.dat hindi_meanings_tmp2.dat
  sed 's/id-HM-source-grp_ids/id-HM-source/g' hindi_meanings_tmp2.dat | sed 's/[ ][0-9]*)/ )/g' > hindi_meanings.dat
  
  cd $HOME_anu_test/Anu_src/
  perl   FinalGenerate.pl $HOME_anu_test/bin/hi.gen.bin  $HOME_anu_test/Anu_databases/AllTam.gdbm  $MYPATH/ $1 $2 $HOME_anu_test/bin/hi.morf.bin < $MYPATH/$1_tmp/$2/id_Apertium_input.dat > $MYPATH/$1_tmp/$2/id_Apertium_output1.dat
- 
+
  cd $MYPATH/$1_tmp/$2
  python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  id_Apertium_output1.dat id_Apertium_output2.dat
  sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output2.dat > $MYPATH/$1_tmp/$2/id_Apertium_output.dat

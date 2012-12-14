@@ -17,7 +17,7 @@
 
  cd $MYPATH/$1_tmp/$2
  myclips -f $HOME_anu_test/Anu_clp_files/run_modules_std.bat >  $1.error
- #Following two files are added to change 
+ #Following two files are added to handle PropN fact and SYMBOL facts in layered o/p 
  python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  hindi_meanings_tmp1.dat hindi_meanings_tmp2.dat
  sed 's/id-HM-source-grp_ids/id-HM-source/g' hindi_meanings_tmp2.dat | sed 's/[ ][0-9]*)/ )/g' > hindi_meanings.dat
  
