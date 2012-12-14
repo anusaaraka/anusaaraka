@@ -4117,7 +4117,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  76. Updated sd_verified (488)
  77. Updated Log
 
- 13-12-12
+ 14-12-12
  ========
  1. In anu_compile.sh, added code to generate phy_hnd_multi_word_dic.txt & hindi_multi_word_dic.txt before canonical form and    also added code to generate phy_dictionary.gdbm and phy_eng_multi_word_dic.gdbm 
  2. Added code to remove phy_hnd_multi_word_dic.txt and hindi_multi_word_dic.txt in remove_out-files.sh
@@ -4130,10 +4130,34 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  8. Loaded hindi_meanings_tmp2.dat instead of hindi_meanings_tmp1.dat in eng_hin_pos.clp module in run_H_gen_sen.bat and run_H_gen_minion.bat for above purpose.
  9. Added not condition to add '@' for patterns 'SYMBOL-NAME' in add-@_in-hindi_sentence.py
  10. Added SYMBOL-TELDA to map '~' in mapping-symbols.lex and updated accordingly in mapping-symbols_manual.lex
- 11. Updated ClipsToAnu_browser_intfc.sh 
- 12. Updated adding@-for-eng-words.lex .
- 13. Updated phy_align_verified_eng_align.html
- 14. Updated processing_manual_sentences.sh
- 15. Updated iit-bombay dic in goldendict.
- 16. Updated in changes_in_databases
- 17. Updated Log
+ 11. Modified run_modules_std.bat to open wsd_tam_facts_output.dat in append mode in tam_meaning module
+ 12. Added "modify_tam_for_conjunction" and "get_verbal_noun_fact_for_modified_tam" rules in tam_meaning.clp
+ 13. Modified list-right and list_SMT files to add "inferred_dic"
+ 14. Added inferred_dic.txt
+ 15. Modified alignment.bat to load below files for create_alignment_dic module to generate mngs_aligned_with_minion.dat file
+        manual_lwg.dat , database_mng.dat ,para_sent_id_info.dat, manual_hindi_sen.dat and manual_lwg_new.dat
+ 16. create_alignment_dic.clp
+        Added : check_mng_with_multi_dic , check_mng_with_dic, check_mng_with_dic1, check_mng, get_count_for_cons_mis_match,
+                check_count_for_const_miss_match, print_mng and print_mngs1
+        Modified : possible_assignment
+ 17. Modified "rm_head_id_from_compound" and "get_large_grp_head_ids" rules in get_grp_info.clp
+ 18. Modified run_H_gen_minion.bat to add new module "get_exact_and_dic_mng_files"
+ 19. Modified "get_mng_from_all_dic" rule to get mng from inferred dic in get_dbase_mng.clp
+ 20. Modified "word_[hyphen]_word" rule in manual_lwg.clp
+ 21. Modified run_sentence_stanford_minion.sh to get anu aligned meanings file, dic aligned meanings file and minion aligned meanings file
+ 22. Modified Anusaaraka_stanford_minion.sh to add code for generating "anu_and_manual_meanings.txt"
+     (which contains anu_aligned meanings, dic aligned meanings and minion aligned meanings)
+ 23. Updated the following dictionaries:
+        miscellaneous/SMT/alignment/dictionaries/phy_dictionary.txt
+        miscellaneous/SMT/alignment/dictionaries/phy_eng_multi_word_dic.txt
+        miscellaneous/SMT/alignment/dictionaries/provisional_root_dic.txt
+        miscellaneous/SMT/alignment/dictionaries/restricted_eng_words.txt
+        miscellaneous/SMT/alignment/dictionaries/restricted_hnd_words.txt
+ 24. Updated ClipsToAnu_browser_intfc.sh 
+ 25. Updated adding@-for-eng-words.lex .
+ 26. Updated phy_align_verified_eng_align.html
+ 27. Updated processing_manual_sentences.sh
+ 28. Updated iit-bombay dic in goldendict.
+ 29. Updated dic_compile.sh
+ 30. Updated in changes_in_databases
+ 31. Updated Log

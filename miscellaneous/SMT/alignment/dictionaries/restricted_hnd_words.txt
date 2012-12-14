@@ -14,8 +14,8 @@ kisI	a/an
 hE	is/have
 apane	his/its
 apanI	the/our
-usakI	his
-usake	his
+usakI	his/its
+usake	his/its
 unakA	them
 merA	i/me
 vaha	she/he/the/her
@@ -23,3 +23,4 @@ yahAz	here
 yaha	the/that/this/it
 isakA	the/it/its/this
 jinakA	which
+hama	we

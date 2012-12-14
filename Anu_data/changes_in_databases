@@ -756,25 +756,34 @@ Removed::
      	blood_vessels      --- rakwa_vAhikA#rakwa_vAhikA#noun#2 #RM => rakwa_vAhikA#rakwa_vAhikA#noun#2#RM (By Roja (30-11-12))
 
     Added ::
-    	straight_line   sarala_reKA#sarala_reKA#noun#2#RM	(Suggested by Chaitanya Sir 05-09-12)
-    	path_length     paWa_lambAI#paWa_lambAI#noun#2#WM	(Suggested by Chaitanya Sir 05-09-12)
-    	able_to_walk    cala_pA#cala_pA#verb#3#RM	        (Suggested by Chaitanya Sir 09-10-12)
+    	straight_line   	sarala_reKA#sarala_reKA#noun#2#RM		(Suggested by Chaitanya Sir 05-09-12)
+    	path_length     	paWa_lambAI#paWa_lambAI#noun#2#WM		(Suggested by Chaitanya Sir 05-09-12)
+    	able_to_walk    	cala_pA#cala_pA#verb#3#RM	        	(Suggested by Chaitanya Sir 09-10-12)
     	able_to_handle  hala_karane_meM_sakRama#hala_karane_meM_sakRama#verb#3#WM (Suggested by Chaitanya Sir 09-10-12)
-    	the_force_of_friction   GarRaNa_bala#GarRaNa_bala#noun#4#WM  (Suggested by Sukhada 13-10-12)
-    	since_time_immemorial   anAxi_kAla_se_hI#anAxi_kAla_se_hI#noun#2#W (Suggested by Chaitanya Sir 18-10-12)
-    	at_the_other_end        isake_viparIwa#isake_viparIwa#noun#4#WM    (Suggested by Sukhada 20-10-12)
-    	some_of_these   inameM_se_kuCa#inameM_se_kuCa#determiner#1#WM      (         "                   )
-    	reaction_force      aBilamba_bala#aBilamba_bala#noun#2#RM
-    	electron_beam       ilektroYna_puFja#ilektroYna_puFja#noun#2#RM
-    	a_way               isa_prakAra#isa_prakAra#noun#2#RM
+    	the_force_of_friction   GarRaNa_bala#GarRaNa_bala#noun#4#WM  		(Suggested by Sukhada 13-10-12)
+    	since_time_immemorial   anAxi_kAla_se_hI#anAxi_kAla_se_hI#noun#2#W 	(Suggested by Chaitanya Sir 18-10-12)
+    	at_the_other_end        isake_viparIwa#isake_viparIwa#noun#4#WM    	(Suggested by Sukhada 20-10-12)
+    	some_of_these   	inameM_se_kuCa#inameM_se_kuCa#determiner#1#WM   (         "                   )
+    	reaction_force      	aBilamba_bala#aBilamba_bala#noun#2#RM
+    	electron_beam       	ilektroYna_puFja#ilektroYna_puFja#noun#2#RM
+    	a_way               	isa_prakAra#isa_prakAra#noun#2#RM
+	external_agency     	bAhya_sAXana#bAhya_sAXana#noun#2#WM		(Suggested by Chaitanya Sir 05-12-12)
+	problems_of_interest    rocaka_samasyAez#rocaka_samasyAez#noun#1#WM 	(      "    			    )
+	living_creature 	prANI#prANI#noun#2#WM				(Suggested by Chaitanya Sir 12-12-12)
 
  changes in phy_dictionary.txt
  =============================
  Added :
-	nonuniform	asamAna
-	position-time_Noun      sWiwi_samaya (Added by Manju (19-11-12))
+	nonuniform		asamAna
+	position-time_Noun      sWiwi_samaya	(Added by Manju (19-11-12))
+	negative_adjective      qNAwmaka     	(      "        (03-12-12))
+	mass_noun       	saMhawi	     	(Suggested by Chaitanya Sir 05-12-12)	
+	body_noun       	piNda	     	(       "                   07-12-12)
+	phenomenon_noun 	pariGatanA  	(	"		    08-12-12)
+
  Modified :
-        rearrangement_Noun   punavryavasWA  as   punarvyavasWA  (Suggested by Chaitanya Sir (08-08-12))
+        rearrangement_Noun  	punavryavasWA  	as   	punarvyavasWA  	(Suggested by Chaitanya Sir (08-08-12))
+	molecular_adjective     ANvika	    	as	ANvika/aNu	(      "		    (05-12-12))
         modified "Xx" as "xX" in the following words 
                    SuxXa_gawika, SuxXa_gawikI, prasara_koNa_xEGryavqxXi, ruxXoRma, pariSuxXawA and saMbaxXa
  changes in phy_eng_multi_word_dic.txt

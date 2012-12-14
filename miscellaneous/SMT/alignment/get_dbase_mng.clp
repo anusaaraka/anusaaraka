@@ -180,6 +180,7 @@
 		(dic_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "default_meaning_frm_oldwsd.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "numbers_dic.gdbm" ?id ?word ?root ?cat)
+		(dic_lookup "inferred_dic.gdbm" ?id ?word ?root ?cat)
  )
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Roja (01-08-12). 

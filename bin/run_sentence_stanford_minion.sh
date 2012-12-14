@@ -22,7 +22,7 @@
  
  cd $HOME_anu_test/Anu_src/
  perl   FinalGenerate.pl $HOME_anu_test/bin/hi.gen.bin  $HOME_anu_test/Anu_databases/AllTam.gdbm  $MYPATH/ $1 $2 $HOME_anu_test/bin/hi.morf.bin < $MYPATH/$1_tmp/$2/id_Apertium_input.dat > $MYPATH/$1_tmp/$2/id_Apertium_output1.dat
-
+ 
  cd $MYPATH/$1_tmp/$2
  python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  id_Apertium_output1.dat id_Apertium_output2.dat
  sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output2.dat > $MYPATH/$1_tmp/$2/id_Apertium_output.dat
@@ -35,6 +35,14 @@
  
  sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/run_minion.sh minion_input.txt 
  
+# if [ -s "minion_output_tmp.dat" ] ;
+# then   echo "" >> $MYPATH/$1_tmp/no_sol_found_tmp.txt  
+# else
+#	echo $2 >> $MYPATH/$1_tmp/re_executed_sentences.txt
+#	myclips -f $HOME_anu_test/miscellaneous/SMT/MINION/alignment/run_H_gen_minion1.bat >> $1.error
+# fi
+# sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/run_minion.sh minion_input.txt 
+
  myclips -f $HOME_anu_test/miscellaneous/SMT/MINION/alignment/alignment.bat >> $1.error
  
  cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat sd_chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat parserid_wordid_mapping.dat lwg_info.dat relations.dat hindi_meanings.dat GNP_agmt_info.dat id_Apertium_output.dat  hindi_id_order.dat position.dat hindi_punctuation.dat catastrophe.dat English_sentence.dat word_alignment.dat >>$MYPATH/$1_tmp/$2/all_facts
@@ -56,6 +64,10 @@
  if [ -s $var  ] ; then
  	echo $2  "  Time-out"  >> $MYPATH/$1_tmp/no_sol_found_tmp.txt
  fi
+
+ cat mngs_aligned_with_dic.dat >> $MYPATH/$1_tmp/meanings_aligned_with_dic_tmp.txt  
+ cat mngs_aligned_with_anu.dat >> $MYPATH/$1_tmp/meanings_aligned_with_anu_tmp.txt  
+ cat mngs_aligned_with_minion.dat >> $MYPATH/$1_tmp/meanings_aligned_with_minion_tmp.txt  
 
 # cat eng_id_in_hin_ord.dat >> $MYPATH/$1_tmp/$1_ordered_file
 # cp hindi_sentence.dat hindi_sentence_tmp.dat

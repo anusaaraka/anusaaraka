@@ -51,7 +51,7 @@
 (declare (salience 1400))
 ?f0<-(grp_ids-head_ids-var_ids $?g_ids - $?h_ids - $?vars)
 (pada_info (group_head_id ?hid)(group_ids $?grp))
-(id-word ?hid ?w&~he&~her&~him&~i&~it&~its&~me&~my&~our&~ours&~she&~that&~their&~them&~they&~this&~those&~we&~who&~whom&~you&~your)
+(id-word ?hid ?w&~he&~her&~him&~i&~it&~its&~me&~my&~our&~ours&~she&~that&~their&~them&~they&~this&~those&~we&~who&~whom&~you&~your&~which)
 (test (member$ ?hid $?g_ids))
 (test (eq (member$ ?hid $?h_ids) FALSE))
 =>
@@ -74,7 +74,7 @@
 	(loop-for-count (?i 1 (length $?ids))
 		(bind ?id (nth$ ?i $?ids))
 		(if (neq ?id ?h) then
-			(if (neq (member$ ?id $?h_ids) "FALSE") then
+			(if (neq (member$ ?id $?h_ids) FALSE) then
 				(retract ?f0)
 				(bind $?h_ids (delete-member$ $?h_ids ?id))
 				(bind $?g_ids (delete-member$ $?g_ids ?id))

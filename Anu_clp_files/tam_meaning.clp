@@ -1,4 +1,6 @@
- (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
+(defglobal ?*wsd_tam_fact_file* = wsd_tam_fact_fp)
+
+(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
  (deffacts dummy_facts 
  (id-E_tam-H_tam_mng)
@@ -29,6 +31,35 @@
  (conj_head-components)
  )
 
+ ; if there is a conjunction between verbs and the tam for first verb is say wA_hE then modify all the tams for the verbs in conjunction as wA_hE
+ ;Suggested by Chaitanya Sir (12-12-12)
+ ;Every living creature in the world experiences the need to impart or receive information almost continuously with others in the surrounding world.
+ (defrule modify_tam_for_conjunction
+ (declare (salience 8000))
+ (conj_head-components ?con ?f_vb $? ?s_vb $?)
+ (id-E_tam-H_tam_mng ?f_vb ? ?htam)
+ ?f0<-(id-E_tam-H_tam_mng ?s_vb ?etam ?)
+ (not (modified_sverb_tam ?s_vb))
+ =>
+	(retract ?f0)
+	(assert (id-E_tam-H_tam_mng ?s_vb ?etam ?htam))
+	(assert (modified_sverb_tam ?s_vb))
+ )
+ ;---------------------------------------------------------------------------------------------------------------------
+ ;Suggested by Chaitanya Sir (12-12-12)
+ ;Every living creature in the world experiences the need to impart or receive information almost continuously with others in the surrounding world.
+ (defrule get_verbal_noun_fact_for_modified_tam
+ (declare (salience 7500))
+ (modified_sverb_tam ?s_vb)
+ (conj_head-components ?con ?f_vb $? ?s_vb $?)
+ (make_verbal_noun ?f_vb)
+ (not (got_vn_fact_for_second_verb ?s_vb))
+ =>	
+	(printout ?*wsd_tam_fact_file* "(make_verbal_noun  " ?s_vb ")" crlf)
+	(assert (make_verbal_noun ?s_vb ))
+	(assert (got_vn_fact_for_second_verb ?s_vb))
+ )
+ ;---------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju
  (defrule wsd_tam_mng_verb
  (declare (salience 7000))

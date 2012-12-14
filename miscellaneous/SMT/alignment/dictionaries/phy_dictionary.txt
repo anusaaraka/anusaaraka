@@ -5,8 +5,8 @@
 ##############################################################################
 framework_noun	DAzcA
 mechanics_noun	yAMwrikI
-atomic_adjective	paramANvika
-molecular_adjective	ANvika
+atomic_adjective	paramANvika/paramANvIya
+molecular_adjective	ANvika/aNu
 quantum_noun	kvAMtama
 antiparticle_noun	prawikaNa
 discipline_noun	viRaya
@@ -300,7 +300,6 @@ infinitesimal_noun	anaMwa_sUkRma
 co-existence_noun	saha-aswiwva
 reservoir(of heat)_noun	URmASaya
 sink(of heat)_noun	aBigama
-refrigerator_noun	praSIwaka
 asymmetry_noun	asamamiwi
 semi-static_adjective	arXa_sWira
 absorbed_adjective	avaSoRiwa
@@ -349,3 +348,6 @@ velocity-time_noun	vega_samaya
 velocity-position_noun	vega_sWiwi 
 position-time_noun	sWiwi_samaya
 negative_adjective	qNAwmaka
+mass_noun	saMhawi
+body_noun	piNda
+phenomenon_noun	pariGatanA

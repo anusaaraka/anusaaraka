@@ -135,6 +135,9 @@
  sh $HOME_anu_test/miscellaneous/SMT/alignment/browser/run_align_browser.sh $HOME_anu_test $1 $MYPATH $HOME_anu_output
 
  echo "Print minion_statistics"
+ cat $MYPATH/tmp/$1_tmp/meanings_aligned_with_dic_tmp.txt $MYPATH/tmp/$1_tmp/meanings_aligned_with_anu_tmp.txt $MYPATH/tmp/$1_tmp/meanings_aligned_with_minion_tmp.txt >> $MYPATH/tmp/$1_tmp/anu_and_manual_meanings_tmp.txt
+ sort $MYPATH/tmp/$1_tmp/anu_and_manual_meanings_tmp.txt > $MYPATH/tmp/$1_tmp/anu_and_manual_meanings.txt
+
  sed -n '1h;2,$H;${g;s/\([0-9.]*\)   Solution Found\n[0-9.]*   Time-out/\1   Time-out/g;p}' $MYPATH/tmp/$1_tmp/no_sol_found_tmp.txt | sed '1d'  > $MYPATH/tmp/$1_tmp/no_sol_found.txt
  echo "No Solution Found :" >> $MYPATH/tmp/$1_tmp/minion_statistics
  grep "No Solution Found" $MYPATH/tmp/$1_tmp/no_sol_found.txt | wc  -l >> $MYPATH/tmp/$1_tmp/minion_statistics

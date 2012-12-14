@@ -76,7 +76,7 @@ indicate	ifgiwa_kara
 astonish	AScaryacakiwa_kara
 include	sammiliwa_ho
 same	samAna
-describe	vyAKyA_kara
+describe	vyAKyA_kara/vyakwa_kara
 familiar	supariciwa
 unify	ekIkqwa_kara
 underlie	mUla_meM_ho
@@ -87,11 +87,11 @@ bind	bAnXe_raKa
 recent	piCalA
 foundation	mUlAXAra
 report	praswuwa_kara
-involve	sammiliwa_ho
+involve	sammiliwa_ho/nihiwa_ho
 accelerate	wvariwa_ho
 represent	vyakwa_kara
 establish	prawipAxiwa_kara
-as	nimna_prakAra
+as	nimna_prakAra/jEsA_ki
 look	xiKalAI_xe
-involve	nihiwa_ho
 specify	nirXAraNa
+solve	prApwa_kara

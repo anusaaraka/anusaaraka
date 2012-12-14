@@ -16,6 +16,7 @@ rm $HOME_anu_test/Anu_databases/hindi_wordnet_dic2.gdbm
 rm $HOME_anu_test/Anu_databases/hindi_multi_word.gdbm
 rm $HOME_anu_test/Anu_databases/numbers_dic.gdbm
 rm $HOME_anu_test/Anu_databases/preposition_dictionary.gdbm
+rm $HOME_anu_test/Anu_databases/inferred_dic.gdbm
 
 rm $HOME_anu_test/Anu_databases/Science-dictionary.gdbm
 
@@ -72,7 +73,8 @@ echo "Creating numbers dictionary"
 ./create-gdbm.pl $HOME_anu_test/Anu_databases/numbers_dic.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/numbers_dic_in_canonical_form.txt
 echo "Creating hindi_multi_word dictionary"
 ./create-gdbm.pl $HOME_anu_test/Anu_databases/hindi_multi_word.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/hindi_multi_word_in_canonical_form.txt
-
+echo "Creating inferred_dictionary"
+./create-gdbm.pl $HOME_anu_test/Anu_databases/inferred_dic.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/inferred_dic_in_canonical_form.txt
 
  echo "Creating multi_word_expressions.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/multi_word_expressions.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/multi_word_expressions_in_canonical_form.txt

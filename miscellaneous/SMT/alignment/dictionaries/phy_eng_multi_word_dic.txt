@@ -96,7 +96,7 @@ differential_calculus	avakala_gaNiwa#avakala_gaNiwa#noun#2#WM
 differential_coefficient	avakala_guNAMka#avakala_guNAMka#noun#2#RM
 limiting_process	sImAMwa_prakriyA#sImAMwa_prakriyA#noun#2#RM
 exact_expression	yaWArWa_vyaMjaka#yaWArWa_vyaMjaka#noun#2#RM
-function_of_time	samaya_kA_Palana#samaya_kA_Palana#noun#2#RM
+function_of_time	samaya_kA_Palana#samaya_kA_Palana#noun#1#RM
 inclined_plane	nawa_samawala#nawa_samawala#noun#2#RM
 instantaneous_acceleration	wAwkRaNika_wvaraNa#wAwkRaNika_wvaraNa#noun#2#RM
 average_acceleration	Osawa_wvaraNa#Osawa_wvaraNa#noun#2#RM

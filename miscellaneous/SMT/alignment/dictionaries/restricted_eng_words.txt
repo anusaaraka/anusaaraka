@@ -1,11 +1,11 @@
-the	vaha/isa/usa/vahI/isakA/uwanA/jiwanA/apanA/yaha/apanI
+the	vaha/isa/usa/vahI/isakA/uwanA/jiwanA/apanA/yaha/apanI/ina
 a	eka/koI/prawi/kisI/eka_EsI
 an	eka/koI/prawi/kisI/eka_EsI
 that	jo/isa/yaha/vaha/usa/ki/jinheM
 there	vahAz/vaha
 them	unako/unakA/unake/unheM/ve
 they	unheM/ve_loga/ve/unhoMne/ye
-this	yaha/isa/isese/iwanA/isake_lie/isakA
+this	yaha/isa/isese/iwanA/isake_lie/isakA/ise
 also	BI/Ora
 too	BI
 even	BI/Ora BI/TIka/SAnwa/sannwuliwa/samawala/samAna/sama/eka_sA/cOrasa/kevala
@@ -24,3 +24,5 @@ we	hama/mEM/hameM/hamArA/hamane/hame
 you	Apa/wumheM/Apako/ApakA/Apake/Apane
 i	mEM/muje/mEMne
 one	eka	
+as	pahale_kI_waraha/mAno/kI_waraha/ke_rUpa_meM/jyoMhI/jisa_waraha/jEse_hI/jaba_ki/jEsA/kyofki/jEse_hI/jaba/ke_rUpa_meM/ke_jEsA/ke_BAnwi/ke_samAna
+

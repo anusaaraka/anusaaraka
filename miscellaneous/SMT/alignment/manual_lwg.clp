@@ -144,12 +144,13 @@
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) - SYM)
 ?f3<-(man_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w ?)
+(id-node-word-root ?id2 $? - $?root1)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 (not (retract_manual_fact ?id2))
 =>
         (retract ?f1 ?f2 ?f3)
-        (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun ?w  - $?root - 0 - ?id0 ?id1 ?id2))
+        (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun ?w  - $?root1 - 0 - ?id0 ?id1 ?id2))
 )
 ;----------------------------------------------------------------------------------------------------------------
 ;Axya vicArakoM jEse araswU kI bala ke viRaya meM saMkalpanA galawa WI -- Early thinkers like Aristotle had wrong ideas about it.
