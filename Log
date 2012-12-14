@@ -4133,7 +4133,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  11. Modified run_modules_std.bat to open wsd_tam_facts_output.dat in append mode in tam_meaning module
  12. Added "modify_tam_for_conjunction" and "get_verbal_noun_fact_for_modified_tam" rules in tam_meaning.clp
  13. Modified list-right and list_SMT files to add "inferred_dic"
- 14. Added inferred_dic.txt
+ 14. Added inferred_dic.txt and get_exact_and_dic_mng_files.clp
  15. Modified alignment.bat to load below files for create_alignment_dic module to generate mngs_aligned_with_minion.dat file
         manual_lwg.dat , database_mng.dat ,para_sent_id_info.dat, manual_hindi_sen.dat and manual_lwg_new.dat
  16. create_alignment_dic.clp
