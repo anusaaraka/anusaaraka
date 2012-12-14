@@ -49,7 +49,7 @@ usane prakASikI ke kRewra meM mArga_praSaswa_karanevAlA yogaxAna banAe.
 
 Hindi meaning using Stanford parser 2.10
 In these examples, the external agency of force (hands, wind, stream, etc) is in contact with the object. 
-ina uxAharaNoM meM, bala kI (hAWa, havAez Jarane, Axi) bAharI saMsWA vaswu ke samparka meM hE.
+ina uxAharaNoM meM, bala kA (hAWa, havAez Jarane, Axi) bAhya_sAXana vaswu ke samparka meM hE.
 
 Hindi meaning using Stanford parser 2.11
 You should now be able to handle a large variety of problems in mechanics. 
@@ -129,7 +129,7 @@ gawi ke praWama niyama ke xvArA anwarikRa yAwrI kA wvaraNa SUnya hE.
 
 Hindi meaning using Stanford parser 2.30
 The mass of a body is thus an important parameter that determines the effect of force on its motion. 
-isa prakAra SarIra kA parimANa mahawvapUrNa gaNiwa_meM_sWira rASI hE jo usakI gawi para bala kA praBAva niScaya karawA hE.
+isa prakAra piNda kI saMhawi mahawvapUrNa gaNiwa_meM_sWira rASI hE jo usakI gawi para bala kA praBAva niScaya karawA hE.
 
 Hindi meaning using Stanford parser 2.31
 Using the basic laws of reflection and refraction, we shall study the image formation by plane and spherical reflecting and refracting surfaces. 
@@ -153,11 +153,11 @@ BOwika vijFAna kA kRewra agale BAga meM safkRipwa_rUpa meM varNana kiyA huA hE.
 
 Hindi meaning using Stanford parser 2.36
 The efficiency of heat engines and refrigerators, the direction of a physical or chemical process, etc., are problems of interest in thermodynamics. 
-URmA iFjanoM kI Ora praSIwaka, eka BOwika yA rasAyanika xravya prakriyA kI, etc. xiSAez xakRawA URmAgawikI meM rUci kI samasyAez hEM.
+URmA iFjanoM kI Ora praSIwaka, eka BOwika yA rasAyanika xravya prakriyA kI, etc. xiSAez xakRawA URmAgawikI meM rocaka_samasyAez hEM.
 
 Hindi meaning using Stanford parser 2.37
 He also gave an explicit form for the force for gravitational attraction between two bodies. 
-usane BI xo SarIroM ke bIca guruwvAkarRaNa ke lie bala ke lie spaRta rUpa xiyA.
+usane BI xo piNdoM ke bIca guruwvAkarRaNa ke lie bala ke lie spaRta rUpa xiyA.
 
 Hindi meaning using Stanford parser 2.38
 The origin of these derived forces is, however, very complex. 
@@ -185,7 +185,7 @@ BOwikavix viSva Koja karawe hEM.
 
 Hindi meaning using Stanford parser 2.44
 In any physical phenomenon governed by different forces, several quantities may change with time. 
-alaga baloM ke xvArA vaSA_meM kI huI kisI SArIrika xqgviRaya meM, viBinna parimANa samaya ke sAWa baxala sakawe hEM.
+alaga baloM ke xvArA vaSA_meM kI huI kisI SArIrika pariGatanA meM, viBinna parimANa samaya ke sAWa baxala sakawe hEM.
 
 Hindi meaning using Stanford parser 2.45
 The general law of energy conservation, however, is still applicable. 
@@ -213,7 +213,7 @@ oleic amla kA ANvika AkAra anxAja lagAne ke lie eka sarala praNAlI ke nIce xI hu
 
 Hindi meaning using Stanford parser 2.51
 Mass is a basic property of matter. 
-PropN-mass-PropN viRaya kI eka buniyAxI sampawwi hE.
+saMhawi viRaya kI eka buniyAxI sampawwi hE.
 
 Hindi meaning using Stanford parser 2.52
 In principle they provide portable standard. 
