@@ -12,11 +12,11 @@ FILE *fp;
 %}
 
 %%
-[;]     {       printf("@punctSEMICOLON ");
-                fprintf(fp, "@punctSEMICOLON	PUNCT-Semicolon\n");
-        }
-nonascii      {       printf("@symbolnonascii ");
-                fprintf(fp, "@symbolnonascii	nonascii\n");
+[;]     {       printf(" @punctSEMICOLON ");
+                fprintf(fp, " @punctSEMICOLON	PUNCT-Semicolon\n");
+/*        }
+nonascii	{       printf("@symbolnonascii");
+                	fprintf(fp, "@symbolnonascii	nonascii\n"); */
         }
 \(	{	printf("@punctOPENPAREN ");
 		fprintf(fp, "@punctOPENPAREN	PUNCT-OpenParen\n");
@@ -151,13 +151,13 @@ nonascii      {       printf("@symbolnonascii ");
 		fprintf(fp, "@symbolTELDA	 SYMBOL-TELDA \n");
 	}
 
-[ ][a-zA-Z0-9]*[/][a-zA-Z0-9]* {	len=strcspn(yytext, "/");
-				strncpy(str,yytext, len); str[len]='\0';
+[ ]*[a-zA-Z0-9]*[/][a-zA-Z0-9]* {	len=strcspn(yytext, "/");
+					strncpy(str,yytext, len); str[len]='\0';
 
-				s1=strchr(yytext, '/')+1;
-                                printf(" %s symbolSLASH %s", str, s1); /*Ex: km/hr  */
-				fprintf(fp, " symbol-SLASH 	 SYMBOL-SLASH \n"); 
-			}
+					s1=strchr(yytext, '/')+1;
+        	                        printf("%s @symbolSLASH %s", str, s1); /*Ex: km/hr  */
+					fprintf(fp, " @symbolSLASH 	 SYMBOL-SLASH \n"); 
+				}
 [0-9]+[.][0-9]+		{	len=strcspn(yytext, ".");
 				strncpy(str, yytext, len); str[len]='\0';
 

@@ -37,13 +37,12 @@ cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
 flex canonical_form.lex
 gcc -o canonical_form.out lex.yy.c -lfl myeq.c
 $HOME_anu_test/Anu_src/comp.sh replacing_canonical
+$HOME_anu_test/Anu_src/comp.sh non_canonical_form
 
 sh get_txt_files.sh
 sh get_dictionary_in_canonical_form.sh
 
 cd $HOME_anu_test/Anu_data
-#echo "Creating Physics-dictionary"
-# ./create-gdbm.pl $HOME_anu_test/Anu_databases/Physics-dictionary.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/Physics-dictionary_in_canonical_form.txt
 echo "Creating phy_dictionary.txt"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/phy_dictionary.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/phy_dictionary_in_canonical_form.txt
 echo "Creating phy_eng_multi_word_dic.txt"

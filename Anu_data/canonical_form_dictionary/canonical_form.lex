@@ -25,6 +25,6 @@ char canonical_word[1000];
                                               printf("%s", canonical_word);  /*Ex: saMbaMXiwa</text>  o/p: sambanXiwa</text>*/
                                         }
 
-@[^ ]+					ECHO;
+@[a-zA-Z]+				ECHO;
 
 %%

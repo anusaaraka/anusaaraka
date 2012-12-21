@@ -39,19 +39,24 @@ for line in xrange(len(sp)):
 	
 	if  ("((" not in sp[line]) and ("))" not in sp[line]) and (not sp[line].startswith("<Sentence id=")) and (not sp[line].startswith("</Sentence>")):
 
-		#if (len(suf) >= 1) and (c < len(orig_sent)) and (len(my_cat) >= 1) and( len(mylst) >= 1) and (mylst[1] != orig_sent[c]): 
-		if (len(suf) >= 1) and ( len(mylst) >= 1) and (mylst[1] != orig_sent[c]): 
-			for each in xrange(len(suf)-1):
-				print 'xx\t', orig_sent[c]
-				c += 1
-				suf = []
+        #if (len(suf) >= 1) and (c < len(orig_sent)) and (len(my_cat) >= 1) and( len(mylst) >= 1) and (mylst[1] != orig_sent[c]):
+		if (len(suf) >= 1) and ( len(mylst) >= 1) and (mylst[1] != orig_sent[c]):
+	            if suf[0].endswith('nahIM'):
+        	        print 'xx\t', 'nahIM'
+                	c += 1
+	                del suf[0]
+        	    else:
+                	for each in xrange(len(suf)-1):
+	                    print 'xx\t', orig_sent[c]
+        	            c += 1
+                	    suf = []
 
 		if mylst[1] == orig_sent[c] :
-			print sp[line],
-			c += 1
+	            print sp[line],
+        	    c += 1
 
 	if len(suf) >= 1 and '))' in sp[line+1] :#and mylst[1] == orig_sent[c]:
-		for each in xrange(len(suf)-1):
-			print 'yy\t', orig_sent[c] 
-			c += 1
-			continue
+	         for each in xrange(len(suf)-1):
+        	    print 'yy\t', orig_sent[c]
+	            c += 1
+        	    continue

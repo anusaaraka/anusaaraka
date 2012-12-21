@@ -5,18 +5,47 @@
  MYPATH=$HOME_anu_tmp
 
  echo "Pre-proccessing manual file ..."
- $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form.out   < $2  >  $MYPATH/tmp/$1_tmp/$2_in_canonical_form_tmp
+ #Running below command temporarily . As of now o/p from champollion is in canonical form.
+ #If input is from other source then comment the below line and modify the shell accordingly.
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/non_canonical_form.out   < $2  >  $MYPATH/tmp/$1_tmp/$2_in_non_canonical_form
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form.out   < $MYPATH/tmp/$1_tmp/$2_in_non_canonical_form  >  $MYPATH/tmp/$1_tmp/$2_in_canonical_form_tmp
  $HOME_anu_test/Anu_data/canonical_form_dictionary/replacing_canonical.out  < $MYPATH/tmp/$1_tmp/$2_in_canonical_form_tmp  >  $MYPATH/tmp/$1_tmp/$2_in_canonical_form
  $HOME_anu_test/miscellaneous/SMT/MINION/alignment/mapping-symbols_manual.out  $HOME_anu_tmp/tmp/$1_tmp/Symbols_man.txt_tmp < $MYPATH/tmp/$1_tmp/$2_in_canonical_form > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt
  $HOME_anu_test/Anu_src/identify-nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp2.txt
-# cp $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp2.txt $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4.txt
  wx_utf8 < $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp2.txt > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp3.txt
  $HOME_anu_test/miscellaneous/SMT/MINION/alignment/adding@-for-eng-words.out < $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp3.txt > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4.txt
   
  echo "Running Shallow Parser ..."
  cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER
   sh run_shallow_parser.sh $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4.txt
-  utf8_wx $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4.txt.out > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp5.txt
+
+ echo "Generating canonical form for Shallow Parser Output ..."
+ ./adding@-for-eng-words.out < $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4.txt.out > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4.txt.out1
+ cut -f1 $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4.txt.out1 > $MYPATH/tmp/$1_tmp/tmp1
+ cut -f2 $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4.txt.out1 > $MYPATH/tmp/$1_tmp/tmp2
+ cut -f3 $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4.txt.out1 > $MYPATH/tmp/$1_tmp/tmp3
+ cut -f4 $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4.txt.out1 > $MYPATH/tmp/$1_tmp/tmp4
+ utf8_wx $MYPATH/tmp/$1_tmp/tmp1 > $MYPATH/tmp/$1_tmp/tmp1_wx
+ utf8_wx $MYPATH/tmp/$1_tmp/tmp2 > $MYPATH/tmp/$1_tmp/tmp2_wx
+ utf8_wx $MYPATH/tmp/$1_tmp/tmp3 > $MYPATH/tmp/$1_tmp/tmp3_wx
+ utf8_wx $MYPATH/tmp/$1_tmp/tmp4 > $MYPATH/tmp/$1_tmp/tmp4_wx
+
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form.out   < $MYPATH/tmp/$1_tmp/tmp1_wx  >  $MYPATH/tmp/$1_tmp/tmp1_canonical_tmp
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/replacing_canonical.out  < $MYPATH/tmp/$1_tmp/tmp1_canonical_tmp  >  $MYPATH/tmp/$1_tmp/tmp1_canonical
+
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form.out   < $MYPATH/tmp/$1_tmp/tmp2_wx  >  $MYPATH/tmp/$1_tmp/tmp2_canonical_tmp
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/replacing_canonical.out  < $MYPATH/tmp/$1_tmp/tmp2_canonical_tmp  >  $MYPATH/tmp/$1_tmp/tmp2_canonical
+
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form.out   < $MYPATH/tmp/$1_tmp/tmp3_wx  >  $MYPATH/tmp/$1_tmp/tmp3_canonical_tmp
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/replacing_canonical.out  < $MYPATH/tmp/$1_tmp/tmp3_canonical_tmp  >  $MYPATH/tmp/$1_tmp/tmp3_canonical
+
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form.out   < $MYPATH/tmp/$1_tmp/tmp4_wx  >  $MYPATH/tmp/$1_tmp/tmp4_canonical_tmp
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/replacing_canonical.out  < $MYPATH/tmp/$1_tmp/tmp4_canonical_tmp  >  $MYPATH/tmp/$1_tmp/tmp4_canonical
+
+ paste $MYPATH/tmp/$1_tmp/tmp1_canonical $MYPATH/tmp/$1_tmp/tmp2_canonical $MYPATH/tmp/$1_tmp/tmp3_canonical $MYPATH/tmp/$1_tmp/tmp4_canonical > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4.txt.out_canonical
+ sed 's/\t;~~~~~~~~~~//g' $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4.txt.out_canonical | sed 's/C@LOSEPAREN/CLOSEPAREN/g' | sed 's/@//g'  > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp5.txt
+ cd $MYPATH/tmp/$1_tmp/
+ rm tmp1 tmp2 tmp3 tmp4 tmp1_wx tmp2_wx tmp3_wx tmp4_wx 
 
  cd $HOME_anu_test/miscellaneous/SMT/alignment
   utf8_wx $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4.txt > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4_wx.txt
