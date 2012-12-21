@@ -33,14 +33,14 @@ sh generate_hin_multi_word_dic.sh phy_eng_multi_word_dic.txt phy_hnd_multi_word_
 echo "Creating hindi_multi_word_dic.txt"
 sh generate_hin_multi_word_dic.sh $HOME_anu_test/Anu_data/compound-matching/multi_word_expressions.txt hindi_multi_word.txt 
 
+cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER
+$HOME_anu_test/Anu_src/comp.sh adding@-for-eng-words
+ 
 cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
 flex canonical_form.lex
 gcc -o canonical_form.out lex.yy.c -lfl myeq.c
 $HOME_anu_test/Anu_src/comp.sh replacing_canonical
 $HOME_anu_test/Anu_src/comp.sh non_canonical_form
-
-cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER
-$HOME_anu_test/Anu_src/comp.sh adding@-for-eng-words 
 
 sh get_txt_files.sh
 sh get_dictionary_in_canonical_form.sh
