@@ -4150,19 +4150,20 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  23. Modified symbolslash rule in mapping-symbols_manual.lex
  24. Added code to get shallow parser output in canonical form in processing_manual_sentences.sh
  25. Handled 'nahIM' as suffix in add-suf-into-chunks.py
- 26. Added non_canonical_form.lex in Anu_data/canonical_form_dictionary/ to get manual sentence in non canonical form.
- 27. Added code to compile non_canonical_form.lex in dic_compile.sh
- 28. Updated canonical_form.lex
- 29. Updated phy_align_verified_eng_align.html and phy_align_verified_out
- 30. Updated the following dictionaries:
+ 26. Added adding@-for-eng-words.lex in miscellaneous/SHALLOW_PARSER 
+ 27. Added non_canonical_form.lex in Anu_data/canonical_form_dictionary/ to get manual sentence in non canonical form.
+ 28. Added code to compile non_canonical_form.lex  and adding@-for-eng-words.lex in dic_compile.sh
+ 29. Updated canonical_form.lex
+ 30. Updated phy_align_verified_eng_align.html and phy_align_verified_out
+ 31. Updated the following dictionaries:
         miscellaneous/SMT/alignment/dictionaries/phy_dictionary.txt
         miscellaneous/SMT/alignment/dictionaries/phy_eng_multi_word_dic.txt
         miscellaneous/SMT/alignment/dictionaries/provisional_root_dic.txt
         miscellaneous/SMT/alignment/dictionaries/restricted_eng_words.txt
         miscellaneous/SMT/alignment/dictionaries/restricted_hnd_words.txt
- 31. Updated ClipsToAnu_browser_intfc.sh 
- 32. Updated adding@-for-eng-words.lex .
- 33. Updated iit-bombay dic in goldendict.
- 34. Updated dic_compile.sh
- 35. Updated in changes_in_databases
- 36. Updated Log
+ 32. Updated ClipsToAnu_browser_intfc.sh 
+ 33. Updated adding@-for-eng-words.lex .
+ 34. Updated iit-bombay dic in goldendict.
+ 35. Updated dic_compile.sh
+ 36. Updated in changes_in_databases
+ 37. Updated Log

@@ -39,6 +39,9 @@ gcc -o canonical_form.out lex.yy.c -lfl myeq.c
 $HOME_anu_test/Anu_src/comp.sh replacing_canonical
 $HOME_anu_test/Anu_src/comp.sh non_canonical_form
 
+cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER
+$HOME_anu_test/Anu_src/comp.sh adding@-for-eng-words 
+
 sh get_txt_files.sh
 sh get_dictionary_in_canonical_form.sh
 
