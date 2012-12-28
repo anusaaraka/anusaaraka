@@ -7,7 +7,7 @@ anyaWA	or
 hI	only
 BI	also/too/even
 ki	that
-isa	the/this
+isa	the/this/such
 eka	a/an/one
 koI	a/an
 kisI	a/an

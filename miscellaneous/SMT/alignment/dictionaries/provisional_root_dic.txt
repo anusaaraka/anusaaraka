@@ -95,3 +95,5 @@ as	nimna_prakAra/jEsA_ki
 look	xiKalAI_xe
 specify	nirXAraNa
 solve	prApwa_kara
+motion	gawimAna
+fig.	ciwra

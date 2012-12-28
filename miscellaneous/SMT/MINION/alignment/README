@@ -16,7 +16,7 @@
                         The output will be ....
                      >> /usr/lib/libgdbm.so
                      >> /usr/lib/libgdbm.so.3 
-                         ans so on ....
+                         and so on ....
                  2) Accordingly make a soft link to the existing one to libgdbm.so.2
                        For Eg:-
                      >> sudo ln -s /usr/lib/libgdbm.so /usr/lib/libgdbm.so.2
@@ -42,9 +42,10 @@
 
  5. To run alignment :
     =================
+	(Note : sample files are in $HOME_anu_test/miscellaneous/SMT/MINION/alignment/align_output)
 
         Anusaaraka_stanford_minion.sh <file-name> <parse_no> <sand_box_option> <domain_name> < manual_hin_sen> 
-        Ex  :   Anusaaraka_stanford_minion.sh phy_verified 0 false general phy_verified_hi 
+        Ex  :   Anusaaraka_stanford_minion.sh phy_align_verified_eng 0 false general phy_align_verified_hnd 
         (Note : 0       :  default parse
                 false   :  not to use provisional directory.
                 general :  no domain
@@ -54,7 +55,7 @@
    ================
         To run Anusaaraka for physics domain then
 
-        Ex  :Anusaaraka_stanford_minion.sh phy_verified 0 True physics phy_verified_hi
+        Ex  :Anusaaraka_stanford_minion.sh phy_align_verified_eng 0 True physics phy_align_verified_hnd
 
         (Note : 0       :  default parse
                 True    :  to use provisional directory.
@@ -64,10 +65,25 @@
 
     Dictionaries :  Dictionaries used for alignment are in $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries directory
 
-   File to check for group alignment is :
-   =====================================
-                         $HOME_anu_tmp/tmp/$1_tmp/$2/alignment.dat
-                Ex:      $HOME_anu_tmp/tmp/phy_verified_tmp/2.1/alignment.dat
+   File to check for meanings aligned with ANU
+   =========================================== :
+		$HOME_anu_tmp/tmp/$1_tmp/meanings_aligned_with_anu_tmp.txt
+   	   Ex:	$HOME_anu_tmp/tmp/phy_align_verified_eng_tmp/meanings_aligned_with_anu_tmp.txt
+
+   File to check for meanings aligned with Dictionary
+   ================================================== :
+                $HOME_anu_tmp/tmp/$1_tmp/meanings_aligned_with_dic_tmp.txt
+           Ex:  $HOME_anu_tmp/tmp/phy_align_verified_eng_tmp/meanings_aligned_with_dic_tmp.txt
+
+   File to check for meanings aligned with Minion
+   ============================================== :
+                $HOME_anu_tmp/tmp/$1_tmp/meanings_aligned_with_minion_tmp.txt
+           Ex:  $HOME_anu_tmp/tmp/phy_align_verified_eng_tmp/meanings_aligned_with_minion_tmp.txt
+
+   To see all the three files (ANU,Dictionary and Minion) mentioned above at once in sorted order
+   ============================================================================================== :
+		$HOME_anu_tmp/tmp/$1_tmp/anu_and_manual_meanings.txt
+	   Ex:  $HOME_anu_tmp/tmp/phy_align_verified_eng_tmp/anu_and_manual_meanings.txt
 
    File to check for word alignment is :
    ====================================
@@ -78,4 +94,3 @@
    =================================
                         firefox $HOME_anu_output/[file_name]_align.html
                 Ex:     firefox $HOME_anu_output/phy_verified_align.html
-

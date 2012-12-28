@@ -4167,3 +4167,15 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  35. Updated dic_compile.sh
  36. Updated in changes_in_databases
  37. Updated Log
+
+ 28-12-12
+ ========
+ 1. hindi_meaning.clp
+        Removed  : get_mng_from_phy_dic_with_diff_cat
+        Modified : get_mng_from_phy_dic_with_diff_cat1
+ 2. Updated the following files :
+        miscellaneous/SMT/alignment/dictionaries/restricted_eng_words.txt
+        miscellaneous/SMT/alignment/dictionaries/restricted_hnd_words.txt
+        miscellaneous/SMT/alignment/dictionaries/provisional_root_dic.txt
+ 3. Updated MINION/alignment/README
+ 4. Updated Log 

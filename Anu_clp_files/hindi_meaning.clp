@@ -163,46 +163,18 @@
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
- ; Added by Shirisha Manju (19-11-12)
- (defrule get_mng_from_phy_dic_with_diff_cat
- (declare (salience 9300))
- (Domain physics)
- (id-root ?id ?rt)
- ?mng<-(meaning_to_be_decided ?id)
- (id-cat_coarse ?id ?cat)
- (test (neq (numberp ?rt) TRUE))
- (default-cat ?cat1)
- (test (neq ?cat ?cat1))
- (test (neq (gdbm_lookup "phy_dictionary.gdbm" (str-cat ?rt "_" ?cat1)) "FALSE"))
- =>
-        (bind ?a (gdbm_lookup "phy_dictionary.gdbm" (str-cat ?rt "_" ?cat1)))
-        (if (neq ?a "FALSE") then
-                (if (neq (str-index "/" ?a) FALSE) then
-                        (bind ?h_mng (sub-string  1 (- (str-index "/" ?a) 1) ?a))
-                else
-                        (bind ?h_mng  ?a)
-                )
-        	(retract ?mng)
-        	(printout ?*hin_mng_file* "(id-HM-source   "?id"   "?h_mng"   Physics_Glossary)" crlf)
-        	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?h_mng"   Physics_Glossary "?id")" crlf)
-        	(printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?rt")" crlf)
-        )
- )
- ;--------------------------------------------------------------------------------------------------------------
  ; In [Kinematics], we study ways to describe motion without going into the causes of motion. 
  ; Added by Shirisha Manju (19-11-12)
  (defrule get_mng_from_phy_dic_with_diff_cat1
  (declare (salience 9200))
  (Domain physics)
+ (id-cat_coarse ?id PropN)
  (id-root ?id ?rt)
  ?mng<-(meaning_to_be_decided ?id)
- (id-cat_coarse ?id ?cat)
  (test (neq (numberp ?rt) TRUE))
- (default-cat ?cat1)
- (test (neq ?cat ?cat1))
- (test (neq (gdbm_lookup "phy_dictionary.gdbm" (str-cat (lowcase ?rt) "_" ?cat1)) "FALSE"))
+ (test (neq (gdbm_lookup "phy_dictionary.gdbm" (str-cat (lowcase ?rt) "_noun")) "FALSE"))
  =>
-        (bind ?a (gdbm_lookup "phy_dictionary.gdbm" (str-cat (lowcase ?rt) "_" ?cat1)))
+        (bind ?a (gdbm_lookup "phy_dictionary.gdbm" (str-cat (lowcase ?rt) "_noun")))
         (if (neq ?a "FALSE") then
                 (if (neq (str-index "/" ?a) FALSE) then
                         (bind ?h_mng (sub-string  1 (- (str-index "/" ?a) 1) ?a))
