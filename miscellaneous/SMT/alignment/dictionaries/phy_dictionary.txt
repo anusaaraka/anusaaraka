@@ -342,7 +342,7 @@ wavelength_noun	warafgaxErGya
 transmit_verb	preRiwa
 retina_noun	xqRti_patala
 #dimension_noun	vima
-relative_noun	ApekRa
+relative_adjective	ApekRa
 electromagnetism_noun	vixyuwa_cumbakawva
 velocity-time_noun	vega_samaya
 velocity-position_noun	vega_sWiwi 
@@ -351,3 +351,4 @@ negative_adjective	qNAwmaka
 mass_noun	saMhawi
 body_noun	piNda
 phenomenon_noun	pariGatanA
+nuclear_adjective	ANvika

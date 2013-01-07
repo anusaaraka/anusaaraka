@@ -27,6 +27,10 @@ rm $HOME_anu_test/Anu_databases/preposition.gdbm
 rm $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries/phy_hnd_multi_word_dic.txt
 rm $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries/hindi_multi_word.txt
 
+rm $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_smt.gdbm
+rm $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_firefox.gdbm
+
+
 echo "Creating phy_hnd_multi_word_dic.txt"
 cd $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries
 sh generate_hin_multi_word_dic.sh phy_eng_multi_word_dic.txt phy_hnd_multi_word_dic.txt
@@ -84,4 +88,20 @@ echo "Creating inferred_dictionary"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/default-iit-bombay-shabdanjali-dic_in_canonical_form.txt
  echo "Creating preposition.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/preposition.gdbm < preposition.txt
+
+
+ cd $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries
+ echo "Creating default-iit-bombay-shabdanjali-dic_smt.gdbm"
+ cut -f1 default-iit-bombay-shabdanjali-dic_in_canonical_form.txt > word_field
+ cut -f2 default-iit-bombay-shabdanjali-dic_in_canonical_form.txt > mng_field
+ wx_utf8 < mng_field > mng_utf8
+ paste word_field mng_utf8 > default-iit-bombay-shabdanjali-dic_firefox_tmp.txt
+ gcc -o $HOME_anu_test/Anu_src/converting-dic-format.out $HOME_anu_test/Anu_src/converting-dic-format.c
+ $HOME_anu_test/Anu_src/converting-dic-format.out default-iit-bombay-shabdanjali-dic_firefox_tmp.txt default-iit-bombay-shabdanjali-dic_firefox.txt default-iit-bombay-shabdanjali-dic_smt_tmp.txt
+ utf8_wx default-iit-bombay-shabdanjali-dic_smt_tmp.txt > default-iit-bombay-shabdanjali-dic_smt.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_firefox.gdbm < default-iit-bombay-shabdanjali-dic_firefox.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_smt.gdbm < default-iit-bombay-shabdanjali-dic_smt.txt
+ rm word_field mng_field mng_utf8 default-iit-bombay-shabdanjali-dic_firefox_tmp.txt default-iit-bombay-shabdanjali-dic_smt_tmp.txt
+
+
 

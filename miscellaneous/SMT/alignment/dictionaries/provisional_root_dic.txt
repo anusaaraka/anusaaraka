@@ -72,7 +72,7 @@ let	Aie
 return	vicAra_kara
 accompany	saMlagna_ho
 learn	aXyayana_kara
-indicate	ifgiwa_kara
+indicate	ifgiwa_kara/cihniwa_kara
 astonish	AScaryacakiwa_kara
 include	sammiliwa_ho
 same	samAna
@@ -97,3 +97,4 @@ specify	nirXAraNa
 solve	prApwa_kara
 motion	gawimAna
 fig.	ciwra
+then	Pira
