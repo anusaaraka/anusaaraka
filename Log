@@ -4173,14 +4173,41 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  1. hindi_meaning.clp
         Removed  : get_mng_from_phy_dic_with_diff_cat
         Modified : get_mng_from_phy_dic_with_diff_cat1
- 2. Updated the following files :
+ 2. Added "diff_cat_with_adverb" rule in root_rule.clp
+ 3. Updated bin/Anusaaraka_stanford_minion.sh to get re_executed sentences count
+ 4. Updated bin/run_sentence_stanford_minion.sh to re_execute the sentences if minion_output is empty
+ 5. Modified alignment.bat to open "mngs_aligned_with_minion.dat" in append mode instead write mode for "create_alignment_dic"   module
+ 6. Modified "possible_assignment" rule in create_alignment_dic.clp
+ 7. get_exact_and_dic_mng_files.clp:
+        Added    : get_mngs_aligned_for_verb
+        Modified : get_mngs_aligned_with_anu, get_mngs_aligned_with_dic and get_mngs_aligned_with_dic1
+                   (to get sentence no)
+ 8. Modified "rm_prep_id_from_prawiniXi" rule in get_grp_info.clp (used pada instead cat_coarse)
+ 9. Added "potential_count_of_manual_verb_id" rule in get_word_potential_facts.clp
+10. prepare_minion_input.clp :
+        Added    : get_total_for_consecutive_ids  and print_cost_for_consecutive_ids
+        Modified : print_array, print_sen_info and find_slot_length (added not condition)
+11. run_H_gen_minion.bat
+        1. Loaded "manual_hin.morph.dat" in  get_man_grp_mng module
+        2. Loaded "potential_assignment.dat" and "para_sent_id_info.dat" in get_exact_and_dic_mng_files module
+        3. Opened "mngs_aligned_with_minion.dat" file in write mode in get_exact_and_dic_mng_files module
+12. word_alignment.clp:
+        Added    : root_and_vib_match_using_dic3 and lookup_man_word_in_hindi_wordnet1
+        Modified : lookup_man_word_in_hindi_wordnet 
+13. get_man_grp_mng.clp :
+        Added    : modifiy_root, check_prev_word_of_kara_in_dic and check_prev_word_of_kara
+        Modified : check_prev_word_of_kara_and_ho_with_anu and shallow_parser_correction_rule
+14. Added "@" in the word list pattern of get_tam_info.lex
+15. Modified multi_word0, ke_[word], single_vib2 and verb_grouping rules in manual_lwg.clp
+16. Added get_grp_info1.clp, prepare_minion_input1.clp and run_H_gen_minion1.bat files to re_execute the sentences.
+17. Updated the following files :
 	miscellaneous/SMT/alignment/dictionaries/inferred_dic.txt
         miscellaneous/SMT/alignment/dictionaries/phy_dictionary.txt
         miscellaneous/SMT/alignment/dictionaries/provisional_PropN_dic.txt
         miscellaneous/SMT/alignment/dictionaries/restricted_eng_words.txt
         miscellaneous/SMT/alignment/dictionaries/restricted_hnd_words.txt
         miscellaneous/SMT/alignment/dictionaries/provisional_root_dic.txt
- 3. Updated dic_compile.sh
- 4. Updated changes_in_databases
- 5. Updated MINION/alignment/README
- 6. Updated Log 
+18. Updated dic_compile.sh
+19. Updated changes_in_databases
+20. Updated MINION/alignment/README
+21. Updated Log 

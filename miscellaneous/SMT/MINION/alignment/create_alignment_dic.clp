@@ -1,5 +1,5 @@
 (defglobal ?*dic_fp*  = dic_fp)
-(defglobal ?*minion-mng-file* = mng_fp2)
+(defglobal ?*minion-mng-file* = mng_fp3)
 (defglobal ?*count* = 0)
 
 (defrule print_comment
@@ -19,7 +19,8 @@
 (not (potential_assignment_vacancy_id-candidate_id ? ?mid))
 =>
         (printout ?*dic_fp* ?eng_words" = "(implode$ $?man_mng) crlf)
-	(assert (root-anu_mng-man_mng ?eng_words $?anu_mng - ?mapped_id))
+	(assert (root-anu_mng-man_mng ?eng_words ?h_mng - ?mapped_id))
+;	(assert (root-anu_mng-man_mng ?eng_words $?anu_mng - ?mapped_id))
 )
 ;--------------------------------------------------------------------------------------------------
 (defrule check_mng_with_multi_dic

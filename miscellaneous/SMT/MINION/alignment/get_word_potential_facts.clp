@@ -57,7 +57,6 @@
 	(assert (anu_id-word-possible_mngs ?aid ?wrd $?dic_list))
 )
 ;------------------------------------------------------------------------------------------------------------
-
 (defrule get_hnd_dic
 (declare (salience 2001))
 (manual_id-mng ?mapped_id $?mng)
@@ -117,7 +116,7 @@
 )
 ;------------------------------------------------------------------------------------------------------------
 (defrule potential_count_of_manual_id
-(declare (salience 1000))
+(declare (salience 1500))
 (or (potential_assignment_vacancy_id-candidate_id ?aid1 ?mid) (man_id-anu_id ?mid ?aid1)(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?))
 (not (man_id-candidate_ids ?mid $?))
 =>
@@ -134,7 +133,7 @@
 ;)
 ;------------------------------------------------------------------------------------------------------------
 (defrule potential_count_of_manual_id1
-(declare (salience 1000))
+(declare (salience 1500))
 (or (potential_assignment_vacancy_id-candidate_id ?aid ?mid) (man_id-anu_id ?mid ?aid)(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?))
 ?f<-(man_id-candidate_ids ?mid $?mem)
 (test (eq (member$ ?aid $?mem) FALSE))
@@ -145,7 +144,7 @@
 )
 ;------------------------------------------------------------------------------------------------------------
 (defrule potential_count_of_anu_id
-(declare (salience 1000))
+(declare (salience 1200))
 (or (potential_assignment_vacancy_id-candidate_id ?aid ?mid1) (anu_id-man_id ?aid ?mid1)(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?))
 ;(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid2) (anu_id-man_id ?aid ?mid2))
 ;(test (neq ?mid1 ?mid2))
@@ -157,7 +156,7 @@
 )
 ;------------------------------------------------------------------------------------------------------------
 (defrule potential_count_of_anu_id1
-(declare (salience 1000))
+(declare (salience 1200))
 (or (potential_assignment_vacancy_id-candidate_id ?aid ?mid) (anu_id-man_id ?aid ?mid)(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?))
 ?f<-(anu_id-candidate_ids ?aid $?mem)
 (test (eq (member$ ?mid $?mem) FALSE))
@@ -172,7 +171,7 @@
 ;For example, if the car starts from O, goes to P and then returns to O, the final position coincides with the initial position and the displacement is zero. --- Added if condition for pos 
 ;Fig. 3.2 (b) shows the position-time graph of such a motion. --- Added if condition for word [3.2]
 (defrule get_fact_name_and_mapped_ids_for_column
-(declare (salience 800))
+(declare (salience 1100))
 ?f<-(anu_id-candidate_ids ?aid $?mids)
 (hindi_id_order $?hin_order)
 (test (member$ ?aid $?hin_order))
@@ -203,7 +202,7 @@
 )
 ;------------------------------------------------------------------------------------------------------------
 (defrule get_fact_name_anu_slot_ids_for_row
-(declare (salience 800))
+(declare (salience 1000))
 (man_id-candidate_ids ?mid $?aids)
 (hindi_id_order $?hin_order)
 (manual_id-mapped_id ?mid ?mapped_id)
@@ -223,12 +222,28 @@
         	(assert (fact_name-man_id-slot_ids eq_or_sumleq ?mapped_id $?slot_ids)))
 )
 ;------------------------------------------------------------------------------------------------------------
+;Suggested by Chaitanya Sir  (least verb of anu == least verb of man)
 (defrule potential_count_of_manual_verb_id
+(declare (salience 900))
+?f<-(man_verb_count-verbs ?man_verb_count&~0 $?man_verbs)
+?f0<-(anu_verb_count-verbs ?anu_verb_count&~0 $?anu_verbs)
+(test (and (neq (length $?man_verbs) 0) (neq (length $?anu_verbs) 0)))
+=>
+	(retract ?f ?f0)
+	(bind ?mid (nth$ 1 (sort > $?man_verbs)))
+	(bind ?aid (nth$ 1 (sort > $?anu_verbs)))
+	(bind $?man_verbs (delete-member$ $?man_verbs ?mid))
+	(bind $?anu_verbs (delete-member$ $?anu_verbs ?aid))
+	(assert (anu_id-man_id ?aid ?mid))
+	(assert (man_verb_count-verbs ?man_verb_count $?man_verbs))
+	(assert (anu_verb_count-verbs ?anu_verb_count $?anu_verbs))	
+)
+
+(defrule potential_count_of_manual_verb_id1
 (declare (salience 800))
 (man_verb_count-verbs ?man_verb_count&~0 $? ?man_verb $?)
 (anu_verb_count-verbs ?anu_verb_count&~0 $?anu_verbs)
 (manual_id-mapped_id ?man_verb ?mapped_id)
-(hindi_id_order $?hin_order)
 =>
 	(assert (man_id-candidate_ids ?man_verb $?anu_verbs))
         (assert (man_verb_id-mapped_id ?man_verb ?mapped_id))

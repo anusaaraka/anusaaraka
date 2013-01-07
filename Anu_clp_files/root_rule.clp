@@ -79,6 +79,23 @@
         (printout ?*root_fp*  "(parser_id-root "?pid" "?word")" crlf)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (5th Jan 2013) Suggested by Chaitanya Sir
+ ;if both categories are diff : if parser category is adverb and morph cat is I then consider the I root
+ ; But only a few years [later], in 1938, Hahn and Meitner discovered the phenomenon of neutron-induced fission of uranium, which would serve as the basis of nuclear power reactors and nuclear weapons.
+ (defrule diff_cat_with_adverb
+ (declare (salience 110))
+ (parser_id-cat_coarse ?pid adverb)
+ (parserid-wordid  ?pid ?wid)
+ (id-original_word ?wid ?word)
+ (word-morph (original_word  ?word)(root ?root)(category  I)(suffix ?suf)(number ?num))
+ ?f0<-(morph_analysis_to_be_choosen ?wid)
+ =>
+        (retract ?f0)
+        (assert (parser_id-root ?pid ?root))
+        (printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?root"  adverb "?suf" " ?num ")" crlf)
+        (printout ?*root_fp*  "(parser_id-root "?pid" "?root")"crlf)
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
  ; if ol cat and morph cat differ and morph cat is adjective and suf is er
  ; He talked longer than usual .
  (defrule diff_cat_suf_er_est_adj

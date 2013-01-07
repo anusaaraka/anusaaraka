@@ -11,8 +11,7 @@
 (defrule rm_prep_id_from_prawiniXi
 (declare (salience 2002))
 ?f0<-(mot-cat-praW_id-largest_group ?m ?c ?p_id $?d ?id $?d1)
-(id-cat_coarse ?id preposition)
-(not (id-cat_coarse =(+ ?id 1) verb))
+(pada_info (preposition $? ?id $?))
 =>
         (retract ?f0)
         (assert (mot-cat-praW_id-largest_group ?m ?c ?p_id $?d $?d1))

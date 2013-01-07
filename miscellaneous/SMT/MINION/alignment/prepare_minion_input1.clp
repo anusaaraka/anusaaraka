@@ -60,23 +60,6 @@
         )
         (printout ?*minion_fp* "                eq("?total",30)" crlf"          })," crlf)
 )
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju(27-07-12)
-(deffunction print_weighted_values (?manual_word_len $?grp)
-        (bind ?plus_ones (* (length $?grp) (length $?grp)))
-        (bind ?minus_ones (* (length $?grp) ?manual_word_len))
-        (loop-for-count (?i 1 ?plus_ones)
-                (printout ?*minion_fp*  "1,")
-        )
-        (loop-for-count (?i 1 ?minus_ones)
-                (printout ?*minion_fp* "-1" )
-                (if (neq ?i ?minus_ones) then
-                        (printout ?*minion_fp* "," )
-                else
-                        (printout ?*minion_fp* "],")
-                )
-        )
-)
 ;======================================== Remove/modify facts ================================================
 ;Added by Maha Laxmi
 ;As aux ids are grouped in LWG individual word alignment is not necessary.
@@ -100,6 +83,26 @@
         (printout ?*minion_fp* " # Removed prep potential fact :: mid-aid: "?mid"--"?aid" As preositions ids are grouped with PP" crlf)
 )
 ;==============================================================================================================
+;if same word is pointing to 2 slots then chech the word in the database for the 2 slots. If we got match then remove the another fact.
+;This law was established by Galileo Galilei (1564-1642) who was the first to make quantitative studies of free fall.
+(defrule remove_fact_if_one_word_pointing_to_2_slots
+(declare (salience 1501))
+?f0<-(fact_name-slot_id-word_ids eq_or_sumleq ?aid ?mid)
+?f1<-(fact_name-slot_id-word_ids eq_or_sumleq ?aid1 ?mid)
+(test (neq ?aid ?aid1))
+(manual_id-mng ?mid $?mng)
+(manual_id-cat-word-root-vib-grp_ids ? ? $?mng - $?root - $? - $?)
+(id-org_wrd-root-dbase_name-mng ? ? ?rt ? $?root)
+(id-root ?id ?rt)
+(hindi_id_order $?ids)
+(test (eq (member$ ?id $?ids) ?aid))
+(not (multi_word_expression-grp_ids $? ?id $?))
+=>
+;        (if (eq (member$ ?id $?ids) ?aid) then
+                (retract ?f1)
+ ;       )
+)
+;------------------------------------------------------------------------------------------------------------
 (defrule manul_word_count
 (declare (salience 1500))
 (manual_id-mng ?mid $?)
@@ -161,14 +164,14 @@
 )
 ;------------------------------------------------------------------------------------------------------------
 (defrule print_null_slot_info
-(declare (salience 1299))
+(declare (salience 1260))
 (fact_name-slot_id sumleq ?sid)
 =>
 	(printout ?*minion_fp* "	# NULL slot :: " (- ?sid 1) crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
 (defrule print_null_word_info
-(declare (salience 1299))
+(declare (salience 1260))
 (fact_name-word_id sumleq ?wid)
 =>
 	(printout ?*minion_fp* "	# NULL word :: " (- ?wid 1) crlf)
@@ -236,7 +239,6 @@
 (total_count ?t_count)
 (manual_word_length ?manual_word_len)
 =>
-;	(bind ?t_count_val (+ (* ?manual_word_len 50) (* ?t_count 100)))
 	(printout ?*minion_fp* " DISCRETE total{0.."10000"} " crlf crlf)
         (printout ?*minion_fp* " **SEARCH**" crlf)
         (printout ?*minion_fp* " #MAXIMISING " crlf)
@@ -246,14 +248,31 @@
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
 (defrule print_poten_constr_info
-(declare (salience 931))
+(declare (salience 970))
 (print_constraint_info)
 =>
         (printout ?*minion_fp* crlf crlf " #**PRINT POTENTIAL CONSTRAINTS** " crlf crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (16-08-12)
+(defrule print_pot_fact_for_slot
+(declare (salience 960))
+(fact_name-slot_id sumleq ?sid)
+=>
+        (printout ?*minion_fp* " sumleq(ws[_,"(- ?sid 1)"],0)" crlf)
+)
+;------------------------------------------------------------------------------------------------------------
+;;Added by Shirisha Manju (23-08-12)
+;;An incoming wave can be divided into two weaker waves at the boundary between air and water.
 (defrule print_pot_fact_for_word
+(declare (salience 960))
+(fact_name-word_id sumleq ?wid)
+=>
+        (printout ?*minion_fp* " sumleq(ws["(- ?wid 1)",_],0)" crlf)
+
+)
+;------------------------------------------------------------------------------------------------------------
+(defrule print_pot_fact_for_word1
 (declare (salience 930))
 (fact_name-man_id-slot_ids  ?fact_name ?mid $?sids)
 (test (neq (length $?sids) 0));The intuitive notion that light travels in a straight line seems to contradict what we have learned in Chapter 8, that light is an electromagnetic wave of wavelength belonging to the visible part of the spectrum.
@@ -274,9 +293,9 @@
 	)
 
 )
-
+;------------------------------------------------------------------------------------------------------------
 ;To describe the rate of motion over the actual path, we introduce another quantity called average speed.
-(defrule print_pot_fact_for_slot
+(defrule print_pot_fact_for_slot1
 (declare (salience 930))
 (fact_name-slot_id-word_ids  ?fact_name ?sid $?wids)
 (test (neq (length $?wids) 0))
@@ -285,33 +304,21 @@
         (loop-for-count (?i 1 (length $?wids))
                         (bind ?mid (nth$ ?i $?wids))
                         (printout ?*minion_fp* "eq(ws["(- ?mid 1)","(- ?sid 1)"],1)")
-			(if (neq ?i (length $?wids)) then
+                        (if (neq ?i (length $?wids)) then
                                 (printout ?*minion_fp* ",")
                         )
         )
-	(if (eq ?fact_name restricted_eq_or_sumleq) then
-		(printout ?*minion_fp* ",sumleq(ws[_,"(- ?sid 1)"],0)})" crlf)
-	else
-		(printout ?*minion_fp* "})" crlf)
-	)
+        (if (eq ?fact_name restricted_eq_or_sumleq) then
+                (printout ?*minion_fp* ",sumleq(ws[_,"(- ?sid 1)"],0)})" crlf)
+        else
+                (printout ?*minion_fp* "})" crlf)
+        )
 )
 ;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (16-08-12)
-(defrule print_pot_fact_for_word1
-(declare (salience 930))
-(fact_name-slot_id sumleq ?sid)
+(defrule print_def_info
+(declare (salience 920))
 =>
-        (printout ?*minion_fp* " sumleq(ws[_,"(- ?sid 1)"],0)" crlf)
-)
-;------------------------------------------------------------------------------------------------------------
-;;Added by Shirisha Manju (23-08-12)
-;;An incoming wave can be divided into two weaker waves at the boundary between air and water.
-(defrule print_pot_fact_for_word2
-(declare (salience 930))
-(fact_name-word_id sumleq ?wid)
-=>
-        (printout ?*minion_fp* " sumleq(ws["(- ?wid 1)",_],0)" crlf)
-	
+	(printout ?*minion_fp* crlf crlf " #**DEFAULT ASSIGNMENT** " crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Maha Laxmi
@@ -320,7 +327,6 @@
 (manual_word_length ?manual_word_len)
 (slot-length  ?anu_slot_len)
 =>
-        (printout ?*minion_fp* crlf crlf)
 	(loop-for-count (?i 0 (- ?manual_word_len 1))
 			(printout ?*minion_fp* " watched-or({ " crlf)
                        	(printout ?*minion_fp* "	watched-and({sumgeq(ws["?i",_],1),eq(r"?i",50)})," crlf)
@@ -336,32 +342,6 @@
                         (printout ?*minion_fp* " sumleq(ws[_,"?i"],1)" crlf)
         )
         (printout ?*minion_fp* crlf crlf)
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (20-08-12)
-(defrule print_head_cost
-(declare (salience 896))
-(grp_hids-slot_ids-var_ids $?grp - $?sids - $?vids)
-=>
-	(printout ?*minion_fp* " #Generating cost facts for head ids " crlf)
-        (printout ?*minion_fp* " #head_ids-slot_ids-var_ids "(implode$ $?grp)" --- " (implode$ $?sids) " --- "(implode$ $?vids) crlf)
-        (loop-for-count (?i 1 (length $?sids))
-                (bind ?sid (nth$ ?i $?sids))
-                (bind ?vid (nth$ ?i $?vids))
-                (printout ?*minion_fp* "	element(ws[_,"?sid"],"?vid",1)" crlf)
-        )
-	(printout ?*minion_fp* crlf)
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (20-08-12)
-(defrule print_head_cost1
-(declare (salience 895))
-(hids-sids-slot1-slot2-total $? - $?sids - ?s1 - ?s2 - ?total)
-=>
-	(printout ?*minion_fp* "	watched-or({" crlf)
-	(printout ?*minion_fp* "		watched-and({ ineq("?s1", "?s2", 0) , eq("?total",20) })," crlf)
-	(printout ?*minion_fp* "		watched-and({ ineq("?s2", "?s1", 0) , eq("?total",0) })" )
-	(printout ?*minion_fp* crlf "	})" crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (20-08-12)
@@ -409,46 +389,6 @@
 	(printout ?*minion_fp* "	eq("?total",0) "crlf "	})" crlf)
 	(assert (hindi_id_order ?id1 $?d))
 	(assert (total_count1 (+ ?t_count 1)))
-)
-;------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju (27-07-12)
-(defrule print_grp_info
-(declare (salience 880))
-?f0<-(grp_ids-slot_ids $?anu_grp - $?grp)
-(manual_word_length  ?manual_word_len)
-(test (< (length $?grp) ?manual_word_len))
-(slot-length  ?anu_slot_len)
-(test (neq (length $?grp) 0))
-=>
-        (printout ?*minion_fp* crlf " #group : "(implode$ $?anu_grp) " ---- " (implode$ $?grp))
-        (printout ?*minion_fp*  crlf " watched-or({" crlf "                weightedsumgeq([")
-        (print_weighted_values ?manual_word_len $?grp)
-        (bind ?count 0)
-        (loop-for-count (?k ?count (- ?manual_word_len 1) )
-               (printout ?*minion_fp* "[")
-               (loop-for-count (?i ?count (- (+ (length $?grp) ?count) 1))
-                        (loop-for-count (?j 1 (length $?grp) )
-                                (bind ?s_id (nth$ ?j $?grp))
-                                (printout ?*minion_fp*  "ws["?i","?s_id "],")
-                        )
-                )
-                (loop-for-count (?l 1 (length $?grp))
-                        (bind ?s_id (nth$ ?l $?grp))
-                        (printout ?*minion_fp* "ws[_,"?s_id "]")
-                        (if (neq ?l (length $?grp)) then
-                                (printout ?*minion_fp* ",")
-                        )
-                )
-		(if (>= (+ ?k (length $?grp)) ?manual_word_len )  then
-                        (printout ?*minion_fp* "],0)" crlf)
-                        (break)
-                else
-                        (printout ?*minion_fp*  "],0)," crlf"              weightedsumgeq([" )
-                        (print_weighted_values ?manual_word_len $?grp)
-                 )
-                 (bind ?count (+ ?count 1))
-        )
-        (printout ?*minion_fp*   crlf "})" crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (6-08-12)

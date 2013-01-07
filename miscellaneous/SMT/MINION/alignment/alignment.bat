@@ -24,11 +24,11 @@
 (load-facts "manual_hindi_sen.dat")
 (load-facts "manual_lwg_new.dat")
 (open "minion_sen_dic.txt" dic_fp "w")
-(open "mngs_aligned_with_minion.dat" mng_fp2 "w")
+(open "mngs_aligned_with_minion.dat" mng_fp3 "a")
 (assert (count 0))
 (run)
 (close dic_fp)
-(close mng_fp2)
+(close mng_fp3)
 (clear)
 ;---------------------------------------------------------------------------------------
 (load "global_path.clp")

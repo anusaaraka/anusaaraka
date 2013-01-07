@@ -22,6 +22,7 @@
 ?f1<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?w1&cAroM ?)
 ?f2<-(man_id-word-cat ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora ?)
 (id-node-word-root ?id0 ? $?word1 - $?root)
+(not (id-word ? surrounding))
 =>
         (retract ?f0 ?f1 ?f2)
         (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat ?w  - $?root - ?w1 ?w2 - ?id0 ?id1 ?id2))
@@ -127,7 +128,7 @@
 ?f1<-(man_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ke ?)
-?f3<-(man_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna ?)
+?f3<-(man_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|kAraNa ?)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 =>
@@ -205,14 +206,14 @@
 ;hama yaha xeKa cuke hEM ki visWApana kA parimANa vAswavika [paWa - lambAI se] Binna ho sakawA hE.
 (defrule single_vib2
 (declare (salience 65))
-?f0<-(manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ?vib - $?ids ?id)
+?f0<-(manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - $?vib - $?ids ?id)
 ?f1<-(man_id-word-cat ?id1&:(=(+ ?id 1) ?id1) ?vib1&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|waka ?)
 =>
 	(retract ?f0 ?f1)
-	(if (eq ?vib 0) then
+	(if (eq (implode$ (create$ $?vib)) 0) then
 		(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ?vib1 - $?ids ?id ?id1))
 	else
-		(bind ?n_vib (create$ ?vib ?vib1))
+		(bind ?n_vib (create$ $?vib ?vib1))
 		(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ?n_vib - $?ids ?id ?id1))
 	)
 )
@@ -240,7 +241,8 @@
 (not (lwg_done ?mid))
 (not (retract_manual_fact ?mid))
 =>
-	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word - $?root - $?tam - ?mid $?ids))
+;	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word - $?root - $?tam - ?mid $?ids))
+	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?mng - $?root - $?tam - ?mid $?ids))
         (loop-for-count (?i 1 (length (create$ ?mid $?ids)))
 		        (bind ?j (nth$ ?i (create$ ?mid $?ids)))
 			(assert (retract_manual_fact ?j))

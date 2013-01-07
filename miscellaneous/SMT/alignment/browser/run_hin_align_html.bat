@@ -14,7 +14,6 @@
 (open ?mypath1 fp "w")
 ;(watch facts)
 ;(watch rules)
-;(watch all)
 (run)
 (close fp)
 (clear)

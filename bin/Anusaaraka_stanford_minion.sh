@@ -138,12 +138,14 @@
  cat $MYPATH/tmp/$1_tmp/meanings_aligned_with_dic_tmp.txt $MYPATH/tmp/$1_tmp/meanings_aligned_with_anu_tmp.txt $MYPATH/tmp/$1_tmp/meanings_aligned_with_minion_tmp.txt >> $MYPATH/tmp/$1_tmp/anu_and_manual_meanings_tmp.txt
  sort $MYPATH/tmp/$1_tmp/anu_and_manual_meanings_tmp.txt > $MYPATH/tmp/$1_tmp/anu_and_manual_meanings.txt
 
- sed -n '1h;2,$H;${g;s/\([0-9.]*\)   Solution Found\n[0-9.]*   Time-out/\1   Time-out/g;p}' $MYPATH/tmp/$1_tmp/no_sol_found_tmp.txt | sed '1d'  > $MYPATH/tmp/$1_tmp/no_sol_found.txt
+ sed -n '1h;2,$H;${g;s/\([0-9.]*\)   Solution Found\n[0-9.]*   Time-out/\1   Time-out/g;p}' $MYPATH/tmp/$1_tmp/no_sol_found_tmp.txt | sed '2d'  > $MYPATH/tmp/$1_tmp/no_sol_found.txt
  echo "No Solution Found :" >> $MYPATH/tmp/$1_tmp/minion_statistics
  grep "No Solution Found" $MYPATH/tmp/$1_tmp/no_sol_found.txt | wc  -l >> $MYPATH/tmp/$1_tmp/minion_statistics
  echo "Time-out:" >> $MYPATH/tmp/$1_tmp/minion_statistics
  grep "Time-out" no_sol_found.txt | wc -l >> $MYPATH/tmp/$1_tmp/minion_statistics
  echo "Solution Found :" >> $MYPATH/tmp/$1_tmp/minion_statistics
  grep "   Solution Found" $MYPATH/tmp/$1_tmp/no_sol_found.txt | wc  -l >> $MYPATH/tmp/$1_tmp/minion_statistics
+ echo "re-executed-sentences:">> $MYPATH/tmp/$1_tmp/minion_statistics
+ wc -l < $MYPATH/tmp/$1_tmp/re_executed_sentences.txt >> $MYPATH/tmp/$1_tmp/minion_statistics
 
  cat $MYPATH/tmp/$1_tmp/minion_statistics

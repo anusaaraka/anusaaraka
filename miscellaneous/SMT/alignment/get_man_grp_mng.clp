@@ -17,7 +17,7 @@
  )
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule delete_lt_rt_punc
- (declare (salience 101))
+ (declare (salience 200))
  ?f0<-(position-cat-man_grp_mng  ?id ?node  ?p&@PUNCT-OpenParen $?wrd_mng  ?punc&@PUNCT-Comma|@PUNCT-Dot|@PUNCT-QuestionMark|@PUNCT-DoubleQuote|@PUNCT-DoubleQuote|@PUNCT-Semicolon|@PUNCT-Colon|@PUNCT-SingleQuote|@PUNCT-OpenParen|@PUNCT-ClosedParen|@PUNCT-Exclamation|@SYM-Dollar - -)
  =>
         (retract ?f0)
@@ -29,7 +29,7 @@
  ;For the car of a particular make, the braking distance was found to be 10 m, 20 m, 34 m and 50 m corresponding to velocities of 11, 15, 20 and 25 m per s which are nearly consistent with the above formula.
  ;kAra ke kisI viSiRta moYdala ke lie viBinna vegoM [11 @PUNCT-Comma  15 @PUNCT-Comma  20 ] waWA 25 @m/@s ke safgawa avaroXana xUriyAz kramaSaH 10 @m @PUNCT-Comma  20 @m @PUNCT-Comma  34 @m waWA 50 @m pAI gaI hEM jo uparokwa samIkaraNa se prApwa mAnoM ke lagaBaga safgawa hEM  @PUNCT-Dot
  (defrule delete_right_punc
- (declare (salience 100))
+ (declare (salience 190))
  ?f0<-(position-cat-man_grp_mng  ?id ?node $?wrd_mng  ?punc&@PUNCT-Comma|@PUNCT-Dot|@PUNCT-QuestionMark|@PUNCT-DoubleQuote|@PUNCT-DoubleQuote|@PUNCT-Semicolon|@PUNCT-Colon|@PUNCT-SingleQuote|@PUNCT-OpenParen|@PUNCT-ClosedParen|@PUNCT-Exclamation|@SYM-Dollar $?w - -)
  =>
 	(retract ?f0)
@@ -38,12 +38,28 @@
  )
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule delete_left_punc
- (declare (salience 100))
+ (declare (salience 190))
  ?f0<-(position-cat-man_grp_mng  ?id ?node ?punc&@PUNCT-OpenParen  $?wrd_mng - -)
  =>
         (retract ?f0)
         (assert (position-cat-man_grp_mng  ?id ?node $?wrd_mng  - -))
         (assert (manual_id-left_punc ?id ?punc))
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;Finally, to understand the relative nature of motion, we introduce the concept of relative velocity.
+ ;anwawaH gawi kI ApekRika prakqwi ko samaJane ke lie hama ApekRika gawi kI XAraNA praswuwa karezge.
+ (defrule modifiy_root
+ (declare (salience 120))
+ ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF karezge ?cat ?g ?no ?p ?c ?suf)
+ ?f0<-(position-cat-man_grp_mng ?id  ?n karezge - -)
+ (man_word-root-cat	karezge	?root 	v)
+ =>
+	(retract ?f)
+	(if (eq ?suf -) then
+		(assert (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ?g ?no ?p ?c 0))
+	else
+		(assert (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ?g ?no ?p ?c ?suf))
+	)
  )
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule  incrementing_id_for_just_after_the_splitted_verb
@@ -100,18 +116,21 @@
         (retract ?f ?f1)
  )
  ;------------------------------------------------------------------------------------------------------------------------
- ;Obviously, these tables are not exhaustive. 
- ;spaRta hE ki ye sUciyAz viswqwa nahIM hEM.
+ ;Obviously, these tables are not exhaustive.  --- spaRta hE ki ye sUciyAz viswqwa nahIM hEM.
+ ;Thus, it is not necessary to use vector notation for discussing motion of objects in one-dimension. --- awaeva, vaswu kI eka - vimIya gawi ke vivaraNa ke lie saxiSa safkewa kA upayoga AvaSyaka nahIM howA hE .
  (defrule shallow_parser_correction_rule
- (declare (salience 92))
+ (declare (salience 150))
  ?f<-(position-cat-man_grp_mng ?id ?node&VGF|VGNN|VGNF $?word ?a ?b)
- (test (or (eq $?word (create$ nahIM hEM)) (eq $?word (create$  nahIM hE))))
+ (test (or (eq $?word (create$ nahIM hEM)) (eq $?word (create$  nahIM hE))(eq $?word (create$  nahIM howA hE))))
+; (test (or (eq $?word (create$ nahIM hEM)) (eq $?word (create$  nahIM hE))))
  ?f1<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF ?root ?cat ?g ?no ?p ?c ?suf)
  ?f2<-(head_id-grp_ids ?id ?nahIM_id ?hEM_id $?grp_ids)
  =>
 	(retract ?f ?f1 ?f2)
-	(assert (position-cat-man_grp_mng ?id POS nahIM - -))	 
-	(assert (position-cat-man_grp_mng =(+ ?id 1) ?node hEM ?a ?b))
+	(assert (position-cat-man_grp_mng ?id POS nahIM - -))
+        (bind $?n_word (delete-member$ $?word nahIM))
+;	(assert (position-cat-man_grp_mng =(+ ?id 1) ?node hEM ?a ?b))
+	(assert (position-cat-man_grp_mng =(+ ?id 1) ?node $?n_word ?a ?b))
 	(assert (id-node-root-cat-gen-num-per-case-tam ?id POS nahIM - - - - - -))	 
 	(assert (id-node-root-cat-gen-num-per-case-tam =(+ ?id 1) ?node ?root ?cat ?g ?no ?p ?c 0))	 
         (assert (head_id-grp_ids ?id ?nahIM_id))
@@ -132,8 +151,10 @@
  (or (root-verbchunk-tam-chunkids ? ? ? $? ?v_id)(pada_info (group_head_id ?v_id)(group_cat infinitive))(id-cat_coarse ?v_id verb))
  (id-root ?v_id ?root)
  (id-org_wrd-root-dbase_name-mng ? ? ?root ? $?word ?kar&kara|ho|karA|xe)
+ (not (got_prev_id ?id))
  =>
         (assert (combine_prev_word_for_ho_id-prev_word ?id $?word ?kar))
+	(assert (got_prev_id ?id))
  )
  ;------------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (02-10-12)
@@ -225,6 +246,34 @@
         (assert (modified_word_id ?id))
  )
  ;------------------------------------------------------------------------------------------------------------------------ 
+ ;Electromagnetic waves of frequencies higher than 30 MHz penetrate the ionosphere and escape.
+ ;30 @MHz se ucca Avqwwi kI vExyuwacumbakIya warafgeM , AyanamaNdala kA Bexana karake [palAyana kara] jAwI hEM.
+ (defrule check_prev_word_of_kara_in_dic
+ (declare (salience 80))
+ ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF ?kar&kara ?cat ?g ?no ?p ?c ?suf)
+; ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF ?kar&ho|kara ?cat ?g ?no ?p ?c ?suf)
+ ?f5<-(position-cat-man_grp_mng =(- ?id 1) ?n $? $?word - -)
+ (test (neq (length $?word) 0))
+ (or (root-verbchunk-tam-chunkids ? ? ? $? ?v_id)(pada_info (group_head_id ?v_id)(group_cat infinitive))(id-cat_coarse ?v_id verb))
+ (id-root ?v_id ?root)
+ (id-org_wrd-root-dbase_name-mng ? ? ?root ? $?word)
+ (not (combine_prev_word_for_ho_id-prev_word ?id $?))
+ =>
+        (assert (combine_prev_word_for_ho_id-prev_word ?id $?word ?kar))
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
+ ;Electromagnetic waves of frequencies higher than 30 MHz penetrate the ionosphere and escape.
+ ;30 @MHz se ucca Avqwwi kI vExyuwacumbakIya warafgeM , AyanamaNdala kA [Bexana karake] palAyana kara jAwI hEM.
+ (defrule check_prev_word_of_kara
+ (declare (salience 70))
+ ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF kara ?cat ?g ?no ?p ?c ?suf)
+ ?f5<-(position-cat-man_grp_mng =(- ?id 1) ?n $? $?word - -)
+ (test (neq (length $?word) 0))
+ (not (combine_prev_word_for_ho_id-prev_word ?id $?))
+ =>
+        (assert (combine_prev_word_for_ho_id-prev_word ?id $?word kara))
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
  (defrule get_grp_info
  (declare (salience 50))
  (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ? ? ? ? ?suf)

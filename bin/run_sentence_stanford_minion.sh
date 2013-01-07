@@ -36,13 +36,21 @@
  
  sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/run_minion.sh minion_input.txt 
  
-# if [ -s "minion_output_tmp.dat" ] ;
-# then   echo "" >> $MYPATH/$1_tmp/no_sol_found_tmp.txt  
-# else
-#	echo $2 >> $MYPATH/$1_tmp/re_executed_sentences.txt
-#	myclips -f $HOME_anu_test/miscellaneous/SMT/MINION/alignment/run_H_gen_minion1.bat >> $1.error
-# fi
-# sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/run_minion.sh minion_input.txt 
+ if [ -s "minion_output_tmp.dat" ] ;
+ then   echo "" >> $MYPATH/$1_tmp/no_sol_found_tmp.txt  
+ else
+	echo $2 >> $MYPATH/$1_tmp/re_executed_sentences.txt
+	myclips -f $HOME_anu_test/miscellaneous/SMT/MINION/alignment/run_H_gen_minion1.bat >> $1.error
+ fi
+
+ var1="minion-resume-[0-9]*"
+ if [ -s $var1  ] ; then
+ 	rm minion-resume*
+	echo $2 >> $MYPATH/$1_tmp/re_executed_sentences.txt
+        myclips -f $HOME_anu_test/miscellaneous/SMT/MINION/alignment/run_H_gen_minion1.bat >> $1.error
+ fi
+
+ sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/run_minion.sh minion_input.txt 
 
  myclips -f $HOME_anu_test/miscellaneous/SMT/MINION/alignment/alignment.bat >> $1.error
  

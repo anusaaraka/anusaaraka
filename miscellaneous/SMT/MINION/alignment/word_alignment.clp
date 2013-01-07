@@ -346,6 +346,7 @@
         (assert (prov_assignment ?e_noun_id ?mid))
 )
 
+;using morph root
 (defrule root_and_vib_match_using_dic2
 (declare (salience 870))
 (current_id ?mid)
@@ -365,6 +366,23 @@
         (assert (prov_assignment ?e_noun_id ?mid))
 )
 
+;But only a few years later, in 1938, Hahn and [Meitner] discovered the phenomenon of neutron-induced fission of uranium, which would serve as the basis of nuclear power reactors and nuclear weapons.
+;if prep_id is 0 but vib not equal to 0 =>  11  meitner ko ;  (group_head_id 11) (vibakthi ko)(preposition 0) 
+(defrule root_and_vib_match_using_dic3
+(declare (salience 870))
+(current_id ?mid)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?noun - $?vib - $?grp_ids)
+(test (neq $?vib 0))
+(id-org_wrd-root-dbase_name-mng ? ? ?e_noun ? $?noun)
+(id-root ?e_noun_id ?e_noun)
+(pada_info (group_head_id  ?e_noun_id)(vibakthi ?v&~0)(preposition 0))
+(not (prov_assignment ?e_noun_id ?mid))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (assert (anu_ids-sep-manual_ids ?e_noun_id - $?grp_ids))
+        (assert (prov_assignment ?e_noun_id ?mid))
+)
 ;-------------------------------------------------------------------------------------
 ;Check for manual  word match in the dictionary
 (defrule noun-word_with_0_vib
@@ -432,12 +450,14 @@
 
 ;-------------------------------------------------------------------------------------
 ;look for synonyms in hindi wordnet
+; lookup single word mng in wordnet ex: bAxa
 (defrule lookup_man_word_in_hindi_wordnet
 (declare (salience 500))
 (current_id ?mid)
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $?word - $?h_root - $? - $?grp_ids)
 (test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root))) "FALSE"))
 (id-org_wrd-root-dbase_name-mng ? ? ?e_root ? $?mng)
+(test (eq (length (create$ $?mng)) 1))
 (id-root ?aid ?e_root)
 (test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?mng))) "FALSE"))
 (test (eq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root))) (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?mng)))))
@@ -445,7 +465,6 @@
 (not (anu_id-man_id ?aid ?mid))
 =>
 	(assert (anu_id-man_id ?aid ?mid))
-	(printout t "--------In HINDI WORDNET----------" crlf)
         (bind ?dic_val (gdbm_lookup "hindi_wordnet_dic1.gdbm" (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root)))))
         (bind ?dic_val (remove_character "/" ?dic_val " "))
         (if (neq ?dic_val "FALSE") then
@@ -458,6 +477,37 @@
         )
 )
 ;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju (5th Jan 2013)
+;But only a few years later, in 1938, Hahn and Meitner discovered the phenomenon of neutron-induced fission of uranium, which would serve as the basis of nuclear power reactors and nuclear weapons.
+;lookup multiple word mng in wordnet ex: bAxa meM
+(defrule lookup_man_word_in_hindi_wordnet1
+(declare (salience 499))
+(current_id ?mid)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $?word - $?h_root - $? - $?grp_ids)
+(test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root))) "FALSE"))
+(id-org_wrd-root-dbase_name-mng ? ? ?e_root ? $?mng)
+(test (> (length (create$ $?mng)) 1))
+(id-root ?aid ?e_root)
+(test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ (remove_character " " (implode$ (create$ $?mng)) "_")))) "FALSE"))
+(test (eq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root))) (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ (remove_character " " (implode$ (create$ $?mng))"_"))))))
+(not (prov_assignment ?aid ?mid))
+(not (anu_id-man_id ?aid ?mid))
+=>
+        (assert (anu_id-man_id ?aid ?mid))
+        (bind ?dic_v (gdbm_lookup "hindi_wordnet_dic1.gdbm" (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root)))))
+        (if (neq ?dic_v "FALSE") then
+		(bind ?dic_v1 (remove_character "/" ?dic_v " "))
+        	(bind ?dic_val (remove_character "_" (implode$ (create$ ?dic_v1)) " "))
+            	(if (and (member$ $?h_root ?dic_val)(member$ $?mng ?dic_val)) then
+                	(bind ?*count* (+ ?*count* 1))
+                	(assert (update_count_fact ?*count*))
+                	(assert (anu_ids-sep-manual_ids ?aid - $?grp_ids))
+                	(assert (prov_assignment ?aid ?mid))
+            	)
+        )
+)
+;-------------------------------------------------------------------------------------
+
 (defrule check_match_with_english_word
 (declare (salience 830))
 (current_id ?mid)
