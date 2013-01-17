@@ -47,11 +47,11 @@
  cd $MYPATH/tmp/$1_tmp/
  rm tmp1 tmp2 tmp3 tmp4 tmp1_wx tmp2_wx tmp3_wx tmp4_wx 
 
- cd $HOME_anu_test/miscellaneous/SMT/alignment
   utf8_wx $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4.txt > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4_wx.txt
 
  echo "Tokenizing manual sentence"
   sh $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/run_tokenizer_fr.sh $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4_wx.txt > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tokenized.txt  2>/dev/null
+ cd $HOME_anu_test/miscellaneous/SMT/MINION/alignment
   python add-suf-into-chunks.py $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tokenized.txt $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp5.txt > $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp.txt
   
   sort -u $MYPATH/tmp/$1_tmp/Symbols_man.txt_tmp > $MYPATH/tmp/$1_tmp/Symbols_man.txt

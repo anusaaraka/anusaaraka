@@ -1,7 +1,7 @@
 (load "path_for_html.clp")
 ;(bind ?*path1* ?*path*)
 (defglobal  ?*path1* = ?*mypath*)
-(bind ?*path* (str-cat ?*path* "/miscellaneous/SMT/alignment/browser/create_hin_align_html.clp"))
+(bind ?*path* (str-cat ?*path* "/miscellaneous/SMT/MINION/browser/create_hin_align_html.clp"))
 (load ?*path*)
 (bind ?mypath1 ?*mypath*)
 (bind ?path2 (str-cat ?*mypath* "/tmp/" ?*filename* "_tmp/dir_names.txt"))

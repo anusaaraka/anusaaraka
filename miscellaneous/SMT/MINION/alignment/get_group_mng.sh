@@ -1,7 +1,7 @@
 cut -f2 $1 >$1.tmp
 cut -f1 $1 >$1.tmp1
 cut -f3 $1 >$1.tmp2
-$HOME_anu_test/miscellaneous/SMT/alignment/replace_wrd_with_id.out $1.tmp1 $1.tmp2 $1.tmp1.intermediate $1.tmp2.intermediate
+$HOME_anu_test/miscellaneous/SMT/MINION/alignment/replace_wrd_with_id.out $1.tmp1 $1.tmp2 $1.tmp1.intermediate $1.tmp2.intermediate
 paste $1.tmp1.intermediate $1.tmp2.intermediate >$1.tmp3
 
 sed -n '1h;2,$H;${g;s/\n/ /g;p}'  $1.tmp | sed 's/<Sentence id="1">//g' | sed 's/<\/Sentence>//g' |sed 's/((/(position-cat-man_grp_mng\t/g' | sed 's/))/\t)\n/g' | sed -e 's/^[ ]*//g' > $1.tmp4

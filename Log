@@ -4209,6 +4209,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         manual_lwg.clp
         morph.lex
         replace_wrd_with_id.c
+	add-suf-into-chunks.py
 16. Moved miscellaneous/SMT/alignment/browser  to  miscellaneous/SMT/MINION/
 17. Modified Anusaaraka_stanford_minion.sh 
 	to change the path for above files
@@ -4216,7 +4217,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 18. Modified run_sentence_stanford_minion.sh 
 	to change the path for above files	
 	to re_execute the sentences if minion_output is empty
-19. Modified processing_manual_sentences.sh and run_align_browser.sh to change the path
+19. Modified processing_manual_sentences.sh, get_group_mng.sh, run_hin_align_html.bat and run_align_browser.sh to change 
+    the path
 20. Updated the following files :
 	miscellaneous/SMT/alignment/dictionaries/inferred_dic.txt
         miscellaneous/SMT/alignment/dictionaries/phy_dictionary.txt
