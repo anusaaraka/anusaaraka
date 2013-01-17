@@ -4219,14 +4219,19 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	to re_execute the sentences if minion_output is empty
 19. Modified processing_manual_sentences.sh, get_group_mng.sh, run_hin_align_html.bat and run_align_browser.sh to change 
     the path
-20. Updated the following files :
+20. Moved miscellaneous/SMT/alignment/dictionaries  to  miscellaneous/SMT/MINION/
+21. Modified the path for the above in the following files
+        canonical_form_dictionary/Readme
+        get_txt_files.sh
+        dic_compile.sh
+        anu_compile.sh
+22. Updated the following files :
 	miscellaneous/SMT/alignment/dictionaries/inferred_dic.txt
         miscellaneous/SMT/alignment/dictionaries/phy_dictionary.txt
         miscellaneous/SMT/alignment/dictionaries/provisional_PropN_dic.txt
         miscellaneous/SMT/alignment/dictionaries/restricted_eng_words.txt
         miscellaneous/SMT/alignment/dictionaries/restricted_hnd_words.txt
         miscellaneous/SMT/alignment/dictionaries/provisional_root_dic.txt
-21. Updated dic_compile.sh
-22. Updated changes_in_databases
-23. Updated MINION/alignment/README
-24. Updated Log 
+23. Updated changes_in_databases
+24. Updated MINION/alignment/README
+25. Updated Log 

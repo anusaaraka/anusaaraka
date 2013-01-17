@@ -2,7 +2,7 @@
  echo "#define ABS_PATH \"$HOME_anu_tmp/tmp/\"" > $HOME_anu_test/Anu_src/f_tid-rid.h
 
  echo "Creating phy_hnd_multi_word_dic.txt"
- cd $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries
+ cd $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries
  sh generate_hin_multi_word_dic.sh phy_eng_multi_word_dic.txt phy_hnd_multi_word_dic.txt
  echo "Creating hindi_multi_word_dic.txt"
  sh generate_hin_multi_word_dic.sh $HOME_anu_test/Anu_data/compound-matching/multi_word_expressions.txt hindi_multi_word.txt

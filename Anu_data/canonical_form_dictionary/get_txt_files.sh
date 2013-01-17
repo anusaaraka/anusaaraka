@@ -20,5 +20,5 @@ done < list_Anu_data_compound
 
 while read line
 do
-        cp $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries/$line".txt" .
+        cp $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries/$line".txt" .
 done < list_SMT

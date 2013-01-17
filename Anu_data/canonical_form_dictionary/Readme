@@ -11,12 +11,12 @@ Steps to Add New Dictionary ::
 Right now Dictionaries are present at three different places:
   1. Anu_data/
   2. Anu_data/compound-matching/
-  3. miscellaneous/SMT/alignment/dictionaries/
+  3. miscellaneous/SMT/MINION/dictionaries/
 
 =>To add a new dictionary in , 
 	Anu_data/					then    name of the dictionary need to be added in list_Anu_data
 	Anu_data/compound-matching/			then		"	list_Anu_data_compound
-	miscellaneous/SMT/alignment/dictionaries/	then		"	list_SMT 
+	miscellaneous/SMT/MINION/dictionaries/		then		"	list_SMT 
  
 =>To get the newly added dictionary in canonical form ::
   (Assumming dictionary to be in Key and Value format)
