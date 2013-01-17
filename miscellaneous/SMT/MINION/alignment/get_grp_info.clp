@@ -129,7 +129,6 @@
 (test (> (length $?grp) 1))
 (hindi_id_order $?ids)
 =>
-        (bind ?*total_count* (+ ?*total_count* 1))
         (bind $?g_list (create$))
         (loop-for-count (?i 1 (length $?grp))
                 (bind ?id (nth$ ?i $?grp))
@@ -138,10 +137,15 @@
                         (bind $?g_list (sort > (create$ $?g_list (- ?pos 1))))
                 )
         )
-        (assert (grp_ids-slot_ids $?grp - $?g_list))
-	(bind ?total (string-to-field (str-cat total ?*total_count*)))
-        (assert (get_cost_for_grp $?grp - ?total))
-)
+	(if (eq (length $?grp) 2) then
+		(assert (grp_ids-slot_ids $?grp - $?g_list))
+	else
+        	(bind ?*total_count* (+ ?*total_count* 1))
+		(bind ?total (string-to-field (str-cat total ?*total_count*)))
+		(assert (grp_ids-slot_ids $?grp - $?g_list))
+	        (assert (get_cost_for_grp $?grp - ?total))
+	)
+)	
 ;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
 (defrule get_prawiniXi_grp_info

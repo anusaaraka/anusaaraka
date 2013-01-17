@@ -196,6 +196,7 @@
 	(assert (print_constraint_info))
 )
 ;------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (07-01-13)
 (defrule get_total_for_consecutive_ids
 (declare (salience 1150))
 ?f<-(total_count ?t_count)
@@ -210,7 +211,7 @@
 	(assert (modified_total))
 	(assert (hindi_id_order_tmp $?hin_order))
 )
-
+;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (20-08-12)
 (defrule print_total_constraints
 (declare (salience 1100))
@@ -369,6 +370,7 @@
         (printout ?*minion_fp* "        eq("?total",0) "crlf "     })" crlf)
 )
 ;------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (2-01-13)
 (defrule print_cost_for_consecutive_ids
 (declare (salience 885))
 (manual_word_length  ?manual_word_len)
@@ -383,10 +385,25 @@
 	(bind $?l_grp (create$ ?pos ?pos1))
 	(printout ?*minion_fp*  crlf " #Generating cost facts " crlf)
 	(printout ?*minion_fp*  " #group : "?id" "?id1 " ---- " (implode$ $?l_grp) crlf)
-	(printout ?*minion_fp* " watched-or({" crlf "	watched-and({ " crlf)
-        (printout ?*minion_fp* "		watched-or({ ")
-	(get_main_or_lower_diagonal ?manual_word_len lower ?total $?l_grp)
-	(printout ?*minion_fp* "	eq("?total",0) "crlf "	})" crlf)
+	(printout ?*minion_fp* " watched-or({" crlf "	watched-and({ " )
+	(bind ?count 0)
+        (loop-for-count (?k ?count (- ?manual_word_len 1) )
+		(bind ?row ?k)
+		(loop-for-count (?i 1 (length $?l_grp)  )
+                	(bind ?s_id (nth$ ?i $?l_grp))
+                       	(printout ?*minion_fp*  "	eq(ws["?row","?s_id "],1)," )
+                	(bind ?row (+ ?row 1))
+        	)
+        	(bind ?new_row ?row)
+		(if (>= (+ ?k (length $?l_grp)) ?manual_word_len )  then
+                        (break)
+                )
+		(printout ?*minion_fp* "	eq("?total",30) })," crlf)
+		(printout ?*minion_fp* "        watched-and({"       )
+                (bind ?count (+ ?count 1))
+        )
+	(printout ?*minion_fp* "	eq("?total",30) })," crlf)
+	(printout ?*minion_fp* "        eq("?total",0) "crlf "     })" crlf)
 	(assert (hindi_id_order ?id1 $?d))
 	(assert (total_count1 (+ ?t_count 1)))
 )

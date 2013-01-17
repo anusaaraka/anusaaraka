@@ -317,6 +317,16 @@
         (assert (fact_name-man_id-slot_ids restricted_eq_or_sumleq ?mid $?slot_id))
 )
 ;------------------------------------------------------------------------------------------------------------
+(defrule rm_repeated_facts
+(declare (salience -100))
+(fact_name-man_id-slot_ids eq_or_sumleq ?mid ?sid)
+?f<-(fact_name-slot_id-word_ids eq_or_sumleq ?sid ?mid)
+=>
+	(retract ?f)
+)
+
+
+
 ;;11_03_C => Eng sen :Think! ; Man sen :socie!  ; Anu sen :sociye!
 ;(defrule rm_repeated_fact
 ;(declare (salience 10))

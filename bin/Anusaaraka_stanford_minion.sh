@@ -132,7 +132,7 @@
 
  echo "Calling Interface related programs"
  sh $HOME_anu_test/bin/run_anu_browser.sh $HOME_anu_test $1 $MYPATH $HOME_anu_output
- sh $HOME_anu_test/miscellaneous/SMT/alignment/browser/run_align_browser.sh $HOME_anu_test $1 $MYPATH $HOME_anu_output
+ sh $HOME_anu_test/miscellaneous/SMT/MINION/browser/run_align_browser.sh $HOME_anu_test $1 $MYPATH $HOME_anu_output
 
  echo "Print minion_statistics"
  cat $MYPATH/tmp/$1_tmp/meanings_aligned_with_dic_tmp.txt $MYPATH/tmp/$1_tmp/meanings_aligned_with_anu_tmp.txt $MYPATH/tmp/$1_tmp/meanings_aligned_with_minion_tmp.txt >> $MYPATH/tmp/$1_tmp/anu_and_manual_meanings_tmp.txt
@@ -146,6 +146,9 @@
  echo "Solution Found :" >> $MYPATH/tmp/$1_tmp/minion_statistics
  grep "   Solution Found" $MYPATH/tmp/$1_tmp/no_sol_found.txt | wc  -l >> $MYPATH/tmp/$1_tmp/minion_statistics
  echo "re-executed-sentences:">> $MYPATH/tmp/$1_tmp/minion_statistics
- wc -l < $MYPATH/tmp/$1_tmp/re_executed_sentences.txt >> $MYPATH/tmp/$1_tmp/minion_statistics
-
+ if [ -s "re_executed_sentences.txt" ] ; then
+	 wc -l < $MYPATH/tmp/$1_tmp/re_executed_sentences.txt >> $MYPATH/tmp/$1_tmp/minion_statistics
+ else
+        echo "0" >> $MYPATH/tmp/$1_tmp/minion_statistics
+ fi
  cat $MYPATH/tmp/$1_tmp/minion_statistics

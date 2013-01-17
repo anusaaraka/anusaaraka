@@ -28,8 +28,8 @@
  python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  id_Apertium_output1.dat id_Apertium_output2.dat
  sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output2.dat > $MYPATH/$1_tmp/$2/id_Apertium_output.dat
 
- sh $HOME_anu_test/miscellaneous/SMT/alignment/get_group_mng.sh shallow_parser_output.dat
- $HOME_anu_test/miscellaneous/SMT/alignment/get_tam_info.out shallow_parser_GNP_info.dat shallow_parser_root_tmp.dat shallow_parser_tam.dat < shallow_parser_output.dat.tmp9 > /dev/null
+ sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/get_group_mng.sh shallow_parser_output.dat
+ $HOME_anu_test/miscellaneous/SMT/MINION/alignment/get_tam_info.out shallow_parser_GNP_info.dat shallow_parser_root_tmp.dat shallow_parser_tam.dat < shallow_parser_output.dat.tmp9 > /dev/null
 
  cp $MYPATH/$1_tmp/underscore_hyphen_replace_info.txt  $MYPATH/$1_tmp/$2/underscore_hyphen_replace_info.dat
  myclips -f $HOME_anu_test/miscellaneous/SMT/MINION/alignment/run_H_gen_minion.bat >> $1.error
