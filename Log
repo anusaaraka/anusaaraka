@@ -4216,14 +4216,15 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 18. Modified run_sentence_stanford_minion.sh 
 	to change the path for above files	
 	to re_execute the sentences if minion_output is empty
-19. Updated the following files :
+19. Modified processing_manual_sentences.sh and run_align_browser.sh to change the path
+20. Updated the following files :
 	miscellaneous/SMT/alignment/dictionaries/inferred_dic.txt
         miscellaneous/SMT/alignment/dictionaries/phy_dictionary.txt
         miscellaneous/SMT/alignment/dictionaries/provisional_PropN_dic.txt
         miscellaneous/SMT/alignment/dictionaries/restricted_eng_words.txt
         miscellaneous/SMT/alignment/dictionaries/restricted_hnd_words.txt
         miscellaneous/SMT/alignment/dictionaries/provisional_root_dic.txt
-20. Updated dic_compile.sh
-21. Updated changes_in_databases
-22. Updated MINION/alignment/README
-23. Updated Log 
+21. Updated dic_compile.sh
+22. Updated changes_in_databases
+23. Updated MINION/alignment/README
+24. Updated Log 
