@@ -63,7 +63,7 @@
 
   sed 's/ABBRENGBEFORE/@/g' $MYPATH/tmp/$1_tmp/shallow_parser_output_tmp.txt | sed 's/ABBRENGAFTER//g' |sh $MYPATH/tmp/$1_tmp/Symbols_man.sh | sed 's/SYMBOL/@SYMBOL/g' | sed 's/nonascii/@nonascii/g' | sed 's/PUNCT-/@PUNCT-/g' > $MYPATH/tmp/$1_tmp/shallow_parser_output.txt
  
-  $HOME_anu_test/miscellaneous/SMT/alignment/morph.out $MYPATH/tmp/$1_tmp/manual_hin.morph.txt < $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt.morph > /dev/null
+  $HOME_anu_test/miscellaneous/SMT/MINION/alignment/morph.out $MYPATH/tmp/$1_tmp/manual_hin.morph.txt < $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp.txt.morph > /dev/null
 
   sed 's/,/ PUNCT-Comma /g'  $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen_tmp4_wx.txt | sed 's/ABBRENGBEFORE/@/g' | sed 's/ABBRENGAFTER//g' |sed 's/,/ PUNCT-Comma /g'| sed 's/\([^0-9]\)\./\1 PUNCT-Dot/g' | sed 's/?/ PUNCT-QuestionMark /g' | sed 's/``/ PUNCT-DoubleQuote /g' | sed "s/''/ PUNCT-DoubleQuote /g" | sed 's/;/ PUNCT-Semicolon  /g' | sed 's/:/ PUNCT-Colon /g' |  sed "s/[\'\`\']/ PUNCT-SingleQuote /g" | sed 's/"/ PUNCT-DoubleQuote /g' | sed 's/ punctOPENPAREN/ PUNCT-OpenParen/g' | sed 's/ punctCLOSEPAREN/ PUNCT-ClosedParen/g' | sed 's/!/ PUNCT-Exclamation /g' | sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}'  |sh $MYPATH/tmp/$1_tmp/Symbols_man.sh |sed 's/SYMBOL/@SYMBOL/g' |sed 's/PUNCT-/ @PUNCT-/g' | sed 's/nonascii/@nonascii/g' > $MYPATH/tmp/$1_tmp/one_sen_per_line_manual_hindi_sen.txt
 
