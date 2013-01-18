@@ -4168,7 +4168,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  36. Updated in changes_in_databases
  37. Updated Log
 
- 17-01-13
+ 18-01-13
  ========
  1. hindi_meaning.clp
         Removed  : get_mng_from_phy_dic_with_diff_cat
@@ -4232,6 +4232,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/alignment/dictionaries/restricted_eng_words.txt
         miscellaneous/SMT/alignment/dictionaries/restricted_hnd_words.txt
         miscellaneous/SMT/alignment/dictionaries/provisional_root_dic.txt
+        miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_eng
+        miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_hnd
+        miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_out
+        miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_eng_align.html
 23. Updated changes_in_databases
 24. Updated MINION/alignment/README
 25. Updated Log 

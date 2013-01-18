@@ -58,7 +58,7 @@ Apako yAnwrikI meM samasyAoM kI eka badI viviXawA hala_karane_meM_sakRama aba ho
 
 Hindi meaning using Stanford parser 2.12
 This is the energy which is released in a nuclear power generation and nuclear explosions. 
-yaha vahI UrjA hE jo eka nABikIya GAwAfka pIDI meM Ora nABikIya visPotoM meM CodI huI hE.
+yaha vahI UrjA hE jo eka ANvika GAwAfka pIDI meM Ora ANvika visPotoM meM CodI huI hE.
 
 Hindi meaning using Stanford parser 2.13
 Energy is a scalar quantity. 
@@ -178,7 +178,7 @@ uwanA vExyuwacumbakIya bala guruwvAkarRI bala kI apekRA iwanA jyAxA aXika saSakw
 
 Hindi meaning using Stanford parser 2.42
 Matter is mostly electrically neutral (net charge is zero). 
-PropN-matter-PropN vixyuw se uxAsIna prAyaH hE (neta aBiyoga SUnya hE)
+PropN-matter-PropN vixyuw se watasWa prAyaH hE (vAswavika aBiyoga SUnya hE)
 
 Hindi meaning using Stanford parser 2.43
 Physicists explore the universe. 
@@ -218,7 +218,7 @@ saMhawi viRaya kI eka buniyAxI sampawwi hE.
 
 Hindi meaning using Stanford parser 2.52
 In principle they provide portable standard. 
-sixXAnwawaH ve subAhya AxarSa xewe hEM.
+sixXAnwawaH ve suvAhya AxarSa xewe hEM.
 
 Hindi meaning using Stanford parser 2.53
 Such standards are available in many laboratories. 
@@ -252,6 +252,66 @@ Hindi meaning using Stanford parser 2.60
 In the preceding observations, the vector character of momentum has not been evident. 
 se pahale Ane yA Gatiwa ho prekRaNa meM, saMvega kA saxiSa cariwra spaRta nahIM_ho cukA hE.
 
+Hindi meaning using Stanford parser 2.61
+We see leaves falling from trees and water flowing down a dam. 
+hama bAzXa nIce bahawA huA pedoM se Ora pAnI se girawe_hue CuttiyoM ko xeKawe hEM.
+
+Hindi meaning using Stanford parser 2.62
+Obviously, these tables are not exhaustive. 
+spaRta rUpa se, ye mejeM soKane vAlI nahIM hEM.
+
+Hindi meaning using Stanford parser 2.63
+Physicists try to discover the rules that are operating in nature, on the basis of observations, experimentation and analysis. 
+BOwikavix prekRaNa ke, prayoga kA Ora viSleRaNa ke AXAra para vaha niyama pawA lagane ke lie prayAsa karawe hEM jo prakqwi meM kAma_kara rahe hEM,
+
+Hindi meaning using Stanford parser 2.64
+We shall now discuss the nature of fundamental forces and the laws that govern the diverse phenomena of the physical world. 
+hama mUlaBUwa baloM kI prakqwi Ora niyama aba carcA karezge jo SArIrika viSva kA Binna Binna pariGatanA vaSA_meM karawe hEM.
+
+Hindi meaning using Stanford parser 2.65
+We shall learn these matters in subsequent chapters. 
+hama bAxa vAle aXyAyoM meM ye viRaya sIKezge.
+
+Hindi meaning using Stanford parser 2.66
+At the present stage of our understanding, we know of four fundamental forces in nature, which are described in brief here. 
+hamArI samaJa ke varwamAna maFca meM, hama yahAz prakqwi meM, cAra mUlaBUwa baloM kA jAnawe hEM ki jo safkRepa meM varNana kI gayIM hEM.
+
+Hindi meaning using Stanford parser 2.67
+Every object experiences this force due to every other object in the universe. 
+prawyeka vaswu viSva meM hara xUsarI vaswu ke kAraNa yaha bala anuBava karawI hE.
+
+Hindi meaning using Stanford parser 2.68
+The strong nuclear force binds protons and neutrons in a nucleus. 
+saSakwa ANvika bala nABika meM aNu_kA_eka_CotA BAga Ora nyUtrana bAzXawA hE.
+
+Hindi meaning using Stanford parser 2.69
+The electron, it must be noted, does not experience this force. 
+awisUkRma paramANu yaha XyAna_se xeKane hogA, yaha bala anuBava_nahIM karawA hE.
+
+Hindi meaning using Stanford parser 2.70
+Maxwell unified electromagnetism and optics with the discovery that light is an electromagnetic wave. 
+PropN-maxwell-PropN ne Koja ke sAWa vixyuwa cumbakawva Ora prakASikI eka banAe ki prakASa vExyuwacumbakIya lahara hE.
+
+Hindi meaning using Stanford parser 2.71
+They are the conserved quantities of nature. 
+ve prakqwi ke surakRiwa raKa parimANa hEM.
+
+Hindi meaning using Stanford parser 2.72
+The familiar example is the free fall of an object under gravity. 
+jAnA-mAnA uxAharaNa guruwvAkarRaNa ke nIce eka vaswu kA mukwa pawana hE.
+
+Hindi meaning using Stanford parser 2.73
+At the other end, all kinds of violent phenomena occur in the universe all the time. 
+isake_viparIwa, saba prakAra hiMsAwmaka pariGatanA ke hara samaya viSva meM aswiwva_meM howe hEM.
+
+Hindi meaning using Stanford parser 2.74
+Besides their great simplicity and generality, the conservation laws of nature are very useful in practice too. 
+unake baDiyA ke alAvA saralawA ke alAvA Ora sAmAnyawAA ke alAvA, prakqwi ke saMrakRaNa niyama BI vyavahAra meM awyanwa upayogI hEM.
+
+Hindi meaning using Stanford parser 2.75
+The conservation laws of charge and other attributes of elementary particles can also be related to certain abstract symmetries. 
+mUla kaNoM ke mUlya ke Ora anya guNoM ke saMrakRaNa niyama kuCa amUrwa samamiwi se BI sambanXiwa jA sakawe hEM.
+
 Calling Transliteration
 Calling Interface related programs
 Print minion_statistics
@@ -260,4 +320,6 @@ No Solution Found :
 Time-out:
 0
 Solution Found :
-60
+75
+re-executed-sentences:
+8
