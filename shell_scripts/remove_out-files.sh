@@ -59,7 +59,7 @@
  cd $HOME_anu_test/miscellaneous/transliteration/
  rm -r phrasal.Beta2 
  cd work
- rm path_for_transliteration phrasal-mert/phrasal.test.ini_tmp phrasal-mert/phrasal.test.ini_tmp1 phrasal-mert/phrasal.test.ini
+ rm path_for_transliteration phrasal-mert/phrasal.test.ini_tmp1 phrasal-mert/phrasal.test.ini
 
  echo "Removing canonical files"
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
