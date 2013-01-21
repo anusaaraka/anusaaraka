@@ -1,0 +1,55 @@
+
+   Debugging ::
+   =========
+
+   Anusaaraka provides a debugging tool to find and reduce the bugs in the translation.
+
+   For debugging:
+   $ cd $HOME_anu_test/debugging/sentence_debug
+   $ sentence_debug.sh <file_name> <sentence_number>   Ex:$ sentence_debug.sh  mytest  2.1
+                                                         (Ex: for 1st sentence of 2nd paragraph of the input file "mytest")
+
+  (NOTE : For debugging, basic knowledge of CLIPS is required.)
+  
+
+  NOTE: If you think that it is necessary to make changes/add something in the data (databases) files, then follow the following steps.
+        step 1 : Go to the respective data file 
+                 $HOME_anu_test/debugging/provisional_Anu_databases/<file_name>
+        step 2 : Make changes/add  according to the pattern in the file.
+        step 3 : compile the file using the following command:
+                 sh $HOME_anu_test/debugging/provisional_Anu_databases/compile.sh 
+        step 4 : Run the sentence after compiling. And, if the changes made are effective then mail the changes
+                 to anusaaraka team.
+        step 5 : Reset (IT'S IMPORTANT TO RESET)
+                 $sh $HOME_anu_test/debugging/provisional_Anu_databases/reset.sh
+
+  Steps to view Derived tree  ::
+  =========================== 
+  1. $ cd $HOME_anu_test/debugging/sentence_debug
+  2. $ sh ../view_derived_tree.sh  <file_name>   Ex: $ sh ../view_derived_tree.sh  mytest  
+  2. A new window opens
+  3. Go to File menu -> select Open Treebank
+  4. A new window opens  --> select the path upto sentence_debug (as mentioned in step 1)
+                             and select derived_tree and select Open
+
+ 
+  Steps to view Derivation tree  ::
+  =============================
+  1. $ cd $HOME_anu_test/debugging/sentence_debug
+  2. $ sh ../view_derivation_tree.sh  <file_name>   Ex: $ sh ../view_derivation_tree.sh  mytest  
+  3. A new window opens
+  4. Go to File menu -> select Open Treebank
+  5. A new window opens  --> select the path upto sentence_debug (as mentioned in step 1)
+			     and select mapped_constituents and select Open
+
+
+  DepTreeeViewer ::
+  ==============
+
+   $ cd $HOME_anu_test/debugging/sentence_debug
+   $ sh ../DepTreeeViewer.sh <file_name> <sentence_number>   Ex: $ sh ../DepTreeeViewer.sh   mytest  2.1
+  
+   RUN ::
+   java -jar DepTreeeViewer_17_06_10.jar
+
+   (In "File" Menu select "Open Treebank" load option load paninian_to_conllx_format.dat  file [i.e from $HOME_anu_test/debugging/sentence_debug/paninian_to_conllx_format.dat])

@@ -4227,7 +4227,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         anu_compile.sh
 22. In chk_input_format.pl added new pattern to handle semicolon movement to the right position[Ex. sound ; (Ultimately] 
 23. Modified ';' and '/' rule in  miscellaneous/SMT/MINION/alignment/mapping-symbols_manual.lex to avoid errors.
-24. Updated the following files :
+24. Added sentence_debug along with README in debugging folder
+25. Updated the following files :
 	miscellaneous/SMT/alignment/dictionaries/inferred_dic.txt
         miscellaneous/SMT/alignment/dictionaries/phy_dictionary.txt
         miscellaneous/SMT/alignment/dictionaries/provisional_PropN_dic.txt
@@ -4238,7 +4239,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_hnd
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_out
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_eng_align.html
-25. Updated changes_in_databases
-26. Updated miscellaneous/SMT/MINION/alignment/README
-27. Updated miscellaneous/SMT/MINION/alignment/get_group_mng.sh
-28. Updated Log.
+26. Updated changes_in_databases
+27. Updated miscellaneous/SMT/MINION/alignment/README
+28. Updated miscellaneous/SMT/MINION/alignment/get_group_mng.sh
+29. Updated Log.
