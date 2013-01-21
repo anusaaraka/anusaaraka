@@ -4168,7 +4168,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  36. Updated in changes_in_databases
  37. Updated Log
 
- 18-01-13
+ 21-01-13
  ========
  1. hindi_meaning.clp
         Removed  : get_mng_from_phy_dic_with_diff_cat
@@ -4225,7 +4225,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         get_txt_files.sh
         dic_compile.sh
         anu_compile.sh
-22. Updated the following files :
+22. In chk_input_format.pl added new pattern to handle semicolon movement to the right position[Ex. sound ; (Ultimately] 
+23. Modified ';' and '/' rule in  miscellaneous/SMT/MINION/alignment/mapping-symbols_manual.lex to avoid errors.
+24. Updated the following files :
 	miscellaneous/SMT/alignment/dictionaries/inferred_dic.txt
         miscellaneous/SMT/alignment/dictionaries/phy_dictionary.txt
         miscellaneous/SMT/alignment/dictionaries/provisional_PropN_dic.txt
@@ -4236,6 +4238,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_hnd
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_out
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_eng_align.html
-23. Updated changes_in_databases
-24. Updated MINION/alignment/README
-25. Updated Log 
+25. Updated changes_in_databases
+26. Updated miscellaneous/SMT/MINION/alignment/README
+27. Updated miscellaneous/SMT/MINION/alignment/get_group_mng.sh
+28. Updated Log

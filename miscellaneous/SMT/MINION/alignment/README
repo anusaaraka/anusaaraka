@@ -63,7 +63,7 @@
         )
 
 
-    Dictionaries :  Dictionaries used for alignment are in $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries directory
+    Dictionaries :  Dictionaries used for alignment are in $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries directory
 
    File to check for meanings aligned with ANU
    =========================================== :

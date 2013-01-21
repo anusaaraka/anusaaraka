@@ -13,7 +13,7 @@ FILE *fp;
 
 %%
 [;]     {       printf(" @punctSEMICOLON ");
-                fprintf(fp, " @punctSEMICOLON	PUNCT-Semicolon\n");
+                fprintf(fp, "@punctSEMICOLON	PUNCT-Semicolon\n");
 /*        }
 nonascii	{       printf("@symbolnonascii");
                 	fprintf(fp, "@symbolnonascii	nonascii\n"); */
@@ -27,124 +27,124 @@ nonascii	{       printf("@symbolnonascii");
 ¡	{	printf("@symbolINVERTEDEXCLAMATIONMARK");
 		fprintf(fp, "@symbolINVERTEDEXCLAMATIONMARK	 SYMBOL-INVERTED-EXCLAMATION-MARK \n");
 	}
-¢	{	printf("@symbolCENTSIGN");
+¢	{	printf("@symbolCENTSIGN ");
 		fprintf(fp, "@symbolCENTSIGN	 SYMBOL-CENT-SIGN \n");
 	}
-£	{	printf("@symbolPOUNDSIGN");
+£	{	printf("@symbolPOUNDSIGN ");
 		fprintf(fp, "@symbolPOUNDSIGN	 SYMBOL-POUND-SIGN \n");
 	}
-¤	{	printf("@symbolCURRENCYSIGN");
+¤	{	printf("@symbolCURRENCYSIGN ");
 		fprintf(fp, "@symbolCURRENCYSIGN	 SYMBOL-CURRENCY-SIGN \n");
 	}
-¥	{	printf("@symbolYENSIGN");
+¥	{	printf("@symbolYENSIGN ");
 		fprintf(fp, "@symbolYENSIGN	 SYMBOL-YEN-SIGN \n");
 	}
-¦	{	printf("@symbolBROKENBAR");
+¦	{	printf("@symbolBROKENBAR ");
 		fprintf(fp, "@symbolBROKENBAR	 SYMBOL-BROKEN-BAR \n");
 	}
-§	{	printf("@symbolSECTIONSIGN");
+§	{	printf("@symbolSECTIONSIGN ");
 		fprintf(fp, "@symbolSECTIONSIGN	 SYMBOL-SECTION-SIGN \n");
 	}
-¨	{	printf("@symbolDIAERESIS");
+¨	{	printf("@symbolDIAERESIS ");
 		fprintf(fp, "@symbolDIAERESIS	 SYMBOL-DIAERESIS \n");
 	}
-©	{	printf("@symbolCOPYRIGHTSIGN");
+©	{	printf("@symbolCOPYRIGHTSIGN ");
 		fprintf(fp, "@symbolCOPYRIGHTSIGN	 SYMBOL-COPYRIGHT-SIGN \n");
 	}
-ª	{	printf("@symbolFEMININEORDINALINDICATOR");
+ª	{	printf("@symbolFEMININEORDINALINDICATOR ");
 		fprintf(fp, "@symbolFEMININEORDINALINDICATOR	 SYMBOL-FEMININE-ORDINAL-INDICATOR \n");
 	}
-«	{	printf("@symbolLEFTPOINTINGDOUBLEANGLEQUOTATIONMARK");
+«	{	printf("@symbolLEFTPOINTINGDOUBLEANGLEQUOTATIONMARK ");
 		fprintf(fp, "@symbolLEFTPOINTINGDOUBLEANGLEQUOTATIONMARK	 SYMBOL-LEFT-POINTING-DOUBLE-ANGLE-QUOTATION-MARK \n");
 	}
-¬	{	printf("@symbolNOTSIGN");
+¬	{	printf("@symbolNOTSIGN ");
 		fprintf(fp, "@symbolNOTSIGN	 SYMBOL-NOT-SIGN");
 	/*}
  	{	printf("@symbolSOFTHYPHEN");
 		fprintf(fp, "@symbolSOFTHYPHEN	%s \n");
 	*/}
-®	{	printf("@symbolREGISTEREDSIGN");
+®	{	printf("@symbolREGISTEREDSIGN ");
 		fprintf(fp, "@symbolREGISTEREDSIGN	 SYMBOL-REGISTERED-SIGN \n");
 	}
-¯ 	{	printf("@symbolMACRON");
+¯ 	{	printf("@symbolMACRON ");
 		fprintf(fp, "@symbolMACRON	 SYMBOL-MACRON \n");
 	}
-° 	{	printf("@symbolDEGREESIGN");
+° 	{	printf("@symbolDEGREESIGN ");
 		fprintf(fp, "@symbolDEGREESIGN	 SYMBOL-DEGREE-SIGN \n");
 	}
-±	{	printf("@symbolPLUSMINUSSIGN");
+±	{	printf("@symbolPLUSMINUSSIGN ");
 		fprintf(fp, "@symbolPLUSMINUSSIGN	 SYMBOL-PLUS-MINUS-SIGN");
 	}
-² 	{	printf("@symbolSUPERSCRIPTTWO");
+² 	{	printf("@symbolSUPERSCRIPTTWO ");
 		fprintf(fp, "@symbolSUPERSCRIPTTWO	 SYMBOL-SUPERSCRIPT-TWO \n");
 	}
-³ 	{	printf("@symbolSUPERSCRIPTTHREE");
+³ 	{	printf("@symbolSUPERSCRIPTTHREE ");
 		fprintf(fp, "@symbolSUPERSCRIPTTHREE	 SYMBOL-SUPERSCRIPT-THREE \n");
 	}
-´ 	{	printf("@symbolACUTEACCENT");
+´ 	{	printf("@symbolACUTEACCENT ");
 		fprintf(fp, "@symbolACUTEACCENT	 SYMBOL-ACUTE-ACCENT \n");
 	}
-µ 	{	printf("@symbolMICROSIGN");
+µ 	{	printf("@symbolMICROSIGN ");
 		fprintf(fp, "@symbolMICROSIGN	 SYMBOL-MICRO-SIGN \n");
 	}
-¶	{	printf("@symbolPILCROWSIGN");
+¶	{	printf("@symbolPILCROWSIGN ");
 		fprintf(fp, "@symbolPILCROWSIGN	 SYMBOL-PILCROW-SIGN \n");
 	}
-· 	{	printf("@symbolMIDDLEDOT");
+· 	{	printf("@symbolMIDDLEDOT ");
 		fprintf(fp, "@symbolMIDDLEDOT	 SYMBOL-MIDDLE-DOT \n");
 	}
-¸	{	printf("@symbolCEDILLA");
+¸	{	printf("@symbolCEDILLA ");
 		fprintf(fp, "@symbolCEDILLA	 SYMBOL-CEDILLA \n");
 	}
-¹ 	{	printf("@symbolSUPERSCRIPTONE");
+¹ 	{	printf("@symbolSUPERSCRIPTONE ");
 		fprintf(fp, "@symbolSUPERSCRIPTONE	 SYMBOL-MASCULINE-ORDINAL-INDICATOR \n");
 	}
-º 	{	printf("@symbolMASCULINEORDINALINDICATOR");
+º 	{	printf("@symbolMASCULINEORDINALINDICATOR ");
 		fprintf(fp, "@symbolMASCULINEORDINALINDICATOR	 SYMBOL-MASCULINE-ORDINAL-INDICATOR \n");
 	}
-»	{	printf("@symbolRIGHTPOINTINGDOUBLEANGLEQUOTATIONMARK");
+»	{	printf("@symbolRIGHTPOINTINGDOUBLEANGLEQUOTATIONMARK ");
 		fprintf(fp, "@symbolRIGHTPOINTINGDOUBLEANGLEQUOTATIONMARK	 \n");
 	}
-¼	{	printf("@symbolVULGARFRACTIONONEQUARTER");
+¼	{	printf("@symbolVULGARFRACTIONONEQUARTER ");
 		fprintf(fp, "@symbolVULGARFRACTIONONEQUARTER	 SYMBOL-VULGAR-FRACTION-ONE-QUARTER \n");
 	}
-½	{	printf("@symbolVULGARFRACTIONONEHALF");
+½	{	printf("@symbolVULGARFRACTIONONEHALF ");
 		fprintf(fp, "@symbolVULGARFRACTIONONEHALF	 SYMBOL-VULGAR-FRACTION-ONE-HALF \n");
 	}
-¾	{	printf("@symbolVULGARFRACTIONTHREEQUARTERS");
+¾	{	printf("@symbolVULGARFRACTIONTHREEQUARTERS ");
 		fprintf(fp, "@symbolVULGARFRACTIONTHREEQUARTERS	 SYMBOL-VULGAR-FRACTION-THREE-QUARTERS \n");
 	}
-¿	{	printf("@symbolINVERTEDQUESTIONMARK");
+¿	{	printf("@symbolINVERTEDQUESTIONMARK ");
 		fprintf(fp, "@symbolINVERTEDQUESTIONMARK	 SYMBOL-INVERTED-QUESTION-MARK \n");
 	}
-÷	{	printf("@symbolDIVISIONSIGN");
+÷	{	printf("@symbolDIVISIONSIGN ");
 		fprintf(fp, "@symbolDIVISIONSIGN	 SYMBOL-DIVISION-SIGN \n");
 	}
-×	{	printf("@symbolMULTIPLICATIONSIGN");
+×	{	printf("@symbolMULTIPLICATIONSIGN ");
 		fprintf(fp, "@symbolMULTIPLICATIONSIGN	 SYMBOL-MULTIPLICATION-SIGN \n");
 	}
-―	{	printf("@symbolHORIZONTALBAR");
+―	{	printf("@symbolHORIZONTALBAR ");
 		fprintf(fp, "@symbolHORIZONTALBAR	 SYMBOL-HORIZONTAL-BAR \n");
 	}
-\+	{	printf("@symbolPLUS");
+\+	{	printf("@symbolPLUS ");
 		fprintf(fp, "@symbolPLUS	 SYMBOL-PLUS \n");	
 	}
-#	{	printf("@symbolSHARP");	
+#	{	printf("@symbolSHARP ");	
 		fprintf(fp, "@symbolSHARP	 SYMBOL-SHARP \n");	
 	}
-\$	{	printf("@symbolDOLLAR");
+\$	{	printf("@symbolDOLLAR ");
 		fprintf(fp, "@symbolDOLLAR	 SYMBOL-DOLLAR \n");	
 	}
-\=	{	printf("@symbolEQUALTO");
+\=	{	printf("@symbolEQUALTO ");
 		fprintf(fp, "@symbolEQUALTO	 SYMBOL-EQUAL-TO \n");	
 	}
-%	{	printf("@symbolPERCENT");
+%	{	printf("@symbolPERCENT ");
 		fprintf(fp, "@symbolPERCENT	 SYMBOL-PERCENT \n");	
 	}
-—	{	printf("@symbolEMDASH");
+—	{	printf("@symbolEMDASH ");
 		fprintf(fp, "@symbolEMDASH	 SYMBOL-EMDASH \n");	
 	}
-β	{	printf("@symbolBETA");
+β	{	printf("@symbolBETA ");
 		fprintf(fp, "@symbolBETA	 SYMBOL-BETA \n");	
 	}
 \~	{	printf("@symbolTELDA ");
@@ -156,7 +156,7 @@ nonascii	{       printf("@symbolnonascii");
 
 					s1=strchr(yytext, '/')+1;
         	                        printf("%s @symbolSLASH %s", str, s1); /*Ex: km/hr  */
-					fprintf(fp, " @symbolSLASH 	 SYMBOL-SLASH \n"); 
+					fprintf(fp, "@symbolSLASH	SYMBOL-SLASH \n"); 
 				}
 [0-9]+[.][0-9]+		{	len=strcspn(yytext, ".");
 				strncpy(str, yytext, len); str[len]='\0';

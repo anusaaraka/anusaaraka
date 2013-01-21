@@ -84,6 +84,14 @@ while($in = <STDIN>){
 	$in =~ s/[ \t]+([^a-zA-Z0-9]+)([ \t]+)([a-zA-Z0-9])/$1$2$3/g;
 	$in =~ s/[ \t]+([^a-zA-Z0-9]+)$/$1/g;
 	$in =~ s/([a-zA-Z0-9]+)-([ \t])/$1 - $2/g;
+
+#Special case: Ex: The initial potential energy of the stone gets transformed into other forms of energy: heat and sound ; (Ultimately, sound after it is absorbed becomes heat).
+#Above sentence is taken from Class11 Unit01 Physics Book. At the time of sentence alignment champollion combines above two sentences , so semicolon(;) is placed here to consider has a single sentence. 
+#This semicolon should be moved to the left side of the word to avoid ';' in word field.
+#So for this adding below pattern as Suggested by Chaitanya Sir. 
+#Added by Roja(18-01-13)
+	$in =~ s/([a-zA-Z]+)[ ][;][ ]([(a-zA-Z]+)/$1; $2/g;
+
 # change & to and
 	$in =~ s/\&/ and /g;
 # add . in case of ABBR followed by two spaces.
