@@ -75,6 +75,8 @@ WHPP[\[\]]              yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(
 X[\[\]]                 yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
 WHADVP[\[\]]            yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
 UCP[\[\]]               yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
+AUX[\[\]]               yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
+AUXG[\[\]]              yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
 
 P_DOT[\[\]]             yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
 P_QES[\[\]]             yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;

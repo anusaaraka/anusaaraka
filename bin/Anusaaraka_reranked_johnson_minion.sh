@@ -36,6 +36,7 @@
  fi
 
  mkdir $MYPATH/tmp/$1_tmp
+ sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/processing_manual_sentences.sh $1 $5
 
  ###Added below loop for server purpose.
  if [ "$3" == "True" ] ; then 
@@ -70,16 +71,13 @@
   ./replace_nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
 
   echo "Calling Stanford parser"
-  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
-#  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2012-11-12/
-  if [ "$2" != "" -a "$2" != "0" ] ;
-  then
-  sh run_multiple_parse_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp_1 2>/dev/null  
-  python preffered_parse.py $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp_1 $2 > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
-  else 
-  sh run_penn-pcfg.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
+  cd $HOME_anu_test/Parsers/reranking-parser
+  if [ "$2" == "" -o "$2" -ge "0" ] ; then
+  sed 's/^/<s> /g' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org  | sed 's/$/ <\/s>/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org1
+  sh parse.sh  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org1 > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
   fi
-  sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}"  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1
+  sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}" $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp | sed 's/^(S1/(ROOT/g'  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 
   #running stanford NER (Named Entity Recogniser) on whole text.
@@ -98,6 +96,13 @@
   $HOME_anu_test/Anu_src/split_file.out sd_numeric_word.txt dir_names.txt sd_numeric_word_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out sd_category.txt dir_names.txt sd_category_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line.txt.ner dir_names.txt ner.dat
+
+  cd $MYPATH/tmp/$1_tmp 
+  $HOME_anu_test/Anu_src/split_file.out one_sen_per_line_manual_hindi_sen.txt dir_names.txt manual_hindi_sen.dat
+
+  $HOME_anu_test/Anu_src/split_file.out shallow_parser_output.txt dir_names.txt shallow_parser_output.dat
+  $HOME_anu_test/Anu_src/split_file.out manual_hin.morph.txt dir_names.txt manual_hin.morph.dat
+
   $HOME_anu_test/Anu_src/split_file.out sd-original-relations.txt  dir_names.txt  sd-original-relations.dat
 
   grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt
@@ -110,7 +115,7 @@
  do
     echo "Hindi meaning using Stanford parser" $line
     cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
-    timeout 500 ./run_sentence_stanford.sh $1 $line 1 $MYPATH $4
+    timeout 500 ./run_sentence_stanford_minion.sh $1 $line 1 $MYPATH $4 
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
 
@@ -125,3 +130,23 @@
 
  echo "Calling Interface related programs"
  sh $HOME_anu_test/bin/run_anu_browser.sh $HOME_anu_test $1 $MYPATH $HOME_anu_output
+ sh $HOME_anu_test/miscellaneous/SMT/MINION/browser/run_align_browser.sh $HOME_anu_test $1 $MYPATH $HOME_anu_output
+
+ echo "Print minion_statistics"
+ cat $MYPATH/tmp/$1_tmp/meanings_aligned_with_dic_tmp.txt $MYPATH/tmp/$1_tmp/meanings_aligned_with_anu_tmp.txt $MYPATH/tmp/$1_tmp/meanings_aligned_with_minion_tmp.txt >> $MYPATH/tmp/$1_tmp/anu_and_manual_meanings_tmp.txt
+ sort $MYPATH/tmp/$1_tmp/anu_and_manual_meanings_tmp.txt > $MYPATH/tmp/$1_tmp/anu_and_manual_meanings.txt
+
+ sed -n '1h;2,$H;${g;s/\([0-9.]*\)   Solution Found\n[0-9.]*   Time-out/\1   Time-out/g;p}' $MYPATH/tmp/$1_tmp/no_sol_found_tmp.txt | sed '2d'  > $MYPATH/tmp/$1_tmp/no_sol_found.txt
+ echo "No Solution Found :" >> $MYPATH/tmp/$1_tmp/minion_statistics
+ grep "No Solution Found" $MYPATH/tmp/$1_tmp/no_sol_found.txt | wc  -l >> $MYPATH/tmp/$1_tmp/minion_statistics
+ echo "Time-out:" >> $MYPATH/tmp/$1_tmp/minion_statistics
+ grep "Time-out" no_sol_found.txt | wc -l >> $MYPATH/tmp/$1_tmp/minion_statistics
+ echo "Solution Found :" >> $MYPATH/tmp/$1_tmp/minion_statistics
+ grep "   Solution Found" $MYPATH/tmp/$1_tmp/no_sol_found.txt | wc  -l >> $MYPATH/tmp/$1_tmp/minion_statistics
+ echo "re-executed-sentences:">> $MYPATH/tmp/$1_tmp/minion_statistics
+ if [ -s "re_executed_sentences.txt" ] ; then
+	 wc -l < $MYPATH/tmp/$1_tmp/re_executed_sentences.txt >> $MYPATH/tmp/$1_tmp/minion_statistics
+ else
+        echo "0" >> $MYPATH/tmp/$1_tmp/minion_statistics
+ fi
+ cat $MYPATH/tmp/$1_tmp/minion_statistics

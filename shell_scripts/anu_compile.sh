@@ -206,6 +206,13 @@
  sed '$d' < work/phrasal-mert/phrasal.test.ini_tmp > work/phrasal-mert/phrasal.test.ini_tmp1
  cat work/phrasal-mert/phrasal.test.ini_tmp1 work/path_for_transliteration  > work/phrasal-mert/phrasal.test.ini
 
+ echo "compiling reranking parser"
+ cd  $HOME_anu_test/Parsers
+ tar -xvzf reranking-parser-2011-12-17.tgz
+ export GCCFLAGS="-march=pentium4 -mfpmath=sse -msse2 -mmmx"
+ cd $HOME_anu_test/Parsers/reranking-parser
+ make
+
  echo "Copying Readme and shell file to Provisional directory"
  cd  $HOME_anu_test/Doc/Provisional_data
  cp  *    $HOME_anu_provisional_wsd_rules/

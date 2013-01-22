@@ -74,3 +74,6 @@
 
  cd $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries
  rm phy_hnd_multi_word_dic.txt hindi_multi_word.txt
+
+ cd $HOME_anu_test/Parsers/
+ rm -rf reranking-parser

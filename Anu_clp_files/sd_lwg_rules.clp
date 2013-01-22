@@ -177,7 +177,7 @@
 	(retract ?f)
         (bind $?chunkid  (create$ $?pre ?node $?post))
         (bind ?pos (member$ ?node $?chunkid))
-        (if (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO)) then
+        (if (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO AUX AUXG)) then
         (bind $?chunkid (create$ (subseq$ $?chunkid 1 (- ?pos 1)) $?child (subseq$ $?chunkid (+ ?pos 1) (length $?chunkid))))
         (bind $?vb_chk (create$ (subseq$ $?vb_chk 1 (- ?pos 1)) (lowcase ?head) (subseq$ $?vb_chk (+ ?pos 1) (length $?vb_chk))))
 
