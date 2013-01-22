@@ -4230,7 +4230,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 24. Added sentence_debug along with README in debugging folder
 25. Added reranking-parser-2011-12-17.tgz in Parsers folder
 26. Added Anusaaraka_reranked_johnson.sh Anusaaraka_reranked_johnson_minion.sh in bin
-27. Added reranked-johnson_verified and reranked-johnson_ver_out in Anu_outputs
+27. Added reranked-johnson_verified ( 442 ) and reranked-johnson_ver_out in Anu_outputs
 28. In sd_lwg_rules.clp, added AUX, AUXG nodes in replace_nodes rule.
 29. Added AUX, AUXG tokens in constituency_parse.l to avoid syntax errors
 30. Added code to untar and make reranking-parser-2011-12-17.tgz in anu_compile.sh
