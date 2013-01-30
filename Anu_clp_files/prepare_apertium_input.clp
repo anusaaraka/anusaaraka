@@ -145,32 +145,39 @@
  ;----------------------------------------------------------------------------------------------------------------------
  ; here prep_id itself is considered as the main meaning 
  ;Is there life beyond the grave? Either go to bed or open your book to read.
- (defrule Compound_mng_with_Prep_id
+ (defrule Compound_mng_with_Prep_id1
  (declare (salience 1003))
  ?f0<-(id-HM-source ?p_id ?p_mng Database_compound_phrase_word_mng|Database_compound_phrase_root_mng|WSD_compound_phrase_root_mng)
  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(preposition $? ?p_id $?)(number ?num)(case ?case)(gender ?gen))
- ?f1<-(id-HM-source ?pada_id ?h_mng ?)
- (test (and (neq ?vib 0)(neq ?vib kA) (or (neq (sub-string 1 2 ?vib) "ke")(neq (sub-string 1 2 ?vib) "kI"))))
+ ?f1<-(id-HM-source ?pada_id - ?)
   =>
 	(retract ?f0 ?f1)
-	(if (neq ?h_mng -) then  ;He came from inside the room.
-		(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_mng "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^" ?vib "<cat:prsg>$)"  crlf)
+	(if (neq ?p_mng -) then 
+		(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?p_mng "<cat:prsg>$)"  crlf)
 	else 
-		(if (neq ?p_mng -) then ; Is there life beyond the grave?
-			(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?p_mng "<cat:prsg>$)"  crlf)
-		else ;Each one of them recorded the narratives from twenty participants.
-			(printout ?*A_fp5* "(id-Apertium_input "?pada_id " )" crlf)
-		)
+		(printout ?*A_fp5* "(id-Apertium_input "?pada_id " )" crlf)
 	)
+        (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id " Compound_mng_with_Prep_id1 )" crlf)
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
+ (defrule Compound_mng_with_Prep_id
+ (declare (salience 1002))
+ ?f0<-(id-HM-source ?p_id ?p_mng Database_compound_phrase_word_mng|Database_compound_phrase_root_mng|WSD_compound_phrase_root_mng)
+ (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(preposition $? ?p_id $?)(number ?num)(case ?case)(gender ?gen))
+ ?f1<-(id-HM-source ?pada_id ?h_mng ?)
+ (test (and (neq ?vib 0)(neq ?vib kA)))
+ (test (and (neq (sub-string 1 2 ?vib) "ke")(neq (sub-string 1 2 ?vib) "kI")(neq (sub-string 1 2 ?vib) "se")))
+  =>
+        (retract ?f0 ?f1)
+        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_mng "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^" ?vib "<cat:prsg>$)"  crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id " Compound_mng_with_Prep_id )" crlf)
  )
-
  ;======================================== KA vibakthi (viSeRya-RaRTI_viSeRaNa) rules =====================================
  ; Ex: He was awakened at dawn by the sound of crying .
  ;     She awakened to the sound of birds' singing .
  ;     Failure to comply may result in dismissal. 
  (defrule RaRTI_kA_vib_rule_for_verbal_noun
- (declare (salience 1002))
+ (declare (salience 1001))
  (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa|viSeRya-of_saMbanXI|saMjFA-to_kqxanwa ?f_id ?id)
  (or (make_verbal_noun ?id)(id-cat_coarse ?id verbal_noun))
  (pada_info (group_head_id ?id)(vibakthi ?vib)(H_tam ?tam))
@@ -430,14 +437,15 @@
   ; He is taller than me. Look at me. We ran after him, but he escaped. You will not go without me.
   ; Who did you play tennis with? The man with whom I play tennis is here.
   ; Added by Shirisha Manju (24-09-11) Suggested by Chaitanya Sir
+  ;If the object is released from rest, the initial potential energy is completely converted into the kinetic energy of the object just before it hits the ground.
   (defrule PP_pronoun_rule_with_ke
   (declare (salience 931))
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(case ?case)(vibakthi ?vib))
-  (or (id-word ?pada_id he|she|their|i|our|me|him|they|them|her|we|it|that|this|ours|who|whom|you|your)(id-original_word ?pada_id us|Us))
+  (or (id-word ?pada_id he|she|their|i|our|me|him|they|them|her|we|it|that|this|ours|who|whom)(id-original_word ?pada_id us|Us))
   ?f0<-(id-HM-source ?pada_id ?h_word ?)
   (test (neq ?vib 0))
   (test (neq (str-index "_" ?vib)  FALSE))
-  (test (or (eq (sub-string 1 2 ?vib) "ke")(eq (sub-string 1 2 ?vib) "kI")))
+  (test (or (eq (sub-string 1 2 ?vib) "ke")(eq (sub-string 1 2 ?vib) "kI")(eq (sub-string 1 2 ?vib) "se")))
   =>
         (retract ?f0)
 	(bind ?index (str-index "_" ?vib))
@@ -941,21 +949,9 @@
         (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id "  PP_rule_for_and_head )" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
-  ;What causes motion described in this chapter and the next chapter forms the subject matter of Chapter 5.
-  (defrule PP_rule_with_tam
-  (declare (salience 460))
-  (prep_id-relation-anu_ids ? viSeRya-kqxanwa_viSeRaNa  ?vi ?kq_id)
-  ?f0<-(id-HM-source ?kq_id ?h_word ?)
-  (pada_info (group_head_id ?kq_id)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(group_ids $?ids)(H_tam ?tam))
-  (test (neq ?tam 0))
-  =>
-	(retract ?f0)
-        (printout ?*A_fp5* "(id-Apertium_input "?kq_id" root:"?h_word ",tam:"?tam",gen:"?gen",num:"?num ",per:"?per")" crlf)
-        (printout ?*aper_debug-file* "(id-Rule_name  "?kq_id "  PP_rule_with_tam )" crlf)
-   )
   ;-------------------------------------------------------------------------------------------------------------------------
   ; Broken windows need to be replaced. The painted doors look great. Invention of currency was done mainly for transaction. 
-  (defrule PP_rule_with_tam1
+  (defrule PP_rule_with_tam
   (declare (salience 450))
   ?f0<-(id-HM-source ?id ?h_word ?)
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?person)(group_ids $?ids)(H_tam ?tam))
@@ -967,8 +963,25 @@
         (if (eq ?a "T") then
                 (retract ?f0)
                 (printout ?*A_fp5* "(id-Apertium_input "?id" root:"?h_word ",tam:"?tam",gen:"?gen",num:"?num ",per:"?person")" crlf)
-                (printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_with_tam1 )" crlf)
+                (printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_with_tam )" crlf)
         )
+  )
+  ;-------------------------------------------------------------------------------------------------------------------------
+  ;What causes motion described in this chapter and the next chapter forms the subject matter of Chapter 5.
+  ;The resulting a-t curve is shown in Fig. 3.8.
+  ; Added by Shirisha Manju (Suggested by Chaitanya Sir)
+  (defrule PP_rule_with_tam1
+  (declare (salience 440))
+  ?f0<-(id-HM-source ?id ?h_word ?)
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?person)(group_ids $?ids)(H_tam ?tam))
+  (test (member$ ?id $?ids))
+  (test (neq ?tam 0))
+  (test	(neq (str-index "_" ?h_word) FALSE))
+  (test (or (eq  (sub-string (- (length ?h_word) 4) (length ?h_word) ?h_word) "_kara")(eq (sub-string (- (length ?h_word) 2) (length ?h_word) ?h_word) "_ho")))
+  =>
+	(retract ?f0)
+        (printout ?*A_fp5* "(id-Apertium_input "?id" root:"?h_word ",tam:"?tam",gen:"?gen",num:"?num ",per:"?person")" crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_with_tam1 )" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
   ;He was an exotic creature with short red hair and brilliant green eyes.

@@ -162,11 +162,11 @@
  )
  ;----------------------------------------------------------------------------------------------------------------
  ; Modified by Shirisha Manju -- instead of values used variables
- (defrule mng_for_10000_id
- ?f0<-(id-HM-source  10000   ?mng    ?src)
+ (defrule mng_for_new_id
+ ?f0<-(id-HM-source  ?id&10000|10001   ?mng    ?src)
   =>	
 	(retract ?f0)
-	(printout ?*caus_mng-file* "(id-HM-source  10000 "?mng"  " ?src ")" crlf )
+	(printout ?*caus_mng-file* "(id-HM-source  "?id "  "?mng"  " ?src ")" crlf )
  )
  ;----------------------------------------------------------------------------------------------------------------
  (defrule end

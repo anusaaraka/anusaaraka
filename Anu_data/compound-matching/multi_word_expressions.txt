@@ -33654,3 +33654,4 @@ is_said_to_be	kaha_jAwA_hE#kaha_jAwA_hE#verb#2#RM
 external_agency	bAhya_sAXana#bAhya_sAXana#noun#2#WM
 problems_of_interest	rocaka_samasyAez#rocaka_samasyAez#noun#1#WM
 living_creature	prANI#prANI#noun#2#WM
+just_before	se_TIka_pahale#se_TIka_pahale#preposition#2#RM

@@ -246,11 +246,11 @@ Upara carcA kI jEsA ki, prawyeka mApana BUleM SAmila howA hE.
 
 Hindi meaning using Stanford parser 2.59
 All these numbers have the same number of significant figures (digits 2, 3, 0, 8), namely four. 
-ina saba afkoM kA vahI afka sArWaka afkoM kA (afka 2, 3, 0, 8, jEse cAra hE.
+ina saba afkoM kA vahI afka sArWaka afkoM kA (afka 2, 3, 0, 8), jEse cAra hE.
 
 Hindi meaning using Stanford parser 2.60
 In the preceding observations, the vector character of momentum has not been evident. 
-se pahale Ane yA Gatiwa ho prekRaNa meM, saMvega kA saxiSa cariwra spaRta nahIM_ho cukA hE.
+se_pahale_AnA_yA_Gatiwa howe hue prekRaNa meM, saMvega kA saxiSa cariwra spaRta nahIM_ho cukA hE.
 
 Hindi meaning using Stanford parser 2.61
 We see leaves falling from trees and water flowing down a dam. 
@@ -312,6 +312,66 @@ Hindi meaning using Stanford parser 2.75
 The conservation laws of charge and other attributes of elementary particles can also be related to certain abstract symmetries. 
 mUla kaNoM ke mUlya ke Ora anya guNoM ke saMrakRaNa niyama kuCa amUrwa samamiwi se BI sambanXiwa jA sakawe hEM.
 
+Hindi meaning using Stanford parser 2.76
+For the case of rectilinear motion with uniform acceleration, a set of simple equations can be obtained. 
+ekasamAna wvaraNa se sarala_reKIya gawi ke mAmale ke lie, samuccaya sarala samIkaraNoM kA prApwa kiyA jA sakawA hE.
+
+Hindi meaning using Stanford parser 2.77
+In order to specify position, we need to use a reference point and a set of axes. 
+yaWAkrama sWiwi viSeRa_vivaraNa xene ke lie , hameM eka tippaNI noka Ora samuccaya XuriyoM kA upayoga_karane kI jarUrawa hE.
+
+Hindi meaning using Stanford parser 2.78
+The point of intersection of these three axes is called origin (O) and serves as the reference point. 
+ina wIna XuriyoM kA milane_kA binxu mUla binxu (PropN-o-PropN) bulAyA jAwA hE Ora tippaNI noka ke jEsA sevA karawA hE.
+
+Hindi meaning using Stanford parser 2.79
+The coordinates (x, y, z) of an object describe the position of the object with respect to this coordinate system. 
+eka vaswu ke nirxeSAfka (x, y, z) isa nirxeSAfka nikAya ke viRaya meM vaswu kI sWiwi varNana karawe hEM.
+
+Hindi meaning using Stanford parser 2.80
+For example, for describing motion in one dimension, we need only one axis. 
+uxAharaNa_ke liye, eka pahalU meM gawi varNana karane ke lie, hameM sirPa eka XurI kI AvaSyakawA hE.
+
+Hindi meaning using Stanford parser 2.81
+In the first case, the car moves from O to P .. 
+praWama mAmale meM, gAdI PropN-o-PropN se PropN-p-PropN ko calawI hE.
+
+Hindi meaning using Stanford parser 2.82
+This distance is called the path length traversed by the car. 
+yaha xUrI gAdI se Ade wiraCe jA paWa lambAI bulAI jAwI hE.
+
+Hindi meaning using Stanford parser 2.83
+Such quantities are represented by vectors. 
+Ese parimANa saxiSa waka prawiniXi hue gaye hEM.
+
+Hindi meaning using Stanford parser 2.84
+Thus, it is not necessary to use vector notation for discussing motion of objects in one-dimension. 
+isa prakAra, one-dimension meM vaswu_kA gawi kI carcA karane ke lie saxiSa safkewa paxXawi kA upayoga karanA AvaSyaka nahIM hE.
+
+Hindi meaning using Stanford parser 2.85
+When an object is in motion, its position changes with time. 
+eka vaswu calAyamAna jaba hE, wo usakI sWiwi samaya ke sAWa baxalawI hE.
+
+Hindi meaning using Stanford parser 2.86
+The average velocity can be positive or negative depending upon the sign of the displacement. 
+Osawa vega visWApana ke cihna ke Upara nirBara karawA huA sakArAwmaka yA qNAwmaka ho sakawA hE.
+
+Hindi meaning using Stanford parser 2.87
+It is the average change of velocity per unit time. 
+yaha prawi ikAWa samaya vega kA Osawa parivarwana hE.
+
+Hindi meaning using Stanford parser 2.88
+Changes are always continuous. 
+parivarwana hameSA lagAwAra hEM.
+
+Hindi meaning using Stanford parser 2.89
+Free fall is thus a case of motion with uniform acceleration. 
+isa prakAra besahArA giranA ekasamAna wvaraNa se gawi kA mAmalA hE.
+
+Hindi meaning using Stanford parser 2.90
+To understand such observations, we now introduce the concept of relative velocity. 
+Ese prekRaNa samaJa hama aba ApekRa vega kI XAraNA paricaya karAwe hEM.
+
 Calling Transliteration
 Calling Interface related programs
 Print minion_statistics
@@ -320,6 +380,6 @@ No Solution Found :
 Time-out:
 0
 Solution Found :
-75
+90
 re-executed-sentences:
-8
+10

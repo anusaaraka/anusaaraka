@@ -284,8 +284,10 @@
         (bind ?new_mng (remove_character "-" (implode$ (create$  ?new_mng)) " "))
         (bind ?root (remove_character "_" (implode$ (create$  ?root)) " "))
         (bind ?root (remove_character "-" (implode$ (create$  ?root)) " "))
-        (bind ?suf (remove_character "_" (implode$ (create$  ?suf)) " "))
-        (bind ?suf (remove_character "-" (implode$ (create$  ?suf)) " "))
+        (if (neq ?suf -) then
+        	(bind ?suf (remove_character "_" (implode$ (create$  ?suf)) " "))
+        	(bind ?suf (remove_character "-" (implode$ (create$  ?suf)) " "))
+	)
 	(assert (manual_id-node-word-root-tam ?id ?node ?new_mng - ?root - ?suf ))
  )
  ;------------------------------------------------------------------------------------------------------------------------ 

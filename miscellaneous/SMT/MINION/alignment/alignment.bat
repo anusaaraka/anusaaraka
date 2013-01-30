@@ -23,6 +23,8 @@
 (load-facts "para_sent_id_info.dat")
 (load-facts "manual_hindi_sen.dat")
 (load-facts "manual_lwg_new.dat")
+(load-facts "word.dat")
+(load-facts "hindi_id_order_for_minion.dat")
 (open "minion_sen_dic.txt" dic_fp "w")
 (open "mngs_aligned_with_minion.dat" mng_fp3 "a")
 (assert (count 0))

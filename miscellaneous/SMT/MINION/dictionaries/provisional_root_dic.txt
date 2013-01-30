@@ -44,7 +44,7 @@ construction	racanA
 rectilinear	sarala_reKA
 along	ke_anuxiSa
 real-life	vAswavika_jIvana meM
-such	isa_prakAra_kA
+such	isa_prakAra_kA/isa_prakAra_kI
 thus	awaeva
 everywhere	hara_sWAna_para
 friction	GarRaNa_bala	
@@ -98,3 +98,4 @@ solve	prApwa_kara
 motion	gawimAna
 fig.	ciwra
 then	Pira
+uniformly	ekasamAna_rUpa_se

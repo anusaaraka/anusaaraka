@@ -127,24 +127,24 @@
  ;"This is good." she said.
  (defrule combine_multiple_right_punc
  (declare (salience 600))
- ?f0<-(hid-right_punctuation ?id  ?p)
- ?f1<-(hid-right_punctuation ?id  ?p1)
+ ?f0<-(hid-punc_head-right_punctuation ?id ? ?p)
+ ?f1<-(hid-punc_head-right_punctuation ?id ?p_h ?p1)
  (test (neq ?p ?p1))
  =>
 	(retract ?f0 ?f1)
 	(bind ?punc (string-to-field (str-cat ?p1 ?p)))
-	(assert (hid-right_punctuation ?id ?punc))
+	(assert (hid-punc_head-right_punctuation ?id ?p_h ?punc))
  )	
  ;--------------------------------------------------------------------------------------------------------------- 
  ;Added by Shirisha Manju
  (defrule combine_multiple_left_punc
  (declare (salience 600))
- ?f0<-(hid-left_punctuation ?id  ?p)
- ?f1<-(hid-left_punctuation ?id  ?p1)
+ ?f0<-(hid-punc_head-left_punctuation ?id ?p_h ?p) 
+ ?f1<-(hid-punc_head-left_punctuation ?id ? ?p1) 
  (test (neq ?p ?p1))
  =>
         (retract ?f0 ?f1)
 	(bind ?punc (string-to-field (str-cat ?p ?p1)))
-        (assert (hid-left_punctuation ?id ?punc))
+	(assert (hid-punc_head-left_punctuation ?id ?p_h ?punc))
  )
  ;---------------------------------------------------------------------------------------------------------------

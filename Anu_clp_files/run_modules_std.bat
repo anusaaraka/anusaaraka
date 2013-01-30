@@ -202,12 +202,16 @@
  (open "pada_id_info.dat" pada_fp "w")
  (open "agmt_control_fact.dat" agmt_cntrl_fp "w")
  (open "pada_control_fact.dat" pada_cntrl_fp "w")
+ (open "hindi_meanings_tmp.dat" hmng_fp1 "a")
+ (open "word.dat" open-word1 "a")
  (assert (index 1))
  (assert (English-list))
  (run)
  (close agmt_cntrl_fp)
  (close pada_cntrl_fp)
  (close pada_fp)
+ (close hmng_fp1)
+ (close open-word1)
  (clear)
  ;================================ TRANSFER MODULE ===================================================
  ;~~~~~~~~~~~~~~~~~~~~WSD MODULE ~~~~~~~~~~~~~~~~~~~~~~~~~~

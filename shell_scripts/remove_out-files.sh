@@ -72,7 +72,7 @@
  cd $HOME_anu_test/new_hnd_mo
  rm apertium_hn_in_canonical_form.dix
 
- cd $HOME_anu_test/miscellaneous/SMT/alignment/dictionaries
+ cd $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries
  rm phy_hnd_multi_word_dic.txt hindi_multi_word.txt
 
  cd $HOME_anu_test/Parsers/

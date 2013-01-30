@@ -119,13 +119,12 @@
  (declare (salience 30))
  ?f<-(ids-sep-cmp_mng $?ids ?id - $?new_mng)
  ?f0<-(manual_id-cat-word-root-vib-grp_ids ?h ?cat $?word - $?root - $?vib - $?pre ?id $?post)
-; ?f0<-(manual_id-cat-word-root-vib-grp_ids ?id ?cat $?word - $?root - $?vib - $?g_ids)
  =>
 	(retract ?f ?f0)
 	(bind $?m_ids (sort > (create$ $?ids ?id $?pre $?post)))
 	(bind $?m_ids (sort_grp $?m_ids))
-;	(assert (manual_id-cat-word-root-vib-grp_ids ?id ?cat $?new_mng - $?root - $?vib - $?ids ?id))
-	(assert (manual_id-cat-word-root-vib-grp_ids ?id ?cat $?new_mng - $?root - $?vib - $?m_ids))
+	(assert (manual_id-cat-word-root-vib-grp_ids ?id ?cat $?new_mng - $?new_mng - $?vib - $?m_ids))
+;	(assert (manual_id-cat-word-root-vib-grp_ids ?id ?cat $?new_mng - $?root - $?vib - $?m_ids))
  )
  ;------------------------------------------------------------------------------------------------------
  ; (piNda - piMda - ke - 18 19)  and  (ke samparka meM - saMparka - meM - 19 20 21) ==> 
@@ -151,4 +150,29 @@
 	(retract ?f0)
  )
  ;------------------------------------------------------------------------------------------------------
+ ;If the object is released from rest, the initial potential energy is completely converted into the kinetic energy of the object just before it hits the ground. -- yaxi piNda ko virAmAvasWA se mukwa kiyA jAwA hE  @PUNCT-Comma  wo BUmi se takarAne se TIka pahale piNda kI sampUrNa sWiwija UrjA gawija UrjA meM parivarwiwa ho jAwI hE 
+ (defrule modify_grp
+ (declare (salience 10))
+ (manual_id-cat-word-root-vib-grp_ids ?hid ? $?mng $?m - $?root - $?vib - $?ids)
+ (test (and (neq (length $?mng) 0)(neq (length $?m) 0)))
+ ?f0<-(manual_id-node-word-root-tam ?mid ?n $?m - $?m - $?vib)
+ ?f1<-(manual_id-node-word-root-tam ?mid1 ?n1 $?w1 $?mng  - $?r - $?tam)
+ =>
+	(retract ?f0 ?f1)
+	(assert (manual_id-node-word-root-tam ?mid ?n $?mng $?m - $?root - $?vib))
+	(assert	(manual_id-node-word-root-tam ?mid1 ?n1 $?w1 - $?w1 - $?tam))
+ )
+ ;------------------------------------------------------------------------------------------------------
+ (defrule modify_grp1
+ (declare (salience 9))
+ (manual_id-cat-word-root-vib-grp_ids ?hid ? $?mng  - $?root - $?vib - $?ids)
+ ?f0<-(manual_id-node-word-root-tam ?mid ?n $?mng $?vib - $?r - $?v)
+ (not (id_modified ?mid))
+ (test (neq $?r $?root))
+ (test (neq (length $?vib) 0)) ;You will read about vectors in the next chapter. Apa saxiSoM ke viRaya meM agale aXyAya meM paDezge.
+ =>
+        (retract ?f0)
+        (assert (manual_id-node-word-root-tam ?mid ?n $?mng $?vib - $?root - $?v))
+	(assert (id_modified ?mid))
+ )
 

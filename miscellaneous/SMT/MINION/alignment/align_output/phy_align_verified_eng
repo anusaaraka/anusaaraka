@@ -75,4 +75,20 @@ The familiar example is the free fall of an object under gravity.
 At the other end, all kinds of violent phenomena occur in the universe all the time.
 Besides their great simplicity and generality, the conservation laws of nature are very useful in practice too.
 The conservation laws of charge and other attributes of elementary particles can also be related to certain abstract symmetries.
+For the case of rectilinear motion with uniform acceleration, a set of simple equations can be obtained.
+In order to specify position, we need to use a reference point and a set of axes.
+The point of intersection of these three axes is called origin (O) and serves as the reference point.
+The coordinates (x, y, z) of an object describe the position of the object with respect to this coordinate system.
+For example, for describing motion in one dimension, we need only one axis.
+In the first case, the car moves from O to P.
+This distance is called the path length traversed by the car.
+Such quantities are represented by vectors.
+Thus, it is not necessary to use vector notation for discussing motion of objects in one-dimension.
+When an object is in motion, its position changes with time.
+The average velocity can be positive or negative depending upon the sign of the displacement.
+It is the average change of velocity per unit time.
+Changes are always continuous.
+Free fall is thus a case of motion with uniform acceleration.
+To understand such observations, we now introduce the concept of relative velocity.
 </p>
+

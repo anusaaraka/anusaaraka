@@ -240,6 +240,7 @@
 (man_id-word-cat ?mid $?word ?cat)
 (not (lwg_done ?mid))
 (not (retract_manual_fact ?mid))
+(test (neq (length $?tam) 0))
 =>
 ;	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word - $?root - $?tam - ?mid $?ids))
 	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?mng - $?root - $?tam - ?mid $?ids))

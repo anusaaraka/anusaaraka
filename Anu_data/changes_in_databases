@@ -728,6 +728,7 @@ Removed::
 		with_respect_to
 	into_and_out_of --- 	Suggested by Chaitanya Sir (22-11-12)
 	in_contact_with	---	Suggested by Sukhada
+	just_before	---	Suggested by Chaitanya Sir (22-01-13)
 
 -------------------------- compound_phrase.txt -----------------------------------
  Based on the type of the phrase, compound_phrase.txt file has been splitted in to four different files,(Suggested by Chaitanya ji 23-04-12)
@@ -771,6 +772,7 @@ Removed::
 	external_agency     	bAhya_sAXana#bAhya_sAXana#noun#2#WM		(Suggested by Chaitanya Sir 05-12-12)
 	problems_of_interest    rocaka_samasyAez#rocaka_samasyAez#noun#1#WM 	(      "    			    )
 	living_creature 	prANI#prANI#noun#2#WM				(Suggested by Chaitanya Sir 12-12-12)
+	just_before		se_TIka_pahale#se_TIka_pahale#preposition#2#RM	(Suggested by Chaitanya Sir 22-01-13)
 
  changes in phy_dictionary.txt
  =============================

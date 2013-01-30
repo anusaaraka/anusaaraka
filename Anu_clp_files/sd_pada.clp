@@ -12,6 +12,8 @@
  (defglobal ?*pada_file* = pada_fp)
  (defglobal ?*agmt_cntrl_file* = agmt_cntrl_fp)
  (defglobal ?*pada_cntrl_file* = pada_cntrl_fp)
+ (defglobal ?*hmng_fp1* = hmng_fp1)
+ (defglobal ?*open-word1* = open-word1)
  ;====================================== Generate multiple prep fact  =====================================================
  (defrule get_eng_word_list
  (declare (salience 5000))
@@ -256,6 +258,27 @@
 	(print_pada_info 10000 PP 0 10000)
  )
  ;---------------------------------------------------------------------------------------------------------------------
+ ;If the object is released from rest, the initial potential energy is completely converted into the kinetic energy of the object just before it hits the ground.
+ ;Suggested by Sukhada (22nd Jan 13)
+ (defrule assert_10001_pada
+ (declare (salience 2400))
+ (prep_ids $?ids ?prep)
+ (not (prep_id_decided ?prep))
+ (head_id-prawiniXi_id-grp_ids ? ?prep_id ?prep)
+ ?f0<-(head_id-prawiniXi_id-grp_ids ?hid ?sbar $? ?prep_id ?s_id)
+ (prawiniXi_id-node-category ?sbar ?SBAR SBAR)
+ (prawiniXi_id-node-category ?s_id ?S S)
+ ?f1<-(id-grp_ids ?sbar $?)
+ =>
+	(retract ?f1)
+	(print_in_ctrl_fact_files   10001)
+	(bind $?p (create$ $?ids ?prep))
+	(assert (pada_info (group_head_id 10001)(group_cat PP)(group_ids 10001)(preposition $?p)))
+        (printout ?*pada_file* "(pada_info (group_head_id  10001)(group_cat PP)(group_ids 10001)(preposition "(implode$ $?p)")(vibakthi 0) (gender 0) (number 0) (case 0) (person 0) (H_tam 0) (tam_source 0) (preceeding_part_of_verb 0) )" crlf)
+	(printout ?*hmng_fp1* "(id-HM-source  10001   yaha      Sentence_conj_using_pada)"crlf)
+	(printout ?*open-word1* "(id-word  10001   this )" crlf)
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
  (defrule verb_pada
  (declare  (salience 2000))
  (root-verbchunk-tam-chunkids ? ? ? $?ids ?h)

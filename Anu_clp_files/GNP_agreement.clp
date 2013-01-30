@@ -487,6 +487,19 @@
         (printout ?*gnp_debug* "(pada_id-rule_name-gen_src " ?pada_id "modify_gender_for_and1 "?gen" and_components)" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju 22-01-13 (Suggested by Chaitanya Sir)
+ ;If the object is released from rest, the initial potential energy is completely converted into the kinetic energy of the object just before it hits the ground.
+ (defrule default_gnp_for_new_word
+ (declare (salience 600))
+ ?f0<-(pada_info (group_head_id 10001) (group_cat PP) (group_ids 10001) (vibakthi ?vib) (gender 0) (number 0)(person 0))
+ =>
+	(if (eq ?vib 0) then
+		(modify ?f0 (gender m)(number s)(person a)(case d))
+	else
+		(modify ?f0 (gender m)(number s)(person a)(case o))
+	)
+)
+;-------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju  (08-12-11)
  (defrule default_gender_m_for_id
  (declare (salience 3))

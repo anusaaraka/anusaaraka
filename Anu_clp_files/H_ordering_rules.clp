@@ -607,6 +607,20 @@
 (undefrule  create_sen_SBAR)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 22-01-13 (Suggested by Sukhada)
+;If the object is released from rest, the initial potential energy is completely converted into the kinetic energy of the object just before it hits the ground.
+(defrule insert_sen_con_id
+(declare (salience 61))
+(pada_info (group_head_id 10001)(preposition $?prep_ids))
+(sbar_ids $?prep_ids $? ?id)
+?f1<-(hindi_id_order  $?ids ?id $?ids1)
+(not (got_new_id 10001))
+=>
+	(retract ?f1)
+	(assert (hindi_id_order $?ids ?id 10001 $?ids1))
+	(assert (got_new_id 10001))
+)
+;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju(27-02-12)
 (defrule rm_prep_id_in_order
 (declare (salience 60))

@@ -151,12 +151,13 @@
         (assert (prov_assignment ?aid ?mid))
 )
 ;-------------------------------------------------------------------------------------
+;(neq (length $?vib) 0): You will read about vectors in the next chapter. Apa saxiSoM ke viRaya meM agale aXyAya meM paDezge.
 (defrule exact_match_with_anu_output1 ;[manual word match with vib]
 (declare (salience 901))
 (current_id ?mid)
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng1 - $? - $?vib - $?grp_ids)
 (id-Apertium_output ?aid $?mng1)
-(test (neq $?vib 0))
+(test (and (neq $?vib 0)(neq (length $?vib) 0)))
 ;(test (> (length $?mng1) 0))
 (not (prov_assignment ?aid ?mid))
 =>
