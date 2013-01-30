@@ -4168,14 +4168,18 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  36. Updated in changes_in_databases
  37. Updated Log
 
- 22-01-13
+ 30-01-13
  ========
  1. hindi_meaning.clp
         Removed  : get_mng_from_phy_dic_with_diff_cat
         Modified : get_mng_from_phy_dic_with_diff_cat1
  2. Added "diff_cat_with_adverb" rule in root_rule.clp
  3. Modified alignment.bat to open "mngs_aligned_with_minion.dat" in append mode instead write mode for "create_alignment_dic"   module
- 4. Modified "possible_assignment" rule in create_alignment_dic.clp
+ 4. create_alignment_dic.clp
+        Modified : possible_assignment, check_mng_with_multi_dic, check_mng_with_dic, check_mng_with_dic1, check_mng
+        Added    : rm_mngs_aligned_with_dic_and_anu, rm_mngs_aligned_with_potential, rm_mngs_aligned_with_potential1
+                   print_left_out_info, print_left_out_words, rm_ids_not_in_order,rm_ids_aligned, print_left_out_info1
+                   print_left_out_slots and print_end
  5. get_exact_and_dic_mng_files.clp:
         Added    : get_mngs_aligned_for_verb
         Modified : get_mngs_aligned_with_anu, get_mngs_aligned_with_dic and get_mngs_aligned_with_dic1
@@ -4191,24 +4195,22 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         2. Loaded "potential_assignment.dat" and "para_sent_id_info.dat" in get_exact_and_dic_mng_files module
         3. Opened "mngs_aligned_with_minion.dat" file in write mode in get_exact_and_dic_mng_files module
 	4. Modified the paths for get_anu_grp_mng, get_dbase_mng, get_man_grp_mng, and manual_lwg modules
+	5. Renamed manual_group_mng.dat as manual_group_mng_tmp.dat in get_man_grp_mng module
+        6. Loaded manual_group_mng_tmp.dat and generated manual_group_mng.dat file  in multi_word_expressions module
 10. word_alignment.clp:
         Added    : root_and_vib_match_using_dic3 and lookup_man_word_in_hindi_wordnet1
-        Modified : lookup_man_word_in_hindi_wordnet 
+        Modified : lookup_man_word_in_hindi_wordnet, exact_match_with_anu_output1 (added test condition) 
 11. get_man_grp_mng.clp :
         Added    : modifiy_root, check_prev_word_of_kara_in_dic and check_prev_word_of_kara
-        Modified : check_prev_word_of_kara_and_ho_with_anu and shallow_parser_correction_rule
+        Modified : check_prev_word_of_kara_and_ho_with_anu, shallow_parser_correction_rule and get_grp_info 
 12. Added "@" in the word list pattern of get_tam_info.lex
 13. Modified multi_word0, ke_[word], single_vib2 and verb_grouping rules in manual_lwg.clp
 14. Added get_grp_info1.clp, prepare_minion_input1.clp and run_H_gen_minion1.bat files to re_execute the sentences.
 15. Moved the following files from miscellaneous/SMT/alignment  to  miscellaneous/SMT/MINION/alignment/
-        get_anu_grp_mng.clp
-        get_dbase_mng.clp
-        get_group_mng.sh
-        get_man_grp_mng.clp
-        get_tam_info.lex
-        manual_lwg.clp
-        morph.lex
-        replace_wrd_with_id.c
+        get_anu_grp_mng.clp             	get_dbase_mng.clp
+        get_group_mng.sh		        get_man_grp_mng.clp
+        get_tam_info.lex		        manual_lwg.clp
+        morph.lex			        replace_wrd_with_id.c
 	add-suf-into-chunks.py
 16. Moved miscellaneous/SMT/alignment/browser  to  miscellaneous/SMT/MINION/
 17. Modified Anusaaraka_stanford_minion.sh 
@@ -4236,7 +4238,20 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 30. Added code to untar and make reranking-parser-2011-12-17.tgz in anu_compile.sh
 31. Added code to remove reranking-parser folder in remove_out-files.sh
 32. In Anusaaraka_stanford.sh, modified one_sentence_per_line.txt.std.penn_tmp1 to one_sentence_per_line.txt.std.penn_tmp_1
-33. Updated the following files :
+33. prepare_apertium_input.clp
+  	Added    : Compound_mng_with_Prep_id1
+        Modified : Compound_mng_with_Prep_id, PP_pronoun_rule_with_ke, PP_rule_with_tam1
+34. WSD : Modified : go.clp
+35. Added "default_gnp_for_new_word" rule in GNP_agreement.clp
+36. Added "insert_sen_con_id" rule in H_ordering_rules.clp
+37. Renamed "mng_for_10000_id" as "mng_for_new_id" and Modified the rule accordingly in causative_verb_mng.clp
+38. Modified "combine_multiple_right_punc" and "combine_multiple_left_punc" rules in insert_punctuation.clp
+39. Opened hindi_meanings_tmp.dat and word.dat in append mode for sd_pada module in run_modules_std.bat
+40. Added "assert_10001_pada" rule in sd_pada.clp
+41. multi_word_expressions.clp
+        Modified :  get_mng             Added    :  modify_grp and modify_grp1
+42. Updated abbrevations.lex
+43. Updated the following files :
 	miscellaneous/SMT/alignment/dictionaries/inferred_dic.txt
         miscellaneous/SMT/alignment/dictionaries/phy_dictionary.txt
         miscellaneous/SMT/alignment/dictionaries/provisional_PropN_dic.txt
@@ -4247,8 +4262,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_hnd
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_out
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_eng_align.html
-34. Updated changes_in_databases
-35. Updated miscellaneous/SMT/MINION/alignment/README
-36. Updated miscellaneous/SMT/MINION/alignment/get_group_mng.sh
-37. Updated shell_scripts/remove_out-files.sh
-38. Updated Log.
+        miscellaneous/SMT/MINION/alignment/alignment.bat
+	miscellaneous/SMT/MINION/alignment/get_group_mng.sh
+44. Updated changes_in_databases
+45. Updated miscellaneous/SMT/MINION/alignment/README
+46. Updated shell_scripts/remove_out-files.sh
+47. Updated sd_verified (489)
+48. Updated Log.
