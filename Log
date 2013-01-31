@@ -4168,7 +4168,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  36. Updated in changes_in_databases
  37. Updated Log
 
- 30-01-13
+ 31-01-13
  ========
  1. hindi_meaning.clp
         Removed  : get_mng_from_phy_dic_with_diff_cat
@@ -4250,8 +4250,17 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 40. Added "assert_10001_pada" rule in sd_pada.clp
 41. multi_word_expressions.clp
         Modified :  get_mng             Added    :  modify_grp and modify_grp1
-42. Updated abbrevations.lex
-43. Updated the following files :
+42. Modified run_modules_link.bat and run_modules_std.bat to rename
+        "hindi_meanings_tmp1.dat"       as      "hindi_meanings_with_grp_ids_tmp.dat"
+        "hindi_meanings.dat"            as      "hindi_meanings_tmp1.dat"
+    in hindi_meaning module
+43. Modified run_sentence_stanford.sh , run_sentence_stanford_minion.sh and run_sentence_link.sh to rename
+        "hindi_meanings_tmp1.dat"               as "hindi_meanings.dat" and
+        "hindi_meanings_with_grp_ids_tmp.dat"   as "hindi_meanings_with_grp_ids.dat"
+44. Modified run_H_gen_sen.bat and run_H_gen_minion.bat to rename 
+	"hindi_meanings_tmp1.dat"  as "hindi_meanings_with_grp_ids.dat"
+45. Updated abbrevations.lex
+46. Updated the following files :
 	miscellaneous/SMT/alignment/dictionaries/inferred_dic.txt
         miscellaneous/SMT/alignment/dictionaries/phy_dictionary.txt
         miscellaneous/SMT/alignment/dictionaries/provisional_PropN_dic.txt
@@ -4264,8 +4273,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_eng_align.html
         miscellaneous/SMT/MINION/alignment/alignment.bat
 	miscellaneous/SMT/MINION/alignment/get_group_mng.sh
-44. Updated changes_in_databases
-45. Updated miscellaneous/SMT/MINION/alignment/README
-46. Updated shell_scripts/remove_out-files.sh
-47. Updated sd_verified (489)
-48. Updated Log.
+47. Updated changes_in_databases
+48. Updated miscellaneous/SMT/MINION/alignment/README
+49. Updated shell_scripts/remove_out-files.sh
+50. Updated sd_verified (489)
+51. Updated Log.
