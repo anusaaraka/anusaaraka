@@ -14,6 +14,7 @@
  (defglobal ?*pada_cntrl_file* = pada_cntrl_fp)
  (defglobal ?*hmng_fp1* = hmng_fp1)
  (defglobal ?*open-word1* = open-word1)
+ (defglobal ?*pada_debug_file* = pada_debug_fp)
  ;====================================== Generate multiple prep fact  =====================================================
  (defrule get_eng_word_list
  (declare (salience 5000))
@@ -75,7 +76,9 @@
  (id-word ?wid and|or)
  (not (modified_head ?np_id))
  =>
+	(printout ?*pada_debug_file* "(rule_name-mode_of_pada - get_conj_group  Creation"crlf )
         (assert (pada_info (group_head_id ?np_id)(group_cat PP) (group_ids $?d ?cc $?d1)))
+        (printout ?*pada_debug_file* "	(pada_info (group_head_id "?np_id")(group_cat PP) (group_ids "(implode$ $?d)" "?cc" "(implode$ $?d1)")))" crlf)
        	(assert (conj_head-conj_id-components ?np_id ?cc $?d $?d1))
 	(assert (generated_conj_pada ?np_id))
 	(bind ?lh (nth$ (length $?d) $?d))
@@ -93,7 +96,9 @@
  (not (modified_head ?np_id $?))
  (not (generated_conj_pada ?np_id))
  =>
+        (printout ?*pada_debug_file* "(rule_name-mode_of_pada - get_pada_group Creation"crlf )
 	(assert (pada_info (group_head_id ?np_id)(group_cat PP) (group_ids $?grp_ids ?last_node)(pada_head ?last_node)))
+	(printout ?*pada_debug_file* "		(pada_info (group_head_id "?np_id")(group_cat PP) (group_ids "(implode$ $?grp_ids)" "?last_node") (pada_head "?last_node"))" crlf)
         (bind ?np_id (implode$ (create$ ?np_id)))
         (bind ?str_index (str-index "." ?np_id))
         (bind ?val (string-to-field (sub-string (+ ?str_index 1) (length ?np_id) ?np_id)))
@@ -115,7 +120,10 @@
  (head_id-prawiniXi_id-grp_ids ?np_head ?np_id $?grp_ids ?last_node)
 ?f1<-(pada_info (group_head_id ?np_id)(preposition 0))
  =>
+        (printout ?*pada_debug_file* "(rule_name-mode_of_pada - multiple_prep_rule Modification"crlf )
+        (printout ?*pada_debug_file* "		Before :: (pada_info (group_head_id "?np_id")(preposition 0))" crlf)
         (modify ?f1  (preposition  $?ids ?prep))
+        (printout ?*pada_debug_file* "		After  :: (pada_info (group_head_id "?np_id")(preposition "(implode$ $?ids)" "?prep"))" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------
  (defrule multiple_prep_rule1
@@ -131,7 +139,10 @@
  (head_id-prawiniXi_id-grp_ids ?np_head ?NP1 $?grp_ids ?last_node)
  ?f1<-(pada_info (group_head_id ?NP1)(preposition 0))
   =>
+        (printout ?*pada_debug_file* "(rule_name-mode_of_pada - multiple_prep_rule1 Modification"crlf )
+        (printout ?*pada_debug_file* "		Before :: (pada_info (group_head_id "?NP1")(preposition 0))" crlf)
         (modify ?f1  (preposition  $?ids ?prep))
+        (printout ?*pada_debug_file* "		After  :: (pada_info (group_head_id "?NP1")(preposition "(implode$ $?ids)" "?prep"))" crlf)
 	(loop-for-count (?i 1 (length $?ids)) do
                 (bind ?j (nth$ ?i $?ids))
                 (assert (has_been_included_in_paxa ?j))
@@ -151,13 +162,16 @@
  ?f2<-(id-grp_ids ?pp $?)
  =>
 	(retract ?f0 ?f2)
+        (printout ?*pada_debug_file* "(rule_name-mode_of_pada - get_single_prep Modification"crlf )
+        (printout ?*pada_debug_file* "		Before :: (pada_info (group_head_id "?np_id")(preposition 0))" crlf)
 	(bind ?str_index (str-index "." (implode$ (create$ ?last_node))))
 	(bind ?pre_str (sub-string 1 (- ?str_index 1) (implode$ (create$ ?last_node))))
 	(bind ?post_str (string-to-field (sub-string (+ ?str_index 1) (length (implode$ (create$ ?last_node))) (implode$ (create$ ?last_node)))))
         (bind ?post_str (+ ?post_str 1))
  	(bind ?new_head (string-to-field (str-cat  ?pre_str "." ?post_str)))
 	(assert (pada_info (group_head_id ?np_id)(group_cat PP) (group_ids $?grp_ids ?last_node) (preposition ?prep)(pada_head ?new_head)))
- )
+        (printout ?*pada_debug_file* "		After  :: (pada_info (group_head_id "?np_id") (group_cat PP) (group_ids "(implode$ $?grp_ids)" "?last_node") (preposition "?prep")(pada_head "?new_head")))" crlf)
+ ) 
  ;-----------------------------------------------------------------------------------------------------------------------
  ; Where did the car come from? But where will you get them from. 
  (defrule standard_prep_rule
@@ -179,7 +193,10 @@
  ?f2<-(id-grp_ids ?pp $?)
   =>
         (retract ?f ?f0 ?f2)
+	(printout ?*pada_debug_file* "(rule_name-mode_of_pada - standard_prep_rule Modification"crlf )
+        (printout ?*pada_debug_file* "		Before :: (pada_info (group_head_id "?wh")(preposition 0))" crlf)
         (modify ?f1 (preposition ?prep))
+        (printout ?*pada_debug_file* "		After  :: (pada_info (group_head_id "?wh")(preposition "?prep"))" crlf)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  (defrule share_conj_prep
@@ -190,8 +207,11 @@
  (test (neq (str-index "." (implode$ (create$ ?id))) FALSE))
  (not (shared_conj_for_pada_id ?id))
  =>
+	(printout ?*pada_debug_file* "(rule_name-mode_of_pada - share_conj_prep Modification"crlf )
+        (printout ?*pada_debug_file* "          Before :: (pada_info (group_head_id "?id")(preposition 0))" crlf)
 	(modify ?f0 (preposition $?prep))
 	(assert (shared_conj_for_pada_id ?id))
+        (printout ?*pada_debug_file* "		After  :: (pada_info (group_head_id "?id")(preposition "(implode$ $?prep)"))" crlf)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  ; She is ugly and fat.
@@ -204,7 +224,9 @@
  =>
 	(assert (shared_conj_for_pada_id ?id))
 	(bind ?head (string-to-field (sym-cat ?hid ".1")))
+        (printout ?*pada_debug_file* "(rule_name-mode_of_pada - share_zero_level_conj_prep Creation"crlf )
 	(assert (pada_info (group_head_id ?head) (group_cat PP)(group_ids ?id)(preposition $?prep)))
+        (printout ?*pada_debug_file* "		(pada_info (group_head_id "?head")(group_cat PP) (group_ids "?id") (preposition "(implode$ $?prep)")))" crlf)
 	(assert (id-grp_ids ?head ?id))
  )
  ;----------------------------------------------------------------------------------------------------------------------
@@ -217,7 +239,10 @@
  ?f0<-(pada_info (group_head_id ?np)(preposition  0))
  =>
         (retract ?f0)
+	(printout ?*pada_debug_file* "(rule_name-mode_of_pada - get_prep Modification"crlf )
+        (printout ?*pada_debug_file* "		Before :: (pada_info (group_head_id "?np")(preposition 0))" crlf)
         (modify ?f0 (preposition ?prep))
+        (printout ?*pada_debug_file* "		After  :: (pada_info (group_head_id "?np")(preposition "?prep"))" crlf)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  (defrule save_praxiniWi_info
@@ -227,9 +252,12 @@
 	(save-facts "pada_prawiniXi_info.dat" local  pada_info)
  )
  ;========================================== Generate pada info ==========================================================
- (deffunction print_pada_info (?hid ?cat ?prep $?grp_ids)
+ (deffunction print_pada_info (?rule_name ?hid ?cat ?prep $?grp_ids)
 	(assert (pada_info (group_head_id ?hid)(group_cat ?cat)(group_ids $?grp_ids)(preposition ?prep)))
         (printout ?*pada_file* "(pada_info (group_head_id  "?hid")(group_cat "?cat")(group_ids "(implode$ $?grp_ids)")(preposition "?prep")(vibakthi 0) (gender 0) (number 0) (case 0) (person 0) (H_tam 0) (tam_source 0) (preceeding_part_of_verb 0) )" crlf)
+        (printout ?*pada_debug_file* "(rule_name-mode_of_pada - "?rule_name" Creation"crlf )
+        (printout ?*pada_debug_file* "		(pada_info (group_head_id "?hid")(group_cat "?cat") (group_ids "(implode$ $?grp_ids)") (preposition "?prep")))" crlf)
+
  )
  ;----------------------------------------------------------------------------------------------------------------------
  (deffunction print_in_ctrl_fact_files (?paxa_head)
@@ -255,7 +283,7 @@
  (prawiniXi_id-node-category ?s ?S S)
  =>
         (print_in_ctrl_fact_files   10000)
-	(print_pada_info 10000 PP 0 10000)
+	(print_pada_info assert_10000_pada 10000 PP 0 10000)
  )
  ;---------------------------------------------------------------------------------------------------------------------
  ;If the object is released from rest, the initial potential energy is completely converted into the kinetic energy of the object just before it hits the ground.
@@ -277,6 +305,8 @@
         (printout ?*pada_file* "(pada_info (group_head_id  10001)(group_cat PP)(group_ids 10001)(preposition "(implode$ $?p)")(vibakthi 0) (gender 0) (number 0) (case 0) (person 0) (H_tam 0) (tam_source 0) (preceeding_part_of_verb 0) )" crlf)
 	(printout ?*hmng_fp1* "(id-HM-source  10001   yaha      Sentence_conj_using_pada)"crlf)
 	(printout ?*open-word1* "(id-word  10001   this )" crlf)
+	(printout ?*pada_debug_file* "(rule_name-mode_of_pada - assert_10001_pada   Creation"crlf )
+        (printout ?*pada_debug_file* "		(pada_info (group_head_id 10001)(group_cat PP)(group_ids 10001)(preposition (implode$ $?p))(vibakthi 0) (gender 0) (number 0) (case 0) (person 0)))" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------
  (defrule verb_pada
@@ -291,7 +321,7 @@
 	(assert (id-grp_ids ?h_id $?a $?a1))
 	(modify ?f1 (group_ids $?d  $?d1))
 	(bind $?grp_ids (create$ $?ids ?h))
-	(print_pada_info ?h VP 0 $?grp_ids)
+	(print_pada_info verb_pada ?h VP 0 $?grp_ids)
  	(print_in_ctrl_fact_files ?h)
         (loop-for-count (?i 1 (length $?ids)) do
                 (bind ?j (nth$ ?i $?ids))
@@ -309,7 +339,7 @@
  =>
         (retract ?f1)
         (assert (id-grp_ids ?head_id $?a $?a1))
-	(print_pada_info ?h PP 0 ?h)
+	(print_pada_info get_RaRTI_viSeRaNa_pada ?h PP 0 ?h)
         (print_in_ctrl_fact_files  ?h)
  )
  ;----------------------------------------------------------------------------------------------------------------------
@@ -329,7 +359,7 @@
  =>
 	(retract ?f0)
 	(bind $?grp_ids (create$ ?to_id ?v_id))
-        (print_pada_info ?v_id infinitive 0 $?grp_ids)
+        (print_pada_info get_multiple_infinitive ?v_id infinitive 0 $?grp_ids)
         (print_in_ctrl_fact_files  ?v_id)
 	(assert (inf_id-to_id ?id ?to_id))
  )
@@ -347,7 +377,7 @@
  =>
 	(retract ?f)
 	(bind $?grp_ids (create$ ?to_id ?v_id))
-        (print_pada_info ?v_id infinitive 0 $?grp_ids)
+        (print_pada_info get_multiple_infinitive1 ?v_id infinitive 0 $?grp_ids)
         (print_in_ctrl_fact_files  ?v_id)
 	(assert (id-grp_ids ?h $?a $?a1))
  )	
@@ -364,7 +394,7 @@
  =>
         (retract ?f0 ?f1)
 	(bind $?grp_ids (create$ ?to_id ?verb_id))
-	(print_pada_info ?verb_id infinitive 0 $?grp_ids) 
+	(print_pada_info get_infinitive_pada ?verb_id infinitive 0 $?grp_ids) 
         (print_in_ctrl_fact_files  ?verb_id)
  )
  ;----------------------------------------------------------------------------------------------------------------------
@@ -432,7 +462,10 @@
  ?f1<-(id-grp_ids ?p_id $?a ?pos_h $?a1)
  =>
         (retract ?f0 ?f1)
+        (printout ?*pada_debug_file* "(rule_name-mode_of_pada - get_pos_pada Modification"crlf )
+        (printout ?*pada_debug_file* "		Before :: (pada_info (group_head_id "?p_id")(group_ids "(implode$ $?d)" "?pos_h" "(implode$ $?d1)"))" crlf)
         (modify ?f0 (group_ids $?d $?d1))
+        (printout ?*pada_debug_file* "		After  :: (pada_info (group_head_id "?p_id")(preposition "(implode$ $?d)" "(implode$ $?d1)"))" crlf)
         (assert (id-grp_ids ?p_id $?a $?a1))
 	(assert (id-grp_ids ?pos_h ?pos_id))
  )
@@ -574,7 +607,10 @@
  (not (id_decided ?h_id))
  =>
 	(retract ?f0)
+        (printout ?*pada_debug_file* "(rule_name-mode_of_pada - modify_pada Modification"crlf )
+        (printout ?*pada_debug_file* "		Before :: (pada_info (group_head_id "?h_id"))" crlf)
 	(modify ?f0  (group_head_id ?last_id)(group_ids $?grp_ids ?last_id))
+        (printout ?*pada_debug_file* "		After  :: (pada_info (group_head_id "?last_id")(group_ids "(implode$ $?grp_ids)" "?last_id")))" crlf)
 	(assert (id_decided ?h_id))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
@@ -587,7 +623,7 @@
  (head_id-prawiniXi_id-grp_ids ?h ?cc ?)
  (id-word ?h and|or|but|nor)
  =>
-	(print_pada_info ?h PP 0 ?h)	
+	(print_pada_info get_conj_pada ?h PP 0 ?h)	
 	(print_in_ctrl_fact_files  ?h)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
@@ -645,6 +681,7 @@
  =>
 	(retract ?f0)
 	(printout ?*pada_file* "(pada_info (group_head_id "?hid")(group_cat "?cat")(group_ids  "(implode$ $?grp_ids)")(preposition  "(implode$ $?prep)")(vibakthi 0) (gender 0) (number 0) (case 0) (person 0) (H_tam 0) (tam_source 0) (preceeding_part_of_verb 0) )" crlf)
+ ;       (printout  ?*pada_debug_file* "(pada_info (group_head_id "?hid")(group_cat "?cat")(group_ids  "(implode$ $?grp_ids)")(preposition  "(implode$ $?prep)")(vibakthi 0) (gender 0) (number 0) (case 0) (person 0) (H_tam 0) (tam_source 0) (preceeding_part_of_verb 0) )" crlf)
         (print_in_ctrl_fact_files   ?hid)
  )	
  ;-----------------------------------------------------------------------------------------------------------------------

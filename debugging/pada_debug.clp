@@ -89,7 +89,7 @@
                (if (eq ?read y) then
                    (printout t "Sorry, currently this facility is not available :(" crlf)
                 else (if (eq ?read n) then
-                   (printout t "Then send a mail to Anusaaraka team :: sukhada8@gmail.com "crlf)
+                   (printout t "Then send a mail to Anusaaraka team :: sukhada8@gmail.com "crlf crlf crlf)
                 else (printout t "Legal answers are (y/n)" crlf)
                 ))
        else (printout t "Legal answers are (y/n)" crlf)
@@ -97,9 +97,9 @@
       )
   )
 
- (defrule wrong_pada
- (declare (salience 91))
- ?f<-(padas wrong)
+  (defrule wrong_pada
+  (declare (salience 91))
+  ?f<-(padas wrong)
   =>
   (retract ?f)
   (printout t "Type the members of the pada  " crlf  "Ex: 3 4 5 " crlf)
@@ -112,6 +112,7 @@
  ?f<-(debug_pada $?ids)
   (Rule_name-group_head_id-pada_type-gids   ?r_name  ?g_head ?g_type $?ids)
   (Parser_used ?ptype)
+  (not (Parser_used Stanford-Parser))
  =>
   (retract ?f)
   (printout t " pada is formed using the rule \"" ?r_name "\""  crlf " And the rule is defined as..... " crlf crlf)
@@ -119,15 +120,34 @@
   (printout t crlf "NOTE:: " crlf crlf )
   (printout t  "1. If you want to write any rule for the pada formation please go to the directory \"anu_testing/Anu_clp_files\" and " crlf "   write the rules in \"pada.clp\" file " crlf "2. After saving the rule complie it using the command  :     \" myclips -f create_binary_files.clp\"     "crlf "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
   )
-  
-
+ 
   (defrule debug_pada1
+  (declare (salience 90))
+ ?f<-(debug_pada $?ids)
+  (pada_info (group_ids $?ids))
+  =>
+  (retract ?f)
+  (assert (padas correct))
+  )
+
+  (defrule debug_pada2
   (declare (salience 89))
  ?f<-(debug_pada $?ids)
   =>
   (retract ?f)
   (printout t "The specified  pada is not present in the padas of the current sentence." crlf )
   (assert (padas wrong))
+  )
+
+
+  (defrule display_padas
+  (Parser_used Stanford-Parser)
+  =>
+  (printout t crlf crlf "%%%%%%%%%%% Padas has been formed as below %%%%%%%%%%%%%%%%%%"  crlf crlf)
+  (system "cat pada_debug_file.dat")
+  (printout t  crlf "Final padas are ::" crlf)
+  (printout t  "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" crlf crlf)
+  (system "cat pada_id_info.dat")
   )
 
 ; (facts)

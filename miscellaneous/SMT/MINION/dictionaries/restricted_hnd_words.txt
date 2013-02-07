@@ -11,6 +11,7 @@ isa	the/this/such
 eka	a/an/one
 koI	a/an
 kisI	a/an
+kisI_BI	a/an
 hE	is/have
 apane	his/its
 apanI	the/our

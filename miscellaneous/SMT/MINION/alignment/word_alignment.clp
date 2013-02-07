@@ -455,7 +455,8 @@
 (defrule lookup_man_word_in_hindi_wordnet
 (declare (salience 500))
 (current_id ?mid)
-(manual_id-cat-word-root-vib-grp_ids ?mid ? $?word - $?h_root - $? - $?grp_ids)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $?word - $?h_root - $?t - $?grp_ids)
+(test (neq (length $?t) 0))
 (test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root))) "FALSE"))
 (id-org_wrd-root-dbase_name-mng ? ? ?e_root ? $?mng)
 (test (eq (length (create$ $?mng)) 1))

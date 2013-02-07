@@ -21,21 +21,20 @@
  ; if stanford parser then loads "sd_lwg_rules.clp" file else if link parser then loads "verb_chunk.clp" file
  (defrule load_files
  (declare (salience 150))
+ ;(Parser_used ?ptype&~Stanford-Parser)
  (Parser_used ?ptype)
  =>
   (if (eq ?ptype Link-Parser) then
 	(load* "verb_chunk.clp")
-  else
-	(if (eq ?ptype Stanford-Parser) then
-		(load* "sd_lwg_rules.clp")
-	)
+  else (if (eq ?ptype Stanford-Parser) then
+        (load* "sd_lwg_rules.clp")
   else  
         (if (eq ?ptype Open-Logos-Parser) then
                 (printout t "      LWG debugging for Open Logos is not done at this point." crlf)
                 (printout t "      NOTE::: " crlf    "      If you want to debug LWG then go to this path \"anu_testing/Anu_src/\" and debug lwg_openlogos.pl programme. "  crlf crlf)
                 (printout t "     (exit) "crlf crlf)
         )
-  )
+  ))
  )
 
 
@@ -48,6 +47,9 @@
    (printout t "Stanford Relations" crlf)
    (printout t "==================" crlf)
    (system "cat sd-relations_tmp1.dat")
+   (printout t "Stanford Constituents information" crlf)
+   (printout t "==================" crlf)
+   (system "cat E_constituents_info_tmp5.dat")
  )
 
  ; If link parser then display linkage
@@ -70,6 +72,7 @@
  ?f<-(next_id ?id)
  (id-word ?id ?word)
  (not (Parser_used Open-Logos-Parser))
+ (not (Parser_used Stanford-Parser))
  =>
  (retract ?f)
  (if (eq ?id 1) then (printout t crlf crlf))
@@ -96,6 +99,7 @@
  (display_lwg)
  ?f0<-(root-verbchunk-tam-chunkids ? ?verb_chunk ?tam $?ids ?kriyA)
  (not (Parser_used Open-Logos-Parser))
+ (not (Parser_used Stanford-Parser))
  =>
 	(retract ?f0)
  	(printout t " verb_chunk :: " ?verb_chunk  "  tam :: "?tam  "   head_id :: "?kriyA crlf )
@@ -105,6 +109,7 @@
  (defrule entering_question
  (assert_question)
  (not (Parser_used Open-Logos-Parser)) 
+ (not (Parser_used Stanford-Parser))
  =>
  	(assert (question "Enter Your Choice (1 or 2 or 3): "))
         (printout t crlf "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%"crlf)
@@ -114,6 +119,7 @@
  (declare (salience 98))
  ?f<-(question ?text)
  (not (Parser_used Open-Logos-Parser))
+ (not (Parser_used Stanford-Parser))
  =>
   (retract ?f)
 	(printout t crlf crlf " 1. Wrong grouping    2. word \"not\" is missing in the group   3. Grouping not done" crlf crlf)
@@ -130,6 +136,7 @@
  (defrule get_word_id
  ?f<-(get_choice 1)
  (not (Parser_used Open-Logos-Parser))
+ (not (Parser_used Stanford-Parser))
  =>
         (printout t "Enter the head_id which is wrongly grouped : " )
         (retract ?f)
@@ -145,6 +152,7 @@
  (rule_name-grouped_ids  ?rule_name $?ids ?pid)
  (Parser_used ?ptype)
  (not (Parser_used Open-Logos-Parser))
+ (not (Parser_used Stanford-Parser))
  =>
 	(retract ?f)
 	(if (eq ?ptype Link-Parser) then
@@ -335,33 +343,33 @@
 	)
  )
  
- (defrule check_std_parser
- ?f<-(get_word_id ?id)
- (id-word  ?id ?)
- (Parser_used Stanford-Parser)
- =>
-	(retract ?f)
-        (printout t crlf "The basic assumptions to group are : "crlf)
-        (printout t " 1. \"nsubj\" relation with your id as left node " crlf)
-        (printout t " 2. \"nsubj|aux\" relation with your id as \"aux\" right node " crlf)
-	(printout t crlf "Is there any relation which satisfies your id (y/n) : " )
-        (bind ?ans (read))
-        (if (eq ?ans n) then
-                (printout t crlf "According to our assumptions the id cannot be grouped " crlf)
-                (printout t crlf  "Do you want to check another id (y/n)" crlf)
-                (bind ?reply (read))
-                (if (eq ?reply n) then  (exit)
-                else     (if (eq ?reply y) then (assert (question "Enter Your Choice (1 or 2 or 3): ")))
-                 )
-        else (if (eq ?ans y) then
-             (printout t crlf "It should be grouped. May be there is a bug in the rule. Please inform to programmers " crlf))
-              (printout t crlf  "Do you want to check another id (y/n)" crlf)
-                (bind ?reply (read))
-                (if (eq ?reply n) then  (exit)
-                else     (if (eq ?reply y) then (assert (question "Enter Your Choice (1 or 2 or 3): ")))
-                )
-         )
- )
+; (defrule check_std_parser
+; ?f<-(get_word_id ?id)
+; (id-word  ?id ?)
+; (Parser_used Stanford-Parser)
+; =>
+;	(retract ?f)
+;        (printout t crlf "The basic assumptions to group are : "crlf)
+;        (printout t " 1. \"nsubj\" relation with your id as left node " crlf)
+;        (printout t " 2. \"nsubj|aux\" relation with your id as \"aux\" right node " crlf)
+;	(printout t crlf "Is there any relation which satisfies your id (y/n) : " )
+;        (bind ?ans (read))
+;        (if (eq ?ans n) then
+;                (printout t crlf "According to our assumptions the id cannot be grouped " crlf)
+;                (printout t crlf  "Do you want to check another id (y/n)" crlf)
+;                (bind ?reply (read))
+;                (if (eq ?reply n) then  (exit)
+;                else     (if (eq ?reply y) then (assert (question "Enter Your Choice (1 or 2 or 3): ")))
+;                 )
+;        else (if (eq ?ans y) then
+;             (printout t crlf "It should be grouped. May be there is a bug in the rule. Please inform to programmers " crlf))
+;              (printout t crlf  "Do you want to check another id (y/n)" crlf)
+;                (bind ?reply (read))
+;                (if (eq ?reply n) then  (exit)
+;                else     (if (eq ?reply y) then (assert (question "Enter Your Choice (1 or 2 or 3): ")))
+;                )
+;         )
+; )
  
  (defrule check_ol_parser
  ?f<-(get_word_id ?id)
@@ -371,5 +379,15 @@
           (printout t "LWG debugging for Open Logos is not done at this point" crlf)
           (printout t "(exit) "crlf crlf)
  )
+
+  (defrule debug_info_for_std
+  (Parser_used Stanford-Parser)
+  =>
+  (system "cat lwg_debug.dat")
+  (printout t  crlf "Final LWG is ::" crlf)
+  (printout t  "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" crlf crlf)
+  (system "cat lwg_info.dat")
+  )
+
 
  (system "clear")

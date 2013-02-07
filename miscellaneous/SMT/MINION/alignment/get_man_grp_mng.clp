@@ -46,6 +46,14 @@
         (assert (manual_id-left_punc ?id ?punc))
  )
  ;------------------------------------------------------------------------------------------------------------------------
+; (defrule del_punu_as_head_root
+; (declare (salience 190))
+; ?f0<-(id-node-root-cat-gen-num-per-case-tam ? ? ?w $?)
+; (test (eq (sub-string 1 6 ?w) "@PUNCT"))
+; =>
+;	(retract ?f0)
+; )
+ ;------------------------------------------------------------------------------------------------------------------------
  ;Finally, to understand the relative nature of motion, we introduce the concept of relative velocity.
  ;anwawaH gawi kI ApekRika prakqwi ko samaJane ke lie hama ApekRika gawi kI XAraNA praswuwa karezge.
  (defrule modifiy_root

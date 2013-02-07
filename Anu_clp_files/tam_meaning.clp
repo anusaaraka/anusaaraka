@@ -29,14 +29,21 @@
  (id-cat_coarse)
  (conj_head-left_head-right_head)
  (conj_head-components)
+ (conjunction-components)
+ (prep_id-relation-anu_ids)
  )
 
  ; if there is a conjunction between verbs and the tam for first verb is say wA_hE then modify all the tams for the verbs in conjunction as wA_hE
  ;Suggested by Chaitanya Sir (12-12-12)
  ;Every living creature in the world experiences the need to impart or receive information almost continuously with others in the surrounding world.
+ ; We walk, run and ride a bicycle.
  (defrule modify_tam_for_conjunction
  (declare (salience 8000))
- (conj_head-components ?con ?f_vb $? ?s_vb $?)
+ (conjunction-components ?con ?f_vb $? ?s_vb $?)
+ (Head-Level-Mother-Daughters  ?  ?  ?CC  ?con)
+ (Node-Category ?CC CC)
+ (Head-Level-Mother-Daughters ?  ?  ? $? ?S ?CC ?S1 $?)
+ (Node-Category ?S ?node&~S&~SBAR);He told me why he was here and what he was doing.Someone laughed suddenly and the spell was broken.
  (id-E_tam-H_tam_mng ?f_vb ? ?htam)
  ?f0<-(id-E_tam-H_tam_mng ?s_vb ?etam ?)
  (not (modified_sverb_tam ?s_vb))
@@ -51,7 +58,7 @@
  (defrule get_verbal_noun_fact_for_modified_tam
  (declare (salience 7500))
  (modified_sverb_tam ?s_vb)
- (conj_head-components ?con ?f_vb $? ?s_vb $?)
+ (conjunction-components ?con ?f_vb $? ?s_vb $?)
  (make_verbal_noun ?f_vb)
  (not (got_vn_fact_for_second_verb ?s_vb))
  =>	

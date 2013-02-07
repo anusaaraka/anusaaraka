@@ -1,6 +1,6 @@
 the	vaha/isa/usa/vahI/isakA/uwanA/jiwanA/apanA/yaha/apanI/ina/apane
 a	eka/koI/prawi/kisI/eka_EsI
-an	eka/koI/prawi/kisI/eka_EsI
+an	eka/koI/prawi/kisI/eka_EsI/kisI_BI
 that	jo/isa/yaha/vaha/usa/ki/jinheM
 there	vahAz/vaha
 them	unako/unakA/unake/unheM/ve
@@ -24,6 +24,6 @@ we	hama/mEM/hameM/hamArA/hamane/hame/hamAre/hamArI
 you	Apa/wumheM/Apako/ApakA/Apake/Apane
 i	mEM/muje/mEMne
 one	eka	
-as	pahale_kI_waraha/mAno/kI_waraha/ke_rUpa_meM/jyoMhI/jisa_waraha/jEse_hI/jaba_ki/jEsA/kyofki/jEse_hI/jaba/ke_rUpa_meM/ke_jEsA/ke_BAnwi/ke_samAna/nimna_prakAra
+as	pahale_kI_waraha/mAno/kI_waraha/ke_rUpa_meM/jyoMhI/jisa_waraha/jEse_hI/jaba_ki/jEsA/kyofki/jEse_hI/jaba/ke_rUpa_meM/ke_jEsA/ke_BAnwi/ke_samAna/nimna_prakAra/jEsA_ki
 when	jaba/yaxyapi/waba/cUzki/jisa_samaya/kaba/kyozki
 plus	Xana/waWA

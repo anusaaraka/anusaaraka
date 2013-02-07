@@ -2,6 +2,7 @@
 
 (defglobal ?*A_fp5* = fp5)
 (defglobal ?*aper_debug-file* = aper_debug)
+(defglobal ?*gnp_err* = err_fp1)
 
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
@@ -949,7 +950,6 @@
         (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id "  PP_rule_for_and_head )" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
-  ;-------------------------------------------------------------------------------------------------------------------------
   ; Broken windows need to be replaced. The painted doors look great. Invention of currency was done mainly for transaction. 
   (defrule PP_rule_with_tam
   (declare (salience 450))
@@ -967,21 +967,39 @@
         )
   )
   ;-------------------------------------------------------------------------------------------------------------------------
-  ;What causes motion described in this chapter and the next chapter forms the subject matter of Chapter 5.
-  ;The resulting a-t curve is shown in Fig. 3.8.
+  ; What causes motion described in this chapter and the next chapter forms the subject matter of Chapter 5.
+  ; The resulting a-t curve is shown in Fig. 3.8.
+  ; This distance is called the path length traversed by the car.
   ; Added by Shirisha Manju (Suggested by Chaitanya Sir)
   (defrule PP_rule_with_tam1
   (declare (salience 440))
+  (id-cat_coarse ?id verb)
   ?f0<-(id-HM-source ?id ?h_word ?)
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?person)(group_ids $?ids)(H_tam ?tam))
   (test (member$ ?id $?ids))
   (test (neq ?tam 0))
   (test	(neq (str-index "_" ?h_word) FALSE))
-  (test (or (eq  (sub-string (- (length ?h_word) 4) (length ?h_word) ?h_word) "_kara")(eq (sub-string (- (length ?h_word) 2) (length ?h_word) ?h_word) "_ho")))
   =>
-	(retract ?f0)
-        (printout ?*A_fp5* "(id-Apertium_input "?id" root:"?h_word ",tam:"?tam",gen:"?gen",num:"?num ",per:"?person")" crlf)
-        (printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_with_tam1 )" crlf)
+	(bind ?h_mng ?h_word)
+  	(if (or (eq  (sub-string (- (length ?h_word) 4) (length ?h_word) ?h_word) "_kara")(eq (sub-string (- (length ?h_word) 2) (length ?h_word) ?h_word) "_ho")) then
+	        (printout ?*A_fp5* "(id-Apertium_input "?id" root:"?h_word ",tam:"?tam",gen:"?gen",num:"?num ",per:"?person")" crlf)
+		(retract ?f0)
+		(printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_with_tam1 )" crlf)
+	else
+		(bind ?index (str-index "_" ?h_word))
+                (while (neq ?index FALSE) 
+                	(bind ?h_word (sub-string (+ ?index 1) 1000 ?h_word))
+                	(bind ?index (str-index "_" ?h_word))
+                )
+		(bind ?a (gdbm_lookup "hindi_cat.gdbm" ?h_word))
+        	(if (eq ?a "T") then
+			(retract ?f0)
+			(printout ?*A_fp5* "(id-Apertium_input "?id" root:" ?h_mng ",tam:"?tam",gen:"?gen",num:"?num ",per:"?person")" crlf)
+			(printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_with_tam1 )" crlf)
+		else
+			(printout ?*gnp_err* "meaning \"" ?h_word "\" is missed in hindi verb dictionary  " crlf)
+		)
+	)		
   )
   ;-------------------------------------------------------------------------------------------------------------------------
   ;He was an exotic creature with short red hair and brilliant green eyes.

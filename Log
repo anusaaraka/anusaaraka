@@ -4272,12 +4272,21 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 49. Modified sed commands in run_align_browser.sh and ClipsToAnu_browser_intfc.sh to handle symbols.
 50. Modified 'kispotoM as visPotoM in phy_align_verified_hnd and updated the same in 
 	phy_align_verified_eng_align.html  and get_word_potential_facts.clp
-51. Updated stanford parser to stanford-parser-2012-11-12 and removed stanford-parser-2010-11-30 
-52. Updated mapping-symbols.lex and mapping-symbols_manual.lex (to handle with or without spaces and modified ';' and '/')
-53. Updated GNP_debug.sh, agreement_debug.sh, lwg_debug.sh, order_debug.sh, pada_debug.sh, relation_debug.sh, wsd_debug.sh and  wsd_tam_debug.sh
-54. Updated stanford-parser README
-55. Updated abbrevations.lex
-56. Updated the following files :
+51. run_modules_std.bat
+        opened "lwg_debug.dat" in write mode in sd_lwg_rules module
+        opened "pada_debug_file.dat" in write mode in sd_pada module
+        Loaded relations_tmp1.dat and E_constituents_info.dat in tam_meaning module
+        opened "GNP_errors.txt" in append mode in prepare_apertium_input module
+52. Modified "modify_tam_for_conjunction" in tam_meaning.clp (to add constituents info in rule part)
+53. Updated stanford parser to stanford-parser-2012-11-12 and removed stanford-parser-2010-11-30 
+54. Updated mapping-symbols.lex and mapping-symbols_manual.lex (to handle with or without spaces and modified ';' and '/')
+55. Modified "sd_lwg_rules.clp" and "sd_pada.clp" files to generate debug information
+56. Updated 
+	GNP_debug.sh, 	agreement_debug.sh, 	lwg_debug.sh, 		wsd_tam_debug.sh	lwg_debug.clp
+	order_debug.sh, pada_debug.sh, 		relation_debug.sh, 	wsd_debug.sh   	and	pada_debug.clp
+57. Updated stanford-parser README
+58. Updated abbrevations.lex
+59. Updated the following files :
 	miscellaneous/SMT/alignment/dictionaries/inferred_dic.txt
         miscellaneous/SMT/alignment/dictionaries/phy_dictionary.txt
         miscellaneous/SMT/alignment/dictionaries/provisional_PropN_dic.txt
@@ -4290,8 +4299,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_eng_align.html
         miscellaneous/SMT/MINION/alignment/alignment.bat
 	miscellaneous/SMT/MINION/alignment/get_group_mng.sh
-57. Updated changes_in_databases
-58. Updated miscellaneous/SMT/MINION/alignment/README
-59. Updated shell_scripts/remove_out-files.sh
-60. Updated sd_verified (489) and sd_ver_output
-61. Updated Log.
+60. Updated changes_in_databases
+61. Updated miscellaneous/SMT/MINION/alignment/README
+62. Updated shell_scripts/remove_out-files.sh
+63. Updated sd_verified (489) and sd_ver_output
+64. Updated Log.
+

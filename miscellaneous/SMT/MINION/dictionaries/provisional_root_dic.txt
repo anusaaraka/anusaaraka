@@ -76,7 +76,7 @@ indicate	ifgiwa_kara/cihniwa_kara
 astonish	AScaryacakiwa_kara
 include	sammiliwa_ho
 same	samAna
-describe	vyAKyA_kara/vyakwa_kara
+describe	vyAKyA_kara/vyakwa_kara/nirUpaNa
 familiar	supariciwa
 unify	ekIkqwa_kara
 underlie	mUla_meM_ho
@@ -89,7 +89,7 @@ foundation	mUlAXAra
 report	praswuwa_kara
 involve	sammiliwa_ho/nihiwa_ho
 accelerate	wvariwa_ho
-represent	vyakwa_kara
+represent	vyakwa_kara/vyakwa_ho
 establish	prawipAxiwa_kara
 as	nimna_prakAra/jEsA_ki
 look	xiKalAI_xe
@@ -99,3 +99,8 @@ motion	gawimAna
 fig.	ciwra
 then	Pira
 uniformly	ekasamAna_rUpa_se
+course	avaXi
+correspond	waxanurUpa
+convention	paxXawi
+section	KaNda
+show	praxarSiwa_kara

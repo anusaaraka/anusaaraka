@@ -10,7 +10,7 @@ Calling Stanford parser
 Finding NER... 
 Hindi meaning using Stanford parser 1.1
 Test. 
-parIkRA.
+jAzca kIjie.
 
 Hindi meaning using Stanford parser 2.1
 It is impossible for a car to move on a very slippery road. 
@@ -50,7 +50,7 @@ usane prakASikI ke kRewra meM mArga_praSaswa_karanevAlA yogaxAna banAe.
 
 Hindi meaning using Stanford parser 2.10
 In these examples, the external agency of force (hands, wind, stream, etc) is in contact with the object. 
-ina uxAharaNoM meM, bala kA (hAWa, havAez Jarane, Axi) bAhya_sAXana vaswu ke samparka meM hE.
+ina uxAharaNoM meM, bala kA bAhya_sAXana (hAWa, havAez Jarane, Axi) vaswu ke samparka meM hE.
 
 Hindi meaning using Stanford parser 2.11
 You should now be able to handle a large variety of problems in mechanics. 
@@ -114,7 +114,7 @@ eka wIra isa lAina ke sira meM wila huA huA hE.
 
 Hindi meaning using Stanford parser 2.26
 Physics is the study of nature and natural phenomena. 
-PropN-physics-PropN prakqwi kA Ora prAkqwika pariGatanA kA aXyayana hE.
+PropN-physics-PropN prakqwi kA Ora prAkqwika kA pariGatanA kA aXyayana hE.
 
 Hindi meaning using Stanford parser 2.27
 What is the nature of physical laws? 
@@ -122,7 +122,7 @@ SArIrika niyamoM kI prakqwi kyA hE?
 
 Hindi meaning using Stanford parser 2.28
 The macroscopic domain includes phenomena at the laboratory, terrestrial and astronomical scales. 
-sWUla praBAvakRewra prayogaSAlA, pArWiva Ora KagolIya CilakoM meM pariGatanA sammiliwa karawA hE.
+sWUla praBAvakRewra prayogaSAlA meM, pArWiva Ora KagolIya CilakA pariGatanA sammiliwa karawA hE.
 
 Hindi meaning using Stanford parser 2.29
 By the first law of motion the acceleration of the astronaut is zero. 
@@ -150,7 +150,7 @@ PropN-science-PropN kaBI BI gawiSIla hE.
 
 Hindi meaning using Stanford parser 2.35
 The scope of physics is described briefly in the next section. 
-BOwika vijFAna kA kRewra agale BAga meM safkRipwa_rUpa meM varNana kiyA huA hE.
+BOwika vijFAna kA kRewra agale BAga meM safkRepa meM varNana kiyA huA hE.
 
 Hindi meaning using Stanford parser 2.36
 The efficiency of heat engines and refrigerators, the direction of a physical or chemical process, etc., are problems of interest in thermodynamics. 
@@ -162,7 +162,7 @@ usane BI xo piNdoM ke bIca guruwvAkarRaNa ke lie bala ke lie spaRta rUpa xiyA.
 
 Hindi meaning using Stanford parser 2.38
 The origin of these derived forces is, however, very complex. 
-ina viSleRaNa baloM kA mUla binxu PiraBI, awyanwa jatila hE.
+ina prApwa kara baloM kA mUla binxu PiraBI, awyanwa jatila hE.,
 
 Hindi meaning using Stanford parser 2.39
 It is a universal force. 
@@ -178,7 +178,7 @@ uwanA vExyuwacumbakIya bala guruwvAkarRI bala kI apekRA iwanA jyAxA aXika saSakw
 
 Hindi meaning using Stanford parser 2.42
 Matter is mostly electrically neutral (net charge is zero). 
-PropN-matter-PropN vixyuw se watasWa prAyaH hE (vAswavika aBiyoga SUnya hE)
+PropN-matter-PropN vixyuw se watasWa prAyaH hE (vAswavika aBiyoga SUnya hE.)
 
 Hindi meaning using Stanford parser 2.43
 Physicists explore the universe. 
@@ -194,7 +194,7 @@ UrjA saMrakRaNa kA vyApaka niyama, PiraBI, aBI BI lAgU honA hE.
 
 Hindi meaning using Stanford parser 2.46
 To measure time, we position a clock in this system. 
-samaya nApa hama isa nikAya meM GadI raKa xewe hEM.
+mApa samaya ko, hama isa nikAya meM GadI raKa xewe hEM.
 
 Hindi meaning using Stanford parser 2.47
 You will read about vectors in the next chapter. 
@@ -226,7 +226,7 @@ Ese AxarSa bahuwa sAre prayogaSAlA meM upalabXa hEM.
 
 Hindi meaning using Stanford parser 2.54
 Measurement is the foundation of all experimental science and technology. 
-mApana saba prAyogika vijFAna meM se Ora prAxyogikI meM se mUla vicAra hE.
+mApana saba meM se prAyogika meM se vijFAna meM se Ora prAxyogikI meM se mUla vicAra hE.
 
 Hindi meaning using Stanford parser 2.55
 This uncertainty is called error. 
@@ -242,7 +242,7 @@ isake lie, hama anusaraNa karanA kAryaviXi kA upayoga karawe hEM.
 
 Hindi meaning using Stanford parser 2.58
 As discussed above, every measurement involves errors. 
-Upara carcA kI jEsA ki, prawyeka mApana BUleM SAmila howA hE.
+ke Upara carcA kI jEsA ki, prawyeka mApana BUleM SAmila howA hE.
 
 Hindi meaning using Stanford parser 2.59
 All these numbers have the same number of significant figures (digits 2, 3, 0, 8), namely four. 
@@ -262,7 +262,7 @@ spaRta rUpa se, ye mejeM soKane vAlI nahIM hEM.
 
 Hindi meaning using Stanford parser 2.63
 Physicists try to discover the rules that are operating in nature, on the basis of observations, experimentation and analysis. 
-BOwikavix prekRaNa ke, prayoga kA Ora viSleRaNa ke AXAra para vaha niyama pawA lagane ke lie prayAsa karawe hEM jo prakqwi meM kAma_kara rahe hEM,
+BOwikavix prekRaNa ke, prayoga kA Ora viSleRaNa ke AXAra para vaha niyama pawA lagane ke lie prayAsa karawe hEM jo prakqwi meM kAma_kara rahe hEM.,
 
 Hindi meaning using Stanford parser 2.64
 We shall now discuss the nature of fundamental forces and the laws that govern the diverse phenomena of the physical world. 
@@ -278,7 +278,7 @@ hamArI samaJa ke varwamAna maFca meM, hama yahAz prakqwi meM, cAra mUlaBUwa balo
 
 Hindi meaning using Stanford parser 2.67
 Every object experiences this force due to every other object in the universe. 
-prawyeka vaswu viSva meM hara xUsarI vaswu ke kAraNa yaha bala anuBava karawI hE.
+prawyeka vaswu yaha bala viSva meM hara xUsarI vaswu ke kAraNa anuBava karawI hE.
 
 Hindi meaning using Stanford parser 2.68
 The strong nuclear force binds protons and neutrons in a nucleus. 
@@ -310,7 +310,7 @@ unake baDiyA ke alAvA saralawA ke alAvA Ora sAmAnyawAA ke alAvA, prakqwi ke saMr
 
 Hindi meaning using Stanford parser 2.75
 The conservation laws of charge and other attributes of elementary particles can also be related to certain abstract symmetries. 
-mUla kaNoM ke mUlya ke Ora anya guNoM ke saMrakRaNa niyama kuCa amUrwa samamiwi se BI sambanXiwa jA sakawe hEM.
+mUla kaNoM ke mUlya Ora anya guNoM ke saMrakRaNa niyama kuCa amUrwa samamiwi se BI sambanXiwa jA sakawe hEM.
 
 Hindi meaning using Stanford parser 2.76
 For the case of rectilinear motion with uniform acceleration, a set of simple equations can be obtained. 
@@ -326,7 +326,7 @@ ina wIna XuriyoM kA milane_kA binxu mUla binxu (PropN-o-PropN) bulAyA jAwA hE Or
 
 Hindi meaning using Stanford parser 2.79
 The coordinates (x, y, z) of an object describe the position of the object with respect to this coordinate system. 
-eka vaswu ke nirxeSAfka (x, y, z) isa nirxeSAfka nikAya ke viRaya meM vaswu kI sWiwi varNana karawe hEM.
+eka vaswu ke nirxeSAfka (x, y, PropN-z-PropN) isa nirxeSAfka nikAya ke viRaya meM vaswu kI sWiwi varNana karawe hEM.
 
 Hindi meaning using Stanford parser 2.80
 For example, for describing motion in one dimension, we need only one axis. 
@@ -334,11 +334,11 @@ uxAharaNa_ke liye, eka pahalU meM gawi varNana karane ke lie, hameM sirPa eka Xu
 
 Hindi meaning using Stanford parser 2.81
 In the first case, the car moves from O to P .. 
-praWama mAmale meM, gAdI PropN-o-PropN se PropN-p-PropN ko calawI hE.
+praWama mAmale meM, gAdI PropN-o-PropN se ko PropN-p-PropN. calawI hE.
 
 Hindi meaning using Stanford parser 2.82
 This distance is called the path length traversed by the car. 
-yaha xUrI gAdI se Ade wiraCe jA paWa lambAI bulAI jAwI hE.
+yaha xUrI gAdI se Ade_wiraCe jAI huI paWa lambAI bulAI jAwI hE.
 
 Hindi meaning using Stanford parser 2.83
 Such quantities are represented by vectors. 

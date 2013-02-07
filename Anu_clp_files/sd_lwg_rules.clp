@@ -1,27 +1,35 @@
-;This file is written by Mahalaxmi
+ ;This file is written by Mahalaxmi
+ (defglobal ?*lwg_debug_file* = lwg_db_fp)
 
-(deffunction string_to_integer (?parser_id)
-(string-to-field (sub-string 2 10000 ?parser_id)))
+ (deffunction string_to_integer (?parser_id)
+ (string-to-field (sub-string 2 10000 ?parser_id)))
  
-(deffunction my_string_cmp (?str1 ?str2)
+ (deffunction my_string_cmp (?str1 ?str2)
    (bind ?n1 (string-to-field (sub-string 2 (length ?str1) ?str1)))
    (bind ?n2 (string-to-field (sub-string 2 (length ?str2) ?str2)))
    (> ?n1 ?n2))
 
+ (defrule print_for_debugging1
+ (declare (salience 1710))
+ =>
+ (printout ?*lwg_debug_file* " Copying temporary VP_facts for verb_grouping (In order to preserve the tree structure, and performing the lwg operations on copied facts)" crlf)
+ (printout ?*lwg_debug_file* " ==============================================================================================================================" crlf crlf)
+ )
 ;--------------------------------------------------------------------------
  ;Copying temporary facts for verb_lwg (in order to not disturb the tree structure)
  (defrule cp_facts_for_lwg
- (declare (salience 1700))
+ (declare (salience 1701))
  (Head-Level-Mother-Daughters ?h ?l ?M $?daut)
  (Node-Category ?M S|SQ|VP|SBAR)
  =>
 	(assert (Head-Level-Mother-Daughters_lwg ?h ?l ?M $?daut))
+        (printout ?*lwg_debug_file* "	Head-Level-Mother-Daughters "?h" "?l" "?M" "(implode$ $?daut)"	---->	Head-Level-Mother-Daughters_lwg "?h" "?l" "?M" "(implode$ $?daut) crlf)
  )
 
 ;--------------------------------------------------------------------------
  ;asserting a control fact in order to stop replacing the "VP" having conjunction "CC"
  (defrule find_conj_head
- (declare (salience 1701))
+ (declare (salience 1702))
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?VP1 $?pre1 ?CC $?pos1)
  ?f2<-(Node-Category ?CC CC)
  =>
@@ -43,10 +51,12 @@
          (bind $?verb_list (create$ $?pre1 ?CC $?pos1))
          (bind $?conjs (create$ ))
          (bind ?len (length $?verb_list))
+         (printout ?*lwg_debug_file* "(rule_name - conjunction_rule0 "crlf )
          (loop-for-count (?i 1 ?len)
                         (bind ?j (nth$ ?i $?verb_list))
 			  (if (member$ (explode$ (sub-string 1 2 ?j)) (create$ VP VB MD)) then
 			      (assert (Head-Level-Mother-Daughters_lwg ?head ?lvl ?VP $?pre ?j $?pos))
+                                       (printout ?*lwg_debug_file* "(Head-Level-Mother-Daughters_lwg "?head" "?lvl" "?VP" "(implode$ $?pre)" "?j" "(implode$ $?pos)")" crlf)
                           )
          )
 	 
@@ -63,13 +73,22 @@
          (bind $?verb_list (create$ $?pre1 ?CC $?pos1))
          (bind $?conjs (create$ ))
          (bind ?len (length $?verb_list))
+         (printout ?*lwg_debug_file* "(rule_name - conjunction_rule0 "crlf )
          (loop-for-count (?i 1 ?len)
                         (bind ?j (nth$ ?i $?verb_list))
                           (if (member$ (explode$ (sub-string 1 2 ?j)) (create$ VP VB MD)) then
                               (assert (Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?VP1 ?j))
+                              (printout ?*lwg_debug_file* "(Head-Level-Mother-Daughters_lwg "?head1" "?lvl1" "?VP1"  "?j")" crlf)
                           )
          )
 
+ )
+;--------------------------------------------------------------------------
+ (defrule print_for_debugging2
+ (declare (salience 1701))
+ =>
+ (printout ?*lwg_debug_file* crlf "  Replacing Daughter nodes with child nodes " crlf)
+ (printout ?*lwg_debug_file* "  =========================================================================================" crlf crlf)
  )
 
 ;--------------------------------------------------------------------------
@@ -85,6 +104,9 @@
  =>
 	(retract ?f ?f1)
 	(assert (Head-Level-Mother-Daughters_lwg ?head1 ?lvl ?Mot $?pre $?daut  $?pos))
+        (printout ?*lwg_debug_file* "	(rule_name - replace_VP" crlf
+                         "              	Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "?VP" "(implode$ $?pos)")" crlf
+                         "              	After     - "?head1" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?daut)" "(implode$ $?pos)")" crlf)
  )
 
 ;--------------------------------------------------------------------------
@@ -105,6 +127,9 @@
  =>
         (retract ?f ?f1)
         (assert (Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre $?daut  $?pos))
+        (printout ?*lwg_debug_file* "	(rule_name - replace_S" crlf
+                         "              	Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "?S" "(implode$ $?pos)")" crlf
+                         "              	After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?daut)" "(implode$ $?pos)")" crlf)
  )
 ;--------------------------------------------------------------------------
  ;Replacing a VP mother whose child is  S|SBAR on checking the head word "Let".
@@ -119,6 +144,10 @@
  =>
         (retract ?f ?f1)
         (assert (Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre $?daut  $?pos))
+        (printout ?*lwg_debug_file* "	(rule_name - replace_S1_Let" crlf
+                         "              	Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "?S" "(implode$ $?pos)")" crlf
+                         "              	After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?daut)" "(implode$ $?pos)")" crlf)
+
  )
 
 ;--------------------------------------------------------------------------
@@ -137,6 +166,9 @@
  =>
         (retract ?f ?f1)
         (assert (Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre $?daut  $?pos))
+        (printout ?*lwg_debug_file* "	(rule_name - replace_S1" crlf
+                         "              	Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "?S" "(implode$ $?pos)")" crlf
+                         "              	After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?daut)" "(implode$ $?pos)")" crlf)
  )
 ;--------------------------------------------------------------------------
  (defrule get_lwg1
@@ -149,6 +181,14 @@
  	(retract ?f0 ?f)
  )
 ;--------------------------------------------------------------------------
+ (defrule print_for_debugging3
+ (declare (salience 76))
+ =>
+ (printout ?*lwg_debug_file* crlf "  Creating LWG facts " crlf)
+ (printout ?*lwg_debug_file* "  =========================================================================================" crlf crlf)
+ )
+
+;--------------------------------------------------------------------------
  ;Creating a lwg facts for all verbs
  ;Here it look like,
  ;(root-verbchunk-tam-parser_chunkids - VBZ6 VBG8 NP10 VB14 NP15 - VBZ6 VBG8 NP10 VB14 NP15 - VBZ6 VBG8 NP10 VB14 NP15)
@@ -160,6 +200,16 @@
  (not (dont_replace_VP ?VP))
  =>
  	(assert (root-verbchunk-tam-parser_chunkids - ?VP1 $?dau - ?VP1 $?dau - ?VP1 $?dau))
+        (printout ?*lwg_debug_file* "	(rule_name - get_lwg" crlf 
+                         "			(root-verbchunk-tam-parser_chunkids - "?VP1" "(implode$ $?dau)" - "?VP1" "(implode$ $?dau)" - "?VP1" "(implode$ $?dau)")" crlf)
+                                      
+)
+;--------------------------------------------------------------------------
+ (defrule print_for_debugging4
+ (declare (salience 69))
+ =>
+ (printout ?*lwg_debug_file* crlf "  Retrieving tam information (getting verb , suffix , and parser_id for every node )" crlf)
+ (printout ?*lwg_debug_file* " =========================================================================================" crlf crlf)
  )
 
 ;--------------------------------------------------------------------------
@@ -175,6 +225,9 @@
  =>
 	
 	(retract ?f)
+        (printout ?*lwg_debug_file* "	(rule_name - replace_nodes" crlf
+                         "			Before    - (root-verbchunk-tam-parser_chunkids - "(implode$ $?vb_chk)" - "(implode$ $?tam)" - "(implode$ $?pre)" "?node" "(implode$ $?post)")" crlf)
+
         (bind $?chunkid  (create$ $?pre ?node $?post))
         (bind ?pos (member$ ?node $?chunkid))
         (if (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO AUX AUXG)) then
@@ -201,6 +254,7 @@
            (bind $?tam (delete-member$ $?tam ?node))
            (bind $?chunkid (delete-member$ $?chunkid ?node)));)
         (assert (root-verbchunk-tam-parser_chunkids - $?vb_chk - $?tam - $?chunkid))
+        (printout ?*lwg_debug_file* "			After     - (root-verbchunk-tam-parser_chunkids - "(implode$ $?vb_chk)" - "(implode$ $?tam)" - "(implode$ $?chunkid)")" crlf)
  )
 
 ;--------------------------------------------------------------------------
@@ -232,6 +286,14 @@
 ;         )
 ;          (assert (conjuction_modified ?CC))
 ; )
+
+;--------------------------------------------------------------------------
+ (defrule print_for_debugging5
+ (declare (salience 51))
+ =>
+ (printout ?*lwg_debug_file* crlf "  Get root , verb_chunk and tam information " crlf)
+ (printout ?*lwg_debug_file* " =========================================================================================" crlf crlf)
+ )
 ;--------------------------------------------------------------------------
  ;Gets verb_chunk and tam information
  ; (root-verbchunk-tam-parser_chunkids - has been coming - s en ing - P2 P3 P5) ==>
@@ -242,6 +304,9 @@
  ?f1<-(parser_id-root-category-suffix-number  ?id  ?root $?)
  =>
         (retract ?f0)
+        (printout ?*lwg_debug_file* "	(rule_name - get_lwg_vc_and_tam" crlf
+                         "			Before    - (root-verbchunk-tam-parser_chunkids - "?r"  "(implode$ $?vc)" - "(implode$ $?tam)" - "(implode$ $?ids)" "?id")" crlf)
+
         (bind $?ids (create$ $?ids ?id))
         (if (> (length $?ids) 1) then
         	(loop-for-count (?i 1 (length $?ids))      
@@ -256,10 +321,13 @@
                         (bind ?verb_chunk (sym-cat ?verb_chunk _ ?val))))
         	)
 	        (assert (root-verbchunk-tam-parser_chunkids ?root ?verb_chunk ?tam1 $?ids))
+        (printout ?*lwg_debug_file* "			After     - (root-verbchunk-tam-parser_chunkids  "?root"  "?verb_chunk"  "?tam1"  "(implode$ $?ids)")" crlf)
         else
         (assert (root-verbchunk-tam-parser_chunkids root_to_be_decided $?vc tam_to_be_decided $?ids))
+        (printout ?*lwg_debug_file* "			After   - (root-verbchunk-tam-parser_chunkids  root_to_be_decided  "(implode$ $?vc)"  tam_to_be_decided  "(implode$ $?ids)")" crlf)
        )
  )
+
 ;--------------------------------------------------------------------------
  (defrule modify_head_wrd1
  (declare (salience 49))
@@ -267,22 +335,44 @@
  ?f1<-(parser_id-root-category-suffix-number  ?said  ?root $?)
  =>
    (retract ?f0)
+   (printout ?*lwg_debug_file* crlf " Modifying the root and head_id for \"IS_SAID_TO_BE\" verb_chunk " crlf)
+   (printout ?*lwg_debug_file* " =========================================================================================" crlf crlf) 
+   (printout ?*lwg_debug_file* "	(rule_name - modify_head_wrd1" crlf
+                    "				Before    - (root-verbchunk-tam-parser_chunkids - be  is_said_to_be - is_said_to_0 - "?is" "?said" "?to" "?be")" crlf)
    (assert (root-verbchunk-tam-parser_chunkids ?root is_said_to_be is_said_to_0 ?is ?to ?be ?said ))
+   (printout ?*lwg_debug_file* "			After   - (root-verbchunk-tam-parser_chunkids - "?root" is_said_to_be - is_said_to_0 - "?is" "?to" "?be" "?said")" crlf)
  )
+;--------------------------------------------------------------------------
+ (defrule print_for_debugging6
+ (declare (salience 5))
+ =>
+ (printout ?*lwg_debug_file* crlf " Removing lwg fact in case of verb_chunk formed by single VBG and VBN node" crlf)
+ (printout ?*lwg_debug_file* " =========================================================================================" crlf crlf)
+ )
+
 ;--------------------------------------------------------------------------
  ;Added by Shirisha Manju (28-10-11) Suggested by Sukhada
  ;Ex:-He made a mistake in [inviting] John. 
  ;Ex:-The glass house [built] on the lines of the crystal palace in london is the main attraction in this huge park.
  (defrule remove_single_VBG_and_VBN_lwg
  (declare (salience 4))
- ?f0<-(root-verbchunk-tam-parser_chunkids  ? ? ? ?id)
+ ?f0<-(root-verbchunk-tam-parser_chunkids  ?r ?v ?t ?id)
  (Head-Level-Mother-Daughters_lwg ? ? ?VP $?pre ?daut $?post)
  (Head-Level-Mother-Daughters ? ? ?daut ?id)
  (Node-Category ?VP VP)
  (Node-Category ?daut VBG|VBN)
  =>
                 (retract ?f0)
+		(printout ?*lwg_debug_file* "	(root-verbchunk-tam-parser_chunkids  "?r" "?v" "?t" "?id")" crlf)
  )
+;--------------------------------------------------------------------------
+ (defrule print_for_debugging7
+ (declare (salience 5))
+ =>
+ (printout ?*lwg_debug_file* crlf " Identifying and Modifying the tam information for QUESTIONARY , IMPERATIVE , CAUSITIVE and NEGATION verbs" crlf)
+ (printout ?*lwg_debug_file* " ==============================================================================================================" crlf crlf)
+ )
+
 ;--------------------------------------------------------------------------
  ;Identifying and modifying the TAM for QUESTIONARY sentences,
  ;Ex:-Did you take your breakfast?
@@ -297,8 +387,11 @@
  (not (q_tam_modified ?head))
  =>
         (retract ?f)
+        (printout ?*lwg_debug_file* "	(rule_name - find_q_tam" crlf
+                    	 "			Before    - (root-verbchunk-tam-parser_chunkids - "?root" "?vrb_chunk" "?tam" "?head" "(implode$ $?ids)")" crlf)
         (bind ?vrb_chunk (sym-cat q_ ?vrb_chunk))
         (assert (root-verbchunk-tam-parser_chunkids ?root ?vrb_chunk ?suf ?head $?ids))
+        (printout ?*lwg_debug_file* "			After   - (root-verbchunk-tam-parser_chunkids - "?root" "?vrb_chunk" "?suf" "?head" "(implode$ $?ids)")" crlf)
         (assert (q_tam_modified ?head))
  )
 
@@ -327,6 +420,8 @@
  (test (and (< (string_to_integer ?first) (string_to_integer ?p_id))(< (string_to_integer ?p_id) (string_to_integer ?last))))
 =>
     (retract ?f)
+    (printout ?*lwg_debug_file* "(rule_name - add_not_to_lwg" crlf
+                     "			Before    - (root-verbchunk-tam-parser_chunkids - "?root" "?vrb_chunk" "?tam" "?first" "(implode$ $?ids)" "?last")" crlf)
     (bind $?lwg (sort my_string_cmp (create$ ?p_id ?first $?ids ?last)))
     (bind ?pos (member$ ?p_id  $?lwg))
     (bind ?count 0)
@@ -343,6 +438,7 @@
                (bind ?index (str-index "_" ?vrb_chunk))
     )
     (assert (root-verbchunk-tam-parser_chunkids ?root ?new_vrb_chunk ?new_tam $?lwg))
+    (printout ?*lwg_debug_file* "			After   - (root-verbchunk-tam-parser_chunkids - "?root" "?new_vrb_chunk" "?new_tam" "(implode$ $?lwg)")" crlf)
     (assert (RB-checked ?RB))
     
  )
@@ -364,6 +460,8 @@
   (not (lwgids_imper_checked ?first $?ids))
  =>
  	(retract ?f)
+        (printout ?*lwg_debug_file* "	(rule_name - check_for_imper" crlf
+                         "			Before    - (root-verbchunk-tam-parser_chunkids - "?root" "?vrb_chunk" "?tam" "?first" "(implode$ $?ids)")" crlf)
         (bind ?pos (length (create$ ?first $?ids)))
         (bind ?count 0)
         (bind ?cp_tam ?tam)
@@ -378,8 +476,10 @@
         )
         (if (neq (length $?ids) 0) then
                 (assert (root-verbchunk-tam-parser_chunkids  ?root ?vrb_chunk ?new_tam ?first $?ids))
+    		(printout ?*lwg_debug_file* "			After   - (root-verbchunk-tam-parser_chunkids - "?root" "?vrb_chunk" "?new_tam" "?first" "(implode$ $?ids)")" crlf)
         else
                 (assert (root-verbchunk-tam-parser_chunkids  ?root ?vrb_chunk imper ?first))
+		(printout ?*lwg_debug_file* "			After   - (root-verbchunk-tam-parser_chunkids - "?root" "?vrb_chunk " imper "?first")" crlf)
         ) 
 
         (assert (lwgids_imper_checked ?first $?ids))
@@ -405,6 +505,9 @@
   (not (lwgids_imper_checked ?first $?ids))
  =>
         (retract ?f)
+        (printout ?*lwg_debug_file* "   (rule_name - check_for_CC_imper" crlf
+                         "                      Before    - (root-verbchunk-tam-parser_chunkids - "?root" "?vrb_chunk" "?tam" "?first" "(implode$ $?ids)")" crlf)
+
         (bind ?pos (length (create$ ?first $?ids)))
         (bind ?count 0)
         (bind ?cp_tam ?tam)
@@ -419,8 +522,10 @@
         )
         (if (neq (length $?ids) 0) then
                 (assert (root-verbchunk-tam-parser_chunkids  ?root ?vrb_chunk ?new_tam ?first $?ids))
+		(printout ?*lwg_debug_file* "			After   - (root-verbchunk-tam-parser_chunkids - "?root" "?vrb_chunk" "?new_tam" "?first" "(implode$ $?ids)")" crlf)
         else
                 (assert (root-verbchunk-tam-parser_chunkids  ?root ?vrb_chunk imper ?first))
+		(printout ?*lwg_debug_file* "			After   - (root-verbchunk-tam-parser_chunkids - "?root" "?vrb_chunk" imper "?first")" crlf)
         )
 
         (assert (lwgids_imper_checked ?first $?ids))
@@ -442,6 +547,8 @@
   (not (lwgids_imper_checked ?first $?ids))
  =>
         (retract ?f)
+	(printout ?*lwg_debug_file* "   (rule_name - check_for_CC_imper" crlf
+                         "                      Before    - (root-verbchunk-tam-parser_chunkids - "?root" "?vrb_chunk" "?tam" "?first" "(implode$ $?ids)")" crlf)
         (bind ?pos (length (create$ ?first $?ids)))
         (bind ?count 0)
         (bind ?cp_tam ?tam)
@@ -457,8 +564,11 @@
         )
         (if (neq (length $?ids) 0) then
                 (assert (root-verbchunk-tam-parser_chunkids  ?root ?vrb_chunk ?new_tam ?first $?ids))
+		(printout ?*lwg_debug_file* "			After   - (root-verbchunk-tam-parser_chunkids - "?root" "?vrb_chunk" "?new_tam" "?first" "(implode$ $?ids)")" crlf)
         else
                 (assert (root-verbchunk-tam-parser_chunkids  ?root ?vrb_chunk imper ?first))
+		(printout ?*lwg_debug_file* "			After   - (root-verbchunk-tam-parser_chunkids - "?root" "?vrb_chunk" imper "?first")" crlf)
+
         )
         (assert (lwgids_imper_checked ?first $?ids))
  )
@@ -471,12 +581,14 @@
  ;(verb_type-verb-causative_verb-tam causative P3 P6 is_ing)
  (defrule check_for_causitive
  (declare (salience -20))
- ?f0<-(root-verbchunk-tam-parser_chunkids  ?  ?vc  ?tam  $?ids ?id ?id1)
+ ?f0<-(root-verbchunk-tam-parser_chunkids  ?R  ?vc  ?tam  $?ids ?id ?id1)
  (parserid-word ?id ?w&make|made|get|making)
  ?f1<-(parser_id-root-category-suffix-number  ?id  ?root ?cat ?suf $?)
  ?f2<-(parser_id-root-category-suffix-number ?id1 ?root1 ?cat1 ?suf1 $?)
  =>
         (retract ?f0 ?f1 ?f2)
+        (printout ?*lwg_debug_file* "   (rule_name - check_for_causitive" crlf
+                         "                      Before    - (root-verbchunk-tam-parser_chunkids - "?R" "?vc" "?tam" "(implode$ $?ids)" "?id" "?id1")" crlf)
         (bind ?pos (length (create$ $?ids ?id ?id1)))
 	(bind ?count 0)
 	(bind ?cp_tam ?tam)
@@ -495,10 +607,14 @@
         (if (neq (length $?ids) 0) then
         	(bind ?new_tam (sym-cat ?new_tam ?suf))
                 (assert (root-verbchunk-tam-parser_chunkids  ?r ?vc ?new_tam $?ids ?id ?id1))
+		(printout ?*lwg_debug_file* "			After   - (root-verbchunk-tam-parser_chunkids - "?r" "?vc" "?new_tam"  "(implode$ $?ids)" "?id" "?id1")" crlf)
                 (assert (verb_type-verb-causative_verb-tam causative ?id ?id1 ?new_tam))
+		(printout ?*lwg_debug_file* "			After   - (verb_type-verb-causative_verb-tam causative "?id" "?id1" "?new_tam")" crlf)
         else
                 (assert (root-verbchunk-tam-parser_chunkids  ?r ?vc tam_to_be_decided ?id ?id1))
+		(printout ?*lwg_debug_file* "			After   - (root-verbchunk-tam-parser_chunkids - "?r" "?vc" tam_to_be_decided "?id" "?id1")" crlf)
                 (assert (verb_type-verb-causative_verb-tam causative ?id ?id1 tam_to_be_decided))
+		(printout ?*lwg_debug_file* "			After   - (verb_type-verb-causative_verb-tam causative "?id" "?id1" tam_to_be_decided)" crlf)
         )
  )
 
