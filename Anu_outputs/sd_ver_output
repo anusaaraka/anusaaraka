@@ -6,6 +6,7 @@ Calling Stanford parser
 Finding NER... 
 Hindi meaning using Stanford parser 1.1
 Test. 
+jAzca kIjie.
 parIkRA.
 
 Hindi meaning using Stanford parser 2.1
@@ -308,6 +309,7 @@ Hindi meaning using Stanford parser 2.74
 People use espresso to make other coffee drinks. 
 loga espreso koYPI kA anya koYPI_peya_yA Sarabawa banAne ke lie upayoga karawe hEM.
 loga anya koYPI peya yA Sarabawa banAne ke lie espreso koYPI kA upayoga karawe hEM.
+loga anya koYPI_peya_yA Sarabawa banAne ke lie espreso koYPI kA upayoga karawe hEM.
 
 Hindi meaning using Stanford parser 2.75
 The Zongle of Bongle Dongle resigned today. 
@@ -1427,6 +1429,7 @@ PropN-shivaji-PropN 1600 meM sabase aXika SakwiSAlI SAsakoM meM se eka WA.
 
 Hindi meaning using Stanford parser 3.43
 Ayodhya during ancient times was known as kaushaldesa. 
+prAcIna kAla ke xOrAna PropN-ayodhya-PropN kaushaldesa ke nAma se jAnA jAwA WA.
 prAcIna kAla ke xOrAna Ayodhya kaushaldesa ke nAma se jAnA jAwA WA.
 
 Hindi meaning using Stanford parser 3.44
@@ -1790,6 +1793,7 @@ saPexa safgamaramara moti masjid yA mowI masjixa aurangzeb ke lie vyakwigawa mas
 
 Hindi meaning using Stanford parser 4.30
 Sarpa yakshi and Naga yakshi are the beloved consorts of Nagaraja. 
+PropN-sarpa-PropN PropN-yakshi-PropN Ora nAga yakshi PropN-nagaraja-PropN kI priya pawniyAz hEM.
 PropN-sarpa-PropN yakshi Ora nAga yakshi PropN-nagaraja-PropN kI priya pawniyAz hEM.
 
 Hindi meaning using Stanford parser 4.31

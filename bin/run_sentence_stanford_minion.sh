@@ -78,17 +78,11 @@
  cat mngs_aligned_with_anu.dat >> $MYPATH/$1_tmp/meanings_aligned_with_anu_tmp.txt  
  cat mngs_aligned_with_minion.dat >> $MYPATH/$1_tmp/meanings_aligned_with_minion_tmp.txt  
 
-# cat eng_id_in_hin_ord.dat >> $MYPATH/$1_tmp/$1_ordered_file
-# cp hindi_sentence.dat hindi_sentence_tmp.dat
-
  sh $HOME_anu_test/bin/abbr.sh
- python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  hindi_sentence.dat hindi_sentence_tmp.dat
- cp hindi_sentence1.dat  hindi_sentence.dat
+ python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  hindi_sentence_tmp1.dat hindi_sentence_tmp2.dat
 
-# cat hin_eng_sent.dat
-
+ cat  hindi_sentence_tmp2.dat |  sed -e 's/\\@//g' | sed 's/@//g'  > hindi_sentence.dat
  cat  hindi_sentence.dat
-# cat  percentage.dat
  echo "(hin_sen " > hindi_sentence_SMT_tmp.dat 
  cat hindi_sentence.dat >> hindi_sentence_SMT_tmp.dat
  echo ")" >> hindi_sentence_SMT_tmp.dat

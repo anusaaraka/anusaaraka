@@ -21,7 +21,7 @@
  (load-facts "punctuation_info.dat")
  (load-facts "original_word.dat")
  (load-facts "underscore_hyphen_replace_info.dat")
- (open "hindi_sentence.dat" h_sen_fp "a")
+ (open "hindi_sentence_tmp.dat" h_sen_fp "a")
  (run)
  (clear)
  ;--------------------------------------------------------------------------
@@ -115,6 +115,7 @@
  (run)
  (save-facts "manual_ids_tmp2.dat" local head_id-grp_ids)
  (save-facts "shallow_parser_root.dat" local id-node-word-root)
+ (save-facts "manual_punct.dat" local manual_id-left_punc manual_id-right_punc)
  (close vb_fp)
  (clear)
  ;--------------------------------------------------------------------------

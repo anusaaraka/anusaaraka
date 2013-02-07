@@ -68,7 +68,9 @@ while($in = <STDIN>){
         $in =~ s/s'([^a-zA-Z0-9])/sABBR-SingleQuote$1/g;
 
 # Insert space after the punctuation marks.
-	$in =~ s/([a-zA-Z])([^a-zA-Z0-9 \t\n\-]+)([a-zA-Z])/$1$2 $3/g; #The colonial area laid out in grid pattern during the [mid19th] century holds remnants of the raj era.(Added by Mahalaxmi, 0-9 in the second expression)
+	$in =~ s/([a-zA-Z])([^a-zA-Z0-9 \t\n\-]+)([A-Za-z])/$1$2 $3/g; #The colonial area laid out in grid pattern during the [mid19th] century holds remnants of the raj era.(Added by Mahalaxmi, 0-9 in the second expression)
+	$in =~ s/([a-zA-Z0-9])([\(\[\{]+)([0-9A-Za-z])/$1 $2$3/g;#Q3/2008 mobile phone production market part Q3/2008 in that nokia is biggest part in mobile phone production with 39.4% after that samsung [17.3%], sony ericsson[8.6%] , motorola[8.5%]and LG electronics[7.7%] took place.
+	$in =~ s/([a-zA-Z0-9])([\)\]\}]+)([0-9A-Za-z])/$1$2 $3/g;#Q3/2008 mobile phone production market part Q3/2008 in that nokia is biggest part in mobile phone production with 39.4% after that samsung [17.3%], sony ericsson[8.6%] , motorola[8.5%]and LG electronics[7.7%] took place.
 
 #Commenting below rule, as it creates problem at (X, Y, Z) pattern in this sentence. by Roja(15-08-12)
 #Ex. The center of mass of such a system is at (X, Y, Z), where (7.4 a) (7.4 b) and (7.4 c) Here M = is the total mass of the system.
@@ -82,6 +84,7 @@ while($in = <STDIN>){
 	$in =~ s/^([^a-zA-Z0-9]+)[ \t]+([a-zA-Z0-9])/$1$2/;
 # Join DANGLING punctuation marks to the left of the word in all other cases
 	$in =~ s/[ \t]+([^a-zA-Z0-9]+)([ \t]+)([a-zA-Z0-9])/$1$2$3/g;
+	$in =~ s/([^a-zA-Z0-9]+)([ \t]+)([^a-zA-Z0-9])([ \t]+)/$1$3$4/g;#Q3/2008 mobile phone production market part Q3/2008 in that nokia is biggest part in mobile phone production with 39.4% after that samsung [17.3%], sony ericsson[8.6%] , motorola[8.5%]and LG electronics[7.7%] took place.
 	$in =~ s/[ \t]+([^a-zA-Z0-9]+)$/$1/g;
 	$in =~ s/([a-zA-Z0-9]+)-([ \t])/$1 - $2/g;
 

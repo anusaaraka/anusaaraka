@@ -12,8 +12,28 @@ for line in xrange(len(f)):
 	for word in wordlist:
  	  if (word.startswith('@') or word.startswith('\@') or word.startswith('PUNCT-OpenParen\@')) and (('-' in word) or ('.' in word)) and ('.'  not in word[-1]) and ('SYMBOL' not in word):
             wrd = word.split('-')
+	    c = 0
+	    each_item = ''
+	    for each_item in wrd:
+		#if '.' in each_item and not each_item.endswith('.') :
+		if '.' in each_item :
+			each_item_lst = each_item.split('.')
+			if len(each_item_lst) > 1 and each_item_lst[-1] != '@':
+				each_item =  '.@'.join(each_item_lst)
+				wrd[c] = each_item
+		c += 1
             new_wrd = '-@'.join(wrd)
             wordlist.insert(wordlist.index(word), new_wrd)
             wordlist.remove(word)
         new_list = ' '.join(wordlist)
-        fw.write('%s\n' %  new_list)
+	pre_char = ''
+	cur_char = ''
+	new_str = ''
+	for char in new_list:
+		pre_char = cur_char
+		cur_char = char	
+		if pre_char =='@' and cur_char == '@' :
+			pass
+		else:
+			new_str = new_str + char
+        fw.write('%s\n' %  new_str)

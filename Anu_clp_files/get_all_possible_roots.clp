@@ -12,10 +12,10 @@
  (defrule getting_root_with_word
  (declare (salience 100))
  (id-original_word ?id ?org_wrd)
- ?f1<-(id-root  ?id ?rev_rt)
+ (id-root  ?id ?rev_rt)
  ?f<-(word-morph (original_word ?org_wrd)(root ?rt))
  =>
-    (retract ?f ?f1)
+    (retract ?f)
     (assert (id-word-pref_root-all_roots  ?id  ?org_wrd  ?rev_rt ?rt))
  )
 ;--------------------------------------------------------------------------------------------------------------------

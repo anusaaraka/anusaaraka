@@ -1,6 +1,8 @@
-rm $HOME_anu_test/debugging/sentence_debug/*
+ cd $HOME_anu_test/debugging/sentence_debug/
+ rm *.clp *.dat *.bat
+ rm debug.mm y.* lex.yy.c constituency_parse
  
-cp $HOME_anu_test/Anu_clp_files/agreement.clp $HOME_anu_test/debugging/agreement_debug.clp $HOME_anu_test/debugging/run_agreement_debug.bat  $HOME_anu_test/debugging/sentence_debug/.
+ cp $HOME_anu_test/Anu_clp_files/agreement.clp $HOME_anu_test/debugging/agreement_debug.clp $HOME_anu_test/debugging/run_agreement_debug.bat  $HOME_anu_test/debugging/sentence_debug/.
 
  echo -e "agreement_debug.dat\nEnglish_sentence.dat\nword.dat\nglobal_path.clp" > $HOME_anu_test/debugging/sentence_debug/dat
 

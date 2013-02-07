@@ -1,5 +1,27 @@
 (defglobal ?*id_count* = 1)
 
+(deffunction remove_character(?char ?str ?replace_char)
+                        (bind ?new_str "")
+                        (bind ?index (str-index ?char ?str))
+                        (if (neq ?index FALSE) then
+                        (while (neq ?index FALSE)
+                        (bind ?new_str (str-cat ?new_str (sub-string 1 (- ?index 1) ?str) ?replace_char))
+                        (bind ?str (sub-string (+ ?index 1) (length ?str) ?str))
+                        (bind ?index (str-index ?char ?str))
+                        )
+                        )
+                (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
+;Ex: 3@SYMBOL-DOT1
+(deffunction remove_@(?word)
+	(bind ?index (str-index "@" ?word))
+        (bind ?str (sub-string 1 (- ?index 1) ?word) )
+        (bind ?str1 (sub-string (+ ?index 1) (length ?word) ?word))
+        (bind ?nword (explode$ (str-cat ?str ?str1)))
+        (bind ?nword (remove_character "-" (implode$ (create$  ?nword)) " "))
+)
+ ;-----------------------------------------------------------------------------------------------------------------------
 (defrule change_id
 (declare (salience 1000))
 ?f<-(man_id-word-cat	?id	?word	?cat)
@@ -40,14 +62,27 @@
 (test (eq (member$ ?word (create$ @PUNCT-OpenParen @PUNCT-Comma @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-DoubleQuote @PUNCT-DoubleQuote @PUNCT-Semicolon @PUNCT-Colon @PUNCT-SingleQuote @PUNCT-OpenParen @PUNCT-ClosedParen @PUNCT-Exclamation @SYM-Dollar)) FALSE))
 (not (id_mng_modified ?id))
 =>
-	(bind ?index (str-index "@" ?word))
-	(bind ?str (sub-string 1 (- ?index 1) ?word) )
-	(bind ?str1 (sub-string (+ ?index 1) (length ?word) ?word))
-	(bind ?nword (explode$ (str-cat ?str ?str1)))
+	(bind ?nword (remove_@ ?word))
         (assert (man_id-word-cat ?id ?nword ?cat))
 	(assert (id_mng_modified ?id))
 )
-
+;------------------------------------------------------------------------------------------------------------------
+;Let us first consider the simple case in which an object is stationary, e.g. a car standing still at x SYMBOL-EQUAL-TO1 40 m .. 
+;Generated root for the words containing '@' Ex : @SYMBOL-EQUAL-TO
+(defrule del_@_from_shallow_root
+(declare (salience 100))
+?f<-(id-node-word-root ?id ?node ?word - ?root)
+(test (neq (str-index "@" (implode$ (create$ ?root))) FALSE))
+(test (eq (member$ ?root (create$ @PUNCT-OpenParen @PUNCT-Comma @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-DoubleQuote @PUNCT-DoubleQuote @PUNCT-Semicolon @PUNCT-Colon @PUNCT-SingleQuote @PUNCT-OpenParen @PUNCT-ClosedParen @PUNCT-Exclamation @SYM-Dollar)) FALSE))
+(not (id_root_modified ?id))
+=>
+	(retract ?f)
+	(bind ?nword (remove_@ ?word))
+	(bind ?nroot (remove_@ ?root))
+        (assert (id-node-word-root ?id ?node ?nword - ?nroot))
+        (assert (id_root_modified ?id))
+)
+;------------------------------------------------------------------------------------------------------------------
 (defrule get_remaining_facts
 (declare (salience 10))
 (manual_id-word-cat ?id ?word ?cat)
@@ -56,4 +91,5 @@
 	(assert (man_id-word-cat ?id ?word ?cat))
         (assert (id_mng_modified ?id))
 )
+;------------------------------------------------------------------------------------------------------------------
 

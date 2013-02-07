@@ -2,10 +2,14 @@
  sort -u $1/$2_tmp/proper_nouns_list > $1/$2_tmp/proper_nouns_list_sort 
  mv $1/$2_tmp/proper_nouns_list_sort $1/$2_tmp/proper_nouns_list
  sh transliteration-script.sh $1/$2_tmp proper_nouns_list 2> /dev/null
- 
+
+#Added below two commands by Roja(04-02-13). I.M.E of Hindi writers (Development park). 
+ sed 's/[-]/-@/g' $1/$2_tmp/proper_nouns_list | sed 's/[.]/\.@/g'> $1/$2_tmp/proper_nouns_list1
+ mv $1/$2_tmp/proper_nouns_list1 $1/$2_tmp/proper_nouns_list
+
  wx_utf8 < $1/$2_tmp/proper_nouns_list.wx > $1/$2_tmp/proper_nouns_list.utf8
 # paste $1/$2_tmp/proper_nouns_list $1/$2_tmp/proper_nouns_list.wx |sed 's/\(.*\)\t\(.*\)/@PropN-\1-PropN\t\2/g'|uniq  > $1/$2_tmp/proper_nouns.txt
- paste $1/$2_tmp/proper_nouns_list $1/$2_tmp/proper_nouns_list.utf8 |sed 's/\(.*\)\t\(.*\)/@PropN-@\1-@PropN\t\2/g'|uniq  > $1/$2_tmp/proper_nouns_utf8.txt
+ paste $1/$2_tmp/proper_nouns_list $1/$2_tmp/proper_nouns_list.utf8 |sed 's/\(.*\)\t\(.*\)/@PropN-@\1@-@PropN\t\2/g'|uniq  > $1/$2_tmp/proper_nouns_utf8.txt
 
   
  echo "sed 's/dummy_sed//g' < \$1 " > $1/$2_tmp/dummy_sed_fact
@@ -16,5 +20,4 @@
  cat $1/$2_tmp/dummy_sed_fact $1/$2_tmp/proper_nouns_utf8_tmp.txt |tr '\n' ' ' >  $1/$2_tmp/proper_nouns_utf8_tmp.sh
 
  sed "s/\./\\\./g"  $1/$2_tmp/proper_nouns_utf8_tmp.sh   > $1/$2_tmp/proper_nouns_utf8.sh
- rm $1/$2_tmp/proper_nouns_list.utf8 $1/$2_tmp/proper_nouns_utf8.txt $1/$2_tmp/dummy_sed_fact $1/$2_tmp/proper_nouns_utf8_tmp.txt $1/$2_tmp/proper_nouns_list_tmp-clean-word $1/$2_tmp/proper_nouns_list_intermediate_out $1/$2_tmp/proper_nouns_utf8_tmp.sh 
- #rm $1/$2_tmp/proper_nouns_list.utf8 $1/$2_tmp/proper_nouns_utf8.txt $1/$2_tmp/dummy_sed_fact $1/$2_tmp/proper_nouns.txt $1/$2_tmp/proper_nouns_tmp.txt $1/$2_tmp/proper_nouns_utf8_tmp.txt $1/$2_tmp/proper_nouns_list_tmp-clean-word $1/$2_tmp/proper_nouns_list_intermediate_out 
+ #rm $1/$2_tmp/proper_nouns_list.utf8 $1/$2_tmp/proper_nouns_utf8.txt $1/$2_tmp/dummy_sed_fact $1/$2_tmp/proper_nouns_utf8_tmp.txt $1/$2_tmp/proper_nouns_list_tmp-clean-word $1/$2_tmp/proper_nouns_list_intermediate_out $1/$2_tmp/proper_nouns_utf8_tmp.sh 

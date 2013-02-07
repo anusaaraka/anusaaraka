@@ -4168,7 +4168,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  36. Updated in changes_in_databases
  37. Updated Log
 
- 31-01-13
+ 07-02-13
  ========
  1. hindi_meaning.clp
         Removed  : get_mng_from_phy_dic_with_diff_cat
@@ -4197,13 +4197,15 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	4. Modified the paths for get_anu_grp_mng, get_dbase_mng, get_man_grp_mng, and manual_lwg modules
 	5. Renamed manual_group_mng.dat as manual_group_mng_tmp.dat in get_man_grp_mng module
         6. Loaded manual_group_mng_tmp.dat and generated manual_group_mng.dat file  in multi_word_expressions module
+	7. Added save-facts to generate "manual_punct.dat" in get_man_grp_mng module
 10. word_alignment.clp:
         Added    : root_and_vib_match_using_dic3 and lookup_man_word_in_hindi_wordnet1
         Modified : lookup_man_word_in_hindi_wordnet, exact_match_with_anu_output1 (added test condition) 
 11. get_man_grp_mng.clp :
         Added    : modifiy_root, check_prev_word_of_kara_in_dic and check_prev_word_of_kara
-        Modified : check_prev_word_of_kara_and_ho_with_anu, shallow_parser_correction_rule and get_grp_info 
-12. Added "@" in the word list pattern of get_tam_info.lex
+        Modified : check_prev_word_of_kara_and_ho_with_anu, shallow_parser_correction_rule, get_grp_info,  
+		   delete_lt_rt_punc, delete_right_punc and delete_left_punc
+12. Added "@" and "-" in the word and root list pattern of get_tam_info.lex
 13. Modified multi_word0, ke_[word], single_vib2 and verb_grouping rules in manual_lwg.clp
 14. Added get_grp_info1.clp, prepare_minion_input1.clp and run_H_gen_minion1.bat files to re_execute the sentences.
 15. Moved the following files from miscellaneous/SMT/alignment  to  miscellaneous/SMT/MINION/alignment/
@@ -4227,40 +4229,55 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         get_txt_files.sh
         dic_compile.sh
         anu_compile.sh
-22. In chk_input_format.pl added new pattern to handle semicolon movement to the right position[Ex. sound ; (Ultimately] 
-23. Modified ';' and '/' rule in  miscellaneous/SMT/MINION/alignment/mapping-symbols_manual.lex to avoid errors.
-24. Added sentence_debug along with README in debugging folder
-25. Added reranking-parser-2011-12-17.tgz in Parsers folder
-26. Added Anusaaraka_reranked_johnson.sh Anusaaraka_reranked_johnson_minion.sh in bin
-27. Added reranked-johnson_verified ( 442 ) and reranked-johnson_ver_out in Anu_outputs
-28. In sd_lwg_rules.clp, added AUX, AUXG nodes in replace_nodes rule.
-29. Added AUX, AUXG tokens in constituency_parse.l to avoid syntax errors
-30. Added code to untar and make reranking-parser-2011-12-17.tgz in anu_compile.sh
-31. Added code to remove reranking-parser folder in remove_out-files.sh
-32. In Anusaaraka_stanford.sh, modified one_sentence_per_line.txt.std.penn_tmp1 to one_sentence_per_line.txt.std.penn_tmp_1
-33. prepare_apertium_input.clp
+22. In chk_input_format.pl :
+	added new pattern to handle semicolon movement to the right position[Ex. sound ; (Ultimately] 
+	To handle punctuations movement correctly added few patterns.
+23. Added sentence_debug along with README in debugging folder
+24. Added reranking-parser-2011-12-17.tgz in Parsers folder
+25. Added Anusaaraka_reranked_johnson.sh Anusaaraka_reranked_johnson_minion.sh in bin
+26. Added reranked-johnson_verified ( 442 ) and reranked-johnson_ver_out in Anu_outputs
+27. In sd_lwg_rules.clp, added AUX, AUXG nodes in replace_nodes rule.
+28. Added AUX, AUXG tokens in constituency_parse.l to avoid syntax errors
+29. Added code to untar and make reranking-parser-2011-12-17.tgz in anu_compile.sh
+30. Added code to remove reranking-parser folder in remove_out-files.sh
+31. In Anusaaraka_stanford.sh, modified one_sentence_per_line.txt.std.penn_tmp1 to one_sentence_per_line.txt.std.penn_tmp_1
+32. prepare_apertium_input.clp
   	Added    : Compound_mng_with_Prep_id1
         Modified : Compound_mng_with_Prep_id, PP_pronoun_rule_with_ke, PP_rule_with_tam1
-34. WSD : Modified : go.clp
-35. Added "default_gnp_for_new_word" rule in GNP_agreement.clp
-36. Added "insert_sen_con_id" rule in H_ordering_rules.clp
-37. Renamed "mng_for_10000_id" as "mng_for_new_id" and Modified the rule accordingly in causative_verb_mng.clp
-38. Modified "combine_multiple_right_punc" and "combine_multiple_left_punc" rules in insert_punctuation.clp
-39. Opened hindi_meanings_tmp.dat and word.dat in append mode for sd_pada module in run_modules_std.bat
-40. Added "assert_10001_pada" rule in sd_pada.clp
-41. multi_word_expressions.clp
+33. WSD : Modified : go.clp
+34. Added "default_gnp_for_new_word" rule in GNP_agreement.clp
+35. Added "insert_sen_con_id" rule in H_ordering_rules.clp
+36. Renamed "mng_for_10000_id" as "mng_for_new_id" and Modified the rule accordingly in causative_verb_mng.clp
+37. Modified "combine_multiple_right_punc" and "combine_multiple_left_punc" rules in insert_punctuation.clp
+38. Opened hindi_meanings_tmp.dat and word.dat in append mode for sd_pada module in run_modules_std.bat
+39. Added "assert_10001_pada" rule in sd_pada.clp
+40. multi_word_expressions.clp
         Modified :  get_mng             Added    :  modify_grp and modify_grp1
-42. Modified run_modules_link.bat and run_modules_std.bat to rename
+41. Modified run_modules_link.bat and run_modules_std.bat to rename
         "hindi_meanings_tmp1.dat"       as      "hindi_meanings_with_grp_ids_tmp.dat"
         "hindi_meanings.dat"            as      "hindi_meanings_tmp1.dat"
     in hindi_meaning module
-43. Modified run_sentence_stanford.sh , run_sentence_stanford_minion.sh and run_sentence_link.sh to rename
+42. Modified run_sentence_stanford.sh , run_sentence_stanford_minion.sh and run_sentence_link.sh to rename
         "hindi_meanings_tmp1.dat"               as "hindi_meanings.dat" and
         "hindi_meanings_with_grp_ids_tmp.dat"   as "hindi_meanings_with_grp_ids.dat"
-44. Modified run_H_gen_sen.bat and run_H_gen_minion.bat to rename 
+43. Modified run_H_gen_sen.bat and run_H_gen_minion.bat to rename 
 	"hindi_meanings_tmp1.dat"  as "hindi_meanings_with_grp_ids.dat"
-45. Updated abbrevations.lex
-46. Updated the following files :
+	 "hindi_sentence.dat"      as "hindi_sentence_tmp.dat"
+44. Accordingly updated above files in abbr.sh, run_sentence_stanford.sh, run_sentence_stanford_minion.sh and run_sentence_link.sh
+45. In change_manual_id.clp, added deffunctions remove_character and remove_@ and
+                             added del_@_from_shallow_root rule.
+46. Modified stanford parser path in anu_compile.sh, remove_out-files.sh, Anusaaraka_stanford.sh, Anusaaraka_reranked_johnson.sh, run_stanford-gui-factored.sh and run_stanford-gui-pcfg.sh 
+47. Modified 'getting_root_with_word' in get_all_possible_roots.clp to get all the roots of a word.
+48. Modified add-@_in-hindi_sentence.py and run_transliteration.sh to handle patterns like @PropN-i.m.e-PropN etc.
+49. Modified sed commands in run_align_browser.sh and ClipsToAnu_browser_intfc.sh to handle symbols.
+50. Modified 'kispotoM as visPotoM in phy_align_verified_hnd and updated the same in 
+	phy_align_verified_eng_align.html  and get_word_potential_facts.clp
+51. Updated stanford parser to stanford-parser-2012-11-12 and removed stanford-parser-2010-11-30 
+52. Updated mapping-symbols.lex and mapping-symbols_manual.lex (to handle with or without spaces and modified ';' and '/')
+53. Updated GNP_debug.sh, agreement_debug.sh, lwg_debug.sh, order_debug.sh, pada_debug.sh, relation_debug.sh, wsd_debug.sh and  wsd_tam_debug.sh
+54. Updated stanford-parser README
+55. Updated abbrevations.lex
+56. Updated the following files :
 	miscellaneous/SMT/alignment/dictionaries/inferred_dic.txt
         miscellaneous/SMT/alignment/dictionaries/phy_dictionary.txt
         miscellaneous/SMT/alignment/dictionaries/provisional_PropN_dic.txt
@@ -4273,8 +4290,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_eng_align.html
         miscellaneous/SMT/MINION/alignment/alignment.bat
 	miscellaneous/SMT/MINION/alignment/get_group_mng.sh
-47. Updated changes_in_databases
-48. Updated miscellaneous/SMT/MINION/alignment/README
-49. Updated shell_scripts/remove_out-files.sh
-50. Updated sd_verified (489)
-51. Updated Log.
+57. Updated changes_in_databases
+58. Updated miscellaneous/SMT/MINION/alignment/README
+59. Updated shell_scripts/remove_out-files.sh
+60. Updated sd_verified (489) and sd_ver_output
+61. Updated Log.

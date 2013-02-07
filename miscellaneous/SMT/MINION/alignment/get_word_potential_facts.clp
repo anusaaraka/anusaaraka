@@ -85,7 +85,7 @@
         (assert (man_id-word-possible_mngs ?mid $?mng $?dic_list))
 )   
 ;------------------------------------------------------------------------------------------------------------
-;yaha vahI UrjA hE jo nABikIya Sakwi janana waWA nABikIya kispotoM meM mukwa howI hE
+;yaha vahI UrjA hE jo nABikIya Sakwi janana waWA nABikIya visPotoM meM mukwa howI hE
 ;This is the energy which is released in a nuclear power generation and nuclear explosions.
 ;The reflected ray simply retraces the path. -- parAvarwiwa kiraNa kevala [apanA] paWa punaH anureKiwa karawI hE .
 ;Imagine the world without a pair of functional eyes. -- jarA [isa] saMsAra kI kalpanA binA kriyAwmaka newroM ke yugala ke kIjie.
@@ -337,7 +337,7 @@
 ;)
 
 
-;This is the energy which is released in a nuclear power generation and nuclear explosions. --- yaha vahI UrjA hE jo nABikIya Sakwi janana waWA nABikIya kispotoM meM mukwa howI hE ---
+;This is the energy which is released in a nuclear power generation and nuclear explosions. --- yaha vahI UrjA hE jo nABikIya Sakwi janana waWA nABikIya visPotoM meM mukwa howI hE ---
 ;The reflected ray simply retraces the path. -- parAvarwiwa kiraNa kevala [apanA] paWa punaH anureKiwa karawI hE .
 ;Imagine the world without a pair of functional eyes. -- jarA [isa] saMsAra kI kalpanA binA kriyAwmaka newroM ke yugala ke kIjie.
 ;This is a situation where the principle of conservation of angular momentum is applicable. 

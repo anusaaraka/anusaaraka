@@ -15,7 +15,7 @@
  rm -rf link-grammar-4.5.7
 
  echo "Removing stanford out files"
- cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
+ cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2012-11-12/
  rm *.out
  rm lex.yy.c
 

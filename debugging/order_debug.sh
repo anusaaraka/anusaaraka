@@ -1,6 +1,8 @@
-rm $HOME_anu_test/debugging/sentence_debug/*
+ cd $HOME_anu_test/debugging/sentence_debug/
+ rm *.clp *.dat *.bat
+ rm debug.mm y.* lex.yy.c constituency_parse
 
-cp $HOME_anu_test/debugging/order_debug.clp $HOME_anu_test/debugging/run_order_debug.bat  $HOME_anu_test/debugging/sentence_debug/.
+ cp $HOME_anu_test/debugging/order_debug.clp $HOME_anu_test/debugging/run_order_debug.bat  $HOME_anu_test/debugging/sentence_debug/.
 
 echo -e "global_path.clp\npada_info.dat\nEng_id_order.dat\nword.dat\nhin_order_debug.dat" >> $HOME_anu_test/debugging/sentence_debug/dat
 

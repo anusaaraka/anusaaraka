@@ -40,13 +40,13 @@
 
  cat linkage_count
 
- sh $HOME_anu_test/bin/abbr.sh  
+ sh $HOME_anu_test/bin/abbr.sh   
 
- python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  hindi_sentence.dat hindi_sentence_tmp.dat
- cp hindi_sentence1.dat  hindi_sentence.dat
+ python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  hindi_sentence_tmp1.dat hindi_sentence_tmp2.dat
 
+ cat  hindi_sentence_tmp2.dat |  sed -e 's/\\@//g' | sed 's/@//g'  > hindi_sentence.dat
  cat  hindi_sentence.dat
- 
+
  grep -B2 "FALSE" $1.error >> errors.txt
  cat errors.txt
 
