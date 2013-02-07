@@ -12,13 +12,9 @@ FILE *fp;
 %}
 
 %%
-[ ]*[;][ ]*	{       
-			if(yytext[yyleng-1]==' ') {
-				printf(" @punctSEMICOLON1 ");
-        		        fprintf(fp, "@punctSEMICOLON1 	PUNCT-Semicolon1\n"); }
-			else if(yytext[yyleng-1]!=' ') {
-				printf(" @punctSEMICOLON2 ");
-        		        fprintf(fp, "@punctSEMICOLON2	PUNCT-Semicolon2\n"); }
+[;]	{       
+				printf(" @punctSEMICOLON ");
+        		        fprintf(fp, "@punctSEMICOLON	PUNCT-Semicolon1\n"); 
 /*        }
 [ ]*nonascii[ ]*	{ 
 			if(yytext[yyleng-1]==' ') {	
@@ -28,21 +24,13 @@ FILE *fp;
 				printf(" @punctSEMICOLON1 ");
         		        fprintf(fp, "@punctSEMICOLON1	PUNCT-Semicolon1\n"); } */
         }
-[ ]*\([ ]*	{	
-			if(yytext[yyleng-1]==' ') {
-				printf(" @punctOPENPAREN1 ");
-				fprintf(fp, " @punctOPENPAREN1 	PUNCT-OpenParen1\n"); }
-			else if(yytext[yyleng-1]!=' ') {
-				printf(" @punctOPENPAREN2 ");
-        		        fprintf(fp, " @punctOPENPAREN2	PUNCT-OpenParen2\n"); }
+\(	{	
+				printf(" @punctOPENPAREN ");
+				fprintf(fp, "@punctOPENPAREN	PUNCT-OpenParen \n"); 
 	}
-[ ]*\)[ ]*	{	
-			if(yytext[yyleng-1]==' ') {
-				printf(" @punctCLOSEPAREN1 ");
-				fprintf(fp, "[ ]*@punctCLOSEPAREN1 	PUNCT-ClosedParen1\n"); }
-			else if(yytext[yyleng-1]!=' ') {
-				printf(" @punctCLOSEPAREN2 ");
-        		        fprintf(fp, "@punctCLOSEPAREN2	PUNCT-ClosedParen2\n"); }
+\)	{	
+				printf(" @punctCLOSEPAREN ");
+				fprintf(fp, "@punctCLOSEPAREN	PUNCT-ClosedParen\n");
 	}
 [ ]*¡[ ]*	{	
 			if(yytext[yyleng-1]==' ') {
