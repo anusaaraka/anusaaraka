@@ -84,7 +84,7 @@
 )
 ;---------------------------------------------------------------------------------------------------------------
 ;The path [twists and turns] for the next half mile. --- agale AXe mIla waka rAswA iXarauXara [mudawA hE].
-(defrule get_phrase_with_tam1
+(defrule get_phrase_with_tam2
 (declare (salience 9))
 (pada_info (group_head_id ?hid)(group_ids $?ids) (H_tam ?tam))
 (id-node-tam ?mid ? ?tam&~0&~yA)
