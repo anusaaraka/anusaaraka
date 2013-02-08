@@ -376,7 +376,7 @@ FILE *fp;
 
 				s1=strchr(yytext, '.')+1;
 				printf("%s@symbolDOT%s", str, s1);
-				fprintf(fp, " @symbolDOT	SYMBOL-DOT\n");
+				fprintf(fp, "@symbolDOT	SYMBOL-DOT\n");
 			}	
 
 %%
