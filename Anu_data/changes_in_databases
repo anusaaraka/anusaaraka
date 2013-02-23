@@ -143,6 +143,8 @@
 	"kalpanA "	  f	 Added by Manju Suggested by Rajini (11-02-12)
 	"saMkalpanA"      f 	 Added by Manju Suggested by Rajini (11-02-12)
 	"janasaBA"        f	 Added by Roja  Suggested by Chaitanya Sir (11-08-12)
+	"wiWI"	f		 Added by Roja  Suggested by Sukhada (23-02-13) Ex: A record date has not been set.
+	
   3. Removed :
 	"mana"   (19-11-09)   Suggested by sheetal Eg: The big question on everybody's mind is who killed OJ .
         "vAlA"   (24-11-09)   Suggested by Meenaji Eg: Which one is right for me ?  
@@ -708,6 +710,7 @@ Removed::
 	organized       -::saMgaTiwa	(Suggested by Rajini(29-02-12))
 	yellow-card     noun::^	(Suggested by Rajini(29-02-12))
         the_UNDIFINED   -->   English	(Maha Laxmi 14-08-12)
+	fix_verb	sWapiwa_kara  (Suggested by Chaitanya Sir 23-02-13)
 
  changes in preposition.txt
  ==========================

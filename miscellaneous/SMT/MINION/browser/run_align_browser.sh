@@ -14,7 +14,7 @@
  #sed 's/@SYMBOL/SYMBOL/g'  $3/tmp/$2_tmp/$2_align_tmp3.html | sed 's/ SYMBOL/SYMBOL/g' | sed 's/ \///g'  | sed "s/\([_>'\"]\)SYMBOL/\1 SYMBOL/g" | sed "s/SYMBOL-\([A-Z\-]*\)/SYMBOL-\1 /g"  | sh $3/tmp/$2_tmp/Symbols.sh > $3/tmp/$2_tmp/$2_align_tmp4.html
 
 ### sed 's/@SYMBOL/SYMBOL/g'  $3/tmp/$2_tmp/$2_align_tmp3.html | sed 's/ \///g'  | sed "s/\([_>'\"]\)SYMBOL/\1 SYMBOL/g" | sed "s/SYMBOL-\([A-Z\-]*\)/SYMBOL-\1 /g"  | sed 's/SYMBOL-DOT /SYMBOL-DOT/g' | sed 's/^SYMBOL/ SYMBOL/g' | sh $3/tmp/$2_tmp/Symbols.sh > $3/tmp/$2_tmp/$2_align_tmp4.html
- sed 's/@SYMBOL/SYMBOL/g'  $3/tmp/$2_tmp/$2_align_tmp3.html | sed "s/\([_>'\"]\)SYMBOL/\1 SYMBOL/g" | sed "s/SYMBOL-\([A-Z12\-]*\)/SYMBOL-\1 /g"  | sed 's/SYMBOL-DOT /SYMBOL-DOT/g' | sed 's/^SYMBOL/ SYMBOL/g' | sh $3/tmp/$2_tmp/Symbols.sh > $3/tmp/$2_tmp/$2_align_tmp4.html
+ sed 's/@SYMBOL/SYMBOL/g'  $3/tmp/$2_tmp/$2_align_tmp3.html | sed "s/\([_>'\"]\)SYMBOL/\1 SYMBOL/g" | sed "s/SYMBOL-\([A-Z0-9\-]*\)/SYMBOL-\1 /g"  | sed 's/SYMBOL-DOT /SYMBOL-DOT/g' | sed 's/^SYMBOL/ SYMBOL/g' | sh $3/tmp/$2_tmp/Symbols.sh > $3/tmp/$2_tmp/$2_align_tmp4.html
 
  sh $3/tmp/$2_tmp/proper_nouns_utf8.sh $3/tmp/$2_tmp/$2_align_tmp4.html > $4/$2_align.html
  

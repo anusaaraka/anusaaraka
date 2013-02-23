@@ -4306,3 +4306,18 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 64. Updated shell_scripts/remove_out-files.sh
 65. Updated sd_verified (489) and sd_ver_output
 66. Updated Log.
+
+ 23-02-13
+ ========
+ 1. Added get_adv-prep_dic.sh to get entries of adverb and prepositions in default-iit-bombay-shabdanjali-dic.txt
+ 2. Added remove_dup_entry.py in miscellaneous/SMT/MINION/alignment/ for above purpose.
+ 3. Added code to run get_adv-prep_dic.sh and creating adv_prep_dictionary.gdbm in dic_compile.sh
+ 4. Added '{','}','[',']' in word.c and accordingly updated in replace-abbrevations.sh
+ 5. Added 'Ill.' in abbrevations.lex
+ 6. In mapping-punctuations.lex, instead of handling each pattern separately, separated punctuation head and punctuation.
+ 7. Updated changes_in_databases
+ 8. Updated iit-bombay.dict in goldendict
+ 9. Updated shabdanjali.dict.dz in goldendict
+10. Updated mapping-symbols_manual.lex
+11. Updated run_align_browser.sh and ClipsToAnu_browser_intfc.sh
+12. Updated Log

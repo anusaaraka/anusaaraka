@@ -14,7 +14,7 @@ FILE *fp;
 %%
 [;]	{       
 				printf(" @punctSEMICOLON ");
-        		        fprintf(fp, "@punctSEMICOLON	PUNCT-Semicolon1\n"); 
+        		        fprintf(fp, "@punctSEMICOLON	PUNCT-Semicolon\n"); 
 /*        }
 [ ]*nonascii[ ]*	{ 
 			if(yytext[yyleng-1]==' ') {	

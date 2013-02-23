@@ -12,7 +12,7 @@ int len=0;
                                                                        str[len-2]='\0';
                                                                        printf("%sABBR-Dot\n", str);
                                                                }
-^[{\[(]*(([Jj][Aa][Nn])|([Ff][Ee][Bb])|([mM][Aa][Rr])|([Aa][Pp][Rr])|([Mm][Aa][Yy])|([Jj][Uu][Nn])|([Jj][Uu][Ll])|([Aa][Uu][Gg])|([Ss][Ee][Pp])|([Oo][Cc][Tt])|([Nn][Oo][Vv])|([Dd][Ee][Cc])|distt|([a-z]))[.][ ,] {*str='\0';
+^[{\[(]*(([Jj][Aa][Nn])|([Ff][Ee][Bb])|([mM][Aa][Rr])|([Aa][Pp][Rr])|([Mm][Aa][Yy])|([Jj][Uu][Nn])|([Jj][Uu][Ll])|([Aa][Uu][Gg])|([Ss][Ee][Pp])|([Oo][Cc][Tt])|([Nn][Oo][Vv])|([Dd][Ee][Cc])|distt|Ill|([a-z]))[.][ ,] {*str='\0';
                                                                        len=strlen(yytext);
                                                                        strncpy(str,yytext,len-2);
                                                                        str[len-2]='\0';
@@ -21,7 +21,7 @@ int len=0;
 								       else
                                                                        printf("%sABBR-Dot ", str);
                                                                }
-[{\[( ]+(([Jj][Aa][Nn])|([Ff][Ee][Bb])|([mM][Aa][Rr])|([Aa][Pp][Rr])|([Mm][Aa][Yy])|([Jj][Uu][Nn])|([Jj][Uu][Ll])|([Aa][Uu][Gg])|([Ss][Ee][Pp])|([Oo][Cc][Tt])|([Nn][Oo][Vv])|([Dd][Ee][Cc])|([Ee][Qq][Ss]?)|distt|([a-z]))[.][ ,] {*str='\0';
+[{\[( ]+(([Jj][Aa][Nn])|([Ff][Ee][Bb])|([mM][Aa][Rr])|([Aa][Pp][Rr])|([Mm][Aa][Yy])|([Jj][Uu][Nn])|([Jj][Uu][Ll])|([Aa][Uu][Gg])|([Ss][Ee][Pp])|([Oo][Cc][Tt])|([Nn][Oo][Vv])|([Dd][Ee][Cc])|([Ee][Qq][Ss]?)|distt|Ill|([a-z]))[.][ ,] {*str='\0';
                                                                        len=strlen(yytext);
                                                                        strncpy(str,yytext,len-2);
                                                                        str[len-2]='\0';
