@@ -1,6 +1,7 @@
 Pre-proccessing manual file ...
 Running Shallow Parser ...
 Generating canonical form for Shallow Parser Output ...
+Running Full Parser ...
 Tokenizing manual sentence
 Saving Format info ...
 Saving word information
@@ -289,88 +290,188 @@ The electron, it must be noted, does not experience this force.
 awisUkRma paramANu yaha XyAna_se xeKane hogA, yaha bala anuBava_nahIM karawA hE.
 
 Hindi meaning using Stanford parser 2.70
-Maxwell unified electromagnetism and optics with the discovery that light is an electromagnetic wave. 
-PropN-maxwell-PropN ne Koja ke sAWa vixyuwa cumbakawva Ora prakASikI eka banAe ki prakASa vExyuwacumbakIya lahara hE.
-
-Hindi meaning using Stanford parser 2.71
 They are the conserved quantities of nature. 
 ve prakqwi ke surakRiwa raKa parimANa hEM.
 
-Hindi meaning using Stanford parser 2.72
+Hindi meaning using Stanford parser 2.71
 The familiar example is the free fall of an object under gravity. 
 jAnA-mAnA uxAharaNa guruwvAkarRaNa ke nIce eka vaswu kA mukwa pawana hE.
 
-Hindi meaning using Stanford parser 2.73
+Hindi meaning using Stanford parser 2.72
 At the other end, all kinds of violent phenomena occur in the universe all the time. 
 isake_viparIwa, saba prakAra hiMsAwmaka pariGatanA ke hara samaya viSva meM aswiwva_meM howe hEM.
 
-Hindi meaning using Stanford parser 2.74
+Hindi meaning using Stanford parser 2.73
 Besides their great simplicity and generality, the conservation laws of nature are very useful in practice too. 
 unake baDiyA ke alAvA saralawA ke alAvA Ora sAmAnyawAA ke alAvA, prakqwi ke saMrakRaNa niyama BI vyavahAra meM awyanwa upayogI hEM.
 
-Hindi meaning using Stanford parser 2.75
+Hindi meaning using Stanford parser 2.74
 The conservation laws of charge and other attributes of elementary particles can also be related to certain abstract symmetries. 
 mUla kaNoM ke mUlya Ora anya guNoM ke saMrakRaNa niyama kuCa amUrwa samamiwi se BI sambanXiwa jA sakawe hEM.
 
-Hindi meaning using Stanford parser 2.76
+Hindi meaning using Stanford parser 2.75
 For the case of rectilinear motion with uniform acceleration, a set of simple equations can be obtained. 
 ekasamAna wvaraNa se sarala_reKIya gawi ke mAmale ke lie, samuccaya sarala samIkaraNoM kA prApwa kiyA jA sakawA hE.
 
-Hindi meaning using Stanford parser 2.77
+Hindi meaning using Stanford parser 2.76
 In order to specify position, we need to use a reference point and a set of axes. 
 yaWAkrama sWiwi viSeRa_vivaraNa xene ke lie , hameM eka tippaNI noka Ora samuccaya XuriyoM kA upayoga_karane kI jarUrawa hE.
 
-Hindi meaning using Stanford parser 2.78
+Hindi meaning using Stanford parser 2.77
 The point of intersection of these three axes is called origin (O) and serves as the reference point. 
 ina wIna XuriyoM kA milane_kA binxu mUla binxu (PropN-o-PropN) bulAyA jAwA hE Ora tippaNI noka ke jEsA sevA karawA hE.
 
-Hindi meaning using Stanford parser 2.79
+Hindi meaning using Stanford parser 2.78
 The coordinates (x, y, z) of an object describe the position of the object with respect to this coordinate system. 
 eka vaswu ke nirxeSAfka (x, y, PropN-z-PropN) isa nirxeSAfka nikAya ke viRaya meM vaswu kI sWiwi varNana karawe hEM.
 
-Hindi meaning using Stanford parser 2.80
+Hindi meaning using Stanford parser 2.79
 For example, for describing motion in one dimension, we need only one axis. 
 uxAharaNa_ke liye, eka pahalU meM gawi varNana karane ke lie, hameM sirPa eka XurI kI AvaSyakawA hE.
 
-Hindi meaning using Stanford parser 2.81
+Hindi meaning using Stanford parser 2.80
 In the first case, the car moves from O to P .. 
 praWama mAmale meM, gAdI PropN-o-PropN se ko PropN-p-PropN. calawI hE.
 
-Hindi meaning using Stanford parser 2.82
+Hindi meaning using Stanford parser 2.81
 This distance is called the path length traversed by the car. 
 yaha xUrI gAdI se Ade_wiraCe jAI huI paWa lambAI bulAI jAwI hE.
 
-Hindi meaning using Stanford parser 2.83
+Hindi meaning using Stanford parser 2.82
 Such quantities are represented by vectors. 
 Ese parimANa saxiSa waka prawiniXi hue gaye hEM.
 
-Hindi meaning using Stanford parser 2.84
+Hindi meaning using Stanford parser 2.83
 Thus, it is not necessary to use vector notation for discussing motion of objects in one-dimension. 
 isa prakAra, one-dimension meM vaswu_kA gawi kI carcA karane ke lie saxiSa safkewa paxXawi kA upayoga karanA AvaSyaka nahIM hE.
 
-Hindi meaning using Stanford parser 2.85
+Hindi meaning using Stanford parser 2.84
 When an object is in motion, its position changes with time. 
 eka vaswu calAyamAna jaba hE, wo usakI sWiwi samaya ke sAWa baxalawI hE.
 
-Hindi meaning using Stanford parser 2.86
+Hindi meaning using Stanford parser 2.85
 The average velocity can be positive or negative depending upon the sign of the displacement. 
 Osawa vega visWApana ke cihna ke Upara nirBara karawA huA sakArAwmaka yA qNAwmaka ho sakawA hE.
 
-Hindi meaning using Stanford parser 2.87
+Hindi meaning using Stanford parser 2.86
 It is the average change of velocity per unit time. 
 yaha prawi ikAWa samaya vega kA Osawa parivarwana hE.
 
-Hindi meaning using Stanford parser 2.88
+Hindi meaning using Stanford parser 2.87
 Changes are always continuous. 
 parivarwana hameSA lagAwAra hEM.
 
-Hindi meaning using Stanford parser 2.89
+Hindi meaning using Stanford parser 2.88
 Free fall is thus a case of motion with uniform acceleration. 
 isa prakAra besahArA giranA ekasamAna wvaraNa se gawi kA mAmalA hE.
 
-Hindi meaning using Stanford parser 2.90
+Hindi meaning using Stanford parser 2.89
 To understand such observations, we now introduce the concept of relative velocity. 
 Ese prekRaNa samaJa hama aba ApekRa vega kI XAraNA paricaya karAwe hEM.
+
+Hindi meaning using Stanford parser 2.90
+A radium nucleus disintegrates into a nucleus of radon and an alpha particle. 
+eka eka_prakAra_kI XAwu nABika eka_prakAra_kI XAwu ke Ora yUnAnI varNamAlA ke praWama akRara kaNa ke nABika ke anxara alaga_alaga karawA hE.
+
+Hindi meaning using Stanford parser 2.91
+An important physical quantity, work, is defined as a scalar product of two vector quantities, force and displacement. 
+mahawvapUrNa BOwika rASi, kArya, xo saxiSa parimANa ke, bala kA Ora visWApana ke eka axiSa uwpAxa ke jEsA sImAfkiwa kI gayI hE.
+
+Hindi meaning using Stanford parser 2.92
+The mass of each square is 1kg, since the lamina is uniform. 
+eka eka cOka kI saMhawi 1kg, hE patala ekasamAna hE jaba se.
+
+Hindi meaning using Stanford parser 2.93
+We have so far considered refraction at a plane interface. 
+hama eka samawala milana-binxu meM apavarwana abawaka vicAra_kara cuke hEM.
+
+Hindi meaning using Stanford parser 2.94
+We shall now consider refraction at a spherical interface between two transparent media. 
+hama xo pAraxarSaka saFcAra mAXyama ke bIca eka golIya milana-binxu meM apavarwana aba vicAra karezge.
+
+Hindi meaning using Stanford parser 2.95
+The measurement of light as perceived by human eye is called photometry. 
+mAnavIya AzKa ke xvArA mahasUsa kiyA huA prakASa jEsA ki kA mApana photometry bulAyA jAwA hE.
+
+Hindi meaning using Stanford parser 2.96
+The center of mass of a system of particles will be a key concept here. 
+kaNoM ke nikAya kI saMhawi kA kenxra yahAz eka pramuKa XAraNA hogA.
+
+Hindi meaning using Stanford parser 2.97
+The block is a rigid body. 
+KaNda eka xqDa piNda hE.
+
+Hindi meaning using Stanford parser 2.98
+The rigid body here is in pure translational motion. 
+xqDa piNda yahAz SuxXa sWAnAnwarIya gawi meM hE.
+
+Hindi meaning using Stanford parser 2.99
+Here M is the total mass of the body. 
+yahAz eka hajAra piNda kI sampUrNa saMhawi hE.
+
+Hindi meaning using Stanford parser 2.100
+The center of mass C is shown in the figure. 
+Dera C kA kenxra afka meM xiKAyA huA hE.
+
+Hindi meaning using Stanford parser 2.101
+If one or more coordinates of an object change with time, we say that the object is in motion. 
+yaxi eka yA aXika samaya ke sAWa vaswu parivarwana kA saMyojana karawA hE, wo hama kahawe hEM ki vaswu calAyamAna hE.
+
+Hindi meaning using Stanford parser 2.102
+Then the distance moved by the car is OP SYMBOL-EQUAL-TO1 SYMBOL-PLUS2 360 m .. 
+waba xUrI calI gAdI se PropN-op-PropN SYMBOL-EQUAL-TO1 SYMBOL-PLUS2 hE 360 puruRa.
+
+Hindi meaning using Stanford parser 2.103
+To describe motion in two SYMBOL-SLASH three dimensions, we need a set of two SYMBOL-SLASH three axes. 
+xo SYMBOL-SLASH wIna pahaluoM meM gawi varNana kara ko, hama samuccaya xo SYMBOL-SLASH wIna XuriyoM kI jarUrawa howI hE.
+
+Hindi meaning using Stanford parser 2.104
+The velocity of an object, in general, changes during its course of motion. 
+sAmAnya_rUpa meM, eka vaswu kA, vega gawi ke usake pATyakrama ke xOrAna baxalawA hE.
+
+Hindi meaning using Stanford parser 2.105
+This was a problem even in Galileo's time. 
+yaha PropN-galileo-PropN ke samaya meM samasyA BI WA.
+
+Hindi meaning using Stanford parser 2.106
+For the v-t curve shown in Fig. 3SYMBOL-DOT7, we can obtain acceleration at every instant of time. 
+PropN-fig.-PropN 3SYMBOL-DOT7 meM xiKAI huI v-t vakra reKA ke lie, hama samaya ke prawyeka kRaNika meM wvaraNa prApwa_kara sakawe hEM.
+
+Hindi meaning using Stanford parser 2.107
+(a) An object is moving in a positive direction with a positive acceleration. 
+(-) eka vaswu eka sakArAwmaka wvaraNa se eka sakArAwmaka xiSA meM cala rahI hE.
+
+Hindi meaning using Stanford parser 2.108
+(b) An object is moving in positive direction with a negative acceleration. 
+(bI) eka vaswu eka qNAwmaka wvaraNa ke sAWa sakArAwmaka xiSA meM cala rahI hE.
+
+Hindi meaning using Stanford parser 2.109
+(c) An object is moving in negative direction with a negative acceleration. 
+(c) eka vaswu eka qNAwmaka wvaraNa ke sAWa qNAwmaka xiSA meM cala rahI hE.
+
+Hindi meaning using Stanford parser 2.110
+An infinitesimal part of a spherical surface can be regarded as planar and the same laws of refraction can be applied at every point on the surface. 
+eka golIya UparI wala kA awi sUkRma BAga planar ke jEsA mAnA jA sakawA hE Ora apavarwana ke vahI niyama UparI wala para prawyeka samaya para lAgU kie jA sakawe hEM.
+
+Hindi meaning using Stanford parser 2.111
+To obtain Eq. (7SYMBOL-DOT11) we did not need to specify the nature of the system of particles. 
+PropN-eq.-PropN (7SYMBOL-DOT11) prApwa_kara hama kaNoM ke nikAya kI prakqwi viSeRa_vivaraNa_xe.
+
+Hindi meaning using Stanford parser 2.112
+Its velocity-time graph is as shown in Fig. 3SYMBOL-DOT11. 
+usakA velocity-time grAPa PropN-fig.-PropN 3SYMBOL-DOT11 meM jEsA ki xiKAyA huA hE.
+
+Hindi meaning using Stanford parser 2.113
+In this chapter, we consider the phenomena of reflection, refraction and dispersion of light, using the ray picture of light. 
+isa aXyAya meM, hama prakASa ke kiraNa ciwra kA upayoga karawe_hue prakASa kA prawibimba kA, apavarwana kA Ora parikRepaNa kA pariGatanA, vicAra karawe hEM.
+
+Hindi meaning using Stanford parser 2.114
+With his understanding of mechanics, he could come up with a simple model of reflection and refraction. 
+yAnwrikI kI usakI samaJa ke sAWa, vaha prawibimba ke Ora apavarwana ke eka sarala namUne ke sAWa bIca_meM_A sakA.
+
+Hindi meaning using Stanford parser 2.115
+Such a dilemma does not occur in the wave picture of light. 
+esA xuviXA prakASa ke lahara ciwra meM aswiwva_meM_nahIM howI hE.
 
 Calling Transliteration
 Calling Interface related programs
@@ -380,6 +481,6 @@ No Solution Found :
 Time-out:
 0
 Solution Found :
-90
+115
 re-executed-sentences:
-10
+18

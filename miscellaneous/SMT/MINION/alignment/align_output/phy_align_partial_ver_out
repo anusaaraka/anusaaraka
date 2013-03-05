@@ -1,0 +1,46 @@
+Pre-proccessing manual file ...
+Running Shallow Parser ...
+Generating canonical form for Shallow Parser Output ...
+Running Full Parser ...
+Tokenizing manual sentence
+Saving Format info ...
+Saving word information
+Saving morph information
+Calling POS Tagger and Chunker (APERTIUM)
+Calling Stanford parser
+Finding NER... 
+Hindi meaning using Stanford parser 1.1
+Test. 
+jAzca kIjie.
+
+Hindi meaning using Stanford parser 2.1
+Similarly, static friction is important in daily life. 
+isI waraha se, sWEwika GarRaNa xEnika jIvana meM mahawvapUrNa hE.
+
+Hindi meaning using Stanford parser 2.2
+Automobiles and planes carry people from one place to the other. 
+motara-gAdI Ora samawala xUsare ko eka sWAna se logoM ko uTA_le jAwe hEM.
+
+Hindi meaning using Stanford parser 2.3
+Consider two cases of motion. 
+gawi ke xo mAmale vicAra kIjie.
+
+Hindi meaning using Stanford parser 2.4
+In the second case, the car moves from O to P and then moves back from P to Q .. 
+xUsare mAmale meM, gAdI PropN-o-PropN se PropN-p-PropN ko calawI hE Ora PropN-p-PropN se ko PropN-q-PropN. vApisa bAxa meM calawI hE.
+
+Hindi meaning using Stanford parser 2.5
+The magnitude of the displacement for a course of motion may be zero but the corresponding path length is not zero. 
+gawi ke pATyakrama ke lie visWApana kA parimANa SUnya ho sakawA hE paranwu jo_samawulya_ho paWa lambAI niSAnA sAXa hE nahIM hE.
+
+Calling Transliteration
+Calling Interface related programs
+Print minion_statistics
+No Solution Found :
+0
+Time-out:
+0
+Solution Found :
+5
+re-executed-sentences:
+0
