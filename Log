@@ -4307,7 +4307,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 65. Updated sd_verified (489) and sd_ver_output
 66. Updated Log.
 
- 23-02-13
+ 05-03-13
  ========
  1. Added get_adv-prep_dic.sh to get entries of adverb and prepositions in default-iit-bombay-shabdanjali-dic.txt
  2. Added remove_dup_entry.py in miscellaneous/SMT/MINION/alignment/ for above purpose.
@@ -4320,4 +4320,16 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  9. Updated shabdanjali.dict.dz in goldendict
 10. Updated mapping-symbols_manual.lex
 11. Updated run_align_browser.sh and ClipsToAnu_browser_intfc.sh
-12. Updated Log
+12. Added phy_align_partial_ver_out and phy_align_partial_ver_eng_align.html
+13. Renamed phy_align_ver_eng as phy_align_partial_ver_eng and phy_align_ver_hnd as phy_align_partial_ver_hnd
+14. Updated the following files
+        miscellaneous/SMT/MINION/alignment/replace_wrd_with_id.c
+        miscellaneous/SMT/MINION/dictionaries/generate_hin_multi_word_dic.sh
+        miscellaneous/SMT/MINION/dictionaries/phy_dictionary.txt
+        miscellaneous/SMT/MINION/dictionaries/phy_eng_multi_word_dic.txt
+        miscellaneous/SMT/MINION/dictionaries/provisional_root_dic.txt
+        miscellaneous/SMT/MINION/dictionaries/provisional_word_dic.txt
+        miscellaneous/SMT/MINION/dictionaries/restricted_eng_words.txt
+        miscellaneous/SMT/MINION/dictionaries/restricted_hnd_words.txt
+15. Updated Log
+

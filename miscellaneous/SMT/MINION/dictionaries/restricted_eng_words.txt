@@ -1,4 +1,4 @@
-the	vaha/isa/usa/vahI/isakA/uwanA/jiwanA/apanA/yaha/apanI/ina/apane
+the	vaha/isa/usa/vahI/isakA/isake/uwanA/jiwanA/apanA/yaha/apanI/ina/apane/usakI/usake
 a	eka/koI/prawi/kisI/eka_EsI
 an	eka/koI/prawi/kisI/eka_EsI/kisI_BI
 that	jo/isa/yaha/vaha/usa/ki/jinheM
@@ -19,7 +19,7 @@ it	yaha/vaha/isakA/usakI/isake
 of	kA/se/ke_bAre_meM/meM_kA/meM_se
 he	usane/unhoMne/vaha
 she	usane/vaha
-his	usakI/apane/usake
+his	usakI/apane/usake/unake
 we	hama/mEM/hameM/hamArA/hamane/hame/hamAre/hamArI
 you	Apa/wumheM/Apako/ApakA/Apake/Apane
 i	mEM/muje/mEMne

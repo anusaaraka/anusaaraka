@@ -15,8 +15,8 @@ kisI_BI	a/an
 hE	is/have
 apane	his/its
 apanI	the/our
-usakI	his/its
-usake	his/its
+usakI	his/its/the
+usake	his/its/the
 unakA	them
 merA	i/me
 vaha	she/he/the/her

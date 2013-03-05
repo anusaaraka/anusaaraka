@@ -703,6 +703,7 @@ Modified:
 	40.Modified real-life_adjective     vAswavika    as  real-life_adjective     vAswavika_jIvana  (Suggested by Chaitanya Sir 23-11-12) 
 	41.Modified negative_adjective      nakArAwmaka/rqNAwmaka/prawikUla/niReXAwmaka as	nakArAwmaka/qNAwmaka/prawikUla/niReXAwmaka (Suggested by Chaitanya Sir 07-12-12)
 	42. Modified scalar_UNDEFINED      _axiSa  as scalar_UNDEFINED        axiSa (Suggested by Chaitanya Sir 05-01-13)
+	43. Modified perceive_verb	meVhasUsa_kara as  mehasUsa_kara 
 			
 Removed::
 -------
@@ -776,6 +777,9 @@ Removed::
 	problems_of_interest    rocaka_samasyAez#rocaka_samasyAez#noun#1#WM 	(      "    			    )
 	living_creature 	prANI#prANI#noun#2#WM				(Suggested by Chaitanya Sir 12-12-12)
 	just_before		se_TIka_pahale#se_TIka_pahale#preposition#2#RM	(Suggested by Chaitanya Sir 22-01-13)
+	as_a_whole      	eka_ikAI_ke_rUpa_meM#eka_ikAI_ke_rUpa_meM#preposition#1#WM	( "   18-02-13      )
+	in_the_first_place      praWamawayA#praWamawayA#preposition#1#WM	(      "	18-02-13	    )
+
 
  changes in phy_dictionary.txt
  =============================
@@ -794,6 +798,7 @@ Removed::
         modified "Xx" as "xX" in the following words 
                    SuxXa_gawika, SuxXa_gawikI, prasara_koNa_xEGryavqxXi, ruxXoRma, pariSuxXawA and saMbaxXa
 	relative_noun	ApekRa		as	relative_adjective	ApekRa	(Suggested by Chaitanya Sir (05-01-13))
+	translational_adjective sWAnAMwarIya	as  	translational_adjective sWAnAMwarIya/sWAnAnwaraNa (Added by Manju)
 
  changes in phy_eng_multi_word_dic.txt
  =====================================
