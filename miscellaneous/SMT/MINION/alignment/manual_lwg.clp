@@ -128,7 +128,7 @@
 ?f1<-(man_id-word-cat ?id0 $?noun ?cat)
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ke ?)
-?f3<-(man_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|kAraNa ?)
+?f3<-(man_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|kAraNa|pare ?)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 =>
@@ -141,7 +141,7 @@
 ;parikRepaNa kA kAraNa yaha hE ki kisI mAXyama kA apavarwanAfka viBinna warafgaxErGyoM  @PUNCT-OpenParenvarNoM @PUNCT-ClosedParen ke lie Binna - Binna howA hE
 (defrule word_[hyphen]_word
 (declare (salience 81))
-?f1<-(man_id-word-cat ?id0 $?noun ?cat)
+?f1<-(man_id-word-cat ?id0 $?noun ?cat&~VM)
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) - SYM)
 ?f3<-(man_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w ?)
@@ -224,7 +224,7 @@
 (defrule single_vib3
 (declare (salience 65))
 ?f0<-(manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - $?vib - $?ids ?id)
-(not (id-node-word-root ?id $?))
+(test (neq $?vib 0))
 ?f1<-(man_id-word-cat ?id1&:(=(+ ?id 1) ?id1) - SYM)
 ?f2<-(man_id-word-cat ?id2&:(=(+ ?id 2) ?id2) ?w ?)
 =>

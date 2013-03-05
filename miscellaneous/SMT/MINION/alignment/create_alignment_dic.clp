@@ -21,12 +21,23 @@
 =>
 	(retract ?f0)
         (printout ?*dic_fp* ?eng_words" = "(implode$ $?man_mng) crlf)
-	(assert (root-anu_mng-man_mng ?eng_words ?h_mng - ?mapped_id))
+	(assert (id-root-anu_mng-man_mng ?aid ?eng_words ?h_mng - ?mapped_id))
+)
+;--------------------------------------------------------------------------------------------------
+;We shall, in the present chapter, consider rotational motion about a fixed axis only.
+(defrule check_for_correctness
+(declare (salience 1000))
+?f1<-(id-root-anu_mng-man_mng ?aid ?root $?mng - ?id)
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1&:(=(- ?aid 1) ?aid1) $? - ?mid $?)
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid2&:(=(+ ?aid 1) ?aid2) $? - ?mid1&:(=(+ ?mid 1) ?mid1) $?)
+?f0<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?id $?)
+=>
+	(retract ?f0 ?f1)
 )
 ;--------------------------------------------------------------------------------------------------
 (defrule check_mng_with_multi_dic
 (declare (salience 100))
-?f0<-(root-anu_mng-man_mng ?eng_words $?anu_mng - ?mid )
+?f0<-(id-root-anu_mng-man_mng ? ?eng_words $?anu_mng - ?mid )
 (hin_pos-hin_mng-eng_ids-eng_words ? $?anu_mng $? $?ids $? ?eng_words)
 (multi_word_expression-grp_ids $?word $?ids)
 (multi_word_expression-dbase_name-mng $?word ? $?root)
@@ -39,7 +50,7 @@
 ;--------------------------------------------------------------------------------------------------
 (defrule check_mng_with_dic
 (declare (salience 95))
-?f0<-(root-anu_mng-man_mng ?eng_words $?anu_mng - ?mapped_id )
+?f0<-(id-root-anu_mng-man_mng ? ?eng_words $?anu_mng - ?mapped_id )
 (manual_id-mapped_id ?mid ?mapped_id)
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?root - $? - $?)
 (id-org_wrd-root-dbase_name-mng ? ?eng_words ? ? $?root)
@@ -52,7 +63,7 @@
 ;--------------------------------------------------------------------------------------------------
 (defrule check_mng_with_dic1
 (declare (salience 90))
-?f0<-(root-anu_mng-man_mng ?eng_words $?anu_mng - ?mapped_id)
+?f0<-(id-root-anu_mng-man_mng ? ?eng_words $?anu_mng - ?mapped_id)
 (manual_id-mapped_id ?mid ?mapped_id)
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?root - $? - $?)
 (id-org_wrd-root-dbase_name-mng ? ?org_w ? ? $?root)
@@ -67,7 +78,7 @@
 ;--------------------------------------------------------------------------------------------------
 (defrule check_mng
 (declare (salience 70))
-?f0<-(root-anu_mng-man_mng ?eng_words $?anu_mng - ?mapped_id)
+?f0<-(id-root-anu_mng-man_mng ? ?eng_words $?anu_mng - ?mapped_id)
 ?f1<-(manual_id-mng ?mapped_id $?m_mng)
 =>
 	(retract ?f0 ?f1)
@@ -211,4 +222,12 @@
 	(printout ?*minion-mng-file* "========================================================================" crlf)
 	(assert (done))
 )
-
+;--------------------------------------------------------------------------------------------------
+(defrule get_alignment_facts
+(declare (salience 3))
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $? - ?mid $?mng)
+?f0<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?mng1)
+(test (neq $?mng $?mng1))
+=>
+	(retract ?f0)
+)

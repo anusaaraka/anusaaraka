@@ -259,7 +259,6 @@
  (defrule check_prev_word_of_kara_in_dic
  (declare (salience 80))
  ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF ?kar&kara ?cat ?g ?no ?p ?c ?suf)
-; ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF ?kar&ho|kara ?cat ?g ?no ?p ?c ?suf)
  ?f5<-(position-cat-man_grp_mng =(- ?id 1) ?n $? $?word - -)
  (test (neq (length $?word) 0))
  (or (root-verbchunk-tam-chunkids ? ? ? $? ?v_id)(pada_info (group_head_id ?v_id)(group_cat infinitive))(id-cat_coarse ?v_id verb))
@@ -282,6 +281,24 @@
         (assert (combine_prev_word_for_ho_id-prev_word ?id $?word kara))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
+ ; For this, we develop the concepts of velocity and acceleration.
+ ; isake lie hameM vega waWA wvaraNa kI XAraNA ko samaJanA hogA 
+ ; This uncertainty is called error. yaha aniSciwawA hI wruti kahalAwI hE 
+ ;The measurement of light as perceived by human eye is called photometry.
+ (defrule get_ho_grp_with_relation
+ (declare (salience 60))
+ (id-head-name-rel1-rel2 ?id ?root VGNF|VGF|VGNN vmod ?rel)
+ (id-head-name-rel1-rel2 ?id1&:(= (+ ?id 1) ?id1)  ?root1 ?rel ? ?)
+ ?f0<-(position-cat-man_grp_mng  ?id	 VGNF|VGF|VGNN	$?w 	-	-)
+ ?f1<-(position-cat-man_grp_mng  ?id1&:(= (+ ?id 1) ?id1) VGF	$?w1	-	-)
+ ?f2<-(head_id-grp_ids ?id $?grp)
+ ?f3<-(head_id-grp_ids ?id1&:(= (+ ?id 1) ?id1) $?grp1)
+ =>
+	(retract ?f0 ?f1 ?f2 ?f3)
+	(assert (position-cat-man_grp_mng  ?id1  VGF $?w $?w1 - -))
+	(assert (head_id-grp_ids ?id1 $?grp $?grp1))
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
  (defrule get_grp_info
  (declare (salience 50))
  (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ? ? ? ? ?suf)
@@ -302,6 +319,7 @@
  (defrule print_man_grp_mng
  (declare (salience -10))
  ?f0<-(manual_id-node-word-root-tam  ?id  ?node $?d)
+ (test (neq ?node BLK))
  =>
 	(retract ?f0 )
 	(printout ?*vb_file* "(manual_id-node-word-root-tam  " ?id "   "?node"   "(implode$ $?d) ")" crlf)

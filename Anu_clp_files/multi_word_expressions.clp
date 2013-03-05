@@ -2,39 +2,44 @@
  (if (eq 6 ?rank) then (bind $?Eng_sen (explode$ (lowcase (implode$ (create$ $?Eng_sen))))))
  (bind ?len (length $?Eng_sen))
  (loop-for-count (?i 1 ?len)
-                   (bind ?flag 1)
-                   (loop-for-count (?j ?i ?len)
-                                    (bind ?k (nth$ ?j $?Eng_sen))
-                                    (if (numberp ?k) then (bind ?k (implode$ (create$ ?k))))
-                                    (if (eq ?flag 1) then
-                                    (bind ?str ?k)
-                                    (bind $?grp_ids ?j)
-                                    (bind ?flag 0)
-                                    else
-                                    (bind ?str (str-cat ?str "_" ?k))
-                                    (bind $?grp_ids (create$ $?grp_ids ?j)))
-                                    (bind ?lkup (gdbm_lookup ?gdbm  ?str))
-                                    (if (neq ?lkup "FALSE") then
-                                        (bind ?count 1)
-                                        (while (neq (str-index "#" ?lkup) FALSE)
-                                               (if (eq ?count 1) then
-                                                   (bind ?mng (explode$ (sub-string 1 (- (str-index "#" ?lkup) 1) ?lkup))))
-                                               (if (eq ?count 3) then
-                                                    (bind ?cat (explode$ (sub-string 1 (- (str-index "#" ?lkup) 1) ?lkup))))
-                                               (if (eq ?count 4) then
-                                                    (bind ?h_id (explode$ (sub-string 1 (- (str-index "#" ?lkup) 1) ?lkup))))
-                                               (bind ?count (+ ?count 1))
-                                               (bind ?lkup (sub-string (+ (str-index "#" ?lkup) 1) (length ?lkup) ?lkup))
-                                               )
-                                        (bind ?mng_typ (explode$ ?lkup))
-					(if (eq ?gdbm "phy_eng_multi_word_dic.gdbm") then
-						(assert (ids-phy_cmp_mng-head-cat-mng_typ-priority $?grp_ids ?mng ?h_id ?cat ?mng_typ ?rank))
-					else
-						
-						(assert (ids-cmp_mng-head-cat-mng_typ-priority $?grp_ids ?mng ?h_id ?cat ?mng_typ ?rank))
-					)
-				      )
-                     )
+ 	(bind ?flag 1)
+        (loop-for-count (?j ?i ?len)
+        	(bind ?k (nth$ ?j $?Eng_sen))
+                (if (numberp ?k) then (bind ?k (implode$ (create$ ?k))))
+                (if (eq ?flag 1) then
+                	(bind ?str ?k)
+                        (bind $?grp_ids ?j)
+                        (bind ?flag 0)
+               	else
+                	(bind ?str (str-cat ?str "_" ?k))
+                        (bind $?grp_ids (create$ $?grp_ids ?j)))
+                        (bind ?lkup (gdbm_lookup ?gdbm  ?str))
+                        (if (neq ?lkup "FALSE") then
+                        	(bind ?count 1)
+                              	(while (neq (str-index "#" ?lkup) FALSE)
+                                	(if (eq ?count 1) then
+                                         	(bind ?mng (explode$ (sub-string 1 (- (str-index "#" ?lkup) 1) ?lkup))))
+                                        (if (eq ?count 3) then
+                                                (bind ?cat (explode$ (sub-string 1 (- (str-index "#" ?lkup) 1) ?lkup))))
+                                        (if (eq ?count 4) then
+                                                (bind ?h_id (explode$ (sub-string 1 (- (str-index "#" ?lkup) 1) ?lkup))))
+                                        (bind ?count (+ ?count 1))
+                                        (bind ?lkup (sub-string (+ (str-index "#" ?lkup) 1) (length ?lkup) ?lkup))
+                               	)
+                                (bind ?mng_typ (explode$ ?lkup))
+				(if (eq ?gdbm "phy_eng_multi_word_dic.gdbm") then
+					(bind ?mng (implode$ ?mng))
+					(if (neq (str-index "/" ?mng) FALSE) then
+	       					(bind ?h_mng (explode$ (sub-string  1 (- (str-index "/" ?mng) 1) ?mng)))
+        				else
+                				(bind ?h_mng  (explode$ ?mng))
+        				)
+					(assert (ids-phy_cmp_mng-head-cat-mng_typ-priority $?grp_ids ?h_mng ?h_id ?cat ?mng_typ ?rank))
+				else
+					(assert (ids-cmp_mng-head-cat-mng_typ-priority $?grp_ids ?mng ?h_id ?cat ?mng_typ ?rank))
+				)
+			)
+                )
           )
  )
  ;--------------------------------------------------------------------------------------------------------------------------

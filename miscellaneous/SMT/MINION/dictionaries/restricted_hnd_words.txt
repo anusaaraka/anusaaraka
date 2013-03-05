@@ -3,7 +3,7 @@ evaM	and
 waWA	and/plus
 yA	or
 aWavA	or
-anyaWA	or
+anyaWA	or/otherwise
 hI	only
 BI	also/too/even
 ki	that

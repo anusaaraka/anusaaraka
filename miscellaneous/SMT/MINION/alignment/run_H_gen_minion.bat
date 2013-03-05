@@ -95,7 +95,7 @@
  (assert (English-list))
  (assert (default-cat))
  (run)
- (save-facts "database_mng.dat" local id-org_wrd-root-dbase_name-mng e_tam-id-dbase_name-mng multi_word_expression-dbase_name-mng multi_word_expression-grp_ids) 
+ (save-facts "database_mng.dat" local id-org_wrd-root-dbase_name-mng e_tam-id-dbase_name-mng id-multi_word_expression-dbase_name-mng multi_word_expression-grp_ids) 
  (clear)
  ;--------------------------------------------------------------------------
  (load "global_path.clp")
@@ -111,6 +111,7 @@
  (load-facts "GNP_agmt_info.dat")
  (load-facts "cat_consistency_check.dat")
  (load-facts "manual_hin.morph.dat")
+ (load-facts "full_parser_relation.dat")
  (open  "manual_group_mng_tmp.dat" vb_fp "a")
  (run)
  (save-facts "manual_ids_tmp2.dat" local head_id-grp_ids)

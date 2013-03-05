@@ -93,7 +93,7 @@
 (defrule exact_match_using_multi_word_dic
 (declare (salience 902))
 (current_id ?mid)
-(multi_word_expression-dbase_name-mng $?e_words ? $?mng)
+(id-multi_word_expression-dbase_name-mng ? $?e_words ? $?mng)
 (multi_word_expression-grp_ids $?e_words $?aids)
 (manual_id-node-word-root-tam ?h_mid ? $?mng - $? - $?)
 (head_id-grp_ids ?h_mid ?mid $?grp)
@@ -109,7 +109,7 @@
 (defrule exact_match_using_multi_word_dic2
 (declare (salience 902))
 (current_id ?mid)
-(multi_word_expression-dbase_name-mng $?e_words ? $?mng)
+(id-multi_word_expression-dbase_name-mng ? $?e_words ? $?mng)
 (multi_word_expression-grp_ids $?e_words $?aids)
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng - $? - $? - $?ids)
 (not (prov_assignment ?aid ?mid))
@@ -528,7 +528,7 @@
 (defrule exact_match_using_multi_word_dic3
 (declare (salience 802))
 (current_id ?mid)
-(multi_word_expression-dbase_name-mng $?e_words ? $?mng)
+(id-multi_word_expression-dbase_name-mng ? $?e_words ? $?mng)
 (multi_word_expression-grp_ids $?e_words $?aids)
 (manual_id-node-word-root-tam ?h_mid ? $?pre $?mng $?pos - $? - $?)
 (head_id-grp_ids ?h_mid $?pre_id ?mid $?pos_id)
@@ -779,6 +779,7 @@
 (not (man_id-word-cat ?id1&:(member ?id1 $?grp) $?mng ?))
 ?f2<-(id-confidence_level ?mid ?conf_lvl)
 (test (subsetp $?mng $?anu_mng))
+(not (potential_assignment_vacancy_id-candidate_id ? ?id1));Thus, in this case the average speed is equal to the magnitude of the average velocity. awaH isa sWiwi meM Osawa cAla kA mAna Osawa vega ke parimANa ke barAbara hE.
 =>
         (retract ?f ?f1 ?f2)
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?grp ?id ?mid1))
@@ -790,13 +791,16 @@
 
 
 ;-------------------------------------------------------------------------------------
+;Its velocity-time graph is as shown in Fig. 3.11 -- isakA vega - samaya grAPa ciwra 3.11 meM xiKAyA gayA hE . (hyphen case)
 (defrule replace_id_with_word
-(declare (salience -500))
+(declare (salience -501))
 ?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?pre ?id $?pos)
 ?f1<-(manual_id-word-cat ?id ?h_mng ?)
+(not (mng_inserted-head ?id ?mid))
 =>
+	(assert (mng_inserted-head ?h_mng ?mid))
 	(retract ?f ?f1)
-        (if (member$ ?h_mng (create$ @PUNCT-Comma @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-DoubleQuote @PUNCT-DoubleQuote @PUNCT-Semicolon @PUNCT-Colon @PUNCT-SingleQuote @PUNCT-OpenParen @PUNCT-ClosedParen @PUNCT-Exclamation @SYM-Dollar)) then
+        (if (member$ ?h_mng (create$ @PUNCT-Comma @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-DoubleQuote @PUNCT-DoubleQuote @PUNCT-Semicolon @PUNCT-Colon @PUNCT-SingleQuote @PUNCT-OpenParen @PUNCT-ClosedParen @PUNCT-Exclamation @SYM-Dollar -)) then
 	(assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?pre $?pos))
 	else
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?pre ?h_mng $?pos)))

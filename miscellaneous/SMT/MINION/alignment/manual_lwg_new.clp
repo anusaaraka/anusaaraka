@@ -51,6 +51,7 @@
 ?f0<-(current_id ?mid)
 ?f<-(manual_id-cat-word-root-vib-grp_ids ?h_id ? $? - $? - $? - $?grp)
 (test (member$ ?mid $?grp))
+(test (eq (member$ - $?grp ) FALSE))
 =>
         (retract ?f ?f0)
 	(bind ?*count* (+ ?*count* 1))

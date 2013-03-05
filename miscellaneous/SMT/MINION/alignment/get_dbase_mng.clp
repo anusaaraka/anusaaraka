@@ -19,28 +19,68 @@
                 (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
  )
  ;--------------------------------------------------------------------------------------------------------
+ ; Modified by Shirisha Manju to add the argument dictionary type
+ ;Added by Mahalaxmi
+ (deffunction print_dic_mng(?gdbm ?word ?root ?new_mng ?dic_type)
+        (bind ?count 0)
+        (bind ?word (string-to-field ?word))
+	(if (eq (numberp ?word) FALSE) then
+		(bind ?word (remove_character "_" ?word " "))
+	)
+        (bind ?root (string-to-field ?root))
+        (bind ?gdbm (string-to-field ?gdbm))
+        (bind ?new_mng1 (create$))
+        (bind ?slh_index (str-index "/" ?new_mng))
+        (if (and (neq (length ?new_mng) 0)(neq ?slh_index FALSE)) then
+                (while (neq ?slh_index FALSE)
+                        (bind ?count (+ ?count 1))
+                        (bind ?new_mng1 (sub-string 1 (- ?slh_index 1) ?new_mng))
+                        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
+                        (bind ?new_mng1 (remove_character "-" (implode$ (create$  ?new_mng1)) " "))
+                        (if (eq ?dic_type multi) then
+                                (assert (id-multi_word_expression-dbase_name-mng ?count ?word ?gdbm ?new_mng1))
+                        else
+                                (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root ?gdbm ?new_mng1))
+                        )
+                        (bind ?new_mng (sub-string (+ ?slh_index 1) (length ?new_mng) ?new_mng))
+                        (bind ?slh_index (str-index "/" ?new_mng))
+                )
+        )
+        (bind ?new_mng1 (str-cat (sub-string 1 (length ?new_mng) ?new_mng)))
+        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
+        (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
+        (if (neq ?new_mng "") then
+                (bind ?count (+ ?count 1))
+                (if (eq ?dic_type multi) then
+                        (assert (id-multi_word_expression-dbase_name-mng ?count ?word ?gdbm ?new_mng1))
+                else
+                        (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root ?gdbm ?new_mng1))
+ 		)
+        )
+ )
+ ;--------------------------------------------------------------------------------------------------------
  ;Added by Mahalaxmi
  (deffunction mwe_lookup(?gdbm ?rank $?Eng_sen)
- (if (eq 2 ?rank) then (bind $?Eng_sen (explode$ (lowcase (implode$ (create$ $?Eng_sen))))))
- (bind ?len (length $?Eng_sen))
- (loop-for-count (?i 1 ?len)
-                   (bind ?flag 1)
-                   (loop-for-count (?j ?i ?len)
-                                    (bind ?k (nth$ ?j $?Eng_sen))
-                                    (if (numberp ?k) then (bind ?k (implode$ (create$ ?k))))
-                                    (if (eq ?flag 1) then
-                                    (bind ?str ?k)
-                                    (bind $?grp_ids ?j)
-                                    (bind ?flag 0)
-                                    else
-                                    (bind ?str (str-cat ?str "_" ?k))
-                                    (bind $?grp_ids (create$ $?grp_ids ?j)))
-                                    (bind ?lkup (gdbm_lookup ?gdbm  ?str))
-                                    (if (and (neq (length ?lkup) 0)(neq ?lkup "FALSE") (> (length (create$ $?grp_ids)) 1)) then
+ 	(if (eq 2 ?rank) then (bind $?Eng_sen (explode$ (lowcase (implode$ (create$ $?Eng_sen))))))
+ 	(bind ?len (length $?Eng_sen))
+ 	(loop-for-count (?i 1 ?len)
+        	(bind ?flag 1)
+                (loop-for-count (?j ?i ?len)
+                	(bind ?k (nth$ ?j $?Eng_sen))
+                        (if (numberp ?k) then (bind ?k (implode$ (create$ ?k))))
+                        (if (eq ?flag 1) then
+                        	(bind ?str ?k)
+                                (bind $?grp_ids ?j)
+                                (bind ?flag 0)
+                        else
+                        	(bind ?str (str-cat ?str "_" ?k))
+                                (bind $?grp_ids (create$ $?grp_ids ?j)))
+                                (bind ?lkup (gdbm_lookup ?gdbm  ?str))
+                                (if (and (neq (length ?lkup) 0)(neq ?lkup "FALSE") (> (length (create$ $?grp_ids)) 1)) then
 					(bind ?str1 ?str)
 					(if (neq ?gdbm "Physics-dictionary.gdbm") then
- 	                                    (bind ?count 1)
-					    (if (neq ?lkup "FALSE") then
+ 	                                (bind ?count 1)
+					(if (neq ?lkup "FALSE") then
 					    (while (neq (str-index "#" ?lkup) FALSE)
                                                (if (eq ?count 1) then
                                                    (bind ?mng (sub-string 1 (- (str-index "#" ?lkup) 1) ?lkup)))
@@ -53,14 +93,13 @@
                                                )
                                              )
 					else
-                                        (bind ?mng ?lkup))
-                                        (bind ?mng (remove_character "_" ?mng " "))
-                                        (bind ?str1 (remove_character "_" ?str1 " "))
-                                        (assert (multi_word_expression-dbase_name-mng (explode$ (lowcase (implode$ ?str1))) ?gdbm ?mng))
-                                        (assert (multi_word_expression-grp_ids (explode$ (lowcase (implode$ ?str1))) $?grp_ids))
+        	                        (bind ?mng ?lkup))
+					(print_dic_mng ?gdbm ?str1 null ?mng multi)
+                                       	(bind ?str1 (remove_character "_" ?str1 " "))
+                                       	(assert (multi_word_expression-grp_ids (explode$ (lowcase (implode$ ?str1))) $?grp_ids))
                                     )
                     )
- )
+ 	)
  )
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Mahalaxmi
@@ -94,8 +133,6 @@
  (declare (salience 60))
  ?f<-(English-list $?Eng_list)
   =>
-; 	(mwe_lookup "Physics-dictionary.gdbm" 1 $?Eng_list)
- ;	(mwe_lookup "Physics-dictionary.gdbm" 2 $?Eng_list)
         (mwe_lookup "phy_eng_multi_word_dic.gdbm" 1 $?Eng_list)
         (mwe_lookup "acronyms-common_noun_compounds.gdbm" 1 $?Eng_list)
         (mwe_lookup "named_entities.gdbm" 1 $?Eng_list)
@@ -104,66 +141,36 @@
         (mwe_lookup "multi_word_expressions.gdbm" 2 $?Eng_list)
  )
  ;--------------------------------------------------------------------------------------------------------
- ;Added by Mahalaxmi
- (deffunction print_dic_mng(?gdbm ?word ?root ?new_mng)
-	(bind ?count 0)
-	(bind ?word (string-to-field ?word))
-        (bind ?root (string-to-field ?root))
-        (bind ?gdbm (string-to-field ?gdbm))
-        (bind ?new_mng1 (create$))
-        (bind ?slh_index (str-index "/" ?new_mng))
-        (if (and (neq (length ?new_mng) 0)(neq ?slh_index FALSE)) then
-                (while (neq ?slh_index FALSE)
-                        (bind ?count (+ ?count 1))
-                        (bind ?new_mng1 (sub-string 1 (- ?slh_index 1) ?new_mng))
-                        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
-                        (bind ?new_mng1 (remove_character "-" (implode$ (create$  ?new_mng1)) " "))
-                        (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root ?gdbm ?new_mng1))
-                        (bind ?new_mng (sub-string (+ ?slh_index 1) (length ?new_mng) ?new_mng))
-                        (bind ?slh_index (str-index "/" ?new_mng))
-                )
-        )
-        (bind ?new_mng1 (str-cat (sub-string 1 (length ?new_mng) ?new_mng)))
-                        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
-                        (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
-        (if (neq ?new_mng "") then
-                      (bind ?count (+ ?count 1))
-                      (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root ?gdbm ?new_mng1))
-         )
-
- )
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Mahalaxmi
  ;These laws can be derived from [Newton's] laws of motion in mechanics. ;ina niyamoM ko yAMwrikI meM nyUtana ke gawi ke niyamoM se vyuwpanna kiyA jA sakawA hE. ;here morph doesn't has entry for word Newton's as PropN, 
  (deffunction dic_lookup(?gdbm ?id ?word ?root ?cat)
 	     (bind ?word (implode$ (create$ ?word)))
 	     (bind ?root (implode$ (create$ ?root)))
-	    ; (bind ?new_mng (create$))
 	     (bind ?new_mng "")
-
 	     (if (neq (gdbm_lookup ?gdbm ?root) "FALSE") then 
 	;	      (printout t "1st If con" crlf)
 		      (bind ?rt_mng (gdbm_lookup ?gdbm ?root))
  	     	      (if (and (neq ?rt_mng "FALSE") (neq (length ?rt_mng) 0)) then (bind ?new_mng ?rt_mng))
-		      (print_dic_mng ?gdbm ?word ?root ?new_mng)
+		      (print_dic_mng ?gdbm ?word ?root ?new_mng single)
 	     else (if (neq (gdbm_lookup ?gdbm ?word) "FALSE") then 
 	;	      (printout t "2nd If con" crlf)
 		      (bind ?wrd_mng (gdbm_lookup ?gdbm ?word))
                       (if (and (neq ?wrd_mng "FALSE") (neq (length ?wrd_mng) 0)) then (bind ?new_mng ?wrd_mng))
-		       (print_dic_mng ?gdbm ?word ?root ?new_mng)
+		       (print_dic_mng ?gdbm ?word ?root ?new_mng single)
 	     else (if (eq (sub-string (- (length ?word) 1) (length ?word) ?word) "'s") then
 	;		(printout t "3rd If con" crlf)
                         (bind ?word (string-to-field (sub-string 1 (- (length ?word) 2) ?word)))
                         (bind ?apos_mng (gdbm_lookup ?gdbm ?word))
              		(if (and (neq ?apos_mng "FALSE") (neq (length ?apos_mng) 0)) then (bind ?new_mng ?apos_mng))
-		        (print_dic_mng ?gdbm ?word ?root ?new_mng)
+		        (print_dic_mng ?gdbm ?word ?root ?new_mng single)
              else (if  (and (eq ?id 1)(eq (upcase (sub-string 1 1 ?root)) (sub-string 1 1 ?root))(eq ?cat PropN)) then
 	;		(printout t "4th If con" crlf)
                         (bind ?str (lowcase (sub-string 1 1 ?root)))
              		(bind ?n_root (str-cat ?str (sub-string 2 (length ?root)  ?root)))
 		        (bind ?n_rt_mng (gdbm_lookup ?gdbm  ?n_root))
              		(if (and (neq ?n_rt_mng "FALSE") (neq (length ?n_rt_mng) 0)) then (bind ?new_mng ?n_rt_mng))
-                        (print_dic_mng ?gdbm ?word ?root ?new_mng)
+                        (print_dic_mng ?gdbm ?word ?root ?new_mng single)
 	     ))))
  )
  ;--------------------------------------------------------------------------------------------------------
@@ -214,7 +221,7 @@
  =>
         (bind ?mng (gdbm_lookup "phy_dictionary.gdbm" (str-cat ?rt "_" ?cat)))
         (if (neq ?mng "FALSE") then
-		(print_dic_mng phy_dictionary.gdbm ?word ?rt ?mng)
+		(print_dic_mng phy_dictionary.gdbm ?word ?rt ?mng single)
 		(retract ?f0)
         )
  )
@@ -232,7 +239,7 @@
  =>
         (bind ?mng (gdbm_lookup "phy_dictionary.gdbm" (str-cat ?rt "_" ?cat1)))
         (if (neq ?mng "FALSE") then
-                (print_dic_mng phy_dictionary.gdbm ?word ?rt ?mng)
+                (print_dic_mng phy_dictionary.gdbm ?word ?rt ?mng single)
 		(retract ?f0)
         )
  )
@@ -250,7 +257,7 @@
  =>
         (bind ?mng (gdbm_lookup "phy_dictionary.gdbm" (str-cat (lowcase ?rt) "_" ?cat1)))
 	(if (neq ?mng "FALSE") then
-                (print_dic_mng phy_dictionary.gdbm ?word ?rt ?mng)
+                (print_dic_mng phy_dictionary.gdbm ?word ?rt ?mng single)
 		(retract ?f0)
         )
  )
