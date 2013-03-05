@@ -10,6 +10,7 @@ tar -xvzf shallow-parser-hin-3.0.fc8.tgz
 cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER/shallow-parser-hin-3.0.fc8
 make install
 
+cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER/
 echo "Full Parser Compilation:"
 tar -xvzf fullparser-hin-1.6.3.tgz
 

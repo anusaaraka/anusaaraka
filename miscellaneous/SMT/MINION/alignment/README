@@ -33,7 +33,7 @@
  2. FULL PARSER COMPILATION:
     ========================
 	1. Add following line to your ~/.bash_profile (or) ~/.bashrc
-		export setu=/home/hinilmt/sampark
+		export setu=$HOME/sampark
 	2. and then run
                 source ~/.bashrc
 
