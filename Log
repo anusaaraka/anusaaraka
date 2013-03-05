@@ -4331,5 +4331,15 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/MINION/dictionaries/provisional_word_dic.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_eng_words.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_hnd_words.txt
-15. Updated Log
+15. Added Full Parser
+16. Modified the below files accordingly
+	compile_shallow_parser.sh
+	run_shallow_parser.py
+	processing_manual_sentences.sh
+	run_sentence_stanford_minion.sh
+	Anusaaraka_stanford_minion.sh
+17. Updated SHALLOW_PARSER
+18. Updated MINION/alignment/README
+19. Updated README
+20. Updated Log
 

@@ -5,34 +5,50 @@
 	  1. Add following line to your ~/.bash_profile (or) ~/.bashrc
  		export SHALLOW_PARSER_HIN=~/sampark/shallow_parser_hin
  		export PATH=$PATH:$SHALLOW_PARSER_HIN/bin/sys/hin/
-	  2. and then run
-		source ~/.bashrc		
+          2. and then run
+                source ~/.bashrc
           
-          Note :: If one gets the following error while installation,
-		 --- error while loading shared libraries: libgdbm.so.2: cannot open shared object file: No such file or directory
-                 Follow these steps:
-		 1) locate libgdbm
-		     >> locate libgdbm
-                        The output will be ....
-                     >> /usr/lib/libgdbm.so
-                     >> /usr/lib/libgdbm.so.3 
-                         and so on ....
-                 2) Accordingly make a soft link to the existing one to libgdbm.so.2
-                       For Eg:-
-                     >> sudo ln -s /usr/lib/libgdbm.so /usr/lib/libgdbm.so.2
+         Note :: 
+	  If the following errors occurs while installation :
+	     1. error while loading shared libraries: libgdbm.so.2: cannot open shared object file: No such file or directory
+                	Follow these steps:
+		 	i) locate libgdbm
+		     		>> locate libgdbm
+                        		The output will be ....
+                     			>> /usr/lib/libgdbm.so
+                     			>> /usr/lib/libgdbm.so.3 
+                        		and so on ....
+                 	ii) Accordingly make a soft link to the existing one to libgdbm.so.2
+                       		For Eg:-
+                     		>> sudo ln -s /usr/lib/libgdbm.so /usr/lib/libgdbm.so.2
+	    2. 	dos2unix  command not found then 
+			Follow these steps
+			i) locate fromdos
+				>> locate fromdos
+					/usr/bin/fromdos
+					/usr/share/man/man1/fromdos.1.gz
+			ii) Accordingly make a soft link to the existing one to dos2unix
+				sudo ln -s /usr/bin/fromdos /usr/bin/dos2unix
+
+ 2. FULL PARSER COMPILATION:
+    ========================
+	1. Add following line to your ~/.bash_profile (or) ~/.bashrc
+		export setu=/home/hinilmt/sampark
+	2. and then run
+                source ~/.bashrc
 
 
- 2.  MINION Compilation : 
+ 3.  MINION Compilation : 
      ==================
 	 For our work we are using the (already) compiled version of minion. 
 
 
- 3. Prerequisites :
+ 4. Prerequisites :
     =============
         1. English Sentence File.
         2. Hindi Sentence File (WX Notation)
 
- 4. compile :
+ 5. compile :
     ========
         1. cd $HOME_anu_test
            shell_scripts/remove_out-files.sh
@@ -40,7 +56,7 @@
         2. cd $HOME_anu_test/miscellaneous/SMT/MINION/alignment
            sh minion_compile.sh
 
- 5. To run alignment :
+ 6. To run alignment :
     =================
 	(Note : sample files are in $HOME_anu_test/miscellaneous/SMT/MINION/alignment/align_output)
 

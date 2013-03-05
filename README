@@ -20,6 +20,7 @@
        -- goldendict (optional but desirable to use for viewing dictionaries)
     	  (NOTE: Check Readme for using 'goldendict' in miscellaneous/Dictionaries/Readme)
        -- graphviz (optional but desirable for alignment work -->for installing Shallow parser)
+       -- tofrodos (               "                                                          )
     (NOTE: Anusaaraka uses 'bash' instead of 'dash')
 --------------------------------------------------------------------------------------------------------------
  2. Install:
