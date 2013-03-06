@@ -1,20 +1,24 @@
-cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER
+ cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER
 
  if  [ -e $HOME_anu_test/miscellaneous/SHALLOW_PARSER/shallow-parser-hin-3.0.fc8 ] ; then
      rm -rf shallow-parser-hin-3.0.fc8/
      rm -rf ~/sampark
  fi
 
-tar -xvzf shallow-parser-hin-3.0.fc8.tgz
+ tar -xvzf shallow-parser-hin-3.0.fc8.tgz
 
-cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER/shallow-parser-hin-3.0.fc8
-make install
+ if  [ -e $HOME_anu_test/miscellaneous/SHALLOW_PARSER/fullparser-hin-1.6.3 ] ; then
+     rm -rf fullparser-hin-1.6.3/
+     rm -rf ~/sampark
+ fi
 
-cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER/
-echo "Full Parser Compilation:"
-tar -xvzf fullparser-hin-1.6.3.tgz
+ tar -xvzf fullparser-hin-1.6.3.tgz
 
-cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER/fullparser-hin-1.6.3
-make
-cd $setu/src/sl/fullparser_hin-1.6.3
-make install
+ cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER/shallow-parser-hin-3.0.fc8
+ make install
+
+ echo "Full Parser Compilation:"
+ cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER/fullparser-hin-1.6.3
+ make
+ cd $setu/src/sl/fullparser_hin-1.6.3
+ make install
