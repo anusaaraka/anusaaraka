@@ -473,6 +473,14 @@ Hindi meaning using Stanford parser 2.115
 Such a dilemma does not occur in the wave picture of light. 
 esA xuviXA prakASa ke lahara ciwra meM aswiwva_meM_nahIM howI hE.
 
+Hindi meaning using Stanford parser 2.116
+Note that it is not the geometric center of the triangle OAB. 
+XyAna_xIjie_ki yaha wrikoNa PropN-oab-PropN kA jyAmiwIya-2 kenxra nahIM hE.
+
+Hindi meaning using Stanford parser 2.117
+An extended body, in the first place, is a system of particles. 
+praWamawayA, PElAyA huA piNda, kaNoM kA nikAya hE.
+
 Calling Transliteration
 Calling Interface related programs
 Print minion_statistics
@@ -481,6 +489,6 @@ No Solution Found :
 Time-out:
 0
 Solution Found :
-115
+117
 re-executed-sentences:
 18
