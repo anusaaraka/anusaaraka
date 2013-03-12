@@ -77,7 +77,7 @@
   sh parse.sh  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org1 > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
   fi
   sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}" $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp | sed 's/^(S1/(ROOT/g'  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1
-  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2012-11-12/
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 
   #running stanford NER (Named Entity Recogniser) on whole text.

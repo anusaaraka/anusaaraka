@@ -46,6 +46,7 @@ $PATH1/change2mystdformat.out < ../$1.std > $1.tmp2
 #Below programme is out dated so removing them.(Suggested by Chaitanya Sir 09-07-12)
 #This program changes spaces in between the HTML tags to underscores.
 # e.g. '<a href' is changed to '<a_href'
+#Temporarily commenting this programme( creating problem when a '<' comes)
 #$PATH1/html_tag_sp.out < $1.tmp2 > $1.tmp3
 
 #This program adds sentence marker tags <s> </s>

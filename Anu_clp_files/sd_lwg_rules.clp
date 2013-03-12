@@ -115,11 +115,11 @@
  ;Ex:-She made the girl feed the child.[made_feed]
  ;These smugglers are to be captured. Broken windows need to be replaced. 
  ;That is the way business used to be done and that is the way business needs to be done.
-
+ ;Positive thinking needs to be inculcated. [needs]
  (defrule replace_S
  (declare (salience 100))
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?S $?pos)
- (parserid-word ?head ?w&get|got|gets|getting|have|had|has|having|make|makes|making|made|need) 
+ (parserid-word ?head ?w&get|got|gets|getting|have|had|has|having|make|makes|making|made|need|needs) 
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
  (Node-Category ?Mot VP)
  (Node-Category ?S SBAR|S|SQ)

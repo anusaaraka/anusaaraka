@@ -17,7 +17,7 @@
  ?f1<-(Node-Category ?VP1 VP)	
  (Head-Level-Mother-Daughters ?head ?lv $? ?S $?)
  (test (neq ?lv ?l1))
- (test (eq (member$ ?head (create$ had has have need are Are)) FALSE ))
+ (test (eq (member$ ?head (create$ had has have need needs are Are)) FALSE ))
  ?f3<-(Head-Level-Mother-Daughters ?h&~be ?l2 ?VP1 $?d)
  =>
 	(retract ?f ?f0 ?f1 ?f2 ?f3)	 

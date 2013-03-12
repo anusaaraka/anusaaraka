@@ -4307,7 +4307,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 65. Updated sd_verified (489) and sd_ver_output
 66. Updated Log.
 
- 06666663
+ 12-03-13
  ========
  1. Added get_adv-prep_dic.sh to get entries of adverb and prepositions in default-iit-bombay-shabdanjali-dic.txt
  2. Added remove_dup_entry.py in miscellaneous/SMT/MINION/alignment/ for above purpose.
@@ -4315,34 +4315,32 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  4. Added '{','}','[',']' in word.c and accordingly updated in replace-abbrevations.sh
  5. Added 'Ill.' in abbrevations.lex
  6. In mapping-punctuations.lex, instead of handling each pattern separately, separated punctuation head and punctuation.
- 7. Updated mapping-symbols_manual.lex
- 8. Updated run_align_browser.sh and ClipsToAnu_browser_intfc.sh
- 9. alignment.bat
+ 7. alignment.bat
 	1. Renamed "word_alignment.dat" to "word_alignment_tmp1.dat" in get_slot_number module
 	2. Loaded word_alignment_tmp1.dat file and generated word_alignment.dat in create_alignment_dic module
-10. get_dbase_mng.clp
+ 8. get_dbase_mng.clp
 	Modified print_dic_mng function to handle more than one meaning in multi word expressions
         Modified mwe_lookup function to call print_dic_mng for multi word expressions
 	Modified below functions/rules to send new argument for print_dic_mng function (single/multi)
 		dic_lookup, get_mng_from_phy_dic, get_mng_from_phy_dic1 and get_mng_from_phy_dic2
-11. create_alignment_dic.clp
+ 9. create_alignment_dic.clp
 	Added : check_for_correctness, get_alignment_facts
         Modified the rules to modify the fact "root-anu_mng-man_mng"  as  "id-root-anu_mng-man_mng" 
-12. get_man_grp_mng.clp
+10. get_man_grp_mng.clp
 	Added 	 : get_ho_grp_with_relation
         Modified : print_man_grp_mng (added test condition)
-13. Modified get_tam_info.lex to generate full_parser_relation.dat file
-14. manual_lwg.clp
+11. Modified get_tam_info.lex to generate full_parser_relation.dat file
+12. manual_lwg.clp
 	Modified : ke_[word](added pare in list) , word_[hyphen]_word (restricted for verbs)
 		   single_vib3 (removed not condition for root and added test condition)
-15. Modified rule2 (to add test condition) in manual_lwg_new.clp
-16. run_H_gen_minion.bat
+13. Modified rule2 (to add test condition) in manual_lwg_new.clp
+14. run_H_gen_minion.bat
 	Modified save facts for multi word in get_dbase_mng module 
 	Loaded full_parser_relation.dat" file in get_man_grp_mng module
-17. Modified replace_id_with_word rule in word_alignment.clp (to handle hyphen and numbers)
-18. Added phy_align_partial_ver_out and phy_align_partial_ver_eng_align.html
-19. Renamed phy_align_ver_eng as phy_align_partial_ver_eng and phy_align_ver_hnd as phy_align_partial_ver_hnd
-20. Updated the following files
+15. Modified replace_id_with_word rule in word_alignment.clp (to handle hyphen and numbers)
+16. Added phy_align_partial_ver_out and phy_align_partial_ver_eng_align.html
+17. Renamed phy_align_ver_eng as phy_align_partial_ver_eng and phy_align_ver_hnd as phy_align_partial_ver_hnd
+18. Updated the following files
         miscellaneous/SMT/MINION/alignment/replace_wrd_with_id.c
         miscellaneous/SMT/MINION/dictionaries/generate_hin_multi_word_dic.sh
         miscellaneous/SMT/MINION/dictionaries/phy_dictionary.txt
@@ -4351,21 +4349,28 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/MINION/dictionaries/provisional_word_dic.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_eng_words.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_hnd_words.txt
-21. Added Full Parser
-22. Modified the below files accordingly
+19. Added Full Parser for hindi.
+20. Modified the below files accordingly
 	compile_shallow_parser.sh
 	run_shallow_parser.py
 	processing_manual_sentences.sh
 	run_sentence_stanford_minion.sh
 	Anusaaraka_stanford_minion.sh
-23. Modified mwe_lookup rule in Anu_clp_files/multi_word_expressions.clp to handle more than one mng
-24. Updated SHALLOW_PARSER
-25. Updated MINION/alignment/README
-26. Updated changes_in_databases
-27. Updated iit-bombay.dict in goldendict
-28. Updated shabdanjali.dict.dz in goldendict
-29. Updated README
-30. Updated phy_align_verified (117)
-31. Updated sd_verified (490)
-32. Updated Log
-
+21. Modified mwe_lookup rule in Anu_clp_files/multi_word_expressions.clp to handle more than one mng
+22. In sd_lwg_rules.clp, in replace_S rule added 'needs' in parserid-word fact
+23. In parser_tree_modification_rules.clp added 'needs' in test condition in this rule 'rename_VP_for_To'.
+24. Added converting-dic-to-smt_format.c prog to get each word and its possible meanings in one single line.
+25. Added compilation of above file in anu_compile.sh and accordingly updated get_adv-prep_dic.sh.
+26. Added comments in pre_process.sh
+27. In Anusaaraka_reranked_johnson_minion.sh, updated stanford parser version.
+28. Updated mapping-symbols_manual.lex
+29. Updated run_align_browser.sh and ClipsToAnu_browser_intfc.sh
+30. Updated SHALLOW_PARSER
+31. Updated MINION/alignment/README
+32. Updated changes_in_databases
+33. Updated iit-bombay.dict in goldendict
+34. Updated shabdanjali.dict.dz in goldendict
+35. Updated README
+36. Updated phy_align_verified (117)
+37. Updated sd_verified (490)
+38. Updated Log

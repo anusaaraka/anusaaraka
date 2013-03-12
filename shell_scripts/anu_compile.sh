@@ -123,7 +123,8 @@
  ./comp.sh wx2wx-small
  mv  wx2wx-normal.out  wx2wx-small.out $HOME_anu_test/bin/
  gcc -o replace_nonascii-chars.out replace_nonascii-chars.c
- gcc -o identify-nonascii-chars.out identify-nonascii-chars.c 
+ gcc -o identify-nonascii-chars.out identify-nonascii-chars.c
+ gcc -o converting-dic-to-smt_format.out converting-dic-to-smt_format.c 
 
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries
  echo "Creating default-iit-bombay-shabdanjali-dic_firefox.gdbm"
