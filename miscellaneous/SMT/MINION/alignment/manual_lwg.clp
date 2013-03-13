@@ -266,7 +266,7 @@
 ;Riot police beat back the crowds of demonstrators.---- praxarSanakAriyoM kI BIda ko pulisa ne [pICe] Xakela xiyA
 (defrule change_remaining_facts1
 (declare (salience 54))
-(man_id-word-cat ?mid $?word ?cat)
+(man_id-word-cat ?mid $?word ?cat&~ SYM)
 (not (manual_id-cat-word-root-vib-grp_ids ? ? $? - $? - $? - $? ?mid $?))
 (not (retract_manual_fact ?mid))
 =>

@@ -26,18 +26,21 @@
  (id-HM-source-grp_ids   ?id  ?  ? $?ids)
  ?f<-(hindi_id_order  $?hin_order)
  (test (> (length $?ids) 1))
- (not (id-checked ?id))
- (not (pada_info (group_cat infinitive)(group_ids $? ?id $?)))
+ (id-Apertium_output ?id1 $?mng)
+ (test (eq (length $?mng) 0))
+ (not (id-checked ?id1))
+ (not (pada_info (group_cat infinitive)(group_ids $? ?id1 $?)))
  ;(test (eq (member$ ?id $?grp_ids) FALSE))
+ (test (member$ ?id1 $?ids))
   =>
   (retract ?f)
-  (loop-for-count (?i 1 (length $?ids))
-                  (bind ?j (nth$ ?i $?ids))
-                  (if (neq ?j ?id) then
-                      (bind $?hin_order (delete-member$ $?hin_order ?j))
-                  ))
+;  (loop-for-count (?i 1 (length $?ids))
+;                  (bind ?j (nth$ ?i $?ids))
+;                  (if (or (neq ?j ?id) (eq (length $?mng) 0)) then
+                      (bind $?hin_order (delete-member$ $?hin_order ?id1))
+;                  ))
  (assert (hindi_id_order  $?hin_order))
- (assert (id-checked ?id)) 
+ (assert (id-checked ?id1)) 
  )         
 ;----------------------------------------------------------------------------------------------------------------------------
  ;Creating english word list fact .
@@ -170,7 +173,7 @@
  (declare (salience 50))
  (pada_info (group_head_id ?id) (group_cat PP)(preposition $?prep_id))
  ?f<-(expr  $?prev ?p_id $?post)
- (id-HM-source-grp_ids   ?id  ?  ? $?grp_ids)
+ (or (id-HM-source-grp_ids   ?id  ?  ? $?grp_ids)(id-HM-source-grp_ids   ?p_id  ?  ? $?grp_ids))
  (hindi_id_order $?hin_ord)
  (test (member$ ?p_id  $?prep_id))
  (not (id-pos ?id))

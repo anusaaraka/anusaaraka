@@ -481,6 +481,62 @@ Hindi meaning using Stanford parser 2.117
 An extended body, in the first place, is a system of particles. 
 praWamawayA, PElAyA huA piNda, kaNoM kA nikAya hE.
 
+Hindi meaning using Stanford parser 2.118
+The refractive index of air increases with its density. 
+havA kA refractive sUcaka usake Ganawva ke sAWa vqxXi howA hE.
+
+Hindi meaning using Stanford parser 2.119
+This phenomenon is called mirage. 
+yaha pariGatanA mqgawqRNA bulAyA jAwA hE.
+
+Hindi meaning using Stanford parser 2.120
+This type of mirage is especially common in hot deserts. 
+mqgawqRNA kA yaha prakAra garama regiswAna meM viSeRawaH sAmAnya hE.
+
+Hindi meaning using Stanford parser 2.121
+This is also due to mirage. 
+yaha mqgawqRNA BI hE.
+
+Hindi meaning using Stanford parser 2.122
+Optical fibers are fabricated with high quality composite glass SYMBOL-SLASH quartz fibers. 
+xqRti- wanwu ucca guNavawwA sammiSra gilAsoM SYMBOL-SLASH billOra wanwuoM ke sAWa banAe gaye hEM.
+
+Hindi meaning using Stanford parser 2.123
+Each fiber consists of a core and cladding. 
+eka eka wanwu - saba_se_mahawvapUrNa muxxe kA Ora Xawu AvaraNa kA banA honA hE.
+
+Hindi meaning using Stanford parser 2.124
+Thus, an optical fiber can be used to act as an optical pipe. 
+isa prakAra, prakASika PAibara xqRti- pAipa ke jEsA kArya karane ke lie AxI jA sakawA hE.
+
+Hindi meaning using Stanford parser 2.125
+The other end of the fibers is fixed over an electric lamp. 
+wanwuoM kA xUsarA anwa bijalI ke lEmpa ke Upara niSciwa huA huA hE.
+
+Hindi meaning using Stanford parser 2.126
+The fibers in such decorative lamps are optical fibers. 
+Ese sajAvatI lEmpa meM wanwu xqRti- wanwu hEM.
+
+Hindi meaning using Stanford parser 2.127
+It is a 2SYMBOL-DOT34 m diameter reflecting telescope (Cassegrain). 
+yaha xUrabIna (PropN-cassegrain-PropN) xarSA eka 2SYMBOL-DOT34 puruRa vyAsa hE.
+
+Hindi meaning using Stanford parser 2.128
+On the other hand, glass is a dispersive medium. 
+xUsarI ora, gilAsa eka PElAyA huA mAXyama hE.
+
+Hindi meaning using Stanford parser 2.129
+Thus, vacuum (or air approximately) is a non-dispersive medium in which all colors travel with the same speed. 
+isa prakAra, SUnya sWAna (yA havAI wakarIbana rUpa se) eka non-dispersive mAXyama hE jisameM saba rafga vahI raPwAra se calawe hEM.
+
+Hindi meaning using Stanford parser 2.130
+An actual ray is really a beam of many rays of light. 
+vAswavika kiraNa vAswava meM prakASa kI bahuwa sArI kiraNoM kA puFja hE.
+
+Hindi meaning using Stanford parser 2.131
+Thus, the angle of deviation depends on the angle of incidence. 
+isa prakAra, lIka_se hatanA kA koNa Ayawana koNa para nirBara karawA hE.
+
 Calling Transliteration
 Calling Interface related programs
 Print minion_statistics
@@ -489,6 +545,6 @@ No Solution Found :
 Time-out:
 0
 Solution Found :
-117
+131
 re-executed-sentences:
-18
+16

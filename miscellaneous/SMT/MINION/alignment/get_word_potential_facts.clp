@@ -1,5 +1,8 @@
 ;This file is written by Maha Laxmi and Shirisha Manju
 
+ (deffacts dummy_facts
+ (count_of_inserted_word-position)
+ )
 
 (deffunction remove_character(?char ?str ?replace_char)
 	(bind ?new_str "")
@@ -12,6 +15,25 @@
                 )
         )
         (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
+)
+;------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju(7-03-13)
+; if eng multi mng and manual multi mng is same then rm the ids from order excluding the head
+;The choice of a set of axes in a frame of reference depends upon the situation.
+(defrule rm_comp_ids_from_order
+(declare (salience 2001))
+?f1<-(ids-phy_cmp_mng-eng_mng $? ?phy_mng ?)
+(ids-phy_cmp_mng-head-cat-mng_typ-priority $?ids ?phy_mng ?head ? ? ?)
+?f0<-(hindi_id_order $?order)
+=>
+	(retract ?f0 ?f1)
+	(loop-for-count(?i 1 (length $?ids))
+        	(bind ?id (nth$ ?i $?ids))
+		(if (neq ?id (nth$ ?head $?ids)) then
+			(bind $?order (delete-member$ $?order ?id))
+		)
+	)
+	(assert (hindi_id_order $?order))
 )
 ;------------------------------------------------------------------------------------------------------------
 (defrule manul_id_mapped_list
@@ -146,11 +168,7 @@
 (defrule potential_count_of_anu_id
 (declare (salience 1200))
 (or (potential_assignment_vacancy_id-candidate_id ?aid ?mid1) (anu_id-man_id ?aid ?mid1)(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?))
-;(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid2) (anu_id-man_id ?aid ?mid2))
-;(test (neq ?mid1 ?mid2))
 (not (anu_id-candidate_ids ?aid $?))
-;(id-word ?aid ?word)
-;(test (neq (gdbm_lookup "restricted_eng_words.gdbm" ?word) "FALSE") )
 =>
         (assert (anu_id-candidate_ids ?aid))
 )
@@ -161,7 +179,6 @@
 ?f<-(anu_id-candidate_ids ?aid $?mem)
 (test (eq (member$ ?mid $?mem) FALSE))
 (id-word ?aid ?word)
-;(test (neq (gdbm_lookup "restricted_eng_words.gdbm" ?word) "FALSE") )
 =>
         (retract ?f)
         (bind $?mem (sort > (create$ $?mem ?mid)))
@@ -191,7 +208,6 @@
 	)
 	(if (eq (numberp ?word) FALSE) then
 	 	(bind ?mng (gdbm_lookup "restricted_eng_words.gdbm" ?word))
-		;	(if (neq (gdbm_lookup "restricted_eng_words.gdbm" ?word) "FALSE") then	
 		(if (neq ?mng "FALSE") then
 		 	(assert (fact_name-slot_id-word_ids restricted_eq_or_sumleq ?slot_id $?mapped_list))
 		else
@@ -238,7 +254,7 @@
 	(assert (man_verb_count-verbs ?man_verb_count $?man_verbs))
 	(assert (anu_verb_count-verbs ?anu_verb_count $?anu_verbs))	
 )
-
+;------------------------------------------------------------------------------------------------------------
 (defrule potential_count_of_manual_verb_id1
 (declare (salience 800))
 (man_verb_count-verbs ?man_verb_count&~0 $? ?man_verb $?)
@@ -254,9 +270,6 @@
 (defrule get_fact_name_for_no_mng_for_eng_word
 (declare (salience 100))
 (id-word ?aid ?wrd)
-;(not (id-word ?aid1&:(neq ?aid1 ?aid) ?wrd))
-;(not (anu_id-candidate_ids ?aid $?))
-;(not (man_id-candidate_ids ? $? ?aid $?));The second law of motion refers to the general situation when there is a net external force acting on the body.-->Man sen :: gawi kA xviwIya niyama una vyApaka sWiwiyoM se sambanXa raKawA hE @PUNCT-Comma  jinameM piNda para koI neta bAhya bala laga rahA ho -->Anu tran :: gawi kA xUsarA niyama vyApaka hAlawa ko sanxarBa xewA hE SarIra para kArya karwe_hue eka vAswavika bAharI bala jaba hE.
 (anu_id-word-possible_mngs ?aid ?wrd $?pos_mngs)
 (not (manual_id-mng ? $?man_mng&:(subsetp $?man_mng $?pos_mngs)))
 (hindi_id_order $?hin_order)
@@ -269,10 +282,6 @@
 (defrule get_fact_name_for_no_mng_for_man_word
 (declare (salience 100))
 (manual_id-mng ?mapped_id $?man_mng)
-;(not (manual_id-mng ?mapped_id1&:(neq ?mapped_id1 ?mapped_id) $?man_mng))
-;(manual_id-mapped_id ?mid ?mapped_id)
-;(not (anu_id-candidate_ids ? $? ?mid $?))
-;(not (man_id-candidate_ids ?mid $?))
 (man_id-word-possible_mngs ?mid $?man_mng $?pos_mngs)
 (not (id-word ? ?wrd&:(member$ ?wrd $?pos_mngs)))
 =>
@@ -297,7 +306,6 @@
 ?f<-(slot_ids-man_ids $?slot_id - $?mids)
 (test (eq (member$ ?mid $?mids) FALSE))
 (not (man_verb_id-mapped_id ? $? ?mid $?))
-;(not (man_verb_id-mapped_id ? $? ?mid1 $?))
 =>
         (retract ?f)
         (assert (slot_ids-man_ids $?slot_id - $?mids ?mid))
@@ -324,9 +332,7 @@
 =>
 	(retract ?f)
 )
-
-
-
+;------------------------------------------------------------------------------------------------------------
 ;;11_03_C => Eng sen :Think! ; Man sen :socie!  ; Anu sen :sociye!
 ;(defrule rm_repeated_fact
 ;(declare (salience 10))

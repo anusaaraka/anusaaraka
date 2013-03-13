@@ -9,7 +9,7 @@ BI	also/too/even
 ki	that
 isa	the/this/such
 eka	a/an/one
-koI	a/an
+koI	a/an/any
 kisI	a/an
 kisI_BI	a/an
 hE	is/have

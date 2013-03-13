@@ -14,6 +14,16 @@
 
  tar -xvzf fullparser-hin-1.6.3.tgz
 
+ cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER/shallow-parser-hin-3.0.fc8/bin/sl/
+ mv old-morph/ old-morph-bkp/
+ mv morph/ morph-bkp/
+ cp -r old-morph-bkp/ morph
+
+ cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER/shallow-parser-hin-3.0.fc8/data_bin/sl
+ mv old-morph/ old-morph-bkp/
+ mv morph/ morph-bkp/
+ cp -r old-morph-bkp/ morph
+
  cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER/shallow-parser-hin-3.0.fc8
  make install
 

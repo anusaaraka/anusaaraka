@@ -33,6 +33,46 @@ Hindi meaning using Stanford parser 2.5
 The magnitude of the displacement for a course of motion may be zero but the corresponding path length is not zero. 
 gawi ke pATyakrama ke lie visWApana kA parimANa SUnya ho sakawA hE paranwu jo_samawulya_ho paWa lambAI niSAnA sAXa hE nahIM hE.
 
+Hindi meaning using Stanford parser 2.6
+The symbol nonascii3226136145 (the Greek letter sigma) denotes summation, in this case over n particles. 
+niSAna nonascii3226136145 ( yUnAnI BARA pawra sigma) n kaNoM ke Upara isa mAmale meM anwima aBivacana, xyowaka howA hE.
+
+Hindi meaning using Stanford parser 2.7
+We shall, in the present chapter, consider rotational motion about a fixed axis only. 
+hama eka niSciwa huI huI XurI ke bAre meM sirPa cakrIya gawi vicAra karezge varwamAna aXyAya meM.,
+
+Hindi meaning using Stanford parser 2.8
+The earth rotates once every twenty-four hours and revolves round the sun once in a year. 
+pqWvI prawyeka twenty-four GaNte eka bAra GUmawI hE Ora varRa meM sUrya eka bAra ke golAkAra GUmawI hE.
+
+Hindi meaning using Stanford parser 2.9
+In good many situations in real-life, the size of objects can be neglected and they can be considered as point-like objects without much error. 
+vAswavika jIvana meM acCI bahuwa sArI hAlawa meM, vaswu_kA AkAra upekRA kiyA jA sakawA hE Ora ve bahuwa BUla ke binA point-like vaswu_ke_jEsA samaJe jA sakawe hEM.
+
+Hindi meaning using Stanford parser 2.10
+We now know that color is associated with wavelength of light. 
+hama aba jAnawe hEM ki rafga prakASa ke warafgaxErGya ke sAWa judA huA huA hE.
+
+Hindi meaning using Stanford parser 2.11
+Where P is the net power of the lens combination. 
+PropN-p-PropN lensa saMyoga kA vAswavika GAwAfka kahAz hE.
+
+Hindi meaning using Stanford parser 2.12
+In silica glass fibers, it is possible to transmit more than 95 SYMBOL-PERCENT1 of the light over a fiber length of 1 km. 
+silikA gilAsoM wanwuoM meM, 1 ki.mI. kI eka wanwu lambAI ke Upara prakASa kA se aXika 95 SYMBOL-PERCENT1 preRiwa samBava hE.
+
+Hindi meaning using Stanford parser 2.13
+A standard 100 watt incadescent light bulb emits approximately 1700 lumens. 
+eka prAmANika 100 vAta incadescent vixyuwa balba wakarIbana rUpa se 1700 lumens uwsarjana karawA hE.
+
+Hindi meaning using Stanford parser 2.14
+There are two things that we can intuitively mention about light from common experience. 
+xo cIjeM hEM ki hama sAmAnya anuBava se prakASa ke bAre meM sahaja jFAna se ulleKa_kara sakawe hEM.
+
+Hindi meaning using Stanford parser 2.15
+Only the component perpendicular to the surface, i.e., the normal component of the momentum, gets reversed in reflection. 
+UparI wala ko sirPa aMSa parapeNdikulara Silpa, PropN-i.e.-PropN, saMvega kA sAmAnya aMSa, prawibimba meM ultI kaha xewA hE.
+
 Calling Transliteration
 Calling Interface related programs
 Print minion_statistics
@@ -41,6 +81,6 @@ No Solution Found :
 Time-out:
 0
 Solution Found :
-5
+15
 re-executed-sentences:
-0
+2

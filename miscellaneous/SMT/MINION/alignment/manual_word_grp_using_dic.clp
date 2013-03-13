@@ -56,8 +56,9 @@
 (declare (salience -99))
 (manual_hin_sen $?man_sen)
 ?f<-(anu_id-man-id-mng ?id ?pos $?db_mng ?last_word_root)
-(id-node-word-root ?last_id ? ? - ?last_word_root)
+(id-node-word-root ?last_id ? ?word - ?last_word_root)
 (test (> (length $?db_mng) 0))
+(test (eq ?last_id (+ (length $?db_mng) ?pos)))
 =>
         (bind $?man_ids (create$ ))
         (bind $?mng (create$))
@@ -67,14 +68,12 @@
                         (bind ?m_word (nth$ ?i $?man_sen))
                         (bind $?mng (create$ $?mng ?m_word))
                         (bind $?man_ids (create$ $?man_ids ?i))
-                        (printout t $?mng crlf)
         )
-        (bind $?db_mng (create$ $?db_mng ?last_word_root))
-        (printout t $?mng $?db_mng crlf)
+        (bind $?db_mng (create$ $?db_mng ?word))
         (if (neq $?mng $?db_mng) then (retract ?f)
         else
-        (retract ?f)
-        (assert (anu_id-manual_ids-sep-mng ?id $?man_ids - $?db_mng))
+        	(retract ?f)
+        	(assert (anu_id-manual_ids-sep-mng ?id $?man_ids - $?db_mng))
         )
 )
 ;--------------------------------------------------------------------------------------------------------
