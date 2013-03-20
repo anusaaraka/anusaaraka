@@ -537,6 +537,34 @@ Hindi meaning using Stanford parser 2.131
 Thus, the angle of deviation depends on the angle of incidence. 
 isa prakAra, lIka_se hatanA kA koNa Ayawana koNa para nirBara karawA hE.
 
+Hindi meaning using Stanford parser 2.132
+When this is an elastic collision, the magnitude of the velocity remains the same. 
+yaha lacIlA safGat jaba hE, wo vega kA parimANa vahI SeRa rahawA hE.
+
+Hindi meaning using Stanford parser 2.133
+The night sky with its bright celestial objects has fascinated humans since time immemorial. 
+usakI camakIlI svargIya vaswu_se rAwa_kA AsamAna anAxi_kAla_se_hI mAnava manwra-mugXa_kara cukA hE.
+
+Hindi meaning using Stanford parser 2.134
+The world has an astonishing variety of materials and a bewildering diversity of life and behavior. 
+viSva kA paxArWoM kI Ora jIvana kI Ora barwAva kI eka hErAna karawI huI viBinnawA kI TagA sI viviXawA hE.
+
+Hindi meaning using Stanford parser 2.135
+What is Science and what is the so-called Scientific Method? 
+PropN-science-PropN kyA hE Ora waWAkaWiwa PropN-scientific-PropN PropN-method-PropN kyA hE?
+
+Hindi meaning using Stanford parser 2.136
+A precise definition of this discipline is neither possible nor necessary. 
+isa viRaya kI eka yaWAwaWya pariBARA koI BI nahIM samBava na AvaSyaka hE.
+
+Hindi meaning using Stanford parser 2.137
+Similarly, the basic laws of electromagnetism (Maxwell's equations) govern all electric and magnetic phenomena. 
+isI waraha se, vixyuwa cumbakawva ke (PropN-maxwell-PropN kA samIkaraNa) buniyAxI niyama saba bijalI kA Ora cumbakIya pariGatanA vaSA_meM karawe hEM.
+
+Hindi meaning using Stanford parser 2.138
+For example, the subject of thermodynamics, developed in the nineteenth century, deals with bulk systems in terms of macroscopic quantities such as temperature, internal energy, entropy, etc.. 
+uxAharaNa_ke liye, unnIsavAz SawAbxI meM vikAsa kara, URmAgawikI kA, viRaya wApamAna, Anwarika UrjA, entropy, etc. jEse ki - sWUla parimANa ke anusAra Woka nikAyoM ke sAWa vyavahAra karawA hE.
+
 Calling Transliteration
 Calling Interface related programs
 Print minion_statistics
@@ -545,6 +573,6 @@ No Solution Found :
 Time-out:
 0
 Solution Found :
-131
+138
 re-executed-sentences:
-16
+18

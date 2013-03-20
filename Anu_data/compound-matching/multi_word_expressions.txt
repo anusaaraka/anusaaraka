@@ -1,4 +1,4 @@
-#_Structure_of_the_file:	
+#_Structure_of_the_file:
 #English-compound-word	Hindi-meaning	Hindi-paxasUwra	category	Head_position	Root/Word-meaning(meaning-type)
 A_fighting_chance	kArya_kI_saPalawA_kI_WodZI_ASA#kArya_kI_saPalawA_kI_WodZI_ASA#noun#3#RM
 I_am_desired_to_say	muJe_nivexana_karane_ke_lie_kahA_gayA_hE#muJe_nivexana_karane_ke_lie_kahA_gayA_hE#noun#5#RM
@@ -115,7 +115,7 @@ Wilderness_Campaign	nirvAsiwa_avasWA_meM_aBiyAna#nirvAsiwa_avasWA_meM_aBiyAna#no
 World_Bank	varda_bEMka#varda_bEMka#noun#2#RM
 Your_Majesty	mahArAja#mahArAja#noun#2#RM
 Zero_Population_Growth	SUnya_janasaMKyA_vqxXi_xara#SUnya_janasaMKyA_vqxXi_xara#noun#3#RM
-Hari_Om	hari	oma#hari	oma#noun#2#RM
+Hari_Om	hari_om#hari_om#noun#2#RM
 americanize	amarIkI_jEsA_bananA#amarIkI_jEsA_bananA#noun#1#RM
 americanise	amarIkI_jEsA_bananA#amarIkI_jEsA_bananA#noun#1#RM
 ,_in_short_,	saMkRipwa_meM#saMkRipwa_meM#noun#4#RM
@@ -451,7 +451,6 @@ Command_drive_system	AxeSa_cAliwa_waMwra#AxeSa_cAliwa_waMwra#noun#3#RM
 Common_business-oriented_language	sAmAnya_vyavasAya_unmuKI_BARA#sAmAnya_vyavasAya_unmuKI_BARA#noun#3#RM
 Communication_controller	saMcAra_niyaMwraka#saMcAra_niyaMwraka#noun#2#RM
 Compilation_error	saMkalana_wruti#saMkalana_wruti#noun#2#RM
-Compile_<<<unprintable character>>>_<<<unprintable character>>>_<<<unprintable character>>>_<<<unprintable character>>>_<<<unprintable character>>>_go	saMkalana_waWA_kAryapAlana#saMkalana_waWA_kAryapAlana#noun#3#RM
 Compile_time_diagnostic	saMkalana_kAla_nExAnika#saMkalana_kAla_nExAnika#noun#3#RM
 Compile_time_macro	saMkalana_kAla_mEkro#saMkalana_kAla_mEkro#noun#3#RM
 Compile_time_statement	saMkalana_kAla_kaWana#saMkalana_kAla_kaWana#noun#3#RM
@@ -2480,7 +2479,7 @@ addressable_register	pawAyogya_paMjI#pawAyogya_paMjI#noun#2#RM
 addressable_storage	pawAyogya_BaMdAraNa#pawAyogya_BaMdAraNa#noun#2#RM
 addressable_vertical_position	pawAyogya_UrXvAXara_sWiwi#pawAyogya_UrXvAXara_sWiwi#noun#3#RM
 addressed_memory	pawAyukwa_smqwi#pawAyukwa_smqwi#noun#2#RM
-	addressed_to	ke_nAma#ke_nAma#noun#2#RM
+addressed_to	ke_nAma#ke_nAma#noun#2#RM
 addressing_character	pawABigamana_saMprawIka#pawABigamana_saMprawIka#noun#2#RM
 addressing_interrupt	pawABigamana_aMwarAyana#pawABigamana_aMwarAyana#noun#2#RM
 addressing_loop	pawABigamana_pASa#pawABigamana_pASa#noun#2#RM
@@ -2495,7 +2494,7 @@ adequate_depreciation	paryApwa_mUlyahaqAsa_vyavasWA#paryApwa_mUlyahaqAsa_vyavasW
 adequate_reason	paryApwa_kAraNa#paryApwa_kAraNa#noun#2#RM
 adequate_security	paryApwa_prawiBUwi_iurakRA#paryApwa_prawiBUwi_iurakRA#noun#2#RM
 adequately_banked	paryApwa_bEMkiMga_sevAoM_se_yukwa#paryApwa_bEMkiMga_sevAoM_se_yukwa#noun#2#RM
-	adhere_to	para_jame_rahanA#para_jame_rahanA#noun#2#RM
+adhere_to	para_jame_rahanA#para_jame_rahanA#noun#2#RM
 adhesion_contract	AsaMjana_kA_anubanXa#AsaMjana_kA_anubanXa#noun#2#RM
 adhesive_stamp	AsaMjaka_stAMpa#AsaMjaka_stAMpa#noun#2#RM
 adhesive_tape	AsaMjaka_tepa#AsaMjaka_tepa#noun#2#RM
@@ -3061,7 +3060,7 @@ all_embracing	sabako_milAkara#sabako_milAkara#noun#2#RM
 all_fired	awyaXika#awyaXika#noun#2#RM
 all_found	saba_milA_kara#saba_milA_kara#noun#2#RM
 all_in_all	kula_milA_kara#kula_milA_kara#noun#3#RM
-	all_in	kula#kula#noun#2#RM
+all_in	kula#kula#noun#2#RM
 all_inclusive_cost	sarvasamAveSI_lAgawa#sarvasamAveSI_lAgawa#noun#3#RM
 all_india_average	aKila_BArawIya_Osawa#aKila_BArawIya_Osawa#noun#3#RM
 all_india_institute_of_medical_science	aKila_BArawIya_AyurvijFAna_saMsWAna#aKila_BArawIya_AyurvijFAna_saMsWAna#noun#3#RM
@@ -3119,7 +3118,7 @@ allotment_return	AbaMtana_vivaraprI#AbaMtana_vivaraprI#noun#2#RM
 allotment_sheet	AbaMtana_SIta#AbaMtana_SIta#noun#2#RM
 allotment_supervisor	AbaMtana_paryavekRaka#AbaMtana_paryavekRaka#noun#2#RM
 allow_an_appeal	apIla_maMjUra_karanA#apIla_maMjUra_karanA#noun#3#RM
-	allow_in	anxara_Ane_xenA#anxara_Ane_xenA#noun#2#RM
+allow_in	anxara_Ane_xenA#anxara_Ane_xenA#noun#2#RM
 allowance_account	BawwA_KAwA#BawwA_KAwA#noun#2#RM
 allowance_admissible	anujFeya_svIkArya_arAhZaya#anujFeya_svIkArya_arAhZaya#noun#2#RM
 allowed_time	anumawa_samaya#anumawa_samaya#noun#2#RM
@@ -12548,7 +12547,7 @@ fall_guy	balI_kA_bakarA#balI_kA_bakarA#noun#2#RM
 fall_like_flies	mqwyu_honA#mqwyu_honA#noun#3#RM
 fall_off	girAvata#girAvata#noun#2#RM
 fall_out	JagadZA#JagadZA#noun#2#RM
-	fall_short_of	kama_honA#kama_honA#noun#4#RM
+fall_short_of	kama_honA#kama_honA#noun#4#RM
 fall_through	asaPala_honA#asaPala_honA#noun#2#RM
 fall_to	SurU_karanA#SurU_karanA#noun#2#RM
 fallen_arch	girI_hui_meharAba#girI_hui_meharAba#noun#2#RM
@@ -18042,7 +18041,7 @@ later_reference	uwwra_saMxaBar#uwwra_saMxaBar#noun#2#RM
 lateral_oscillation	pArRvika_xolana#pArRvika_xolana#noun#2#RM
 lateral_reversal	pArSya_uwkramaNa#pArSya_uwkramaNa#noun#2#RM
 lateral_thinking	pArSvika_cinwana#pArSvika_cinwana#noun#2#RM
-	latest_by	aXika_se_aXika#aXika_se_aXika#noun#2#RM
+latest_by	aXika_se_aXika#aXika_se_aXika#noun#2#RM
 latest_development	axyawana_aavInawama_pragawi#axyawana_aavInawama_pragawi#noun#2#RM
 latex_of_poppy	poswa_AkRIra#poswa_AkRIra#noun#1#RM
 latin_america	lEtina_amerikA#lEtina_amerikA#noun#2#RM
@@ -23863,7 +23862,7 @@ pleasure_boat	CotA_nAva#CotA_nAva#noun#2#RM
 plenary_conference	pUrNa_sammelana#pUrNa_sammelana#noun#2#RM
 plenary_meeting	pUrNa_bETaka#pUrNa_bETaka#noun#2#RM
 plenary_session	pUrNa_aXiveSana#pUrNa_aXiveSana#noun#2#RM
-	plenty_of	pracura_mAwrA_meM#pracura_mAwrA_meM#noun#3#RM
+plenty_of	pracura_mAwrA_meM#pracura_mAwrA_meM#noun#3#RM
 plinth_area	kursI_kRewraPala#kursI_kRewraPala#noun#2#RM
 plosive_consonant	sparSa_vyaMjana#sparSa_vyaMjana#noun#2#RM
 plotting_head	AleKana_SIrRa#AleKana_SIrRa#noun#2#RM
@@ -33567,7 +33566,7 @@ train_accident	rela_xurGatanA#rela_xurGatanA#noun#2#RM
 damn_shame	awyanwa_lajjAspaxa#awyanwa_lajjAspaxa#noun#2#RM
 come_to_grips_with	kA_sAmanA_kara#kA_sAmanA_kara#noun#4#RM
 language_accessing_software	BARA_aBigamana_praNAlI#BARA_aBigamana_praNAlI#noun#3#RM
-hari_om	hari oma#hari oma#noun#2#RM
+hari_om	hari_om#hari_om#noun#2#RM
 Warm_welcome	hArxika_svAgata#hArxika_svAgata#noun#2#RM
 best_wishes	SuBakAmanA#SuBakAmanA#noun#2#RM
 income_taxes	Aya_kara#Aya_kara#noun#2#RM
@@ -33583,9 +33582,9 @@ capital_punishment	mqwyu_xaMda#mqwyu_xaMda#noun#2#RM
 a_lot_of	bahuwa_sArA#bahuwa_sArA#noun#2#RM
 female_friends	swrI_miwra#swrI_miwr#noun#2#WM
 police_station	polisa_steSana#polisa_steSana#noun#2#RM
-from_left_to_right	bAzye_se xAzye#bAzye_se xAzye#UNDEFINED#4#RM
+from_left_to_right	bAzye_se_xAzye#bAzye_se_xAzye#UNDEFINED#4#RM
 from_right_to_left	xAzye_se_bAzye#xAzye_se_bAzye#UNDEFINED#4#RM
-traffic_lights	 trEPika_lAIta#trEPika_lAIta#UNDEFINED#2#RM 
+traffic_lights	trEPika_lAIta#trEPika_lAIta#UNDEFINED#2#RM
 traffic_jam	trePika_jAma#trePika_jAma#noun#2#RM
 very_little	awyaMwa_WodA#awyaMwa_WodA#noun#2#RM
 each_one	prawyeka#prawyeka#noun#2#RM
@@ -33631,7 +33630,7 @@ love_affair	prema_saMbanXa#prema_saMbanXa#noun#2#RM
 In_fact	asala_meM#asala_meM#noun#2#RM
 free_fall	besahArA_giranA#besahArA_giranA#noun#2#RM
 miles_and_miles	miloM#miloM#noun#3#WM
-a_spot_of	jarA_sA#jarA_sA#noun#2#RM 
+a_spot_of	jarA_sA#jarA_sA#noun#2#RM
 for_the_last_time	AKirI_bAra#AKirI_bAra#noun#4#WM
 stop_talking	bAweM_banxa_kIjiye#bAweM_banxa_kIjiye#noun#1#WM
 diet_book	AhAra_puswaka#AhAra_puwaka#noun#2#RM#
@@ -33648,12 +33647,12 @@ some_of_these	inameM_se_kuCa#inameM_se_kuCa#determiner#1#WM
 reaction_force	aBilamba_bala#aBilamba_bala#noun#2#RM
 electron_beam	ilektroYna_puFja#ilektroYna_puFja#noun#2#RM
 a_way	isa_prakAra#isa_prakAra#noun#2#RM
-frame_of_reference	nirxeSa_wanwra#nirxeSa_wanwra#noun#1#RM 
+frame_of_reference	nirxeSa_wanwra#nirxeSa_wanwra#noun#1#RM
 note_that	XyAna_xIjie_ki#XyAna_xIjie_ki#verb#1#WM
-is_said_to_be	kaha_jAwA_hE#kaha_jAwA_hE#verb#2#RM		
+is_said_to_be	kaha_jAwA_hE#kaha_jAwA_hE#verb#2#RM
 external_agency	bAhya_sAXana#bAhya_sAXana#noun#2#WM
 problems_of_interest	rocaka_samasyAez#rocaka_samasyAez#noun#1#WM
 living_creature	prANI#prANI#noun#2#WM
 just_before	se_TIka_pahale#se_TIka_pahale#preposition#2#RM
 as_a_whole	eka_ikAI_ke_rUpa_meM#eka_ikAI_ke_rUpa_meM#preposition#1#WM
-in_the_first_place	praWamawayA#praWamawayA#preposition#1#WM
+in_the_first_place	praWamawayA#praWamawayA#preposition#4#WM

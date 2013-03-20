@@ -4307,7 +4307,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 65. Updated sd_verified (489) and sd_ver_output
 66. Updated Log.
 
- 13-03-13
+ 20-03-13
  ========
  1. Added get_adv-prep_dic.sh to get entries of adverb and prepositions in default-iit-bombay-shabdanjali-dic.txt
  2. Added remove_dup_entry.py in miscellaneous/SMT/MINION/alignment/ for above purpose.
@@ -4376,7 +4376,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 35. Updated iit-bombay.dict in goldendict
 36. Updated shabdanjali.dict.dz in goldendict
 37. Updated README
-38. Updated phy_align_partial_ver (15)
-39. Updated phy_align_verified (131)
+38. Updated phy_align_partial_ver (35)
+39. Updated phy_align_verified (138)
 40. Updated sd_verified (490)
 41. Updated Log

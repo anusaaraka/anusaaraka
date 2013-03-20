@@ -704,7 +704,17 @@ Modified:
 	41.Modified negative_adjective      nakArAwmaka/rqNAwmaka/prawikUla/niReXAwmaka as	nakArAwmaka/qNAwmaka/prawikUla/niReXAwmaka (Suggested by Chaitanya Sir 07-12-12)
 	42. Modified scalar_UNDEFINED      _axiSa  as scalar_UNDEFINED        axiSa (Suggested by Chaitanya Sir 05-01-13)
 	43. Modified perceive_verb	meVhasUsa_kara as  mehasUsa_kara 
-			
+	44. Modified inquiring_adjective     praSnamaya/jijFAsu	 as  praSnamaya/jijFAsu/anveRI   ( 	 "	19-03-13)
+	45. Modified respond_verb    prawyuwwara_xe/prawikriyA_xiKA/javAba_xe/uwwara_xe/prawikriyA_kara/baxale_me_kuCa_karanA_yA_kaha							as
+		                     prawyuwwara_xe/prawikriyA_xiKA/javAba_xe/uwwara_xe/prawikriyA_kara/baxale_me_kuCa_karanA_yA_kaha/prawikriyA_vyakwa kara							(Suggested by Chaitanya Sir    19-03-13)
+
+	46. Modified wonder_noun     vismaya/karAmAwI/camawkAra/axBuwa_xqSya/axBuwa_vaswu/AScarya/acaraja/acamBA ("  ")
+						as
+				     vismaya/karAmAwI/camawkAra/axBuwa_xqSya/axBuwa_vaswu/AScarya/acaraja/acamBA/kOwUhala
+	47. existing_adjective      varwamAna/pracaliwa   as   varwamAna/pracaliwa/supracaliwa (Modified by Manju 20-03-13)
+	48. systematic_adjective    suvyavasWiwa/suniyojiwa/niyamiwa/kramabaxXa/Ayojiwa       as
+				    suvyavasWiwa/suniyojiwa/niyamiwa/kramabaxXa/Ayojiwa/vyavasWiwa	(  "  )
+ 
 Removed::
 -------
 	itumail@itu.ch  E-MAIL::itumail@itu.ch	(Suggested by Rajini(29-02-12))
@@ -755,6 +765,8 @@ Removed::
         	            [Suggested by Chaitanya ji and Dipti Madam. 23-04-12]
     	moving_in   	aXikAra_meM_karane_kI_kriyA#aXikAra_meM_karane_kI_kriyA#noun#2#RM
                     	#The ball is moving in negative y direction. (Suggested by Sukhada) 
+	Compile_<<<unprintable character>>>_<<<unprintable character>>>_<<<unprintable character>>>_<<<unprintable character>>>_<<<unprintable character>>>_go	saMkalana_waWA_kAryapAlana#saMkalana_waWA_kAryapAlana#noun#3#RM
+
 
     Modified ::
     	information_system --- sUcanA_praprAlI  ==> sUcanA_praNAlI (Suggested by Chaitanya ji(20-17-12))
@@ -779,7 +791,7 @@ Removed::
 	living_creature 	prANI#prANI#noun#2#WM				(Suggested by Chaitanya Sir 12-12-12)
 	just_before		se_TIka_pahale#se_TIka_pahale#preposition#2#RM	(Suggested by Chaitanya Sir 22-01-13)
 	as_a_whole      	eka_ikAI_ke_rUpa_meM#eka_ikAI_ke_rUpa_meM#preposition#1#WM	( "   18-02-13      )
-	in_the_first_place      praWamawayA#praWamawayA#preposition#1#WM	(      "	18-02-13	    )
+	in_the_first_place      praWamawayA#praWamawayA#preposition#4#WM	(      "	18-02-13	    )
 
 
  changes in phy_dictionary.txt
@@ -793,6 +805,7 @@ Removed::
 	phenomenon_noun 	pariGatanA  	(	"		    08-12-12)
 	nuclear_adjective	ANvika		(Suggested by Chaitanya Sir 05-01-13)
 
+
  Modified :
         rearrangement_Noun  	punavryavasWA  	as   	punarvyavasWA  	(Suggested by Chaitanya Sir (08-08-12))
 	molecular_adjective     ANvika	    	as	ANvika/aNu	(      "		    (05-12-12))
@@ -800,6 +813,7 @@ Removed::
                    SuxXa_gawika, SuxXa_gawikI, prasara_koNa_xEGryavqxXi, ruxXoRma, pariSuxXawA and saMbaxXa
 	relative_noun	ApekRa		as	relative_adjective	ApekRa	(Suggested by Chaitanya Sir (05-01-13))
 	translational_adjective sWAnAMwarIya	as  	translational_adjective sWAnAMwarIya/sWAnAnwaraNa (Added by Manju)
+	interplay_noun  pArasparika_kriyA	as	interplay_noun  pArasparika_kriyA/pArasparika_praBAva ( " )
 
  changes in phy_eng_multi_word_dic.txt
  =====================================
