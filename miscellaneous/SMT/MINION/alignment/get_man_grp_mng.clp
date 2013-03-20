@@ -293,6 +293,7 @@
  ?f1<-(position-cat-man_grp_mng  ?id1&:(= (+ ?id 1) ?id1) VGF	$?w1	-	-)
  ?f2<-(head_id-grp_ids ?id $?grp)
  ?f3<-(head_id-grp_ids ?id1&:(= (+ ?id 1) ?id1) $?grp1)
+ (not (combine_prev_word_for_ho_id-prev_word ?id $?));In this situation, as you will learn in Chapter 10, a light wave can be considered to travel from one point to another, along a straight line joining them.
  =>
 	(retract ?f0 ?f1 ?f2 ?f3)
 	(assert (position-cat-man_grp_mng  ?id1  VGF $?w $?w1 - -))

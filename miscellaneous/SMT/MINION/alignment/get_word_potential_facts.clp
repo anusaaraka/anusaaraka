@@ -20,13 +20,15 @@
 ;Added by Shirisha Manju(7-03-13)
 ; if eng multi mng and manual multi mng is same then rm the ids from order excluding the head
 ;The choice of a set of axes in a frame of reference depends upon the situation.
+;First, that it travels with enormous speed and second, that it travels in a straight line.
 (defrule rm_comp_ids_from_order
 (declare (salience 2001))
-?f1<-(ids-phy_cmp_mng-eng_mng $? ?phy_mng ?)
-(ids-phy_cmp_mng-head-cat-mng_typ-priority $?ids ?phy_mng ?head ? ? ?)
+(or (ids-phy_cmp_mng-eng_mng $? ?phy_mng ?)(ids-cmp_mng-eng_mng $? ?phy_mng ?))
+(or (ids-phy_cmp_mng-head-cat-mng_typ-priority $?ids ?phy_mng ?head ? ? ?)(ids-cmp_mng-head-cat-mng_typ-priority $?ids ?phy_mng ?head ? ? ?))
 ?f0<-(hindi_id_order $?order)
+(not (removed_id_for_phy_mng ?phy_mng))
 =>
-	(retract ?f0 ?f1)
+	(retract ?f0)
 	(loop-for-count(?i 1 (length $?ids))
         	(bind ?id (nth$ ?i $?ids))
 		(if (neq ?id (nth$ ?head $?ids)) then
@@ -34,6 +36,7 @@
 		)
 	)
 	(assert (hindi_id_order $?order))
+	(assert (removed_id_for_phy_mng ?phy_mng))
 )
 ;------------------------------------------------------------------------------------------------------------
 (defrule manul_id_mapped_list

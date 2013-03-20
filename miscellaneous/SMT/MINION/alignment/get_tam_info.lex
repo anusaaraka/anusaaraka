@@ -75,7 +75,7 @@ void printfun(char *id , char *node , char *root , char *cat ,char *gen,char *nu
 					strcpy(rel1,"-"); strcpy(rel2,"-");
                                         printfun(id,node,root,cat,gen,num,per,cas,new_tam,head,name,rel1,rel2); 
                                 }
-[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9._,+]*'[ ]head=[a-zA-Z._,+0-9]*[ ][ ]poslcat=\"[A-Z]*\"[ ]name='[A-Z0-9]*'[ ]drel='[a-z_0-9]*[:][A-Z0-9]*'>  {
+[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9._,+ -]*'[ ]head=[a-zA-Z._,+0-9-]*[ ][ ]*poslcat=\"[A-Z]*\"[ ]name='[A-Z0-9]*'[ ]drel='[a-z_0-9]*[:][A-Z0-9]*'>  {
                                 	yytext=fun(yytext);
                                         len = strcspn(yytext,"="); yytext=yytext+len+1;
                                         len = strcspn(yytext," "); strncpy(head,yytext,len);

@@ -442,7 +442,7 @@
 (not (prep_id-relation-anu_ids ? kriyA-conjunction  ? ?id));It was so dark that I could not see anything.
 (not (Mother  ?SBAR))
 (id-original_word ?head ?wrd)
-(test (eq (member$ ?wrd (create$ that because as though although If if unless ) ) FALSE)); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy. Some grammars are better than others, as we have proved.
+(test (eq (member$ ?wrd (create$ that because as though although If if unless since) ) FALSE)); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy. Some grammars are better than others, as we have proved.
 =>
         (bind ?*count* (+ ?*count* 1))
         (retract ?f0)

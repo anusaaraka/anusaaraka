@@ -119,12 +119,12 @@
  (declare (salience 30))
  ?f<-(ids-sep-cmp_mng $?ids ?id - $?new_mng)
  ?f0<-(manual_id-cat-word-root-vib-grp_ids ?h ?cat $?word - $?root - $?vib - $?pre ?id $?post)
+ (test (and (neq $?vib $?new_mng) (neq $?word $?new_mng)))
  =>
 	(retract ?f ?f0)
 	(bind $?m_ids (sort > (create$ $?ids ?id $?pre $?post)))
 	(bind $?m_ids (sort_grp $?m_ids))
 	(assert (manual_id-cat-word-root-vib-grp_ids ?id ?cat $?new_mng - $?new_mng - $?vib - $?m_ids))
-;	(assert (manual_id-cat-word-root-vib-grp_ids ?id ?cat $?new_mng - $?root - $?vib - $?m_ids))
  )
  ;------------------------------------------------------------------------------------------------------
  ; (piNda - piMda - ke - 18 19)  and  (ke samparka meM - saMparka - meM - 19 20 21) ==> 

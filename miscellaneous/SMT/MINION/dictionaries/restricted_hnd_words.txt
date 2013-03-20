@@ -23,5 +23,6 @@ vaha	she/he/the/her
 yahAz	here
 yaha	the/that/this/it
 isakA	the/it/its/this
+isake	the/it/its/this
 jinakA	which
 hama	we

@@ -96,7 +96,8 @@
         	                        (bind ?mng ?lkup))
 					(print_dic_mng ?gdbm ?str1 null ?mng multi)
                                        	(bind ?str1 (remove_character "_" ?str1 " "))
-                                       	(assert (multi_word_expression-grp_ids (explode$ (lowcase (implode$ ?str1))) $?grp_ids))
+                                       	(assert (multi_word_expression-grp_ids (explode$ (implode$ ?str1)) $?grp_ids))
+;                                       	(assert (multi_word_expression-grp_ids (explode$ (lowcase (implode$ ?str1))) $?grp_ids))
                                     )
                     )
  	)
@@ -139,8 +140,8 @@
         (mwe_lookup "proper_noun-common_noun_compounds.gdbm" 1 $?Eng_list)
         (mwe_lookup "multi_word_expressions.gdbm" 1 $?Eng_list)
         (mwe_lookup "multi_word_expressions.gdbm" 2 $?Eng_list)
+	(mwe_lookup "provisional_multi_word_dic.gdbm" 1 $?Eng_list)
  )
- ;--------------------------------------------------------------------------------------------------------
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Mahalaxmi
  ;These laws can be derived from [Newton's] laws of motion in mechanics. ;ina niyamoM ko yAMwrikI meM nyUtana ke gawi ke niyamoM se vyuwpanna kiyA jA sakawA hE. ;here morph doesn't has entry for word Newton's as PropN, 

@@ -124,6 +124,7 @@
  (bind ?*path* (str-cat ?*path* "/miscellaneous/SMT/MINION/alignment/manual_word_grp_using_dic.clp"))
  (load ?*path*)
  (load-facts "word.dat")
+ (load-facts "revised_root.dat")
  (load-facts "manual_hindi_sen.dat")
  (load-facts "database_mng.dat")
  (load-facts "shallow_parser_root.dat")

@@ -40,10 +40,25 @@
         (assert (anu_id-man-id-mng ?id ?pos ?first_word $?db_mng))
 )
 
+;The coordinates (x, y, z) of an object describe the position of the object with respect to this coordinate system.
+;kisI vaswu ke nirxeSAfka @PUNCT-OpenParen @x @PUNCT-Comma @y @PUNCT-Comma @z @PUNCT-ClosedParen isa nirxeSAfka nikAya [ke sApekRa] usa vaswu kI sWiwi nirUpiwa karawe hEM  @PUNCT-Dot
+(defrule possible_match_for_current_word_with_multi
+(declare (salience 90))
+(current_word-position ?first_word ?pos)
+(id-multi_word_expression-dbase_name-mng ? $?e_words ? ?first_word $?db_mng)
+(multi_word_expression-grp_ids $?e_words $?ids ?id)
+(id-word ?id ?)
+(test (> (length $?db_mng) 0))
+=>
+        (assert (anu_id-man-id-mng ?id ?pos ?first_word $?db_mng))
+)
+
+
+
 ;--------------------------------------------------------------------------------------------------------
 
 (defrule retract_current_word
-(declare (salience 90))
+(declare (salience 80))
 ?f<-(current_word-position ?first_word ?)
 =>
         (retract ?f)
@@ -63,7 +78,6 @@
         (bind $?man_ids (create$ ))
         (bind $?mng (create$))
         (bind ?len (+ (length $?db_mng) ?pos))
-        (printout t ?len crlf)
         (loop-for-count (?i ?pos ?len)
                         (bind ?m_word (nth$ ?i $?man_sen))
                         (bind $?mng (create$ $?mng ?m_word))
@@ -94,7 +108,6 @@
                         (bind $?mng (create$ $?mng ?m_word))
 			(bind $?man_ids (create$ $?man_ids ?i))
         )
-        (printout t $?mng $?db_mng crlf)
         (if (neq $?mng $?db_mng) then (retract ?f)
 	else
 	(retract ?f)

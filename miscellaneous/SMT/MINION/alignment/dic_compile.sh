@@ -6,6 +6,7 @@ rm $HOME_anu_test/Anu_databases/phy_hnd_multi_word_dic.gdbm
 rm $HOME_anu_test/Anu_databases/provisional_PropN_dic.gdbm
 rm $HOME_anu_test/Anu_databases/provisional_word_dic.gdbm
 rm $HOME_anu_test/Anu_databases/provisional_root_dic.gdbm
+rm $HOME_anu_test/Anu_databases/provisional_multi_word_dic.gdbm
 
 rm $HOME_anu_test/Anu_databases/restricted_eng_words.gdbm
 rm $HOME_anu_test/Anu_databases/restricted_hnd_words.gdbm
@@ -64,6 +65,8 @@ echo "Creating provisional_word_dictionary"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/provisional_word_dic.gdbm   < provisional_word_dic_in_canonical_form.txt
 echo "Creating provisional_root_dictionary"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/provisional_root_dic.gdbm   < provisional_root_dic_in_canonical_form.txt
+echo "Creating provisional_multi_word_dictionary"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/provisional_multi_word_dic.gdbm < provisional_multi_word_dic_in_canonical_form.txt
 echo "Creating Science-dictionary"
 ./create-gdbm.pl $HOME_anu_test/Anu_databases/Science-dictionary.gdbm      < Science-dictionary_in_canonical_form.txt
 echo "Creating hindi_tam_dictionary"

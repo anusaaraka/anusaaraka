@@ -179,26 +179,59 @@
 (defrule single_vib1
 (declare (salience 70))
 ?f1<-(man_id-word-cat ?id0 $?noun ?cat)
-?f0<-(head_id-grp_ids ?h $?d ?id0 $?d1)
-;?f0<-(head_id-grp_ids ?h ?id0 $?d1)
-?f4<-(manual_id-node-word-root-tam ?h ?c $?noun1 - $?root - $?vib1)
-(id-node-word-root ?id0 ? $? - $?root)
 (man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen ?)
 (man_id-word-cat ?id2 @PUNCT-ClosedParen ?)
-(test (> ?id2 ?id1))
+(test (or (eq (- ?id2 ?id1) 3)(eq (- ?id2 ?id1) 2) (eq (- ?id2 ?id1) 1)))
 ?f3<-(man_id-word-cat ?id3&:(=(+ ?id2 1) ?id3) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA ?)
+?f0<-(head_id-grp_ids ?h $?d ?id0 $?d1)
+?f4<-(manual_id-node-word-root-tam ?h ?c $?noun1 - $?root - $?vib1)
+(id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(head_id-grp_ids ?h1 $?d2 ?id3 $?d3)
-;?f2<-(head_id-grp_ids ?h1  ?id3 $?d3)
 (not (retract_manual_fact ?id0))
 =>
 	(retract ?f1 ?f3 ?f0 ?f2 ?f4)
 	(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ?vib - ?id0 ?id3))
 	(assert (head_id-grp_ids ?h $?d ?id0 $?d1 $?d2 ?id3))
-;	(assert (head_id-grp_ids ?h ?id0 $?d1 ?id3))
  	(assert (manual_id-node-word-root-tam ?h ?c $?noun1 - $?root - $?vib1 ?vib))
 	(if (neq (length $?d3) 0) then
 		(assert (head_id-grp_ids ?h1 $?d3))
 	)
+)
+;----------------------------------------------------------------------------------------------------------------
+; The scientific method involves several interconnected steps: Systematic observations, controlled experiments, qualitative and quantitative reasoning, mathematical modelling, prediction and verification or falsification of theories.
+;@PUNCT-SingleQuote vEjFAnika viXi  @PUNCT-SingleQuote  meM bahuwa se anwaHsambanXa - paxa  @PUNCT-Colon  vyavasWiwa prekRaNa  @PUNCT-Comma  niyanwriwa prayoga  @PUNCT-Comma  guNAwmaka waWA mAwrAwmaka vivecanA  @PUNCT-Comma  gaNiwIya prawirUpaNa  @PUNCT-Comma  BaviRya kaWana  @PUNCT-Comma  sixXAnwoM kA sawyApana aWavA anyaWAkaraNa sammiliwa howe hEM  @PUNCT-Dot
+(defrule single_vib_for_single_quote
+(declare (salience 70))
+?f1<-(man_id-word-cat ?id0 @PUNCT-SingleQuote SYM)
+?f2<-(man_id-word-cat ?id1 @PUNCT-SingleQuote SYM)
+(test (or (eq (- ?id1 ?id0) 3)(eq (- ?id1 ?id0) 2) (eq (- ?id1 ?id0) 1)))
+?f3<-(man_id-word-cat ?id2&:(=(+ ?id1 1) ?id2) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA ?)
+?f4<-(man_id-word-cat ?id3&:(=(- ?id1 1) ?id3) $?word ?cat)
+(id-node-word-root ?id3 ? $?word - $?root)
+=>
+        (retract ?f1 ?f2 ?f3 ?f4)
+        (assert (manual_id-cat-word-root-vib-grp_ids ?id3 ?cat $?word - $?root - ?vib - ?id3 ?id2))
+)
+;----------------------------------------------------------------------------------------------------------------
+;In this case, the magnitude of displacement (360 m) is equal to the path length (360 m). 
+;yahAz visWApana kA parimANa @PUNCT-OpenParen 360 @m  @PUNCT-ClosedParen  paWa - lambAI @PUNCT-OpenParen  360 @m  @PUNCT-ClosedParen  ke barAbara hE @PUNCT-Dot
+(defrule single_vib_for_group_fact
+(declare (salience 71))
+?f1<-(manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?noun - $?r - 0 - $?ids ?id0)
+(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen ?)
+(man_id-word-cat ?id2 @PUNCT-ClosedParen ?)
+(test (or (eq (- ?id2 ?id1) 3)(eq (- ?id2 ?id1) 2) (eq (- ?id2 ?id1) 1)))
+?f3<-(man_id-word-cat ?id3&:(=(+ ?id2 1) ?id3) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA ?)
+?f0<-(head_id-grp_ids ?h $?d ?id0 $?d1)
+?f2<-(head_id-grp_ids ?h1 $?d2 ?id3 $?d3)
+(not (retract_manual_fact ?id0))
+=>
+        (retract ?f1 ?f3 ?f0 ?f2 )
+        (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?r - ?vib - $?ids ?id0 ?id3))
+        (assert (head_id-grp_ids ?h $?d ?id0 $?d1 $?d2 ?id3))
+        (if (neq (length $?d3) 0) then
+                (assert (head_id-grp_ids ?h1 $?d3))
+        )
 )
 ;----------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju(19-9-12)
@@ -300,6 +333,20 @@
         (assert (man_id-word-cat ?mid $?mng ?cat))
         (assert (grp_head_id-grp_ids-mng ?mid - $?mids - $?mng))
 )
+;----------------------------------------------------------------------------------------------------------------
+;You will find that the path of the beam inside the water shines brightly.
+;Apa xeKezge ki jala [ke anxara] kiraNa - puFja kA paWa camakIlA xiKAI xewA hE
+(defrule grouping_using_dic_for_vib
+(declare (salience 4))
+(anu_id-manual_ids-sep-mng ? ?id $?d ?id1 - $?mng)
+?f0<-(manual_id-cat-word-root-vib-grp_ids ?mid ?n $?word - $?root - $?vib - $?ids ?id)
+(test (neq (length  $?vib ) 0))
+?f1<-(manual_id-cat-word-root-vib-grp_ids ?mid1 ? $? - $? - $? - $?d ?id1)
+=>
+	(retract ?f0 ?f1)
+	(bind $?grp_ids (sort > $?ids ?id $?d ?id1))
+	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?n $?word - $?root - $?mng - $?grp_ids))
+)	
 ;----------------------------------------------------------------------------------------------------------------
 (defrule add_grp_mng
 (declare (salience 5))

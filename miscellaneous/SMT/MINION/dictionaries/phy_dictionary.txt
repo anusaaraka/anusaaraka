@@ -46,7 +46,7 @@ heliocentric_adjective	sUya-keMxrIya
 planetary_adjective	grahIya
 orbit_noun	kakRA
 scattering_noun	prakIrNana
-interplay_noun	pArasparika_kriyA
+interplay_noun	pArasparika_kriyA/pArasparika_praBAva
 astronomical_noun	KagolIya
 astronomical_adjective	KagolIya
 radioactive_adjective	viGatanABika/rediyoEktiva
