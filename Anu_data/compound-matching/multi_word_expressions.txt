@@ -12073,9 +12073,9 @@ every_bit_as	samAna_rUpa_se#samAna_rUpa_se#noun#3#RM
 every_night	hara_rAwa#hara_rAwa#noun#2#RM
 every_now_and_then	samaya_samaya_para#samaya_samaya_para#noun#4#RM
 every_one	hara_eka#hara_eka#noun#2#RM
-every_other	hara_xUsarA[>hara_koI]#hara_xUsarA[>hara_koI]#noun#2#RM
+every_other	hara_xUsarA#hara_xUsarA#noun#2#RM
 every_so_often	jaba_xeKo_waba#jaba_xeKo_waba#noun#3#RM
-every_time	hara_bAra_[jaba]#hara_bAra_[jaba]#noun#2#RM
+every_time	hara_bAra#hara_bAra#noun#2#RM
 everywhere_defined	sArva_pAriBARiwa#sArva_pAriBARiwa#noun#2#RM
 eviction_inspector	bexaKalI_nirIkRaka#bexaKalI_nirIkRaka#noun#2#RM
 evil_doer	kukarmI#kukarmI#noun#2#RM
@@ -33655,4 +33655,4 @@ problems_of_interest	rocaka_samasyAez#rocaka_samasyAez#noun#1#WM
 living_creature	prANI#prANI#noun#2#WM
 just_before	se_TIka_pahale#se_TIka_pahale#preposition#2#RM
 as_a_whole	eka_ikAI_ke_rUpa_meM#eka_ikAI_ke_rUpa_meM#preposition#1#WM
-in_the_first_place	praWamawayA#praWamawayA#preposition#4#WM
+in_the_first_place	praWamawayA#praWamawayA#noun#4#WM

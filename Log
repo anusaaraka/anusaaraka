@@ -4307,7 +4307,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 65. Updated sd_verified (489) and sd_ver_output
 66. Updated Log.
 
- 20-03-13
+ 22-03-13
  ========
  1. Added get_adv-prep_dic.sh to get entries of adverb and prepositions in default-iit-bombay-shabdanjali-dic.txt
  2. Added remove_dup_entry.py in miscellaneous/SMT/MINION/alignment/ for above purpose.
@@ -4373,18 +4373,23 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 28. Added compilation of above file in anu_compile.sh and accordingly updated get_adv-prep_dic.sh.
 29. Added comments in pre_process.sh
 30. Added provisional_multi_word_dic.txt
-31. Modified list-right, list_SMT, get_dbase_mng.clp and dic_compile.sh for the above
-32. Modified prep_in_SBAR_rule (added since in list) in H_ordering_rules.clp
-33. In Anusaaraka_reranked_johnson_minion.sh, updated stanford parser version.
-34. Updated mapping-symbols_manual.lex
-35. Updated Anu/stdenglish/insert_period.lex
-36. Updated run_align_browser.sh and ClipsToAnu_browser_intfc.sh
-37. Updated MINION/alignment/README
-38. Updated changes_in_databases
-39. Updated iit-bombay.dict in goldendict
-40. Updated shabdanjali.dict.dz in goldendict
-41. Updated README
-42. Updated phy_align_partial_ver (35)
-43. Updated phy_align_verified (138)
-44. Updated sd_verified (490)
-45. Updated Log
+31. Added  removed_files/run_modules_std.bat
+32. run_modules_std.bat
+	Removed 2 modules ( get_constituency_tree and get_all_possible_roots)
+	Moved H_ordering_rules module after pada module
+33. Modified run_sentence_stanford.sh (removed code related to get_constituency_tree)
+34. Modified list-right, list_SMT, get_dbase_mng.clp and dic_compile.sh for the above
+35. Modified prep_in_SBAR_rule (added since in list) and undefrules in H_ordering_rules.clp
+36. In Anusaaraka_reranked_johnson_minion.sh, updated stanford parser version.
+37. Updated mapping-symbols_manual.lex
+38. Updated Anu/stdenglish/insert_period.lex
+39. Updated run_align_browser.sh and ClipsToAnu_browser_intfc.sh
+40. Updated MINION/alignment/README
+31. Updated changes_in_databases
+32. Updated iit-bombay.dict in goldendict
+43. Updated shabdanjali.dict.dz in goldendict
+44. Updated README
+45. Updated phy_align_partial_ver (35)
+46. Updated phy_align_verified (138)
+47. Updated sd_verified (490)
+48. Updated Log

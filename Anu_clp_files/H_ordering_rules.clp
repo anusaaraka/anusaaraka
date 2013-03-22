@@ -458,7 +458,7 @@
 (declare (salience 799))
 ;?f0<-(cntrl_fact_for_rev_order)
 =>
-(save-facts "hindi_rev_order.dat" local Head-Level-Mother-Daughters)
+;(save-facts "hindi_rev_order.dat" local Head-Level-Mother-Daughters)
 (undefrule merge_ADVP)
 (undefrule rev_VP_or_PP_or_WHPP)
 (undefrule rev_ADJP_goesto_PP)

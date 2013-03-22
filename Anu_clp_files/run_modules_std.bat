@@ -217,6 +217,22 @@
  (close hmng_fp1)
  (close open-word1)
  (clear)
+ ;----------------------------------------------------------------------
+ ; Across paxa ordering
+ (load "global_path.clp")
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/H_ordering_rules.clp"))
+ (load ?*path*)
+ (load-facts "original_word.dat")
+ (load-facts "relations_tmp1.dat")
+ (load-facts "E_constituents_info.dat")
+ (load-facts "Node_category.dat")
+ (load-facts "cat_consistency_check.dat")
+ (load-facts "pada_id_info.dat")
+ (open "hin_order_debug.dat" order_debug "a")
+ (run)
+ (save-facts "ordered_constituents.dat" local Head-Level-Mother-Daughters Node-Category)
+ (save-facts "hindi_id_order_tmp.dat" local hindi_id_order)
+ (clear)
  ;================================ TRANSFER MODULE ===================================================
  ;~~~~~~~~~~~~~~~~~~~~WSD MODULE ~~~~~~~~~~~~~~~~~~~~~~~~~~
  (defmodule MAIN (export ?ALL)
@@ -393,31 +409,6 @@
  (run)
  (clear)
  ;----------------------------------------------------------------------
- ; Across paxa ordering
- (load "global_path.clp")
- (bind ?*path* (str-cat ?*path* "/Anu_clp_files/H_ordering_rules.clp"))
- (load ?*path*)
- (load-facts "original_word.dat")
- (load-facts "relations_tmp1.dat")
- (load-facts "E_constituents_info.dat")
- (load-facts "Node_category.dat")
- (load-facts "cat_consistency_check.dat")
- (load-facts "hindi_tam_info.dat")
- (open "hin_order_debug.dat" order_debug "a")
- (run)
- (save-facts "ordered_constituents.dat" local Head-Level-Mother-Daughters Node-Category)
- (save-facts "hindi_id_order_tmp.dat" local hindi_id_order)
- (clear)
- ;---------------------------------------------------------------------------------
- (load "global_path.clp")
- (bind ?*path* (str-cat ?*path* "/Anu_clp_files/get_constituency_tree.bclp"))
- (bload ?*path*)
- (load-facts "hindi_rev_order.dat")
- (assert (daughter ROOT1))
- (assert (Cons-tree))
- (run)
- (save-facts "rev_constituency_tree.dat" local Cons-tree)
- (clear)
  ;=================================  LANGUAGE GENERATION MODULE =================================
  ; Determine gender of all hindi words
  (load "global_path.clp")
@@ -523,7 +514,6 @@
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/insert_punctuation.clp"))
  (load ?*path*)
  (load-facts "ordered_constituents.dat")
-; (load-facts "Node_category.dat")
  (load-facts "parser_punctuation_info.dat")
  (load-facts "hindi_id_order.dat")
  (load-facts "word.dat")
@@ -600,13 +590,5 @@
  (run)
  (save-facts "sd_chunk.dat" local chunk-ids)
  (clear)
- ;--------------------------------------------------------------------------
- (load "global_path.clp")
- (bind ?*path* (str-cat ?*path* "/Anu_clp_files/get_all_possible_roots.clp"))
- (load ?*path*)
- (load-facts "morph.dat")
- (load-facts "revised_root.dat")
- (load-facts "original_word.dat")
- (open "get_all_roots.dat" get_fp "a");
- (run)
  (exit)
+ ;--------------------------------------------------------------------------

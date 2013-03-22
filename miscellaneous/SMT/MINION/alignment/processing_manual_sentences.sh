@@ -58,10 +58,11 @@
 
  echo "Running Full Parser ..."
 
- sed "s/head='/head=/g" one_sen_per_line_manual_hindi_sen_tmp5.txt | sed  "s/name='/name=/g" | sed "s/'>/>/g" | sed "s/'  /  /g" > full_parser_output_tmp.txt
- sh $setu/bin/sl/fullparser/fullparser_hin_run.sh full_parser_output_tmp.txt > full_parser_output_tmp1.txt
+ sed -n '1h;2,$H;${g;s/\([A-Z]\+\)\t\n/\1\t<fs af='\''unk,,,,,,,'\'' head="unk">\n/g;p}' one_sen_per_line_manual_hindi_sen_tmp5.txt | sed -n '1h;2,$H;${g;s/;~~~~~~~~~~\n;~~~~~~~~~~/;~~~~~~~~~~\n<Sentence id="1">\n1\t((\tNP\t<fs af='\''SHALLOW_PARSER_FAILURE,,,,,,,'\''\n\t))\n<\/Sentence>\n;~~~~~~~~~~/g;p}' > full_parser_input.txt
 
- sed 's/ABBRENGBEFORE/@/g' full_parser_output_tmp1.txt | sed 's/ABBRENGAFTER//g' | sh Symbols_man.sh | sed 's/SYMBOL/@SYMBOL/g' | sed 's/nonascii/@nonascii/g' | sed 's/PUNCT-/@PUNCT-/g' | sed -n '1h;2,$H;${g;s/<\/Sentence>\n/<\/Sentence>\n;~~~~~~~~~~/g;p}' > full_parser_output.txt
+ sh $setu/bin/sl/fullparser/fullparser_hin_run.sh full_parser_input.txt > full_parser_output_tmp.txt
+
+ sed 's/ABBRENGBEFORE/@/g' full_parser_output_tmp.txt | sed 's/ABBRENGAFTER//g' | sh Symbols_man.sh | sed 's/SYMBOL/@SYMBOL/g' | sed 's/nonascii/@nonascii/g' | sed 's/PUNCT-/@PUNCT-/g' | sed -n '1h;2,$H;${g;s/<\/Sentence>\n/<\/Sentence>\n;~~~~~~~~~~/g;p}' > full_parser_output.txt
 
 
  echo "Tokenizing manual sentence"
