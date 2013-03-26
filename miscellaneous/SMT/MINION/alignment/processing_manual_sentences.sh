@@ -58,7 +58,7 @@
 
  echo "Running Full Parser ..."
 
- sed -n '1h;2,$H;${g;s/\([A-Z]\+\)\t\n/\1\t<fs af='\''unk,,,,,,,'\'' head="unk">\n/g;p}' one_sen_per_line_manual_hindi_sen_tmp5.txt | sed -n '1h;2,$H;${g;s/;~~~~~~~~~~\n;~~~~~~~~~~/;~~~~~~~~~~\n<Sentence id="1">\n1\t((\tNP\t<fs af='\''SHALLOW_PARSER_FAILURE,,,,,,,'\''\n\t))\n<\/Sentence>\n;~~~~~~~~~~/g;p}' > full_parser_input.txt
+ sed -n '1h;2,$H;${g;s/\([A-Z]\+\)\t\n/\1\t<fs af='\''unk,,,,,,,'\'' head="unk">\n/g;p}' one_sen_per_line_manual_hindi_sen_tmp5.txt | sed -n '1h;2,$H;${g;s/;~~~~~~~~~~\n;~~~~~~~~~~/;~~~~~~~~~~\n<Sentence id="1">\n1\t((\tNP\t<fs af='\''SHALLOW_PARSER_FAILURE,,,,,,,'\''>\n\t))\n<\/Sentence>\n;~~~~~~~~~~/g;p}' > full_parser_input.txt
 
  sh $setu/bin/sl/fullparser/fullparser_hin_run.sh full_parser_input.txt > full_parser_output_tmp.txt
 
