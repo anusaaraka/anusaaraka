@@ -13,27 +13,14 @@
  (assert (ol_res_id-word_id-word))
  (assert (current_id-group_members))
  )
- ;-----------------------------------------------------------------------------------------------------------------------
- ; Anusaaraka shall allow users to access text in any Indian language after translation from the source language (i.e English or any other regional Indian language)
-  (defrule that_is_rule
-  (id-original_word ?wid  i.e.);Modified ABBRThatis to i.e.  by Roja(18-07-12)
-  (parserid-wordid  ?pid ?wid)
-  (parser_id-cat_coarse ?pid ?cat)
-  (word-morph (original_word i.e.)(root ?root)(category  ?cat)(suffix ?suf)(number ?num))
-  ?f0<-(morph_analysis_to_be_choosen ?wid)
-  =>
-        (retract ?f0)
-        (assert (parser_id-root ?pid ?root))
-        (printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?root"  "?cat " "?suf" "?num ")" crlf)
-        (printout ?*root_fp*  "(parser_id-root "?pid" "?root")"crlf)
- )
- ;-----------------------------------------------------------------------------------------------------------------------
+ ;----------------------------------------COMMON RULES FOR ALL PARSERS------------------------------------------------------
+ 
  ; Removed root_consistency_check.clp file and added its rule here.
  ; Rule re-modified and added here by Roja(07-04-11)
  ; He saw the "BROKEN" window. BROKEN windows need to be replaced
  ; if category is adjective and it also has verb with suf en/ing from morph then take the morph (root,suf,num) of verb
- ; He handed his son a beautiful wrapped gift box . (here morph does'nt have analysis with category adjective (word--wrapped))
- ;HERE IN THIS RULE WHOLE MORPH INFORMATION OF THE WORD GETS CHANGED.
+ ; He handed his son a beautiful wrapped gift box. (here morph does'nt have analysis with category adjective (word--wrapped))
+ ; HERE IN THIS RULE WHOLE MORPH INFORMATION OF THE WORD GETS CHANGED.
  (defrule morph_root
  (declare (salience 200))
  (parser_id-cat_coarse  ?pid adjective)
@@ -59,7 +46,6 @@
  ?f0<-(morph_analysis_to_be_choosen ?wid)
  =>
         (retract ?f0)
-        (assert (parser_id-root ?pid ?root))
         (printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?root" "?cat " "?suf" " ?num")" crlf)
         (printout ?*root_fp*  "(parser_id-root "?pid" "?root")" crlf)
  )
@@ -74,14 +60,13 @@
  ?f0<-(morph_analysis_to_be_choosen ?wid)
  =>
         (retract ?f0)
-        (assert (parser_id-root ?pid ?word))
         (printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?word" PropN   -     -)" crlf)
         (printout ?*root_fp*  "(parser_id-root "?pid" "?word")" crlf)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (5th Jan 2013) Suggested by Chaitanya Sir
  ;if both categories are diff : if parser category is adverb and morph cat is I then consider the I root
- ; But only a few years [later], in 1938, Hahn and Meitner discovered the phenomenon of neutron-induced fission of uranium, which would serve as the basis of nuclear power reactors and nuclear weapons.
+ ;But only a few years [later], in 1938, Hahn and Meitner discovered the phenomenon of neutron-induced fission of uranium, which would serve as the basis of nuclear power reactors and nuclear weapons.
  (defrule diff_cat_with_adverb
  (declare (salience 110))
  (parser_id-cat_coarse ?pid adverb)
@@ -91,12 +76,11 @@
  ?f0<-(morph_analysis_to_be_choosen ?wid)
  =>
         (retract ?f0)
-        (assert (parser_id-root ?pid ?root))
         (printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?root"  adverb "?suf" " ?num ")" crlf)
         (printout ?*root_fp*  "(parser_id-root "?pid" "?root")"crlf)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
- ; if ol cat and morph cat differ and morph cat is adjective and suf is er
+ ; if parser cat and morph cat differ and morph cat is 'adjective' with suf 'er' or 'est' then taking morph info
  ; He talked longer than usual .
  (defrule diff_cat_suf_er_est_adj
  (declare (salience 100))
@@ -109,12 +93,11 @@
  ?f0<-(morph_analysis_to_be_choosen ?wid)
  =>
         (retract ?f0)
-        (assert (parser_id-root ?pid ?root))
         (printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?root"  "?cat" "?suf" " ?num ")" crlf)
         (printout ?*root_fp*  "(parser_id-root "?pid" "?root")"crlf)
  )
- ;-----------------------------------------------------------------------------------------------------------------------
- ; if suffixes are different and if link cat and morph cat is same and suf is ing
+;;-----------------------------------------------------------------------------------------------------------------------
+ ;When suffixes are different and if parser cat and morph cat is same and suf is ing
  (defrule diff_cat_suf_ing
  (declare (salience 90))
  (parser_id-cat_coarse ?pid ?cat)
@@ -125,57 +108,40 @@
  ?f0<-(morph_analysis_to_be_choosen ?wid)
  =>
         (retract ?f0)
-        (assert (parser_id-root ?pid ?root))
 	(printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?root" verb "?suf " "?num ")" crlf)
         (printout ?*root_fp*  "(parser_id-root "?pid" "?root")"crlf)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
- ; if suffixes are different and if link cat and morph cat differ and morph cat is I
- (defrule diff_cat_and_I
- (declare (salience 90))
- (parser_id-cat_coarse ?pid ?cat)
- (parserid-wordid  ?pid ?wid)
- (id-original_word ?wid ?word)
- (word-morph (original_word  ?word)(root ?root)(category  ?cat1)(suffix ?suf)(number ?num))
- (test (and (neq ?cat ?cat1)(eq ?cat1 I)))
- ?f0<-(morph_analysis_to_be_choosen ?wid)
- =>
-	(retract ?f0)
-	(assert (parser_id-root ?pid ?root))
-	(printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?root"  "?cat" "?suf " "?num ")" crlf)
-	(printout ?*root_fp*  "(parser_id-root "?pid" "?root")"crlf)
- )
- ;-----------------------------------------------------------------------------------------------------------------------
- ;default link category
- (defrule default-linkid_root
+ ;When morph word and original word are same but category differs
+ (defrule morph_root-parser_cat
  (declare (salience 60))
  ?f1<-(parser_id-cat_coarse ?pid ?cat1)
  (parserid-wordid  ?pid ?wid)
  (id-original_word ?wid ?word)
  (word-morph (original_word ?word)(morph_word ?morph_wrd)(root ?root)(category ?cat)(suffix ?suf)(number ?num))
- (morph_analysis_to_be_choosen ?wid)
+ ?f<-(morph_analysis_to_be_choosen ?wid)  
  =>
-        (retract ?f1)
-        (assert (parser_id-root ?pid ?root))
+        (retract ?f ?f1)
         (printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?root" "?cat1" "?suf " "?num")" crlf)
         (printout ?*root_fp* "(parser_id-root "?pid" "?root")"crlf)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
- ;default Pos root
- (defrule POS_default_root
- (declare (salience 30))
- (parser_id-cat_coarse ?pid ?cat)
- (parserid-wordid ?pid ?wid)
- (id-original_word ?wid ?word)
- (word-morph (original_word ?word)(morph_word ?morph_wrd)(root ?root)(category ?cat1)(suffix ?suf)(number ?num))
- ?f0<-(morph_analysis_to_be_choosen ?wid)
+ ;Added by Roja(04-03-13)
+ ;Default rule . If original word and morph original word mismatches then assign "-" for root.
+ ;Note: As of now there is no example sentence.For testing purpose comment (gram flour) pattern in morph.pl
+ (defrule default_rule
+ (declare (salience -100))
+ (parserid-wordid ?pid ?id)
+ ?f0<-(morph_analysis_to_be_choosen ?id)
+ (id-original_word ?id ?org_word)
+ (word-morph (original_word ?m_org_word)(morph_word ?morph_wrd)(root ?root)(category ?cat)(suffix ?suf)(number ?num))
+ (test (neq ?org_word ?m_org_word))
  =>
 	(retract ?f0)
-	(assert (parser_id-root ?wid ?root))
-	(printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?root"  "?cat1" "?suf " "?num ")" crlf)
-	(printout ?*root_fp*  "(parser_id-root  "?pid" "?root")" crlf)
+        (printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  -   -  -   -)" crlf)
+        (printout ?*root_fp*  "(parser_id-root "?pid" - )" crlf)
  )
- ;-----------------------------------------------------------------------------------------------------------------------
+ ;-------------------------------------ADDITIONAL RULES FOR OPEN LOGOS PARSER------------------------------------------------
  ;Added by Roja (31-03-11)
  ;The blacksmith made an assay of iron ore.
  (defrule samAsa_root
@@ -188,7 +154,6 @@
  (test (member$ ?id $?ids))
  =>
         (retract ?f0)
-        (assert (parser_id-root  ?pid  ?root))
         (printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?root "   "?cat" "?suf " " ?num ")" crlf)
         (printout ?*root_fp*  "(parser_id-root "?pid" "?root ")" crlf)
  )
@@ -204,7 +169,6 @@
  (test (member$ ?id $?ids))
  =>
         (retract ?f0)
-        (assert (parser_id-root  ?pid  ?word))
         (printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?word "   PropN   -   -)" crlf)
         (printout ?*root_fp*  "(parser_id-root "?pid" "?word ")" crlf)
  )

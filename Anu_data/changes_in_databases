@@ -533,11 +533,39 @@ Modified :
 	<e lm="U.S.A"><i>U.S.A</i><par n="Barcelona__np"/></e>	(	"	"	)
 	<e lm="redraw"><i>redr</i><par n="dr/aw__vblex"/></e>   (Added by Manju Suggested by Chaitanya Sir (22-11-12))
 	<e lm="redrawn"><i>redrawn</i><par n="long/__adj"/></e> (       "          "    )
+	<e lm="ore"><i>ore</i><par n="house__n"/></e>		(Added by Roja 14-03-13)
+	<e lm="policestation"><i>policestation</i><par n="house__n"/></e> (Added by Roja 14-03-13)
+	<e lm="sake"><i>sake</i><par n="house__n"/></e>			  (	"	"	)	
+	<e lm="pearl"><i>pearl</i><par n="house__n"/></e>		  (	"	"	)
+	<e lm="toltec"><i>toltec</i><par n="house__n"/></e>		  (     "       "       )
+	<e lm="ft"><i>ft</i><par n="house__n"/></e>			  (     "       "       )
+	<e lm="weightage"><i>weightage</i><par n="east__n"/></e>	  (     "       "       )
+	<e lm="free-fall"><i>free-fall</i><par n="east__n"/></e>	  (     "       "       )
+	<e lm="momentum"><i>moment</i><par n="maxim/um__n"/></e>	  (     "       "       )
+	<e lm="lamina"><i>lamina</i><par n="larva__n"/></e>		  (     "       "       )
+	<e lm="xerox"><i>xerox</i><par n="approach__vblex"/></e>	  (     "       "       )	
+	<e lm="blackfriars"><i>blackfriars</i><par n="expensive__adj"/></e>  (  "	" 	)
+	<e lm="talented"><i>talented</i><par n="expensive__adj"/></e>	  (     "       "       )
+	<e lm="velocity-time"><i>velocity-time</i><par n="expensive__adj"/></e>	(  "	"       )
+
 
 Modified:
         <e lm="belonging"><i>belonging</i><par n="house__n"/></e>   as    <e lm="belongings"><i>belongings</i><par n="personnel__n"/></e>   (Suggested by Meena ji 12-05-11)
         <e lm="box"><i>box</i><par n="bass__n"/></e>   as   <e lm="box"><i>box</i><par n="access__n"/></e>  (Suggested by Meena ji 10-08-11)
-	
+	criteri/on__n paradigm to generate 'criterias' word.  (by Roja 14-03-13)
+	<e lm="may"><i>May</i><par n="house__n"/></e>	as 	<e lm="may"><i>may</i><par n="house__n"/></e> (by Roja 14-03-13)
+	<e lm="june"><i>June</i><par n="house__n"/></e>	as	<e lm="june"><i>june</i><par n="house__n"/></e> ( "   ") 
+	<e lm="phenomenon"><i>phenomenon</i><par n="house__n"/></e>	as 	<e lm="phenomenon"><i>phenomen</i><par n="criteri/on__n"/></e>   (by Roja 14-03-13)
+	<e lm="december"><i>December</i><par n="house__n"/></e>		as	<e lm="december"><i>december</i><par n="house__n"/></e>          (by Roja 14-03-13)
+	<e lm="april"><i>April</i><par n="house__n"/></e>	as	<e lm="april"><i>april</i><par n="house__n"/></e> (by Roja 14-03-13)
+	<e lm="september"><i>September</i><par n="house__n"/></e>	as	<e lm="september"><i>september</i><par n="house__n"/></e>        (by Roja 14-03-13)      
+	<e lm="november"><i>November</i><par n="house__n"/></e>		as	<e lm="november"><i>november</i><par n="house__n"/></e>          (by Roja 14-03-13)
+	<e lm="october"><i>October</i><par n="house__n"/></e>		as	<e lm="october"><i>october</i><par n="house__n"/></e>            (by Roja 14-03-13)
+	Corrected root part of bab/y__n paradigm     (by Roja 14-03-13)
+	   Ex: <e lm="Calvary"><i>Calvary</i><par n="bab/y__n"/></e>
+			as
+	       <e lm="Calvary"><i>Calvar</i><par n="bab/y__n"/></e>
+
  Added new files:
  ===============
  1. ol_parser_unused_words.txt (Added by Roja 06-11-10 suggested by Chaitanya sir)

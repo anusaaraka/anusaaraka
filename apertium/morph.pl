@@ -81,7 +81,10 @@ for $i (0 .. $#lines){
 			$root_orig=$1;	$root=$1;
 			
 			if($multiword){$root_orig=$root_mw;$root=$root_mw;$orig_word=$root_mw;}
-			elsif($root =~ /^\*/){$root=$orig_word;}
+#When root is not found assigning '-' Ex: ^policestation/*policestation$
+#Apertium gives * for unrecognized word. 
+#			elsif($root =~ /^\*/){$root=$orig_word;}
+			elsif($root =~ /^\*/){$root="-";}
 			elsif((($root eq "Prpers")||($root eq "prpers"))&& ($orig_word eq "I")){$root=$orig_word;}
 			elsif(($root eq "Prpers")||($root eq "prpers")||($root eq "PRPERS")){$root=lc($orig_word);}
 			else{$root=lc($1);}

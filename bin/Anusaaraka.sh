@@ -37,12 +37,13 @@
 
  mkdir $MYPATH/tmp/$1_tmp
 
-###Added below loop for server purpose.
+ ###Added below loop for server purpose.
  if [ "$3" == "True" ] ; then 
     echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
  else
     echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
  fi
+
  echo "Saving Format info ..."
 
  $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
@@ -75,15 +76,16 @@
 
   replace-abbrevations.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org  
   echo "Calling Stanford parser"
-  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
+#  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2012-11-12/
   if [ "$2" != "" -a "$2" != "0" ] ;
   then
-  sh run_multiple_parse_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1 2>/dev/null  
-  python preffered_parse.py $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1 $2 > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
+  sh run_multiple_parse_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp_1 2>/dev/null  
+  python preffered_parse.py $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp_1 $2 > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
   else 
   sh run_penn-pcfg.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
   fi
-  sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}"  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn
+  sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}"  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 
   #running stanford NER (Named Entity Recogniser) on whole text.
@@ -142,7 +144,7 @@
  echo "Calling Transliteration"
  cd $HOME_anu_test/miscellaneous/transliteration/work
  sh run_transliteration.sh $MYPATH/tmp $1
- 
+
  cd $MYPATH/tmp/$1_tmp/
  echo "(defglobal ?*path* = $HOME_anu_test)" > path_for_html.clp
  echo "(defglobal ?*mypath* = $MYPATH)" >> path_for_html.clp

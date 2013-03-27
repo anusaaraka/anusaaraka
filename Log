@@ -4381,15 +4381,39 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 34. Modified list-right, list_SMT, get_dbase_mng.clp and dic_compile.sh for the above
 35. Modified prep_in_SBAR_rule (added since in list) and undefrules in H_ordering_rules.clp
 36. In Anusaaraka_reranked_johnson_minion.sh, updated stanford parser version.
-37. Updated mapping-symbols_manual.lex
-38. Updated Anu/stdenglish/insert_period.lex
-39. Updated run_align_browser.sh and ClipsToAnu_browser_intfc.sh
-40. Updated MINION/alignment/README
-31. Updated changes_in_databases
-32. Updated iit-bombay.dict in goldendict
-43. Updated shabdanjali.dict.dz in goldendict
-44. Updated README
-45. Updated phy_align_partial_ver (35)
-46. Updated phy_align_verified (141)
-47. Updated sd_verified (490)
-48. Updated Log
+37. Modified ol_stdenglish.sh accordingly with stdenglish.sh
+38. Modified run_sentence_ol.sh accordingly with run_sentence_stnford.sh
+39. Modified run_modules_ol.bat accordingly with run_modules_std.bat
+40. Modified Anusaaraka.sh accordingly with Anusaaraka_stanford.sh
+41. In morph.pl,
+        Assigning '-' when apertium morph gives Unknown (*)
+42. In root_rule.clp,
+        Added   : 'default_rule' , when morph original word and original word mismatches.
+        Removed : that_is_rule, diff_cat_and_I, POS_default_root
+        Renamed : default-linkid_root as morph_root-parser_cat
+        Additionally,  removed assert statements in every rule
+                       separated common rules for all parsers and rules for open logos
+                       and also added comments.
+43. In hindi_meaning.clp,
+        Added : default_hindi_mng-same-cat_with-org_wrd and default_hindi_mng-different-cat_with_org_wrd
+44. In phenomena.clp, modified root of phenomena
+45. In apertium-en-hi.en.metadix,
+         Modified paradigm : criteri/on__n to generate 'criterias' word.
+         Corrected root part of bab/y__n paradigm
+         Corrected root part of months ex: May, June etc.
+46. In processing_manual_sentences.sh:
+        Added sed command to add '@' infront of 'nonascii' word.
+47. Added replace-mapping-symbols.lex to replace mapped symbols. EX: SYMBOL-PLUS is replaced as +
+48. Updated Makefile of Anu/stdenglish/ to generate out file for replace-mapping-symbols.lex
+49. Updated mapping-symbols.lex  and mapping-symbols_manual.lex
+50. Updated Anu/stdenglish/insert_period.lex
+51. Updated run_align_browser.sh and ClipsToAnu_browser_intfc.sh
+52. Updated MINION/alignment/README
+53. Updated changes_in_databases
+54. Updated iit-bombay.dict in goldendict
+55. Updated shabdanjali.dict.dz in goldendict
+56. Updated README
+57. Updated phy_align_partial_ver (35)
+58. Updated phy_align_verified (141)
+59. Updated sd_verified (490)
+60. Updated Log

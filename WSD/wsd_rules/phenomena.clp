@@ -2,8 +2,8 @@
 ;We can broadly describe physics as a study of the basic phenomenas of nature and their manifestation in different natural phenomena .
 (defrule phenomena0
 (declare (salience 5001))
-(id-word ?id phenomenas|phenomena)
-(id-root ?id phenomena)
+;(id-word ?id phenomenas|phenomena) ;Commented this fact
+(id-root ?id phenomenon) ; root changed from phenomena to phenomenon by Roja(14-03-2013)
 (id-cat_coarse ?id noun)
 ?mng <-(meaning_to_be_decided ?id)
 =>

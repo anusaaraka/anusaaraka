@@ -38,6 +38,30 @@
  (assert (Domain))
  )
  ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (05-03-13).
+ ;checking original word in dictionary (when root is '-') when same category.
+ (defrule default_hindi_mng-same-cat_with-org_wrd
+ (declare (salience 9950))
+ (id-root ?id -)
+ (id-original_word ?id  ?org_wrd)
+ ?mng<-(meaning_to_be_decided ?id)
+ (id-cat_coarse ?id ?cat)
+ (test (neq (numberp ?org_wrd) TRUE))
+ (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?org_wrd "_" ?cat)) "FALSE"))
+ =>
+        (bind ?a (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?org_wrd "_" ?cat)))
+        (if (neq ?a "FALSE") then
+           (if (neq (str-index "/" ?a) FALSE) then
+                (bind ?h_mng (sub-string  1 (- (str-index "/" ?a) 1) ?a))
+            else
+                (bind ?h_mng  ?a)
+           )
+        (retract ?mng)
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?h_mng"   Default)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?h_mng"   Default "?id")" crlf)
+        )
+ )
+ ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja (01-08-12). 
  ;Generating dummy categories.
  (defrule generate_dummy_cat
@@ -56,6 +80,33 @@
  (assert (default-cat verbal_noun))
  (assert (default-cat UNDEFINED))
  (assert (default-cat wh-determiner))
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+  ;Added by Roja (05-03-13).
+ ;checking original word in dictionary (when root is '-') and when category is different.
+ (defrule default_hindi_mng-different-cat_with_org_wrd
+ (declare (salience 9850))
+ (id-root ?id -)
+ (id-original_word ?id  ?org_wrd)
+ ?mng<-(meaning_to_be_decided ?id)
+ (id-cat_coarse ?id ?cat)
+ (test (neq (numberp ?org_wrd) TRUE))
+ (default-cat ?cat1)
+ (test (neq ?cat ?cat1))
+ (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?org_wrd "_" ?cat1)) "FALSE"))
+ =>
+        (bind ?a (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?org_wrd "_" ?cat1)))
+        (if (neq ?a "FALSE") then
+                (if (neq (str-index "/" ?a) FALSE) then
+                        (bind ?h_mng (sub-string  1 (- (str-index "/" ?a) 1) ?a))
+                else
+                        (bind ?h_mng  ?a)
+                )
+        (retract ?mng)
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?h_mng"   Default)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?h_mng"   Default "?id")" crlf)
+        (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?org_wrd")" crlf)
+        )
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;for MWE meaning will be assinged to the last word (single mng will be given to all words).So,by this rule we are retracting cntrl facts for remaining ids.
