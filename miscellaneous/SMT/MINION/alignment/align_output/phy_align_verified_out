@@ -330,8 +330,8 @@ For example, for describing motion in one dimension, we need only one axis.
 uxAharaNa_ke liye, eka pahalU meM gawi varNana karane ke lie, hameM sirPa eka XurI kI AvaSyakawA hE.
 
 Hindi meaning using Stanford parser 2.80
-In the first case, the car moves from O to P .. 
-praWama mAmale meM, gAdI PropN-o-PropN se ko PropN-p-PropN. calawI hE.
+In the first case, the car moves from O to P.. 
+praWama mAmale meM, gAdI PropN-o-PropN se PropN-p.-PropN ko calawI hE.
 
 Hindi meaning using Stanford parser 2.81
 This distance is called the path length traversed by the car. 
@@ -418,8 +418,8 @@ If one or more coordinates of an object change with time, we say that the object
 yaxi eka yA aXika samaya ke sAWa vaswu parivarwana kA saMyojana karawA hE, wo hama kahawe hEM ki vaswu calAyamAna hE.
 
 Hindi meaning using Stanford parser 2.102
-Then the distance moved by the car is OP SYMBOL-EQUAL-TO1 SYMBOL-PLUS2 360 m .. 
-waba xUrI calI gAdI se PropN-op-PropN SYMBOL-EQUAL-TO1 SYMBOL-PLUS2 hE 360 puruRa.
+Then the distance moved by the car is OP SYMBOL-EQUAL-TO1 SYMBOL-PLUS2 360 m.. 
+waba gAdI se calI huI xUrI PropN-op-PropN SYMBOL-EQUAL-TO1 SYMBOL-PLUS2 360 m. hE.
 
 Hindi meaning using Stanford parser 2.103
 To describe motion in two SYMBOL-SLASH three dimensions, we need a set of two SYMBOL-SLASH three axes. 
@@ -565,6 +565,18 @@ Hindi meaning using Stanford parser 2.138
 For example, the subject of thermodynamics, developed in the nineteenth century, deals with bulk systems in terms of macroscopic quantities such as temperature, internal energy, entropy, etc.. 
 uxAharaNa_ke liye, unnIsavAz SawAbxI meM vikAsa kara, URmAgawikI kA, viRaya wApamAna, Anwarika UrjA, entropy, etc. jEse ki - sWUla parimANa ke anusAra Woka nikAyoM ke sAWa vyavahAra karawA hE.
 
+Hindi meaning using Stanford parser 2.139
+Property of partial reflection of light is yet another such example. 
+prakASa ke AMSika prawibimba kA PropN-property-PropN Ora eka EsA uxAharaNa hE.
+
+Hindi meaning using Stanford parser 2.140
+Thermodynamics, in contrast to mechanics, does not deal with the motion of bodies as a whole. 
+yAnwrikI kA, URmAgawikI, eka ikAI ke rUpa meM piNdoM kI gawi ke sAWa vyavahAra_nahIM karawe hEM.
+
+Hindi meaning using Stanford parser 2.141
+It covers a tremendous range of magnitude of physical quantities like length, mass, time, energy, etc.. 
+yaha lambAI, saMhawi, samaya, UrjA, etc. kI waraha SArIrika parimANa ke parimANa kA eka bahuwa acCA parAsa samAviRta karawA hE.
+
 Calling Transliteration
 Calling Interface related programs
 Print minion_statistics
@@ -573,6 +585,6 @@ No Solution Found :
 Time-out:
 0
 Solution Found :
-138
+141
 re-executed-sentences:
 18
