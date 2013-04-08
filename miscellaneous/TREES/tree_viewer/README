@@ -1,9 +1,10 @@
 1. Pre requisites ::
    ==============
-   stanford-parser (Version 1.6.9 or latter)
+   stanford-parser (Version 2.0.1 or latter)
    Download http://nlp.stanford.edu/software/lex-parser.shtml
    bison
    clips
+   flex
    java (version: 1.6 or above)
 
 2. Set the path for Java in .bashrc/.bash_profile 
@@ -13,7 +14,7 @@
 3. Set the path for Stanford parser in .bashrc/.bash_profile
         export STANFORD_PATH=path for stanford parser
 
-        Ex: export STANFORD_PATH=$HOME/stanford-parser-2011-09-14
+        Ex: export STANFORD_PATH=$HOME/stanford-parser-2012-11-12
 
 4. Source bashrc 
          source ~/.bashrc
@@ -26,9 +27,9 @@ To view Derived Tree, Derivation Tree & Dependecy Tree ::
 Inside tree_viewer directory :: 
 ----------------------------
 
-1. Compile bison programme :
+1. Compile programmes:
  
-         bash compile_bison.sh
+         bash compile.sh
 
 2. Run view_trees.sh:
          bash view_trees.sh <input-file>
@@ -48,4 +49,5 @@ Inside tree_viewer directory ::
 		                   c.  select <input-file>_dependency_tree and Click Open
                                          Ex: test_dependency_tree 
 
+  Note: To remove out files, run: bash remove-out-files.sh
 -------------------------------------------------------------------------------------------------------------------

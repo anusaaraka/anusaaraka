@@ -37,7 +37,7 @@
 
  mkdir $MYPATH/tmp/$1_tmp
  sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/processing_manual_sentences.sh $1 $5
-
+ 
  ###Added below loop for server purpose.
  if [ "$3" == "True" ] ; then 
     echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
@@ -81,9 +81,20 @@
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 
   #running stanford NER (Named Entity Recogniser) on whole text.
-  echo "Finding NER... "
+  echo "Finding NER ... "
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2008-05-07/
   sh run-ner.sh $1
+
+  echo "Tokenizing ..." 
+  perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised
+
+  echo "Multi word ..."
+  $HOME_anu_test/multifast-v1.0.0/src/multi_word_expression $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/multi_word_expressions.txt
+  $HOME_anu_test/multifast-v1.0.0/src/multi_word_expression_for_proper_nouns $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/proper_noun_dic.txt
+
+  if [ "$4" == "physics" ]; then 
+     $HOME_anu_test/multifast-v1.0.0/src/multi_word_expression_for_physics $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/phy_multi_word_expressions.txt
+  fi
 
   cd $MYPATH/tmp/$1_tmp
   sed 's/&/\&amp;/g' one_sentence_per_line.txt|sed -e s/\'/\\\'/g |sed 's/\"/\&quot;/g' |sed  "s/^/(Eng_sen \"/" |sed -n '1h;2,$H;${g;s/\n/\")\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/$/\")\n;~~~~~~~~~~\n/g;p}' > one_sentence_per_line_tmp.txt
@@ -96,14 +107,20 @@
   $HOME_anu_test/Anu_src/split_file.out sd_numeric_word.txt dir_names.txt sd_numeric_word_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out sd_category.txt dir_names.txt sd_category_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line.txt.ner dir_names.txt ner.dat
+  $HOME_anu_test/Anu_src/split_file.out sd-original-relations.txt  dir_names.txt  sd-original-relations.dat
 
-  cd $MYPATH/tmp/$1_tmp 
+  $HOME_anu_test/Anu_src/split_file.out multi_word_expressions.txt  dir_names.txt  multi_word_expressions.dat
+  $HOME_anu_test/Anu_src/split_file.out proper_noun_dic.txt  dir_names.txt  proper_noun_dic.dat
+  if [ "$4" == "physics" ]; then
+  $HOME_anu_test/Anu_src/split_file.out phy_multi_word_expressions.txt  dir_names.txt  phy_multi_word_expressions.dat
+  fi
+
+  #====================================== Minion ================================================
   $HOME_anu_test/Anu_src/split_file.out one_sen_per_line_manual_hindi_sen.txt dir_names.txt manual_hindi_sen.dat
-
   $HOME_anu_test/Anu_src/split_file.out shallow_parser_output.txt dir_names.txt shallow_parser_output.dat
   $HOME_anu_test/Anu_src/split_file.out manual_hin.morph.txt dir_names.txt manual_hin.morph.dat
-
-  $HOME_anu_test/Anu_src/split_file.out sd-original-relations.txt  dir_names.txt  sd-original-relations.dat
+#  $HOME_anu_test/Anu_src/split_file.out full_parser_output.txt dir_names.txt full_parser_output.dat
+  #=============================================================================================
 
   grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt
   perl $HOME_anu_test/Anu_src/Match-sen.pl $HOME_anu_test/Anu_databases/Complete_sentence.gdbm  $1.snt one_sentence_per_line.txt > sen_phrase.txt

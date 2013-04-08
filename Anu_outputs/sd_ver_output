@@ -3,7 +3,11 @@ Saving word information
 Saving morph information
 Calling POS Tagger and Chunker (APERTIUM)
 Calling Stanford parser
-Finding NER... 
+Finding NER ... 
+Tokenizing ...
+Tokenizer v3
+Language: en
+Multi word ...
 Hindi meaning using Stanford parser 1.1
 Test. 
 jAzca kIjie.
@@ -1548,7 +1552,7 @@ PlU AsapAsa bahuwa sArA hE.
 
 Hindi meaning using Stanford parser 3.71
 In fact she had been feeling tired and queasy for the past few days. 
-asala meM vaha piCale kuCa xinoM se WakA_huA Ora vamanakArI mahasUsa karawI rahI WI.
+vAswava meM vaha piCale kuCa xinoM se WakA_huA Ora vamanakArI mahasUsa karawI rahI WI.
 
 Hindi meaning using Stanford parser 3.72
 At the end of the day, 251SYMBOL-DOT2 million shares were traded. 

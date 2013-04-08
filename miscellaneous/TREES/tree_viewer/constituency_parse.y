@@ -7,7 +7,7 @@ int my_level=0,my_token_count=0,found=0,my_index[100],j=0,index1=1,k=0;// index1
 int my_opn_parn_loc[100];
 char my_temp[100][100000],str1[100],str2[100],str3[100],token[10],node_cat[500][100];
 int current_sub_level[100];
-char my_daughters[100][100][100], my_mother[100][100][100], my_head[100][100][100];
+char my_daughters[100][100][1000], my_mother[100][100][100], my_head[100][100][100];
 char buffer[20];
 int count=0,count1=0;
 
@@ -51,10 +51,11 @@ main(int argc,char *argv[])
 
 %}
 
-%token LEFT_PAREN RIGHT_PAREN LEFT_BRACKET SLASH RIGHT_BRACKET TOK_CATEGORY STRING
+%token LEFT_PAREN RIGHT_PAREN SLASH TOK_CATEGORY STRING
 
 %%
 /* Actions in Mid-rule style is followed here; so for deciding "n" in $n, actions are also to be counted */
+/* Removed LEFT_BRACKET and  RIGHT_BRACKET sub-expressions and handle it in TOK_CATEGORY to differenciate between Tokens and string in sentences like "The S does not stand for anything; therefore, his name was Harry S Truman." */
 expression: LEFT_PAREN {found=0;my_level++;current_sub_level[my_level]++;
                         for(j=0;j<index1;j++)
                         {if(my_index[j]==my_level)found=1;}
@@ -72,13 +73,11 @@ expression: LEFT_PAREN {found=0;my_level++;current_sub_level[my_level]++;
                          strcpy(node_cat[count],str3);
                         }
 
-	    LEFT_BRACKET
-	    STRING        {strcat(my_temp[my_level],$6);strcat(my_temp[my_level]," ");
+	    STRING        {strcat(my_temp[my_level],$5);strcat(my_temp[my_level]," ");
 
-                          strcpy(my_head[my_level][current_sub_level[my_level]],$6);}
+                          strcpy(my_head[my_level][current_sub_level[my_level]],$5);}
 	    SLASH
 	    TOK_CATEGORY
-	    RIGHT_BRACKET
             sub_expression
                         {
                           strncpy(my_temp[my_level]+my_opn_parn_loc[my_level]-9,$3,strlen($3));
@@ -102,15 +101,13 @@ sub_expression:
 	STRING { strcat(my_temp[my_level],$1); strcat(my_temp[my_level]," ");
                    count1=count1+1;
         	           sprintf(buffer,"P%d\0",count1);
-                // strcat(my_daughters[my_level][current_sub_level[my_level]],buffer);
-                 strcat(my_daughters[my_level][current_sub_level[my_level]],$1);
+                 strcat(my_daughters[my_level][current_sub_level[my_level]],buffer);
               }
 	|
 	sub_expression STRING {strcat(my_temp[my_level],$2);strcat(my_temp[my_level]," ");
                                      count1=count1+1;
                                      sprintf(buffer,"P%d\0",count1);
-                              // strcat(my_daughters[my_level][current_sub_level[my_level]],buffer);
-                               strcat(my_daughters[my_level][current_sub_level[my_level]],$2);
+                               strcat(my_daughters[my_level][current_sub_level[my_level]],buffer);
                               }
 	;
 

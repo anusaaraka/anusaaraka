@@ -1,10 +1,10 @@
  echo "Removing all gdbms"
  cd $HOME_anu_test/Anu_databases
- rm  *.gdbm 
+ rm  -f *.gdbm 
 
  echo "Removing .bclp files"
  cd $HOME_anu_test/Anu_clp_files
- rm *.bclp
+ rm -f *.bclp
 
  echo "Cleaning link-parser "
  cd $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/
@@ -16,30 +16,30 @@
 
  echo "Removing stanford out files"
  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2012-11-12/
- rm *.out
- rm lex.yy.c
+ rm -f *.out
+ rm -f lex.yy.c
 
  echo "Removing RASP out files"
  cd $HOME_anu_test/Parsers/RASP/rasp3os/scripts/
- rm rasp_constituency_parse y.tab.c y.tab.h lex.yy.c
+ rm -f rasp_constituency_parse y.tab.c y.tab.h lex.yy.c
 
  echo "Removing .out files"
  cd $HOME_anu_test/Anu_src
- rm *.out
- rm lex.yy.c y.tab.c  y.tab.h constituency_parse f_tid-rid.h
+ rm -f *.out
+ rm -f lex.yy.c y.tab.c  y.tab.h constituency_parse f_tid-rid.h
  
 
  cd $HOME_anu_test/apertium
- rm *.out
- rm *.bin
+ rm -f *.out
+ rm -f *.bin
 
  echo "Removing CLIPS out files"
  cd $HOME_anu_test/CLIPS
- rm gdbm_lookup.h *.o
+ rm -f gdbm_lookup.h *.o
 
  cd $HOME_anu_test/bin
- rm myclips
- rm *.bin  wx2wx-normal.out wx2wx-small.out wx_utf8
+ rm -f myclips
+ rm -f *.bin  wx2wx-normal.out wx2wx-small.out wx_utf8
 
  cd $HOME_anu_test/Anu/stdenglish
  make clean
@@ -48,32 +48,40 @@
  make clean
 
  cd $HOME_anu_test/debugging/sentence_debug
- rm *.clp *.dat *.bat
+ rm -f *.clp *.dat *.bat
 
  cd $HOME_anu_test/debugging/
- rm debug.mm y.* lex.yy.c constituency_parse
+ rm -f debug.mm y.* lex.yy.c constituency_parse
 
- rm $HOME_anu_test/new_hnd_mo/hi_expanded
+ rm -f $HOME_anu_test/new_hnd_mo/hi_expanded
 
  echo "Removing transliteration files"
  cd $HOME_anu_test/miscellaneous/transliteration/
- rm -r phrasal.Beta2 
+ rm -rf phrasal.Beta2 
  cd work
- rm path_for_transliteration phrasal-mert/phrasal.test.ini_tmp1 phrasal-mert/phrasal.test.ini
+ rm -f path_for_transliteration phrasal-mert/phrasal.test.ini_tmp1 phrasal-mert/phrasal.test.ini
 
  echo "Removing canonical files"
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
- rm replacing_canonical.out get_canonical_form-dic.out canonical_form.out lex.yy.c
- rm -r dictionaries 
+ rm -f replacing_canonical.out get_canonical_form-dic.out canonical_form.out lex.yy.c
+ rm -rf dictionaries 
 
  cd $HOME_anu_test/WSD/wsd_rules/
- rm -r canonical_form_wsd_rules get_canonical_form_in_wsd.out lex.yy.c
+ rm -rf canonical_form_wsd_rules get_canonical_form_in_wsd.out lex.yy.c
 
  cd $HOME_anu_test/new_hnd_mo
- rm apertium_hn_in_canonical_form.dix
+ rm -f apertium_hn_in_canonical_form.dix
 
  cd $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries
- rm phy_hnd_multi_word_dic.txt hindi_multi_word.txt
+ rm -f phy_hnd_multi_word_dic.txt hindi_multi_word.txt
 
  cd $HOME_anu_test/Parsers/
  rm -rf reranking-parser
+
+ echo "Removing Multifast out files"
+ cd $HOME_anu_test/multifast-v1.0.0/ahocorasick/
+ make clean
+
+ cd $HOME_anu_test/multifast-v1.0.0/src/
+ rm -f get_word_count multi_word-dic.c  physics-dic.c  proper_noun-dic.c
+ make clean 

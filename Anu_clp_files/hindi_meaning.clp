@@ -38,6 +38,14 @@
  (assert (Domain))
  )
  ;--------------------------------------------------------------------------------------------------------------
+ ;Domain physics
+  (defrule load_phy_multi_word_file
+  (declare (salience 9960))
+  (Domain physics)
+  =>
+  (load-facts "phy_multi_word_expressions.dat")
+  )
+ ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja (05-03-13).
  ;checking original word in dictionary (when root is '-') when same category.
  (defrule default_hindi_mng-same-cat_with-org_wrd

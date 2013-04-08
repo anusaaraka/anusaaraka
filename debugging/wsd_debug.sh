@@ -1,6 +1,5 @@
  cd $HOME_anu_test/debugging/sentence_debug/
- rm *.clp *.dat *.bat
- rm debug.mm y.* lex.yy.c constituency_parse
+ rm *.clp *.dat *.bat debug.mm 
  
  cp $HOME_anu_test/debugging/wsd_debug.clp $HOME_anu_test/debugging/run_wsd_debug.bat  $HOME_anu_test/debugging/sentence_debug/.
 

@@ -16120,7 +16120,7 @@ in_excess_of_requirement	AvaSyakawA_se_aXika#AvaSyakawA_se_aXika#noun#2#RM
 in_excess_of	se_aXika#se_aXika#noun#2#RM
 in_exercise_of	kA_prayoga_karawe_hue#kA_prayoga_karawe_hue#noun#2#RM
 in_face_of	ke_bAvajUxa#ke_bAvajUxa#noun#2#RM
-in_fact	vAswava_meM#vAswava_meM#noun#2#RM
+in_fact	vAswava_meM/asala_meM#vAswava_meM#noun#2#RM
 in_favour_of	ke_pakRa_meM#ke_pakRa_meM#noun#2#RM
 in_few	WodZe_meM#WodZe_meM#noun#2#RM
 in_figures	aMkoM_meM#aMkoM_meM#noun#2#RM
@@ -18933,7 +18933,6 @@ lottery_sales	lAtarI_kI_bikrI#lAtarI_kI_bikrI#noun#2#RM
 lotus_eater	kamala_BakRaka#kamala_BakRaka#noun#2#RM
 lotus_feet	kamala_caraNa#kamala_caraNa#noun#2#RM
 lounge_chair	viSrAma_kakRa_kI_kursI#viSrAma_kakRa_kI_kursI#noun#2#RM
-love_affair	premasambaMXa#premasambaMXa#noun#2#RM
 love_affaire	pyAra_kA_cakkara#pyAra_kA_cakkara#noun#2#RM
 love_child	jAraja_saMwAna#jAraja_saMwAna#noun#2#RM
 love_letter	premapawra#premapawra#noun#2#RM
@@ -33627,7 +33626,6 @@ beyond_the_grave	mqwyu_uparAMwa#mqwyu_uparAMwa#preposition#1#RM
 each_and_every	prawyeka#prawyeka#determiner#3#RM
 By_this_time	abawaka#abawaka#noun#3#RM
 love_affair	prema_saMbanXa#prema_saMbanXa#noun#2#RM
-In_fact	asala_meM#asala_meM#noun#2#RM
 free_fall	besahArA_giranA#besahArA_giranA#noun#2#RM
 miles_and_miles	miloM#miloM#noun#3#WM
 a_spot_of	jarA_sA#jarA_sA#noun#2#RM

@@ -1,0 +1,47 @@
+MultiFast v1.0.0
+----------------
+MultiFast is a fast multiple string search tool which implements Aho-Corasick 
+Algorithm. It contains a tidy and neat implementation of the Aho-Corasick 
+algorithm as a C library.
+
+This package contains following folders
+  * ahocorasick: the implementation of ahocorasick library
+  * example1: sample program describing how to use the ahocorasick library
+  * example2: sample program describing how to use the ahocorasick library
+  * multifast: a poweful search utility that uses ahocorasic library
+
+
+BUILD AND RUN
+-------------
+There are 4 projects inside this package: 1 library and 3 appliacations.
+To use this package you have to compile the ahocorasick library first:
+$ cd ahocorasick/
+$ make
+then for building/running example1 do following:
+$ cd ../example1/
+$ make
+$ ./example1
+and for example2:
+$ cd ../example2/
+$ make
+$ ./example2
+and finally for multifast:
+$ cd ../multifast/
+$ make
+for command line option of multifast see the README file in multifast folder.
+
+
+WEB PAGE
+--------
+http://multifast.sourceforge.net/
+
+
+CONTACT
+-------
+kamiar.kanani@gmail.com
+
+
+BUG REPORT
+----------
+Please send any bug report (or any suggestions for improvement) to the 
+email(s) mentioned in CONTACT.

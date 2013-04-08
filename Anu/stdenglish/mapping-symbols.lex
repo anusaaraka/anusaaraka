@@ -131,9 +131,12 @@ FILE *fp;
 —	{	printf(" SYMBOL-EMDASH ");
 			fprintf(fp, " SYMBOL-EMDASH 	%s\n", yytext);	
 		}
-β	{	printf(" SYMBOL-BETA ");
+β[^-]	{	printf(" SYMBOL-BETA ");
 			fprintf(fp, " SYMBOL-BETA 	%s\n", yytext);	
 		}
+\~	{	printf(" SYMBOL-TELDA ");
+			fprintf(fp, " SYMBOL-TELDA	%s\n", yytext);	
+		}		
 α	{	printf(" SYMBOL-ALPHA ");
 			fprintf(fp, " SYMBOL-ALPHA 	%s\n", yytext);	
 		}

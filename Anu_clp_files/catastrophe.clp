@@ -63,6 +63,7 @@
 ; )
  ;-------------------------------------------------------------------------------------------------------------
  (defrule print
+ (declare (salience -10))
  ?f<- (sen_type-id-phrase ?sen_type ?id ?phrase) 
  =>
  (retract ?f)

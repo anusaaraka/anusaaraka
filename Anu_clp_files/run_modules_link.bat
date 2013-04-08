@@ -1,13 +1,13 @@
- (load "global_path.clp")
- (bind ?*path* (str-cat ?*path* "/Anu_clp_files/multi_word_expressions.bclp"))
- (bload ?*path*)
- (load-facts "original_word.dat")
- (load-facts "domain.dat")
- (assert (index 1))
- (assert (English-list))
- (run)
- (save-facts "multi_word_expressions.dat" local ids-cmp_mng-head-cat-mng_typ-priority)
- (clear)
+; (load "global_path.clp")
+; bind ?*path* (str-cat ?*path* "/Anu_clp_files/multi_word_expressions.bclp"))
+; (bload ?*path*)
+; (load-facts "original_word.dat")
+; (load-facts "domain.dat")
+; (assert (index 1))
+; (assert (English-list))
+; (run)
+; (save-facts "multi_word_expressions.dat" local ids-cmp_mng-head-cat-mng_typ-priority)
+; (clear)
  ;-----------------------------------------------------------------------
  ; remove adverb from sentence temporarily for lwg grouping (e.g He has been frequently coming.)
  (load "global_path.clp")
@@ -228,7 +228,7 @@
  (facts)
  (save-facts "pada_id_info.dat" local  pada_info)
  (clear)
-
+ ;================================ TRANSFER MODULE ===================================================
  ;~~~~~~~~~~~~~~~~~~~~WSD MODULE ~~~~~~~~~~~~~~~~~~~~~~~~~~
  (defmodule MAIN (export ?ALL)
                  (export deftemplate ?ALL))
@@ -343,6 +343,7 @@
  (load-facts "pada_id_info.dat")
  (load-facts "meaning_to_be_decided.dat")
  (load-facts "cat_consistency_check.dat")
+ (load-facts "relations_tmp1.dat")
  (open "wsd_tam_facts_output.dat" wsd_tam_fact_fp "a")
  (run)
  (save-facts "hindi_tam_info.dat" local pada_info conj_head-left_head-right_head)
@@ -358,6 +359,7 @@
  (load-facts "relations_tmp1.dat")
  (load-facts "sen_phrase.dat")
  (load-facts "multi_word_expressions.dat")
+ (load-facts "proper_noun_dic.dat")
  (load-facts "revised_root.dat")
  (load-facts "wsd_facts_output.dat")
  (load-facts "wsd_tam_facts_output.dat")
@@ -390,6 +392,7 @@
  (run)
  (clear)
  ;----------------------------------------------------------------------
+ ;=================================  LANGUAGE GENERATION MODULE =================================
  ; Determine gender of all hindi words
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/gender_info.bclp"))
@@ -532,12 +535,12 @@
  (load-facts "verb_agreement.dat")
  (load-facts "number.dat")
  (load-facts "gender.dat")
- (load-facts "sen_phrase.dat")
  (load-facts "cat_consistency_check.dat")
  (load-facts "revised_preferred_morph.dat")
  (load-facts "tam_id.dat")
  (open "id_Apertium_input.dat" fp5 "a")
  (open "apertium_input_debug.dat" aper_debug "a")
+ (open "GNP_errors.txt" err_fp1 "a")
  (run)
  (clear)
  ;--------------------------------------------------------------------------
@@ -566,11 +569,13 @@
  (load-facts "relations.dat")
  (load-facts "root.dat")
  (load-facts "punctuation_info.dat")
+ (load-facts "revised_preferred_morph.dat")
  (assert (comma_list ))
  (assert (index 1))
  (assert (English-list))
+ (open "catastrophe.dat" catas_fp "a")
  (run)
- (save-facts "catastrophe.dat" local sen_type-id-phrase)
+ (clear)
  ;--------------------------------------------------------------------------
  (exit)
-
+ ;--------------------------------------------------------------------------

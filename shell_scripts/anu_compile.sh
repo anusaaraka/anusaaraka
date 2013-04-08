@@ -102,30 +102,6 @@
  cd $HOME_anu_test/Anu_data/compound-matching
  sh make-dict.sh
  mv Complete_sentence.gdbm $HOME_anu_test/Anu_databases/.
-
- echo "Compiling c and flex programs"
- cd $HOME_anu_test/Anu_src
-
- gcc -o word.out word.c
- gcc -o all_tran_pada.out -g f_tid-rid.c f_sen-range.c  ALL_TRAN_PADA.c
- gcc -o f_range.out f_range_wordarray_resarray.c
- flex ir.lex
- gcc -o ir lex.yy.c -lfl 
- mv ir $HOME_anu_test/bin/
- ./comp.sh wx_utf8 
- mv wx_utf8.out $HOME_anu_test/bin/wx_utf8
- gcc -o split_file.out   split_file.c 
- gcc -o chunker.out  chunker.c 
- ./comp.sh aper_chunker 
- ./comp.sh rm_tags
- ./compile_bison.sh
- ./comp.sh wx2wx-normal
- ./comp.sh wx2wx-small
- mv  wx2wx-normal.out  wx2wx-small.out $HOME_anu_test/bin/
- gcc -o replace_nonascii-chars.out replace_nonascii-chars.c
- gcc -o identify-nonascii-chars.out identify-nonascii-chars.c
- gcc -o converting-dic-to-smt_format.out converting-dic-to-smt_format.c 
-
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries
  echo "Creating default-iit-bombay-shabdanjali-dic_firefox.gdbm"
  cut -f1 default-iit-bombay-shabdanjali-dic_in_canonical_form.txt > word_field
@@ -138,7 +114,36 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_firefox.gdbm < default-iit-bombay-shabdanjali-dic_firefox.txt
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_smt.gdbm < default-iit-bombay-shabdanjali-dic_smt.txt
  rm word_field mng_field mng_utf8 default-iit-bombay-shabdanjali-dic_firefox_tmp.txt default-iit-bombay-shabdanjali-dic_smt_tmp.txt 
- 
+
+ echo "Compiling c and flex programs"
+ cd $HOME_anu_test/Anu_src
+ gcc -o word.out word.c
+ gcc -o all_tran_pada.out -g f_tid-rid.c f_sen-range.c  ALL_TRAN_PADA.c
+ gcc -o f_range.out f_range_wordarray_resarray.c
+ flex ir.lex
+ gcc -o ir lex.yy.c -lfl
+ mv ir $HOME_anu_test/bin/
+ ./comp.sh wx_utf8
+ mv wx_utf8.out $HOME_anu_test/bin/wx_utf8
+ gcc -o split_file.out   split_file.c
+ gcc -o chunker.out  chunker.c
+ ./comp.sh aper_chunker
+ ./comp.sh rm_tags
+ ./compile_bison.sh
+ ./comp.sh wx2wx-normal
+ ./comp.sh wx2wx-small
+ mv  wx2wx-normal.out  wx2wx-small.out $HOME_anu_test/bin/
+ gcc -o replace_nonascii-chars.out replace_nonascii-chars.c
+ gcc -o identify-nonascii-chars.out identify-nonascii-chars.c
+ gcc -o converting-dic-to-smt_format.out converting-dic-to-smt_format.c
+
+ echo "Compiling Multifast programmes..."
+ cd  $HOME_anu_test/multifast-v1.0.0/ahocorasick
+ make
+ cd  $HOME_anu_test/multifast-v1.0.0/src
+ sh run.sh 
+ make
+
  cd $HOME_anu_test/debugging
  sh compile_bison.sh
 

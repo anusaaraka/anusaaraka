@@ -1,11 +1,10 @@
  cd $HOME_anu_test/debugging/sentence_debug/
- rm *.clp *.dat *.bat
- rm debug.mm y.* lex.yy.c constituency_parse
+ rm *.clp *.dat *.bat debug.mm 
 
  cp  $HOME_anu_test/Anu_clp_files/pada.clp  $HOME_anu_test/Anu_clp_files/sd_pada.clp $HOME_anu_test/debugging/pada_debug.clp $HOME_anu_test/debugging/run_pada_debug.bat  $HOME_anu_test/debugging/sentence_debug/.
 
 
-   echo -e "pada_info_debug.dat\npada_id_info.dat\nword.dat\nlwg_info.dat\nrelations.dat\nEnglish_sentence.dat\nparser_type.dat\nglobal_path.clp\nagmt_control_fact.dat\npada_control_fact.dat\nglobal_path.clp\npada_debug_file.dat" > dat
+   echo -e "pada_info_debug.dat\npada_id_info.dat\nword.dat\nlwg_info.dat\nrelations.dat\nEnglish_sentence.dat\nparser_type.dat\nglobal_path.clp\nagmt_control_fact.dat\npada_control_fact.dat\npada_debug_file.dat" > dat
 
 var=`cat dat`
  for i in $var;

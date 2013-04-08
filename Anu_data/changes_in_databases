@@ -565,6 +565,18 @@ Modified:
 	   Ex: <e lm="Calvary"><i>Calvary</i><par n="bab/y__n"/></e>
 			as
 	       <e lm="Calvary"><i>Calvar</i><par n="bab/y__n"/></e>
+        Corrected root part of following paradigms::  (by Roja 02-04-13) 
+	analys/is__n	maxim/um__n	m/an__n		wol/f__n	li/fe__n	m/ouse__n
+	f/oot__n	stimul/us__n	ind/ex__n	appendi/x__n	criteri/on__n	t/ooth__n
+	dilettant/e__n	librett/o__n	lir/a__n	phalan/x__n	corp/us__n 
+	    Ex:  <e lm="Bushman"><i>Bushman</i><par n="m/an__n"/></e>
+				as
+		 <e lm="Bushman"><i>Bushm</i><par n="m/an__n"/></e>
+
+
+	<e lm="person, people"><i>p</i><par n="p/erson__n"/></e>  (by Roja 02-04-13)
+			as
+	<e lm="person"><i>p</i><par n="p/erson__n"/></e>
 
  Added new files:
  ===============
@@ -794,7 +806,8 @@ Removed::
     	moving_in   	aXikAra_meM_karane_kI_kriyA#aXikAra_meM_karane_kI_kriyA#noun#2#RM
                     	#The ball is moving in negative y direction. (Suggested by Sukhada) 
 	Compile_<<<unprintable character>>>_<<<unprintable character>>>_<<<unprintable character>>>_<<<unprintable character>>>_<<<unprintable character>>>_go	saMkalana_waWA_kAryapAlana#saMkalana_waWA_kAryapAlana#noun#3#RM
-
+	love_affair	premasambaMXa#premasambaMXa#noun#2#RM
+	In_fact		asala_meM#asala_meM#noun#2#RM
 
     Modified ::
     	information_system --- sUcanA_praprAlI  ==> sUcanA_praNAlI (Suggested by Chaitanya ji(20-17-12))
@@ -802,6 +815,9 @@ Removed::
      	blood_vessels      --- rakwa_vAhikA#rakwa_vAhikA#noun#2 #RM => rakwa_vAhikA#rakwa_vAhikA#noun#2#RM (By Roja (30-11-12))
 	every_time         --- hara_bAra_[jaba]#hara_bAra_[jaba]#noun#2#RM ==> hara_bAra#hara_bAra#noun#2#RM
 	every_other        --- hara_xUsarA[>hara_koI]#hara_xUsarA[>hara_koI]#noun#2#RM => hara_xUsarA#hara_xUsarA#noun#2#RM
+	in_fact vAswava_meM#vAswava_meM#noun#2#RM
+		as
+	in_fact vAswava_meM/asala_meM#vAswava_meM#noun#2#RM
 
     Added ::
     	straight_line   	sarala_reKA#sarala_reKA#noun#2#RM		(Suggested by Chaitanya Sir 05-09-12)

@@ -1,3 +1,4 @@
+/* Any changes done in this file , then update miscellaneous/TREES/tree_viewer/constituency_parse.y file. */
 %{
 #define YYSTYPE char *
 #include <stdio.h>
