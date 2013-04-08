@@ -32,7 +32,8 @@
 
  #============================= minion purpose ==================================
  sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/get_group_mng.sh shallow_parser_output.dat
- $HOME_anu_test/miscellaneous/SMT/MINION/alignment/get_tam_info.out shallow_parser_GNP_info.dat shallow_parser_root_tmp.dat shallow_parser_tam.dat full_parser_relation.dat < full_parser_output.dat > /dev/null
+ #$HOME_anu_test/miscellaneous/SMT/MINION/alignment/get_tam_info_from_full_parser.out shallow_parser_GNP_info.dat shallow_parser_root_tmp.dat shallow_parser_tam.dat full_parser_relation.dat < full_parser_output.dat > /dev/null
+ $HOME_anu_test/miscellaneous/SMT/MINION/alignment/get_tam_info.out shallow_parser_GNP_info.dat shallow_parser_root_tmp.dat shallow_parser_tam.dat  < shallow_parser_output.dat > /dev/null
 
  myclips -f $HOME_anu_test/miscellaneous/SMT/MINION/alignment/run_H_gen_minion.bat >> $1.error
  

@@ -105,7 +105,7 @@
   $HOME_anu_test/Anu_src/split_file.out one_sen_per_line_manual_hindi_sen.txt dir_names.txt manual_hindi_sen.dat
   $HOME_anu_test/Anu_src/split_file.out shallow_parser_output.txt dir_names.txt shallow_parser_output.dat
   $HOME_anu_test/Anu_src/split_file.out manual_hin.morph.txt dir_names.txt manual_hin.morph.dat
-  $HOME_anu_test/Anu_src/split_file.out full_parser_output.txt dir_names.txt full_parser_output.dat
+#  $HOME_anu_test/Anu_src/split_file.out full_parser_output.txt dir_names.txt full_parser_output.dat
   #=============================================================================================
 
   grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt
