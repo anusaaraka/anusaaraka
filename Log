@@ -4364,7 +4364,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 21. Modified mwe_lookup in Anu_clp_files/multi_word_expressions.clp to handle more than one mng
 22. manual_word_grp_using_dic.clp
 	Modified : test_for_occurence_of_match_in_sen1" rule 
-	Added    : possible_match_for_current_word_with_multi
+	Added    : possible_match_for_current_word_with_multi, get_match_with_anu, get_match_with_anu_for_phy,
+		   chk_for_largest_match, chk_for_largest_match_of_phy and chk_for_hnd_mwe
+        Functions:  hnd_mwe_lookup and remove_character
+        modified anu_id-man-id-mng  as  man_id-mng 
 23. Modified  "delete_affected_ids" and "prep_pos" rules in eng_hin_pos.clp
 24. Added "rm_comp_ids_from_order" rule in get_word_potential_facts.clp
 25. In sd_lwg_rules.clp, in replace_S rule added 'needs' in parserid-word fact
@@ -4404,16 +4407,17 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 46. In processing_manual_sentences.sh:
         Added sed command to add '@' infront of 'nonascii' word.
 47. Added replace-mapping-symbols.lex to replace mapped symbols. EX: SYMBOL-PLUS is replaced as +
-48. Updated Makefile of Anu/stdenglish/ to generate out file for replace-mapping-symbols.lex
-49. Updated mapping-symbols.lex  and mapping-symbols_manual.lex
-50. Updated Anu/stdenglish/insert_period.lex
-51. Updated run_align_browser.sh and ClipsToAnu_browser_intfc.sh
-52. Updated MINION/alignment/README
-53. Updated changes_in_databases
-54. Updated iit-bombay.dict in goldendict
-55. Updated shabdanjali.dict.dz in goldendict
-56. Updated README
-57. Updated phy_align_partial_ver (35)
-58. Updated phy_align_verified (145)
-59. Updated sd_verified (490)
-60. Updated Log
+48. Removed multi_word_expression module and merged the rules in manual_word_grp_using_dic.clp
+49. Updated Makefile of Anu/stdenglish/ to generate out file for replace-mapping-symbols.lex
+50. Updated mapping-symbols.lex  and mapping-symbols_manual.lex
+51. Updated Anu/stdenglish/insert_period.lex
+52. Updated run_align_browser.sh and ClipsToAnu_browser_intfc.sh
+53. Updated MINION/alignment/README
+54. Updated changes_in_databases
+55. Updated iit-bombay.dict in goldendict
+56. Updated shabdanjali.dict.dz in goldendict
+57. Updated README
+58. Updated phy_align_partial_ver (35)
+59. Updated phy_align_verified (145)
+60. Updated sd_verified (490)
+61. Updated Log
