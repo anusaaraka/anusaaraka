@@ -87,7 +87,7 @@ hama prawibimba ke niyamoM se jAnA-mAnA hEM.
 
 Hindi meaning using Stanford parser 2.19
 Terrestrial phenomena lie somewhere in the middle of this range. 
-pArWiva pariGatanA isa parAsa ke maXyasWala meM kahIM JUTa bolawA hE.
+pArWiva pariGatanA isa parAsa ke maXyasWala meM kahIM JUTa bolawe hEM.
 
 Hindi meaning using Stanford parser 2.20
 Physics is exciting in many ways. 
@@ -267,7 +267,7 @@ BOwikavix prekRaNa ke, prayoga kA Ora viSleRaNa ke AXAra para vaha niyama pawA l
 
 Hindi meaning using Stanford parser 2.64
 We shall now discuss the nature of fundamental forces and the laws that govern the diverse phenomena of the physical world. 
-hama mUlaBUwa baloM kI prakqwi Ora niyama aba carcA karezge jo SArIrika viSva kA Binna Binna pariGatanA vaSA_meM karawe hEM.
+hama mUlaBUwa baloM kI prakqwi Ora niyama aba carcA karezge jo SArIrika viSva ke Binna Binna pariGatanA vaSA_meM karawe hEM.
 
 Hindi meaning using Stanford parser 2.65
 We shall learn these matters in subsequent chapters. 
@@ -418,8 +418,8 @@ If one or more coordinates of an object change with time, we say that the object
 yaxi eka yA aXika samaya ke sAWa vaswu parivarwana kA saMyojana karawA hE, wo hama kahawe hEM ki vaswu calAyamAna hE.
 
 Hindi meaning using Stanford parser 2.102
-Then the distance moved by the car is OP SYMBOL-EQUAL-TO1 SYMBOL-PLUS2 360 m.. 
-waba gAdI se calI huI xUrI PropN-op-PropN SYMBOL-EQUAL-TO1 SYMBOL-PLUS2 360 m. hE.
+Then the distance moved by the car is OP SYMBOL-EQUAL-TO SYMBOL-PLUS 360 m.. 
+waba gAdI se calI huI xUrI PropN-op-PropN SYMBOL-EQUAL-TO SYMBOL-PLUS 360 m. hE.
 
 Hindi meaning using Stanford parser 2.103
 To describe motion in two SYMBOL-SLASH three dimensions, we need a set of two SYMBOL-SLASH three axes. 
@@ -463,7 +463,7 @@ usakA velocity-time grAPa PropN-fig.-PropN 3SYMBOL-DOT11 meM jEsA ki xiKAyA huA 
 
 Hindi meaning using Stanford parser 2.113
 In this chapter, we consider the phenomena of reflection, refraction and dispersion of light, using the ray picture of light. 
-isa aXyAya meM, hama prakASa ke kiraNa ciwra kA upayoga karawe_hue prakASa kA prawibimba kA, apavarwana kA Ora parikRepaNa kA pariGatanA, vicAra karawe hEM.
+isa aXyAya meM, hama prakASa ke kiraNa ciwra kA upayoga karawe_hue prakASa ke prawibimba ke, apavarwana kA Ora parikRepaNa ke pariGatanA, vicAra karawe hEM.
 
 Hindi meaning using Stanford parser 2.114
 With his understanding of mechanics, he could come up with a simple model of reflection and refraction. 
@@ -577,6 +577,22 @@ Hindi meaning using Stanford parser 2.141
 It covers a tremendous range of magnitude of physical quantities like length, mass, time, energy, etc.. 
 yaha lambAI, saMhawi, samaya, UrjA, etc. kI waraha SArIrika parimANa ke parimANa kA eka bahuwa acCA parAsa samAviRta karawA hE.
 
+Hindi meaning using Stanford parser 2.142
+Maxwell unified electromagnetism and optics with the discovery that light is an electromagnetic wave. 
+PropN-maxwell-PropN ne Koja ke sAWa vixyuwa cumbakawva Ora prakASikI eka banAe ki prakASa vExyuwacumbakIya lahara hE.
+
+Hindi meaning using Stanford parser 2.143
+Understanding these conservation principles is very important to describe the observed phenomena quantitatively. 
+ye saMrakRaNa sixXAnwa samaJanA avalokana kara xqgviRaya parimANAwmaka_Dafga se varNana karane ke lie awyanwa mahawvapUrNa hE.
+
+Hindi meaning using Stanford parser 2.144
+Great advances in physics often amount to unification of different theories and domains. 
+BOwika vijFAna meM baDiyA vqxXi aksara alaga kA sixXAnwoM ke Ora praBAvakRewra ke ekIkaraNa ke lie ke_barAbara howI hEM.
+
+Hindi meaning using Stanford parser 2.145
+The law of conservation of energy is thought to be valid across all domains of nature, from the microscopic to the macroscopic. 
+UrjA ke saMrakRaNa kA niyama socA huA hE macroscopic ko sUkRma se prakqwi ke saba praBAvakRewra ke saBI ora, vEXa honA .
+
 Calling Transliteration
 Calling Interface related programs
 Print minion_statistics
@@ -585,6 +601,6 @@ No Solution Found :
 Time-out:
 0
 Solution Found :
-141
+145
 re-executed-sentences:
 18
