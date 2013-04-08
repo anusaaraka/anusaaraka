@@ -4314,7 +4314,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  3. Added code to run get_adv-prep_dic.sh and creating adv_prep_dictionary.gdbm in dic_compile.sh
  4. Added '{','}','[',']' in word.c and accordingly updated in replace-abbrevations.sh
  5. Added 'Ill.' in abbrevations.lex
- 6. In mapping-punctuations.lex, instead of handling each pattern separately, separated punctuation head and punctuation.
+ 6. In mapping-punctuations.lex:
+	instead of handling each pattern separately, separated punctuation head and punctuation.
+	Added (POS ') pattern 	
  7. alignment.bat
 	1. Renamed "word_alignment.dat" to "word_alignment_tmp1.dat" in get_slot_number module
 	2. Loaded word_alignment_tmp1.dat file and generated word_alignment.dat in create_alignment_dic module
@@ -4329,7 +4331,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 10. get_man_grp_mng.clp
 	Added 	 : get_ho_grp_with_relation
         Modified : print_man_grp_mng (added test condition)
-11. Modified get_tam_info.lex to generate full_parser_relation.dat file
+11. Modified get_tam_info.lex file (Added functions in rule part)
 12. manual_lwg.clp
 	Modified : ke_[word](added pare in list) , word_[hyphen]_word (restricted for verbs),single_vib1
 		   single_vib3 (removed not condition for root and added test condition) and change_remaining_facts1
@@ -4345,7 +4347,86 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 15. Modified replace_id_with_word rule in word_alignment.clp (to handle hyphen and numbers)
 16. Added phy_align_partial_ver_out and phy_align_partial_ver_eng_align.html
 17. Renamed phy_align_ver_eng as phy_align_partial_ver_eng and phy_align_ver_hnd as phy_align_partial_ver_hnd
-18. Updated the following files
+18. Added Full Parser for hindi.
+19. Modified the below files accordingly
+	compile_shallow_parser.sh
+	run_shallow_parser.py
+	processing_manual_sentences.sh
+	run_sentence_stanford_minion.sh
+	Anusaaraka_stanford_minion.sh
+20. Modified mwe_lookup in Anu_clp_files/multi_word_expressions.clp to handle more than one mng
+21. manual_word_grp_using_dic.clp
+	Modified : test_for_occurence_of_match_in_sen1" rule 
+	Added    : possible_match_for_current_word_with_multi, get_match_with_anu, get_match_with_anu_for_phy,
+		   chk_for_largest_match, chk_for_largest_match_of_phy and chk_for_hnd_mwe
+        Functions:  hnd_mwe_lookup and remove_character
+        modified anu_id-man-id-mng  as  man_id-mng 
+22. Modified  "delete_affected_ids" and "prep_pos" rules in eng_hin_pos.clp
+23. Added "rm_comp_ids_from_order" rule in get_word_potential_facts.clp
+24. In sd_lwg_rules.clp, in replace_S rule added 'needs' in parserid-word fact
+25. In parser_tree_modification_rules.clp added 'needs' in test condition in this rule 'rename_VP_for_To'.
+26. Added converting-dic-to-smt_format.c prog to get each word and its possible meanings in one single line.
+27. Added compilation of above file in anu_compile.sh and accordingly updated get_adv-prep_dic.sh.
+28. Added comments in pre_process.sh
+29. Added provisional_multi_word_dic.txt
+30. Modified run_sentence_stanford.sh (removed code related to get_constituency_tree)
+31. Modified list-right, list_SMT, get_dbase_mng.clp and dic_compile.sh for the above
+32. Modified prep_in_SBAR_rule (added since in list) and undefrules in H_ordering_rules.clp
+33. In morph.pl,
+        Assigning '-' when apertium morph gives Unknown (*)
+34. In root_rule.clp,
+        Added   : 'default_rule' , when morph original word and original word mismatches.
+        Removed : that_is_rule, diff_cat_and_I, POS_default_root
+        Renamed : default-linkid_root as morph_root-parser_cat
+        Additionally,  removed assert statements in every rule
+                       separated common rules for all parsers and rules for open logos
+                       and also added comments.
+35. In hindi_meaning.clp,
+        Added : default_hindi_mng-same-cat_with-org_wrd and default_hindi_mng-different-cat_with_org_wrd
+	Added : load_phy_multi_word_file  rule to load domain specific multi word file.
+36. In phenomena.clp, modified root of phenomena
+37. In apertium-en-hi.en.metadix,
+         Modified paradigm : criteri/on__n to generate 'criterias' word.
+         Corrected root part of bab/y__n paradigm
+         Corrected root part of months ex: May, June etc.
+38. In processing_manual_sentences.sh:
+        Added sed command to add '@' infront of 'nonascii' word.
+39. Added replace-mapping-symbols.lex to replace mapped symbols. EX: SYMBOL-PLUS is replaced as +
+40. Removed multi_word_expression module and merged the rules in manual_word_grp_using_dic.clp
+41. Added new module miscellaneous/SMT/MINION/alignment/modify_root_using_dic.clp
+42. TREES:
+	Updated following files accordingly with new stanford parser 
+		1. README			2. view_trees.sh	
+		3. constituency_parse.l		4. constituency_parse.y 
+	Added :
+		compile.sh	remove-out-files.sh
+43. Moved multi_word_expressions.clp to miscellaneous/Programs/removed_files/
+44. Added multifast-v1.0.0 directory to get multi word expression in a sentence.
+45. Added  removed_files/run_modules_std.bat
+46. run_modules_std.bat
+        Removed 2 modules ( get_constituency_tree and get_all_possible_roots)
+        Moved H_ordering_rules module after pada module
+	Removed multi_word_expressions.clp module
+	Loaded  proper_noun_dic.dat in hindi_meaning.clp module
+47. Added code to compile multifast programmes in anu_compile.sh
+48. Added code to remove outfiles of multifast programmes in remove_out-files.sh
+49. Added code to run multifast programmes to get multi word expression in:
+	Anusaaraka_stanford.sh	Anusaaraka_stanford_minion.sh	Anusaaraka.sh
+	Anusaaraka_berkeley.sh	Anusaaraka_link.sh		Anusaaraka_ol.sh
+	Anusaaraka_rasp.sh	Anusaaraka_site.sh		Anusaaraka_reranked_johnson_minion.sh
+	Anusaaraka_stanford-Factored.sh				Anusaaraka_reranked_johnson.sh
+50. Added comments in constituency_parse.l and constituency_parse.y
+51. In debugging, deleted following files:
+	ConstTreeViewer_13_05_10.jar	DepTreeeViewer_17_06_10.jar
+	compile_bison.sh		constituency_parse.l
+	constituency_parse.y		get_constituency_tree.clp
+	view_derived_tree.sh		view_derivation_tree.sh		map_cons_tree.sh
+52. In catastrophe.clp, added salience in print rule.
+53. In idioms.clp, added print rule.
+54. run_penn-factored.sh: Modified path of english grammar file according to new version
+55. Modified ol_stdenglish.sh accordingly with stdenglish.sh
+56. Modified run_sentence_ol.sh accordingly with run_sentence_stanford.sh
+57. Updated the following files
         miscellaneous/SMT/MINION/alignment/replace_wrd_with_id.c
         miscellaneous/SMT/MINION/dictionaries/generate_hin_multi_word_dic.sh
         miscellaneous/SMT/MINION/dictionaries/phy_dictionary.txt
@@ -4354,71 +4435,20 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/MINION/dictionaries/provisional_word_dic.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_eng_words.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_hnd_words.txt
-19. Added Full Parser for hindi.
-20. Modified the below files accordingly
-	compile_shallow_parser.sh
-	run_shallow_parser.py
-	processing_manual_sentences.sh
-	run_sentence_stanford_minion.sh
-	Anusaaraka_stanford_minion.sh
-21. Modified mwe_lookup in Anu_clp_files/multi_word_expressions.clp to handle more than one mng
-22. manual_word_grp_using_dic.clp
-	Modified : test_for_occurence_of_match_in_sen1" rule 
-	Added    : possible_match_for_current_word_with_multi, get_match_with_anu, get_match_with_anu_for_phy,
-		   chk_for_largest_match, chk_for_largest_match_of_phy and chk_for_hnd_mwe
-        Functions:  hnd_mwe_lookup and remove_character
-        modified anu_id-man-id-mng  as  man_id-mng 
-23. Modified  "delete_affected_ids" and "prep_pos" rules in eng_hin_pos.clp
-24. Added "rm_comp_ids_from_order" rule in get_word_potential_facts.clp
-25. In sd_lwg_rules.clp, in replace_S rule added 'needs' in parserid-word fact
-26. In parser_tree_modification_rules.clp added 'needs' in test condition in this rule 'rename_VP_for_To'.
-27. Added converting-dic-to-smt_format.c prog to get each word and its possible meanings in one single line.
-28. Added compilation of above file in anu_compile.sh and accordingly updated get_adv-prep_dic.sh.
-29. Added comments in pre_process.sh
-30. Added provisional_multi_word_dic.txt
-31. Added  removed_files/run_modules_std.bat
-32. run_modules_std.bat
-	Removed 2 modules ( get_constituency_tree and get_all_possible_roots)
-	Moved H_ordering_rules module after pada module
-33. Modified run_sentence_stanford.sh (removed code related to get_constituency_tree)
-34. Modified list-right, list_SMT, get_dbase_mng.clp and dic_compile.sh for the above
-35. Modified prep_in_SBAR_rule (added since in list) and undefrules in H_ordering_rules.clp
-36. In Anusaaraka_reranked_johnson_minion.sh, updated stanford parser version.
-37. Modified ol_stdenglish.sh accordingly with stdenglish.sh
-38. Modified run_sentence_ol.sh accordingly with run_sentence_stnford.sh
-39. Modified run_modules_ol.bat accordingly with run_modules_std.bat
-40. Modified Anusaaraka.sh accordingly with Anusaaraka_stanford.sh
-41. In morph.pl,
-        Assigning '-' when apertium morph gives Unknown (*)
-42. In root_rule.clp,
-        Added   : 'default_rule' , when morph original word and original word mismatches.
-        Removed : that_is_rule, diff_cat_and_I, POS_default_root
-        Renamed : default-linkid_root as morph_root-parser_cat
-        Additionally,  removed assert statements in every rule
-                       separated common rules for all parsers and rules for open logos
-                       and also added comments.
-43. In hindi_meaning.clp,
-        Added : default_hindi_mng-same-cat_with-org_wrd and default_hindi_mng-different-cat_with_org_wrd
-44. In phenomena.clp, modified root of phenomena
-45. In apertium-en-hi.en.metadix,
-         Modified paradigm : criteri/on__n to generate 'criterias' word.
-         Corrected root part of bab/y__n paradigm
-         Corrected root part of months ex: May, June etc.
-46. In processing_manual_sentences.sh:
-        Added sed command to add '@' infront of 'nonascii' word.
-47. Added replace-mapping-symbols.lex to replace mapped symbols. EX: SYMBOL-PLUS is replaced as +
-48. Removed multi_word_expression module and merged the rules in manual_word_grp_using_dic.clp
-49. Added new module miscellaneous/SMT/MINION/alignment/modify_root_using_dic.clp
-50. Updated Makefile of Anu/stdenglish/ to generate out file for replace-mapping-symbols.lex
-51. Updated mapping-symbols.lex  and mapping-symbols_manual.lex
-52. Updated Anu/stdenglish/insert_period.lex
-53. Updated run_align_browser.sh and ClipsToAnu_browser_intfc.sh
-54. Updated MINION/alignment/README
-55. Updated changes_in_databases
-56. Updated iit-bombay.dict in goldendict
-57. Updated shabdanjali.dict.dz in goldendict
-58. Updated README
-59. Updated phy_align_partial_ver (35)
-60. Updated phy_align_verified (145)
-61. Updated sd_verified (490)
-62. Updated Log
+58. Updated run_modules_ol.bat and run_modules_link.bat accordingly with run_modules_std.bat
+59. Updated Makefile of Anu/stdenglish/ to generate out file for replace-mapping-symbols.lex
+60. Updated mapping-symbols.lex , mapping-symbols_manual.lex and replace-mapping-symbols.lex
+61. Updated Anu/stdenglish/insert_period.lex
+62. Updated run_align_browser.sh and ClipsToAnu_browser_intfc.sh
+63. Updated MINION/alignment/README
+64. Updated changes_in_databases
+65. Updated iit-bombay.dict in goldendict
+66. Updated shabdanjali.dict.dz in goldendict
+67. Updated README
+68. Updated phy_align_partial_ver (35)
+69. Updated phy_align_verified (145)
+70. Updated following files in debugging::
+	agreement_debug.sh	lwg_debug.sh	order_debug.sh		relation_debug.sh
+	wsd_debug.sh		GNP_debug.sh	pada_debug.sh		wsd_tam_debug.sh
+71. Updated sd_verified (490), sd_ver_output and phy_align_verified_out
+72. Updated Log
