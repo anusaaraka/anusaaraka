@@ -4408,16 +4408,17 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Added sed command to add '@' infront of 'nonascii' word.
 47. Added replace-mapping-symbols.lex to replace mapped symbols. EX: SYMBOL-PLUS is replaced as +
 48. Removed multi_word_expression module and merged the rules in manual_word_grp_using_dic.clp
-49. Updated Makefile of Anu/stdenglish/ to generate out file for replace-mapping-symbols.lex
-50. Updated mapping-symbols.lex  and mapping-symbols_manual.lex
-51. Updated Anu/stdenglish/insert_period.lex
-52. Updated run_align_browser.sh and ClipsToAnu_browser_intfc.sh
-53. Updated MINION/alignment/README
-54. Updated changes_in_databases
-55. Updated iit-bombay.dict in goldendict
-56. Updated shabdanjali.dict.dz in goldendict
-57. Updated README
-58. Updated phy_align_partial_ver (35)
-59. Updated phy_align_verified (145)
-60. Updated sd_verified (490)
-61. Updated Log
+49. Added new module miscellaneous/SMT/MINION/alignment/modify_root_using_dic.clp
+50. Updated Makefile of Anu/stdenglish/ to generate out file for replace-mapping-symbols.lex
+51. Updated mapping-symbols.lex  and mapping-symbols_manual.lex
+52. Updated Anu/stdenglish/insert_period.lex
+53. Updated run_align_browser.sh and ClipsToAnu_browser_intfc.sh
+54. Updated MINION/alignment/README
+55. Updated changes_in_databases
+56. Updated iit-bombay.dict in goldendict
+57. Updated shabdanjali.dict.dz in goldendict
+58. Updated README
+59. Updated phy_align_partial_ver (35)
+60. Updated phy_align_verified (145)
+61. Updated sd_verified (490)
+62. Updated Log
