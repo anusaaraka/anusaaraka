@@ -4340,7 +4340,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                    action part )
         Added    : single_vib_for_single_quote, single_vib_for_group_fact and  change_remaining_facts2
 	Removed  : sort_grp (deffunction), grouping_using_dic, add_grp_mng and  modify_root_for_dic_grp
-13. Modified rule2 (to add test condition) in manual_lwg_new.clp
+13. manual_lwg_new.clp   (removed commented lines)
+	Modified : rule2 (to add test condition) 
+	Added    : map_confidence_lvl, dummy_facts
 14. run_H_gen_minion.bat
 	1. Modified save facts for multi word in get_dbase_mng module 
 	2. Loaded full_parser_relation.dat" file in get_man_grp_mng module
@@ -4348,7 +4350,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         4. Loaded hindi_id_order_for_minion_tmp.dat, man_multi_word.dat and multi_word_expressions.dat files and generated
            hindi_id_order_for_minion.dat file in get_word_potential_facts module
 	5. Loaded revised_root.dat file in manual_word_grp_using_dic module 
-15. Modified replace_id_with_word rule in word_alignment.clp (to handle hyphen and numbers)
+	6. Loaded "confidence_level_tmp.dat" and Added save facts to generate confidence_level.dat in manual_lwg_new module
+15. word_alignment.clp
+      Modified : replace_id_with_word (to handle hyphen and numbers), verb_match_using_dic
 16. Added phy_align_partial_ver_out and phy_align_partial_ver_eng_align.html
 17. Renamed phy_align_ver_eng as phy_align_partial_ver_eng and phy_align_ver_hnd as phy_align_partial_ver_hnd
 18. Added Full Parser for hindi.
@@ -4373,8 +4377,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 27. Added compilation of above file in anu_compile.sh and accordingly updated get_adv-prep_dic.sh.
 28. Added comments in pre_process.sh
 29. Added provisional_multi_word_dic.txt
-30. Modified run_sentence_stanford.sh (removed code related to get_constituency_tree)
-31. Modified list-right, list_SMT, get_dbase_mng.clp and dic_compile.sh for the above
+30. Modified list-right, list_SMT, get_dbase_mng.clp and dic_compile.sh for the above
+31. Modified run_sentence_stanford.sh (removed code related to get_constituency_tree)
 32. Modified prep_in_SBAR_rule (added since in list) and undefrules in H_ordering_rules.clp
 33. In morph.pl,
         Assigning '-' when apertium morph gives Unknown (*)

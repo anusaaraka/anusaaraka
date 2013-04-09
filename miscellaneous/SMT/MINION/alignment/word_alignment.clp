@@ -12,7 +12,7 @@
         )
        (bind $?ids $?new_ids)
 )
-
+;-------------------------------------------------------------------------------------
 (deffunction assert_control_fact(?fact_name $?ids)
                 (loop-for-count (?i 1 (length $?ids))
                                 (bind ?j (nth$ ?i $?ids))
@@ -27,6 +27,7 @@
                                 )
                  )
 )
+;-------------------------------------------------------------------------------------
 (deffunction remove_character(?char ?str ?replace_char)
                         (bind ?new_str "")
                         (bind ?index (str-index ?char ?str))
@@ -52,7 +53,6 @@
         (bind $?verbs (create$ $?verbs ?vid))
 	(assert (anu_verb_count-verbs ?anu_verb_count $?verbs))
 )
-
 ;-------------------------------------------------------------------------------------
 ;Counts the number of verbs of manual sentence
 (defrule verb_count_of_manual
@@ -266,7 +266,7 @@
 (declare (salience 880))
 (current_id ?mid)
 (manual_id-node-word-root-tam  ?man_g_id   VGF|VGNF|VGNN   $?verb_mng - $?v_root - $?tam)
-(head_id-grp_ids ?man_g_id ?mid $?grp_ids)
+(head_id-grp_ids ?man_g_id $?d ?mid $?grp_ids)
 (id-org_wrd-root-dbase_name-mng ? ? ?root ? $?v_root)
 (e_tam-id-dbase_name-mng ?e_tam ? ? $?tam)
 (id-root ?aid ?root)
@@ -274,7 +274,7 @@
 =>
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
-        (assert (anu_ids-sep-manual_ids ?aid - ?mid $?grp_ids))
+        (assert (anu_ids-sep-manual_ids ?aid - $?d ?mid $?grp_ids))
         (assert (prov_assignment ?aid ?mid))
 )
 

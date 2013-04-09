@@ -104,10 +104,24 @@
 (defrule modify_root_for_plural_using_dic
 (declare (salience 60))
 ?f0<-(manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word - $?r ?root - $?vib - $?ids)
-(test (or (eq (sub-string (- (length ?root) 1) (length ?root) ?root) "oM")(eq (sub-string (- (length ?root) 2) (length ?root) ?root) "yoM")(eq (sub-string (- (length ?root) 1) (length ?root) ?root) "ez")))
+(test (or (eq (sub-string (- (length ?root) 1) (length ?root) ?root) "oM")(eq (sub-string (- (length ?root) 1) (length ?root) ?root) "ez")))
 (id-org_wrd-root-dbase_name-mng ? ? ? ? ?mng)
 (test (or (eq (sub-string 1 (- (length ?mng) 1) ?mng) (sub-string 1 (- (length ?root) 2) ?root))(eq (sub-string 1 (length ?mng) ?mng) (sub-string 1 (- (length ?root) 2) ?root))))
 =>
 	(retract ?f0)
 	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word - $?r ?mng - $?vib - $?ids))
 )
+;----------------------------------------------------------------------------------------------------------------
+;Like the gravitational force, electromagnetic force acts over large distances and does not need any intervening medium.
+;guruwvAkarRaNa bala kI BAnwi vixyuwa cumbakIya bala BI kAPI lambI [xUriyoM] waka kAryarawa rahawA hE waWA ise kisI maXyavarwI mAXyama kI BI AvaSyakawA nahIM howI 
+(defrule modify_root_for_plural_using_dic1
+(declare (salience 60))
+?f0<-(manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word - $?r ?root - $?vib - $?ids)
+(test (eq (sub-string (- (length ?root) 2) (length ?root) ?root) "yoM"))
+(id-org_wrd-root-dbase_name-mng ? ? ? ? ?mng)
+(test (or (eq (sub-string 1 (- (length ?mng) 1) ?mng) (sub-string 1 (- (length ?root) 4) ?root))(eq (sub-string 1 (length ?mng) ?mng) (sub-string 1 (- (length ?root) 3) ?root))))
+=>
+        (retract ?f0)
+        (assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word - $?r ?mng - $?vib - $?ids))
+)
+

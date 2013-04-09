@@ -1,4 +1,9 @@
 (defglobal ?*count* = 0)
+ 
+(deffacts dummy_facts
+	(id-confidence_level)
+)
+;-------------------------------------------------------------------------------------
 (deffunction assert_control_fact(?fact_name $?ids)
                 (loop-for-count (?i 1 (length $?ids))
                                 (bind ?j (nth$ ?i $?ids))
@@ -7,7 +12,7 @@
                                 )
                  )
 )
-
+;-------------------------------------------------------------------------------------
 (defrule get_current_word
 (declare (salience 200))
 (manual_id-cat-word-root-vib-grp_ids ?mid $?)
@@ -15,7 +20,7 @@
 =>
         (assert (current_id ?mid))
 )
-
+;-------------------------------------------------------------------------------------
 (defrule remove_manual_punct_facts
 (declare (salience 1001))
 ?f<-(manual_id-cat-word-root-vib-grp_ids ?mid ? ?punc&@PUNCT-Comma|@PUNCT-Dot|@PUNCT-QuestionMark|@PUNCT-DoubleQuote|@PUNCT-DoubleQuote|@PUNCT-Semicolon|@PUNCT-Colon|@PUNCT-SingleQuote|@PUNCT-OpenParen|@PUNCT-ClosedParen|@PUNCT-Exclamation|@SYM-Dollar - $?)
@@ -41,7 +46,6 @@
 	(bind ?*count* (+ ?*count* 1))
 	(assert (manual_id-mng ?*count* $?grp))
         (assert_control_fact delete_manual_fact $?grp)
-;	(assert (manual_id-mapped_id ?mid ?*count*))
 	(assert (manual_id-mapped_id ?h_id ?*count*))
 )
 
@@ -56,7 +60,6 @@
         (retract ?f ?f0)
 	(bind ?*count* (+ ?*count* 1))
         (assert (manual_id-mng ?*count* $?grp))
-;	(assert (manual_id-mapped_id ?mid ?*count*))
 	(assert (manual_id-mapped_id ?h_id ?*count*))
 )
 ;-------------------------------------------------------------------------------------
@@ -76,22 +79,16 @@
 ?f<-(manual_id-mng ?mid $?pre ?id $?pos)
 ?f1<-(manual_id-word-cat ?id ?h_mng ?)
 (test (numberp ?h_mng))
-(not (id-replaced ?mid ?h_mng))
-(not (id-replaced ?mid ?id))
 =>
         (retract ?f ?f1)
 	(bind ?h_mng (string-to-field (str-cat ?h_mng "-REPLACE_NO")))
         (assert (manual_id-mng ?mid $?pre ?h_mng $?pos))
-;	(assert (id-mng_replaced ?mid ?h_mng))
-;	(assert (id-replaced ?mid ?id))
 )
 ;-------------------------------------------------------------------------------------
 (defrule replace_id_with_word
 (declare (salience -10))
 ?f<-(manual_id-mng ?mid $?pre ?id $?pos)
 ?f1<-(manual_id-word-cat ?id ?h_mng ?)
-;(not (id-mng_replaced ?mid ?h_mng))
-;(not (id-replaced ?mid ?id))
 =>
         (retract ?f ?f1)
         (if (member$ ?h_mng (create$ @PUNCT-Comma @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-DoubleQuote @PUNCT-DoubleQuote @PUNCT-Semicolon @PUNCT-Colon @PUNCT-SingleQuote @PUNCT-OpenParen @PUNCT-ClosedParen @PUNCT-Exclamation @SYM-Dollar -)) then
@@ -112,5 +109,14 @@
 	(bind ?mng (string-to-field (sub-string 1 (- (str-index "-" ?mng) 1) ?mng)))
 	(assert (manual_id-mng ?mid $?pre ?mng $?post))
 )
-
-
+;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju (3-4-13)
+(defrule map_confidence_lvl
+(declare (salience -15))
+?f0<-(id-confidence_level ?mid ?lvl)
+(manual_id-mapped_id ?mid ?map_id)
+(not (id-confidence_level ?map_id ?))
+=>
+	(retract ?f0)
+	(assert (id-confidence_level ?map_id ?lvl))
+)
