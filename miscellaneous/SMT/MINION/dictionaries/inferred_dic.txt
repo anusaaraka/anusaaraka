@@ -16,3 +16,6 @@ dominate	CA
 equal	barAbara
 move	gawimAna
 fig.	ciwra
+central	mahawvapUrNa
+fix	sWira_raha
+inseparable	avicCexa

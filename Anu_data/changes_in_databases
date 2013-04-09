@@ -754,6 +754,10 @@ Modified:
 	47. existing_adjective      varwamAna/pracaliwa   as   varwamAna/pracaliwa/supracaliwa (Modified by Manju 20-03-13)
 	48. systematic_adjective    suvyavasWiwa/suniyojiwa/niyamiwa/kramabaxXa/Ayojiwa       as
 				    suvyavasWiwa/suniyojiwa/niyamiwa/kramabaxXa/Ayojiwa/vyavasWiwa	(  "  )
+	49. manifest_verb	    spaRta_ho_jA/sAPa_xiKAI_xe/praxarSiwa_kara/nAKuna_prasAXana_kara
+						as
+				    spaRta_ho_jA/sAPa_xiKAI_xe/praxarSiwa_kara/nAKuna_prasAXana_kara/prakata_ho  (" 9-4-13)
+
  
 Removed::
 -------
@@ -863,7 +867,9 @@ Removed::
  changes in phy_eng_multi_word_dic.txt
  =====================================
   Modified :
-		frame_of_reference      nirxeSa-waMwra#nirxeSa-waMwra#noun#1#RM as nirxeSa_waMwra#nirxeSa_waMwra#noun#1#RM
+	frame_of_reference      nirxeSa-waMwra#nirxeSa-waMwra#noun#1#RM as nirxeSa_waMwra#nirxeSa_waMwra#noun#1#RM
+	charged_constituents	AveSayukwa_saMGatana#AveSayukwa_saMGatana#noun#2#RM   as   AveSayukwa_saMGatana/AveSiwa_avayava#AveSayukwa_saMGatana#noun#2#RM			(Added by manju (9-4-13)
+
 			
 
  changes in hindi_multi_word.txt

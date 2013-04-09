@@ -13,8 +13,9 @@ koI	a/an/any
 kisI	a/an
 kisI_BI	a/an
 hE	is/have
-apane	his/its
+apane	his/its/our
 apanI	the/our
+apanA	the/our
 usakI	his/its/the
 usake	his/its/the
 unakA	them
@@ -26,3 +27,4 @@ isakA	the/it/its/this
 isake	the/it/its/this
 jinakA	which
 hama	we
+hamArA	our

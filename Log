@@ -4307,7 +4307,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 65. Updated sd_verified (489) and sd_ver_output
 66. Updated Log.
 
- 08-04-13
+ 09-04-13
  ========
  1. Added get_adv-prep_dic.sh to get entries of adverb and prepositions in default-iit-bombay-shabdanjali-dic.txt
  2. Added remove_dup_entry.py in miscellaneous/SMT/MINION/alignment/ for above purpose.
@@ -4435,6 +4435,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/MINION/dictionaries/provisional_word_dic.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_eng_words.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_hnd_words.txt
+	miscellaneous/SMT/MINION/dictionaries/inferred_dic.txt
 58. Updated run_modules_ol.bat and run_modules_link.bat accordingly with run_modules_std.bat
 59. Updated Makefile of Anu/stdenglish/ to generate out file for replace-mapping-symbols.lex
 60. Updated mapping-symbols.lex , mapping-symbols_manual.lex and replace-mapping-symbols.lex

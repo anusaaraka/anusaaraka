@@ -46,7 +46,7 @@ centripetal_acceleration	aBikeMxra_wvaraNa#aBikeMxra_wvaraNa#noun#2#RM
 centripetal_force	aBikeMxra_bala#aBikeMxra_bala#noun#2#RM
 chain_reaction	SrAaM_qKalA_aBikriyA#SrAaM_qKalA_aBikriyA#noun#2#RM
 characteristic_properties	aBilAkRaNika_guNa#aBilAkRaNika_guNa#noun#2#RM
-charged_constituents	AveSayukwa_saMGatana#AveSayukwa_saMGatana#noun#2#RM
+charged_constituents	AveSayukwa_saMGatana/AveSiwa_avayava#AveSayukwa_saMGatana#noun#2#RM
 classical_physics	cirasammawa_BOwikI#cirasammawa_BOwikI#noun#2#WM
 coefficient_of_linear_expansion	reKIya_prasAra_guNAMka#reKIya_prasAra_guNAMka#noun#1#RM
 coefficient_of_performance	niRpAxana_guNAMka#niRpAxana_guNAMka#noun#1#RM

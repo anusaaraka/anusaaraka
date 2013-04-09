@@ -23,8 +23,10 @@ she	usane/vaha
 his	usakI/apane/usake/unake
 we	hama/mEM/hameM/hamArA/hamane/hame/hamAre/hamArI
 you	Apa/wumheM/Apako/ApakA/Apake/Apane
+our	hamArA/hamalogo_kA/apanA/hamAre/hamArI/apanA/apane/apanI
 i	mEM/muje/mEMne
 one	eka	
 as	pahale_kI_waraha/mAno/kI_waraha/ke_rUpa_meM/jyoMhI/jisa_waraha/jEse_hI/jaba_ki/jEsA/kyofki/jEse_hI/jaba/ke_rUpa_meM/ke_jEsA/ke_BAnwi/ke_samAna/nimna_prakAra/jEsA_ki
 when	jaba/yaxyapi/waba/cUzki/jisa_samaya/kaba/kyozki
 plus	Xana/waWA
+to	hoSa_meM/banxa_avasWA_meM/banxa/ko/kI_aora/kI_ora/waka/kI/se/ke_mukAbale_meM/meM/se_milA_kara/ke_prawi/kA/kI_apekRA/ke_karIba/ke_lie/ke_sAmane/ora/para/vAlA
