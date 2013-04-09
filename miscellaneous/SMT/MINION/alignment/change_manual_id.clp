@@ -92,4 +92,13 @@
         (assert (id_mng_modified ?id))
 )
 ;------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (08-04-13)
+(defrule get_root_if_not_present
+(declare (salience 5))
+?f<-(id-node-word-root ?id ?node ?word - -)
+=>
+	(retract ?f)
+	(assert (id-node-word-root ?id ?node ?word - ?word))
+)
+ 
 

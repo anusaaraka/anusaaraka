@@ -4325,6 +4325,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Modified mwe_lookup function to call print_dic_mng for multi word expressions
 	Modified below functions/rules to send new argument for print_dic_mng function (single/multi)
 		dic_lookup, get_mng_from_phy_dic, get_mng_from_phy_dic1 and get_mng_from_phy_dic2
+	Added "get_mng_from_all_dic1" to lookup with word if root is "-"
  9. create_alignment_dic.clp
 	Added : check_for_correctness, get_alignment_facts
         Modified the rules to modify the fact "root-anu_mng-man_mng"  as  "id-root-anu_mng-man_mng" 
@@ -4335,7 +4336,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 12. manual_lwg.clp
 	Modified : ke_[word](added pare in list) , word_[hyphen]_word (restricted for verbs),single_vib1
 		   single_vib3 (removed not condition for root and added test condition) and change_remaining_facts1
-        Added    : single_vib_for_single_quote, single_vib_for_group_fact and  grouping_using_dic_for_vib
+		   multi_word3,single_vib1,single_vib2,verb_grouping and change_remaining_facts (removed man_id-word fact in
+                   action part )
+        Added    : single_vib_for_single_quote, single_vib_for_group_fact and  change_remaining_facts2
+	Removed  : sort_grp (deffunction), grouping_using_dic, add_grp_mng and  modify_root_for_dic_grp
 13. Modified rule2 (to add test condition) in manual_lwg_new.clp
 14. run_H_gen_minion.bat
 	1. Modified save facts for multi word in get_dbase_mng module 
@@ -4426,7 +4430,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 54. run_penn-factored.sh: Modified path of english grammar file according to new version
 55. Modified ol_stdenglish.sh accordingly with stdenglish.sh
 56. Modified run_sentence_ol.sh accordingly with run_sentence_stanford.sh
-57. Updated the following files
+57. Added "get_root_if_not_present" rule in change_manual_id.clp
+58. Updated the following files
         miscellaneous/SMT/MINION/alignment/replace_wrd_with_id.c
         miscellaneous/SMT/MINION/dictionaries/generate_hin_multi_word_dic.sh
         miscellaneous/SMT/MINION/dictionaries/phy_dictionary.txt
@@ -4436,20 +4441,20 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/MINION/dictionaries/restricted_eng_words.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_hnd_words.txt
 	miscellaneous/SMT/MINION/dictionaries/inferred_dic.txt
-58. Updated run_modules_ol.bat and run_modules_link.bat accordingly with run_modules_std.bat
-59. Updated Makefile of Anu/stdenglish/ to generate out file for replace-mapping-symbols.lex
-60. Updated mapping-symbols.lex , mapping-symbols_manual.lex and replace-mapping-symbols.lex
-61. Updated Anu/stdenglish/insert_period.lex
-62. Updated run_align_browser.sh and ClipsToAnu_browser_intfc.sh
-63. Updated MINION/alignment/README
-64. Updated changes_in_databases
-65. Updated iit-bombay.dict in goldendict
-66. Updated shabdanjali.dict.dz in goldendict
-67. Updated README
-68. Updated phy_align_partial_ver (35)
-69. Updated phy_align_verified (145)
-70. Updated following files in debugging::
+59. Updated run_modules_ol.bat and run_modules_link.bat accordingly with run_modules_std.bat
+60. Updated Makefile of Anu/stdenglish/ to generate out file for replace-mapping-symbols.lex
+61. Updated mapping-symbols.lex , mapping-symbols_manual.lex and replace-mapping-symbols.lex
+62. Updated Anu/stdenglish/insert_period.lex
+63. Updated run_align_browser.sh and ClipsToAnu_browser_intfc.sh
+64. Updated MINION/alignment/README
+65. Updated changes_in_databases
+66. Updated iit-bombay.dict in goldendict
+67. Updated shabdanjali.dict.dz in goldendict
+68. Updated README
+69. Updated phy_align_partial_ver (35)
+70. Updated phy_align_verified (145)
+71. Updated following files in debugging::
 	agreement_debug.sh	lwg_debug.sh	order_debug.sh		relation_debug.sh
 	wsd_debug.sh		GNP_debug.sh	pada_debug.sh		wsd_tam_debug.sh
-71. Updated sd_verified (490), sd_ver_output and phy_align_verified_out
-72. Updated Log
+72. Updated sd_verified (490), sd_ver_output and phy_align_verified_out
+73. Updated Log

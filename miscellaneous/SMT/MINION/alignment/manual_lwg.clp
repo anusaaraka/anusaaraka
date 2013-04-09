@@ -1,17 +1,5 @@
 ;This file is written by Maha Laxmi and Shirisha Manju
 
-;sort_grp function sorts  the given ids and make each id unique i.e; if i/p [9 3 4 3 5] ==> o/p [3 4 5 9]
-(deffunction sort_grp($?ids)
-        (bind ?len (length $?ids))
-        (bind $?new_ids (create$ ))
-        (bind $?ids (sort > $?ids))
-        (while (> (length $?ids) 0)
-        	(bind ?id (nth$ 1 $?ids))
-                (bind $?ids (delete-member$ $?ids ?id))
-                (bind $?new_ids (create$ $?new_ids ?id))
-        )
-       (bind $?ids $?new_ids)
-)
 ;----------------------------------------------------------------------------------------------------------------
 ;It is mainly through light and the sense of vision that we know and interpret the world around us.
 ;Man tran :: muKya rUpa se prakASa evaM xqRti kI saMvexanA ke kAraNa hI hama [apane cAroM ora] ke saMsAra ko samaJawe evaM usakI vyAKyA karawe hEM.
@@ -57,13 +45,13 @@
 ;अबतक
 ;However, we shall restrict our discussion to the special case of curved surfaces, that is, spherical surfaces.
 ;xUsarI sWiwi meM kAra pahale @O se [@P waka] jAwI hE Ora Pira @P se @Q para vApasa A jAwI hE
+;This net attraction/repulsion can be traced to the (unbalanced) sum of electric forces between the charged constituents of the atoms.isa neta AkarRaNa @SYMBOL-SLASH prawikarRaNa kI Koja paramANuoM ke AveSiwa avayavoM ke bIca vExyuwa baloM ke yoga   @PUNCT-OpenParen asanwuliwa [@PUNCT-ClosedParen  waka] kI jA sakawI hE  
 (defrule multi_word3
 (declare (salience 100))
-?f1<-(man_id-word-cat ?id0 ?w ?cat)
+?f1<-(man_id-word-cat ?id0 ?w&~@PUNCT-ClosedParen ?cat)
 ?f2<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1)  ?w1&waka ?)
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
-(test (eq (member$ ?w (create$ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z)) FALSE))
 =>
         (retract ?f1 ?f2)
         (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat ?w ?w1 - ?w  - 0 - ?id0 ?id1))
@@ -182,7 +170,7 @@
 (man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen ?)
 (man_id-word-cat ?id2 @PUNCT-ClosedParen ?)
 (test (or (eq (- ?id2 ?id1) 3)(eq (- ?id2 ?id1) 2) (eq (- ?id2 ?id1) 1)))
-?f3<-(man_id-word-cat ?id3&:(=(+ ?id2 1) ?id3) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA ?)
+?f3<-(man_id-word-cat ?id3&:(=(+ ?id2 1) ?id3) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|waka ?)
 ?f0<-(head_id-grp_ids ?h $?d ?id0 $?d1)
 ?f4<-(manual_id-node-word-root-tam ?h ?c $?noun1 - $?root - $?vib1)
 (id-node-word-root ?id0 ? $? - $?root)
@@ -243,7 +231,7 @@
 ?f1<-(man_id-word-cat ?id1&:(=(+ ?id 1) ?id1) ?vib1&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|waka ?)
 =>
 	(retract ?f0 ?f1)
-	(if (eq (implode$ (create$ $?vib)) 0) then
+	(if (eq (string-to-field (implode$ (create$ $?vib))) 0) then
 		(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ?vib1 - $?ids ?id ?id1))
 	else
 		(bind ?n_vib (create$ $?vib ?vib1))
@@ -270,12 +258,12 @@
 (declare (salience 60))
 (manual_id-node-word-root-tam  ?m_h_id   VGF|VGNN|VGNF  $?mng - $?root - $?tam)
 (head_id-grp_ids ?m_h_id ?mid $?ids)
-(man_id-word-cat ?mid $?word ?cat)
+?f0<-(man_id-word-cat ?mid $?word ?cat)
 (not (lwg_done ?mid))
 (not (retract_manual_fact ?mid))
 (test (neq (length $?tam) 0))
 =>
-;	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word - $?root - $?tam - ?mid $?ids))
+	(retract ?f0)
 	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?mng - $?root - $?tam - ?mid $?ids))
         (loop-for-count (?i 1 (length (create$ ?mid $?ids)))
 		        (bind ?j (nth$ ?i (create$ ?mid $?ids)))
@@ -287,11 +275,12 @@
 ;She turned to face him. --- vaha usakA sAmanA karane ke lie mudI  @PUNCT-OpenParen GUmI @PUNCT-ClosedParen @PUNCT-Dot
 (defrule change_remaining_facts
 (declare (salience 55))
-(man_id-word-cat ?mid $?word ?cat)
+?f0<-(man_id-word-cat ?mid $?word ?cat)
 (id-node-word-root ?mid ? $?word1 - $?root)
 (not (retract_manual_fact ?mid))
 (test (eq (member$ $?word (create$ @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-Exclamation )) FALSE)) 
 =>
+	(retract ?f0)
 	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word1 - $?root - 0 - ?mid))
 )
 ;----------------------------------------------------------------------------------------------------------------
@@ -299,97 +288,23 @@
 ;Riot police beat back the crowds of demonstrators.---- praxarSanakAriyoM kI BIda ko pulisa ne [pICe] Xakela xiyA
 (defrule change_remaining_facts1
 (declare (salience 54))
-(man_id-word-cat ?mid $?word ?cat&~ SYM)
+?f0<-(man_id-word-cat ?mid $?word ?cat&~SYM&~VIB)
 (not (manual_id-cat-word-root-vib-grp_ids ? ? $? - $? - $? - $? ?mid $?))
 (not (retract_manual_fact ?mid))
 =>
+	(retract ?f0)
         (assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word - $?word - 0 - ?mid))
 )
 ;----------------------------------------------------------------------------------------------------------------
-;Anu tran : [isa prakAra] prekRaka walI para UparI sawaha para waWA PUla lAla rafga se inxraXanuRa ko xeKawA hE.
-;Eng sen  : Though the reason for [appearance] of spectrum is now common knowledge, it was a matter of much debate in the history of physics.
-;Man tran : yaxyapi spektrama kA [xiKAI xenA] aba eka sAmAnya jFAna kI bAwa hE @PUNCT-Comma  paranwu BOwikI ke iwihAsa meM yaha eka bade vAxa - vivAxa kA viRaya WA.
-
-;Eng sen :Presently, we are dealing with motion along a straight line (also called rectilinear motion) only.
-;Man tran :aXyAya meM hama eka [sarala reKA ke] anuxiSa sarala gawi  @PUNCT-OpenParen jise hama reKIya gawi kahawe hEM @PUNCT-ClosedParen  ke viRaya meM hI paDefge 
-;Anu tran : aBI aBI, hama sirPa eka sIXI lAina ke kinAre (BI sIXI reKAoM se GirA huA gawi bulA) gawi se sambanXiwa .
-
-;Eng sen : It is [mainly] through light and the sense of vision that we know and interpret the world around us.
-;Man tran : [muKya rUpa se] prakASa evaM xqRti kI [saMvexanA ke kAraNa] hI hama [apane cAroM ora] ke saMsAra ko samaJawe evaM usakI vyAKyA karawe hEM.
-;Anu tran : yaha halake meM se waWA xUraxarSiwA kI saMvexanA meM se pramuKa rUpa se hE ki hama hamAre cAroM ora yuga vyAKyA kara waWA jAnawI hE.
-
-;Anu tran : warafga kI upasWiwi ke lie kAraNa sAXAraNa pratiBA aba hE magara, vaha BOwika vijFAna ke vqwwAnwa meM bahuwa bahasa kA viRaya WA.
-;Eng sen : There are two things that we can intuitively mention about light from common experience.
-;Man tran :apane sAmAnya anuBava se hama prakASa ke viRaya meM apanI anwarxqRti xvArA xo bAwoM kA [ulleKa kara] sakawe hEM.
-(defrule grouping_using_dic
+;The fibers in such decorative lamps are optical fibers.
+;isa prakAra ke sajAvatI lEmpoM ke [wanwu] prakASika wanwu hEM 
+(defrule change_remaining_facts2
 (declare (salience 50))
-(anu_id-manual_ids-sep-mng ? $?mids - $?mng)
-?f0<-(man_id-word-cat ?mid ?w&~kara&~ho ?cat&~VIB)
-(test (member$ ?mid $?mids))
-(not (man_id-word-cat ?mid1&:(and (member$ ?mid1 $?mids) (> ?mid1 ?mid))  ?w1&~kara&~ho ?cat1&~VIB))
-(not (grp_head_id-grp_ids-mng ? - $? ?mid $? - $?))
+?f0<-(man_id-word-cat ?mid $?word ?cat&VIB)
+(not (manual_id-cat-word-root-vib-grp_ids ? ? $? - $? - $? - $? ?mid $?))
 =>
         (retract ?f0)
-        (assert (man_id-word-cat ?mid $?mng ?cat))
-        (assert (grp_head_id-grp_ids-mng ?mid - $?mids - $?mng))
+        (assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word - $?word - 0 - ?mid))
 )
 ;----------------------------------------------------------------------------------------------------------------
-;You will find that the path of the beam inside the water shines brightly.
-;Apa xeKezge ki jala [ke anxara] kiraNa - puFja kA paWa camakIlA xiKAI xewA hE
-(defrule grouping_using_dic_for_vib
-(declare (salience 4))
-(anu_id-manual_ids-sep-mng ? ?id $?d ?id1 - $?mng)
-?f0<-(manual_id-cat-word-root-vib-grp_ids ?mid ?n $?word - $?root - $?vib - $?ids ?id)
-(test (neq (length  $?vib ) 0))
-?f1<-(manual_id-cat-word-root-vib-grp_ids ?mid1 ? $? - $? - $? - $?d ?id1)
-=>
-	(retract ?f0 ?f1)
-	(bind $?grp_ids (sort > $?ids ?id $?d ?id1))
-	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?n $?word - $?root - $?mng - $?grp_ids))
-)	
-;----------------------------------------------------------------------------------------------------------------
-(defrule add_grp_mng
-(declare (salience 5))
-?f1<-(grp_head_id-grp_ids-mng ?mid - $?pre ?mid1 $?post - $?mng)
-?f0<-(manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word - $?root - $?vib - $?grp)
-?f2<-(manual_id-cat-word-root-vib-grp_ids ?mid1 ?cat1 $?word1 - $?root1 - $?vib1 - $?grp1)
-(test (neq ?mid ?mid1))
-(not (contro_fact_for_grp_mng ?mid1))
-=>
-	(retract ?f0 ?f2)	
-	(assert (contro_fact_for_grp_mng ?mid1))
-	(bind $?s_grp (create$ ))
-	(bind $?grp_ids (sort > $?grp $?grp1))
-	(loop-for-count (?i 1 (length $?grp_ids))
-                (bind ?j (nth$ ?i $?grp_ids))
-                (if (eq (member$ ?j $?s_grp) FALSE) then
-                        (bind $?s_grp (create$ $?s_grp  ?j))
-                )	
-        )
- 	(bind $?ids (create$ $?pre ?mid1 $?post))
-	(if (> ?mid ?mid1) then
-		(if (eq ?mid (nth$ (length $?ids) $?ids)) then
-			(assert (last_id-word-root-vib ?mid $?word - $?root - $?vib))
-		)
-	else
-		(if (eq ?mid1 (nth$ (length $?ids) $?ids)) then
-                        (assert (last_id-word-root-vib ?mid1 $?word1 - $?root1 - $?vib1))
-                )
-	)
-	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?mng - $?mng - $?vib - $?s_grp))
-)
-;----------------------------------------------------------------------------------------------------------------
-(defrule modify_root_for_dic_grp
-(grp_head_id-grp_ids-mng ?hid - $?ids ?last_id - $?mng)
-?f0<-(manual_id-cat-word-root-vib-grp_ids ?hid ?cat $?mng - $?mng - $?vib - $?grp_ids)
-(last_id-word-root-vib ?last_id $? - $? - $?vib1)
-(id-node-word-root ?last_id ? $?word - $?root)
-(not (modified_root ?hid))
-=>
-	(retract ?f0 )
-	(bind $?n_wrd (subseq$ $?mng 1 (- (length $?mng) (length $?word))  ))
-	(bind $?n_wrd (create$ $?n_wrd $?root))
-	(assert (manual_id-cat-word-root-vib-grp_ids ?hid ?cat $?mng - $?n_wrd - $?vib1 - $?grp_ids))
-	(assert (modified_root ?hid))
-)
 

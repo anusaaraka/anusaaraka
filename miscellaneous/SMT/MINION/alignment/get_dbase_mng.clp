@@ -175,7 +175,24 @@
 	     ))))
  )
  ;--------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (08-4-13)
  (defrule get_mng_from_all_dic
+ (declare (salience 160))
+ (id-original_word ?id ?word)
+ ?f0<-(id-root ?id -)
+ (id-cat_coarse ?id ?cat)
+ =>
+		(retract ?f0)
+		(dic_lookup "provisional_word_dic.gdbm" ?id ?word ?word ?cat)
+		(dic_lookup "provisional_root_dic.gdbm" ?id ?word ?word ?cat)
+		(dic_lookup "provisional_PropN_dic.gdbm" ?id ?word ?word ?cat)
+		(dic_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?id ?word ?word ?cat)
+		(dic_lookup "default_meaning_frm_oldwsd.gdbm" ?id ?word ?word ?cat)
+		(dic_lookup "numbers_dic.gdbm" ?id ?word ?word ?cat)
+		(dic_lookup "inferred_dic.gdbm" ?id ?word ?word ?cat)
+ )
+ ;--------------------------------------------------------------------------------------------------------
+ (defrule get_mng_from_all_dic1
  (declare (salience 150))
  (id-original_word ?id ?word)
  (id-root ?id ?root)
