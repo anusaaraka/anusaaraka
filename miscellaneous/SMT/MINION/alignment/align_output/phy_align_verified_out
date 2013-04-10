@@ -10,8 +10,6 @@ Calling POS Tagger and Chunker (APERTIUM)
 Calling Stanford parser
 Finding NER ... 
 Tokenizing ...
-Tokenizer v3
-Language: en
 Multi word ...
 Hindi meaning using Stanford parser 1.1
 Test. 
@@ -597,6 +595,38 @@ Hindi meaning using Stanford parser 2.145
 The law of conservation of energy is thought to be valid across all domains of nature, from the microscopic to the macroscopic. 
 UrjA ke saMrakRaNa kA niyama socA huA hE macroscopic ko sUkRma se prakqwi ke saba praBAvakRewra ke saBI ora, vEXa honA .
 
+Hindi meaning using Stanford parser 2.146
+Let CE represent the tangent plane drawn from the point C to this sphere. 
+PropN-let-PropN PropN-ce-PropN noka C se isa gola vaswu ko KIzca sparSajyA samawala prawiniXi howA hE.
+
+Hindi meaning using Stanford parser 2.147
+This is the law of reflection. 
+yaha prawibimba kA vahI niyama hE.
+
+Hindi meaning using Stanford parser 2.148
+Once we have the laws of reflection and refraction, the behavior of prisms, lenses, and mirrors can be understood. 
+eka bAra hamArA prawibimba ke Ora apavarwana ke niyama hEM, varNakrama, lensa, Ora xarpaNa kA barwAva samaJA jA sakawA hE.
+
+Hindi meaning using Stanford parser 2.149
+We consider a plane wave passing through a thin prism. 
+hama eka pawale varNakrama meM se gujarawe_hue eka samawala lahara vicAra karawe hEM.
+
+Hindi meaning using Stanford parser 2.150
+In a similar manner, we can understand refraction and reflection by concave lenses and convex mirrors. 
+samAna Dafga meM, hama avawala ke xvArA lensa ke xvArA Ora maXyonnawa ke xvArA xarpaNoM ke xvArA apavarwana Ora prawibimba samaJa sakawe hEM.
+
+Hindi meaning using Stanford parser 2.151
+You have already encountered Doppler effect for sound waves in Chapter 15 of Class XI textbook. 
+Apa PropN-class-PropN gyAraha pATya puswaka kI PropN-chapter-PropN 15 meM yukwiyukwa laharoM ke lie PropN-doppler-PropN praBAva pahale se hI sAmanA_kara cuke hEM.
+
+Hindi meaning using Stanford parser 2.152
+The Doppler effect for light is very important in astronomy. 
+prakASa ke lie PropN-doppler-PropN praBAva KagolavixyA meM awyanwa mahawvapUrNa hE.
+
+Hindi meaning using Stanford parser 2.153
+Optical fibers too make use of the phenomenon of total internal reflection. 
+xqRti- wanwu BI sampUrNa Anwarika prawibimba ke pariGatanA kA upayoga banAwe hEM.
+
 Calling Transliteration
 Calling Interface related programs
 Print minion_statistics
@@ -605,6 +635,6 @@ No Solution Found :
 Time-out:
 0
 Solution Found :
-145
+153
 re-executed-sentences:
-18
+19
