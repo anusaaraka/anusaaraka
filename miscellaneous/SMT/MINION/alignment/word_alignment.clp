@@ -1,4 +1,5 @@
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
+(defglobal ?*count* = 0)
 
 ;sort_grp function sorts  the given ids and make each id unique i.e; if i/p [9 3 4 3 5] ==> o/p [3 4 5 9]
 (deffunction sort_grp($?ids)
@@ -41,6 +42,16 @@
                 (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
 )
 ;-------------------------------------------------------------------------------------
+;The curiosity to learn about the world, [unravelling] the secrets of nature is the first step towards the discovery of science
+(defrule get_root_for_hyphen
+(declare (salience 1002))
+?f0<-(id-root ?id - )
+(id-original_word ?id ?word)
+=>
+	(retract ?f0)
+	(assert (id-root ?id ?word))
+)
+;-------------------------------------------------------------------------------------
 ;Counts the number of verbs of anusaaraka sentence
 (defrule verb_count_of_anu
 (declare (salience 1001))
@@ -68,8 +79,6 @@
         (assert (man_verb_count-verbs ?man_verb_count $?verbs))
 )
 ;-------------------------------------------------------------------------------------
-(defglobal ?*count* = 0)
-
 (defrule get_current_word
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $? - $? - $?gids)
 (not (manual_id-cat-word-root-vib-grp_ids ?mid1&:(< ?mid1 ?mid) $?))
@@ -78,7 +87,7 @@
         (bind ?*count* 0)
         (assert (count_fact 0))
 )
-
+;-------------------------------------------------------------------------------------
 (defrule update_count_fact
 (declare (salience 903))
 (current_id ?mid)
@@ -104,6 +113,7 @@
         (assert (anu_ids-sep-manual_ids $?aids - ?mid $?grp))
         (assert (prov_assignment (nth$ (length $?aids) $?aids) ?mid))
 )
+;-------------------------------------------------------------------------------------
 
 ;Free fall is thus a case of motion with uniform acceleration. 
 (defrule exact_match_using_multi_word_dic2
@@ -119,6 +129,7 @@
         (assert (anu_ids-sep-manual_ids $?aids - $?ids))
         (assert (prov_assignment (nth$ (length $?aids) $?aids) ?mid))
 )
+;-------------------------------------------------------------------------------------
 
 (defrule exact_match_using_multi_word_dic4
 (declare (salience 902))
@@ -213,6 +224,7 @@
         (assert (anu_ids-sep-manual_ids ?aid - $?grp))
         (assert (prov_assignment ?aid ?mid))
 )
+;-------------------------------------------------------------------------------------
 
 (defrule word_and_vib_match_with_anu_hindi_root1
 (declare (salience 890))
@@ -262,6 +274,7 @@
 )
 ;-------------------------------------------------------------------------------------
 ;Check for manual verb[root] and tam match in the dictionary
+; The strong nuclear force binds protons and neutrons in a nucleus. 
 (defrule verb_match_using_dic
 (declare (salience 880))
 (current_id ?mid)
@@ -274,10 +287,11 @@
 =>
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
-        (assert (anu_ids-sep-manual_ids ?aid - $?d ?mid $?grp_ids))
+        (assert (anu_ids-sep-manual_ids ?aid - $?d ?mid  $?grp_ids))
         (assert (prov_assignment ?aid ?mid))
 )
 
+;-------------------------------------------------------------------------------------
 (defrule verb_with_only_root_match_using_dic
 (declare (salience 879))
 (current_id ?mid)
@@ -292,6 +306,7 @@
         (assert (anu_ids-sep-manual_ids ?aid - ?mid $?grp_ids))
         (assert (prov_assignment ?aid ?mid))
 )
+;-------------------------------------------------------------------------------------
 
 (defrule to_infinitive_pada
 (declare (salience 879))
@@ -328,6 +343,7 @@
         (assert (anu_ids-sep-manual_ids ?e_noun_id - $?grp_ids))
         (assert (prov_assignment ?e_noun_id ?mid))
 )
+;-------------------------------------------------------------------------------------
 
 (defrule root_and_vib_match_using_dic1
 (declare (salience 870))
@@ -346,6 +362,7 @@
         (assert (anu_ids-sep-manual_ids ?e_noun_id - $?grp_ids))
         (assert (prov_assignment ?e_noun_id ?mid))
 )
+;-------------------------------------------------------------------------------------
 
 ;using morph root
 (defrule root_and_vib_match_using_dic2
@@ -366,6 +383,7 @@
         (assert (anu_ids-sep-manual_ids ?e_noun_id - $?grp_ids))
         (assert (prov_assignment ?e_noun_id ?mid))
 )
+;-------------------------------------------------------------------------------------
 
 ;But only a few years later, in 1938, Hahn and [Meitner] discovered the phenomenon of neutron-induced fission of uranium, which would serve as the basis of nuclear power reactors and nuclear weapons.
 ;if prep_id is 0 but vib not equal to 0 =>  11  meitner ko ;  (group_head_id 11) (vibakthi ko)(preposition 0) 
@@ -399,6 +417,7 @@
         (assert (anu_ids-sep-manual_ids ?eid - $?gids))
         (assert (prov_assignment ?eid ?mid))
 )
+;-------------------------------------------------------------------------------------
 
 (defrule noun-word_with_0_vib1
 (declare (salience 850))
@@ -413,6 +432,7 @@
         (assert (anu_ids-sep-manual_ids ?eid - $?gids))
         (assert (prov_assignment ?eid ?mid))
 )
+;-------------------------------------------------------------------------------------
 
 (defrule noun-word_with_0_vib2
 (declare (salience 850))
@@ -591,6 +611,7 @@
 =>
         (retract ?f ?f1 ?f2) 
 )
+;-------------------------------------------------------------------------------------
 
 
 (defrule remove_prov_ass_facts
@@ -602,26 +623,6 @@
 	(retract ?f1)
 )
 ;-------------------------------------------------------------------------------------
-;From the sixteenth century onwards, great strides were made in science in Europe. 
-;solahavAz SawAbxI Age se, baDiyA lambe kaxama yUropa meM vijFAna meM [banAe gaye We].
-;solahavIM SawAbxI se yUropa meM vijFAna ke kRewra meM awyaXika pragawi [huI].
-;(defrule combine_group1
-;(declare (salience -99))
-;?f<-(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
-;?f1<-(potential_assignment_vacancy_id-candidate_id ?aid1 ?mid)
-;(id-Apertium_output ?aid1 $?anu_mng)
-;(test (neq (length $?anu_mng) 0))
-;(test (eq ?aid1 (+ ?aid 1)))
-;(manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $? - $? - $?grp_ids)
-;=>
-;         (retract ?f ?f1)
-;         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid1 $?anu_mng - ?mid $?grp_ids))
-;         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?anu_mng - ?mid $?grp_ids))
-;	 (assert_control_fact mng_has_been_aligned $?grp_ids)
-;         (assert_control_fact mng_has_been_filled ?aid1)
-;
-;)
-
 ;This causes a major upheaval in science. 
 ;yaha vijFAna meM eka muKya kAyApalata kA kAraNa howA hE.
 ;ये प्रेक्षण ही विज्ञान में महान क्रांति का कारण बनते हैं .

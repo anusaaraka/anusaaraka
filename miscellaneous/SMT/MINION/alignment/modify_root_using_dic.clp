@@ -40,6 +40,8 @@
         (assert (manual_id-cat-word-root-vib-grp_ids ?mid ?n $?word - $?root - $?mng - $?grp_ids))
 )
 ;----------------------------------------------------------------------------------------------------------------
+;The strong nuclear force binds protons and neutrons in a nucleus. nABika meM prabala nABikIya bala protoYnoM waWA nyUtroYnoM ko [bAnXe raKawA hE].
+;We shall discuss uniform circular motion in some detail.hama [ekasamAna vqwwIya gawi] kI kuCa viswAra se carcA karezge.
 (defrule add_grp_mng
 (declare (salience 100))
 (manual_ids-sep-mng  $?pre ?mid1 $?post ?mid - $?mng)
@@ -57,7 +59,7 @@
                         (bind $?s_grp (create$ $?s_grp  ?j))
                 )
         )
-       (assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?mng - $?mng - $?vib - $?s_grp))
+      (assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?mng - $?mng - $?vib - $?s_grp))
 )
 ;----------------------------------------------------------------------------------------------------------------
 (defrule modify_root_for_dic_grp

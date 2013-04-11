@@ -4320,12 +4320,16 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  7. alignment.bat
 	1. Renamed "word_alignment.dat" to "word_alignment_tmp1.dat" in get_slot_number module
 	2. Loaded word_alignment_tmp1.dat file and generated word_alignment.dat in create_alignment_dic module
+	3. Removed  create_alignment_dic module
+        4. Added modify_minion_output and get_minion_aligned_mngs_info modules
  8. get_dbase_mng.clp
 	Modified print_dic_mng function to handle more than one meaning in multi word expressions
         Modified mwe_lookup function to call print_dic_mng for multi word expressions
 	Modified below functions/rules to send new argument for print_dic_mng function (single/multi)
 		dic_lookup, get_mng_from_phy_dic, get_mng_from_phy_dic1 and get_mng_from_phy_dic2
-	Added "get_mng_from_all_dic1" to lookup with word if root is "-"
+	Added : get_possible_mngs (function) 
+		get_mng_from_all_dic1 -- to lookup with word if root is "-"
+		split_hyphenated_word, get_mngs_for_right_word and get_mngs_for_left_word rules
  9. create_alignment_dic.clp
 	Added : check_for_correctness, get_alignment_facts
         Modified the rules to modify the fact "root-anu_mng-man_mng"  as  "id-root-anu_mng-man_mng" 
@@ -4351,8 +4355,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
            hindi_id_order_for_minion.dat file in get_word_potential_facts module
 	5. Loaded revised_root.dat file in manual_word_grp_using_dic module 
 	6. Loaded "confidence_level_tmp.dat" and Added save facts to generate confidence_level.dat in manual_lwg_new module
+	7. Modified save-facts to add "id-left_word-possible_mngs" "id-right_word-possible_mngs" in get_dbase_mng module
+        8. Loaded "phy_multi_word_expressions.dat" and  "proper_noun_dic.dat" file in manual_word_grp_using_dic, get_word_potential_facts and get_grp_info modules
 15. word_alignment.clp
       Modified : replace_id_with_word (to handle hyphen and numbers), verb_match_using_dic
+      Added    : get_root_for_hyphen
 16. Added phy_align_partial_ver_out and phy_align_partial_ver_eng_align.html
 17. Renamed phy_align_ver_eng as phy_align_partial_ver_eng and phy_align_ver_hnd as phy_align_partial_ver_hnd
 18. Added Full Parser for hindi.

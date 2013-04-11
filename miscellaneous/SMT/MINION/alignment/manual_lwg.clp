@@ -228,7 +228,7 @@
 (defrule single_vib2
 (declare (salience 65))
 ?f0<-(manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - $?vib - $?ids ?id)
-?f1<-(man_id-word-cat ?id1&:(=(+ ?id 1) ?id1) ?vib1&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|waka ?)
+?f1<-(man_id-word-cat ?id1&:(=(+ ?id 1) ?id1) ?vib1&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|waka ?c&~VM)
 =>
 	(retract ?f0 ?f1)
 	(if (eq (string-to-field (implode$ (create$ $?vib))) 0) then

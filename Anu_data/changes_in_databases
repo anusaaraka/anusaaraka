@@ -748,16 +748,6 @@ Modified:
 	45. Modified respond_verb    prawyuwwara_xe/prawikriyA_xiKA/javAba_xe/uwwara_xe/prawikriyA_kara/baxale_me_kuCa_karanA_yA_kaha							as
 		                     prawyuwwara_xe/prawikriyA_xiKA/javAba_xe/uwwara_xe/prawikriyA_kara/baxale_me_kuCa_karanA_yA_kaha/prawikriyA_vyakwa kara							(Suggested by Chaitanya Sir    19-03-13)
 
-	46. Modified wonder_noun     vismaya/karAmAwI/camawkAra/axBuwa_xqSya/axBuwa_vaswu/AScarya/acaraja/acamBA ("  ")
-						as
-				     vismaya/karAmAwI/camawkAra/axBuwa_xqSya/axBuwa_vaswu/AScarya/acaraja/acamBA/kOwUhala
-	47. existing_adjective      varwamAna/pracaliwa   as   varwamAna/pracaliwa/supracaliwa (Modified by Manju 20-03-13)
-	48. systematic_adjective    suvyavasWiwa/suniyojiwa/niyamiwa/kramabaxXa/Ayojiwa       as
-				    suvyavasWiwa/suniyojiwa/niyamiwa/kramabaxXa/Ayojiwa/vyavasWiwa	(  "  )
-	49. manifest_verb	    spaRta_ho_jA/sAPa_xiKAI_xe/praxarSiwa_kara/nAKuna_prasAXana_kara
-						as
-				    spaRta_ho_jA/sAPa_xiKAI_xe/praxarSiwa_kara/nAKuna_prasAXana_kara/prakata_ho  (" 9-4-13)
-
  
 Removed::
 -------
@@ -767,6 +757,23 @@ Removed::
         the_UNDIFINED   -->   English	(Maha Laxmi 14-08-12)
 	fix_verb	sWapiwa_kara  (Suggested by Chaitanya Sir 23-02-13)
 
+Added:
+------
+  1. wonder_noun      vismaya/karAmAwI/camawkAra/axBuwa_xqSya/axBuwa_vaswu/AScarya/acaraja/acamBA      
+                                                as
+                      vismaya/karAmAwI/camawkAra/axBuwa_xqSya/axBuwa_vaswu/AScarya/acaraja/acamBA/kOwUhala 
+										      (Suggested by Chaitanya Sir 19-03-13)
+  2. existing_adjective      varwamAna/pracaliwa   as   varwamAna/pracaliwa/supracaliwa       (Added by Manju 20-03-13)
+  3. systematic_adjective    suvyavasWiwa/suniyojiwa/niyamiwa/kramabaxXa/Ayojiwa       as
+                             suvyavasWiwa/suniyojiwa/niyamiwa/kramabaxXa/Ayojiwa/vyavasWiwa   (         "             )
+  4. manifest_verb           spaRta_ho_jA/sAPa_xiKAI_xe/praxarSiwa_kara/nAKuna_prasAXana_kara
+                                                as
+                             spaRta_ho_jA/sAPa_xiKAI_xe/praxarSiwa_kara/nAKuna_prasAXana_kara/prakata_ho  (    "  9-4-13 )
+  5. large_adjective   viSAla/viswqwa/uxAra/pracura_mAtrA_meM/jyAxA/Dera_sA/bqhax/badI/bade_bade/badA/aXika/anukUla/vyApaka
+                                                as
+                       viSAla/viswqwa/uxAra/pracura_mAtrA_meM/jyAxA/Dera_sA/bqhax/badI/bade_bade/badA/aXika/anukUla/vyApaka/bqhaw											   (Added by Manju 11-04-13)
+
+  
  changes in preposition.txt
  ==========================
  Added  :

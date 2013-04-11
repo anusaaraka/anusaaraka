@@ -103,6 +103,32 @@
  	)
  )
  ;--------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (10-4-13)
+ (deffunction get_possible_mngs(?id ?lw ?type)
+        (bind $?dic_list (create$ ))
+        (bind ?new_mng (gdbm_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?lw))
+        (bind ?slh_index (str-index "/" ?new_mng))
+        (if (and (neq (length ?new_mng) 0)(neq ?slh_index FALSE)) then
+                (while (neq ?slh_index FALSE)
+                        (bind ?new_mng1 (sub-string 1 (- ?slh_index 1) ?new_mng))
+                        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
+                        (bind ?new_mng1 (remove_character "-" (implode$ (create$  ?new_mng1)) " "))
+                        (bind $?dic_list (create$ $?dic_list ?new_mng1 ,))
+                        (bind ?new_mng (sub-string (+ ?slh_index 1) (length ?new_mng) ?new_mng))
+                        (bind ?slh_index (str-index "/" ?new_mng))
+                )
+        )
+        (bind ?new_mng1 (str-cat (sub-string 1 (length ?new_mng) ?new_mng)))
+        (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
+        (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
+	(bind $?dic_list (create$ $?dic_list ?new_mng1))
+        (if (eq ?type left) then
+               	(assert (id-left_word-possible_mngs ?id ?lw $?dic_list))
+       	else
+               	(assert (id-right_word-possible_mngs ?id ?lw $?dic_list))
+       	)
+ )
+ ;--------------------------------------------------------------------------------------------------------
  ;Added by Mahalaxmi
  (defrule get_eng_word_list
  (declare (salience 1000))
@@ -331,5 +357,31 @@
 	(bind ?new_mng (remove_character "_" ?mng " "))
 	(bind ?new_mng (remove_character "-" (implode$ (create$ ?new_mng)) " "))
 	(assert (id-org_wrd-root-dbase_name-mng ?id ?word ?root Complete_sentence.gdbm ?new_mng))
+ )
+ ;--------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (10-4-13)
+ (defrule split_hyphenated_word
+ (id-original_word ?id  ?word)
+ (test (eq (numberp ?word) FALSE))
+ (test (neq (str-index "-" ?word) FALSE))
+ =>
+        (bind ?lw (string-to-field (sub-string 1 (- (str-index "-" ?word) 1) ?word)))
+        (bind ?rw (string-to-field (sub-string (+ (str-index "-" ?word) 1) (length ?word) ?word)))
+        (assert (left_word ?id ?lw))
+        (assert (right_word ?id ?rw))
+ )
+ ;--------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (10-4-13)
+ (defrule get_mngs_for_right_word
+ ?f0<-(right_word ?id ?rw)
+ =>
+        (get_possible_mngs ?id ?rw right)
+ )
+ ;--------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (10-4-13)
+ (defrule get_mngs_for_left_word
+ ?f0<-(left_word ?id ?lw)
+ =>
+        (get_possible_mngs ?id ?lw left)
  )
  ;--------------------------------------------------------------------------------------------------------
