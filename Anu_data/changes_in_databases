@@ -747,9 +747,6 @@ Modified:
 	41.Modified negative_adjective      nakArAwmaka/rqNAwmaka/prawikUla/niReXAwmaka as	nakArAwmaka/qNAwmaka/prawikUla/niReXAwmaka (Suggested by Chaitanya Sir 07-12-12)
 	42. Modified scalar_UNDEFINED      _axiSa  as scalar_UNDEFINED        axiSa (Suggested by Chaitanya Sir 05-01-13)
 	43. Modified perceive_verb	meVhasUsa_kara as  mehasUsa_kara 
-	44. Modified inquiring_adjective     praSnamaya/jijFAsu	 as  praSnamaya/jijFAsu/anveRI   ( 	 "	19-03-13)
-	45. Modified respond_verb    prawyuwwara_xe/prawikriyA_xiKA/javAba_xe/uwwara_xe/prawikriyA_kara/baxale_me_kuCa_karanA_yA_kaha							as
-		                     prawyuwwara_xe/prawikriyA_xiKA/javAba_xe/uwwara_xe/prawikriyA_kara/baxale_me_kuCa_karanA_yA_kaha/prawikriyA_vyakwa kara							(Suggested by Chaitanya Sir    19-03-13)
 
  
 Removed::
@@ -775,6 +772,10 @@ Added:
   5. large_adjective   viSAla/viswqwa/uxAra/pracura_mAtrA_meM/jyAxA/Dera_sA/bqhax/badI/bade_bade/badA/aXika/anukUla/vyApaka
                                                 as
                        viSAla/viswqwa/uxAra/pracura_mAtrA_meM/jyAxA/Dera_sA/bqhax/badI/bade_bade/badA/aXika/anukUla/vyApaka/bqhaw											   (Added by Manju 11-04-13)
+  6. inquiring_adjective     praSnamaya/jijFAsu	 as  praSnamaya/jijFAsu/anveRI   ( 	 "	19-03-13)
+  7. respond_verb    prawyuwwara_xe/prawikriyA_xiKA/javAba_xe/uwwara_xe/prawikriyA_kara/baxale_me_kuCa_karanA_yA_kaha							as
+		                     prawyuwwara_xe/prawikriyA_xiKA/javAba_xe/uwwara_xe/prawikriyA_kara/baxale_me_kuCa_karanA_yA_kaha/prawikriyA_vyakwa kara							(Suggested by Chaitanya Sir    19-03-13)
+
 
   
  changes in preposition.txt
