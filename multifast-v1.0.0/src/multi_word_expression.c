@@ -209,7 +209,7 @@ int main (int argc, char ** argv)
 	char *line;
         size_t len=0;
 	int k=0;
-	char tolower_input_line[1000];
+	char tolower_input_line[10000];
 
 	fp = fopen(argv[1], "r");
         if(fp == NULL) printf("File Couldn't Open\n");

@@ -59,7 +59,7 @@
   echo "Saving morph information"
   cd $HOME_anu_test/apertium/
   sed 's/\([^0-9]\)\.\([^0-9]*\)/\1 \.\2/g'  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | sed 's/?/ ?/g'| sed 's/\"/\" /g'  | sed 's/!/ !/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp
-  apertium-destxt $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp  | lt-proc -a en.morf.bin | apertium-retxt | sed 's/\$\^/\$ \^/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph
+  apertium-destxt $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp  | lt-proc -a en.morf.bin | apertium-retxt | sed "s/\$\^\([^'s]\)/\$ \^\1/g" > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph
   perl morph.pl $MYPATH $1 < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph
 
   echo "Calling POS Tagger and Chunker (APERTIUM)" 
@@ -73,6 +73,7 @@
   echo "Calling Stanford parser"
 #  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2012-11-12/
+#  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2013-04-05/
   if [ "$2" != "" -a "$2" != "0" ] ;
   then
   sh run_multiple_parse_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp_1 2>/dev/null  

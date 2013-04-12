@@ -4398,12 +4398,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
                        and also added comments.
 35. In hindi_meaning.clp,
         Added : default_hindi_mng-same-cat_with-org_wrd and default_hindi_mng-different-cat_with_org_wrd
-	Added : load_phy_multi_word_file  rule to load domain specific multi word file.
 36. In phenomena.clp, modified root of phenomena
 37. In apertium-en-hi.en.metadix,
          Modified paradigm : criteri/on__n to generate 'criterias' word.
          Corrected root part of bab/y__n paradigm
          Corrected root part of months ex: May, June etc.
+	 Added : lens, unravel and rod entries.
 38. In processing_manual_sentences.sh:
         Added sed command to add '@' infront of 'nonascii' word.
 39. Added replace-mapping-symbols.lex to replace mapped symbols. EX: SYMBOL-PLUS is replaced as +
@@ -4442,7 +4442,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 55. Modified ol_stdenglish.sh accordingly with stdenglish.sh
 56. Modified run_sentence_ol.sh accordingly with run_sentence_stanford.sh
 57. Added "get_root_if_not_present" rule in change_manual_id.clp
-58. Updated the following files
+58. Added new file: check_for_best_match_in_multi-word.clp 
+	i)   To get best match from multi word expression fact.
+	ii)  Above module is included in following files:
+	       run_modules_link.bat	run_modules_ol.bat	run_modules_std.bat
+59. Removed creating binary file for multi_word_expression.clp	
+60. Updated the following files
         miscellaneous/SMT/MINION/alignment/replace_wrd_with_id.c
         miscellaneous/SMT/MINION/dictionaries/generate_hin_multi_word_dic.sh
         miscellaneous/SMT/MINION/dictionaries/phy_dictionary.txt
@@ -4452,20 +4457,20 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/MINION/dictionaries/restricted_eng_words.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_hnd_words.txt
 	miscellaneous/SMT/MINION/dictionaries/inferred_dic.txt
-59. Updated run_modules_ol.bat and run_modules_link.bat accordingly with run_modules_std.bat
-60. Updated Makefile of Anu/stdenglish/ to generate out file for replace-mapping-symbols.lex
-61. Updated mapping-symbols.lex , mapping-symbols_manual.lex and replace-mapping-symbols.lex
-62. Updated Anu/stdenglish/insert_period.lex
-63. Updated run_align_browser.sh and ClipsToAnu_browser_intfc.sh
-64. Updated MINION/alignment/README
-65. Updated changes_in_databases
-66. Updated iit-bombay.dict in goldendict
-67. Updated shabdanjali.dict.dz in goldendict
-68. Updated README
-69. Updated phy_align_partial_ver (35)
-70. Updated phy_align_verified (145)
-71. Updated following files in debugging::
+61. Updated run_modules_ol.bat and run_modules_link.bat accordingly with run_modules_std.bat
+62. Updated Makefile of Anu/stdenglish/ to generate out file for replace-mapping-symbols.lex
+63. Updated mapping-symbols.lex , mapping-symbols_manual.lex and replace-mapping-symbols.lex
+64. Updated Anu/stdenglish/insert_period.lex
+65. Updated run_align_browser.sh and ClipsToAnu_browser_intfc.sh
+66. Updated MINION/alignment/README
+67. Updated changes_in_databases
+68. Updated iit-bombay.dict in goldendict
+69. Updated shabdanjali.dict.dz in goldendict
+70. Updated README
+71. Updated phy_align_partial_ver (35)
+72. Updated phy_align_verified (145)
+73. Updated following files in debugging::
 	agreement_debug.sh	lwg_debug.sh	order_debug.sh		relation_debug.sh
 	wsd_debug.sh		GNP_debug.sh	pada_debug.sh		wsd_tam_debug.sh
-72. Updated sd_verified (490), sd_ver_output and phy_align_verified_out
-73. Updated Log
+74. Updated sd_verified (490), sd_ver_output and phy_align_verified_out
+75. Updated Log

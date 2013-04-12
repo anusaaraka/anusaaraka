@@ -547,8 +547,11 @@ Modified :
 	<e lm="blackfriars"><i>blackfriars</i><par n="expensive__adj"/></e>  (  "	" 	)
 	<e lm="talented"><i>talented</i><par n="expensive__adj"/></e>	  (     "       "       )
 	<e lm="velocity-time"><i>velocity-time</i><par n="expensive__adj"/></e>	(  "	"       )
-
-
+	<e lm="lens"><i>lens</i><par n="approach__vblex"/></e>		  (     "	12-04-13)
+	<e lm="unravel"><i>unravel</i><par n="accept__vblex"/></e>	  (	"	"	)
+	<e lm="rod"><i>rod</i><par n="house__n"/></e>			  (	"	"	)
+	<e lm="rod"><i>rod</i><par n="accept__vblex"/></e>		  (	"	"	)
+	
 Modified:
         <e lm="belonging"><i>belonging</i><par n="house__n"/></e>   as    <e lm="belongings"><i>belongings</i><par n="personnel__n"/></e>   (Suggested by Meena ji 12-05-11)
         <e lm="box"><i>box</i><par n="bass__n"/></e>   as   <e lm="box"><i>box</i><par n="access__n"/></e>  (Suggested by Meena ji 10-08-11)

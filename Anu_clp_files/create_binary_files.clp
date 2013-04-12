@@ -1,6 +1,3 @@
-(load*  "multi_word_expressions.clp")
-(bsave  "multi_word_expressions.bclp")
-(clear)
 (load* "word_without_adverb.clp")
 (bsave "word_without_adverb.bclp")
 (clear)

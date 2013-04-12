@@ -46,10 +46,10 @@
 
  echo "Saving Format info ..."
 
-# $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
- $HOME_anu_test/Anu/stdenglish-onesent.sh $1 $MYPATH
- #$HOME_anu_test/Anu/pre_process.sh $1 $MYPATH
- $HOME_anu_test/Anu/pre_process_onesent.sh $1 $MYPATH
+ $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
+# $HOME_anu_test/Anu/stdenglish-onesent.sh $1 $MYPATH
+ $HOME_anu_test/Anu/pre_process.sh $1 $MYPATH
+# $HOME_anu_test/Anu/pre_process_onesent.sh $1 $MYPATH
  $HOME_anu_test/Anu/save_format.sh $1 $MYPATH
 
  echo "Saving word information"
@@ -60,7 +60,7 @@
   echo "Saving morph information"
   cd $HOME_anu_test/apertium/
   sed 's/\([^0-9]\)\.\([^0-9]*\)/\1 \.\2/g'  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | sed 's/?/ ?/g'| sed 's/\"/\" /g'  | sed 's/!/ !/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp
-  apertium-destxt $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp  | lt-proc -a en.morf.bin | apertium-retxt | sed 's/\$\^/\$ \^/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph
+  apertium-destxt $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp  | lt-proc -a en.morf.bin | apertium-retxt | sed "s/\$\^\([^'s]\)/\$ \^\1/g" > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph
   perl morph.pl $MYPATH $1 < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.morph
 
   echo "Calling POS Tagger and Chunker (APERTIUM)" 
@@ -73,10 +73,13 @@
 
   echo "Calling Stanford parser"
   cd $HOME_anu_test/Parsers/reranking-parser
-  if [ "$2" == "" -o "$2" -ge "0" ] ; then
+#  if [ [ "$2" == "" ] -o [ "$2" -ge  "0" ] ] ; then
+  if [ "$2" == "" ] ; then
   sed 's/^/<s> /g' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org  | sed 's/$/ <\/s>/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org1
+#  exit
   sh parse.sh  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org1 > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
   fi
+#  exit
   sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}" $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp | sed 's/^(S1/(ROOT/g'  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1
  # cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2012-11-12/
