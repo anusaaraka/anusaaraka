@@ -25,7 +25,7 @@ else
 $PATH1/replacing-non_ascii_chars-to-ascii_chars.out <  $2/$1  > $1.tmp_tmp 
 
 # Replacing Symbols with their linguistic name. Mapped name is sent to the Parser. Ex: = is replaced as SYMBOL-EQUAL-TO
-$PATH1/mapping-symbols.out  $HOME_anu_tmp/tmp/$1_tmp/Symbols.txt_tmp < $1.tmp_tmp > $1.tmp_tmp1
+$PATH1/mapping-symbols.out  < $1.tmp_tmp > $1.tmp_tmp1
 
 # Remaining Non-ASCII characters are handled here
 # Program to replace more than 1 BYTE CHARACTER WITH nonascii<no of bytes><value>  Ex:Δ is replaced as nonascii2206148
