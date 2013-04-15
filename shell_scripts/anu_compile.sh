@@ -102,18 +102,6 @@
  cd $HOME_anu_test/Anu_data/compound-matching
  sh make-dict.sh
  mv Complete_sentence.gdbm $HOME_anu_test/Anu_databases/.
- cd $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries
- echo "Creating default-iit-bombay-shabdanjali-dic_firefox.gdbm"
- cut -f1 default-iit-bombay-shabdanjali-dic_in_canonical_form.txt > word_field
- cut -f2 default-iit-bombay-shabdanjali-dic_in_canonical_form.txt > mng_field
- wx_utf8 < mng_field > mng_utf8
- paste word_field mng_utf8 > default-iit-bombay-shabdanjali-dic_firefox_tmp.txt
- gcc -o $HOME_anu_test/Anu_src/converting-dic-format.out $HOME_anu_test/Anu_src/converting-dic-format.c
- $HOME_anu_test/Anu_src/converting-dic-format.out default-iit-bombay-shabdanjali-dic_firefox_tmp.txt default-iit-bombay-shabdanjali-dic_firefox.txt default-iit-bombay-shabdanjali-dic_smt_tmp.txt
- utf8_wx default-iit-bombay-shabdanjali-dic_smt_tmp.txt > default-iit-bombay-shabdanjali-dic_smt.txt
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_firefox.gdbm < default-iit-bombay-shabdanjali-dic_firefox.txt
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_smt.gdbm < default-iit-bombay-shabdanjali-dic_smt.txt
- rm word_field mng_field mng_utf8 default-iit-bombay-shabdanjali-dic_firefox_tmp.txt default-iit-bombay-shabdanjali-dic_smt_tmp.txt 
 
  echo "Compiling c and flex programs"
  cd $HOME_anu_test/Anu_src
@@ -136,6 +124,19 @@
  gcc -o replace_nonascii-chars.out replace_nonascii-chars.c
  gcc -o identify-nonascii-chars.out identify-nonascii-chars.c
  gcc -o converting-dic-to-smt_format.out converting-dic-to-smt_format.c
+
+ cd $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries
+ echo "Creating default-iit-bombay-shabdanjali-dic_firefox.gdbm"
+ cut -f1 default-iit-bombay-shabdanjali-dic_in_canonical_form.txt > word_field
+ cut -f2 default-iit-bombay-shabdanjali-dic_in_canonical_form.txt > mng_field
+ wx_utf8 < mng_field > mng_utf8
+ paste word_field mng_utf8 > default-iit-bombay-shabdanjali-dic_firefox_tmp.txt
+ gcc -o $HOME_anu_test/Anu_src/converting-dic-format.out $HOME_anu_test/Anu_src/converting-dic-format.c
+ $HOME_anu_test/Anu_src/converting-dic-format.out default-iit-bombay-shabdanjali-dic_firefox_tmp.txt default-iit-bombay-shabdanjali-dic_firefox.txt default-iit-bombay-shabdanjali-dic_smt_tmp.txt
+ utf8_wx default-iit-bombay-shabdanjali-dic_smt_tmp.txt > default-iit-bombay-shabdanjali-dic_smt.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_firefox.gdbm < default-iit-bombay-shabdanjali-dic_firefox.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_smt.gdbm < default-iit-bombay-shabdanjali-dic_smt.txt
+ rm word_field mng_field mng_utf8 default-iit-bombay-shabdanjali-dic_firefox_tmp.txt default-iit-bombay-shabdanjali-dic_smt_tmp.txt
 
  echo "Compiling Multifast programmes..."
  cd  $HOME_anu_test/multifast-v1.0.0/ahocorasick
