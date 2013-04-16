@@ -1632,7 +1632,7 @@ System_maintenance	waMwra_anurakRaNa#waMwra_anurakRaNa#noun#2#RM
 System_mask	waMwra_AcCaxa#waMwra_AcCaxa#noun#2#RM
 System_modularity	waMwra_prawirUpakawAca_waMwra_mAdUlanI#waMwra_prawirUpakawAca_waMwra_mAdUlanI#noun#2#RM
 System_network_architecture	waMwra_netavarka_vAswukalA#waMwra_netavarka_vAswukalA#noun#3#RM
-System_operator_)	waMwra_pracAlaka#waMwra_pracAlaka#noun#2#RM
+System_operator	waMwra_pracAlaka#waMwra_pracAlaka#noun#2#RM
 System_operator	waMwra_pracAlaka#waMwra_pracAlaka#noun#2#RM
 System_output_device	waMwra_nirgama_yukwi#waMwra_nirgama_yukwi#noun#3#RM
 System_partition	waMwra_viBAjana#waMwra_viBAjana#noun#2#RM
