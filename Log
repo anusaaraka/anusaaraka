@@ -4474,3 +4474,13 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	wsd_debug.sh		GNP_debug.sh	pada_debug.sh		wsd_tam_debug.sh
 74. Updated sd_verified (490), sd_ver_output and phy_align_verified_out
 75. Updated Log
+
+ 16-04-13
+ ========
+ 1. Removed default_meaning_frm_oldwsd.txt from Anu_data and moved into miscellaneous/Programs/removed_files and following changes are done.
+		  i) Removed name in list-right and list_Anu_data
+		 ii) Generating gdbm related code in anu_compile.sh
+		iii) In get_dbase_mng.clp, 
+			removed lookup step in 'get_mng_from_all_dic' and 'get_mng_from_all_dic1' rules
+ 2. Modified multi_word_expressions.txt and updated in changes_in_databases
+ 3. Updated Log.
