@@ -32,8 +32,6 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/verbal_adj.gdbm < verbal_adj_in_canonical_form.txt
  echo "Creating verbal_adj_tams.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/verbal_adj_tams.gdbm < verbal_adj_tams_in_canonical_form.txt
- echo "Creating default_meaning_frm_oldwsd.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/default_meaning_frm_oldwsd.gdbm < default_meaning_frm_oldwsd_in_canonical_form.txt
  echo "Creating hindi_default_tam.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/hindi_default_tam.gdbm < hindi_default_tam_in_canonical_form.txt
  echo "Creating causative_verb_mng.gdbm"
@@ -144,9 +142,6 @@
  cd  $HOME_anu_test/multifast-v1.0.0/src
  sh run.sh 
  make
-
- cd $HOME_anu_test/debugging
- sh compile_bison.sh
 
  echo "Compiling Anu stdenglish source files"
  cd $HOME_anu_test/Anu/stdenglish
