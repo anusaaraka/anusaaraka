@@ -4507,6 +4507,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         2. prepare_minion_for_multiple_sen.clp          6. run_minion.sh
         3. run_modules_std_for_mul_sen.bat              7. run_multiple_sen.bat
         4. Anusaaraka_stanford_multiple_sen.sh          8. run_sentence_stanford_multiple_sen.sh
+	9. get_multiple_sen.clp
  9. Modified run_H_gen_sen.bat to add prepare_minion_for_multiple_sen module
 10. Updated anu_compile.sh
 11. Updated changes_in_databases
