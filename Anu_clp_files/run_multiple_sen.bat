@@ -1,5 +1,5 @@
 (load "global_path.clp")
-(bind ?*path* (str-cat ?*path* "/miscellaneous/SMT/MINION/alignment/get_multiple_sen.clp"))
+(bind ?*path* (str-cat ?*path* "/Anu_clp_files/get_multiple_sen.clp"))
 (load ?*path*)
 (load-facts "minion_facts.dat")
 (open "multiple_sentences.dat" mul_sen_fp "a")
