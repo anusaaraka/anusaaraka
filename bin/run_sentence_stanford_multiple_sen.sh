@@ -41,7 +41,7 @@
  #=================multiple_sen============================
  sh $HOME_anu_test/Anu_clp_files/run_minion.sh
  #=========================================================
- #sh $HOME_anu_test/bin/abbr.sh
+ sh $HOME_anu_test/bin/abbr.sh
 
  #python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  hindi_sentence_tmp1.dat hindi_sentence_tmp2.dat
 
