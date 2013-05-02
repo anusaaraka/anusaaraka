@@ -32,7 +32,6 @@
  (load-facts "lwg_info.dat")
  (load-facts "GNP_agmt_info.dat")
  (load-facts "hindi_meanings.dat")
-; (load-facts "hindi_meanings_tmp2.dat")
  (load-facts "hindi_meanings_with_grp_ids.dat")
  (load-facts "original_word.dat")
  (load-facts "id_Apertium_output.dat")
@@ -43,5 +42,14 @@
  (close pos_fp)
  (clear)
  ;--------------------------------------------------------------------------
+ (load "global_path.clp")
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/prepare_minion_for_multiple_sen.clp"))
+ (load ?*path*)
+ (load-facts "id_Apertium_output.dat")
+ (load-facts "hindi_id_order.dat")
+ (open "minion_input.txt" min_fp "w")
+ (run)
+ (save-facts "multiple_mngs.dat" local id-hnd_mng)
+ (close min_fp)
  (exit)
 
