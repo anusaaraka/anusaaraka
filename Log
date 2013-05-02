@@ -4475,12 +4475,32 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 74. Updated sd_verified (490), sd_ver_output and phy_align_verified_out
 75. Updated Log
 
- 16-04-13
+ 02-05-13
  ========
  1. Removed default_meaning_frm_oldwsd.txt from Anu_data and moved into miscellaneous/Programs/removed_files and following changes are done.
 		  i) Removed name in list-right and list_Anu_data
 		 ii) Generating gdbm related code in anu_compile.sh
 		iii) In get_dbase_mng.clp, 
 			removed lookup step in 'get_mng_from_all_dic' and 'get_mng_from_all_dic1' rules
- 2. Modified multi_word_expressions.txt and updated in changes_in_databases
- 3. Updated Log.
+ 2. Renamed ::
+	uncountable.dat		as	uncountable.txt
+	openlogos_verb_root.txt	as	ol_vb_root.txt
+ 3. Removed :: kriyA_mUla_wx in list-two-side-hindi and list_Anu_data
+ 4. Removed :: Browser/src/iscii2utf8.py
+ 5. In compound-matching/make-dict.sh
+	Modified :: Complete_sentence.txt to Complete_sentence_in_canonical_form.txt
+ 6. In debugging/provisional_Anu_databases ::
+	Removed  :: all the text files , Instead 
+	Added    :: get-text-files.sh to get all the dictionary files for debugging purpose
+	Modified :: compile.sh  and reset.sh  accordingly
+ 7. In debugging ::
+	Updated  :: GNP_debug.sh		agreement_debug.sh	lwg_debug.sh
+		    order_debug.sh		pada_debug.sh		relation_debug.sh
+		    wsd_tam_debug.sh		wsd_debug.sh		lwg_debug.clp		wsd-help		
+	Modified :: In wsd_debug.clp and wsd_tam_debug.clp, 
+		    Loaded  pada_info deftemplate, pada_id_info.dat, sand_box.dat, domain.dat 
+		    Renamed compound_phrase.dat to multi_word_expressions.dat
+		    Modified : path of ?*wsd_dir* from /WSD/wsd_rules/"  to /WSD/wsd_rules/canonical_form_wsd_rules/"
+		    Modified : (ids-cmp_mng-head-cat-mng_typ  to (ids-cmp_mng-head-cat-mng_typ-priority
+ 8. Updated changes_in_databases
+ 9. Updated Log.

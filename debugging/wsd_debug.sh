@@ -1,11 +1,11 @@
  cd $HOME_anu_test/debugging/sentence_debug/
- rm *.clp *.dat *.bat debug.mm 
+ rm -f *.clp *.dat *.bat debug.mm dat
  
  cp $HOME_anu_test/debugging/wsd_debug.clp $HOME_anu_test/debugging/run_wsd_debug.bat  $HOME_anu_test/debugging/sentence_debug/.
 
 # cd $HOME_anu_tmp/tmp/$1_tmp/$2
 # cp  sent_type.dat meaning_to_be_decided.dat word.dat original_word.dat root.dat relations.dat lwg_info.dat cat_consistency_check.dat preferred_morph.dat debug_file.dat hindi_meanings.dat global_path.clp compound_phrase.dat $HOME_anu_test/debugging/sentence_debug/.
-echo -e "meaning_to_be_decided.dat\nword.dat original_word.dat\nroot.dat\nrelations.dat\nlwg_info.dat\ncat_consistency_check.dat\npreferred_morph.dat\ndebug_file.dat\nhindi_meanings.dat\nglobal_path.clp\ncompound_phrase.dat\nglobal_path.clp" >> $HOME_anu_test/debugging/sentence_debug/dat
+echo -e "meaning_to_be_decided.dat\nword.dat\noriginal_word.dat\nroot.dat\nrelations.dat\nlwg_info.dat\ncat_consistency_check.dat\npreferred_morph.dat\ndebug_file.dat\nhindi_meanings.dat\nglobal_path.clp\npada_id_info.dat\nsand_box.dat\ndomain.dat\nmulti_word_expressions.dat\n" >> $HOME_anu_test/debugging/sentence_debug/dat
 
 
 var=`cat dat`

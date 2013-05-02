@@ -496,6 +496,9 @@ Modified :
 				as
 	<e lm="bala"><i>bal</i><par n="Gar/a__n"/></e>		(Modified by Roja(08-08-12))
   9.    In k/ara__v paradigm modified "karwe"  as "karawe"      (Modified by Shirisha Manju Suggested by Sukhada(30-11-12))
+ 10.	<e lm="namUnA"><i>namUn</i><par n="regular__adj-noun"/></e>
+			as
+	<e lm="namUnA"><i>namUn</i><par n="loh/A__n"/></e>	(Modified by Roja, Suggested by Chaitanya Sir(22-04-13))
 
  Removed : 
 	  1.  Removed the following parsarg paradigms and its related patterns
@@ -549,9 +552,12 @@ Modified :
 	<e lm="velocity-time"><i>velocity-time</i><par n="expensive__adj"/></e>	(  "	"       )
 	<e lm="lens"><i>lens</i><par n="approach__vblex"/></e>		  (     "	12-04-13)
 	<e lm="unravel"><i>unravel</i><par n="accept__vblex"/></e>	  (	"	"	)
+	<e lm="unravell"><i>unravell</i><par n="accept__vblex"/></e>	  (     "       "	)
 	<e lm="rod"><i>rod</i><par n="house__n"/></e>			  (	"	"	)
 	<e lm="rod"><i>rod</i><par n="accept__vblex"/></e>		  (	"	"	)
-	
+	<e lm="encapsulate"><i>encapsulat</i><par n="liv/e__vblex"/></e>  (	"	02-05-13)
+	<e lm="civilisation"><i>civilisation</i><par n="house__n"/></e>	  (	"	"	)
+
 Modified:
         <e lm="belonging"><i>belonging</i><par n="house__n"/></e>   as    <e lm="belongings"><i>belongings</i><par n="personnel__n"/></e>   (Suggested by Meena ji 12-05-11)
         <e lm="box"><i>box</i><par n="bass__n"/></e>   as   <e lm="box"><i>box</i><par n="access__n"/></e>  (Suggested by Meena ji 10-08-11)
@@ -775,7 +781,9 @@ Added:
   6. inquiring_adjective     praSnamaya/jijFAsu	 as  praSnamaya/jijFAsu/anveRI   ( 	 "	19-03-13)
   7. respond_verb    prawyuwwara_xe/prawikriyA_xiKA/javAba_xe/uwwara_xe/prawikriyA_kara/baxale_me_kuCa_karanA_yA_kaha							as
                      prawyuwwara_xe/prawikriyA_xiKA/javAba_xe/uwwara_xe/prawikriyA_kara/baxale_me_kuCa_karanA_yA_kaha/prawikriyA_vyakwa kara							(Suggested by Chaitanya Sir    19-03-13)
-
+  8. encapsulate_verb	samputiwa_kara	
+					as
+			saMgatiwa_kara/samputiwa_kara		(Suggested by Chaitanya Sir    02-05-13)
 
   
  changes in preposition.txt

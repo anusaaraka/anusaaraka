@@ -1,4 +1,5 @@
- 
+ (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
+
  (load* "global_path.clp") 
  (load-facts "meaning_to_be_decided.dat")
  (load-facts "word.dat")
@@ -6,18 +7,22 @@
  (load-facts "root.dat")
  (load-facts "relations.dat")
  (load-facts "lwg_info.dat")
+ (load-facts "pada_id_info.dat")
  (load-facts "cat_consistency_check.dat")
  (load-facts "preferred_morph.dat")
  (load-facts "debug_file.dat")
  (load-facts "hindi_meanings.dat")
- (load-facts "compound_phrase.dat")
+ (load-facts "multi_word_expressions.dat")
+ (load-facts "sand_box.dat")
+ (load-facts "domain.dat")
 ; (load-facts "sent_type.dat")
+
 
  (defglobal ?*prov_dir* = ?*provisional_wsd_path*)
  (defglobal ?*debug_flag* = TRUE)
  (defglobal ?*Ex_mng*     = ex_mng)
  (defglobal ?*count* = 1)
- (defglobal ?*wsd_dir* = (create$ (str-cat ?*path* "/WSD/wsd_rules/")))
+ (defglobal ?*wsd_dir* = (create$ (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/")))
  (defglobal ?*help-file* = wsd-help)
  (defglobal ?*path1* = ?*path*)
 
@@ -142,7 +147,7 @@
  (defrule hindi_mng_src_db1
  (declare (salience 76))
  ?f<-(hmng_frm_db_mwe-src ?id ?original_word ?word ?root ?src)
- (ids-cmp_mng-head-cat-mng_typ $?ids ?group_mng ?head ?cat ?mng_typ)
+ (ids-cmp_mng-head-cat-mng_typ-priority $?ids ?group_mng ?head ?cat ?mng_typ ?)
  (test (eq (nth$ ?head $?ids) ?id))
  (English-list $?Eng_list)
  =>
@@ -161,7 +166,7 @@
  (defrule hindi_mng_src_db2
  (declare (salience 76))
  ?f<-(hmng_frm_db_mwe-src ?id ?original_word ?word ?root ?src)
- (ids-cmp_mng-head-cat-mng_typ $?ids ?group_mng ?head ?cat ?mng_typ)
+ (ids-cmp_mng-head-cat-mng_typ-priority $?ids ?group_mng ?head ?cat ?mng_typ ?)
  (test (and (neq (nth$ ?head $?ids) ?id) (member$ ?id $?ids)))
  (id-word ?id ?word)
  (English-list $?Eng_list)
@@ -259,9 +264,9 @@
  (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/"?word".clp 1>jnk2 2>error")
  (if (neq ?word ?root) then
  (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/"?root".clp 1>>jnk2 2>error"))
- (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/"?word".clp 1>>jnk2 2>error")
+ (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/canonical_form_wsd_rules/"?word".clp 1>>jnk2 2>error")
  (if (neq ?word ?root) then
- (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/"?root".clp 1>>jnk2 2>error"))
+ (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/canonical_form_wsd_rules/"?root".clp 1>>jnk2 2>error"))
  (open "jnk2" fp2 "r")
  (if (eq (read fp2) EOF) then
      (printout t crlf "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" crlf)
@@ -304,11 +309,11 @@
  (if (neq ?word ?root) then
  (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/"?root".clp 1>>jnk 2>error"))
  
- (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/"?word".clp 1>>jnk 2>error")
+ (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/canonical_form_wsd_rules/"?word".clp 1>>jnk 2>error")
  (if (neq ?word ?original_word) then
- (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/"?word".clp 1>>jnk 2>error"))
+ (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/canonical_form_wsd_rules/"?word".clp 1>>jnk 2>error"))
  (if (neq ?word ?root) then
- (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/"?root".clp 1>>jnk 2>error"))
+ (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/canonical_form_wsd_rules/"?root".clp 1>>jnk 2>error"))
  (system "grep -B2 \" " ?exp_mng"))\" jnk >jnk1")
  (open "jnk1" fp1 "r")
   (if (eq (read fp1) EOF) then
@@ -338,12 +343,12 @@
  (if (neq ?word ?root) then
  (system "grep -E \"(defrule|salience|assert|;)\"  $HOME_anu_provisional_wsd_rules/"?root".clp | grep -B2 \" " ?exp_mng"))\" >>jnk 2>error"))
   
-  (system "grep -E \"(defrule|salience|assert|;)\"  $HOME_anu_test/WSD/wsd_rules/"?original_word".clp | grep -B2 \" " ?exp_mng"))\" >>jnk 2>error")
+  (system "grep -E \"(defrule|salience|assert|;)\"  $HOME_anu_test/WSD/wsd_rules/canonical_form_wsd_rules/"?original_word".clp | grep -B2 \" " ?exp_mng"))\" >>jnk 2>error")
  (if (neq ?word ?original_word) then
- (system "grep -E \"(defrule|salience|assert|;)\"  $HOME_anu_test/WSD/wsd_rules/"?word".clp | grep -B2 \" " ?exp_mng"))\" >>jnk 2>error")
+ (system "grep -E \"(defrule|salience|assert|;)\"  $HOME_anu_test/WSD/wsd_rules/canonical_form_wsd_rules/"?word".clp | grep -B2 \" " ?exp_mng"))\" >>jnk 2>error")
  )
  (if (neq ?word ?root) then
- (system "grep -E \"(defrule|salience|assert|;)\"  $HOME_anu_test/WSD/wsd_rules/"?root".clp | grep -B2 \" " ?exp_mng"))\" >>jnk 2>error")
+ (system "grep -E \"(defrule|salience|assert|;)\"  $HOME_anu_test/WSD/wsd_rules/canonical_form_wsd_rules/"?root".clp | grep -B2 \" " ?exp_mng"))\" >>jnk 2>error")
 )
 
    (open "jnk" file "r")
@@ -432,7 +437,7 @@
  (printout t  "The following command is used to open a particular clip file" crlf)
  (printout t "==========================================================" crlf)
  (printout t "(system \"gvim -o path_to_clp_file\") "crlf)
- (printout t "For e.g; CLIPS> (system \"gvim -o $HOME_anu_test/WSD/wsd_rules/eat.clp\")" crlf crlf)
+ (printout t "For e.g; CLIPS> (system \"gvim -o $HOME_anu_test/WSD/wsd_rules/canonical_form_wsd_rules/eat.clp\")" crlf crlf)
  
  (printout t "The following command is used to exit" crlf)
  (printout t "=====================================" crlf)
@@ -440,11 +445,11 @@
 
  
 
- (bind ?orig_word_file (str-cat ?*path* "/WSD/wsd_rules/" ?original_word .clp))
+ (bind ?orig_word_file (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/" ?original_word .clp))
  (bind ?orig_word_file1 (str-cat ?*provisional_wsd_path* "/" ?original_word .clp))
- (bind ?word_file (str-cat ?*path* "/WSD/wsd_rules/" ?word .clp))
+ (bind ?word_file (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/" ?word .clp))
  (bind ?word_file1 (str-cat ?*provisional_wsd_path* "/" ?word .clp))
- (bind ?root_file (str-cat ?*path* "/WSD/wsd_rules/" ?root .clp))
+ (bind ?root_file (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/" ?root .clp))
  (bind ?root_file1 (str-cat ?*provisional_wsd_path* "/" ?root .clp))
 
   (if (and (neq (load* ?orig_word_file1) FALSE)(halt)) then

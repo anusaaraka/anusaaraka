@@ -11,9 +11,12 @@
  (load-facts "hindi_tam_info.dat")
  (load-facts "debug_file.dat")
  (load* "global_path.clp")
+ (load-facts "sand_box.dat")
+ (load-facts "domain.dat")
+
 
  (defglobal ?*prov_dir* = ?*provisional_wsd_path*)
- (defglobal ?*wsd_dir* = (create$ (str-cat ?*path* "/WSD/wsd_rules/")))
+ (defglobal ?*wsd_dir* = (create$ (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/")))
  (defglobal ?*debug_flag* = TRUE)
  (defglobal ?*count* = 1)
  (defglobal ?*help-file* = tam-help)
@@ -139,7 +142,7 @@
  =>
  (retract ?f)
  (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/" (implode$ (create$ ?tam)) "_tam.clp >jnk 2>error")
- (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/"(implode$ (create$ ?tam)) "_tam.clp >>jnk 2>error")
+ (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/canonical_form_wsd_rules/"(implode$ (create$ ?tam)) "_tam.clp >>jnk 2>error")
  (open "jnk" fp2 "r")
  (if (eq (read fp2) EOF) then
      (printout t crlf "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" crlf)
@@ -177,7 +180,7 @@
  =>
  (retract ?f)
  ( system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/" (implode$ (create$ ?tam)) "_tam.clp >jnk 2>error")
- (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/"(implode$ (create$ ?tam)) "_tam.clp >>jnk 2>error")
+ (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/canonical_form_wsd_rules/"(implode$ (create$ ?tam)) "_tam.clp >>jnk 2>error")
  (open "jnk" fp "r")
  (if (neq (read fp) EOF) then
  (system "grep -B2 \" " ?exp_mng"))\" jnk >jnk1")
@@ -203,7 +206,7 @@
  =>
  (retract ?f)
  (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_provisional_wsd_rules/" ?tam "_tam.clp | grep -B2  \" " ?exp_mng"))\">jnk 2>error")
- (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/"?tam "_tam.clp | grep -B2  \" " ?exp_mng"))\">>jnk 2>error")
+ (system "grep -E \"(defrule|salience|assert)\"  $HOME_anu_test/WSD/wsd_rules/canonical_form_wsd_rules/"?tam "_tam.clp | grep -B2  \" " ?exp_mng"))\">>jnk 2>error")
  (open "jnk" file "r")
  (if (eq (read file) EOF) then
        (close file) (remove jnk)
@@ -250,7 +253,7 @@
         (printout t "The command to exit is" crlf)
  	(printout t "(exit) "crlf)
 
- 	(bind ?tam_file (str-cat ?*path* "/WSD/wsd_rules/" ?tam "_tam.clp"))
+ 	(bind ?tam_file (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/" ?tam "_tam.clp"))
  	(bind ?tam_file1 (str-cat ?*provisional_wsd_path* "/" ?tam "_tam.clp"))
  	(if (and (neq (load* ?tam_file) FALSE)(halt)) then
 	else (if (and(neq (load* ?tam_file1) FALSE)(halt)) then

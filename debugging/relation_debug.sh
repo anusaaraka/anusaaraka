@@ -1,5 +1,5 @@
  cd $HOME_anu_test/debugging/sentence_debug/
- rm *.clp *.dat *.bat debug.mm 
+ rm -f *.clp *.dat *.bat debug.mm dat
 
  cp $HOME_anu_test/Anu_clp_files/ol_parser_id_mapping.clp  $HOME_anu_test/Anu_clp_files/modify_ol_relations.clp $HOME_anu_test/Anu_clp_files/link_relation_rules.clp $HOME_anu_test/Anu_clp_files/sd_relation_rules.clp $HOME_anu_test/debugging/relation_debug.clp $HOME_anu_test/debugging/run_relation_debug.bat $HOME_anu_test/Anu_clp_files/run_modules_ol.bat  $HOME_anu_test/debugging/sentence_debug/.
 

@@ -1,5 +1,5 @@
  cd $HOME_anu_test/debugging/sentence_debug/
- rm *.clp *.dat *.bat debug.mm 
+ rm -f *.clp *.dat *.bat debug.mm dat
 
  cp  $HOME_anu_test/Anu_clp_files/pada.clp  $HOME_anu_test/Anu_clp_files/sd_pada.clp $HOME_anu_test/debugging/pada_debug.clp $HOME_anu_test/debugging/run_pada_debug.bat  $HOME_anu_test/debugging/sentence_debug/.
 

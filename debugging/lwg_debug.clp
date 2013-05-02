@@ -26,8 +26,8 @@
  =>
   (if (eq ?ptype Link-Parser) then
 	(load* "verb_chunk.clp")
-  else (if (eq ?ptype Stanford-Parser) then
-        (load* "sd_lwg_rules.clp")
+;  else (if (eq ?ptype Stanford-Parser) then
+;        (load* "sd_lwg_rules.clp")
   else  
         (if (eq ?ptype Open-Logos-Parser) then
                 (printout t "      LWG debugging for Open Logos is not done at this point." crlf)
@@ -35,7 +35,7 @@
                 (printout t "     (exit) "crlf crlf)
         )
   ))
- )
+; )
 
 
  ; If stanford parser then display stanford relations
