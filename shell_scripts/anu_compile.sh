@@ -21,10 +21,10 @@
  sh get_canonical_form_wsd_rules.sh
 
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries
- echo "Creating phy_dictionary.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/phy_dictionary.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/phy_dictionary_in_canonical_form.txt
- echo "Creating phy_eng_multi_word_dic.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/phy_eng_multi_word_dic.gdbm < $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/phy_eng_multi_word_dic_in_canonical_form.txt
+ echo "Generating phy_dictionary.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/phy_dictionary.gdbm < phy_dictionary_in_canonical_form.txt
+ echo "Generating phy_eng_multi_word_dic.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/phy_eng_multi_word_dic.gdbm < phy_eng_multi_word_dic_in_canonical_form.txt
 
  echo "Creating paxasUwra.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/total-paxasUwra.gdbm < total-paxasUwra_in_canonical_form.txt 
@@ -71,7 +71,7 @@
  echo "Creating adverb_list.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/adverbs_list.gdbm < adverbs_list.txt
  echo "Creating uncountable.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/uncountable.gdbm < uncountable.dat
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/uncountable.gdbm < uncountable.txt
  echo "Creating inanimate.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/inanimate.gdbm < inanimate.txt
  echo "Creating animate.gdbm"
@@ -95,7 +95,7 @@
 
  cd vb_root
  echo "Creating ol_vb_root.gdbm"
- ./create_dbm.pl  $HOME_anu_test/Anu_databases/ol_vb_root.gdbm < openlogos_verb_root.txt
+ ./create_dbm.pl  $HOME_anu_test/Anu_databases/ol_vb_root.gdbm < ol_vb_root.txt 
 
  cd $HOME_anu_test/Anu_data/compound-matching
  sh make-dict.sh

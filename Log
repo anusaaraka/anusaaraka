@@ -4502,5 +4502,6 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 		    Renamed compound_phrase.dat to multi_word_expressions.dat
 		    Modified : path of ?*wsd_dir* from /WSD/wsd_rules/"  to /WSD/wsd_rules/canonical_form_wsd_rules/"
 		    Modified : (ids-cmp_mng-head-cat-mng_typ  to (ids-cmp_mng-head-cat-mng_typ-priority
- 8. Updated changes_in_databases
- 9. Updated Log.
+ 8. Updated anu_compile.sh
+ 9. Updated changes_in_databases
+ 10. Updated Log.
