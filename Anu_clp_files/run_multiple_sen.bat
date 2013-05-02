@@ -1,0 +1,7 @@
+(load "/home/manju/GIT/anu_testing/Anu_clp_files/get_multiple_sen.clp")
+(load-facts "minion_facts.dat")
+(open "multiple_sentences.dat" mul_sen_fp "a")
+(run)
+(close mul_sen_fp)
+(facts)
+(exit)

@@ -4502,6 +4502,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 		    Renamed compound_phrase.dat to multi_word_expressions.dat
 		    Modified : path of ?*wsd_dir* from /WSD/wsd_rules/"  to /WSD/wsd_rules/canonical_form_wsd_rules/"
 		    Modified : (ids-cmp_mng-head-cat-mng_typ  to (ids-cmp_mng-head-cat-mng_typ-priority
- 8. Updated anu_compile.sh
- 9. Updated changes_in_databases
- 10. Updated Log.
+ 8. Added the following files to get multiple sentences using dictionary
+        1. causative_verb_mng_for_mul_sen.clp           5. hindi_meaning_for_mul_sen.clp
+        2. prepare_minion_for_multiple_sen.clp          6. run_minion.sh
+        3. run_modules_std_for_mul_sen.bat              7. run_multiple_sen.bat
+        4. Anusaaraka_stanford_multiple_sen.sh          8. run_sentence_stanford_multiple_sen.sh
+ 9. Modified run_H_gen_sen.bat to add prepare_minion_for_multiple_sen module
+10. Updated anu_compile.sh
+11. Updated changes_in_databases
+12. Updated Log.
