@@ -204,8 +204,8 @@
  ;Added by Shirisha Manju (08-4-13)
  (defrule get_mng_from_all_dic
  (declare (salience 160))
- (id-original_word ?id ?word)
  ?f0<-(id-root ?id -)
+ (id-original_word ?id ?word)
  (id-cat_coarse ?id ?cat)
  =>
 		(retract ?f0)

@@ -59,7 +59,7 @@
 (declare (salience 100))
 (manual_id-word-cat ?id ?word ?cat)
 (test (neq (str-index "@" (implode$ (create$ ?word))) FALSE))
-(test (eq (member$ ?word (create$ @PUNCT-OpenParen @PUNCT-Comma @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-DoubleQuote @PUNCT-DoubleQuote @PUNCT-Semicolon @PUNCT-Colon @PUNCT-SingleQuote @PUNCT-OpenParen @PUNCT-ClosedParen @PUNCT-Exclamation @SYM-Dollar)) FALSE))
+(test (eq (member$ ?word (create$ @PUNCT-OpenParen @PUNCT-Comma @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-DoubleQuote @PUNCT-DoubleQuote @PUNCT-Semicolon @PUNCT-Colon @PUNCT-SingleQuote @PUNCT-OpenParen @PUNCT-ClosedParen @PUNCT-Exclamation @SYM-Dollar @PUNCT-RightSquareBracket @PUNCT-LeftSquareBracket)) FALSE))
 (not (id_mng_modified ?id))
 =>
 	(bind ?nword (remove_@ ?word))
@@ -73,7 +73,7 @@
 (declare (salience 100))
 ?f<-(id-node-word-root ?id ?node ?word - ?root)
 (test (neq (str-index "@" (implode$ (create$ ?root))) FALSE))
-(test (eq (member$ ?root (create$ @PUNCT-OpenParen @PUNCT-Comma @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-DoubleQuote @PUNCT-DoubleQuote @PUNCT-Semicolon @PUNCT-Colon @PUNCT-SingleQuote @PUNCT-OpenParen @PUNCT-ClosedParen @PUNCT-Exclamation @SYM-Dollar)) FALSE))
+(test (eq (member$ ?root (create$ @PUNCT-OpenParen @PUNCT-Comma @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-DoubleQuote @PUNCT-DoubleQuote @PUNCT-Semicolon @PUNCT-Colon @PUNCT-SingleQuote @PUNCT-OpenParen @PUNCT-ClosedParen @PUNCT-Exclamation @SYM-Dollar @PUNCT-RightSquareBracket @PUNCT-LeftSquareBracket)) FALSE))
 (not (id_root_modified ?id))
 =>
 	(retract ?f)
