@@ -36,8 +36,13 @@
  fi
 
  mkdir $MYPATH/tmp/$1_tmp
- sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/processing_manual_sentences.sh $1 $5
- 
+ if [ "$6" == "full" ]; then
+#	echo "full" > $MYPATH/tmp/$1_tmp/hindi_parser.dat
+ 	sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/processing_manual_sentences.sh $1 $5 $6
+ else
+#	echo "not_full" > $MYPATH/tmp/$1_tmp/hindi_parser.dat
+	sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/processing_manual_sentences.sh $1 $5
+ fi
  ###Added below loop for server purpose.
  if [ "$3" == "True" ] ; then 
     echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
@@ -123,9 +128,10 @@
   $HOME_anu_test/Anu_src/split_file.out one_sen_per_line_manual_hindi_sen.txt dir_names.txt manual_hindi_sen.dat
   $HOME_anu_test/Anu_src/split_file.out shallow_parser_output.txt dir_names.txt shallow_parser_output.dat
   $HOME_anu_test/Anu_src/split_file.out manual_hin.morph.txt dir_names.txt manual_hin.morph.dat
-#  $HOME_anu_test/Anu_src/split_file.out full_parser_output.txt dir_names.txt full_parser_output.dat
+  if [ "$6" == "full" ]; then
+   	$HOME_anu_test/Anu_src/split_file.out full_parser_output.txt dir_names.txt full_parser_output.dat
+  fi
   #=============================================================================================
-
   grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt
   perl $HOME_anu_test/Anu_src/Match-sen.pl $HOME_anu_test/Anu_databases/Complete_sentence.gdbm  $1.snt one_sentence_per_line.txt > sen_phrase.txt
 
@@ -136,7 +142,7 @@
  do
     echo "Hindi meaning using Stanford parser" $line
     cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
-    timeout 500 ./run_sentence_stanford_minion.sh $1 $line 1 $MYPATH $4 
+    timeout 500 ./run_sentence_stanford_minion.sh $1 $line 1 $MYPATH $4 $6
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
 

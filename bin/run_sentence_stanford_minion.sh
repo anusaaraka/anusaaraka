@@ -11,6 +11,7 @@
  echo "(defglobal ?*provisional_wsd_path* = $HOME_anu_provisional_wsd_rules)" >> global_path.clp
  echo "(Parser_used Stanford-Parser)" >> parser_type.dat
  echo "(Domain $5)" >> domain.dat
+ echo "(hindi_parser $6)" >> hindi_parser.dat
  
  cd $HOME_anu_test/Anu_src/
  ./constituency_parse $MYPATH/$1_tmp/$2/E_constituents_info_tmp.dat  $MYPATH/$1_tmp/$2/Node_category_tmp.dat < $MYPATH/$1_tmp/$2/sd-lexicalize_info.dat
@@ -32,9 +33,11 @@
 
  #============================= minion purpose ==================================
  sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/get_group_mng.sh shallow_parser_output.dat
- #$HOME_anu_test/miscellaneous/SMT/MINION/alignment/get_tam_info_from_full_parser.out shallow_parser_GNP_info.dat shallow_parser_root_tmp.dat shallow_parser_tam.dat full_parser_relation.dat < full_parser_output.dat > /dev/null
  $HOME_anu_test/miscellaneous/SMT/MINION/alignment/get_tam_info.out shallow_parser_GNP_info.dat shallow_parser_root_tmp.dat shallow_parser_tam.dat  < shallow_parser_output.dat > /dev/null
 
+ if [ "$6" == "full" ]; then
+ 	$HOME_anu_test/miscellaneous/SMT/MINION/alignment/get_tam_info_from_full_parser.out shallow_parser_GNP_info.dat shallow_parser_root_tmp.dat shallow_parser_tam.dat full_parser_relation.dat < full_parser_output.dat > /dev/null
+ fi
  myclips -f $HOME_anu_test/miscellaneous/SMT/MINION/alignment/run_H_gen_minion.bat >> $1.error
  
  sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/run_minion.sh minion_input.txt 

@@ -4475,7 +4475,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 74. Updated sd_verified (490), sd_ver_output and phy_align_verified_out
 75. Updated Log
 
- 02-05-13
+ 03-05-13
  ========
  1. Removed default_meaning_frm_oldwsd.txt from Anu_data and moved into miscellaneous/Programs/removed_files and following changes are done.
 		  i) Removed name in list-right and list_Anu_data
@@ -4509,15 +4509,28 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         4. Anusaaraka_stanford_multiple_sen.sh          8. run_sentence_stanford_multiple_sen.sh
 	9. get_multiple_sen.clp
  9. Modified run_H_gen_sen.bat to add prepare_minion_for_multiple_sen module
-10. Updated anu_compile.sh
-11. Updated changes_in_databases
-12. Updated the following files
+10. Modified "add_not_to_lwg" rule in sd_lwg_rules.clp (added test condition)
+11. Modified "get_conj_group" rule in sd_pada.clp
+12. manual_lwg.clp :
+        Added    : modify_verb_group
+        Modified : change_remaining_facts2 and change_remaining_facts
+13. modify_root_using_dic.clp:
+        Added   :  add_grp_mng1 and modify_root_for_plural_using_dic_for_multi_word rules
+14. Modified the following files to add full parser
+        1. Anusaaraka_stanford_minion.sh        3. processing_manual_sentences.sh
+        2. run_sentence_stanford_minion.sh      4. minion_compile.sh
+15. Added get_tam_info_from_full_parser.lex for full parser
+16. Modified sd_ver_output
+17. Updated anu_compile.sh
+18. Updated the following files
         miscellaneous/SMT/MINION/dictionaries/phy_dictionary.txt
         miscellaneous/SMT/MINION/dictionaries/provisional_root_dic.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_eng_words.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_hnd_words.txt
         miscellaneous/SMT/MINION/dictionaries/inferred_dic.txt
-13. Updated
+19. Updated changes_in_databases
+20. Updated alignment/README
+21. Updated
         phy_align_verified_eng (186)
         phy_align_partial_ver_eng (58)
-14. Updated Log.
+22. Updated Log.
