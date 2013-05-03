@@ -407,6 +407,7 @@
 ;--------------------------------------------------------------------------
  ;Identifying and inserting "not" to lwg 
  ;Ex:- I will not do it.
+ ;They also [do not attract] or repel other light objects as they did on being electrified
  ;(root-verbchunk-tam-parser_chunkids do will_do will_0 P2 P4) ==>
  ;(root-verbchunk-tam-parser_chunkids do will_not_do will_not_0 P2 P3 P4)
  (defrule add_not_to_lwg
@@ -416,7 +417,7 @@
  (parserid-word ?not not)
  (Node-Category ?RB RB)
  (cntrl_fact_for_testing_not)
- (not (RB-checked ?RB))
+ (test (eq (member$ ?p_id $?ids) FALSE))
  (test (and (< (string_to_integer ?first) (string_to_integer ?p_id))(< (string_to_integer ?p_id) (string_to_integer ?last))))
 =>
     (retract ?f)
@@ -439,8 +440,6 @@
     )
     (assert (root-verbchunk-tam-parser_chunkids ?root ?new_vrb_chunk ?new_tam $?lwg))
     (printout ?*lwg_debug_file* "			After   - (root-verbchunk-tam-parser_chunkids - "?root" "?new_vrb_chunk" "?new_tam" "(implode$ $?lwg)")" crlf)
-    (assert (RB-checked ?RB))
-    
  )
 
  ;--------------------------------------------------------------------------

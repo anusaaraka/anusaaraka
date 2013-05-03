@@ -186,6 +186,7 @@
 	)
 )
 ;----------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 ; The scientific method involves several interconnected steps: Systematic observations, controlled experiments, qualitative and quantitative reasoning, mathematical modelling, prediction and verification or falsification of theories.
 ;@PUNCT-SingleQuote vEjFAnika viXi  @PUNCT-SingleQuote  meM bahuwa se anwaHsambanXa - paxa  @PUNCT-Colon  vyavasWiwa prekRaNa  @PUNCT-Comma  niyanwriwa prayoga  @PUNCT-Comma  guNAwmaka waWA mAwrAwmaka vivecanA  @PUNCT-Comma  gaNiwIya prawirUpaNa  @PUNCT-Comma  BaviRya kaWana  @PUNCT-Comma  sixXAnwoM kA sawyApana aWavA anyaWAkaraNa sammiliwa howe hEM  @PUNCT-Dot
 (defrule single_vib_for_single_quote
@@ -201,6 +202,7 @@
         (assert (manual_id-cat-word-root-vib-grp_ids ?id3 ?cat $?word - $?root - ?vib - ?id3 ?id2))
 )
 ;----------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 ;In this case, the magnitude of displacement (360 m) is equal to the path length (360 m). 
 ;yahAz visWApana kA parimANa @PUNCT-OpenParen 360 @m  @PUNCT-ClosedParen  paWa - lambAI @PUNCT-OpenParen  360 @m  @PUNCT-ClosedParen  ke barAbara hE @PUNCT-Dot
 (defrule single_vib_for_group_fact
@@ -254,6 +256,22 @@
         (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - $?n_vib - $?ids ?id ?id1 ?id2))
 )
 ;----------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (18-04-13)
+;Most of the phenomena occurring around us can be described under electromagnetism.
+;hamAre cAroM ora kI aXikAMSa pariGatanAoM kI vyAKyA vExyuwacumbakawva ke anwargawa kI jA sakawI hE.
+(defrule modify_verb_group
+(declare (salience 64))
+(manual_id-cat-word-root-vib-grp_ids ? ? $? - $? - ? ?word - $? ?id)
+?f0<-(manual_id-node-word-root-tam  ?m_h_id   ?c&VGF|VGNN|VGNF  ?word $?mng - ?word $?root - $?tam)
+?f1<-(head_id-grp_ids ?m_h_id ?id $?ids)
+?f2<-(id-node-word-root ?id VM ?word $?m - ?word kara)
+=>
+	(retract ?f0 ?f1 ?f2)
+	(assert (head_id-grp_ids ?m_h_id $?ids))
+	(assert (manual_id-node-word-root-tam  ?m_h_id   ?c  $?mng - $?root - $?tam))
+	(assert (id-node-word-root ?id VM  $?m -  kara))
+)
+;----------------------------------------------------------------------------------------------------------------
 (defrule verb_grouping
 (declare (salience 60))
 (manual_id-node-word-root-tam  ?m_h_id   VGF|VGNN|VGNF  $?mng - $?root - $?tam)
@@ -273,9 +291,10 @@
 ) 
 ;----------------------------------------------------------------------------------------------------------------
 ;She turned to face him. --- vaha usakA sAmanA karane ke lie mudI  @PUNCT-OpenParen GUmI @PUNCT-ClosedParen @PUNCT-Dot
+;silikA kAzca wanwuoM meM 1 @Km lambe wanwu meM prakASa ke 95 @SYMBOL-PERCENT se BI aXika BAga ko saFcariwa karanA samBava hE
 (defrule change_remaining_facts
 (declare (salience 55))
-?f0<-(man_id-word-cat ?mid $?word ?cat)
+?f0<-(man_id-word-cat ?mid $?word ?cat&~VIB)
 (id-node-word-root ?mid ? $?word1 - $?root)
 (not (retract_manual_fact ?mid))
 (test (eq (member$ $?word (create$ @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-Exclamation )) FALSE)) 
@@ -302,6 +321,7 @@
 (declare (salience 50))
 ?f0<-(man_id-word-cat ?mid $?word ?cat&VIB)
 (not (manual_id-cat-word-root-vib-grp_ids ? ? $? - $? - $? - $? ?mid $?))
+(not (retract_manual_fact ?mid))
 =>
         (retract ?f0)
         (assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word - $?word - 0 - ?mid))

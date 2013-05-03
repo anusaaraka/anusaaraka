@@ -13555,7 +13555,7 @@ for_a_little_while	WodZe_samaya_waka#WodZe_samaya_waka#noun#4#RM
 for_a_long_while	laMbe_samaya_waka#laMbe_samaya_waka#noun#4#RM
 for_a_song	saswe_meM#saswe_meM#noun#3#RM
 for_a_very_great_while	bahuwa_samaya_waka#bahuwa_samaya_waka#noun#5#RM
-for_a_while	kuCa_samaya_waka#kuCa_samaya_waka#noun#3#RM
+for_a_while	kuCa_samaya_waka/kuCa_kRaNa_waka#kuCa_samaya_waka#noun#3#RM
 for_action	kArravAWa_ke_lie#kArravAWa_ke_lie#noun#2#RM
 for_advice	parAmarSa_ke_lie#parAmarSa_ke_lie#noun#2#RM
 for_and_against	pakRa_Ora_vipakRa_meM#pakRa_Ora_vipakRa_meM#noun#3#RM
@@ -16100,7 +16100,7 @@ in_contravention_of	ke_ullaMGana_se#ke_ullaMGana_se#noun#2#RM
 in_course_of_business	kAma_ke_xOrAna#kAma_ke_xOrAna#noun#2#RM
 in_course_of_discussion	carcA_ke_xOrAna#carcA_ke_xOrAna#noun#2#RM
 in_course_of_execution_of_work	kArya_niRpAxana_ke_xOrAna#kArya_niRpAxana_ke_xOrAna#noun#2#RM
-in_course_of_time	yaWAsamaya#yaWAsamaya#noun#2#RM
+in_course_of_time	kAlAnwara_meM/yaWAsamaya#yaWAsamaya#noun#2#RM
 in_course_of	ke_xOrAna#ke_xOrAna#noun#2#RM
 in_deep_mourning	mAwamI_libAsa_pahane_hue#mAwamI_libAsa_pahane_hue#noun#3#RM
 in_default_of	ke_kamI_se#ke_kamI_se#noun#2#RM

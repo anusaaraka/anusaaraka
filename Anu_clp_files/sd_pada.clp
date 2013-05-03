@@ -74,7 +74,7 @@
  (prawiniXi_id-node-category ?cc ?CC CC)
  (head_id-prawiniXi_id-grp_ids ?wid ?cc ?)
  (id-word ?wid and|or)
- (not (modified_head ?np_id))
+ (not (modified_head ?np_id $?))
  =>
 	(printout ?*pada_debug_file* "(rule_name-mode_of_pada - get_conj_group  Creation"crlf )
         (assert (pada_info (group_head_id ?np_id)(group_cat PP) (group_ids $?d ?cc $?d1)))
