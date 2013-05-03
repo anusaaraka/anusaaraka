@@ -17,6 +17,18 @@
         (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
 )
 ;------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (16-04-13)
+;The name electricity is coined from the Greek word elektron meaning amber.
+(defrule rm_aligned_verb_id_from_verb_list
+(declare (salience 2002))
+(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?)
+?f0<-(man_verb_count-verbs ?c $?pre ?mid $?post)
+=>
+	(retract ?f0)
+	(bind ?c (- ?c 1))
+	(assert (man_verb_count-verbs ?c $?pre $?post))
+)
+;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju(7-03-13)
 ; if eng multi mng and manual multi mng is same then rm the ids from order excluding the head
 ;The choice of a set of axes in a frame of reference depends upon the situation.

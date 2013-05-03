@@ -42,6 +42,7 @@
                 (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
 )
 ;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 ;The curiosity to learn about the world, [unravelling] the secrets of nature is the first step towards the discovery of science
 (defrule get_root_for_hyphen
 (declare (salience 1002))
@@ -99,7 +100,7 @@
 )
 
 ;-------------------------------------------------------------------------------------
-(defrule exact_match_using_multi_word_dic
+(defrule exact_match_using_multi_word_dic_with_root
 (declare (salience 902))
 (current_id ?mid)
 (id-multi_word_expression-dbase_name-mng ? $?e_words ? $?mng)
@@ -114,9 +115,8 @@
         (assert (prov_assignment (nth$ (length $?aids) $?aids) ?mid))
 )
 ;-------------------------------------------------------------------------------------
-
 ;Free fall is thus a case of motion with uniform acceleration. 
-(defrule exact_match_using_multi_word_dic2
+(defrule exact_match_using_multi_word_dic
 (declare (salience 902))
 (current_id ?mid)
 (id-multi_word_expression-dbase_name-mng ? $?e_words ? $?mng)
@@ -130,15 +130,16 @@
         (assert (prov_assignment (nth$ (length $?aids) $?aids) ?mid))
 )
 ;-------------------------------------------------------------------------------------
-
-(defrule exact_match_using_multi_word_dic4
+;Modified by Shirisha Manju(23-04-13)
+;Table1.1 lists some of the great [physicists], their major contribution and the country of origin. -- sAraNI 1.1 meM kuCa mahAna [BOwika vijFAniyoM], unake pramuKa yogaxAnoM waWA unake mUla xeSoM kI sUcI xI gaI hE.
+(defrule exact_match_for_multi_word_using_dic
 (declare (salience 902))
 (current_id ?mid)
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng - $? - $? - $?grp_ids1)
-(manual_id-cat-word-root-vib-grp_ids ?mid1&:(= (+ ?mid 1) ?mid1) ? $?mng1 - $? - $?vib - $?grp_ids2)
+(manual_id-cat-word-root-vib-grp_ids ?mid1&:(= (+ ?mid 1) ?mid1) ? $? - $?rt - $?vib - $?grp_ids2)
 (id-org_wrd-root-dbase_name-mng ? ? ?root ? $?dic_mng)
 (id-root ?aid ?root)
-(test (eq (create$  $?mng $?mng1) (create$ $?dic_mng)))
+(test (eq (create$  $?mng $?rt) (create$ $?dic_mng)))
 (not (prov_assignment ?aid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
@@ -146,7 +147,6 @@
         (assert (anu_ids-sep-manual_ids ?aid - $?grp_ids1 $?grp_ids2))
         (assert (prov_assignment ?aid ?mid))
 )
-
 ;-------------------------------------------------------------------------------------
 (defrule exact_match_with_anu_output ;[manual group match]
 (declare (salience 901))

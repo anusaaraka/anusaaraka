@@ -22,6 +22,12 @@ nonascii      {       printf("@symbolnonascii ");
 \)	{	printf(" @punctCLOSEPAREN ");
 		fprintf(fp, "@punctCLOSEPAREN	PUNCT-ClosedParen\n");
 	}
+[\[]    {       printf(" @punctLeftSquareBracket ");
+                fprintf(fp, "@punctLeftSquareBracket	PUNCT-LeftSquareBracket\n");
+        }
+[\]]    {       printf(" @punctRightSquareBracket ");
+                fprintf(fp, "@punctRightSquareBracket	PUNCT-RightSquareBracket\n");
+        }
 ¡	{	printf(" @symbolINVERTEDEXCLAMATIONMARK ");
 		fprintf(fp, "@symbolINVERTEDEXCLAMATIONMARK	SYMBOL-INVERTED-EXCLAMATION-MARK\n");
 	}

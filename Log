@@ -4519,18 +4519,48 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 14. Modified the following files to add full parser
         1. Anusaaraka_stanford_minion.sh        3. processing_manual_sentences.sh
         2. run_sentence_stanford_minion.sh      4. minion_compile.sh
-15. Added get_tam_info_from_full_parser.lex for full parser
-16. Modified sd_ver_output
-17. Updated anu_compile.sh
-18. Updated the following files
+15. get_man_grp_mng.clp:
+        Added    :  load_file and get_grp_using_full_parser_rel rules
+        Modified :  modifiy_root and check_prev_word_of_kara rules
+16. modify_minion_output.clp
+        Modified : get_left_out_mngs, check_correctness_for_newly_added_word, check_correctness_for_is_verb
+                   check_correctness_for_kara_verb, check_for_hypenated_left_mng,  check_for_hypenated_right_mng
+                   check_for_hypenated_wrong_mng and check_for_hypenated_mng_with_right
+        Added    : check_correctness_for_wo,  check_correctness_for_kara_verb_with_root, check_correctness_for_that
+                   check_correctness_for_kara_verb_with_wrong_align, check_correctness_for_multi_word and
+                   restore_hyphen_mng
+17. word_alignment.clp
+        renamed  exact_match_using_multi_word_dic   as  exact_match_using_multi_word_dic_with_root
+        renamed  exact_match_using_multi_word_dic4  as  exact_match_for_multi_word_using_dic
+                        and modified the rule
+18. run_H_gen_minion.bat
+        1. Loaded hindi_parser.dat file and renamed shallow_parser_root.dat as shallow_parser_root_tmp2.dat in
+           get_man_grp_mng module
+        2. Loaded shallow_parser_root_tmp2.dat file in manual_word_grp_using_dic and manual_lwg modules
+        3. Generated manual_group_mng_tmp1.dat" and shallow_parser_root.dat files in manual_lwg  module
+
+19. alignment.bat
+        Loaded aper_op_without_@.dat file in modify_minion_output module
+        Commented get_mng and get_phrase modules (need to modify rules)
+
+20. Added get_tam_info_from_full_parser.lex for full parser
+21. Modified "remove_manual_punct_facts" rule in manual_lwg_new.clp
+22. Modified "get_mng_from_all_dic" rule in get_dbase_mng.clp
+23. Modified "del_@_from_word" and  "del_@_from_shallow_root" rules in change_manual_id.clp
+24. Added "rm_aligned_verb_id_from_verb_list" rule in get_word_potential_facts.clp
+25. Modified sd_ver_output
+26. Updated anu_compile.sh
+27. Updated the following files
         miscellaneous/SMT/MINION/dictionaries/phy_dictionary.txt
         miscellaneous/SMT/MINION/dictionaries/provisional_root_dic.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_eng_words.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_hnd_words.txt
         miscellaneous/SMT/MINION/dictionaries/inferred_dic.txt
-19. Updated changes_in_databases
-20. Updated alignment/README
-21. Updated
+28. Updated changes_in_databases
+29. Updated alignment/README
+30. Updated get_group_mng.sh
+31. Updated mapping-symbols_manual.lex
+32. Updated
         phy_align_verified_eng (186)
         phy_align_partial_ver_eng (58)
-22. Updated Log.
+33. Updated Log.

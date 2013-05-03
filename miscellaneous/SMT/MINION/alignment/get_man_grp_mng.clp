@@ -1,6 +1,13 @@
 ; This file is written by shirisha Manju
  (defglobal ?*vb_file* = vb_fp)
 
+ (defrule load_file
+ (declare (salience 250))
+ (hindi_parser full)
+ =>
+	(load-facts "full_parser_relation.dat")
+ )
+
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
  (deffunction remove_character(?char ?str ?replace_char)
@@ -55,19 +62,21 @@
 ; )
  ;------------------------------------------------------------------------------------------------------------------------
  ;Finally, to understand the relative nature of motion, we introduce the concept of relative velocity.
- ;anwawaH gawi kI ApekRika prakqwi ko samaJane ke lie hama ApekRika gawi kI XAraNA praswuwa karezge.
+ ;anwawaH gawi kI ApekRika prakqwi ko samaJane ke lie hama ApekRika gawi kI XAraNA praswuwa [karezge].
+ ;You will see that the strips get attracted to the screen.
+ ;Apa [xeKezge] ki [pattiyAz] parxe kI ora AkarRiwa ho jAwI hEM
  (defrule modifiy_root
  (declare (salience 120))
- ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF karezge ?cat ?g ?no ?p ?c ?suf)
- ?f0<-(position-cat-man_grp_mng ?id  ?n karezge - -)
- (man_word-root-cat	karezge	?root 	v)
+ ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node ?word unk ?g ?no ?p ?c ?suf)
+ ?f0<-(position-cat-man_grp_mng ?id  ?n ?word - -)
+ (man_word-root-cat    ?word ?root   ?cat)
  =>
-	(retract ?f)
-	(if (eq ?suf -) then
-		(assert (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ?g ?no ?p ?c 0))
-	else
-		(assert (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ?g ?no ?p ?c ?suf))
-	)
+        (retract ?f)
+        (if (eq ?suf -) then
+                (assert (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ?g ?no ?p ?c 0))
+        else
+                (assert (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ?g ?no ?p ?c ?suf))
+        )
  )
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule  incrementing_id_for_just_after_the_splitted_verb
@@ -269,6 +278,26 @@
         (assert (combine_prev_word_for_ho_id-prev_word ?id $?word ?kar))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
+ (defrule get_grp_using_full_parser_rel
+ (declare (salience 75))
+ (id-head-name-rel1-rel2 ?id ? ? k2 VGF)
+ (id-head-name-rel1-rel2 ?id1 ? VGF ? ?)
+ ?f0<-(position-cat-man_grp_mng  ?id   ?  $?w    -    -)
+ ?f1<-(position-cat-man_grp_mng  ?id1  ?cat $?w1    -       -)
+ ?f2<-(head_id-grp_ids ?id $?grp)
+ ?f3<-(head_id-grp_ids ?id1 $?grp1)
+ ?f4<-(id-node-root-cat-gen-num-per-case-tam ?id ? ?root $?)
+ ?f5<-(id-node-root-cat-gen-num-per-case-tam ?id1 ?node ?root1 ?cat1 ?g ?no ?p ?c ?suf)
+ (not (combine_prev_word_for_ho_id-prev_word ?id1 $?))
+ =>
+        (retract ?f0 ?f1 ?f2 ?f3 ?f4 ?f5)
+	(assert (position-cat-man_grp_mng  ?id1  ?cat $?w $?w1   -   -))
+	(bind ?r (string-to-field (str-cat ?root"_"?root1)))
+	(assert (id-node-root-cat-gen-num-per-case-tam ?id1 ?node ?r ?cat1 ?g ?no ?p ?c ?suf))
+	(assert (head_id-grp_ids ?id1  $?grp  $?grp1))
+	(assert (id_grouped ?id1))
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
  ;Electromagnetic waves of frequencies higher than 30 MHz penetrate the ionosphere and escape.
  ;30 @MHz se ucca Avqwwi kI vExyuwacumbakIya warafgeM , AyanamaNdala kA [Bexana karake] palAyana kara jAwI hEM.
  (defrule check_prev_word_of_kara
@@ -277,6 +306,7 @@
  ?f5<-(position-cat-man_grp_mng =(- ?id 1) ?n $? $?word - -)
  (test (neq (length $?word) 0))
  (not (combine_prev_word_for_ho_id-prev_word ?id $?))
+ (not (id_grouped ?id1))
  =>
         (assert (combine_prev_word_for_ho_id-prev_word ?id $?word kara))
  )
