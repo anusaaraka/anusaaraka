@@ -4,7 +4,7 @@
 
  MYPATH=$HOME_anu_tmp/tmp/$1_tmp
  MYPATH1=$HOME_anu_test/miscellaneous/SMT/MINION/alignment
- 
+  
  echo "Pre-proccessing manual file ..."
  #Running below command temporarily . As of now o/p from champollion is in canonical form.
  #If input is from other source then comment the below line and modify the shell accordingly.
@@ -57,15 +57,16 @@
   echo "dummy_sed	" >>   Symbols_man.txt
   sed 's/^/sed \"s\//g'  Symbols_man.txt  |  sed 's/\t/\//g' | sed 's/$/\/g\" /g' |  sed -n '1h;2,$H;${g;s/\n/ /g;p}' | sed 's/g\"/g\" $1 /' | sed 's/ sed/| sed/g'   > Symbols_man.sh
 
-# echo "Running Full Parser ..."
-#
-# sed -n '1h;2,$H;${g;s/\([A-Z]\+\)\t\n/\1\t<fs af='\''unk,,,,,,,'\'' head="unk">\n/g;p}' one_sen_per_line_manual_hindi_sen_tmp5.txt | sed -n '1h;2,$H;${g;s/;~~~~~~~~~~\n;~~~~~~~~~~/;~~~~~~~~~~\n<Sentence id="1">\n1\t((\tNP\t<fs af='\''SHALLOW_PARSER_FAILURE,,,,,,,'\''>\n\t))\n<\/Sentence>\n;~~~~~~~~~~/g;p}' > full_parser_input.txt
-#
-# sh $setu/bin/sl/fullparser/fullparser_hin_run.sh full_parser_input.txt > full_parser_output_tmp.txt
-#
-# sed 's/ABBRENGBEFORE/@/g' full_parser_output_tmp.txt | sed 's/ABBRENGAFTER//g' | sh Symbols_man.sh | sed 's/SYMBOL/@SYMBOL/g' | sed 's/nonascii/@nonascii/g' | sed 's/PUNCT-/@PUNCT-/g' | sed -n '1h;2,$H;${g;s/<\/Sentence>\n/<\/Sentence>\n;~~~~~~~~~~/g;p}' > full_parser_output.txt
-#
+ if [ "$3" == "full" ]; then 
+ 	echo "Running Full Parser ..."
 
+ 	sed -n '1h;2,$H;${g;s/\([A-Z]\+\)\t\n/\1\t<fs af='\''unk,,,,,,,'\'' head="unk">\n/g;p}' one_sen_per_line_manual_hindi_sen_tmp5.txt | sed -n '1h;2,$H;${g;s/;~~~~~~~~~~\n;~~~~~~~~~~/;~~~~~~~~~~\n<Sentence id="1">\n1\t((\tNP\t<fs af='\''SHALLOW_PARSER_FAILURE,,,,,,,'\''>\n\t))\n<\/Sentence>\n;~~~~~~~~~~/g;p}' > full_parser_input.txt
+
+ 	sh $setu/bin/sl/fullparser/fullparser_hin_run.sh full_parser_input.txt > full_parser_output_tmp.txt
+
+ 	sed 's/ABBRENGBEFORE/@/g' full_parser_output_tmp.txt | sed 's/ABBRENGAFTER//g' | sh Symbols_man.sh | sed 's/SYMBOL/@SYMBOL/g' | sed 's/nonascii/@nonascii/g' | sed 's/PUNCT-/@PUNCT-/g' | sed -n '1h;2,$H;${g;s/<\/Sentence>\n/<\/Sentence>\n;~~~~~~~~~~/g;p}' > full_parser_output.txt
+ fi
+ 
  echo "Tokenizing manual sentence"
   sh $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/run_tokenizer_fr.sh one_sen_per_line_manual_hindi_sen_tmp4_wx.txt > one_sen_per_line_manual_hindi_sen_tokenized.txt  2>/dev/null
  cd $MYPATH1
@@ -77,6 +78,8 @@
   sed 's/ABBRENGBEFORE/@/g' $MYPATH/shallow_parser_output_tmp.txt | sed 's/ABBRENGAFTER//g' |sh $MYPATH/Symbols_man.sh | sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g' > $MYPATH/shallow_parser_output.txt
  
   $MYPATH1/morph.out $MYPATH/manual_hin.morph.txt < $MYPATH/one_sen_per_line_manual_hindi_sen_tmp.txt.morph > /dev/null
+  
 
-  sed 's/,/ PUNCT-Comma /g'  $MYPATH/one_sen_per_line_manual_hindi_sen_tmp4_wx.txt | sed 's/ABBRENGBEFORE/@/g' | sed 's/ABBRENGAFTER//g' |sed 's/,/ PUNCT-Comma /g'| sed 's/\([^0-9]\)\./\1 PUNCT-Dot/g' | sed 's/?/ PUNCT-QuestionMark /g' | sed 's/``/ PUNCT-DoubleQuote /g' | sed "s/''/ PUNCT-DoubleQuote /g" | sed 's/;/ PUNCT-Semicolon  /g' | sed 's/:/ PUNCT-Colon /g' |  sed "s/[\'\`\']/ PUNCT-SingleQuote /g" | sed 's/"/ PUNCT-DoubleQuote /g' | sed 's/ punctOPENPAREN/ PUNCT-OpenParen/g' | sed 's/ punctCLOSEPAREN/ PUNCT-ClosedParen/g' | sed 's/!/ PUNCT-Exclamation /g' | sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}'  |sh $MYPATH/Symbols_man.sh |sed 's/SYMBOL/@SYMBOL/g' |sed 's/PUNCT-/ @PUNCT-/g'  > $MYPATH/one_sen_per_line_manual_hindi_sen.txt
+# echo "" >> $MYPATH/one_sen_per_line_manual_hindi_sen_tmp4_wx.txt 
+ sed 's/,/ PUNCT-Comma /g' $MYPATH/one_sen_per_line_manual_hindi_sen_tmp4_wx.txt | sed 's/ABBRENGBEFORE/@/g' | sed 's/ABBRENGAFTER//g' |sed 's/,/ PUNCT-Comma /g'| sed 's/?/ PUNCT-QuestionMark /g' | sed 's/``/ PUNCT-DoubleQuote /g' | sed "s/''/ PUNCT-DoubleQuote /g" | sed 's/;/ PUNCT-Semicolon  /g' | sed 's/:/ PUNCT-Colon /g' |  sed "s/[\'\`\']/ PUNCT-SingleQuote /g" | sed 's/"/ PUNCT-DoubleQuote /g' | sed 's/ punctOPENPAREN/ PUNCT-OpenParen/g' | sed 's/ punctCLOSEPAREN/ PUNCT-ClosedParen/g' | sed 's/!/ PUNCT-Exclamation /g' | sed 's/{/PUNCT-LeftCurlyBrace/g' | sed 's/}/PUNCT-RightCurlyBrace/g' | sed 's/\[/PUNCT-LeftSquareBracket/g' | sed 's/]/PUNCT-RightSquareBracket/g' | sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/\([^0-9]\)\.)\n/\1 PUNCT-Dot)\n/g;p}' |sh $MYPATH/Symbols_man.sh |sed 's/SYMBOL/@SYMBOL/g' |sed 's/PUNCT-/ @PUNCT-/g'  > $MYPATH/one_sen_per_line_manual_hindi_sen.txt
 

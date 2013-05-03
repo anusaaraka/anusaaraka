@@ -78,6 +78,16 @@
                 physics :  physics domain
         )
 
+   Full parser
+   ===========:
+      To run Anusaaraka for physics domain with full parser then
+
+	Ex  : Anusaaraka_stanford_minion.sh phy_align_verified_eng 0 True physics phy_align_verified_hnd  full
+	(Note : 0       :  default parse
+                True    :  to use provisional directory.
+                physics :  physics domain
+		full	:  To use full parser
+	        )
 
     Dictionaries :  Dictionaries used for alignment are in $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries directory
 
