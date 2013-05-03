@@ -4511,4 +4511,13 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
  9. Modified run_H_gen_sen.bat to add prepare_minion_for_multiple_sen module
 10. Updated anu_compile.sh
 11. Updated changes_in_databases
-12. Updated Log.
+12. Updated the following files
+        miscellaneous/SMT/MINION/dictionaries/phy_dictionary.txt
+        miscellaneous/SMT/MINION/dictionaries/provisional_root_dic.txt
+        miscellaneous/SMT/MINION/dictionaries/restricted_eng_words.txt
+        miscellaneous/SMT/MINION/dictionaries/restricted_hnd_words.txt
+        miscellaneous/SMT/MINION/dictionaries/inferred_dic.txt
+13. Updated
+        phy_align_verified_eng (186)
+        phy_align_partial_ver_eng (58)
+14. Updated Log.

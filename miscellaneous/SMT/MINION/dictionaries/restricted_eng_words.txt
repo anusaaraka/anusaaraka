@@ -1,22 +1,21 @@
-the	vaha/isa/usa/vahI/isakA/isake/uwanA/jiwanA/apanA/yaha/apanI/ina/apane/usakI/usake
-a	eka/koI/prawi/kisI/eka_EsI
+the	vaha/isa/usa/vahI/isakA/isake/uwanA/jiwanA/apanA/yaha/apanI/ina/apane/usakI/usake/ye/isI/unake
+a	eka/koI/prawi/kisI/eka_EsI/a
 an	eka/koI/prawi/kisI/eka_EsI/kisI_BI
 any	WodA/prawyeka/mAmUlI/koI_BI/koI/kisI_BI/jo_BI/eka/kisI_BI_sWiwi_meM/kisI_BI/bilkula/aba_Ora/kuCa/kisI_ko/kiFciwa
 that	jo/isa/yaha/vaha/usa/ki/jinheM
 there	vahAz/vaha
-them	unako/unakA/unake/unheM/ve
-they	unheM/ve_loga/ve/unhoMne/ye
+them	unako/unakA/unake/unheM/ve/una_para
+they	unheM/ve_loga/ve/unhoMne/ye/unameM 
 this	yaha/isa/isese/iwanA/isake_lie/isakA/ise
 also	BI/Ora
 too	BI
 even	BI/Ora BI/TIka/SAnwa/sannwuliwa/samawala/samAna/sama/eka_sA/cOrasa/kevala
-which	kina/jo/jise/jinako/jinakA/jisake/jinase/jisameM/jisane
 and	Ora/evaM/waWA/va
 is	howA_hE/hE/howI_hE/ho/howA_hEM/howe_hEM
 was	WA/WI/We
 were	hEM/WA
 are	hEM/howe_hEM/howA_hE
-it	yaha/vaha/isakA/usakI/isake
+it	yaha/vaha/isakA/usakI/isake/isa_para
 of	kA/se/ke_bAre_meM/meM_kA/meM_se
 he	usane/unhoMne/vaha
 she	usane/vaha
@@ -28,5 +27,9 @@ i	mEM/muje/mEMne
 one	eka	
 as	pahale_kI_waraha/mAno/kI_waraha/ke_rUpa_meM/jyoMhI/jisa_waraha/jEse_hI/jaba_ki/jEsA/kyofki/jEse_hI/jaba/ke_rUpa_meM/ke_jEsA/ke_BAnwi/ke_samAna/nimna_prakAra/jEsA_ki
 when	jaba/yaxyapi/waba/cUzki/jisa_samaya/kaba/kyozki
+which	kina/jo/jise/jinako/jinakA/jisake/jinase/jisameM/jisane
+where	kahAz/jisa_sWAna_para/jaba_ki/jahAz/jisase/jisameM/jisapara
 plus	Xana/waWA
 to	hoSa_meM/banxa_avasWA_meM/banxa/ko/kI_aora/kI_ora/waka/kI/se/ke_mukAbale_meM/meM/se_milA_kara/ke_prawi/kA/kI_apekRA/ke_karIba/ke_lie/ke_sAmane/ora/para/vAlA
+or	yA/aWavA/anyaWA  
+in	meM

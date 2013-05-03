@@ -8,7 +8,9 @@ Saving word information
 Saving morph information
 Calling POS Tagger and Chunker (APERTIUM)
 Calling Stanford parser
-Finding NER... 
+Finding NER ... 
+Tokenizing ...
+Multi word ...
 Hindi meaning using Stanford parser 1.1
 Test. 
 jAzca kIjie.
@@ -58,8 +60,8 @@ Where P is the net power of the lens combination.
 PropN-p-PropN lensa saMyoga kA vAswavika GAwAfka kahAz hE.
 
 Hindi meaning using Stanford parser 2.12
-In silica glass fibers, it is possible to transmit more than 95 SYMBOL-PERCENT1 of the light over a fiber length of 1 km. 
-silikA gilAsoM wanwuoM meM, 1 ki.mI. kI eka wanwu lambAI ke Upara prakASa kA se aXika 95 SYMBOL-PERCENT1 preRiwa samBava hE.
+In silica glass fibers, it is possible to transmit more than 95 SYMBOL-PERCENT of the light over a fiber length of 1 km. 
+silikA gilAsoM wanwuoM meM, 1 ki.mI. kI eka wanwu lambAI ke Upara prakASa kA se aXika 95 SYMBOL-PERCENT preRiwa samBava hE.
 
 Hindi meaning using Stanford parser 2.13
 A standard 100 watt incadescent light bulb emits approximately 1700 lumens. 
@@ -153,14 +155,106 @@ Hindi meaning using Stanford parser 2.35
 This approach is called reductionism and is at the heart of physics. 
 yaha pahuzca reductionism bulAI jAwI hE Ora BOwika vijFAna ke hqxaya meM hE.
 
+Hindi meaning using Stanford parser 2.36
+In our experience, force is needed to push, carry or throw objects, deform or break them. 
+hamAre anuBava meM, bala kI vaswu Xakela, uTA_le jAwA hE yA PefkawA hE, vikqwa howA hE yA unako wodawA hE AvaSyakawA.
+
+Hindi meaning using Stanford parser 2.37
+Early thinkers like Aristotle had wrong ideas about it. 
+araswU jEsA jalxI cinwakoM kA yaha galawa vicAra We.
+
+Hindi meaning using Stanford parser 2.38
+It is enormously strong compared to gravity. 
+yaha guruwvAkarRaNa ko wulanA kara bahuwa aXika majabUwa hE.
+
+Hindi meaning using Stanford parser 2.39
+Thus it is mainly the electromagnetic force that governs the structure of atoms and molecules, the dynamics of chemical reactions and the mechanical, thermal and other properties of materials. 
+isa prakAra yaha vExyuwacumbakIya bala pramuKa rUpa se hE jo paxArWoM kI paramANuoM kI Ora aNu, rasAyanika xravya kA prawikriyAoM kI Ora - yAnwrika kA, URmIya kI Ora anya kA sampawwi kI gawikI saMracanA vaSA_meM karawA hE.
+
+Hindi meaning using Stanford parser 2.40
+This is almost inevitable with ladies garments like a polyester saree. 
+yaha eka paliyestara sAdI kI waraha mahilA kapadoM se lagaBaga aparihArya hE.
+
+Hindi meaning using Stanford parser 2.41
+You can perform the following activity at home to experience such an effect. 
+Apa eka EsA praBAva anuBava karane ke lie Gara para anusaraNa karanA kriyA kalApa kArya_kara sakawe hEM.
+
+Hindi meaning using Stanford parser 2.42
+A dramatic observation is that a pith ball touched with glass rod attracts another pith ball touched with plastic rod (Fig. 1SYMBOL-DOT1 (f)). 
+eka nAtakIya prekRaNa hE ki gilAsa Cada ke sAWa sparSa kI huI eka majjA golA plAstika Cada ke sAWa (PropN-fig.-PropN 1SYMBOL-DOT1 eM sparSa kI huI xUsarI majjA golA AkarRiwa karawI hE.
+
+Hindi meaning using Stanford parser 2.43
+This might have been the philosophy in naming the charges as positive and negative. 
+yaha mUlya pahale kI waraha sakArAwmaka Ora qNAwmaka nAmakaraNa karane meM xarSana SAswra SAyaxa huA hogA.
+
+Hindi meaning using Stanford parser 2.44
+Ampere and Faraday supported this observation by saying that electric charges in motion produce magnetic fields and moving magnets generate electricity. 
+PropN-ampere-PropN Ora PropN-faraday-PropN ne kahane ke xvArA Ora cumbaka vixyuwa Sakwi pExA karawe hEM calawA huA isa prekRaNa ko sahArA xiyA ki calAyamAna bijalI ke aBiyoga cumbakIya kRewra banAwe hEM.
+
+Hindi meaning using Stanford parser 2.45
+However, the glass rod and wool attracted each other. 
+PiraBI, gilAsa Cada Ora Una ne eka xUsare AkarRiwa kiyA.
+
+Hindi meaning using Stanford parser 2.46
+We know that when we add a positive number to a negative number of the same magnitude, the sum is zero. 
+hama jAnawe hEM ki hama eka qNAwmaka afka ke lie vahI parimANa ke eka sakArAwmaka afka jaba Age kahawe hEM, ki joda SUnya hE.
+
+Hindi meaning using Stanford parser 2.47
+This forms the leaves of your electroscope. 
+yaha Apake electroscope kI CuttiyAz banAwA hE.
+
+Hindi meaning using Stanford parser 2.48
+The separation is a rough measure of the amount of charge on the electroscope. 
+pqWakana electroscope para mUlya kI mAwrA kI eka mApa hE.
+
+Hindi meaning using Stanford parser 2.49
+Fold the strips into half so that you make a mark of fold. 
+arXAMSa ke anxara pattiyAz waha kIjie jisase ki Apa waha kara kA niSAna banAwe hEM.
+
+Hindi meaning using Stanford parser 2.50
+The same effect is seen in the leaf electroscope. 
+vahI praBAva pawwe electroscope meM xeKA huA hE.
+
+Hindi meaning using Stanford parser 2.51
+The scientific method involves several interconnected steps: Systematic observations, controlled experiments, qualitative and quantitative reasoning, mathematical modelling, prediction and verification or falsification of theories. 
+vEjFAnika- praNAlI viBinna anwarsambaxXa kie hue kaxama: suvyavasWiwa prekRaNa, niyanwriwa prayoga, guNAwmaka Ora parimANAwmaka warka viwarka, gaNiwa sambanXI prawirUpaNa, pUrvAnumAna Ora sixXAnwoM kA sawyApana yA jAlasAjI SAmila howI hE.
+
+Hindi meaning using Stanford parser 2.52
+The interplay of theory and observation (or experiment) is basic to the progress of science. 
+sixXAnwa kI Ora prekRaNa kI pArasparika kriyA yA prayoga) vijFAna kI pragawi ke lie buniyAxI hE.
+
+Hindi meaning using Stanford parser 2.53
+The effort is to see the physical world as manifestation of some universal laws in different domains and conditions. 
+prayawna alaga meM praBAvakRewra meM Ora sWiwi meM kuCa sArvawrika niyamoM ke AvirBAva ke jEsA SArIrika viSva ko xeKane vAlA hE.
+
+Hindi meaning using Stanford parser 2.54
+A related effort is to derive the properties of a bigger, more complex, system from the properties and interactions of its constituent simpler parts. 
+eka sambanXiwa prayawna usake saMviXAnI aXika sarala BAga kI sampawwi se Ora anyonya kriyAez eka aXika bade, aXika jatila, nikAya kI sampawwi viSleRaNa vAlA hE.
+
+Hindi meaning using Stanford parser 2.55
+Basically, there are two domains of interest: macroscopic and microscopic. 
+svaBAvawaH, rUci: sWUla Ora sUkRma kA xo praBAvakRewra hEM.
+
+Hindi meaning using Stanford parser 2.56
+The microscopic domain includes atomic, molecular and nuclear phenomena. 
+sUkRma_praBAva kRewra paramANvika, ANvika Ora ANvika pariGatanA sammiliwa karawA hE.
+
+Hindi meaning using Stanford parser 2.57
+Classical Physics deals mainly with macroscopic phenomena and includes subjects like Mechanics, Electrodynamics, Optics and Thermodynamics. 
+PropN-classical-PropN PropN-physics-PropN sWUla pariGatanA ke sAWa pramuKa rUpa se vyavahAra karawA hE Ora yAnwrikI kI waraha, vExyuwagawikI kI waraha, prakASikI kI waraha Ora URmAgawikI kI waraha viRaya sammiliwa karawA hE.
+
+Hindi meaning using Stanford parser 2.58
+Mechanics founded on Newton's laws of motion and the law of gravitation is concerned with the motion (or equilibrium) of particles, rigid and deformable bodies, and general systems of particles. 
+gawi ke PropN-newton-PropN ke niyamoM para Ora guruwvAkarRaNa ke niyama para sWApanA kI huI yAnwrikI kaNa, xqDa Ora deformable piNdoM kA, Ora kaNoM ke vyApaka nikAyoM kA (yA sanwulana) gawi se sambanXiwa hE.
+
 Calling Transliteration
 Calling Interface related programs
 Print minion_statistics
 No Solution Found :
 0
 Time-out:
-0
+2
 Solution Found :
-35
+56
 re-executed-sentences:
-5
+14

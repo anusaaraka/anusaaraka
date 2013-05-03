@@ -753,7 +753,8 @@ Modified:
 	41.Modified negative_adjective      nakArAwmaka/rqNAwmaka/prawikUla/niReXAwmaka as	nakArAwmaka/qNAwmaka/prawikUla/niReXAwmaka (Suggested by Chaitanya Sir 07-12-12)
 	42. Modified scalar_UNDEFINED      _axiSa  as scalar_UNDEFINED        axiSa (Suggested by Chaitanya Sir 05-01-13)
 	43. Modified perceive_verb	meVhasUsa_kara as  mehasUsa_kara 
-
+	44. Modified such_pronoun    	esA	as	EsA			(Suggested by Chaitanya Sir 01-05-13)
+	45. electron_noun   	awisUkRma_paramANu/ilektrana    as   ilektroYna/awisUkRma_paramANu	(   "       )
  
 Removed::
 -------
@@ -775,15 +776,31 @@ Added:
   4. manifest_verb           spaRta_ho_jA/sAPa_xiKAI_xe/praxarSiwa_kara/nAKuna_prasAXana_kara
                                                 as
                              spaRta_ho_jA/sAPa_xiKAI_xe/praxarSiwa_kara/nAKuna_prasAXana_kara/prakata_ho  (    "  9-4-13 )
-  5. large_adjective   viSAla/viswqwa/uxAra/pracura_mAtrA_meM/jyAxA/Dera_sA/bqhax/badI/bade_bade/badA/aXika/anukUla/vyApaka
+  5. large_adjective    viSAla/viswqwa/uxAra/pracura_mAtrA_meM/jyAxA/Dera_sA/bqhax/badI/bade_bade/badA/aXika/anukUla/vyApaka
                                                 as
-                       viSAla/viswqwa/uxAra/pracura_mAtrA_meM/jyAxA/Dera_sA/bqhax/badI/bade_bade/badA/aXika/anukUla/vyApaka/bqhaw											   (Added by Manju 11-04-13)
+                        viSAla/viswqwa/uxAra/pracura_mAtrA_meM/jyAxA/Dera_sA/bqhax/badI/bade_bade/badA/aXika/anukUla/vyApaka/bqhaw											   (Added by Manju 11-04-13)
   6. inquiring_adjective     praSnamaya/jijFAsu	 as  praSnamaya/jijFAsu/anveRI   ( 	 "	19-03-13)
-  7. respond_verb    prawyuwwara_xe/prawikriyA_xiKA/javAba_xe/uwwara_xe/prawikriyA_kara/baxale_me_kuCa_karanA_yA_kaha							as
-                     prawyuwwara_xe/prawikriyA_xiKA/javAba_xe/uwwara_xe/prawikriyA_kara/baxale_me_kuCa_karanA_yA_kaha/prawikriyA_vyakwa kara							(Suggested by Chaitanya Sir    19-03-13)
-  8. encapsulate_verb	samputiwa_kara	
-					as
-			saMgatiwa_kara/samputiwa_kara		(Suggested by Chaitanya Sir    02-05-13)
+  7. respond_verb       prawyuwwara_xe/prawikriyA_xiKA/javAba_xe/uwwara_xe/prawikriyA_kara/baxale_me_kuCa_karanA_yA_kaha							as
+                        prawyuwwara_xe/prawikriyA_xiKA/javAba_xe/uwwara_xe/prawikriyA_kara/baxale_me_kuCa_karanA_yA_kaha/prawikriyA_vyakwa kara							(Suggested by Chaitanya Sir    19-03-13)
+  8. electricity_noun   vixyuwa_Sakwi/vixyuwa/uwwejanA/UrjA/bijalI 
+						as
+			vixyuwa_Sakwi/vixyuwa/uwwejanA/UrjA/bijalI/vixyuwa_XArA   (     "        17-04-13          )
+ 9. electrify_verb  	bijalI_kI_Sakwi_pahuzcA/wAra_lagA/vixyuwIkaraNa_kara/uwwejanA_se_Bara_x_e	(     "    )
+						as
+			bijalI_kI_Sakwi_pahuzcA/wAra_lagA/vixyuwIkaraNa_kara/uwwejanA_se_Bara_x_e/vixyunmaya_ho
+10. lose_verb        	Ko_xe/samaya_naRta_kara/parAjiwa_ho/nimna_xarje_kA_ho/lupwa_ho_j/ko_xa/Ko_j/k/Karca_kara/kama_ho_j/icCA_na_raKa/hAra/gazv/gazvA_xe/bUla_j/Bataka_j/mita_jA/na_suna_pA/hAra_jA/barabAxa_ho/pICe_ho_jA
+						as
+			Ko_xe/samaya_naRta_kara/parAjiwa_ho/nimna_xarje_kA_ho/lupwa_ho_j/ko_xa/Ko_j/k/Karca_kara/kama_ho_j/icCA_na_raKa/hAra/gazv/gazvA_xe/bUla_j/Bataka_j/mita_jA/na_suna_pA/hAra_jA/barabAxa_ho/pICe_ho_jA/Ko  (Added by Manju 20-4-13)
+11. most_adjective  	sabase_aXika/sarvAXika/bahuwa_aXika/bahuwa/aXikawama
+						as
+			sabase_aXika/sarvAXika/bahuwa_aXika/bahuwa/aXikawama/aXikAMSa  (Added by Shirisha Manju 20-4-13)
+12. photoelectric_noun      prakASa_vixyuwa					     (Suggested by Chaitanya Sir 19-03-13)
+13. antielectron_noun       prawi_ilektroYna					     (			"		)
+14. ground_noun     	pqWvI_wala/XarAwala/warka/walaCata/wala/viRaya/sWala/pqRTaBUmi/mittI/mExAna/kRewra/kAraNa/jamIna/hAwA/BUmi/AXAra					as
+			pqWvI_wala/XarAwala/warka/walaCata/wala/viRaya/sWala/pqRTaBUmi/mittI/mExAna/kRewra/kAraNa/jamIna/hAwA/BUmi/AXAra/pqWvI									  (     Added by Shirisha Manju 20-4-13)
+
+15. encapsulate_verb	samputiwa_kara	   as    saMgatiwa_kara/samputiwa_kara		(Suggested by Chaitanya Sir    02-05-13)
+
 
   
  changes in preposition.txt
@@ -838,12 +855,15 @@ Added:
      	blood_vessels      --- rakwa_vAhikA#rakwa_vAhikA#noun#2 #RM => rakwa_vAhikA#rakwa_vAhikA#noun#2#RM (By Roja (30-11-12))
 	every_time         --- hara_bAra_[jaba]#hara_bAra_[jaba]#noun#2#RM ==> hara_bAra#hara_bAra#noun#2#RM
 	every_other        --- hara_xUsarA[>hara_koI]#hara_xUsarA[>hara_koI]#noun#2#RM => hara_xUsarA#hara_xUsarA#noun#2#RM
-	in_fact vAswava_meM#vAswava_meM#noun#2#RM
-		as
+	in_fact 	   --- vAswava_meM#vAswava_meM#noun#2#RM 
+					as
 	in_fact vAswava_meM/asala_meM#vAswava_meM#noun#2#RM
 	System_operator_)	waMwra_pracAlaka#waMwra_pracAlaka#noun#2#RM
 			as
 	System_operator		waMwra_pracAlaka#waMwra_pracAlaka#noun#2#RM
+	for_a_while     kuCa_samaya_waka#kuCa_samaya_waka#noun#3#RM
+					as
+			kuCa_samaya_waka/kuCa_kRaNa_waka#kuCa_samaya_waka#noun#3#RM   (Suggested by Chaitanya Sir 17-04-13)
 
 
     Added ::
@@ -864,6 +884,7 @@ Added:
 	just_before		se_TIka_pahale#se_TIka_pahale#preposition#2#RM	(Suggested by Chaitanya Sir 22-01-13)
 	as_a_whole      	eka_ikAI_ke_rUpa_meM#eka_ikAI_ke_rUpa_meM#preposition#1#WM	( "   18-02-13      )
 	in_the_first_place      praWamawayA#praWamawayA#preposition#4#WM	(      "	18-02-13	    )
+	in_course_of_time       kAlAnwara_meM/yaWAsamaya#yaWAsamaya#noun#2#RM	(	"	20-04-13	    )
 
 
  changes in phy_dictionary.txt
@@ -876,6 +897,9 @@ Added:
 	body_noun       	piNda	     	(       "                   07-12-12)
 	phenomenon_noun 	pariGatanA  	(	"		    08-12-12)
 	nuclear_adjective	ANvika		(Suggested by Chaitanya Sir 05-01-13)
+	chemistry_noun  	rasAyana_vijFAna(	"		    20-04-13)
+	biology_noun    	jIva_vijFAna	(	"			"   )
+
 
 
  Modified :

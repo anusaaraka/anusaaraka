@@ -113,3 +113,5 @@ fix	sWira/sWira_banA
 Fig.	ciwra
 prominent	muKya
 movement	GUma
+pith	sarakaNdA
+sum	yogaPala

@@ -18,12 +18,14 @@ apanI	the/our
 apanA	the/our
 usakI	his/its/the
 usake	his/its/the
-unakA	them
+unakA	them/their
+unake	them/their
 merA	i/me
 vaha	she/he/the/her
 yahAz	here
 yaha	the/that/this/it
 isakA	the/it/its/this
+isakI	the/it/its/this
 isake	the/it/its/this
 jinakA	which
 hama	we

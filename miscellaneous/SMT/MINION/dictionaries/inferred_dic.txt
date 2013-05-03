@@ -15,7 +15,9 @@ form	sUwra
 dominate	CA
 equal	barAbara
 move	gawimAna
-fig.	ciwra
 central	mahawvapUrNa
 fix	sWira_raha
 inseparable	avicCexa
+transmit	saFcariwa kara
+fur	samUra
+Fig.	ciwra
