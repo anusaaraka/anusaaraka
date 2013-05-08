@@ -1,3 +1,19 @@
+;Added by Sukhada. (8-2-13)
+;Ex. What is the probability of tossing a fair coin twice in a row and getting heads both times? 
+(defrule both_times
+(declare (salience 5000))
+(id-word ?id times)
+(id-word ?id1 both)
+(viSeRya-det_viSeRaNa ?id ?id1)
+?mng <-(meaning_to_be_decided ?id)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 xonoM_bAra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng  " ?*wsd_dir* " time.clp  both_times " ?id " " ?id1 " xonoM_bAra )" crlf))
+)
+
+
 
 
 ;Added by Meena(6.9.10)

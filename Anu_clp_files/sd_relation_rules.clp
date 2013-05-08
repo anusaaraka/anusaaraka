@@ -140,6 +140,7 @@
  (not (found_kriyA-sub_rel ?kriyA)); Added new by Sukhada
  (not (sub-sub_samAnAXikaraNa_decided ?kriyA))
  (not (got_kri-sub_rel ?kriyA))
+ (not (got_kriyA-subject ?kriyA))
  =>
  (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?kriyA"        "?sub")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kriyA_sub_rule   kriyA-subject   "?kriyA"        "?sub")"crlf)
@@ -387,6 +388,7 @@
 (rel_name-sids dobj ?kriyA ?obj)
 (not (found_kriyA-obj_rel ?kriyA))
 (not  (parserid-word ?obj some))
+(not (got_object_rel ?kriyA))
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     kriyA-object	"?kriyA"	"?obj")"crlf)	
 (printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	dobj	kriyA-object	"?kriyA"	"?obj")"crlf)	
@@ -866,12 +868,39 @@ else
 )
  ; Ex.  I will show you the house which we talked about. 
 ;------------------------------------------------------------------------------------------------------------------------
+(defrule dobj_rcmod
+(declare (salience 200))
+(rel_name-sids dobj ?kriyA ?x)
+(rel_name-sids rcmod ?x ?kriyA)
+(propogation_rel_name-sids rel ?kriyA ?obj)
+=>
+(assert (got_object_rel ?kriyA))
+(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-object       "?kriyA"        "?obj")"crlf)
+(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -       dobj_rcmod   kriyA-object    "?kriyA"        "?obj")"crlf)
+)
+ ;The girl who you called yesterday has arrived.
+;------------------------------------------------------------------------------------------------------------------------
+
+
+(defrule nsubj_rcmod
+(declare (salience 2000))
+?f<-(rel_name-sids rcmod ?x ?kriyA )
+(basic_rel_name-sids nsubj ?kriyA ?sub)
+=>
+(assert (got_kriyA-subject ?kriyA))
+(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject       "?kriyA"        "?sub")"crlf)
+(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -       nsubj_rcmod   kriyA-subject    "?kriyA"        "?sub")"crlf)
+)
+ ;The snake who swallowed the rat hissed loudly.
+;------------------------------------------------------------------------------------------------------------------------
+
+
 (defrule rcmod
 (declare (salience 220))
 (rel_name-sids  rcmod ?vi ?kri)
-(or(rel_name-sids nsubj ?kri ?js)(rel_name-sids advmod ?kri ?js)(rel_name-sids dobj ?kri ?js)(rel_name-sids nsubjpass ?kri ?js) )
 (parserid-word ?js ?w)
-(test (>(string_to_integer ?kri)(string_to_integer ?js)))
+(test (eq (string_to_integer ?js) (+ (string_to_integer ?vi) 1)))
+(test (>(string_to_integer ?kri)(string_to_integer ?vi)))
 =>
  (if (or (eq ?w who) (eq ?w whom) (eq ?w that) (eq ?w which)) then
     (printout       ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
@@ -901,6 +930,7 @@ else
 (parserid-word ?s ?word&~who&~which&~when&~whom&~that)
 (not (rel_name-sids  rel   ?rv  ?))
 (not (rel_name-sids  dobj   ?rv  ?))
+(not  (got_viSeRya-jo_samAnAXikaraNa  ?vi))
 (test (eq (lexemep ?vi_word) TRUE)) ;lexemep = symbol or string
 =>
 (bind ?a (gdbm_lookup "animate.gdbm" ?vi_word))

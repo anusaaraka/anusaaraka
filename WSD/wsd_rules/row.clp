@@ -1,6 +1,24 @@
+;Added by Sukhada. (8-2-13)
+;Ex. What is the probability of tossing a fair coin twice in a row and getting heads both times? 
+(defrule toss_in_a_row
+(declare (salience 5000))
+(id-root ?id row)
+?mng <-(meaning_to_be_decided ?id)
+(id-root ?id1 toss)
+(id-root ?id row)
+(id-word =(- ?id 2) in)
+(kriyA-in_saMbanXI ?id1 ?id)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(- ?id 2)  lagAwAra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " row.clp	toss_in_a_row "  ?id "  "  =(- ?id 2) " lagAwAra)   )" crlf))
+)
+
+
 
 (defrule row0
-(declare (salience 5000))
+(declare (salience 3000))
 (id-root ?id row)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
