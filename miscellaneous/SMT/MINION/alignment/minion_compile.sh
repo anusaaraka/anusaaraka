@@ -1,3 +1,6 @@
+cd $HOME_anu_test/Anu_src
+gcc -o converting-dic-to-alignment_format.out converting-dic-to-alignment_format.c
+gcc -o split-mngs.out split-mngs.c
 
 cd $HOME_anu_test/miscellaneous/SMT/MINION/alignment
 echo "Compiling DICTIONARIES......"
