@@ -1,6 +1,21 @@
 ;This file is written by Shirisha Manju (08-4-13)
 
-
+(defrule get_light_verb_list
+(declare (salience 1002))
+(not (light_verbs $?))
+=>
+	(bind $?verbs (create$ do take make have cast give get let))
+	(assert (light_verbs $?verbs ))
+)
+;-------------------------------------------------------------------------------------------------
+(defrule cp_of_hin_order
+(declare (salience 1002))
+(hindi_id_order $?order)
+(not (hindi_id_order_tmp $?))
+=>
+	(assert (hindi_id_order_tmp $?order))
+)
+;-------------------------------------------------------------------------------------------------
 (defrule generate_cntrl_fact
 (declare (salience 1001))
 (manual_id-mng ?mid $?man_mng)
@@ -262,6 +277,20 @@
 	(retract ?f0)
 	(assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?mng - ?mid  $?m_mng))
 	(assert (left_out_mngs $?pre $?po))
+)
+;-------------------------------------------------------------------------------------------------
+;All of us [have the experience] of seeing a spark or hearing a crackle when we take off our synthetic clothes or sweater, particularly in dry weather. --hama saBI ko  @PUNCT-Comma  viSeRakara SuRka mOsama meM  @PUNCT-Comma  svetara aWavA saMSliRta vaswroM ko SarIra se uwArawe samaya cata - cata kI Xvani sunane aWavA cinagAriyAz xeKane kA [anuBava hogA]  @PUNCT-Dot
+(defrule chk_for_light_verb_phrase
+(declare (salience 900))
+(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid ?mng $?m)
+(id-word ?aid ?l_verb)
+(light_verbs $? ?l_verb $?)
+(hindi_id_order_tmp $? ?prev_id ?aid $?post)
+?f0<-(anu_id-anu_mng-sep-man_id-man_mng ?prev_id ?mng - ?mid1 $?)
+(id-word ?prev_id ?word)
+=>
+	(retract ?f0)
+	(assert (phrase_ids-mng ?aid ?prev_id  - ?mng $?m))
 )
 ;-------------------------------------------------------------------------------------------------
 ;We shall, in the present chapter, consider rotational motion about a fixed axis only.

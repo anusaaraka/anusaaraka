@@ -282,13 +282,15 @@
 ;------------------------------------------------------------------------------------------------------------
 ;The nationalists were narrowly beaten in the local election.---rARtravAxI sWAnIya cunAva meM badZe hI kama aMwara se hAre.
 ; in the above sentence the word "the" is repeated twice and has no mng in manual sentence.
+;We [all] have an intuitive notion of force. -- hama [saBI meM] bala ke bAre meM koI sahajAnuBUwa XAraNA hE.
 (defrule get_fact_name_for_no_mng_for_eng_word
 (declare (salience 100))
 (id-word ?aid ?wrd)
 (anu_id-word-possible_mngs ?aid ?wrd $?pos_mngs)
-(not (manual_id-mng ? $?man_mng&:(subsetp $?man_mng $?pos_mngs)))
 (hindi_id_order $?hin_order)
 (test (neq (member$ ?aid $?hin_order) FALSE))
+(not (manual_id-cat-word-root-vib-grp_ids ? ? $? - $?man_mng&:(subsetp $?man_mng $?pos_mngs) - $? - $?))
+(not (manual_id-mng ? $?man_mng1&:(subsetp $?man_mng1 $?pos_mngs)))
 =>
         (bind ?slot_id (member$ ?aid $?hin_order))
         (assert (fact_name-slot_id sumleq ?slot_id))

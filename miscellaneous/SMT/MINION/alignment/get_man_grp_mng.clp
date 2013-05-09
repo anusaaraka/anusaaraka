@@ -63,15 +63,17 @@
  ;------------------------------------------------------------------------------------------------------------------------
  ;Finally, to understand the relative nature of motion, we introduce the concept of relative velocity.
  ;anwawaH gawi kI ApekRika prakqwi ko samaJane ke lie hama ApekRika gawi kI XAraNA praswuwa [karezge].
- ;You will see that the strips get attracted to the screen.
- ;Apa [xeKezge] ki [pattiyAz] parxe kI ora AkarRiwa ho jAwI hEM
+ ;You will [see] that the [strips] get attracted to the screen. -- Apa [xeKezge] ki [pattiyAz] parxe kI ora AkarRiwa ho jAwI hEM
+ ;The night sky with [its] bright celestial objects has fascinated humans since time immemorial. -- anAxi kAla se hI rAwri ke AkASa meM camakane vAle KagolIya piNda [use] sammohiwa karawe rahe hEM.
  (defrule modifiy_root
  (declare (salience 120))
  ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node ?word unk ?g ?no ?p ?c ?suf)
- ?f0<-(position-cat-man_grp_mng ?id  ?n ?word - -)
+ (head_id-grp_ids ?id ?id1 $?)
+ ?f1<-(id-node-word-root ?id1 ?n ?word - ?)
  (man_word-root-cat    ?word ?root   ?cat)
  =>
-        (retract ?f)
+        (retract ?f ?f1)
+	(assert (id-node-word-root ?id1 ?n ?word - ?root))
         (if (eq ?suf -) then
                 (assert (id-node-root-cat-gen-num-per-case-tam ?id ?node ?root ?cat ?g ?no ?p ?c 0))
         else
@@ -345,6 +347,15 @@
         	(bind ?suf (remove_character "-" (implode$ (create$  ?suf)) " "))
 	)
 	(assert (manual_id-node-word-root-tam ?id ?node ?new_mng - ?root - ?suf ))
+ )
+ ;------------------------------------------------------------------------------------------------------------------------ 
+ ; If suf is "-" then add 0 
+ (defrule get_default_0_tam
+ (declare (salience 40))
+?f0<-(manual_id-node-word-root-tam ?id ?node ?new_mng - ?root - -)
+ =>
+	(retract ?f0)
+	(assert (manual_id-node-word-root-tam ?id ?node ?new_mng - ?root - 0))
  )
  ;------------------------------------------------------------------------------------------------------------------------ 
  (defrule print_man_grp_mng

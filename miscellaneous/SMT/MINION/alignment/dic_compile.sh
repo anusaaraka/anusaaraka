@@ -31,7 +31,9 @@ rm $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries/hindi_multi_word.txt
 rm $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_smt.gdbm
 rm $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_firefox.gdbm
 rm $HOME_anu_test/Anu_databases/adv_prep_dic.gdbm
-
+cd  $HOME_anu_test/multifast-v1.0.0/src
+rm -f get_word_count multi_word-dic.c  physics-dic.c  proper_noun-dic.c
+make clean
 
 echo "Creating phy_hnd_multi_word_dic.txt"
 cd $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries
@@ -51,6 +53,11 @@ $HOME_anu_test/Anu_src/comp.sh non_canonical_form
 sh get_txt_files.sh
 sh get_dictionary_in_canonical_form.sh
 sh get_adv-prep_dic.sh
+
+cd  $HOME_anu_test/multifast-v1.0.0/src
+ sh run.sh
+ make
+
 
 cd $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries/
 echo "Creating phy_dictionary.txt"

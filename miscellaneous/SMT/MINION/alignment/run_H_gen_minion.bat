@@ -232,6 +232,7 @@
  (load ?*path*)
  (load-facts "word.dat")
  (load-facts "hindi_id_order_for_minion_tmp.dat")
+ (load-facts "manual_lwg.dat")
  (load-facts "manual_lwg_new.dat")
  (load-facts "lwg_info.dat")
  (load-facts "potential_assignment.dat")

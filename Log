@@ -4519,15 +4519,15 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         1. Anusaaraka_stanford_minion.sh        3. processing_manual_sentences.sh
         2. run_sentence_stanford_minion.sh      4. minion_compile.sh
 14. get_man_grp_mng.clp:
-        Added    :  load_file and get_grp_using_full_parser_rel rules
-        Modified :  modifiy_root and check_prev_word_of_kara rules
+        Added    : get_default_0_tam, load_file and get_grp_using_full_parser_rel rules
+        Modified :  modifiy_root and check_prev_word_of_kara rules 
 15. modify_minion_output.clp
         Modified : get_left_out_mngs, check_correctness_for_newly_added_word, check_correctness_for_is_verb
                    check_correctness_for_kara_verb, check_for_hypenated_left_mng,  check_for_hypenated_right_mng
                    check_for_hypenated_wrong_mng and check_for_hypenated_mng_with_right
         Added    : check_correctness_for_wo,  check_correctness_for_kara_verb_with_root, check_correctness_for_that
-                   check_correctness_for_kara_verb_with_wrong_align, check_correctness_for_multi_word and
-                   restore_hyphen_mng
+                   check_correctness_for_kara_verb_with_wrong_align, check_correctness_for_multi_word, restore_hyphen_mng,
+		   get_light_verb_list, cp_of_hin_order and chk_for_light_verb_phrase
 16. word_alignment.clp
         renamed  exact_match_using_multi_word_dic   as  exact_match_using_multi_word_dic_with_root
         renamed  exact_match_using_multi_word_dic4  as  exact_match_for_multi_word_using_dic
@@ -4537,14 +4537,20 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
            get_man_grp_mng module
         2. Loaded shallow_parser_root_tmp2.dat file in manual_word_grp_using_dic and manual_lwg modules
         3. Generated manual_group_mng_tmp1.dat" and shallow_parser_root.dat files in manual_lwg  module
+	4. Loaded manual_lwg.dat for get_word_potential_facts module
 18. alignment.bat
         Loaded aper_op_without_@.dat file in modify_minion_output module
         Commented get_mng and get_phrase modules (need to modify rules)
+	Modified save-facts to add phrase_ids-mng fat and renamed "left_out_info.dat" as "left_out_word_and_phrase_info.dat"
+        in modify_minion_output module
+        Loaded left_out_word_and_phrase_info.dat file in get_phrase module
 19. Added get_tam_info_from_full_parser.lex for full parser
 20. Modified "remove_manual_punct_facts" rule in manual_lwg_new.clp
 21. Modified "get_mng_from_all_dic" rule in get_dbase_mng.clp
 22. Modified "del_@_from_word" and  "del_@_from_shallow_root" rules in change_manual_id.clp
-23. Added "rm_aligned_verb_id_from_verb_list" rule in get_word_potential_facts.clp
+23. get_word_potential_facts.clp
+	Modifed : "get_fact_name_for_no_mng_for_eng_word" (added not condition)
+	Added   : "rm_aligned_verb_id_from_verb_list" rule 
 24. To get preferred parse modified preffered_parse.py
 25. Updated stanford parser to new version stanford-parser-2013-04-05
 26. For above purpose following files are updated ::
@@ -4555,9 +4561,11 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	a) Added split-mngs.c and converting-dic-to-alignment_format.c 
 	b) Added compilation of above files in minion_compile.sh
 	c) Modified generate_hin_multi_word_dic.sh accordingly
-28. Modified sd_ver_output
-29. Updated anu_compile.sh
-30. Updated the following files
+28. get_phrase.clp
+        Added   : get_eng_list, get_light_verb_phrase_ids and get_light_verb_phr
+29. Modified sd_ver_output
+30. Updated anu_compile.sh
+31. Updated the following files
         miscellaneous/SMT/MINION/dictionaries/phy_dictionary.txt
         miscellaneous/SMT/MINION/dictionaries/provisional_root_dic.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_eng_words.txt
@@ -4572,11 +4580,13 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_eng_align.html
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_hnd
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_out
-31. Updated changes_in_databases
-32. Updated alignment/README
-33. Updated get_group_mng.sh
-34. Updated mapping-symbols_manual.lex
-35. Updated
+32. Updated changes_in_databases
+33. Updated alignment/README
+34. Updated get_group_mng.sh
+35. Updated mapping-symbols_manual.lex
+36. Updated processing_manual_sentences.sh
+37. Updated dic_compile.sh
+38. Updated
         phy_align_verified_eng (186)
         phy_align_partial_ver_eng (58)
-36. Updated Log.
+39. Updated Log.
