@@ -4475,7 +4475,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 74. Updated sd_verified (490), sd_ver_output and phy_align_verified_out
 75. Updated Log
 
- 08-05-13
+ 09-05-13
  ========
  1. Removed default_meaning_frm_oldwsd.txt from Anu_data and moved into miscellaneous/Programs/removed_files and following changes are done.
 		  i) Removed name in list-right and list_Anu_data
@@ -4563,6 +4563,15 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/MINION/dictionaries/restricted_eng_words.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_hnd_words.txt
         miscellaneous/SMT/MINION/dictionaries/inferred_dic.txt
+        miscellaneous/SMT/MINION/dictionaries/phy_eng_multi_word_dic.txt
+        miscellaneous/SMT/MINION/alignment/align_output/phy_align_partial_ver_eng
+        miscellaneous/SMT/MINION/alignment/align_output/phy_align_partial_ver_eng_align.html
+        miscellaneous/SMT/MINION/alignment/align_output/phy_align_partial_ver_hnd
+        miscellaneous/SMT/MINION/alignment/align_output/phy_align_partial_ver_out
+        miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_eng
+        miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_eng_align.html
+        miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_hnd
+        miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_out
 31. Updated changes_in_databases
 32. Updated alignment/README
 33. Updated get_group_mng.sh

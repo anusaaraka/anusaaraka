@@ -755,7 +755,28 @@ Modified:
 	43. Modified perceive_verb	meVhasUsa_kara as  mehasUsa_kara 
 	44. Modified such_pronoun    	esA	as	EsA			(Suggested by Chaitanya Sir 01-05-13)
 	45. electron_noun   	awisUkRma_paramANu/ilektrana    as   ilektroYna/awisUkRma_paramANu	(   "       )
- 
+	46. I_pronoun       mEM/muJe/mEz{sarvanAma} as mEM/muJe
+	47. at_preposition  para/se/meM/kI_avasWA_meM/ke_yahAz/ko{samaya}/kI_ora    
+					as
+			    para/se/meM/kI_avasWA_meM/ke_yahAz/ko/kI_ora	     (Suggested by Sukhada 4-05-13)	
+	48. he_pronoun      vaha/usa/vaha{pu.}  	         as   vaha/usa	     (		"	"         )
+	49. she_pronoun     vaha/vaha{swrI.}/vaha{swrI}   	 as   vaha           (		"	"         )
+	50. somebody_pronoun   koI/koI{vyakwi} somebody_pronoun  as   koI/koI_vyakwi (		"	"	  )
+	51. someone_pronoun    koI/koI{vyakwi}	   		 as   koI/koI_vyakwi (		"	"	  )
+	52. her_determiner     usakA{swrI}			 as   usakA	     (		"	"	  )
+	53. her_pronoun        vaha/usakI/use/usa{swrI}_ko       as   vaha/usakI/use/usako(	"	"	  )
+	54. herself_pronoun    svayaM/vaha_svayaM[swrI]		 as   svayaM/vaha_svayaM  (	"	"	  )
+	55. onto	       para/pICe_padanA[honA]		 as   para/pICe_padanA	(	"	"	  )
+	56. than_preposition   se/se[wulanA_meM]		 as   se/kI_wulanA_meM	(	"	"	  )
+	57. ourselves_pronoun  hama_svaMya/apane_Apa_ko/svayam_[ko]  as  hama_svaMya/apane_Apa_ko/svayam_ko (  "  )
+	58. no_adjective    nahIM/nahIM_hEM/koI_nahIM/koI/bilkula_nahIM/[kuCa]_nahIM/nahIM{anumawa}
+					as
+			    nahIM/nahIM_hEM/koI_nahIM/koI/bilkula_nahIM		        (			" )
+	59. save	    Xana_bacA_kara_raKa/surakRiwa_raKanAa/surakRiwa_raKa/sahAyawA_kara/roka/rakRA_kara/kiPAyawa_barawa/jamA_kara/hiPAjawa_kara/CutakArA_xe/bac/bacA/bacA_le[xenA]   
+					as
+			    Xana_bacA_kara_raKa/surakRiwa_raKanA/surakRiwa_raKa/sahAyawA_kara/roka/rakRA_kara/kiPAyawa_barawa/jamA_kara/hiPAjawa_kara/CutakArA_xe/baca/bacA/bacA_le_bacA_xe			(Suggested by Sukhada 4-05-13)
+
+
 Removed::
 -------
 	itumail@itu.ch  E-MAIL::itumail@itu.ch	(Suggested by Rajini(29-02-12))
@@ -800,6 +821,9 @@ Added:
 			pqWvI_wala/XarAwala/warka/walaCata/wala/viRaya/sWala/pqRTaBUmi/mittI/mExAna/kRewra/kAraNa/jamIna/hAwA/BUmi/AXAra/pqWvI									  (     Added by Shirisha Manju 20-4-13)
 
 15. encapsulate_verb	samputiwa_kara	   as    saMgatiwa_kara/samputiwa_kara		(Suggested by Chaitanya Sir    02-05-13)
+16. half_noun       	AXA/Kela_kA_eka_BAga/hAPa/arxXasamaya/arxXAMSa/arxXa
+				as
+			AXA/Kela_kA_eka_BAga/hAPa/arxXasamaya/arxXAMSa/arxXa/arXaBAga	(           "          )
 
 
   

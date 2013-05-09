@@ -1,7 +1,6 @@
 Pre-proccessing manual file ...
 Running Shallow Parser ...
 Generating canonical form for Shallow Parser Output ...
-Running Full Parser ...
 Tokenizing manual sentence
 Saving Format info ...
 Saving word information
@@ -28,222 +27,214 @@ Consider two cases of motion.
 gawi ke xo mAmale vicAra kIjie.
 
 Hindi meaning using Stanford parser 2.4
-In the second case, the car moves from O to P and then moves back from P to Q .. 
-xUsare mAmale meM, gAdI PropN-o-PropN se PropN-p-PropN ko calawI hE Ora PropN-p-PropN se ko PropN-q-PropN. vApisa bAxa meM calawI hE.
-
-Hindi meaning using Stanford parser 2.5
 The magnitude of the displacement for a course of motion may be zero but the corresponding path length is not zero. 
 gawi ke pATyakrama ke lie visWApana kA parimANa SUnya ho sakawA hE paranwu jo_samawulya_ho paWa lambAI niSAnA sAXa hE nahIM hE.
 
-Hindi meaning using Stanford parser 2.6
+Hindi meaning using Stanford parser 2.5
 The symbol nonascii3226136145 (the Greek letter sigma) denotes summation, in this case over n particles. 
 niSAna nonascii3226136145 ( yUnAnI BARA pawra sigma) n kaNoM ke Upara isa mAmale meM anwima aBivacana, xyowaka howA hE.
 
-Hindi meaning using Stanford parser 2.7
+Hindi meaning using Stanford parser 2.6
 We shall, in the present chapter, consider rotational motion about a fixed axis only. 
 hama eka niSciwa huI huI XurI ke bAre meM sirPa cakrIya gawi vicAra karezge varwamAna aXyAya meM.,
 
-Hindi meaning using Stanford parser 2.8
+Hindi meaning using Stanford parser 2.7
 The earth rotates once every twenty-four hours and revolves round the sun once in a year. 
 pqWvI prawyeka twenty-four GaNte eka bAra GUmawI hE Ora varRa meM sUrya eka bAra ke golAkAra GUmawI hE.
 
-Hindi meaning using Stanford parser 2.9
+Hindi meaning using Stanford parser 2.8
 In good many situations in real-life, the size of objects can be neglected and they can be considered as point-like objects without much error. 
 vAswavika jIvana meM acCI bahuwa sArI hAlawa meM, vaswu_kA AkAra upekRA kiyA jA sakawA hE Ora ve bahuwa BUla ke binA point-like vaswu_ke_jEsA samaJe jA sakawe hEM.
 
-Hindi meaning using Stanford parser 2.10
+Hindi meaning using Stanford parser 2.9
 We now know that color is associated with wavelength of light. 
 hama aba jAnawe hEM ki rafga prakASa ke warafgaxErGya ke sAWa judA huA huA hE.
 
-Hindi meaning using Stanford parser 2.11
+Hindi meaning using Stanford parser 2.10
 Where P is the net power of the lens combination. 
 PropN-p-PropN lensa saMyoga kA vAswavika GAwAfka kahAz hE.
 
-Hindi meaning using Stanford parser 2.12
+Hindi meaning using Stanford parser 2.11
 In silica glass fibers, it is possible to transmit more than 95 SYMBOL-PERCENT of the light over a fiber length of 1 km. 
 silikA gilAsoM wanwuoM meM, 1 ki.mI. kI eka wanwu lambAI ke Upara prakASa kA se aXika 95 SYMBOL-PERCENT preRiwa samBava hE.
 
-Hindi meaning using Stanford parser 2.13
+Hindi meaning using Stanford parser 2.12
 A standard 100 watt incadescent light bulb emits approximately 1700 lumens. 
 eka prAmANika 100 vAta incadescent vixyuwa balba wakarIbana rUpa se 1700 lumens uwsarjana karawA hE.
 
-Hindi meaning using Stanford parser 2.14
+Hindi meaning using Stanford parser 2.13
 There are two things that we can intuitively mention about light from common experience. 
 xo cIjeM hEM ki hama sAmAnya anuBava se prakASa ke bAre meM sahaja jFAna se ulleKa_kara sakawe hEM.
 
-Hindi meaning using Stanford parser 2.15
+Hindi meaning using Stanford parser 2.14
 Only the component perpendicular to the surface, i.e., the normal component of the momentum, gets reversed in reflection. 
-UparI wala ko sirPa aMSa parapeNdikulara Silpa, PropN-i.e.-PropN, saMvega kA sAmAnya aMSa, prawibimba meM ultI kaha xewA hE.
+UparI wala ko sirPa aMSa parapeNdikulara Silpa, PropN-i.e.-PropN, saMvega kA sAmAnya aMSa, parAvarwana meM ultI kaha xewA hE.
 
-Hindi meaning using Stanford parser 2.16
+Hindi meaning using Stanford parser 2.15
 In Kinematics, we study ways to describe motion without going into the causes of motion. 
 SuxXa gawikI meM, hama mArgoM kA gawi ke kAraNoM ke anxara jAne ke binA gawi varNana karane kA aXyayana karawe hEM.
 
-Hindi meaning using Stanford parser 2.17
+Hindi meaning using Stanford parser 2.16
 Motion of an object can be represented by a position-time graph as you have already learned about it. 
 eka vaswu kA PropN-motion-PropN eka position-time grAPa ke xvArA prawiniXi huA jA sakawA hE jaba Apa isake bAre meM pahale se hI sIKa cuke hEM.
 
-Hindi meaning using Stanford parser 2.18
+Hindi meaning using Stanford parser 2.17
 To describe this, we define the quantity average velocity. 
 yaha varNana_kara hama parimANa Osawa vega sImAfkiwa karawe hEM.
 
-Hindi meaning using Stanford parser 2.19
+Hindi meaning using Stanford parser 2.18
 We have seen earlier that the magnitude of displacement may be different from the actual path length. 
 hama pahale xeKa cuke hEM ki visWApana kA parimANa vAswavika paWa lambAI se alaga ho sakawA hE.
 
-Hindi meaning using Stanford parser 2.20
+Hindi meaning using Stanford parser 2.19
 Thus, in this case the average speed is equal to the magnitude of the average velocity. 
 isa prakAra, isa mAmale meM Osawa cAla Osawa vega ke parimANa ke lie samAna hE.
 
-Hindi meaning using Stanford parser 2.21
+Hindi meaning using Stanford parser 2.20
 Thus, in this case the average speed is not equal to the magnitude of the average velocity. 
 isa prakAra, isa mAmale meM Osawa cAla Osawa vega ke parimANa ke lie samAna nahIM hE.
 
-Hindi meaning using Stanford parser 2.22
+Hindi meaning using Stanford parser 2.21
 For this, we define instantaneous velocity or simply velocity v at an instant t .. 
 isake lie, hama wAwkRaNika vega yA sAxagI se vega wawkAla t meM v. sImAfkiwa karawe hEM.
 
-Hindi meaning using Stanford parser 2.23
+Hindi meaning using Stanford parser 2.22
 Instantaneous speed or simply speed is the magnitude of velocity. 
 wAwkRaNika raPwAra yA sAxagI se raPwAra vega kA parimANa hE.
 
-Hindi meaning using Stanford parser 2.24
+Hindi meaning using Stanford parser 2.23
 How to describe this change? 
 kEse yaha parivarwana varNana karanA?
 
-Hindi meaning using Stanford parser 2.25
+Hindi meaning using Stanford parser 2.24
 Like velocity, acceleration can also be positive, negative or zero. 
 vega kI waraha, wvaraNa sakArAwmaka, qNAwmaka yA SUnya BI ho sakawA hE.
 
-Hindi meaning using Stanford parser 2.26
+Hindi meaning using Stanford parser 2.25
 Equation (3SYMBOL-DOT7) can also be written as. 
 PropN-equation-PropN (3SYMBOL-DOT7) ke jEsA BI liKA jA sakawA hE.
 
-Hindi meaning using Stanford parser 2.27
+Hindi meaning using Stanford parser 2.26
 In this case, the magnitude of displacement (360 m) is equal to the path length (360 m). 
 isa mAmale meM, visWApana kA parimANa (360 xasa lAKa) paWa lambAI ko (360 xasa lAKa) samAna hE.
 
-Hindi meaning using Stanford parser 2.28
+Hindi meaning using Stanford parser 2.27
 Thus, the stopping distance is proportional to the square of the initial velocity. 
 isa prakAra, roXana xUrI prAramBika vega ke cOka ke lie samAnupAwI hE.
 
-Hindi meaning using Stanford parser 2.29
+Hindi meaning using Stanford parser 2.28
 It is a common observation that a ball bouncing from a smooth plane surface obeys the laws of reflection. 
-yaha eka sAmAnya prekRaNa hE ki eka niRkoNa samawala UparI wala se uCalawe_hue golA prawibimba ke niyama AjFApAlana karawI hE.
+yaha eka sAmAnya prekRaNa hE ki eka niRkoNa samawala UparI wala se uCalawe_hue golA parAvarwana ke niyama AjFApAlana karawI hE.
 
-Hindi meaning using Stanford parser 2.30
+Hindi meaning using Stanford parser 2.29
 In this situation, as you will learn in Chapter 10, a light wave can be considered to travel from one point to another, along a straight line joining them. 
 jaba Apa PropN-chapter-PropN 10 meM sIKezge, isa hAlawa meM, eka halakI lahara unako milawe_hue eka sarala reKA barAbara barAbara eka noka se eka Ora kI ora yAwrA karane ke lie samaJI jA sakawI hE.
 
-Hindi meaning using Stanford parser 2.31
+Hindi meaning using Stanford parser 2.30
 First, that it travels with enormous speed and second, that it travels in a straight line. 
 PropN-first-PropN, ki yaha bahuwa se raPwAra se Ora kRaNa se, calawA hE. ki yaha eka sarala reKA meM yAwrA karawA hE
 
-Hindi meaning using Stanford parser 2.32
+Hindi meaning using Stanford parser 2.31
 An incoming wave can be divided into two weaker waves at the boundary between air and water. 
 Agamika lahara havA ke bIca Ora pAnI ke bIca sImA meM xo aXika kamajora laharoM ke anxara bAztI jA sakawI hE.
 
-Hindi meaning using Stanford parser 2.33
+Hindi meaning using Stanford parser 2.32
 The early civilisations of Egypt, India, China, Greece, Mesopotamia and many others made vital contributions to its progress. 
 misra, BArawa, cIna, yUnAna, PropN-mesopotamia-PropN ke Ora bahuwa sAre anya ke prAramBika saBya samAja ne usakI pragawi ko jIvana sambanXI yogaxAna banAe.
 
-Hindi meaning using Stanford parser 2.34
+Hindi meaning using Stanford parser 2.33
 From the sixteenth century onwards, great strides were made in science in Europe. 
 solahavAz SawAbxI Age se, baDiyA lambe kaxama yUropa meM vijFAna meM banAe gaye We.
 
-Hindi meaning using Stanford parser 2.35
+Hindi meaning using Stanford parser 2.34
 This approach is called reductionism and is at the heart of physics. 
 yaha pahuzca reductionism bulAI jAwI hE Ora BOwika vijFAna ke hqxaya meM hE.
 
-Hindi meaning using Stanford parser 2.36
+Hindi meaning using Stanford parser 2.35
 In our experience, force is needed to push, carry or throw objects, deform or break them. 
 hamAre anuBava meM, bala kI vaswu Xakela, uTA_le jAwA hE yA PefkawA hE, vikqwa howA hE yA unako wodawA hE AvaSyakawA.
 
-Hindi meaning using Stanford parser 2.37
+Hindi meaning using Stanford parser 2.36
 Early thinkers like Aristotle had wrong ideas about it. 
 araswU jEsA jalxI cinwakoM kA yaha galawa vicAra We.
 
-Hindi meaning using Stanford parser 2.38
+Hindi meaning using Stanford parser 2.37
 It is enormously strong compared to gravity. 
 yaha guruwvAkarRaNa ko wulanA kara bahuwa aXika majabUwa hE.
 
-Hindi meaning using Stanford parser 2.39
+Hindi meaning using Stanford parser 2.38
 Thus it is mainly the electromagnetic force that governs the structure of atoms and molecules, the dynamics of chemical reactions and the mechanical, thermal and other properties of materials. 
 isa prakAra yaha vExyuwacumbakIya bala pramuKa rUpa se hE jo paxArWoM kI paramANuoM kI Ora aNu, rasAyanika xravya kA prawikriyAoM kI Ora - yAnwrika kA, URmIya kI Ora anya kA sampawwi kI gawikI saMracanA vaSA_meM karawA hE.
 
-Hindi meaning using Stanford parser 2.40
+Hindi meaning using Stanford parser 2.39
 This is almost inevitable with ladies garments like a polyester saree. 
 yaha eka paliyestara sAdI kI waraha mahilA kapadoM se lagaBaga aparihArya hE.
 
-Hindi meaning using Stanford parser 2.41
+Hindi meaning using Stanford parser 2.40
 You can perform the following activity at home to experience such an effect. 
 Apa eka EsA praBAva anuBava karane ke lie Gara para anusaraNa karanA kriyA kalApa kArya_kara sakawe hEM.
 
-Hindi meaning using Stanford parser 2.42
+Hindi meaning using Stanford parser 2.41
 A dramatic observation is that a pith ball touched with glass rod attracts another pith ball touched with plastic rod (Fig. 1SYMBOL-DOT1 (f)). 
 eka nAtakIya prekRaNa hE ki gilAsa Cada ke sAWa sparSa kI huI eka majjA golA plAstika Cada ke sAWa (PropN-fig.-PropN 1SYMBOL-DOT1 eM sparSa kI huI xUsarI majjA golA AkarRiwa karawI hE.
 
-Hindi meaning using Stanford parser 2.43
+Hindi meaning using Stanford parser 2.42
 This might have been the philosophy in naming the charges as positive and negative. 
 yaha mUlya pahale kI waraha sakArAwmaka Ora qNAwmaka nAmakaraNa karane meM xarSana SAswra SAyaxa huA hogA.
 
-Hindi meaning using Stanford parser 2.44
+Hindi meaning using Stanford parser 2.43
 Ampere and Faraday supported this observation by saying that electric charges in motion produce magnetic fields and moving magnets generate electricity. 
 PropN-ampere-PropN Ora PropN-faraday-PropN ne kahane ke xvArA Ora cumbaka vixyuwa Sakwi pExA karawe hEM calawA huA isa prekRaNa ko sahArA xiyA ki calAyamAna bijalI ke aBiyoga cumbakIya kRewra banAwe hEM.
 
-Hindi meaning using Stanford parser 2.45
-However, the glass rod and wool attracted each other. 
-PiraBI, gilAsa Cada Ora Una ne eka xUsare AkarRiwa kiyA.
-
-Hindi meaning using Stanford parser 2.46
+Hindi meaning using Stanford parser 2.44
 We know that when we add a positive number to a negative number of the same magnitude, the sum is zero. 
 hama jAnawe hEM ki hama eka qNAwmaka afka ke lie vahI parimANa ke eka sakArAwmaka afka jaba Age kahawe hEM, ki joda SUnya hE.
 
-Hindi meaning using Stanford parser 2.47
+Hindi meaning using Stanford parser 2.45
 This forms the leaves of your electroscope. 
 yaha Apake electroscope kI CuttiyAz banAwA hE.
 
-Hindi meaning using Stanford parser 2.48
+Hindi meaning using Stanford parser 2.46
 The separation is a rough measure of the amount of charge on the electroscope. 
 pqWakana electroscope para mUlya kI mAwrA kI eka mApa hE.
 
-Hindi meaning using Stanford parser 2.49
+Hindi meaning using Stanford parser 2.47
 Fold the strips into half so that you make a mark of fold. 
 arXAMSa ke anxara pattiyAz waha kIjie jisase ki Apa waha kara kA niSAna banAwe hEM.
 
-Hindi meaning using Stanford parser 2.50
+Hindi meaning using Stanford parser 2.48
 The same effect is seen in the leaf electroscope. 
 vahI praBAva pawwe electroscope meM xeKA huA hE.
 
-Hindi meaning using Stanford parser 2.51
+Hindi meaning using Stanford parser 2.49
 The scientific method involves several interconnected steps: Systematic observations, controlled experiments, qualitative and quantitative reasoning, mathematical modelling, prediction and verification or falsification of theories. 
 vEjFAnika- praNAlI viBinna anwarsambaxXa kie hue kaxama: suvyavasWiwa prekRaNa, niyanwriwa prayoga, guNAwmaka Ora parimANAwmaka warka viwarka, gaNiwa sambanXI prawirUpaNa, pUrvAnumAna Ora sixXAnwoM kA sawyApana yA jAlasAjI SAmila howI hE.
 
-Hindi meaning using Stanford parser 2.52
+Hindi meaning using Stanford parser 2.50
 The interplay of theory and observation (or experiment) is basic to the progress of science. 
 sixXAnwa kI Ora prekRaNa kI pArasparika kriyA yA prayoga) vijFAna kI pragawi ke lie buniyAxI hE.
 
-Hindi meaning using Stanford parser 2.53
+Hindi meaning using Stanford parser 2.51
 The effort is to see the physical world as manifestation of some universal laws in different domains and conditions. 
 prayawna alaga meM praBAvakRewra meM Ora sWiwi meM kuCa sArvawrika niyamoM ke AvirBAva ke jEsA SArIrika viSva ko xeKane vAlA hE.
 
-Hindi meaning using Stanford parser 2.54
+Hindi meaning using Stanford parser 2.52
 A related effort is to derive the properties of a bigger, more complex, system from the properties and interactions of its constituent simpler parts. 
 eka sambanXiwa prayawna usake saMviXAnI aXika sarala BAga kI sampawwi se Ora anyonya kriyAez eka aXika bade, aXika jatila, nikAya kI sampawwi viSleRaNa vAlA hE.
 
-Hindi meaning using Stanford parser 2.55
+Hindi meaning using Stanford parser 2.53
 Basically, there are two domains of interest: macroscopic and microscopic. 
 svaBAvawaH, rUci: sWUla Ora sUkRma kA xo praBAvakRewra hEM.
 
-Hindi meaning using Stanford parser 2.56
+Hindi meaning using Stanford parser 2.54
 The microscopic domain includes atomic, molecular and nuclear phenomena. 
 sUkRma_praBAva kRewra paramANvika, ANvika Ora ANvika pariGatanA sammiliwa karawA hE.
 
-Hindi meaning using Stanford parser 2.57
+Hindi meaning using Stanford parser 2.55
 Classical Physics deals mainly with macroscopic phenomena and includes subjects like Mechanics, Electrodynamics, Optics and Thermodynamics. 
 PropN-classical-PropN PropN-physics-PropN sWUla pariGatanA ke sAWa pramuKa rUpa se vyavahAra karawA hE Ora yAnwrikI kI waraha, vExyuwagawikI kI waraha, prakASikI kI waraha Ora URmAgawikI kI waraha viRaya sammiliwa karawA hE.
 
-Hindi meaning using Stanford parser 2.58
+Hindi meaning using Stanford parser 2.56
 Mechanics founded on Newton's laws of motion and the law of gravitation is concerned with the motion (or equilibrium) of particles, rigid and deformable bodies, and general systems of particles. 
 gawi ke PropN-newton-PropN ke niyamoM para Ora guruwvAkarRaNa ke niyama para sWApanA kI huI yAnwrikI kaNa, xqDa Ora deformable piNdoM kA, Ora kaNoM ke vyApaka nikAyoM kA (yA sanwulana) gawi se sambanXiwa hE.
 
@@ -253,8 +244,8 @@ Print minion_statistics
 No Solution Found :
 0
 Time-out:
-2
+1
 Solution Found :
-56
+55
 re-executed-sentences:
-14
+13

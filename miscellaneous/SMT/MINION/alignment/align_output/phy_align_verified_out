@@ -1,7 +1,6 @@
 Pre-proccessing manual file ...
 Running Shallow Parser ...
 Generating canonical form for Shallow Parser Output ...
-Running Full Parser ...
 Tokenizing manual sentence
 Saving Format info ...
 Saving word information
@@ -73,7 +72,7 @@ ye niyama yAnwrikI meM gawi ke PropN-newton-PropN ke niyamoM se viSleRaNa jA sak
 
 Hindi meaning using Stanford parser 2.15
 The reflected ray follows laws of reflection. 
-parAvarwiwa kiraNa prawibimba ke niyamoM kA anusaraNa karawI hE.
+parAvarwiwa kiraNa parAvarwana ke niyamoM kA anusaraNa karawI hE.
 
 Hindi meaning using Stanford parser 2.16
 We now apply the sign convention. 
@@ -85,7 +84,7 @@ isa kAraNa se, saBI wIna kA qNAwmaka cihna hEM.
 
 Hindi meaning using Stanford parser 2.18
 We are familiar with the laws of reflection. 
-hama prawibimba ke niyamoM se jAnA-mAnA hEM.
+hama parAvarwana ke niyamoM se jAnA-mAnA hEM.
 
 Hindi meaning using Stanford parser 2.19
 Terrestrial phenomena lie somewhere in the middle of this range. 
@@ -137,7 +136,7 @@ isa prakAra piNda kI saMhawi mahawvapUrNa gaNiwa_meM_sWira rASI hE jo usakI gawi
 
 Hindi meaning using Stanford parser 2.31
 Using the basic laws of reflection and refraction, we shall study the image formation by plane and spherical reflecting and refracting surfaces. 
-prawibimba ke Ora apavarwana ke buniyAxI niyamoM kA upayoga karawe_hue, hama UparI wala xarSA huA Ora modawA huA samawala waka Ora golIya waka prawimA suvyavasWiwa kramaa kA aXyayana karezge.
+parAvarwana ke Ora apavarwana ke buniyAxI niyamoM kA upayoga karawe_hue, hama UparI wala xarSA huA Ora modawA huA samawala waka Ora golIya waka prawimA suvyavasWiwa kramaa kA aXyayana karezge.
 
 Hindi meaning using Stanford parser 2.32
 What is the physical meaning of a zero vector? 
@@ -465,11 +464,11 @@ usakA velocity-time grAPa PropN-fig.-PropN 3SYMBOL-DOT11 meM jEsA ki xiKAyA huA 
 
 Hindi meaning using Stanford parser 2.113
 In this chapter, we consider the phenomena of reflection, refraction and dispersion of light, using the ray picture of light. 
-isa aXyAya meM, hama prakASa ke kiraNa ciwra kA upayoga karawe_hue prakASa ke prawibimba ke, apavarwana kA Ora parikRepaNa ke pariGatanA, vicAra karawe hEM.
+isa aXyAya meM, hama prakASa ke kiraNa ciwra kA upayoga karawe_hue prakASa ke parAvarwana ke, apavarwana kA Ora parikRepaNa ke pariGatanA, vicAra karawe hEM.
 
 Hindi meaning using Stanford parser 2.114
 With his understanding of mechanics, he could come up with a simple model of reflection and refraction. 
-yAnwrikI kI usakI samaJa ke sAWa, vaha prawibimba ke Ora apavarwana ke eka sarala namUne ke sAWa bIca_meM_A sakA.
+yAnwrikI kI usakI samaJa ke sAWa, vaha parAvarwana ke Ora apavarwana ke eka sarala namUne ke sAWa bIca_meM_A sakA.
 
 Hindi meaning using Stanford parser 2.115
 Such a dilemma does not occur in the wave picture of light. 
@@ -569,7 +568,7 @@ uxAharaNa_ke liye, unnIsavAz SawAbxI meM vikAsa kara, URmAgawikI kA, viRaya wApa
 
 Hindi meaning using Stanford parser 2.139
 Property of partial reflection of light is yet another such example. 
-prakASa ke AMSika prawibimba kA PropN-property-PropN Ora eka EsA uxAharaNa hE.
+prakASa ke AMSika parAvarwana kA PropN-property-PropN Ora eka EsA uxAharaNa hE.
 
 Hindi meaning using Stanford parser 2.140
 Thermodynamics, in contrast to mechanics, does not deal with the motion of bodies as a whole. 
@@ -581,7 +580,7 @@ yaha lambAI, saMhawi, samaya, UrjA, etc. kI waraha SArIrika parimANa ke parimANa
 
 Hindi meaning using Stanford parser 2.142
 Maxwell unified electromagnetism and optics with the discovery that light is an electromagnetic wave. 
-PropN-maxwell-PropN ne Koja ke sAWa vixyuwa cumbakawva Ora prakASikI eka banAe ki prakASa vExyuwacumbakIya lahara hE.
+PropN-maxwell-PropN ne Koja ke sAWa vixyuwa cumbakawva Ora prakASikI eka banAe ki prakASa vExyuwa_cumbakIya warafgeM hE.
 
 Hindi meaning using Stanford parser 2.143
 Understanding these conservation principles is very important to describe the observed phenomena quantitatively. 
@@ -601,11 +600,11 @@ PropN-let-PropN PropN-ce-PropN noka C se isa gola vaswu ko KIzca sparSajyA samaw
 
 Hindi meaning using Stanford parser 2.147
 This is the law of reflection. 
-yaha prawibimba kA vahI niyama hE.
+yaha parAvarwana kA vahI niyama hE.
 
 Hindi meaning using Stanford parser 2.148
 Once we have the laws of reflection and refraction, the behavior of prisms, lenses, and mirrors can be understood. 
-eka bAra hamArA prawibimba ke Ora apavarwana ke niyama hEM, varNakrama, lensa, Ora xarpaNa kA barwAva samaJA jA sakawA hE.
+eka bAra hamArA parAvarwana ke Ora apavarwana ke niyama hEM, varNakrama, lensa, Ora xarpaNa kA barwAva samaJA jA sakawA hE.
 
 Hindi meaning using Stanford parser 2.149
 We consider a plane wave passing through a thin prism. 
@@ -613,7 +612,7 @@ hama eka pawale varNakrama meM se gujarawe_hue eka samawala lahara vicAra karawe
 
 Hindi meaning using Stanford parser 2.150
 In a similar manner, we can understand refraction and reflection by concave lenses and convex mirrors. 
-samAna Dafga meM, hama avawala ke xvArA lensa ke xvArA Ora maXyonnawa ke xvArA xarpaNoM ke xvArA apavarwana Ora prawibimba samaJa sakawe hEM.
+samAna Dafga meM, hama avawala ke xvArA lensa ke xvArA Ora maXyonnawa ke xvArA xarpaNoM ke xvArA apavarwana Ora parAvarwana samaJa sakawe hEM.
 
 Hindi meaning using Stanford parser 2.151
 You have already encountered Doppler effect for sound waves in Chapter 15 of Class XI textbook. 
@@ -625,7 +624,7 @@ prakASa ke lie PropN-doppler-PropN praBAva KagolavixyA meM awyanwa mahawvapUrNa 
 
 Hindi meaning using Stanford parser 2.153
 Optical fibers too make use of the phenomenon of total internal reflection. 
-xqRti- wanwu BI sampUrNa Anwarika prawibimba ke pariGatanA kA upayoga banAwe hEM.
+xqRti- wanwu BI sampUrNa Anwarika parAvarwana ke pariGatanA kA upayoga banAwe hEM.
 
 Hindi meaning using Stanford parser 2.154
 Have you ever tried to find any explanation for this phenomenon? 
@@ -769,4 +768,4 @@ Time-out:
 Solution Found :
 186
 re-executed-sentences:
-24
+22
