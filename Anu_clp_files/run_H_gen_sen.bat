@@ -5,7 +5,7 @@
  (load-facts "vibakthi_info.dat")
  (load-facts "punctuation_info.dat")
  (load-facts "hindi_id_order.dat")
- (open "hin_eng_sent.dat" e_sen_fp "a")
+ (open "hin_eng_sent.dat" e_sen_fp "w")
  (run)
  (clear)
  ;----------------------------------------------------------------------
@@ -20,7 +20,7 @@
  (load-facts "punctuation_info.dat")
  (load-facts "original_word.dat")
  (load-facts "underscore_hyphen_replace_info.dat")
- (open "hindi_sentence_tmp.dat" h_sen_fp "a")
+ (open "hindi_sentence_tmp.dat" h_sen_fp "w")
  (run)
  (clear)
  ;--------------------------------------------------------------------------
@@ -37,7 +37,7 @@
  (load-facts "id_Apertium_output.dat")
  (assert (index 1))
  (assert (English_Sen))
- (open "position.dat" pos_fp "a")
+ (open "position.dat" pos_fp "w")
  (run)
  (close pos_fp)
  (clear)

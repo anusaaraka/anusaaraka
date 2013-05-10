@@ -4475,7 +4475,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 74. Updated sd_verified (490), sd_ver_output and phy_align_verified_out
 75. Updated Log
 
- 09-05-13
+ 10-05-13
  ========
  1. Removed default_meaning_frm_oldwsd.txt from Anu_data and moved into miscellaneous/Programs/removed_files and following changes are done.
 		  i) Removed name in list-right and list_Anu_data
@@ -4563,9 +4563,12 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	c) Modified generate_hin_multi_word_dic.sh accordingly
 28. get_phrase.clp
         Added   : get_eng_list, get_light_verb_phrase_ids and get_light_verb_phr
-29. Modified sd_ver_output
-30. Updated anu_compile.sh
-31. Updated the following files
+29. Added multi_word_expressions_from_iit_bombay.txt file extracted from IIT BOMBAY Dictionary
+30. Added above dictionary name in list-right and list_Anu_data_compound to get canonical form
+31. Added compilation of above dictionary in dic_compile.sh
+32. Modified sd_ver_output
+33. Updated anu_compile.sh
+34. Updated the following files
         miscellaneous/SMT/MINION/dictionaries/phy_dictionary.txt
         miscellaneous/SMT/MINION/dictionaries/provisional_root_dic.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_eng_words.txt
@@ -4580,13 +4583,14 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_eng_align.html
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_hnd
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_out
-32. Updated changes_in_databases
-33. Updated alignment/README
-34. Updated get_group_mng.sh
-35. Updated mapping-symbols_manual.lex
-36. Updated processing_manual_sentences.sh
-37. Updated dic_compile.sh
-38. Updated
+35. Updated run_H_gen_sen.bat,  run_modules_link.bat and  run_modules_std.bat
+36. Updated changes_in_databases
+37. Updated alignment/README
+38. Updated get_group_mng.sh
+39. Updated mapping-symbols_manual.lex
+40. Updated processing_manual_sentences.sh
+41. Updated dic_compile.sh
+42. Updated
         phy_align_verified_eng (186)
         phy_align_partial_ver_eng (58)
-39. Updated Log.
+43. Updated Log.

@@ -31,6 +31,8 @@ rm $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries/hindi_multi_word.txt
 rm $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_smt.gdbm
 rm $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_firefox.gdbm
 rm $HOME_anu_test/Anu_databases/adv_prep_dic.gdbm
+rm $HOME_anu_test/Anu_databases/multi_word_expression_for-iit-bombay.gdbm
+
 cd  $HOME_anu_test/multifast-v1.0.0/src
 rm -f get_word_count multi_word-dic.c  physics-dic.c  proper_noun-dic.c
 make clean
@@ -102,6 +104,8 @@ echo "Creating adv_prep_dictionary"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic.gdbm < default-iit-bombay-shabdanjali-dic_in_canonical_form.txt
  echo "Creating preposition.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/preposition.gdbm < $HOME_anu_test/Anu_data/preposition.txt
+ echo "Creating multi_word_expression_for_iit_bombay.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/multi_word_expression_for-iit-bombay.gdbm < multi_word_expressions_from_iit_bombay_in_canonical_form.txt
 
  echo "Creating default-iit-bombay-shabdanjali-dic_smt.gdbm"
  cut -f1 default-iit-bombay-shabdanjali-dic_in_canonical_form.txt > word_field

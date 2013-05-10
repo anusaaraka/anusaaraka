@@ -7,6 +7,7 @@
  (assert (default-cat))
  (run)
  (save-facts "hindi_meanings_tmp.dat" local id-HM-source)
+ (clear)
  ;--------------------------------------------------------------------------------------------------------------
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/causative_verb_mng_for_mul_sen.clp"))

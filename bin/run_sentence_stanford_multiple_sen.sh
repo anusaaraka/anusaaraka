@@ -16,7 +16,7 @@
 
  echo "Minion time ---"
  #=================multiple_sen============================
-time  sh $HOME_anu_test/Anu_clp_files/run_minion.sh
+ time  sh $HOME_anu_test/Anu_clp_files/run_minion.sh
  #=========================================================
  sh $HOME_anu_test/bin/abbr.sh
 
