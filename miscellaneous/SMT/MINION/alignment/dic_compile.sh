@@ -104,8 +104,8 @@ echo "Creating adv_prep_dictionary"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic.gdbm < default-iit-bombay-shabdanjali-dic_in_canonical_form.txt
  echo "Creating preposition.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/preposition.gdbm < $HOME_anu_test/Anu_data/preposition.txt
- echo "Creating multi_word_expression_for_iit_bombay.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/multi_word_expression_for-iit-bombay.gdbm < multi_word_expressions_from_iit_bombay_in_canonical_form.txt
+ echo "Creating multi_word_expression_from_iit_bombay.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/eng_multi_word_expressions_from_iit_bombay.gdbm < $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries/eng_multi_word_expressions_from_iit_bombay.txt
 
  echo "Creating default-iit-bombay-shabdanjali-dic_smt.gdbm"
  cut -f1 default-iit-bombay-shabdanjali-dic_in_canonical_form.txt > word_field

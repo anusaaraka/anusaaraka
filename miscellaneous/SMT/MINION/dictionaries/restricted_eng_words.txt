@@ -65,13 +65,13 @@ for	kyofki/ke_lie/ke_liye/kI_ora_se/ke_hisAba_se/waka
 from	se/ke/ke_yahAz_se
 given	AxI/viSeRa/nirXAriwa/niSciwa/xeKawe_hue/pUrvAnumAna/xe
 gone	raKA_jAnA/xivafgawa/mqwa
-he	usane/unhoMne/vaha/usa
-her	usakA/vaha/usakI/use/usako
+he	usane/unhoMne/vaha/usa/yaha
+her	usakA/vaha/usakI/use/usako/yaha
 hers	usa_swrI_kA/usakI
 herself	svayaM/vaha_svayaM
-him	vaha/usako
+him	vaha/usako/yaha
 himself	svayaM
-his	usakI/apane/usake/unake/usakA
+his	usakI/apane/usake/unake/usakA/his
 i	mEM/muje/mEMne
 in	meM/vEyakwika/upalabXa/sawwArUDa/pracaliwa/pahane_hue/jalawI_huI/ina/in/BIwarI/anxara_kA/anwarika/anxara/BIwara/sawwArUDa_rAjanIwika_xala_kA_saxasya/praBuwva/prawi/kI_waraPa_se/ke_samaya_meM/ke_samaya/ke_anxara/se/kA
 including	sammiliwa_karawe_hue/sahiwa
@@ -126,7 +126,7 @@ round	gola/Wula-Wula/vqwwAkAra_nqwya/vqww/sWUla/sAPa-suWarI/saccI/pUrNAfka/pUrNa
 save	sivAya/Xana_bacA_kara_raKa/surakRiwa_raKanA/surakRiwa_raKa/sahAyawA_kara/roka/rakRA_kara/kiPAyawa_barawa/jamA_kara/hiPAjawa_kara/CutakArA_xe/baca/bacA/bacA_le/bacA_xe
 saving	bacAva/bacawa
 several	viBinna/prakAra/nijI/nAnA_prakAra/kaI/Binna/bahuwa/alaga-alaga/alaga/aneka
-she	usane/vaha/mAxA/aOrawa/swrI
+she	usane/vaha/mAxA/aOrawa/swrI/yaha
 since	waba_se/se/kyofki/uparAnwa/cUfki
 some	kuCa/WodA_sA/viSiRta/koI/kai/bahuwa_baDiyA/pUrNawayA/lagaBaga/kuCa_loga
 somebody	koI/koI_vyakwi
@@ -179,7 +179,7 @@ with	ke_sAWa/se_yukwa/se/milAkara/meM/ke_xiSA_meM/ke_prawi/ke_mAmale_meM/ke_kAra
 within	ke_anwargawa/BIwara/mana_meM/mana_hI_mana/ke_anxara/anxara/meM/ke_BIwara/kI_sImA_ke_anxara
 without	bAhara/ke_binA/Codakara/binA/ke_KilAPa/na
 worth	mUlya/yogya/mUlya_kA/lAyaka/ke_barAbara_mola_kA/kA_mAlika/mahawva/kImawa
-you	Apa/wumheM/Apako/ApakA/Apake/Apane
+you	Apa/wumheM/Apako/ApakA/Apake/Apane/wU/wuma
 your	Apa/wumhArA/ApakA
 yours	Apa/wumhArA/ApakA
 yourself	Kuxa/Apaa/wuma_Kuxa/wuma/svayaM_apane_Apa_ko/Apa_svayaM/Apane_Apa_ko/Apa_Kuxa/wuma_hI

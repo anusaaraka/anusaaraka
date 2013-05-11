@@ -360,3 +360,4 @@ volcano_noun	jvAlAmuKI
 wavelength_noun	warafgaxErGya
 weightlessness_noun	BArahInawA
 weight_noun	BAra
+electrostatics	sWiravExyuwikI

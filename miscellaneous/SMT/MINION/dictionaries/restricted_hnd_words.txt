@@ -20,13 +20,13 @@ usakI	his/its/the
 usake	his/its/the
 unakA	them/their
 unake	them/their
-merA	i/me
+merA	i/me/my
 vaha	she/he/the/her
 yahAz	here
 yaha	the/that/this/it
-isakA	the/it/its/this
-isakI	the/it/its/this
-isake	the/it/its/this
+isakA	the/it/its/this/he/him/his
+isakI	the/it/its/this/he/him/his
+isake	the/it/its/this/he/him/his
 jinakA	which
 hama	we
 hamArA	our
