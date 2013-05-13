@@ -44,7 +44,7 @@
 			)
                         (bind ?mng (gdbm_lookup ?gdbm  ?str))
                         (if (neq ?mng "FALSE") then
-				(if (eq ?gdbm "phy_hnd_multi_word_dic.gdbm") then
+				(if (eq ?gdbm "hnd_phy_multi_word_dic.gdbm") then
 					(assert (ids-phy_cmp_mng-eng_mng $?grp_ids (string-to-field ?str) (explode$ ?mng)))
 				else
                         		(assert (ids-cmp_mng-eng_mng $?grp_ids (string-to-field ?str)  (explode$ ?mng)))
@@ -59,8 +59,8 @@
  (declare (salience 100))
  ?f<-(manual_hin_sen $?Hin_list)
   =>
- 	(mwe_lookup "hindi_multi_word.gdbm" $?Hin_list)
- 	(mwe_lookup "phy_hnd_multi_word_dic.gdbm" $?Hin_list)
+ 	(mwe_lookup "hnd_multi_word_dic.gdbm" $?Hin_list)
+ 	(mwe_lookup "hnd_phy_multi_word_dic.gdbm" $?Hin_list)
  )
  ;------------------------------------------------------------------------------------------------------
  (defrule chk_for_largest_match_with_phy

@@ -1,30 +1,34 @@
  echo "#define ABS_ANU_PATH \"$HOME_anu_test/Anu_databases/\"" > $HOME_anu_test/CLIPS/gdbm_lookup.h
  echo "#define ABS_PATH \"$HOME_anu_tmp/tmp/\"" > $HOME_anu_test/Anu_src/f_tid-rid.h
 
- echo "Creating phy_hnd_multi_word_dic.txt"
- cd $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries
- sh generate_hin_multi_word_dic.sh phy_eng_multi_word_dic.txt phy_hnd_multi_word_dic.txt
- echo "Creating hindi_multi_word_dic.txt"
- sh generate_hin_multi_word_dic.sh $HOME_anu_test/Anu_data/compound-matching/multi_word_expressions.txt hindi_multi_word.txt
+ cd $HOME_anu_test/Anu_src
+ gcc -o converting-dic-to-alignment_format.out converting-dic-to-alignment_format.c
+ gcc -o split-mngs.out split-mngs.c
+
+# echo "Generating phy_hnd_multi_word_dic.txt"
+# cd $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries
+# sh generate_hin_multi_word_dic.sh phy_eng_multi_word_dic.txt phy_hnd_multi_word_dic.txt
+# echo "Generating hindi_multi_word_dic.txt"
+# sh generate_hin_multi_word_dic.sh $HOME_anu_test/Anu_data/compound-matching/multi_word_expressions.txt hindi_multi_word.txt
 
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
- echo "Creating Canonical form dictionaries"
+ echo "Generating Canonical form dictionaries"
  sh get_txt_files.sh
  sh get_dictionary_in_canonical_form.sh
  flex canonical_form.lex
  gcc -o canonical_form.out lex.yy.c -lfl myeq.c
  $HOME_anu_test/Anu_src/comp.sh replacing_canonical
 
- echo "Creating Canonical form WSD rules"
+ echo "Generating Canonical form WSD rules"
  cd $HOME_anu_test/WSD/wsd_rules/
  ./compile.sh get_canonical_form_in_wsd $HOME_anu_test/Anu_data/canonical_form_dictionary/myeq.c
  sh get_canonical_form_wsd_rules.sh
 
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries
- echo "Generating phy_dictionary.gdbm"
+ echo "Creating phy_dictionary.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/phy_dictionary.gdbm < phy_dictionary_in_canonical_form.txt
- echo "Generating phy_eng_multi_word_dic.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/phy_eng_multi_word_dic.gdbm < phy_eng_multi_word_dic_in_canonical_form.txt
+# echo "Creating phy_eng_multi_word_dic.gdbm"
+# ./create-gdbm.pl $HOME_anu_test/Anu_databases/phy_eng_multi_word_dic.gdbm < phy_eng_multi_word_dic_in_canonical_form.txt
 
  echo "Creating paxasUwra.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/total-paxasUwra.gdbm < total-paxasUwra_in_canonical_form.txt 

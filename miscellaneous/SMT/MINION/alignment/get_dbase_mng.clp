@@ -160,12 +160,12 @@
  (declare (salience 60))
  ?f<-(English-list $?Eng_list)
   =>
-        (mwe_lookup "phy_eng_multi_word_dic.gdbm" 1 $?Eng_list)
+        (mwe_lookup "eng_phy_multi_word_dic.gdbm" 1 $?Eng_list)
         (mwe_lookup "acronyms-common_noun_compounds.gdbm" 1 $?Eng_list)
         (mwe_lookup "named_entities.gdbm" 1 $?Eng_list)
         (mwe_lookup "proper_noun-common_noun_compounds.gdbm" 1 $?Eng_list)
-        (mwe_lookup "multi_word_expressions.gdbm" 1 $?Eng_list)
-        (mwe_lookup "multi_word_expressions.gdbm" 2 $?Eng_list)
+        (mwe_lookup "eng_multi_word_dic.gdbm" 1 $?Eng_list)
+        (mwe_lookup "eng_multi_word_dic.gdbm" 2 $?Eng_list)
 	(mwe_lookup "provisional_multi_word_dic.gdbm" 1 $?Eng_list)
  )
  ;--------------------------------------------------------------------------------------------------------
