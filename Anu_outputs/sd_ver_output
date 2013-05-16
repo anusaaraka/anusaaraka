@@ -1061,7 +1061,7 @@ kuCa vixyAlaya pATyakramewara kriyA kalApa ko mahawva nahIM xewe hEM.
 
 Hindi meaning using Stanford parser 2.257
 The Inspector made an accidental inspection of the school. 
-PropN-inspector-PropN ne vixyAlaya kA Akasmika nirIkRaNa kiyA.
+iMspektara ne vixyAlaya kA Akasmika nirIkRaNa kiyA.
 
 Hindi meaning using Stanford parser 2.258
 The priest granted absolution for John's sins. 
@@ -1174,7 +1174,7 @@ kharif pExAvAra kI upaja isa qwu acCI nahIM WI.
 
 Hindi meaning using Stanford parser 2.285
 The Master said, if I did not go, how would you ever see? 
-PropN-master-PropN ne kahA, ki yaxi mEM nahIM gayA WA, wo Apa kaBI BI kEse xeKezge?
+mAlika ne kahA, ki yaxi mEM nahIM gayA WA, wo Apa kaBI BI kEse xeKezge?
 
 Hindi meaning using Stanford parser 2.286
 The letter was clearly the product of a twisted mind. 
@@ -1684,7 +1684,7 @@ vaha kAgaja para kAma karawI hE kyozki vaha safgaNaka nApasanxa karawI hE.
 
 Hindi meaning using Stanford parser 4.3
 I read a recent paper in the Journal of Medicine. 
-mEMne PropN-medicine-PropN ke PropN-journal-PropN meM eka hAla kA leKapawra paDA.
+mEMne PropN-medicine-PropN kI pawrikA meM eka hAla kA leKapawra paDA.
 
 Hindi meaning using Stanford parser 4.4
 I read about the train robbery in today's paper. 

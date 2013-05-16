@@ -105,6 +105,13 @@
         (retract ?f0)
  )
  ;------------------------------------------------------------------------------------------
+ (defrule RP_rule
+ ?f0<-(id-sd_cat        ?id     RP)
+ =>
+        (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  particle)" crlf)
+        (retract ?f0)
+ )
+ ;------------------------------------------------------------------------------------------
  (defrule JJ_rule
  ?f0<-(id-sd_cat        ?id     JJ|JJR|JJS)
  =>

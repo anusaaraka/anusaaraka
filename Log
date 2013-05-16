@@ -4475,7 +4475,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 74. Updated sd_verified (490), sd_ver_output and phy_align_verified_out
 75. Updated Log
 
- 13-05-13
+ 16-05-13
  ========
  1. Removed default_meaning_frm_oldwsd.txt from Anu_data and moved into miscellaneous/Programs/removed_files and following changes are done.
 		  i) Removed name in list-right and list_Anu_data
@@ -4509,7 +4509,9 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         4. run_sentence_stanford_multiple_sen.sh	8. get_multiple_sen.clp
 	9. prepare_minion_for_multiple_sen.bat
  9. Modified "add_not_to_lwg" rule in sd_lwg_rules.clp (added test condition)
-10. Modified "get_conj_group" rule in sd_pada.clp
+10. sd_pada.clp
+	Modified : get_conj_group and
+		   stranded_prep_rule (added WHNP in the list)
 11. manual_lwg.clp :
         Added    : modify_verb_group
         Modified : change_remaining_facts2 and change_remaining_facts
@@ -4568,6 +4570,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 31. Added compilation of above dictionary in dic_compile.sh
 32. WSD: 
         Added : both_times in time.clp, toss_in_a_row in row.clp 
+	Modified : ed_en_tam5 
 33. In sd_relation_rules.clp
         1. Modified rules: kriyA_sub_rule, dobj, rcmod, nsubj_rcmod and insert-which1
         2. Added : dobj_rcmod, nsubj_rcmod and rcmod_prep
@@ -4575,7 +4578,14 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 35. Modified sd_ver_output
 36. Renamed: generate_hin_multi_word_dic.sh to generate_eng_hin_multi_word_dic_for_alignment.sh
     Modified : above file to generate english and hindi multi word dictionaries for alignment purpose
-37. Updated the following files
+37. Modified "move_ADVP_after_v" rule in H_ordering_rules.clp (added RB in the list)
+38. hindi_meaning.clp
+	Added : modify_cat_for_particle and get_PropN_mng_with_prev_word_the rules
+39. Added "modify_order_for_phrases" rule in hindi_sent_reorder.clp
+40. Added "RP_rule" in sd_category.clp
+41. Loaded "Eng_id_order.dat" file for hindi_sent_reorder module in run_modules_std.bat
+42. Added "save-facts" to generate "Eng_sen_without_punct.dat" file for eng_hin_pos module in run_H_gen_sen.bat
+43. Updated the following files
         miscellaneous/SMT/MINION/dictionaries/phy_dictionary.txt
         miscellaneous/SMT/MINION/dictionaries/provisional_root_dic.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_eng_words.txt
@@ -4591,14 +4601,13 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_hnd
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_out
 	get_dbase_mng.clp, manual_word_grp_using_dic.clp and multi_word_expressions.clp
-38. Updated run_H_gen_sen.bat,  run_modules_link.bat and  run_modules_std.bat
-39. Updated changes_in_databases
-40. Updated alignment/README
-41. Updated get_group_mng.sh
-42. Updated mapping-symbols_manual.lex
-43. Updated processing_manual_sentences.sh
-44. Updated and modified dic_compile.sh
-45. Updated
+44. Updated run_modules_link.bat 
+45. Updated changes_in_databases
+46. Updated alignment/README
+47. Updated get_group_mng.sh
+48. Updated mapping-symbols_manual.lex
+49. Updated processing_manual_sentences.sh
+50. Updated
         phy_align_verified_eng (186)
         phy_align_partial_ver_eng (58)
-46. Updated Log.
+51. Updated Log.

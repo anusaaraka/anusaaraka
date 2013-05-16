@@ -73,7 +73,7 @@
 (declare (salience 4500))
 (id-TAM ?id ed_en)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat ?id adjective)
+(id-cat_coarse ?id adjective)
 =>
 (retract ?mng)
 (assert (id-E_tam-H_tam_mng ?id ed_en yA_huA))

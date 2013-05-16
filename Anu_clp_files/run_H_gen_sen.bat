@@ -39,6 +39,7 @@
  (assert (English_Sen))
  (open "position.dat" pos_fp "w")
  (run)
+ (save-facts "Eng_sen_without_punct.dat" local English_Sen)
  (close pos_fp)
  (clear)
  (exit)

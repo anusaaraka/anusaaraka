@@ -174,7 +174,7 @@
  ) 
  ;-----------------------------------------------------------------------------------------------------------------------
  ; Where did the car come from? But where will you get them from. 
- (defrule standard_prep_rule
+ (defrule stranded_prep_rule
  (declare (salience 4500))
  (head_id-prawiniXi_id-grp_ids ? ?pp ?prep_id)
  (prawiniXi_id-node-category ?pp ?PP PP)
@@ -185,7 +185,7 @@
  (head_id-prawiniXi_id-grp_ids ? ?sq $? ?vp $?)
  (prawiniXi_id-node-category ?sq ?SQ SQ|S)
  (head_id-prawiniXi_id-grp_ids ? ? $? ?wh ?sq)
- (prawiniXi_id-node-category ?wh ?WHADVP WHADVP)
+ (prawiniXi_id-node-category ?wh ?WHADVP WHADVP|WHNP)
  (head_id-prawiniXi_id-grp_ids ? ?wh ?wh_id)
  ?f1<-(pada_info (group_head_id ?wh)(preposition 0))
  ?f0<-(pada_info (group_head_id ?pp)(group_ids ?prep_id))

@@ -578,6 +578,17 @@
 	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?h_word "   WSD_root_mng "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (09-05-13)
+ ; We see leaves falling from trees and water flowing [down] a dam. 
+ (defrule modify_cat_for_particle
+ (declare (salience 5550))
+ ?f0<-(id-cat_coarse ?id particle)
+ (meaning_to_be_decided ?id)
+ =>
+	(retract ?f0)
+	(assert (id-cat_coarse ?id preposition))
+ )
+ ;--------------------------------------------------------------------------------------------------------------
  ;Rule re-modified by Roja (01-08-12). 
  ;Getting Hindi meaning from default dictionary when there is a same category 
  ;Assuming first meaning always has 'Defualt'.
@@ -600,6 +611,29 @@
         (retract ?mng)
         (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?h_mng"   Default)" crlf)
         (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?h_mng"   Default "?id")" crlf)
+	)
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+ ;The guard made Dipu halt, and helped the Princess off his back.
+ ;Added by Shirisha Manju (14-05-13) Suggested by Chaitanya Sir
+ (defrule get_PropN_mng_with_prev_word_the
+ (declare (salience 5450))
+ (id-cat_coarse ?id PropN)
+ ?mng<-(meaning_to_be_decided ?id)
+ (id-word =(- ?id 1) the)
+ (id-root ?id ?rt)
+ (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat (lowcase ?rt) "_noun")) "FALSE"))
+ =>
+	(bind ?a (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat (lowcase ?rt) "_noun")))
+        (if (neq ?a "FALSE") then
+                (if (neq (str-index "/" ?a) FALSE) then
+                        (bind ?h_mng (sub-string  1 (- (str-index "/" ?a) 1) ?a))
+                else
+                        (bind ?h_mng  ?a)
+                )
+        	(retract ?mng)
+        	(printout ?*hin_mng_file* "(id-HM-source   "?id"   "?h_mng"   Default)" crlf)
+        	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?h_mng"   Default "?id")" crlf)
 	)
  )
  ;--------------------------------------------------------------------------------------------------------------

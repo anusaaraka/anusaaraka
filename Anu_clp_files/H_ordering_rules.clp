@@ -148,11 +148,12 @@
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Have you ever seen Pacific?  Added by Sukhada
+;The Princess was very surprised to hear this. 
 (defrule move_ADVP_after_v
 (declare (salience 960))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot ?advp ?vp $?daut )
 (Node-Category  ?Mot  VP)
-(Node-Category  ?advp  ADVP)
+(Node-Category  ?advp  ADVP|RB)
 (not (Mother  ?advp))
 (not (Mother  ?Mot));Her heart beats fast. 
 =>

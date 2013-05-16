@@ -20,6 +20,7 @@
  (assert (id-kA_vib-gen-num-case))
  (assert (id-cat-mng-gen-num-per-case-vib ))
  (assert (conj_head-left_head-right_head))
+ (assert (expr))
  )
  ;============================================ Stanford Parser Rules ===================================================
 
@@ -450,6 +451,27 @@
  =>
         (retract ?f0 ?f1)
         (assert (hindi_id_order ?id $?pre $?post))
+ )
+ ;------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (13-05-13) Suggested by Chaitanya Sir
+ ;The name electricity is coined from the Greek word elektron meaning amber.
+ (defrule modify_order_for_phrases
+ (expr  $?s_m1 ?is ?coined ?from $?s_m2 ?mng $?s_m3)
+ (id-word ?is is)
+ (id-word ?coined coined)
+ (id-word ?from from)
+ (id-word ?mng meaning)
+ (id-HM-source   ?from  ?vib  ?)
+ ?f0<-(hindi_id_order $?order)
+ (not (modified_order))
+ =>
+        (retract ?f0)
+	(if (eq ?vib se) then
+		(assert (hindi_id_order $?s_m1 Sabxa $?s_m2 vyuwpanna huA hE jisakA arWa $?s_m3 hEM))
+	else
+        	(assert (hindi_id_order $?s_m1 Sabxa $?s_m2 se yuwpanna huA hE jisakA arWa $?s_m3 hEM))
+	)
+	(assert (modified_order))
  )
  ;------------------------------------------------------------------------------------------------------------------
  (defrule remove_ordered_ids

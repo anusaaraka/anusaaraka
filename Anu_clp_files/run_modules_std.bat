@@ -506,6 +506,7 @@
  (load-facts "ordered_constituents.dat")
  (load-facts "Node_category.dat")
  (load-facts "hindi_meanings_tmp1.dat")
+ (load-facts "Eng_id_order.dat")
  (open "hindi_id_reorder_debug.dat" h_id_reorder_fp "w")
  (run)
  (save-facts "hindi_id_order.dat" local hindi_id_order)
