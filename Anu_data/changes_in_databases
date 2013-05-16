@@ -586,6 +586,9 @@ Modified:
 	<e lm="person, people"><i>p</i><par n="p/erson__n"/></e>  (by Roja 02-04-13)
 			as
 	<e lm="person"><i>p</i><par n="p/erson__n"/></e>
+	<e lm="awaken"><i>awaken</i><par n="accept__vblex"/></e>
+			as
+	<e lm="awake"><i>aw</i><par n="w/ake__vblex"/></e>
 
  Added new files:
  ===============
