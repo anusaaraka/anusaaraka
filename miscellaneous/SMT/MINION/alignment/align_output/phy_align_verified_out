@@ -524,6 +524,7 @@ XyAna_xIjie_ki yaha wrikoNa PropN-oab-PropN kA jyAmiwIya kenxra nahIM hE.
 Hindi meaning using Stanford parser 2.117
 An extended body, in the first place, is a system of particles. 
 praWamawayA, viswqwa piNda, kaNoM kA nikAya hE.
+Multiple adjective senses are available for extended. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.118
 The refractive index of air increases with its density. 
@@ -717,7 +718,7 @@ Apa ina prekRaNa se kyA waya_kara sakawe hEM?
 
 Hindi meaning using Stanford parser 2.161
 Therefore the charges were named as positive and negative by the American scientist Benjamin Franklin. 
-isalie mUlya amarIkI vEjFAnika PropN-benjamin-PropN PropN-franklin-PropN ke xvArA pahale kI waraha sakArAwmaka Ora qNAwmaka nAmakaraNa_kara.
+isalie mUlya amarIkI vEjFAnika PropN-benjamin-PropN PropN-franklin-PropN ke xvArA pahale kI waraha sakArAwmaka Ora qNAwmaka nAmakaraNa kie gaye We.
 
 Hindi meaning using Stanford parser 2.162
 In olden days, electricity and magnetism were treated as separate subjects. 

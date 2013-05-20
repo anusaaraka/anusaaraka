@@ -1,17 +1,9 @@
 export LC_ALL=C
 cd $HOME_anu_test/debugging/provisional_Anu_databases/
 
- cd $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries
- echo "Creating phy_hnd_multi_word_dic.txt"
- sh generate_hin_multi_word_dic.sh phy_eng_multi_word_dic.txt phy_hnd_multi_word_dic.txt
- echo "Creating hindi_multi_word_dic.txt"
- sh generate_hin_multi_word_dic.sh $HOME_anu_test/Anu_data/compound-matching/multi_word_expressions.txt hindi_multi_word.txt
-
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries
  echo "Creating phy_dictionary.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/phy_dictionary.gdbm < phy_dictionary_in_canonical_form.txt
- echo "Creating phy_eng_multi_word_dic.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/phy_eng_multi_word_dic.gdbm < phy_eng_multi_word_dic_in_canonical_form.txt
 
  echo "Creating paxasUwra.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/total-paxasUwra.gdbm < total-paxasUwra_in_canonical_form.txt 
