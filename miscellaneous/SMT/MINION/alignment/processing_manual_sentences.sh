@@ -10,9 +10,7 @@
  #If input is from other source then comment the below line and modify the shell accordingly.
  $HOME_anu_test/Anu_data/canonical_form_dictionary/non_canonical_form.out   < $2  >  $MYPATH/$2_in_non_canonical_form
  cd $MYPATH
- $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form.out < $2_in_non_canonical_form  > $2_in_canonical_form_tmp
- $HOME_anu_test/Anu_data/canonical_form_dictionary/replacing_canonical.out < $2_in_canonical_form_tmp > $2_in_canonical_form
- $HOME_anu_test/miscellaneous/SMT/MINION/alignment/mapping-symbols_manual.out  Symbols_man.txt_tmp < $2_in_canonical_form > one_sen_per_line_manual_hindi_sen_tmp.txt
+ $HOME_anu_test/miscellaneous/SMT/MINION/alignment/mapping-symbols_manual.out  Symbols_man.txt_tmp < $2_in_non_canonical_form > one_sen_per_line_manual_hindi_sen_tmp.txt
  $HOME_anu_test/Anu_src/identify-nonascii-chars.out one_sen_per_line_manual_hindi_sen_tmp.txt one_sen_per_line_manual_hindi_sen_tmp2.txt
  sed 's/nonascii/@nonascii/g' one_sen_per_line_manual_hindi_sen_tmp2.txt > one_sen_per_line_manual_hindi_sen_tmp2.txt1
  wx_utf8 < one_sen_per_line_manual_hindi_sen_tmp2.txt1 > one_sen_per_line_manual_hindi_sen_tmp3.txt
@@ -51,6 +49,8 @@
  rm tmp1 tmp2 tmp3 tmp4 tmp1_wx tmp2_wx tmp3_wx tmp4_wx 
 
  utf8_wx one_sen_per_line_manual_hindi_sen_tmp4.txt > one_sen_per_line_manual_hindi_sen_tmp4_wx.txt
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form.out < one_sen_per_line_manual_hindi_sen_tmp4_wx.txt  > one_sen_per_line_manual_hindi_sen_tmp4_wx_in_canonical_form.txt_tmp
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/replacing_canonical.out < one_sen_per_line_manual_hindi_sen_tmp4_wx_in_canonical_form.txt_tmp > one_sen_per_line_manual_hindi_sen_tmp4_wx_in_canonical_form.txt
 
   #mapping symbols
  sort -u Symbols_man.txt_tmp > Symbols_man.txt
@@ -68,7 +68,8 @@
  fi
  
  echo "Tokenizing manual sentence"
-  sh $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/run_tokenizer_fr.sh one_sen_per_line_manual_hindi_sen_tmp4_wx.txt > one_sen_per_line_manual_hindi_sen_tokenized.txt  2>/dev/null
+  sh $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/run_tokenizer_fr.sh one_sen_per_line_manual_hindi_sen_tmp4_wx_in_canonical_form.txt > one_sen_per_line_manual_hindi_sen_tokenized.txt  2>/dev/null
+
  cd $MYPATH1
   python add-suf-into-chunks.py $MYPATH/one_sen_per_line_manual_hindi_sen_tokenized.txt $MYPATH/one_sen_per_line_manual_hindi_sen_tmp5.txt > $MYPATH/shallow_parser_output_tmp.txt
   
@@ -81,5 +82,5 @@
   
 
 # echo "" >> $MYPATH/one_sen_per_line_manual_hindi_sen_tmp4_wx.txt 
- sed 's/,/ PUNCT-Comma /g' $MYPATH/one_sen_per_line_manual_hindi_sen_tmp4_wx.txt | sed 's/ABBRENGBEFORE/@/g' | sed 's/ABBRENGAFTER//g' |sed 's/,/ PUNCT-Comma /g'| sed 's/?/ PUNCT-QuestionMark /g' | sed 's/``/ PUNCT-DoubleQuote /g' | sed "s/''/ PUNCT-DoubleQuote /g" | sed 's/;/ PUNCT-Semicolon  /g' | sed 's/:/ PUNCT-Colon /g' |  sed "s/[\'\`\']/ PUNCT-SingleQuote /g" | sed 's/"/ PUNCT-DoubleQuote /g' | sed 's/ punctOPENPAREN/ PUNCT-OpenParen/g' | sed 's/ punctCLOSEPAREN/ PUNCT-ClosedParen/g' | sed 's/!/ PUNCT-Exclamation /g' | sed 's/{/PUNCT-LeftCurlyBrace/g' | sed 's/}/PUNCT-RightCurlyBrace/g' | sed 's/ punctLeftSquareBracket/ PUNCT-LeftSquareBracket/g' | sed 's/ punctRightSquareBracket/ PUNCT-RightSquareBracket/g' | sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/\([^0-9]\)\.)\n/\1 PUNCT-Dot)\n/g;p}' |sh $MYPATH/Symbols_man.sh |sed 's/SYMBOL/@SYMBOL/g' |sed 's/PUNCT-/ @PUNCT-/g'  > $MYPATH/one_sen_per_line_manual_hindi_sen.txt
+ sed 's/,/ PUNCT-Comma /g' $MYPATH/one_sen_per_line_manual_hindi_sen_tmp4_wx_in_canonical_form.txt | sed 's/ABBRENGBEFORE/@/g' | sed 's/ABBRENGAFTER//g' |sed 's/,/ PUNCT-Comma /g'| sed 's/?/ PUNCT-QuestionMark /g' | sed 's/``/ PUNCT-DoubleQuote /g' | sed "s/''/ PUNCT-DoubleQuote /g" | sed 's/;/ PUNCT-Semicolon  /g' | sed 's/:/ PUNCT-Colon /g' |  sed "s/[\'\`\']/ PUNCT-SingleQuote /g" | sed 's/"/ PUNCT-DoubleQuote /g' | sed 's/ punctOPENPAREN/ PUNCT-OpenParen/g' | sed 's/ punctCLOSEPAREN/ PUNCT-ClosedParen/g' | sed 's/!/ PUNCT-Exclamation /g' | sed 's/{/PUNCT-LeftCurlyBrace/g' | sed 's/}/PUNCT-RightCurlyBrace/g' | sed 's/ punctLeftSquareBracket/ PUNCT-LeftSquareBracket/g' | sed 's/ punctRightSquareBracket/ PUNCT-RightSquareBracket/g' | sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/\([^0-9]\)\.)\n/\1 PUNCT-Dot)\n/g;p}' |sh $MYPATH/Symbols_man.sh |sed 's/SYMBOL/@SYMBOL/g' |sed 's/PUNCT-/ @PUNCT-/g'  > $MYPATH/one_sen_per_line_manual_hindi_sen.txt
 

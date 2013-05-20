@@ -20,12 +20,12 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id nAmakaraNa_kara))
-(assert (id-H_vib_mng ?id ed/en))
+(assert (id-wsd_root_mng ?id nAmakaraNa_kara))
+;(assert (id-H_vib_mng ?id ed_en)) ;Suggested by Sukhada(20-05-13)
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  name.clp  	name1   "  ?id "  nAmakaraNa_kara )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  name.clp       name1   "  ?id " ed/en )" crlf))
-)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  name.clp  	name1   "  ?id "  nAmakaraNa_kara )" crlf)
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  name.clp       name1   "  ?id " ed_en )" crlf))
+))
 
 (defrule name2
 (declare (salience 4800))

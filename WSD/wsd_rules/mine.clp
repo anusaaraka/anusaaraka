@@ -21,10 +21,10 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id mEM))
+(assert (id-wsd_root_mng ?id mEM))
 (assert (id-H_vib_mng ?id kA_vAlA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  mine.clp  	mine1   "  ?id "  mEM )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  mine.clp  	mine1   "  ?id "  mEM )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  mine.clp       mine1   "  ?id " kA_vAlA )" crlf))
 )
 
@@ -52,10 +52,10 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id mEM))
+(assert (id-wsd_root_mng ?id mEM))
 (assert (id-H_vib_mng ?id kA_vAlA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  mine.clp  	mine3   "  ?id "  mEM )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  mine.clp  	mine3   "  ?id "  mEM )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  mine.clp       mine3   "  ?id " kA_vAlA )" crlf))
 )
 
@@ -69,10 +69,10 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id mEM))
+(assert (id-wsd_root_mng ?id mEM))
 (assert (id-H_vib_mng ?id kA_vAlA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  mine.clp  	mine4   "  ?id "  mEM )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  mine.clp  	mine4   "  ?id "  mEM )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  mine.clp       mine4   "  ?id " kA_vAlA )" crlf))
 )
 
@@ -86,10 +86,10 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id mEM))
+(assert (id-wsd_root_mng ?id mEM))
 (assert (id-H_vib_mng ?id kA_vAlA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  mine.clp  	mine5   "  ?id "  mEM )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  mine.clp  	mine5   "  ?id "  mEM )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  mine.clp       mine5   "  ?id " kA_vAlA )" crlf))
 )
 
@@ -103,10 +103,10 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id mEM))
+(assert (id-wsd_root_mng ?id mEM))
 (assert (id-H_vib_mng ?id kA_vAlA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  mine.clp  	mine6   "  ?id "  mEM )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  mine.clp  	mine6   "  ?id "  mEM )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  mine.clp       mine6   "  ?id " kA_vAlA )" crlf))
 )
 
@@ -119,10 +119,10 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id mEM))
+(assert (id-wsd_root_mng ?id mEM))
 (assert (id-H_vib_mng ?id kA_vAlA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  mine.clp  	mine7   "  ?id "  mEM )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  mine.clp  	mine7   "  ?id "  mEM )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  mine.clp       mine7   "  ?id " kA_vAlA )" crlf))
 )
 
@@ -135,10 +135,10 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id mEM))
+(assert (id-wsd_root_mng ?id mEM))
 (assert (id-H_vib_mng ?id kA_vAlA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  mine.clp  	mine8   "  ?id "  mEM )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  mine.clp  	mine8   "  ?id "  mEM )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  mine.clp       mine8   "  ?id " kA_vAlA )" crlf))
 )
 
@@ -151,10 +151,10 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id mEM))
+(assert (id-wsd_root_mng ?id mEM))
 (assert (id-H_vib_mng ?id kA_vAlA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  mine.clp  	mine9   "  ?id "  mEM )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  mine.clp  	mine9   "  ?id "  mEM )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  mine.clp       mine9   "  ?id " kA_vAlA )" crlf))
 )
 
@@ -167,10 +167,10 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id mEM))
+(assert (id-wsd_root_mng ?id mEM))
 (assert (id-H_vib_mng ?id kA_vAlA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  mine.clp  	mine10   "  ?id "  mEM )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  mine.clp  	mine10   "  ?id "  mEM )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  mine.clp       mine10   "  ?id " kA_vAlA )" crlf))
 )
 
@@ -224,10 +224,10 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id mEM))
+(assert (id-wsd_root_mng ?id mEM))
 (assert (id-H_vib_mng ?id kA_vAlA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  mine.clp  	mine14   "  ?id "  mEM )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  mine.clp  	mine14   "  ?id "  mEM )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  mine.clp       mine14   "  ?id " kA_vAlA )" crlf))
 )
 

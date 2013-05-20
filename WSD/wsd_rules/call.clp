@@ -514,7 +514,7 @@
 ;The boy who you called yesterday has arrived 
 ; modified by maha laxmi
 ; Modified word mng as root mng 
-; Removed (id-H_vib_mng ?id ed/en)
+; Removed (id-H_vib_mng ?id ed_en)
 
 (defrule call35
 (declare (salience 1500))

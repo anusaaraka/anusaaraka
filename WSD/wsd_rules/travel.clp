@@ -7,10 +7,10 @@
 (id-cat_coarse ?id adjective)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id GUmanA))
+(assert (id-wsd_root_mng ?id GUmanA))
 (assert (id-H_vib_mng ?id en))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  travel.clp  	travel0   "  ?id "  GUmanA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  travel.clp  	travel0   "  ?id "  GUmanA )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  travel.clp     travel0   "  ?id " en )" crlf))
 )
 

@@ -43,12 +43,12 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id Kula))
-(assert (id-H_vib_mng ?id ing))
+(assert (id-wsd_root_mng ?id Kula))
+;(assert (id-H_vib_mng ?id ing)) ;Commented by Sukhada(20-05-13)
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  open.clp  	open2   "  ?id "  Kula )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  open.clp       open2   "  ?id " ing )" crlf))
-)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  open.clp  	open2   "  ?id "  Kula )" crlf)
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  open.clp       open2   "  ?id " ing )" crlf))
+))
 
 (defrule open3
 (declare (salience 4700))
@@ -59,12 +59,12 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id Kola))
-(assert (id-H_vib_mng ?id ing))
+(assert (id-wsd_root_mng ?id Kola))
+;(assert (id-H_vib_mng ?id ing)) ;Commented by Sukhada(20-05-13)
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  open.clp  	open3   "  ?id "  Kola )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  open.clp       open3   "  ?id " ing )" crlf))
-)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  open.clp  	open3   "  ?id "  Kola )" crlf)
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  open.clp       open3   "  ?id " ing )" crlf))
+))
 
 ;Please unfold this map.
 ;kqpyA isa mAnaciwra ko Kola xeM

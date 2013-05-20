@@ -7,10 +7,10 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id Waka_kara_cUra_ho))
+(assert (id-wsd_root_mng ?id Waka_kara_cUra_ho))
 (assert (id-H_vib_mng ?id inf.))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  knacker.clp  	knacker0   "  ?id "  Waka_kara_cUra_ho )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  knacker.clp  	knacker0   "  ?id "  Waka_kara_cUra_ho )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  knacker.clp    knacker0   "  ?id " inf. )" crlf))
 )
 

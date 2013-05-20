@@ -24,12 +24,12 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id XUmrapAna_kara))
-(assert (id-H_vib_mng ?id ing))
+(assert (id-wsd_root_mng ?id XUmrapAna_kara))
+;(assert (id-H_vib_mng ?id ing)) ;Commented by Sukhada(20-05-13)
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  smoke.clp  	smoke1   "  ?id "  XUmrapAna_kara )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  smoke.clp      smoke1   "  ?id " ing )" crlf))
-)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  smoke.clp  	smoke1   "  ?id "  XUmrapAna_kara )" crlf)
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  smoke.clp      smoke1   "  ?id " ing )" crlf))
+))
 
 (defrule smoke2
 (declare (salience 4800))

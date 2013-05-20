@@ -131,10 +131,10 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id kyA_hE))
+(assert (id-wsd_root_mng ?id kyA_hE))
 (assert (id-H_vib_mng ?id hE))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  be.clp  	be6   "  ?id "  kyA_hE )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  be.clp  	be6   "  ?id "  kyA_hE )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  be.clp         be6   "  ?id " hE )" crlf))
 )
 
@@ -147,10 +147,10 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id kyA_hE))
+(assert (id-wsd_root_mng ?id kyA_hE))
 (assert (id-H_vib_mng ?id hE))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  be.clp  	be7   "  ?id "  kyA_hE )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  be.clp  	be7   "  ?id "  kyA_hE )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  be.clp         be7   "  ?id " hE )" crlf))
 )
 
@@ -163,10 +163,10 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id kyA_WA))
+(assert (id-wsd_root_mng ?id kyA_WA))
 (assert (id-H_vib_mng ?id WA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  be.clp  	be8   "  ?id "  kyA_WA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  be.clp  	be8   "  ?id "  kyA_WA )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  be.clp         be8   "  ?id "  WA )" crlf))
 )
 
@@ -179,10 +179,10 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id kyA_WA))
+(assert (id-wsd_root_mng ?id kyA_WA))
 (assert (id-H_vib_mng ?id WA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  be.clp  	be9   "  ?id "  kyA_WA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  be.clp  	be9   "  ?id "  kyA_WA )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  be.clp         be9   "  ?id " WA )" crlf))
 )
 
@@ -195,10 +195,10 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id kyA_hE))
+(assert (id-wsd_root_mng ?id kyA_hE))
 (assert (id-H_vib_mng ?id hE))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  be.clp  	be10   "  ?id "  kyA_hE )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  be.clp  	be10   "  ?id "  kyA_hE )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  be.clp         be10   "  ?id " hE )" crlf))
 )
 
@@ -223,10 +223,10 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id hE))
+(assert (id-wsd_root_mng ?id hE))
 (assert (id-H_vib_mng ?id hE))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  be.clp  	be12   "  ?id "  hE )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  be.clp  	be12   "  ?id "  hE )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  be.clp         be12   "  ?id " hE )"crlf))
 )
 
@@ -238,10 +238,10 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id hE))
+(assert (id-wsd_root_mng ?id hE))
 (assert (id-H_vib_mng ?id hE))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  be.clp  	be13   "  ?id "  hE )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  be.clp  	be13   "  ?id "  hE )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  be.clp         be13   "  ?id " hE )" crlf))
 )
 
@@ -255,7 +255,7 @@
 ;(id-cat_coarse ?id verb)
 ;=>
 ;(retract ?mng)
-;(assert (id-wsd_word_mng ?id WA))
+;(assert (id-wsd_root_mng ?id WA))
 ;(assert (id-H_vib_mng ?id WA))
 ;)
 
@@ -267,10 +267,10 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id WA))
+(assert (id-wsd_root_mng ?id WA))
 (assert (id-H_vib_mng ?id WA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  be.clp  	be14   "  ?id "  WA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  be.clp  	be14   "  ?id "  WA )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  be.clp         be14   "  ?id "  WA )" crlf))
 )
 
@@ -282,10 +282,10 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id hE))
+(assert (id-wsd_root_mng ?id hE))
 (assert (id-H_vib_mng ?id hE))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  be.clp  	be15   "  ?id "  hE )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  be.clp  	be15   "  ?id "  hE )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  be.clp         be15   "  ?id "  hE )" crlf))
 )
 
@@ -356,10 +356,10 @@
 (id-word ?id were)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id WA))
+(assert (id-wsd_root_mng ?id WA))
 (assert (id-H_vib_mng ?id WA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  be.clp  	be20   "  ?id "  WA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  be.clp  	be20   "  ?id "  WA )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  be.clp         be20   "  ?id "  WA )" crlf))
 )
 

@@ -33,12 +33,12 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id CipA))
-(assert (id-H_vib_mng ?id ed/en))
+(assert (id-wsd_root_mng ?id CipA))
+;(assert (id-H_vib_mng ?id ed_en)) ;Suggested by Sukhada(20-05-13)
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  mask.clp  	mask2   "  ?id "  CipA )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  mask.clp       mask2   "  ?id " ed/en )" crlf))
-)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  mask.clp  	mask2   "  ?id "  CipA )" crlf)
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  mask.clp       mask2   "  ?id " ed_en )" crlf))
+))
 
 ;
 (defrule mask3

@@ -7,12 +7,12 @@
 (id-cat_coarse ?id verb )
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id parivarwiwa_ho))
-(assert (id-H_vib_mng ?id ed/en))
+(assert (id-wsd_root_mng ?id parivarwiwa_ho))
+;(assert (id-H_vib_mng ?id ed_en)) ;Suggested by Sukhada(20-05-13)
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  vary.clp  	vary0   "  ?id "  parivarwiwa_ho )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  vary.clp       vary0   "  ?id " ed/en )" crlf))
-)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  vary.clp  	vary0   "  ?id "  parivarwiwa_ho )" crlf)
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  vary.clp       vary0   "  ?id " ed_en )" crlf))
+))
 
 (defrule vary1
 (declare (salience 4900))
@@ -23,11 +23,13 @@
 (kriyA-object ?id ?)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id parivarwiwa_kara))
-(assert (id-H_vib_mng ?id ed/en))
+(assert (id-wsd_root_mng ?id parivarwiwa_kara))
+;(assert (id-H_vib_mng ?id ed_en))
+(assert (id-H_vib_mng ?id yA)) ;Suggested by Sukhada(20-05-13)
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  vary.clp  	vary1   "  ?id "  parivarwiwa_kara )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  vary.clp       vary1   "  ?id " ed/en )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  vary.clp  	vary1   "  ?id "  parivarwiwa_kara )" crlf)
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  vary.clp       vary1   "  ?id " ed_en )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  vary.clp       vary1   "  ?id " yA )" crlf))
 )
 
 (defrule vary2

@@ -7,12 +7,12 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id XyAna_vicaliwa_kara))
-(assert (id-H_vib_mng ?id ed/en))
+(assert (id-wsd_root_mng ?id XyAna_vicaliwa_kara))
+;(assert (id-H_vib_mng ?id ed_en)) ;Suggested by Sukhada(20-05-13)
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  distract.clp  	distract0   "  ?id "  XyAna_vicaliwa_kara )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  distract.clp   distract0   "  ?id " ed/en )" crlf))
-)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  distract.clp  	distract0   "  ?id "  XyAna_vicaliwa_kara )" crlf)
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  distract.clp   distract0   "  ?id " ed_en )" crlf))
+))
 
 (defrule distract1
 (declare (salience 4900))

@@ -31,11 +31,13 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id pAra_kara))
-(assert (id-H_vib_mng ?id ing))
+;(assert (id-H_vib_mng ?id ing))
+(assert (make_verbal_noun ?id)) ;Suggested by Sukhada(20-05-13)
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  cross.clp  	cross1   "  ?id "  pAra_kara )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  cross.clp      cross1   "  ?id " ing )" crlf))
-)
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  cross.clp      cross1   "  ?id " ing )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  cross.clp      cross1   " ?id "  )" crlf)
+))
 
 (defrule cross2
 (declare (salience 4800))

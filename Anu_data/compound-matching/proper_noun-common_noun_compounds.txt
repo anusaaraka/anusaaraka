@@ -344,3 +344,5 @@ Zimbabwean_dollar	jZimbAbave_kA_doYlara#jZimbAbave_kA_doYlara#noun#2#RM
 native_American	amarIkI_mUla_nivAsI#amarIkI_mUla_nivAsI#noun#2#RM
 native_Australian	oYstreliyAyI_mUlanivAsI#oYstreliyAyI_mUlanivAsI#noun#2#RM
 Wall_Street	voYl_strIta#voYl_strIta#noun#2#WM
+Thomas_Harris	Thomas_Harris#Thomas_Harris#noun#1#RM	
+

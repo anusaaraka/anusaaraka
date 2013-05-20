@@ -505,10 +505,10 @@
 (id-cat_coarse ?id verb )
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id gira))
+(assert (id-wsd_root_mng ?id gira))
 (assert (id-H_vib_mng ?id yA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  fall.clp  	fall24   "  ?id "  gira )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  fall.clp  	fall24   "  ?id "  gira )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  fall.clp       fall71   "  ?id "  yA )" crlf))
 )
 
@@ -519,10 +519,10 @@
 (id-word ?id fell )
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id gira))
+(assert (id-wsd_root_mng ?id gira))
 (assert (id-H_vib_mng ?id yA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  fall.clp  	fall25   "  ?id "  gira )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  fall.clp  	fall25   "  ?id "  gira )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  fall.clp       fall25   "  ?id " yA )" crlf))
 )
 

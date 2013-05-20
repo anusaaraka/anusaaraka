@@ -557,6 +557,7 @@ Modified :
 	<e lm="rod"><i>rod</i><par n="accept__vblex"/></e>		  (	"	"	)
 	<e lm="encapsulate"><i>encapsulat</i><par n="liv/e__vblex"/></e>  (	"	02-05-13)
 	<e lm="civilisation"><i>civilisation</i><par n="house__n"/></e>	  (	"	"	)
+	<e lm="awake"><i>aw</i><par n="w/ake__vblex"/></e>		  (     "       17-05-13)
 
 Modified:
         <e lm="belonging"><i>belonging</i><par n="house__n"/></e>   as    <e lm="belongings"><i>belongings</i><par n="personnel__n"/></e>   (Suggested by Meena ji 12-05-11)
@@ -586,9 +587,6 @@ Modified:
 	<e lm="person, people"><i>p</i><par n="p/erson__n"/></e>  (by Roja 02-04-13)
 			as
 	<e lm="person"><i>p</i><par n="p/erson__n"/></e>
-	<e lm="awaken"><i>awaken</i><par n="accept__vblex"/></e>
-			as
-	<e lm="awake"><i>aw</i><par n="w/ake__vblex"/></e>
 
  Added new files:
  ===============
@@ -778,7 +776,27 @@ Modified:
 	59. save	    Xana_bacA_kara_raKa/surakRiwa_raKanAa/surakRiwa_raKa/sahAyawA_kara/roka/rakRA_kara/kiPAyawa_barawa/jamA_kara/hiPAjawa_kara/CutakArA_xe/bac/bacA/bacA_le[xenA]   
 					as
 			    Xana_bacA_kara_raKa/surakRiwa_raKanA/surakRiwa_raKa/sahAyawA_kara/roka/rakRA_kara/kiPAyawa_barawa/jamA_kara/hiPAjawa_kara/CutakArA_xe/baca/bacA/bacA_le_bacA_xe			(Suggested by Sukhada 4-05-13)
-
+	60. broken_adjective	Ubada-KAbada/tUtA-PUtA/tUtA_huA/nirASa/na_raKA_gayA/KaNdiwa/JUTA/ArWika_rUpa_se_naRta
+					as
+				tUtA_huA/Ubada-KAbada/tUtA-PUtA/nirASa/na_raKA_gayA/KaNdiwa/JUTA/ArWika_rUpa_se_naRta
+	61. marble_noun	safgamaramara/sagaMmaramara/kaFcA
+					as
+			safgamaramara/kaFcA
+	62. marbled_adjective	safgamaramara_kI_waraha
+					as
+				safgamaramara_se_banA_huA
+	63. marbles's_UNDEFINED	kaFce`
+					as
+				kaFce
+	64. recycled_adjective	punaH_cakriwa
+					as
+				punarAvqwwa/punaH_cakriwa
+	65. striking_adjective	XyAna_AkarRiwa_karanevAlI/awyaXika_AkarRaka/AScaryajanaka/asAXAraNa
+					as
+				XyAna_AkarRiwa_karanevAlA/awyaXika_AkarRaka/AScaryajanaka/asAXAraNa
+	66. extended_adjective	lambA
+					as
+				viswqwa/lambA  	
 
 Removed::
 -------
@@ -787,6 +805,8 @@ Removed::
 	yellow-card     noun::^	(Suggested by Rajini(29-02-12))
         the_UNDIFINED   -->   English	(Maha Laxmi 14-08-12)
 	fix_verb	sWapiwa_kara  (Suggested by Chaitanya Sir 23-02-13)
+	recycled_UNDEFINED	punarAvqwwa (Suggested by Sukhada (20-05-13)
+
 
 Added:
 ------

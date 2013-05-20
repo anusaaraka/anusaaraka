@@ -14,28 +14,29 @@
  (assert (current_id-group_members))
  )
  ;----------------------------------------COMMON RULES FOR ALL PARSERS------------------------------------------------------
- 
- ; Removed root_consistency_check.clp file and added its rule here.
- ; Rule re-modified and added here by Roja(07-04-11)
- ; He saw the "BROKEN" window. BROKEN windows need to be replaced
- ; if category is adjective and it also has verb with suf en/ing from morph then take the morph (root,suf,num) of verb
- ; He handed his son a beautiful wrapped gift box. (here morph does'nt have analysis with category adjective (word--wrapped))
- ; HERE IN THIS RULE WHOLE MORPH INFORMATION OF THE WORD GETS CHANGED.
- (defrule morph_root
- (declare (salience 200))
- (parser_id-cat_coarse  ?pid adjective)
- (parserid-wordid  ?pid ?wid)
- ?f0<-(morph_analysis_to_be_choosen ?wid)
- (id-original_word ?wid  ?word&~left); Some people write with their left hand .
-;(word-morph (original_word  ?word)(root ?root1)(category adjective)(suffix ?suf1)(number ?num1));Commented by Mahalaxmi(6-10-09) suggested by Chaitanya sir.
- (word-morph (original_word  ?word)(root ?root)(category  verb)(suffix ?suf)(number ?num))
- (test (or (eq ?suf en)(eq ?suf ing))) 
- =>
-   (retract ?f0)
-   ;(printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?root" adjective "?suf1"  "?num1 ")" crlf)
-   (printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?root" adjective "?suf"  "?num ")" crlf)
-   (printout ?*root_fp* "(parser_id-root " ?pid " " ?root ")" crlf)
- )
+; Handling this rule in wsd_meaning.clp
+; Commented by Roja (03-05-13)
+; ; Removed root_consistency_check.clp file and added its rule here.
+; ; Rule re-modified and added here by Roja(07-04-11)
+; ; He saw the "BROKEN" window. BROKEN windows need to be replaced
+; ; if category is adjective and it also has verb with suf en/ing from morph then take the morph (root,suf,num) of verb
+; ; He handed his son a beautiful wrapped gift box. (here morph does'nt have analysis with category adjective (word--wrapped))
+; ; HERE IN THIS RULE WHOLE MORPH INFORMATION OF THE WORD GETS CHANGED.
+; (defrule morph_root
+; (declare (salience 200))
+; (parser_id-cat_coarse  ?pid adjective)
+; (parserid-wordid  ?pid ?wid)
+; ?f0<-(morph_analysis_to_be_choosen ?wid)
+; (id-original_word ?wid  ?word&~left); Some people write with their left hand .
+;;(word-morph (original_word  ?word)(root ?root1)(category adjective)(suffix ?suf1)(number ?num1));Commented by Mahalaxmi(6-10-09) suggested by Chaitanya sir.
+; (word-morph (original_word  ?word)(root ?root)(category  verb)(suffix ?suf)(number ?num))
+; (test (or (eq ?suf en)(eq ?suf ing))) 
+; =>
+;   (retract ?f0)
+;   ;(printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?root" adjective "?suf1"  "?num1 ")" crlf)
+;   (printout ?*pre_morph_fp* "(parser_id-root-category-suffix-number  "?pid"  "?root" adjective "?suf"  "?num ")" crlf)
+;   (printout ?*root_fp* "(parser_id-root " ?pid " " ?root ")" crlf)
+; )
  ;-----------------------------------------------------------------------------------------------------------------------
  (defrule same_cat
  (declare (salience 150))

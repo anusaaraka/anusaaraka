@@ -96,6 +96,8 @@
  sed 's/&/\&amp;/g' hindi_sentence_SMT_tmp.dat|sed -e s/\'/\\\'/g |sed 's/\"/\&quot;/g'  >hindi_sentence_SMT.dat
 
  grep -B2 "FALSE" $1.error >> errors.txt
+ grep "Multiple adjective senses are available"  $1.error > error.txt
+ sort -u error.txt >> errors.txt
  cat errors.txt
 
  #for sentence by sent analysis for web debugging tutorial

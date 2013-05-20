@@ -46,6 +46,8 @@
  cat  hindi_sentence.dat
 
  grep -B2 "FALSE" $1.error >> errors.txt
+ grep "Multiple adjective senses are available"  $1.error > error.txt
+ sort -u error.txt >> errors.txt
  cat errors.txt
 
 # myclips -f $HOME_anu_test/Anu_clp_files/user_info.bat > /dev/null

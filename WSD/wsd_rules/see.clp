@@ -130,10 +130,10 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id xeKa))
+(assert (id-wsd_root_mng ?id xeKa))
 (assert (id-H_vib_mng ?id yA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  see.clp  	see6   "  ?id "  xeKa )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  see.clp  	see6   "  ?id "  xeKa )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  see.clp        see6   "  ?id "  yA )" crlf))
 )
 

@@ -102,11 +102,11 @@
 (kriyA-object ?id ?)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id Coda))
+(assert (id-wsd_root_mng ?id Coda))
 (assert (id-wsd_root ?id leave))
 (assert (id-H_vib_mng ?id yA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  leave.clp  	leave5   "  ?id "  Coda )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  leave.clp  	leave5   "  ?id "  Coda )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  leave.clp      leave5   "  ?id " yA )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave5   "  ?id " leave )" crlf))
 

@@ -115,11 +115,13 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id calA_jA))
 (assert (kriyA_id-object_viBakwi ?id se))
-(assert (id-H_vib_mng ?id ed))
+;(assert (id-H_vib_mng ?id ed))
+(assert (id-H_vib_mng ?id yA));Suggested by Sukhada(20-05-13)
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  walk.clp 	walk6   "  ?id "  calA_jA )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  walk.clp      walk6   "  ?id " se )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng   " ?*wsd_dir* "  walk.clp      walk6   "  ?id " ed )" crlf))
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng   " ?*wsd_dir* "  walk.clp      walk6   "  ?id " ed )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng   " ?*wsd_dir* "  walk.clp      walk6   "  ?id " yA )" crlf))
 )
 
 (defrule walk7
@@ -151,3 +153,18 @@
 )
 )
 
+;Added by Roja (20-05-13) Suggested by Chaitanya Sir.
+;Removed walked.clp and merged walked.clp rule here.
+(defrule walk9
+(declare (salience 4350))
+(id-root ?id walk)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 in)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 anxara_AyA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " walk.clp        walk9  "  ?id "  " ?id1 "  anxara_AyA  )" crlf))
+)
