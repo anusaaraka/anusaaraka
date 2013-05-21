@@ -51,3 +51,19 @@ Inside tree_viewer directory ::
 
   Note: To remove out files, run: bash remove-out-files.sh
 -------------------------------------------------------------------------------------------------------------------
+To view Dependency Tree in paninian format::
+=========================================
+Pre requisites:
+--------------
+1. anu_testing software need to be installed successfully 
+2. Run Anusaaraka_stanford.sh <file-name>
+	Ex: Anusaaraka_stanford.sh sample
+3. bash dependency_in_paninian_format.sh <file-name> <sentence-number>
+	Ex: dependency_in_paninian_format.sh sample 2.1
+
+   Dependency Tree Viewer opens
+	 Steps to view trees:
+          Go to File menu -> select Open Treebank
+          (A new window opens)  --> select the path upto working directory and then
+					-> select paninian_to_conllx_format.dat and Click Open
+-------------------------------------------------------------------------------------------------------------------

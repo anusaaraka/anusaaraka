@@ -4604,7 +4604,10 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 49. debugging ::
 	Updated README and provisional_Anu_databases/reset.sh
 50. Added CLIPS_Userguide
-51. Updated the following files
+51. Renamed: debugging/paninian_to_conllx_format.clp to miscellaneous/TREES/tree_viewer/paninian_to_conllx_format.clp
+             debugging/DepTreeeViewer.sh to miscellaneous/TREES/tree_viewer/dependency_in_paninian_format.sh & updated paths inside the file
+52. Modified:  tree_viewer/README to run dependency_in_paninian_format.sh
+53. Updated the following files
         miscellaneous/SMT/MINION/dictionaries/phy_dictionary.txt
         miscellaneous/SMT/MINION/dictionaries/provisional_root_dic.txt
         miscellaneous/SMT/MINION/dictionaries/restricted_eng_words.txt
@@ -4620,20 +4623,19 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_hnd
         miscellaneous/SMT/MINION/alignment/align_output/phy_align_verified_out
 	get_dbase_mng.clp, manual_word_grp_using_dic.clp and multi_word_expressions.clp
-52. Updated run_modules_link.bat
-53. Updated apertium-en-hi.en.metadix 
-54. Updated changes_in_databases
-55. Updated alignment/README
-56. Updated get_group_mng.sh
-57. Updated mapping-symbols_manual.lex
-58. Updated processing_manual_sentences.sh
-59. Updated tree_viewer README
-60. Modified sd_ver_output, phy_align_verified_out and phy_align_verified_eng_align.html
-61. Splitted anu_testing/README into 
+54. Updated run_modules_link.bat
+55. Updated apertium-en-hi.en.metadix 
+56. Updated changes_in_databases
+57. Updated alignment/README
+58. Updated get_group_mng.sh
+59. Updated mapping-symbols_manual.lex
+60. Updated processing_manual_sentences.sh
+61. Modified sd_ver_output, phy_align_verified_out and phy_align_verified_eng_align.html
+62. Splitted anu_testing/README into 
 	INSTALL				-> contains basic installtion, compilation and running the software
 	README				-> contains README of various tools usage
 	Readme_to_use_different_parsers	-> contains how to use various parsers 
-62. Updated
+63. Updated
         phy_align_verified_eng (186)
         phy_align_partial_ver_eng (58)
-63. Updated Log.
+64. Updated Log.
