@@ -1,11 +1,18 @@
+ 1. Prerequisites :
+    =============
+        1. English Sentence File.
+        2. Hindi Sentence File (WX Notation)
+	3. Shallow parser Installation
+	4. Full Parser Installation
 
-
- 1. SHALLOW PARSER Compilation :
-    ==========================
-	  1. Add following line to your ~/.bash_profile (or) ~/.bashrc
+ 2. SHALLOW PARSER Installation :
+    ===========================
+	1. graphviz (from Synaptic package manager)	
+	2. tofrodos (		"		  ) 
+	3. Add following line to your ~/.bash_profile (or) ~/.bashrc
  		export SHALLOW_PARSER_HIN=~/sampark/shallow_parser_hin
  		export PATH=$PATH:$SHALLOW_PARSER_HIN/bin/sys/hin/
-          2. and then run
+	   and then run
                 source ~/.bashrc
           
          Note :: 
@@ -30,7 +37,7 @@
 			ii) Accordingly make a soft link to the existing one to dos2unix
 				sudo ln -s /usr/bin/fromdos /usr/bin/dos2unix
 
- 2. FULL PARSER COMPILATION:
+ 3. FULL PARSER Installation:
     ========================
 	1. Add following line to your ~/.bash_profile (or) ~/.bashrc
 		export setu=$HOME/sampark
@@ -38,15 +45,9 @@
                 source ~/.bashrc
 
 
- 3.  MINION Compilation : 
+ 4.  MINION Compilation : 
      ==================
 	 For our work we are using the (already) compiled version of minion. 
-
-
- 4. Prerequisites :
-    =============
-        1. English Sentence File.
-        2. Hindi Sentence File (WX Notation)
 
  5. compile :
     ========
@@ -78,8 +79,8 @@
                 physics :  physics domain
         )
 
-   Full parser
-   ===========:
+   Full parser:
+   ===========
       To run Anusaaraka for physics domain with full parser then
 
 	Ex  : Anusaaraka_stanford_minion.sh phy_align_verified_eng 0 True physics phy_align_verified_hnd  full
@@ -89,7 +90,11 @@
 		full	:  To use full parser
 	        )
 
-    Dictionaries :  Dictionaries used for alignment are in $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries directory
+ 7. Dictionaries :  Dictionaries used for alignment are in $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries directory
+    ============
+
+ 8. OUTPUT:
+    ======
 
    File to check for meanings aligned with ANU
    =========================================== :

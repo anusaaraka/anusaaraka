@@ -4475,7 +4475,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 74. Updated sd_verified (490), sd_ver_output and phy_align_verified_out
 75. Updated Log
 
- 20-05-13
+ 21-05-13
  ========
  1. Removed default_meaning_frm_oldwsd.txt from Anu_data and moved into miscellaneous/Programs/removed_files and following changes are done.
 		  i) Removed name in list-right and list_Anu_data
@@ -4627,9 +4627,13 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 56. Updated get_group_mng.sh
 57. Updated mapping-symbols_manual.lex
 58. Updated processing_manual_sentences.sh
-59 Updated tree_viewer README
+59. Updated tree_viewer README
 60. Modified sd_ver_output, phy_align_verified_out and phy_align_verified_eng_align.html
-61. Updated
+61. Splitted anu_testing/README into 
+	INSTALL				-> contains basic installtion, compilation and running the software
+	README				-> contains README of various tools usage
+	Readme_to_use_different_parsers	-> contains how to use various parsers 
+62. Updated
         phy_align_verified_eng (186)
         phy_align_partial_ver_eng (58)
-62. Updated Log.
+63. Updated Log.

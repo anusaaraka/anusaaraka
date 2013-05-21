@@ -1,0 +1,61 @@
+1. Open Logos Parser:
+   ================
+       -- OpenLogos MT (optional but desirable to use OpenLogos parser. Package contains steps to Install.)
+--------------------------------------------------------------------------------------------------------------
+2. Linkage diagram:
+    ===============   
+    To view the linkage diagram run the Unix command:
+    $ anu_link-parser.sh   
+
+   The program can run in batch mode for testing the system on a large number of sentences.
+   The following command runs the parser on a file.
+
+    $ anu_link-parser.sh  < <input_file>
+
+-------------------------------------------------------------------------------------------------------------------
+3 To run Anusaaraka for different Parsers
+    =======================================
+        1.  To run Stanford Parser   -- Anusaaraka_stanford.sh <file_name>
+	2.  To run Berkeley Parser   -- Anusaaraka_berkeley.sh <file_name>
+  	3.  To run Open Logos Parser -- Anusaaraka_ol.sh <file_name> 
+	4.  To run Rasp Parser       -- Anusaaraka_rasp.sh <file_name>
+	5.  To run Link Parser 	     -- Anusaaraka_link.sh  <file_name>			
+                                         
+    To run the sentence for partucular linkage in Link parser :
+    ---------------------------------------------------------
+
+                     Anusaaraka_link.sh  <file_name> <linkage_number>
+               Ex :  Anusaaraka_link.sh  test 2    --- running test file for second linkage.
+
+-------------------------------------------------------------------------------------------------------------------
+4. Categories:
+   ==========
+     The $HOME_anu_test/Anu_data/categories.txt file contains category information in the following format:
+              <Long Form> <POS Tag> <Crude Category>
+----------------------------------------------------------------------------------------------------------------------
+5.  Punctuations: 
+    ============ 
+     The following words are used for the respective punctuations:
+
+      ,  comma
+      .  full_stop
+      ;  semi_colon
+      :  colon
+      '  single_quote
+      "  double_quote
+      ?  question_mark
+      !  exclamation
+     ''  2_single_quotes
+      (  open_parenthesis
+      )  closed_parenthesis
+      $  dollar
+      %  percentage
+      =  equal_to
+     ()  open-closed_parenthesis
+--------------------------------------------------------------------------------------------------------------------
+6.   The sentences with correct translation for all the parsers are available in $HOME_anu_test/Anu_outputs.
+		for OL parser      -- ol_ver_output
+		for Std parser     -- sd_ver_output
+		for Link parser    -- link_ver_output
+		for Berkely parser -- ber_ver_output
+--------------------------------------------------------------------------------------------------------------------

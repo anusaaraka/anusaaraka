@@ -1,207 +1,24 @@
-  1. Pre requisites:
-     ==============
-     English-Hindi Anusaaraka requires the following resources.
-       -- Java 1.6.0 
-       -- perl,
-       -- python,
-       -- flex,
-       -- bison, 
-       -- lttoolbox 3.1 or above
-       -- apertium 3.1 or above
-       -- xsltproc
-       -- libgdbm3, 
-       -- libgdbm-dev (to use gdbm), 
-       -- gcc,
-       -- g++ ,  
-       -- ant ( Anusaaraka will run without ant also so one can ignore the errors found while compiling it )
-       -- timeout (Please note that recent coreutils (>= 7.5-1) provide a timeout binary in it)  
-          (this command is used to exit the CLIPS environment in the specific time.)
-       -- OpenLogos MT (optional but desirable to use OpenLogos parser. Package contains steps to Install.)
-       -- goldendict (optional but desirable to use for viewing dictionaries)
-    	  (NOTE: Check Readme for using 'goldendict' in miscellaneous/Dictionaries/Readme)
-       -- graphviz (optional but desirable for alignment work -->for installing Shallow parser)
-       -- tofrodos (               "                                                          )
-    (NOTE: Anusaaraka uses 'bash' instead of 'dash')
---------------------------------------------------------------------------------------------------------------
- 2. Install:
-    ========
+1. To install anu_testing software:
+	Check INSTALL in anu_testing/
 
-     To install anu_testing from the source code, run
+2. To view different types of TREES in Stanford parser:
+	Check README in $HOME_anu_test/miscellaneous/TREES/tree_viewer/
 
-	tar -xvzf <file name>  (Ex : tar -xvzf anu_testing.tgz)
+3. To view Stanford Constituency TREE in GUI:
+	RUN::
+		run_stanford-gui-pcfg.sh
 
-        Add following line to your ~/.bash_profile (or) ~/.bashrc  and then run source ~/.bashrc
-        ========================================================================================
+4. To view Stanford Notation:
+	firefox $HOME_anu_test/Doc/PennTreeBankNotation/penn_treebank_pos.html
 
-        export HOME_anu_test=path_of_anu_installation
-        export HOME_anu_output=path_for_anu_output
-        export HOME_anu_tmp=path_for_tmp_dir
-        export HOME_anu_provisional_wsd_rules=path_for_user_wsd_rules(provisional_wsd_rules)
-	export HOME_open_logos=path_openlogos_dir
-        
-        export PATH=path for jdk1.6.0_03/bin and $HOME_anu_test/bin
-        export JAVA_HOME=path for jdk1.6.0_03
-        export LD_LIBRARY_PATH=/usr/local/lib/    ( for Shared libraries )
-        
-        (Note : User can create provisional_wsd_rules directory to write their own wsd rules and set the path for 
-	        provisional_wsd_rules)
+5. To view dictionaries in GUI:
+	Check Readme in $HOME_anu_test/miscellaneous/Dictionaries/
 
- 
-        Ex:
-        ==
+6. To run word alignment:
+	Check README in $HOME_anu_test/miscellaneous/SMT/MINION/alignment/
 
-        export HOME_anu_test=$HOME/anu_testing
-        export HOME_anu_output=$HOME/anu_output
-	export HOME_anu_tmp=$HOME/tmp_anu_dir
-	export HOME_anu_provisional_wsd_rules=$HOME/provisional_wsd_rules
-	export HOME_open_logos=$HOME/openlogos-package/openlogos-1.0.3
+7. To know Basics of CLIPS:
+	Check ppt of $HOME_anu_test/Doc/CLIPS_Userguide 
 
-        export PATH=$HOME/jdk1.6.0_03/bin:$HOME_anu_test/bin:$PATH
-        export JAVA_HOME=$HOME/jdk1.6.0_03
-        export LD_LIBRARY_PATH=/usr/local/lib/
-
-        compile:
-        ========
-
-        cd anu_testing
-	sh shell_scripts/anu_compile.sh
-
-      Note :: Please run  remove_out-files.sh before recompiling.
-          
-----------------------------------------------------------------------------------------------------------------
-3. To remove out files  :   shell_scripts/remove_out-files.sh
-
------------------------------------------------------------------------------------------------------------------   
-4. How to run Anusaaraka:
-   =====================
-
-	i. Copy the below text in a file "sample"
-         
-	      <TITLE> test. </TITLE>
-	      <p>
-        	  This is a sample file for anusaaraka.
-	      </p>
-       ii. Anusaaraka_stanford.sh  sample
-
-   User has an option to use provisional directory.
-     To use  :	Anusaaraka_stanford.sh  sample 0 True
-        NOTE::  Where '0' is default parse
-
-   To run Domain specific 
-	Ex : To run Anusaaraka for "physics" domain then
-		Anusaaraka_stanford.sh  sample 0 True physics
-		[ Note : sample is file name , 0 for default parse , True is to use provisional and
-	 	         physics is to define physics domain ]
-
-  (NOTE : Path for alignment README is miscellaneous/SMT/alignment/README )
------------------------------------------------------------------------------------------------------------------
-5. Output :
-   ======
-
-    The "tmp" directory is created for given input file. The facts for the particular sentences are stored in their 
-    respective directories.  (Ex: for second paragraph first sentence tmp/inputfile_tmp/2.1 dir )
-    
-    To view the facts :
-           $HOME_anu_tmp/tmp/<file_name_tmp>/<sentence_no>/all_facts      Ex:  $HOME_anu_tmp/tmp/verified_tmp/2.1/all_facts  
-       
-    To view the output, open html file through a browser by the command :
-
-             1)  firefox $HOME_anu_output/<filename_frame.html>
-             Ex: firefox $HOME_anu_output/verified_frame.html  
-	         This frame opens three different html files i.e; 
-    				1) English file
-                                2) Layered output according to English sentence
-                                3) Hindi translation 
-
-             2)  firefox $HOME_anu_output/<filename_tran_frame.html>
-             Ex: firefox $HOME_anu_output/verified_tran_frame.html
-                 This frame opens two different html files i.e;
-                                1) English file
-                                2) Layered output according to hindi translation 
-
-             3)  firefox $HOME_anu_output/<filename.html>
-             Ex: firefox $HOME_anu_output/verified.html
-                 (Layered output according to English sentence i.e; In english word order)
-               
-             4)  firefox $HOME_anu_output/<filename_tran.html>
-             Ex: firefox $HOME_anu_output/verified_tran.html
-                 (Layered output according to hindi translation 1.e; In hindi word order)
- 
-             5)  firefox $HOME_anu_output/<filename_trnsltn.html>
-             Ex: firefox $HOME_anu_output/sd_verified_trnsltn.html
-                 (Contains Hindi translated sentences)
-               
--------------------------------------------------------------------------------------------------------------------
-6. Linkage diagram:
-    ===============   
-    To view the linkage diagram run the Unix command:
-    $ anu_link-parser.sh   
-
-   The program can run in batch mode for testing the system on a large number of sentences.
-   The following command runs the parser on a file.
-
-    $ anu_link-parser.sh  < <input_file>
-
--------------------------------------------------------------------------------------------------------------------
-7. To run Anusaaraka for different Parsers
-    =======================================
-        1.  To run Stanford Parser   -- Anusaaraka_stanford.sh <file_name>
-	2.  To run Berkeley Parser   -- Anusaaraka_berkeley.sh <file_name>
-  	3.  To run Open Logos Parser -- Anusaaraka_ol.sh <file_name> 
-	4.  To run Rasp Parser       -- Anusaaraka_rasp.sh <file_name>
-	5.  To run Link Parser 	     -- Anusaaraka_link.sh  <file_name>			
-                                         
-    To run the sentence for partucular linkage in Link parser :
-    ---------------------------------------------------------
-
-                     Anusaaraka_link.sh  <file_name> <linkage_number>
-               Ex :  Anusaaraka_link.sh  test 2    --- running test file for second linkage.
-
-   To run the sentence for partucular parse in Stanford parser :
-   ----------------------------------------------------------
-
-                     Anusaaraka_stanford.sh  <file_name> <parse_number>
-               Ex :  Anusaaraka_stanford.sh  test 2    --- running test file for second parse.
--------------------------------------------------------------------------------------------------------------------
- 8. Debugging 
-    ========= 
-   Anusaaraka is provided with debugging to find and reduce the number of bugs, in the translation.
-   For debugging,  
- 
-   $ cd $HOME_anu_test/debugging/sentence_debug
-   $ sh sentence_debug.sh <file_name> <sentence_number>   Ex:  sh sentence_debug.sh  mytest  2.1
-                                                         (Ex: for 1st sentence of 2nd paragraph of the input file "mytest")
- 
-  (NOTE : For Debugging basic knowledge of CLIPS is needed)
-----------------------------------------------------------------------------------------------------------------------
-9. Categories
-   ==========
-     The categories.txt file contains category information in the following format:
-              <Long Form> <POS Tag> <Crude Category>
-----------------------------------------------------------------------------------------------------------------------
-10.  Punctuations: 
-     ============= 
-     The following words are used for the respective punctuations:
-
-      ,  comma
-      .  full_stop
-      ;  semi_colon
-      :  colon
-      '  single_quote
-      "  double_quote
-      ?  question_mark
-      !  exclamation
-     ''  2_single_quotes
-      (  open_parenthesis
-      )  closed_parenthesis
-      $  dollar
-      %  percentage
-      =  equal_to
-     ()  open-closed_parenthesis
---------------------------------------------------------------------------------------------------------------------
-11.   The sentences with correct translation for all the parsers are available in $HOME_anu_test/Anu_outputs.
-		for OL parser      -- ol_ver_output
-		for Std parser     -- sd_ver_output
-		for Link parser    -- link_ver_output
-		for Berkely parser -- ber_ver_output
---------------------------------------------------------------------------------------------------------------------
+8. To run Debugging
+	Check README in $HOME_anu_test/debugging/
