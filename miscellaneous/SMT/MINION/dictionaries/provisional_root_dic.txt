@@ -116,3 +116,4 @@ movement	GUma
 pith	sarakaNdA
 sum	yogaPala
 half	arXaBAga
+he	yaha

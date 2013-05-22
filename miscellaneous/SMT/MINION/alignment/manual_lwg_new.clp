@@ -110,13 +110,3 @@
 	(assert (manual_id-mng ?mid $?pre ?mng $?post))
 )
 ;-------------------------------------------------------------------------------------
-;Added by Shirisha Manju (3-4-13)
-(defrule map_confidence_lvl
-(declare (salience -15))
-?f0<-(id-confidence_level ?mid ?lvl)
-(manual_id-mapped_id ?mid ?map_id)
-(not (id-confidence_level ?map_id ?))
-=>
-	(retract ?f0)
-	(assert (id-confidence_level ?map_id ?lvl))
-)

@@ -141,14 +141,12 @@
  (declare (salience 150))
  ?f<-(position-cat-man_grp_mng ?id ?node&VGF|VGNN|VGNF $?word ?a ?b)
  (test (or (eq $?word (create$ nahIM hEM)) (eq $?word (create$  nahIM hE))(eq $?word (create$  nahIM howA hE))))
-; (test (or (eq $?word (create$ nahIM hEM)) (eq $?word (create$  nahIM hE))))
  ?f1<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF ?root ?cat ?g ?no ?p ?c ?suf)
  ?f2<-(head_id-grp_ids ?id ?nahIM_id ?hEM_id $?grp_ids)
  =>
 	(retract ?f ?f1 ?f2)
 	(assert (position-cat-man_grp_mng ?id POS nahIM - -))
         (bind $?n_word (delete-member$ $?word nahIM))
-;	(assert (position-cat-man_grp_mng =(+ ?id 1) ?node hEM ?a ?b))
 	(assert (position-cat-man_grp_mng =(+ ?id 1) ?node $?n_word ?a ?b))
 	(assert (id-node-root-cat-gen-num-per-case-tam ?id POS nahIM - - - - - -))	 
 	(assert (id-node-root-cat-gen-num-per-case-tam =(+ ?id 1) ?node ?root ?cat ?g ?no ?p ?c 0))	 
@@ -280,6 +278,7 @@
         (assert (combine_prev_word_for_ho_id-prev_word ?id $?word ?kar))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
+ ;Most of the phenomena occurring around us can be described under electromagnetism. 
  (defrule get_grp_using_full_parser_rel
  (declare (salience 75))
  (id-head-name-rel1-rel2 ?id ? ? k2 VGF)
@@ -305,12 +304,11 @@
  (defrule check_prev_word_of_kara
  (declare (salience 70))
  ?f<-(id-node-root-cat-gen-num-per-case-tam ?id ?node&VGF|VGNN|VGNF kara ?cat ?g ?no ?p ?c ?suf)
- ?f5<-(position-cat-man_grp_mng =(- ?id 1) ?n $? $?word - -)
- (test (neq (length $?word) 0))
+ ?f5<-(position-cat-man_grp_mng =(- ?id 1) ?n $? ?w&~kyA $?word - -);wuma yahAM [kyA kara] rahI ho. What are you doing here?
  (not (combine_prev_word_for_ho_id-prev_word ?id $?))
  (not (id_grouped ?id1))
  =>
-        (assert (combine_prev_word_for_ho_id-prev_word ?id $?word kara))
+        (assert (combine_prev_word_for_ho_id-prev_word ?id ?w $?word kara))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  ; For this, we develop the concepts of velocity and acceleration.

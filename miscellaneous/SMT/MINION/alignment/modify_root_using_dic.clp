@@ -164,3 +164,16 @@
         (assert (manual_id-cat-word-root-vib-grp_ids ?mid ?n $?word - $?root - $?mng - $?grp_ids))
 )
 ;----------------------------------------------------------------------------------------------------------------
+;Suggested by Chaitanya Sir(14-05-13)
+;My father will see to that. mere [piwAjI] sabako xeKa lezge.
+(defrule modify_root_for_jI
+(declare (salience 4))
+?f0<-(manual_id-cat-word-root-vib-grp_ids ?mid ?n $?word - ?root - $?vib - $?ids)
+(test (eq (sub-string (- (length ?root) 1) (length ?root) ?root) "jI"))
+(id-org_wrd-root-dbase_name-mng ? ? ? ? ?mng)
+(test (eq ?mng (string-to-field (sub-string 1 (- (length ?root) 2) ?root))))
+=>
+	(retract ?f0)
+	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?n $?word - ?mng - $?vib - $?ids))
+)
+;----------------------------------------------------------------------------------------------------------------

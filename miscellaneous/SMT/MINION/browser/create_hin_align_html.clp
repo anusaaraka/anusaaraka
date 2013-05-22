@@ -81,7 +81,8 @@
 
  (defrule create_dummy_confd_lvl
  (declare (salience 6000))
- (anu_id-anu_mng-sep-man_id-man_mng ?id $? - ?mid $?)
+ (anu_id-anu_mng-sep-man_id-man_mng ?id $? - ?mapped_id $?)
+ (manual_id-mapped_id ?mid ?mapped_id)
  (not (id-confidence_level ?mid ?confd_lvl))
  =>
  	(assert (id-confidence_level ?mid -))
@@ -249,10 +250,11 @@
  (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
  ?f<-(id-len ?id ?len)
  (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin_mng $?eng_ids ?eng)
- (anu_id-anu_mng-man_id-man_mng ?id1 ?anu_mng ?mid ?man_mng)
+ (anu_id-anu_mng-man_id-man_mng ?id1 ?anu_mng ?mapped_id ?man_mng)
  (test (member$ ?id1 $?eng_ids))
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
  (test (member$ (nth$ (length $?eng_ids) $?eng_ids) $?ids))
+ (manual_id-mapped_id ?mid ?mapped_id)
  (id-confidence_level ?mid ?confd_lvl)
  (Eng_sen $?eng_sen)
  =>

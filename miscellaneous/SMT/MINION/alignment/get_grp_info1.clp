@@ -6,7 +6,14 @@
 
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
-
+ ;Domain physics
+ (defrule load_phy_multi_wrd_file
+ (declare (salience 9000))
+ (Domain physics)
+ =>
+         (load-facts "phy_multi_word_expressions.dat")
+ )
+;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
 (defrule rm_prep_id_from_prawiniXi
 (declare (salience 2002))

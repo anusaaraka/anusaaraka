@@ -4,6 +4,14 @@
  (count_of_inserted_word-position)
  )
 
+ ;Domain physics
+ (defrule load_phy_multi_wrd_file
+ (declare (salience 9000))
+ (Domain physics)
+ =>
+         (load-facts "phy_multi_word_expressions.dat")
+ )
+;------------------------------------------------------------------------------------------------------------
 (deffunction remove_character(?char ?str ?replace_char)
 	(bind ?new_str "")
         (bind ?index (str-index ?char ?str))
@@ -94,15 +102,20 @@
 	(assert (anu_id-word-possible_mngs ?aid ?wrd $?dic_list))
 )
 ;------------------------------------------------------------------------------------------------------------
+;Guard, stop this donkey and let [me] get off [his] back! I can not do without him.
 (defrule get_hnd_dic
 (declare (salience 2001))
 (manual_id-mng ?mapped_id $?mng)
 (manual_id-mapped_id ?mid ?mapped_id)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $? - ?root - $?vib - $?)
 (test (eq (numberp (implode$ (create$ $?mng))) FALSE ))
-(test (neq (gdbm_lookup "restricted_hnd_words.gdbm" (implode$ (create$ $?mng))) "FALSE"))
+(test (or (neq (gdbm_lookup "restricted_hnd_words.gdbm" (implode$ (create$ $?mng))) "FALSE")(neq (gdbm_lookup "restricted_hnd_words.gdbm" ?root) "FALSE")))
 =>
 	(bind $?dic_list (create$ ))
         (bind ?new_mng (gdbm_lookup "restricted_hnd_words.gdbm" (implode$ (create$ $?mng))))
+	(if (eq ?new_mng "FALSE") then
+		(bind ?new_mng (gdbm_lookup "restricted_hnd_words.gdbm" ?root))
+	)
         (bind ?slh_index (str-index "/" ?new_mng))
         (if (and (neq (length ?new_mng) 0)(neq ?slh_index FALSE)) then
                 (while (neq ?slh_index FALSE)

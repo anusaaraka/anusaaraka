@@ -15,9 +15,8 @@ rm $HOME_anu_test/Anu_databases/inferred_dic.gdbm
 rm $HOME_anu_test/Anu_databases/Science-dictionary.gdbm
 rm $HOME_anu_test/Anu_databases/preposition.gdbm
 rm $HOME_anu_test/Anu_databases/adv_prep_dic.gdbm
-rm $HOME_anu_test/Anu_databases/eng_multi_*
+rm $HOME_anu_test/Anu_databases/eng_*
 rm $HOME_anu_test/Anu_databases/hnd_multi_*
-rm $HOME_anu_test/Anu_databases/eng_phy_multi_*
 rm $HOME_anu_test/Anu_databases/hnd_phy_multi_*
 rm $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic*.gdbm
 
@@ -52,10 +51,16 @@ cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
 
 cd $MYPATH
 echo "Creating phy_hnd_multi_word_dic.txt"
- sh generate_eng_hin_multi_word_dic_for_alignment.sh $MYPATH1/phy_eng_multi_word_dic_in_canonical_form.txt phy_multi_word_dic.txt phy_multi_word_dic.txt
+ sh generate_multi_word_dic_for_alignment.sh $MYPATH1/phy_eng_multi_word_dic_in_canonical_form.txt phy_multi_word_dic.txt hindi
 echo "Creating hindi_multi_word_dic.txt"
- sh generate_eng_hin_multi_word_dic_for_alignment.sh $MYPATH1/multi_word_expressions_in_canonical_form.txt multi_word_dic.txt multi_word_dic.txt
- sh generate_eng_hin_multi_word_dic_for_alignment.sh $MYPATH1/multi_word_expressions_from_iit_bombay_in_canonical_form.txt multi_word_from_iit_bombay_dic.txt multi_word_from_iit_bombay_dic.txt
+ sh generate_multi_word_dic_for_alignment.sh $MYPATH1/multi_word_expressions_in_canonical_form.txt multi_word_dic.txt hindi
+ sh generate_multi_word_dic_for_alignment.sh $MYPATH1/multi_word_expressions_from_iit_bombay_in_canonical_form.txt multi_word_from_iit_bombay_dic.txt hindi
+echo "Creating acronyms_multi.txt"
+sh generate_multi_word_dic_for_alignment.sh $MYPATH1/acronyms-common_noun_compounds_in_canonical_form.txt acronyms_multi.txt 
+echo "Creating named_entity_multi.txt"
+sh generate_multi_word_dic_for_alignment.sh $MYPATH1/named_entities_in_canonical_form.txt named_entity_multi.txt 
+echo "Creating proper_noun_multi.txt"
+sh generate_multi_word_dic_for_alignment.sh $MYPATH1/proper_noun-common_noun_compounds_in_canonical_form.txt proper_noun_multi.txt
 
 ################################# Generating GDBM's #########################################################
 
@@ -100,9 +105,15 @@ cd $MYPATH1
  echo "Creating hnd_multi_word_dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/hnd_multi_word_dic.gdbm     < $MYPATH/hnd_multi_word_dic.txt
  echo "Creating eng_multi_word_from_iit_bombay_dic.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/eng_multi_word_from-iit-bombay_dic.gdbm < $MYPATH/eng_multi_word_from_iit_bombay_dic.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/eng_multi_word_from_iit_bombay_dic.gdbm < $MYPATH/eng_multi_word_from_iit_bombay_dic.txt
  echo "Creating hnd_multi_word_from_iit_bombay_dic.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/hnd_multi_word_from-iit-bombay_dic.gdbm < $MYPATH/hnd_multi_word_from_iit_bombay_dic.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/hnd_multi_word_from_iit_bombay_dic.gdbm < $MYPATH/hnd_multi_word_from_iit_bombay_dic.txt
+ echo "Creating eng_acronyms_multi.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/eng_acronyms_multi.gdbm < $MYPATH/eng_acronyms_multi.txt
+echo "Creating eng_named_entity_multi.gdbm"
+./create-gdbm.pl $HOME_anu_test/Anu_databases/eng_named_entity_multi.gdbm < $MYPATH/eng_named_entity_multi.txt
+echo "Creating eng_proper_noun_multi.gdbm"
+./create-gdbm.pl $HOME_anu_test/Anu_databases/eng_proper_noun_multi.gdbm < $MYPATH/eng_proper_noun_multi.txt
 
  echo "Creating default-iit-bombay-shabdanjali-dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic.gdbm < default-iit-bombay-shabdanjali-dic_in_canonical_form.txt

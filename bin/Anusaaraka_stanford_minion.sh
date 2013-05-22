@@ -37,10 +37,8 @@
 
  mkdir $MYPATH/tmp/$1_tmp
  if [ "$6" == "full" ]; then
-#	echo "full" > $MYPATH/tmp/$1_tmp/hindi_parser.dat
  	sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/processing_manual_sentences.sh $1 $5 $6
  else
-#	echo "not_full" > $MYPATH/tmp/$1_tmp/hindi_parser.dat
 	sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/processing_manual_sentences.sh $1 $5
  fi
  ###Added below loop for server purpose.

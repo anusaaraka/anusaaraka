@@ -32,6 +32,8 @@
         (assert (id-Apertium_output ?id ?mng $?w))
  )
  ;-------------------------------------------------------------------------------------------------
+ ;When an object is in motion, its position changes with time.
+ ;jaba koI vaswu gawimAna howI hE wo samaya ke sAWa - sAWa usakI sWiwi parivarwiwa howI hE .
  (defrule align_extra_inserted_words_in_anusaarak
  (declare (salience 2001))
  ?f<-(hindi_id_order $?pre ?insert_word $?post)
@@ -41,6 +43,7 @@
         (bind ?*count_of_inserted_words* (+ ?*count_of_inserted_words* 1))
         (assert (hindi_id_order $?pre ?*count_of_inserted_words* $?post))
         (assert (id-Apertium_output ?*count_of_inserted_words* ?insert_word))
+	(assert (id-HM-source ?*count_of_inserted_words* ?insert_word reorder));Added by Shirisha Manju(21-5-13)
         (assert (count_of_inserted_word-position ?*count_of_inserted_words* (member$ ?insert_word (create$ $?pre ?insert_word $?post))))
  )
  ;-------------------------------------------------------------------------------------------------

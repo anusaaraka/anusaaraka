@@ -3,43 +3,24 @@
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
 
-;(deffunction remove_character(?char ?str ?replace_char)
-;                        (bind ?new_str "")
-;                        (bind ?index (str-index ?char ?str))
-;                        (if (neq ?index FALSE) then
-;                        (while (neq ?index FALSE)
-;                        (bind ?new_str (str-cat ?new_str (sub-string 1 (- ?index 1) ?str) ?replace_char))
-;                        (bind ?str (sub-string (+ ?index 1) (length ?str) ?str))
-;                        (bind ?index (str-index ?char ?str))
-;                        )
-;                        )
-;                (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
-; )
-;
-;
-;(defrule get_anu_tam
-;(declare (salience 100))
-;(pada_info (group_head_id ?hid)(group_ids $?ids) (H_tam ?tam&~0))
-;=>
-;	(if (neq (str-index "_" ?tam) FALSE) then
-;		(bind ?tam (remove_character "_" (implode$ (create$  ?tam)) " "))
-;	else
-;		(bind ?tam ?tam)
-;	)
-;	(assert (id-tam ?hid ?tam)) 
-;)
+(deffunction remove_character(?char ?str ?replace_char)
+                        (bind ?new_str "")
+                        (bind ?index (str-index ?char ?str))
+                        (if (neq ?index FALSE) then
+                        (while (neq ?index FALSE)
+                        (bind ?new_str (str-cat ?new_str (sub-string 1 (- ?index 1) ?str) ?replace_char))
+                        (bind ?str (sub-string (+ ?index 1) (length ?str) ?str))
+                        (bind ?index (str-index ?char ?str))
+                        )
+                        )
+                (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
+ )
 
 (defrule print_com1
 (declare (salience 100))
 =>
         (printout  ?*dic_fp2* "----------------- phrases with some logic -------------" crlf)
 )
-;-------------------------------------------------------------------------------------------------------
-(defrule get_eng_list
-(Eng_sen ?sen)
-=>
-	(assert (English_sen (explode$ ?sen)))
-) 
 ;-------------------------------------------------------------------------------------------------------
 (defrule get_light_verb_phrase_ids
 (declare (salience 90))
@@ -55,9 +36,10 @@
 (defrule get_light_verb_phr
 (declare (salience 80))
 ?f0<-(phrase_ids-mng $?ids - $?mng)
-(English_sen $?eng_list)
+(English_Sen $?eng_list)
 =>
 	(bind ?eng_phrase (str-cat ""))
+	(bind $?ids (sort > $?ids))
 	(loop-for-count (?i 1 (length $?ids))
 		(bind ?id (nth$ ?i $?ids))
                 (if (eq ?i 1) then
@@ -67,6 +49,53 @@
 		)
 	)
 	(printout ?*dic_fp2*  "light_verb_phrase:  "  ?eng_phrase " -- " (implode$ $?mng) crlf)
+)
+;-------------------------------------------------------------------------------------------------------
+;Instead of visible light, we can use an [electron beam]. xqSya prakASa ke sWAna para hama , [ilektroYna - puFja kA] upayoga kara sakawe hEM.
+(defrule get_phrase_with_prev_mng_same
+(declare (salience 70))
+(hindi_id_order $?pre ?id ?id1 $?post)
+(anu_id-anu_mng-sep-man_id-man_mng ?id1 $? - ?mid ?mng $?mng1)
+(not (anu_id-anu_mng-sep-man_id-man_mng ?id $?))
+(not (anu_id-word-possible_mngs ?id $?))
+(id-Apertium_output ?id ?mng)
+(manual_id-mapped_id ?map_id ?mid)
+(manual_id-cat-word-root-vib-grp_ids ?map_id ? $?m - $?root - $? - $?)
+(id-word ?id ?w)
+(id-word ?id1 ?w1)
+(not (phrase_ids-mng $? ?id $?))
+=>
+	(bind ?new_m (remove_character " " (implode$ (create$  $?m)) "_"))
+	(bind ?new_r (remove_character " " (implode$ (create$  $?root)) "_"))
+	(printout ?*dic_fp2* ?w" "?w1 " -- " (implode$ ?new_m)"/"(implode$ ?new_r) crlf)
+)
+;-------------------------------------------------------------------------------------------------------
+;I [want to buy] this donkey. mEM isa gaXe ko [KarIxanA cAhawI hUM]
+(defrule get_phrase_with_next_mng_with_root
+(declare (salience 70))
+(hindi_id_order $?pre ?id ?id1 $?post)
+(anu_id-anu_mng-sep-man_id-man_mng ?id $?m - ?mid $?m ?m1 $?)
+(not (anu_id-anu_mng-sep-man_id-man_mng ?id1 $?))
+(not (anu_id-word-possible_mngs ?id1 $?))
+(man_word-root-cat ?m1 ?root v|n)
+(id-HM-source ?id1 ?root ?)
+(pada_info (group_head_id ?id)(group_ids $?ids))
+(pada_info (group_head_id ?id1)(group_ids $?ids1))
+(English_Sen $?eng_list)
+(not (phrase_ids-mng $? ?id $?))
+=>
+	(bind $?ids (sort > $?ids $?ids1))
+        (loop-for-count (?i 1 (length $?ids))
+                (bind ?id (nth$ ?i $?ids))
+                (if (eq ?i 1) then
+                        (bind ?eng_phrase (nth$ ?id $?eng_list))
+                else
+                        (bind ?eng_phrase (str-cat ?eng_phrase "_" (nth$ ?id $?eng_list)))
+                )
+        )
+        (bind ?new_m (remove_character " " (implode$ (create$  $?m)) "_"))
+	(bind ?new_m (str-cat (implode$ ?new_m)"_"?root))
+        (printout ?*dic_fp2* ?eng_phrase " -- " ?new_m crlf)
 )
 ;-------------------------------------------------------------------------------------------------------
 ;Plants tend to turn [towards the source of light]. -- pOXe [roSanI kI ora] muda jAwe hE.

@@ -12,7 +12,7 @@ eka	a/an/one
 koI	a/an/any
 kisI	a/an
 kisI_BI	a/an
-hE	is/have
+hE	is/have/are/be/has
 apane	his/its/our
 apanI	the/our
 apanA	the/our
@@ -20,10 +20,10 @@ usakI	his/its/the
 usake	his/its/the
 unakA	them/their
 unake	them/their
-merA	i/me/my
-vaha	she/he/the/her
+merA	i/me/my/mine
+vaha	she/he/the/her/they/them
 yahAz	here
-yaha	the/that/this/it
+yaha	the/that/this/it/he/him/his/her/she/these/they/such/similar
 isakA	the/it/its/this/he/him/his
 isakI	the/it/its/this/he/him/his
 isake	the/it/its/this/he/him/his
@@ -31,3 +31,5 @@ jinakA	which
 hama	we
 hamArA	our
 jisake	which
+saBI	overall/all
+saba	all/everyone/everything/sub

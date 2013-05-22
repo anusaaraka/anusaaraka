@@ -11606,10 +11606,10 @@ electric_battery	vixyuwa_bEtarI#vixyuwa_bEtarI#noun#2#RM
 electric_bell	bijalI_kI_GaMtI#bijalI_kI_GaMtI#noun#2#RM
 electric_bill	bijalI_kA_bila#bijalI_kA_bila#noun#2#RM
 electric_car	bijalI_se_calane_vAlI_kAra#bijalI_se_calane_vAlI_kAra#noun#2#RM
-electric_catfish	vixxayuwa_aSalka_mIna#vixxayuwa_aSalka_mIna#noun#2#RM
-electric_cell	vixxayuwa_sela#vixxayuwa_sela#noun#2#RM
-electric_chair	vixxayuwa_kursI#vixxayuwa_kursI#noun#2#RM
-electric_charge	vixxayuwa_AveSa#vixxayuwa_AveSa#noun#2#RM
+electric_catfish	vixyuwa_aSalka_mIna#vixyuwa_aSalka_mIna#noun#2#RM
+electric_cell	vixyuwa_sela#vixyuwa_sela#noun#2#RM
+electric_chair	vixyuwa_kursI#vixyuwa_kursI#noun#2#RM
+electric_charge	vixyuwa_AveSa/vExyuwa_AveSa#vixyuwa_AveSa/vExyuwa_AveSa#noun#2#RM
 electric_circuit	vixyuw_paripaWa#vixyuw_paripaWa#noun#2#RM
 electric_clock	bijalI_GadI#bijalI_GadI#noun#2#RM
 electric_company	vixyuwa_kampanI#vixyuwa_kampanI#noun#2#RM
@@ -11625,7 +11625,7 @@ electric_shunter	bijalI_SaMtara#bijalI_SaMtara#noun#2#RM
 electric_supervisor	bijalI_paryavekRaka#bijalI_paryavekRaka#noun#2#RM
 electrical_accounting_machine	vixyuwa_leKA_maSIna#vixyuwa_leKA_maSIna#noun#3#RM
 electrical_cable	bijalI_kA_wAra#bijalI_kA_wAra#noun#2#RM
-electrical_capacity	vixxayuwIya_kRamawA#vixxayuwIya_kRamawA#noun#2#RM
+electrical_capacity	vixyuwIya_kRamawA#vixyuwIya_kRamawA#noun#2#RM
 electrical_circuit	vixyuw_saMbanXI_paripaWa#vixyuw_saMbanXI_paripaWa#noun#2#RM
 electrical_condenser	vixyuw_saMGaniwra#vixyuw_saMGaniwra#noun#2#RM
 electrical_conduction	vixyuwa_cAlana#vixyuwa_cAlana#noun#2#RM

@@ -1,6 +1,8 @@
 1. Open Logos Parser:
    ================
        -- OpenLogos MT (optional but desirable to use OpenLogos parser. Package contains steps to Install.)
+       -- export OpenLogos path in bashrc
+	   Ex: 	export HOME_open_logos=$HOME/openlogos-package/openlogos-1.0.3
 --------------------------------------------------------------------------------------------------------------
 2. Linkage diagram:
     ===============   

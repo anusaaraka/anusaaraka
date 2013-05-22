@@ -3,6 +3,15 @@
  (defglobal ?*mul_word_file* = m_fp)
  (defglobal ?*pos* = 1)
 
+ ;Added by Shirisha Manju
+ ;Domain physics
+ (defrule load_phy_multi_word_file
+ (declare (salience 9000))
+ (Domain physics)
+ =>
+ 	 (load-facts "phy_multi_word_expressions.dat")
+ )
+ ;--------------------------------------------------------------------------------------------------------
  (deffunction remove_character(?char ?str ?replace_char)
                         (bind ?new_str "")
                         (bind ?index (str-index ?char ?str))

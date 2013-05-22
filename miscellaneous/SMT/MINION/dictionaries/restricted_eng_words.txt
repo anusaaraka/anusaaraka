@@ -71,7 +71,8 @@ hers	usa_swrI_kA/usakI
 herself	svayaM/vaha_svayaM
 him	vaha/usako/yaha
 himself	svayaM
-his	usakI/apane/usake/unake/usakA/his
+his	usakI/apane/usake/unake/usakA/yaha
+how	kEse/kiwanA/kisa_waraha/kEsA
 i	mEM/muje/mEMne
 in	meM/vEyakwika/upalabXa/sawwArUDa/pracaliwa/pahane_hue/jalawI_huI/ina/in/BIwarI/anxara_kA/anwarika/anxara/BIwara/sawwArUDa_rAjanIwika_xala_kA_saxasya/praBuwva/prawi/kI_waraPa_se/ke_samaya_meM/ke_samaya/ke_anxara/se/kA
 including	sammiliwa_karawe_hue/sahiwa
@@ -85,13 +86,13 @@ less	kama/WodA_sA/CotA/kama_mAqA_me
 like	usI_warAha/usI_waraha/usI_prakAra/samAna/jEsA/eka-sA/eka_se/usI_DMaja_se/waraha_kA/pasanxa_kara/pasMaxa_kara/pasMaxa_ho/cAha/uciwa_laga
 little	WodA/WodA_sA/woda/nAtA/kuCa/kama/CotI/CotA/mahawvahIna
 many	bahuwa_se/kiwane/kaI/jiwanA/iwane/Dera_SAre/bahuwa_sAre/aneka/bahuwa_sI
-me	muJa/muJako
+me	muJa/muJako/mEM
 mine	merA/surafga_kRetra/surafga_bama/surafga/KAna/jvAlAmuKI_bisPota/bArUxI_bama/BaNdAra/surafga_laga/surafga_Koxa/surafga_ban/KAna_se_prapwa_kara/KAna_Kox/KAna_Koxa/bila_KoxanAa
 minus	nyUnawama/kamI/GatAva/ke_binA/GatA
 more	aXika/Ora_aXika/Ora/KUba/bahuwa/aXikawara/aXikAMSa/jyAxA/aXika_mAwrA_meM/awyaXika
 most	sabase_aXika/sarvAXika/bahuwa_aXika/bahuwa/aXikawama/aXikAMSa/lagaBaga/awyaXika
 much	bahuwa/bahuwa_kAla/aXika/prAyaH/Ora/karIba-karIba/kAPI
-my	merA
+my	merA/mere
 myself	svayaM/svawaH
 near	nikata/samIpa/pAsa_meM/pAsa_hI/pAsa/najaxIkI/najaxIka/mUla/milawA-julawA/lagaBaga_samIpa/lagaBaga/karIba/kiPayawaSArI/kaFjUsa/jigarI/bilkula_nayA/bAzyA/bahuwa_kuCa_sahI/AnevAlA/anwarafga/milawA_julawA/pAsa_se/pasa/nikata_se/karIba-karIba/ke_pAsa/ke_najaxIka/karIba_ho/nikata_pahuzca
 neither	nA_yaha_nA_vaha/na_hI/nahIM/na/koI_BI_nahIM/inakAra/na_wo
@@ -165,7 +166,7 @@ via	kI_rAha_se/se_hokara/ke_xvArA
 was	WA/WI/We
 we	hama/mEM/hameM/hamArA/hamane/hame/hamAre/hamArI/hamAr
 were	hEM/WA
-what	kOna-sA/kiwanA/kisa/jo_kuCa/kyA/jo
+what	kOna-sA/kiwanA/kisa/jo_kuCa/kyA/jo/isA/jEsA
 whatever	jo_kuCa_BI/kuCa_BI/jo_BI
 when	jaba/yaxyapi/waba/cUzki/jisa_samaya/kaba/kyozki
 where	kahAz/jisa_sWAna_para/jaba_ki/jahAz/jisase/jisameM/jisapara
@@ -180,6 +181,6 @@ within	ke_anwargawa/BIwara/mana_meM/mana_hI_mana/ke_anxara/anxara/meM/ke_BIwara/
 without	bAhara/ke_binA/Codakara/binA/ke_KilAPa/na
 worth	mUlya/yogya/mUlya_kA/lAyaka/ke_barAbara_mola_kA/kA_mAlika/mahawva/kImawa
 you	Apa/wumheM/Apako/ApakA/Apake/Apane/wU/wuma
-your	Apa/wumhArA/ApakA
-yours	Apa/wumhArA/ApakA
+your	Apa/wumhArA/ApakA/wU
+yours	Apa/wumhArA/ApakA/wU
 yourself	Kuxa/Apaa/wuma_Kuxa/wuma/svayaM_apane_Apa_ko/Apa_svayaM/Apane_Apa_ko/Apa_Kuxa/wuma_hI

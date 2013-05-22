@@ -45,12 +45,22 @@
 ;Added by Shirisha Manju
 ;The curiosity to learn about the world, [unravelling] the secrets of nature is the first step towards the discovery of science
 (defrule get_root_for_hyphen
-(declare (salience 1002))
+(declare (salience 1004))
 ?f0<-(id-root ?id - )
 (id-original_word ?id ?word)
 =>
 	(retract ?f0)
 	(assert (id-root ?id ?word))
+)
+;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju (11-05-13)
+(defrule rm_hnd_mng_with_no_mng
+(declare (salience 1003))
+(exact_match ?mid)
+(prov_assignment ?id ?mid)
+?f0<-(id-HM-source ?id - ?)
+=>
+	(retract ?f0)
 )
 ;-------------------------------------------------------------------------------------
 ;Counts the number of verbs of anusaaraka sentence
@@ -112,22 +122,31 @@
 	(bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids $?aids - ?mid $?grp))
-        (assert (prov_assignment (nth$ (length $?aids) $?aids) ?mid))
+	(loop-for-count (?i 1 (length $?aids))
+                (bind ?j (nth$ ?i $?aids))
+                (assert (prov_assignment ?j ?mid))
+        )
+	(assert (exact_match ?mid))
 )
 ;-------------------------------------------------------------------------------------
+;The efficiency of heat engines and refrigerators, the direction of a physical or chemical process, etc., are problems of interest in thermodynamics. URmA iFjana waWA praSIwaka kI xakRawA  @PUNCT-Comma  kisI BOwika aWavA rAsAyanika prakriyA kI xiSA Axi  @PUNCT-Comma  URmAgawikI kI rocaka samasyAez hEM
 ;Free fall is thus a case of motion with uniform acceleration. 
 (defrule exact_match_using_multi_word_dic
 (declare (salience 902))
 (current_id ?mid)
 (id-multi_word_expression-dbase_name-mng ? $?e_words ? $?mng)
 (multi_word_expression-grp_ids $?e_words $?aids)
-(manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng - $? - $? - $?ids)
+(or (manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng - $? - $? - $?ids)(manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?mng - $? - $?ids))
 (not (prov_assignment ?aid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids $?aids - $?ids))
-        (assert (prov_assignment (nth$ (length $?aids) $?aids) ?mid))
+	(loop-for-count (?i 1 (length $?aids))
+        	(bind ?j (nth$ ?i $?aids))
+		(assert (prov_assignment ?j ?mid))
+	)
+	(assert (exact_match ?mid))
 )
 ;-------------------------------------------------------------------------------------
 ;Modified by Shirisha Manju(23-04-13)
@@ -187,6 +206,7 @@
 (id-org_wrd-root-dbase_name-mng ? ? ?e_noun ? $?mng1)
 (id-root ?aid ?e_noun)
 (not (prov_assignment ?aid ?mid))
+(not (modified_id ?aid))
 =>
 	(bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
@@ -468,7 +488,25 @@
         (assert (anu_ids-sep-manual_ids ?eid - $?grp_ids))
         (assert (prov_assignment ?eid ?mid))
 )
-
+;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju(10-05-13)
+;[Historically] the credit of discovery of the fact that amber rubbed with wool or silk cloth attracts light objects goes to Thales of Miletus, Greece, around 600 BC.. [iwihAsa ke anusAra] lagaBaga 600 I. pUrva huI isa waWya kI Koja kA Sreya  @PUNCT-Comma  ki Una aWavA reSamI - vaswra se ragadA gayA Embara halakI vaswuoM ko AkarRiwa karawA hE  @PUNCT-Comma  grIsa xeSa ke miletasa ke nivAsI Welsa ko jAwA hE
+(defrule root_match_with_vib_pre_and_no_match
+(declare (salience 820))
+(current_id ?mid)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $?noun - $?root - $?vib - $?grp_ids)
+(test (neq $?vib 0))
+(id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?root $?v)
+(id-root ?eid ?e_word)
+(test (or (eq $?v (create$ se))(eq $?v (create$ ke))(eq $?v (create$ kA) )(eq $?v (create$ ke liye))(eq $?v (create$ ko))(eq $?v (create$ meM)) (eq $?v (create$ meM se))(eq $?v (create$ para))(eq $?v (create$ ke sAwa)) (eq $?v (create$ ke xvArA)) (eq $?v (create$ ke pIce))(eq $?v (create$ ke Upara)) (eq $?v (create$ ke pAsa))(eq $?v (create$ ke bAre meM))(eq $?v (create$ ke anusAra))(eq $?v (create$ ke kAraNa))(eq $?v (create$ ke prawi))(eq $?v (create$ ke sAmane))(eq $?v (create$ kI apekRA))(eq $?v (create$ ke AsapAsa))(eq $?v (create$ ke jEsA))(eq $?v (create$ ke pahale))(eq $?v (create$ ke bAhara))(eq $?v (create$ kI ora))(eq $?v (create$ ke nIce))(eq $?v (create$ ke aMxara))(eq $?v (create$ ke anxara))(eq $?v (create$ ke bAxa))(eq $?v (create$ vAlA))(eq $?v (create$ ke bahAne))(eq $?v (create$ ke nikata))(eq $?v (create$ ke samIpa)) ))
+(not (prov_assignment ?aid ?mid))
+(not (anu_id-man_id ?aid ?mid))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (assert (anu_ids-sep-manual_ids ?eid - $?grp_ids))
+        (assert (prov_assignment ?eid ?mid))
+)
 ;-------------------------------------------------------------------------------------
 ;look for synonyms in hindi wordnet
 ; lookup single word mng in wordnet ex: bAxa
@@ -478,11 +516,10 @@
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $?word - $?h_root - $?t - $?grp_ids)
 (test (neq (length $?t) 0))
 (test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root))) "FALSE"))
-(id-org_wrd-root-dbase_name-mng ? ? ?e_root ? $?mng)
-(test (eq (length (create$ $?mng)) 1))
+(id-org_wrd-root-dbase_name-mng ? ? ?e_root ? ?mng)
 (id-root ?aid ?e_root)
-(test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?mng))) "FALSE"))
-(test (eq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root))) (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?mng)))))
+(test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng))) "FALSE"))
+(test (eq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root))) (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng)))))
 (not (prov_assignment ?aid ?mid))
 (not (anu_id-man_id ?aid ?mid))
 =>
@@ -490,7 +527,7 @@
         (bind ?dic_val (gdbm_lookup "hindi_wordnet_dic1.gdbm" (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root)))))
         (bind ?dic_val (remove_character "/" ?dic_val " "))
         (if (neq ?dic_val "FALSE") then
-            (if (and (member$ $?h_root ?dic_val)(member$ $?mng ?dic_val)) then
+            (if (and (member$ $?h_root ?dic_val)(member$ ?mng ?dic_val)) then
 		(bind ?*count* (+ ?*count* 1))
 	        (assert (update_count_fact ?*count*))
 	        (assert (anu_ids-sep-manual_ids ?aid - $?grp_ids))
@@ -576,7 +613,7 @@
 ?f3<-(prov_assignment ?aid ?mid)
 (test (member$ ?aid $?aids))
 (id-Apertium_output ?aid $?anu_mng)
-;(test (> (length $?anu_mng) 0))
+(id-HM-source ?aid $? ?)
 (test (member$ ?mid $?mids))
 =>
         (retract ?f2)

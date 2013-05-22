@@ -51,7 +51,7 @@ Multiple adjective senses are available for attainable. WSD rule is required
 
 Hindi meaning using Stanford parser 2.9
 He made pioneering contributions in the field of optics. 
-usane prakASikI ke kRewra meM mArga_praSaswa_karanevAlA yogaxAna banAe.
+usane prakASikI ke kRewra meM mArga praSaswa karanevAle yogaxAna banAe.
 Multiple adjective senses are available for pioneering. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.10
@@ -145,6 +145,7 @@ isa prakAra piNda kI saMhawi mahawvapUrNa gaNiwa_meM_sWira rASI hE jo usakI gawi
 Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.31
+parse wrong
 Using the basic laws of reflection and refraction, we shall study the image formation by plane and spherical reflecting and refracting surfaces. 
 parAvarwana ke Ora apavarwana ke buniyAxI niyamoM kA upayoga karawe_hue, hama UparI wala xarSA huA Ora modawA huA samawala waka Ora golIya waka prawimA suvyavasWiwa kramaa kA aXyayana karezge.
 
@@ -702,7 +703,7 @@ gilAsa Cada roezxAra_KAlavAle jAnavara hatAwA hE.
 
 Hindi meaning using Stanford parser 2.157
 They acquire an electric charge on rubbing. 
-ve GisanA para vixxayuwa AveSa arjana karawe hEM.
+ve GisanA para vixyuwa AveSa arjana karawe hEM.
 
 Hindi meaning using Stanford parser 2.158
 The property which differentiates the two kinds of charges is called the polarity of charge. 
@@ -841,4 +842,4 @@ Time-out:
 Solution Found :
 187
 re-executed-sentences:
-22
+23
