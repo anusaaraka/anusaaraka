@@ -22,7 +22,6 @@
  ;As group head has a meaning and all others are given as "-" removing that ids from hindi_id_order.
  (defrule delete_affected_ids
  (declare (salience 2000))
- ;(declare (salience 45))
  (id-HM-source-grp_ids   ?id  ?  ? $?ids)
  ?f<-(hindi_id_order  $?hin_order)
  (test (> (length $?ids) 1))
@@ -30,17 +29,13 @@
  (test (eq (length $?mng) 0))
  (not (id-checked ?id1))
  (not (pada_info (group_cat infinitive)(group_ids $? ?id1 $?)))
- ;(test (eq (member$ ?id $?grp_ids) FALSE))
+ (not (pada_info (group_cat VP)(group_ids $? ?id1 $?)))
  (test (member$ ?id1 $?ids))
   =>
-  (retract ?f)
-;  (loop-for-count (?i 1 (length $?ids))
-;                  (bind ?j (nth$ ?i $?ids))
-;                  (if (or (neq ?j ?id) (eq (length $?mng) 0)) then
-                      (bind $?hin_order (delete-member$ $?hin_order ?id1))
-;                  ))
- (assert (hindi_id_order  $?hin_order))
- (assert (id-checked ?id1)) 
+	(retract ?f)
+        (bind $?hin_order (delete-member$ $?hin_order ?id1))
+ 	(assert (hindi_id_order  $?hin_order))
+	(assert (id-checked ?id1)) 
  )         
 ;----------------------------------------------------------------------------------------------------------------------------
  ;Creating english word list fact .

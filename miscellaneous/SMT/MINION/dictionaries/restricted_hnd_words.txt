@@ -12,7 +12,7 @@ eka	a/an/one
 koI	a/an/any
 kisI	a/an
 kisI_BI	a/an
-hE	is/have/are/be/has
+hE	is/have/are/be/has/am
 apane	his/its/our
 apanI	the/our
 apanA	the/our

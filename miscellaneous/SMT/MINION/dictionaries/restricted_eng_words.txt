@@ -138,7 +138,7 @@ that	jo/isa/yaha/vaha/usa/ki/jinheM/waka/iwanA/isa_haxa_waka/uwanA/jo_ki/vahI/ji
 the	vaha/isa/usa/vahI/isakA/isake/uwanA/jiwanA/apanA/yaha/apanI/ina/apane/usakI/usake/ye/isI/unake
 their	apanA/unakA_yA_inakA/vaha/unakA/yaha
 theirs	vaha/unakI_AvaSyakawA/unlofgo_kA/unakA
-them	unako/unakA/unake/unheM/ve/una_para/unak/unheM_unako
+them	unako/unakA/unake/unheM/ve/una_para/unak/unheM_unako/vaha
 themselves	Kuxa/svayaM
 there	vahAz/vaha
 these	ye/ina/yaha/inheM
