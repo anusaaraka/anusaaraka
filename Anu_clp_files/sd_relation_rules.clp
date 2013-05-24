@@ -743,6 +743,7 @@ else
  (parserid-word ?p ?word)
  (not (got_prepositional_rel ?p))
  (not (parserid-word  ?p_saM  ABBRdollar))
+ (test (neq (numberp ?word) TRUE)) ; Added by Roja (24-05-13) Ex: Also on the takeover front, Jaguar's ADRs rose 1/4 to [13] 7/8 on turnover of 4.4 million.
  =>
  (retract ?f0)
  (assert (got_prep_rel ?p_saM))

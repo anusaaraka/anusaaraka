@@ -83,7 +83,7 @@ FILE *fp;
 				strncpy(str, yytext, len); str[len]='\0';
 
 				s1=strchr(yytext, '/')+1;
-                                printf(" %s SYMBOL-SLASH %s", str, s1); /*Ex: km/hr  */
+                                printf("%s SYMBOL-SLASH %s", str, s1); /*Ex: km/hr  */
 			}
 [ ]*[0-9]+[.][0-9]+	{	len=strcspn(yytext, ".");
 				strncpy(str, yytext, len); str[len]='\0';
