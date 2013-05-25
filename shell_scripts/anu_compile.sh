@@ -173,7 +173,6 @@
  make
 
  echo "Compiling stanford parser files"
-# cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2012-11-12/
  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2013-04-05/
  sh compile.sh
 

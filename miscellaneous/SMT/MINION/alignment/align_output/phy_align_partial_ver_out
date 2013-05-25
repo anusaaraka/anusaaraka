@@ -17,6 +17,8 @@ jAzca kIjie.
 Hindi meaning using Stanford parser 2.1
 Similarly, static friction is important in daily life. 
 isI waraha se, sWEwika GarRaNa xEnika jIvana meM mahawvapUrNa hE.
+Multiple adjective senses are available for important. WSD rule is required 
+Multiple adjective senses are available for static. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.2
 Automobiles and planes carry people from one place to the other. 
@@ -29,6 +31,7 @@ gawi ke xo mAmale vicAra kIjie.
 Hindi meaning using Stanford parser 2.4
 The magnitude of the displacement for a course of motion may be zero but the corresponding path length is not zero. 
 gawi ke pATyakrama ke lie visWApana kA parimANa SUnya ho sakawA hE paranwu jo_samawulya_ho paWa lambAI niSAnA sAXa hE nahIM hE.
+Multiple adjective senses are available for corresponding. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.5
 The symbol nonascii3226136145 (the Greek letter sigma) denotes summation, in this case over n particles. 
@@ -45,6 +48,7 @@ pqWvI prawyeka twenty-four GaNte eka bAra GUmawI hE Ora varRa meM sUrya eka bAra
 Hindi meaning using Stanford parser 2.8
 In good many situations in real-life, the size of objects can be neglected and they can be considered as point-like objects without much error. 
 vAswavika jIvana meM acCI bahuwa sArI hAlawa meM, vaswu_kA AkAra upekRA kiyA jA sakawA hE Ora ve bahuwa BUla ke binA point-like vaswu_ke_jEsA samaJe jA sakawe hEM.
+Multiple adjective senses are available for good. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.9
 We now know that color is associated with wavelength of light. 
@@ -65,6 +69,7 @@ eka prAmANika 100 vAta incadescent vixyuwa balba wakarIbana rUpa se 1700 lumens 
 Hindi meaning using Stanford parser 2.13
 There are two things that we can intuitively mention about light from common experience. 
 xo cIjeM hEM ki hama sAmAnya anuBava se prakASa ke bAre meM sahaja jFAna se ulleKa_kara sakawe hEM.
+Multiple adjective senses are available for common. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.14
 Only the component perpendicular to the surface, i.e., the normal component of the momentum, gets reversed in reflection. 
@@ -85,18 +90,21 @@ yaha varNana_kara hama parimANa Osawa vega sImAfkiwa karawe hEM.
 Hindi meaning using Stanford parser 2.18
 We have seen earlier that the magnitude of displacement may be different from the actual path length. 
 hama pahale xeKa cuke hEM ki visWApana kA parimANa vAswavika paWa lambAI se alaga ho sakawA hE.
+Multiple adjective senses are available for actual. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.19
 Thus, in this case the average speed is equal to the magnitude of the average velocity. 
 isa prakAra, isa mAmale meM Osawa cAla Osawa vega ke parimANa ke lie samAna hE.
+Multiple adjective senses are available for equal. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.20
 Thus, in this case the average speed is not equal to the magnitude of the average velocity. 
 isa prakAra, isa mAmale meM Osawa cAla Osawa vega ke parimANa ke lie samAna nahIM hE.
+Multiple adjective senses are available for equal. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.21
-For this, we define instantaneous velocity or simply velocity v at an instant t .. 
-isake lie, hama wAwkRaNika vega yA sAxagI se vega wawkAla t meM v. sImAfkiwa karawe hEM.
+For this, we define instantaneous velocity or simply velocity v at an instant t.. 
+isake lie, hama wAwkRaNika vega yA sAxagI se vega wawkAla t. meM v. sImAfkiwa karawe hEM.
 
 Hindi meaning using Stanford parser 2.22
 Instantaneous speed or simply speed is the magnitude of velocity. 
@@ -117,14 +125,17 @@ PropN-equation-PropN (3SYMBOL-DOT7) ke jEsA BI liKA jA sakawA hE.
 Hindi meaning using Stanford parser 2.26
 In this case, the magnitude of displacement (360 m) is equal to the path length (360 m). 
 isa mAmale meM, visWApana kA parimANa (360 xasa lAKa) paWa lambAI ko (360 xasa lAKa) samAna hE.
+Multiple adjective senses are available for equal. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.27
 Thus, the stopping distance is proportional to the square of the initial velocity. 
 isa prakAra, roXana xUrI prAramBika vega ke cOka ke lie samAnupAwI hE.
+Multiple adjective senses are available for proportional. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.28
 It is a common observation that a ball bouncing from a smooth plane surface obeys the laws of reflection. 
 yaha eka sAmAnya prekRaNa hE ki eka niRkoNa samawala UparI wala se uCalawe_hue golA parAvarwana ke niyama AjFApAlana karawI hE.
+Multiple adjective senses are available for common. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.29
 In this situation, as you will learn in Chapter 10, a light wave can be considered to travel from one point to another, along a straight line joining them. 
@@ -133,10 +144,12 @@ jaba Apa PropN-chapter-PropN 10 meM sIKezge, isa hAlawa meM, eka halakI lahara u
 Hindi meaning using Stanford parser 2.30
 First, that it travels with enormous speed and second, that it travels in a straight line. 
 PropN-first-PropN, ki yaha bahuwa se raPwAra se Ora kRaNa se, calawA hE. ki yaha eka sarala reKA meM yAwrA karawA hE
+Multiple adjective senses are available for enormous. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.31
 An incoming wave can be divided into two weaker waves at the boundary between air and water. 
 Agamika lahara havA ke bIca Ora pAnI ke bIca sImA meM xo aXika kamajora laharoM ke anxara bAztI jA sakawI hE.
+Multiple adjective senses are available for incoming. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.32
 The early civilisations of Egypt, India, China, Greece, Mesopotamia and many others made vital contributions to its progress. 
@@ -165,18 +178,24 @@ yaha guruwvAkarRaNa ko wulanA kara bahuwa aXika majabUwa hE.
 Hindi meaning using Stanford parser 2.38
 Thus it is mainly the electromagnetic force that governs the structure of atoms and molecules, the dynamics of chemical reactions and the mechanical, thermal and other properties of materials. 
 isa prakAra yaha vExyuwacumbakIya bala pramuKa rUpa se hE jo paxArWoM kI paramANuoM kI Ora aNu, rasAyanika xravya kA prawikriyAoM kI Ora - yAnwrika kA, URmIya kI Ora anya kA sampawwi kI gawikI saMracanA vaSA_meM karawA hE.
+Multiple adjective senses are available for electromagnetic. WSD rule is required 
+Multiple adjective senses are available for mechanical. WSD rule is required 
+Multiple adjective senses are available for thermal. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.39
 This is almost inevitable with ladies garments like a polyester saree. 
 yaha eka paliyestara sAdI kI waraha mahilA kapadoM se lagaBaga aparihArya hE.
+Multiple adjective senses are available for inevitable. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.40
 You can perform the following activity at home to experience such an effect. 
-Apa eka EsA praBAva anuBava karane ke lie Gara para anusaraNa karanA kriyA kalApa kArya_kara sakawe hEM.
+Apa eka EsA praBAva anuBava karane ke lie Gara para aglA kriyA kalApa kArya_kara sakawe hEM.
 
 Hindi meaning using Stanford parser 2.41
 A dramatic observation is that a pith ball touched with glass rod attracts another pith ball touched with plastic rod (Fig. 1SYMBOL-DOT1 (f)). 
 eka nAtakIya prekRaNa hE ki gilAsa Cada ke sAWa sparSa kI huI eka majjA golA plAstika Cada ke sAWa (PropN-fig.-PropN 1SYMBOL-DOT1 eM sparSa kI huI xUsarI majjA golA AkarRiwa karawI hE.
+Multiple adjective senses are available for dramatic. WSD rule is required 
+Multiple adjective senses are available for plastic. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.42
 This might have been the philosophy in naming the charges as positive and negative. 
@@ -209,6 +228,10 @@ vahI praBAva pawwe electroscope meM xeKA huA hE.
 Hindi meaning using Stanford parser 2.49
 The scientific method involves several interconnected steps: Systematic observations, controlled experiments, qualitative and quantitative reasoning, mathematical modelling, prediction and verification or falsification of theories. 
 vEjFAnika- praNAlI viBinna anwarsambaxXa kie hue kaxama: suvyavasWiwa prekRaNa, niyanwriwa prayoga, guNAwmaka Ora parimANAwmaka warka viwarka, gaNiwa sambanXI prawirUpaNa, pUrvAnumAna Ora sixXAnwoM kA sawyApana yA jAlasAjI SAmila howI hE.
+Multiple adjective senses are available for controlled. WSD rule is required 
+Multiple adjective senses are available for mathematical. WSD rule is required 
+Multiple adjective senses are available for quantitative. WSD rule is required 
+Multiple adjective senses are available for systematic. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.50
 The interplay of theory and observation (or experiment) is basic to the progress of science. 
@@ -217,18 +240,26 @@ sixXAnwa kI Ora prekRaNa kI pArasparika kriyA yA prayoga) vijFAna kI pragawi ke 
 Hindi meaning using Stanford parser 2.51
 The effort is to see the physical world as manifestation of some universal laws in different domains and conditions. 
 prayawna alaga meM praBAvakRewra meM Ora sWiwi meM kuCa sArvawrika niyamoM ke AvirBAva ke jEsA SArIrika viSva ko xeKane vAlA hE.
+Multiple adjective senses are available for universal. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.52
 A related effort is to derive the properties of a bigger, more complex, system from the properties and interactions of its constituent simpler parts. 
 eka sambanXiwa prayawna usake saMviXAnI aXika sarala BAga kI sampawwi se Ora anyonya kriyAez eka aXika bade, aXika jatila, nikAya kI sampawwi viSleRaNa vAlA hE.
+Multiple adjective senses are available for complex. WSD rule is required 
+Multiple adjective senses are available for constituent. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.53
 Basically, there are two domains of interest: macroscopic and microscopic. 
 svaBAvawaH, rUci: sWUla Ora sUkRma kA xo praBAvakRewra hEM.
+Multiple adjective senses are available for microscopic. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.54
 The microscopic domain includes atomic, molecular and nuclear phenomena. 
 sUkRma_praBAva kRewra paramANvika, ANvika Ora ANvika pariGatanA sammiliwa karawA hE.
+Multiple adjective senses are available for atomic. WSD rule is required 
+Multiple adjective senses are available for microscopic. WSD rule is required 
+Multiple adjective senses are available for molecular. WSD rule is required 
+Multiple adjective senses are available for nuclear. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.55
 Classical Physics deals mainly with macroscopic phenomena and includes subjects like Mechanics, Electrodynamics, Optics and Thermodynamics. 
@@ -237,6 +268,8 @@ PropN-classical-PropN PropN-physics-PropN sWUla pariGatanA ke sAWa pramuKa rUpa 
 Hindi meaning using Stanford parser 2.56
 Mechanics founded on Newton's laws of motion and the law of gravitation is concerned with the motion (or equilibrium) of particles, rigid and deformable bodies, and general systems of particles. 
 gawi ke PropN-newton-PropN ke niyamoM para Ora guruwvAkarRaNa ke niyama para sWApanA kI huI yAnwrikI kaNa, xqDa Ora deformable piNdoM kA, Ora kaNoM ke vyApaka nikAyoM kA (yA sanwulana) gawi se sambanXiwa hE.
+Multiple adjective senses are available for concerned. WSD rule is required 
+Multiple adjective senses are available for general. WSD rule is required 
 
 Calling Transliteration
 Calling Interface related programs

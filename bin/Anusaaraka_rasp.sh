@@ -76,8 +76,7 @@
   sh run_rasp-parser.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
   
   echo "Calling Stanford parser"
-#  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/
-  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2012-11-12/
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2013-04-05/
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 
   #running stanford NER (Named Entity Recogniser) on whole text.
