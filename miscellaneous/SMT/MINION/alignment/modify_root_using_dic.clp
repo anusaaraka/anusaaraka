@@ -153,7 +153,7 @@
 ;You will find that the path of the beam inside the water shines brightly.
 ;Apa xeKezge ki jala [ke anxara] kiraNa - puFja kA paWa camakIlA xiKAI xewA hE
 (defrule grouping_using_dic_for_vib
-(declare (salience 4))
+(declare (salience 40))
 (manual_ids-sep-mng  ?id $?d ?id1 - $?mng)
 ?f0<-(manual_id-cat-word-root-vib-grp_ids ?mid ?n $?word - $?root - $?vib - $?ids ?id)
 (test (neq (implode$ $?vib) "0"))
@@ -167,7 +167,7 @@
 ;Suggested by Chaitanya Sir(14-05-13)
 ;My father will see to that. mere [piwAjI] sabako xeKa lezge.
 (defrule modify_root_for_jI
-(declare (salience 4))
+(declare (salience 40))
 ?f0<-(manual_id-cat-word-root-vib-grp_ids ?mid ?n $?word - ?root - $?vib - $?ids)
 (test (eq (sub-string (- (length ?root) 1) (length ?root) ?root) "jI"))
 (id-org_wrd-root-dbase_name-mng ? ? ? ? ?mng)
@@ -177,15 +177,32 @@
 	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?n $?word - ?mng - $?vib - $?ids))
 )
 ;----------------------------------------------------------------------------------------------------------------
+(defrule modify_aper_fact
+(declare (salience 30))
+(man_word-root-cat ?word   ?rt     p)
+(not (man_word-poss_roots ?word $?))
+=>
+	(assert (man_word-poss_roots ?word ))
+)
+;----------------------------------------------------------------------------------------------------------------
+(defrule modify_aper_fact1
+(declare (salience 20))
+?f0<-(man_word-poss_roots ?word $?root)
+(man_word-root-cat ?word   ?rt     p)
+(test (eq (member$ ?rt $?root) FALSE))
+=>
+        (retract ?f0)
+	(bind $?n_rt (create$ $?root ?rt))
+        (assert (man_word-poss_roots ?word $?n_rt))
+)
+;----------------------------------------------------------------------------------------------------------------
 ;Tell them to inform the others, and ask them to help me.unase kahanA ki ve OroM ko BI bawA xeM waWA unase [merI] sahAyawA karane ke lie kahanA
 (defrule modify_root_for_pronouns_using_aper
-(declare (salience 4))
+(declare (salience 3))
 ?f0<-(manual_id-cat-word-root-vib-grp_ids ?mid ?n ?word $?w - ?root $?r - $?vib - $?ids)
-(man_word-root-cat	?word	?rt	p)
-(test (neq ?rt ?root))
+(man_word-poss_roots ?word $?pos_roots)
+(test (eq (member$ ?root $?pos_roots) FALSE))
 =>
 	(retract ?f0)
-	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?n ?word $?w - ?rt $?r - $?vib - $?ids))
+	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?n ?word $?w - (nth$ 1 $?pos_roots) $?r - $?vib - $?ids))
 )
-
-

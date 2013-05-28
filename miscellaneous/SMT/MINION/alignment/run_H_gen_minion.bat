@@ -160,6 +160,7 @@
  (load-facts "manual_group_mng_tmp1.dat")
  (load-facts "manual_ids_tmp3.dat") 
  (load-facts "manual_word_without_@.dat")
+ (load-facts "manual_hin.morph.dat")
  (load-facts "database_mng.dat")
  (run)
  (save-facts "manual_lwg.dat" local manual_id-cat-word-root-vib-grp_ids)

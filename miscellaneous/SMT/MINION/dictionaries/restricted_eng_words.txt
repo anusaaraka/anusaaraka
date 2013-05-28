@@ -92,7 +92,7 @@ minus	nyUnawama/kamI/GatAva/ke_binA/GatA
 more	aXika/Ora_aXika/Ora/KUba/bahuwa/aXikawara/aXikAMSa/jyAxA/aXika_mAwrA_meM/awyaXika
 most	sabase_aXika/sarvAXika/bahuwa_aXika/bahuwa/aXikawama/aXikAMSa/lagaBaga/awyaXika
 much	bahuwa/bahuwa_kAla/aXika/prAyaH/Ora/karIba-karIba/kAPI
-my	merA/mere
+my	merA/mere/mEM
 myself	svayaM/svawaH
 near	nikata/samIpa/pAsa_meM/pAsa_hI/pAsa/najaxIkI/najaxIka/mUla/milawA-julawA/lagaBaga_samIpa/lagaBaga/karIba/kiPayawaSArI/kaFjUsa/jigarI/bilkula_nayA/bAzyA/bahuwa_kuCa_sahI/AnevAlA/anwarafga/milawA_julawA/pAsa_se/pasa/nikata_se/karIba-karIba/ke_pAsa/ke_najaxIka/karIba_ho/nikata_pahuzca
 neither	nA_yaha_nA_vaha/na_hI/nahIM/na/koI_BI_nahIM/inakAra/na_wo
@@ -110,8 +110,8 @@ opposite	viruxXa/viroXI/viparIwa/ultA/sAmane/prawikUla/Amane-sAmane/ke_sAmane
 or	yA/aWavA/anyaWA
 other	anya/xUsarA/xUsar/viparIwa/Ora/bAkI
 others	anya
-our	hamArA/hamalogo_kA/apanA/hamAre/hamArI/apane/apanI
-ours	hamArA/apanA
+our	hamArA/hamalogo_kA/apanA/hamAre/hamArI/apane/apanI/mEM
+ours	hamArA/apanA/mEM
 ourselves	svayam/hama_svayam/apane_Apa_ko/svayam_ko
 outside	bAhara/ke_bAhara/bAhya/bAharI/asambaxXa/kama/bAhara_kI_ora/sImA_se_bAhara/bAharI_BAga/se_pare/se_bAhara
 over	samApwa/pe/nIce_girA_huA/se_aXika/Bara/xUsarI_ora/waka/varRa_se_jyAxA/bacA_huA/Kawama/bArabAra/SeRa/kriketa_kI_ovara/se_upara/para/meM/ke_upara_se/ke_upara/ke_samaya/ke_bAvajUxa/Upara/isa_ora_se_usa_ora_waka/suxUra/se_jyAxA/bIca/xaramiyAz/kaTinAiyAz_se_mukwa/prasAriwa/weja_AvAja/pAra_kara

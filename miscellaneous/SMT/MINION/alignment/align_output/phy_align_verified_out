@@ -832,6 +832,30 @@ Hindi meaning using Stanford parser 2.187
 However, the glass rod and wool attracted each other. 
 PiraBI, gilAsa Cada Ora Una ne eka xUsare AkarRiwa kiyA.
 
+Hindi meaning using Stanford parser 2.188
+Metals, human and animal bodies and earth are conductors. 
+XAwvika, mAnava Ora paSu piNda Ora pqWvI cAlaka hEM.
+
+Hindi meaning using Stanford parser 2.189
+Thus the pith ball is charged by contact. 
+isa prakAra majjA golA samparka waka xoRa lagAI gayI hE.
+
+Hindi meaning using Stanford parser 2.190
+The free electrons in the spheres are attracted towards the rod. 
+gola vaswuoM meM svawanwra ilektroYna Cada kI ora AkarRiwa kie gaye hEM.
+
+Hindi meaning using Stanford parser 2.191
+However, not all of the electrons in the spheres have accumulated on the left surface of A.. 
+PiraBI, gola vaswuoM meM ilektroYna nahIM pUre PropN-a.-PropN ke bAzyA UparI wala para saFcaya_kara cuke hEM.
+
+Hindi meaning using Stanford parser 2.192
+Fig. 1SYMBOL-DOT4 (b) shows the equilibrium situation. 
+PropN-fig.-PropN 1SYMBOL-DOT4 bI sAmyAvasWA hAlawa xiKAwI hE.
+
+Hindi meaning using Stanford parser 2.193
+(iv) Remove the rod. 
+(PropN-iv-PropN) Cada nikAla xewA hE.
+
 Calling Transliteration
 Calling Interface related programs
 Print minion_statistics
@@ -840,6 +864,6 @@ No Solution Found :
 Time-out:
 0
 Solution Found :
-187
+193
 re-executed-sentences:
 23

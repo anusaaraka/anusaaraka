@@ -1,3 +1,20 @@
+ 28-05-13
+ ========
+ 1. In sd_relation_rules.clp
+        1. Modified rules: kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp and xcomp+aux
+        2. Added : dep+det
+ 2. Loaded "manual_hin.morph.dat" file in modify_root_using_dic module in run_H_gen_minion.bat
+ 3. Added "get_emphatic_for_prev_word" rule in get_mng.clp
+ 4. modify_root_using_dic.clp
+        Added    : modify_aper_fact and modify_aper_fact1
+        Modified : modify_root_for_pronouns_using_aper
+ 5. Added verified_eng, verified_hnd, verified_out and verified_eng_align.html files
+ 6. Updated changes_in_databases
+ 7. Updated minion dictionaries
+ 8. Updated Log
+ 9. Updated
+        phy_align_verified (193)	verified (40)		partial_ver (22)
+
  10-07-09
  ========
  1. Modified PropN rule in link_category.clp and prefix_vib_rule in vibakthi.clp.
@@ -4671,11 +4688,3 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         phy_align_verified_eng (187)
         phy_align_partial_ver_eng (58)
 67. Updated Log.
-
-28-05-13
-========
-1. In sd_relation_rules.clp
-        1. Modified rules: kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp and xcomp+aux
-        2. Added : dep+det
-2. Updated Log.
-

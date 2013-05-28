@@ -780,27 +780,18 @@ Modified:
 	60. broken_adjective	Ubada-KAbada/tUtA-PUtA/tUtA_huA/nirASa/na_raKA_gayA/KaNdiwa/JUTA/ArWika_rUpa_se_naRta
 					as
 				tUtA_huA/Ubada-KAbada/tUtA-PUtA/nirASa/na_raKA_gayA/KaNdiwa/JUTA/ArWika_rUpa_se_naRta
-	61. marble_noun	safgamaramara/sagaMmaramara/kaFcA
-					as
-			safgamaramara/kaFcA
-	62. marbled_adjective	safgamaramara_kI_waraha
-					as
-				safgamaramara_se_banA_huA
-	63. marbles's_UNDEFINED	kaFce`
-					as
-				kaFce
-	64. recycled_adjective	punaH_cakriwa
-					as
-				punarAvqwwa/punaH_cakriwa
-	65. striking_adjective	XyAna_AkarRiwa_karanevAlI/awyaXika_AkarRaka/AScaryajanaka/asAXAraNa
+	61. marble_noun		safgamaramara/sagaMmaramara/kaFcA
+					 as	safgamaramara/kaFcA
+	62. marbled_adjective	safgamaramara_kI_waraha		as	safgamaramara_se_banA_huA
+	63. marbles's_UNDEFINED	kaFce`				as	kaFce
+	64. recycled_adjective	punaH_cakriwa			as	punarAvqwwa/punaH_cakriwa
+	65. extended_adjective  lambA				as	viswqwa/lambA
+	66. striking_adjective	XyAna_AkarRiwa_karanevAlI/awyaXika_AkarRaka/AScaryajanaka/asAXAraNa
 					as
 				XyAna_AkarRiwa_karanevAlA/awyaXika_AkarRaka/AScaryajanaka/asAXAraNa
-	66. extended_adjective	lambA
-					as
-				viswqwa/lambA  	
 
-Removed::
--------
+  Removed::
+  -------
 	itumail@itu.ch  E-MAIL::itumail@itu.ch	(Suggested by Rajini(29-02-12))
 	organized       -::saMgaTiwa	(Suggested by Rajini(29-02-12))
 	yellow-card     noun::^	(Suggested by Rajini(29-02-12))
@@ -808,53 +799,34 @@ Removed::
 	fix_verb	sWapiwa_kara  (Suggested by Chaitanya Sir 23-02-13)
 	recycled_UNDEFINED	punarAvqwwa (Suggested by Sukhada (20-05-13)
 
-
-Added:
-------
-  1. wonder_noun      vismaya/karAmAwI/camawkAra/axBuwa_xqSya/axBuwa_vaswu/AScarya/acaraja/acamBA      
-                                                as
-                      vismaya/karAmAwI/camawkAra/axBuwa_xqSya/axBuwa_vaswu/AScarya/acaraja/acamBA/kOwUhala 
-										      (Suggested by Chaitanya Sir 19-03-13)
-  2. existing_adjective      varwamAna/pracaliwa   as   varwamAna/pracaliwa/supracaliwa       (Added by Manju 20-03-13)
-  3. systematic_adjective    suvyavasWiwa/suniyojiwa/niyamiwa/kramabaxXa/Ayojiwa       as
-                             suvyavasWiwa/suniyojiwa/niyamiwa/kramabaxXa/Ayojiwa/vyavasWiwa   (         "             )
-  4. manifest_verb           spaRta_ho_jA/sAPa_xiKAI_xe/praxarSiwa_kara/nAKuna_prasAXana_kara
-                                                as
-                             spaRta_ho_jA/sAPa_xiKAI_xe/praxarSiwa_kara/nAKuna_prasAXana_kara/prakata_ho  (    "  9-4-13 )
-  5. large_adjective    viSAla/viswqwa/uxAra/pracura_mAtrA_meM/jyAxA/Dera_sA/bqhax/badI/bade_bade/badA/aXika/anukUla/vyApaka
-                                                as
-                        viSAla/viswqwa/uxAra/pracura_mAtrA_meM/jyAxA/Dera_sA/bqhax/badI/bade_bade/badA/aXika/anukUla/vyApaka/bqhaw											   (Added by Manju 11-04-13)
-  6. inquiring_adjective     praSnamaya/jijFAsu	 as  praSnamaya/jijFAsu/anveRI   ( 	 "	19-03-13)
-  7. respond_verb       prawyuwwara_xe/prawikriyA_xiKA/javAba_xe/uwwara_xe/prawikriyA_kara/baxale_me_kuCa_karanA_yA_kaha							as
-                        prawyuwwara_xe/prawikriyA_xiKA/javAba_xe/uwwara_xe/prawikriyA_kara/baxale_me_kuCa_karanA_yA_kaha/prawikriyA_vyakwa kara							(Suggested by Chaitanya Sir    19-03-13)
-  8. electricity_noun   vixyuwa_Sakwi/vixyuwa/uwwejanA/UrjA/bijalI 
-						as
-			vixyuwa_Sakwi/vixyuwa/uwwejanA/UrjA/bijalI/vixyuwa_XArA   (     "        17-04-13          )
- 9. electrify_verb  	bijalI_kI_Sakwi_pahuzcA/wAra_lagA/vixyuwIkaraNa_kara/uwwejanA_se_Bara_x_e	(     "    )
-						as
-			bijalI_kI_Sakwi_pahuzcA/wAra_lagA/vixyuwIkaraNa_kara/uwwejanA_se_Bara_x_e/vixyunmaya_ho
-10. lose_verb        	Ko_xe/samaya_naRta_kara/parAjiwa_ho/nimna_xarje_kA_ho/lupwa_ho_j/ko_xa/Ko_j/k/Karca_kara/kama_ho_j/icCA_na_raKa/hAra/gazv/gazvA_xe/bUla_j/Bataka_j/mita_jA/na_suna_pA/hAra_jA/barabAxa_ho/pICe_ho_jA
-						as
-			Ko_xe/samaya_naRta_kara/parAjiwa_ho/nimna_xarje_kA_ho/lupwa_ho_j/ko_xa/Ko_j/k/Karca_kara/kama_ho_j/icCA_na_raKa/hAra/gazv/gazvA_xe/bUla_j/Bataka_j/mita_jA/na_suna_pA/hAra_jA/barabAxa_ho/pICe_ho_jA/Ko  (Added by Manju 20-4-13)
-11. most_adjective  	sabase_aXika/sarvAXika/bahuwa_aXika/bahuwa/aXikawama
-						as
-			sabase_aXika/sarvAXika/bahuwa_aXika/bahuwa/aXikawama/aXikAMSa  (Added by Shirisha Manju 20-4-13)
-12. photoelectric_noun      prakASa_vixyuwa					     (Suggested by Chaitanya Sir 19-03-13)
-13. antielectron_noun       prawi_ilektroYna					     (			"		)
-14. ground_noun     	pqWvI_wala/XarAwala/warka/walaCata/wala/viRaya/sWala/pqRTaBUmi/mittI/mExAna/kRewra/kAraNa/jamIna/hAwA/BUmi/AXAra					as
-			pqWvI_wala/XarAwala/warka/walaCata/wala/viRaya/sWala/pqRTaBUmi/mittI/mExAna/kRewra/kAraNa/jamIna/hAwA/BUmi/AXAra/pqWvI									  (     Added by Shirisha Manju 20-4-13)
-
+  Added new entry:
+  ---------------
+	1. photoelectric_noun      prakASa_vixyuwa		( Suggested by Chaitanya Sir 19-03-13	)
+	2. antielectron_noun       prawi_ilektroYna		(		"			)
 
   Added new meaning to the existing word:
   ---------------------------------------
-	1. half_noun		arXaBAga			(Suggested by Chaitanya Sir  02-05-13	)
-	2. encapsulate_verb	saMgatiwa_kara (as main mng)	(		"			)
-	3. deflect_verb		vikRepiwa_ho/vikRepiwa_kara	(Suggested by Chaitanya Sir  10-05-13	)
-	4. she_pronoun 		yaha				(Suggested by Chaitanya Sir  13-05-13  	)
-	5. her_pronoun		yaha				(		"			)
-	6. him_pronoun		yaha				(		"			)
-	7. he_pronoun		yaha				(		"			)
-  	8. fox_noun		lomada				(Suggested by Sukhada 14-05-13		)
+	1. respond_verb			prawikriyA_vyakwa kara		( Suggested by Chaitanya Sir  19-03-13	)
+	2. wonder_noun			kOwUhala			(		"			)
+	3. inquiring_adjective		anveRI				(		"			)
+	4. systematic_adjective		vyavasWiwa			( Added by Shirisha Manju     20-03-13	)
+	5. existing_adjective		supracaliwa			(		"			)
+	6. manifest_verb		prakata_ho			( Added by Shirisha Manju     9-04-13	)
+	7. large_adjective		bqhaw				( 		"	      11-04-13	)
+	8. electricity_noun		vixyuwa_XArA			( Suggested by Chaitanya Sir  17-04-13	)
+	9. electrify_verb		vixyunmaya_ho			(		"			)
+	10. most_adjective		aXikAMSa			( Added by Shirisha Manju 20-4-13	)	
+	11. ground_noun			pqWvI				(		"			)
+	12. lose_verb			Ko				(		"			)
+	13. half_noun			arXaBAga			( Suggested by Chaitanya Sir  02-05-13	)
+	14. encapsulate_verb		saMgatiwa_kara (as main mng)	(		"			)
+	15. deflect_verb		vikRepiwa_ho/vikRepiwa_kara	( Suggested by Chaitanya Sir  10-05-13	)
+	16. she_pronoun 		yaha				( Suggested by Chaitanya Sir  13-05-13  )
+	17. her_pronoun			yaha				(		"			)
+	18. him_pronoun			yaha				(		"			)
+	19. he_pronoun			yaha				(		"			)
+  	20. fox_noun			lomada				( Suggested by Sukhada 14-05-13		)
+	21. you_pronoun			wU				( Suggested by Chaitanya Sir  24-5-13	)
   
  changes in preposition.txt
  ==========================

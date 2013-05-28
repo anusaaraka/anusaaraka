@@ -39,7 +39,22 @@
 	(printout ?*dic_fp1*  ?eng_wrd" :: " ?m_mng crlf)
 )
 ;--------------------------------------------------------------------------------------------------------
-
+;It is mine by right. He must be very worried about me.
+;He returned shortly, shaking his head. 
+(defrule get_emphatic_for_prev_word
+(declare (salience 100))
+?f1<-(left_out_mngs $?pre ?mid $?po)
+(manual_id-mng ?mid hI)
+(not (id-word ? only))
+?f0<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?m - =(- ?mid 1) $?m1)
+(hin_pos-hin_mng-eng_ids-eng_words ? ? $? ?aid $? ?eng_wrd)
+=>
+	(retract ?f0 ?f1)
+	(assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?m - =(- ?mid 1) $?m1 hI))
+	(assert (left_out_mngs $?pre $?po))
+	(printout ?*dic_fp1* "emphatic: " ?eng_wrd" :: "(implode$ $?m1) " hI" crlf)
+)
+;--------------------------------------------------------------------------------------------------------
 ;;Eng sen  :: Thus, the result of measurement [should be reported] in a way that indicates the precision of measurement. 
 ;;Man tran :: awaH mApana ke pariNAmoM ko isa prakAra [praswuwa kiyA jAnA cAhie] ki mApana kI pariSuxXawA spaRta ho jAe.
 ;;Added by Maha Laxmi

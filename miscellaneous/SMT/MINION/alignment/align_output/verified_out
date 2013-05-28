@@ -1,0 +1,192 @@
+Pre-proccessing manual file ...
+Running Shallow Parser ...
+Generating canonical form for Shallow Parser Output ...
+Tokenizing manual sentence
+Saving Format info ...
+Saving word information
+Saving morph information
+Calling POS Tagger and Chunker (APERTIUM)
+Calling Stanford parser
+Finding NER ... 
+Tokenizing ...
+Multi word ...
+Hindi meaning using Stanford parser 1.1
+Test. 
+jAzca kIjie.
+
+Hindi meaning using Stanford parser 2.1
+Good Princess, I can not sell my donkey. 
+acCA PropN-princess-PropN, mEM mere gaXe ko nahIM_beca sakawA hUz.
+Multiple adjective senses are available for good. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.2
+He is my friend. 
+vaha merA miwra hE.
+
+Hindi meaning using Stanford parser 2.3
+I can not do without him. 
+mEM usake binA nahIM_kara sakawA hUz.
+
+Hindi meaning using Stanford parser 2.4
+I want to buy this donkey. 
+mEM isa gaXe ko KarIxanA cAhawA hUz.
+
+Hindi meaning using Stanford parser 2.5
+The Princess was very surprised to hear this. 
+rAjakumArI yaha suna kara awyanwa AScaryacakiwa huI gayI WI.
+
+Hindi meaning using Stanford parser 2.6
+And, turning to her guards, she ordered them to seize Dipu. 
+Ora, usake paharexAroM ko mudawe_hue, usane unako PropN-dipu-PropN pakadane ke lie AjFA xI.
+
+Hindi meaning using Stanford parser 2.7
+In spite of the threat, Dipu remained silent. 
+XamakI ke bAvajUxa, PropN-dipu-PropN cupa SeRa rahI.
+Multiple adjective senses are available for silent. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.8
+Guard, stop this donkey and let me get off his back! 
+PropN-guard-PropN, isa gaXe ko rokawA hE Ora muJe usakI pITa uwArane xo!
+
+Hindi meaning using Stanford parser 2.9
+I will go for a walk in the forest. 
+mEM jafgala meM sEra ke lie jAUzgA.
+
+Hindi meaning using Stanford parser 2.10
+What are you doing here? 
+Apa yahAz kyA kara rahe hEM?
+
+Hindi meaning using Stanford parser 2.11
+I am going for a walk, said the Princess. 
+mEM sEra ke lie jA rahA hUz, kahA rAjakumArI ne.
+
+Hindi meaning using Stanford parser 2.12
+That is very kind of you, said the Princess gratefully. 
+vaha ApakA bahuwa sahqxayawApUrNa hE, kahA rAjakumArI kqwajFawA se ne.
+
+Hindi meaning using Stanford parser 2.13
+My name is Kular. 
+merA nAma PropN-kular-PropN hE.
+
+Hindi meaning using Stanford parser 2.14
+The Princess began to weep. 
+rAjakumArI ne roxana AramBa kiyA.
+
+Hindi meaning using Stanford parser 2.15
+You are known to be sly and cunning. 
+Apa XUrwa Ora cAlAka ho ko jAne gaye hEM.
+Multiple adjective senses are available for sly. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.16
+If we help the Princess perhaps she will change. 
+yaxi hama SAyaxa rAjakumArI kI sahAyawA karawe hEM wo vaha baxalegI.
+
+Hindi meaning using Stanford parser 2.17
+She will become a better person. 
+vaha eka aXika behawara vyakwi hogI.
+
+Hindi meaning using Stanford parser 2.18
+Hungry and thirsty! said Dipu sympathetically. 
+PropN-hungry-PropN Ora pyAse ne! kahA PropN-dipu-PropN saMvexI wanwrikA wanwra ke anusAra.
+
+Hindi meaning using Stanford parser 2.19
+Just a moment, we will solve your problem. 
+TIka kRaNa, hama ApakI samasyA ko hala karegA.
+
+Hindi meaning using Stanford parser 2.20
+Thank you, she said. 
+Apako XanyavAxa xewA hE, usane kahA.
+
+Hindi meaning using Stanford parser 2.21
+I am the landlord's daughter. 
+mEM makAna mAlika kI betI hUz.
+
+Hindi meaning using Stanford parser 2.22
+Your father dug this pit to trap elephants like me. 
+Apake piwA ne merI waraha GAwa hAWiyoM ko yaha gadDA KoxA.
+
+Hindi meaning using Stanford parser 2.23
+I want to introduce you to my father. 
+mEM mere piwA ko Apako paricaya karAnA cAhawA hUz.
+
+Hindi meaning using Stanford parser 2.24
+He will be so pleased to meet you. 
+vaha Apase milanA iwanA prasanna hogA.
+Multiple adjective senses are available for pleased. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.25
+Dipu introduced his Sonar Bagan friends to the two. 
+PropN-dipu-PropN ne xo ko usake PropN-sonar-PropN PropN-bagan-PropN miwroM ko paricaya karAyA.
+
+Hindi meaning using Stanford parser 2.26
+Papri asked. 
+PropN-papri-PropN ne pUCA.
+
+Hindi meaning using Stanford parser 2.27
+He could tell that they would be sad to lose him. 
+vaha bawA sakA ki ve usako KonA uxAsa hofge.
+Multiple adjective senses are available for sad. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.28
+He said to his friends, I wish to stay with Mangal and Sukhi for a while. 
+usane kahA ki usake miwroM ko, mEM kuCa_samaya waka PropN-mangal-PropN vAle Ora PropN-sukhi-PropN vAlA rahane ke lie icCA karawA hUz.
+
+Hindi meaning using Stanford parser 2.29
+Awake so early? 
+iwanI jalxI jagawA hE?
+
+Hindi meaning using Stanford parser 2.30
+Dipu remarked. 
+PropN-dipu-PropN ne tippaNI kI.
+
+Hindi meaning using Stanford parser 2.31
+What is that? 
+vaha kyA hE?
+
+Hindi meaning using Stanford parser 2.32
+Lakshmi is the goddess of wealth, Sukhi explained. 
+PropN-lakshmi-PropN Xana kI xevI hE, PropN-sukhi-PropN ne samaJAyA.
+
+Hindi meaning using Stanford parser 2.33
+We are as poor as ever. 
+hama kaBI BI jiwanA uwanA xIna hEM.
+
+Hindi meaning using Stanford parser 2.34
+I hope I can remember the words. 
+mEM ASA karawA hUz ki mEM Sabxa yAxa_kara sakawA hUz.
+
+Hindi meaning using Stanford parser 2.35
+Sleepy-head that he was, he was snoozing on his pink lily bed in the pond. 
+vaha WA Sleepy-head, vaha wAlAba meM usake gulAbI rafga ke kumuxinI biswara para JApakI_le rahA WA.
+
+Hindi meaning using Stanford parser 2.36
+Sukhi would be upset, since it was the day of Lakshmi Puja. 
+PropN-sukhi-PropN ultA, hogA jaba se vaha PropN-lakshmi-PropN PropN-puja-PropN kA xina WA.
+
+Hindi meaning using Stanford parser 2.37
+I will show you a secret. 
+mEM Apa rahasya xiKAUzgA.
+
+Hindi meaning using Stanford parser 2.38
+In fact, all Dipu's friends are here to help him. 
+vAswava meM, PropN-dipu-PropN ke saba miwra yahAz usakI sahAyawA_karane vAlA hE.
+
+Hindi meaning using Stanford parser 2.39
+He must be very worried about me. 
+vaha mere bAre meM awyanwa cinwiwa honA cAhie.
+
+Hindi meaning using Stanford parser 2.40
+He returned shortly, shaking his head. 
+vaha usakA sira hilAnA avilamba, lOtA.
+
+Calling Transliteration
+Calling Interface related programs
+Print minion_statistics
+No Solution Found :
+0
+Time-out:
+0
+Solution Found :
+40
+re-executed-sentences:
+6
