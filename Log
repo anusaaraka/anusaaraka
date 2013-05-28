@@ -4475,7 +4475,7 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 74. Updated sd_verified (490), sd_ver_output and phy_align_verified_out
 75. Updated Log
 
- 22-05-13
+ 25-05-13
  ========
  1. Removed default_meaning_frm_oldwsd.txt from Anu_data and moved into miscellaneous/Programs/removed_files and following changes are done.
 		  i) Removed name in list-right and list_Anu_data
@@ -4517,7 +4517,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
         Added    : modify_verb_group
         Modified : change_remaining_facts2 and change_remaining_facts
 12. modify_root_using_dic.clp:
-        Added   :  add_grp_mng1 , modify_root_for_jI and modify_root_for_plural_using_dic_for_multi_word rules
+        Added   :  add_grp_mng1 , modify_root_for_jI, modify_root_for_pronouns_using_aper and
+		   modify_root_for_plural_using_dic_for_multi_word rules
 13. Modified the following files to add full parser
         1. Anusaaraka_stanford_minion.sh        3. processing_manual_sentences.sh
         2. run_sentence_stanford_minion.sh      4. minion_compile.sh
@@ -4573,11 +4574,13 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 	Modifed : "get_fact_name_for_no_mng_for_eng_word" (added not condition), get_hnd_dic
 	Added   : "rm_aligned_verb_id_from_verb_list" rule 
 24. To get preferred parse modified preffered_parse.py
-25. Updated stanford parser to new version stanford-parser-2013-04-05
+25. Updated stanford parser to new version stanford-parser-2013-04-05 and removed older version(2012-11-12)
 26. For above purpose following files are updated ::
-	Anusaaraka_stanford.sh		Anusaaraka_stanford_minion.sh
-	run_stanford-gui-pcfg.sh	anu_compile.sh
-	remove_out-files.sh
+	Anusaaraka_stanford.sh	Anusaaraka_stanford_minion.sh	run_stanford-gui-pcfg.sh
+	Anusaaraka.sh		Anusaaraka_all.sh		Anusaaraka_stanford_SMT.sh
+	Anusaaraka_rasp.sh	Anusaaraka_site.sh		Anusaaraka_stanford-Factored.sh
+	Anusaaraka_berkeley.sh	anu_compile.sh			remove_out-files.sh
+	Anusaaraka_reranked_johnson.sh				Anusaaraka_reranked_johnson_minion.sh
 27. To generate hindi multi word dictionary from existing dictionary following changes are done::
 	a) Added split-mngs.c and converting-dic-to-alignment_format.c 
 	b) Added compilation of above files in minion_compile.sh
@@ -4591,15 +4594,16 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 31. Added compilation of above dictionary in dic_compile.sh
 32. Modified "create_dummy_confd_lvl" and "print_to_html" rules in create_hin_align_html.clp
 33. In sd_relation_rules.clp
-        1. Modified rules: kriyA_sub_rule, dobj, rcmod, nsubj_rcmod, insert-which1,kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp and xcomp+aux
-        2. Added : dobj_rcmod, nsubj_rcmod rcmod_prep and dep+det
+        1. Modified rules: kriyA_sub_rule, dobj, rcmod, nsubj_rcmod, insert-which1 and single_prep
+        2. Added : dobj_rcmod, nsubj_rcmod and rcmod_prep
 34. Added an or condition in split-relations.py program
 35. Modified sd_ver_output
 36. Renamed: generate_hin_multi_word_dic.sh to generate_multi_word_dic_for_alignment.sh
     Modified : above file to generate english and hindi multi word dictionaries for alignment purpose
 37. Modified "move_ADVP_after_v" rule in H_ordering_rules.clp (added RB in the list)
 38. hindi_meaning.clp
-	Added : modify_cat_for_particle and get_PropN_mng_with_prev_word_the rules
+	Added 	 : modify_cat_for_particle and get_PropN_mng_with_prev_word_the rules
+	Modified : rm_cmp_mng_if_head_is_verb
 39. Added "modify_order_for_phrases" rule in hindi_sent_reorder.clp
 40. Added "RP_rule" in sd_category.clp
 41. Loaded "Eng_id_order.dat" file for hindi_sent_reorder module in run_modules_std.bat
@@ -4607,17 +4611,19 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 43. Added adjective.clp to get adjective original words and words from WSD or else from default dictionary.
 44. In wsd_meaning.clp,
         Added : load_adjective.clp to load adjective.clp when the word category is adjective
+		dont_load_particle_with_verb rule
         Removed : suff_ing rule
 45. In root_rule.clp,
         Removed : morph_root rule and handled it in above files
-46. In run_sentence_stanford.sh and run_sentence_stanford_minion.sh added code to display Multiple senses of a given adjective word
+46. Modified  run_sentence_stanford.sh and run_sentence_stanford_minion.sh 
+	 - to add code to display Multiple senses of a given adjective word
+	 - to add code to display Meaning for verb phrase
 47. In processing_manual_sentences.sh, sending original file to shallow parser to get shallow parser output(ie. canonical form is done after we get shallow parser output)
 48. WSD::
 	Added : both_times in time.clp, toss_in_a_row in row.clp
         Modified : ed_en_tam5
-
       	Modified ::  id-wsd_word_mng to id-wsd_root_mng when the same id has id-H_vib_mng in following files
-		   Also modified id-H_vib_mng fact which has english tam instead of hindi tam	
+	 	     Also modified id-H_vib_mng fact which has english tam instead of hindi tam	
 	be.clp		bear.clp	call.clp	cross.clp	distract.clp	fall.clp
 	find.clp	hand.clp	knacker.clp	leave.clp	life#live.clp	mask.clp
 	mine.clp	name.clp	open.clp	perplex.clp	place.clp	press.clp
@@ -4654,14 +4660,22 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 59. Updated changes_in_databases
 60. Updated alignment/README
 61. Updated get_group_mng.sh
-62. Updated mapping-symbols_manual.lex
+62. Updated mapping-symbols_manual.lex and mapping-symbols.lex
 63. Updated processing_manual_sentences.sh
-64. Modified sd_ver_output, phy_align_verified_out and phy_align_verified_eng_align.html
+64. Modified sd_ver_output, phy_align_verified_out, phy_align_partial_ver_out and phy_align_verified_eng_align.html
 65. Splitted anu_testing/README into 
 	INSTALL				-> contains basic installtion, compilation and running the software
 	README				-> contains README of various tools usage
 	Readme_to_use_different_parsers	-> contains how to use various parsers 
 66. Updated
-        phy_align_verified_eng (186)
+        phy_align_verified_eng (187)
         phy_align_partial_ver_eng (58)
 67. Updated Log.
+
+28-05-13
+========
+1. In sd_relation_rules.clp
+        1. Modified rules: kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp and xcomp+aux
+        2. Added : dep+det
+2. Updated Log.
+
