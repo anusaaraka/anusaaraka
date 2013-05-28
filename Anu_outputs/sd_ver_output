@@ -1300,6 +1300,7 @@ mEMne AKirakAra pawA lagAyA yaha progrAma iwanA XImA kyoM hE.
 Hindi meaning using Stanford parser 3.2
 He was an exotic creature with short red hair and brilliant green eyes. 
 vaha Cote lAla keSa vAlA Ora wejomaya harI AzKoM vAlA AkarRaka prANI WA.
+Multiple adjective senses are available for exotic. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.3
 The best five costumes got prizes. 
@@ -1485,6 +1486,7 @@ mEM Apako vaha Gara xiKAUzgA jise mEMne KarIxA.
 Hindi meaning using Stanford parser 3.42
 Shivaji was one of the most powerful rulers in 1600. 
 PropN-shivaji-PropN 1600 meM sabase aXika SakwiSAlI SAsakoM meM se eka WA.
+Multiple adjective senses are available for powerful. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.43
 Ayodhya during ancient times was known as kaushaldesa. 
@@ -1664,6 +1666,8 @@ viRaya usake xvArA samaJAyA gayA WA.
 Hindi meaning using Stanford parser 3.82
 He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
 usane kahA ki Ese pariNAmoM ko jApAna ke sAWa yU.esa. vyApAra GAtA GatAne meM "dOlara meM Ora sEnta meM mApane yogya" honA cAhie.
+Multiple adjective senses are available for measurable. WSD rule is required 
+Multiple adjective senses are available for such. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.83
 Go straight and take a right turn. 
@@ -1876,7 +1880,7 @@ PropN-rahul-PropN buddha kA betA WA Ora nAma lahaul rahul se viSleRaNa huA hE.
 
 Hindi meaning using Stanford parser 4.29
 The white marbled moti masjid or the pearl mosque was the private mosque for aurangzeb. 
-saPexa safgamaramara moti masjid yA mowI masjixa aurangzeb ke lie vyakwigawa masjixa WI.
+saPexa safgamaramara se bane hue moti masjid yA mowI masjixa aurangzeb ke lie vyakwigawa masjixa WI.
 Multiple adjective senses are available for white. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.30
@@ -2079,6 +2083,7 @@ mEM vaha Gara jahAz mEM ApakI mAz se milA Apako xiKAUzgA.
 Hindi meaning using Stanford parser 4.75
 The dalai lama presented some beautiful tankhas. 
 dalai lama ne kuCa sunxara tankhas xiyA.
+Multiple adjective senses are available for beautiful. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.76
 Things had just gone too far. 

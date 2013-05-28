@@ -10,6 +10,18 @@
        (retract ?mng)
  )
  ;--------------------------------------------------------------------------------------------------------- 
+ ;Added by Shirisha Manju (22-05-13) Suggested by Chaitanya Sir
+ ;You can warm your feet up in front of the fireplace.
+ (defrule dont_load_particle_with_verb
+ (declare (salience 7600))
+ (root-verbchunk-tam-chunkids ? ? ? $? ?root_id)
+ (kriyA-upasarga ?root_id ?id)
+ ?mng<-(meaning_to_be_decided ?id)
+ =>
+	(assert (meaning_has_been_decided ?id))
+ 	(retract ?mng)
+ )
+ ;--------------------------------------------------------------------------------------------------------- 
  ;Added by Roja (03-05-13) Suggested by Chaitanya Sir
  ;Meaning for adjective
  (defrule load_adjective.clp

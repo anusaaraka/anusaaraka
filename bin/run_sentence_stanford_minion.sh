@@ -98,6 +98,7 @@
  grep -B2 "FALSE" $1.error >> errors.txt
  grep "Multiple adjective senses are available"  $1.error > error.txt
  sort -u error.txt >> errors.txt
+ grep "Meaning for verb phrase" $1.error >> errors.txt
  cat errors.txt
 
  #for sentence by sent analysis for web debugging tutorial

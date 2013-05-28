@@ -177,3 +177,15 @@
 	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?n $?word - ?mng - $?vib - $?ids))
 )
 ;----------------------------------------------------------------------------------------------------------------
+;Tell them to inform the others, and ask them to help me.unase kahanA ki ve OroM ko BI bawA xeM waWA unase [merI] sahAyawA karane ke lie kahanA
+(defrule modify_root_for_pronouns_using_aper
+(declare (salience 4))
+?f0<-(manual_id-cat-word-root-vib-grp_ids ?mid ?n ?word $?w - ?root $?r - $?vib - $?ids)
+(man_word-root-cat	?word	?rt	p)
+(test (neq ?rt ?root))
+=>
+	(retract ?f0)
+	(assert (manual_id-cat-word-root-vib-grp_ids ?mid ?n ?word $?w - ?rt $?r - $?vib - $?ids))
+)
+
+

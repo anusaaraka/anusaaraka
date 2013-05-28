@@ -38,6 +38,19 @@
  (assert (Domain))
  )
  ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (29-11-12) (suggested by Chaitanya Sir)
+ ;Assuming lwg_ids (verb-verb connection) will not be part of compound phrase (noun-noun connection)
+ ;The magnitude of the displacement for a course of motion [may be] zero but the corresponding path length is not zero. 
+ ;Yes, we must [set off] early for Sonar Bagan to cut wood, explained Mangal.
+ (defrule rm_cmp_mng_if_head_is_verb
+ (declare (salience 9951))
+ ?f0<-(ids-cmp_mng-head-cat-mng_typ-priority $? ?id $? ?mng ?head_id ?grp_cat ?mng_typ ?)
+ (root-verbchunk-tam-chunkids   ?pada_head  ?chunk  ?tam  $? ?id )
+ (test (neq ?chunk is_said_to_be))
+ =>
+        (retract ?f0)
+ )
+ ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja (05-03-13).
  ;checking original word in dictionary (when root is '-') when same category.
  (defrule default_hindi_mng-same-cat_with-org_wrd
@@ -116,18 +129,6 @@
  ?mng<-(meaning_to_be_decided ?id)
  =>
  (retract ?mng)
- )
- ;--------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (29-11-12)
- ;Assuming lwg_ids (verb-verb connection) will not be part of compound phrase (noun-noun connection)
- ;The magnitude of the displacement for a course of motion [may be] zero but the corresponding path length is not zero. 
- (defrule rm_cmp_mng_if_head_is_verb
- (declare (salience 9800))
- ?f0<-(ids-cmp_mng-head-cat-mng_typ-priority $?ids ?mng ?head_id ?grp_cat ?mng_typ ?)
- (root-verbchunk-tam-chunkids   ?pada_head  ?chunk  ?tam  $? ?id&:(eq (nth$ ?head_id $?ids) ?id) $?)
- (test (neq ?chunk is_said_to_be))
- =>
-	(retract ?f0)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ; meaning for the whole sentence
@@ -450,6 +451,7 @@
  ;--------------------------------------------------------------------------------------------------------------
  ;database verb_phrase mng
  ;They divided the money up among the children . 
+ ;She cheered up when she heard the good news.
  (defrule vrb_phrase_mng
  (declare (salience 8600))
  (prep_id-relation-anu_ids ?  kriyA-upasarga  ?id ?id1)
@@ -466,10 +468,12 @@
 		(printout ?*hin_mng_file* "(id-HM-source   "?id1"   -    Verb_Phrase_gdbm)" crlf)
 		(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?a "   Verb_Phrase_gdbm "?id" "?id1")" crlf)
 		(retract ?mng ?mng1)
+	else
+		(printout t "Meaning for verb phrase "?vrb_phrase "  is required" crlf)
   	)
  )
  ;--------------------------------------------------------------------------------------------------------------
-  ;If WSD assings mng for word and also considerd it as part of any group ,group mng is considered and word mng will be retracted.  
+ ;If WSD assings mng for word and also considerd it as part of any group ,group mng is considered and word mng will be retracted.  
   (defrule over_write_word_mng
   (declare (salience 8501))
   (affecting_id-affected_ids-wsd_group_word_mng  ?affecting_id  $?affected_ids ?grp_mng)
