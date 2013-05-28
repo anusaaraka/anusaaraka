@@ -4591,8 +4591,8 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 31. Added compilation of above dictionary in dic_compile.sh
 32. Modified "create_dummy_confd_lvl" and "print_to_html" rules in create_hin_align_html.clp
 33. In sd_relation_rules.clp
-        1. Modified rules: kriyA_sub_rule, dobj, rcmod, nsubj_rcmod and insert-which1
-        2. Added : dobj_rcmod, nsubj_rcmod and rcmod_prep
+        1. Modified rules: kriyA_sub_rule, dobj, rcmod, nsubj_rcmod, insert-which1,kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp and xcomp+aux
+        2. Added : dobj_rcmod, nsubj_rcmod rcmod_prep and dep+det
 34. Added an or condition in split-relations.py program
 35. Modified sd_ver_output
 36. Renamed: generate_hin_multi_word_dic.sh to generate_multi_word_dic_for_alignment.sh

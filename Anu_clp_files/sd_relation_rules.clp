@@ -134,12 +134,13 @@
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule kriyA_sub_rule
  (declare (salience 190))
- (root-verbchunk-tam-parser_chunkids $?ids ?kriyA)
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
- (not (sub_for_kriyA ?kriyA ?sub)) ;Modified on 4-5-11 by Sukhada
- (not (found_kriyA-sub_rel ?kriyA)); Added new by Sukhada
+ (not (sub_for_kriyA ?kriyA ?sub)) 
+ (not (found_kriyA-sub_rel ?kriyA))
  (not (sub-sub_samAnAXikaraNa_decided ?kriyA))
  (not (got_kri-sub_rel ?kriyA))
+ (not (got_kriyA-karwA ?kriyA))
+ (not (got_kriyA-karwA_rel ?sub))
  (not (got_kriyA-subject ?kriyA))
  =>
  (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?kriyA"        "?sub")"crlf)
@@ -150,7 +151,6 @@
  ; The boy has a computer . The train left on time .
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule kri_sub_rule
- (root-verbchunk-tam-parser_chunkids $?ids ?kriyA)
  (rel_name-sids cop ?sub ?kriyA)
  (not (rel_name-sids nsubj ?sub ?x));Rama is a good boy. 
  =>
@@ -160,11 +160,10 @@
  ;Ex. Are a dog and a cat here? There is no subject relation given in this sentence by SD parser so v r computing it in this way.
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule kriyA_sub_rule1
-; (declare (salience 200))
- (root-verbchunk-tam-parser_chunkids $?ids ?kri)
  (rel_name-sids xcomp ?kriyA ?kri)
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
  (not (sub_for_kriyA ?kri))
+ (not (got_kriyA-karwA_rel ?kri))
  =>
  (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?kri"        "?sub")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kriyA_subject_rule1   kriyA-subject   "?kri"        "?sub")"crlf)
@@ -408,18 +407,43 @@
 )
 ; Ex.  I consider him intelligent.
 ;------------------------------------------------------------------------------------------------------------------------ 
+
+
 (defrule nsubj+xcomp_1
-(rel_name-sids nsubj ?obj_s ?obj)
-(rel_name-sids xcomp|ccomp ?kriyA ?obj_s)
-(rel_name-sids aux ?obj_s ?to)
+(declare (salience 290))
+(rel_name-sids nsubj ?k ?s)
+(rel_name-sids xcomp ?k1 ?k)
+;(rel_name-sids xcomp|ccomp ?k1 ?k)   ;(rel_name-sids aux ?k ?to)
 (parserid-word ?to to);I knew who would come to the party.
-(parser_id-cat_coarse ?obj_s verb)
+(parser_id-cat_coarse ?k1 verb)
 =>
-(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-object     "?kriyA"        "?obj")"crlf)
-(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj+xcomp_1     kriyA-object     "?kriyA"        "?obj")"crlf)
+(assert (got_kriyA-karwA_rel ?s))
+(assert (got_kriyA-karwA_rel ?k))
+(assert (got_kriyA-vAkyakarma ?k1 ?k))
+(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-karwA     "?k"      "?s")"crlf)
+(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj+xcomp_1     kriyA-karwA     "?k"    "?s")"crlf)
+
+(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-vAkyakarma  "?k1"      "?k")"crlf)
+(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj+xcomp_1     kriyA-vAkyakarma    "?k1"   "?k")"crlf)
 )
-; Added by Shirisha Manju
-; Ex. The instructor persuaded Mary to take that course . 
+;I want the students to go.
+;------------------------------------------------------------------------------------------------------------------------
+
+
+;(defrule nsubj+xcomp_1
+;(rel_name-sids nsubj ?obj_s ?obj)
+;(rel_name-sids xcomp|ccomp ?kriyA ?obj_s)
+;(rel_name-sids aux ?obj_s ?to)
+;(parserid-word ?to to);I knew who would come to the party.
+;(parser_id-cat_coarse ?obj_s verb)
+;=>
+;(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-karwA     "?kriyA"      "?obj")"crlf)
+;(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj+xcomp_1     kriyA-karwA     "?kriyA"    "?obj")"crlf)
+;;(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-object     "?kriyA"        "?obj")"crlf)
+;;(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj+xcomp_1     kriyA-object     "?kriyA"        "?obj")"crlf)
+;)
+;; Added by Shirisha Manju
+; Ex. The instructor persuaded Mary to take that course . The parse is wrong for this sentence. 
 ; Modified by Sukhada for Help me finish translating this document. Help me to finish translating this document. I knew who would come to the party.
 ;------------------------------------------------------------------------------------------------------------------------
  
@@ -610,10 +634,8 @@ else
  ; Ex. He talked to him in order to secure the account.
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule mark
-(rel_name-sids mark ?kriyA ?conj)
-(rel_name-sids nsubj ?kriyA ?x)
-(root-verbchunk-tam-parser_chunkids ? ? ? $?ids ?kri)
-(test (or (member$ ?kriyA $?ids) (eq ?kriyA ?kri)))
+(rel_name-sids mark ?kri ?conj)
+(rel_name-sids nsubj ?kri ?x)
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-conjunction        "?kri"      "?conj")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   mark    kriyA-conjunction        "?kri"      "?conj")"crlf)
@@ -624,7 +646,6 @@ else
 (defrule complm 
 (rel_name-sids complm ?kriyA ?conj)
 (rel_name-sids nsubj|nsubjpass ?kriyA ?x)
-(root-verbchunk-tam-parser_chunkids ? ? ? $?ids ?kriyA)
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-conjunction        "?kriyA"      "?conj")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   complm    kriyA-conjunction        "?kriyA"      "?conj")"crlf)
@@ -634,7 +655,6 @@ else
 (defrule complm+cop
 (rel_name-sids complm ?x  ?conj)
 (rel_name-sids cop ?x ?kriyA) 
-(root-verbchunk-tam-parser_chunkids ? ? ? $?ids ?kriyA)
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-conjunction        "?kriyA"      "?conj")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   complm+cop    kriyA-conjunction        "?kriyA"      "?conj")"crlf)
@@ -884,7 +904,7 @@ else
 
 (defrule nsubj_rcmod
 (declare (salience 2000))
-?f<-(rel_name-sids rcmod ?x ?kriyA )
+(rel_name-sids rcmod ?x ?kriyA )
 (basic_rel_name-sids nsubj ?kriyA ?sub)
 =>
 (assert (got_kriyA-subject ?kriyA))
@@ -1118,6 +1138,7 @@ else
 (not (rel_name-sids cop ?kq_vi ?)) ;Added by Shirisha Manju 
 (not (parser_id-cat_coarse ?kq_vi adjective))
 (not (kriyA-kriyArWa_kriyA_rel_has_been_dcd_by_xcomp+aux_rule ?kq_vi))
+(not (got_kriyA-vAkyakarma ?k1 ?k))
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-kqxanwa_karma	"	?kri"    "?kq_vi")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   xcomp	kriyA-kqxanwa_karma	"	?kri"	"?kq_vi")"crlf)
@@ -1144,9 +1165,10 @@ else
  (parser_id-cat_coarse ?id verb) ; added by Sukhada
  (rel_name-sids aux   ?kri ?to)
  (parserid-word ?to to)
+ (not (got_kriyA-vAkyakarma ?id ?kri))
  =>
-        (printout      ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-kriyArWa_kriyA   "?id"    "?kri")"crlf)
-        (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   xcomp+aux   kriyA-kriyArWa_kriyA  "?id"   "?kri")"crlf)
+ (printout      ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-kriyArWa_kriyA   "?id"    "?kri")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   xcomp+aux   kriyA-kriyArWa_kriyA  "?id"   "?kri")"crlf)
  (assert (kriyA-kriyArWa_kriyA_rel_has_been_dcd_by_xcomp+aux_rule ?kri))
  )
  ;Added by Shirisha Manju
@@ -1179,6 +1201,7 @@ else
 (test (member$ ?k $?v))
 =>
 (assert (got_kri-sub_rel ?kri))
+(assert (got_kri-sub_rel ?k))
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -	kriyA-subject  "?kri"    "?sub")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  - 	kri_sub_for_causative_verb	kriyA-subject	"?kri"    "?sub")"crlf)
 )
@@ -1233,7 +1256,6 @@ else
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule prep_nsubj_advmod_rule
  (declare (salience 100))
- (root-verbchunk-tam-parser_chunkids ? ? ? $?ids ?kriyA) 
  ?f0<-(rel_name-sids prep ?kriyA ?prep)
  ?f1<-(rel_name-sids advmod ?kriyA ?prep_saM)
  (parserid-word ?prep ?prp&~than)
@@ -1305,6 +1327,29 @@ else
 )
 ; Ex. The guy, John said, left early in the morning.
 ;------------------------------------------------------------------------------------------------------------------------
+
+
+(defrule dep+det
+(rel_name-sids dep ?k ?jj)
+(rel_name-sids det ?jj ?the)
+(rel_name-sids dep ?k1 ?jj1)
+(rel_name-sids det ?jj1 ?the1)
+(parser_id-cat_coarse ?jj adjective)
+(parser_id-cat_coarse ?jj1 adjective)
+(test (> (string_to_integer ?jj1) (string_to_integer ?jj)))
+=>
+(printout       ?*fp*   "(prep_id-relation-parser_ids  -    jiwanA-wulanAwmaka_viSeRaNa  "?the"    "?jj")"crlf)
+(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -     dep+det  jiwanA-wulanAwmaka_viSeRaNa  "?the"    "?jj")"crlf)
+
+(printout       ?*fp*   "(prep_id-relation-parser_ids  -    uwanA-wulanAwmaka_viSeRaNa  "?the1"    "?jj1")"crlf)
+(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -     dep+det  uwanA-wulanAwmaka_viSeRaNa  "?the1"    "?jj1")"crlf)
+
+)
+; Ex. The faster it is, the more people will like it. 
+;------------------------------------------------------------------------------------------------------------------------
+
+
+
 
 ;rel+nsubj rel+nsubj+wh rules are not working properly. Check them.
 
