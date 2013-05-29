@@ -37,7 +37,6 @@
 
  mkdir $MYPATH/tmp/$1_tmp
  sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/processing_manual_sentences.sh $1 $5
- 
  ###Added below loop for server purpose.
  if [ "$3" == "True" ] ; then 
     echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
@@ -72,8 +71,7 @@
 
   echo "Calling Stanford parser"
   cd $HOME_anu_test/Parsers/bllip-parser-master
-#  if [ "$2" == "" -o "$2" -ge "0" ] ; then
-  if [ "$2" == "" ] ; then
+  if [ "$2" == "" -o "$2" -ge "0" ] ; then
   sed 's/^/<s> /g' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org  | sed 's/$/ <\/s>/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org1
   sh parse.sh  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org1 > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
   fi
