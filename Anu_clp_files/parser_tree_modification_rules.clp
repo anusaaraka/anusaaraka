@@ -144,7 +144,7 @@
  (defrule convert_WH_Q_sent_to_normal
  ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot ?vp ?np $?daut)
  (Node-Category  ?Mot  SQ)
- (Node-Category  ?vp   MD|VB|VBN|VBZ|VBD|VBP|VBG)
+ (Node-Category  ?vp   MD|VB|VBN|VBZ|VBD|VBP|VBG|AUX); Ex: same example but for bllip parser
  (Head-Level-Mother-Daughters ?h ?l ?np $?d)
  (not (Mother  ?Mot))
  =>
@@ -186,3 +186,23 @@
 	(assert (modifiy_node_levels $?pre $?pos)) 
  )
  ;-----------------------------------------------------------------------------------------------------------------------
+ ;Suggested by Sukhada  (Added for bllip parser)
+ ;This is the way to go.  
+ (defrule remove_SBAR_S_VP_TO
+ (declare (salience 40))
+ ?f1<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot ?s )
+ (Node-Category  ?Mot  SBAR)
+ (Node-Category  ?s   S)
+ (Head-Level-Mother-Daughters  ?h ?l ?s ?vp $?)
+ (Node-Category  ?vp  VP)
+ (Head-Level-Mother-Daughters  to ? ?vp $?)
+ ?f0<-(Head-Level-Mother-Daughters  ?h1 ?l1 $?pre ?Mot $?po)
+ (test (neq ?head ?h1))
+ (not (Mother  ?Mot))
+ =>
+        (retract ?f0 ?f1)
+        (assert (Head-Level-Mother-Daughters ?h1 ?l1 $?pre ?s $?po))
+        (assert (Mother  ?Mot))
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
+
