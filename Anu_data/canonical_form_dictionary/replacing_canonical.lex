@@ -13,4 +13,7 @@ yefg	{	printf("yezg");	 /* KAyefge  becomes KAyezge */ }
 UFcAI	{	printf("UzcAI"); /* UFcAI    becomes UzcAI   */	}
 kyofki 	{	printf("kyozki");/* kyofki   becomes kyozki  */	}
 cUfki	{	printf("cUzki"); /* cUfki    becomes cUzki   */	}
+xUfgI	{	printf("xUZgI"); /* xUfgI    becomes xUZgI   */ }
+AUfgA	{	printf("AUzgA"); /* AUfgA    becomes AUzgA   */ }
+
 %%

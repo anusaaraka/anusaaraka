@@ -1,4 +1,4 @@
- 28-05-13
+ 29-05-13
  ========
  1. In sd_relation_rules.clp
         1. Modified rules: kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp and xcomp+aux
@@ -9,10 +9,21 @@
         Added    : modify_aper_fact and modify_aper_fact1
         Modified : modify_root_for_pronouns_using_aper
  5. Added verified_eng, verified_hnd, verified_out and verified_eng_align.html files
- 6. Updated changes_in_databases
- 7. Updated minion dictionaries
- 8. Updated Log
- 9. Updated
+ 6. Removed reranking-parser-2011-12-17.tgz and added bllip-parser-master.zip (this bllip parser is the next version and contains licence)
+ 7. Renamed and Modified Anusaaraka_reranked_johnson.sh to Anusaaraka_bllip_parser.sh
+		and	Anusaaraka_reranked_johnson_minion.sh  to Anusaaraka_bllip_parser_minion.sh
+ 8. anu_compile.sh:
+	Removed code related to reranking-parser-2011-12-17.tgz and updated with bllip-parser-master.zip
+ 9. remove_out-files.sh:
+	Renamed reranking-parser to bllip-parser-master
+10. In parser_tree_modification_rules.clp:
+	Modified: convert_WH_Q_sent_to_normal (added AUX to Node-Category list)
+	Added   : remove_SBAR_S_VP_TO
+11. Updated replacing_canonical.lex
+12. Updated changes_in_databases
+13. Updated minion dictionaries
+14. Updated Log
+15. Updated
         phy_align_verified (193)	verified (40)		partial_ver (22)
 
  10-07-09

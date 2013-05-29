@@ -5,12 +5,6 @@
  gcc -o converting-dic-to-alignment_format.out converting-dic-to-alignment_format.c
  gcc -o split-mngs.out split-mngs.c
 
-# echo "Generating phy_hnd_multi_word_dic.txt"
-# cd $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries
-# sh generate_hin_multi_word_dic.sh phy_eng_multi_word_dic.txt phy_hnd_multi_word_dic.txt
-# echo "Generating hindi_multi_word_dic.txt"
-# sh generate_hin_multi_word_dic.sh $HOME_anu_test/Anu_data/compound-matching/multi_word_expressions.txt hindi_multi_word.txt
-
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
  echo "Generating Canonical form dictionaries"
  sh get_txt_files.sh
@@ -27,8 +21,6 @@
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries
  echo "Creating phy_dictionary.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/phy_dictionary.gdbm < phy_dictionary_in_canonical_form.txt
-# echo "Creating phy_eng_multi_word_dic.gdbm"
-# ./create-gdbm.pl $HOME_anu_test/Anu_databases/phy_eng_multi_word_dic.gdbm < phy_eng_multi_word_dic_in_canonical_form.txt
 
  echo "Creating paxasUwra.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/total-paxasUwra.gdbm < total-paxasUwra_in_canonical_form.txt 
@@ -212,11 +204,11 @@
  sed '$d' < work/phrasal-mert/phrasal.test.ini_tmp > work/phrasal-mert/phrasal.test.ini_tmp1
  cat work/phrasal-mert/phrasal.test.ini_tmp1 work/path_for_transliteration  > work/phrasal-mert/phrasal.test.ini
 
- echo "compiling reranking parser"
+ echo "compiling bllip parser"
  cd  $HOME_anu_test/Parsers
- tar -xvzf reranking-parser-2011-12-17.tgz
+ unzip bllip-parser-master.zip
  export GCCFLAGS="-march=pentium4 -mfpmath=sse -msse2 -mmmx"
- cd $HOME_anu_test/Parsers/reranking-parser
+ cd $HOME_anu_test/Parsers/bllip-parser-master
  make
 
  echo "Copying Readme and shell file to Provisional directory"

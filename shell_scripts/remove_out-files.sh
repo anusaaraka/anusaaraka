@@ -76,7 +76,7 @@
  rm -f phy_hnd_multi_word_dic.txt hindi_multi_word.txt
 
  cd $HOME_anu_test/Parsers/
- rm -rf reranking-parser
+ rm -rf bllip-parser-master 
 
  echo "Removing Multifast out files"
  cd $HOME_anu_test/multifast-v1.0.0/ahocorasick/
