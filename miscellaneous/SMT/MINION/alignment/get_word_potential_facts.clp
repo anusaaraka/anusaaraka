@@ -37,6 +37,16 @@
 	(assert (man_verb_count-verbs ?c $?pre $?post))
 )
 ;------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju(29-05-13)
+;In our experience, force is needed to push, carry or throw objects, deform or break them.--- hama saBI kA yaha anuBava [hE] ki vaswuoM ko Xakelane, le jAne aWavA Pefkane , nirUpiwa karane aWavA unheM wodane ke lie bala kI AvaSyakawA howI hE. 
+(defrule rm_LWG_grouped_id_from_restricted_word
+(declare (salience 2002))
+(root-verbchunk-tam-chunkids ? ? ? ?id ? $?)
+?f0<-(id-word ?id ?wrd&is|are)
+=>
+	(retract ?f0)
+)
+;------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju(7-03-13)
 ; if eng multi mng and manual multi mng is same then rm the ids from order excluding the head
 ;The choice of a set of axes in a frame of reference depends upon the situation.

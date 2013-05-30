@@ -3,3 +3,4 @@ pakA	pakavA
 KarIxa	KarIxavA
 banA	banavA
 kara	karavA
+jA	Beja

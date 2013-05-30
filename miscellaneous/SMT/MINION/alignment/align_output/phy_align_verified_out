@@ -856,6 +856,17 @@ Hindi meaning using Stanford parser 2.193
 (iv) Remove the rod. 
 (PropN-iv-PropN) Cada nikAla xewA hE.
 
+Hindi meaning using Stanford parser 2.194
+Like velocity, acceleration can also be positive, negative or zero. 
+vega kI waraha, wvaraNa sakArAwmaka, qNAwmaka yA SUnya BI ho sakawA hE.
+
+Hindi meaning using Stanford parser 2.195
+Thus it is mainly the electromagnetic force that governs the structure of atoms and molecules, the dynamics of chemical reactions and the mechanical, thermal and other properties of materials. 
+isa prakAra yaha vExyuwacumbakIya bala pramuKa rUpa se hE jo paxArWoM kI paramANuoM kI Ora aNu, rasAyanika xravya kA prawikriyAoM kI Ora - yAnwrika kA, URmIya kI Ora anya kA sampawwi kI gawikI saMracanA vaSA_meM karawA hE.
+Multiple adjective senses are available for electromagnetic. WSD rule is required 
+Multiple adjective senses are available for mechanical. WSD rule is required 
+Multiple adjective senses are available for thermal. WSD rule is required 
+
 Calling Transliteration
 Calling Interface related programs
 Print minion_statistics
@@ -864,6 +875,6 @@ No Solution Found :
 Time-out:
 0
 Solution Found :
-193
+195
 re-executed-sentences:
-23
+24

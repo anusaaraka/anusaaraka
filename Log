@@ -14,17 +14,19 @@
 		and	Anusaaraka_reranked_johnson_minion.sh  to Anusaaraka_bllip_parser_minion.sh
  8. anu_compile.sh:
 	Removed code related to reranking-parser-2011-12-17.tgz and updated with bllip-parser-master.zip
- 9. remove_out-files.sh:
-	Renamed reranking-parser to bllip-parser-master
+ 9. Renamed reranking-parser to bllip-parser-master in remove_out-files.sh
 10. In parser_tree_modification_rules.clp:
 	Modified: convert_WH_Q_sent_to_normal (added AUX to Node-Category list)
 	Added   : remove_SBAR_S_VP_TO
-11. Updated replacing_canonical.lex
-12. Updated changes_in_databases
-13. Updated minion dictionaries
-14. Updated Log
-15. Updated
-        phy_align_verified (193)	verified (40)		partial_ver (22)
+11. Modified "check_correctness_for_multi_word" rule in modify_minion_output.clp
+12. Modified "chk_for_hnd_mwe" rule in manual_word_grp_using_dic.clp (added hnd_multi_word_from_iit_bombay_dic.gdm)
+13. Added "rm_LWG_grouped_id_from_restricted_word" rule in get_word_potential_facts.clp
+14. Updated replacing_canonical.lex
+15. Updated changes_in_databases
+16. Updated minion dictionaries
+17. Updated Log
+18. Updated
+        phy_align_verified (195)	verified (40)	  partial_ver (22)	phy_align_partial_verified (54)
 
  10-07-09
  ========

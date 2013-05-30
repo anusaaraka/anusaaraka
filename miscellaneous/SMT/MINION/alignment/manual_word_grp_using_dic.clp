@@ -65,6 +65,7 @@
   =>
         (hnd_mwe_lookup "hnd_multi_word_dic.gdbm" $?Hin_list)
         (hnd_mwe_lookup "hnd_phy_multi_word_dic.gdbm" $?Hin_list)
+	(hnd_mwe_lookup "hnd_multi_word_from_iit_bombay_dic.gdbm" $?Hin_list)
  )
  ;------------------------------------------------------------------------------------------------------
  (defrule chk_for_largest_match_of_phy

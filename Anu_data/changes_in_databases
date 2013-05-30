@@ -882,7 +882,7 @@ Modified:
 	every_other        --- hara_xUsarA[>hara_koI]#hara_xUsarA[>hara_koI]#noun#2#RM => hara_xUsarA#hara_xUsarA#noun#2#RM
 	in_fact 	   --- vAswava_meM#vAswava_meM#noun#2#RM 
 					as
-	in_fact vAswava_meM/asala_meM#vAswava_meM#noun#2#RM
+			       vAswava_meM/asala_meM#vAswava_meM#noun#2#RM
 	System_operator_)	waMwra_pracAlaka#waMwra_pracAlaka#noun#2#RM
 			as
 	System_operator		waMwra_pracAlaka#waMwra_pracAlaka#noun#2#RM
@@ -917,6 +917,7 @@ Modified:
  changes in phy_dictionary.txt
  =============================
  Added :
+ -------
 	nonuniform		asamAna
 	position-time_Noun      sWiwi_samaya	(Added by Manju (19-11-12))
 	negative_adjective      qNAwmaka     	(      "        (03-12-12))
@@ -927,27 +928,34 @@ Modified:
 	chemistry_noun  	rasAyana_vijFAna(	"		    20-04-13)
 	biology_noun    	jIva_vijFAna	(	"			"   )
 
-
-
  Modified :
-        rearrangement_Noun  	punavryavasWA  	as   	punarvyavasWA  	(Suggested by Chaitanya Sir (08-08-12))
-	molecular_adjective     ANvika	    	as	ANvika/aNu	(      "		    (05-12-12))
+ ---------
+        rearrangement_Noun  		punavryavasWA  	as   	punarvyavasWA  	(Suggested by Chaitanya Sir (08-08-12))
+	corresponding_adjective  	waxnurUpa	as	waxanurUpa	(Suggested by Sukhada (29-05-13))
+
         modified "Xx" as "xX" in the following words 
                    SuxXa_gawika, SuxXa_gawikI, prasara_koNa_xEGryavqxXi, ruxXoRma, pariSuxXawA and saMbaxXa
 	relative_noun	ApekRa		as	relative_adjective	ApekRa	(Suggested by Chaitanya Sir (05-01-13))
-	translational_adjective sWAnAMwarIya	as  	translational_adjective sWAnAMwarIya/sWAnAnwaraNa (Added by Manju)
-	interplay_noun  pArasparika_kriyA	as	interplay_noun  pArasparika_kriyA/pArasparika_praBAva ( " )
+
+ Added new meaning to the existing word:
+ --------------------------------------
+	interplay_noun			pArasparika_praBAva	(Added by Shirisha Manju)
+	translational_adjective		sWAnAnwaraNa		(	"		)
+	molecular_adjective		aNu			(Suggested by Chaitanya Sir  (05-12-12))
+	
 
  changes in phy_eng_multi_word_dic.txt
  =====================================
   Modified :
+  --------
 	frame_of_reference      nirxeSa-waMwra#nirxeSa-waMwra#noun#1#RM as nirxeSa_waMwra#nirxeSa_waMwra#noun#1#RM
-	charged_constituents	AveSayukwa_saMGatana#AveSayukwa_saMGatana#noun#2#RM   as   AveSayukwa_saMGatana/AveSiwa_avayava#AveSayukwa_saMGatana#noun#2#RM			(Added by manju (9-4-13)
 
+  Added new meaning to the existing word:
+  ---------------------------------------
+	charged_constituents	 AveSiwa_avayava	(Added by Shirisha Manju (9-4-13)
 			
 
- changes in hindi_multi_word.txt
- ================================
- Corrected :: isake viparIwa      at_the_other_end ---> isake_viparIwa      at_the_other_end
- Added     :: nirxeSa_wanwra      frame_of_reference
-
+ changes in causative_verb_mng.txt
+ =================================
+ Added
+	jA      Beja	(Suggested by Sukhada (29-05-13))
