@@ -256,7 +256,7 @@
 (declare (salience 920))
 (id-multi_word_expression-dbase_name-mng ? $?words ? $?mng)
 (multi_word_expression-grp_ids $?words $?ids)
-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?mng - ?mid $?mng ?)
+(or (anu_id-anu_mng-sep-man_id-man_mng ?aid $?mng - ?mid $?mng ?)(anu_id-anu_mng-sep-man_id-man_mng ?aid $?mng - ?mid $?mng))
 ?f0<-(anu_id-anu_mng-sep-man_id-man_mng ?aid1 - - ?mid1 $?m)
 (test (member$ ?aid1 $?ids))
 =>	
