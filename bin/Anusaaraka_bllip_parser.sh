@@ -72,7 +72,6 @@
   echo "Calling Stanford parser"
   cd $HOME_anu_test/Parsers/bllip-parser-master
   if [ "$2" == "" -o "$2" -ge "0" ] ; then
-#  if [ "$2" == "" ] ; then
   sed 's/^/<s> /g' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org  | sed 's/$/ <\/s>/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org1
   sh parse.sh  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org1 > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
   fi

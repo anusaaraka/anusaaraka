@@ -1,7 +1,7 @@
- 29-05-13
+ 01-06-13
  ========
  1. In sd_relation_rules.clp
-        1. Modified rules: kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp and xcomp+aux
+        1. Modified rules: kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux and AjFArWaka_vAkya
         2. Added : dep+det
  2. Loaded "manual_hin.morph.dat" file in modify_root_using_dic module in run_H_gen_minion.bat
  3. Added "get_emphatic_for_prev_word" rule in get_mng.clp
@@ -16,17 +16,24 @@
 	Removed code related to reranking-parser-2011-12-17.tgz and updated with bllip-parser-master.zip
  9. Renamed reranking-parser to bllip-parser-master in remove_out-files.sh
 10. In parser_tree_modification_rules.clp:
-	Modified: convert_WH_Q_sent_to_normal (added AUX to Node-Category list)
+	Modified: convert_WH_Q_sent_to_normal 
 	Added   : remove_SBAR_S_VP_TO
 11. Modified "check_correctness_for_multi_word" rule in modify_minion_output.clp
 12. Modified "chk_for_hnd_mwe" rule in manual_word_grp_using_dic.clp (added hnd_multi_word_from_iit_bombay_dic.gdm)
 13. Added "rm_LWG_grouped_id_from_restricted_word" rule in get_word_potential_facts.clp
-14. Updated replacing_canonical.lex
-15. Updated changes_in_databases
-16. Updated minion dictionaries
-17. Updated Log
-18. Updated
+14. Added detokenizer-src folder in  miscellaneous/HANDY_SCRIPTS/ to detokenize the tokenized file and also updated anu_testing README
+15. In chk_input_format.pl : Added a pattern to combine "-" when it is separated between two words
+16. Added debug statements in prepare_apertium_input.clp
+17. In sd_lwg_rules.clp, 
+	Modified: replace_nodes rule 
+18. Updated replacing_canonical.lex
+19. Updated changes_in_databases
+20. Updated minion dictionaries
+21. Updated sd_ver_output
+22. Updated Log
+23. Updated
         phy_align_verified (195)	verified (40)	  partial_ver (22)	phy_align_partial_verified (54)
+
 
  10-07-09
  ========

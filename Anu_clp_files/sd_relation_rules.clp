@@ -1282,7 +1282,8 @@ else
  (parser_id-cat_coarse P1 verb)
  (not (rel_name-sids aux  ?kri P1))
  (not (rel_name-sids cop  ?kri P1))
- (not (rel_name-sids expl  P1  ?));Is there life beyond the grave? 
+ (not (rel_name-sids expl  P1  ?));Is there life beyond the grave?
+ (parserid-word P1 ?wrd&~Is&~Am&~Are&~Was&~Were) ; Added for bllip parser Ex: Are a dog and a cat here?
  =>
  (printout       ?*fp*   "(prep_id-relation-parser_ids  -     AjFArWaka_vAkya)"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   AjFArWaka_vAkya   AjFArWaka_vAkya)"crlf)

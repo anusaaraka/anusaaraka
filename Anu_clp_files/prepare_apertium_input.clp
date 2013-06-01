@@ -109,7 +109,7 @@
  =>
         (retract ?f0)
         (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?hmng" " ?vib ")" crlf)
-        (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  complete_sen_with_vib )" crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  complete_sen_mng_with_vib )" crlf)
  )
 ;----------------------------------------------------------------------------------------------------------------------- 
  (defrule complete_sen_mng
@@ -306,7 +306,7 @@
 	)
   )
 
- ;============================================ verbel-noun without vib ===================================================
+ ;============================================ verbal-noun without vib ===================================================
  ; Running is good for health.
  ; The wheels of the car began to turn . 
  ; I want to go there .
@@ -320,7 +320,7 @@
         (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?hmng"<cat:vn><case:d>$)" crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id"  verbal_noun_without_vib )" crlf)
  )
- ;==========================================  verbel-noun with vib =======================================================
+ ;==========================================  verbal-noun with vib =======================================================
  ; He made a mistake in the inviting of John. 
  ;The game of life is played for winning .
  (defrule verbal_noun_with_vib
@@ -334,7 +334,7 @@
         (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?hmng"<cat:vn><case:o>$ ^" ?vib "<cat:prsg>$)" crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id "  verbal_noun_with_vib  )"crlf)
  )
- ;========================================== verbel-noun without tam =======================================================
+ ;========================================== verbal-noun without tam =======================================================
 ; ; The wheels of the car began to turn . 
 ; ;I want to go there .
  (defrule verbal_noun_without_tam
@@ -348,7 +348,7 @@
         (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?hmng"<cat:vn><case:d>$)"  crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  verbal_noun_without_tam )"  crlf)
   )
- ;============================================== verbel-noun with tam ====================================================\\
+ ;============================================== verbal-noun with tam ====================================================\\
  ; A fat ugly boy had to eat too many fruits to lose his weight. 
  (defrule verbal_noun_with_tam
  (declare (salience 890))
@@ -432,7 +432,7 @@
        else
                 (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word"<cat:p><case:o><parsarg:0><gen:"?gen"><num:"?num"><per:"?per ">$)"  crlf)
         )
-        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_Hid_those )" crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_rule_with_vib_for_those )" crlf)
   )
   ;------------------------------------------------------------------------------------------------------------------------
   ; He is taller than me. Look at me. We ran after him, but he escaped. You will not go without me.
@@ -578,10 +578,10 @@
      	(retract ?f0)
      	(bind ?str1 (gdbm_lookup "verbal_adj_tams.gdbm" ?suf))
 	(printout ?*A_fp5* "(id-Apertium_input "?id " root:"?hnd_mng"_"?str1",tam:"?str1",gen:"?gen",num:"?num ",per:"?per")"  crlf) 
-     	(printout ?*aper_debug-file* "(id-Rule_name  "?id "  verbal_adjective1 )" crlf)
-     	(printout ?*aper_debug-file* "(id-Rule_name  "(nth$ (length $?ids) $?ids) "  verbal_adjective1 )" crlf)
+     	(printout ?*aper_debug-file* "(id-Rule_name  "?id "  verbal_adjective_breaking_tam )" crlf)
+     	(printout ?*aper_debug-file* "(id-Rule_name  "(nth$ (length $?ids) $?ids) "  verbal_adjective_breaking_tam )" crlf)
   )
-  ;------------------------------------------------------------------------------------------------------------------------
+;  ;------------------------------------------------------------------------------------------------------------------------
   ; I saw him telling her about the party .
   ; Added 'viSeRya-kqxanwa_viSeRaNa'  ex. I have been running about all morning trying to find you. (Meena 12.5.11)
   (defrule we_hue_rule
@@ -1081,6 +1081,7 @@
 	(retract ?f2)
 	(bind ?h_word (str-cat "sabase_aXika_" ?h_word))
 	(printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$ )" crlf)
+	(printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_adj_est )" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
   ;Mary is taller than Max.
@@ -1095,6 +1096,7 @@
         (retract ?f2)
         (bind ?h_word (str-cat "aXika_" ?h_word))
         (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$ )" crlf)
+	(printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_adj_er )" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
   (defrule PP_rule_default

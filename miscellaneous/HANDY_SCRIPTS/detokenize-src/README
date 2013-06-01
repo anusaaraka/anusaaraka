@@ -1,0 +1,9 @@
+To run de-tokenizer on a tokenised file
+=======================================
+1. sh compile.sh
+2.  sh detokenizer.sh  <file-name> 
+	Ex:  sh detokenizer.sh  j
+
+Note : To remove out files:
+		Run ::  sh remove_outfiles.sh <file-name>
+			Ex: sh remove_outfiles.sh j 

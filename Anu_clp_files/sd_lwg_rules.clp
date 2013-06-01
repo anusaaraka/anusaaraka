@@ -222,6 +222,7 @@
  (Head-Level-Mother-Daughters ?h_id ? ?node $?child)
  (parserid-word ?h_id ?head)
  (Node-Category ?node ?cat)
+ (parser_id-root-category-suffix-number  ?h_id  ? ? ?suf ?)
  =>
 	
 	(retract ?f)
@@ -233,7 +234,6 @@
         (if (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO AUX AUXG)) then
         (bind $?chunkid (create$ (subseq$ $?chunkid 1 (- ?pos 1)) $?child (subseq$ $?chunkid (+ ?pos 1) (length $?chunkid))))
         (bind $?vb_chk (create$ (subseq$ $?vb_chk 1 (- ?pos 1)) (lowcase ?head) (subseq$ $?vb_chk (+ ?pos 1) (length $?vb_chk))))
-
           (if (eq ?cat VBG) then 
 		    (bind $?tam (create$ (subseq$ $?tam 1 (- ?pos 1)) ing (subseq$ $?tam (+ ?pos 1) (length $?tam))))
     	      else (if (eq ?cat VBN) then 
@@ -246,12 +246,15 @@
 	           (bind $?tam (create$ (subseq$ $?tam 1 (- ?pos 1)) 0 (subseq$ $?tam (+ ?pos 1) (length $?tam))))
 	      else (if (eq ?cat VB) then 
 	           (bind $?tam (create$ (subseq$ $?tam 1 (- ?pos 1)) 0 (subseq$ $?tam (+ ?pos 1) (length $?tam))))      
+	      else (if (eq ?cat AUX) then ;Added for bllip parser. Ex: The recent advertising campaign has had a marked effect on sales.  
+	           (bind $?tam (create$ (subseq$ $?tam 1 (- ?pos 1)) ?suf (subseq$ $?tam (+ ?pos 1) (length $?tam))))      
 	      else  
-	           (bind $?tam (create$ (subseq$ $?tam 1 (- ?pos 1)) 0 (subseq$ $?tam (+ ?pos 1) (length $?tam))))))))))
+	           (bind $?tam (create$ (subseq$ $?tam 1 (- ?pos 1)) 0 (subseq$ $?tam (+ ?pos 1) (length $?tam)))))))))))
  
       else 
            (bind $?vb_chk (delete-member$ $?vb_chk ?node))
            (bind $?tam (delete-member$ $?tam ?node))
+	   (printout t $?tam "   "$?vb_chk crlf)
            (bind $?chunkid (delete-member$ $?chunkid ?node)));)
         (assert (root-verbchunk-tam-parser_chunkids - $?vb_chk - $?tam - $?chunkid))
         (printout ?*lwg_debug_file* "			After     - (root-verbchunk-tam-parser_chunkids - "(implode$ $?vb_chk)" - "(implode$ $?tam)" - "(implode$ $?chunkid)")" crlf)

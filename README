@@ -22,3 +22,6 @@
 
 8. To run Debugging
 	Check README in $HOME_anu_test/debugging/
+
+9. To run De-Tokenizer
+	Check README in $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/detokenize-src
