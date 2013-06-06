@@ -99,11 +99,13 @@
 ;Added by Meena(4.3.10)
 ;Such flowers are found mainly in Europe . 
 ;The remains of some Roman earthenware vessels were found during the dig.
+; Modified by Shirisha Manju (30-05-13) Added "is" in the list
+;The holy book is found in the temples. 
 (defrule found03
 (declare (salience 3000))
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id found)
-(or(id-word =(- ?id 1) are|were)(id-word =(- ?id 2) are|were))
+(or(id-word =(- ?id 1) is|are|were)(id-word =(- ?id 2) is|are|were))
 (kriyA-subject ?id ?id1)
 =>
 (retract ?mng)

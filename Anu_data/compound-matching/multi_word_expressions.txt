@@ -21499,7 +21499,7 @@ no_ball	gZalawa_geMxa#gZalawa_geMxa#noun#2#RM
 no_bar	koWa_roka_nahIM#koWa_roka_nahIM#noun#2#RM
 no_confidence_motion	aviSvAsa-praswAva#aviSvAsa-praswAva#noun#3#RM
 no_demand_certificate	bebAkI-pawra#bebAkI-pawra#noun#3#RM
-no_doubt	nissaMxeha#nissaMxeha#noun#2#RM
+no_doubt	nissaMxeha/niHsaMxeha#nissaMxeha/niHsaMxeha#noun#2#RM
 no_due_certificate	**koWa_rASi_bakAyA_nahIM**_pramANapawra#**koWa_rASi_bakAyA_nahIM**_pramANapawra#noun#3#RM
 no_dues_certificate	tEksa_axA_karane_eeya_hone_kA_pramANapawra#tEksa_axA_karane_eeya_hone_kA_pramANapawra#noun#3#RM
 no_effects	rupayA_nahIM#rupayA_nahIM#noun#2#RM

@@ -52,7 +52,6 @@
 (Node-Category  ?VP   VP)
 (Node-Category  ?VP1  VP)
 (Node-Category  ?ADVP ADVP)
-;(test (neq ?h ?h1))
 =>
 	(bind ?*count* (+ ?*count* 1))
 	(retract ?f0 ?f1)
@@ -149,6 +148,7 @@
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Have you ever seen Pacific?  Added by Sukhada
 ;The Princess was very surprised to hear this. 
+;She had always thought that gold could buy anything.
 (defrule move_ADVP_after_v
 (declare (salience 960))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot ?advp ?vp $?daut )
@@ -156,6 +156,8 @@
 (Node-Category  ?advp  ADVP|RB)
 (not (Mother  ?advp))
 (not (Mother  ?Mot));Her heart beats fast. 
+(id-original_word ?head ?word)
+(test (eq (member$ ?word (create$ think thought thinks thinking matter wonder say said says saying disputed suppose supposed supposes supposing commented figured pointed assume)) FALSE))
 =>
         (retract ?f0)
 	(assert (Mother  ?advp))

@@ -789,6 +789,10 @@ Modified:
 	66. striking_adjective	XyAna_AkarRiwa_karanevAlI/awyaXika_AkarRaka/AScaryajanaka/asAXAraNa
 					as
 				XyAna_AkarRiwa_karanevAlA/awyaXika_AkarRaka/AScaryajanaka/asAXAraNa
+	67. possess_verb	kA_svAmI_yA_mAlika_ho/yukwa_ho/XAraNa_kara/XAra_kara/svawva_raKa/raKa/pAsa_ho/mAlika_ho/kAbu_kara/kabjA_kara/AviRta_kara/AkrAnwa_kara/aBiBUwa_kara/se_sampanna_ho/para_niyanwraNa_raKa
+					as
+				XAraNa_kara/kA_svAmI_yA_mAlika_ho/yukwa_ho/XAra_kara/svawva_raKa/raKa/pAsa_ho/mAlika_ho/kAbu_kara/kabjA_kara/AviRta_kara/AkrAnwa_kara/aBiBUwa_kara/se_sampanna_ho/para_niyanwraNa_raKa
+
 
   Removed::
   -------
@@ -801,8 +805,9 @@ Modified:
 
   Added new entry:
   ---------------
-	1. photoelectric_noun      prakASa_vixyuwa		( Suggested by Chaitanya Sir 19-03-13	)
-	2. antielectron_noun       prawi_ilektroYna		(		"			)
+	1. photoelectric_noun      	prakASa_vixyuwa		( Suggested by Chaitanya Sir 19-03-13	)
+	2. antielectron_noun       	prawi_ilektroYna	(		"			)
+	3. translated_adjective		anuxiwa			(		"	     06-06-13  	)
 
   Added new meaning to the existing word:
   ---------------------------------------
@@ -865,7 +870,8 @@ Modified:
 
  multi_word_expressions.txt
  ==========================
-    Removed  :: 
+    Removed  :
+    ------- 
  	wall_street     galI[_banxa_sadaka]#galI[_banxa_sadaka]#noun#2#RM
         	            [Suggested by Chaitanya ji and Dipti Madam. 23-04-12]
     	moving_in   	aXikAra_meM_karane_kI_kriyA#aXikAra_meM_karane_kI_kriyA#noun#2#RM
@@ -874,7 +880,8 @@ Modified:
 	love_affair	premasambaMXa#premasambaMXa#noun#2#RM
 	In_fact		asala_meM#asala_meM#noun#2#RM
 
-    Modified ::
+    Modified :
+    --------
     	information_system --- sUcanA_praprAlI  ==> sUcanA_praNAlI (Suggested by Chaitanya ji(20-17-12))
     	curriculum_vitae   --- CV#CV#noun#2#RM  ==> @CV#@CV#noun#2#RM (Added by Roja (15-11-12))
      	blood_vessels      --- rakwa_vAhikA#rakwa_vAhikA#noun#2 #RM => rakwa_vAhikA#rakwa_vAhikA#noun#2#RM (By Roja (30-11-12))
@@ -893,7 +900,8 @@ Modified:
 	electric_catfish 	electric_cell	electric_chair	electric_charge		electrical_capacity
 
 
-    Added ::
+    Added :
+    ------
     	straight_line   	sarala_reKA#sarala_reKA#noun#2#RM		(Suggested by Chaitanya Sir 05-09-12)
     	path_length     	paWa_lambAI#paWa_lambAI#noun#2#WM		(Suggested by Chaitanya Sir 05-09-12)
     	able_to_walk    	cala_pA#cala_pA#verb#3#RM	        	(Suggested by Chaitanya Sir 09-10-12)
@@ -912,6 +920,10 @@ Modified:
 	as_a_whole      	eka_ikAI_ke_rUpa_meM#eka_ikAI_ke_rUpa_meM#preposition#1#WM	( "   18-02-13      )
 	in_the_first_place      praWamawayA#praWamawayA#preposition#4#WM	(      "	18-02-13	    )
 	in_course_of_time       kAlAnwara_meM/yaWAsamaya#yaWAsamaya#noun#2#RM	(	"	20-04-13	    )
+
+  Added new meaning to the existing word:
+  --------------------------------------
+	no_doubt        niHsaMxeha		(Suggested by Sukhada 30-05-13)
 
 
  changes in phy_dictionary.txt

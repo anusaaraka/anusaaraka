@@ -40,7 +40,7 @@
  (id-word ?id ?)
  (not (number_decided ?id))
  =>
-  	(assert (id-number-src ?id  s Default))
+  	(assert (id-number-src ?id  - Default))
 	(assert (number_decided ?id))
  )
  ;-----------------------------------------------------------------------------------------------------------
@@ -101,7 +101,7 @@
  (defrule get_num_frm_plural_list
  (declare (salience 800))
  (id-word ?wid ?word&:(not (numberp ?word)))
- ?f<- (id-number-src  ?wid  s  ?)
+ ?f<- (id-number-src  ?wid  ?n&s|-  ?)
  =>
         (bind ?a (gdbm_lookup "ol_parser_unused_words.gdbm" ?word))
         (if (neq ?a "FALSE") then

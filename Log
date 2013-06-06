@@ -1,4 +1,4 @@
- 01-06-13
+ 06-06-13
  ========
  1. In sd_relation_rules.clp
         1. Modified rules: kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux and AjFArWaka_vAkya
@@ -26,12 +26,19 @@
 16. Added debug statements in prepare_apertium_input.clp
 17. In sd_lwg_rules.clp, 
 	Modified: replace_nodes rule 
-18. Updated replacing_canonical.lex
-19. Updated changes_in_databases
-20. Updated minion dictionaries
-21. Updated sd_ver_output
-22. Updated Log
-23. Updated
+18. WSD: Modified : found.clp, improve.clp and is_en_tam.clp
+19. GNP_agreement.clp
+        Added : print_debug_info
+        Modified the rules to add function call
+20. Modified "move_ADVP_after_v" rule in H_ordering_rules.clp
+21. Modified  generate_dummy_num and get_num_frm_plural_list rules in number.clp
+22. Updated replacing_canonical.lex
+23. Updated changes_in_databases
+24. Updated minion dictionaries
+25. Updated add_snt_mrkr.lex
+26. Updated sd_ver_output and sd_verified
+27. Updated Log
+28. Updated
         phy_align_verified (195)	verified (40)	  partial_ver (22)	phy_align_partial_verified (54)
 
 

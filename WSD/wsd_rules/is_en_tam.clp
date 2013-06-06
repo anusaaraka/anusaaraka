@@ -41,11 +41,13 @@
 
 
 ;(27.1.11) to be checked
+;Modified by Shirisha Manju(30-05-13) Added "is" in the list
+;The holy book is found in the temples. 
 (defrule is_en_tam01
 (declare (salience 4900))
 (id-TAM ?id is_en)
 ?mng <-(meaning_to_be_decided ?id)
-(id-root ?id  use)
+(id-root ?id  use|find)
 ;(id-word ?id  known|played)
 (not(id-cat_coarse =(+ ?id 2) noun|verbal_noun)) 
 =>
