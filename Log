@@ -1,4 +1,4 @@
- 06-06-13
+ 08-06-13
  ========
  1. In sd_relation_rules.clp
         1. Modified rules: kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux and AjFArWaka_vAkya
@@ -32,16 +32,31 @@
         Modified the rules to add function call
 20. Modified "move_ADVP_after_v" rule in H_ordering_rules.clp
 21. Modified  generate_dummy_num and get_num_frm_plural_list rules in number.clp
-22. Updated replacing_canonical.lex
-23. Updated changes_in_databases
-24. Updated minion dictionaries
-25. Updated add_snt_mrkr.lex
-26. Updated sd_ver_output and sd_verified
-27. Updated Log
-28. Updated
+22. In abbrevations.lex,
+	Added ) in the U.S.A. list (Ex: Source: Fulton Prebon (U.S.A.) Inc.)
+23. In parserid_wordid_mapping.clp,
+	Modified : id-link_id_map_for_lowercase  (modified the lowcase function)
+	Added    : default_rule, print_warning_msg
+24. Loading NER at the beggining of the pre-proccessing. Following files are modified::
+	Anusaaraka_stanford.sh	Anusaaraka_stanford_minion.sh	Anusaaraka_berkeley.sh	
+	Anusaaraka_rasp.sh	Anusaaraka_site.sh		Anusaaraka_stanford-Factored.sh
+	stanford-ner-2008-05-07/run-ner.pl			stanford-ner-2008-05-07/run-ner.sh
+25. In sd_category.clp,
+	Renamed  : PropN_rule  to  PropN_rule_from_NER
+	Modified : above rule. (modified NER fact and rule accordingly)
+26. Warning message when 'Parserid Wordid mapping missing' is given for a id, following files are modified::
+	run_sentence_stanford.sh	run_sentence_stanford_minion.sh
+27. Modified and Updated ber_ver_output, sd_verified, sd_ver_output and phy_align_verified_out
+28. Updated mapping-punctuations.lex
+29. Updated replacing_canonical.lex
+30. Updated changes_in_databases
+31. Updated minion dictionaries
+32. Updated add_snt_mrkr.lex
+33. Updated Log
+34. Updated
         phy_align_verified (195)	verified (40)	  partial_ver (22)	phy_align_partial_verified (54)
 
-
+==========================================================================================================================
  10-07-09
  ========
  1. Modified PropN rule in link_category.clp and prefix_vib_rule in vibakthi.clp.

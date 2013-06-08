@@ -28,7 +28,7 @@
  cd $MYPATH/$1_tmp/$2
  python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  id_Apertium_output1.dat id_Apertium_output2.dat
  sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output2.dat > $MYPATH/$1_tmp/$2/id_Apertium_output.dat
- 
+
  cp $MYPATH/$1_tmp/underscore_hyphen_replace_info.txt  $MYPATH/$1_tmp/$2/underscore_hyphen_replace_info.dat
 
  #============================= minion purpose ==================================
@@ -99,6 +99,7 @@
  grep "Multiple adjective senses are available"  $1.error > error.txt
  sort -u error.txt >> errors.txt
  grep "Meaning for verb phrase" $1.error >> errors.txt
+ grep "Parserid Wordid mapping missing for" $1.error >> errors.txt
  cat errors.txt
 
  #for sentence by sent analysis for web debugging tutorial

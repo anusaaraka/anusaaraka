@@ -1,9 +1,9 @@
+Finding NER ...
 Saving Format info ...
 Saving word information
 Saving morph information
 Calling POS Tagger and Chunker (APERTIUM)
 Calling Stanford parser
-Finding NER ... 
 Tokenizing ...
 Multi word ...
 Hindi meaning using Stanford parser 1.1
@@ -1821,6 +1821,7 @@ usako AKirakAra janasaBA meM bolane ke lie viRaya milA.
 
 Hindi meaning using Stanford parser 4.14
 The main states of southern india are tamilnadu, kerala, maharashtra, andhrapradesh and karnataka. 
+xakRiNI BArawa ke pramuKa rAjya tamilnadu, PropN-kerala-PropN, PropN-maharashtra-PropN, andhrapradesh Ora PropN-karnataka-PropN hEM.
 xakRiNI BArawa ke pramuKa rAjya tamilnadu, kerala, maharashtra, andhrapradesh Ora karnataka hEM.
 Multiple adjective senses are available for main. WSD rule is required 
 Multiple adjective senses are available for southern. WSD rule is required 

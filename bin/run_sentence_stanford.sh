@@ -49,7 +49,8 @@
  grep "Multiple adjective senses are available"  $1.error > error.txt
  sort -u error.txt >> errors.txt
  grep "Meaning for verb phrase" $1.error >> errors.txt
-  cat errors.txt
+ grep "Parserid Wordid mapping missing for" $1.error >> errors.txt
+ cat errors.txt
 
  myclips -f $HOME_anu_test/Anu_clp_files/user_info.bat > /dev/null
  mv user_wsd_info.dat $MYPATH/$1_$2_user_wsd_info.dat

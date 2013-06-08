@@ -1,10 +1,12 @@
+Finding NER ...
 Saving Format info ...
 Saving word information
 Saving morph information
 Calling POS Tagger and Chunker (APERTIUM)
 Calling Berkeley parser
 Calling Stanford parser
-Finding NER... 
+Tokenizing ...
+Multi word ...
 Hindi meaning using Berkeley parser 1.1
 Test. 
 parIkRA.
@@ -436,7 +438,7 @@ Sita is my daughter.
 Sita merI betI hE.
 
 Hindi meaning using Berkeley parser 2.107
-He made a mistake in the inviting of John. 
+He made a mistake in inviting John. 
 usane joYna ko Amanwriwa karane meM galawI kI.
 
 Hindi meaning using Berkeley parser 2.108
@@ -953,7 +955,7 @@ He spoke last on this issue.
 vaha isa viRaya para AKIra meM bolA.
 
 Hindi meaning using Berkeley parser 2.234
-I should have talked to you before the inviting of John. 
+I should have talked to you before inviting John. 
 muJe joYna ko Amanwriwa karane se pahale Apase bAwacIwa karanI cAhiye WI.
 
 Hindi meaning using Berkeley parser 2.235
@@ -1063,7 +1065,7 @@ vaha SAxI ke lie jyAxA hI CotI hE.
 
 Hindi meaning using Berkeley parser 2.261
 The government took serious steps to check the dacoits. 
-sarakAra ne dAkuoM ko rokane ke lie gaMBIra kaxama lie.
+sarakAra ne dAkuoM ko rokane ke lie gamBIra kaxama lie.
 
 Hindi meaning using Berkeley parser 2.262
 You must outline the important sentences with a marker. 
@@ -1161,7 +1163,7 @@ AsamAna bAxaloM se GirA huA hE.
 
 Hindi meaning using Berkeley parser 2.285
 The Inspector made an accidental inspection of the school. 
-Inspector ne vixyAlaya kA Akasmika nirIkRaNa kiyA.
+iMspektara ne vixyAlaya kA Akasmika nirIkRaNa kiyA.
 
 Hindi meaning using Berkeley parser 2.286
 The priest granted absolution for John's sins. 
@@ -1291,7 +1293,7 @@ yaha safgaNaka wulanAwmaka rUpa se aXika mahazgA hE.
 
 Hindi meaning using Berkeley parser 3.17
 But where will you get them from. 
-paranwu Apa unako kahAz se prApwa kareMge.
+paranwu Apa unako kahAz se prApwa karezge.
 
 Hindi meaning using Berkeley parser 3.18
 From your description, I do not think I would enjoy it. 
@@ -1404,7 +1406,7 @@ vaha jafgala_meM sEra ke lie jA cukI hE.
 
 Hindi meaning using Berkeley parser 3.44
 Since I know English, he spoke to me. 
-kyofki mEM afgrejI jAnawA hUz, isaliye vaha muJase bolA.
+kyozki mEM afgrejI jAnawA hUz, isaliye vaha muJase bolA.
 
 Hindi meaning using Berkeley parser 3.45
 Mysore is also known as the city of palaces. 
@@ -1519,15 +1521,15 @@ sanxigXa lagaBaga 2 mItara lambA WA.
 
 Hindi meaning using Berkeley parser 3.69
 Do not waste electricity. 
-vixyuwa Sakwi vyarWa_meM_barabAxa_mawa kIjiye.
+vixyuwa Sakwi vyarWa_meM_barabAxa_mawa kIjie.
 
 Hindi meaning using Berkeley parser 3.70
 Leave your coat in the hall. 
-hoYla meM Apake kota ko Coda jAiye.
+hoYla meM Apake kota ko Coda jAie.
 
 Hindi meaning using Berkeley parser 3.71
 Do not shut the door. 
-xaravAjA banxa_mawa kIjiye.
+xaravAjA banxa_mawa kIjie.
 
 Hindi meaning using Berkeley parser 3.72
 She is making the girl feed the child. 
@@ -1674,4 +1676,5 @@ Hindi meaning using Berkeley parser 4.7
 Let them do the work. 
 unako kArya karane xo.
 
+Calling Transliteration
 Calling Interface related programs

@@ -62,10 +62,11 @@
  ?f0<-(current_id ?id)
  ?f1<-(id-original_word ?id ?wrd)
  (test (eq (numberp ?wrd) FALSE))
- ?f2<-(parser_numid-word-remark ?l_id&:(>= ?l_id ?id) ?WRD&:(lowcase  ?wrd) ?remark)
- (not (parser_numid-word-remark ?l_id1&:(and (>= ?l_id1 ?id) (> ?l_id ?l_id1)) ?WRD&:(lowcase ?wrd) ?remark))
+ ?f2<-(parser_numid-word-remark ?l_id&:(>= ?l_id ?id) ?WRD&:(eq (lowcase ?wrd) ?WRD) ?remark) ;Checking equality with the original word is required . Modified the function by Manju(06-06-13)
+ (not (parser_numid-word-remark ?l_id1&:(and (>= ?l_id1 ?id) (> ?l_id ?l_id1)) ?WRD&:(eq (lowcase ?wrd) ?WRD) ?remark))
  =>
         (retract ?f0 ?f1 ?f2)
+	(bind ?x (lowcase ?wrd))
         (if (neq ?remark -) then
                 (printout ?*link_map* "(parserid-wordid   P" ?l_id ?remark"  " ?id ")" crlf)
                 (printout ?*link_map* "(parserid-wordid   P" (+ 1 ?l_id)"  " ?id ")" crlf)
@@ -74,5 +75,29 @@
         )
       (bind ?id (+ ?id 1))
       (assert (current_id ?id))
+ )
+ ;--------------------------------------------------------------------------------------------------------------------
+ ;Added by Roja(06-06-13)
+ ;Ex: The average maturity for funds open only to institutions, considered by some to be a stronger indicator because those managers watch the market closely, reached a high point for the year [SYMBOL-EMDASH] 33 days.
+ ;In above example when SYMBOL-EMDASH was missing in stanford parser word list, mapping ended after 'year'. To get the remaining ids added a default rule, to get mapping for the words '33' and 'days'
+ ;(Note: its neccessary to debug why the word SYMBOL-EMDASH is missing.) 
+ (defrule default_rule
+ (declare (salience 10))
+ ?f1<-(id-original_word ?id ?wrd)
+ ?f2<-(parser_numid-word-remark ?l_id&:(>= ?l_id ?id) ?wrd ?remark)
+ =>
+	(retract ?f1 ?f2)
+        (printout ?*link_map* "(parserid-wordid   P" ?l_id"  " ?id ")" crlf)
+ )
+ ;--------------------------------------------------------------------------------------------------------------------
+ ;Added by Roja(06-06-13)
+ ;If mapping for a original word is missing then printing a warning message. 
+ (defrule print_warning_msg
+ (declare (salience -10))
+ ?f1<-(id-original_word ?id ?wrd)
+ (test (or (neq ?id 10000) (neq ?id 10001) (neq ?id 2000)))
+ =>
+	(retract ?f1)
+	(printout t "Parserid Wordid mapping missing for "	?id	"	"?wrd crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------------

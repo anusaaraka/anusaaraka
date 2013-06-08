@@ -41,7 +41,7 @@ int len=0;
                                          strncat(str,yytext,len);
                                          printf("%s",str);
                                   }
-[{\[( ]+((i[ .]*e[ .]*)|(e[ .]*g[ .]*)|(U[ .]*S[ .]*A[ .]*)|(U[ .]*[SK][ .]*)|([aA][ .]*[dD][ .]*)|([bB][ .]*[cC][ .]*)|([Ff][Ii][Gg][Ss]?[. ]*)|([Ee][Tt][Cc][ .]*)|([Rr][Ss][ .]*)|(m[. ]*g[. ]*)|(u[ .]*p[ .]*)|([Cc][Hh][. ]*)|(I[.]M[.]E)|([M][t][. ]*))[ ,]        {*str='\0';
+[{\[( ]+((i[ .]*e[ .]*)|(e[ .]*g[ .]*)|(U[ .]*S[ .]*A[ .]*)|(U[ .]*[SK][ .]*)|([aA][ .]*[dD][ .]*)|([bB][ .]*[cC][ .]*)|([Ff][Ii][Gg][Ss]?[. ]*)|([Ee][Tt][Cc][ .]*)|([Rr][Ss][ .]*)|(m[. ]*g[. ]*)|(u[ .]*p[ .]*)|([Cc][Hh][. ]*)|(I[.]M[.]E)|([M][t][. ]*))[ ,)]        {*str='\0';
                                         while((len=strcspn(yytext,".")) < strlen(yytext))
                                          {
                                                strncat(str,yytext,len);
@@ -52,7 +52,7 @@ int len=0;
                                          strncat(str,yytext,len);
                                          printf("%s",str);
                                   }
-^[{\[(]*((i[. ]*e[. ]*)|(e[. ]*g[. ]*)|(U[. ]*S[. ]*A[ .]*)|(U[ .]*[SK][ .]*)|([aA][ .]*[dD][ .]*)|([bB][ .]*[cC][ .]*)|([Ff][Ii][Gg][Ss]?[. ]*)|([Ee][Tt][Cc][ .]*)|([Rr][Ss][ .]*)|(m[ .]*g[ .]*)|(u[ .]*p[ .]*)|([Ee][Qq][Ss]?[.])|(I[.]M[.]E)|([M][t][. ]*))[ ,]        {*str='\0';
+^[{\[(]*((i[. ]*e[. ]*)|(e[. ]*g[. ]*)|(U[. ]*S[. ]*A[ .]*)|(U[ .]*[SK][ .]*)|([aA][ .]*[dD][ .]*)|([bB][ .]*[cC][ .]*)|([Ff][Ii][Gg][Ss]?[. ]*)|([Ee][Tt][Cc][ .]*)|([Rr][Ss][ .]*)|(m[ .]*g[ .]*)|(u[ .]*p[ .]*)|([Ee][Qq][Ss]?[.])|(I[.]M[.]E)|([M][t][. ]*))[ ,)]        {*str='\0';
                                         while((len=strcspn(yytext,".")) < strlen(yytext))
                                          {
                                                strncat(str,yytext,len);

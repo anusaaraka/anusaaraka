@@ -44,6 +44,14 @@
     echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
  fi
 
+ PRES_PATH=`pwd`
+ cp $1 $MYPATH/tmp/$1_tmp/
+ #running stanford NER (Named Entity Recogniser) on whole text.
+ echo "Finding NER ..."
+ cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2008-05-07/
+ sh run-ner.sh $1
+
+ cd $PRES_PATH
  echo "Saving Format info ..."
 
  $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
@@ -79,11 +87,6 @@
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2013-04-05/
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 
-  #running stanford NER (Named Entity Recogniser) on whole text.
-  echo "Finding NER ... "
-  cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2008-05-07/
-  sh run-ner.sh $1
-
   echo "Tokenizing ..." 
   perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised
 
@@ -105,7 +108,6 @@
   $HOME_anu_test/Anu_src/split_file.out sd_word.txt dir_names.txt sd_word_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out sd_numeric_word.txt dir_names.txt sd_numeric_word_tmp.dat
   $HOME_anu_test/Anu_src/split_file.out sd_category.txt dir_names.txt sd_category_tmp.dat
-  $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line.txt.ner dir_names.txt ner.dat
   $HOME_anu_test/Anu_src/split_file.out sd-original-relations.txt  dir_names.txt  sd-original-relations.dat
 
   $HOME_anu_test/Anu_src/split_file.out multi_word_expressions.txt  dir_names.txt  multi_word_expressions.dat
@@ -123,6 +125,7 @@
  do
     echo "Hindi meaning using RASP parser" $line
     cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
+    cp $MYPATH/tmp/$1_tmp/ner.txt $MYPATH/tmp/$1_tmp/$line/ner.dat
     timeout 180 ./run_sentence_stanford.sh $1 $line 1 $MYPATH $4
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
