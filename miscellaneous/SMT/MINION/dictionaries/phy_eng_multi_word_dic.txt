@@ -56,7 +56,7 @@ centripetal_acceleration	aBiveMPaxra_wvaraNa/aBikeMxra_wvaraNa#aBikeMxra_wvaraNa
 centripetal_force	aBiveMPaxra_bala/aBikeMxra_bala#aBikeMxra_bala#noun#2#RM
 chain_reaction	SqMKalA_aBikriyA/SrAaM_qKalA_aBikriyA#SrAaM_qKalA_aBikriyA#noun#2#RM
 characteristic_properties	aBilAkRaNika_guNa#aBilAkRaNika_guNa#noun#2#RM
-charged_constituents	AveSayukwa_saMGatana/AveSiwa_avayava#AveSayukwa_saMGatana#noun#2#RM
+charged_constituents	AveSayukwa_saMGatana/AveSiwa_avayava#AveSayukwa_saMGatana/AveSiwa_avayava#noun#2#RM
 classical_physics	cirasammawa_BOwikI#cirasammawa_BOwikI#noun#2#WM
 coefficient_of_linear	reKIya_prasAra_guNAMka#reKIya_prasAra_guNAMka#noun#2#RM
 coefficient_of_linear_expansion	reKIya_prasAra_guNAMka#reKIya_prasAra_guNAMka#noun#1#RM
@@ -310,3 +310,4 @@ yield_point	parABava_biMxu#parABava_biMxu#noun#2#RM
 yield_strength	parABava_sAmarWya#parABava_sAmarWya#noun#2#RM
 young's_modulus	yaMga_guNAMka/yaMga_prawyAsWawA_guNAMka#yaMga_guNAMka/yaMga_prawyAsWawA_guNAMka#noun#2#WM
 zig_zag	teDAZ-meDAZ/teDZA-meDZA#teDAZ-meDAZ#noun#2#WM
+charged particles	AveSiwa_kaNa#AveSiwa_kaNa/noun#2#RM

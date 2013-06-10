@@ -810,9 +810,7 @@ Modified:
 			to
 		artistries_UNDEFINED	kalA_kOSala
 	patterns having '_' at begging or end of the meaning are removed 
-	   Ex: Derby_noun	dArbI_
-			to
-	       Derby_noun	dArbI
+	   Ex: Derby_noun	dArbI_		as	  Derby_noun	dArbI
 
 
   Added new entry:
@@ -977,6 +975,10 @@ Modified:
   Added new meaning to the existing word:
   ---------------------------------------
 	charged_constituents	 AveSiwa_avayava	(Added by Shirisha Manju (9-4-13)
+ 
+  Added new entry:
+  ----------------
+	charged particles       AveSiwa_kaNa#AveSiwa_kaNa/noun#2#RM	(Suggested by Chaitanya Sir 07-06-13)
 			
 
  changes in causative_verb_mng.txt
