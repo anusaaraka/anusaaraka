@@ -1,8 +1,13 @@
  10-06-13
  ========
  1. In sd_relation_rules.clp
-        1. Modified rules: kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux and AjFArWaka_vAkya
-        2. Added : dep+det
+        1. Modified rules: kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux, AjFArWaka_vAkya, sub_samA_with_cop, conj-comp-rule, attr+nsubj, attr+aux, cop+nsubj, prt, nsubj_advmod, nsubj_advmod_1, advmd, det, mark, rcmod, csubj, cc_rule
+        2. Added : dep+det, nsubj_anaBihiwa, csubj+cop
+	3. modified and renamed rule nsubjpass/csubjpass as agent and complm+cop as mark+cop, 
+	4. commented rules:
+		abbrev, kri_sub_rule,  nsubjpass/csubjpass+nn, complm+ccomp, cop+nsubj_1, tmod_poss, complm, rel
+	5. Splitted rule dobj+iobj into two rules iobj and  dobj+iobj
+
  2. Loaded "manual_hin.morph.dat" file in modify_root_using_dic module in run_H_gen_minion.bat
  3. Added "get_emphatic_for_prev_word" rule in get_mng.clp
  4. modify_root_using_dic.clp
@@ -4655,8 +4660,14 @@ In WSD , relation is changed in as.clp	   it.clp	  since.clp	so.clp	  that.clp  
 31. Added compilation of above dictionary in dic_compile.sh
 32. Modified "create_dummy_confd_lvl" and "print_to_html" rules in create_hin_align_html.clp
 33. In sd_relation_rules.clp
-        1. Modified rules: kriyA_sub_rule, dobj, rcmod, nsubj_rcmod, insert-which1 and single_prep
-        2. Added : dobj_rcmod, nsubj_rcmod and rcmod_prep
+        1. Modified rules: kriyA_sub_rule, dobj, rcmod, nsubj_rcmod, insert-which1, single_prep, sub_samA_with_cop, conj-comp-rule, attr+nsubj, attr+aux, cop+nsubj, prt, nsubj_advmod, nsubj_advmod_1, advmd, det, mark, rcmod, csubj, cc_rule
+
+        2. Added : dobj_rcmod, nsubj_rcmod, rcmod_prep, nsubj_anaBihiwa and csubj+cop
+	3. modified and renamed rule nsubjpass/csubjpass as agent and complm+cop as mark+cop
+	4. commented rules:
+		abbrev, kri_sub_rule,  nsubjpass/csubjpass+nn, complm+ccomp, cop+nsubj_1, tmod_poss, complm, rel
+	5. Splitted rule dobj+iobj into two rules iobj and  dobj+iobj
+
 34. Added an or condition in split-relations.py program
 35. Modified sd_ver_output
 36. Renamed: generate_hin_multi_word_dic.sh to generate_multi_word_dic_for_alignment.sh
