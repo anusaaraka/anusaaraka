@@ -1,4 +1,4 @@
- 08-06-13
+ 10-06-13
  ========
  1. In sd_relation_rules.clp
         1. Modified rules: kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux and AjFArWaka_vAkya
@@ -8,53 +8,54 @@
  4. modify_root_using_dic.clp
         Added    : modify_aper_fact and modify_aper_fact1
         Modified : modify_root_for_pronouns_using_aper
- 5. Added verified_eng, verified_hnd, verified_out and verified_eng_align.html files
- 6. Removed reranking-parser-2011-12-17.tgz and added bllip-parser-master.zip (this bllip parser is the next version and contains licence)
- 7. Renamed and Modified Anusaaraka_reranked_johnson.sh to Anusaaraka_bllip_parser.sh
+ 5. Removed reranking-parser-2011-12-17.tgz and added bllip-parser-master.zip 
+	(this bllip parser is the next version and contains licence)
+ 6. Renamed and Modified Anusaaraka_reranked_johnson.sh to Anusaaraka_bllip_parser.sh
 		and	Anusaaraka_reranked_johnson_minion.sh  to Anusaaraka_bllip_parser_minion.sh
- 8. anu_compile.sh:
+ 7. anu_compile.sh:
 	Removed code related to reranking-parser-2011-12-17.tgz and updated with bllip-parser-master.zip
- 9. Renamed reranking-parser to bllip-parser-master in remove_out-files.sh
-10. In parser_tree_modification_rules.clp:
+ 8. Renamed reranking-parser to bllip-parser-master in remove_out-files.sh
+ 9. In parser_tree_modification_rules.clp:
 	Modified: convert_WH_Q_sent_to_normal 
 	Added   : remove_SBAR_S_VP_TO
-11. Modified "check_correctness_for_multi_word" rule in modify_minion_output.clp
-12. Modified "chk_for_hnd_mwe" rule in manual_word_grp_using_dic.clp (added hnd_multi_word_from_iit_bombay_dic.gdm)
-13. Added "rm_LWG_grouped_id_from_restricted_word" rule in get_word_potential_facts.clp
-14. Added detokenizer-src folder in  miscellaneous/HANDY_SCRIPTS/ to detokenize the tokenized file and also updated anu_testing README
-15. In chk_input_format.pl : Added a pattern to combine "-" when it is separated between two words
-16. Added debug statements in prepare_apertium_input.clp
-17. In sd_lwg_rules.clp, 
+10. Modified "check_correctness_for_multi_word" rule in modify_minion_output.clp
+11. Modified "chk_for_hnd_mwe" rule in manual_word_grp_using_dic.clp (added hnd_multi_word_from_iit_bombay_dic.gdm)
+12. Added "rm_LWG_grouped_id_from_restricted_word" rule in get_word_potential_facts.clp
+13. Added detokenizer-src folder in  miscellaneous/HANDY_SCRIPTS/ 
+	-- to detokenize the tokenized file and also updated anu_testing README
+14. In chk_input_format.pl : Added a pattern to combine "-" when it is separated between two words
+15. Added debug statements in prepare_apertium_input.clp
+16. In sd_lwg_rules.clp, 
 	Modified: replace_nodes rule 
-18. WSD: Modified : found.clp, improve.clp and is_en_tam.clp
-19. GNP_agreement.clp
+17. WSD: Modified : found.clp, improve.clp, baby.clp, call.clp, get.clp and is_en_tam.clp
+18. GNP_agreement.clp
         Added : print_debug_info
         Modified the rules to add function call
-20. Modified "move_ADVP_after_v" rule in H_ordering_rules.clp
-21. Modified  generate_dummy_num and get_num_frm_plural_list rules in number.clp
-22. In abbrevations.lex,
-	Added ) in the U.S.A. list (Ex: Source: Fulton Prebon (U.S.A.) Inc.)
-23. In parserid_wordid_mapping.clp,
+19. Modified "move_ADVP_after_v" rule in H_ordering_rules.clp
+20. Modified  generate_dummy_num and get_num_frm_plural_list rules in number.clp
+21. In parserid_wordid_mapping.clp,
 	Modified : id-link_id_map_for_lowercase  (modified the lowcase function)
 	Added    : default_rule, print_warning_msg
-24. Loading NER at the beggining of the pre-proccessing. Following files are modified::
+22. Loading NER at the beggining of the pre-proccessing. Following files are modified::
 	Anusaaraka_stanford.sh	Anusaaraka_stanford_minion.sh	Anusaaraka_berkeley.sh	
 	Anusaaraka_rasp.sh	Anusaaraka_site.sh		Anusaaraka_stanford-Factored.sh
 	stanford-ner-2008-05-07/run-ner.pl			stanford-ner-2008-05-07/run-ner.sh
-25. In sd_category.clp,
+23. In sd_category.clp,
 	Renamed  : PropN_rule  to  PropN_rule_from_NER
 	Modified : above rule. (modified NER fact and rule accordingly)
-26. Warning message when 'Parserid Wordid mapping missing' is given for a id, following files are modified::
+24. Warning message when 'Parserid Wordid mapping missing' is given for a id, following files are modified::
 	run_sentence_stanford.sh	run_sentence_stanford_minion.sh
-27. Modified and Updated ber_ver_output, sd_verified, sd_ver_output and phy_align_verified_out
-28. Updated mapping-punctuations.lex
-29. Updated replacing_canonical.lex
-30. Updated changes_in_databases
-31. Updated minion dictionaries
-32. Updated add_snt_mrkr.lex
-33. Updated Log
-34. Updated
-        phy_align_verified (195)	verified (40)	  partial_ver (22)	phy_align_partial_verified (54)
+25. Modified and Updated ber_ver_output, sd_verified, sd_ver_output and phy_align_verified_out
+26. Added verified_eng, verified_hnd, verified_out and verified_eng_align.html files
+27. Updated the following 'lex' files
+	add_snt_mrkr.lex		abbrevations.lex
+	mapping-punctuations.lex	replacing_canonical.lex		
+28. Updated changes_in_databases
+29. Updated minion dictionaries
+30. Updated Log
+31. Updated the following verified's
+	sd_verified (491)   phy_align_verified (207)		verified (40)
+        partial_ver (22)    phy_align_partial_verified (54)
 
 ==========================================================================================================================
  10-07-09

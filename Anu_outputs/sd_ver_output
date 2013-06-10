@@ -1738,7 +1738,7 @@ merI gAdI KarAba_ho gaI mEM PropN-lalitpur-PropN jaba pahuzcA.
 
 Hindi meaning using Stanford parser 3.96
 His wife has had a baby. 
-usakI pawnI kA SiSU WA.
+usakI pawnI kA SiSu WA.
 
 Hindi meaning using Stanford parser 3.97
 It is Jane who wants to do it. 
@@ -2162,6 +2162,11 @@ xukAna kI ora xOdawI huI ladakI merI miwra hE.
 Hindi meaning using Stanford parser 4.90
 The soldier that is ill is in the hospital. 
 jo asvasWa hE vaha sEnika aspawAla meM hE.
+
+Hindi meaning using Stanford parser 4.91
+In these examples, the external agency of force (hands, wind, stream, etc) is in contact with the object. 
+ina uxAharaNoM meM, bala kA bAhya_sAXana (hAWa, havA JaranA, Axi) vaswu ke samparka meM hE.
+Multiple adjective senses are available for external. WSD rule is required 
 
 Calling Transliteration
 Calling Interface related programs
