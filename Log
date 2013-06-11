@@ -7,7 +7,6 @@
 	4. commented rules:
 		abbrev, kri_sub_rule,  nsubjpass/csubjpass+nn, complm+ccomp, cop+nsubj_1, tmod_poss, complm, rel
 	5. Splitted rule dobj+iobj into two rules iobj and  dobj+iobj
-
  2. Loaded "manual_hin.morph.dat" file in modify_root_using_dic module in run_H_gen_minion.bat
  3. get_mng.clp
 	Added    : get_emphatic_for_prev_word" and leftout_single_word_and_single_mng_restricted rules
@@ -48,7 +47,7 @@
 	Anusaaraka_stanford.sh	Anusaaraka_stanford_minion.sh	Anusaaraka_berkeley.sh	
 	Anusaaraka_rasp.sh	Anusaaraka_site.sh		Anusaaraka_stanford-Factored.sh
 	stanford-ner-2008-05-07/run-ner.pl			stanford-ner-2008-05-07/run-ner.sh
-	Anusaaraka_bllip_parser.sh				 Anusaaraka_bllip_parser_minion.sh	
+	Anusaaraka_bllip_parser.sh				Anusaaraka_bllip_parser_minion.sh	
 23. In sd_category.clp,
 	Renamed  : PropN_rule  to  PropN_rule_from_NER
 	Modified : above rule. (modified NER fact and rule accordingly)
