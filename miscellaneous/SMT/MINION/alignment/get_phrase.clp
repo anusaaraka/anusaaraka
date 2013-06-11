@@ -70,7 +70,6 @@
 	(printout ?*dic_fp2* ?w" "?w1 " -- " (implode$ ?new_m)"/"(implode$ ?new_r) crlf)
 )
 ;-------------------------------------------------------------------------------------------------------
-;I [want to buy] this donkey. mEM isa gaXe ko [KarIxanA cAhawI hUM]
 (defrule get_phrase_with_next_mng_with_root
 (declare (salience 70))
 (hindi_id_order $?pre ?id ?id1 $?post)
@@ -84,7 +83,34 @@
 (English_Sen $?eng_list)
 (not (phrase_ids-mng $? ?id $?))
 =>
-	(bind $?ids (sort > $?ids $?ids1))
+        (bind $?ids (sort > $?ids $?ids1))
+        (loop-for-count (?i 1 (length $?ids))
+                (bind ?id (nth$ ?i $?ids))
+                (if (eq ?i 1) then
+                        (bind ?eng_phrase (nth$ ?id $?eng_list))
+                else
+                        (bind ?eng_phrase (str-cat ?eng_phrase "_" (nth$ ?id $?eng_list)))
+                )
+        )
+        (bind ?new_m (remove_character " " (implode$ (create$  $?m)) "_"))
+        (bind ?new_m (str-cat (implode$ ?new_m)"_"?root))
+        (printout ?*dic_fp2* ?eng_phrase " -- " ?new_m crlf)
+)
+;-------------------------------------------------------------------------------------------------------
+;To measure [any time interval] we need a clock. --- [kisI BI samaya - anwarAla ko] mApane ke lie hameM GadI kI AvaSyakawA howI hE.
+(defrule get_phrase_with_next_mng
+(declare (salience 85))
+(hindi_id_order $?pre ?id ?id1 $?post)
+(anu_id-anu_mng-sep-man_id-man_mng ?id $?m - ?mid $?m ?m1 $?)
+(not (anu_id-anu_mng-sep-man_id-man_mng ?id1 $?))
+(not (anu_id-word-possible_mngs ?id1 $?))
+(id-Apertium_output ?id1 ?m1)
+(id-HM-source ?id1 ?root ?)
+(pada_info (group_ids $?ids))
+(test (and (member$ ?id $?ids) (member$ ?id1 $?ids)))
+(English_Sen $?eng_list)
+(not (phrase_ids-mng $? ?id $?))
+=>
         (loop-for-count (?i 1 (length $?ids))
                 (bind ?id (nth$ ?i $?ids))
                 (if (eq ?i 1) then

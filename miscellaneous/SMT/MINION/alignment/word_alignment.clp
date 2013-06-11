@@ -251,7 +251,8 @@
 (current_id ?mid)
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?noun - $?vib -  $?grp)
 (test (neq $?vib 0))
-(id-HM-source ?aid $?noun ?src&~Word)
+(id-HM-source ?aid $?noun ?src)
+;(id-HM-source ?aid $?noun ?src&~Word)
 (not (prov_assignment ?aid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))

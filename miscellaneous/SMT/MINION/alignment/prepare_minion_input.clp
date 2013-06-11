@@ -414,7 +414,7 @@
         (bind ?pos1 (- (member$ ?id1 $?ids) 1))
 	(bind $?l_grp (create$ ?pos ?pos1))
 	(printout ?*minion_fp*  crlf " #Generating cost facts " crlf)
-	(printout ?*minion_fp*  " #group : "?id" "?id1 " ---- " (implode$ $?l_grp) crlf)
+	(printout ?*minion_fp*  " #consecutive_group : "?id" "?id1 " ---- " (implode$ $?l_grp) crlf)
 	(printout ?*minion_fp* " watched-or({" crlf "	watched-and({ " )
 	(bind ?count 0)
         (loop-for-count (?k ?count (- ?manual_word_len 1) )

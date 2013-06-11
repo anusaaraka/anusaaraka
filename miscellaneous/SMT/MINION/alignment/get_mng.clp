@@ -8,9 +8,24 @@
 	(printout  ?*dic_fp1* "----------------- meanings with some logic -------------" crlf)
 )
 ;--------------------------------------------------------------------------------------------------------
+(defrule leftout_single_word_and_single_mng_restricted
+(declare (salience 91))
+(left_out_words ?aid)
+(left_out_mngs ?mid)
+?f0<-(manual_id-mng ?mid $?mng)
+(anu_id-word-possible_mngs ?aid $?)
+(man_id-word-possible_mngs ?mid $?)
+(hin_pos-hin_mng-eng_ids-eng_words ? ?hnd_mng  $?a1 ?aid $?a2 ?eng_wrds)
+=>
+        (retract ?f0)
+        (printout ?*dic_fp1*  ?eng_wrds" :: "(implode$ $?mng) crlf)
+)
+;--------------------------------------------------------------------------------------------------------
 (defrule leftout_single_word_and_single_mng
 (declare (salience 90))
 (left_out_words ?aid)
+(not (anu_id-word-possible_mngs ?aid $?))
+(not (man_id-word-possible_mngs ?mid $?))
 (left_out_mngs ?mid)
 ?f0<-(manual_id-mng ?mid $?mng)
 (hin_pos-hin_mng-eng_ids-eng_words ? ?hnd_mng  $?a1 ?aid $?a2 ?eng_wrds)

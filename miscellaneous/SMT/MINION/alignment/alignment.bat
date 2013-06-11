@@ -65,6 +65,7 @@
 (load-facts "position.dat")
 (load-facts "shallow_parser_root.dat")
 (load-facts "aper_op_without_@.dat")
+(load-facts "hin_mng_without_@.dat")
 (open "minion_sen_dic.txt" dic_fp1 "a")
 (run)
 (save-facts "word_alignment.dat" local anu_id-anu_mng-sep-man_id-man_mng)

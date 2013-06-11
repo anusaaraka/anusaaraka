@@ -1,10 +1,12 @@
- 10-06-13
+ 11-06-13
  ========
  1. In sd_relation_rules.clp
         1. Modified rules: kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux and AjFArWaka_vAkya
         2. Added : dep+det
  2. Loaded "manual_hin.morph.dat" file in modify_root_using_dic module in run_H_gen_minion.bat
- 3. Added "get_emphatic_for_prev_word" rule in get_mng.clp
+ 3. get_mng.clp
+	Added    : get_emphatic_for_prev_word" and leftout_single_word_and_single_mng_restricted rules
+	Modified : leftout_single_word_and_single_mng
  4. modify_root_using_dic.clp
         Added    : modify_aper_fact and modify_aper_fact1
         Modified : modify_root_for_pronouns_using_aper
@@ -18,7 +20,8 @@
  9. In parser_tree_modification_rules.clp:
 	Modified: convert_WH_Q_sent_to_normal 
 	Added   : remove_SBAR_S_VP_TO
-10. Modified "check_correctness_for_multi_word" rule in modify_minion_output.clp
+10. modify_minion_output.clp:
+	Modified :  check_correctness_for_multi_word and check_for_correctness" rules 
 11. Modified "chk_for_hnd_mwe" rule in manual_word_grp_using_dic.clp (added hnd_multi_word_from_iit_bombay_dic.gdm)
 12. Added "rm_LWG_grouped_id_from_restricted_word" rule in get_word_potential_facts.clp
 13. Added detokenizer-src folder in  miscellaneous/HANDY_SCRIPTS/ 
@@ -45,17 +48,26 @@
 	Modified : above rule. (modified NER fact and rule accordingly)
 24. Warning message when 'Parserid Wordid mapping missing' is given for a id, following files are modified::
 	run_sentence_stanford.sh	run_sentence_stanford_minion.sh
-25. Modified and Updated ber_ver_output, sd_verified, sd_ver_output and phy_align_verified_out
-26. Added verified_eng, verified_hnd, verified_out and verified_eng_align.html files
-27. Updated the following 'lex' files
+25. Added "get_phrase_with_next_mng" rule in get_phrase.clp
+26. manual_lwg.clp
+    Added    : multi_word_with_no_root
+    Modified : word_[hyphen]_word, single_vib1 and change_remaining_facts1
+27. Modified "print_cost_for_consecutive_ids" rule in prepare_minion_input.clp
+28. Modified "word_and_vib_match_with_anu_hindi_root1" rule in word_alignment.clp
+29. Loaded "hin_mng_without_@.dat" file for get_mng module in alignment.bat
+30. Modified and Updated ber_ver_output, sd_verified, sd_ver_output and phy_verified_out
+31. Added verified_eng, verified_hnd, verified_out and verified_eng_align.html files and
+    Renamed "phy_align_partial_[eng/hnd/eng_align.html]"   as  "phy_partial_[eng/hnd/eng_align.html]"  and
+            "phy_align_verified_[eng/hnd/eng_align.html]"  as  "phy_verified_[eng/hnd/eng_align.html]"
+32. Updated the following 'lex' files
 	add_snt_mrkr.lex		abbrevations.lex
 	mapping-punctuations.lex	replacing_canonical.lex		
-28. Updated changes_in_databases
-29. Updated minion dictionaries
-30. Updated Log
-31. Updated the following verified's
-	sd_verified (491)   phy_align_verified (207)		verified (40)
-        partial_ver (22)    phy_align_partial_verified (54)
+33. Updated changes_in_databases
+34. Updated minion dictionaries
+35. Updated Log
+36. Updated the following verified's
+	sd_verified (491)	phy_verified (207)		phy_partial_verified (55)	
+	verified (40)		partial_ver (22)    
 
 ==========================================================================================================================
  10-07-09

@@ -293,14 +293,30 @@
 	(assert (phrase_ids-mng ?aid ?prev_id  - ?mng $?m))
 )
 ;-------------------------------------------------------------------------------------------------
-;We shall, in the present chapter, consider rotational motion about a fixed axis only.
+;We can explain this phenomenon on the basis of electromagnetic induction.
+;isa pariGatanA kI vyAKyA hama vixyuwa cumbakIya [preraNa ke AXAra para] kara sakawe hEM 
 (defrule check_for_correctness
-(declare (salience 1000))
-?f1<-(id-root-anu_mng-man_mng ?aid ?root $?mng - ?id)
-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1&:(=(- ?aid 1) ?aid1) $? - ?mid $?)
-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid2&:(=(+ ?aid 1) ?aid2) $? - ?mid1&:(=(+ ?mid 1) ?mid1) $?)
-?f0<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?id $?)
+(declare (salience 800))
+(anu_id-anu_mng-sep-man_id-man_mng ?aid $?mng - ?mid $?m ?m1 $?m2)
+(test (neq (length $?m) 0))
+(id-node-word-root ? ? ?m1 - ?root)
+(id-HM-source ?id ?m1 ?)
+?f0<-(anu_id-anu_mng-sep-man_id-man_mng ?id $?mng1 - ?mid1 $?)
+?f1<-(left_out_mngs $?pre)
+(not (id-word ?id are|is));Eddy currents are undesirable since they heat up the core and dissipate electrical energy in the form of heat.
 =>
-       (retract ?f0 ?f1)
+	(retract ?f0 ?f1)
+	(assert (left_out_mngs $?pre ?mid1))
 )
+
+;We shall, in the present chapter, consider rotational motion about a fixed axis only.
+;(defrule check_for_correctness
+;(declare (salience 1000))
+;?f1<-(id-root-anu_mng-man_mng ?aid ?root $?mng - ?id)
+;(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1&:(=(- ?aid 1) ?aid1) $? - ?mid $?)
+;(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid2&:(=(+ ?aid 1) ?aid2) $? - ?mid1&:(=(+ ?mid 1) ?mid1) $?)
+;?f0<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?id $?)
+;=>
+;       (retract ?f0 ?f1)
+;)
 

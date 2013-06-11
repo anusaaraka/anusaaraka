@@ -29,6 +29,18 @@
         (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat ?w  - $?root - ?w1 ?w2 - ?id0 ?id1 ?id2))
 )
 ;----------------------------------------------------------------------------------------------------------------
+;As coil C2 is moved towards the coil C1, the galvanometer shows a deflection. --jEse hI kuNdalI @C2 ko kuNdalI [@C1 kI ora] lAwe hEM  @PUNCT-Comma  XArAmApI eka vikRepa xarSAwA hE.
+(defrule multi_word_with_no_root
+(declare (salience 105))
+?f0<-(man_id-word-cat ?id0 ?w ?cat)
+?f1<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?w1&kI ?)
+?f2<-(man_id-word-cat ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora|waraha ?)
+(not (id-node-word-root ?id0 $?))
+=>
+        (retract ?f0 ?f1 ?f2)
+        (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat ?w  - ?w - ?w1 ?w2 - ?id0 ?id1 ?id2))
+)
+;----------------------------------------------------------------------------------------------------------------
 ;bahuwa sI sWiwiyoM meM , jEse kisI maSIna , jisameM viBinna [kala purje] gawi karawe hoM , meM GarRaNa kI qNAwmaka BUmikA howI hE .
 ;na wo, na hI, xUsarI ora,kI ora ,hamArI ora
 (defrule multi_word2
@@ -139,7 +151,7 @@
 (not (retract_manual_fact ?id2))
 =>
         (retract ?f1 ?f2 ?f3)
-        (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun ?w  - $?root1 - 0 - ?id0 ?id1 ?id2))
+        (assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun ?w  - $?root1 - 0 - ?id0 ?id2))
 )
 ;----------------------------------------------------------------------------------------------------------------
 ;Axya vicArakoM jEse araswU kI bala ke viRaya meM saMkalpanA galawa WI -- Early thinkers like Aristotle had wrong ideas about it.
@@ -169,7 +181,7 @@
 ?f1<-(man_id-word-cat ?id0 $?noun ?cat)
 (man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen ?)
 (man_id-word-cat ?id2 @PUNCT-ClosedParen ?)
-(test (or (eq (- ?id2 ?id1) 3)(eq (- ?id2 ?id1) 2) (eq (- ?id2 ?id1) 1)))
+(test (or (eq (- ?id2 ?id1) 3)(eq (- ?id2 ?id1) 2) (eq (- ?id2 ?id1) 1)(eq (- ?id2 ?id1) 4)))
 ?f3<-(man_id-word-cat ?id3&:(=(+ ?id2 1) ?id3) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|waka ?)
 ?f0<-(head_id-grp_ids ?h $?d ?id0 $?d1)
 ?f4<-(manual_id-node-word-root-tam ?h ?c $?noun1 - $?root - $?vib1)
@@ -310,6 +322,7 @@
 ?f0<-(man_id-word-cat ?mid $?word ?cat&~SYM&~VIB)
 (not (manual_id-cat-word-root-vib-grp_ids ? ? $? - $? - $? - $? ?mid $?))
 (not (retract_manual_fact ?mid))
+(test (eq (member$ $?word (create$ @PUNCT-Comma @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-DoubleQuote @PUNCT-DoubleQuote @PUNCT-Semicolon @PUNCT-Colon @PUNCT-SingleQuote @PUNCT-OpenParen @PUNCT-ClosedParen @PUNCT-Exclamation @SYM-Dollar)) FALSE))
 =>
 	(retract ?f0)
         (assert (manual_id-cat-word-root-vib-grp_ids ?mid ?cat $?word - $?word - 0 - ?mid))

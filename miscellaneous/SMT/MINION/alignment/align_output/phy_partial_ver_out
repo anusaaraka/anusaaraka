@@ -2,12 +2,12 @@ Pre-proccessing manual file ...
 Running Shallow Parser ...
 Generating canonical form for Shallow Parser Output ...
 Tokenizing manual sentence
+Finding NER ...
 Saving Format info ...
 Saving word information
 Saving morph information
 Calling POS Tagger and Chunker (APERTIUM)
 Calling Stanford parser
-Finding NER ... 
 Tokenizing ...
 Multi word ...
 Hindi meaning using Stanford parser 1.1
@@ -30,7 +30,7 @@ gawi ke xo mAmale vicAra kIjie.
 
 Hindi meaning using Stanford parser 2.4
 The magnitude of the displacement for a course of motion may be zero but the corresponding path length is not zero. 
-gawi ke pATyakrama ke lie visWApana kA parimANa SUnya ho sakawA hE paranwu jo_samawulya_ho paWa lambAI niSAnA sAXa hE nahIM hE.
+gawi ke pATyakrama ke lie visWApana kA parimANa SUnya ho sakawA hE paranwu waxanurUpa paWa lambAI niSAnA sAXa hE nahIM hE.
 Multiple adjective senses are available for corresponding. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.5
@@ -59,8 +59,8 @@ Where P is the net power of the lens combination.
 PropN-p-PropN lensa saMyoga kA vAswavika GAwAfka kahAz hE.
 
 Hindi meaning using Stanford parser 2.11
-In silica glass fibers, it is possible to transmit more than 95 SYMBOL-PERCENT of the light over a fiber length of 1 km. 
-silikA gilAsoM wanwuoM meM, 1 ki.mI. kI eka wanwu lambAI ke Upara prakASa kA se aXika 95 SYMBOL-PERCENT preRiwa samBava hE.
+Through another experiment, Faraday showed that this relative motion is not an absolute requirement. 
+xUsare prayoga meM se, PropN-faraday-PropN ne xiKAyA ki yaha ApekRa gawi purA apekRA nahIM hE.
 
 Hindi meaning using Stanford parser 2.12
 A standard 100 watt incadescent light bulb emits approximately 1700 lumens. 
@@ -157,7 +157,7 @@ solahavAz SawAbxI Age se, baDiyA lambe kaxama yUropa meM vijFAna meM banAe gaye 
 
 Hindi meaning using Stanford parser 2.33
 This approach is called reductionism and is at the heart of physics. 
-yaha pahuzca reductionism bulAI jAwI hE Ora BOwika vijFAna ke hqxaya meM hE.
+yaha pahuzca reductionism kahI jAwI hE Ora BOwika vijFAna ke hqxaya meM hE.
 
 Hindi meaning using Stanford parser 2.34
 In our experience, force is needed to push, carry or throw objects, deform or break them. 
@@ -182,7 +182,7 @@ Apa eka EsA praBAva anuBava karane ke lie Gara para aglA kriyA kalApa kArya_kara
 
 Hindi meaning using Stanford parser 2.39
 A dramatic observation is that a pith ball touched with glass rod attracts another pith ball touched with plastic rod (Fig. 1SYMBOL-DOT1 (f)). 
-eka nAtakIya prekRaNa hE ki gilAsa Cada ke sAWa sparSa kI huI eka majjA golA plAstika Cada ke sAWa (PropN-fig.-PropN 1SYMBOL-DOT1 eM sparSa kI huI xUsarI majjA golA AkarRiwa karawI hE.
+eka nAtakIya prekRaNa hE ki gilAsa Cada ke sAWa sparSa kI huI eka majjA golA (1SYMBOL-DOT1 eM Fig.) plAstika Cada ke sAWa sparSa kI huI xUsarI majjA golA AkarRiwa karawI hE.
 Multiple adjective senses are available for dramatic. WSD rule is required 
 Multiple adjective senses are available for plastic. WSD rule is required 
 
@@ -260,6 +260,10 @@ gawi ke PropN-newton-PropN ke niyamoM para Ora guruwvAkarRaNa ke niyama para sWA
 Multiple adjective senses are available for concerned. WSD rule is required 
 Multiple adjective senses are available for general. WSD rule is required 
 
+Hindi meaning using Stanford parser 2.55
+A bar magnet can attract an iron nail from a distance. 
+eka SarAbaGara cumbaka xUrI se lohA nAKUna AkarRiwa_kara sakawA hE.
+
 Calling Transliteration
 Calling Interface related programs
 Print minion_statistics
@@ -270,4 +274,4 @@ Time-out:
 Solution Found :
 54
 re-executed-sentences:
-13
+12
