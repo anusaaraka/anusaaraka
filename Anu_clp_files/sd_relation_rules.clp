@@ -42,15 +42,15 @@
  ; Are a dog and a cat here?
  (defrule replace_head_with_cop
  (declare (salience 9999))
- ?f<-(rel_name-sids cop   ?y ?x)
- (basic_rel_name-sids cc ?y ?and)
- (not (modified ?y))
+ ?f<-(rel_name-sids ?rel&cop|nsubj   ?y ?x) ;Her mom was beautiful, talented and sweet. 
+ (basic_rel_name-sids cc ?y ?and&and|or)
+ (not (modified ?rel))
  =>
  (retract ?f)
- (assert (rel_name-sids cop  ?and  ?x))
- (printout       ?*dbug* "(rel_name-sids  cop "?x"  "?and")"crlf)
- (printout       ?*dbug* "(rule-deleted_Relation-ids    replace_head  cop  "?x"  "?and")"crlf)
- (assert (modified ?y))
+ (assert (rel_name-sids ?rel  ?and  ?x))
+ (printout       ?*dbug* "(rel_name-sids  "?rel "  "?x"  "?and")"crlf)
+ (printout       ?*dbug* "(rule-deleted_Relation-ids    replace_head  "?rel "  "?x"  "?and")"crlf)
+ (assert (modified ?rel))
  )
  ;Added by Shirisha Manju
  ;She is ugly and fat.
@@ -145,12 +145,24 @@
  ;Added by Shirisha Manju
  ; The boy has a computer . The train left on time .
  ;------------------------------------------------------------------------------------------------------------------------
+
+ (defrule kri_shared_sub
+ (rel_name-sids xsubj ?kri ?sub)
+ =>
+ (assert (got_shared_subject ?kri))
+ (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-shared_subject    "?kri"        "?sub")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kri_shared_sub  kriyA-shared_subject   "?kri"        "?sub")"crlf)
+ )
+ ;Ex : Tom likes to eat fish. 
+ ;------------------------------------------------------------------------------------------------------------------------
+
  (defrule kriyA_sub_rule1
  (rel_name-sids xcomp ?kriyA ?kri)
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
  (not (sub_for_kriyA ?kri))
  (not (got_kriyA-karwA_rel ?kri))
  (not (got_kriyA-subject ?kriyA))
+ (not (got_shared_subject ?kri))
  =>
  (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?kri"        "?sub")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kriyA_sub_rule1   kriyA-subject   "?kri"        "?sub")"crlf)
@@ -861,6 +873,19 @@
  ;The snake who swallowed the rat hissed loudly.
 ;------------------------------------------------------------------------------------------------------------------------
 
+(defrule rcmod_prep
+(declare (salience 220))
+(rel_name-sids  rcmod ?vi ?kri)
+(basic_rel_name-sids  prep ?kri ?p)
+(basic_rel_name-sids  pobj ?p ?js)
+=>
+(printout       ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
+(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   rcmod_prep     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
+(assert (got_viSeRya-jo_samAnAXikaraNa  ?vi))
+ )
+
+;The room in which you sang a song is good.
+;------------------------------------------------------------------------------------------------------------------------
 
 (defrule rcmod
 (declare (salience 220))

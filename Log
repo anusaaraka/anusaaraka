@@ -1,8 +1,8 @@
- 11-06-13
+ 12-06-13
  ========
  1. In sd_relation_rules.clp
-        1. Modified rules: kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux, AjFArWaka_vAkya, sub_samA_with_cop, conj-comp-rule, attr+nsubj, attr+aux, cop+nsubj, prt, nsubj_advmod, nsubj_advmod_1, advmd, det, mark, rcmod, csubj, cc_rule
-        2. Added : dep+det, nsubj_anaBihiwa, csubj+cop
+        1. Modified rules: kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux, AjFArWaka_vAkya, sub_samA_with_cop, conj-comp-rule, attr+nsubj, attr+aux, cop+nsubj, prt, nsubj_advmod, nsubj_advmod_1, advmd, det, mark, rcmod, csubj, cc_rule, replace_head_with_cop
+        2. Added : dep+det, nsubj_anaBihiwa, csubj+cop, kri_shared_sub, rcmod_prep
 	3. modified and renamed rule nsubjpass/csubjpass as agent and complm+cop as mark+cop, 
 	4. commented rules:
 		abbrev, kri_sub_rule,  nsubjpass/csubjpass+nn, complm+ccomp, cop+nsubj_1, tmod_poss, complm, rel
