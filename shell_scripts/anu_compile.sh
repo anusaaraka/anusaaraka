@@ -207,7 +207,15 @@
  echo "compiling bllip parser"
  cd  $HOME_anu_test/Parsers
  unzip bllip-parser-master.zip
- export GCCFLAGS="-march=pentium4 -mfpmath=sse -msse2 -mmmx"
+ realine=`uname -m`
+ if [ "$readline" ==  "i686" ] ; then
+        echo "hello"
+        export GCCFLAGS="-march=pentium4 -mfpmath=sse -msse2 -mmmx"
+ if [ "$readline" ==  "x86_64" ]; then
+        echo "hai"
+        export GCCFLAGS="-march=opteron -m64 -I /home/mj/C++/boost"  
+ fi
+ fi
  cd $HOME_anu_test/Parsers/bllip-parser-master
  make
 
