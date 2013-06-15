@@ -1,8 +1,10 @@
- 12-06-13
+ 15-06-13
  ========
  1. In sd_relation_rules.clp
-        1. Modified rules: kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux, AjFArWaka_vAkya, sub_samA_with_cop, conj-comp-rule, attr+nsubj, attr+aux, cop+nsubj, prt, nsubj_advmod, nsubj_advmod_1, advmd, det, mark, rcmod, csubj, cc_rule, replace_head_with_cop
-        2. Added : dep+det, nsubj_anaBihiwa, csubj+cop, kri_shared_sub, rcmod_prep
+        1. Modified : kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux, AjFArWaka_vAkya, sub_samA_with_cop, 
+		      conj-comp-rule, attr+nsubj, attr+aux, cop+nsubj, prt, nsubj_advmod, nsubj_advmod_1, advmd, det, mark, 
+		      rcmod, csubj, cc_rule, replace_head_with_cop
+        2. Added    : dep+det, nsubj_anaBihiwa, csubj+cop, kri_shared_sub, rcmod_prep
 	3. modified and renamed rule nsubjpass/csubjpass as agent and complm+cop as mark+cop, 
 	4. commented rules:
 		abbrev, kri_sub_rule,  nsubjpass/csubjpass+nn, complm+ccomp, cop+nsubj_1, tmod_poss, complm, rel
@@ -22,7 +24,7 @@
 	Removed code related to reranking-parser-2011-12-17.tgz and updated with bllip-parser-master.zip
  8. Renamed reranking-parser to bllip-parser-master in remove_out-files.sh
  9. In parser_tree_modification_rules.clp:
-	Modified: convert_WH_Q_sent_to_normal 
+	Modified: convert_WH_Q_sent_to_normal  and  rename_VP_for_To
 	Added   : remove_SBAR_S_VP_TO
 10. modify_minion_output.clp:
 	Modified :  check_correctness_for_multi_word and check_for_correctness" rules 
@@ -31,10 +33,15 @@
 13. Added detokenizer-src folder in  miscellaneous/HANDY_SCRIPTS/ 
 	-- to detokenize the tokenized file and also updated anu_testing README
 14. In chk_input_format.pl : Added a pattern to combine "-" when it is separated between two words
-15. Added debug statements in prepare_apertium_input.clp
-16. In sd_lwg_rules.clp, 
+15. prepare_apertium_input.clp
+	Added    : remove_character deffunction
+	Modified : complete_sen_mng_with_vib,  complete_sen_mng,  word_mng_with_vib,  word_mng_rule, PP_rule_adj_er and
+                   PP_pronoun_rule_for_you_with_ke
+	Added debug statements 
+16. sd_lwg_rules.clp, 
 	Modified: replace_nodes rule 
-17. WSD: Modified : found.clp, improve.clp, baby.clp, call.clp, get.clp and is_en_tam.clp
+	Added   : replace_VP1
+17. WSD: Modified : found.clp, improve.clp, baby.clp, call.clp, get.clp, add.clp  and is_en_tam.clp
 18. GNP_agreement.clp
         Added : print_debug_info
         Modified the rules to add function call
@@ -55,24 +62,28 @@
 	run_sentence_stanford.sh	run_sentence_stanford_minion.sh
 25. Added "get_phrase_with_next_mng" rule in get_phrase.clp
 26. manual_lwg.clp
-    Added    : multi_word_with_no_root
-    Modified : word_[hyphen]_word, single_vib1 and change_remaining_facts1
+	    Added    : multi_word_with_no_root
+	    Modified : word_[hyphen]_word, single_vib1 and change_remaining_facts1
 27. Modified "print_cost_for_consecutive_ids" rule in prepare_minion_input.clp
 28. Modified "word_and_vib_match_with_anu_hindi_root1" rule in word_alignment.clp
 29. Loaded "hin_mng_without_@.dat" file for get_mng module in alignment.bat
-30. Modified and Updated ber_ver_output, sd_verified, sd_ver_output and phy_verified_out
-31. Added verified_eng, verified_hnd, verified_out and verified_eng_align.html files and
+30. agreement.clp
+	Modified "sub_or_agr" and "sub_agrmt" rules to add "kriyA-dummy_subject" in the list
+31. Added "get_Dot_punc_for_Q_sent" rule in handling_punctuations.clp
+32. Modified and Updated ber_ver_output, sd_verified, sd_ver_output and phy_verified_out
+33. Added verified_eng, verified_hnd, verified_out and verified_eng_align.html files and
     Renamed "phy_align_partial_[eng/hnd/eng_align.html]"   as  "phy_partial_[eng/hnd/eng_align.html]"  and
             "phy_align_verified_[eng/hnd/eng_align.html]"  as  "phy_verified_[eng/hnd/eng_align.html]"
-32. Updated the following 'lex' files
+34. Updated the following 'lex' files
 	add_snt_mrkr.lex		abbrevations.lex
 	mapping-punctuations.lex	replacing_canonical.lex		
-33. Updated changes_in_databases
-34. Updated minion dictionaries
-35. Updated Log
-36. Updated the following verified's
-	sd_verified (491)	phy_verified (207)		phy_partial_verified (55)	
-	verified (40)		partial_ver (22)    
+35. Updated changes_in_databases
+36. Updated minion dictionaries
+37. Updated dic_compile.sh
+38. Updated Log
+39. Updated the following verified's
+	sd_verified (491)	phy_verified (219)		phy_partial_verified (55)	
+	verified (40)		partial_ver (22)    		small_sent_verified_sd (66)
 
 ==========================================================================================================================
  10-07-09

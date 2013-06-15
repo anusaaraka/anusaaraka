@@ -182,7 +182,7 @@
 (man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen ?)
 (man_id-word-cat ?id2 @PUNCT-ClosedParen ?)
 (test (or (eq (- ?id2 ?id1) 3)(eq (- ?id2 ?id1) 2) (eq (- ?id2 ?id1) 1)(eq (- ?id2 ?id1) 4)))
-?f3<-(man_id-word-cat ?id3&:(=(+ ?id2 1) ?id3) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|waka ?)
+?f3<-(man_id-word-cat ?id3&:(=(+ ?id2 1) ?id3) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|waka|hI ?)
 ?f0<-(head_id-grp_ids ?h $?d ?id0 $?d1)
 ?f4<-(manual_id-node-word-root-tam ?h ?c $?noun1 - $?root - $?vib1)
 (id-node-word-root ?id0 ? $? - $?root)

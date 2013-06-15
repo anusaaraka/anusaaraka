@@ -42,7 +42,7 @@
  ;The white marbled moti masjid or the pearl mosque was the private mosque for aurangzeb. 
  (defrule sub_or_agr
  (declare (salience 1100))
- (prep_id-relation-anu_ids  ? kriyA-subject|kriyA-aBihiwa ?kriyA_id ?sub_id)
+ (prep_id-relation-anu_ids  ? kriyA-subject|kriyA-aBihiwa|kriyA-dummy_subject ?kriyA_id ?sub_id)
  (id-original_word ?sub_id or)
  (conj_head-left_head-right_head ?sub_id ? ?last_id)
  (pada_info (group_cat PP)(group_head_id ?last_id)(vibakthi 0))
@@ -55,9 +55,10 @@
  ;--------------------------------------------------------------------------------------------------------------------
  ; Verb agrees with: With Subject(karwA), If it has 0 prasarg.
  ; if subject has vibhakti
+ ;It was a completely wasted journey. 
  (defrule sub_agrmt
  (declare (salience 1000))
- (prep_id-relation-anu_ids ? kriyA-subject|kriyA-aBihiwa ?kriyA_id ?sub_id)
+ (prep_id-relation-anu_ids ? kriyA-subject|kriyA-aBihiwa|kriyA-dummy_subject ?kriyA_id ?sub_id)
  (pada_info (group_head_id ?kriyA_id)(group_cat VP))
  (pada_info (group_cat PP)(group_head_id ?sub_id)(vibakthi 0))
  ?f0<-(agmt_control_fact ?kriyA_id)

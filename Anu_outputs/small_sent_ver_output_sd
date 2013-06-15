@@ -1,11 +1,14 @@
+Finding NER ...
 Saving Format info ...
 Saving word information
 Saving morph information
 Calling POS Tagger and Chunker (APERTIUM)
 Calling Stanford parser
-Finding NER... 
+Tokenizing ...
+Multi word ...
 Hindi meaning using Stanford parser 1.1
 Test. 
+jAzca kIjie.
 parIkRA.
 
 Hindi meaning using Stanford parser 2.1
@@ -46,7 +49,7 @@ vaha kyA KAwA hE?
 
 Hindi meaning using Stanford parser 2.10
 Her heart beats fast. 
-usakA hqxaya weja XadakawA hE.
+usakA hqxaya wejI se XadakawA hE.
 
 Hindi meaning using Stanford parser 2.11
 I like running. 
@@ -62,7 +65,7 @@ mere wIna BAI hEM.
 
 Hindi meaning using Stanford parser 2.14
 The baby is crying. 
-SiSU ro rahA hE.
+SiSu ro rahA hE.
 
 Hindi meaning using Stanford parser 2.15
 She is beating him. 
@@ -91,10 +94,12 @@ PropN-jane-PropN SIGra A rahA hE.
 Hindi meaning using Stanford parser 2.21
 They are good boys. 
 ve acCe ladake hEM.
+Multiple adjective senses are available for good. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.22
 They have social prestige. 
 unakI sAmAjika prawiRTA hE.
+Multiple adjective senses are available for social. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.23
 A million people attended. 
@@ -142,7 +147,7 @@ yaha acCI waraha jA rahA hE.
 
 Hindi meaning using Stanford parser 2.34
 Mary's shoes are red. 
-Mary ke jUwe lAla hEM.
+merI ke jUwe lAla hEM.
 
 Hindi meaning using Stanford parser 2.35
 How can I participate? 
@@ -179,6 +184,7 @@ isa vAkya kA bahuwa KarAba SAbxaboXa howA hE.
 Hindi meaning using Stanford parser 2.43
 She looks beautiful. 
 vaha sunxara xiKawI hE.
+Multiple adjective senses are available for beautiful. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.44
 Kennedy has been killed. 
@@ -190,11 +196,11 @@ kiwanA aXika CalakA?
 
 Hindi meaning using Stanford parser 2.46
 She began singing. 
-usane gAnA gAnA AramBa kiyA.
+usane gAyana AramBa kiyA.
 
 Hindi meaning using Stanford parser 2.47
 Do not waste electricity. 
-vixyuwa Sakwi vyarWa_meM_barabAxa_mawa kariye/kIjiye.
+vixyuwa Sakwi vyarWa_meM_barabAxa_mawa kIjie.
 
 Hindi meaning using Stanford parser 2.48
 The accord expired yesterday. 
@@ -210,19 +216,19 @@ hAz, usane kiyA.
 
 Hindi meaning using Stanford parser 2.51
 How are you? 
-Apa_kEse_hEM ?
+Apa kEse hEM ?
 
 Hindi meaning using Stanford parser 2.52
 How old are you? 
-ApakI_kyA_umra_hE ?
+ApakI kyA umra hE ?
 
 Hindi meaning using Stanford parser 2.53
 Excuse me. 
-muJe/muJako kRamA_kara xIjiye.
+muJe kRamA kIjie.
 
 Hindi meaning using Stanford parser 2.54
 Where is Railway Station? 
-Railway Station kahAz hE?
+relave steSana kahAz hE?
 
 Hindi meaning using Stanford parser 2.55
 I love birds. 
@@ -234,7 +240,7 @@ mEM PropN-bengali-PropN miTAiyoM ko pasanxa karawA hUz.
 
 Hindi meaning using Stanford parser 2.57
 That building is tall. 
-vaha imArawa laMbI hE.
+vaha imArawa lambI hE.
 
 Hindi meaning using Stanford parser 2.58
 Where do you live? 
@@ -242,7 +248,8 @@ Apa kahAz rahawe hEM?
 
 Hindi meaning using Stanford parser 2.59
 Wish you happy new year. 
-Apako naye varRa kI SuBakAmanAez.
+Apako naye varRa kI SuBakAmanAez .
+Multiple adjective senses are available for happy. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.60
 Congratulations on your marriage. 
@@ -250,7 +257,7 @@ ApakI SAxI para baXAiyAz.
 
 Hindi meaning using Stanford parser 2.61
 It is really pretty. 
-yaha_saca_meM_suMxara_hE .
+yaha saca meM sunxara hE .
 
 Hindi meaning using Stanford parser 2.62
 He can hardly walk. 
@@ -262,11 +269,15 @@ usane merI sahAyawA kI.
 
 Hindi meaning using Stanford parser 2.64
 This has no meaning. 
-isakA koI_arWa nahIM hE.
+isakA koI arWa nahIM hE.
 
 Hindi meaning using Stanford parser 2.65
 Let us play. 
 caliye hama KeleM.
+
+Hindi meaning using Stanford parser 2.66
+David is in the john. 
+PropN-david-PropN SOcAlaya meM hE.
 
 Calling Transliteration
 Calling Interface related programs

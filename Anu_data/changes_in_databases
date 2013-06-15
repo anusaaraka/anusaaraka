@@ -793,6 +793,9 @@ Modified:
 	67. possess_verb	kA_svAmI_yA_mAlika_ho/yukwa_ho/XAraNa_kara/XAra_kara/svawva_raKa/raKa/pAsa_ho/mAlika_ho/kAbu_kara/kabjA_kara/AviRta_kara/AkrAnwa_kara/aBiBUwa_kara/se_sampanna_ho/para_niyanwraNa_raKa
 					as
 				XAraNa_kara/kA_svAmI_yA_mAlika_ho/yukwa_ho/XAra_kara/svawva_raKa/raKa/pAsa_ho/mAlika_ho/kAbu_kara/kabjA_kara/AviRta_kara/AkrAnwa_kara/aBiBUwa_kara/se_sampanna_ho/para_niyanwraNa_raKa
+    	68. excuse_verb		mukwI_xe/mukwi_pA/mukwa_kara/maPa_kara/mAPa_kara/kRamA_kara/CutakArA_xe/CutakArA_pA
+							as
+				kRamA_kara/mukwI_xe/mukwi_pA/mukwa_kara/maPa_kara/mAPa_kara/CutakArA_xe/CutakArA_pA
 
 
   Removed::
@@ -933,7 +936,8 @@ Modified:
 
   Added new meaning to the existing word:
   --------------------------------------
-	no_doubt        niHsaMxeha		(Suggested by Sukhada 30-05-13)
+	no_doubt        	niHsaMxeha		(Suggested by Sukhada 30-05-13)
+	railway_station		rela_sWAnaka		(	"	"     15-06-13)
 
 
  changes in phy_dictionary.txt

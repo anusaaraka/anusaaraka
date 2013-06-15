@@ -60,7 +60,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-root ?id add)
 (kriyA-object ?id ?id1)
-(id-word ?id1 sugar)
+(not (id-cat_coarse ?id1 number));added by Shirisha Manju (13-06-13) Suggested by Sukhada
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)

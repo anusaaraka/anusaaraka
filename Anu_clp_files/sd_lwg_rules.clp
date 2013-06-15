@@ -109,6 +109,28 @@
                          "              	After     - "?head1" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?daut)" "(implode$ $?pos)")" crlf)
  )
 
+ ;--------------------------------------------------------------------------
+ ;Added by Shirisha Manju (Suggested by Chaitanya Sir (12-06-13)
+ ;According to this view, for example, an arrow shot from a bow [keeps flying] since the air behind the arrow [keeps pushing] it.
+ (defrule replace_VP1
+ (declare (salience 1600))
+ ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot ?pre ?S)
+ ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S ?VP)
+ (Node-Category ?Mot VP)
+ (Node-Category ?S S)
+ (Node-Category ?VP VP)
+ ?f2<-(Head-Level-Mother-Daughters_lwg ?h ?l ?VP ?node $?daut)
+ (test (neq (length $?daut) 0));I like running. I have started working
+ (not (Node-Category ?node TO));Jumma masjid is considered to be one of the most beautiful mosques in western india.
+ (not (dont_replace_VP ?Mot))
+ (not (dont_replace_VP ?VP))
+ =>
+        (retract ?f ?f1 ?f2)
+        (assert (Head-Level-Mother-Daughters_lwg ?head1 ?lvl ?Mot ?pre ?node $?daut ))
+        (printout ?*lwg_debug_file* "   (rule_name - replace_VP1" crlf
+	                 "                      Before    - "?head" "?lvl" "?Mot" "?pre" "?S ")" crlf
+                         "                      After     - "?head1" "?lvl" "?Mot" "?pre"  "?node" "(implode$ $?daut)")" crlf)
+ )
 ;--------------------------------------------------------------------------
  ;Replacing a VP mother whose child is  S|SBAR|SQ on checking the head word .
  ;Ex:-A fat boy [had to eat] fruits. 

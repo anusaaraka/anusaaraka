@@ -1,5 +1,8 @@
  ; This file is written by Shirisha Manju (20-06-12)
 
+ (deffunction string_to_integer (?parser_id); [Removes the first characterfrom the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
+ (string-to-field (sub-string 2 10000 ?parser_id)))
+
  (defglobal ?*count*  = 0)
 
  ;======================================  Modifications for LWG and Order =========================================
@@ -7,6 +10,7 @@
  ; Rename VP as Inf_VP   to avoid --- grouping VP and reversing VP
  ; The normal in this case is to be taken as normal to the tangent to surface at the point of incidence.
  ; We have to turn down the next road on the right.
+ ; For pid '0' sen: To counter this force, the child has to apply an external force on the car in the direction of motion.To measure any time interval we need a clock.
  (defrule rename_VP_for_To
  (declare (salience 30))
  ?f2<-(Head-Level-Mother-Daughters ?word&to|To ?l1 ?S $?a ?VP)
@@ -14,9 +18,10 @@
  (Node-Category ?S S)
  ?f<-(Head-Level-Mother-Daughters ?word1&to|To ?l ?VP ?TO ?VP1)
  (Node-Category ?TO TO)
- ?f1<-(Node-Category ?VP1 VP)	
- (Head-Level-Mother-Daughters ?head ?lv $? ?S $?)
- (test (neq ?lv ?l1))
+ ?f1<-(Node-Category ?VP1 VP)
+ (Head-Level-Mother-Daughters To|to ? ?TO ?pid)	
+ (parserid-word ?pid1 ?head)
+ (test (or (eq (- (string_to_integer ?pid)  1)(string_to_integer ?pid1))(eq (- (string_to_integer ?pid) 1) 0)));To counter this force, the child has to apply an external force on the car in the direction of motion.
  (test (eq (member$ ?head (create$ had has have need needs are Are)) FALSE ))
  ?f3<-(Head-Level-Mother-Daughters ?h&~be ?l2 ?VP1 $?d)
  =>

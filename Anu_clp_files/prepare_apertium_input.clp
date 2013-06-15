@@ -48,9 +48,21 @@
  (assert (id-TAM))
  (assert (conj_head-left_head-right_head))
  )
-
-
-  ;;assert yA_tams_with_ne_list  and imper_request_list
+ ;----------------------------------------------------------------------------------------------------------------------- 
+ (deffunction remove_character(?char ?str ?replace_char)
+                        (bind ?new_str "")
+                        (bind ?index (str-index ?char ?str))
+                        (if (neq ?index FALSE) then
+                        (while (neq ?index FALSE)
+                        (bind ?new_str (str-cat ?new_str (sub-string 1 (- ?index 1) ?str) ?replace_char))
+                        (bind ?str (sub-string (+ ?index 1) (length ?str) ?str))
+                        (bind ?index (str-index ?char ?str))
+                        )
+                        )
+                (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
+ )
+ ;----------------------------------------------------------------------------------------------------------------------- 
+ ;;assert yA_tams_with_ne_list  and imper_request_list
  (defrule assert_yA_tams_with_ne_list
  (declare (salience 10000))
  (load_facts)
@@ -108,7 +120,8 @@
  (test (neq ?vib 0))
  =>
         (retract ?f0)
-        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?hmng" " ?vib ")" crlf)
+	(bind ?hmng (remove_character "_" ?hmng " "))
+        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " (implode$ ?hmng)" " ?vib ")" crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  complete_sen_mng_with_vib )" crlf)
  )
 ;----------------------------------------------------------------------------------------------------------------------- 
@@ -117,7 +130,8 @@
  ?f0<-(id-HM-source ?id ?hmng Complete_sen_gdbm)
  =>
         (retract ?f0)
-        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?hmng")" crlf)
+	(bind ?hmng (remove_character "_" ?hmng " "))
+        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " (implode$ ?hmng)")" crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  complete_sen_mng )" crlf)
  )
  ;========================================== word meanings for wsd/database/idiom ========================================
@@ -129,9 +143,10 @@
  (pada_info (group_head_id ?id)(vibakthi ?vib)(group_cat PP|infinitive|VP))
  (test (and (neq ?vib 0) (neq ?vib -)))
   =>
-       (retract ?f0)
-       (printout ?*A_fp5* "(id-Apertium_input " ?id " "?hmng"_"?vib ")" crlf)
-       (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  word_mng_with_vib )" crlf)
+       	(retract ?f0)
+	(bind ?hmng (remove_character "_" ?hmng " "))
+       	(printout ?*A_fp5* "(id-Apertium_input " ?id " "(implode$ ?hmng)" "?vib ")" crlf)
+       	(printout ?*aper_debug-file* "(id-Rule_name  " ?id "  word_mng_with_vib )" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ;There was a marked difference in the prices of dishes .
@@ -139,9 +154,10 @@
  (declare (salience 1001))
  ?f0<-(id-HM-source ?id ?hmng WSD_compound_phrase_word_mng|Database_compound_phrase_word_mng|WSD_verb_phrase_word_mng|WSD_word_mng|Idiom_word_mng)
   =>
-       (retract ?f0)
-       (printout ?*A_fp5* "(id-Apertium_input " ?id " "?hmng ")" crlf)
-       (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  word_mng_rule )" crlf)
+       	(retract ?f0)
+	(bind ?hmng (remove_character "_" ?hmng " "))
+       	(printout ?*A_fp5* "(id-Apertium_input " ?id " "(implode$ ?hmng) ")" crlf)
+       	(printout ?*aper_debug-file* "(id-Rule_name  " ?id "  word_mng_rule )" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ; here prep_id itself is considered as the main meaning 
@@ -460,7 +476,7 @@
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_with_ke )" crlf)
   )
   ;------------------------------------------------------------------------------------------------------------------------
-  ;He will sing you good night. 
+  ;He will sing you good night. I reached the cinema hall before you.
   (defrule PP_pronoun_rule_for_you_with_ke
   (declare (salience 931))
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(case ?case)(vibakthi ?vib))
@@ -468,7 +484,7 @@
   ?f0<-(id-HM-source ?pada_id ?h_word ?)
   (test (neq ?vib 0))
   (test (neq (str-index "_" ?vib)  FALSE))
-  (test (or (eq (sub-string 1 2 ?vib) "ke")(eq (sub-string 1 2 ?vib) "kI")))
+  (test (or (eq (sub-string 1 2 ?vib) "ke")(eq (sub-string 1 2 ?vib) "kI")(eq (sub-string 1 2 ?vib) "se")))
   =>
         (retract ?f0)
         (bind ?index (str-index "_" ?vib))
@@ -1086,6 +1102,7 @@
   ;-------------------------------------------------------------------------------------------------------------------------
   ;Mary is taller than Max.
   ;Added by Shirisha Manju (19-06-12)  Suggested by Chaitanya Sir
+  ;At longer wavelengths (i.e., at lower frequencies), the antennas have large physical size and they are located on or very near to the ground.
   (defrule PP_rule_adj_er
   (declare (salience 340))
   (pada_info (group_cat PP) (group_ids $?ids)(number ?num)(case ?case)(gender ?gen) )
@@ -1094,7 +1111,13 @@
   (test (member$ ?id $?ids))
   =>
         (retract ?f2)
-        (bind ?h_word (str-cat "aXika_" ?h_word))
+	(if (eq (str-index "_" ?h_word) FALSE) then
+	        (bind ?h_word (str-cat "aXika_" ?h_word))
+	else
+		(if (neq (sub-string 1 (str-index "_" ?h_word) ?h_word) "aXika_") then
+			(bind ?h_word (str-cat "aXika_" ?h_word))
+		)
+	)
         (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$ )" crlf)
 	(printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_adj_er )" crlf)
   )

@@ -878,6 +878,7 @@
 (rel_name-sids  rcmod ?vi ?kri)
 (basic_rel_name-sids  prep ?kri ?p)
 (basic_rel_name-sids  pobj ?p ?js)
+(not (got_viSeRya-jo_samAnAXikaraNa  ?vi));The mass of a body is thus an important parameter that determines the effect of force on its motion. 
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   rcmod_prep     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
@@ -888,7 +889,7 @@
 ;------------------------------------------------------------------------------------------------------------------------
 
 (defrule rcmod
-(declare (salience 220))
+(declare (salience 250))
 (rel_name-sids  rcmod ?vi ?kri)
 (parserid-word ?js ?w)
 (test (eq (string_to_integer ?js) (+ (string_to_integer ?vi) 1)))

@@ -1,3 +1,4 @@
+ ;This file is added by Shirisha Manju
 
  ; Added by shirisha Manju (22-02-12) Suggested by Chaitanya sir
  ; In the "computing with language" sections we will take on some linguistically-motivated programming tasks without necessarily understanding how they work.
@@ -18,6 +19,23 @@
 ;	(assert (Node-Category ?node ?m))
 ;	(assert (head ?h))
 ; )
+ ;-------------------------------------------------------------------------------------------------------------------
+ ;Can you tell us where those strange ideas came from?
+ ; bcoz questionary sentences are converted to normal
+ ;Added by Shirisha Manju (13-06-13)
+ (defrule get_Dot_punc_for_Q_sent
+ (declare (salience 90))
+ ?f0<-(Head-Level-Mother-Daughters ?h ?l ?m $?d ?Mot ?P)
+ (Node-Category ?P ?punc&P_DOT|P_QES|P_DQ|P_CLN)
+ (Head-Level-Mother-Daughters ? ? ?SQ $? ?m)
+ (Node-Category ?SQ SQ)
+ ?f1<-(Head-Level-Mother-Daughters ?punc_id ? ?P ?id)
+ (parserid-word  ?punc_id  ?p_h)
+ =>
+        (retract ?f0 ?f1)
+        (assert (mother-punct_head-right_punctuation ?SQ ?P ?p_h))
+        (assert (Head-Level-Mother-Daughters ?h ?l ?m $?d ?Mot))
+ )
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule get_P_Dot_punc
  (declare (salience 90)) 
@@ -48,6 +66,7 @@
 	(assert (mother-punct_head-left_punctuation ?s ?P_H ?punc))
 	(assert (mother-punct_head-right_punctuation ?s ?P_H1 ?punc1))
  )
+ ;-------------------------------------------------------------------------------------------------------------------
  ;Because of its unusual geography, chile has a hugely varied climate ranging from the world's driest desert in the north, through a mediterranean climate in the centre, to a snow-prone alpine climate in the south.
  ; He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
  ; Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival. 
@@ -122,5 +141,3 @@
         (assert (mother-punct_head-punctuation ?Mot ?PUNC ?h2))
         (assert (Head-Level-Mother-Daughters ?h ?lvl ?Mot $?pre $?post))
  )
-; (watch facts)
-; (watch rules) 

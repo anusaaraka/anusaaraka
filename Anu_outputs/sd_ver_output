@@ -666,7 +666,7 @@ Multiple adjective senses are available for recent. WSD rule is required
 
 Hindi meaning using Stanford parser 2.155
 We should help the poor. 
-hameM xInoM_kI sahAyawA karanI cAhie.
+hameM xInoM kI sahAyawA karanI cAhie.
 
 Hindi meaning using Stanford parser 2.156
 He left all his money to the orphanage. 
@@ -901,11 +901,11 @@ PropN-joan-PropN PropN-smith-PropN kampanI kA aXyakRa hE.
 
 Hindi meaning using Stanford parser 2.211
 The explosion damaged his hearing. 
-visPota ne usakI SravaNa_Sakwi_ko bigAdA.
+visPota ne usakI SravaNa Sakwi ko bigAdA.
 
 Hindi meaning using Stanford parser 2.212
 Many people were angered by the hearings. 
-bahuwa sAre loga sunavAI_se kroXiwa hue.
+bahuwa sAre loga sunavAI se kroXiwa hue.
 
 Hindi meaning using Stanford parser 2.213
 I am in New York and I would like to see you. 
@@ -1060,6 +1060,7 @@ mEM 805 vesta PropN-indiana-PropN PropN-street-PropN meM rahawA hUz.
 
 Hindi meaning using Stanford parser 2.248
 It was a completely wasted journey. 
+yaha eka pUrI waraha se vyarWa yAwrA WI.
 vaha eka pUrI waraha se nirarWaka yAwrA WI.
 vaha eka pUrI waraha se vyarWa yAwrA WI.
 Multiple adjective senses are available for wasted. WSD rule is required 
@@ -1192,7 +1193,7 @@ Multiple adjective senses are available for good. WSD rule is required
 
 Hindi meaning using Stanford parser 2.278
 My many female friends were angered by the hearings. 
-merI bahuwa sArI swrI_miwra sunavAI_se kroXiwa huIM.
+merI bahuwa sArI swrI miwra sunavAI se kroXiwa huIM.
 
 Hindi meaning using Stanford parser 2.279
 The stupidity of the senators annoyed all my friends. 
@@ -1224,6 +1225,7 @@ Multiple adjective senses are available for good. WSD rule is required
 
 Hindi meaning using Stanford parser 2.285
 The Master said, if I did not go, how would you ever see? 
+mAlika ne kahA, ki yaxi mEM nahIM gayA WA, wo kEse Apa kaBI BI xeKezge?
 mAlika ne kahA, ki yaxi mEM nahIM gayA WA, wo Apa kaBI BI kEse xeKezge?
 
 Hindi meaning using Stanford parser 2.286
@@ -1343,7 +1345,7 @@ vixyAlaya eka sAWa sirPa 50 vixyArWiyoM ko svIkAra karawA hE.
 
 Hindi meaning using Stanford parser 3.12
 Buying of shares was brisk on Wall Street today. 
-SeyaroM kA KarIxanA Aja voYl_strIta_para weja WA.
+SeyaroM kA KarIxanA Aja voYl strIta para weja WA.
 SeyaroM kA KarIxanA Wall Street para Aja weja WA.
 
 Hindi meaning using Stanford parser 3.13
@@ -1413,7 +1415,7 @@ Multiple adjective senses are available for aware. WSD rule is required
 
 Hindi meaning using Stanford parser 3.27
 She has gone for a walk in the woods. 
-vaha jafgala_meM sEra ke lie jA cukI hE.
+vaha jafgala meM sEra ke lie jA cukI hE.
 
 Hindi meaning using Stanford parser 3.28
 Since I know English, he spoke to me. 
@@ -1742,7 +1744,7 @@ usakI pawnI kA SiSu WA.
 
 Hindi meaning using Stanford parser 3.97
 It is Jane who wants to do it. 
-PropN-jane-PropN hE jo yaha karane ke lie cAhawA hE.
+yaha PropN-jane-PropN hE jo yaha karane ke lie cAhawA hE.
 yaha karane ke lie jo cAhawA hE Jane hE.
 
 Hindi meaning using Stanford parser 3.98
@@ -2100,7 +2102,7 @@ Multiple adjective senses are available for beautiful. WSD rule is required
 
 Hindi meaning using Stanford parser 4.76
 Things had just gone too far. 
-parisWiwiyAz_kuCa_jyAxA_hI_KarAba_ho_gayI .
+parisWiwiyAz kuCa jyAxA hI KarAba ho gayI .
 
 Hindi meaning using Stanford parser 4.77
 SOUTH AFRICA FREED the ANC's Sisulu and seven other political prisoners. 
@@ -2165,7 +2167,7 @@ jo asvasWa hE vaha sEnika aspawAla meM hE.
 
 Hindi meaning using Stanford parser 4.91
 In these examples, the external agency of force (hands, wind, stream, etc) is in contact with the object. 
-ina uxAharaNoM meM, bala kA bAhya_sAXana (hAWa, havA JaranA, Axi) vaswu ke samparka meM hE.
+ina uxAharaNoM meM, bala kA bAhya sAXana (hAWa, havA JaranA, Axi) vaswu ke samparka meM hE.
 Multiple adjective senses are available for external. WSD rule is required 
 
 Calling Transliteration

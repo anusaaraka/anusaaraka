@@ -31,10 +31,6 @@ make clean
 cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER
  $HOME_anu_test/Anu_src/comp.sh adding@-for-eng-words
  
-cd  $HOME_anu_test/multifast-v1.0.0/src
- sh run.sh
- make
-
 cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
  flex canonical_form.lex
  gcc -o canonical_form.out lex.yy.c -lfl myeq.c
@@ -48,6 +44,10 @@ cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
  sh get_adv-prep_dic.sh
 
 ################################# Generating MWE Dictionaries ################################################
+
+cd  $HOME_anu_test/multifast-v1.0.0/src
+ sh run.sh
+ make
 
 cd $MYPATH
 echo "Creating phy_hnd_multi_word_dic.txt"

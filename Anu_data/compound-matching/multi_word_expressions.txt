@@ -25439,7 +25439,7 @@ railway_risk	rela_kA_xAyiwva_aela_kI_jimmexArI#rela_kA_xAyiwva_aela_kI_jimmexArI
 railway_sectional_officer	rela_anuBAgIya_aXikArI#rela_anuBAgIya_aXikArI#noun#3#RM
 railway_service_commission	rela_sevA_Ayoga#rela_sevA_Ayoga#noun#3#RM
 railway_sports_control_board	relave_Kela_kUxa_niyaMwraNa_borda#relave_Kela_kUxa_niyaMwraNa_borda#noun#4#RM
-railway_station	rela_sWAnaka#rela_sWAnaka#noun#2#RM
+railway_station	relave_steSana/rela_sWAnaka#relave_steSana/rela_sWAnaka#noun#2#RM
 railway_traffic	rela_yAwAyAwa#rela_yAwAyAwa#noun#2#RM
 railway_train	relagAdI#relagAdI#noun#2#RM
 railway_warrant	rela_vAraMta_aela_aXipawra#rela_vAraMta_aela_aXipawra#noun#2#RM
