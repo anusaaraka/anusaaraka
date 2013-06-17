@@ -1,9 +1,9 @@
-Finding NER ...
+Calling NER ...
 Saving Format info ...
 Saving word information
 Saving morph information
 Calling POS Tagger and Chunker (APERTIUM)
-Calling Stanford parser
+Calling Stanford parser ...
 Tokenizing ...
 Multi word ...
 Hindi meaning using Stanford parser 1.1
@@ -842,7 +842,7 @@ yaha merA miwra PropN-bob-PropN hE.
 
 Hindi meaning using Stanford parser 2.197
 We ate at Joe's Diner last week. 
-hamane piCale sapwAha PropN-joe-PropN ke PropN-diner-PropN meM KAyA.
+hamane piCale sapwAha PropN-joe-PropN ke DAbe meM KAyA.
 
 Hindi meaning using Stanford parser 2.198
 How did John do it? 
@@ -1359,7 +1359,7 @@ bahuwa sAre loga bola sakawe hEM paranwu sirPa kuCa kara sakawe hEM.
 Hindi meaning using Stanford parser 3.15
 Actress Whoopi Goldberg and singer Michael Jackson attended the ceremony. 
 PropN-actress-PropN PropN-whoopi-PropN PropN-goldberg-PropN Ora gAyaka PropN-michael-PropN PropN-jackson-PropN samAroha meM upasWiwa hue.
-Actress PropN-whoopi-PropN PropN-goldberg-PropN Ora gAyaka PropN-michael-PropN PropN-jackson-PropN samAroha meM upasWiwa hue.
+aBinewrI PropN-whoopi-PropN PropN-goldberg-PropN Ora gAyaka PropN-michael-PropN PropN-jackson-PropN samAroha meM upasWiwa hue.
 
 Hindi meaning using Stanford parser 3.16
 Failure to comply may result in dismissal. 
@@ -1639,6 +1639,7 @@ nahIM, vaha aSuBa somavAra nahIM WA.
 
 Hindi meaning using Stanford parser 3.74
 The President's address to the nation was broadcasted across the country. 
+rARtra ke lie aXyakRa kA samboXana pUre_xeSa meM prasAriwa kiyA gayA WA.
 rARtra ke lie PropN-president-PropN kA samboXana pUre_xeSa meM prasAriwa kiyA gayA WA.
 
 Hindi meaning using Stanford parser 3.75
@@ -1773,6 +1774,7 @@ vaha kAgaja para kAma karawI hE kyozki vaha safgaNaka nApasanxa karawI hE.
 
 Hindi meaning using Stanford parser 4.3
 I read a recent paper in the Journal of Medicine. 
+mEMne ORaXI kI pawrikA meM eka hAla kA leKapawra paDA.
 mEMne PropN-medicine-PropN kI pawrikA meM eka hAla kA leKapawra paDA.
 Multiple adjective senses are available for recent. WSD rule is required 
 
@@ -1870,6 +1872,7 @@ kullu GAtI ISvara kI GAtI ke nAma se BI jAnI jAwI hE.
 
 Hindi meaning using Stanford parser 4.24
 Queen victoria opened blackfriars bridge in november 1869. 
+rAnI viktoriyA ne navambara 1869 meM blackfriars pula KolA.
 PropN-queen-PropN viktoriyA ne navambara 1869 meM blackfriars pula KolA.
 
 Hindi meaning using Stanford parser 4.25
@@ -1891,7 +1894,7 @@ PropN-rahul-PropN buddha kA betA WA Ora nAma lahaul rahul se viSleRaNa huA hE.
 
 Hindi meaning using Stanford parser 4.29
 The white marbled moti masjid or the pearl mosque was the private mosque for aurangzeb. 
-saPexa safgamaramara se banI huI moti masjid yA mowI masjixa aurangzeb ke lie vyakwigawa masjixa WI.
+saPexa safgamaramara_se banI huI moti masjid yA mowI masjixa aurangzeb ke lie vyakwigawa masjixa WI.
 Multiple adjective senses are available for white. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.30
@@ -2150,6 +2153,7 @@ merA kuwwA padosa meM saBI kuwwoM meM se sabase aXika badA hE.
 
 Hindi meaning using Stanford parser 4.87
 Health is more important than money. 
+svAsWya pEse kI apekRA aXika mahawvapUrNa hE.
 PropN-health-PropN pEse kI apekRA aXika mahawvapUrNa hE.
 Multiple adjective senses are available for important. WSD rule is required 
 

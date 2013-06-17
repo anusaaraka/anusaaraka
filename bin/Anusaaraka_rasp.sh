@@ -47,9 +47,14 @@
  PRES_PATH=`pwd`
  cp $1 $MYPATH/tmp/$1_tmp/
  #running stanford NER (Named Entity Recogniser) on whole text.
- echo "Finding NER ..."
+ echo "Calling NER ..."
  cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2008-05-07/
  sh run-ner.sh $1
+
+# echo "Calling Transliteration"
+# cd $HOME_anu_test/miscellaneous/transliteration/work
+# sh run_transliteration.sh $MYPATH/tmp $1
+
 
  cd $PRES_PATH
  echo "Saving Format info ..."
@@ -82,6 +87,7 @@
   sh map_constituent_tree.sh $MYPATH $1 one_sentence_per_line.txt_org
   echo "rasp"
   sh run_rasp-parser.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
+  mv $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org.std.penn_tmp1  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1
   
   echo "Calling Stanford parser"
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2013-04-05/

@@ -3,8 +3,7 @@
  (deffunction never-called ()
  (assert (id-sd_cat))
  (assert (parserid-word))
- (assert (word-wordid-nertype))
- (assert (parserid-wordid) )
+ (assert (word-nertype))
  )
 
  (defglobal ?*cat_fp* = sd_cat_fp) 
@@ -14,6 +13,16 @@
  (string-to-field (sub-string 2 10000 ?parser_id)))
 
 
+  ;------------------------------------------------------------------------------------------
+  (defrule NNP_to_NN
+  (declare (salience 13))
+  ?f0<-(id-sd_cat   ?pid NNP)
+  (not (has_been_modified ?pid))
+  =>
+	(retract ?f0)
+	(assert (id-sd_cat   ?pid NN))
+	(assert (has_been_modified ?pid))
+  )
   ;------------------------------------------------------------------------------------------
   ;Modified fact (word-wordid-nertype) to (word-nertype) 
   ;Modified this rule by Roja (06-06-13) Suggested by Chaitanya sir
@@ -27,35 +36,48 @@
         (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
-  ;(Added by S.Maha Laxmi 4-07-11)(Suggested by Sukahada)
-  ; #Ex. We ate at Joe's Diner last week. The Master said, if I did not go, how would you ever see? 
-  ;(removed  sd_category.py and handled that part using NN_to_NNP rule )
-  (defrule NN_to_NNP
-  (declare (salience 11))
-  ?f0<-(id-sd_cat   ?pid NN)
-  (parserid-word ?pid ?word)
-  (test (neq ?pid P1))
-  (test (eq (upcase (sub-string 1 1 ?word)) (sub-string 1 1 ?word)))
-  (test (eq (numberp (string-to-field (sub-string 1 1 ?word))) FALSE));Ex: One can reach kumbhalgarh by road from udaipur (84km) and ranakpur which is 18km from kumbhalgarh. (Added by Roja 19-11-12) 
-  (test (eq (str-index "SYMBOL-" ?word) FALSE));Added this condition to avoid words with SYMBOL to convert to NNP category (Added by Roja 18-10-12) EX:  In one-dimensional motion, there are only two directions (backward and forward, upward and downward) in which an object can move, and these two directions can easily be specified by + and — signs. 
+  ;Added by Roja(13-06-13) ;Ex: John's family is renovating their kitchen.
+  (defrule PropN_rule_from_NER1
+  (declare (salience 12))
+  (word-nertype ?word PERSON|LOCATION|ORGANIZATION)
+  (parserid-word ?pid ?wrd)
+  ?f0<-(id-sd_cat   ?pid ?)
+  (test (neq (str-index "'s" ?wrd) FALSE))
+  (test (eq ?word (string-to-field (sub-string 1 (- (str-index "'s" ?wrd) 1) ?wrd))))
   =>
- 	(retract ?f0)
-	(assert (id-sd_cat   ?pid NNP))
+	(printout ?*cat_fp* "(parser_id-cat_coarse  "?pid " PropN)" crlf)
+	(retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
-  ;Added by Roja (26-10-12)
-  ;Modifying category of SYMBOLS  from 'NNP' to 'NN'. To avoid sending SYMBOLS to Tranliteration.
-  ;Ex: Coriander Leaf Cooking Studio is located at 3A Merchant Court ,  #02-12 River Valley Road ,  Clarke Quay .
-  ;Here '#' is sent to Stanford as SYMBOL-SHARP.
-  (defrule NNP_to_NN
-  (declare (salience 11))
-  ?f0<-(id-sd_cat   ?pid NNP)
-  (parserid-word ?pid ?word)
-  (test (str-index "SYMBOL-" ?word))
-  =>
-     (retract ?f0)
-        (assert (id-sd_cat   ?pid NN))
-  )
+;  ;(Added by S.Maha Laxmi 4-07-11)(Suggested by Sukahada)
+;  ; #Ex. We ate at Joe's Diner last week. The Master said, if I did not go, how would you ever see? 
+;  ;(removed  sd_category.py and handled that part using NN_to_NNP rule )
+;  (defrule NN_to_NNP
+;  (declare (salience 11))
+;  ?f0<-(id-sd_cat   ?pid NN)
+;  (parserid-word ?pid ?word)
+;  (test (neq ?pid P1))
+;  (test (eq (upcase (sub-string 1 1 ?word)) (sub-string 1 1 ?word)))
+;  (test (eq (numberp (string-to-field (sub-string 1 1 ?word))) FALSE));Ex: One can reach kumbhalgarh by road from udaipur (84km) and ranakpur which is 18km from kumbhalgarh. (Added by Roja 19-11-12) 
+;  (test (eq (str-index "SYMBOL-" ?word) FALSE));Added this condition to avoid words with SYMBOL to convert to NNP category (Added by Roja 18-10-12) EX:  In one-dimensional motion, there are only two directions (backward and forward, upward and downward) in which an object can move, and these two directions can easily be specified by + and — signs. 
+;  =>
+; 	(retract ?f0)
+;	(assert (id-sd_cat   ?pid NNP))
+;  )
+  ;------------------------------------------------------------------------------------------
+;  ;Added by Roja (26-10-12)
+;  ;Modifying category of SYMBOLS  from 'NNP' to 'NN'. To avoid sending SYMBOLS to Tranliteration.
+;  ;Ex: Coriander Leaf Cooking Studio is located at 3A Merchant Court ,  #02-12 River Valley Road ,  Clarke Quay .
+;  ;Here '#' is sent to Stanford as SYMBOL-SHARP.
+;  (defrule NNP_to_NN
+;  (declare (salience 11))
+;  ?f0<-(id-sd_cat   ?pid NNP)
+;  (parserid-word ?pid ?word)
+;  (test (str-index "SYMBOL-" ?word))
+;  =>
+;     (retract ?f0)
+;        (assert (id-sd_cat   ?pid NN))
+;  )
   ;------------------------------------------------------------------------------------------ 
   ;He disputed that our program was superior . (PRP$) 
   (defrule PRP_rule

@@ -83,7 +83,6 @@
  (bload ?*path*)
  (load-facts "sd_category_tmp2.dat")
  (load-facts "sd_word.dat")
- (load-facts "parserid_wordid_mapping.dat")
  (load-facts "ner.dat")
  (open "sd_category_info.dat" sd_cat_fp "w")
  (run)

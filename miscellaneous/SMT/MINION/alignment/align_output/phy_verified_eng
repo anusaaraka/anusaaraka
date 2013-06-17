@@ -79,7 +79,7 @@ In order to specify position, we need to use a reference point and a set of axes
 The point of intersection of these three axes is called origin (O) and serves as the reference point.
 The coordinates (x, y, z) of an object describe the position of the object with respect to this coordinate system.
 For example, for describing motion in one dimension, we need only one axis.
-In the first case, the car moves from O to P.
+In the first case, the car moves from O to P .
 This distance is called the path length traversed by the car.
 Such quantities are represented by vectors.
 Thus, it is not necessary to use vector notation for discussing motion of objects in one-dimension.
@@ -190,7 +190,7 @@ However, the glass rod and wool attracted each other.
 Metals, human and animal bodies and earth are conductors.
 Thus the pith ball is charged by contact.
 The free electrons in the spheres are attracted towards the rod.
-However, not all of the electrons in the spheres have accumulated on the left surface of A.
+However, not all of the electrons in the spheres have accumulated on the left surface of A .
 Fig. 1.4 (b) shows the equilibrium situation.
 (iv) Remove the rod.
 Like velocity, acceleration can also be positive, negative or zero.
@@ -204,7 +204,7 @@ Equation (6.1) can be extended to curved surfaces and nonuniform fields.
 Magnetic flux is a scalar quantity.
 Experimental observations discussed in Section 6.2 can be explained using this concept.
 Consequently, the magnetic flux through the neighbouring coil C1 also increases.
-In Experiments 6.1 and 6.2 in Section 6.2, the flux is changed by varying B.
+In Experiments 6.1 and 6.2 in Section 6.2, the flux is changed by varying B .
 As coil C2 is moved towards the coil C1, the galvanometer shows a deflection.
 In the preceding Chapter, our concern was to describe the motion of a particle in space quantitatively.
 Likewise, an external force is needed also to retard or stop motion.

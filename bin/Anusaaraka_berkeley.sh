@@ -47,7 +47,7 @@
  PRES_PATH=`pwd`
  cp $1 $MYPATH/tmp/$1_tmp/
  #running stanford NER (Named Entity Recogniser) on whole text.
- echo "Finding NER ..."
+ echo "Calling NER ..."
  cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2008-05-07/
  sh run-ner.sh $1
 
@@ -77,12 +77,12 @@
   cd $HOME_anu_test/Anu_src/
   ./replace_nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
 
-  echo "Calling Berkeley parser" 
+  echo "Calling Berkeley parser ..." 
   cd $HOME_anu_test/Parsers/berkeley-parser/
   java -mx500m  -jar berkeleyParser.jar -gr eng_sm6.gr -tokenize -inputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org -outputFile $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley
   sed 's/(())/( (S ))\n/g' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.berkeley | sed 's/^(/(ROOT/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1 
 
-  echo "Calling Stanford parser"
+  echo "Calling Stanford parser ..."
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2013-04-05/
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 

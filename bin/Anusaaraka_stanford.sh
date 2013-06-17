@@ -47,9 +47,14 @@
  PRES_PATH=`pwd`
  cp $1 $MYPATH/tmp/$1_tmp/
  #running stanford NER (Named Entity Recogniser) on whole text.
- echo "Finding NER ..."
+ echo "Calling NER ..."
  cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2008-05-07/
  sh run-ner.sh $1
+
+# echo "Calling Transliteration"
+# cd $HOME_anu_test/miscellaneous/transliteration/work
+# sh run_transliteration.sh $MYPATH/tmp $1
+
 
  cd $PRES_PATH
  echo "Saving Format info ..."
@@ -77,7 +82,7 @@
   cd $HOME_anu_test/Anu_src/
   ./replace_nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
 
-  echo "Calling Stanford parser"
+  echo "Calling Stanford parser ..."
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2013-04-05/
   if [ "$2" != "" -a "$2" != "0" ] ;
   then

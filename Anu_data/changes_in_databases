@@ -560,6 +560,8 @@ Modified :
 	<e lm="civilisation"><i>civilisation</i><par n="house__n"/></e>	  (	"	"	)
 	<e lm="awake"><i>aw</i><par n="w/ake__vblex"/></e>		  (     "       17-05-13)
 	<e lm="consort"><i>consort</i><par n="house__n"/></e>		  (	"	06-06-13)
+	<e lm="actress"><i>actress</i><par n="access__n"/></e>		  (	"	17-06-13)
+
 
 Modified:
         <e lm="belonging"><i>belonging</i><par n="house__n"/></e>   as    <e lm="belongings"><i>belongings</i><par n="personnel__n"/></e>   (Suggested by Meena ji 12-05-11)
@@ -796,6 +798,11 @@ Modified:
     	68. excuse_verb		mukwI_xe/mukwi_pA/mukwa_kara/maPa_kara/mAPa_kara/kRamA_kara/CutakArA_xe/CutakArA_pA
 							as
 				kRamA_kara/mukwI_xe/mukwi_pA/mukwa_kara/maPa_kara/mAPa_kara/CutakArA_xe/CutakArA_pA
+	69. diner_noun		Bojana_karane_vAlA/DAbA/Bojana-yAna	(Suggested by Sukhada 17-06-13)
+				as
+	    diner_noun	DAbA/Bojana_karane_vAlA/Bojana-yAna
+	70. english_UNDEFINED	azgrejI	as	english_UNDEFINED	afgrejI		(Suggested by Chaitanya Sir 17-06-13)
+	71. sunday_noun	iwavAra		as	sunday_noun	ravivAra  (Suggested by Sukhada 17-06-13)	
 
 
   Removed::

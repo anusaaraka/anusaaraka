@@ -1,4 +1,4 @@
- 15-06-13
+ 17-06-13
  ========
  1. In sd_relation_rules.clp
         1. Modified : kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux, AjFArWaka_vAkya, sub_samA_with_cop, 
@@ -41,7 +41,8 @@
 16. sd_lwg_rules.clp, 
 	Modified: replace_nodes rule 
 	Added   : replace_VP1
-17. WSD: Modified : found.clp, improve.clp, baby.clp, call.clp, get.clp, add.clp  and is_en_tam.clp
+17. WSD: Modified : found.clp	improve.clp	baby.clp	is_en_tam.clp	call.clp	get.clp	
+		    add.clp	john.clp	black.clp	on.clp		paper.clp
 18. GNP_agreement.clp
         Added : print_debug_info
         Modified the rules to add function call
@@ -58,6 +59,8 @@
 23. In sd_category.clp,
 	Renamed  : PropN_rule  to  PropN_rule_from_NER
 	Modified : above rule. (modified NER fact and rule accordingly)
+	Removed  : NN_to_NNP, NNP_to_NN
+        Added    : PropN_rule_from_NER1
 24. Warning message when 'Parserid Wordid mapping missing' is given for a id, following files are modified::
 	run_sentence_stanford.sh	run_sentence_stanford_minion.sh
 25. Added "get_phrase_with_next_mng" rule in get_phrase.clp
@@ -74,14 +77,24 @@
 33. Added verified_eng, verified_hnd, verified_out and verified_eng_align.html files and
     Renamed "phy_align_partial_[eng/hnd/eng_align.html]"   as  "phy_partial_[eng/hnd/eng_align.html]"  and
             "phy_align_verified_[eng/hnd/eng_align.html]"  as  "phy_verified_[eng/hnd/eng_align.html]"
-34. Updated the following 'lex' files
+34. In run_modules_std.bat:
+	Removed loading facts 'parserid_wordid_mapping.dat'
+35. In run_rasp-parser.sh:
+	Added    : '(AP (JJR' and '(AP (JJ' in sed commands
+	Modified : Output file '$1.std.penn' to '$1.std.penn_tmp1'
+36. In FinalGenerate.pl, 
+	Modified : adjective participle (_huA cases) loop part. Ex :safgamaramara_se_banA_huA
+37. In run_transliteration.sh, modified to get proper_nouns in dictionary format for alignment purpose.
+38. Updated the following 'lex' files
 	add_snt_mrkr.lex		abbrevations.lex
-	mapping-punctuations.lex	replacing_canonical.lex		
-35. Updated changes_in_databases
-36. Updated minion dictionaries
-37. Updated dic_compile.sh
-38. Updated Log
-39. Updated the following verified's
+	mapping-punctuations.lex	replacing_canonical.lex	
+39. Updated apertium-en-hi.en.metadix
+40. Updated changes_in_databases
+41. Updated replace-abbrevations.sh
+42. Updated minion dictionaries
+43. Updated dic_compile.sh
+44. Updated Log
+45. Updated the following verified's
 	sd_verified (491)	phy_verified (219)		phy_partial_verified (55)	
 	verified (40)		partial_ver (22)    		small_sent_verified_sd (66)
 

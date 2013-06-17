@@ -23,24 +23,38 @@ while(<STDIN>){
 				if($word =~ /\^([^<]+)_.*/){
 #					print "$word\n";
 					#for adjectival participle , where the form has a tam "yA_huA" e.g BarA_huA. Make it to verb-form and generate as a verb.
-					if($word =~ /\^([^_]+)_huA<cat:adj><case:(.+)>.*<gen:(.+)>.*<num:(.+)>/){
+					if($word =~ /\^(.+)([^_]+)_huA<cat:adj><case:(.+)>.*<gen:(.+)>.*<num:(.+)>/){
+							$word_before_root="";
+						#tUtA_huA
+						if($word =~ /\^([^_]+)_huA<cat:adj><case:(.+)>.*<gen:(.+)>.*<num:(.+)>/)
+						{
+
+							$prtpl_word=$1;
+							$gen=$3;$num=$4;
+						} #Ex: The white [marbled] moti masjid or the pearl mosque was the private mosque for aurangzeb.  Mng:: safgamaramara_se_banA_huA
+						elsif($word =~ /\^(.+)_([^_]+)_huA<cat:adj><case:(.+)>.*<gen:(.+)>.*<num:(.+)>/)
+						{
+							$word_before_root=$1;
+
+							$prtpl_word=$2;
+							$gen=$4;$num=$5;
+						}
 	
-						$prtpl_word=$1;
-						
-						$gen=$3;$num=$4;
 						open(PRT_TMP,">$tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/prtpl_word") || die "Can't open file $tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/prtpl_word";
 						print PRT_TMP "$prtpl_word\n";
 						close(PRT_TMP);
 						system("lt-proc -a -c $ARGV[5] <  $tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/prtpl_word > $tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/prtpl_anal");
 						open(PRT,"<$tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/prtpl_anal") ||  die "Can't open file $tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/prtpl_anal";
 						$line=<PRT>;
-						$line =~ /\/[^\/]+\/([^<]+)<cat:v/;
+						$line =~ /\/[^\/]+\/([^<]+)<cat:v[^\/]+<tam:yA/;
 						close(PRT);
 						$root=$1;
 						$tam="yA_huA";
 						$per="a";
-						
-						&generate($root,$tam,$gen,$num,$per);
+						if($word_before_root ne ""){$root1=$word_before_root."_".$root}
+						else { $root1=$root;}	
+						&generate($root1,$tam,$gen,$num,$per);
+							$word_before_root=$1;
 					}
 				#	else{   
 #Added else if part by Roja (05-04-12) (considering "adjective" case only) 
@@ -50,6 +64,7 @@ while(<STDIN>){
 #Before :: harA ^BarA<cat:adj><case:o><gen:f><num:s>$
 #Now	:: ^harA<cat:adj><case:o><gen:f><num:s>$ ^BarA<cat:adj><case:o><gen:f><num:s>$ 
 #O/p	:: harI BarI
+					#^safgamaramara_se_banA_huA<cat:adj><case:d><gen:f><num:s>$
 					        elsif($word =~ /(\^([^<]+)<cat:adj>([^ ]+))/) {
 						  $word =~ /\^([^<]+)<([^ ]+)/;
 						  $wrd=$1; $analysis="<".$2; 
@@ -118,82 +133,82 @@ sub generate {
 	$tam =~ /^([^_]+)/;
 	$aper_tam=$1;
 	
-	
+
 	$kriyA_mula = "";
 
-	#for handling kriyamula verbs
+#for handling kriyamula verbs
 	if($root =~ /_/){ 	
 		$root =~ /(.*)\_([^_]+)$/;
-	
+
 		$kriyA_mula = $1;
 		$aper_root = $2;
-		#$aper_root =~ s/nA$//;
+#$aper_root =~ s/nA$//;
 	}
 	else { $kriyA_mula="";$aper_root = $root;}
 
 
-	#change the yA1 form to yA for Alltam.txt but yA1 to apertium as it is.
+#change the yA1 form to yA for Alltam.txt but yA1 to apertium as it is.
 	if(($tam =~ /yA1/) && ($aper_root eq "jA")){$tam =~ s/yA1/yA/;}
 
-	#if tam=0 don't pass it to the apertium. pass the root form as it is.
+#if tam=0 don't pass it to the apertium. pass the root form as it is.
 	if($aper_tam eq 0){ print "$root ";}
 	elsif($aper_tam eq "ne"){ 
 
-			print "$root$aper_tam ";}
+		print "$root$aper_tam ";}
 
-  elsif($tam =~ /adv_we_hue|we_rahanA_hE/){
+	elsif($tam =~ /adv_we_hue|we_rahanA_hE/){
 
-    print APT "\^$aper_root<cat:v><gen:$gen><num:$num><per:$per><tam:$tam>\$ ";
-    close(APT);
-    if($kriyA_mula ne ""){
-      if($kriyA_mula =~ /calA$|KadA$/){ $kriyA_mula =~ s/A$/I/;}
+		print APT "\^$aper_root<cat:v><gen:$gen><num:$num><per:$per><tam:$tam>\$ ";
+		close(APT);
+		if($kriyA_mula ne ""){
+			if($kriyA_mula =~ /calA$|KadA$/){ $kriyA_mula =~ s/A$/I/;}
 
-      print "$kriyA_mula";print" ";}
-    system("lt-proc -c -g $ARGV[0] < $tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/apertium_input");
-  }
+			print "$kriyA_mula";print" ";}
+			system("lt-proc -c -g $ARGV[0] < $tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/apertium_input");
+	}
 
-  else{
+	else{
 
 #if tam is multiword and gnp is (f,p,a), then pass  (tam,fsa) to apertium. and (tam,fpa) in tam database.
-    if($kriyA_mula ne ""){
-      if(($gen eq "f") && ($kriyA_mula =~ /calA$|KadA$/)){ $kriyA_mula =~ s/A$/I/;}
-      if(($num eq "p") && ($kriyA_mula =~ /calA$|KadA$/)){ $kriyA_mula =~ s/A$/e/;} #Ex:When you stand on this rock and face the east, the waves of the bay of bengal lap your feet.
-      print "$kriyA_mula";print" ";}
+		if($kriyA_mula ne ""){
+			if(($gen eq "f") && ($kriyA_mula =~ /calA$|KadA$|banA$/)){ $kriyA_mula =~ s/A$/I/;}
+			if(($num eq "p") && ($kriyA_mula =~ /calA$|KadA$|banA$/)){ $kriyA_mula =~ s/A$/e/;} #Ex:When you stand on this rock and face the east, the waves of the bay of bengal lap your feet.
+				print "$kriyA_mula";print" ";}
 
-		#for the tam "yA_karawA_WA" and gender (female) pass  gender "m" to yA and "f" to "karawA_WA"
-		if(($tam =~ /yA_karawA_WA/) && ($gen eq "f")){
-			$aper_gen="m";
-		}
+#for the tam "yA_karawA_WA" and gender (female) pass  gender "m" to yA and "f" to "karawA_WA"
+			if(($tam =~ /yA_karawA_WA/) && ($gen eq "f")){
+				$aper_gen="m";
+			}
 
 
-    if(($tam =~ /_/)&&($gen eq "f") && ($num eq "p") && ($per eq "a")){
-      print APT "\^$aper_root<cat:v><gen:f><num:s><per:a><tam:$aper_tam>\$ ";
-      close(APT);
+			if(($tam =~ /_/)&&($gen eq "f") && ($num eq "p") && ($per eq "a")){
+				print APT "\^$aper_root<cat:v><gen:f><num:s><per:a><tam:$aper_tam>\$ ";
+				close(APT);
 #  if($kriyA_mula ne ""){print "$kriyA_mula";print" ";}
-      system("lt-proc -c -g $ARGV[0] < $tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/apertium_input");
-    }
-    else{
-      print APT "\^$aper_root<cat:v><gen:$aper_gen><num:$num><per:$per><tam:$aper_tam>\$ ";
-      close(APT);
+				system("lt-proc -c -g $ARGV[0] < $tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/apertium_input");
+			}
+			else{
+				print APT "\^$aper_root<cat:v><gen:$aper_gen><num:$num><per:$per><tam:$aper_tam>\$ ";
+				close(APT);
 #      if($kriyA_mula ne ""){print "$kriyA_mula";print" ";}
-      system("lt-proc -c -g $ARGV[0] < $tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/apertium_input");
-    }
-  }
+				system("lt-proc -c -g $ARGV[0] < $tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/apertium_input");
+			}
+	}
 
 #if((($tam =~ /_/) || ($tam =~ /^hE$/)) & ($tam !~ /^adv_we_hue$|^we_rahanA_hE$/)){	
 #removed ^hE$ from above as the output of "I have three brothers" is coming wrong.
-  if(($tam =~ /_/) && ($tam !~ /^adv_we_hue$|^we_rahanA_hE$/)){	
+	if(($tam =~ /_/) && ($tam !~ /^adv_we_hue$|^we_rahanA_hE$/)){	
 
-    tie(%TAM,GDBM_File,$ARGV[1],GDBM_READER,0644) || die "Can't open AllTam.gdbm for reading";
-    $tam_key=$tam.",".$gen.",".$num.",".$per;
+		tie(%TAM,GDBM_File,$ARGV[1],GDBM_READER,0644) || die "Can't open AllTam.gdbm for reading";
+		$tam_key=$tam.",".$gen.",".$num.",".$per;
 
-    if($TAM{$tam_key}) {
-      if($TAM{$tam_key} ne "NULL"){
-        $tam=$TAM{$tam_key};
-        $tam =~ s/_/ /g;
-        print "$tam";}
-    }
-    else { print STDERR "$tam_key----TAM NOT FOUND";}
-  }
+		if($TAM{$tam_key}) {
+			if($TAM{$tam_key} ne "NULL"){
+				$tam=$TAM{$tam_key};
+				$tam =~ s/_/ /g;
+				print "$tam";}
+		}
+		else { print STDERR "$tam_key----TAM NOT FOUND";}
+	}
 
 }

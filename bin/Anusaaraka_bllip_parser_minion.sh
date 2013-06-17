@@ -36,7 +36,11 @@
  fi
 
  mkdir $MYPATH/tmp/$1_tmp
- sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/processing_manual_sentences.sh $1 $5
+ if [ "$6" == "full" ]; then
+ 	sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/processing_manual_sentences.sh $1 $5 $6
+ else
+	sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment/processing_manual_sentences.sh $1 $5
+ fi
  ###Added below loop for server purpose.
  if [ "$3" == "True" ] ; then 
     echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
@@ -47,9 +51,13 @@
  PRES_PATH=`pwd`
  cp $1 $MYPATH/tmp/$1_tmp/
  #running stanford NER (Named Entity Recogniser) on whole text.
- echo "Finding NER ..."
+ echo "Calling NER ..."
  cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2008-05-07/
  sh run-ner.sh $1
+
+ echo "Calling Transliteration"
+ cd $HOME_anu_test/miscellaneous/transliteration/work
+ sh run_transliteration.sh $MYPATH/tmp $1
 
  cd $PRES_PATH
  echo "Saving Format info ..."
@@ -77,13 +85,12 @@
   cd $HOME_anu_test/Anu_src/
   ./replace_nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
 
-  echo "Calling Stanford parser"
+  echo "Calling Bllip parser ..."
   cd $HOME_anu_test/Parsers/bllip-parser-master
-  if [ "$2" == "" -o "$2" -ge "0" ] ; then
   sed 's/^/<s> /g' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org  | sed 's/$/ <\/s>/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org1
   sh parse.sh  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org1 > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
-  fi
   sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}" $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp | sed 's/^(S1/(ROOT/g'  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1
+  echo "Calling Stanford parser ..."
   cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2013-04-05/
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 
@@ -120,9 +127,10 @@
   $HOME_anu_test/Anu_src/split_file.out one_sen_per_line_manual_hindi_sen.txt dir_names.txt manual_hindi_sen.dat
   $HOME_anu_test/Anu_src/split_file.out shallow_parser_output.txt dir_names.txt shallow_parser_output.dat
   $HOME_anu_test/Anu_src/split_file.out manual_hin.morph.txt dir_names.txt manual_hin.morph.dat
-#  $HOME_anu_test/Anu_src/split_file.out full_parser_output.txt dir_names.txt full_parser_output.dat
+  if [ "$6" == "full" ]; then
+   	$HOME_anu_test/Anu_src/split_file.out full_parser_output.txt dir_names.txt full_parser_output.dat
+  fi
   #=============================================================================================
-
   grep -v '^$' $MYPATH/tmp/$1.snt  > $1.snt
   perl $HOME_anu_test/Anu_src/Match-sen.pl $HOME_anu_test/Anu_databases/Complete_sentence.gdbm  $1.snt one_sentence_per_line.txt > sen_phrase.txt
 
@@ -134,13 +142,13 @@
     echo "Hindi meaning using Stanford parser" $line
     cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
     cp $MYPATH/tmp/$1_tmp/ner.txt $MYPATH/tmp/$1_tmp/$line/ner.dat
-    timeout 500 ./run_sentence_stanford_minion.sh $1 $line 1 $MYPATH $4 
+    timeout 500 ./run_sentence_stanford_minion.sh $1 $line 1 $MYPATH $4 $6
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
 
- echo "Calling Transliteration"
- cd $HOME_anu_test/miscellaneous/transliteration/work
- sh run_transliteration.sh $MYPATH/tmp $1
+# echo "Calling Transliteration"
+# cd $HOME_anu_test/miscellaneous/transliteration/work
+# sh run_transliteration.sh $MYPATH/tmp $1
 
  cd $MYPATH/tmp/$1_tmp/
  echo "(defglobal ?*path* = $HOME_anu_test)" > path_for_html.clp

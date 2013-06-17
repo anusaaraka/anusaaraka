@@ -2,12 +2,12 @@ Pre-proccessing manual file ...
 Running Shallow Parser ...
 Generating canonical form for Shallow Parser Output ...
 Tokenizing manual sentence
-Finding NER ...
+Calling NER ...
 Saving Format info ...
 Saving word information
 Saving morph information
 Calling POS Tagger and Chunker (APERTIUM)
-Calling Stanford parser
+Calling Stanford parser ...
 Tokenizing ...
 Multi word ...
 Hindi meaning using Stanford parser 1.1
@@ -70,7 +70,7 @@ Multiple adjective senses are available for nuclear. WSD rule is required
 
 Hindi meaning using Stanford parser 2.13
 Energy is a scalar quantity. 
-PropN-energy-PropN eka axiSa parimANa hE.
+UrjA eka axiSa parimANa hE.
 
 Hindi meaning using Stanford parser 2.14
 These laws can be derived from Newton's laws of motion in mechanics. 
@@ -365,8 +365,8 @@ For example, for describing motion in one dimension, we need only one axis.
 uxAharaNa_ke liye, eka pahalU meM gawi varNana karane ke lie, hameM sirPa eka XurI kI AvaSyakawA hE.
 
 Hindi meaning using Stanford parser 2.80
-In the first case, the car moves from O to P.. 
-praWama mAmale meM, gAdI PropN-o-PropN se PropN-p.-PropN ko calawI hE.
+In the first case, the car moves from O to P. 
+praWama mAmale meM, gAdI PropN-o-PropN se P ko calawI hE.
 
 Hindi meaning using Stanford parser 2.81
 This distance is called the path length traversed by the car. 
@@ -968,7 +968,6 @@ But the rest of the body continues to move forward due to inertia.
 paranwu piNda kA SeRa jadawva ko xeya agalA calane ke lie jArI rahawA hE.
 Meaning for verb phrase move_forward  is required
 
-Calling Transliteration
 Calling Interface related programs
 Print minion_statistics
 No Solution Found :

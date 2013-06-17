@@ -6,7 +6,8 @@
 (id-root ?id black|Black)
 ?mng <-(meaning_to_be_decided ?id)
 (or(viSeRya-viSeRaNa ?id1 ?id)(proper_noun-waxviSiRta_proper_noun ?id ?id1)(samAsa  ?id1 ?id))
-(id-root ?id1 day|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)
+;(id-root ?id1 day|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|Sunday)
+(id-root ?id1 day|monday|tuesday|wednesday|thursday|friday|saturday|sunday);Modified to lowcase by Roja(13-06-13). As now we are using NER to get PropN info , NER doesnt recognize weekdays as Named Entities. So changed to lowcase. Ex:No, it was not Black Monday. 
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id aSuBa))

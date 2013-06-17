@@ -1,7 +1,13 @@
-
- sort -u $1/$2_tmp/proper_nouns_list > $1/$2_tmp/proper_nouns_list_sort 
- mv $1/$2_tmp/proper_nouns_list_sort $1/$2_tmp/proper_nouns_list
+ sed 's/(word-nertype\t//g' $1/$2_tmp/ner.txt | sed 's/\t.*//g' > $1/$2_tmp/proper_nouns_list1
+ sort -u $1/$2_tmp/proper_nouns_list1 > $1/$2_tmp/proper_nouns_list_sort 
+ tr '[A-Z]' '[a-z]' < $1/$2_tmp/proper_nouns_list_sort > $1/$2_tmp/proper_nouns_list
+# mv $1/$2_tmp/proper_nouns_list_sort $1/$2_tmp/proper_nouns_list
  sh transliteration-script.sh $1/$2_tmp proper_nouns_list 2> /dev/null
+
+ #To get proper noun gdbm (17-06-13) For alignmnet work purpose
+ paste $1/$2_tmp/proper_nouns_list_sort  $1/$2_tmp/proper_nouns_list.wx > $1/$2_tmp/transliterated_words_list
+ rm -f $HOME_anu_test/Anu_databases/proper_nouns.gdbm
+ $HOME_anu_test/Anu_data/create-gdbm.pl $HOME_anu_test/Anu_databases/proper_nouns.gdbm < $1/$2_tmp/transliterated_words_list
 
 #Added below two commands by Roja(04-02-13). I.M.E of Hindi writers (Development park). 
  sed 's/[-]/-@/g' $1/$2_tmp/proper_nouns_list | sed 's/[.]/\.@/g'> $1/$2_tmp/proper_nouns_list1

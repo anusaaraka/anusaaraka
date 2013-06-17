@@ -1,9 +1,11 @@
 
+;Modified below rule by Roja(13-06-13) Ex: The priest granted absolution for John's sins. 
 (defrule john0
 (declare (salience 5000))
-(id-root ?id john)
+(id-root ?id John) ; Root Modified from john to John.
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat ?id proper_noun)
+;(id-cat ?id proper_noun) 
+(id-cat_coarse ?id PropN) 
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id joYna))
