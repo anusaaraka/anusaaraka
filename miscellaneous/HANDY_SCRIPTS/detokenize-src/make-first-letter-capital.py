@@ -10,7 +10,7 @@ for sent in file(sys.argv[1]):
     flag = 0
     mystr = ''
     for i in sent:
-	if i.lower() in alfa and flag != 1 and not sent.startswith('1') and not sent.startswith('2') and not sent.startswith('3') and not sent.startswith('4') and not sent.startswith('5') and not sent.startswith('6') and not sent.startswith('7') and not sent.startswith('8') and not sent.startswith('9') and not sent.startswith('0') and not sent.startswith('$'):
+	if i.lower() in alfa and flag != 1 and not sent.startswith('1') and not sent.startswith('2') and not sent.startswith('3') and not sent.startswith('4') and not sent.startswith('5') and not sent.startswith('6') and not sent.startswith('7') and not sent.startswith('8') and not sent.startswith('9') and not sent.startswith('0') and not sent.startswith('$') and not sent.startswith('<'):
 		mystr = mystr + i.upper()
 		flag = 1
 	else:

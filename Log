@@ -1,4 +1,4 @@
- 17-06-13
+ 18-06-13
  ========
  1. In sd_relation_rules.clp
         1. Modified : kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux, AjFArWaka_vAkya, sub_samA_with_cop, 
@@ -93,8 +93,9 @@
 41. Updated replace-abbrevations.sh
 42. Updated minion dictionaries
 43. Updated dic_compile.sh
-44. Updated Log
-45. Updated the following verified's
+44. Updated iit-bombay dictionary in goldendict
+45. Updated Log
+46. Updated the following verified's
 	sd_verified (491)	phy_verified (219)		phy_partial_verified (55)	
 	verified (40)		partial_ver (22)    		small_sent_verified_sd (66)
 

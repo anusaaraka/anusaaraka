@@ -8,7 +8,7 @@ Saving Format info ...
 Saving word information
 Saving morph information
 Calling POS Tagger and Chunker (APERTIUM)
-Calling Stanford parser
+Calling Stanford parser ...
 Tokenizing ...
 Multi word ...
 Hindi meaning using Stanford parser 1.1
@@ -17,7 +17,7 @@ jAzca kIjie.
 
 Hindi meaning using Stanford parser 2.1
 Good Princess, I can not sell my donkey. 
-acCA PropN-princess-PropN, mEM mere gaXe ko nahIM_beca sakawA hUz.
+acCI rAjakumArI, mEM mere gaXe ko nahIM_beca sakawA hUz.
 Multiple adjective senses are available for good. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.2
@@ -88,7 +88,7 @@ vaha eka aXika behawara vyakwi hogI.
 
 Hindi meaning using Stanford parser 2.18
 Hungry and thirsty! said Dipu sympathetically. 
-PropN-hungry-PropN Ora pyAse ne! kahA PropN-dipu-PropN saMvexI wanwrikA wanwra ke anusAra.
+BUKA Ora pyAse ne! kahA PropN-dipu-PropN saMvexI wanwrikA wanwra ke anusAra.
 
 Hindi meaning using Stanford parser 2.19
 Just a moment, we will solve your problem. 
@@ -178,7 +178,7 @@ vaha mere bAre meM awyanwa cinwiwa honA cAhie.
 
 Hindi meaning using Stanford parser 2.40
 He returned shortly, shaking his head. 
-vaha usakA sira hilAnA avilamba, lOtA.
+vaha usakA sira hilAwA huA avilamba, lOtA.
 
 Calling Interface related programs
 Print minion_statistics

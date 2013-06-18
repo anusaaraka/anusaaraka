@@ -18,10 +18,10 @@ main(int argc , char*argv[])
   {
          len=strcspn(str, "\n");
          strncpy(str1,str,len);
-         str1[len-1]='\0';
-
+         str1[len]='\0';
+//	printf("***%s***\n", str1);
         //checking punctuation at the end of the line.
-        if((str1[len-2]=='.') || (str1[len-3] == '.') || (str1[len-2]=='?') || (str1[len-2]=='!') || (str1[len-2]=='\"') ||             (str1[len-2]=='\'') || (str1[len-2]==')') || (str1[len-3]=='?') || (str1[len-3]=='!') || (str1[len-3]=='\"') ||              (str1[len-3]=='\'') || (str1[len-3]==')')) 
+        if((str1[len-1]=='.') || (str1[len-2] == '.') || (str1[len-1]=='?') || (str1[len-1]=='!') || (str1[len-1]=='\"') ||             (str1[len-1]=='\'') || (str1[len-1]==')') || (str1[len-2]=='?') || (str1[len-2]=='!') || (str1[len-2]=='\"') ||              (str1[len-2]=='\'') || (str1[len-2]==')') || (str1[len-2]=='>') || (str1[len-1]=='>')) 
            printf("%s\n", str1);
         else
            printf("%s.\n",str1);
