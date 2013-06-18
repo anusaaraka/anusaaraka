@@ -99,7 +99,7 @@ Multiple adjective senses are available for terrestrial. WSD rule is required
 
 Hindi meaning using Stanford parser 2.20
 Physics is exciting in many ways. 
-PropN-physics-PropN bahuwa sAre mArgoM meM romAFcaka hE.
+BOwika vijFAna bahuwa sAre mArgoM meM romAFcaka hE.
 
 Hindi meaning using Stanford parser 2.21
 Great progress usually accompanies changes in our basic perceptions. 
@@ -123,7 +123,7 @@ eka wIra isa lAina ke sira meM wila huA huA hE.
 
 Hindi meaning using Stanford parser 2.26
 Physics is the study of nature and natural phenomena. 
-PropN-physics-PropN prakqwi kA Ora prAkqwika kA pariGatanA kA aXyayana hE.
+BOwika vijFAna prakqwi kA Ora prAkqwika kA pariGatanA kA aXyayana hE.
 
 Hindi meaning using Stanford parser 2.27
 What is the nature of physical laws? 
@@ -159,7 +159,7 @@ prakqwi ke rahasya uXedanA viSva ke bAre meM, sIKane ke lie jijFAsA vijFAna kI K
 
 Hindi meaning using Stanford parser 2.34
 Science is ever dynamic. 
-PropN-science-PropN kaBI BI gawiSIla hE.
+vijFAna kaBI BI gawiSIla hE.
 
 Hindi meaning using Stanford parser 2.35
 The scope of physics is described briefly in the next section. 
@@ -462,7 +462,7 @@ yaxi eka yA aXika samaya ke sAWa vaswu parivarwana kA saMyojana karawA hE, wo ha
 
 Hindi meaning using Stanford parser 2.102
 Then the distance moved by the car is OP SYMBOL-EQUAL-TO SYMBOL-PLUS 360 m.. 
-waba gAdI se calI huI xUrI PropN-op-PropN SYMBOL-EQUAL-TO SYMBOL-PLUS 360 m. hE.
+waba gAdI se calI huI xUrI OP SYMBOL-EQUAL-TO SYMBOL-PLUS 360 m. hE.
 
 Hindi meaning using Stanford parser 2.103
 To describe motion in two SYMBOL-SLASH three dimensions, we need a set of two SYMBOL-SLASH three axes. 
@@ -478,7 +478,7 @@ yaha PropN-galileo-PropN ke samaya meM samasyA BI WA.
 
 Hindi meaning using Stanford parser 2.106
 For the v-t curve shown in Fig. 3SYMBOL-DOT7, we can obtain acceleration at every instant of time. 
-PropN-fig.-PropN 3SYMBOL-DOT7 meM xiKAI huI v-t vakra reKA ke lie, hama samaya ke prawyeka kRaNika meM wvaraNa prApwa_kara sakawe hEM.
+Fig. 3SYMBOL-DOT7 meM xiKAI huI v-t vakra reKA ke lie, hama samaya ke prawyeka kRaNika meM wvaraNa prApwa_kara sakawe hEM.
 
 Hindi meaning using Stanford parser 2.107
 (a) An object is moving in a positive direction with a positive acceleration. 
@@ -499,11 +499,11 @@ Multiple adjective senses are available for spherical. WSD rule is required
 
 Hindi meaning using Stanford parser 2.111
 To obtain Eq. (7SYMBOL-DOT11) we did not need to specify the nature of the system of particles. 
-PropN-eq.-PropN (7SYMBOL-DOT11) prApwa_kara hama kaNoM ke nikAya kI prakqwi viSeRa_vivaraNa_xe.
+Eq. (7SYMBOL-DOT11) prApwa_kara hama kaNoM ke nikAya kI prakqwi viSeRa_vivaraNa_xe.
 
 Hindi meaning using Stanford parser 2.112
 Its velocity-time graph is as shown in Fig. 3SYMBOL-DOT11. 
-usakA velocity-time grAPa PropN-fig.-PropN 3SYMBOL-DOT11 meM jEsA ki xiKAyA huA hE.
+usakA velocity-time grAPa Fig. 3SYMBOL-DOT11 meM jEsA ki xiKAyA huA hE.
 
 Hindi meaning using Stanford parser 2.113
 In this chapter, we consider the phenomena of reflection, refraction and dispersion of light, using the ray picture of light. 
@@ -520,7 +520,7 @@ EsI xuviXA prakASa ke lahara ciwra meM aswiwva_meM_nahIM howI hE.
 
 Hindi meaning using Stanford parser 2.116
 Note that it is not the geometric center of the triangle OAB. 
-XyAna xIjie ki yaha wrikoNa PropN-oab-PropN kA jyAmiwIya kenxra nahIM hE.
+XyAna xIjie ki yaha wrikoNa OAB kA jyAmiwIya kenxra nahIM hE.
 
 Hindi meaning using Stanford parser 2.117
 An extended body, in the first place, is a system of particles. 
@@ -567,7 +567,7 @@ Multiple adjective senses are available for such. WSD rule is required
 
 Hindi meaning using Stanford parser 2.127
 It is a 2SYMBOL-DOT34 m diameter reflecting telescope (Cassegrain). 
-yaha xUrabIna (PropN-cassegrain-PropN) xarSA eka 2SYMBOL-DOT34 puruRa vyAsa hE.
+yaha xUrabIna (Cassegrain) xarSA eka 2SYMBOL-DOT34 puruRa vyAsa hE.
 
 Hindi meaning using Stanford parser 2.128
 On the other hand, glass is a dispersive medium. 
@@ -601,7 +601,7 @@ viSva kA paxArWoM kI Ora jIvana kI Ora barwAva kI eka hErAna karawI huI viBinnaw
 
 Hindi meaning using Stanford parser 2.135
 What is Science and what is the so-called Scientific Method? 
-PropN-science-PropN kyA hE Ora waWAkaWiwa PropN-scientific-PropN PropN-method-PropN kyA hE?
+vijFAna kyA hE Ora waWAkaWiwa PropN-scientific-PropN PropN-method-PropN kyA hE?
 
 Hindi meaning using Stanford parser 2.136
 A precise definition of this discipline is neither possible nor necessary. 
@@ -635,7 +635,7 @@ Multiple adjective senses are available for tremendous. WSD rule is required
 
 Hindi meaning using Stanford parser 2.142
 Maxwell unified electromagnetism and optics with the discovery that light is an electromagnetic wave. 
-PropN-maxwell-PropN ne Koja ke sAWa vixyuwa cumbakawva Ora prakASikI eka banAe jo prakASa vExyuwa_cumbakIya warafgeM hE.
+PropN-maxwell-PropN ne Koja ke sAWa vixyuwa cumbakawva Ora prakASikI eka banAe ki prakASa vExyuwa_cumbakIya warafgeM hE.
 Multiple adjective senses are available for electromagnetic. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.143
@@ -676,12 +676,12 @@ Multiple adjective senses are available for concave. WSD rule is required
 Multiple adjective senses are available for similar. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.151
-You have already encountered Doppler effect for sound waves in Chapter 15 of Class XI textbook. 
-Apa PropN-class-PropN gyAraha pATya puswaka kI PropN-chapter-PropN 15 meM yukwiyukwa laharoM ke lie PropN-doppler-PropN praBAva pahale se hI sAmanA_kara cuke hEM.
+You have already encountered Doppler effect for sound waves in Chapter 15 of Class XI textbook.
+Apa varga gyAraha pATya puswaka ke aXyAya 15 meM yukwiyukwa laharoM ke lie Doppler praBAva pahale se hI sAmanA_kara cuke hEM.
 
 Hindi meaning using Stanford parser 2.152
 The Doppler effect for light is very important in astronomy. 
-prakASa ke lie PropN-doppler-PropN praBAva KagolavixyA meM awyanwa mahawvapUrNa hE.
+prakASa ke lie Doppler praBAva KagolavixyA meM awyanwa mahawvapUrNa hE.
 Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.153
@@ -773,11 +773,11 @@ Multiple adjective senses are available for white. WSD rule is required
 
 Hindi meaning using Stanford parser 2.173
 In fact they remain stuck to the screen for a while. 
-vAswava meM ve kuCa_samaya waka paraxe ko atakAe hue SeRa rahawe hEM.
+vAswava meM ve kuCa_samaya waka paraxe ko atake hue SeRa rahawe hEM.
 
 Hindi meaning using Stanford parser 2.174
 Similarly, two plastic rods rubbed with cat's fur repelled each other (Fig. 1SYMBOL-DOT1 (b)) but attracted the fur. 
-isI waraha se, xo plAstika Cada ne billI ke roezxAra_KAlavAle jAnavara hatA ke sAWa eka xUsare (PropN-fig.-PropN 1SYMBOL-DOT1 bI malA paranwu roezxAra_KAlavAle jAnavara AkarRiwa kiyA.
+isI waraha se, xo plAstika Cada ne billI ke roezxAra_KAlavAle jAnavara hatA ke sAWa eka xUsare (Fig. 1SYMBOL-DOT1 bI malA paranwu roezxAra_KAlavAle jAnavara AkarRiwa kiyA.
 Multiple adjective senses are available for plastic. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.175
@@ -790,7 +790,7 @@ saMhawi kI esa AI ikAI kilogrAma (kilogrAma) hE.
 
 Hindi meaning using Stanford parser 2.177
 To measure any time interval we need a clock. 
-kisI_BI samaya anwarAla nApa ko hameM GadI kI AvaSyakawA hE.
+kisI_BI samaya anwarAla nApa ke_lie hameM GadI kI AvaSyakawA hE.
 
 Hindi meaning using Stanford parser 2.178
 You know that all matter is made up of atoms and SYMBOL-SLASH or molecules. 
@@ -806,11 +806,11 @@ PropN-cgs-PropN nikAya meM ve kramaSaH mItara kA SawAMSa, grAma Ora xUsare We.
 
 Hindi meaning using Stanford parser 2.181
 In FPS system they were foot, pound and second respectively. 
-PropN-fps-PropN nikAya meM ve kramaSaH pAzva, pONda Ora kRaNa We.
+FPS nikAya meM ve kramaSaH pAzva, pONda Ora kRaNa We.
 
 Hindi meaning using Stanford parser 2.182
 In MKS system they were metre, kilogram and second respectively. 
-PropN-mks-PropN nikAya meM ve kramaSaH Canxa, kilogrAma Ora kRaNa We.
+MKS nikAya meM ve kramaSaH Canxa, kilogrAma Ora kRaNa We.
 
 Hindi meaning using Stanford parser 2.183
 Other units retained for general use are given in Table 2SYMBOL-DOT2. 
@@ -826,7 +826,8 @@ This is called parallax.
 yaha lambana kahA jAwA hE.
 
 Hindi meaning using Stanford parser 2.186
-Electron beams can be focussed by properly designed electric and magnetic fields. 
+Electron beams can be focussed by properly designed electric and magnetic fields.
+ilektroYna puFja uciwa Dafga se nakSe banA bijalI_kA Ora cumbakIya kRewroM ke xvArA sAPa xeKe jA sakawe hEM.
 PropN-electron-PropN prakASa kI kiraNa uciwa Dafga se nakSe banA bijalI_kA Ora cumbakIya kRewroM ke xvArA sAPa xiKA jA sakawA hE.
 
 Hindi meaning using Stanford parser 2.187
@@ -851,11 +852,11 @@ PiraBI, gola vaswuoM meM ilektroYna nahIM pUre PropN-a.-PropN ke bAzyA UparI wal
 
 Hindi meaning using Stanford parser 2.192
 Fig. 1SYMBOL-DOT4 (b) shows the equilibrium situation. 
-PropN-fig.-PropN 1SYMBOL-DOT4 bI sAmyAvasWA hAlawa xiKAwI hE.
+Fig. 1SYMBOL-DOT4 bI sAmyAvasWA hAlawa xiKAwI hE.
 
 Hindi meaning using Stanford parser 2.193
 (iv) Remove the rod. 
-(PropN-iv-PropN) Cada nikAla xewA hE.
+(iv) Cada nikAla xewA hE.
 
 Hindi meaning using Stanford parser 2.194
 Like velocity, acceleration can also be positive, negative or zero. 
@@ -886,11 +887,11 @@ kyA PropN-does-PropN prakqwi vixyuwa Sakwi ke bIca Ora cumbakawwva ke bIca EsA s
 
 Hindi meaning using Stanford parser 2.200
 The steady current in the coil C2 produces a steady magnetic field. 
-valayaka PropN-c2-PropN meM anavarawa pravAha eka anavarawa cumbakIya kRewra banAwA hE.
+valayaka C2 meM anavarawa pravAha eka anavarawa cumbakIya kRewra banAwA hE.
 
 Hindi meaning using Stanford parser 2.201
 Equation (6SYMBOL-DOT1) can be extended to curved surfaces and nonuniform fields. 
-PropN-equation-PropN (6SYMBOL-DOT1) vakra hoSa meM UparI wala hoSa meM Ora nonuniform hoSa meM kRewroM hoSa meM baDA jA sakawA hE.
+samIkaraNa (6SYMBOL-DOT1) vakra hoSa meM UparI wala hoSa meM Ora nonuniform hoSa meM kRewroM hoSa meM baDA jA sakawA hE.
 
 Hindi meaning using Stanford parser 2.202
 Magnetic flux is a scalar quantity. 
@@ -898,15 +899,15 @@ cumbakIya pravAha eka axiSa parimANa hE.
 
 Hindi meaning using Stanford parser 2.203
 Experimental observations discussed in Section 6SYMBOL-DOT2 can be explained using this concept. 
-PropN-section-PropN 6SYMBOL-DOT2 meM carcA kie hue prAyogika prekRaNa isa XAraNA kA upayoga karawA huA samaJAe jA sakawe hEM.
+BAga 6SYMBOL-DOT2 meM carcA kie hue prAyogika prekRaNa isa XAraNA kA upayoga karawA huA samaJAe jA sakawe hEM.
 
 Hindi meaning using Stanford parser 2.204
 Consequently, the magnetic flux through the neighbouring coil C1 also increases. 
-awaH, padosI valayaka PropN-c1-PropN ke mAXyama se cumbakIya pravAha BI vqxXi howA hE.
+awaH, padosI valayaka C1 ke mAXyama se cumbakIya pravAha BI vqxXi howA hE.
 
 Hindi meaning using Stanford parser 2.205
-In Experiments 6SYMBOL-DOT1 and 6SYMBOL-DOT2 in Section 6SYMBOL-DOT2, the flux is changed by varying B.. 
-PropN-section-PropN 6SYMBOL-DOT2 meM prayogoM meM 6SYMBOL-DOT1 Ora 6SYMBOL-DOT2, pravAha parivarwana howA huA PropN-b.-PropN ke xvArA baxalA gayA hE.
+In Experiments 6SYMBOL-DOT1 and 6SYMBOL-DOT2 in Section 6SYMBOL-DOT2, the flux is changed by varying B. 
+BAga 6SYMBOL-DOT2 meM prayogoM meM 6SYMBOL-DOT1 Ora 6SYMBOL-DOT2, pravAha parivarwana howA huA B ke xvArA baxalA gayA hE.
 
 Hindi meaning using Stanford parser 2.206
 As coil C2 is moved towards the coil C1, the galvanometer shows a deflection. 
@@ -914,7 +915,7 @@ jaba lapeta PropN-c2-PropN valayaka PropN-c1-PropN kI ora calI huI hE, viXurAmAp
 
 Hindi meaning using Stanford parser 2.207
 In the preceding Chapter, our concern was to describe the motion of a particle in space quantitatively. 
-se_pahale_AnA_yA_Gatiwa howI huI PropN-chapter-PropN meM, hamArI cinwA xiksWAna parimANAwmaka_Dafga se meM kaNa kI gawi varNana karane vAlA WI.
+se_pahale_AnA_yA_Gatiwa howI huI aXyAya meM, hamArI cinwA xiksWAna parimANAwmaka_Dafga se meM kaNa kI gawi varNana karane vAlA WI.
 
 Hindi meaning using Stanford parser 2.208
 Likewise, an external force is needed also to retard or stop motion. 
@@ -944,7 +945,7 @@ jadawva 'prawiroXa xurUswa karane ke lie sAXana.
 
 Hindi meaning using Stanford parser 2.214
 Gravity is everywhere. 
-PropN-gravity-PropN sarvawra hE.
+guruwvAkarRaNa sarvawra hE.
 
 Hindi meaning using Stanford parser 2.215
 Note, it has to be an external force. 
