@@ -2,12 +2,13 @@ Pre-proccessing manual file ...
 Running Shallow Parser ...
 Generating canonical form for Shallow Parser Output ...
 Tokenizing manual sentence
-Finding NER ...
+Calling NER ...
+Calling Transliteration
 Saving Format info ...
 Saving word information
 Saving morph information
 Calling POS Tagger and Chunker (APERTIUM)
-Calling Stanford parser
+Calling Stanford parser ...
 Tokenizing ...
 Multi word ...
 Hindi meaning using Stanford parser 1.1
@@ -47,7 +48,7 @@ pqWvI prawyeka twenty-four GaNte eka bAra GUmawI hE Ora varRa meM sUrya eka bAra
 
 Hindi meaning using Stanford parser 2.8
 In good many situations in real-life, the size of objects can be neglected and they can be considered as point-like objects without much error. 
-vAswavika jIvana meM acCI bahuwa sArI hAlawa meM, vaswu_kA AkAra upekRA kiyA jA sakawA hE Ora ve bahuwa BUla ke binA point-like vaswu_ke_jEsA samaJe jA sakawe hEM.
+vAswavika jIvana meM acCI bahuwa sArI hAlawa meM, vaswu kA AkAra upekRA kiyA jA sakawA hE Ora ve bahuwa BUla ke binA point-like vaswu ke_jEsA samaJe jA sakawe hEM.
 Multiple adjective senses are available for good. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.9
@@ -56,7 +57,7 @@ hama aba jAnawe hEM ki rafga prakASa ke warafgaxErGya ke sAWa judA huA huA hE.
 
 Hindi meaning using Stanford parser 2.10
 Where P is the net power of the lens combination. 
-PropN-p-PropN lensa saMyoga kA vAswavika GAwAfka kahAz hE.
+P lensa saMyoga kA vAswavika GAwAfka kahAz hE.
 
 Hindi meaning using Stanford parser 2.11
 Through another experiment, Faraday showed that this relative motion is not an absolute requirement. 
@@ -73,7 +74,7 @@ Multiple adjective senses are available for common. WSD rule is required
 
 Hindi meaning using Stanford parser 2.14
 Only the component perpendicular to the surface, i.e., the normal component of the momentum, gets reversed in reflection. 
-UparI wala ko sirPa aMSa parapeNdikulara Silpa, PropN-i.e.-PropN, saMvega kA sAmAnya aMSa, parAvarwana meM ultI kaha xewA hE.
+UparI wala ko sirPa aMSa parapeNdikulara Silpa, i.e., saMvega kA sAmAnya aMSa, parAvarwana meM ultI kaha xewA hE.
 
 Hindi meaning using Stanford parser 2.15
 In Kinematics, we study ways to describe motion without going into the causes of motion. 
@@ -81,7 +82,7 @@ SuxXa gawikI meM, hama mArgoM kA gawi ke kAraNoM ke anxara jAne ke binA gawi var
 
 Hindi meaning using Stanford parser 2.16
 Motion of an object can be represented by a position-time graph as you have already learned about it. 
-eka vaswu kA PropN-motion-PropN eka position-time grAPa ke xvArA prawiniXi huA jA sakawA hE jaba Apa isake bAre meM pahale se hI sIKa cuke hEM.
+eka vaswu kI gawi eka position-time grAPa ke xvArA prawiniXi huA jA sakawA hE jaba Apa isake bAre meM pahale se hI sIKa cuke hEM.
 
 Hindi meaning using Stanford parser 2.17
 To describe this, we define the quantity average velocity. 
@@ -116,7 +117,7 @@ kEse yaha parivarwana varNana karanA?
 
 Hindi meaning using Stanford parser 2.24
 Equation (3SYMBOL-DOT7) can also be written as. 
-PropN-equation-PropN (3SYMBOL-DOT7) ke jEsA BI liKA jA sakawA hE.
+samIkaraNa (3SYMBOL-DOT7) ke jEsA BI liKA jA sakawA hE.
 
 Hindi meaning using Stanford parser 2.25
 In this case, the magnitude of displacement (360 m) is equal to the path length (360 m). 
@@ -135,11 +136,11 @@ Multiple adjective senses are available for common. WSD rule is required
 
 Hindi meaning using Stanford parser 2.28
 In this situation, as you will learn in Chapter 10, a light wave can be considered to travel from one point to another, along a straight line joining them. 
-jaba Apa PropN-chapter-PropN 10 meM sIKezge, isa hAlawa meM, eka halakI lahara unako milawe_hue eka sarala reKA barAbara barAbara eka noka se eka Ora kI ora yAwrA karane ke lie samaJI jA sakawI hE.
+jaba Apa aXyAya 10 meM sIKezge, isa hAlawa meM, eka halakI lahara unako milawe_hue eka sarala reKA barAbara barAbara eka noka se eka Ora kI ora yAwrA karane ke lie samaJI jA sakawI hE.
 
 Hindi meaning using Stanford parser 2.29
 First, that it travels with enormous speed and second, that it travels in a straight line. 
-PropN-first-PropN, ki yaha bahuwa se raPwAra se Ora kRaNa se, calawA hE. ki yaha eka sarala reKA meM yAwrA karawA hE
+praWama, ki yaha bahuwa se raPwAra se Ora kRaNa se, calawA hE. ki yaha eka sarala reKA meM yAwrA karawA hE
 Multiple adjective senses are available for enormous. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.30
@@ -192,7 +193,7 @@ yaha mUlya pahale kI waraha sakArAwmaka Ora qNAwmaka nAmakaraNa karane meM xarSa
 
 Hindi meaning using Stanford parser 2.41
 Ampere and Faraday supported this observation by saying that electric charges in motion produce magnetic fields and moving magnets generate electricity. 
-PropN-ampere-PropN Ora PropN-faraday-PropN ne kahane ke xvArA Ora cumbaka vixyuwa Sakwi pExA karawe hEM calawA huA isa prekRaNa ko sahArA xiyA ki calAyamAna bijalI ke aBiyoga cumbakIya kRewra banAwe hEM.
+Empiyara Ora PropN-faraday-PropN ne kahane ke xvArA Ora cumbaka vixyuwa Sakwi pExA karawe hEM calawA huA isa prekRaNa ko sahArA xiyA ki calAyamAna bijalI ke aBiyoga cumbakIya kRewra banAwe hEM.
 
 Hindi meaning using Stanford parser 2.42
 We know that when we add a positive number to a negative number of the same magnitude, the sum is zero. 
@@ -252,7 +253,7 @@ Multiple adjective senses are available for nuclear. WSD rule is required
 
 Hindi meaning using Stanford parser 2.53
 Classical Physics deals mainly with macroscopic phenomena and includes subjects like Mechanics, Electrodynamics, Optics and Thermodynamics. 
-PropN-classical-PropN PropN-physics-PropN sWUla pariGatanA ke sAWa pramuKa rUpa se vyavahAra karawA hE Ora yAnwrikI kI waraha, vExyuwagawikI kI waraha, prakASikI kI waraha Ora URmAgawikI kI waraha viRaya sammiliwa karawA hE.
+SAswrIya BOwika vijFAna sWUla pariGatanA ke sAWa pramuKa rUpa se vyavahAra karawA hE Ora yAnwrikI kI waraha, vExyuwagawikI kI waraha, prakASikI kI waraha Ora URmAgawikI kI waraha viRaya sammiliwa karawA hE.
 
 Hindi meaning using Stanford parser 2.54
 Mechanics founded on Newton's laws of motion and the law of gravitation is concerned with the motion (or equilibrium) of particles, rigid and deformable bodies, and general systems of particles. 
@@ -264,7 +265,6 @@ Hindi meaning using Stanford parser 2.55
 A bar magnet can attract an iron nail from a distance. 
 eka SarAbaGara cumbaka xUrI se lohA nAKUna AkarRiwa_kara sakawA hE.
 
-Calling Transliteration
 Calling Interface related programs
 Print minion_statistics
 No Solution Found :
