@@ -3,6 +3,7 @@ Running Shallow Parser ...
 Generating canonical form for Shallow Parser Output ...
 Tokenizing manual sentence
 Calling NER ...
+Calling Transliteration
 Saving Format info ...
 Saving word information
 Saving morph information
@@ -155,7 +156,7 @@ SUnya saxiSa kA SArIrika arWa kyA hE?
 
 Hindi meaning using Stanford parser 2.33
 The curiosity to learn about the world, unravelling the secrets of nature is the first step towards the discovery of science. 
-prakqwi ke rahasya uXedanA viSva ke bAre meM, sIKane ke lie jijFAsA vijFAna kI Koja kI ora praWama kaxama hE.
+prakqwi ke rahasya sulaJAwA huA viSva ke bAre meM, sIKane ke lie jijFAsA vijFAna kI Koja kI ora praWama kaxama hE.
 
 Hindi meaning using Stanford parser 2.34
 Science is ever dynamic. 
@@ -655,7 +656,7 @@ Multiple adjective senses are available for valid. WSD rule is required
 
 Hindi meaning using Stanford parser 2.146
 Let CE represent the tangent plane drawn from the point C to this sphere. 
-PropN-let-PropN PropN-ce-PropN noka C se isa gola vaswu ko KIzca sparSajyA samawala prawiniXi howA hE.
+anumawi CE noka C se isa gola vaswu ko KIzca sparSajyA samawala prawiniXi howA hE.
 
 Hindi meaning using Stanford parser 2.147
 This is the law of reflection. 
@@ -764,7 +765,7 @@ hamArI bolI kI Xvani warafga kA lagaBaga 50 sentImItara ko 1 m. kA warafgaxErGya
 
 Hindi meaning using Stanford parser 2.171
 Let CE represent a tangent plane drawn from the point C on to the sphere. 
-PropN-let-PropN PropN-ce-PropN gola vaswu para noka C se KIzca eka sparSajyA samawala prawiniXi howA hE.
+anumawi CE gola vaswu para noka C se KIzca eka sparSajyA samawala prawiniXi howA hE.
 
 Hindi meaning using Stanford parser 2.172
 Cut out long thin strips of white paper and lightly iron them. 
@@ -814,7 +815,7 @@ MKS nikAya meM ve kramaSaH Canxa, kilogrAma Ora kRaNa We.
 
 Hindi meaning using Stanford parser 2.183
 Other units retained for general use are given in Table 2SYMBOL-DOT2. 
-vyApaka upayoga ke lie raKa lI huIM anya ikAiyAz PropN-table-PropN 2SYMBOL-DOT2 meM xI gayIM hEM.
+vyApaka upayoga ke lie raKa lI huIM anya ikAiyAz meja 2SYMBOL-DOT2 meM xI gayIM hEM.
 Multiple adjective senses are available for general. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.184
