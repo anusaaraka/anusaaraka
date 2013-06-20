@@ -87,18 +87,19 @@
 38. Added code to run above programme in stdenglish.sh
 39. Added code to compile abbrevations_using_NER.c in anu_compile.sh
 	Removed code related to reranking-parser-2011-12-17.tgz and updated with bllip-parser-master.zip
-40. Updated the following 'lex' files
+40. Added README in miscellaneous/SHALLOW_PARSER/
+41. Updated the following 'lex' files
 	add_snt_mrkr.lex		abbrevations.lex	titles.lex
 	mapping-punctuations.lex	replacing_canonical.lex	
-41. Updated ol_stdenglish.sh same as stdenglish.sh
-42. Updated apertium-en-hi.en.metadix
-43. Updated changes_in_databases
-44. Updated replace-abbrevations.sh
-45. Updated minion dictionaries
-46. Updated dic_compile.sh
-47. Updated iit-bombay dictionary in goldendict
-48. Updated Log
-49. Updated the following verified's
+42. Updated ol_stdenglish.sh same as stdenglish.sh
+43. Updated apertium-en-hi.en.metadix
+44. Updated changes_in_databases
+45. Updated replace-abbrevations.sh
+46. Updated minion dictionaries
+47. Updated dic_compile.sh
+48. Updated iit-bombay dictionary in goldendict
+49. Updated Log
+50. Updated the following verified's
 	sd_verified (491)	phy_verified (219)		phy_partial_verified (55)	
 	verified (40)		partial_ver (22)    		small_sent_verified_sd (66)
 
