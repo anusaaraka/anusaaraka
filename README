@@ -18,7 +18,7 @@
 	Check Readme in $HOME_anu_test/miscellaneous/Dictionaries/
 
 7. To view HINDI POS TAGGER and CHUNKER:
-	Check RAEDME in $HOME_anu_test/miscellaneous/SHALLOW_PARSER
+	Check README in $HOME_anu_test/miscellaneous/SHALLOW_PARSER
 	 
 8. To run word alignment:
 	Check README in $HOME_anu_test/miscellaneous/SMT/MINION/alignment/
