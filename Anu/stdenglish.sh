@@ -13,7 +13,7 @@ else
     cd $PATH2/tmp_stdenglish
   fi
 
-# Processing Symbols::
+#========================================Processing Symbols==========================================================
 # Below three files are for handling different types of Symbols.
 
 # Replacing Non-ASCII characters within ASCII range with ASCII characters.  Ex: “ is replaced with "
@@ -26,11 +26,21 @@ $PATH1/mapping-symbols.out  < $1.tmp_tmp > $1.tmp_tmp1
 # Program to replace more than 1 BYTE CHARACTER WITH nonascii<no of bytes><value>  Ex:Δ is replaced as nonascii2206148
 $HOME_anu_test/Anu_src/identify-nonascii-chars.out $1.tmp_tmp1 $1.tmp
 
+#==============================Expanding standard abbreviations with single apostophe================================
+
 # enclitics.lex expands the standard abbreviations with single apostophe  such as I'm  ---> I am
 $PATH1/enclitics.out < $1.tmp > $1.tmp1
 
+#=======================================Handling Abbrevations========================================================
+
+# Adding ABBR-DOT using NER information Ex: W.R. Grace  ---> WABBR-DotRABBR-Dot Grace
+$PATH1/abbrevations_using_NER.out  $PATH2/$1_tmp/ner.txt  > $PATH1/generate_ABBR-Dot.lex
+sed -i "s/\./\\\./g" $PATH1/generate_ABBR-Dot.lex
+$HOME_anu_test/Anu_src/comp.sh $PATH1/generate_ABBR-Dot
+$PATH1/./generate_ABBR-Dot.out < $1.tmp1 > $1.tmp1_1
+
 # standard_abbrevations.lex handles standard abbreviations such as 'Inc.', 'viz.', 'e.g.', 'B.S.' ... 
-$PATH1/standard_abbrevations.out < $1.tmp1 > $1.tmp2
+$PATH1/standard_abbrevations.out < $1.tmp1_1 > $1.tmp2
 
 # abbrevations.lex handles abbreviations such as  'dec.', 'a.d.', 'rs.' ...  
 # Better solution for this is necessary
@@ -45,16 +55,19 @@ $PATH1/initialisms.out < $1.tmp4 > $1.tmp5
 # insert_period.lex inserts a punctuation at the end of the sentence
 $PATH1/insert_period.out < $1.tmp5 > $1.tmp6
 
+#=======================================Proccesing Input Text========================================================
 # This program handles special characters : Ex : change '&' to 'and' , Replace '...' by one word 'DOTDOTDOT'
 $PATH1/chk_input_format.pl < $1.tmp6  > $1.tmp7
 
 # Simplifying English sentence. Ex: 'a number of' is replaced as 'many'
 $PATH1/simplify_english.pl < $1.tmp7 > $1.tmp8
 
+#=======================================Identifying Sentence Boundary================================================
 #The program sentence_boundary.pl takes as an input a text file, and generates as
 #output another text file in which each line contains only one sentence. Blank
 #lines in the input file are considered to make the end of paragraphs, and are
-#still present in the output file. It requires a honorifics file as an argument.#A sample honorifics file is provided. This file MUST contain honorifics, not
+#still present in the output file. It requires a honorifics file as an argument.
+#A sample honorifics file is provided. This file MUST contain honorifics, not
 #abbreviations. The program detects abbreviations using regular expressions.
 
 $PATH1/sentence-boundary.pl -d $PATH1/HONORIFICS -i $1.tmp8 -o ../$1.std

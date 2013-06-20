@@ -28,7 +28,7 @@
   ;Modified this rule by Roja (06-06-13) Suggested by Chaitanya sir
   (defrule PropN_rule_from_NER
   (declare (salience 12))
-  (word-nertype ?word PERSON|LOCATION|ORGANIZATION)
+  (word-nertype ?word&~of PERSON|LOCATION|ORGANIZATION) ;The Zongle [of] Bongle Dongle resigned today. 
   (parserid-word ?pid ?word)
   ?f0<-(id-sd_cat   ?pid ?)
   =>

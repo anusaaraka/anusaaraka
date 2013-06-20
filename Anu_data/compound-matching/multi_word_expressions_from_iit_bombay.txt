@@ -3960,7 +3960,7 @@ calamine_lotion	kElamAina_loSana#kElamAina_loSana#noun#2#RM
 calcium_oxide	anabuJA_cUnA#anabuJA_cUnA#noun#2#RM
 calculate_on	para_nirBara_ho#para_nirBara_ho#verb#2#RM
 calculating_machine	gaNana_yaMwra#gaNana_yaMwra#noun#2#RM
-calendar_month	paMcAMga_mAsaA/paMcAMga_samayaa#paMcAMga_mAsaA/paMcAMga_samayaa#noun#2#RM
+calendar_month	paMcAMga_mAsaA/paMcAMga_samaya#paMcAMga_mAsaA/paMcAMga_samaya#noun#2#RM
 calendar_year	paMcAMga_varRa#paMcAMga_varRa#noun#2#RM
 calico_cat	ciwakabarI_billI#ciwakabarI_billI#noun#2#RM
 call_a_halt	CodZa_xe/sWagiwa_kara#CodZa_xe/sWagiwa_kara#verb#2#RM

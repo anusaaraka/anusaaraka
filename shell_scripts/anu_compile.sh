@@ -142,6 +142,7 @@
  echo "Compiling Anu stdenglish source files"
  cd $HOME_anu_test/Anu/stdenglish
  make all
+ gcc -o abbrevations_using_NER.out abbrevations_using_NER.c
 
  echo "Compiling Anu std_format source files"
  cd $HOME_anu_test/Anu/std_format

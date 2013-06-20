@@ -606,6 +606,7 @@ Modified:
 10. Physics-dictionary  (Added by Roja 04-05-12. Suggested by Chaitanya Sir)
      This file is splitted into two files
      i. phy_dictionary.txt   and   ii. phy_eng_multi_word_dic.txt
+11. multi_word_expressions_from_iit_bombay.txt (Extracted from iit-bombay dictionary.Added by Roja 10-05-13. Suggested by Chaitanya Sir)
      
 
  Changes in ol_parser_unused_words.txt
@@ -804,6 +805,13 @@ Modified:
 	70. english_UNDEFINED	azgrejI	as	english_UNDEFINED	afgrejI		(Suggested by Chaitanya Sir 17-06-13)
 	71. sunday_noun	iwavAra		as	sunday_noun	ravivAra  (Suggested by Sukhada 17-06-13)	
         72. Modified   mahawvapUrNa	as  mahawwvapUrNa 
+	73. Modified 'trI' as 'wrI' Ex: strI as 'swrI'			(by Roja 20-06-13)
+
+  Modifying spelling of the existing word list::
+  -------------------------------------------- 
+	1. prime_verb		sUcanA_pahzUcA	as	sUcanA_pahuzcA	(by Roja 20-06-13)
+	2. up_adjective		UcAI_para	as	UzcAI_para	(by Roja 20-06-13)
+	3. secretary_noun	matrI		as	manwrI		(by Roja 20-06-13)	
 
 
   Removed::
@@ -822,6 +830,7 @@ Modified:
 		artistries_UNDEFINED	kalA_kOSala
 	patterns having '_' at begging or end of the meaning are removed 
 	   Ex: Derby_noun	dArbI_		as	  Derby_noun	dArbI
+	In time_noun -> Removed	samayaa		( by Roja 20-06-13)
 
 
   Added new entry:
@@ -829,6 +838,8 @@ Modified:
 	1. photoelectric_noun      	prakASa_vixyuwa		( Suggested by Chaitanya Sir 19-03-13	)
 	2. antielectron_noun       	prawi_ilektroYna	(		"			)
 	3. translated_adjective		anuxiwa			(		"	     06-06-13  	)
+	4. unravell_verb	sulaJA/uXeda/uXada/spaRta_kara/CudA/asaPala_ho	( by Roja 20-06-13	)
+
 
   Added new meaning to the existing word:
   ---------------------------------------
@@ -997,3 +1008,9 @@ Modified:
  =================================
  Added
 	jA      Beja	(Suggested by Sukhada (29-05-13))
+
+ changes in multi_word_expressions_from_iit_bombay.txt
+ =====================================================
+ Modified:
+ --------
+	calendar_month	paMcAMga_samayaa	as	paMcAMga_samaya		(By Roja 20-06-13)

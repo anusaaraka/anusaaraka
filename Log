@@ -1,4 +1,4 @@
- 18-06-13
+ 20-06-13
  ========
  1. In sd_relation_rules.clp
         1. Modified : kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux, AjFArWaka_vAkya, sub_samA_with_cop, 
@@ -20,82 +20,85 @@
 	(this bllip parser is the next version and contains licence)
  6. Renamed and Modified Anusaaraka_reranked_johnson.sh to Anusaaraka_bllip_parser.sh
 		and	Anusaaraka_reranked_johnson_minion.sh  to Anusaaraka_bllip_parser_minion.sh
- 7. anu_compile.sh:
-	Removed code related to reranking-parser-2011-12-17.tgz and updated with bllip-parser-master.zip
- 8. Renamed reranking-parser to bllip-parser-master in remove_out-files.sh
- 9. In parser_tree_modification_rules.clp:
+ 7. Renamed reranking-parser to bllip-parser-master in remove_out-files.sh
+ 8. In parser_tree_modification_rules.clp:
 	Modified: convert_WH_Q_sent_to_normal  and  rename_VP_for_To
 	Added   : remove_SBAR_S_VP_TO
-10. modify_minion_output.clp:
+ 9. modify_minion_output.clp:
 	Modified :  check_correctness_for_multi_word and check_for_correctness" rules 
-11. Modified "chk_for_hnd_mwe" rule in manual_word_grp_using_dic.clp (added hnd_multi_word_from_iit_bombay_dic.gdm)
-12. Added "rm_LWG_grouped_id_from_restricted_word" rule in get_word_potential_facts.clp
-13. Added detokenizer-src folder in  miscellaneous/HANDY_SCRIPTS/ 
+10. Modified "chk_for_hnd_mwe" rule in manual_word_grp_using_dic.clp (added hnd_multi_word_from_iit_bombay_dic.gdm)
+11. Added "rm_LWG_grouped_id_from_restricted_word" rule in get_word_potential_facts.clp
+12. Added detokenizer-src folder in  miscellaneous/HANDY_SCRIPTS/ 
 	-- to detokenize the tokenized file and also updated anu_testing README
-14. In chk_input_format.pl : Added a pattern to combine "-" when it is separated between two words
-15. prepare_apertium_input.clp
+13. In chk_input_format.pl : Added a pattern to combine "-" when it is separated between two words
+14. prepare_apertium_input.clp
 	Added    : remove_character deffunction
 	Modified : complete_sen_mng_with_vib,  complete_sen_mng,  word_mng_with_vib,  word_mng_rule, PP_rule_adj_er and
                    PP_pronoun_rule_for_you_with_ke
 	Added debug statements 
-16. sd_lwg_rules.clp, 
+15. sd_lwg_rules.clp, 
 	Modified: replace_nodes rule 
 	Added   : replace_VP1
-17. WSD: Modified : found.clp	improve.clp	baby.clp	is_en_tam.clp	call.clp	get.clp	
+16. WSD: Modified : found.clp	improve.clp	baby.clp	is_en_tam.clp	call.clp	get.clp	
 		    add.clp	john.clp	black.clp	on.clp		paper.clp
-18. GNP_agreement.clp
+17. GNP_agreement.clp
         Added : print_debug_info
         Modified the rules to add function call
-19. Modified "move_ADVP_after_v" rule in H_ordering_rules.clp
-20. Modified  generate_dummy_num and get_num_frm_plural_list rules in number.clp
-21. In parserid_wordid_mapping.clp,
+18. Modified "move_ADVP_after_v" rule in H_ordering_rules.clp
+19. Modified  generate_dummy_num and get_num_frm_plural_list rules in number.clp
+20. In parserid_wordid_mapping.clp,
 	Modified : id-link_id_map_for_lowercase  (modified the lowcase function)
 	Added    : default_rule, print_warning_msg
-22. Loading NER at the beggining of the pre-proccessing. Following files are modified::
+21. Loading NER at the beggining of the pre-proccessing. Following files are modified::
 	Anusaaraka_stanford.sh	Anusaaraka_stanford_minion.sh	Anusaaraka_berkeley.sh	
 	Anusaaraka_rasp.sh	Anusaaraka_site.sh		Anusaaraka_stanford-Factored.sh
 	stanford-ner-2008-05-07/run-ner.pl			stanford-ner-2008-05-07/run-ner.sh
 	Anusaaraka_bllip_parser.sh				Anusaaraka_bllip_parser_minion.sh	
-23. In sd_category.clp,
+22. In sd_category.clp,
 	Renamed  : PropN_rule  to  PropN_rule_from_NER
 	Modified : above rule. (modified NER fact and rule accordingly)
 	Removed  : NN_to_NNP, NNP_to_NN
         Added    : PropN_rule_from_NER1
-24. Warning message when 'Parserid Wordid mapping missing' is given for a id, following files are modified::
+23. Warning message when 'Parserid Wordid mapping missing' is given for a id, following files are modified::
 	run_sentence_stanford.sh	run_sentence_stanford_minion.sh
-25. Added "get_phrase_with_next_mng" rule in get_phrase.clp
-26. manual_lwg.clp
+24. Added "get_phrase_with_next_mng" rule in get_phrase.clp
+25. manual_lwg.clp
 	    Added    : multi_word_with_no_root
 	    Modified : word_[hyphen]_word, single_vib1 and change_remaining_facts1
-27. Modified "print_cost_for_consecutive_ids" rule in prepare_minion_input.clp
-28. Modified "word_and_vib_match_with_anu_hindi_root1" rule in word_alignment.clp
-29. Loaded "hin_mng_without_@.dat" file for get_mng module in alignment.bat
-30. agreement.clp
+26. Modified "print_cost_for_consecutive_ids" rule in prepare_minion_input.clp
+27. Modified "word_and_vib_match_with_anu_hindi_root1" rule in word_alignment.clp
+28. Loaded "hin_mng_without_@.dat" file for get_mng module in alignment.bat
+29. agreement.clp
 	Modified "sub_or_agr" and "sub_agrmt" rules to add "kriyA-dummy_subject" in the list
-31. Added "get_Dot_punc_for_Q_sent" rule in handling_punctuations.clp
-32. Modified and Updated ber_ver_output, sd_verified, sd_ver_output and phy_verified_out
-33. Added verified_eng, verified_hnd, verified_out and verified_eng_align.html files and
+30. Added "get_Dot_punc_for_Q_sent" rule in handling_punctuations.clp
+31. Modified and Updated ber_ver_output, sd_verified, sd_ver_output and phy_verified_out
+32. Added verified_eng, verified_hnd, verified_out and verified_eng_align.html files and
     Renamed "phy_align_partial_[eng/hnd/eng_align.html]"   as  "phy_partial_[eng/hnd/eng_align.html]"  and
             "phy_align_verified_[eng/hnd/eng_align.html]"  as  "phy_verified_[eng/hnd/eng_align.html]"
-34. In run_modules_std.bat:
+33. In run_modules_std.bat:
 	Removed loading facts 'parserid_wordid_mapping.dat'
-35. In run_rasp-parser.sh:
+34. In run_rasp-parser.sh:
 	Added    : '(AP (JJR' and '(AP (JJ' in sed commands
 	Modified : Output file '$1.std.penn' to '$1.std.penn_tmp1'
-36. In FinalGenerate.pl, 
+35. In FinalGenerate.pl, 
 	Modified : adjective participle (_huA cases) loop part. Ex :safgamaramara_se_banA_huA
-37. In run_transliteration.sh, modified to get proper_nouns in dictionary format for alignment purpose.
-38. Updated the following 'lex' files
-	add_snt_mrkr.lex		abbrevations.lex
+36. In run_transliteration.sh, modified to get proper_nouns in dictionary format for alignment purpose.
+37. Added abbrevations_using_NER.c programme to handle abbrevations recognised by NER
+38. Added code to run above programme in stdenglish.sh
+39. Added code to compile abbrevations_using_NER.c in anu_compile.sh
+	Removed code related to reranking-parser-2011-12-17.tgz and updated with bllip-parser-master.zip
+40. Updated the following 'lex' files
+	add_snt_mrkr.lex		abbrevations.lex	titles.lex
 	mapping-punctuations.lex	replacing_canonical.lex	
-39. Updated apertium-en-hi.en.metadix
-40. Updated changes_in_databases
-41. Updated replace-abbrevations.sh
-42. Updated minion dictionaries
-43. Updated dic_compile.sh
-44. Updated iit-bombay dictionary in goldendict
-45. Updated Log
-46. Updated the following verified's
+41. Updated ol_stdenglish.sh same as stdenglish.sh
+42. Updated apertium-en-hi.en.metadix
+43. Updated changes_in_databases
+44. Updated replace-abbrevations.sh
+45. Updated minion dictionaries
+46. Updated dic_compile.sh
+47. Updated iit-bombay dictionary in goldendict
+48. Updated Log
+49. Updated the following verified's
 	sd_verified (491)	phy_verified (219)		phy_partial_verified (55)	
 	verified (40)		partial_ver (22)    		small_sent_verified_sd (66)
 
