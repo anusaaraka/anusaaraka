@@ -17,3 +17,4 @@ gcc -o $HOME_anu_test/miscellaneous/SMT/MINION/alignment/replace_wrd_with_id.out
 
 cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER
 sh compile_shallow_parser.sh
+sh compile_full_parser.sh

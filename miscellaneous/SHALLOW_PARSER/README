@@ -30,6 +30,10 @@
 			ii) Accordingly make a soft link to the existing one to dos2unix
 				sudo ln -s /usr/bin/fromdos /usr/bin/dos2unix
 
+   COMPILE::
+   =======
+	sh compile_shallow_parser.sh
+
    RUN::
    ====
 	sh run_shallow_parser.sh <file-name>
