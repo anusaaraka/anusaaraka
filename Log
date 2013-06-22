@@ -1,4 +1,4 @@
- 20-06-13
+ 21-06-13
  ========
  1. In sd_relation_rules.clp
         1. Modified : kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux, AjFArWaka_vAkya, sub_samA_with_cop, 
@@ -87,19 +87,21 @@
 38. Added code to run above programme in stdenglish.sh
 39. Added code to compile abbrevations_using_NER.c in anu_compile.sh
 	Removed code related to reranking-parser-2011-12-17.tgz and updated with bllip-parser-master.zip
-40. Added README in miscellaneous/SHALLOW_PARSER/
-41. Updated the following 'lex' files
+40. Separated compilation of SHALLOW PARSER and FULL PARSER from compile_shallow_parser.sh  and Added compile_full_parser.sh
+41. Accordingly modified minion_compile.sh
+42. Added README in miscellaneous/SHALLOW_PARSER/
+43. Updated the following 'lex' files
 	add_snt_mrkr.lex		abbrevations.lex	titles.lex
 	mapping-punctuations.lex	replacing_canonical.lex	
-42. Updated ol_stdenglish.sh same as stdenglish.sh
-43. Updated apertium-en-hi.en.metadix
-44. Updated changes_in_databases
-45. Updated replace-abbrevations.sh
-46. Updated minion dictionaries
-47. Updated dic_compile.sh
-48. Updated iit-bombay dictionary in goldendict
-49. Updated Log
-50. Updated the following verified's
+44. Updated ol_stdenglish.sh same as stdenglish.sh
+45. Updated apertium-en-hi.en.metadix
+46. Updated changes_in_databases
+47. Updated replace-abbrevations.sh
+48. Updated minion dictionaries
+49. Updated dic_compile.sh
+50. Updated iit-bombay dictionary in goldendict
+51. Updated Log
+52. Updated the following verified's
 	sd_verified (491)	phy_verified (219)		phy_partial_verified (55)	
 	verified (40)		partial_ver (22)    		small_sent_verified_sd (66)
 
