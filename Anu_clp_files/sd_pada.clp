@@ -155,7 +155,7 @@
  (declare  (salience 4600))
  (or (head_id-prawiniXi_id-grp_ids ?hid ?pp ?prep_id ?np_id)(head_id-prawiniXi_id-grp_ids ?hid ?pp ? ?prep_id ?np_id))
  (prawiniXi_id-node-category ?pp ?PP PP|WHPP)
- (prawiniXi_id-node-category ?np_id ?NP NP|S|WHNP) ;The game of life is played for winning. 
+ (prawiniXi_id-node-category ?np_id ?NP NP|S|WHNP|ADJP) ;The game of life is played for winning. In short, the greater the rate of change of momentum, the greater is the force. 
  (head_id-prawiniXi_id-grp_ids ? ?prep_id ?prep)
  (head_id-prawiniXi_id-grp_ids ?np_head ?np_id $?grp_ids ?last_node)
  ?f0<-(pada_info (group_head_id ?np_id)(preposition 0))

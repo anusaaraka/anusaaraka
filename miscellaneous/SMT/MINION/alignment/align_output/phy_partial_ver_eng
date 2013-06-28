@@ -53,6 +53,32 @@ A related effort is to derive the properties of a bigger, more complex, system f
 Basically, there are two domains of interest: macroscopic and microscopic.
 The microscopic domain includes atomic, molecular and nuclear phenomena.
 Classical Physics deals mainly with macroscopic phenomena and includes subjects like Mechanics, Electrodynamics, Optics and Thermodynamics.
-Mechanics founded on Newton’s laws of motion and the law of gravitation is concerned with the motion (or equilibrium) of particles, rigid and deformable bodies, and general systems of particles.
 A bar magnet can attract an iron nail from a distance.
+However, at the end of the time interval, observations show that each body acquires the same momentum.
+Let us note at this stage some important points about the second law.
+The actual resistive force, and therefore, retardation of the bullet may not be uniform.
+What is the origin of the external force on the body?
+The compressed spring in turn exerts a force on your hand and you can feel it.
+To every action, there is always an equal and opposite reaction.
+Let us note some important points about the third law, particularly in regard to the usage of the terms: action and reaction.
+They add up to give a null force.
+How to find the force on the wall?
+The direction of impulse (and force) is the same as in (a) and is normal to the wall along the negative x direction.
+As before, using Newton's third law, the force on the wall due to the ball is normal to the wall along the positive x direction.
+Since initially, both are at rest, the change in momentum equals the final momentum for each.
+This fact is known as the law of conservation of momentum.
+The total momentum of an isolated system of interacting particles is conserved.
+Equilibrium of a particle in mechanics refers to the situation when the net external force on the particle is zero.
+The horizontal and vertical components of the resultant force must vanish separately.
+Every object on the earth experiences the force of gravity due to the earth.
+Gravity also governs the motion of celestial bodies.
+All the other forces common in mechanics are contact forces.
+When bodies are in contact (e.g. a book resting on a table, a system of rigid bodies connected by rods, hinges and other types of supports), there are mutual contact forces (for each pair of bodies) satisfying the third law.
+In Chapter 1, we learned that there are four fundamental forces in nature.
+The different contact forces of mechanics mentioned above fundamentally arise from electrical forces.
+Yet they are very useful in practical calculations in mechanics.
+In many situations, like in a machine with different moving parts, friction does have a negative role.
+Besides, each body in the assembly experiences the force of gravity.
+Include also the forces on the system by other agencies.
+(ii) the force on the floor by the system (action); the force on the system by the floor (reaction).
 </p>

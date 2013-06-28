@@ -197,9 +197,11 @@
 )
 ;----------------------------------------------------------------------------------------------------------------
 ;Tell them to inform the others, and ask them to help me.unase kahanA ki ve OroM ko BI bawA xeM waWA unase [merI] sahAyawA karane ke lie kahanA
+;You can perform the following activity at home to experience such an effect. Apa [isa prakAra ke] praBAva kA anuBava apane Gara para nimnaliKiwa kriyAkalApa xvArA kara sakawe hEM
 (defrule modify_root_for_pronouns_using_aper
 (declare (salience 3))
 ?f0<-(manual_id-cat-word-root-vib-grp_ids ?mid ?n ?word $?w - ?root $?r - $?vib - $?ids)
+(not (id-org_wrd-root-dbase_name-mng ? ? ? ? ?root $?r))
 (man_word-poss_roots ?word $?pos_roots)
 (test (eq (member$ ?root $?pos_roots) FALSE))
 =>

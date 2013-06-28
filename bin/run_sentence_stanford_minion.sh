@@ -81,7 +81,8 @@
  	echo $2  "  Time-out"  >> $MYPATH/$1_tmp/no_sol_found_tmp.txt
  fi
 
- cat mngs_aligned_with_dic.dat >> $MYPATH/$1_tmp/meanings_aligned_with_dic_tmp.txt  
+# cat mngs_aligned_with_dic.dat >> $MYPATH/$1_tmp/meanings_aligned_with_dic_tmp.txt  
+ cat wsd_errors_tmp.dat >> $MYPATH/$1_tmp/wsd_errors_tmp.txt  
  cat mngs_aligned_with_anu.dat >> $MYPATH/$1_tmp/meanings_aligned_with_anu_tmp.txt  
  cat mngs_aligned_with_minion.dat >> $MYPATH/$1_tmp/meanings_aligned_with_minion_tmp.txt  
 

@@ -117,3 +117,4 @@ pith	sarakaNdA
 sum	yogaPala
 half	arXaBAga
 he	yaha
+change	parivarwiwa_ho

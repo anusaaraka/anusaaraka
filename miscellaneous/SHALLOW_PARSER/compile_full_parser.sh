@@ -3,7 +3,7 @@
 
  if  [ -e $HOME_anu_test/miscellaneous/SHALLOW_PARSER/fullparser-hin-1.6.3 ] ; then
      rm -rf fullparser-hin-1.6.3/
-     rm -rf ~/sampark
+ #    rm -rf ~/sampark
  fi
 
  tar -xvzf fullparser-hin-1.6.3.tgz

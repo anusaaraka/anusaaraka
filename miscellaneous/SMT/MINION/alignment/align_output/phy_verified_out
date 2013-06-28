@@ -142,13 +142,12 @@ gawi ke praWama niyama ke xvArA anwarikRa yAwrI kA wvaraNa SUnya hE.
 
 Hindi meaning using Stanford parser 2.30
 The mass of a body is thus an important parameter that determines the effect of force on its motion. 
-isa prakAra piNda kI saMhawi mahawvapUrNa gaNiwa_meM_sWira rASI hE jo usakI gawi para bala kA praBAva niScaya karawA hE.
+isa prakAra piNda kI saMhawi mahawwvapUrNa gaNiwa_meM_sWira rASI hE jo usakI gawi para bala kA praBAva niScaya karawA hE.
 Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.31
-parse wrong
-Using the basic laws of reflection and refraction, we shall study the image formation by plane and spherical reflecting and refracting surfaces. 
-parAvarwana ke Ora apavarwana ke buniyAxI niyamoM kA upayoga karawe_hue, hama UparI wala xarSA huA Ora modawA huA samawala waka Ora golIya waka prawimA suvyavasWiwa kramaa kA aXyayana karezge.
+If the box is stationary relative to the train, it is in fact accelerating along with the train. 
+yaxi baksA relagAdI ko sWira ApekRa hE, wo yaha relagAdI ke sAWa cAla baDAwI huI vAswava meM hE.
 
 Hindi meaning using Stanford parser 2.32
 What is the physical meaning of a zero vector? 
@@ -283,8 +282,7 @@ se_pahale_AnA_yA_Gatiwa howe hue prekRaNa meM, saMvega kA saxiSa cariwra spaRta 
 
 Hindi meaning using Stanford parser 2.61
 We see leaves falling from trees and water flowing down a dam. 
-hama bAzXa nIce bahawA huA pedoM se Ora pAnI se girawe_hue CuttiyoM ko xeKawe hEM.
-
+hama bAzXa para bahawA huA pedoM se Ora pAnI se girawe_hue CuttiyoM ko xeKawe hEM.
 Hindi meaning using Stanford parser 2.62
 Obviously, these tables are not exhaustive. 
 spaRta rUpa se, ye mejeM soKane vAlI nahIM hEM.
@@ -359,7 +357,7 @@ ina wIna XuriyoM kA milane_kA binxu mUla binxu (PropN-o-PropN) kahA jAwA hE Ora 
 
 Hindi meaning using Stanford parser 2.78
 The coordinates (x, y, z) of an object describe the position of the object with respect to this coordinate system. 
-eka vaswu ke nirxeSAfka (x, y, PropN-z-PropN) isa nirxeSAfka nikAya ke viRaya meM vaswu kI sWiwi varNana karawe hEM.
+eka vaswu ke nirxeSAfka (x, y, z) isa nirxeSAfka nikAya ke viRaya meM vaswu kI sWiwi varNana karawe hEM.
 
 Hindi meaning using Stanford parser 2.79
 For example, for describing motion in one dimension, we need only one axis. 
@@ -415,7 +413,7 @@ eka eka_prakAra_kI XAwu nABika eka_prakAra_kI XAwu ke Ora yUnAnI varNamAlA ke pr
 
 Hindi meaning using Stanford parser 2.91
 An important physical quantity, work, is defined as a scalar product of two vector quantities, force and displacement. 
-mahawvapUrNa BOwika rASi, kArya, xo saxiSa parimANa ke, bala kA Ora visWApana ke eka axiSa uwpAxa ke jEsA sImAfkiwa kI gayI hE.
+mahawwvapUrNa BOwika rASi, kArya, xo saxiSa parimANa ke, bala kA Ora visWApana ke eka axiSa uwpAxa ke jEsA sImAfkiwa kI gayI hE.
 Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.92
@@ -551,7 +549,7 @@ xqRti- wanwu ucca guNavawwA sammiSra gilAsoM SYMBOL-SLASH billOra wanwuoM ke sAW
 
 Hindi meaning using Stanford parser 2.123
 Each fiber consists of a core and cladding. 
-eka eka wanwu - saba_se_mahawvapUrNa muxxe kA Ora Xawu AvaraNa kA banA honA hE.
+eka eka wanwu - saba_se_mahawwvapUrNa muxxe kA Ora Xawu AvaraNa kA banA honA hE.
 
 Hindi meaning using Stanford parser 2.124
 Thus, an optical fiber can be used to act as an optical pipe. 
@@ -641,7 +639,7 @@ Multiple adjective senses are available for electromagnetic. WSD rule is require
 
 Hindi meaning using Stanford parser 2.143
 Understanding these conservation principles is very important to describe the observed phenomena quantitatively. 
-ye saMrakRaNa sixXAnwa samaJanA avalokana kara xqgviRaya parimANAwmaka_Dafga se varNana karane ke lie awyanwa mahawvapUrNa hE.
+ye saMrakRaNa sixXAnwa samaJanA avalokana kara xqgviRaya parimANAwmaka_Dafga se varNana karane ke lie awyanwa mahawwvapUrNa hE.
 Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.144
@@ -682,7 +680,7 @@ Apa varga gyAraha pATya puswaka ke aXyAya 15 meM yukwiyukwa laharoM ke lie Doppl
 
 Hindi meaning using Stanford parser 2.152
 The Doppler effect for light is very important in astronomy. 
-prakASa ke lie Doppler praBAva KagolavixyA meM awyanwa mahawvapUrNa hE.
+prakASa ke lie Doppler praBAva KagolavixyA meM awyanwa mahawwvapUrNa hE.
 Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.153
@@ -848,8 +846,8 @@ The free electrons in the spheres are attracted towards the rod.
 gola vaswuoM meM svawanwra ilektroYna Cada kI ora AkarRiwa kie gaye hEM.
 
 Hindi meaning using Stanford parser 2.191
-However, not all of the electrons in the spheres have accumulated on the left surface of A.. 
-PiraBI, gola vaswuoM meM ilektroYna nahIM pUre PropN-a.-PropN ke bAzyA UparI wala para saFcaya_kara cuke hEM.
+A diagram of this type is known as' a free-body diagram'. 
+isa prakAra kA ciwra 'eka free-body ciwra ke rUpa meM' jAnA jAwA hE.
 
 Hindi meaning using Stanford parser 2.192
 Fig. 1SYMBOL-DOT4 (b) shows the equilibrium situation. 
@@ -912,7 +910,7 @@ BAga 6SYMBOL-DOT2 meM prayogoM meM 6SYMBOL-DOT1 Ora 6SYMBOL-DOT2, pravAha pariva
 
 Hindi meaning using Stanford parser 2.206
 As coil C2 is moved towards the coil C1, the galvanometer shows a deflection. 
-jaba lapeta PropN-c2-PropN valayaka PropN-c1-PropN kI ora calI huI hE, viXurAmApI JukAva xiKAwA hE.
+jaba lapeta C2 valayaka C1 kI ora calI huI hE, viXurAmApI JukAva xiKAwA hE.
 
 Hindi meaning using Stanford parser 2.207
 In the preceding Chapter, our concern was to describe the motion of a particle in space quantitatively. 
@@ -970,6 +968,155 @@ But the rest of the body continues to move forward due to inertia.
 paranwu piNda kA SeRa jadawva ko xeya agalA calane ke lie jArI rahawA hE.
 Meaning for verb phrase move_forward  is required
 
+Hindi meaning using Stanford parser 2.220
+In the examples so far, momentum and change in momentum both have the same direction. 
+uxAharaNoM meM abawaka, saMvega meM saMvega Ora parivarwana kA xono vahI xiSA hE.
+
+Hindi meaning using Stanford parser 2.221
+A force is needed to cause this change in momentum vector. 
+bala kI saMvega saxiSa meM isa parivarwana kA kAraNa hone ke lie AvaSyakawA.
+
+Hindi meaning using Stanford parser 2.222
+The component of velocity normal to the force remains unchanged. 
+vega bala ko sAmAnya kA aMSa aparivarwiwa SeRa rahawA hE.
+
+Hindi meaning using Stanford parser 2.223
+For example, in the motion of a projectile under the vertical gravitational force, the horizontal component of velocity remains unchanged. 
+uxAharaNa_ke liye, UXrvAXara guruwvAkarRI bala ke nIce prakRepya kI gawi meM, vega kA kREwija aMSa aparivarwiwa SeRa rahawA hE.
+Multiple adjective senses are available for horizontal. WSD rule is required 
+Multiple adjective senses are available for vertical. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.224
+More precisely, a is the acceleration of the center of mass of the system. 
+aXika yaWAwaWya_rUpa se, nikAya kI saMhawi ke kenxra kA wvaraNa hE.
+
+Hindi meaning using Stanford parser 2.225
+The answer therefore, only indicates the average resistive force. 
+uwwara isalie, sirPa Osawa prawiroXI bala sUciwa karawA hE.
+
+Hindi meaning using Stanford parser 2.226
+Often, in these situations, the force and the time duration are difficult to ascertain separately. 
+aksara, ina hAlawa meM, bala Ora kAla avaXi svawanwra rUpa se jAzca_kara_pawA lagAnA teDe hEM.
+Multiple adjective senses are available for difficult. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.227
+This product is called impulse. 
+yaha uwpAxa Avega kahA jAwA hE.
+
+Hindi meaning using Stanford parser 2.228
+What agency provides the external force? 
+bAharI bala kisa saMsWA xewI hE?
+Multiple adjective senses are available for external. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.229
+In some examples, the answer seems clear. 
+kuCa uxAharaNoM meM, uwwara spaRta prawIwa howA hE.
+
+Hindi meaning using Stanford parser 2.230
+Does the stone exert a force on the earth? 
+kyA kara pawWara pqWvI para bala bala lagAwA hE?
+
+Hindi meaning using Stanford parser 2.231
+Forces always occur in pairs. 
+bala hameSA yugmoM meM aswiwva_meM howe hEM.
+
+Hindi meaning using Stanford parser 2.232
+This idea was expressed by Newton in the form of the third law of motion. 
+yaha vicAra gawi ke wIsare niyama ke rUpa meM PropN-newton-PropN ke xvArA vyakwa kiyA gayA WA.
+
+Hindi meaning using Stanford parser 2.233
+According to the third law. 
+wIsare niyama ke anusAra.
+
+Hindi meaning using Stanford parser 2.234
+Internal forces in a body or a system of particles thus cancel away in pairs. 
+isa prakAra piNda meM yA kaNoM ke nikAya meM Anwarika bala yugmoM meM bAhara niraswa hEM.
+
+Hindi meaning using Stanford parser 2.235
+Impulse and force are in the same direction. 
+Avega Ora bala vahI xiSA meM hEM.
+
+Hindi meaning using Stanford parser 2.236
+Take a familiar example. 
+eka jAnA-mAnA uxAharaNa lIjie.
+
+Hindi meaning using Stanford parser 2.237
+A bullet is fired from a gun. 
+golI banxUka se xAgI huI hE.
+
+Hindi meaning using Stanford parser 2.238
+The two forces act for a common interval of time nonascii2206148t. 
+xo bala samaya nonascii2206148t ke eka sAmAnya anwarAla ke lie kArya karawe hEM.
+Multiple adjective senses are available for common. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.239
+The result can be generalised to any number of forces. 
+pariNAma kisI afka ke lie baloM ke vyApaka banAnA jA sakawA hE.
+
+Hindi meaning using Stanford parser 2.240
+The gravitational force is, of course, all pervasive. 
+guruwvAkarRI bala saba sarvavyApI vAswava meM, hE.,
+Multiple adjective senses are available for pervasive. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.241
+The gravitational force can act at a distance without the need of any intervening medium. 
+guruwvAkarRI bala kisI bIca meM A mAXyama kI jarUrawa ke binA xUrI meM kArya_kara sakawA hE.
+
+Hindi meaning using Stanford parser 2.242
+The component parallel to the surfaces in contact is called friction. 
+samparka meM UparI wala ko aMSa samAnAnwara GarRaNa kahA jAwA hE.
+
+Hindi meaning using Stanford parser 2.243
+The viscous force, air resistance, etc are also examples of contact forces. 
+SyAna bala, vAyu prawiroXa, Axi samparka baloM ke BI uxAharaNa hEM.
+Multiple adjective senses are available for viscous. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.244
+Two other common forces are tension in a string and the force due to spring. 
+xo anya sAmAnya bala rassI meM wanAva Ora - bala kamAnI ke kAraNa hEM.
+Multiple adjective senses are available for common. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.245
+For an inextensible string, the force constant is very high. 
+aviwAnya rassI ke bAxa, bala acara awyanwa UzcA hE.
+
+Hindi meaning using Stanford parser 2.246
+The restoring force in a string is called tension. 
+rassI meM prawyAnayana bala wanAva kahA jAwA hE.
+
+Hindi meaning using Stanford parser 2.247
+The force of gravity (mg) is canceled by the normal reaction force (N) of the table. 
+guruwva bala (mi.grA.) meja ke sAmAnya aBilamba bala ke xvArA (N) raxxa karanA gayA hE.
+
+Hindi meaning using Stanford parser 2.248
+Static friction opposes impending motion. 
+niScala GarRaNa samupasWiwa gawi viroXa karawA hE.
+Multiple adjective senses are available for static. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.249
+This is an important fact that enables the second law to be applicable to a body or a system of particles. 
+yaha mahawwvapUrNa waWya hE jo piNda para lAgU hE yA kaNoM ke nikAya para lAgU hE honA xUsarA niyama yogya banAwA hE.
+Multiple adjective senses are available for applicable. WSD rule is required 
+Multiple adjective senses are available for important. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.250
+An important example of the application of the law of conservation of momentum is the collision of two bodies. 
+saMvega saMrakRaNa ke niyama ke upayoga kA mahawwvapUrNa uxAharaNa xo piNdoM kA safGat hE.
+Multiple adjective senses are available for important. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.251
+Friction, by definition, is the component of the contact force parallel to the surfaces in contact, which opposes impending or actual relative motion between the two surfaces. 
+GarRaNa, pariBARA ke xvArA, samparka meM, UparI wala ko sparSIya bala samAnAnwara kA aMSa hE jo xo UparI wala ke bIca Asanna yA vAswavika sagA gawi viroXa karawA hE.
+Multiple adjective senses are available for actual. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.252
+Lubricants are a way of reducing kinetic friction in a machine. 
+snehaka maSIna meM gawija GarRaNa GatAne kA isa prakAra hEM.
+
+Hindi meaning using Stanford parser 2.253
+(ii) Choose a convenient part of the assembly as one system. 
+(ii) eka nikAya ke jEsA saxana kA eka suviXAjanaka BAga cunawA hE.
+
 Calling Interface related programs
 Print minion_statistics
 No Solution Found :
@@ -977,6 +1124,6 @@ No Solution Found :
 Time-out:
 0
 Solution Found :
-219
+253
 re-executed-sentences:
-26
+32

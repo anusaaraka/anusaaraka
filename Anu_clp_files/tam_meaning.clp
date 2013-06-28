@@ -68,7 +68,7 @@
  )
  ;---------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju
- (defrule wsd_tam_mng_verb
+ (defrule tam_mng_from_wsd_tam_file_with_preceeding_verb
  (declare (salience 7000))
  (id-preceeding_part_of_verb ?id ?verb)
  (id-E_tam-H_tam_mng ?id  ?E_tam ?H_tam)
@@ -82,8 +82,8 @@
  ;---------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju
  ;He wasted his golden opportunity to play in the national team. 
- (defrule wsd_tam_mng_verb1
- (declare (salience 6000))
+ (defrule tam_mng_from_wsd_[word/root]_file
+ (declare (salience 6500))
  (id-H_vib_mng ?id ?H_tam)
  (id-cat_coarse ?id verb)
  ?f1<-(pada_info (group_head_id ?id))
@@ -95,7 +95,7 @@
  )
  ;---------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju
- (defrule wsd_tam_mng_verb2
+ (defrule tam_mng_from_wsd_tam_file
  (declare (salience 5000))
  (id-E_tam-H_tam_mng ?id ?E_tam ?H_tam)
  (id-cat_coarse ?id verb)
@@ -108,8 +108,21 @@
  )
  ;---------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju
- (defrule wsd_tam_mng1
+ ;BROKEN WINDOWS need to be replaced.
+ (defrule tam_mng_for_grp_id_from_wsd_[word/root]_file
  (declare (salience 4000))
+ (id-H_vib_mng ?id ?H_tam)
+ ?f1<-(pada_info (group_head_id ?h)(group_ids $? ?id $?))
+ ?mng<-(meaning_to_be_decided ?id)
+ (not (tam_decided  ?h))
+ =>
+        (retract ?mng)
+        (modify ?f1 (H_tam ?H_tam)(tam_source WSD))
+ )
+ ;---------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju
+ (defrule tam_mng_for_grp_id_from_wsd_tam_file_with_preceeding_verb
+ (declare (salience 3000))
  (id-E_tam-H_tam_mng ?id  ?E_tam ?H_tam)
  (id-preceeding_part_of_verb ?id ?verb)
  ?f1<-(pada_info (group_head_id ?h)(group_ids $? ?id $?))
@@ -121,20 +134,7 @@
  )
  ;---------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju
- ;BROKEN WINDOWS need to be replaced.
- (defrule wsd_tam_mng2
- (declare (salience 3000))
- (id-H_vib_mng ?id ?H_tam)
- ?f1<-(pada_info (group_head_id ?h)(group_ids $? ?id $?))
- ?mng<-(meaning_to_be_decided ?id)
- (not (tam_decided  ?h))
- =>
-        (retract ?mng)
-        (modify ?f1 (H_tam ?H_tam)(tam_source WSD))
- )
- ;---------------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju
- (defrule wsd_tam_mng3
+ (defrule tam_mng_for_grp_id_from_wsd_tam_file
  (declare (salience 2000))
  (id-E_tam-H_tam_mng ?id ?E_tam ?H_tam)
  ?f1<-(pada_info (group_head_id ?h)(group_ids $? ?id $?))

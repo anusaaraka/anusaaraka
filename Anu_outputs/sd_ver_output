@@ -399,12 +399,12 @@ vaha Ora mEM miwra hEM.
 
 Hindi meaning using Stanford parser 2.93
 John Stuart Mill is an important author. 
-joYna PropN-stuart-PropN PropN-mill-PropN mahawvapUrNa leKaka hE.
+joYna PropN-stuart-PropN PropN-mill-PropN mahawwvapUrNa leKaka hE.
 Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.94
 It does not matter what Ted does. 
-yaha mahawvapUrNa_nahIM howA hE tEda kyA karawA hE.
+yaha mahawwvapUrNa_nahIM howA hE tEda kyA karawA hE.
 
 Hindi meaning using Stanford parser 2.95
 Are a dog and a cat here? 
@@ -700,7 +700,7 @@ mEM cinwiwa hUz ki mEM burI waraha se usako kRawi_pahuzcA cukA hUz.
 
 Hindi meaning using Stanford parser 2.163
 Dick is important to fix the problem. 
-PropN-dick-PropN samasyA ko sulaJAne ke lie mahawvapUrNa hE.
+PropN-dick-PropN samasyA ko sulaJAne ke lie mahawwvapUrNa hE.
 Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.164
@@ -721,7 +721,7 @@ vaha usake BUwapUrva vijewAoM ke viruxXa eka PutabAla mEca KelegA.
 
 Hindi meaning using Stanford parser 2.168
 They are playing an important match against Liverpool on Saturday. 
-ve SanivAra ko livarapUla ke viruxXa mahawvapUrNa mEca Kela rahe hEM.
+ve SanivAra ko livarapUla ke viruxXa mahawwvapUrNa mEca Kela rahe hEM.
 Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.169
@@ -876,7 +876,7 @@ kuwwA yA billI yahAz hE.
 
 Hindi meaning using Stanford parser 2.205
 It is important to fix the problem. 
-samasyA ko sulaJAnA mahawvapUrNa hE.
+samasyA ko sulaJAnA mahawwvapUrNa hE.
 Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.206
@@ -1001,7 +1001,7 @@ Multiple adjective senses are available for serious. WSD rule is required
 
 Hindi meaning using Stanford parser 2.234
 You must outline the important sentences with a marker. 
-Apako mArkar pEna se mahawvapUrNa vAkya golIkqwa karane cAhie.
+Apako mArkar pEna se mahawwvapUrNa vAkya golIkqwa karane cAhie.
 Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.235
@@ -1320,7 +1320,7 @@ mEMne mafgalavAra ko PropN-margaret-PropN ko bawAyA ki mEMne socA ki usako samBa
 
 Hindi meaning using Stanford parser 3.6
 High income taxes are important. 
-aXika Aya kara mahawvapUrNa hEM.
+aXika Aya kara mahawwvapUrNa hEM.
 Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.7
@@ -1756,7 +1756,7 @@ usane usake rAjya Bara meM paSuoM ke Ora cidiyoM ke GAwaka ko rokA.
 
 Hindi meaning using Stanford parser 3.99
 Experience is more important for this job than paper qualifications. 
-anuBava kagajI yogyawA kI apekRA isa kAma ke lie aXika mahawvapUrNa hE.
+anuBava kagajI yogyawA kI apekRA isa kAma ke lie aXika mahawwvapUrNa hE.
 Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.100
@@ -2153,7 +2153,7 @@ merA kuwwA padosa meM saBI kuwwoM meM se sabase aXika badA hE.
 
 Hindi meaning using Stanford parser 4.87
 Health is more important than money. 
-svAsWya pEse kI apekRA aXika mahawvapUrNa hE.
+svAsWya pEse kI apekRA aXika mahawwvapUrNa hE.
 PropN-health-PropN pEse kI apekRA aXika mahawvapUrNa hE.
 Multiple adjective senses are available for important. WSD rule is required 
 

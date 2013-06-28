@@ -17,7 +17,7 @@ jAzca kIjie.
 
 Hindi meaning using Stanford parser 2.1
 Similarly, static friction is important in daily life. 
-isI waraha se, sWEwika GarRaNa xEnika jIvana meM mahawvapUrNa hE.
+isI waraha se, sWEwika GarRaNa xEnika jIvana meM mahawwvapUrNa hE.
 Multiple adjective senses are available for important. WSD rule is required 
 Multiple adjective senses are available for static. WSD rule is required 
 
@@ -197,7 +197,7 @@ Empiyara Ora PropN-faraday-PropN ne kahane ke xvArA Ora cumbaka vixyuwa Sakwi pE
 
 Hindi meaning using Stanford parser 2.42
 We know that when we add a positive number to a negative number of the same magnitude, the sum is zero. 
-hama jAnawe hEM ki hama eka qNAwmaka afka ke lie vahI parimANa ke eka sakArAwmaka afka jaba Age kahawe hEM, ki joda SUnya hE.
+hama jAnawe hEM ki hama eka qNAwmaka afka ke lie vahI parimANa ke eka sakArAwmaka afka jaba milAo, ki joda SUnya hE.
 
 Hindi meaning using Stanford parser 2.43
 This forms the leaves of your electroscope. 
@@ -209,7 +209,7 @@ pqWakana electroscope para mUlya kI mAwrA kI eka mApa hE.
 
 Hindi meaning using Stanford parser 2.45
 Fold the strips into half so that you make a mark of fold. 
-arXAMSa ke anxara pattiyAz waha kIjie jisase ki Apa waha kara kA niSAna banAwe hEM.
+arXAMSa ke anxara pattiyAz waha kIjie jisase ki Apa cunnata kA niSAna banAwe hEM.
 
 Hindi meaning using Stanford parser 2.46
 The same effect is seen in the leaf electroscope. 
@@ -256,14 +256,130 @@ Classical Physics deals mainly with macroscopic phenomena and includes subjects 
 SAswrIya BOwika vijFAna sWUla pariGatanA ke sAWa pramuKa rUpa se vyavahAra karawA hE Ora yAnwrikI kI waraha, vExyuwagawikI kI waraha, prakASikI kI waraha Ora URmAgawikI kI waraha viRaya sammiliwa karawA hE.
 
 Hindi meaning using Stanford parser 2.54
-Mechanics founded on Newton's laws of motion and the law of gravitation is concerned with the motion (or equilibrium) of particles, rigid and deformable bodies, and general systems of particles. 
-gawi ke PropN-newton-PropN ke niyamoM para Ora guruwvAkarRaNa ke niyama para sWApanA kI huI yAnwrikI kaNa, xqDa Ora deformable piNdoM kA, Ora kaNoM ke vyApaka nikAyoM kA (yA sanwulana) gawi se sambanXiwa hE.
-Multiple adjective senses are available for concerned. WSD rule is required 
-Multiple adjective senses are available for general. WSD rule is required 
-
-Hindi meaning using Stanford parser 2.55
 A bar magnet can attract an iron nail from a distance. 
 eka SarAbaGara cumbaka xUrI se lohA nAKUna AkarRiwa_kara sakawA hE.
+
+Hindi meaning using Stanford parser 2.55
+However, at the end of the time interval, observations show that each body acquires the same momentum. 
+PiraBI, kAla anwarAla ke anwa meM, prekRaNa xiKAwe hEM ki eka eka piNda vahI saMvega arjana karawA hE.
+
+Hindi meaning using Stanford parser 2.56
+Let us note at this stage some important points about the second law. 
+caliye hama xUsare niyama ke bAre meM kuCa mahawwvapUrNa nokeM isa maFca meM XyAna_se xeKeM.
+Multiple adjective senses are available for important. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.57
+The actual resistive force, and therefore, retardation of the bullet may not be uniform. 
+vAswavika prawiroXI bala ke lie, Ora isalie, golI kI roka ke lie ekasamAna nahIM ho.
+Multiple adjective senses are available for actual. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.58
+What is the origin of the external force on the body? 
+piNda para bAharI bala kA mUla binxu kyA hE?
+Multiple adjective senses are available for external. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.59
+The compressed spring in turn exerts a force on your hand and you can feel it. 
+kI_bArI_Ane para safkRepa karanA kamAnI Apake hAWa para bala bala lagAwI hE Ora Apa yaha mahasUsa_kara sakawe hEM.
+
+Hindi meaning using Stanford parser 2.60
+To every action, there is always an equal and opposite reaction. 
+prawyeka kriyA ko, eka samAna Ora viroXI prawikriyA hameSA hE.
+Multiple adjective senses are available for equal. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.61
+Let us note some important points about the third law, particularly in regard to the usage of the terms: action and reaction. 
+caliye hama kriyA Ora prawikriyA avaXi ke vyavahAra ke viRaya meM: viSeRa rUpa se wIsare niyama ke bAre meM, kuCa mahawwvapUrNa nokeM XyAna_se xeKeM.
+Multiple adjective senses are available for important. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.62
+They add up to give a null force. 
+ve eka akRama bala xene ke lie yoga howe hEM.
+Multiple adjective senses are available for null. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.63
+How to find the force on the wall? 
+kEse xIvAra para bala ko pAnA?
+
+Hindi meaning using Stanford parser 2.64
+The direction of impulse (and force) is the same as in (a) and is normal to the wall along the negative x direction. 
+Avega kI xiSA (Ora majabUra karawA hE) - vahI pahale kI waraha meM hE Ora qNAwmaka x xiSA ke kinAre xIvAra ko sAmAnya hE.
+
+Hindi meaning using Stanford parser 2.65
+As before, using Newton's third law, the force on the wall due to the ball is normal to the wall along the positive x direction. 
+pUrvavawa, PropN-newton-PropN ke wIsare niyama kA upayoga karawe_hue, - xIvAra golA ke kAraNa para bala sakArAwmaka x xiSA ke kinAre xIvAra ko sAmAnya hE.
+
+Hindi meaning using Stanford parser 2.66
+Since initially, both are at rest, the change in momentum equals the final momentum for each. 
+kyozki SurU meM, xono viSrAma meM hEM, saMvega meM isaliye parivarwana eka eka ke lie anwima saMvega kI_barAbarI karawA hE.
+
+Hindi meaning using Stanford parser 2.67
+This fact is known as the law of conservation of momentum. 
+yaha waWya saMvega saMrakRaNa ke niyama ke nAma se jAnA jAwA hE.
+
+Hindi meaning using Stanford parser 2.68
+The total momentum of an isolated system of interacting particles is conserved. 
+eka_xUsare_ko_praBAviwa karawe hue kaNoM ke viyukwa nikAya kA sampUrNa saMvega surakRiwa raKA huA hE.
+
+Hindi meaning using Stanford parser 2.69
+Equilibrium of a particle in mechanics refers to the situation when the net external force on the particle is zero. 
+yAnwrikI meM kaNa kI sAmyAvasWA hAlawa ko sanxarBa xewI hE kaNa para vAswavika bAharI bala SUnya jaba hE.
+Multiple adjective senses are available for external. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.70
+The horizontal and vertical components of the resultant force must vanish separately. 
+pariNAmI bala ke kREwija Ora UXrvAXara aMSoM ko svawanwra rUpa se lupwa honA cAhie.
+Multiple adjective senses are available for horizontal. WSD rule is required 
+Multiple adjective senses are available for vertical. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.71
+Every object on the earth experiences the force of gravity due to the earth. 
+pqWvI para prawyeka vaswu guruwva bala pqWvI ke kAraNa anuBava karawI hE.
+
+Hindi meaning using Stanford parser 2.72
+Gravity also governs the motion of celestial bodies. 
+guruwvAkarRaNa BI svargIya piNdoM kI gawi vaSA_meM karawA hE.
+Multiple adjective senses are available for celestial. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.73
+All the other forces common in mechanics are contact forces. 
+yAnwrikI meM saBI xUsarA bala sAmAnya samparka bala hEM.
+Multiple adjective senses are available for common. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.74
+When bodies are in contact (e.g. a book resting on a table, a system of rigid bodies connected by rods, hinges and other types of supports), there are mutual contact forces (for each pair of bodies) satisfying the third law. 
+piNda samparka meM ( meja para, Cada waka, kabjoM waka Ora sahAroM ke anya prakAroM waka telIPona_para milAe hue xqDa piNdoM kA nikAya eka puswaka viSrAma uxAharaNArWa) jaba hEM, wo wIsarA niyama sanwuRta karawe_hue pArasparika samparka baloM (piNdoM ke eka eka yugma ke lie) hEM.
+Multiple adjective senses are available for mutual. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.75
+In Chapter 1, we learned that there are four fundamental forces in nature. 
+aXyAya 1 meM, hamane sIKA ki prakqwi meM cAra mUlaBUwa bala hEM.
+
+Hindi meaning using Stanford parser 2.76
+The different contact forces of mechanics mentioned above fundamentally arise from electrical forces. 
+mUla sixXAnwa se uparyukwa yAnwrikI ke alaga samparka bala bijalI ke baloM se uTawe hEM.
+Multiple adjective senses are available for electrical. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.77
+Yet they are very useful in practical calculations in mechanics. 
+wo_BI ve yAnwrikI meM vyAvahArika hisAba kiwAboM meM awyanwa upayogI hEM.
+Multiple adjective senses are available for useful. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.78
+In many situations, like in a machine with different moving parts, friction does have a negative role. 
+bahuwa sArI hAlawa meM, alaga hqxaya sparSI BAga se maSIna meM kI_waraha, GarRaNa kA eka qNAwmaka BUmikA hE.
+
+Hindi meaning using Stanford parser 2.79
+Besides, each body in the assembly experiences the force of gravity. 
+ke alAvA saxana meM eka eka piNda guruwva bala anuBava karawA hE.
+
+Hindi meaning using Stanford parser 2.80
+Include also the forces on the system by other agencies. 
+anya saMsWAoM ke xvArA nikAya para BI bala sammiliwa kIjie.
+
+Hindi meaning using Stanford parser 2.81
+(ii) the force on the floor by the system (action); the force on the system by the floor (reaction). 
+(ii) nikAya ke xvArA (kriyA) ParSa para bala; ParSa ke xvArA (prawikriyA) nikAya para bala.
 
 Calling Interface related programs
 Print minion_statistics
@@ -272,6 +388,6 @@ No Solution Found :
 Time-out:
 1
 Solution Found :
-54
+80
 re-executed-sentences:
-12
+21
