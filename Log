@@ -1,4 +1,4 @@
- 21-06-13
+ 01-07-13
  ========
  1. In sd_relation_rules.clp
         1. Modified : kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux, AjFArWaka_vAkya, sub_samA_with_cop, 
@@ -127,13 +127,15 @@
 	mapping-punctuations.lex	replacing_canonical.lex	
 48. Updated ol_stdenglish.sh same as stdenglish.sh
 49. Updated apertium-en-hi.en.metadix
-50. Updated changes_in_databases
-51. Updated replace-abbrevations.sh
-52. Updated minion dictionaries
-53. Updated dic_compile.sh
-54. Updated iit-bombay dictionary in goldendict
-55. Updated Log
-56. Updated the following verified's
+50. Updated run_multiple_parse_penn.sh
+51. Updated new stanford version in std_tregex/run_tregex.sh
+52. Updated changes_in_databases
+53. Updated replace-abbrevations.sh
+54. Updated minion dictionaries
+55. Updated dic_compile.sh
+56. Updated iit-bombay dictionary in goldendict
+57. Updated Log
+58. Updated the following verified's
 	sd_verified (491)	phy_verified (253)		phy_partial_verified (81)	
 	verified (40)		partial_ver (22)    		small_sent_verified_sd (66)
 

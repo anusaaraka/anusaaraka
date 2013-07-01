@@ -1,4 +1,4 @@
-  SHALLOW PARSER Installation :
+1.SHALLOW PARSER Installation :
   ===========================
 	1. graphviz (from Synaptic package manager)	
 	2. tofrodos (		"		  ) 
@@ -30,11 +30,13 @@
 			ii) Accordingly make a soft link to the existing one to dos2unix
 				sudo ln -s /usr/bin/fromdos /usr/bin/dos2unix
 
-   COMPILE::
+2. tar -xvzf shallow-parser-hin-3.0.fc8.tgz
+
+3. COMPILE::
    =======
 	sh compile_shallow_parser.sh
 
-   RUN::
+4. RUN::
    ====
 	sh run_shallow_parser.sh <file-name>
 		Ex: sh run_shallow_parser.sh test 
