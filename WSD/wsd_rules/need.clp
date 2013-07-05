@@ -7,10 +7,10 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id AvaSyakawA))
+(assert (id-wsd_root_mng ?id AvaSyakawA))
 (assert (kriyA_id-subject_viBakwi ?id kI))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  need.clp  	need0   "  ?id "  AvaSyakawA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  need.clp  	need0   "  ?id "  AvaSyakawA )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi  " ?*wsd_dir* "  need.clp       need0   "  ?id " kI )" crlf))
 )
 

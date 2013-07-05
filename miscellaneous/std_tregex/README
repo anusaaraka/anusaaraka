@@ -40,4 +40,4 @@
                 Above expression can also be written as __ [<, (__ <<, out) & <- ( __  <<-  which) ] (with out using variable names)
 
   NOTE:-
- 1) By default we get 25 parses for a sentence, if one want to see more parse trees change the "-printPCFGkBest 25" option  to desired number in "$HOME_anu_test/Parsers/stanford-parser/stanford-parser-2010-11-30/run_multiple_parse_penn.sh" file.
+ 1) By default we get 25 parses for a sentence, if one want to see more parse trees change the "-printPCFGkBest 25" option  to desired number in "$HOME_anu_test/Parsers/stanford-parser/stanford-parser-2013-04-05/run_multiple_parse_penn.sh" file.

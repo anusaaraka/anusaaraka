@@ -806,6 +806,9 @@ Modified:
 	71. sunday_noun	iwavAra		as	sunday_noun	ravivAra  (Suggested by Sukhada 17-06-13)	
         72. Modified   mahawvapUrNa	as  mahawwvapUrNa 
 	73. Modified 'trI' as 'wrI' Ex: strI as 'swrI'			(by Roja 20-06-13)
+	74. noise_noun	AvAja/Sora/kolAhala				(Suggested by Chaitanya Sir 05-07-13)
+				as
+	    noise_noun	Sora/kolAhala/AvAja
 
   Modifying spelling of the existing word list::
   -------------------------------------------- 
@@ -864,6 +867,7 @@ Modified:
 	19. he_pronoun			yaha				(		"			)
   	20. fox_noun			lomada				( Suggested by Sukhada 14-05-13		)
 	21. you_pronoun			wU				( Suggested by Chaitanya Sir  24-5-13	)
+	22. noise_verb			Sora_kara/kolAhala_kara		( 		"	      05-07-13  )
   
  changes in preposition.txt
  ==========================
@@ -972,6 +976,7 @@ Modified:
 	nuclear_adjective	ANvika		(Suggested by Chaitanya Sir 05-01-13)
 	chemistry_noun  	rasAyana_vijFAna(	"		    20-04-13)
 	biology_noun    	jIva_vijFAna	(	"			"   )
+	channel_noun		saraNi		(	"  by Amit MNNIT 01-07-13)
 
  Modified :
  ---------

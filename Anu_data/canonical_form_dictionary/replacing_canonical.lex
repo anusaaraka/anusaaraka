@@ -15,5 +15,6 @@ kyofki 	{	printf("kyozki");/* kyofki   becomes kyozki  */	}
 cUfki	{	printf("cUzki"); /* cUfki    becomes cUzki   */	}
 xUfgI	{	printf("xUZgI"); /* xUfgI    becomes xUZgI   */ }
 AUfgA	{	printf("AUzgA"); /* AUfgA    becomes AUzgA   */ }
+KiFc	{	printf("Kizc");  /* KiFca    becomes Kizca   */	}
 
 %%

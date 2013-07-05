@@ -8,10 +8,10 @@
 (kriyA-object ?id  =(+ ?id 2))
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id Pira_se_raKA))
+(assert (id-wsd_root_mng ?id Pira_se_raKA))
 (assert (kriyA_id-object_viBakwi ?id ko))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  reload.clp      reload1   "  ?id "   Pira_se_raKA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  reload.clp      reload1   "  ?id "   Pira_se_raKA )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi  " ?*wsd_dir* "  reload.clp      reload1   "  ?id " ko )" crlf)
 )
 )

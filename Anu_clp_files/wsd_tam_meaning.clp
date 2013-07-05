@@ -11,6 +11,7 @@
  (declare (salience 1000))
  (id-TAM ?root_id ?tam)
  (not (file_loaded ?root_id))
+ (not (not_SandBox)) ;Added for server purpose. (Suggested by Chaitanya Sir, Added by Roja(05-07-13))
  =>
         (bind ?file (str-cat  ?*provisional_wsd_path* "/" ?tam "_tam.clp"))
         (bind ?file_load (load* ?file))

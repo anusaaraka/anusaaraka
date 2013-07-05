@@ -22,7 +22,7 @@ char word[10000], canonical_word[10000];
 
 \(assert[ ]\(kriyA_id-subject_viBakwi[ ]	{	ECHO; BEGIN hnd_wrd;    }
 
-\(assert[ ]\(affecting_id-affected_ids-wsd_group_root_mng[ ]\?[a-z0-9 \?\(\)=+-]*[ ]        										     {       ECHO; BEGIN hnd_wrd;    }
+\(assert[ ]\(affecting_id-affected_ids-wsd_group_(root|word)_mng[ ]\?[a-z0-9 \?\(\)=+-]*[ ]        										     {       ECHO; BEGIN hnd_wrd;    }
 
 <hnd_wrd>\)\)					{	ECHO; BEGIN INITIAL;	}
 
