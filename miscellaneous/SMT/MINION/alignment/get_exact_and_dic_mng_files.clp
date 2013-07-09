@@ -1,6 +1,9 @@
 ;This file is written by Shirisha Manju (5th Dec 2012)
 
 
+
+
+
 ;---------------------------------genereting single verb match ----------------------------------------------------
 (defrule get_mngs_aligned_for_verb
 (declare (salience 1000))

@@ -88,7 +88,7 @@
  (or (mother-punct_head-punctuation ?PP ?p_h ?punc)(mother-punct_head-right_punctuation ?PP ?p_h ?punc)(mother-punct_head-left_punctuation ?PP ?p_h ?punc))
  (Node-Category  ?PP  NP|S|PP|ADJP|INTJ|ADVP|VP|FRAG|PRT|PRN)
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?PP $?d ?JJ $?d1)
- (Node-Category  ?JJ  CD|NN|NNS|NNP|VBG|DT|JJ|JJS|JJR|UH|RB|VBZ|PRP|PRP$|VBD|FW|VBN|VB|VBP|IN|UCP|RP)
+ (Node-Category  ?JJ  CD|NN|NNS|NNP|VBG|DT|JJ|JJS|JJR|UH|RB|VBZ|PRP|PRP$|VBD|FW|VBN|VB|VBP|IN|UCP|RP|SYM)
 ?f0<-(Head-Level-Mother-Daughters ? ? ?JJ $?prep)
  =>
         (retract ?f0 ?f1)
@@ -102,7 +102,7 @@
  (or (mother-punct_head-punctuation ?PP ?p_h ?punc)(mother-punct_head-right_punctuation ?PP ?p_h ?punc)(mother-punct_head-left_punctuation ?PP ?p_h ?punc))
  (Node-Category  ?PP  PP|NP|ADJP|ADVP|VP|FRAG|UCP|PRN)
  ?f1<-(Head-Level-Mother-Daughters ?h ?l ?PP $?d ?JJ $?d1)
- (Node-Category  ?JJ  PRN|NP|NN|PP|TO|QP|ADJP|ADVP|VP|S|COMP_PH)
+ (Node-Category  ?JJ  PRN|NP|NN|PP|TO|QP|ADJP|ADVP|VP|S|COMP_PH|SYM)
 ?f0<-(Head-Level-Mother-Daughters ? ? ?JJ $?prep)
  (not (punc_inserted ?p_h))
  =>

@@ -63,13 +63,11 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id calA_jA))
-(assert (id-wsd_root ?id leave))
 (assert (id-H_vib_mng ?id yA))
 (assert (kriyA_id-object_viBakwi ?id se))  ;added by Meena(2.3.10)
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  left.clp    left3   "  ?id "   calA_jA )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng   " ?*wsd_dir* "  left.clp    left3   "  ?id "  yA )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  left.clp    left3   "  ?id " leave)" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "   left.clp       left3   "  ?id " se )" crlf)
 )
 )
@@ -89,10 +87,9 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id CodZa_jA))
-(assert (id-wsd_root ?id leave))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  left.clp      left4   "  ?id "  CodZa_jA )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  left.clp      left4   "  ?id " leave )" crlf))
+)
 )
 
 
@@ -108,10 +105,9 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id CUta))
-(assert (id-wsd_root ?id leave))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  left.clp      left5   "  ?id "  CUta )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  left.clp      left5   "  ?id " leave )" crlf))
+)
 )
 
 
@@ -126,15 +122,28 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id calA_jA))
-(assert (id-wsd_root ?id leave))
 (assert (id-H_vib_mng ?id yA))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  left.clp    left6  "  ?id "   calA_jA )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng   " ?*wsd_dir* "  left.clp    left6   "  ?id "  yA )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  left.clp    left6   "  ?id " leave)" crlf)
 )
 )
 
+;Added by aditya and hardik(5.6.13),IIT(BHU)
+;I was left alone.
+;We are left behind.
+(defrule left7
+(declare (salience 4100))
+(id-root ?id leave)
+?mng <-(meaning_to_be_decided ?id)
+(id-root = (- ?id 1) be|am) 
+(kriyA-subject ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id CUta))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  left.clp 	left7   "  ?id "  CUta )" crlf))
+)
 
 ;"left","Adj","1.bAzyA"
 ;Some people write with their left hand. 

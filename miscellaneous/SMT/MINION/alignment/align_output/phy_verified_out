@@ -17,7 +17,7 @@ jAzca kIjie.
 
 Hindi meaning using Stanford parser 2.1
 It is impossible for a car to move on a very slippery road. 
-eka awyanwa PisalanevAlA jagaha sadaka para calanA gAdI ke bAxa asamBava hE.
+eka awyanwa PisalanevAlA sadaka para calanA gAdI ke bAxa asamBava hE.
 Multiple adjective senses are available for impossible. WSD rule is required 
 Multiple adjective senses are available for slippery. WSD rule is required 
 
@@ -112,7 +112,7 @@ hama kuCa byOrA meM ekasamAna_vqwwIya gawi kI carcA karezge.
 
 Hindi meaning using Stanford parser 2.23
 The length of each side is a scalar and the perimeter is also a scalar. 
-eka eka waraPa kI lambAI axiSa hE Ora parimApa BI axiSa hE.
+hara eka waraPa kI lambAI axiSa hE Ora parimApa BI axiSa hE.
 
 Hindi meaning using Stanford parser 2.24
 What is a vector? 
@@ -283,6 +283,8 @@ se_pahale_AnA_yA_Gatiwa howe hue prekRaNa meM, saMvega kA saxiSa cariwra spaRta 
 Hindi meaning using Stanford parser 2.61
 We see leaves falling from trees and water flowing down a dam. 
 hama bAzXa para bahawA huA pedoM se Ora pAnI se girawe_hue CuttiyoM ko xeKawe hEM.
+Meaning for verb phrase flow_down  is required
+
 Hindi meaning using Stanford parser 2.62
 Obviously, these tables are not exhaustive. 
 spaRta rUpa se, ye mejeM soKane vAlI nahIM hEM.
@@ -418,7 +420,7 @@ Multiple adjective senses are available for important. WSD rule is required
 
 Hindi meaning using Stanford parser 2.92
 The mass of each square is 1kg, since the lamina is uniform. 
-eka eka cOka kI saMhawi 1kg, hE kyozki patala ekasamAna hE.
+hara eka cOka kI saMhawi 1kg, hE kyozki patala ekasamAna hE.
 
 Hindi meaning using Stanford parser 2.93
 We have so far considered refraction at a plane interface. 
@@ -549,7 +551,7 @@ xqRti- wanwu ucca guNavawwA sammiSra gilAsoM SYMBOL-SLASH billOra wanwuoM ke sAW
 
 Hindi meaning using Stanford parser 2.123
 Each fiber consists of a core and cladding. 
-eka eka wanwu - saba_se_mahawwvapUrNa muxxe kA Ora Xawu AvaraNa kA banA honA hE.
+hara eka wanwu - saba_se_mahawwvapUrNa muxxe kA Ora Xawu AvaraNa kA banA honA hE.
 
 Hindi meaning using Stanford parser 2.124
 Thus, an optical fiber can be used to act as an optical pipe. 
@@ -1014,7 +1016,7 @@ kuCa uxAharaNoM meM, uwwara spaRta prawIwa howA hE.
 
 Hindi meaning using Stanford parser 2.230
 Does the stone exert a force on the earth? 
-kyA kara pawWara pqWvI para bala bala lagAwA hE?
+kyA kara pawWara pqWvI para bala kAma_meM lAwA hE?
 
 Hindi meaning using Stanford parser 2.231
 Forces always occur in pairs. 
@@ -1126,4 +1128,4 @@ Time-out:
 Solution Found :
 253
 re-executed-sentences:
-32
+31

@@ -189,7 +189,7 @@
 (declare (salience 5000))
 (id-root ?id for)
 ?mng <-(meaning_to_be_decided ?id)
-(id-root ?id1  reason|laugh|fear|cough|arrogance|tear)
+(id-root ?id1  laugh|fear|cough|arrogance|tear);Removed 'reason' from the list bcoz reason itself means vajaha. Modified by Manju (Suggested by Chaitanya Sir (06-07-13)
 (kriyA-for_saMbanXI ?kriyA ?id1)
 =>
 (retract ?mng)

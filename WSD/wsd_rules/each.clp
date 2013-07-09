@@ -25,10 +25,10 @@
 (id-cat_coarse ?id determiner)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id eka_eka))
+(assert (id-wsd_root_mng ?id hara_eka)) ;Modified "eka_eka" as "hara_eka" by Paridhi gupta IIT(BHU) (5.7.13) 
 ;(assert (id-wsd_root_mng ?id prawyeka))  
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  each.clp 	each1   "  ?id "  eka_eka)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  each.clp 	each1   "  ?id "  hara_eka)" crlf))
 )
 
 ;"each","Det","1.prawyeka"

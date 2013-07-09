@@ -44,3 +44,19 @@
 ;"best","N","1.sarvowwama"
 ;I tried my level best to win the match.
 ;
+
+
+;Added by Aditya and Hardik(6.7.13),IIT(BHU)
+;This is the color I like best.
+(defrule best3
+(declare (salience 5000))
+(id-root ?id best)
+?mng <-(meaning_to_be_decided ?id)
+(id-word = (- ?id 1) like)
+(id-cat_coarse ?id adverb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sabase_jyAxA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  best.clp 	best3   "  ?id "  sabase_jyAxA )" crlf))
+)

@@ -32,6 +32,51 @@
 ;vaha purAnA mahala eka"haunted" mahala bana cukA hE.
 ;
 ;
+
+;Added by Abhinav IIT(BHU)
+(defrule haunt4
+(declare (salience 4860))
+(id-root ?id haunt)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(id-cat ?id verb_past_participle)
+(id-cat_coarse =(+ ?id 1) noun|pronoun|preposition)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id GabarA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  haunt.clp 	haunt4   "  ?id "  GabarA )" crlf))
+)
+
+
+;Added by Abhinav IIT(BHU)
+(defrule haunt3
+(declare (salience 4850))
+(id-root ?id haunt)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(id-cat ?id verb_past_participle)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id BUwiyA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  haunt.clp 	haunt3   "  ?id "  BUwiyA )" crlf))
+)
+
+;The house is haunted.
+;Those memories haunt me.
+;He was haunted by childhood memories.
+;She was haunted by the death.
+;They are haunted by fear.
+;Those final screams will haunt her forever.
+;His war was coming back to haunt him again.
+;The scene will always haunt me.
+;Ghosts haunt vacant houses.
+;Hardik is haunted to sit in plane.
+;Aditya was haunted by Hardik.
+;I feel haunted by the fact.
+
+
 (defrule haunt2
 (declare (salience 4800))
 (id-root ?id haunt)

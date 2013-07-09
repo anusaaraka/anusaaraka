@@ -1,4 +1,4 @@
- 05-07-13
+ 09-07-13
  ========
  1. In sd_relation_rules.clp
         1. Modified : kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux, AjFArWaka_vAkya, sub_samA_with_cop, 
@@ -12,9 +12,8 @@
  2. run_H_gen_minion.bat
 	Loaded "manual_hin.morph.dat" file in modify_root_using_dic module 
 	Removed para_sent_id_info file from get_exact_and_dic_mng_files module
-        Removed generation of "mngs_aligned_with_dic.dat" , "mngs_aligned_with_anu.dat" and "mngs_aligned_with_minion.dat"
-                files in get_exact_and_dic_mng_files module
-        Added save-facts to generate meaning_alignment_source_tmp.dat in get_exact_and_dic_mng_files module
+        Removed  get_exact_and_dic_mng_files module
+	Added save-facts to generate "meaning_alignment_source_tmp.dat" file in word_alignment module
  3. get_mng.clp
 	Added    : get_emphatic_for_prev_word, leftout_single_word_and_single_mng_restricted and print_corrected_mng_info 
 	Modified : leftout_single_word_and_single_mng
@@ -31,10 +30,11 @@
 	Modified: convert_WH_Q_sent_to_normal  and  rename_VP_for_To
 	Added   : remove_SBAR_S_VP_TO
  9. modify_minion_output.clp:
-	Modified :  check_correctness_for_multi_word and check_for_correctness" rules 
+	Modified : check_correctness_for_multi_word, check_correctness_for_kara_verb_with_root and check_for_correctness  
 	Added    : get_minion_aligned_mngs,  get_minion_aligned_mngs_for_new_word, print_anu_alignment_info
                    print_dic_alignment_info, print_minion_alignment_info,       del_minion_aligned_fact_with_same_mng
-                   print_minion_alignment_for_dic  and print_minion_alignment_info1
+		   replace_mng_with_root_for_exact_and_dic_src_fact and print_minion_align_info_for_hyphen_word
+                   print_minion_alignment_for_dic and print_minion_alignment_info1 
 	Modified the rules to include meaning alignment src fact in rule part
 10. Modified "chk_for_hnd_mwe" rule in manual_word_grp_using_dic.clp (added hnd_multi_word_from_iit_bombay_dic.gdm)
 11. Added "rm_LWG_grouped_id_from_restricted_word" rule in get_word_potential_facts.clp
@@ -51,7 +51,9 @@
 	Added   : replace_VP1
 16. WSD: Modified : found.clp	improve.clp	baby.clp	is_en_tam.clp	call.clp	get.clp	
 		    add.clp	john.clp	black.clp	on.clp		paper.clp	need.clp
-		    reload.clp	reloaded.clp
+		    reload.clp	reloaded.clp	each.clp        for.clp         left.clp	by.clp     
+		    best.clp    haunt.clp
+	 Added   : room.clp
 17. GNP_agreement.clp
         Added : print_debug_info
         Modified the rules to add function call
@@ -72,22 +74,29 @@
         Added    : PropN_rule_from_NER1
 23. Warning message when 'Parserid Wordid mapping missing' is given for a id, following files are modified::
 	run_sentence_stanford.sh	run_sentence_stanford_minion.sh
-24. Added "get_phrase_with_next_mng" rule in get_phrase.clp
+24. get_phrase.clp
+	Added : get_phrase_with_next_mng , get_comp_ids, get_phrase_ids, replace_ids, replace_ids1 and	print_phrase 
 25. manual_lwg.clp
 	    Added    : multi_word_with_no_root
 	    Modified : word_[hyphen]_word, single_vib1 and change_remaining_facts1
 26. Modified "print_cost_for_consecutive_ids" rule in prepare_minion_input.clp
-27. Modified "word_and_vib_match_with_anu_hindi_root1" rule in word_alignment.clp
+27. word_alignment.clp
+	Modified  : word_and_vib_match_with_anu_hindi_root1 
+	Added     : get_root_for_new_id and get_meaning_src rules
+	Removed   : to_infinitive_pada
+        Modified the file to get meaning alignment source info
 28. alignment.bat
 	Loaded "hin_mng_without_@.dat" file in get_mng module 
 	Removed "get_minion_aligned_mngs_info" module
-        Loaded the folloeing files in modify_minion_output module
+        Loaded the following files in modify_minion_output module
                 hin_mng_without_@.dat           meaning_alignment_source_tmp.dat        restricted_word_mngs.dat
                 para_sent_id_info.dat           position.dat                            manual_lwg.dat
         Generated the following files in modify_minion_output module
                 minion_sen_dic.txt              mngs_aligned_with_dic.dat       meaning_alignment_source.dat
                 mngs_aligned_with_anu.dat       mngs_aligned_with_minion.dat    correction_info.dat
         Loaded correction_info.dat in get_mng module
+	Loaded original_word.dat and manual_word.dat files in modify_minion_output module
+	Loaded database_mng.dat and meaning_alignment_source.dat files in get_phrase module
 29. agreement.clp
 	Modified "sub_or_agr" and "sub_agrmt" rules to add "kriyA-dummy_subject" in the list
 30. Added "get_Dot_punc_for_Q_sent" rule in handling_punctuations.clp
@@ -125,23 +134,25 @@
     run_sentence_stanford_minion.sh  files accordingly
 47. In wsd_tam_meaning.clp:
 	Loaded sandbox fact to use provisional dictionary when needed
-48. Updated the following 'lex' files
+48. insert_punctuation.clp
+	Modified : get_phrase_group and get_phrase_group1 rules to add SYM in the list
+49. Updated the following 'lex' files
 	add_snt_mrkr.lex		abbrevations.lex	titles.lex
 	mapping-punctuations.lex	replacing_canonical.lex	
-49. Updated ol_stdenglish.sh same as stdenglish.sh
-50. Updated apertium-en-hi.en.metadix
-51. Updated run_multiple_parse_penn.sh
-52. Updated new stanford version in std_tregex/run_tregex.sh std_tregex/README
-53. Updated replacing_canonical.lex
-54. Updated get_canonical_form_in_wsd.lex
-55. Updated changes_in_databases
-56. Updated replace-abbrevations.sh
-57. Updated minion dictionaries
-58. Updated dic_compile.sh
-59. Updated iit-bombay dictionary in goldendict
-60. Updated Log
-61. Updated the following verified's
-	sd_verified (491)	phy_verified (253)		phy_partial_verified (81)	
+50. Updated ol_stdenglish.sh same as stdenglish.sh
+51. Updated apertium-en-hi.en.metadix
+52. Updated run_multiple_parse_penn.sh
+53. Updated new stanford version in std_tregex/run_tregex.sh std_tregex/README
+54. Updated replacing_canonical.lex
+55. Updated get_canonical_form_in_wsd.lex
+56. Updated changes_in_databases
+57. Updated replace-abbrevations.sh
+58. Updated minion dictionaries
+59. Updated dic_compile.sh
+60. Updated iit-bombay dictionary in goldendict
+61. Updated Log
+62. Updated the following verified's
+	sd_verified (492)	phy_verified (253)		phy_partial_verified (81)	
 	verified (40)		partial_ver (22)    		small_sent_verified_sd (66)
 
 ==========================================================================================================================

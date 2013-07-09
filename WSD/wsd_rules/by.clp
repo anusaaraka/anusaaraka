@@ -137,7 +137,9 @@
 (declare (salience 3900))
 (id-root ?id by)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) time|time period|period of time|period|moment|minute|second|instant|point in time|clock time|hour)
+;(id-word =(+ ?id 1) time|time period|period of time|period|moment|minute|second|instant|point in time|clock time|hour)
+(id-word =(+ ?id 1) time|period|moment|minute|second|instant|point|clock|hour);commented the above fact by Manju(20--6-13) 
+;								              bcoz in id-word fact word field has no spaces.
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id waka))

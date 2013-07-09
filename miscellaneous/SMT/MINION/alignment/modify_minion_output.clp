@@ -28,16 +28,35 @@
         (assert (mng_to_be_aligned ?mid))
 )
 ;-------------------------------------------------------------------------------------------------
+(defrule replace_mng_with_root_for_exact_and_dic_src_fact
+(declare (salience 1600))
+?f0<-(id-src-eng_wrds-anu_mng-man_mng ?aid ?src&~minion ?root  $?a_mng - $?m_mng)
+(anu_id-anu_mng-sep-man_id-man_mng ?aid $?a_mng - ?mid $?m_mng)
+(id-HM-source ?aid $?a_root ?)
+(manual_id-mapped_id ?mapped_id ?mid)
+(manual_id-cat-word-root-vib-grp_ids ?mapped_id ? $? - $?m_root - $? - $? )
+(not (root_modified ?aid))
+=>
+	(retract ?f0)
+        (assert (id-src-eng_wrds-anu_mng-man_mng ?aid ?src ?root  $?a_root - $?m_root))
+	(assert (root_modified ?aid))
+)
+;-------------------------------------------------------------------------------------------------
 (defrule get_minion_aligned_mngs
 (declare (salience 1500))
 (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?m_mng)
 (not (id-src-eng_wrds-anu_mng-man_mng ?aid $?))
 (id-root ?aid ?root)
+(id-original_word ?aid ?wrd)
 (manual_id-mapped_id ?mapped_id ?mid)
 (id-HM-source ?aid $?a_root ?)
 (manual_id-cat-word-root-vib-grp_ids ?mapped_id ? $? - $?m_root - $? - $? )
 =>
-	(assert (id-src-eng_wrds-anu_mng-man_mng ?aid minion ?root $?a_root - $?m_root))
+	(if (eq ?root -) then
+		(assert (id-src-eng_wrds-anu_mng-man_mng ?aid minion ?wrd  $?a_root - $?m_root))
+	else
+		(assert (id-src-eng_wrds-anu_mng-man_mng ?aid minion ?root  $?a_root - $?m_root))
+	)
 )
 ;-------------------------------------------------------------------------------------------------
 ;The other two forces, as we shall see, operate only at nuclear scales. 
@@ -168,10 +187,15 @@
 (manual_id-mapped_id ?id1 ?mid1)
 (id-node-word-root ?id1 ? ?m - kara)
 (id-root ?aid ?root)
+(id-original_word ?aid ?word)
 =>
         (retract ?f ?f1)
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?amng - ?id $?mng ?m $?mng1))
-	(assert (id-root-corrected_mng ?aid ?root  $?mng kara ))
+	(if (eq ?root -) then
+		(assert (id-root-corrected_mng ?aid ?word  $?mng kara ))
+	else
+		(assert (id-root-corrected_mng ?aid ?root  $?mng kara ))
+	)
 )
 ;-------------------------------------------------------------------------------------------------
 ;In Physics, we attempt to explain diverse physical phenomena in terms of a few concepts and laws. -- BOwikI ke anwargawa hama viviXa BOwika pariGatanAoM kI [vyAKyA] kuCa safkalpanAoM evaM niyamoM ke paxoM meM [karane kA] prayAsa karawe hEM
@@ -372,7 +396,7 @@
 	(assert (id_decided ?id))
 )
 ;--------------------------------------------------------------------------------------------------------
-(defrule print_minion_alignment_info
+(defrule print_minion_align_info_for_corrected_mng
 (declare (salience 8))
 (id-corrected_mngs ?aid $?amng - $?mmng)
 (id-src-eng_wrds-anu_mng-man_mng ?aid ?src ?eng_wrds $?anu - $?man)
@@ -411,8 +435,26 @@
 	(assert (id_decided ?aid))
 )
 ;--------------------------------------------------------------------------------------------------------
-(defrule print_minion_alignment_info1
+;You know that gravitational force is a [long-range] force. Apa jAnawe hEM ki guruwvAkarRaNa bala [xIrGa - parAsI] bala hE.
+(defrule print_minion_align_info_for_hyphen_word
 (declare (salience 5))
+(manual_id-word-cat  ?id  - SYM)
+(manual_id-word-cat =(+ ?id 1) ?mng ?)
+?f0<-(id-src-eng_wrds-anu_mng-man_mng ?aid ?src ?eng_wrds $?anu_mng - ?mng)
+(manual_id-word-cat =(- ?id 1) ?mng1 ?)
+(para_id-sent_id-no_of_words    ?       ?sid    ?)
+(not (id-corrected_mngs ?aid $?))
+(not (id_decided ?aid))
+(not (removed_id ?aid))
+=>
+	(bind $?m (create$ ?mng1 ?mng))
+        (printout ?*minion-mng-file*  ?eng_wrds"        "(implode$ $?anu_mng)"  "(implode$ $?m) "[ "?sid" ]" crlf)
+        (printout ?*dic_fp* ?eng_wrds" = "(implode$ $?m) crlf)
+	(assert (id_decided ?aid))
+)
+;-------------------------------------------------------------------------------------------------
+(defrule print_minion_alignment_info
+(declare (salience 4))
 ?f0<-(id-src-eng_wrds-anu_mng-man_mng ?aid ?src ?eng_wrds $?anu_mng - $?man_mng)
 (test (neq (length $?anu_mng) 0))
 (para_id-sent_id-no_of_words    ?       ?sid    ?)

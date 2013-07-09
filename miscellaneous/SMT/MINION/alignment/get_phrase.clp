@@ -124,6 +124,81 @@
         (printout ?*dic_fp2* ?eng_phrase " -- " ?new_m crlf)
 )
 ;-------------------------------------------------------------------------------------------------------
+;[Free fall] is thus a case of motion with uniform acceleration. isa prakAra [mukwa pawana] ekasamAna wvaraNa vAlI gawi kA eka uxAharaNa hE .
+(defrule get_comp_ids
+(declare (salience 71))
+(id-multi_word_expression-dbase_name-mng ?id $?word eng_multi_word_dic.gdbm|eng_multi_word_from_iit_bombay_dic.gdbm|eng_phy_multi_word_dic.gdbm $?mng)
+(multi_word_expression-grp_ids $?word $?ids)
+(id-HM-source ?aid $?mng ?)
+(anu_id-anu_mng-sep-man_id-man_mng ?aid $?m - ?mid $?m1)
+(test (neq $?m $?m1))
+?f0<-(id-src-eng_wrds-anu_mng-man_mng ?aid dictionary|minion ? $? - $?)
+(test (member$ ?aid $?ids))
+(not (word-anu_ids-man_ids $?word - $?ids - $?))
+=>
+	(retract ?f0)
+	(assert (word-anu_ids-man_ids $?word - $?ids - ?mid))
+)
+;-------------------------------------------------------------------------------------------------------
+(defrule get_phrase_ids
+(declare (salience 70))
+?f1<-(word-anu_ids-man_ids $?word - $?ids - $?pre)
+?f0<-(id-src-eng_wrds-anu_mng-man_mng ?aid dictionary|minion ? $? - $?m)
+(manual_id-cat-word-root-vib-grp_ids ?id ? $?m1 - $?m - $? - $?)
+(manual_id-mapped_id ?id ?mid)
+(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?m1)
+(test (numberp ?mid))
+(test (and (member$ ?aid $?ids) (eq (member$ ?mid $?pre) FALSE)))
+=>
+	(retract ?f0 ?f1)
+	(bind $?gids (sort > (create$ $?pre ?mid)))
+	(assert (word-anu_ids-man_ids $?word - $?ids - $?gids))
+)
+;-------------------------------------------------------------------------------------------------------
+(defrule replace_ids
+(declare (salience 10))
+?f<-(word-anu_ids-man_ids $?word - $?ids - $?pre ?id $?po ?last_id)
+(manual_id-mapped_id ?mid ?id)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng - $?root - $? - $?)
+=>
+	(retract ?f)
+	(assert (word-anu_ids-man_ids $?word - $?ids - $?pre $?mng $?po ?last_id))
+)
+;-------------------------------------------------------------------------------------------------------
+;[In other words], its motion never ceases. [xUsare SabxoM meM] isakI gawi kaBI nahIM rukegI.
+;[For example], an electric current deflects a magnetic compass needle placed in its vicinity. uxAharaNa ke lie, vixyuwa XArA apane pAsa raKI huI eka cumbakIya suI ko vikRepiwa karawI hE.
+(defrule replace_ids1
+(declare (salience 6))
+?f<-(word-anu_ids-man_ids $?word - ?aid $?ids - $?pre ?id)
+(manual_id-mapped_id ?mid ?id)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng - $?root - $?vib - $?)
+(id-word ?aid ?wrd)
+=>
+        (retract ?f)
+	(if (or (eq ?wrd in) (eq ?wrd for)) then
+		(if (eq $?vib (create$ 0)) then
+			(assert (word-anu_ids-man_ids $?word - ?aid $?ids - $?pre $?mng))
+		else
+			(assert (word-anu_ids-man_ids $?word - ?aid $?ids - $?pre $?mng $?vib))
+		)
+	else
+	        (assert (word-anu_ids-man_ids $?word - ?aid $?ids - $?pre $?root))
+	)
+)
+;-------------------------------------------------------------------------------------------------------
+(defrule print_phrase
+(word-anu_ids-man_ids $?word - $? - $?mng)
+(test (neq (length $?word) 0))
+=>
+	(bind ?wrd (implode$ (remove_character " " (implode$ (create$ $?word)) "_")))
+	(bind ?m (implode$ (remove_character " " (implode$ (create$ $?mng)) "_")))
+	(printout ?*dic_fp2* ?wrd " -- " ?m crlf)
+)
+
+
+
+
+
 ;Plants tend to turn [towards the source of light]. -- pOXe [roSanI kI ora] muda jAwe hE.
 ;(defrule get_phrase_with_vib
 ;(declare (salience 90))

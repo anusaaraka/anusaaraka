@@ -53,6 +53,15 @@
 	(assert (id-root ?id ?word))
 )
 ;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;Does the nature permit such a relation between electricity and magnetism? 
+(defrule get_root_for_new_id
+(id-Apertium_output ?id $?mng)
+(not (id-root ?id ?))
+=>
+        (assert (id-root ?id -A-))
+)
+;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (11-05-13)
 (defrule rm_hnd_mng_with_no_mng
 (declare (salience 1003))
@@ -122,6 +131,7 @@
 	(bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids $?aids - ?mid $?grp))
+	(assert (man_id-src-root ?mid exact $?e_words))
 	(loop-for-count (?i 1 (length $?aids))
                 (bind ?j (nth$ ?i $?aids))
                 (assert (prov_assignment ?j ?mid))
@@ -142,6 +152,7 @@
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids $?aids - $?ids))
+	(assert (man_id-src-root ?mid exact $?e_words))
 	(loop-for-count (?i 1 (length $?aids))
         	(bind ?j (nth$ ?i $?aids))
 		(assert (prov_assignment ?j ?mid))
@@ -164,6 +175,7 @@
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?aid - $?grp_ids1 $?grp_ids2))
+	(assert (man_id-src-root ?mid exact ?root))
         (assert (prov_assignment ?aid ?mid))
 )
 ;-------------------------------------------------------------------------------------
@@ -173,12 +185,14 @@
 (manual_id-node-word-root-tam ?h_mid ? $?mng1 - $? - $?)
 (head_id-grp_ids ?h_mid ?mid $?grp)
 (id-Apertium_output ?aid $?mng1)
+(id-root ?aid ?root)
 (not (prov_assignment ?aid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?aid - ?mid $?grp))
         (assert (prov_assignment ?aid ?mid))
+	(assert (man_id-src-root ?mid exact ?root))
 )
 ;-------------------------------------------------------------------------------------
 ;(neq (length $?vib) 0): You will read about vectors in the next chapter. Apa saxiSoM ke viRaya meM agale aXyAya meM paDezge.
@@ -188,13 +202,15 @@
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng1 - $? - $?vib - $?grp_ids)
 (id-Apertium_output ?aid $?mng1)
 (test (and (neq $?vib 0)(neq (length $?vib) 0)))
+(id-root ?aid ?root)
 ;(test (> (length $?mng1) 0))
 (not (prov_assignment ?aid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?aid - $?grp_ids))
-        (assert (prov_assignment ?aid ?mid))
+	(assert (man_id-src-root ?mid exact ?root))
+	(assert (prov_assignment ?aid ?mid))
 )
 
 ;-------------------------------------------------------------------------------------
@@ -211,6 +227,7 @@
 	(bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?aid - ?mid $?grp))
+	(assert (man_id-src-root ?mid dictionary ?e_noun))
         (assert (prov_assignment ?aid ?mid))
 )
 ;-------------------------------------------------------------------------------------
@@ -219,11 +236,13 @@
 (current_id ?mid)
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng - $? - 0 - $?)
 (id-Apertium_output ?aid $?mng)
+(id-root ?aid ?root)
 (not (prov_assignment ?aid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?aid - ?mid))
+	(assert (man_id-src-root ?mid exact ?root))
         (assert (prov_assignment ?aid ?mid))
 )
 
@@ -237,27 +256,30 @@
 (id-HM-source ?aid $?noun ?src&~Word)
 (pada_info (group_head_id  ?aid)(vibakthi ?vib1))
 (test (eq (implode$ (create$ (remove_character "_" (implode$ (create$ ?vib1)) " "))) (implode$ (create$ $?vib))))
+(id-root ?aid ?root)
 (not (prov_assignment ?aid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?aid - $?grp))
+	(assert (man_id-src-root ?mid exact ?root))
         (assert (prov_assignment ?aid ?mid))
 )
 ;-------------------------------------------------------------------------------------
-
 (defrule word_and_vib_match_with_anu_hindi_root1
 (declare (salience 890))
 (current_id ?mid)
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?noun - $?vib -  $?grp)
 (test (neq $?vib 0))
 (id-HM-source ?aid $?noun ?src)
+(id-root ?aid ?root)
 ;(id-HM-source ?aid $?noun ?src&~Word)
 (not (prov_assignment ?aid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?aid - $?grp))
+	(assert (man_id-src-root ?mid exact ?root))
         (assert (prov_assignment ?aid ?mid))
 )
 ;-------------------------------------------------------------------------------------
@@ -267,11 +289,13 @@
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?noun - 0 -  $?grp)
 (id-HM-source ?aid $?noun ?)
 (pada_info (group_head_id  ?aid)(vibakthi 0))
+(id-root ?aid ?root)
 (not (prov_assignment ?aid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?aid - $?grp))
+	(assert (man_id-src-root ?mid exact ?root))
         (assert (prov_assignment ?aid ?mid))
 )
 
@@ -285,11 +309,13 @@
 (manual_id-node-word-root-tam ?m_h_id VGF $?man_mng - $? - $?)
 (head_id-grp_ids ?m_h_id ?mid $?grp)
 (id-Apertium_output ?aid $?anu_mng)
+(id-root ?aid ?root)
 (not (prov_assignment ?aid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?aid - ?mid $?grp))
+	(assert (man_id-src-root ?mid single_verb ?root))
         (assert (prov_assignment ?aid ?mid))
      
 )
@@ -309,6 +335,7 @@
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?aid - $?d ?mid  $?grp_ids))
+	(assert (man_id-src-root ?mid dictionary ?root))
         (assert (prov_assignment ?aid ?mid))
 )
 
@@ -325,26 +352,10 @@
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?aid - ?mid $?grp_ids))
+	(assert (man_id-src-root ?mid dictionary ?root))
         (assert (prov_assignment ?aid ?mid))
 )
 ;-------------------------------------------------------------------------------------
-
-(defrule to_infinitive_pada
-(declare (salience 879))
-(current_id ?mid)
-(pada_info (group_head_id ?aid) (group_cat infinitive))
-(manual_id-node-word-root-tam  ?man_g_id    ~VGF  $? - $?v_root - $?tam)
-(test (or (eq $?tam "isake bAxa meM")(eq $?tam "nA") (eq $?tam "nA ke liye")(eq  $?tam "waka")(eq $?tam "ne") (eq $?tam "ne kI")(eq $?tam "ne kA") (eq $?tam "ne vAlA")(eq $?tam "ne se") (eq $?tam "ne ke liye") (eq $?tam "0 kara")(eq $?tam "ke liye") (eq $?tam "kI ora") (eq $?tam  "se") (eq $?tam "kA")(eq $?tam "meM")(eq $?tam "ke sAmane")(eq $?tam "ke karIba")(eq $?tam "ora")(eq $?tam "ko")))
-(head_id-grp_ids ?man_g_id ?mid $?grp_ids)
-(id-org_wrd-root-dbase_name-mng ? ? ?root ? $?v_root)
-(id-root ?aid ?root)
-(not (prov_assignment ?aid ?mid))
-=>
-        (bind ?*count* (+ ?*count* 1))
-        (assert (update_count_fact ?*count*))
-        (assert (anu_ids-sep-manual_ids ?aid - ?mid $?grp_ids))
-        (assert (prov_assignment ?aid ?mid))
-)
 ;-------------------------------------------------------------------------------------
 ;Check for manual word and vibakthi match in the dictionary
 (defrule word_and_vib_match_using_dic
@@ -362,6 +373,7 @@
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?e_noun_id - $?grp_ids))
+	(assert (man_id-src-root ?mid dictionary ?e_noun))
         (assert (prov_assignment ?e_noun_id ?mid))
 )
 ;-------------------------------------------------------------------------------------
@@ -381,6 +393,7 @@
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?e_noun_id - $?grp_ids))
+	(assert (man_id-src-root ?mid dictionary ?e_noun))
         (assert (prov_assignment ?e_noun_id ?mid))
 )
 ;-------------------------------------------------------------------------------------
@@ -402,6 +415,7 @@
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?e_noun_id - $?grp_ids))
+	(assert (man_id-src-root ?mid dictionary ?e_noun))
         (assert (prov_assignment ?e_noun_id ?mid))
 )
 ;-------------------------------------------------------------------------------------
@@ -421,6 +435,7 @@
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?e_noun_id - $?grp_ids))
+	(assert (man_id-src-root ?mid dictionary ?e_noun))
         (assert (prov_assignment ?e_noun_id ?mid))
 )
 ;-------------------------------------------------------------------------------------
@@ -436,6 +451,7 @@
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?eid - $?gids))
+	(assert (man_id-src-root ?mid dictionary ?e_word))
         (assert (prov_assignment ?eid ?mid))
 )
 ;-------------------------------------------------------------------------------------
@@ -451,6 +467,7 @@
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?eid - $?gids))
+	(assert (man_id-src-root ?mid dictionary ?e_word))
         (assert (prov_assignment ?eid ?mid))
 )
 ;-------------------------------------------------------------------------------------
@@ -467,6 +484,7 @@
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?eid - $?grp_ids))
+	(assert (man_id-src-root ?mid dictionary ?e_word))
         (assert (prov_assignment ?eid ?mid))
 )
 
@@ -487,6 +505,7 @@
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?eid - $?grp_ids))
+	(assert (man_id-src-root ?mid dictionary ?e_word))
         (assert (prov_assignment ?eid ?mid))
 )
 ;-------------------------------------------------------------------------------------
@@ -506,6 +525,7 @@
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?eid - $?grp_ids))
+	(assert (man_id-src-root ?mid dictionary ?e_word))
         (assert (prov_assignment ?eid ?mid))
 )
 ;-------------------------------------------------------------------------------------
@@ -533,6 +553,7 @@
 	        (assert (update_count_fact ?*count*))
 	        (assert (anu_ids-sep-manual_ids ?aid - $?grp_ids))
 	        (assert (prov_assignment ?aid ?mid))
+		(assert (man_id-src-root ?mid dictionary ?e_root))
             )
         )
 )
@@ -562,6 +583,7 @@
                 	(bind ?*count* (+ ?*count* 1))
                 	(assert (update_count_fact ?*count*))
                 	(assert (anu_ids-sep-manual_ids ?aid - $?grp_ids))
+			(assert (man_id-src-root ?mid dictionary ?e_root))
                 	(assert (prov_assignment ?aid ?mid))
             	)
         )
@@ -573,11 +595,13 @@
 (current_id ?mid)
 (manual_id-cat-word-root-vib-grp_ids ?mid ? $?word - $? - $? - $?gids)
 (or (id-word ?eid $?word)(id-original_word ?eid $?word))
+(id-root ?eid ?e_root)
 (not (prov_assignment ?eid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?eid - $?gids))
+	(assert (man_id-src-root ?mid exact ?e_root))
         (assert (prov_assignment ?eid ?mid))
 )
 
@@ -604,6 +628,7 @@
         )
         (assert (anu_ids-sep-manual_ids $?aids - $?grp))
         (assert (prov_assignment (nth$ (length $?aids) $?aids) ?mid))
+	(assert (man_id-src-root ?mid exact $?e_words))
 )
 ;-------------------------------------------------------------------------------------
 (defrule check_count_1
@@ -844,3 +869,21 @@
 	else
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?pre ?h_mng $?pos)))
 )
+;-------------------------------------------------------------------------------------
+(defrule get_meaning_src
+(declare (salience -600))
+?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mng)
+?f1<-(man_id-src-root ?mid ?src $?root)
+=>
+	(bind ?rt (remove_character " " (implode$ (create$ $?root)) "_"))
+	(retract ?f1)
+	(if (eq (length $?anu_mng) 0) then
+		(assert (id-src-eng_wrds-anu_mng-man_mng  ?aid ?src ?rt  -  - $?mng))
+	else
+		(assert (id-src-eng_wrds-anu_mng-man_mng  ?aid ?src ?rt  $?anu_mng - $?mng))
+	)
+)
+
+
+
+
