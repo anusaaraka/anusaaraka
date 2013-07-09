@@ -190,7 +190,7 @@
  cp $HOME_anu_test/debugging/sentence_debug.sh $HOME_anu_test/bin/.
  
  cd $HOME_anu_test/miscellaneous/std_tregex/
- tar -xvf stanford-tregex-2012-01-06.tgz 
+ unzip stanford-tregex-2013-06-20.zip
 
  echo "Creating Transliteration files"
  cd  $HOME_anu_test/miscellaneous/transliteration/
@@ -208,12 +208,10 @@
  echo "compiling bllip parser"
  cd  $HOME_anu_test/Parsers
  unzip bllip-parser-master.zip
- realine=`uname -m`
+ readline=`uname -m`
  if [ "$readline" ==  "i686" ] ; then
-        echo "hello"
         export GCCFLAGS="-march=pentium4 -mfpmath=sse -msse2 -mmmx"
  if [ "$readline" ==  "x86_64" ]; then
-        echo "hai"
         export GCCFLAGS="-march=opteron -m64 -I /home/mj/C++/boost"  
  fi
  fi

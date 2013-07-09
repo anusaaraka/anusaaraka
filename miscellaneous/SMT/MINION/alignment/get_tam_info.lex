@@ -7,7 +7,7 @@ char *fun(char *str);
 void printfun(char *id , char *node , char *root , char *cat ,char *gen,char *num ,char *per, char *cas,char *new_tam , char *head);
 %}
 %%
-[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9._,+]*'[ ]vpos=\"[a-z_0-9A-Z]*\"[ ][ ]head=\"[a-zA-Z._,+0-9]*\"[ ][ ]poslcat=\"[A-Z]*\">  {
+[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9._,+]*'[ ]vpos=\"[a-z_0-9A-Z]*\"[ ][ ]head=\'[a-zA-Z._,+0-9]*\'[ ][ ]poslcat=\"[A-Z]*\">  {
                                         yytext=fun(yytext);
                                         len = strcspn(yytext,"="); yytext=yytext+len+1;
 					len = strcspn(yytext,"="); yytext=yytext+len+1;
@@ -15,27 +15,56 @@ void printfun(char *id , char *node , char *root , char *cat ,char *gen,char *nu
 					head[len]='\0';
                                         printfun(id,node,root,cat,gen,num,per,cas,new_tam,head);                                            }
 
-[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9._,+]*'[ ]vpos=\"[a-z_0-9A-Z]*\"[ ][ ]head=\"[a-zA-Z._,+0-9]*\">  {
+[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9._,+]*'[ ]vpos=\"[a-z_0-9A-Z]*\"[ ][ ]head=\'[a-zA-Z._,+0-9]*\'>  {
                                         yytext=fun(yytext);
                                         len = strcspn(yytext,"="); yytext=yytext+len+1;
                                         len = strcspn(yytext,"="); yytext=yytext+len+1;
                                         len = strcspn(yytext," "); strncpy(head,yytext,len);
                                         head[len]='\0';
                                         printfun(id,node,root,cat,gen,num,per,cas,new_tam,head);                                            }
-[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9._,+ -]*'[ ]head=\"[a-zA-Z._,+0-9-]*\"[ ][ ]*poslcat=\"[A-Z]*\">  {
+[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9._,+ -]*'[ ]head=\'[a-zA-Z._,+0-9-]*\'[ ][ ]*poslcat=\"[A-Z]*\">  {
                                 	yytext=fun(yytext);
                                         len = strcspn(yytext,"="); yytext=yytext+len+1;
                                         len = strcspn(yytext," "); strncpy(head,yytext,len);
 					head[len]='\0';
 					printfun(id,node,root,cat,gen,num,per,cas,new_tam,head);
  			}
-[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9._,+]*'[ ]head=\"[a-zA-Z._,+0-9]*\">   {
+[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9._,+]*'[ ]head=\'[a-zA-Z._,+0-9]*\'>   {
                                         yytext=fun(yytext);
                                         len = strcspn(yytext,"="); yytext=yytext+len+1;
                                         len = strcspn(yytext," "); strncpy(head,yytext,len);
 					head[len]='\0';
                                         printfun(id,node,root,cat,gen,num,per,cas,new_tam,head);                                            
                 }
+
+[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9._,+]*'[ ]agr_gen=\'[a-z]\'[ ][ ]vpos=\"[a-z_0-9A-Z]*\"[ ][ ]head=\'[a-zA-Z._,+0-9]*\'[ ].*>  {
+//<fs af='yaha,pn,any,sg,3,o,kA_lie,kA' agr_gen='m'  vpos="vib1_2"  head='isake'  agr_cas='d'  agr_num='pl'>
+                                        yytext=fun(yytext);
+                                        len = strcspn(yytext,"="); yytext=yytext+len+1;
+                                        len = strcspn(yytext,"="); yytext=yytext+len+1;
+                                        len = strcspn(yytext,"="); yytext=yytext+len+1;
+                                        len = strcspn(yytext," "); strncpy(head,yytext,len);
+                                        head[len]='\0';
+                                        printfun(id,node,root,cat,gen,num,per,cas,new_tam,head);                                              }
+
+
+[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9._,+]*'[ ]head=\'[a-zA-Z._,+0-9]*\'[ ].*>   {
+
+                                        yytext=fun(yytext);
+                                        len = strcspn(yytext,"="); yytext=yytext+len+1;
+                                        len = strcspn(yytext," "); strncpy(head,yytext,len);
+                                        head[len]='\0';
+                                        printfun(id,node,root,cat,gen,num,per,cas,new_tam,head);                              
+                }
+
+[0-9]*[\t]\(\([\t][A-Z]*[\t]<fs[ ]af='[a-zA-Z0-9._,+]*'[ ]vpos=\"[a-z_0-9A-Z]*\"[ ][ ]head=\'[a-zA-Z._,+0-9]*\'.*>  {
+                                        yytext=fun(yytext);
+                                        len = strcspn(yytext,"="); yytext=yytext+len+1;
+                                        len = strcspn(yytext,"="); yytext=yytext+len+1;
+                                        len = strcspn(yytext," "); strncpy(head,yytext,len);
+                                        head[len]='\0';
+                                        printfun(id,node,root,cat,gen,num,per,cas,new_tam,head);                                            }
+
 [0-9]*[.][0-9]*\t[A-Za-z0-9._@]*\t[A-Z]*\t<fs[ ]af=['][a-zA-Z0-9._,+]*[,] {
  					len = strcspn(yytext,"\t"); strncpy(id,yytext,len); 
 					id[len]='\0'; yytext=yytext+len+1;

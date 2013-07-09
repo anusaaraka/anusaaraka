@@ -474,6 +474,8 @@
  20.    <e lm="baMxI"><i>baMx</i><par n="ladak/I__n"/></e>  (Added by Roja(18-07-12) Suggested by Sukhada)
  21.	<e lm="sInetara"><i>sInetar</i><par n="Gar/a__n"/></e>   (Added by Roja(08-08-12)
  22.    <e lm="saMBAla"><i>saMBAl</i><par n="uT/a__v"/></e>	 (          "  (23-05-13) Suggested by Chaitanya Sir)
+ 23.	<e lm="PisalanavAlA"><i>PisalanavAl</i><par n="kAl/A__adj"/></e>  ( "  (06-07-13)	"	Sukhada)	
+ 24.	<e lm="PisalanevAlA"><i>PisalanevAl</i><par n="kAl/A__adj"/></e>  ( "  (06-07-13)       "       Sukhada)	
 
 Modified :
   1.	<e><p><l>we_hue</l>	as	<e><p><l>owe_hue</l>       for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
@@ -925,6 +927,7 @@ Modified:
 			kuCa_samaya_waka/kuCa_kRaNa_waka#kuCa_samaya_waka#noun#3#RM   (Suggested by Chaitanya Sir 17-04-13)
     Modified "vixxayuwa" as "vixyuwa" for the following entries
 	electric_catfish 	electric_cell	electric_chair	electric_charge		electrical_capacity
+	prompt_action	wuraMwa_kArravAWa	as	wuranwa_kAryavAhI (Suggested by Anita LTRC 04-07-13)
 
 
     Added :
@@ -967,7 +970,7 @@ Modified:
 	nuclear_adjective	ANvika		(Suggested by Chaitanya Sir 05-01-13)
 	chemistry_noun  	rasAyana_vijFAna(	"		    20-04-13)
 	biology_noun    	jIva_vijFAna	(	"			"   )
-	channel_noun		saraNi		(	"  by Amit MNNIT 01-07-13)
+	channel_noun		saraNi		(	"  by Amit MNNIT    01-07-13)
 
  Modified :
  ---------

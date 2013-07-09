@@ -3,15 +3,15 @@
 /* Written by Roja (15-08-12) 	*/
 
 alphabets	[a-zA-Z]
-non_alphabets   [^a-zA-Z]
+non_alphabets   [^a-zA-Z0-9]
 
 %x eng
 
 %%
 
-{alphabets}		{	printf("ABBRENGBEFORE"); ECHO; printf("ABBRENGAFTER"); BEGIN eng;	}
+{alphabets}		{	printf("@"); ECHO;  BEGIN eng;	}
 
-<eng>symbol|punct	{	printf("ABBRENGBEFORE");  ECHO; /*Ex: tsymbolequalto0[t=0] */	}
+<eng>symbol|punct	{	ECHO; /*Ex: tsymbolequalto0[t=0] */	}
 
 <eng>{non_alphabets}+	{	ECHO; BEGIN INITIAL;	}
 

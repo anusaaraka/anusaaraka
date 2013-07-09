@@ -9,6 +9,10 @@ punc_list = ["-",  "]",  "}",  ">", "!", "/", ".", "=", "?", "'", ",", ":", ";",
 c = 0
 sent_c = 0
 dum_suf = []
+dum_suf0 = []
+dum_suf1 = []
+dum_suf2 = []
+dum_suf3 = []
 suf = []
 lst=[]
 for line in xrange(len(sp)):
@@ -21,13 +25,17 @@ for line in xrange(len(sp)):
 		c = 0
 	if "((" in sp[line] and '_' in sp[line]:
             if 'vpos=' in sp[line] and 'head=' in sp[line]:
-		dum_suf = sp[line].split('vpos=')
-                suf = dum_suf[0].split('_')
-                my_cat = dum_suf[0].split(',')
+		dum_suf0 = sp[line].split('\t')
+		dum_suf1 = dum_suf0[3].split(' ')
+		dum_suf2 = dum_suf1[1].split(',')
+                suf = dum_suf2[6].split('_')
+ #               my_cat = dum_suf[0].split(',')
 	    if 'vpos=' not in sp[line] and 'head=' in sp[line]:
-		dum_suf = sp[line].split('head=')
-		suf = dum_suf[0].split('_')
-		my_cat = dum_suf[0].split(',')
+                dum_suf0 = sp[line].split('\t')
+		dum_suf1 = dum_suf0[3].split(' ')
+		dum_suf2 = dum_suf1[1].split(',')
+                suf = dum_suf2[6].split('_')
+#		my_cat = dum_suf[0].split(',')
 	if "((" in sp[line] or "))" in sp[line] or sp[line].startswith("<Sentence id=") or sp[line].startswith("</Sentence>"):
 		print sp[line],
 	if "))" in sp[line]:
@@ -52,8 +60,8 @@ for line in xrange(len(sp)):
                 	    suf = []
 
 		if mylst[1] == orig_sent[c] :
-	            print sp[line],
-        	    c += 1
+	   		print sp[line],
+		        c += 1
 
 	if len(suf) >= 1 and '))' in sp[line+1] :#and mylst[1] == orig_sent[c]:
 	         for each in xrange(len(suf)-1):

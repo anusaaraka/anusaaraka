@@ -16,12 +16,12 @@ $HOME_anu_test/Anu_src/comp.sh $HOME_anu_test/miscellaneous/SMT/MINION/alignment
 gcc -o $HOME_anu_test/miscellaneous/SMT/MINION/alignment/replace_wrd_with_id.out $HOME_anu_test/miscellaneous/SMT/MINION/alignment/replace_wrd_with_id.c
 
 cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER
- if  [ -e $HOME_anu_test/miscellaneous/SHALLOW_PARSER/shallow-parser-hin-3.0.fc8 ] ; then
-     rm -rf shallow-parser-hin-3.0.fc8/
+ if  [ -e $HOME_anu_test/miscellaneous/SHALLOW_PARSER/shallow-parser-hin-4.0.fc8 ] ; then
+     rm -rf shallow-parser-hin-4.0.fc8
      rm -rf ~/sampark
  fi
 
- tar -xvzf shallow-parser-hin-3.0.fc8.tgz
+ tar -xvzf shallow-parser-hin-4.0.fc8.tar.gz
 
 
  if  [ -e $HOME_anu_test/miscellaneous/SHALLOW_PARSER/fullparser-hin-1.6.3 ] ; then

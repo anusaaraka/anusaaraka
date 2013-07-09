@@ -24874,7 +24874,7 @@ promotion_post	pronnawa-paxa#pronnawa-paxa#noun#2#RM
 promotion_profits	pravarwana_lABa#pravarwana_lABa#noun#2#RM
 promotional_avenues	paxonnawi_ke_avasara#paxonnawi_ke_avasara#noun#2#RM
 promotional_role	vikAsa_aaMvarXana_BUmikA#vikAsa_aaMvarXana_BUmikA#noun#2#RM
-prompt_action	wuraMwa_kArravAWa#wuraMwa_kArravAWa#noun#2#RM
+prompt_action	wuranwa_kAryavAhI#wuranwa_kAryavAhI#noun#2#RM
 prompt_box	sawvara_sevA#sawvara_sevA#noun#2#RM
 prompt_copy	wEyAra_kApI#wEyAra_kApI#noun#2#RM
 prompt_payment	niyawAvaXi_BugawAna#niyawAvaXi_BugawAna#noun#2#RM

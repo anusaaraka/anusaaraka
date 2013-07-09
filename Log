@@ -114,8 +114,10 @@
 36. In run_transliteration.sh, modified to get proper_nouns in dictionary format for alignment purpose.
 37. Added abbrevations_using_NER.c programme to handle abbrevations recognised by NER
 38. Added code to run above programme in stdenglish.sh
-39. Added code to compile abbrevations_using_NER.c in anu_compile.sh
+39. anu_compile.sh:
+	Added code to compile abbrevations_using_NER.c
 	Removed code related to reranking-parser-2011-12-17.tgz and updated with bllip-parser-master.zip
+	Updated extracting of stanford-tregex (3.2.0 version)
 40. Separated compilation of SHALLOW PARSER and FULL PARSER from compile_shallow_parser.sh  and Added compile_full_parser.sh
 41. Accordingly modified minion_compile.sh
 42. Added README in miscellaneous/SHALLOW_PARSER/
@@ -136,25 +138,30 @@
 	Loaded sandbox fact to use provisional dictionary when needed
 48. insert_punctuation.clp
 	Modified : get_phrase_group and get_phrase_group1 rules to add SYM in the list
+49. Added PennTags.html in Doc/PennTreeBankNotation
 49. Updated the following 'lex' files
 	add_snt_mrkr.lex		abbrevations.lex	titles.lex
 	mapping-punctuations.lex	replacing_canonical.lex	
-50. Updated ol_stdenglish.sh same as stdenglish.sh
-51. Updated apertium-en-hi.en.metadix
-52. Updated run_multiple_parse_penn.sh
-53. Updated new stanford version in std_tregex/run_tregex.sh std_tregex/README
-54. Updated replacing_canonical.lex
-55. Updated get_canonical_form_in_wsd.lex
-56. Updated changes_in_databases
-57. Updated replace-abbrevations.sh
-58. Updated minion dictionaries
-59. Updated dic_compile.sh
-60. Updated iit-bombay dictionary in goldendict
-61. Updated Log
-62. Updated the following verified's
+50. Updated shallow parser from 3.0 to 4.0 version and removed older version
+51. Following files are updated accordingly to new shallow parser version:
+	compile_shallow_parser.sh	add-suf-into-chunks.py		adding@-for-eng-words.lex	
+	processing_manual_sentences.sh	get_group_mng.sh		get_tam_info.lex	minion_compile.sh
+52. Updated ol_stdenglish.sh same as stdenglish.sh
+53. Updated apertium-en-hi.en.metadix
+54. Updated run_multiple_parse_penn.sh
+55. Updated stanford tregex to 3.2.0 and removed older version. 
+56. Updated new stanford version in std_tregex/run_tregex.sh std_tregex/README
+57. Updated replacing_canonical.lex
+58. Updated get_canonical_form_in_wsd.lex
+59. Updated changes_in_databases
+60. Updated replace-abbrevations.sh
+61. Updated minion dictionaries
+62. Updated dic_compile.sh
+63. Updated iit-bombay dictionary in goldendict
+64. Updated Log
+65. Updated the following verified's
 	sd_verified (492)	phy_verified (253)		phy_partial_verified (81)	
 	verified (40)		partial_ver (22)    		small_sent_verified_sd (66)
-
 ==========================================================================================================================
  10-07-09
  ========

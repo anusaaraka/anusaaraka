@@ -17,7 +17,7 @@ jAzca kIjie.
 
 Hindi meaning using Stanford parser 2.1
 It is impossible for a car to move on a very slippery road. 
-eka awyanwa PisalanevAlA sadaka para calanA gAdI ke bAxa asamBava hE.
+eka awyanwa PisalanevAlI sadaka para calanA gAdI ke bAxa asamBava hE.
 Multiple adjective senses are available for impossible. WSD rule is required 
 Multiple adjective senses are available for slippery. WSD rule is required 
 
@@ -568,7 +568,7 @@ Multiple adjective senses are available for such. WSD rule is required
 
 Hindi meaning using Stanford parser 2.127
 It is a 2SYMBOL-DOT34 m diameter reflecting telescope (Cassegrain). 
-yaha xUrabIna (Cassegrain) xarSA eka 2SYMBOL-DOT34 puruRa vyAsa hE.
+yaha xUrabIna (Cassegrain) xarSAwe_hue eka 2SYMBOL-DOT34 puruRa vyAsa hE.
 
 Hindi meaning using Stanford parser 2.128
 On the other hand, glass is a dispersive medium. 
@@ -621,7 +621,7 @@ Multiple adjective senses are available for such. WSD rule is required
 
 Hindi meaning using Stanford parser 2.139
 Property of partial reflection of light is yet another such example. 
-prakASa ke AMSika parAvarwana kA PropN-property-PropN Ora eka EsA uxAharaNa hE.
+prakASa ke AMSika parAvarwana kI sampawwia eka EsA uxAharaNa hE.
 Multiple adjective senses are available for partial. WSD rule is required 
 Multiple adjective senses are available for such. WSD rule is required 
 
