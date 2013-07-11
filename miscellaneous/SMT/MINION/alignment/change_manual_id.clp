@@ -67,10 +67,24 @@
 	(assert (id_mng_modified ?id))
 )
 ;------------------------------------------------------------------------------------------------------------------
+;Note that it is not the geometric center of the triangle OAB. XyAna xeM ki yaha wriBuja @OAB kA jyAmiwIya kenxra nahIM hE.
+; need to be delete if shallow parser new version is released
+(defrule modify_root_for_@_word
+(declare (salience 100))
+?f<-(id-node-word-root ?id ?node ?word - ?root)
+(test (neq (str-index "@" (implode$ (create$ ?word))) FALSE))
+(test (eq (member$ ?word (create$ @PUNCT-OpenParen @PUNCT-Comma @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-DoubleQuote @PUNCT-DoubleQuote @PUNCT-Semicolon @PUNCT-Colon @PUNCT-SingleQuote @PUNCT-OpenParen @PUNCT-ClosedParen @PUNCT-Exclamation @SYM-Dollar @PUNCT-RightSquareBracket @PUNCT-LeftSquareBracket)) FALSE))
+=>
+	(retract ?f)
+        (bind ?nword (remove_@ ?word))
+        (assert (id-node-word-root ?id ?node ?nword - ?nword))
+        (assert (id_root_modified ?id))
+)
+;------------------------------------------------------------------------------------------------------------------
 ;Let us first consider the simple case in which an object is stationary, e.g. a car standing still at x SYMBOL-EQUAL-TO1 40 m .. 
 ;Generated root for the words containing '@' Ex : @SYMBOL-EQUAL-TO
 (defrule del_@_from_shallow_root
-(declare (salience 100))
+(declare (salience 90))
 ?f<-(id-node-word-root ?id ?node ?word - ?root)
 (test (neq (str-index "@" (implode$ (create$ ?root))) FALSE))
 (test (eq (member$ ?root (create$ @PUNCT-OpenParen @PUNCT-Comma @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-DoubleQuote @PUNCT-DoubleQuote @PUNCT-Semicolon @PUNCT-Colon @PUNCT-SingleQuote @PUNCT-OpenParen @PUNCT-ClosedParen @PUNCT-Exclamation @SYM-Dollar @PUNCT-RightSquareBracket @PUNCT-LeftSquareBracket)) FALSE))

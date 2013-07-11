@@ -32179,3 +32179,4 @@ kalpanA	f
 saMkalpanA	f
 janasaBA	f
 wiWI	f
+pariGatanA	f

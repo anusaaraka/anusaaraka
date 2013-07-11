@@ -129,7 +129,7 @@
 )
 )
 
-;Added by aditya and hardik(5.6.13),IIT(BHU)
+;Added by Aditya and Hardik(5.6.13),IIT(BHU)
 ;I was left alone.
 ;We are left behind.
 (defrule left7

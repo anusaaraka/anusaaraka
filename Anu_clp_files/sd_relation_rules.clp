@@ -1095,13 +1095,13 @@
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule aux_to
 (rel_name-sids aux  ?v ?to)
-(parserid-word ?to to)
+(parserid-word ?to to|To);Added "To" by Shirisha Manju(11-07-13)
 (not (rel_name-sids cop ?v ?))
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     to-infinitive       "       ?to"    "?v")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   aux_to	to-infinitive       "       ?to"    "?v")"crlf)
 )
- ; Ex. I want to go. Dick is important to fix the problem.
+ ; Ex. I want to go. Dick is important to fix the problem. To measure any time interval we need a clock.
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule aux_cop
  (rel_name-sids aux ?id ?to)

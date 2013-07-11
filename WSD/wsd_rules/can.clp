@@ -23,6 +23,11 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  can.clp 	can1   "  ?id "  kEna )" crlf))
 )
 
+;Well then, get out of the pit as best you can, said Papri coldly. ?? (requires further thinking)
+;तो ठीक है , अब तुम इस गड्ढे से बाहर निकलने के लिए जो कुछ कर सकती हो कर लो , पपरी ने शान्त भाव से कहा .
+;Do what you can. 
+;करो जो तुम कर सकते हो
+;Modified meaning "saka" as "kara_saka" by Shirisha Manju (10-07-13) Suggested by Chaitanya Sir .
 (defrule can2
 (declare (salience 4800))
 (id-root ?id can)
@@ -30,21 +35,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id saka))
+(assert (id-wsd_root_mng ?id kara_saka))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  can.clp 	can2   "  ?id "  saka )" crlf))
-)
-
-(defrule can3
-(declare (salience 4700))
-(id-root ?id can)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id saka))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  can.clp 	can3   "  ?id "  saka )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  can.clp 	can2   "  ?id "  kara_saka )" crlf))
 )
 
 ;default_sense && category=verb	saka	0

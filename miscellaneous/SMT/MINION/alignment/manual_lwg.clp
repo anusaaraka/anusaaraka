@@ -317,9 +317,10 @@
 ;----------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju(08-10-12)
 ;Riot police beat back the crowds of demonstrators.---- praxarSanakAriyoM kI BIda ko pulisa ne [pICe] Xakela xiyA
+;Then the distance moved by the car is OP = +360 m. --- awaH kAra xvArA calI gaI xUrI @OP [= +]360 @m hE .
 (defrule change_remaining_facts1
 (declare (salience 54))
-?f0<-(man_id-word-cat ?mid $?word ?cat&~SYM&~VIB)
+?f0<-(man_id-word-cat ?mid $?word ?cat&~VIB)
 (not (manual_id-cat-word-root-vib-grp_ids ? ? $? - $? - $? - $? ?mid $?))
 (not (retract_manual_fact ?mid))
 (test (eq (member$ $?word (create$ @PUNCT-Comma @PUNCT-Dot @PUNCT-QuestionMark @PUNCT-DoubleQuote @PUNCT-DoubleQuote @PUNCT-Semicolon @PUNCT-Colon @PUNCT-SingleQuote @PUNCT-OpenParen @PUNCT-ClosedParen @PUNCT-Exclamation @SYM-Dollar)) FALSE))

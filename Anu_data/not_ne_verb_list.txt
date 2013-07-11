@@ -679,6 +679,7 @@ ca	0
 Wa	0
 Xa	0
 ramA	0
+ruka	0
 hA	0
 zTa	0
 zxa	0

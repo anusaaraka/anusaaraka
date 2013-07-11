@@ -107,9 +107,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  before.clp    before5   "  ?id "   ke_sAmane )" crlf))
 )
 
-
-
-
 ;Salience reduced by Meena(30.3.10)
 (defrule before6
 (declare (salience 0))
@@ -123,6 +120,21 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  before.clp 	before6   "  ?id "  se_pahale )" crlf))
 )
+
+;Added by Aditya and Hardik(25-06-2013),IIT(BHU) batch 2012-2017.
+;I have seen him before.
+;Have you done this before?
+(defrule before7
+(declare (salience 5100))
+(id-last_word ?id before)
+?mng <-(meaning_to_be_decided ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id pahale))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  before.clp 	before7   "  ?id "  pahale )" crlf))
+)
+
 
 ;"before","Prep","1.ke_pahale"
 ;I had known her before you introduced her to me.

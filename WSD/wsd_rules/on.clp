@@ -51,7 +51,8 @@
 )
 
 
-
+;Modified by Aditya and Hardik(5.7.13),IIT(BHU) (Added month names and number category)
+;I completed my college on 23rd july 2013.
 ;Modified by Meena(21.7.11)
 ;The Dow fell 22.6% on Black Monday.
 (defrule on3
@@ -60,7 +61,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (or(kriyA-on_saMbanXI ?kri ?id1)(viSeRya-on_saMbanXI  ?viSeRya  ?id1))
 ;(id-root  ?id1 Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)
-(id-root  ?id1 sunday|monday|tuesday|wednesday|thursday|friday|saturday) ;Modified to lowcase by Roja(13-06-13). As now we are using NER to get PropN info , NER doesnt recognize weekdays as Named Entities. So changed to lowcase. Ex:They are playing an important match against Liverpool on Saturday. 
+(or (id-root  ?id1 sunday|monday|tuesday|wednesday|thursday|friday|saturday|january|february|march|april|may|june|july|august|september|october|november|december)(id-cat_coarse ?id1 number));Modified to lowcase by Roja(13-06-13). As now we are using NER to get PropN info , NER doesnt recognize weekdays as Named Entities. So changed to lowcase. Ex:They are playing an important match against Liverpool on Saturday. 
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ko))

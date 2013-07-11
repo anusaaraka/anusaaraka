@@ -164,7 +164,7 @@
          (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  verb)" crlf)
          (retract ?f0)
   )
- ; MD may be modal verb or verb
+  ; MD may be modal verb or verb
   ;------------------------------------------------------------------------------------------
   (defrule CC_rule
   ?f0<-(id-sd_cat        ?id     CC)
@@ -173,11 +173,20 @@
          (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
+  ;In which school do you study?
   ;Added by Roja(06-08-12)
   (defrule WDT_rule
   ?f0<-(id-sd_cat        ?id     WDT)
   =>
          (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  wh-determiner)" crlf)
+         (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  ;When did the accident happen?
+  (defrule WRB_rule
+  ?f0<-(id-sd_cat        ?id     WRB)
+  =>
+         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  wh-adverb)" crlf)
          (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------

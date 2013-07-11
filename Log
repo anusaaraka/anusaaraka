@@ -1,9 +1,9 @@
- 09-07-13
+ 11-07-13
  ========
  1. In sd_relation_rules.clp
         1. Modified : kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux, AjFArWaka_vAkya, sub_samA_with_cop, 
 		      conj-comp-rule, attr+nsubj, attr+aux, cop+nsubj, prt, nsubj_advmod, nsubj_advmod_1, advmd, det, mark, 
-		      rcmod, csubj, cc_rule, replace_head_with_cop
+		      rcmod, csubj, cc_rule, replace_head_with_cop , aux_to
         2. Added    : dep+det, nsubj_anaBihiwa, csubj+cop, kri_shared_sub, rcmod_prep
 	3. modified and renamed rule nsubjpass/csubjpass as agent and complm+cop as mark+cop, 
 	4. commented rules:
@@ -52,7 +52,7 @@
 16. WSD: Modified : found.clp	improve.clp	baby.clp	is_en_tam.clp	call.clp	get.clp	
 		    add.clp	john.clp	black.clp	on.clp		paper.clp	need.clp
 		    reload.clp	reloaded.clp	each.clp        for.clp         left.clp	by.clp     
-		    best.clp    haunt.clp
+		    best.clp    haunt.clp	before.clp      can.clp    
 	 Added   : room.clp
 17. GNP_agreement.clp
         Added : print_debug_info
@@ -71,7 +71,7 @@
 	Renamed  : PropN_rule  to  PropN_rule_from_NER
 	Modified : above rule. (modified NER fact and rule accordingly)
 	Removed  : NN_to_NNP, NNP_to_NN
-        Added    : PropN_rule_from_NER1
+        Added    : PropN_rule_from_NER1 and WRB_rule
 23. Warning message when 'Parserid Wordid mapping missing' is given for a id, following files are modified::
 	run_sentence_stanford.sh	run_sentence_stanford_minion.sh
 24. get_phrase.clp
@@ -139,27 +139,28 @@
 48. insert_punctuation.clp
 	Modified : get_phrase_group and get_phrase_group1 rules to add SYM in the list
 49. Added PennTags.html in Doc/PennTreeBankNotation
-49. Updated the following 'lex' files
+50. Added "modify_root_for_@_word" rule in change_manual_id.clp
+51. Updated the following 'lex' files
 	add_snt_mrkr.lex		abbrevations.lex	titles.lex
 	mapping-punctuations.lex	replacing_canonical.lex	
-50. Updated shallow parser from 3.0 to 4.0 version and removed older version
-51. Following files are updated accordingly to new shallow parser version:
+52. Updated shallow parser from 3.0 to 4.0 version and removed older version
+53. Following files are updated accordingly to new shallow parser version:
 	compile_shallow_parser.sh	add-suf-into-chunks.py		adding@-for-eng-words.lex	
 	processing_manual_sentences.sh	get_group_mng.sh		get_tam_info.lex	minion_compile.sh
-52. Updated ol_stdenglish.sh same as stdenglish.sh
-53. Updated apertium-en-hi.en.metadix
-54. Updated run_multiple_parse_penn.sh
-55. Updated stanford tregex to 3.2.0 and removed older version. 
-56. Updated new stanford version in std_tregex/run_tregex.sh std_tregex/README
-57. Updated replacing_canonical.lex
-58. Updated get_canonical_form_in_wsd.lex
-59. Updated changes_in_databases
-60. Updated replace-abbrevations.sh
-61. Updated minion dictionaries
-62. Updated dic_compile.sh
-63. Updated iit-bombay dictionary in goldendict
-64. Updated Log
-65. Updated the following verified's
+54. Updated ol_stdenglish.sh same as stdenglish.sh
+55. Updated apertium-en-hi.en.metadix
+56. Updated run_multiple_parse_penn.sh
+57. Updated stanford tregex to 3.2.0 and removed older version. 
+58. Updated new stanford version in std_tregex/run_tregex.sh std_tregex/README
+59. Updated replacing_canonical.lex
+60. Updated get_canonical_form_in_wsd.lex
+61. Updated changes_in_databases
+62. Updated replace-abbrevations.sh
+63. Updated minion dictionaries
+64. Updated dic_compile.sh
+65. Updated iit-bombay dictionary in goldendict
+66. Updated Log
+67. Updated the following verified's
 	sd_verified (492)	phy_verified (253)		phy_partial_verified (81)	
 	verified (40)		partial_ver (22)    		small_sent_verified_sd (66)
 ==========================================================================================================================
