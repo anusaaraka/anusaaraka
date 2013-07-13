@@ -24,11 +24,13 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  kind.clp 	kind1   "  ?id "  prakAra )" crlf))
 )
 
+;Helping us was so kind of you.
 (defrule kind2
 (declare (salience 4800))
 (id-root ?id kind)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) of)
+(viSeRya-of_saMbanXI ?id ?id1) ; Added by Aditya and Hardik(9.7.13),IIT(BHU)
+(id-cat_coarse ?id1 pronoun|PropN) ; Added by Aditya and Hardik(9.7.13),IIT(BHU)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id xayAlupana))
@@ -59,6 +61,21 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  kind.clp 	kind4   "  ?id "  prakAra )" crlf))
 )
+
+;Added by Aditya and Hardik(9.7.13),IIT(BHU)
+;What kind of person is Ram?
+(defrule kind5
+(declare (salience 4750))
+(id-root ?id kind)
+?mng <-(meaning_to_be_decided ?id)
+(id-word =(+ ?id 1) of)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(+ ?id 1) prakAra_kA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " kind.clp	  kind5  "  ?id "  " (+ ?id 1) "  prakAra_kA  )" crlf))
+)
+
 
 ;default_sense && category=noun	prakAra	0
 ;"kind","N","1.prakAra"

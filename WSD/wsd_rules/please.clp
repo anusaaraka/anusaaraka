@@ -35,3 +35,15 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  please.clp 	please2   "  ?id "  prasanna )" crlf))
 )
 
+;Added by Aditya and Hardik(20-06-2013),IIT(BHU) batch 2012-2017.
+;can you call again later please.
+(defrule please3
+(declare (salience 4850))
+(id-last_word ?id please)
+?mng <-(meaning_to_be_decided ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kqpayA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  please.clp 	please3   "  ?id "  kqpayA )" crlf))
+)

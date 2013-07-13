@@ -1,4 +1,4 @@
- 11-07-13
+ 13-07-13
  ========
  1. In sd_relation_rules.clp
         1. Modified : kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux, AjFArWaka_vAkya, sub_samA_with_cop, 
@@ -15,7 +15,8 @@
         Removed  get_exact_and_dic_mng_files module
 	Added save-facts to generate "meaning_alignment_source_tmp.dat" file in word_alignment module
  3. get_mng.clp
-	Added    : get_emphatic_for_prev_word, leftout_single_word_and_single_mng_restricted and print_corrected_mng_info 
+	Added    : get_emphatic_for_prev_word, leftout_single_word_and_single_mng_restricted, print_corrected_mng_info 
+		   and get_xe_with_previous_mng
 	Modified : leftout_single_word_and_single_mng
 	Removed  : commented rules 
  4. modify_root_using_dic.clp
@@ -37,7 +38,9 @@
                    print_minion_alignment_for_dic and print_minion_alignment_info1 
 	Modified the rules to include meaning alignment src fact in rule part
 10. Modified "chk_for_hnd_mwe" rule in manual_word_grp_using_dic.clp (added hnd_multi_word_from_iit_bombay_dic.gdm)
-11. Added "rm_LWG_grouped_id_from_restricted_word" rule in get_word_potential_facts.clp
+11. get_word_potential_facts.clp	
+	Added    : rm_LWG_grouped_id_from_restricted_word rule
+	Modified : potential_facts_for_eng and get_fact_name_anu_slot_ids_for_row 
 12. Added detokenizer-src folder in  miscellaneous/HANDY_SCRIPTS/ 
 	-- to detokenize the tokenized file and also updated anu_testing README
 13. In chk_input_format.pl : Added a pattern to combine "-" when it is separated between two words
@@ -52,7 +55,8 @@
 16. WSD: Modified : found.clp	improve.clp	baby.clp	is_en_tam.clp	call.clp	get.clp	
 		    add.clp	john.clp	black.clp	on.clp		paper.clp	need.clp
 		    reload.clp	reloaded.clp	each.clp        for.clp         left.clp	by.clp     
-		    best.clp    haunt.clp	before.clp      can.clp    
+		    best.clp    haunt.clp	before.clp      can.clp    	kind.clp        please.clp  
+                    project.clp
 	 Added   : room.clp
 17. GNP_agreement.clp
         Added : print_debug_info
@@ -106,6 +110,7 @@
             "phy_align_verified_[eng/hnd/eng_align.html]"  as  "phy_verified_[eng/hnd/eng_align.html]"
 33. In run_modules_std.bat:
 	Removed loading facts 'parserid_wordid_mapping.dat'
+	Loaded "hindi_meanings_tmp1.dat" file for insert_punctuation module 
 34. In run_rasp-parser.sh:
 	Added    : '(AP (JJR' and '(AP (JJ' in sed commands
 	Modified : Output file '$1.std.penn' to '$1.std.penn_tmp1'
@@ -138,6 +143,7 @@
 	Loaded sandbox fact to use provisional dictionary when needed
 48. insert_punctuation.clp
 	Modified : get_phrase_group and get_phrase_group1 rules to add SYM in the list
+	Added    : get_punc_for_compound_mng
 49. Added PennTags.html in Doc/PennTreeBankNotation
 50. Added "modify_root_for_@_word" rule in change_manual_id.clp
 51. Updated the following 'lex' files

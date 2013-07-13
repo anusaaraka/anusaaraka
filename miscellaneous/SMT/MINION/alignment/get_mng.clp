@@ -80,3 +80,20 @@
 	(printout ?*dic_fp1* "emphatic: " ?eng_wrd" :: "(implode$ $?m1) " hI" " ---> implemented" crlf)
 )
 ;--------------------------------------------------------------------------------------------------------
+;A precise definition of this discipline is neither possible nor necessary.
+;isa viRaya kI yaWArWa [pariBARA xenA] na wo samBava hE Ora na hI AvaSyaka.
+(defrule get_xe_with_previous_mng
+(declare (salience 800))
+?f1<-(left_out_mngs ?mid)
+(manual_id-mng ?mid $?mng)
+(manual_id-mapped_id ?id ?mid)
+(id-node-word-root ?id ? $?mng - xe)
+?f0<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?m - =(- ?mid 1) $?m1)
+(hin_pos-hin_mng-eng_ids-eng_words ? ? $? ?aid $? ?eng_wrd)
+=>
+        (retract ?f0 ?f1)
+        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?m - =(- ?mid 1) $?m1 $?mng))
+        (printout ?*dic_fp1*  ?eng_wrd" :: "(implode$ $?m1 ) " xe  ---> implemented" crlf)
+)
+;--------------------------------------------------------------------------------------------------------
+

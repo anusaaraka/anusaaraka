@@ -149,14 +149,15 @@
 ;This is the energy which is released in a nuclear power generation and nuclear explosions.
 ;The reflected ray simply retraces the path. -- parAvarwiwa kiraNa kevala [apanA] paWa punaH anureKiwa karawI hE .
 ;Imagine the world without a pair of functional eyes. -- jarA [isa] saMsAra kI kalpanA binA kriyAwmaka newroM ke yugala ke kIjie.
+;For this, we develop the concepts of velocity and acceleration. isake lie hameM vega waWA wvaraNa kI XAraNA ko samaJanA hogA
 (defrule potential_facts_for_eng
 (declare (salience 2000))
 (id-word ?aid ?wrd)
-(manual_id-mng ?mapped_id $?man_mng)
-(manual_id-mapped_id ?mid ?mapped_id)
-(hindi_id_order $?hin_order)
 (anu_id-word-possible_mngs ?aid ?wrd $?pos_mngs)
+(manual_id-mapped_id ?mid ?mapped_id)
+(or (manual_id-mng ?mapped_id $?man_mng)(manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?man_mng - $? - $?))
 (test (subsetp $?man_mng $?pos_mngs))
+(hindi_id_order $?hin_order)
 (test (neq (member$ ?aid $?hin_order) FALSE))
 =>
 	(assert (anu_id-man_id ?aid ?mid))
@@ -261,6 +262,7 @@
 (hindi_id_order $?hin_order)
 (manual_id-mapped_id ?mid ?mapped_id)
 (manual_id-mng ?mapped_id $?mng)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $? - $?root - $?vib - $?ids)
 =>
 	(bind $?slot_ids (create$))
 	(loop-for-count(?i 1 (length $?aids))
@@ -272,8 +274,13 @@
         )
 	(if (neq (gdbm_lookup "restricted_hnd_words.gdbm" (implode$ (create$ $?mng))) "FALSE") then
         	(assert (fact_name-man_id-slot_ids restricted_eq_or_sumleq ?mapped_id $?slot_ids))
-        else
-        	(assert (fact_name-man_id-slot_ids eq_or_sumleq ?mapped_id $?slot_ids)))
+	else
+		(if (neq (gdbm_lookup "restricted_hnd_words.gdbm" (implode$ (create$ $?root))) "FALSE") then
+			(assert (fact_name-man_id-slot_ids restricted_eq_or_sumleq ?mapped_id $?slot_ids))
+        	else
+        		(assert (fact_name-man_id-slot_ids eq_or_sumleq ?mapped_id $?slot_ids))
+		)
+	)
 )
 ;------------------------------------------------------------------------------------------------------------
 ;Suggested by Chaitanya Sir  (least verb of anu == least verb of man)

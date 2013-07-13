@@ -1,4 +1,5 @@
- ;Added by Shirisha Manju
+ ; This file is Added by Shirisha Manju
+
  ;I showed them how they should do it.
  (defrule get_last_punc_with_S
  (declare (salience 1200))
@@ -9,7 +10,6 @@
 	(assert (hid-punc_head-right_punctuation ?id ?p_h ?punc))
  )
  ;---------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju 
  ;A slow, balmy breeze from the south engulfed everyone in the audience. No, it was not Black Monday.
  ;The main states of southern india are tamilnadu, kerala, maharashtra, andhrapradesh and karnataka.
  (defrule substitute_right_punc
@@ -23,7 +23,6 @@
         (assert (punc_inserted ?p_h))
  )
  ;---------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju 
  ; During the 'state of siege', political opponents were imprisoned (and many of them 'disappeared'), censorship was systematic and all non-government political activity banned. 
  (defrule substitute_left_punct
  (declare (salience 1150))
@@ -36,7 +35,6 @@
         (assert (punc_inserted ?p_h))
  )
  ;---------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju 
  ;Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival.
  ;He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
  (defrule substitute_left_punct_for_group
@@ -66,7 +64,6 @@
         (assert (punc_inserted ?p_h))
  )
  ;---------------------------------------------------------------------------------------------------------------
- ; Added by Shirisha Manju
  ;I ate fruits, drank milk and slept.
  (defrule substitute_right_punc_for_group
  (declare (salience 1000))
@@ -79,7 +76,6 @@
         (assert (punc_inserted ?p_h))
  )
  ;---------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju 
  ;A big, black, ugly dog chased me. From your description, I do not think I would enjoy it. No, it was not Black Monday.
  ;He neither plays, nor reads.Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival.He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
  ;"We have been very disappointed in the performance of natural gas prices," said Mr. Cox, Phillips's president. 
@@ -123,7 +119,6 @@
         (assert (Head-Level-Mother-Daughters ?h ?l ?S $?d $?dau $?d1))
  )
  ;---------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju
  ;"This is good." she said.
  (defrule combine_multiple_right_punc
  (declare (salience 600))
@@ -136,7 +131,6 @@
 	(assert (hid-punc_head-right_punctuation ?id ?p_h ?punc))
  )	
  ;--------------------------------------------------------------------------------------------------------------- 
- ;Added by Shirisha Manju
  (defrule combine_multiple_left_punc
  (declare (salience 600))
  ?f0<-(hid-punc_head-left_punctuation ?id ?p_h ?p) 
@@ -146,5 +140,17 @@
         (retract ?f0 ?f1)
 	(bind ?punc (string-to-field (str-cat ?p ?p1)))
 	(assert (hid-punc_head-left_punctuation ?id ?p_h ?punc))
+ )
+ ;---------------------------------------------------------------------------------------------------------------
+ ;He broke off, as by now he was out of earshot.
+ (defrule get_punc_for_compound_mng
+ (declare (salience 10))
+ ?f0<-(hid-punc_head-right_punctuation ?hid ?p_h ?r_punc)
+ (id-HM-source ?hid - ?src&~WSD_root_mng&~WSD_word_mng&~Default)
+ (id-HM-source ?id ?mng ?src)
+ (test (neq ?mng -))
+ =>
+	(retract ?f0)
+	(assert (hid-punc_head-right_punctuation ?id ?p_h ?r_punc))
  )
  ;---------------------------------------------------------------------------------------------------------------
