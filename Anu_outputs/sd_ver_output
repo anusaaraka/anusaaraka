@@ -66,7 +66,7 @@ puswaka PropN-meera-PropN ke xvArA paDI gayI WI.
 
 Hindi meaning using Stanford parser 2.14
 What is the purpose of Dharma? 
-PropN-dharma-PropN kA uxxeSya kyA hE?
+Dharma kA uxxeSya kyA hE?
 
 Hindi meaning using Stanford parser 2.15
 There was a marked difference in the prices of dishes. 
@@ -325,7 +325,7 @@ loga anya koYPI_peya_yA Sarabawa banAne ke lie espreso koYPI kA upayoga karawe h
 
 Hindi meaning using Stanford parser 2.75
 The Zongle of Bongle Dongle resigned today. 
-PropN-bongle-PropN PropN-dongle-PropN ke PropN-zongle-PropN ne Aja wyAga_pawra xiyA.
+PropN-bongle-PropN PropN-dongle-PropN ke Zongle ne Aja wyAga_pawra xiyA.
 
 Hindi meaning using Stanford parser 2.76
 I gave an expensive present. 
@@ -504,7 +504,7 @@ vaha usake boYsa kI AzKoM meM eka CotA AxamI hE.
 
 Hindi meaning using Stanford parser 2.117
 We camped on Nilgiri hills during summer. 
-hamane grIRma ke xOrAna PropN-nilgiri-PropN pahAdiyoM para padAva dAlA.
+hamane grIRma ke xOrAna Nilgiri pahAdiyoM para padAva dAlA.
 
 Hindi meaning using Stanford parser 2.118
 The soldiers were called out for the war. 
@@ -858,7 +858,7 @@ yaha spaRta hE PropN-rod-PropN ko kisane mArA.
 
 Hindi meaning using Stanford parser 2.201
 We are from the planet Gorpon. 
-hama graha PropN-gorpon-PropN se hEM.
+hama graha Gorpon se hEM.
 
 Hindi meaning using Stanford parser 2.202
 The best costumes got prizes. 
@@ -1056,7 +1056,7 @@ vaha eka badA Kela praSaMsaka hE.
 
 Hindi meaning using Stanford parser 2.247
 I live at 805 West Indiana Street. 
-mEM 805 vesta PropN-indiana-PropN PropN-street-PropN meM rahawA hUz.
+mEM 805 paScima Indiana sadaka meM rahawA hUz.
 
 Hindi meaning using Stanford parser 2.248
 It was a completely wasted journey. 
@@ -1071,7 +1071,7 @@ mere pAsa bahuwa jyAxA pEsA nahIM hE.
 
 Hindi meaning using Stanford parser 2.250
 Dalai Lama is the abbot of the Tibetian monastery. 
-PropN-dalai-PropN PropN-lama-PropN PropN-tibetian-PropN maTa kA maTAXyakRa hE.
+PropN-dalai-PropN PropN-lama-PropN Tibetian maTa kA maTAXyakRa hE.
 
 Hindi meaning using Stanford parser 2.251
 There is abject poverty in India. 
@@ -1423,11 +1423,11 @@ kyozki mEM afgrejI jAnawA hUz, isaliye vaha muJase bolA.
 
 Hindi meaning using Stanford parser 3.29
 Mysore is also known as the city of palaces. 
-PropN-mysore-PropN mahaloM ke Sahara ke nAma se BI jAnA jAwA hE.
+Mysore mahaloM ke Sahara ke nAma se BI jAnA jAwA hE.
 
 Hindi meaning using Stanford parser 3.30
-Kufri is a small hill station near shimla. 
-PropN-kufri-PropN shimla ke nikata eka CotA parvawIya sWAna hE.
+Kufri is a small hill station near Shimla. 
+PropN-kufri-PropN PropN-shimla-PropN ke nikata eka CotA parvawIya sWAna hE.
 
 Hindi meaning using Stanford parser 3.31
 The girl who you called yesterday has arrived. 
@@ -1502,13 +1502,13 @@ prAcIna kAla ke xOrAna Ayodhya kaushaldesa ke nAma se jAnA jAwA WA.
 Multiple adjective senses are available for ancient. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.44
-Golconda fort is situated on the western outskirts of hyderabad. 
+Golconda fort is situated on the western outskirts of Hyderabad. 
 PropN-golconda-PropN kilA PropN-hyderabad-PropN ke paScimI bAharI ilAke meM hE.
 PropN-golconda-PropN kilA PropN-hyderabad-PropN ke paScimI bAharI hisse meM hE.
 Multiple adjective senses are available for western. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.45
-Jumma masjid is considered to be one of the most beautiful mosques in western india. 
+Jumma masjid is considered to be one of the most beautiful mosques in western India. 
 jummA masjixa paScimI BArawa meM sabase aXika sunxara masjixoM meM se eka samaJI jAwI hE.
 Multiple adjective senses are available for beautiful. WSD rule is required 
 Multiple adjective senses are available for western. WSD rule is required 
@@ -1824,8 +1824,8 @@ He finally got a topic to speak at the forum.
 usako AKirakAra janasaBA meM bolane ke lie viRaya milA.
 
 Hindi meaning using Stanford parser 4.14
-The main states of southern india are tamilnadu, kerala, maharashtra, andhrapradesh and karnataka. 
-xakRiNI BArawa ke pramuKa rAjya tamilnadu, PropN-kerala-PropN, PropN-maharashtra-PropN, andhrapradesh Ora PropN-karnataka-PropN hEM.
+The main states of southern India are Tamilnadu, Kerala, Maharashtra, Andhrapradesh and Karnataka. 
+xakRiNI BArawa ke pramuKa rAjya Tamilnadu, PropN-kerala-PropN, PropN-maharashtra-PropN, PropN-andhrapradesh-PropN Ora PropN-karnataka-PropN hEM.
 xakRiNI BArawa ke pramuKa rAjya tamilnadu, kerala, maharashtra, andhrapradesh Ora karnataka hEM.
 Multiple adjective senses are available for main. WSD rule is required 
 Multiple adjective senses are available for southern. WSD rule is required 
@@ -1856,7 +1856,7 @@ Multiple adjective senses are available for important. WSD rule is required
 
 Hindi meaning using Stanford parser 4.20
 He went to Agra and saw the Tajmahal. 
-vaha PropN-agra-PropN ko gayA Ora PropN-tajmahal-PropN ko xeKA.
+vaha PropN-agra-PropN ko gayA Ora Tajmahal ko xeKA.
 
 Hindi meaning using Stanford parser 4.21
 They accused him of the crime. 
@@ -1889,8 +1889,8 @@ How shall we collect the money?
 hama pEsA kEse iktTA karezge?
 
 Hindi meaning using Stanford parser 4.28
-Rahul was the son of buddha and the name lahaul is derived from rahul. 
-PropN-rahul-PropN buddha kA betA WA Ora nAma lahaul rahul se viSleRaNa huA hE.
+Rahul was the son of Buddha and the name Lahaul is derived from Rahul. 
+PropN-rahul-PropN buxXa kA betA WA Ora nAma PropN-lahaul-PropN PropN-rahul-PropN se viSleRaNa huA hE.
 
 Hindi meaning using Stanford parser 4.29
 The white marbled moti masjid or the pearl mosque was the private mosque for aurangzeb. 
@@ -1899,22 +1899,22 @@ Multiple adjective senses are available for white. WSD rule is required
 
 Hindi meaning using Stanford parser 4.30
 Sarpa yakshi and Naga yakshi are the beloved consorts of Nagaraja. 
-PropN-sarpa-PropN PropN-yakshi-PropN Ora nAga yakshi PropN-nagaraja-PropN kI priya pawniyAz hEM.
+Sarpa yakshi Ora nAga yakshi PropN-nagaraja-PropN kI priya pawniyAz hEM.
 PropN-sarpa-PropN yakshi Ora nAga yakshi PropN-nagaraja-PropN kI priya pawniyAz hEM.
 PropN-sarpa-PropN PropN-yakshi-PropN Ora nAga PropN-yakshi-PropN PropN-nagaraja-PropN kI priya pawniyAz hEM.
 
 Hindi meaning using Stanford parser 4.31
 Rainwear is a must if you are visiting between june and september. 
-PropN-rainwear-PropN AvaSyaka hE yaxi Apa jUna ke bIca Ora siwambara ke bIca xeKane_jA rahe hEM.
+Rainwear AvaSyaka hE yaxi Apa jUna ke bIca Ora siwambara ke bIca xeKane_jA rahe hEM.
 
 Hindi meaning using Stanford parser 4.32
 Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival. 
-PropN-allahabad-PropN usake vArRika magh mele ke lie (Cote kumbh mele) Ora rafgIna dussehra wyOhAra ke lie BI jAnA jAwA hE.
+Allahabad usake vArRika magh mele ke lie (Cote kumbh mele) Ora rafgIna dussehra wyOhAra ke lie BI jAnA jAwA hE.
 Multiple adjective senses are available for annual. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.33
-This old fort was built by sher shah in the 16th century. 
-yaha purAnA kilA 16th SawAbxI meM sher SAha ke xvArA banAyA gayA WA.
+This old fort was built by Sher Shah in the 16th century. 
+yaha purAnA kilA 16th SawAbxI meM PropN-sher-PropN SAha ke xvArA banAyA gayA WA.
 
 Hindi meaning using Stanford parser 4.34
 During the first world war, it was used as a hospital. 
@@ -1932,8 +1932,8 @@ yaha sunxara imArawa lambAI meM 245 PropN-ft-PropN Ora cOdAI meM 156 PropN-ft-Pr
 Multiple adjective senses are available for beautiful. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.37
-One can reach kumbhalgarh by road from udaipur (84km) and ranakpur which is 18km from kumbhalgarh. 
-koI BI udaipur se (84km) Ora ranakpur se sadaka se kumbhalgarh waka pahuzca sakawA hE jo kumbhalgarh se 18km hE.
+One can reach kumbhalgarh by road from Udaipur (84km) and ranakpur which is 18km from kumbhalgarh. 
+koI BI PropN-udaipur-PropN se (84km) Ora ranakpur se sadaka se kumbhalgarh waka pahuzca sakawA hE jo kumbhalgarh se 18km hE.
 koI BI udaipur se (PropN-84km-PropN) Ora ranakpur se sadaka se kumbhalgarh waka pahuzca sakawA hE jo kumbhalgarh se 18km hE.
 
 Hindi meaning using Stanford parser 4.38
@@ -2109,7 +2109,7 @@ parisWiwiyAz kuCa jyAxA hI KarAba ho gayI .
 
 Hindi meaning using Stanford parser 4.77
 SOUTH AFRICA FREED the ANC's Sisulu and seven other political prisoners. 
-PropN-south-PropN PropN-africa-PropN ne PropN-anc-PropN kA PropN-sisulu-PropN Ora sAwa anya rAjanEwika banxiyoM ko mukwa kiyA.
+xakRiNa AFRICA ne PropN-anc-PropN kA PropN-sisulu-PropN Ora sAwa anya rAjanEwika banxiyoM ko mukwa kiyA.
 SOUTH AFRICA ne ANC ke Sisulu Ora sAwa anya rAjanEwika banxI mukwa kie.
 Multiple adjective senses are available for political. WSD rule is required 
 
@@ -2128,7 +2128,7 @@ unako kArya karane xo.
 
 Hindi meaning using Stanford parser 4.81
 The Hawa mahal was built by the Maharaja Sawai Pratap Singh in 1799 AD and Lal Chand Usta was the architect. 
-PropN-hawa-PropN mahal 1799 EdI meM mahArAjA PropN-sawai-PropN PropN-pratap-PropN PropN-singh-PropN ke xvArA banAyA gayA WA Ora PropN-lal-PropN PropN-chand-PropN PropN-usta-PropN vAswukAra WA.
+Hawa mahal 1799 EdI meM mahArAjA PropN-sawai-PropN PropN-pratap-PropN PropN-singh-PropN ke xvArA banAyA gayA WA Ora PropN-lal-PropN PropN-chand-PropN PropN-usta-PropN vAswukAra WA.
 
 Hindi meaning using Stanford parser 4.82
 He is not related to me. 

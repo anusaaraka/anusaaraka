@@ -44,6 +44,13 @@
     echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
  fi
 
+ PRES_PATH=`pwd`
+ cp $1 $MYPATH/tmp/$1_tmp/
+ #running stanford NER (Named Entity Recogniser) on whole text.
+ echo "Calling NER ..."
+ cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2013-06-20/
+ sh run-ner.sh $1
+
  echo "Saving Format info ..."
 
  $HOME_anu_test/Anu/ol_stdenglish.sh $1 $MYPATH
@@ -68,9 +75,13 @@
   cd $HOME_anu_test/Anu_src
   ./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
+  replace-abbrevations.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org
+  cd $HOME_anu_test/Anu_src/
+  ./replace_nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
+
   echo "Calling OPEN-LOGOS"
   cd $HOME_anu_test/Anu_src
-  python transform_words.py $HOME_anu_tmp/tmp/$1_tmp/one_sentence_per_line.txt $HOME_anu_test/Anu_data/transformed_words.txt $HOME_anu_tmp/tmp/$1_tmp/one_sentence_per_line_changed.txt $HOME_anu_tmp/tmp/$1_tmp/transformed_word_id_all.dat
+  python transform_words.py $HOME_anu_tmp/tmp/$1_tmp/one_sentence_per_line.txt_org $HOME_anu_test/Anu_data/transformed_words.txt $HOME_anu_tmp/tmp/$1_tmp/one_sentence_per_line_changed.txt $HOME_anu_tmp/tmp/$1_tmp/transformed_word_id_all.dat
 
 
   cd $HOME_open_logos/testapi
@@ -98,9 +109,7 @@
   $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line_tmp.txt dir_names.txt English_sentence.dat
   $HOME_anu_test/Anu_src/split_file.out chunk.txt dir_names.txt chunk.dat 
   perl  $HOME_anu_test/Anu_src/pre-split.pl < $MYPATH/tmp/$1_tmp/one_sentence_per_line-diag.txt   >tmp1
-
   $HOME_anu_test/Anu_src/split_file.out tmp1  dir_names.txt ol-EG-TR.diag
-
   $HOME_anu_test/Anu_src/split_file.out $HOME_anu_tmp/tmp/$1_tmp/transformed_word_id_all.dat  dir_names.txt transformed_word_id.dat
 
   $HOME_anu_test/Anu_src/split_file.out multi_word_expressions.txt  dir_names.txt  multi_word_expressions.dat
@@ -118,6 +127,7 @@
  do
     echo "Hindi meaning using Open Logos" $line
     cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
+    cp $MYPATH/tmp/$1_tmp/ner.txt $MYPATH/tmp/$1_tmp/$line/ner.dat
     timeout 180 ./run_sentence_ol.sh $1 $line 1 $MYPATH $4
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt

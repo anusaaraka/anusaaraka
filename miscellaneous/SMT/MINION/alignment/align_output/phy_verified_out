@@ -355,7 +355,7 @@ yaWAkrama sWiwi viSeRa_vivaraNa xene ke lie, hameM eka tippaNI noka Ora samuccay
 
 Hindi meaning using Stanford parser 2.77
 The point of intersection of these three axes is called origin (O) and serves as the reference point. 
-ina wIna XuriyoM kA milane_kA binxu mUla binxu (PropN-o-PropN) kahA jAwA hE Ora tippaNI noka ke jEsA sevA karawA hE.
+ina wIna XuriyoM kA milane_kA binxu mUla binxu (O) kahA jAwA hE Ora tippaNI noka ke jEsA sevA karawA hE.
 
 Hindi meaning using Stanford parser 2.78
 The coordinates (x, y, z) of an object describe the position of the object with respect to this coordinate system. 
@@ -367,7 +367,7 @@ uxAharaNa_ke liye, eka pahalU meM gawi varNana karane ke lie, hameM sirPa eka Xu
 
 Hindi meaning using Stanford parser 2.80
 In the first case, the car moves from O to P. 
-praWama mAmale meM, gAdI PropN-o-PropN se P ko calawI hE.
+praWama mAmale meM, gAdI O se P ko calawI hE.
 
 Hindi meaning using Stanford parser 2.81
 This distance is called the path length traversed by the car. 
@@ -602,7 +602,7 @@ viSva kA paxArWoM kI Ora jIvana kI Ora barwAva kI eka hErAna karawI huI viBinnaw
 
 Hindi meaning using Stanford parser 2.135
 What is Science and what is the so-called Scientific Method? 
-vijFAna kyA hE Ora waWAkaWiwa PropN-scientific-PropN PropN-method-PropN kyA hE?
+vijFAna kyA hE Ora waWAkaWiwa vEjFAnika praNAlI kyA hE?
 
 Hindi meaning using Stanford parser 2.136
 A precise definition of this discipline is neither possible nor necessary. 
@@ -621,7 +621,7 @@ Multiple adjective senses are available for such. WSD rule is required
 
 Hindi meaning using Stanford parser 2.139
 Property of partial reflection of light is yet another such example. 
-prakASa ke AMSika parAvarwana kI sampawwia eka EsA uxAharaNa hE.
+prakASa ke AMSika parAvarwana kI sampawwi eka EsA uxAharaNa hE.
 Multiple adjective senses are available for partial. WSD rule is required 
 Multiple adjective senses are available for such. WSD rule is required 
 
@@ -803,7 +803,7 @@ hama prakqwi ke buniyAxI niyamoM ke Ora alaga prAkqwika pariGatanA meM unake Avi
 
 Hindi meaning using Stanford parser 2.180
 In CGS system they were centimetre, gram and second respectively. 
-PropN-cgs-PropN nikAya meM ve kramaSaH mItara kA SawAMSa, grAma Ora xUsare We.
+CGS nikAya meM ve kramaSaH mItara kA SawAMSa, grAma Ora xUsare We.
 
 Hindi meaning using Stanford parser 2.181
 In FPS system they were foot, pound and second respectively. 
@@ -884,7 +884,7 @@ kyA upAya cumbaka bijalI ke pravAha banA sakawe hEM?
 
 Hindi meaning using Stanford parser 2.199
 Does the nature permit such a relation between electricity and magnetism? 
-kyA PropN-does-PropN prakqwi vixyuwa Sakwi ke bIca Ora cumbakawwva ke bIca EsA sambanXa anumawi xewI hE?
+kyA kara prakqwi vixyuwa Sakwi ke bIca Ora cumbakawwva ke bIca EsA sambanXa anumawi xewI hE?
 
 Hindi meaning using Stanford parser 2.200
 The steady current in the coil C2 produces a steady magnetic field. 
@@ -963,7 +963,7 @@ paranwu hamArA piNda eka xqDa piNda xqDawA se nahIM hE.
 
 Hindi meaning using Stanford parser 2.218
 Relative to the bus, therefore, we are thrown backward. 
-basa ko PropN-relative-PropN, isalie, hama ultA Pefke gaye hEM.
+basa ko sagA, isalie, hama ultA Pefke gaye hEM.
 
 Hindi meaning using Stanford parser 2.219
 But the rest of the body continues to move forward due to inertia. 

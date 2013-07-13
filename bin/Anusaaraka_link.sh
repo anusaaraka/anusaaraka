@@ -44,6 +44,13 @@
     echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
  fi
 
+ PRES_PATH=`pwd`
+ cp $1 $MYPATH/tmp/$1_tmp/
+ #running stanford NER (Named Entity Recogniser) on whole text.
+ echo "Calling NER ..."
+ cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2013-06-20/
+ sh run-ner.sh $1
+
  echo "Saving Format info ..."
 
  $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
@@ -68,16 +75,15 @@
   cd $HOME_anu_test/Anu_src
   ./aper_chunker.out $MYPATH/tmp/$1_tmp/chunk.txt < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.chunker
 
+  replace-abbrevations.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org
+  cd $HOME_anu_test/Anu_src/
+  ./replace_nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
+
   echo "Calling Link Parser"
   cd $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/link-grammar
-  ./link-parser $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt
+  ./link-parser $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
  # cd $HOME_anu_test/Parsers/LINK/link-grammar-4.7.4/link-grammar
  # ./link-parser $HOME_anu_test/Parsers/LINK/link-grammar-4.7.4/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt
-
-  #running stanford NER (Named Entity Recogniser) on whole text.
-  echo "Finding NER ... "
-  cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2008-05-07/
-  sh run-ner.sh $1
 
   echo "Tokenizing ..." 
   perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised
@@ -116,6 +122,7 @@
  do
     echo "Hindi meaning using Link parser" $line 
     cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
+    cp $MYPATH/tmp/$1_tmp/ner.txt $MYPATH/tmp/$1_tmp/$line/ner.dat
     timeout 180 ./run_sentence_link.sh $1 $line 1 $MYPATH $4
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt

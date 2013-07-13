@@ -21,8 +21,6 @@
 
 ##### for prep finding ##########
 perl $HOME_anu_test/Anu_src/ol_prep.pl < $MYPATH/$1_tmp/$2/ol-EG-TR.diag  $MYPATH/$1_tmp/$2
-sed -e 's/=/equal_to/g' < $MYPATH/$1_tmp/$2/ol_prep.dat > $MYPATH/$1_tmp/$2/ol_prep.dat_tmp
-mv  $MYPATH/$1_tmp/$2/ol_prep.dat_tmp  $MYPATH/$1_tmp/$2/ol_prep.dat
 
 ########## end #######
  python $HOME_anu_test/Anu_src/run_openlogos.py $MYPATH/$1_tmp/$2/ol-EG-TR.diag
@@ -81,9 +79,6 @@ fi
 
  cat proper_nouns.dat >> $MYPATH/$1_tmp/proper_nouns_list
 
- #sed -e 's/=/equal_to/g' < all_facts > all_facts_tmp
- #mv all_facts_tmp all_facts
-
  sh $HOME_anu_test/bin/abbr.sh
 
  python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  hindi_sentence_tmp1.dat hindi_sentence_tmp2.dat
@@ -92,17 +87,11 @@ fi
  cat  hindi_sentence.dat
 
  grep -B2 "FALSE" $1.error >> errors.txt
+ grep "Multiple adjective senses are available"  $1.error > error.txt
+ sort -u error.txt >> errors.txt
+ grep "Meaning for verb phrase" $1.error >> errors.txt
+ grep "Parserid Wordid mapping missing for" $1.error >> errors.txt
  cat errors.txt
 
-#####Commented below lines as sent-by-sent is not used anywhere.
-#for sentence by sent analysis for web debugging tutorial
-# cat English_sentence.dat >> $MYPATH/$1_tmp/sent-by-sent
-## cat  hindi_sentence.dat | $HOME_anu_test/Anu_src/file-wx_utf8.out | sed -e '1,$s/\\@//g
-# cat  hindi_sentence.dat | wx_utf8 | sed -e '1,$s/\\@//g
-# 1,$s/#//g' >> $MYPATH/$1_tmp/sent-by-sent
-# echo "" >> $MYPATH/$1_tmp/sent-by-sent
-# echo "" >> $MYPATH/$1_tmp/sent-by-sent
-
-# myclips -f $HOME_anu_test/Anu_clp_files/user_info.bat > /dev/null
-# mv user_wsd_info.dat $MYPATH/$1_$2_user_wsd_info.dat
-
+ myclips -f $HOME_anu_test/Anu_clp_files/user_info.bat > /dev/null
+ mv user_wsd_info.dat $MYPATH/$1_$2_user_wsd_info.dat

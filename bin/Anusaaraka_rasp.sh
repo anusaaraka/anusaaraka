@@ -48,7 +48,7 @@
  cp $1 $MYPATH/tmp/$1_tmp/
  #running stanford NER (Named Entity Recogniser) on whole text.
  echo "Calling NER ..."
- cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2008-05-07/
+ cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2013-06-20/
  sh run-ner.sh $1
 
 # echo "Calling Transliteration"
@@ -89,8 +89,8 @@
   sh run_rasp-parser.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
   mv $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org.std.penn_tmp1  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1
   
-  echo "Calling Stanford parser"
-  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2013-04-05/
+  echo "Calling Stanford parser ..."
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2013-06-20/
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 
   echo "Tokenizing ..." 

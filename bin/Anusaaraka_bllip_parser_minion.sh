@@ -52,12 +52,13 @@
  cp $1 $MYPATH/tmp/$1_tmp/
  #running stanford NER (Named Entity Recogniser) on whole text.
  echo "Calling NER ..."
- cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2008-05-07/
+ cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2013-06-20/
  sh run-ner.sh $1
 
  echo "Calling Transliteration"
  cd $HOME_anu_test/miscellaneous/transliteration/work
  sh run_transliteration.sh $MYPATH/tmp $1
+
 
  cd $PRES_PATH
  echo "Saving Format info ..."
@@ -91,7 +92,7 @@
   sh parse.sh  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org1 > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp 2>/dev/null
   sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}" $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp | sed 's/^(S1/(ROOT/g'  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1
   echo "Calling Stanford parser ..."
-  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2013-04-05/
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2013-06-20/
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 
   echo "Tokenizing ..." 
@@ -146,9 +147,6 @@
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
 
-# echo "Calling Transliteration"
-# cd $HOME_anu_test/miscellaneous/transliteration/work
-# sh run_transliteration.sh $MYPATH/tmp $1
 
  cd $MYPATH/tmp/$1_tmp/
  echo "(defglobal ?*path* = $HOME_anu_test)" > path_for_html.clp
@@ -160,7 +158,7 @@
  sh $HOME_anu_test/miscellaneous/SMT/MINION/browser/run_align_browser.sh $HOME_anu_test $1 $MYPATH $HOME_anu_output
 
  echo "Print minion_statistics"
- cat $MYPATH/tmp/$1_tmp/meanings_aligned_with_dic_tmp.txt $MYPATH/tmp/$1_tmp/meanings_aligned_with_anu_tmp.txt $MYPATH/tmp/$1_tmp/meanings_aligned_with_minion_tmp.txt >> $MYPATH/tmp/$1_tmp/anu_and_manual_meanings_tmp.txt
+ cat $MYPATH/tmp/$1_tmp/wsd_errors_tmp.txt $MYPATH/tmp/$1_tmp/meanings_aligned_with_anu_tmp.txt $MYPATH/tmp/$1_tmp/meanings_aligned_with_minion_tmp.txt >> $MYPATH/tmp/$1_tmp/anu_and_manual_meanings_tmp.txt
  sort $MYPATH/tmp/$1_tmp/anu_and_manual_meanings_tmp.txt > $MYPATH/tmp/$1_tmp/anu_and_manual_meanings.txt
 
  sed -n '1h;2,$H;${g;s/\([0-9.]*\)   Solution Found\n[0-9.]*   Time-out/\1   Time-out/g;p}' $MYPATH/tmp/$1_tmp/no_sol_found_tmp.txt | sed '2d'  > $MYPATH/tmp/$1_tmp/no_sol_found.txt

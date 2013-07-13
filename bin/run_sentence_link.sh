@@ -23,7 +23,6 @@
  cd $MYPATH/$1_tmp/$2
  python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  id_Apertium_output1.dat id_Apertium_output2.dat
  sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output2.dat > $MYPATH/$1_tmp/$2/id_Apertium_output.dat
- #sed -e 's/#//g' $MYPATH/$1_tmp/$2/id_Apertium_output1.dat > $MYPATH/$1_tmp/$2/id_Apertium_output.dat
 
  cd $MYPATH/$1_tmp/$2
  cp hindi_id_order.dat hindi_id_order_tmp1.dat #As punctuations are not handled in link parser we are temporarily copying hindi_id_order.dat to hindi_id_order_tmp1.dat as this file is later used for html file generation.
@@ -48,15 +47,11 @@
  cat  hindi_sentence.dat
 
  grep -B2 "FALSE" $1.error >> errors.txt
+ grep "Multiple adjective senses are available"  $1.error > error.txt
+ sort -u error.txt >> errors.txt
+ grep "Meaning for verb phrase" $1.error >> errors.txt
+ grep "Parserid Wordid mapping missing for" $1.error >> errors.txt
  cat errors.txt
-
-#####Commented below lines as sent-by-sent is not used anywhere.
-#for sentence by sent analysis for web debugging tutorial
-# cat English_sentence.dat >> $MYPATH/$1_tmp/sent-by-sent
-# cat  hindi_sentence.dat | $HOME_anu_test/Anu_src/file-wx_utf8.out | sed -e '1,$s/\\@//g
-# 1,$s/#//g' >> $MYPATH/$1_tmp/sent-by-sent
-# echo "" >> $MYPATH/$1_tmp/sent-by-sent
 
  myclips -f $HOME_anu_test/Anu_clp_files/user_info.bat > /dev/null
  mv user_wsd_info.dat $MYPATH/$1_$2_user_wsd_info.dat
-

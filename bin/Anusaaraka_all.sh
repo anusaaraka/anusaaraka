@@ -44,6 +44,16 @@
     echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
  fi
 
+ PRES_PATH=`pwd`
+ cp $1 $MYPATH/tmp/$1_tmp/
+ #running stanford NER (Named Entity Recogniser) on whole text.
+ echo "Calling NER ..."
+ cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2013-06-20/
+ sh run-ner.sh $1
+
+
+
+ cd $PRES_PATH
  echo "Saving Format info ..."
 
  $HOME_anu_test/Anu/ol_stdenglish.sh $1 $MYPATH
@@ -76,8 +86,8 @@
   cd $HOME_anu_test/Anu_src/
   ./replace_nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
 
-  echo "Calling Stanford parser"
-  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2013-04-05/
+  echo "Calling Stanford parser ..."
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2013-06-20/
   if [ "$2" != "" -a "$2" != "0" ] ;
   then
   sh run_multiple_parse_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp_1 2>/dev/null  
@@ -87,11 +97,6 @@
   fi
   sed -n -e "H;\${g;s/Sentence skipped: no PCFG fallback.\nSENTENCE_SKIPPED_OR_UNPARSABLE/(ROOT (S ))\n/g;p}"  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp  > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
-
-  #running stanford NER (Named Entity Recogniser) on whole text.
-  echo "Finding NER ... "
-  cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2008-05-07/
-  sh run-ner.sh $1
 
   echo "Tokenizing ..." 
   perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised
@@ -168,11 +173,13 @@
 				then
 					echo "Hindi meaning using Stanford parser" $line
 					cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/										
+    					cp $MYPATH/tmp/$1_tmp/ner.txt $MYPATH/tmp/$1_tmp/$line/ner.dat
  					timeout 180 ./run_sentence_stanford.sh $1 $line 1 $MYPATH $4
  					echo ""
 				else
  					echo "Hindi meaning using Link parser" $line
 					cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
+    					cp $MYPATH/tmp/$1_tmp/ner.txt $MYPATH/tmp/$1_tmp/$line/ner.dat
  					timeout 180 ./run_sentence_link.sh $1 $line 1 $MYPATH $4
  					echo ""
  								fi
@@ -181,6 +188,7 @@
  		else
  			echo "Hindi meaning using Open Logos" $line
 			cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
+    			cp $MYPATH/tmp/$1_tmp/ner.txt $MYPATH/tmp/$1_tmp/$line/ner.dat
 			timeout 180 ./run_sentence_ol.sh $1 $line 1 $MYPATH $4
 			echo ""
 		fi

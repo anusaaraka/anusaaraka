@@ -47,8 +47,8 @@
  PRES_PATH=`pwd`
  cp $1 $MYPATH/tmp/$1_tmp/
  #running stanford NER (Named Entity Recogniser) on whole text.
- echo "Finding NER ..."
- cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2008-05-07/
+ echo "Calling NER ..."
+ cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2013-06-20/
  sh run-ner.sh $1
 
  cd $PRES_PATH
@@ -77,8 +77,8 @@
   cd $HOME_anu_test/Anu_src/
   ./replace_nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
 
-  echo "Calling Stanford parser"
-  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2013-04-05/
+  echo "Calling Stanford parser ..."
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2013-06-20/
   if [ "$2" != "" -a "$2" != "0" ] ;
   then
   sh run_multiple_parse_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp_1 2>/dev/null  

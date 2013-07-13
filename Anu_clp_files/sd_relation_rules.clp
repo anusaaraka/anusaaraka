@@ -851,7 +851,8 @@
 (declare (salience 200))
 (rel_name-sids dobj ?kriyA ?x)
 (rel_name-sids rcmod ?x ?kriyA)
-(propogation_rel_name-sids rel ?kriyA ?obj)
+(basic_rel_name-sids dobj ?kriyA ?obj) ; In new version dobj is given between 'called' and 'who' in basic rel
+;(propogation_rel_name-sids rel ?kriyA ?obj) ; In new version  'rel' relation is missing so using above fact. Suggested by Chaitanya Sir
 =>
 (assert (got_object_rel ?kriyA))
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-object       "?kriyA"        "?obj")"crlf)

@@ -52,12 +52,13 @@
  cp $1 $MYPATH/tmp/$1_tmp/
  #running stanford NER (Named Entity Recogniser) on whole text.
  echo "Calling NER ..."
- cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2008-05-07/
+ cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2013-06-20/
  sh run-ner.sh $1
 
  echo "Calling Transliteration"
  cd $HOME_anu_test/miscellaneous/transliteration/work
  sh run_transliteration.sh $MYPATH/tmp $1
+
 
  cd $PRES_PATH
  echo "Saving Format info ..."
@@ -86,7 +87,7 @@
   ./replace_nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
 
   echo "Calling Stanford parser ..."
-  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2013-04-05/
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2013-06-20/
   if [ "$2" != "" -a "$2" != "0" ] ;
   then
   sh run_multiple_parse_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp_1 2>/dev/null  
@@ -149,9 +150,6 @@
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
 
-# echo "Calling Transliteration"
-# cd $HOME_anu_test/miscellaneous/transliteration/work
-# sh run_transliteration.sh $MYPATH/tmp $1
 
  cd $MYPATH/tmp/$1_tmp/
  echo "(defglobal ?*path* = $HOME_anu_test)" > path_for_html.clp

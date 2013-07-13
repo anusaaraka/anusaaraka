@@ -1,3 +1,5 @@
 utf8_iscii < $1 > $1_isc
 ir_no@ < $1_isc  | sed -e 's/OY/oY/g'
 rm $1_isc
+#ir_no@ removes @ in the iscii o/p
+#ir stores the @ info
