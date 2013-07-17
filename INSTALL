@@ -10,7 +10,8 @@
        -- apertium 3.1 or above
        -- xsltproc
        -- libgdbm3, 
-       -- libgdbm-dev (to use gdbm), 
+       -- libgdbm-dev (to use gdbm),
+       -- libicu-dev (for uconv) 
        -- gcc,
        -- g++ ,  
        -- ant ( Anusaaraka will run without ant also so one can ignore the errors found while compiling it )

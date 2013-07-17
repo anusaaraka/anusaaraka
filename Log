@@ -1,4 +1,4 @@
- 13-07-13
+ 17-07-13
  ========
  1. In sd_relation_rules.clp
         1. Modified : kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux, AjFArWaka_vAkya, sub_samA_with_cop, 
@@ -56,8 +56,8 @@
 		    add.clp	john.clp	black.clp	on.clp		paper.clp	need.clp
 		    reload.clp	reloaded.clp	each.clp        for.clp         left.clp	by.clp     
 		    best.clp    haunt.clp	before.clp      can.clp    	kind.clp        please.clp  
-                    project.clp
-	 Added   : room.clp
+                    project.clp	foundation.clp
+	 Added    : room.clp
 17. GNP_agreement.clp
         Added : print_debug_info
         Modified the rules to add function call
@@ -73,9 +73,9 @@
 	Anusaaraka_bllip_parser.sh				Anusaaraka_bllip_parser_minion.sh	
 22. In sd_category.clp,
 	Renamed  : PropN_rule  to  PropN_rule_from_NER
-	Modified : above rule. (modified NER fact and rule accordingly)
+	Modified : above rule. (modified NER fact and rule accordingly), NNPS_rule
 	Removed  : NN_to_NNP, NNP_to_NN
-        Added    : PropN_rule_from_NER1 and WRB_rule
+        Added    : PropN_rule_from_NER1, WRB_rule, TO_rule, CD_rule, WP_rule, IN_rule1, PDT_rule and EX_rule
 23. Warning message when 'Parserid Wordid mapping missing' is given for a id, following files are modified::
 	run_sentence_stanford.sh	run_sentence_stanford_minion.sh
 24. get_phrase.clp
@@ -170,7 +170,7 @@
 59. Updated bin/utf8_wx
 60. Updated wx_utf8.lex to handle 'eV', 'oV'
 61. Updated ol_stdenglish.sh same as stdenglish.sh
-62. Updated apertium-en-hi.en.metadix
+62. Updated apertium-en-hi.en.metadix and apertium_hn.dix
 63. Updated run_multiple_parse_penn.sh
 64. Updated stanford tregex to 3.2.0 and removed older version. 
 65. Updated new stanford version in std_tregex/run_tregex.sh std_tregex/README
@@ -178,11 +178,12 @@
 67. Updated get_canonical_form_in_wsd.lex
 68. Updated changes_in_databases
 69. Updated replace-abbrevations.sh
-70. Updated minion dictionaries
-71. Updated dic_compile.sh
-72. Updated iit-bombay dictionary in goldendict
-73. Updated Log
-74. Updated the following verified's
+70. Updated Pre-requisites in INSTALL
+71. Updated minion dictionaries
+72. Updated dic_compile.sh
+73. Updated iit-bombay dictionary in goldendict
+74. Updated Log
+75. Updated the following verified's
 	sd_verified (492)	phy_verified (253)		phy_partial_verified (81)	
 	verified (40)		partial_ver (22)    		small_sent_verified_sd (66)
 ==========================================================================================================================

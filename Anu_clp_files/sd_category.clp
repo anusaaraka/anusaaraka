@@ -14,6 +14,19 @@
 
 
   ;------------------------------------------------------------------------------------------
+  ; NOTE: PropN info is extracted from NER so handling NNPS category before NER rule.
+  ; NNPS -- A Grateful Dead/Allman [Brothers] concert in Washington D.C., that July, presented an unexpected opportunity to serve as a dry-run for our upcoming trip.
+  (defrule NNPS_rule
+  (declare (salience 15))
+  ?f0<-(id-sd_cat        ?id     NNPS)
+  (id-sd_cat ?id1 NNP)
+  (test (eq (- (string_to_integer ?id) 1) (string_to_integer ?id1)))
+  =>
+         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id" PropN)" crlf)
+         (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+
   (defrule NNP_to_NN
   (declare (salience 13))
   ?f0<-(id-sd_cat   ?pid NNP)
@@ -65,20 +78,6 @@
 ;	(assert (id-sd_cat   ?pid NNP))
 ;  )
   ;------------------------------------------------------------------------------------------
-;  ;Added by Roja (26-10-12)
-;  ;Modifying category of SYMBOLS  from 'NNP' to 'NN'. To avoid sending SYMBOLS to Tranliteration.
-;  ;Ex: Coriander Leaf Cooking Studio is located at 3A Merchant Court ,  #02-12 River Valley Road ,  Clarke Quay .
-;  ;Here '#' is sent to Stanford as SYMBOL-SHARP.
-;  (defrule NNP_to_NN
-;  (declare (salience 11))
-;  ?f0<-(id-sd_cat   ?pid NNP)
-;  (parserid-word ?pid ?word)
-;  (test (str-index "SYMBOL-" ?word))
-;  =>
-;     (retract ?f0)
-;        (assert (id-sd_cat   ?pid NN))
-;  )
-  ;------------------------------------------------------------------------------------------ 
   ;He disputed that our program was superior . (PRP$) 
   (defrule PRP_rule
   ?f0<-(id-sd_cat	?id	PRP|PRP$)
@@ -92,24 +91,6 @@
   ?f0<-(id-sd_cat        ?id     ?cat&NN|NNS)
   =>
  	(printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  noun)" crlf)
-         (retract ?f0)
-  )
-  ;------------------------------------------------------------------------------------------
-  (defrule NNP_rule
-  ?f0<-(id-sd_cat        ?id     NNP)
-  =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id" PropN)" crlf)
-         (retract ?f0)
-  )
-  ;------------------------------------------------------------------------------------------
-  ; NNPS -- A Grateful Dead/Allman Brothers concert in Washington D.C., that July, presented an unexpected opportunity to serve as a dry-run for our upcoming trip.
-  (defrule NNPS_rule
-  (declare (salience 5))
-  ?f0<-(id-sd_cat        ?id     NNPS)
-  (id-sd_cat ?id1 NNP)
-  (test (eq (- (string_to_integer ?id) 1) (string_to_integer ?id1)))
-  =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id" PropN)" crlf)
          (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
@@ -187,6 +168,62 @@
   ?f0<-(id-sd_cat        ?id     WRB)
   =>
          (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  wh-adverb)" crlf)
+         (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  ;Equation (6.1) can be extended [to] curved surfaces and nonuniform fields. 
+  ;Added by Roja(17-07-13)
+  (defrule TO_rule
+  ?f0<-(id-sd_cat        ?id     TO)
+  =>
+         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  preposition)" crlf)
+         (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  ;Added by Roja(17-07-13)
+  ;Hence, all the [three] will have negative signs. 
+  (defrule CD_rule
+  ?f0<-(id-sd_cat        ?id     CD)
+  =>
+         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  number)" crlf)
+         (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  ;Added by Roja(17-07-13)
+  ;[What] is the nature of physical laws? 
+  (defrule WP_rule
+  ?f0<-(id-sd_cat        ?id     WP|WP$)
+  =>
+         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  wh-pronoun)" crlf)
+         (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  ;Added by Roja(17-07-13)
+  ;[If] the box is stationary relative to the train, it is in fact accelerating along with the train. 
+  (defrule IN_rule1
+  ?f0<-(id-sd_cat        ?id     IN)
+  (parserid-word  ?id  ?word&If|if|Since|since)
+  =>
+         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  conjunction)" crlf)
+         (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  ;Added by Roja(17-07-13)
+  ;[All] these numbers have the same number of significant figures (digits 2, 3, 0, 8), namely four.
+  ;[Such] a dilemma does not occur in the wave picture of light. 
+  (defrule PDT_rule
+  ?f0<-(id-sd_cat        ?id    PDT) 
+  =>
+         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  determiner)" crlf)
+         (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  ;Added by Roja(17-07-13)
+  ;[There] was a red mark on the door. 
+  (defrule EX_rule
+  ?f0<-(id-sd_cat        ?id    EX)
+  =>
+         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  adverb)" crlf)
          (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------

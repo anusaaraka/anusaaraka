@@ -13934,7 +13934,7 @@ nIlU	f
 nIlowpalI	f
 nIlowpalI(lin)	f
 nIvaz	f
-nIva	f
+nIMva	f
 nIvAralawA	f
 nIvi	f
 nIvIz	f
