@@ -47,7 +47,7 @@ Multiple adjective senses are available for silent. WSD rule is required
 
 Hindi meaning using Stanford parser 2.8
 Guard, stop this donkey and let me get off his back! 
-PropN-guard-PropN, isa gaXe ko rokawA hE Ora muJe usakI pITa uwArane xo!
+paharexAra, isa gaXe ko rokawA hE Ora muJe usakI pITa uwArane xo!
 
 Hindi meaning using Stanford parser 2.9
 I will go for a walk in the forest. 
@@ -91,8 +91,8 @@ Hungry and thirsty! said Dipu sympathetically.
 BUKA Ora pyAse ne! kahA PropN-dipu-PropN saMvexI wanwrikA wanwra ke anusAra.
 
 Hindi meaning using Stanford parser 2.19
-Just a moment, we will solve your problem. 
-TIka kRaNa, hama ApakI samasyA ko hala karegA.
+Just a moment, we will solve your problem.
+sirPa kRaNa, hama ApakI samasyA ko hala karezge.
 
 Hindi meaning using Stanford parser 2.20
 Thank you, she said. 
@@ -162,7 +162,7 @@ vaha WA Sleepy-head, vaha wAlAba meM usake gulAbI rafga ke kumuxinI biswara para
 
 Hindi meaning using Stanford parser 2.36
 Sukhi would be upset, since it was the day of Lakshmi Puja. 
-PropN-sukhi-PropN ultA, hogA jaba se vaha PropN-lakshmi-PropN PropN-puja-PropN kA xina WA.
+PropN-sukhi-PropN ultA, hogA kyozki vaha PropN-lakshmi-PropN PropN-puja-PropN kA xina WA.
 
 Hindi meaning using Stanford parser 2.37
 I will show you a secret. 
@@ -170,7 +170,7 @@ mEM Apa rahasya xiKAUzgA.
 
 Hindi meaning using Stanford parser 2.38
 In fact, all Dipu's friends are here to help him. 
-vAswava meM, PropN-dipu-PropN ke saba miwra yahAz usakI sahAyawA_karane vAlA hE.
+vAswava meM, PropN-dipu-PropN ke saba miwra usakI sahAyawA karane ke lie yahAz hEM.
 
 Hindi meaning using Stanford parser 2.39
 He must be very worried about me. 

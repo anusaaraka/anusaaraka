@@ -14,7 +14,7 @@
  cd $MYPATH
  $HOME_anu_test/Anu_src/identify-nonascii-chars.out $2_in_non_canonical_form  shallow_parser_input.txt
  sed -i 's/nonascii/@nonascii/g' shallow_parser_input.txt
-# sed -i 's/\// @SYMBOLSLASH /g' one_sen_per_line_manual_hindi_sen_tmp.txt
+ sed -i 's/\// @symbolSLASH /g' shallow_parser_input.txt
   
  echo "Running Shallow Parser ..."
  cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER
@@ -45,13 +45,15 @@
  $HOME_anu_test/Anu_data/canonical_form_dictionary/replacing_canonical.out  < tmp4_canonical_tmp  >  tmp4_canonical
 
  paste tmp1_canonical tmp2_canonical tmp3_canonical tmp4_canonical > shallow_parser_input.txt.out_canonical_tmp
- sed 's/\t;~~~~~~~~~~//g' shallow_parser_input.txt.out_canonical_tmp | sed 's/\t<\/@Sentence>//g' |sed 's/@@/AT_THE_RATE_SYMBOL/g' | sed 's/@//g'  | sed 's/AT_THE_RATE_SYMBOL/@/g'  > shallow_parser_input.txt.out_canonical
+ sed 's/\t;~~~~~~~~~~//g' shallow_parser_input.txt.out_canonical_tmp | sed 's/\t<\/@Sentence>//g' |sed 's/@@/AT_THE_RATE_SYMBOL/g' | sed 's/@//g'  | sed 's/AT_THE_RATE_SYMBOL/@/g'  | sed 's/@symbolSLASH/@SYMBOL-SLASH/g' > shallow_parser_input.txt.out_canonical
 
  rm tmp1 tmp2 tmp3 tmp4 tmp1_wx tmp2_wx tmp3_wx tmp4_wx 
 
  utf8_wx shallow_parser_input.txt > one_sen_per_line_manual_hindi_sen_wx.txt
  $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form.out < one_sen_per_line_manual_hindi_sen_wx.txt  > one_sen_per_line_manual_hindi_sen_wx_in_canonical_form.txt_tmp
  $HOME_anu_test/Anu_data/canonical_form_dictionary/replacing_canonical.out < one_sen_per_line_manual_hindi_sen_wx_in_canonical_form.txt_tmp > one_sen_per_line_manual_hindi_sen_wx_in_canonical_form.txt
+
+sed -i 's/@symbolSLASH/@SYMBOL-SLASH/g' one_sen_per_line_manual_hindi_sen_wx_in_canonical_form.txt
 
 ########################### Running Full Parser ##################################################
 

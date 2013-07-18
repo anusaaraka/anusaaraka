@@ -1,9 +1,9 @@
-Finding NER ...
+Calling NER ...
 Saving Format info ...
 Saving word information
 Saving morph information
 Calling POS Tagger and Chunker (APERTIUM)
-Calling Stanford parser
+Calling Stanford parser ...
 Tokenizing ...
 Multi word ...
 Hindi meaning using Stanford parser 1.1
@@ -216,11 +216,11 @@ hAz, usane kiyA.
 
 Hindi meaning using Stanford parser 2.51
 How are you? 
-Apa kEse hEM ?
+Apa kEse hEM?
 
 Hindi meaning using Stanford parser 2.52
 How old are you? 
-ApakI kyA umra hE ?
+ApakI kyA umra hE?
 
 Hindi meaning using Stanford parser 2.53
 Excuse me. 
@@ -236,7 +236,7 @@ mEM cidiyoM ko pasanxa karawA hUz.
 
 Hindi meaning using Stanford parser 2.56
 I like Bengali sweets. 
-mEM PropN-bengali-PropN miTAiyoM ko pasanxa karawA hUz.
+mEM bangAlI miTAiyoM ko pasanxa karawA hUz.
 
 Hindi meaning using Stanford parser 2.57
 That building is tall. 
@@ -248,7 +248,7 @@ Apa kahAz rahawe hEM?
 
 Hindi meaning using Stanford parser 2.59
 Wish you happy new year. 
-Apako naye varRa kI SuBakAmanAez .
+Apako naye varRa kI SuBakAmanAez.
 Multiple adjective senses are available for happy. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.60
@@ -257,7 +257,7 @@ ApakI SAxI para baXAiyAz.
 
 Hindi meaning using Stanford parser 2.61
 It is really pretty. 
-yaha saca meM sunxara hE .
+yaha saca meM sunxara hE.
 
 Hindi meaning using Stanford parser 2.62
 He can hardly walk. 

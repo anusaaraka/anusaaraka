@@ -4866,7 +4866,7 @@ XAka	T
 XakapakA	T
 XakaXaka	T
 XakaXakA	T
-XAkela	T
+Xakela	T
 XakiyA	T
 XakyA	T
 xala	T
