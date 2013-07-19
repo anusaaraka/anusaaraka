@@ -15,46 +15,22 @@
 ;"flooring","N","1.ParSa"
 ;He used granite for flooring his house.
 ;
+;Added by Aditya and Hardik, IIT(BHU)
+;This elevator does not go above the third floor. 
 (defrule floor1
 (declare (salience 4900))
 (id-root ?id floor)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 first)
-(viSeRya-viSeRaNa ?id1 ?id)
+(viSeRya-viSeRaNa ?id ?id1)
+(or(id-cat_coarse ?id1 number)(id-word ?id1 first|second|third|fourth|sixth))
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id maMJila))
+(assert (id-wsd_root_mng ?id maMjila))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  floor.clp 	floor1   "  ?id "  maMJila )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  floor.clp 	floor1   "  ?id "  maMjila )" crlf))
 )
 
 (defrule floor2
-(declare (salience 4800))
-(id-root ?id floor)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 second)
-(viSeRya-viSeRaNa ?id1 ?id)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id maMJila))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  floor.clp 	floor2   "  ?id "  maMJila )" crlf))
-)
-
-(defrule floor3
-(declare (salience 4700))
-(id-root ?id floor)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 third)
-(viSeRya-viSeRaNa ?id1 ?id)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id maMJila))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  floor.clp 	floor3   "  ?id "  maMJila )" crlf))
-)
-
-(defrule floor4
 (declare (salience 4600))
 (id-root ?id floor)
 ?mng <-(meaning_to_be_decided ?id)
@@ -63,7 +39,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id harA_xe))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  floor.clp 	floor4   "  ?id "  harA_xe )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  floor.clp 	floor2   "  ?id "  harA_xe )" crlf))
 )
 
 ;"floor","V","1.harA_xenA"

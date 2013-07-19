@@ -38,8 +38,20 @@
  (assert (conj_head-left_head-right_head))
  (assert (ids-phy_cmp_mng-head-cat-mng_typ-priority)) 
  )
-
-
+ ;---------------------------------------------------------------------------------------------------------------
+ (deffunction remove_character(?char ?str ?replace_char)
+                        (bind ?new_str "")
+                        (bind ?index (str-index ?char ?str))
+                        (if (neq ?index FALSE) then
+                        (while (neq ?index FALSE)
+                        (bind ?new_str (str-cat ?new_str (sub-string 1 (- ?index 1) ?str) ?replace_char))
+                        (bind ?str (sub-string (+ ?index 1) (length ?str) ?str))
+                        (bind ?index (str-index ?char ?str))
+                        )
+                        )
+                (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
+ )
+ ;---------------------------------------------------------------------------------------------------------------
  ;;;yA_tams_with_ne_list 
  (defrule assert_facts
  (declare (salience 10000))
@@ -318,6 +330,21 @@
         (retract ?f1)
         (modify ?f0 (vibakthi kA))
  )
+;------------------------------------------------------------------------------------------
+;He was awarded for his courage.
+;Suggested by Chaitanya Sir (16-07-13)
+(defrule ko_vib_for_xe_root
+(declare (salience 450))
+(id-E_tam-H_tam_mng ?id ? yA_gayA_WA)
+(id-HM-source ?id ?hmng ?)
+(test (or (eq ?hmng xe)(member$ xe  (create$ (remove_character "_" ?hmng " ")))))
+(prep_id-relation-anu_ids - kriyA-subject ?id ?sub)
+?f0<-(pada_info (group_head_id ?sub)(group_cat PP)(vibakthi 0))
+?f1<-(pada_control_fact ?sub)
+=>
+	(retract ?f1)
+	(modify ?f0 (vibakthi ko))
+)
 ;------------------------------------------------------------------------------------------
 ;Added on (23-05-12)
 ;Many fat boys, a tall girl and a small child ate fruits. 

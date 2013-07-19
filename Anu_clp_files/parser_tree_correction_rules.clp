@@ -1,7 +1,7 @@
  ; This file is written by Shirisha Manju (19-06-12)
 
  (deftemplate word-morph(slot original_word)(slot morph_word)(slot root)(slot category)(slot suffix)(slot number))
- 
+ ;----------------------------------------------------------------------------------------------------------------------- 
  (deffunction get_no(?node ?o_cat ?m_cat)
 	(bind ?no (sub-string (+ (length ?o_cat) 1 ) (length ?node) ?node ))
         (bind ?no (explode$ (str-cat ?m_cat ?no)))
@@ -63,9 +63,10 @@
  ;------------------------------------------------------------------------------------------------------------------------
  ; if word is number then modify cat as CD
  ;The result of experiment of scattering of alpha particles by gold foil, in 1911 by Ernest Rutherford (1871 1937) established the nuclear model of the atom, which then became the basis of the quantum theory of hydrogen atom given in 1913 by Niels Bohr (1885 1962).
+ ;One can reach kumbhalgarh by road from Udaipur [(84km)] and ranakpur which is [18km] from kumbhalgarh. 
  (defrule modify_cat
  (parserid-word ?id ?word)
- (test (numberp ?word))
+ (test (or (numberp ?word) (numberp (string-to-field (sub-string 1 1 ?word)))))
  ?f<-(id-sd_cat  ?id  ?cat&~CD)
  =>
 	(retract ?f)
@@ -91,7 +92,7 @@
 
  ;The mother calmed the angry son.The jet zoomed across the sky.
  ;Who translated the sentence for the student? The snake who swallowed the rat hissed loudly.
- (defrule make_VBN_as_VBD
+ (defrule modify_VBN_as_VBD
  (Head-Level-Mother-Daughters ?h ?l ?S $?a ?VP $?a1)
  (Node-Category ?S S|SQ)
  (Node-Category ?VP VP)
@@ -109,3 +110,21 @@
 	(assert (id-sd_cat  ?id VBD))
  )
  ;------------------------------------------------------------------------------------------------------------------------
+ ;The Princess [was very surprised] to hear this.
+ (defrule modify_ADJP_as_VP
+ (Head-Level-Mother-Daughters ?h ?l1 ?VBD ?id)
+ (parserid-word ?id ?word&is|was)
+?f0<-(Head-Level-Mother-Daughters ?h ?l ?mot ?VBD ?ADJP )
+ (Node-Category ?mot VP)
+?f1<-(Node-Category ?ADJP ADJP)
+?f2<-(Head-Level-Mother-Daughters ?w&surprised|worried|broken ?l2 ?ADJP $?d ?VBN $?d1) 
+ =>
+	(if (eq ?w surprised) then
+		(retract ?f0 ?f1 ?f2)
+		(bind ?Mot (get_no ?ADJP ADJP VP))
+		(assert (Head-Level-Mother-Daughters ?h ?l ?mot ?VBD ?Mot))
+		(assert (Node-Category ?Mot VP))
+		(assert (Head-Level-Mother-Daughters ?w ?l2 ?Mot $?d ?VBN $?d1))
+	
+ 	)
+ )

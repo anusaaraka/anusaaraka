@@ -63,7 +63,7 @@
 )
 
 ;Added by Aditya and Hardik(9.7.13),IIT(BHU)
-;What kind of person is Ram?
+;What kind of person is Rama?
 (defrule kind5
 (declare (salience 4750))
 (id-root ?id kind)

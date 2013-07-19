@@ -62,6 +62,21 @@
                 (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
  )
  ;----------------------------------------------------------------------------------------------------------------------- 
+ (deffunction get_kA_mng (?gen ?num ?case)
+	(bind ?str (string-to-field (str-cat ?case"-"?gen"-"?num)))
+	(bind ?mng " ")
+	(if (member$ ?str (create$ d-m-p o-m-s o-m-p)) then
+			(bind ?mng ke)
+	else (if (member$ ?str (create$ d-f-s d-f-p o-f-s o-f-p)) then
+			(bind ?mng kI)
+		else (if  (eq ?str d-m-s) then
+			(bind ?mng kA)	
+		     )
+	     )
+	) 
+	(bind ?kA_mng ?mng)
+ )
+ ;----------------------------------------------------------------------------------------------------------------------- 
  ;;assert yA_tams_with_ne_list  and imper_request_list
  (defrule assert_yA_tams_with_ne_list
  (declare (salience 10000))
@@ -83,6 +98,7 @@
  (assert (yA-tam  yA_huA_nahIM_hogA))
  (assert (impr_request  imper m_h2))
  )
+
  ;========================================== default format for hindi mng "-" ==========================================
  ;if vibakthi neq 0 then dont delete the hindi meaning id 
  ;becoz we can get hindi meaning from database with prep as head and head mng as -
@@ -110,6 +126,49 @@
         (retract ?f0)
         (printout ?*A_fp5* "(id-Apertium_input " ?id "  )" crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  "?id "  default_id1 )" crlf)
+ )
+ ;----------------------------------------------------------------------------------------------------------------------- 
+ ;The Hawa mahal was built by the Maharaja [Sawai Pratap] Singh in 1799 AD and [Lal Chand] Usta was the architect.
+ (defrule print_org_word_mng_for_grp_id
+ (declare (salience 1400))
+ ?f0<-(id-HM-source ?id ?mng Original_word|transliterate_mng)
+ (pada_info (group_ids $? ?id $? ?h))
+ =>
+	(retract ?f0)
+        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?mng"  )" crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?id "  print_org_word_mng_for_grp_id )" crlf)
+ )
+ ;----------------------------------------------------------------------------------------------------------------------- 
+ ;What is the purpose of Dharma? He wrote the biography of Tagore.
+ (defrule print_org_word_mng_with_kA_vib
+ (declare (salience 1400))
+ ?f0<-(id-HM-source ?id ?mng Original_word|transliterate_mng)
+ (pada_info (group_head_id ?id) (vibakthi kA))
+ (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa|viSeRya-of_saMbanXI|saMjFA-to_kqxanwa ?f_id ?id)
+ (pada_info (number ?n)(case ?c)(gender ?g)(group_ids $?f_ids))
+ (test (member$ ?f_id $?f_ids))
+  =>
+        (retract ?f0)
+ 	(bind ?kA_mng (get_kA_mng ?g ?n ?c))
+        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?mng"  " ?kA_mng " )" crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?id "  print_org_word_mng_for_head_id )" crlf)
+ )
+ ;----------------------------------------------------------------------------------------------------------------------- 
+ ;The Hawa mahal was built by the Maharaja Sawai Pratap [Singh] in 1799 AD and Lal Chand [Usta] was the architect.
+ ;John is less fat than Tom. 
+ (defrule print_org_word_mng_for_head_id
+ (declare (salience 1300))
+ ?f0<-(id-HM-source ?id ?mng Original_word|transliterate_mng)
+ (pada_info (group_head_id ?id) (vibakthi ?vib&~kA)(number ?n)(case ?c)(gender ?g))
+ =>
+        (retract ?f0)
+	(if (eq ?vib 0) then
+	        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?mng"  )" crlf)
+	else  
+		(bind $?v (implode$ (remove_character "_" ?vib " ")))
+	        (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?mng"  " $?v " )" crlf)
+	)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?id "  print_org_word_mng_for_head_id )" crlf)
  )
  ;========================================== complete sent mng ========================================================
  ;This contradicts the assumption that the fluid was in equilibrium.
@@ -321,6 +380,30 @@
         	(printout ?*aper_debug-file* "(id-Rule_name  "?id "  kA_for_kriyA_mUla )" crlf)
 	)
   )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;Suggested by Chaitanya Sir (18-07-13)
+ ; He wrote the address on a [piece of paper]. -- kAgaja_kA_purjA , para => kAgaja_ke_purje para
+ (defrule kA_in_hindi_rt_mng
+ (declare (salience 610))
+; (prep_id-relation-anu_ids ? viSeRya-of_saMbanXI ?f_id ?id)
+; ?f0<-(id-HM-source ?f_id ?h_mng ?s)
+ ?f0<-(id-HM-source ?id ?h_mng ?s)
+ (test (member$ kA (create$ (remove_character "_" ?h_mng " "))))
+ (pada_info (group_head_id ?id) (gender ?g) (number ?n) (case ?c) (vibakthi ?vib))
+ (test (neq ?vib 0))
+; (pada_info (group_ids $?f_ids) (gender ?g) (number ?n) (case ?c))
+; (test (member$ ?f_id $?f_ids))
+ =>
+	(retract ?f0)
+	(bind ?kA_mng (get_kA_mng ?g ?n ?c))
+	(bind $?mng (create$ (remove_character "_" ?h_mng " ")))
+	(bind ?kA_pos (member$ kA $?mng))
+	(bind $?mng1 (delete-member$ $?mng (nth$ ?kA_pos $?mng)))
+	(bind $?mng1 (insert$ $?mng1 ?kA_pos ?kA_mng))	
+	(bind ?new_mng (implode$ (remove_character " " (implode$ (create$ $?mng1)) "_")))
+	(printout ?*A_fp5* "(id-Apertium_input "?id " ^"?new_mng "<cat:n><case:"?c"><gen:"?g"><num:"?n">$ ^" ?vib "<cat:prsg>$)" crlf)
+	(printout ?*aper_debug-file* "(id-Rule_name  "?id "  kA_in_hindi_rt_mng )" crlf)
+ )
 
  ;============================================ verbal-noun without vib ===================================================
  ; Running is good for health.
@@ -575,7 +658,6 @@
         (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><case:"?case"><parsarg:0><gen:"?gen"><num:"?num">$)"  crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_without_vib3 )" crlf)
   )
-  ;------------------------------------------------------------------------------------------------------------------------
 
  ;====================================== VP rule for root and tam =========================================================
  ;Added by Mahalaxmi (23-09-09)
@@ -1103,6 +1185,7 @@
   ;Mary is taller than Max.
   ;Added by Shirisha Manju (19-06-12)  Suggested by Chaitanya Sir
   ;At longer wavelengths (i.e., at lower frequencies), the antennas have large physical size and they are located on or very near to the ground.
+  ;In short, the greater the rate of change of momentum, the greater is the force.
   (defrule PP_rule_adj_er
   (declare (salience 340))
   (pada_info (group_cat PP) (group_ids $?ids)(number ?num)(case ?case)(gender ?gen) )
@@ -1114,8 +1197,10 @@
 	(if (eq (str-index "_" ?h_word) FALSE) then
 	        (bind ?h_word (str-cat "aXika_" ?h_word))
 	else
-		(if (neq (sub-string 1 (str-index "_" ?h_word) ?h_word) "aXika_") then
-			(bind ?h_word (str-cat "aXika_" ?h_word))
+		(bind $?mng (remove_character "_" ?h_word " "))
+		(if (eq (member$ aXika $?mng) FALSE) then
+			(bind ?h_nwrd (remove_character " " $?mng "_"))
+			(bind ?h_nwrd (str-cat "aXika_" ?h_nwrd))
 		)
 	)
         (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$ )" crlf)

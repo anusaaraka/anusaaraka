@@ -185,7 +185,7 @@
 (id-root ?id have)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id having)
-(id-root ?id1 lunch|dinner|meal|supper|cake|biscuit)
+(id-root ?id1 lunch|dinner|meal|supper|cake|biscuit|breakfast|food) ; added breakfast and food in the list, by Aditya and Hardik,IIT(BHU)
 (kriyA-object ?id ?id1)
 =>
 (retract ?mng)
@@ -588,7 +588,7 @@
 (id-root ?id have)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id had)
-(id-root ?id1 lunch|dinner|meal|supper|cake|biscuit)
+(id-root ?id1 lunch|dinner|meal|supper|cake|biscuit|breakfast|snacks|food) ; added breakfast,snacks and food in the list, by Aditya and Hardik,IIT(BHU)
 (kriyA-object ?id ?id1)
 =>
 (retract ?mng)

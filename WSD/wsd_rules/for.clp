@@ -152,8 +152,9 @@
 (declare (salience 4700))
 (id-root ?id for)
 ?mng <-(meaning_to_be_decided ?id)
-(viSeRya-for_saMbanXI  ?viSeR  ?id1)
-(id-root ?id1 day|hour|month|week|minute|year|decade|century)
+(or (kriyA-for_saMbanXI ? ?id1)(viSeRya-for_saMbanXI  ?viSeR  ?id1))
+;(id-root ?id1 day|hour|month|week|minute|year|decade|century)
+(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "time.gdbm" ?str)));instead of list Added time.gdbm by Shirisha Manju(16-07-13) 
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id se))
