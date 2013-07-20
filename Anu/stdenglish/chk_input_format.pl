@@ -53,10 +53,6 @@ while($in = <STDIN>){
 ## Replace more than two consecutive spaces by two spaces.
 	$in =~ s/[ ][ ][ ]+/  /g;
 
-# Combining - when it is between two words
-# Added by Roja (01-06-13) Ex: The most important prediction to emerge from Maxwell's equations is the existence of electromagnetic waves, which are (coupled) time - varying electric and magnetic fields that propagate in space.
-        $in =~ s/([a-zA-Z]+)[ ][-][ ]([a-zA-Z]+)/$1-$2/g;
-
 # Replace starting single quote by normal quote reason:shell gives error
 #$in =~ s/`/'/g;(commented for senseval purpose)
 # After '?' there should be two spaces, not a single.

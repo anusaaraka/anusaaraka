@@ -49,7 +49,7 @@ FILE *fp;
 ―	{	printf(" SYMBOL-HORIZONTAL-BAR ");	}
 \+	{	printf(" SYMBOL-PLUS ");	}
 #	{	printf(" SYMBOL-SHARP ");	}
-\$	{	printf(" SYMBOL-DOLLAR ");	}
+[^>A-Za-z]\$	{	printf("%c SYMBOL-DOLLAR ", yytext[0]); /* >$ is used in apertium morph analysis */	}
 \=	{	printf(" SYMBOL-EQUAL-TO ");	}
 %	{	printf(" SYMBOL-PERCENT ");	}
 —	{	printf(" SYMBOL-EMDASH ");	}

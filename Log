@@ -1,4 +1,4 @@
- 19-07-13
+ 20-07-13
  ========
  1. WSD: Modified : found.clp   improve.clp     baby.clp        is_en_tam.clp   call.clp        get.clp
                     add.clp     john.clp        black.clp       on.clp          paper.clp       need.clp
@@ -139,9 +139,9 @@
 	run_multiple_parse_penn.sh
         replace-abbrevations.sh  
 40. Updated the following 'lex' files
-	add_snt_mrkr.lex		abbrevations.lex		titles.lex
+	add_snt_mrkr.lex		abbrevations.lex		constituency_parse.l
 	mapping-punctuations.lex	replacing_canonical.lex		get_canonical_form_in_wsd.lex
-	wx_utf8.lex (to handle 'eV', 'oV')
+	wx_utf8.lex (to handle 'eV', 'oV')	titles.lex
 41. Updation of new versions:
 	Stanford parser 	2.0.5   to  	3.2.0 
 	Stanford NER		1.1	to 	3.2.0
@@ -183,7 +183,10 @@
         phy_align_verified_[eng/hnd/eng_align.html]  as  phy_verified_[eng/hnd/eng_align.html]
 	Anusaaraka_reranked_johnson.sh         	     as  Anusaaraka_bllip_parser.sh
 	Anusaaraka_reranked_johnson_minion.sh 	     as  Anusaaraka_bllip_parser_minion.sh
-47. In chk_input_format.pl : Added a pattern to combine "-" when it is separated between two words
+47. Deleted following files:
+	alignment/adding@-for-eng-words.lex
+	mapping-symbols_manual.lex
+
 48. Updated Log
 49. Updated the following verified's
 	sd_verified (492)	phy_verified (253)		phy_partial_verified (81)	
