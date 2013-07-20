@@ -25,7 +25,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id used)
 (id-root =(- ?id 1) be)
-(to-infinitive  =(+ ?id 1) ?id1)
+(or (to-infinitive  =(+ ?id 1) ?id1)(kriyA-to_saMbanXI ?id ?id2)) ;Added by Aditya and Hardik(20-06-2013),IIT(BHU) batch 2012-2017.
 =>
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id  =(+ ?id 1)  AxI))

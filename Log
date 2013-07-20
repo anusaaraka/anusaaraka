@@ -5,7 +5,8 @@
                     reload.clp  reloaded.clp    each.clp        for.clp         left.clp        by.clp
                     best.clp    haunt.clp       before.clp      can.clp         kind.clp        please.clp
                     project.clp foundation.clp  into.clp        have.clp        floor.clp       bear.clp
-         Added    : room.clp    commit.clp
+		    since.clp   strong.clp   	take.clp   	use.clp
+         Added    : room.clp    commit.clp	volume.clp
  2. sd_relation_rules.clp 
         1. Modified : kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux, AjFArWaka_vAkya, sub_samA_with_cop, 
 		      conj-comp-rule, attr+nsubj, attr+aux, cop+nsubj, prt, nsubj_advmod, nsubj_advmod_1, advmd, det, mark, 
@@ -161,8 +162,8 @@
         minion_compile.sh		run_stanford-gui-pcfg.sh		run_tregex.sh
 	std_tregex/README		anu_compile.sh				remove_out-files.sh
 43. Updated the following files
-	bin/utf8_wx
-	Pre-requisites in INSTALL
+	bin/utf8_wx			Pre-requisites in INSTALL
+	create_hin_align_html.clp	create_eng_ord_html.clp files
 44. Updated dictionary related files
  	changes_in_databases			minion dictionaries		iit-bombay dictionary in goldendict
  	dic_compile.sh				minion_compile.sh		apertium-en-hi.en.metadix
@@ -183,10 +184,9 @@
         phy_align_verified_[eng/hnd/eng_align.html]  as  phy_verified_[eng/hnd/eng_align.html]
 	Anusaaraka_reranked_johnson.sh         	     as  Anusaaraka_bllip_parser.sh
 	Anusaaraka_reranked_johnson_minion.sh 	     as  Anusaaraka_bllip_parser_minion.sh
-47. Deleted following files:
+47. Deleted the following files:
 	alignment/adding@-for-eng-words.lex
 	mapping-symbols_manual.lex
-
 48. Updated Log
 49. Updated the following verified's
 	sd_verified (492)	phy_verified (253)		phy_partial_verified (81)	

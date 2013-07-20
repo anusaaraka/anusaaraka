@@ -274,6 +274,21 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  take.clp      take16   "  ?id "  le )" crlf))
 )
 
+;Added by Aditya and Hardik(21-06-2013),IIT(BHU) batch 2012-2017.
+;You should take care of your mother.
+(defrule take17
+(declare (salience 2500))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 care)
+(kriyA-object ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 KyAla_raKa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp	take7  "  ?id "  " ?id1 "  KyAla_raKa  )" crlf))
+)
 
 
 ;default_sense && category=verb	le	0

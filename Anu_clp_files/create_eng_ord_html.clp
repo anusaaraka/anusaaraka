@@ -481,10 +481,12 @@
  (defrule test_symbol_for_Aper_output
  (declare (salience 1900))
  ?f<-(id-Apertium_output   ?id   ?mng)
- (test (eq (sub-string 1 2 ?mng) "\\@"))
+; (test (eq (sub-string 1 2 ?mng) "\\@"))
+ (test (eq (sub-string 1 1 ?mng) "@"))
  =>
  (retract ?f)
- (bind ?h_mng (str-cat (sub-string 3 1000 ?mng)))
+ (bind ?h_mng (str-cat (sub-string 2 1000 ?mng)))
+; (bind ?h_mng (str-cat (sub-string 3 1000 ?mng)))
  (assert (id-Apertium_output   ?id   ?h_mng))
  )
  ;------------------------------------------------------------------------------------------------------

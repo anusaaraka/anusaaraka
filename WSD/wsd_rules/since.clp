@@ -38,7 +38,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-conjunction   ?id1  ?id)
 ;(kriyA-subject ?id2 ?id1)
-(id-root ?id2 go|leave)
+(id-root ?id1 go|leave|play|meet);Added play and meet in the list by Aditya and Hardik,IIT(BHU) batch 2012-2017.
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id jaba_se))

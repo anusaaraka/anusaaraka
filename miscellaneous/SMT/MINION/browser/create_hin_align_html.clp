@@ -172,7 +172,8 @@
  =>
  (retract ?f)
         (if (not (numberp ?hin)) then (bind ?hin (wx_utf8 ?hin))
-        (if (eq (sub-string 1 2 ?hin) "\\@") then (bind ?hin (str-cat (sub-string 3 1000 ?hin)))))
+        (if (eq (sub-string 1 1 ?hin) "@") then (bind ?hin (str-cat (sub-string 2 1000 ?hin)))))
+;        (if (eq (sub-string 1 2 ?hin) "\\@") then (bind ?hin (str-cat (sub-string 3 1000 ?hin)))))
         (assert (hin_pos-hin_mng-eng_ids-eng_words ?id ?hin $?grp ?id1 ?eng))
         (assert (id_wx_to_utf_converted ?id))
  )
