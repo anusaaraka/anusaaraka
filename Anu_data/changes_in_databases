@@ -1,117 +1,3 @@
-
-  changes in  default_meaning_frm_oldwsd.txt
-  ==========================================
-  1. Modified ::
-
-        in-law_word     sasurAla-vAlA	as      in-law         	sasurAla
-        maturity        prODawA       	as      paripakvawA
-        typically	viSiRtapUrva   	as      viSiRta_rUpa_se      Meena(17.5.10)
-        typewritist                    	as                           Meena(17.5.10)
-        factory		kAraKAnA       	as      PEktarI              Meena(20.5.10)
-
-        electronic      ilEktrona_kI_kriyA_para_nirBara_sAXana  as 	electronic	ilEktronika
-       (suggestted by Dipti Mam as frequency of ilEktrona_kI_kriyA_para_nirBara_sAXana is less when compared to ilEktronika)
-
-        pianist  piyAno_bajAnevAlA	as  	"piyAno_bajAne_vAlA"
-        idea    "suJAva"             	as  	"vicAra" 	  (suggested by sukadha (23-09-09)
-                                                    Ex: It is not a good idea to drive for hours without a rest .
-        danish  "deniSa_pejataXI"    	as  	"deniSa"  	 (suggested by srirsmji (21-01-10))
-        chinese "cInI_BARA"          	as  	"cInI"     	 (suggested by srirsmji (21-01-10))
-        Monday  "omavAra"            	as  	"somavAra"	 (suggested by Manju (26-02-10))
-        mature  "pUrNa_vikasiwa"     	as  	"paripakva"	 (suggested by Meenaji (29-04-10))
-        wisdom  "jFAna"              	as  	"buxXimawwA"	 (suggested by Meenaji (29-04-10))
-	smuggler   waskara-vyApArI      as       waskara_vyApArI (suggested by Sukadha (20-04-10))
-        curious    jijFAsu_    		as      jijFAsu
-        per      prawi-                 as      prawi  (Modified my Manju(06-01-11))
-        temporarily   Wode_xina         as	asWAyI_rUpa_se	(suggested by Meenaji (12-01-11))
-        data           bAweM            as      detA            (Meena 18.1.11)  
-	processing	prakriyA	as	saMsAXana       (Meena 08-02-11)
-        national        rARtrIya	as	rARtriya	(Suggested by Sukhada (21-02-11))
-        old         purA                as      purAnA          (Meena 18.3.11)
-        million xasa_lAKa               as      million xasa-lAKa(Meena 30.3.11)
-	misdeed     burA_kAma 		as      misdeed      xuRkarma (Meena 20.4.11)
-        disappointing honA              as      nirASAjanaka   (Meena 28.4.11)
-        long    lambA			as	laMbA		(suggested by Meenaji (05-05-11))
-	toxin   jIva-viRa		as	viRElA-wawva	(suggested by Meenaji (24-05-11))
-	toxins  jIva-viRa		as	viREle-wawva	(suggested by Meenaji (24-05-11))
-	industrials Oxyogika_prawiBUwiyAM as 	Seyara 		(suggested by Meenaji (24-05-11))
-	various Binna                   as      viBinna         (suggested by Meenaji (26-05-11))
-        scenario        parixqSWawa<8d> as	scenario        parixqSWawa  (By Roja 13-06-11) 
-        bitter	kadZavA 		as	bitter		kadavA (By Roja (08-07-11))
-	thursday  gurUvAra   		as      guruvAra        (Suggested by Sukhada (19-07-11))  
- 	really  vAswava_mez		as	vAswava_meM	(suggested by Chaitanya Sir (16-08-11))
-        Substituted "mez" as "meM" in  52 entries like		(suggested by Chaitanya Sir (16-08-11))
-		recently        hAla_mez   as 	hAla_meM
-		rehabilitate    pUrva_xaSA_mez_lA	as 	pUrva_xaSA_meM_lA
-	Substituted "sezkanA" as  "seMkanA" in 9 entries	(Suggested by Sukhada (16-08-11))
-		basked  XUpa_meM_garama_karanA_yA_sezkanA   as XUpa_meM_garama_karanA_yA_seMkanA
-        recycled prayoga_kI_gayI_vaswu_kA_punaH_prayoga as punarAvqwwa  (Meena 14.9.11) 
-        recycle  prayoga_kI_gayI_vaswu_kA_punaH_prayoga as punarAvqwwa  (Meena 14.9.11) 
-        something  koI cIja		as	kuCa		(Sukhada 29-09-11)
-	sorry	Kexa			as 	kRamA kIjiye	(Rajini 08-12-11)
-	thanks  XanyavAxa_xenA		as      XanyavAxa       (Rajini 09-12-11)
-	afternoon       xopahara_bAxa   as	xopahara	(Rajini 09-12-11)
-	generally 	prAya		as	prAyaH		(Rajini 19-12-11) 
-	shareholder     ihassexAra	as	hissexAra	(Rajini 19-12-11)
-	shareholding    ihassexArI	as	hissexArI	(Rajini 19-12-11)
-        Substituted "OY" as "oY" in 318 entries like		(suggested by Chaitanya Sir (26-01-12)
-		John	jOYna	as	joYna
-		MC	kOYMgaresa_saxasya	as	koYMgaresa_saxasya
-	establishment	sWApanA		as	aXiRTAna(Meena 06-02-12)
-        semi-@urban	arXa-nagarIyacurriculum vitaecurriculum vita	as arXa-nagarIya (corrected the meaning Sugested by Sukhada (27-04-12))
- 	seventy-@two	bahAwwaracurriculum vitae	as bahAwwara (corrected the meaning Sugested by Sukhada (27-04-12))
-	shannor	SEnanacurriculum vitae	as	SEnana               (corrected the meaning Sugested by Sukhada (27-04-12))
-	sixteenth	solahavAzcurriculum vitae	as	solahavAz (corrected the meaning Sugested by Sukhada (27-04-12))
-	softness	narmIcurriculum vitae	as	naramI (corrected the meaning Sugested by Sukhada (27-04-12))
-	speculator	vicAraSIlcurriculum vitaea	as	vicAraSIla (corrected the meaning Sugested by Sukhada (27-04-12))
-	sprintnet	_sprintaneta	as	sprintaneta (corrected the meaning Sugested by Sukhada (27-04-12))
-	stand-@incurriculum vitae	as	kataGarA (corrected the meaning Sugested by Sukhada (27-04-12))
- 	broadly		viswqwa_waraha_se	as	mote_wOra_para  (Sugested by Sukhada (18-05-12))
-	own		apa		as	apanA 	(Suggested by Chaitanya Sir (30-05-12))
-	absolve 	vimukwa_kara	as	mukwa_kara (Suggested by Chaitanya Sir (23-06-12))
-        abridge 	saMkRepaNa_kara as	saMkRipwa_kara (Suggested by Chaitanya Sir (23-06-12))
-
- 2. Added :: 
-	attorney-at-law   pramANiwa_aBikarwA
-	Delhi	          xillI
-        Moon              canxramA
-	Danes             denmArka_vAsI
-        senator 	  senetara       (suggested by Meenaji (04-03-10)
-                                         Ex:  The stupidity of the senators annoyed all my friends .
-        Jummamasjid	  jummA_masjixa  (Added by Meena 08-03-11)
-        arms-dealing    SaswrAswra_kraya_vikraya (Meena  26.4.11)
-	ill-used        xurvyavahariwa_huA (Meena 2.6.11) Ex.Within the relationship he feels ill-used most of the time.
-	free-fall       besahArA_giranA    (Meena 28.7.11)
-        small-town      sImiwa_jFAna_Ora_vicAroM_vAlA (Meena 14.9.11)
-	mela		melA (suggested by  Rajini (17-01-12)
-			Ex: Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival
-	viewer  	xarSaka (suggested by  Rajini (04-02-12) Ex: CNN wants to change its viewers' habits. 
-  3. Removed ::
-
-        motion pravarwana_kara 				(suggested by Meenaji (19-11-10))
-	aspirations=?????_??	@HARI			(suggested by Sukadha (29-12-10))
-	chair-????????	saBApawi			(           "			)
-	congratulations=????!	@HARI			(           "			)
-	infrastructure=????????_????????	@HARI	(           "			)
-	internally=???????_???_??	@HARI		(           "			)
-	technologists=????????????_????????	@HARI	(           "			)
-	uk=????????_??????	@HARI			(           "			)
-        Jersey        eka_nasla_kI_gAya_jo_aXika_xUXa_xewI_hE     (Meena 16.03.11) 
-        Jerseys'       eka_nasla_kI_gAya_jaWaA_aXika_xUXa_xewI_hE (Meena 16.03.11) 
-        Jersey's       eka_nasla_kI_gAya_jo_aXika_xUXa_xewI_hE    (Meena 16.03.11) 
-        Jerseys        eka_nasla_kI_gAya_jo_aXika_xUXa_xewI_hE    (Meena 16.03.11) 
-        Sr     SrI  (Meena 22.3 .11)
-        engulfed        nimagna_kara(Meena 23.3.11)
-        engulfing       nimagna_kara(     "       )
-        engulfs         nimagna_kara(     "       )
-        No     aMka    (Meena 6.8.11) Ex. Shaking your head for 'No' is not universal. 
-        recycle's      prayoga_kI_gayI_vaswu_kA_punaH_prayoga
-        recycles'      prayoga_kI_gayI_vaswu_kA_punaH_prayoga
-        recycles       prayoga_kI_gayI_vaswu_kA_punaH_prayoga
-        recycling      prayoga_kI_gayI_vaswu_kA_punaH_prayoga
-        Removed jnk from the file 	   ( Sukhada 10-07-12)
-		words without hindi meaning  --- drainage's , e , G ,panned ...  	
-		
   changes in male_list.txt
   ========================
   1. Removed  :   miwra  
@@ -123,9 +9,10 @@
   ========================
   1. Modified :
 	1. paraCAIM	as	paraCAI
-	2. baMxi	as  	baMxI   (by Roja(17-07-12))
-  	3. sparXA	as  	sparXa  (    "  (12-09-12))
-	4. nIva		as	nIMva	(    "	(15-07-13) Suggested by Sarita ji LTRC)Ex: The foundations of the house are being laid today.  
+	2. baMxi	as  	baMxI   (by Roja 17-07-12)
+  	3. sparXA	as  	sparXa  (    "   12-09-12)
+	4. nIva		as	nIMva	(    "	 15-07-13) Suggested by Sarita ji LTRC)
+				Ex: The foundations of the house are being laid today.  
 
   2. Added :
 	1. SuBakAmanA 	Suggested by sheetal (02-11-09) Eg: We convey our best wishes to the Chinmaya Dham Yatris . 
@@ -202,7 +89,7 @@
   changes in hindi_cat.txt
   ========================
   1. Added
-	paDa	T
+	paDa		T
 	lAiseMsa_xe	T
 
   2. Modified
@@ -677,213 +564,237 @@ Modified:
 
  Changes in default-iit-bombay-shabdanjali-dic.txt
  =================================================
- Modified :
- --------
-	1.Habegger        -::Habegger	as	Habegger        noun::Habegger (Suggested by Chaitanya Sir(29-02-12))
-	2.cloak-and-dagger        adjective::sAhasa,rahasya_Axi_se_yukwa_kucakra_praXAna/gupwa
-					as
-	  cloak-and-dagger        adjective::sAhasa/rahasya_Axi_se_yukwa_kucakra_praXAna/gupwa (Suggested by Sukhada(29-02-12))
-	3.conductor       noun::saMvewa_gAna,vAXAxi_kA_nirxeSaka/saMvewa_gAna,vAXAxi_kA_nirxeSak/kaNdaktara/gArda/cAlaka
-					as
-	  conductor       noun::saMvewa_gAna/vAXAxi_kA_nirxeSaka/kaNdaktara/gArda/cAlaka	(Suggested by Sukhada(29-02-12))
-	4.cousin  noun::cacerA,mamerA,PuPerA_yA_mOserA_BAi_yA_bahana/cacerA,_mamerA,_PuPerA_yA_mOserA_BAi_yA_bahana/cacerA_BAII/cacerA_BAI/cacerA_mamerA_mOserA_yA_PuPerA_BAI_yA_bahana
-					as
-	  cousin  noun::cacerA_mamerA_mOserA_yA_PuPerA_BAI_yA_bahana	(Suggested by Rajini(29-02-12))
-	5.detour  -::cakkaraxAra_mArga	as	detour  noun::cakkaraxAra_mArga	(Suggested by Rajini(29-02-12))
-        6.filing-clerk    file-clerk {US}::noun/PAileM_raKane_vAlA_kaMrmacArI
-                        		as
-	  file-clerk      noun::PAileM_raKane_vAlA_kaMrmacArI
-	  filing-clerk    noun::PAileM_raKane_vAlA_kaMrmacArI	(Suggested by Rajini(29-02-12))
-	7.foolscap        noun::PulaskEpa/kAgajZa_kA_eka_nApa{lagaBaga_300*200_or_400mm}
-					as
-	  foolscap        noun::PulaskEpa/kAgajZa_kA_eka_nApa
-	8. inaudibly       adverb::sunAI_na_padZe,Ese_DaMga_se
-					as
-	   inaudibly       adverb::XImI_Avaja_meM/sunAI_na_padZe	(Suggested by Rajini(29-02-12))
-	9.irreparably     adverb::marammawa_na_kI_jA_sake,_isa_waraha_se
-					as
-	   irreparably     adverb::marammawa_na_kI_jA_sake{isa_waraha_se}	(Suggested by Rajini(29-02-12))
-	10.knowingly       adverb::jEse_rahasya_se_pariciwa_ho,_isa__waraha_se/jAnabUJa_kara/jAna-bUJa_kara/jAnabUJakara
-					as
-	   knowingly       adverb::jAnabUJa_kara/jEse_rahasya_se_pariciwa_ho,_isa__waraha_se/jAna-bUJa_kara/jAnabUJakara                 	(Suggested by Rajini(29-02-12))
-    	11.monster -::BImakAya	as	monster noun::BImakAya	(Suggested by Rajini(29-02-12))
-	12.overdue adjective::vilaMbiwa/jo_bahuwa_pahale_hI_ho_jAnA_cAhiye_WA,_vaha
-					as
-	   overdue adjective::vilaMbiwa	(Suggested by Rajini(29-02-12))
-	13.piping  noun::pAipiMga/pAipa/krIma_kI_XArI/bAzsurIvAxana/bAzsurI_kI_AvAjZa/viSeRa`nApa_kA_pAipa/gota
-					as
-	   piping  noun::pAipiMga/pAipa/krIma_kI_XArI/bAzsurI_kI_AvAjZa/gota	(Suggested by Rajini(29-02-12))
-	14.rig     noun::XoKA/trelara_traka/sAja-sAmAna/riga/poSAka/maswUla,_pAla_Axi_kI_sajjA/maCalI_pakadZane_kA_sAja-sAmAna/cAra_pahiyoM_vAlI_GodZAgAdZI/badZI_larI/badZA_traka/viSeRa_upakaraNa
-					as
-	   rig     noun::XoKA/trelara_traka/sAja-sAmAna/riga/poSAka/maswUla_kI_sajjA/maCalI_pakadZane_kA_sAja-sAmAna/cAra_pahiyoM_vAlI_GodZAgAdZI/badZI_larI/badZA_traka/viSeRa_upakaraNa	(Suggested by Rajini(29-02-12))
-	15.rigging noun::maswUla,_pAla_Axi_kI_sajjA/maswUla,_pAla_Axi_kA_sAja-sAmAna/jahAjZa_kI_rassI
-					as
-	   rigging noun::maswUla_kI_sajjA/maswUla_kA_sAja-sAmAna/jahAjZa_kI_rassI	(Suggested by Rajini(29-02-12))
-	16.right-oh!       INDC::hAz,_hAz_mEM_wEyAra_hUz
-					as
-	   right-oh!       interjection::hAz_mEM_wEyAra_hUz
-	17.sabre-rattling  -::sEnya_noka-JoMka/noka-JoMka
-					as
-	   sabre-rattling  noun::sEnya_noka-JoMka/noka-JoMka	(Suggested by Rajini(29-02-12))
-	18.sabre-toothed   -::lambe_GumAvaxAra_xAzwoM_vAl
-					as
-	   sabre-toothed   adjective::lambe_GumAvaxAra_xAzwoM_vAlA	(Suggested by Rajini(29-02-12))
-	19.shall   noun::gA,ge,gI	as	shall   noun::gA/ge/gI	(Suggested by Rajini(29-02-12))
-	20.should  verb::howAnA/gA,ge,gIInA/cAhieenA
-					as
-	   should  verb::nA_cAhiye	(Suggested by Rajini(29-02-12))
-	21.tackle  noun::Xara_pakadZa/maswUla,_pAla_Axi_kA_sAja-sAmAna/maCalI_pakadZane_kA_sAja-sAmAna/GiranI
-					as
-	   tackle  noun::Xara_pakadZa/maswUla_kA_sAja-sAmAna/maCalI_pakadZane_kA_sAja-sAmAna/GiranI  (Suggested by Rajini(29-02-12))
-	22.unmeasured      adjective::na_napA,huA/asImiwa
-					as
-	   unmeasured      adjective::na_napA_huA/asImiwa	(Suggested by Rajini(29-02-12))
-	23.valve   noun::kapAtikA/kapAta/Cixra/vAlva{eka`ora_Kulane_vAlA_vAyu_gEsa_xrava_ke_saMcAra_kA_yaMwra}/hqxaya_meM_rakwa_vAhaka_vAlva
-					as
-	   valve   noun::kapAtikA/kapAta/Cixra/vAlva/hqxaya_meM_rakwa_vAhaka_vAlva	(Suggested by Rajini(29-02-12))
-	24.votive  adjective::vrawAnuRTiwa/mannawa_kA/mannawa`kA
-					as
-	   votive  adjective::vrawAnuRTiwa/mannawa_kA	(Suggested by Rajini(29-02-12))
-	25.yellow-line     noun::^	as	yellow-line     noun::pIlI_lakIra	(Suggested by Rajini(29-02-12))
-	26.Urdu    noun::urxU/^	as	Urdu    noun::urxU	(Suggested by Rajini(29-02-12))	
-	27.urea    noun::yUriyA/^	as	urea    noun::yUriyA	(Suggested by Rajini(29-02-12))
-	28.melting-pot     noun::viBinna_saMskqwi_loga_waWA_vicAroM_kA_AxAna-praxAna_sWala/Binna-Binna_vicAroM_para_carcA_kI_sWiwi
-				as
-	   melting-pot     noun::meltiMga_pAta{viBinna_saMskqwi_loga_waWA_vicAroM_kA_AxAna-praxAna_sWala/Binna-Binna_vicAroM_para_carcA_kI_sWiwi}	(Suggested by Rajini(29-02-12))
-	29.input	verb::dAlanA/kampyUtara_meM_`saMgaNana_karanA
-				as
-	   input   verb::dAlanA/kampyUtara_meM_detA_dAlanA
-	30.Modified spellings 'OY' as 'oY' . ex: 'sOYPtaveyara' as 'soYPtaveyara' (Modified by Roja(13-03-12))
-	31.Modified verb entries by removing 'nA'  Ex :abash_verb	SarmiMxA_karanA	 to	abash_verb	SarmiMxA_kara
-	32.Modified following entries by Roja(26-09-12)
-		U.N._noun	yU._ena.	to 	U.N._noun       yU.ena.
-		U.S.A._noun	yU._esa._e.	to	U.S.A._noun     yU.esa.e.
-		U.S.S.R._noun	yU.esa.esa_Ara.	to	U.S.S.R._noun   yU.esa.esa.Ara.
-		U.S._noun	yU._esa.	to	U.S._noun       yU.esa.
-	33.Modified unit_noun	ikAI/yunita/viBAga/tukadI/mAtraka/KaNda/IkAI/ekaka  to unit_noun       ikAI/yunita/viBAga/tukadI/mAwraka/KaNda/IkAI/ekaka [mAtraka-->mAwraka] (Modified by Mahalaxmi.(31-10-12))
-	34.Modified real-life_adjective     vAswavika    as  real-life_adjective     vAswavika_jIvana  (Suggested by Chaitanya Sir 23-11-12) 
-	35.Modified negative_adjective      nakArAwmaka/rqNAwmaka/prawikUla/niReXAwmaka as	nakArAwmaka/qNAwmaka/prawikUla/niReXAwmaka (Suggested by Chaitanya Sir 07-12-12)
-	36. electron_noun   	awisUkRma_paramANu/ilektrana    as   ilektroYna/awisUkRma_paramANu	(   "       )
-	37. I_pronoun       mEM/muJe/mEz{sarvanAma} as mEM/muJe
-	38. at_preposition  para/se/meM/kI_avasWA_meM/ke_yahAz/ko{samaya}/kI_ora    
-					as
-			    para/se/meM/kI_avasWA_meM/ke_yahAz/ko/kI_ora	     (Suggested by Sukhada 4-05-13)	
-	39. he_pronoun      vaha/usa/vaha{pu.}  	         as   vaha/usa	     (		"	"         )
-	40. she_pronoun     vaha/vaha{swrI.}/vaha{swrI}   	 as   vaha           (		"	"         )
-	41. somebody_pronoun   koI/koI{vyakwi} somebody_pronoun  as   koI/koI_vyakwi (		"	"	  )
-	42. someone_pronoun    koI/koI{vyakwi}	   		 as   koI/koI_vyakwi (		"	"	  )
-	43. her_determiner     usakA{swrI}			 as   usakA	     (		"	"	  )
-	44. her_pronoun        vaha/usakI/use/usa{swrI}_ko       as   vaha/usakI/use/usako(	"	"	  )
-	45. herself_pronoun    svayaM/vaha_svayaM[swrI]		 as   svayaM/vaha_svayaM  (	"	"	  )
-	46. onto	       para/pICe_padanA[honA]		 as   para/pICe_padanA	(	"	"	  )
-	47. than_preposition   se/se[wulanA_meM]		 as   se/kI_wulanA_meM	(	"	"	  )
-	48. ourselves_pronoun  hama_svaMya/apane_Apa_ko/svayam_[ko]  as  hama_svaMya/apane_Apa_ko/svayam_ko (  "  )
-	49. no_adjective    nahIM/nahIM_hEM/koI_nahIM/koI/bilkula_nahIM/[kuCa]_nahIM/nahIM{anumawa}
-					as
-			    nahIM/nahIM_hEM/koI_nahIM/koI/bilkula_nahIM		        (			" )
-	50. save	    Xana_bacA_kara_raKa/surakRiwa_raKanAa/surakRiwa_raKa/sahAyawA_kara/roka/rakRA_kara/kiPAyawa_barawa/jamA_kara/hiPAjawa_kara/CutakArA_xe/bac/bacA/bacA_le[xenA]   
-					as
-			    Xana_bacA_kara_raKa/surakRiwa_raKanA/surakRiwa_raKa/sahAyawA_kara/roka/rakRA_kara/kiPAyawa_barawa/jamA_kara/hiPAjawa_kara/CutakArA_xe/baca/bacA/bacA_le_bacA_xe			(Suggested by Sukhada 4-05-13)
-	51. marble_noun		safgamaramara/sagaMmaramara/kaFcA
-					 as	safgamaramara/kaFcA
-	52. marbled_adjective	safgamaramara_kI_waraha		as	safgamaramara_se_banA_huA
-	53. marbles's_UNDEFINED	kaFce`				as	kaFce
-	54. recycled_adjective	punaH_cakriwa			as	punarAvqwwa/punaH_cakriwa
-	55. extended_adjective  lambA				as	viswqwa/lambA
-        56. Modified   mahawvapUrNa	as  mahawwvapUrNa 
-	57. Modified 'trI' as 'wrI' Ex: strI as 'swrI'			(by Roja 20-06-13)
+    1. Modifying pattern/spelling for the whole file:
+       ---------------------------------------------
+	1. Replaced 'mez'  with 'meM'    Ex: recently_UNDEFINED  hAla_mez  as  hAla_meM (Suggested by Chaitanya Sir 16-08-11)
+	2. Replaced 'sezkanA'  with  'sefkanA'  Ex: baked_UNDEFINED  sezkanA as sefkanA (  Suggested by Sukhada 16-08-11  )
+	3. Replaced ',' with  '/'     Ex: shall_noun  gA,ge,gI  as   shall_noun  gA/ge/gI   (Suggested by Rajini 29-02-12 )
+        4. 'OY'                 as      'oY'            	Ex: sOYPtaveyara  as  soYPtaveyara      (By Roja 13-03-12 )
+        5. 'trI'                as      'wrI'           	Ex: strI	  as  swrI              (By Roja 20-06-13 )
+        6. mahawvapUrNa         as      mahawwvapUrNa                                           	(By Shirisha Manju)
+        7. Removed 'nA' for verb entries                	Ex: abash_verb  SarmiMxA_karanA  as SarmiMxA_kara
+	8. Replaced pattern '_-'  and '-_'  with  '_'   	Ex: artistries_UNDEFINED    kalA_-kOSala   as  kalA_kOSala
+	9. '_' at begging or end of the meaning are removed 	Ex: Derby_noun   dArbI_   as  dArbI
 
+    2. Modifying spelling of the existing word list:
+       --------------------------------------------
+        1. electronic_UNDEFINED	ilEktrona_kI_kriyA_para_nirBara_sAXana  as 	ilEktronika  (Suggestted by Dipti Mam) 
+        2. danish_UNDEFINED	deniSa_pejataXI		as	deniSa		( Suggested by Sriramji 21-01-10     )
+     	3. chinese_UNDEFINED	cInI_BARA		as  	cInI 		( 		"		     )
+ 	4. Monday_noun  	omavAra            	as  	somavAra	( By Shirisha Manju     26-02-10     )
+        5. mature_adjective 	pUrNa_vikasiwa     	as  	paripakva	( Suggested by Meenaji  29-04-10     )
+ 	6. typically_adverb	viSiRtapUrva   		as      viSiRta_rUpa_se (         By  Meena     17-05-10     )
+        7. per_preposition      prawi-                 	as      prawi  		( By Shirisha Manju     06-01-11     )
+        8. data_noun           	bAweM            	as      detA            (         By  Meena 	18-01-11     )  
+	9. processing_noun	prakriyA		as	saMsAXana       (      	  By  Meena 	08-02-11     )
+  	10. national_UNDEFINED	rARtrIya		as	rARtriya	( Suggested by Sukhada  21-02-11     )
+	11. old_adjective   	purA 	   		as      purAnA          (	  By  Meena 	18-03-11     )
+	12. million_UNDEFINED	xasa_lAKa               as      xasa-lAKa	(	  By  Meena 	30-03-11     )
+	13. disappointing_adjective   honA              as      nirASAjanaka   	(	  By  Meena 	28-04-11     )
+	14. toxin_UNDEFINED   	jIva-viRa		as	viRElA-wawva	( Suggested by Meenaji  24-05-11     )
+	15. toxins_UNDEFINED  	jIva-viRa		as	viREle-wawva	( 		"		     )
+	16. industrials_UNDEFINED Oxyogika_prawiBUwiyAM as 	Seyara 		(		"		     )
+        17. scenario_UNDEFINED	parixqSWawa<8d> 	as	parixqSWawa  	(	By  Roja 	13-06-11     ) 
+	18. bitter_UNDEFINED	kadZavA 		as	kadavA 		(	By  Roja 	08-07-11     )
+	19. thursday_UNDEFINED  gurUvAra   		as      guruvAra        ( Suggested by Sukhada 	19-07-11     )  
+	20. recycled_adjective 	prayoga_kI_gayI_vaswu_kA_punaH_prayoga  as punarAvqwwa  (  By  Meena 	14-09-11     ) 
+	21. recycle_UNDEFINED  	prayoga_kI_gayI_vaswu_kA_punaH_prayoga  as punarAvqwwa  (  	"		     )
+        22. maturity_noun    	prODawA       		as      paripakvawA
+  	23. curious_adjective 	jijFAsu_    		as      jijFAsu
+  	24. pianist_UNDEFINED  	piyAno_bajAnevAlA	as  	piyAno_bajAne_vAlA
+	25. sorry_UNDEFINED   	Kexa                    as      kRamA kIjiye    ( Suggested by Rajini 	08-12-11     )
+	26. thanks_noun  	XanyavAxa_xenA          as      XanyavAxa       ( Suggested by Rajini 	09-12-11     )
+	27. afternoon_UNDEFINED	xopahara_bAxa   	as	xopahara	(		"		     )
+	28. generally_UNDEFINED prAya           	as      prAyaH          (		" 	19-12-11     )
+	29. shareholder_noun	ihassexAra      	as      hissexAra       (		"	 	     )
+	30. shareholding_noun  	ihassexArI      	as      hissexArI       (		"		     )
+	31. establishment_noun	sWApanA			as	aXiRTAna	(	By  Meena 	06-02-12     )
+	32. unmeasured_adjective na_napA,huA            as      na_napA_huA     ( Suggested by Rajini   29-02-12     )
+        33. tackle_noun         maswUla,_pAla_Axi_kA_sAja-sAmAna  as   maswUla_kA_sAja-sAmAna (          "           )
+        34. inaudibly_adverb  	sunAI_na_padZe,Ese_DaMga_se       as   sunAI_na_padZe         (          " 	     )
+	35. yellow-line_noun	^			as	pIlI_lakIra	(   Suggested by Rajini 29-02-12     )
+	36. rig_noun		maswUla,_pAla_Axi_kI_sajjA     	as	maswUla_kI_sajjA       (	"	     )
+	37. rigging_noun	maswUla,_pAla_Axi_kI_sajjA	as 	maswUla_kI_sajjA       (	"	     )
+		 		maswUla,_pAla_Axi_kA_sAja-sAmAna   as 	maswUla_kA_sAja-sAmAna (	"	     )
+	38. right-oh!_interjection   hAz,_hAz_mEM_wEyAra_hUz	   as 	hAz_mEM_wEyAra_hUz     (	"	     )
+	39. Urdu_noun		urxU/^ 			as      urxU      	( Suggested by Rajini  	29-02-12     )
+	40. urea_noun		yUriyA/^       		as      yUriyA    	( 		"		     )
+	41. softness_noun	narmIcurriculum vitae	as	naramI 		( Sugested by Sukhada 	27-04-12     )
+	42. sixteenth_adjective	solahavAzcurriculum vitae  as	solahavAz 	(            	"		     )
+	42. speculator_UNDEFINED vicAraSIlcurriculum vitaea as	vicAraSIla 	(		"		     )
+	43. shannor_UNDEFINED	SEnanacurriculum vitae	as	SEnana          (		"		     )
+ 	44. broadly_adverb	viswqwa_waraha_se	as	mote_wOra_para  ( Sugested by Sukhada 	18-05-12     )
+       	45. govern_verb         niyantriwa_kara         as      niyanwriwa_kara ( Suggested by Sukhada 	14-06-12     )
+	46. striking_adjective  XyAna_AkarRiwa_karanevAlI as    XyAna_AkarRiwa_karanevAlA
+	47. abridge_verb 	saMkRepaNa_kara 	as	saMkRipwa_kara 	(Suggested by Chaitanya Sir  23-06-12)
+	48. absolve_UNDEFINED 	vimukwa_kara		as	mukwa_kara 	(Suggested by Chaitanya Sir  23-06-12)
+       	50. U.N._noun       	yU._ena.      		as     	yU.ena.		(      By Roja 26-09-12		     )
+       	51. U.S.A._noun     	yU._esa._e.     	as     	yU.esa.e.	(		"		     )
+	52. U.S.S.R._noun   	yU.esa.esa_Ara. 	as     	yU.esa.esa.Ara.	(		"		     )
+ 	53. U.S._noun       	yU._esa.        	as     	yU.esa.		(		"		     )
+        54. smell_noun          ganxa                   as      ganXa           (Suggested by Chaitanya Sir  5-10-12 )
+        55. scope_noun 		kAryakRetra             as      kAryakRewra     ( Suggested by Sukhada		     )
+        56. perceive_verb	meVhasUsa_kara          as      mehasUsa_kara
+        57. real-life_adjective vAswavika    		as    	vAswavika_jIvana(Suggested by Chaitanya Sir 23-11-12 ) 
+	58. negative_adjective	rqNAwmaka 		as 	qNAwmaka	(		"           07-12-12 )
+       	59. electron_noun       ilektrana    		as   	ilektroYna	(		"		"    )
+        60. scalar_UNDEFINED    _axiSa                  as      axiSa           (		"	   05-01-13  )
+       	61. such_pronoun        esA                     as      EsA             (		"	   01-05-13  )
+	62. than_preposition   	se[wulanA_meM]		as	kI_wulanA_meM	(   Suggested by Sukhada   04-05-13  )
+	63. at_preposition  	ko{samaya}		as	ko		(		"		     )
+	64. somebody_pronoun   	koI{vyakwi}   		as   	koI_vyakwi 	(          	"       	     )
+        65. someone_pronoun    	koI{vyakwi}      	as   	koI_vyakwi 	(          	"       	     )
+        66. her_determiner     	usakA{swrI}      	as   	usakA          	(          	"       	     )
+        67. her_pronoun        	usa{swrI}_ko       	as   	usako		(     		"       	     )
+	68. herself_pronoun    	vaha_svayaM[swrI] 	as   	vaha_svayaM  	(     		"     		     )
+        69. onto               	pICe_padanA[honA]       as   	pICe_padanA  	(        	"		     )
+        70. ourselves_pronoun  	svayam_[ko]  		as  	svayam_ko 	(  		"  		     )
+	71. save_verb		bac			as	baca		(Suggested by Chaitanya Sir 04-05-13 )	
+				bacA_le[xenA]		as	bacA_le/bacA_xe	(		"		     )
+     	72. english_UNDEFINED   azgrejI                 as      afgrejI         (Suggested by Chaitanya Sir 17-06-13 )
+        73. sunday_noun         iwavAra                 as      ravivAra        ( Suggested by Sukhada 	17-06-13     )
+       	74. prime_verb         	sUcanA_pahzUcA          as      sUcanA_pahuzcA  (	By Roja 	20-06-13     )
+    	75. up_adjective        UcAI_para               as      UzcAI_para      (	    "			     )
+       	76. secretary_noun      matrI                   as      manwrI          (	    "			     )
+       	77. slippery_adjective  PisalanevAlA_jagaha     as      PisalanevAlA    (Suggested by Chaitanya Sir 06-07-13 )
+       	78. good_adjective      majoraFjaka             as      manoraFjaka     (	By Roja 	16-07-13     )
+       	79. goods_noun          praxArWa                as      paxArWa         (	By Roja 	16-07-13     )
+       	80. marbled_adjective   safgamaramara_kI_waraha as      safgamaramara_se_banA_huA
+	81. marbles's_UNDEFINED	kaFce`			as	kaFce
+       	82. input_verb		kampyUtara_meM_`saMgaNana_karanA 	as	kampyUtara_meM_detA_dAlanA
+	83. tired_adjective     WakA			as	WakA_huA        (Suggested by Chaitanya Sir 19-07-13 )
+	84. thursday_UNDEFINED	vqhaspawibAra		as	bqhaspawivAra	(	By Shirisha Manju 20-07-13   )
 
-  	Modifying spelling of the existing word list::
-  	-------------------------------------------- 
-	1. govern_verb		niyantriwa_kara		as 	niyanwriwa_kara (Suggested by Sukhada 14-06-12	    )
-	2. striking_adjective  	XyAna_AkarRiwa_karanevAlI as 	XyAna_AkarRiwa_karanevAlA
-	3. smell_noun      	ganxa			as	ganXa		(Suggested by Chaitanya Sir 05-10-12)
-	4. scope_noun		kAryakRetra		as	kAryakRewra	(Suggested by Sukhada)
-	5. perceive_verb	meVhasUsa_kara 		as  	mehasUsa_kara 
-	6. scalar_UNDEFINED     _axiSa  		as      axiSa 		(Suggested by Chaitanya Sir 05-01-13)
-	7. such_pronoun       	esA     		as      EsA           	(Suggested by Chaitanya Sir 01-05-13)
-	8. english_UNDEFINED	azgrejI			as	afgrejI		(Suggested by Chaitanya Sir 17-06-13)
-	9. sunday_noun 		iwavAra         	as      ravivAra  	(Suggested by Sukhada 17-06-13)
-	10. prime_verb		sUcanA_pahzUcA		as	sUcanA_pahuzcA	(by Roja 20-06-13)
-	11. up_adjective	UcAI_para		as	UzcAI_para	(by Roja 20-06-13)
-	12. secretary_noun	matrI			as	manwrI		(by Roja 20-06-13)	
-	13. slippery_adjective	PisalanevAlA_jagaha	as	PisalanevAlA	(Suggested by Chaitanya Sir 06-07-13)
-	14. good_adjective	majoraFjaka		as	manoraFjaka	(by Roja 16-07-13)
-	15. goods_noun		praxArWa		as	paxArWa		(by Roja 16-07-13)	
+    3. Added new entry:
+       ---------------
+	1. attorney-at-law_UNDEFINED    pramANiwa_aBikarwA
+	2. Delhi_UNDEFINED		xillI
+	3. Moon_UNDEFINED		canxramA
+	4. Danes_UNDEFINED	        denmArka_vAsI
+        5. senator_UNDEFINED		senetara       			( Suggested by Meenaji 	04-03-10	)
+                                        Ex:  The stupidity of the senators annoyed all my friends .
+        6. Jummamasjid_UNDEFINED	jummA_masjixa  			( Suggested by Meenaji 	08-03-11	)
+        7. arms-dealing_UNDEFINED	SaswrAswra_kraya_vikraya 	( 		"	26-04-11	)
+	8. ill-used_UNDEFINED 	       	xurvyavahariwa_huA 		(		"			)
+ 					Ex.Within the relationship he feels ill-used most of the time.
+	9. free-fall_UNDEFINED	       	besahArA_giranA    		( Suggested by Meenaji 	28-07-11	)
+	10. mela_UNDEFINED		melA 				( Suggested by Rajini 	17-01-12	)
+                        Ex: Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival
+	11. file-clerk_noun		PAileM_raKane_vAlA_kaMrmacArI	( Suggested by Rajini   29-02-12	)
+       	12. photoelectric_noun  	prakASa_vixyuwa                 ( Suggested by Chaitanya Sir 19-03-13   )
+        13. antielectron_noun          	prawi_ilektroYna                (               "                       )
+        14. translated_adjective        anuxiwa                         (               "            06-06-13   )
+        15. unravell_verb               sulaJA/uXeda/uXada/spaRta_kara/CudA/asaPala_ho  ( By Roja    20-06-13   )
+        16. earshot_noun                AvAja_sunAI_xene_kI_sImA        ( Suggested by Chaitanya Sir 10-07-13   )
+	 
+    4. Added new meaning to the existing word:
+       ---------------------------------------
+        1. inaudibly_adverb             XImI_Avaja_meM                  ( Suggested by Rajini   29-02-12        )
+	2. should_verb			nA_cAhiye			( 		"			)
+	3. melting-pot_noun		meltiMga_pAta
+        4. manifestation_noun           aBivyakwi                       ( Suggested by Sukhada  29-05-12        )
+        5. respond_verb                 prawikriyA_vyakwa kara          ( Suggested by Chaitanya Sir  19-03-13  )
+        6. wonder_noun                  kOwUhala                        (               "                       )
+        7. inquiring_adjective          anveRI                          (               "                       )
+        8. systematic_adjective         vyavasWiwa                      ( Added by Shirisha Manju     20-03-13  )
+        9. existing_adjective           supracaliwa                     (               "                       )
+        10. manifest_verb               prakata_ho                      ( Added by Shirisha Manju     9-04-13   )
+        11. large_adjective             bqhaw                           (               "             11-04-13  )
+       	12. electricity_noun            vixyuwa_XArA                    ( Suggested by Chaitanya Sir  17-04-13  )
+       	13. electrify_verb    	        vixyunmaya_ho                   (               "                       )
+       	14. most_adjective             	aXikAMSa                        ( Added by Shirisha Manju 20-4-13       )
+       	15. ground_noun                	pqWvI                           (               "                       )
+       	16. lose_verb                  	Ko                              (               "                       )
+       	17. half_noun                  	arXaBAga                        ( Suggested by Chaitanya Sir  02-05-13  )
+       	18. encapsulate_verb           	saMgatiwa_kara (as main mng)    (               "                       )
+       	19. deflect_verb               	vikRepiwa_ho/vikRepiwa_kara     ( Suggested by Chaitanya Sir  10-05-13  )
+       	20. she_pronoun                	yaha                            ( Suggested by Chaitanya Sir  13-05-13  )
+       	21. her_pronoun                	yaha                            (               "                       )
+       	22. him_pronoun                	yaha                            (               "                       )
+       	23. he_pronoun                 	yaha                            (               "                       )
+       	24. fox_noun                   	lomada                          ( Suggested by Sukhada        14-05-13  )
+       	25. you_pronoun                	wU                              ( Suggested by Chaitanya Sir  24-5-13   )
+       	26. noise_verb                 	Sora_kara/kolAhala_kara         (               "             05-07-13  )
+       	27. extended_adjective         	viswqwa
+       	28. recycled_adjective         	punarAvqwwa
 
+    5. Modifying first meaning from the list :
+       -------------------------------------
+        1. establishment_noun   aXiRTAna                as      sWApanA         (Suggested by Meena  07-02-12   )
+        2. knowingly_adverb     jEse_rahasya_se_pariciwa_ho,_isa__waraha_se as  jAnabUJa_kara (Suggested by Rajini 29-02-12)
+        3. window_noun          xarIcA                  as      KidZakI_kA_kAzca  (Suggested by Chaitanya Sir 29-02-12)
+        4. excuse_verb          mukwI_xe                as      kRamA_kara
+        5. possess_verb         kA_svAmI_yA_mAlika_ho   as      XAraNa_kara
+        6. broken_adjective     Ubada-KAbada            as      tUtA_huA
+        7. electron_noun       	awisUkRma_paramANu    	as   	ilektroYna      (Suggested by Chaitanya Sir  07-12-12  )
+        8. diner_noun           Bojana_karane_vAlA      as      DAbA            (Suggested by Sukhada 17-06-13         )
+        9. electric_adjective   bijalI_kA               as      vExyuwa         (Suggested by Chaitanya Sir  08-07-13  )
+        10. exert_verb          bala_lagA               as      kAma_meM_lA     (               "                      )
+       	11. otherwise_adverb    xUsare_prakAra_se       as      anyaWA          (Suggested by Shubham IIT(BHU) 06-07-13)
+       	12. noise_noun         	AvAja                   as      Sora            (Suggested by Chaitanya Sir  05-07-13  )
+       	13. govern_verb        	vaSA_meM_kara           as      niyanwriwa_kara (               "            11-07-13  )
+       	14. several_adjective  	viBinna                 as      kaI             (               "               "      )
 
-  	Removed::
-  	-------
-	itumail@itu.ch  E-MAIL::itumail@itu.ch		(Suggested by Rajini(29-02-12))
-	organized       -::saMgaTiwa			(Suggested by Rajini(29-02-12))
-	yellow-card     noun::^				(Suggested by Rajini(29-02-12))
-        the_UNDIFINED   -->   English			(Maha Laxmi 14-08-12)
-	fix_verb	sWapiwa_kara  			(Suggested by Chaitanya Sir 23-02-13)
-	recycled_UNDEFINED	punarAvqwwa 		(Suggested by Sukhada (20-05-13)
-	Urdu_UNDEFINED  ^
-	solemnise_UNDEFINED     -_
-	patterns having '_-' and '-_' are changed to '_'
-	   Ex: artistries_UNDEFINED	kalA_-kOSala
-			to
-		artistries_UNDEFINED	kalA_kOSala
-	patterns having '_' at begging or end of the meaning are removed 
-	   Ex: Derby_noun	dArbI_		as	  Derby_noun	dArbI
-	In time_noun -> Removed	samayaa			( by Roja 20-06-13)
+    6. Removed meaning from existing list:
+       ----------------------------------
+	1. overdue_adjective 	jo_bahuwa_pahale_hI_ho_jAnA_cAhiye_WA,_vaha	( Suggested by Rajini	29-02-12    )
+	2. votive_adjective	mannawa`kA	  				(		"		    )
+	3. should_verb		howAnA/gA,ge,gIInA/cAhieenA
+	4. foolscap_noun 	{lagaBaga_300*200_or_400mm}
+	5. piping_noun		bAzsurIvAxana/viSeRa`nApa_kA_pAipa/
+	6. valve_noun		{eka`ora_Kulane_vAlA_vAyu_gEsa_xrava_ke_saMcAra_kA_yaMwra}
+        7. recycling      	prayoga_kI_gayI_vaswu_kA_punaH_prayoga
+   	8. organized       	saMgaTiwa                    			( Suggested by Rajini	29-02-12    )
+	9. filing-clerk    	file-clerk {US}					(		"		    )
+	10. cousin_noun		cacerA,mamerA,PuPerA_yA_mOserA_BAi_yA_bahana
+				cacerA,_mamerA,_PuPerA_yA_mOserA_BAi_yA_bahana
+				cacerA_BAII/cacerA_BAI/				(		"		    )
+	11. unit_noun		[mAtraka-->mAwraka] 				( 	By Mahalaxmi	31-10-12    )
+       	12. fix_verb        	sWapiwa_kara                    		(Suggested by Chaitanya Sir 23-02-13)
+	13. he_pronoun      	vaha{pu.}  	         	     		(Suggested by Sukhada	04-05-13    )
+  	14. she_pronoun     	vaha{swrI.}/vaha{swrI}				(		"		    )
+	15. no_adjective    	[kuCa]_nahIM/nahIM{anumawa}
+        16. time_noun 		samayaa                 			( 	By Roja 	20-06-13    )
+	17. marble_noun      	sagaMmaramara
+	18. I_pronoun       	mEz{sarvanAma} 
 
+    7. Removed entry:
+       --------------
+	1. aspirations=?????_??    @HARI                   		( Suggested by Sukadha 29-12-10 )
+       	2. chair-????????  saBApawi                        		(           	"               )
+        3. congratulations=????!   @HARI                   		(           	"               )
+        4. infrastructure=????????_????????        @HARI   		(           	"               )
+        5. internally=???????_???_??       @HARI           		(           	"               )
+        6. technologists=????????????_????????     @HARI   		(           	"               )
+        7. uk=????????_??????      @HARI                   		(           	"               )
+        8. Jerseys      eka_nasla_kI_gAya_jo_aXika_xUXa_xewI_hE    	( Suggested by Meena	16.03.11) 
+        9. Jerseys'     eka_nasla_kI_gAya_jaWaA_aXika_xUXa_xewI_hE 	(	    	"		)
+        10. Jersey's    eka_nasla_kI_gAya_jo_aXika_xUXa_xewI_hE    	(	    	"		)
+        11. recycle's   prayoga_kI_gayI_vaswu_kA_punaH_prayoga
+        12. recycles'   prayoga_kI_gayI_vaswu_kA_punaH_prayoga
+        13. recycles	prayoga_kI_gayI_vaswu_kA_punaH_prayoga
+        14. motion 	pravarwana_kara 				( Suggested by Meenaji 19-11-10 )
+        15. Sr     	SrI  						( Suggested by Meenaji 22-03-11 )
+        16. engulfed	nimagna_kara					(            	"	 	)
+        17. engulfing   nimagna_kara					(     		"	        )
+        18. engulfs     nimagna_kara					(     		"       	)
+        19. No     	aMka    					( Suggested by Meenaji 06-08-11 )
+			Ex. Shaking your head for 'No' is not universal. 
+        20. itumail@itu.ch  	E-MAIL::itumail@itu.ch          	( Suggested by Rajini  29-02-12 )
+        21. the_UNDIFINED   	English                   		( By Maha Laxmi 	14-08-12)
+        22. Urdu_UNDEFINED  	^
+        23. solemnise_UNDEFINED -_
+        24. recycled_UNDEFINED  punarAvqwwa             		( Suggested by Sukhada  20-05-13)
 
-  	Added new entry:
-  	---------------
-	1. photoelectric_noun      	prakASa_vixyuwa			( Suggested by Chaitanya Sir 19-03-13	)
-	2. antielectron_noun       	prawi_ilektroYna		(		"			)
-	3. translated_adjective		anuxiwa				(		"	     06-06-13  	)
-	4. unravell_verb		sulaJA/uXeda/uXada/spaRta_kara/CudA/asaPala_ho	( by Roja 20-06-13	)
-	5. earshot_noun			AvAja_sunAI_xene_kI_sImA	( Suggested by Chaitanya Sir 10-07-13	)
-
-
-  	Added new meaning to the existing word:
-  	---------------------------------------
-	1. manifestation_noun		aBivyakwi 			( Suggested by Sukhada 	29-05-12	)
-	2. respond_verb			prawikriyA_vyakwa kara		( Suggested by Chaitanya Sir  19-03-13	)
-	3. wonder_noun			kOwUhala			(		"			)
-	4. inquiring_adjective		anveRI				(		"			)
-	5. systematic_adjective		vyavasWiwa			( Added by Shirisha Manju     20-03-13	)
-	6. existing_adjective		supracaliwa			(		"			)
-	7. manifest_verb		prakata_ho			( Added by Shirisha Manju     9-04-13	)
-	8. large_adjective		bqhaw				( 		"	      11-04-13	)
-	9. electricity_noun		vixyuwa_XArA			( Suggested by Chaitanya Sir  17-04-13	)
-	10. electrify_verb		vixyunmaya_ho			(		"			)
-	11. most_adjective		aXikAMSa			( Added by Shirisha Manju 20-4-13	)	
-	12. ground_noun			pqWvI				(		"			)
-	13. lose_verb			Ko				(		"			)
-	14. half_noun			arXaBAga			( Suggested by Chaitanya Sir  02-05-13	)
-	15. encapsulate_verb		saMgatiwa_kara (as main mng)	(		"			)
-	16. deflect_verb		vikRepiwa_ho/vikRepiwa_kara	( Suggested by Chaitanya Sir  10-05-13	)
-	17. she_pronoun 		yaha				( Suggested by Chaitanya Sir  13-05-13  )
-	18. her_pronoun			yaha				(		"			)
-	19. him_pronoun			yaha				(		"			)
-	20. he_pronoun			yaha				(		"			)
-  	21. fox_noun			lomada				( Suggested by Sukhada 14-05-13		)
-	22. you_pronoun			wU				( Suggested by Chaitanya Sir  24-5-13	)
-	23. noise_verb			Sora_kara/kolAhala_kara		( 		"	      05-07-13  )
-
-
-	Modifying first meaning from the list
- 	-------------------------------------
-	1. establishment_noun   aXiRTAna		as	sWApanA		(Suggested by Meena  07-02-12	      )
-	2. window_noun		xarIcA			as	KidZakI_kA_kAzca  (Suggested by Chaitanya Sir 29-02-12)
-	3. excuse_verb         	mukwI_xe		as	kRamA_kara
-	4. possess_verb        	kA_svAmI_yA_mAlika_ho	as	XAraNa_kara
-	5. broken_adjective    	Ubada-KAbada		as	tUtA_huA
-	6. diner_noun          	Bojana_karane_vAlA	as	DAbA		(Suggested by Sukhada 17-06-13	       )
-	7. electric_adjective	bijalI_kA		as 	vExyuwa		(Suggested by Chaitanya Sir  08-07-13  )
-	8. exert_verb		bala_lagA		as 	kAma_meM_lA	(		"		       )
-  	9. otherwise_adverb	xUsare_prakAra_se	as	anyaWA		(Suggested by Shubham IIT(BHU) 06-07-13)
-	10. noise_noun		AvAja			as	Sora		(Suggested by Chaitanya Sir  05-07-13  )
-	11. govern_verb     	vaSA_meM_kara		as	niyanwriwa_kara (		"            11-07-13  )
-	12. several_adjective   viBinna			as	kaI		(		"		"      )
-
-
+    8. Modified category:
+       ------------------
+	1. Habegger_- 		as	Habegger_noun	 	( Suggested by Chaitanya Sir 29-02-12 	)
+	2. detour_-		as	detour_noun	  	( Suggested by Rajini 29-02-12        	)
+    	3. monster_-		as	monster_noun		( 		"        		)
+	4. sabre-rattling_-	as	sabre-rattling_noun	( 		"  			)
+ 	5. sabre-toothed_-	as	sabre-toothed_adjective (		"			)
+	6. right-oh!_INDC       as	right-oh!_interjection
+	
  changes in preposition.txt
  ==========================
  Added  :
