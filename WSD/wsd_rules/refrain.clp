@@ -22,10 +22,8 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id roka))
-(assert (id-H_vib_mng ?id na_karanA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  refrain.clp 	refrain1   "  ?id "  roka )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng   " ?*wsd_dir* "  refrain.clp   refrain1   "  ?id " na_karanA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  refrain.clp 	refrain1   "  ?id "  roka )" crlf))
 )
 
 ;"refrain","V","1.rokanA{na_karanA}"

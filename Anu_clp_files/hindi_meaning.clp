@@ -93,6 +93,9 @@
  (assert (default-cat verbal_noun))
  (assert (default-cat UNDEFINED))
  (assert (default-cat wh-determiner))
+ (assert (default-cat preposition))
+ (assert (default-cat number))
+ (assert (default-cat wh-pronoun))
  )
  ;--------------------------------------------------------------------------------------------------------------
   ;Added by Roja (05-03-13).

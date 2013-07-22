@@ -22,10 +22,8 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ekrilika))
-(assert (id-H_vib_mng ?id wejAba_se_banA_huA_eka_prakAra_kA_rasAyanika_paxArWa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  acrylic.clp 	acrylic1   "  ?id "  ekrilika )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng   " ?*wsd_dir* "  acrylic.clp   acrylic1   "  ?id " wejAba_se_banA_huA_eka_prakAra_kA_rasAyanika_paxArWa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  acrylic.clp 	acrylic1   "  ?id "  ekrilika )" crlf))
 )
 
 ;"acrylic","N","1.ekrilika{wejAba_se_banA_huA_eka_prakAra_kA_rasAyanika_paxArWa}"

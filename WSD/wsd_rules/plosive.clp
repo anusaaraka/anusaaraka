@@ -22,10 +22,8 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id sparSa_Xvani))
-(assert (id-H_vib_mng ?id Xvani_vijFAna))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  plosive.clp 	plosive1   "  ?id "  sparSa_Xvani )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng   " ?*wsd_dir* "  plosive.clp   plosive1   "  ?id "  Xvani_vijFAna )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  plosive.clp 	plosive1   "  ?id "  sparSa_Xvani )" crlf))
 )
 
 ;"plosive","N","1.sparSa_Xvani{Xvani_vijFAna}"

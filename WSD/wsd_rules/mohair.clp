@@ -22,10 +22,8 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id aMgorA_Una))
-(assert (id-H_vib_mng ?id aMgorA_jAwi_kI_bakarI_ke_lambe_reSamI_bAla))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  mohair.clp 	mohair1   "  ?id "  aMgorA_Una )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng   " ?*wsd_dir* "  mohair.clp    mohair1   "  ?id " aMgorA_jAwi_kI_bakarI_ke_lambe_reSamI_bAla )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  mohair.clp 	mohair1   "  ?id "  aMgorA_Una )" crlf))
 )
 
 ;"mohair","N","1.aMgorA_Una{aMgorA_jAwi_kI_bakarI_ke_lambe_reSamI_bAla}"

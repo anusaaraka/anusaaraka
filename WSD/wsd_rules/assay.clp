@@ -22,10 +22,8 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id paraKa_kara))
-(assert (id-H_vib_mng ?id XAwuoM_kI))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  assay.clp 	assay1   "  ?id "  paraKa_kara )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng   " ?*wsd_dir* "  assay.clp     assay1   "  ?id " XAwuoM_kI )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  assay.clp 	assay1   "  ?id "  paraKa_kara )" crlf))
 )
 
 ;"assay","V","1.paraKa_karanA{XAwuoM_kI}"

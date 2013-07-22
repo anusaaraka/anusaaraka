@@ -44,10 +44,8 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id bETa))
-(assert (id-H_vib_mng ?id adde_para))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  perch.clp 	perch2   "  ?id "  bETa )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng   " ?*wsd_dir* "  perch.clp     perch2   "  ?id " adde_para )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  perch.clp 	perch2   "  ?id "  bETa )" crlf))
 )
 ;"perch","V","1.bETanA{adde_para}"
 ;The birds perched over the roof.

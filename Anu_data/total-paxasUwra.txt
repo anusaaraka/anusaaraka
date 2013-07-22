@@ -72816,7 +72816,7 @@ perceptive	jFAnaviRayaka^jalxI~jFAna~grahaNa~karanevAlA[-]
 perceptively	kuSAgrabuxXi~se
 perceptiver	jFAnaviRayaka^jalxI~jFAna~grahaNa~karanevAlA~{wara}
 perceptivest	jFAnaviRayaka^jalxI~jFAna~grahaNa~karanevAlA~{wama}
-perch	addA{cidZiyoM~Axi~ke~bETane~kA}^UzcA~sWAna{0}
+perch	addA{cidZiyoM~Axi~ke~bETane~kA}{adde_para}^UzcA~sWAna{0}
 perchance	kaxAciwa
 perched	addA{cidZiyoM~Axi~ke~bETane~kA}^UzcA~sWAna~{@ed/@en}
 perches'	addA{cidZiyoM~Axi~ke~bETane~kA}^UzcA~sWAna{ba.}{@vib:kA}
