@@ -25,6 +25,25 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  eye.clp 	eye1   "  ?id "  AzKa )" crlf))
 )
 
+;Added by Aditya and Hardik(17.7.13),IIT(BHU)
+;You must keep an eye on the child.
+(defrule eye2
+(declare (salience 5100))
+(id-root ?id eye)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id eye)
+(id-cat_coarse ?id noun)
+(id-word =(+ ?id 1) on)
+(id-word =(- ?id 2) keep)
+(id-word =(- ?id 1) an)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng =(- ?id 1) ?id najZara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " eye.clp	eye2  " =( - ?id 1) " " ?id  " najZara  )" crlf))
+)
+
+
 ;default_sense && category=noun	AzKa	0
 ;"eye","N","1.AzKa"
 ;Her eyes are beautiful.

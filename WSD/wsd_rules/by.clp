@@ -346,3 +346,10 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  by.clp 	by21   "  ?id "  se )" crlf))
 )
 
+
+;Added by Aditya and Hardik,IIT(BHU)
+; "kriyA-by_saMbanXI"
+;"ke_xvArA"
+;Hardik was killed by gun.
+;"waka"
+;Maybe you will get it by delhi and you will not need to go to Lucknow.

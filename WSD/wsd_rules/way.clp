@@ -57,3 +57,13 @@
 )
 ;Do it the way you have always done it .
 ;I really like the way you do your hair . 
+
+;Added by Aditya and Hardik(17.7.13)
+
+;"ora"
+;Turn your face this way.
+;I turned my face that way.
+
+;"warIkA"
+;I don't think this will work, we better start looking for an alternative way.
+;I don't know which way i am supposed to do it.

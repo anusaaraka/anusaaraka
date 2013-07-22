@@ -844,6 +844,23 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  go.clp 	go47  "  ?id "  jA )" crlf))
 )
 
+;Added by Aditya and Hardik(21-06-2013),IIT(BHU) batch 2012-2017.
+;Go back to your home.
+(defrule go48
+(declare (salience 3850))
+(id-root ?id go)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 back)
+(kriyA-upasarga ?id ?id1)
+(kriyA-to_saMbanXI  ?id ?id2)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 vApisa_jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " go.clp	go48  "  ?id "  " ?id1 "  vApisa_jA  )" crlf))
+)
+
 ;default_sense && category=verb	jA	0
 ;"go","V","1.jAnA"
 ;I go to school everyday.

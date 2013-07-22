@@ -83,3 +83,10 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  add.clp 	add5   "  ?id "  Age_kaha )" crlf))
 )
 
+;Added by Aditya and Hardik,
+;"milAo"
+;Add one spoonful of sugar.
+;Add a cup of water.
+;kriyA-object relation between "cup" and "Add". Same relation in following.
+;I want to add a cup to my collection.
+

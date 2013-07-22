@@ -7,7 +7,8 @@
                     project.clp foundation.clp  into.clp        have.clp        floor.clp       bear.clp
 		    since.clp   strong.clp   	take.clp   	use.clp		perch.clp	mohair.clp
 		    assay.clp	refrain.clp	reprieve.clp	handsome.clp	acrylic.clp	plosive.clp
-         Added    : room.clp    commit.clp	volume.clp
+		    eye.clp     go.clp          way.clp		    
+         Added    : room.clp    commit.clp	volume.clp      good.clp
  2. sd_relation_rules.clp 
         1. Modified : kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux, AjFArWaka_vAkya, sub_samA_with_cop, 
 		      conj-comp-rule, attr+nsubj, attr+aux, cop+nsubj, prt, nsubj_advmod, nsubj_advmod_1, advmd, det, mark, 
