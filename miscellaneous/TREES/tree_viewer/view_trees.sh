@@ -6,7 +6,7 @@
  
  java -mx800m -cp "$STANFORD_PATH/stanford-parser.jar:" edu.stanford.nlp.trees.EnglishGrammaticalStructure -treeFile $1_derived_tree  -CCprocessed -conllx -keepPunct -lexicalize  > $1_dependency_tree
 
- $HOME_anu_test/Parsers/stanford-parser/stanford-parser-2013-04-05/mapping-punctuations.out  < $1_derived_tree >  $1_derived_tree.cons
+ $STANFORD_PATH/mapping-punctuations.out  < $1_derived_tree >  $1_derived_tree.cons
 
  java -mx900m -cp "$STANFORD_PATH/stanford-parser.jar:" edu.stanford.nlp.trees.TreePrint -options "lexicalize" $1_derived_tree.cons > $1_lexicalize_output
 

@@ -1,4 +1,4 @@
- 22-07-13
+ 23-07-13
  ========
  1. WSD: Modified : found.clp   improve.clp     baby.clp        is_en_tam.clp   call.clp        get.clp
                     add.clp     john.clp        black.clp       on.clp          paper.clp       need.clp
@@ -165,6 +165,7 @@
         processing_manual_sentences.sh  get_group_mng.sh                	get_tam_info.lex
         minion_compile.sh		run_stanford-gui-pcfg.sh		run_tregex.sh
 	std_tregex/README		anu_compile.sh				remove_out-files.sh
+	tree_viewer/README		view_trees.sh
 44. Updated the following files
 	bin/utf8_wx			Pre-requisites in INSTALL
 	create_hin_align_html.clp	create_eng_ord_html.clp files

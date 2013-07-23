@@ -14,7 +14,7 @@
 3. Set the path for Stanford parser in .bashrc/.bash_profile
         export STANFORD_PATH=path for stanford parser
 
-        Ex: export STANFORD_PATH=$HOME/stanford-parser-2013-04-05
+        Ex: export STANFORD_PATH=$HOME/stanford-parser-full-2013-06-20
 
 4. Source bashrc 
          source ~/.bashrc

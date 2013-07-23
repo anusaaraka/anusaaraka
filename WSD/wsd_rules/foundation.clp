@@ -32,7 +32,7 @@
 (declare (salience 4950))
 (id-root ?id foundation)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 house|plot)
+(id-word ?id1 house|plot|factory)
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
