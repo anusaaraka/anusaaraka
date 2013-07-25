@@ -33193,6 +33193,7 @@ zoological_garden	cidiyAGara#cidiyAGara#noun#2#RM
 zoological_survey	prApri_sarvekRaNa#prApri_sarvekRaNa#noun#2#RM
 zoological_survey_of_india	BArawIya_prApri_sarvekRaNa_viBAga#BArawIya_prApri_sarvekRaNa_viBAga#noun#2#RM
 zoom_in	AkAra_varXana#AkAra_varXana#noun#2#RM
+except_for	ko_Coda_kara#ko_Coda_kara#preposition#1#WM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

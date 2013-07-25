@@ -441,6 +441,20 @@
         (modify ?f1 (case o))
         (printout ?*gnp_debug* "(pada_id-rule_name-case_src " ?pada_id " case_for_kAlavAcI     o    kAlavAcI_relation)" crlf)
  )
+ ;-------------------------------------------------------------------------------------------------------------------
+ ;We see leaves falling from trees and water flowing down a dam.
+ ;He stopped killing of animals and birds throughout his kingdom. 
+ (defrule modify_case_for_and_grp
+ (declare (salience 590))
+ (conj_head-left_head-right_head ? ?l_h ?r_h)
+ (pada_info (group_head_id ?r_h) (vibakthi ?vib))
+ (test (neq ?vib 0))
+ ?f0<-(pada_info (group_head_id ?l_h)(case d))
+ =>
+	(retract ?f0)
+	(modify ?f0 (case o))
+        (printout ?*gnp_debug* "(pada_id-rule_name-case_src " ?r_h " modify_case_for_and_grp     o    right_head)" crlf)
+ )
  ;======================================= verb with or_subject agreement =======================================
  ;Are John or I invited ? 
  (defrule verb_or_sub_agmt

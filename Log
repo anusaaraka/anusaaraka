@@ -1,4 +1,4 @@
- 23-07-13
+ 25-07-13
  ========
  1. WSD: Modified : found.clp   improve.clp     baby.clp        is_en_tam.clp   call.clp        get.clp
                     add.clp     john.clp        black.clp       on.clp          paper.clp       need.clp
@@ -24,7 +24,8 @@
  4. parser_tree_correction_rules.clp
         Modified : modify_cat           Added    : modify_ADJP_as_VP
  5. vibakthi.clp
-        Added : ko_vib_for_xe_root      deffunction : remove_character
+        Added 	 : ko_vib_for_xe_root      deffunction : remove_character
+	Modified : vib_for_multiple_prep
  6. prepare_apertium_input.clp 
         Added deffunctions   : remove_character and get_kA_mng
         Added    :  print_org_word_mng_for_grp_id, print_org_word_mng_with_kA_vib, print_org_word_mng_for_head_id
@@ -35,7 +36,7 @@
  7. sd_lwg_rules.clp 
         Modified: replace_nodes rule	        Added   : replace_VP1
  8. GNP_agreement.clp 
-        Added : print_debug_info	        Modified the rules to add function call
+        Added : print_debug_info and modify_case_for_and_grp	 Modified the rules to add function call
  9. H_ordering_rules.clp :  Modified : "move_ADVP_after_v" 
 10. number.clp  	 :  Modified : generate_dummy_num  and  get_num_frm_plural_list rules 
 11. parserid_wordid_mapping.clp 
@@ -56,7 +57,10 @@
                   wsd_tam_mng2          as      tam_mng_for_grp_id_from_wsd_[word/root]_file
                   wsd_tam_mng1          as      tam_mng_for_grp_id_from_wsd_tam_file_with_preceeding_verb
                   wsd_tam_mng3          as      tam_mng_for_grp_id_from_wsd_tam_file
-16. sd_pada.clp : Modified  : get_single_prep rule
+16. sd_pada.clp : 
+	Renamed  : share_zero_level_conj_prep  as get_zero_level_conj_pada and modified the rule
+	Added    : get_zero_level_prep
+	Modified : share_conj_prep and  get_single_prep rule
 17. wsd_tam_meaning.clp
         Loaded sandbox fact to use provisional dictionary when needed
 18. insert_punctuation.clp
@@ -195,7 +199,7 @@
 49. Updated Log
 50. Updated the following verified's
 	sd_verified (492)	phy_verified (253)		phy_partial_verified (81)	
-	verified (40)		partial_ver (22)    		small_sent_verified_sd (66)
+	verified (40)		partial_ver (22)    		small_sent_verified_sd (67)
 	ber_verified (407)
 ==========================================================================================================================
  10-07-09

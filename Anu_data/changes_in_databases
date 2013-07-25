@@ -2,8 +2,8 @@
   ========================
   1. Removed  :   miwra  
                   vaha  
-  2. Added    :   mEca        Suggested by sukhada (24.2.11) Ex: There was a football match in the school yesterday.
-                  prabaMXaka  Added by Meena(28.7.11)  Ex: But fund managers say they are ready.
+  2. Added    :   mEca        Suggested by sukhada 	(24.2.11)  Ex: There was a football match in the school yesterday.
+                  prabaMXaka  Added by Meena		(28.7.11)  Ex: But fund managers say they are ready.
 
   changes in female_list.txt
   ========================
@@ -514,7 +514,8 @@ Modified:
 10. Physics-dictionary  (Added by Roja 04-05-12. Suggested by Chaitanya Sir)
      This file is splitted into two files
      i. phy_dictionary.txt   and   ii. phy_eng_multi_word_dic.txt
-11. multi_word_expressions_from_iit_bombay.txt (Extracted from iit-bombay dictionary.Added by Roja 10-05-13. Suggested by Chaitanya Sir)
+11. multi_word_expressions_from_iit_bombay.txt 
+	Extracted from iit-bombay dictionary.Added by Roja 10-05-13. Suggested by Chaitanya Sir)
      
 
  Changes in ol_parser_unused_words.txt
@@ -540,18 +541,17 @@ Modified:
 
  Changes in hindi_default_tam.txt
  ==================================
- Modified :
- --------
-        may_need_to_0   nA_kI_jarUWawa_pada_sakawI_hE-0-0   as  may_need_to_0   ne_kI_jarUWawa_pada_sakawI_hE-ko-0 (by Meena 13-04-11)                     
-	may_need_to_0  ne_kI_jarUWawa_pada_sakawI_hE-ko-0  as  may_need_to_0 ne_kI_jarUrawa_pada_sakawI_hE-ko-0 (by Manju 26-01-12)
-	need_not_0      nA_kI_jZarUrawa_hE-ko-nahIM 	as ne_kI_jZarUrawa_hE-ko-nahIM (suggested by Chaitanya Sir 2-6-12)
-	need_to_0       nA_kI_jZarUrawa_hE-ko-0		as	ne_kI_jZarUrawa_hE-ko-0	(suggested by Chaitanya Sir 2-6-12)
+    Modified :
+    --------
+    1. may_need_to_0	nA_kI_jarUWawa_pada_sakawI_hE-0-0    as    ne_kI_jarUWawa_pada_sakawI_hE-ko-0 (by Meena 13-04-11)        2. may_need_to_0    ne_kI_jarUWawa_pada_sakawI_hE-ko-0   as    ne_kI_jarUrawa_pada_sakawI_hE-ko-0 (by Manju 26-01-12)
+    3. need_not_0       nA_kI_jZarUrawa_hE-ko-nahIM 	     as    ne_kI_jZarUrawa_hE-ko-nahIM (Suggested by Chaitanya Sir 2-6-12)
+    4. need_to_0        nA_kI_jZarUrawa_hE-ko-0		     as	   ne_kI_jZarUrawa_hE-ko-0     (	"		)
 
- Added    :
- -----
- 	0			wA_hE
-	used_to_be_en	yA_jAwA_WA-0-0  (Suggested by Rajini 17-01-12) Ex: She used to be organized.
-	needs_to_be_en	yA_jAnA_hE-0-0              "                  Ex: That's the way business used to be done and that is the way business needs to be done.
+    Added:
+    ------
+	1. 0			wA_hE
+	2. used_to_be_en	yA_jAwA_WA-0-0  (Suggested by Rajini 17-01-12) Ex: She used to be organized.
+	3. needs_to_be_en	yA_jAnA_hE-0-0              "                  Ex: That's the way business used to be done and that is the way business needs to be done.
 
  Removed :
  -------
@@ -825,8 +825,8 @@ Modified:
       iii) named_entities.txt
        iv) multi_word_expressions.txt
 
-    proper_noun-common_noun_compounds.txt 
-    =====================================
+  proper_noun-common_noun_compounds.txt 
+  =====================================
     Added   ::
     Wall_Street     voYl_strIta#voYl_strIta#noun#2#WM
                     [previously it was present in multi_word_expressions.txt as "wall_street     galI[_banxa_sadaka]#galI[_banxa_sadaka]#noun#2#RM" which is wrong so removed made entry in proper_noun-common_noun_compounds.txt as above, Suggested by Chaitanya ji and Dipti Madam. 23-04-12]
@@ -881,14 +881,15 @@ Modified:
 	problems_of_interest    rocaka_samasyAez#rocaka_samasyAez#noun#1#WM 	(      "    			    )
 	living_creature 	prANI#prANI#noun#2#WM				(Suggested by Chaitanya Sir 12-12-12)
 	just_before		se_TIka_pahale#se_TIka_pahale#preposition#2#RM	(Suggested by Chaitanya Sir 22-01-13)
-	as_a_whole      	eka_ikAI_ke_rUpa_meM#eka_ikAI_ke_rUpa_meM#preposition#1#WM (	 "   18-02-13       )
-	in_the_first_place      praWamawayA#praWamawayA#preposition#4#WM	(      "		18-02-13    )
-	in_course_of_time       kAlAnwara_meM/yaWAsamaya#yaWAsamaya#noun#2#RM	(	"		20-04-13    )
-	as_of_now       	aba_waka#aba_waka#adverb#3#WM			(	"		10-07-13    )
-	as_by_now       	aba_waka#aba_waka#adverb#3#WM			(		"		    )
+	as_a_whole      	eka_ikAI_ke_rUpa_meM#eka_ikAI_ke_rUpa_meM#preposition#1#WM (	 "   	    18-02-13)
+	in_the_first_place      praWamawayA#praWamawayA#preposition#4#WM	(      		 "		    )
+	in_course_of_time       kAlAnwara_meM/yaWAsamaya#yaWAsamaya#noun#2#RM	(		 "	    20-04-13)
+	as_of_now       	aba_waka#aba_waka#adverb#3#WM			(		 "	    10-07-13)
+	as_by_now       	aba_waka#aba_waka#adverb#3#WM			(		 "		    )
+	except_for      	ko_Coda_kara#ko_Coda_kara#preposition#1#WM	(		 "	    23-07-13)
 
-  Added new meaning to the existing word:
-  --------------------------------------
+    Added new meaning to the existing word:
+    --------------------------------------
 	no_doubt        	niHsaMxeha		(Suggested by Sukhada 30-05-13)
 	railway_station		rela_sWAnaka		(	"	"     15-06-13)
 	for_a_while		kuCa_kRaNa_waka		(by Roja 15-07-13)
@@ -897,8 +898,8 @@ Modified:
 
  changes in phy_dictionary.txt
  =============================
- Added :
- -------
+    Added :
+    -------
 	nonuniform		asamAna
 	position-time_Noun      sWiwi_samaya	(Added by Manju (19-11-12))
 	negative_adjective      qNAwmaka     	(      "        (03-12-12))
@@ -910,8 +911,8 @@ Modified:
 	biology_noun    	jIva_vijFAna	(	"			"   )
 	channel_noun		saraNi		(	"  by Amit MNNIT    01-07-13)
 
- Modified :
- ---------
+    Modified :
+    ---------
         rearrangement_Noun  		punavryavasWA  	as   	punarvyavasWA  	(Suggested by Chaitanya Sir (08-08-12))
 	corresponding_adjective  	waxnurUpa	as	waxanurUpa	(Suggested by Sukhada (29-05-13))
 
@@ -919,8 +920,8 @@ Modified:
                    SuxXa_gawika, SuxXa_gawikI, prasara_koNa_xEGryavqxXi, ruxXoRma, pariSuxXawA and saMbaxXa
 	relative_noun	ApekRa		as	relative_adjective	ApekRa	(Suggested by Chaitanya Sir (05-01-13))
 
- Added new meaning to the existing word:
- --------------------------------------
+    Added new meaning to the existing word:
+    --------------------------------------
 	interplay_noun			pArasparika_praBAva	(Added by Shirisha Manju)
 	translational_adjective		sWAnAnwaraNa		(	"		)
 	molecular_adjective		aNu			(Suggested by Chaitanya Sir  (05-12-12))
@@ -928,16 +929,16 @@ Modified:
 
  changes in phy_eng_multi_word_dic.txt
  =====================================
-  Modified :
-  --------
+    Modified :
+    --------
 	frame_of_reference      nirxeSa-waMwra	as	nirxeSa_waMwra
 
-  Added new meaning to the existing word:
-  ---------------------------------------
+    Added new meaning to the existing word:
+    ---------------------------------------
 	charged_constituents	 AveSiwa_avayava	(Added by Shirisha Manju (9-4-13)
  
-  Added new entry:
-  ----------------
+    Added new entry:
+    ----------------
 	charged particles       AveSiwa_kaNa#AveSiwa_kaNa/noun#2#RM	(Suggested by Chaitanya Sir 07-06-13)
 			
 

@@ -407,9 +407,8 @@ It does not matter what Ted does.
 yaha mahawwvapUrNa_nahIM howA hE tEda kyA karawA hE.
 
 Hindi meaning using Stanford parser 2.95
-Are a dog and a cat here? 
-kyA yahAz kuwwA Ora billI hEM?
-kyA kuwwA Ora billI yahAz hEM?
+My watch is good for nothing. 
+merI GadI kisI kAma kI nahIM hE.
 
 Hindi meaning using Stanford parser 2.96
 There is a dog and a cat here. 
@@ -528,8 +527,8 @@ vaha eka vaPAxAra pawi Ora piwA hE.
 Multiple adjective senses are available for devoted. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.123
-Sita is baking breads for breakfast. 
-PropN-sita-PropN jalapAna ke lie breda sezka rahI hE.
+He is listening music on high volume. 
+vaha aXika wIvrawA para safgIwa suna rahA hE.
 
 Hindi meaning using Stanford parser 2.124
 Last week I saw a great movie. 
@@ -1675,7 +1674,7 @@ viRaya usake xvArA samaJAyA gayA WA.
 
 Hindi meaning using Stanford parser 3.82
 He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
-usane kahA ki Ese pariNAmoM ko jApAna ke sAWa yU.esa. vyApAra GAtA GatAne meM "dOlara meM Ora sEnta meM mApane yogya" honA cAhie.
+usane kahA ki Ese pariNAmoM ko jApAna ke sAWa yU.esa. vyApAra GAtA GatAne meM "dOlara Ora sEnta meM mApane yogya" honA cAhie.
 Multiple adjective senses are available for measurable. WSD rule is required 
 Multiple adjective senses are available for such. WSD rule is required 
 
@@ -1751,7 +1750,7 @@ yaha karane ke lie jo cAhawA hE Jane hE.
 
 Hindi meaning using Stanford parser 3.98
 He stopped killing of animals and birds throughout his kingdom. 
-usane usake rAjya Bara meM paSuoM kI Ora cidiyoM kI hawyA ko rokA.
+usane usake rAjya Bara meM paSuoM Ora cidiyoM kI hawyA ko rokA.
 usane usake rAjya Bara meM paSuoM kI Ora pakRiyoM kI hawyA ko rokA.
 usane usake rAjya Bara meM paSuoM ke Ora cidiyoM ke GAwaka ko rokA.
 
@@ -1878,7 +1877,7 @@ PropN-queen-PropN viktoriyA ne navambara 1869 meM blackfriars pula KolA.
 
 Hindi meaning using Stanford parser 4.25
 Srinagar is the capital city of Jammu and Kashmir and one of the most popular hill stations. 
-PropN-srinagar-PropN PropN-jammu-PropN kA Ora PropN-kashmir-PropN kA pUFjI Sahara Ora sabase aXika lokapriya pahAdI steSanoM meM se eka hE.
+PropN-srinagar-PropN PropN-jammu-PropN Ora PropN-kashmir-PropN kA pUFjI Sahara Ora sabase aXika lokapriya pahAdI steSanoM meM se eka hE.
 
 Hindi meaning using Stanford parser 4.26
 The toltecs were the predominant civilizations of this time. 
@@ -1906,7 +1905,7 @@ PropN-sarpa-PropN PropN-yakshi-PropN Ora nAga PropN-yakshi-PropN PropN-nagaraja-
 
 Hindi meaning using Stanford parser 4.31
 Rainwear is a must if you are visiting between june and september. 
-Rainwear AvaSyaka hE yaxi Apa jUna ke bIca Ora siwambara ke bIca xeKane_jA rahe hEM.
+Rainwear AvaSyaka hE yaxi Apa jUna Ora siwambara ke bIca xeKane_jA rahe hEM.
 
 Hindi meaning using Stanford parser 4.32
 Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival. 
@@ -1986,8 +1985,8 @@ I gave her a book.
 mEMne usako puswaka xI.
 
 Hindi meaning using Stanford parser 4.48
-She spoke slowly and softly. 
-vaha XIre se Ora komalawA se bolI.
+She can not bear the smell of petrol. 
+vaha petrola kI ganXa sahana_nahIM_kara sakawI hE.
 
 Hindi meaning using Stanford parser 4.49
 But I heard the same words over and over in my mind. 
@@ -2060,8 +2059,8 @@ I am inviting my friend tomorrow.
 mEM kala mere miwra ko Amanwriwa_kara rahA hUz.
 
 Hindi meaning using Stanford parser 4.66
-There was a football match in the school yesterday. 
-kala vixyAlaya meM eka PutabAla mEca WA.
+What is the volume of this cylinder? 
+isa sileNdara kA Ayawana kyA hE?
 
 Hindi meaning using Stanford parser 4.67
 The advantages of science are many. 
@@ -2112,7 +2111,7 @@ parisWiwiyAz kuCa jyAxA hI KarAba ho gayI.
 
 Hindi meaning using Stanford parser 4.77
 SOUTH AFRICA FREED the ANC's Sisulu and seven other political prisoners. 
-xakRiNa AFRICA ne PropN-anc-PropN kA PropN-sisulu-PropN Ora sAwa anya rAjanEwika banxiyoM ko mukwa kiyA.
+xakRiNa AFRICA ne PropN-anc-PropN ke PropN-sisulu-PropN Ora sAwa anya rAjanEwika banxiyoM ko mukwa kiyA.
 SOUTH AFRICA ne ANC ke Sisulu Ora sAwa anya rAjanEwika banxI mukwa kie.
 Multiple adjective senses are available for political. WSD rule is required 
 

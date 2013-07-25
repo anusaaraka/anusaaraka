@@ -39,7 +39,7 @@ isa aXyAya meM, hama sIKezge kEse gawi varNana karanA.
 
 Hindi meaning using Stanford parser 2.6
 For this, we develop the concepts of velocity and acceleration. 
-isake lie, hama vega kI Ora wvaraNa kI XAraNAoM kA vikAsa karawe hEM.
+isake lie, hama vega Ora wvaraNa kI XAraNAoM kA vikAsa karawe hEM.
 
 Hindi meaning using Stanford parser 2.7
 Finally, to understand the relative nature of motion, we introduce the concept of relative velocity. 
@@ -124,7 +124,7 @@ eka wIra isa lAina ke sira meM wila huA huA hE.
 
 Hindi meaning using Stanford parser 2.26
 Physics is the study of nature and natural phenomena. 
-BOwika vijFAna prakqwi kA Ora prAkqwika kA pariGatanA kA aXyayana hE.
+BOwika vijFAna prakqwi Ora prAkqwika pariGatanA kA aXyayana hE.
 
 Hindi meaning using Stanford parser 2.27
 What is the nature of physical laws? 
@@ -191,7 +191,7 @@ Multiple adjective senses are available for intuitive. WSD rule is required
 
 Hindi meaning using Stanford parser 2.41
 Since the electromagnetic force is so much stronger than the gravitational force, it dominates all phenomena at atomic and molecular scales. 
-kyozki uwanA vExyuwacumbakIya bala guruwvAkarRI bala kI apekRA iwanA jyAxA aXika saSakwa hE, isaliye yaha paramANvika meM Ora ANvika meM CilakoM meM saba pariGatanA varcasva raKawA hE.
+kyozki uwanA vExyuwacumbakIya bala guruwvAkarRI bala kI apekRA iwanA jyAxA aXika saSakwa hE, isaliye yaha paramANvika Ora ANvika CilakoM meM saba pariGatanA varcasva raKawA hE.
 Multiple adjective senses are available for atomic. WSD rule is required 
 Multiple adjective senses are available for electromagnetic. WSD rule is required 
 Multiple adjective senses are available for molecular. WSD rule is required 
@@ -253,7 +253,7 @@ Multiple adjective senses are available for such. WSD rule is required
 
 Hindi meaning using Stanford parser 2.54
 Measurement is the foundation of all experimental science and technology. 
-mApana saba meM se prAyogika meM se vijFAna meM se Ora prOxyogikI meM se mUla vicAra hE.
+mApana saba prAyogika vijFAna Ora prOxyogikI meM se mUla vicAra hE.
 
 Hindi meaning using Stanford parser 2.55
 This uncertainty is called error. 
@@ -282,7 +282,7 @@ se_pahale_AnA_yA_Gatiwa howe hue prekRaNa meM, saMvega kA saxiSa cariwra spaRta 
 
 Hindi meaning using Stanford parser 2.61
 We see leaves falling from trees and water flowing down a dam. 
-hama bAzXa para bahawA huA pedoM se Ora pAnI se girawe_hue CuttiyoM ko xeKawe hEM.
+hama bAzXa para bahawA huA pedoM Ora pAnI se girawe_hue CuttiyoM ko xeKawe hEM.
 Meaning for verb phrase flow_down  is required
 
 Hindi meaning using Stanford parser 2.62
@@ -292,7 +292,7 @@ Multiple adjective senses are available for exhaustive. WSD rule is required
 
 Hindi meaning using Stanford parser 2.63
 Physicists try to discover the rules that are operating in nature, on the basis of observations, experimentation and analysis. 
-BOwikavix ko prekRaNa ke, prayoga kA Ora viSleRaNa ke AXAra para vaha niyama pawA lagane ke lie prayAsa karawA hE jo prakqwi meM kAma_kara rahe hEM.,
+BOwikavix ko prekRaNa, prayoga Ora viSleRaNa ke AXAra para vaha niyama pawA lagane ke lie prayAsa karawA hE jo prakqwi meM kAma_kara rahe hEM.,
 
 Hindi meaning using Stanford parser 2.64
 We shall now discuss the nature of fundamental forces and the laws that govern the diverse phenomena of the physical world. 
@@ -415,7 +415,7 @@ eka eka_prakAra_kI XAwu nABika eka_prakAra_kI XAwu ke Ora yUnAnI varNamAlA ke pr
 
 Hindi meaning using Stanford parser 2.91
 An important physical quantity, work, is defined as a scalar product of two vector quantities, force and displacement. 
-mahawwvapUrNa BOwika rASi, kArya, xo saxiSa parimANa ke, bala kA Ora visWApana ke eka axiSa uwpAxa ke jEsA sImAfkiwa kI gayI hE.
+mahawwvapUrNa BOwika rASi, kArya, xo saxiSa parimANa ke, bala Ora visWApana ke eka axiSa uwpAxa ke jEsA sImAfkiwa kI gayI hE.
 Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.92
@@ -508,11 +508,11 @@ usakA velocity-time grAPa Fig. 3SYMBOL-DOT11 meM jEsA ki xiKAyA huA hE.
 
 Hindi meaning using Stanford parser 2.113
 In this chapter, we consider the phenomena of reflection, refraction and dispersion of light, using the ray picture of light. 
-isa aXyAya meM, hama prakASa ke kiraNa ciwra kA upayoga karawe_hue prakASa kI parAvarwana kI, apavarwana kA Ora parikRepaNa kI pariGatanA, vicAra karawe hEM.
+isa aXyAya meM, hama prakASa ke kiraNa ciwra kA upayoga karawe_hue prakASa kI parAvarwana, apavarwana Ora parikRepaNa kI pariGatanA, vicAra karawe hEM.
 
 Hindi meaning using Stanford parser 2.114
 With his understanding of mechanics, he could come up with a simple model of reflection and refraction. 
-yAnwrikI kI usakI samaJa ke sAWa, vaha parAvarwana ke Ora apavarwana ke eka sarala namUne ke sAWa bIca_meM_A sakA.
+yAnwrikI kI usakI samaJa ke sAWa, vaha parAvarwana Ora apavarwana ke eka sarala namUne ke sAWa bIca_meM_A sakA.
 Multiple adjective senses are available for simple. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.115
@@ -551,7 +551,7 @@ xqRti- wanwu ucca guNavawwA sammiSra gilAsoM SYMBOL-SLASH billOra wanwuoM ke sAW
 
 Hindi meaning using Stanford parser 2.123
 Each fiber consists of a core and cladding. 
-hara eka wanwu - saba_se_mahawwvapUrNa muxxe kA Ora Xawu AvaraNa kA banA honA hE.
+hara eka wanwu saba_se_mahawwvapUrNa muxxe Ora Xawu AvaraNa kA banA honA hE.
 
 Hindi meaning using Stanford parser 2.124
 Thus, an optical fiber can be used to act as an optical pipe. 
@@ -598,7 +598,7 @@ Multiple adjective senses are available for celestial. WSD rule is required
 
 Hindi meaning using Stanford parser 2.134
 The world has an astonishing variety of materials and a bewildering diversity of life and behavior. 
-viSva kA paxArWoM kI Ora jIvana kI Ora barwAva kI eka hErAna karawI huI viBinnawA kI cOfkA xene vAlI viviXawA hE.
+viSva kA paxArWoM kI Ora jIvana Ora barwAva kI eka hErAna karawI huI viBinnawA kI cOfkA xene vAlI viviXawA hE.
 
 Hindi meaning using Stanford parser 2.135
 What is Science and what is the so-called Scientific Method? 
@@ -627,7 +627,7 @@ Multiple adjective senses are available for such. WSD rule is required
 
 Hindi meaning using Stanford parser 2.140
 Thermodynamics, in contrast to mechanics, does not deal with the motion of bodies as a whole. 
-yAnwrikI kA, URmAgawikI, eka ikAI ke rUpa meM piNdoM kI gawi ke sAWa vyavahAra_nahIM karawe hEM.
+yAnwrikI ke viparIwa, URmAgawikI, eka ikAI ke rUpa meM piNdoM kI gawi ke sAWa vyavahAra_nahIM karawe hEM.
 
 Hindi meaning using Stanford parser 2.141
 It covers a tremendous range of magnitude of physical quantities like length, mass, time, energy, etc.. 
@@ -646,7 +646,7 @@ Multiple adjective senses are available for important. WSD rule is required
 
 Hindi meaning using Stanford parser 2.144
 Great advances in physics often amount to unification of different theories and domains. 
-BOwika vijFAna meM baDiyA vqxXi aksara alaga kA sixXAnwoM ke Ora praBAvakRewra ke ekIkaraNa ke lie ke_barAbara howI hEM.
+BOwika vijFAna meM baDiyA vqxXi aksara alaga sixXAnwoM Ora praBAvakRewra ke ekIkaraNa ke lie ke_barAbara howI hEM.
 
 Hindi meaning using Stanford parser 2.145
 The law of conservation of energy is thought to be valid across all domains of nature, from the microscopic to the macroscopic. 
@@ -664,7 +664,7 @@ yaha parAvarwana kA vahI niyama hE.
 
 Hindi meaning using Stanford parser 2.148
 Once we have the laws of reflection and refraction, the behavior of prisms, lenses, and mirrors can be understood. 
-eka bAra hamArA parAvarwana ke Ora apavarwana ke niyama hEM, varNakrama, lensa, Ora xarpaNa kA barwAva samaJA jA sakawA hE.
+eka bAra hamArA parAvarwana Ora apavarwana ke niyama hEM, varNakrama, lensa, Ora xarpaNa kA barwAva samaJA jA sakawA hE.
 
 Hindi meaning using Stanford parser 2.149
 We consider a plane wave passing through a thin prism. 
@@ -672,7 +672,7 @@ hama eka pawale varNakrama meM se gujarawe_hue eka samawala lahara vicAra karawe
 
 Hindi meaning using Stanford parser 2.150
 In a similar manner, we can understand refraction and reflection by concave lenses and convex mirrors. 
-samAna Dafga meM, hama avawala ke xvArA lensa ke xvArA Ora maXyonnawa ke xvArA xarpaNoM ke xvArA apavarwana Ora parAvarwana samaJa sakawe hEM.
+samAna Dafga meM, hama avawala lensa Ora maXyonnawa xarpaNoM ke xvArA apavarwana Ora parAvarwana samaJa sakawe hEM.
 Multiple adjective senses are available for concave. WSD rule is required 
 Multiple adjective senses are available for similar. WSD rule is required 
 
@@ -734,7 +734,7 @@ Multiple adjective senses are available for electromagnetic. WSD rule is require
 
 Hindi meaning using Stanford parser 2.164
 The science of electricity and magnetism is the foundation for the modern technological civilisation. 
-vixyuwa Sakwi kA Ora cumbakawwva kA vijFAna AXunika wakanIkI sambanXI saBya samAja ke lie mUla vicAra hE.
+vixyuwa Sakwi Ora cumbakawwva kA vijFAna AXunika wakanIkI sambanXI saBya samAja ke lie mUla vicAra hE.
 Multiple adjective senses are available for modern. WSD rule is required 
 Multiple adjective senses are available for technological. WSD rule is required 
 
@@ -865,7 +865,7 @@ vega kI waraha, wvaraNa BI sakArAwmaka, qNAwmaka yA SUnya ho sakawA hE.
 
 Hindi meaning using Stanford parser 2.195
 Thus it is mainly the electromagnetic force that governs the structure of atoms and molecules, the dynamics of chemical reactions and the mechanical, thermal and other properties of materials. 
-isa prakAra yaha vExyuwacumbakIya bala pramuKa rUpa se hE jo paxArWoM kI paramANuoM kI Ora aNu, rasAyanika xravya kA prawikriyAoM kI Ora - yAnwrika kA, URmIya kI Ora anya kA sampawwi kI gawikI saMracanA niyanwriwa karawA hE.
+isa prakAra yaha vExyuwacumbakIya bala pramuKa rUpa se hE jo paxArWoM kI paramANuoM kI Ora aNu, rasAyanika xravya prawikriyAoM Ora yAnwrika, URmIya Ora anya sampawwi kI gawikI saMracanA niyanwriwa karawA hE.
 Multiple adjective senses are available for electromagnetic. WSD rule is required 
 Multiple adjective senses are available for mechanical. WSD rule is required 
 Multiple adjective senses are available for thermal. WSD rule is required 
@@ -884,7 +884,7 @@ kyA upAya cumbaka bijalI ke pravAha banA sakawe hEM?
 
 Hindi meaning using Stanford parser 2.199
 Does the nature permit such a relation between electricity and magnetism? 
-kyA kara prakqwi vixyuwa Sakwi ke bIca Ora cumbakawwva ke bIca EsA sambanXa anumawi xewI hE?
+kyA kara prakqwi vixyuwa Sakwi Ora cumbakawwva ke bIca EsA sambanXa anumawi xewI hE?
 
 Hindi meaning using Stanford parser 2.200
 The steady current in the coil C2 produces a steady magnetic field. 
@@ -892,7 +892,7 @@ valayaka C2 meM anavarawa pravAha eka anavarawa cumbakIya kRewra banAwA hE.
 
 Hindi meaning using Stanford parser 2.201
 Equation (6SYMBOL-DOT1) can be extended to curved surfaces and nonuniform fields. 
-samIkaraNa (6SYMBOL-DOT1) vakra ko UparI wala ko Ora nonuniform ko kRewroM ko baDA jA sakawA hE.
+samIkaraNa (6SYMBOL-DOT1) vakra UparI wala Ora nonuniform kRewroM ko baDA jA sakawA hE.
 
 Hindi meaning using Stanford parser 2.202
 Magnetic flux is a scalar quantity. 

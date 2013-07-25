@@ -279,5 +279,9 @@ Hindi meaning using Stanford parser 2.66
 David is in the john. 
 PropN-david-PropN SOcAlaya meM hE.
 
+Hindi meaning using Stanford parser 2.67
+She was drinking strong tea. 
+vaha kadI cAya pI rahI WI.
+
 Calling Transliteration
 Calling Interface related programs

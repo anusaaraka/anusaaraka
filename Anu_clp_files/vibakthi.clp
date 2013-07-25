@@ -289,12 +289,13 @@
 	(assert (modified_pada_with_prep ?pada_id))
  )
  ;-------------------------------------------------------------------------------------------------------------------
+ ;NOTE: Multiple prep meaning should be compound meaning
  ;Added on (15-03-11)	 
  ;The people of Orissa are facing grave adversities due to the cyclone. 
  ;He gave up his lucrative law practice for the sake of the country.
  (defrule vib_for_multiple_prep
  (declare (salience 701))
- ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(preposition $?pp_ids )(vibakthi ?vib))
+ ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(preposition $?pp_ids )(vibakthi 0))
  ?f2<-(id-HM-source ?id ?h_mng ?)
  (test (> (length $?pp_ids) 1))
  (test (and (member$ ?id $?pp_ids)(neq ?h_mng -)))
@@ -303,7 +304,6 @@
 	(loop-for-count (?i 1 ?len) do
 		(if (eq ?id (nth$ ?i $?pp_ids)) then
                        	(modify ?f1 (vibakthi ?h_mng))
-			(retract ?f2)
 		)
        )
  )

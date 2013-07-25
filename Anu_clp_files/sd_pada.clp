@@ -126,6 +126,7 @@
         (printout ?*pada_debug_file* "		After  :: (pada_info (group_head_id "?np_id")(preposition "(implode$ $?ids)" "?prep"))" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------
+ ;She declared that out of love for the poor she had gotten her family to go against convention.
  (defrule multiple_prep_rule1
  (declare (salience 4600))
  (prep_ids $?ids ?prep)
@@ -138,6 +139,7 @@
  (prawiniXi_id-node-category ?NP1 ?np1 NP)
  (head_id-prawiniXi_id-grp_ids ?np_head ?NP1 $?grp_ids ?last_node)
  ?f1<-(pada_info (group_head_id ?NP1)(preposition 0))
+ (not (conj_head-conj_id-components ?NP $?))
   =>
         (printout ?*pada_debug_file* "(rule_name-mode_of_pada - multiple_prep_rule1 Modification"crlf )
         (printout ?*pada_debug_file* "		Before :: (pada_info (group_head_id "?NP1")(preposition 0))" crlf)
@@ -202,7 +204,7 @@
  (defrule share_conj_prep
  (declare (salience 4300))
  (pada_info (group_head_id ?con_h)(preposition $?prep))
- ?f<-(conj_head-conj_id-components ?con_h ?cid $?d ?id $?d1)
+ ?f<-(conj_head-conj_id-components ?con_h ?cid $?d ?id)
  ?f0<-(pada_info (group_head_id ?id)(preposition 0))
  (test (neq (str-index "." (implode$ (create$ ?id))) FALSE))
  (not (shared_conj_for_pada_id ?id))
@@ -215,19 +217,39 @@
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  ; She is ugly and fat.
- (defrule share_zero_level_conj_prep
+ (defrule get_zero_level_conj_pada
  (declare (salience 4250))
  (pada_info (group_head_id ?con_h)(preposition $?prep))
- ?f<-(conj_head-conj_id-components ?con_h ?cid $?d ?id $?d1)
+ ?f<-(conj_head-conj_id-components ?con_h ?cid $?d ?id $?d1 ?last_id)
  (head_id-prawiniXi_id-grp_ids ?hid ?id ?no)
  (not (shared_conj_for_pada_id ?id))
  =>
 	(assert (shared_conj_for_pada_id ?id))
 	(bind ?head (string-to-field (sym-cat ?hid ".1")))
-        (printout ?*pada_debug_file* "(rule_name-mode_of_pada - share_zero_level_conj_prep Creation"crlf )
-	(assert (pada_info (group_head_id ?head) (group_cat PP)(group_ids ?id)(preposition $?prep)))
-        (printout ?*pada_debug_file* "		(pada_info (group_head_id "?head")(group_cat PP) (group_ids "?id") (preposition "(implode$ $?prep)")))" crlf)
+        (printout ?*pada_debug_file* "(rule_name-mode_of_pada - get_zero_level_conj_pada_Creation"crlf )
+	(assert (pada_info (group_head_id ?head) (group_cat PP)(group_ids ?id)))
+        (printout ?*pada_debug_file* "		(pada_info (group_head_id "?head")(group_cat PP) (group_ids "?id") ))" crlf)
 	(assert (id-grp_ids ?head ?id))
+	(assert (last_id-prep ?last_id $?prep))
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
+ ;Physicists try to discover the rules that are operating in nature, on the basis of observations, experimentation and analysis
+ ;Equation (6SYMBOL-DOT1) can be extended to curved surfaces and nonuniform fields.
+ ;Rainwear is a must if you are visiting between june and september.
+ (defrule get_zero_level_prep
+ (declare (salience 4240))
+ (last_id-prep ?id $?prep)
+ (pada_info (group_head_id ?con_h)(preposition $?prep) (pada_head ?h))
+ ?f<-(conj_head-conj_id-components ?con_h ?cid $?d ?id)
+ (head_id-prawiniXi_id-grp_ids ?hid ?id ?no)
+ (not (shared_conj_for_pada_id ?id))
+ =>
+        (assert (shared_conj_for_pada_id ?id))
+        (bind ?head (string-to-field (sym-cat ?hid ".1")))
+        (printout ?*pada_debug_file* "(rule_name-mode_of_pada - get_zero_level_prep Creation"crlf )
+        (assert (pada_info (group_head_id ?head) (group_cat PP)(group_ids ?id)(preposition $?prep)))
+        (printout ?*pada_debug_file* "         (pada_info (group_head_id "?head")(group_cat PP) (group_ids "?id") (preposition "(implode$ $?prep)")))" crlf)
+        (assert (id-grp_ids ?head ?id))
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ; Mohan fell from the top of the house.
