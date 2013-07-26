@@ -48,17 +48,17 @@ ABBR[ ][ ]\n		{printf("ABBR</s>\n<s>",yytext[0]);}
 ["][.][ ][A-Z]		{printf("%c%c</s>\n<s>%c", yytext[0],yytext[1],yytext[3]); }
 [.]["][ ][ ]["'A-Z]	{printf("%c%c</s>\n<s>%c", yytext[0],yytext[1],yytext[4]); /* Added by Maha Laxmi. (27-12-11)*/}
 [?]["][ ][ ][A-Z]	{printf("%c%c</s>\n<s>%c", yytext[0],yytext[1],yytext[4]); /*When Faraday first made public his discovery that relative motion between a bar magnet and a wire loop produced a small current in the latter, he was asked, "What is the use of it?" */}
-[!]["][ ][ ][A-Z]	{printf("%c%c%c%c", yytext[0],yytext[1],yytext[2],yytext[4]); }
+[!]["][ ][ ][A-Z]	{printf("%c%c</s>\n<s>%c", yytext[0],yytext[1],yytext[4]); /*It was actually the Laatni, his wife, who recognized the angel; Seeing the glow she immediately exclaimed," O Laatsaheb, listen, this is nQUOTEt a human child but a divine one!" Heeraman mimicked the Laatni with great attitude and drama. Added by Manju 26-07-13 */  }
 [.]["][.][ ][A-Z]       {printf("%c%c%c</s>\n<s>%c", yytext[0],yytext[1],yytext[2],yytext[4]); }
 [.]["][ ][0-9]		{printf("%c%c</s>\n<s>%c", yytext[0],yytext[1],yytext[3]); }
 [ ][A-Z][.][ ][A-Z][a-z]	{printf("%c%c%c</s>\n<s>%c%c", yytext[0],yytext[1],yytext[2], yytext[4],yytext[5]);	}
 [ ][A-Z][.][ ][A-Z][ ]	{printf("%c%c%c</s>\n<s>%c%c", yytext[0],yytext[1],yytext[2], yytext[4],yytext[5]);	}
 [)][.][ ][A-Z]		{printf("%c%c</s>\n<s>%c", yytext[0],yytext[1], yytext[3]);     }
-[?]["][ ][ ]["][A-Z]	{printf("%c%c</s>\n<s>%c%c", yytext[0],yytext[1],yytext[4],yytext[5]);	}
+[?]["][ ][ ]["][A-Z]	{printf("%c%c</s>\n<s>%c%c", yytext[0],yytext[1],yytext[4],yytext[5]); }
 ['][.][ ][ ]		{printf("%c%c</s>\n<s>", yytext[0], yytext[1]);	}
 ['][.][ ][A-Z]		{printf("%c%c</s>\n<s>%c", yytext[0], yytext[1], yytext[3]); /*Ex: The southern state of Johor offers its famed 'nasi biryani , ' 'laksa Johor , ' 'mee bandung' and 'soto'. Added by Roja (24-09-12)*/	}
-[?][ ][0-9]		{printf("%c</s>\n<s>%c", yytext[0], yytext[2]);  /*1.1 What is physics? 1.2 Scope and excitement of physics. */ }
- 
+[?][ ][0-9]		{printf("%c</s>\n<s>%c", yytext[0], yytext[2]);  /*1.1 What is physics? 1.2 Scope and excitement of physics. */		     }
+
 
 \<p\>			{printf("<p><s>");}
 \<\/p\>			{printf("</s></p>\n");}

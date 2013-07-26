@@ -1,4 +1,4 @@
- 25-07-13
+ 26-07-13
  ========
  1. WSD: Modified : found.clp   improve.clp     baby.clp        is_en_tam.clp   call.clp        get.clp
                     add.clp     john.clp        black.clp       on.clp          paper.clp       need.clp
@@ -7,7 +7,7 @@
                     project.clp foundation.clp  into.clp        have.clp        floor.clp       bear.clp
 		    since.clp   strong.clp   	take.clp   	use.clp		perch.clp	mohair.clp
 		    assay.clp	refrain.clp	reprieve.clp	handsome.clp	acrylic.clp	plosive.clp
-		    eye.clp     go.clp          way.clp		    
+		    eye.clp     go.clp          way.clp		about.clp    
          Added    : room.clp    commit.clp	volume.clp      good.clp
  2. sd_relation_rules.clp 
         1. Modified : kriyA_sub_rule1, nsubj+xcomp_1, mark, complm, xcomp, xcomp+aux, AjFArWaka_vAkya, sub_samA_with_cop, 
@@ -171,7 +171,7 @@
 	std_tregex/README		anu_compile.sh				remove_out-files.sh
 	tree_viewer/README		view_trees.sh
 44. Updated the following files
-	bin/utf8_wx			Pre-requisites in INSTALL
+	bin/utf8_wx			Pre-requisites in INSTALL		chk_input_format.pl
 	create_hin_align_html.clp	create_eng_ord_html.clp files
 45. Updated dictionary related files
  	changes_in_databases			minion dictionaries		iit-bombay dictionary in goldendict

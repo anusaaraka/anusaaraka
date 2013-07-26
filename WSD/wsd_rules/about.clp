@@ -164,11 +164,12 @@
 
 
 
-
+;Salience increased to 200 by Aditya and Hardik(23-06-13), IIT(BHU)
 ;Salience reduced by Meena(12.5.11)
 ;;We have very different ideas about disciplining children. 
 (defrule about6
-(declare (salience 0))
+(declare (salience 200))
+;(declare (salience 0))
 ;(declare (salience 4100))
 (id-root ?id about)
 ?mng <-(meaning_to_be_decided ?id)

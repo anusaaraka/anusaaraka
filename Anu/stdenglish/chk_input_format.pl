@@ -48,8 +48,8 @@ while($in = <STDIN>){
 # Replace --- by DOTDOTDOT
 	$in =~ s/\-\-+/ PUNCT-DotDotDot/g;
 # Replace ... by one word DOTDOTDOT
-	$in =~ s/\.\.\.+/ PUNCT-DotDotDot /g;
-	$in =~ s/\. \. \.+/ PUNCT-DotDotDot /g;
+#	$in =~ s/\.\.\.+/ PUNCT-DotDotDot /g;
+#	$in =~ s/\. \. \.+/ PUNCT-DotDotDot /g;
 ## Replace more than two consecutive spaces by two spaces.
 	$in =~ s/[ ][ ][ ]+/  /g;
 
