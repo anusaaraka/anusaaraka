@@ -113,7 +113,6 @@ mEM mere piwA ko Apako paricaya karAnA cAhawA hUz.
 Hindi meaning using Stanford parser 2.24
 He will be so pleased to meet you. 
 vaha Apase milanA iwanA prasanna hogA.
-Multiple adjective senses are available for pleased. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.25
 Dipu introduced his Sonar Bagan friends to the two. 
@@ -163,6 +162,7 @@ vaha WA Sleepy-head, vaha wAlAba meM usake gulAbI rafga ke kumuxinI biswara para
 Hindi meaning using Stanford parser 2.36
 Sukhi would be upset, since it was the day of Lakshmi Puja. 
 PropN-sukhi-PropN ultA, hogA kyozki vaha PropN-lakshmi-PropN PropN-puja-PropN kA xina WA.
+Multiple adjective senses are available for upset. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.37
 I will show you a secret. 

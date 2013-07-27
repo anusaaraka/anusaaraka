@@ -171,6 +171,7 @@ araswU jEsA jalxI cinwakoM kA isake bAre meM galawa vicAra We.
 Hindi meaning using Stanford parser 2.36
 It is enormously strong compared to gravity. 
 yaha guruwvAkarRaNa ko wulanA kara bahuwa aXika majabUwa hE.
+Multiple adjective senses are available for strong. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.37
 This is almost inevitable with ladies garments like a polyester saree. 
@@ -193,7 +194,8 @@ yaha mUlya pahale kI waraha sakArAwmaka Ora qNAwmaka nAmakaraNa karane meM xarSa
 
 Hindi meaning using Stanford parser 2.41
 Ampere and Faraday supported this observation by saying that electric charges in motion produce magnetic fields and moving magnets generate electricity. 
-Empiyara Ora PropN-faraday-PropN ne kahane ke xvArA Ora cumbaka vixyuwa Sakwi pExA karawe hEM calawA huA isa prekRaNa ko sahArA xiyA ki calAyamAna bijalI ke aBiyoga cumbakIya kRewra banAwe hEM.
+Empiyara Ora PropN-faraday-PropN ne kahane ke xvArA Ora cumbaka vixyuwa Sakwi pExA karawe hEM calawA huA isa prekRaNa ko sahArA xiyA ki calAyamAna vExyuwa aBiyoga cumbakIya kRewra banAwe hEM.
+Multiple adjective senses are available for electric. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.42
 We know that when we add a positive number to a negative number of the same magnitude, the sum is zero. 
@@ -218,9 +220,9 @@ vahI praBAva pawwe electroscope meM xeKA huA hE.
 Hindi meaning using Stanford parser 2.47
 The scientific method involves several interconnected steps: Systematic observations, controlled experiments, qualitative and quantitative reasoning, mathematical modelling, prediction and verification or falsification of theories. 
 vEjFAnika- praNAlI kaI anwarsambaxXa kie hue kaxama: suvyavasWiwa prekRaNa, niyanwriwa prayoga, guNAwmaka Ora parimANAwmaka warka viwarka, gaNiwa sambanXI prawirUpaNa, pUrvAnumAna Ora sixXAnwoM kA sawyApana yA jAlasAjI SAmila howI hE.
-Multiple adjective senses are available for controlled. WSD rule is required 
 Multiple adjective senses are available for mathematical. WSD rule is required 
 Multiple adjective senses are available for quantitative. WSD rule is required 
+Multiple adjective senses are available for several. WSD rule is required 
 Multiple adjective senses are available for systematic. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.48
