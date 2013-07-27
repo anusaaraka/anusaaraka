@@ -9,7 +9,6 @@ Multi word ...
 Hindi meaning using Stanford parser 1.1
 Test. 
 jAzca kIjie.
-parIkRA.
 
 Hindi meaning using Stanford parser 2.1
 She is sleeping. 
@@ -94,6 +93,7 @@ PropN-jane-PropN SIGra A rahA hE.
 Hindi meaning using Stanford parser 2.21
 They are good boys. 
 ve acCe ladake hEM.
+Multiple adjective senses are available for good. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.22
 They have social prestige. 
@@ -208,6 +208,7 @@ anubanXa kala samApwa huA.
 Hindi meaning using Stanford parser 2.49
 She is fat. 
 vaha motI hE.
+Multiple adjective senses are available for fat. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.50
 Yes, he did. 
@@ -220,6 +221,7 @@ Apa kEse hEM?
 Hindi meaning using Stanford parser 2.52
 How old are you? 
 ApakI kyA umra hE?
+Multiple adjective senses are available for old. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.53
 Excuse me. 
