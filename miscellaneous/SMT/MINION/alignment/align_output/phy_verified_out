@@ -53,7 +53,6 @@ Multiple adjective senses are available for attainable. WSD rule is required
 Hindi meaning using Stanford parser 2.9
 He made pioneering contributions in the field of optics. 
 usane prakASikI ke kRewra meM mArga praSaswa karanevAle yogaxAna banAe.
-Multiple adjective senses are available for pioneering. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.10
 In these examples, the external agency of force (hands, wind, stream, etc) is in contact with the object. 
@@ -207,6 +206,7 @@ BOwikavix viSva Koja karawe hEM.
 Hindi meaning using Stanford parser 2.44
 In any physical phenomenon governed by different forces, several quantities may change with time. 
 alaga baloM ke xvArA niyanwriwa kI huI kisI SArIrika pariGatanA meM, kaI parimANa samaya ke sAWa baxala sakawe hEM.
+Multiple adjective senses are available for several. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.45
 The general law of energy conservation, however, is still applicable. 
@@ -456,6 +456,7 @@ yahAz eka hajAra piNda kI sampUrNa saMhawi hE.
 Hindi meaning using Stanford parser 2.100
 The center of mass C is shown in the figure. 
 Dera C kA kenxra afka meM xiKAyA huA hE.
+Multiple adjective senses are available for mass. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.101
 If one or more coordinates of an object change with time, we say that the object is in motion. 
@@ -560,6 +561,7 @@ isa prakAra, prakASika PAibara xqRti- pAipa ke jEsA kArya karane ke lie AxI jA s
 Hindi meaning using Stanford parser 2.125
 The other end of the fibers is fixed over an electric lamp. 
 wanwuoM kA xUsarA anwa bijalI ke lEmpa ke Upara niSciwa huA huA hE.
+Multiple adjective senses are available for electric. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.126
 The fibers in such decorative lamps are optical fibers. 
@@ -608,10 +610,12 @@ Hindi meaning using Stanford parser 2.136
 A precise definition of this discipline is neither possible nor necessary. 
 isa viRaya kI eka yaWAwaWya pariBARA koI BI nahIM samBava na AvaSyaka hE.
 Multiple adjective senses are available for necessary. WSD rule is required 
+Multiple adjective senses are available for possible. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.137
 Similarly, the basic laws of electromagnetism (Maxwell's equations) govern all electric and magnetic phenomena. 
 isI waraha se, vixyuwa cumbakawva ke (PropN-maxwell-PropN ke samIkaraNa) buniyAxI niyama saba bijalI kA Ora cumbakIya pariGatanA niyanwriwa karawe hEM.
+Multiple adjective senses are available for electric. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.138
 For example, the subject of thermodynamics, developed in the nineteenth century, deals with bulk systems in terms of macroscopic quantities such as temperature, internal energy, entropy, etc.. 
@@ -705,6 +709,7 @@ gilAsa Cada roezxAra_KAlavAle jAnavara hatAwA hE.
 Hindi meaning using Stanford parser 2.157
 They acquire an electric charge on rubbing. 
 ve GisanA para vixyuwa AveSa arjana karawe hEM.
+Multiple adjective senses are available for electric. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.158
 The property which differentiates the two kinds of charges is called the polarity of charge. 
@@ -770,6 +775,7 @@ anumawi CE gola vaswu para noka C se KIzca eka sparSajyA samawala prawiniXi howA
 Hindi meaning using Stanford parser 2.172
 Cut out long thin strips of white paper and lightly iron them. 
 Svewa pawra kI lambI pawalI pattiyAz kAta xenA, tukadez kara Ora halke se unako iswrI karawA hE.
+Multiple adjective senses are available for long. WSD rule is required 
 Multiple adjective senses are available for white. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.173
@@ -830,6 +836,7 @@ Hindi meaning using Stanford parser 2.186
 Electron beams can be focussed by properly designed electric and magnetic fields. 
 ilektroYna puFja uciwa Dafga se nakSe banA bijalI_kA Ora cumbakIya kRewroM ke xvArA sAPa xeKe jA sakawe hEM.
 PropN-electron-PropN prakASa kI kiraNa uciwa Dafga se nakSe banA bijalI_kA Ora cumbakIya kRewroM ke xvArA sAPa xiKA jA sakawA hE.
+Multiple adjective senses are available for electric. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.187
 However, the glass rod and wool attracted each other. 
@@ -873,14 +880,17 @@ Multiple adjective senses are available for thermal. WSD rule is required
 Hindi meaning using Stanford parser 2.196
 They found that moving electric charges produce magnetic fields. 
 unako milawA hE ki hqxaya sparSI bijalI ke aBiyoga cumbakIya kRewra banAwe hEM.
+Multiple adjective senses are available for electric. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.197
 For example, an electric current deflects a magnetic compass needle placed in its vicinity. 
 uxAharaNa_ke liye, bijalI kA pravAha usake adosa padosa meM sWAna_para raKI eka cumbakIya kampAsa suI hatAwA hE.
+Multiple adjective senses are available for electric. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.198
 Can moving magnets produce electric currents? 
 kyA upAya cumbaka bijalI ke pravAha banA sakawe hEM?
+Multiple adjective senses are available for electric. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.199
 Does the nature permit such a relation between electricity and magnetism? 
@@ -889,6 +899,7 @@ kyA kara prakqwi vixyuwa Sakwi Ora cumbakawwva ke bIca EsA sambanXa anumawi xewI
 Hindi meaning using Stanford parser 2.200
 The steady current in the coil C2 produces a steady magnetic field. 
 valayaka C2 meM anavarawa pravAha eka anavarawa cumbakIya kRewra banAwA hE.
+Multiple adjective senses are available for steady. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.201
 Equation (6SYMBOL-DOT1) can be extended to curved surfaces and nonuniform fields. 
@@ -1013,6 +1024,7 @@ Multiple adjective senses are available for external. WSD rule is required
 Hindi meaning using Stanford parser 2.229
 In some examples, the answer seems clear. 
 kuCa uxAharaNoM meM, uwwara spaRta prawIwa howA hE.
+Multiple adjective senses are available for clear. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.230
 Does the stone exert a force on the earth? 

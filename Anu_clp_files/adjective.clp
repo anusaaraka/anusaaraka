@@ -62,14 +62,15 @@
  ;---------------------------------------------------------------------------------------------------------
  ; Added by Roja (03-05-13)
  ; Lookup original word in dictionary (only for adjective case)
- ; He saw the broken window. 
+ ; He saw the broken window.
+ ; (NOTE: Giving least salience to this rule. To handle cases like: file loads from WSD but meaning is not decided) 
  (defrule load_dic_org_word_file
- (declare (salience 7300))
+ (declare (salience -9950))
  (id-original_word ?id ?org_wrd)
  (id-cat_coarse ?id adjective)
  (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?org_wrd "_" adjective)) "FALSE"))
+ (meaning_to_be_decided ?id)
  (not (meaning_has_been_decided ?id))
- (not (file_loaded ?id))
  =>
 	(bind ?a (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?org_wrd "_" adjective)))
         (if (neq ?a "FALSE") then
@@ -79,11 +80,15 @@
                 (assert (meaning_has_been_decided ?id))
                 (assert (file_loaded ?id))
 		(printout t "Multiple adjective senses are available for "?org_wrd ". WSD rule is required " crlf)
+		(if ?*debug_flag* then
+		(printout wsd_fp "(default-iit-bombay-shabdanjali-dic.gdbm  " ?org_wrd "  "?h_mng ")" crlf))
             else
                 (bind ?h_mng  (string-to-field ?a))
 		(assert (id-wsd_root_mng ?id ?h_mng))
         	(assert (file_loaded ?id))
 		(assert (meaning_has_been_decided ?id))
+		(if ?*debug_flag* then
+                (printout wsd_fp "(default-iit-bombay-shabdanjali-dic.gdbm  " ?org_wrd "  "?h_mng ")" crlf))
            )
        )
  )
@@ -91,13 +96,14 @@
  ; Added by Roja (03-05-13)
  ; Load word in dictionary (only for adjective case)
  ; Broken windows need to be replaced. 
+ ; (NOTE: Giving least salience to this rule. To handle cases like: file loads from WSD but meaning is not decided) 
  (defrule load_dic_word_file
- (declare (salience 7200))
+ (declare (salience -9900))
  (id-word ?id ?wrd)
  (id-cat_coarse ?id adjective)
  (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?wrd "_" adjective)) "FALSE"))
+ (meaning_to_be_decided ?id)
  (not (meaning_has_been_decided ?id))
- (not (file_loaded ?id))
  =>
         (bind ?a (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?wrd "_" adjective)))
         (if (neq ?a "FALSE") then
@@ -107,11 +113,15 @@
 		(assert (meaning_has_been_decided ?id))
 		(assert (file_loaded ?id))
 		(printout t "Multiple adjective senses are available for "?wrd ". WSD rule is required " crlf)
+		(if ?*debug_flag* then
+                (printout wsd_fp "(default-iit-bombay-shabdanjali-dic.gdbm  " ?wrd "  "?h_mng ")" crlf))
             else
                 (bind ?h_mng  (string-to-field ?a))
 		(assert (id-wsd_root_mng ?id ?h_mng))
 		(assert (meaning_has_been_decided ?id))
 	        (assert (file_loaded ?id))
+		(if ?*debug_flag* then
+                (printout wsd_fp "(default-iit-bombay-shabdanjali-dic.gdbm  " ?wrd "  "?h_mng ")" crlf))
            )
        )
  )

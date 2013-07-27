@@ -92,6 +92,7 @@ luhAra ne lohe_kI_Kanija mittI kI eka paraKa banAI.
 Hindi meaning using Stanford parser 2.20
 He could hear a faint sound from the bushes. 
 vaha JAdiyoM se nirbala Xvani suna sakA.
+Multiple adjective senses are available for faint. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.21
 I heard the sound of rain on the roof. 
@@ -475,6 +476,7 @@ usane usakI umra kA anxAja lagAne ke lie muJe pUCA.
 Hindi meaning using Stanford parser 2.110
 John is less fat than Tom. 
 joYna PropN-tom-PropN kI apekRA kama motA hE.
+Multiple adjective senses are available for fat. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.111
 I knew who would come to the party. 
@@ -488,6 +490,7 @@ vaha prawi xina mere sAWa prArWanA karawA hE.
 Hindi meaning using Stanford parser 2.113
 I felt terrible after our discussion. 
 mEMne hamArI carcA ke bAxa BayAnaka mahasUsa kiyA.
+Multiple adjective senses are available for terrible. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.114
 He disputed that our program was superior. 
@@ -730,6 +733,7 @@ muJe PropN-maybeline-PropN ke xvArA pUrI kahAnI bawAI gayI WI.
 Hindi meaning using Stanford parser 2.170
 She is full of bright ideas. 
 vaha wejasvI vicAroM se BarI huI hE.
+Multiple adjective senses are available for full. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.171
 I thought it is right to resign. 
@@ -862,6 +866,7 @@ hama graha Gorpon se hEM.
 Hindi meaning using Stanford parser 2.202
 The best costumes got prizes. 
 sabase aXika acCe pahanAvoM ne puraskAra prApwa kie.
+Multiple adjective senses are available for best. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.203
 She is apparently an excellent pianist. 
@@ -933,6 +938,7 @@ Apa mere miwra hEM yaha sawya hE paranwu mEM isa viRaya para Apake sAWa sahamawa
 Apa mere miwra hEM yaha sawya hE paranwu mEM isa viRaya para Apake sAWa sahamawa_nahIM_ho sakawA hUz.
 yaha sawya hE ki Apa mere miwra hEM paranwu mEM isa viRaya para Apa ke sAWa sahamawa_nahIM_ho sakawA hUz.
 yaha sawya hE ki Apa mere miwra hEM paranwu mEM isa viRaya para Apake_sAWa sahamawa_nahIM_ho sakawA hUz.
+Multiple adjective senses are available for true. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.219
 If we heat iron it becomes red. 
@@ -1060,9 +1066,8 @@ mEM 805 paScima Indiana sadaka meM rahawA hUz.
 Hindi meaning using Stanford parser 2.248
 It was a completely wasted journey. 
 yaha eka pUrI waraha se vyarWa yAwrA WI.
-vaha eka pUrI waraha se nirarWaka yAwrA WI.
+yaha eka pUrI waraha se nirarWaka yAwrA WI.
 vaha eka pUrI waraha se vyarWa yAwrA WI.
-Multiple adjective senses are available for wasted. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.249
 I do not have very much money. 
@@ -1232,7 +1237,6 @@ The letter was clearly the product of a twisted mind.
 pawra spaRtawaH eka vikqwa ximAga kA uwpAxa WA.
 pawra eka vikqwa ximAga kA spaRtawaH uwpAxa WA.
 pawra spaRtawaH eka xURiwa ximAga kA uwpAxa WA.
-Multiple adjective senses are available for twisted. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.287
 I do not go out as much now. 
@@ -1308,6 +1312,7 @@ Multiple adjective senses are available for exotic. WSD rule is required
 Hindi meaning using Stanford parser 3.3
 The best five costumes got prizes. 
 sabase aXika acCe pAzca pahanAvoM ne puraskAra prApwa kie.
+Multiple adjective senses are available for best. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.4
 I wonder how John did it. 
@@ -1649,6 +1654,7 @@ aBI BI, pUzjI samUha KawarA_mola_nahIM_le rahe hEM.
 Hindi meaning using Stanford parser 3.76
 But fund managers say they are ready. 
 paranwu pUzjI prabanXaka kahawe hEM ki ve wEyAra hEM.
+Multiple adjective senses are available for ready. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.77
 The test may come today. 
@@ -1940,6 +1946,7 @@ koI BI udaipur se (PropN-84km-PropN) Ora ranakpur se sadaka se kumbhalgarh waka 
 Hindi meaning using Stanford parser 4.38
 She is ugly and fat. 
 vaha kurUpa Ora motI hE.
+Multiple adjective senses are available for fat. WSD rule is required 
 Multiple adjective senses are available for ugly. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.39

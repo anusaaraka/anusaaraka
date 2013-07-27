@@ -41,6 +41,7 @@
         
         export PATH=path for jdk1.6.0_03/bin and $HOME_anu_test/bin
         export JAVA_HOME=path for jdk1.6.0_03
+	export http_proxy=path for proxy settings
         export LD_LIBRARY_PATH=/usr/local/lib/    ( for Shared libraries )
         
         (Note : User can create provisional_wsd_rules directory to write their own wsd rules and set the path for 
@@ -58,6 +59,7 @@
         export PATH=$HOME/jdk1.6.0_03/bin:$HOME_anu_test/bin:$PATH
         export JAVA_HOME=$HOME/jdk1.6.0_03
         export LD_LIBRARY_PATH=/usr/local/lib/
+	export http_proxy=http://proxy.iiit.ac.in:8080
 
         compile:
         ========

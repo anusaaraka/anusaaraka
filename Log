@@ -1,4 +1,4 @@
- 26-07-13
+ 27-07-13
  ========
  1. WSD: Modified : found.clp   improve.clp     baby.clp        is_en_tam.clp   call.clp        get.clp
                     add.clp     john.clp        black.clp       on.clp          paper.clp       need.clp
@@ -70,51 +70,53 @@
         Modified '(word-wordid-nertype) to '(word-nertype) in never-called() and PropN_rule
 20. hindi_meaning.clp:
         Modified : generate_dummy_cat rule : added dummy facts preposition, number, wh-pronoun
-21. get_mng.clp
+21. adjective.clp:
+        Modified: load_dic_org_word_file, load_dic_word_file ( to handle cases like, file loads from WSD but meaning is not decided)
+22. get_mng.clp
 	Added    : get_emphatic_for_prev_word, leftout_single_word_and_single_mng_restricted, print_corrected_mng_info 
 		   and get_xe_with_previous_mng
 	Modified : leftout_single_word_and_single_mng
 	Removed  : commented rules 
-22. modify_root_using_dic.clp
+23. modify_root_using_dic.clp
         Added    : modify_aper_fact and modify_aper_fact1
         Modified : modify_root_for_pronouns_using_aper
-23. modify_minion_output.clp
+24. modify_minion_output.clp
 	Modified : check_correctness_for_multi_word, check_correctness_for_kara_verb_with_root and check_for_correctness  
 	Added    : get_minion_aligned_mngs,  get_minion_aligned_mngs_for_new_word, print_anu_alignment_info
                    print_dic_alignment_info, print_minion_alignment_info,       del_minion_aligned_fact_with_same_mng
 		   replace_mng_with_root_for_exact_and_dic_src_fact and print_minion_align_info_for_hyphen_word
                    print_minion_alignment_for_dic and print_minion_alignment_info1 
 	Modified the rules to include meaning alignment src fact in rule part
-24. manual_word_grp_using_dic.clp
+25. manual_word_grp_using_dic.clp
         Modified "chk_for_hnd_mwe"  (added hnd_multi_word_from_iit_bombay_dic.gdm)
-25. get_word_potential_facts.clp	
+26. get_word_potential_facts.clp	
 	Added    : rm_LWG_grouped_id_from_restricted_word rule
 	Modified : potential_facts_for_eng and get_fact_name_anu_slot_ids_for_row 
-26. get_phrase.clp
+27. get_phrase.clp
         Added : get_phrase_with_next_mng , get_comp_ids, get_phrase_ids, replace_ids, replace_ids1 and  print_phrase
-27. manual_lwg.clp
+28. manual_lwg.clp
             Added    : multi_word_with_no_root
             Modified : word_[hyphen]_word, single_vib1 and change_remaining_facts1
-28. word_alignment.clp
+29. word_alignment.clp
         Modified  : word_and_vib_match_with_anu_hindi_root1
         Added     : get_root_for_new_id and get_meaning_src rules
         Removed   : to_infinitive_pada
         Modified the file to get meaning alignment source info
-29. get_exact_and_dic_mng_files.clp
+30. get_exact_and_dic_mng_files.clp
         Added :  get_mngs_aligned_with_anu_compound_mng, get_mngs_aligned_with_anu_compound_mng1
         Modified the rules to generate meaning_alignment_source_tmp.dat file
-30. prepare_minion_input.clp : Modified "print_cost_for_consecutive_ids" rule 
-31. change_manual_id.clp     : Added "modify_root_for_@_word" rule 
-32. run_modules_std.bat
+31. prepare_minion_input.clp : Modified "print_cost_for_consecutive_ids" rule 
+32. change_manual_id.clp     : Added "modify_root_for_@_word" rule 
+33. run_modules_std.bat
         Removed loading facts 'parserid_wordid_mapping.dat'
         Loaded "hindi_meanings_tmp1.dat" file for insert_punctuation module
         Loaded "Node_category.dat" file for tam_meaning module
-33. run_H_gen_minion.bat
+34. run_H_gen_minion.bat
         Loaded "manual_hin.morph.dat" file in modify_root_using_dic module
         Removed para_sent_id_info file from get_exact_and_dic_mng_files module
         Removed  get_exact_and_dic_mng_files module
         Added save-facts to generate "meaning_alignment_source_tmp.dat" file in word_alignment module
-34. alignment.bat
+35. alignment.bat
 	Loaded "hin_mng_without_@.dat" file in get_mng module 
 	Removed "get_minion_aligned_mngs_info" module
         Loaded the following files in modify_minion_output module
@@ -126,20 +128,20 @@
         Loaded correction_info.dat in get_mng module
 	Loaded original_word.dat and manual_word.dat files in modify_minion_output module
 	Loaded database_mng.dat and meaning_alignment_source.dat files in get_phrase module
-35. Loading NER at the beggining of the pre-proccessing. Following files are modified::
+36. Loading NER at the beggining of the pre-proccessing. Following files are modified::
         Anusaaraka_stanford.sh  Anusaaraka_stanford_minion.sh   Anusaaraka_berkeley.sh
         Anusaaraka_rasp.sh      Anusaaraka_site.sh              Anusaaraka_stanford-Factored.sh
         run-ner.pl              run-ner.sh			Anusaaraka_bllip_parser.sh  
 	Anusaaraka_bllip_parser_minion.sh
-36. split-relations.py:
+37. split-relations.py:
         Added 'dobj' in basic mode to handle relative clause sentences.
-37. FinalGenerate.pl,
+38. FinalGenerate.pl,
         Modified : adjective participle (_huA cases) loop part. Ex :safgamaramara_se_banA_huA
-38. Warning message when 'Parserid Wordid mapping missing' is given for a id, following files are modified::
+39. Warning message when 'Parserid Wordid mapping missing' is given for a id, following files are modified::
         run_sentence_stanford.sh        run_sentence_stanford_minion.sh
-39. Renamed meanings_aligned_with_dic_tmp.txt as wsd_errors_tmp.txt and modified Anusaaraka_stanford_minion.sh and
+40. Renamed meanings_aligned_with_dic_tmp.txt as wsd_errors_tmp.txt and modified Anusaaraka_stanford_minion.sh and
     run_sentence_stanford_minion.sh  files accordingly
-40. Updated the following shell files
+41. Updated the following shell files
 	run_rasp-parser.sh
 		--- Added '(AP (JJR' and '(AP (JJ' in sed commands
         	--- Modified : Output file '$1.std.penn' to '$1.std.penn_tmp1'
@@ -147,18 +149,18 @@
 		--- Modified to get proper_nouns in dictionary format for alignment purpose.
 	run_multiple_parse_penn.sh
         replace-abbrevations.sh  
-41. Updated the following 'lex' files
+42. Updated the following 'lex' files
 	add_snt_mrkr.lex		abbrevations.lex		constituency_parse.l
 	mapping-punctuations.lex	replacing_canonical.lex		get_canonical_form_in_wsd.lex
 	wx_utf8.lex (to handle 'eV', 'oV')	titles.lex
-42. Updation of new versions:
+43. Updation of new versions:
 	Stanford parser 	2.0.5   to  	3.2.0 
 	Stanford NER		1.1	to 	3.2.0
 	Stanford tregex		2.0.5	to	3.2.0
 	Shallow parser		3.0	to 	4.0
 	reranking-parser-2011-12-17.tgz to 	bllip-parser-master.zip
 						(this bllip parser is the next version and contains licence)
-43. Following files are Updated according to new versions:
+44. Following files are Updated according to new versions:
 	Anusaaraka.sh			Anusaaraka_all.sh			Anusaaraka_berkeley.sh
 	Anusaaraka_link.sh		Anusaaraka_ol.sh			Anusaaraka_bllip_parser.sh
 	Anusaaraka_rasp.sh		Anusaaraka_site.sh			Anusaaraka_stanford-Factored.sh
@@ -170,14 +172,14 @@
         minion_compile.sh		run_stanford-gui-pcfg.sh		run_tregex.sh
 	std_tregex/README		anu_compile.sh				remove_out-files.sh
 	tree_viewer/README		view_trees.sh
-44. Updated the following files
+45. Updated the following files
 	bin/utf8_wx			Pre-requisites in INSTALL		chk_input_format.pl
 	create_hin_align_html.clp	create_eng_ord_html.clp files
-45. Updated dictionary related files
+46. Updated dictionary related files
  	changes_in_databases			minion dictionaries		iit-bombay dictionary in goldendict
  	dic_compile.sh				minion_compile.sh		apertium-en-hi.en.metadix
 	apertium_hn.dix
-46. Added new files:
+47. Added new files:
 	1. detokenizer-src folder  in  miscellaneous/HANDY_SCRIPTS/
         	-- to detokenize the tokenized file and also updated anu_testing README
 	2. abbrevations_using_NER.c 
@@ -188,16 +190,16 @@
 	4. PennTags.html 	in 	Doc/PennTreeBankNotation
 	5. compile_full_parser.sh	(Separated compilation of SHALLOW PARSER and FULL PARSER)
 	6. verified for general domain  (verified_eng, verified_hnd, verified_out and verified_eng_align.html)
-47. Renamed the following files
+48. Renamed the following files
 	phy_align_partial_[eng/hnd/eng_align.html]   as  phy_partial_[eng/hnd/eng_align.html]  
         phy_align_verified_[eng/hnd/eng_align.html]  as  phy_verified_[eng/hnd/eng_align.html]
 	Anusaaraka_reranked_johnson.sh         	     as  Anusaaraka_bllip_parser.sh
 	Anusaaraka_reranked_johnson_minion.sh 	     as  Anusaaraka_bllip_parser_minion.sh
-48. Deleted the following files:
+49. Deleted the following files:
 	alignment/adding@-for-eng-words.lex
 	mapping-symbols_manual.lex
-49. Updated Log
-50. Updated the following verified's
+50. Updated Log
+51. Updated the following verified's
 	sd_verified (492)	phy_verified (253)		phy_partial_verified (81)	
 	verified (40)		partial_ver (22)    		small_sent_verified_sd (67)
 	ber_verified (407)

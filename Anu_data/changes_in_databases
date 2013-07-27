@@ -63,6 +63,9 @@
   1.  Added
 	divide_up       bAzta_xe
 	come back       vApasa_AnA  (suggested by (Rajini 20.01.12)) Ex : Let Abraham come back.
+	look_after      xekabAla_kara(Suggested by Chaitanya Sir 26-07-13)
+  2.  Removed
+	"nA" in hindi meanings.
 
 
   changes in hindi_tam_rules.clp (tam.csv)
@@ -424,51 +427,59 @@ Modified :
  Changes in apertium-en-hi.en.metadix 
  =====================================
  Added  :
-        <e lm="lie"><i>l</i><par n="d/ie__vblex"/></e>           (Added by Roja 23-02-11)
-        <e lm="spot"><i>spot</i><par n="admit__vblex"/></e>      (     "        14-03-11)
-        <e lm="engulf"><i>engulf</i> <par n="accept__vblex"/></e>(     "        24-03-11)
-        <e lm="knee"><i>kne</i><par n="liv/e__vblex"/></e>       (     "        13-06-11)
-        new paradigm trek__vblex				 (     "        14-10-11)
-        <e lm="grok"><i>grok</i><par n="trek__vblex"/></e>       (     "        14-10-11)
-        <e lm="trek"><i>trek</i><par n="trek__vblex"/></e>       (     "        14-10-11)
-        <e lm="yuk"><i>yuk</i><par n="trek__vblex"/></e>         (     "        14-10-11)
-        <e lm="unannounce"><i>unannounc</i><par n="liv/e__vblex"/></e> (     "  14-10-11)
-        <e lm="stride"><i>str</i><par n="ab/ide__vblex"/></e>    (     "        14-10-11)
-	<e lm="irreversibility"><i>irreversibilit</i><par n="bab/y__n"/></e>  (  ""  26-06-12) 
-	<e lm="i.e."><i>i.e.</i><par n="Linux__np"/></e>	(Added by Roja 18-07-12	)
-	<e lm="e.g."><i>e.g.</i><par n="Linux__np"/></e>	(	"	"	)
-	<e lm="U.S.A."><i>U.S.A.</i><par n="Barcelona__np"/></e>(	"	"	)
-	<e lm="U.K."><i>U.K.</i><par n="Barcelona__np"/></e>	(	"	"	)
-	<e lm="A.D."><i>A.D.</i><par n="Linux__np"/></e>	(	"	"	)
-	<e lm="a.k.a"><i>a.k.a</i><par n="Linux__np"/></e>	(	"	"	)
-	<e lm="U.S.A"><i>U.S.A</i><par n="Barcelona__np"/></e>	(	"	"	)
-	<e lm="redraw"><i>redr</i><par n="dr/aw__vblex"/></e>   (Added by Manju Suggested by Chaitanya Sir (22-11-12))
-	<e lm="redrawn"><i>redrawn</i><par n="long/__adj"/></e> (       "          "    )
-	<e lm="ore"><i>ore</i><par n="house__n"/></e>		(Added by Roja 14-03-13)
-	<e lm="policestation"><i>policestation</i><par n="house__n"/></e> (Added by Roja 14-03-13)
-	<e lm="sake"><i>sake</i><par n="house__n"/></e>			  (	"	"	)	
-	<e lm="pearl"><i>pearl</i><par n="house__n"/></e>		  (	"	"	)
-	<e lm="toltec"><i>toltec</i><par n="house__n"/></e>		  (     "       "       )
-	<e lm="ft"><i>ft</i><par n="house__n"/></e>			  (     "       "       )
-	<e lm="weightage"><i>weightage</i><par n="east__n"/></e>	  (     "       "       )
-	<e lm="free-fall"><i>free-fall</i><par n="east__n"/></e>	  (     "       "       )
-	<e lm="momentum"><i>moment</i><par n="maxim/um__n"/></e>	  (     "       "       )
-	<e lm="lamina"><i>lamina</i><par n="larva__n"/></e>		  (     "       "       )
-	<e lm="xerox"><i>xerox</i><par n="approach__vblex"/></e>	  (     "       "       )	
-	<e lm="blackfriars"><i>blackfriars</i><par n="expensive__adj"/></e>  (  "	" 	)
-	<e lm="talented"><i>talented</i><par n="expensive__adj"/></e>	  (     "       "       )
-	<e lm="velocity-time"><i>velocity-time</i><par n="expensive__adj"/></e>	(  "	"       )
-	<e lm="lens"><i>lens</i><par n="approach__vblex"/></e>		  (     "	12-04-13)
-	<e lm="unravel"><i>unravel</i><par n="accept__vblex"/></e>	  (	"	"	)
-	<e lm="unravell"><i>unravell</i><par n="accept__vblex"/></e>	  (     "       "	)
-	<e lm="rod"><i>rod</i><par n="house__n"/></e>			  (	"	"	)
-	<e lm="rod"><i>rod</i><par n="accept__vblex"/></e>		  (	"	"	)
-	<e lm="encapsulate"><i>encapsulat</i><par n="liv/e__vblex"/></e>  (	"	02-05-13)
-	<e lm="civilisation"><i>civilisation</i><par n="house__n"/></e>	  (	"	"	)
-	<e lm="awake"><i>aw</i><par n="w/ake__vblex"/></e>		  (     "       17-05-13)
-	<e lm="consort"><i>consort</i><par n="house__n"/></e>		  (	"	06-06-13)
-	<e lm="actress"><i>actress</i><par n="access__n"/></e>		  (	"	17-06-13)
-
+        lie		d/ie__vblex		(by Roja  23-02-11)
+        spot		admit__vblex		(     "	  14-03-11)
+        engulf		accept__vblex		(     "   24-03-11)
+        knee		liv/e__vblex		(     "   13-06-11)
+        new paradigm trek__vblex		(     "   14-10-11)
+        grok		trek__vblex		(     "   14-10-11)
+        trek		trek__vblex		(     "   14-10-11)
+        yuk		trek__vblex		(     "   14-10-11)
+        unannounce	liv/e__vblex		(     "   14-10-11)
+        stride		ab/ide__vblex		(     "   14-10-11)
+	irreversibility	bab/y__n		(     "   26-06-12) 
+	i.e.		Linux__np		(     "   18-07-12)
+	e.g.		Linux__np		(     "	     "	  )
+	U.S.A.		Barcelona__np		(     "	     "	  )
+	U.K.		Barcelona__np		(     "	     "    )
+	A.D.		Linux__np		(     "      "	  )
+	a.k.a		Linux__np		(     "      "	  )
+	U.S.A		Barcelona__np		(     "      "	  )
+	redraw		dr/aw__vblex		(by Manju Suggested by Chaitanya Sir (22-11-12))
+	redrawn		long/__adj		(       "    "    )
+	ore		house__n		(by Roja  14-03-13)
+	policestation	house__n		(by Roja  14-03-13)
+	sake		house__n		(     "	      "   )	
+	pearl		house__n		(     "	      "   )
+	toltec		house__n		(     "       "   )
+	ft		house__n		(     "       "   )
+	weightage	east__n			(     "       "   )
+	free-fall	east__n			(     "       "   )
+	momentum	maxim/um__n		(     "       "   )
+	lamina		larva__n		(     "       "   )
+	xerox		approach__vblex		(     "       "   )	
+	blackfriars	expensive__adj		(     "	      "   )
+	talented	expensive__adj		(     "       "   )
+	velocity-time	expensive__adj		(     "	      "   )
+	lens		approach__vblex		(     "	  12-04-13)
+	unravel		accept__vblex		(     "	      "   )
+	unravell	accept__vblex		(     "       "	  )
+	rod		house__n		(     "       "   )
+	rod		accept__vblex		(     "	      "   )
+	encapsulate	liv/e__vblex		(     "	  02-05-13)
+	civilisation	house__n		(     "	      "   )
+	awake		w/ake__vblex		(     "   17-05-13)
+	consort		house__n		(     "	  06-06-13)
+	actress		access__n		(     "	  17-06-13)
+	ascendant	house__n		(     "	  27-07-13)
+	advertize	liv/e__vblex		(     "	      "   )
+	armoury		bab/y__n		(     "	      "   )
+	armory		bab/y__n		(     "       "	  )
+	archeology	bab/y__n	  	(     "	      "   )
+	archeologist	house__n	  	(     "	      "   )
+	archive		house__n		(     "	      "	  )
+	archive		accept__vblex	  	(     "	      "   )
+	bravery		bab/y__n		(     "	      "   )
 
 Modified:
         <e lm="belonging"><i>belonging</i><par n="house__n"/></e>   as    <e lm="belongings"><i>belongings</i><par n="personnel__n"/></e>   (Suggested by Meena ji 12-05-11)
@@ -499,6 +510,10 @@ Modified:
 			as
 	<e lm="person"><i>p</i><par n="p/erson__n"/></e>
 	([0-9]+)?[04-9]+th 	as	([0-9]+)?[0-9]+th	(by Roja 17-07-13)
+
+   Removed:
+	Removed repetition entry <e lm="April"><i>April</i><par n="house__n"/></e>	(by Roja 27-07-13)
+
 
  Added new files:
  ===============
@@ -577,6 +592,7 @@ Modified:
         7. Removed 'nA' for verb entries                	Ex: abash_verb  SarmiMxA_karanA  as SarmiMxA_kara
 	8. Replaced pattern '_-'  and '-_'  with  '_'   	Ex: artistries_UNDEFINED    kalA_-kOSala   as  kalA_kOSala
 	9. '_' at begging or end of the meaning are removed 	Ex: Derby_noun   dArbI_   as  dArbI
+	10. Removed "'s" and "s'" entries 			Ex: ABC's_noun	prAWamika_jFAna		(By Roja 26-07-13)
 
     2. Modifying spelling of the existing word list:
        --------------------------------------------
