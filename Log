@@ -1,3 +1,15 @@
+ 02-08-13
+ ========
+ 1. adjective.clp:
+	Modified: load_dic_org_word_file, load_dic_word_file 
+		  (Asserted id-eng-src fact to store info that the MNG is decided based on the word)
+ 2. tam_meaning.clp:
+	Modified deffacts dummy_facts to deffunction nerver-called()
+ 3. Added id-eng-src fact in nerver-called deffunction in following files:
+	causative_verb_mng.clp		hindi_meaning.clp	preferred_morph_consistency_check.clp
+	prepare_apertium_input.clp	tam_meaning.clp		number.clp	vibakthi.clp
+ 4. Updated Log.
+
  27-07-13
  ========
  1. WSD: Modified : found.clp   improve.clp     baby.clp        is_en_tam.clp   call.clp        get.clp

@@ -77,6 +77,7 @@
            (if (neq (str-index "/" ?a) FALSE) then
 		(bind ?h_mng (string-to-field (sub-string  1 (- (str-index "/" ?a) 1) ?a)))
                 (assert (id-wsd_root_mng ?id ?h_mng))
+		(assert (id-eng-src  ?id  ?org_wrd Word_mng)) ;As Mng is decided on word
                 (assert (meaning_has_been_decided ?id))
                 (assert (file_loaded ?id))
 		(printout t "Multiple adjective senses are available for "?org_wrd ". WSD rule is required " crlf)
@@ -85,6 +86,7 @@
             else
                 (bind ?h_mng  (string-to-field ?a))
 		(assert (id-wsd_root_mng ?id ?h_mng))
+		(assert (id-eng-src  ?id  ?org_wrd Word_mng)) ;As Mng is decided on word
         	(assert (file_loaded ?id))
 		(assert (meaning_has_been_decided ?id))
 		(if ?*debug_flag* then
@@ -110,6 +112,7 @@
            (if (neq (str-index "/" ?a) FALSE) then
                 (bind ?h_mng (string-to-field (sub-string  1 (- (str-index "/" ?a) 1) ?a)))
 		(assert (id-wsd_root_mng ?id ?h_mng))
+		(assert (id-eng-src  ?id  ?wrd Word_mng)) ;As Mng is decided on word
 		(assert (meaning_has_been_decided ?id))
 		(assert (file_loaded ?id))
 		(printout t "Multiple adjective senses are available for "?wrd ". WSD rule is required " crlf)
@@ -118,6 +121,7 @@
             else
                 (bind ?h_mng  (string-to-field ?a))
 		(assert (id-wsd_root_mng ?id ?h_mng))
+		(assert (id-eng-src  ?id  ?wrd Word_mng)) ;As Mng is decided on word
 		(assert (meaning_has_been_decided ?id))
 	        (assert (file_loaded ?id))
 		(if ?*debug_flag* then
