@@ -8,6 +8,7 @@
  =>
 	(retract ?f0)
 	(assert (hid-punc_head-right_punctuation ?id ?p_h ?punc))
+	(assert (last_punc_decided ?id))
  )
  ;---------------------------------------------------------------------------------------------------------------
  ;A slow, balmy breeze from the south engulfed everyone in the audience. No, it was not Black Monday.
@@ -149,6 +150,7 @@
  (id-HM-source ?hid - ?src&~WSD_root_mng&~WSD_word_mng&~Default)
  (id-HM-source ?id ?mng ?src)
  (test (neq ?mng -))
+ (not (last_punc_decided ?hid)) ;How are you today?
  =>
 	(retract ?f0)
 	(assert (hid-punc_head-right_punctuation ?id ?p_h ?r_punc))

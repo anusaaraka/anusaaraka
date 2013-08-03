@@ -865,7 +865,7 @@ hama graha Gorpon se hEM.
 
 Hindi meaning using Stanford parser 2.202
 The best costumes got prizes. 
-sabase aXika acCe pahanAvoM ne puraskAra prApwa kie.
+sarvowwama pahanAvoM ne puraskAra prApwa kie.
 Multiple adjective senses are available for best. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.203
@@ -1311,7 +1311,7 @@ Multiple adjective senses are available for exotic. WSD rule is required
 
 Hindi meaning using Stanford parser 3.3
 The best five costumes got prizes. 
-sabase aXika acCe pAzca pahanAvoM ne puraskAra prApwa kie.
+sarvowwama pAzca pahanAvoM ne puraskAra prApwa kie.
 Multiple adjective senses are available for best. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.4
@@ -2186,6 +2186,32 @@ Multiple adjective senses are available for external. WSD rule is required
 Hindi meaning using Stanford parser 4.92
 This is the color I like best. 
 yaha vahI rafga hE jise mEM sabase jyAxA pasanxa karawA hUz.
+
+Hindi meaning using Stanford parser 4.93
+They will have to bear him. 
+unako usako sahana karanA padegA.
+
+Hindi meaning using Stanford parser 4.94
+The book I like best is Harry Potter. 
+jise mEM sabase jyAxA pasanxa karawA hUz vaha puswaka PropN-harry-PropN PropN-potter-PropN hE.
+
+Hindi meaning using Stanford parser 4.95
+I am taking care of it. 
+mEM isakA KyAla_raKa rahA hUz.
+
+Hindi meaning using Stanford parser 4.96
+We should make our relationship strong. 
+hameM hamArA sambanXa majabUwa banAnA cAhie.
+Multiple adjective senses are available for strong. WSD rule is required 
+
+Hindi meaning using Stanford parser 4.97
+The quotes of this volume are nice. 
+isa wIvrawA ke uxXaraNacihna acCe hEM.
+
+Hindi meaning using Stanford parser 4.98
+A good enough actor can do it. 
+eka yogya aBinewA yaha kara sakawA hE.
+Multiple adjective senses are available for good. WSD rule is required 
 
 Calling Transliteration
 Calling Interface related programs

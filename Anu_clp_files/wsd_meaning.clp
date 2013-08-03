@@ -1,14 +1,5 @@
  (defglobal ?*debug_flag* = TRUE)
  
- (defrule dont_load_chunkids
- (declare (salience 8000))
- (root-verbchunk-tam-chunkids ? ? ? $? ?id $? ?root_id)
- (not (meaning_has_been_decided ?id))
- ?mng<-(meaning_to_be_decided ?id)
- =>
-       (assert (meaning_has_been_decided ?id))
-       (retract ?mng)
- )
  ;--------------------------------------------------------------------------------------------------------- 
  ;Added by Shirisha Manju (22-05-13) Suggested by Chaitanya Sir
  ;You can warm your feet up in front of the fireplace.

@@ -11,17 +11,6 @@
  (assert (meaning_to_be_decided))
  )
 ;------------------------------------------------------------------------------------------------------------------
-(defrule dont_load_chunkids
-(declare (salience 950))
-(root-verbchunk-tam-chunkids ? ? ? $?chunk_ids ?root_id)
-=>
-	(bind ?len (length $?chunk_ids))
-        (loop-for-count (?i 1 ?len)
-                (bind ?id (nth$ ?i $?chunk_ids))
-		(assert (grouped_id ?id))
-        )
- )
- ;------------------------------------------------------------------------------------------------------------------
  (defrule tam_id_frm_vb_grp_idiom_ed
  (declare (salience 970))
  (root-verbchunk-tam-chunkids root_to_be_decided ? idiom ?idiom ?root_id)

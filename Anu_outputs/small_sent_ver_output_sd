@@ -9,6 +9,7 @@ Multi word ...
 Hindi meaning using Stanford parser 1.1
 Test. 
 jAzca kIjie.
+parIkRA.
 
 Hindi meaning using Stanford parser 2.1
 She is sleeping. 
@@ -283,6 +284,50 @@ PropN-david-PropN SOcAlaya meM hE.
 Hindi meaning using Stanford parser 2.67
 She was drinking strong tea. 
 vaha kadI cAya pI rahI WI.
+
+Hindi meaning using Stanford parser 2.68
+He committed a murder.
+usane KUna kiyA.
+
+Hindi meaning using Stanford parser 2.69
+Who committed this crime?
+yaha aparAXa kisane kiyA?
+
+Hindi meaning using Stanford parser 2.70
+I have seen him before.
+mEM usako pahale xeKa cukA hUz.
+
+Hindi meaning using Stanford parser 2.71
+Have you done this before?
+kyA Apa yaha pahale kara cuke hEM?
+
+Hindi meaning using Stanford parser 2.72
+I dreamt last night.
+mEMne piCalI rAwa svapna xeKA.
+
+Hindi meaning using Stanford parser 2.73
+I am a kind person.
+mEM eka xayAlu vyakwi hUz.
+
+Hindi meaning using Stanford parser 2.74
+I was left alone.
+mEM akelA CUtA gayA WA.
+
+Hindi meaning using Stanford parser 2.75
+She made a request.
+usane anuroXa kiyA.
+
+Hindi meaning using Stanford parser 2.76
+This bag belongs to Hardik.
+yaha WElA PropN-hardik-PropN kA hE.
+
+Hindi meaning using Stanford parser 2.77
+He is a good speaker.
+vaha eka acCA vakwA hE.
+
+Hindi meaning using Stanford parser 2.78
+You are not good enough.
+Apa yogya nahIM hEM.
 
 Calling Transliteration
 Calling Interface related programs

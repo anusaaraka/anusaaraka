@@ -172,7 +172,7 @@ int main(int argc,char **argv)
           if(punct_clp==NULL) {printf("Could not open punctuation_info.dat for writing\n");exit(1);}
 
           sprintf(filename,"%s/%s_tmp/%s.%s",argv[1],argv[2],prev_para,prev_line);
-          sprintf(filename1,"%s/meaning_to_be_decided.dat",filename);
+          sprintf(filename1,"%s/meaning_to_be_decided_tmp.dat",filename);
           meaning_clp=fopen(filename1,"w");
           if(meaning_clp==NULL) {printf("Could not open  meaning_to_be_decided.dat for writing\n");exit(1);}
 

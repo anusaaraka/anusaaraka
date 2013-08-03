@@ -132,8 +132,9 @@
  ;The Hawa mahal was built by the Maharaja [Sawai Pratap] Singh in 1799 AD and [Lal Chand] Usta was the architect.
  (defrule print_org_word_mng_for_grp_id
  (declare (salience 1400))
- ?f0<-(id-HM-source ?id ?mng Original_word|transliterate_mng)
+ ?f0<-(id-HM-source ?id ?mng ?)
  (pada_info (group_ids $? ?id $? ?h))
+ (test (eq (sub-string 1 1 ?mng) "@")) 
  =>
 	(retract ?f0)
         (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?mng"  )" crlf)
@@ -156,11 +157,12 @@
  )
  ;----------------------------------------------------------------------------------------------------------------------- 
  ;The Hawa mahal was built by the Maharaja Sawai Pratap [Singh] in 1799 AD and Lal Chand [Usta] was the architect.
- ;John is less fat than Tom. 
+ ;John is less fat than Tom.   Please enclose a curriculum vitae with your letter of application. 
  (defrule print_org_word_mng_for_head_id
  (declare (salience 1300))
- ?f0<-(id-HM-source ?id ?mng Original_word|transliterate_mng)
+ ?f0<-(id-HM-source ?id ?mng ?s)
  (pada_info (group_head_id ?id) (vibakthi ?vib&~kA)(number ?n)(case ?c)(gender ?g))
+ (test (eq (sub-string 1 1 ?mng) "@"))
  =>
         (retract ?f0)
 	(if (eq ?vib 0) then
@@ -1166,46 +1168,6 @@
         (retract ?f1)
         (printout ?*A_fp5* "(id-Apertium_input "?id " ^"?h_word "<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^" ?vib "<cat:prsg>$)"  crlf)
 	(printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_with_vib_hid )" crlf)
-  )
-  ;-------------------------------------------------------------------------------------------------------------------------
-  ;The giraffe has the longest neck of any land mammal.
-  ;Added by Shirisha Manju (18-06-12)  Suggested by Chaitanya Sir 
-  (defrule PP_rule_adj_est
-  (declare (salience 340))
-  (pada_info (group_cat PP) (group_ids $?ids)(number ?num)(case ?case)(gender ?gen) )
-  ?f2<-(id-HM-source ?id ?h_word ?)
-  (id-root-category-suffix-number ?id ? adjective est ?)
-  (test (member$ ?id $?ids))
-  =>
-	(retract ?f2)
-	(bind ?h_word (str-cat "sabase_aXika_" ?h_word))
-	(printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$ )" crlf)
-	(printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_adj_est )" crlf)
-  )
-  ;-------------------------------------------------------------------------------------------------------------------------
-  ;Mary is taller than Max.
-  ;Added by Shirisha Manju (19-06-12)  Suggested by Chaitanya Sir
-  ;At longer wavelengths (i.e., at lower frequencies), the antennas have large physical size and they are located on or very near to the ground.
-  ;In short, the greater the rate of change of momentum, the greater is the force.
-  (defrule PP_rule_adj_er
-  (declare (salience 340))
-  (pada_info (group_cat PP) (group_ids $?ids)(number ?num)(case ?case)(gender ?gen) )
-  ?f2<-(id-HM-source ?id ?h_word ?)
-  (id-root-category-suffix-number ?id ? adjective er ?)
-  (test (member$ ?id $?ids))
-  =>
-        (retract ?f2)
-	(if (eq (str-index "_" ?h_word) FALSE) then
-	        (bind ?h_word (str-cat "aXika_" ?h_word))
-	else
-		(bind $?mng (remove_character "_" ?h_word " "))
-		(if (eq (member$ aXika $?mng) FALSE) then
-			(bind ?h_nwrd (remove_character " " $?mng "_"))
-			(bind ?h_nwrd (str-cat "aXika_" ?h_nwrd))
-		)
-	)
-        (printout ?*A_fp5* "(id-Apertium_input "?id" ^"?h_word "<cat:adj><case:"?case"><gen:"?gen"><num:"?num">$ )" crlf)
-	(printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_adj_er )" crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
   (defrule PP_rule_default

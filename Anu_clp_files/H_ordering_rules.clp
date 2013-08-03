@@ -671,6 +671,18 @@
         (assert (Head-Level-Mother-Daughters ?h ?l ?Mot $?d $?d1))
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju(31-07-13) Suggested by Chaitanya Sir
+;Removing meaning_to_be_decided control fact for auxillary verbs
+(defrule rm_aux_id_ctrl_fact
+(declare (salience 54))
+(pada_info  (group_cat VP) (group_ids $?ids ?h))
+(test (neq (length $?ids) 0))
+?f<-(meaning_to_be_decided ?id)
+(test (member$ ?id $?ids))
+=>
+	(retract ?f)
+)
+;-----------------------------------------------------------------------------------------------------------------------
 (defrule end_order
 (declare (salience -200))
 (hindi_id_order $?dau)

@@ -38,18 +38,76 @@
  (assert (Domain))
  (assert (id-eng-src))
  )
+
+ ;------------------------------------------ Functions ---------------------------------------------------------
+ ;Added by Shirisha Manju (21-03-13)
+ (deffunction print_hindi_mng(?head_id ?mng ?src  $?grp_ids)
+        (loop-for-count (?i  1 (length $?grp_ids))
+                (bind ?id (nth$ ?i $?grp_ids))
+                (if (neq ?id ?head_id ) then
+                        (printout ?*hin_mng_file* "(id-HM-source  " ?id "   " ?mng "   " ?src ")" crlf)
+                        (assert (mng_has_been_decided ?id))
+                )
+        )
+ )
  ;--------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (30-07-13)
+ (deffunction get_first_mng (?wrd ?cat ?dbase)
+	(bind ?mng (gdbm_lookup ?dbase (str-cat ?wrd "_" ?cat)))
+        (if (neq ?mng "FALSE") then
+        	(if (neq (str-index "/" ?mng) FALSE) then
+                	(bind ?h_mng (sub-string  1 (- (str-index "/" ?mng) 1) ?mng))
+            	else
+                	(bind ?h_mng  ?mng)
+           	)
+	)
+ )
+ ;-------------------------------------------- Rules ------------------------------------------------------------
  ;Added by Shirisha Manju (29-11-12) (suggested by Chaitanya Sir)
  ;Assuming lwg_ids (verb-verb connection) will not be part of compound phrase (noun-noun connection)
  ;The magnitude of the displacement for a course of motion [may be] zero but the corresponding path length is not zero. 
  ;Yes, we must [set off] early for Sonar Bagan to cut wood, explained Mangal.
  (defrule rm_cmp_mng_if_head_is_verb
- (declare (salience 9951))
+ (declare (salience 9952))
  ?f0<-(ids-cmp_mng-head-cat-mng_typ-priority $? ?id $? ?mng ?head_id ?grp_cat ?mng_typ ?)
  (root-verbchunk-tam-chunkids   ?pada_head  ?chunk  ?tam  $? ?id )
  (test (neq ?chunk is_said_to_be))
  =>
         (retract ?f0)
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (30-07-13)
+ ;Comparing wsd_MWE_mng and database_mng and deciding the meaning
+ ;if wsd_MWE length is >= the length of the db_mng then take wsd_MWE_mng else db_mng
+ (defrule compare_wsd_and_db_MWE_word_mng
+ (declare (salience 9951))
+ ?f<-(affecting_id-affected_ids-wsd_group_word_mng ?id $?ids ?mng)
+ ?f1<-(ids-cmp_mng-head-cat-mng_typ-priority $?cmp_ids ?mng1 ?head_id ?grp_cat ?mng_typ ?)
+ (test (member$ ?id $?cmp_ids))
+ =>
+	(bind ?length (length (create$ ?id $?ids)))
+	(bind ?cmp_length (length $?cmp_ids))
+	(if (or (> ?length ?cmp_length) (= ?length ?cmp_length)) then
+		(retract ?f1)
+	else
+		(retract ?f)
+	)
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+ ;They seem to resemble each other .
+ (defrule compare_wsd_and_db_MWE_root_mng
+ (declare (salience 9951))
+ ?f<-(affecting_id-affected_ids-wsd_group_root_mng ?id $?ids ?mng)
+ ?f1<-(ids-cmp_mng-head-cat-mng_typ-priority $?cmp_ids ?mng1 ?head_id ?grp_cat ?mng_typ ?)
+ (test (member$ ?id $?cmp_ids))
+ =>
+        (bind ?length (length (create$ ?id $?ids)))
+        (bind ?cmp_length (length $?cmp_ids))
+        (if (or (> ?length ?cmp_length) (= ?length ?cmp_length)) then
+                (retract ?f1)
+        else
+                (retract ?f)
+        )
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja (05-03-13).
@@ -63,16 +121,11 @@
  (test (neq (numberp ?org_wrd) TRUE))
  (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?org_wrd "_" ?cat)) "FALSE"))
  =>
-        (bind ?a (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?org_wrd "_" ?cat)))
-        (if (neq ?a "FALSE") then
-           (if (neq (str-index "/" ?a) FALSE) then
-                (bind ?h_mng (sub-string  1 (- (str-index "/" ?a) 1) ?a))
-            else
-                (bind ?h_mng  ?a)
-           )
-        (retract ?mng)
-        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?h_mng"   Default)" crlf)
-        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?h_mng"   Default "?id")" crlf)
+	(bind ?f_mng (get_first_mng ?org_wrd ?cat default-iit-bombay-shabdanjali-dic.gdbm))
+        (if (neq ?f_mng "FALSE") then
+		(retract ?mng)
+		(printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default)" crlf)
+		(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default "?id")" crlf)
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
@@ -112,43 +165,33 @@
  (test (neq ?cat ?cat1))
  (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?org_wrd "_" ?cat1)) "FALSE"))
  =>
-        (bind ?a (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?org_wrd "_" ?cat1)))
-        (if (neq ?a "FALSE") then
-                (if (neq (str-index "/" ?a) FALSE) then
-                        (bind ?h_mng (sub-string  1 (- (str-index "/" ?a) 1) ?a))
-                else
-                        (bind ?h_mng  ?a)
-                )
-        (retract ?mng)
-        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?h_mng"   Default)" crlf)
-        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?h_mng"   Default "?id")" crlf)
-        (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?org_wrd")" crlf)
+	(bind ?f_mng (get_first_mng ?org_wrd ?cat1 default-iit-bombay-shabdanjali-dic.gdbm))
+        (if (neq ?f_mng "FALSE") then
+                (retract ?mng)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default "?id")" crlf)
+           (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?org_wrd")" crlf)
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Maha Laxmi
  ;for MWE meaning will be assinged to the last word (single mng will be given to all words).So,by this rule we are retracting cntrl facts for remaining ids.
  (defrule mng_decided
  (declare (salience 9800))
  ?f<-(mng_has_been_decided ?id)
  ?mng<-(meaning_to_be_decided ?id)
  =>
- (retract ?mng)
+ 	(retract ?mng)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ; meaning for the whole sentence
  (defrule complete_sen_trans
  (declare (salience 9700))
  (head_id-sen_mng-g_ids ?hid ?sen_mng $?grp_ids)
- ?mng<-(meaning_to_be_decided ?id)
+ ?f<-(meaning_to_be_decided ?hid)
  =>
-	(retract ?mng)
-	(loop-for-count (?i  1 (length $?grp_ids))
-                (bind ?id1 (nth$ ?i $?grp_ids))
-                (if (neq ?id1 ?hid ) then
-                	(printout ?*hin_mng_file* "(id-HM-source  " ?id1 "  -    Complete_sen_gdbm)" crlf)
-                	(assert (mng_has_been_decided ?id1))
-		)
-  	)
+	(retract ?f)	
+	(print_hindi_mng ?hid - Complete_sen_gdbm $?grp_ids)
   	(printout ?*hin_mng_file* "(id-HM-source  " ?hid "  "?sen_mng"    Complete_sen_gdbm)" crlf)
   	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?hid "  "?sen_mng"    Complete_sen_gdbm " (implode$ $?grp_ids)")" crlf)
  )
@@ -157,16 +200,11 @@
  ; For the group other than head-id this rule will assert a cntrl fact that mng_has_been_decided.
  (defrule lwg_mng
  (declare (salience 9600))
- (root-verbchunk-tam-chunkids   ?pada_head  ?vc  ?tam  $?ids ?pada_id)
+ (root-verbchunk-tam-chunkids   ?pada_head  ?verb_chunk  ?tam  $?ids ?pada_id)
  (not (verb_type-verb-kriyA_mUla-tam $?)) ;I made it clear that I was angry .
- (test (neq ?vc is_said_to_be))
+ (test (neq ?verb_chunk is_said_to_be))
  =>
-	(bind ?len (length $?ids))
-	(loop-for-count (?i 1 ?len)
-		(bind ?id (nth$ ?i $?ids))
-		(printout ?*hin_mng_file* "(id-HM-source  " ?id "  -   LWG)" crlf)
-                (assert (mng_has_been_decided ?id))
-	)
+	(print_hindi_mng ?pada_head - LWG $?ids)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju (19-11-12)
@@ -180,13 +218,7 @@
  =>
 	(retract ?f)
 	(bind ?head_id (nth$ ?grp_head $?grp_ids))
- 	(loop-for-count (?i  1 (length $?grp_ids))
-        	(bind ?id (nth$ ?i $?grp_ids))
-                (if (neq ?id ?head_id) then
-                	(printout ?*hin_mng_file* "(id-HM-source  " ?id "  -    Phy_compound_phrase_root_mng)" crlf)
-                	(assert (mng_has_been_decided ?id))
-		)
-	)
+	(print_hindi_mng ?head_id -  Phy_compound_phrase_root_mng $?grp_ids)
 	(if (eq ?mng_typ RM) then
   		(printout ?*hin_mng_file* "(id-HM-source  " ?head_id "  "?mng"    Phy_compound_phrase_root_mng)" crlf)
   		(printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?head_id "  "?mng"    Phy_compound_phrase_root_mng" ?head_id" "(implode$ $?grp_ids)")" crlf)
@@ -206,23 +238,18 @@
  (test (neq (numberp ?rt) TRUE))
  (test (neq (gdbm_lookup "phy_dictionary.gdbm" (str-cat ?rt "_" ?cat)) "FALSE"))
  =>
-        (bind ?a (gdbm_lookup "phy_dictionary.gdbm" (str-cat ?rt "_" ?cat)))
-        (if (neq ?a "FALSE") then
-        	(if (neq (str-index "/" ?a) FALSE) then
-                	(bind ?h_mng (sub-string  1 (- (str-index "/" ?a) 1) ?a))
-            	else
-                	(bind ?h_mng  ?a)
-           	)
-        	(retract ?mng)
-        	(printout ?*hin_mng_file* "(id-HM-source   "?id"   "?h_mng"   Physics_Glossary)" crlf)
-        	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?h_mng"   Physics_Glossary "?id")" crlf)
+	(bind ?f_mng (get_first_mng ?rt ?cat phy_dictionary.gdbm))
+        (if (neq ?f_mng "FALSE") then
+                (retract ?mng)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Physics_Glossary)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Physics_Glossary "?id")" crlf)
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
  ; In [Kinematics], we study ways to describe motion without going into the causes of motion. 
  ; Added by Shirisha Manju (19-11-12)
  (defrule get_mng_from_phy_dic_with_diff_cat1
- (declare (salience 9200))
+ (declare (salience 9300))
  (Domain physics)
  (id-cat_coarse ?id PropN)
  (id-root ?id ?rt)
@@ -230,203 +257,74 @@
  (test (neq (numberp ?rt) TRUE))
  (test (neq (gdbm_lookup "phy_dictionary.gdbm" (str-cat (lowcase ?rt) "_noun")) "FALSE"))
  =>
-        (bind ?a (gdbm_lookup "phy_dictionary.gdbm" (str-cat (lowcase ?rt) "_noun")))
-        (if (neq ?a "FALSE") then
-                (if (neq (str-index "/" ?a) FALSE) then
-                        (bind ?h_mng (sub-string  1 (- (str-index "/" ?a) 1) ?a))
-                else
-                        (bind ?h_mng  ?a)
-                )
+	(bind ?f_mng (get_first_mng (lowcase ?rt) noun phy_dictionary.gdbm))
+        (if (neq ?f_mng "FALSE") then
                 (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?h_mng"   Physics_Glossary)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?h_mng"   Physics_Glossary "?id")" crlf)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Physics_Glossary)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Physics_Glossary "?id")" crlf)
                 (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?rt")" crlf)
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
- ;Comparing wsd_MWE_mng and database_mng and deciding the meaning
- ;if wsd_MWE length is >= the length of th db_mng take wsd_MWE_mng else db_mng
- ;They seem to resemble each other .
- (defrule compare_wsd_and_db_MWE_word_mng
- (declare (salience 8701))
- (affecting_id-affected_ids-wsd_group_word_mng  ?id  $?ids ?mng)
- (ids-cmp_mng-head-cat-mng_typ-priority $?cmp_ids ?mng1 ?head_id ?grp_cat ?mng_typ ?)
- ?f<-(meaning_to_be_decided ?id)
- (test (eq (nth$ ?head_id $?cmp_ids) ?id))
-  =>
- (retract ?f)
- (bind ?length (+ (length $?ids) 1))
- (bind ?cmp_length (length $?cmp_ids))
- (if (or (> ?length ?cmp_length) (= ?length ?cmp_length)) then
-  (loop-for-count (?i  1 ?length)
-                (bind ?id1 (nth$ ?i $?ids))
-                (if (neq ?id1 ?id ) then
-                (printout ?*hin_mng_file* "(id-HM-source  " ?id1 "  -    WSD_compound_phrase_word_mng)" crlf)
-                (assert (mng_has_been_decided ?id1)))
-  )
-  (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?mng"    WSD_compound_phrase_word_mng)" crlf)
-  (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?mng"    WSD_compound_phrase_word_mng" ?id" "(implode$ $?ids)")" crlf) 
-  else
-  (loop-for-count (?i  1 ?cmp_length)
-                (bind ?id1 (nth$ ?i $?cmp_ids))
-                (if (neq ?id1 ?id) then
-                (if (eq ?mng_typ RM) then
-                (printout ?*hin_mng_file* "(id-HM-source  " ?id1 "  -    Database_compound_phrase_root_mng)" crlf)
-                else
-                (printout ?*hin_mng_file* "(id-HM-source  " ?id1 "  -    Database_compound_phrase_word_mng)" crlf))
-                (assert (mng_has_been_decided ?id1))
-                )
-  )
-  (if (eq ?mng_typ RM) then
-  (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?mng1"    Database_compound_phrase_root_mng)" crlf)
-  (printout  "(id-HM-source-grp_ids  " ?id "  "?mng1"    Database_compound_phrase_root_mng "(implode$ $?cmp_ids)")" crlf)
-  else 
-  (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?mng1"    Database_compound_phrase_word_mng)" crlf)
-  (printout ?*hin_mng_file* "(id-HM-source-grp_ids  " ?id "  "?mng1"    Database_compound_phrase_word_mng "(implode$ $?cmp_ids)")" crlf))
-  ))
-  ;--------------------------------------------------------------------------------------------------------------
-  ;Comparing wsd_MWE_mng and database_mng and deciding the meaning
- ;if wsd_MWE length is >= the length of th db_mng take wsd_MWE_mng else db_mng
- ;They seem to resemble each other .
- (defrule compare_wsd_and_db_MWE_root_mng
- (declare (salience 8700))
- (affecting_id-affected_ids-wsd_group_root_mng  ?id  $?ids ?mng)
- (ids-cmp_mng-head-cat-mng_typ-priority $?cmp_ids ?mng1 ?head_id ?grp_cat ?mng_typ ?)
- ?f<-(meaning_to_be_decided ?id)
- (test (eq (nth$ ?head_id $?cmp_ids) ?id))
-  =>
- (retract ?f)
- (bind ?length (+ (length $?ids) 1))
- (bind ?cmp_length (length $?cmp_ids))
- (if (or (> ?length ?cmp_length) (= ?length ?cmp_length)) then
-  (loop-for-count (?i  1 ?length)
-                (bind ?id1 (nth$ ?i $?ids))
-                (if (neq ?id1 ?id ) then
-                (printout ?*hin_mng_file* "(id-HM-source  " ?id1 "  -    WSD_compound_phrase_root_mng)" crlf)
-                (assert (mng_has_been_decided ?id1)))
-  )
-  (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?mng"    WSD_compound_phrase_root_mng)" crlf)
-  (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?mng"    WSD_compound_phrase_root_mng "?id" "(implode$ $?ids)")" crlf)
-  else
-  (loop-for-count (?i  1 ?cmp_length)
-                (bind ?id1 (nth$ ?i $?cmp_ids))
-                (if (neq ?id1 ?id) then
-                (if (eq ?mng_typ RM) then
-                (printout ?*hin_mng_file* "(id-HM-source  " ?id1 "  -    Database_compound_phrase_root_mng)" crlf)
-                else
-                (printout ?*hin_mng_file* "(id-HM-source  " ?id1 "  -    Database_compound_phrase_word_mng)" crlf))
-                (assert (mng_has_been_decided ?id1))
-  ))
-  (if (eq ?mng_typ RM) then
-  (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?mng1"    Database_compound_phrase_root_mng)" crlf)
-  (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?mng1"    Database_compound_phrase_root_mng "(implode$ $?cmp_ids)")" crlf)
-  else
-  (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?mng1"    Database_compound_phrase_word_mng)" crlf)
-  (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?mng1"    Database_compound_phrase_word_mng "(implode$ $?cmp_ids)")" crlf))
-  )
-  )
-  ;--------------------------------------------------------------------------------------------------------------
  ; WSD compound phrase mng.
  ; They seem to resemble each other .
- (defrule wsd_cmp_phrase_mng_word_mng
- (declare (salience 8602))
+ (defrule wsd_cmp_phrase_word_mng
+ (declare (salience 9200))
  (affecting_id-affected_ids-wsd_group_word_mng  ?id  $?ids ?cmp_mng)
- ?mng<-(meaning_to_be_decided ?id)
+ ?f<-(meaning_to_be_decided ?id)
  =>
- (retract ?mng)
-  (bind ?length (length $?ids))
-    (loop-for-count (?i  1 ?length)
-                (bind ?id1 (nth$ ?i $?ids))
-                (printout ?*hin_mng_file* "(id-HM-source  " ?id1 "  -    WSD_compound_phrase_word_mng)" crlf)
-                (assert (mng_has_been_decided ?id1))
-     )
-
-        (bind ?str_len (length ?cmp_mng))
-        (if (neq (str-index "[" ?cmp_mng) FALSE) then
-                (bind ?index (str-index "[" ?cmp_mng))
-                (bind ?str (sub-string 1 (- ?index 1) ?cmp_mng))
-                (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?str"    WSD_compound_phrase_word_mng)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?str"    WSD_compound_phrase_word_mng "?id" "(implode$ $?ids)")" crlf)
-        else
-                (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?cmp_mng"    WSD_compound_phrase_word_mng)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    WSD_compound_phrase_word_mng "?id" "(implode$ $?ids)")" crlf)
-        )
+	(retract ?f)
+	(print_hindi_mng ?id -  WSD_compound_phrase_word_mng $?ids)
+	(printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?cmp_mng"    WSD_compound_phrase_word_mng)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    WSD_compound_phrase_word_mng "?id" "(implode$ $?ids)")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ; WSD compound phrase mng.
  ; They seem to resemble each other .
- (defrule wsd_cmp_phrase_mng_root_mng
- (declare (salience 8601))
+ (defrule wsd_cmp_phrase_root_mng
+ (declare (salience 9100))
  (affecting_id-affected_ids-wsd_group_root_mng  ?id  $?ids ?cmp_mng)
- ?mng<-(meaning_to_be_decided ?id)
+ ?f<-(meaning_to_be_decided ?id)
  =>
- (retract ?mng)
-  (bind ?length (length $?ids))
-    (loop-for-count (?i  1 ?length)
-                (bind ?id1 (nth$ ?i $?ids))
-                (printout ?*hin_mng_file* "(id-HM-source  " ?id1 "  -    WSD_compound_phrase_root_mng)" crlf)
-                (assert (mng_has_been_decided ?id1))
-     )
-
-        (bind ?str_len (length ?cmp_mng))
-        (if (neq (str-index "[" ?cmp_mng) FALSE) then
-                (bind ?index (str-index "[" ?cmp_mng))
-                (bind ?str (sub-string 1 (- ?index 1) ?cmp_mng))
-                (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?str"    WSD_compound_phrase_root_mng)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?str"    WSD_compound_phrase_root_mng "?id" "(implode$ $?ids)")" crlf)
-        else
-                (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?cmp_mng"    WSD_compound_phrase_root_mng)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    WSD_compound_phrase_root_mng "?id" "(implode$ $?ids)")" crlf)
-        )
+	(retract ?f)
+	(print_hindi_mng ?id -  WSD_compound_phrase_root_mng $?ids)
+        (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?cmp_mng"    WSD_compound_phrase_root_mng)" crlf)
+	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    WSD_compound_phrase_root_mng "?id" "(implode$ $?ids)")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;Database compound phrase mng.
  ; I live in New York City .
  ; Rama is said to be intelligent.
- (defrule database_cmp_phrase_mng
- (declare (salience 8600))
- (ids-cmp_mng-head-cat-mng_typ-priority $?ids ?cmp_mng ?head_id ?grp_cat ?mng_typ ?)
+ (defrule database_cmp_phrase_word_mng
+ (declare (salience 9000))
+ (ids-cmp_mng-head-cat-mng_typ-priority $?ids ?cmp_mng ?head_id ?grp_cat WM ?)
  ?mng<-(meaning_to_be_decided ?head)
  (test (eq (nth$ ?head_id $?ids) ?head))
  =>
-    (retract ?mng)
-    (bind ?length (length $?ids))
-    (loop-for-count (?i  1 ?length)
-                (bind ?id1 (nth$ ?i $?ids))
-                (if (neq ?id1 (nth$ ?head_id $?ids)) then
-                (if (eq ?mng_typ RM) then
-                (printout ?*hin_mng_file* "(id-HM-source  " ?id1 "  -    Database_compound_phrase_root_mng)" crlf)
-                else
-                (printout ?*hin_mng_file* "(id-HM-source  " ?id1 "  -    Database_compound_phrase_word_mng)" crlf))
-                (assert (mng_has_been_decided ?id1))
-     ))
-     (bind ?str_len (length ?cmp_mng))
-     (bind ?id (nth$ ?head_id $?ids))
-     (if (neq (str-index "[" ?cmp_mng) FALSE) then
-	(bind ?index (str-index "[" ?cmp_mng))
-	(bind ?str (sub-string 1 (- ?index 1) ?cmp_mng))
-        (if (eq ?mng_typ RM) then
-        	(printout ?*hin_mng_file* "(id-HM-source  "?id"  "?str"    Database_compound_phrase_root_mng)" crlf)
-            	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id"  "?str"    Database_compound_phrase_root_mng "(implode$ $?ids)")" crlf)
-        else
-        	(printout ?*hin_mng_file* "(id-HM-source  "?ids"  "?str"    Database_compound_phrase_word_mng)" crlf)
-        	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids  "?id"  "?str"    Database_compound_phrase_word_mng "(implode$ $?ids)")" crlf)
-	)
-     else 
-     	(if (eq ?mng_typ RM) then
-        	(printout ?*hin_mng_file* "(id-HM-source  "?id"  "?cmp_mng"    Database_compound_phrase_root_mng)" crlf)
-               	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id"  "?cmp_mng"    Database_compound_phrase_root_mng "(implode$ $?ids)")" crlf)
-        else
-              	(printout ?*hin_mng_file* "(id-HM-source  "?id"  "?cmp_mng"    Database_compound_phrase_word_mng)" crlf)
-              	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids  "?id"  "?cmp_mng"    Database_compound_phrase_word_mng "(implode$ $?ids)")" crlf)
-        )
-     )
+	(retract ?mng)
+        (bind ?id (nth$ ?head_id $?ids))
+        (print_hindi_mng ?id -  Database_compound_phrase_word_mng $?ids)
+        (printout ?*hin_mng_file* "(id-HM-source  "?id"  "?cmp_mng"    Database_compound_phrase_word_mng)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  "?id"  "?cmp_mng"    Database_compound_phrase_word_mng "(implode$ $?ids)")" crlf)
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+ (defrule database_cmp_phrase_root_mng
+ (declare (salience 8900))
+ (ids-cmp_mng-head-cat-mng_typ-priority $?ids ?cmp_mng ?head_id ?grp_cat RM ?)
+ ?mng<-(meaning_to_be_decided ?head)
+ (test (eq (nth$ ?head_id $?ids) ?head))
+ =>
+	(retract ?mng)
+        (bind ?id (nth$ ?head_id $?ids))
+        (print_hindi_mng ?id -  Database_compound_phrase_root_mng $?ids)
+        (printout ?*hin_mng_file* "(id-HM-source  "?id"  "?cmp_mng"    Database_compound_phrase_root_mng)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id"  "?cmp_mng"    Database_compound_phrase_root_mng "(implode$ $?ids)")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;WSD verb phrase mng
  ;The landlord had to back down .
- (defrule wsd_vrb_phrase_mng_word_mng
- (declare (salience 8701))
+ (defrule wsd_vrb_phrase_word_mng
+ (declare (salience 8800))
  (prep_id-relation-anu_ids ?  kriyA-upasarga  ?id ?id1)
  (affecting_id-affected_ids-wsd_group_word_mng  ?id  ?id1 ?grp_mng)
  ?mng<-(meaning_to_be_decided ?id)
@@ -440,7 +338,7 @@
  ;--------------------------------------------------------------------------------------------------------------
  ;WSD verb phrase mng
  ;The landlord had to back down .
- (defrule wsd_vrb_phrase_mng_root_mng
+ (defrule wsd_vrb_phrase_root_mng
  (declare (salience 8700))
  (prep_id-relation-anu_ids  ? kriyA-upasarga  ?id ?id1)
  (affecting_id-affected_ids-wsd_group_root_mng  ?id  ?id1 ?grp_mng)
@@ -464,8 +362,7 @@
  ?mng<-(meaning_to_be_decided ?id)
  ?mng1<-(meaning_to_be_decided ?id1)
  =>
-	(bind ?vrb_phrase_tmp (str-cat ?rt "_"))
-	(bind ?vrb_phrase(str-cat ?vrb_phrase_tmp ?rt1)) 
+	(bind ?vrb_phrase (str-cat ?rt "_" ?rt1)) 
         (bind ?a (gdbm_lookup "Phrv.gdbm" ?vrb_phrase))
 	(if (neq ?a "FALSE") then
 		(printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?a "   Verb_Phrase_gdbm)" crlf)
@@ -478,74 +375,74 @@
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;If WSD assings mng for word and also considerd it as part of any group ,group mng is considered and word mng will be retracted.  
-  (defrule over_write_word_mng
-  (declare (salience 8501))
-  (affecting_id-affected_ids-wsd_group_word_mng  ?affecting_id  $?affected_ids ?grp_mng)
-  ?f0<-(id-wsd_root_mng ?affecting_id  ?mng)
-  ?f<-(meaning_to_be_decided ?affecting_id)
-  =>
-        (retract ?f ?f0)
-        (printout ?*hin_mng_file* "(id-HM-source   "?affecting_id"   "?grp_mng "  WSD_compound_phrase_word_mng)" crlf)
-        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?affecting_id"   "?grp_mng "  WSD_compound_phrase_word_mng "?affecting_id" "(implode$ $?affected_ids)")" crlf)
-        (bind ?len $?affected_ids)
-        (loop-for-count (?i 1 ?len)
-                        (bind ?j (nth$ ?i $?affected_ids))
-                        (assert (mng_has_been_decided ?j))
-                        (printout ?*hin_mng_file* "(id-HM-source  " ?j "  -    WSD_compound_phrase_word_mng)" crlf)
-        )
-  ) 
- ;--------------------------------------------------------------------------------------------------------------
- ;If WSD assings mng for word and also considerd it as part of any group ,group mng is considered and word mng will be retracted.
-  (defrule over_write_root_mng
-  (declare (salience 8500))
-  (affecting_id-affected_ids-wsd_group_root_mng ?affecting_id  $?affected_ids ?grp_mng)
-  ?f0<-(id-wsd_root_mng ?affecting_id  ?mng)
-  ?f<-(meaning_to_be_decided ?affecting_id )
-  =>
-        (retract ?f ?f0)
-        (printout ?*hin_mng_file* "(id-HM-source   "?affecting_id"   "?grp_mng "  WSD_compound_phrase_root_mng)" crlf)
-        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?affecting_id"   "?grp_mng "  WSD_compound_phrase_root_mng "?affecting_id" "(implode$ $?affected_ids)")" crlf)
-        (bind ?len $?affected_ids)
-        (loop-for-count (?i 1 ?len)
-                        (bind ?j (nth$ ?i $?affected_ids))
-                        (assert (mng_has_been_decided ?j))
-                        (printout ?*hin_mng_file* "(id-HM-source  " ?j "  -    WSD_compound_phrase_root_mng)" crlf)
-        )
-  )
-  ;-------------------------------------------------------------------------------------------------------------- 
-  (defrule over_write_word
-  (declare (salience 8401))
-  (affecting_id-affected_ids-wsd_group_word_mng  ?affecting_id  $?affected_ids ?grp_mng)
-  ?f<-(meaning_to_be_decided ?id)
-  (test (or (eq ?id ?affecting_id)(member$ ?id $?affected_ids)))
-  =>
-        (retract ?f)
-        (if (eq ?id ?affecting_id) then
-        (printout ?*hin_mng_file* "(id-HM-source   "?affecting_id"  "?grp_mng"  WSD_word_mng)" crlf)
-        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?affecting_id"  "?grp_mng"  WSD_word_mng "?affecting_id")" crlf)
-        else
-        (printout ?*hin_mng_file* "(id-HM-source   "?id"    -  WSD_word_mng)" crlf)
-        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"    -  WSD_word_mng "?id")" crlf)
-        )
-  )
-  ;--------------------------------------------------------------------------------------------------------------
- (defrule over_write_root
- (declare (salience 8400))
- (affecting_id-affected_ids-wsd_group_root_mng  ?affecting_id  $?affected_ids ?grp_mng) 
- ?f<-(meaning_to_be_decided ?id)
- (test (or (eq ?id ?affecting_id)(member$ ?id $?affected_ids)))
- =>
-       (retract ?f)
-       (if (eq ?id ?affecting_id) then
-       (printout ?*hin_mng_file* "(id-HM-source   "?affecting_id"  "?grp_mng"  WSD_root_mng)" crlf)
-       (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?affecting_id"  "?grp_mng"  WSD_root_mng "?affecting_id")" crlf)
-       else
-       (printout ?*hin_mng_file* "(id-HM-source   "?id"    -  WSD_root_mng)" crlf)
-       (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"    -  WSD_root_mng "?id")" crlf))
- )
+;  (defrule over_write_word_mng
+;  (declare (salience 8501))
+;  (affecting_id-affected_ids-wsd_group_word_mng  ?affecting_id  $?affected_ids ?grp_mng)
+;  ?f0<-(id-wsd_root_mng ?affecting_id  ?mng)
+;  ?f<-(meaning_to_be_decided ?affecting_id)
+;  =>
+;        (retract ?f ?f0)
+;        (printout ?*hin_mng_file* "(id-HM-source   "?affecting_id"   "?grp_mng "  WSD_compound_phrase_word_mng)" crlf)
+;        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?affecting_id"   "?grp_mng "  WSD_compound_phrase_word_mng "?affecting_id" "(implode$ $?affected_ids)")" crlf)
+;        (bind ?len $?affected_ids)
+;        (loop-for-count (?i 1 ?len)
+;                        (bind ?j (nth$ ?i $?affected_ids))
+;                        (assert (mng_has_been_decided ?j))
+;                        (printout ?*hin_mng_file* "(id-HM-source  " ?j "  -    WSD_compound_phrase_word_mng)" crlf)
+;        )
+;  ) 
+; ;--------------------------------------------------------------------------------------------------------------
+; ;If WSD assings mng for word and also considerd it as part of any group ,group mng is considered and word mng will be retracted.
+;  (defrule over_write_root_mng
+;  (declare (salience 8500))
+;  (affecting_id-affected_ids-wsd_group_root_mng ?affecting_id  $?affected_ids ?grp_mng)
+;  ?f0<-(id-wsd_root_mng ?affecting_id  ?mng)
+;  ?f<-(meaning_to_be_decided ?affecting_id )
+;  =>
+;        (retract ?f ?f0)
+;        (printout ?*hin_mng_file* "(id-HM-source   "?affecting_id"   "?grp_mng "  WSD_compound_phrase_root_mng)" crlf)
+;        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?affecting_id"   "?grp_mng "  WSD_compound_phrase_root_mng "?affecting_id" "(implode$ $?affected_ids)")" crlf)
+;        (bind ?len $?affected_ids)
+;        (loop-for-count (?i 1 ?len)
+;                        (bind ?j (nth$ ?i $?affected_ids))
+;                        (assert (mng_has_been_decided ?j))
+;                        (printout ?*hin_mng_file* "(id-HM-source  " ?j "  -    WSD_compound_phrase_root_mng)" crlf)
+;        )
+;  )
+;  ;-------------------------------------------------------------------------------------------------------------- 
+;  (defrule over_write_word
+;  (declare (salience 8401))
+;  (affecting_id-affected_ids-wsd_group_word_mng  ?affecting_id  $?affected_ids ?grp_mng)
+;  ?f<-(meaning_to_be_decided ?id)
+;  (test (or (eq ?id ?affecting_id)(member$ ?id $?affected_ids)))
+;  =>
+;        (retract ?f)
+;        (if (eq ?id ?affecting_id) then
+;        (printout ?*hin_mng_file* "(id-HM-source   "?affecting_id"  "?grp_mng"  WSD_word_mng)" crlf)
+;        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?affecting_id"  "?grp_mng"  WSD_word_mng "?affecting_id")" crlf)
+;        else
+;        (printout ?*hin_mng_file* "(id-HM-source   "?id"    -  WSD_word_mng)" crlf)
+;        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"    -  WSD_word_mng "?id")" crlf)
+;        )
+;  )
+;  ;--------------------------------------------------------------------------------------------------------------
+; (defrule over_write_root
+; (declare (salience 8400))
+; (affecting_id-affected_ids-wsd_group_root_mng  ?affecting_id  $?affected_ids ?grp_mng) 
+; ?f<-(meaning_to_be_decided ?id)
+; (test (or (eq ?id ?affecting_id)(member$ ?id $?affected_ids)))
+; =>
+;       (retract ?f)
+;       (if (eq ?id ?affecting_id) then
+;       (printout ?*hin_mng_file* "(id-HM-source   "?affecting_id"  "?grp_mng"  WSD_root_mng)" crlf)
+;       (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?affecting_id"  "?grp_mng"  WSD_root_mng "?affecting_id")" crlf)
+;       else
+;       (printout ?*hin_mng_file* "(id-HM-source   "?id"    -  WSD_root_mng)" crlf)
+;       (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"    -  WSD_root_mng "?id")" crlf))
+; )
  ;--------------------------------------------------------------------------------------------------------------
  (defrule idiom_word_mng
- (declare (salience 8000))
+ (declare (salience 8500))
  (id-idiom_word_mng ?id ?HM)
  ?mng<-(meaning_to_be_decided ?id)
  =>
@@ -555,18 +452,17 @@
  )
  ;--------------------------------------------------------------------------------------------------------------
  (defrule wsd_word_mng
- (declare (salience 7500))
+ (declare (salience 8400))
  ?mng<-(meaning_to_be_decided ?id)
- (id-wsd_word_mng ?id $?hword)
+ (id-wsd_word_mng ?id ?h_word)
  =>
 	(retract ?mng)
-	(bind ?h_word (implode$ $?hword))
 	(printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?h_word "    WSD_word_mng)" crlf)
 	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?h_word "    WSD_word_mng "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  (defrule idiom_root_mng
- (declare (salience 6500))
+ (declare (salience 8300))
  (id-idiom_root_mng ?id ?HM)
  ?mng<-(meaning_to_be_decided ?id)
  =>
@@ -576,12 +472,11 @@
  )
  ;--------------------------------------------------------------------------------------------------------------
  (defrule wsd_root_mng
- (declare (salience 6000))
+ (declare (salience 8200))
  ?mng<-(meaning_to_be_decided ?id)
- (id-wsd_root_mng ?id $?hword)
+ (id-wsd_root_mng ?id ?h_word)
  =>
 	(retract ?mng)
-	(bind ?h_word (implode$ $?hword))
 	(printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?h_word "   WSD_root_mng)" crlf)
 	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?h_word "   WSD_root_mng "?id")" crlf)
  )
@@ -589,7 +484,7 @@
  ;Added by Shirisha Manju (09-05-13)
  ; We see leaves falling from trees and water flowing [down] a dam. 
  (defrule modify_cat_for_particle
- (declare (salience 5550))
+ (declare (salience 8100))
  ?f0<-(id-cat_coarse ?id particle)
  (meaning_to_be_decided ?id)
  =>
@@ -602,47 +497,37 @@
  ;Assuming first meaning always has 'Defualt'.
  ;Modified by Shirisha Manju (04-02-12) removed if condition to check for "number" in action part instead added in rule part
  (defrule default_hindi_mng-same-cat
- (declare (salience 5500))
+ (declare (salience 8000))
  (id-root ?id ?rt)
  ?mng<-(meaning_to_be_decided ?id)
  (id-cat_coarse ?id ?cat)
  (test (neq (numberp ?rt) TRUE))
  (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?rt "_" ?cat)) "FALSE"))
  =>
-        (bind ?a (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?rt "_" ?cat)))
-        (if (neq ?a "FALSE") then
-	   (if (neq (str-index "/" ?a) FALSE) then  
-		(bind ?h_mng (sub-string  1 (- (str-index "/" ?a) 1) ?a))
-            else
-                (bind ?h_mng  ?a)
-           )
-        (retract ?mng)
-        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?h_mng"   Default)" crlf)
-        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?h_mng"   Default "?id")" crlf)
-	)
+	(bind ?f_mng (get_first_mng ?rt ?cat default-iit-bombay-shabdanjali-dic.gdbm))
+        (if (neq ?f_mng "FALSE") then
+                (retract ?mng)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default "?id")" crlf)
+        )
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;The guard made Dipu halt, and helped the Princess off his back.
  ;Added by Shirisha Manju (14-05-13) Suggested by Chaitanya Sir
  (defrule get_PropN_mng_with_prev_word_the
- (declare (salience 5450))
+ (declare (salience 7900))
  (id-cat_coarse ?id PropN)
  ?mng<-(meaning_to_be_decided ?id)
  (id-word =(- ?id 1) the)
  (id-root ?id ?rt)
  (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat (lowcase ?rt) "_noun")) "FALSE"))
  =>
-	(bind ?a (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat (lowcase ?rt) "_noun")))
-        (if (neq ?a "FALSE") then
-                (if (neq (str-index "/" ?a) FALSE) then
-                        (bind ?h_mng (sub-string  1 (- (str-index "/" ?a) 1) ?a))
-                else
-                        (bind ?h_mng  ?a)
-                )
-        	(retract ?mng)
-        	(printout ?*hin_mng_file* "(id-HM-source   "?id"   "?h_mng"   Default)" crlf)
-        	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?h_mng"   Default "?id")" crlf)
-	)
+	(bind ?f_mng (get_first_mng (lowcase ?rt) noun default-iit-bombay-shabdanjali-dic.gdbm))
+        (if (neq ?f_mng "FALSE") then
+                (retract ?mng)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default "?id")" crlf)
+        )
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja (01-08-12).
@@ -650,7 +535,7 @@
  ;Also asserting a fact (sen_type-id-phrase Default_mng_with_different_category) as a warning message in catastrophe.dat
  ;Assuming first meaning always has 'Defualt'.
  (defrule default_hindi_mng-different-cat
- (declare (salience 5400))
+ (declare (salience 7800))
  (id-root ?id ?rt)
  ?mng<-(meaning_to_be_decided ?id)
  (id-cat_coarse ?id ?cat)
@@ -659,22 +544,17 @@
  (test (neq ?cat ?cat1))
  (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?rt "_" ?cat1)) "FALSE"))
  =>
-        (bind ?a (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?rt "_" ?cat1)))
-        (if (neq ?a "FALSE") then
-        	(if (neq (str-index "/" ?a) FALSE) then
-                	(bind ?h_mng (sub-string  1 (- (str-index "/" ?a) 1) ?a))
-                else
-                 	(bind ?h_mng  ?a)
-        	)
-        (retract ?mng)
-        (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?h_mng"   Default)" crlf)
-        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?h_mng"   Default "?id")" crlf)
-	(printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?rt")" crlf)
-	)
+	(bind ?f_mng (get_first_mng ?rt ?cat1 default-iit-bombay-shabdanjali-dic.gdbm))
+        (if (neq ?f_mng "FALSE") then
+                (retract ?mng)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default "?id")" crlf)
+	        (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?rt")" crlf)
+        )
  )
  ;--------------------------------------------------------------------------------------------------------------
   (defrule test_for_PropN
-  (declare (salience 5000))
+  (declare (salience 7700))
   (id-cat_coarse ?id PropN)
   (id-word ?id ?word)
   (id-original_word ?id  ?original_wrd)
@@ -693,7 +573,7 @@
  ;That would be the lowest level since the early 1970s.
  ;Seven of nine states have grown each year since 1980, including New York, which lost 4% of its population during the 1970s.
  (defrule default_mng
- (declare (salience 1000))
+ (declare (salience 7600))
  (id-original_word ?id  ?original_wrd)
  ?mng<-(meaning_to_be_decided ?id)
  =>
@@ -703,7 +583,7 @@
  )
  ;--------------------------------------------------------------------------------------------------------------
  (defrule end
- (declare (salience -6000))
+ (declare (salience 100))
  =>
 	(close ?*hin_mng_file*)
  )

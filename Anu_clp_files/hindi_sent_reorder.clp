@@ -15,16 +15,34 @@
  (assert (id-root))
  (assert (id-cat_coarse))
  (assert (id-cat))
- (assert (root-verbchunk-tam-chunkids))
  (assert (verb_type-verb-kriyA_mUla-tam))
  (assert (id-kA_vib-gen-num-case))
  (assert (id-cat-mng-gen-num-per-case-vib ))
  (assert (conj_head-left_head-right_head))
  (assert (expr))
+ (assert (id-eng-src))
+ (assert (id-root-category-suffix-number))
+ (assert (id-tam_type))
+ (assert (kriyA_id-object2_viBakwi))
+ (assert (kriyA_id-object1_viBakwi))
+ (assert (kriyA_id-object_viBakwi))
+ (assert (kriyA_id-subject_viBakwi))
+ (assert (id-H_vib_mng))
+ (assert (make_verbal_noun))
+ (assert (root_id-TAM-vachan))
+ (assert (id-wsd_number) )
+ (assert (affecting_id-affected_ids-wsd_group_root_mng))
+ (assert (affecting_id-affected_ids-wsd_group_word_mng))
+ (assert (id-E_tam-H_tam_mng))
+ (assert (meaning_has_been_decided))
+ (assert (id-wsd_root_mng))
+ (assert (id-wsd_word_mng))
+ (assert (id-preceeding_part_of_verb) )
+ (assert (id-wsd_root) )
  )
  ;============================================ Stanford Parser Rules ===================================================
 
- ;-------------------------------- new  word/id  insertion rules ------------------------------------------------------------
+ ;-------------------------------- new_word/new_id insertion rules ------------------------------------------------------
  ;The girl you met yesterday is here. The dog I chased was black.
  (defrule insert_jo_samAnAXikaraNa
  (declare (salience 1100))
@@ -234,7 +252,7 @@
  ; bet in the list suggested my Meena(05-04-11) Ex:Alan bet me five dollars Clinton would lose the election. 
  (defrule rule_for_ki
  (declare (salience 10))
- ?f1<-(id-root ?kri tell|guess|see|think|say|know|suppose|wonder|hope|bet)
+ ?f1<- (id-root-category-suffix-number  ?kri tell|guess|see|think|say|know|suppose|wonder|hope|bet ? ? ?)
  (prep_id-relation-anu_ids ?  kriyA-subject ?kri  ?)
  (prep_id-relation-anu_ids ?  kriyA-subject ?kri_1 ?)
  ?f0 <-(hindi_id_order $?pre ?kri $?post)
@@ -252,8 +270,8 @@
  ; Added by Shirisha Manju (3-02-11)
  ;The big question on everybody's mind is who killed OJ.
  (defrule rule_for_ki_1
- (id-root ?kri be|know) ;added know (25-02-11)
- ?f1<-(id-root =(+ ?kri 1) who)
+ (id-root-category-suffix-number  ?kri be|know ? ? ?) ;added know (25-02-11)
+ ?f1<-(id-root-category-suffix-number  =(+ ?kri 1) who ? ? ?)
  (prep_id-relation-anu_ids  ? kriyA-subject  ?kri    ?)
  (prep_id-relation-anu_ids  ? kriyA-subject  ?kri_1  ?)
  ?f0 <-(hindi_id_order $?pre ?kri  $?post)
@@ -270,7 +288,7 @@
  ; Added by Shirisha Manju (3-02-11)
  ;Guess who I saw at the party last night! 
  (defrule rule_for_ki_2
- ?f1<-(id-root ?id guess )
+ ?f1<-(id-root-category-suffix-number  ?id guess ? ? ?)
  (prep_id-relation-anu_ids ?  AjFArWaka_kriyA ?id)
  ?f0 <-(hindi_id_order $?pre ?id $?post)
  =>
@@ -281,7 +299,7 @@
  ;------------------------------------------------------------------------------------------------------------------
  ;Anne told me I would almost certainly be hired.
  (defrule rule_for_ki_3
- ?f1<-(id-root ?kri tell)
+ ?f1<-(id-root-category-suffix-number  ?kri tell ? ? ?)
  (prep_id-relation-anu_ids ? kriyA-subject  ?kri    ?sub)
  (prep_id-relation-anu_ids ? kriyA-object   ?kri    ?obj)
  (prep_id-relation-anu_ids ? kriyA-subject  ?kri_1  ?)
@@ -301,7 +319,7 @@
  ; I really like the way you do your hair .
  (defrule rule_for_jisa_prakAra_se
  (prep_id-relation-anu_ids  ? kriyA-subject  ?kri ?sub)
- ?f1<- (id-root  =(- ?sub 1) way)
+ ?f1<-(id-root-category-suffix-number  =(- ?sub 1) way ? ? ?)
  (or (prep_id-relation-anu_ids ? kriyA-kriyA_viSeRaNa|kriyA-object ?kri1  =(- ?sub 1))(prep_id-relation-anu_ids ? kriyA-object_2  ?kri1  ?way))
  ?f0 <-(hindi_id_order $?d ?sub $?d1)
  =>
@@ -442,6 +460,34 @@
   	(printout  ?*DBUG* "(Rule_Name-ids   insert_nahIM   (hindi_id_order  "(implode$ (create$ $?list  ?id $?list1 nahIM ?kri)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
+ ;Mary is taller than Max.
+ ;Added by Shirisha Manju (03-08-13)  Suggested by Chaitanya Sir
+ ;At longer wavelengths (i.e., at lower frequencies), the antennas have large physical size and they are located on or very near to the ground.
+ ;In short, the greater the rate of change of momentum, the greater is the force.
+ (defrule insert_aXika_for_adj_er
+ (declare (salience 10))
+ ?f0<-(id-root-category-suffix-number ?id ? adjective er ?)
+ (not (id-eng-src ?id ? Word_mng))
+ ?f<-(hindi_id_order $?list ?id $?list1)
+ =>
+        (retract ?f ?f0)
+	(assert (hindi_id_order  $?list aXika ?id $?list1))
+  	(printout  ?*DBUG* "(Rule_Name-ids   insert_aXika_for_adj_er   (hindi_id_order  "(implode$ (create$ $?list aXika ?id $?list1 )) ")" crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------
+ ;The giraffe has the longest neck of any land mammal.
+ ;Added by Shirisha Manju (18-06-12)  Suggested by Chaitanya Sir 
+ (defrule insert_sabase_aXika_adj_est
+ (declare (salience 10))
+ ?f0<-(id-root-category-suffix-number ?id ? adjective est ?)
+ (not (id-eng-src ?id ? Word_mng))
+ ?f<-(hindi_id_order $?list ?id $?list1)
+ =>
+        (retract ?f ?f0)
+	(assert (hindi_id_order  $?list sabase aXika ?id $?list1))
+        (printout  ?*DBUG* "(Rule_Name-ids   insert_sabase_aXika_adj_est   (hindi_id_order  "(implode$ (create$ $?list sabase aXika ?id $?list1 )) ")" crlf)
+ )
+ ;-------------------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju(7-11-12) Suggested by Chaitanya Sir
  ; Free fall is thus a case of motion with uniform acceleration. 
  (defrule mv_thus_to_sent_start

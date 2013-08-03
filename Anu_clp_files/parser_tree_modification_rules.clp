@@ -165,18 +165,24 @@
  ;Added by Mahalaxmi (15-09-12)
  ;It is mainly through light and the sense of vision that we [know and interpret] the world around us.
  (defrule introduce_new_VP_for_CC_node
- ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot $?pre ?CC ?vp ?np $?daut)
+ ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot ?f_node $?pre ?CC ?vp ?np $?daut)
  (Node-Category  ?Mot  VP)
  (Node-Category  ?CC  CC)
+ (Head-Level-Mother-Daughters ? ? ?Mot1 $? ?Mot  $?)
+ (not (Node-Category ?Mot1 Inf_VP));Added by Manju (29-07-13) In our experience, force is needed to push, carry or throw objects, deform or break them.
  (Node-Category  ?vp   MD|VB|VBN|VBZ|VBD|VBP|VBG)
+ (Node-Category  ?f_node  ?node)
+ (Head-Level-Mother-Daughters ?and ? ?CC ?)
  =>
         (retract ?f0)
         (bind ?*count* (+ ?*count* 1))
-        (bind ?v (explode$ (str-cat "VPc" ?*count*)))
+       ; (bind ?v (explode$ (str-cat "VPc" ?*count*)))
+        (bind ?v (explode$ (str-cat ?and"-"?node ?*count*)))
+        (bind ?n_cat (explode$ (str-cat ?and"-"?node )))
         (bind ?l (+ ?lev 1))
         (assert (Head-Level-Mother-Daughters ?head ?lev ?Mot ?v ?np $?daut))
-        (assert (Head-Level-Mother-Daughters ?head ?l ?v $?pre ?CC ?vp))
-        (assert (Node-Category ?v VP))
+        (assert (Head-Level-Mother-Daughters ?head ?l ?v ?f_node $?pre ?CC ?vp))
+        (assert (Node-Category ?v ?n_cat))
 	(assert (modifiy_node_levels $?pre ?CC ?vp))
  )
  ;-----------------------------------------------------------------------------------------------------------------------

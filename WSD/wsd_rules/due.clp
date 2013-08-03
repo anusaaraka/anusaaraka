@@ -1,18 +1,18 @@
 
 ;Modified by Meena(24.02.10)
 ;Added by Meena(20.11.09)
-;It had only a tenth of the sun's mass but showed some wobbling which could be due to planets in its orbit . 
+;It had only a tenth of the sun's mass but showed some wobbling which could be [due to] planets in its orbit . 
 (defrule due0
 (declare (salience 5000))
 (id-root ?id due)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 to)
+(id-word =(+ ?id 1) to);Modified ?id1 as (+ ?id 1) by Manju (01-08-13) Ex: But the rest of the body continues "to" move forward "due to" inertia. 
 (or(viSeRya-to_saMbanXI ?id ?)(kriyA-due_to_saMbanXI ?id2 ?));added kriyA-due_to_saMbanXI for stanford purpose Roja(09-02-11)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 ke_kAraNa))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(+ ?id 1) ke_kAraNa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " due.clp	due0  "  ?id "  " ?id1 "  ke_kAraNa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " due.clp	due0  "  ?id "  " (+ ?id 1) "  ke_kAraNa  )" crlf))
 )
 
 
