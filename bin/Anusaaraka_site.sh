@@ -1,7 +1,5 @@
 #/bin/sh
- #source ~/.bash_profile
- export HOME_anu_tmp=$HOME/drupal-6.10-1/apps/drupal/htdocs/anu/tmp_anu_dir
- source ~/.bashrc
+ source ~/.bash_profile
 
  export LC_ALL=
  export LC_ALL=en_US.UTF-8
@@ -13,7 +11,7 @@
  fi
 
 # MYPATH1=`pwd`
-# MYPATH1=$HOME_anu_tmp/tmp/$1_tmp
+ MYPATH1=$HOME_anu_tmp/tmp/$1_tmp
 
  MYPATH=$HOME_anu_tmp
  cp $1 $MYPATH/. 

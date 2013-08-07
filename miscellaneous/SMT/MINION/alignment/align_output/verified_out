@@ -129,7 +129,7 @@ Multiple adjective senses are available for sad. WSD rule is required
 
 Hindi meaning using Stanford parser 2.28
 He said to his friends, I wish to stay with Mangal and Sukhi for a while. 
-usane kahA ki usake miwroM ko, mEM kuCa_samaya waka PropN-mangal-PropN vAle Ora PropN-sukhi-PropN vAlA rahane ke lie icCA karawA hUz.
+usane kahA ki usake miwroM ko, mEM kuCa_samaya waka PropN-mangal-PropN Ora PropN-sukhi-PropN vAlA rahane ke lie icCA karawA hUz.
 
 Hindi meaning using Stanford parser 2.29
 Awake so early? 

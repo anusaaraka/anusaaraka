@@ -1,37 +1,14 @@
-1. Pre requisites ::
-   ==============
-   stanford-parser (Version 2.0.1 or latter)
-   Download http://nlp.stanford.edu/software/lex-parser.shtml
-   bison
-   clips
-   flex
-   java (version: 1.6 or above)
+ Pre requisites ::
+ ==============
+   anu_testing software need to be installed successfully.
 
-2. Set the path for Java in .bashrc/.bash_profile 
-	export PATH= path for java
-         Ex:   export PATH=$HOME/jdk1.6.0_03/bin:$PATH
+   Note: This version handles only one sentence at a time.
+	 A sample input file named "test" is provided with this package. 
+ -----------------------------------------------------------------------------
+ To view Derived Tree, Derivation Tree & Dependecy Tree ::
+ ======================================================
 
-3. Set the path for Stanford parser in .bashrc/.bash_profile
-        export STANFORD_PATH=path for stanford parser
-
-        Ex: export STANFORD_PATH=$HOME/stanford-parser-full-2013-06-20
-
-4. Source bashrc 
-         source ~/.bashrc
-
- Note: This version handles only one sentence at a time. A sample input file named "test" is provided with this package. 
--------------------------------------------------------------------------------------------------------------------
-To view Derived Tree, Derivation Tree & Dependecy Tree ::
-=========================================================
-
-Inside tree_viewer directory :: 
-----------------------------
-
-1. Compile programmes:
- 
-         bash compile.sh
-
-2. Run view_trees.sh:
+ Run view_trees.sh:
          bash view_trees.sh <input-file>
            Ex:  bash view_trees.sh test
   
