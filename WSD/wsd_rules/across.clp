@@ -54,6 +54,7 @@
 (id-root ?id across)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-across_saMbanXI  =(- ?id 1) ?id1)
+(id-word ?id1 sky|fog)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id meM))
@@ -77,6 +78,21 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  across.clp 	across4   "  ?id "  ke_saBI_ora )" crlf))
 )
+
+;Added by Aditya and Hardik (21-06-2013),IIT(BHU) batch 2012-2017.
+;I am going across the border.
+(defrule across5
+(declare (salience 4600))
+(id-root ?id across)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-across_saMbanXI  =(- ?id 1) ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ke_usa_pAra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  across.clp    across5   "  ?id "  ke_usa_pAra )" crlf))
+)
+
 
 ;"across","Prep","1.saBI_ora"
 ;The President's address to the nation was broadcasted across the country.

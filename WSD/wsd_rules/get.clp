@@ -137,6 +137,8 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 along)
 (kriyA-upasarga ?id ?id1)
+(or (kriyA-without_saMbanXI ?id ?id2)(kriyA-with_saMbanXI ?id ?id2))
+(id-word ?id2 help)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -439,36 +441,74 @@
 
 ;There is a problem in the wire-we have to get an electrician in.
 ;wAra meM kuCa KarAbI hE,hameM eka bijalI vAle kI AvaSyakawA hE
+;Modified by Shirisha Manju (03-08-13) Suggested by Chaitanya Sir
+;Removed kriyA-upasarga relation, instead added kriyA-into_saMbanXI and saMbanXI list
 (defrule get25
 (declare (salience 2400))
 (id-root ?id get)
+(id-word =(+ ?id 1) into)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 into)
-(kriyA-upasarga ?id ?id1)
-(kriyA-object ?id ?)
+(kriyA-into_saMbanXI  ?id ?id1)
+(id-word ?id1 shirt|burka|gown|skirt|suit|sweater|trouser|pant|robe)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 pahana))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id (+ ?id 1) pahana))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " get.clp	get25  "  ?id "  " ?id1 "  pahana  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " get.clp	get25  "  ?id "  " (+ ?id1 1) "  pahana  )" crlf))
 )
-
 ;It's very difficult to get into this tight shirt.
 ;isa waMga kamIjZa ko pahananA bahuwa kaTina hE
-(defrule get26
-(declare (salience 2300))
+
+
+;Added by Aditya and Hardik, IIT(BHU)
+;I want to get into a good college.
+(defrule get_into
+(declare (salience 2400))
 (id-root ?id get)
+(id-root =(+ ?id 1) into)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 into)
-(kriyA-upasarga ?id ?id1)
-(kriyA-object ?id ?)
-(id-cat_coarse ?id verb)
+(kriyA-into_saMbanXI ?id ?id1)
+(or (id-word ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "place.gdbm" ?str)))(id-word ?id1 bus|car|train|flight))
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 padZa_jA))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(+ ?id 1) meM_jA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " get.clp	get26  "  ?id "  " ?id1 "  padZa_jA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " get.clp  get_into  "  ?id "  " (+ ?id 1) "  meM_jA  )" crlf))
+)
+
+
+;Added by Aditya and Hardik, IIT(BHU)
+;I do not want to get into problem.
+;It is easy to get into a fight.
+(defrule get_into1
+(declare (salience 2400))
+(id-root ?id get)
+?mng <-(meaning_to_be_decided ?id)
+(id-word =(+ ?id 1) into)
+(kriyA-into_saMbanXI ?id ?id1)
+(id-root ?id1 problem|situation|war|fight|illusion|argument)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(+ ?id 1) meM_ulaJa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " get.clp  get_into1  "  ?id "  " (+ ?id 1) "  meM_ulaJa  )" crlf))
+)
+
+
+(defrule get26
+(declare (salience 2400))
+(id-root ?id get)
+?mng <-(meaning_to_be_decided ?id)
+(id-word =(+ ?id 1) into)
+(id-cat_coarse ?id verb)
+(kriyA-into_saMbanXI ?id ?id1)
+(id-root ?id1 trouble)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(+ ?id 1) padZa_jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " get.clp	get26  "  ?id "  " (+ ?id 1) "  padZa_jA  )" crlf))
 )
 
 ;You'll get into a trouble if you don't do this work.

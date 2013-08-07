@@ -41,7 +41,7 @@
 
 
 ;(27.1.11) to be checked
-;Modified by Shirisha Manju(30-05-13) Added "is" in the list
+;Modified by Shirisha Manju(30-05-13) Added "find" in the list
 ;The holy book is found in the temples. 
 (defrule is_en_tam01
 (declare (salience 4900))

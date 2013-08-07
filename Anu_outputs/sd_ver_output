@@ -282,6 +282,7 @@ Multiple adjective senses are available for likely. WSD rule is required
 
 Hindi meaning using Stanford parser 2.65
 Have you ever seen the Pacific? 
+kyA Apane praSAnwa mahAsAgara ko kaBI BI xeKA hE?
 kyA Apa praSAnwa mahAsAgara ko kaBI BI xeKa cuke hEM?
 kyA Apa kaBI BI praSAnwa mahAsAgara ko xeKa cuke hEM?
 
@@ -2055,7 +2056,7 @@ rAwa hE Ora canxramA AsamAna meM camaka rahA hE.
 
 Hindi meaning using Stanford parser 4.63
 The swimmer swam across the river. 
-wErAka naxI meM wErA.
+wErAka naxI ke usa pAra wErA.
 
 Hindi meaning using Stanford parser 4.64
 I heard from him twice since he went away. 
@@ -2114,7 +2115,7 @@ Multiple adjective senses are available for beautiful. WSD rule is required
 
 Hindi meaning using Stanford parser 4.76
 Things had just gone too far. 
-parisWiwiyAz kuCa jyAxA hI KarAba ho gayI.
+parisWiwiyAz kuCa jyAxA hI KarAba ho gayI .
 
 Hindi meaning using Stanford parser 4.77
 SOUTH AFRICA FREED the ANC's Sisulu and seven other political prisoners. 
@@ -2137,7 +2138,7 @@ unako kArya karane xo.
 
 Hindi meaning using Stanford parser 4.81
 The Hawa mahal was built by the Maharaja Sawai Pratap Singh in 1799 AD and Lal Chand Usta was the architect. 
-Hawa mahal 1799 EdI meM mahArAjA PropN-sawai-PropN PropN-pratap-PropN PropN-singh-PropN ke xvArA banAyA gayA WA Ora PropN-lal-PropN PropN-chand-PropN PropN-usta-PropN vAswukAra WA.
+Hawa mahal 1799 krIswa paScAwa meM mahArAjA PropN-sawai-PropN PropN-pratap-PropN PropN-singh-PropN ke xvArA banAyA gayA WA Ora PropN-lal-PropN PropN-chand-PropN PropN-usta-PropN vAswukAra WA.
 
 Hindi meaning using Stanford parser 4.82
 He is not related to me. 
@@ -2212,6 +2213,27 @@ Hindi meaning using Stanford parser 4.98
 A good enough actor can do it. 
 eka yogya aBinewA yaha kara sakawA hE.
 Multiple adjective senses are available for good. WSD rule is required 
+
+Hindi meaning using Stanford parser 4.99
+I am going across the border. 
+mEM sImA ke usa pAra jA rahA hUz.
+
+Hindi meaning using Stanford parser 4.100
+The butcher's shop is across the street. 
+kasAI kI xukAna sadaka ke usa pAra hE.
+
+Hindi meaning using Stanford parser 5.1
+I can not get along without some help. 
+mEM WodI sahAyawA ke binA Age_nahIM_baDa sakawA hUz.
+
+Hindi meaning using Stanford parser 5.2
+I do not want to get into problem. 
+mEM samasyA meM ulaJanA nahIM cAhawA hUz.
+
+Hindi meaning using Stanford parser 5.3
+It is easy to get into a fight. 
+ladAI meM ulaJanA AsAna hE.
+Multiple adjective senses are available for easy. WSD rule is required 
 
 Calling Transliteration
 Calling Interface related programs

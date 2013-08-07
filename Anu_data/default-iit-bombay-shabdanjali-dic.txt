@@ -3467,7 +3467,7 @@ ad-infinitum_adverb	binA_anwa_ke
 ad-lib_adjective	binA_wEyArI_ke
 ad-lib_verb	binA_wEyArI_ke_bola[aBinaya_karanA]/wawkAla_BARaNa_xe/binA_wEyArI_ke_xe/binA_wEyArI_ke_hI_sunA/binA_wEyArI_ke_bola
 ad_UNDEFINED	edI
-ad_noun	vijFApana
+ad_noun	krIswa_paScAwa/vijFApana
 ada_UNDEFINED	e_dI_e
 adage_noun	kahAvawa/lokokwi
 adages_UNDEFINED	kahAvawa
@@ -8773,6 +8773,7 @@ bazaars_UNDEFINED	bAjAra
 bazar_UNDEFINED	bAjAra
 bazars_UNDEFINED	bAjAra
 bazooka_noun	bajUkA
+bc_noun	krIswa_pUrva
 bcc_UNDEFINED	bI_sI_sI
 bcnf_UNDEFINED	bI_sI_ena_ePa
 be-descended-from_verb	kA_vaMSaja_ho
