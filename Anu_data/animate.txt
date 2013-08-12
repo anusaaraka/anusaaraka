@@ -20,3 +20,5 @@ boy	1
 girl	1
 dog	1
 man	1
+examiner	1
+candidate	1

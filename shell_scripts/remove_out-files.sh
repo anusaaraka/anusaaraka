@@ -39,7 +39,7 @@
 
  cd $HOME_anu_test/bin
  rm -f myclips
- rm -f *.bin  wx2wx-normal.out wx2wx-small.out wx_utf8
+ rm -f *.bin  wx2wx-normal.out wx2wx-small.out wx_utf8 ir ir_no@
 
  cd $HOME_anu_test/Anu/stdenglish
  make clean

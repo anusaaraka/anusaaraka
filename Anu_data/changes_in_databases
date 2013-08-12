@@ -282,7 +282,9 @@
   changes in animate_list.txt
   ===========================
   1. Added      vixyArWI  ----  Suggested by Manju Eg: The school admits only 50 students at a time .
-		saba	  ----  Added by Roja(08-08-12))
+		saba	  ----  by Roja(08-08-12))
+		examiner  ---- 	 "(12-08-13)Suggested by Preeti ji LTRC Ex: The examiners passed all the candidates. 
+	        candidate ----   " 	"		"		"		"
   2. Removed    mUrKa, mUrKa vyakwi ---- Suggested by Meenaji (29-04-10)
 
   changes in inanimate.txt
@@ -577,6 +579,10 @@ Modified:
 	8. Replaced pattern '_-'  and '-_'  with  '_'   	Ex: artistries_UNDEFINED    kalA_-kOSala   as  kalA_kOSala
 	9. '_' at begging or end of the meaning are removed 	Ex: Derby_noun   dArbI_   as  dArbI
 	10. Removed "'s" and "s'" entries 			Ex: ABC's_noun	prAWamika_jFAna		(By Roja 26-07-13)
+	11. Replaced single word meanings ending with 'aa' as 'a'		(By Roja 09-08-13 Suggested by Chaitanya Sir)
+		Ex: AvaNtanaa
+	12. Replaced multi word meanings ending with 'aa' as 'a'		(		"	"		    )
+		Ex: BIwarI_BAgaa/
 
     2. Modifying spelling of the existing word list:
        --------------------------------------------
@@ -666,6 +672,10 @@ Modified:
        	82. input_verb		kampyUtara_meM_`saMgaNana_karanA 	as	kampyUtara_meM_detA_dAlanA
 	83. tired_adjective     WakA			as	WakA_huA        (Suggested by Chaitanya Sir 19-07-13 )
 	84. thursday_UNDEFINED	vqhaspawibAra		as	bqhaspawivAra	(	By Shirisha Manju 20-07-13   )
+	85. inessential_adjective  waayaWArWa		as	ayaWArWa	(By Roja 09-08-13 Suggested by Chaitanya Sir)
+	86. grandiloquent_UNDEFINED	SaaxAdambarapUrNa	as	SabxAdambarapUrNa	(	"	"    )
+	87. demandingly_adverb	bahuwaaXika_apekRA_raKawe_hue	as	bahuwa_aXika_apekRA_raKawe_hue	(	"    )
+	88. generality_noun	sAmAnyawAA		as	sAmAnyawA	(By Roja 09-08-13 Suggested by Sukhada)	
 
     3. Added new entry:
        ---------------

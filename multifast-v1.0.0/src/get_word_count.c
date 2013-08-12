@@ -6,9 +6,10 @@
 
 main(int argc, char* argv[])
 {
-   char *line = NULL, multi_word[1000], mng[10000], *p;
-   size_t  count=0, len=0, word_count=0, multi_len=0, len1=0;
-   FILE *fp;
+   char		*line = NULL, multi_word[1000], mng[10000], *p;
+   size_t	count=0, len=0, multi_len=0, len1=0;
+   int		word_count=0;
+   FILE		*fp;
    
    fp = fopen(argv[1] , "r");
    if(fp == NULL) exit(EXIT_FAILURE);
