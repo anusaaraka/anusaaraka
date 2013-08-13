@@ -1,4 +1,4 @@
- 12-08-13
+ 13-08-13
  ========
  1. WSD : Modified : due.clp    across.clp     into.clp    get.clp    have_en_tam.clp   is_en_tam.clp
  2. adjective.clp
@@ -57,15 +57,17 @@
 	--> tree_viewer/README
 	--> tree_viewer/remove-out-files.sh
 	--> tree_viewer/run_tregex.sh
-	--> tree_viewer/view_trees.sh 
-22. Removed following files:
+	--> tree_viewer/view_trees.sh
+22. Added following files:
+	--> ir_no@.lex to convert iscii to roman  
+23. Removed following files:
 	bin/ir_no@
 	tree_viewer/compile.sh
 	tree_viewer/compile_bison.sh
 	tree_viewer/constituency_parse.l
 	constituency_parse.y
-23. Updated Log
-24. Updated the following verified's
+24. Updated Log
+25. Updated the following verified's
 	sd_verified (503)	small_sent_verified_sd (278)	phy_verified_eng
 	phy_partial_ver_eng	verified_eng
 
