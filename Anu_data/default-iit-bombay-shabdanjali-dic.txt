@@ -8295,6 +8295,7 @@ bands_UNDEFINED	pattI
 bandsman_UNDEFINED	bENdamEna
 bandsman_noun	bENda_bajAne_vAlA
 bandstand_noun	bENda_kA_maFca
+bandwidth_noun	bEndavidWa
 bandy-legged_adjective	teDI_tAfgoM_vAlA
 bandy_adjective	teDI_tAfgoM_vAlA
 bane_noun	pareSAna_yA_gussA_xilAne_vAlA/aBiSapa
@@ -24242,7 +24243,7 @@ drastically_adverb	jabarxaswa_rUpa_se
 drasticer_UNDEFINED	SakwiSAlI
 drasticest_UNDEFINED	SakwiSAlI
 draught-horse_noun	BAravAhI-GodA
-draught_adjective	dibbAbanxa/BAravAhI
+draught_adjective	BAravAhI/dibbAbanxa
 draught_noun	GUzta/warala_xavA/JofkA/vAyu_kA_JofkA/KurAka
 draught_verb	prArUpa_wEyAra_kara/BarawI_kara
 draughtboard_noun	SawaraFja-Palaka/drata-patta

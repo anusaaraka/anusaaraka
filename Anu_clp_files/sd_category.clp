@@ -26,7 +26,6 @@
          (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
-
   (defrule NNP_to_NN
   (declare (salience 13))
   ?f0<-(id-sd_cat   ?pid NNP)
@@ -101,8 +100,9 @@
          (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
+  ;[There] was a red mark on the door. 
   (defrule RB_rule
-  ?f0<-(id-sd_cat        ?id     RB|RBR|RBS)
+  ?f0<-(id-sd_cat        ?id     RB|RBR|RBS|EX)
   =>
          (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  adverb)" crlf)
          (retract ?f0)
@@ -126,14 +126,22 @@
   ;Since I know English, he spoke to me.
   (defrule IN_rule
   ?f0<-(id-sd_cat        ?id     IN)
-  (not (parserid-word  ?id  ?word&If|if|Since|since))
+  (Head-Level-Mother-Daughters ? ? ?IN ?id)
+  (Head-Level-Mother-Daughters ? ? ?Mot ?IN $?)
+  (Node-Category ?Mot ?cat&PP|SBAR)
   =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  preposition)" crlf)
-         (retract ?f0)
+	(if (eq ?cat PP) then
+		(printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  preposition)" crlf)
+	else
+		(printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  conjunction)" crlf)
+	)	
+        (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
+  ;[All] these numbers have the same number of significant figures (digits 2, 3, 0, 8), namely four.
+  ;[Such] a dilemma does not occur in the wave picture of light.
   (defrule DT_rule
-  ?f0<-(id-sd_cat        ?id     DT)
+  ?f0<-(id-sd_cat        ?id     DT|PDT)
   =>
          (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  determiner)" crlf)
          (retract ?f0)
@@ -195,35 +203,6 @@
   ?f0<-(id-sd_cat        ?id     WP|WP$)
   =>
          (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  wh-pronoun)" crlf)
-         (retract ?f0)
-  )
-  ;------------------------------------------------------------------------------------------
-  ;Added by Roja(17-07-13)
-  ;[If] the box is stationary relative to the train, it is in fact accelerating along with the train. 
-  (defrule IN_rule1
-  ?f0<-(id-sd_cat        ?id     IN)
-  (parserid-word  ?id  ?word&If|if|Since|since)
-  =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  conjunction)" crlf)
-         (retract ?f0)
-  )
-  ;------------------------------------------------------------------------------------------
-  ;Added by Roja(17-07-13)
-  ;[All] these numbers have the same number of significant figures (digits 2, 3, 0, 8), namely four.
-  ;[Such] a dilemma does not occur in the wave picture of light. 
-  (defrule PDT_rule
-  ?f0<-(id-sd_cat        ?id    PDT) 
-  =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  determiner)" crlf)
-         (retract ?f0)
-  )
-  ;------------------------------------------------------------------------------------------
-  ;Added by Roja(17-07-13)
-  ;[There] was a red mark on the door. 
-  (defrule EX_rule
-  ?f0<-(id-sd_cat        ?id    EX)
-  =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  adverb)" crlf)
          (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------

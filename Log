@@ -1,6 +1,7 @@
- 13-08-13
+ 15-08-13
  ========
  1. WSD : Modified : due.clp    across.clp     into.clp    get.clp    have_en_tam.clp   is_en_tam.clp
+	  Added    : locate.clp
  2. adjective.clp
 	Modified: load_dic_org_word_file, load_dic_word_file 
 		  (Asserted id-eng-src fact to store info that the MNG is decided based on the word)
@@ -29,45 +30,49 @@
         Modified : cp_facts_for_lwg, conjunction_rule0 and conjunction_rule1
 12. tam_id.clp: Removed dont_load_chunkids rule 
 13. wsd_meaning.clp: Removed dont_load_chunkids rule
-14. get_word_count.c: To avoid 'word_count' variable warnings.
-15. word.c : To rename meaning_to_be_decided.dat  as  meaning_to_be_decided_tmp.dat
-16. run_modules_std.bat
+14. sd_category.clp
+	Modified : RB_rule , IN_rule and DT_rule
+	Removed  : IN_rule1, PDT_rule and EX_rule
+15. get_word_count.c: To avoid 'word_count' variable warnings.
+16. word.c : To rename meaning_to_be_decided.dat  as  meaning_to_be_decided_tmp.dat
+17. run_modules_std.bat
 	Loaded  : meaning_to_be_decided_tmp.dat file in H_ordering_rules module
 		  revised_preferred_morph.dat   file instead revised_root.dat file in hindi_sent_reorder module
 		  wsd_facts_output.dat          file in hindi_sent_reorder module
+		  E_constituents_info_tmp5.dat  and  Node_category.dat files in sd_category module 
 	Removed : To load meaning_to_be_decided.dat   file  in  causative_verb_mng     module
 		  To load revised_root.dat            file  in  hindi_sent_reorder     module
 		  To load lwg_info.dat                file  in  hindi_sent_reorder     module
 		  To load revised_preferred_morph.dat file  in  prepare_apertium_input module
 	Added   :  save-facts to generate meaning_to_be_decided.dat file in H_ordering_rules   module
 		   save-facts to generate hindi_meanings_tmp1.dat   file in causative_verb_mng module
-17. Updated following lex files:
+18. Updated following lex files:
 	mapping-symbols.lex
-18. Updated following shell files:
+19. Updated following shell files:
 	--> anu_compile.sh:	 Added compilation of ir and ir_no@ 
 	--> remove_out-files.sh: Removing bin/ir and bin/ir_no@ 
 	Anusaaraka_site.sh
-19  Updated the following files to add id-eng-src fact in nerver-called deffunction
+20  Updated the following files to add id-eng-src fact in nerver-called deffunction
 	causative_verb_mng.clp          hindi_meaning.clp       preferred_morph_consistency_check.clp
         prepare_apertium_input.clp      tam_meaning.clp         number.clp      vibakthi.clp
-20. Updated following dictionary files:
+21. Updated following dictionary files:
 	changes_in_databases	goldendict/iit-bombay 
-21. Updated following files:
+22. Updated following files:
 	--> README
 	--> tree_viewer/README
 	--> tree_viewer/remove-out-files.sh
 	--> tree_viewer/run_tregex.sh
 	--> tree_viewer/view_trees.sh
-22. Added following files:
+23. Added following files:
 	--> ir_no@.lex to convert iscii to roman  
-23. Removed following files:
+24. Removed following files:
 	bin/ir_no@
 	tree_viewer/compile.sh
 	tree_viewer/compile_bison.sh
 	tree_viewer/constituency_parse.l
 	constituency_parse.y
-24. Updated Log
-25. Updated the following verified's
+25. Updated Log
+26. Updated the following verified's
 	sd_verified (503)	small_sent_verified_sd (278)	phy_verified_eng
 	phy_partial_ver_eng	verified_eng
 

@@ -84,6 +84,8 @@
  (load-facts "sd_category_tmp2.dat")
  (load-facts "sd_word.dat")
  (load-facts "ner.dat")
+ (load-facts "E_constituents_info_tmp5.dat")
+ (load-facts "Node_category.dat")
  (open "sd_category_info.dat" sd_cat_fp "w")
  (run)
  (clear)

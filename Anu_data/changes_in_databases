@@ -282,9 +282,9 @@
   changes in animate_list.txt
   ===========================
   1. Added      vixyArWI  ----  Suggested by Manju Eg: The school admits only 50 students at a time .
-		saba	  ----  by Roja(08-08-12))
-		examiner  ---- 	 "(12-08-13)Suggested by Preeti ji LTRC Ex: The examiners passed all the candidates. 
-	        candidate ----   " 	"		"		"		"
+		saba	  ----  By Roja ( 08-08-12 )
+		examiner  ---- 	 "      ( 12-08-13 ) Suggested by Preeti ji LTRC Ex:The examiners passed all the candidates. 
+	        candidate ----     	 				"		
   2. Removed    mUrKa, mUrKa vyakwi ---- Suggested by Meenaji (29-04-10)
 
   changes in inanimate.txt
@@ -577,12 +577,9 @@ Modified:
         6. mahawvapUrNa         as      mahawwvapUrNa                                           	(By Shirisha Manju)
         7. Removed 'nA' for verb entries                	Ex: abash_verb  SarmiMxA_karanA  as SarmiMxA_kara
 	8. Replaced pattern '_-'  and '-_'  with  '_'   	Ex: artistries_UNDEFINED    kalA_-kOSala   as  kalA_kOSala
-	9. '_' at begging or end of the meaning are removed 	Ex: Derby_noun   dArbI_   as  dArbI
-	10. Removed "'s" and "s'" entries 			Ex: ABC's_noun	prAWamika_jFAna		(By Roja 26-07-13)
-	11. Replaced single word meanings ending with 'aa' as 'a'		(By Roja 09-08-13 Suggested by Chaitanya Sir)
-		Ex: AvaNtanaa
-	12. Replaced multi word meanings ending with 'aa' as 'a'		(		"	"		    )
-		Ex: BIwarI_BAgaa/
+	9. '_' at beginning or end of the meaning are removed 	Ex: Derby_noun   dArbI_   as  dArbI
+       10. Removed "'s" and "s'" entries 			Ex: ABC's_noun	prAWamika_jFAna		(By Roja 26-07-13)
+       11. Replaced meanings ending with 'aa' as 'a'          Ex: AvaNtanaa as AvaNtana (Suggested by Chaitanya Sir 09-08-13)
 
     2. Modifying spelling of the existing word list:
        --------------------------------------------
@@ -699,6 +696,7 @@ Modified:
         15. unravell_verb               sulaJA/uXeda/uXada/spaRta_kara/CudA/asaPala_ho  ( By Roja    20-06-13   )
         16. earshot_noun                AvAja_sunAI_xene_kI_sImA        ( Suggested by Chaitanya Sir 10-07-13   )
 	17. bc_noun			krIswa_pUrva			(		"	     06-08-13 	)
+	18. bandwidth_noun      	bEndavidWa			( Suggested by Tilak         07-08-13	)
 	 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -749,6 +747,7 @@ Modified:
        	12. noise_noun         	AvAja                   as      Sora            (Suggested by Chaitanya Sir  05-07-13  )
        	13. govern_verb        	vaSA_meM_kara           as      niyanwriwa_kara (               "            11-07-13  )
        	14. several_adjective  	viBinna                 as      kaI             (               "               "      )
+	15. draught_adjective   dibbAbanxa		as	BAravAhI	(Suggested by Tilak 	     07-08-13  )
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -914,15 +913,16 @@ Modified:
     Added :
     -------
 	nonuniform		asamAna
-	position-time_Noun      sWiwi_samaya	(Added by Manju (19-11-12))
-	negative_adjective      qNAwmaka     	(      "        (03-12-12))
-	mass_noun       	saMhawi	     	(Suggested by Chaitanya Sir 05-12-12)	
-	body_noun       	piNda	     	(       "                   07-12-12)
-	phenomenon_noun 	pariGatanA  	(	"		    08-12-12)
-	nuclear_adjective	ANvika		(Suggested by Chaitanya Sir 05-01-13)
-	chemistry_noun  	rasAyana_vijFAna(	"		    20-04-13)
-	biology_noun    	jIva_vijFAna	(	"			"   )
-	channel_noun		saraNi		(	"  by Amit MNNIT    01-07-13)
+	position-time_Noun      sWiwi_samaya	(Added by Manju 		19-11-12 )
+	negative_adjective      qNAwmaka     	(      "        		03-12-12 )
+	mass_noun       	saMhawi	     	(Suggested by Chaitanya Sir 	05-12-12 )	
+	body_noun       	piNda	     	(       "                   	07-12-12 )
+	phenomenon_noun 	pariGatanA  	(	"		    	08-12-12 )
+	nuclear_adjective	ANvika		(Suggested by Chaitanya Sir 	05-01-13 )
+	chemistry_noun  	rasAyana_vijFAna(	"		        20-04-13 )
+	biology_noun    	jIva_vijFAna	(	"			     "   )
+	channel_noun		saraNi		(	"  by Amit MNNIT        01-07-13 )
+	corpuscular_noun        kaNikA		(Suggested by Garima Banasthali 14-08-13 )
 
     Modified :
     ---------
@@ -952,7 +952,7 @@ Modified:
  
     Added new entry:
     ----------------
-	charged particles       AveSiwa_kaNa#AveSiwa_kaNa/noun#2#RM	(Suggested by Chaitanya Sir 07-06-13)
+	charged_particles       AveSiwa_kaNa#AveSiwa_kaNa/noun#2#RM	(Suggested by Chaitanya Sir 07-06-13)
 			
 
  changes in causative_verb_mng.txt

@@ -78,6 +78,7 @@ constitution_noun	saMracanA
 contraction_noun	saMkucana
 convection_noun	saMvahana
 cooling_noun	SIwalana
+corpuscular_noun	kaNikA
 corresponding_adjective	waxanurUpa
 cosmology_noun	brahmAMdikI
 couple_noun	balayugma
