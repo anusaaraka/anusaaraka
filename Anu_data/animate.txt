@@ -22,3 +22,6 @@ dog	1
 man	1
 examiner	1
 candidate	1
+he	1
+manager	1
+people	1

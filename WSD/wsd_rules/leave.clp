@@ -1,7 +1,27 @@
+;Added by Sonam Gupta MTech IT Banasthali 2013
+;In rainy areas, wet leaves can rot into a slippery mess.
+;Leaves turn orange and golden in fall.
+;The trees lay their leaves in winter.
+(defrule leave0
+(declare (salience 6000))
+(id-root ?id leave)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(id-cat_coarse ?id1 verb|determiner|adjective|preposition)
+(or(kriyA-object ?id1 ?id)(viSeRya-det_viSeRaNa ?id ?id1)(viSeRya-viSeRaNa ?id ?id1)(kriyA-subject ?id1 ?id))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id pawwI))
+(assert (id-wsd_root ?id leaf))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  leave.clp 	leave0   "  ?id "  pawwI )" crlf)
+)
+)
+
 ; He left for Mumbai
 ; He is leaving for Mumbai tomorrow
 
-(defrule leave0
+(defrule leave1
 (declare (salience 5000))
 (id-root ?id leave)
 ?mng <-(meaning_to_be_decided ?id)
@@ -12,7 +32,7 @@
 (assert (id-wsd_root_mng ?id ravAnA_ho))
 (assert (id-wsd_root ?id leave))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  leave.clp 	leave0   "  ?id "  ravAnA_ho )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  leave.clp 	leave1   "  ?id "  ravAnA_ho )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave0   "  ?id " leave )" crlf)
 )
 )
@@ -23,7 +43,7 @@
 ;--"2.vAma paMWa"
 ;The left parties.
 
-(defrule leave1
+(defrule leave2
 (declare (salience 4900))
 (id-root ?id leave)
 ?mng <-(meaning_to_be_decided ?id)
@@ -34,12 +54,12 @@
 (assert (id-wsd_word_mng ?id bAzyA))
 (assert (id-wsd_root ?id leave))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  leave.clp  	leave1   "  ?id "  bAzyA )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave1   "  ?id " leave )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  leave.clp  	leave2   "  ?id "  bAzyA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave2   "  ?id " leave )" crlf))
 )
 
 
-(defrule leave2
+(defrule leave3
 (declare (salience 4800))
 (id-root ?id leave)
 ?mng <-(meaning_to_be_decided ?id)
@@ -50,13 +70,13 @@
 (assert (id-wsd_word_mng ?id bAzyA))
 (assert (id-wsd_root ?id leave))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  leave.clp  	leave2   "  ?id "  bAzyA )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave2   "  ?id " leave )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  leave.clp  	leave3   "  ?id "  bAzyA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave3   "  ?id " leave )" crlf)
 )
 )
 
 
-(defrule leave3
+(defrule leave4
 (declare (salience 4600))
 (id-root ?id leave)
 ?mng <-(meaning_to_be_decided ?id)
@@ -69,14 +89,14 @@
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 CodZa_xe))
 (assert (id-wsd_root ?id leave))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " leave.clp	leave3  "  ?id "  " ?id1 "  CodZa_xe  )" crlf))
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave3   "  ?id " leave )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " leave.clp	leave4  "  ?id "  " ?id1 "  CodZa_xe  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave4   "  ?id " leave )" crlf)
 )
 
 
 ;Can you leave off this book as i want to talk to you?
 ;kyA wuma isa kiwAba ko CodZa sakawe ho ?mEM wumase bAwa karanA cAhawI hUz
-(defrule leave4
+(defrule leave5
 (declare (salience 4500))
 (id-root ?id leave)
 ?mng <-(meaning_to_be_decided ?id)
@@ -88,12 +108,12 @@
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 CodZa_xe))
 (assert (id-wsd_root ?id leave))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " leave.clp	leave4  "  ?id "  " ?id1 "  CodZa_xe  )" crlf))
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave4   "  ?id " leave )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " leave.clp	leave5  "  ?id "  " ?id1 "  CodZa_xe  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave5   "  ?id " leave )" crlf)
 )
 
 
-(defrule leave5
+(defrule leave6
 (declare (salience 4300))
 (id-root ?id leave)
 ?mng <-(meaning_to_be_decided ?id)
@@ -106,13 +126,13 @@
 (assert (id-wsd_root ?id leave))
 (assert (id-H_vib_mng ?id yA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  leave.clp  	leave5   "  ?id "  Coda )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  leave.clp      leave5   "  ?id " yA )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave5   "  ?id " leave )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  leave.clp  	leave6   "  ?id "  Coda )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  leave.clp      leave6   "  ?id " yA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave6   "  ?id " leave )" crlf))
 
 )
 
-(defrule leave6
+(defrule leave7
 (declare (salience 4200))
 (id-root ?id leave)
 ?mng <-(meaning_to_be_decided ?id)
@@ -124,13 +144,13 @@
 (assert (id-wsd_root_mng ?id CUta))
 (assert (id-wsd_root ?id leave))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  leave.clp      leave6   "  ?id "  CUta )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave6   "  ?id " leave )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  leave.clp      leave7   "  ?id "  CUta )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave7   "  ?id " leave )" crlf)
 )
 )
 ;The train left on time.
 
-(defrule leave7
+(defrule leave8
 (declare (salience 4100))
 (id-root ?id leave)
 ?mng <-(meaning_to_be_decided ?id)
@@ -142,14 +162,14 @@
 (assert (id-wsd_root ?id leave))
 (assert (id-H_vib_mng ?id yA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  leave.clp 	leave7   "  ?id "   calA_jA )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng   " ?*wsd_dir* "  leave.clp     leave7   "  ?id " yA )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave7   "  ?id " leave )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  leave.clp 	leave8   "  ?id "   calA_jA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng   " ?*wsd_dir* "  leave.clp     leave8   "  ?id " yA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave8   "  ?id " leave )" crlf)
 )
 )
 ;He left in the morning
 
-(defrule leave8
+(defrule leave9
 (declare (salience 4000))
 (id-root ?id leave)
 ?mng <-(meaning_to_be_decided ?id)
@@ -159,8 +179,8 @@
 (assert (id-wsd_root_mng ?id CuttI))
 (assert (id-wsd_root ?id leave))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  leave.clp 	leave8   "  ?id "  CuttI )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave8   "  ?id " leave )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  leave.clp 	leave   "  ?id "  CuttI )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave9   "  ?id " leave )" crlf)
 )
 )
 
@@ -174,7 +194,7 @@
 ; He left for Mumbai
 ; He is leaving for Mumbai tomorrow
 
-(defrule leave9
+(defrule leave10
 (declare (salience 3800))
 (id-root ?id leave)
 ?mng <-(meaning_to_be_decided ?id)
@@ -186,13 +206,13 @@
 (assert (id-wsd_root ?id leave))
 (assert (kriyA_id-object_viBakwi ?id ko))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  leave.clp 	leave9   "  ?id "  CodZa_jA )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  leave.clp     leave9   "  ?id " ko  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave9   "  ?id " leave )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  leave.clp 	leave10   "  ?id "  CodZa_jA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  leave.clp     leave10   "  ?id " ko  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave10   "  ?id " leave )" crlf)
 )
 )
 
-(defrule leave10
+(defrule leave11
 (declare (salience 3700))
 (id-root ?id leave)
 ?mng <-(meaning_to_be_decided ?id)
@@ -202,8 +222,8 @@
 (assert (id-wsd_root_mng ?id Coda))
 (assert (id-wsd_root ?id leave))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  leave.clp 	leave10   "  ?id "  Coda )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave10   "  ?id " leave )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  leave.clp 	leave11   "  ?id "  Coda )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  leave.clp     leave11   "  ?id " leave )" crlf)
 )
 )
 ;Modified CodZa as Coda

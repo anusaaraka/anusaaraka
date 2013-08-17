@@ -10,3 +10,13 @@ pound	1
 euro	1
 price	1
 value	1
+book	1
+electrostatic	1
+magnetism	1
+physics	1
+electricity	1
+it	1
+thermodynamics	1
+optics	1
+mechanics	1
+electrodynamics	1

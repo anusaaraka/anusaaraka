@@ -79,7 +79,7 @@ FILE *fp;
 ψ	{	printf(" SYMBOL-PSI ");	}
 ω	{	printf(" SYMBOL-OMEGA ");	}
 
-[0-9 ][a-zA-Z0-9]*[/][a-zA-Z0-9]* { 	len=strcspn(yytext, "/");
+[^<][a-zA-Z0-9]*[/][a-zA-Z0-9]* { 	len=strcspn(yytext, "/");
 				strncpy(str, yytext, len); str[len]='\0';
 
 				s1=strchr(yytext, '/')+1;

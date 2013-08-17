@@ -34441,7 +34441,7 @@ greasiness_noun	wElakwawA/cikanApana
 greasing_UNDEFINED	cikanA_karanA
 greasy_UNDEFINED	cika
 greasy_adjective	wElIya/cikanAIyukwa/cikanA/cAtukAriwApUrNa/aXika_carabI_vAlA_KAnA
-great_adjective	mahAna/viSAla/viKyAwa/uwsAhI/uwkqRta/sarvowwama/sarvowkqRta/saragarma/SAnaxAra/sanwoRajanaka/pramuKa/pracura/muKya/mAhira/mahavapUrNa/gamBIra/BayAnaka/Bavya/BArI/bahuwa_upayukwa/bahuwa_badA/bahuwa_baDiyA/bahuwa_aXikaA/bahuwa_aXika/bahuwa/badA/awyAXika/asAXAraNa/acCA
+great_adjective	mahAna/viSAla/viKyAwa/uwsAhI/uwkqRta/sarvowwama/sarvowkqRta/saragarma/SAnaxAra/sanwoRajanaka/pramuKa/pracura/muKya/mAhira/mahavapUrNa/gamBIra/BayAnaka/Bavya/BArI/bahuwa_upayukwa/bahuwa_badA/bahuwa_baDiyA/bahuwa_aXika/bahuwa/badA/awyAXika/asAXAraNa/acCA
 great_noun	mahAna_vyakwi/bade_loga
 greatcoat_UNDEFINED	BArI_POjI_ovakAOta
 greatcoat_noun	BArI_POjI_ovarkota
@@ -38569,6 +38569,7 @@ hysterics_UNDEFINED	ihajatIirayA_kA_xOrA
 hysterics_noun	rone_kA_xOrA/histIriyA_kA_xOrA/hazsI_kA_xOrA
 i_noun	afgrejI_varNamAlA_kA_navAz_akRara
 i_pronoun	mEM/mE
+i_UNDEFINED	Ai
 iambic_UNDEFINED	laGu-gurucaraNavAlA
 iambic_adjective	laGu-guru_caraNayukwa
 iambicer_UNDEFINED	laGu-gurucaraNavAlA
@@ -38667,7 +38668,7 @@ ideating_UNDEFINED	kalpanA_karanA
 ideation_noun	vicAraNa
 ideations_UNDEFINED	vicAraNa
 identical_UNDEFINED	bilkula_eka_se
-identical_adjective	vEsA_hI/jEsA/eka_jEsA/bilakul_vahI
+identical_adjective	eka_jEsA/vEsA_hI/jEsA/bilakul_vahI
 identicalest_UNDEFINED	bilkula_eka_se
 identifiable_UNDEFINED	pahacAna_yogya
 identification_UNDEFINED	SinAKwa
@@ -54144,7 +54145,7 @@ oppositer_UNDEFINED	ke_sAmane
 oppositest_UNDEFINED	ke_sAmane
 opposithe_UNDEFINED	ke_sAmane
 opposition_adjective	virOXI_pakRa
-opposition_noun	viroXa/viroXI_xala/vipakRa/prawixvanxI/prawiroXa/prawikUlawA/bAXA
+opposition_noun	vipakRa/viroXa/viroXI_xala/prawixvanxI/prawiroXa/prawikUlawA/bAXA
 oppositional_adjective	vipakRI
 oppositions_UNDEFINED	vipakRa
 oppress_verb	xamana_kara/viRAxagraswa_kara

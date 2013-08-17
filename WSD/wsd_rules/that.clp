@@ -645,3 +645,19 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  that.clp 	that39   "  ?id "  vaha )" crlf))
 )
 
+;In Chapter 4, we learned that an electric current produces magnetic field [and that] two current-carrying wires exert a magnetic force on each other.
+;Prachi Rathore(M.Tech(C.S.)) BANASTHALI (12-08-13)
+(defrule that40
+(declare (salience 1200))
+(id-root ?id that)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id preposition)
+(id-root =(- ?id 1) and)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id -))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  that.clp 	that40   "  ?id "  - )" crlf))
+)
+
+

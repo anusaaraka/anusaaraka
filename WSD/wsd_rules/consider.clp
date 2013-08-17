@@ -59,8 +59,24 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  consider.clp 	consider4   "  ?id "  samaJa )" crlf))
 )
 
-(defrule consider5
+;Added by Roja Suggested by Chaitanya Sir(17-08-13)
+;Teaching is considered an apt calling for women.
+(defrule consider_is_en
 (declare (salience 4500))
+(id-root ?id consider)
+?mng <-(meaning_to_be_decided ?id)
+(root-verbchunk-tam-chunkids consider ? is_en  $?ids)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id mAna))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  consider.clp  consider_is_en   "  ?id "  mAna )" crlf))
+)
+
+
+(defrule consider5
+(declare (salience 4400))
 (id-root ?id consider)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)

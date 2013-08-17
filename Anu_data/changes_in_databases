@@ -283,13 +283,24 @@
   ===========================
   1. Added      vixyArWI  ----  Suggested by Manju Eg: The school admits only 50 students at a time .
 		saba	  ----  By Roja ( 08-08-12 )
-		examiner  ---- 	 "      ( 12-08-13 ) Suggested by Preeti ji LTRC Ex:The examiners passed all the candidates. 
-	        candidate ----     	 				"		
+			
   2. Removed    mUrKa, mUrKa vyakwi ---- Suggested by Meenaji (29-04-10)
 
   changes in inanimate.txt
   ===========================
-  1. Added  flower   ----  Suggested by Sukhada (20-01-11)
+  1. Added
+	flower   		----  Suggested by Sukhada (20-01-11)
+   	book			----  Suggested by Pramila Banasthali (16-08-13) Ex:This book deals with incest.
+	electrostatic		----		"	Ex:Electrostatics deals with charges on glass rods.
+	magnetism		----		"	
+	physics			----		"
+	electricity		----		"
+	it			----		"
+	thermodynamics		----		"
+	optics			----		"	Ex:Optics deals with the phenomena involving light.
+	mechanics		----		"
+	electrodynamics		----		"
+	    
 
   changes in not_ne_verb_list.txt
   ===============================
@@ -318,8 +329,8 @@
   ========================
   Added        they    1
                Mohan   1
-               twins   1   (Added by Meena(4.5.10))
-               mother  1   (Added by Meena(10.5.10))
+               twins   1   (By Meena 4-5-10)
+               mother  1   (By Meena 10-5-10)
                father  1
                sister  1
                brother 1
@@ -327,12 +338,17 @@
                daughter        1
                uncle   1
                aunt    1
-               son     1    (Added by Roja 11-02-11 suggested by Sukhada)
+               son     1    (By Roja 11-02-11 Suggested by Sukhada	)
 	       daughter 1   (            "                              )
 	       boy     1    (            "                              )
                girl    1    (            "                              )
                dog     1    (            "                              )
                man     1    (            "                              )
+	       examiner	1   (        12-08-13 Suggested by Preeti ji LTRC Ex:The examiners passed all the candidates.)
+               candidate  1 (      "					)
+               he	1   (Suggested by Pramila Banasthali (16-08-13) Ex:She deals fairly with her customers.)
+               manager	1   (                "                          Ex:Manager deals with his employee.)
+               people	1   (                "                          Ex:People does not deal fairly with each other.)
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -697,6 +713,8 @@ Modified:
         16. earshot_noun                AvAja_sunAI_xene_kI_sImA        ( Suggested by Chaitanya Sir 10-07-13   )
 	17. bc_noun			krIswa_pUrva			(		"	     06-08-13 	)
 	18. bandwidth_noun      	bEndavidWa			( Suggested by Tilak         07-08-13	)
+	19. i_UNDEFINED			Ai				( 	"      Chaitanya Sir 16-08-13   ) 	
+
 	 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -748,29 +766,32 @@ Modified:
        	13. govern_verb        	vaSA_meM_kara           as      niyanwriwa_kara (               "            11-07-13  )
        	14. several_adjective  	viBinna                 as      kaI             (               "               "      )
 	15. draught_adjective   dibbAbanxa		as	BAravAhI	(Suggested by Tilak 	     07-08-13  )
+	16. identical_adjective	vEsA_hI			as	eka_jEsA	(    "	   by Chaitanya Sir  16-08-13  )
+	17. opposition_noun	viroXa			as	vipakRa		(    "     by Anita ji LTRC  17-08-13  )
 
     6. Removed meaning from existing list:
        ----------------------------------
-	1. overdue_adjective 	jo_bahuwa_pahale_hI_ho_jAnA_cAhiye_WA,_vaha	( Suggested by Rajini	29-02-12    )
-	2. votive_adjective	mannawa`kA	  				(		"		    )
+	1. overdue_adjective 	jo_bahuwa_pahale_hI_ho_jAnA_cAhiye_WA,_vaha	( Suggested by Rajini		29-02-12)
+	2. votive_adjective	mannawa`kA	  				(		"		    	)
 	3. should_verb		howAnA/gA,ge,gIInA/cAhieenA
 	4. foolscap_noun 	{lagaBaga_300*200_or_400mm}
 	5. piping_noun		bAzsurIvAxana/viSeRa`nApa_kA_pAipa/
 	6. valve_noun		{eka`ora_Kulane_vAlA_vAyu_gEsa_xrava_ke_saMcAra_kA_yaMwra}
         7. recycling      	prayoga_kI_gayI_vaswu_kA_punaH_prayoga
-   	8. organized       	saMgaTiwa                    			( Suggested by Rajini	29-02-12    )
-	9. filing-clerk    	file-clerk {US}					(		"		    )
+   	8. organized       	saMgaTiwa                    			( Suggested by Rajini		29-02-12)
+	9. filing-clerk    	file-clerk {US}					(		"		    	)
 	10. cousin_noun		cacerA,mamerA,PuPerA_yA_mOserA_BAi_yA_bahana
 				cacerA,_mamerA,_PuPerA_yA_mOserA_BAi_yA_bahana
-				cacerA_BAII/cacerA_BAI/				(		"		    )
-	11. unit_noun		[mAtraka-->mAwraka] 				( 	By Mahalaxmi	31-10-12    )
-       	12. fix_verb        	sWapiwa_kara                    		(Suggested by Chaitanya Sir 23-02-13)
-	13. he_pronoun      	vaha{pu.}  	         	     		(Suggested by Sukhada	04-05-13    )
-  	14. she_pronoun     	vaha{swrI.}/vaha{swrI}				(		"		    )
+				cacerA_BAII/cacerA_BAI/				(		"		    	)
+	11. unit_noun		[mAtraka-->mAwraka] 				( 	By Mahalaxmi	        31-10-12)
+       	12. fix_verb        	sWapiwa_kara                    		(Suggested by Chaitanya Sir	23-02-13)
+	13. he_pronoun      	vaha{pu.}  	         	     		(Suggested by Sukhada		04-05-13)
+  	14. she_pronoun     	vaha{swrI.}/vaha{swrI}				(		"		    	)
 	15. no_adjective    	[kuCa]_nahIM/nahIM{anumawa}
-        16. time_noun 		samayaa                 			( 	By Roja 	20-06-13    )
+        16. time_noun 		samayaa                 			( 	By Roja 	        20-06-13)
 	17. marble_noun      	sagaMmaramara
-	18. I_pronoun       	mEz{sarvanAma} 
+	18. I_pronoun       	mEz{sarvanAma}
+	19. great_adjective	bahuwa_aXikaA					(Suggested by Sarita ji LTRC	17-08-13)  
 
     7. Removed entry:
        --------------
@@ -899,6 +920,7 @@ Modified:
 	as_of_now       	aba_waka#aba_waka#adverb#3#WM			(		 "	    10-07-13)
 	as_by_now       	aba_waka#aba_waka#adverb#3#WM			(		 "		    )
 	except_for      	ko_Coda_kara#ko_Coda_kara#preposition#1#WM	(		 "	    23-07-13)
+	magnifying_glass	AvarXaka_lensa#AvarXaka_lensa#noun#2#RM		(Suggested by Prachi Banasthali 15-08-13) 
 
     Added new meaning to the existing word:
     --------------------------------------
