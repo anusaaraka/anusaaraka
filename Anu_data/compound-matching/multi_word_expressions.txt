@@ -20450,7 +20450,7 @@ most_immediate	awi_wawkAla#awi_wawkAla#noun#2#RM
 most_important	awi_mahawvapUrNa#awi_mahawvapUrNa#noun#2#RM
 most_momentous	sarvAXika_mahwvapUrNa#sarvAXika_mahwvapUrNa#noun#2#RM
 most_of_the	jZyAxAwara#jZyAxAwara#noun#1#RM
-most_of_the_time	jZyAxAwara_samaya#jZyAxAwara_samaya#noun#4#RM
+most_of_the_time	prAyaH#prAyaH#noun#4#RM
 most_ordinary	bilakula_sAXAraNa#bilakula_sAXAraNa#noun#2#RM
 most_secret	awigupwa#awigupwa#noun#2#RM
 most_significant_bit	sArWakawama_rxvi_aMka#sArWakawama_rxvi_aMka#noun#3#RM
@@ -28383,7 +28383,7 @@ soon_after	wuranwa_isake_bAxa_ki#wuranwa_isake_bAxa_ki#noun#2#RM
 soon_enough	jalxI_hI#jalxI_hI#noun#2#RM
 soot_black	kAliKa#kAliKa#noun#2#RM
 sophomore_class	xviwIya_varRa_kA_kakRA#xviwIya_varRa_kA_kakRA#noun#2#RM
-sort_of	eka_waraha_se#eka_waraha_se#noun#3#RM
+sort_of	eka_waraha_se#eka_waraha_se#noun#1#RM
 sorting_appliance	CaztAWa_upayaMwra#CaztAWa_upayaMwra#noun#2#RM
 sorting_inspector	CaztAWa_nirIkRaka#CaztAWa_nirIkRaka#noun#2#RM
 sorting_machine_operator	CaztAWa_maSIna_pracAlaka#CaztAWa_maSIna_pracAlaka#noun#3#RM
@@ -30363,7 +30363,6 @@ the_following_interesting_points_have_emerged	nimnaliKiwa_rucikara_bAweM_sAmane_
 the_following_points_arise_in_this_case	isa_mAmale_meM_nimnaliKiwa_muxxe_sAmane_Awe_hEM#isa_mAmale_meM_nimnaliKiwa_muxxe_sAmane_Awe_hEM#noun#7#RM
 the_following_points_need_consideration	nimnaliKiwa_bAwoM_para_vicAra_kie_jAne_kI_AvaSyakawA_hE#nimnaliKiwa_bAwoM_para_vicAra_kie_jAne_kI_AvaSyakawA_hE#noun#5#RM
 the_force_of_friction	GarRaNa_bala#GarRaNa_bala#noun#4#WM
-the_great	mahAna_loga#mahAna_loga#noun#2#RM
 the_hard_right	xakRiNa_paMWI_vyakwi#xakRiNa_paMWI_vyakwi#noun#3#RM
 the_head_of_the_table	muKya_sWAna#muKya_sWAna#noun#2#RM
 the_high_life	raIsI_jIvana#raIsI_jIvana#noun#3#RM
@@ -33195,6 +33194,7 @@ zoological_survey_of_india	BArawIya_prApri_sarvekRaNa_viBAga#BArawIya_prApri_sar
 zoom_in	AkAra_varXana#AkAra_varXana#noun#2#RM
 except_for	ko_Coda_kara#ko_Coda_kara#preposition#1#WM
 magnifying_glass	AvarXaka_lensa#AvarXaka_lensa#noun#2#RM
+whole_of	sampUrNa#sampUrNa#noun#1#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
