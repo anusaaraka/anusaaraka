@@ -347,6 +347,19 @@
 	(modify ?f0 (vibakthi ko))
 )
 ;------------------------------------------------------------------------------------------
+;Suggested by Chaitanya Sir (16-08-13)
+;Henceforth, every Sunday, I shall be giving a talk on the teaching of the Gita, who is verily our mother.
+(defrule ko_vib_for_every
+(declare (salience 440))
+?f0<-(pada_info (group_head_id ?hid)(group_cat PP)(vibakthi 0))
+(id-root ?hid sunday|monday|tuesday|wednesday|thursday|friday|saturday)
+(id-root =(- ?hid 1) every)
+?f1<-(pada_control_fact ?hid)
+=>
+	(retract ?f1)
+        (modify ?f0 (vibakthi ko))
+)
+;------------------------------------------------------------------------------------------
 ;Added on (23-05-12)
 ;Many fat boys, a tall girl and a small child ate fruits. 
 (defrule modify_and_vib

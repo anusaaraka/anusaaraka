@@ -554,7 +554,7 @@ FBI_UNDEFINED	ePa.bI.AI
 FCC_UNDEFINED	rARtrIya_pariRaxa_kA_saxasya
 FCO_UNDEFINED	vixeSa_evaM_rARtramaNdala_viBAga
 FC_UNDEFINED	koYfgaresa_saxasya
-FM_UNDEFINED	rediyo_prasAraNa_kA_eka_warIkA
+FM_UNDEFINED	Avqwwi_mAdulana
 FORTRAN_noun	kampyUtara_nirxeSa_kI_BARA
 FO_UNDEFINED	vixeSa_viBAga
 F_noun	ePa
@@ -36683,7 +36683,7 @@ hen-party_noun	mahilAoM_kI_jalapAna_goRTI/avivAhiwa_strI-xala
 hen_adjective	mAxA
 hen_noun	murgI/Orawa/muqgI/mAxA
 hence_adverb	isa_kAraNa_se/awaH
-henceforth_adverb	BaviRya_meM/isake_bAxa_se
+henceforth_adverb	Age_se/BaviRya_meM/isake_bAxa_se
 henceforward_adverb	isake_bAxa_se
 henchman_noun	vaPAxAra_samarWaka/vaPAxAra_sevaka
 henchmen_UNDEFINED	vaPAxAra_samarWaka
@@ -38876,7 +38876,7 @@ illogicality_noun	asafgawi
 illogically_UNDEFINED	asafgawa_opa_se
 illogically_adverb	asafgawa_rUpa_se
 ills_UNDEFINED	asvasWawA
-illuminate_verb	prakASayukwa_kara/ujAlA_kara/prakASiwa_kara/prakASa_dAla
+illuminate_verb	prakASiwa_kara/prakASayukwa_kara/ujAlA_kara/prakASa_dAla
 illuminated_UNDEFINED	prakASayukwa_karanA
 illuminated_adjective	susajjiwa/prakASiwa
 illuminater_UNDEFINED	prakASayukwa_karanA
@@ -41299,7 +41299,7 @@ insensitiver_UNDEFINED	asaMvexanaSIla
 insensitivest_UNDEFINED	asaMvexanaSIla
 insensitivity_noun	asaMvexanaSIlawA/saMvexanASUnyawA
 inseparability_noun	aviyojyawA
-inseparable_adjective	jo_alaga_na_ho_sake/hameSA_SAWa_rahane_vAl/aviyojya
+inseparable_adjective	aBinna/aviBakwa/jo_alaga_na_ho_sake/hameSA_SAWa_rahane_vAl/aviyojya
 inseparabler_UNDEFINED	jo_alaga_na_ho_sake
 inseparablest_UNDEFINED	jo_alaga_na_ho_sake
 insert_UNDEFINED	dAla
@@ -41655,7 +41655,7 @@ integrator_UNDEFINED	samAkalaka
 integrities_UNDEFINED	ImAnaxArI
 integrity_UNDEFINED	ekaniRTawA
 integrity_noun	sawyaniRTA/aKaNdawA/ImAnaxArI
-intellect_noun	prajFA/buxxI/aklamanxa
+intellect_noun	buxxI/prajFA
 intellects_UNDEFINED	prajFA
 intellectual_adjective	buxXigawa/ximAgI/buxXi-sambanXI/bOxXika/prajFAvAna
 intellectual_noun	buxXijIvI_vyakwi
@@ -45539,6 +45539,7 @@ lieus_UNDEFINED	baxale_meM
 lieutenant_noun	lePtineNta/sahAyaka
 lieutenants_UNDEFINED	sahAyaka
 life-and-death_adjective	kadA
+life-breath_noun	prANa-wawwva
 life-expectancy_noun	jIvana-samBAvanA
 life-giving_adjective	jIvanaxAyaka/jIvanaxAyI
 life-imprisonment_noun	AjIvana_kArAvAsa
@@ -63728,6 +63729,7 @@ ratikanta_UNDEFINED	rawikAnwa
 rating_noun	SreNI_narXAraNa/mUlyAfkana
 ratings_UNDEFINED	SreNI_narXAraNa
 ratio_noun	sambanXa/anupAwa
+ratiocination_noun	yukwivAxa
 ration_noun	rASana/nyanwriwa_mAwrA/hissA/Bojana
 ration_verb	viwaraNa_niyanwraNa_kara/niyanwriwa_viwaraNa_kara/pUrwi_sImiwa_kara
 rational_adjective	sajFAna/vivekI/vivekapUrNa/buxXi_sampanna
@@ -72397,7 +72399,7 @@ sketch-book_noun	reKAciwraNa_puswikA
 sketch-map_noun	rekAciwrIya_mAnaciwra
 sketch-pad_noun	reKAcitrI_puswaka
 sketch_noun	KAkA/vyafgyaciwra/safkRipwa_vivaraNa/reKAciwra/hAsya_nAtikA
-sketch_verb	rUpareKA_bawA/reKAciwra_banA
+sketch_verb	rUpareKA_banA/reKAciwra_banA
 sketchbook_noun	reKAciwraNa_puswikA
 sketched_UNDEFINED	KAkA
 sketches_UNDEFINED	KAkA
@@ -85420,7 +85422,7 @@ undoner_UNDEFINED	bigadA_huA
 undonest_UNDEFINED	bigadA_huA
 undoubted_UNDEFINED	niHsaMSaya
 undoubted_adjective	asanxigXa
-undoubtedly_adverb	nissanxeha_rUpa_se/nissanxeha/binA_kisI_sanxeha_ke/binA_Saka_va_Subaha
+undoubtedly_adverb	nissanxeha/nissanxeha_rUpa_se/binA_kisI_sanxeha_ke/binA_Saka_va_Subaha
 undrained_adjective	anapavAhiwa
 undramatic_adjective	anAtakIya
 undramatically_adverb	binA_nAtakIyawA_ke
@@ -88679,6 +88681,7 @@ verify_UNDEFINED	sawyawA_kI_jAzca_kara
 verify_verb	sawyApiwa_kara/pramANiwa_kara/jAzca
 verifying_UNDEFINED	sawyawA_kI_jAzca_karanA
 verifying_adjective	pramANiwa_karane_vAlA
+verily_adverb	vaswuwaH
 verisimilar_adjective	sawyABAsI
 verisimilitude_noun	sawya_kA_ABAsa/sawyABAsa
 verisimilitudes_UNDEFINED	sawya_kA_ABAsa
@@ -92386,8 +92389,7 @@ workout_noun	aByAsa/vyAyAma/kasarawa
 workplace_noun	kArya_sWala/kAryasWala
 workplan_noun	kArya-yojanA/kArya_yojanA
 workroom_noun	kAryakakRa
-works_UNDEFINED	racanA
-works_noun	kAraKAnA
+works_noun	racanA/kAraKAnA
 worksheet_UNDEFINED	liKA_huA_kAgaja
 worksheet_noun	kAma_kA_kAgaja/{kAma}liKA_huA_kAgaja
 workshop_UNDEFINED	kAraKA

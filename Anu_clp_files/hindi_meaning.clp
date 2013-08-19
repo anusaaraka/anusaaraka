@@ -445,6 +445,24 @@
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (16-08-13) Suggested by Chaitanya Sir
+ ;Dear brothers, from today I shall be talking to you about Shrimad [Bhagavad-Gita].
+ ;The bond between the [Gita] and me transcends reason.
+ (defrule get_PropN_mng
+ (declare (salience 7950))
+ (id-cat_coarse ?id PropN)
+ ?f<-(meaning_to_be_decided ?id)
+ (id-original_word ?id ?wrd)
+ (test (neq (gdbm_lookup "proper_noun_dic.gdbm" ?wrd) "FALSE"))
+ =>
+	(bind ?mng (gdbm_lookup "proper_noun_dic.gdbm" ?wrd ))
+        (if (neq ?mng "FALSE") then
+                (retract ?f)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?mng"   proper_noun_dic_)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?mng"   proper_noun_dic "?id")" crlf)
+        )
+ )
+ ;--------------------------------------------------------------------------------------------------------------
  ;The guard made Dipu halt, and helped the Princess off his back.
  ;Added by Shirisha Manju (14-05-13) Suggested by Chaitanya Sir
  (defrule get_PropN_mng_with_prev_word_the

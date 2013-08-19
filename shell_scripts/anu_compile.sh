@@ -60,6 +60,8 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic.gdbm < default-iit-bombay-shabdanjali-dic_in_canonical_form.txt
  echo "Creating kriyA_object_vib.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/kriyA_object_vib.gdbm < kriyA_object_vib_in_canonical_form.txt
+ echo "Creating proper_noun_dic.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/proper_noun_dic.gdbm < proper_noun_dic_in_canonical_form.txt
 
  cd $HOME_anu_test/Anu_data
  echo "Creating PropN.gdbm"

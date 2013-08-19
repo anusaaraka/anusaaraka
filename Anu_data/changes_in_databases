@@ -16,7 +16,7 @@
 
   2. Added :
 	1. SuBakAmanA 	Suggested by sheetal (02-11-09) Eg: We convey our best wishes to the Chinmaya Dham Yatris . 
-	2. esItilIna  	Suggested by Meenaji (24-02-10)Eg:Acetylene burns with bright flame that helps in cutting and welding 	     3. mAxA_pakRI   Suggested by sheetal(05-03-10)  Eg: Females of birds produce eggs.
+	2. esItilIna  	Suggested by Meenaji(24-02-10)Eg:Acetylene burns with bright flame that helps in cutting and welding 	    3. mAxA_pakRI   Suggested by sheetal(05-03-10)  Eg: Females of birds produce eggs.
 	4. PEktarI    	Meena (20.5.10)
 	5. PrIkveMsI	Meena (11.6.10)
 	6. Avqwi   	Meena (11.6.10)
@@ -33,7 +33,7 @@
 	17. janasaBA    by Roja  Suggested by Chaitanya Sir (11-08-12)
 	18. wiWI	by Roja  Suggested by Sukhada (23-02-13) Ex: A record date has not been set.
 	19. pariGatanA	by Manju Suggested by Chaitanya Sir (11-07-13) 
-			Eg: In any physical phenomenon governed by different forces, several quantities may change with time.
+			Eg: In any physical phenomenon governed by different forces,several quantities may change with time.
 	
   3. Removed :
 	1. mana		Suggested by sheetal (19-11-09) Eg: The big question on everybody's mind is who killed OJ .
@@ -55,7 +55,7 @@
         16. harA      	Meena (04-10-11) 	Eg: The paper turned from red to green.  
 	17. baDiyA    	Sukhada (16-12-11) 	Eg: The venture's importance for Thomson is great.  
 	18. melA  	Suggested by Sukhada (17-01-12) 
-			Ex:Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival	     19. vArRika		   "same example as mentioned above"
+			Ex:Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival	    19. vArRika		   "same example as mentioned above"
 
 
   changes in Phrv.txt 
@@ -689,6 +689,8 @@ Modified:
 	86. grandiloquent_UNDEFINED	SaaxAdambarapUrNa	as	SabxAdambarapUrNa	(	"	"    )
 	87. demandingly_adverb	bahuwaaXika_apekRA_raKawe_hue	as	bahuwa_aXika_apekRA_raKawe_hue	(	"    )
 	88. generality_noun	sAmAnyawAA		as	sAmAnyawA	(By Roja 09-08-13 Suggested by Sukhada)	
+	89. sketch_verb		rUpareKA_bawA		as	rUpareKA_banA	(Suggested by Chaitanya Sir 19-08-13 )
+
 
     3. Added new entry:
        ---------------
@@ -714,6 +716,9 @@ Modified:
 	17. bc_noun			krIswa_pUrva			(		"	     06-08-13 	)
 	18. bandwidth_noun      	bEndavidWa			( Suggested by Tilak         07-08-13	)
 	19. i_UNDEFINED			Ai				( 	"      Chaitanya Sir 16-08-13   ) 	
+	20. life-breath_noun		prANa-wawwva			(			"    19-08-13	)	
+	21. ratiocination_noun		yukwivAxa			(			"	"	)
+	22. verily_adverb		vaswuwaH			(			"	"	)
 
 	 
     4. Added new meaning to the existing word:
@@ -747,6 +752,9 @@ Modified:
        	27. extended_adjective         	viswqwa
        	28. recycled_adjective         	punarAvqwwa
 	29. ad_noun			krIswa_paScAwa			(		"	      06-08-13	)
+	30. henceforth_adverb		Age_se				( Suggested by Chaitanya Sir  19-08-13	)
+	31. inseparable_adjective	aBinna/aviBakwa			(		"		"	)
+	32. works_noun			racanA				(		"		"	)
 
 
     5. Modifying first meaning from the list :
@@ -757,17 +765,21 @@ Modified:
         4. excuse_verb          mukwI_xe                as      kRamA_kara
         5. possess_verb         kA_svAmI_yA_mAlika_ho   as      XAraNa_kara
         6. broken_adjective     Ubada-KAbada            as      tUtA_huA
-        7. electron_noun       	awisUkRma_paramANu    	as   	ilektroYna      (Suggested by Chaitanya Sir  07-12-12  )
-        8. diner_noun           Bojana_karane_vAlA      as      DAbA            (Suggested by Sukhada 17-06-13         )
-        9. electric_adjective   bijalI_kA               as      vExyuwa         (Suggested by Chaitanya Sir  08-07-13  )
-        10. exert_verb          bala_lagA               as      kAma_meM_lA     (               "                      )
-       	11. otherwise_adverb    xUsare_prakAra_se       as      anyaWA          (Suggested by Shubham IIT(BHU) 06-07-13)
-       	12. noise_noun         	AvAja                   as      Sora            (Suggested by Chaitanya Sir  05-07-13  )
-       	13. govern_verb        	vaSA_meM_kara           as      niyanwriwa_kara (               "            11-07-13  )
-       	14. several_adjective  	viBinna                 as      kaI             (               "               "      )
-	15. draught_adjective   dibbAbanxa		as	BAravAhI	(Suggested by Tilak 	     07-08-13  )
-	16. identical_adjective	vEsA_hI			as	eka_jEsA	(    "	   by Chaitanya Sir  16-08-13  )
-	17. opposition_noun	viroXa			as	vipakRa		(    "     by Anita ji LTRC  17-08-13  )
+        7. electron_noun       	awisUkRma_paramANu    	as   	ilektroYna      (Suggested by Chaitanya Sir  07-12-12  	)
+        8. diner_noun           Bojana_karane_vAlA      as      DAbA            (Suggested by Sukhada 17-06-13         	)
+        9. electric_adjective   bijalI_kA               as      vExyuwa         (Suggested by Chaitanya Sir  08-07-13  	)
+        10. exert_verb          bala_lagA               as      kAma_meM_lA     (               "                      	)
+       	11. otherwise_adverb    xUsare_prakAra_se       as      anyaWA          (Suggested by Shubham IIT(BHU) 06-07-13	)
+       	12. noise_noun         	AvAja                   as      Sora            (Suggested by Chaitanya Sir  05-07-13  	)
+       	13. govern_verb        	vaSA_meM_kara           as      niyanwriwa_kara (               "            11-07-13  	)
+       	14. several_adjective  	viBinna                 as      kaI             (               "               "      	)
+	15. draught_adjective   dibbAbanxa		as	BAravAhI	(Suggested by Tilak 	     07-08-13  	)
+	16. identical_adjective	vEsA_hI			as	eka_jEsA	(    "	   by Chaitanya Sir  16-08-13  	)
+	17. opposition_noun	viroXa			as	vipakRa		(    "     by Anita ji LTRC  17-08-13  	)
+	18. illuminate_verb	prakASayukwa_kara	as	prakASiwa_kara	(Suggested by Chaitanya Sir  19-08-13  	)
+	19. intellect_noun	prajFA			as	buxxI		(		"		"      	)
+	20. undoubtedly_adverb	nissanxeha_rUpa_se	as	nissanxeha	(		"		"	)
+
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -792,6 +804,8 @@ Modified:
 	17. marble_noun      	sagaMmaramara
 	18. I_pronoun       	mEz{sarvanAma}
 	19. great_adjective	bahuwa_aXikaA					(Suggested by Sarita ji LTRC	17-08-13)  
+	20. intellect_noun	aklamanxa					(Suggested by Chaitanya Sir   	19-08-13)
+
 
     7. Removed entry:
        --------------
@@ -819,7 +833,9 @@ Modified:
         21. the_UNDIFINED   	English                   		( By Maha Laxmi 	14-08-12)
         22. Urdu_UNDEFINED  	^
         23. solemnise_UNDEFINED -_
-        24. recycled_UNDEFINED  punarAvqwwa             		( Suggested by Sukhada  20-05-13)
+        24. recycled_UNDEFINED  punarAvqwwa             		( Suggested by Sukhada  	20-05-13)
+	25. works_UNDEFINED	racanA					(Suggested by Chaitanya Sir 	19-08-13)
+
 
     8. Modified category:
        ------------------
@@ -876,7 +892,9 @@ Modified:
 	Compile_<<<unprintable character>>>_<<<unprintable character>>>_<<<unprintable character>>>_<<<unprintable character>>>_<<<unprintable character>>>_go	saMkalana_waWA_kAryapAlana#saMkalana_waWA_kAryapAlana#noun#3#RM
 	love_affair	premasambaMXa#premasambaMXa#noun#2#RM
 	In_fact		asala_meM#asala_meM#noun#2#RM
-	to_morrow       kala{AnevAlA}#kala{AnevAlA}#noun#2#RM (As tomorrow is a single word. By Roja, Suggested by Alpana ji (LTRC) 15-07-13)
+	to_morrow       kala{AnevAlA}#kala{AnevAlA}#noun#2#RM 
+			(As tomorrow is a single word. By Roja, Suggested by Alpana ji (LTRC) 15-07-13)
+	the_great	mahAna_loga#mahAna_loga#noun#2#RM	(Suggested by Chaitanya Sir 16-08-13)
 
     Modified :
     --------
@@ -896,6 +914,7 @@ Modified:
 	electric_catfish 	electric_cell	electric_chair	electric_charge		electrical_capacity
 	Modified head info #0#	to #1#	(by Roja 15-07-13)
 	Entries which contains '[', ']', '(', ')', '{', '}', '<', '>', ':' in hindi meanings are manually checked by LTRC and updated into the file along with there names.
+	most_of_the_time	jZyAxAwara_samaya	as	prAyaH	( Suggested by Chaitanya sir 16-08-13 )
 
     Added :
     ------

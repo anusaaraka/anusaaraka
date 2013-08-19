@@ -25,7 +25,7 @@
    (bind ?n1 (string-to-field (sub-string 2 (length ?str1) ?str1)))
    (bind ?n2 (string-to-field (sub-string 2 (length ?str2) ?str2)))
    (> ?n1 ?n2))
-;------------------------------------------------------------------------------------------------------------------------
+;==================================  Rules to modify the head =============================================
  ;Added by Shirisha Manju
  ;A dog and a cat are here.
  (defrule replace_head
@@ -38,6 +38,7 @@
  (printout       ?*dbug* "(rel_name-sids  "?rel" "?x"  "?and")"crlf)
  (printout       ?*dbug* "(rule-deleted_Relation-ids    replace_head  "?rel"  "?x"  "?and")"crlf)
  )
+ ;------------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju
  ; Are a dog and a cat here?
  (defrule replace_head_with_cop
@@ -52,9 +53,7 @@
  (printout       ?*dbug* "(rule-deleted_Relation-ids    replace_head  "?rel "  "?x"  "?and")"crlf)
  (assert (modified ?rel))
  )
- ;Added by Shirisha Manju
- ;She is ugly and fat.
-;------------------------------------------------------------------------------------------------------------------------
+ ;=======================================================================================================================
  (defrule sub_samA_with_cop
  (declare (salience 9888))
  (rel_name-sids nsubj|nsubjpass ?x  ?sub)
@@ -1330,7 +1329,6 @@
 )
 ; Ex. The faster it is, the more people will like it. 
 ;------------------------------------------------------------------------------------------------------------------------
-
 
 
 
