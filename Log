@@ -1,7 +1,9 @@
  19-08-13
  ========
- 1. WSD : Modified : due.clp	across.clp	into.clp	have_en_tam.clp	is_en_tam.clp
-		     leave.clp	that.clp	consider.clp	travel.clp	get.clp
+ 1. WSD : Modified : due.clp	across.clp	into.clp	have_en_tam.clp	   is_en_tam.clp
+		     leave.clp	that.clp	consider.clp	travel.clp	   get.clp
+		     act.clp    further.clp     move.clp        while.clp          with.clp
+		     set.clp	remain.clp
 	  Added    : locate.clp
 	  Removed  : tomorrow.clp
  2. adjective.clp
