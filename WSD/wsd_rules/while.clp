@@ -59,13 +59,14 @@
 (id-cat_coarse ?id conjunction)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id usa_avaXi_meM))
+(assert (id-wsd_root_mng ?id jaba_ki)) ;Modified by Manju Suggested by Chaitanya Sir (17-08-13) see comments below
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  while.clp 	while4   "  ?id "  usa_avaXi_meM )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  while.clp 	while4   "  ?id "  jaba_ki )" crlf))
 )
 
 ;"while","Conj","1.usa_avaXi_meM"
 ;I finished the novel while she was cooking.
+;  jaba_ki is also acceptable for the above sentence so changed usa_avaXi_meM to jaba_ki
 ;--"2.jaba_ki"
 ;I like black tea while my husband takes it with milk.
 ;

@@ -137,6 +137,19 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  act.clp 	act9   "  ?id "  kArya )" crlf))
 )
+;Added by abhinav gupta , IIT BHU
+(defrule act13
+(declare (salience 4050))
+(id-root ?id act)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(id-cat_coarse =(- ?id 1) PropN)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id aXiniyama))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  act.clp 	act13   "  ?id "  aXiniyama )" crlf))
+)
 
 (defrule act10
 (declare (salience 4000))
@@ -145,12 +158,19 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id aXiniyama))
+(assert (id-wsd_root_mng ?id kArya));Modified aXiniyama as kArya by Abhinav , IIT BHU
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  act.clp 	act10   "  ?id "  aXiniyama )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  act.clp 	act10   "  ?id "  kArya )" crlf))
 )
 
-
+;The act seemingly had to meam atleast this. 
+;Lenin's first political act after seizing power was to create communist international.
+; You say one thing and then act just the opposite. 
+;Using her name is an act of aggression. 
+;The journal itself is an act of making identity. 
+;We will act only using constitutional means. 
+;We must act.
+; Abhinav act prevented them from accomplishing their motives. 
 
 
 ;Added by Meena(4.02.10)

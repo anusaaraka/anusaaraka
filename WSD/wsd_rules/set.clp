@@ -129,7 +129,7 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id jamA))
+(assert (id-wsd_root_mng ?id yojiwa_kara));Replaced "jamA" --> yojiwa_kara by Manju Suggested by Chaitanya Sir (17-08-13) . Ex : The Gita has been set in the Mahabharata. Note: if it sounds too formal it may be restored.
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  set.clp 	set8   "  ?id "  jamA )" crlf))
 )

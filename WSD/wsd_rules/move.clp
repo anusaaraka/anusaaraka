@@ -7,6 +7,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id moving )
 (or(viSeRya-kqxanwa_viSeRaNa  ?id1 ?id)(viSeRya-viSeRaNa   ?id1 ?id))
+(id-cat_coarse ?id1 noun);Added by Manju to exclude examples like :  Moving beyond the intellect, I therefore soar high in the vast expanse of the Gita on the twin wings of faith and experimentation. Suggested by Chaitanya Sir (16-08-13)
 =>
 (retract ?mng)
 (assert (id-wsd_word_mng ?id hqxaya_sparSI))

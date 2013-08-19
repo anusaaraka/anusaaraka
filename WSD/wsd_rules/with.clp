@@ -54,40 +54,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  with.clp 	with2   "  ?id "  vAlA )" crlf))
 )
 
-
-
-;No need for this rule, as with0 should be able to deal with this situation(Meena) 
-(defrule with3
-(declare (salience 4900))
-(id-root ?id with)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) animate)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id ke_sAWa))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  with.clp 	with3   "  ?id "  ke_sAWa )" crlf))
-)
-
-
-
-
-;No need for this rule, as with0 should be able to deal with this situation(Meena)
-(defrule with4
-(declare (salience 4800))
-(id-root ?id with)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) my|me|him|her|them|it|us|you|your|his|their|whom|that); added that in the list -- by manju
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id ke_sAWa))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  with.clp 	with4   "  ?id "  ke_sAWa )" crlf))
-)
-
-;He ate rice with her.
-
-
 ;The labour was not satisfied with their salary.    Meena(29.3.10)
 ;Modified by Meena(3.02.10);added "cloud" in the list
 ;The sky is wreathed with clouds.
@@ -103,9 +69,9 @@
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-with_saMbanXI  ?id1 ?id2)
 ;(id-word =(+ ?id 1)  ~animate)
-(or(id-root ?id2 newspaper|spoon|pencil|pen|hand|telescope|flower|money|idol|marker|cloud|salary|bottle)  ;Added Salary,bottle(Meena 13.4.10) in the list)
-(id-root ?id2 love|beauty|speed|fact));Added facts in the list(Meena 26.02.10)
-;(or(viSeRya-det_viSeRaNa ?id2  ?id3)(viSeRya-viSeRana ?id2 ?id3))
+(id-root ?id2 newspaper|spoon|pencil|pen|hand|telescope|flower|money|idol|marker|cloud|salary|bottle|love|beauty|speed|fact|skill)  ;Added Salary,bottle in the list Meena 13.4.10
+;Added facts in the list(Meena 26.02.10)
+;Added skill in the list by Manju(17-08-13) Suggested by Chaitanya sir (All abstract nouns will also go here)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id se))
