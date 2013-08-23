@@ -647,7 +647,7 @@ God-fearing_adjective	awyaXika_XArmika
 God-forsaken_adjective	sUnA/apriya
 God-given_adjective	BagavAna_ne_xiyA_huA
 God_INDC	he_BagavAna
-God_UNDEFINED	xevawA
+God_PropN	ISvara
 God_noun	ISvara/BagavAna
 Godfather_noun	saraganA
 Gogh_noun	gO
@@ -33920,7 +33920,7 @@ god-awful_adjective	BayAnaka
 god-damn_adjective	kambaKwa/sAlA
 god-damned_adjective	kambaKwa/sAlA
 god-daughter_noun	XarmapuwrI
-god_noun	ISvara/xevawA/sammAniwa_vyakwi/BagavAna
+god_noun	xevawA/ISvara/sammAniwa_vyakwi/BagavAna
 godchild_noun	XarmapuwrI
 goddam_adjective	kambaKwa/sAlA
 goddess_noun	xevI
@@ -54934,7 +54934,7 @@ overcharging_UNDEFINED	aXika_lAxa_xenA_yA_BAra_xenA
 overcoat_noun	Upara_pahananevAlA_badA_kota/ovarakota
 overcoats_UNDEFINED	Upara_pahananevAlA_badA_kota
 overcome_adjective	aBiBUwa
-overcome_verb	vaSIBUwa_kara_le/vaSIBUwa_ho/parAjiwa_kara/kAbU_pA/kAbu_pA/harA
+overcome_verb	aBiBUwa_kara_le/vaSIBUwa_kara_le/vaSIBUwa_ho/parAjiwa_kara/kAbU_pA/kAbu_pA/harA
 overcomes_UNDEFINED	harAnA
 overcoming_UNDEFINED	harAnA
 overcompensate_verb	kamI_pUrI_kara
@@ -61505,7 +61505,7 @@ propagate_verb	PElA/ugA/prasAriwa_kara/prajanana_kara/pracAra_kara/PEla
 propagated_UNDEFINED	PElAnA
 propagates_UNDEFINED	PElAnA
 propagating_UNDEFINED	PElAnA
-propagation_noun	pracAraNa/prasAraNa/prajanana/pracAra
+propagation_noun	prasAraNa/prasAraNa/prajanana/pracAra
 propagator_noun	pracAraka/pravarXana-petI/pravarXaka
 propagators_UNDEFINED	pracAraka
 propane_noun	rafga_rahiwa_jEsA
@@ -68109,7 +68109,7 @@ sagas_UNDEFINED	AKyAna
 sage-green_UNDEFINED	kapUra_kA_pawwA
 sage-green_adjective	seja_harA
 sage_adjective	wejapawwe-sA_harA/jFAnI
-sage_noun	kapUra_kA_pawwA/wejapAwa/seja/jFAnI
+sage_noun	jFAnI/kapUra_kA_pawwA/wejapAwa/seja
 sagebrush_noun	sejabraSa
 sagely_adverb	samaJaxArI_se/buxXimawwApUrvaka
 sages_UNDEFINED	kapUra_kA_pawwA

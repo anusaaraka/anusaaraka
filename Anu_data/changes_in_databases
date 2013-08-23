@@ -533,6 +533,7 @@ Modified:
      i. phy_dictionary.txt   and   ii. phy_eng_multi_word_dic.txt
 11. multi_word_expressions_from_iit_bombay.txt 
 	Extracted from iit-bombay dictionary.Added by Roja 10-05-13. Suggested by Chaitanya Sir)
+12. proper_noun_dic.txt    (Added by Shirisha Manju Suggested by Chaitanya Sir)
      
 
  Changes in ol_parser_unused_words.txt
@@ -690,6 +691,7 @@ Modified:
 	87. demandingly_adverb	bahuwaaXika_apekRA_raKawe_hue	as	bahuwa_aXika_apekRA_raKawe_hue	(	"    )
 	88. generality_noun	sAmAnyawAA		as	sAmAnyawA	(By Roja 09-08-13 Suggested by Sukhada)	
 	89. sketch_verb		rUpareKA_bawA		as	rUpareKA_banA	(Suggested by Chaitanya Sir 19-08-13 )
+	90. propagation_noun	pracAraNa		as	prasAraNa	(	"		    22-08-13 )
 
 
     3. Added new entry:
@@ -753,8 +755,13 @@ Modified:
        	28. recycled_adjective         	punarAvqwwa
 	29. ad_noun			krIswa_paScAwa			(		"	      06-08-13	)
 	30. henceforth_adverb		Age_se				( Suggested by Chaitanya Sir  19-08-13	)
-	31. inseparable_adjective	aBinna/aviBakwa			(		"		"	)
-	32. works_noun			racanA				(		"		"	)
+					Ex: Henceforth, every Sunday, I shall be giving a talk on the teaching of the Gita,
+					    who is verily our mother.
+	31. inseparable_adjective	aBinna/aviBakwa			(Suggested by Chaitanya Sir  19-08-13	)
+					Ex: The characters depicted therein have become an inseparable part of our lives.
+	32. works_noun			racanA				(Suggested by Chaitanya Sir  19-08-13	)
+					Ex: The Mahabharata and the Ramayana are thus undoubtedly unique and wonderful works.
+	33. overcome_verb		aBiBUwa_kara_le			(Suggested by Chaitanya Sir  22-08-13   )
 
 
     5. Modifying first meaning from the list :
@@ -779,6 +786,12 @@ Modified:
 	18. illuminate_verb	prakASayukwa_kara	as	prakASiwa_kara	(Suggested by Chaitanya Sir  19-08-13  	)
 	19. intellect_noun	prajFA			as	buxxI		(		"		"      	)
 	20. undoubtedly_adverb	nissanxeha_rUpa_se	as	nissanxeha	(		"		"	)
+				Ex: The Mahabharata and the Ramayana are thus undoubtedly unique and wonderful works.
+	21. god_noun		ISvara			as	xevawA		(Suggested by Chaitanya Sir  22-08-13   )
+	22. sage_noun		kapUra_kA_pawwA		as	jFAnI		(		"		"       )
+				Ex: With perfect detachment Vyasa, the great sage, graphically depicts before us the complex 
+				    reality of the vast web of worldly life.
+	23. God_PropN		xevawA			as	ISvara		(Suggested by Chaitanya  Sir  22-08-13   )
 
 
     6. Removed meaning from existing list:
@@ -845,6 +858,8 @@ Modified:
 	4. sabre-rattling_-	as	sabre-rattling_noun	( 		"  			)
  	5. sabre-toothed_-	as	sabre-toothed_adjective (		"			)
 	6. right-oh!_INDC       as	right-oh!_interjection
+	7. God_UNDEFINED	as	God_PropN		( Suggested by Chaitanya Sir 22-08-13 	)
+
 	
  changes in preposition.txt
  ==========================
@@ -912,33 +927,40 @@ Modified:
 	electric_catfish 	electric_cell	electric_chair	electric_charge		electrical_capacity
 	Modified head info #0#	to #1#	(by Roja 15-07-13)
 	Entries which contains '[', ']', '(', ')', '{', '}', '<', '>', ':' in hindi meanings are manually checked by LTRC and updated into the file along with there names.
-	most_of_the_time	jZyAxAwara_samaya	as	prAyaH	( Suggested by Chaitanya sir 16-08-13 )
+	most_of_the_time	jZyAxAwara_samaya	as	prAyaH	  ( Suggested by Chaitanya sir 16-08-13 )
+	well_established	suvyavasWiwa		as	susWApiwa (			"      22-08-13 )
+	has_no_comments_to_make	ko_koWa_tippaprI_nahIM_karanI_hE as ko_koI_tippaNI_nahIM_karanI_hE (    "       )
+
 
     Added :
     ------
-    	straight_line   	sarala_reKA#sarala_reKA#noun#2#RM		(Suggested by Chaitanya Sir 05-09-12)
-    	path_length     	paWa_lambAI#paWa_lambAI#noun#2#WM		(Suggested by Chaitanya Sir 05-09-12)
-    	able_to_walk    	cala_pA#cala_pA#verb#3#RM	        	(Suggested by Chaitanya Sir 09-10-12)
-    	able_to_handle  hala_karane_meM_sakRama#hala_karane_meM_sakRama#verb#3#WM (Suggested by Chaitanya Sir 09-10-12)
-    	the_force_of_friction   GarRaNa_bala#GarRaNa_bala#noun#4#WM  		(Suggested by Sukhada 13-10-12)
-    	since_time_immemorial   anAxi_kAla_se_hI#anAxi_kAla_se_hI#noun#2#W 	(Suggested by Chaitanya Sir 18-10-12)
-    	at_the_other_end        isake_viparIwa#isake_viparIwa#noun#4#WM    	(Suggested by Sukhada 20-10-12)
-    	some_of_these   	inameM_se_kuCa#inameM_se_kuCa#determiner#1#WM   (         "                   )
-    	reaction_force      	aBilamba_bala#aBilamba_bala#noun#2#RM
-    	electron_beam       	ilektroYna_puFja#ilektroYna_puFja#noun#2#RM
-    	a_way               	isa_prakAra#isa_prakAra#noun#2#RM
-	external_agency     	bAhya_sAXana#bAhya_sAXana#noun#2#WM		(Suggested by Chaitanya Sir 05-12-12)
-	problems_of_interest    rocaka_samasyAez#rocaka_samasyAez#noun#1#WM 	(      "    			    )
-	living_creature 	prANI#prANI#noun#2#WM				(Suggested by Chaitanya Sir 12-12-12)
-	just_before		se_TIka_pahale#se_TIka_pahale#preposition#2#RM	(Suggested by Chaitanya Sir 22-01-13)
-	as_a_whole      	eka_ikAI_ke_rUpa_meM#eka_ikAI_ke_rUpa_meM#preposition#1#WM (	 "   	    18-02-13)
-	in_the_first_place      praWamawayA#praWamawayA#preposition#4#WM	(      		 "		    )
-	in_course_of_time       kAlAnwara_meM/yaWAsamaya#yaWAsamaya#noun#2#RM	(		 "	    20-04-13)
-	as_of_now       	aba_waka#aba_waka#adverb#3#WM			(		 "	    10-07-13)
-	as_by_now       	aba_waka#aba_waka#adverb#3#WM			(		 "		    )
-	except_for      	ko_Coda_kara#ko_Coda_kara#preposition#1#WM	(		 "	    23-07-13)
-	magnifying_glass	AvarXaka_lensa#AvarXaka_lensa#noun#2#RM		(Suggested by Prachi Banasthali 15-08-13) 
-	whole_of		sampUrNa#sampUrNa#noun#1#RM			(Suggested by Sukhada	    19-08-13)
+    	1. straight_line   	sarala_reKA#sarala_reKA#noun#2#RM		(Suggested by Chaitanya Sir 05-09-12)
+    	2. path_length     	paWa_lambAI#paWa_lambAI#noun#2#WM		(Suggested by Chaitanya Sir 05-09-12)
+    	3. able_to_walk    	cala_pA#cala_pA#verb#3#RM	        	(Suggested by Chaitanya Sir 09-10-12)
+    	4. able_to_handle  hala_karane_meM_sakRama#hala_karane_meM_sakRama#verb#3#WM (Suggested by Chaitanya Sir 09-10-12)
+    	5. the_force_of_friction   GarRaNa_bala#GarRaNa_bala#noun#4#WM  		(Suggested by Sukhada 13-10-12)
+    	6. since_time_immemorial   anAxi_kAla_se_hI#anAxi_kAla_se_hI#noun#2#W 	(Suggested by Chaitanya Sir 18-10-12)
+    	7. at_the_other_end        isake_viparIwa#isake_viparIwa#noun#4#WM    	(Suggested by Sukhada 20-10-12)
+    	8. some_of_these   	inameM_se_kuCa#inameM_se_kuCa#determiner#1#WM   (         "                   )
+    	9. reaction_force      	aBilamba_bala#aBilamba_bala#noun#2#RM
+    	10. electron_beam       	ilektroYna_puFja#ilektroYna_puFja#noun#2#RM
+	11. a_way               	isa_prakAra#isa_prakAra#noun#2#RM
+	12. external_agency     	bAhya_sAXana#bAhya_sAXana#noun#2#WM		(Suggested by Chaitanya Sir 05-12-12)
+	13. problems_of_interest    rocaka_samasyAez#rocaka_samasyAez#noun#1#WM 	(      "    			    )
+	14. living_creature 	prANI#prANI#noun#2#WM				(Suggested by Chaitanya Sir 12-12-12)
+	15. just_before		se_TIka_pahale#se_TIka_pahale#preposition#2#RM	(Suggested by Chaitanya Sir 22-01-13)
+	16. as_a_whole      	eka_ikAI_ke_rUpa_meM#eka_ikAI_ke_rUpa_meM#preposition#1#WM (	 "   	    18-02-13)
+	17. in_the_first_place  praWamawayA#praWamawayA#preposition#4#WM	(      		 "		    )
+	18. in_course_of_time   kAlAnwara_meM/yaWAsamaya#yaWAsamaya#noun#2#RM	(		 "	    20-04-13)
+	19. as_of_now       	aba_waka#aba_waka#adverb#3#WM			(		 "	    10-07-13)
+	20. as_by_now       	aba_waka#aba_waka#adverb#3#WM			(		 "		    )
+	21. except_for      	ko_Coda_kara#ko_Coda_kara#preposition#1#WM	(		 "	    23-07-13)
+	22. magnifying_glass	AvarXaka_lensa#AvarXaka_lensa#noun#2#RM		(Suggested by Prachi Banasthali 15-08-13) 
+	23. whole_of		sampUrNa#sampUrNa#noun#1#RM			(Suggested by Sukhada	    19-08-13)
+		Ex: Standing in the middle of the great epic like a lighthouse, it illuminates the whole of the epic.
+	24. in_this_way		isa_waraha#isa_waraha#noun#3#RM			(Suggested by Chaitanya Sir 20-08-13)
+		Ex: The characters in other epics of the world have not become one with the lives of the people in this way.
+
 
     Added new meaning to the existing word:
     --------------------------------------
@@ -970,6 +992,8 @@ Modified:
 	biology_noun    	jIva_vijFAna	(	"			     "   )
 	channel_noun		saraNi		(	"  by Amit MNNIT        01-07-13 )
 	corpuscular_noun        kaNikA		(Suggested by Garima Banasthali 14-08-13 )
+	vacuum_noun    		nirvAwa		(	"	"		21-08-13 )
+	
 
     Modified :
     ---------
@@ -1012,3 +1036,9 @@ Modified:
  Modified:
  --------
 	calendar_month	paMcAMga_samayaa	as	paMcAMga_samaya		(By Roja 20-06-13)
+
+ changes in proper_noun_dic.txt
+ ==============================
+  Added : 
+	Mahabharata	mahABArawa	(Suggested by Chaitanya Sir 22-08-13)
+	Ramayana	rAmAyaNa	(		"		"   )

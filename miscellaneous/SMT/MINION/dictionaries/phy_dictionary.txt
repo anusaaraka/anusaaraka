@@ -363,3 +363,4 @@ weightlessness_noun	BArahInawA
 weight_noun	BAra
 electrostatics	sWiravExyuwikI
 channel_noun	saraNi
+vacuum_noun	nirvAwa

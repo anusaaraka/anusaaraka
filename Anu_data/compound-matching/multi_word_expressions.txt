@@ -15015,7 +15015,7 @@ harrier_eagle	upaxravI_gixXa#upaxravI_gixXa#noun#2#RM
 harvest_festival	Pasala_katane_para_manAyA_jAnevAlA_uwsava#Pasala_katane_para_manAyA_jAnevAlA_uwsava#noun#2#RM
 harvest_home	pakI_huI_PZasala_kA_batoranA#pakI_huI_PZasala_kA_batoranA#noun#2#RM
 harvest_moon	Saraxa_pUrNimA#Saraxa_pUrNimA#noun#2#RM
-has_no_comments_to_make	ko_koWa_tippaprI_nahIM_karanI_hE#ko_koWa_tippaprI_nahIM_karanI_hE#noun#5#RM
+has_no_comments_to_make	ko_koI_tippaNI_nahIM_karanI_hE#ko_koI_tippaNI_nahIM_karanI_hE#noun#5#RM
 hash_diagram	xruwAnveRaNa_AreKa#xruwAnveRaNa_AreKa#noun#2#RM
 hash_function	xruwAnveRaNa_Palana#xruwAnveRaNa_Palana#noun#2#RM
 hash_table	xruwAnveRaNa_sAraNI#xruwAnveRaNa_sAraNI#noun#2#RM
@@ -32549,7 +32549,7 @@ well_earned	suyogya#suyogya#noun#2#RM
 well_educated	suSikRiwa#suSikRiwa#noun#2#RM
 well_enough	^sanwoRajanaka#^sanwoRajanaka#noun#2#RM
 well_establihed	suprawiRTiwa#suprawiRTiwa#noun#2#RM
-well_established	suvyavasWiwa#suvyavasWiwa#noun#2#RM
+well_established	susWApiwa#susWApiwa#noun#2#RM
 well_fed	pORtika#pORtika#noun#2#RM
 well_formed_formula	sunirmiwa_sUwra#sunirmiwa_sUwra#noun#3#RM
 well_groomed	susajjiwa#susajjiwa#noun#2#RM
@@ -33195,6 +33195,7 @@ zoom_in	AkAra_varXana#AkAra_varXana#noun#2#RM
 except_for	ko_Coda_kara#ko_Coda_kara#preposition#1#WM
 magnifying_glass	AvarXaka_lensa#AvarXaka_lensa#noun#2#RM
 whole_of	sampUrNa#sampUrNa#noun#1#RM
+in_this_way	isa_waraha#isa_waraha#noun#3#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
