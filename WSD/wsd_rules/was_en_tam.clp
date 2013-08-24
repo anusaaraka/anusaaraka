@@ -58,7 +58,7 @@
 (declare (salience 4900))
 (id-TAM ?id was_en)
 ?mng <-(meaning_to_be_decided ?id)
-(id-root ?id tarnish)
+(id-root ?id tarnish|destroy);Added destroy by Manju Suggested by Preeti (21-08-13) Ex: The building was completely destroyed by fire.
 =>
 (retract ?mng)
 (assert (id-E_tam-H_tam_mng ?id was_en 0_gayA_WA))
@@ -66,10 +66,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  was_en_tam.clp    was_en_tam02  "  ?id "  0_gayA_WA )" crlf))
 (assert (id-tam_type ?id passive))
 )
-
-
-
-
 
 ;Modified by Meena(14.4.10)
 (defrule was_en_tam2

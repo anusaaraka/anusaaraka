@@ -367,3 +367,11 @@ emitter_noun    uwsarjaka
 vacuum_noun	nirvAwa
 discharge_noun	visarjana
 harmonic_noun	guNAvqwwiyA
+circuit_noun	paripaWa
+hydrogen_noun	hAidrojana
+spectrum_noun	spektrama
+radioactive_adjective	rediyo_ektiva
+lightwaves_noun	prakASa_waraMga
+diffraction_noun	vivarwana
+model_noun	moYdala
+voltage_noun	voltawA

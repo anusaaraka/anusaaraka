@@ -1090,11 +1090,12 @@
 
 ;Modified by Sukhada
 ;The girl running to the shop is my friend . 
+;Indeed, the branch of optics in which one completely neglects the finiteness of the wavelength is called geometrical optics and a ray is defined as the path of energy propagation in the limit of wavelength [tending to] zero.
 (defrule to44
 (declare (salience 1400))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
-(id-root =(- ?id 1) walk|point|carry|run|cycle) ;used root instead of word  
+(id-root =(- ?id 1) walk|point|carry|run|cycle|tend) ;used root instead of word  ;Added tend in the list by Manju (23-08-13) Suggested by Chaitanya Sir 
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kI_ora))

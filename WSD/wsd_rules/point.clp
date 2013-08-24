@@ -164,6 +164,20 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  point.clp 	point9   "  ?id "  iSArA_kara )" crlf))
 )
 
+;Added by Shirisha Manju (24-08-13) Suggested by Chaitanya Sir
+;Because light could travel through vacuum and it was felt that a wave would always require a medium to propagate from one point to the other.
+(defrule point_default_rule
+(declare (salience 300))
+(id-root ?id point)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id biMxu))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  point.clp     point_default_rule   "  ?id "  biMxu )" crlf))
+)
+
 ;default_sense && category=verb	iSArA kara	0
 ;"point","V","1.iSArA karanA"
 ;He pointed towards the broken window

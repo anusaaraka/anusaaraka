@@ -220,7 +220,7 @@ gaXA prawimA se lAxA gayA WA.
 
 Hindi meaning using Stanford parser 2.51
 Sita is a good girl. 
-PropN-sita-PropN eka acCI ladakI hE.
+sIwA eka acCI ladakI hE.
 Multiple adjective senses are available for good. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.52
@@ -1848,7 +1848,7 @@ vaha na hI KelawA hE, na paDawA hE.
 
 Hindi meaning using Stanford parser 4.17
 The kullu valley is also known as the valley of the gods. 
-kullu GAtI ISvara kI GAtI ke nAma se BI jAnI jAwI hE.
+kullu GAtI xevawAoM kI GAtI ke nAma se BI jAnI jAwI hE.
 
 Hindi meaning using Stanford parser 4.18
 Chaturbhuj temple is built on a massive stone platform. 
@@ -1874,8 +1874,9 @@ The garden provides a spectacular view of the city.
 uxyAna Sahara kA eka SAnaxAra xqRtikoNa xewA hE.
 
 Hindi meaning using Stanford parser 4.23
-The kullu valley is also known as the valley of the gods. 
-kullu GAtI ISvara kI GAtI ke nAma se BI jAnI jAwI hE.
+It is easy to get into a fight. 
+ladAI meM ulaJanA AsAna hE.
+Multiple adjective senses are available for easy. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.24
 Queen victoria opened blackfriars bridge in november 1869. 
@@ -1963,7 +1964,7 @@ Multiple adjective senses are available for beautiful. WSD rule is required
 
 Hindi meaning using Stanford parser 4.41
 Mary, Joe, Sita, Geeta and Louise are coming to the party. 
-merI, PropN-joe-PropN, PropN-sita-PropN, PropN-geeta-PropN Ora PropN-louise-PropN pArtI ko A rahe hEM.
+merI, PropN-joe-PropN, sIwA, PropN-geeta-PropN Ora PropN-louise-PropN pArtI ko A rahe hEM.
 merI, PropN-joe-PropN, PropN-sita-PropN, PropN-geeta-PropN Ora PropN-louise-PropN pArtI ko A rahIM hEM.
 
 Hindi meaning using Stanford parser 4.42
@@ -2229,11 +2230,6 @@ mEM WodI sahAyawA ke binA Age_nahIM_baDa sakawA hUz.
 Hindi meaning using Stanford parser 5.2
 I do not want to get into problem. 
 mEM samasyA meM ulaJanA nahIM cAhawA hUz.
-
-Hindi meaning using Stanford parser 5.3
-It is easy to get into a fight. 
-ladAI meM ulaJanA AsAna hE.
-Multiple adjective senses are available for easy. WSD rule is required 
 
 Calling Transliteration
 Calling Interface related programs

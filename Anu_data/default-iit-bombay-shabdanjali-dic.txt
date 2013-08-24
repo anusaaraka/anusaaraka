@@ -6296,7 +6296,7 @@ approx_adverb	lagaBaga
 approximate_adjective	lagaBaga/sannikata
 approximate_verb	lagaBaga_sahI_anumAna_lagA/lagaBaga_anumAna_lagA/kI_anurUpa_ho/anurUpa_ho/samIpa_A
 approximated_UNDEFINED	samIpa_AnA
-approximately_adverb	wakarIbana_rUpa_se/lagaBaga
+approximately_adverb	lagaBaga/wakarIbana_rUpa_se
 approximater_UNDEFINED	samIpa_AnA
 approximates_UNDEFINED	samIpa_AnA
 approximatest_UNDEFINED	samIpa_AnA
@@ -7105,7 +7105,7 @@ assuage_verb	SAnwa_kara/kama_kara/buJA
 assuaged_UNDEFINED	SAnwa_karanA
 assuages_UNDEFINED	SAnwa_karanA
 assume_UNDEFINED	XAraNA
-assume_verb	kalpanA_kara/mAna_le/kAryaBAra_samBAla/rUpa_XAraNa_kara/samaJa/mAna/bahAnA_kara/kalpanA_kara_le
+assume_verb	mAna/kalpanA_kara/mAna_le/kAryaBAra_samBAla/rUpa_XAraNa_kara/samaJa/bahAnA_kara/kalpanA_kara_le
 assumed_UNDEFINED	kAryaBAra_samBAlanA
 assumed_adjective	ParjI/kalpiwa
 assumes_UNDEFINED	kAryaBAra_samBAlanA
@@ -13387,7 +13387,7 @@ centre-piece_noun	maXyAlafkAra/awyaXika_mahawwvapUrNa_muxxA
 centre-stage_noun	aham_sWAna
 centre_adjective	kenxra
 centre_noun	kenxra/XurII/waNtrikA_koSikA/waNtrikA_kenxra/seNtara/naramapanWI/mUlakAraNa/muKya_senA/maXyamArgI/maXya-binxu/maXya-BAga/maXya/kRewra/kIlII/jada/bIca_kA_KilAdI/bIca_kA_KiladI
-centre_verb	TIka_kara/safkenxrIwa_kara/pAsa_kara/maXya_meM_lagA/lagA/kenxrIwa_kara/kenxriwa_kara/kenxrIBuwa_karanA_kara/kenxrIBUwa_kara/kenxra_niSciwa_kara/kenxra_meM_lagA/kenxra_meM_ekatra_kara/kenxra_kI_ora_mAra/eka_jagaha_kara/bIca_meM_raKa
+centre_verb	kenxriwa_kara/TIka_kara/safkenxrIwa_kara/pAsa_kara/maXya_meM_lagA/lagA/kenxrIBuwa_karanA_kara/kenxrIBUwa_kara/kenxra_niSciwa_kara/kenxra_meM_lagA/kenxra_meM_ekatra_kara/kenxra_kI_ora_mAra/eka_jagaha_kara/bIca_meM_raKa
 centred_UNDEFINED	kenxra
 centres_UNDEFINED	kenxra
 centrestage_UNDEFINED	kenxrIyamaFca
@@ -23438,7 +23438,7 @@ distinguishes_UNDEFINED	alaga_kara
 distinguishing_UNDEFINED	alaga_kara
 distort_verb	ENTa/woda-maroda_kara/vikqwa_kara/rUpa_bigAda/sikoda
 distorted_UNDEFINED	rUpa_bigAdanA
-distorted_adjective	xURiwa/virUpiwa/vikqwa
+distorted_adjective	vikqwa/xURiwa/virUpiwa
 distorting_UNDEFINED	rUpa_bigAdanA
 distortion_noun	teDApana/xqRti_vipaWana/woda-maroda/kurUpawA/vikqwi
 distortions_UNDEFINED	vikqwi
@@ -25479,7 +25479,7 @@ electorate_noun	nirvAcaka_varga
 electors_UNDEFINED	nirvAcaka
 electric_adjective	vExyuwa/bijalI_kA/SMAwa/bijalI_se_calane_vAlA
 electric_noun	vExyuwaI/bijalI
-electrical_adjective	bijalI_kA/vixyuwa
+electrical_adjective	vExyuwa/vixyuwa/bijalI_kA
 electricaler_UNDEFINED	bijalI_kA
 electricalest_UNDEFINED	bijalI_kA
 electrically_adverb	vixyuw_se
@@ -32722,7 +32722,7 @@ gamin_noun	sadakoM_para_GUmane_vAlA_pariwyakwa_ladakA
 gaming_noun	juA
 gamings_UNDEFINED	juA
 gamma-radiation_noun	gAmA-kiraNa
-gamma_noun	grIka_meM_wIsarA_akRara
+gamma_noun	gAmA/grIka_meM_wIsarA_akRara
 gammas_UNDEFINED	grIka_meM_wIsarA_akRara
 gammon_noun	suara_kA_goSwa
 gammoned_UNDEFINED	suara_kA_goSwa
@@ -42419,7 +42419,7 @@ involuntariest_UNDEFINED	asvEcCika
 involuntarily_adverb	anicCA_se
 involuntariness_noun	anicCA
 involuntary_adjective	asvEcCika/anicCA_se_hone_vAlA
-involve_verb	SAmila_ho/SAmila_kara/PaMsAnA_kara/nihIwa_ho/kAma_meM_laga_jA/Kaware_meM_pada
+involve_verb	SAmila_kara/SAmila_ho/PaMsAnA_kara/nihIwa_ho/kAma_meM_laga_jA/Kaware_meM_pada
 involved_UNDEFINED	kAma_meM_laga_jAnA
 involved_adjective	jatila/sambaxXa/pecIxA/GaniRTa_rUpa_se_sambaxXa/GaniRTa_rUpa_se_judA_huA/anwargraswa
 involvement_UNDEFINED	AveRtana
@@ -93470,3 +93470,4 @@ zymurgy_noun	kiNvavijFAna/kENvikI
 photoelectric_noun	prakASa_vixyuwa
 antielectron_noun	prawi_ilektroYna
 linearly_adverb	rEKikawaH
+finiteness_noun	parimiwawA

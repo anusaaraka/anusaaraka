@@ -6492,7 +6492,6 @@ carriage_trade	ucca-swarIya_vyApAra#ucca-swarIya_vyApAra#noun#2#RM
 carridge_flag	haswaMgawa_Xvaja#haswaMgawa_Xvaja#noun#2#RM
 carried_down	wala-SeRa#wala-SeRa#noun#2#RM
 carried_forward	agrenIwa#agrenIwa#noun#2#RM
-carried_foward	agrenIwa#agrenIwa#noun#2#RM
 carried_over	agrenIwa#agrenIwa#noun#2#RM
 carrier_bag	sAmAna_le_jAne_kA_WElA#sAmAna_le_jAne_kA_WElA#noun#2#RM
 carrier_band	vAhaka_bEnda#vAhaka_bEnda#noun#2#RM
@@ -33196,6 +33195,7 @@ except_for	ko_Coda_kara#ko_Coda_kara#preposition#1#WM
 magnifying_glass	AvarXaka_lensa#AvarXaka_lensa#noun#2#RM
 whole_of	sampUrNa#sampUrNa#noun#1#RM
 in_this_way	isa_waraha#isa_waraha#noun#3#RM
+denoted_by	se_nirxiRta#se_nirxiRta#adjective#1#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
