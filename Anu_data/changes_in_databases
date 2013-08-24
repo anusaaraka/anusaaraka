@@ -62,8 +62,10 @@
   ===================
   1.  Added
 	divide_up       bAzta_xe
-	come back       vApasa_AnA  (suggested by (Rajini 20.01.12)) Ex : Let Abraham come back.
-	look_after      xekabAla_kara(Suggested by Chaitanya Sir 26-07-13)
+	come back       vApasa_AnA		(Suggested by Rajini 20.01.12) Ex : Let Abraham come back.
+	look_after      xekabAla_kara		(Suggested by Chaitanya Sir 26-07-13)
+	put_forward	praswuwa_kara		(Suggested by Pramila Banasthali 23-08-13)
+
   2.  Removed
 	"nA" in hindi meanings.
 
@@ -721,6 +723,7 @@ Modified:
 	20. life-breath_noun		prANa-wawwva			(			"    19-08-13	)	
 	21. ratiocination_noun		yukwivAxa			(			"	"	)
 	22. verily_adverb		vaswuwaH			(			"	"	)
+	23. linearly_adverb		rEKikawaH			(	"   Sonam Banasthali 23-08-13   )
 
 	 
     4. Added new meaning to the existing word:
@@ -762,6 +765,8 @@ Modified:
 	32. works_noun			racanA				(Suggested by Chaitanya Sir  19-08-13	)
 					Ex: The Mahabharata and the Ramayana are thus undoubtedly unique and wonderful works.
 	33. overcome_verb		aBiBUwa_kara_le			(Suggested by Chaitanya Sir  22-08-13   )
+	34. investigation_noun		parIkRaNa			(	"     Pramila Banasthali 24-08-13)
+					Ex:In his experimental investigation on the production of electromagnetic waves by means of a spark discharge, Hertz observed that high voltage sparks across the detector loop were enhanced when the emitter plate was illuminated by ultraviolet light from an arc lamp.
 
 
     5. Modifying first meaning from the list :
@@ -791,7 +796,12 @@ Modified:
 	22. sage_noun		kapUra_kA_pawwA		as	jFAnI		(		"		"       )
 				Ex: With perfect detachment Vyasa, the great sage, graphically depicts before us the complex 
 				    reality of the vast web of worldly life.
-	23. God_PropN		xevawA			as	ISvara		(Suggested by Chaitanya  Sir  22-08-13   )
+	23. God_PropN		xevawA			as	ISvara		(Suggested by Chaitanya  Sir  22-08-13  )
+	24. involved_adjective	sambaxXa		as	jatila		(Suggested by Prachi Banasthali 23-08-13)
+				Ex: A long and involved story.
+				    The plot of the film was too involved - i could not understand it.
+	25. however_adverb	PiraBI			as	waba_BI		(		"		"	)
+				Ex:However, it predicted that on refraction if the wave bends towards the normal then the speed of light would be less in the second medium. 
 
 
     6. Removed meaning from existing list:
@@ -818,6 +828,7 @@ Modified:
 	18. I_pronoun       	mEz{sarvanAma}
 	19. great_adjective	bahuwa_aXikaA					(Suggested by Sarita ji LTRC	17-08-13)  
 	20. intellect_noun	aklamanxa					(Suggested by Chaitanya Sir   	19-08-13)
+	21. destroy_verb	para_pAnI_PeranAa				(Suggested by preeti ji LTRC    23-08-13)
 
 
     7. Removed entry:
@@ -944,7 +955,7 @@ Modified:
     	8. some_of_these   	inameM_se_kuCa#inameM_se_kuCa#determiner#1#WM   (         "                   )
     	9. reaction_force      	aBilamba_bala#aBilamba_bala#noun#2#RM
     	10. electron_beam       	ilektroYna_puFja#ilektroYna_puFja#noun#2#RM
-	11. a_way               	isa_prakAra#isa_prakAra#noun#2#RM
+    	11. a_way               	isa_prakAra#isa_prakAra#noun#2#RM
 	12. external_agency     	bAhya_sAXana#bAhya_sAXana#noun#2#WM		(Suggested by Chaitanya Sir 05-12-12)
 	13. problems_of_interest    rocaka_samasyAez#rocaka_samasyAez#noun#1#WM 	(      "    			    )
 	14. living_creature 	prANI#prANI#noun#2#WM				(Suggested by Chaitanya Sir 12-12-12)
@@ -992,23 +1003,26 @@ Modified:
 	biology_noun    	jIva_vijFAna	(	"			     "   )
 	channel_noun		saraNi		(	"  by Amit MNNIT        01-07-13 )
 	corpuscular_noun        kaNikA		(Suggested by Garima Banasthali 14-08-13 )
+	emitter_noun		uwsarjaka	(Suggested by Pramila    "	19-08-13 )
 	vacuum_noun    		nirvAwa		(	"	"		21-08-13 )
+	discharge_noun		visarjana	(	"	"	"	23-08-13 )
+	harmonic_noun		guNAvqwwiyA	(	"     Prachi	"	    "	 )
 	
 
     Modified :
     ---------
-        rearrangement_Noun  		punavryavasWA  	as   	punarvyavasWA  	(Suggested by Chaitanya Sir (08-08-12))
-	corresponding_adjective  	waxnurUpa	as	waxanurUpa	(Suggested by Sukhada (29-05-13))
+        rearrangement_Noun  		punavryavasWA  	as   	punarvyavasWA  	(Suggested by Chaitanya Sir 08-08-12)
+	corresponding_adjective  	waxnurUpa	as	waxanurUpa	(Suggested by Sukhada 29-05-13)
 
         modified "Xx" as "xX" in the following words 
                    SuxXa_gawika, SuxXa_gawikI, prasara_koNa_xEGryavqxXi, ruxXoRma, pariSuxXawA and saMbaxXa
-	relative_noun	ApekRa		as	relative_adjective	ApekRa	(Suggested by Chaitanya Sir (05-01-13))
+	relative_noun	ApekRa		as	relative_adjective	ApekRa	(Suggested by Chaitanya Sir 05-01-13)
 
     Added new meaning to the existing word:
     --------------------------------------
-	interplay_noun			pArasparika_praBAva	(Added by Shirisha Manju)
-	translational_adjective		sWAnAnwaraNa		(	"		)
-	molecular_adjective		aNu			(Suggested by Chaitanya Sir  (05-12-12))
+	interplay_noun			pArasparika_praBAva	(By Shirisha Manju)
+	translational_adjective		sWAnAnwaraNa		(	"	  )
+	molecular_adjective		aNu			(Suggested by Chaitanya Sir  05-12-12)
 	
 
  changes in phy_eng_multi_word_dic.txt
@@ -1023,7 +1037,10 @@ Modified:
  
     Added new entry:
     ----------------
-	charged_particles       AveSiwa_kaNa#AveSiwa_kaNa/noun#2#RM	(Suggested by Chaitanya Sir 07-06-13)
+	charged_particles       AveSiwa_kaNa#AveSiwa_kaNa#noun#2#RM	(Suggested by Chaitanya Sir	 07-06-13)
+	discharge_tube		visarjana_nalI#visarjana_nalI#noun#2#WM	(	"     Pramila Banasthali 19-08-13)
+	discharge_valve		visarjana_vAlva#visarjana_vAlva#noun#2#WM (	"		"		 )
+	potential_difference    viBavAnwara#viBavAnwara#noun#1#RM	(	"		"	 23-08-13)
 			
 
  changes in causative_verb_mng.txt

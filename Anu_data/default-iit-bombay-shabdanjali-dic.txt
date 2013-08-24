@@ -21781,7 +21781,7 @@ destitute_adjective	nissahAya
 destituter_UNDEFINED	nissahAya
 destitutest_UNDEFINED	nissahAya
 destitution_noun	aBAva
-destroy_verb	naRta_kara/xUra_kara/XUla_meM_milA_xe/viXvaMswa_kara/vinASa_kara/vaXa_kara/para_pAnI_PeranAa/para_pAnI_Pera/nASa_kara/mAra_dAla/KarAba_kara/harA/girA
+destroy_verb	naRta_kara/xUra_kara/XUla_meM_milA_xe/viXvaMswa_kara/vinASa_kara/vaXa_kara/para_pAnI_Pera/nASa_kara/mAra_dAla/KarAba_kara/harA/girA
 destroyed_UNDEFINED	mAra_dAlanA
 destroyed_adjective	viXvaswa/vinaRta
 destroyer_noun	XvaMsaka/vinASa_karane_vAlA/GAwaka
@@ -38101,7 +38101,7 @@ how-do-you-do_UNDEFINED	kEse
 how_adverb	kEse/kiwanA/kisa_waraha/kEsA
 how_conjunction	kEse
 howdoyoudo_UNDEFINED	kEse
-however_adverb	PiraBI/waba_BI/Pira_BI/jEse_BI
+however_adverb	waba_BI/PiraBI/Pira_BI/jEse_BI
 howitzer_noun	wopa/martara_wopa
 howl_noun	huA/cillAhata/cIKa
 howl_verb	jora_se_cIKa/vilApa_kara/huA-huA_kara/cillA/cillA_kara_mAfga_kara
@@ -42333,7 +42333,7 @@ investigated_UNDEFINED	anusanXAna_karanA
 investigates_UNDEFINED	anusanXAna_karanA
 investigating_UNDEFINED	anusanXAna_karanA
 investigation_UNDEFINED	wahakIkAwa
-investigation_noun	jAzca-padawAla/anveRaNa/jAzca/anusanXAna
+investigation_noun	parIkRaNa/jAzca-padawAla/anveRaNa/jAzca/anusanXAna
 investigations_UNDEFINED	anusanXAna
 investigative_adjective	wahakIkAwa_sambanXI
 investigator_UNDEFINED	anveRaka
@@ -42421,7 +42421,7 @@ involuntariness_noun	anicCA
 involuntary_adjective	asvEcCika/anicCA_se_hone_vAlA
 involve_verb	SAmila_ho/SAmila_kara/PaMsAnA_kara/nihIwa_ho/kAma_meM_laga_jA/Kaware_meM_pada
 involved_UNDEFINED	kAma_meM_laga_jAnA
-involved_adjective	sambaxXa/pecIxA/jatila/GaniRTa_rUpa_se_sambaxXa/GaniRTa_rUpa_se_judA_huA/anwargraswa
+involved_adjective	jatila/sambaxXa/pecIxA/GaniRTa_rUpa_se_sambaxXa/GaniRTa_rUpa_se_judA_huA/anwargraswa
 involvement_UNDEFINED	AveRtana
 involvement_noun	sAzTa-gAzTa/sambanXa/sahaBAgiwA/judAva/haswakRepa/PazsAva
 involvements_UNDEFINED	PazsAva
@@ -93469,3 +93469,4 @@ zymotic_adjective	kiNvika/KamIrI
 zymurgy_noun	kiNvavijFAna/kENvikI
 photoelectric_noun	prakASa_vixyuwa
 antielectron_noun	prawi_ilektroYna
+linearly_adverb	rEKikawaH

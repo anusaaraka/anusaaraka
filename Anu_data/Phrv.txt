@@ -71,3 +71,4 @@ wind_up	lapeta
 calm_down	SAMwa_raha
 come_back	vApasa_A
 look_after	xekabAla_kara
+put_forward	praswuwa_kara
