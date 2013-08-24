@@ -192,7 +192,22 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " bring.clp	bring11  "  ?id "  " ?id1 "  prAramBa_kara  )" crlf))
 )
 
-
+;Added by Shirisha Manju Suggested by Chaitanya Sir (20-08-13)
+;The Mahabharata vividly brings out the fact that none but God is completely faultless and good, and also that none can be said to be evil personified.
+(defrule bring_out0
+(declare (salience 2900))
+(id-root ?id bring)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-upasarga ?id ?id1)
+(id-word ?id1 out)
+(or (kriyA-object  ?id ?id2)(kriyA-kriyA_viSeRaNa ?id ?id2))
+(id-root ?id2 fact|vividly)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 bawA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " bring.clp bring_out0  "  ?id "  " ?id1 "  bawA  )" crlf))
+)
 
 (defrule bring12
 (declare (salience 2800))

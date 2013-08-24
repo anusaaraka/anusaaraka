@@ -21,6 +21,8 @@
 (declare (salience 4900))
 (id-root ?id deal)
 ?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject ?id ?id1)
+(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)));Added by Pramila 11-08-2013 (Banasthali University)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -87,3 +89,54 @@
 ;sUwra : sOxA^viwaraNa
 ;
 ;
+;Added by Pramila(Banasthali University)
+;She deals in gold.
+
+(defrule deal2
+(declare (salience 4980))
+(id-root ?id deal)
+?mng <-(meaning_to_be_decided ?id)
+(id-word =(+ ?id 1) in)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id vyApAra_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deal.clp 	deal2   "  ?id "  vyApAra_kara )" crlf))
+)
+
+;Added by Pramila(Banasthali University)
+;This book deals with incest.
+;Electrostatics deals with charges on glass rods.
+
+(defrule deal3
+(declare (salience 4970))
+(id-root ?id deal)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject ?id ?id1)
+(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "inanimate.gdbm" ?str)))
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id varNana_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deal.clp 	deal3   "  ?id "  varNana_kara )" crlf))
+)
+
+
+;Added by Pramila(Banasthali University)
+;This led to the development of a radically new theory (Quantum Mechanics) to deal with atomic and molecular phenomena.
+;They have been taking measures to deal with instability in Europe for over a year.
+(defrule deal4
+(declare (salience 4970))
+(id-root ?id deal)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-kriyArWa_kriyA  ?kri ?id)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id vicAra_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deal.clp 	deal4   "  ?id "  vicAra_kara )" crlf))
+)
+

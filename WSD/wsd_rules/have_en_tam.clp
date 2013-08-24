@@ -21,6 +21,7 @@
 (declare (salience 5000))
 (id-TAM ?id have_en)
 ?mng <-(meaning_to_be_decided ?id)
+(kriyA-kriyA_viSeRaNa  ?id ?id1)
 (id-root ?id1 ever)
 =>
 (retract ?mng)

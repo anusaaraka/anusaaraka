@@ -1,4 +1,5 @@
-
+;Added by Shirisha Manju(15-12-09)
+;How much oil spilled ?
 (defrule how_much
 (declare (salience 5000))
 (id-root ?id much)
@@ -11,8 +12,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  much.clp         how_much   "  ?id " "(- ?id 1)" kiwanA )" crlf)
 )
 )
-;Added by Shirisha Manju(15-12-09)
-;How much oil spilled ?
 
 (defrule much0
 (declare (salience 5000))
@@ -25,6 +24,7 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  much.clp 	much0   "  ?id "  uwanA_aXika )" crlf))
 )
+; I do not go out as much now.
 
 (defrule much1
 (declare (salience 4900))
@@ -38,7 +38,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  much.clp 	much1   "  ?id "  kuCa )" crlf))
 )
 
-; I do not go out as much now.
 (defrule much2
 (declare (salience 4800))
 (id-root ?id much)
