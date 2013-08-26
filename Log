@@ -1,4 +1,4 @@
- 24-08-13
+ 26-08-13
  ========
  1. WSD : Modified : due.clp	 across.clp	into.clp	have_en_tam.clp	   is_en_tam.clp
 		     leave.clp	 that.clp	consider.clp	travel.clp	   get.clp
@@ -76,6 +76,7 @@
 	--> tree_viewer/README
 	--> get_word_count.c : To avoid 'word_count' variable warnings.
  	--> word.c	     : To rename meaning_to_be_decided.dat  as  meaning_to_be_decided_tmp.dat
+	--> create_eng_ord_html.clp
 22. Added following files:
 	--> ir_no@.lex to convert iscii to roman  
 	--> proper_noun_dic.txt
