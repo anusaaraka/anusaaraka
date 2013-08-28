@@ -21830,7 +21830,7 @@ detainee_noun	banxI
 detainees_UNDEFINED	havAlAwa_meM_rokA_huA
 detaining_UNDEFINED	roka_raKanA
 detains_UNDEFINED	roka_raKanA
-detect_verb	xeKa_pA/pawA_lagA/pakada
+detect_verb	pawA_lagA/xeKa_pA/pakada
 detectable_adjective	pawA_lagAne_yogya
 detected_UNDEFINED	xeKa_pAnA
 detected_adjective	pawA_lagAyA_gayA
@@ -31195,7 +31195,7 @@ forges_UNDEFINED	jAlasAjI_karanA
 forget-me-not_UNDEFINED	PUla
 forget-me-not_noun	nIle_rafga_kA_Cote_PUla_kA_pOXA/PUla{Cote_Ora_nIle}
 forget-me-nots_UNDEFINED	PUla
-forget_verb	BUla_jA/XyAna_se_nikAla_xe/ximAga_se_gAyaba_ho/vismaraNa_kara/socanA_banxa_kara_xe/BUlA_xe/BulA_xe/BUla_jAnA
+forget_verb	BUla/BUlA_xe/XyAna_se_nikAla_xe/ximAga_se_gAyaba_ho/vismaraNa_kara/socanA_banxa_kara_xe/BUla_jA
 forgetful_adjective	Bulakkada/lAparavAha
 forgetfuler_UNDEFINED	Bulakkada
 forgetfulest_UNDEFINED	Bulakkada
@@ -33113,8 +33113,8 @@ generalisation_noun	sAXAraNIkaraNa
 generalisations_UNDEFINED	sAXAraNIkaraNa
 generalise_UNDEFINED	vyApaka_banAnA
 generalise_verb	vyApaka_anumAna_lagA/sAmAnyIkaraNa_kara/Ama_banA
-generalised_UNDEFINED	vyApaka_banAnA
-generalised_adjective	vyApaka
+generalised_UNDEFINED	vyApakIkqwa/vyApaka_banAnA
+generalised_adjective	vyApakIkqwa/vyApaka
 generalises_UNDEFINED	vyApaka_banAnA
 generalising_UNDEFINED	vyApaka_banAnA
 generalissimo_noun	senAXipawi
@@ -33787,7 +33787,7 @@ glows_UNDEFINED	camakanA
 glucose_noun	glUkoja
 glue-sniffing_noun	naSe_ke_lie_gonxa_sUfGanA
 glue_UNDEFINED	kisI_ke_sAWa_cipake_raha
-glue_noun	saresa/sareSa
+glue_noun	goMxa/saresa/sareSa
 glue_verb	saresa_se_joda/saresa_se_cipakA/saresa_se_caipakA/lagA/sareSa_lagA/cipake_raha
 glued_UNDEFINED	cipake_rahanA
 glued_adjective	cipakA_hu
@@ -42308,7 +42308,7 @@ inventorying_UNDEFINED	viswqwa_sUcI
 invents_UNDEFINED	AviRkAra_karanA
 inverse_adjective	prawiloma/viparIwa
 inverse_noun	ulatA
-inversely_adverb	viparIwa_Dafga_se
+inversely_adverb	vyuwakramAnusAra/viparIwa_Dafga_se
 inverser_UNDEFINED	prawiloma
 inverses_UNDEFINED	prawiloma
 inversest_UNDEFINED	prawiloma
@@ -93471,3 +93471,6 @@ photoelectric_noun	prakASa_vixyuwa
 antielectron_noun	prawi_ilektroYna
 linearly_adverb	rEKikawaH
 finiteness_noun	parimiwawA
+line-of-sight_adjective	xqRtireKIya
+gold-leaf_noun	svarNa pawra
+gold-leaf_adjective	svarNa pawra

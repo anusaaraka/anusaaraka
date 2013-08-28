@@ -130,7 +130,7 @@ equilibrium_noun	sAmyAvasWA
 equipartition_noun	samaviBAjana
 equivalence_noun	wulyawA
 equivalent_noun	wulyAMka
-evacuated_adjective	nirvAwiwa
+evacuate_adjective	nirvAwiwa
 exchange_noun	vinimaya
 existence_noun	aswiwva
 exothermic_adjective	URmAkRepI
@@ -249,7 +249,7 @@ pair_noun	yugma
 parabola_noun	paravalaya
 parallax_noun	laMbana/pErelEksa
 parity_noun	samawA
-perimeter_noun	parimApa
+perimeter_noun	parimiwi/parimApa
 period_noun	kAla
 periodicity_noun	AvarwiwA
 perpendicularly_adverb	laMbavaw

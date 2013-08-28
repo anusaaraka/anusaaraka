@@ -725,6 +725,10 @@ Modified:
 	22. verily_adverb		vaswuwaH			(			"	"	)
 	23. linearly_adverb		rEKikawaH			(	"   Sonam Banasthali 23-08-13   )
 	24. finiteness_noun   		parimiwawA			(Suggested by Garima   "     24-08-13   )
+	25. FM_noun			Avqwwi_mAdulana			(Suggested by Chaitanya Sir  26-08-13   )
+	26. line-of-sight_adjective 	xqRtireKIya			(Suggested by Sonam Banasthali 27-08-13 )
+	27. gold-leaf_noun  		svarNa pawra			(Suggested by Prachi    "         "     )
+	28. gold-leaf_adjective     	svarNa pawra			(		"	"	  "     )
 
 	 
     4. Added new meaning to the existing word:
@@ -771,7 +775,13 @@ Modified:
 	35. electrical_adjective    	vExyuwa				(Suggested by Pramila Banasthali 24-08-13)
 									Ex: The forces are purely electrical.
 	36. gamma_noun      		gAmA				(Suggested by Prachi Banasthali 24-08-13 )
-
+	37. inversely_adverb        	vyuwakramAnusAra		(		"	"	27-08-13 )
+					Ex: Its effect is felt even when the distance between the interacting particles is 
+	       very large because the force decreases inversely as the square of the distance between the interacting bodies.
+	38. glue_noun       		goMxa				(Suggested by Prachi Banasthali 27-08-13 )
+					Ex: The adhesive force of glue is basically electrical in nature.
+	39. generalised_adjective	vyApakIkqwa			(Suggested by Chaitanya Sir  27-08-13    )
+	40. generalised_UNDEFINED	vyApakIkqwa			(		"		"	 )
 
 
     5. Modifying first meaning from the list :
@@ -820,7 +830,10 @@ Modified:
 				Ex: You pay people a lot of money to see reality in a slightly distorted way.
 	30. involve_verb	SAmila_ho		as	SAmila_kara 	(Suggested by Chaitanya  Sir  24-08-13  )
 			     Ex: Many experiments were carried out involving the interference and diffraction of lightwaves.
-	
+	31. detect_verb		xeKa_pA			as	pawA_lagA	(Suggested by Pramila Banasthali 27-08-13)
+				Ex: This minimal verification is useful to detect packet corruption.
+	32. forget_verb		BUla_jA			as	BUla		(Suggested by Chaitanya  Sir  27-08-13 )
+										Ex: I never forget a face.
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -878,6 +891,7 @@ Modified:
         23. solemnise_UNDEFINED -_
         24. recycled_UNDEFINED  punarAvqwwa             		( Suggested by Sukhada  	20-05-13)
 	25. works_UNDEFINED	racanA					(Suggested by Chaitanya Sir 	19-08-13)
+	26. FM_UNDEFINED    	rediyo_prasAraNa_kA_eka_warIkA		(		"		26-08-13)
 
 
     8. Modified category:

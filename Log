@@ -1,4 +1,4 @@
- 26-08-13
+ 28-08-13
  ========
  1. WSD : Modified : due.clp	 across.clp	into.clp	have_en_tam.clp	   is_en_tam.clp
 		     leave.clp	 that.clp	consider.clp	travel.clp	   get.clp
@@ -24,7 +24,8 @@
 	Splitted : database_cmp_phrase_mng into database_cmp_phrase_word_mng and database_cmp_phrase_root_mng
 	Modified all the rules to use above functions
 	Removed  : over_write_root, over_write_word, over_write_root_mng and over_write_word_mng
-	Added	 : get_PropN_mng
+	Added	 : get_PropN_mng, modify_word_for_apos , phy_default_mng_with_org_wrd_with_same_cat and
+		   phy_default_mng_with_diff_cat_with_org_wrd
  7. hindi_sent_reorder.clp
 	Modified : rule_for_ki, rule_for_ki_1, rule_for_ki_2, rule_for_ki_3, rule_for_jisa_prakAra_se 
 			(to use preferred morph fact instead root fact in rule part)
@@ -76,7 +77,7 @@
 	--> tree_viewer/README
 	--> get_word_count.c : To avoid 'word_count' variable warnings.
  	--> word.c	     : To rename meaning_to_be_decided.dat  as  meaning_to_be_decided_tmp.dat
-	--> create_eng_ord_html.clp
+	--> create_eng_ord_html.clp : Tool tip for hindi meaning source.
 22. Added following files:
 	--> ir_no@.lex to convert iscii to roman  
 	--> proper_noun_dic.txt
