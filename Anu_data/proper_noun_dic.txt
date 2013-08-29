@@ -11,8 +11,13 @@ Jakob	jekaba
 Balmer	bAmara
 Ernst	arnesta
 Rutherford	raxaraPorda
-J	je
 Thomson	Woyamasana
 Hans	hEMsa
 Geiger	gAigara
 Marsden	mArsadana
+Galileo	gElIliyo
+Isaac	aAijaka
+Newton	nyUtana
+Faraday	PErAde
+Henry	henarI
+Michael	mAikala

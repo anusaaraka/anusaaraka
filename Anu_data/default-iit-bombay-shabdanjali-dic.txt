@@ -22568,7 +22568,7 @@ disappearing_adjective	oJala_howA
 disappears_UNDEFINED	axqSya_honA
 disappoint_verb	nirASa_kara/para_pAnI_Pera/niRPal_kara_xe/niRPala_kara/ho
 disappointed_UNDEFINED	honA
-disappointed_adjective	xuKHI/nirASa/hawASa
+disappointed_adjective	xuHKI/nirASa/hawASa
 disappointedest_UNDEFINED	nirASa
 disappointing_adjective	nirASAjanaka
 disappointingly_adverb	nirASAjanaka_Dafga_se
@@ -40084,7 +40084,7 @@ incorporations_UNDEFINED	samAveSana
 incorporeal_adjective	aSarIrika
 incorporealer_UNDEFINED	aSarIrika
 incorporealest_UNDEFINED	aSarIrika
-incorrect_adjective	aSuxXa/galawa/anuciwa
+incorrect_adjective	galawa/aSuxXa/anuciwa
 incorrecter_UNDEFINED	aSuxXa
 incorrectest_UNDEFINED	aSuxXa
 incorrectly_adjective	aSuxXa_rUpa_se
@@ -40489,7 +40489,7 @@ induct_verb	niyukwa_kara/raKA_jA/pariciwa_karA/BarawI_kara
 inducted_UNDEFINED	niyukwa_karanA
 inducting_UNDEFINED	niyukwa_karanA
 induction_UNDEFINED	prawiRTApana
-induction_noun	svAgawa-samAroha/preraNa/praveSa/pravarwana/Agamana
+induction_noun	preraNa/svAgawa-samAroha/praveSa/pravarwana/Agamana
 inductions_UNDEFINED	Agamana
 inductive_adjective	preraka/vivecanAwmaka/AgamanAwmaka
 inductively_adverb	vivecanAwmaka_rUpa_se
@@ -46211,7 +46211,7 @@ locos_UNDEFINED	rela_iFjana
 locoweed_noun	lokovIda
 loctation_UNDEFINED	xugXaAvaNa
 locumtenens_noun	sWAnApanna_vyakwi
-locus_noun	sWAna_viSeRa/sWAna/jIna_avasWiwi/binxupaWa
+locus_noun	binxupaWa/sWAna_viSeRa/sWAna/jIna_avasWiwi
 locust_noun	tiddI
 locusts_UNDEFINED	tiddI
 locution_noun	viSiRta_SElI
@@ -93475,3 +93475,5 @@ line-of-sight_adjective	xqRtireKIya
 gold-leaf_noun	svarNa_pawra
 gold-leaf_adjective	svarNa_pawra
 electroscope_noun	vixyuwaxarSI
+galvanometer_noun	XArAmApI
+inter-related_adjective	paraspara_saMbaMXiwa

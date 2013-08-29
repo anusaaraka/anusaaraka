@@ -145,7 +145,7 @@ frequency_noun	Avqwwi
 friction_noun	GarRaNa
 fulcrum_noun	AlaMba
 function_noun	Palana/paPalana
-galaxy_noun	AkASagaMgA
+galaxy_noun	manxAkinI/AkASagaMgA
 generalisation_noun	vyApakIkaraNa
 geocentric_adjective	BUkeMxrI/BUveMPaxrI
 geostationary_adjective	BUsWEwika
@@ -377,3 +377,5 @@ model_noun	moYdala
 voltage_noun	voltawA
 amplitude_noun	AyAm
 divergence_noun	apasAriwA
+irradiate_verb	kiraNiwa
+image_noun	prawibimba

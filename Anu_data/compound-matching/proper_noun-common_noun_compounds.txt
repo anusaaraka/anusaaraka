@@ -345,4 +345,4 @@ native_American	amarIkI_mUla_nivAsI#amarIkI_mUla_nivAsI#noun#2#RM
 native_Australian	oYstreliyAyI_mUlanivAsI#oYstreliyAyI_mUlanivAsI#noun#2#RM
 Wall_Street	voYl_strIta#voYl_strIta#noun#2#WM
 Thomas_Harris	Thomas_Harris#Thomas_Harris#noun#1#RM	
-
+Louis_Victor_de_Broglie	luisa_viktara_xe_broYglI#luisa_viktara_xe_broYglI#noun#1#WM
