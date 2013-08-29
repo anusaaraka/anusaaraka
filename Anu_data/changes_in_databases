@@ -291,17 +291,24 @@
   changes in inanimate.txt
   ===========================
   1. Added
-	flower   		----  Suggested by Sukhada (20-01-11)
-   	book			----  Suggested by Pramila Banasthali (16-08-13) Ex:This book deals with incest.
-	electrostatic		----		"	Ex:Electrostatics deals with charges on glass rods.
-	magnetism		----		"	
-	physics			----		"
-	electricity		----		"
-	it			----		"
-	thermodynamics		----		"
-	optics			----		"	Ex:Optics deals with the phenomena involving light.
-	mechanics		----		"
-	electrodynamics		----		"
+	flower   	----  Suggested by Sukhada (20-01-11)
+   	book		----  Suggested by Pramila Banasthali (16-08-13) Ex:This book deals with incest.
+	electrostatic	----		"	Ex:Electrostatics deals with charges on glass rods.
+	magnetism	----		"	
+	physics		----		"
+	electricity	----		"
+	it		----		"
+	thermodynamics	----		"
+	optics		----		"	Ex:Optics deals with the phenomena involving light.
+	mechanics	----		"
+	electrodynamics	----		"
+	debate		----		"	Ex: The student debates will encompass a range of subjects.
+	group		----		"	Ex: This group encompasses a wide range of people from different backgrounds.
+	race		----		"	Ex: The races in this stage encompass the biggest events
+	network		----		"	Ex: These networks encompass all methods of delivery.
+	land		----		"	Ex: The land will come to encompass all or parts of 15 u.s. states.
+	festival	----		"	Ex: The festival is to encompass everything from music,theatre to literature,
+						    cinema and visual arts.
 	    
 
   changes in not_ne_verb_list.txt
@@ -727,8 +734,9 @@ Modified:
 	24. finiteness_noun   		parimiwawA			(Suggested by Garima   "     24-08-13   )
 	25. FM_noun			Avqwwi_mAdulana			(Suggested by Chaitanya Sir  26-08-13   )
 	26. line-of-sight_adjective 	xqRtireKIya			(Suggested by Sonam Banasthali 27-08-13 )
-	27. gold-leaf_noun  		svarNa pawra			(Suggested by Prachi    "         "     )
-	28. gold-leaf_adjective     	svarNa pawra			(		"	"	  "     )
+	27. gold-leaf_noun  		svarNa_pawra			(Suggested by Prachi    "         "     )
+	28. gold-leaf_adjective     	svarNa_pawra			(		"	"	  "     )
+	29. electroscope_noun       	vixyuwaxarSI			(Suggested by Pramila   "      29-08-13 )
 
 	 
     4. Added new meaning to the existing word:
@@ -782,6 +790,11 @@ Modified:
 					Ex: The adhesive force of glue is basically electrical in nature.
 	39. generalised_adjective	vyApakIkqwa			(Suggested by Chaitanya Sir  27-08-13    )
 	40. generalised_UNDEFINED	vyApakIkqwa			(		"		"	 )
+	41. datum_noun    		detA				(Suggested by Pramila Banasthali 28-08-13)
+						       Ex: Now the data is being transferred from magnetic tape to hard disk.
+	42. denote_verb     		xarSA				(Suggested by Pramila Banasthali 29-08-13)
+								      Ex: It denotes an individual's feelings of competence.
+
 
 
     5. Modifying first meaning from the list :
@@ -834,6 +847,12 @@ Modified:
 				Ex: This minimal verification is useful to detect packet corruption.
 	32. forget_verb		BUla_jA			as	BUla		(Suggested by Chaitanya  Sir  27-08-13 )
 										Ex: I never forget a face.
+	33. deficit_noun    	GAtA			as	kamI		(Suggested by Pramila Banasthali 28-08-13)
+			   Ex:When we say that a body is charged, we always refer to this excess charge or deficit of charge.
+	34. depict_verb         ciwra_KIFca	 	as	xarSA		(Suggested by Pramila Banasthali 29-08-13)
+								      Ex: Her painting depicts the lives of ordinary people.
+	
+
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1007,7 +1026,13 @@ Modified:
 	24. in_this_way		isa_waraha#isa_waraha#noun#3#RM			(Suggested by Chaitanya Sir 20-08-13)
 		Ex: The characters in other epics of the world have not become one with the lives of the people in this way.
 	25. denoted_by      	se_nirxiRta#se_nirxiRta#adjective#1#RM		(Suggested by Pramila Banasthali 24-08-13)
-				Ex:  The current is denoted by ic.
+										Ex:  The current is denoted by ic.
+	26. beyond_compare 	awulanIya#awulanIya#noun#2#RM			(Suggested by Garima Banasthali 28-08-13)
+										Ex: Her beauty is beyond compare.
+	27. beyond_belief	aviSvasanIya#aviSvasanIya#noun#2#RM 		(Suggested by Garima Banasthali 28-08-13)
+										Ex: I find his behaviour beyond belief.
+	28. stage_by_stage	kadama_xara_kadama#kadama_xara_kadama#noun#3#RM (Suggested by Preeti ji LTRC 28-08-13)
+
 
     Added new meaning to the existing word:
     --------------------------------------
@@ -1051,6 +1076,8 @@ Modified:
 	diffraction_noun        vivarwana	(	"		"	   "	 )
 	model_noun     		moYdala		(Suggested by Rashmi Banasthali 24-08-13 )
 	voltage_noun    	voltawA		(	"	"		   "	 )
+	amplitude_noun  	AyAm		(	"     Garima	"	28-08-13 )
+	divergence_noun    	apasAriwA	(Suggested by Pramila Banasthali 29-08-13)
 	
 
     Modified :

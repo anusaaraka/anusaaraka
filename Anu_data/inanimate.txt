@@ -20,3 +20,9 @@ thermodynamics	1
 optics	1
 mechanics	1
 electrodynamics	1
+debate	1
+group	1
+race	1
+network	1
+land	1
+festival	1

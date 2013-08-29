@@ -107,13 +107,14 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 pUrA_ho))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 kara)); Replaced 'pUrA_ho' with 'kara' by Manju(24-08-13) Suggested by Chaitanya Sir
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " carry.clp	carry6  "  ?id "  " ?id1 "  pUrA_ho  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " carry.clp	carry6  "  ?id "  " ?id1 "  kara  )" crlf))
 )
 
 ;The work would be carried out in ten days.
 ;kAma xasa xinoM meM pUrA ho jAegA
+;kAma xasa xinoM meM kiyA jAegA
 (defrule carry7
 (declare (salience 4300))
 (id-root ?id carry)

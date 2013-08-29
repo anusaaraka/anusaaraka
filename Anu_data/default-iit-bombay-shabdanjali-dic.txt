@@ -19984,7 +19984,7 @@ datedest_UNDEFINED	purAnA
 dates_UNDEFINED	deta
 dating_UNDEFINED	deta
 datum_UNDEFINED	AXAra
-datum_noun	waWya
+datum_noun	detA/waWya
 daub_noun	BaxxA_rafgA_huA_ciwra/xAga/XabbA/lepa/Baxxe_Dafga_se_banAyA_huA_ciwra
 daub_verb	powa
 daubed_UNDEFINED	powanA
@@ -20705,7 +20705,7 @@ deficient_adjective	apUrNa/kama/hIna/nyUna
 deficienter_UNDEFINED	nyUna
 deficientest_UNDEFINED	nyUna
 deficies_UNDEFINED	kamI
-deficit_noun	GAtA/kamI
+deficit_noun	kamI/GAtA
 deficits_UNDEFINED	GAtA
 defied_UNDEFINED	avajFA_karanA
 defies_UNDEFINED	avajFA_karanA
@@ -21300,7 +21300,7 @@ denominator_noun	hara
 denominators_UNDEFINED	hara
 denormalization_UNDEFINED	asamAnIkaraNa
 denote_UNDEFINED	suciwa_kara
-denote_verb	xyowaka_ho/sUciwa_kara/bawalA
+denote_verb	xarSA/xyowaka_ho/sUciwa_kara/bawalA
 denoted_UNDEFINED	sUciwa_karanA
 denotes_UNDEFINED	sUciwa_karanA
 denoting_UNDEFINED	sUciwa_karanA
@@ -21395,7 +21395,7 @@ dependently_adverb	parAXInawaH/paravaSawaH
 dependents_UNDEFINED	nirBara
 depending_UNDEFINED	ASriwa_honA
 depends_UNDEFINED	ASriwa_honA
-depict_verb	ciwra_KIFca/xarSA/ciwriwa_kara
+depict_verb	xarSA/ciwra_KIFca/ciwriwa_kara
 depicted_UNDEFINED	ciwra_KIFcanA
 depicting_UNDEFINED	ciwra_KIFcanA
 depiction_UNDEFINED	ciwraNa_karanA
@@ -93472,5 +93472,6 @@ antielectron_noun	prawi_ilektroYna
 linearly_adverb	rEKikawaH
 finiteness_noun	parimiwawA
 line-of-sight_adjective	xqRtireKIya
-gold-leaf_noun	svarNa pawra
-gold-leaf_adjective	svarNa pawra
+gold-leaf_noun	svarNa_pawra
+gold-leaf_adjective	svarNa_pawra
+electroscope_noun	vixyuwaxarSI

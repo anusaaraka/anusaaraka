@@ -363,7 +363,7 @@ weightlessness_noun	BArahInawA
 weight_noun	BAra
 electrostatics	sWiravExyuwikI
 channel_noun	saraNi
-emitter_noun    uwsarjaka
+emitter_noun	uwsarjaka
 vacuum_noun	nirvAwa
 discharge_noun	visarjana
 harmonic_noun	guNAvqwwiyA
@@ -375,3 +375,5 @@ lightwaves_noun	prakASa_waraMga
 diffraction_noun	vivarwana
 model_noun	moYdala
 voltage_noun	voltawA
+amplitude_noun	AyAm
+divergence_noun	apasAriwA

@@ -45,8 +45,7 @@
 (declare (salience 4800))
 (id-root ?id next)
 ?mng <-(meaning_to_be_decided ?id)
-;(id-cat_coarse =(+ ?id 1) noun)
-(viSeRya-viSeRaNa  =(+ ?id 1) ?id)
+(viSeRya-viSeRaNa  ?id1 ?id) ; Modified ?id + 1 as ?id1 by Manju(24-08-13) eg: For next 2 years there will be good rains.
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id agalA))
@@ -67,7 +66,7 @@
 )
 
 (defrule next4
-(declare (salience 4600))
+(declare (salience 4500))
 (id-root ?id next)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse =(+ ?id 1) ~noun)
@@ -76,18 +75,6 @@
 (assert (id-wsd_root_mng ?id Age))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  next.clp 	next4   "  ?id "  Age )" crlf))
-)
-
-(defrule next5
-(declare (salience 4500))
-(id-root ?id next)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id adjective)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id agalA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  next.clp 	next5   "  ?id "  agalA )" crlf))
 )
 
 ;"next","Adj","1.agalA"

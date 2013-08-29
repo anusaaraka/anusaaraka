@@ -33197,6 +33197,8 @@ whole_of	sampUrNa#sampUrNa#noun#1#RM
 in_this_way	isa_waraha#isa_waraha#noun#3#RM
 denoted_by	se_nirxiRta#se_nirxiRta#adjective#1#RM
 stage_by_stage	kadama_xara_kadama#kadama_xara_kadama#noun#3#RM
+beyond_compare	awulanIya#awulanIya#noun#2#RM
+beyond_belief	aviSvasanIya#aviSvasanIya#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
