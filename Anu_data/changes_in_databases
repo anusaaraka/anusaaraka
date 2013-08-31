@@ -428,11 +428,12 @@ Modified :
 		Ex:  paradigm        : <sdef n="parsarg:ke_sAWa" c="ke_sAWa"/>  
 		     related pattern : <e><p><l>isake_sAWa</l><r>yaha<s n="cat:p"/><s n="case:o"/><s n="parsarg:ke_sAWa"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>
           2.  Removed vAl/A__n paradigm (Suggested by Chaitanya Sir).
-          3.  Removed Generation for following entries:: (Modified by Roja , Suggested by Meena(18-02-12
+          3.  Removed Generation for following entries:: (By Roja, Suggested by Meena 18-02-12)
 	        KAye, KAyI, kiye, huye, uTanA, ASAyeM, kinako, KAyeM, KAyIM , KAyega, KAyeMge, KAyegI, KAyeMgI,
 		kariye, liye, huyI, huyIM, KoyI, Koye, rakanA, gayI, jisako, jinako, kisako, use, unheM,
 		muJako, hamako, 
-	  4.  Removed  <e lm="keSa"><i>keS</i><par n="Gar/a__n"/></e> (Suggested by Chaitanya Sir 04-04-12)
+	  4.  <e lm="keSa"><i>keS</i><par n="Gar/a__n"/></e>	 (Suggested by Chaitanya Sir 04-04-12)
+	  5.  <e lm="kamI"><i>kamI</i><par n="AjAxI/__n"/></e>	 (By Roja, Suggested by Chaitanya Sir 31-08-13)
 
 
  Changes in apertium-en-hi.en.metadix 
@@ -491,6 +492,11 @@ Modified :
 	archive		house__n		(     "	     "	  )
 	archive		accept__vblex	  	(     "	     "    )
 	bravery		bab/y__n		(     "	     "    )
+	propagation	house__n		(     "   31-08-13)
+	retransmit	house__n		(     "	     "	  )
+	quantize	liv/e__vblex		(     "      "	  )
+	quantise	liv/e__vblex		(     "      "    )
+
 
 Modified:
         <e lm="belonging"><i>belonging</i><par n="house__n"/></e>   as    <e lm="belongings"><i>belongings</i><par n="personnel__n"/></e>   (Suggested by Meena ji 12-05-11)
@@ -739,7 +745,7 @@ Modified:
 	28. gold-leaf_adjective     	svarNa_pawra			(		"	"	  "     )
 	29. electroscope_noun       	vixyuwaxarSI			(Suggested by Pramila   "      29-08-13 )
 	30. galvanometer_noun		XArAmApI			(Suggested by Prachi	"      29-08-13 )
-	31. inter-related_adjective	paraspara_saMbaMXiwa		(	"		"      29-08-13 )	
+	31. inter-related_adjective	paraspara_saMbaMXiwa		(	"		"      29-08-13 )
 
 	 
     4. Added new meaning to the existing word:
@@ -782,22 +788,27 @@ Modified:
 					Ex: The Mahabharata and the Ramayana are thus undoubtedly unique and wonderful works.
 	33. overcome_verb		aBiBUwa_kara_le			(Suggested by Chaitanya Sir  22-08-13   )
 	34. investigation_noun		parIkRaNa			(Suggested by Pramila Banasthali 24-08-13)
-					Ex:In his experimental investigation on the production of electromagnetic waves by means of a spark discharge, Hertz observed that high voltage sparks across the detector loop were enhanced when the emitter plate was illuminated by ultraviolet light from an arc lamp.
+					Ex:In his experimental investigation on the production of electromagnetic waves by					     means of a spark discharge, Hertz observed that high voltage sparks across the						  detector loop were enhanced when the emitter plate was illuminated by ultraviolet
+					light from an arc lamp.
 	35. electrical_adjective    	vExyuwa				(Suggested by Pramila Banasthali 24-08-13)
 									Ex: The forces are purely electrical.
 	36. gamma_noun      		gAmA				(Suggested by Prachi Banasthali 24-08-13 )
 	37. inversely_adverb        	vyuwakramAnusAra		(		"	"	27-08-13 )
-					Ex: Its effect is felt even when the distance between the interacting particles is 
-	       very large because the force decreases inversely as the square of the distance between the interacting bodies.
+					Ex: Its effect is felt even when the distance between the interacting particles is					     very large because the force decreases inversely as the square of the distance						  between the interacting bodies.
 	38. glue_noun       		goMxa				(Suggested by Prachi Banasthali 27-08-13 )
 					Ex: The adhesive force of glue is basically electrical in nature.
 	39. generalised_adjective	vyApakIkqwa			(Suggested by Chaitanya Sir  27-08-13    )
 	40. generalised_UNDEFINED	vyApakIkqwa			(		"		"	 )
 	41. datum_noun    		detA				(Suggested by Pramila Banasthali 28-08-13)
-						       Ex: Now the data is being transferred from magnetic tape to hard disk.
+					Ex: Now the data is being transferred from magnetic tape to hard disk.
 	42. denote_verb     		xarSA				(Suggested by Pramila Banasthali 29-08-13)
-								      Ex: It denotes an individual's feelings of competence.
-
+					Ex: It denotes an individual's feelings of competence.
+	43. gathering_noun		jamaGata			(Suggested by Prachi Banasthali  31-08-13)	
+					Ex: It's a huge gathering of black people coming to hear the greatest musicians of					     our time.
+	44. intensity_noun		wIvrawA				(Suggested by Prachi Banasthali  31-08-13)
+					Ex: The greater the intensity of radiation, the greater are the amplitude of electric 					     and magnetic fields.
+	45. generalised_adjective	sAmAnyIkqwa			(Suggested by Prachi Banasthali  31-08-13)
+					Ex: If this is done, there is no contradiction in the value of B obtained anywhere					     using the generalised Ampere's law.
 
 
     5. Modifying first meaning from the list :
@@ -865,6 +876,8 @@ Modified:
 				    separately.
 	39. feature_noun	nakSa			as	lakRaNa		(Suggested by Chaitanya  Sir     31-08-13)
 				Ex: Hypertext is a powerful feature of the web.
+	40. generalise_verb	vyApaka_anumAna_lagA	as	sAmAnyIkaraNa_kara (Suggested by Prachi Banasthali  31-08-13)
+				Ex: If we generalise this law by adding to the total current carried by conductors.
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -892,6 +905,7 @@ Modified:
 	20. intellect_noun	aklamanxa					(Suggested by Chaitanya Sir   	19-08-13)
 	21. destroy_verb	para_pAnI_PeranAa				(Suggested by preeti ji LTRC    23-08-13)
 	22. centre_verb		kenxrIwa_kara					(Suggested by Sukhada           24-08-13)
+	23. gathering_noun	saBAA						(By Roja			31-08-13)
 
 
     7. Removed entry:
@@ -1165,3 +1179,4 @@ Modified:
 	Faraday		PErAde		(		"		"	)
 	Henry		henarI		(		"		"	)
 	Michael		mAikala		(		"		"	)
+	Germer		jarmara		(		"		31-08-13)

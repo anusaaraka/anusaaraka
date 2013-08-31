@@ -74,6 +74,7 @@
         prepare_apertium_input.clp      tam_meaning.clp         number.clp      vibakthi.clp
 20. Updated following dictionary files:
 	changes_in_databases	goldendict/iit-bombay 	dic_compile.sh	  list-right 	list_Anu_data
+	apertium_hn.dix		apertium-en-hi.en.metadix
 21. Updated following files:
 	--> README
 	--> tree_viewer/README

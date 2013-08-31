@@ -21,3 +21,4 @@ Newton	nyUtana
 Faraday	PErAde
 Henry	henarI
 Michael	mAikala
+Germer	jarmara

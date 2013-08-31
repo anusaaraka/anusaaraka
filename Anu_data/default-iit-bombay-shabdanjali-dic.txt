@@ -32963,7 +32963,7 @@ gather_noun	kapade_kI_waha/pleta/cunnata
 gather_verb	samaJa/prApwa_kara/pleta_dAla/oDa_le/le/kAta/ikkatTA_kara/ikkatTA_ho/ekatriwa_kara/ekatra_kara/cunnata_dAla/cuna/batora/baDA/baDa/ikaTTA_kara/pariNAma_nikAla
 gathered_UNDEFINED	ikaTTA_karanA
 gatherer_noun	safgrahakarwA
-gathering_noun	BIda/safgrahaNa/saBAA/saBA
+gathering_noun	 jamaGata/BIda/safgrahaNa/saBA
 gatherings_UNDEFINED	BIda
 gathers_UNDEFINED	ikaTTA_karanA
 gating_UNDEFINED	banxa_karanA
@@ -33112,9 +33112,9 @@ generalest_UNDEFINED	sAmAnya
 generalisation_noun	sAXAraNIkaraNa
 generalisations_UNDEFINED	sAXAraNIkaraNa
 generalise_UNDEFINED	vyApaka_banAnA
-generalise_verb	vyApaka_anumAna_lagA/sAmAnyIkaraNa_kara/Ama_banA
+generalise_verb	sAmAnyIkaraNa_kara/vyApaka_anumAna_lagA/Ama_banA
 generalised_UNDEFINED	vyApakIkqwa/vyApaka_banAnA
-generalised_adjective	vyApakIkqwa/vyApaka
+generalised_adjective	sAmAnyIkqwa/vyApakIkqwa/vyApaka
 generalises_UNDEFINED	vyApaka_banAnA
 generalising_UNDEFINED	vyApaka_banAnA
 generalissimo_noun	senAXipawi
@@ -41720,7 +41720,7 @@ intensify_verb	baDA_xe/baDa_jA/saSakwa_kara
 intensifying_UNDEFINED	wIvra_karanA
 intensities_UNDEFINED	pracaNdawA
 intensity_UNDEFINED	wIvrawA
-intensity_noun	prabalawA/uwkatawA/pracaNdawA
+intensity_noun	 wIvrawA/prabalawA/uwkatawA/pracaNdawA
 intensive-care_noun	saGana_saMrakRaNa
 intensive_adjective	vqxXikara/wIvrawAboXaka/wIvra/gahana
 intensive_noun	wIvrawAboXaka
