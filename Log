@@ -17,7 +17,7 @@
 	Modified deffacts dummy_facts to deffunction nerver-called()
  4. H_ordering_rules.clp:
 	Added 	 : rm_aux_id_ctrl_fact
-	Modified : reverse-NP-Daughters
+	Modified : reverse-NP-Daughters and  merge_ADVP 
  5. causative_verb_mng.clp
 	Removed : string_to_integer (deffunction) ,remove_Z , apos_rule, hnd_mng, mng_for_new_id and end
  	Modified: causative_verb_mng and modify_mng

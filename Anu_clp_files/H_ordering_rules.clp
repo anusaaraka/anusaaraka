@@ -49,9 +49,12 @@
 (declare (salience 1400))
 ?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP ?ADVP ?VP1)
 ?f1<-(Head-Level-Mother-Daughters ?h1 ? ?VP1 $?daut)
+(Head-Level-Mother-Daughters ?later_id ? ?ADVP $?)
+(not (id-original_word ?later_id later)) ;This experiment was later performed around 1911 by Hans Geiger (1882 — 1945) and Ernst Marsden (1889 — 1970, who was 20 year-old student and had not yet earned his bachelor's degree).
 (Node-Category  ?VP   VP)
 (Node-Category  ?VP1  VP)
 (Node-Category  ?ADVP ADVP)
+
 =>
 	(bind ?*count* (+ ?*count* 1))
 	(retract ?f0 ?f1)
