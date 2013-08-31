@@ -840,15 +840,16 @@ Modified:
 	27. assume_verb     	kalpanA_kara		as	mAna		(Suggested by Garima Banasthali 24-08-13)
 				Ex:These experiments could only be satisfactorily explained by assuming a wave model of light. 
 	28. approximately_adverb wakarIbana_rUpa_se	as	lagaBaga	(Suggested by Garima Banasthali 24-08-13)
-				Ex: Because of the smallness of the wavelength of visible light (in comparison to the 					     dimensions of typical mirrors and lenses), light can be assumed to approximately travel in     				  straight lines. 
+				Ex: Because of the smallness of the wavelength of visible light (in comparison to the 					         dimensions of typical mirrors and lenses), light can be assumed to approximately travel
+				    in straight lines. 
 	29. distorted_adjective	xURiwa			as	vikqwa		(Suggested by Pramila Banasthali 24-08-13)
 				Ex: You pay people a lot of money to see reality in a slightly distorted way.
 	30. involve_verb	SAmila_ho		as	SAmila_kara 	(Suggested by Chaitanya  Sir  24-08-13  )
-				Ex: Many experiments were carried out involving the interference and diffraction of 					     lightwaves.
+				Ex: Many experiments were carried out involving the interference and diffraction of 					         lightwaves.
 	31. detect_verb		xeKa_pA			as	pawA_lagA	(Suggested by Pramila Banasthali 27-08-13)
 				Ex: This minimal verification is useful to detect packet corruption.
 	32. forget_verb		BUla_jA			as	BUla		(Suggested by Chaitanya  Sir  27-08-13 )
-										Ex: I never forget a face.
+				Ex: I never forget a face.
 	33. deficit_noun    	GAtA			as	kamI		(Suggested by Pramila Banasthali 28-08-13)
 				Ex:When we say that a body is charged, we always refer to this excess charge or deficit of				     charge.
 	34. depict_verb         ciwra_KIFca	 	as	xarSA		(Suggested by Pramila Banasthali 29-08-13)
@@ -857,8 +858,13 @@ Modified:
 				Ex: This is incorrect reasoning.
 	36. induction_noun	svAgawa-samAroha	as	preraNa		(	"		"	 29-08-13)
 				Ex: Today's civilisation owes its progress to a great extent to the discovery of
-				electromagnetic induction.
+				    electromagnetic induction.
 	37. locus_noun		sWAna_viSeRa		as	binxupaWa	(Suggested by Sonam Banasthali   29-08-13)
+	38. ascertain_verb  	jAzca_kara_pawA_lagA	as	suniSciwa_kara	(Suggested by Garima Banasthali  31-08-13)
+				Ex: Often, in these situations, the force and the time duration are difficult to ascertain
+				    separately.
+	39. feature_noun	nakSa			as	lakRaNa		(Suggested by Chaitanya  Sir     31-08-13)
+				Ex: Hypertext is a powerful feature of the web.
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1029,16 +1035,19 @@ Modified:
 	21. except_for      	ko_Coda_kara#ko_Coda_kara#preposition#1#WM	(		 "	    23-07-13)
 	22. magnifying_glass	AvarXaka_lensa#AvarXaka_lensa#noun#2#RM		(Suggested by Prachi Banasthali 15-08-13) 
 	23. whole_of		sampUrNa#sampUrNa#noun#1#RM			(Suggested by Sukhada	    19-08-13)
-		Ex: Standing in the middle of the great epic like a lighthouse, it illuminates the whole of the epic.
+				Ex: Standing in the middle of the great epic like a lighthouse, it illuminates the whole
+				    of the epic.
 	24. in_this_way		isa_waraha#isa_waraha#noun#3#RM			(Suggested by Chaitanya Sir 20-08-13)
-		Ex: The characters in other epics of the world have not become one with the lives of the people in this way.
+				Ex: The characters in other epics of the world have not become one with the lives of the 
+				    people in this way.
 	25. denoted_by      	se_nirxiRta#se_nirxiRta#adjective#1#RM		(Suggested by Pramila Banasthali 24-08-13)
-										Ex:  The current is denoted by ic.
+				Ex:  The current is denoted by ic.
 	26. beyond_compare 	awulanIya#awulanIya#noun#2#RM			(Suggested by Garima Banasthali 28-08-13)
-										Ex: Her beauty is beyond compare.
+				Ex: Her beauty is beyond compare.
 	27. beyond_belief	aviSvasanIya#aviSvasanIya#noun#2#RM 		(Suggested by Garima Banasthali 28-08-13)
-										Ex: I find his behaviour beyond belief.
+				Ex: I find his behaviour beyond belief.
 	28. stage_by_stage	kadama_xara_kadama#kadama_xara_kadama#noun#3#RM (Suggested by Preeti ji LTRC 28-08-13)
+				Ex: The police are building up a picture of the incident stage by stage.
 
 
     Added new meaning to the existing word:

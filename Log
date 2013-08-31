@@ -1,13 +1,14 @@
- 29-08-13
+ 31-08-13
  ========
  1. WSD : Modified : due.clp	 across.clp	into.clp	have_en_tam.clp	   is_en_tam.clp
 		     leave.clp	 that.clp	consider.clp	travel.clp	   get.clp
 		     act.clp     further.clp    move.clp        while.clp          with.clp
 		     set.clp	 remain.clp	bring.clp   	talk.clp   	   much.clp   
 		     till.clp    deal.clp	fault.clp	was_en_tam.clp     by.clp 
-		     point.clp	 to.clp		carry.clp	next.clp
+		     point.clp	 to.clp		carry.clp	next.clp	   following.clp  
+		     found.clp   known.clp
 	  Added    : locate.clp     entitle.clp    encompass.clp   essentially.clp    fraction.clp 
-		     authority.clp  section.clp
+		     authority.clp  section.clp	   deflect.clp
 	  Removed  : tomorrow.clp
  2. adjective.clp
 	Modified: load_dic_org_word_file, load_dic_word_file 

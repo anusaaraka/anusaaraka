@@ -10,9 +10,9 @@
 (not(id-root =(- ?id 2) be))
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id  =(- ?id 1)  =(+ ?id 1) ke_rUpa_meM_BI_jAnAjAnevAlA))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id  =(- ?id 1)  =(+ ?id 1) ke_rUpa_meM_BI_jAnA_jAnevAlA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " known.clp  known_as  "  ?id " " (- ?id 1)"  " (+ ?id 1) "  ke_rUpa_meM_BI_jAnAjAnevAlA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " known.clp  known_as  "  ?id " " (- ?id 1)"  " (+ ?id 1) "  ke_rUpa_meM_BI_jAnA_jAnevAlA  )" crlf))
 )
 
 
@@ -29,9 +29,9 @@
 (not(id-root =(- ?id 1) also))
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(+ ?id 1) ke_rUpa_meM_jAnAjAnevAlA))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(+ ?id 1) ke_rUpa_meM_jAnA_jAnevAlA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " known.clp  known_as  "  ?id "  " (+ ?id 1) "  ke_rUpa_meM_jAnAjAnevAlA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " known.clp  known_as  "  ?id "  " (+ ?id 1) "  ke_rUpa_meM_jAnA_jAnevAlA  )" crlf))
 )
 
 

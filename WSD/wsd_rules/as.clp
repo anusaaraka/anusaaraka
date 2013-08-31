@@ -174,25 +174,23 @@
 )
 
 ;As he was in a hurry, he took the shortest way.
-(defrule as14
-(declare (salience 3600))
-(id-root ?id as)
-?mng <-(meaning_to_be_decided ?id)
-(id-word 1 ?id)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id kyoM_ki))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  as.clp 	as14   "  ?id "  kyoM_ki )" crlf))
-)
-
-
-
+;(defrule as14
+;(declare (salience 3600))
+;(id-root ?id as)
+;?mng <-(meaning_to_be_decided ?id)
+;(id-word 1 ?id)
+;=>
+;(retract ?mng)
+;(assert (id-wsd_root_mng ?id kyoM_ki))
+;(if ?*debug_flag* then
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  as.clp 	as14   "  ?id "  kyoM_ki )" crlf))
+;)
 
 
 
 ;Added by Meena(4.6.10)
 ;As you are aware , this is not a new problem . 
+;As we will see, the wave model could satisfactorily explain the phenomena of reflection and refraction.
 (defrule as15
 ;(declare (salience 0))
 (declare (salience 3700))
@@ -200,20 +198,14 @@
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-subject ?kri ?id1)
 (kriyA-conjunction  ?kri ?id)
-(id-root =(+ ?id1 1) be|know)
-(id-cat_coarse ?id conjunction)
+(id-root =(+ ?id1 1) be|know|shall|will|think) ;Added shall|will|think in the list by Garima singh-Banasthali (14.8.13)
+;(id-cat_coarse ?id conjunction); Commented by  Garima singh
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id jEsA_ki))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  as.clp 	as15   "  ?id "  jEsA_ki )" crlf))
 )
-
-
-
-
-
-
 
 ;Added by Meena(17.3.10)
 ;As the Master grew old and infirm , the disciples begged him not to die . 

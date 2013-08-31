@@ -6838,7 +6838,7 @@ ascension_noun	caDAva/ArohaNa/uwWAna
 ascensions_UNDEFINED	uwWAna
 ascent_noun	caDAI/a/ArohaNa
 ascents_UNDEFINED	ArohaNa
-ascertain_verb	jAzca_kara_pawA_lagA/pawA_lagA
+ascertain_verb	suniSciwa_kara/jAzca_kara_pawA_lagA/pawA_lagA
 ascertained_UNDEFINED	jAzca_kara_pawA_lagAnA
 ascertaining_UNDEFINED	jAzca_kara_pawA_lagAnA
 ascertains_UNDEFINED	jAzca_kara_pawA_lagAnA
@@ -28840,7 +28840,7 @@ featherweight_noun	kama_vajana_kA_mukkebAja/PExaraveta
 featherweights_UNDEFINED	kama_vajana_kA_mukkebAja
 feathery_adjective	bahuwa_halkA/pafKa_ke_samAna
 feats_UNDEFINED	vIrawA_kA_kAma
-feature_noun	nakSa/viSeRawA/vESiRtya/mahawwvapUrNa_leKa/lakRaNa/ceharA-moharA/viSeRa_guNa/sinemA_kI_Pilma
+feature_noun	lakRaNa/nakSa/viSeRawA/vESiRtya/mahawwvapUrNa_leKa/ceharA-moharA/viSeRa_guNa/sinemA_kI_Pilma
 feature_verb	xiKA/praXAnawA_xe/peSa_kara/prakata_kara/hissA_le
 featured_UNDEFINED	sinemA_kI_Pilma
 featured_adjective	praXAna

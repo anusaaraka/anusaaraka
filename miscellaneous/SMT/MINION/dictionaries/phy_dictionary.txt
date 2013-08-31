@@ -361,7 +361,7 @@ volcano_noun	jvAlAmuKI
 wavelength_noun	warafgaxErGya
 weightlessness_noun	BArahInawA
 weight_noun	BAra
-electrostatics	sWiravExyuwikI
+electrostatics_noun	sWiravExyuwikI
 channel_noun	saraNi
 emitter_noun	uwsarjaka
 vacuum_noun	nirvAwa

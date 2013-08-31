@@ -99,18 +99,17 @@
 ;Added by Meena(4.3.10)
 ;Such flowers are found mainly in Europe . 
 ;The remains of some Roman earthenware vessels were found during the dig.
-; Modified by Shirisha Manju (30-05-13) Added "is" in the list
-;The holy book is found in the temples. 
+; Added "is" in the list by Shirisha Manju (30-05-13)  Ex: The holy book is found in the temples. 
+; Added "was" in the list by Pramila(banasthali University) (20-08-13) Ex: It was found to be true.
 (defrule found03
 (declare (salience 3000))
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id found)
-(or(id-word =(- ?id 1) is|are|were)(id-word =(- ?id 2) is|are|were))
+(or(id-word =(- ?id 1) is|are|were|was)(id-word =(- ?id 2) is|are|were|was))
 (kriyA-subject ?id ?id1)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id pA))
-;(assert (id-wsd_root_mng ?id ho))
 (assert (id-wsd_root ?id find))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  found.clp      found03   "  ?id "  pA )" crlf)
@@ -118,16 +117,36 @@
 )
 )
 
+;Added by Pramila(Banasthali University)
+;Danish found that compass needle is deflected by passing an electric current through a wire placed near the needle.
+(defrule found4
+(declare (salience 2900))
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id found )
+(id-word =(+ ?id 1) that)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id pA))
+(assert (id-wsd_root ?id find))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  found.clp      found4   "  ?id "  pA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  found.clp      found4   "  ?id "  find )" crlf)
+)
+)
 
-
-
-
-
-
-
-
-
-
-
-
+;-------------------------------- Default --------------------------------------
+;Added by Pramila(Banasthali University)
+(defrule found5
+(declare (salience 2900))
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id found)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id pA))
+(assert (id-wsd_root ?id find))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  found.clp      found5   "  ?id "  pA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  found.clp      found5   "  ?id "  find )" crlf)
+)
+)
 
