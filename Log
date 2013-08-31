@@ -84,6 +84,7 @@
 22. Added following files:
 	--> ir_no@.lex to convert iscii to roman  
 	--> proper_noun_dic.txt
+	--> run_tregex_for_multiparse.sh 
 23. Removed following files:
 	bin/ir_no@
 	tree_viewer/compile.sh

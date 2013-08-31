@@ -1,9 +1,19 @@
 
   Run ::
   ===
+  To view single parse::
+  ====================
   sh run_tregex.sh <file_name>
   Eg: sh run_tregex.sh file
- 
+
+  To view multi parser::
+  sh run_tregex_for_multiparse.sh <file_name>
+  Eg: sh run_tregex.sh file
+
+  NOTE:-
+  By default we get 25 parses for a sentence, if one want to see more parse trees change the "-printPCFGkBest 25" option  to desired number in "$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2013-06-2/run_multiple_parse_penn.sh" file.
+
+
   With the above command "Tregex" tree viewer tool opens
 
   To view the Parse trees 
