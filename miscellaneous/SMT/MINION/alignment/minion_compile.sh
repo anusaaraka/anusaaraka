@@ -21,12 +21,4 @@ cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER
 
  tar -xvzf shallow-parser-hin-4.0.fc8.tar.gz
 
-
- if  [ -e $HOME_anu_test/miscellaneous/SHALLOW_PARSER/fullparser-hin-1.6.3 ] ; then
-     rm -rf fullparser-hin-1.6.3/
- fi
-
- tar -xvzf fullparser-hin-1.6.3.tgz
- 
 sh compile_shallow_parser.sh
-sh compile_full_parser.sh

@@ -1,3 +1,12 @@
+ 05-09-13
+ ========
+ 1. Modified following shell files:
+	-> minion_compile.sh: Removed code related to full parser.
+ 2. Removed ::
+	fullparser-hin-1.6.3.tgz
+	compile_full_parser.sh
+ 3. Updated Log
+	
  31-08-13
  ========
  1. WSD : Modified : due.clp	 across.clp	into.clp	have_en_tam.clp	   is_en_tam.clp
