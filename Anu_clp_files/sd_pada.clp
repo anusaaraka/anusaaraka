@@ -109,13 +109,14 @@
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  ; The people of Orissa are facing grave adversities due to the cyclone.
+ ;They served a wonderful meal to more than fifty delegates.
  (defrule multiple_prep_rule
  (declare (salience 4700))
  (prep_ids $?ids ?prep)
  (not (prep_id_decided ?prep))
  (head_id-prawiniXi_id-grp_ids ? ?prep_id ?prep)
  ?f0<-(head_id-prawiniXi_id-grp_ids ?hid ?pp $? ?prep_id ?np_id)
- (prawiniXi_id-node-category ?pp ?PP PP|WHPP)
+ (prawiniXi_id-node-category ?pp ?PP PP|WHPP|QP)
  (prawiniXi_id-node-category ?np_id ?NP NP|WHNP)
  (head_id-prawiniXi_id-grp_ids ?np_head ?np_id $?grp_ids ?last_node)
 ?f1<-(pada_info (group_head_id ?np_id)(preposition 0))

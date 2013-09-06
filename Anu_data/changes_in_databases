@@ -283,7 +283,7 @@
   
   changes in animate_list.txt
   ===========================
-  1. Added      vixyArWI  ----  Suggested by Manju Eg: The school admits only 50 students at a time .
+  1. Added      vixyArWI  ----  By Manju Eg: The school admits only 50 students at a time .
 		saba	  ----  By Roja ( 08-08-12 )
 			
   2. Removed    mUrKa, mUrKa vyakwi ---- Suggested by Meenaji (29-04-10)
@@ -309,6 +309,9 @@
 	land		----		"	Ex: The land will come to encompass all or parts of 15 u.s. states.
 	festival	----		"	Ex: The festival is to encompass everything from music,theatre to literature,
 						    cinema and visual arts.
+	figure		----		"	Ex: These figures demonstrate the size of economic problem facing country.
+	research	----		"	Ex: Research has demonstrated that babies can recognise their mother's voice.
+	problem	     	----		"	Ex: These problems demonstrate importance of strategic planning.
 	    
 
   changes in not_ne_verb_list.txt
@@ -336,28 +339,37 @@
 
   Changes in animate.txt
   ========================
-  Added        they    1
-               Mohan   1
-               twins   1   (By Meena 4-5-10)
-               mother  1   (By Meena 10-5-10)
-               father  1
-               sister  1
-               brother 1
-               son     1
-               daughter        1
-               uncle   1
-               aunt    1
-               son     1    (By Roja 11-02-11 Suggested by Sukhada	)
-	       daughter 1   (            "                              )
-	       boy     1    (            "                              )
-               girl    1    (            "                              )
-               dog     1    (            "                              )
-               man     1    (            "                              )
-	       examiner	1   (        12-08-13 Suggested by Preeti ji LTRC Ex:The examiners passed all the candidates.)
-               candidate  1 (      "					)
-               he	1   (Suggested by Pramila Banasthali (16-08-13) Ex:She deals fairly with her customers.)
-               manager	1   (                "                          Ex:Manager deals with his employee.)
-               people	1   (                "                          Ex:People does not deal fairly with each other.)
+  Added  
+	they    
+	Mohan   
+        twins      (By Meena 4-5-10)
+        mother     (By Meena 10-5-10)
+        father  
+        sister  
+        brother 
+        son     
+        daughter   
+        uncle   
+        aunt    
+        son        (By Roja 11-02-11 Suggested by Sukhada    )
+	daughter   (            "                            )
+	boy        (            "                            )
+        girl       (            "                            )
+        dog        (            "                            )
+        man        (            "                            )
+	examiner   (Suggested by Preeti ji LTRC  12-08-13    )
+        candidate  (      "				     )
+        he	   (Suggested by Pramila Banasthali 16-08-13 ) Ex:She deals fairly with her customers.
+        manager	   ( 	"	  "	               	"    ) Ex:Manager deals with his employee.
+        people	   (    "         "      		"    ) Ex:People does not deal fairly with each other.
+	teacher	   (	"	  "		    03-09-13 ) Ex:The teacher demonstrated how to use the equipment.	
+	I	   (  	"	  "			"    ) Ex:I want to demonstrate the good qualities of the new SURF
+							          EXCEL before you.
+	she	   (   	"	  "			"    ) Ex:She described the dance step, then took a partner and 
+								  demonstrated.
+	salesperson(	"	  "			"    ) Ex:The salesperson plugged in and demonstrated the vacuum 
+							 	  cleaner.
+	 
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -721,10 +733,11 @@ Modified:
         6. Jummamasjid_UNDEFINED	jummA_masjixa  			( Suggested by Meenaji 	08-03-11	)
         7. arms-dealing_UNDEFINED	SaswrAswra_kraya_vikraya 	( 		"	26-04-11	)
 	8. ill-used_UNDEFINED 	       	xurvyavahariwa_huA 		(		"			)
- 					Ex.Within the relationship he feels ill-used most of the time.
+ 					Ex. Within the relationship he feels ill-used most of the time.
 	9. free-fall_UNDEFINED	       	besahArA_giranA    		( Suggested by Meenaji 	28-07-11	)
 	10. mela_UNDEFINED		melA 				( Suggested by Rajini 	17-01-12	)
-                        Ex: Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival
+                       			Ex: Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful
+					    dussehra festival
 	11. file-clerk_noun		PAileM_raKane_vAlA_kaMrmacArI	( Suggested by Rajini   29-02-12	)
        	12. photoelectric_noun  	prakASa_vixyuwa                 ( Suggested by Chaitanya Sir 19-03-13   )
         13. antielectron_noun          	prawi_ilektroYna                (               "                       )
@@ -746,6 +759,13 @@ Modified:
 	29. electroscope_noun       	vixyuwaxarSI			(Suggested by Pramila   "      29-08-13 )
 	30. galvanometer_noun		XArAmApI			(Suggested by Prachi	"      29-08-13 )
 	31. inter-related_adjective	paraspara_saMbaMXiwa		(	"		"      29-08-13 )
+	32. fur_noun  			samUra				(Suggested by Pramila   "      31-08-13 )
+									Ex: The charged rod attracted the cat's fur.
+	33. deformable_adjective    	virUpya				(Suggested by Pramila Banasthali 03-09-13)
+					Ex:It is deformable,i.e. it allows some relative displacement between different parts
+	34. focussing_noun    		kenxriwa_kara			(Suggested by Pramila Banasthali 03-09-13)
+					Ex: The gathering and focussing mechanism of light by the eye-lens is well described
+					    in the wave picture.
 
 	 
     4. Added new meaning to the existing word:
@@ -794,7 +814,7 @@ Modified:
 									Ex: The forces are purely electrical.
 	36. gamma_noun      		gAmA				(Suggested by Prachi Banasthali 24-08-13 )
 	37. inversely_adverb        	vyuwakramAnusAra		(		"	"	27-08-13 )
-					Ex: Its effect is felt even when the distance between the interacting particles is					     very large because the force decreases inversely as the square of the distance						  between the interacting bodies.
+					Ex: Its effect is felt even when the distance between the interacting particles is					         very large because the force decreases inversely as the square of the distance						      between the interacting bodies.
 	38. glue_noun       		goMxa				(Suggested by Prachi Banasthali 27-08-13 )
 					Ex: The adhesive force of glue is basically electrical in nature.
 	39. generalised_adjective	vyApakIkqwa			(Suggested by Chaitanya Sir  27-08-13    )
@@ -804,11 +824,20 @@ Modified:
 	42. denote_verb     		xarSA				(Suggested by Pramila Banasthali 29-08-13)
 					Ex: It denotes an individual's feelings of competence.
 	43. gathering_noun		jamaGata			(Suggested by Prachi Banasthali  31-08-13)	
-					Ex: It's a huge gathering of black people coming to hear the greatest musicians of					     our time.
+					Ex: It's a huge gathering of black people coming to hear the greatest musicians of					         our time.
 	44. intensity_noun		wIvrawA				(Suggested by Prachi Banasthali  31-08-13)
-					Ex: The greater the intensity of radiation, the greater are the amplitude of electric 					     and magnetic fields.
+					Ex: The greater the intensity of radiation, the greater are the amplitude of electric 					         and magnetic fields.
 	45. generalised_adjective	sAmAnyIkqwa			(Suggested by Prachi Banasthali  31-08-13)
-					Ex: If this is done, there is no contradiction in the value of B obtained anywhere					     using the generalised Ampere's law.
+					Ex: If this is done, there is no contradiction in the value of B obtained anywhere					         using the generalised Ampere's law.
+	46. assumption_noun 		aBiXAraNA			(Suggested by Garima Banasthali  03-09-13)
+					Ex: Under these assumptions, the trajectory of an alpha-particle can be computed 
+					    employing Newton's second law of motion.
+	47. vicinity_noun       	pAsa				(Suggested by Rashmi Banasthali  03-09-13)
+					Ex: For example, an electric current deflects a magnetic compass needle placed in its
+					    vicinity.
+	48. cater_verb      		sevA_praxAna_kara		(Suggested by Chaitanya Sir      04-09-13)
+					Ex: Each cell contains a low-power transmitter called a base station and caters to a
+					    large number of mobile receivers
 
 
     5. Modifying first meaning from the list :
@@ -849,7 +878,7 @@ Modified:
 				Ex: For this, we consider a plane circular loop of radius r whose plane is perpendicular to  					 the direction of the current-carrying wire, and which is centred symmetrically with
 				    respect to the wire.
 	27. assume_verb     	kalpanA_kara		as	mAna		(Suggested by Garima Banasthali 24-08-13)
-				Ex:These experiments could only be satisfactorily explained by assuming a wave model of light. 
+				Ex:These experiments could only be satisfactorily explained by assuming a wave model of light
 	28. approximately_adverb wakarIbana_rUpa_se	as	lagaBaga	(Suggested by Garima Banasthali 24-08-13)
 				Ex: Because of the smallness of the wavelength of visible light (in comparison to the 					         dimensions of typical mirrors and lenses), light can be assumed to approximately travel
 				    in straight lines. 
@@ -876,8 +905,18 @@ Modified:
 				    separately.
 	39. feature_noun	nakSa			as	lakRaNa		(Suggested by Chaitanya  Sir     31-08-13)
 				Ex: Hypertext is a powerful feature of the web.
-	40. generalise_verb	vyApaka_anumAna_lagA	as	sAmAnyIkaraNa_kara (Suggested by Prachi Banasthali  31-08-13)
+	40. generalise_verb	vyApaka_anumAna_lagA	as	sAmAnyIkaraNa_kara (Suggested by Prachi Banasthali 31-08-13)
 				Ex: If we generalise this law by adding to the total current carried by conductors.
+	41. alter_verb      	baxala_jA		as	baxala		(Suggested by Garima Banasthali  03-09-13)
+				Ex: The flux can also be altered by changing the shape of a coil in a magnetic field.
+	42. equal_verb      	kI_barAbarI_kara	as	ke_barAbara_ho	(Suggested by Pramila Banasthali 03-09-13)
+				Ex: Therefore, we conclude from the first law that the magnitude of R equals that of W.
+	43. envelope_noun   	liPAPA			as	enavalapa	(Suggested by Pramila Banasthali 03-09-13)
+				Ex: This envelope of signal (b) is the message signal.
+	44. deflection_noun 	JukAva			as	vikRepaNa	(Suggested by Pramila Banasthali 03-09-13)
+				Ex: The deflection lasts as long as the bar magnet is in motion.
+
+	
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -967,9 +1006,10 @@ Modified:
 		pursuant_to	right_of 		subsequent_to
 		that_of		where_as 		with_a_view_to	
 		with_respect_to
-	into_and_out_of --- 	Suggested by Chaitanya Sir (22-11-12)
-	in_contact_with	---	Suggested by Sukhada
-	just_before	---	Suggested by Chaitanya Sir (22-01-13)
+	into_and_out_of --- 	(Suggested by Chaitanya Sir 22-11-12)
+	in_contact_with	---	(Suggested by Sukhada
+	just_before	---	(Suggested by Chaitanya Sir 22-01-13)
+	more_than	---	(Suggested by Sukhada	    04-09-13)
 
 -------------------------- compound_phrase.txt -----------------------------------
  Based on the type of the phrase, compound_phrase.txt file has been splitted in to four different files,(Suggested by Chaitanya ji 23-04-12)
@@ -1062,15 +1102,29 @@ Modified:
 				Ex: I find his behaviour beyond belief.
 	28. stage_by_stage	kadama_xara_kadama#kadama_xara_kadama#noun#3#RM (Suggested by Preeti ji LTRC 28-08-13)
 				Ex: The police are building up a picture of the incident stage by stage.
+	29. modern_day      	AXunika#AXunika#noun#2#RM			(Suggested by Pramila Banasthali 03-09-13)
+				Ex: The pioneering experiments of Faraday and Henry have led directly to the development of
+				    modern day generators and transformers.
+	30. incident_radiation	Apawiwa vikiraNa#Apawiwa vikiraNa#noun#1#RM	(Suggested by Prachi Banasthali  04-09-13)
+				Ex: In other words, the maximum kinetic energy of photoelectrons depends on the light source
+				    and the emitter plate material, but is independent of intensity of incident radiation.  
+	31. incident_light  	Apawiwa_prakASa#Apawiwa_prakASa#noun#2#RM	(Suggested by Prachi Banasthali  04-09-13)
+				Ex: This implies that greater the frequency of incident light, greater is the maximum kinetic
+				    energy of the photoelectrons.
 
 
     Added new meaning to the existing word:
     --------------------------------------
-	no_doubt        	niHsaMxeha		(Suggested by Sukhada 30-05-13	)
-	railway_station		rela_sWAnaka		(	"	"     15-06-13	)
-	for_a_while		kuCa_kRaNa_waka		( By Roja 	15-07-13	)
-	in_course_of_time       kAlAnwara_meM		( By Roja 	15-07-13	)
-	in_fact			asala_meM		( By Roja 	15-07-13	)
+	1. no_doubt        	niHsaMxeha		(Suggested by Sukhada 30-05-13		)
+	2. railway_station	rela_sWAnaka		(	"	"     15-06-13		)
+	3. for_a_while		kuCa_kRaNa_waka		( By Roja 	15-07-13		)
+	4. in_course_of_time    kAlAnwara_meM		( By Roja 	15-07-13		)
+	5. in_fact		asala_meM		( By Roja 	15-07-13		)
+	6. with_respect_to	ke_saMxarBa_meM	   	(Suggested by Garima Banasthali 03-09-13)
+				Ex: For this, we consider a plane circular loop of radius r whose plane is perpendicular to
+				    the direction of the current-carrying wire, and which is centred symmetrically with
+				    respect to the wire.
+
 
    Modifying the head id:
    ---------------------
@@ -1105,12 +1159,20 @@ Modified:
 	lightwaves_noun 	prakASa_waraMga	(Suggested by	Garima Banasthali  "     )
 	diffraction_noun        vivarwana	(	"		"	   "	 )
 	model_noun     		moYdala		(Suggested by Rashmi Banasthali 24-08-13 )
-	voltage_noun    	voltawA		(	"	"		   "	 )
+	voltage_noun    	viBava/voltawA	(	"	"		   "	 )
 	amplitude_noun  	AyAm		(	"     Garima	"	28-08-13 )
 	divergence_noun    	apasAriwA	(Suggested by Pramila Banasthali 29-08-13)
 	irradiate_verb		kiraNiwa	(Suggested by Prachi Banasthali  29-08-13)
 	image_noun		prawibimba	(	"	"		   "	 )
-	
+	proton_noun     	protoYna	(Suggested by Shweta Banasthali  31-08-13)
+	photocell_noun  	Potosela	(	"		"	   "	 )	
+	quartz_noun     	kvAtja		(	"		" 	   "     )
+	photosensitive_adjective  Potosensiwiva	(	"		"	   "     )
+	detection_noun  	saMsUcana	(Suggested by Pramila Banasthali 03-09-13)
+	frictional_adjective    GarRI		(	"		"	   "	 )
+	viscous_noun    	SyAna		(Suggested by Rashmi Banasthali  03-09-13)
+	exercise_noun		aByAsa_praSna	(Suggested by Chaitanya Sir 	 06-09-13)
+
 
     Modified :
     ---------
@@ -1180,3 +1242,4 @@ Modified:
 	Henry		henarI		(		"		"	)
 	Michael		mAikala		(		"		"	)
 	Germer		jarmara		(		"		31-08-13)
+	Galilei    	gElilI		(		"		"	)

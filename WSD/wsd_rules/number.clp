@@ -3,8 +3,8 @@
 (declare (salience 5000))
 (id-root ?id number)
 ?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaNa ?id ?id1)
 (id-word ?id1 large)
-(viSeRya-viSeRaNa ?id1 ?id)
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)

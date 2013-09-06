@@ -63,6 +63,16 @@
 	)
  )
  ;-------------------------------------------- Rules ------------------------------------------------------------
+ ;Added by Maha Laxmi
+ ;for MWE meaning will be assinged to the last word (single mng will be given to all words).So,by this rule we are retracting cntrl facts for remaining ids.
+ (defrule mng_decided
+ (declare (salience 9990))
+ ?f<-(mng_has_been_decided ?id)
+ ?mng<-(meaning_to_be_decided ?id)
+ =>
+        (retract ?mng)
+ )
+ ;--------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (29-11-12) (suggested by Chaitanya Sir)
  ;Assuming lwg_ids (verb-verb connection) will not be part of compound phrase (noun-noun connection)
  ;The magnitude of the displacement for a course of motion [may be] zero but the corresponding path length is not zero. 
@@ -108,16 +118,6 @@
         else
                 (retract ?f)
         )
- )
- ;--------------------------------------------------------------------------------------------------------------
- ;Added by Maha Laxmi
- ;for MWE meaning will be assinged to the last word (single mng will be given to all words).So,by this rule we are retracting cntrl facts for remaining ids.
- (defrule mng_decided
- (declare (salience 9800))
- ?f<-(mng_has_been_decided ?id)
- ?mng<-(meaning_to_be_decided ?id)
- =>
- 	(retract ?mng)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ; In LWG meaning meaning for the head word is taken (as other words become tam part).
@@ -320,8 +320,8 @@
         (bind ?f_mng (get_first_mng (lowcase ?rt) noun default-iit-bombay-shabdanjali-dic.gdbm))
         (if (neq ?f_mng "FALSE") then
                 (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default "?id")" crlf)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
         )
  )
  ;====================================== Generate default category ================================================
@@ -494,8 +494,8 @@
 	(bind ?f_mng (get_first_mng ?org_wrd ?cat default-iit-bombay-shabdanjali-dic.gdbm))
         (if (neq ?f_mng "FALSE") then
 		(retract ?mng)
-		(printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default)" crlf)
-		(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default "?id")" crlf)
+		(printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
+		(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
@@ -515,8 +515,8 @@
 	(bind ?f_mng (get_first_mng ?org_wrd ?cat1 default-iit-bombay-shabdanjali-dic.gdbm))
         (if (neq ?f_mng "FALSE") then
                 (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default "?id")" crlf)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
            (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?org_wrd")" crlf)
         )
  )
@@ -536,8 +536,8 @@
 	(bind ?f_mng (get_first_mng ?rt ?cat default-iit-bombay-shabdanjali-dic.gdbm))
         (if (neq ?f_mng "FALSE") then
                 (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default "?id")" crlf)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
@@ -558,8 +558,8 @@
 	(bind ?f_mng (get_first_mng ?rt ?cat1 default-iit-bombay-shabdanjali-dic.gdbm))
         (if (neq ?f_mng "FALSE") then
                 (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default "?id")" crlf)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
 	        (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?rt")" crlf)
         )
  )

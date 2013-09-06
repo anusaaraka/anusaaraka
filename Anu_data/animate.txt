@@ -25,3 +25,7 @@ candidate	1
 he	1
 manager	1
 people	1
+teacher	1
+I	1
+she	1
+salesperson	1

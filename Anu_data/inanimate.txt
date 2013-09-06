@@ -26,3 +26,6 @@ race	1
 network	1
 land	1
 festival	1
+figure	1
+research	1
+problem	1

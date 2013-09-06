@@ -105,7 +105,7 @@
  (defrule modify_mng
  (declare (salience 700))
  (id-original_word ?id  ?w&our|Our|ours|me|them|we|We|us|My|my)
- ?f0<-(id-HM-source ?id ?h_mng ?src&WSD_root_mng|Default)
+ ?f0<-(id-HM-source ?id ?h_mng ?src&WSD_root_mng|Default_meaning)
  =>
 	(if (eq ?w them) then
 		(assert (id-HM-source ?id vaha Word))

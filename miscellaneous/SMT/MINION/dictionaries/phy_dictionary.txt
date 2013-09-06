@@ -374,8 +374,16 @@ radioactive_adjective	rediyo_ektiva
 lightwaves_noun	prakASa_waraMga
 diffraction_noun	vivarwana
 model_noun	moYdala
-voltage_noun	voltawA
+voltage_noun	viBava/voltawA
 amplitude_noun	AyAm
 divergence_noun	apasAriwA
 irradiate_verb	kiraNiwa
 image_noun	prawibimba
+proton_noun	protoYna
+photocell_noun	Potosela
+quartz_noun	kvAtja
+photosensitive_adjective	Potosensiwiva
+detection_noun	saMsUcana
+frictional_adjective	GarRI
+viscous_noun	SyAna
+exercise_noun	aByAsa_praSna	

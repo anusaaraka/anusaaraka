@@ -4963,7 +4963,7 @@ altars_UNDEFINED	vexI
 altavista_UNDEFINED	EltAvistA
 altenate_UNDEFINED	vikalpI
 alter-ego_noun	anwarafga_miwra
-alter_verb	baxala_jA/baxala_xe
+alter_verb	baxala/baxala_xe
 alteration_noun	parivarwana/prawyAvarwana/Perabaxala
 alterations_UNDEFINED	parivarwana
 alterative_adjective	upacArAwmaka/parivarwaka/Arogyakara
@@ -7111,7 +7111,7 @@ assumed_adjective	ParjI/kalpiwa
 assumes_UNDEFINED	kAryaBAra_samBAlanA
 assuming_UNDEFINED	kAryaBAra_samBAlanA
 assuming_adjective	XqRta/DITa
-assumption_noun	anumAna/purvAnumAna/grahaNa/afgIkAra_karanA
+assumption_noun	aBiXAraNA/anumAna/purvAnumAna/grahaNa/afgIkAra_karanA
 assumptions_UNDEFINED	afgIkAra_karanA
 assumptions_noun	XAraNA/grahaNa/anumAna
 assumptive_adjective	XqRta/DITa
@@ -13098,7 +13098,7 @@ categorize_UNDEFINED	vargIkqwa_karanA
 categorize_verb	vargIkqwa_kara
 category_noun	varga
 catenation_UNDEFINED	SraKaMlana
-cater_verb	KilA/KAna-pAna_kA_prabanXa_kara/AvaSyakawAoM_kA_XyAna_raKa/pilA
+cater_verb	sevA_praxAna_kara/KilA/KAna-pAna_kA_prabanXa_kara/AvaSyakawAoM_kA_XyAna_raKa/pilA
 catered_UNDEFINED	pilAnA
 caterer_noun	Boja_prabanXaka/KAna-pAna_kA_prabanXa_karane_vAlI/KAna-pAna_kA_prabanXa_karane_vAlA/rasoiyA
 caterers_UNDEFINED	rasoiyA
@@ -20745,7 +20745,7 @@ deflations_UNDEFINED	havA_nikAlanA
 deflect_verb	hatA/muda/vikRepiwa_ho/vikRepiwa_kara
 deflected_UNDEFINED	hatAnA
 deflecting_UNDEFINED	hatAnA
-deflection_noun	JukAva/vikRepaNa
+deflection_noun	vikRepaNa/JukAva
 deflections_UNDEFINED	JukAva
 deflects_UNDEFINED	hatAnA
 deflexion_UNDEFINED	JukAva
@@ -26546,7 +26546,7 @@ enunciated_UNDEFINED	vyakwa_karanA
 enunciates_UNDEFINED	vyakwa_karanA
 enunciating_UNDEFINED	vyakwa_karanA
 envelop_verb	lapeta/Gera_le/DAzka_le/AcCAxiwa_kara/Avqwa_kara
-envelope_noun	liPAPA/WElA/enavalapa
+envelope_noun	enavalapa/liPAPA/WElA
 enveloped_UNDEFINED	Avqwa_karanA
 enveloped_adjective	GirA_huA
 envelopes_UNDEFINED	liPAPA
@@ -26701,7 +26701,7 @@ equable_adjective	sWira/sWiraciwwa/SAnwa
 equably_UNDEFINED	sWirawApUrvaka
 equably_adverb	sWirwaciwwApUrvaka
 equal_adjective	samAna/samakakRa/sakRama
-equal_verb	kI_barAbarI_kara/ke_barAbara_ho
+equal_verb	ke_barAbara_ho/kI_barAbarI_kara
 equaled_UNDEFINED	samAna
 equaler_UNDEFINED	samAna
 equalest_UNDEFINED	samAna
@@ -32378,7 +32378,7 @@ funny_adverb	parihAsamaya
 funs_UNDEFINED	majA
 fur_UNDEFINED	bAla
 fur_adjective	roezxAra/loma
-fur_noun	roezxAra_KAlavAle_jAnavara/roezxAra_KAla_kA_banA_huA_vaswra/roAz/paSuloma/lomaxAra_KAla_kA_kapadA/lomaxAra_jAnavaroM_kI_KAla/lomaxAra_carma/loma_vastra/loma/bAla{jAnavaroM_kI_KAla_para_mote_va_mulAyama_bAla}/bImArI_meM_jihvA_para_hone_vAlI_waha
+fur_noun	samUra/roezxAra_KAlavAle_jAnavara/roezxAra_KAla_kA_banA_huA_vaswra/roAz/paSuloma/lomaxAra_KAla_kA_kapadA/lomaxAra_jAnavaroM_kI_KAla/lomaxAra_carma/loma_vastra/loma/bAla{jAnavaroM_kI_KAla_para_mote_va_mulAyama_bAla}/bImArI_meM_jihvA_para_hone_vAlI_waha
 furbelow_noun	JAlara
 furbish_UNDEFINED	Gisa_kara_camakA
 furbished_UNDEFINED	Gisa_kara_camakA
@@ -88923,7 +88923,7 @@ vices_UNDEFINED	SikaFjA
 vicest_UNDEFINED	SikaFjA
 vicinal_adjective	samIpasWa
 vicinities_UNDEFINED	adosa_padosa
-vicinity_noun	adosa_padosa/ilAkA
+vicinity_noun	pAsa/adosa_padosa/ilAkA
 vicious-circle_noun	xuScakra
 vicious_adjective	xurAcArI/vixveRapUrNa/ninxanIya/krUrawApUrNa/anEwika/ugra/kaRtaxAyaka
 viciouser_UNDEFINED	ugra
@@ -93477,3 +93477,5 @@ gold-leaf_adjective	svarNa_pawra
 electroscope_noun	vixyuwaxarSI
 galvanometer_noun	XArAmApI
 inter-related_adjective	paraspara_saMbaMXiwa
+deformable_adjective	virUpya
+focussing_noun	kenxriwa_kara

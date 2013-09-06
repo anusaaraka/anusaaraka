@@ -32805,7 +32805,7 @@ with_reference_to	ke_saMxarBa_meM#ke_saMxarBa_meM#noun#3#RM
 with_reference_to_his_application_dated_shri_is_offered_post_of	SrI_ke_wArIKZa_ke_Avexana_pawra_ke_prasaMga_meM_unheM_paxa_kI_niyuikwa_kA_praswAva_BejA_jAwA_hE#SrI_ke_wArIKZa_ke_Avexana_pawra_ke_prasaMga_meM_unheM_paxa_kI_niyuikwa_kA_praswAva_BejA_jAwA_hE#noun#5#RM
 with_regard_to	ko_XyAna_meM_raKawe_hue#ko_XyAna_meM_raKawe_hue#noun#3#RM
 with_regards	sAxara#sAxara#noun#2#RM
-with_respect_to	ke_viRaya_meM#ke_viRaya_meM#noun#3#RM
+with_respect_to	ke_saMxarBa_meM/ke_viRaya_meM#ke_viRaya_meM#noun#3#RM
 with_retrospective_effect	BUwalakRI_praBAva_sahiwa#BUwalakRI_praBAva_sahiwa#noun#3#RM
 with_sympathy	sAnwvanA_se#sAnwvanA_se#noun#2#RM
 with_the_concurrence_of	kI_sahamawi_se#kI_sahamawi_se#noun#3#RM
@@ -33199,6 +33199,9 @@ denoted_by	se_nirxiRta#se_nirxiRta#adjective#1#RM
 stage_by_stage	kadama_xara_kadama#kadama_xara_kadama#noun#3#RM
 beyond_compare	awulanIya#awulanIya#noun#2#RM
 beyond_belief	aviSvasanIya#aviSvasanIya#noun#2#RM
+modern_day	AXunika#AXunika#noun#2#RM
+incident_radiation	Apawiwa vikiraNa#Apawiwa vikiraNa#noun#1#RM
+incident_light	Apawiwa_prakASa#Apawiwa_prakASa#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

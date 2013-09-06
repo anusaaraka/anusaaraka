@@ -11,6 +11,8 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  raise.clp 	raise0   "  ?id "  vqxXi )" crlf))
 )
 
+;Replaced 'Upara_uTA' with 'uTA' by Shirisha Manju Suggested by Chaitanya Sir (05-09-13)
+;This naturally raises the questions like: Is the converse effect possible?
 (defrule raise1
 (declare (salience 4900))
 (id-root ?id raise)
@@ -18,9 +20,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id Upara_uTA))
+(assert (id-wsd_root_mng ?id uTA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  raise.clp 	raise1   "  ?id "  Upara_uTA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  raise.clp 	raise1   "  ?id "  uTA )" crlf))
 )
 
 ;"raise","VT","1.Upara_uTAnA"

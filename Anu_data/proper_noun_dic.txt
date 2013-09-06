@@ -22,3 +22,5 @@ Faraday	PErAde
 Henry	henarI
 Michael	mAikala
 Germer	jarmara
+Galilei	gElilI
+Ampere	Empiyara
