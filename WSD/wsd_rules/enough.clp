@@ -42,3 +42,19 @@
 ;"enough","Adv","1.paryApwa"
 ;Have you eaten enough?
 ;
+
+;Added by Pramila(Banasthali University)
+;There was enough evidence in favour of atomic hypothesis.
+(defrule enough3
+(declare (salience 4700))
+(id-root ?id enough)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id paryApwa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  enough.clp 	enough3   "  ?id "  paryApwa )" crlf))
+)
+
+

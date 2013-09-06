@@ -14,11 +14,6 @@
 )
 
 
-
-
-
-
-
 (defrule different1
 (declare (salience 4900))
 (id-root ?id different)
@@ -47,3 +42,19 @@
 ;Both of them took different approaches to the problem.
 ;
 ;
+
+;Added by Pramila(Banasthali University)
+;It was concluded by different scientists.
+;It is found by different studies that medical science has a large space.
+(defrule different3
+(declare (salience 4850))
+(id-root ?id different)
+?mng <-(meaning_to_be_decided ?id)
+(id-root-category-suffix-number =(+ ?id 1)  ? noun ? p)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id viBinna))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  different.clp 	different3   "  ?id "  viBinna )" crlf))
+)
