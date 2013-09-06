@@ -1,6 +1,7 @@
  06-09-13
  ========
- 1. WSD : Modified : interface.clp   number.clp   raise.clp   cultivate.clp
+ 1. WSD : Modified : interface.clp   number.clp   raise.clp   cultivate.clp   stay.clp   synthetic.clp
+		     section.clp
  2. causative_verb_mng.clp
 	Modified : modify_mng rule -- (modified source)
  3. hindi_meaning.clp

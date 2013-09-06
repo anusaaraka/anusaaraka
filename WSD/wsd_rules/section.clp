@@ -26,7 +26,7 @@
 (viSeRya-saMKyA_viSeRaNa ?id ?id1)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id KaNda))
+(assert (id-wsd_root_mng ?id anuBAga))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  section.clp 	section0   "  ?id "  KaNda)" crlf))
 )
