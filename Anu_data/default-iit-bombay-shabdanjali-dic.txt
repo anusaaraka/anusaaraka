@@ -41463,7 +41463,7 @@ instanter_UNDEFINED	Jatapata
 instantest_UNDEFINED	Jatapata
 instantly_adverb	SIGra/wuranwa
 instants_UNDEFINED	Jatapata
-instead_adverb	ke_baxale_meM/usake_sWAna_para/baxala_meM/bajAya/ke_baxale_mez
+instead_adverb	ke_baxale_meM/usake_sWAna_para/baxala_meM/bajAya
 instep_noun	pEra_kA_UparI_maXya_BAga
 insteps_UNDEFINED	pEra_kA_UparI_maXya_BAga
 instigate_verb	BadakA/prAramBa_kara
@@ -42079,7 +42079,7 @@ intimacy_noun	AwmIyawA/yOna_sambanXa/GaniRTawA
 intimate_adjective	AwmIya/vyakigawa/viswqwa/nIjI/GaniRTa/AwamIya/avEXa_yOna_sambanXa/supariciwa/anwarafga
 intimate_verb	suciwa_kara/bawA/bawalA
 intimated_UNDEFINED	supariciwa
-intimately_adverb	pariciwa_rUpa_se
+intimately_adverb	GaniRtawA_se/pariciwa_rUpa_se
 intimater_UNDEFINED	supariciwa
 intimates_UNDEFINED	suparicawa
 intimatest_UNDEFINED	supariciwa
@@ -93479,3 +93479,5 @@ galvanometer_noun	XArAmApI
 inter-related_adjective	paraspara_saMbaMXiwa
 deformable_adjective	virUpya
 focussing_noun	kenxriwa_kara
+lamination_noun	swara
+inductance_adjective	prerakawva
