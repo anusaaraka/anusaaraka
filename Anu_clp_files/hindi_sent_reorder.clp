@@ -38,7 +38,8 @@
  (assert (id-wsd_root_mng))
  (assert (id-wsd_word_mng))
  (assert (id-preceeding_part_of_verb) )
- (assert (id-wsd_root) )
+ (assert (id-wsd_root))
+ (assert (id-attach_emphatic))
  )
  ;============================================ Stanford Parser Rules ===================================================
 

@@ -508,40 +508,47 @@ Modified :
 	retransmit	house__n		(     "	     "	  )
 	quantize	liv/e__vblex		(     "      "	  )
 	quantise	liv/e__vblex		(     "      "    )
+	ionisation	house__n		(     "	  07-09-13)
+	ionization	house__n		(     "	     "	  )
+	ionise		liv/e__vblex		(     "      "    )
+	square		liv/e__vblex		(     "      "    )
+	focuss		approach__vblex		(     "      "    )
+	salesperson	p/erson__n		(     "      "    )
+	shrink		dr/ink__vblex		(     "      "    )
+
+Modified paradigm:
+     	belonging	house__n	as	personnel__n	(Suggested by Meena ji 12-05-11)
+	box		bass__n		a	access__n	(Suggested by Meena ji 10-08-11)
+	phenomenon	house__n	as	criteri/on__n	(By Roja	       14-03-13)
+	shrink		
+
+Modified root:
+	may		May		as	may		(By Roja 14-03-13)
+	june		June		as	june		( 	"	 ) 
+	december	December	as	december	(	"	 )
+	april		April		as	april		(	"	 )
+	september	September	as	september	(	"	 )
+	november	November	as	november	(	"	 )
+	october		October		as	october		(	"	 )
+
+Modified root based on paradigms:
+	bab/y__n	analys/is__n	maxim/um__n	m/an__n		wol/f__n	li/fe__n	m/ouse__n
+	f/oot__n	stimul/us__n	ind/ex__n	appendi/x__n	criteri/on__n	t/ooth__n	dilettant/e__n
+	librett/o__n	lir/a__n	phalan/x__n	corp/us__n 
+	Ex: Calvary	Calvary		as	Calvar		(By Roja 14-03-13)
+ 
+Miscellaneous:
+	Modified :
+	1. In p/erson__n  paradigm: 	person, people	as	person		(By Roja 02-04-13)
+	2. In riteri/on__n paradigm to generate 'criterias' word.		(By Roja 14-03-13)
+	3. ([0-9]+)?[04-9]+th 	as	([0-9]+)?[0-9]+th			(By Roja 17-07-13)
+
+Removed:
+	repetition entry <e lm="April"><i>April</i><par n="house__n"/></e>	(By Roja 27-07-13)
+	<e lm="shrunk"><i>shrunk</i><par n="accept__vblex"/></e>		(By Roja 07-09-13)
+	<e lm="shrank"><i>shrank</i><par n="accept__vblex"/></e>		(	"	 )
 
 
-Modified:
-        <e lm="belonging"><i>belonging</i><par n="house__n"/></e>   as    <e lm="belongings"><i>belongings</i><par n="personnel__n"/></e>   (Suggested by Meena ji 12-05-11)
-        <e lm="box"><i>box</i><par n="bass__n"/></e>   as   <e lm="box"><i>box</i><par n="access__n"/></e>  (Suggested by Meena ji 10-08-11)
-	criteri/on__n paradigm to generate 'criterias' word.  (by Roja 14-03-13)
-	<e lm="may"><i>May</i><par n="house__n"/></e>	as 	<e lm="may"><i>may</i><par n="house__n"/></e> (by Roja 14-03-13)
-	<e lm="june"><i>June</i><par n="house__n"/></e>	as	<e lm="june"><i>june</i><par n="house__n"/></e> ( "   ") 
-	<e lm="phenomenon"><i>phenomenon</i><par n="house__n"/></e>	as 	<e lm="phenomenon"><i>phenomen</i><par n="criteri/on__n"/></e>   (by Roja 14-03-13)
-	<e lm="december"><i>December</i><par n="house__n"/></e>		as	<e lm="december"><i>december</i><par n="house__n"/></e>          (by Roja 14-03-13)
-	<e lm="april"><i>April</i><par n="house__n"/></e>	as	<e lm="april"><i>april</i><par n="house__n"/></e> (by Roja 14-03-13)
-	<e lm="september"><i>September</i><par n="house__n"/></e>	as	<e lm="september"><i>september</i><par n="house__n"/></e>        (by Roja 14-03-13)      
-	<e lm="november"><i>November</i><par n="house__n"/></e>		as	<e lm="november"><i>november</i><par n="house__n"/></e>          (by Roja 14-03-13)
-	<e lm="october"><i>October</i><par n="house__n"/></e>		as	<e lm="october"><i>october</i><par n="house__n"/></e>            (by Roja 14-03-13)
-	Corrected root part of bab/y__n paradigm     (by Roja 14-03-13)
-	   Ex: <e lm="Calvary"><i>Calvary</i><par n="bab/y__n"/></e>
-			as
-	       <e lm="Calvary"><i>Calvar</i><par n="bab/y__n"/></e>
-        Corrected root part of following paradigms::  (by Roja 02-04-13) 
-	analys/is__n	maxim/um__n	m/an__n		wol/f__n	li/fe__n	m/ouse__n
-	f/oot__n	stimul/us__n	ind/ex__n	appendi/x__n	criteri/on__n	t/ooth__n
-	dilettant/e__n	librett/o__n	lir/a__n	phalan/x__n	corp/us__n 
-	    Ex:  <e lm="Bushman"><i>Bushman</i><par n="m/an__n"/></e>
-				as
-		 <e lm="Bushman"><i>Bushm</i><par n="m/an__n"/></e>
-
-
-	<e lm="person, people"><i>p</i><par n="p/erson__n"/></e>  (by Roja 02-04-13)
-			as
-	<e lm="person"><i>p</i><par n="p/erson__n"/></e>
-	([0-9]+)?[04-9]+th 	as	([0-9]+)?[0-9]+th	(by Roja 17-07-13)
-
-   Removed:
-	Removed repetition entry <e lm="April"><i>April</i><par n="house__n"/></e>	(by Roja 27-07-13)
 
 
  Added new files:

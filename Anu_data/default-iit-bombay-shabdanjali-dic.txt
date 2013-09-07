@@ -33114,7 +33114,7 @@ generalisations_UNDEFINED	sAXAraNIkaraNa
 generalise_UNDEFINED	vyApaka_banAnA
 generalise_verb	sAmAnyIkaraNa_kara/vyApaka_anumAna_lagA/Ama_banA
 generalised_UNDEFINED	vyApakIkqwa/vyApaka_banAnA
-generalised_adjective	sAmAnyIkqwa/vyApakIkqwa/vyApaka
+generalised_adjective	vyApakIkqwa/sAmAnyIkqwa/vyApaka
 generalises_UNDEFINED	vyApaka_banAnA
 generalising_UNDEFINED	vyApaka_banAnA
 generalissimo_noun	senAXipawi

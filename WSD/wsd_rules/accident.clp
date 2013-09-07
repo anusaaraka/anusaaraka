@@ -26,9 +26,9 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id saMyog))
+(assert (id-wsd_root_mng ?id saMyoga)); Modified spelling from saMyog to saMyoga by Roja(07-09-13)
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  accident.clp 	accident1   "  ?id "  saMyog )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  accident.clp 	accident1   "  ?id "  saMyoga )" crlf))
 )
 
 ;--------------------------------------------------------------------------------------------------------------------------

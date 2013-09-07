@@ -1,23 +1,24 @@
- 06-09-13
+ 07-09-13
  ========
  1. WSD : Modified : interface.clp   number.clp   raise.clp      cultivate.clp   stay.clp   synthetic.clp
-		     section.clp     enough.clp   different.clp
+		     section.clp     enough.clp   different.clp	 accident.clp
  2. causative_verb_mng.clp
 	Modified : modify_mng rule -- (modified source)
  3. hindi_meaning.clp
 	Renamed source "Default" as "Default_meaning"
  4. sd_pada.clp
 	Modified : multiple_prep_rule 
- 5. Updated following dictionary related files:
-	changes_in_databases
- 6. Updated following shell files
+ 5. hindi_sent_reorder.clp:
+	Added in nerver-called() : id-attach_emphatic fact
+ 6. Updated following dictionary related files:
+	changes_in_databases	apertium-en-hi.en.metadix
+ 7. Updated following shell files
 	--> minion_compile.sh: Removed code related to full parser.
- 7. Removed following files
+ 8. Removed following files
 	fullparser-hin-1.6.3.tgz
 	compile_full_parser.sh
- 8. Updated Log
- 9. Updated sd_verified (505)
-
+ 9. Updated Log
+10. Updated sd_verified (505)
 	
  31-08-13
  ========
