@@ -22650,7 +22650,7 @@ disbursements_UNDEFINED	vyaya
 disburser_UNDEFINED	saMviwaraka
 disburses_UNDEFINED	ikatTA_kiyA_huA_Xana_se_pEse_xenA
 disbursing_UNDEFINED	ikatTA_kiyA_huA_Xana_se_pEse_xenA
-disc_noun	koI_cipatI_gola_vaswu/maNdala/diska/cakrikA/cakawI
+disc_noun	diska/koI_cipatI_gola_vaswu/maNdala/cakrikA/cakawI
 discard_noun	CAztI_huI_vaswu/CAztA_gayA_vyakwi
 discard_verb	Pefka_xe/nikAla_xe/dAla_xe
 discarded_UNDEFINED	Pefka_xenA
@@ -23242,7 +23242,7 @@ disproportionater_UNDEFINED	asafgawi
 disproportionates_UNDEFINED	asafgawi
 disproportionatest_UNDEFINED	asafgawi
 disproportionating_UNDEFINED	asafgawi
-disprove_verb	JUTA_TaharA/asawya_pramANiwa_kara
+disprove_verb	asawya_pramANiwa_kara/JUTA_TaharA
 disproved_UNDEFINED	JUTA_TaharAnA
 disproves_UNDEFINED	JUTA_TaharAnA
 disproving_UNDEFINED	JUTA_TaharAnA
@@ -27330,7 +27330,7 @@ exacting_UNDEFINED	SuxXa
 exacting_adjective	saKwa
 exaction_noun	apakarRaNa
 exactitude_noun	satIkapana
-exactly_adverb	TIka_TIka/vAswava_meM/yaWArWawaH
+exactly_adverb	bilkula_TIka/TIka_TIka/vAswava_meM/yaWArWawaH
 exactness_UNDEFINED	sahI_ho
 exactness_noun	satIkapana
 exactnesses_UNDEFINED	sahI_ho
@@ -29633,7 +29633,7 @@ finishes_UNDEFINED	samApwa_karanA
 finishing-line_noun	anwima_reKA{xOda_meM}
 finishing-school_noun	KAsa_skUla
 finishing_UNDEFINED	samApwa_karanA
-finite_adjective	niyawa/sImiwa/samApikA
+finite_adjective	sImiwa/niyawa/samApikA
 finiter_UNDEFINED	niyawa
 finites_UNDEFINED	niyawa
 finitest_UNDEFINED	niyawa
@@ -31293,7 +31293,7 @@ formlessest_UNDEFINED	binA_Akqwi_vAlA
 formlessness_noun	AkArahInawA
 forms_UNDEFINED	Akqwi
 formula_UNDEFINED	PArmUlA
-formula_noun	viXi/sUwra/sixXAnwa/SiSu-AhAra/PAramUlA/nusKA
+formula_noun	sUwra/viXi/sixXAnwa/SiSu-AhAra/PAramUlA/nusKA
 formulae_UNDEFINED	nusKA
 formulaic_adjective	sUwriwa
 formulas_UNDEFINED	nusKA
@@ -55959,7 +55959,7 @@ paramedic_noun	xAkwara_kA_sahAyaka/parAcikiwsAkarmI/parAcikiwsAkarmacArI
 paramedical_UNDEFINED	parAcikiwsA-
 paramedical_adjective	parAcikiwsIya
 paramedical_noun	parAcikiwsAkarmI/parAcikiwsAkarmacArI
-parameter_noun	gaNiwa_meM_sWira_rASI/prAcala/mApaxaNda
+parameter_noun	prAcala/gaNiwa_meM_sWira_rASI/mApaxaNda
 parameters_UNDEFINED	gaNiwa_meM_sWira_rASI
 parametric_adjective	prAcalika
 parametron_UNDEFINED	pErAmetrooYna
@@ -64112,7 +64112,7 @@ rearm_verb	punaraswrIkaraNa_kara
 rearmament_noun	punaraswrIkaraNa
 rearmost_adjective	paScawama
 rearmost_adverb	sabase_pICe_kA
-rearrange_verb	naye_krama_me_raKa/punaH_vyavasWiwa_kara/Pira_se_waya_kara/Pira_se_sajA
+rearrange_verb	punaH_vyavasWiwa_kara/naye_krama_me_raKa/Pira_se_waya_kara/Pira_se_sajA
 rearranged_UNDEFINED	naye_krama_me_raKanA
 rearrangement_noun	punarvyavasWApana/punarprabanXana/Pira_se_kI_gaI_sajAvata
 rearranges_UNDEFINED	naye_krama_me_raKanA
@@ -64122,7 +64122,7 @@ rearward_adjective	pICe_kA
 rearwards_adverb	pICe_kI_ora
 reason_noun	kAraNa/warka/vicAraNA_Sakwi/veveka/sUJa_bUJa/prajFA/nyAyyawA/jFAna/jagaha/hewu/cEwanya/boXa/ASaya/anwarxqRti/prayojana/viveka_buxXi
 reason_verb	warka_kara/vicAra_pUrvaka_sixXAnwa_lA/soca-vicAra_kara/sixXAnwa_lA/sambaxXa_vicAra_xvArA_niRkarRa_nikAla/pariNAma_nikAla/bahasa_kara
-reasonable_adjective	vivekI/yukwi_sazgawa/vicArapUrNa/uciwa/paryApwa/buxXi_sampanna
+reasonable_adjective	paryApwa/vivekI/yukwi_sazgawa/vicArapUrNa/uciwa/buxXi_sampanna
 reasonableness_noun	warka_safgawi/viveka/viSvasanIyawA/saMyama/Ociwya
 reasonabler_UNDEFINED	vivekI
 reasonablest_UNDEFINED	vivekI
@@ -64515,7 +64515,7 @@ rectaler_UNDEFINED	guxA_sambanXI
 rectalest_UNDEFINED	guxA_sambanXI
 rectangle_noun	samakoNa_samAnAnwara_cawurBuja/Ayawa
 rectangles_UNDEFINED	samakoNa_samAnAnwara_cawurBuja
-rectangular_adjective	samakoNIya/AyawIya/AyawAkAra
+rectangular_adjective	AyawAkAra/samakoNIya/AyawIya
 rectangularer_UNDEFINED	samakoNIya
 rectangularest_UNDEFINED	samakoNIya
 rectifiable_adjective	suXAre_jAne_yogya/saMSoXanIya
@@ -64732,7 +64732,7 @@ refereed_UNDEFINED	nyAya_karane_vAlA
 refereeing_UNDEFINED	nyAya_karane_vAlA
 referees_UNDEFINED	nyAya_karane_vAlA
 reference_UNDEFINED	aBixeSana
-reference_noun	tippaNI/sanxarBa/nirxeSa/jikra/anumoxaka/ulleKa/sambanXa/havAlA
+reference_noun	sanxarBa/tippaNI/nirxeSa/jikra/anumoxaka/ulleKa/sambanXa/havAlA
 referenced_UNDEFINED	ulleKa
 references_UNDEFINED	ulleKa
 referencing_UNDEFINED	ulleKa
@@ -64952,7 +64952,7 @@ regimented_UNDEFINED	aXika_safKyA
 regimenting_UNDEFINED	aXika_safKyA
 regiments_UNDEFINED	aXika_safKyA
 regimes_UNDEFINED	SAsana
-region_noun	praxeSa/kRewra/praxeSa_kRewra/hissA
+region_noun	kRewra/praxeSa/praxeSa_kRewra/hissA
 regional_adjective	kRewrIya/prAxeSika/kRetrIya
 regionaler_UNDEFINED	kRewrIya
 regionalest_UNDEFINED	kRewrIya
@@ -65243,7 +65243,7 @@ relevances_UNDEFINED	anukUlawA
 relevancies_UNDEFINED	anukUlawA
 relevancy_UNDEFINED	anukUlawA
 relevancy_noun	prAsafgikawA
-relevant_adjective	upayukwa/sambaxXa/prAsafgika
+relevant_adjective	prAsafgika/upayukwa/sambaxXa
 relevanter_UNDEFINED	upayukwa
 relevantest_UNDEFINED	upayukwa
 relevantly_adverb	prAsafgika_rUpa_se
@@ -66341,7 +66341,7 @@ retaliation_noun	baxalA/prawiSoXa
 retaliations_UNDEFINED	baxalA
 retaliatory_adjective	prawikArAwmaka
 retard_verb	pragawi_roka/XImA_kara/XImA_ho
-retardation_noun	roka/sAmAnya_vikAsa_meM_kamI/gawi_meM_kamI
+retardation_noun	manxana/roka/sAmAnya_vikAsa_meM_kamI/gawi_meM_kamI
 retardations_UNDEFINED	roka
 retarded_UNDEFINED	pragawi_rokanA
 retarded_adjective	piCadI_buxXi_kA
@@ -66966,7 +66966,7 @@ rigmarole_noun	anApa-SanApa/nIrasa_Ora_nirarWaka_prakriyA
 rigmaroles_UNDEFINED	anApa-SanApa
 rigor-mortis_noun	marane_ke_bAxa_SarIra_kA_kadApana
 rigor_noun	kaTinAI/sAvaXAnI/kaTorawA/kadAI
-rigorous_adjective	kadI/saKwa/sahI/pariSuxXa
+rigorous_adjective	sahI/yaWArWa/kadI/saKwa/pariSuxXa
 rigorouser_UNDEFINED	kadI
 rigorousest_UNDEFINED	kadI
 rigorously_adverb	saKwI_ke_sAWa
@@ -67844,7 +67844,7 @@ runnel_noun	naxikA/CotI_naxI
 runnels_UNDEFINED	nAlA
 runner-up_noun	prawiyogiwA_meM_xviwIy_vijewA/prawiyogiwA_meM_xviwIya_vijewA
 runner_UNDEFINED	xOdane_vAlA
-runner_noun	waskara
+runner_noun	XAvaka/waskara
 runners_UNDEFINED	xOdane_vAlA
 runnier_UNDEFINED	bahawA_huA
 runniest_UNDEFINED	bahawA_huA
@@ -91552,7 +91552,7 @@ wide-screen_adjective	bade_parxe_kA
 wide_adjective	cOdA/xUra/vyApaka/vqhaw/viswqwa/pUrA_KulA_huA/GeraxAra/bahuwa_badA/badA/pahuzca_ke_bAhara_ho{genxa}
 wide_adverb	pUrI_waraha_se
 wide_noun	vAida
-widely_adverb	paryApwa_mAwrA_meM/xUra-xUra_waka/vyApaka_rUpa_se/bahuwa_se_logoM_xvArA/bahuwa_aXika/viSAla_kRewra_meM
+widely_adverb	vyApaka_rUpa_se/paryApwa_mAwrA_meM/xUra-xUra_waka/bahuwa_se_logoM_xvArA/bahuwa_aXika/viSAla_kRewra_meM
 widen_verb	cOdA_ho/DIlA_kara/cOdA_kara/baDA
 widened_UNDEFINED	cOdA_ho`
 wideness_noun	viSAlawA/PElAvata/cOdAI
@@ -93481,3 +93481,9 @@ deformable_adjective	virUpya
 focussing_noun	kenxriwa_kara
 lamination_noun	swara
 inductance_adjective	prerakawva
+self-induced_adjective	svapreriwa
+sub-section_noun	upaKaMda
+self-inductance_noun	svaprerakawva
+solenoid_noun	parinAlikA
+dielectric_adjective	parAvExyuwa
+co-axial_adjective	samAkRIya

@@ -387,3 +387,5 @@ detection_noun	saMsUcana
 frictional_adjective	GarRI
 viscous_noun	SyAna
 exercise_noun	aByAsa_praSna	
+armature_noun	Armecara
+capacitance_noun	XAriwA

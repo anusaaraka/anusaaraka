@@ -24,3 +24,12 @@ Michael	mAikala
 Germer	jarmara
 Galilei	gElilI
 Ampere	Empiyara
+Lyman	lImana
+Paschen	pASana
+Brackett	brEketa
+Pfund	PuNda
+Einstein	AiMstAina
+Davisson	devisana
+Yugoslav	yUgoslAva 
+Nicola	nikolA
+Tesla	teslA

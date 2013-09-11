@@ -777,8 +777,25 @@ Removed:
 					Ex: Eddy currents are minimized by using laminations of metal to make a metal core.
 	36. inductance_adjective	prerakawva			(Suggested by Prachi Banasthali 07-09-13)
 					Ex: The constant of proportionality, in this relation, is called inductance.
-
-	 
+	37. self-induced_adjective  	svapreriwa			(Suggested by Jagriti Banasthali 10-09-13)
+					Ex: The self-induced emf is also called the back emf as it opposes any change in the
+					    current in a circuit. 
+	38. sub-section_noun        	upaKaMda			(Suggested by Jagriti Banasthali 10-09-13)
+					Ex: These two situations are described separately in the next two sub-sections. 
+	39. self-inductance_noun    	svaprerakawva			(Suggested by Jagriti Banasthali 10-09-13)
+					Ex: The self-inductance of the coil depends on its geometry and on the permeability 
+					    of the medium.  
+	40. solenoid_noun   		parinAlikA			(Suggested by Jagriti Banasthali 10-09-13)
+					Ex: However, it would be extremely difficult to calculate the flux linkage with the 
+					    outer solenoid as the magnetic field due to the inner solenoid.
+	41. dielectric_adjective    	parAvExyuwa                 	(Suggested by Pramila Banasthali 10-09-13)
+					Ex: This aspect is akin to capacitance which for a parallel plate capacitor depends 
+					    on the plate area and plate separation (geometry) and the dielectric constant K
+					    of the intervening medium (intrinsic material property).
+	42. co-axial_adjective		samAkRIya			(Suggested by Garima Banasthali  10-09-13)
+					Ex: Consider Fig. 6.15 which shows two long co-axial solenoids each of length l.
+							  	
+	 	
     4. Added new meaning to the existing word:
        ---------------------------------------
         1. inaudibly_adverb             XImI_Avaja_meM                  ( Suggested by Rajini   29-02-12        )
@@ -851,6 +868,13 @@ Removed:
 					    large number of mobile receivers
 	49. intimately_adverb		GaniRtawA_se			(Suggested by Prachi Banasthali  07-09-13)	
 					Ex: He claimed that the science of optics is intimately related to that of							 electricity and magnetism.
+	50. exactly_adverb  		bilkula_TIka			(Suggested by Pramila Banasthali 10-09-13)
+					Ex: According to the principle, it is not possible to measure both the position and
+					    momentum of an electron (or any other particle) at the same time exactly.
+	51. retardation_noun	       	manxana				(Suggested by Shweta  Banasthali 10-09-13)
+					Ex: The actual resistive force, and therefore, retardation of the bullet may not be
+					    uniform.
+	52. runner_noun			XAvaka				(Suggested by Chaitanya Sir      04-09-13)
 
 
     5. Modifying first meaning from the list :
@@ -928,9 +952,39 @@ Removed:
 				Ex: This envelope of signal (b) is the message signal.
 	44. deflection_noun 	JukAva			as	vikRepaNa	(Suggested by Pramila Banasthali 03-09-13)
 				Ex: The deflection lasts as long as the bar magnet is in motion.
+	45. formula_noun   	viXi			as	sUwra		(Suggested by Pramila Banasthali 10-09-13)
+				Ex: This equation is also called Balmer formula.
+	46. disc_noun       	koI_cipatI_gola_vaswu	as	diska		(Suggested by Pramila Banasthali 10-09-13)
+				Ex: The shiny metal disc in the electric power meter rotates due to the eddy currents.
+	47. widely_adverb   	paryApwa_mAwrA_meM	as	vyApaka_rUpa_se	(Suggested by Rashmi  Banasthali 10-09-13)
+				Ex: This theory is no longer widely accepted.
+	48. disprove_verb   	JUTA_TaharA		as    asawya_pramANiwa_kara(Suggested by Pramila Banasthali 10-09-13)
+				Ex: In this way, in 1916, Millikan proved the validity of Einstein's photoelectric equation,
+				    instead of disproving it.
+	49. finite_adjective    niyawa			as	sImiwa/niyawa	(Suggested by Pramila Banasthali 10-09-13)
+				Ex: It is a wave packet extending over some finite region of space.
+	50. parameter_noun  	gaNiwa_meM_sWira_rASI	as	prAcala		(Suggested by Shweta  Banasthali 10-09-13)
+				Ex: The mass of a body is thus an important parameter that determines the effect of force on
+				    its motion.
+	51. relevant_adjective  upayukwa		as	prAsafgika	(Suggested by Shweta  Banasthali 10-09-13)
+				Ex: Taken together, the product of mass and velocity, that is momentum, is evidently a 
+				    relevant variable of motion. 
+	52. region_noun     	praxeSa			as	kRewra		(Suggested by Shweta  Banasthali 10-09-13)
+				Ex: 
+	53. reasonable_adjective vivekI			as	paryApwa	(Suggested by Shweta  Banasthali 10-09-13)
+				Ex: This approximation is valid so far as the size of the object is much smaller than the 
+				    distance it moves in a reasonable duration of time. 
+	54. reference_noun  	tippaNI			as	sanxarBa	(Suggested by Shweta  Banasthali 10-09-13)
+				Ex: The point of intersection of these three axes is called origin (O) and serves as the 
+				    reference point. 
+	55. rearrange_verb  	naye_krama_me_raKa	as  punaH_vyavasWiwa_kara(Suggested by Shweta Banasthali 10-09-13)
+				Ex: The charges on spheres rearrange themselves as shown in Fig. 1.4 (d).
+	56. rectangular_adjective  samakoNIya		as	AyawAkAra	(Suggested by Shweta  Banasthali 10-09-13)
+				Ex: Figure 6.10 shows a rectangular conductor PQRS in which the conductor PQ is free to move.
+	57. rigorous_adjective  kadI			as	sahI/yaWArWa	(Suggested by Shweta  Banasthali 10-09-13)
+				Ex: We stress that our presentation is not wholly rigorous. 
 
 	
-
     6. Removed meaning from existing list:
        ----------------------------------
 	1. overdue_adjective 	jo_bahuwa_pahale_hI_ho_jAnA_cAhiye_WA,_vaha	( Suggested by Rajini		29-02-12)
@@ -1186,6 +1240,8 @@ Removed:
 	frictional_adjective    GarRI		(	"		"	   "	 )
 	viscous_noun    	SyAna		(Suggested by Rashmi Banasthali  03-09-13)
 	exercise_noun		aByAsa_praSna	(Suggested by Chaitanya Sir 	 06-09-13)
+	armature_noun   	Armecara	(Suggested by Garima Banasthali  10-09-13)
+	capacitance_noun        XAriwA		(	"	"		    " 	 )
 
 
     Modified :
@@ -1218,10 +1274,12 @@ Removed:
  
     Added new entry:
     ----------------
-	charged_particles       AveSiwa_kaNa#AveSiwa_kaNa#noun#2#RM	(Suggested by Chaitanya Sir	 07-06-13)
-	discharge_tube		visarjana_nalI#visarjana_nalI#noun#2#WM	(	"     Pramila Banasthali 19-08-13)
-	discharge_valve		visarjana_vAlva#visarjana_vAlva#noun#2#WM (	"		"		 )
-	potential_difference    viBavAnwara#viBavAnwara#noun#1#RM	(	"		"	 23-08-13)
+	charged_particles        AveSiwa_kaNa#AveSiwa_kaNa#noun#2#RM		(Suggested by Chaitanya Sir	 07-06-13)
+	discharge_tube		 visarjana_nalI#visarjana_nalI#noun#2#WM	(	"     Pramila Banasthali 19-08-13)
+	discharge_valve		 visarjana_vAlva#visarjana_vAlva#noun#2#WM 	(	"		"		 )
+	potential_difference     viBavAnwara#viBavAnwara#noun#1#RM		(	"		"	 23-08-13)
+	dynamically_stable_orbit gawiSIla_sWira_kakRA#gawiSIla_sWira_kakRA#noun#3#RM( 	"		"	 10-09-13)
+	double_slit     	 xviJirI#xviJirI#noun#2#RM			(	"		"    	    "    )
 			
 
  changes in causative_verb_mng.txt
@@ -1257,3 +1315,12 @@ Removed:
 	Michael		mAikala		(		"		"	)
 	Germer		jarmara		(		"		31-08-13)
 	Galilei    	gElilI		(		"		"	)
+	Lyman   	lImana		(Suggested by Rashmi Banasthali 10-09-13)
+	Paschen 	pASana		(		"		"	)
+	Brackett        brEketa 	(		"		"	)
+	Pfund   	PuNda		(		"		"	)
+	Yugoslav        yUgoslAva 	(		"		"	)
+	Nicola  	nikolA  	(		"		"	)
+	Tesla   	teslA		(		"		"	)
+	Einstein        AiMstAina	(Suggested by Pramila Banasthali 10-09-13)
+	Davisson        devisana	(		"		"	)
