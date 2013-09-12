@@ -314,7 +314,7 @@ prawyeka vaswu yaha bala viSva meM hara xUsarI vaswu ke kAraNa anuBava karawI hE
 
 Hindi meaning using Stanford parser 2.68
 The strong nuclear force binds protons and neutrons in a nucleus. 
-saSakwa ANvika bala nABika meM aNu_kA_eka_CotA BAga Ora nyUtrana bAzXawA hE.
+saSakwa ANvika bala nABika meM protoYna Ora nyUtrana bAzXawA hE.
 Multiple adjective senses are available for nuclear. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.69
@@ -424,7 +424,7 @@ hara eka cOka kI saMhawi 1kg, hE kyozki patala ekasamAna hE.
 
 Hindi meaning using Stanford parser 2.93
 We have so far considered refraction at a plane interface. 
-hama eka samawala milana-binxu meM apavarwana abawaka vicAra_kara cuke hEM.
+hama eka samawala anwarApqRTa meM apavarwana abawaka vicAra_kara cuke hEM.
 
 Hindi meaning using Stanford parser 2.94
 We shall now consider refraction at a spherical interface between two transparent media. 
@@ -704,7 +704,7 @@ Apa xeKezge ki pattiyoM ne paraxe ko AkarRiwa kiyA.
 
 Hindi meaning using Stanford parser 2.156
 The glass rod repels the fur. 
-gilAsa Cada roezxAra_KAlavAle jAnavara hatAwA hE.
+gilAsa Cada samUra hatAwA hE.
 
 Hindi meaning using Stanford parser 2.157
 They acquire an electric charge on rubbing. 
@@ -784,7 +784,7 @@ vAswava meM ve kuCa_samaya waka paraxe ko atake hue SeRa rahawe hEM.
 
 Hindi meaning using Stanford parser 2.174
 Similarly, two plastic rods rubbed with cat's fur repelled each other (Fig. 1SYMBOL-DOT1 (b)) but attracted the fur. 
-isI waraha se, xo plAstika Cada ne billI ke roezxAra_KAlavAle jAnavara hatA ke sAWa eka xUsare (Fig. 1SYMBOL-DOT1 bI malA paranwu roezxAra_KAlavAle jAnavara AkarRiwa kiyA.
+isI waraha se, xo plAstika Cada ne billI ke samUra hatA ke sAWa eka xUsare (Fig. 1SYMBOL-DOT1 bI malA paranwu samUra AkarRiwa kiyA.
 Multiple adjective senses are available for plastic. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.175
@@ -911,7 +911,7 @@ cumbakIya pravAha eka axiSa parimANa hE.
 
 Hindi meaning using Stanford parser 2.203
 Experimental observations discussed in Section 6SYMBOL-DOT2 can be explained using this concept. 
-BAga 6SYMBOL-DOT2 meM carcA kie hue prAyogika prekRaNa isa XAraNA kA upayoga karawA huA samaJAe jA sakawe hEM.
+anuBAga 6SYMBOL-DOT2 meM carcA kie hue prAyogika prekRaNa isa XAraNA kA upayoga karawA huA samaJAe jA sakawe hEM.
 
 Hindi meaning using Stanford parser 2.204
 Consequently, the magnetic flux through the neighbouring coil C1 also increases. 
@@ -919,7 +919,7 @@ awaH, padosI valayaka C1 ke mAXyama se cumbakIya pravAha BI vqxXi howA hE.
 
 Hindi meaning using Stanford parser 2.205
 In Experiments 6SYMBOL-DOT1 and 6SYMBOL-DOT2 in Section 6SYMBOL-DOT2, the flux is changed by varying B. 
-BAga 6SYMBOL-DOT2 meM prayogoM meM 6SYMBOL-DOT1 Ora 6SYMBOL-DOT2, pravAha parivarwana howA huA B ke xvArA baxalA gayA hE.
+anuBAga 6SYMBOL-DOT2 meM prayogoM meM 6SYMBOL-DOT1 Ora 6SYMBOL-DOT2, pravAha parivarwana howA huA B ke xvArA baxalA gayA hE.
 
 Hindi meaning using Stanford parser 2.206
 As coil C2 is moved towards the coil C1, the galvanometer shows a deflection. 
@@ -1065,7 +1065,7 @@ Multiple adjective senses are available for common. WSD rule is required
 
 Hindi meaning using Stanford parser 2.239
 The result can be generalised to any number of forces. 
-pariNAma kisI afka ke lie baloM ke vyApaka banAnA jA sakawA hE.
+pariNAma kisI afka ke lie baloM ke vyApakIkqwa jA sakawA hE.
 
 Hindi meaning using Stanford parser 2.240
 The gravitational force is, of course, all pervasive. 

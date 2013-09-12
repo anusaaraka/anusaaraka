@@ -1,4 +1,4 @@
- 07-09-13
+ 12-09-13
  ========
  1. WSD : Modified : interface.clp   number.clp   raise.clp      cultivate.clp   stay.clp   synthetic.clp
 		     section.clp     enough.clp   different.clp	 accident.clp
@@ -18,7 +18,7 @@
 	fullparser-hin-1.6.3.tgz
 	compile_full_parser.sh
  9. Updated Log
-10. Updated sd_verified (505)
+10. Updated sd_verified (505)	phy_verified_eng
 	
  31-08-13
  ========

@@ -116,7 +116,7 @@ electromagnet_noun	vExyuwa_cuMbaka
 elevator_noun	liPta/liPrata
 ellipse_noun	xIrGavqwwa
 elliptical_adjective	xIrGavqwwIya
-elongation_noun	prasara_koNa/prasara_koNa_xEGryavqxXi/prasara_koNa_xErGyavqxXi
+elongation_noun	xErGyavqxXi
 emission_noun	uwsarjana
 emissivity_noun	uwsarjakawA
 emitted_verb	uwsarjiwa/nirgawa

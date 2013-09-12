@@ -631,6 +631,8 @@ Removed:
 	9. '_' at beginning or end of the meaning are removed 	Ex: Derby_noun   dArbI_   as  dArbI
        10. Removed "'s" and "s'" entries 			Ex: ABC's_noun	prAWamika_jFAna		(By Roja 26-07-13)
        11. Replaced meanings ending with 'aa' as 'a'          Ex: AvaNtanaa as AvaNtana (Suggested by Chaitanya Sir 09-08-13)
+       12. Replaced meanings ending with 'AA' as 'A'	      Ex: besotted_adjective	xIvAnAA as xIvAnA(By Roja 11-09-13)
+ 
 
     2. Modifying spelling of the existing word list:
        --------------------------------------------
@@ -1042,8 +1044,9 @@ Removed:
         22. Urdu_UNDEFINED  	^
         23. solemnise_UNDEFINED -_
         24. recycled_UNDEFINED  punarAvqwwa             		( Suggested by Sukhada  	20-05-13)
-	25. works_UNDEFINED	racanA					(Suggested by Chaitanya Sir 	19-08-13)
+	25. works_UNDEFINED	racanA					( Suggested by Chaitanya Sir 	19-08-13)
 	26. FM_UNDEFINED    	rediyo_prasAraNa_kA_eka_warIkA		(		"		26-08-13)
+	27. polyunsaturated_UNDEFINED					( By Roja 			11-09-13)
 
 
     8. Modified category:
@@ -1252,6 +1255,8 @@ Removed:
         modified "Xx" as "xX" in the following words 
                    SuxXa_gawika, SuxXa_gawikI, prasara_koNa_xEGryavqxXi, ruxXoRma, pariSuxXawA and saMbaxXa
 	relative_noun	ApekRa		as	relative_adjective	ApekRa	(Suggested by Chaitanya Sir 05-01-13)
+	elongation_noun	prasara_koNa/prasara_koNa_xEGryavqxXi/prasara_koNa_xErGyavqxXi	as  xErGyavqxXi (Suggested by Chaitanya Sir 11-09-13) Ex: This force is usually proportional to the compression or elongation (for small displacements).
+	
 
     Added new meaning to the existing word:
     --------------------------------------
