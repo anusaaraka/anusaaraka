@@ -1,7 +1,8 @@
- 12-09-13
+ 13-09-13
  ========
- 1. WSD : Modified : interface.clp   number.clp   raise.clp      cultivate.clp   stay.clp   synthetic.clp
-		     section.clp     enough.clp   different.clp	 accident.clp
+ 1. WSD : Modified : interface.clp   number.clp   raise.clp      cultivate.clp   stay.clp       synthetic.clp
+		     section.clp     enough.clp   different.clp	 accident.clp    authority.clp
+	  Added    : argue.clp       cell.clp
  2. causative_verb_mng.clp
 	Modified : modify_mng rule -- (modified source)
  3. hindi_meaning.clp
