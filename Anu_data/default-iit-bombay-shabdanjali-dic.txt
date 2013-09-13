@@ -38101,7 +38101,7 @@ how-do-you-do_UNDEFINED	kEse
 how_adverb	kEse/kiwanA/kisa_waraha/kEsA
 how_conjunction	kEse
 howdoyoudo_UNDEFINED	kEse
-however_adverb	waba_BI/PiraBI/Pira_BI/jEse_BI
+however_adverb	waWApi/waba_BI/PiraBI/Pira_BI/jEse_BI
 howitzer_noun	wopa/martara_wopa
 howl_noun	huA/cillAhata/cIKa
 howl_verb	jora_se_cIKa/vilApa_kara/huA-huA_kara/cillA/cillA_kara_mAfga_kara

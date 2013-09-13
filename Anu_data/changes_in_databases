@@ -877,6 +877,8 @@ Removed:
 					Ex: The actual resistive force, and therefore, retardation of the bullet may not be
 					    uniform.
 	52. runner_noun			XAvaka				(Suggested by Chaitanya Sir      04-09-13)
+	53. however_adverb		waWApi				(	"	"		 12-09-13)
+					Ex: The origin of these derived forces is, however, very complex. 
 
 
     5. Modifying first meaning from the list :
@@ -910,80 +912,77 @@ Removed:
 	24. involved_adjective	sambaxXa		as	jatila		(Suggested by Prachi Banasthali 23-08-13)
 				Ex: A long and involved story.
 				    The plot of the film was too involved - i could not understand it.
-	25. however_adverb	PiraBI			as	waba_BI		(		"		"	)
-				Ex:However, it predicted that on refraction if the wave bends towards the normal then the 
-				   speed of light would be less in the second medium. 
-	26. centre_verb     	TIka_kara		as	kenxriwa_kara	(Suggested by Garima Banasthali 24-08-13)
+	25. centre_verb     	TIka_kara		as	kenxriwa_kara	(Suggested by Garima Banasthali 24-08-13)
 				Ex: For this, we consider a plane circular loop of radius r whose plane is perpendicular to  					 the direction of the current-carrying wire, and which is centred symmetrically with
 				    respect to the wire.
-	27. assume_verb     	kalpanA_kara		as	mAna		(Suggested by Garima Banasthali 24-08-13)
+	26. assume_verb     	kalpanA_kara		as	mAna		(Suggested by Garima Banasthali 24-08-13)
 				Ex:These experiments could only be satisfactorily explained by assuming a wave model of light
-	28. approximately_adverb wakarIbana_rUpa_se	as	lagaBaga	(Suggested by Garima Banasthali 24-08-13)
+	27. approximately_adverb wakarIbana_rUpa_se	as	lagaBaga	(Suggested by Garima Banasthali 24-08-13)
 				Ex: Because of the smallness of the wavelength of visible light (in comparison to the 					         dimensions of typical mirrors and lenses), light can be assumed to approximately travel
 				    in straight lines. 
-	29. distorted_adjective	xURiwa			as	vikqwa		(Suggested by Pramila Banasthali 24-08-13)
+	28. distorted_adjective	xURiwa			as	vikqwa		(Suggested by Pramila Banasthali 24-08-13)
 				Ex: You pay people a lot of money to see reality in a slightly distorted way.
-	30. involve_verb	SAmila_ho		as	SAmila_kara 	(Suggested by Chaitanya  Sir  24-08-13  )
+	29. involve_verb	SAmila_ho		as	SAmila_kara 	(Suggested by Chaitanya  Sir  24-08-13  )
 				Ex: Many experiments were carried out involving the interference and diffraction of 					         lightwaves.
-	31. detect_verb		xeKa_pA			as	pawA_lagA	(Suggested by Pramila Banasthali 27-08-13)
+	30. detect_verb		xeKa_pA			as	pawA_lagA	(Suggested by Pramila Banasthali 27-08-13)
 				Ex: This minimal verification is useful to detect packet corruption.
-	32. forget_verb		BUla_jA			as	BUla		(Suggested by Chaitanya  Sir  27-08-13 )
+	31. forget_verb		BUla_jA			as	BUla		(Suggested by Chaitanya  Sir  27-08-13 )
 				Ex: I never forget a face.
-	33. deficit_noun    	GAtA			as	kamI		(Suggested by Pramila Banasthali 28-08-13)
+	32. deficit_noun    	GAtA			as	kamI		(Suggested by Pramila Banasthali 28-08-13)
 				Ex:When we say that a body is charged, we always refer to this excess charge or deficit of				     charge.
-	34. depict_verb         ciwra_KIFca	 	as	xarSA		(Suggested by Pramila Banasthali 29-08-13)
+	33. depict_verb         ciwra_KIFca	 	as	xarSA		(Suggested by Pramila Banasthali 29-08-13)
 				Ex: Her painting depicts the lives of ordinary people.
-	35. incorrect_adjective	aSuxXa			as	galawa		(Suggested by Prachi Banasthali  29-08-13)
+	34. incorrect_adjective	aSuxXa			as	galawa		(Suggested by Prachi Banasthali  29-08-13)
 				Ex: This is incorrect reasoning.
-	36. induction_noun	svAgawa-samAroha	as	preraNa		(	"		"	 29-08-13)
+	35. induction_noun	svAgawa-samAroha	as	preraNa		(	"		"	 29-08-13)
 				Ex: Today's civilisation owes its progress to a great extent to the discovery of
 				    electromagnetic induction.
-	37. locus_noun		sWAna_viSeRa		as	binxupaWa	(Suggested by Sonam Banasthali   29-08-13)
-	38. ascertain_verb  	jAzca_kara_pawA_lagA	as	suniSciwa_kara	(Suggested by Garima Banasthali  31-08-13)
+	36. locus_noun		sWAna_viSeRa		as	binxupaWa	(Suggested by Sonam Banasthali   29-08-13)
+	37. ascertain_verb  	jAzca_kara_pawA_lagA	as	suniSciwa_kara	(Suggested by Garima Banasthali  31-08-13)
 				Ex: Often, in these situations, the force and the time duration are difficult to ascertain
 				    separately.
-	39. feature_noun	nakSa			as	lakRaNa		(Suggested by Chaitanya  Sir     31-08-13)
+	38. feature_noun	nakSa			as	lakRaNa		(Suggested by Chaitanya  Sir     31-08-13)
 				Ex: Hypertext is a powerful feature of the web.
-	40. generalise_verb	vyApaka_anumAna_lagA	as	sAmAnyIkaraNa_kara (Suggested by Prachi Banasthali 31-08-13)
+	39. generalise_verb	vyApaka_anumAna_lagA	as	sAmAnyIkaraNa_kara (Suggested by Prachi Banasthali 31-08-13)
 				Ex: If we generalise this law by adding to the total current carried by conductors.
-	41. alter_verb      	baxala_jA		as	baxala		(Suggested by Garima Banasthali  03-09-13)
+	40. alter_verb      	baxala_jA		as	baxala		(Suggested by Garima Banasthali  03-09-13)
 				Ex: The flux can also be altered by changing the shape of a coil in a magnetic field.
-	42. equal_verb      	kI_barAbarI_kara	as	ke_barAbara_ho	(Suggested by Pramila Banasthali 03-09-13)
+	41. equal_verb      	kI_barAbarI_kara	as	ke_barAbara_ho	(Suggested by Pramila Banasthali 03-09-13)
 				Ex: Therefore, we conclude from the first law that the magnitude of R equals that of W.
-	43. envelope_noun   	liPAPA			as	enavalapa	(Suggested by Pramila Banasthali 03-09-13)
+	42. envelope_noun   	liPAPA			as	enavalapa	(Suggested by Pramila Banasthali 03-09-13)
 				Ex: This envelope of signal (b) is the message signal.
-	44. deflection_noun 	JukAva			as	vikRepaNa	(Suggested by Pramila Banasthali 03-09-13)
+	43. deflection_noun 	JukAva			as	vikRepaNa	(Suggested by Pramila Banasthali 03-09-13)
 				Ex: The deflection lasts as long as the bar magnet is in motion.
-	45. formula_noun   	viXi			as	sUwra		(Suggested by Pramila Banasthali 10-09-13)
+	44. formula_noun   	viXi			as	sUwra		(Suggested by Pramila Banasthali 10-09-13)
 				Ex: This equation is also called Balmer formula.
-	46. disc_noun       	koI_cipatI_gola_vaswu	as	diska		(Suggested by Pramila Banasthali 10-09-13)
+	45. disc_noun       	koI_cipatI_gola_vaswu	as	diska		(Suggested by Pramila Banasthali 10-09-13)
 				Ex: The shiny metal disc in the electric power meter rotates due to the eddy currents.
-	47. widely_adverb   	paryApwa_mAwrA_meM	as	vyApaka_rUpa_se	(Suggested by Rashmi  Banasthali 10-09-13)
+	46. widely_adverb   	paryApwa_mAwrA_meM	as	vyApaka_rUpa_se	(Suggested by Rashmi  Banasthali 10-09-13)
 				Ex: This theory is no longer widely accepted.
-	48. disprove_verb   	JUTA_TaharA		as    asawya_pramANiwa_kara(Suggested by Pramila Banasthali 10-09-13)
+	47. disprove_verb   	JUTA_TaharA		as    asawya_pramANiwa_kara(Suggested by Pramila Banasthali 10-09-13)
 				Ex: In this way, in 1916, Millikan proved the validity of Einstein's photoelectric equation,
 				    instead of disproving it.
-	49. finite_adjective    niyawa			as	sImiwa/niyawa	(Suggested by Pramila Banasthali 10-09-13)
+	48. finite_adjective    niyawa			as	sImiwa/niyawa	(Suggested by Pramila Banasthali 10-09-13)
 				Ex: It is a wave packet extending over some finite region of space.
-	50. parameter_noun  	gaNiwa_meM_sWira_rASI	as	prAcala		(Suggested by Shweta  Banasthali 10-09-13)
+	49. parameter_noun  	gaNiwa_meM_sWira_rASI	as	prAcala		(Suggested by Shweta  Banasthali 10-09-13)
 				Ex: The mass of a body is thus an important parameter that determines the effect of force on
 				    its motion.
-	51. relevant_adjective  upayukwa		as	prAsafgika	(Suggested by Shweta  Banasthali 10-09-13)
+	50. relevant_adjective  upayukwa		as	prAsafgika	(Suggested by Shweta  Banasthali 10-09-13)
 				Ex: Taken together, the product of mass and velocity, that is momentum, is evidently a 
 				    relevant variable of motion. 
-	52. region_noun     	praxeSa			as	kRewra		(Suggested by Shweta  Banasthali 10-09-13)
+	51. region_noun     	praxeSa			as	kRewra		(Suggested by Shweta  Banasthali 10-09-13)
 				Ex: 
-	53. reasonable_adjective vivekI			as	paryApwa	(Suggested by Shweta  Banasthali 10-09-13)
+	52. reasonable_adjective vivekI			as	paryApwa	(Suggested by Shweta  Banasthali 10-09-13)
 				Ex: This approximation is valid so far as the size of the object is much smaller than the 
 				    distance it moves in a reasonable duration of time. 
-	54. reference_noun  	tippaNI			as	sanxarBa	(Suggested by Shweta  Banasthali 10-09-13)
+	53. reference_noun  	tippaNI			as	sanxarBa	(Suggested by Shweta  Banasthali 10-09-13)
 				Ex: The point of intersection of these three axes is called origin (O) and serves as the 
 				    reference point. 
-	55. rearrange_verb  	naye_krama_me_raKa	as  punaH_vyavasWiwa_kara(Suggested by Shweta Banasthali 10-09-13)
+	54. rearrange_verb  	naye_krama_me_raKa	as  punaH_vyavasWiwa_kara(Suggested by Shweta Banasthali 10-09-13)
 				Ex: The charges on spheres rearrange themselves as shown in Fig. 1.4 (d).
-	56. rectangular_adjective  samakoNIya		as	AyawAkAra	(Suggested by Shweta  Banasthali 10-09-13)
+	55. rectangular_adjective  samakoNIya		as	AyawAkAra	(Suggested by Shweta  Banasthali 10-09-13)
 				Ex: Figure 6.10 shows a rectangular conductor PQRS in which the conductor PQ is free to move.
-	57. rigorous_adjective  kadI			as	sahI/yaWArWa	(Suggested by Shweta  Banasthali 10-09-13)
+	56. rigorous_adjective  kadI			as	sahI/yaWArWa	(Suggested by Shweta  Banasthali 10-09-13)
 				Ex: We stress that our presentation is not wholly rigorous. 
 
 	
