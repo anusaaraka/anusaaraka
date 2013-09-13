@@ -29,3 +29,8 @@ festival	1
 figure	1
 research	1
 problem	1
+bar	1
+market	1
+school	1
+house	1
+building	1

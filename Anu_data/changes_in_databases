@@ -312,6 +312,11 @@
 	figure		----		"	Ex: These figures demonstrate the size of economic problem facing country.
 	research	----		"	Ex: Research has demonstrated that babies can recognise their mother's voice.
 	problem	     	----		"	Ex: These problems demonstrate importance of strategic planning.
+	bar     	---- Suggested by Nandini ji LTRC (13-09-13)	
+	market  	----		"
+	school  	----		"
+	house   	----		"
+	building        ----		"
 	    
 
   changes in not_ne_verb_list.txt
