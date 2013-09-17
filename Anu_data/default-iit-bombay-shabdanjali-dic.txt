@@ -87719,7 +87719,7 @@ ups_UNDEFINED	Upara
 upscale_adjective	sampanna
 upset_adjective	ultA/niScala/nirxiRta
 upset_noun	aswavyaswawA/gadabadI/gadabada/viparyaya/palata/GabadAhata/pareSAnI
-upset_verb	viparyaswa_kara/ulata_xe/pareSAna_kara_xe/pareSAna_kara/palata_xe/niSicala/KarAba_kara/gadabadA_xe/GabarA_xe
+upset_verb	uxvigna_kara/uxvigna_ho/viparyaswa_kara/ulata_xe/pareSAna_kara_xe/pareSAna_kara/palata_xe/niSicala/KarAba_kara/gadabadA_xe/GabarA_xe
 upseter_UNDEFINED	pareSAnI
 upsetest_UNDEFINED	pareSAnI
 upsets_UNDEFINED	pareSAnI
