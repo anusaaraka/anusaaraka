@@ -4192,7 +4192,6 @@ at_a_range_of	nirXAriwa_sImA_meM#nirXAriwa_sImA_meM#noun#3#RM
 at_a_stretch	eka_hI_bAra_meM#eka_hI_bAra_meM#noun#3#RM
 at_a_time	eka_sAWa#eka_sAWa#noun#3#RM
 at_about	aMxAjana#aMxAjana#noun#2#RM
-at_all	bilkula_BI#bilkula_BI#noun#2#RM
 at_all_events	hara_hAlawa_meM#hara_hAlawa_meM#noun#3#RM
 at_an_early_date	SIGra#SIGra#noun#4#RM
 at_any_cost	kisI_BI_kImawa_para#kisI_BI_kImawa_para#noun#3#RM
@@ -6267,7 +6266,6 @@ call_by_reference	saMxarBa_AhavAna#saMxarBa_AhavAna#noun#3#RM
 call_by_value	mAna_AhavAna#mAna_AhavAna#noun#3#RM
 call_by_variables	cara_AhvAna#cara_AhvAna#noun#3#RM
 call_deposit	mAMga_jamA#mAMga_jamA#noun#2#RM
-call_for	maMgavAnA#maMgavAnA#noun#2#RM
 call_for_an_explanation	javAba_walaba_kiyA_jAe#javAba_walaba_kiyA_jAe#noun#4#RM
 call_gate	bulAne_vAla_xaravAjA#bulAne_vAla_xaravAjA#noun#2#RM
 call_in_arrear	bakAyA_mAMga#bakAyA_mAMga#noun#3#RM
@@ -33202,6 +33200,8 @@ beyond_belief	aviSvasanIya#aviSvasanIya#noun#2#RM
 modern_day	AXunika#AXunika#noun#2#RM
 incident_radiation	Apawiwa vikiraNa#Apawiwa vikiraNa#noun#1#RM
 incident_light	Apawiwa_prakASa#Apawiwa_prakASa#noun#2#RM
+last_reserves_of_strength	avaSiRta_Sakwi#avaSiRta_Sakwi#noun#2#WM
+last_reserve_of_strength	avaSiRta_Sakwi#avaSiRta_Sakwi#noun#2#WM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

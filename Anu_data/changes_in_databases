@@ -801,6 +801,9 @@ Removed:
 					    of the intervening medium (intrinsic material property).
 	42. co-axial_adjective		samAkRIya			(Suggested by Garima Banasthali  10-09-13)
 					Ex: Consider Fig. 6.15 which shows two long co-axial solenoids each of length l.
+	43. differentiable_verb     	avakalanIya			(Suggested by Pramila Banasthali 13-09-13)
+					Ex: In any realistic situation, the functions will be differentiable at all points
+					    and the graphs will be smooth.
 							  	
 	 	
     4. Added new meaning to the existing word:
@@ -884,6 +887,11 @@ Removed:
 	52. runner_noun			XAvaka				(Suggested by Chaitanya Sir      04-09-13)
 	53. however_adverb		waWApi				(	"	"		 12-09-13)
 					Ex: The origin of these derived forces is, however, very complex. 
+	54. freely_adverb   		mukwa_rUpa_se			(Suggested by Pramila Banasthali 13-09-13)
+					Ex: From B, or the point of the maximum height, the ball falls freely under the
+					    acceleration due to gravity. 
+	55. fabric_noun			bunAvata			(Suggested by Chaitanya Sir      14-09-13)
+					Ex: What do they call that new fabric.
 
 
     5. Modifying first meaning from the list :
@@ -1019,6 +1027,8 @@ Removed:
 	22. centre_verb		kenxrIwa_kara					(Suggested by Sukhada           24-08-13)
 	23. gathering_noun	saBAA						(By Roja			31-08-13)
 	24. instead_adverb	ke_baxale_mez					(	"			07-09-13)
+	25. freeman-^pl.freemen^_UNDEFINED  svAXIna_nAgarika			(By Manju			13-09-13)
+	26. freeman-{pl.freemen}_noun       svAXIna_nAgarika			(By  "				  "	)
 
 
     7. Removed entry:
@@ -1051,6 +1061,8 @@ Removed:
 	25. works_UNDEFINED	racanA					( Suggested by Chaitanya Sir 	19-08-13)
 	26. FM_UNDEFINED    	rediyo_prasAraNa_kA_eka_warIkA		(		"		26-08-13)
 	27. polyunsaturated_UNDEFINED					( By Roja 			11-09-13)
+	28. freeman-^pl.freemen^_UNDEFINED	svAXIna_nAgarika	( By Manju			14-09-13)
+	29. freeman-{pl.freemen}_noun		svAXIna_nAgarika	(	"			 "	)
 
 
     8. Modified category:
@@ -1105,18 +1117,22 @@ Removed:
  ==========================
     Removed  :
     ------- 
- 	wall_street     galI[_banxa_sadaka]#galI[_banxa_sadaka]#noun#2#RM
-        	            [Suggested by Chaitanya ji and Dipti Madam. 23-04-12]
-    	moving_in   	aXikAra_meM_karane_kI_kriyA#aXikAra_meM_karane_kI_kriyA#noun#2#RM
-                    	#The ball is moving in negative y direction. (Suggested by Sukhada) 
-	Compile_<<<unprintable character>>>_<<<unprintable character>>>_<<<unprintable character>>>_<<<unprintable character>>>_<<<unprintable character>>>_go	saMkalana_waWA_kAryapAlana#saMkalana_waWA_kAryapAlana#noun#3#RM
-	love_affair	premasambaMXa#premasambaMXa#noun#2#RM
-	In_fact		asala_meM#asala_meM#noun#2#RM
-	to_morrow       kala{AnevAlA}#kala{AnevAlA}#noun#2#RM 
-			(As tomorrow is a single word. By Roja, Suggested by Alpana ji (LTRC) 15-07-13)
-	the_great	mahAna_loga#mahAna_loga#noun#2#RM	(Suggested by Chaitanya Sir 16-08-13)
-	carried_foward	agrenIwa#agrenIwa#noun#2#RM		(		"	    24-08-13)
-
+ 	1. wall_street		galI[_banxa_sadaka]#galI[_banxa_sadaka]#noun#2#RM 
+				gested by Chaitanya ji and Dipti Madam. 23-04-12]
+    	2. moving_in   		XikAra_meM_karane_kI_kriyA#aXikAra_meM_karane_kI_kriyA#noun#2#RM (Suggested by Sukhada)
+	                   	Ex: The ball is moving in negative y direction.  
+	3. Compile_<<<unprintable character>>>_<<<unprintable character>>>_<<<unprintable character>>>_<<<unprintable character>>>_<<<unprintable character>>>_go	saMkalana_waWA_kAryapAlana#saMkalana_waWA_kAryapAlana#noun#3#RM
+	4. love_affair		premasambaMXa#premasambaMXa#noun#2#RM
+	5. In_fact		asala_meM#asala_meM#noun#2#RM
+	6. to_morrow       	kala{AnevAlA}#kala{AnevAlA}#noun#2#RM 
+				(As tomorrow is a single word. By Roja, Suggested by Alpana ji (LTRC) 15-07-13)
+	7. the_great		mahAna_loga#mahAna_loga#noun#2#RM	(Suggested by Chaitanya Sir 16-08-13)
+	8. carried_foward	agrenIwa#agrenIwa#noun#2#RM		(		"	    24-08-13)
+	9. call_for        	maMgavAnA#maMgavAnA#noun#2#RM		(Suggested by Chaitanya Sir 14-09-13)
+				Ex:This is the last call for passengers travelling on British Airways flight 199 to Rome.
+	10. at_all		bilkula_BI#bilkula_BI#noun#2#RM		(Suggested by Chaitanya Sir 14-09-13)
+				Ex: In any realistic situation, the functions will be differentiable at all points and the
+				    graphs will be smooth.
 
     Modified :
     --------
@@ -1186,6 +1202,9 @@ Removed:
 	31. incident_light  	Apawiwa_prakASa#Apawiwa_prakASa#noun#2#RM	(Suggested by Prachi Banasthali  04-09-13)
 				Ex: This implies that greater the frequency of incident light, greater is the maximum kinetic
 				    energy of the photoelectrons.
+	32. last_reserves_of_strength	avaSiRta_Sakwi#avaSiRta_Sakwi#noun#2#WM	(Suggested by Chaitanya Sir   14-09-13)
+				Ex: She called up her last reserves of strength.
+	33. last_reserve_of_strength   avaSiRta_Sakwi#avaSiRta_Sakwi#noun#2#WM	(Suggested by Sukhada         14-09-13)
 
 
     Added new meaning to the existing word:

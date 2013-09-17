@@ -28142,7 +28142,7 @@ fabled_adjective	prasixXa
 fables_UNDEFINED	bAlakaWA
 fabling_UNDEFINED	bAlakaWA
 fabric_UNDEFINED	nirmiwi
-fabric_noun	saMracanA/kapadA/DAFcA/banAva/eka_prakAra_kA_kapadA
+fabric_noun	bunAvata/saMracanA/kapadA/DAFcA/banAva/eka_prakAra_kA_kapadA
 fabricate_verb	banA/gaDa/JUTI_kahAnI_banA
 fabricated_UNDEFINED	gaDanA
 fabricates_UNDEFINED	gaDanA
@@ -31776,9 +31776,7 @@ freelance_noun	svawanwra_rUpa_se_kAma_karane_vAlA
 freelance_verb	svawantra_rUpa_se_kAma_kara
 freelancer_noun	svawantra_rUpa_se_kAma_karane_vAlA
 freeloader_noun	ASriwa_vyakwi
-freely_adverb	Kule_Ama/svawanwra_rUpa_se/svecCA_se/svawanwrawApUrvaka/mukwa_BAva_se
-freeman-^pl.freemen^_UNDEFINED	svAXIna_nAgarika
-freeman-{pl.freemen}_noun	svAXIna_nAgarika
+freely_adverb	mukwa_rUpa_se/Kule_Ama/svawanwra_rUpa_se/svecCA_se/svawanwrawApUrvaka/mukwa_BAva_se
 freeman_UNDEFINED	svAXIna_nAgiraka
 freeman_noun	svAXIna_nAgarika
 freemassonry_noun	sahaja_sahAnuBUwi
@@ -93486,3 +93484,4 @@ self-inductance_noun	svaprerakawva
 solenoid_noun	parinAlikA
 dielectric_adjective	parAvExyuwa
 co-axial_adjective	samAkRIya
+differentiable_verb	avakalanIya
