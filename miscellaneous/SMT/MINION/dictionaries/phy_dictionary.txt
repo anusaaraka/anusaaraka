@@ -381,7 +381,7 @@ irradiate_verb	kiraNiwa
 image_noun	prawibimba
 proton_noun	protoYna
 photocell_noun	Potosela
-quartz_noun	kvAtja
+quartz_noun	kvArtaja
 photosensitive_adjective	Potosensiwiva
 detection_noun	saMsUcana
 frictional_adjective	GarRI
@@ -389,3 +389,5 @@ viscous_noun	SyAna
 exercise_noun	aByAsa_praSna	
 armature_noun	Armecara
 capacitance_noun	XAriwA
+centripetal_force	aBikeMxrIya_bala
+ferromagnetic_adjective	lOha_cuMbakIya

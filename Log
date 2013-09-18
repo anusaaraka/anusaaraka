@@ -1,8 +1,9 @@
- 17-09-13
+ 18-09-13
  ========
  1. WSD : Modified : interface.clp   number.clp   raise.clp      cultivate.clp   stay.clp       synthetic.clp
 		     section.clp     enough.clp   different.clp	 accident.clp    authority.clp	essentially.clp
-	  Added    : argue.clp       cell.clp	  feature.clp    flux.clp        equivalently.clp
+	  Added    : argue.clp       cell.clp	  feature.clp    flux.clp        divide.clp	equivalently.clp
+		     demonstrate.clp difficult.clp
  2. causative_verb_mng.clp
 	Modified : modify_mng rule -- (modified source)
  3. hindi_meaning.clp

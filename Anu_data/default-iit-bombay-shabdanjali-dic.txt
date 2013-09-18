@@ -93485,3 +93485,7 @@ solenoid_noun	parinAlikA
 dielectric_adjective	parAvExyuwa
 co-axial_adjective	samAkRIya
 differentiable_verb	avakalanIya
+wave-like_adjective	waraMga_saxqSa
+wave-particle_noun	waraMga_kaNa
+extremum_adjective	carama
+experimentalist_noun	prayogakarwA

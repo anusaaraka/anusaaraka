@@ -29,3 +29,8 @@ teacher	1
 I	1
 she	1
 salesperson	1
+man	1
+person	1
+child	1
+boss	1
+girl	1

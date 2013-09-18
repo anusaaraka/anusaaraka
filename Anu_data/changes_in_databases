@@ -374,6 +374,11 @@
 								  demonstrated.
 	salesperson(	"	  "			"    ) Ex:The salesperson plugged in and demonstrated the vacuum 
 							 	  cleaner.
+	man	   (	"	  "		    17-09-13 ) Ex: He is a difficult man.
+	person	   (	"	  "			"    ) Ex: He is a difficult person.
+	child	   (	"	  "			"    ) Ex: He is a difficult child.
+	boss	   (	"	  "			"    ) Ex: He is a difficult boss.
+	girl	   (	"	  "			"    ) Ex: He is a difficult girl.
 	 
 
   Changes in total-paxasUwra.txt 
@@ -804,8 +809,17 @@ Removed:
 	43. differentiable_verb     	avakalanIya			(Suggested by Pramila Banasthali 13-09-13)
 					Ex: In any realistic situation, the functions will be differentiable at all points
 					    and the graphs will be smooth.
-							  	
-	 	
+	44. wave-like_adjective     	waraMga_saxqSa			(Suggested by Rashmi Banasthali  17-09-13)
+					Ex: The moving particles of matter should display wave-like properties under 
+					    suitable conditions.  
+	45. wave-particle_noun      	waraMga_kaNa			(Suggested by Rashmi Banasthali  17-09-13)
+					Ex: If radiation has a dual (wave-particle) nature, might not the particles of nature						 (the electrons, protons, etc.) also exhibit wave-like character?  
+	46. extremum_adjective      	carama				(Suggested by Pramila Banasthali 17-09-13)
+					Ex: Note from Fig. 6.17 that the emf has its extremum value when θ = 90º or θ = 270º,						 as the change of flux is greatest at these points.
+	47. experimentalist_noun    	prayogakarwA			(Suggested by Pramila Banasthali 17-09-13)
+					Ex: The quantisation of charge was first suggested by the experimental laws of 
+					    electrolysis discovered by English experimentalist Faraday.					  	
+		 	
     4. Added new meaning to the existing word:
        ---------------------------------------
         1. inaudibly_adverb             XImI_Avaja_meM                  ( Suggested by Rajini   29-02-12        )
@@ -1206,6 +1220,8 @@ Removed:
 	32. last_reserves_of_strength	avaSiRta_Sakwi#avaSiRta_Sakwi#noun#2#WM	(Suggested by Chaitanya Sir   14-09-13)
 				Ex: She called up her last reserves of strength.
 	33. last_reserve_of_strength   avaSiRta_Sakwi#avaSiRta_Sakwi#noun#2#WM	(Suggested by Sukhada         14-09-13)
+	34. one_after_the_other eka_ke_bAxa_eka#eka_ke_bAxa_eka#noun#1#RM	(Suggested by Anita ji LTRC   17-09-13)
+				Ex: When she was done, father began to call our names one after the other.
 
 
     Added new meaning to the existing word:
@@ -1261,7 +1277,7 @@ Removed:
 	image_noun		prawibimba	(	"	"		   "	 )
 	proton_noun     	protoYna	(Suggested by Shweta Banasthali  31-08-13)
 	photocell_noun  	Potosela	(	"		"	   "	 )	
-	quartz_noun     	kvAtja		(	"		" 	   "     )
+	quartz_noun     	kvArtaja	(	"		" 	   "     )
 	photosensitive_adjective  Potosensiwiva	(	"		"	   "     )
 	detection_noun  	saMsUcana	(Suggested by Pramila Banasthali 03-09-13)
 	frictional_adjective    GarRI		(	"		"	   "	 )
@@ -1269,6 +1285,8 @@ Removed:
 	exercise_noun		aByAsa_praSna	(Suggested by Chaitanya Sir 	 06-09-13)
 	armature_noun   	Armecara	(Suggested by Garima Banasthali  10-09-13)
 	capacitance_noun        XAriwA		(	"	"		    " 	 )
+	centripetal_force       aBikeMxrIya_bala(Suggested by Rashmi Banasthali  17-09-13)
+	ferromagnetic_adjective lOha_cuMbakIya	(Suggested by Pramila Banasthali 17-08-13)
 
 
     Modified :
