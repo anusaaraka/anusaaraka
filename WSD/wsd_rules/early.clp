@@ -112,13 +112,13 @@
 (id-word ?id1 ?word)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id prAramBika))
 (if (eq ?word morning) then
     (assert (id-wsd_root_mng ?id jalxI))
+else	;Added else statement and moved assert statement into else part ( by Roja(12-09-13) )
+(assert (id-wsd_root_mng ?id prAramBika))
 )
 (if ?*debug_flag* then
 (if (eq ?word morning) then
-        (assert (id-wsd_root_mng ?id jalxI))
         (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  early.clp      early6   "  ?id "  jalxI )" crlf)
 else
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  early.clp     early6   "  ?id " prAramBika  )" crlf)

@@ -16,11 +16,12 @@
 
 ;Added by Abhishesh Srivastava(MNNIT ALLAHABAD)
 ;He felt slighted by the change.
+;The poem itself is an answer to George's slighting reference to his family background.
 (defrule slight1
 (declare (salience 4900))
 (id-root ?id slight)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id slighted)
+(id-word ?id slighted|slighting);Merged slight2 rule in this rule by adding slighting. Modified by Roja(13-09-13) 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -31,21 +32,21 @@
 
 ;Added by Abhishesh Srivastava(MNNIT ALLAHABAD)
 ;The poem itself is an answer to George's slighting reference to his family background.
-(defrule slight2
-(declare (salience 4800))
-(id-root ?id slight)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id slighting)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (id-wsd_word_mng ?id wiraskArapUrNa))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  slight.clp  	slight2   "  ?id "  wiraskArapUrNa )" crlf))
-)
+;(defrule slight2
+;(declare (salience 4800))
+;(id-root ?id slight)
+;?mng <-(meaning_to_be_decided ?id)
+;(id-word ?id slighting)
+;(id-cat_coarse ?id verb)
+;=>
+;(retract ?mng)
+;(assert (id-wsd_word_mng ?id wiraskArapUrNa))
+;(if ?*debug_flag* then
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  slight.clp  	slight2   "  ?id "  wiraskArapUrNa )" crlf))
+;)
 
 ;Added by Abhishesh Srivastava(MNNIT ALLAHABAD)
-The overhead wires are so slight that you have to look hard to see them.
+;The overhead wires are so slight that you have to look hard to see them.
 (defrule slight3
 (declare (salience 4700))
 (id-root ?id slight)
@@ -64,11 +65,12 @@ The overhead wires are so slight that you have to look hard to see them.
 ;We have had a slight increase in sales over the first sixth months of the year.
 ;There is also a slight association between babies sleeping on their fronts and sudden infant death.
 ;They expected the laws of laissezfaire economics to continue in operation, with the slight change that profits would go to the community instead of to individuals.
+;Tobi's knowledge of homosexuality was slight.
 (defrule slight4
 (declare (salience 4600))
 (id-root ?id slight)
 ?mng <-(meaning_to_be_decided ?id)
-(viSeRya-viSeRaNa ?id1 ?id)
+(or (viSeRya-viSeRaNa ?id1 ?id)(subject-subject_samAnAXikaraNa ?id1 ?id));Merged slight5 rule in this rule by adding relation (subject-subject_samAnAXikaraNa). Modified by Roja(13-09-13)
 (id-cat_coarse ?id adjective)
 =>
 (retract ?mng)
@@ -79,19 +81,19 @@ The overhead wires are so slight that you have to look hard to see them.
 
 ;Added by Abhishesh Srivastava(MNNIT ALLAHABAD)
 ;Tobi's knowledge of homosexuality was slight.
-(defrule slight5
-(declare (salience 4100))
-(id-root ?id slight)
-?mng <-(meaning_to_be_decided ?id)
-(subject-subject_samAnAXikaraNa ?id1 ?id)
-(id-cat_coarse ?id adjective)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id WodA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  slight.clp 	slight5   "  ?id "  WodA )" crlf))
-)
-
+;(defrule slight5
+;(declare (salience 4100))
+;(id-root ?id slight)
+;?mng <-(meaning_to_be_decided ?id)
+;(subject-subject_samAnAXikaraNa ?id1 ?id)
+;(id-cat_coarse ?id adjective)
+;=>
+;(retract ?mng)
+;(assert (id-wsd_root_mng ?id WodA))
+;(if ?*debug_flag* then
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  slight.clp 	slight5   "  ?id "  WodA )" crlf))
+;)
+;
 
 ;Added by Abhishesh Srivastava(MNNIT ALLAHABAD)
 (defrule slight6

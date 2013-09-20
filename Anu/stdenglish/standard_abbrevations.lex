@@ -59,6 +59,9 @@ int len=0;
                                 str[len-1]='\0';
                                 printf("%sABBR-Dot", str);}
 
+
+[^.][ ](in|long)[.]\n	{	ECHO; /* Rule added by Roja(16-09-13) Ex: The sergeant ordered his men to fall in. */ 	}
+
 %%
 main()
 {

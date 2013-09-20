@@ -1,7 +1,8 @@
- 18-09-13
+ 20-09-13
  ========
  1. WSD : Modified : interface.clp   number.clp   raise.clp      cultivate.clp   stay.clp       synthetic.clp
 		     section.clp     enough.clp   different.clp	 accident.clp    authority.clp	essentially.clp
+		     early.clp	     slight.clp
 	  Added    : argue.clp       cell.clp	  feature.clp    flux.clp        divide.clp	equivalently.clp
 		     demonstrate.clp difficult.clp
  2. causative_verb_mng.clp
@@ -12,15 +13,17 @@
 	Modified : multiple_prep_rule 
  5. hindi_sent_reorder.clp:
 	Added in nerver-called() : id-attach_emphatic fact
- 6. Updated following dictionary related files:
+ 6. Updated following lex files:
+	--> standard_abbrevations.lex : Added new rule to handle sentences ending with 'in' or 'long'
+ 7. Updated following dictionary related files:
 	changes_in_databases	apertium-en-hi.en.metadix
- 7. Updated following shell files
+ 8. Updated following shell files
 	--> minion_compile.sh: Removed code related to full parser.
- 8. Removed following files
+ 9. Removed following files
 	fullparser-hin-1.6.3.tgz
 	compile_full_parser.sh
- 9. Updated Log
-10. Updated sd_verified (505)	phy_verified_eng
+10. Updated Log
+11. Updated sd_verified (505)	phy_verified_eng
 	
  31-08-13
  ========
