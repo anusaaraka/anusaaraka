@@ -40,6 +40,7 @@
  (assert (id-preceeding_part_of_verb) )
  (assert (id-wsd_root))
  (assert (id-attach_emphatic))
+ (assert (id-attach_eng_mng))
  )
  ;============================================ Stanford Parser Rules ===================================================
 
@@ -520,6 +521,30 @@
 	)
 	(assert (modified_order))
  )
+ ;------------------------------------------------------------------------------------------------------------------
+; (defrule dont_have
+; (expr $?s_m1 ?do ?not ?have $?s_m2 ?in ?common $?s_m3)
+; (and (id-word ?do do)(id-word ?not not) (id-word ?have have)(id-word ?in in)(id-word ?common common))
+; (not (modified_order))
+; ?f0<-(hindi_id_order $?order)
+; =>
+;        (retract ?f0)
+; 	(assert (hindi_id_order $?s_m1 $?s_m3 $?s_m2 samAnawA nahIM hE))
+;        (assert (modified_order))
+; )
+; ;------------------------------------------------------------------------------------------------------------------
+; (defrule have_rule
+;; (expr $?s_m1 ?have $?s_m2 ?in ?common $?s_m3)
+; ?f0<-(hindi_id_order $?s_m1 ?have $?s_m2 ?common $?s_m3)
+; (and (id-word ?have have)(id-word ?common common)(id-word =(- ?common 1) in))
+;; (and (id-word ?have have)(id-word ?in in)(id-word ?common common))
+; (not (modified_order))
+;; ?f0<-(hindi_id_order $?order)
+; =>
+;        (retract ?f0)
+;        (assert (hindi_id_order $?s_m1 $?s_m3 $?s_m2 samAnawA hE))
+;        (assert (modified_order))
+; )
  ;------------------------------------------------------------------------------------------------------------------
  (defrule remove_ordered_ids
  (declare (salience -500))

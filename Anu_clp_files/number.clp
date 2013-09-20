@@ -24,6 +24,7 @@
  (assert (id-attach_emphatic))
  (assert (id-preceeding_part_of_verb))
  (assert (id-eng-src))
+ (assert (id-attach_eng_mng))
  )
 
  ; Added by Roja.(06-11-10)

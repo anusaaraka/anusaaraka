@@ -1,5 +1,5 @@
 ;##############################################################################
-;#  Copyright (C) 2002-2005 Pramila Yadav Banasthali University (pramila3005@gmail.com)
+;#  Copyright (C) 2013-2014 Pramila Yadav Banasthali University (pramila3005@gmail.com)
 ;#
 ;#  This program is free software; you can redistribute it and/or
 ;#  modify it under the terms of the GNU General Public License
@@ -24,7 +24,7 @@
 (declare (salience 5000))
 (id-root ?id entitle)
 ?mng <-(meaning_to_be_decided ?id)
-(viSeRya-kqxanwa_viSeRaNa  ?id1 ?id)
+(or(viSeRya-kqxanwa_viSeRaNa  ?id1 ?id)(kriyA-kqxanwa_karma  ?id ?id1))
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -41,7 +41,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (saMKyA-saMKyA  ?id1 ?id)
 (kriyA-object  ?kri ?id1)
-(id-cat_coarse ?id number)
+(id-cat_coarse ?id1 number)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id SIrRaka))
@@ -49,19 +49,30 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  entitle.clp 	entitle1   "  ?id "  SIrRaka )" crlf))
 )
 
+;----------------------------------------- Default rules --------------------------------------
 
-;Added by Pramila(Banasthali University)
-;Today's choice to entitle the article I had written.
 (defrule entitle2
-(declare (salience 5000))
+(declare (salience 4000))
 (id-root ?id entitle)
 ?mng <-(meaning_to_be_decided ?id)
-(saMjFA-to_kqxanwa  ?id2 ?id)
-(kriyA-kqxanwa_karma  ?id ?id1)
-(id-cat_coarse ?id verb)
+(id-cat_coarse ?id1 verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id aXikAra_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  entitle.clp 	entitle2   "  ?id "  aXikAra_xe )" crlf))
+)
+
+
+(defrule entitle3
+(declare (salience 3000))
+(id-root ?id entitle)
+?mng <-(meaning_to_be_decided ?id)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id SIrRaka_xe))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  entitle.clp 	entitle2   "  ?id "  SIrRaka_xe )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  entitle.clp 	entitle3   "  ?id "  SIrRaka_xe
+ )" crlf))
 )
+

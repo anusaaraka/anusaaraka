@@ -2,28 +2,36 @@
  ========
  1. WSD : Modified : interface.clp   number.clp   raise.clp      cultivate.clp   stay.clp       synthetic.clp
 		     section.clp     enough.clp   different.clp	 accident.clp    authority.clp	essentially.clp
-		     early.clp	     slight.clp
+		     early.clp	     slight.clp   entitle.clp    signal.clp      space.clp      table.clp
 	  Added    : argue.clp       cell.clp	  feature.clp    flux.clp        divide.clp	equivalently.clp
-		     demonstrate.clp difficult.clp
+		     demonstrate.clp difficult.clp eliminate.clp
  2. causative_verb_mng.clp
 	Modified : modify_mng rule -- (modified source)
  3. hindi_meaning.clp
 	Renamed source "Default" as "Default_meaning"
  4. sd_pada.clp
 	Modified : multiple_prep_rule 
- 5. hindi_sent_reorder.clp:
-	Added in nerver-called() : id-attach_emphatic fact
- 6. Updated following lex files:
+ 5. hindi_sentence.clp
+	Added	 : add_eng_mng and add_eng_mng1 rules
+	Modified : attach_emphatic
+ 6. run_H_gen_sen.bat
+	Loaded 	wsd_facts_output.dat and GNP_agmt_info.dat files in hindi_sentence module
+ 7. Updated the following files to add id-attach_eng_mng fact in nerver-called deffunction
+        causative_verb_mng.clp          hindi_meaning.clp       preferred_morph_consistency_check.clp
+        prepare_apertium_input.clp      tam_meaning.clp         number.clp      vibakthi.clp
+	hindi_sent_reorder.clp		hindi_sentence.clp
+ 8. Updated following lex files:
 	--> standard_abbrevations.lex : Added new rule to handle sentences ending with 'in' or 'long'
- 7. Updated following dictionary related files:
+ 9. Updated following dictionary related files:
 	changes_in_databases	apertium-en-hi.en.metadix
- 8. Updated following shell files
+10. Updated following shell files
 	--> minion_compile.sh: Removed code related to full parser.
- 9. Removed following files
+11. Removed following files
 	fullparser-hin-1.6.3.tgz
 	compile_full_parser.sh
-10. Updated Log
-11. Updated sd_verified (505)	phy_verified_eng
+12. Updated Log
+13. Updated  sd_verified (505)
+
 	
  31-08-13
  ========

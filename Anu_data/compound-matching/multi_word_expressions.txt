@@ -33203,6 +33203,8 @@ incident_light	Apawiwa_prakASa#Apawiwa_prakASa#noun#2#RM
 last_reserves_of_strength	avaSiRta_Sakwi#avaSiRta_Sakwi#noun#2#WM
 last_reserve_of_strength	avaSiRta_Sakwi#avaSiRta_Sakwi#noun#2#WM
 one_after_the_other	eka_ke_bAxa_eka#eka_ke_bAxa_eka#noun#1#RM
+under_different_conditions	Binna_xaSAoM_meM#Binna_xaSAoM_meM#noun#3#WM
+potential_difference	viBavAnwara#viBavAnwara#adjective#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

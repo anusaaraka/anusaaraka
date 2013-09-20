@@ -1,7 +1,6 @@
  ;Added by Shirisha Manju (19-11-11)
  (deffunction never-called ()
  (assert (hindi_id_order))
- (assert (id-attach_emphatic))
  (assert (id-Apertium_output))
  (assert (id-left_punctuation))
  (assert (id-right_punctuation))
@@ -14,11 +13,32 @@
  (assert (para_id-sent_id-word_id-original_word-hyphenated_word))
  (assert (id-original_word))
  (assert (Parser_used))
+ (assert (id-wsd_number))
+ (assert (affecting_id-affected_ids-wsd_group_root_mng))
+ (assert (affecting_id-affected_ids-wsd_group_word_mng))
+ (assert (id-wsd_root_mng))
+ (assert (id-wsd_word_mng))
+ (assert (id-H_vib_mng))
+ (assert (id-wsd_root))
+ (assert (make_verbal_noun))
+ (assert (kriyA_id-object_viBakwi))
+ (assert (kriyA_id-object2_viBakwi))
+ (assert (kriyA_id-subject_viBakwi))
+ (assert (kriyA_id-object1_viBakwi))
+ (assert (id-tam_type))
+ (assert (id-E_tam-H_tam_mng))
+ (assert (id-preceeding_part_of_verb))
+ (assert (root_id-TAM-vachan))
+ (assert (id-attach_emphatic))
+ (assert (id-eng-src))
+ (assert (meaning_has_been_decided))
+ (assert (id-attach_eng_mng))
+ (assert (conj_head-left_head-right_head))
  )
 
 (defglobal ?*hin_sen-file* = h_sen_fp)
  
-(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot preceeding_part_of_verb (default 0)) (slot preposition (default 0))(slot Hin_position (default 0)))
+ (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
  ;----------------------------------------------------------------------------------------------------------
  ;Added by Roja (29-06-11)
  ;To replace hyphen(-) with underscore(_) only in cases where we get underscore in the sentence. 
@@ -39,13 +59,51 @@
    	)
  )
  ;----------------------------------------------------------------------------------------------------------
+ ;Add english meaning to the hindi mng
+ ;Added by Shirisha Manju (19-09-13) 
+ (defrule add_eng_mng
+ (declare (salience 2550))
+ ?f0<-(id-Apertium_output ?id $?wrd_analysis)
+ ?f1<-(id-attach_eng_mng ?id ?mng)
+ (pada_info (group_ids $? ?id $? ?))
+ =>
+	(retract ?f0 ?f1)
+	(bind $?n_mng (create$ $?wrd_analysis PUNCT-OpenParen ?mng PUNCT-ClosedParen))
+	(assert (id-Apertium_output ?id $?n_mng))
+ )
+ ;----------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (19-09-13)
+ ;The receiver has the task of operating on the received [signal].
+ (defrule add_eng_mng1
+ (declare (salience 2549))
+ ?f0<-(id-Apertium_output ?id $?wrd_analysis ?v_mng)
+ ?f1<-(id-attach_eng_mng ?id ?mng)
+ (pada_info (group_ids  $? ?id)(vibakthi ?vib))
+ =>
+        (retract ?f0 ?f1)
+	(if (eq (str-index "_" ?vib) FALSE) then
+	        (bind $?n_mng (create$ $?wrd_analysis PUNCT-OpenParen ?mng PUNCT-ClosedParen ?v_mng))
+        	(assert (id-Apertium_output ?id $?n_mng))
+	)
+ )
+ ;----------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju
+ ;When none worked satisfactorily , his assistant complained ," All our work is in vain ". 
+ (defrule attach_emphatic
+ (declare (salience 2548))
+ ?f1<-(id-attach_emphatic ?id ?wrd)
+ ?f0<-(id-Apertium_output ?id $?wrd_analysis)
+ =>
+        (retract ?f0 ?f1)
+	(assert (id-Apertium_output ?id $?wrd_analysis ?wrd))
+ )
+ ;----------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (23-02-12)
  ;Things had just gone too far.
  (defrule get_rt_punt_if_no_aper_mng
  (declare (salience 2530))
  (Parser_used Stanford-Parser)
  (or (hid-punc_head-right_punctuation ?id ? ?punc)(hid-punc_head-left_punctuation ?id ? ?punc))
-; (or (hid-right_punctuation ?id ?punc)(hid-left_punctuation ?id ?punc))
  ?f1<-(id-Apertium_output ?id $?wrd_analysis) 
  ?f0<-(hindi_id_order $?id1 ?id $?d1)
  (test (eq (length $?wrd_analysis) 0))
@@ -121,18 +179,6 @@
  =>
 	(retract ?f0 ?f1)
         (assert (hindi_id_order $?id1  $?wrd_analysis $?id2))
- )
- ;----------------------------------------------------------------------------------------------------------
- ; Added by Shirisha Manju
- ;When none worked satisfactorily , his assistant complained ," All our work is in vain ". 
- (defrule attach_emphatic
- (declare (salience 1010))
- ?f1<-(id-attach_emphatic ?id ?wrd)
- (id-Apertium_output ?id $?wrd_analysis)
- ?f0<-(hindi_id_order $?id1 ?id $?id2)
- =>
-        (retract ?f0 ?f1)
-        (assert (hindi_id_order $?id1  $?wrd_analysis ?wrd $?id2))
  )
  ;======================== Generate hindi sentence using Apertium output and  punctuations ====================
  ;Added by Shirisha Manju (22-12-10)

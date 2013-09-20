@@ -48,6 +48,7 @@
  (assert (id-TAM))
  (assert (conj_head-left_head-right_head))
  (assert (id-eng-src))
+ (assert (id-attach_eng_mng))
  )
  ;----------------------------------------------------------------------------------------------------------------------- 
  (deffunction remove_character(?char ?str ?replace_char)

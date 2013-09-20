@@ -29,6 +29,7 @@
  (assert (id-cat))
  (assert (id-attach_emphatic))
  (assert (id-eng-src))
+ (assert (id-attach_eng_mng))
  )
  ;----------------------------------------------------------------------------------------------------------------
  ; I am going to remarry when you die

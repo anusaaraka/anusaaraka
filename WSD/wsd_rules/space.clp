@@ -3,13 +3,14 @@
 (declare (salience 5000))
 (id-root ?id space)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id spacing )
+;(id-word ?id spacing )
+(viSeRya-between_saMbanXI ?id ?);Added by Shirisha Manju Suggested by Chaitanya Sir (19-09-13)
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id aMwarAlana))
+(assert (id-wsd_word_mng ?id aMwarAla))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  space.clp  	space0   "  ?id "  aMwarAlana )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  space.clp  	space0   "  ?id "  aMwarAla )" crlf))
 )
 
 ;"spacing","N","1.aMwarAlana"
@@ -52,11 +53,13 @@
 ;Added by Meena(29.5.10)
 ;And 21 could stand for the 21 cm radio frequency of hydrogen in space .
 ;Was it a message from some intelligent beings in outer space ?
+;Added kriyA-through_saMbanXI by Shirisha Manju Suggested by Chaitanya Sir (19-09-13) 
+;In communication using radio waves, an antenna at the transmitter radiates the Electromagnetic waves (em waves), which travel through the space and reach the receiving antenna at the other end.
 (defrule space4
 (declare (salience 4600))
 (id-root ?id space)
 ?mng <-(meaning_to_be_decided ?id)
-(or(viSeRya-in_saMbanXI  ?id1 ?id)(kriyA-in_saMbanXI ?id1  ?id))
+(or(viSeRya-in_saMbanXI  ?id1 ?id)(kriyA-in_saMbanXI ?id1  ?id)(kriyA-through_saMbanXI ? ?id))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id aMwarikRa))

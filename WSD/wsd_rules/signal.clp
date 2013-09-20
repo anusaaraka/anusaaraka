@@ -22,6 +22,7 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id saMkewa))
+(assert (id-attach_eng_mng ?id signala)) ;Added by Shirisha Manju (19-09-13)
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  signal.clp 	signal1   "  ?id "  saMkewa )" crlf))
 )

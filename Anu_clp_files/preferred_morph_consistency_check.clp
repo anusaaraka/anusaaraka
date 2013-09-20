@@ -23,6 +23,7 @@
  (assert (id-preceeding_part_of_verb))
  (assert (id-attach_emphatic))
  (assert (id-eng-src))
+ (assert (id-attach_eng_mng))
  )
  ;--------------------------------------------------------------------------------------------------------------------
  ;Rule re-modified by Roja(07-04-11)

@@ -38,6 +38,7 @@
  (assert (conj_head-left_head-right_head))
  (assert (ids-phy_cmp_mng-head-cat-mng_typ-priority)) 
  (assert (id-eng-src))
+ (assert (id-attach_eng_mng))
  )
  ;---------------------------------------------------------------------------------------------------------------
  (deffunction remove_character(?char ?str ?replace_char)

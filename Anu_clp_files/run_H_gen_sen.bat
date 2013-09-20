@@ -20,6 +20,8 @@
  (load-facts "punctuation_info.dat")
  (load-facts "original_word.dat")
  (load-facts "underscore_hyphen_replace_info.dat")
+ (load-facts "wsd_facts_output.dat")
+ (load-facts "GNP_agmt_info.dat")
  (open "hindi_sentence_tmp.dat" h_sen_fp "w")
  (run)
  (clear)
