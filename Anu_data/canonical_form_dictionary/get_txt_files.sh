@@ -1,5 +1,6 @@
 gcc -g -o get_canonical_form-dic.out get_canonical_form-dic.c  myeq.c
-$HOME_anu_test/Anu_src/comp.sh replacing_canonical
+$HOME_anu_test/Anu_src/comp.sh canonical_form_correction
+$HOME_anu_test/Anu_src/comp.sh canonical_to_conventional
 
 #  If dictionaries directory exists then remove it.
   if  [ -e dictionaries ] ; then

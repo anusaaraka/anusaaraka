@@ -11,11 +11,13 @@
  sh get_dictionary_in_canonical_form.sh
  flex canonical_form.lex
  gcc -o canonical_form.out lex.yy.c -lfl myeq.c
- $HOME_anu_test/Anu_src/comp.sh replacing_canonical
+ $HOME_anu_test/Anu_src/comp.sh canonical_form_correction
+ $HOME_anu_test/Anu_src/comp.sh canonical_to_conventional
 
  echo "Generating Canonical form WSD rules"
  cd $HOME_anu_test/WSD/wsd_rules/
  ./compile.sh get_canonical_form_in_wsd $HOME_anu_test/Anu_data/canonical_form_dictionary/myeq.c
+ $HOME_anu_test/Anu_src/comp.sh canonical_to_conventional_in_wsd
  sh get_canonical_form_wsd_rules.sh
 
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries

@@ -63,14 +63,14 @@
 
  echo "Removing canonical files"
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
- rm -f replacing_canonical.out get_canonical_form-dic.out canonical_form.out lex.yy.c
+ rm -f canonical_form_correction.out canonical_to_conventional.out get_canonical_form-dic.out canonical_form.out lex.yy.c
  rm -rf dictionaries 
 
  cd $HOME_anu_test/WSD/wsd_rules/
- rm -rf canonical_form_wsd_rules get_canonical_form_in_wsd.out lex.yy.c
+ rm -rf canonical_form_wsd_rules get_canonical_form_in_wsd.out canonical_to_conventional_in_wsd.out lex.yy.c
 
  cd $HOME_anu_test/new_hnd_mo
- rm -f apertium_hn_in_canonical_form.dix
+ rm -f apertium_hn_in_canonical_form.dix lex.yy.c
 
  cd $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries
  rm -f phy_hnd_multi_word_dic.txt hindi_multi_word.txt

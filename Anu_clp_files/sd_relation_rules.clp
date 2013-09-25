@@ -497,7 +497,8 @@
 (defrule advcl
 (rel_name-sids  advcl ?kri ?samakAlika_kri)
 =>
-(printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	advcl	kriyA-samakAlika_kriyA	"?kri"	"?samakAlika_kri")"crlf)	
+(printout	?*fp*	"(prep_id-relation-parser_ids  -	kriyA-samakAlika_kriyA	"?kri"	"?samakAlika_kri")"crlf)
+(printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	advcl	kriyA-samakAlika_kriyA	"?kri"	"?samakAlika_kri")"crlf)
 )
  ; Ex. The accident happened as the night was falling. 
 ;------------------------------------------------------------------------------------------------------------------------

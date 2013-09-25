@@ -1,10 +1,11 @@
- 20-09-13
+ 25-09-13
  ========
  1. WSD : Modified : interface.clp   number.clp   raise.clp      cultivate.clp   stay.clp       synthetic.clp
 		     section.clp     enough.clp   different.clp	 accident.clp    authority.clp	essentially.clp
 		     early.clp	     slight.clp   entitle.clp    signal.clp      space.clp      table.clp
 	  Added    : argue.clp       cell.clp	  feature.clp    flux.clp        divide.clp	equivalently.clp
 		     demonstrate.clp difficult.clp eliminate.clp
+	  Deleted  : pass_default.clp
  2. causative_verb_mng.clp
 	Modified : modify_mng rule -- (modified source)
  3. hindi_meaning.clp
@@ -16,22 +17,35 @@
 	Modified : attach_emphatic
  6. run_H_gen_sen.bat
 	Loaded 	wsd_facts_output.dat and GNP_agmt_info.dat files in hindi_sentence module
- 7. Updated the following files to add id-attach_eng_mng fact in nerver-called deffunction
+ 7. sd_relation_rules.clp: 
+	In 'advcl' rule added printout statement.
+ 8. Updated the following files to add id-attach_eng_mng fact in nerver-called deffunction
         causative_verb_mng.clp          hindi_meaning.clp       preferred_morph_consistency_check.clp
         prepare_apertium_input.clp      tam_meaning.clp         number.clp      vibakthi.clp
 	hindi_sent_reorder.clp		hindi_sentence.clp
- 8. Updated following lex files:
+ 9. Updated following lex files:
 	--> standard_abbrevations.lex : Added new rule to handle sentences ending with 'in' or 'long'
- 9. Updated following dictionary related files:
-	changes_in_databases	apertium-en-hi.en.metadix
-10. Updated following shell files
+10. Updated following dictionary related files:
+	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix
+11. Updated following shell files
 	--> minion_compile.sh: Removed code related to full parser.
-11. Removed following files
+	--> get_dictionary_in_canonical_form.sh :  based on canonical form changes
+        --> get_txt_files.sh 			:	"
+        --> get_canonical_form_wsd_rules.sh	:	"
+        --> dic_compile.sh			:	"
+        --> processing_manual_sentences.sh	:	"
+        --> get_canonical_dic.sh		:	"
+        --> anu_compile.sh			:	"
+        --> remove_out-files.sh			:	"
+12. Added new files:
+	canonical_to_conventional.lex (to convert canonical to conventional form in dictionaries and hindi morph)
+	canonical_to_conventional_in_wsd.lex (to convert canonical to conventional form in wsd files)
+13. Renamed : replacing_canonical.lex to canonical_form_correction.lex
+14. Removed following files
 	fullparser-hin-1.6.3.tgz
 	compile_full_parser.sh
-12. Updated Log
-13. Updated  sd_verified (505)
-
+15. Updated Log
+16. Updated  sd_verified (505)	phy_verified_eng	verified_eng
 	
  31-08-13
  ========

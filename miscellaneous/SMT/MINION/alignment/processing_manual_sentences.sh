@@ -39,10 +39,17 @@
  $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form.out   < tmp3_wx  >  tmp3_canonical_tmp
  $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form.out   < tmp4_wx  >  tmp4_canonical_tmp
 
- $HOME_anu_test/Anu_data/canonical_form_dictionary/replacing_canonical.out  < tmp1_canonical_tmp  >  tmp1_canonical
- $HOME_anu_test/Anu_data/canonical_form_dictionary/replacing_canonical.out  < tmp2_canonical_tmp  >  tmp2_canonical
- $HOME_anu_test/Anu_data/canonical_form_dictionary/replacing_canonical.out  < tmp3_canonical_tmp  >  tmp3_canonical
- $HOME_anu_test/Anu_data/canonical_form_dictionary/replacing_canonical.out  < tmp4_canonical_tmp  >  tmp4_canonical
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form_correction.out  < tmp1_canonical_tmp  > tmp1_canonical_tmp1
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form_correction.out  < tmp2_canonical_tmp  > tmp2_canonical_tmp1
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form_correction.out  < tmp3_canonical_tmp  > tmp3_canonical_tmp1
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form_correction.out  < tmp4_canonical_tmp  > tmp4_canonical_tmp1
+
+
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_to_conventional.out  < tmp1_canonical_tmp1  >  tmp1_canonical
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_to_conventional.out  < tmp2_canonical_tmp1  >  tmp2_canonical
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_to_conventional.out  < tmp3_canonical_tmp1  >  tmp3_canonical
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_to_conventional.out  < tmp4_canonical_tmp1  >  tmp4_canonical
+
 
  paste tmp1_canonical tmp2_canonical tmp3_canonical tmp4_canonical > shallow_parser_input.txt.out_canonical_tmp
  sed 's/\t;~~~~~~~~~~//g' shallow_parser_input.txt.out_canonical_tmp | sed 's/\t<\/@Sentence>//g' |sed 's/@@/AT_THE_RATE_SYMBOL/g' | sed 's/@//g'  | sed 's/AT_THE_RATE_SYMBOL/@/g'  | sed 's/@symbolSLASH/@SYMBOL-SLASH/g' > shallow_parser_input.txt.out_canonical
@@ -51,7 +58,8 @@
 
  utf8_wx shallow_parser_input.txt > one_sen_per_line_manual_hindi_sen_wx.txt
  $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form.out < one_sen_per_line_manual_hindi_sen_wx.txt  > one_sen_per_line_manual_hindi_sen_wx_in_canonical_form.txt_tmp
- $HOME_anu_test/Anu_data/canonical_form_dictionary/replacing_canonical.out < one_sen_per_line_manual_hindi_sen_wx_in_canonical_form.txt_tmp > one_sen_per_line_manual_hindi_sen_wx_in_canonical_form.txt
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form_correction.out < one_sen_per_line_manual_hindi_sen_wx_in_canonical_form.txt_tmp > one_sen_per_line_manual_hindi_sen_wx_in_canonical_form.txt_tmp1
+ $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_to_conventional.out < one_sen_per_line_manual_hindi_sen_wx_in_canonical_form.txt_tmp1 > one_sen_per_line_manual_hindi_sen_wx_in_canonical_form.txt
 
 sed -i 's/@symbolSLASH/@SYMBOL-SLASH/g' one_sen_per_line_manual_hindi_sen_wx_in_canonical_form.txt
 

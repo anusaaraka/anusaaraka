@@ -30,7 +30,7 @@ mEM XUmrapAna Coda xUzgA.
 
 Hindi meaning using Stanford parser 2.5
 They may have eaten fruits. 
-unhoMne Pala KAe hofge.
+unhoMne Pala KAe hoMge.
 
 Hindi meaning using Stanford parser 2.6
 All are going to school. 
@@ -1017,7 +1017,7 @@ usane paSuoM_ke aXikAroM ke viRaya para vArwAlApa AramBa kiyA.
 
 Hindi meaning using Stanford parser 2.236
 They threw him in the swimming pool. 
-unhoMne waraNa wAla meM usako PefkA.
+unhoMne waraNa wAla meM usako PeMkA.
 
 Hindi meaning using Stanford parser 2.237
 The thief escaped through the open gate. 
@@ -1136,7 +1136,7 @@ Multiple adjective senses are available for beautiful. WSD rule is required
 
 Hindi meaning using Stanford parser 2.263
 The leopard seizes its kill and begins to eat. 
-wenxuA usake SikAra ko pakadawA hE Ora KAnA AramBa karawA hE.
+weMxuA usake SikAra ko pakadawA hE Ora KAnA AramBa karawA hE.
 
 Hindi meaning using Stanford parser 2.264
 The dog went into its house. 
@@ -1181,7 +1181,7 @@ muJe AScarya howA hE ki joYna kahAz hE.
 
 Hindi meaning using Stanford parser 2.274
 Clinton announced on Tuesday a bold new proposal. 
-kliNtana ne eka nirBIka naye praswAva kI mafgalavAra ko GoRaNA kI.
+kliMtana ne eka nirBIka naye praswAva kI mafgalavAra ko GoRaNA kI.
 Clinton ne mafgalavAra ko eka nirBIka naye praswAva kI GoRaNA kI.
 
 Hindi meaning using Stanford parser 2.275
@@ -1231,7 +1231,7 @@ Multiple adjective senses are available for good. WSD rule is required
 
 Hindi meaning using Stanford parser 2.285
 The Master said, if I did not go, how would you ever see? 
-mAlika ne kahA, ki yaxi mEM nahIM gayA WA, wo kEse Apa kaBI BI xeKezge?
+mAlika ne kahA, ki yaxi mEM nahIM gayA WA, wo kEse Apa kaBI BI xeKeMge?
 mAlika ne kahA, ki yaxi mEM nahIM gayA WA, wo Apa kaBI BI kEse xeKezge?
 
 Hindi meaning using Stanford parser 2.286
@@ -1285,7 +1285,7 @@ yaha safgaNaka wulanAwmaka rUpa se aXika mahazgA hE.
 
 Hindi meaning using Stanford parser 2.297
 But where will you get them from. 
-paranwu Apa unako kahAz se prApwa karezge.
+paranwu Apa unako kahAz se prApwa kareMge.
 
 Hindi meaning using Stanford parser 2.298
 Of her childhood we know very little. 
@@ -1299,7 +1299,7 @@ mEM Apake varNana se nahIM socawA hUz ki mEM isakA Ananxa uTAUzgA.
 
 Hindi meaning using Stanford parser 2.300
 The lawyer pointed out that Clinton did not actually kiss Monica. 
-vakIla ne XyAna_AkarRiwa kiyA ki kliNtana ne PropN-monica-PropN ko vAswava meM nahIM cUmA WA.
+vakIla ne XyAna_AkarRiwa kiyA ki kliMtana ne PropN-monica-PropN ko vAswava meM nahIM cUmA WA.
 vakIla ne XyAna_AkarRiwa kiyA ki Clinton ne vAswava meM Monica ko nahIM cUmA WA.
 
 Hindi meaning using Stanford parser 3.1
@@ -1426,7 +1426,7 @@ vaha jafgala meM sEra ke lie jA cukI hE.
 
 Hindi meaning using Stanford parser 3.28
 Since I know English, he spoke to me. 
-kyozki mEM afgrejI jAnawA hUz, isaliye vaha muJase bolA.
+kyoMki mEM afgrejI jAnawA hUz, isaliye vaha muJase bolA.
 
 Hindi meaning using Stanford parser 3.29
 Mysore is also known as the city of palaces. 
@@ -1532,7 +1532,7 @@ Multiple adjective senses are available for brutal. WSD rule is required
 
 Hindi meaning using Stanford parser 3.48
 These cuts in services will particularly affect the old. 
-sevAoM meM ye kAta vqxXoM ko viSeRa rUpa se praBAviwa karezgI.
+sevAoM meM ye kAta vqxXoM ko viSeRa rUpa se praBAviwa kareMgI.
 sevAoM meM ye kAta viSeRa rUpa se vqxXoM ko praBAviwa karezgI.
 
 Hindi meaning using Stanford parser 3.49
@@ -1859,7 +1859,7 @@ Multiple adjective senses are available for massive. WSD rule is required
 
 Hindi meaning using Stanford parser 4.19
 Puri is one of the most important pilgrimage centres for the hindus. 
-PropN-puri-PropN hindus ke lie awi mahawvapUrNa wIrWayAwrA kenxroM meM se eka hE.
+PropN-puri-PropN hindus ke lie awi mahawvapUrNa wIrWayAwrA keMxroM meM se eka hE.
 Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.20
@@ -1895,7 +1895,7 @@ Multiple adjective senses are available for predominant. WSD rule is required
 
 Hindi meaning using Stanford parser 4.27
 How shall we collect the money? 
-hama pEsA kEse iktTA karezge?
+hama pEsA kEse iktTA kareMge?
 
 Hindi meaning using Stanford parser 4.28
 Rahul was the son of Buddha and the name Lahaul is derived from Rahul. 
@@ -2070,7 +2070,7 @@ mEM kala mere miwra ko Amanwriwa_kara rahA hUz.
 
 Hindi meaning using Stanford parser 4.66
 What is the volume of this cylinder? 
-isa sileNdara kA Ayawana kyA hE?
+isa sileMdara kA Ayawana kyA hE?
 
 Hindi meaning using Stanford parser 4.67
 The advantages of science are many. 
@@ -2148,7 +2148,7 @@ vaha muJase sambanXiwa nahIM hE.
 
 Hindi meaning using Stanford parser 4.83
 When the dollar is in a free-fall, even central banks can not stop it. 
-jaba dOlara BArI girAvata meM ho, wo kenxrIya bEfka BI isako nahIM_roka sakawe hEM.
+jaba dOlara BArI girAvata meM ho, wo keMxrIya bEMka BI isako nahIM_roka sakawe hEM.
 Multiple adjective senses are available for central. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.84
