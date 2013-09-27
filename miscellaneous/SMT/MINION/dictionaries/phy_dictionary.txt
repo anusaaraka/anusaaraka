@@ -391,3 +391,4 @@ armature_noun	Armecara
 capacitance_noun	XAriwA
 centripetal_force	aBikeMxrIya_bala
 ferromagnetic_adjective	lOha_cuMbakIya
+physical_adjective	BOwika

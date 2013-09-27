@@ -3,7 +3,7 @@
 (declare (salience 5000))
 (id-TAM ?id 0)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) to )
+(pada_info (group_head_id ?id)(group_cat infinitive)) ; Added by Shirisha Manju Suggested by Chaitanya sir (27-09-13) Everybody is free to explore it and take freely as much as he wants.
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)

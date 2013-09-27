@@ -1,3 +1,18 @@
+;Added by Shirisha Manju Suggested by Chaitanya Sir (23-09-13)
+;In all respects, the displacement current has the same physical effects as the conduction current.
+;
+(defrule respect00
+(declare (salience 5000))
+(id-root ?id respect)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id respects)
+=>
+(retract ?mng)
+(assert (id-wsd_word_mng ?id aMSoM))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  respect.clp    respect00   "  ?id "  aMSoM )" crlf))
+)
+	
 
 (defrule respect0
 (declare (salience 5000))

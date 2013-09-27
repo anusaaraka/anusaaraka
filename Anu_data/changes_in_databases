@@ -820,7 +820,10 @@ Removed:
 					Ex: Note from Fig. 6.17 that the emf has its extremum value when θ = 90º or θ = 270º,						 as the change of flux is greatest at these points.
 	47. experimentalist_noun    	prayogakarwA			(Suggested by Pramila Banasthali 17-09-13)
 					Ex: The quantisation of charge was first suggested by the experimental laws of 
-					    electrolysis discovered by English experimentalist Faraday.					  	
+					    electrolysis discovered by English experimentalist Faraday.		
+	48.circuital_adjective     	paripaWIya			( Suggested by Chaitanya Sir     21-09-13)
+					Ex: The generalised (and correct) Ampere's circuital law has the same form as Eq. 8)
+
 		 	
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1014,6 +1017,8 @@ Removed:
 				Ex: Figure 6.10 shows a rectangular conductor PQRS in which the conductor PQ is free to move.
 	56. rigorous_adjective  kadI			as	sahI/yaWArWa	(Suggested by Shweta  Banasthali 10-09-13)
 				Ex: We stress that our presentation is not wholly rigorous. 
+	57. explore_verb	Koja_kara		as	anveRaNa_kara	(Suggested by Chaitanya Sir   27-09-013  )
+				Ex: Everybody is free to explore it and take freely as much as he wants.
 
 	
     6. Removed meaning from existing list:
@@ -1170,6 +1175,8 @@ Removed:
 	most_of_the_time	jZyAxAwara_samaya	as	prAyaH	  ( Suggested by Chaitanya sir 16-08-13 )
 	well_established	suvyavasWiwa		as	susWApiwa (			"      22-08-13 )
 	has_no_comments_to_make	ko_koWa_tippaprI_nahIM_karanI_hE as ko_koI_tippaNI_nahIM_karanI_hE (    "       )
+	wavelength_of_light	prakASa_waraMgaxEXrya	as	prakASa_waraMgaxErXya (By Manju 25-09-13	)
+
 
 
     Added :
@@ -1230,6 +1237,10 @@ Removed:
 	36. potential_difference    viBavAnwara#viBavAnwara#adjective#2#RM	(Suggested by Shweta  Banasthali  19-09-13)
 				Ex: The battery maintains the potential difference between the plates C and A, that can be
 				    varied.
+	37. with_one_difference	eka_anwara_ke_sAWa#eka_anwara_ke_sAWa#noun#3#RM (Suggested by Chaitanya Sir  21-09-13)
+				Ex: The generalised (and correct) Ampere's circuital law has the same form as Eq. (8.1), with
+				    one difference: "the total current passing through any surface of which the closed loop
+				    is the perimeter " is the sum of the conduction current and the displacement current. 
 
 
     Added new meaning to the existing word:
@@ -1295,6 +1306,7 @@ Removed:
 	capacitance_noun        XAriwA		(	"	"		    " 	 )
 	centripetal_force       aBikeMxrIya_bala(Suggested by Rashmi Banasthali  17-09-13)
 	ferromagnetic_adjective lOha_cuMbakIya	(Suggested by Pramila Banasthali 17-08-13)
+	physical_adjective	BOwika		(Suggested by Chaitanya Sir      25-09-13)
 
 
     Modified :
@@ -1330,11 +1342,12 @@ Removed:
     Added new entry:
     ----------------
 	charged_particles        AveSiwa_kaNa#AveSiwa_kaNa#noun#2#RM		(Suggested by Chaitanya Sir	 07-06-13)
-	discharge_tube		 visarjana_nalI#visarjana_nalI#noun#2#WM	(	"     Pramila Banasthali 19-08-13)
+	discharge_tube		 visarjana_nalI#visarjana_nalI#noun#2#WM	(Suggested by Pramila Banasthali 19-08-13)
 	discharge_valve		 visarjana_vAlva#visarjana_vAlva#noun#2#WM 	(	"		"		 )
 	potential_difference     viBavAnwara#viBavAnwara#noun#1#RM		(	"		"	 23-08-13)
 	dynamically_stable_orbit gawiSIla_sWira_kakRA#gawiSIla_sWira_kakRA#noun#3#RM( 	"		"	 10-09-13)
 	double_slit     	 xviJirI#xviJirI#noun#2#RM			(	"		"    	    "    )
+	closed_loop     	 baMxa_paripaWa#baMxa_paripaWa#noun#2#RM	(Suggested by	Chaitanya Sir	 21-09-13)
 			
 
  changes in causative_verb_mng.txt

@@ -27838,7 +27838,7 @@ exploration_noun	Koja
 explorations_UNDEFINED	Koja
 exploratory_adjective	anveRaNAwmaka
 explore_UNDEFINED	Kojabina_kara
-explore_verb	Koja_kara/CAna-bIna_kara/anveRaNa_kara/Koja
+explore_verb	anveRaNa_kara/Koja_kara/CAna-bIna_kara/Koja
 explored_UNDEFINED	KojanA
 explorer_noun	anveRaka
 explores_UNDEFINED	KojanA
@@ -93489,3 +93489,4 @@ wave-like_adjective	waraMga_saxqSa
 wave-particle_noun	waraMga_kaNa
 extremum_adjective	carama
 experimentalist_noun	prayogakarwA
+circuital_adjective	paripaWIya

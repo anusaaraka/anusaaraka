@@ -20,7 +20,7 @@
  (defrule cp_facts_for_lwg
  (declare (salience 1701))
  (Head-Level-Mother-Daughters ?h ?l ?M $?daut)
- (Node-Category ?M S|SQ|VP|SBAR|and-VB|or-VB);Added and-VB|or-VB in the list by Manju
+ (Node-Category ?M S|SQ|VP|SBAR|and-VB|or-VB|and-MD|and-VBD);Added and-VB|or-VB|and-MD|and-VBD in the list by Manju
  (Head-Level-Mother-Daughters ? ? ?Mot $? ?M $?);Added by Manju (29-07-13)
  (not (Node-Category ?Mot Inf_VP));The Republic of Ireland has introduced a blanket ban on smoking to protect public health and reduce illness. 
  =>
@@ -46,7 +46,7 @@
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?VP $?pre ?VP1 $?pos)
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?VP1 $?pre1 ?CC $?pos1)
  ?f2<-(Node-Category ?CC CC)
- (Node-Category ?VP1 VP|and-VB|or-VB);Added and-VB|or-VB in the list by Manju
+ (Node-Category ?VP1 VP|and-VB|or-VB|and-MD|and-VBD);Added and-VB|or-VB|and-MD|and-VBD in the list by Manju
  (Node-Category ?VP VP)
  =>    
 	(retract ?f1 ?f)
@@ -69,7 +69,7 @@
  (declare (salience 1599))
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?VP1 $?pre1 ?CC $?pos1)
  ?f2<-(Node-Category ?CC CC)
- (Node-Category ?VP1 VP|and-VB|or-VB);Added and-VB|or-VB in the list by Manju
+ (Node-Category ?VP1 VP|and-VB|or-VB|and-MD|and-VBD);Added and-VB|or-VB|and-MD|and-VBD in the list by Manju
  =>
          (retract  ?f1)
          (bind $?verb_list (create$ $?pre1 ?CC $?pos1))

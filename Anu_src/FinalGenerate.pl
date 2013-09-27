@@ -161,8 +161,7 @@ sub generate {
 		print APT "\^$aper_root<cat:v><gen:$gen><num:$num><per:$per><tam:$tam>\$ ";
 		close(APT);
 		if($kriyA_mula ne ""){
-			if($kriyA_mula =~ /calA$|KadA$/){ $kriyA_mula =~ s/A$/I/;}
-
+			if($kriyA_mula =~ /calA$|KadA$/){ $kriyA_mula =~ s/A$/e/;}#Modified 'I' as 'e' by Manju Suggested by 	#Chaitanya Sir Ex: Standing in the middle of the great epic like a lighthouse, it illuminates the whole of the epic.
 			print "$kriyA_mula";print" ";}
 			system("lt-proc -c -g $ARGV[0] < $tmp_dir_path\/$ARGV[3]_tmp\/$ARGV[4]\/apertium_input");
 	}

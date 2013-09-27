@@ -32422,7 +32422,7 @@ watering_place	pAnI_lAne_kI_jagaha#pAnI_lAne_kI_jagaha#noun#2#RM
 waterways_construction_division	jalapaWa_nirmANa_praBAga#jalapaWa_nirmANa_praBAga#noun#3#RM
 wave_guide	waMraga_paWaka#waMraga_paWaka#noun#2#RM
 wavelength_multiplexing	waraMga_xErXya_bahusaMkewana#waraMga_xErXya_bahusaMkewana#noun#2#RM
-wavelength_of_light	prakASa_waraMgaxEXrya#prakASa_waraMgaxEXrya#noun#1#RM
+wavelength_of_light	prakASa_waraMgaxErXya#prakASa_waraMgaxErXya#noun#1#RM
 waving_of_recovery	vasUlI_CodZa_xenA#vasUlI_CodZa_xenA#noun#1#RM
 way_bill	yAwrA_vivaraNI#yAwrA_vivaraNI#noun#2#RM
 way_of_life	jIne_kA_DaMga#jIne_kA_DaMga#noun#3#RM
@@ -33205,6 +33205,7 @@ last_reserve_of_strength	avaSiRta_Sakwi#avaSiRta_Sakwi#noun#2#WM
 one_after_the_other	eka_ke_bAxa_eka#eka_ke_bAxa_eka#noun#1#RM
 under_different_conditions	Binna_xaSAoM_meM#Binna_xaSAoM_meM#noun#3#WM
 potential_difference	viBavAnwara#viBavAnwara#adjective#2#RM
+with_one_difference	eka_anwara_ke_sAWa#eka_anwara_ke_sAWa#noun#3#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

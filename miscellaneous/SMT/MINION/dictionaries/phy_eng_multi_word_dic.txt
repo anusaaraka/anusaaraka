@@ -316,3 +316,4 @@ discharge_valve	visarjana_vAlva#visarjana_vAlva#noun#2#WM
 potential_difference	viBavAnwara#viBavAnwara#noun#1#RM
 dynamically_stable_orbit	gawiSIla_sWira_kakRA#gawiSIla_sWira_kakRA#noun#3#RM
 double_slit	xviJirI#xviJirI#noun#2#RM
+closed_loop	baMxa_paripaWa#baMxa_paripaWa#noun#2#RM

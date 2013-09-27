@@ -44,13 +44,14 @@
 ;-----------------------------------------------------------------------------------------------------------------------
 ; Mysore is also known as the city of palaces.
 ; Added by Shirisha Manju (12-08-11) Suggested by Sukhada
+; Added both in the list by Sukhada (20-9-13) They have both travelled widely. 
 ;If VP > ADVP VP1 and VP1 > x y z then this rule modifies VP as VP > ADVP x y z and removes the node VP1.
 (defrule merge_ADVP
 (declare (salience 1400))
 ?f0<-(Head-Level-Mother-Daughters ?h ?l ?VP ?ADVP ?VP1)
 ?f1<-(Head-Level-Mother-Daughters ?h1 ? ?VP1 $?daut)
-(Head-Level-Mother-Daughters ?later_id ? ?ADVP $?)
-(not (id-original_word ?later_id later)) ;This experiment was later performed around 1911 by Hans Geiger (1882 — 1945) and Ernst Marsden (1889 — 1970, who was 20 year-old student and had not yet earned his bachelor's degree).
+(Head-Level-Mother-Daughters ?id ? ?ADVP $?)
+(not (id-original_word ?id later|both)) ;This experiment was later performed around 1911 by Hans Geiger (1882 — 1945) and Ernst Marsden (1889 — 1970, who was 20 year-old student and had not yet earned his bachelor's degree).
 (Node-Category  ?VP   VP)
 (Node-Category  ?VP1  VP)
 (Node-Category  ?ADVP ADVP)
@@ -153,7 +154,7 @@
 ;The Princess was very surprised to hear this. 
 ;She had always thought that gold could buy anything.
 (defrule move_ADVP_after_v
-(declare (salience 960))
+(declare (salience 960)) ; Salience is increased from 960 to 1960, for: "His plays are still widely performed in the USA."
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot ?advp ?vp $?daut )
 (Node-Category  ?Mot  VP)
 (Node-Category  ?advp  ADVP|RB)
