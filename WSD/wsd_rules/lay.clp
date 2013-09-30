@@ -219,7 +219,7 @@
 )
 
 ;He is the architect who has laid out my house. 
-;yahI vaha vAswuka SilpI hE jisane mere Gara kA nakSA wEyAra kiyA hE
+;yahI vaha vAswu-SilpI hE jisane mere Gara kA nakSA wEyAra kiyA hE
 (defrule lay13
 (declare (salience 3700))
 (id-root ?id lay)
@@ -236,7 +236,7 @@
 )
 
 ;The priest laid out the old lady.
-;pAxarI ne bUDZI Orawa ko xaPZanAne kI wEyArI kI
+;pAxarI ne vqxXa mahilA ko xaPZanAne ke liye wEyAra kiyA
 (defrule lay14
 (declare (salience 3600))
 (id-root ?id lay)

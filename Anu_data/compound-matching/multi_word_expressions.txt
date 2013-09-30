@@ -33206,6 +33206,9 @@ one_after_the_other	eka_ke_bAxa_eka#eka_ke_bAxa_eka#noun#1#RM
 under_different_conditions	Binna_xaSAoM_meM#Binna_xaSAoM_meM#noun#3#WM
 potential_difference	viBavAnwara#viBavAnwara#adjective#2#RM
 with_one_difference	eka_anwara_ke_sAWa#eka_anwara_ke_sAWa#noun#3#RM
+moral_giants	nEwika_xqRti_se_mahAna_vyakwi#nEwika_xqRti_se_mahAna_vyakwi#noun#2#RM
+path_of_righteousness	nEwika_paWa#nEwika_paWa#noun#3#RM
+perfect_detachment	pUrNa_alipwawA#pUrNa_alipwawA#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

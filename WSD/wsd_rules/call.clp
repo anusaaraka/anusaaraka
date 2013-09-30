@@ -661,7 +661,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call42  "  ?id "  " ?id1 "  bulA  )" crlf))
 )
 
-;The sodiers were called out for the war.
+;The soldiers were called out for the war.
 ;sEnikoM ko yuxXa ke lie bulAyA gayA
 (defrule call43
 (declare (salience 700))

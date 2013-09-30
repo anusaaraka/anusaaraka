@@ -92542,6 +92542,7 @@ wounds_UNDEFINED	GAyala_karanA
 wove_UNDEFINED	eka_hI_kaWAsUwra_meM_graWiwa_karanA
 woven_UNDEFINED	eka_hI_kaWAsUwra_meM_graWiwa_karanA
 woven_adjective	guzWA_huA/bunA_huA
+woven_verb	eka_hI_sUwra_meM_graWiwa_kara
 wow_noun	jabarxaswa_majAka
 wow_verb	bahuwa_praBAviwa_kara
 wrack_UNDEFINED	samuxrI_SEvAla

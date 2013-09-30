@@ -29,7 +29,7 @@
 
 ;"bar","N","1.SarAbaGara"
 ;I saw Ram walking into the bar.
-;--"2.salAKa/SalAkA"
+;--"2.salAKa/SalAkA/Cada"
 ;They fitted bars to their windows for safety.
 ;--"3.rukAvata"
 ;Poor health may be a bar to success in life.

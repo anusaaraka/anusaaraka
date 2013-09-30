@@ -6,7 +6,7 @@
 (id-cat_coarse ?id adjective)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id prAmANika))
+(assert (id-wsd_root_mng ?id mAnaka)) ;Replaced prAmANika with mAnaka by Shirisha Manju Suggested by Chaitanya Sir for the below sentences
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  standard.clp 	standard0   "  ?id "  prAmANika )" crlf))
 )
