@@ -16085,7 +16085,7 @@ in_the_interests_of	ke_hiwa_meM#ke_hiwa_meM#noun#3#RM
 in_the_last_analysis	anwima_viSleRaNa_meM#anwima_viSleRaNa_meM#noun#4#RM
 in_the_light_of	ko_XyAna_meM_raKawe_hue#ko_XyAna_meM_raKawe_hue#noun#3#RM
 in_the_long_run	anwawaH#anwawaH#noun#4#RM
-in_the_matterof	ke_bAre_meM#ke_bAre_meM#noun#3#RM
+in_the_matter_of	ke_bAre_meM#ke_bAre_meM#noun#3#RM
 in_the_midst_of	ke_bIca_meM#ke_bIca_meM#noun#3#RM
 in_the_name_of	ke_nAma_para#ke_nAma_para#noun#3#RM
 in_the_nature_of	ke_jEsA#ke_jEsA#noun#3#RM
