@@ -1,12 +1,13 @@
- 30-09-13
+ 04-10-13
  ========
  1. WSD : Modified : interface.clp   number.clp   raise.clp      cultivate.clp   stay.clp       synthetic.clp
 		     section.clp     enough.clp   different.clp	 accident.clp    authority.clp	essentially.clp
 		     early.clp	     slight.clp   entitle.clp    signal.clp      space.clp      table.clp
 		     respect.clp     0_tam.clp	  standard.clp   lay.clp         call.clp       evil.clp
-		     bar.clp
+		     bar.clp         deal.clp
 	  Added    : argue.clp       cell.clp	  feature.clp    flux.clp        divide.clp	equivalently.clp
 		     demonstrate.clp difficult.clp eliminate.clp closely.clp     compress.clp   generation.clp
+		     deduce.clp      define.clp
 	  Deleted  : pass_default.clp
  2. causative_verb_mng.clp
 	Modified : modify_mng rule -- (modified source)
@@ -43,11 +44,13 @@
         --> dic_compile.sh			:	"
         --> processing_manual_sentences.sh	:	"
         --> get_canonical_dic.sh		:	"
-        --> anu_compile.sh			:	"
+        --> anu_compile.sh			:	"                         
+						   Added human.gdbm compilation	
         --> remove_out-files.sh			:	"
 14. Added new files:
-	canonical_to_conventional.lex (to convert canonical to conventional form in dictionaries and hindi morph)
-	canonical_to_conventional_in_wsd.lex (to convert canonical to conventional form in wsd files)
+	--> canonical_to_conventional.lex (to convert canonical to conventional form in dictionaries and hindi morph)
+	--> canonical_to_conventional_in_wsd.lex (to convert canonical to conventional form in wsd files)
+	--> human.txt file
 15. Renamed : replacing_canonical.lex to canonical_form_correction.lex
 16. Removed following files
 	fullparser-hin-1.6.3.tgz

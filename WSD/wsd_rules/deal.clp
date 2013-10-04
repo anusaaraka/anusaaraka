@@ -108,7 +108,7 @@
 ;Added by Pramila(Banasthali University)
 ;This book deals with incest.
 ;Electrostatics deals with charges on glass rods.
-
+;For example, the subject of thermodynamics, developed in the nineteenth century, deals with bulk systems in terms of macroscopic quantities such as temperature, internal energy, entropy, etc.. 
 (defrule deal3
 (declare (salience 4970))
 (id-root ?id deal)

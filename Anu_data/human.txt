@@ -5,6 +5,7 @@ us	1
 them	1
 you	1
 they	1
+I	1
 Mohan	1
 twins	1
 mother	1
@@ -18,7 +19,6 @@ son	1
 daughter	1
 boy	1
 girl	1
-dog	1
 man	1
 examiner	1
 candidate	1
@@ -26,12 +26,12 @@ he	1
 manager	1
 people	1
 teacher	1
-I	1
 she	1
 salesperson	1
 man	1
 person	1
 child	1
 boss	1
+lady	1
 worker	1
-employee	1
+employee	1	

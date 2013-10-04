@@ -76,6 +76,8 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/inanimate.gdbm < inanimate.txt
  echo "Creating animate.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/animate.gdbm < animate.txt
+ echo "Creating human.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/human.gdbm < human.txt
  echo "Creating plural_words.gdbm "
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/plural_words.gdbm < plural_words.txt
  echo "Creating ol_parser_unused_words.gdbm "

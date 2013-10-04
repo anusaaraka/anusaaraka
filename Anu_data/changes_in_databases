@@ -318,8 +318,8 @@
 	school  	----		"	
 	house   	----		"	Ex: This house is jumping with joy. 
 	building        ----		"	Ex: This is a strong building.
-	    
-
+	subject		---- Suggested by Pramila Banasthali (04-10-13)	Ex: For example, the subject of thermodynamics, 
+			     developed in the nineteenth century, deals with bulk systems in terms of macroscopic quantities. 
   changes in not_ne_verb_list.txt
   ===============================
   1. Added

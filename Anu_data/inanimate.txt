@@ -34,3 +34,4 @@ market	1
 school	1
 house	1
 building	1
+subject	1
