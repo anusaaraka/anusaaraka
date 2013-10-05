@@ -380,6 +380,7 @@
 	child	   (	"	  "			"    ) Ex: He is a difficult child.
 	boss	   (	"	  "			"    ) Ex: He is a difficult boss.
 	girl	   (	"	  "			"    ) Ex: He is a difficult girl.
+	officer	   (  		By Manju 	   05-10-13  ) Ex: Mohan is a highly corrupt officer.
 	 
 
   Changes in total-paxasUwra.txt 
@@ -916,6 +917,15 @@ Removed:
 	55. fabric_noun			bunAvata			(Suggested by Chaitanya Sir      14-09-13)
 					Ex: What do they call that new fabric.
 	56. upset_verb			uxvigna_kara/uxvigna_ho 	(Suggested by Chiatanya Sir	 16-09-13)
+	57. electrify_verb  		vixyunmaya_kara			(Suggested by Pramila Banasthali 05-10-13)
+					Ex: Pith balls are electrified.
+	58. imperfection_noun       	apUrNawA			(Suggested by Jagriti Banasthali 05-10-13)
+					Ex: When a transmitted signal propagates along the channel it may get distorted due
+					    to channel imperfection
+	59. static_noun     		sWira				(Suggested by Jagriti Banasthali 05-10-13)
+					Ex: Prices are likely to remain static rather than fall.
+	60. electrified_adjective       vixyunmaya                      (Suggested by Pramila Banasthali 05-10-13)
+                                        Ex: Electrified rods are brought in contact.
 
 
     5. Modifying first meaning from the list :
@@ -1023,7 +1033,9 @@ Removed:
 				Ex: We stress that our presentation is not wholly rigorous. 
 	57. explore_verb	Koja_kara		as	anveRaNa_kara	(Suggested by Chaitanya Sir   27-09-013  )
 				Ex: Everybody is free to explore it and take freely as much as he wants.
-
+	58. static_adjective    niScala			as	sWira		(Suggested by Jagriti Banasthali 05-10-13)
+				Ex: Electrostatics deals with the study of forces, fields and potentials arising from static 
+				    charges.
 	
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1093,13 +1105,14 @@ Removed:
 
     8. Modified category:
        ------------------
-	1. Habegger_- 		as	Habegger_noun	 	( Suggested by Chaitanya Sir 29-02-12 	)
-	2. detour_-		as	detour_noun	  	( Suggested by Rajini 29-02-12        	)
-    	3. monster_-		as	monster_noun		( 		"        		)
-	4. sabre-rattling_-	as	sabre-rattling_noun	( 		"  			)
- 	5. sabre-toothed_-	as	sabre-toothed_adjective (		"			)
+	1. Habegger_- 		as	Habegger_noun	 	( Suggested by Chaitanya Sir 29-02-12 	 )
+	2. detour_-		as	detour_noun	  	( Suggested by Rajini 29-02-12        	 )
+    	3. monster_-		as	monster_noun		( 		"        		 )
+	4. sabre-rattling_-	as	sabre-rattling_noun	( 		"  			 )
+ 	5. sabre-toothed_-	as	sabre-toothed_adjective (		"			 )
 	6. right-oh!_INDC       as	right-oh!_interjection
-	7. God_UNDEFINED	as	God_PropN		( Suggested by Chaitanya Sir 22-08-13 	)
+	7. God_UNDEFINED	as	God_PropN		( Suggested by Chaitanya Sir 22-08-13 	 )
+	8. electrified_UNDEFINED as	electrified_adjective	(Suggested by Pramila Banasthali 05-10-13)
 
 	
  changes in preposition.txt
@@ -1411,3 +1424,8 @@ Removed:
  Added :
    1. prakASiwa_kara  ko     (Suggested by Chaitanya Sir 28-09-13)
 			 Ex:Standing in the middle of the great epic like a lighthouse, it illuminates the whole of the epic.
+
+ human.txt
+ =========
+   Added :
+	officer    ( By  Manju         05-10-13) Ex: Mohan is a highly corrupt officer.

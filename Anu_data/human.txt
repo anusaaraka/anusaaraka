@@ -35,3 +35,4 @@ boss	1
 lady	1
 worker	1
 employee	1	
+officer	1

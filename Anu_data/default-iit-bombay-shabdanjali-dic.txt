@@ -25494,9 +25494,9 @@ electrics_UNDEFINED	bijalI_kA
 electrics_noun	vixyuw-wanwra
 electrification_noun	vixyuwIkaraNa_karanA/vixyuwIkaraNa
 electrifications_UNDEFINED	vixyuwIkaraNa_karanA
-electrified_UNDEFINED	bijalI_kI_Sakwi_pahuzcAnA
+electrified_adjective	vixyunmaya/bijalI_kI_Sakwi_pahuzcAnA
 electrifies_UNDEFINED	bijalI_kI_Sakwi_pahuzcAnA
-electrify_verb	bijalI_kI_Sakwi_pahuzcA/wAra_lagA/vixyuwIkaraNa_kara/uwwejanA_se_Bara_x_e/vixyunmaya_ho
+electrify_verb	vixyunmaya_kara/bijalI_kI_Sakwi_pahuzcA/wAra_lagA/vixyuwIkaraNa_kara/uwwejanA_se_Bara_x_e/vixyunmaya_ho
 electrifying_UNDEFINED	bijalI_kI_Sakwi_pahuzcAnA
 electrifying_adjective	uwwejiwa_karane_vAlA/romAFcaka
 electro-magnetic_UNDEFINED	vixyuwa-cumbakIya
@@ -39218,7 +39218,7 @@ imperfect_adjective	wruwipUrNa/wrutipUrNa/apUrNa
 imperfect_noun	apUrNa_BUwa
 imperfecter_UNDEFINED	wruwipUrNa
 imperfectest_UNDEFINED	wruwipUrNa
-imperfection_noun	xoRa/kamI
+imperfection_noun	apUrNawA/xoRa/kamI
 imperfections_UNDEFINED	xoRa
 imperfectly_UNDEFINED	wruitapUrNa_Dafga_se
 imperfectly_adverb	wrutipUrNa_Dafga_se
@@ -75980,8 +75980,8 @@ statesmanly_adjective	rAjanIwijFociwa
 statesmanship_noun	rAjanIwimawwA/SAsana_kalA
 statesmen_UNDEFINED	rAjanewA
 stateswoman_noun	rAjanIwi_viSAraxa
-static_adjective	niScala/sWira/sWEwika/aparivarwI
-static_noun	vAyumaNdalIya_vikRoBa/sWira_vixyuw/sWEwikI
+static_adjective	sWira/niScala/sWEwika/aparivarwI
+static_noun	sWira/vAyumaNdalIya_vikRoBa/sWira_vixyuw/sWEwikI
 staticer_UNDEFINED	niScala
 staticest_UNDEFINED	niScala
 statics_UNDEFINED	niScala

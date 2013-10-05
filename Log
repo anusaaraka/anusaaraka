@@ -1,13 +1,13 @@
- 04-10-13
+ 05-10-13
  ========
  1. WSD : Modified : interface.clp   number.clp   raise.clp      cultivate.clp   stay.clp       synthetic.clp
 		     section.clp     enough.clp   different.clp	 accident.clp    authority.clp	essentially.clp
 		     early.clp	     slight.clp   entitle.clp    signal.clp      space.clp      table.clp
 		     respect.clp     0_tam.clp	  standard.clp   lay.clp         call.clp       evil.clp
-		     bar.clp         deal.clp
+		     bar.clp         deal.clp     corrupt.clp    derive.clp
 	  Added    : argue.clp       cell.clp	  feature.clp    flux.clp        divide.clp	equivalently.clp
 		     demonstrate.clp difficult.clp eliminate.clp closely.clp     compress.clp   generation.clp
-		     deduce.clp      define.clp
+		     deduce.clp      define.clp	  degree.clp     emerge.clp      enormous
 	  Deleted  : pass_default.clp
  2. causative_verb_mng.clp
 	Modified : modify_mng rule -- (modified source)
@@ -42,6 +42,7 @@
         --> get_txt_files.sh 			:	"
         --> get_canonical_form_wsd_rules.sh	:	"
         --> dic_compile.sh			:	"
+						   Added compilation for all gdbm's
         --> processing_manual_sentences.sh	:	"
         --> get_canonical_dic.sh		:	"
         --> anu_compile.sh			:	"                         

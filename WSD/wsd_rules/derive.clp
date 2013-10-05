@@ -53,3 +53,21 @@
 ;sUwra : prApwa_karanA[<vyuwpanna_honA]
 ;
 ;
+
+;Added by Pramila(Banasthali University)
+;Descrates derived the snell's law.
+
+(defrule derive2
+(declare (salience 4900))
+(id-root ?id derive)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 law|rule)
+(kriyA-object  ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id niRpAxiwa_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  derive.clp 	derive2   "  ?id "  niRpAxiwa_kara )" crlf))
+)
+
