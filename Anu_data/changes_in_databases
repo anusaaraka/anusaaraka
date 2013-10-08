@@ -828,6 +828,8 @@ Removed:
 	49. woven_verb      		eka_hI_sUwra_meM_graWiwa_kara	( Suggested by Chaitanya Sir     28-09-13)
 					Ex: The Mahabharata tells us that human life is like a fabric woven with black and 
 					white threads — threads of good and evil.
+	50.well-seperated_adjective	spaRta_rupa_se_alaga-alaga	(Suggested by Rashmi Banasthali  07-10-13)
+					Ex: Away from the charge, the field gets weaker and the density of field lines is 						 less, resulting in well-separated lines.
 
 		 	
     4. Added new meaning to the existing word:
@@ -869,7 +871,7 @@ Removed:
 	32. works_noun			racanA				(Suggested by Chaitanya Sir  19-08-13	)
 					Ex: The Mahabharata and the Ramayana are thus undoubtedly unique and wonderful works.
 	33. overcome_verb		aBiBUwa_kara_le			(Suggested by Chaitanya Sir  22-08-13   )
-	34. investigation_noun		parIkRaNa			(Suggested by Pramila Banasthali 24-08-13)
+	34. investigation_noun		parIkRaNa			(Suggested by Prachi Banasthali 24-08-13)
 					Ex:In his experimental investigation on the production of electromagnetic waves by					     means of a spark discharge, Hertz observed that high voltage sparks across the						  detector loop were enhanced when the emitter plate was illuminated by ultraviolet
 					light from an arc lamp.
 	35. electrical_adjective    	vExyuwa				(Suggested by Pramila Banasthali 24-08-13)
@@ -926,6 +928,10 @@ Removed:
 					Ex: Prices are likely to remain static rather than fall.
 	60. electrified_adjective       vixyunmaya                      (Suggested by Pramila Banasthali 05-10-13)
                                         Ex: Electrified rods are brought in contact.
+	61. generalisation_noun		vyApakIkaraNa			(Suggested by Prachi Banasthali 07-10-13)
+	                                Ex:The paper by Einstein and Ehrenfest was a generalisation of Pauli 's work .
+        62. generalization_noun		vyApakIkaraNa			(Suggested by Prachi Banasthali 07-10-13)
+	                                Ex:Let us try to relate the area with the solid angle, a generalization of angle to						three dimensions.
 
 
     5. Modifying first meaning from the list :
@@ -1036,6 +1042,10 @@ Removed:
 	58. static_adjective    niScala			as	sWira		(Suggested by Jagriti Banasthali 05-10-13)
 				Ex: Electrostatics deals with the study of forces, fields and potentials arising from static 
 				    charges.
+	59. shave_verb		mUda			as	xADI_banA	(Suggested by Nandini ji LTRC   07-10-13)
+				Ex: He cut himself shaving.
+	60. spend_verb		biwA			as	Karca_kara	(	"		"	"	)
+				Ex: The government has decided to cut back on spending on the armed forces.
 	
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1267,6 +1277,8 @@ Removed:
 	40. perfect_detachment	pUrNa_alipwawA#pUrNa_alipwawA#noun#2#RM		(	"		"	    )
 				Ex: With perfect detachment Vyasa, the great sage, graphically depicts before us the complex 
 				    reality of the vast web of worldly life.
+	41. opera_glass		xUrabIna#xUrabIna#noun#2#WM			(Suggested by Prachi Banasthali 07-10-13)
+				Ex: Here it is achieved by the inspired device of an opera glass . 
     
 
     Added new meaning to the existing word:
@@ -1402,7 +1414,7 @@ Removed:
 	Geiger  	gAigara		(		"		"	)
 	Marsden 	mArsadana	(		"		"	)
 	Galileo		gElIliyo	(Suggested by Prachi Banasthali 29-08-13)
-	Isaac		aAijaka		(		"		"	)
+	Isaac		Aijaka		(		"		"	)
 	Newton		nyUtana		(		"		"	)
 	Faraday		PErAde		(		"		"	)
 	Henry		henarI		(		"		"	)
@@ -1418,6 +1430,11 @@ Removed:
 	Tesla   	teslA		(		"		"	)
 	Einstein        AiMstAina	(Suggested by Pramila Banasthali 10-09-13)
 	Davisson        devisana	(		"		"	)
+	Niels		nIlsa		(Suggested by Rashmi Banasthali 07-10-13)
+	Bohr		bora		(		"		"	)
+	Planck		plAfka		(		"		"	)
+	Arnold		arnolda		(		"		"	)
+	Sommerfeld	somaraPElda	(		"		"	)
 
  changes in kriyA_object_vib.txt
  ==============================
@@ -1425,7 +1442,13 @@ Removed:
    1. prakASiwa_kara  ko     (Suggested by Chaitanya Sir 28-09-13)
 			 Ex:Standing in the middle of the great epic like a lighthouse, it illuminates the whole of the epic.
 
- human.txt
- =========
+ changes in human.txt
+ ===================
    Added :
 	officer    ( By  Manju         05-10-13) Ex: Mohan is a highly corrupt officer.
+
+ changes in named_entities.txt
+ =============================
+  Modified :
+	1. 'RR' is replaced with 'R' 
+		Ex: anwarrARRtrIya_vikAsa_ejeMsI	as	anwarrARtrIya_vikAsa_ejeMsI	(by Roja 08-10-13)

@@ -16,7 +16,6 @@ Hans	hEMsa
 Geiger	gAigara
 Marsden	mArsadana
 Galileo	gElIliyo
-Isaac	aAijaka
 Newton	nyUtana
 Faraday	PErAde
 Henry	henarI
@@ -33,3 +32,9 @@ Davisson	devisana
 Yugoslav	yUgoslAva 
 Nicola	nikolA
 Tesla	teslA
+Isaac	Aijaka
+Niels	nIlsa
+Bohr	bora
+Planck	plAfka
+Arnold	arnolda
+Sommerfeld	somaraPElda

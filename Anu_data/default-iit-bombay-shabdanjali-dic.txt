@@ -33107,7 +33107,7 @@ general_adjective	vyApaka/sAXAraNa/sArvajanika/sAmAnya/praXAna/Ama/senApawi
 general_noun	janarala/senApawi/sAXAraNa/sAmAnya
 generaler_UNDEFINED	sAmAnya
 generalest_UNDEFINED	sAmAnya
-generalisation_noun	sAXAraNIkaraNa
+generalisation_noun	vyApakIkaraNa/sAXAraNIkaraNa
 generalisations_UNDEFINED	sAXAraNIkaraNa
 generalise_UNDEFINED	vyApaka_banAnA
 generalise_verb	sAmAnyIkaraNa_kara/vyApaka_anumAna_lagA/Ama_banA
@@ -33119,7 +33119,7 @@ generalissimo_noun	senAXipawi
 generalist_noun	sAmAnyajFa
 generalisze_verb	sAmAnya_niyama_kA_rUpa_xe
 generality_noun	sAmAnyawA/sAmAnya_bAwa/aXikAMSa
-generalization_noun	sAXAraNIkaraNa
+generalization_noun	vyApakIkaraNa/sAXAraNIkaraNa
 generalizations_UNDEFINED	sAXAraNIkaraNa
 generalize_verb	vyApaka_banA/vyApaka_anumAna_lagA/sAmAnyIkaraNa_kara/sAmAnya_niyama_kA_rUpa_xe/Ama_banA
 generalized_UNDEFINED	vyApaka_banAnA
@@ -71034,7 +71034,7 @@ shattering_noun	woda-Poda/cUra-cUra_honA
 shatteringly_adverb	awyaXika
 shatters_UNDEFINED	naRta_karanA_yA_ho_jAnA
 shave_noun	hajAmawa/muzdana
-shave_verb	mUda/xADI_banA/muzda/kama_kara/CIla/bAla-sAPa_kara
+shave_verb	xADI_banA/mUda/muzda/kama_kara/CIla/bAla-sAPa_kara
 shaved_UNDEFINED	CIlanA
 shaved_adjective	muzdA_huA
 shaven_adjective	muzdA_huA
@@ -74814,7 +74814,7 @@ spelt_verb	uccAraNa_kiyA_yA_liKA
 spelts_UNDEFINED	uccAraNa_kiyA_yA_liKA
 spelunker_noun	kanxarAnveRaka
 spelunking_noun	kanxarAnveRaNa
-spend_verb	biwA/vyaya_kara/lagA/Ko_xe/Karca_kara/gujAra/biwAyA_jA
+spend_verb	Karca_kara/biwA/vyaya_kara/lagA/Ko_xe/gujAra/biwAyA_jA
 spender_noun	apavyayI/Karca_karane_vAlA
 spenders_UNDEFINED	apavyayI
 spending_UNDEFINED	Karca_karanA
@@ -93491,3 +93491,4 @@ wave-particle_noun	waraMga_kaNa
 extremum_adjective	carama
 experimentalist_noun	prayogakarwA
 circuital_adjective	paripaWIya
+well-seperated_adjective	spaRta_rupa_se_alaga-alaga
