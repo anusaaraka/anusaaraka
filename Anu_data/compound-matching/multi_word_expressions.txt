@@ -21544,7 +21544,6 @@ not_and_operation	waWA_pUraka_saMkriyA#waWA_pUraka_saMkriyA#noun#3#RM
 not_angry	kroXiwa_nahIM#kroXiwa_nahIM#noun#2#RM
 not_anywhere	kahIM_nahIM#kahIM_nahIM#noun#2#RM
 not_circuit	pUraka_paripaWa#pUraka_paripaWa#noun#2#RM
-not_either	xonoM_warIke_se_nahIM#xonoM_warIke_se_nahIM#noun#2#RM
 not_element	pUraka_avyava#pUraka_avyava#noun#2#RM
 not_equivalence_gate	pUraka_wulyawA_xvAra#pUraka_wulyawA_xvAra#noun#3#RM
 not_even_then	Pira_BI_nahIM#Pira_BI_nahIM#noun#3#RM

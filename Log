@@ -1,13 +1,14 @@
- 05-10-13
+ 09-10-13
  ========
  1. WSD : Modified : interface.clp   number.clp   raise.clp      cultivate.clp   stay.clp       synthetic.clp
 		     section.clp     enough.clp   different.clp	 accident.clp    authority.clp	essentially.clp
 		     early.clp	     slight.clp   entitle.clp    signal.clp      space.clp      table.clp
 		     respect.clp     0_tam.clp	  standard.clp   lay.clp         call.clp       evil.clp
 		     bar.clp         deal.clp     corrupt.clp    derive.clp
-	  Added    : argue.clp       cell.clp	  feature.clp    flux.clp        divide.clp	equivalently.clp
-		     demonstrate.clp difficult.clp eliminate.clp closely.clp     compress.clp   generation.clp
-		     deduce.clp      define.clp	  degree.clp     emerge.clp      enormous
+	  Added    : argue.clp       cell.clp	    feature.clp    flux.clp       divide.clp     equivalently.clp
+		     demonstrate.clp difficult.clp  eliminate.clp  closely.clp    compress.clp   generation.clp
+		     deduce.clp      define.clp	    degree.clp     emerge.clp     enormous.clp   substantially.clp 
+		     general.clp     sensitive.clp  shrink.clp     succeed.clp    employ.clp 
 	  Deleted  : pass_default.clp
  2. causative_verb_mng.clp
 	Modified : modify_mng rule -- (modified source)

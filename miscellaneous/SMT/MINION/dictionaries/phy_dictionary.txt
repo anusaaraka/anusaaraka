@@ -392,3 +392,6 @@ capacitance_noun	XAriwA
 centripetal_force	aBikeMxrIya_bala
 ferromagnetic_adjective	lOha_cuMbakIya
 physical_adjective	BOwika
+dipole_adjective	xviXruva
+dipole_noun	xviXruva
+diffract_verb	vivarwana_ho

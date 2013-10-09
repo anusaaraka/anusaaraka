@@ -932,6 +932,10 @@ Removed:
 	                                Ex:The paper by Einstein and Ehrenfest was a generalisation of Pauli 's work .
         62. generalization_noun		vyApakIkaraNa			(Suggested by Prachi Banasthali 07-10-13)
 	                                Ex:Let us try to relate the area with the solid angle, a generalization of angle to						three dimensions.
+	63. ambiguity_noun  		anekArWawA			(Suggested by Garima Banasthali 08-10-13)
+					Ex: Notice one ambiguity here.
+	64. dependence_noun 		nirBarwA			(Suggested by Pramila Banasthali 08-10-13)
+					Ex: Our relationship was based on mutual dependence. 
 
 
     5. Modifying first meaning from the list :
@@ -1046,6 +1050,8 @@ Removed:
 				Ex: He cut himself shaving.
 	60. spend_verb		biwA			as	Karca_kara	(	"		"	"	)
 				Ex: The government has decided to cut back on spending on the armed forces.
+	61. sky_verb        	UzcA_tAfga		as	UzcA_mAra	(Suggested by Jagriti Banasthali 09-10-13)
+				Ex: The children sky the ball. 
 	
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1182,7 +1188,8 @@ Removed:
 	10. at_all		bilkula_BI#bilkula_BI#noun#2#RM		(Suggested by Chaitanya Sir 14-09-13)
 				Ex: In any realistic situation, the functions will be differentiable at all points and the
 				    graphs will be smooth.
-
+	11. not_either       xonoM_warIke_se_nahIM#xonoM_warIke_se_nahIM#noun#2#RM(Suggested by Pramila Banasthali 15-08-13)
+				Ex: If you don't go, I won't either.    I won't go and Peter won't either. 
     Modified :
     --------
     	information_system --- sUcanA_praprAlI  ==> sUcanA_praNAlI 	(Suggested by Chaitanya Sir 20-17-12)
@@ -1345,6 +1352,9 @@ Removed:
 	centripetal_force       aBikeMxrIya_bala(Suggested by Rashmi Banasthali  17-09-13)
 	ferromagnetic_adjective lOha_cuMbakIya	(Suggested by Pramila Banasthali 17-08-13)
 	physical_adjective	BOwika		(Suggested by Chaitanya Sir      25-09-13)
+	dipole_adjective        xviXruva	(Suggested by Pramila Banasthali 08-10-13)
+	dipole_noun     	xviXruva	(	"		"		)
+	diffract_verb   	vivarwana_ho	(	"		"		)
 
 
     Modified :

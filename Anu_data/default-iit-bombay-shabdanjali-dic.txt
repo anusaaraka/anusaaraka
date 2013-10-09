@@ -5096,7 +5096,7 @@ ambienter_UNDEFINED	vyApaka
 ambientest_UNDEFINED	vyApaka
 ambiently_UNDEFINED	cAro_ora_se_Gerane_vAlA
 ambiguities_UNDEFINED	saMSayAwmaka_sWiwi
-ambiguity_noun	xvayarWa/aspaRtawA/anekArWawA/saMSayAwmaka_sWiwi
+ambiguity_noun	anekArWawA/xvayarWa/aspaRtawA/anekArWawA/saMSayAwmaka_sWiwi
 ambiguous_adjective	xvayArWI/sanxigXa/aspaRta/anekArWI
 ambiguouser_UNDEFINED	xvayArWI
 ambiguousest_UNDEFINED	xvayArWI
@@ -12949,7 +12949,7 @@ case-law_UNDEFINED	nirNaya_viXi
 case-law_noun	nirNaya-viXi
 case-study_noun	vyakwi_aXyayana
 case_noun	mAmalA/xurxaSA/xaSA/viRaya/viBakwi/vaswusWiwi/vAswavikawA/uxAharaNa/sWiwi/sutakesa/SIse_kA_KAnA/sanxUka/samasyA/saccAI/rogI/praxarSana-maFjURA/praSna/prakarNa/petI/pawwA/parisWiwi/namUnA/myAna/mukaxamA/Kola/kesa/KAsa_AxamI/kAraNa/kAraka/jodA/hAlawa/gilAPa/GatanA/dibbA/DAzcA/baksa/AxamI/AveRtana/avasWA/AvaraNa/asaliyawa/dibiyA
-case_verb	sanxUka_meM_raKanAa/sanxUka_meM_raKa/parIkRaNa_kara/palaswara_lagA/nirIkRana_kara/dibbe_meM_raKa/AvaraNa_caDA
+case_verb	sanxUka_meM_raKa/parIkRaNa_kara/palaswara_lagA/nirIkRana_kara/dibbe_meM_raKa/AvaraNa_caDA
 casebook_noun	rogI-puswikA/muvakkila-puswikA
 cased_UNDEFINED	mAmalA
 casement_UNDEFINED	ramexAra_KidakI
@@ -21382,7 +21382,7 @@ dependanter_UNDEFINED	nirBara
 dependantest_UNDEFINED	nirBara
 dependants_UNDEFINED	nirBara
 depended_UNDEFINED	ASriwa_honA
-dependence_noun	sahArA/viSvAsa/nirBarwA
+dependence_noun	nirBarwA/sahArA/viSvAsa/nirBarwA
 dependences_UNDEFINED	sahArA
 dependencies_UNDEFINED	nirBarawA
 dependency_noun	nirBarawA/aXInawA
@@ -72595,7 +72595,7 @@ sky-rocketed_UNDEFINED	bahuwa_UzcA_uTanA
 sky-rocketing_UNDEFINED	bahuwa_UzcA_uTanA
 sky-rockets_UNDEFINED	bahuwa_UzcA_uTanA
 sky_noun	AsamAna/mOsama/jalavAyu/anwarikRa/AkASa/AkaSa
-sky_verb	UzcA_tAfga/UzcA_mAra/UazcA_mAra/tAga/tAfga
+sky_verb	UzcA_mAra/UzcA_tAfga/tAga/tAfga
 skydive_UNDEFINED	skAI_dAivifga
 skydiver_noun	vimAna_se_kalAbAjI_mArane_vAlA
 skydiving_UNDEFINED	skAI_dAivifga
