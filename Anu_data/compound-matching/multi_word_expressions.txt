@@ -14370,6 +14370,7 @@ gold_exchange_standard	svarNa_vinimaya_mAna#svarNa_vinimaya_mAna#noun#3#RM
 gold_export_point	svarNa_niryAwa_sWala#svarNa_niryAwa_sWala#noun#3#RM
 gold_import_point	svarNa_AyAwa_sWala#svarNa_AyAwa_sWala#noun#3#RM
 gold_medal	svarNa_paxaka#svarNa_paxaka#noun#2#RM
+gold_medals	svarNa_paxaka#svarNa_paxaka#noun#2#RM
 gold_ornaments	svarNa_ABURapra#svarNa_ABURapra#noun#2#RM
 gold_parity	svarNa_samamUlyawA#svarNa_samamUlyawA#noun#2#RM
 gold_reserve	prArakRiwa_svarNa_niXi#prArakRiwa_svarNa_niXi#noun#2#RM
@@ -16657,7 +16658,7 @@ instalment_payment	kiSwa_axAyagI#kiSwa_axAyagI#noun#2#RM
 instalment_sales	kiswa_bikrI#kiswa_bikrI#noun#2#RM
 instalment_system	kiSwa_praprAlI#kiSwa_praprAlI#noun#2#RM
 instantaneous_check	wAwkAlika_jAMca#wAwkAlika_jAMca#noun#2#RM
-instead_of	kI_jagaha_meM#kI_jagaha_meM#noun#1#RM
+instead_of	kI_bajAya#kI_bajAya#noun#1#RM
 institute_for_the_physically_handicapped	vikalAMga_jana_saMsWAna#vikalAMga_jana_saMsWAna#noun#5#RM
 institute_of_criminology_and_forensic_science	aparAXa_evaM_nyAyAlayika_vijFAna_saMsWAna#aparAXa_evaM_nyAyAlayika_vijFAna_saMsWAna#noun#1#RM
 institute_of_nuclear_medicine_and_allied_sciences	nyUklIya_ORaXi_waWA_saMbaxXa_vijFAna_saMsWAna#nyUklIya_ORaXi_waWA_saMbaxXa_vijFAna_saMsWAna#noun#1#RM

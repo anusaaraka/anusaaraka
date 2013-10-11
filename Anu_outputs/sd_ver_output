@@ -2245,5 +2245,13 @@ Hindi meaning using Stanford parser 5.5
 I saw the blue sky above the trees. 
 mEMne pedoM ke Upara nIle AsamAna ko xeKA.
 
+Hindi meaning using Stanford parser 5.6
+Britain won five gold medals. 
+britana ne pAzca svarNa paxaka jIwe.
+
+Hindi meaning using Stanford parser 5.7
+It could win without killing. 
+yaha mArane ke binA jIwa sakA.
+
 Calling Transliteration
 Calling Interface related programs

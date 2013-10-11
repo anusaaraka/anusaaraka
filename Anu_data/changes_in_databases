@@ -935,7 +935,7 @@ Removed:
 	63. ambiguity_noun  		anekArWawA			(Suggested by Garima Banasthali 08-10-13)
 					Ex: Notice one ambiguity here.
 	64. dependence_noun 		nirBarwA			(Suggested by Pramila Banasthali 08-10-13)
-					Ex: Our relationship was based on mutual dependence. 
+					Ex: Our relationship was based on mutual dependence.
 
 
     5. Modifying first meaning from the list :
@@ -1051,7 +1051,9 @@ Removed:
 	60. spend_verb		biwA			as	Karca_kara	(	"		"	"	)
 				Ex: The government has decided to cut back on spending on the armed forces.
 	61. sky_verb        	UzcA_tAfga		as	UzcA_mAra	(Suggested by Jagriti Banasthali 09-10-13)
-				Ex: The children sky the ball. 
+				Ex: The children sky the ball.
+	62. violation_noun	wodanA			as	ullaMGana (Suggested by Rashmi Ranjan Banasthali 10-10-13)
+				Ex: Any violation of Gauss's law will indicate departure from the inverse square law.
 	
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1211,6 +1213,7 @@ Removed:
 	has_no_comments_to_make	ko_koWa_tippaprI_nahIM_karanI_hE as ko_koI_tippaNI_nahIM_karanI_hE (    "       )
 	wavelength_of_light	prakASa_waraMgaxEXrya	as	prakASa_waraMgaxErXya (By Manju 25-09-13	)
 	in_matterof		as			in_matter_of	(By Roja 02-10-13			)
+	instead_of	kI_jagaha_meM		as	kI_bajAya	(Suggested by Prachi Banasthali 09-10-13)
 
 
     Added :
@@ -1285,7 +1288,9 @@ Removed:
 				Ex: With perfect detachment Vyasa, the great sage, graphically depicts before us the complex 
 				    reality of the vast web of worldly life.
 	41. opera_glass		xUrabIna#xUrabIna#noun#2#WM			(Suggested by Prachi Banasthali 07-10-13)
-				Ex: Here it is achieved by the inspired device of an opera glass . 
+				Ex: Here it is achieved by the inspired device of an opera glass .
+	42. gold_medals		svarNa_paxaka#svarNa_paxaka#noun#2#RM		(Suggested by Sukhada		09-10-13)
+				Ex:  Britain won five gold medals. 
     
 
     Added new meaning to the existing word:
@@ -1365,7 +1370,7 @@ Removed:
         modified "Xx" as "xX" in the following words 
                    SuxXa_gawika, SuxXa_gawikI, prasara_koNa_xEGryavqxXi, ruxXoRma, pariSuxXawA and saMbaxXa
 	relative_noun	ApekRa		as	relative_adjective	ApekRa	(Suggested by Chaitanya Sir 05-01-13)
-	elongation_noun	prasara_koNa/prasara_koNa_xEGryavqxXi/prasara_koNa_xErGyavqxXi	as  xErGyavqxXi (Suggested by Chaitanya Sir 11-09-13) Ex: This force is usually proportional to the compression or elongation (for small displacements).
+	elongation_noun	prasara_koNa/prasara_koNa_xEGryavqxXi/prasara_koNa_xErGyavqxXi	as  xErGyavqxXi (Suggested by Pramila Banasthali 11-09-13) Ex: This force is usually proportional to the compression or elongation (for small displacements).
 	
 
     Added new meaning to the existing word:
@@ -1445,6 +1450,7 @@ Removed:
 	Planck		plAfka		(		"		"	)
 	Arnold		arnolda		(		"		"	)
 	Sommerfeld	somaraPElda	(		"		"	)
+	Gauss		gAusa		(Suggested by Prachi Banasthali 10-10-13)
 
  changes in kriyA_object_vib.txt
  ==============================

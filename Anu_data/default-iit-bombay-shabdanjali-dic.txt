@@ -89118,7 +89118,7 @@ violater_UNDEFINED	wodanA
 violates_UNDEFINED	wodanA
 violatest_UNDEFINED	wodanA
 violating_UNDEFINED	wodanA
-violation_noun	wodanA/ullafGana/aparAXa
+violation_noun	ullaMGana/wodanA/aparAXa
 violations_UNDEFINED	wodanA
 violative_UNDEFINED	awikramaNa
 violative_adjective	awikramaNAwmaka
