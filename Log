@@ -1,4 +1,4 @@
- 11-10-13
+ 12-10-13
  ========
  1. WSD : Modified :	interface.clp	number.clp	raise.clp	cultivate.clp	stay.clp	synthetic.clp
 			section.clp	enough.clp	different.clp	accident.clp	authority.clp	essentially.clp
@@ -9,7 +9,8 @@
 			win.clp		difficult.clp	eliminate.clp	closely.clp	compress.clp	generation.clp
 			deduce.clp	define.clp	degree.clp	emerge.clp	enormous.clp	substantially.clp
 			general.clp	sensitive.clp	shrink.clp	succeed.clp	employ.clp      independent.clp
-			instead.clp	involve.clp	lasting.clp	vivid.clp	demonstrate.clp
+			instead.clp	involve.clp	lasting.clp	vivid.clp	demonstrate.clp	arise.clp 
+			closely.clp	realize.clp
 	  Deleted  :	pass_default.clp
  2. causative_verb_mng.clp
 	Modified : modify_mng rule -- (modified source)
@@ -30,15 +31,17 @@
 	Loaded 	wsd_facts_output.dat and GNP_agmt_info.dat files in hindi_sentence module
 10. sd_relation_rules.clp: 
 	In 'advcl' rule added printout statement.
-11. Updated the following files to add id-attach_eng_mng fact in nerver-called deffunction
+11. tam_id.clp
+	Modified : tam_id_frm_vb_grp_en ('ed' as 'ed_en')
+12. Updated the following files to add id-attach_eng_mng fact in nerver-called deffunction
         causative_verb_mng.clp          hindi_meaning.clp       preferred_morph_consistency_check.clp
         prepare_apertium_input.clp      tam_meaning.clp         number.clp      vibakthi.clp
 	hindi_sent_reorder.clp		hindi_sentence.clp
-12. Updated following lex files:
+13. Updated following lex files:
 	--> standard_abbrevations.lex : Added new rule to handle sentences ending with 'in' or 'long'
-13. Updated following dictionary related files:
+14. Updated following dictionary related files:
 	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix
-11. Updated following shell files
+15. Updated following shell files
 	--> minion_compile.sh: Removed code related to full parser.
 	--> get_dictionary_in_canonical_form.sh :  based on canonical form changes
         --> get_txt_files.sh 			:	"
@@ -50,17 +53,17 @@
         --> anu_compile.sh			:	"                         
 						   Added human.gdbm compilation	
         --> remove_out-files.sh			:	"
-14. Added new files:
+16. Added new files:
 	--> canonical_to_conventional.lex (to convert canonical to conventional form in dictionaries and hindi morph)
 	--> canonical_to_conventional_in_wsd.lex (to convert canonical to conventional form in wsd files)
 	--> human.txt file
-15. Renamed : replacing_canonical.lex to canonical_form_correction.lex
-16. Removed following files
+17. Renamed : replacing_canonical.lex to canonical_form_correction.lex
+18. Removed following files
 	fullparser-hin-1.6.3.tgz
 	compile_full_parser.sh
-17. Updated FinalGenerate.pl 
-18. Updated Log
-19. Updated  sd_verified (507)	phy_verified_eng	verified_eng
+19. Updated FinalGenerate.pl 
+20. Updated Log
+21. Updated  sd_verified (508)	phy_verified_eng	verified_eng
 
 	
  31-08-13

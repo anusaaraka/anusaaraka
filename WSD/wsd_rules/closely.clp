@@ -26,7 +26,8 @@
 (declare (salience 3700))
 (id-root ?id closely)
 ?mng <-(meaning_to_be_decided ?id)
-(id-root =( - ?id 1) work)
+(kriyA-kriyA_viSeRaNa ?id1 ?id)
+(id-root ?id1 work)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id milakara))
@@ -34,13 +35,15 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  closely.clp 	closely1   "  ?id "  milakara )" crlf))
 )
 
+
 ;listen closely. 
 ;ध्यानपूर्वक सुनो.
 (defrule closely2
 (declare (salience 3500))
 (id-root ?id closely)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =( - ?id 1) listen)
+(kriyA-kriyA_viSeRaNa ?id1 ?id)
+(id-word ?id1 listen)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id XyAnapUrvaka))
@@ -48,7 +51,8 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  closely.clp 	closely2   "  ?id "  XyAnapUrvaka )" crlf))
 )
 
-;--------------------------- Default rule -------------------------------
+
+;------------------- Default Rule -------------------------
 ;The two events are closely connected. 
 ;दो घटनायें बारीकी से जुड़ी हैं।
 ;Pollution levels are closely monitored.
@@ -58,6 +62,7 @@
 ;Inspectors will examine the accounts very closely.
 ;निरीक्षक बहुत बारीकी से खातों की जांच करेंगे.
 (defrule closely3
+(declare (salience 0))
 (id-root ?id closely)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id adverb)
@@ -68,14 +73,15 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  closely.clp  closely3   "  ?id "  bArIkI_se )" crlf))
 )
 
-;**************************************** EXAMPLES ***************************************************************
+;********************************** EXAMPLES **********************************
 
 ;English and German are closely related.
 ;अंग्रेजी और जर्मन निकट से संबंधित हैं.
 ;The movement of information across the border was closely regulated.
 ;A closely held business.(CLOSELY-HELD ===> owned by a relatively few shareholders).
 
-;*****************************************************  TO BE RESOLVED LATER *************************************
+;*******************************  TO BE RESOLVED LATER *******************************
+
 
 ;She left the room, closely followed by her husband.
 ;The Swiss boat is in the lead, followed closely by the French.

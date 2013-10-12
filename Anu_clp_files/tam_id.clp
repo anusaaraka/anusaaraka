@@ -59,6 +59,7 @@
 	(printout ?*tam_id_file* "(id-TAM " ?root_id " ed_en)" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
+ ;They lived very simply.
  (defrule tam_id_frm_vb_grp_en
  (declare (salience 900))
  (root-verbchunk-tam-chunkids root_to_be_decided ? tam_to_be_decided $? ?root_id)
@@ -67,7 +68,7 @@
  ?mng <-(meaning_to_be_decided ?root_id)
  =>
         (retract ?mng)
-	(printout ?*tam_id_file* "(id-TAM " ?root_id " ed)" crlf)
+	(printout ?*tam_id_file* "(id-TAM " ?root_id " ed_en)" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
  (defrule tam_id_frm_vb_grp

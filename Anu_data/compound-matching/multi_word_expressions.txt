@@ -19553,7 +19553,6 @@ means_of_subsistence	nirvAha_sAXana#nirvAha_sAXana#noun#1#RM
 measure_of_location	sWAnanirXAraNa_mApa#sWAnanirXAraNa_mApa#noun#1#RM
 measured_service	mApiwa_sevA#mApiwa_sevA#noun#2#RM
 measurement_book	mApa_puswaka#mApa_puswaka#noun#2#RM
-measurement_of	sUcanA_mApana#sUcanA_mApana#noun#1#RM
 measures_of_variation	vicaraNa_mApa#vicaraNa_mApa#noun#1#RM
 measuring_officer	mApana_aXikArI#mApana_aXikArI#noun#2#RM
 measuring_tape	mApaka_yawraM#mApaka_yawraM#noun#2#RM
@@ -33210,6 +33209,8 @@ moral_giants	nEwika_xqRti_se_mahAna_vyakwi#nEwika_xqRti_se_mahAna_vyakwi#noun#2#
 path_of_righteousness	nEwika_paWa#nEwika_paWa#noun#3#RM
 perfect_detachment	pUrNa_alipwawA#pUrNa_alipwawA#noun#2#RM
 opera_glass	xUrabIna#xUrabIna#noun#2#WM
+in_case_of	ke_saMxarBa_meM#ke_saMxarBa_meM#noun#2#WM
+in_contrast_to	ke_viparIwa#ke_viparIwa#noun#2#WM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

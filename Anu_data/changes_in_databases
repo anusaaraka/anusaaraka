@@ -320,6 +320,10 @@
 	building        ----		"	Ex: This is a strong building.
 	subject		---- Suggested by Pramila Banasthali (04-10-13)	Ex: For example, the subject of thermodynamics, 
 			     developed in the nineteenth century, deals with bulk systems in terms of macroscopic quantities. 
+	force    	---- Suggested by Garima Banasthali (10-10-13) Ex: As the name suggests, a contact force on an object 								   arises due to contact with some other object: solid or fluid.
+	effect    	----		"		
+
+
   changes in not_ne_verb_list.txt
   ===============================
   1. Added
@@ -1051,8 +1055,11 @@ Removed:
 	60. spend_verb		biwA			as	Karca_kara	(	"		"	"	)
 				Ex: The government has decided to cut back on spending on the armed forces.
 	61. sky_verb        	UzcA_tAfga		as	UzcA_mAra	(Suggested by Jagriti Banasthali 09-10-13)
-				Ex: The children sky the ball.
-	62. violation_noun	wodanA			as	ullaMGana (Suggested by Rashmi Ranjan Banasthali 10-10-13)
+				Ex: The children sky the ball. 
+	62. vehicle_noun    	savArI			as	vAhana		(Suggested by Rashmi Banasthali 11-10-13)
+				Ex: Suppose a light-weight vehicle (say a small car) and a heavy weight vehicle (say a loaded
+				    truck) are parked on a horizontal road
+	63. violation_noun	wodanA			as	ullaMGana (Suggested by Rashmi Ranjan Banasthali 10-10-13)
 				Ex: Any violation of Gauss's law will indicate departure from the inverse square law.
 	
     6. Removed meaning from existing list:
@@ -1192,6 +1199,10 @@ Removed:
 				    graphs will be smooth.
 	11. not_either       xonoM_warIke_se_nahIM#xonoM_warIke_se_nahIM#noun#2#RM(Suggested by Pramila Banasthali 15-08-13)
 				Ex: If you don't go, I won't either.    I won't go and Peter won't either. 
+	12. measurement_of  	sUcanA_mApana#sUcanA_mApana#noun#1#RM   ( By Manju 09-10-13        		)
+				Ex: You are already familiar with some direct methods for the measurement of length. 
+
+
     Modified :
     --------
     	information_system --- sUcanA_praprAlI  ==> sUcanA_praNAlI 	(Suggested by Chaitanya Sir 20-17-12)
@@ -1291,6 +1302,11 @@ Removed:
 				Ex: Here it is achieved by the inspired device of an opera glass .
 	42. gold_medals		svarNa_paxaka#svarNa_paxaka#noun#2#RM		(Suggested by Sukhada		09-10-13)
 				Ex:  Britain won five gold medals. 
+	43. in_case_of      	ke_saMxarBa_meM#ke_saMxarBa_meM#noun#2#WM	(Suggested by Sonam Banasthali 11-10-13	)
+				Ex: Sometimes, in the case of trees, they can be trimmed.
+	44. in_contrast_to	ke_viparIwa#ke_viparIwa#noun#2#WM		(Suggested by Sukhada  	       12-10-13	)
+				Ex: Thermodynamics, in contrast to mechanics, does not deal with the motion of bodies as a 
+				    whole.
     
 
     Added new meaning to the existing word:
@@ -1335,7 +1351,7 @@ Removed:
 	circuit_noun    	paripaWa	(	"	   "		24-08-13 )
 	hydrogen_noun   	hAidrojana	(Suggested by Rashmi Banasthali 24-08-13 )	
 	spectrum_noun   	spektrama	(	"		 "	   "	 )
-	radioactive_adjective   rediyo_ektiva	(	"		 "         "     )
+	radioactive_adjective   rediyo_Ektiva	(	"		 "         "     )
 	lightwaves_noun 	prakASa_waraMga	(Suggested by	Garima Banasthali  "     )
 	diffraction_noun        vivarwana	(	"		"	   "	 )
 	model_noun     		moYdala		(Suggested by Rashmi Banasthali 24-08-13 )
@@ -1451,6 +1467,8 @@ Removed:
 	Arnold		arnolda		(		"		"	)
 	Sommerfeld	somaraPElda	(		"		"	)
 	Gauss		gAusa		(Suggested by Prachi Banasthali 10-10-13)
+	Coulomb       	kUlamba 	(Suggested by Rashmi Banasthali 12-10-13)
+
 
  changes in kriyA_object_vib.txt
  ==============================

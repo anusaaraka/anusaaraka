@@ -39,3 +39,4 @@ Planck	plAfka
 Arnold	arnolda
 Sommerfeld	somaraPElda
 Gauss	gAusa
+Coulomb	kUlamba

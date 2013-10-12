@@ -88440,7 +88440,7 @@ vehement_adjective	prabala/wIvra/pracaNda
 vehementer_UNDEFINED	prabala
 vehementest_UNDEFINED	prabala
 vehemently_adverb	wIvra_rUpa_se/joraxAra_Dafga_se
-vehicle_noun	savArI/yAna/vAhana/vAhaka/saMvAhaka/mAXyama/gAdI
+vehicle_noun	vAhana/savArI/yAna/vAhaka/saMvAhaka/mAXyama/gAdI
 vehicles_UNDEFINED	savArI
 vehicular_adjective	savArI_sambanXI/vAhanIya
 vehicularer_UNDEFINED	savArI_sambanXI
