@@ -38892,12 +38892,12 @@ illusivest_UNDEFINED	mAyAvI
 illusorier_UNDEFINED	mAyAvI
 illusoriest_UNDEFINED	mAyAvI
 illusory_adjective	mAyAvI/avAswavika
-illustrate_verb	vyAKyA_kara/xqRtAnwa_xe/vyaKyA_kara/spaRta_kara/saciwra_vyAKyA_kara
+illustrate_verb	vyAKyA_kara/xqRtAnwa_xe/vyAKyA_kara/spaRta_kara/saciwra_vyAKyA_kara
 illustrated_UNDEFINED	vyAKyA_karanA
 illustrates_UNDEFINED	vyAKyA_karanA
 illustrating_UNDEFINED	vyAKyA_karanA
 illustration_UNDEFINED	uxAharaNa
-illustration_noun	vyaKyA/uxAharana/spaRtIkaraNa
+illustration_noun	vyAKyA/uxAharana/spaRtIkaraNa
 illustrations_UNDEFINED	uxAharaNa
 illustrative_adjective	xqRtAnwa_xenevAlA/vyAKyAwmaka
 illustrativer_UNDEFINED	xqRtAnwa_xenevAlA
@@ -93492,3 +93492,4 @@ extremum_adjective	carama
 experimentalist_noun	prayogakarwA
 circuital_adjective	paripaWIya
 well-seperated_adjective	spaRta_rupa_se_alaga-alaga
+whenever_wh-adverb	jaba_kaBI

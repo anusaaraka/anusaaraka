@@ -17,7 +17,7 @@ vaha bahuXA AwA rahA hE.
 
 Hindi meaning using Stanford parser 2.2
 Rama is a good boy. 
-PropN-rama-PropN eka acCA ladakA hE.
+rAma eka acCA ladakA hE.
 Multiple adjective senses are available for good. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.3
@@ -42,7 +42,7 @@ vaha xUXa pI sakawA hE yA seba KA sakawA hE.
 
 Hindi meaning using Stanford parser 2.8
 Mohan fell from the top of the house. 
-PropN-mohan-PropN Gara ke sarvocca sWAna se girA.
+mohana Gara ke sarvocca sWAna se girA.
 
 Hindi meaning using Stanford parser 2.9
 We had wasted our journey. 
@@ -54,7 +54,7 @@ usane rasoIGara se varRA kI AvAja sunI.
 
 Hindi meaning using Stanford parser 2.11
 Rama gave a book to Mohan. 
-PropN-rama-PropN ne PropN-mohan-PropN ko puswaka xI.
+rAma ne mohana ko puswaka xI.
 
 Hindi meaning using Stanford parser 2.12
 There was a red mark on the door. 
@@ -62,7 +62,7 @@ xaravAje para eka lAla niSAna WA.
 
 Hindi meaning using Stanford parser 2.13
 The book was read by Meera. 
-puswaka PropN-meera-PropN ke xvArA paDI gayI WI.
+puswaka mIrA ke xvArA paDI gayI WI.
 
 Hindi meaning using Stanford parser 2.14
 What is the purpose of Dharma? 
@@ -100,7 +100,7 @@ mEMne Cawa para varRA kI AvAja sunI.
 
 Hindi meaning using Stanford parser 2.22
 Rama is beating a boy. 
-PropN-rama-PropN ladake ko pIta rahA hE.
+rAma ladake ko pIta rahA hE.
 
 Hindi meaning using Stanford parser 2.23
 I went there with my mother. 
@@ -204,7 +204,7 @@ merI ne vaha pATyakrama lene ke lie upaxeSaka se vAxA kiyA.
 
 Hindi meaning using Stanford parser 2.47
 We are waiting for Suresh. 
-hama PropN-suresh-PropN ke lie prawIkRA_kara rahe hEM.
+hama sureSa ke lie prawIkRA_kara rahe hEM.
 
 Hindi meaning using Stanford parser 2.48
 I showed them how they should do it. 
@@ -639,7 +639,7 @@ Multiple adjective senses are available for likely. WSD rule is required
 
 Hindi meaning using Stanford parser 2.148
 He is known as the Einstein of India. 
-vaha BArawa ke AiMstAina ke nAma se jAnA jAwA hE.
+vaha iMdiyA ke AiMstAina ke nAma se jAnA jAwA hE.
 
 Hindi meaning using Stanford parser 2.149
 They divided the money up among the children. 
@@ -801,7 +801,7 @@ isane usa Cote Cexa meM se usakA SarIra nikAlane ke lie safGarRa kiyA.
 
 Hindi meaning using Stanford parser 2.186
 She is a great fan of Lata. 
-vaha PropN-lata-PropN kI eka badI praSaMsaka hE.
+vaha lawA kI eka badI praSaMsaka hE.
 
 Hindi meaning using Stanford parser 2.187
 He was a football fan. 
@@ -903,7 +903,7 @@ vixyArWiyoM kA sonA eka badI samasyA ho rahA hE.
 
 Hindi meaning using Stanford parser 2.210
 Joan Smith is the president of the company. 
-PropN-joan-PropN PropN-smith-PropN kampanI kA aXyakRa hE.
+PropN-joan-PropN smiWa kampanI kA aXyakRa hE.
 
 Hindi meaning using Stanford parser 2.211
 The explosion damaged his hearing. 
@@ -1077,11 +1077,11 @@ mere pAsa bahuwa jyAxA pEsA nahIM hE.
 
 Hindi meaning using Stanford parser 2.250
 Dalai Lama is the abbot of the Tibetian monastery. 
-PropN-dalai-PropN PropN-lama-PropN Tibetian maTa kA maTAXyakRa hE.
+xalAI PropN-lama-PropN Tibetian maTa kA maTAXyakRa hE.
 
 Hindi meaning using Stanford parser 2.251
 There is abject poverty in India. 
-BArawa meM awi garIbI hE.
+iMdiyA meM awi garIbI hE.
 Multiple adjective senses are available for abject. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.252
@@ -1248,7 +1248,7 @@ mEM aba uwanA aXika bAhara_nahIM jAwA hUz.
 
 Hindi meaning using Stanford parser 2.288
 He lives at Chandinichok in Delhi in India. 
-vaha BArawa meM xillI meM PropN-chandinichok-PropN meM rahawA hE.
+vaha iMdiyA meM xillI meM PropN-chandinichok-PropN meM rahawA hE.
 
 Hindi meaning using Stanford parser 2.289
 Who translated the sentence for the student? 
@@ -1402,7 +1402,7 @@ koI acAnaka hazsA Ora mAhOla Bafga_ho gayA WA.
 
 Hindi meaning using Stanford parser 3.23
 To the people of India he is the symbol of mature wisdom. 
-BArawa ke logoM ke lie vaha paripakva buxXimawwA kA prawIka hE.
+iMdiyA ke logoM ke lie vaha paripakva buxXimawwA kA prawIka hE.
 vaha BArawa ke logoM ke lie paripakva buxXimawwA kA prawIka hE.
 Multiple adjective senses are available for mature. WSD rule is required 
 
@@ -1435,7 +1435,7 @@ Mysore mahaloM ke Sahara ke nAma se BI jAnA jAwA hE.
 
 Hindi meaning using Stanford parser 3.30
 Kufri is a small hill station near Shimla. 
-PropN-kufri-PropN PropN-shimla-PropN ke nikata eka CotA parvawIya sWAna hE.
+kuParI SimalA ke nikata eka CotA parvawIya sWAna hE.
 
 Hindi meaning using Stanford parser 3.31
 The girl who you called yesterday has arrived. 
@@ -1511,13 +1511,13 @@ Multiple adjective senses are available for ancient. WSD rule is required
 
 Hindi meaning using Stanford parser 3.44
 Golconda fort is situated on the western outskirts of Hyderabad. 
-PropN-golconda-PropN kilA PropN-hyderabad-PropN ke paScimI bAharI ilAke meM hE.
+PropN-golconda-PropN kilA hExarAbAxa ke paScimI bAharI ilAke meM hE.
 PropN-golconda-PropN kilA PropN-hyderabad-PropN ke paScimI bAharI hisse meM hE.
 Multiple adjective senses are available for western. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.45
 Jumma masjid is considered to be one of the most beautiful mosques in western India. 
-jummA masjixa paScimI BArawa meM sabase aXika sunxara masjixoM meM se eka mAnI jAwI hE.
+jummA masjixa paScimI iMdiyA meM sabase aXika sunxara masjixoM meM se eka mAnI jAwI hE.
 Multiple adjective senses are available for beautiful. WSD rule is required 
 Multiple adjective senses are available for western. WSD rule is required 
 
@@ -1693,7 +1693,7 @@ sIXA jAie Ora xAzyA moda lIjie.
 
 Hindi meaning using Stanford parser 3.84
 Both of her parents are from India. 
-usake mAz bApa xono BArawa se hEM.
+usake mAz bApa xono iMdiyA se hEM.
 
 Hindi meaning using Stanford parser 3.85
 Please enclose a curriculum vitae with your letter of application. 
@@ -1746,7 +1746,7 @@ Sorabe ko aXika namaka kI AvaSyakawA hE.
 
 Hindi meaning using Stanford parser 3.95
 My car broke down when I reached Lalitpur. 
-merI gAdI KarAba_ho gaI mEM PropN-lalitpur-PropN jaba pahuzcA.
+merI gAdI KarAba_ho gaI mEM laliwapura jaba pahuzcA.
 
 Hindi meaning using Stanford parser 3.96
 His wife has had a baby. 
@@ -1803,7 +1803,7 @@ Multiple adjective senses are available for available. WSD rule is required
 
 Hindi meaning using Stanford parser 4.7
 Almora is a small town in Uttarakhanda state. 
-PropN-almora-PropN PropN-uttarakhanda-PropN rAjya meM eka CotA nagara hE.
+almorA PropN-uttarakhanda-PropN rAjya meM eka CotA nagara hE.
 
 Hindi meaning using Stanford parser 4.8
 This card is printed on recycled paper. 
@@ -1834,7 +1834,7 @@ usako AKirakAra janasaBA meM bolane ke lie viRaya milA.
 
 Hindi meaning using Stanford parser 4.14
 The main states of southern India are Tamilnadu, Kerala, Maharashtra, Andhrapradesh and Karnataka. 
-xakRiNI BArawa ke pramuKa rAjya Tamilnadu, PropN-kerala-PropN, PropN-maharashtra-PropN, PropN-andhrapradesh-PropN Ora PropN-karnataka-PropN hEM.
+xakRiNI iMdiyA ke pramuKa rAjya Tamilnadu, PropN-kerala-PropN, PropN-maharashtra-PropN, PropN-andhrapradesh-PropN Ora PropN-karnataka-PropN hEM.
 xakRiNI BArawa ke pramuKa rAjya tamilnadu, kerala, maharashtra, andhrapradesh Ora karnataka hEM.
 Multiple adjective senses are available for main. WSD rule is required 
 Multiple adjective senses are available for southern. WSD rule is required 
@@ -1860,7 +1860,7 @@ Multiple adjective senses are available for massive. WSD rule is required
 
 Hindi meaning using Stanford parser 4.19
 Puri is one of the most important pilgrimage centres for the hindus. 
-PropN-puri-PropN hindus ke lie awi mahawvapUrNa wIrWayAwrA keMxroM meM se eka hE.
+pUrI hindus ke lie awi mahawvapUrNa wIrWayAwrA keMxroM meM se eka hE.
 Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.20
@@ -1887,7 +1887,7 @@ PropN-queen-PropN viktoriyA ne navambara 1869 meM blackfriars pula KolA.
 
 Hindi meaning using Stanford parser 4.25
 Srinagar is the capital city of Jammu and Kashmir and one of the most popular hill stations. 
-PropN-srinagar-PropN PropN-jammu-PropN Ora PropN-kashmir-PropN kA pUFjI Sahara Ora sabase aXika lokapriya pahAdI steSanoM meM se eka hE.
+SrInagara jammU Ora PropN-kashmir-PropN kA pUFjI Sahara Ora sabase aXika lokapriya pahAdI steSanoM meM se eka hE.
 
 Hindi meaning using Stanford parser 4.26
 The toltecs were the predominant civilizations of this time. 
@@ -1900,7 +1900,7 @@ hama pEsA kEse iktTA kareMge?
 
 Hindi meaning using Stanford parser 4.28
 Rahul was the son of Buddha and the name Lahaul is derived from Rahul. 
-PropN-rahul-PropN buxXa kA betA WA Ora nAma PropN-lahaul-PropN PropN-rahul-PropN se viSleRaNa huA hE.
+rAhula buxXa kA betA WA Ora nAma PropN-lahaul-PropN rAhula se viSleRaNa huA hE.
 
 Hindi meaning using Stanford parser 4.29
 The white marbled moti masjid or the pearl mosque was the private mosque for aurangzeb. 
@@ -1944,7 +1944,7 @@ Multiple adjective senses are available for beautiful. WSD rule is required
 
 Hindi meaning using Stanford parser 4.37
 One can reach kumbhalgarh by road from Udaipur (84km) and ranakpur which is 18km from kumbhalgarh. 
-koI BI PropN-udaipur-PropN se (84km) Ora ranakpur se sadaka se kumbhalgarh waka pahuzca sakawA hE jo kumbhalgarh se 18km hE.
+koI BI uxEpura se (84km) Ora ranakpur se sadaka se kumbhalgarh waka pahuzca sakawA hE jo kumbhalgarh se 18km hE.
 koI BI udaipur se (PropN-84km-PropN) Ora ranakpur se sadaka se kumbhalgarh waka pahuzca sakawA hE jo kumbhalgarh se 18km hE.
 
 Hindi meaning using Stanford parser 4.38
@@ -1966,7 +1966,7 @@ Multiple adjective senses are available for beautiful. WSD rule is required
 
 Hindi meaning using Stanford parser 4.41
 Mary, Joe, Sita, Geeta and Louise are coming to the party. 
-merI, PropN-joe-PropN, sIwA, PropN-geeta-PropN Ora PropN-louise-PropN pArtI ko A rahe hEM.
+merI, PropN-joe-PropN, sIwA, gIwA Ora PropN-louise-PropN pArtI ko A rahe hEM.
 merI, PropN-joe-PropN, PropN-sita-PropN, PropN-geeta-PropN Ora PropN-louise-PropN pArtI ko A rahIM hEM.
 
 Hindi meaning using Stanford parser 4.42
@@ -2084,7 +2084,7 @@ Multiple adjective senses are available for busy. WSD rule is required
 
 Hindi meaning using Stanford parser 4.69
 Rama said that Radha told a lie. 
-PropN-rama-PropN ne kahA ki PropN-radha-PropN ne JUTa bawAyA.
+rAma ne kahA ki rAXA ne JUTa bawAyA.
 
 Hindi meaning using Stanford parser 4.70
 The dog who chased me was black. 
@@ -2141,7 +2141,7 @@ unako kArya karane xo.
 
 Hindi meaning using Stanford parser 4.81
 The Hawa mahal was built by the Maharaja Sawai Pratap Singh in 1799 AD and Lal Chand Usta was the architect. 
-Hawa mahal 1799 krIswa paScAwa meM mahArAjA PropN-sawai-PropN PropN-pratap-PropN PropN-singh-PropN ke xvArA banAyA gayA WA Ora PropN-lal-PropN PropN-chand-PropN PropN-usta-PropN vAswukAra WA.
+Hawa mahal 1799 krIswa paScAwa meM mahArAjA PropN-sawai-PropN prawApa siMha ke xvArA banAyA gayA WA Ora lAla canxa PropN-usta-PropN vAswukAra WA.
 
 Hindi meaning using Stanford parser 4.82
 He is not related to me. 

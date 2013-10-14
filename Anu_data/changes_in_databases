@@ -321,7 +321,7 @@
 	subject		---- Suggested by Pramila Banasthali (04-10-13)	Ex: For example, the subject of thermodynamics, 
 			     developed in the nineteenth century, deals with bulk systems in terms of macroscopic quantities. 
 	force    	---- Suggested by Garima Banasthali (10-10-13) Ex: As the name suggests, a contact force on an object 								   arises due to contact with some other object: solid or fluid.
-	effect    	----		"		
+	effect    	----		"	
 
 
   changes in not_ne_verb_list.txt
@@ -361,12 +361,10 @@
         daughter   
         uncle   
         aunt    
-        son        (By Roja 11-02-11 Suggested by Sukhada    )
-	daughter   (            "                            )
-	boy        (            "                            )
+        boy        (By Roja 11-02-11 Suggested by Sukhada    )
         girl       (            "                            )
         dog        (            "                            )
-        man        (            "                            )
+        man        (            "                            ) Ex: He is a difficult man
 	examiner   (Suggested by Preeti ji LTRC  12-08-13    )
         candidate  (      "				     )
         he	   (Suggested by Pramila Banasthali 16-08-13 ) Ex:She deals fairly with her customers.
@@ -379,11 +377,9 @@
 								  demonstrated.
 	salesperson(	"	  "			"    ) Ex:The salesperson plugged in and demonstrated the vacuum 
 							 	  cleaner.
-	man	   (	"	  "		    17-09-13 ) Ex: He is a difficult man.
 	person	   (	"	  "			"    ) Ex: He is a difficult person.
 	child	   (	"	  "			"    ) Ex: He is a difficult child.
 	boss	   (	"	  "			"    ) Ex: He is a difficult boss.
-	girl	   (	"	  "			"    ) Ex: He is a difficult girl.
 	officer	   (  		By Manju 	   05-10-13  ) Ex: Mohan is a highly corrupt officer.
 	 
 
@@ -747,6 +743,8 @@ Removed:
 	89. sketch_verb		rUpareKA_bawA		as	rUpareKA_banA	(Suggested by Chaitanya Sir 19-08-13 )
 	90. propagation_noun	pracAraNa		as	prasAraNa	(	"		    22-08-13 )
 	91. disappointed_adjective	xuKHI		as	xuHKI		(	"		    29-08-13 )
+	92. illustration_noun	vyaKyA			as	vyAKyA		(	" Prachi Banasthali 14-10-13 )
+	93. illustrate_verb	vyaKyA_kara		as	vyAKyA_kara	(By Roja 		    14-10-13 )	  
 
 
     3. Added new entry:
@@ -832,9 +830,10 @@ Removed:
 	49. woven_verb      		eka_hI_sUwra_meM_graWiwa_kara	( Suggested by Chaitanya Sir     28-09-13)
 					Ex: The Mahabharata tells us that human life is like a fabric woven with black and 
 					white threads — threads of good and evil.
-	50.well-seperated_adjective	spaRta_rupa_se_alaga-alaga	(Suggested by Rashmi Banasthali  07-10-13)
+	50. well-seperated_adjective	spaRta_rupa_se_alaga-alaga	(Suggested by Rashmi Banasthali  07-10-13)
 					Ex: Away from the charge, the field gets weaker and the density of field lines is 						 less, resulting in well-separated lines.
-
+	51. whenever_wh-adverb		jaba_kaBI			(Suggested by Rashmi Banasthali  14-10-13)
+					Ex: Thus, whenever you find that the net electric flux through a closed surface is						 zero, 
 		 	
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1055,7 +1054,7 @@ Removed:
 	60. spend_verb		biwA			as	Karca_kara	(	"		"	"	)
 				Ex: The government has decided to cut back on spending on the armed forces.
 	61. sky_verb        	UzcA_tAfga		as	UzcA_mAra	(Suggested by Jagriti Banasthali 09-10-13)
-				Ex: The children sky the ball. 
+				Ex: The children sky the ball.
 	62. vehicle_noun    	savArI			as	vAhana		(Suggested by Rashmi Banasthali 11-10-13)
 				Ex: Suppose a light-weight vehicle (say a small car) and a heavy weight vehicle (say a loaded
 				    truck) are parked on a horizontal road
@@ -1468,7 +1467,8 @@ Removed:
 	Sommerfeld	somaraPElda	(		"		"	)
 	Gauss		gAusa		(Suggested by Prachi Banasthali 10-10-13)
 	Coulomb       	kUlamba 	(Suggested by Rashmi Banasthali 12-10-13)
-
+	Added 5639 entries from 
+	13B		13_bI  to  Zyhno	jyhno 	(By Roja 11-09-13)
 
  changes in kriyA_object_vib.txt
  ==============================

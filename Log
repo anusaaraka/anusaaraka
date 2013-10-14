@@ -1,4 +1,4 @@
- 12-10-13
+ 14-10-13
  ========
  1. WSD : Modified :	interface.clp	number.clp	raise.clp	cultivate.clp	stay.clp	synthetic.clp
 			section.clp	enough.clp	different.clp	accident.clp	authority.clp	essentially.clp
@@ -63,7 +63,7 @@
 	compile_full_parser.sh
 19. Updated FinalGenerate.pl 
 20. Updated Log
-21. Updated  sd_verified (508)	phy_verified_eng	verified_eng
+21. Updated  sd_verified (508)	phy_verified_eng (253)	verified_eng (40)	small_sent_verified_sd (78)
 
 	
  31-08-13

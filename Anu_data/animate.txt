@@ -29,10 +29,10 @@ teacher	1
 I	1
 she	1
 salesperson	1
-man	1
 person	1
 child	1
 boss	1
 worker	1
 employee	1
 officer	1
+soldier	1
