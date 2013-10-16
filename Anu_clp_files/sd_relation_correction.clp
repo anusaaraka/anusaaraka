@@ -1,3 +1,8 @@
+ (deffunction never-called ()
+ (assert (conjunction-components))
+ (assert (prep_id-relation-parser_ids))
+ )
+ ;--------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (17-08-13) Suggested by Sukhada
  ;Standing in the middle of the great epic like a lighthouse, it illuminates the whole of the epic.
  (defrule change_obj_head
@@ -21,4 +26,3 @@
 	(assert (prep_id-relation-parser_ids ?p kriyA-karma ?kri ?sub))
  )
  ;--------------------------------------------------------------------------------------------
-

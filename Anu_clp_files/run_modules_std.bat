@@ -155,7 +155,7 @@
  (load-facts "sd_word.dat")
  (load-facts "lwg_info_tmp.dat")
  (run)
- (save-facts "relations_with_correction.dat" local prep_id-relation-parser_ids)
+ (save-facts "relations_with_correction.dat" local prep_id-relation-parser_ids conjunction-components)
  (clear)
  ;----------------------------------------------------------------------
  ; mapping parser id back to original word id (e.g P1 -> 1)

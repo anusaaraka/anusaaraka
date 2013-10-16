@@ -29,7 +29,7 @@ ApakA nAma kyA hE?
 
 Hindi meaning using Stanford parser 2.5
 Rama married Sita. 
-PropN-rama-PropN ne PropN-sita-PropN se vivAha kiyA.
+rAma ne sIwA se vivAha kiyA.
 
 Hindi meaning using Stanford parser 2.6
 He signed the cheque. 
@@ -41,7 +41,7 @@ usane ina bowaloM ko cihniwa kiyA.
 
 Hindi meaning using Stanford parser 2.8
 Rama ate some sweets. 
-PropN-rama-PropN ne kuCa miTAiyAz KAIM.
+rAma ne kuCa miTAiyAz KAIM.
 
 Hindi meaning using Stanford parser 2.9
 What does he eat? 
@@ -81,7 +81,7 @@ yaha hamArI puswaka hE.
 
 Hindi meaning using Stanford parser 2.18
 Her name is Sita. 
-usakA nAma PropN-sita-PropN hE.
+usakA nAma sIwA hE.
 
 Hindi meaning using Stanford parser 2.19
 What did he eat? 
@@ -123,7 +123,7 @@ vaha awyanwa sAvaXAnI se kAma karawI hE.
 
 Hindi meaning using Stanford parser 2.28
 I will invite Rama. 
-mEM PropN-rama-PropN ko Amanwriwa karUzgA.
+mEM rAma ko Amanwriwa karUzgA.
 
 Hindi meaning using Stanford parser 2.29
 These are children's books. 
@@ -131,7 +131,7 @@ ye baccoM kI puswakeM hEM.
 
 Hindi meaning using Stanford parser 2.30
 Sita is my daughter. 
-PropN-sita-PropN merI betI hE.
+sIwA merI betI hE.
 
 Hindi meaning using Stanford parser 2.31
 I am doing fine. 
@@ -330,6 +330,134 @@ Hindi meaning using Stanford parser 2.78
 You are not good enough. 
 Apa yogya nahIM hEM.
 Multiple adjective senses are available for good. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.79
+I am angry. 
+mEM kroXiwa hUz.
+Multiple adjective senses are available for angry. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.80
+I was innocent. 
+mEM nirxoRa WA.
+
+Hindi meaning using Stanford parser 2.81
+They are guilty. 
+ve aparAXI hEM.
+Multiple adjective senses are available for guilty. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.82
+They were tired. 
+ve Wake hue We.
+Multiple adjective senses are available for tired. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.83
+Children are innocent. 
+bacce nirxoRa hEM.
+
+Hindi meaning using Stanford parser 2.84
+Boys were tired. 
+ladake Wake hue We.
+Multiple adjective senses are available for tired. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.85
+They are deaf. 
+ve baXira hEM.
+Multiple adjective senses are available for deaf. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.86
+They were innocent. 
+ve nirxoRa We.
+
+Hindi meaning using Stanford parser 2.87
+Mother is beautiful. 
+mAz sunxara hE.
+Multiple adjective senses are available for beautiful. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.88
+You are timid. 
+Apa darapoka hEM.
+Multiple adjective senses are available for timid. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.89
+I was clever. 
+mEM cawura WA.
+
+Hindi meaning using Stanford parser 2.90
+They were brave. 
+ve sAhasI We.
+
+Hindi meaning using Stanford parser 2.91
+Mother is healthy. 
+mAz svasWa hE.
+
+Hindi meaning using Stanford parser 2.92
+Children were hungry. 
+bacce BUKe We.
+Multiple adjective senses are available for hungry. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.93
+You are intelligent. 
+Apa buxXimAna hEM.
+
+Hindi meaning using Stanford parser 2.94
+We are lazy. 
+hama AlasI hEM.
+Multiple adjective senses are available for lazy. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.95
+We were dumb. 
+hama gUzge We.
+Multiple adjective senses are available for dumb. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.96
+Play in the park. 
+uxyAna meM Kelie.
+
+Hindi meaning using Stanford parser 2.97
+Climb a tree. 
+peda para caDie.
+
+Hindi meaning using Stanford parser 2.98
+Help to milk a cow. 
+gAya ko xuhane ke lie sahAyawA kIjie.
+
+Hindi meaning using Stanford parser 2.99
+The Sun smiled warmly. 
+sUrya uwsAha se muskarAyA.
+
+Hindi meaning using Stanford parser 2.100
+It was very strong. 
+yaha awyanwa majabUwa WA.
+Multiple adjective senses are available for strong. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.101
+Now jump on my back. 
+aba merI pITa para kUxie.
+
+Hindi meaning using Stanford parser 2.102
+Lalu was red. 
+PropN-lalu-PropN lAla WA.
+
+Hindi meaning using Stanford parser 2.103
+Peelu was yellow. 
+PropN-peelu-PropN pIlA WA.
+
+Hindi meaning using Stanford parser 2.104
+He was very happy. 
+vaha awyanwa KuSa WA.
+Multiple adjective senses are available for happy. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.105
+Grandmother drew a circle. 
+xAxI ne vqwwa KIMcA.
+
+Hindi meaning using Stanford parser 2.106
+It was in his mouth. 
+vaha usake muzha meM WA.
+
+Hindi meaning using Stanford parser 2.107
+They came to a river. 
+ve naxI para Ae.
 
 Calling Transliteration
 Calling Interface related programs

@@ -1552,7 +1552,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-to_saMbanXI  ?id1 ?id2)
 ;(id-root ?id1 heat)
-(or(id-root ?id1 tune|fall)(id-root ?id2 temperature|top|place))
+(or(id-root ?id1 tune|fall)(id-root ?id2 temperature|top|place|river|station))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id para))

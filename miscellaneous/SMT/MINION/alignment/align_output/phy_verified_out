@@ -146,7 +146,7 @@ Multiple adjective senses are available for important. WSD rule is required
 
 Hindi meaning using Stanford parser 2.31
 If the box is stationary relative to the train, it is in fact accelerating along with the train. 
-yaxi baksA relagAdI ko sWira ApekRa hE, wo yaha relagAdI ke sAWa cAla baDAwI huI vAswava meM hE.
+yaxi baksA relagAdI ko sWira ApekRa hE, wo yaha relagAdI ke sAWa wvariwa howA huA vAswava meM hE.
 
 Hindi meaning using Stanford parser 2.32
 What is the physical meaning of a zero vector? 
@@ -212,7 +212,6 @@ Hindi meaning using Stanford parser 2.45
 The general law of energy conservation, however, is still applicable. 
 UrjA saMrakRaNa kA sAmAnya niyama, waWApi, aBI BI lAgU honA hE.
 Multiple adjective senses are available for applicable. WSD rule is required 
-Multiple adjective senses are available for general. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.46
 To measure time, we position a clock in this system. 
@@ -228,7 +227,7 @@ qNAwmaka cihna visWApana kI xiSA sUciwa karawA hE.
 
 Hindi meaning using Stanford parser 2.49
 Instead of visible light, we can use an electron beam. 
-xqSya prakASa kI jagaha meM, hama ilektroYna puFja kA upayoga_kara sakawe hEM.
+xqSya prakASa kI bajAya, hama ilektroYna puFja kA upayoga_kara sakawe hEM.
 Multiple adjective senses are available for visible. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.50
@@ -269,7 +268,7 @@ isake lie, hama nimnaliKiwa kAryaviXi kA upayoga karawe hEM.
 
 Hindi meaning using Stanford parser 2.58
 As discussed above, every measurement involves errors. 
-jEsA ki ke Upara carcA kI, prawyeka mApana BUleM SAmila karawA hE.
+jEsA ki ke Upara carcA kI, prawyeka mApana BUleM sammiliwa hE.
 
 Hindi meaning using Stanford parser 2.59
 All these numbers have the same number of significant figures (digits 2, 3, 0, 8), namely four. 
@@ -375,7 +374,7 @@ yaha xUrI gAdI se Ade_wiraCe jAI huI paWa lambAI kahI jAwI hE.
 
 Hindi meaning using Stanford parser 2.82
 Such quantities are represented by vectors. 
-Ese parimANa saxiSa waka prawiniXi hue gaye hEM.
+Ese parimANa saxiSa ke xvArA prawiniXi hue gaye hEM.
 Multiple adjective senses are available for such. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.83
@@ -822,7 +821,6 @@ MKS nikAya meM ve kramaSaH Canxa, kilogrAma Ora kRaNa We.
 Hindi meaning using Stanford parser 2.183
 Other units retained for general use are given in Table 2SYMBOL-DOT2. 
 sAmAnya upayoga ke lie raKa lI huIM anya ikAiyAz sAraNI 2SYMBOL-DOT2 meM xI gayIM hEM.
-Multiple adjective senses are available for general. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.184
 You are already familiar with some direct methods for the measurement of length. 
@@ -848,7 +846,7 @@ XAwvika, mAnava Ora paSu piMda Ora pqWvI cAlaka hEM.
 
 Hindi meaning using Stanford parser 2.189
 Thus the pith ball is charged by contact. 
-isa prakAra majjA golA samparka waka xoRa lagAI gayI hE.
+isa prakAra majjA golA samparka ke xvArA xoRa lagAI gayI hE.
 
 Hindi meaning using Stanford parser 2.190
 The free electrons in the spheres are attracted towards the rod. 
@@ -1010,7 +1008,6 @@ uwwara isalie, sirPa Osawa prawiroXI bala sUciwa karawA hE.
 Hindi meaning using Stanford parser 2.226
 Often, in these situations, the force and the time duration are difficult to ascertain separately. 
 aksara, ina hAlawa meM, bala Ora kAla avaXi svawanwra rUpa se suniSciwa karanA muSkila hEM.
-Multiple adjective senses are available for difficult. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.227
 This product is called impulse. 

@@ -3957,6 +3957,7 @@
 <e lm="aBIwi"><i>aBIwi</i><par n="SAnwi/__n"/></e>
 <e lm="aBiXA"><i>aBiXA</i><par n="ASA/__n"/></e>
 <e lm="aBiXAna"><i>aBiXAna</i><par n="kroXa/__n"/></e>
+<e lm="aBiXAraNA"><i>aBiXAraNA</i><par n="ASA/__n"/></e>
 <e lm="aBixarSana"><i>aBixarSana</i><par n="kroXa/__n"/></e>
 <e lm="aBixAwA"><i>aBixAwA</i><par n="rAjA/__n"/></e>
 <e lm="aBiXAyaka"><i>aBiXAyak</i><par n="Gar/a__n"/></e>
@@ -12064,7 +12065,7 @@
 <e lm="gola"><i>gola</i><par n="amIra/__adj"/></e>
 <e lm="gola"><i>gol</i><par n="Gar/a__n"/></e>
 <e lm="Gola"><i>Gol</i><par n="Gar/a__n"/></e>
-<e lm="golA"><i>gol</i><par n="gudiy/A__n"/></e>
+<e lm="golA"><i>gol</i><par n="loh/A__n"/></e>
 <e lm="Gola"><i>Gol</i><par n="uT/a__v"/></e>
 <e lm="golAI"><i>golAI</i><par n="AjAxI/__n"/></e>
 <e lm="Golaka"><i>Golaka</i><par n="amIra/__adj"/></e>
@@ -12493,7 +12494,8 @@
 <e lm="gurumuKa"><i>gurumuKa</i><par n="amIra/__adj"/></e>
 <e lm="gurumuKI"><i>gurumuKI</i><par n="AjAxI/__n"/></e>
 <e lm="gurupUrNimA"><i>gurupUrNimA</i><par n="IrRyA/__n"/></e>
-<e lm="guruvAra"><i>guruvAr</i><par n="Gar/a__n"/></e>
+<e lm="guruvAra"><i>guruvAra</i><par n="kroXa/__n"/></e>
+<e lm="buXavAra"><i>buXavAra</i><par n="kroXa/__n"/></e>
 <e lm="guruwA"><i>guruwA</i><par n="IrRyA/__n"/></e>
 <e lm="guruwAla"><i>guruwAla</i><par n="kroXa/__n"/></e>
 <e lm="guruwva"><i>guruwva</i><par n="kroXa/__n"/></e>
@@ -16994,7 +16996,6 @@
 <e lm="lOhaAvaraNa"><i>lOhaAvaraNa</i><par n="kroXa/__n"/></e>
 <e lm="loha"><i>loha</i><par n="amIra/__adj"/></e>
 <e lm="lOha"><i>lOh</i><par n="Gar/a__n"/></e>
-<e lm="lohA"><i>loh</i><par n="loh/A__n"/></e>
 <e lm="lOhamAMda"><i>lOhamAMda</i><par n="kroXa/__n"/></e>
 <e lm="lOhapata"><i>lOhapata</i><par n="kroXa/__n"/></e>
 <e lm="lohAra"><i>lohAr</i><par n="Gar/a__n"/></e>

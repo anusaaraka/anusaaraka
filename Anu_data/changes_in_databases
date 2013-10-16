@@ -12,7 +12,7 @@
 	2. baMxi	as  	baMxI   (by Roja 17-07-12)
   	3. sparXA	as  	sparXa  (    "   12-09-12)
 	4. nIva		as	nIMva	(    "	 15-07-13) Suggested by Sarita ji LTRC)
-				Ex: The foundations of the house are being laid today.  
+				Ex: The foundations of the house are being laid today. 
 
   2. Added :
 	1. SuBakAmanA 	Suggested by sheetal (02-11-09) Eg: We convey our best wishes to the Chinmaya Dham Yatris . 
@@ -35,6 +35,7 @@
 	19. pariGatanA	by Manju Suggested by Chaitanya Sir (11-07-13) 
 			Eg: In any physical phenomenon governed by different forces,several quantities may change with time.
 	20. aMwarpreraNA	Suggested by Anitaji LTRC (18-09-13)Ex: He felt the call of the priesthood early on in his									 life.
+	21. aBiXAraNA	by Roja Suggested by Sukhada (16-10-13) Ex: Under these assumptions, the trajectory of an							 alpha-particle can be computed employing Newton's second law of motion.
 	
   3. Removed :
 	1. mana		Suggested by sheetal (19-11-09) Eg: The big question on everybody's mind is who killed OJ .
@@ -57,7 +58,7 @@
 	17. baDiyA    	Sukhada (16-12-11) 	Eg: The venture's importance for Thomson is great.  
 	18. melA  	Suggested by Sukhada (17-01-12) 
 			Ex:Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival	    19. vArRika		   "same example as mentioned above"
-
+	20. golA	Suggested by Chaitanya Sir (16-10-13) Ex: Let u be the speed of each ball before and after 										collision with the wall, and m the mass of each ball.		
 
   changes in Phrv.txt 
   ===================
@@ -343,12 +344,13 @@
 		Gita    f
 		John    m
 		Mohan   m
-		Shyam   m   (Added by S.Mahalaxmi 20-04-10)
-                Bella	f   (Added by Meena(26.6.10))
-                Ellie   f   (Added by Meena(26.6.10))
-                Kate    f   (Added by Meena(26.6.10))
-		Louise  f   (Added by Shirisha Manju 17-05-12)
-		Mary    f   (Added by Shirisha Manju 19-06-12)
+		Shyam   m	(By S.Mahalaxmi		20-04-10)
+                Bella	f	(By Meena		26-06-10)
+                Ellie   f	(By Meena		26-06-10)
+                Kate    f	(By Meena		26-06-10)
+		Louise  f	(By Shirisha Manju	17-05-12)
+		Mary    f	(By Shirisha Manju	19-06-12)
+		Sundari	f	(By Roja		16-10-13) 
 
   Changes in animate.txt
   ========================
@@ -430,6 +432,7 @@
  17.	PisalanavAlA	kAl/A__adj		(    "  	"	Sukhada	06-07-13)	
  18.	PisalanevAlA	kAl/A__adj		(    "  	"		"	)
  19.	nIlA		kAl/A__adj		(    "  	"		24-09-13)
+ 20.	aBiXAraNA	ASA/__n			(    "	 Suggested by Chaitanya Sir 16-10-13)
 
 Modified :
   1.	<e><p><l>we_hue</l>	as	<e><p><l>owe_hue</l>       for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
@@ -449,6 +452,7 @@ Modified :
   15.   In k/ara__v paradigm modified "karwe"	as	"karawe"		(By Manju Suggested by Sukhada 30-11-12)
   16.	namUnA		regular__adj-noun	as	loh/A__n		(By Roja Suggested by Chaitanya Sir 22-04-13)
   17.	judavA		ladak/A__n		as	rAjA/__n		(	"	"	     17-07-13)
+  18.   golA		gudiy/A__n		as	loh/A__n		(	" Suggested by Sukhada 16-10-13)
 
  Removed : 
 	  1.  Removed the following parsarg paradigms and its related patterns
@@ -1167,6 +1171,7 @@ Removed:
 	6. right-oh!_INDC       as	right-oh!_interjection
 	7. God_UNDEFINED	as	God_PropN		( Suggested by Chaitanya Sir 22-08-13 	 )
 	8. electrified_UNDEFINED as	electrified_adjective	(Suggested by Pramila Banasthali 05-10-13)
+	9. focussed_UNDEFINED	as	focussed_verb		(By Roja 			16-10-13 )	
 
 	
  changes in preposition.txt
@@ -1338,6 +1343,8 @@ Removed:
 				    whole.
 	45. fairly_soon     	jalxI_hI#jalxI_hI#adverb#2#RM			(Suggested by Pramila Banasthali 14-10-13)
 				Ex: We'll have to leave fairly soon.
+	46. last_call		anwima_sUcanA#anwima_sUcanA#noun#2#RM		(Suggested by Anita ji LTRC	16-10-13)
+				Ex: This is the last call for passengers travelling on British Airways flight 199 to Rome.
     
 
     Added new meaning to the existing word:

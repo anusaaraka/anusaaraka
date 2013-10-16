@@ -1,8 +1,8 @@
- #sed 's/(word-nertype\t//g' $1/$2_tmp/ner.txt | sed 's/\t.*//g' > $1/$2_tmp/proper_nouns_list1
-# sort -u $1/$2_tmp/proper_nouns_list1 > $1/$2_tmp/proper_nouns_list_sort 
-# tr '[A-Z]' '[a-z]' < $1/$2_tmp/proper_nouns_list_sort > $1/$2_tmp/proper_nouns_list
- sort -u $1/$2_tmp/proper_nouns_list > $1/$2_tmp/proper_nouns_list_sort
- cp $1/$2_tmp/proper_nouns_list_sort $1/$2_tmp/proper_nouns_list
+ sed 's/(word-nertype\t//g' $1/$2_tmp/ner.txt | sed 's/\t.*//g' > $1/$2_tmp/proper_nouns_list1
+ sort -u $1/$2_tmp/proper_nouns_list1 > $1/$2_tmp/proper_nouns_list_sort 
+ tr '[A-Z]' '[a-z]' < $1/$2_tmp/proper_nouns_list_sort > $1/$2_tmp/proper_nouns_list
+# sort -u $1/$2_tmp/proper_nouns_list > $1/$2_tmp/proper_nouns_list_sort
+# cp $1/$2_tmp/proper_nouns_list_sort $1/$2_tmp/proper_nouns_list
  sh transliteration-script.sh $1/$2_tmp proper_nouns_list 2> /dev/null
 
  #To get proper noun gdbm (17-06-13) For alignmnet work purpose

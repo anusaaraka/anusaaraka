@@ -151,21 +151,17 @@
 
 
 
-
+;Re-Modified by Sukhada 16-10-13
 ;Modified by Meena(17.8.11);added "|verb|verbal_noun" in the list to stop this rule for By going there you can earn more money.
-;Modified by Meena(2.8.11) added{(not(id-cat_coarse =(+ ?id 1) PropN)) and (kriyA-by_saMbanXI ?kri =(+ ?id 1))},deleted (id-cat_coarse =(+ ?id 1) noun) and commented (not (or (kriyA-by_saMbanXI  ?id1 ... )(... ... ...)))
-;Modified by Meena(20.11.10); commented (kriyA-by_saMbanXI...) and added (id-cat_coarse =(+ ?id 1) noun)(id-root ?id1....)
 ;Added by Meena(12.11.09)
 ;By 2012 the task will be completed.
 (defrule by11
 (declare (salience 4000))
-;(declare (salience 3900))
 (id-root ?id by)
 ?mng <-(meaning_to_be_decided ?id)
 (not(id-cat_coarse =(+ ?id 1) PropN|verb|verbal_noun|pronoun))
-(or(id-cat =(+ ?id 1) <num>)(kriyA-by_saMbanXI ?kri =(+ ?id 1))(id-root =(+ ?id 1) ?str&:(and (not (numberp ?str))(gdbm_lookup_p "time.gdbm" ?str))))
-;(or(id-cat =(+ ?id 1) <num>)(id-cat_coarse =(+ ?id 1) noun)(id-root =(+ ?id 1) ?str&:(and (not (numberp ?str))(gdbm_lookup_p "time.gdbm" ?str)))) ;Renamed 'month_day.gdbm' as 'time.gdbm' by Roja (08-03-11)
-;(not (or (kriyA-by_saMbanXI  ?id1 =(+ ?id 1))(viSeRya-by_saMbanXI  ?id1 =(+ ?id 1)))) ;Added by Roja(13-12-10);I told him by telephone that I was coming by car.
+(or (and (id-cat =(+ ?id 1) <num>)(kriyA-by_saMbanXI ?kri =(+ ?id 1)))
+    (and(kriyA-by_saMbanXI ?kri =(+ ?id 1))(id-root =(+ ?id 1) ?str&:(and (not (numberp ?str))(gdbm_lookup_p "time.gdbm" ?str)))))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id waka))

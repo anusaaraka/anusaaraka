@@ -297,7 +297,7 @@ usane wawkAla xurGatanA ke bAre meM unako bawAyA.
 usane xurGatanA ke bAre meM wawkAla unako bawAyA.
 
 Hindi meaning using Stanford parser 2.68
-He made a mistake in inviting John. 
+He made a mistake in invitin!	g John. 
 usane joYna ko Amanwriwa karane meM galawI kI.
 
 Hindi meaning using Stanford parser 2.69
@@ -361,7 +361,7 @@ eka kIde ne bAhu para muJe kAtA.
 
 Hindi meaning using Stanford parser 2.83
 He wrote the biography of Tagore. 
-usane PropN-tagore-PropN kI jIvanI liKI.
+usane tEgora kI jIvanI liKI.
 
 Hindi meaning using Stanford parser 2.84
 All his books are good. 
@@ -2256,6 +2256,107 @@ yaha mArane ke binA jIwa sakA.
 Hindi meaning using Stanford parser 5.8
 He realized that he was in great danger. 
 usako boXa huA ki vaha badI vipawwi meM WA.
+
+Hindi meaning using Stanford parser 5.9
+I am young and healthy. 
+mEM waruNa Ora svasWa hUz.
+
+Hindi meaning using Stanford parser 5.10
+The Sun was declared stronger than the Wind. 
+sUrya havA kI apekRA aXika saSakwa GoRiwa kiyA gayA WA.
+
+Hindi meaning using Stanford parser 5.11
+Once there were three little pigs, Sonu, Monu and Gonu Sonu ran to Monu's house. 
+eka bAra wIna Cote suara We, sonU, monU Ora PropN-gonu-PropN sonU monU ke Gara kI ora xOde.
+
+Hindi meaning using Stanford parser 5.12
+He smiled and said, Good morning! 
+vaha muskarAyA Ora kahA, ki supraBAwa!
+Multiple adjective senses are available for good. WSD rule is required 
+
+Hindi meaning using Stanford parser 5.13
+The giraffe said, Not if you ride on my back. 
+jirAPa ne kahA, ki nahIM yaxi Apa merI pITa para savArI karawe hEM.
+
+Hindi meaning using Stanford parser 5.14
+I go to school on Mondays, Tuesdays, Wednesdays, Thursdays and Fridays. 
+mEM somavAra, mafgalavAra, buXavAra, guruvAra Ora SukravAra ko vixyAlaya jAwA hUz.
+
+Hindi meaning using Stanford parser 5.15
+On Saturdays I play games at school. 
+SanivAra ko mEM vixyAlaya meM Kela KelawA hUz.
+
+Hindi meaning using Stanford parser 5.16
+Then we can cross the river. 
+waba hama naxI pAra_kara sakawe hEM.
+
+Hindi meaning using Stanford parser 5.17
+She had two chicks, Lalu and Peelu. 
+usake xo cUje, PropN-lalu-PropN Ora PropN-peelu-PropN We.
+
+Hindi meaning using Stanford parser 5.18
+One day Mittu was flying. 
+eka xina PropN-mittu-PropN uda rahA WA.
+
+Hindi meaning using Stanford parser 5.19
+He saw a big yellow mango on a tree. 
+usane peda para eka bade pIle Ama ko xeKA.
+
+Hindi meaning using Stanford parser 5.20
+"I want to eat that yellow mango," he said. 
+"mEM vaha pIlA Ama KAnA cAhawA hUz," usane kahA.
+
+Hindi meaning using Stanford parser 5.21
+He saw a big black crow. 
+usane eka bade kAle kOe ko xeKA.
+
+Hindi meaning using Stanford parser 5.22
+Mittu was afraid of the crow. 
+PropN-mittu-PropN kOe se BayaBIwa WA.
+
+Hindi meaning using Stanford parser 5.23
+Mittu saw a red balloon. 
+PropN-mittu-PropN ne eka lAla gubbAre ko xeKA.
+
+Hindi meaning using Stanford parser 5.24
+It was under a tree. 
+vaha peda ke nIce WA.
+
+Hindi meaning using Stanford parser 5.25
+He picked up the red balloon. 
+usane lAla gubbArA uTAyA.
+
+Hindi meaning using Stanford parser 5.26
+The crow was sitting on the tree. 
+kOA peda para bETA WA.
+
+Hindi meaning using Stanford parser 5.27
+He ate the big yellow mango. 
+usane badA pIlA Ama KAyA.
+
+Hindi meaning using Stanford parser 5.28
+It really looked like a ball. 
+yaha vAswava meM eka gole kI waraha xiKA.
+
+Hindi meaning using Stanford parser 5.29
+It really looks like a balloon. 
+yaha vAswava meM gubbAre kI waraha xiKawA hE.
+
+Hindi meaning using Stanford parser 5.30
+One day Murali ate a mango. 
+eka xina PropN-murali-PropN ne Ama KAyA.
+
+Hindi meaning using Stanford parser 5.31
+He threw the seed behind his house. 
+usane usake Gara ke pICe bIja PeMkIM.
+
+Hindi meaning using Stanford parser 5.32
+We will try again, Bobby said. 
+hama Pira se prayAsa kareMge, bobI ne kahA.
+
+Hindi meaning using Stanford parser 5.33
+I will take you to school. 
+mEM Apako vixyAlaya le jAUzgA.
 
 Calling Transliteration
 Calling Interface related programs

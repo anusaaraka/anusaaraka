@@ -30708,7 +30708,7 @@ focus_verb	XyAna_kenxriwa_kara/xeKane_yogya_ho/safkenxriwa_kara/lensa_TIka_kara/
 focused_UNDEFINED	sAPa_xiKAI_xenA
 focuses_UNDEFINED	sAPa_xiKAI_xenA
 focusing_UNDEFINED	sAPa_xiKAI_xenA
-focussed_UNDEFINED	sAPa_xiKa
+focussed_verb	sAPa_xiKa
 focussed_adjective	sAPa_xiKanA
 focussing_UNDEFINED	sAPa_xiKAI_xenA
 fodder_noun	paSuoM_kA_cArA/cArA/samAcAra

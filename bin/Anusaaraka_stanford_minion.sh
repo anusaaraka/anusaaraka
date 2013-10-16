@@ -57,8 +57,7 @@
 
  echo "Calling Transliteration"
  cd $HOME_anu_test/miscellaneous/transliteration/work
- sh run_transliteration.sh $MYPATH/tmp $1
-
+ sh run_transliteration_for_minion.sh $MYPATH/tmp $1
 
  cd $PRES_PATH
  echo "Saving Format info ..."

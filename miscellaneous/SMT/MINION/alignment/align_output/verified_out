@@ -129,7 +129,7 @@ Multiple adjective senses are available for sad. WSD rule is required
 
 Hindi meaning using Stanford parser 2.28
 He said to his friends, I wish to stay with Mangal and Sukhi for a while. 
-usane kahA ki usake miwroM ko, mEM kuCa_samaya waka PropN-mangal-PropN Ora PropN-sukhi-PropN vAlA rahane ke lie icCA karawA hUz.
+usane kahA ki usake miwroM ko, mEM kuCa_samaya waka mafgala Ora PropN-sukhi-PropN vAlA rahane ke lie icCA karawA hUz.
 
 Hindi meaning using Stanford parser 2.29
 Awake so early? 
@@ -145,7 +145,7 @@ vaha kyA hE?
 
 Hindi meaning using Stanford parser 2.32
 Lakshmi is the goddess of wealth, Sukhi explained. 
-PropN-lakshmi-PropN Xana kI xevI hE, PropN-sukhi-PropN ne samaJAyA.
+lakRmI Xana kI xevI hE, PropN-sukhi-PropN ne samaJAyA.
 
 Hindi meaning using Stanford parser 2.33
 We are as poor as ever. 
@@ -161,7 +161,7 @@ vaha WA Sleepy-head, vaha wAlAba meM usake gulAbI rafga ke kumuxinI biswara para
 
 Hindi meaning using Stanford parser 2.36
 Sukhi would be upset, since it was the day of Lakshmi Puja. 
-PropN-sukhi-PropN ultA, hogA kyoMki vaha PropN-lakshmi-PropN PropN-puja-PropN kA xina WA.
+PropN-sukhi-PropN ultA, hogA kyoMki vaha lakRmI pUjA kA xina WA.
 Multiple adjective senses are available for upset. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.37

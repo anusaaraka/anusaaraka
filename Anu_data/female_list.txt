@@ -7093,7 +7093,6 @@ golakalI	f
 golabAwa	f
 golamirca	f
 golamejakAnPreMsa	f
-golA	f
 golAI	f
 golAbArI	f
 golAbArUxa	f
@@ -32181,3 +32180,4 @@ janasaBA	f
 wiWI	f
 pariGatanA	f
 aMwarpreraNA	f
+aBiXAraNA	f
