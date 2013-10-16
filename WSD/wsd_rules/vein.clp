@@ -22,9 +22,9 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id SIrA))
+(assert (id-wsd_root_mng ?id SirA)); Replaced 'SIrA' with 'SirA' by Shirisha Manju Suggested by Chaitanya Sir (14-10-13)
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  vein.clp 	vein1   "  ?id "  SIrA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  vein.clp 	vein1   "  ?id "  SirA )" crlf))
 )
 
 ;default_sense && category=noun	SirA	0

@@ -322,6 +322,9 @@
 			     developed in the nineteenth century, deals with bulk systems in terms of macroscopic quantities. 
 	force    	---- Suggested by Garima Banasthali (10-10-13) Ex: As the name suggests, a contact force on an object 								   arises due to contact with some other object: solid or fluid.
 	effect    	----		"	
+	evidence        ---- Suggested by Jagriti Banasthali (14-10-13) Ex: All the evidence suggests that he stole the money
+	symptom		----		"				Ex: The symptoms suggest a minor heart attack.
+
 
 
   changes in not_ne_verb_list.txt
@@ -834,7 +837,17 @@ Removed:
 					Ex: Away from the charge, the field gets weaker and the density of field lines is 						 less, resulting in well-separated lines.
 	51. whenever_wh-adverb		jaba_kaBI			(Suggested by Rashmi Banasthali  14-10-13)
 					Ex: Thus, whenever you find that the net electric flux through a closed surface is						 zero, 
-		 	
+	52. action-reaction_adjective   kriyA-prawikriyA	 	(Suggested by Garima Banasthali  14-10-13)
+					Ex: The important thing to remember is that an action-reaction pair consists of
+					    mutual forces which are always equal and opposite between two bodies.
+	53. construct_noun  		racanA				(Suggested by Garima Banasthali  14-10-13)
+					Ex: Electric and magnetic fields are regarded as physical entities, not merely 
+					    mathematical constructs.
+	54. cross-sectional_adjective	anuprasWa_kAta			(Suggested by Garima Banasthali  14-10-13)
+					Ex: So if one wishes to estimate the density of field lines, one has to consider the 
+					    number of lines per unit cross-sectional area, perpendicular to the lines.
+
+
     4. Added new meaning to the existing word:
        ---------------------------------------
         1. inaudibly_adverb             XImI_Avaja_meM                  ( Suggested by Rajini   29-02-12        )
@@ -939,6 +952,17 @@ Removed:
 					Ex: Notice one ambiguity here.
 	64. dependence_noun 		nirBarwA			(Suggested by Pramila Banasthali 08-10-13)
 					Ex: Our relationship was based on mutual dependence.
+	65. discrete_adjective      	vivikwa				(Suggested by Pramila Banasthali 14-10-13)
+					Ex: We have so far dealt with charge configurations involving discrete charges .
+	66. vibrate_verb    		kampana_kara			(Suggested by Rashmi Banasthali 14-10-13)
+					Ex: Every time a train went past the walls vibrated.
+	67. accelerate_verb 		wvariwa_ho				(Suggested by Garima Banasthali 14-10-13)
+					Ex: We know that an object which moves in a circle is being constantly accelerated.
+	68. pedestal_noun   		pAxa_pITikA			(Suggested by Shweta Banasthali 14-10-13)
+					Ex: I replaced the vase carefully on its pedestal.
+	69. statue_noun     		prawimA				(Suggested by Shweta Banasthali 14-10-13)
+					Ex: In the riot, the statues were toppled from their pedestals.
+
 
 
     5. Modifying first meaning from the list :
@@ -1060,6 +1084,12 @@ Removed:
 				    truck) are parked on a horizontal road
 	63. violation_noun	wodanA			as	ullaMGana (Suggested by Rashmi Ranjan Banasthali 10-10-13)
 				Ex: Any violation of Gauss's law will indicate departure from the inverse square law.
+	64. finally_adverb  	AKirakAra		as	anwa_meM	(Suggested by Pramila Banasthali 14-10-13)
+				Ex: Finally, since the wire is infinite, electric field does not depend on the position of P 
+				    along the length of the wire.
+	65. accelerated_adjective  xruwa_gawi_se_kiyA_huA 	as    wvariwa	(Suggested by Garima Banasthali 14-10-13)
+				Ex: Suppose we consider the force between two distant charges q, q in accelerated motion.
+
 	
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1306,6 +1336,8 @@ Removed:
 	44. in_contrast_to	ke_viparIwa#ke_viparIwa#noun#2#WM		(Suggested by Sukhada  	       12-10-13	)
 				Ex: Thermodynamics, in contrast to mechanics, does not deal with the motion of bodies as a 
 				    whole.
+	45. fairly_soon     	jalxI_hI#jalxI_hI#adverb#2#RM			(Suggested by Pramila Banasthali 14-10-13)
+				Ex: We'll have to leave fairly soon.
     
 
     Added new meaning to the existing word:
@@ -1344,10 +1376,10 @@ Removed:
 	channel_noun		saraNi		(	"  by Amit MNNIT        01-07-13 )
 	corpuscular_noun        kaNikA		(Suggested by Garima Banasthali 14-08-13 )
 	emitter_noun		uwsarjaka	(Suggested by Pramila Banasthali 19-08-13)
-	vacuum_noun    		nirvAwa		(	"	"		21-08-13 )
+	vacuum_noun    		nirvAwa		(Suggested by Garima Banasthali  21-08-13)
 	discharge_noun		visarjana	(	"	"	 "	23-08-13 )
 	harmonic_noun		guNAvqwwiyA	(Suggested by Prachi Banasthali    "	 )
-	circuit_noun    	paripaWa	(	"	   "		24-08-13 )
+	circuit_noun    	paripaWa	(Suggested by Garima Banasthali	24-08-13 )
 	hydrogen_noun   	hAidrojana	(Suggested by Rashmi Banasthali 24-08-13 )	
 	spectrum_noun   	spektrama	(	"		 "	   "	 )
 	radioactive_adjective   rediyo_Ektiva	(	"		 "         "     )
@@ -1375,6 +1407,7 @@ Removed:
 	dipole_adjective        xviXruva	(Suggested by Pramila Banasthali 08-10-13)
 	dipole_noun     	xviXruva	(	"		"		)
 	diffract_verb   	vivarwana_ho	(	"		"		)
+	window_noun     	gavAkRa		(Suggested by Rashmi Banasthali  14-10-13)
 
 
     Modified :
@@ -1469,6 +1502,9 @@ Removed:
 	Coulomb       	kUlamba 	(Suggested by Rashmi Banasthali 12-10-13)
 	Added 5639 entries from 
 	13B		13_bI  to  Zyhno	jyhno 	(By Roja 11-09-13)
+	Descartes       xakArwe		(Suggested by Pramila Banasthali 14-09-13)
+	Rydberg		ridabarga	(Suggested by Shweta  Banasthali 14-09-13)
+
 
  changes in kriyA_object_vib.txt
  ==============================

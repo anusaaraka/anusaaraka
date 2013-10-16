@@ -5679,3 +5679,5 @@ Zou	jZU
 Zubeidaa	jZubixA
 Zulmi	julmI
 Zyhno	jyhno
+Descartes	xakArwe
+Rydberg	ridabarga

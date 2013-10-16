@@ -33211,6 +33211,7 @@ perfect_detachment	pUrNa_alipwawA#pUrNa_alipwawA#noun#2#RM
 opera_glass	xUrabIna#xUrabIna#noun#2#WM
 in_case_of	ke_saMxarBa_meM#ke_saMxarBa_meM#noun#2#WM
 in_contrast_to	ke_viparIwa#ke_viparIwa#noun#2#WM
+fairly_soon	jalxI_hI#jalxI_hI#adverb#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

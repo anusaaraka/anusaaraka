@@ -37,3 +37,5 @@ building	1
 subject	1
 force	1
 effect	1
+evidence	1
+symptom	1

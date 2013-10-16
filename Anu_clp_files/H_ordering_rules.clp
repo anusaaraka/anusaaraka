@@ -224,6 +224,30 @@
                          "              After     - "?head" " ?lev" "?Mot" "(implode$ $?daut)" " ?d" "?d1" "(implode$ ?rest) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+;I have sent the child to the school.
+;She brought her boyfriend to the party.
+;I will take you to school. 
+; Added by Shirisha Manju (15-10-13) Suggested by Sukhada.
+(defrule mv_destination_before_verb
+(declare (salience 940))
+?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?PP ?NP $?rest)
+(and (Node-Category  ?Mot VP)(Node-Category  ?NP NP)(Node-Category  ?PP  PP))
+(id-original_word ?head ?w&sent|brought|take)
+(Head-Level-Mother-Daughters  ?  ?  ?PP ?NP1 ?TO)
+(and (Node-Category  ?TO TO)(Node-Category  ?NP1 NP))
+(Head-Level-Mother-Daughters  ?h  ?  ?NP1  $?)
+(id-original_word ?h ?wrd)
+(test (or (neq (gdbm_lookup "place.gdbm" ?wrd) "FALSE") (member$ ?wrd (create$ party marraige))))
+=>
+	(bind ?*count* (+ ?*count* 1))
+	(retract ?f0)
+	(assert (Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?NP ?PP $?rest))
+	(printout ?*order_debug-file* "(rule_name - mv_destination_before_verb " ?*count* " " crlf
+                         "              Before    - "?head" " ?lev" "?Mot" "(implode$ $?daut)" " ?PP" "?NP" "(implode$ $?rest) crlf
+                         "              After     - "?head" " ?lev" "?Mot" "(implode$ $?daut)" " ?NP" "?PP" "(implode$ $?rest) ")" crlf)
+
+)
+;-----------------------------------------------------------------------------------------------------------------------
 ;At this point, the Dow was down about 35 points.
 ; Added by Shirisha Manju(09-07-11) Suggested by Sukhada.
 (defrule rev_ADVP

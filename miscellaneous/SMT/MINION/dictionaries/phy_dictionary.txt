@@ -395,3 +395,4 @@ physical_adjective	BOwika
 dipole_adjective	xviXruva
 dipole_noun	xviXruva
 diffract_verb	vivarwana_ho
+window_noun	gavAkRa

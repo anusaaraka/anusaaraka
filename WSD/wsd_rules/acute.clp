@@ -6,9 +6,9 @@
 (id-cat_coarse ?id adjective)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id wivra))
+(assert (id-wsd_root_mng ?id wIvra)); Replaced 'wivra' with 'wIvra' by Shirisha Manju Suggested by Chaitanya Sir (14-10-13)
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  acute.clp 	acute0   "  ?id "  wivra )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  acute.clp 	acute0   "  ?id "  wIvra )" crlf))
 )
 
 (defrule acute1

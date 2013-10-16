@@ -2862,9 +2862,9 @@ acceding_UNDEFINED	svIkAra_karanA
 accelerando_adjective	uwwarowwarawvariwa
 accelerando_adverb	layavarXana_ke_sAWa
 accelerando_noun	layavarXana
-accelerate_verb	cAla_baDA/wejI_se_baDA/weja_kara/weja_ho/gawi_baDA
+accelerate_verb	wvariwa_ho/cAla_baDA/wejI_se_baDA/weja_kara/weja_ho/gawi_baDA
 accelerated_UNDEFINED	cAla_baDAnA
-accelerated_adjective	xruwa_gawi_se_kiyA_huA/wvariwa
+accelerated_adjective	wvariwa/xruwa_gawi_se_kiyA_huA
 accelerates_UNDEFINED	cAla_baDAnA
 accelerating_UNDEFINED	cAla_baDAnA
 accelerating_adjective	wvaraNaSIla
@@ -22823,7 +22823,7 @@ discreetness_noun	sAvaXAnI/samaJaxArI
 discrepancies_UNDEFINED	BinnawA
 discrepancy_noun	BinnawA/asafgawI/asahamawi/anwara
 discrete_UNDEFINED	asawaw
-discrete_adjective	alaga
+discrete_adjective	vivikwa/alaga
 discretely_adverb	alaga_se
 discreteness_noun	pqWakawA
 discretion_noun	viveka/vicAraSIlawA/sAvaXAnI/samaJaxArI/ImAnaxArI/buxXi
@@ -29546,7 +29546,7 @@ finalize_verb	anwima_nirNaya_le/anwima_rUpa_xe
 finalized_UNDEFINED	anwima_nirNaya_lenA
 finalizes_UNDEFINED	anwima_nirNaya_lenA
 finalizing_UNDEFINED	anwima_nirNaya_lenA
-finally_adverb	AKirakAra/anwawogawvA/anwawaH/anwa_meM
+finally_adverb	anwa_meM/AKirakAra/anwawogawvA/anwawaH
 finals_UNDEFINED	anwima_caraNa
 finance-company_noun	pEsoM_kA_lena_xena_karane_vAlI_kampanI
 finance-house_noun	pEsoM_kA_lena_xena_karane_vAlI_saMsWA
@@ -56774,7 +56774,7 @@ peddler_noun	PerI_vAlA/naSIlI_xavAeM_becane_vAlA
 peddles_UNDEFINED	PerI_lagAnA
 peddling_UNDEFINED	PerI_lagAnA
 peddling_noun	mAla_becanA
-pedestal_noun	XAnI/sWAna
+pedestal_noun	pAxa_pITikA/XAnI/sWAna
 pedestals_UNDEFINED	pedestalsa
 pedestrian_adjective	pExala_calane_vAloM_kA/nIrasa
 pedestrian_noun	pAxacArI/pExala_calane_vAlA
@@ -76013,7 +76013,7 @@ statuaries_UNDEFINED	prawimAez
 statuariest_UNDEFINED	prawimAez
 statuary_adjective	mUrwiyogya/mUrwi_kA
 statuary_noun	mUrwiyAz/mUrwi-samUha/prawimAez
-statue_noun	mUrwi
+statue_noun	prawimA/mUrwi
 statues_UNDEFINED	mUrwi
 statuesque_adjective	niScala/sarvAfga_sunxara/mUrwivaw
 statuesquer_UNDEFINED	niScala
@@ -88873,7 +88873,7 @@ vibrants_UNDEFINED	spanxiwa
 vibraphone_noun	jalawarafga_jEse_vixyuwa_vAxya/vAibrAPona
 vibraphones_UNDEFINED	jalawarafga_jEse_vixyuwa_vAxya
 vibraphonist_noun	vAibrAPonavAxaka
-vibrate_verb	spanxiwa_ho/kAzpa/kampAyamAna_ho/hicakicA/gUzja
+vibrate_verb	kampana_kara/spanxiwa_ho/kAzpa/kampAyamAna_ho/hicakicA/gUzja
 vibrated_UNDEFINED	spanxiwa_honA
 vibrates_UNDEFINED	spanxiwa_honA
 vibrating_UNDEFINED	spanxiwa_honA
@@ -93493,3 +93493,6 @@ experimentalist_noun	prayogakarwA
 circuital_adjective	paripaWIya
 well-seperated_adjective	spaRta_rupa_se_alaga-alaga
 whenever_wh-adverb	jaba_kaBI
+action-reaction_adjective	kriyA-prawikriyA
+construct_noun	racanA
+cross-sectional_adjective	anuprasWa_kAta
