@@ -1209,7 +1209,11 @@ Removed:
     Wall_Street     voYl_strIta#voYl_strIta#noun#2#WM
                     [previously it was present in multi_word_expressions.txt as "wall_street     galI[_banxa_sadaka]#galI[_banxa_sadaka]#noun#2#RM" which is wrong so removed made entry in proper_noun-common_noun_compounds.txt as above, Suggested by Chaitanya ji and Dipti Madam. 23-04-12]
     Louis_Victor_de_Broglie	luisa_viktara_xe_broYglI#luisa_viktara_xe_broYglI#noun#1#WM	
-				(Suggested by Sonam Banasthali	29-08-13)	
+				(Suggested by Sonam Banasthali	29-08-13)
+    Added 5029 entries. Extracted from .xls files. 		(By Roja	19-10-13)
+    101_Days	101_desa#101_desa#noun#2#RM
+		to
+    Zulm_Ko_Jala_Doonga	jZulma_ko_jalA_xUMgA#jZulma_ko_jalA_xUMgA#noun#4#RM	
     
  multi_word_expressions.txt
  ==========================
@@ -1345,6 +1349,7 @@ Removed:
 				Ex: We'll have to leave fairly soon.
 	46. last_call		anwima_sUcanA#anwima_sUcanA#noun#2#RM		(Suggested by Anita ji LTRC	16-10-13)
 				Ex: This is the last call for passengers travelling on British Airways flight 199 to Rome.
+	47. call_by_on		howe_huE_jA#howe_huE_jA#verb#1#RM		(Suggested by Anita ji LTRC	19-10-13)
     
 
     Added new meaning to the existing word:
