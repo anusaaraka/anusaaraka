@@ -146,6 +146,8 @@
  (pada_info (group_head_id ?kriyA)(group_cat VP))
  (pada_info (group_cat PP|infinitive)(group_ids ?wh_word $?d))
  ?f0<-(hindi_id_order  $?start ?wh_word $?d  $?ids ?kriyA $?end)
+ (id-HM-source ?wh_word ?hmng ?src)
+ (test (eq (sub-string 1 1 ?hmng) "k")) ;My car broke down when I reached Lalitpur.
  (not (prep_id-relation-anu_ids ?  kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?  ?wh_word)) ;Ex. How quickly did you run?
  (not (prep_id-relation-anu_ids ?  wall_conjunction ?wh_word))
  (not (prep_id-relation-anu_ids ?  viSeRaNa-viSeRaka  ? ?wh_word)) ;I wonder how big the department is .

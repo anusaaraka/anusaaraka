@@ -129,6 +129,17 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  ed_en_tam.clp        ed_en_tam8  "  ?id "  yA )" crlf))
 )
 
+;Added by Shirisha Manju (21-10-13) Suggested by Sukhada
+(defrule ed_en_tam9
+(declare (salience 1000))
+(id-TAM ?id ed_en)
+?mng <-(meaning_to_be_decided ?id)
+=>
+(retract ?mng)
+(assert (id-E_tam-H_tam_mng ?id ed_en yA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  ed_en_tam.clp        ed_en_tam9  "  ?id "  yA )" crlf))
+)
 
 
 

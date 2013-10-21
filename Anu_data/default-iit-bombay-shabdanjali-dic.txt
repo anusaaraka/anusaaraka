@@ -21382,7 +21382,7 @@ dependanter_UNDEFINED	nirBara
 dependantest_UNDEFINED	nirBara
 dependants_UNDEFINED	nirBara
 depended_UNDEFINED	ASriwa_honA
-dependence_noun	nirBarwA/sahArA/viSvAsa/nirBarwA
+dependence_noun	nirBarawA/sahArA/viSvAsa/nirBarwA
 dependences_UNDEFINED	sahArA
 dependencies_UNDEFINED	nirBarawA
 dependency_noun	nirBarawA/aXInawA
@@ -29546,7 +29546,7 @@ finalize_verb	anwima_nirNaya_le/anwima_rUpa_xe
 finalized_UNDEFINED	anwima_nirNaya_lenA
 finalizes_UNDEFINED	anwima_nirNaya_lenA
 finalizing_UNDEFINED	anwima_nirNaya_lenA
-finally_adverb	anwa_meM/AKirakAra/anwawogawvA/anwawaH
+finally_adverb	anwawaH/AKirakAra/anwawogawvA/anwa_meM
 finals_UNDEFINED	anwima_caraNa
 finance-company_noun	pEsoM_kA_lena_xena_karane_vAlI_kampanI
 finance-house_noun	pEsoM_kA_lena_xena_karane_vAlI_saMsWA

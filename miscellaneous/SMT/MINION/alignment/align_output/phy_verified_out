@@ -43,7 +43,7 @@ isake lie, hama vega Ora wvaraNa kI XAraNAoM kA vikAsa karawe hEM.
 
 Hindi meaning using Stanford parser 2.7
 Finally, to understand the relative nature of motion, we introduce the concept of relative velocity. 
-AKirakAra, gawi kI ApekRa prakqwi samaJane ke lie, hama ApekRa vega kI XAraNA paricaya karAwe hEM.
+anwawaH, gawi kI ApekRa prakqwi samaJane ke lie, hama ApekRa vega kI XAraNA paricaya karAwe hEM.
 
 Hindi meaning using Stanford parser 2.8
 The speed of light in vacuum is the highest speed attainable in nature. 
@@ -107,7 +107,7 @@ baDiyA pragawi Ama wOra para hamAre buniyAxI prawyakRa jFAna meM parivarwana sAW
 
 Hindi meaning using Stanford parser 2.22
 We shall discuss uniform circular motion in some detail. 
-hama kuCa byOrA meM ekasamAna_vqwwIya gawi kI carcA kareMge.
+hama kuCa byOrA meM ekasamAna_vqwwIya gawi ke viRaya meM carcA kareMge.
 
 Hindi meaning using Stanford parser 2.23
 The length of each side is a scalar and the perimeter is also a scalar. 
@@ -379,12 +379,12 @@ Multiple adjective senses are available for such. WSD rule is required
 
 Hindi meaning using Stanford parser 2.83
 Thus, it is not necessary to use vector notation for discussing motion of objects in one-dimension. 
-isa prakAra, one-dimension meM vaswu kA gawi kI carcA karane ke lie saxiSa safkewa paxXawi kA upayoga karanA AvaSyaka nahIM hE.
+isa prakAra, one-dimension meM vaswu kA gawi ke viRaya meM carcA karane ke lie saxiSa safkewa paxXawi kA upayoga karanA AvaSyaka nahIM hE.
 Multiple adjective senses are available for necessary. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.84
 When an object is in motion, its position changes with time. 
-eka vaswu calAyamAna jaba hE, wo usakI sWiwi samaya ke sAWa baxalawI hE.
+jaba eka vaswu calAyamAna hE, wo usakI sWiwi samaya ke sAWa baxalawI hE.
 
 Hindi meaning using Stanford parser 2.85
 The average velocity can be positive or negative depending upon the sign of the displacement. 
@@ -467,7 +467,7 @@ waba gAdI se calI huI xUrI OP SYMBOL-EQUAL-TO SYMBOL-PLUS 360 m. hE.
 
 Hindi meaning using Stanford parser 2.103
 To describe motion in two SYMBOL-SLASH three dimensions, we need a set of two SYMBOL-SLASH three axes. 
-xo SYMBOL-SLASH wIna pahaluoM meM gawi varNana karane ke lie, hama samuccaya xo SYMBOL-SLASH wIna XuriyoM kI jarUrawa howI hE.
+xo SYMBOL-SLASH wIna pahaluoM meM gawi varNana karane ke lie, hameM samuccaya kI xo SYMBOL-SLASH wIna XuriyoM ke AvaSyakawA hE.
 
 Hindi meaning using Stanford parser 2.104
 The velocity of an object, in general, changes during its course of motion. 
@@ -547,7 +547,7 @@ yaha mqgawqRNA BI hE.
 
 Hindi meaning using Stanford parser 2.122
 Optical fibers are fabricated with high quality composite glass SYMBOL-SLASH quartz fibers. 
-xqRti- wanwu ucca guNavawwA sammiSra gilAsoM SYMBOL-SLASH kvArtaja wanwuoM ke sAWa banAe gaye hEM.
+xqRti- wanwu ucca guNavawwA sammiSra kAzcoM SYMBOL-SLASH kvArtaja wanwuoM ke sAWa banAe gaye hEM.
 
 Hindi meaning using Stanford parser 2.123
 Each fiber consists of a core and cladding. 
@@ -573,7 +573,7 @@ yaha xUrabIna (Cassegrain) xarSAwe_hue eka 2SYMBOL-DOT34 puruRa vyAsa hE.
 
 Hindi meaning using Stanford parser 2.128
 On the other hand, glass is a dispersive medium. 
-xUsarI ora, gilAsa eka PElAyA huA mAXyama hE.
+xUsarI ora, kAzca eka PElAyA huA mAXyama hE.
 
 Hindi meaning using Stanford parser 2.129
 Thus, vacuum (or air approximately) is a non-dispersive medium in which all colors travel with the same speed. 
@@ -590,7 +590,7 @@ isa prakAra, lIka_se hatanA kA koNa Ayawana koNa para nirBara karawA hE.
 
 Hindi meaning using Stanford parser 2.132
 When this is an elastic collision, the magnitude of the velocity remains the same. 
-yaha lacIlA safGat jaba hE, wo vega kA parimANa vahI SeRa rahawA hE.
+jaba yaha lacIlA safGat hE, wo vega kA parimANa vahI rahawA hE.
 
 Hindi meaning using Stanford parser 2.133
 The night sky with its bright celestial objects has fascinated humans since time immemorial. 
@@ -618,7 +618,7 @@ Multiple adjective senses are available for electric. WSD rule is required
 
 Hindi meaning using Stanford parser 2.138
 For example, the subject of thermodynamics, developed in the nineteenth century, deals with bulk systems in terms of macroscopic quantities such as temperature, internal energy, entropy, etc.. 
-uxAharaNa_ke liye, unnIsavAz SawAbxI meM vikAsa kara, URmAgawikI kA, viRaya wApamAna, Anwarika UrjA, entropy, etc. jEse ki - sWUla parimANa ke anusAra Woka nikAyoM ke sAWa varNana karawA hE.
+uxAharaNa_ke liye, unnIsavAz SawAbxI meM vikAsa kiyA, URmAgawikI kA, viRaya wApamAna, Anwarika UrjA, entropy, etc. jEse ki - sWUla parimANa ke anusAra Woka nikAyoM ke sAWa varNana karawA hE.
 Multiple adjective senses are available for internal. WSD rule is required 
 Multiple adjective senses are available for such. WSD rule is required 
 
@@ -630,7 +630,7 @@ Multiple adjective senses are available for such. WSD rule is required
 
 Hindi meaning using Stanford parser 2.140
 Thermodynamics, in contrast to mechanics, does not deal with the motion of bodies as a whole. 
-yAnwrikI ke viparIwa, URmAgawikI, eka ikAI ke rUpa meM piMdoM kI gawi ke sAWa vyavahAra_nahIM karawe hEM.
+yAnwrikI ke viparIwa, URmAgawikI, eka ikAI ke rUpa meM piMdoM kI gawi ke sAWa varNana_nahIM karawe hEM.
 
 Hindi meaning using Stanford parser 2.141
 It covers a tremendous range of magnitude of physical quantities like length, mass, time, energy, etc.. 
@@ -695,7 +695,7 @@ Multiple adjective senses are available for internal. WSD rule is required
 
 Hindi meaning using Stanford parser 2.154
 Have you ever tried to find any explanation for this phenomenon? 
-kyA Apa isa pariGatanA ke lie kisI vyAKyA ko pAne ke lie kaBI BI prayAsa_kara cuke hEM?
+kyA Apane isa pariGatanA ke lie kisI vyAKyA ko pAne ke lie kaBI BI prayAsa kiyA hE?
 
 Hindi meaning using Stanford parser 2.155
 You will see that the strips get attracted to the screen. 
@@ -703,7 +703,7 @@ Apa xeKeMge ki pattiyoM ne paraxe ko AkarRiwa kiyA.
 
 Hindi meaning using Stanford parser 2.156
 The glass rod repels the fur. 
-gilAsa Cada samUra hatAwA hE.
+kAzca Cada samUra hatAwA hE.
 
 Hindi meaning using Stanford parser 2.157
 They acquire an electric charge on rubbing. 
@@ -716,7 +716,7 @@ jo xo prakAra mUlyoM ke viBexa_jAna lewI hE vaha sampawwi mUlya kA eka_sAWa_viro
 
 Hindi meaning using Stanford parser 2.159
 When a glass rod is rubbed with silk, the rod acquires one kind of charge and the silk acquires the second kind of charge. 
-eka gilAsa Cada reSama ke sAWa jaba malA huA hE, wo Cada mUlya eka prakAra kA arjana karawA hE Ora reSama mUlya xUsarA prakAra kA arjana karawA hE.
+jaba eka kAzca Cada reSama ke sAWa malA huA hE, wo Cada mUlya eka prakAra kA arjana karawA hE Ora reSama mUlya xUsarA prakAra kA arjana karawA hE.
 
 Hindi meaning using Stanford parser 2.160
 What can you conclude from these observations? 
@@ -753,7 +753,7 @@ isa kAraNa se ve eka xUsare hatAwe hEM.
 
 Hindi meaning using Stanford parser 2.167
 When we rub a glass rod with silk, some of the electrons from the rod are transferred to the silk cloth. 
-hama eka gilAsa ko Cada reSama se jaba malawe hEM, wo Cada se ilektroYna kuCa reSama kapade ko anwariwa kie gaye hEM.
+jaba hama eka kAzca ko Cada reSama se malawe hEM, wo Cada se ilektroYna kuCa reSama kapade ko anwariwa kie gaye hEM.
 
 Hindi meaning using Stanford parser 2.168
 Thus a micrometre size obstacle will not be able to stop a light ray. 
@@ -779,7 +779,7 @@ Multiple adjective senses are available for white. WSD rule is required
 
 Hindi meaning using Stanford parser 2.173
 In fact they remain stuck to the screen for a while. 
-vAswava meM ve kuCa_samaya waka paraxe ko atake hue SeRa rahawe hEM.
+vAswava meM ve kuCa_samaya waka paraxe ko atake hue rahawe hEM.
 
 Hindi meaning using Stanford parser 2.174
 Similarly, two plastic rods rubbed with cat's fur repelled each other (Fig. 1SYMBOL-DOT1 (b)) but attracted the fur. 
@@ -838,7 +838,7 @@ Multiple adjective senses are available for electric. WSD rule is required
 
 Hindi meaning using Stanford parser 2.187
 However, the glass rod and wool attracted each other. 
-waWApi, gilAsa Cada Ora Una ne eka xUsare AkarRiwa kiyA.
+waWApi, kAzca Cada Ora Una ne eka xUsare AkarRiwa kiyA.
 
 Hindi meaning using Stanford parser 2.188
 Metals, human and animal bodies and earth are conductors. 
@@ -846,7 +846,7 @@ XAwvika, mAnava Ora paSu piMda Ora pqWvI cAlaka hEM.
 
 Hindi meaning using Stanford parser 2.189
 Thus the pith ball is charged by contact. 
-isa prakAra majjA golA samparka ke xvArA xoRa lagAI gayI hE.
+isa prakAra majjA golA samparka ke xvArA xoRa lagAyA gayA hE.
 
 Hindi meaning using Stanford parser 2.190
 The free electrons in the spheres are attracted towards the rod. 
@@ -989,11 +989,11 @@ bala kI saMvega saxiSa meM isa parivarwana kA kAraNa hone ke lie AvaSyakawA huA 
 
 Hindi meaning using Stanford parser 2.222
 The component of velocity normal to the force remains unchanged. 
-vega bala ko sAmAnya kA aMSa aparivarwiwa SeRa rahawA hE.
+vega bala ko sAmAnya kA aMSa aparivarwiwa rahawA hE.
 
 Hindi meaning using Stanford parser 2.223
 For example, in the motion of a projectile under the vertical gravitational force, the horizontal component of velocity remains unchanged. 
-uxAharaNa_ke liye, UXrvAXara guruwvAkarRI bala ke nIce prakRepya kI gawi meM, vega kA kREwija aMSa aparivarwiwa SeRa rahawA hE.
+uxAharaNa_ke liye, UrXvAXara guruwvAkarRI bala ke nIce prakRepya kI gawi meM, vega kA kREwija aMSa aparivarwiwa rahawA hE.
 Multiple adjective senses are available for horizontal. WSD rule is required 
 Multiple adjective senses are available for vertical. WSD rule is required 
 

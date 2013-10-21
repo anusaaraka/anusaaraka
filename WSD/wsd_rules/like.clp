@@ -1,3 +1,21 @@
+;Added by Sonam Gupta MTech IT Banasthali 2013
+;The experiments on pith balls suggested that there are two kinds of electrification and we find that like charges repel each other.
+
+(defrule like_charges
+(declare (salience 6000))
+(id-root ?id like)
+?mng <-(meaning_to_be_decided ?id)
+(id-word =(+ ?id 1) charges)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sajAwIya))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  like.clp 	like_charges   "  ?id " sajAwIya )" crlf))
+)
+
+
+
 ;We do not want the likes of you around here. Added by Sukhada (27-9-11)
 (defrule like_noun
 (declare (salience 5000))

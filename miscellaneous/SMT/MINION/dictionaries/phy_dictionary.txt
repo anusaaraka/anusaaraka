@@ -348,14 +348,14 @@ unification_noun	ekIkaraNa
 universal_adjective	sArvawrika
 universal_noun	sArvaBOmika
 universe_noun	viSva
-upward_adjective	UXrvagAmI/uparimuKI
+upward_adjective	UrXvagAmI/uparimuKI
 variable_noun	parivarwI/cara
 vector_noun	saxiSa
 velocity-position_noun	vega_sWiwi 
 velocity-time_noun	vega_samaya
 venus_noun	Sukra
 verification_noun	sawyApana
-vertical_adjective	UXrvAXara/UXrvAXra
+vertical_adjective	UrXvAXara/UrXvAXra
 vibration_noun	vaMPapana
 volcano_noun	jvAlAmuKI
 wavelength_noun	warafgaxErGya

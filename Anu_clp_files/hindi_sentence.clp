@@ -74,6 +74,7 @@
  ;----------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (19-09-13)
  ;The receiver has the task of operating on the received [signal].
+ ;As already mentioned, the purpose of a communication system is to transmit information or message [signals].
  (defrule add_eng_mng1
  (declare (salience 2549))
  ?f0<-(id-Apertium_output ?id $?wrd_analysis ?v_mng)
@@ -81,9 +82,12 @@
  (pada_info (group_ids  $? ?id)(vibakthi ?vib))
  =>
         (retract ?f0 ?f1)
-	(if (eq (str-index "_" ?vib) FALSE) then
+	(if (and (eq (str-index "_" (implode$ (create$ ?vib))) FALSE) (neq ?vib 0)) then
 	        (bind $?n_mng (create$ $?wrd_analysis PUNCT-OpenParen ?mng PUNCT-ClosedParen ?v_mng))
         	(assert (id-Apertium_output ?id $?n_mng))
+	else 
+		(bind $?n_mng (create$ $?wrd_analysis ?v_mng PUNCT-OpenParen ?mng PUNCT-ClosedParen))
+                (assert (id-Apertium_output ?id $?n_mng))
 	)
  )
  ;----------------------------------------------------------------------------------------------------------
