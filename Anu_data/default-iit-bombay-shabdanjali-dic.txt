@@ -8592,7 +8592,7 @@ bashfulness_noun	safkoca
 basic_adjective	buniyAxI/mUlaBUwa/mUla/AXArika
 basic_noun	mUlawawwva
 basically_UNDEFINED	mUlawaH-1
-basically_adverb	svaBAvawaH/mUlawaH/mUla_rUpa_se
+basically_adverb	mUlawaH/svaBAvawaH/mUla_rUpa_se
 basicer_UNDEFINED	mUlawawwva
 basicest_UNDEFINED	mUlawawwva
 basics_UNDEFINED	mUlawawwva
@@ -25901,7 +25901,7 @@ emphatics_UNDEFINED	saSakwa
 emphysemia_UNDEFINED	vAwasPIwi
 empire_noun	sAmrAjya/praBuwva
 empires_UNDEFINED	sAmrAjya
-empirical_adjective	prayogasixXa/anuBavajanya
+empirical_adjective	AnuBavika/prayogasixXa/anuBavajanya
 empiricaler_UNDEFINED	prayogasixXa
 empiricalest_UNDEFINED	prayogasixXa
 empirically_adverb	prayogasixXa_waraha_se/anuBavasixXa_DaNga_se
@@ -27446,7 +27446,7 @@ excitability_noun	uwwejanaSIlawA
 excitable_adjective	uwwejanaSIla
 excitableness_noun	uwwejanaSIlawA
 excitant_noun	uwwejaka_paxArWa
-excitation_noun	uxxIpana/uwwejanA/uwwejana
+excitation_noun	uwwejanA/uxxIpana/uwwejana
 excite_verb	uwwejiwa_kara/wAva_xilA/ukasA/sakriya_banA/KuSa_kara/kroXa_xilA/jAgriwa_kara
 excited_UNDEFINED	uwwejiwa_karanA
 excited_adjective	uwwejiwa/uwejiwa
@@ -93496,3 +93496,4 @@ whenever_wh-adverb	jaba_kaBI
 action-reaction_adjective	kriyA-prawikriyA
 construct_noun	racanA
 cross-sectional_adjective	anuprasWa_kAta
+no-smoking_adjective	XUmrapAna_niReXa

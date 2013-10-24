@@ -6,6 +6,7 @@
 			respect.clp	0_tam.clp	standard.clp	lay.clp		call.clp	evil.clp
 			bar.clp		deal.clp	corrupt.clp	derive.clp	acute.clp   	vein.clp
 			by.clp		to.clp		discuss.clp	ed_en_tam.clp	like.clp	low.clp
+			enormous.clp	extend.clp
 	  Added    :	argue.clp	cell.clp	feature.clp	flux.clp	divide.clp	equivalently.clp
 			win.clp		difficult.clp	eliminate.clp	closely.clp	compress.clp	generation.clp
 			deduce.clp	define.clp	degree.clp	emerge.clp	enormous.clp	substantially.clp
@@ -30,11 +31,12 @@
  8. sd_relation_correction.clp
         Added deffunction never-called ()
  9. sd_relation_rules.clp: 
+	Modified : kriyA_sub_rule, acomp+nsubj, nsubj_advmod_1, advmod1, rcmod_prep and insert-which1
 	In 'advcl' rule added printout statement.
 10. tam_id.clp
 	Modified : tam_id_frm_vb_grp_en ('ed' as 'ed_en')
 11. hindi_sent_reorder.clp
-        Modified : wh_without_aux-reorder1
+        Modified : wh_without_aux-reorder1, insert_aXika_for_adj_er and insert_sabase_aXika_adj_est
 12. run_modules_std.bat
 	Loaded  pada_id_info.dat file in wsd_tam_meaning module
 	In sd_relation_correction.clp: Added 'conjunction-components' in save-facts
@@ -73,7 +75,7 @@
 	compile_full_parser.sh
 21. Updated FinalGenerate.pl 
 22. Updated Log
-23. Updated  sd_verified (533)	phy_verified_eng (253)	verified_eng (40)	small_sent_verified_sd (107)
+23. Updated  sd_verified (537	phy_verified_eng (253)	verified_eng (40)	small_sent_verified_sd (108)
 
  31-08-13
  ========

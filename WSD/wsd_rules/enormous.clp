@@ -27,7 +27,7 @@
 ;तुम बहुत बडे सहायक रहे.
 ;wuma bahuwa bade sahAyaka rahe.
 
-;At the macroscopic level, one deals with charges that are enormous compared to the magnitude of charge e.-------------physics sentence
+;At the macroscopic level, one deals with charges that are enormous compared to the magnitude of charge e. [ physics ]
 ;स्थूल स्तर पर हम ऐसे आवेशों से व्यवहार करते हैं जो इलेक्ट्रॉन e के आवेश की तुलना में परिमाण में बहुत बडे होते हैं .
 ;sWUla swara para hama Ese AveSoM se vyavahAra karawe hEM jo ilektroYna e ke AveSa kI wulanA meM parimANa meM bahuwa bade howe hEM .
 (defrule enormous0
@@ -78,9 +78,25 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  enormous.clp 	enormous2   "  ?id " bahuwa_aXika  )" crlf))
 )
 
+;First, that it travels with enormous speed and second, that it travels in a straight line.
+;pahalI, yaha awyaXika wIvra cAla se gamana karawA hE waWA, xUsarI, yaha sarala reKA meM gamana karawA hE.
+
+(defrule enormous3
+(declare (salience 5000))
+(id-root ?id enormous)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(kriyA-with_saMbanXI  ?id2 ?id1)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id awyaXika_wIvra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  enormous.clp 	enormous3   "  ?id " awyaXika_wIvra  )" crlf))
+)
 
 ;----------------------------------- Default rules ------------------------------------------------------
-(defrule enormous3
+(defrule enormous4
 (declare (salience 4000))
 (id-root ?id enormous)
 ?mng <-(meaning_to_be_decided ?id)
@@ -89,11 +105,11 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id bahuwa_badA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  enormous.clp 	enormous3   "  ?id " bahuwa_badA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  enormous.clp 	enormous4   "  ?id " bahuwa_badA  )" crlf))
 )
 
 
-(defrule enormous4
+(defrule enormous5
 (declare (salience 3000))
 (id-root ?id enormous)
 ?mng <-(meaning_to_be_decided ?id)
@@ -101,5 +117,5 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id viSAla))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  enormous.clp 	enormous4   "  ?id " viSAla  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  enormous.clp 	enormous5   "  ?id " viSAla  )" crlf))
 )

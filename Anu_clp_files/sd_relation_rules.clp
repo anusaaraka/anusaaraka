@@ -129,6 +129,7 @@
  (declare (salience 190))
  (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
  (parser_id-cat_coarse ?kriyA verb);
+ (not (rel_name-sids expl ?kriyA ?)) ;There is always a room for improvement.
  (not (sub_for_kriyA ?kriyA ?sub)) 
  (not (found_kriyA-sub_rel ?kriyA))
  (not (sub-sub_samAnAXikaraNa_decided ?kriyA))
@@ -286,13 +287,13 @@
  ; Ex.  He says that you like to swim .
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule acomp+nsubj
-(rel_name-sids nsubj ?kriyA ?sub)
+(rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
 (rel_name-sids acomp ?kriyA ?samA)
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa	"?sub"	"?samA")"crlf)	
 (printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	acomp+nsubj	subject-subject_samAnAXikaraNa	"?sub"	"?samA")"crlf)	
 )
- ; Ex. She looks beautiful. 
+ ; Ex. She looks beautiful. All the prisoners were set free. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule attr+nsubj
 (rel_name-sids nsubj ?kriyA ?samA)
@@ -517,6 +518,7 @@
 (rel_name-sids  advmod   ?viSeRya ?viSeRaka)
 (parser_id-cat_coarse ?viSeRya ~verb) 
 (parser_id-cat_coarse ?viSeRaka ~verb) 
+(not (got_kriyA_viSeRaNa_viSeRaka ?viSeRya)) ;They lived very simply.
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-viSeRaka     "?viSeRya"        "?viSeRaka")"crlf)      
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj_advmod_1    viSeRya-viSeRaka    "?viSeRya"        "?viSeRaka")"crlf)
@@ -534,10 +536,12 @@
  ; Added by Shirisha Manju
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule advmod1
+(declare (salience 100))
 (rel_name-sids advmod ?kriyA_viSeRaNa  ?kriyA_viSeRaNa_viSeRaka)
 (rel_name-sids advmod ?kriyA ?kriyA_viSeRaNa)
 (not (rel_name-sids prt ?kriyA ?))
 =>
+(assert (got_kriyA_viSeRaNa_viSeRaka ?kriyA_viSeRaNa))
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka     "?kriyA_viSeRaNa"        "?kriyA_viSeRaNa_viSeRaka")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   advmod1  kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka    "?kriyA_viSeRaNa"        "?kriyA_viSeRaNa_viSeRaka")"crlf)
 )
@@ -879,6 +883,7 @@
 (rel_name-sids  rcmod ?vi ?kri)
 (basic_rel_name-sids  prep ?kri ?p)
 (basic_rel_name-sids  pobj ?p ?js)
+(parserid-word ?js who|which)
 (not (got_viSeRya-jo_samAnAXikaraNa  ?vi));The mass of a body is thus an important parameter that determines the effect of force on its motion. 
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-jo_samAnAXikaraNa   "?vi" "?js")"crlf)
@@ -890,7 +895,7 @@
 ;------------------------------------------------------------------------------------------------------------------------
 
 (defrule rcmod
-(declare (salience 250))
+(declare (salience 220))
 (rel_name-sids  rcmod ?vi ?kri)
 (parserid-word ?js ?w)
 (test (eq (string_to_integer ?js) (+ (string_to_integer ?vi) 1)))
@@ -1030,6 +1035,7 @@
 (not (got_viSeRya-jo_samAnAXikaraNa  ?vi))
 (not (rel_name-sids  rel   ?rv  ?))
 (not (rel_name-sids  advmod   ?rv  ?))
+(not (parserid-word ?id which)) ;Coaxial cable is a widely used wire medium, which offers a bandwidth of approximately 750 MHz.
 =>
     (printout       ?*fp*   "(prep_id-relation-parser_ids  -   viSeRya-jo_samAnAXikaraNa       "?vi"   10000)"crlf)
     (printout       ?*dbug*    "(prep_id-Rule-Rel-ids  -   insert-which1  viSeRya-jo_samAnAXikaraNa      "?vi"    10000)"crlf)

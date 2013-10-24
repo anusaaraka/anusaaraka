@@ -297,7 +297,7 @@ usane wawkAla xurGatanA ke bAre meM unako bawAyA.
 usane xurGatanA ke bAre meM wawkAla unako bawAyA.
 
 Hindi meaning using Stanford parser 2.68
-He made a mistake in invitin!	g John. 
+He made a mistake in inviting John. 
 usane joYna ko Amanwriwa karane meM galawI kI.
 
 Hindi meaning using Stanford parser 2.69
@@ -1305,7 +1305,7 @@ vakIla ne XyAna_AkarRiwa kiyA ki Clinton ne vAswava meM Monica ko nahIM cUmA WA.
 
 Hindi meaning using Stanford parser 3.1
 I finally figured out why this program is so slow. 
-mEMne AKirakAra pawA lagAyA yaha progrAma iwanA XImA kyoM hE.
+mEMne anwawaH pawA lagAyA yaha progrAma iwanA XImA kyoM hE.
 
 Hindi meaning using Stanford parser 3.2
 He was an exotic creature with short red hair and brilliant green eyes. 
@@ -1548,7 +1548,7 @@ kyA mqwyu uparAnwa jIvana hE?
 
 Hindi meaning using Stanford parser 3.51
 When you stand on this rock and face the east, the waves of the bay of bengal lap your feet. 
-Apa isa cattAna para jaba Kade howe hEM Ora pUrva kI ora muzha karawe hEM, wo bengal kI KAdI kI lahareM Apake pAzvoM se XIre_se takarAwI hEM.
+jaba Apa isa cattAna para Kade howe hEM Ora pUrva kI ora muzha karawe hEM, wo bengal kI KAdI kI lahareM Apake pAzvoM se XIre_se takarAwI hEM.
 
 Hindi meaning using Stanford parser 3.52
 His reputation was tarnished by his misdeeds. 
@@ -1722,7 +1722,7 @@ Multiple adjective senses are available for striking. WSD rule is required
 
 Hindi meaning using Stanford parser 3.90
 The glass house built on the lines of the crystal palace in london is the main attraction in this huge park. 
-landana meM sPatika mahala kI lAinoM para banA huA gilAsa Gara isa viSAla uxyAna meM pramuKa AkarRaNa hE.
+landana meM sPatika mahala kI lAinoM para banA huA kAzca Gara isa viSAla uxyAna meM pramuKa AkarRaNa hE.
 Multiple adjective senses are available for huge. WSD rule is required 
 Multiple adjective senses are available for main. WSD rule is required 
 
@@ -1746,7 +1746,7 @@ Sorabe ko aXika namaka kI AvaSyakawA hE.
 
 Hindi meaning using Stanford parser 3.95
 My car broke down when I reached Lalitpur. 
-merI gAdI KarAba_ho gaI mEM laliwapura jaba pahuzcA.
+merI gAdI KarAba_ho gaI jaba mEM laliwapura pahuzcA.
 
 Hindi meaning using Stanford parser 3.96
 His wife has had a baby. 
@@ -1830,7 +1830,7 @@ usako janasaBA meM bolane ke lie viRaya milA.
 
 Hindi meaning using Stanford parser 4.13
 He finally got a topic to speak at the forum. 
-usako AKirakAra janasaBA meM bolane ke lie viRaya milA.
+usako anwawaH janasaBA meM bolane ke lie viRaya milA.
 
 Hindi meaning using Stanford parser 4.14
 The main states of southern India are Tamilnadu, Kerala, Maharashtra, Andhrapradesh and Karnataka. 
@@ -2271,7 +2271,7 @@ eka bAra wIna Cote suara We, sonU, monU Ora PropN-gonu-PropN sonU monU ke Gara k
 
 Hindi meaning using Stanford parser 5.12
 He smiled and said, Good morning! 
-vaha muskarAyA Ora kahA, ki supraBAwa!
+vaha muskarAyA Ora kahA, supraBAwa!
 Multiple adjective senses are available for good. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.13
@@ -2336,7 +2336,7 @@ usane badA pIlA Ama KAyA.
 
 Hindi meaning using Stanford parser 5.28
 It really looked like a ball. 
-yaha vAswava meM eka gole kI waraha xiKA.
+yaha vAswava meM gole kI waraha xiKA.
 
 Hindi meaning using Stanford parser 5.29
 It really looks like a balloon. 
@@ -2357,6 +2357,22 @@ hama Pira se prayAsa kareMge, bobI ne kahA.
 Hindi meaning using Stanford parser 5.33
 I will take you to school. 
 mEM Apako vixyAlaya le jAUzgA.
+
+Hindi meaning using Stanford parser 5.34
+The Sahara Desert extends for miles. 
+sahArA regiswAna mIloM waka PElA huA hE.
+
+Hindi meaning using Stanford parser 5.35
+Safety is our highest priority. 
+surakRA hamArI sarvocca prAWamikawA hE.
+
+Hindi meaning using Stanford parser 5.36
+The bank refused to extend credit to them.
+bEMka ne unako uXAra xene ke lie manA kiyA.
+
+Hindi meaning using Stanford parser 5.37
+There are plans to extend the no-smoking area. 
+XUmrapAna niReXa kRewra baDAne ke lie yojanAez hEM.
 
 Calling Transliteration
 Calling Interface related programs

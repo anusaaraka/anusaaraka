@@ -473,6 +473,7 @@
  ?f0<-(id-root-category-suffix-number ?id ? adjective er ?)
  (not (id-eng-src ?id ? Word_mng))
  ?f<-(hindi_id_order $?list ?id $?list1)
+ (not (id-HM-source ?id ? ?src&Database_compound_phrase_root_mng|Database_compound_phrase_word_mng));Note : Same as below but no sentence found.
  =>
         (retract ?f ?f0)
 	(assert (hindi_id_order  $?list aXika ?id $?list1))
@@ -486,6 +487,7 @@
  ?f0<-(id-root-category-suffix-number ?id ? adjective est ?)
  (not (id-eng-src ?id ? Word_mng))
  ?f<-(hindi_id_order $?list ?id $?list1)
+ (not (id-HM-source ?id ? ?src&Database_compound_phrase_root_mng|Database_compound_phrase_word_mng));Safety is our highest priority.
  =>
         (retract ?f ?f0)
 	(assert (hindi_id_order  $?list sabase aXika ?id $?list1))

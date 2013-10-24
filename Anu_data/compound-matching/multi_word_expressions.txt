@@ -15331,7 +15331,7 @@ higher_still	Ora_aXika_UzcA#Ora_aXika_UzcA#noun#2#RM
 higher_weighted_deduction	uccawara_BAriwa_katOwI#uccawara_BAriwa_katOwI#noun#3#RM
 highest_bid	sabase_UzcI_bolI#sabase_UzcI_bolI#noun#2#RM
 highest_outstanding	aXikawama_bakAyA#aXikawama_bakAyA#noun#2#RM
-highest_priority	savorcca_prAWamikawA#savorcca_prAWamikawA#noun#2#RM
+highest_priority	sarvocca_prAWamikawA#sarvocca_prAWamikawA#noun#2#RM
 highland_fling	skAtalEmada_kA_nqwya#skAtalEmada_kA_nqwya#noun#2#RM
 highly_objectionable	awyaMwa_Apwwijanaka#awyaMwa_Apwwijanaka#noun#2#RM
 highly_skilled_mech	awikuSala_mekEnika#awikuSala_mekEnika#noun#3#RM
@@ -33214,6 +33214,9 @@ in_contrast_to	ke_viparIwa#ke_viparIwa#noun#2#WM
 fairly_soon	jalxI_hI#jalxI_hI#adverb#2#RM
 washing_line	kapadZe_suKAne_kI_rassI#kapadZe_suKAne_kI_rassI#noun#2#RM
 parking_restrictions	pArkiMga-prawibaMXa#pArkiMga-prawibaMXa#noun#2#RM
+common_custom	sAmAnya_rivAja#sAmAnya_rivAja#noun#2#RM
+in_common	samAnawA#samAnawA#2#RM
+warm_welcome	hArxika_svAgawa#hArxika_svAgawa#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

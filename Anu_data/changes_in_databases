@@ -330,6 +330,7 @@
 	effect    	----		"	
 	evidence        ---- Suggested by Jagriti Banasthali (14-10-13) Ex: All the evidence suggests that he stole the money
 	symptom		----		"				Ex: The symptoms suggest a minor heart attack.
+	field		---- Suggested by Pramila Banasthali (22-10-13) Ex: For a positive charge, the electric field will be 										 directed radially outwards from the charge.
 
 
 
@@ -855,6 +856,8 @@ Removed:
 	54. cross-sectional_adjective	anuprasWa_kAta			(Suggested by Garima Banasthali  14-10-13)
 					Ex: So if one wishes to estimate the density of field lines, one has to consider the 
 					    number of lines per unit cross-sectional area, perpendicular to the lines.
+	55. no-smoking_adjective    	XUmrapAna_niReXa		(Suggested by Sukhada            23-10-13)
+					Ex: There are plans to extend the no-smoking area.    
 
 
     4. Added new meaning to the existing word:
@@ -971,6 +974,9 @@ Removed:
 					Ex: I replaced the vase carefully on its pedestal.
 	69. statue_noun     		prawimA				(Suggested by Shweta Banasthali 14-10-13)
 					Ex: In the riot, the statues were toppled from their pedestals.
+	70. empirical_adjective     	AnuBavika			(Suggested by Pramila Banasthali 21-10-13)
+					Ex: This is a value very close to the value (1.097 × 10 m) obtained from the 
+					    empirical Balmer formula.
 
 
 
@@ -1098,6 +1104,12 @@ Removed:
 				    along the length of the wire.
 	65. accelerated_adjective  xruwa_gawi_se_kiyA_huA 	as    wvariwa	(Suggested by Garima Banasthali 14-10-13)
 				Ex: Suppose we consider the force between two distant charges q, q in accelerated motion.
+	66. excitation_noun 	uxxIpana		as	uwwejanA	(Suggested by Pramila Banasthali 21-10-13)
+				Ex: Thus, as the excitation of hydrogen atom increases (that is as n increases) the value of 
+				    minimum energy required to free the electron from the excited atom decreases.
+	67. basically_adverb	svaBAvawaH		as	mUlawaH		(Suggested by Garima Banasthali 22-10-13)
+				Ex: All of electrostatics is basically a consequence of Coulomb's law and the superposition
+				    principle.
 
 	
     6. Removed meaning from existing list:
@@ -1222,6 +1234,13 @@ Removed:
     
  multi_word_expressions.txt
  ==========================
+    Modifications on whole file:
+    ----------------------------
+	1. Modified "vixxayuwa"	as  	"vixyuwa"	 Ex: electric_cell  vixxayuwa_sela   as  vixyuwa_sela  	
+	2. Modified  #0#	as	 #1#		(By Roja 15-07-13)
+	3. Entries which contains '[', ']', '(', ')', '{', '}', '<', '>', ':' in hindi meanings are manually checked by LTRC
+	   and updated into the file along with there names.
+
     Removed  :
     ------- 
  	1. wall_street		galI[_banxa_sadaka]#galI[_banxa_sadaka]#noun#2#RM 
@@ -1248,35 +1267,32 @@ Removed:
 
     Modified :
     --------
-    	information_system --- sUcanA_praprAlI  ==> sUcanA_praNAlI 	(Suggested by Chaitanya Sir 20-17-12)
-    	curriculum_vitae   --- CV		==> @CV		 	(By Roja 15-11-12		    )
-	every_time         --- hara_bAra_[jaba]	==> hara_bAra
-	every_other        --- hara_xUsarA[>hara_koI]	=> hara_xUsarA
+    	information_system 	sUcanA_praprAlI		as	sUcanA_praNAlI 	(Suggested by Chaitanya Sir 20-17-12)
+    	curriculum_vitae   	CV			as	@CV		(By Roja 15-11-12		    )
+	every_time         	hara_bAra_[jaba]	as 	hara_bAra
+	every_other        	hara_xUsarA[>hara_koI]	as	hara_xUsarA
 	in_fact 	   --- vAswava_meM	==> vAswava_meM/asala_meM
 	System_operator_)  --- System_operator				(By Roja 	15-11-12	    )
 	for_a_while	   --- kuCa_samaya_waka	==> kuCa_samaya_waka/kuCa_kRaNa_waka (Suggested by Chaitanya Sir 17-04-13)
-	diet_book 	   --- AhAra_puwaka	==> AhAra_puswaka	(By Roja   15-07-13)
-	prompt_action	   --- wuraMwa_kArravAWa ==>wuranwa_kAryavAhI	(Suggested by Anita LTRC 04-07-13)
-	female_friends	   --- swrI_miwr	==> swrI_miwra		(by Roja 15-07-13)
-	Modified "vixxayuwa" as "vixyuwa" for the following entries:
-	electric_catfish 	electric_cell	electric_chair	electric_charge		electrical_capacity
-	Modified head info #0#	to #1#	(by Roja 15-07-13)
-	Entries which contains '[', ']', '(', ')', '{', '}', '<', '>', ':' in hindi meanings are manually checked by LTRC and updated into the file along with there names.
-	most_of_the_time	jZyAxAwara_samaya	as	prAyaH	  ( Suggested by Chaitanya sir 16-08-13 )
-	well_established	suvyavasWiwa		as	susWApiwa (			"      22-08-13 )
-	has_no_comments_to_make	ko_koWa_tippaprI_nahIM_karanI_hE as ko_koI_tippaNI_nahIM_karanI_hE (    "       )
-	wavelength_of_light	prakASa_waraMgaxEXrya	as	prakASa_warafgaxErGya (By Manju 25-09-13	)
+	diet_book 	   	AhAra_puwaka		as	AhAra_puswaka	  (By Roja   15-07-13		      )
+	female_friends	   	swrI_miwr		as 	swrI_miwra	  (		"		      )
+	prompt_action	   	wuraMwa_kArravAWa	as	wuranwa_kAryavAhI (Suggested by Anita LTRC 04-07-13   )
+	most_of_the_time	jZyAxAwara_samaya	as	prAyaH	  	  (Suggested by Chaitanya sir 16-08-13)
+	well_established	suvyavasWiwa		as	susWApiwa 	  (		"      	      22-08-13)
+	has_no_comments_to_make	ko_koWa_tippaprI_nahIM_karanI_hE as ko_koI_tippaNI_nahIM_karanI_hE (    "             )
+	wavelength_of_light	prakASa_waraMgaxEXrya	as	prakASa_warafgaxErGya (    By Manju 	      25-09-13)
 	in_matterof		as			in_matter_of	(By Roja 02-10-13			)
 	instead_of		kI_jagaha_meM		as	kI_bajAya (Suggested by Prachi Banasthali 09-10-13)
-
-
-    Added :
-    ------
+	highest_priority        savorcca_prAWamikawA	as	sarvocca_prAWamikawA(Suggested by Prachi Banasthali 21-10-13)
+								Ex: Safety is our highest priority.
+		
+    Added new entry:
+    ----------------
     	1. straight_line   	sarala_reKA#sarala_reKA#noun#2#RM		(Suggested by Chaitanya Sir 05-09-12)
     	2. path_length     	paWa_lambAI#paWa_lambAI#noun#2#WM		(Suggested by Chaitanya Sir 05-09-12)
     	3. able_to_walk    	cala_pA#cala_pA#verb#3#RM	        	(Suggested by Chaitanya Sir 09-10-12)
     	4. able_to_handle  hala_karane_meM_sakRama#hala_karane_meM_sakRama#verb#3#WM (Suggested by Chaitanya Sir 09-10-12)
-    	5. the_force_of_friction   GarRaNa_bala#GarRaNa_bala#noun#4#WM  		(Suggested by Sukhada 13-10-12)
+    	5. the_force_of_friction   GarRaNa_bala#GarRaNa_bala#noun#4#WM  	(Suggested by Sukhada 13-10-12)
     	6. since_time_immemorial   anAxi_kAla_se_hI#anAxi_kAla_se_hI#noun#2#W 	(Suggested by Chaitanya Sir 18-10-12)
     	7. at_the_other_end        isake_viparIwa#isake_viparIwa#noun#4#WM    	(Suggested by Sukhada 20-10-12)
     	8. some_of_these   	inameM_se_kuCa#inameM_se_kuCa#determiner#1#WM   (         "                   )
@@ -1359,6 +1375,12 @@ Removed:
    				Ex: We've extended a washing line between two trees in the garden.
 	49. parking_restrictions  pArkiMga-prawibaMXa#noun#2#RM 		( Suggested by Chaitanya Sir 21-10-13 )
 				Ex: Parking restrictions do not extend to disabled people.
+	50. common_custom   	sAmAnya_rivAja#sAmAnya_rivAja#noun#2#RM		(Suggested by Garima Banasthali 22-10-13)
+				Ex:  We believe in common custom.
+	51. in_common       	samAnawA#samAnawA#2#RM				(		"		"	)
+				Ex: We don't really have much in common.
+	52. warm_welcome    	hArxika_svAgawa#hArxika_svAgawa#noun#2#RM	(	By Manju 		23-10-13)
+				Ex: The chairperson extended a warm welcome to the guest speaker.
 
     Added new meaning to the existing word:
     --------------------------------------
