@@ -5681,3 +5681,6 @@ Zulmi	julmI
 Zyhno	jyhno
 Descartes	xakArwe
 Rydberg	ridabarga
+Nobel	nobela
+Louis	luisa
+Broglie	broYglI

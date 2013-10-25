@@ -439,6 +439,7 @@
  18.	PisalanevAlA	kAl/A__adj		(    "  	"		"	)
  19.	nIlA		kAl/A__adj		(    "  	"		24-09-13)
  20.	aBiXAraNA	ASA/__n			(    "	 Suggested by Chaitanya Sir 16-10-13)
+ 21.	BAga		Gar/a__n		(By Roja 			24-10-13)
 
 Modified :
   1.	<e><p><l>we_hue</l>	as	<e><p><l>owe_hue</l>       for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
@@ -605,8 +606,9 @@ Removed:
  Changes in time.txt:
  ===================
   Added:
-         time	1  (Added by Sukhada 13-02-11) 
+         time	1  (By Sukhada 13-02-11) 
          year	1  (        "                )
+	 second	1  (Suggested by Nandini ji LTRC 24-10-13) Ex: The winner cut ten seconds off the world record.
 
   Removed: month_day.txt and merged all its contents in time.txt (Suggested by Sukhada 08-03-11)
 
@@ -1110,6 +1112,8 @@ Removed:
 	67. basically_adverb	svaBAvawaH		as	mUlawaH		(Suggested by Garima Banasthali 22-10-13)
 				Ex: All of electrostatics is basically a consequence of Coulomb's law and the superposition
 				    principle.
+	68. feeling_noun	xayA			as	saMvexanA	(Suggested by Nandini ji LTRC   24-10-13)
+				Ex: I have lost all feelings in my leg.
 
 	
     6. Removed meaning from existing list:
@@ -1381,6 +1385,8 @@ Removed:
 				Ex: We don't really have much in common.
 	52. warm_welcome    	hArxika_svAgawa#hArxika_svAgawa#noun#2#RM	(	By Manju 		23-10-13)
 				Ex: The chairperson extended a warm welcome to the guest speaker.
+	53. matter_of_urgency	ApAwa_sWiwi#ApAwa_sWiwi#noun#1#RM		(Suggested by Anita ji LTRC	24-10-13)
+				Ex: This should be treated as a matter of urgency .
 
     Added new meaning to the existing word:
     --------------------------------------
@@ -1553,6 +1559,9 @@ Removed:
 	13B		13_bI  to  Zyhno	jyhno 	(By Roja 11-09-13)
 	Descartes       xakArwe		(Suggested by Pramila Banasthali 14-09-13)
 	Rydberg		ridabarga	(Suggested by Shweta  Banasthali 14-09-13)
+	Nobel		nobela		(Suggested by Rashmi Banasthali 24-10-13)
+	Louis		luisa		(		"		"	)
+	Broglie		broYglI		(		"		"	)
 
    Modified:
    ---------

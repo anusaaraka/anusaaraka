@@ -180,3 +180,4 @@ work week	1
 year	1
 yesterday	1
 yesterday's	1
+second	1

@@ -33540,6 +33540,7 @@ writ_large	ekaxama_spaRta/hukmanAmA/leKa#ekaxama_spaRta/hukmanAmA/leKa#adverb#1#
 yellow_pine	pIle_xevaxAra/cIdZa/xevaxAra_Pala#pIle_xevaxAra/cIdZa/xevaxAra_Pala#noun#2#RM
 last_call	anwima_sUcanA#anwima_sUcanA#noun#2#RM
 call_by_on	howe_huE_jA#howe_huE_jA#verb#1#RM
+matter_of_urgency	ApAwa_sWiwi#ApAwa_sWiwi#noun#1#RM
 #By Alpana ji (LTRC)
 Block_multiplexer	avaroXa_bahusaMkewaka#avaroXa_bahusaMkewaka#noun#2#RM
 Discharge_Required	AvaSyaka_nirvahana#AvaSyaka_nirvahana#noun#1#RM

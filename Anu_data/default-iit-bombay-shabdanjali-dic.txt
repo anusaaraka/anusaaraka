@@ -28923,7 +28923,7 @@ feeler_UNDEFINED	mahasUsa_karane_vAlA
 feeler_noun	sparSaka
 feelers_UNDEFINED	mahasUsa_karane_vAlA
 feeling_UNDEFINED	BAva
-feeling_noun	xayA/XAraNA/vixveRa/vicAra/vexanA/uwwejanA/saMvexanA/sAmanya-boXa/sahAnuBUwi/prema/kRamawA/inxriya-boXa/imAnaxArI/ehasAsa/BAvanA/ASafkA/anuBUwi/anuBava/aBivqwwi/boXa/cewanA
+feeling_noun	saMvexanA/xayA/XAraNA/vixveRa/vicAra/vexanA/uwwejanA/sAmanya-boXa/sahAnuBUwi/prema/kRamawA/inxriya-boXa/imAnaxArI/ehasAsa/BAvanA/ASafkA/anuBUwi/anuBava/aBivqwwi/boXa/cewanA
 feelinger_UNDEFINED	boXa
 feelingest_UNDEFINED	boXa
 feelingly_adverb	BAvanA_sahiwa
@@ -30705,6 +30705,7 @@ focals_UNDEFINED	Pokasa_meM_honA
 foci_UNDEFINED	sAPa_xiKAI_xenA
 focus_noun	kenxra_binxu/Pokasa/prakASa/muxxA/kiraNa_binxu/kenxrabinxu/kenxra
 focus_verb	XyAna_kenxriwa_kara/xeKane_yogya_ho/safkenxriwa_kara/lensa_TIka_kara/kenxriwa_ho/sAPa_xiKAI_xe/kenxriwa_kara
+focuss_verb	XyAna_kenxriwa_kara/xeKane_yogya_ho/safkenxriwa_kara/lensa_TIka_kara/kenxriwa_ho/sAPa_xiKAI_xe/kenxriwa_kara
 focused_UNDEFINED	sAPa_xiKAI_xenA
 focuses_UNDEFINED	sAPa_xiKAI_xenA
 focusing_UNDEFINED	sAPa_xiKAI_xenA
