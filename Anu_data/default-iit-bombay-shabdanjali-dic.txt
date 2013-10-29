@@ -93498,3 +93498,4 @@ action-reaction_adjective	kriyA-prawikriyA
 construct_noun	racanA
 cross-sectional_adjective	anuprasWa_kAta
 no-smoking_adjective	XUmrapAna_niReXa
+planar_noun	samawalIya

@@ -759,7 +759,9 @@ Removed:
 	90. propagation_noun	pracAraNa		as	prasAraNa	(	"		    22-08-13 )
 	91. disappointed_adjective	xuKHI		as	xuHKI		(	"		    29-08-13 )
 	92. illustration_noun	vyaKyA			as	vyAKyA		(	" Prachi Banasthali 14-10-13 )
-	93. illustrate_verb	vyaKyA_kara		as	vyAKyA_kara	(By Roja 		    14-10-13 )	  
+	93. illustrate_verb	vyaKyA_kara		as	vyAKyA_kara	(By Roja 		    14-10-13 )
+	94. photon_noun		Potana			as	Potona		(Suggested by Sonam Banasthali	29-10-13)
+	95. precisely_adverb	Tika-Tika		as	TIka-vahI	(	"		"	"    )
 
 
     3. Added new entry:
@@ -859,7 +861,9 @@ Removed:
 					Ex: So if one wishes to estimate the density of field lines, one has to consider the 
 					    number of lines per unit cross-sectional area, perpendicular to the lines.
 	55. no-smoking_adjective    	XUmrapAna_niReXa		(Suggested by Sukhada            23-10-13)
-					Ex: There are plans to extend the no-smoking area.    
+					Ex: There are plans to extend the no-smoking area.   
+	56. planar_noun			samawalIya 			(Suggested by Sonam Banasthali	 29-10-13)
+					Ex: For a finite large planar sheet, Eq. (1.33) is approximately true in the middle						 regions of the planar sheet, away from the ends.
 
 
     4. Added new meaning to the existing word:
@@ -979,7 +983,8 @@ Removed:
 	70. empirical_adjective     	AnuBavika			(Suggested by Pramila Banasthali 21-10-13)
 					Ex: This is a value very close to the value (1.097 × 10 m) obtained from the 
 					    empirical Balmer formula.
-
+	71. ignore_verb			upekRA_kara			(Suggested by Prachi Banasthali	 28-10-13)
+					Ex: However, Eq. (1.32) is approximately true for electric field around the central 						portions of a long wire, where the end effects may be ignored.
 
 
     5. Modifying first meaning from the list :
