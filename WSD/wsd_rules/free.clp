@@ -42,7 +42,7 @@
 (id-root ?id free)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 wheel)
-(kriyA-upasarga ?id ?id1)
+(kriyA-wheel_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)

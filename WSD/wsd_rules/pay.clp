@@ -55,7 +55,7 @@
 (id-root ?id pay)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 attention)
-(kriyA-upasarga ?id ?id1)
+(kriyA-attention_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -83,7 +83,7 @@
 (id-root ?id pay)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 fare)
-(kriyA-upasarga ?id ?id1)
+(kriyA-fare_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -111,7 +111,7 @@
 (id-root ?id pay)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 freight)
-(kriyA-upasarga ?id ?id1)
+(kriyA-freight_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -139,7 +139,7 @@
 (id-root ?id pay)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 hire)
-(kriyA-upasarga ?id ?id1)
+(kriyA-hire_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -167,7 +167,7 @@
 (id-root ?id pay)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 out)
-(kriyA-upasarga ?id ?id1)
+(kriyA-out_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -195,7 +195,7 @@
 (id-root ?id pay)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 rent)
-(kriyA-upasarga ?id ?id1)
+(kriyA-rent_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)

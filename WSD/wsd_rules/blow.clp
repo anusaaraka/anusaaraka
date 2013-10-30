@@ -71,7 +71,7 @@
 (id-root ?id blow)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 in)
-(kriyA-upasarga ?id ?id1)
+(kriyA-in_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -99,7 +99,7 @@
 (id-root ?id blow)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 off)
-(kriyA-upasarga ?id ?id1)
+(kriyA-off_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -127,7 +127,7 @@
 (id-root ?id blow)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 out)
-(kriyA-upasarga ?id ?id1)
+(kriyA-out_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -155,7 +155,7 @@
 (id-root ?id blow)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 over)
-(kriyA-upasarga ?id ?id1)
+(kriyA-over_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -183,7 +183,7 @@
 (id-root ?id blow)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 up)
-(kriyA-upasarga ?id ?id1)
+(kriyA-up_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -211,7 +211,7 @@
 (id-root ?id blow)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 upon)
-(kriyA-upasarga ?id ?id1)
+(kriyA-upon_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)

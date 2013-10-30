@@ -4,7 +4,7 @@
 (id-TAM ?id to_0)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 follow)
-(kriyA-upasarga ?id ?id1)
+(kriyA-follow_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)

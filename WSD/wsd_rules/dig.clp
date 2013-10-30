@@ -37,7 +37,7 @@
 (id-root ?id dig)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 up)
-(kriyA-upasarga ?id ?id1)
+(kriyA-up_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (kriyA-object ?id ?)
 (id-cat_coarse ?id verb)
 =>

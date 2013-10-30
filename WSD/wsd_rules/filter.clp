@@ -21,7 +21,7 @@
 (id-root ?id filter)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 in)
-(kriyA-upasarga ?id ?id1)
+(kriyA-in_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -49,7 +49,7 @@
 (id-root ?id filter)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 out)
-(kriyA-upasarga ?id ?id1)
+(kriyA-out_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -77,7 +77,7 @@
 (id-root ?id filter)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 through)
-(kriyA-upasarga ?id ?id1)
+(kriyA-through_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -105,7 +105,7 @@
 (id-root ?id filter)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 in)
-(kriyA-upasarga ?id ?id1)
+(kriyA-in_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)

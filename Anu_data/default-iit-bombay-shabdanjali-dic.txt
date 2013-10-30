@@ -61771,7 +61771,7 @@ protestors_UNDEFINED	prawivAxI
 protests_UNDEFINED	viroXa_karanA
 proto_adjective	Axya
 protocol_noun	nayAcAra/vijFapwi/protokola/anwarrARtrIya_sanXi_kA_mUla_pawra
-proton_noun	aNu_kA_eka_CotA_BAga/protrAna
+proton_noun	XanAveSa_sUkRmANu/aNu_kA_eka_CotA_BAga/protrAna
 protons_UNDEFINED	aNu_kA_eka_CotA_BAga
 protoplasm_noun	jIvaxravya
 protoplasms_UNDEFINED	jIvaxravya
