@@ -985,6 +985,13 @@ Removed:
 					    empirical Balmer formula.
 	71. ignore_verb			upekRA_kara			(Suggested by Prachi Banasthali	 28-10-13)
 					Ex: However, Eq. (1.32) is approximately true for electric field around the central 						portions of a long wire, where the end effects may be ignored.
+	72. grain_noun      		anAja				(Suggested by Shweta Banasthali 29-10-13)
+					Ex: It was spring, a day on which the fresh grain was fried and eaten and given as a
+					    gift .
+	73. parch_verb      		Buna				(Suggested by Shweta Banasthali 29-10-13)
+					Ex: With this command the servants went away and Bhungi began to parch the grain .
+	74. dispersive_adjective	niSkAsiwa/biKeranA		(suggested by Ratna JI          30-10-13)
+					Ex: On the other hand, glass is a dispersive medium.
 
 
     5. Modifying first meaning from the list :
@@ -1119,6 +1126,8 @@ Removed:
 				    principle.
 	68. feeling_noun	xayA			as	saMvexanA	(Suggested by Nandini ji LTRC   24-10-13)
 				Ex: I have lost all feelings in my leg.
+	69. parched_adjective   SuRka			as	BunA_huA	(Suggested by Shweta Banasthali 29-10-13)
+				Ex: With this command the servants went away and Bhungi began to parch the grain .
 
 	
     6. Removed meaning from existing list:
@@ -1185,6 +1194,7 @@ Removed:
 	27. polyunsaturated_UNDEFINED					( By Roja 			11-09-13)
 	28. freeman-^pl.freemen^_UNDEFINED	svAXIna_nAgarika	( By Manju			14-09-13)
 	29. freeman-{pl.freemen}_noun		svAXIna_nAgarika	(	"			 "	)
+	30. grain_UNDEFINED 	anAja					(Suggested by Shweta Banasthali 29-10-13)
 
 
     8. Modified category:
@@ -1392,6 +1402,12 @@ Removed:
 				Ex: The chairperson extended a warm welcome to the guest speaker.
 	53. matter_of_urgency	ApAwa_sWiwi#ApAwa_sWiwi#noun#1#RM		(Suggested by Anita ji LTRC	24-10-13)
 				Ex: This should be treated as a matter of urgency .
+	54. attractive_force    AkarRaNa_bala#AkarRaNa_bala#noun#2#RM		(Suggested by Garima Banasthali 29-10-13)
+				Ex: Solutions of the Schrödinger wave equation assign a wave-like description to the 
+				    electrons bound in an atom due to attractive forces of the protons.
+	55. atomic_spectra     paramANvIya_spektrama#paramANvIya_spektrama#noun#2#RM(Suggested by Garima Banasthali 29-10-13)
+				Ex: The various lines in the atomic spectra are produced when electrons jump from higher 
+				    energy state to a lower energy state and photons are emitted. 
 
     Added new meaning to the existing word:
     --------------------------------------

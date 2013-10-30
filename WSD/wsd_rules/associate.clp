@@ -8,8 +8,8 @@
 (kriyA-with_saMbanXI  ?id ?id1)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id judA_ho))
+(assert (id-wsd_root_mng ?id juda));Replaced 'judA_ho' as 'juda' by Shirisha Manju Suggested by Chaitanya Sir (30-10-13) 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  associate.clp   associate0   "  ?id "  judA_ho )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  associate.clp   associate0   "  ?id "  juda )" crlf))
 )
 

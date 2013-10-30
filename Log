@@ -1,4 +1,4 @@
- 21-10-13
+ 30-10-13
  ========
  1. WSD : Modified :	interface.clp	number.clp	raise.clp	cultivate.clp	stay.clp	synthetic.clp
 			section.clp	enough.clp	different.clp	accident.clp	authority.clp	essentially.clp
@@ -6,13 +6,13 @@
 			respect.clp	0_tam.clp	standard.clp	lay.clp		call.clp	evil.clp
 			bar.clp		deal.clp	corrupt.clp	derive.clp	acute.clp   	vein.clp
 			by.clp		to.clp		discuss.clp	ed_en_tam.clp	like.clp	low.clp
-			enormous.clp	extend.clp
+			enormous.clp	extend.clp	associate.clp   determine.clp
 	  Added    :	argue.clp	cell.clp	feature.clp	flux.clp	divide.clp	equivalently.clp
 			win.clp		difficult.clp	eliminate.clp	closely.clp	compress.clp	generation.clp
 			deduce.clp	define.clp	degree.clp	emerge.clp	enormous.clp	substantially.clp
 			general.clp	sensitive.clp	shrink.clp	succeed.clp	employ.clp      independent.clp
 			instead.clp	involve.clp	lasting.clp	vivid.clp	demonstrate.clp	arise.clp 
-			closely.clp	realize.clp	govern.clp	departure.clp  	glass.clp
+			closely.clp	realize.clp	govern.clp	departure.clp  	glass.clp	constituent.clp
 	  Deleted  :	pass_default.clp
  2. causative_verb_mng.clp
 	Modified : modify_mng rule -- (modified source)
@@ -27,7 +27,8 @@
 	Modified : merge_ADVP and move_ADVP_after_v
 	Added    : mv_destination_before_verb
  7. sd_lwg_rules.clp
-	Modified : cp_facts_for_lwg, conjunction_rule0 and conjunction_rule1
+	Modified : cp_facts_for_lwg, conjunction_rule0 ,conjunction_rule1, replace_S, replace_S1_Let, replace_S1 and 
+		   check_for_imper1
  8. sd_relation_correction.clp
         Added deffunction never-called ()
  9. sd_relation_rules.clp: 
@@ -75,7 +76,9 @@
 	compile_full_parser.sh
 21. Updated FinalGenerate.pl 
 22. Updated Log
-23. Updated  sd_verified (537	phy_verified_eng (253)	verified_eng (40)	small_sent_verified_sd (108)
+23. Updated  sd_verified (539)		verified_eng (40)       	small_sent_verified_sd (110)
+	     phy_verified_eng (253)	phy_partial_ver_eng (282)
+
 
  31-08-13
  ========

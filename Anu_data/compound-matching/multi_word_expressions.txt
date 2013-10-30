@@ -33217,6 +33217,8 @@ parking_restrictions	pArkiMga-prawibaMXa#pArkiMga-prawibaMXa#noun#2#RM
 common_custom	sAmAnya_rivAja#sAmAnya_rivAja#noun#2#RM
 in_common	samAnawA#samAnawA#2#RM
 warm_welcome	hArxika_svAgawa#hArxika_svAgawa#noun#2#RM
+attractive_force	AkarRaNa_bala#AkarRaNa_bala#noun#2#RM
+atomic_spectra	paramANvIya_spektrama#paramANvIya_spektrama#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

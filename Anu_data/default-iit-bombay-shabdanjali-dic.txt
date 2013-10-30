@@ -23182,7 +23182,7 @@ disperses_UNDEFINED	CiwarAnA
 dispersest_UNDEFINED	CiwarAnA
 dispersing_UNDEFINED	CiwarAnA
 dispersion_noun	PElAva/CiwarAva
-dispersive_adjective	PElA_huA
+dispersive_adjective	PElA_huA/niSkAsiwa/biKeranA
 dispirit_verb	mana_woda/hawowsAhiwa
 dispirited_adjective	uxAsIna/hawowsAhowa
 dispiriting_adjective	uxAsIna/hawowsAhiwa_karane_vAlA
@@ -34218,8 +34218,7 @@ grafter_UNDEFINED	kalamakAra
 grafting_UNDEFINED	kalama_lagAnA
 grafts_UNDEFINED	kalama_lagAnA
 grail_noun	mqgawqRNA/paviwra_pyAlA
-grain_UNDEFINED	anAja
-grain_noun	XAnya/wOla_kI_sabase_CotI_ikAI/wanwuracanA/svaBAva/Pasala/mijAja/kaNa/grena/bIjA/bIja
+grain_noun	anAja/XAnya/wOla_kI_sabase_CotI_ikAI/wanwuracanA/svaBAva/Pasala/mijAja/kaNa/grena/bIjA/bIja
 grained_UNDEFINED	anAja
 graining_UNDEFINED	anAja
 grains_UNDEFINED	anAja
@@ -56024,9 +56023,9 @@ parcelled_UNDEFINED	gaTarI
 parcelling_UNDEFINED	gaTarI
 parcels_UNDEFINED	gaTarI
 parch_UNDEFINED	JalasanA
-parch_verb	JulasA_xe
+parch_verb	Buna/JulasA_xe
 parched_UNDEFINED	Jalasa
-parched_adjective	SuRka/sUKA/JulasA_huA/BunA_huA/JalasanA
+parched_adjective	BunA_huA/SuRka/sUKA/JulasA_huA/JalasanA
 parchment_noun	carmapawra_para_liKiwa_xaswAveja/carmapawra/camade_ke_samAna_kAgaja
 pardah_UNDEFINED	paraxA
 pardon_noun	mAPI/kRamAxAna/kRamA

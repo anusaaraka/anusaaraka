@@ -114,25 +114,25 @@
  ;--------------------------------------------------------------------------
  ;Added by Shirisha Manju (Suggested by Chaitanya Sir (12-06-13)
  ;According to this view, for example, an arrow shot from a bow [keeps flying] since the air behind the arrow [keeps pushing] it.
- (defrule replace_VP1
- (declare (salience 1600))
- ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot ?pre ?S)
- ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S ?VP)
- (Node-Category ?Mot VP)
- (Node-Category ?S S)
- (Node-Category ?VP VP)
- ?f2<-(Head-Level-Mother-Daughters_lwg ?h ?l ?VP ?node $?daut)
- (test (neq (length $?daut) 0));I like running. I have started working
- (not (Node-Category ?node TO));Jumma masjid is considered to be one of the most beautiful mosques in western india.
- (not (dont_replace_VP ?Mot))
- (not (dont_replace_VP ?VP))
- =>
-        (retract ?f ?f1 ?f2)
-        (assert (Head-Level-Mother-Daughters_lwg ?head1 ?lvl ?Mot ?pre ?node $?daut ))
-        (printout ?*lwg_debug_file* "   (rule_name - replace_VP1" crlf
-	                 "                      Before    - "?head" "?lvl" "?Mot" "?pre" "?S ")" crlf
-                         "                      After     - "?head1" "?lvl" "?Mot" "?pre"  "?node" "(implode$ $?daut)")" crlf)
- )
+; (defrule replace_VP1
+; (declare (salience 1600))
+; ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot ?pre ?S)
+; (Node-Category ?Mot VP)
+; (Node-Category ?S S)
+; ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S ?VP)
+; (Node-Category ?VP VP)
+; ?f2<-(Head-Level-Mother-Daughters_lwg ?h ?l ?VP ?node $?daut)
+; (test (neq (length $?daut) 0));I like running. I have started working
+; (not (Node-Category ?node TO));Jumma masjid is considered to be one of the most beautiful mosques in western india.
+; (not (dont_replace_VP ?Mot))
+; (not (dont_replace_VP ?VP))
+; =>
+;        (retract ?f ?f1 ?f2)
+;        (assert (Head-Level-Mother-Daughters_lwg ?head1 ?lvl ?Mot ?pre ?node $?daut ))
+;        (printout ?*lwg_debug_file* "   (rule_name - replace_VP1" crlf
+;	                 "                      Before    - "?head" "?lvl" "?Mot" "?pre" "?S ")" crlf
+;                         "                      After     - "?head1" "?lvl" "?Mot" "?pre"  "?node" "(implode$ $?daut)")" crlf)
+; )
 ;--------------------------------------------------------------------------
  ;Replacing a VP mother whose child is  S|SBAR|SQ on checking the head word .
  ;Ex:-A fat boy [had to eat] fruits. 
@@ -140,37 +140,41 @@
  ;These smugglers are to be captured. Broken windows need to be replaced. 
  ;That is the way business used to be done and that is the way business needs to be done.
  ;Positive thinking needs to be inculcated. [needs]
+ ;Modified the rule to check prev_node of 'SBAR|S|SQ' is verb. Ex: He got so drunk that he passed out.
  (defrule replace_S
  (declare (salience 100))
- ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?S $?pos)
+ ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?prev_node ?S $?pos)
  (parserid-word ?head ?w&get|got|gets|getting|have|had|has|having|make|makes|making|made|need|needs) 
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
  (Node-Category ?Mot VP)
  (Node-Category ?S SBAR|S|SQ)
+ (Node-Category ?pre_n VBG|VBN|VBD|VBZ|VBP|VB|MD|TO|AUX|AUXG)
  (not (dont_replace_VP ?Mot))
  =>
         (retract ?f ?f1)
-        (assert (Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre $?daut  $?pos))
+        (assert (Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?prev_node $?daut  $?pos))
         (printout ?*lwg_debug_file* "	(rule_name - replace_S" crlf
-                         "              	Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "?S" "(implode$ $?pos)")" crlf
-                         "              	After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?daut)" "(implode$ $?pos)")" crlf)
+                         "              	Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "?prev_node" "?S" "(implode$ $?pos)")" crlf
+                         "              	After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "?prev_node" "(implode$ $?daut)" "(implode$ $?pos)")" crlf)
  )
 ;--------------------------------------------------------------------------
  ;Replacing a VP mother whose child is  S|SBAR on checking the head word "Let".
+ ;Modified the rule to check prev_node of 'SBAR|S|SQ' is verb.
  (defrule replace_S1_Let
  (declare (salience 100))
- ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?S $?pos)
+ ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?prev_node ?S $?pos)
  (parserid-word ?head ?w&Let|let)
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
  (Node-Category ?Mot VP)
  (Node-Category ?S S|SBAR)
+ (Node-Category ?pre_n VBG|VBN|VBD|VBZ|VBP|VB|MD|TO|AUX|AUXG)
  (not (dont_replace_VP ?Mot))
  =>
         (retract ?f ?f1)
-        (assert (Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre $?daut  $?pos))
+        (assert (Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?prev_node $?daut  $?pos))
         (printout ?*lwg_debug_file* "	(rule_name - replace_S1_Let" crlf
-                         "              	Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "?S" "(implode$ $?pos)")" crlf
-                         "              	After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?daut)" "(implode$ $?pos)")" crlf)
+                         "              	Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "?prev_node" "?S" "(implode$ $?pos)")" crlf
+                         "              	After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "?prev_node" "(implode$ $?daut)" "(implode$ $?pos)")" crlf)
 
  )
 
@@ -178,21 +182,23 @@
  ;Replacing a VP mother whose child is  S on checking the head word "are|Are|is|was|were".
  ; The normal in this case is to be taken as normal to the tangent to surface at the point of incidence.
  ;;If air resistance is neglected, the object [is said to be] in free fall.
+ ;Modified the rule to check prev_node of 'SBAR|S|SQ' is verb.
  (defrule replace_S1
  (declare (salience 100))
- ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?S $?pos)
+ ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?prev_node ?S $?pos)
  (parserid-word ?head ?w&are|Are|is|was|were|said)
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
  (parserid-word ?head1 ?w1&to)
  (Node-Category ?Mot VP)
  (Node-Category ?S S)
+ (Node-Category ?pre_n VBG|VBN|VBD|VBZ|VBP|VB|MD|TO|AUX|AUXG)
  (not (dont_replace_VP ?Mot))
  =>
         (retract ?f ?f1)
-        (assert (Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre $?daut  $?pos))
+        (assert (Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?prev_node $?daut  $?pos))
         (printout ?*lwg_debug_file* "	(rule_name - replace_S1" crlf
-                         "              	Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "?S" "(implode$ $?pos)")" crlf
-                         "              	After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "(implode$ $?daut)" "(implode$ $?pos)")" crlf)
+                         "              	Before    - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "?prev_node " "?S" "(implode$ $?pos)")" crlf
+                         "              	After     - "?head" "?lvl" "?Mot" "(implode$ $?pre)" "?prev_node " "(implode$ $?daut)" "(implode$ $?pos)")" crlf)
  )
 ;--------------------------------------------------------------------------
  (defrule get_lwg1
@@ -568,7 +574,7 @@
  (Node-Category ?INTJ INTJ|ADVP|PP|CC)
  (Head-Level-Mother-Daughters ? ? ?VP ?verb $?)
  (Head-Level-Mother-Daughters ?h ? ?verb ?first $?)
- (parserid-word ?h ~Let)
+ (parserid-word ?h ?w&~Let&~let);Now let her see.
  ?f<-(root-verbchunk-tam-parser_chunkids ?root ?vrb_chunk ?tam ?first $?ids)
   (not (lwgids_imper_checked ?first $?ids))
  =>
