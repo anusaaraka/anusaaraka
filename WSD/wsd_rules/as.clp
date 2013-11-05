@@ -174,17 +174,18 @@
 )
 
 ;As he was in a hurry, he took the shortest way.
-;(defrule as14
-;(declare (salience 3600))
-;(id-root ?id as)
-;?mng <-(meaning_to_be_decided ?id)
+(defrule as14
+(declare (salience 3400)) ;Salience reduced 3600 to 3400 by Roja 04-11-13. Ex: As we go from ooty to gudalur, the change in vegetation is striking. 
+(id-root ?id as)
+?mng <-(meaning_to_be_decided ?id)
 ;(id-word 1 ?id)
-;=>
-;(retract ?mng)
-;(assert (id-wsd_root_mng ?id kyoM_ki))
-;(if ?*debug_flag* then
-;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  as.clp 	as14   "  ?id "  kyoM_ki )" crlf))
-;)
+(test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kyoM_ki))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  as.clp 	as14   "  ?id "  kyoM_ki )" crlf))
+)
 
 
 

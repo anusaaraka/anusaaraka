@@ -30,7 +30,8 @@
 ?mng <-(meaning_to_be_decided ?id)
 (subject_question_wh_type )
 ;(praSnAwmaka_vAkya      )
-;(id-word 1 ?id)
+;;(id-word 1 ?id)
+(test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.
 (id-root ?id1  ?)
 (kriyA-subject ?id1 ?id)
 =>

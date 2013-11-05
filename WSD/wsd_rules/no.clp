@@ -21,7 +21,8 @@
 (declare (salience 4900))
 (id-root ?id no)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word 1 ?id)
+;(id-word 1 ?id)
+(test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.
 (id-cat_coarse =(+ ?id 1) noun)
 =>
 (retract ?mng)

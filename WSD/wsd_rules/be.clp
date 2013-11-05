@@ -126,7 +126,8 @@
 (declare (salience 4400))
 (id-root ?id be)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word 1 ?id)
+;(id-word 1 ?id)
+(test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.
 (id-word ?id Are )
 (id-cat_coarse ?id verb)
 =>
@@ -142,7 +143,8 @@
 (declare (salience 4300))
 (id-root ?id be)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word 1 ?id)
+;(id-word 1 ?id)
+(test (eq ?id 1))
 (id-word ?id Is )
 (id-cat_coarse ?id verb)
 =>
@@ -158,7 +160,8 @@
 (declare (salience 4200))
 (id-root ?id be)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word 1 ?id)
+;(id-word 1 ?id)
+(test (eq ?id 1))
 (id-word ?id Was )
 (id-cat_coarse ?id verb)
 =>
@@ -174,7 +177,8 @@
 (declare (salience 4100))
 (id-root ?id be)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word 1 ?id)
+;(id-word 1 ?id)
+(test (eq ?id 1))
 (id-word ?id Were )
 (id-cat_coarse ?id verb)
 =>
@@ -190,7 +194,8 @@
 (declare (salience 4000))
 (id-root ?id be)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word 1 ?id)
+;(id-word 1 ?id)
+(test (eq ?id 1))
 (id-word ?id Am )
 (id-cat_coarse ?id verb)
 =>

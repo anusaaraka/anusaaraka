@@ -30,10 +30,11 @@
 ;karwA_vAlI_kriyA=rain	-	0
 ;karwA_vAlI_kriyA=take	-	0
 (defrule it2
-(declare (salience 4800))
+(declare (salience 2400)) ; Salience reduced from 4800 to 2400 by Roja 04-11-13. Ex: It was a completely wasted journey. 
 (id-root ?id it)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word 1 ?id)
+;(id-word 1 ?id)
+(test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.
 (id-word =(+ ?id 1) is )
 (id-word =(+ ?id 2) a)
 =>
@@ -47,7 +48,8 @@
 (declare (salience 4700))
 (id-root ?id it)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word 1 ?id)
+;(id-word 1 ?id)
+(test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.
 (id-word =(+ ?id 1) is )
 (id-word =(+ ?id 2) an)
 =>
@@ -61,10 +63,11 @@
 ;It is the third big city in China.
 ; It was a Sunday Evening.
 (defrule it4
-(declare (salience 4600))
+(declare (salience 2400)) ; Salience reduced from 4800 to 2400 by Roja 04-11-13. Ex: It was a completely wasted journey.
 (id-root ?id it)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word 1 ?id)
+;(id-word 1 ?id)
+(test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.
 (id-word =(+ ?id 1) was )
 (id-word =(+ ?id 2) a)
 =>
@@ -78,7 +81,8 @@
 (declare (salience 4500))
 (id-root ?id it)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word 1 ?id)
+;(id-word 1 ?id)
+(test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.
 (id-word =(+ ?id 1) was )
 (id-word =(+ ?id 2) an)
 =>

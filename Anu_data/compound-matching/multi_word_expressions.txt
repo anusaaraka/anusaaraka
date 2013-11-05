@@ -16105,7 +16105,6 @@ in_theory	sixXAMwa_rUpa_meM#sixXAMwa_rUpa_meM#noun#2#RM
 in_this_behalf	isa_sambanXa_meM#isa_sambanXa_meM#noun#3#RM
 in_this_instance	isa_mAmale_meM#isa_mAmale_meM#noun#3#RM
 in_this_regard	isa_saMxarBa_meM#isa_saMxarBa_meM#noun#3#RM
-in_time	samaya_para#samaya_para#noun#2#RM
 in_token_of	nAmamAwra_kA#nAmamAwra_kA#noun#2#RM
 in_transit	mArgasWa#mArgasWa#noun#2#RM
 in_turn	kI_bArI_Ane_para#kI_bArI_Ane_para#noun#2#RM
@@ -31379,7 +31378,6 @@ two_level_subroutine	xvi_swara_upanemakA#xvi_swara_upanemakA#noun#3#RM
 two_pass_assembler	xvi_xOra_kodAMwaraka#xvi_xOra_kodAMwaraka#noun#3#RM
 two_plus_one_address_instruction	xo_XanA_eka_pawA_anuxeSa#xo_XanA_eka_pawA_anuxeSa#noun#5#RM
 two_tier_bid	aXika_mUlya_xe_kara_kampanI_para_aXikAra_pAne_kA_praswAva#aXika_mUlya_xe_kara_kampanI_para_aXikAra_pAne_kA_praswAva#noun#3#RM
-two_times	xo_bAra#xo_bAra#noun#2#RM
 two_way_alternate_communication	xviXA_ekAMwara_saMcAra#xviXA_ekAMwara_saMcAra#noun#4#RM
 two_way_courts	kraya_vikraya_ke_BAva#kraya_vikraya_ke_BAva#noun#3#RM
 two_wire_circuit	xviwAra_paripaWa#xviwAra_paripaWa#noun#3#RM
@@ -33219,6 +33217,8 @@ in_common	samAnawA#samAnawA#2#RM
 warm_welcome	hArxika_svAgawa#hArxika_svAgawa#noun#2#RM
 attractive_force	AkarRaNa_bala#AkarRaNa_bala#noun#2#RM
 atomic_spectra	paramANvIya_spektrama#paramANvIya_spektrama#noun#2#RM
+ancient_times	prAcIna_kAla#prAcIna_kAla#noun#2#RM
+modern_times	AXunika_kAla#AXunika_kAla#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

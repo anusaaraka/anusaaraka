@@ -28,7 +28,8 @@
 (id-root ?id when)
 ?mng <-(meaning_to_be_decided ?id)
 (praSnAwmaka_vAkya      )
-(id-word 1 ?id)
+;(id-word 1 ?id)
+(test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kaba))

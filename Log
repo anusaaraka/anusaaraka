@@ -1,4 +1,4 @@
- 30-10-13
+ 05-10-13
  ========
  1. WSD : Modified :	interface.clp	number.clp	raise.clp	cultivate.clp	stay.clp	synthetic.clp
 			section.clp	enough.clp	different.clp	accident.clp	authority.clp	essentially.clp
@@ -6,7 +6,11 @@
 			respect.clp	0_tam.clp	standard.clp	lay.clp		call.clp	evil.clp
 			bar.clp		deal.clp	corrupt.clp	derive.clp	acute.clp   	vein.clp
 			by.clp		to.clp		discuss.clp	ed_en_tam.clp	like.clp	low.clp
-			enormous.clp	extend.clp	associate.clp   determine.clp
+			enormous.clp	extend.clp	associate.clp   determine.clp	am.clp		any.clp
+			anybody.clp	anyone.clp	as.clp		it.clp		so.clp		having_en_tam.clp
+			could.clp	no.clp		that.clp	the.clp		time.clp	to.clp
+			what.clp	when.clp	where.clp	which.clp	while.clp	who.clp
+			whom.clp	whose.clp	be.clp
 	  Added    :	argue.clp	cell.clp	feature.clp	flux.clp	divide.clp	equivalently.clp
 			win.clp		difficult.clp	eliminate.clp	closely.clp	compress.clp	generation.clp
 			deduce.clp	define.clp	degree.clp	emerge.clp	enormous.clp	substantially.clp
@@ -78,7 +82,7 @@
 	compile_full_parser.sh
 21. Updated FinalGenerate.pl 
 22. Updated Log
-23. Updated  sd_verified (539)		verified_eng (40)       	small_sent_verified_sd (110)
+23. Updated  sd_verified (542)		verified_eng (40)       	small_sent_verified_sd (114)
 	     phy_verified_eng (253)	phy_partial_ver_eng (282)
 
 

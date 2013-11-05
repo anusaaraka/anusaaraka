@@ -32,7 +32,8 @@
 ;;(id-cat_coarse =(+ ?id 1)  adverb_comp)
 ;(id-word =(+ ?id 1) more|less)
 ;(jiwanA-wulnAwmaka_viSeRaNa  ?id  =(+ ?id 1))
-;(id-word 1 ?id)
+;;(id-word 1 ?id)
+;(test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.
 ;=>
 ;(retract ?mng)
 ;(assert (id-wsd_root_mng ?id jiwanA))
@@ -47,7 +48,8 @@
 ;;(id-cat_coarse =(+ ?id 1)  adjective_comp)
 ;(id-word =(+ ?id 1) more|less)
 ;(uwanA-wulnAwmaka_viSeRaNa  ?id  =(+ ?id 1))
-;;(id-word 1 ?id)
+;;;(id-word 1 ?id)
+;(test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.
 ;=>
 ;(retract ?mng)
 ;(assert (id-wsd_root_mng ?id uwanA))

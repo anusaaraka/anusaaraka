@@ -471,5 +471,21 @@ Hindi meaning using Stanford parser 2.110
 I need a rest. 
 muJe viSrAma kI AvaSyakawA hE.
 
+Hindi meaning using Stanford parser 2.111
+This time he succeeded. 
+isa bAra vaha saPala huA.
+
+Hindi meaning using Stanford parser 2.112
+How time is changing. 
+samaya kEse baxala rahA hE.
+
+Hindi meaning using Stanford parser 2.113
+Greenwich time. 
+PropN-greenwich-PropN samaya.
+
+Hindi meaning using Stanford parser 2.114
+He came five times. 
+vaha pAzca bAra AyA.
+
 Calling Transliteration
 Calling Interface related programs
