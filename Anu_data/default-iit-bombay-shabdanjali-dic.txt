@@ -39981,7 +39981,7 @@ incompletion_UNDEFINED	aXUrApana
 incompletions_UNDEFINED	aXUrApana
 incomprehensibilities_UNDEFINED	aboXawA
 incomprehensibility_noun	aboXawA/xurUhawA
-incomprehensible_adjective	aboXya/xurUha/aboXagamya
+incomprehensible_adjective	xurUha/aboXya/aboXagamya
 incomprehensibleness_UNDEFINED	aboXawA
 incomprehensiblenesses_UNDEFINED	aboXawA
 incomprehensibler_UNDEFINED	aboXya
@@ -78409,7 +78409,7 @@ surf_noun	Penila_lahara/wata_kI_samuxrI_lehareM
 surf_verb	sarasarI_wOra_para_najara_dAla/laharoM_para_baha/eka_vAhinI_se_xUsarI_vAhinI_para_jA/anwarjAla_kA_upayoga_kara
 surface-to-air_adjective	sawaha_se_havA_meM_mAra_karane_vAlA
 surface_adjective	UparI/sawahI/BU-sawaha_kA/BUmi_ke_Upara_kA
-surface_noun	UparI_wala/sawaha/pqRTa/bAhya_parawa/bAharI_hissA
+surface_noun	sawaha/UparI_wala/pqRTa/bAhya_parawa/bAharI_hissA
 surface_verb	xiKAI_xe/uwarA/prakata_ho/caDA
 surfaced_UNDEFINED	UparI_wala
 surfaces_UNDEFINED	UparI_wala

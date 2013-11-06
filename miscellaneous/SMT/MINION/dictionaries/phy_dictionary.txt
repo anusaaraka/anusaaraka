@@ -396,3 +396,5 @@ dipole_adjective	xviXruva
 dipole_noun	xviXruva
 diffract_verb	vivarwana_ho
 window_noun	gavAkRa
+charge_noun	AveSa
+charge_verb	AveSiwa_kara

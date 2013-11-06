@@ -1,3 +1,18 @@
+;Added by Shirisha Manju, Suggested by Chaitanya Sir (05-11-13)
+;The positively charged glass rod does not lose any of its charge, contrary to the process of charging by contact.   physics
+(defrule charge00
+(declare (salience 5010))
+(id-root ?id charge)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaNa ?id1 ?id)
+(id-root ?id1  ?str&:(and (not (numberp ?str))(gdbm_lookup_p "inanimate.gdbm" ?str)))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id AveSiwa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  charge.clp    charge00   "  ?id "  AveSiwa )" crlf))
+)
+
 ;Added by Meena(17.02.10)
 ;Criminal charges will be brought against the driver . 
 (defrule charge0

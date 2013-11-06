@@ -287,7 +287,24 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 KyAla_raKa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp	take7  "  ?id "  " ?id1 "  KyAla_raKa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp	take17  "  ?id "  " ?id1 "  KyAla_raKa  )" crlf))
+)
+
+;Added by Shirisha Manju, Suggested by Chaitanya Sir (05-11-13)
+;When electrified rods are brought near light objects, a similar effect takes place.  (NECRT-physics)
+;jaba kisI vixyunmaya Cada ko halakI vaswuoM ke nikata lAwe hEM wo yahI praBAva howA hE.
+(defrule take18
+(declare (salience 2500))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?id ?obj)
+(id-root ?obj place)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?obj ho))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp  take18  "  ?id "  " ?obj "  ho  )" crlf))
 )
 
 

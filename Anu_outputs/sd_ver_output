@@ -277,7 +277,7 @@ vaha usake kArya ke bAre meM awyanwa sAvaXAna hE.
 
 Hindi meaning using Stanford parser 2.64
 It is likely they will come. 
-yaha samBava hE ve Aezge.
+yaha samBava hE ki ve Aezge.
 Multiple adjective senses are available for likely. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.65
@@ -829,7 +829,7 @@ vaha cIKane kI AvAja se uRAkAla meM jagAyA gayA WA.
 
 Hindi meaning using Stanford parser 2.193
 I am afraid you have completely misunderstood the question. 
-mEM cinwiwa hUz Apa praSna pUrI waraha se galawa_samaJa cuke hEM.
+mEM cinwiwa hUz ki Apa praSna pUrI waraha se galawa_samaJa cuke hEM.
 mEM cinwiwa hUz Apa pUrI waraha se praSna galawa_samaJa cuke hEM.
 
 Hindi meaning using Stanford parser 2.194
@@ -2395,6 +2395,32 @@ Multiple adjective senses are available for ancient. WSD rule is required
 Hindi meaning using Stanford parser 5.42
 This time tomorrow I will be in Canada. 
 isa samaya kala mEM kanAdA meM hoUzgA.
+
+Hindi meaning using Stanford parser 5.43
+This is a fairly easy book. 
+yaha eka kAPI AsAna puswaka hE.
+Multiple adjective senses are available for easy. WSD rule is required 
+
+Hindi meaning using Stanford parser 5.44
+I know him fairly well, but I would not say we were really close friends. 
+mEM kAPI acCI waraha usako jAnawA hUz, paranwu mEM nahIM kahUzgA ki hama vAswava meM GaniRTa miwra We.
+
+Hindi meaning using Stanford parser 5.45
+I am fairly certain I can do the job. 
+mEM kAPI niSciwa hUz ki mEM kAma kara sakawA hUz.
+
+Hindi meaning using Stanford parser 5.46
+The report was fairly incomprehensible. 
+riporta kAPI xurUha WI.
+Multiple adjective senses are available for incomprehensible. WSD rule is required 
+
+Hindi meaning using Stanford parser 5.47
+He took the book from his friend. 
+usane usake miwra se puswaka lI.
+
+Hindi meaning using Stanford parser 5.48
+I saw many fairies in my dream. 
+mEMne mere svapna meM bahuwa sArI pariyoM ko xeKA.
 
 Calling Transliteration
 Calling Interface related programs

@@ -1,4 +1,4 @@
- 05-10-13
+ 06-11-13
  ========
  1. WSD : Modified :	interface.clp	number.clp	raise.clp	cultivate.clp	stay.clp	synthetic.clp
 			section.clp	enough.clp	different.clp	accident.clp	authority.clp	essentially.clp
@@ -10,14 +10,14 @@
 			anybody.clp	anyone.clp	as.clp		it.clp		so.clp		having_en_tam.clp
 			could.clp	no.clp		that.clp	the.clp		time.clp	to.clp
 			what.clp	when.clp	where.clp	which.clp	while.clp	who.clp
-			whom.clp	whose.clp	be.clp
+			whom.clp	whose.clp	be.clp		side.clp	take.clp	charge.clp
 	  Added    :	argue.clp	cell.clp	feature.clp	flux.clp	divide.clp	equivalently.clp
 			win.clp		difficult.clp	eliminate.clp	closely.clp	compress.clp	generation.clp
 			deduce.clp	define.clp	degree.clp	emerge.clp	enormous.clp	substantially.clp
 			general.clp	sensitive.clp	shrink.clp	succeed.clp	employ.clp      independent.clp
 			instead.clp	involve.clp	lasting.clp	vivid.clp	demonstrate.clp	arise.clp 
 			closely.clp	realize.clp	govern.clp	departure.clp  	glass.clp	constituent.clp
-			inverse.clp
+			inverse.clp	fairly.clp
 	  Deleted  :	pass_default.clp
 	  Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program in 214 files.
  2. causative_verb_mng.clp
@@ -44,6 +44,7 @@
 	Modified : tam_id_frm_vb_grp_en ('ed' as 'ed_en')
 11. hindi_sent_reorder.clp
         Modified : wh_without_aux-reorder1, insert_aXika_for_adj_er and insert_sabase_aXika_adj_est
+	Added 	 : ki_rule4 (insert ki for kriyA vAkyakarma sentences)
 12. run_modules_std.bat
 	Loaded  pada_id_info.dat file in wsd_tam_meaning module
 	In sd_relation_correction.clp: Added 'conjunction-components' in save-facts
@@ -82,7 +83,7 @@
 	compile_full_parser.sh
 21. Updated FinalGenerate.pl 
 22. Updated Log
-23. Updated  sd_verified (542)		verified_eng (40)       	small_sent_verified_sd (114)
+23. Updated  sd_verified (548)		verified_eng (40)       	small_sent_verified_sd (114)
 	     phy_verified_eng (253)	phy_partial_ver_eng (282)
 
 

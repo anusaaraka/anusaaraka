@@ -1,5 +1,5 @@
 #Structure_of_the_file:
-#English-compound-word	Hindi-meaning	Hindi-paxasUwra	category	Head_position	Root/Word-meaning(meaning-type)
+#English-compound-word	Hindi-meaning	Hindi-paxasUwra	category_of_the_head  Head_position   Root/Word-meaning(meaning-type)
 ,_in_short_,	saMkRipwa_meM#saMkRipwa_meM#noun#4#RM
 ,_that_is_,	yAne_ki#yAne_ki#noun#4#RM
 A_fighting_chance	kArya_kI_saPalawA_kI_WodZI_ASA#kArya_kI_saPalawA_kI_WodZI_ASA#noun#3#RM
@@ -33219,6 +33219,10 @@ attractive_force	AkarRaNa_bala#AkarRaNa_bala#noun#2#RM
 atomic_spectra	paramANvIya_spektrama#paramANvIya_spektrama#noun#2#RM
 ancient_times	prAcIna_kAla#prAcIna_kAla#noun#2#RM
 modern_times	AXunika_kAla#AXunika_kAla#noun#2#RM
+close_friends	GaniRTa_miwra#GaniRTa_miwra#noun#2#RM	
+contrary_to	ke_viparIwa#ke_viparIwa#noun#1#RM
+opposite_charge	vijAwIya_AveSa#vijAwIya_AveSa#noun#2#RM
+similar_charge	sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

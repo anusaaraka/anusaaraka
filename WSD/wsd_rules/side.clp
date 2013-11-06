@@ -44,7 +44,11 @@
 ;There are faults on both sides.
 ;--"9.pahalU"
 ;We must study all the side of a problem && then try to solve.
-;
+;-- "10. Baga/hissA"
+;He lives on the farther side of the town.
+;vaha Sahara ke xUra vAle Baga/hisse meM rahawA hE.
+
+
 (defrule side2
 (declare (salience 4800))
 (id-root ?id side)

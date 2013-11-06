@@ -305,7 +305,6 @@
  (defrule rule_for_ki_3
  ?f1<-(id-root-category-suffix-number  ?kri tell ? ? ?)
  (prep_id-relation-anu_ids ? kriyA-subject  ?kri    ?sub)
- (prep_id-relation-anu_ids ? kriyA-object   ?kri    ?obj)
  (prep_id-relation-anu_ids ? kriyA-subject  ?kri_1  ?)
  ?f0 <-(hindi_id_order $?pre ?kri $?post)
  (test (< ?kri ?kri_1))
@@ -315,6 +314,26 @@
    	(retract ?f0 ?f1)
    	(assert (hindi_id_order  $?pre ?kri ki $?post))
    	(printout  ?*DBUG* "(Rule_Name-ids   rule_for_ki_3   (hindi_id_order  "(implode$ (create$ $?pre ?kri ki $?post)) ")" crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (31-10-13)
+ ; I'm fairly certain I can do the job. It is likely they will come. 
+ (defrule ki_rule4
+ (prep_id-relation-anu_ids  ?  kriyA-vAkyakarma  ?kri ?v_k)
+ (prep_id-relation-anu_ids  ?  kriyA-subject  ?v_k ?sub)
+ (prep_id-relation-anu_ids ? kriyA-subject  ?kri1  ?)
+ ?f0 <-(hindi_id_order $?pre ?id ?sub $?post)
+ (test (and (neq ?id ?kri)(neq ?kri ?kri1)))
+ (not (ki_asserted ?kri))
+ (not (hindi_id_order $?ids ?kri))
+ (not (id-HM-source ?id ki ?));It was obvious that he would do it.
+ (not (prep_id-relation-anu_ids - kriyA-conjunction ?v_k ?));She declared that out of love for the poor she had gotten her family to go against convention. 
+ (not (prep_id-relation-anu_ids - ? ?sub 1));The electron, it must be noted, does not experience this force.
+ =>
+        (retract ?f0)
+	(assert (ki_asserted ?kri))
+        (assert (hindi_id_order  $?pre ?id ki ?sub $?post))
+        (printout  ?*DBUG* "(Rule_Name-ids   ki_rule4   (hindi_id_order  "(implode$ (create$ $?pre ?id ki ?sub $?post)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
  ; Added by sheetal(18-01-2010).

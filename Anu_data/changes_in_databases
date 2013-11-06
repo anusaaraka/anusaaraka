@@ -2,6 +2,8 @@
   ========================
   1. Removed  :   miwra  
                   vaha  
+		  Cada	      Suggested by Chaitanya Sir (04-11-13) 
+
   2. Added    :   mEca        Suggested by sukhada 	(24.2.11)  Ex: There was a football match in the school yesterday.
                   prabaMXaka  Added by Meena		(28.7.11)  Ex: But fund managers say they are ready.
 
@@ -64,6 +66,8 @@
 								    kumbh mela) and colorful dussehra festival
 	19. vArRika		"			    	Eg:   "same example as mentioned above"
 	20. golA	Suggested by Chaitanya Sir  (16-10-13) 	Eg: Let u be the speed of each ball before and after 										collision with the wall, and m the mass of each ball.
+	21. Cada		"		    (04-11-13)  Eg: When electrified rods are brought near light objects, a 
+								    similar effect takes place.
 
   changes in Phrv.txt 
   ===================
@@ -331,7 +335,8 @@
 	evidence        ---- Suggested by Jagriti Banasthali (14-10-13) Ex: All the evidence suggests that he stole the money
 	symptom		----		"				Ex: The symptoms suggest a minor heart attack.
 	field		---- Suggested by Pramila Banasthali (22-10-13) Ex: For a positive charge, the electric field will be 										 directed radially outwards from the charge.
-
+	rod		---- Suggested by Chaitanya Sir      (04-11-13) Ex: The positively charged glass rod does not lose
+							  any of its charge, contrary to the process of charging by contact.
 
 
   changes in not_ne_verb_list.txt
@@ -392,7 +397,24 @@
 	child	   (	"	  "			"    ) Ex: He is a difficult child.
 	boss	   (	"	  "			"    ) Ex: He is a difficult boss.
 	officer	   (  		By Manju 	   05-10-13  ) Ex: Mohan is a highly corrupt officer.
-	 
+	dacoit     (Suggested by Chaitanya Sir     06-11-13  ) Ex: The government took serious steps to check the dacoits.
+	kill       (		  "			"    ) Ex: The leopard seizes its kill and begins to eat. 
+	everyone   (		  "			"    ) Ex: A slow, balmy breeze from the south engulfed everyone in
+								   the audience. 
+	woman	   (		By Manju	   06-11-13  ) Ex: I know a woman who has two children.
+	cat        (		  "			"    )
+	rat        (              "                     "    )
+	cow        (              "                     "    ) Ex: Help to milk a cow.
+	ox         (              "                     "    )
+	bull       (              "                     "    )
+	tiger      (              "                     "    )
+	leopard    (              "                     "    )
+	hen        (              "                     "    )
+	parrot     (              "                     "    )
+	turtle     (              "                     "    )
+	donkey     (              "                     "    )
+
+ 
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -1130,6 +1152,11 @@ Removed:
 				Ex: I have lost all feelings in my leg.
 	69. parched_adjective   SuRka			as	BunA_huA	(Suggested by Shweta Banasthali 29-10-13)
 				Ex: With this command the servants went away and Bhungi began to parch the grain .
+	70. incomprehensible_adjective  aboXya		as	xurUha		(Suggested by  Chaitanya Sir    02-11-13)
+				Ex: The report was fairly incomprehensible.
+	71. surface_noun	UparI_wala		as	sawaha		(	"	  	"	04-11-13)
+				Ex: The rods induce opposite charges on the near surfaces of the objects and similar charges
+				    move to the farther side of the object.
 
 	
     6. Removed meaning from existing list:
@@ -1417,6 +1444,13 @@ Removed:
 	56. ancient_times	prAcIna_kAla#prAcIna_kAla#noun#2#RM		(Suggested by Preeti ji LTRC	31-10-13)
 				Ex: In ancient times there were many kingdoms. 
 	57. modern_times	AXunika_kAla#AXunika_kAla#noun#2#RM		(	"		"	31-10-13)
+	56. close_friends   	GaniRTa_miwra#GaniRTa_miwra#noun#2#RM		(Suggested by Chaitanya Sir    02-11-13 )
+				Ex: I know him fairly well, but I would not say we were really close friends.
+	57. contrary_to		ke_viparIwa#ke_viparIwa#noun#1#RM		(Suggested by Chaitanya Sir    04-11-13 )
+				Ex: The positively charged glass rod does not lose any of its charge, contrary to the process
+				    of charging by contact.
+	opposite_charge vijAwIya_AveSa#vijAwIya_AveSa#noun#2#RM
+similar_charge  sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
 
 
     Added new meaning to the existing word:
@@ -1487,6 +1521,8 @@ Removed:
 	dipole_noun     	xviXruva	(	"		"		)
 	diffract_verb   	vivarwana_ho	(	"		"		)
 	window_noun     	gavAkRa		(Suggested by Rashmi Banasthali  14-10-13)
+	charge_noun		AveSa		(Suggested by Chaitanya Sir      04-11-13)
+	charge_verb		AveSiwa_kara	(		"		   "	 )
 
 
     Modifying spelling of the existing word :
@@ -1608,7 +1644,8 @@ Removed:
  changes in human.txt
  ===================
    Added :
-	officer    ( By  Manju         05-10-13) Ex: Mohan is a highly corrupt officer.
+	officer		( By  Manju         05-10-13) Ex: Mohan is a highly corrupt officer.
+	woman	  	(	"	    06-11-13) Ex: I know a woman who has two children.
 
  changes in named_entities.txt
  =============================
