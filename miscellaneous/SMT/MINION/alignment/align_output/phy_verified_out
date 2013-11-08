@@ -197,7 +197,7 @@ Multiple adjective senses are available for molecular. WSD rule is required
 
 Hindi meaning using Stanford parser 2.42
 Matter is mostly electrically neutral (net charge is zero). 
-PropN-matter-PropN vixyuw se watasWa prAyaH hE (vAswavika aBiyoga SUnya hE.)
+PropN-matter-PropN vixyuw se watasWa prAyaH hE (vAswavika AveSa SUnya hE.)
 
 Hindi meaning using Stanford parser 2.43
 Physicists explore the universe. 
@@ -340,7 +340,7 @@ Multiple adjective senses are available for useful. WSD rule is required
 
 Hindi meaning using Stanford parser 2.74
 The conservation laws of charge and other attributes of elementary particles can also be related to certain abstract symmetries. 
-mUla kaNoM ke mUlya Ora anya guNoM ke saMrakRaNa niyama kuCa amUrwa samamiwi se BI sambanXiwa jA sakawe hEM.
+mUla kaNoM ke AveSa Ora anya guNoM ke saMrakRaNa niyama kuCa amUrwa samamiwi se BI sambanXiwa jA sakawe hEM.
 Multiple adjective senses are available for elementary. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.75
@@ -704,7 +704,7 @@ Apa xeKeMge ki pattiyoM ne paraxe ko AkarRiwa kiyA.
 
 Hindi meaning using Stanford parser 2.156
 The glass rod repels the fur. 
-kAzca Cada samUra hatAwA hE.
+kAzca Cada samUra hatAwI hE.
 
 Hindi meaning using Stanford parser 2.157
 They acquire an electric charge on rubbing. 
@@ -713,11 +713,11 @@ Multiple adjective senses are available for electric. WSD rule is required
 
 Hindi meaning using Stanford parser 2.158
 The property which differentiates the two kinds of charges is called the polarity of charge. 
-jo xo prakAra mUlyoM ke viBexa_jAna lewI hE vaha sampawwi mUlya kA eka_sAWa_viroXI vqwwiyAz kahI jAwI hE.
+jo xo prakAra AveSoM ke viBexa_jAna lewI hE vaha sampawwi AveSa kA eka_sAWa_viroXI vqwwiyAz kahI jAwI hE.
 
 Hindi meaning using Stanford parser 2.159
 When a glass rod is rubbed with silk, the rod acquires one kind of charge and the silk acquires the second kind of charge. 
-jaba eka kAzca Cada reSama ke sAWa malA huA hE, wo Cada mUlya eka prakAra kA arjana karawA hE Ora reSama mUlya xUsarA prakAra kA arjana karawA hE.
+jaba eka kAzca Cada reSama ke sAWa malA huA hE, wo Cada AveSa eka prakAra kA arjana karawA hE Ora reSama AveSa xUsarA prakAra kA arjana karawA hE.
 
 Hindi meaning using Stanford parser 2.160
 What can you conclude from these observations? 
@@ -725,8 +725,8 @@ Apa ina prekRaNa se kyA waya_kara sakawe hEM?
 
 Hindi meaning using Stanford parser 2.161
 Therefore the charges were named as positive and negative by the American scientist Benjamin Franklin. 
-isalie mUlya amarIkA vAsI vEjFAnika PropN-benjamin-PropN PropN-franklin-PropN ke xvArA pahale kI waraha sakArAwmaka Ora qNAwmaka nAmakaraNa kie gaye We.
-isalie mUlya amarIkI vEjFAnika PropN-benjamin-PropN PropN-franklin-PropN ke xvArA pahale kI waraha sakArAwmaka Ora qNAwmaka nAmakaraNa kie gaye We.
+isalie AveSa amarIkA vAsI vEjFAnika PropN-benjamin-PropN PropN-franklin-PropN ke xvArA pahale kI waraha sakArAwmaka Ora qNAwmaka nAmakaraNa kie gaye We.
+isalie AveSa amarIkI vEjFAnika PropN-benjamin-PropN PropN-franklin-PropN ke xvArA pahale kI waraha sakArAwmaka Ora qNAwmaka nAmakaraNa kie gaye We.
 
 Hindi meaning using Stanford parser 2.162
 In olden days, electricity and magnetism were treated as separate subjects. 
@@ -784,7 +784,7 @@ vAswava meM ve kuCa_samaya waka paraxe ko atake hue rahawe hEM.
 
 Hindi meaning using Stanford parser 2.174
 Similarly, two plastic rods rubbed with cat's fur repelled each other (Fig. 1SYMBOL-DOT1 (b)) but attracted the fur. 
-isI waraha se, xo plAstika Cada ne billI ke samUra hatA ke sAWa eka xUsare (Fig. 1SYMBOL-DOT1 bI malA paranwu samUra AkarRiwa kiyA.
+isI waraha se, xo plAstika CadoM ne billI ke samUra hatA ke sAWa eka xUsare (Fig. 1SYMBOL-DOT1 bI malA paranwu samUra AkarRiwa kiyA.
 Multiple adjective senses are available for plastic. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.175
@@ -847,7 +847,7 @@ XAwvika, mAnava Ora paSu piMda Ora pqWvI cAlaka hEM.
 
 Hindi meaning using Stanford parser 2.189
 Thus the pith ball is charged by contact. 
-isa prakAra majjA golA samparka ke xvArA xoRa lagAyA gayA hE.
+isa prakAra majjA golA samparka ke xvArA AveSiwa kiyA gayA hE.
 
 Hindi meaning using Stanford parser 2.190
 The free electrons in the spheres are attracted towards the rod. 
@@ -878,7 +878,7 @@ Multiple adjective senses are available for thermal. WSD rule is required
 
 Hindi meaning using Stanford parser 2.196
 They found that moving electric charges produce magnetic fields. 
-unako milawA hE ki hqxaya sparSI vExyuwa aBiyoga cumbakIya kRewra banAwe hEM.
+unako milawA hE ki hqxaya sparSI vExyuwa AveSa cumbakIya kRewra banAwe hEM.
 Multiple adjective senses are available for electric. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.197
