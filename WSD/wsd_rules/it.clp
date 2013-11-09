@@ -30,7 +30,7 @@
 ;karwA_vAlI_kriyA=rain	-	0
 ;karwA_vAlI_kriyA=take	-	0
 (defrule it2
-(declare (salience 2400)) ; Salience reduced from 4800 to 2400 by Roja 04-11-13. Ex: It was a completely wasted journey. 
+(declare (salience 2400)) ; Salience reduced from 4800 to 2400 by Roja 04-11-13. Ex: It was a completely wasted journey.
 (id-root ?id it)
 ?mng <-(meaning_to_be_decided ?id)
 ;(id-word 1 ?id)

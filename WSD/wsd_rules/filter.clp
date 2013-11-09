@@ -25,9 +25,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 CAna_nikAla))
+(assert (id-wsd_root_mng ?id CAna_nikAla));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " filter.clp	filter1  "  ?id "  " ?id1 "  CAna_nikAla  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " filter.clp filter1 " ?id "  CAna_nikAla )" crlf)) 
 )
 
 (defrule filter2
@@ -53,9 +53,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 CAna_nikAla))
+(assert (id-wsd_root_mng ?id CAna_nikAla));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " filter.clp	filter3  "  ?id "  " ?id1 "  CAna_nikAla  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " filter.clp filter3 " ?id "  CAna_nikAla )" crlf)) 
 )
 
 (defrule filter4
@@ -81,9 +81,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 CAna_nikAla))
+(assert (id-wsd_root_mng ?id CAna_nikAla));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " filter.clp	filter5  "  ?id "  " ?id1 "  CAna_nikAla  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " filter.clp filter5 " ?id "  CAna_nikAla )" crlf)) 
 )
 
 (defrule filter6
@@ -109,9 +109,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 CAna_nikAla))
+(assert (id-wsd_root_mng ?id CAna_nikAla));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " filter.clp	filter7  "  ?id "  " ?id1 "  CAna_nikAla  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " filter.clp filter7 " ?id "  CAna_nikAla )" crlf)) 
 )
 
 (defrule filter8

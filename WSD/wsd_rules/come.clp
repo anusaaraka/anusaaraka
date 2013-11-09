@@ -319,9 +319,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 hatA))
+(assert (id-wsd_root_mng ?id hatA));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come19  "  ?id "  " ?id1 "  hatA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come19 " ?id "  hatA )" crlf)) 
 )
 
 ;This ring won't come out easily from my finger.
@@ -533,9 +533,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 ho))
+(assert (id-wsd_root_mng ?id ho));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come32  "  ?id "  " ?id1 "  ho  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come32 " ?id "  ho )" crlf)) 
 )
 
 (defrule come33
@@ -561,9 +561,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 acAnaka_mila))
+(assert (id-wsd_root_mng ?id acAnaka_mila));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come34  "  ?id "  " ?id1 "  acAnaka_mila  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come34 " ?id "  acAnaka_mila )" crlf)) 
 )
 
 (defrule come35
@@ -589,9 +589,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 bAxa_meM_A))
+(assert (id-wsd_root_mng ?id bAxa_meM_A));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come36  "  ?id "  " ?id1 "  bAxa_meM_A  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come36 " ?id "  bAxa_meM_A )" crlf)) 
 )
 
 (defrule come37
@@ -617,9 +617,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 Age_baDZa))
+(assert (id-wsd_root_mng ?id Age_baDZa));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come38  "  ?id "  " ?id1 "  Age_baDZa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come38 " ?id "  Age_baDZa )" crlf)) 
 )
 
 (defrule come39
@@ -645,9 +645,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 AkramaNa_kelie_Age_A))
+(assert (id-wsd_root_mng ?id AkramaNa_kelie_Age_A));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come40  "  ?id "  " ?id1 "  AkramaNa_kelie_Age_A  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come40 " ?id "  AkramaNa_kelie_Age_A )" crlf)) 
 )
 
 (defrule come41
@@ -673,9 +673,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 Pira_se_A))
+(assert (id-wsd_root_mng ?id Pira_se_A));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come42  "  ?id "  " ?id1 "  Pira_se_A  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come42 " ?id "  Pira_se_A )" crlf)) 
 )
 
 (defrule come43
@@ -701,9 +701,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 kuCa_pA))
+(assert (id-wsd_root_mng ?id kuCa_pA));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come44  "  ?id "  " ?id1 "  kuCa_pA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come44 " ?id "  kuCa_pA )" crlf)) 
 )
 
 (defrule come45
@@ -729,9 +729,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 karIba_A))
+(assert (id-wsd_root_mng ?id karIba_A));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come46  "  ?id "  " ?id1 "  karIba_A  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come46 " ?id "  karIba_A )" crlf)) 
 )
 
 (defrule come47
@@ -757,9 +757,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 gira))
+(assert (id-wsd_root_mng ?id gira));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come48  "  ?id "  " ?id1 "  gira  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come48 " ?id "  gira )" crlf)) 
 )
 
 (defrule come49
@@ -785,9 +785,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 prakata_ho_jA))
+(assert (id-wsd_root_mng ?id prakata_ho_jA));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come50  "  ?id "  " ?id1 "  prakata_ho_jA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come50 " ?id "  prakata_ho_jA )" crlf)) 
 )
 
 (defrule come51
@@ -813,9 +813,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 sahAyawA_praxAna_kara))
+(assert (id-wsd_root_mng ?id sahAyawA_praxAna_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come52  "  ?id "  " ?id1 "  sahAyawA_praxAna_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come52 " ?id "  sahAyawA_praxAna_kara )" crlf)) 
 )
 
 (defrule come53
@@ -841,9 +841,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 pAsa_A))
+(assert (id-wsd_root_mng ?id pAsa_A));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come54  "  ?id "  " ?id1 "  pAsa_A  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come54 " ?id "  pAsa_A )" crlf)) 
 )
 
 (defrule come55
@@ -869,9 +869,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 pExA_ho))
+(assert (id-wsd_root_mng ?id pExA_ho));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come56  "  ?id "  " ?id1 "  pExA_ho  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come56 " ?id "  pExA_ho )" crlf)) 
 )
 
 (defrule come57
@@ -897,9 +897,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 saPala_evaM_praBAvaSAlI_ho))
+(assert (id-wsd_root_mng ?id saPala_evaM_praBAvaSAlI_ho));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come58  "  ?id "  " ?id1 "  saPala_evaM_praBAvaSAlI_ho  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come58 " ?id "  saPala_evaM_praBAvaSAlI_ho )" crlf)) 
 )
 
 (defrule come59
@@ -925,9 +925,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 bAhara_A))
+(assert (id-wsd_root_mng ?id bAhara_A));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come60  "  ?id "  " ?id1 "  bAhara_A  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come60 " ?id "  bAhara_A )" crlf)) 
 )
 
 (defrule come61
@@ -953,9 +953,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 ho))
+(assert (id-wsd_root_mng ?id ho));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come62  "  ?id "  " ?id1 "  ho  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come62 " ?id "  ho )" crlf)) 
 )
 
 (defrule come63
@@ -981,9 +981,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 rAjI_ho))
+(assert (id-wsd_root_mng ?id rAjI_ho));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come64  "  ?id "  " ?id1 "  rAjI_ho  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come64 " ?id "  rAjI_ho )" crlf)) 
 )
 
 (defrule come65
@@ -1009,9 +1009,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 saPalawA_se_nikala_jA))
+(assert (id-wsd_root_mng ?id saPalawA_se_nikala_jA));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come66  "  ?id "  " ?id1 "  saPalawA_se_nikala_jA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come66 " ?id "  saPalawA_se_nikala_jA )" crlf)) 
 )
 
 (defrule come67
@@ -1037,9 +1037,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 bIca_meM_A))
+(assert (id-wsd_root_mng ?id bIca_meM_A));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come68  "  ?id "  " ?id1 "  bIca_meM_A  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come68 " ?id "  bIca_meM_A )" crlf)) 
 )
 
 (defrule come69
@@ -1079,9 +1079,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 gira))
+(assert (id-wsd_root_mng ?id gira));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come71  "  ?id "  " ?id1 "  gira  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come71 " ?id "  gira )" crlf)) 
 )
 
 (defrule come72
@@ -1107,9 +1107,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 upara_uTa))
+(assert (id-wsd_root_mng ?id upara_uTa));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come73  "  ?id "  " ?id1 "  upara_uTa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come73 " ?id "  upara_uTa )" crlf)) 
 )
 
 (defrule come74
@@ -1135,9 +1135,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 bAhara_A))
+(assert (id-wsd_root_mng ?id bAhara_A));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come75  "  ?id "  " ?id1 "  bAhara_A  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come75 " ?id "  bAhara_A )" crlf)) 
 )
 
 (defrule come76
@@ -1149,9 +1149,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 bAhara_A))
+(assert (id-wsd_root_mng ?id bAhara_A));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come76  "  ?id "  " ?id1 "  bAhara_A  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come76 " ?id "  bAhara_A )" crlf)) 
 )
 
 (defrule come77
@@ -1177,9 +1177,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 ora_A))
+(assert (id-wsd_root_mng ?id ora_A));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come78  "  ?id "  " ?id1 "  ora_A  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come78 " ?id "  ora_A )" crlf)) 
 )
 
 (defrule come79

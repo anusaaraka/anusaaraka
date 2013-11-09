@@ -42,9 +42,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 vyarWa_kI_bAwa_kara))
+(assert (id-wsd_root_mng ?id vyarWa_kI_bAwa_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " fiddle.clp	fiddle2  "  ?id "  " ?id1 "  vyarWa_kI_bAwa_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " fiddle.clp fiddle2 " ?id "  vyarWa_kI_bAwa_kara )" crlf)) 
 )
 
 (defrule fiddle3
@@ -56,9 +56,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 vyarWa_kI_bAwa_kara))
+(assert (id-wsd_root_mng ?id vyarWa_kI_bAwa_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " fiddle.clp	fiddle3  "  ?id "  " ?id1 "  vyarWa_kI_bAwa_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " fiddle.clp fiddle3 " ?id "  vyarWa_kI_bAwa_kara )" crlf)) 
 )
 
 (defrule fiddle4
@@ -70,9 +70,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 vyarWa_kI_bAwa_kara))
+(assert (id-wsd_root_mng ?id vyarWa_kI_bAwa_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " fiddle.clp	fiddle4  "  ?id "  " ?id1 "  vyarWa_kI_bAwa_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " fiddle.clp fiddle4 " ?id "  vyarWa_kI_bAwa_kara )" crlf)) 
 )
 
 (defrule fiddle5

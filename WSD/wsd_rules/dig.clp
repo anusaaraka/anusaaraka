@@ -42,9 +42,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 uKAdZa_PeMka))
+(assert (id-wsd_root_mng ?id uKAdZa_PeMka));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " dig.clp	dig2  "  ?id "  " ?id1 "  uKAdZa_PeMka  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " dig.clp dig2 " ?id "  uKAdZa_PeMka )" crlf)) 
 )
 
 ;We dug up that old statue from the building.

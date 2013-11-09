@@ -8,9 +8,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 JAdZa))
+(assert (id-wsd_root_mng ?id JAdZa));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " whisk.clp	whisk0  "  ?id "  " ?id1 "  JAdZa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " whisk.clp whisk0 " ?id "  JAdZa )" crlf)) 
 )
 
 (defrule whisk1
@@ -36,9 +36,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 pAsa_se_wejZI_se_gujZara))
+(assert (id-wsd_root_mng ?id pAsa_se_wejZI_se_gujZara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " whisk.clp	whisk2  "  ?id "  " ?id1 "  pAsa_se_wejZI_se_gujZara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " whisk.clp whisk2 " ?id "  pAsa_se_wejZI_se_gujZara )" crlf)) 
 )
 
 (defrule whisk3

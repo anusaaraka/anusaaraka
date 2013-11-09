@@ -8,9 +8,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 se_parAmarSa_kara))
+(assert (id-wsd_root_mng ?id se_parAmarSa_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " confer.clp	confer0  "  ?id "  " ?id1 "  se_parAmarSa_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " confer.clp confer0 " ?id "  se_parAmarSa_kara )" crlf)) 
 )
 
 (defrule confer1

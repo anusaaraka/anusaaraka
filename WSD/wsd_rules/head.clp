@@ -42,9 +42,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 Age_baDZakara_modZa))
+(assert (id-wsd_root_mng ?id Age_baDZakara_modZa));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " head.clp	head2  "  ?id "  " ?id1 "  Age_baDZakara_modZa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " head.clp head2 " ?id "  Age_baDZakara_modZa )" crlf)) 
 )
 
 (defrule head3
@@ -179,9 +179,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 Age_baDZakara_modZa))
+(assert (id-wsd_root_mng ?id Age_baDZakara_modZa));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " head.clp	head7  "  ?id "  " ?id1 "  Age_baDZakara_modZa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " head.clp head7 " ?id "  Age_baDZakara_modZa )" crlf)) 
 )
 
 (defrule head8

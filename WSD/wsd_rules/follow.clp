@@ -55,9 +55,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 aMwa_waka))
+(assert (id-wsd_root_mng ?id aMwa_waka));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " follow.clp	follow3  "  ?id "  " ?id1 "  aMwa_waka  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " follow.clp follow3 " ?id "  aMwa_waka )" crlf)) 
 )
 
 (defrule follow4
@@ -83,9 +83,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 jAnakArI_le))
+(assert (id-wsd_root_mng ?id jAnakArI_le));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " follow.clp	follow5  "  ?id "  " ?id1 "  jAnakArI_le  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " follow.clp follow5 " ?id "  jAnakArI_le )" crlf)) 
 )
 
 (defrule follow6
@@ -97,9 +97,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 jAnakArI_le))
+(assert (id-wsd_root_mng ?id jAnakArI_le));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " follow.clp	follow6  "  ?id "  " ?id1 "  jAnakArI_le  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " follow.clp follow6 " ?id "  jAnakArI_le )" crlf)) 
 )
 
 (defrule follow7
@@ -111,9 +111,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 jAnakArI_le))
+(assert (id-wsd_root_mng ?id jAnakArI_le));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " follow.clp	follow7  "  ?id "  " ?id1 "  jAnakArI_le  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " follow.clp follow7 " ?id "  jAnakArI_le )" crlf)) 
 )
 
 (defrule follow8

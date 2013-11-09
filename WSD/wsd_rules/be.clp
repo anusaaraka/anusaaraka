@@ -144,7 +144,7 @@
 (id-root ?id be)
 ?mng <-(meaning_to_be_decided ?id)
 ;(id-word 1 ?id)
-(test (eq ?id 1))
+(test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.
 (id-word ?id Is )
 (id-cat_coarse ?id verb)
 =>
@@ -161,7 +161,7 @@
 (id-root ?id be)
 ?mng <-(meaning_to_be_decided ?id)
 ;(id-word 1 ?id)
-(test (eq ?id 1))
+(test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.
 (id-word ?id Was )
 (id-cat_coarse ?id verb)
 =>
@@ -178,7 +178,7 @@
 (id-root ?id be)
 ?mng <-(meaning_to_be_decided ?id)
 ;(id-word 1 ?id)
-(test (eq ?id 1))
+(test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.
 (id-word ?id Were )
 (id-cat_coarse ?id verb)
 =>
@@ -195,7 +195,7 @@
 (id-root ?id be)
 ?mng <-(meaning_to_be_decided ?id)
 ;(id-word 1 ?id)
-(test (eq ?id 1))
+(test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.
 (id-word ?id Am )
 (id-cat_coarse ?id verb)
 =>

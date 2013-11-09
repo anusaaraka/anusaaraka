@@ -25,9 +25,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 purAnI_vaswu_xekara_nayI_vaswu_KarIxa))
+(assert (id-wsd_root_mng ?id purAnI_vaswu_xekara_nayI_vaswu_KarIxa));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " trade.clp	trade1  "  ?id "  " ?id1 "  purAnI_vaswu_xekara_nayI_vaswu_KarIxa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " trade.clp trade1 " ?id "  purAnI_vaswu_xekara_nayI_vaswu_KarIxa )" crlf)) 
 )
 
 (defrule trade2
@@ -53,9 +53,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 anuciwa_lABa_uTA))
+(assert (id-wsd_root_mng ?id anuciwa_lABa_uTA));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " trade.clp	trade3  "  ?id "  " ?id1 "  anuciwa_lABa_uTA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " trade.clp trade3 " ?id "  anuciwa_lABa_uTA )" crlf)) 
 )
 
 (defrule trade4
@@ -67,9 +67,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 anuciwa_lABa_uTA))
+(assert (id-wsd_root_mng ?id anuciwa_lABa_uTA));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " trade.clp	trade4  "  ?id "  " ?id1 "  anuciwa_lABa_uTA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " trade.clp trade4 " ?id "  anuciwa_lABa_uTA )" crlf)) 
 )
 
 (defrule trade5
@@ -81,9 +81,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 anuciwa_lABa_uTA))
+(assert (id-wsd_root_mng ?id anuciwa_lABa_uTA));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " trade.clp	trade5  "  ?id "  " ?id1 "  anuciwa_lABa_uTA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " trade.clp trade5 " ?id "  anuciwa_lABa_uTA )" crlf)) 
 )
 
 (defrule trade6

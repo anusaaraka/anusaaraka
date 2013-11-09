@@ -75,7 +75,6 @@
 ; Added by Amba
 ;counter example : He was sitting on the farther side of the table.
 
-
 ;Modified by Meena(28.7.11);added(not(id-word =(+ ?id 2) to)) to stop this rule for the cases like  ;This is the way to go.
 ;This is the place I live.
 (defrule the3

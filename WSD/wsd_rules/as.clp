@@ -176,7 +176,7 @@
 ;As he was in a hurry, he took the shortest way.
 (defrule as14
 (declare (salience 3400)) ;Salience reduced 3600 to 3400 by Roja 04-11-13. Ex: As we go from ooty to gudalur, the change in vegetation is striking. 
-(id-root ?id as)
+(id-root ?id as) 
 ?mng <-(meaning_to_be_decided ?id)
 ;(id-word 1 ?id)
 (test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.

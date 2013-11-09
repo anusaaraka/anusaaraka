@@ -8,9 +8,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 wejI_se_hata))
+(assert (id-wsd_root_mng ?id wejI_se_hata));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " skim.clp	skim0  "  ?id "  " ?id1 "  wejI_se_hata  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " skim.clp skim0 " ?id "  wejI_se_hata )" crlf)) 
 )
 
 (defrule skim1
@@ -36,9 +36,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 sarasarI_nigAha_xOdZa))
+(assert (id-wsd_root_mng ?id sarasarI_nigAha_xOdZa));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " skim.clp	skim2  "  ?id "  " ?id1 "  sarasarI_nigAha_xOdZa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " skim.clp skim2 " ?id "  sarasarI_nigAha_xOdZa )" crlf)) 
 )
 
 (defrule skim3
@@ -64,9 +64,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 sarasarI_nigAha_xOdZa))
+(assert (id-wsd_root_mng ?id sarasarI_nigAha_xOdZa));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " skim.clp	skim4  "  ?id "  " ?id1 "  sarasarI_nigAha_xOdZa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " skim.clp skim4 " ?id "  sarasarI_nigAha_xOdZa )" crlf)) 
 )
 
 (defrule skim5
@@ -78,9 +78,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 sarasarI_nigAha_xOdZa))
+(assert (id-wsd_root_mng ?id sarasarI_nigAha_xOdZa));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " skim.clp	skim5  "  ?id "  " ?id1 "  sarasarI_nigAha_xOdZa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " skim.clp skim5 " ?id "  sarasarI_nigAha_xOdZa )" crlf)) 
 )
 
 (defrule skim6
@@ -92,9 +92,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 sarasarI_nigAha_xOdZa))
+(assert (id-wsd_root_mng ?id sarasarI_nigAha_xOdZa));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " skim.clp	skim6  "  ?id "  " ?id1 "  sarasarI_nigAha_xOdZa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " skim.clp skim6 " ?id "  sarasarI_nigAha_xOdZa )" crlf)) 
 )
 
 (defrule skim7

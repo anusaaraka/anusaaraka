@@ -16,5 +16,4 @@ $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form_correction.out 
 ./canonical_to_conventional_in_wsd.out  < canonical_form_wsd_rules/$line.2 > canonical_form_wsd_rules/$line
 done < list
 
-#rm canonical_form_wsd_rules/*.1 canonical_form_wsd_rules/*.2
-
+rm canonical_form_wsd_rules/*.1 canonical_form_wsd_rules/*.2

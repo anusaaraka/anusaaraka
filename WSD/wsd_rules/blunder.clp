@@ -8,9 +8,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 kuprabanXase_naRta_ho_jA))
+(assert (id-wsd_root_mng ?id kuprabanXase_naRta_ho_jA));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " blunder.clp	blunder0  "  ?id "  " ?id1 "  kuprabanXase_naRta_ho_jA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " blunder.clp blunder0 " ?id "  kuprabanXase_naRta_ho_jA )" crlf)) 
 )
 
 (defrule blunder1
@@ -36,9 +36,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 binA_soce_bola_pada))
+(assert (id-wsd_root_mng ?id binA_soce_bola_pada));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " blunder.clp	blunder2  "  ?id "  " ?id1 "  binA_soce_bola_pada  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " blunder.clp blunder2 " ?id "  binA_soce_bola_pada )" crlf)) 
 )
 
 (defrule blunder3
@@ -50,9 +50,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 binA_soce_bola_pada))
+(assert (id-wsd_root_mng ?id binA_soce_bola_pada));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " blunder.clp	blunder3  "  ?id "  " ?id1 "  binA_soce_bola_pada  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " blunder.clp blunder3 " ?id "  binA_soce_bola_pada )" crlf)) 
 )
 
 (defrule blunder4
@@ -64,9 +64,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 binA_soce_bola_pada))
+(assert (id-wsd_root_mng ?id binA_soce_bola_pada));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " blunder.clp	blunder4  "  ?id "  " ?id1 "  binA_soce_bola_pada  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " blunder.clp blunder4 " ?id "  binA_soce_bola_pada )" crlf)) 
 )
 
 (defrule blunder5

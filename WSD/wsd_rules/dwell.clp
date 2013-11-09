@@ -9,9 +9,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 bahuwa_samaya_waka_socanA_aWavA_bola))
+(assert (id-wsd_root_mng ?id bahuwa_samaya_waka_socanA_aWavA_bola));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " dwell.clp	dwell0  "  ?id "  " ?id1 "  bahuwa_samaya_waka_socanA_aWavA_bola  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " dwell.clp dwell0 " ?id "  bahuwa_samaya_waka_socanA_aWavA_bola )" crlf)) 
 )
 
 (defrule dwell1
@@ -39,9 +39,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 nivAsa_kara))
+(assert (id-wsd_root_mng ?id nivAsa_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " dwell.clp	dwell2  "  ?id "  " ?id1 "  nivAsa_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " dwell.clp dwell2 " ?id "  nivAsa_kara )" crlf)) 
 )
 
 (defrule dwell3

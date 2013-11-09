@@ -8,9 +8,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 Cexa_karake_nikAla))
+(assert (id-wsd_root_mng ?id Cexa_karake_nikAla));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " gouged.clp	gouged0  "  ?id "  " ?id1 "  Cexa_karake_nikAla  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " gouged.clp gouged0 " ?id "  Cexa_karake_nikAla )" crlf)) 
 )
 
 (defrule gouged1
@@ -22,9 +22,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 Cexa_karake_nikAla))
+(assert (id-wsd_root_mng ?id Cexa_karake_nikAla));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " gouged.clp	gouged1  "  ?id "  " ?id1 "  Cexa_karake_nikAla  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " gouged.clp gouged1 " ?id "  Cexa_karake_nikAla )" crlf)) 
 )
 
 (defrule gouged2
@@ -36,9 +36,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 Cexa_karake_nikAla))
+(assert (id-wsd_root_mng ?id Cexa_karake_nikAla));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " gouged.clp	gouged2  "  ?id "  " ?id1 "  Cexa_karake_nikAla  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " gouged.clp gouged2 " ?id "  Cexa_karake_nikAla )" crlf)) 
 )
 
 (defrule gouged3

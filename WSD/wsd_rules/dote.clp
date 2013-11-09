@@ -25,9 +25,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 behaxa_pyAra_kara))
+(assert (id-wsd_root_mng ?id behaxa_pyAra_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " dote.clp	dote1  "  ?id "  " ?id1 "  behaxa_pyAra_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " dote.clp dote1 " ?id "  behaxa_pyAra_kara )" crlf)) 
 )
 
 (defrule dote2
@@ -39,9 +39,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 behaxa_pyAra_kara))
+(assert (id-wsd_root_mng ?id behaxa_pyAra_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " dote.clp	dote2  "  ?id "  " ?id1 "  behaxa_pyAra_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " dote.clp dote2 " ?id "  behaxa_pyAra_kara )" crlf)) 
 )
 
 (defrule dote3
@@ -53,9 +53,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 behaxa_pyAra_kara))
+(assert (id-wsd_root_mng ?id behaxa_pyAra_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " dote.clp	dote3  "  ?id "  " ?id1 "  behaxa_pyAra_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " dote.clp dote3 " ?id "  behaxa_pyAra_kara )" crlf)) 
 )
 
 (defrule dote4

@@ -201,9 +201,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 KAkA_wEyAra_kara))
+(assert (id-wsd_root_mng ?id KAkA_wEyAra_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " draw.clp	draw9  "  ?id "  " ?id1 "  KAkA_wEyAra_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " draw.clp draw9 " ?id "  KAkA_wEyAra_kara )" crlf)) 
 )
 
 (defrule draw10
@@ -242,9 +242,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 KAkA_wEyAra_kara))
+(assert (id-wsd_root_mng ?id KAkA_wEyAra_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " draw.clp	draw12  "  ?id "  " ?id1 "  KAkA_wEyAra_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " draw.clp draw12 " ?id "  KAkA_wEyAra_kara )" crlf)) 
 )
 
 (defrule draw13

@@ -8,9 +8,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 kAra_Axi_ke_iMjana_kI_Sakwi_baDZA))
+(assert (id-wsd_root_mng ?id kAra_Axi_ke_iMjana_kI_Sakwi_baDZA));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " soup.clp	soup0  "  ?id "  " ?id1 "  kAra_Axi_ke_iMjana_kI_Sakwi_baDZA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " soup.clp soup0 " ?id "  kAra_Axi_ke_iMjana_kI_Sakwi_baDZA )" crlf)) 
 )
 
 (defrule soup1

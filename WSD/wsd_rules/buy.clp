@@ -20,13 +20,13 @@
 (id-root ?id buy)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 back)
-(kriyA-upasarga ?id ?id1)
+(kriyA-back_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 Pira_se_KarIxa))
+(assert (id-wsd_root_mng ?id Pira_se_KarIxa));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " buy.clp	buy1  "  ?id "  " ?id1 "  Pira_se_KarIxa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " buy.clp buy1 " ?id "  Pira_se_KarIxa )" crlf)) 
 )
 
 (defrule buy2
@@ -44,17 +44,17 @@
 )
 
 (defrule buy3
-(declare (salience 4700))
+(declare (salience 3900)) ;Salience reduced from 4700 to 3900 by Roja 08-11-13. Ex: Phil gave me a sweater which he bought in Paris. (Note: this rule need to be improved)
 (id-root ?id buy)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 in)
-(kriyA-upasarga ?id ?id1)
+(kriyA-in_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 KarIxa_le))
+(assert (id-wsd_root_mng ?id KarIxa_le));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " buy.clp	buy3  "  ?id "  " ?id1 "  KarIxa_le  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " buy.clp buy3 " ?id "  KarIxa_le )" crlf)) 
 )
 
 (defrule buy4
@@ -76,13 +76,13 @@
 (id-root ?id buy)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 out)
-(kriyA-upasarga ?id ?id1)
+(kriyA-out_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 KarIxa_dAla))
+(assert (id-wsd_root_mng ?id KarIxa_dAla));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " buy.clp	buy5  "  ?id "  " ?id1 "  KarIxa_dAla  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " buy.clp buy5 " ?id "  KarIxa_dAla )" crlf)) 
 )
 
 (defrule buy6
@@ -104,13 +104,13 @@
 (id-root ?id buy)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 up)
-(kriyA-upasarga ?id ?id1)
+(kriyA-up_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 KarIxa_dAla))
+(assert (id-wsd_root_mng ?id KarIxa_dAla));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " buy.clp	buy7  "  ?id "  " ?id1 "  KarIxa_dAla  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " buy.clp buy7 " ?id "  KarIxa_dAla )" crlf)) 
 )
 
 (defrule buy8

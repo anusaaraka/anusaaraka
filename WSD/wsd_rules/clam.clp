@@ -24,9 +24,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 cuppI_raKa))
+(assert (id-wsd_root_mng ?id cuppI_raKa));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " clam.clp	clam1  "  ?id "  " ?id1 "  cuppI_raKa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " clam.clp clam1 " ?id "  cuppI_raKa )" crlf)) 
 )
 
 (defrule clam2
@@ -38,9 +38,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 cuppI_raKa))
+(assert (id-wsd_root_mng ?id cuppI_raKa));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " clam.clp	clam2  "  ?id "  " ?id1 "  cuppI_raKa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " clam.clp clam2 " ?id "  cuppI_raKa )" crlf)) 
 )
 
 (defrule clam3
@@ -52,9 +52,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 cuppI_raKa))
+(assert (id-wsd_root_mng ?id cuppI_raKa));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " clam.clp	clam3  "  ?id "  " ?id1 "  cuppI_raKa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " clam.clp clam3 " ?id "  cuppI_raKa )" crlf)) 
 )
 
 (defrule clam4

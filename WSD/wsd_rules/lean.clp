@@ -59,9 +59,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 pICe_Juka))
+(assert (id-wsd_root_mng ?id pICe_Juka));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " lean.clp	lean3  "  ?id "  " ?id1 "  pICe_Juka  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " lean.clp lean3 " ?id "  pICe_Juka )" crlf)) 
 )
 
 (defrule lean4

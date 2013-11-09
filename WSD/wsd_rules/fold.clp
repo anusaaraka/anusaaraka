@@ -4,13 +4,13 @@
 (id-root ?id fold)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 in)
-(kriyA-upasarga ?id ?id1)
+(kriyA-in_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 PeMta))
+(assert (id-wsd_root_mng ?id PeMta));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " fold.clp	fold0  "  ?id "  " ?id1 "  PeMta  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " fold.clp fold0 " ?id "  PeMta )" crlf)) 
 )
 
 (defrule fold1
@@ -32,13 +32,13 @@
 (id-root ?id fold)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 into)
-(kriyA-upasarga ?id ?id1)
+(kriyA-into_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 PeMta))
+(assert (id-wsd_root_mng ?id PeMta));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " fold.clp	fold2  "  ?id "  " ?id1 "  PeMta  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " fold.clp fold2 " ?id "  PeMta )" crlf)) 
 )
 
 (defrule fold3
@@ -60,13 +60,13 @@
 (id-root ?id fold)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 in)
-(kriyA-upasarga ?id ?id1)
+(kriyA-in_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 PeMta))
+(assert (id-wsd_root_mng ?id PeMta));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " fold.clp	fold4  "  ?id "  " ?id1 "  PeMta  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " fold.clp fold4 " ?id "  PeMta )" crlf)) 
 )
 
 (defrule fold5

@@ -167,13 +167,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 by)
-(kriyA-upasarga ?id ?id1)
+(kriyA-by_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 jAwe-jAwe_mila))
+(assert (id-wsd_root_mng ?id jAwe-jAwe_mila));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call9  "  ?id "  " ?id1 "  jAwe-jAwe_mila  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call9 " ?id "  jAwe-jAwe_mila )" crlf)) 
 )
 
 (defrule call10
@@ -191,17 +191,17 @@
 )
 
 (defrule call11
-(declare (salience 3900))
+(declare (salience 1500)) ;Salience changed from 3900 to 1500 by Roja 07-11-13. Ex: The soldiers were called out for the war. Ex: Applicants for posts are called for interview. (Note: This rule need to be improved.) 
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 for)
-(kriyA-upasarga ?id ?id1)
+(kriyA-for_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 jarUrawa_ho))
+(assert (id-wsd_root_mng ?id jarUrawa_ho));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call11  "  ?id "  " ?id1 "  jarUrawa_ho  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call11 " ?id "  jarUrawa_ho )" crlf)) 
 )
 
 (defrule call12
@@ -223,13 +223,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 forth)
-(kriyA-upasarga ?id ?id1)
+(kriyA-forth_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 xiKA))
+(assert (id-wsd_root_mng ?id xiKA));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call13  "  ?id "  " ?id1 "  xiKA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call13 " ?id "  xiKA )" crlf)) 
 )
 
 (defrule call14
@@ -251,13 +251,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 in)
-(kriyA-upasarga ?id ?id1)
+(kriyA-in_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 bulA))
+(assert (id-wsd_root_mng ?id bulA));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call15  "  ?id "  " ?id1 "  bulA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call15 " ?id "  bulA )" crlf)) 
 )
 
 (defrule call16
@@ -279,13 +279,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 names)
-(kriyA-upasarga ?id ?id1)
+(kriyA-names_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 gAlI_xe))
+(assert (id-wsd_root_mng ?id gAlI_xe));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call17  "  ?id "  " ?id1 "  gAlI_xe  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call17 " ?id "  gAlI_xe )" crlf)) 
 )
 
 (defrule call18
@@ -307,13 +307,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 off)
-(kriyA-upasarga ?id ?id1)
+(kriyA-off_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 banxa_kara))
+(assert (id-wsd_root_mng ?id banxa_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call19  "  ?id "  " ?id1 "  banxa_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call19 " ?id "  banxa_kara )" crlf)) 
 )
 
 (defrule call20
@@ -335,13 +335,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 on)
-(kriyA-upasarga ?id ?id1)
+(kriyA-on_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 milane_Gara_jA))
+(assert (id-wsd_root_mng ?id milane_Gara_jA));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call21  "  ?id "  " ?id1 "  milane_Gara_jA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call21 " ?id "  milane_Gara_jA )" crlf)) 
 )
 
 (defrule call22
@@ -363,13 +363,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 out)
-(kriyA-upasarga ?id ?id1)
+(kriyA-out_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 bulA))
+(assert (id-wsd_root_mng ?id bulA));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call23  "  ?id "  " ?id1 "  bulA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call23 " ?id "  bulA )" crlf)) 
 )
 
 (defrule call24
@@ -391,13 +391,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 over)
-(kriyA-upasarga ?id ?id1)
+(kriyA-over_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 jora_jora_se_pukAra))
+(assert (id-wsd_root_mng ?id jora_jora_se_pukAra));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call25  "  ?id "  " ?id1 "  jora_jora_se_pukAra  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call25 " ?id "  jora_jora_se_pukAra )" crlf)) 
 )
 
 (defrule call26
@@ -419,13 +419,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 up)
-(kriyA-upasarga ?id ?id1)
+(kriyA-up_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 telIPona_kara))
+(assert (id-wsd_root_mng ?id telIPona_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call27  "  ?id "  " ?id1 "  telIPona_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call27 " ?id "  telIPona_kara )" crlf)) 
 )
 
 (defrule call28
@@ -447,13 +447,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 upon)
-(kriyA-upasarga ?id ?id1)
+(kriyA-upon_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 nimaMwriwa_kara))
+(assert (id-wsd_root_mng ?id nimaMwriwa_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call29  "  ?id "  " ?id1 "  nimaMwriwa_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call29 " ?id "  nimaMwriwa_kara )" crlf)) 
 )
 
 (defrule call30
@@ -475,13 +475,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 up)
-(kriyA-upasarga ?id ?id1)
+(kriyA-up_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 telIPona_kara))
+(assert (id-wsd_root_mng ?id telIPona_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call31  "  ?id "  " ?id1 "  telIPona_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call31 " ?id "  telIPona_kara )" crlf)) 
 )
 
 (defrule call32
@@ -702,13 +702,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 by)
-(kriyA-upasarga ?id ?id1)
+(kriyA-by_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 jAwe-jAwe_mila))
+(assert (id-wsd_root_mng ?id jAwe-jAwe_mila));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call45  "  ?id "  " ?id1 "  jAwe-jAwe_mila  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call45 " ?id "  jAwe-jAwe_mila )" crlf)) 
 )
 
 (defrule call46
@@ -730,13 +730,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 for)
-(kriyA-upasarga ?id ?id1)
+(kriyA-for_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 jarUrawa_ho))
+(assert (id-wsd_root_mng ?id jarUrawa_ho));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call47  "  ?id "  " ?id1 "  jarUrawa_ho  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call47 " ?id "  jarUrawa_ho )" crlf)) 
 )
 
 (defrule call48
@@ -758,13 +758,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 forth)
-(kriyA-upasarga ?id ?id1)
+(kriyA-forth_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 xiKA))
+(assert (id-wsd_root_mng ?id xiKA));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call49  "  ?id "  " ?id1 "  xiKA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call49 " ?id "  xiKA )" crlf)) 
 )
 
 (defrule call50
@@ -786,13 +786,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 in)
-(kriyA-upasarga ?id ?id1)
+(kriyA-in_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 bulA))
+(assert (id-wsd_root_mng ?id bulA));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call51  "  ?id "  " ?id1 "  bulA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call51 " ?id "  bulA )" crlf)) 
 )
 
 (defrule call52
@@ -814,13 +814,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 names)
-(kriyA-upasarga ?id ?id1)
+(kriyA-names_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 gAlI_xe))
+(assert (id-wsd_root_mng ?id gAlI_xe));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call53  "  ?id "  " ?id1 "  gAlI_xe  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call53 " ?id "  gAlI_xe )" crlf)) 
 )
 
 (defrule call54
@@ -842,13 +842,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 off)
-(kriyA-upasarga ?id ?id1)
+(kriyA-off_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 banxa_kara))
+(assert (id-wsd_root_mng ?id banxa_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call55  "  ?id "  " ?id1 "  banxa_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call55 " ?id "  banxa_kara )" crlf)) 
 )
 
 (defrule call56
@@ -870,13 +870,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 on)
-(kriyA-upasarga ?id ?id1)
+(kriyA-on_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 milane_Gara_jA))
+(assert (id-wsd_root_mng ?id milane_Gara_jA));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call57  "  ?id "  " ?id1 "  milane_Gara_jA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call57 " ?id "  milane_Gara_jA )" crlf)) 
 )
 
 (defrule call58
@@ -898,13 +898,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 out)
-(kriyA-upasarga ?id ?id1)
+(kriyA-out_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 bulA))
+(assert (id-wsd_root_mng ?id bulA));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call59  "  ?id "  " ?id1 "  bulA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call59 " ?id "  bulA )" crlf)) 
 )
 
 (defrule call60
@@ -926,13 +926,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 over)
-(kriyA-upasarga ?id ?id1)
+(kriyA-over_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 jora_jora_se_pukAra))
+(assert (id-wsd_root_mng ?id jora_jora_se_pukAra));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call61  "  ?id "  " ?id1 "  jora_jora_se_pukAra  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call61 " ?id "  jora_jora_se_pukAra )" crlf)) 
 )
 
 (defrule call62
@@ -954,13 +954,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 up)
-(kriyA-upasarga ?id ?id1)
+(kriyA-up_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 telIPona_kara))
+(assert (id-wsd_root_mng ?id telIPona_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call63  "  ?id "  " ?id1 "  telIPona_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call63 " ?id "  telIPona_kara )" crlf)) 
 )
 
 (defrule call64
@@ -982,13 +982,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 upon)
-(kriyA-upasarga ?id ?id1)
+(kriyA-upon_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 nimaMwriwa_kara))
+(assert (id-wsd_root_mng ?id nimaMwriwa_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call65  "  ?id "  " ?id1 "  nimaMwriwa_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call65 " ?id "  nimaMwriwa_kara )" crlf)) 
 )
 
 (defrule call66
@@ -1010,13 +1010,13 @@
 (id-root ?id call)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 up)
-(kriyA-upasarga ?id ?id1)
+(kriyA-up_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 telIPona_kara))
+(assert (id-wsd_root_mng ?id telIPona_kara));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " call.clp	call67  "  ?id "  " ?id1 "  telIPona_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " call.clp call67 " ?id "  telIPona_kara )" crlf)) 
 )
 
 (defrule call68

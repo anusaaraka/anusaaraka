@@ -8,9 +8,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 SIGrawA_se_kapadZe_uwAra))
+(assert (id-wsd_root_mng ?id SIGrawA_se_kapadZe_uwAra));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " fling.clp	fling0  "  ?id "  " ?id1 "  SIGrawA_se_kapadZe_uwAra  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " fling.clp fling0 " ?id "  SIGrawA_se_kapadZe_uwAra )" crlf)) 
 )
 
 (defrule fling1
@@ -36,9 +36,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 SIGrawA_se_kapadZe_pahana))
+(assert (id-wsd_root_mng ?id SIGrawA_se_kapadZe_pahana));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " fling.clp	fling2  "  ?id "  " ?id1 "  SIGrawA_se_kapadZe_pahana  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " fling.clp fling2 " ?id "  SIGrawA_se_kapadZe_pahana )" crlf)) 
 )
 
 (defrule fling3
@@ -64,9 +64,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 SIGrawA_se_kapadZe_uwAra))
+(assert (id-wsd_root_mng ?id SIGrawA_se_kapadZe_uwAra));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " fling.clp	fling4  "  ?id "  " ?id1 "  SIGrawA_se_kapadZe_uwAra  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " fling.clp fling4 " ?id "  SIGrawA_se_kapadZe_uwAra )" crlf)) 
 )
 
 (defrule fling5

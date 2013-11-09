@@ -8,9 +8,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 pawalI_XAra_me_baha))
+(assert (id-wsd_root_mng ?id pawalI_XAra_me_baha));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " trickle.clp	trickle0  "  ?id "  " ?id1 "  pawalI_XAra_me_baha  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " trickle.clp trickle0 " ?id "  pawalI_XAra_me_baha )" crlf)) 
 )
 
 (defrule trickle1
@@ -22,9 +22,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 pawalI_XAra_me_baha))
+(assert (id-wsd_root_mng ?id pawalI_XAra_me_baha));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " trickle.clp	trickle1  "  ?id "  " ?id1 "  pawalI_XAra_me_baha  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " trickle.clp trickle1 " ?id "  pawalI_XAra_me_baha )" crlf)) 
 )
 
 (defrule trickle2
@@ -36,9 +36,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 pawalI_XAra_me_baha))
+(assert (id-wsd_root_mng ?id pawalI_XAra_me_baha));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " trickle.clp	trickle2  "  ?id "  " ?id1 "  pawalI_XAra_me_baha  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " trickle.clp trickle2 " ?id "  pawalI_XAra_me_baha )" crlf)) 
 )
 
 (defrule trickle3
