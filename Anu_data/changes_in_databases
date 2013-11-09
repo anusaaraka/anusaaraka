@@ -403,14 +403,14 @@
 								   the audience. 
 	woman	   (		By Manju	   06-11-13  ) Ex: I know a woman who has two children.
 	cat        (		  "			"    )
-	rat        (              "                     "    )
+	rat        (              "                     "    ) Ex: The snake who swallowed the rat hissed loudly.
 	cow        (              "                     "    ) Ex: Help to milk a cow.
 	ox         (              "                     "    )
 	bull       (              "                     "    )
 	tiger      (              "                     "    )
 	leopard    (              "                     "    )
 	hen        (              "                     "    )
-	parrot     (              "                     "    )
+	parrot     (              "                     "    ) Ex: Mohan brought few parrots from the forest.
 	turtle     (              "                     "    )
 	donkey     (              "                     "    )
 
@@ -1576,7 +1576,7 @@ similar_charge  sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
  changes in causative_verb_mng.txt
  =================================
  Added
-	jA      Beja	(Suggested by Sukhada (29-05-13))
+	jA      Beja	(Suggested by Sukhada  29-05-13)
 
  changes in multi_word_expressions_from_iit_bombay.txt
  =====================================================
@@ -1629,10 +1629,12 @@ similar_charge  sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
 	Nobel		nobela		(Suggested by Rashmi Banasthali 24-10-13)
 	Louis		luisa		(		"		"	)
 	Broglie		broYglI		(		"		"	)
+	Panditji        paMdiwa_jI	(	By Shirisha Manju       09-11-13)
+
 
    Modified:
    ---------
-	Egypt	IjIpIWa		as	ijipta		(By Manju 21-10-13)
+	Egypt	IjIpIWa		as	ijipta		( By Shirisha Manju 	21-10-13)
 
 
  changes in kriyA_object_vib.txt

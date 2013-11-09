@@ -5684,3 +5684,4 @@ Rydberg	ridabarga
 Nobel	nobela
 Louis	luisa
 Broglie	broYglI
+Panditji	paMdiwa_jI

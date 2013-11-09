@@ -263,7 +263,7 @@ Ayakara praswAva nAmaFjUra kiyA gayA WA.
 
 Hindi meaning using Stanford parser 2.61
 You are lucky I am here. 
-Apa BAgyavAna hEM mEM yahAz hUz.
+Apa BAgyavAna hEM ki mEM yahAz hUz.
 Multiple adjective senses are available for lucky. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.62
@@ -1445,6 +1445,7 @@ Apane kala jise bulAyA vaha ladakI pahuzca gaI.
 
 Hindi meaning using Stanford parser 3.32
 The snake who swallowed the rat hissed loudly. 
+jisane cUhe ko nigalA vaha sAzpa Uzce_svara meM PuPakArA.
 jisane cUhA nigalA vaha sAzpa jora se PuPakArA.
 jisane cUhA nigalA vaha sAzpa Uzce_svara meM PuPakArA.
 vaha sAzpa jisane cUhA nigalA Uzce_svara meM PuPakArA.
@@ -2421,6 +2422,14 @@ usane usake miwra se puswaka lI.
 Hindi meaning using Stanford parser 5.48
 I saw many fairies in my dream. 
 mEMne mere svapna meM bahuwa sArI pariyoM ko xeKA.
+
+Hindi meaning using Stanford parser 5.49
+Mohan brought few parrots from the forest. 
+mohana jafgala se kuCa wowoM ko lAyA.
+
+Hindi meaning using Stanford parser 5.50
+She was afraid Panditji's men would be coming. 
+vaha cinwiwa WI ki paNdiwa jI ke AxamI A rahe hoMge.
 
 Calling Transliteration
 Calling Interface related programs

@@ -320,20 +320,17 @@
  ; I'm fairly certain I can do the job. It is likely they will come. 
  (defrule ki_rule4
  (prep_id-relation-anu_ids  ?  kriyA-vAkyakarma  ?kri ?v_k)
- (prep_id-relation-anu_ids  ?  kriyA-subject  ?v_k ?sub)
- (prep_id-relation-anu_ids ? kriyA-subject  ?kri1  ?)
- ?f0 <-(hindi_id_order $?pre ?id ?sub $?post)
- (test (and (neq ?id ?kri)(neq ?kri ?kri1)))
+ (prep_id-relation-anu_ids ? kriyA-subject|kriyA-dummy_subject  ?kri1  ?)
+ (test (neq ?kri ?kri1))
+ ?f0 <-(hindi_id_order $?pre ?kri1 ?id $?d ?v_k $?post)
  (not (ki_asserted ?kri))
- (not (hindi_id_order $?ids ?kri))
  (not (id-HM-source ?id ki ?));It was obvious that he would do it.
  (not (prep_id-relation-anu_ids - kriyA-conjunction ?v_k ?));She declared that out of love for the poor she had gotten her family to go against convention. 
- (not (prep_id-relation-anu_ids - ? ?sub 1));The electron, it must be noted, does not experience this force.
- =>
+  =>
         (retract ?f0)
 	(assert (ki_asserted ?kri))
-        (assert (hindi_id_order  $?pre ?id ki ?sub $?post))
-        (printout  ?*DBUG* "(Rule_Name-ids   ki_rule4   (hindi_id_order  "(implode$ (create$ $?pre ?id ki ?sub $?post)) ")" crlf)
+        (assert (hindi_id_order  $?pre ?kri1 ki  ?id $?d ?v_k $?post))
+        (printout  ?*DBUG* "(Rule_Name-ids   ki_rule4   (hindi_id_order  "(implode$ (create$ $?pre ?kri1 ki ?id $?d ?v_k $?post)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
  ; Added by sheetal(18-01-2010).
