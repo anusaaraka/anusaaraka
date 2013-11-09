@@ -487,5 +487,13 @@ Hindi meaning using Stanford parser 2.114
 He came five times. 
 vaha pAzca bAra AyA.
 
+Hindi meaning using Stanford parser 2.115
+He is a volunteer. 
+vaha svayaMsevaka hE.
+
+Hindi meaning using Stanford parser 2.116
+I want to be volunteer. 
+mEM svayaMsevaka honA cAhawA hUz.
+
 Calling Transliteration
 Calling Interface related programs

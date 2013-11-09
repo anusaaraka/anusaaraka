@@ -274,12 +274,14 @@
 )
  ; Ex. The income tax proposal was rejected.
 ;------------------------------------------------------------------------------------------------------------------------
+;Removed 'not' conditions as the rule is not working for the given eg. sentence. Also reduced salience as rule is default .
+;Modified by Roja. Suggested by Sukhada 09-11-13.
 (defrule ccomp
-(declare(salience 200))
+(declare(salience -200)) 
 (rel_name-sids ccomp ?kriyA ?vAkyakarma)
-(not (rel_name-sids advmod ?vAkyakarma ?)) ;--->Added by Mahalaxmi.
-(not (rel_name-sids aux ?vAkyakarma ?)) ;--->Added by Mahalaxmi.
-(not (rel_name-sids nsubj ?vAkyakarma ?)) ;--->Added by Mahalaxmi.
+;(not (rel_name-sids advmod ?vAkyakarma ?)) ;--->Added by Mahalaxmi.
+;(not (rel_name-sids aux ?vAkyakarma ?)) ;--->Added by Mahalaxmi.
+;(not (rel_name-sids nsubj ?vAkyakarma ?)) ;--->Added by Mahalaxmi.
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-vAkyakarma       "?kriyA"        "?vAkyakarma")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   ccomp	kriyA-vAkyakarma       "?kriyA"        "?vAkyakarma")"crlf)
@@ -1135,14 +1137,16 @@
  ; Ex. I want to go. 
  ;It struggled to force its body through that little hole . 
 ;------------------------------------------------------------------------------------------------------------------------
+ ;Removed kriyA-object relation printing. Ex: I want to be volunteer.
+ ;Modified by Roja. Suggested by Sukhada 09-11-13.
  (defrule xcomp+cop
  (rel_name-sids xcomp ?kri ?id)
  (rel_name-sids cop ?id ?kq_vi)
  =>
  	(printout	?*fp*   "(prep_id-relation-parser_ids  -     kriyA-kqxanwa_karma   "       ?kri"    "?kq_vi")"crlf)
 	(printout	?*dbug* "(prep_id-Rule-Rel-ids  -   xcomp+cop   kriyA-kqxanwa_karma  "       ?kri"   "?kq_vi")"crlf)
-	(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-object     "?kq_vi"        "?id")"crlf)
-        (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   xcomp+cop    kriyA-object    "?kq_vi"        "?id")"crlf)
+;	(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-object     "?kq_vi"        "?id")"crlf)
+;       (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   xcomp+cop    kriyA-object    "?kq_vi"        "?id")"crlf)
  )
  ;Added by Shirisha Manju
  ;Ex : They seem to resemble each other .

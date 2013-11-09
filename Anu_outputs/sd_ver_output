@@ -859,7 +859,7 @@ mukkA peta meM usako lagA.
 
 Hindi meaning using Stanford parser 2.200
 It is clear who killed Rod. 
-yaha spaRta hE PropN-rod-PropN ko kisane mArA.
+yaha spaRta hE ki PropN-rod-PropN ko kisane mArA.
 
 Hindi meaning using Stanford parser 2.201
 We are from the planet Gorpon. 
@@ -2430,6 +2430,14 @@ mohana jafgala se kuCa wowoM ko lAyA.
 Hindi meaning using Stanford parser 5.50
 She was afraid Panditji's men would be coming. 
 vaha cinwiwa WI ki paNdiwa jI ke AxamI A rahe hoMge.
+
+Hindi meaning using Stanford parser 5.51
+He concluded that we should go. 
+usane waya kiyA ki hameM jAnA cAhie.
+
+Hindi meaning using Stanford parser 5.52
+He concluded from their remarks that they were not in favour of the plan. 
+usane unakI tippaNiyoM se waya kiyA ki ve yojanA ke pakRa meM nahIM We.
 
 Calling Transliteration
 Calling Interface related programs

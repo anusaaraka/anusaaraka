@@ -38,27 +38,30 @@
  8. sd_relation_correction.clp
         Added deffunction never-called ()
  9. sd_relation_rules.clp: 
-	Modified : kriyA_sub_rule, acomp+nsubj, nsubj_advmod_1, advmod1, rcmod_prep and insert-which1
+	Modified : kriyA_sub_rule, acomp+nsubj, nsubj_advmod_1, advmod1, rcmod_prep, insert-which1, ccomp and xomp+cop rule
 	In 'advcl' rule added printout statement.
-10. tam_id.clp
+10. adjective.clp:
+        Modified : Added "?id" in print statements for the rules [load_dic_org_word_file & load_dic_word_file]
+                   for debugging purpose.
+11. tam_id.clp
 	Modified : tam_id_frm_vb_grp_en ('ed' as 'ed_en')
-11. hindi_sent_reorder.clp
+12. hindi_sent_reorder.clp
         Modified : wh_without_aux-reorder1, insert_aXika_for_adj_er and insert_sabase_aXika_adj_est
 	Added 	 : ki_rule4 (insert ki for kriyA vAkyakarma sentences)
-12. run_modules_std.bat
+13. run_modules_std.bat
 	Loaded  pada_id_info.dat file in wsd_tam_meaning module
 	In sd_relation_correction.clp: Added 'conjunction-components' in save-facts
-13. run_H_gen_sen.bat
+14. run_H_gen_sen.bat
 	Loaded 	wsd_facts_output.dat and GNP_agmt_info.dat files in hindi_sentence module
-14. Updated the following files to add id-attach_eng_mng fact in nerver-called deffunction
+15. Updated the following files to add id-attach_eng_mng fact in nerver-called deffunction
         causative_verb_mng.clp          hindi_meaning.clp       preferred_morph_consistency_check.clp
         prepare_apertium_input.clp      tam_meaning.clp         number.clp      vibakthi.clp
 	hindi_sent_reorder.clp		hindi_sentence.clp
-15. Updated following lex files:
+16. Updated following lex files:
 	--> standard_abbrevations.lex : Added new rule to handle sentences ending with 'in' or 'long'
-16. Updated following dictionary related files:
+17. Updated following dictionary related files:
 	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix
-17. Updated following shell files
+18. Updated following shell files
 	--> minion_compile.sh: Removed code related to full parser.
 	--> get_dictionary_in_canonical_form.sh :  based on canonical form changes
         --> get_txt_files.sh 			:	"
@@ -72,18 +75,18 @@
         --> remove_out-files.sh			:	"
 	--> Anusaaraka_stanford_minion.sh	:  run_transliteration.sh to run_transliteration_for_minion.sh
 	--> run_transliteration.sh		:  instead of NER proper noun list, list from hindi_meaning.clp is sent								to transliteration
-18. Added new files:
+19. Added new files:
 	--> canonical_to_conventional.lex (to convert canonical to conventional form in dictionaries and hindi morph)
 	--> canonical_to_conventional_in_wsd.lex (to convert canonical to conventional form in wsd files)
 	--> human.txt file
 	--> run_transliteration_for_minion.sh:	for minion alignment purpose
-19. Renamed : replacing_canonical.lex to canonical_form_correction.lex
-20. Removed following files
+20. Renamed : replacing_canonical.lex to canonical_form_correction.lex
+21. Removed following files
 	fullparser-hin-1.6.3.tgz
 	compile_full_parser.sh
-21. Updated FinalGenerate.pl 
-22. Updated Log
-23. Updated  sd_verified (548)		verified_eng (40)       	small_sent_verified_sd (114)
+22. Updated FinalGenerate.pl 
+23. Updated Log
+24. Updated  sd_verified (548)		verified_eng (40)       	small_sent_verified_sd (114)
 	     phy_verified_eng (253)	phy_partial_ver_eng (282)
 
 
