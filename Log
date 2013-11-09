@@ -1,4 +1,4 @@
- 06-11-13
+ 09-11-13
  ========
  1. WSD : Modified :	interface.clp	number.clp	raise.clp	cultivate.clp	stay.clp	synthetic.clp
 			section.clp	enough.clp	different.clp	accident.clp	authority.clp	essentially.clp
@@ -19,7 +19,7 @@
 			closely.clp	realize.clp	govern.clp	departure.clp  	glass.clp	constituent.clp
 			inverse.clp	fairly.clp
 	  Deleted  :	pass_default.clp
-	  Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program in 214 files.
+	  Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program in 220 files.
  2. causative_verb_mng.clp
 	Modified : modify_mng rule -- (modified source)
  3. hindi_meaning.clp
