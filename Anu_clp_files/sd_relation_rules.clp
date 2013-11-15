@@ -276,6 +276,7 @@
 ;------------------------------------------------------------------------------------------------------------------------
 ;Removed 'not' conditions as the rule is not working for the given eg. sentence. Also reduced salience as rule is default .
 ;Modified by Roja. Suggested by Sukhada 09-11-13.
+;He concluded from their remarks that they were not in favour of the plan. 
 (defrule ccomp
 (declare(salience -200)) 
 (rel_name-sids ccomp ?kriyA ?vAkyakarma)

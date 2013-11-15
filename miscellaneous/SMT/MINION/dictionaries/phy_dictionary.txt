@@ -398,3 +398,4 @@ diffract_verb	vivarwana_ho
 window_noun	gavAkRa
 charge_noun	AveSa
 charge_verb	AveSiwa_kara
+absorb_verb	avaSoRiwa_kara

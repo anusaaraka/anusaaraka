@@ -4,7 +4,7 @@
 (id-root ?id weight)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 responsibility )
-(viSeRya-of_viSeRaNa ?id1 ?id)
+(viSeRya-of_saMbanXI ?id1 ?id) ;Replaced viSeRya-of_viSeRaNa as viSeRya-of_saMbanXI programatically by Roja 09-11-13
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)

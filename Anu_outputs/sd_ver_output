@@ -1684,7 +1684,7 @@ viRaya usake xvArA samaJAyA gayA WA.
 
 Hindi meaning using Stanford parser 3.82
 He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
-usane kahA ki Ese pariNAmoM ko jApAna ke sAWa yU.esa. vyApAra GAtA GatAne meM "dOlara Ora sEnta meM mApane yogya" honA cAhie.
+usane kahA ki Ese pariNAmoM ko jApAna ke sAWa yU.esa. vyApAra GAtA kama karane meM "dOlara Ora sEnta meM mApane yogya" honA cAhie.
 Multiple adjective senses are available for measurable. WSD rule is required 
 Multiple adjective senses are available for such. WSD rule is required 
 
@@ -2267,175 +2267,179 @@ The Sun was declared stronger than the Wind.
 sUrya havA kI apekRA aXika saSakwa GoRiwa kiyA gayA WA.
 
 Hindi meaning using Stanford parser 5.11
-Once there were three little pigs, Sonu, Monu and Gonu Sonu ran to Monu's house. 
-eka bAra wIna Cote suara We, sonU, monU Ora PropN-gonu-PropN sonU monU ke Gara kI ora xOde.
+Once there were three little pigs, Sonu, Monu and Gonu. 
+eka bAra wIna Cote suara We, sonU, monU Ora PropN-gonu-PropN.
 
 Hindi meaning using Stanford parser 5.12
+Sonu ran to Monu's house. 
+sonU monU ke Gara kI ora xOdA.
+
+Hindi meaning using Stanford parser 5.13
 He smiled and said, Good morning! 
 vaha muskarAyA Ora kahA, supraBAwa!
 Multiple adjective senses are available for good. WSD rule is required 
 
-Hindi meaning using Stanford parser 5.13
+Hindi meaning using Stanford parser 5.14
 The giraffe said, Not if you ride on my back. 
 jirAPa ne kahA, ki nahIM yaxi Apa merI pITa para savArI karawe hEM.
 
-Hindi meaning using Stanford parser 5.14
+Hindi meaning using Stanford parser 5.15
 I go to school on Mondays, Tuesdays, Wednesdays, Thursdays and Fridays. 
 mEM somavAra, mafgalavAra, buXavAra, guruvAra Ora SukravAra ko vixyAlaya jAwA hUz.
 
-Hindi meaning using Stanford parser 5.15
+Hindi meaning using Stanford parser 5.16
 On Saturdays I play games at school. 
 SanivAra ko mEM vixyAlaya meM Kela KelawA hUz.
 
-Hindi meaning using Stanford parser 5.16
+Hindi meaning using Stanford parser 5.17
 Then we can cross the river. 
 waba hama naxI pAra_kara sakawe hEM.
 
-Hindi meaning using Stanford parser 5.17
+Hindi meaning using Stanford parser 5.18
 She had two chicks, Lalu and Peelu. 
 usake xo cUje, PropN-lalu-PropN Ora PropN-peelu-PropN We.
 
-Hindi meaning using Stanford parser 5.18
+Hindi meaning using Stanford parser 5.19
 One day Mittu was flying. 
 eka xina PropN-mittu-PropN uda rahA WA.
 
-Hindi meaning using Stanford parser 5.19
+Hindi meaning using Stanford parser 5.20
 He saw a big yellow mango on a tree. 
 usane peda para eka bade pIle Ama ko xeKA.
 
-Hindi meaning using Stanford parser 5.20
+Hindi meaning using Stanford parser 5.21
 "I want to eat that yellow mango," he said. 
 "mEM vaha pIlA Ama KAnA cAhawA hUz," usane kahA.
 
-Hindi meaning using Stanford parser 5.21
+Hindi meaning using Stanford parser 5.22
 He saw a big black crow. 
 usane eka bade kAle kOe ko xeKA.
 
-Hindi meaning using Stanford parser 5.22
+Hindi meaning using Stanford parser 5.23
 Mittu was afraid of the crow. 
 PropN-mittu-PropN kOe se BayaBIwa WA.
 
-Hindi meaning using Stanford parser 5.23
+Hindi meaning using Stanford parser 5.24
 Mittu saw a red balloon. 
 PropN-mittu-PropN ne eka lAla gubbAre ko xeKA.
 
-Hindi meaning using Stanford parser 5.24
+Hindi meaning using Stanford parser 5.25
 It was under a tree. 
 vaha peda ke nIce WA.
 
-Hindi meaning using Stanford parser 5.25
+Hindi meaning using Stanford parser 5.26
 He picked up the red balloon. 
 usane lAla gubbArA uTAyA.
 
-Hindi meaning using Stanford parser 5.26
+Hindi meaning using Stanford parser 5.27
 The crow was sitting on the tree. 
 kOA peda para bETA WA.
 
-Hindi meaning using Stanford parser 5.27
+Hindi meaning using Stanford parser 5.28
 He ate the big yellow mango. 
 usane badA pIlA Ama KAyA.
 
-Hindi meaning using Stanford parser 5.28
+Hindi meaning using Stanford parser 5.29
 It really looked like a ball. 
 yaha vAswava meM gole kI waraha xiKA.
 
-Hindi meaning using Stanford parser 5.29
+Hindi meaning using Stanford parser 5.30
 It really looks like a balloon. 
 yaha vAswava meM gubbAre kI waraha xiKawA hE.
 
-Hindi meaning using Stanford parser 5.30
+Hindi meaning using Stanford parser 5.31
 One day Murali ate a mango. 
 eka xina PropN-murali-PropN ne Ama KAyA.
 
-Hindi meaning using Stanford parser 5.31
+Hindi meaning using Stanford parser 5.32
 He threw the seed behind his house. 
 usane usake Gara ke pICe bIja PeMkIM.
 
-Hindi meaning using Stanford parser 5.32
+Hindi meaning using Stanford parser 5.33
 We will try again, Bobby said. 
 hama Pira se prayAsa kareMge, bobI ne kahA.
 
-Hindi meaning using Stanford parser 5.33
+Hindi meaning using Stanford parser 5.34
 I will take you to school. 
 mEM Apako vixyAlaya le jAUzgA.
 
-Hindi meaning using Stanford parser 5.34
+Hindi meaning using Stanford parser 5.35
 The Sahara Desert extends for miles. 
 sahArA regiswAna mIloM waka PElA huA hE.
 
-Hindi meaning using Stanford parser 5.35
+Hindi meaning using Stanford parser 5.36
 Safety is our highest priority. 
 surakRA hamArI sarvocca prAWamikawA hE.
 
-Hindi meaning using Stanford parser 5.36
+Hindi meaning using Stanford parser 5.37
 The bank refused to extend credit to them. 
 bEMka ne unako uXAra xene ke lie manA kiyA.
 
-Hindi meaning using Stanford parser 5.37
+Hindi meaning using Stanford parser 5.38
 There are plans to extend the no-smoking area. 
 XUmrapAna niReXa kRewra baDAne ke lie yojanAez hEM.
 
-Hindi meaning using Stanford parser 5.38
+Hindi meaning using Stanford parser 5.39
 What are the basic constituents of the mixture? 
 miSraNa ke buniyAxI Gataka kyA hEM?
 
-Hindi meaning using Stanford parser 5.39
+Hindi meaning using Stanford parser 5.40
 Let us look at the constituent parts of this sentence. 
 caliye hama isa vAkya ke Gataka BAgoM ko xeKeM.
 
-Hindi meaning using Stanford parser 5.40
+Hindi meaning using Stanford parser 5.41
 Childhood is the best time of life. 
 bacapana jIvana kA sarvowwama samaya hE.
 Multiple adjective senses are available for best. WSD rule is required 
 
-Hindi meaning using Stanford parser 5.41
+Hindi meaning using Stanford parser 5.42
 In ancient times there were many kingdoms. 
 prAcIna kAla meM bahuwa sAre rAjya We.
 Multiple adjective senses are available for ancient. WSD rule is required 
 
-Hindi meaning using Stanford parser 5.42
+Hindi meaning using Stanford parser 5.43
 This time tomorrow I will be in Canada. 
 isa samaya kala mEM kanAdA meM hoUzgA.
 
-Hindi meaning using Stanford parser 5.43
+Hindi meaning using Stanford parser 5.44
 This is a fairly easy book. 
 yaha eka kAPI AsAna puswaka hE.
 Multiple adjective senses are available for easy. WSD rule is required 
 
-Hindi meaning using Stanford parser 5.44
+Hindi meaning using Stanford parser 5.45
 I know him fairly well, but I would not say we were really close friends. 
 mEM kAPI acCI waraha usako jAnawA hUz, paranwu mEM nahIM kahUzgA ki hama vAswava meM GaniRTa miwra We.
 
-Hindi meaning using Stanford parser 5.45
+Hindi meaning using Stanford parser 5.46
 I am fairly certain I can do the job. 
 mEM kAPI niSciwa hUz ki mEM kAma kara sakawA hUz.
 
-Hindi meaning using Stanford parser 5.46
+Hindi meaning using Stanford parser 5.47
 The report was fairly incomprehensible. 
 riporta kAPI xurUha WI.
 Multiple adjective senses are available for incomprehensible. WSD rule is required 
 
-Hindi meaning using Stanford parser 5.47
+Hindi meaning using Stanford parser 5.48
 He took the book from his friend. 
 usane usake miwra se puswaka lI.
 
-Hindi meaning using Stanford parser 5.48
+Hindi meaning using Stanford parser 5.49
 I saw many fairies in my dream. 
 mEMne mere svapna meM bahuwa sArI pariyoM ko xeKA.
 
-Hindi meaning using Stanford parser 5.49
+Hindi meaning using Stanford parser 5.50
 Mohan brought few parrots from the forest. 
 mohana jafgala se kuCa wowoM ko lAyA.
 
-Hindi meaning using Stanford parser 5.50
+Hindi meaning using Stanford parser 5.51
 She was afraid Panditji's men would be coming. 
 vaha cinwiwa WI ki paNdiwa jI ke AxamI A rahe hoMge.
 
-Hindi meaning using Stanford parser 5.51
+Hindi meaning using Stanford parser 5.52
 He concluded that we should go. 
 usane waya kiyA ki hameM jAnA cAhie.
 
-Hindi meaning using Stanford parser 5.52
+Hindi meaning using Stanford parser 5.53
 He concluded from their remarks that they were not in favour of the plan. 
 usane unakI tippaNiyoM se waya kiyA ki ve yojanA ke pakRa meM nahIM We.
 

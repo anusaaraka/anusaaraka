@@ -33547,6 +33547,8 @@ yellow_pine	pIle_xevaxAra/cIdZa/xevaxAra_Pala#pIle_xevaxAra/cIdZa/xevaxAra_Pala#
 last_call	anwima_sUcanA#anwima_sUcanA#noun#2#RM
 call_by_on	howe_huE_jA#howe_huE_jA#verb#1#RM
 matter_of_urgency	ApAwa_sWiwi#ApAwa_sWiwi#noun#1#RM
+read_well	pATaka_kI_ruci_banAe_raKa#pATaka_kI_ruci_banAe_raKa#verb#1#RM
+reads_well	pATaka_kI_ruci_banAe_raKa#pATaka_kI_ruci_banAe_raKa#verb#1#RM
 #By Alpana ji (LTRC)
 Block_multiplexer	avaroXa_bahusaMkewaka#avaroXa_bahusaMkewaka#noun#2#RM
 Discharge_Required	AvaSyaka_nirvahana#AvaSyaka_nirvahana#noun#1#RM
@@ -33705,3 +33707,6 @@ yellow_fever	pIwajvara#pIwajvara#noun#2#RM
 zebra_crossing	pExala_pArapaWa#pExala_pArapaWa#noun#2#RM
 zero_hour	SUnyakAla/niyawa_samaya#SUnyakAla/niyawa_samaya#noun#2#RM
 zip_code	pinakoda#pinakoda#noun#2#RM
+#By Nandini ji LTRC
+credit_card	kredita_kArda#kredita_kArda#noun#2#RM
+credit_cards	kredita_kArdas#kredita_kArdas#noun#2#RM

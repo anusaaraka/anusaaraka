@@ -71,7 +71,7 @@
 (id-root ?id state)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 city )
-(viSeRya-in_viSeRaNa ?id1 ?id)
+(viSeRya-in_saMbanXI ?id1 ?id) ;Replaced viSeRya-in_viSeRaNa as viSeRya-in_saMbanXI programatically by Roja 09-11-13
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)

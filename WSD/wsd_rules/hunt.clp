@@ -89,7 +89,7 @@
 (id-root ?id hunt)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 food )
-(viSeRya-for_viSeRaNa ?id1 ?id)
+(viSeRya-for_saMbanXI ?id1 ?id) ;Replaced viSeRya-for_viSeRaNa as viSeRya-for_saMbanXI programatically by Roja 09-11-13
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)

@@ -589,7 +589,7 @@
 (id-root ?id make)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 mind)
-(viSeRya-up_viSeRaNa ?id1 ?id)
+(viSeRya-up_saMbanXI ?id1 ?id) ;Replaced viSeRya-up_viSeRaNa as viSeRya-up_saMbanXI programatically by Roja 09-11-13
 (id-word ?id1 up)
 (kriyA-upasarga ?id ?id1)
 (id-cat_coarse ?id verb)
@@ -606,7 +606,7 @@
 (id-root ?id make)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 story)
-(viSeRya-up_viSeRaNa ?id1 ?id)
+(viSeRya-up_saMbanXI ?id1 ?id) ;Replaced viSeRya-up_viSeRaNa as viSeRya-up_saMbanXI programatically by Roja 09-11-13
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -731,4 +731,8 @@
 ;He made a request that there be an investigation.
 ;He made a mistake in inviting John.
 
-
+;-- make <something> public
+; make public either object_1 or object_2 then -> mng -> sArvajanika
+; He gave me a book. (This type construction)
+; public ko sampradana laba hE
+;

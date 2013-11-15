@@ -1,4 +1,4 @@
- 09-11-13
+ 15-11-13
  ========
  1. WSD : Modified :	interface.clp	number.clp	raise.clp	cultivate.clp	stay.clp	synthetic.clp
 			section.clp	enough.clp	different.clp	accident.clp	authority.clp	essentially.clp
@@ -10,7 +10,7 @@
 			anybody.clp	anyone.clp	as.clp		it.clp		so.clp		having_en_tam.clp
 			could.clp	no.clp		that.clp	the.clp		time.clp	to.clp
 			what.clp	when.clp	where.clp	which.clp	while.clp	who.clp
-			whom.clp	whose.clp	be.clp		side.clp	take.clp	charge.clp
+			whom.clp	whose.clp	be.clp		side.clp	take.clp	charge.clp			party.clp       throw.clp       make.clp
 	  Added    :	argue.clp	cell.clp	feature.clp	flux.clp	divide.clp	equivalently.clp
 			win.clp		difficult.clp	eliminate.clp	closely.clp	compress.clp	generation.clp
 			deduce.clp	define.clp	degree.clp	emerge.clp	enormous.clp	substantially.clp
@@ -20,6 +20,7 @@
 			inverse.clp	fairly.clp
 	  Deleted  :	pass_default.clp
 	  Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program in 220 files.
+	  Modified "viSeRya-prep_viSeRaNa" to "viSeRya-prep_saMbanXI" automatically by a programme
  2. causative_verb_mng.clp
 	Modified : modify_mng rule -- (modified source)
  3. hindi_meaning.clp

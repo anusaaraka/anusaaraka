@@ -611,7 +611,7 @@
 (id-root ?id look)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 me)
-(viSeRya-at_viSeRaNa ?id1 ?id)
+(viSeRya-at_saMbanXI ?id1 ?id) ;Replaced viSeRya-at_viSeRaNa as viSeRya-at_saMbanXI programatically by Roja 09-11-13
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -625,7 +625,7 @@
 (id-root ?id look)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 it)
-(viSeRya-at_viSeRaNa ?id1 ?id)
+(viSeRya-at_saMbanXI ?id1 ?id) ;Replaced viSeRya-at_viSeRaNa as viSeRya-at_saMbanXI programatically by Roja 09-11-13
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)

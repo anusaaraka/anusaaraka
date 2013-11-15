@@ -5,7 +5,7 @@
 (id-root ?id record)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 tape)
-(viSeRya-on_viSeRaNa ?id1 ?id)
+(viSeRya-on_saMbanXI ?id1 ?id) ;Replaced viSeRya-on_viSeRaNa as viSeRya-on_saMbanXI programatically by Roja 09-11-13
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id rekArda_karanA))

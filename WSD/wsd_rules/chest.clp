@@ -4,7 +4,7 @@
 (id-root ?id chest)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 busy )
-(viSeRya-with_viSeRaNa ?id1 ?id)
+(viSeRya-with_saMbanXI ?id1 ?id) ;Replaced viSeRya-with_viSeRaNa as viSeRya-with_saMbanXI programatically by Roja 09-11-13
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)

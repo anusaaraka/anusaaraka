@@ -413,6 +413,7 @@
 	parrot     (              "                     "    ) Ex: Mohan brought few parrots from the forest.
 	turtle     (              "                     "    )
 	donkey     (              "                     "    )
+	doctor	   (Suggested by Anita ji LTRC	   14-11-13  ) Ex: Doctors are trained to recognize the symptoms of different diseases.
 
  
 
@@ -1016,6 +1017,12 @@ Removed:
 					Ex: On the other hand, glass is a dispersive medium.
 	75. proton_noun			XanAveSa_sUkRmANu		(Suggested by Sonam Banasthali  30-10-13)
 					Ex: Solutions of the Schrodinger wave equation assign a wave-like description to the 						 electrons bound in an atom due to attractive forces of the protons.
+	76. precisely_adverb		TIka			(Suggested by Sonam Banasthali  14-11-13)
+					Ex: But when an atom absorbs a photon that has precisely the same energy needed by the electron in a lower energy state to make transitions to a higher energy state, the process is called absorption.
+	77. prediction_noun		prAkkaWana 		(Suggested by Sonam Banasthali  14-11-13)
+					Ex: This prediction of the Bohr's model is in excellent agreement with the experimental value of ionisation energy.
+	78. analyze_verb		viSleRaNa_kara		(Suggested by Garima Banasthali  14-11-13)
+					Ex: Researchers analysed the purchases of 6,300 households.
 
 
     5. Modifying first meaning from the list :
@@ -1157,6 +1164,18 @@ Removed:
 	71. surface_noun	UparI_wala		as	sawaha		(	"	  	"	04-11-13)
 				Ex: The rods induce opposite charges on the near surfaces of the objects and similar charges
 				    move to the farther side of the object.
+	72. orbital_adjective       parikramA_paWa_sambanXI	as	kakRIya	(Suggested by Sonam Banasthali 14-11-13)
+				Ex: This orbital has no resemblance whatsoever with the orbit defined for an electron in the Bohr model
+	73. confirm_verb	pakkA_kara	as	puRti_kara	(Suggested by Nandini ji LTRC 14-11-13)
+				Ex: Six people have confirmed that they will be attending and ten haven't replied yet.
+	74. achieve_verb	saPala_ho	as	prApwa_kara	(Suggested by Nandini ji LTRC 14-11-13)
+				Ex: He had finally achieved success.
+	75. connect_verb	telIPona_para_milA	as	joda	 (Suggested by Preeti ji LTRC 14-11-13)
+				Ex: The towns are connected by train and bus services. 
+	76. reduce_verb		GatA		as	kama_kara	(Suggested by Preeti ji LTRC 14-11-13)	
+				Ex: Giving up smoking reduces the risk of heart disease.
+	77. theater_noun	yuxXa_kRewra	as	Wiyetara	(Suggested by Nandini ji LTRC 14-11-13)
+				Ex: We are meeting them outside the theatre at 7.
 
 	
     6. Removed meaning from existing list:
@@ -1447,8 +1466,12 @@ Removed:
 	56. close_friends   	GaniRTa_miwra#GaniRTa_miwra#noun#2#RM		(Suggested by Chaitanya Sir    02-11-13 )
 				Ex: I know him fairly well, but I would not say we were really close friends.
 	57. contrary_to		ke_viparIwa#ke_viparIwa#noun#1#RM		(Suggested by Chaitanya Sir    04-11-13 )
-				Ex: The positively charged glass rod does not lose any of its charge, contrary to the process
+				Ex: The positively charged glass rod does not lose any of its charge, contrary to the process 
 				    of charging by contact.
+	58. read_well		pATaka_kI_ruci_banAe_raKa#pATaka_kI_ruci_banAe_raKa#verb#1#RM (Suggested by Anita ji LTRC    14-11-13)
+	59. reads_well		pATaka_kI_ruci_banAe_raKa#pATaka_kI_ruci_banAe_raKa#verb#1#RM (Suggested by Anita ji LTRC    14-11-13)
+	60. credit_card		kredita_kArda#kredita_kArda#noun#2#RM	(Suggested by Nandini ji LTRC 14-11-13)
+	61. credit_cards	kredita_kArdas#kredita_kArdas#noun#2#RM	(Suggested by Nandini ji LTRC 14-11-13)
 	opposite_charge vijAwIya_AveSa#vijAwIya_AveSa#noun#2#RM
 similar_charge  sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
 
@@ -1523,6 +1546,8 @@ similar_charge  sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
 	window_noun     	gavAkRa		(Suggested by Rashmi Banasthali  14-10-13)
 	charge_noun		AveSa		(Suggested by Chaitanya Sir      04-11-13)
 	charge_verb		AveSiwa_kara	(		"		   "	 )
+	absorb_verb		avaSoRiwa_kara	(Suggested by Garima Banasthali  14-11-13)
+				EX:The dark lines indicate the frequencies that have been absorbed by the atoms of the gas.
 
 
     Modifying spelling of the existing word :
@@ -1648,6 +1673,7 @@ similar_charge  sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
    Added :
 	officer		( By  Manju         05-10-13) Ex: Mohan is a highly corrupt officer.
 	woman	  	(	"	    06-11-13) Ex: I know a woman who has two children.
+	doctor		(Suggested by Anita ji LTRC     14-11-13  ) Ex: Doctors are trained to recognize the symptoms of different diseases.
 
  changes in named_entities.txt
  =============================

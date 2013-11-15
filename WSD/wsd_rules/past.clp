@@ -222,7 +222,7 @@
 (id-root ?id past)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 figure)
-(viSeRya-of_viSeRaNa ?id1 ?id)
+(viSeRya-of_saMbanXI ?id1 ?id) ;Replaced viSeRya-of_viSeRaNa as viSeRya-of_saMbanXI programatically by Roja 09-11-13
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id BUwakAla))

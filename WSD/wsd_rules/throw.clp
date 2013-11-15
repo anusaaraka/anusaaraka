@@ -29,6 +29,7 @@
 )
 
 ;Added by sheetal(20-01-10).
+;John last week threw a great party .
 (defrule throw2
 (declare (salience 5000))
 (id-root ?id throw)
@@ -41,7 +42,6 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  throw.clp     throw2   "  ?id "  xe )" crlf))
 )
-;John last week threw a great party .
 
 
 ;"throw","VT","1.PeMka"

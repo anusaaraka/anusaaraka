@@ -104,7 +104,7 @@
 (id-root ?id play)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 jolt)
-(viSeRya-by_viSeRaNa ?id1 ?id)
+(viSeRya-by_saMbanXI ?id1 ?id) ;Replaced viSeRya-by_viSeRaNa as viSeRya-by_saMbanXI programatically by Roja 09-11-13
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)

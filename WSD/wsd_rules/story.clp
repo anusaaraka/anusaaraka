@@ -16,7 +16,7 @@
 (id-root ?id story)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 make )
-(viSeRya-up_viSeRaNa ?id1 ?id)
+(viSeRya-up_saMbanXI ?id1 ?id) ;Replaced viSeRya-up_viSeRaNa as viSeRya-up_saMbanXI programatically by Roja 09-11-13
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)

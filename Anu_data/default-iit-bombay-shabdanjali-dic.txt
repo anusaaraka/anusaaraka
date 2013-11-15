@@ -5394,7 +5394,7 @@ analyticer_UNDEFINED	vESleRika
 analyticest_UNDEFINED	vESleRika
 analyzable_adjective	viSleRaNIya
 analyze_UNDEFINED	manoviSleRaNa
-analyze_verb	manoviSleRaNa_kara
+analyze_verb	viSleRaNa_kara/manoviSleRaNa_kara
 analyzed_UNDEFINED	manoviSleRaNa
 analyzes_UNDEFINED	manoviSleRaNa
 analyzing_UNDEFINED	manoviSleRaNa
@@ -16631,7 +16631,7 @@ confinement_noun	sImAbaxXa/prasUwi/prasava_kA_samaya
 confinements_UNDEFINED	sImAbaxXa
 confines_noun	sImA
 confining_UNDEFINED	sImAbaxXa_karanA
-confirm_verb	pakkA_kara/sWAyI_kara/puRti_kara/pakkA_IsAI_banA/niSciwa_kara/IsAI_samAja_meM_le
+confirm_verb	puRti_kara/pakkA_kara/sWAyI_kara/pakkA_IsAI_banA/niSciwa_kara/IsAI_samAja_meM_le
 confirmation_noun	puRtikaraNa/xqDIkaraNa-saMskAra/sawyApana/puRtIkaraNa
 confirmations_UNDEFINED	puRtikaraNa
 confirmative_adjective	pramANiwa_karane_vAlA
@@ -16792,7 +16792,7 @@ conjuring_noun	jAdU_kA_Kela
 conjuror_noun	jAxUgara
 conk_verb	behoSa_ho_jA
 connect_UNDEFINED	sambanXa_kara
-connect_verb	telIPona_para_milA/satA/sambanXa_sWApiwa_kara/sambanXa_joda/Pona_para_milA/milA/laga/judA_ho/joda
+connect_verb	joda/telIPona_para_milA/satA/sambanXa_sWApiwa_kara/sambanXa_joda/Pona_para_milA/milA/laga/judA_ho
 connected_UNDEFINED	jodanA
 connecting-rod_noun	saMyojI_SalAkA
 connecting_UNDEFINED	jodanA
@@ -54252,7 +54252,7 @@ orbicular_adjective	golAkAra
 orbit_UNDEFINED	newra_kotara
 orbit_noun	newraguhA/mAraka_kRamawA/kAryakRewra/kakRa/kakRA
 orbit_verb	parikramA_kara
-orbital_adjective	parikramA_paWa_sambanXI/newraguhA_sambanXI/kakRIya
+orbital_adjective	kakRIya/parikramA_paWa_sambanXI/newraguhA_sambanXI
 orbital_noun	varwula_sadaka
 orbited_UNDEFINED	kakRA
 orbiting_UNDEFINED	kakRA
@@ -60215,7 +60215,7 @@ precis_verb	sAra_liKa/safkRipwa_kara
 precise_adjective	yaWAwaWya/spaRta/saKwa/niyawa/ekaxama_sahI
 precised_UNDEFINED	sAra
 precisely_UNDEFINED	yaWAwaWya_rUpa_se
-precisely_adverb	Tika-Tika/svaBAvavaSa/SuxXa_rUpa_se
+precisely_adverb	TIka/Tika-Tika/svaBAvavaSa/SuxXa_rUpa_se
 preciser_UNDEFINED	yaWAwaWya
 precises_UNDEFINED	sAra
 precisest_UNDEFINED	yaWAwaWya
@@ -60288,7 +60288,7 @@ predictable_adjective	pUrvAnumeya_hone_ke_kAraNa_nIrasa/pUrvAnumeya
 predictably_adverb	pUrvAnumeya_Dafga_se
 predicted_UNDEFINED	BaviRya_bawalAnA
 predicting_UNDEFINED	BaviRya_bawalAnA
-prediction_noun	BaviRya_kaWana/BaviRyavANI
+prediction_noun	prAkkaWana/BaviRya_kaWana/BaviRyavANI
 predictions_UNDEFINED	BaviRya_kaWana
 predictive_adjective	BaviRyasUcaka
 predictor_noun	prAgsUcaka/BaviRyavakwA
@@ -64664,7 +64664,7 @@ redressing_UNDEFINED	sahI_karanA
 reds_UNDEFINED	kisI_ke_svAgawa_ke_liye_biCAI_gayI_xarI
 redskin_UNDEFINED	uwwarI_ameirakI_AixavAsI
 redskin_noun	uwwarI_amerikI_AxivAsI
-reduce_verb	GatA/xurbala_banA/viwwahIna_kara/vaJEYana_kama_kara/sikoda/sazkuciwa_kara/safkRipwa_kara/samAnayana_kara/prarhAsiwa_kara/parimANa_GatA/parAjiwa_kara/nirXana_banA/nimna_avasWA_mez_lA/nikAla_xe/mUla_sWAna_mez_lA/laGU_kara/laGu_kara/kRINa_banA/kama_kara/jIwa/Gat/Gata/CaztanI_kara/apacayana_kara
+reduce_verb	kama_kara/GatA/xurbala_banA/viwwahIna_kara/vaJEYana_kama_kara/sikoda/sazkuciwa_kara/safkRipwa_kara/samAnayana_kara/prarhAsiwa_kara/parimANa_GatA/parAjiwa_kara/nirXana_banA/nimna_avasWA_mez_lA/nikAla_xe/mUla_sWAna_mez_lA/laGU_kara/laGu_kara/kRINa_banA/jIwa/Gat/Gata/CaztanI_kara/apacayana_kara
 reduced_UNDEFINED	GatAnA
 reduces_UNDEFINED	GatAnA
 reducible_adjective	laGukaraNIya/GatAne_yogya
@@ -80607,7 +80607,7 @@ the_adjective	vahI
 the_determiner	vaha
 theater-in-the-round_noun	cAroM_waraPa_se_xiKAI_xenevAlA_nAtaka
 theater_UNDEFINED	rafgaSAlA
-theater_noun	yuxXa_kRewra/Wiyetara/sinemA_hala/Salya-kakRa/nAtyaSAlA/nAtyakalA/nAtaka
+theater_noun	Wiyetara/yuxXa_kRewra/sinemA_hala/Salya-kakRa/nAtyaSAlA/nAtyakalA/nAtaka
 theatergoer_noun	nAtaka_kA_SOkIna
 theaters_UNDEFINED	rafgaSAlA
 theatre-goer_noun	nAtaka_gqha_meM_jAne_vAlA_vyakwi
