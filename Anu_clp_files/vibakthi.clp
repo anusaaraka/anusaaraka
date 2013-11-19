@@ -1,5 +1,7 @@
 ;This file is written by Shirisha Manju
 
+(defglobal ?*vib_debug_file* = vib_debug_fp)
+
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
  ;Added by Mahalaxmi
@@ -88,9 +90,10 @@
  =>
  	(retract ?f0 )
 	(modify ?f1 (vibakthi kA))
+	(printout ?*vib_debug_file* "(id-vib-source	"?RaRTI_viSeRaNa"	kA	viSeRya-RaRTI_viSeRaNa(relation) )" crlf )
  )
- ;---------------------------------- verb-to-sub-vibakthi --------------------------
- (defrule  kriya_sub_vibakthi_rule
+ ;---------------------------------- verb-to-sub-vibakthi -----------------------------------------------------
+ (defrule  kriyA_sub_vibakthi_rule
  (declare (salience 1000))
  (kriyA_id-subject_viBakwi ?root_id ?vib)
  (prep_id-relation-anu_ids ? kriyA-subject  ?root_id ?sub_id)
@@ -99,10 +102,11 @@
  =>
         (retract ?f0)
  	(modify ?f1 (vibakthi ?vib))
+	(printout ?*vib_debug_file* "(id-vib-source	"?sub_id"	"?vib"	WSD_sub_viBakwi )" crlf )
  )
  ;---------------------------------verb-to-obj vibakthi -----------------------------------------------------
  ;I saw him telling her about the party .
- (defrule kriya_obj_vibakthi_rule_from_wsd
+ (defrule wsd_kriyA_obj_vibakthi_rule
  (declare (salience 1000))
  (or (and (kriyA_id-object_viBakwi ?root_id ?vib)(prep_id-relation-anu_ids ? kriyA-object  ?root_id ?obj_id))(and (kriyA_id-object2_viBakwi ?root_id ?vib)(prep_id-relation-anu_ids ? kriyA-object_2  ?root_id ?obj_id))(and (kriyA_id-object1_viBakwi ?root_id ?vib)(prep_id-relation-anu_ids ? kriyA-object_1  ?root_id ?obj_id)))
  ?f0<-(pada_control_fact ?obj_id)
@@ -110,26 +114,29 @@
  =>
         (retract ?f0)
         (modify ?f1 (vibakthi ?vib))
+	(printout ?*vib_debug_file* "(id-vib-source	"?obj_id"	"?vib"	WSD_obj_viBakwi) " crlf )
  )
  ;---------------------------------------------------------------------------------------------------------------
  ;Suggested by Chaitanya Sir (22-06-12)
  ;I abhor terrorism. I abrogate our plan to visit Bhopal.
- (defrule kriya_obj_vibakthi_rule_from_dbase
+ (defrule dbase_kriyA_obj_vibakthi_rule
  (declare (salience 990))
  (prep_id-relation-anu_ids ? kriyA-object  ?root_id ?obj_id)
  (id-HM-source	?root_id ?mng ?)
  ?f0<-(pada_control_fact ?obj_id)
  ?f1<-(pada_info (group_head_id ?obj_id)(group_cat PP)(vibakthi 0))
+ (test (neq (gdbm_lookup "kriyA_object_vib.gdbm" ?mng) "FALSE")) 
  =>
-	(bind ?vib (string-to-field (gdbm_lookup "kriyA_object_vib.gdbm" ?mng)))
-	(if (neq ?vib FALSE) then
+	(bind ?vib (gdbm_lookup "kriyA_object_vib.gdbm" ?mng))
+	(if (neq ?vib "FALSE") then
 		(retract ?f0)
         	(modify ?f1 (vibakthi ?vib))
+		(printout ?*vib_debug_file* "(id-vib-source	"?obj_id"	"?vib"	kriyA_object_vib.gdbm )" crlf )
 	)
  )
  ;--------------------------------------- se vib for (kriyA-prayojya_karwA ) --------------------------------
  ; She is making the girl feed the child 
- (defrule kriya_prayojya_karwA_rule
+ (defrule kriyA_prayojya_karwA_rule
  (declare (salience 980))
  (prep_id-relation-anu_ids ? kriyA-prayojya_karwA  ?id ?id1)
  ?f0<-(pada_control_fact ?id1)
@@ -137,6 +144,7 @@
  =>
         (retract ?f0)
         (modify ?f1 (vibakthi se))
+	(printout ?*vib_debug_file* "(id-vib-source	"?id1"	se	kriyA-prayojya_karwA(relation) )" crlf )
  )
 ;------------------------------------------- obj_1-vib -----------------------------------------------------
  ; Suggested by Sukhada (12-08-11) 
@@ -150,31 +158,50 @@
  =>
 	(retract ?f0)
         (modify ?f1 (vibakthi ko))
+	(printout ?*vib_debug_file* "(id-vib-source	"?obj_id"	ko	kriyA-object_1 and kriyA-object_2(relation) )" crlf )
  )
  ;------------------------------------------- animate-obj-vib -------------------------------------------------
- ;I gave my brother an expensive present
+ ; Rama is beating a boy. The mother calmed the angry son. The leopard seizes its kill and begins to eat.
+ ; Modified the rule to use 'animate.gdbm (english) instead of 'animate_list.gdbm (hindi)' and added the below rule
+ ; Suggested by Chaitanya Sir (4-11-13)
  (defrule animate_vibakthi_rule
  (declare (salience 950))
  (prep_id-relation-anu_ids ? kriyA-object ?root_id ?obj_id)
  (not (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa  ?x ?obj_id))
- (id-HM-source ?obj_id ?obj_mng ?)
+ (id-root ?obj_id ?obj_mng)
  (id-root ?root_id ~have)
- (id-original_word ?obj_id ?word)
  ?f0<-(pada_control_fact ?obj_id)
  ?f1<-(pada_info (group_head_id ?obj_id)(group_cat PP))
  =>
-        (if (or (eq ?word you)(eq ?word You)) then
+        (if (or (eq ?obj_mng you)(eq ?obj_mng You)) then
                 (retract ?f0)
 		(modify ?f1 (vibakthi ko))
+		(printout ?*vib_debug_file* "(id-vib-source	"?obj_id"	ko	word_you )" crlf )
         else
-                (bind ?animate (gdbm_lookup "animate_list.gdbm" ?obj_mng))
+                (bind ?animate (gdbm_lookup "animate.gdbm" ?obj_mng))
                 (if (eq ?animate "1") then
                         (retract ?f0) 
 			(modify ?f1 (vibakthi ko))
-                )
+			(printout ?*vib_debug_file* "(id-vib-source	"?obj_id"	ko	animate.gdbm )" crlf )
+		)
         )
  )
-
+ ;-------------------------------------------------------------------------------------------------------------
+ ;This rule is for relative clauses (jo_samAnAXikaraNa) Suggested by Chaitanya sir (4-11-13)
+ ;The man you saw is intelligent. Phil gave me a sweater which he bought in Paris.
+ (defrule animate_vibakthi_rule1
+ (declare (salience 950))
+ (prep_id-relation-anu_ids ? kriyA-object ?root_id ?obj_id)
+ (prep_id-relation-anu_ids ? viSeRya-jo_samAnAXikaraNa  ?x ?obj_id)
+ (id-root ?x ?obj_mng)
+ (id-root ?root_id ~have)
+ ?f0<-(pada_control_fact ?obj_id)
+ ?f1<-(pada_info (group_head_id ?obj_id)(group_cat PP))
+ =>
+ 	(retract ?f0)
+        (modify ?f1 (vibakthi ko))
+	(printout ?*vib_debug_file* "(id-vib-source	"?obj_id"	ko	object_as_jo_samAnAXikaraNa )" crlf )
+ )
  ;---------------------------------------------( vib from tam database ) ------------------------------------
  ;Rule re-modified by Roja (11-03-11)
  ;Removed deftemplate tam_tmp_info and hindi_tam_rules.clp and instead created it as gdbm with name hindi_default_tam.gdbm.
@@ -190,8 +217,8 @@
 	(retract ?f0)
 	(modify ?f1 (vibakthi ?vib))
 	(modify ?f (vibakthi 0))
+	(printout ?*vib_debug_file* "(id-vib-source	"?sub_id"	"?vib"	tam_database )" crlf )
  )
-
  ;-------------------------------------------------------------------------------------------------------------
  ; Added by Mahalaxmi
  ;The object turned out to be a big meteorite .
@@ -201,13 +228,12 @@
  (prep_id-relation-anu_ids ? kriyA-subject  ?root_id ?sub_id)
  (pada_info (group_head_id ?root_id)(group_cat VP)(vibakthi 0)(H_tam ?tam))
  (yA-tam  ?tam)
- (id-HM-source ?root_id ? ?src)
- (ids-cmp_mng-head-cat-mng_typ-priority $?ids1 ?h_mng ?head_id ?grp_cat ?mng_typ ?)
+ (id-HM-source ?root_id ? ?src&Compound_Phrase_gdbm)
+ (ids-cmp_mng-head-cat-mng_typ-priority $? ?root_id $? ?h_mng ?head_id ?grp_cat ?mng_typ ?)
  ?f1<-(pada_info (group_ids $?ids)(group_cat PP))
+ (test (member$ ?sub_id $?ids))
  ?f0<-(pada_control_fact ?sub_id)
  (not (prep_id-relation-anu_ids ? kriyA-subject  ?root_id1&:(> ?root_id ?root_id1) ?sub_id))
- (test (and (eq ?src Compound_Phrase_gdbm) (member$ ?root_id $?ids1)))
- (test (member$ ?sub_id $?ids))
  =>
 
 	(bind ?a (gdbm_lookup "not_ne_verb_list.gdbm" ?h_mng))
@@ -222,10 +248,12 @@
                         (if (neq ?a "0") then
                                 (modify ?f1 (vibakthi ne))
                                 (retract ?f0)
+				(printout ?*vib_debug_file* "(id-vib-source	"?sub_id"	ne	not_ne_verb_list.gdbm )" crlf )
                         )
                 else
                         (modify ?f1 (vibakthi ne))
                         (retract ?f0)
+			(printout ?*vib_debug_file* "(id-vib-source	"?sub_id"	ne	not_ne_verb_list.gdbm )" crlf )
                 )
         )
  )
@@ -254,41 +282,45 @@
 			(if (neq ?a "0") then
 		                (modify ?f1 (vibakthi ne))
                 		(retract ?f0)
+				(printout ?*vib_debug_file* "(id-vib-source	"?sub_id"	ne	not_ne_verb_list.gdbm )" crlf )
 			)
 		else
 			(modify ?f1 (vibakthi ne))
                         (retract ?f0)
+			(printout ?*vib_debug_file* "(id-vib-source	"?sub_id"	ne	not_ne_verb_list.gdbm )"crlf)
 		)
 	)
  )
  ;-------------------------- prefix vibakthi rule ---------------------------------------------
  ; These are the boy 's books . These are children 's books .
  (defrule prefix_vib_rule
- (declare (salience 700))
+ (declare (salience 701))
  ?f0<-(id-original_word ?id ?word)
  (test (eq (numberp ?word) FALSE)) ;Added by Roja(02-05-11) To avoid join network errors.
                                    ;Ex: We lost 30 minutes in the traffic jam. 
  (test (eq (sub-string (- (length ?word) 1) (length ?word) ?word) "'s"))
- ?f1<-(pada_info (group_head_id ?id)(group_cat ?cat))
+ ?f1<-(pada_info (group_head_id ?id)(group_cat ?cat)(vibakthi 0))
  ;(test (and (neq ?cat English_PP)(neq ?cat PP_intermediate)))
  (test (neq ?cat PP_intermediate))
  =>  
 	(retract ?f0)
 	(modify ?f1 (vibakthi kA))
+	(printout ?*vib_debug_file* "(id-vib-source	"?id"	kA	's )" crlf )
  )
  ;-------------------------------------------------------------------------------------------------------------------
  ;Eg: Mohan fell from the top of the house.
  ;Added on (11-03-11)
  (defrule vib_for_single_prep
- (declare (salience 701))
- ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(preposition ?pp_id ))
- ?f2<-(id-HM-source ?pp_id ?h_mng ?)
+ (declare (salience 700))
+ ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(preposition ?pp_id )(vibakthi 0))
+ ?f2<-(id-HM-source ?pp_id ?h_mng ?s)
  (test (neq ?h_mng -))
  (not (modified_pada_with_prep ?pada_id)) ;He stopped killing of animals and birds throughout his kingdom.
   =>
 	(modify ?f1 (vibakthi ?h_mng))
 ;	(retract ?f2)
-	(assert (modified_pada_with_prep ?pada_id))
+	(assert (modified_pada_with_prep ?pada_id))	
+	(printout ?*vib_debug_file* "(id-vib-source	"?pada_id"	"?h_mng"	"?s"(single_prep) )" crlf )
  )
  ;-------------------------------------------------------------------------------------------------------------------
  ;NOTE: Multiple prep meaning should be compound meaning
@@ -298,7 +330,7 @@
  (defrule vib_for_multiple_prep
  (declare (salience 701))
  ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(preposition $?pp_ids )(vibakthi 0))
- ?f2<-(id-HM-source ?id ?h_mng ?)
+ ?f2<-(id-HM-source ?id ?h_mng ?s)
  (test (> (length $?pp_ids) 1))
  (test (and (member$ ?id $?pp_ids)(neq ?h_mng -)))
  =>
@@ -306,6 +338,7 @@
 	(loop-for-count (?i 1 ?len) do
 		(if (eq ?id (nth$ ?i $?pp_ids)) then
                        	(modify ?f1 (vibakthi ?h_mng))
+	          	(printout ?*vib_debug_file* "(id-vib-source	"?pada_id"	"?h_mng" 	"?s"(multi_prep) )" crlf )
 		)
        )
  )
@@ -315,22 +348,24 @@
  (defrule default_ko_vib
  (declare (salience 500))
  ?f0<-(pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi 0))
- (id-original_word ?pada_id  her|Her|him|Him|them|Them|me|Me)
+ (id-original_word ?pada_id  ?w&her|Her|him|Him|them|Them|me|Me)
  ?f1<-(pada_control_fact ?pada_id)
  =>
 	(retract ?f1)
         (modify ?f0 (vibakthi ko))
+       	(printout ?*vib_debug_file* "(id-vib-source	"?pada_id"	ko	word_"?w " )" crlf )
  )
 ;------------------------------------------------------------------------------------------
  ; Is that the film in which he kills his mother.
  (defrule default_kA_vib
  (declare (salience 500))
  ?f0<-(pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi 0))
- (id-original_word ?pada_id  his|His|our|Our)
+ (id-original_word ?pada_id  ?w&his|His|our|Our)
  ?f1<-(pada_control_fact ?pada_id)
  =>
         (retract ?f1)
-        (modify ?f0 (vibakthi kA))
+        (modify ?f0 (vibakthi kA)) 
+       	(printout ?*vib_debug_file* "(id-vib-source	"?pada_id"	kA	word_"?w " )" crlf )
  )
 ;------------------------------------------------------------------------------------------
 ;He was awarded for his courage.
@@ -346,6 +381,7 @@
 =>
 	(retract ?f1)
 	(modify ?f0 (vibakthi ko))
+       	(printout ?*vib_debug_file* "(id-vib-source	"?sub"	ko	root_xe_and_tam_yA_gayA_WA )" crlf )
 )
 ;------------------------------------------------------------------------------------------
 ;Suggested by Chaitanya Sir (16-08-13)
@@ -359,6 +395,7 @@
 =>
 	(retract ?f1)
         (modify ?f0 (vibakthi ko))
+       	(printout ?*vib_debug_file* "(id-vib-source	"?hid"	ko	previous_word_every )" crlf )
 )
 ;------------------------------------------------------------------------------------------
 ;Added on (23-05-12)
@@ -367,13 +404,14 @@
 (declare (salience 400))
 ?f0<-(pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib))
 (test (neq ?vib 0))
-(id-original_word ?pada_id and|or)
+(id-original_word ?pada_id ?w&and|or)
 (conj_head-left_head-right_head ?pada_id ? ?rh)
 ?f1<-(pada_info (group_head_id ?rh)(vibakthi 0))
 =>
 	(retract ?f1)
 ;	(modify ?f0 (vibakthi 0))
 	(modify ?f1 (vibakthi ?vib))
+       	(printout ?*vib_debug_file* "(id-vib-source	"?rh"	"?vib"	"?w " )" crlf )
 )
 ;------------------------------------------------------------------------------------------
 

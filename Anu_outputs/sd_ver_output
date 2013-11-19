@@ -928,7 +928,7 @@ Multiple adjective senses are available for angry. WSD rule is required
 
 Hindi meaning using Stanford parser 2.216
 He deals fairly with his employees. 
-vaha usake karmacAriyoM ke sAWa nyAyapUrvaka vyavahAra karawA hE.
+vaha usake karmacAriyoM ke sAWa uciwa vyavahAra karawA hE.
 
 Hindi meaning using Stanford parser 2.217
 Everyone should maintain peace on the earth. 
@@ -2442,6 +2442,10 @@ usane waya kiyA ki hameM jAnA cAhie.
 Hindi meaning using Stanford parser 5.53
 He concluded from their remarks that they were not in favour of the plan. 
 usane unakI tippaNiyoM se waya kiyA ki ve yojanA ke pakRa meM nahIM We.
+
+Hindi meaning using Stanford parser 5.54
+Moteram said, Friend, your cry was like the roar of a lion. 
+moterAma ne kahA, ki miwra, ApakA nAxa siMha ke xahAda kI waraha WA.
 
 Calling Transliteration
 Calling Interface related programs

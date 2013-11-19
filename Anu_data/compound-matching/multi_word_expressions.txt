@@ -33222,7 +33222,9 @@ modern_times	AXunika_kAla#AXunika_kAla#noun#2#RM
 close_friends	GaniRTa_miwra#GaniRTa_miwra#noun#2#RM	
 contrary_to	ke_viparIwa#ke_viparIwa#noun#1#RM
 opposite_charge	vijAwIya_AveSa#vijAwIya_AveSa#noun#2#RM
+opposite_charges	vijAwIya_AveSa#vijAwIya_AveSa#noun#2#RM
 similar_charge	sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
+similar_charges	sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

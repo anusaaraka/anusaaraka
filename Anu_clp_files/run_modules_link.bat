@@ -392,7 +392,6 @@
  (open "hindi_meanings_tmp1.dat" caus_mng_fp "w")
  (run)
  (clear)
- ;----------------------------------------------------------------------
  ;=================================  LANGUAGE GENERATION MODULE =================================
  ; Determine gender of all hindi words
  (load "global_path.clp")
@@ -420,8 +419,10 @@
  (load-facts "multi_word_expressions.dat")
  (load-facts "original_word.dat")
  (load-facts "revised_root.dat")
+ (open "vib_debug.dat" vib_debug_fp "w")
  (run)
  (save-facts "vibakthi_info.dat" local pada_info conj_head-left_head-right_head)
+ (close vib_debug_fp)
  (clear)
  ;----------------------------------------------------------------------
  ; Decide the verb agreement with padas.

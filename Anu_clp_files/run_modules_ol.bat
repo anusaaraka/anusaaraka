@@ -12,7 +12,7 @@
  (run)
  (clear)
  ;----------------------------------------------------------------------------
-; Determine root of each word after cat consistency
+ ;Determine root of each word after cat consistency
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/root_rule.bclp"))
  (bload ?*path*)
@@ -408,8 +408,10 @@
  (load-facts "multi_word_expressions.dat")
  (load-facts "original_word.dat")
  (load-facts "revised_root.dat")
+ (open "vib_debug.dat" vib_debug_fp "w")
  (run)
  (save-facts "vibakthi_info.dat" local pada_info conj_head-left_head-right_head)
+ (close vib_debug_fp)
  (clear)
  ;----------------------------------------------------------------------
  ; Decide the verb agreement with padas.
