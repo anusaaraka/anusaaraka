@@ -317,3 +317,6 @@ potential_difference	viBavAnwara#viBavAnwara#noun#1#RM
 dynamically_stable_orbit	gawiSIla_sWira_kakRA#gawiSIla_sWira_kakRA#noun#3#RM
 double_slit	xviJirI#xviJirI#noun#2#RM
 closed_loop	baMxa_paripaWa#baMxa_paripaWa#noun#2#RM
+relative_velocity	sApekRa_vega#sApekRa_vega#noun#2#RM
+relative_motion	 sApekRa_gawi#sApekRa_gawi#noun#2#RM
+relative_density	ApekRika_Ganawva#ApekRika_Ganawva#noun#2#RM

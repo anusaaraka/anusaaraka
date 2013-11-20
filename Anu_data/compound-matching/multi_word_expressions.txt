@@ -33225,6 +33225,9 @@ opposite_charge	vijAwIya_AveSa#vijAwIya_AveSa#noun#2#RM
 opposite_charges	vijAwIya_AveSa#vijAwIya_AveSa#noun#2#RM
 similar_charge	sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
 similar_charges	sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
+relative_pronoun	sambanXa_vAcaka_sarvanAma#sambanXa_vAcaka_sarvanAma#noun#1#RM
+relative_adverb	sambanXa_vAcaka_kriyA_viReSaNa#sambanXa_vAcaka_kriyA_viReSaNa#noun#1#RM
+
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

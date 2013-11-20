@@ -39,6 +39,7 @@
 	20. aMwarpreraNA	Suggested by Anitaji LTRC (18-09-13)Ex: He felt the call of the priesthood early on in his									 life.
 	21. aBiXAraNA	by Roja Suggested by Sukhada (16-10-13) Ex: Under these assumptions, the trajectory of an							 alpha-particle can be computed employing Newton's second law of motion.
 	22. pawaMga     Suggested by Sukhada        (17-01-12)  Ex: Sundari was a big red, white and blue kite.
+	23. dAyarektarI	By Roja Suggested by Sukhada (20-11-13) Ex: Create a new directory and put all your files into it. 
 	
 
   3. Removed :
@@ -566,6 +567,7 @@ Modified :
 	salesperson	p/erson__n		(     "      "    )
 	shrink		dr/ink__vblex		(     "      "    )
 	arms		personnel__n		(     "   02-10-13)
+	party		appl/y__vblex		(     "	  16-11-13)
 
 Modified paradigm:
      	belonging	house__n	as	personnel__n	(Suggested by Meena ji 12-05-11)
@@ -1176,6 +1178,10 @@ Removed:
 				Ex: Giving up smoking reduces the risk of heart disease.
 	77. theater_noun	yuxXa_kRewra	as	Wiyetara	(Suggested by Nandini ji LTRC 14-11-13)
 				Ex: We are meeting them outside the theatre at 7.
+	78. further_adjective	Ora_Age_kA	as	Ora_aXika	(By Roja 		      19-11-13)
+				Ex: The snow created further problems. 
+	79. reversal_noun	ulatAva		as	vyuwkramaNa	(Suggested by Chaitanya Sir   19-11-13)
+				Ex: When the magnet is pulled away from the coil, the galvanometer shows 					deflection in the opposite direction, which indicates reversal of the current's 				direction.
 
 	
     6. Removed meaning from existing list:
@@ -1474,6 +1480,8 @@ Removed:
 	61. credit_cards	kredita_kArdas#kredita_kArdas#noun#2#RM	(Suggested by Nandini ji LTRC 14-11-13)
 	opposite_charge vijAwIya_AveSa#vijAwIya_AveSa#noun#2#RM
 similar_charge  sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
+	62. relative_pronoun	sambanXa_vAcaka_sarvanAma#sambanXa_vAcaka_sarvanAma#noun#1#RM (Suggested by Chaitanya Sir
+	63. relative_adverb	sambanXa_vAcaka_kriyA_viReSaNa#sambanXa_vAcaka_kriyA_viReSaNa#noun#1#RM
 
 
     Added new meaning to the existing word:
@@ -1655,6 +1663,7 @@ similar_charge  sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
 	Louis		luisa		(		"		"	)
 	Broglie		broYglI		(		"		"	)
 	Panditji        paMdiwa_jI	(	By Shirisha Manju       09-11-13)
+	Moteram		moterAma 	(		"		19-11-13)
 
 
    Modified:

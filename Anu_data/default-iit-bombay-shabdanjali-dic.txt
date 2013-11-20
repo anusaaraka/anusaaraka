@@ -32429,7 +32429,7 @@ furrowing_UNDEFINED	JurrI
 furrows_UNDEFINED	JurrI
 furry_adjective	mulAyama_bAloM_vAlI/romaxAra/roma_jEsA
 furs_UNDEFINED	bAla
-further_adjective	Ora_Age_kA/Ora_xUra/Ora_aXika/isake_Age/aXika_xUra/aXika/Age_kA/agalI/agalA
+further_adjective	Ora_aXika/Ora_Age_kA/Ora_xUra/isake_Age/aXika_xUra/aXika/Age_kA/agalI/agalA
 further_adverb	Ora/isake_awirikwa/Ora_Age/aXika_viswAra_se/ke_alAvA
 further_verb	vqxXi_kara/sahAyawA_xe/sahAyawA_kara/Age_baDA
 furtherance_noun	sahAyawA/prowsAhana
@@ -66592,7 +66592,7 @@ reveries_UNDEFINED	xivAsvapna
 revering_UNDEFINED	Axara_karanA
 reverned_noun	AxaraNIya
 revers_noun	vaswra_kA_ultA_BAga
-reversal_noun	ulatAva/vyuwkramaNa/parAjaya/mawa-parivarwana/parivarwana
+reversal_noun	vyuwkramaNa/ulatAva/parAjaya/mawa-parivarwana/parivarwana
 reversals_UNDEFINED	parivarwana
 reverse_adjective	viparIwa/ultA/ultI
 reverse_noun	walI/vipawwi/viparIwa/ultA_pallA/ultA_geara/safkata/rivarsa/pqRTa_BAga/pata

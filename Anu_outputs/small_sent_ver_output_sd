@@ -495,5 +495,17 @@ Hindi meaning using Stanford parser 2.116
 I want to be volunteer. 
 mEM svayaMsevaka honA cAhawA hUz.
 
+Hindi meaning using Stanford parser 2.117
+He was at the party. 
+vaha pArtI meM WA.
+
+Hindi meaning using Stanford parser 2.118
+I saw him at the party. 
+mEMne pArtI meM usako xeKA.
+
+Hindi meaning using Stanford parser 2.119
+He is in that party. 
+vaha usa pArtI meM hE.
+
 Calling Transliteration
 Calling Interface related programs

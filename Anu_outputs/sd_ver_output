@@ -2268,7 +2268,7 @@ sUrya havA kI apekRA aXika saSakwa GoRiwa kiyA gayA WA.
 
 Hindi meaning using Stanford parser 5.11
 Once there were three little pigs, Sonu, Monu and Gonu. 
-eka bAra wIna Cote suara We, sonU, monU Ora PropN-gonu-PropN.
+eka bAra wIna Cote suara, sonU, monU Ora PropN-gonu-PropN We.
 
 Hindi meaning using Stanford parser 5.12
 Sonu ran to Monu's house. 
@@ -2446,6 +2446,80 @@ usane unakI tippaNiyoM se waya kiyA ki ve yojanA ke pakRa meM nahIM We.
 Hindi meaning using Stanford parser 5.54
 Moteram said, Friend, your cry was like the roar of a lion. 
 moterAma ne kahA, ki miwra, ApakA nAxa siMha ke xahAda kI waraha WA.
+
+Hindi meaning using Stanford parser 5.55
+They were in a state of shock. 
+ve saxame kI avasWA meM We.
+
+Hindi meaning using Stanford parser 5.56
+What is the company's financial state? 
+kampanI kI ArWika avasWA kyA hE?
+Multiple adjective senses are available for financial. WSD rule is required 
+
+Hindi meaning using Stanford parser 5.57
+The country is in a state of war. 
+xeSa yuxXa kI avasWA meM hE.
+
+Hindi meaning using Stanford parser 5.58
+The building is in a terrible state. 
+imArawa eka BayAnaka avasWA meM hE.
+Multiple adjective senses are available for terrible. WSD rule is required 
+
+Hindi meaning using Stanford parser 5.59
+In 1922, Bohr was awarded Nobel Prize in Physics. 
+1922 meM, bora ko BOwika vijFAna meM Nobel puraskAra xiyA gayA WA.
+
+Hindi meaning using Stanford parser 5.60
+The snow created further problems. 
+baraPa ne Ora aXika samasyAez uwwapanna kIM.
+Multiple adjective senses are available for further. WSD rule is required 
+
+Hindi meaning using Stanford parser 5.61
+The Bible says that God created the world. 
+bAibila kahawI hE ki xevawA ne viSva banAyA.
+
+Hindi meaning using Stanford parser 5.62
+The government plans to create more jobs for young people. 
+sarakAra waruNa logoM ke lie aXika kAma uwwapanna karane ke lie yojanA banAwI hE.
+
+Hindi meaning using Stanford parser 5.63
+Scientists disagree about how the universe was created. 
+vEjFAnika usa ke bAre meM ki asahamawa howe hEM brahmANda kEse banAyA gayA WA.
+
+Hindi meaning using Stanford parser 5.64
+The company is trying to create a young energetic image. 
+kampanI eka waruNa ojasvI prawimA banAne ke lie prayAsa_kara rahI hE.
+Multiple adjective senses are available for energetic. WSD rule is required 
+
+Hindi meaning using Stanford parser 5.65
+The government has created eight new peers. 
+sarakAra ATa naye joda banA cukI hE.
+
+Hindi meaning using Stanford parser 5.66
+The President has announced a plan to create new jobs. 
+aXyakRa naye kAma uwwapanna karane ke lie yojanA kI GoRaNA_kara cukA hE.
+
+Hindi meaning using Stanford parser 5.67
+The scientists who created the world's first atomic bomb. 
+vEjFAnika jinhoMne viSva kA praWama paramANu bama banAyA.
+Multiple adjective senses are available for atomic. WSD rule is required 
+
+Hindi meaning using Stanford parser 5.68
+Create a new directory and put all your files into it. 
+eka nayI dAyarektarI banAie Ora isake anxara ApakI saba PAileM raKie.
+
+Hindi meaning using Stanford parser 5.69
+The main purpose of industry is to create wealth. 
+uxyoga kA pramuKa uxxeSya Xana banAnA hE.
+Multiple adjective senses are available for main. WSD rule is required 
+
+Hindi meaning using Stanford parser 5.70
+My party will be grander than your party. 
+merI pArtI ApakI pArtI kI apekRA aXika Bavya hogI.
+
+Hindi meaning using Stanford parser 5.71
+The dissenters launched a new party. 
+BinnamawAvalambiyoM ne eka nayA xala AramBa kiyA.
 
 Calling Transliteration
 Calling Interface related programs

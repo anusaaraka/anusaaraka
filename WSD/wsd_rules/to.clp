@@ -74,7 +74,7 @@
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
 (id-root =(- ?id 1) be)
-(not(id-root ?rid become|guide|give)) ;Added 'give' by Roja(15-12-10);The purpose of this note is to give simple sentences for translation.
+(not(id-root ?rid become|guide|give|create)) ;Added 'give' by Roja(15-12-10);The purpose of this note is to give simple sentences for translation. Added 'create' by Roja(19-11-13). Ex: The main purpose of industry is to create wealth.
 (to-infinitive  ?id ?rid)
 =>
 (retract ?mng)
