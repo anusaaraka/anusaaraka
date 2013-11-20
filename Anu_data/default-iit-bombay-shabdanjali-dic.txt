@@ -41653,7 +41653,7 @@ integrator_UNDEFINED	samAkalaka
 integrities_UNDEFINED	ImAnaxArI
 integrity_UNDEFINED	ekaniRTawA
 integrity_noun	sawyaniRTA/aKaNdawA/ImAnaxArI
-intellect_noun	buxxI/prajFA
+intellect_noun	buxXI/prajFA
 intellects_UNDEFINED	prajFA
 intellectual_adjective	buxXigawa/ximAgI/buxXi-sambanXI/bOxXika/prajFAvAna
 intellectual_noun	buxXijIvI_vyakwi

@@ -18,9 +18,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id cakKara_lagA))
+(assert (id-wsd_root_mng ?id cakkara_lagA)); Modified cakKara_lagA to cakkara_lagA by Roja. Suggested by Chaitanya Sir (20-11-13)
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  circle.clp 	circle1   "  ?id "  cakKara_lagA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  circle.clp 	circle1   "  ?id "  cakkara_lagA )" crlf))
 )
 
 ;default_sense && category=verb	cakkara_mAra	0

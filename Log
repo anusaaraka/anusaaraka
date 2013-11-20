@@ -11,6 +11,7 @@
 			could.clp	no.clp		that.clp	the.clp		time.clp	to.clp
 			what.clp	when.clp	where.clp	which.clp	while.clp	who.clp
 			whom.clp	whose.clp	be.clp		side.clp	take.clp	charge.clp			party.clp       throw.clp       make.clp	award.clp	state.clp	replace.clp
+			circle.clp
 	  Added    :	argue.clp	cell.clp	feature.clp	flux.clp	divide.clp	equivalently.clp
 			win.clp		difficult.clp	eliminate.clp	closely.clp	compress.clp	generation.clp
 			deduce.clp	define.clp	degree.clp	emerge.clp	enormous.clp	substantially.clp
@@ -83,11 +84,17 @@
         --> remove_out-files.sh			:	"
 	--> Anusaaraka_stanford_minion.sh	:  run_transliteration.sh to run_transliteration_for_minion.sh
 	--> run_transliteration.sh		:  instead of NER proper noun list, list from hindi_meaning.clp is sent								to transliteration
+	--> ClipsToAnu_browser_intfc.sh		:  to use e-mail concept in layered o/p
 22. Added new files:
 	--> canonical_to_conventional.lex (to convert canonical to conventional form in dictionaries and hindi morph)
 	--> canonical_to_conventional_in_wsd.lex (to convert canonical to conventional form in wsd files)
 	--> human.txt file
 	--> run_transliteration_for_minion.sh:	for minion alignment purpose
+	--> Added e-mail folder in miscellaneous/ containing following files:
+		Readme_to_use_email_in_firefox.txt
+		mail.php
+		ssmtp.conf
+	--> this1.py in shell_scripts/ (to use email concept in layered o/p)
 23. Renamed : replacing_canonical.lex to canonical_form_correction.lex
 24. Removed following files
 	fullparser-hin-1.6.3.tgz

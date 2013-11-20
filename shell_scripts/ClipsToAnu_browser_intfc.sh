@@ -37,4 +37,12 @@ $HOME_anu_test/Anu/stdenglish/replace-mapping-symbols.out < $2/tmp/$1_tmp/$1_trn
 
 wx_utf8 < $2/tmp/$1_tmp/$1_trnsltn_tmp3.html > $2/tmp/$1_tmp/$1_trnsltn_tmp4.html
 
+#####################Added by Abhishek Jain
+if [ -f $HOME_anu_output/sample2.html ] ; then
+	rm $HOME_anu_output/sample2.html
+fi
+python $HOME_anu_test/shell_scripts/this1.py $HOME_anu_output/$1.html $HOME_anu_output $HOME_anu_test $HOME_anu_tmp $1
+#####################
+
 sh $2/tmp/$1_tmp/proper_nouns_utf8.sh $2/tmp/$1_tmp/$1_trnsltn_tmp4.html > $3/$1_trnsltn.html
+

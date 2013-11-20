@@ -33715,3 +33715,5 @@ zip_code	pinakoda#pinakoda#noun#2#RM
 #By Nandini ji LTRC
 credit_card	kredita_kArda#kredita_kArda#noun#2#RM
 credit_cards	kredita_kArdas#kredita_kArdas#noun#2#RM
+#By Preeti ji LTRC
+at_all_costs    kisI_BI_kImawa_para#kisI_BI_kImawa_para#noun#3#RM
