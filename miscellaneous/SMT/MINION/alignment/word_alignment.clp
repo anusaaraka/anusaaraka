@@ -47,7 +47,7 @@
 (defrule get_root_for_hyphen
 (declare (salience 1004))
 ?f0<-(id-root ?id - )
-(id-original_word ?id ?word)
+(id-original_word ?id ?word&~-)
 =>
 	(retract ?f0)
 	(assert (id-root ?id ?word))

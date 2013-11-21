@@ -157,7 +157,8 @@
 (manual_ids-sep-mng  ?id $?d ?id1 - $?mng)
 ?f0<-(manual_id-cat-word-root-vib-grp_ids ?mid ?n $?word - $?root - $?vib - $?ids ?id)
 (test (neq (implode$ $?vib) "0"))
-?f1<-(manual_id-cat-word-root-vib-grp_ids ?mid1 ? $? - $? - $? - $?o ?id1)
+?f1<-(manual_id-cat-word-root-vib-grp_ids ?mid1 ?cat $? - $? - $? - $?o ?id1)
+(test (eq ?cat VIB))
 =>
         (retract ?f0 ?f1)
         (bind $?grp_ids (sort > $?ids ?id $?d ?id1))

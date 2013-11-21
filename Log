@@ -1,4 +1,4 @@
- 20-11-13
+ 21-11-13
  ========
  1. WSD : Modified :	interface.clp	number.clp	raise.clp	cultivate.clp	stay.clp	synthetic.clp
 			section.clp	enough.clp	different.clp	accident.clp	authority.clp	essentially.clp
@@ -10,7 +10,8 @@
 			anybody.clp	anyone.clp	as.clp		it.clp		so.clp		having_en_tam.clp
 			could.clp	no.clp		that.clp	the.clp		time.clp	to.clp
 			what.clp	when.clp	where.clp	which.clp	while.clp	who.clp
-			whom.clp	whose.clp	be.clp		side.clp	take.clp	charge.clp			party.clp       throw.clp       make.clp	award.clp	state.clp	replace.clp
+			whom.clp	whose.clp	be.clp		side.clp	take.clp	charge.clp		
+			party.clp       throw.clp       make.clp	award.clp	state.clp	replace.clp
 			circle.clp
 	  Added    :	argue.clp	cell.clp	feature.clp	flux.clp	divide.clp	equivalently.clp
 			win.clp		difficult.clp	eliminate.clp	closely.clp	compress.clp	generation.clp
@@ -52,25 +53,29 @@
 	Added 	 : ki_rule4 (insert ki for kriyA vAkyakarma sentences)
 13. vibakthi.clp 
 	Modified the file to get debug information.
-14. run_modules_std.bat
+14. modify_root_using_dic.clp
+	Modified  grouping_using_dic_for_vib rule 
+15. word_alignment.clp
+	Modified  get_root_for_hyphen rule 
+16. run_modules_std.bat
 	Loaded  pada_id_info.dat file in wsd_tam_meaning module
 	In sd_relation_correction.clp: Added 'conjunction-components' in save-facts
 	Opened vib_debug.dat file in write mode for vibakthi module
-15. run_modules_link.bat
+17. run_modules_link.bat
 	Opened vib_debug.dat file in write mode for vibakthi module
-16. run_modules_ol.bat
+18. run_modules_ol.bat
 	Opened vib_debug.dat file in write mode for vibakthi module
-17. run_H_gen_sen.bat
+19. run_H_gen_sen.bat
 	Loaded 	wsd_facts_output.dat and GNP_agmt_info.dat files in hindi_sentence module
-18. Updated the following files to add id-attach_eng_mng fact in nerver-called deffunction
+20. Updated the following files to add id-attach_eng_mng fact in nerver-called deffunction
         causative_verb_mng.clp          hindi_meaning.clp       preferred_morph_consistency_check.clp
         prepare_apertium_input.clp      tam_meaning.clp         number.clp      vibakthi.clp
 	hindi_sent_reorder.clp		hindi_sentence.clp
-19. Updated following lex files:
+21. Updated following lex files:
 	--> standard_abbrevations.lex : Added new rule to handle sentences ending with 'in' or 'long'
-20. Updated following dictionary related files:
+22. Updated following dictionary related files:
 	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix
-21. Updated following shell files
+23. Updated following shell files
 	--> minion_compile.sh: Removed code related to full parser.
 	--> get_dictionary_in_canonical_form.sh :  based on canonical form changes
         --> get_txt_files.sh 			:	"
@@ -85,7 +90,7 @@
 	--> Anusaaraka_stanford_minion.sh	:  run_transliteration.sh to run_transliteration_for_minion.sh
 	--> run_transliteration.sh		:  instead of NER proper noun list, list from hindi_meaning.clp is sent								to transliteration
 	--> ClipsToAnu_browser_intfc.sh		:  to use e-mail concept in layered o/p
-22. Added new files:
+24. Added new files:
 	--> canonical_to_conventional.lex (to convert canonical to conventional form in dictionaries and hindi morph)
 	--> canonical_to_conventional_in_wsd.lex (to convert canonical to conventional form in wsd files)
 	--> human.txt file
@@ -95,13 +100,13 @@
 		mail.php
 		ssmtp.conf
 	--> this1.py in shell_scripts/ (to use email concept in layered o/p)
-23. Renamed : replacing_canonical.lex to canonical_form_correction.lex
-24. Removed following files
+25. Renamed : replacing_canonical.lex to canonical_form_correction.lex
+26. Removed following files
 	fullparser-hin-1.6.3.tgz
 	compile_full_parser.sh
-25. Updated FinalGenerate.pl 
-26. Updated Log
-27. Updated  sd_verified (571)		verified_eng (40)       	small_sent_verified_sd (119)
+27. Updated FinalGenerate.pl 
+28. Updated Log
+29. Updated  sd_verified (571)		verified_eng (40)       	small_sent_verified_sd (119)
 	     phy_verified_eng (253)	phy_partial_ver_eng (282)
 
 
