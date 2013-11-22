@@ -1,0 +1,21 @@
+#Readme_to_fill_suggestion_box
+##############################
+
+1. To Compile:
+ sh compile.sh
+
+2. To Run:
+ sh run_frame.sh <ENG-file> <Manual-file>
+	Ex:  sh run_frame.sh ENG HND
+
+3. To view layered o/p:
+ firefox $HOME_anu_output/<ENG-file>_frame1.html
+	Ex: firefox $HOME_anu_output/ENG_frame1.html
+
+4. To modify suggestion box: 
+	-> In Show/Hide Rows click on the Suggestions checkbox
+	-> To Replace any meaning, Click on 'REPLACE' button and click on the meaning to be replaced in the required suggestion box.
+	-> To Append any meaning, Click on 'APPEND' button and click on the meaning to be appended in the required suggestion box.
+	-> To press '->' (left arrow), Click on CTRL + Left Mouse button 
+	-> To press '<-' (right arrow), Click on SHIFT + Left Mouse button
+
