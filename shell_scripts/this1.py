@@ -124,6 +124,10 @@ for i in range(0,len(dire)):
 	"""Accessing GNP_agmt_info.dat"""
 	fp = open('GNP_agmt_info.dat','r')
 	char = fp.read()
+	#Added below two line by Sukhada to avoid error: no = int("".join(char[x:k]))
+	#ValueError: invalid literal for int() with base 10: '10 13'
+	if char[:31] == '(conj_head-left_head-right_head' :
+		char = char[char.find(')')+1:]
 	char = list(char)
 	k=0
 	while(len(char)-k>1):
@@ -135,6 +139,7 @@ for i in range(0,len(dire)):
 		x=k
 		while(char[k]!=')'):
 			k=k+1
+	#	print '===========', char[-50:] , char[x:k]  #  ''.join(char),
 		no = int("".join(char[x:k]))
 		dic2 = []
 		dic2.append(no)
