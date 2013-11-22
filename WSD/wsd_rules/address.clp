@@ -92,7 +92,7 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(- ?id 1) svAgawa_BARaNa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  address.clp   address6   "  ?id "  svAgawa_BARaNa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  address.clp   address6   "  ?id "  "(- ?id 1)" svAgawa_BARaNa )" crlf))
 )
 ;The chief guest gave a welcome address .
 

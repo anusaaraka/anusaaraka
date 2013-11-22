@@ -139,7 +139,7 @@ for i in range(0,len(dire)):
 		x=k
 		while(char[k]!=')'):
 			k=k+1
-	#	print '===========', char[-50:] , char[x:k]  #  ''.join(char),
+#		print '===========', char[-50:] , char[x:k],  ''.join(char),
 		no = int("".join(char[x:k]))
 		dic2 = []
 		dic2.append(no)
@@ -213,6 +213,7 @@ for i in range(0,len(dire)):
 			while(char[k]!=' ' and char[k]!='\t'):
 				k=k+1
 			tmp = []
+#			print '===========',"".join(char[-100:-1]), x, k, char[x:k] #  ''.join(char),
 			no = int("".join(char[x:k]))
 			tmp.append(no)
 			tmp.append(link)
@@ -321,6 +322,8 @@ for i in range(0,len(dire)):
 			else:
 				tmp.append(dic1[j+1][1])
 				tmp.append(dic1[j][1])
+#				print '==========', dic1[j], '******', j, dic1, '______', tmp, ''.join(char),
+
 				tmp.append(dic1[j][2])
 			flag=1
 			dic.append(tmp)

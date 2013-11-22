@@ -137,7 +137,7 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 bahA_xe))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  wash.clp      wash9   "  ?id "  bahA_xe )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  wash.clp      wash9   "  ?id "  "?id1" bahA_xe )" crlf))
 )
 ;The whole village was washed away by the floods .
 ;"wash","VTI","1.XonA"

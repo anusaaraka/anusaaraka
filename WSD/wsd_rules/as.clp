@@ -8,7 +8,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  as.clp 	as0   "  ?id   -")" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  as.clp 	as0   "  ?id  " - )" crlf))
 )
 
 ;I do not go out as much now.
