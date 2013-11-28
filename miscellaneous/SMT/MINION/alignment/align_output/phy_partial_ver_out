@@ -40,11 +40,12 @@ niSAna nonascii3226136145 ( yUnAna sambanXI pawra sigma) n kaNoM ke Upara isa mA
 
 Hindi meaning using Stanford parser 2.6
 We shall, in the present chapter, consider rotational motion about a fixed axis only. 
-hama eka niSciwa huI huI XurI ke bAre meM sirPa cakrIya gawi vicAra kareMge varwamAna aXyAya meM.,
+hama eka niSciwa huI XurI ke bAre meM sirPa cakrIya gawi vicAra kareMge varwamAna aXyAya meM.,
+Removed repeated meaning  : huI huI
 
 Hindi meaning using Stanford parser 2.7
 The earth rotates once every twenty-four hours and revolves round the sun once in a year. 
-pqWvI prawyeka twenty-four GaNte eka bAra GUmawI hE Ora varRa meM sUrya eka bAra ke golAkAra GUmawI hE.
+pqWvI prawyeka twenty-four GaNte eka bAra GUmawI hE Ora varRa meM sUraja eka bAra ke golAkAra GUmawI hE.
 
 Hindi meaning using Stanford parser 2.8
 In good many situations in real-life, the size of objects can be neglected and they can be considered as point-like objects without much error. 
@@ -149,7 +150,7 @@ Multiple adjective senses are available for incoming. WSD rule is required
 
 Hindi meaning using Stanford parser 2.31
 The early civilisations of Egypt, India, China, Greece, Mesopotamia and many others made vital contributions to its progress. 
-ijipta, iMdiyA, cAinA, grIsa, PropN-mesopotamia-PropN ke Ora bahuwa sAre anya ke prAramBika saBya samAja ne usakI pragawi ko jIvana sambanXI yogaxAna banAe.
+ijipta, iMdiyA, cAinA, grIsa, PropN-mesopotamia-PropN ke Ora bahuwa sAre anya ke prAramBika samAja ne usakI pragawi ko jIvana sambanXI yogaxAna banAe.
 
 Hindi meaning using Stanford parser 2.32
 From the sixteenth century onwards, great strides were made in science in Europe. 

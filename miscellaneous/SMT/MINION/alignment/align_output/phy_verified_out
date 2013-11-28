@@ -43,7 +43,7 @@ isake lie, hama vega Ora wvaraNa kI XAraNAoM kA vikAsa karawe hEM.
 
 Hindi meaning using Stanford parser 2.7
 Finally, to understand the relative nature of motion, we introduce the concept of relative velocity. 
-anwawaH, gawi kI ApekRa prakqwi samaJane ke lie, hama ApekRa vega kI XAraNA paricaya karAwe hEM.
+anwawaH, gawi kI ApekRa prakqwi samaJane ke lie, hama sApekRa vega kI XAraNA paricaya karAwe hEM.
 
 Hindi meaning using Stanford parser 2.8
 The speed of light in vacuum is the highest speed attainable in nature. 
@@ -119,7 +119,8 @@ saxiSa kyA hE?
 
 Hindi meaning using Stanford parser 2.25
 An arrow is marked at the head of this line. 
-eka wIra isa lAina ke sira meM wila huA huA hE.
+eka wIra isa lAina ke sira meM wila huA hE.
+Removed repeated meaning  : huA huA
 
 Hindi meaning using Stanford parser 2.26
 Physics is the study of nature and natural phenomena. 
@@ -252,7 +253,7 @@ Multiple adjective senses are available for such. WSD rule is required
 
 Hindi meaning using Stanford parser 2.54
 Measurement is the foundation of all experimental science and technology. 
-mApana saba prAyogika vijFAna Ora prOxyogikI meM se mUla vicAra hE.
+mApana saba prAyogika vijFAna Ora prOxyogikI meM se AXAra hE.
 
 Hindi meaning using Stanford parser 2.55
 This uncertainty is called error. 
@@ -559,8 +560,9 @@ isa prakAra, prakASika PAibara xqRti- pAipa ke jEsA kArya karane ke lie AxI jA s
 
 Hindi meaning using Stanford parser 2.125
 The other end of the fibers is fixed over an electric lamp. 
-wanwuoM kA xUsarA anwa vExyuwa lEMpa ke Upara niSciwa huA huA hE.
+wanwuoM kA xUsarA anwa vExyuwa lEMpa ke Upara niSciwa huA hE.
 Multiple adjective senses are available for electric. WSD rule is required 
+Removed repeated meaning  : huA huA
 
 Hindi meaning using Stanford parser 2.126
 The fibers in such decorative lamps are optical fibers. 
@@ -645,7 +647,7 @@ Multiple adjective senses are available for electromagnetic. WSD rule is require
 
 Hindi meaning using Stanford parser 2.143
 Understanding these conservation principles is very important to describe the observed phenomena quantitatively. 
-ye saMrakRaNa sixXAnwa samaJanA avalokana kara xqgviRaya parimANAwmaka_Dafga se varNana karane ke lie awyanwa mahawwvapUrNa hE.
+ye saMrakRaNa sixXAnwa samaJanA xeKI huI xqgviRaya parimANAwmaka_Dafga se varNana karane ke lie awyanwa mahawwvapUrNa hE.
 Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.144
@@ -739,7 +741,7 @@ Multiple adjective senses are available for electromagnetic. WSD rule is require
 
 Hindi meaning using Stanford parser 2.164
 The science of electricity and magnetism is the foundation for the modern technological civilisation. 
-vixyuwa Sakwi Ora cumbakawwva kA vijFAna AXunika wakanIkI sambanXI saBya samAja ke lie mUla vicAra hE.
+vixyuwa Sakwi Ora cumbakawwva kA vijFAna AXunika wakanIkI sambanXI samAja ke lie nIMva hE.
 Multiple adjective senses are available for modern. WSD rule is required 
 Multiple adjective senses are available for technological. WSD rule is required 
 

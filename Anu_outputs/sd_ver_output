@@ -713,7 +713,7 @@ PropN-anne-PropN ne muJe bawAyA ki muJe lagaBaga niSciwa rUpa se kAma xiyA jAegA
 
 Hindi meaning using Stanford parser 2.165
 The shadow travels with the sun. 
-paraCAI sUrya ke sAWa calawI hE.
+paraCAI sUraja ke sAWa calawI hE.
 
 Hindi meaning using Stanford parser 2.166
 I say it is a damn shame that he left. 
@@ -2264,7 +2264,7 @@ mEM waruNa Ora svasWa hUz.
 
 Hindi meaning using Stanford parser 5.10
 The Sun was declared stronger than the Wind. 
-sUrya havA kI apekRA aXika saSakwa GoRiwa kiyA gayA WA.
+sUraja havA kI apekRA aXika saSakwa GoRiwa kiyA gayA WA.
 
 Hindi meaning using Stanford parser 5.11
 Once there were three little pigs, Sonu, Monu and Gonu. 
@@ -2520,6 +2520,36 @@ merI pArtI ApakI pArtI kI apekRA aXika Bavya hogI.
 Hindi meaning using Stanford parser 5.71
 The dissenters launched a new party. 
 BinnamawAvalambiyoM ne eka nayA xala AramBa kiyA.
+
+Hindi meaning using Stanford parser 5.72
+The inspector discovered a crack in the house's foundation. 
+nirIkRaka ko Gara kI nIMva meM xarAra pawA lagI.
+
+Hindi meaning using Stanford parser 5.73
+They established a foundation to help orphaned children. 
+unhoMne anAWa baccoM kI sahAyawA karane ke lie saMsWA sWApiwa kI.
+
+Hindi meaning using Stanford parser 5.74
+The science of electricity and magnetism is the foundation for the modern technological civilisation. 
+vixyuwa Sakwi Ora cumbakawwva kA vijFAna AXunika wakanIkI sambanXI samAja ke lie nIMva hE.
+Multiple adjective senses are available for modern. WSD rule is required 
+Multiple adjective senses are available for technological. WSD rule is required 
+
+Hindi meaning using Stanford parser 5.75
+The sun was shining and birds were singing. 
+sUraja camaka rahA WA Ora cidiyAz gA rahIM WIM.
+
+Hindi meaning using Stanford parser 5.76
+The rain has stopped and the sun is shining. 
+varRA ruka cukI hE Ora sUraja camaka rahA hE.
+
+Hindi meaning using Stanford parser 5.77
+They kept the books on the table. 
+unhoMne meja para puswakeM raKIM.
+
+Hindi meaning using Stanford parser 5.78
+I could not see because the sun was in my eyes. 
+mEM nahIM_xeKa sakA kyozki XUpa merI AzKoM meM WI.
 
 Calling Transliteration
 Calling Interface related programs

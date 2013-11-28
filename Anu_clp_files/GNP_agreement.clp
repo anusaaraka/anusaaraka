@@ -43,10 +43,11 @@
   
  ;================================ PP pada for vibakthi=0 and vibhakti!=0 ======================================
  ; If "I"  then  gender=m number=s and peson=u
+ ;This book is mine.
  (defrule PP_pada_for_I_me_and_my
  (declare (salience 1000))
  ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(group_ids $?ids)(vibakthi ?vib))
- (id-original_word ?pada_id I|i|my|My|me)
+ (id-original_word ?pada_id I|i|my|My|me|mine)
  ?f0<-(pada_control_fact ?pada_id)
  =>
 	(retract ?f0)
@@ -250,7 +251,7 @@
  (defrule sub_and_samA_with_different_gender
  (declare (salience 760))
  (prep_id-relation-anu_ids ? ?rel&subject-subject_samAnAXikaraNa|saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAna_id)
- ?f1<-(pada_info (group_head_id ?samAna_id)(group_cat PP)(vibakthi ?vib)(gender ?gen1)(number ?num1))
+ ?f1<-(pada_info (group_head_id ?samAna_id)(group_cat PP)(vibakthi ?vib)(gender ?gen1)(number ?num1) (person ?per1))
  ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender ?gen)(number ?num)(person ?per)(case ?case))
  (id-original_word ?samAna_id  ?word)
  (not(samAnAXikaraNa_id_checked ?samAna_id))
@@ -260,20 +261,20 @@
 	(close ?*error_file*)
 	(if (eq ?word She) then
 		(if (eq ?num1 -) then
-		   (modify ?f1 (gender f)(number ?num)(person ?per))
+		   (modify ?f1 (gender f)(number ?num)(person ?per1))
 	    	   (print_debug_info ?samAna_id sub_and_samA_with_different_gender f from_word_She ?num n_f_s ?per p_f_s 0 0)
 		else
-		    (modify ?f1 (gender f)(number ?num1)(person ?per))
-		    (print_debug_info ?samAna_id sub_and_samA_with_different_gender f from_word_She ?num PV ?per p_f_s 0 0)
+		    (modify ?f1 (gender f)(number ?num1)(person ?per1))
+		    (print_debug_info ?samAna_id sub_and_samA_with_different_gender f from_word_She ?num PV ?per PV 0 0)
 		)
 		(assert (samAnAXikaraNa_id_checked ?samAna_id))
 	else
 		(if (eq ?num1 -) then
-			(modify ?f1 (gender ?gen1)(number ?num)(person ?per))
+			(modify ?f1 (gender ?gen1)(number ?num)(person ?per1))
 			(print_debug_info ?samAna_id sub_and_samA_with_different_gender ?gen1 PV ?num n_f_s ?per p_f_s 0 0)
 		else
-			(modify ?f1 (gender ?gen1)(number ?num1)(person ?per))
-			(print_debug_info ?samAna_id sub_and_samA_with_different_gender ?gen1 PV ?num1 PV ?per p_f_s 0 0)
+			(modify ?f1 (gender ?gen1)(number ?num1)(person ?per1))
+			(print_debug_info ?samAna_id sub_and_samA_with_different_gender ?gen1 PV ?num1 PV ?per PV 0 0)
 		)
 		(assert (samAnAXikaraNa_id_checked ?samAna_id))
 	)

@@ -40,6 +40,7 @@
 	21. aBiXAraNA	by Roja Suggested by Sukhada (16-10-13) Ex: Under these assumptions, the trajectory of an							 alpha-particle can be computed employing Newton's second law of motion.
 	22. pawaMga     Suggested by Sukhada        (17-01-12)  Ex: Sundari was a big red, white and blue kite.
 	23. dAyarektarI	By Roja Suggested by Sukhada (20-11-13) Ex: Create a new directory and put all your files into it. 
+	24. garmI	Suggested by sukhada (25-11-13)		Ex: The warmth of the sun's rays.
 	
 
   3. Removed :
@@ -415,6 +416,7 @@
 	turtle     (              "                     "    )
 	donkey     (              "                     "    )
 	doctor	   (Suggested by Anita ji LTRC	   14-11-13  ) Ex: Doctors are trained to recognize the symptoms of different diseases.
+	thief	   (Suggested by Pramila Banasthali 16-08-13 ) Ex: The thief was driven back by the watch dogs.   
 
  
 
@@ -652,6 +654,9 @@ Removed:
     1. may_need_to_0	nA_kI_jarUWawa_pada_sakawI_hE-0-0    as    ne_kI_jarUWawa_pada_sakawI_hE-ko-0 (by Meena 13-04-11)        2. may_need_to_0    ne_kI_jarUWawa_pada_sakawI_hE-ko-0   as    ne_kI_jarUrawa_pada_sakawI_hE-ko-0 (by Manju 26-01-12)
     3. need_not_0       nA_kI_jZarUrawa_hE-ko-nahIM 	     as    ne_kI_jZarUrawa_hE-ko-nahIM (Suggested by Chaitanya Sir 2-6-12)
     4. need_to_0        nA_kI_jZarUrawa_hE-ko-0		     as	   ne_kI_jZarUrawa_hE-ko-0     (	"		)
+    5. let_0		ne_xo-0-0			     as	   let_0	ne_xo-ko-0     (Suggested by Sukhada  28-11-13)
+			Ex: Let her go to the market. 
+
 
     Added:
     ------
@@ -789,6 +794,7 @@ Removed:
 	95. precisely_adverb	Tika-Tika		as	TIka-vahI	(	"		"	"    )
 	96. intellect_noun	buxxI			as	buxXI		(Suggested by Chaitanya Sir 20-11-13)
 	97. loudly_adverb	jEYora_se		as	jZora_se	(Suggested by Nandini ji LTRC 27-11-13)
+	98. drastic_adjective	uxaNda			as	uxxaNda		(Suggested by Chaitanya Sir 26-11-13  )
 
 
     3. Added new entry:
@@ -890,7 +896,19 @@ Removed:
 	55. no-smoking_adjective    	XUmrapAna_niReXa		(Suggested by Sukhada            23-10-13)
 					Ex: There are plans to extend the no-smoking area.   
 	56. planar_noun			samawalIya 			(Suggested by Sonam Banasthali	 29-10-13)
-					Ex: For a finite large planar sheet, Eq. (1.33) is approximately true in the middle						 regions of the planar sheet, away from the ends.
+					Ex: For a finite large planar sheet, Eq. (1.33) is approximately true in the middle						 		   regions of the planar sheet, away from the ends.
+	57. internet-enabled_noun    	ntaraneta-yukwa			(Suggested by Pamila Banasthali   23-11-13)
+					Ex: My phone is internet-enabled.
+ 	58. WAP-enabled_noun    	vEpa-yukwa			(		"			" )
+					Ex: The system is WAP-enabled.
+	59. web-enabled_noun    	vEba-yukwa			(		"			" )
+					Ex: This computer is web-enabled.
+	60. internet-enabled_adjective  intaraneta-yukwa		(		"			" )
+					Ex: This is internet-enabled phone.
+	61. WAP-enabled_adjective    	vEpa-yukwa			(		"			" )
+					Ex: This is WAP-enabled phone.
+	62. web-enabled_adjective    	vEba-yukwa			(		"			" )
+					Ex: This is web-enabled phone.
 
 
     4. Added new meaning to the existing word:
@@ -933,13 +951,15 @@ Removed:
 					Ex: The Mahabharata and the Ramayana are thus undoubtedly unique and wonderful works.
 	33. overcome_verb		aBiBUwa_kara_le			(Suggested by Chaitanya Sir  22-08-13   )
 	34. investigation_noun		parIkRaNa			(Suggested by Prachi Banasthali 24-08-13)
-					Ex:In his experimental investigation on the production of electromagnetic waves by					     means of a spark discharge, Hertz observed that high voltage sparks across the						  detector loop were enhanced when the emitter plate was illuminated by ultraviolet
-					light from an arc lamp.
+					Ex:In his experimental investigation on the production of electromagnetic waves by means of
+                                           a spark discharge, Hertz observed that high voltage sparks across the detector loop were
+                                           enhanced when the emitter plate was illuminated by ultraviolet light from an arc lamp.
 	35. electrical_adjective    	vExyuwa				(Suggested by Pramila Banasthali 24-08-13)
 									Ex: The forces are purely electrical.
 	36. gamma_noun      		gAmA				(Suggested by Prachi Banasthali 24-08-13 )
 	37. inversely_adverb        	vyuwakramAnusAra		(		"	"	27-08-13 )
-					Ex: Its effect is felt even when the distance between the interacting particles is					         very large because the force decreases inversely as the square of the distance						      between the interacting bodies.
+					Ex: Its effect is felt even when the distance between the interacting particles is very large 
+                                            because the force decreases inversely as the square of the distance	between the interacting bodies.
 	38. glue_noun       		goMxa				(Suggested by Prachi Banasthali 27-08-13 )
 					Ex: The adhesive force of glue is basically electrical in nature.
 	39. generalised_adjective	vyApakIkqwa			(Suggested by Chaitanya Sir  27-08-13    )
@@ -949,11 +969,12 @@ Removed:
 	42. denote_verb     		xarSA				(Suggested by Pramila Banasthali 29-08-13)
 					Ex: It denotes an individual's feelings of competence.
 	43. gathering_noun		jamaGata			(Suggested by Prachi Banasthali  31-08-13)	
-					Ex: It's a huge gathering of black people coming to hear the greatest musicians of					         our time.
+					Ex: It's a huge gathering of black people coming to hear the greatest musicians of					                           our time.
 	44. intensity_noun		wIvrawA				(Suggested by Prachi Banasthali  31-08-13)
-					Ex: The greater the intensity of radiation, the greater are the amplitude of electric 					         and magnetic fields.
+					Ex: The greater the intensity of radiation, the greater are the amplitude of electric 					                           and magnetic fields.
 	45. generalised_adjective	sAmAnyIkqwa			(Suggested by Prachi Banasthali  31-08-13)
-					Ex: If this is done, there is no contradiction in the value of B obtained anywhere					         using the generalised Ampere's law.
+					Ex: If this is done, there is no contradiction in the value of B obtained anywhere using 
+                                            the generalised Ampere's law.
 	46. assumption_noun 		aBiXAraNA			(Suggested by Garima Banasthali  03-09-13)
 					Ex: Under these assumptions, the trajectory of an alpha-particle can be computed 
 					    employing Newton's second law of motion.
@@ -964,7 +985,7 @@ Removed:
 					Ex: Each cell contains a low-power transmitter called a base station and caters to a
 					    large number of mobile receivers
 	49. intimately_adverb		GaniRtawA_se			(Suggested by Prachi Banasthali  07-09-13)	
-					Ex: He claimed that the science of optics is intimately related to that of							 electricity and magnetism.
+					Ex: He claimed that the science of optics is intimately related to that of electricity and magnetism.
 	50. exactly_adverb  		bilkula_TIka			(Suggested by Pramila Banasthali 10-09-13)
 					Ex: According to the principle, it is not possible to measure both the position and
 					    momentum of an electron (or any other particle) at the same time exactly.
@@ -992,7 +1013,7 @@ Removed:
 	61. generalisation_noun		vyApakIkaraNa			(Suggested by Prachi Banasthali 07-10-13)
 	                                Ex:The paper by Einstein and Ehrenfest was a generalisation of Pauli 's work .
         62. generalization_noun		vyApakIkaraNa			(Suggested by Prachi Banasthali 07-10-13)
-	                                Ex:Let us try to relate the area with the solid angle, a generalization of angle to						three dimensions.
+ 	                                Ex:Let us try to relate the area with the solid angle, a generalization of angle to								  three dimensions.
 	63. ambiguity_noun  		anekArWawA			(Suggested by Garima Banasthali 08-10-13)
 					Ex: Notice one ambiguity here.
 	64. dependence_noun 		nirBarawA			(Suggested by Pramila Banasthali 08-10-13)
@@ -1011,7 +1032,8 @@ Removed:
 					Ex: This is a value very close to the value (1.097 × 10 m) obtained from the 
 					    empirical Balmer formula.
 	71. ignore_verb			upekRA_kara			(Suggested by Prachi Banasthali	 28-10-13)
-					Ex: However, Eq. (1.32) is approximately true for electric field around the central 						portions of a long wire, where the end effects may be ignored.
+					Ex: However, Eq. (1.32) is approximately true for electric field around the central portions of 
+                                            a long wire, where the end effects may be ignored.
 	72. grain_noun      		anAja				(Suggested by Shweta Banasthali 29-10-13)
 					Ex: It was spring, a day on which the fresh grain was fried and eaten and given as a
 					    gift .
@@ -1020,11 +1042,14 @@ Removed:
 	74. dispersive_adjective	niSkAsiwa/biKeranA		(suggested by Ratna JI          30-10-13)
 					Ex: On the other hand, glass is a dispersive medium.
 	75. proton_noun			XanAveSa_sUkRmANu		(Suggested by Sonam Banasthali  30-10-13)
-					Ex: Solutions of the Schrodinger wave equation assign a wave-like description to the 						 electrons bound in an atom due to attractive forces of the protons.
+					Ex: Solutions of the Schrodinger wave equation assign a wave-like description to the electrons 
+                                            bound in an atom due to attractive forces of the protons.
 	76. precisely_adverb		TIka			(Suggested by Sonam Banasthali  14-11-13)
-					Ex: But when an atom absorbs a photon that has precisely the same energy needed by the electron in a lower energy state to make transitions to a higher energy state, the process is called absorption.
+					Ex: But when an atom absorbs a photon that has precisely the same energy needed by the electron in a
+                                            lower energy state to make transitions to a higher energy state, the process is called absorption.
 	77. prediction_noun		prAkkaWana 		(Suggested by Sonam Banasthali  14-11-13)
-					Ex: This prediction of the Bohr's model is in excellent agreement with the experimental value of ionisation energy.
+					Ex: This prediction of the Bohr's model is in excellent agreement with the experimental value of 
+                                            ionisation energy.
 	78. analyze_verb		viSleRaNa_kara		(Suggested by Garima Banasthali  14-11-13)
 					Ex: Researchers analysed the purchases of 6,300 households.
 	79. cent_noun			sEnta			(Suggested by Preeti ji LTRC 27-11-13)
@@ -1032,7 +1057,14 @@ Removed:
 	80. none_noun			koI_BI_nahIM		(Suggested by Nandini ji LTRC 27-11-13)
 	81. lace_noun			lEsa			(	"	"			)
 	82. lace-up_noun		lEsa_vAlA		(	"	"			)
-					
+	83. civilisation_noun		samAja			(	"	Sukhada   26-11-13      )
+					Ex:The science of electricity and magnetism is the foundation for the modern technological civilisation
+	84. observe_verb		preKRaNa_kara/avalokana_kara	(Suggested by Chaitanya Sir  26-11-12)
+					Ex: "One kind of response from the earliest times has been to observe the physical environment 
+					    carefully, look for any meaningful patterns and relations in natural phenomena, and build and
+					    use new tools to interact with nature. "
+	85. originate_verb		uxBava_ho		(Suggested by Chaitanya Sir  26-11-12)
+					Ex: The word Science originates from the Latin verb Scientia meaning 'to know'. 
 
 
     5. Modifying first meaning from the list :
@@ -1067,23 +1099,22 @@ Removed:
 				Ex: A long and involved story.
 				    The plot of the film was too involved - i could not understand it.
 	25. centre_verb     	TIka_kara		as	kenxriwa_kara	(Suggested by Garima Banasthali 24-08-13)
-				Ex: For this, we consider a plane circular loop of radius r whose plane is perpendicular to  					 the direction of the current-carrying wire, and which is centred symmetrically with
-				    respect to the wire.
+				Ex: For this, we consider a plane circular loop of radius r whose plane is perpendicular to  					                   the direction of the current-carrying wire, and which is centred symmetrically with respect to the wire.
 	26. assume_verb     	kalpanA_kara		as	mAna		(Suggested by Garima Banasthali 24-08-13)
 				Ex:These experiments could only be satisfactorily explained by assuming a wave model of light
 	27. approximately_adverb wakarIbana_rUpa_se	as	lagaBaga	(Suggested by Garima Banasthali 24-08-13)
-				Ex: Because of the smallness of the wavelength of visible light (in comparison to the 					         dimensions of typical mirrors and lenses), light can be assumed to approximately travel
-				    in straight lines. 
+				Ex: Because of the smallness of the wavelength of visible light (in comparison to the dimensions
+                                    of typical mirrors and lenses), light can be assumed to approximately travel in straight lines. 
 	28. distorted_adjective	xURiwa			as	vikqwa		(Suggested by Pramila Banasthali 24-08-13)
 				Ex: You pay people a lot of money to see reality in a slightly distorted way.
 	29. involve_verb	SAmila_ho		as	SAmila_kara 	(Suggested by Chaitanya  Sir  24-08-13  )
-				Ex: Many experiments were carried out involving the interference and diffraction of 					         lightwaves.
+				Ex: Many experiments were carried out involving the interference and diffraction of lightwaves.
 	30. detect_verb		xeKa_pA			as	pawA_lagA	(Suggested by Pramila Banasthali 27-08-13)
 				Ex: This minimal verification is useful to detect packet corruption.
 	31. forget_verb		BUla_jA			as	BUla		(Suggested by Chaitanya  Sir  27-08-13 )
 				Ex: I never forget a face.
 	32. deficit_noun    	GAtA			as	kamI		(Suggested by Pramila Banasthali 28-08-13)
-				Ex:When we say that a body is charged, we always refer to this excess charge or deficit of				     charge.
+				Ex:When we say that a body is charged, we always refer to this excess charge or deficit of charge.
 	33. depict_verb         ciwra_KIFca	 	as	xarSA		(Suggested by Pramila Banasthali 29-08-13)
 				Ex: Her painting depicts the lives of ordinary people.
 	34. incorrect_adjective	aSuxXa			as	galawa		(Suggested by Prachi Banasthali  29-08-13)
@@ -1189,13 +1220,22 @@ Removed:
 	78. further_adjective	Ora_Age_kA	as	Ora_aXika	(By Roja 		      19-11-13)
 				Ex: The snow created further problems. 
 	79. reversal_noun	ulatAva		as	vyuwkramaNa	(Suggested by Chaitanya Sir   19-11-13)
-				Ex: When the magnet is pulled away from the coil, the galvanometer shows 					deflection in the opposite direction, which indicates reversal of the current's 				direction.
+				Ex: When the magnet is pulled away from the coil, the galvanometer shows deflection in the opposite
+                                    direction, which indicates reversal of the current's direction.
+	80. arms_noun       	Saswra		as	haWiyAra	(Suggested by Garima Banasthali 25-11-13)
+				Ex: They laid down their arms after losing the battle.
 	80. meter_noun		mApaka		as	mItara		(Suggested by Nandini ji LTRC 27-11-13)
 	81. lace_verb		wasame_piro	as	PIwA_bAzXa	(		"		"	)
 				Ex: He was sitting on the bed lacing up his shoes.
 	82. calculation_noun	hisAba_kiwAba	as	gaNanA		(Suggested by Preeti ji LTRC 27-11-13)
 				Ex: Cathy did a rough calculation.
-
+	83. drastic_adjective	pracaNda	as	prabala		(Suggested by Chaitanya Sir  26-11-13)
+				Ex: Sometimes the modifications may not be drastic and may lie within the framework of existing theory. 
+	84. extensive_adjective	badA		as	viswqwa		(Suggested by Chaitanya Sir  26-11-13)
+				Ex: "For example, when Johannes Kepler (1571-1630) examined the extensive data on planetary motion collected by 			            Tycho Brahe (1546-1601), the planetary circular orbits in heliocentric theory (sun at the center of the 
+				     solar system) imagined by Nicolas Copernicus (1473 — 1543) had to be replaced by elliptical orbits to
+				     fit the data better. "
+ 	
 
 	
     6. Removed meaning from existing list:
@@ -1228,6 +1268,7 @@ Removed:
 	24. instead_adverb	ke_baxale_mez					(	"			07-09-13)
 	25. freeman-^pl.freemen^_UNDEFINED  svAXIna_nAgarika			(By Manju			13-09-13)
 	26. freeman-{pl.freemen}_noun       svAXIna_nAgarika			(By  "				  "	)
+	27. civilisation_noun	saBya_samAja					(Suggested by 	Sukhada         26-11-13)
 
 
     7. Removed entry:
@@ -1263,6 +1304,7 @@ Removed:
 	28. freeman-^pl.freemen^_UNDEFINED	svAXIna_nAgarika	( By Manju			14-09-13)
 	29. freeman-{pl.freemen}_noun		svAXIna_nAgarika	(	"			 "	)
 	30. grain_UNDEFINED 	anAja					(Suggested by Shweta Banasthali 29-10-13)
+	31. observe_UNDEFINED	avalokana_kara				( Suggested by Chaitanya Sir    26-11-13)
 
 
     8. Modified category:
@@ -1276,6 +1318,7 @@ Removed:
 	7. God_UNDEFINED	as	God_PropN		( Suggested by Chaitanya Sir 22-08-13 	 )
 	8. electrified_UNDEFINED as	electrified_adjective	(Suggested by Pramila Banasthali 05-10-13)
 	9. focussed_UNDEFINED	as	focussed_verb		(By Roja 			16-10-13 )	
+	10. civilisation_UNDEFINED	as civilisation_noun	(Suggested by Sukhada 		26-11-13 )
 
 	
  changes in preposition.txt
@@ -1346,7 +1389,7 @@ Removed:
 	10. at_all		bilkula_BI#bilkula_BI#noun#2#RM		(Suggested by Chaitanya Sir 14-09-13)
 				Ex: In any realistic situation, the functions will be differentiable at all points and the
 				    graphs will be smooth.
-	11. not_either       xonoM_warIke_se_nahIM#xonoM_warIke_se_nahIM#noun#2#RM(Suggested by Pramila Banasthali 15-08-13)
+	11. not_either       	xonoM_warIke_se_nahIM#xonoM_warIke_se_nahIM#noun#2#RM(Suggested by Pramila Banasthali 15-08-13)
 				Ex: If you don't go, I won't either.    I won't go and Peter won't either. 
 	12. measurement_of  	sUcanA_mApana#sUcanA_mApana#noun#1#RM   ( By Manju 09-10-13        		)
 				Ex: You are already familiar with some direct methods for the measurement of length.
@@ -1439,10 +1482,10 @@ Removed:
 				Ex: The generalised (and correct) Ampere's circuital law has the same form as Eq. (8.1), with
 				    one difference: "the total current passing through any surface of which the closed loop
 				    is the perimeter " is the sum of the conduction current and the displacement current. 
-	38. moral_giants    nEwika_xqRti_se_mahAna_vyakwi#nEwika_xqRti_se_mahAna_vyakwi#noun#2#RM 
-			    (Suggested by Chaitanya Sir 28-09-13) Ex: For instance, it points out faults even of moral giants
-			    like Bhishma and Dharmaraj, and virtues in the characters like Karna and Duryodhana, who had 
-			    strayed from the path of righteousness.
+	38. moral_giants    	nEwika_xqRti_se_mahAna_vyakwi#nEwika_xqRti_se_mahAna_vyakwi#noun#2#RM 
+			    	(Suggested by Chaitanya Sir 28-09-13) Ex: For instance, it points out faults even of moral giants
+			    	like Bhishma and Dharmaraj, and virtues in the characters like Karna and Duryodhana, who had 
+			    	strayed from the path of righteousness.
 	39. path_of_righteousness   nEwika_paWa#nEwika_paWa#noun#3#RM		(Suggested by Chaitanya Sir 28-09-13) 
 				    Ex: same as above sen (38th)
 	40. perfect_detachment	pUrNa_alipwawA#pUrNa_alipwawA#noun#2#RM		(	"		"	    )
@@ -1490,15 +1533,23 @@ Removed:
 				    of charging by contact.
 	58. read_well		pATaka_kI_ruci_banAe_raKa#pATaka_kI_ruci_banAe_raKa#verb#1#RM (Suggested by Anita ji LTRC    14-11-13)
 	59. reads_well		pATaka_kI_ruci_banAe_raKa#pATaka_kI_ruci_banAe_raKa#verb#1#RM (Suggested by Anita ji LTRC    14-11-13)
-	60. credit_card		kredita_kArda#kredita_kArda#noun#2#RM	(Suggested by Nandini ji LTRC 14-11-13)
-	61. credit_cards	kredita_kArdas#kredita_kArdas#noun#2#RM	(Suggested by Nandini ji LTRC 14-11-13)
-	opposite_charge vijAwIya_AveSa#vijAwIya_AveSa#noun#2#RM
-similar_charge  sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
-	62. relative_pronoun	sambanXa_vAcaka_sarvanAma#sambanXa_vAcaka_sarvanAma#noun#1#RM (Suggested by Chaitanya Sir
-	63. relative_adverb	sambanXa_vAcaka_kriyA_viReSaNa#sambanXa_vAcaka_kriyA_viReSaNa#noun#1#RM
-	64. at_all_costs	kisI_BI_kImawa_para#kisI_BI_kImawa_para#noun#3#RM (Suggested by Preeti ji LTRC 20-11-13)
-	65. training_material	praSikRaNa_sAmagrI#praSikRaNa_sAmagrI#noun#2#RM	(Suggested by Nandini ji LTRC 27-11-13)
-	66. university_material	vixyApITa_ke_upayukwa#vixyApITa_ke_upayukwa#noun#2#RM	(Suggested by Nandini ji LTRC 27-11-13)
+	60. credit_card		kredita_kArda#kredita_kArda#noun#2#RM		(Suggested by Nandini ji LTRC 14-11-13)
+	61. credit_cards	kredita_kArdas#kredita_kArdas#noun#2#RM		(Suggested by Nandini ji LTRC 14-11-13)
+	62. opposite_charge 	vijAwIya_AveSa#vijAwIya_AveSa#noun#2#RM 	(Suggested by Chaitanya Sir)
+	63. similar_charge  	sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM 	(	"		"  )
+	64. opposite_charges	vijAwIya_AveSa#vijAwIya_AveSa#noun#2#RM		(	"		"  )
+	65. similar_charges	sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM		(	"		"  )
+	66. relative_pronoun	sambanXa_vAcaka_sarvanAma#sambanXa_vAcaka_sarvanAma#noun#1#RM 	(Suggested by Chaitanya Sir)
+	67. relative_adverb	sambanXa_vAcaka_kriyA_viReSaNa#sambanXa_vAcaka_kriyA_viReSaNa#noun#1#RM  ( 	" 	)
+	68. at_all_costs	kisI_BI_kImawa_para#kisI_BI_kImawa_para#noun#3#RM 	(Suggested by Preeti ji LTRC 20-11-13 )
+				Ex: We have to succeed at all costs.
+	69. training_material	praSikRaNa_sAmagrI#praSikRaNa_sAmagrI#noun#2#RM		(Suggested by Nandini ji LTRC 27-11-13)
+				Ex: The company produces its own training material.
+	70. university_material	vixyApITa_ke_upayukwa#vixyApITa_ke_upayukwa#noun#2#RM	(Suggested by Nandini ji LTRC 27-11-13)
+				Ex: The teacher saw her as good university material.
+	71. orphaned_children	anAWa_baccA#anAWa_baccA#noun#2#RM			(Suggested by Sukhada         26-11-13)
+				Ex: They established a foundation to help orphaned children.
+
 
     Added new meaning to the existing word:
     --------------------------------------
@@ -1701,6 +1752,11 @@ similar_charge  sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
 	officer		( By  Manju         05-10-13) Ex: Mohan is a highly corrupt officer.
 	woman	  	(	"	    06-11-13) Ex: I know a woman who has two children.
 	doctor		(Suggested by Anita ji LTRC     14-11-13  ) Ex: Doctors are trained to recognize the symptoms of different diseases.
+	pupil		(Suggested by Pramila Banasthali 25-11-13 ) Ex: Pupils are encouraged to be creative.   
+	student		(		"		   "	  ) Ex: We want to encourage students to read more.   
+	we		(		"		   "	  ) Ex: We were encouraged to learn foreign languages at school.  
+	shopper		(		"		   "	  ) Ex:	Music and lighting are used to encourage shoppers to buy more. 
+
 
  changes in named_entities.txt
  =============================

@@ -348,7 +348,7 @@
  (defrule default_ko_vib
  (declare (salience 500))
  ?f0<-(pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi 0))
- (id-original_word ?pada_id  ?w&her|Her|him|Him|them|Them|me|Me)
+ (id-original_word ?pada_id  ?w&him|Him|them|Them|me|Me)
  ?f1<-(pada_control_fact ?pada_id)
  =>
 	(retract ?f1)
@@ -356,11 +356,11 @@
        	(printout ?*vib_debug_file* "(id-vib-source	"?pada_id"	ko	word_"?w " )" crlf )
  )
 ;------------------------------------------------------------------------------------------
- ; Is that the film in which he kills his mother.
+ ; Is that the film in which he kills his mother. This book is mine|ours|yours.
  (defrule default_kA_vib
  (declare (salience 500))
  ?f0<-(pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi 0))
- (id-original_word ?pada_id  ?w&his|His|our|Our)
+ (id-original_word ?pada_id  ?w&his|His|our|Our|mine|my|ours|your|yours)
  ?f1<-(pada_control_fact ?pada_id)
  =>
         (retract ?f1)

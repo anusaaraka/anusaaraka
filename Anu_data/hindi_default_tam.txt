@@ -162,7 +162,7 @@ keeps_ing	wA_rahawA_hE-0-0
 keeps_on_ing	wA_rahawA_hE-0-0
 kept_ing	wA_rahA-0-0
 kept_on_ing	wA_rahA-0-0
-let_0	ne_xo-0-0
+let_0	ne_xo-ko-0
 liked_to_0	nA_pasanxa_karawA_WA-0-0
 likes_to_0	nA_pasanxa_karawA_hE-0-0
 like_to_0	nA_pasanxa_karawA_hE-0-0

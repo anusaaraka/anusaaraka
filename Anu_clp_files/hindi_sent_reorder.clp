@@ -259,16 +259,17 @@
  ?f1<- (id-root-category-suffix-number  ?kri tell|guess|see|think|say|know|suppose|wonder|hope|bet ? ? ?)
  (prep_id-relation-anu_ids ?  kriyA-subject ?kri  ?)
  (prep_id-relation-anu_ids ?  kriyA-subject ?kri_1 ?)
- ?f0 <-(hindi_id_order $?pre ?kri $?post)
+ ?f0 <-(hindi_id_order $?pre ?kri ?id $?post)
  (test (< ?kri ?kri_1))
+ (id-HM-source ?id ?hmng&~kyozki ?)
  (not (hindi_id_order $?ids ?kri));The Master said , if I did not go , how would you ever see ?
  (not (prep_id-relation-anu_ids ?  kriyA-object  ?kri ?));I saw him telling her about the party. 
  (not (prep_id-relation-anu_ids ?  kriyA-conjunction  ?kri_1 10000));Do you think we should go to the party? 
  =>
         (retract ?f0 ?f1)
-        (assert (hindi_id_order  $?pre ?kri ki $?post))
+        (assert (hindi_id_order  $?pre ?kri ki ?id $?post))
 	(assert (ki_asserted ?kri))
-        (printout  ?*DBUG* "(Rule_Name-ids   rule_for_ki   (hindi_id_order  "(implode$ (create$ $?pre ?kri ki $?post)) ")" crlf)
+        (printout  ?*DBUG* "(Rule_Name-ids   rule_for_ki   (hindi_id_order  "(implode$ (create$ $?pre ?kri ki ?id $?post)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju (3-02-11)

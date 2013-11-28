@@ -22,7 +22,9 @@
  (load-facts "underscore_hyphen_replace_info.dat")
  (load-facts "wsd_facts_output.dat")
  (load-facts "GNP_agmt_info.dat")
+ (load-facts "hindi_meanings.dat")
  (open "hindi_sentence_tmp.dat" h_sen_fp "w")
+ (open "removed_repeated_mng.dat" rm_mng_fp "w")
  (run)
  (clear)
  ;--------------------------------------------------------------------------

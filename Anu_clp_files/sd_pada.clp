@@ -120,6 +120,8 @@
  (prawiniXi_id-node-category ?np_id ?NP NP|WHNP)
  (head_id-prawiniXi_id-grp_ids ?np_head ?np_id $?grp_ids ?last_node)
 ?f1<-(pada_info (group_head_id ?np_id)(preposition 0))
+ (root-verbchunk-tam-chunkids ? ? ? $? ?vid) ;I am depending on you to keep your promise.
+ (test (eq (member$ ?vid $?ids) FALSE))
  =>
         (printout ?*pada_debug_file* "(rule_name-mode_of_pada - multiple_prep_rule Modification"crlf )
         (printout ?*pada_debug_file* "		Before :: (pada_info (group_head_id "?np_id")(preposition 0))" crlf)
@@ -430,6 +432,7 @@
  (prawiniXi_id-node-category ?adjp ?ADJP ADJP|WHADJP)
  ?f1<-(head_id-prawiniXi_id-grp_ids ? ?adjp ?id $?daut)
  (not (adjp_head ?adjp))
+ (test (neq (length $?daut) 0)) ;How much more spilled? 
  =>
 	(retract ?f0 ?f1 )
 	(assert (head_id-prawiniXi_id-grp_ids ?h ?p_id $?d ?id $?daut $?d1))
@@ -492,7 +495,7 @@
         (assert (id-grp_ids ?p_id $?a $?a1))
 	(assert (id-grp_ids ?pos_h ?pos_id))
  )
-
+ ;-----------------------------------------------------------------------------------------------------------------------
  (defrule get_pada
  (declare (salience 800))
  ?f0<-(index ?)
@@ -510,11 +513,12 @@
  ;-----------------------------------------------------------------------------------------------------------------------
  ; Drop the S node which is not at zero level
  ;Going from this intuitive notion to the proper scientific concept of force is not a trivial matter.
- (defrule rm_sen_from_pada
+ ;;He is not related to me. (Drop PP as head)
+ (defrule rm_sen_or_prep_from_pada
  (declare (salience 950))
  (get_pada)
  ?f0<-(id-grp_ids ?hid $?ids ?s_id) 
- (prawiniXi_id-node-category ?s_id ?S S|FromToPP)
+ (prawiniXi_id-node-category ?s_id ?S S|FromToPP|PP)
  =>
 	(retract ?f0)
 	(assert (id-grp_ids ?hid $?ids))
@@ -528,18 +532,6 @@
  =>
 	(retract ?f0)
 	(assert (id-grp_ids ?id $?d $?d1))
- )
- ;-----------------------------------------------------------------------------------------------------------------------
-  ;He is not related to me.
- (defrule del_prep_with_pada_head
- (declare (salience 900))
- (get_pada)
- ?f0<-(id-grp_ids ?id $?ids ?pp_id)
- (prawiniXi_id-node-category ?pp_id ?PP PP)
- ?f1<-(pada_info (group_head_id ?pp_id) )
- =>
-       (retract ?f0 ?f1)
-       (assert (id-grp_ids ?id $?ids ))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  (defrule del_prep_in_pada_fact

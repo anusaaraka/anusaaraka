@@ -10,6 +10,7 @@
 (id-root ?id keep)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 on )
+(kriyA-on_saMbanXI ?id ?id1); Added by Shirisha Manju Suggested by Chaitanya Sir (27-11-13)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id raha))

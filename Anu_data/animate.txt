@@ -52,3 +52,4 @@ parrot	1
 turtle	1
 donkey	1
 doctor	1
+thief	1

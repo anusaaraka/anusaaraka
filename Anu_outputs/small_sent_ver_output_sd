@@ -423,7 +423,7 @@ gAya ko xuhane ke lie sahAyawA kIjie.
 
 Hindi meaning using Stanford parser 2.99
 The Sun smiled warmly. 
-sUrya uwsAha se muskarAyA.
+sUraja uwsAha se muskarAyA.
 
 Hindi meaning using Stanford parser 2.100
 It was very strong. 
@@ -506,6 +506,22 @@ mEMne pArtI meM usako xeKA.
 Hindi meaning using Stanford parser 2.119
 He is in that party. 
 vaha usa pArtI meM hE.
+
+Hindi meaning using Stanford parser 2.120
+The warmth of the sun's rays. 
+sUraja kI kiraNoM kI garmI.
+
+Hindi meaning using Stanford parser 2.121
+We sat in the sun. 
+hama XUpa meM bETe.
+
+Hindi meaning using Stanford parser 2.122
+Rama came with Mohan. 
+rAma mohana ke sAWa AyA.
+
+Hindi meaning using Stanford parser 2.123
+This book is mine. 
+yaha puswaka merI hE.
 
 Calling Transliteration
 Calling Interface related programs

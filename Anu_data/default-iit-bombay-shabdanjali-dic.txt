@@ -6641,7 +6641,7 @@ armpits_UNDEFINED	bagala
 arms-dealing_UNDEFINED	SaswrAswra_kraya_vikraya
 arms-race_noun	haWiyAroM_kI_hoda
 arms_UNDEFINED	aswra
-arms_noun	Saswra/kulacinha/haWiyAra/haswAswra/aswra-Saswra/aswra_Saswra
+arms_noun	haWiyAra/Saswra/kulacinha/haswAswra/aswra-Saswra/aswra_Saswra
 armsel_UNDEFINED	Armasela
 army_noun	senA/xala/samUha/BIda
 arobatic_adjective	kalAbAjI_kA
@@ -14466,7 +14466,7 @@ civilest_UNDEFINED	saBya
 civilian_adjective	asEnika
 civilian_noun	asEnika_karmacArI/asEnika_nAgarika
 civilians_UNDEFINED	asEnika_karmacArI
-civilisation_UNDEFINED	saBya_samAja
+civilisation_noun	samAja
 civilisations_UNDEFINED	saBya_samAja
 civilise_UNDEFINED	saBya_banAnA
 civilised_UNDEFINED	saBya_banAnA
@@ -24237,7 +24237,7 @@ drapery_noun	bajAjI/parxA/latakawA_kapadA/kapade_kI_xukAna/kapadA_becane_kA_vyav
 drapes_UNDEFINED	parxA
 drapes_noun	parxA{ba.}
 draping_UNDEFINED	sunxara_vaswroM_se_sajAnA
-drastic_adjective	pracaNda/prabala/uxaNda/SakwiSAlI
+drastic_adjective	prabala/pracaNda/uxxaNda/SakwiSAlI
 drastically_UNDEFINED	bUrI_waraha
 drastically_adverb	jabarxaswa_rUpa_se
 drasticer_UNDEFINED	SakwiSAlI
@@ -27939,7 +27939,7 @@ extending_UNDEFINED	nimanwraNa_xenA
 extends_UNDEFINED	nimanwraNa_xenA
 extension_noun	viswAraNa/viswAra/SikRA_viswAra/PElAva/ekstensana/awirikwa_samaya/awirikwa_kamarA
 extensions_UNDEFINED	viswAraNa
-extensive_adjective	badA/vyApaka/viswqwa/bahuwa_badA
+extensive_adjective	viswqwa/badA/vyApaka/bahuwa_badA
 extensively_adverb	vyApaka_rUpa_se/bahuwa_viswqwa_rUpa_se
 extensiver_UNDEFINED	vyApaka
 extensivest_UNDEFINED	vyApaka
@@ -53450,8 +53450,7 @@ observatary_noun	wArAGara/AkASalocaka
 observation_noun	avalokana/xeKareKa/prekRaNa/kaWana/niraKa/socavicAra
 observations_UNDEFINED	avalokana
 observatory_noun	veXaSAlA
-observe_UNDEFINED	avalokana_kara
-observe_verb	xeKa/kaha/anupAlana_kara/niraKa/rIwirivAjoM_kA_pAlana_kara/niyamoM_kA_pAlana_kara/apnA_mawa/socavicAra_vyakwa_kara
+observe_verb	xeKa/kaha/anupAlana_kara/niraKa/rIwirivAjoM_kA_pAlana_kara/niyamoM_kA_pAlana_kara/apnA_mawa/socavicAra_vyakwa_kara/preKRaNa_kara/avalokana_kara
 observed_UNDEFINED	niraKanA
 observer_noun	prekRaka/paryavekRaka/parixarSaka
 observers_UNDEFINED	parixarSaka
@@ -54381,7 +54380,7 @@ originally_UNDEFINED	mUlawaH
 originally_adverb	Suru_Suru_meM/spaRtawaH/Axi_meM
 originals_UNDEFINED	AramBika
 originate_UNDEFINED	janma_ho
-originate_verb	uwpanna_ho/AramBa_kara/AramBa_honA_yA_kara
+originate_verb	uwpanna_ho/AramBa_kara/AramBa_honA_yA_kara/uxBava_ho
 originated_UNDEFINED	AramBa_honA_yA_karanA
 originates_UNDEFINED	AramBa_honA_yA_karanA
 originating_UNDEFINED	AramBa_honA_yA_karanA
@@ -93498,3 +93497,9 @@ construct_noun	racanA
 cross-sectional_adjective	anuprasWa_kAta
 no-smoking_adjective	XUmrapAna_niReXa
 planar_noun	samawalIya
+internet-enabled_noun	intaraneta-yukwa
+internet-enabled_adjective	intaraneta-yukwa
+WAP-enabled_noun	vEpa-yukwa
+WAP-enabled_adjective	vEpa-yukwa
+web-enabled_noun	vEba-yukwa
+web-enabled_adjective	vEba-yukwa

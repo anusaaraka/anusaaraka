@@ -38,3 +38,7 @@ employee	1
 officer	1
 woman	1
 doctor	1
+pupil	1
+student	1
+we	1
+shopper	1

@@ -37,6 +37,7 @@
  )
 
 (defglobal ?*hin_sen-file* = h_sen_fp)
+(defglobal ?*rmd_mng-file* = rm_mng_fp)
  
  (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
  ;----------------------------------------------------------------------------------------------------------
@@ -114,6 +115,7 @@
  =>
 	(retract ?f1 ?f0)
 	(assert (hindi_id_order $?id1 ?punc $?d1))
+	(assert (id-mng ?id $?wrd_analysis ))
  )
  ;----------------------------------------------------------------------------------------------------------
  (defrule get_apertium_mng_with_lt_and_rt_punc
@@ -126,11 +128,12 @@
  ?f0<-(hindi_id_order $?id1 ?id $?id2)
  =>
         (retract ?f0 ?f1)
+	(assert (id-mng ?id $?wrd_analysis ?w $?wrd_analysis ?w1))
 	(bind ?w (string-to-field (str-cat ?lp ?w)))
 	(bind ?w1 (string-to-field (str-cat ?w1 ?rp)))
         (assert (hindi_id_order $?id1 ?w $?wrd_analysis ?w1 $?id2))
  )
-
+ ;----------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju
  ;One can reach kumbhalgarh by road from udaipur (84km) and ranakpur which is 18km from kumbhalgarh. 
  (defrule get_apertium_mng_with_lt_and_rt_punc1
@@ -142,6 +145,7 @@
  ?f0<-(hindi_id_order $?id1 ?id $?id2)
  =>
         (retract ?f0 ?f1)
+	(assert (id-mng ?id ?wrd ))
 	(bind ?wrd (string-to-field (str-cat ?lp ?wrd ?rp)))
         (assert (hindi_id_order $?id1 ?wrd $?id2))
  )
@@ -156,6 +160,7 @@
  ?f0<-(hindi_id_order $?id1 ?id $?id2)
  =>
         (retract ?f0 ?f1)
+	(assert (id-mng ?id ?w $?wrd_analysis ))
 	(bind ?w (string-to-field (str-cat ?punc ?w)))
         (assert (hindi_id_order $?id1 ?w $?p $?wrd_analysis $?id2))
  )
@@ -170,6 +175,7 @@
  ?f0<-(hindi_id_order $?id1 ?id $?id2)
   =>
         (retract ?f0 ?f1)
+	(assert (id-mng ?id $?wrd_analysis ?w))
         (bind ?w (string-to-field (str-cat ?w ?punc)))
         (assert (hindi_id_order $?id1 $?wrd_analysis ?w $?p $?id2))
  )
@@ -183,6 +189,7 @@
  =>
 	(retract ?f0 ?f1)
         (assert (hindi_id_order $?id1  $?wrd_analysis $?id2))
+	(assert (id-mng ?id $?wrd_analysis))
  )
  ;======================== Generate hindi sentence using Apertium output and  punctuations ====================
  ;Added by Shirisha Manju (22-12-10)
@@ -234,7 +241,7 @@
 	(bind ?lp1 (string-to-field ?lp))
 	(assert (hindi_id_order $?id1 ?lp1 $?wrd_analysis  $?id2))
  )
-
+;----------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (21-11-11)
  ; The inscription on the tomb of Michael-Faraday (1897-1990).
  (defrule gen_sent_lt
@@ -268,6 +275,23 @@
  =>
        (retract ?f ?f1)
        (assert (hindi_id_order $?var ?lid ?rp))
+ )
+ ;---------------------------------------------------------------------------------------------------------
+ ;;Added by Shirisha Manju (23-11-13)
+ ;Your account of the accident does not agree [with hers].
+ (defrule rm_repeated_mng_from_sentence
+ (declare (salience 200))
+ ?f<-(hindi_id_order $?pre ?mng ?mng $?post)
+ (test (eq  (member$ ?mng (create$ bAra SurU kaBI XIre Binna)) FALSE));The frequent sleeping of students is a big problem.
+ (id-mng ?id $?m ?mng ?mng $?m1)
+ (id-word ?id ?wrd)
+ (id-HM-source ?id ? ?src)
+ =>
+	(retract ?f)
+	(assert (hindi_id_order $?pre ?mng $?post))
+	(printout t "Removed repeated meaning  : " ?mng" "?mng crlf)
+	(bind $?n_mng (create$ $?m ?mng ?mng $?m1))
+        (printout ?*rmd_mng-file* "(id-word-mng-removed_mng-src	"?id"	"?wrd"	"(implode$ $?n_mng)"	"?mng"	"?src ")" crlf)
  )
  ;---------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (25-01-12)
