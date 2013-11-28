@@ -61,3 +61,7 @@ He told me why he was here and what he was doing.
 Did you send a birthday card to Sheela?
 --> "tmod(send-3, card-6)"  wrong relation (Note:: instead of "birthday" , "marriage" is given then we get correct relation)
 
+Failures due to category problem::
+================================
+Please say loudly.
+-> Parser gave loudly as adjective but it should be adverb

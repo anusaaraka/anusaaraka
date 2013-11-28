@@ -33227,7 +33227,6 @@ similar_charge	sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
 similar_charges	sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
 relative_pronoun	sambanXa_vAcaka_sarvanAma#sambanXa_vAcaka_sarvanAma#noun#1#RM
 relative_adverb	sambanXa_vAcaka_kriyA_viReSaNa#sambanXa_vAcaka_kriyA_viReSaNa#noun#1#RM
-
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
@@ -33715,5 +33714,7 @@ zip_code	pinakoda#pinakoda#noun#2#RM
 #By Nandini ji LTRC
 credit_card	kredita_kArda#kredita_kArda#noun#2#RM
 credit_cards	kredita_kArdas#kredita_kArdas#noun#2#RM
+training_material	praSikRaNa_sAmagrI#praSikRaNa_sAmagrI#noun#2#RM
+university_material	vixyApITa_ke_upayukwa#vixyApITa_ke_upayukwa#noun#2#RM
 #By Preeti ji LTRC
 at_all_costs    kisI_BI_kImawa_para#kisI_BI_kImawa_para#noun#3#RM

@@ -12254,7 +12254,7 @@ calculates_UNDEFINED	hisAba_lagAnA
 calculating_adjective	mawalabI/XUrwa/RadyanwrakArI
 calculatinger_UNDEFINED	mawalabI
 calculatingest_UNDEFINED	mawalabI
-calculation_noun	hisAba_kiwAba/parikalpanA/hisAba/gaNanA/cAla/anxAFjA/leKA
+calculation_noun	gaNanA/hisAba_kiwAba/parikalpanA/hisAba/cAla/anxAFjA/leKA
 calculations_UNDEFINED	gaNanA
 calculative_adjective	XUrwa/RadyanwrakArI/mawalbI
 calculator_noun	kElakuletara/yogakI_wAlikA/hisAba_lagAnevAlA/gaNanA-sAraNI/gaNanA_karanevAlA/gaNaka-yaNtra/gaNaka
@@ -13325,7 +13325,7 @@ censuring_UNDEFINED	ninxA_karanA
 census_noun	janagaNanA
 censuses_UNDEFINED	janagaNanA
 cent_UNDEFINED	sEkadA
-cent_noun	sikkA/Sawa
+cent_noun	sEnta/sikkA/Sawa
 centaur_UNDEFINED	ikannara
 centaur_noun	kinnara
 centenarian_noun	sOvarRIya_vyakwi
@@ -44315,9 +44315,9 @@ labyrinthine_adjective	pecIxA/BUlaBulEyAz_ke_samAna
 labyrinthiner_UNDEFINED	pecIxA
 labyrinthinest_UNDEFINED	pecIxA
 labyrinths_UNDEFINED	BulaBulEyA
-lace-up_noun	PIwA_vAlA_jUwA
-lace_noun	PIwA
-lace_verb	wasame_piro/wasame_bAzXa/PIwe_se_bazXa/PazsA/milA/Bara_xe/PIwA_bAzXa/puta_xe
+lace-up_noun	lEsa_vAlA/PIwA_vAlA_jUwA
+lace_noun	lEsa/PIwA
+lace_verb	PIwA_bAzXa/wasame_piro/wasame_bAzXa/PIwe_se_bazXa/PazsA/milA/Bara_xe/puta_xe
 laced_UNDEFINED	puta_xenA
 lacerate_verb	cira-Pata_jA
 lacerated_UNDEFINED	cira-Pata_jAnA
@@ -48828,7 +48828,7 @@ meteorologist_UNDEFINED	mOsamavijFAnI
 meteorologist_noun	mOsama_vEjFAnika
 meteorology_noun	mOsama_vijFAna
 meteors_UNDEFINED	ulkA
-meter_noun	mApaka/mItara
+meter_noun	mItara/mApaka
 meter_verb	mItara_se_nApa
 metered_UNDEFINED	mApaka
 metering_UNDEFINED	mApaka
@@ -52731,7 +52731,7 @@ nondrinker_noun	maxya-wyAgI
 none-the-less_adverb	Pira_BI
 none_adjective	nahIM_hEM
 none_adverb	bilkula_nahIM/bilkula_BI_nahIM
-none_noun	inakAra/koI_nahIM
+none_noun	koI_BI_nahIM/inakAra/koI_nahIM
 none_pronoun	koI_BI_nahIM/koI_nahIM
 nonenterprising_adjective	anuwsAhI
 nonentity_noun	wucCa_vyakwi
