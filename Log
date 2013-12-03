@@ -1,7 +1,7 @@
- 28-11-13
+ 03-12-13
  ========
- 1. WSD	: Modified : keep.clp	foundation.clp
-	  Added    : sun.clp
+ 1. WSD	: Modified : keep.clp	foundation.clp	time.clp	remove.clp
+	  Added    : sun.clp	reflect.clp
  2. GNP_agreement.clp
 	Modified : PP_pada_for_I_me_and_my and sub_and_samA_with_different_gender
  3. hindi_sent_reorder.clp
@@ -23,13 +23,17 @@
         changes_in_databases    
 10. Updated following shell files
 	run_sentence_stanford.sh  --- to add grep command for removing repeated mng
-11. Updated iit-bombay files in goldentdict:
+11. Updated following files in goldentdict:
 	iit-bombay.dict
 	iit-bombay.index
 	iit-bombay.txt1
-12. Updated Stanford_parser_fails
-13. Update Log.
-14. Updated  sd_verified (578)          verified_eng (40)               small_sent_verified_sd (123)
+	shabdanjali.dict.dz
+12. Updated following files:
+	Readme_to_use_email_in_firefox.txt
+	this1.py
+13. Updated Stanford_parser_fails
+14. Update Log.
+15. Updated  sd_verified (578)          verified_eng (40)               small_sent_verified_sd (123)
              phy_verified_eng (253)     phy_partial_ver_eng (282)
 
 

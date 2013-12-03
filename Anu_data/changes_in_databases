@@ -416,9 +416,11 @@
 	turtle     (              "                     "    )
 	donkey     (              "                     "    )
 	doctor	   (Suggested by Anita ji LTRC	   14-11-13  ) Ex: Doctors are trained to recognize the symptoms of different diseases.
-	thief	   (Suggested by Pramila Banasthali 16-08-13 ) Ex: The thief was driven back by the watch dogs.   
+	thief	   (Suggested by Pramila Banasthali 16-08-13 ) Ex: The thief was driven back by the watch dogs.  
+	horse      (Suggested by Preeti ji LTRC	    03-12-13)  Ex: The injured horse had to be destroyed.
+	demon	   (		  "			"   )  Ex: Lakshmi lures and destroys evil demons . 
+	army	   (              "	                "   )  Ex: Armies had been crippled but not destroyed .   
 
- 
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -636,6 +638,7 @@ Removed:
          time	1  (By Sukhada 13-02-11) 
          year	1  (        "                )
 	 second	1  (Suggested by Nandini ji LTRC 24-10-13) Ex: The winner cut ten seconds off the world record.
+	 month	1 (Suggested by Krithiki LTRC 03-12-13) Ex:The solution came through at the fatal moment. 
 
   Removed: month_day.txt and merged all its contents in time.txt (Suggested by Sukhada 08-03-11)
 
@@ -1235,7 +1238,10 @@ Removed:
 				Ex: "For example, when Johannes Kepler (1571-1630) examined the extensive data on planetary motion collected by 			            Tycho Brahe (1546-1601), the planetary circular orbits in heliocentric theory (sun at the center of the 
 				     solar system) imagined by Nicolas Copernicus (1473 — 1543) had to be replaced by elliptical orbits to
 				     fit the data better. "
- 	
+	85. college_noun	wakanIkI_kenxra	as	kAleja		(Suggested by Preeti ji 03-12-13)
+				Ex: He got interested in politics when he was in college.
+	86. celestial_adjective	svargIya	as	KagolIya	(Suggested by Preeti ji 03-12-13)
+ 				Ex: The night sky with its bright celestial objects has fascinated humans since time immemorial.  	
 
 	
     6. Removed meaning from existing list:
@@ -1549,6 +1555,10 @@ Removed:
 				Ex: The teacher saw her as good university material.
 	71. orphaned_children	anAWa_baccA#anAWa_baccA#noun#2#RM			(Suggested by Sukhada         26-11-13)
 				Ex: They established a foundation to help orphaned children.
+	72. prime_minister's	praXAna_maMwrI#praXAna_maMwrI#noun#2#RM			(By Roja 		03-12-13)
+				Ex: The prime minister's speech was well received by the conference delegates.
+	73. fatal_hour		nirNAyaka_pala#nirNAyaka_pala#noun#2#RM			(Suggested by Krithika 03-12-13)
+				Ex: The fatal hour was near.
 
 
     Added new meaning to the existing word:
@@ -1733,6 +1743,7 @@ Removed:
 	Moteram		moterAma 	("	"			19-11-13)
 	Vinayaka	vinAyaka	(By Roja			20-11-13)
 	Kumaraswamy	kumArasvAmI	(By Roja			20-11-13)
+	Congress	kAMgresa	(Suggested by Prachi Banasthali 03-12-13)
 
 
    Modified:
@@ -1755,7 +1766,10 @@ Removed:
 	pupil		(Suggested by Pramila Banasthali 25-11-13 ) Ex: Pupils are encouraged to be creative.   
 	student		(		"		   "	  ) Ex: We want to encourage students to read more.   
 	we		(		"		   "	  ) Ex: We were encouraged to learn foreign languages at school.  
-	shopper		(		"		   "	  ) Ex:	Music and lighting are used to encourage shoppers to buy more. 
+	shopper		(		"		   "	  ) Ex:	Music and lighting are used to encourage shoppers to buy more.
+	thief		(Suggested by Pramila Banasthali 16-08-13 ) Ex: The thief was driven back by the watch dogs.
+        demon		(Suggested by Preeti ji LTRC     03-12-13 ) Ex: Lakshmi lures and destroys evil demons .
+        army		(              "                     "    ) Ex: Armies had been crippled but not destroyed .
 
 
  changes in named_entities.txt

@@ -571,7 +571,7 @@ Multiple adjective senses are available for such. WSD rule is required
 
 Hindi meaning using Stanford parser 2.127
 It is a 2SYMBOL-DOT34 m diameter reflecting telescope (Cassegrain). 
-yaha xUrabIna (Cassegrain) xarSAwe_hue eka 2SYMBOL-DOT34 puruRa vyAsa hE.
+yaha xUrabIna (Cassegrain) xaraSAwe_hue eka 2SYMBOL-DOT34 puruRa vyAsa hE.
 
 Hindi meaning using Stanford parser 2.128
 On the other hand, glass is a dispersive medium. 
@@ -597,7 +597,7 @@ jaba yaha lacIlA safGat hE, wo vega kA parimANa vahI rahawA hE.
 
 Hindi meaning using Stanford parser 2.133
 The night sky with its bright celestial objects has fascinated humans since time immemorial. 
-usakI camakIlI svargIya vaswu se rAwa_kA AsamAna anAxi kAla se hI mAnava manwra-mugXa_kara cukA hE.
+usakI camakIlI KagolIya vaswu se rAwa_kA AsamAna anAxi kAla se hI mAnava manwra-mugXa_kara cukA hE.
 Multiple adjective senses are available for celestial. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.134
@@ -865,7 +865,7 @@ Fig. 1SYMBOL-DOT4 bI sAmyAvasWA hAlawa xiKAwI hE.
 
 Hindi meaning using Stanford parser 2.193
 (iv) Remove the rod. 
-(iv) Cada nikAla xewA hE.
+(iv) Cada hatA xewA hE.
 
 Hindi meaning using Stanford parser 2.194
 Like velocity, acceleration can also be positive, negative or zero. 

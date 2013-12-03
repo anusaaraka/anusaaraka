@@ -42,3 +42,6 @@ pupil	1
 student	1
 we	1
 shopper	1
+thief	1
+demon	1
+army	1

@@ -4,13 +4,14 @@
 2. sudo apt-get install apache2
 3. sudo apt-get install php5
 
-4. sudo cp mail.php /var/www/ 
-5. sudo cp ssmtp.conf /etc/ssmtp/
+4. cd $HOME_anu_test/miscellaneous/e-mail 
+	sudo cp  $HOME_anu_test/miscellaneous/e-mail/mail.php /var/www/ 
+5. 	sudo cp  $HOME_anu_test/miscellaneous/e-mail/ssmtp.conf /etc/ssmtp/
 
 #  Start the apache server with command :
 6. sudo service apache2 restart
 	(Note: If apache doesnt start then, 
-		add the following line in /etc/apache2/httpd.conf and the save the file
+		add the following line in sudo vi /etc/apache2/httpd.conf and the save the file
 		ServerName localhost
 	)
 

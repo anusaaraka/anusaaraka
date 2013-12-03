@@ -24260,6 +24260,7 @@ prime_entry	AraMiBaka_praviiRta_aMxarAja#AraMiBaka_praviiRta_aMxarAja#noun#2#RM
 prime_factors	aBAjya_guNaka#aBAjya_guNaka#noun#2#RM
 prime_location	cuniMxA_sWAna#cuniMxA_sWAna#noun#2#RM
 prime_minister	praXAna_maMwrI#praXAna_maMwrI#noun#2#RM
+prime_minister's	praXAna_maMwrI#praXAna_maMwrI#noun#2#RM
 prime_minister's_secretariate	praXAnamaMwrI_sacivAlaya#praXAnamaMwrI_sacivAlaya#noun#3#RM
 prime_number	aBAjya_aMka#aBAjya_aMka#noun#2#RM
 prime_time	muKya_avaXi#muKya_avaXi#noun#2#RM
@@ -33719,3 +33720,5 @@ training_material	praSikRaNa_sAmagrI#praSikRaNa_sAmagrI#noun#2#RM
 university_material	vixyApITa_ke_upayukwa#vixyApITa_ke_upayukwa#noun#2#RM
 #By Preeti ji LTRC
 at_all_costs    kisI_BI_kImawa_para#kisI_BI_kImawa_para#noun#3#RM
+#By Krithika ji LTRc
+fatal_hour	nirNAyaka_pala#nirNAyaka_pala#noun#2#RM

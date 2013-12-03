@@ -53,3 +53,6 @@ turtle	1
 donkey	1
 doctor	1
 thief	1
+horse	1
+demon	1
+army	1

@@ -13267,7 +13267,7 @@ celebrity_noun	prawiRTiwa_vyakwi/KyAwiprApwa_vyakwi/KyAwiI
 celerity_noun	wejI
 celery_UNDEFINED	ajavA
 celery_noun	ajavAina/ajamoxA
-celestial_adjective	svargIya/xivya/svargika/KagolIya/AkASIya
+celestial_adjective	KagolIya/svargIya/xivya/svargika/AkASIya
 celestialer_UNDEFINED	AkASIya
 celestialest_UNDEFINED	AkASIya
 celestially_UNDEFINED	svargIya
@@ -15636,7 +15636,7 @@ colleen_noun	javAna_ladakI
 colleens_UNDEFINED	javAna_ladakI
 college_UNDEFINED	koYleja
 college_adjective	kAleja_kI/kAleja_kA
-college_noun	wakanIkI_kenxra/vixyAlaya-Bavana/vixyalaya/safGa/mahAvisyAlaya/kenxra/kAleja/gaNa/mahAvixyAlaya
+college_noun	kAleja/wakanIkI_kenxra/vixyAlaya-Bavana/vixyalaya/safGa/mahAvisyAlaya/kenxra/gaNa/mahAvixyAlaya
 colleges_UNDEFINED	mahAvixyAlaya
 collegiate_adjective	sahaCAwra/kaleja_yukwa/kaleja_saMabnXI/CAwrA
 collegiater_UNDEFINED	CAwrA
