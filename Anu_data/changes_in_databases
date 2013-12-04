@@ -510,7 +510,6 @@ Modified :
         spot		admit__vblex		(     "	  14-03-11)
         engulf		accept__vblex		(     "   24-03-11)
         knee		liv/e__vblex		(     "   13-06-11)
-        new paradigm trek__vblex		(     "   14-10-11)
         grok		trek__vblex		(     "   14-10-11)
         trek		trek__vblex		(     "   14-10-11)
         yuk		trek__vblex		(     "   14-10-11)
@@ -572,12 +571,21 @@ Modified :
 	shrink		dr/ink__vblex		(     "      "    )
 	arms		personnel__n		(     "   02-10-13)
 	party		appl/y__vblex		(     "	  16-11-13)
+	even		accept__vblex		(     "	  04-12-13)
+	even		house__n		(     "   04-12-13)
+	even		long/__adj		(     "   04-12-13)
+	sow		hew__vblex		(     "   04-12-13)
 
 Modified paradigm:
      	belonging	house__n	as	personnel__n	(Suggested by Meena ji 12-05-11)
 	box		bass__n		a	access__n	(Suggested by Meena ji 10-08-11)
 	phenomenon	house__n	as	criteri/on__n	(By Roja	       14-03-13)
 	shrink		
+
+Added new paradigms:
+        trek__vblex		(By Roja	14-10-11)
+	quarrel_vblex		("		16-11-13)
+	refer_vblex		("		04-12-13)
 
 Modified root:
 	may		May		as	may		(By Roja 14-03-13)
@@ -596,16 +604,15 @@ Modified root based on paradigms:
  
 Miscellaneous:
 	Modified :
-	1. In p/erson__n  paradigm: 	person, people	as	person		(By Roja 02-04-13)
-	2. In riteri/on__n paradigm to generate 'criterias' word.		(By Roja 14-03-13)
-	3. ([0-9]+)?[04-9]+th 	as	([0-9]+)?[0-9]+th			(By Roja 17-07-13)
+	1. In p/erson__n  paradigm: 	person, people	as	person		(By Roja	02-04-13)
+	2. In riteri/on__n paradigm to generate 'criterias' word.		(By Roja	14-03-13)
+	3. ([0-9]+)?[04-9]+th 	as	([0-9]+)?[0-9]+th			(By Roja	17-07-13)
 
 Removed:
-	repetition entry <e lm="April"><i>April</i><par n="house__n"/></e>	(By Roja 27-07-13)
-	<e lm="shrunk"><i>shrunk</i><par n="accept__vblex"/></e>		(By Roja 07-09-13)
-	<e lm="shrank"><i>shrank</i><par n="accept__vblex"/></e>		(	"	 )
-
-
+	repetition entry <e lm="April"><i>April</i><par n="house__n"/></e>	(By Roja	27-07-13)
+	<e lm="shrunk"><i>shrunk</i><par n="accept__vblex"/></e>		(By Roja	07-09-13)
+	<e lm="shrank"><i>shrank</i><par n="accept__vblex"/></e>		("		"	)
+	<e lm="flags"><i>flags</i><par n="access__n"/></e>			("		04-12-13) 
 
 
  Added new files:
@@ -912,6 +919,7 @@ Removed:
 					Ex: This is WAP-enabled phone.
 	62. web-enabled_adjective    	vEba-yukwa			(		"			" )
 					Ex: This is web-enabled phone.
+	63. off-shoot_noun		eka_BAga			(Suggested by Sonam Banasthali 	  04-12-13)
 
 
     4. Added new meaning to the existing word:
@@ -1241,7 +1249,9 @@ Removed:
 	85. college_noun	wakanIkI_kenxra	as	kAleja		(Suggested by Preeti ji 03-12-13)
 				Ex: He got interested in politics when he was in college.
 	86. celestial_adjective	svargIya	as	KagolIya	(Suggested by Preeti ji 03-12-13)
- 				Ex: The night sky with its bright celestial objects has fascinated humans since time immemorial.  	
+ 				Ex: The night sky with its bright celestial objects has fascinated humans since time immemorial. 
+	87. cheer_noun		salAmawI_kA_jAma	as	prowsAhana	(Suggested by Preeti ji 04-12-13)
+				Ex: The announcement raised a cheer. 
 
 	
     6. Removed meaning from existing list:
@@ -1559,6 +1569,7 @@ Removed:
 				Ex: The prime minister's speech was well received by the conference delegates.
 	73. fatal_hour		nirNAyaka_pala#nirNAyaka_pala#noun#2#RM			(Suggested by Krithika 03-12-13)
 				Ex: The fatal hour was near.
+	74. load_of_rubbish	bakavAsa_se_BarapUra#bakavAsa_se_BarapUra#adjective#3#RM(Suggested by Anita ji LTRC 04-12-13)
 
 
     Added new meaning to the existing word:
@@ -1633,6 +1644,9 @@ Removed:
 	charge_verb		AveSiwa_kara	(		"		   "	 )
 	absorb_verb		avaSoRiwa_kara	(Suggested by Garima Banasthali  14-11-13)
 				EX:The dark lines indicate the frequencies that have been absorbed by the atoms of the gas.
+	protoplanetary_noun	protoplEnetarI	(Suggested by Sonam Banasthali	 04-12-13)
+	pre-solar_adjective	sOramaNdala_kI_racanA_se_pahale_ke(	"	   "	 )
+				Ex: However, with the pre-solar cloud, another factor had to be  taken into co..
 
 
     Modifying spelling of the existing word :

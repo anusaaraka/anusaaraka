@@ -28,5 +28,5 @@
 
 #To change the receiver mail id
 ------------------------------- 
-change the mail id present in /var/www/mail.php 
+change the mail id present in $HOME_anu_test/shell_scripts/this1.py
 (Note: email will be sent from /etc/ssmtp/sstmp.conf )

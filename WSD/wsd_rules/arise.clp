@@ -43,7 +43,9 @@
 (id-root ?id arise)
 ?mng <-(meaning_to_be_decided ?id)
 (or(kriyA-subject ?id ?id1)(viSeRya-kqxanwa_viSeRaNa ?id1 ?id))
-(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "inanimate.gdbm" ?str)))
+;(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "inanimate.gdbm" ?str))) 
+(id-root ?id1 ?str) ;As suggested by Chaitanya Sir removed inanimate.gdbm and modified the fact as shown by Roja (03-12-13) 
+(test (and (neq (numberp ?str) TRUE) (neq (gdbm_lookup_p "animate.gdbm" ?str) TRUE)))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id uwpanna_ho))

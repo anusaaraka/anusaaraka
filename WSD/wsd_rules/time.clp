@@ -123,7 +123,9 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
 (kriyA-object  ?id ?id1)
-(id-root ?id1  ?str&:(and (not (numberp ?str))(gdbm_lookup_p "inanimate.gdbm" ?str)))
+;(id-root ?id1  ?str&:(and (not (numberp ?str))(gdbm_lookup_p "inanimate.gdbm" ?str)))
+(id-root ?id1 ?str);As suggested by Chaitanya Sir removed inanimate.gdbm and modified the fact as shown by Roja (03-12-13) 
+(test (and (neq (numberp ?str) TRUE) (neq (gdbm_lookup_p "animate.gdbm" ?str) TRUE)))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id nApa))

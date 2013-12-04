@@ -65,3 +65,5 @@ Failures due to category problem::
 ================================
 Please say loudly.
 -> Parser gave loudly as adjective but it should be adverb
+I forgot to put the rubbish out this morning. 
+-> Parser gave rubbish category as adjective but it should be noun.

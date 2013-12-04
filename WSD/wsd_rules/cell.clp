@@ -32,7 +32,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kakRa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  cell.clp 	cell1   "  ?id "  kakR )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  cell.clp 	cell1   "  ?id "  kakRa )" crlf))
 )
 
 
@@ -45,7 +45,9 @@
 (id-root ?id cell)
 ?mng <-(meaning_to_be_decided ?id)
 (viSeRya-of_saMbanXI ?id ?id1)
-(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "inanimate.gdbm" ?str)))
+;(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "inanimate.gdbm" ?str)))
+(id-root ?id1 ?str);As suggested by Chaitanya Sir removed inanimate.gdbm and modified the fact as shown by Roja (03-12-13) 
+(test (and (neq (numberp ?str) TRUE) (neq (gdbm_lookup_p "animate.gdbm" ?str) TRUE)))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id KAnA))

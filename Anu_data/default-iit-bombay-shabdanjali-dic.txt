@@ -13876,7 +13876,7 @@ cheeking_UNDEFINED	gAla
 cheeks_UNDEFINED	gAla
 cheeky_UNDEFINED	guswAKa
 cheer_UNDEFINED	prowsAhiwa_kara
-cheer_noun	salAmawI_kA_jAma/prowsAhana/prasannawA/manoxaSA/jayaXvani/jaya-jayakAra/jayajayakAra/Bojana/harRa
+cheer_noun	prowsAhana/salAmawI_kA_jAma/prasannawA/manoxaSA/jayaXvani/jaya-jayakAra/jayajayakAra/Bojana/harRa
 cheer_verb	XIraja_bazXA/sAnwvanA_xe/SAbASI_xe/prowsAhana_xe/prasanna_kara/prasanna_ho/praSaMsA_kara/KuSa_ho/jaya-jayakAra_karake_prowsAhiwa_kara/jaya-jayakAra_karake_prowsAhana_xe/baXAI_xe/baDAvA_xe/harRiwa_kara/DADasa_bAzXa
 cheered_UNDEFINED	DADasa_bAzXanA
 cheerful_UNDEFINED	harRiwa
@@ -93503,3 +93503,4 @@ WAP-enabled_noun	vEpa-yukwa
 WAP-enabled_adjective	vEpa-yukwa
 web-enabled_noun	vEba-yukwa
 web-enabled_adjective	vEba-yukwa
+off-shoot_noun	eka_BAga

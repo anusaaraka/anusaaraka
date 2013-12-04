@@ -21,8 +21,6 @@ cd $HOME_anu_test/debugging/provisional_Anu_databases/
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/male_list.gdbm < male_list_in_canonical_form.txt
  echo "Creating Phrv.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/Phrv.gdbm < Phrv_in_canonical_form.txt
- echo "Creating animate_list.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/animate_list.gdbm < animate_list_in_canonical_form.txt
  echo "Creating kriyA_mUla-gender.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/kriyA_mUla-gender.gdbm < kriyA_mUla-gender_in_canonical_form.txt
  echo "Creating not_ne_verb_list.gdbm"
@@ -51,8 +49,6 @@ cd $HOME_anu_test/debugging/provisional_Anu_databases/
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/adverbs_list.gdbm < adverbs_list.txt
  echo "Creating uncountable.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/uncountable.gdbm < uncountable.txt
- echo "Creating inanimate.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/inanimate.gdbm < inanimate.txt
  echo "Creating animate.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/animate.gdbm < animate.txt
  echo "Creating plural_words.gdbm "

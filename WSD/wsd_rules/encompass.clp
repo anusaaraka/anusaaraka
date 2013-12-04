@@ -30,7 +30,9 @@
 (id-root ?id encompass)
 ?mng <-(meaning_to_be_decided ?id)
 (or(kriyA-object  ?id ?id1)(kriyA-subject  ?id ?id1))
-(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "inanimate.gdbm" ?str)))
+;(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "inanimate.gdbm" ?str)))
+(id-root ?id1 ?str);As suggested by Chaitanya Sir removed inanimate.gdbm and modified the fact as shown by Roja (03-12-13) 
+(test (and (neq (numberp ?str) TRUE) (neq (gdbm_lookup_p "animate.gdbm" ?str) TRUE)))
 (id-cat_coarse ?id verb )
 (id-root ?id1 ?root&~hill&~it);The hills encompass it.
 =>
