@@ -1,4 +1,4 @@
- 04-12-13
+ 05-12-13
  ========
  1. WSD	: Modified : keep.clp	foundation.clp	time.clp	remove.clp
 	  Added    : sun.clp	reflect.clp
@@ -39,6 +39,7 @@
 	this1.py
 	Stanford_parser_fails
 	list_Anu_data
+	list-left
 13. Removed following files 
 	inanimate.txt 
 	animate_list.txt

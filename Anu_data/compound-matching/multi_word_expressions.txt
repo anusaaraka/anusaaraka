@@ -33719,6 +33719,7 @@ credit_card	kredita_kArda#kredita_kArda#noun#2#RM
 credit_cards	kredita_kArdas#kredita_kArdas#noun#2#RM
 training_material	praSikRaNa_sAmagrI#praSikRaNa_sAmagrI#noun#2#RM
 university_material	vixyApITa_ke_upayukwa#vixyApITa_ke_upayukwa#noun#2#RM
+mirror_dish	xarpaNa_diSa#xarpaNa_diSa#noun#2#RM
 #By Preeti ji LTRC
 at_all_costs    kisI_BI_kImawa_para#kisI_BI_kImawa_para#noun#3#RM
 #By Krithika ji LTRc

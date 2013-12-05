@@ -48032,7 +48032,7 @@ mathematician_noun	gaNiwajFa
 mathematicians_UNDEFINED	gaNiwajFa
 mathematics_noun	gaNiwa
 maths_UNDEFINED	ihasAba
-maths_noun	hisAba/gaNiwa
+maths_noun	gaNiwa/hisAba
 matinee_noun	sinemA_aparAhNa/xopahara_kA_Kela
 mating_UNDEFINED	subaha_kI_prArWa
 mating_noun	subaha_kI_prArWanA
