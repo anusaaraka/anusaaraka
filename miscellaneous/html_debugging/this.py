@@ -5,14 +5,17 @@ countline=0
 countspace=0
 j=0
 home=os.getenv("HOME")
-path=sys.argv[2]+"/sample1"
+path=sys.argv[2]+"/"+sys.argv[3]+"_sample1"
 f2 = open(path,"w")
-f2.write("");
-f2.close();
+f2.write("")
+f2.close()
 f2 = open(path,"a")
-flagglobal=0;
+flagglobal=0
+tablecount=0
 for i in f1:
 	countline+=1
+	if(countline>3 and countline%2==0):
+		tablecount+=1
 	countspace=0
 	flag=0;
 	for char in i:
@@ -25,7 +28,7 @@ for i in f1:
 		if(flag==0):
 			if(char==' ' and countspace==0):
 				f2.write(char)
-				f2.write("<span id=\""+str(j)+"\" onclick=\"func("+str(j)+")\">")
+				f2.write("<div id=\"table"+str(tablecount)+"\" style=\"display:inline;\">\n<span id=\""+str(j)+"\" onclick=\"func("+str(j)+")\">")
 				j=j+1
 				countspace+=1
 				continue
@@ -36,6 +39,8 @@ for i in f1:
 					f2.write(char)
 					f2.write("<span id=\""+str(j)+"\" onclick=\"func("+str(j)+")\">")
 					j=j+1
+				if(char=='\n'):
+					f2.write("\n</div>")
 			if(char!=' '):
 				f2.write(char)
 		else:

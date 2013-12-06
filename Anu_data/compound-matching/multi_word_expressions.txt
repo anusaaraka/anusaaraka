@@ -33229,6 +33229,7 @@ similar_charges	sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
 relative_pronoun	sambanXa_vAcaka_sarvanAma#sambanXa_vAcaka_sarvanAma#noun#1#RM
 relative_adverb	sambanXa_vAcaka_kriyA_viReSaNa#sambanXa_vAcaka_kriyA_viReSaNa#noun#1#RM
 orphaned_children	anAWa_baccA#anAWa_baccA#noun#2#RM
+talk_show	anOpacArika_bAwacIwa_kAryakrama#anOpacArika_bAwacIwa_kAryakrama#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

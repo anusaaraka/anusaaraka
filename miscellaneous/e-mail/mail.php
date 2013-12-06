@@ -7,6 +7,7 @@ $subject = $_GET['subject'];
 $message = $_GET['message'];
 $message = str_replace( "Sentence" , "\nSentence" , $message );
 $message = str_replace( "Hindi" , "\nHindi" , $message );
+$message = str_replace( "Manual" , "\nManual" , $message );
 $message = str_replace( "Suggestion" , "\nSuggestion" , $message );
 $from = "root@localhost";
 $headers = "From:" . $from;

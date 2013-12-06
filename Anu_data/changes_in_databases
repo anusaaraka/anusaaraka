@@ -805,6 +805,10 @@ Removed:
 	96. intellect_noun	buxxI			as	buxXI		(Suggested by Chaitanya Sir 20-11-13)
 	97. loudly_adverb	jEYora_se		as	jZora_se	(Suggested by Nandini ji LTRC 27-11-13)
 	98. drastic_adjective	uxaNda			as	uxxaNda		(Suggested by Chaitanya Sir 26-11-13  )
+	99. passage_noun	yAtrAXikAra		as	yAwrAXikAra	(Suggested by Chaitanya Sir 05-12-13)
+	100.passage_noun	yAtrA			as	yAwrA		(	"		"	    )
+	101.passage_noun	gamana_svAtanwrya	as	gamana_svAwanwrya(	"		"	    )
+	102.electromagnetism_noun	vixyuw-cumbakawva	as	vixyuwa_cumbakawva	(suggested by Sukhada 04-12-13)
 
 
     3. Added new entry:
@@ -1649,6 +1653,7 @@ Removed:
 	absorb_verb		avaSoRiwa_kara	(Suggested by Garima Banasthali  14-11-13)
 				EX:The dark lines indicate the frequencies that have been absorbed by the atoms of the gas.
 	protoplanetary_noun	protoplEnetarI	(Suggested by Sonam Banasthali	 04-12-13)
+				Ex: The Infra Red Astronomy Satellite IRAS launched in 1983 succeeded in discovering such protoplanetary 					   discs around a few nearby stars like beta pictoris. 
 	pre-solar_adjective	sOramaNdala_kI_racanA_se_pahale_ke(	"	   "	 )
 				Ex: However, with the pre-solar cloud, another factor had to be  taken into co..
 

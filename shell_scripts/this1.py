@@ -79,6 +79,8 @@ for i in range(0,len(dire)):
 	dire[i][1] = str(dire[i][1])
 	dire[i] = ".".join(dire[i])
 	os.chdir(dire[i])
+	#print dire[i]
+	maxi = -1
 
 	"""Accessing hindi_meanings.dat"""
 	fph = open('hindi_meanings.dat', 'r')
@@ -94,7 +96,10 @@ for i in range(0,len(dire)):
 		while(char[k]!=' '):
 			k=k+1
 		dic2 = []
-		dic2.append(int("".join(char[x:k])))
+		no = int("".join(char[x:k]))
+		dic2.append(no)
+		if(no>maxi and no<10000):
+			maxi=no
 		while(char[k]==' '):
 			k=k+1
 		while(char[k]!=' '):
@@ -109,29 +114,41 @@ for i in range(0,len(dire)):
 		if "WSD" not in source:
 			if(source=="Default_meaning"):
 				dic2.append("Anu_data/default-iit-bombay-shabdanjali-dic.txt")
+				if dic2[0] not in check:
+					check.append(dic2[0])
+					dic1.append(dic2)
 			elif(source=="Database_compound_phrase_root_mng"):
 				dic2.append("Anu_data/compound-matching/multi_word_expressions.txt")
+				if dic2[0] not in check:
+					check.append(dic2[0])
+					dic1.append(dic2)
 			elif(source=="Word"):
 				dic2.append("Anu_clp_files/causative_verb_mng.clp")
-			else:
-				dic2.append("#")
-			check.append(dic2[0])
-			dic1.append(dic2)
+				if dic2[0] not in check:
+					check.append(dic2[0])
+					dic1.append(dic2)
 		dic2 = []
 		k=k+2
 	fph.close()
+	#print dic1
 
 	"""Accessing GNP_agmt_info.dat"""
 	fp = open('GNP_agmt_info.dat','r')
 	char = fp.read()
-	#Added below two line by Sukhada to avoid error: no = int("".join(char[x:k]))
-	#ValueError: invalid literal for int() with base 10: '10 13'
-	if char[:31] == '(conj_head-left_head-right_head' :
-		char = char[char.find(')')+1:]
 	char = list(char)
 	k=0
 	while(len(char)-k>1):
-		for j in range(0,2):
+		x=k
+		while(char[k]!=' ' and char[k]!='\t'):
+			k=k+1
+		if("".join(char[x:k])=="(conj_head-left_head-right_head"):
+			while(char[k]!='\n'):
+				k=k+1
+			k=k+1
+			continue
+		while(char[k]==' ' or char[k]=='\t'):
+			k=k+1
+		for j in range(0,1):
 			while(char[k]!=' ' and char[k]!='\t'):
 				k=k+1
 			while(char[k]==' ' or char[k]=='\t'):
@@ -153,6 +170,7 @@ for i in range(0,len(dire)):
 			k=k+1
 		source = "".join(char[x:k])
 		if(source=="Default"):
+			check.append(no)
 			link = "Anu_data/hindi_default_tam.txt"	
 			dic2.append(link)	
 			dic2.append(source)
@@ -161,6 +179,7 @@ for i in range(0,len(dire)):
 			k=k+1
 		k=k+1
 	fp.close()
+	#print dic1
 
 	"""Accessing debug_file.dat"""
 	fp = open('debug_file.dat', 'r')
@@ -172,7 +191,7 @@ for i in range(0,len(dire)):
 		while(char[k]!=' ' and char[k]!='\t'):
 			k=k+1
 		sen = "".join(char[x:k])
-		if(sen=="(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng"):
+		if(sen=="(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng" or sen=="(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_word_mng"):
 			while(char[k]==' ' or char[k]=='\t'):
 				k=k+1
 			while(char[k]!='/'):
@@ -206,22 +225,41 @@ for i in range(0,len(dire)):
 			if no not in check:
 				check.append(no)
 				dic1.append(tmp)
+			else:
+				for j in range(0,len(dic1)):
+					if(no==dic1[j][0] and len(dic1[j])>=3):
+						if(dic1[j][2]=="Default"):
+							dic1.append(tmp)
+							break
 			"""getting second number"""
 			while(char[k]==' ' or char[k]=='\t'):
 				k=k+1
 			x=k
+			digit=1
 			while(char[k]!=' ' and char[k]!='\t'):
-				k=k+1
-			tmp = []
-#			print '===========',"".join(char[-100:-1]), x, k, char[x:k] #  ''.join(char),
-			no = int("".join(char[x:k]))
-			tmp.append(no)
-			tmp.append(link)
-			""""""
-			if no not in check:
-				check.append(no)
-				dic1.append(tmp)
-		elif(sen=="(dir_name-file_name-rule_name-id-wsd_root_mng"):
+				if(char[k]=='=' or char[k]==':'):
+					char.pop(k)
+				elif(char[k]!='0' and char[k]!='1' and char[k]!='2' and char[k]!='3' and char[k]!='4' and char[k]!='5' and char[k]!='6' and char[k]!='7' and char[k]!='8' and char[k]!='9'):
+					digit=0
+					break;
+				else:
+					k=k+1
+			if(digit==1):
+				tmp = []
+				no = int("".join(char[x:k]))
+				tmp.append(no)
+				tmp.append(link)
+				""""""
+				if no not in check:
+					check.append(no)
+					dic1.append(tmp)
+				else:
+					for j in range(0,len(dic1)):
+						if(no==dic1[j][0] and len(dic1[j])>=3):
+							if(dic1[j][2]=="Default"):
+								dic1.append(tmp)
+								break
+		elif(sen=="(dir_name-file_name-rule_name-id-wsd_root_mng" or sen=="(dir_name-file_name-rule_name-id-wsd_word_mng"):
 			while(char[k]==' ' or char[k]=='\t'):
 				k=k+1
 			while(char[k]!='/'):
@@ -246,6 +284,8 @@ for i in range(0,len(dire)):
 				k=k+1
 			x=k
 			while(char[k]!=' ' and char[k]!='\t'):
+				if(char[k]!='0' and char[k]!='1' and char[k]!='2' and char[k]!='3' and char[k]!='4' and char[k]!='5' and char[k]!='6' and char[k]!='7' and char[k]!='8' and char[k]!='9'):
+					break
 				k=k+1
 			tmp = []
 			no = int("".join(char[x:k]))
@@ -255,6 +295,12 @@ for i in range(0,len(dire)):
 			if no not in check:
 				check.append(no)
 				dic1.append(tmp)
+			else:
+				for j in range(0,len(dic1)):
+					if(no==dic1[j][0] and len(dic1[j])>=3):
+						if(dic1[j][2]=="Default"):
+							dic1.append(tmp)
+							break
 		elif(sen=="(default-iit-bombay-shabdanjali-dic.gdbm"):
 			while(char[k]==' ' or char[k]=='\t'):
 				k=k+1
@@ -269,6 +315,12 @@ for i in range(0,len(dire)):
 			if no not in check:
 				check.append(no)
 				dic1.append(tmp)
+			else:
+				for j in range(0,len(dic1)):
+					if(no==dic1[j][0] and len(dic1[j])>=3):
+						if(dic1[j][2]=="Default"):
+							dic1.append(tmp)
+							break
 		elif(sen=="(dir_name-file_name-rule_name-id-H_tam_mng"):
 			while(char[k]==' ' or char[k]=='\t'):
 				k=k+1
@@ -306,6 +358,16 @@ for i in range(0,len(dire)):
 			k=k+1
 		k=k+1
 	fp.close()
+	#print dic1
+	for j in range(1,maxi+1):
+		if j not in check:
+			tmp = []
+			tmp.append(j)
+			tmp.append("#")
+			dic1.append(tmp)
+	#print dic1
+	#print check
+	#print maxi
 	dic1.sort()
 	flag=0
 	for j in range(0,len(dic1)):
@@ -323,7 +385,6 @@ for i in range(0,len(dire)):
 				tmp.append(dic1[j+1][1])
 				tmp.append(dic1[j][1])
 #				print '==========', dic1[j], '******', j, dic1, '______', tmp, ''.join(char),
-
 				tmp.append(dic1[j][2])
 			flag=1
 			dic.append(tmp)
@@ -336,7 +397,7 @@ f1.close()
 
 
 f1 = open(sys.argv[1])
-path = sys.argv[2]+"/sample2.html"
+path = sys.argv[2]+"/"+sys.argv[5]+"_sample2.html"
 f2 = open(path,"a")
 f2.write("")
 count=0
@@ -349,7 +410,7 @@ for line in f1:
 	l+=1
 	f2.write(line)
 	if(l==count-2):
-		f2.write("<style type=\"text/css\">\n/* popup_box DIV-Styles*/\n#popup_box {\ndisplay:none;\nposition:fixed;\n_position:absolute;\nheight:160px;\nwidth:37%;\nbackground:#FFFFFF;\nleft: 20%;\ntop: 150px;\nz-index:100;\nmargin-left: 15px;  \nborder:2px solid #ff0000;\nopacity:0;\npadding:15px;\nfont-size:15px;\n-moz-box-shadow: 0 0 5px #ff0000;\n-webkit-box-shadow: 0 0 5px #ff0000;\nbox-shadow: 0 0 5px #ff0000;\n}\n\na{\ncursor: pointer;\ntext-decoration:none;\n}\n\n/* This is for the positioning of the Close Link */\n#popupBoxClose {\nfont-size:20px;\nline-height:15px;\nright:5px;\ntop:5px;\nposition:absolute;\ncolor:#6fa5e2;\nfont-weight:500;\n}\n</style>\n<div id=\"popup_box\">\n<textarea name=\"message\" id=\"message\" rows=\"5\" style=\"width:80%;\" readonly></textarea><br/><br/>\nSuggestion : <input type=\"text\" id=\"sug\" name=\"sug\"/><br/>\n<input type=\"submit\" value=\"Send Email\" style=\"float:right;\" onclick=\"mail();return false;\">\n<a id=\"popupBoxClose\">Close</a>\n</div>\n<style type=\"text/css\">\n            .opaqueLayer\n            {\n                display:none;\n                position:absolute;\n                top:0px;\n                left:0px;\n                opacity:0.6;\n                filter:alpha(opacity=60);\n                background-color: #000000;\n                z-Index:1;\n            }\n</style>\n<div id=\"shadow\" class=\"opaqueLayer\"> </div>\n<script>\nfunction mail(){\n	var message = document.getElementById(\"message\");\n	var sug = \"Suggestion - \" + document.getElementById('sug').value;\n	var mes = \"\";\n	var i=7, ind=0;\n	while(message.value[i]!=' '&&message.value[i]!='\\n'){\n		mes+=message.value[i];\n		i++;\n	}\n	var data = \"subject=Incorrect Translation For \\\"\" + mes + \"\\\"\";\n	data+=\"&email=\";\n	var i=7;\n	var char=message.value[i++].toUpperCase();\n	while(char!=' ') {\n		if(char=='A'||char=='B'){\n			data+=\"gsingh.nik@gmail.com\";\n			data += \"&message=Dear Garima Singh,%0A%0A\" + message.value + sug;\n			break;\n		}\n		if(char=='C'){\n			data+=\"pradhan.preet@gmail.com\";\n			data += \"&message=Dear Preeti,%0A%0A\" + message.value + sug;\n			break;\n		}\n		if(char=='D'||char=='E'){\n			data+=\"pramila3005@gmail.com\";\n			data += \"&message=Dear Pramila,%0A%0A\" + message.value + sug;\n			break;\n		}\n		if(char=='F'||char=='G'){\n			data+=\"krithika.ns@gmail.com\";\n			data += \"&message=Dear Krithika,%0A%0A\" + message.value + sug;\n			break;\n		}\n		if(char=='H'||char=='I'||char=='J'||char=='K'){\n			data+=\"prachirathore02@gmail.com\";\n			data += \"&message=Dear Prachi Rathore,%0A%0A\" + message.value + sug;\n			break;\n		}\n		if(char=='L'||char=='M'||char=='N'){\n			data+=\"nandini.upasani@gmail.com\";\n			data += \"&message=Dear Nandini,%0A%0A\" + message.value + sug;\n			break;\n		}\n		if(char=='O'||char=='P'){\n			data+=\"sonam27virgo@gmail.com\";\n			data += \"&message=Dear Sonam,%0A%0A\" + message.value + sug;\n			break;\n		}\n		if(char=='Q'||char=='R'||char=='W'||char=='X'||char=='Y'||char=='Z'){\n			data+=\"anita.chaturvedi@gmail.com\";\n			data += \"&message=Dear Anita,%0A%0A\" + message.value + sug;\n			break;\n		}\n		if(char=='S'){\n			data+=\"singh.jagriti5@gmail.com\";\n			data += \"&message=Dear Jagriti Singh,%0A%0A\" + message.value + sug;\n			break;\n		}\n		if(char=='T'||char=='U'||char=='V'){\n			data+=\"roja19p@gmail.com\";\n			data += \"&message=Dear Roja,%0A%0A\" + message.value + sug;\n			break;\n		}\n		char=message.value[i++].toUpperCase();\n	}\n	var xmlhttp=new XMLHttpRequest();\n	message.innerHTML=\"\";\n	document.getElementById(\"popup_box\").style.display=\"none\";\n	document.getElementById('popup_box').style.opacity=\"0\";\n	hideLayer();\n	var flag;\n	xmlhttp.onreadystatechange=function()\n	{\n		flag=0;\n		if (xmlhttp.readyState==4 ){\n			flag=1;\n			alert(\"MESSAGE HAS BEEN SUCCESSFULLY SENT\");\n            	}\n	};\n	xmlhttp.open(\"GET\",\"http://127.0.0.1/mail.php?\"+data,true);\n	xmlhttp.send(null);\n}\n</script>\n<script>\nfunction getBrowserHeight() {\n                var intH = 0;\n                var intW = 0;\n                if(document.body && (document.body.clientWidth || document.body.clientHeight)) {\n                    intH = document.body.clientHeight;\n                    intW = document.body.clientWidth;\n                }\n                return { width: parseInt(intW), height: parseInt(intH) };\n            }\n            function setLayerPosition() {\n                var shadow = document.getElementById(\"shadow\");\n                var bws = getBrowserHeight();\n                shadow.style.width = bws.width + \"px\";\n                shadow.style.height = bws.height + \"px\";\n                shadow = null;\n            }\n            function showLayer() {\n                setLayerPosition();\n                var shadow = document.getElementById(\"shadow\");\n                shadow.style.display = \"block\";\n                shadow = null;\n            }\n            function hideLayer() {\n                var shadow = document.getElementById(\"shadow\");\n                shadow.style.display = \"none\";\n                shadow = null;\n            }\nwindow.onresize = setLayerPosition;\ntable=document.getElementsByTagName(\"table\");\nfor(i=0;i<table.length;i++)\n{\ntable[i].ondblclick=function(){\n	showLayer();\n	var str = \"Word - \";\n	tr = this.getElementsByTagName('tr');\n	td = tr[0].getElementsByTagName('td');\n	a = td[0].getElementsByTagName('a');\n	span = a[0].getElementsByTagName('span');\n	if(span[0]==null){\n		a = td[1].getElementsByTagName('a');\n		span = a[0].getElementsByTagName('span');\n		str += span[0].innerHTML;\n	}\n	else str += span[0].innerHTML;\n	//getting sentence\n	table1=document.getElementsByTagName(\"table\");\n	var nextsen = \"\";\n	for(i=0;i<table1.length;i++)\n	{\n		if(table1[i]==this)break;\n	}\n	var k=i;\n	for(j=i;j>=0;j--)\n	{\n		tr = table1[j].getElementsByTagName('tr');\n		td = tr[0].getElementsByTagName('td');\n		if(td[1]!=null){\n			senno = td[0].innerHTML;\n			k=j;\n			break;\n		}\n	}\n	for(j=k;j<=i;j++)\n	{\n		tr = table1[j].getElementsByTagName('tr');\n		td = tr[0].getElementsByTagName('td');\n		if(j!=k){\n			a = td[0].getElementsByTagName('a');\n		}\n		else{\n			a = td[1].getElementsByTagName('a');\n		}\n		span = a[0].getElementsByTagName('span');\n		nextsen += span[0].innerHTML+\" \";\n	}\n	for(j=i+1;j<table1.length;j++)\n	{\n		tr = table1[j].getElementsByTagName('tr');\n		td = tr[0].getElementsByTagName('td');\n		if(td[1]==null){\n			a = td[0].getElementsByTagName('a');\n			span = a[0].getElementsByTagName('span');\n			nextsen += span[0].innerHTML+\" \";\n		}\n		else{\n			break;\n		}\n	}\n	str += \"\\nSentence - \"+nextsen + \"\\nHindi Translation - \";" + jvstr + "	document.getElementById(\"message\").innerHTML=str;\n	loadPopupBox();\n};\n}\nfunction loadPopupBox() {    // To Load the Popupbox\n	document.getElementById('popup_box').style.display=\"block\";\n        document.getElementById('popup_box').style.opacity=\"1\";\n}\ndocument.getElementById('popupBoxClose').onclick= function() {           \n        document.getElementById('popup_box').style.display=\"none\";\n        document.getElementById('popup_box').style.opacity=\"0\";\n	hideLayer();\n}\n</script>\n")
+		f2.write("<style type=\"text/css\">\n/* popup_box DIV-Styles*/\n#popup_box {\ndisplay:none;\nposition:fixed;\n_position:absolute;\nheight:160px;\nwidth:37%;\nbackground:#FFFFFF;\nleft: 20%;\ntop: 150px;\nz-index:100;\nmargin-left: 15px;  \nborder:2px solid #ff0000;\nopacity:0;\npadding:15px;\nfont-size:15px;\n-moz-box-shadow: 0 0 5px #ff0000;\n-webkit-box-shadow: 0 0 5px #ff0000;\nbox-shadow: 0 0 5px #ff0000;\n}\n\na{\ncursor: pointer;\ntext-decoration:none;\n}\n\n/* This is for the positioning of the Close Link */\n#popupBoxClose {\nfont-size:20px;\nline-height:15px;\nright:5px;\ntop:5px;\nposition:absolute;\ncolor:#6fa5e2;\nfont-weight:500;\n}\n</style>\n<div id=\"popup_box\">\n<textarea name=\"message\" id=\"message\" rows=\"5\" style=\"width:80%;\" readonly></textarea><br/><br/>\nSuggestion : <input type=\"text\" id=\"sug\" name=\"sug\"/><br/>\n<input type=\"submit\" value=\"Send Email\" style=\"float:right;\" onclick=\"mail();return false;\">\n<a id=\"popupBoxClose\">Close</a>\n</div>\n<style type=\"text/css\">\n            .opaqueLayer\n            {\n                display:none;\n                position:absolute;\n                top:0px;\n                left:0px;\n                opacity:0.6;\n                filter:alpha(opacity=60);\n                background-color: #000000;\n                z-Index:1;\n            }\n</style>\n<div id=\"shadow\" class=\"opaqueLayer\"> </div>\n<script>\nfunction mail(){\n	var message = document.getElementById(\"message\");\n	var sug = \"Suggestion - \" + document.getElementById('sug').value;\n	var mes = \"\";\n	var i=7, ind=0;\n	while(message.value[i]!=' '&&message.value[i]!='\\n'){\n		mes+=message.value[i];\n		i++;\n	}\n	var data = \"subject=Incorrect Translation For \\\"\" + mes + \"\\\"\";\n	data+=\"&email=\";\n	var i=7;\n	var char=message.value[i++].toUpperCase();\n	while(char!=' ') {\n		if(char=='A'||char=='B'){\n			data+=\"gsingh.nik@gmail.com\";\n			data += \"&message=Dear Garima Singh,%0A%0A\" + message.value + sug;\n			break;\n		}\n		if(char=='C'){\n			data+=\"pradhan.preet@gmail.com\";\n			data += \"&message=Dear Preeti,%0A%0A\" + message.value + sug;\n			break;\n		}\n		if(char=='D'||char=='E'){\n			data+=\"pramila3005@gmail.com\";\n			data += \"&message=Dear Pramila,%0A%0A\" + message.value + sug;\n			break;\n		}\n		if(char=='F'||char=='G'){\n			data+=\"krithika.ns@gmail.com\";\n			data += \"&message=Dear Krithika,%0A%0A\" + message.value + sug;\n			break;\n		}\n		if(char=='H'||char=='I'||char=='J'||char=='K'){\n			data+=\"prachirathore02@gmail.com\";\n			data += \"&message=Dear Prachi Rathore,%0A%0A\" + message.value + sug;\n			break;\n		}\n		if(char=='L'||char=='M'||char=='N'){\n			data+=\"nandini.upasani@gmail.com\";\n			data += \"&message=Dear Nandini,%0A%0A\" + message.value + sug;\n			break;\n		}\n		if(char=='O'||char=='P'){\n			data+=\"sonam27virgo@gmail.com\";\n			data += \"&message=Dear Sonam,%0A%0A\" + message.value + sug;\n			break;\n		}\n		if(char=='Q'||char=='R'||char=='W'||char=='X'||char=='Y'||char=='Z'){\n			data+=\"anita.chaturvedi@gmail.com\";\n			data += \"&message=Dear Anita,%0A%0A\" + message.value + sug;\n			break;\n		}\n		if(char=='S'){\n			data+=\"singh.jagriti5@gmail.com\";\n			data += \"&message=Dear Jagriti Singh,%0A%0A\" + message.value + sug;\n			break;\n		}\n		if(char=='T'||char=='U'||char=='V'){\n			data+=\"prachirathore02@gmail.com\";\n			data += \"&message=Dear Prachi,%0A%0A\" + message.value + sug;\n			break;\n		}\n		char=message.value[i++].toUpperCase();\n	}\n	var xmlhttp=new XMLHttpRequest();\n	message.innerHTML=\"\";\n	document.getElementById(\"popup_box\").style.display=\"none\";\n	document.getElementById('popup_box').style.opacity=\"0\";\n	hideLayer();\n	var flag;\n	xmlhttp.onreadystatechange=function()\n	{\n		flag=0;\n		if (xmlhttp.readyState==4 ){\n			flag=1;\n			alert(\"MESSAGE HAS BEEN SUCCESSFULLY SENT\");\n            	}\n	};\n	xmlhttp.open(\"GET\",\"http://127.0.0.1/mail.php?\"+data,true);\n	xmlhttp.send(null);\n}\n</script>\n<script>\nfunction getBrowserHeight() {\n                var intH = 0;\n                var intW = 0;\n                if(document.body && (document.body.clientWidth || document.body.clientHeight)) {\n                    intH = document.body.clientHeight;\n                    intW = document.body.clientWidth;\n                }\n                return { width: parseInt(intW), height: parseInt(intH) };\n            }\n            function setLayerPosition() {\n                var shadow = document.getElementById(\"shadow\");\n                var bws = getBrowserHeight();\n                shadow.style.width = bws.width + \"px\";\n                shadow.style.height = bws.height + \"px\";\n                shadow = null;\n            }\n            function showLayer() {\n                setLayerPosition();\n                var shadow = document.getElementById(\"shadow\");\n                shadow.style.display = \"block\";\n                shadow = null;\n            }\n            function hideLayer() {\n                var shadow = document.getElementById(\"shadow\");\n                shadow.style.display = \"none\";\n                shadow = null;\n            }\nwindow.onresize = setLayerPosition;\ntable=document.getElementsByTagName(\"table\");\nfor(i=0;i<table.length;i++)\n{\ntable[i].ondblclick=function(){\n	showLayer();\n	var str = \"Word - \";\n	tr = this.getElementsByTagName('tr');\n	td = tr[0].getElementsByTagName('td');\n	a = td[0].getElementsByTagName('a');\n	span = a[0].getElementsByTagName('span');\n	if(span[0]==null){\n		a = td[1].getElementsByTagName('a');\n		span = a[0].getElementsByTagName('span');\n		str += span[0].innerHTML;\n	}\n	else str += span[0].innerHTML;\n	//getting sentence\n	table1=document.getElementsByTagName(\"table\");\n	var nextsen = \"\";\n	var man=0;\n	for(i=0;i<table1.length;i++)\n	{\n		if(table1[i].getElementsByTagName(\"tr\")[0].getElementsByTagName(\"td\").length==2)man++;\n		if(table1[i]==this)break;\n	}\n	man--;\n	var k=i;\n	for(j=i;j>=0;j--)\n	{\n		tr = table1[j].getElementsByTagName('tr');\n		td = tr[0].getElementsByTagName('td');\n		if(td[1]!=null){\n			senno = td[0].innerHTML;\n			k=j;\n			break;\n		}\n	}\n	for(j=k;j<=i;j++)\n	{\n		tr = table1[j].getElementsByTagName('tr');\n		td = tr[0].getElementsByTagName('td');\n		if(j!=k){\n			a = td[0].getElementsByTagName('a');\n		}\n		else{\n			a = td[1].getElementsByTagName('a');\n		}\n		span = a[0].getElementsByTagName('span');\n		nextsen += span[0].innerHTML+\" \";\n	}\n	for(j=i+1;j<table1.length;j++)\n	{\n		tr = table1[j].getElementsByTagName('tr');\n		td = tr[0].getElementsByTagName('td');\n		if(td[1]==null){\n			a = td[0].getElementsByTagName('a');\n			span = a[0].getElementsByTagName('span');\n			nextsen += span[0].innerHTML+\" \";\n		}\n		else{\n			break;\n		}\n	}\n	str += \"\\nSentence - \"+nextsen + \"\\nHindi Translation - \";" + jvstr + "if(top.frames[\"ManHindiTranslation\"]){\n	var fr = top.ManHindiTranslation;\n	var tableid = \"table\"+man;\n	var mansen = fr.document.getElementById(tableid);\n	var manspan = mansen.getElementsByTagName(\"span\");\n	var manhnd=\"\";\n	for(i=0;i<manspan.length;i++){\n		manhnd += manspan[i].innerHTML + \" \";\n	}\n	str += \"\\nManual Translation - \" + manhnd;\n}\n	document.getElementById(\"message\").innerHTML=str;\n	loadPopupBox();\n};\n}\nfunction loadPopupBox() {    // To Load the Popupbox\n	document.getElementById('popup_box').style.display=\"block\";\n        document.getElementById('popup_box').style.opacity=\"1\";\n}\ndocument.getElementById('popupBoxClose').onclick= function() {           \n        document.getElementById('popup_box').style.display=\"none\";\n        document.getElementById('popup_box').style.opacity=\"0\";\n	hideLayer();\n}\n</script>\n")
 		f2.write("<script>\nwindow.onload=function(){\n	var tr = document.getElementsByClassName('row9');\n")
 		for i in range(0,len(dic)):
 			if(len(dic[i])==1):
@@ -359,4 +420,5 @@ for line in f1:
 				string = "var td = tr[" + str(i) + "].getElementsByTagName('td');\n	var index=0;\n	if(td.length==2)index=1;\n	var a = td[index].getElementsByTagName('a');\n	var span = a[0].getElementsByTagName('span');\n	var spanv = span[0].innerHTML;\n	var av = a[0].innerHTML;\n	var ind = av.indexOf(spanv);\n	ind--;\n	av=av.slice(0,ind);\n	var k=0;\n	var r = av.indexOf('{');\n	var av1;\n	var av2;\n	if(r!=-1){\n		k = r;\n		av1 = av.slice(0,k);\n		av2 = av.slice(k,av.length-1);\n	}\n	else{\n		av1 = av;\n		av2 = \"tam\";\n		spanv += \" : tam missing\";\n	}\n	a[0].parentNode.removeChild(a[0]);\n	var a1 = document.createElement(\"a\");\n	a1.innerHTML = av1;\n	a1.target = \"blank\";\n	a1.href = \"file://" + sys.argv[3] + "/" + dic[i][0] + "\";\n	a1.className = \"tooltip\";\n	var span1 = document.createElement(\"span\");\n	span1.innerHTML = spanv;\n	a1.appendChild(span1);\n	var a2 = document.createElement(\"a\");\n	a2.innerHTML = av2;\n	a2.target = \"blank\";\n	a2.href = \"file://" + sys.argv[3] + "/" + dic[i][1] + "\";\n	a2.className = \"tooltip\";\n	var span2 = document.createElement(\"span\");\n	span2.innerHTML = \"" + dic[i][2] +"\";\n	a2.appendChild(span2);\n	td[index].appendChild(a1);\n	td[index].appendChild(a2);\n"
 				f2.write(string)
 		f2.write("}\n</script>\n")
+		f2.write("<script type=\"text/javascript\">\nvar a= document.getElementById(\"navigation\");\nvar form = a.getElementsByTagName(\"form\");\nform[0].style.display=\"inline\";\nform[0].getElementsByTagName(\"p\")[0].style.display=\"inline\";\nvar link= document.createElement('form');\nlink.id=\"form1\";\nlink.style.display=\"inline\";\nvar inp= document.createElement('input');\nvar submit= document.createElement('input');\ninp.type='text';\ninp.id='sentence';\ninp.value='0.0';\ninp.size=\"3\";\nsubmit.type=\"submit\";\nsubmit.value=\"Check Sentence Reordering\";\nlink.appendChild(inp);\nlink.appendChild(submit);\nlink.method=\"POST\";\na.appendChild(link);\nvar button = document.createElement('button');\nbutton.onclick=function(){\nvar no1=window.open(\"http://127.0.0.1/tregex.php\",\"\",\"width=1,height=1\");\n};\nvar text = document.createTextNode(\"Open Parser\");\nbutton.appendChild(text);\na.appendChild(button);\n</script>\n<script type=\"text/javascript\">\nvar myVar = setInterval(function(){myTimer()},3000);\n\nfunction myTimer()\n{\nvar add = document.getElementById('sentence');\nvar add1 = add.value;\nvar a= document.getElementById(\"navigation\");\nvar link = document.getElementById('form1');\nvar address= document.createTextNode((\"file://" + sys.argv[4] + "/tmp/" + sys.argv[5] + "_tmp/\".concat(add1)).concat(\"/hindi_id_order.dat\"));\nlink.action=address.nodeValue;\nlink.target=\"blank\";\n}\na.appendChild(link);\n</script>")
 f2.close()

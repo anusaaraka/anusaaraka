@@ -12,7 +12,7 @@
 		run_stanford-gui-pcfg.sh
 
 5. To view Stanford Notation:
-	firefox $HOME_anu_test/Doc/PennTreeBankNotation/penn_treebank_pos.html
+	firefox $HOME_anu_test/Doc/Stanford_parser_documentation/penn_treebank_pos.html
 
 6. To view dictionaries in GUI(goldendict):
 	Check Readme in $HOME_anu_test/miscellaneous/Dictionaries/

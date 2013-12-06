@@ -1553,7 +1553,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-to_saMbanXI  ?id1 ?id2)
 ;(id-root ?id1 heat)
-(or(id-root ?id1 tune|fall)(id-root ?id2 temperature|top|place|river|station))
+(or(id-root ?id1 tune|fall|write)(id-root ?id2 temperature|top|place|river|station))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id para))
@@ -1611,3 +1611,20 @@
 ;According to her he will not come.
 ;The dress may be nice but it is not to her liking.
 
+
+;Added by Prachi Rathore[4-12-13].
+;This question was finally answered about 50 to 60 years ago.
+;इस प्रश्न का लगभग 50 से 60 वर्ष पहले अन्ततः उत्तर दिया गया था . 
+(defrule to74
+(declare (salience 2000))
+(id-root ?id to)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id preposition)
+(saMKyA-saMKyA  ?id1 ?)
+(viSeRya-viSeRaNa  ?id1 ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id se))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to74   "  ?id "  se )" crlf))
+)

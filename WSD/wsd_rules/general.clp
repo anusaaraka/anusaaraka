@@ -1,5 +1,5 @@
 ;##############################################################################
-;#  Copyright (C) 2013-2014 Prachi Rathore (prachirathore02 at gmail dot com)
+;#  Copyright (C) 2013-2014 Prachi Rathore (prachirathore02@gmail.com)
 ;#
 ;#  This program is free software; you can redistribute it and/or
 ;#  modify it under the terms of the GNU General Public License
@@ -17,9 +17,9 @@
 ;#  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 ;
 ;##############################################################################
-; I was on the phone late last night with the general of Corps of Engineers.   (COCA corpus)
+;I was on the phone late last night with the general of Corps of Engineers.
 ;मैं  कल देर रात तक इंजीनियर्स के जनरल के साथ फोन पर था।
-;Lee had served as a general in the Polish army from 1765 to 1770.		(COCA corpus)
+;Lee had served as a general in the Polish army from 1765 to 1770.
 ;ली ने १७६५ से १७७० तक पुलिस सेना के लिए एक जनरल के रूप में कार्य किया था।
 (defrule general0
 (declare (salience 4800))
@@ -33,10 +33,23 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  general.clp 	general0   "  ?id "  janarala )" crlf))
 )
-;xxxxxxxxxxxxxxxxx DEFAULT RULE xxxxxxxxxxxxxxxxxxxxxxxxxxxx
-;He discussed the general but neglected the particular.  [ thefreedictionary.com ]
-;उसने सामान्य के विषय मे चर्चा की परन्तु विशिष्ट की उपेक्षा की.
+
 (defrule general1
+(declare (salience 4800))
+(id-root ?id general)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(viSeRya-viSeRaNa ? ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id vyApaka))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  general.clp 	general1   "  ?id "  vyApaka )" crlf))
+)
+;xxxxxxxxxxxxxxxxx DEFAULT RULE xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+;He discussed the general but neglected the particular.
+;उसने सामान्य के विषय मे चर्चा की परन्तु विशिष्ट की उपेक्षा की.
+(defrule general2
 (declare (salience 2800))
 (id-root ?id general)
 ?mng <-(meaning_to_be_decided ?id)
@@ -45,12 +58,12 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id sAmAnya))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  general.clp 	general1   "  ?id "  sAXAraNa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  general.clp 	general2   "  ?id "  sAmAnya )" crlf))
 )
 
-;My general impression of the place was good. [ cambridge dictionary ]
+;My general impression of the place was good.
 ;जगह के लिये मेरी सामान्य धारणा अच्छी थी.
-(defrule general2
+(defrule general3
 (declare (salience 2800))
 (id-root ?id general)
 ?mng <-(meaning_to_be_decided ?id)
@@ -59,5 +72,5 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id sAmAnya))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  general.clp 	general2   "  ?id "  sAmAnya )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  general.clp 	general3   "  ?id "  sAmAnya )" crlf))
 )

@@ -2583,5 +2583,28 @@ Hindi meaning using Stanford parser 5.86
 She sleeps even in the office. 
 vaha xaPwara meM BI sowI hE.
 
+Hindi meaning using Stanford parser 5.87
+This field is called electromagnetism. 
+yaha kRewra vixyuwa cumbakawva kahA jAwA hE.
+
+Hindi meaning using Stanford parser 5.88
+If this is your idea of a joke, then I do not find it very funny. 
+yaxi yaha cutakule kA ApakA vicAra hE, wo waba mEM isako awyanwa hAsyAspaxa nahIM pAwA hUz.
+Multiple adjective senses are available for funny. WSD rule is required 
+
+Hindi meaning using Stanford parser 5.89
+He discussed the general but neglected the particular. 
+usane sAmAnya ke viRaya meM carcA kI paranwu viSiRta kI upekRA kI.
+Multiple adjective senses are available for particular. WSD rule is required 
+
+Hindi meaning using Stanford parser 5.90
+His words implied a threat. 
+usake SabxoM ne XamakI nihiwa WI.
+
+Hindi meaning using Stanford parser 5.91
+Are you implying that I am fat? 
+kyA Apa safkewa_xe rahe hEM ki mEM motA hUz?
+Multiple adjective senses are available for fat. WSD rule is required 
+
 Calling Transliteration
 Calling Interface related programs

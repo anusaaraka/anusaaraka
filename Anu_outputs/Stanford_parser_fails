@@ -64,6 +64,8 @@ Did you send a birthday card to Sheela?
 Failures due to category problem::
 ================================
 Please say loudly.
--> Parser gave loudly as adjective but it should be adverb
+	-> Parser gave loudly as adjective but it should be adverb
 I forgot to put the rubbish out this morning. 
--> Parser gave rubbish category as adjective but it should be noun.
+	-> Parser gave rubbish category as adjective but it should be noun.
+The word "field " signifies how some distributed quantity (which could be a scalar or a vector) varies with position.
+	-> Parser gave distributed category as verb but it should be adjective.

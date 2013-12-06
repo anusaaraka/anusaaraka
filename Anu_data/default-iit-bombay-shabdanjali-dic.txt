@@ -25517,7 +25517,7 @@ electromagnetic_adjective	vixyuwa_cumbakIya/vixyuw-cumbakIya
 electromagneticer_UNDEFINED	vixyuwa_cumbakIya
 electromagneticest_UNDEFINED	vixyuwa_cumbakIya
 electromagnetics_UNDEFINED	vixyuwa_cumbakIya
-electromagnetism_noun	vixyuw-cumbakawva
+electromagnetism_noun	vixyuwa_cumbakawva
 electron-microscope_noun	ilektrAna_sUkRmaxarSI
 electron_noun	ilektroYna/awisUkRma_paramANu
 electronic-mail_noun	ilEktrAnika_dAka
@@ -56271,7 +56271,7 @@ passabler_UNDEFINED	svIkArya
 passablest_UNDEFINED	svIkArya
 passably_adjective	svIkaraNIya_rUpa_se
 passably_adverb	kAmacalAU_Dafga_se
-passage_noun	anucCexa/yAtrAXikAra/yAtrA/wakarAra/svIkqwi/pEseja_hAzka/pEseja/paWa/parivarwana/paraspara_viSvAsa_vinimaya/mArga/maFjUrI/malowsarjana/leKAMSa/kirAyA/gamana-sWAna/gamana_svAwantrya/galI/gal/barAmaxA/BAdA/azSa/aMSa/gamana/galiyArA/nAlikA_mArga
+passage_noun	anucCexa/yAwrAXikAra/yAwrA/wakarAra/svIkqwi/pEseja_hAzka/pEseja/paWa/parivarwana/paraspara_viSvAsa_vinimaya/mArga/maFjUrI/malowsarjana/leKAMSa/kirAyA/gamana-sWAna/gamana_svAwanwrya/galI/gal/barAmaxA/BAdA/azSa/aMSa/gamana/galiyArA/nAlikA_mArga
 passaged_UNDEFINED	gamana
 passages_UNDEFINED	gamana
 passaging_UNDEFINED	gamana
