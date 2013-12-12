@@ -5377,3 +5377,4 @@ Zor_Lagaa_Ke_Haiya	jora_lagA_ke_hEyA#jora_lagA_ke_hEyA#noun#4#RM
 Zuari_river	juArI_naxI#juArI_naxI#noun#2#RM
 Zulm_Ki_Pukar	jZulma_kI_pukAra#jZulma_kI_pukAra#noun#3#RM
 Zulm_Ko_Jala_Doonga	jZulma_ko_jalA_xUMgA#jZulma_ko_jalA_xUMgA#noun#4#RM
+Crab_Nebula	karka_nihArikA#karka_nihArikA#noun#2#RM

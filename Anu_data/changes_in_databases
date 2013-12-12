@@ -924,6 +924,8 @@ Removed:
 	62. web-enabled_adjective    	vEba-yukwa			(		"			" )
 					Ex: This is web-enabled phone.
 	63. off-shoot_noun		eka_BAga			(Suggested by Sonam Banasthali 	  04-12-13)
+	64. copper-plate_noun		wAmrapawra			(Suggested by Preeti ji 	  11-12-13)
+					Ex: There is a copper-plate inscription of the time in the temple.
 
 
     4. Added new meaning to the existing word:
@@ -1258,6 +1260,10 @@ Removed:
 				Ex: The announcement raised a cheer.
 	88. maths_noun		hisAba		as	gaNiwa 		(Suggested by Nandini ji 05-12-13)
 				Ex: I was always very poor at maths at school.
+	89.chocolate_noun	gahara_BurA_rafga	as	cAkaleta	(Suggested by Preeti ji 07-12-13)
+				Ex: In one pocket he found a bar of chocolate, which Grandpa had probably got for them, and in the other 				       some papers.
+	90.convex_adjective	maXyonnawa	as	uwwala		(suggested by Preeti ji 11-12-13)
+				Ex: For a convex mirror, the reflected rays appear to diverge from a point F on its principal axis Fig. 9.3(b).
 
 	
     6. Removed meaning from existing list:
@@ -1383,6 +1389,7 @@ Removed:
     101_Days	101_desa#101_desa#noun#2#RM
 		to
     Zulm_Ko_Jala_Doonga	jZulma_ko_jalA_xUMgA#jZulma_ko_jalA_xUMgA#noun#4#RM	
+    Crab_Nebula		karka_nihArikA#karka_nihArikA#noun#2#RM	(Suggested by Nandini ji LTRC 07-12-13)
     
  multi_word_expressions.txt
  ==========================
@@ -1578,6 +1585,10 @@ Removed:
 	74. load_of_rubbish	bakavAsa_se_BarapUra#bakavAsa_se_BarapUra#adjective#3#RM(Suggested by Anita ji LTRC 04-12-13)
 	75. mirror_dish		xarpaNa_diSa#xarpaNa_diSa#noun#2#RM			(Suggested by Nandini ji LTRC 05-12-13)
 				Ex: Moreover, if the mirror 'dish' is very large it tends to sag under its own weight.
+	76. interest_rate	byAja_xara#byAja_xara#noun#1#RM				(Suggested by Prachi 07-12-13)
+				Ex: The interest rate has been capped at 5 %.
+	77. copper_plate	wAmrapawra#wAmrapawra#noun#2#RM				(Suggested by Preeti ji 11-12-13)
+				Ex: There is a copper plate inscription of the time in the temple.
 
 
     Added new meaning to the existing word:
@@ -1767,6 +1778,8 @@ Removed:
 	Vinayaka	vinAyaka	(By Roja			20-11-13)
 	Kumaraswamy	kumArasvAmI	(By Roja			20-11-13)
 	Congress	kAMgresa	(Suggested by Prachi Banasthali 03-12-13)
+	Ganga		gaMgA		(Suggested by Krithika LTRC 	11-12-13)
+	Gatldis		gEtaladisa	(	"		"	"	)
 
 
    Modified:

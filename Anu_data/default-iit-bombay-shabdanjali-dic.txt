@@ -17472,7 +17472,7 @@ converting_UNDEFINED	Xarma_parivarwana_karanA
 convertor_UNDEFINED	parivarwaka
 convertors_UNDEFINED	parivarwaka
 converts_UNDEFINED	Xarma_parivarwana_karanA
-convex_adjective	maXyonnawa/uwwala
+convex_adjective	uwwala/maXyonnawa
 convexed_UNDEFINED	maXyonnawa
 convexer_UNDEFINED	maXyonnawa
 convexes_UNDEFINED	maXyonnawa
@@ -93504,3 +93504,4 @@ WAP-enabled_adjective	vEpa-yukwa
 web-enabled_noun	vEba-yukwa
 web-enabled_adjective	vEba-yukwa
 off-shoot_noun	eka_BAga
+copper-plate_noun	wAmrapawra

@@ -1,7 +1,8 @@
- 06-12-13
+ 12-12-13
  ========
  1. WSD	: Modified : keep.clp	foundation.clp	time.clp	remove.clp	ed_en_tam.clp	to.clp	idea.clp
-	  Added    : sun.clp	reflect.clp	general.clp	host.clp
+		     warm.clp
+	  Added    : sun.clp	reflect.clp	general.clp	host.clp	imply.clp
 	  Removed inanimate.txt and handled it with animate.txt as Suggested by Chaitanya Sir. so following files are modified:
 		arise.clp	be.clp		catch.clp	cell.clp	charge.clp
 		deal.clp	time.clp	demonstrate.clp	encompass.clp	remain.clp
@@ -53,7 +54,7 @@
 15. Renamed:  Doc/PennTreeBankNotation/ folder to Doc/Stanford_parser_documentation/
 16. Added Bracketing Guidelines for Treebank II Style Penn Treebank Project 1.html in Doc/Stanford_parser_documentation/
 17. Update Log.
-18. Updated  sd_verified (591)          verified_eng (40)               small_sent_verified_sd (124)
+18. Updated  sd_verified (591)          verified_eng (40)               small_sent_verified_sd (125)
              phy_verified_eng (253)     phy_partial_ver_eng (282)
 
 

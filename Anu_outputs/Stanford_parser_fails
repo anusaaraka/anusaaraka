@@ -69,3 +69,7 @@ I forgot to put the rubbish out this morning.
 	-> Parser gave rubbish category as adjective but it should be noun.
 The word "field " signifies how some distributed quantity (which could be a scalar or a vector) varies with position.
 	-> Parser gave distributed category as verb but it should be adjective.
+My parents are always rowing about money.
+	-> Parser gave rowing category as verb but it should be noun.
+Holding Devyani's hand, and with the support of the stick, Aditya slowly made his way across.
+	-> Parser gave Holding category as NNP but it should be verb.

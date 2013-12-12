@@ -78,9 +78,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id xaraSA ))
+(assert (id-wsd_root_mng ?id xarSA ))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  reflect.clp	reflect_xaraSA   "  ?id " xaraSA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  reflect.clp	reflect_xaraSA   "  ?id " xarSA )" crlf))
 )
 ;################### Additional Examples ####################
 ;He saw himself reflected in the shop window.
