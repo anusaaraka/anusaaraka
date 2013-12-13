@@ -423,16 +423,15 @@
         (print_in_ctrl_fact_files  ?verb_id)
  )
  ;----------------------------------------------------------------------------------------------------------------------
- ;A big, black, ugly dog chased me.  I do not have very much money.
+ ;A big, black, ugly dog chased me.  I do not have very much money. Look how blue it is.
  ; Expand adjp in NP
  (defrule get_adjp_group
  (declare (salience 950))
  ?f0<-(head_id-prawiniXi_id-grp_ids ?h ?p_id $?d ?adjp $?d1)
- (prawiniXi_id-node-category ?p_id ?NP NP|WHNP)
+ (prawiniXi_id-node-category ?p_id ?NP NP|WHNP|WHADVP)
  (prawiniXi_id-node-category ?adjp ?ADJP ADJP|WHADJP)
  ?f1<-(head_id-prawiniXi_id-grp_ids ? ?adjp ?id $?daut)
  (not (adjp_head ?adjp))
- (test (neq (length $?daut) 0)) ;How much more spilled? 
  =>
 	(retract ?f0 ?f1 )
 	(assert (head_id-prawiniXi_id-grp_ids ?h ?p_id $?d ?id $?daut $?d1))

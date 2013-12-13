@@ -35,15 +35,42 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " lose.clp	lose1  "  ?id "  " ?id1 "  vaMciwa_ho  )" crlf))
 )
 
+;@@@ Added by Shirisha Manju Suggested by Chaitanya Sir (11-12-13)
+;He has lost his confidence.
+(defrule lose2
+(declare (salience 100))
+(id-root ?id lose)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?id ?obj)
+(id-root ?obj confidence)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Ko_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lose.clp      lose2   "  ?id "  Ko_xe )" crlf))
+)
 
-
-
-
+;@@@ Added by Shirisha Manju Suggested by Chaitanya Sir (11-12-13)
+;He has lost his purse|book.
+(defrule lose3
+(declare (salience 100))
+(id-root ?id lose)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?id ?obj)
+(id-root ?obj purse|book)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Ko_jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lose.clp      lose3   "  ?id "  Ko_jA )" crlf))
+)
 
 
 ;Children who are handicapped lose out to play.
 ;apAhija bacce Kelane se vaMciwa raha jAwe hEM
-(defrule lose2
+(defrule lose4
 (declare (salience 0))
 ;(declare (salience 4900))
 (id-root ?id lose)
@@ -53,7 +80,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id Ko))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lose.clp 	lose2   "  ?id "  Ko )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lose.clp 	lose4   "  ?id "  Ko )" crlf))
 )
 
 ;default_sense && category=verb	Ko xe	0

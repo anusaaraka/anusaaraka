@@ -389,7 +389,8 @@
  ?f1<-(id-word ?id ?word&if|although)  ;Modified by Meena (28-10-10) 
  (not (wo_inserted )) ;restricted for Stanford Parser bcoz "wo" is generated using constituents.
  (prep_id-relation-anu_ids  ? kriyA-conjunction  ?k ?id)
- ?f0 <-(hindi_id_order $?pre ?k $?post)
+ ?f0 <-(hindi_id_order $?pre ?k ?then $?post)
+ (id-HM-source ?then ?hmng&~waba ?) ;If I have made a mistake, then it is up to me to set it right.
  (not (hindi_id_order $? ?k))
  =>
         (retract ?f0 ?f1)

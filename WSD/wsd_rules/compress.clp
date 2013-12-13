@@ -20,8 +20,6 @@
 
 ;If you press a coiled spring, the spring is compressed by the force of your hand.
 ;yaxi Apa kisI kuNdaliwa kamAnI ko apane hAWoM se xabAez wo vaha kamAnI Apake hAWoM ke bala se xaba jAwI hE.
-;Size of data reduces when data is compressed. 
-;detA kA AkAra GatAwA hE jaba detA sampIdiwa kiyA jAwA hE.
 (defrule compress1
 (declare (salience 3500))
 (id-root ?id compress)
@@ -35,6 +33,8 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  compress.clp 	compress1   "  ?id "  xaba )" crlf))
 )
 
+;Size of data reduces when data is compressed. 
+;detA kA AkAra GatAwA hE jaba detA sampIdiwa kiyA jAwA hE.
 ;Please compress the image. 
 ;kqpayA prawibimba sampIdiwa kIjie.
 (defrule compress2

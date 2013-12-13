@@ -588,18 +588,6 @@
 	(assert (Sen $?daut))
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-;The Master said, if I did not go, how would you ever see? 
-(defrule create_sen_SBAR
-(declare (salience 100))
-?f1<-(Head-Level-Mother-Daughters ?head ? ?dat $?child)
-(id-original_word ?head ?word&~while);The cyclist will slip while taking the circular turn.
-(Node-Category  ?dat SBAR|SBARQ)
-(not (sbar_ids $?child))
-;(not (dont_separate_sbar ?dat))
-=>
-        (assert (Sen  $?child))
-        (assert (sbar_ids $?child))
-)
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule rm_last_node_in_sen
 (declare (salience 95))
@@ -645,7 +633,7 @@
 (defrule insert_sen_con_id
 (declare (salience 61))
 (pada_info (group_head_id 10001)(preposition $?prep_ids))
-(sbar_ids $?prep_ids $? ?id)
+(Sen $?prep_ids $? ?id)
 ?f1<-(hindi_id_order  $?ids ?id $?ids1)
 (not (got_new_id 10001))
 =>

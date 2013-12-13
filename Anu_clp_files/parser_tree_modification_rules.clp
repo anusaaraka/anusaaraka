@@ -75,12 +75,13 @@
  ;=======================================  Modifications for Order ===============================================
 
  ;In Kashmir, fishing is a good business and the ideal season is from April to October. 
+ ;I shall continue to work from 6 a.m. till midnight, even if it kills me.
  ;Suggested by Sukhada 
  (defrule from_to_PPs
  (declare (salience 10))
  ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d1 ?PP1 ?PP2 $?d2)
  (Head-Level-Mother-Daughters from ? ?PP1 $?d3)
- (Head-Level-Mother-Daughters to ? ?PP2 $?d4)
+ (Head-Level-Mother-Daughters to|till ? ?PP2 $?d4)
  (Node-Category  ?PP1    PP)
  (Node-Category  ?PP2    PP)
  (not (Mother  ?PP1))

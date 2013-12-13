@@ -141,7 +141,7 @@
 (declare (salience 3900))
 (id-root ?id as)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) adviser)
+(id-word =(+ ?id 1) adviser|writer|evidence) ; Added writer in the list and removed as12 rule and also included evidence by  garima singh-Banasthali Vidyapith(14.8.13)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ke_rUpa_meM))
@@ -149,17 +149,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  as.clp 	as11   "  ?id "  ke_rUpa_meM )" crlf))
 )
 
-(defrule as12
-(declare (salience 3800))
-(id-root ?id as)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) writer)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id ke_rUpa_meM))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  as.clp 	as12   "  ?id "  ke_rUpa_meM )" crlf))
-)
 
 (defrule as13
 (declare (salience 3700))

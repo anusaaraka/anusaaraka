@@ -417,9 +417,11 @@
 	donkey     (              "                     "    )
 	doctor	   (Suggested by Anita ji LTRC	   14-11-13  ) Ex: Doctors are trained to recognize the symptoms of different diseases.
 	thief	   (Suggested by Pramila Banasthali 16-08-13 ) Ex: The thief was driven back by the watch dogs.  
-	horse      (Suggested by Preeti ji LTRC	    03-12-13)  Ex: The injured horse had to be destroyed.
-	demon	   (		  "			"   )  Ex: Lakshmi lures and destroys evil demons . 
-	army	   (              "	                "   )  Ex: Armies had been crippled but not destroyed .   
+	horse      (Suggested by Preeti ji LTRC	    03-12-13 ) Ex: The injured horse had to be destroyed.
+	demon	   (		  "			"    ) Ex: Lakshmi lures and destroys evil demons . 
+	army	   (              "	                "    ) Ex: Armies had been crippled but not destroyed .   
+	bird	   (Suggested by Pramila Banasthali 12-12-13 ) Ex: The bird settled on a very small branch.
+	husband	   ((Suggested by Anita ji LTRC     12-12-13 ) Ex: I sent my husband to represent me at the funeral. 
 
 
   Changes in total-paxasUwra.txt 
@@ -661,18 +663,22 @@ Removed:
  ==================================
     Modified :
     --------
-    1. may_need_to_0	nA_kI_jarUWawa_pada_sakawI_hE-0-0    as    ne_kI_jarUWawa_pada_sakawI_hE-ko-0 (by Meena 13-04-11)        2. may_need_to_0    ne_kI_jarUWawa_pada_sakawI_hE-ko-0   as    ne_kI_jarUrawa_pada_sakawI_hE-ko-0 (by Manju 26-01-12)
+    1. may_need_to_0	nA_kI_jarUWawa_pada_sakawI_hE-0-0    as    ne_kI_jarUWawa_pada_sakawI_hE-ko-0 (by Meena 13-04-11)
+    2. may_need_to_0    ne_kI_jarUWawa_pada_sakawI_hE-ko-0   as    ne_kI_jarUrawa_pada_sakawI_hE-ko-0 (by Manju 26-01-12)
     3. need_not_0       nA_kI_jZarUrawa_hE-ko-nahIM 	     as    ne_kI_jZarUrawa_hE-ko-nahIM (Suggested by Chaitanya Sir 2-6-12)
     4. need_to_0        nA_kI_jZarUrawa_hE-ko-0		     as	   ne_kI_jZarUrawa_hE-ko-0     (	"		)
     5. let_0		ne_xo-0-0			     as	   let_0	ne_xo-ko-0     (Suggested by Sukhada  28-11-13)
 			Ex: Let her go to the market. 
+    6. had_en		0_cukA_WA-0-0			     as	   yA_WA-0-0		       (Suggested by Chaitanya Sir 12-12-13)
+    7. has_en		0_cukA_hE-0-0			     as    yA_hE-0-0		       ( 	"		"	   )
 
 
     Added:
     ------
 	1. 0			wA_hE
 	2. used_to_be_en	yA_jAwA_WA-0-0  (Suggested by Rajini 17-01-12) Ex: She used to be organized.
-	3. needs_to_be_en	yA_jAnA_hE-0-0              "                  Ex: That's the way business used to be done and that is the way business needs to be done.
+	3. needs_to_be_en	yA_jAnA_hE-0-0              "                  Ex: That's the way business used to be done and that is the
+										    way business needs to be done.
 
  Removed :
  -------
@@ -926,6 +932,9 @@ Removed:
 	63. off-shoot_noun		eka_BAga			(Suggested by Sonam Banasthali 	  04-12-13)
 	64. copper-plate_noun		wAmrapawra			(Suggested by Preeti ji 	  11-12-13)
 					Ex: There is a copper-plate inscription of the time in the temple.
+	65. egret_noun 			kapowa				(Suggested by Pamila Banasthali   13-12-13)
+					Ex: A pair of kites glided in circles in the clear blue sky, and in the distance a white egret could
+                                            be seen winging its way homeward
 
 
     4. Added new meaning to the existing word:
@@ -1076,12 +1085,14 @@ Removed:
 	82. lace-up_noun		lEsa_vAlA		(	"	"			)
 	83. civilisation_noun		samAja			(	"	Sukhada   26-11-13      )
 					Ex:The science of electricity and magnetism is the foundation for the modern technological civilisation
-	84. observe_verb		preKRaNa_kara/avalokana_kara	(Suggested by Chaitanya Sir  26-11-12)
+	84. observe_verb		prekRaNa_kara/avalokana_kara	(Suggested by Chaitanya Sir  26-11-12)
 					Ex: "One kind of response from the earliest times has been to observe the physical environment 
 					    carefully, look for any meaningful patterns and relations in natural phenomena, and build and
 					    use new tools to interact with nature. "
 	85. originate_verb		uxBava_ho		(Suggested by Chaitanya Sir  26-11-12)
 					Ex: The word Science originates from the Latin verb Scientia meaning 'to know'. 
+	86. doorway_noun    		xvArapaWa		(Suggested by Pramila Banasthali 12-12-13)
+					Ex: He suddenly appeared in the doorway.
 
 
     5. Modifying first meaning from the list :
@@ -1252,19 +1263,22 @@ Removed:
 				Ex: "For example, when Johannes Kepler (1571-1630) examined the extensive data on planetary motion collected by 			            Tycho Brahe (1546-1601), the planetary circular orbits in heliocentric theory (sun at the center of the 
 				     solar system) imagined by Nicolas Copernicus (1473 — 1543) had to be replaced by elliptical orbits to
 				     fit the data better. "
-	85. college_noun	wakanIkI_kenxra	as	kAleja		(Suggested by Preeti ji 03-12-13)
+	85. college_noun	wakanIkI_kenxra	as	kAleja			(Suggested by Preeti ji 03-12-13)
 				Ex: He got interested in politics when he was in college.
-	86. celestial_adjective	svargIya	as	KagolIya	(Suggested by Preeti ji 03-12-13)
+	86. celestial_adjective	svargIya	as	KagolIya		(Suggested by Preeti ji 03-12-13)
  				Ex: The night sky with its bright celestial objects has fascinated humans since time immemorial. 
 	87. cheer_noun		salAmawI_kA_jAma	as	prowsAhana	(Suggested by Preeti ji 04-12-13)
 				Ex: The announcement raised a cheer.
-	88. maths_noun		hisAba		as	gaNiwa 		(Suggested by Nandini ji 05-12-13)
+	88. maths_noun		hisAba		as	gaNiwa 			(Suggested by Nandini ji 05-12-13)
 				Ex: I was always very poor at maths at school.
 	89.chocolate_noun	gahara_BurA_rafga	as	cAkaleta	(Suggested by Preeti ji 07-12-13)
 				Ex: In one pocket he found a bar of chocolate, which Grandpa had probably got for them, and in the other 				       some papers.
-	90.convex_adjective	maXyonnawa	as	uwwala		(suggested by Preeti ji 11-12-13)
+	90.convex_adjective	maXyonnawa	as	uwwala			(suggested by Preeti ji 11-12-13)
 				Ex: For a convex mirror, the reflected rays appear to diverge from a point F on its principal axis Fig. 9.3(b).
-
+	91. special_noun    	viSiRta_vyakwi	as	viSeRa			(Suggested by Jagriti Banasthali 12-12-13)
+				Ex: And, of course, there is nothing special about our Galaxy.
+	92. excuse_noun     	mukwi		as	bahAnA			(Suggested by Pramila Banasthali 12-12-13)
+				Ex: He always gives the same old excuses.
 	
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1333,6 +1347,7 @@ Removed:
 	29. freeman-{pl.freemen}_noun		svAXIna_nAgarika	(	"			 "	)
 	30. grain_UNDEFINED 	anAja					(Suggested by Shweta Banasthali 29-10-13)
 	31. observe_UNDEFINED	avalokana_kara				( Suggested by Chaitanya Sir    26-11-13)
+	32. doorway_UNDEFINED   xvArapaWa				(Suggested by Pramila Banasthali 12-12-13)
 
 
     8. Modified category:
@@ -1589,6 +1604,13 @@ Removed:
 				Ex: The interest rate has been capped at 5 %.
 	77. copper_plate	wAmrapawra#wAmrapawra#noun#2#RM				(Suggested by Preeti ji 11-12-13)
 				Ex: There is a copper plate inscription of the time in the temple.
+	78. dry_fruit 		mevA#mevA#noun#2#RM					(Suggested by Pramila Banasthali 12-12-13)
+				Ex: I'm going to fill my pockets with dry fruit and munch it along the way.
+	79. half_dead		aXamarA#aXamarA#adjective#2#RM				(	"	"	"		")
+				Ex: She felt half dead with cold and hunger.
+	80. in_the_distance 	xUra#xUra#noun#3#WM					(	"	"	"	 13-12-13)
+				Ex: A pair of kites glided in circles in the clear blue sky, and in the distance a white egret could be
+				    seen winging its way homeward.
 
 
     Added new meaning to the existing word:
@@ -1780,7 +1802,8 @@ Removed:
 	Congress	kAMgresa	(Suggested by Prachi Banasthali 03-12-13)
 	Ganga		gaMgA		(Suggested by Krithika LTRC 	11-12-13)
 	Gatldis		gEtaladisa	(	"		"	"	)
-
+	Earth    	pqWvI		(Suggested by Pramila Banasthali 12-12-13)
+	Dad     	piwAjI		(	"		"	   "	 )
 
    Modified:
    ---------
@@ -1806,6 +1829,7 @@ Removed:
 	thief		(Suggested by Pramila Banasthali 16-08-13 ) Ex: The thief was driven back by the watch dogs.
         demon		(Suggested by Preeti ji LTRC     03-12-13 ) Ex: Lakshmi lures and destroys evil demons .
         army		(              "                     "    ) Ex: Armies had been crippled but not destroyed .
+	husband		(  By Shirisha Manju             12-12-13 ) Ex: I sent my husband to represent me at the funeral.
 
 
  changes in named_entities.txt

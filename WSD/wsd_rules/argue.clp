@@ -61,6 +61,7 @@
 (defrule argue2
 (id-root ?id argue)
 ?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id bahasa_kara))

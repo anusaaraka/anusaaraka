@@ -46,6 +46,7 @@ mohana Gara ke sarvocca sWAna se girA.
 
 Hindi meaning using Stanford parser 2.9
 We had wasted our journey. 
+hamane hamArI yAwrA vyarWa_meM_barabAxa kI WI.
 hama hamArI yAwrA vyarWa_meM_barabAxa_kara cuke We.
 
 Hindi meaning using Stanford parser 2.10
@@ -578,7 +579,7 @@ Apa vahAz para jAne ke xvArA aXika pEsA kamA sakawe hEM.
 
 Hindi meaning using Stanford parser 2.133
 He has lost his confidence. 
-vaha usakA BarosA Ko cukA hE.
+usane usakA BarosA Ko xiyA hE.
 
 Hindi meaning using Stanford parser 2.134
 She took out water from a deep well. 
@@ -664,7 +665,7 @@ PropN-rod-PropN ko mArane ke lie eka prayAsa WA.
 
 Hindi meaning using Stanford parser 2.154
 The recent advertising campaign has had a marked effect on sales. 
-hAla ke vijFApanabAjI aBiyAna kA bikrI para suspaRta praBAva ho cukA hE.
+hAla ke vijFApanabAjI aBiyAna kA bikrI para suspaRta praBAva huA hE.
 Multiple adjective senses are available for marked. WSD rule is required 
 Multiple adjective senses are available for recent. WSD rule is required 
 
@@ -1423,7 +1424,7 @@ Multiple adjective senses are available for aware. WSD rule is required
 
 Hindi meaning using Stanford parser 3.27
 She has gone for a walk in the woods. 
-vaha jafgala meM sEra ke lie jA cukI hE.
+vaha jafgala meM sEra ke lie gaI.
 
 Hindi meaning using Stanford parser 3.28
 Since I know English, he spoke to me. 
@@ -1813,12 +1814,12 @@ Multiple adjective senses are available for recycled. WSD rule is required
 
 Hindi meaning using Stanford parser 4.9
 She had gotten her family to go against convention. 
-vaha sammelana ke viruxXa jAne ke lie usake parivAra ko preriwa_kara cukI WI.
+usane paramparA ke viruxXa jAne ke lie usake parivAra ko preriwa kiyA WA.
 vaha paramparA ke viruxXa jAne ke lie usake parivAra ko preriwa_kara cukI WI.
 
 Hindi meaning using Stanford parser 4.10
 She declared that out of love for the poor she had gotten her family to go against convention. 
-usane GoRiwa kiyA ki xInoM ke prawi prema ke kAraNa vaha sammelana ke viruxXa jAne ke lie usake parivAra ko preriwa_kara cukI WI.
+usane GoRiwa kiyA ki xInoM ke prawi prema ke kAraNa usane paramparA ke viruxXa jAne ke lie usake parivAra ko preriwa kiyA WA.
 usane GoRiwa kiyA ki xInoM ke prawi prema ke kAraNa vaha paramparA ke viruxXa jAne ke lie usake parivAra ko preriwa_kara cukI WI.
 
 Hindi meaning using Stanford parser 4.11
@@ -2493,11 +2494,11 @@ Multiple adjective senses are available for energetic. WSD rule is required
 
 Hindi meaning using Stanford parser 5.65
 The government has created eight new peers. 
-sarakAra ATa naye joda banA cukI hE.
+sarakAra ne ATa naye joda banAe hEM.
 
 Hindi meaning using Stanford parser 5.66
 The President has announced a plan to create new jobs. 
-aXyakRa naye kAma uwwapanna karane ke lie yojanA kI GoRaNA_kara cukA hE.
+aXyakRa ne naye kAma uwwapanna karane ke lie yojanA kI GoRaNA kI hE.
 
 Hindi meaning using Stanford parser 5.67
 The scientists who created the world's first atomic bomb. 
@@ -2541,7 +2542,7 @@ sUraja camaka rahA WA Ora cidiyAz gA rahIM WIM.
 
 Hindi meaning using Stanford parser 5.76
 The rain has stopped and the sun is shining. 
-varRA ruka cukI hE Ora sUraja camaka rahA hE.
+varRA rukI hE Ora sUraja camaka rahA hE.
 
 Hindi meaning using Stanford parser 5.77
 They kept the books on the table. 
@@ -2589,7 +2590,7 @@ yaha kRewra vixyuwa cumbakawva kahA jAwA hE.
 
 Hindi meaning using Stanford parser 5.88
 If this is your idea of a joke, then I do not find it very funny. 
-yaxi yaha cutakule kA ApakA vicAra hE, wo waba mEM isako awyanwa hAsyAspaxa nahIM pAwA hUz.
+yaxi yaha cutakule kA ApakA vicAra hE, waba mEM isako awyanwa hAsyAspaxa nahIM pAwA hUz.
 Multiple adjective senses are available for funny. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.89

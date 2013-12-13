@@ -569,11 +569,14 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  look.clp 	look37   "  ?id "  xeKa )" crlf))
 )
 
+;$$$ Modified by Shirisha Manju Suggested by Chaitanya Sir (12-12-13) -- Added +1 category as adjective fact
+;That book looks interesting.
 (defrule look38
 (declare (salience 1200))
 (id-root ?id look)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
+(id-cat_coarse =(+ ?id 1) adjective) 
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id xiKa))
@@ -581,6 +584,8 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  look.clp 	look38   "  ?id "  xiKa )" crlf))
 )
 
+;Look how blue it is.
+;xeKie yaha kiwanA nIlA hE.
 (defrule look39
 (declare (salience 1100))
 (id-root ?id look)

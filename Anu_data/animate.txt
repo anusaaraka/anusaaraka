@@ -56,3 +56,5 @@ thief	1
 horse	1
 demon	1
 army	1
+bird	1
+husband	1

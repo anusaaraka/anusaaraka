@@ -73,3 +73,5 @@ My parents are always rowing about money.
 	-> Parser gave rowing category as verb but it should be noun.
 Holding Devyani's hand, and with the support of the stick, Aditya slowly made his way across.
 	-> Parser gave Holding category as NNP but it should be verb.
+The British, as you know, first discovered wild tea plants in Assam in the middle of the nineteenth century and established plantations.
+	-> Parser gave established category as JJ but it should be verb.

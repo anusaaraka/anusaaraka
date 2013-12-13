@@ -23860,8 +23860,7 @@ doorstep_UNDEFINED	mukyaxvAra_ke_pehalevAlI_sIDI
 doorstep_noun	xehalI
 doorsteps_UNDEFINED	mukyaxvAra_ke_pehalevAlI_sIDI
 doortodoor_UNDEFINED	xaravAjA
-doorway_UNDEFINED	xvArapaWa
-doorway_noun	xaravAjA
+doorway_noun	xvArapaWa/xaravAjA
 doorways_UNDEFINED	xvArapaWa
 dope_UNDEFINED	mUrKa_vyikwa
 dope_noun	naSIlI_xavA/mUrKa_vyakwi/jAnakArI/dopa/anxarUnI_Kabara
@@ -27507,7 +27506,7 @@ excursions_UNDEFINED	paryatana
 excursive_adjective	asambaxXa
 excusable_adjective	kRamya
 excuse_UNDEFINED	kRamA_kara_xe
-excuse_noun	mukwi/mAPI_kI_vajaha/mAPI/kRamA-prArWanA/bahAnA/bahAnA{kRamA_kA}
+excuse_noun	bahAnA/mukwi/mAPI_kI_vajaha/mAPI/kRamA-prArWanA/bahAnA{kRamA_kA}
 excuse_verb	kRamA_kara/mukwI_xe/mukwi_pA/mukwa_kara/maPa_kara/mAPa_kara/CutakArA_xe/CutakArA_pA
 excused_UNDEFINED	bahAnA
 excuses_UNDEFINED	bahAnA
@@ -53450,7 +53449,7 @@ observatary_noun	wArAGara/AkASalocaka
 observation_noun	avalokana/xeKareKa/prekRaNa/kaWana/niraKa/socavicAra
 observations_UNDEFINED	avalokana
 observatory_noun	veXaSAlA
-observe_verb	xeKa/kaha/anupAlana_kara/niraKa/rIwirivAjoM_kA_pAlana_kara/niyamoM_kA_pAlana_kara/apnA_mawa/socavicAra_vyakwa_kara/preKRaNa_kara/avalokana_kara
+observe_verb	xeKa/kaha/anupAlana_kara/niraKa/rIwirivAjoM_kA_pAlana_kara/niyamoM_kA_pAlana_kara/apnA_mawa/socavicAra_vyakwa_kara/prekRaNa_kara/avalokana_kara
 observed_UNDEFINED	niraKanA
 observer_noun	prekRaka/paryavekRaka/parixarSaka
 observers_UNDEFINED	parixarSaka
@@ -74646,7 +74645,7 @@ spears_UNDEFINED	Kera
 spec_noun	viSeRa_nirxeSa
 special-branch_noun	pulIsa_kI_viSeRa_SAKA
 special_adjective	asAXAraNa/viSiRta/viSeRAfka/viSeRa/uwkriRta/KAsa/Kasa/awirikwa/mahawwvapUrNa/viSeRa_uxxeSya_se_banA_huA
-special_noun	viSiRta_vyakwi/viSeRa_wAra/viSeRa_viBAga/viSeRa_vaswu/viSeRa_sAmAna/viSeRa_gAdI/viSeRa_basa/viSeRa/KAsa_kAryakrama
+special_noun	viSeRa/viSiRta_vyakwi/viSeRa_wAra/viSeRa_viBAga/viSeRa_vaswu/viSeRa_sAmAna/viSeRa_gAdI/viSeRa_basa/KAsa_kAryakrama
 specialer_UNDEFINED	mahawwvapUrNa
 specialest_UNDEFINED	mahawwvapUrNa
 specialisation_UNDEFINED	viSeRIkaraNa_viSiRtIkaraNa
@@ -93505,3 +93504,4 @@ web-enabled_noun	vEba-yukwa
 web-enabled_adjective	vEba-yukwa
 off-shoot_noun	eka_BAga
 copper-plate_noun	wAmrapawra
+egret_noun	kapowa

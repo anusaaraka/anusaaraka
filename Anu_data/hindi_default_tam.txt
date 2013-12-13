@@ -99,7 +99,8 @@ gets_en	yA_jAwA_hE-0-0
 got_en	yA_gayA-0-0
 had_been_en	yA_gayA_WA-0-0
 had_been_ing	wA_rahA_WA-0-0
-had_en	0_cukA_WA-0-0
+had_en	yA_WA-0-0
+#had_en	0_cukA_WA-0-0
 had_got_to_be_en	0_xenA_padA-0-0
 had_just_en	yA_hI_WA-0-0
 had_not_been_en	yA_gayA_WA-0-nahIM
@@ -111,7 +112,8 @@ had_to_0	nA_padA-ko-0
 had_to_be_en	nA_hI_WA-0-0
 has_been_en	yA_gayA_hE-0-0
 has_been_ing	wA_rahA_hE-0-0
-has_en	0_cukA_hE-0-0
+has_en	yA_hE-0-0
+#has_en	0_cukA_hE-0-0
 has_got_to_be_en	yA_hI_jAnA_hE-0-0
 has_never_en	0_cukA_hE-0-kaBI_nahIM
 has_never_en	0_cukA_hE-0-nahIM

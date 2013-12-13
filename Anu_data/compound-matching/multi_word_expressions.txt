@@ -33231,6 +33231,9 @@ relative_adverb	sambanXa_vAcaka_kriyA_viReSaNa#sambanXa_vAcaka_kriyA_viReSaNa#no
 orphaned_children	anAWa_baccA#anAWa_baccA#noun#2#RM
 talk_show	anOpacArika_bAwacIwa_kAryakrama#anOpacArika_bAwacIwa_kAryakrama#noun#2#RM
 interest_rate	byAja_xara#byAja_xara#noun#1#RM
+dry_fruit	mevA#mevA#noun#2#RM
+half_dead	aXamarA#aXamarA#adjective#2#RM
+in_the_distance	xUra#xUra#noun#3#WM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
