@@ -33561,6 +33561,7 @@ matter_of_urgency	ApAwa_sWiwi#ApAwa_sWiwi#noun#1#RM
 read_well	pATaka_kI_ruci_banAe_raKa#pATaka_kI_ruci_banAe_raKa#verb#1#RM
 reads_well	pATaka_kI_ruci_banAe_raKa#pATaka_kI_ruci_banAe_raKa#verb#1#RM
 load_of_rubbish	bakavAsa_se_BarapUra#bakavAsa_se_BarapUra#adjective#3#RM
+call_of_nature	SOcAxi_kI_AvaSyakawA#SOcAxi_kI_AvaSyakawA#noun#3#RM
 #By Alpana ji (LTRC)
 Block_multiplexer	avaroXa_bahusaMkewaka#avaroXa_bahusaMkewaka#noun#2#RM
 Discharge_Required	AvaSyaka_nirvahana#AvaSyaka_nirvahana#noun#1#RM

@@ -75,3 +75,15 @@ Holding Devyani's hand, and with the support of the stick, Aditya slowly made hi
 	-> Parser gave Holding category as NNP but it should be verb.
 The British, as you know, first discovered wild tea plants in Assam in the middle of the nineteenth century and established plantations.
 	-> Parser gave established category as JJ but it should be verb.
+Enjoy!
+	-> Parser gave RB but enjoy word should be verb.
+Enjoy yourselves!
+	-> Parser gave Enjoy category as NNP but it should be verb.		
+Ravi is a very dear little boy.
+	-> Parser gave 'dear' category as VBN but it should be adjective .
+It must have been part of the existing material when the Earth formed.
+	-> Parser gave 'existing' category as VBG but it should be adjective.	 
+Even out the surface. 
+	-> Parser gave 'even' category as RB but it should be verb.
+The field is not even. 
+	->  Parser gave 'even' category as RB but it should be adjective.
