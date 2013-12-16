@@ -1,8 +1,8 @@
 1. To install anu_testing software:
-	Check INSTALL in anu_testing/
+	Check INSTALL in anusaaraka/
 
 2. To RUN Anusaaraka:
-	Check point no:4 in anu_testing/INSTALL
+	Check point no:4 in anusaaraka/INSTALL
 	
 3. To view different types of TREES in Stanford parser:
 	Check README in $HOME_anu_test/miscellaneous/TREES/tree_viewer/
