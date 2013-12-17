@@ -1,4 +1,4 @@
- 13-12-13
+ 17-12-13
  ========
  1. WSD	: Modified : keep.clp	foundation.clp	time.clp	remove.clp	ed_en_tam.clp	to.clp		idea.clp
 		     warm.clp	all.clp		argue.clp    	as.clp  	compress.clp  	look.clp	lose.clp
@@ -60,8 +60,22 @@
 	animate_list.txt
 18. Renamed:  Doc/PennTreeBankNotation/ folder to Doc/Stanford_parser_documentation/
 19. Added Bracketing Guidelines for Treebank II Style Penn Treebank Project 1.html in Doc/Stanford_parser_documentation/
-20. Update Log.
-21. Updated  sd_verified (591)          verified_eng (40)               small_sent_verified_sd (126)
+20. Modified in following files anu_testing to anusaaraka:
+	Anu_clp_files/run_modules_link.bat
+	Anu_clp_files/run_modules_ol.bat
+	Anu_clp_files/run_modules_std.bat
+	INSTALL
+	README
+	bin/step-debug/link-lwg-rel-onwards.bat
+	bin/step-debug/ol-lwg-rel-onwards.bat
+	bin/step-debug/std-lwg-rel-onwards.bat
+	debugging/lwg_debug.clp
+	debugging/pada_debug.clp
+	debugging/relation_debug.clp
+	debugging/wsd-help
+	miscellaneous/TREES/tree_viewer/README
+21. Update Log.
+22. Updated  sd_verified (591)          verified_eng (40)               small_sent_verified_sd (126)
              phy_verified_eng (253)     phy_partial_ver_eng (282)
 
 

@@ -142,7 +142,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id CUta))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  left.clp 	left7   "  ?id "  CUta )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  left.clp 	left7   "  ?id "  CUta )" crlf))
 )
 
 ;"left","Adj","1.bAzyA"
