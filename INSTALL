@@ -23,10 +23,10 @@
  2. Install:
     ========
 
-     To install anu_testing from the source code, run
+     To install anusaaraka from the source code, run
 
         To Extract tar , Run::
-	tar -xvzf <file name>  (Ex : tar -xvzf anu_testing.tgz)
+	tar -xvzf <file name>  (Ex : tar -xvzf anusaaraka.tgz)
 			or
 	To clone from local git repository::
 	git clone https://bitbucket.org/anusaaraka/anusaaraka.git
