@@ -29,7 +29,7 @@
 	tar -xvzf <file name>  (Ex : tar -xvzf anu_testing.tgz)
 			or
 	To clone from local git repository::
-	git clone sriram@10.2.56.69:~/GIT/anu_testing.git
+	git clone https://bitbucket.org/anusaaraka/anusaaraka.git
 
 
         Add following line to your ~/.bash_profile (or) ~/.bashrc  and then run source ~/.bashrc
