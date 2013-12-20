@@ -470,6 +470,7 @@
  19.	nIlA		kAl/A__adj		(    "  	"		24-09-13)
  20.	aBiXAraNA	ASA/__n			(    "	 Suggested by Chaitanya Sir 16-10-13)
  21.	BAga		Gar/a__n		(By Roja 			24-10-13)
+ 22.    sarasarA	KA/__v			(By Roja Suggetsed by Sukhada	19-12-13)
 
 Modified :
   1.	<e><p><l>we_hue</l>	as	<e><p><l>owe_hue</l>       for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
@@ -577,12 +578,14 @@ Modified :
 	even		house__n		(     "   04-12-13)
 	even		long/__adj		(     "   04-12-13)
 	sow		hew__vblex		(     "   04-12-13)
+	dive		liv/e__vblex		(     "   19-12-13)
 
 Modified paradigm:
      	belonging	house__n	as	personnel__n	(Suggested by Meena ji 12-05-11)
 	box		bass__n		a	access__n	(Suggested by Meena ji 10-08-11)
 	phenomenon	house__n	as	criteri/on__n	(By Roja	       14-03-13)
-	shrink		
+	shrink
+	epoch		access__n	as	house__n	(By Roja		19-12-13)	
 
 Added new paradigms:
         trek__vblex		(By Roja	14-10-11)
@@ -935,7 +938,15 @@ Removed:
 	65. egret_noun 			kapowa				(Suggested by Pamila Banasthali   13-12-13)
 					Ex: A pair of kites glided in circles in the clear blue sky, and in the distance a white egret could
                                             be seen winging its way homeward
-
+	66. nameplate_noun		nAma_pattikA			(Suggested by Nandini ji LTRC	17-12-13)
+					Ex: Bhagirathi, the children read the nameplate on the door.
+	67. mule-owners_noun		KaccaravAlA			(Suggested by Nandini ji LTRC	17-12-13)
+					Ex: He negotiated with the mule-owners who were to take them part of the way.
+	68. mule-men_noun		KaccharavAlA			(Suggested by Nandini ji LTRC	17-12-13)
+					Ex: Grandpa led the way, the children were behind him and the mule-men brought up the rear.
+	69. character-building_noun	cariwra_nirmANa			(Suggested by Preeti ji LTRC	17-12-13)
+	70. orthodox_noun		paraMparAgawa			((Suggested by Sonam Banasthali	17-12-13)
+					Ex: To make Orthodox tea, the sifted leaves are taken straight to the fermenting room. 
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1093,6 +1104,8 @@ Removed:
 					Ex: The word Science originates from the Latin verb Scientia meaning 'to know'. 
 	86. doorway_noun    		xvArapaWa		(Suggested by Pramila Banasthali 12-12-13)
 					Ex: He suddenly appeared in the doorway.
+	87. name-plate_noun		nAma-pattikA		(Suggested by Nandini ji LTRC 17-12-13)
+					Ex: Bhagirathi, the children read the name-plate on the door.
 
 
     5. Modifying first meaning from the list :
@@ -1279,6 +1292,12 @@ Removed:
 				Ex: And, of course, there is nothing special about our Galaxy.
 	92. excuse_noun     	mukwi		as	bahAnA			(Suggested by Pramila Banasthali 12-12-13)
 				Ex: He always gives the same old excuses.
+	93. cure_noun		cikiwsA		as	upacAra			(Suggested by Preeti ji LTRC 	17-12-13)
+				Ex: Will you be able to cure him, Doctor?
+	94. cure_verb		xUra_kara	as	TIka_kara		(	"		"	17-12-13)
+				Ex: I finally managed to cure the rattling noise in my car.
+	95. collection_noun	saFcayana	as	saMgraha		(	"		"	17-12-13)
+				Ex: The painting comes from his private collection.
 	
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1440,8 +1459,9 @@ Removed:
 	13. in_time		samaya_para#samaya_para#noun#2#RM	(Suggested by Preeti ji LTRC	31-10-13)
 				Ex: A visit to the museum will take you back in time to the 1930s.  
 	14. two_times		xo_bAra#xo_bAra#noun#2#RM		(Suggested by Preeti ji LTRC	31-10-13)
-				Ex: This room is two times bigger than the hall. 
-
+				Ex: This room is two times bigger than the hall.
+	15. fan_in		niveSAMka#niveSAMka#noun#2#RM 		(Suggested by Krithika LTRC	17-12-13)
+				Ex: That big fan in our lab is not working.
 
     Modified :
     --------
@@ -1463,6 +1483,8 @@ Removed:
 	instead_of		kI_jagaha_meM		as	kI_bajAya (Suggested by Prachi Banasthali 09-10-13)
 	highest_priority        savorcca_prAWamikawA	as	sarvocca_prAWamikawA(Suggested by Prachi Banasthali 21-10-13)
 								Ex: Safety is our highest priority.
+	rubbish_dump		kUdZe_karakata_kA_DZera	as	kacare_kA_mExAna	(Suggested by Anita ji LTRC 17-12-13)
+				Ex: Take the old furniture to the rubbish dump.
 		
     Added new entry:
     ----------------
@@ -1613,7 +1635,16 @@ Removed:
 				    seen winging its way homeward.
 	81. call_of_nature    	SOcAxi_kI_AvaSyakawA#SOcAxi_kI_AvaSyakawA#noun#3#RM	(Suggested by Anita ji LTRC 14-12-13)
 				Ex: During all this time, I never once felt the call of nature, nor did I suffer from hunger.
-
+	82. name_plate		nAma_pattikA#nAma_pattikA#noun#2#RM			(Suggested by Nandini ji LTRC	17-12-13)
+				Ex: Bhagirathi, the children read the name plate on the door.
+	83. monal_feathers	monal_paMCI_ke_paMKa#monal_paMCI_ke_paMKa#noun#2#RM	(Suggested by Nandini ji LTRC	17-12-13)
+				Ex: It became such a fashion that every Englishwoman wanted monal feathers in her hat.
+	84. as_much_as		jiwanA_aXika#jiwanA_aXika#adverb/adjective#3#RM		(Suggested by Nandini ji LTRC	17-12-13)
+				Ex: I have been reading as much as I could about tea, Rajvir said.
+	85. character_building	cariwra_nirmANa#cariwra_nirmANa#noun#2#RM		(Suggested by Preeti ji LTRC	17-12-13)
+				Ex: Adventure camps are considered to be character building.
+	86. rubbish_bin		kacarA_kuMdI#kacarA_kuMdI#noun#2#RM			(Suggested by Anita ji LTRC	17-12-13)
+				Ex: Put the empty box in the rubbish bin. 
 
 
     Added new meaning to the existing word:
