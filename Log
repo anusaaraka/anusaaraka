@@ -1,8 +1,10 @@
- 17-12-13
+ 20-12-13
  ========
  1. WSD	: Modified : keep.clp	foundation.clp	time.clp	remove.clp	ed_en_tam.clp	to.clp		idea.clp
 		     warm.clp	all.clp		argue.clp    	as.clp  	compress.clp  	look.clp	lose.clp
-	  Added    : sun.clp	reflect.clp	general.clp	host.clp	imply.clp
+		     contract.clp	
+	  Added    : sun.clp	reflect.clp	general.clp	host.clp	imply.clp	murmur.clp
+		     convention.clp
 	  Removed inanimate.txt and handled it with animate.txt as Suggested by Chaitanya Sir. so following files are modified:
 		arise.clp	be.clp		catch.clp	cell.clp	charge.clp
 		deal.clp	time.clp	demonstrate.clp	encompass.clp	remain.clp
@@ -33,7 +35,7 @@
         Loaded "hindi_meanings.dat" in hindi_sentence module
         Opened "removed_repeated_mng.dat" file in write wode in hindi_sentence module
 13. Updated following dictionary related files:
-        changes_in_databases	 apertium-en-hi.en.metadix    
+        changes_in_databases	 apertium-en-hi.en.metadix	apertium_hn.dix    
 14. Updated following shell files
 	run_sentence_stanford.sh  --- to add grep command for removing repeated mng
 	provisional_Anu_databases/reset.sh	--> Removed creating gdbms for inanimate and animate_list 
@@ -60,6 +62,10 @@
 	animate_list.txt
 18. Renamed:  Doc/PennTreeBankNotation/ folder to Doc/Stanford_parser_documentation/
 19. Added Bracketing Guidelines for Treebank II Style Penn Treebank Project 1.html in Doc/Stanford_parser_documentation/
+<<<<<<< HEAD
+20. Update Log.
+21. Updated  sd_verified (597)          verified_eng (40)               small_sent_verified_sd (127)
+=======
 20. Modified in following files anu_testing to anusaaraka:
 	Anu_clp_files/run_modules_link.bat
 	Anu_clp_files/run_modules_ol.bat
@@ -76,6 +82,7 @@
 	miscellaneous/TREES/tree_viewer/README
 21. Update Log.
 22. Updated  sd_verified (591)          verified_eng (40)               small_sent_verified_sd (126)
+>>>>>>> roja
              phy_verified_eng (253)     phy_partial_ver_eng (282)
 
 

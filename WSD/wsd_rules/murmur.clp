@@ -1,6 +1,6 @@
 ;@@@---Added by Nandini(14-12-13)
 ;She answered in a faint murmur.[oxford advanced learner's dictionary]
-usane eka nirbala svara meM uwwara xiyA.
+;usane eka nirbala svara meM uwwara xiyA.
 (defrule murmur0
 (declare (salience 150))
 (id-root ?id murmur)
@@ -48,7 +48,7 @@ usane eka nirbala svara meM uwwara xiyA.
 
 ;@@@---Added by Nandini(14-12-13)
 ;The wind murmured in the trees.[oxford advanced learner's dictionary]
-;havA pedoM meM sarasarA.
+;havA pedoM meM sarasarAI.
 (defrule murmur4
 (declare (salience 300))
 (id-root ?id murmur)

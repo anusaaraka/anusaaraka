@@ -5,7 +5,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 continue)
 (kriyA-object ?id ?id1)
-;=>
+=>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id sikudZanA))
 (if ?*debug_flag* then
@@ -19,7 +19,7 @@
 (id-word ?id contracting )
 (id-word ?id1 continue)
 (kriyA-object ?id ?id1)
-;=>
+=>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id sikudZanA))
 (if ?*debug_flag* then

@@ -86,4 +86,6 @@ It must have been part of the existing material when the Earth formed.
 Even out the surface. 
 	-> Parser gave 'even' category as RB but it should be verb.
 The field is not even. 
-	->  Parser gave 'even' category as RB but it should be adjective.
+	-> Parser gave 'even' category as RB but it should be adjective.
+Undue haste results badly.
+	-> Parser gave 'results' category as NNS but it should be verb.
