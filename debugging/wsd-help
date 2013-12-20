@@ -8,8 +8,8 @@
  2. WSD- Compound Phrase meaning   
  3. Compound Phrase meaning from the database
  4. Provisional_wsd_rules
- 5. Anusaaraka wsd_rules i.e, from anu_testing/WSD/wsd_rules
- 6. Default hindi meaning from the built-in dictionary in anusaaraka. i.e,from anu_testing/Anu_data/default-iit-bombay-shabdanjali-dic.txt
+ 5. Anusaaraka wsd_rules i.e, from anusaaraka/WSD/wsd_rules
+ 6. Default hindi meaning from the built-in dictionary in anusaaraka. i.e,from anusaaraka/Anu_data/default-iit-bombay-shabdanjali-dic.txt
  7. english word ; in case it does not find any hindi word corresponding to the given english word, it prints the english word as it is with a "@" before the word.
 
 
