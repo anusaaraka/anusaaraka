@@ -320,3 +320,4 @@ closed_loop	baMxa_paripaWa#baMxa_paripaWa#noun#2#RM
 relative_velocity	sApekRa_vega#sApekRa_vega#noun#2#RM
 relative_motion	 sApekRa_gawi#sApekRa_gawi#noun#2#RM
 relative_density	ApekRika_Ganawva#ApekRika_Ganawva#noun#2#RM
+sign_convention	cihna_paripAtI#cihna_paripAtI#noun#1#RM

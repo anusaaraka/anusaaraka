@@ -20809,7 +20809,6 @@ namby_pamby	BAvuka#BAvuka#noun#2#RM
 name_board	nAma_patta#nAma_patta#noun#2#RM
 name_calling	nAma_bulAnA#nAma_bulAnA#noun#2#RM
 name_card	nAma_kArda#nAma_kArda#noun#2#RM
-name_plate	nAma_patta#nAma_patta#noun#2#RM
 name_server	nAma_parisevaka#nAma_parisevaka#noun#2#RM
 nand_element	waWA_pUraka_avyava#waWA_pUraka_avyava#noun#2#RM
 nand_function	waWA_pUraka_Palana#waWA_pUraka_Palana#noun#2#RM
@@ -33733,6 +33732,6 @@ as_much_as	jiwanA_aXika#jiwanA_aXika#adverb/adjective#3#RM
 #By Preeti ji LTRC
 at_all_costs    kisI_BI_kImawa_para#kisI_BI_kImawa_para#noun#3#RM
 copper_plate	wAmrapawra#wAmrapawra#noun#2#RM
-character_building	cariwra_nirmANa#cariwra_nirmANa#noun#2#RM
+character_building	cariwra_nirmANa#cariwra_nirmANa#noun#1#RM
 #By Krithika ji LTRc
 fatal_hour	nirNAyaka_pala#nirNAyaka_pala#noun#2#RM
