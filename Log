@@ -62,10 +62,6 @@
 	animate_list.txt
 18. Renamed:  Doc/PennTreeBankNotation/ folder to Doc/Stanford_parser_documentation/
 19. Added Bracketing Guidelines for Treebank II Style Penn Treebank Project 1.html in Doc/Stanford_parser_documentation/
-<<<<<<< HEAD
-20. Update Log.
-21. Updated  sd_verified (597)          verified_eng (40)               small_sent_verified_sd (127)
-=======
 20. Modified in following files anu_testing to anusaaraka:
 	Anu_clp_files/run_modules_link.bat
 	Anu_clp_files/run_modules_ol.bat
@@ -82,7 +78,6 @@
 	miscellaneous/TREES/tree_viewer/README
 21. Update Log.
 22. Updated  sd_verified (591)          verified_eng (40)               small_sent_verified_sd (126)
->>>>>>> roja
              phy_verified_eng (253)     phy_partial_ver_eng (282)
 
 
