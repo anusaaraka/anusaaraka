@@ -197,9 +197,9 @@
   (ppdefrule ?rule_name)
   (printout t crlf "NOTE:: " crlf crlf)
   (if (eq ?ptype Link-Parser) then
-  (printout t "1. If you want to write any rule for the relations please go to the directory \"anu_testing/Anu_clp_files\" and "crlf "    write the rules in \"link_relation_rules.clp\" file " crlf  "2. After saving the rule compile it using the command  :    \" myclips -f create_binary_files.clp\"      "crlf  "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
+  (printout t "1. If you want to write any rule for the relations please go to the directory \"anusaaraka/Anu_clp_files\" and "crlf "    write the rules in \"link_relation_rules.clp\" file " crlf  "2. After saving the rule compile it using the command  :    \" myclips -f create_binary_files.clp\"      "crlf  "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
   else (if (eq ?ptype Stanford-Parser) then
-  (printout t "1. If you want to write any rule for the relations please go to the directory \"anu_testing/Anu_clp_files\" and "crlf "   write the rules in \"sd_relation_rules.clp\" file " crlf "2. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "3. Use following command to exit :: (exit)" crlf crlf))
+  (printout t "1. If you want to write any rule for the relations please go to the directory \"anusaaraka/Anu_clp_files\" and "crlf "   write the rules in \"sd_relation_rules.clp\" file " crlf "2. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "3. Use following command to exit :: (exit)" crlf crlf))
   ))
 
  
@@ -233,10 +233,10 @@
           (printout t crlf " Relation is given by  using the rule \"" ?rule_name "\""  crlf " And the rule is defined as..... " crlf crlf)
           (ppdefrule ?rule_name)
     else 
-            (printout t crlf " These Relations are given by using run_openlogos.py "crlf " If you want to debug these relations then go to the directory \"anu_testing/Anu_src\" and then debug run_openlogos.py" crlf))
+            (printout t crlf " These Relations are given by using run_openlogos.py "crlf " If you want to debug these relations then go to the directory \"anusaaraka/Anu_src\" and then debug run_openlogos.py" crlf))
  
   (printout t crlf "NOTE:: " crlf crlf)
-  (printout t "1. If you want to write any rule for the relations please go to the directory \"anu_testing/Anu_clp_files\" and "crlf "   write the rules in \"modify_ol_relations.clp\" file " crlf "2. After saving the rule compile it using the command  :    \" myclips -f create_binary_files.clp\"      "crlf  "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
+  (printout t "1. If you want to write any rule for the relations please go to the directory \"anusaaraka/Anu_clp_files\" and "crlf "   write the rules in \"modify_ol_relations.clp\" file " crlf "2. After saving the rule compile it using the command  :    \" myclips -f create_binary_files.clp\"      "crlf  "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
   )
 
   (defrule relations_asserted1
@@ -247,9 +247,9 @@
   (not (Rule-Rel-ids ?rule_name   ?rel   ?P_lid   ?P_rid))
   =>
   (retract ?f ?f1)
-  (printout t crlf " These Relations are given by using run_openlogos.py "crlf " If you want to debug these relations then go to the directory \"anu_testing/Anu_src\" and then debug run_openlogos.py" crlf)
+  (printout t crlf " These Relations are given by using run_openlogos.py "crlf " If you want to debug these relations then go to the directory \"anusaaraka/Anu_src\" and then debug run_openlogos.py" crlf)
   (printout t crlf "NOTE:: " crlf crlf)
-  (printout t "1. If you want to write any rule for the relations please go to the directory \"anu_testing/Anu_clp_files\" and "crlf "   write the rules in \"modify_ol_relations.clp\" file " crlf "2. After saving the rule compile it using the command  :    \" myclips -f create_binary_files.clp\"      "crlf  "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
+  (printout t "1. If you want to write any rule for the relations please go to the directory \"anusaaraka/Anu_clp_files\" and "crlf "   write the rules in \"modify_ol_relations.clp\" file " crlf "2. After saving the rule compile it using the command  :    \" myclips -f create_binary_files.clp\"      "crlf  "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
   )
 
   (defrule  relations_deleted
@@ -292,7 +292,7 @@
   (printout t crlf " Relation is given by  using the rule \"" ?rule_name "\""  crlf " And the rule is defined as..... " crlf crlf)
   (ppdefrule ?rule_name)
   (printout t crlf "NOTE:: " crlf crlf)
-  (printout t "1. If you want to write any rule for the relations please go to the directory \"anu_testing/Anu_clp_files\" and "crlf "   write the rules in \"modify_ol_relations.clp\" file " crlf "2. After saving the rule compile it using the command  :    \" myclips -f create_binary_files.clp\"      "crlf  "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
+  (printout t "1. If you want to write any rule for the relations please go to the directory \"anusaaraka/Anu_clp_files\" and "crlf "   write the rules in \"modify_ol_relations.clp\" file " crlf "2. After saving the rule compile it using the command  :    \" myclips -f create_binary_files.clp\"      "crlf  "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
   )
 
   (defrule  relations_deleted_doesnot_exists
@@ -304,7 +304,7 @@
   (retract ?f ?f1)
   (printout t crlf " For the current sentence your debugging no deleted relations are present." crlf crlf)
   (printout t crlf "NOTE:: " crlf crlf)
-  (printout t "1. If you want to write any rule for the relations please go to the directory \"anu_testing/Anu_clp_files\" and "crlf "   write the rules in \"modify_ol_relations.clp\" file " crlf "2. After saving the rule compile it using the command  :    \" myclips -f create_binary_files.clp\"      "crlf  "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
+  (printout t "1. If you want to write any rule for the relations please go to the directory \"anusaaraka/Anu_clp_files\" and "crlf "   write the rules in \"modify_ol_relations.clp\" file " crlf "2. After saving the rule compile it using the command  :    \" myclips -f create_binary_files.clp\"      "crlf  "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
   )
 
   (defrule debug_relation1
@@ -369,7 +369,7 @@
  (printout t "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" crlf)
  (printout t crlf "There is no rule defined with this relation" crlf crlf)
  (printout t "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%" crlf)
- (printout t crlf "1. If you want to write any rule for the relations please go to the directory \"anu_testing/Anu_clp_files\" and "crlf "   write the rules in \"modify_ol_relations.clp\" file " crlf "2. After saving the rule compile it using the command  :    \" myclips -f create_binary_files.clp\"      "crlf  "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf "4. Use following command to exit :: (exit)" crlf crlf)
+ (printout t crlf "1. If you want to write any rule for the relations please go to the directory \"anusaaraka/Anu_clp_files\" and "crlf "   write the rules in \"modify_ol_relations.clp\" file " crlf "2. After saving the rule compile it using the command  :    \" myclips -f create_binary_files.clp\"      "crlf  "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf "4. Use following command to exit :: (exit)" crlf crlf)
  ;(exit)
  (assert(parser_output correct_relation_not_found))
  else
@@ -386,12 +386,12 @@
 
  (printout t crlf "NOTE:: " crlf)
  (if (eq ?ptype Link-Parser) then
-   (printout t "1. If you want to write any rule for the relations please go to the directory \"anu_testing/Anu_clp_files\" and "crlf "    write the rules in \"link_relation_rules.clp\" file " crlf  "2. After saving the rule compile it using the command  :    \" myclips -f create_binary_files.clp\"      "crlf  "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
+   (printout t "1. If you want to write any rule for the relations please go to the directory \"anusaaraka/Anu_clp_files\" and "crlf "    write the rules in \"link_relation_rules.clp\" file " crlf  "2. After saving the rule compile it using the command  :    \" myclips -f create_binary_files.clp\"      "crlf  "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
   else (if (eq ?ptype Stanford-Parser) then
-  (printout t "1. If you want to write any rule for the relations please go to the directory \"anu_testing/Anu_clp_files\" and "crlf "   write the rules in \"sd_relation_rules.clp\" file " crlf "2. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "3. Use following command to exit :: (exit)" crlf crlf)
+  (printout t "1. If you want to write any rule for the relations please go to the directory \"anusaaraka/Anu_clp_files\" and "crlf "   write the rules in \"sd_relation_rules.clp\" file " crlf "2. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "3. Use following command to exit :: (exit)" crlf crlf)
  )
   else (if (eq ?ptype Open-Logos-Parser) then
-  (printout t "1. If you want to write any rule for the relations please go to the directory \"anu_testing/Anu_clp_files\" and "crlf "   write the rules in \"modify_ol_relations.clp\" file " crlf "2. After saving the rule compile it using the command  :    \" myclips -f create_binary_files.clp\"      "crlf  "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf "4. Use following command to exit :: (exit)" crlf crlf)
+  (printout t "1. If you want to write any rule for the relations please go to the directory \"anusaaraka/Anu_clp_files\" and "crlf "   write the rules in \"modify_ol_relations.clp\" file " crlf "2. After saving the rule compile it using the command  :    \" myclips -f create_binary_files.clp\"      "crlf  "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf "4. Use following command to exit :: (exit)" crlf crlf)
  )))
  (close fp)
  )

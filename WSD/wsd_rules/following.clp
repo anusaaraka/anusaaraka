@@ -71,7 +71,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id loga))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  following.clp 	following4   "  ?id "  loga )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  following.clp 	following4   "  ?id "  loga )" crlf))
 )
 
 (defrule following5
@@ -107,7 +107,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id nimnaliKiwa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  following.clp 	following7   "  ?id "  nimnliKitwa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  following.clp 	following7   "  ?id "  nimnliKitwa )" crlf))
 )
 
 

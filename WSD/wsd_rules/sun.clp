@@ -31,7 +31,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id XUpa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  sun.clp 	sun0   "  ?id "  XUpa)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  sun.clp 	sun0   "  ?id "  XUpa)" crlf))
 )
 
 ;The plant needs full sun.[m-w]
@@ -49,7 +49,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id XUpa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  sun.clp 	sun1   "  ?id "  XUpa)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  sun.clp 	sun1   "  ?id "  XUpa)" crlf))
 )
 
 ;I couldn't see because the sun was in my eyes. [=the bright light of the sun was shining directly in my eyes][m-w]
@@ -66,7 +66,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id XUpa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  sun.clp 	sun2   "  ?id "  XUpa)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  sun.clp 	sun2   "  ?id "  XUpa)" crlf))
 )
 
 ;#################################### Default Rules ##########################################################
@@ -80,7 +80,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id sUraja))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  sun.clp 	sun3   "  ?id "  sUraja)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  sun.clp 	sun3   "  ?id "  sUraja)" crlf))
 )
 
 ;He is sunning by the pool.[m-w]
@@ -93,5 +93,5 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id XUpa_seMka))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  sun.clp 	sun4   "  ?id "  XUpa_seMka)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  sun.clp 	sun4   "  ?id "  XUpa_seMka)" crlf))
 )

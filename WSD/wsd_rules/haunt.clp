@@ -45,7 +45,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id GabarA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  haunt.clp 	haunt4   "  ?id "  GabarA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  haunt.clp 	haunt4   "  ?id "  GabarA )" crlf))
 )
 
 
@@ -60,7 +60,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id BUwiyA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  haunt.clp 	haunt3   "  ?id "  BUwiyA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  haunt.clp 	haunt3   "  ?id "  BUwiyA )" crlf))
 )
 
 ;The house is haunted.

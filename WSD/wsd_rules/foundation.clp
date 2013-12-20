@@ -15,7 +15,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id AXAra))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  foundation.clp 	foundation0   "  ?id "  AXAra )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  foundation.clp 	foundation0   "  ?id "  AXAra )" crlf))
 )
 
 ;Added by Pramila (banasthali university)
@@ -34,7 +34,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id saMsWA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  foundation.clp       foundation1   "  ?id "  saMsWA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  foundation.clp       foundation1   "  ?id "  saMsWA )" crlf))
 )
 
 ;Added by Pramila (banasthali university)
@@ -51,7 +51,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id sWApanA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  foundation.clp       foundation2   "  ?id "  sWApanA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  foundation.clp       foundation2   "  ?id "  sWApanA )" crlf))
 )
 
 ;Added by Pramila (banasthali university)
@@ -67,7 +67,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id sixXAnwa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  foundation.clp       foundation3   "  ?id "  sixXAnwa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  foundation.clp       foundation3   "  ?id "  sixXAnwa )" crlf))
 )
 
 ;Added by Pramila (banasthali university)
@@ -84,7 +84,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id buniyAxa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  foundation.clp 	foundation4   "  ?id "  buniyAxa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  foundation.clp 	foundation4   "  ?id "  buniyAxa )" crlf))
 )
 
 ;-------------------------------- Default rules ----------------------------------
@@ -102,7 +102,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id nIMva))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  foundation.clp 	foundation5   "  ?id "  nIMva )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  foundation.clp 	foundation5   "  ?id "  nIMva )" crlf))
 )
 
 
@@ -114,7 +114,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id nIMva))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  foundation.clp 	foundation6   "  ?id "  nIMva )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  foundation.clp 	foundation6   "  ?id "  nIMva )" crlf))
 )
 
 ;****************************** Removed rules *********************************
