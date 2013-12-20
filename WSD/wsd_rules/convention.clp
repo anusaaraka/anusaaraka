@@ -16,7 +16,7 @@
 )
 
 ;@@@ Added by Preeti(13-12-13)
-;The United Nation's convention on the rights of the child was a big success.[ Oxford Advanced Learner's Dictionary]
+;The United Nation's convention on the rights of the child was a big success. [Oxford Advanced Learner's Dictionary]
 ;bacce ke aXikAroM para saMyukwa rARtra kA samaJOwA badA saPala WA.
 (defrule convention2
 (declare (salience 2000))
