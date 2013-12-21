@@ -162,6 +162,7 @@
  (prawiniXi_id-node-category ?pp ?PP PP|WHPP)
  (prawiniXi_id-node-category ?np_id ?NP NP|S|WHNP|ADJP) ;The game of life is played for winning. In short, the greater the rate of change of momentum, the greater is the force. 
  (head_id-prawiniXi_id-grp_ids ? ?prep_id ?prep)
+ (id-word ?prep ?w&~per);The limiting speed is about 11.2 kilometres per second.
  (head_id-prawiniXi_id-grp_ids ?np_head ?np_id $?grp_ids ?last_node)
  ?f0<-(pada_info (group_head_id ?np_id)(preposition 0))
  ?f2<-(id-grp_ids ?pp $?)

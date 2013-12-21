@@ -25672,7 +25672,7 @@ emancipations_UNDEFINED	mukwi
 emasculate_adjective	swrENa/pofgA
 embalm_verb	Sava_kA_saMlepana_kara
 embalmer_noun	Sava-saMlepaka
-embankment_noun	bAzXa_bAzXanA/watabanXana/puSwA/bAzXa
+embankment_noun	wata/bAzXa_bAzXanA/watabanXana/puSwA/bAzXa
 embankments_UNDEFINED	bAzXa
 embargo_UNDEFINED	vyApAra-prawiroXa_lagAnA
 embargo_noun	vyApAra-prawiroXa
@@ -93510,3 +93510,4 @@ mule-owners_noun	KaccaravAlA
 mule-men_noun	KaccharavAlA
 character-building_noun	cariwra_nirmANa
 orthodox_noun	paraMparAgawa
+non-uniform_adjective	asamAna

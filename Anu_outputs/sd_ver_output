@@ -2632,5 +2632,68 @@ Hindi meaning using Stanford parser 5.97
 Convention demands that a club member should resign in such a situation. 
 paramparA mAzgawI hE ki eka klaba saxasya ko EsI hAlawa meM wyAga_pawra xenA cAhie.
 
+Hindi meaning using Stanford parser 5.98
+We must be alert to the possibility of danger. 
+hameM vipawwi kI samBAvanA ke lie sawarka honA cAhie.
+
+Hindi meaning using Stanford parser 5.99
+Two alert scientists spotted the mistake. 
+xo sawarka vEjFAnikoM ne galawI xeKI.
+
+Hindi meaning using Stanford parser 5.100
+They had been alerted to the possibility of further price rises. 
+ve Ora aXika mUlya vqxXi kI samBAvanA ke lie sacewa kie gaye We.
+Multiple adjective senses are available for further. WSD rule is required 
+
+Hindi meaning using Stanford parser 6.1
+And its eyes are beautiful. 
+Ora usakI AzKeM sunxara hEM.
+Multiple adjective senses are available for beautiful. WSD rule is required 
+
+Hindi meaning using Stanford parser 6.2
+It would die in the hot plains. 
+yaha garama samawala BUmI meM mara jAegA.
+
+Hindi meaning using Stanford parser 6.3
+Aditya said, Let us look at it carefully first. 
+Axiwya ne kahA, ki caliye hama sAvaXAnI se praWama isako xeKeM.
+
+Hindi meaning using Stanford parser 6.4
+There is a story about this place. 
+isa sWAna ke bAre meM kahAnI hE.
+
+Hindi meaning using Stanford parser 6.5
+One of the names of the Sun God is Bhaskar. 
+sUrya-xeva ke nAmoM meM se eka BAskara hE.
+
+Hindi meaning using Stanford parser 6.6
+In the hills potatoes are the staple diet. 
+pahAdiyoM meM AlU Bojana_kA_muKya aMSa hEM.
+
+Hindi meaning using Stanford parser 6.7
+He was the leader of the first Indian expedition which attempted to climb Everest. 
+vaha praWama BArawIya aBiyAna xala kA newA WA jisane PropN-everest-PropN para caDane ke lie prayAsa kiyA.
+
+Hindi meaning using Stanford parser 6.8
+For example, take a stainless steel spoon. 
+uxAharaNa_ke liye, eka stenalEsa stIla cammaca lIjie.
+
+Hindi meaning using Stanford parser 6.9
+Where did the steel come from? 
+ispAwa kahAz se AyA?
+
+Hindi meaning using Stanford parser 6.10
+How does a star form? 
+wArA kEse banAwA hE?
+
+Hindi meaning using Stanford parser 6.11
+There is an important difference, however, between the Sun and the hydrogen bomb. 
+sUraja ke bIca Ora hAIdrojana bama ke bIca mahawwvapUrNa anwara, waWApi, hE.
+Multiple adjective senses are available for important. WSD rule is required 
+
+Hindi meaning using Stanford parser 6.12
+Alka had fallen straight into it. 
+alakA sIXA isake anxara girI WI.
+
 Calling Transliteration
 Calling Interface related programs
