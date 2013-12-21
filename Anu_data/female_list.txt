@@ -10859,7 +10859,6 @@ wArakA	f
 wArakiNI	f
 wAraNI	f
 wArana	f
-wArA	f
 wArABURA	f
 wArAvatI	f
 wArAvalI	f

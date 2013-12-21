@@ -89,3 +89,6 @@ The field is not even.
 	-> Parser gave 'even' category as RB but it should be adjective.
 Undue haste results badly.
 	-> Parser gave 'results' category as NNS but it should be verb.
+The sports desk. City desk.  News desk.
+	-> Parser gave 'desk' category as VBZ but it should be noun.
+

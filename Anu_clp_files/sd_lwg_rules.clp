@@ -146,6 +146,7 @@
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?prev_node ?S $?pos)
  (parserid-word ?head ?w&get|got|gets|getting|have|had|has|having|make|makes|making|made|need|needs) 
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
+ (parserid-word ?head1 ~that);As they drew near the bungalow they could make out that something important had happened.
  (Node-Category ?Mot VP)
  (Node-Category ?S SBAR|S|SQ)
  (Node-Category ?pre_n VBG|VBN|VBD|VBZ|VBP|VB|MD|TO|AUX|AUXG)
@@ -165,6 +166,7 @@
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?prev_node ?S $?pos)
  (parserid-word ?head ?w&Let|let)
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
+ (parserid-word ?head1 ~that)
  (Node-Category ?Mot VP)
  (Node-Category ?S S|SBAR)
  (Node-Category ?pre_n VBG|VBN|VBD|VBZ|VBP|VB|MD|TO|AUX|AUXG)
