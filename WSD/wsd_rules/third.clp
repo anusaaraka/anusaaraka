@@ -1,10 +1,12 @@
 
 ;previous_word=one	wihAI	0
+;$$$ Modified category from 'cardinal' to 'number' By Roja (27-12-13). Suggested by Sukhada.
+;One third of the country is expected to be hit by a heatwave. [Example suggested by Sukhada]
 (defrule third0
 (declare (salience 5000))
 (id-root ?id third)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse =(- ?id 1) cardinal)
+(id-cat_coarse =(- ?id 1) number)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id wihAI))

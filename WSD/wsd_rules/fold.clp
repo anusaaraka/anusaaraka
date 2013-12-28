@@ -95,20 +95,20 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fold.clp 	fold6   "  ?id "  waha_kara )" crlf))
 )
 
-(defrule fold7
-(declare (salience 4300))
-(id-root ?id fold)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id Suffix)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id gunA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fold.clp 	fold7   "  ?id "  gunA )" crlf))
-)
-
+;Commented this rule by Roja(27-12-13). File never loads with Suffix. Ex: He has multiplied his money tenfold by investing judiciously. Here 'fold' is the suffix of the word 'ten'. File loads only when 'tenfold.clp' is present.
 ;"fold","Suffix","1.gunA"
-;He has multiplied his money tenfold by investing judiciously.
+;(defrule fold7
+;(declare (salience 4300))
+;(id-root ?id fold)
+;?mng <-(meaning_to_be_decided ?id)
+;(id-cat_coarse ?id Suffix)
+;=>
+;(retract ?mng)
+;(assert (id-wsd_root_mng ?id gunA))
+;(if ?*debug_flag* then
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fold.clp 	fold7   "  ?id "  gunA )" crlf))
+;)
+
 ;
 ;LEVEL 
 ;Headword : fold

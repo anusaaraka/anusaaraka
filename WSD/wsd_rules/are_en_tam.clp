@@ -41,7 +41,8 @@
 (declare (salience 4900))
 (id-TAM ?id are_en)
 ?mng <-(meaning_to_be_decided ?id)
-(id-root ?id1 sentence|music)
+;(id-root ?id1 sentence|music); Commented this fact and modified as below. 
+(id-root ?id compose|grow); $$$ Modified by Roja (25-12-13) Suggested by Chaitanya Sir.Ex: Potatoes are grown mainly in Uttar Pradesh. 
 =>
 (retract ?mng)
 (assert (id-E_tam-H_tam_mng ?id are_en yA_jAwA_hE))

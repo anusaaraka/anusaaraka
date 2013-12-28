@@ -1,9 +1,10 @@
 
+;$$$ ;Modified category from 'Abbr:morning_before_midday' to 'adverb'. Modified by Roja(27-12-13). Suggested by Sukhada.
 (defrule am0
 (declare (salience 5000))
 (id-root ?id am)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id Abbr:morning_before_midday)
+(id-cat_coarse ?id adverb) 
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id xopahara_se_pahale_kA_samaya))
@@ -24,7 +25,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 ;(id-word 1 ?id)
 (test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.
-(id-word ?id Am)
+(id-original_word ?id Am) ;$$$ Modified id-word fact to id-original_word by Roja (27-12-13). As in word fact we never get Upper case letters.
 =>
 (retract ?mng)
 (assert (id-wsd_word_mng ?id kyA_hUz))
@@ -76,7 +77,7 @@
 (declare (salience 4800))
 (id-root ?id am)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id modal)
+(id-cat_coarse ?id verb) ; $$$ Modified category from 'modal' to 'verb' by Roja (27-12-13). Suggested by Sukhada
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id hUz))

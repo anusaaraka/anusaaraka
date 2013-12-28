@@ -26,11 +26,12 @@
 )
 ; I do not go out as much now.
 
+;$$$ Modified 'id-cat_coarse' to 'id-cat'. Modified by Roja (27-12-13). Suggested by Sukhada.
 (defrule much1
 (declare (salience 4900))
 (id-root ?id much)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse =(+ ?id 1) adjective_comparative)
+(id-cat =(+ ?id 1) adjective_comparative)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kuCa))

@@ -1,4 +1,6 @@
-
+;aBI_BI is better that Pira_BI., For Pira_BI, there will be some clues from the previous sentences. So this rule needs to be modified.
+;counter ex: Everything is unworn and still has tags. (Here still mng should be aBI_BI). Suggested by Chaitanya Sir.
+; Ex: The construction saves weight and bulk, and still kept our tester warm during a chilly period.
 ; Added by Amba
 (defrule still0
 (declare (salience 5000))
@@ -38,11 +40,14 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  still.clp 	still2   "  ?id "  aBI_BI )" crlf))
 )
 
+;$$$ Modified '(id-cat_coarse =(- ?id 1) A_comp)' to '(id-cat =(- ?id 1) adjective_comparative)'. By Roja(27-12-13). Suggested by Sukhada.
+;The next day was warmer still. [OALD](Examples suggested by Sukhada)
+;If you can manage to get two tickets that's better still. [OALD] (Examples suggested by Sukhada)
 (defrule still3
 (declare (salience 4700))
 (id-root ?id still)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse =(- ?id 1) A_comp)
+(id-cat =(- ?id 1) adjective_comparative)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id Ora_BI))
@@ -50,11 +55,13 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  still.clp 	still3   "  ?id "  Ora_BI )" crlf))
 )
 
+;$$$ Modified '(id-cat_coarse =(- ?id 1) A_comp)' to '(id-cat =(- ?id 1) adjective_comparative)'. By Roja(27-12-13). Suggested by Sukhada.
+;Based on above rule modified this rule. As of now no example sentence. 
 (defrule still4
 (declare (salience 4600))
 (id-root ?id still)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse =(+ ?id 1) A_comp)
+(id-cat =(- ?id 1) adjective_comparative)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id Ora_BI))
@@ -63,6 +70,8 @@
 )
 
 ;Vaishnavi
+;a publicity still from his new movie
+;The police studied the stills from the security video.
 (defrule still5
 (declare (salience 4500))
 (id-root ?id still)
@@ -75,9 +84,8 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  still.clp 	still5   "  ?id "  niScala )" crlf))
 )
 
-;a publicity still from his new movie
-;The police studied the stills from the security video.
 ;Vaishnavi
+;The wind stilled.
 (defrule still6
 (declare (salience 4400))
 (id-root ?id still)
@@ -90,6 +98,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  still.clp 	still6   "  ?id "  SAMwa_ho )" crlf))
 )
 
+;She spoke quietly to still the frightened child.
 (defrule still7
 (declare (salience 4300))
 (id-root ?id still)
@@ -103,8 +112,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  still.clp 	still7   "  ?id "  SAMwa_kara )" crlf))
 )
 
-;The wind stilled.
-;She spoke quietly to still the frightened child.
 ;Vaishnavi
 (defrule still8
 (declare (salience 4200))
@@ -133,8 +140,6 @@
 ;We stayed in a village where time has stood still.
 ; There are still too many secrets around.
 ;default_sense && category=adverb	Pira_BI	0
-;aBI_BI is better that Pira_BI., For Pira_BI, there will be some clues from 
-; the previous sentences.
 (defrule still10
 (declare (salience 4000))
 (id-root ?id still)
@@ -159,6 +164,8 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  still.clp 	still11   "  ?id "  SAnwa )" crlf))
 )
 
+;$$$ Modified mng from 'acala' to 'sWira' Ex: ;"still","Adj","1.acala/sWira". Modified by Roja(25-12-13). Suggested by Chaitanya Sir.
+;The photographer asked me to stand still while clicking me.
 (defrule still12
 (declare (salience 3800))
 (id-root ?id still)
@@ -166,13 +173,11 @@
 (id-cat ?id adjective|adjective_comparative|adjective_superlative)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id acala))
+(assert (id-wsd_root_mng ?id sWira))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  still.clp 	still12   "  ?id "  acala )" crlf))
 )
 
-;"still","Adj","1.acala/sWira"
-;The photographer asked me to stand still while clicking me.
 ;--"2.SAnwa"
 ;The weather was absolutely still before the rain poured in.
 ;

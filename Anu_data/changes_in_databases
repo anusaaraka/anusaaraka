@@ -472,6 +472,7 @@
  20.	aBiXAraNA	ASA/__n			(    "	 Suggested by Chaitanya Sir 16-10-13)
  21.	BAga		Gar/a__n		(By Roja 			24-10-13)
  22.	sarasarA	KA/__v			(By Roja Suggested by Sukhada	19-12-13)
+ 23.	samamiwi	Apawwi/__n		(By Roja Suggested by Chaitanya Sir 28-12-13)
 
 Modified :
   1.	<e><p><l>we_hue</l>	as	<e><p><l>owe_hue</l>       for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
@@ -580,6 +581,9 @@ Modified :
 	even		long/__adj		(     "   04-12-13)
 	sow		hew__vblex		(     "   04-12-13)
 	dive		liv/e__vblex		(     "   19-12-13)
+	carve		liv/e__vblex		(     "	     "	  )
+	grandpa		house__n		(     "      "	  )
+
 
 Modified paradigm:
      	belonging	house__n	as	personnel__n	(Suggested by Meena ji 12-05-11)
@@ -1304,8 +1308,18 @@ Removed:
 				Ex: I finally managed to cure the rattling noise in my car.
 	95. collection_noun	saFcayana	as	saMgraha		(	"		"	17-12-13)
 				Ex: The painting comes from his private collection.
-	96. name-plate_noun	nAma_patta	as	nAma-pattikA            (Suggested by Nandini ji LTRC 17-12-13)
+	96. name-plate_noun	nAma_patta	as	nAma-pattikA            (Suggested by Nandini ji LTRC	17-12-13)
                                 Ex: Bhagirathi, the children read the name-plate on the door.
+	97. ceremony_noun	XArmika-viXi	as	samAroha		(Suggested by Preeti ji LTRC	21-12-13)
+				Ex: The royal guests were welcomed with pomp and ceremony.
+	98. captain_verb	saFcAlana_kara	as	newqwva_kara		(Suggested by Preeti ji LTRC	21-12-13)
+				Ex: He has captained the England cricket team three times.
+	99. flying_noun		udAna		as	udanA			(Suggested by Chaitana Sir	28-12-13)
+				Ex: Flying planes can be dangerous.
+	100.homogeneous_adjective	sajAwIya	as	samarUpa	(	"		"	"	)
+				Ex: Likewise, space is homogeneous and there is no (intrinsically) preferred location in the universe.
+	101.yes_interjection	vAkaI		as	hAz			(Suggested by Sukhada		28-12-13)
+				Ex: Yes, he did. 
 
 	
     6. Removed meaning from existing list:
@@ -1472,7 +1486,6 @@ Removed:
 				Ex: This room is two times bigger than the hall.
 	15. fan_in		niveSAMka#niveSAMka#noun#2#RM 		(Suggested by Krithika ji LTRC	17-12-13)
 				Ex: That big fan in our lab is not working.
-
 
     Modified :
     --------

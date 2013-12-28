@@ -14,6 +14,9 @@
 ;"anon","Abbr:anonymous","1.ajFAwa_leKaka"
 ;The writer of this poem is anon.
 ;
+
+;I will answer his letter anon. [M-W] (Example suggested by Sukhada (27-12-13))
+;"anon","Adv","1.jalxI"
 (defrule anon1
 (declare (salience 4900))
 (id-root ?id anon)
@@ -26,4 +29,3 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  anon.clp 	anon1   "  ?id "  jalxI )" crlf))
 )
 
-;"anon","Adv","1.jalxI"
