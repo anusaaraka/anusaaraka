@@ -4,6 +4,7 @@
 (id-root ?id relate)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id related)
+(id-word =(- ?id 1) is|are|am); Ex: He is related to me. $$$ Modified by Roja(23-12-13). Suggested by Chaitanya Sir. This rule need to be improved by adding relation as we may also get sentence like He is not related to me. Relation need to be handled by Sukhada.(TODO)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id saMbanXiwa))

@@ -80,11 +80,13 @@
 ;"when","Interro","1.kaba"
 ;When did you go there?.
 ;
+;$$$ Removed category 'relative_pronoun' and added 'viSeRya-jo_samAnAXikaraNa' relation by Roja(28-12-13). Suggested by Sukada.
 (defrule when6
 (declare (salience 4400))
 (id-root ?id when)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id relative_pronoun)
+(viSeRya-jo_samAnAXikaraNa ? ?id)
+;(id-cat_coarse ?id relative_pronoun)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id jaba))

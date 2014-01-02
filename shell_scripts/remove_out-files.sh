@@ -43,6 +43,7 @@
 
  cd $HOME_anu_test/Anu/stdenglish
  make clean
+ rm  abbrevations_using_NER.out generate_ABBR-Dot.lex generate_ABBR-Dot.out
 
  cd $HOME_anu_test/Anu/std_format
  make clean
@@ -59,21 +60,21 @@
  cd $HOME_anu_test/miscellaneous/transliteration/
  rm -rf phrasal.Beta2 
  cd work
- rm -f path_for_transliteration phrasal-mert/phrasal.test.ini_tmp1 phrasal-mert/phrasal.test.ini
+ rm -f path_for_transliteration phrasal-mert/phrasal.test.ini_tmp* phrasal-mert/phrasal.test.ini 
 
  echo "Removing canonical files"
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
- rm -f canonical_form_correction.out canonical_to_conventional.out get_canonical_form-dic.out canonical_form.out lex.yy.c
+ rm -f canonical_form_correction.out canonical_to_conventional.out get_canonical_form-dic.out canonical_form.out lex.yy.c non_canonical_form.out
  rm -rf dictionaries 
 
  cd $HOME_anu_test/WSD/wsd_rules/
- rm -rf canonical_form_wsd_rules get_canonical_form_in_wsd.out canonical_to_conventional_in_wsd.out lex.yy.c
+ rm -rf canonical_form_wsd_rules get_canonical_form_in_wsd.out canonical_to_conventional_in_wsd.out lex.yy.c list
 
  cd $HOME_anu_test/new_hnd_mo
  rm -f apertium_hn_in_canonical_form.dix lex.yy.c
 
  cd $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries
- rm -f phy_hnd_multi_word_dic.txt hindi_multi_word.txt
+ rm -f phy_hnd_multi_word_dic.txt hindi_multi_word.txt eng_* hnd_multi* hnd_phy_multi*
 
  cd $HOME_anu_test/Parsers/
  rm -rf bllip-parser-master 
@@ -89,3 +90,7 @@
  echo "Removing stanford-tregex"
  cd $HOME_anu_test/miscellaneous/std_tregex
  rm -rf stanford-tregex-2013-06-20
+
+ echo "Removing SHALLOW_PARSER out files"
+ cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER
+ rm adding@-for-eng-words.out lex.yy.c

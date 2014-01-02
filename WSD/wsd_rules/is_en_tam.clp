@@ -24,11 +24,12 @@
 ; Protoplasm is known as the physical basis for life.
 ;Modified by Meena(19.11.10);Added "use" in the list.
 ;In physics, the term “fluid” is used to mean either a gas or a liquid.
+;$$$ grow added by Roja (25-12-13) Suggested by Chaitanya Sir. Ex: Potato is grown mainly in Uttar Pradesh. 
 (defrule is_en_tam1
 (declare (salience 4900))
 (id-TAM ?id is_en)
 ?mng <-(meaning_to_be_decided ?id)
-(id-root ?id  know|play|use|call|consider)
+(id-root ?id  know|play|use|call|consider|grow)
 ;(id-word ?id  known|played)
 ;(not(id-cat_coarse =(+ ?id 2) noun|verbal_noun)) 
 =>
