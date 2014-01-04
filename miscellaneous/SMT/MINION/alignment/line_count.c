@@ -7,8 +7,9 @@
 main(int argc, char* argv[])
 {
    char *line = NULL, word[1000];
-   size_t  count=0, len=0;
+   int  count=0;
    FILE *fp;
+   size_t len=0;
    
    fp = fopen(argv[1] , "r");
    if(fp == NULL) printf("Couldn't open file\n");

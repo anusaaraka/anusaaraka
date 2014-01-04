@@ -1,4 +1,4 @@
-;@@@---Added by Nandini(14-12-13)
+;@@@ Added by Nandini(14-12-13)
 ;She answered in a faint murmur.[oxford advanced learner's dictionary]
 ;usane eka nirbala svara meM uwwara xiyA.
 (defrule murmur0
@@ -14,7 +14,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  murmur.clp 	murmur0   "  ?id "  svara)" crlf))
 )
 
-;@@@---Added by Nandini(14-12-13)
+;@@@ Added by Nandini(14-12-13)
 ;He paid the extra cost without a murmur.[oxford advanced learner's dictionary]
 ;usane SikAyawa ke binA awirikwa jyAxA pEse xIye.
 (defrule murmur1
@@ -29,7 +29,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  murmur.clp 	murmur1   "  ?id "  SikAyawa)" crlf))
 )
 
-;@@@---Added by Nandini(14-12-13)
+;@@@ Added by Nandini(14-12-13)
 ;The people murmured against the new regime.[oxford advanced learner's dictionary]
 ;logoM ne naye Sasana ke viruxXa SikAyawa kI.
 (defrule murmur2
@@ -46,7 +46,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  murmur.clp 	murmur2   "  ?id "  SikAyawa_kara)" crlf))
 )
 
-;@@@---Added by Nandini(14-12-13)
+;@@@ Added by Nandini(14-12-13)
 ;The wind murmured in the trees.[oxford advanced learner's dictionary]
 ;havA pedoM meM sarasarAI.
 (defrule murmur4
@@ -64,7 +64,7 @@
 )
 
 ;===========Default-rule==============
-;@@@---Added by Nandini(14-12-13)
+;@@@ Added by Nandini(14-12-13)
 ;She was murmuring in his ear.[oxford advanced learner's dictionary]
 ;vaha usakI kAna meM badabadA rahI WI.
 (defrule murmur3

@@ -33233,6 +33233,8 @@ dry_fruit	mevA#mevA#noun#2#RM
 half_dead	aXamarA#aXamarA#adjective#2#RM
 in_the_distance	xUra#xUra#noun#3#WM
 staple_diet	Bojana_kA_muKya_aMSa#Bojana_kA_muKya_aMSa#noun#2#RM
+taking_courage_in_both_hands	jI_kadZA_karake_badZI_himmawa_se#jI_kadZA_karake_badZI_himmawa_se#verb#1#RM
+preferred_location	aXimawa_avasWiwi#aXimawa_avasWiwi#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

@@ -422,7 +422,8 @@
 	demon	   (		  "			"    ) Ex: Lakshmi lures and destroys evil demons . 
 	army	   (              "	                "    ) Ex: Armies had been crippled but not destroyed .   
 	bird	   (Suggested by Pramila Banasthali 12-12-13 ) Ex: The bird settled on a very small branch.
-	husband	   ((Suggested by Anita ji LTRC     12-12-13 ) Ex: I sent my husband to represent me at the funeral. 
+	husband	   (Suggested by Anita ji LTRC     12-12-13  ) Ex: I sent my husband to represent me at the funeral.
+	king	   (Suggested by Prachi Banasthali 04-01-14  ) Ex: I must take them to the King, the farmer said firmly.		 
 
 
   Changes in total-paxasUwra.txt 
@@ -590,7 +591,9 @@ Modified paradigm:
 	box		bass__n		as	access__n	(Suggested by Meena ji 10-08-11)
 	phenomenon	house__n	as	criteri/on__n	(By Roja	       14-03-13)
 	shrink
-	epoch		access__n	as	house__n	(By Roja		19-12-13)	
+	epoch		access__n	as	house__n	(By Roja		19-12-13)
+	slight		expensive__adj	as	long/__adj	(By Roja		04-01-14)
+	strike		liv/e__vblex	as	str/ike__vblex	(By Roja		04-01-14)
 
 Added new paradigms:
         trek__vblex		(By Roja	14-10-11)
@@ -956,6 +959,8 @@ Removed:
 	71. non-uniform_adjective   	asamAna				(Suggested by Chaitanya Sir     21-12-13)
 					Ex: We saw that uniform motion needs the concept of velocity alone whereas non-uniform motion
                                             requires the concept of acceleration in addition.
+	72. paycheck_noun		wanaKvAha_kA_cEka		(Suggested by Sonam Banasthali	04-01-14)
+					Ex: The monthly premium for your health insurance is deducted from your paycheck.
 
 
     4. Added new meaning to the existing word:
@@ -1314,12 +1319,16 @@ Removed:
 				Ex: The royal guests were welcomed with pomp and ceremony.
 	98. captain_verb	saFcAlana_kara	as	newqwva_kara		(Suggested by Preeti ji LTRC	21-12-13)
 				Ex: He has captained the England cricket team three times.
-	99. flying_noun		udAna		as	udanA			(Suggested by Chaitana Sir	28-12-13)
+	99. flying_noun		udAna		as	udanA			(Suggested by Chaitanaya Sir	28-12-13)
 				Ex: Flying planes can be dangerous.
 	100.homogeneous_adjective	sajAwIya	as	samarUpa	(	"		"	"	)
 				Ex: Likewise, space is homogeneous and there is no (intrinsically) preferred location in the universe.
 	101.yes_interjection	vAkaI		as	hAz			(Suggested by Sukhada		28-12-13)
-				Ex: Yes, he did. 
+				Ex: Yes, he did.
+	102.careless_adjective	beparavAha	as	lAparavAha 		(Suggested by Preeti ji LTRC	04-01-14)
+				Ex:Don't be so careless about spelling.
+	103.confusion_noun	samBrama	as	Brama			(Suggested by 	"		"	)
+				Ex: Her unexpected arrival threw us into total confusion.
 
 	
     6. Removed meaning from existing list:
@@ -1672,8 +1681,11 @@ Removed:
 	86. rubbish_bin		kacarA_kuMdI#kacarA_kuMdI#noun#2#RM			(Suggested by Anita ji LTRC	17-12-13)
 				Ex: Put the empty box in the rubbish bin. 
 	87. staple_diet     	Bojana_kA_muKya_aMSa#Bojana_kA_muKya_aMSa#noun#2#RM	(Suggested by Chaitanya Sir     21-12-13)
-				Ex: In the hills potatoes are the staple diet. 
-
+				Ex: In the hills potatoes are the staple diet.
+	88. taking_courage_in_both_hands	jI_kadZA_karake_badZI_himmawa_se#jI_kadZA_karake_badZI_himmawa_se#verb#1#RM (Suggested by Chaitanya Sir 04-01-14)
+				Ex: Then, taking courage in both hands, he spoke, Your Majesty, please grant me anything
+	89. preferred_location	aXimawa_avasWiwi#aXimawa_avasWiwi#noun#2#RM		(Suggested by Chaitanya Sir     04-01-14)
+				Ex: Likewise, space is homogeneous and there is no (intrinsically) preferred location in the universe. 		 
 
     Added new meaning to the existing word:
     --------------------------------------
