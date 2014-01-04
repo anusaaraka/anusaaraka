@@ -606,7 +606,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id raKa));meaning is changed by sheetal from 'raha' to 'raKa'.
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  keep.clp     keep35   "  ?id "  raKa )" crlf);inconsistency in the mng in assert & print statement has been corrected by Sukhada (15.3.10))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  keep.clp     keep35   "  ?id "  raKa )" crlf));inconsistency in the mng in assert & print statement has been corrected by Sukhada (15.3.10)
 )
 ;Abandoned children are kept in orphanages .
 

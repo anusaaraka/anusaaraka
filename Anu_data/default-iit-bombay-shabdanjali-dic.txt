@@ -12775,7 +12775,7 @@ carefuler_UNDEFINED	sAvaXAna
 carefulest_UNDEFINED	sAvaXAna
 carefully_adverb	sAvaXAnI_se/vicAriwawaH/vicArapUrvaka
 caregiver_noun	xeKa-reKa_karane_vAlA
-careless_adjective	beparavAha/suswa/nEsargika/lAparavAha/kama/kaccA/galawa/DIlA-DAlA/bePikra/aXUrA/asawarka/asAvaXAna/AlasI
+careless_adjective	lAparavAha/beparavAha/suswa/nEsargika/kama/kaccA/galawa/DIlA-DAlA/bePikra/aXUrA/asawarka/asAvaXAna/AlasI
 carelesser_UNDEFINED	beparavAha
 carelessest_UNDEFINED	beparavAha
 carelessly_UNDEFINED	beparavAhI_se
@@ -16699,7 +16699,7 @@ confuses_UNDEFINED	GabadA_jAnA
 confusing_UNDEFINED	GabadA_jAnA
 confusing_adjective	pecIxA/aspaRta
 confusingly_adverb	samBramiwa_karawe_hue/sanxigXawaH/aspaRtawaH
-confusion_noun	samBrama/Brama/BOcakkA/BAnwi/aswavyaswawA
+confusion_noun	Brama/samBrama/BOcakkA/BAnwi/aswavyaswawA
 confusions_UNDEFINED	samBrama
 confutable_adjective	KaNdanIya
 confutative_adjective	KaNdanIya
@@ -93511,3 +93511,4 @@ mule-men_noun	KaccharavAlA
 character-building_noun	cariwra_nirmANa
 orthodox_noun	paraMparAgawa
 non-uniform_adjective	asamAna
+paycheck_noun	wanaKvAha_kA_cEka
