@@ -40,7 +40,9 @@
 
 ;"second","Det","1.xUsarA"
 ;She is his second wife.
-;
+;$$$ Modified by Shirisha Manju Suggested by Chaitanya Sir (05-01-14)
+;Modified meaning 'kRaNa' as 'sekanda'
+;The limiting speed is about 11SYMBOL-DOT2 kilometres per second.
 (defrule second3
 (declare (salience 4700))
 (id-root ?id second)
@@ -48,9 +50,9 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id kRaNa))
+(assert (id-wsd_root_mng ?id sekanda))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  second.clp 	second3   "  ?id "  kRaNa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  second.clp 	second3   "  ?id "  sekanda )" crlf))
 )
 
 ;"second","N","1.kRaNa"
@@ -72,7 +74,8 @@
 
 ;"second","Pron","1.xUsarA"
 ;She is his second wife.
-;
+;$$$ Modified by Shirisha Manju Suggested by Chaitanya Sir (05-01-14)
+;Modified meaning 'samarWana_karara' as 'samarWana_kara'
 (defrule second5
 (declare (salience 4500))
 (id-root ?id second)
@@ -80,9 +83,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id samarWana_karara))
+(assert (id-wsd_root_mng ?id samarWana_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  second.clp 	second5   "  ?id "  samarWana_karara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  second.clp 	second5   "  ?id "  samarWana_kara )" crlf))
 )
 
 ;"second","V","1.samarWana_kararanA"

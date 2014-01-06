@@ -21992,7 +21992,7 @@ on_tap	mAMga_ke_anusAra_prApya#mAMga_ke_anusAra_prApya#noun#2#RM
 on_temporary_basis	asWAyI_AXAra_para#asWAyI_AXAra_para#noun#3#RM
 on_the_advice_of	kI_salAha_para#kI_salAha_para#noun#3#RM
 on_the_average	Osawa_rUpa_meM#Osawa_rUpa_meM#noun#3#RM
-on_the_basis_of_total_income	kula_Aya_ke_AXAra_para#kula_Aya_ke_AXAra_para#noun#3#RM
+on_the_basis_of	ke_AXAra_para#ke_AXAra_para#preposition#3#RM
 on_the_conclusion	ke_samApana_para#ke_samApana_para#noun#3#RM
 on_the_contrary	isake_prawikUla#isake_prawikUla#noun#3#RM
 on_the_demands_raised_by_the_department	viBAga_xvArA_kI_gaI_mAMgoM_para#viBAga_xvArA_kI_gaI_mAMgoM_para#noun#7#RM

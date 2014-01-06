@@ -324,12 +324,12 @@
  (prep_id-relation-anu_ids ? kriyA-subject|kriyA-dummy_subject  ?kri1  ?)
  (test (neq ?kri ?kri1))
  ?f0 <-(hindi_id_order $?pre ?kri1 ?id $?d ?v_k $?post)
- (not (ki_asserted ?kri))
+ (not (ki_asserted ?kri1))
  (not (id-HM-source ?id ki ?));It was obvious that he would do it.
  (not (prep_id-relation-anu_ids - kriyA-conjunction ?v_k ?));She declared that out of love for the poor she had gotten her family to go against convention. 
   =>
         (retract ?f0)
-	(assert (ki_asserted ?kri))
+	(assert (ki_asserted ?kri1))
         (assert (hindi_id_order  $?pre ?kri1 ki  ?id $?d ?v_k $?post))
         (printout  ?*DBUG* "(Rule_Name-ids   ki_rule4   (hindi_id_order  "(implode$ (create$ $?pre ?kri1 ki ?id $?d ?v_k $?post)) ")" crlf)
  )

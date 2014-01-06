@@ -961,6 +961,8 @@ Removed:
                                             requires the concept of acceleration in addition.
 	72. paycheck_noun		wanaKvAha_kA_cEka		(Suggested by Sonam Banasthali	04-01-14)
 					Ex: The monthly premium for your health insurance is deducted from your paycheck.
+	73. duo_noun  			xonoM				(Suggested by Pamila Banasthali   28-12-13)
+					Ex: The father and son duo were sitting beside a dying fire in front of their hut .
 
 
     4. Added new meaning to the existing word:
@@ -1418,11 +1420,11 @@ Removed:
  changes in preposition.txt
  ==========================
  Added  :
-	as_before 	---	Suggested by Rajini (25-02-12)
-	in_terms_of     ---	Suggested by Chaitanya Sir (25-05-12) 
-	in_contrast_to  ---     Suggested by Sukhada
-	as_far_as	---	Added below entries from Wikepedia 
-                                (As Suggested by Chaitanya Sir (30-10-12))
+	as_before 		---	Suggested by Rajini (25-02-12)
+	in_terms_of     	---	Suggested by Chaitanya Sir (25-05-12) 
+	in_contrast_to  	---     Suggested by Sukhada
+	as_far_as		---	Added below entries from Wikepedia 
+                                	(As Suggested by Chaitanya Sir (30-10-12))
 		as_long_as    	as_of    		as_opposed_to
 		as_regards 	as_soon_as		back_to
 		by_virtue_of	far_from 		for_the_sake_of	
@@ -1432,10 +1434,11 @@ Removed:
 		pursuant_to	right_of 		subsequent_to
 		that_of		where_as 		with_a_view_to	
 		with_respect_to
-	into_and_out_of --- 	(Suggested by Chaitanya Sir 22-11-12)
-	in_contact_with	---	(Suggested by Sukhada
-	just_before	---	(Suggested by Chaitanya Sir 22-01-13)
-	more_than	---	(Suggested by Sukhada	    04-09-13)
+	into_and_out_of		--- 	(Suggested by Chaitanya Sir 22-11-12)
+	in_contact_with		---	(Suggested by Sukhada
+	just_before		---	(Suggested by Chaitanya Sir 22-01-13)
+	more_than		---	(Suggested by Sukhada	    04-09-13)
+	on_the_basis_of		---	(Suggested by Chaitanya Sir 05-01-14)
 
 -------------------------- compound_phrase.txt -----------------------------------
  Based on the type of the phrase, compound_phrase.txt file has been splitted in to four different files,(Suggested by Chaitanya ji 23-04-12)
@@ -1495,6 +1498,8 @@ Removed:
 				Ex: This room is two times bigger than the hall.
 	15. fan_in		niveSAMka#niveSAMka#noun#2#RM 		(Suggested by Krithika ji LTRC	17-12-13)
 				Ex: That big fan in our lab is not working.
+	16. on_the_basis_of_total_income	kula_Aya_ke_AXAra_para#kula_Aya_ke_AXAra_para#noun#3#RM (Suggested by Chaitanya Sir 05-01-14)
+				
 
     Modified :
     --------
@@ -1685,7 +1690,10 @@ Removed:
 	88. taking_courage_in_both_hands	jI_kadZA_karake_badZI_himmawa_se#jI_kadZA_karake_badZI_himmawa_se#verb#1#RM (Suggested by Chaitanya Sir 04-01-14)
 				Ex: Then, taking courage in both hands, he spoke, Your Majesty, please grant me anything
 	89. preferred_location	aXimawa_avasWiwi#aXimawa_avasWiwi#noun#2#RM		(Suggested by Chaitanya Sir     04-01-14)
-				Ex: Likewise, space is homogeneous and there is no (intrinsically) preferred location in the universe. 		 
+				Ex: Likewise, space is homogeneous and there is no (intrinsically) preferred location in the universe. 
+	90. on_the_basis_of	ke_AXAra_para#ke_AXAra_para#preposition#3#RM		 (Suggested by Chaitanya Sir     05-01-14)
+				Ex: Physicists try to discover the rules that are operating in nature, on the basis of observations,
+				    experimentation and analysis.		       			 
 
     Added new meaning to the existing word:
     --------------------------------------

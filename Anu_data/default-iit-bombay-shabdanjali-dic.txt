@@ -93512,3 +93512,4 @@ character-building_noun	cariwra_nirmANa
 orthodox_noun	paraMparAgawa
 non-uniform_adjective	asamAna
 paycheck_noun	wanaKvAha_kA_cEka
+duo_noun	xonoM
