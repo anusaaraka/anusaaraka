@@ -2635,10 +2635,12 @@ paramparA mAzgawI hE ki eka klaba saxasya ko EsI hAlawa meM wyAga_pawra xenA cAh
 Hindi meaning using Stanford parser 5.98
 We must be alert to the possibility of danger. 
 hameM vipawwi kI samBAvanA ke lie sawarka honA cAhie.
+Multiple adjective senses are available for alert. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.99
 Two alert scientists spotted the mistake. 
 xo sawarka vEjFAnikoM ne galawI xeKI.
+Multiple adjective senses are available for alert. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.100
 They had been alerted to the possibility of further price rises. 

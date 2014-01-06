@@ -163,6 +163,7 @@
  (prawiniXi_id-node-category ?np_id ?NP NP|S|WHNP|ADJP) ;The game of life is played for winning. In short, the greater the rate of change of momentum, the greater is the force. 
  (head_id-prawiniXi_id-grp_ids ? ?prep_id ?prep)
  (id-word ?prep ?w&~per);The limiting speed is about 11.2 kilometres per second.
+ (not (prep_ids $?ids ?prep $?))
  (head_id-prawiniXi_id-grp_ids ?np_head ?np_id $?grp_ids ?last_node)
  ?f0<-(pada_info (group_head_id ?np_id)(preposition 0))
  ?f2<-(id-grp_ids ?pp $?)
@@ -257,18 +258,19 @@
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ; Mohan fell from the top of the house.
+ ;It turns out that this symmetry of nature with respect to translation (i.e. displacement) in time is equivalent to the law of conservation of energy.
  (defrule get_prep
  (declare (salience 4000))
- (pada_info (group_head_id ?hid)(group_ids ?np $?) (preposition ?prep))
- (test (neq ?prep 0))
+ (pada_info (group_head_id ?hid)(group_ids ?np $?) (preposition $?prep))
+ (test (eq (member$ 0 $?prep) FALSE))
  (prawiniXi_id-node-category ?np ?NP NP|VP)
  ?f0<-(pada_info (group_head_id ?np)(preposition  0))
  =>
         (retract ?f0)
 	(printout ?*pada_debug_file* "(rule_name-mode_of_pada - get_prep Modification"crlf )
         (printout ?*pada_debug_file* "		Before :: (pada_info (group_head_id "?np")(preposition 0))" crlf)
-        (modify ?f0 (preposition ?prep))
-        (printout ?*pada_debug_file* "		After  :: (pada_info (group_head_id "?np")(preposition "?prep"))" crlf)
+        (modify ?f0 (preposition $?prep))
+        (printout ?*pada_debug_file* "		After  :: (pada_info (group_head_id "?np")(preposition "(implode$ $?prep)"))" crlf)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  (defrule save_praxiniWi_info
