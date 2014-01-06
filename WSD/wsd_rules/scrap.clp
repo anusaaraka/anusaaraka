@@ -9,7 +9,7 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id tukadA))
-(if ?*debug_flag*operations
+(if ?*debug_flag*
 then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  scrap.clp 	scrap0  " ?id "  tukadA )" crlf)))
 
@@ -22,7 +22,7 @@ then
 ?mng <- (meaning_to_be_decided ?id)
 (not(id-cat_coarse ?id verb))
 (or(subject-subject_samAnAXikaraNa ?	?id)(samAsa ? ?id) (id-cat_coarse ?id adjective)(id-root =(+ ?id 1) material|iron|copper|matel|timber|dealer|wood|book)
-(id-root =(+ id 1) in)) 
+(id-root =(+ ?id 1) in)) 
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id raxxI))
@@ -68,7 +68,7 @@ then
 (id-root ?id scrap)
 ?mng <- (meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
-(not(kriyA-object 	?id ?)
+(not(kriyA-object 	?id ?))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id raxxa_kara))

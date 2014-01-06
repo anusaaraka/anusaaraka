@@ -42,7 +42,6 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pt.clp 	pt2   "  ?id "  binxu_yA_aMka )" crlf))
 )
-dd
 ;"pt","Abbr:points","1.binxu_yA_aMka"
 ;The winner should score 10 Pts in badminton.
 ;In games then pt is point  (This hint Suggested by Chaitanya Sir 30-12-13)
