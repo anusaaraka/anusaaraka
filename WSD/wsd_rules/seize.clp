@@ -138,7 +138,7 @@ then
 (id-root ?id seize)
 (id-root ?id2 possession|power|control|headquarter|nation|area|government|east|west|north|south|part|party)
 ?mng <- (meaning_to_be_decided ?id)
- (or(kriyA-object ?id  ?id2)(id-root =(+ id 1) possession|power|control|headquarter|nation|area|government|east|west|north|south|part|party))
+ (or(kriyA-object ?id  ?id2)(id-root =(+ ?id 1) possession|power|control|headquarter|nation|area|government|east|west|north|south|part|party))
   =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id  kabjA_kara))
@@ -185,7 +185,7 @@ then
 (id-root ?id seize)
 (id-root ?id2 panic|fear|shame|revulsion|hysterics|joy|attack|terror|delusion|grief|pain|urgency|jealousy|tension)
 ?mng <- (meaning_to_be_decided ?id)
- (or(kriyA-object ?id  ?id2)(kriyA-subject ?id ?id2)(? ?id ?id2)(? ?id2 ?id))
+ (or(kriyA-object ?id  ?id2)(kriyA-subject ?id ?id2))
  =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id  praBAviwa_kara))
