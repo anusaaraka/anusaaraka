@@ -302,7 +302,7 @@
 ;-------------------------------------------------------------------------------------
 ;If only one verb is present in both the manual and anusaaraka sentences then make direct alignment.
 (defrule single_verb_group_match_with_anu
-(declare (salience 890))
+(declare (salience 878))
 (current_id ?mid)
 (anu_verb_count-verbs 1 ?aid)
 (man_verb_count-verbs 1 ?mid)
@@ -321,7 +321,7 @@
 )
 ;-------------------------------------------------------------------------------------
 ;Check for manual verb[root] and tam match in the dictionary
-; The strong nuclear force binds protons and neutrons in a nucleus. 
+; The strong nuclear force binds protons and neutrons in a nucleus.  
 (defrule verb_match_using_dic
 (declare (salience 880))
 (current_id ?mid)
@@ -355,7 +355,6 @@
 	(assert (man_id-src-root ?mid dictionary ?root))
         (assert (prov_assignment ?aid ?mid))
 )
-;-------------------------------------------------------------------------------------
 ;-------------------------------------------------------------------------------------
 ;Check for manual word and vibakthi match in the dictionary
 (defrule word_and_vib_match_using_dic
@@ -651,15 +650,16 @@
         (assert (id-confidence_level ?mid 8))
 )
 ;-------------------------------------------------------------------------------------
-
 (defrule check_count_value_gt_than_1
 (declare (salience -50))
 ?f<-(current_id ?mid)
 (count_fact ?count)
 (test (> ?count 1))
-?f2<-(anu_ids-sep-manual_ids ?aid - $?mids)
+?f2<-(anu_ids-sep-manual_ids $?aids - $?mids)
+;?f2<-(anu_ids-sep-manual_ids ?aid - $?mids)
 ?f3<-(prov_assignment ?aid ?mid)
-(test (member$ ?mid $?mids))
+;(test (member$ ?mid $?mids))
+(test (and (member$ ?mid $?mids)(member$ ?aid $?aids)))
 =>
          (retract ?f2)
 	 (assert (potential_assignment_vacancy_id-candidate_id ?aid ?mid)) 
