@@ -11,8 +11,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  want.clp 	want0   "  ?id "  cAha )" crlf))
 )
 
-
-
 ;Modified by Meena(25.6.10)
 ;Added by Meena(22.01.10)
 ;I want her to know about it.
@@ -26,21 +24,12 @@
 (or(id-root ?id1  ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))(id-cat_coarse ?id1 PropN))
 =>
 (retract ?mng)
-(if (or(id-root ?id1  ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))(id-cat_coarse ?id1 PropN)) then
-        (assert (kriyA_id-object_viBakwi ?id ko))
-)
 (assert (id-wsd_root_mng ?id cAha))
+(assert (kriyA_id-object_viBakwi ?id ko))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  want.clp      want1   "  ?id "  cAha )" crlf)
-(if  (or(id-root ?id1  ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))(id-cat_coarse ?id1 PropN)) then
-        (assert (kriyA_id-object_viBakwi ?id ko))
-        (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  want.clp      want1   "  ?id "  ko )" crlf)
- )
-;(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  want.clp      want1   "  ?id " ko )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  want.clp      want1   "  ?id "  ko )" crlf))
 )
-)
-
-
 
 ;Salience reduced by Meena(22.01.10)
 ;I want to go.

@@ -474,6 +474,7 @@
  21.	BAga		Gar/a__n		(By Roja 			24-10-13)
  22.	sarasarA	KA/__v			(By Roja Suggested by Sukhada	19-12-13)
  23.	samamiwi	Apawwi/__n		(By Roja Suggested by Chaitanya Sir 28-12-13)
+ 24.	wArA		ladak/A__n		(By Roja Suggetsed by Sukhada	06-01-14)
 
 Modified :
   1.	<e><p><l>we_hue</l>	as	<e><p><l>owe_hue</l>       for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
@@ -584,6 +585,7 @@ Modified :
 	dive		liv/e__vblex		(     "   19-12-13)
 	carve		liv/e__vblex		(     "	     "	  )
 	grandpa		house__n		(     "      "	  )
+	sugarcane	house__n		(     "   06-01-14)
 
 
 Modified paradigm:
@@ -626,6 +628,7 @@ Removed:
 	<e lm="shrunk"><i>shrunk</i><par n="accept__vblex"/></e>		(By Roja	07-09-13)
 	<e lm="shrank"><i>shrank</i><par n="accept__vblex"/></e>		("		"	)
 	<e lm="flags"><i>flags</i><par n="access__n"/></e>			("		04-12-13) 
+	<e lm="tactics"><i>tactics</i><par n="politics__n"/></e>		("		06-01-14)
 
 
  Added new files:
@@ -1121,7 +1124,9 @@ Removed:
 					Ex: The word Science originates from the Latin verb Scientia meaning 'to know'. 
 	86. doorway_noun    		xvArapaWa		(Suggested by Pramila Banasthali 12-12-13)
 					Ex: He suddenly appeared in the doorway.
-	87. embankment_noun    		wata			(		  "	"	 21-12-13)
+	87. name-plate_noun		nAma_pattikA		(Suggested by Nandini ji LTRC	17-12-13)
+					Ex: Bhagirathi, the children read the name-plate on the door.
+	88. embankment_noun    		wata			(		  "	"	 21-12-13)
 					Ex: Alka and Taffy wandered about on the embankment.
 
 
