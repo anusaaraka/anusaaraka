@@ -7,7 +7,7 @@
 		     o.clp	over.clp	relate.clp	rent.clp	still.clp	that.clp	third.clp
 		     when.clp	which.clp	whose.clp	an.clp		say.clp		anon.clp	keep.clp
 		     remain.clp	pt.clp		discover.clp  	have.clp  	second.clp	handsome.clp    scrap.clp       
-		     seize.clp	travel.clp	want.clp
+		     seize.clp	travel.clp	want.clp	ing_tam.clp
 	  Added    : sun.clp	reflect.clp	general.clp	host.clp	imply.clp	murmur.clp	convention.clp
 	  Deleted  : ought.clp	characterstic.clp
 	  Removed inanimate.txt and handled it with animate.txt as Suggested by Chaitanya Sir. so following files are modified:
