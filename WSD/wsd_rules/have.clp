@@ -46,11 +46,6 @@
 ;)
 ;)
 
-
-
-
-
-
 ;(id-word ?id have|has) uncommented by Meena to get the proper output for the sentence    "She had two pens."
 ;She has three pencils.
 ;I have a cow.
@@ -101,13 +96,16 @@
 
 ;Tested (Meena 24.10.09)
 ;I have difficulty in understanding Mathematics . 
+;$$$ Modified by Shirisha Manju Suggested by Chaitanya Sir (05-01-14) , added faith|notion|idea in the list
+;We all have an intuitive notion of force. 
+;हम सबको बल के बारे में कोई सहजानुभूत धारणा है .
 (defrule have4
 (declare (salience 5000))
 ;(declare (salience 3300))
 (id-root ?id have)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id have|has)         
-(id-word ?id1 headache|objection|difficulty|trouble|toothache|fever)
+(id-word ?id1 headache|objection|difficulty|trouble|toothache|fever|faith|notion|idea)
 (kriyA-object ?id ?id1)
 =>
 (retract ?mng)
@@ -138,10 +136,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp 	have5   "  ?id "  le )" crlf))
 )
 
-
-
-
-
 (defrule have6
 (declare (salience 5000))
 (id-root ?id have)
@@ -156,10 +150,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp 	have6   "  ?id "  le )" crlf))
 )
 
-
-
-
-
 (defrule have7
 (declare (salience 5000))
 (id-root ?id have)
@@ -173,10 +163,6 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp 	have7   "  ?id "  A )" crlf))
 )
-
-
-
-
 
 ;Added by Meena(12.10.09)
 ;I am having my dinner.
@@ -193,7 +179,6 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp      have8   "  ?id "  KA )" crlf))
 )
-
 
 
 ;Added by Meena(25.4.11)
@@ -214,16 +199,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  have.clp      have_cala   "  ?id " kA )" crlf))
 )
 
-
-
-
-
-
-
-
-
-
-
 ;Uncommented by Meena(10.4.10) because "have8"  does not work for the following and similar other examples.
 ;She has dinner at 6 O'clock.
 (defrule have9
@@ -240,10 +215,6 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp 	have9   "  ?id "  KA )" crlf))
 ); Commented by Sukhada because rule 'have8' will do the same job.
-
-
-
-
 
 (defrule have10
 (declare (salience 5000))

@@ -137,21 +137,22 @@
 ;Which is your favourite game?.
 ;Which way do we take for going to the Exhibition Ground.
 ;
+
+;$$$ Removed category 'relative_pronoun' and added 'viSeRya-jo_samAnAXikaraNa' relation by Roja(28-12-13). Suggested by Sukada.
+;"which","Rel Pron","1.jo"
+;You can take the book which is on the table.
 (defrule which10
 (declare (salience 4100))
 (id-root ?id which)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id relative_pronoun)
+(viSeRya-jo_samAnAXikaraNa ? ?id)
+;(id-cat_coarse ?id relative_pronoun)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id jo))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  which.clp 	which10   "  ?id "  jo )" crlf))
 )
-
-;"which","Rel Pron","1.jo"
-;You can take the book which is on the table.
-;
 
 
 ;Added by Roja (15-12-10)

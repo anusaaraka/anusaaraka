@@ -28,7 +28,7 @@
         To Extract tar , Run::
 	tar -xvzf <file name>  (Ex : tar -xvzf anusaaraka.tgz)
 			or
-	To clone from local git repository::
+	To clone from bitbucket repository::
 	git clone https://bitbucket.org/anusaaraka/anusaaraka.git
 
 
@@ -52,7 +52,7 @@
         Ex:
         ==
 
-        export HOME_anu_test=$HOME/anu_testing
+        export HOME_anu_test=$HOME/anusaaraka
         export HOME_anu_output=$HOME/anu_output
 	export HOME_anu_tmp=$HOME/tmp_anu_dir
 	export HOME_anu_provisional_wsd_rules=$HOME/provisional_wsd_rules
@@ -65,7 +65,7 @@
         compile:
         ========
 
-        cd anu_testing
+        cd anusaaraka
 	sh shell_scripts/anu_compile.sh
 
       Note :: Please run  remove_out-files.sh before recompiling.

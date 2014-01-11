@@ -58,3 +58,4 @@ demon	1
 army	1
 bird	1
 husband	1
+king	1

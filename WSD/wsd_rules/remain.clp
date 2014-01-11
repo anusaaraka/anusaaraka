@@ -21,8 +21,7 @@
 (kriyA-subject ?id ?sub)
 ;(id-root ?sub  ?str&:(and (not (numberp ?str))(gdbm_lookup_p "inanimate.gdbm" ?str))) ;Added by Manju Suggested by Chaitanya Sir (17-08-13) ... the problem remains. ... samasyA SeRa rahawI hE
 (id-root ?id1 ?sub);As suggested by Chaitanya Sir removed inanimate.gdbm and modified the fact as shown by Roja (03-12-13) 
-(test (and (neq (numberp ?str) TRUE) (neq (gdbm_lookup_p "animate.gdbm" ?str) TRUE)))
-(test (neq (gdbm_lookup_p "animate.gdbm" ?sub) TRUE))
+(test (and (neq (numberp ?sub) TRUE) (neq (gdbm_lookup_p "animate.gdbm" ?sub) TRUE)))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id SeRa_raha))

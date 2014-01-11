@@ -10,7 +10,7 @@
 (assert (id-wsd_root_mng ?id GUmanA))
 ;(assert (id-H_vib_mng ?id en)) Commented by Roja (12-08-13) Hindi tam should be given instead if english tam
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  travel.clp  	travel0   "  ?id "  GUmanA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  travel.clp  	travel0   "  ?id "  GUmanA )" crlf))
 ;(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  travel.clp     travel0   "  ?id " en )" crlf))
 )
 

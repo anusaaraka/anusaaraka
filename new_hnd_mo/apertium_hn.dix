@@ -24961,6 +24961,7 @@
 <e lm="sAmaMwa"><i>sAmaMwa</i><par n="amIra/__adj"/></e>
 <e lm="sAmaMwavAxa"><i>sAmaMwavAxa</i><par n="kroXa/__n"/></e>
 <e lm="sAmaMwI"><i>sAmaMw</i><par n="ladak/I__n"/></e>
+<e lm="samamiwi"><i>samamiwi</i><par n="Apawwi/__n"/></e>
 <e lm="samaMwra"><i>samaMwra</i><par n="amIra/__adj"/></e>
 <e lm="samaMxara"><i>samaMxara</i><par n="kroXa/__n"/></e>
 <e lm="Samana"><i>Samana</i><par n="kroXa/__n"/></e>
@@ -26094,6 +26095,7 @@
 <e lm="sArasa"><i>sAras</i><par n="Gar/a__n"/></e>
 <e lm="SarasaMXAna"><i>SarasaMXAna</i><par n="kroXa/__n"/></e>
 <e lm="sarasarAhata"><i>sarasarAhat</i><par n="Gar/a__n"/></e>
+<e lm="sarasarA"><i>sarasarA</i><par n="KA/__v"/></e>
 <e lm="sarasarI"><i>sarasarI</i><par n="AjAxI/__n"/></e>
 <e lm="sarasaTa"><i>sarasaT</i><par n="Gar/a__n"/></e>
 <e lm="SaraSayyA"><i>SaraSayyA</i><par n="ASA/__n"/></e>
@@ -31059,6 +31061,7 @@
 <e lm="wAra"><i>wAr</i><par n="Gar/a__n"/></e>
 <e lm="Wara"><i>War</i><par n="Gar/a__n"/></e>
 <e lm="wArA"><i>wAr</i><par n="gudiy/A__n"/></e>
+<e lm="wArA"><i>wAr</i><par n="ladak/A__n"/></e>
 <e lm="wara"><i>war</i><par n="uT/a__v"/></e>
 <e lm="warajIha"><i>warajIh</i><par n="rAw/a__n"/></e>
 <e lm="warAjU"><i>warAj</i><par n="Al/U__n"/></e>

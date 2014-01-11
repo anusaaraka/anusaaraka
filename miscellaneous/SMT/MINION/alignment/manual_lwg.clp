@@ -286,9 +286,9 @@
 ;----------------------------------------------------------------------------------------------------------------
 (defrule verb_grouping
 (declare (salience 60))
-(manual_id-node-word-root-tam  ?m_h_id   VGF|VGNN|VGNF  $?mng - $?root - $?tam)
+(manual_id-node-word-root-tam  ?m_h_id   ?cat&VGF|VGNN|VGNF  $?mng - $?root - $?tam)
 (head_id-grp_ids ?m_h_id ?mid $?ids)
-?f0<-(man_id-word-cat ?mid $?word ?cat)
+?f0<-(man_id-word-cat ?mid $?word ?)
 (not (lwg_done ?mid))
 (not (retract_manual_fact ?mid))
 (test (neq (length $?tam) 0))

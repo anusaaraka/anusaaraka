@@ -171,15 +171,16 @@
 	                 "              After     - "?head" " ?lev" "?Mot" "?vp" "?advp" "(implode$ $?daut) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-(defrule rev_VP_or_PP_or_WHPP
+;So we conclude that the thieves did not enter through the front door, Pranjol said.
+(defrule rev_VP_or_WHPP
 (declare (salience 950))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d ?d1 )
-(Node-Category  ?Mot  VP|PP|WHPP|Inf_VP)
+(Node-Category  ?Mot  VP|WHPP|Inf_VP)
 (not (Node-Category  ?d CC));I ate fruits, drank milk and slept. 
 (not (Mother  ?Mot))
 (not (Daughters_replaced  ?Mot))
 (id-original_word ?head ?wrd)
-(test (eq (member$ ?wrd (create$ think thought thinks thinking matter wonder say said says saying disputed suppose supposed supposes supposing commented figured pointed assume)) FALSE));Do you think we should go to the party?  He disputed that our program was superior.We [assume] that the motion is in y-direction, more correctly in — y-direction because we choose upward direction as positive.
+(test (eq (member$ ?wrd (create$ think thought thinks thinking matter wonder say said says saying disputed suppose supposed supposes supposing commented figured pointed assume conclude)) FALSE));Do you think we should go to the party?  He disputed that our program was superior.We [assume] that the motion is in y-direction, more correctly in — y-direction because we choose upward direction as positive.
 =>
         (bind ?*count* (+ ?*count* 1))	
 	(bind ?note "reverse") ;In the second case, the car moves from O to P and then moves back from P to Q .
@@ -203,10 +204,11 @@
 ;;Ex. I gave her a book. I will tell you the story tomorrow. 
 ;Added by Shirisha Manju (11-08-11) Suggested by Sukhada
 ; The root fact is loaded only for OL bcoz Ol shows head as root sometimes and word some times
+;I refused to lend him extra money.
 (defrule rev_VP_for_obj1_obj2
 (declare (salience 940))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d1 ?d $?rest)
-(Node-Category  ?Mot  VP)
+(Node-Category  ?Mot  VP|Inf_VP)
 (and (prep_id-relation-anu_ids ? kriyA-object_2 ?head ?obj2)(prep_id-relation-anu_ids ? kriyA-object_1 ?head ?obj1))
 (Head-Level-Mother-Daughters  ?obj2 ? ?d1  $?modf  ?y )
 (Head-Level-Mother-Daughters  ?obj1 ? ?d  $?mod  ?x )
@@ -233,7 +235,7 @@
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?PP ?NP $?rest)
 (and (Node-Category  ?Mot VP)(Node-Category  ?NP NP)(Node-Category  ?PP  PP))
 (id-original_word ?head ?w&sent|brought|take)
-(Head-Level-Mother-Daughters  ?  ?  ?PP ?NP1 ?TO)
+(Head-Level-Mother-Daughters  ?  ?  ?PP ?TO ?NP1)
 (and (Node-Category  ?TO TO)(Node-Category  ?NP1 NP))
 (Head-Level-Mother-Daughters  ?h  ?  ?NP1  $?)
 (id-original_word ?h ?wrd)
@@ -475,7 +477,7 @@
 (not (prep_id-relation-anu_ids ? kriyA-conjunction  ? ?id));It was so dark that I could not see anything.
 (not (Mother  ?SBAR))
 (id-original_word ?head ?wrd)
-(test (eq (member$ ?wrd (create$ that because as though although If if unless since) ) FALSE)); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy. Some grammars are better than others, as we have proved.
+(test (eq (member$ ?wrd (create$ that because as though although If if unless since per) ) FALSE)); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy. Some grammars are better than others, as we have proved. The limiting speed is about 11.2 kilometres per second.
 =>
         (bind ?*count* (+ ?*count* 1))
         (retract ?f0)
@@ -493,7 +495,7 @@
 =>
 ;(save-facts "hindi_rev_order.dat" local Head-Level-Mother-Daughters)
 (undefrule merge_ADVP)
-(undefrule rev_VP_or_PP_or_WHPP)
+(undefrule rev_VP_or_WHPP)
 (undefrule rev_ADJP_goesto_PP)
 (undefrule move_S_last_child_first)
 (undefrule reverse-NP-Daughters)
@@ -562,9 +564,9 @@
 (defrule rmv_sbar_from_root
 (declare (salience 550))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut)
+(Node-Category  ?Mot ROOT)
 ?f1<-(Head-Level-Mother-Daughters ?h ? ?dat $?child)
 (id-original_word ?h ?word&~while);The cyclist will slip while taking the circular turn.
-(Node-Category  ?Mot ROOT)
 (Node-Category  ?dat SBAR|SBARQ)
 (test (member$ $?child $?daut))
 (test (neq (length $?child) 0))
@@ -587,7 +589,6 @@
 	(retract ?f1)
 	(assert (Sen $?daut))
 )
-;-----------------------------------------------------------------------------------------------------------------------
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule rm_last_node_in_sen
 (declare (salience 95))
@@ -620,12 +621,6 @@
 =>
 	(retract ?f0 ?f1)
 	(assert (hindi_id_order $?dau $?daughters ?id))
-)
-;-----------------------------------------------------------------------------------------------------------------------
-(defrule undef
-(declare (salience 70))
-=>
-(undefrule  create_sen_SBAR)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 22-01-13 (Suggested by Sukhada)

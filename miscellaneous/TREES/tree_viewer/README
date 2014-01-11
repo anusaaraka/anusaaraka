@@ -1,6 +1,6 @@
  Pre requisites ::
  ==============
-   anu_testing software need to be installed successfully.
+   anusaaraka software need to be installed successfully.
 
    Note: This version handles only one sentence at a time.
 	 A sample input file named "test" is provided with this package. 
@@ -32,7 +32,7 @@ To view Dependency Tree in paninian format::
 =========================================
 Pre requisites:
 --------------
-1. anu_testing software need to be installed successfully 
+1. anusaaraka software need to be installed successfully 
 2. Run Anusaaraka_stanford.sh <file-name>
 	Ex: Anusaaraka_stanford.sh sample
 3. bash dependency_in_paninian_format.sh <file-name> <sentence-number>

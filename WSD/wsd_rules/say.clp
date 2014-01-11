@@ -55,10 +55,7 @@
 (id-root =(+ ?id 2)  be)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id bawAyA_jA));inconsistency in the mng in assert & print statement has been corrected by Sukhada (15.3.10))
+(assert (id-wsd_root_mng ?id bawAyA_jA));inconsistency in the mng in assert & print statement has been corrected by Sukhada (15.3.10)
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  say.clp      say3   "  ?id "  bawAyA_jA)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  say.clp      say3   "  ?id "  bawAyA_jA)" crlf))
 )
-)
-
-

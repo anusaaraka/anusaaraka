@@ -96,6 +96,7 @@ for i in range(0,len(dire)):
 		while(char[k]!=' '):
 			k=k+1
 		dic2 = []
+#		print '===========', char[-50:] , char[x:k],  ''.join(char),
 		no = int("".join(char[x:k]))
 		dic2.append(no)
 		if(no>maxi and no<10000):

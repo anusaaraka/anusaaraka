@@ -12667,7 +12667,7 @@ capsizing_UNDEFINED	ulata-pulata_jAnA
 capsule_noun	kEpasUla/samputa/safkRepaNa/kEpsUla/bIjakoSa
 capsules_UNDEFINED	kEpasUla
 captain_noun	kapwAna/vimAna_cAlaka/senApawi/saraxAra/praXAna_vetara/praXana_vetara/praXAna/pramuKa_bErA/pramuKa/PoramEna/niyanwA/newA/nAyaka/muKiyA/mahAna_sEnika/jamAxAra/jahAja/balapawi/aXipawi/aXikArI/aPasara/jahAja_kA_aXyakRa
-captain_verb	saFcAlana_kara/rAswA_xiKA/newqwva_kara/mArga_praxarSana_kara/kapwAnI_kara/kapwAna_ho
+captain_verb	newqwva_kara/saFcAlana_kara/rAswA_xiKA/mArga_praxarSana_kara/kapwAnI_kara/kapwAna_ho
 captained_UNDEFINED	newqwva_karanA
 captaining_UNDEFINED	newqwva_karanA
 captains_UNDEFINED	newqwva_karanA
@@ -12775,7 +12775,7 @@ carefuler_UNDEFINED	sAvaXAna
 carefulest_UNDEFINED	sAvaXAna
 carefully_adverb	sAvaXAnI_se/vicAriwawaH/vicArapUrvaka
 caregiver_noun	xeKa-reKa_karane_vAlA
-careless_adjective	beparavAha/suswa/nEsargika/lAparavAha/kama/kaccA/galawa/DIlA-DAlA/bePikra/aXUrA/asawarka/asAvaXAna/AlasI
+careless_adjective	lAparavAha/beparavAha/suswa/nEsargika/kama/kaccA/galawa/DIlA-DAlA/bePikra/aXUrA/asawarka/asAvaXAna/AlasI
 carelesser_UNDEFINED	beparavAha
 carelessest_UNDEFINED	beparavAha
 carelessly_UNDEFINED	beparavAhI_se
@@ -13424,7 +13424,7 @@ ceremonious_adjective	OpacArika
 ceremoniously_UNDEFINED	OpacAiraka_Dafga_se
 ceremoniously_adverb	OpacArika_Dafga_se
 ceremony_UNDEFINED	anuRTAna
-ceremony_noun	XArmika-viXi/viXi/samAroha/samAramBa/rIwi/rasma/praWA/OpacarikawA/awiSayokwi/avasara
+ceremony_noun	 samAroha/XArmika-viXi/viXia/rIwi/rasma/praWA/OpacarikawA/awiSayokwi/avasara
 cerise_UNDEFINED	haOkA_lAla
 cerise_adjective	rakwima/lohiwa/halkA_lAla
 certain_adjective	niSciwa/viSvasanIya/viSeRa/pakkA/niyawa/nirvivAxa/kuCa/koI_BI/koI/kisI/KAsa/asanxigXa/anivArya
@@ -15602,7 +15602,7 @@ collectible_noun	safgrahaNIya_vaswu
 collectibler_UNDEFINED	safgraha_karane_yogya
 collectiblest_UNDEFINED	safgraha_karane_yogya
 collecting_UNDEFINED	ekawra_honA
-collection_noun	saFcayana/safkalana/safgraha_karanA/safgraha/saFcaya/jamAva/Dera/canxA/BIda/safgrahaNa/ikatTA_nikAlanA/kapado_kA_safgraha/samUha
+collection_noun	saMgraha/saFcayana/safkalana/safgraha_karanA/saFcaya/jamAva/Dera/canxA/BIda/safgrahaNa/ikatTA_nikAlanA/kapado_kA_safgraha/samUha
 collections_UNDEFINED	ikatTA_nikAlanA
 collective-noun_noun	samUhavAcaka_saFjFA
 collective_adjective	sAmUhika
@@ -16699,7 +16699,7 @@ confuses_UNDEFINED	GabadA_jAnA
 confusing_UNDEFINED	GabadA_jAnA
 confusing_adjective	pecIxA/aspaRta
 confusingly_adverb	samBramiwa_karawe_hue/sanxigXawaH/aspaRtawaH
-confusion_noun	samBrama/Brama/BOcakkA/BAnwi/aswavyaswawA
+confusion_noun	Brama/samBrama/BOcakkA/BAnwi/aswavyaswawA
 confusions_UNDEFINED	samBrama
 confutable_adjective	KaNdanIya
 confutative_adjective	KaNdanIya
@@ -19470,8 +19470,8 @@ curdles_UNDEFINED	xahI_jamAnA
 curdling_UNDEFINED	xahI_jamAnA
 curds_noun	xahI
 cure-all_noun	rAmabANa_xavA
-cure_noun	cikiwsA/xavA/upAya/upacAra/pAxarI/mukwI/ilAja/ArAma
-cure_verb	xUra_kara/TIka_kara/suXAra/surakRiwa_raKa/surakRiwa_kara/rogamukwa_kara/rogamukwa_ho/milA/acCA_kara_xe/acCA_kara/niroga_kara
+cure_noun	upacAra/cikiwsA/xavA/upAya/pAxarI/mukwI/ilAja/ArAma
+cure_verb	TIka_kara/xUra_kara/suXAra/surakRiwa_raKa/surakRiwa_kara/rogamukwa_kara/rogamukwa_ho/milA/acCA_kara_xe/acCA_kara/niroga_kara
 cured_UNDEFINED	niroga_karanA
 cured_adjective	upacAriwa
 curer_UNDEFINED	saMsAXaka
@@ -25672,7 +25672,7 @@ emancipations_UNDEFINED	mukwi
 emasculate_adjective	swrENa/pofgA
 embalm_verb	Sava_kA_saMlepana_kara
 embalmer_noun	Sava-saMlepaka
-embankment_noun	bAzXa_bAzXanA/watabanXana/puSwA/bAzXa
+embankment_noun	wata/bAzXa_bAzXanA/watabanXana/puSwA/bAzXa
 embankments_UNDEFINED	bAzXa
 embargo_UNDEFINED	vyApAra-prawiroXa_lagAnA
 embargo_noun	vyApAra-prawiroXa
@@ -30657,7 +30657,7 @@ flying-saucer_noun	udana_waSwarI
 flying-sqad_noun	pulisa_kA_eka_xaswA
 flying-visit_noun	kama_samaya_kI_BeNta
 flying_adjective	udane_vAlA/laharAwa_huA
-flying_noun	udAna/havAI_yAwrA
+flying_noun	udanA/udAna/havAI_yAwrA
 flyinger_UNDEFINED	havAI_yAwrA
 flyingest_UNDEFINED	havAI_yAwrA
 flyings_UNDEFINED	havAI_yAwrA
@@ -37562,7 +37562,7 @@ homoeopathy_UNDEFINED	homiyopEWI_cikiwsA
 homoeopathy_noun	homyopEWI_cikiwsA
 homogeneities_UNDEFINED	sajAwIyawA
 homogeneity_noun	sajAwIyawA/samarUpawA
-homogeneous_adjective	sajAwIya/samarUpa
+homogeneous_adjective	samarUpa/sajAwIya
 homogeneouser_UNDEFINED	sajAwIya
 homogeneousest_UNDEFINED	sajAwIya
 homogenised_adjective	ekasArakqwa
@@ -51568,7 +51568,7 @@ name-drop_verb	bade_logoM_kA_jikra_kara
 name-dropping_UNDEFINED	bade_evaM_prasixXa_logoM_kA_nAma_ley
 name-dropping_noun	bade_logoM_kA_nAma_ginAnA/bade_evaM_prasixXa_logoM_kA_nAma_lenA{viSeRa_praBAva_kelie}
 name-droppings_UNDEFINED	bade_evaM_prasixXa_logoM_kA_nAma_lenA
-name-plate_noun	nAmapattI
+name-plate_noun	nAma_pattikA/nAmapattI
 name_noun	nAma/upAXi/prawiRTA/prasixXa_vyakwi/pehacAna/parivAra/nAmavara_vyakwi/maSahura_vyakwi/KAnaxAna/KyAwi/gAlI/kIrwi
 name_verb	nAma_xe/nAma_raKa/nAma_bawA/pahacAna/niyukwa_kara
 named_UNDEFINED	kIrwi
@@ -93047,7 +93047,7 @@ yeomanry_noun	vAlaNtiyara_risAlA/CotA_jamInxAra_varga
 yeomen_UNDEFINED	CotA_jamInxAra
 yep_adverb	hAz
 yes-man_noun	jIhujUriyA/pitTU/kaTapuwalI/jI-hujUriyA/cAtukAra
-yes_interjection	vAkaI/hAM/hAjira_hUz
+yes_interjection	hAz/vAkaI/hAM/hAjira_hUz
 yes_noun	hAz
 yeses_UNDEFINED	hAz
 yesterday_adverb	kala/kala_ko
@@ -93505,3 +93505,11 @@ web-enabled_adjective	vEba-yukwa
 off-shoot_noun	eka_BAga
 copper-plate_noun	wAmrapawra
 egret_noun	kapowa
+nameplate_noun	nAma_pattikA
+mule-owners_noun	KaccaravAlA
+mule-men_noun	KaccharavAlA
+character-building_noun	cariwra_nirmANa
+orthodox_noun	paraMparAgawa
+non-uniform_adjective	asamAna
+paycheck_noun	wanaKvAha_kA_cEka
+duo_noun	xonoM

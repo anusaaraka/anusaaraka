@@ -118,7 +118,7 @@
   (printout t " pada is formed using the rule \"" ?r_name "\""  crlf " And the rule is defined as..... " crlf crlf)
   (ppdefrule ?r_name)
   (printout t crlf "NOTE:: " crlf crlf )
-  (printout t  "1. If you want to write any rule for the pada formation please go to the directory \"anu_testing/Anu_clp_files\" and " crlf "   write the rules in \"pada.clp\" file " crlf "2. After saving the rule complie it using the command  :     \" myclips -f create_binary_files.clp\"     "crlf "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
+  (printout t  "1. If you want to write any rule for the pada formation please go to the directory \"anusaaraka/Anu_clp_files\" and " crlf "   write the rules in \"pada.clp\" file " crlf "2. After saving the rule complie it using the command  :     \" myclips -f create_binary_files.clp\"     "crlf "3. If you want your rule to be part of main anusaaraka system please mail it to sukadha8@gmail.com" crlf  "4. Use following command to exit :: (exit)" crlf crlf)
   )
  
   (defrule debug_pada1

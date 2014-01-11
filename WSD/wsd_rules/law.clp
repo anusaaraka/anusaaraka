@@ -10,6 +10,6 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id niyama))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  law.clp    law0   "  ?id "  niyama)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  law.clp    law0   "  ?id "  niyama)" crlf))
 )
 

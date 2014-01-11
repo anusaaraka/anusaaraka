@@ -20809,7 +20809,6 @@ namby_pamby	BAvuka#BAvuka#noun#2#RM
 name_board	nAma_patta#nAma_patta#noun#2#RM
 name_calling	nAma_bulAnA#nAma_bulAnA#noun#2#RM
 name_card	nAma_kArda#nAma_kArda#noun#2#RM
-name_plate	nAma_patta#nAma_patta#noun#2#RM
 name_server	nAma_parisevaka#nAma_parisevaka#noun#2#RM
 nand_element	waWA_pUraka_avyava#waWA_pUraka_avyava#noun#2#RM
 nand_function	waWA_pUraka_Palana#waWA_pUraka_Palana#noun#2#RM
@@ -21993,7 +21992,7 @@ on_tap	mAMga_ke_anusAra_prApya#mAMga_ke_anusAra_prApya#noun#2#RM
 on_temporary_basis	asWAyI_AXAra_para#asWAyI_AXAra_para#noun#3#RM
 on_the_advice_of	kI_salAha_para#kI_salAha_para#noun#3#RM
 on_the_average	Osawa_rUpa_meM#Osawa_rUpa_meM#noun#3#RM
-on_the_basis_of_total_income	kula_Aya_ke_AXAra_para#kula_Aya_ke_AXAra_para#noun#3#RM
+on_the_basis_of	ke_AXAra_para#ke_AXAra_para#preposition#3#RM
 on_the_conclusion	ke_samApana_para#ke_samApana_para#noun#3#RM
 on_the_contrary	isake_prawikUla#isake_prawikUla#noun#3#RM
 on_the_demands_raised_by_the_department	viBAga_xvArA_kI_gaI_mAMgoM_para#viBAga_xvArA_kI_gaI_mAMgoM_para#noun#7#RM
@@ -26504,7 +26503,6 @@ rubber_boot	rabadZa_ke_jUwe#rabadZa_ke_jUwe#noun#2#RM
 rubber_plant	rabara_kA_pedZa#rabara_kA_pedZa#noun#2#RM
 rubber_plantation	rabadZa_vqkRAropaNa#rabadZa_vqkRAropaNa#noun#2#RM
 rubber_stamp	rabara_kI_mohara#rabara_kI_mohara#noun#2#RM
-rubbish_dump	kUdZe_karakata_kA_DZera#kUdZe_karakata_kA_DZera#noun#2#RM
 ruddy_duck	lAla_bawwaKa#lAla_bawwaKa#noun#2#RM
 rug_beater	kAlIna_JAdZane_vAlA#kAlIna_JAdZane_vAlA#noun#2#RM
 rugby_ball	ragbI_geMxa#ragbI_geMxa#noun#2#RM
@@ -33234,6 +33232,9 @@ interest_rate	byAja_xara#byAja_xara#noun#1#RM
 dry_fruit	mevA#mevA#noun#2#RM
 half_dead	aXamarA#aXamarA#adjective#2#RM
 in_the_distance	xUra#xUra#noun#3#WM
+staple_diet	Bojana_kA_muKya_aMSa#Bojana_kA_muKya_aMSa#noun#2#RM
+taking_courage_in_both_hands	jI_kadZA_karake_badZI_himmawa_se#jI_kadZA_karake_badZI_himmawa_se#verb#1#RM
+preferred_location	aXimawa_avasWiwi#aXimawa_avasWiwi#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
@@ -33562,6 +33563,8 @@ read_well	pATaka_kI_ruci_banAe_raKa#pATaka_kI_ruci_banAe_raKa#verb#1#RM
 reads_well	pATaka_kI_ruci_banAe_raKa#pATaka_kI_ruci_banAe_raKa#verb#1#RM
 load_of_rubbish	bakavAsa_se_BarapUra#bakavAsa_se_BarapUra#adjective#3#RM
 call_of_nature	SOcAxi_kI_AvaSyakawA#SOcAxi_kI_AvaSyakawA#noun#3#RM
+rubbish_bin	kacarA_kuMdI#kacarA_kuMdI#noun#2#RM
+rubbish_dump	kacare_kA_mExAna#kacare_kA_mExAna#noun#2#RM
 #By Alpana ji (LTRC)
 Block_multiplexer	avaroXa_bahusaMkewaka#avaroXa_bahusaMkewaka#noun#2#RM
 Discharge_Required	AvaSyaka_nirvahana#AvaSyaka_nirvahana#noun#1#RM
@@ -33726,8 +33729,12 @@ credit_cards	kredita_kArdas#kredita_kArdas#noun#2#RM
 training_material	praSikRaNa_sAmagrI#praSikRaNa_sAmagrI#noun#2#RM
 university_material	vixyApITa_ke_upayukwa#vixyApITa_ke_upayukwa#noun#2#RM
 mirror_dish	xarpaNa_diSa#xarpaNa_diSa#noun#2#RM
+name_plate	nAma_pattikA#nAma_pattikA#noun#2#RM
+monal_feathers	monal_paMCI_ke_paMKa#monal_paMCI_ke_paMKa#noun#2#RM
+as_much_as	jiwanA_aXika#jiwanA_aXika#adverb/adjective#3#RM
 #By Preeti ji LTRC
 at_all_costs    kisI_BI_kImawa_para#kisI_BI_kImawa_para#noun#3#RM
 copper_plate	wAmrapawra#wAmrapawra#noun#2#RM
+character_building	cariwra_nirmANa#cariwra_nirmANa#noun#1#RM
 #By Krithika ji LTRc
 fatal_hour	nirNAyaka_pala#nirNAyaka_pala#noun#2#RM

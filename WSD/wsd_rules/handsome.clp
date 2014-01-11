@@ -24,7 +24,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id sunxara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  handsome.clp 	handsome1   "  ?id "  sunxara )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  handsome.clp 	handsome1   "  ?id "  sunxara )" crlf))
 )
 
 ;"handsome","N","1.sunxara{puruRa}"

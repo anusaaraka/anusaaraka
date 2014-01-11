@@ -70,6 +70,7 @@
 	20. golA	Suggested by Chaitanya Sir  (16-10-13) 	Eg: Let u be the speed of each ball before and after 										collision with the wall, and m the mass of each ball.
 	21. Cada		"		    (04-11-13)  Eg: When electrified rods are brought near light objects, a 
 								    similar effect takes place.
+	22. wArA	Suggested by Sukhada	    (21-12-13)  Eg: How does a star form?
 
   changes in Phrv.txt 
   ===================
@@ -421,7 +422,8 @@
 	demon	   (		  "			"    ) Ex: Lakshmi lures and destroys evil demons . 
 	army	   (              "	                "    ) Ex: Armies had been crippled but not destroyed .   
 	bird	   (Suggested by Pramila Banasthali 12-12-13 ) Ex: The bird settled on a very small branch.
-	husband	   ((Suggested by Anita ji LTRC     12-12-13 ) Ex: I sent my husband to represent me at the funeral. 
+	husband	   (Suggested by Anita ji LTRC     12-12-13  ) Ex: I sent my husband to represent me at the funeral.
+	king	   (Suggested by Prachi Banasthali 04-01-14  ) Ex: I must take them to the King, the farmer said firmly.		 
 
 
   Changes in total-paxasUwra.txt 
@@ -470,6 +472,9 @@
  19.	nIlA		kAl/A__adj		(    "  	"		24-09-13)
  20.	aBiXAraNA	ASA/__n			(    "	 Suggested by Chaitanya Sir 16-10-13)
  21.	BAga		Gar/a__n		(By Roja 			24-10-13)
+ 22.	sarasarA	KA/__v			(By Roja Suggested by Sukhada	19-12-13)
+ 23.	samamiwi	Apawwi/__n		(By Roja Suggested by Chaitanya Sir 28-12-13)
+ 24.	wArA		ladak/A__n		(By Roja Suggetsed by Sukhada	06-01-14)
 
 Modified :
   1.	<e><p><l>we_hue</l>	as	<e><p><l>owe_hue</l>       for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
@@ -577,12 +582,20 @@ Modified :
 	even		house__n		(     "   04-12-13)
 	even		long/__adj		(     "   04-12-13)
 	sow		hew__vblex		(     "   04-12-13)
+	dive		liv/e__vblex		(     "   19-12-13)
+	carve		liv/e__vblex		(     "	     "	  )
+	grandpa		house__n		(     "      "	  )
+	sugarcane	house__n		(     "   06-01-14)
+
 
 Modified paradigm:
      	belonging	house__n	as	personnel__n	(Suggested by Meena ji 12-05-11)
-	box		bass__n		a	access__n	(Suggested by Meena ji 10-08-11)
+	box		bass__n		as	access__n	(Suggested by Meena ji 10-08-11)
 	phenomenon	house__n	as	criteri/on__n	(By Roja	       14-03-13)
-	shrink		
+	shrink
+	epoch		access__n	as	house__n	(By Roja		19-12-13)
+	slight		expensive__adj	as	long/__adj	(By Roja		04-01-14)
+	strike		liv/e__vblex	as	str/ike__vblex	(By Roja		04-01-14)
 
 Added new paradigms:
         trek__vblex		(By Roja	14-10-11)
@@ -615,6 +628,7 @@ Removed:
 	<e lm="shrunk"><i>shrunk</i><par n="accept__vblex"/></e>		(By Roja	07-09-13)
 	<e lm="shrank"><i>shrank</i><par n="accept__vblex"/></e>		("		"	)
 	<e lm="flags"><i>flags</i><par n="access__n"/></e>			("		04-12-13) 
+	<e lm="tactics"><i>tactics</i><par n="politics__n"/></e>		("		06-01-14)
 
 
  Added new files:
@@ -935,6 +949,23 @@ Removed:
 	65. egret_noun 			kapowa				(Suggested by Pamila Banasthali   13-12-13)
 					Ex: A pair of kites glided in circles in the clear blue sky, and in the distance a white egret could
                                             be seen winging its way homeward
+	66. nameplate_noun		nAma_pattikA			(Suggested by Nandini ji LTRC	  17-12-13)
+					Ex: Bhagirathi, the children read the nameplate on the door.
+	67. mule-owners_noun		KaccaravAlA			(Suggested by Nandini ji LTRC	  17-12-13)
+					Ex: He negotiated with the mule-owners who were to take them part of the way.
+	68. mule-men_noun		KaccharavAlA			(Suggested by Nandini ji LTRC	  17-12-13)
+					Ex: Grandpa led the way, the children were behind him and the mule-men brought up the rear.
+	69. character-building_noun	cariwra_nirmANa			(Suggested by Preeti ji LTRC	  17-12-13)
+					Ex: Adventure camps are considered to be character-building.
+	70. orthodox_noun		paraMparAgawa			(Suggested by Sonam Banasthali	17-12-13)
+					Ex: To make Orthodox tea, the sifted leaves are taken straight to the fermenting room. 
+	71. non-uniform_adjective   	asamAna				(Suggested by Chaitanya Sir     21-12-13)
+					Ex: We saw that uniform motion needs the concept of velocity alone whereas non-uniform motion
+                                            requires the concept of acceleration in addition.
+	72. paycheck_noun		wanaKvAha_kA_cEka		(Suggested by Sonam Banasthali	04-01-14)
+					Ex: The monthly premium for your health insurance is deducted from your paycheck.
+	73. duo_noun  			xonoM				(Suggested by Pamila Banasthali   28-12-13)
+					Ex: The father and son duo were sitting beside a dying fire in front of their hut .
 
 
     4. Added new meaning to the existing word:
@@ -1093,6 +1124,10 @@ Removed:
 					Ex: The word Science originates from the Latin verb Scientia meaning 'to know'. 
 	86. doorway_noun    		xvArapaWa		(Suggested by Pramila Banasthali 12-12-13)
 					Ex: He suddenly appeared in the doorway.
+	87. name-plate_noun		nAma_pattikA		(Suggested by Nandini ji LTRC	17-12-13)
+					Ex: Bhagirathi, the children read the name-plate on the door.
+	88. embankment_noun    		wata			(		  "	"	 21-12-13)
+					Ex: Alka and Taffy wandered about on the embankment.
 
 
     5. Modifying first meaning from the list :
@@ -1271,14 +1306,37 @@ Removed:
 				Ex: The announcement raised a cheer.
 	88. maths_noun		hisAba		as	gaNiwa 			(Suggested by Nandini ji 05-12-13)
 				Ex: I was always very poor at maths at school.
-	89.chocolate_noun	gahara_BurA_rafga	as	cAkaleta	(Suggested by Preeti ji 07-12-13)
+	89. chocolate_noun	gahara_BurA_rafga	as	cAkaleta	(Suggested by Preeti ji 07-12-13)
 				Ex: In one pocket he found a bar of chocolate, which Grandpa had probably got for them, and in the other 				       some papers.
-	90.convex_adjective	maXyonnawa	as	uwwala			(suggested by Preeti ji 11-12-13)
+	90. convex_adjective	maXyonnawa	as	uwwala			(suggested by Preeti ji 11-12-13)
 				Ex: For a convex mirror, the reflected rays appear to diverge from a point F on its principal axis Fig. 9.3(b).
 	91. special_noun    	viSiRta_vyakwi	as	viSeRa			(Suggested by Jagriti Banasthali 12-12-13)
 				Ex: And, of course, there is nothing special about our Galaxy.
 	92. excuse_noun     	mukwi		as	bahAnA			(Suggested by Pramila Banasthali 12-12-13)
 				Ex: He always gives the same old excuses.
+	93. cure_noun		cikiwsA		as	upacAra			(Suggested by Preeti ji LTRC 	17-12-13)
+				Ex: Will you be able to cure him, Doctor?
+	94. cure_verb		xUra_kara	as	TIka_kara		(	"		"	17-12-13)
+				Ex: I finally managed to cure the rattling noise in my car.
+	95. collection_noun	saFcayana	as	saMgraha		(	"		"	17-12-13)
+				Ex: The painting comes from his private collection.
+	96. name-plate_noun	nAma_patta	as	nAma-pattikA            (Suggested by Nandini ji LTRC	17-12-13)
+                                Ex: Bhagirathi, the children read the name-plate on the door.
+	97. ceremony_noun	XArmika-viXi	as	samAroha		(Suggested by Preeti ji LTRC	21-12-13)
+				Ex: The royal guests were welcomed with pomp and ceremony.
+	98. captain_verb	saFcAlana_kara	as	newqwva_kara		(Suggested by Preeti ji LTRC	21-12-13)
+				Ex: He has captained the England cricket team three times.
+	99. flying_noun		udAna		as	udanA			(Suggested by Chaitanaya Sir	28-12-13)
+				Ex: Flying planes can be dangerous.
+	100.homogeneous_adjective	sajAwIya	as	samarUpa	(	"		"	"	)
+				Ex: Likewise, space is homogeneous and there is no (intrinsically) preferred location in the universe.
+	101.yes_interjection	vAkaI		as	hAz			(Suggested by Sukhada		28-12-13)
+				Ex: Yes, he did.
+	102.careless_adjective	beparavAha	as	lAparavAha 		(Suggested by Preeti ji LTRC	04-01-14)
+				Ex:Don't be so careless about spelling.
+	103.confusion_noun	samBrama	as	Brama			(Suggested by 	"		"	)
+				Ex: Her unexpected arrival threw us into total confusion.
+
 	
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1367,11 +1425,11 @@ Removed:
  changes in preposition.txt
  ==========================
  Added  :
-	as_before 	---	Suggested by Rajini (25-02-12)
-	in_terms_of     ---	Suggested by Chaitanya Sir (25-05-12) 
-	in_contrast_to  ---     Suggested by Sukhada
-	as_far_as	---	Added below entries from Wikepedia 
-                                (As Suggested by Chaitanya Sir (30-10-12))
+	as_before 		---	Suggested by Rajini (25-02-12)
+	in_terms_of     	---	Suggested by Chaitanya Sir (25-05-12) 
+	in_contrast_to  	---     Suggested by Sukhada
+	as_far_as		---	Added below entries from Wikepedia 
+                                	(As Suggested by Chaitanya Sir (30-10-12))
 		as_long_as    	as_of    		as_opposed_to
 		as_regards 	as_soon_as		back_to
 		by_virtue_of	far_from 		for_the_sake_of	
@@ -1381,10 +1439,11 @@ Removed:
 		pursuant_to	right_of 		subsequent_to
 		that_of		where_as 		with_a_view_to	
 		with_respect_to
-	into_and_out_of --- 	(Suggested by Chaitanya Sir 22-11-12)
-	in_contact_with	---	(Suggested by Sukhada
-	just_before	---	(Suggested by Chaitanya Sir 22-01-13)
-	more_than	---	(Suggested by Sukhada	    04-09-13)
+	into_and_out_of		--- 	(Suggested by Chaitanya Sir 22-11-12)
+	in_contact_with		---	(Suggested by Sukhada
+	just_before		---	(Suggested by Chaitanya Sir 22-01-13)
+	more_than		---	(Suggested by Sukhada	    04-09-13)
+	on_the_basis_of		---	(Suggested by Chaitanya Sir 05-01-14)
 
 -------------------------- compound_phrase.txt -----------------------------------
  Based on the type of the phrase, compound_phrase.txt file has been splitted in to four different files,(Suggested by Chaitanya ji 23-04-12)
@@ -1405,6 +1464,7 @@ Removed:
 		to
     Zulm_Ko_Jala_Doonga	jZulma_ko_jalA_xUMgA#jZulma_ko_jalA_xUMgA#noun#4#RM	
     Crab_Nebula		karka_nihArikA#karka_nihArikA#noun#2#RM	(Suggested by Nandini ji LTRC 07-12-13)
+    United_Nation's	saMyukwa_rARtra#saMyukwa_rARtra#noun#2#RM	(Suggested by Sukhada	19-12-13)
     
  multi_word_expressions.txt
  ==========================
@@ -1440,8 +1500,11 @@ Removed:
 	13. in_time		samaya_para#samaya_para#noun#2#RM	(Suggested by Preeti ji LTRC	31-10-13)
 				Ex: A visit to the museum will take you back in time to the 1930s.  
 	14. two_times		xo_bAra#xo_bAra#noun#2#RM		(Suggested by Preeti ji LTRC	31-10-13)
-				Ex: This room is two times bigger than the hall. 
-
+				Ex: This room is two times bigger than the hall.
+	15. fan_in		niveSAMka#niveSAMka#noun#2#RM 		(Suggested by Krithika ji LTRC	17-12-13)
+				Ex: That big fan in our lab is not working.
+	16. on_the_basis_of_total_income	kula_Aya_ke_AXAra_para#kula_Aya_ke_AXAra_para#noun#3#RM (Suggested by Chaitanya Sir 05-01-14)
+				
 
     Modified :
     --------
@@ -1463,6 +1526,10 @@ Removed:
 	instead_of		kI_jagaha_meM		as	kI_bajAya (Suggested by Prachi Banasthali 09-10-13)
 	highest_priority        savorcca_prAWamikawA	as	sarvocca_prAWamikawA(Suggested by Prachi Banasthali 21-10-13)
 								Ex: Safety is our highest priority.
+	rubbish_dump		kUdZe_karakata_kA_DZera	as	kacare_kA_mExAna	(Suggested by Anita ji LTRC 17-12-13)
+				Ex: Take the old furniture to the rubbish dump.
+	name_plate		nAma_patta		as	nAma_pattikA	(Suggested by Nandini ji LTRC 17-12-13)
+				Ex: Bhagirathi, the children read the name plate on the door.
 		
     Added new entry:
     ----------------
@@ -1613,8 +1680,25 @@ Removed:
 				    seen winging its way homeward.
 	81. call_of_nature    	SOcAxi_kI_AvaSyakawA#SOcAxi_kI_AvaSyakawA#noun#3#RM	(Suggested by Anita ji LTRC 14-12-13)
 				Ex: During all this time, I never once felt the call of nature, nor did I suffer from hunger.
-
-
+	82. name_plate		nAma_pattikA#nAma_pattikA#noun#2#RM			(Suggested by Nandini ji LTRC	17-12-13)
+				Ex: Bhagirathi, the children read the name plate on the door.
+	83. monal_feathers	monal_paMCI_ke_paMKa#monal_paMCI_ke_paMKa#noun#2#RM	(Suggested by Nandini ji LTRC	17-12-13)
+				Ex: It became such a fashion that every Englishwoman wanted monal feathers in her hat.
+	84. as_much_as		jiwanA_aXika#jiwanA_aXika#adverb/adjective#3#RM		(Suggested by Nandini ji LTRC	17-12-13)
+				Ex: I have been reading as much as I could about tea, Rajvir said.
+	85. character_building	cariwra_nirmANa#cariwra_nirmANa#noun#1#RM		(Suggested by Preeti ji LTRC	17-12-13)
+				Ex: Adventure camps are considered to be character building.
+	86. rubbish_bin		kacarA_kuMdI#kacarA_kuMdI#noun#2#RM			(Suggested by Anita ji LTRC	17-12-13)
+				Ex: Put the empty box in the rubbish bin. 
+	87. staple_diet     	Bojana_kA_muKya_aMSa#Bojana_kA_muKya_aMSa#noun#2#RM	(Suggested by Chaitanya Sir     21-12-13)
+				Ex: In the hills potatoes are the staple diet.
+	88. taking_courage_in_both_hands	jI_kadZA_karake_badZI_himmawa_se#jI_kadZA_karake_badZI_himmawa_se#verb#1#RM (Suggested by Chaitanya Sir 04-01-14)
+				Ex: Then, taking courage in both hands, he spoke, Your Majesty, please grant me anything
+	89. preferred_location	aXimawa_avasWiwi#aXimawa_avasWiwi#noun#2#RM		(Suggested by Chaitanya Sir     04-01-14)
+				Ex: Likewise, space is homogeneous and there is no (intrinsically) preferred location in the universe. 
+	90. on_the_basis_of	ke_AXAra_para#ke_AXAra_para#preposition#3#RM		 (Suggested by Chaitanya Sir     05-01-14)
+				Ex: Physicists try to discover the rules that are operating in nature, on the basis of observations,
+				    experimentation and analysis.		       			 
 
     Added new meaning to the existing word:
     --------------------------------------
@@ -1740,6 +1824,8 @@ Removed:
 	dynamically_stable_orbit gawiSIla_sWira_kakRA#gawiSIla_sWira_kakRA#noun#3#RM( 	"		"	 10-09-13)
 	double_slit     	 xviJirI#xviJirI#noun#2#RM			(	"		"    	    "    )
 	closed_loop     	 baMxa_paripaWa#baMxa_paripaWa#noun#2#RM	(Suggested by	Chaitanya Sir	 21-09-13)
+	sign_convention		 cihna_paripAtI#cihna_paripAtI#noun#1#RM	(suggested by Preeti ji LTRC	 19-12-13)
+				 Ex: We now apply the sign convention. 
 			
 
  changes in causative_verb_mng.txt

@@ -16,7 +16,7 @@
 )
 
 ;@@@ Added by Preeti(13-12-13)
-;The United Nations convention on the rights of the child was a big success.[ Oxford Advanced Learner's Dictionary]
+;The United Nation's convention on the rights of the child was a big success. [Oxford Advanced Learner's Dictionary]
 ;bacce ke aXikAroM para saMyukwa rARtra kA samaJOwA badA saPala WA.
 (defrule convention2
 (declare (salience 2000))
@@ -34,10 +34,10 @@
 
 ;#############################Defaults rule#######################################
 
-
 ;@@@ Added by Preeti(13-12-13)
 ;Convention demands that a club member should resign in such a situation. [ Oxford Advanced Learner's Dictionary]
 ;paramparA mAzga karawI hE ki eka klaba saxasya ko EsI hAlawa meM wyAga_pawra xenA cAhie.
+;paramparA mAzgawI hE ki eka klaba saxasya ko EsI hAlawa meM wyAga_pawra xenA cAhie. [This translation also accepted. Suggested by Sukhada]
 (defrule convention0
 (declare (salience 1000))
 (id-root ?id convention)
