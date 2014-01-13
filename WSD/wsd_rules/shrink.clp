@@ -83,12 +83,12 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  shrink.clp 	shrink3   "  ?id " manoroga_cikiwsaka)" crlf))
 )
 
-(defrule shrink3
+(defrule shrink4
 (id-root ?id shrink)
 ?mng <-(meaning_to_be_decided ?id)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id sikudanA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  shrink.clp 	shrink3   "  ?id " sikudanA)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  shrink.clp 	shrink4   "  ?id " sikudanA)" crlf))
 )

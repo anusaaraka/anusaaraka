@@ -402,8 +402,7 @@
 	officer	   (  		By Manju 	   05-10-13  ) Ex: Mohan is a highly corrupt officer.
 	dacoit     (Suggested by Chaitanya Sir     06-11-13  ) Ex: The government took serious steps to check the dacoits.
 	kill       (		  "			"    ) Ex: The leopard seizes its kill and begins to eat. 
-	everyone   (		  "			"    ) Ex: A slow, balmy breeze from the south engulfed everyone in
-								   the audience. 
+	everyone   (		  "			"    ) Ex: A slow, balmy breeze from the south engulfed everyone in the audience. 
 	woman	   (		By Manju	   06-11-13  ) Ex: I know a woman who has two children.
 	cat        (		  "			"    )
 	rat        (              "                     "    ) Ex: The snake who swallowed the rat hissed loudly.
@@ -416,14 +415,22 @@
 	parrot     (              "                     "    ) Ex: Mohan brought few parrots from the forest.
 	turtle     (              "                     "    )
 	donkey     (              "                     "    )
-	doctor	   (Suggested by Anita ji LTRC	   14-11-13  ) Ex: Doctors are trained to recognize the symptoms of different diseases.
+	doctor	   (Suggested by Anita ji LTRC	    14-11-13 ) Ex: Doctors are trained to recognize the symptoms of different diseases.
+	pupil      (Suggested by Pramila Banasthali 25-11-13 ) Ex: Pupils are encouraged to be creative.
+        we         (               "                  "      ) Ex: We were encouraged to learn foreign languages at school.
+        shopper    (               "                  "      ) Ex: Music and lighting are used to encourage shoppers to buy more.
 	thief	   (Suggested by Pramila Banasthali 16-08-13 ) Ex: The thief was driven back by the watch dogs.  
 	horse      (Suggested by Preeti ji LTRC	    03-12-13 ) Ex: The injured horse had to be destroyed.
 	demon	   (		  "			"    ) Ex: Lakshmi lures and destroys evil demons . 
 	army	   (              "	                "    ) Ex: Armies had been crippled but not destroyed .   
 	bird	   (Suggested by Pramila Banasthali 12-12-13 ) Ex: The bird settled on a very small branch.
-	husband	   (Suggested by Anita ji LTRC     12-12-13  ) Ex: I sent my husband to represent me at the funeral.
-	king	   (Suggested by Prachi Banasthali 04-01-14  ) Ex: I must take them to the King, the farmer said firmly.		 
+	husband	   (Suggested by Anita ji LTRC      12-12-13 ) Ex: I sent my husband to represent me at the funeral.
+	king	   (Suggested by Prachi Banasthali  04-01-14 ) Ex: I must take them to the King, the farmer said firmly.
+	student	   (Suggested by Garima	"	    11-01-14 ) Ex: A record similar to the one outlined above may also have been achieved by 									  many other students.
+	professor  (By Roja                         13-01-14 ) Ex: The professor decided to write a book.
+        lecturer   (       "                          "      ) Ex: The lecturer decided to write a book.  (Note: replaced above example)
+	lady	   From human.txt
+		 
 
 
   Changes in total-paxasUwra.txt 
@@ -586,6 +593,8 @@ Modified :
 	carve		liv/e__vblex		(     "	     "	  )
 	grandpa		house__n		(     "      "	  )
 	sugarcane	house__n		(     "   06-01-14)
+	labour		accept__vblex		(     "   09-01-14)
+	labor		accept__vblex		(     "   09-01-14)
 
 
 Modified paradigm:
@@ -1504,7 +1513,8 @@ Removed:
 	15. fan_in		niveSAMka#niveSAMka#noun#2#RM 		(Suggested by Krithika ji LTRC	17-12-13)
 				Ex: That big fan in our lab is not working.
 	16. on_the_basis_of_total_income	kula_Aya_ke_AXAra_para#kula_Aya_ke_AXAra_para#noun#3#RM (Suggested by Chaitanya Sir 05-01-14)
-				
+	17. away_from		se_xUra#se_xUra#noun#2#RM		(Suggested by Krithika ji LTRC  07-01-14)
+				Ex: When she left school she grew away from her mother.
 
     Modified :
     --------
@@ -1916,10 +1926,15 @@ Removed:
 	we		(		"		   "	  ) Ex: We were encouraged to learn foreign languages at school.  
 	shopper		(		"		   "	  ) Ex:	Music and lighting are used to encourage shoppers to buy more.
 	thief		(Suggested by Pramila Banasthali 16-08-13 ) Ex: The thief was driven back by the watch dogs.
+	dacoit		(Suggested by Chaitanya Sir     06-11-13  ) Ex: The government took serious steps to check the dacoits.
+	everyone	(Suggested by Chaitanya Sir	 06-11-13 ) Ex: A slow, balmy breeze from the south engulfed everyone in the audience.
         demon		(Suggested by Preeti ji LTRC     03-12-13 ) Ex: Lakshmi lures and destroys evil demons .
         army		(              "                     "    ) Ex: Armies had been crippled but not destroyed .
 	husband		(  By Shirisha Manju             12-12-13 ) Ex: I sent my husband to represent me at the funeral.
-
+	king		(Suggested by Prachi Banasthali  04-01-14 ) Ex: I must take them to the King, the farmer said firmly.
+	soldier		(By Roja, from animate.txt	 13-01-14 ) Ex: The soldiers were called out for the war.
+	professor	(By Roja			 13-01-14 ) Ex: The professor decided to write a book.
+	lecturer	(	"			   "	  ) Ex: The lecturer decided to write a book.  (Note: replaced above example)
 
  changes in named_entities.txt
  =============================

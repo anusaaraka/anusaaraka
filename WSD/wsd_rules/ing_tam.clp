@@ -172,7 +172,7 @@
 ;Running such machine; Running is good for health.
 
 ;first_word && word_category=verb	nA	0
-;@@@ Added by Roja. Suggested by Chaitanya Sir.
+;@@@ Added by Roja(06-01-14). Suggested by Chaitanya Sir.
 ;Ex: Running such a machine is difficult.
 (defrule ing_tam_nA
 (declare (salience 4000))

@@ -20,8 +20,9 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 down)
 (kriyA-upasarga ?id ?id1)
-(kriyA-object ?id  proposal)
+(kriyA-object ?id  ?id1)
 (id-cat_coarse ?id verb)
+(id-root ?id1 proposal) ;$$$ Corrected by Roja
 =>
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 TukarA))

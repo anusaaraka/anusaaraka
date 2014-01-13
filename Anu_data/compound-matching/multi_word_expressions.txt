@@ -4607,7 +4607,6 @@ avouched_age	xoRiwa_Ayu#xoRiwa_Ayu#noun#2#RM
 award_ceremony	puraskAra_samAroha#puraskAra_samAroha#noun#2#RM
 award_staff	paMcAtAXIna_aaMcAta_stAPa#paMcAtAXIna_aaMcAta_stAPa#noun#2#RM
 awarding_authority	paMcAta_prAXikArI#paMcAta_prAXikArI#noun#2#RM
-away_from	se_xUra#se_xUra#noun#2#RM
 away_game	Gara_se_xUra_ke_Kela#Gara_se_xUra_ke_Kela#noun#2#RM
 axiomatic_complexity	svayaM_sixXa_jatilawA#svayaM_sixXa_jatilawA#noun#2#RM
 axiomatic_definition	aBigqhIwa_pariBARA#aBigqhIwa_pariBARA#noun#2#RM
@@ -12508,7 +12507,6 @@ fan_advance	paMKA_agrima#paMKA_agrima#noun#2#RM
 fan_belt	paMKe_kA_pattA#paMKe_kA_pattA#noun#2#RM
 fan_blade	paMKe_kI_paMKudZI#paMKe_kI_paMKudZI#noun#2#RM
 fan_fold_paper	valiwa_kAgaja#valiwa_kAgaja#noun#3#RM
-fan_in	niveSAMka#niveSAMka#noun#2#RM
 fancy_dress	bahurUpie_kA_pahanAvA#bahurUpie_kA_pahanAvA#noun#2#RM
 far_and_away	xUra_xarAja_meM#xUra_xarAja_meM#noun#3#RM
 far_and_wide	xUra_xUra_waka#xUra_xUra_waka#noun#3#RM

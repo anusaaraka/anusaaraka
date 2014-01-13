@@ -1,3 +1,12 @@
+ 13-01-14
+ ========
+ 1. WSD:
+        Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp
+ 2. Updated following dictionary related files:
+        changes_in_databases	 apertium-en-hi.en.metadix 
+ 3. Updated anusaaraka/README
+ 4. Updated Log.
+
  06-01-14
  ========
  1. WSD	: Modified : keep.clp	foundation.clp	time.clp	remove.clp	ed_en_tam.clp	to.clp		idea.clp
