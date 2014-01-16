@@ -28,15 +28,17 @@ people	1
 teacher	1
 she	1
 salesperson	1
-man	1
 person	1
 child	1
 boss	1
 lady	1
 worker	1
-employee	1	
+employee	1
 officer	1
+soldier	1
 woman	1
+dacoit	1
+everyone	1
 doctor	1
 pupil	1
 student	1
@@ -46,3 +48,6 @@ thief	1
 demon	1
 army	1
 husband	1
+king	1
+professor	1
+lecturer	1
