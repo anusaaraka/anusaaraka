@@ -595,6 +595,8 @@ Modified :
 	sugarcane	house__n		(     "   06-01-14)
 	labour		accept__vblex		(     "   09-01-14)
 	labor		accept__vblex		(     "   09-01-14)
+	tail		accept__vblex		(     "   18-01-14)
+	bore		liv/e__vblex		(     "      "    )
 
 
 Modified paradigm:
@@ -1345,6 +1347,10 @@ Removed:
 				Ex:Don't be so careless about spelling.
 	103.confusion_noun	samBrama	as	Brama			(Suggested by 	"		"	)
 				Ex: Her unexpected arrival threw us into total confusion.
+	104.carp_noun		wAlAba_kI_badI_maCalI	as	kArpa_maCalI	(Suggested by Preeti ji LTRC	18-01-14)
+				Ex: I like carp fish.
+	105.convincing_adjective	niScayAwmaka	as	yaWArWapUrNa	(	"		"	"	)
+				Ex: The Fellows of the University found the arguments so convincing that the proposal to attach new 						   conditions to the award was dropped.
 
 	
     6. Removed meaning from existing list:
