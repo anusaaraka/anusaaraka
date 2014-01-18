@@ -12845,7 +12845,7 @@ carousel_noun	cakraxolA/hiNdolA
 carousels_UNDEFINED	cakraxolA
 carouses_UNDEFINED	KUba_maxyapAna_karanA
 carousing_UNDEFINED	KUba_maxyapAna_karanA
-carp_noun	wAlAba_kI_badI_maCalI/kArpa_maCalI
+carp_noun	kArpa_maCalI/wAlAba_kI_badI_maCalI
 carp_verb	mIna_meKa_nikAla/CotI_wucCa_bAwoM_kI_SikAyawa_kara
 carpal_noun	maNibanXa-asWi/kalAI_kI_haddI
 carped_UNDEFINED	CotI_wucCa_bAwoM_kI_SikAyawa_karanA
@@ -17508,7 +17508,7 @@ convince_verb	viSvAsa_xilA/rAjI_kara/samaJA_xe/xqDa_mawa_ho
 convinced_UNDEFINED	viSvAsa_karavA
 convinced_adjective	kAyala
 convinces_UNDEFINED	viSvAsa_karavA
-convincing_adjective	niScayAwmaka/yukwiyukwa/yaWArWapUrNa/viSvAsowpAxaka/viSvasanIya/sajIva
+convincing_adjective	yaWArWapUrNa/niScayAwmaka/yukwiyukwa/viSvAsowpAxaka/viSvasanIya/sajIva
 convincinger_UNDEFINED	niScayAwmaka
 convincingest_UNDEFINED	niScayAwmaka
 convincingly_UNDEFINED	viSvAsowpAxaka_Dafga_se
