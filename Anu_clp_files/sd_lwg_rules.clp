@@ -1,4 +1,5 @@
  ;This file is written by Mahalaxmi
+
  (defglobal ?*lwg_debug_file* = lwg_db_fp)
 
  (deffunction string_to_integer (?parser_id)
@@ -236,7 +237,7 @@
                          "			(root-verbchunk-tam-parser_chunkids - "?VP1" "(implode$ $?dau)" - "?VP1" "(implode$ $?dau)" - "?VP1" "(implode$ $?dau)")" crlf)
                                       
 )
-;--------------------------------------------------------------------------
+ ;--------------------------------------------------------------------------
  (defrule print_for_debugging4
  (declare (salience 69))
  =>
@@ -244,7 +245,7 @@
  (printout ?*lwg_debug_file* " =========================================================================================" crlf crlf)
  )
 
-;--------------------------------------------------------------------------
+ ;--------------------------------------------------------------------------
  ;Replacing all the nodes with there child
  ;Here it look like,
  ;(root-verbchunk-tam-parser_chunkids - is making feed - s ing 0 - P2 P3 P6)
@@ -322,14 +323,14 @@
 ;          (assert (conjuction_modified ?CC))
 ; )
 
-;--------------------------------------------------------------------------
+ ;--------------------------------------------------------------------------
  (defrule print_for_debugging5
  (declare (salience 51))
  =>
  (printout ?*lwg_debug_file* crlf "  Get root , verb_chunk and tam information " crlf)
  (printout ?*lwg_debug_file* " =========================================================================================" crlf crlf)
  )
-;--------------------------------------------------------------------------
+ ;--------------------------------------------------------------------------
  ;Gets verb_chunk and tam information
  ; (root-verbchunk-tam-parser_chunkids - has been coming - s en ing - P2 P3 P5) ==>
  ;(root-verbchunk-tam-parser_chunkids come has_been_coming has_been_ing P2 P3 P5)
