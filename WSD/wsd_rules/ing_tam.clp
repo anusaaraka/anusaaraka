@@ -73,7 +73,7 @@
 (declare (salience 4700))
 (id-TAM ?id ing)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) start|hate|finish|give|suggest|regret|advise|permit|forbid|deserve|remember|forget|prefer|like|begin|mean|intend|enjoy|commence|stop|dislike|allow|disallow|prohibit|love)
+(id-root =(- ?id 1) start|hate|finish|give|suggest|regret|advise|permit|forbid|deserve|remember|forget|prefer|like|begin|mean|intend|enjoy|commence|stop|dislike|allow|disallow|prohibit|love|than) ;$$$ 'than' added by Roja. Suggested by Chaitanya Sir(06-01-14) Ex: This is a better method, and certainly more effective than looking at only one star. (Also modified word fact to root fact by Roja)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -168,9 +168,26 @@
 )
 
 ;I am fond of going there
-;first_word && word_category=verb	nA	0
 
 ;Running such machine; Running is good for health.
+
+;first_word && word_category=verb	nA	0
+;@@@ Added by Roja(06-01-14). Suggested by Chaitanya Sir.
+;Ex: Running such a machine is difficult.
+(defrule ing_tam_nA
+(declare (salience 4000))
+(id-TAM ?id  ing)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(test (eq ?id 1))
+=>
+(retract ?mng)
+(assert (make_verbal_noun ?id))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  ing_tam.clp    ing_tam_nA  "  ?id " )" crlf))
+)
+
+
 ;modified by Meena(28.04.09)
 (defrule ing_tam10
 (declare (salience 4000))

@@ -1,24 +1,38 @@
- 21-12-13
+ 13-01-14
+ ========
+ 1. WSD:
+        Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp
+ 2. Updated following dictionary related files:
+        changes_in_databases	 apertium-en-hi.en.metadix 
+ 3. Updated anusaaraka/README
+ 4. Updated Log.
+
+ 06-01-14
  ========
  1. WSD	: Modified : keep.clp	foundation.clp	time.clp	remove.clp	ed_en_tam.clp	to.clp		idea.clp
 		     warm.clp	all.clp		argue.clp    	as.clp  	compress.clp  	look.clp	lose.clp
-		     contract.clp	
-	  Added    : sun.clp	reflect.clp	general.clp	host.clp	imply.clp	murmur.clp
-		     convention.clp
+		     am.clp	anon.clp	are_en_tam.clp	cage.clp	contract.clp	characteristic.clp		
+		     fold.clp	inter.clp	is_en_tam.clp	may.clp		might.clp	much.clp	name.clp
+		     o.clp	over.clp	relate.clp	rent.clp	still.clp	that.clp	third.clp
+		     when.clp	which.clp	whose.clp	an.clp		say.clp		anon.clp	keep.clp
+		     remain.clp	pt.clp		discover.clp  	have.clp  	second.clp	handsome.clp    scrap.clp       
+		     seize.clp	travel.clp	want.clp	ing_tam.clp
+	  Added    : sun.clp	reflect.clp	general.clp	host.clp	imply.clp	murmur.clp	convention.clp
+	  Deleted  : ought.clp	characterstic.clp
 	  Removed inanimate.txt and handled it with animate.txt as Suggested by Chaitanya Sir. so following files are modified:
 		arise.clp	be.clp		catch.clp	cell.clp	charge.clp
 		deal.clp	time.clp	demonstrate.clp	encompass.clp	remain.clp
  2. GNP_agreement.clp
 	Modified : PP_pada_for_I_me_and_my and sub_and_samA_with_different_gender
  3. hindi_sent_reorder.clp
-	Modified : rule_for_ki and wo_rule_for_if1  
+	Modified : rule_for_ki, ki_rule4 and wo_rule_for_if1  
  4. hindi_sentence.clp
 	Added : rm_repeated_mng_from_sentence
 	Modified the rules to add the fact "id-mng"
  5. prepare_apertium_input.clp
 	Modified : PP_pronoun_rule_with_vib_kA  --- added mine in the list
  6. sd_pada.clp
-	Modified : multiple_prep_rule, get_adjp_group, rm_sen_from_pada and get_single_prep
+	Modified : multiple_prep_rule, get_adjp_group, rm_sen_from_pada, get_prep and get_single_prep
 	Removed  : del_prep_with_pada_head
  7. vibakthi.clp
 	Modified : default_ko_vib and default_kA_vib
@@ -26,7 +40,8 @@
 	Modified : apertium_output_with_pp_id0 rule to get tooltip for Original_word.
  9. H_ordering_rules.clp
 	Removed  : create_sen_SBAR and undef
-	Modified : insert_sen_con_id , mv_destination_before_verb, prep_in_SBAR_rule (added 'per' in the list) and undefrules
+	Modified : insert_sen_con_id , mv_destination_before_verb, prep_in_SBAR_rule (added 'per' in the list), undefrules
+		   rev_VP_or_WHPP and rev_VP_for_obj1_obj2
 	Renamed 'rev_VP_or_PP_or_WHPP' as 'rev_VP_or_WHPP' and removed PP from the list
 10. parser_tree_modification_rules.clp
 	Modified : from_to_PPs
@@ -34,23 +49,30 @@
         Modified : replace_S and replace_S1_Let rules
 12. wsd_meaning.clp
 	Removed : dont_load_particle_with_verb
-13. run_H_gen_sen.bat
+13. sd_category.clp:
+        Added: UH_rule
+14. hindi_meaning.clp:
+        Modified: get_PropN_mng (modified assert statement)
+15. word_alignment.clp
+	Modified : check_count_value_gt_than_1
+16. run_H_gen_sen.bat
         Loaded "hindi_meanings.dat" in hindi_sentence module
         Opened "removed_repeated_mng.dat" file in write wode in hindi_sentence module
-14. Updated following dictionary related files:
+17. Updated following dictionary related files:
         changes_in_databases	 apertium-en-hi.en.metadix	apertium_hn.dix    
-15. Updated following shell files
+18. Updated following shell files
 	run_sentence_stanford.sh  --- to add grep command for removing repeated mng
 	provisional_Anu_databases/reset.sh	--> Removed creating gdbms for inanimate and animate_list 
 	dic_compile.sh				--> 		"
 	anu_compile.sh				-->		"
 	ClipsToAnu_browser_intfc.sh		--> To e-mail Manual translations added new arg
-16. Updated following files in goldentdict:
+	remove_out-files.sh
+19. Updated following files in goldentdict:
 	iit-bombay.dict
 	iit-bombay.index
 	iit-bombay.txt1
 	shabdanjali.dict.dz
-17. Updated following files:
+20. Updated following files:
 	Readme_to_use_email_in_firefox.txt
 	this1.py
 	Stanford_parser_fails
@@ -60,12 +82,13 @@
 	this.py
 	frame.sh
 	mail.php
-18. Removed following files 
+	bllip parser to new version
+21. Removed following files 
 	inanimate.txt 
 	animate_list.txt
-19. Renamed:  Doc/PennTreeBankNotation/ folder to Doc/Stanford_parser_documentation/
-20. Added Bracketing Guidelines for Treebank II Style Penn Treebank Project 1.html in Doc/Stanford_parser_documentation/
-21. Modified in following files anu_testing to anusaaraka:
+22. Renamed:  Doc/PennTreeBankNotation/ folder to Doc/Stanford_parser_documentation/
+23. Added Bracketing Guidelines for Treebank II Style Penn Treebank Project 1.html in Doc/Stanford_parser_documentation/
+24. Modified in following files anu_testing to anusaaraka:
 	Anu_clp_files/run_modules_link.bat
 	Anu_clp_files/run_modules_ol.bat
 	Anu_clp_files/run_modules_std.bat
@@ -79,8 +102,9 @@
 	debugging/relation_debug.clp
 	debugging/wsd-help
 	miscellaneous/TREES/tree_viewer/README
-22. Update Log.
-23. Updated  sd_verified (612)          verified_eng (40)               small_sent_verified_sd (132)
+	line_count.c	-> to remove warnings.
+25. Update Log.
+26. Updated  sd_verified (617)          verified_eng (40)               small_sent_verified_sd (133)
              phy_verified_eng (253)     phy_partial_ver_eng (282)
 
 

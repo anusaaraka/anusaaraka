@@ -186,18 +186,20 @@
 ;"over","N","1.kriketa_kI_ovara"
 ;That was a wonderful over by Kapil Dev.
 ;
-(defrule over9
-(declare (salience 3800))
-(id-root ?id over)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id Pref)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id bAhya))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  over.clp 	over9   "  ?id "  bAhya )" crlf))
-)
 
+;Commented this rule by Roja(27-12-13). Suggested by Sukhada. File never loads with prefix. Ex: That is a warm overcoat. Here 'over' is the prefix of the word 'coat'. File loads only when 'overcoat.clp' is present.
+;(defrule over9
+;(declare (salience 3800))
+;(id-root ?id over)
+;?mng <-(meaning_to_be_decided ?id)
+;(id-cat_coarse ?id Pref)
+;=>
+;(retract ?mng)
+;(assert (id-wsd_root_mng ?id bAhya))
+;(if ?*debug_flag* then
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  over.clp 	over9   "  ?id "  bAhya )" crlf))
+;)
+;
 ;"over","Pref","1.bAhya"
 ;That is a warm overcoat.
 ;--"2.ArapAra"

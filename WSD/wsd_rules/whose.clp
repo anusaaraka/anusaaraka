@@ -44,21 +44,22 @@
 ;"whose","Interro","1.kisakA"
 ;Whose car is that?.
 ;
+
+;$$$ Removed category 'relative_pronoun' and added 'viSeRya-jo_samAnAXikaraNa' relation by Roja(28-12-13). Suggested by Sukada.
+;"whose","Rel Pron","1.jisakA"
+;The boy whose book it is, will come later.
 (defrule whose3
 (declare (salience 4700))
 (id-root ?id whose)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id relative_pronoun)
+(viSeRya-jo_samAnAXikaraNa ? ?id)
+;(id-cat_coarse ?id relative_pronoun)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id jisakA))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  whose.clp 	whose3   "  ?id "  jisakA )" crlf))
 )
-
-;"whose","Rel Pron","1.jisakA"
-;The boy whose book it is, will come later.
-;
 
 ;Added by sheetal(23-03-10)
 ;This is the man whose dog I bought .

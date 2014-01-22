@@ -1,9 +1,10 @@
 
+;$$$ Modified category 'NNP' to 'PropN' by Roja(27-12-13).Suggested by Sukhada
 (defrule name0
 (declare (salience 5000))
 (id-root ?id name)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse =(+ ?id 1) NNP)
+(id-cat_coarse =(+ ?id 1) PropN)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)

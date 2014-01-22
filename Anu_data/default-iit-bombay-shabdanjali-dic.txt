@@ -12667,7 +12667,7 @@ capsizing_UNDEFINED	ulata-pulata_jAnA
 capsule_noun	kEpasUla/samputa/safkRepaNa/kEpsUla/bIjakoSa
 capsules_UNDEFINED	kEpasUla
 captain_noun	kapwAna/vimAna_cAlaka/senApawi/saraxAra/praXAna_vetara/praXana_vetara/praXAna/pramuKa_bErA/pramuKa/PoramEna/niyanwA/newA/nAyaka/muKiyA/mahAna_sEnika/jamAxAra/jahAja/balapawi/aXipawi/aXikArI/aPasara/jahAja_kA_aXyakRa
-captain_verb	saFcAlana_kara/rAswA_xiKA/newqwva_kara/mArga_praxarSana_kara/kapwAnI_kara/kapwAna_ho
+captain_verb	newqwva_kara/saFcAlana_kara/rAswA_xiKA/mArga_praxarSana_kara/kapwAnI_kara/kapwAna_ho
 captained_UNDEFINED	newqwva_karanA
 captaining_UNDEFINED	newqwva_karanA
 captains_UNDEFINED	newqwva_karanA
@@ -12775,7 +12775,7 @@ carefuler_UNDEFINED	sAvaXAna
 carefulest_UNDEFINED	sAvaXAna
 carefully_adverb	sAvaXAnI_se/vicAriwawaH/vicArapUrvaka
 caregiver_noun	xeKa-reKa_karane_vAlA
-careless_adjective	beparavAha/suswa/nEsargika/lAparavAha/kama/kaccA/galawa/DIlA-DAlA/bePikra/aXUrA/asawarka/asAvaXAna/AlasI
+careless_adjective	lAparavAha/beparavAha/suswa/nEsargika/kama/kaccA/galawa/DIlA-DAlA/bePikra/aXUrA/asawarka/asAvaXAna/AlasI
 carelesser_UNDEFINED	beparavAha
 carelessest_UNDEFINED	beparavAha
 carelessly_UNDEFINED	beparavAhI_se
@@ -12845,7 +12845,7 @@ carousel_noun	cakraxolA/hiNdolA
 carousels_UNDEFINED	cakraxolA
 carouses_UNDEFINED	KUba_maxyapAna_karanA
 carousing_UNDEFINED	KUba_maxyapAna_karanA
-carp_noun	wAlAba_kI_badI_maCalI/kArpa_maCalI
+carp_noun	kArpa_maCalI/wAlAba_kI_badI_maCalI
 carp_verb	mIna_meKa_nikAla/CotI_wucCa_bAwoM_kI_SikAyawa_kara
 carpal_noun	maNibanXa-asWi/kalAI_kI_haddI
 carped_UNDEFINED	CotI_wucCa_bAwoM_kI_SikAyawa_karanA
@@ -13424,7 +13424,7 @@ ceremonious_adjective	OpacArika
 ceremoniously_UNDEFINED	OpacAiraka_Dafga_se
 ceremoniously_adverb	OpacArika_Dafga_se
 ceremony_UNDEFINED	anuRTAna
-ceremony_noun	XArmika-viXi/viXi/samAroha/samAramBa/rIwi/rasma/praWA/OpacarikawA/awiSayokwi/avasara
+ceremony_noun	 samAroha/XArmika-viXi/viXia/rIwi/rasma/praWA/OpacarikawA/awiSayokwi/avasara
 cerise_UNDEFINED	haOkA_lAla
 cerise_adjective	rakwima/lohiwa/halkA_lAla
 certain_adjective	niSciwa/viSvasanIya/viSeRa/pakkA/niyawa/nirvivAxa/kuCa/koI_BI/koI/kisI/KAsa/asanxigXa/anivArya
@@ -16699,7 +16699,7 @@ confuses_UNDEFINED	GabadA_jAnA
 confusing_UNDEFINED	GabadA_jAnA
 confusing_adjective	pecIxA/aspaRta
 confusingly_adverb	samBramiwa_karawe_hue/sanxigXawaH/aspaRtawaH
-confusion_noun	samBrama/Brama/BOcakkA/BAnwi/aswavyaswawA
+confusion_noun	Brama/samBrama/BOcakkA/BAnwi/aswavyaswawA
 confusions_UNDEFINED	samBrama
 confutable_adjective	KaNdanIya
 confutative_adjective	KaNdanIya
@@ -17508,7 +17508,7 @@ convince_verb	viSvAsa_xilA/rAjI_kara/samaJA_xe/xqDa_mawa_ho
 convinced_UNDEFINED	viSvAsa_karavA
 convinced_adjective	kAyala
 convinces_UNDEFINED	viSvAsa_karavA
-convincing_adjective	niScayAwmaka/yukwiyukwa/yaWArWapUrNa/viSvAsowpAxaka/viSvasanIya/sajIva
+convincing_adjective	yaWArWapUrNa/niScayAwmaka/yukwiyukwa/viSvAsowpAxaka/viSvasanIya/sajIva
 convincinger_UNDEFINED	niScayAwmaka
 convincingest_UNDEFINED	niScayAwmaka
 convincingly_UNDEFINED	viSvAsowpAxaka_Dafga_se
@@ -30657,7 +30657,7 @@ flying-saucer_noun	udana_waSwarI
 flying-sqad_noun	pulisa_kA_eka_xaswA
 flying-visit_noun	kama_samaya_kI_BeNta
 flying_adjective	udane_vAlA/laharAwa_huA
-flying_noun	udAna/havAI_yAwrA
+flying_noun	udanA/udAna/havAI_yAwrA
 flyinger_UNDEFINED	havAI_yAwrA
 flyingest_UNDEFINED	havAI_yAwrA
 flyings_UNDEFINED	havAI_yAwrA
@@ -37562,7 +37562,7 @@ homoeopathy_UNDEFINED	homiyopEWI_cikiwsA
 homoeopathy_noun	homyopEWI_cikiwsA
 homogeneities_UNDEFINED	sajAwIyawA
 homogeneity_noun	sajAwIyawA/samarUpawA
-homogeneous_adjective	sajAwIya/samarUpa
+homogeneous_adjective	samarUpa/sajAwIya
 homogeneouser_UNDEFINED	sajAwIya
 homogeneousest_UNDEFINED	sajAwIya
 homogenised_adjective	ekasArakqwa
@@ -93047,7 +93047,7 @@ yeomanry_noun	vAlaNtiyara_risAlA/CotA_jamInxAra_varga
 yeomen_UNDEFINED	CotA_jamInxAra
 yep_adverb	hAz
 yes-man_noun	jIhujUriyA/pitTU/kaTapuwalI/jI-hujUriyA/cAtukAra
-yes_interjection	vAkaI/hAM/hAjira_hUz
+yes_interjection	hAz/vAkaI/hAM/hAjira_hUz
 yes_noun	hAz
 yeses_UNDEFINED	hAz
 yesterday_adverb	kala/kala_ko
@@ -93511,3 +93511,5 @@ mule-men_noun	KaccharavAlA
 character-building_noun	cariwra_nirmANa
 orthodox_noun	paraMparAgawa
 non-uniform_adjective	asamAna
+paycheck_noun	wanaKvAha_kA_cEka
+duo_noun	xonoM

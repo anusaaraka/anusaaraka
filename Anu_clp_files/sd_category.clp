@@ -206,6 +206,15 @@
          (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
+  ;Added by Roja(27-12-13)
+  ;[No], it isn't.
+  (defrule UH_rule
+  ?f0<-(id-sd_cat        ?id     UH)
+  =>
+         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  interjection)" crlf)
+         (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
   (defrule close_cat_file
   (declare (salience -100))
   =>

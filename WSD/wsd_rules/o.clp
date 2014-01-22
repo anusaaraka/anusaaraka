@@ -7,6 +7,8 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id oha!))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  o.clp         o0   "  ?id "  o )" crlf))
 )
 
 ;"o","Interj","1.oha!"
@@ -21,7 +23,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id o))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  o.clp 	o0   "  ?id "  o )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  o.clp 	o1   "  ?id "  o )" crlf))
 )
 
 ;"o","N","1.o{akRara}"
@@ -38,7 +40,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  o.clp 	o1   "  ?id "  kA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  o.clp 	o2   "  ?id "  kA )" crlf))
 )
 
 ;"o","Prep","1.kA{'OYPa'_kA_saMkRipwIkaraNa}"

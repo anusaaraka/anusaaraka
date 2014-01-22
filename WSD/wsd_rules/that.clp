@@ -327,12 +327,13 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  that.clp 	that18   "  ?id "  jo )" crlf))
 )
 
-
+;$$$ Removed category 'relative_pronoun' and added 'viSeRya-jo_samAnAXikaraNa' relation by Roja(28-12-13). Suggested by Sukada.
 (defrule that19
 (declare (salience 3300))
 (id-root ?id that)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id relative_pronoun)
+(viSeRya-jo_samAnAXikaraNa ? ?id)
+;(id-cat_coarse ?id relative_pronoun)
 ;(id-word =(+ ?id 1) you|we|they|I|he|she)
 ;(id-cat_coarse =(- ?id 1) noun)
 (id-word ?id1 on|to)
@@ -614,11 +615,13 @@
 ;"that","Pron","1.vaha"
 ;That's a beautiful garden.
 ;
+;$$$ Removed category 'relative_pronoun' and added 'viSeRya-jo_samAnAXikaraNa' relation by Roja(28-12-13). Suggested by Sukada.
 (defrule that38
 (declare (salience 1400))
 (id-root ?id that)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id relative_ pronoun)
+(viSeRya-jo_samAnAXikaraNa ? ?id)
+;(id-cat_coarse ?id relative_pronoun)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id jo))
@@ -661,4 +664,20 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  that.clp 	that40   "  ?id "  - )" crlf))
 )
 
-
+;@@@ Added by Roja(24-12-13). Suggested by Chaitanya Sir.
+;Conservation laws have a deep connection with symmetries of nature that you will explore in more advanced courses in physics. [NCERT Chapt-1](6th parse is correct in Stanford parser)
+;प्रकृति की सममितियों का संरक्षण नियमों से गहरा सम्बन्ध है जिसके विषय में आप भौतिकी के अधिक उन्नत पाठ्यक्रम में अन्वेषण करेँगे . 
+;This rule is not neccessary when 'viSeRya-jo_samAnAXikaraNa' relation is present.
+(defrule that41
+(declare (salience 4700))
+(id-root ?id that)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-conjunction  ?kri ?id)
+(viSeRya-viSeRaNa  ?vi ?kri)
+(id-cat_coarse ?vi noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id jo))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  that.clp      that41   "  ?id "  jo)" crlf))
+)

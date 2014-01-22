@@ -1921,7 +1921,7 @@ Rainwear AvaSyaka hE yaxi Apa jUna Ora siwambara ke bIca xeKane_jA rahe hEM.
 
 Hindi meaning using Stanford parser 4.32
 Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival. 
-Allahabad usake vArRika magh mele ke lie (CotA kumbh melA) Ora rafgIna dussehra wyOhAra ke lie BI jAnA jAwA hE.
+IlAhAbAxa usake vArRika magh mele ke lie (CotA kumbh melA) Ora rafgIna dussehra wyOhAra ke lie BI jAnA jAwA hE.
 Allahabad usake vArRika magh mele ke lie (Cote kumbh mele) Ora rafgIna dussehra wyOhAra ke lie BI jAnA jAwA hE.
 Multiple adjective senses are available for annual. WSD rule is required 
 
@@ -2635,10 +2635,12 @@ paramparA mAzgawI hE ki eka klaba saxasya ko EsI hAlawa meM wyAga_pawra xenA cAh
 Hindi meaning using Stanford parser 5.98
 We must be alert to the possibility of danger. 
 hameM vipawwi kI samBAvanA ke lie sawarka honA cAhie.
+Multiple adjective senses are available for alert. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.99
 Two alert scientists spotted the mistake. 
 xo sawarka vEjFAnikoM ne galawI xeKI.
+Multiple adjective senses are available for alert. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.100
 They had been alerted to the possibility of further price rises. 
@@ -2694,6 +2696,26 @@ Multiple adjective senses are available for important. WSD rule is required
 Hindi meaning using Stanford parser 6.12
 Alka had fallen straight into it. 
 alakA sIXA isake anxara girI WI.
+
+Hindi meaning using Stanford parser 6.13
+A terrifying scream rent the air. 
+eka Bayafkara cIKa ne havA ko cIra xiyA.
+
+Hindi meaning using Stanford parser 6.14
+There are some apartments for rent in these buildings. 
+ina imArawoM meM kirAye ke lie kuCa PlEta hEM.
+
+Hindi meaning using Stanford parser 6.15
+There is a big rent in his new house. 
+usake naye Gara meM eka badI xarAra hE.
+
+Hindi meaning using Stanford parser 6.16
+They always pay their rent on time. 
+ve hameSA samaya para unake kirAye ko cukAwe hEM.
+
+Hindi meaning using Stanford parser 6.17
+He rented a small house in Allahabad. 
+usane IlAhAbAxa meM eka CotA Gara kirAye_para liyA.
 
 Calling Transliteration
 Calling Interface related programs

@@ -89,6 +89,13 @@ The field is not even.
 	-> Parser gave 'even' category as RB but it should be adjective.
 Undue haste results badly.
 	-> Parser gave 'results' category as NNS but it should be verb.
-The sports desk. City desk.  News desk.
+The sports desk. 
+City desk.  
+News desk.
 	-> Parser gave 'desk' category as VBZ but it should be noun.
-
+Do you know that over 800,000,000 cups of tea are drunk every day throughout the world?
+	-> Parser gave 'drunk' category as NN but it should be verb.
+She's always dieting but she never seems to lose any weight.
+	-> Parser gave 'dieting' category as NN but it should be verb.
+May I help you?
+	-> Parser gave 'May' category as NNP but it should be modal verb.

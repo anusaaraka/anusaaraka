@@ -29,7 +29,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id UparavAlA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  upper.clp 	upper0   "  ?id "  UparavAlA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  upper.clp 	upper1   "  ?id "  UparavAlA )" crlf))
 )
 
 ;"upper","Adj","1.UparavAlA"
@@ -43,7 +43,7 @@
 
 
 ;Salience reduced by Meena(23.3.10)
-(defrule upper1
+(defrule upper2
 (declare (salience 0))
 ;(declare (salience 4900))
 (id-root ?id upper)
@@ -53,7 +53,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id jUwe_Axi_kA_Upara_kA_BAga))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  upper.clp 	upper1   "  ?id "  jUwe_Axi_kA_Upara_kA_BAga )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  upper.clp 	upper2   "  ?id "  jUwe_Axi_kA_Upara_kA_BAga )" crlf))
 )
 
 ;"upper","N","1.jUwe_Axi_kA_Upara_kA_BAga"

@@ -303,7 +303,7 @@
         (bind ?mng (gdbm_lookup "proper_noun_dic.gdbm" ?wrd ))
         (if (neq ?mng "FALSE") then
                 (retract ?f)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?mng"   proper_noun_dic_)" crlf)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?mng"   proper_noun_dic)" crlf)
                 (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?mng"   proper_noun_dic "?id")" crlf)
         )
  )

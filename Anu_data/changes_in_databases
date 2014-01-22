@@ -402,8 +402,7 @@
 	officer	   (  		By Manju 	   05-10-13  ) Ex: Mohan is a highly corrupt officer.
 	dacoit     (Suggested by Chaitanya Sir     06-11-13  ) Ex: The government took serious steps to check the dacoits.
 	kill       (		  "			"    ) Ex: The leopard seizes its kill and begins to eat. 
-	everyone   (		  "			"    ) Ex: A slow, balmy breeze from the south engulfed everyone in
-								   the audience. 
+	everyone   (		  "			"    ) Ex: A slow, balmy breeze from the south engulfed everyone in the audience. 
 	woman	   (		By Manju	   06-11-13  ) Ex: I know a woman who has two children.
 	cat        (		  "			"    )
 	rat        (              "                     "    ) Ex: The snake who swallowed the rat hissed loudly.
@@ -416,13 +415,22 @@
 	parrot     (              "                     "    ) Ex: Mohan brought few parrots from the forest.
 	turtle     (              "                     "    )
 	donkey     (              "                     "    )
-	doctor	   (Suggested by Anita ji LTRC	   14-11-13  ) Ex: Doctors are trained to recognize the symptoms of different diseases.
+	doctor	   (Suggested by Anita ji LTRC	    14-11-13 ) Ex: Doctors are trained to recognize the symptoms of different diseases.
+	pupil      (Suggested by Pramila Banasthali 25-11-13 ) Ex: Pupils are encouraged to be creative.
+        we         (               "                  "      ) Ex: We were encouraged to learn foreign languages at school.
+        shopper    (               "                  "      ) Ex: Music and lighting are used to encourage shoppers to buy more.
 	thief	   (Suggested by Pramila Banasthali 16-08-13 ) Ex: The thief was driven back by the watch dogs.  
 	horse      (Suggested by Preeti ji LTRC	    03-12-13 ) Ex: The injured horse had to be destroyed.
 	demon	   (		  "			"    ) Ex: Lakshmi lures and destroys evil demons . 
 	army	   (              "	                "    ) Ex: Armies had been crippled but not destroyed .   
 	bird	   (Suggested by Pramila Banasthali 12-12-13 ) Ex: The bird settled on a very small branch.
-	husband	   ((Suggested by Anita ji LTRC     12-12-13 ) Ex: I sent my husband to represent me at the funeral. 
+	husband	   (Suggested by Anita ji LTRC      12-12-13 ) Ex: I sent my husband to represent me at the funeral.
+	king	   (Suggested by Prachi Banasthali  04-01-14 ) Ex: I must take them to the King, the farmer said firmly.
+	student	   (Suggested by Garima	"	    11-01-14 ) Ex: A record similar to the one outlined above may also have been achieved by 									  many other students.
+	professor  (By Roja                         13-01-14 ) Ex: The professor decided to write a book.
+        lecturer   (       "                          "      ) Ex: The lecturer decided to write a book.  (Note: replaced above example)
+	lady	   From human.txt
+		 
 
 
   Changes in total-paxasUwra.txt 
@@ -472,6 +480,8 @@
  20.	aBiXAraNA	ASA/__n			(    "	 Suggested by Chaitanya Sir 16-10-13)
  21.	BAga		Gar/a__n		(By Roja 			24-10-13)
  22.	sarasarA	KA/__v			(By Roja Suggested by Sukhada	19-12-13)
+ 23.	samamiwi	Apawwi/__n		(By Roja Suggested by Chaitanya Sir 28-12-13)
+ 24.	wArA		ladak/A__n		(By Roja Suggetsed by Sukhada	06-01-14)
 
 Modified :
   1.	<e><p><l>we_hue</l>	as	<e><p><l>owe_hue</l>       for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
@@ -580,13 +590,23 @@ Modified :
 	even		long/__adj		(     "   04-12-13)
 	sow		hew__vblex		(     "   04-12-13)
 	dive		liv/e__vblex		(     "   19-12-13)
+	carve		liv/e__vblex		(     "	     "	  )
+	grandpa		house__n		(     "      "	  )
+	sugarcane	house__n		(     "   06-01-14)
+	labour		accept__vblex		(     "   09-01-14)
+	labor		accept__vblex		(     "   09-01-14)
+	tail		accept__vblex		(     "   18-01-14)
+	bore		liv/e__vblex		(     "      "    )
+
 
 Modified paradigm:
      	belonging	house__n	as	personnel__n	(Suggested by Meena ji 12-05-11)
 	box		bass__n		as	access__n	(Suggested by Meena ji 10-08-11)
 	phenomenon	house__n	as	criteri/on__n	(By Roja	       14-03-13)
 	shrink
-	epoch		access__n	as	house__n	(By Roja		19-12-13)	
+	epoch		access__n	as	house__n	(By Roja		19-12-13)
+	slight		expensive__adj	as	long/__adj	(By Roja		04-01-14)
+	strike		liv/e__vblex	as	str/ike__vblex	(By Roja		04-01-14)
 
 Added new paradigms:
         trek__vblex		(By Roja	14-10-11)
@@ -619,6 +639,7 @@ Removed:
 	<e lm="shrunk"><i>shrunk</i><par n="accept__vblex"/></e>		(By Roja	07-09-13)
 	<e lm="shrank"><i>shrank</i><par n="accept__vblex"/></e>		("		"	)
 	<e lm="flags"><i>flags</i><par n="access__n"/></e>			("		04-12-13) 
+	<e lm="tactics"><i>tactics</i><par n="politics__n"/></e>		("		06-01-14)
 
 
  Added new files:
@@ -952,6 +973,10 @@ Removed:
 	71. non-uniform_adjective   	asamAna				(Suggested by Chaitanya Sir     21-12-13)
 					Ex: We saw that uniform motion needs the concept of velocity alone whereas non-uniform motion
                                             requires the concept of acceleration in addition.
+	72. paycheck_noun		wanaKvAha_kA_cEka		(Suggested by Sonam Banasthali	04-01-14)
+					Ex: The monthly premium for your health insurance is deducted from your paycheck.
+	73. duo_noun  			xonoM				(Suggested by Pamila Banasthali   28-12-13)
+					Ex: The father and son duo were sitting beside a dying fire in front of their hut .
 
 
     4. Added new meaning to the existing word:
@@ -1110,7 +1135,9 @@ Removed:
 					Ex: The word Science originates from the Latin verb Scientia meaning 'to know'. 
 	86. doorway_noun    		xvArapaWa		(Suggested by Pramila Banasthali 12-12-13)
 					Ex: He suddenly appeared in the doorway.
-	87. embankment_noun    		wata			(		  "	"	 21-12-13)
+	87. name-plate_noun		nAma_pattikA		(Suggested by Nandini ji LTRC	17-12-13)
+					Ex: Bhagirathi, the children read the name-plate on the door.
+	88. embankment_noun    		wata			(		  "	"	 21-12-13)
 					Ex: Alka and Taffy wandered about on the embankment.
 
 
@@ -1304,8 +1331,26 @@ Removed:
 				Ex: I finally managed to cure the rattling noise in my car.
 	95. collection_noun	saFcayana	as	saMgraha		(	"		"	17-12-13)
 				Ex: The painting comes from his private collection.
-	96. name-plate_noun	nAma_patta	as	nAma-pattikA            (Suggested by Nandini ji LTRC 17-12-13)
+	96. name-plate_noun	nAma_patta	as	nAma-pattikA            (Suggested by Nandini ji LTRC	17-12-13)
                                 Ex: Bhagirathi, the children read the name-plate on the door.
+	97. ceremony_noun	XArmika-viXi	as	samAroha		(Suggested by Preeti ji LTRC	21-12-13)
+				Ex: The royal guests were welcomed with pomp and ceremony.
+	98. captain_verb	saFcAlana_kara	as	newqwva_kara		(Suggested by Preeti ji LTRC	21-12-13)
+				Ex: He has captained the England cricket team three times.
+	99. flying_noun		udAna		as	udanA			(Suggested by Chaitanaya Sir	28-12-13)
+				Ex: Flying planes can be dangerous.
+	100.homogeneous_adjective	sajAwIya	as	samarUpa	(	"		"	"	)
+				Ex: Likewise, space is homogeneous and there is no (intrinsically) preferred location in the universe.
+	101.yes_interjection	vAkaI		as	hAz			(Suggested by Sukhada		28-12-13)
+				Ex: Yes, he did.
+	102.careless_adjective	beparavAha	as	lAparavAha 		(Suggested by Preeti ji LTRC	04-01-14)
+				Ex:Don't be so careless about spelling.
+	103.confusion_noun	samBrama	as	Brama			(Suggested by 	"		"	)
+				Ex: Her unexpected arrival threw us into total confusion.
+	104.carp_noun		wAlAba_kI_badI_maCalI	as	kArpa_maCalI	(Suggested by Preeti ji LTRC	18-01-14)
+				Ex: I like carp fish.
+	105.convincing_adjective	niScayAwmaka	as	yaWArWapUrNa	(	"		"	"	)
+				Ex: The Fellows of the University found the arguments so convincing that the proposal to attach new 						   conditions to the award was dropped.
 
 	
     6. Removed meaning from existing list:
@@ -1395,11 +1440,11 @@ Removed:
  changes in preposition.txt
  ==========================
  Added  :
-	as_before 	---	Suggested by Rajini (25-02-12)
-	in_terms_of     ---	Suggested by Chaitanya Sir (25-05-12) 
-	in_contrast_to  ---     Suggested by Sukhada
-	as_far_as	---	Added below entries from Wikepedia 
-                                (As Suggested by Chaitanya Sir (30-10-12))
+	as_before 		---	Suggested by Rajini (25-02-12)
+	in_terms_of     	---	Suggested by Chaitanya Sir (25-05-12) 
+	in_contrast_to  	---     Suggested by Sukhada
+	as_far_as		---	Added below entries from Wikepedia 
+                                	(As Suggested by Chaitanya Sir (30-10-12))
 		as_long_as    	as_of    		as_opposed_to
 		as_regards 	as_soon_as		back_to
 		by_virtue_of	far_from 		for_the_sake_of	
@@ -1409,10 +1454,11 @@ Removed:
 		pursuant_to	right_of 		subsequent_to
 		that_of		where_as 		with_a_view_to	
 		with_respect_to
-	into_and_out_of --- 	(Suggested by Chaitanya Sir 22-11-12)
-	in_contact_with	---	(Suggested by Sukhada
-	just_before	---	(Suggested by Chaitanya Sir 22-01-13)
-	more_than	---	(Suggested by Sukhada	    04-09-13)
+	into_and_out_of		--- 	(Suggested by Chaitanya Sir 22-11-12)
+	in_contact_with		---	(Suggested by Sukhada
+	just_before		---	(Suggested by Chaitanya Sir 22-01-13)
+	more_than		---	(Suggested by Sukhada	    04-09-13)
+	on_the_basis_of		---	(Suggested by Chaitanya Sir 05-01-14)
 
 -------------------------- compound_phrase.txt -----------------------------------
  Based on the type of the phrase, compound_phrase.txt file has been splitted in to four different files,(Suggested by Chaitanya ji 23-04-12)
@@ -1472,7 +1518,9 @@ Removed:
 				Ex: This room is two times bigger than the hall.
 	15. fan_in		niveSAMka#niveSAMka#noun#2#RM 		(Suggested by Krithika ji LTRC	17-12-13)
 				Ex: That big fan in our lab is not working.
-
+	16. on_the_basis_of_total_income	kula_Aya_ke_AXAra_para#kula_Aya_ke_AXAra_para#noun#3#RM (Suggested by Chaitanya Sir 05-01-14)
+	17. away_from		se_xUra#se_xUra#noun#2#RM		(Suggested by Krithika ji LTRC  07-01-14)
+				Ex: When she left school she grew away from her mother.
 
     Modified :
     --------
@@ -1659,8 +1707,14 @@ Removed:
 	86. rubbish_bin		kacarA_kuMdI#kacarA_kuMdI#noun#2#RM			(Suggested by Anita ji LTRC	17-12-13)
 				Ex: Put the empty box in the rubbish bin. 
 	87. staple_diet     	Bojana_kA_muKya_aMSa#Bojana_kA_muKya_aMSa#noun#2#RM	(Suggested by Chaitanya Sir     21-12-13)
-				Ex: In the hills potatoes are the staple diet. 
-
+				Ex: In the hills potatoes are the staple diet.
+	88. taking_courage_in_both_hands	jI_kadZA_karake_badZI_himmawa_se#jI_kadZA_karake_badZI_himmawa_se#verb#1#RM (Suggested by Chaitanya Sir 04-01-14)
+				Ex: Then, taking courage in both hands, he spoke, Your Majesty, please grant me anything
+	89. preferred_location	aXimawa_avasWiwi#aXimawa_avasWiwi#noun#2#RM		(Suggested by Chaitanya Sir     04-01-14)
+				Ex: Likewise, space is homogeneous and there is no (intrinsically) preferred location in the universe. 
+	90. on_the_basis_of	ke_AXAra_para#ke_AXAra_para#preposition#3#RM		 (Suggested by Chaitanya Sir     05-01-14)
+				Ex: Physicists try to discover the rules that are operating in nature, on the basis of observations,
+				    experimentation and analysis.		       			 
 
     Added new meaning to the existing word:
     --------------------------------------
@@ -1878,10 +1932,15 @@ Removed:
 	we		(		"		   "	  ) Ex: We were encouraged to learn foreign languages at school.  
 	shopper		(		"		   "	  ) Ex:	Music and lighting are used to encourage shoppers to buy more.
 	thief		(Suggested by Pramila Banasthali 16-08-13 ) Ex: The thief was driven back by the watch dogs.
+	dacoit		(Suggested by Chaitanya Sir     06-11-13  ) Ex: The government took serious steps to check the dacoits.
+	everyone	(Suggested by Chaitanya Sir	 06-11-13 ) Ex: A slow, balmy breeze from the south engulfed everyone in the audience.
         demon		(Suggested by Preeti ji LTRC     03-12-13 ) Ex: Lakshmi lures and destroys evil demons .
         army		(              "                     "    ) Ex: Armies had been crippled but not destroyed .
 	husband		(  By Shirisha Manju             12-12-13 ) Ex: I sent my husband to represent me at the funeral.
-
+	king		(Suggested by Prachi Banasthali  04-01-14 ) Ex: I must take them to the King, the farmer said firmly.
+	soldier		(By Roja, from animate.txt	 13-01-14 ) Ex: The soldiers were called out for the war.
+	professor	(By Roja			 13-01-14 ) Ex: The professor decided to write a book.
+	lecturer	(	"			   "	  ) Ex: The lecturer decided to write a book.  (Note: replaced above example)
 
  changes in named_entities.txt
  =============================
