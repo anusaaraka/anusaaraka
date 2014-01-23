@@ -262,6 +262,7 @@
  (load-facts "morph.dat")
  (load-facts "cat_consistency_check.dat")
  (load-facts "preferred_morph.dat")
+ (load-facts "punctuation_info.dat")
  (load* "global_path.clp")
  (load-facts "sand_box.dat")
  (load-facts "domain.dat")

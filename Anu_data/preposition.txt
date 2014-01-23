@@ -85,3 +85,6 @@ in_contact_with	1
 just_before	1
 more_than	1
 on_the_basis_of	1
+such_as	1
+rather_than	1
+at_the_behest_of	1
