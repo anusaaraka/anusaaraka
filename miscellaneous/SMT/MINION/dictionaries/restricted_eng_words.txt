@@ -22,7 +22,7 @@ any	WodA/prawyeka/mAmUlI/koI_BI/koI/kisI_BI/jo_BI/eka/kisI_BI_sWiwi_meM/bilkula/
 anybody	koI_vyakwi/koI/koI_BI/kisI_ko_BI
 anyone	koI_eka/koI_BI/kisI_ko
 anything	kuCa_BI/kuCa
-are	hEM/howe_hEM/howA_hE
+are	hEM/howe_hEM/howA_hE/howI_hEM
 around	pUrA/lagaBaga/cAro_ora/GerevAlA/yahAz-vahAz/upalabXa/sAre/pUre/pICe/jahAz-wahAz/iXar-uXara/iwaswawH/cAroM_ora/Asa-pAsa/hara_ora/iXara_uXara/kuCa_nahIM_karawe_hue/mOjUxa_honA/Asa_pAsa/pICe_kI_ora/waka/meM_yahAz-vahAz/ke_pasa/ke_cAroM_ora/cAroM_waraPa/GUma_kara/ke_pariwaH/ke_iXara_uXara
 as	pahale_kI_waraha/mAno/kI_waraha/ke_rUpa_meM/jyoMhI/jisa_waraha/jEse_hI/jaba_ki/jEsA/kyofki/jaba/ke_jEsA/ke_BAnwi/ke_samAna/nimna_prakAra/jEsA_ki
 astride	pAzva_PElAkara/tAzgeM_PElA_kara/Ara-pAra/xono_waraPa
@@ -135,7 +135,7 @@ someone	koI/badA_AxamI/koI_vyakwi
 something	kuCa/koI_cIja/koI_bAwa/koI
 than	kaba/se/kI_apekRA/kI_wulanA_meM
 that	jo/isa/yaha/vaha/usa/ki/jinheM/waka/iwanA/isa_haxa_waka/uwanA/jo_ki/vahI/jinak/ji/jise
-the	vaha/isa/usa/vahI/isakA/isake/uwanA/jiwanA/apanA/yaha/apanI/ina/apane/usakI/usake/ye/isI/unake
+the	vaha/isa/usa/vahI/isakA/isake/uwanA/jiwanA/apanA/yaha/apanI/ina/apane/ye/isI
 their	apanA/unakA_yA_inakA/vaha/unakA/yaha
 theirs	vaha/unakI_AvaSyakawA/unlofgo_kA/unakA
 them	unako/unakA/unake/unheM/ve/una_para/unak/unheM_unako/vaha

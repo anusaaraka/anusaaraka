@@ -110,6 +110,7 @@
   1. Added
 	paDa		T
 	lAiseMsa_xe	T
+	xoharA		T	(Suggested by Anita ji LTRC 21-01-14)
 
   2. Modified
 	XAkela	=>	Xakela	(By Roja 18-07-13, Suggested by Chaitanya Sir) 	 
@@ -272,6 +273,7 @@
 	yA_jAwA_WA   (Meena(18.2.11) Ex: Ayodhya during ancient times was known as kaushaldesa.
 	ne_kI_jarUWawa_pada_sakawI_hE,f,p,a     kI_jarUWawa_pada_sakawI_hE
 	nA_kI_jZarUrawa_nahIM_hE  kI_jZarUrawa_nahIM_hE  for all cases (suggested by Sukhada 21.12.11) He need not stay here
+	yA_huA_WA	(suggested by Prachi Banasthali  21-01-14 ) Ex: He was holding the baby in his arms.
 
   Modified :
 	1. yA_huA_hE,m,s,u huA_hEM"  as  "yA_huA_hE,m,s,u huA_hUz (Suggested by sheetal(10-12-09))
@@ -709,6 +711,7 @@ Removed:
 	2. used_to_be_en	yA_jAwA_WA-0-0  (Suggested by Rajini 17-01-12) Ex: She used to be organized.
 	3. needs_to_be_en	yA_jAnA_hE-0-0              "                  Ex: That's the way business used to be done and that is the
 										    way business needs to be done.
+	4. would_have_been_ing	0_rahA_howA-0-0 (Suggested by Dipti Mam 18-01-14) 
 
  Removed :
  -------
@@ -1475,6 +1478,9 @@ Removed:
 	just_before		---	(Suggested by Chaitanya Sir 22-01-13)
 	more_than		---	(Suggested by Sukhada	    04-09-13)
 	on_the_basis_of		---	(Suggested by Chaitanya Sir 05-01-14)
+	such_as			---	(		"	    18-01-14)
+	rather_than		---	(		"		"   )
+	at_the_behest_of	---	(		"		"   )
 
 -------------------------- compound_phrase.txt -----------------------------------
  Based on the type of the phrase, compound_phrase.txt file has been splitted in to four different files,(Suggested by Chaitanya ji 23-04-12)
@@ -1496,6 +1502,7 @@ Removed:
     Zulm_Ko_Jala_Doonga	jZulma_ko_jalA_xUMgA#jZulma_ko_jalA_xUMgA#noun#4#RM	
     Crab_Nebula		karka_nihArikA#karka_nihArikA#noun#2#RM	(Suggested by Nandini ji LTRC 07-12-13)
     United_Nation's	saMyukwa_rARtra#saMyukwa_rARtra#noun#2#RM	(Suggested by Sukhada	19-12-13)
+    Prime_Minister	praXAna_manwrI#praXAna_manwrI#noun#2#RM		(Suggested by Anita ji  21-01-14)
     
  multi_word_expressions.txt
  ==========================

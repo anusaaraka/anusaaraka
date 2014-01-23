@@ -51,3 +51,5 @@ husband	1
 king	1
 professor	1
 lecturer	1
+clerk	1
+minister	1

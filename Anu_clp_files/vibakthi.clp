@@ -66,6 +66,7 @@
  (assert (yA-tam  yA_ho))
  (assert (yA-tam  yA_hE))
  (assert (yA-tam  yA_huA))
+ (assert (yA-tam  yA_huA_WA))
  (assert (yA-tam  yA_hogA))
  (assert (yA-tam  yA_howA))
  (assert (yA-tam  yA_binA))

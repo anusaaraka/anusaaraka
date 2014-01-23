@@ -1414,6 +1414,19 @@ yA_huA_hE,m,s,a	huA_hE
 yA_huA_hE,m,s,m	huA_ho
 yA_huA_hE,m,s,u	huA_hUz
 
+yA_huA_WA,f,p,a	huI_WIM
+yA_huA_WA,f,p,m	hue_We
+yA_huA_WA,f,p,u	huI_WIM
+yA_huA_WA,f,s,a	huI_WI
+yA_huA_WA,f,s,m	huI_WI
+yA_huA_WA,f,s,u	huI_hUz
+yA_huA_WA,m,p,a	hue_We
+yA_huA_WA,m,p,m	hue_We
+yA_huA_WA,m,p,u	hue_We
+yA_huA_WA,m,s,a	huA_WA
+yA_huA_WA,m,s,m	huA_WA
+yA_huA_WA,m,s,u	huA_WA
+
 yA_huA_hogA,f,p,a	yA_huA_hogA
 yA_huA_hogA,f,p,m	yA_huA_hogA
 yA_huA_hogA,f,p,u	yA_huA_hogA

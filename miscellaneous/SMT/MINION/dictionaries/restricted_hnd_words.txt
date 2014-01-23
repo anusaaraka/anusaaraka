@@ -16,8 +16,8 @@ hE	is/have/are/be/has/am
 apane	his/its/our
 apanI	the/our
 apanA	the/our
-usakI	his/its/the/him
-usake	his/its/the
+usakI	his/its/him
+usake	his/its
 unakA	them/their
 unake	them/their
 merA	i/me/my/mine
