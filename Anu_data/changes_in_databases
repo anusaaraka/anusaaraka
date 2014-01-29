@@ -110,6 +110,7 @@
   1. Added
 	paDa		T
 	lAiseMsa_xe	T
+	xoharA		T	(Suggested by Anita ji LTRC 21-01-14)
 
   2. Modified
 	XAkela	=>	Xakela	(By Roja 18-07-13, Suggested by Chaitanya Sir) 	 
@@ -137,6 +138,8 @@
         Sarwa_lagA	f   Meena(5.4.11)
 	kE_kara 	f   Meena(2.5.11)
 	uwwara_xe	m   Suggested by Sukhada (16-09-11)      Ex: He studiously avoided answering the question.)	 
+	puRti_kara	f   		"	 (08-01-14)	 Ex: Indeed, the detection of such waves in the Orion Nebula confirmed 
+								     that new stars are still being born there. 
 
 
   changes in compound_phrase.txt  (samAsa.txt)
@@ -270,6 +273,7 @@
 	yA_jAwA_WA   (Meena(18.2.11) Ex: Ayodhya during ancient times was known as kaushaldesa.
 	ne_kI_jarUWawa_pada_sakawI_hE,f,p,a     kI_jarUWawa_pada_sakawI_hE
 	nA_kI_jZarUrawa_nahIM_hE  kI_jZarUrawa_nahIM_hE  for all cases (suggested by Sukhada 21.12.11) He need not stay here
+	yA_huA_WA	(suggested by Prachi Banasthali  21-01-14 ) Ex: He was holding the baby in his arms.
 
   Modified :
 	1. yA_huA_hE,m,s,u huA_hEM"  as  "yA_huA_hE,m,s,u huA_hUz (Suggested by sheetal(10-12-09))
@@ -402,7 +406,8 @@
 	officer	   (  		By Manju 	   05-10-13  ) Ex: Mohan is a highly corrupt officer.
 	dacoit     (Suggested by Chaitanya Sir     06-11-13  ) Ex: The government took serious steps to check the dacoits.
 	kill       (		  "			"    ) Ex: The leopard seizes its kill and begins to eat. 
-	everyone   (		  "			"    ) Ex: A slow, balmy breeze from the south engulfed everyone in the audience. 
+	everyone   (		  "			"    ) Ex: A slow, balmy breeze from the south engulfed everyone in
+								   the audience. 
 	woman	   (		By Manju	   06-11-13  ) Ex: I know a woman who has two children.
 	cat        (		  "			"    )
 	rat        (              "                     "    ) Ex: The snake who swallowed the rat hissed loudly.
@@ -430,7 +435,9 @@
 	professor  (By Roja                         13-01-14 ) Ex: The professor decided to write a book.
         lecturer   (       "                          "      ) Ex: The lecturer decided to write a book.  (Note: replaced above example)
 	lady	   From human.txt
-		 
+	his	   (Suggested by Pramila Banasthali 07-01-14 ) Ex: His descent into crime was rapid.
+	clerk	   (		By Manju	    07-01-14 ) Ex: He dictated the letter to his clerk.  
+	minister   (Suggested by Jagriti  "         21-01-14 ) Ex: He is the most shady minister in the state.
 
 
   Changes in total-paxasUwra.txt 
@@ -706,6 +713,7 @@ Removed:
 	2. used_to_be_en	yA_jAwA_WA-0-0  (Suggested by Rajini 17-01-12) Ex: She used to be organized.
 	3. needs_to_be_en	yA_jAnA_hE-0-0              "                  Ex: That's the way business used to be done and that is the
 										    way business needs to be done.
+	4. would_have_been_ing	0_rahA_howA-0-0 (Suggested by Dipti Mam 18-01-14) 
 
  Removed :
  -------
@@ -979,6 +987,8 @@ Removed:
 					Ex: The monthly premium for your health insurance is deducted from your paycheck.
 	73. duo_noun  			xonoM				(Suggested by Pamila Banasthali   28-12-13)
 					Ex: The father and son duo were sitting beside a dying fire in front of their hut .
+	74. Murrah_noun   		mUDZA				(Suggested by Nandini ji LTRC     05-01-14)
+					Ex: Murrahs were brought and they all sat down.
 
 
     4. Added new meaning to the existing word:
@@ -1341,17 +1351,26 @@ Removed:
 				Ex: He has captained the England cricket team three times.
 	99. flying_noun		udAna		as	udanA			(Suggested by Chaitanaya Sir	28-12-13)
 				Ex: Flying planes can be dangerous.
-	100.homogeneous_adjective	sajAwIya	as	samarUpa	(	"		"	"	)
+	100. homogeneous_adjective	sajAwIya	as	samarUpa	(	"		"	"	)
 				Ex: Likewise, space is homogeneous and there is no (intrinsically) preferred location in the universe.
-	101.yes_interjection	vAkaI		as	hAz			(Suggested by Sukhada		28-12-13)
+	101. yes_interjection	vAkaI		as	hAz			(Suggested by Sukhada		28-12-13)
 				Ex: Yes, he did.
-	102.careless_adjective	beparavAha	as	lAparavAha 		(Suggested by Preeti ji LTRC	04-01-14)
+	102. careless_adjective	beparavAha	as	lAparavAha 		(Suggested by Preeti ji LTRC	04-01-14)
 				Ex:Don't be so careless about spelling.
-	103.confusion_noun	samBrama	as	Brama			(Suggested by 	"		"	)
+	103. confusion_noun	samBrama	as	Brama			(Suggested by 	"		"	)
 				Ex: Her unexpected arrival threw us into total confusion.
-	104.carp_noun		wAlAba_kI_badI_maCalI	as	kArpa_maCalI	(Suggested by Preeti ji LTRC	18-01-14)
+	104. metre_noun      	Canxa		as	mItara			(Suggested by Nandini ji LTRC   05-01-14)
+				Ex: So if we draw a straight line from the warehouse to the boat, and search the area fifty to a hundred
+				    metres from the warehouse, we might discover the other opening.
+	105. speech_noun     	bolI		as	BARaNa			(Suggested by Jagriti Banasthali 07-01-14)
+				Ex: There will be a repeat of Prime Minister's speech tomorrow on radio.
+	106. secret_adjective   rAja_raKane_vAlA  as	gupwa			(Suggested by Jagriti Banasthali 07-01-14)
+				Ex: No one will ever find my secret hiding-place.
+	107. seldom_adverb   	birale_hI	as	SAyaxa_hI_kaBI		(	"		"	 14-01-14)
+				Ex: She was a severe woman who seldom smiled.
+	108. carp_noun		wAlAba_kI_badI_maCalI	as	kArpa_maCalI	(Suggested by Preeti ji LTRC	 18-01-14)
 				Ex: I like carp fish.
-	105.convincing_adjective	niScayAwmaka	as	yaWArWapUrNa	(	"		"	"	)
+	109. convincing_adjective	niScayAwmaka	as	yaWArWapUrNa	(	"		"	   "	 )
 				Ex: The Fellows of the University found the arguments so convincing that the proposal to attach new 						   conditions to the award was dropped.
 
 	
@@ -1461,6 +1480,9 @@ Removed:
 	just_before		---	(Suggested by Chaitanya Sir 22-01-13)
 	more_than		---	(Suggested by Sukhada	    04-09-13)
 	on_the_basis_of		---	(Suggested by Chaitanya Sir 05-01-14)
+	such_as			---	(		"	    18-01-14)
+	rather_than		---	(		"		"   )
+	at_the_behest_of	---	(		"		"   )
 
 -------------------------- compound_phrase.txt -----------------------------------
  Based on the type of the phrase, compound_phrase.txt file has been splitted in to four different files,(Suggested by Chaitanya ji 23-04-12)
@@ -1482,6 +1504,7 @@ Removed:
     Zulm_Ko_Jala_Doonga	jZulma_ko_jalA_xUMgA#jZulma_ko_jalA_xUMgA#noun#4#RM	
     Crab_Nebula		karka_nihArikA#karka_nihArikA#noun#2#RM	(Suggested by Nandini ji LTRC 07-12-13)
     United_Nation's	saMyukwa_rARtra#saMyukwa_rARtra#noun#2#RM	(Suggested by Sukhada	19-12-13)
+    Prime_Minister	praXAna_manwrI#praXAna_manwrI#noun#2#RM		(Suggested by Anita ji  21-01-14)
     
  multi_word_expressions.txt
  ==========================
@@ -1943,6 +1966,9 @@ Removed:
 	soldier		(By Roja, from animate.txt	 13-01-14 ) Ex: The soldiers were called out for the war.
 	professor	(By Roja			 13-01-14 ) Ex: The professor decided to write a book.
 	lecturer	(	"			   "	  ) Ex: The lecturer decided to write a book.  (Note: replaced above example)
+	clerk		(Suggested by Pramila Banasthali 07-01-14 ) Ex: He dictated the letter to his clerk.  
+	minister	(By Manju from animate.txt 	 21-01-14 ) Ex: He is the most shady minister in the state.
+
 
  changes in named_entities.txt
  =============================

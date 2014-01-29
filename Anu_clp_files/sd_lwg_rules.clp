@@ -1,5 +1,4 @@
  ;This file is written by Mahalaxmi
-
  (defglobal ?*lwg_debug_file* = lwg_db_fp)
 
  (deffunction string_to_integer (?parser_id)

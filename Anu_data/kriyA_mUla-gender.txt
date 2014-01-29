@@ -1100,4 +1100,5 @@ kRawi_pahuzcA	f
 BalA_kara	m
 Sarwa_lagA	f
 kE_kara	f 
-uwwara_xe	m	
+uwwara_xe	m
+puRti kara	f

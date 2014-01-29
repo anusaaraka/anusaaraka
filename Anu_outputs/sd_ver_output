@@ -408,7 +408,7 @@ Multiple adjective senses are available for important. WSD rule is required
 
 Hindi meaning using Stanford parser 2.94
 It does not matter what Ted does. 
-yaha mahawwvapUrNa_nahIM howA hE tEda kyA karawA hE.
+yaha mahawwvapUrNa_nahIM hE ki tEda kyA karawA hE.
 
 Hindi meaning using Stanford parser 2.95
 My watch is good for nothing. 
@@ -2716,6 +2716,144 @@ ve hameSA samaya para unake kirAye ko cukAwe hEM.
 Hindi meaning using Stanford parser 6.17
 He rented a small house in Allahabad. 
 usane IlAhAbAxa meM eka CotA Gara kirAye_para liyA.
+
+Hindi meaning using Stanford parser 6.18
+The limiting speed is about 11SYMBOL-DOT2 kilometres per second. 
+prawibanXaka raPwAra prawi sekanda 11SYMBOL-DOT2 kilomItara lagaBaga hE.
+
+Hindi meaning using Stanford parser 6.19
+There are two reasons for this. 
+isake lie xo kAraNa hEM.
+
+Hindi meaning using Stanford parser 6.20
+But first let us look at these tools. 
+paranwu praWama caliye hama ina sAXanoM ko xeKeM.
+
+Hindi meaning using Stanford parser 6.21
+Females of birds produce eggs. 
+mAxA pakRI aNde xewI hEM.
+
+Hindi meaning using Stanford parser 6.22
+I will give you a hint. 
+mEM Apako safkewa xUzgA.
+
+Hindi meaning using Stanford parser 6.23
+I can not show you the factory today, anyway. 
+mEM kEse BI PEktarI Aja, Apako nahIM_xiKA sakawA hUz.
+
+Hindi meaning using Stanford parser 6.24
+The others nodded in agreement. 
+xUsaroM ne sahamawi meM sira hilAyA.
+
+Hindi meaning using Stanford parser 6.25
+The earth inside a tunnel would be wet and muddy. 
+surafga ke anxara pqWvI gIlI Ora kIcada BarI hogI.
+Multiple adjective senses are available for muddy. WSD rule is required 
+
+Hindi meaning using Stanford parser 6.26
+The land ahead looks dry. 
+BUmi Age sUKI xiKawI hE.
+Multiple adjective senses are available for dry. WSD rule is required 
+
+Hindi meaning using Stanford parser 6.27
+You must continue our custom of performing Lakshmi Puja on the first Friday of Shravana. 
+Apako PropN-shravana-PropN ke praWama SukravAra ko lakRmI pUjA kArya karane kI hamArI rIwi jArI raKanI cAhie.
+
+Hindi meaning using Stanford parser 6.28
+Gopal remembered his promise and told his wife about it. 
+gopAla ne usakA vAxA yAxa kiyA Ora isake bAre meM usakI pawnI ko bawAyA.
+
+Hindi meaning using Stanford parser 6.29
+And do not go empty-handed. 
+Ora KAlI-hAWa mawa jAie.
+
+Hindi meaning using Stanford parser 6.30
+After all, she is your elder sister. 
+AKirakAra, vaha ApakI jyeRTa bahana hE.
+
+Hindi meaning using Stanford parser 6.31
+No mortal can live without sleep. 
+nIMxa ke binA marwya nahIM raha sakawA hE.
+
+Hindi meaning using Stanford parser 6.32
+He was in the depths of despair. 
+vaha nirASA kI gaharAI meM WA.
+
+Hindi meaning using Stanford parser 6.33
+It was the leader of the gang. 
+yaha xala kA newA WA.
+
+Hindi meaning using Stanford parser 6.34
+She did this especially when she was talking. 
+usane viSeRawaH yaha kiyA jaba vaha bAwacIwa_kara rahI WI.
+
+Hindi meaning using Stanford parser 6.35
+They also thought she showed off too much with it. 
+unhoMne BI socA ki usane isake sAWa jyAxA hI xiKAvA kiyA.
+
+Hindi meaning using Stanford parser 6.36
+I am a doctor, replied the spider. 
+mEM dAktara hUz, javAba xiyA makadI ne.
+
+Hindi meaning using Stanford parser 6.37
+The milkman was a tall thin man with a long face and a longer nose. 
+xUXavAlA eka lambe cehare vAlA Ora eka aXika lambI nAka vAlA eka lambA pawalA AxamI WA.
+
+Hindi meaning using Stanford parser 6.38
+It was a small stall and she sat at one corner of it. 
+yaha eka CotI xukAna WI Ora vaha isake eka kone meM bETI.
+
+Hindi meaning using Stanford parser 6.39
+But he was not a bad man. 
+paranwu vaha eka KarAba AxamI nahIM WA.
+
+Hindi meaning using Stanford parser 6.40
+The whole place was white with flour flying out of the mill. 
+pUrA sWAna mila ke bAhara udawe_hue Ate se saPexa WA.
+Multiple adjective senses are available for white. WSD rule is required 
+
+Hindi meaning using Stanford parser 6.41
+He was happy and gave her the oil. 
+vaha KuSa WA Ora usako wela xiyA.
+Multiple adjective senses are available for happy. WSD rule is required 
+
+Hindi meaning using Stanford parser 6.42
+Where did you get it from?
+Apane isako kahAz se prApwa kiyA?
+
+Hindi meaning using Stanford parser 6.43
+Once there was a king who was generous and kind.
+eka bAra eka EsA rAjA WA jo uxAra Ora xayAlu WA.
+Multiple adjective senses are available for generous. WSD rule is required
+Multiple adjective senses are available for kind. WSD rule is required
+
+Hindi meaning using Stanford parser 6.44
+The leader of each group is called a Sirdar.
+hara eka samUha kA newA Sirdar kahA jAwA hE.
+
+Hindi meaning using Stanford parser 6.45
+Wild elephants too cause havoc occasionally.
+jafgalI hAWI BI kaBIkaBI vinASa kA kAraNa howe hEM.
+
+Hindi meaning using Stanford parser 6.46
+So the sunlight is distributed equally.
+isalie XUpa samAna rUpa se bAztI huI hE.
+
+Hindi meaning using Stanford parser 6.47
+Do pests also attack tea plants?
+kyA hAnikAraka jIva cAya vanaspawiyoM para BI hamalA karawe hEM?
+
+Hindi meaning using Stanford parser 6.48
+I saw the spots clearly.
+mEMne spaRtawaH XabboM ko xeKA.
+
+Hindi meaning using Stanford parser 6.49
+What did you do then?
+Apane waba kyA kiyA?
+
+Hindi meaning using Stanford parser 6.50
+We will return here tonight and see if he acts on it.
+hama Aja_kI rAwa yahAz lOtAezge Ora xeKeMge ki yaxi vaha isapara kArya karawA hE.
 
 Calling Transliteration
 Calling Interface related programs

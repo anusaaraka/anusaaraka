@@ -304,6 +304,7 @@ would_0	gA-0-0
 would_be_en	yA_jAyegA-0-0
 would_be_ing	0_rahA_hogA-0-0
 would_have_been_en	yA_hogA-0-0
+would_have_been_ing	0_rahA_howA-0-0
 would_have_en	yA_howA-0-0
 would_have_to_0	nA_hogA-ko-0
 would_have_to_be_en	nA_hogA-0-0
