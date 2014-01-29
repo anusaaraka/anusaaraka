@@ -1,11 +1,18 @@
-13-01-14
+ 23-01-14
  ========
  1. WSD:
-        Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp
- 2. Updated following dictionary related files:
+        Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
+ 2. vibakthi.clp
+	Modified :  assert_facts rule
+ 3. run_modules_std.bat
+	Loaded 'punctuation_info.dat' file in WSD module
+ 4. Updated following dictionary related files:
         changes_in_databases	 apertium-en-hi.en.metadix 
- 3. Updated anusaaraka/README
- 4. Updated Log.
+ 5. Updated anusaaraka/README
+ 6. Updated Log.
+ 7. updated 
+	sd_verified (650)	small_sent_verified_sd (138)
+
 
  06-01-14
  ========
