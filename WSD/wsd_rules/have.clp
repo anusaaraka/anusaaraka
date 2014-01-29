@@ -22,6 +22,22 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi  " ?*wsd_dir* "  have.clp        have0   "  ?id " meM )" crlf)
 ))
 
+(defrule have20
+(declare (salience 5500))
+(id-root ?id have)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id had)
+(kriyA-subject ?id ?id1)
+(kriyA-object ?id ?id2)
+(id-root ?id1 town|city|party|assembly|country|university|bus|train)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id WA))
+(assert (kriyA_id-subject_viBakwi ?id meM))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  have.clp        have20   "  ?id "  WA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi  " ?*wsd_dir* "  have.clp        have20   "  ?id " meM )" crlf)
+))
 
 
 ;File modified by Meena(Aug '09)
@@ -136,11 +152,12 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp 	have5   "  ?id "  le )" crlf))
 )
 
+;$$$ Modified by Shirisha Manju (05-01-14) ;added has|had in the list
 (defrule have6
 (declare (salience 5000))
 (id-root ?id have)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id have)
+(id-word ?id have|has|had)
 (id-word ?id1 walk)
 (kriyA-object ?id ?id1)
 =>
@@ -150,11 +167,12 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp 	have6   "  ?id "  le )" crlf))
 )
 
+;$$$ Modified by Shirisha Manju (05-01-14) ;added has in the list
 (defrule have7
 (declare (salience 5000))
 (id-root ?id have)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id have)
+(id-word ?id have|has)
 (id-root ?id1 dream)
 (kriyA-object ?id ?id1)
 =>
@@ -166,11 +184,13 @@
 
 ;Added by Meena(12.10.09)
 ;I am having my dinner.
+;$$$ Modified by Shirisha Manju (05-01-14) ;added have|has in the list
+;She has dinner at 6 O'clock.
 (defrule have8
 (declare (salience 5000))
 (id-root ?id have)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id having)
+(id-word ?id having|have|has)
 (id-root ?id1 lunch|dinner|meal|supper|cake|biscuit|breakfast|food) ; added breakfast and food in the list, by Aditya and Hardik,IIT(BHU)
 (kriyA-object ?id ?id1)
 =>
@@ -199,22 +219,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  have.clp      have_cala   "  ?id " kA )" crlf))
 )
 
-;Uncommented by Meena(10.4.10) because "have8"  does not work for the following and similar other examples.
-;She has dinner at 6 O'clock.
-(defrule have9
-(declare (salience 5000))
-;(declare (salience 2200))
-(id-root ?id have)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id have|has)
-(id-root ?id1 lunch|dinner|meal|supper|cake|biscuit)
-(kriyA-object ?id ?id1)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id KA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp 	have9   "  ?id "  KA )" crlf))
-); Commented by Sukhada because rule 'have8' will do the same job.
 
 (defrule have10
 (declare (salience 5000))
@@ -288,36 +292,13 @@
 )
 )
 
-
-
-
-(defrule have14
-(declare (salience 4000))
-;(declare (salience -300))
-(id-root ?id have)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id have|has)
-(id-word ?id1 faith)
-(kriyA-object ?id ?id1)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id hE))
-(assert (kriyA_id-subject_viBakwi ?id ko))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp 	have14   "  ?id "  hE )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  have.clp      have14   "  ?id " ko )" crlf)
-)
-)
-
-
-
-
+;$$$ Modified by Shirisha Manju (05-01-14) ;added has|had in the list
 (defrule have15
 (declare (salience 4000))
 ;(declare (salience -400))
 (id-root ?id have)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id have)
+(id-word ?id have|has|had)
 (id-root =(- ?id 1) where|what|when)
 =>
 (retract ?mng)
@@ -326,15 +307,13 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp 	have15   "  ?id "  hE )" crlf))
 )
 
-
-
-
+;$$$ Modified by Shirisha Manju (05-01-14) ;added had in the list
 (defrule have16
 (declare (salience 4000))
 ;(declare (salience -700))
 (id-root ?id have)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id have|has)
+(id-word ?id have|has|had)
 (id-root ?id1 luck|class)
 (kriyA-subject ?id ?id1)
 ;(id-cat_coarse ?id verb) this and the above line are automatically modified using a program by Sukhada
@@ -344,84 +323,6 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp 	have16   "  ?id "  hE )" crlf))
 )
-
-
-
-
-
-(defrule have17
-(declare (salience 4000))
-;(declare (salience 2500))
-(id-root ?id have)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id has)
-(id-word ?id1 walk)
-(kriyA-object ?id ?id1)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id le))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp    have17   "  ?id "  le )" crlf))
-)
-
-
-
-
-(defrule have18
-(declare (salience 4000))
-;(declare (salience 2300))
-(id-root ?id have)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id has)
-(id-root ?id1 dream)
-(kriyA-object ?id ?id1)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id A))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp    have18   "  ?id "  A )" crlf))
-)
-
-
-
-
-
-(defrule have19
-(declare (salience 4000))
-;(declare (salience -400))
-(id-root ?id have)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id has)
-(id-root =(- ?id 1) where|what|when)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id hE))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp    have19  "  ?id "  hE )" crlf))
-)
-
-
-
-
-
-(defrule have20
-(declare (salience 5500))
-(id-root ?id have)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id had)
-(kriyA-subject ?id ?id1)
-(kriyA-object ?id ?id2)
-(id-root ?id1 town|city|party|assembly|country|university|bus|train)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id WA))
-(assert (kriyA_id-subject_viBakwi ?id meM))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  have.clp        have20   "  ?id "  WA )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi  " ?*wsd_dir* "  have.clp        have20   "  ?id " meM )" crlf)
-))
-
-
 
 
 ;Added "insurance" in the list (Meena 6.2.11)
@@ -440,11 +341,9 @@
 (assert (kriyA_id-subject_viBakwi ?id ke_pAsa))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp    have21   "  ?id "  WA )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  have.clp    have33   "  ?id " ke_pAsa )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  have.clp    have21   "  ?id " ke_pAsa )" crlf)
 )
 );Commented by Sukhada because the rule 'have2' will work for this.
-
-
 
 
 
@@ -469,8 +368,6 @@
 )
 
 
-
-
 (defrule have23
 (declare (salience 5000))
 ;(declare (salience -3600))
@@ -490,9 +387,6 @@
 )
 
 
-
-
-
 (defrule have24
 (declare (salience 5000))
 ;(declare (salience -4200))
@@ -508,26 +402,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp 	have24   "  ?id "  le )" crlf))
 ;(assert (kriyA_id-subject_viBakwi ?id ne))
 )
-
-
-
-
-(defrule have25
-(declare (salience 4000))
-;(declare (salience -4500))
-(id-root ?id have)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id had)
-(id-word ?id1 walk)
-(kriyA-object ?id ?id1)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id le))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp 	have25   "  ?id "  le )" crlf))
-;(assert (kriyA_id-subject_viBakwi ?id ne))
-)
-
 
 
 (defrule have26
@@ -667,45 +541,6 @@
 )
 
 
-
-(defrule have33
-(declare (salience 4000))
-;(declare (salience -400))
-(id-root ?id have)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id had)
-(id-root =(- ?id 1) where|what|when)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id hE))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp    have33  "  ?id "  hE )" crlf))
-)
-
-
-
-
-(defrule have34
-(declare (salience 4000))
-;(declare (salience -700))
-(id-root ?id have)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id had)
-(id-root ?id1 luck|class)
-(kriyA-subject ?id ?id1)
-;(id-cat_coarse ?id verb) this and the above line are automatically modified using a program by Sukhada
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id hE))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp    has34   "  ?id "  hE )" crlf))
-)
-
-
-
-
-
-
 ;Added by Meena(12.4.10)
 ;Everyone has a right to education.
 (defrule have035
@@ -836,10 +671,6 @@ else
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp    have37   "  ?id "  ho )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  have.clp    have37  "  ?id " kA )" crlf))
 )
-
-
-
-
 
 
 ;Salience increased by Meena(12.4.10) to stop have35 from firing for this example.
@@ -1016,3 +847,37 @@ else
 ;As in:
 
 
+;------------------- Removed rules -------------
+; have17  
+;	if word 'has'
+;          kriyA-object and obj is walk then le
+;	Note : added 'has' in have6 rule
+; have25
+;	if word 'had'
+;          kriyA-object and obj is walk then le
+;       Note : added 'had' in have6 rule
+; have18
+;	if word 'has'
+;	   kriyA-object and obj is dream then A
+;       Note : added 'has' in have7 rule
+; have19
+;	if word 'has'
+;	   (- ?id 1) where|what|when then hE
+;       Note : added 'has' in have15 rule
+; have33
+;	if word had
+;	   (- ?id 1) where|what|when then hE
+;       Note : added 'had' in have15 rule
+; have14
+;	if word have|has
+;	    kriyA-object and obj is faith then hE and subject viBakwi ko
+;	Note : same as have4 rule
+; have34
+;	if word had
+;	   kriyA-subject and sub is luck|class then hE
+;	Note :  added 'had' in have16 rule
+; have9
+;	if word have|has
+;	   kriyA-object and obj is lunch|dinner|meal|supper|cake|biscuit then  KA
+;	   Ex: She has dinner at 6 O'clock.
+;	Note :  added have|has in have8 rule

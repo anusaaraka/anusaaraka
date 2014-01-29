@@ -48865,7 +48865,7 @@ meticulousest_UNDEFINED	awisAvaXAna
 meticulously_adverb	sawarkawApUrvaka
 meticulousness_noun	sawarkawA
 meting_UNDEFINED	BoganA
-metre_noun	Canxa/mItara/mApa
+metre_noun	mItara/Canxa/mApa
 metres_UNDEFINED	mItara
 metric_adjective	mItara_kA/mAwrika/mApIya
 metrical_adjective	paxyAwmaka
@@ -69734,7 +69734,7 @@ secrecy_noun	gupwawA/gupwa/gopanIyawA
 secrecy_verb	rAja_raKa/gupwa_raKa/Cip
 secret-Agent_noun	gupwacara
 secret-Service_noun	KuPiyA_viBAga
-secret_adjective	rAja_raKane_vAlA/rahasya_raKane_vAlA/rahasyamaya/nijI/jAlI/gupwa_rUpa_se_kiyA_huA/gUpwa/gupwa/gopanIya/ekAnwa/Cupa/CipAUM/Cipakara
+secret_adjective	gupwa/rAja_raKane_vAlA/rahasya_raKane_vAlA/rahasyamaya/nijI/jAlI/gupwa_rUpa_se_kiyA_huA/gUpwa/gopanIya/ekAnwa/Cupa/CipAUM/Cipakara
 secret_noun	rahasya/rAja/Bexa/marma
 secret_verb	CipA_kara_raKa
 secretaire_noun	liKane_kI_meja
@@ -70010,7 +70010,7 @@ seizure_noun	pakada/xOrA/kabjA/jabwI/giraPwArI/aXikAra/JatakA
 seizures_UNDEFINED	JatakA
 sekar_UNDEFINED	SeKara
 sekhar_UNDEFINED	SeKara
-seldom_adverb	birale_hI/SAyaxa_hI_kaBI/kaBI_kaBAra/kaBI-kaBAra
+seldom_adverb	SAyaxa_hI_kaBI/birale_hI/kaBI_kaBAra/kaBI-kaBAra
 select-Committee_noun	pravara_samiwi
 select_UNDEFINED	cunanA
 select_adjective	viSiRta/cuninxA
@@ -74750,7 +74750,7 @@ speculativest_UNDEFINED	anxAja_lagAwe_hue
 speculator_UNDEFINED	vicAraSIla
 speculator_noun	xAzva_lagAne_vAlA/satoriyA/atakalabAja
 sped_UNDEFINED	kRiprawA
-speech_noun	bolI/ukwi/pafkwi/bAwacIwa/bAwa/BARaNa_yogyawA/BARaNa_Sakwi/BARaNa/BARA/kaWana
+speech_noun	BARaNa/bolI/ukwi/pafkwi/bAwacIwa/bAwa/BARaNa_yogyawA/BARaNa_Sakwi/BARA/kaWana
 speech_verb	bAwa_kara/BARaNa_kara
 speeches_UNDEFINED	BARaNa
 speechified_UNDEFINED	BARaNIya_anxAja_meM_bAwa_karanA
@@ -93513,3 +93513,4 @@ orthodox_noun	paraMparAgawa
 non-uniform_adjective	asamAna
 paycheck_noun	wanaKvAha_kA_cEka
 duo_noun	xonoM
+Murrah_noun	mUDZA
