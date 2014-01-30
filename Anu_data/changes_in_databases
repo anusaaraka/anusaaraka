@@ -445,6 +445,7 @@
 	robber     (		"	"		"    )
 	prowler    (		"	"		"    ) Ex: He flushed out the prowler. 
 	bandit     (		"	"		"    ) Ex: The police flushed out the bandits from their place of hiding.
+	animal	   (		"	"	    29-01-14 ) Ex: The hunter moved in to finish the animal off.
 
 
 
@@ -999,6 +1000,8 @@ Removed:
 					Ex: Murrahs were brought and they all sat down.
 	75. peacekeeping_noun		SAnwi_banAe_raKane_vAlA		(Suggested by Sonam Banasthali  28-01-14)
 					Ex: Peacekeeping operations.
+	76. infestation_noun		saMkramaNa			(Suggested by Prachi Banasthali	29-01-14)
+					Ex: Scientists are checking for both insect and fungal infestation.
 
 
     4. Added new meaning to the existing word:
@@ -1384,6 +1387,10 @@ Removed:
 				Ex: The Fellows of the University found the arguments so convincing that the proposal to attach new 						   conditions to the award was dropped.
 	110. separately_adverb	svawanwra_rUpa_se	as	alaga-alaga	(Suggested by Jagriti Banasthali 23-01-14)
 				Ex: Can I pay for each item separately?
+	111. conscience_noun    viveka		as	anwaHkaraNa		(Suggested by Preeti ji LTRC	29-01-14)
+				Ex: He will not let it trouble his conscience.
+	112. county_noun	maNdala 	as	kAuNtI			(Suggested by 	"		"	)
+				Ex: Today they take the field against county champions Essex.
 
 	
     6. Removed meaning from existing list:
@@ -1559,6 +1566,10 @@ Removed:
 	16. on_the_basis_of_total_income	kula_Aya_ke_AXAra_para#kula_Aya_ke_AXAra_para#noun#3#RM (Suggested by Chaitanya Sir 05-01-14)
 	17. away_from		se_xUra#se_xUra#noun#2#RM		(Suggested by Krithika ji LTRC  07-01-14)
 				Ex: When she left school she grew away from her mother.
+	18. in_the_case_of	kI_sWiwi_meM#kI_sWiwi_meM#noun#3#RM	(Suggested by Preeti ji LTRC	29-01-14)
+				Ex: As in the case of the Sun, the shrinking ball of gas begins to heat up and eventually becomes hot enough 					   to shine.
+	19. first_class		pahalA_xarjA#pahalA_xarjA#noun#2#RM	(suggested by Preeti ji LTRC	29-01-14)
+				Ex: My first class starts at 8:30.
 
     Modified :
     --------
@@ -1982,7 +1993,7 @@ Removed:
 	lecturer	(	"			   "	  ) Ex: The lecturer decided to write a book.  (Note: replaced above example)
 	clerk		(Suggested by Pramila Banasthali 07-01-14 ) Ex: He dictated the letter to his clerk.  
 	minister	(By Manju from animate.txt 	 21-01-14 ) Ex: He is the most shady minister in the state.
-	terrorist  	( 	"	"		 22-01-14 ) Ex: The police fired tear gas to flush out the terrorists.       
+	terrorist  	( 	"	"		 22-01-14 ) Ex: The police fired tear gas to flush out the terrorists.
         robber     	(       "       "                    "    )
         prowler    	(       "       "                    "    ) Ex: He flushed out the prowler.
         bandit  	(	"	"		     "    ) Ex: The police flushed out the bandits from their place of hiding.
