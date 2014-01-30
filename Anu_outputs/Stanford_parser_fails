@@ -99,3 +99,10 @@ She's always dieting but she never seems to lose any weight.
 	-> Parser gave 'dieting' category as NN but it should be verb.
 May I help you?
 	-> Parser gave 'May' category as NNP but it should be modal verb.
+A flush spread over her face. 
+	-> Parser gave 'flush' category as JJ but it should be noun
+This is the second flush or sprouting period, isn't it, Mr. Barua?
+	-> Parser gave 'flush' category as JJ but it should be noun
+The Education Department of Eastern Bengal and Assam had proposed that the Calcutta University should withdraw recognition from these schools, which were under private management, and the Chief Secretary wrote to the Registrar of of the Calcutta University accordingly.
+	--> Parser gave 'Department' category as 'NNP' but it should be noun
+	--> Parser gave 'Eastern' category as 'NNP' but it should be adjective.

@@ -115,6 +115,9 @@
   2. Modified
 	XAkela	=>	Xakela	(By Roja 18-07-13, Suggested by Chaitanya Sir) 	 
 
+  3. Removed
+	pAsa		(By Shirisha Manju 29-01-14, Suggested by Chaitanya Sir)
+
   changes in kriyA_mUla-gender.txt
   ================================
   1. Added  :
@@ -438,6 +441,11 @@
 	his	   (Suggested by Pramila Banasthali 07-01-14 ) Ex: His descent into crime was rapid.
 	clerk	   (		By Manju	    07-01-14 ) Ex: He dictated the letter to his clerk.  
 	minister   (Suggested by Jagriti  "         21-01-14 ) Ex: He is the most shady minister in the state.
+	terrorist  (Suggested by Krithiki LTRC 	    22-01-14 ) Ex: The police fired tear gas to flush out the terrorists.       
+	robber     (		"	"		"    )
+	prowler    (		"	"		"    ) Ex: He flushed out the prowler. 
+	bandit     (		"	"		"    ) Ex: The police flushed out the bandits from their place of hiding.
+
 
 
   Changes in total-paxasUwra.txt 
@@ -840,15 +848,15 @@ Removed:
 	92. illustration_noun	vyaKyA			as	vyAKyA		(	" Prachi Banasthali 14-10-13 )
 	93. illustrate_verb	vyaKyA_kara		as	vyAKyA_kara	(By Roja 		    14-10-13 )
 	94. photon_noun		Potana			as	Potona		(Suggested by Sonam Banasthali	29-10-13)
-	95. precisely_adverb	Tika-Tika		as	TIka-vahI	(	"		"	"    )
-	96. intellect_noun	buxxI			as	buxXI		(Suggested by Chaitanya Sir 20-11-13)
-	97. loudly_adverb	jEYora_se		as	jZora_se	(Suggested by Nandini ji LTRC 27-11-13)
-	98. drastic_adjective	uxaNda			as	uxxaNda		(Suggested by Chaitanya Sir 26-11-13  )
-	99. passage_noun	yAtrAXikAra		as	yAwrAXikAra	(Suggested by Chaitanya Sir 05-12-13)
-	100.passage_noun	yAtrA			as	yAwrA		(	"		"	    )
-	101.passage_noun	gamana_svAtanwrya	as	gamana_svAwanwrya(	"		"	    )
-	102.electromagnetism_noun	vixyuw-cumbakawva	as	vixyuwa_cumbakawva	(suggested by Sukhada 04-12-13)
-
+	95. precisely_adverb	Tika-Tika		as	TIka-vahI	(	"		"	"       )
+	96. intellect_noun	buxxI			as	buxXI		(Suggested by Chaitanya Sir  	20-11-13)
+	97. loudly_adverb	jEYora_se		as	jZora_se	(Suggested by Nandini ji LTRC 	27-11-13)
+	98. drastic_adjective	uxaNda			as	uxxaNda		(Suggested by Chaitanya Sir	26-11-13)
+	99. passage_noun	yAtrAXikAra		as	yAwrAXikAra	(Suggested by Chaitanya Sir 	05-12-13)
+	100. passage_noun	yAtrA			as	yAwrA		(	"		"	    	)
+	101. passage_noun	gamana_svAtanwrya	as	gamana_svAwanwrya(	"		"	    	)
+	102. electromagnetism_noun	vixyuw-cumbakawva	as	vixyuwa_cumbakawva  (suggested by Sukhada 04-12-13)
+	103. employment_noun 	vyavasAsa		as	vyavasAya	(Suggested by Pramila Banasthali 24-01-14)
 
     3. Added new entry:
        ---------------
@@ -987,6 +995,8 @@ Removed:
 					Ex: The father and son duo were sitting beside a dying fire in front of their hut .
 	74. Murrah_noun   		mUDZA				(Suggested by Nandini ji LTRC     05-01-14)
 					Ex: Murrahs were brought and they all sat down.
+	75. peacekeeping_noun		SAnwi_banAe_raKane_vAlA		(Suggested by Sonam Banasthali  28-01-14)
+					Ex: Peacekeeping operations.
 
 
     4. Added new meaning to the existing word:
@@ -1370,6 +1380,8 @@ Removed:
 				Ex: I like carp fish.
 	109. convincing_adjective	niScayAwmaka	as	yaWArWapUrNa	(	"		"	   "	 )
 				Ex: The Fellows of the University found the arguments so convincing that the proposal to attach new 						   conditions to the award was dropped.
+	110. separately_adverb	svawanwra_rUpa_se	as	alaga-alaga	(Suggested by Jagriti Banasthali 23-01-14)
+				Ex: Can I pay for each item separately?
 
 	
     6. Removed meaning from existing list:
@@ -1440,7 +1452,7 @@ Removed:
 	30. grain_UNDEFINED 	anAja					(Suggested by Shweta Banasthali 29-10-13)
 	31. observe_UNDEFINED	avalokana_kara				( Suggested by Chaitanya Sir    26-11-13)
 	32. doorway_UNDEFINED   xvArapaWa				(Suggested by Pramila Banasthali 12-12-13)
-
+	33. doctorate_noun  	daktara_kI_upAXi			(	"		"	 24-01-14)
 
     8. Modified category:
        ------------------
@@ -1454,6 +1466,7 @@ Removed:
 	8. electrified_UNDEFINED as	electrified_adjective	(Suggested by Pramila Banasthali 05-10-13)
 	9. focussed_UNDEFINED	as	focussed_verb		(By Roja 			16-10-13 )	
 	10. civilisation_UNDEFINED	as civilisation_noun	(Suggested by Sukhada 		26-11-13 )
+	11. doctorate_UNDEFINED as	doctorate_noun    	(Suggested by Pramila Banasthali 24-01-14)
 
 	
  changes in preposition.txt
@@ -1932,6 +1945,7 @@ Removed:
 	Gatldis		gEtaladisa	(	"		"	"	)
 	Earth    	pqWvI		(Suggested by Pramila Banasthali 12-12-13)
 	Dad     	piwAjI		(	"		"	   "	 )
+	Marathi 	marATI		(	By Shirisha Manju        29-01-14)
 
    Modified:
    ---------
@@ -1966,6 +1980,10 @@ Removed:
 	lecturer	(	"			   "	  ) Ex: The lecturer decided to write a book.  (Note: replaced above example)
 	clerk		(Suggested by Pramila Banasthali 07-01-14 ) Ex: He dictated the letter to his clerk.  
 	minister	(By Manju from animate.txt 	 21-01-14 ) Ex: He is the most shady minister in the state.
+	terrorist  	( 	"	"		 22-01-14 ) Ex: The police fired tear gas to flush out the terrorists.       
+        robber     	(       "       "                    "    )
+        prowler    	(       "       "                    "    ) Ex: He flushed out the prowler.
+        bandit  	(	"	"		     "    ) Ex: The police flushed out the bandits from their place of hiding.
 
 
  changes in named_entities.txt
