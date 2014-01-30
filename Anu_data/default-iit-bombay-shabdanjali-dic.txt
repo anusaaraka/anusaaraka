@@ -16829,7 +16829,7 @@ conquers_UNDEFINED	jIwanA
 conquest_noun	jIwa/vijiwa-hqxaya_vyakwi/vijaya
 conquests_UNDEFINED	jIwa
 conscience-stricken_adjective	anwarAwmA_se_prawAdiwa
-conscience_noun	viveka/saccAI/anwaHkaraNa/acCe-bure_kI_samaJa
+conscience_noun	anwaHkaraNa/viveka/saccAI/acCe-bure_kI_samaJa
 conscienceless_adjective	avivekapUrNa
 consciences_UNDEFINED	viveka
 conscientious_adjective	karwavyaniRTa/SuxXa_anwaHkaraNavAlA
@@ -18214,7 +18214,7 @@ county-council_noun	praxeSa_kA_SAsana_pariRax
 county-court_noun	sWAnIya_nyAyAlaya
 county-town_noun	kAuNtI_praSAsana_kA_aXiRTAna{kexra}
 county_adjective	aBijAwa_vargIya
-county_noun	maNdala/kAuNtI/jilA
+county_noun	kAuNtI/maNdala/jilA
 coup_noun	Akasmika_SAsana-parivarwana/aprawyASiwa_saPalawA/Akasmika_SAsana_pariwarwana/saPala_evaM_akasmAwa_kriyA
 coupe_noun	xo_xvAra_vAlI_kAra/kUpa/bagGI
 couped_UNDEFINED	saPala_evaM_akasmAwa_kriyA
@@ -93514,3 +93514,4 @@ paycheck_noun	wanaKvAha_kA_cEka
 duo_noun	xonoM
 Murrah_noun	mUDZA
 peacekeeping_noun	SAnwi_banAe_raKane_vAlA
+infestation_noun	saMkramaNa

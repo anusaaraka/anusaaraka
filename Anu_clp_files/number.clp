@@ -77,13 +77,16 @@
  (root-verbchunk-tam-chunkids ? ? ? ?id $? ?head)
  ?f2<-(id-root-category-suffix-number  ?id ? verb $?)
  (id-word ?id ?word)
+ ?f3<-(id-number-src ?head - Default) ;Added by Roja(30-01-14) To avoid duplication fact Ex:The draft of soldiers were sent in different directions.
  =>
         (retract ?f1 ?f2)
         (if (or (eq ?word are)(eq ?word were)) then
                 (assert (id-number-src ?head  p  Word))
+		(retract ?f3) ;Added by Roja(30-01-14) To avoid duplication fact
         else
                 (if (eq ?word is) then
                         (assert (id-number-src ?head  s  Word))
+			(retract ?f3);Added by Roja(30-01-14) To avoid duplication fact
                 )
         )
  )

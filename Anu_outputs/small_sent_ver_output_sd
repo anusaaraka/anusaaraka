@@ -574,15 +574,16 @@ The door is open.
 xaravAjA KulA huA hE.
 
 Hindi meaning using Stanford parser 2.136
-I have lost my tail.
+I have lost my tail. 
 mEM merI pUzCa Ko cukA hUz.
 
 Hindi meaning using Stanford parser 2.137
-What a beautiful scene!
-kiwanA sunxara xQSya!
+What a beautiful scene! 
+kiwanA sunxara xqSya!
+Multiple adjective senses are available for beautiful. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.138
-So he reluctantly agreed.
+So he reluctantly agreed. 
 isalie vaha anicCA se sahamawa huA.
 
 Calling Transliteration

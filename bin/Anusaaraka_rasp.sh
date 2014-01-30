@@ -90,7 +90,7 @@
   mv $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org.std.penn_tmp1  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1
   
   echo "Calling Stanford parser ..."
-  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2013-06-20/
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-01-04/
   sh run_stanford-parser.sh $1 $MYPATH > /dev/null
 
   echo "Tokenizing ..." 

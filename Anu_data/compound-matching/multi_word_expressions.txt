@@ -13064,7 +13064,6 @@ first_call_money	praWama_mAMga_rASi_iakama#praWama_mAMga_rASi_iakama#noun#3#RM
 first_call_register	praWama_mAMga_rajistara#praWama_mAMga_rajistara#noun#3#RM
 first_cause	praWama_kAraNa#praWama_kAraNa#noun#2#RM
 first_charge	praWama_praBAra#praWama_praBAra#noun#2#RM
-first_class	pahalA_xarjA#pahalA_xarjA#noun#2#RM
 first_class_magistrate	praWama_SreprI_majistreta#praWama_SreprI_majistreta#noun#3#RM
 first_class_paper	variRTa_huMdI_IraleKa#variRTa_huMdI_IraleKa#noun#3#RM
 first_come_first_serve	pahale_Ao_pahale_pAo#pahale_Ao_pahale_pAo#noun#4#RM
@@ -16063,7 +16062,6 @@ in_the_air	vAyu_mez#vAyu_mez#noun#3#RM
 in_the_alternative	vikalpa_ke_rUpa_meM#vikalpa_ke_rUpa_meM#noun#3#RM
 in_the_arms_of_morpheus	unIMxA#unIMxA#noun#3#RM
 in_the_capacity_of	kI_hEsiyawa_se#kI_hEsiyawa_se#noun#3#RM
-in_the_case_of	kI_sWiwi_meM#kI_sWiwi_meM#noun#3#RM
 in_the_cause_of	ke_kAraNa_kA#ke_kAraNa_kA#noun#3#RM
 in_the_circumstances	EsI_parisWiwi_iAlawa_meM#EsI_parisWiwi_iAlawa_meM#noun#3#RM
 in_the_circumstances_of	kI_parisWiwiyoM_meM#kI_parisWiwiyoM_meM#noun#3#RM
