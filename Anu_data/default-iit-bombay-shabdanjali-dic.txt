@@ -23663,8 +23663,7 @@ doctor_noun	dAktara/paNdiwa/marammawa_karanevAlA/cikiwsaka/vExya/vixvAna
 doctor_verb	napuMsaka_banA/milAvata_kara/meM_goalmAla_kara/marammawa_kara/ilAja_kara/galawa_banA
 doctoral_UNDEFINED	doYktara_kI_upAXi_se_sambaMixawa
 doctoral_adjective	daktara_kI_upAXi_se_sambanxiwa
-doctorate_UNDEFINED	doYktara_kI_upAXi
-doctorate_noun	daktara_kI_upAXi
+doctorate_noun	doYktara_kI_upAXi
 doctored_UNDEFINED	vixvAna
 doctoring_UNDEFINED	vixvAna
 doctors_UNDEFINED	vixvAna
@@ -25926,7 +25925,7 @@ employer_noun	mAlika/pravarwaka
 employers_UNDEFINED	mAlika
 employing_UNDEFINED	kAma_para_lagA
 employment_UNDEFINED	rojAgAra
-employment_noun	vyavasAsa/nOkarI/kAma/AjIvikA/rojagAra
+employment_noun	vyavasAya/nOkarI/kAma/AjIvikA/rojagAra
 employments_UNDEFINED	rojagAra
 employs_UNDEFINED	kAma_para_lagA
 emporium_noun	emporiyama/badI_xukAna
@@ -70457,7 +70456,7 @@ separate_verb	alaga_ho/viBAjiwa_kara/vargIkaraNa_kara/roka/PEl/nikAla/biKera/BEx
 separated_UNDEFINED	Binna
 separated_adjective	alaga-Walaga/alaga
 separately_UNDEFINED	alaga_se
-separately_adverb	svawanwra_rUpa_se/alaga-alaga/alaga
+separately_adverb	alaga-alaga/svawanwra_rUpa_se/alaga
 separateness_noun	BinnawA
 separater_UNDEFINED	Binna
 separates_UNDEFINED	Binna
@@ -93514,3 +93513,4 @@ non-uniform_adjective	asamAna
 paycheck_noun	wanaKvAha_kA_cEka
 duo_noun	xonoM
 Murrah_noun	mUDZA
+peacekeeping_noun	SAnwi_banAe_raKane_vAlA
