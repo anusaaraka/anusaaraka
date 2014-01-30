@@ -53,3 +53,7 @@ professor	1
 lecturer	1
 clerk	1
 minister	1
+terrorist	1
+robber	1
+prowler	1
+bandit	1
