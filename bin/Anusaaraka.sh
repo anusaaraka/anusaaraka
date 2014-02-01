@@ -83,7 +83,7 @@
   ./link-parser $HOME_anu_test/Parsers/LINK/link-grammar-4.5.7/data/en $MYPATH/tmp $1 $2 <$MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
 
   echo "Calling Stanford parser ..."
-  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2013-06-20/
+  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-01-04/
   if [ "$2" != "" -a "$2" != "0" ] ;
   then
   sh run_multiple_parse_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp_1 2>/dev/null  

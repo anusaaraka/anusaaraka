@@ -1,18 +1,36 @@
- 23-01-14
+ 30-01-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
  2. vibakthi.clp
 	Modified :  assert_facts rule
- 3. run_modules_std.bat
+ 3. sd-relation_rules.clp:
+	Modified: cop+nsubj_for_it, vmod, vmod1,  vmod+nsubj+cop rules(As stanford merged 'partmod' and 'infmod' to 'vmod')
+	Renamed:  partmod	to	vmod
+		  infmod	to	vmod1
+		  partmod+nsubj+cop	to	vmod+nsubj+cop
+ 4. number.clp:
+	Modified: verb_rule
+ 5. run_modules_std.bat
 	Loaded 'punctuation_info.dat' file in WSD module
- 4. Updated following dictionary related files:
+ 6. Updated following dictionary related files:
         changes_in_databases	 apertium-en-hi.en.metadix 
- 5. Updated anusaaraka/README
- 6. Updated Log.
- 7. updated 
+ 7. Updation of new versions:
+	Stanford parser:	3.2.0	to	3.3.1
+ 8. Following files are updated according to the new version:
+	Anusaaraka_bllip_parser_minion.sh	Anusaaraka_rasp.sh		Anusaaraka_site.sh
+	Anusaaraka_stanford-Factored.sh		Anusaaraka_stanford.sh		Anusaaraka_stanford_minion.sh
+	run_stanford-gui-factored.sh		run_stanford-gui-pcfg.sh	anu_compile.sh
+	remove_out-files.sh			Anusaaraka.sh			Anusaaraka_all.sh	
+	Anusaaraka_berkeley.sh			Anusaaraka_bllip_parser.sh
+ 9. Updated following files:
+	Stanford_parser_fails
+	phy_verified_out
+ 	anusaaraka/README
+ 10. Removed Stanford parser 3.2.0
+ 11. Updated 
 	sd_verified (650)	small_sent_verified_sd (138)
-
+ 12. Updated Log.
 
  06-01-14
  ========

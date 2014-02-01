@@ -346,7 +346,7 @@
  ?f0<-(parserid-word ?sub It)
  (rel_name-sids nsubj|nsubjpass ?samAnAXikaraNa  ?sub)
  (rel_name-sids cop  ?samAnAXikaraNa ?kriyA)
- (not (rel_name-sids infmod ?samAnAXikaraNa ?))
+ (not (rel_name-sids vmod ?samAnAXikaraNa ?)) ;Modified infmod to vmod as new version of Stanford 3.3.1
  =>
  (retract ?f0)
  (printout      ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-dummy_subject    "?kriyA"        "?sub")"crlf)
@@ -607,11 +607,11 @@
 )
 ; Added by Shirisha Manju  Ex: How much more spilled ?  There are many tissues of fat in our body . 
 ;------------------------------------------------------------------------------------------------------------------------
-(defrule partmod
-(rel_name-sids partmod ?viSeRya ?kqxanwa_vi)
+(defrule vmod
+(rel_name-sids vmod ?viSeRya ?kqxanwa_vi) ;Modified partmod to vmod as new version of Stanford 3.3.1
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     viSeRya-kqxanwa_viSeRaNa	"?viSeRya"	"?kqxanwa_vi")"crlf)	
-(printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	partmod	viSeRya-kqxanwa_viSeRaNa	"?viSeRya"	"?kqxanwa_vi")"crlf)	
+(printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	vmod	viSeRya-kqxanwa_viSeRaNa	"?viSeRya"	"?kqxanwa_vi")"crlf)	
 )
  ; Ex. He talked to him in order to secure the account.
 ;------------------------------------------------------------------------------------------------------------------------
@@ -651,17 +651,17 @@
 )
  ; Ex. Petu ran fast but Betu could not run fast. 
 ;------------------------------------------------------------------------------------------------------------------------
-(defrule partmod+nsubj+cop
+(defrule vmod+nsubj+cop
 (declare(salience 205))
-(rel_name-sids partmod ?sub ?kqxanwa_viSeRaNa)
+(rel_name-sids vmod ?sub ?kqxanwa_viSeRaNa);Modified partmod to vmod as new version of Stanford 3.3.1
 (rel_name-sids nsubj ?sub_samA ?sub)
 ?f0<-(rel_name-sids cop ?sub_samA ?kriyA)
 =>
 (retract ?f0)
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa	"?sub"	"?sub_samA")"crlf)	
-(printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	partmod+nsubj+cop	subject-subject_samAnAXikaraNa	"?sub"	"?sub_samA")"crlf)	
+(printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	vmod+nsubj+cop	subject-subject_samAnAXikaraNa	"?sub"	"?sub_samA")"crlf)	
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     kriyA-subject	"?kriyA"	"?sub")"crlf)	
-(printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	partmod+nsubj+cop	kriyA-subject	"?kriyA"	"?sub")"crlf)	
+(printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	vmod+nsubj+cop	kriyA-subject	"?kriyA"	"?sub")"crlf)	
 )
  ; Ex. Truffles picked during the spring are tasty .  
 ;------------------------------------------------------------------------------------------------------------------------
@@ -1218,13 +1218,13 @@
 )
  ; Ex. About 200 people came to the party .
 ;------------------------------------------------------------------------------------------------------------------------
-(defrule infmod 
-(rel_name-sids infmod|xcomp  ?saMjFA ?kqxanwa)
+(defrule vmod1 
+(rel_name-sids vmod|xcomp  ?saMjFA ?kqxanwa) ;Modified infmod to vmod as new version of Stanford 3.3.1
 (parser_id-cat_coarse ?saMjFA ~verb) ;Added by Sukhada
 
  =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     saMjFA-to_kqxanwa        "?saMjFA"    "?kqxanwa")"crlf)
-(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   infmod   saMjFA-to_kqxanwa        "?saMjFA"    "?kqxanwa")"crlf)
+(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   vmod1   saMjFA-to_kqxanwa        "?saMjFA"    "?kqxanwa")"crlf)
 )
  ; Ex. But my efforts to win his heart have failed . 
  ;Added by Mahalaxmi.
