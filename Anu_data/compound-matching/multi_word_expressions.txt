@@ -16639,7 +16639,7 @@ inspectorate_general	mahAnirIkRaprAlaya#mahAnirIkRaprAlaya#noun#2#RM
 inspectorate_of_armaments	AyuXa_nirIkRaprAlaya#AyuXa_nirIkRaprAlaya#noun#1#RM
 inspectorate_of_engineering_equipments	iMjIniyarI_upaskara_nirIkRaprAlaya#iMjIniyarI_upaskara_nirIkRaprAlaya#noun#1#RM
 inspectors_of_notified_factories	aXisUciwa_kAraKZAnoM_kA_nirIkRaka#aXisUciwa_kAraKZAnoM_kA_nirIkRaka#noun#1#RM
-inspite_of	ke_BAvajUxa#ke_BAvajUxa#noun#1#RM
+inspite_of	ke_bAvajUxa#ke_bAvajUxa#noun#1#RM
 installation_charge	prawiRTApana_mUlya#prawiRTApana_mUlya#noun#2#RM
 installation_engineer	saMsWApana_iMjIniyara#saMsWApana_iMjIniyara#noun#2#RM
 installation_of_persian_wheels	rahata_lagAnA#rahata_lagAnA#noun#1#RM
@@ -33561,6 +33561,7 @@ load_of_rubbish	bakavAsa_se_BarapUra#bakavAsa_se_BarapUra#adjective#3#RM
 call_of_nature	SOcAxi_kI_AvaSyakawA#SOcAxi_kI_AvaSyakawA#noun#3#RM
 rubbish_bin	kacarA_kuMdI#kacarA_kuMdI#noun#2#RM
 rubbish_dump	kacare_kA_mExAna#kacare_kA_mExAna#noun#2#RM
+rain_water	varRA_kA_pAnI#varRA_kA_pAnI#noun#2#RM
 #By Alpana ji (LTRC)
 Block_multiplexer	avaroXa_bahusaMkewaka#avaroXa_bahusaMkewaka#noun#2#RM
 Discharge_Required	AvaSyaka_nirvahana#AvaSyaka_nirvahana#noun#1#RM

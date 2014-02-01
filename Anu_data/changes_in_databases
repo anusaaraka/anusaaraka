@@ -614,6 +614,10 @@ Modified :
 	labor		accept__vblex		(     "   09-01-14)
 	tail		accept__vblex		(     "   18-01-14)
 	bore		liv/e__vblex		(     "      "    )
+	ensnare		liv/e__vblex		(     "	  01-02-14)
+	unconvince	liv/e__vblex		(     "	     "	  )
+	educationist	house__n		(     "	     "	  )
+	dumb		accept__vblex		(     "	     "	  )
 
 
 Modified paradigm:
@@ -1595,6 +1599,8 @@ Removed:
 				Ex: Take the old furniture to the rubbish dump.
 	name_plate		nAma_patta		as	nAma_pattikA	(Suggested by Nandini ji LTRC 17-12-13)
 				Ex: Bhagirathi, the children read the name plate on the door.
+	inspite_of		ke_BAvajUxa		as	ke_bAvajUxa	(Suggested by Prachi Banasthali 01-02-14)
+				Ex: Inspite of this he stood third among the successful candidates. 
 		
     Added new entry:
     ----------------
@@ -1761,9 +1767,11 @@ Removed:
 				Ex: Then, taking courage in both hands, he spoke, Your Majesty, please grant me anything
 	89. preferred_location	aXimawa_avasWiwi#aXimawa_avasWiwi#noun#2#RM		(Suggested by Chaitanya Sir     04-01-14)
 				Ex: Likewise, space is homogeneous and there is no (intrinsically) preferred location in the universe. 
-	90. on_the_basis_of	ke_AXAra_para#ke_AXAra_para#preposition#3#RM		 (Suggested by Chaitanya Sir     05-01-14)
+	90. on_the_basis_of	ke_AXAra_para#ke_AXAra_para#preposition#3#RM		(Suggested by Chaitanya Sir     05-01-14)
 				Ex: Physicists try to discover the rules that are operating in nature, on the basis of observations,
-				    experimentation and analysis.		       			 
+				    experimentation and analysis.
+	91. rain_water		varRA_kA_pAnI#varRA_kA_pAnI#noun#2#RM		       	(Suggested by Anita ji LTRC	01-02-14)
+				Ex: The rain water had washed them away.		 	
 
     Added new meaning to the existing word:
     --------------------------------------
