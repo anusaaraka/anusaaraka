@@ -618,6 +618,13 @@ Modified :
 	unconvince	liv/e__vblex		(     "	     "	  )
 	educationist	house__n		(     "	     "	  )
 	dumb		accept__vblex		(     "	     "	  )
+	regime		house__n		(     "	  07-02-14)
+	tart		accept__vblex		(     "	     "	  )
+	swell		sw/ell__vblex		(     "	  08-02-14)
+	hoover		accept__vblex		(     "	     "	  )
+	hoover		house__n		(     "	     "	  )
+	toy		accept__vblex		(     "	     "	  )
+
 
 
 Modified paradigm:
@@ -1601,6 +1608,8 @@ Removed:
 				Ex: Bhagirathi, the children read the name plate on the door.
 	inspite_of		ke_BAvajUxa		as	ke_bAvajUxa	(Suggested by Prachi Banasthali 01-02-14)
 				Ex: Inspite of this he stood third among the successful candidates. 
+	any_time		UNDEFINED		as	noun		(Suggested by preeti ji LTRC	03-02-14)
+				Ex: The baby could arrive any time now.
 		
     Added new entry:
     ----------------
@@ -1771,7 +1780,9 @@ Removed:
 				Ex: Physicists try to discover the rules that are operating in nature, on the basis of observations,
 				    experimentation and analysis.
 	91. rain_water		varRA_kA_pAnI#varRA_kA_pAnI#noun#2#RM		       	(Suggested by Anita ji LTRC	01-02-14)
-				Ex: The rain water had washed them away.		 	
+				Ex: The rain water had washed them away.
+	92. any_day		kisI_BI_xina#kisI_BI_xina#noun#2#RM		 	(Suggested by preeti ji LTRC	03-02-14)
+				Ex: The baby could arrive any day now.
 
     Added new meaning to the existing word:
     --------------------------------------

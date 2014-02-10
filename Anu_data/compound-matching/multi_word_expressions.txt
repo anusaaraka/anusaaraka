@@ -3482,7 +3482,7 @@ antivirus_program	prawi_viRANu_progrAma#prawi_viRANu_progrAma#noun#2#RM
 anxiety_disorder	cinwA_vikAra#cinwA_vikAra#noun#2#RM
 any_and_all_bid	kampanI_para_aXikAra_pAne_kI_ceRtA_meM_sAre_Seyara_KZarIxane_kA_praswAva_raKanA#kampanI_para_aXikAra_pAne_kI_ceRtA_meM_sAre_Seyara_KZarIxane_kA_praswAva_raKanA#noun#4#RM
 any_longer	Ora_jZyAxA_nahIM#Ora_jZyAxA_nahIM#noun#2#RM
-any_time	kisI_BI_samaya#kisI_BI_samaya#UNDEFINED#2#RM
+any_time	kisI_BI_samaya#kisI_BI_samaya#noun#2#RM
 anybody_else	koI_anya#koI_anya#noun#2#RM
 anything_else	kisI_Ora_cIja#kisI_Ora_cIja#noun#1#RM
 ap_access_provider	e_pI_aBigama_praxAwA#e_pI_aBigama_praxAwA#noun#3#RM
@@ -33733,5 +33733,6 @@ as_much_as	jiwanA_aXika#jiwanA_aXika#adverb/adjective#3#RM
 at_all_costs    kisI_BI_kImawa_para#kisI_BI_kImawa_para#noun#3#RM
 copper_plate	wAmrapawra#wAmrapawra#noun#2#RM
 character_building	cariwra_nirmANa#cariwra_nirmANa#noun#1#RM
+any_day	kisI_BI_xina#kisI_BI_xina#noun#2#RM
 #By Krithika ji LTRc
 fatal_hour	nirNAyaka_pala#nirNAyaka_pala#noun#2#RM
