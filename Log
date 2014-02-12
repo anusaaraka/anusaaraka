@@ -1,4 +1,4 @@
- 30-01-14
+ 12-02-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
@@ -22,11 +22,12 @@
 	Anusaaraka_stanford-Factored.sh		Anusaaraka_stanford.sh		Anusaaraka_stanford_minion.sh
 	run_stanford-gui-factored.sh		run_stanford-gui-pcfg.sh	anu_compile.sh
 	remove_out-files.sh			Anusaaraka.sh			Anusaaraka_all.sh	
-	Anusaaraka_berkeley.sh			Anusaaraka_bllip_parser.sh
+	Anusaaraka_berkeley.sh			Anusaaraka_bllip_parser.sh	run_tregex_for_multiparse.sh
  9. Updated following files:
 	Stanford_parser_fails
 	phy_verified_out
  	anusaaraka/README
+	Readme_to_use_email_in_firefox.txt
  10. Removed Stanford parser 3.2.0
  11. Updated 
 	sd_verified (650)	small_sent_verified_sd (138)

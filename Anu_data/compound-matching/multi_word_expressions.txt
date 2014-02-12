@@ -2209,7 +2209,6 @@ acoustic_signal	Xvanika_saMkewa#Xvanika_saMkewa#noun#2#RM
 acoustic_storage	Xvanika_BaMdAraNa#Xvanika_BaMdAraNa#noun#2#RM
 acoustical_coupler	Xvanika_yugmaka#Xvanika_yugmaka#noun#2#RM
 acoustical_sound_enclosure	Xvanika_Xvani_pariveRTaka#Xvanika_Xvani_pariveRTaka#noun#3#RM
-acquainted_with	pariciwa_honA#pariciwa_honA#noun#2#RM
 acquired_in_satisfaction_of_claims	xAvoM_kI_pUrwi_meM_prApwa#xAvoM_kI_pUrwi_meM_prApwa#noun#3#RM
 acquired_reflex	sWiwyAnukUla_prawivarwa#sWiwyAnukUla_prawivarwa#noun#2#RM
 acquisition_effort	saMprApwi#saMprApwi#noun#2#RM
@@ -5747,7 +5746,6 @@ bought_ledger	KarIxa_araya_KAwA#KarIxa_araya_KAwA#noun#2#RM
 bought_ledger_adjustment_account	KarIxa_araya_KAwA_samAyojana_leKA#KarIxa_araya_KAwA_samAyojana_leKA#noun#4#RM
 bought_ledger_control_account	KarIxa_araya_KAwA_niyaMwraNa_leKA#KarIxa_araya_KAwA_niyaMwraNa_leKA#noun#4#RM
 boulder_clay	golASma_mqwwikA#golASma_mqwwikA#noun#2#RM
-bound_to	bazXA_huA^bAXya#bazXA_huA^bAXya#noun#2#RM
 boundary_condition	sImA_kI_parisWiwi#sImA_kI_parisWiwi#noun#2#RM
 boundary_mark	sImA_cihna#sImA_cihna#noun#2#RM
 bounding_function	purabaMWana_Palana#purabaMWana_Palana#noun#2#RM

@@ -108,3 +108,9 @@ The Education Department of Eastern Bengal and Assam had proposed that the Calcu
 	--> Parser gave 'Eastern' category as 'NNP' but it should be adjective.
 He's always carping about how badly organized the office is.
 	--> Parser gave 'carping' category as noun but it should be verb
+I do not believe there is any one connected with the University of Calcutta, I doubt whether there is any educated man in Bengal, who is not grateful to him.
+	-> Parser gave 'educated'  category as VBN but it should be adjective.
+Deal them five cards each.
+	-> Parser gave 'Deal'  category as NNP but it should be verb.
+Deal five cards to each of them.          
+	-> Parser gave 'Deal'  category as NNP but it should be verb.
