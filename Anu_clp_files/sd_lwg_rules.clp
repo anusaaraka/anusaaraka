@@ -149,7 +149,7 @@
  (parserid-word ?head1 ~that);As they drew near the bungalow they could make out that something important had happened.
  (Node-Category ?Mot VP)
  (Node-Category ?S SBAR|S|SQ)
- (Node-Category ?pre_n VBG|VBN|VBD|VBZ|VBP|VB|MD|TO|AUX|AUXG)
+ (Node-Category ?pre_node VBG|VBN|VBD|VBZ|VBP|VB|MD|TO|AUX|AUXG)
  (not (dont_replace_VP ?Mot))
  =>
         (retract ?f ?f1)
@@ -169,7 +169,7 @@
  (parserid-word ?head1 ~that)
  (Node-Category ?Mot VP)
  (Node-Category ?S S|SBAR)
- (Node-Category ?pre_n VBG|VBN|VBD|VBZ|VBP|VB|MD|TO|AUX|AUXG)
+ (Node-Category ?pre_node VBG|VBN|VBD|VBZ|VBP|VB|MD|TO|AUX|AUXG)
  (not (dont_replace_VP ?Mot))
  =>
         (retract ?f ?f1)
@@ -185,15 +185,16 @@
  ; The normal in this case is to be taken as normal to the tangent to surface at the point of incidence.
  ;;If air resistance is neglected, the object [is said to be] in free fall.
  ;Modified the rule to check prev_node of 'SBAR|S|SQ' is verb.
+ ;Added 'used' in the list by Shirisha Manju (13-02-14) Ex: Asutosh himself frequently presided over the "moot courts" and he also used to deliver lectures to the Law students.
  (defrule replace_S1
  (declare (salience 100))
  ?f<-(Head-Level-Mother-Daughters_lwg ?head ?lvl ?Mot $?pre ?prev_node ?S $?pos)
- (parserid-word ?head ?w&are|Are|is|was|were|said)
+ (parserid-word ?head ?w&are|Are|is|was|were|said|used)
  ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?S $?daut)
  (parserid-word ?head1 ?w1&to)
  (Node-Category ?Mot VP)
  (Node-Category ?S S)
- (Node-Category ?pre_n VBG|VBN|VBD|VBZ|VBP|VB|MD|TO|AUX|AUXG)
+ (Node-Category ?pre_node VBG|VBN|VBD|VBZ|VBP|VB|MD|TO|AUX|AUXG)
  (not (dont_replace_VP ?Mot))
  =>
         (retract ?f ?f1)
