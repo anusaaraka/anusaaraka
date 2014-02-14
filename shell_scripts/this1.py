@@ -416,6 +416,7 @@ for line in f1:
 	if(l==count-2):
 		f2.write(m_p1_line) #Printing mail related data
 		f2.write(jvstr)
+		f2.write("document.getElementById(\"message\").innerHTML=str;\n	loadPopupBox();\n};\n}\nfunction loadPopupBox() {	// To Load the Popupbox\n	document.getElementById('popup_box').style.display=\"block\";\n	document.getElementById('popup_box').style.opacity=\"1\";\n}\ndocument.getElementById('popupBoxClose').onclick= function() {	\n	document.getElementById('popup_box').style.display=\"none\";\n	document.getElementById('popup_box').style.opacity=\"0\";\n	hideLayer();\n}\n</script>\n")
 		f2.write("<script>\nwindow.onload=function(){\n	var tr = document.getElementsByClassName('row9');\n")	
 		for i in range(0,len(dic)):
 			if(len(dic[i])==1):

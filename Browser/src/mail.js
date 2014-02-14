@@ -328,17 +328,3 @@ if(top.frames["ManHindiTranslation"]){
 	}
 	str += "\nManual Translation - " + manhnd;
 }
-	document.getElementById("message").innerHTML=str;
-	loadPopupBox();
-};
-}
-function loadPopupBox() {    // To Load the Popupbox
-	document.getElementById('popup_box').style.display="block";
-        document.getElementById('popup_box').style.opacity="1";
-}
-document.getElementById('popupBoxClose').onclick= function() {           
-        document.getElementById('popup_box').style.display="none";
-        document.getElementById('popup_box').style.opacity="0";
-	hideLayer();
-}
-</script>
