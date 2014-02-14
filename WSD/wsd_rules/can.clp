@@ -11,8 +11,28 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  can.clp 	can0   "  ?id "  kEna )" crlf))
 )
 
-(defrule can1
+
+;@@@ Added by Shirisha Manju (14-02-14) Suggested by Chaitanya Sir .
+;Do what you can. 
+;करो जो तुम कर सकते हो
+(defrule can_do
 (declare (salience 4900))
+(id-root ?id can)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-vAkyakarma  ?kri ?id)
+(AjFArWaka_kriyA  ?kri)
+=>
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kara_saka))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  can.clp       can_do   "  ?id "  kara_saka )" crlf))
+)
+
+;----------------------- Default rules-----------------------------------
+(defrule can1
+(declare (salience 100))
 (id-root ?id can)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -20,24 +40,22 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kEna))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  can.clp 	can1   "  ?id "  kEna )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  can.clp       can1   "  ?id "  kEna )" crlf))
 )
+
 
 ;Well then, get out of the pit as best you can, said Papri coldly. ?? (requires further thinking)
 ;तो ठीक है , अब तुम इस गड्ढे से बाहर निकलने के लिए जो कुछ कर सकती हो कर लो , पपरी ने शान्त भाव से कहा .
-;Do what you can. 
-;करो जो तुम कर सकते हो
-;Modified meaning "saka" as "kara_saka" by Shirisha Manju (10-07-13) Suggested by Chaitanya Sir .
 (defrule can2
-(declare (salience 4800))
+(declare (salience 100))
 (id-root ?id can)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id kara_saka))
+(assert (id-wsd_root_mng ?id saka))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  can.clp 	can2   "  ?id "  kara_saka )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  can.clp 	can2   "  ?id "  saka )" crlf))
 )
 
 ;default_sense && category=verb	saka	0

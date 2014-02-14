@@ -11,6 +11,7 @@
  ; The normal in this case is to be taken as normal to the tangent to surface at the point of incidence.
  ; We have to turn down the next road on the right.
  ; For pid '0' sen: To counter this force, the child has to apply an external force on the car in the direction of motion.To measure any time interval we need a clock.
+ ;Added 'used' in the list by Shirisha Manju (13-02-14) Ex: Asutosh himself frequently presided over the "moot courts" and he also used to deliver lectures to the Law students.
  (defrule rename_VP_for_To
  (declare (salience 30))
  ?f2<-(Head-Level-Mother-Daughters ?word&to|To ?l1 ?S $?a ?VP)
@@ -22,7 +23,7 @@
  (Head-Level-Mother-Daughters To|to ? ?TO ?pid)	
  (parserid-word ?pid1 ?head)
  (test (or (eq (- (string_to_integer ?pid)  1)(string_to_integer ?pid1))(eq (- (string_to_integer ?pid) 1) 0)));To counter this force, the child has to apply an external force on the car in the direction of motion.
- (test (eq (member$ ?head (create$ had has have need needs are Are)) FALSE ))
+ (test (eq (member$ ?head (create$ had has have need needs are Are used)) FALSE ))
  ?f3<-(Head-Level-Mother-Daughters ?h&~be ?l2 ?VP1 $?d)
  =>
 	(retract ?f ?f0 ?f1 ?f2 ?f3)	 
