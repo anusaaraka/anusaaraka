@@ -89,7 +89,7 @@
 
  echo "Removing stanford-tregex"
  cd $HOME_anu_test/miscellaneous/std_tregex
- rm -rf stanford-tregex-2013-06-20
+ rm -rf stanford-tregex-2014-01-04
 
  echo "Removing SHALLOW_PARSER out files"
  cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER

@@ -1,7 +1,8 @@
- 12-02-14
+ 14-02-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
+		  collect.clp	material.clp	remain.clp
  2. vibakthi.clp
 	Modified :  assert_facts rule
  3. sd-relation_rules.clp:
@@ -13,25 +14,37 @@
 	Modified: verb_rule
  5. run_modules_std.bat
 	Loaded 'punctuation_info.dat' file in WSD module
- 6. Updated following dictionary related files:
+ 6. handling_abbrevations.lex:
+        Added 'Rs.' and 'rs.' 
+ 7. Modified e-mail concept related files:
+        run_anu_browser.sh      (Added mail.js file in Browser related code)
+        mail.php                (Added Root layer)
+        ClipsToAnu_browser_intfc.sh     (Added mail.js as an argument for this1.py)
+        this1.py                (Separated mail related work in mail.js file)
+ 8. Added mail.js in Broswer/src
+ 9. Updated following dictionary related files:
         changes_in_databases	 apertium-en-hi.en.metadix 
- 7. Updation of new versions:
+ 10. Updation of new versions:
 	Stanford parser:	3.2.0	to	3.3.1
- 8. Following files are updated according to the new version:
+	Stanford Tregex:	3.2.0	to	3.3.1
+ 11. Following files are updated according to the new version:
 	Anusaaraka_bllip_parser_minion.sh	Anusaaraka_rasp.sh		Anusaaraka_site.sh
 	Anusaaraka_stanford-Factored.sh		Anusaaraka_stanford.sh		Anusaaraka_stanford_minion.sh
 	run_stanford-gui-factored.sh		run_stanford-gui-pcfg.sh	anu_compile.sh
 	remove_out-files.sh			Anusaaraka.sh			Anusaaraka_all.sh	
 	Anusaaraka_berkeley.sh			Anusaaraka_bllip_parser.sh	run_tregex_for_multiparse.sh
- 9. Updated following files:
+	run_tregex.sh
+ 12. Updated following files:
 	Stanford_parser_fails
 	phy_verified_out
  	anusaaraka/README
 	Readme_to_use_email_in_firefox.txt
- 10. Removed Stanford parser 3.2.0
- 11. Updated 
+ 13. Removed following files:
+	Stanford parser 3.2.0
+	Stanford Tregex 3.2.0
+ 14. Updated 
 	sd_verified (650)	small_sent_verified_sd (138)
- 12. Updated Log.
+ 15. Updated Log.
 
  06-01-14
  ========

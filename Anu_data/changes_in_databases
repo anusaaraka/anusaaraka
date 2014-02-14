@@ -749,6 +749,7 @@ Removed:
 		Let_them_0      nA_unako_xo-0-0
 		Let_us_0        caliye_hama-0-subj
 		let_us_0        subj-0-caliye_hama
+		get_en		0_ho_jAwA_hE-0-0 (Suggested by Garima Banasthali 11-02-14)
 
  Changes in default-iit-bombay-shabdanjali-dic.txt
  =================================================
@@ -875,6 +876,7 @@ Removed:
 	101. passage_noun	gamana_svAtanwrya	as	gamana_svAwanwrya(	"		"	    	)
 	102. electromagnetism_noun	vixyuw-cumbakawva	as	vixyuwa_cumbakawva  (suggested by Sukhada 04-12-13)
 	103. employment_noun 	vyavasAsa		as	vyavasAya	(Suggested by Pramila Banasthali 24-01-14)
+	104. police_noun	pulIsa			as	pulisa		(Suggested by 	"	"	10-02-14)
 
     3. Added new entry:
        ---------------

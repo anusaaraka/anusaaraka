@@ -92,7 +92,6 @@ ed_en	yA_[huA]-0-0
 ed	yA-0-0
 en	yA_huA-0-0
 from_ing	ne_se-0-0
-get_en	0_ho_jAwA_hE-0-0
 get_en	yA_jAwA_hE-0-0
 gets_en	0_ho_jAwA_hE-0-0
 gets_en	yA_jAwA_hE-0-0
