@@ -5,6 +5,7 @@
 $to = $_GET['email'];
 $subject = $_GET['subject'];
 $message = $_GET['message'];
+$message = str_replace( "Root" , "\nRoot" , $message );
 $message = str_replace( "Sentence" , "\nSentence" , $message );
 $message = str_replace( "Hindi" , "\nHindi" , $message );
 $message = str_replace( "Manual" , "\nManual" , $message );

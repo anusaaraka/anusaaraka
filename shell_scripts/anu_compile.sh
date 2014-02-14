@@ -193,7 +193,7 @@
  cp $HOME_anu_test/debugging/sentence_debug.sh $HOME_anu_test/bin/.
  
  cd $HOME_anu_test/miscellaneous/std_tregex/
- unzip stanford-tregex-2013-06-20.zip
+ unzip stanford-tregex-2014-01-04.zip
 
  echo "Creating Transliteration files"
  cd  $HOME_anu_test/miscellaneous/transliteration/

@@ -59225,7 +59225,7 @@ polemics_noun	vivAxAwmaka_kuSalawA
 polemist_noun	KaNdanAwmaka_leKaka
 poles_UNDEFINED	Xruva
 police-man_UNDEFINED	pulisa_vAlA
-police_noun	pulIsa/pulisa_viBAga/pulisa/ArakRaka
+police_noun	pulisa/pulisa_viBAga/ArakRaka
 police_verb	vyavasWiwa_kara/vyavasWA_kara/niyanwraNa_kara/nigarAnI_raKa
 policed_UNDEFINED	nigarAnI_raKanA
 policeman_noun	sipAhI

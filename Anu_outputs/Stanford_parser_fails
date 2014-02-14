@@ -114,3 +114,5 @@ Deal them five cards each.
 	-> Parser gave 'Deal'  category as NNP but it should be verb.
 Deal five cards to each of them.          
 	-> Parser gave 'Deal'  category as NNP but it should be verb.
+She is a real class performer.
+	--> Parser gave 'class' category as noun but it should be adjective
