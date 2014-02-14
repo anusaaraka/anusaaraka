@@ -74643,7 +74643,7 @@ spearmints_UNDEFINED	puxInA
 spears_UNDEFINED	Kera
 spec_noun	viSeRa_nirxeSa
 special-branch_noun	pulIsa_kI_viSeRa_SAKA
-special_adjective	asAXAraNa/viSiRta/viSeRAfka/viSeRa/uwkriRta/KAsa/Kasa/awirikwa/mahawwvapUrNa/viSeRa_uxxeSya_se_banA_huA
+special_adjective	viSeRa/asAXAraNa/viSiRta/viSeRAfka/uwkriRta/KAsa/Kasa/awirikwa/mahawwvapUrNa/viSeRa_uxxeSya_se_banA_huA
 special_noun	viSeRa/viSiRta_vyakwi/viSeRa_wAra/viSeRa_viBAga/viSeRa_vaswu/viSeRa_sAmAna/viSeRa_gAdI/viSeRa_basa/KAsa_kAryakrama
 specialer_UNDEFINED	mahawwvapUrNa
 specialest_UNDEFINED	mahawwvapUrNa
@@ -93515,3 +93515,4 @@ duo_noun	xonoM
 Murrah_noun	mUDZA
 peacekeeping_noun	SAnwi_banAe_raKane_vAlA
 infestation_noun	saMkramaNa
+evince_verb	icCA_vyakwa_kara

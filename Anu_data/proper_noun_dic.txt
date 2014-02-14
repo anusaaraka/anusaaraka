@@ -5696,3 +5696,4 @@ Dad	piwAjI
 Jhumur	JUmara
 Holi	holI
 Marathi	marATI	
+Simon	simona
