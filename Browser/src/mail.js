@@ -91,59 +91,190 @@ function mail(){
 	root_low=root.toLowerCase();
 
 	while(char!=' ') {
-		if (root_low == "be" || root_low == "beat" || root_low == "become" || root_low == "begin" || root_low == "blow" || root_low =="break" || root_low == "bring" || root_low == "build" || root_low == "burn" || root_low == "buy" || root_low == "call" || root_low == "carry" || root_low == "catch" || root_low == "choose" || root_low == "clean") {
-                        data+="gsingh.nik@gmail.com";
-                        data += "&message=Dear Garima,%0A%0A" + message.value + sug;
+		 if(root_low == "be" || root_low == "beat" || root_low == "become" || root_low == "begin" || root_low == "blow" || root_low =="break" || root_low == "bring" || root_low == "build" || root_low == "burn" || root_low == "buy") {
+                        data+="neha.mourya08@gmail.com";
+			data+="&Cc=gsingh.nik@gmail.com";
+                        data+="&message=Dear Neha,%0A%0A" + message.value + sug;
 			break;
  		}
-		if (root_low == "come" || root_low == "cost" || root_low == "cut" || root_low == "deal" || root_low == "do" || root_low =="employ" || root_low == "figure" || root_low == "fill" || root_low == "follow" || root_low == "in"){ 
-                        data+="pramila3005@gmail.com";
-                        data += "&message=Dear Pramila,%0A%0A" + message.value + sug;
+		if(root_low == "call" || root_low == "carry" || root_low == "catch" || root_low == "choose" || root_low == "clean") {
+                        data+="neha.mourya08@gmail.com";
+                        data+="&Cc=pradhan.preet@gmail.com";
+                        data+="&message=Dear Neha,%0A%0A" + message.value + sug;
                         break;
                 }
-		if (root_low == "draw" || root_low == "drink" || root_low == "drive" || root_low == "eat" || root_low == "fall" || root_low =="feed" || root_low == "feel" || root_low == "fight" || root_low == "find" || root_low == "fit" || root_low == "taste" || root_low == "hear" || root_low == "smell" || root_low == "touch" || root_low == "see") {
-                        data+="prachirathore02@gmail.com";
-                        data += "&message=Dear Prachi,%0A%0A" + message.value + sug;
+		if (root_low == "come" || root_low == "cost" || root_low == "cut") { 
+                        data+="singhdiaspora83@gmail.com";
+                        data+="&Cc=pradhan.preet@gmail.com";
+                        data+="&message=Dear Ajay,%0A%0A" + message.value + sug;
                         break;
                 }
-		if (root_low == "flow" || root_low == "fly" || root_low == "forget" || root_low == "forgive" || root_low == "get" || root_low =="give" || root_low == "go" || root_low == "grow" || root_low == "have" || root_low == "hide") {
-                        data+="sonam27virgo@gmail.com";
-                        data += "&message=Dear Sonam,%0A%0A" + message.value + sug;
+		if (root_low == "deal" || root_low == "do" || root_low =="employ") {
+			data+="singhdiaspora83@gmail.com";
+                        data+="&Cc=pramila3005@gmail.com";
+                        data+="&message=Dear Ajay,%0A%0A" + message.value + sug;
+                        break;
+		}
+		if (root_low == "figure" || root_low == "fill" || root_low == "follow") {
+			data+="singhdiaspora83@gmail.com";
+                        data+="&Cc=krithika.ns@gmail.com";
+                        data+="&message=Dear Ajay,%0A%0A" + message.value + sug;
                         break;
                 }
-		if (root_low == "hit" || root_low == "hold" || root_low == "hurt" || root_low == "keep" || root_low == "know" || root_low =="lay" || root_low == "lead" || root_low == "learn" || root_low == "leave" || root_low == "lend" || root_low == "let" || root_low == "lie" || root_low == "like" || root_low == "lose" || root_low == "make") {
-                        data+="singh.jagriti5@gmail.com";
-                        data += "&message=Dear Jagriti,%0A%0A" + message.value + sug;
+		if (root_low == "in") {
+			data+="singhdiaspora83@gmail.com";
+                        data+="&Cc=prachirathore02@gmail.com";
+                        data+="&message=Dear Ajay,%0A%0A" + message.value + sug;
                         break;
                 }
-		if (root_low == "mean" || root_low == "meet" || root_low == "mine" || root_low == "pay" || root_low == "play" || root_low =="put" || root_low == "read" || root_low == "ring" || root_low == "rise" || root_low == "run") {
-                        data+="roja19p@gmail.com";
-                        data += "&message=Dear Roja,%0A%0A" + message.value + sug;
+		if (root_low == "draw" || root_low == "drink" || root_low == "drive" || root_low == "eat") {
+			data+="madhavimanya.kush@gmail.com";
+                        data+="&Cc=pramila3005@gmail.com";
+                        data+="&message=Dear Madhavi,%0A%0A" + message.value + sug;
+                        break;
+                }
+		if (root_low == "fall" || root_low =="feed" || root_low == "feel" || root_low == "fight" || root_low == "find" || root_low == "fit") {
+			data+="madhavimanya.kush@gmail.com";
+                        data+="&Cc=krithika.ns@gmail.com";
+                        data+="&message=Dear Madhavi,%0A%0A" + message.value + sug;
+                        break;
+                }
+		if(root_low == "taste" || root_low == "hear" || root_low == "touch" ) {
+			data+="madhavimanya.kush@gmail.com";
+                        data+="&Cc=prachirathore02@gmail.com";
+                        data+="&message=Dear Pramila,%0A%0A" + message.value + sug;
+                        break;
+                }
+		if(root_low == "smell" || root_low == "see") {
+                        data+="madhavimanya.kush@gmail.com";
+                        data+="&Cc=singh.jagriti5@gmail.com";
+                        data+="&message=Dear Madhavi,%0A%0A" + message.value + sug;
+                        break;
+                }
+		if (root_low == "flow" || root_low == "fly" || root_low == "forget" || root_low == "forgive" || root_low == "get" || root_low =="give" || root_low == "go" || root_low == "grow") {
+			data+="ruchisingh.linguistics@gmail.com";
+                        data+="&Cc=krithika.ns@gmail.com";
+                        data+="&message=Dear Ruchi,%0A%0A" + message.value + sug;
+                        break;
+                }
+		if (root_low == "have" || root_low == "hide") {
+			data+="ruchisingh.linguistics@gmail.com";
+                        data+="&Cc=prachirathore02@gmail.com";
+                        data+="&message=Dear Ruchi,%0A%0A" + message.value + sug;
+                        break;
+                }
+		if (root_low == "hit" || root_low == "hold" || root_low == "hurt" || root_low == "keep" || root_low == "know") {
+                        data+="shubhraapurve@gmail.com";
+                        data+="&Cc=prachirathore02@gmail.com";
+                        data+="&message=Dear Shubra,%0A%0A" + message.value + sug;
+                        break;
+		}
+		if (root_low =="lay" || root_low == "lead" || root_low == "learn" || root_low == "leave" || root_low == "lend" || root_low == "let" || root_low == "lie" || root_low == "like" || root_low == "lose" || root_low == "make") {
+                        data+="shubhraapurve@gmail.com";
+                        data+="&Cc=nandini.upasani@gmail.com";
+                        data+="&message=Dear Shubra,%0A%0A" + message.value + sug;
+                        break;
+                }
+		if (root_low == "mean" || root_low == "meet" || root_low == "mine") {
+                        data+="shnabhu@gmail.com";
+                        data+="&Cc=nandini.upasani@gmail.com";
+                        data+="&message=Dear Shubra,%0A%0A" + message.value + sug;
+                        break;
+		}
+		if (root_low == "pay" || root_low == "play" || root_low =="put") {
+                        data+="shnabhu@gmail.com";
+                        data+="&Cc=sonam27virgo@gmail.com";
+                        data+="&message=Dear Shubra,%0A%0A" + message.value + sug;
+                        break;
+		}
+		if (root_low == "read" || root_low == "ring" || root_low == "rise" || root_low == "run") {
+                        data+="shnabhu@gmail.com";
+                        data+="&Cc=anita.chaturvedi@gmail.com";
+                        data+="&message=Dear Roja,%0A%0A" + message.value + sug;
                         break;
                 }
 		if (root_low == "say" || root_low == "sell" || root_low == "send" || root_low == "set" || root_low == "shake" || root_low =="shoot" || root_low == "show" || root_low == "shut" || root_low == "sing" || root_low == "sit" || root_low == "sleep" || root_low == "speak" || root_low == "stand" || root_low == "stick" || root_low == "still" ) {	
-                        data+="roja19p@gmail.com";
-                        data += "&message=Dear Roja,%0A%0A" + message.value + sug;
+                        data+="maneeshhsingh100@gmail.com";
+                        data+="&Cc=singh.jagriti5@gmail.com";
+                        data+="&message=Dear Manish,%0A%0A" + message.value + sug;
                         break;
                 }
-		if (root_low == "take" || root_low == "teach" || root_low == "tell" || root_low == "think" || root_low == "throw" || root_low =="understand" || root_low == "wear" || root_low == "win" || root_low == "write" || root_low == "above") {
-                        data+="roja19p@gmail.com";
-                        data += "&message=Dear Roja,%0A%0A" + message.value + sug;
+		if (root_low == "take" || root_low == "teach" || root_low == "tell" || root_low == "think" || root_low == "throw" || root_low =="understand") {
+                        data+="ankita.srvstv@gmail.com";
+                        data+="&Cc=prachirathore02@gmail.com";
+			data+="&message=Dear Ankita,%0A%0A" + message.value + sug;
                         break;
                 }
-		if (root_low == "act" || root_low == "after" || root_low == "all" || root_low == "any" || root_low == "as" || root_low == "at" || root_low == "back" || root_low == "bear" || root_low == "brush" || root_low == "by" || root_low == "check" || root_low == "clear" || root_low == "close" || root_low == "dress" || root_low == "drop" || root_low == "have") {
-                        data+="roja19p@gmail.com";
-                        data += "&message=Dear 123,%0A%0A" + message.value + sug;
+		if (root_low == "wear" || root_low == "win" || root_low == "write") {
+                        data+="ankita.srvstv@gmail.com";
+                        data+="&Cc=anita.chaturvedi@gmail.com";
+                        data+="&message=Dear Ankita,%0A%0A" + message.value + sug;
                         break;
                 }
-		if (root_low == "jump" || root_low == "kick" || root_low == "knock" || root_low == "last" || root_low == "light" || root_low =="live" || root_low == "look" || root_low == "mark" || root_low == "move" || root_low == "of") {
-                        data+="roja19p@gmail.com";
-                        data += "&message=Dear Roja,%0A%0A" + message.value + sug;
+		if(root_low == "above") {
+			data+="ankita.srvstv@gmail.com";
+                        data+="&Cc=gsingh.nik@gmail.com";
+                        data+="&message=Dear Ankita,%0A%0A" + message.value + sug;
                         break;
                 }
-		if (root_low == "off" || root_low == "open" || root_low == "over" || root_low == "press" || root_low == "pull" || root_low =="right" || root_low == "seize" || root_low == "to" || root_low == "turn" || root_low == "up") {
-                        data+="roja19p@gmail.com";
-                        data += "&message=Dear Roja,%0A%0A" + message.value + sug;
+		if (root_low == "act" || root_low == "after" || root_low == "all" || root_low == "any" || root_low == "as" || root_low == "at" || root_low == "back" || root_low == "bear" || root_low == "brush" || root_low == "by") {
+                        data+="chhoteshivam@gmail.com";
+                        data+="&Cc=gsingh.nik@gmail.com";
+                        data+="&message=Dear Shivam,%0A%0A" + message.value + sug;
+                        break;
+                }
+		if (root_low == "check" || root_low == "clear" || root_low == "close") {
+			data+="chhoteshivam@gmail.com";
+                        data+="&Cc=pradhan.preet@gmail.com";
+                        data+="&message=Dear Shivam,%0A%0A" + message.value + sug;
+                        break;
+                }
+		if (root_low == "dress" || root_low == "drop") {
+			data+="chhoteshivam@gmail.com";
+                        data+="&Cc=pramila3005@gmail.com";
+                        data+="&message=Dear Shivam,%0A%0A" + message.value + sug;
+                        break;
+                }
+		if (root_low == "jump" || root_low == "kick" || root_low == "knock") {
+			data+="gargnehavns@gmail.com";
+                        data+="&Cc=prachirathore02@gmail.com";
+                        data+="&message=Dear Neha,%0A%0A" + message.value + sug;
+                        break;
+                }
+		if (root_low == "last" || root_low == "light" || root_low =="live" || root_low == "look" || root_low == "mark" || root_low == "move") {
+			data+="gargnehavns@gmail.com";
+                        data+="&Cc=nandini.upasani@gmail.com";
+                        data+="&message=Dear Neha,%0A%0A" + message.value + sug;
+                        break;
+                }
+		if (root_low == "of") {
+			data+="gargnehavns@gmail.com";
+                        data+="&Cc=sonam27virgo@gmail.com";
+                        data+="&message=Dear Neha,%0A%0A" + message.value + sug;
+                        break;
+                }
+		if (root_low == "off" || root_low == "open" || root_low == "over" || root_low == "press" || root_low == "pull") {
+			data+="rinibanerji3@gmail.com";
+                        data+="&Cc=sonam27virgo@gmail.com";
+                        data+="&message=Dear Banerjee,%0A%0A" + message.value + sug;
+                        break;
+                }
+		if ( root_low =="right") {
+			data+="rinibanerji3@gmail.com";
+                        data+="&Cc=anita.chaturvedi@gmail.com";
+                        data+="&message=Dear Banerjee,%0A%0A" + message.value + sug;
+                        break;
+                }
+		if ( root_low =="seize") {
+                        data+="rinibanerji3@gmail.com";
+                        data+="&Cc=singh.jagriti5@gmail.com";
+                        data+="&message=Dear Banerjee,%0A%0A" + message.value + sug;
+                        break;
+                }
+		if (root_low == "to" || root_low == "turn" || root_low == "up") {
+                        data+="rinibanerji3@gmail.com";
+                        data+="&Cc=prachirathore02@gmail.com";
+                        data+="&message=Dear Banerjee,%0A%0A" + message.value + sug;
                         break;
                 }
 		if(char=='A'||char=='B'){
@@ -166,7 +297,7 @@ function mail(){
 			data += "&message=Dear Krithika,%0A%0A" + message.value + sug;
 			break;
 		}
-		if(char=='H'||char=='I'||char=='J'||char=='K'){
+		if(char=='H'||char=='I'||char=='J'||char=='K'||char=='T'||char=='U'||char=='V'){
 			data+="prachirathore02@gmail.com";
 			data += "&message=Dear Prachi Rathore,%0A%0A" + message.value + sug;
 			break;
@@ -189,11 +320,6 @@ function mail(){
 		if(char=='S'){
 			data+="singh.jagriti5@gmail.com";
 			data += "&message=Dear Jagriti Singh,%0A%0A" + message.value + sug;
-			break;
-		}
-		if(char=='T'||char=='U'||char=='V'){
-			data+="prachirathore02@gmail.com";
-			data += "&message=Dear Prachi,%0A%0A" + message.value + sug;
 			break;
 		}
 		char=message.value[i++].toUpperCase();
