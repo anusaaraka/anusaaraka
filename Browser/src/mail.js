@@ -80,8 +80,7 @@ function mail(){
 			j++;
 		}
 	
-//	var data = "subject=Incorrect Translation For \"" + mes + "\"";
-	var data = "subject=Testing Email Concept \"" + mes + "\"";
+	var data = "subject=Incorrect Translation For \"" + mes + "\"";
 	data+="&email=";
 	var i=7;
 	var char=message.value[i++].toUpperCase();
