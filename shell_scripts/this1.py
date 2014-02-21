@@ -100,6 +100,10 @@ for i in range(0,len(dire)):
 			k=k+1
 		dic2 = []
 #		print '===========', char[-50:] , char[x:k],  ''.join(char),
+		try:
+			int("".join(char[x:k]))
+		except ValueError:
+			print "********* Error in sentence no: " + dire[i] + " Pls check the sentence. *********"
 		no = int("".join(char[x:k]))
 		dic2.append(no)
 		if(no>maxi and no<10000):
@@ -121,8 +125,14 @@ for i in range(0,len(dire)):
 				if dic2[0] not in check:
 					check.append(dic2[0])
 					dic1.append(dic2)
-			elif(source=="Database_compound_phrase_root_mng"):
+			elif(source=="Database_compound_phrase_root_mng" or source=="Database_compound_phrase_word_mng"):
 				dic2.append("Anu_data/compound-matching/multi_word_expressions.txt")
+				if dic2[0] not in check:
+					check.append(dic2[0])
+					dic1.append(dic2)
+			#Added below loop to access provisional multi word by Roja(21-02-14)
+			elif(source=="provisional_Database_compound_phrase_root_mng" or source=="provisional_Database_compound_phrase_word_mng"):
+				dic2.append("Anu_data/compound-matching/provisional_multi_word_dictionary.txt")
 				if dic2[0] not in check:
 					check.append(dic2[0])
 					dic1.append(dic2)
@@ -161,6 +171,10 @@ for i in range(0,len(dire)):
 		while(char[k]!=')'):
 			k=k+1
 #		print '===========', char[-50:] , char[x:k],  ''.join(char),
+		try:
+			int("".join(char[x:k]))
+		except ValueError:
+			print "********* Error in sentence no: " + dire[i] + " Pls check the sentence. *********"
 		no = int("".join(char[x:k]))
 		dic2 = []
 		dic2.append(no)
@@ -222,6 +236,10 @@ for i in range(0,len(dire)):
 			while(char[k]!=' ' and char[k]!='\t'):
 				k=k+1
 			tmp = []
+			try:
+				int("".join(char[x:k]))
+			except ValueError:
+				print "********* Error in sentence no: " + dire[i] + " Pls check the sentence. *********"
 			no = int("".join(char[x:k]))
 			tmp.append(no)
 			tmp.append(link)
@@ -250,6 +268,10 @@ for i in range(0,len(dire)):
 					k=k+1
 			if(digit==1):
 				tmp = []
+				try:
+					int("".join(char[x:k]))
+				except ValueError:
+					print "********* Error in sentence no: " + dire[i] + " Pls check the sentence. *********"
 				no = int("".join(char[x:k]))
 				tmp.append(no)
 				tmp.append(link)
@@ -292,6 +314,10 @@ for i in range(0,len(dire)):
 					break
 				k=k+1
 			tmp = []
+			try:
+				int("".join(char[x:k]))
+			except ValueError:
+				print "********* Error in sentence no: " + dire[i] + " Pls check the sentence. *********"
 			no = int("".join(char[x:k]))
 			tmp.append(no)
 			tmp.append(link)
@@ -311,6 +337,10 @@ for i in range(0,len(dire)):
 			x=k
 			while(char[k]!=' ' and char[k]!='\t'):
 				k=k+1
+			try:
+				int("".join(char[x:k]))
+			except ValueError:
+				print "********* Error in sentence no: " + dire[i] + " Pls check the sentence. *********"
 			no = int("".join(char[x:k]))
 			tmp=[]
 			tmp.append(no)
@@ -352,6 +382,10 @@ for i in range(0,len(dire)):
 			while(char[k]!=' ' and char[k]!='\t'):
 				k=k+1
 			tmp = []
+			try:
+				int("".join(char[x:k]))
+			except ValueError:
+				print "********* Error in sentence no: " + dire[i] + " Pls check the sentence. *********"
 			no = int("".join(char[x:k]))
 			tmp.append(no)
 			tmp.append(link)
@@ -400,6 +434,16 @@ for i in range(0,len(dire)):
 f1.close()
 
 
+#Checking if sand_box.dat is empty (if empty then true)
+flag_sand=0
+fp = open('sand_box.dat', 'r')
+char = fp.read()
+char = list(char)
+if(len(char)==1 and char[0]=='\n'):
+	flag_sand=1
+#print flag_sand
+
+
 f1 = open(sys.argv[1])
 path = sys.argv[2]+"/"+sys.argv[5]+"_sample2.html"
 f2 = open(path,"a")
@@ -420,10 +464,44 @@ for line in f1:
 		f2.write("<script>\nwindow.onload=function(){\n	var tr = document.getElementsByClassName('row9');\n")	
 		for i in range(0,len(dic)):
 			if(len(dic[i])==1):
-				string = "var td = tr[" + str(i) + "].getElementsByTagName('td');\nvar index=0;\nif(td.length==2)index=1;\nvar a = td[index].getElementsByTagName('a');\na[0].onclick=function(){\n	this.target=\"blank\";\n	this.href=\"file://" + sys.argv[3] + "/" + dic[i][0] + "\";\n}\n"
+				string = "var td = tr[" + str(i) + "].getElementsByTagName('td');\nvar index=0;\nif(td.length==2)index=1;\nvar a = td[index].getElementsByTagName('a');\na[0].onclick=function(){\n	this.target=\"blank\";\n	"
+				char = list(dic[i][0])
+				if(len(char)>len(sys.argv[7])-1):
+					if(sys.argv[7]=="/"+"".join(char[0:len(sys.argv[7])-1])):
+						char.insert(len(sys.argv[7])-1, '/')
+						dic[i][0] = "".join(char[0:len(char)])
+						string+="this.href=\"file://" + "/" + dic[i][0] + "\";\n}\n"
+					else:
+						string+="this.href=\"file://" + sys.argv[3] + "/" + dic[i][0] + "\";\n}\n"
+				else:
+					string+="this.href=\"file://" + sys.argv[3] + "/" + dic[i][0] + "\";\n}\n"
 				f2.write(string)
 			elif(len(dic[i])==3):
-				string = "var td = tr[" + str(i) + "].getElementsByTagName('td');\n	var index=0;\n	if(td.length==2)index=1;\n	var a = td[index].getElementsByTagName('a');\n	var span = a[0].getElementsByTagName('span');\n	var spanv = span[0].innerHTML;\n	var av = a[0].innerHTML;\n	var ind = av.indexOf(spanv);\n	ind--;\n	av=av.slice(0,ind);\n	var k=0;\n	var r = av.indexOf('{');\n	var av1;\n	var av2;\n	if(r!=-1){\n		k = r;\n		av1 = av.slice(0,k);\n		av2 = av.slice(k,av.length-1);\n	}\n	else{\n		av1 = av;\n		av2 = \"tam\";\n		spanv += \" : tam missing\";\n	}\n	a[0].parentNode.removeChild(a[0]);\n	var a1 = document.createElement(\"a\");\n	a1.innerHTML = av1;\n	a1.target = \"blank\";\n	a1.href = \"file://" + sys.argv[3] + "/" + dic[i][0] + "\";\n	a1.className = \"tooltip\";\n	var span1 = document.createElement(\"span\");\n	span1.innerHTML = spanv;\n	a1.appendChild(span1);\n	var a2 = document.createElement(\"a\");\n	a2.innerHTML = av2;\n	a2.target = \"blank\";\n	a2.href = \"file://" + sys.argv[3] + "/" + dic[i][1] + "\";\n	a2.className = \"tooltip\";\n	var span2 = document.createElement(\"span\");\n	span2.innerHTML = \"" + dic[i][2] +"\";\n	a2.appendChild(span2);\n	td[index].appendChild(a1);\n	td[index].appendChild(a2);\n"
+				flag_dic0=0
+				char = list(dic[i][0])
+				if(len(char)>len(sys.argv[7])-1):
+					if(sys.argv[7]=="/"+"".join(char[0:len(sys.argv[7])-1])):
+						char.insert(len(sys.argv[7])-1, '/')
+						dic[i][0] = "".join(char[0:len(char)])
+						flag_dic0=1
+				flag_dic1=0
+				char = list(dic[i][1])
+				if(len(char)>len(sys.argv[7])-1):
+					if(sys.argv[7]=="/"+"".join(char[0:len(sys.argv[7])-1])):
+						char.insert(len(sys.argv[7])-1, '/')
+						dic[i][1] = "".join(char[0:len(char)])
+						flag_dic1=1
+				string = "var td = tr[" + str(i) + "].getElementsByTagName('td');\n	var index=0;\n	if(td.length==2)index=1;\n	var a = td[index].getElementsByTagName('a');\n	var span = a[0].getElementsByTagName('span');\n	var spanv = span[0].innerHTML;\n	var av = a[0].innerHTML;\n	var ind = av.indexOf(spanv);\n	ind--;\n	av=av.slice(0,ind);\n	var k=0;\n	var r = av.indexOf('{');\n	var av1;\n	var av2;\n	if(r!=-1){\n		k = r;\n		av1 = av.slice(0,k);\n		av2 = av.slice(k,av.length-1);\n	}\n	else{\n		av1 = av;\n		av2 = \"tam\";\n		spanv += \" : tam missing\";\n	}\n	a[0].parentNode.removeChild(a[0]);\n	var a1 = document.createElement(\"a\");\n	a1.innerHTML = av1;\n	a1.target = \"blank\";\n	"
+				if(flag_dic0==0):
+					string+= "a1.href = \"file://" + sys.argv[3] + "/" + dic[i][0] + "\";\n	"
+				else:
+					string+="a1.href = \"file://" + "/" + dic[i][0] + "\";\n	"
+				string += "a1.className = \"tooltip\";\n	var span1 = document.createElement(\"span\");\n	span1.innerHTML = spanv;\n	a1.appendChild(span1);\n	var a2 = document.createElement(\"a\");\n	a2.innerHTML = av2;\n	a2.target = \"blank\";\n	"
+				if(flag_dic1==0):
+					string+="a2.href = \"file://" + sys.argv[3] + "/" + dic[i][1] + "\";\n	"
+				else:
+					string+="a2.href = \"file://" + "/" + dic[i][1] + "\";\n	"
+				string+="a2.className = \"tooltip\";\n	var span2 = document.createElement(\"span\");\n	span2.innerHTML = \"" + dic[i][2] +"\";\n	a2.appendChild(span2);\n	td[index].appendChild(a1);\n	td[index].appendChild(a2);\n"
 				f2.write(string)
 		f2.write("}\n</script>\n")
 		f2.write("<script type=\"text/javascript\">\nvar a= document.getElementById(\"navigation\");\nvar form = a.getElementsByTagName(\"form\");\nform[0].style.display=\"inline\";\nform[0].getElementsByTagName(\"p\")[0].style.display=\"inline\";\nvar link= document.createElement('form');\nlink.id=\"form1\";\nlink.style.display=\"inline\";\nvar inp= document.createElement('input');\nvar submit= document.createElement('input');\ninp.type='text';\ninp.id='sentence';\ninp.value='0.0';\ninp.size=\"3\";\nsubmit.type=\"submit\";\nsubmit.value=\"Check Sentence Reordering\";\nlink.appendChild(inp);\nlink.appendChild(submit);\nlink.method=\"POST\";\na.appendChild(link);\nvar button = document.createElement('button');\nbutton.onclick=function(){\nvar no1=window.open(\"http://127.0.0.1/tregex.php\",\"\",\"width=1,height=1\");\n};\nvar text = document.createTextNode(\"Open Parser\");\nbutton.appendChild(text);\na.appendChild(button);\n</script>\n<script type=\"text/javascript\">\nvar myVar = setInterval(function(){myTimer()},3000);\n\nfunction myTimer()\n{\nvar add = document.getElementById('sentence');\nvar add1 = add.value;\nvar a= document.getElementById(\"navigation\");\nvar link = document.getElementById('form1');\nvar address= document.createTextNode((\"file://" + sys.argv[4] + "/tmp/" + sys.argv[5] + "_tmp/\".concat(add1)).concat(\"/hindi_id_order.dat\"));\nlink.action=address.nodeValue;\nlink.target=\"blank\";\n}\na.appendChild(link);\n</script>")

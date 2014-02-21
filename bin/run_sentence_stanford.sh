@@ -51,6 +51,7 @@
  grep "Meaning for verb phrase" $1.error >> errors.txt
  grep "Parserid Wordid mapping missing for" $1.error >> errors.txt
  grep "Removed repeated meaning" $1.error >> errors.txt
+ grep "Warning:" $1.error >> errors.txt
  cat errors.txt
 
  myclips -f $HOME_anu_test/Anu_clp_files/user_info.bat > /dev/null

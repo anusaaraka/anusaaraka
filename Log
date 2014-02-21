@@ -1,4 +1,4 @@
- 14-02-14
+ 21-02-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
@@ -16,39 +16,66 @@
 	Modified : rename_VP_for_To (added 'used' in the list)
  6. sd_lwg_rules.clp
 	Modified : replace_S1  (added 'used' in the list)
- 7. run_modules_std.bat
-	Loaded 'punctuation_info.dat' file in WSD module
- 8. handling_abbrevations.lex:
+ 7. check_for_best_match_in_multi-word.clp:
+	Added: chk_for_prov_multi_same_group_ids and chk_for_prov_multi_diff_group_ids (to get provisional multi fact)
+	       load_provisional_multi_dic	-> To load provisional multi dic facts
+ 8. hindi_meaning.clp:
+	Modified: modify_word_for_apos	-> To remove 's in numbers
+		  database_cmp_phrase_word_mng, database_cmp_phrase_root_mng -> To print source in hindi meaning based on priority
+ 9. hindi_sent_reorder.clp:
+	Modified: insert_aXika_for_adj_er,  insert_sabase_aXika_adj_est -> Added source of provisional database in the list.
+ 10. prepare_apertium_input.clp:
+	Modified: word_mng_with_vib, word_mng_rule, Compound_mng_with_Prep_id1, Compound_mng_with_Prep_id -> Added source of provisional database in the list.
+ 11. handling_abbrevations.lex:
         Added 'Rs.' and 'rs.' 
- 9. Modified e-mail concept related files:
-        run_anu_browser.sh      (Added mail.js file in Browser related code)
-        mail.php                (Added Root layer)
-        ClipsToAnu_browser_intfc.sh     (Added mail.js as an argument for this1.py)
-        this1.py                (Separated mail related work in mail.js file)
- 10. Added mail.js in Broswer/src
- 11. Updated following dictionary related files:
+ 12. In run_modules_std.bat, run_modules_ol.bat and run_modules_link.bat
+	Loaded 'punctuation_info.dat' file in WSD module
+ 13. mail.php:
+	Added Root layer
+ 14. Added following files:
+	mail.js in Broswer/src
+	provisional_multi_word_dictionary.txt in Anu_data/compound-matching 
+	multi_word_expression_for_prov.c in multifast-v1.0.0/src
+ 16. Modified following files:
+	multifast-v1.0.0/src/Makefile	-> To add compilation of multi_word_expression_for_prov.c programe
+	multifast-v1.0.0/src/multi_word_expression.c	-> Modified priority from '5' to '2'
+	multifast-v1.0.0/src/run.sh			-> To create 'provisional_multi_dic.c'
+	list-right			-> Added provisional_multi_word_dictionary.txt
+	list_Anu_data_compound		-> 		"
+ 17. Modified following shell files:
+	Anusaaraka_stanford.sh		-> Added code to run 'provisional_multi_word_dictionary'
+	run_sentence_stanford.sh	-> Displaying Warning message for provisional multi dictionary.
+	dic_compile.sh			-> Modified to remove 'provisional_multi_dic.c'	
+	remove_out-files.sh		-> 		"
+	ClipsToAnu_browser_intfc.sh	-> Added '$HOME_anu_provisional_wsd_rules' and mail.js as a variable to run this1.py programe.
+        run_anu_browser.sh 		-> Added mail.js file in Browser related code
+ 18. In this1.py following modifications are done:
+	To display 'provisional_multi_word_dictionary'
+	To print Error message
+        Separated mail related work in mail.js file
+ 19. Updated following dictionary related files:
         changes_in_databases	 apertium-en-hi.en.metadix 
- 12. Updation of new versions:
+ 20. Updation of new versions:
 	Stanford parser:	3.2.0	to	3.3.1
 	Stanford Tregex:	3.2.0	to	3.3.1
- 13. Following files are updated according to the new version:
+ 21. Following files are updated according to the new version:
 	Anusaaraka_bllip_parser_minion.sh	Anusaaraka_rasp.sh		Anusaaraka_site.sh
 	Anusaaraka_stanford-Factored.sh		Anusaaraka_stanford.sh		Anusaaraka_stanford_minion.sh
 	run_stanford-gui-factored.sh		run_stanford-gui-pcfg.sh	anu_compile.sh
 	remove_out-files.sh			Anusaaraka.sh			Anusaaraka_all.sh	
 	Anusaaraka_berkeley.sh			Anusaaraka_bllip_parser.sh	run_tregex_for_multiparse.sh
 	run_tregex.sh
- 14. Updated following files:
+ 22. Updated following files:
 	Stanford_parser_fails
 	phy_verified_out
  	anusaaraka/README
 	Readme_to_use_email_in_firefox.txt
- 15. Removed following files:
+ 23. Removed following files:
 	Stanford parser 3.2.0
 	Stanford Tregex 3.2.0
- 16. Updated 
+ 24. Updated 
 	sd_verified (650)	small_sent_verified_sd (138)
- 17. Updated Log.
+ 25. Updated Log.
 
  06-01-14
  ========

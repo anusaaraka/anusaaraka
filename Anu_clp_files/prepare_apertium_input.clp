@@ -198,11 +198,12 @@
         (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  complete_sen_mng )" crlf)
  )
  ;========================================== word meanings for wsd/database/idiom ========================================
+ ;Added 'provisional_Database_compound_phrase_word_mng' in the list by Roja(20-02-14)
  ;Added by Mahalaxmi (16-09-09)
  ;Does this shirt match these trousers ? (TROUSERS)
  (defrule word_mng_with_vib
  (declare (salience 1002))
- ?f0<-(id-HM-source ?id ?hmng WSD_compound_phrase_word_mng|Database_compound_phrase_word_mng|WSD_verb_phrase_word_mng|WSD_word_mng|Idiom_word_mng)
+ ?f0<-(id-HM-source ?id ?hmng WSD_compound_phrase_word_mng|Database_compound_phrase_word_mng|WSD_verb_phrase_word_mng|WSD_word_mng|Idiom_word_mng|provisional_Database_compound_phrase_word_mng)
  (pada_info (group_head_id ?id)(vibakthi ?vib)(group_cat PP|infinitive|VP))
  (test (and (neq ?vib 0) (neq ?vib -)))
   =>
@@ -212,10 +213,11 @@
        	(printout ?*aper_debug-file* "(id-Rule_name  " ?id "  word_mng_with_vib )" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------
+ ;Added 'provisional_Database_compound_phrase_root_mng' in the list by Roja(20-02-14)
  ;There was a marked difference in the prices of dishes .
  (defrule word_mng_rule
  (declare (salience 1001))
- ?f0<-(id-HM-source ?id ?hmng WSD_compound_phrase_word_mng|Database_compound_phrase_word_mng|WSD_verb_phrase_word_mng|WSD_word_mng|Idiom_word_mng)
+ ?f0<-(id-HM-source ?id ?hmng WSD_compound_phrase_word_mng|Database_compound_phrase_word_mng|WSD_verb_phrase_word_mng|WSD_word_mng|Idiom_word_mng|provisional_Database_compound_phrase_root_mng)
   =>
        	(retract ?f0)
 	(bind ?hmng (remove_character "_" ?hmng " "))
@@ -223,11 +225,12 @@
        	(printout ?*aper_debug-file* "(id-Rule_name  " ?id "  word_mng_rule )" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------
- ; here prep_id itself is considered as the main meaning 
+ ;Added 'provisional_Database_compound_phrase_root_mng' and 'provisional_Database_compound_phrase_word_mng' in the list by Roja(20-02-14)
+ ;here prep_id itself is considered as the main meaning 
  ;Is there life beyond the grave? Either go to bed or open your book to read.
  (defrule Compound_mng_with_Prep_id1
  (declare (salience 1003))
- ?f0<-(id-HM-source ?p_id ?p_mng Database_compound_phrase_word_mng|Database_compound_phrase_root_mng|WSD_compound_phrase_root_mng)
+ ?f0<-(id-HM-source ?p_id ?p_mng Database_compound_phrase_word_mng|Database_compound_phrase_root_mng|WSD_compound_phrase_root_mng|provisional_Database_compound_phrase_root_mng|provisional_Database_compound_phrase_word_mng)
  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(preposition $? ?p_id $?)(number ?num)(case ?case)(gender ?gen))
  ?f1<-(id-HM-source ?pada_id - ?)
   =>
@@ -240,9 +243,10 @@
         (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id " Compound_mng_with_Prep_id1 )" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------
+ ;Added 'provisional_Database_compound_phrase_root_mng' and 'provisional_Database_compound_phrase_word_mng' in the list by Roja(20-02-14)
  (defrule Compound_mng_with_Prep_id
  (declare (salience 1002))
- ?f0<-(id-HM-source ?p_id ?p_mng Database_compound_phrase_word_mng|Database_compound_phrase_root_mng|WSD_compound_phrase_root_mng)
+ ?f0<-(id-HM-source ?p_id ?p_mng Database_compound_phrase_word_mng|Database_compound_phrase_root_mng|WSD_compound_phrase_root_mng|provisional_Database_compound_phrase_word_mng|provisional_Database_compound_phrase_root_mng)
  (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib)(preposition $? ?p_id $?)(number ?num)(case ?case)(gender ?gen))
  ?f1<-(id-HM-source ?pada_id ?h_mng ?)
  (test (and (neq ?vib 0)(neq ?vib kA)))
