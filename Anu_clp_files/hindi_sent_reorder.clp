@@ -482,6 +482,7 @@
   	(printout  ?*DBUG* "(Rule_Name-ids   insert_nahIM   (hindi_id_order  "(implode$ (create$ $?list  ?id $?list1 nahIM ?kri)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
+ ;Added provisional_Database_compound_phrase_root_mng and provisional_Database_compound_phrase_word_mng in the list by Roja(20-02-14)
  ;Mary is taller than Max.
  ;Added by Shirisha Manju (03-08-13)  Suggested by Chaitanya Sir
  ;At longer wavelengths (i.e., at lower frequencies), the antennas have large physical size and they are located on or very near to the ground.
@@ -491,13 +492,14 @@
  ?f0<-(id-root-category-suffix-number ?id ? adjective er ?)
  (not (id-eng-src ?id ? Word_mng))
  ?f<-(hindi_id_order $?list ?id $?list1)
- (not (id-HM-source ?id ? ?src&Database_compound_phrase_root_mng|Database_compound_phrase_word_mng));Note : Same as below but no sentence found.
+ (not (id-HM-source ?id ? ?src&Database_compound_phrase_root_mng|Database_compound_phrase_word_mng|provisional_Database_compound_phrase_root_mng|provisional_Database_compound_phrase_word_mng));Note : Same as below but no sentence found. 
  =>
         (retract ?f ?f0)
 	(assert (hindi_id_order  $?list aXika ?id $?list1))
   	(printout  ?*DBUG* "(Rule_Name-ids   insert_aXika_for_adj_er   (hindi_id_order  "(implode$ (create$ $?list aXika ?id $?list1 )) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
+ ;Added provisional_Database_compound_phrase_root_mng and provisional_Database_compound_phrase_word_mng in the list by Roja(20-02-14)
  ;The giraffe has the longest neck of any land mammal.
  ;Added by Shirisha Manju (18-06-12)  Suggested by Chaitanya Sir 
  (defrule insert_sabase_aXika_adj_est
@@ -505,7 +507,7 @@
  ?f0<-(id-root-category-suffix-number ?id ? adjective est ?)
  (not (id-eng-src ?id ? Word_mng))
  ?f<-(hindi_id_order $?list ?id $?list1)
- (not (id-HM-source ?id ? ?src&Database_compound_phrase_root_mng|Database_compound_phrase_word_mng));Safety is our highest priority.
+ (not (id-HM-source ?id ? ?src&Database_compound_phrase_root_mng|Database_compound_phrase_word_mng|provisional_Database_compound_phrase_root_mng|provisional_Database_compound_phrase_word_mng));Safety is our highest priority.
  =>
         (retract ?f ?f0)
 	(assert (hindi_id_order  $?list sabase aXika ?id $?list1))
