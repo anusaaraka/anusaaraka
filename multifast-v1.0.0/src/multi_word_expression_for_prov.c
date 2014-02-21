@@ -28,7 +28,7 @@
 #include "ahocorasick.h"
 
 //** Include multi_word dictionary
-#include "multi_word-dic.c"
+#include "provisional_multi_dic.c"
 
 //char buffer[256];
 
@@ -152,7 +152,7 @@ int match_handler(AC_MATCH_t * m, void * param)
 		        printf(" %d ", final_ids);
 		} 
 		
-		printf("%s %s %s %s 2)",  mng, head_id, cat, mng_type);
+		printf("%s %s %s %s 1)",  mng, head_id, cat, mng_type);
 		printf("\n"); 
 	}
 	switch (myp->achar) {

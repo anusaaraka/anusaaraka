@@ -84,7 +84,7 @@
  make clean
 
  cd $HOME_anu_test/multifast-v1.0.0/src/
- rm -f get_word_count multi_word-dic.c  physics-dic.c  proper_noun-dic.c
+ rm -f get_word_count multi_word-dic.c  physics-dic.c  proper_noun-dic.c provisional_multi_dic.c
  make clean 
 
  echo "Removing stanford-tregex"

@@ -28533,7 +28533,7 @@ sImakuSI	f
 sIma	f
 sImAMwaleKA	f
 sImAsaMXi	f
-sImA(man)	f
+sImA	f
 sImikA	f
 sIya	f
 sIyana	f

@@ -46,13 +46,13 @@
         (loop-for-count (?i  1 (length $?grp_ids))
                 (bind ?id (nth$ ?i $?grp_ids))
                 (if (neq ?id ?head_id ) then
-                        (printout ?*hin_mng_file* "(id-HM-source  " ?id "   " ?mng "   " ?src ")" crlf)
+                        (printout ?*hin_mng_file* "(id-HM-source  " ?id "   " ?mng"    Database_compound_phrase_word_mng )" crlf)
                         (assert (mng_has_been_decided ?id))
                 )
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
- ; Added by Shirisha Manju (30-07-13)
+ ;Added by Shirisha Manju (30-07-13)
  (deffunction get_first_mng (?wrd ?cat ?dbase)
 	(bind ?mng (gdbm_lookup ?dbase (str-cat ?wrd "_" ?cat)))
         (if (neq ?mng "FALSE") then
@@ -221,33 +221,53 @@
   (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?grp_mng "  WSD_verb_phrase_root_mng "?id" "?id1")" crlf)
  )
  ;=================================== Default multi word meaning ===============================================
+ ;Added 'if..else' loop by Roja(20-02-14) to decide source of the MWE.
+ ;Based on priority printing the source. 
+ ;If priority=1 then source=provisional_Database_compound_phrase_word_mng
+ ;If priority=2 then source=Database_compound_phrase_word_mng
  ;Database compound phrase mng.
- ; I live in New York City .
- ; Rama is said to be intelligent.
+ ;I live in New York City .
+ ;Rama is said to be intelligent.
  (defrule database_cmp_phrase_word_mng
  (declare (salience 9200))
- (ids-cmp_mng-head-cat-mng_typ-priority $?ids ?cmp_mng ?head_id ?grp_cat WM ?)
+ (ids-cmp_mng-head-cat-mng_typ-priority $?ids ?cmp_mng ?head_id ?grp_cat WM ?priority)
  ?mng<-(meaning_to_be_decided ?head)
  (test (eq (nth$ ?head_id $?ids) ?head))
  =>
 	(retract ?mng)
         (bind ?id (nth$ ?head_id $?ids))
-        (print_hindi_mng ?id -  Database_compound_phrase_word_mng $?ids)
-        (printout ?*hin_mng_file* "(id-HM-source  "?id"  "?cmp_mng"    Database_compound_phrase_word_mng)" crlf)
-        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  "?id"  "?cmp_mng"    Database_compound_phrase_word_mng "(implode$ $?ids)")" crlf)
+	(if (eq ?priority 1) then
+        	(print_hindi_mng ?id -  provisional_Database_compound_phrase_word_mng $?ids)
+	        (printout ?*hin_mng_file* "(id-HM-source  "?id"  "?cmp_mng"    provisional_Database_compound_phrase_word_mng)" crlf)
+        	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids  "?id"  "?cmp_mng"    provisional_Database_compound_phrase_word_mng "(implode$ $?ids)")" crlf)
+	else
+	        (print_hindi_mng ?id -  Database_compound_phrase_word_mng $?ids)
+        	(printout ?*hin_mng_file* "(id-HM-source  "?id"  "?cmp_mng"    Database_compound_phrase_word_mng)" crlf)
+	        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  "?id"  "?cmp_mng"    Database_compound_phrase_word_mng "(implode$ $?ids)")" crlf)
+	)
  )
  ;--------------------------------------------------------------------------------------------------------------
+ ;Added 'if..else' loop by Roja(20-02-14) to decide source of the MWE.
+ ;Based on priority printing the source. 
+ ;If priority=1 then source=provisional_Database_compound_phrase_root_mng
+ ;If priority=2 then source=Database_compound_phrase_root_mng
  (defrule database_cmp_phrase_root_mng
  (declare (salience 9200))
- (ids-cmp_mng-head-cat-mng_typ-priority $?ids ?cmp_mng ?head_id ?grp_cat RM ?)
+ (ids-cmp_mng-head-cat-mng_typ-priority $?ids ?cmp_mng ?head_id ?grp_cat RM ?priority)
  ?mng<-(meaning_to_be_decided ?head)
  (test (eq (nth$ ?head_id $?ids) ?head))
  =>
 	(retract ?mng)
         (bind ?id (nth$ ?head_id $?ids))
-        (print_hindi_mng ?id -  Database_compound_phrase_root_mng $?ids)
-        (printout ?*hin_mng_file* "(id-HM-source  "?id"  "?cmp_mng"    Database_compound_phrase_root_mng)" crlf)
-        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id"  "?cmp_mng"    Database_compound_phrase_root_mng "(implode$ $?ids)")" crlf)
+	(if (eq ?priority 1) then
+                (print_hindi_mng ?id -  provisional_Database_compound_phrase_root_mng $?ids)
+                (printout ?*hin_mng_file* "(id-HM-source  "?id"  "?cmp_mng"    provisional_Database_compound_phrase_root_mng)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  "?id"  "?cmp_mng"    provisional_Database_compound_phrase_root_mng "(implode$ $?ids)")" crlf)
+        else
+                (print_hindi_mng ?id -  Database_compound_phrase_root_mng $?ids)
+                (printout ?*hin_mng_file* "(id-HM-source  "?id"  "?cmp_mng"    Database_compound_phrase_root_mng)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  "?id"  "?cmp_mng"    Database_compound_phrase_root_mng "(implode$ $?ids)")" crlf)
+        )
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;database verb_phrase mng
@@ -273,11 +293,12 @@
   	)
  )
  ;======================================== PropN rules ==========================================================
+ ;Rule Modified by Roja(19-02-14). Added 'number' in category fact, also added 'if ...else' loop. Ex: 1963 And 1966's popular films were based on novels Godhan and Gaban, respectively .
  ;Added by Shirisha Manju (26-08-13)
  ;The explanation of the results led to the birth of Rutherford's planetary model of atom.
  (defrule modify_word_for_apos
  (declare (salience 9000))
- (id-cat_coarse ?id PropN)
+ (id-cat_coarse ?id PropN|number)
  ?mng<-(meaning_to_be_decided ?id)
  ?f0<-(id-original_word ?id ?word)
  ?f1<-(id-word ?id ?wrd)
@@ -287,7 +308,11 @@
         (retract ?f0 ?f1)
         (bind ?n_word (string-to-field (sub-string 1 (- (str-index "'s" ?word) 1) ?word)))
         (assert (id-original_word ?id ?n_word))
-        (assert (id-word ?id (lowcase ?n_word)))
+	(if (eq ?id number) then 
+	        (assert (id-word ?id ?n_word))
+	else
+        	(assert (id-word ?id (lowcase ?n_word)))
+	)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (16-08-13) Suggested by Chaitanya Sir
