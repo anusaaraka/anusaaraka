@@ -1,4 +1,4 @@
- 21-02-14
+ 22-02-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
@@ -43,12 +43,15 @@
 	list-right			-> Added provisional_multi_word_dictionary.txt
 	list_Anu_data_compound		-> 		"
  17. Modified following shell files:
-	Anusaaraka_stanford.sh		-> Added code to run 'provisional_multi_word_dictionary'
 	run_sentence_stanford.sh	-> Displaying Warning message for provisional multi dictionary.
 	dic_compile.sh			-> Modified to remove 'provisional_multi_dic.c'	
 	remove_out-files.sh		-> 		"
 	ClipsToAnu_browser_intfc.sh	-> Added '$HOME_anu_provisional_wsd_rules' and mail.js as a variable to run this1.py programe.
         run_anu_browser.sh 		-> Added mail.js file in Browser related code
+	Modified following shell files to get provisional multiword dictionary:
+	Anusaaraka_stanford.sh	Anusaaraka_site.sh	Anusaaraka_bllip_parser.sh	Anusaaraka_stanford_minion.sh
+	Anusaaraka.sh		Anusaaraka_all.sh	Anusaaraka_berkeley.sh	Anusaaraka_stanford-Factored.sh	
+	Anusaaraka_link.sh	Anusaaraka_ol.sh	Anusaaraka_rasp.sh	Anusaaraka_bllip_parser_minion.sh
  18. In this1.py following modifications are done:
 	To display 'provisional_multi_word_dictionary'
 	To print Error message

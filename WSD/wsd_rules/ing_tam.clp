@@ -333,7 +333,7 @@
 (id-root ?id1  sit|miss|stand)
 =>
 (retract ?mng)
-(assert (id-E_tam-H_tam_mng ?id ing ye_hue))
+(assert (id-E_tam-H_tam_mng ?id ing yA_huA))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  ing_tam.clp  	ing_tam18  "  ?id "  ye_hue )" crlf))
 )
