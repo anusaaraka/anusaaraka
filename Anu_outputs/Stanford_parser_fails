@@ -61,6 +61,9 @@ He told me why he was here and what he was doing.
 Did you send a birthday card to Sheela?
 --> "tmod(send-3, card-6)"  wrong relation (Note:: instead of "birthday" , "marriage" is given then we get correct relation)
 
+The languages recognized as principle languages were Bengali, Hindi, Urdu and Assamies.
+--->  'as principle languages'  should be PP
+
 Failures due to category problem::
 ================================
 Please say loudly.
@@ -116,3 +119,11 @@ Deal five cards to each of them.
 	-> Parser gave 'Deal'  category as NNP but it should be verb.
 She is a real class performer.
 	--> Parser gave 'class' category as noun but it should be adjective
+Electrodynamics deals with electric and magnetic phenomena associated with charged and magnetic bodies.
+	--> Parser gave 'deals' category as NNS  but it should be verb.
+Applied physics is equally demanding.
+	--> Parser gave 'demanding' category as VBG but it should be adjective.
+My grandma became very demanding as she got older.
+	--> Parser gave 'demanding' category as VBG but it should be adjective.
+The most demanding challenge I have ever faced.
+	--> Parser gave 'demanding' category as VBG but it should be adjective.

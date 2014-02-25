@@ -586,5 +586,34 @@ Hindi meaning using Stanford parser 2.138
 So he reluctantly agreed. 
 isalie vaha anicCA se sahamawa huA.
 
+Hindi meaning using Stanford parser 2.139
+The anaesthetic acted quickly.
+cewanASUnyawA_kI ORaXi ne PurwI se kArya kiyA.
+
+Hindi meaning using Stanford parser 2.140
+Aditya asked anxiously.
+Axiwya ne uxvega se pUCA.
+
+Hindi meaning using Stanford parser 2.141
+Can it be washed?
+kyA yaha XoyA jA sakawA hE?
+
+Hindi meaning using Stanford parser 2.142
+It really is lovely.
+yaha vAswava meM manohara hE.
+Multiple adjective senses are available for lovely. WSD rule is required
+
+Hindi meaning using Stanford parser 2.143
+But look at this!
+paranwu isako xeKie!
+
+Hindi meaning using Stanford parser 2.144
+He is drowning.
+vaha dUba rahA hE.
+
+Hindi meaning using Stanford parser 2.145
+Draw the curtains.
+parxe KIMcie.
+
 Calling Transliteration
 Calling Interface related programs

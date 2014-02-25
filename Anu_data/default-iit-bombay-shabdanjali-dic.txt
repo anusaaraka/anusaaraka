@@ -27576,7 +27576,7 @@ exhausting_UNDEFINED	WakA_xenA
 exhausting_adjective	WakAU
 exhaustion_noun	kRaya/WakAna/samApana
 exhaustions_UNDEFINED	kRaya
-exhaustive_adjective	soKane_vAlA/suviswqwa
+exhaustive_adjective	viswqwa/soKane_vAlA/suviswqwa
 exhaustively_adverb	suviswqwa_rUpa_se
 exhaustiver_UNDEFINED	soKane_vAlA
 exhaustivest_UNDEFINED	soKane_vAlA
@@ -89969,7 +89969,7 @@ wall_verb	xIvAra_se_Gera
 wallabies_UNDEFINED	CotA_kafgArU
 wallaby_noun	CotA_kafgArU
 walled_UNDEFINED	xIvAra_se_GeranA
-wallet_noun	JolA/parsa/batuA
+wallet_noun	batuA/JolA/parsa
 wallets_UNDEFINED	JolA
 walleye_noun	apasArI_wiryakaxqRti
 walleyed_adjective	BefgA
@@ -93516,3 +93516,5 @@ Murrah_noun	mUDZA
 peacekeeping_noun	SAnwi_banAe_raKane_vAlA
 infestation_noun	saMkramaNa
 evince_verb	icCA_vyakwa_kara
+educative_adjective	SikRApraxa
+expressible_adjective	vyakwa_karane_yogya
