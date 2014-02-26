@@ -5697,3 +5697,4 @@ Jhumur	JUmara
 Holi	holI
 Marathi	marATI	
 Simon	simona
+Gangotri	gaMgowrI
