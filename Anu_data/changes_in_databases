@@ -456,6 +456,9 @@
 							      by the colleges were thus very materially improved as a result of the Act of 1904
 	government (		"	"		"    ) Ex: The services of Asutosh were recognized by Government and be was Knighted at
 								   the Delhi Durbar in December 1911.
+	president	(Suggested by Prachi Banasthali  07-03-14 )
+	chairperson	(       "       "                       " )
+	advocate	(Suggested by Anita ji LTRC             " )
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -708,8 +711,9 @@ Removed:
   Added:
          time	1  (By Sukhada 13-02-11) 
          year	1  (        "                )
-	 second	1  (Suggested by Nandini ji LTRC 24-10-13) Ex: The winner cut ten seconds off the world record.
-	 month	1 (Suggested by Krithiki LTRC 03-12-13) Ex:The solution came through at the fatal moment. 
+	 second	1  (Suggested by Nandini ji LTRC	24-10-13) Ex: The winner cut ten seconds off the world record.
+	 month	1  (Suggested by Krithiki LTRC		03-12-13) Ex: The solution came through at the fatal moment.
+	 week	1  (Suggested by Prachi Banasthali	07-03-14) Ex: He took off two weeks in September.	     
 
   Removed: month_day.txt and merged all its contents in time.txt (Suggested by Sukhada 08-03-11)
 
@@ -1030,6 +1034,10 @@ Removed:
 	79. expressible_adjective   	vyakwa_karane_yogya		(Suggested by Pamila Banasthali 25-02-14)
 					Ex: Quantitative measurement is central to the growth of science especially physics because the
 					    laws of nature happen to be expressible in precise mathematical equations.
+	80. etc._noun			Axi				(Suggested by Pramila Banasthali 07-03-14)
+					Ex: The working of an antenna, the propagation of radio waves in the ionosphere etc. are problems of 						electrodynamics.
+	81. intervening_adjective	maXyAvarwI			(Suggested by Prachi Banasthali 07-03-14)
+					Ex: Little had changed in the intervening years.
 
 
     4. Added new meaning to the existing word:
@@ -1427,6 +1435,10 @@ Removed:
 				Ex: She picked up the wallet and handed it back to him.
 	115. expense_noun    	lAgawa		as	Karca			(Suggested by Pramila Banasthali 07-03-14)
 				Ex: He tallied his expenses every day.
+	116. chocolate_noun	gahara_BurA_rafga	as	cAkaleta	(Suggested by Preeti ji LTRC 06-03-14)
+				Ex: I made a resolution to give up chocolate.
+	117. rightful_adjective	aXikArI		as	asalI			(Suggested by Anita ji LTRC 06-03-14)
+				Ex: We must return them to their rightful owner, How can you do that?
 
 	
     6. Removed meaning from existing list:
@@ -1639,6 +1651,9 @@ Removed:
 				Ex: Inspite of this he stood third among the successful candidates. 
 	any_time		UNDEFINED		as	noun		(Suggested by preeti ji LTRC	03-02-14)
 				Ex: The baby could arrive any time now.
+	coffee_drinks		koYPI_peya_yA_Sarabawa	as	koYPI_peya/Sarabawa(Suggested by Preeti ji LTRC 07-03-14)
+				Ex: People use espresso to make other coffee drinks.
+
 		
     Added new entry:
     ----------------
@@ -1934,15 +1949,19 @@ Removed:
  
     Added new entry:
     ----------------
-	charged_particles        AveSiwa_kaNa#AveSiwa_kaNa#noun#2#RM		(Suggested by Chaitanya Sir	 07-06-13)
-	discharge_tube		 visarjana_nalI#visarjana_nalI#noun#2#WM	(Suggested by Pramila Banasthali 19-08-13)
-	discharge_valve		 visarjana_vAlva#visarjana_vAlva#noun#2#WM 	(	"		"		 )
-	potential_difference     viBavAnwara#viBavAnwara#noun#1#RM		(	"		"	 23-08-13)
+	charged_particles	AveSiwa_kaNa#AveSiwa_kaNa#noun#2#RM		(Suggested by Chaitanya Sir	 07-06-13)
+	discharge_tube		visarjana_nalI#visarjana_nalI#noun#2#WM	(Suggested by Pramila Banasthali 19-08-13)
+	discharge_valve		visarjana_vAlva#visarjana_vAlva#noun#2#WM 	(	"		"		 )
+	potential_difference	viBavAnwara#viBavAnwara#noun#1#RM		(	"		"	 23-08-13)
 	dynamically_stable_orbit gawiSIla_sWira_kakRA#gawiSIla_sWira_kakRA#noun#3#RM( 	"		"	 10-09-13)
-	double_slit     	 xviJirI#xviJirI#noun#2#RM			(	"		"    	    "    )
-	closed_loop     	 baMxa_paripaWa#baMxa_paripaWa#noun#2#RM	(Suggested by	Chaitanya Sir	 21-09-13)
-	sign_convention		 cihna_paripAtI#cihna_paripAtI#noun#1#RM	(suggested by Preeti ji LTRC	 19-12-13)
-				 Ex: We now apply the sign convention. 
+	double_slit		xviJirI#xviJirI#noun#2#RM			(	"		"    	    "    )
+	closed_loop		baMxa_paripaWa#baMxa_paripaWa#noun#2#RM	(Suggested by	Chaitanya Sir	 21-09-13)
+	sign_convention		cihna_paripAtI#cihna_paripAtI#noun#1#RM	(suggested by Preeti ji LTRC	 19-12-13)
+				Ex: We now apply the sign convention.
+	vernier_callipers	varniyara_kEliparsa#varniyara_kEliparsa#noun#2#WM	(Suggested by Prachi Banasthali 07-03-14)
+				Ex: For example, a vernier callipers has the least count as 0.01 cm
+	vernier_scale		varniyara_pEmAnA#varniyara_pEmAnA#noun#2#RM		(	"		"		) 
+				Ex: In a vernier callipers the zero mark of vernier scale may not coincide with the zero mark of the main scale
 			
 
  changes in causative_verb_mng.txt
@@ -2052,7 +2071,11 @@ Removed:
         prowler    	(       "       "                    "    ) Ex: He flushed out the prowler.
         bandit  	(	"	"		     "    ) Ex: The police flushed out the bandits from their place of hiding.
 	audience	(Suggested by Pramila Banasthali 25-01-14 ) Ex: Her performance electrified the audiences.	
-	hunter     	((By Manju from animate.txt      12-02-14 ) Ex: A deer was ensnared by hunters.
+	hunter     	(By Manju from animate.txt	 12-02-14 ) Ex: A deer was ensnared by hunters.
+	his		(By Roja from animate.txt	 07-03-14 ) Ex: His descent into crime was rapid.
+	president	(Suggested by Prachi Banasthali	 07-03-14 )
+	chairperson	(	"	"			" )
+	advocate	(Suggested by Anita ji LTRC	 	" )
 
 
  changes in named_entities.txt

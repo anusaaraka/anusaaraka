@@ -51,9 +51,15 @@ husband	1
 king	1
 professor	1
 lecturer	1
+his	1
 clerk	1
 minister	1
 terrorist	1
 robber	1
 prowler	1
 bandit	1
+audience	1 
+hunter	1
+president	1
+chairperson	1
+advocate	1

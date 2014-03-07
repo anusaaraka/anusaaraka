@@ -2,7 +2,7 @@
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
-		  collect.clp	material.clp	remain.clp	can.clp
+		  collect.clp	material.clp	remain.clp	can.clp		create.clp
  2. vibakthi.clp
 	Added    : get_vib_for_grp_id_from_wsd	and 	get_vib_for_hid_from_wsd
 	Modified : assert_facts rule

@@ -7596,7 +7596,7 @@ coffee_cake	kAPI_kA_keka#kAPI_kA_keka#noun#2#RM
 coffee_can	kAPI_kA_dibbA#kAPI_kA_dibbA#noun#2#RM
 coffee_capuccino	kEpIcino_kAPZI#kEpIcino_kAPZI#noun#2#RM
 coffee_cup	kOPI_kA_pyAlA#kOPI_kA_pyAlA#noun#2#RM
-coffee_drinks	koYPI_peya_yA_Sarabawa#koYPI_peya_yA_Sarabawa#noun#2#RM
+coffee_drinks	koYPI_peya/Sarabawa#koYPI_peya/Sarabawa#noun#2#RM
 coffee_house	koYPI_hAusa#koYPI_hAusa#noun#2#RM
 coffee_machine	koYPI_maSIna#koYPI_maSIna#noun#2#RM
 coffee_shop	kOPI_SOpa#kOPI_SOpa#noun#2#RM

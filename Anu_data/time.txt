@@ -182,3 +182,4 @@ yesterday	1
 yesterday's	1
 second	1
 moment	1
+week	1

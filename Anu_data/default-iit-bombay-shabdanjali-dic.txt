@@ -14149,7 +14149,7 @@ chock-a-block_adjective	TasATasa
 chock_noun	paccara
 chocolate_UNDEFINED	cAkaleta_rafga
 chocolate_adjective	gaharA_bUrA/cAkaleta
-chocolate_noun	gahara_BurA_rafga/cAkaleta_sasa/cAkaleta_peya/cAkaleta
+chocolate_noun	cAkaleta/gahara_BurA_rafga/cAkaleta_sasa/cAkaleta_peya
 chocolates_UNDEFINED	cAkaleta
 choice_adjective	uwwama/sAvaXAnIpUrvaka_cune_hui/cuniMnxA/baDiyA/acCA
 choice_noun	vikalpa/vaswu_kA_uwwama_safgraha/prakAra/pasanxa/cunAva/cunane_kA_aXikAra/cayana_kA_aXikAra/cayana/cArA
@@ -66934,7 +66934,7 @@ righteousness_noun	nekI/nIwiparAyaNawA
 righteousnesses_UNDEFINED	nekI
 righter_UNDEFINED	sahI
 rightest_UNDEFINED	sahI
-rightful_adjective	aXikArI/vEXa/asalI
+rightful_adjective	asalI/aXikArI/vEXa
 rightfuler_UNDEFINED	aXikArI
 rightfulest_UNDEFINED	aXikArI
 righting_UNDEFINED	sahI
@@ -93518,3 +93518,5 @@ infestation_noun	saMkramaNa
 evince_verb	icCA_vyakwa_kara
 educative_adjective	SikRApraxa
 expressible_adjective	vyakwa_karane_yogya
+etc._noun	Axi
+intervening_adjective	maXyAvarwI

@@ -321,3 +321,5 @@ relative_velocity	sApekRa_vega#sApekRa_vega#noun#2#RM
 relative_motion	 sApekRa_gawi#sApekRa_gawi#noun#2#RM
 relative_density	ApekRika_Ganawva#ApekRika_Ganawva#noun#2#RM
 sign_convention	cihna_paripAtI#cihna_paripAtI#noun#1#RM
+vernier_callipers	varniyara_kEliparsa#varniyara_kEliparsa#noun#2#WM
+vernier_scale	varniyara_pEmAnA#varniyara_pEmAnA#noun#2#RM
