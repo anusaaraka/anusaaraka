@@ -556,6 +556,39 @@
             )
         )
 )
+
+
+;Added by Shirisha Manju (28th feb 2014)
+;After all, you are hardly surprised to hear sound waves from someone talking around a corner!
+(defrule lookup_man_word_in_hindi_wnb_using_multi_word_dic
+(declare (salience 500))
+(current_id ?mid)
+(manual_id-cat-word-root-vib-grp_ids ?mid ? $?word - $?h_root - $?t - $?grp_ids)
+(test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root))) "FALSE"))
+(id-multi_word_expression-dbase_name-mng ? $?eng eng_multi_word_dic.gdbm ?mng)
+(multi_word_expression-grp_ids $?eng $?ids)
+(id-Apertium_output ?aid $?a_mng)
+(test (and (member$ ?aid $?ids)(neq (length $?a_mng) 0)))
+(id-root ?aid ?e_root)
+(test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng))) "FALSE"))
+(test (eq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root))) (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng)))))
+(not (prov_assignment ?aid ?mid))
+(not (anu_id-man_id ?aid ?mid))
+=>
+        (assert (anu_id-man_id ?aid ?mid))
+        (bind ?dic_val (gdbm_lookup "hindi_wordnet_dic1.gdbm" (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root)))))
+        (bind ?dic_val (remove_character "/" ?dic_val " "))
+        (if (neq ?dic_val "FALSE") then
+            (if (and (member$ $?h_root ?dic_val)(member$ ?mng ?dic_val)) then
+                (bind ?*count* (+ ?*count* 1))
+                (assert (update_count_fact ?*count*))
+                (assert (anu_ids-sep-manual_ids ?aid - $?grp_ids))
+                (assert (prov_assignment ?aid ?mid))
+                (assert (man_id-src-root ?mid dictionary ?e_root))
+            )
+        )
+)
+
 ;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju (5th Jan 2013)
 ;But only a few years later, in 1938, Hahn and Meitner discovered the phenomenon of neutron-induced fission of uranium, which would serve as the basis of nuclear power reactors and nuclear weapons.

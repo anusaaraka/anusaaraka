@@ -130,9 +130,9 @@
 								        complained ," All our work is in vain ".
  	vinawI_kara  	f  Suggested by Meenaji (18-03-10)       Ex: As the Master grew old and infirm , the disciples
 								     begged him not to die .   
-        xeKaBAla_kara   f  Added by Meena (27-03-10)  	         Ex: The shephered is tending the sheep. 
-        upayoga_kara	m  Suggested by Sukhada (20-04-10)       Ex: They used force to open the jammed door . 
-        sUcanA_xe	f  Suggested by Meena (13-05-10)         Ex: We informed the new employees that no salary increase 
+        xeKaBAla_kara   f  Added by Meena (27-03-10)  		Ex: The shephered is tending the sheep. 
+        upayoga_kara	m  Suggested by Sukhada (20-04-10)	Ex: They used force to open the jammed door . 
+        sUcanA_xe	f  Suggested by Meena (13-05-10)	Ex: We informed the new employees that no salary increase 
 									would be possible .
         niScaya_kara    m   Meena (14.6.10)
         walASa_kara     f   Meena (14.6.10)
@@ -141,9 +141,12 @@
 	BalA_kara       m   Suggested by Meena vipin (25-01-11)Ex:Republican policies only benefit the rich and the powerful.
         Sarwa_lagA	f   Meena(5.4.11)
 	kE_kara 	f   Meena(2.5.11)
-	uwwara_xe	m   Suggested by Sukhada (16-09-11)      Ex: He studiously avoided answering the question.)	 
-	puRti_kara	f   		"	 (08-01-14)	 Ex: Indeed, the detection of such waves in the Orion Nebula confirmed 
+	uwwara_xe	m   Suggested by Sukhada (16-09-11)	Ex: He studiously avoided answering the question.)	 
+	puRti_kara	f   		"	 (08-01-14)	Ex: Indeed, the detection of such waves in the Orion Nebula confirmed 
 								     that new stars are still being born there. 
+	CApa_lagA       f   Suggested by Sukhada (04-02-14)	Ex: The newspapers branded her a hypocrite.
+	xAzva_lagA      m   		"		"	Ex: I wager that she can not pass the exam. 
+	
 
 
   changes in compound_phrase.txt  (samAsa.txt)
@@ -1422,6 +1425,8 @@ Removed:
 				Ex: Special conditions apply if you are under 18.
 	114. wallet_noun     	JolA		as	batuA			(Suggested by Pramila Banasthali 24-02-14)
 				Ex: She picked up the wallet and handed it back to him.
+	115. expense_noun    	lAgawa		as	Karca			(Suggested by Pramila Banasthali 07-03-14)
+				Ex: He tallied his expenses every day.
 
 	
     6. Removed meaning from existing list:
@@ -1884,6 +1889,10 @@ Removed:
 				Ex: The Infra Red Astronomy Satellite IRAS launched in 1983 succeeded in discovering such protoplanetary 					   discs around a few nearby stars like beta pictoris. 
 	pre-solar_adjective	sOramaNdala_kI_racanA_se_pahale_ke(	"	   "	 )
 				Ex: However, with the pre-solar cloud, another factor had to be  taken into co..
+	elementary_adjective 	mUla		(Suggested by Pramila Banasthali 05-02-14)
+				Ex: Note that when mole is used the elementary entities must be specified.
+	dimensionless_adjective vimAvihIna	(Suggested by Pramila Banasthali 05-02-14)
+				Ex: Both these are dimensionless quantities.
 
 
     Modifying spelling of the existing word :

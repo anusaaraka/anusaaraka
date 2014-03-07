@@ -30,6 +30,7 @@
  (assert (id-attach_emphatic))
  (assert (id-eng-src))
  (assert (id-attach_eng_mng))
+ (assert (id-wsd_viBakwi))
  )
  ;----------------------------------------------------------------------------------------------------------------
  ; I am going to remarry when you die

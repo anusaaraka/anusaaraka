@@ -401,3 +401,5 @@ charge_verb	AveSiwa_kara
 absorb_verb	avaSoRiwa_kara
 protoplanetary_noun	protoplEnetarI
 pre-solar_adjective	sOramaNdala_kI_racanA_se_pahale_ke
+dimensionless_adjective	vimAvihIna
+elementary_adjective	mUla

@@ -127,3 +127,11 @@ My grandma became very demanding as she got older.
 	--> Parser gave 'demanding' category as VBG but it should be adjective.
 The most demanding challenge I have ever faced.
 	--> Parser gave 'demanding' category as VBG but it should be adjective.
+Some derived units in terms of the SI base units are given.
+	--> Parser gave 'derived' category as VBD but it should be adjective.
+Some SI derived units are given special names and some derived SI units make use of these units with special names and the seven base units.
+	--> Parser gave 'derived' category as VBD but it should be adjective.
+A complete set of these units both the base units and derived units is known as the system of units. 
+	--> Parser gave 'derived' category as NN but it should be adjective.
+	--> Parser gave 'base' category as NN but it should be adjective.
+
