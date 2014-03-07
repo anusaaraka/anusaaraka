@@ -18,7 +18,7 @@ an	eka/koI/prawi/kisI/eka_EsI/kisI_BI
 and	Ora/evaM/waWA/va
 another	eka_Ora/xUsarA/eka_anya/Binna
 anti	viroXI/prawiroXa/ke_viroXI
-any	WodA/prawyeka/mAmUlI/koI_BI/koI/kisI_BI/jo_BI/eka/kisI_BI_sWiwi_meM/bilkula/aba_Ora/kuCa/kisI_ko/kiFciwa
+any	WodA/prawyeka/mAmUlI/koI_BI/koI/kisI_BI/jo_BI/eka/kisI_BI_sWiwi_meM/bilkula/aba_Ora/kuCa/kisI_ko/kiFciwa/kisI
 anybody	koI_vyakwi/koI/koI_BI/kisI_ko_BI
 anyone	koI_eka/koI_BI/kisI_ko
 anything	kuCa_BI/kuCa
@@ -170,7 +170,7 @@ what	kOna-sA/kiwanA/kisa/jo_kuCa/kyA/jo/isA/jEsA
 whatever	jo_kuCa_BI/kuCa_BI/jo_BI
 when	jaba/yaxyapi/waba/cUzki/jisa_samaya/kaba/kyozki
 where	kahAz/jisa_sWAna_para/jaba_ki/jahAz/jisase/jisameM/jisapara
-which	kina/jo/jise/jinako/jinakA/jisake/jinase/jisameM/jisane/kOna-sA/jaba_ki/kyA/jisakA/jinheM/ji/kOna_sA
+which	kina/jo/jise/jinako/jinakA/jisake/jinase/jisameM/jisane/kOna-sA/jaba_ki/kyA/jisakA/jinheM/ji/kOna_sA/jahAz
 whichever	jo_BI/koI_BI
 who	jo/kOna/kisane
 whoever	jo_koI/kOna

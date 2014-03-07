@@ -33,6 +33,7 @@
  (assert (prep_id-relation-anu_ids))
  (assert (id-eng-src))
  (assert (id-attach_eng_mng))
+ (assert (id-wsd_viBakwi)) 
  )
 
  ; if there is a conjunction between verbs and the tam for first verb is say wA_hE then modify all the tams for the verbs in conjunction as wA_hE

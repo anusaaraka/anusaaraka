@@ -27747,7 +27747,7 @@ expending_UNDEFINED	vyaya_karanA
 expenditure_noun	vyaya/Karca
 expenditures_UNDEFINED	vyaya
 expends_UNDEFINED	vyaya_karanA
-expense_noun	lAgawa/Karca
+expense_noun	Karca/lAgawa
 expensed_UNDEFINED	lAgawa
 expenses_UNDEFINED	lAgawa
 expensing_UNDEFINED	lAgawa

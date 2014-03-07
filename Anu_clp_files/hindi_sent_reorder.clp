@@ -41,6 +41,7 @@
  (assert (id-wsd_root))
  (assert (id-attach_emphatic))
  (assert (id-attach_eng_mng))
+ (assert (id-wsd_viBakwi))
  )
  ;============================================ Stanford Parser Rules ===================================================
 

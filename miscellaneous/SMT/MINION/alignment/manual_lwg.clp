@@ -110,6 +110,7 @@
 (id-node-word-root ?id0 ? $? - $?root)
 ?f2<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) kI ?)
 ?f3<-(man_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w&apekRA ?)
+(man_id-word-cat ?id3&:(=(+ ?id0 3) ?id3) ? ?c&~VM);It seems to turn around corners and enter regions where we would expect a shadow. yaha kone se mudakara usa kRewra meM praveSa karawA huA prawIwa howA hE jahAz hama CAyA kI apekRA karawe hEM
 (not (retract_manual_fact ?id0))
 (not (retract_manual_fact ?id1))
 =>
@@ -168,6 +169,21 @@
  	(assert (manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - ?vib - ?id0 ?id1))
 )
 ;----------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (27-02-14)
+;A straight line through M perpendicular to the slit plane meets the screen at C.
+;biMxu @M se gujarane vAlI Ora JirI ke wala ke aBilambavawa sarala reKA paraxe ko biMxu @C para milawI hE .
+(defrule single_vib1
+(declare (salience 70))
+?f1<-(man_id-word-cat ?id0 ?cap_letter ?cat)
+(id-word ? ?w&:(eq (lowcase ?cap_letter) ?w))
+?f2<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle ?c&~VM)
+(not (retract_manual_fact ?id0))
+(not (retract_manual_fact ?id1))
+=>
+        (retract ?f1 ?f2)
+        (assert (manual_id-cat-word-root-vib-grp_ids ?id0 NN ?cap_letter - ?cap_letter - ?vib - ?id0 ?id1))
+)
+;----------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
 ;Dispersion takes place because the refractive index of medium for different wavelengths (colors) is different.
 ;parikRepaNa kA kAraNa yaha hE ki kisI mAXyama kA apavarwanAfka viBinna warafgaxErGyoM  @PUNCT-OpenParenvarNoM @PUNCT-ClosedParen ke lie Binna - Binna howA hE @PUNCT-Dot
@@ -176,7 +192,7 @@
 
 ;Eng sen :Acceleration, therefore, may result from a change in [speed (magnitude)], a change in direction or changes in both.
 ;Man sen : awaH yA wo [cAla]  @PUNCT-OpenParen parimANa @PUNCT-ClosedParen [meM] parivarwana @PUNCT-Comma  xiSA meM parivarwana aWavA ina xonoM meM parivarwana se wvaraNa kA uxBava ho sakawA hE  @PUNCT-Dot
-(defrule single_vib1
+(defrule single_vib2
 (declare (salience 70))
 ?f1<-(man_id-word-cat ?id0 $?noun ?cat)
 (man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen ?)
@@ -239,7 +255,7 @@
 ;Added by Shirisha Manju(19-9-12)
 ;We have seen earlier that the magnitude of displacement may be different from the actual path length.
 ;hama yaha xeKa cuke hEM ki visWApana kA parimANa vAswavika [paWa - lambAI se] Binna ho sakawA hE.
-(defrule single_vib2
+(defrule single_vib_for_group_fact1
 (declare (salience 65))
 ?f0<-(manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - $?vib - $?ids ?id)
 ?f1<-(man_id-word-cat ?id1&:(=(+ ?id 1) ?id1) ?vib1&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|waka ?c&~VM)
@@ -256,7 +272,7 @@
 ;Added by Shirisha Manju(10-11-12)
 ;Although acceleration can vary with time, our study in this chapter will be restricted to motion with constant acceleration.
 ;yaxyapi gawimAna vaswu kA wvaraNa [samaya ke sAWa - sAWa] baxala sakawA hE , paranwu suviXA ke lie isa aXyAya meM gawi sambanXI hamArA aXyayana mAwra sWira wvaraNa waka hI sImiwa rahegA.
-(defrule single_vib3
+(defrule single_vib_for_group_fact2
 (declare (salience 65))
 ?f0<-(manual_id-cat-word-root-vib-grp_ids ?id0 ?cat $?noun - $?root - $?vib - $?ids ?id)
 (test (neq $?vib 0))
