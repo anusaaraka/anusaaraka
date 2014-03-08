@@ -69,8 +69,9 @@
 	Anusaaraka_stanford.sh
 	pre_process.sh
 	stdenglish.sh
-	add_snt_tag.lex		-> Added this file to add sentence tag in input file.
-	std_format/Makefile	-> Added compilation of add_snt_tag.lex
+	add_snt_tag.lex		  -> Added this file to add sentence tag in input file.
+	std_format/Makefile	  -> Added compilation of add_snt_tag.lex
+	check-for-another-sent.pl -> Gives warnings if more tahn one sentence present in a line.
  22. Updated following dictionary related files:
         changes_in_databases	 apertium-en-hi.en.metadix 
  23. Updated the following files to add 'id-wsd_viBakwi' fact in nerver-called deffunction
