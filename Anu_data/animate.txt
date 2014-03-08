@@ -78,3 +78,7 @@ audience	1
 hunter	1
 government	1
 college	1
+president	1
+chairperson	1
+advocate	1
+police	1

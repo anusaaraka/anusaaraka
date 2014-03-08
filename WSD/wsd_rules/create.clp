@@ -1,23 +1,4 @@
-;##############################################################################
-;#  Copyright (C) 2002-2005 Preeti Pradhan (pradhan.preet@gmail.com)
-;#
-;#  This program is free software; you can redistribute it and/or
-;#  modify it under the terms of the GNU General Public License
-;#  as published by the Free Software Foundation; either
-;#  version 2 of the License, or (at your option) any later
-;#  version.
-;#
-;#  This program is distributed in the hope that it will be useful,
-;#  but WITHOUT ANY WARRANTY; without even the implied warranty of
-;#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-;#  GNU General Public License for more details.
-;#
-;#  You should have received a copy of the GNU General Public License
-;#  along with this program; if not, write to the Free Software
-;#  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-;
-;##############################################################################
-;(7-11-13)
+;@@@ Added by Preeti 7-11-13
 ;The snow created further problems. [Cambridge Learner’s Dictionary]
 ;baraPa ne Ora aXika samasyAez uwwapanna kIM.
 (defrule create_uwwapanna_kara
@@ -34,7 +15,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  create.clp	create_uwwapanna_kara   "  ?id "  uwwapanna_kara )" crlf))
 )
 ;#############################Defaults rule#######################################
-;(7-11-13)
+;@@@ Added by Preeti 7-11-13
 ;The Bible says that God created the world. [Cambridge Learner’s Dictionary]
 ;bAibila kahawI hE ki ISvara ne viSva banAyA hE.
 (defrule create_banA
