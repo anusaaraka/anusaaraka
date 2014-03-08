@@ -1,4 +1,4 @@
- 07-03-14
+ 08-03-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
@@ -63,34 +63,42 @@
         Separated mail related work in mail.js file
  19. handling_abbrevations.lex:
         Added 'Rs.' and 'rs.'
- 20. Updated following dictionary related files:
+ 20. In abbrevations.lex:
+	Added 'B.Tech', 'Std.', 'Ex.'
+ 21. Added new option 'onesent' to run Anusaaraka when the input is one sentence per line. Following files are modified accordingly:
+	Anusaaraka_stanford.sh
+	pre_process.sh
+	stdenglish.sh
+	add_snt_tag.lex		-> Added this file to add sentence tag in input file.
+	std_format/Makefile	-> Added compilation of add_snt_tag.lex
+ 22. Updated following dictionary related files:
         changes_in_databases	 apertium-en-hi.en.metadix 
- 21. Updated the following files to add 'id-wsd_viBakwi' fact in nerver-called deffunction
+ 23. Updated the following files to add 'id-wsd_viBakwi' fact in nerver-called deffunction
 	causative_verb_mng.clp	hindi_meaning.clp		hindi_sent_reorder.clp	hindi_sentence.clp
 	number.clp		prepare_apertium_input.clp	tam_meaning.clp		preferred_morph_consistency_check.clp
 	vibakthi.clp
- 22. Updation of new versions:
+ 24. Updation of new versions:
 	Stanford parser:	3.2.0	to	3.3.1
 	Stanford Tregex:	3.2.0	to	3.3.1
- 23. Following files are updated according to the new version:
+ 25. Following files are updated according to the new version:
 	Anusaaraka_bllip_parser_minion.sh	Anusaaraka_rasp.sh		Anusaaraka_site.sh
 	Anusaaraka_stanford-Factored.sh		Anusaaraka_stanford.sh		Anusaaraka_stanford_minion.sh
 	run_stanford-gui-factored.sh		run_stanford-gui-pcfg.sh	anu_compile.sh
 	remove_out-files.sh			Anusaaraka.sh			Anusaaraka_all.sh	
 	Anusaaraka_berkeley.sh			Anusaaraka_bllip_parser.sh	run_tregex_for_multiparse.sh
 	run_tregex.sh
- 24. Updated following files:
+ 26. Updated following files:
 	Stanford_parser_fails
 	phy_verified_out
  	anusaaraka/README
 	Readme_to_use_email_in_firefox.txt
 	mail.php:    Added Root layer
- 25. Removed following files:
+ 27. Removed following files:
 	Stanford parser 3.2.0
 	Stanford Tregex 3.2.0
- 26. Updated 
+ 28. Updated 
 	sd_verified (666)	small_sent_verified_sd (145)
- 27. Updated Log.
+ 29. Updated Log.
 
  06-01-14
  ========

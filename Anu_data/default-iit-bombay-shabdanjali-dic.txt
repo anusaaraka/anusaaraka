@@ -79448,7 +79448,7 @@ takeout_adjective	le_jAne_ke_liye_wEyAra
 takeover_UNDEFINED	BAra_lenA
 takeover_noun	aXInIkaraNa
 takeovers_UNDEFINED	BAra_lenA
-taker_noun	xAzva_lagAne_vAlA/xAnakarwA/svIkAra_karane_vAlA/lene_vAlA
+taker_noun	lene_vAlA/xAzva_lagAne_vAlA/xAnakarwA/svIkAra_karane_vAlA
 takes_UNDEFINED	giraPwAra_karanA
 taking_UNDEFINED	giraPwAra_karanA
 taking_adjective	luBAvanA/AkarRaka

@@ -456,9 +456,10 @@
 							      by the colleges were thus very materially improved as a result of the Act of 1904
 	government (		"	"		"    ) Ex: The services of Asutosh were recognized by Government and be was Knighted at
 								   the Delhi Durbar in December 1911.
-	president	(Suggested by Prachi Banasthali  07-03-14 )
-	chairperson	(       "       "                       " )
-	advocate	(Suggested by Anita ji LTRC             " )
+	president	(Suggested by Prachi Banasthali  07-03-14 ) Ex:The interview was broadcast on the same day he was invested as President
+	chairperson	(       "       "                       " ) Ex:The group invested her as chairperson.
+	advocate	(Suggested by Anita ji LTRC             " ) 
+	police		(Suggested by garima Banasthali	 08-03-14 ) Ex:The man has been killed by the police.
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -1439,6 +1440,8 @@ Removed:
 				Ex: I made a resolution to give up chocolate.
 	117. rightful_adjective	aXikArI		as	asalI			(Suggested by Anita ji LTRC 06-03-14)
 				Ex: We must return them to their rightful owner, How can you do that?
+	118. taker_noun		xAzva_lagAne_vAlA	as	lene_vAlA	(Suggested by Prachi Banasthali	08-03-14)
+				Ex: I have two tickets for sale. Any takers? 
 
 	
     6. Removed meaning from existing list:
@@ -2073,9 +2076,10 @@ Removed:
 	audience	(Suggested by Pramila Banasthali 25-01-14 ) Ex: Her performance electrified the audiences.	
 	hunter     	(By Manju from animate.txt	 12-02-14 ) Ex: A deer was ensnared by hunters.
 	his		(By Roja from animate.txt	 07-03-14 ) Ex: His descent into crime was rapid.
-	president	(Suggested by Prachi Banasthali	 07-03-14 )
-	chairperson	(	"	"			" )
+	president	(Suggested by Prachi Banasthali	 07-03-14 ) Ex:The interview was broadcast on the same day he was invested as President
+	chairperson	(	"	"			" ) Ex: The group invested her as chairperson.
 	advocate	(Suggested by Anita ji LTRC	 	" )
+	police		(Suggested by garima Banasthali	 08-03-14 ) Ex: The man has been killed by the police.
 
 
  changes in named_entities.txt

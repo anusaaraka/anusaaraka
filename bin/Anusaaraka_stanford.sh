@@ -59,8 +59,8 @@
  cd $PRES_PATH
  echo "Saving Format info ..."
 
- $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
- $HOME_anu_test/Anu/pre_process.sh $1 $MYPATH
+ $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH $5
+ $HOME_anu_test/Anu/pre_process.sh $1 $MYPATH $5
  $HOME_anu_test/Anu/save_format.sh $1 $MYPATH
 
  echo "Saving word information"
