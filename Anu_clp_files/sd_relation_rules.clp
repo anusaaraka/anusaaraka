@@ -298,48 +298,59 @@
 )
  ; Ex. She looks beautiful. All the prisoners were set free. 
 ;------------------------------------------------------------------------------------------------------------------------
-(defrule attr+nsubj
-(rel_name-sids nsubj ?kriyA ?samA)
-(rel_name-sids attr ?kriyA ?sub)
-=>
-(printout	?*fp*	"(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa	"?sub"	"?samA")"crlf)
-(printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	attr+nsubj	subject-subject_samAnAXikaraNa	"?sub"	"?samA")"crlf)	
-)
- ; Ex. What is that?
-;------------------------------------------------------------------------------------------------------------------------
-(defrule attr+aux
-(rel_name-sids cop|aux ?sam ?k)
-(rel_name-sids attr ?sam ?sub)
-=>
-(printout       ?*fp*   "(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa        "?sub"  "?sam")"crlf)
-(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject        "?k"  "?sub")"crlf)
-(printout       ?*dbug*   "(prep_id-Rule-Rel-ids  -   attr+aux     kriyA-subject        "?k"  "?sub")"crlf)
-(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   attr+aux      subject-subject_samAnAXikaraNa  "?sub"  "?sam")"crlf)
-)
+;Commenting this rules as Stanford parser removed 'attr' in latest version 3.3.1
+;(defrule attr+nsubj
+;(rel_name-sids nsubj ?kriyA ?samA)
+;(rel_name-sids attr ?kriyA ?sub)
+;=>
+;(printout	?*fp*	"(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa	"?sub"	"?samA")"crlf)
+;(printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	attr+nsubj	subject-subject_samAnAXikaraNa	"?sub"	"?samA")"crlf)	
+;)
+; ; Ex. What is that?
+;;------------------------------------------------------------------------------------------------------------------------
+;Commenting this rules as Stanford parser removed 'attr' in latest version 3.3.1
+;(defrule attr+aux
+;(rel_name-sids cop|aux ?sam ?k)
+;(rel_name-sids attr ?sam ?sub)
+;=>
+;(printout       ?*fp*   "(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa        "?sub"  "?sam")"crlf)
+;(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject        "?k"  "?sub")"crlf)
+;(printout       ?*dbug*   "(prep_id-Rule-Rel-ids  -   attr+aux     kriyA-subject        "?k"  "?sub")"crlf)
+;(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   attr+aux      subject-subject_samAnAXikaraNa  "?sub"  "?sam")"crlf)
+;)
  ; Ex. Who is afraid of the big bad wolf? 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule cop+nsubj
 (declare(salience 100))
 (rel_name-sids nsubj|nsubjpass ?samAnAXikaraNa  ?sub)
 (rel_name-sids cop  ?samAnAXikaraNa ?kriyA)
+(parserid-word ?sub  ?word) ; It is not a good manner to eat alone. 
 (not (sub_id_decided ?sub))
 =>
-(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?kriyA"        "?sub")"crlf)
-(printout      ?*dbug* "(prep_id-Rule-Rel-ids  -   cop+nsubj       kriyA-subject   "?kriyA"        "?sub")"crlf)
-
-)
+(if (or (eq (lowcase ?word)  it) (eq (lowcase ?word) there)) then
+    (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-dummy_subject    "?kriyA"        "?sub")"crlf)
+    (printout      ?*dbug* "(prep_id-Rule-Rel-ids  -   cop+nsubj       kriyA-dummy_subject   "?kriyA"        "?sub")"crlf)
+else
+    (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?kriyA"        "?sub")"crlf)
+    (printout      ?*dbug* "(prep_id-Rule-Rel-ids  -   cop+nsubj       kriyA-subject   "?kriyA"        "?sub")"crlf)
+))
  ; Ex. Bill is big.  Bill is big and honest .
 ;------------------------------------------------------------------------------------------------------------------------
+;'attr' is removed in version 3.3.1. To handle WHNP elements added if else loop.
 (defrule cop+nsubj_2
 (declare (salience 1000))
 (rel_name-sids nsubj|nsubjpass ?samA  ?sub)
 (rel_name-sids cop  ?samA ?kriyA)
-(rel_name-sids nsubj ?samA1 ?sub)
+(parserid-word ?samA ?word) ; What is the company's financial state?  Who is Rama?
 =>
-(printout      ?*fp*   "(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa   "?sub"  "?samA1")"crlf)
-(printout      ?*dbug* "(prep_id-Rule-Rel-ids  -   cop+nsubj_2      subject-subject_samAnAXikaraNa  "?sub"  "?samA1")"crlf)
-)
-; ; Ex. Bill is big and honest.
+(if (or (eq (lowcase ?word)  who) (eq (lowcase ?word) what)) then
+    (printout      ?*fp*   "(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa   "?samA"  "?sub")"crlf)
+    (printout      ?*dbug* "(prep_id-Rule-Rel-ids  -   cop+nsubj_2    subject-subject_samAnAXikaraNa  "?samA"  "?sub")"crlf)
+ else
+    (printout      ?*fp*   "(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa   "?sub"  "?samA")"crlf)
+    (printout      ?*dbug* "(prep_id-Rule-Rel-ids  -   cop+nsubj_2    subject-subject_samAnAXikaraNa  "?sub"  "?samA")"crlf)
+))
+; ; Ex. Bill is big.
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule cop+nsubj_for_it
  (declare(salience 101))
