@@ -1,4 +1,4 @@
- 08-03-14
+ 10-03-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
@@ -8,9 +8,11 @@
 	Modified : assert_facts rule
  3. sd-relation_rules.clp:
 	Modified: cop+nsubj_for_it, vmod, vmod1,  vmod+nsubj+cop rules(As stanford merged 'partmod' and 'infmod' to 'vmod')
+		  cop+nsubj, cop+nsubj_2
 	Renamed:  partmod	to	vmod
 		  infmod	to	vmod1
 		  partmod+nsubj+cop	to	vmod+nsubj+cop
+	Removed : attr+nsubj, attr+aux rules ('attr' is removed in 3.3.1 version)
  4. number.clp:
 	Modified: verb_rule
  5. parser_tree_modification_rules.clp
