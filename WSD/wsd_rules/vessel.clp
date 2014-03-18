@@ -8,7 +8,7 @@
 (id-root ?id vessel)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word =(- ?id 1) earthenware)
-(samAsa ?id =(- ?id 1))
+(samAsa_viSeRya-samAsa_viSeRaNa ?id =(- ?id 1))
 =>
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(- ?id 1)  mittI_ke_pAwra))
@@ -23,7 +23,7 @@
 (declare (salience 5000))
 (id-root ?id vessel)
 ?mng <-(meaning_to_be_decided ?id)
-(or(samAsa ?id ?id1)(viSeRya-RaRTI_viSeRaNa ?id ?id1)(viSeRya-viSeRaNa ?id ?id1))
+(or(samAsa_viSeRya-samAsa_viSeRaNa ?id ?id1)(viSeRya-RaRTI_viSeRaNa ?id ?id1)(viSeRya-viSeRaNa ?id ?id1))
 (not(id-root ?id1 blood|Blood))
 =>
 (retract ?mng)

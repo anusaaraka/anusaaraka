@@ -6,8 +6,8 @@
 (declare (salience 5000))
 (id-root ?id old)
 ?mng <-(meaning_to_be_decided ?id)
-(or(samAsa ?id1 ?id)(viSeRya-viSeRaNa  ?id1 ?id)(subject-subject_samAnAXikaraNa  ?id1 ?id))
-(or(samAsa =(- ?id 1)  =(- ?id 2))(viSeRya-viSeRaNa   =(+ ?id 1)  ?id2)(viSeRya-saMKyA_viSeRaNa  =(- ?id 1)  =(- ?id 2)))
+(or(samAsa_viSeRya-samAsa_viSeRaNa ?id1 ?id)(viSeRya-viSeRaNa  ?id1 ?id)(subject-subject_samAnAXikaraNa  ?id1 ?id))
+(or(samAsa_viSeRya-samAsa_viSeRaNa =(- ?id 1)  =(- ?id 2))(viSeRya-viSeRaNa   =(+ ?id 1)  ?id2)(viSeRya-saMKyA_viSeRaNa  =(- ?id 1)  =(- ?id 2)))
 (id-root ?id1 man|woman|girl|boy|baby|father|mother|brother|sister|son|daughter|she|he|I|they|you) ; we should make a list of human and human relationships and put it in the database
 =>
 (retract ?mng)
@@ -78,7 +78,7 @@
 (declare (salience 5000))
 (id-root ?id old)
 ?mng <-(meaning_to_be_decided ?id)
-(or (samAsa ?id1 ?id)(viSeRya-viSeRaNa =(+ ?id 1) ?id))
+(or (samAsa_viSeRya-samAsa_viSeRaNa ?id1 ?id)(viSeRya-viSeRaNa =(+ ?id 1) ?id))
 (id-root ?id1 man|woman|people|population|couple|crocodile)
 (viSeRya-det_viSeRaNa =(+ ?id 1) =(- ?id 1))
 =>

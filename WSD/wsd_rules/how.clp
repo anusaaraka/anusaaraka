@@ -34,7 +34,7 @@
 (id-word ?id how)
 ?mng <-(meaning_to_be_decided ?id)
 (or (id-word =(+ ?id 1)  much)  (id-word =(+ ?id 1)  many))
-(samAsa  =(+ ?id 1) ?id)
+(samAsa_viSeRya-samAsa_viSeRaNa  =(+ ?id 1) ?id)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id - ))

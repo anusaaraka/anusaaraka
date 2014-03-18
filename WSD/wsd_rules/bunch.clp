@@ -44,7 +44,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 up|together)
 (kriyA-subject ?id ?sub)
-(or(kriyA-upasarga ?id ?id1)(kriyA-aXikaraNavAcI_avyaya  ?id ?id1))
+(or(kriyA-upasarga ?id ?id1)(kriyA-aXikaraNavAcI  ?id ?id1))
 =>
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1  ekawra_ho ))

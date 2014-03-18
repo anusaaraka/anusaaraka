@@ -11,7 +11,7 @@
 ?mng <- (meaning_to_be_decided ?id)
 ;(id-root ?id1 Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday|daily|evening|local|national|monthly|weekly|today|tomorrow|yesterday)
 (not(id-root ?id1 thin|brown|recycle))
-(or(viSeRya-RaRTI_viSeRaNa  ?id ?id1)(samAsa ?id ?id1)(viSeRya-viSeRaNa  ?id ?id1)(viSeRya-of_saMbanXI ?id1 ?id)(and(kriyA-object ?id1 ?id)(id-root ?id1 own|publish))) 
+(or(viSeRya-RaRTI_viSeRaNa  ?id ?id1)(samAsa_viSeRya-samAsa_viSeRaNa ?id ?id1)(viSeRya-viSeRaNa  ?id ?id1)(viSeRya-of_saMbanXI ?id1 ?id)(and(kriyA-object ?id1 ?id)(id-root ?id1 own|publish))) 
 (id-word ?id1 ?wrd) 
 (id-cat_coarse =(- ?id1 1) ?cat)
 =>
@@ -87,7 +87,7 @@ else
 (id-root ?id paper)
 (or(id-root ?id1 his|your|my|her|their|our|divorce|identification|exam|term|test|subject|history|geography|Geography|Science|Maths|Physics|Chemistry|Biology)(id-cat_coarse ?id1 number))
 ?mng <- (meaning_to_be_decided ?id)
-(or(viSeRya-saMKyA_viSeRaNa  ?id ?id1)(viSeRya-RaRTI_viSeRaNa  ?id ?id1)(samAsa ?id ?id1))
+(or(viSeRya-saMKyA_viSeRaNa  ?id ?id1)(viSeRya-RaRTI_viSeRaNa  ?id ?id1)(samAsa_viSeRya-samAsa_viSeRaNa ?id ?id1))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id pepara))  
@@ -107,7 +107,7 @@ else
 (declare (salience 3020))
 (id-root ?id paper)
 ?mng <- (meaning_to_be_decided ?id)
-(samAsa ? ?id)
+(samAsa_viSeRya-samAsa_viSeRaNa ? ?id)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kagajI))

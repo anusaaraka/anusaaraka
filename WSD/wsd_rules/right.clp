@@ -1,6 +1,6 @@
 
 ;Added by Meena(13.11.09)
-; ;we have taken both the relations (viSeRya-viSeRaNa ...) (samAsa ..) ;for id and id2 because of the 1st wrong parse of the link parser.
+; ;we have taken both the relations (viSeRya-viSeRaNa ...) (samAsa_viSeRya-samAsa_viSeRaNa ..) ;for id and id2 because of the 1st wrong parse of the link parser.
 ;He took the right decision.
 ;He is the right person for the job .
 (defrule right0
@@ -8,7 +8,7 @@
 (id-root ?id right)
 ?mng <-(meaning_to_be_decided ?id)
 (id-root ?id2 decision|way|time|place|person|people)
-(or(subject-subject_samAnAXikaraNa  ?id1 ?id)(viSeRya-viSeRaNa ?id2 ?id)(samAsa ?id2 ?id))   
+(or(subject-subject_samAnAXikaraNa  ?id1 ?id)(viSeRya-viSeRaNa ?id2 ?id)(samAsa_viSeRya-samAsa_viSeRaNa ?id2 ?id))   
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id TIka))
@@ -63,7 +63,7 @@
 
 
 
-;Added by Meena(13.11.09);we have taken both the relations (viSeRya-viSeRaNa ...) (samAsa ..) for id and id2 because of the 1st wrong parse of the link parser. 
+;Added by Meena(13.11.09);we have taken both the relations (viSeRya-viSeRaNa ...) (samAsa_viSeRya-samAsa_viSeRaNa ..) for id and id2 because of the 1st wrong parse of the link parser. 
 ;He writes with his right hand.
 ;Go straight and take a right turn . 
 ;Place the books on the right side of the spects . 
@@ -72,7 +72,7 @@
 (declare (salience 5000))
 (id-root ?id right)
 ?mng <-(meaning_to_be_decided ?id)
-(or(kriyA-on_saMbanXI ?id2 ?id)(kriyA-to_saMbanXI ?id2 ?id)(viSeRya-viSeRaNa ?id1 ?id)(samAsa ?id1 ?id))
+(or(kriyA-on_saMbanXI ?id2 ?id)(kriyA-to_saMbanXI ?id2 ?id)(viSeRya-viSeRaNa ?id1 ?id)(samAsa_viSeRya-samAsa_viSeRaNa ?id1 ?id))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id xAzyA))

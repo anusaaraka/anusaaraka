@@ -71,7 +71,7 @@
 (declare (salience 4500))
 (id-root ?id where)
 ?mng <-(meaning_to_be_decided ?id)
-(or (kriyA-conjunction ?sub ?id)(viSeRya-jo_samAnAXikaraNa  ?sub ?id));added by sheetal
+(or (kriyA-vAkya_viBakwi ?sub ?id)(viSeRya-jo_samAnAXikaraNa  ?sub ?id));added by sheetal
 (not (or (yes_no_question)(kriyA-from_saMbanXI  ?kri ?id)))
 =>
 (retract ?mng)

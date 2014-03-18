@@ -4,7 +4,7 @@
 (declare (salience 5000))
 (id-root ?id standstill)
 ?mng <-(meaning_to_be_decided ?id)
-(samAsa ?id1 ?id)
+(samAsa_viSeRya-samAsa_viSeRaNa ?id1 ?id)
 ;(id-cat_coarse ?id noun)
 =>
 (retract ?mng)

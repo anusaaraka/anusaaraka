@@ -61,7 +61,7 @@
 (declare (salience 55))
 (id-root ?id waste)
 ?mng <-(meaning_to_be_decided ?id)
-(or (samAsa  =(- ?id 1) ?id)(viSeRya-viSeRaNa ?id =(- ?id 1)))
+(or (samAsa_viSeRya-samAsa_viSeRaNa  =(- ?id 1) ?id)(viSeRya-viSeRaNa ?id =(- ?id 1)))
 ;(id-cat_coarse ?id noun)
 =>
 (retract ?mng)

@@ -47,7 +47,7 @@
 ;चिहुआहुआ उत्तरी मेक्सिको में एक राज्य है.
 ;Vermont was the only New England state to pass the law.[m-w]
 ;वरमोंट कानून पारित करने के लिए केवल न्यू इंग्लैंड राज्य था.
-;Removed conditions (viSeRya-viSeRaNa ?id ?id1),(samAsa ?id ?id1),(viSeRya-in_saMbanXI ?id1 ?id), (id-word ?id1 policy|czechoslovak|small|city)
+;Removed conditions (viSeRya-viSeRaNa ?id ?id1),(samAsa_viSeRya-samAsa_viSeRaNa ?id ?id1),(viSeRya-in_saMbanXI ?id1 ?id), (id-word ?id1 policy|czechoslovak|small|city)
 (defrule state1
 (declare (salience 6000))
 (id-root ?id state)

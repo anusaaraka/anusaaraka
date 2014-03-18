@@ -6,7 +6,7 @@
 (id-root ?id increase)
 ?mng <-(meaning_to_be_decided ?id)
 (id-root ?id1 salary)
-(samAsa ?id ?id1)
+(samAsa_viSeRya-samAsa_viSeRaNa ?id ?id1)
 =>
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 vewana_vqxXi))

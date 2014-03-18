@@ -4,7 +4,7 @@
 (id-root ?id fiat)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 car)
-(samAsa ?id1 ?id)
+(samAsa_viSeRya-samAsa_viSeRaNa ?id1 ?id)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id PiyAta))
