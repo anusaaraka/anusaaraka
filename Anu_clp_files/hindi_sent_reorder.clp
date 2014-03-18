@@ -51,7 +51,7 @@
  (declare (salience 1100))
  (Parser_used Stanford-Parser|Open-Logos-Parser)
  (prep_id-relation-anu_ids ? viSeRya-jo_samAnAXikaraNa  ?  10000)
- (or (prep_id-relation-anu_ids ? kriyA-object  ?k  10000)(prep_id-relation-anu_ids ? kriyA-aXikaraNavAcI_avyaya  ?k  10000))
+ (or (prep_id-relation-anu_ids ? kriyA-object  ?k  10000)(prep_id-relation-anu_ids ? kriyA-aXikaraNavAcI  ?k  10000))
  (prep_id-relation-anu_ids ? kriyA-subject  ?k ?sub)
  ?f0<-(hindi_id_order $?id ?sub $?id1 ?k $?daut)
  (not (jo_samAn_id_inserted ))
@@ -66,7 +66,7 @@
  ; Do you think we should go to the party? 
  (defrule insert_conjunction
  (declare (salience 1100))
- (prep_id-relation-anu_ids ? kriyA-conjunction  ?k 10000)
+ (prep_id-relation-anu_ids ? kriyA-vAkya_viBakwi  ?k 10000)
  (prep_id-relation-anu_ids ? kriyA-subject  ?k  ?sub)
  (Head-Level-Mother-Daughters ? ? ?NP $?ids)
  (Node-Category ?NP NP)
@@ -265,7 +265,7 @@
  (id-HM-source ?id ?hmng&~kyozki ?)
  (not (hindi_id_order $?ids ?kri));The Master said , if I did not go , how would you ever see ?
  (not (prep_id-relation-anu_ids ?  kriyA-object  ?kri ?));I saw him telling her about the party. 
- (not (prep_id-relation-anu_ids ?  kriyA-conjunction  ?kri_1 10000));Do you think we should go to the party? 
+ (not (prep_id-relation-anu_ids ?  kriyA-vAkya_viBakwi  ?kri_1 10000));Do you think we should go to the party? 
  =>
         (retract ?f0 ?f1)
         (assert (hindi_id_order  $?pre ?kri ki ?id $?post))
@@ -327,7 +327,7 @@
  ?f0 <-(hindi_id_order $?pre ?kri1 ?id $?d ?v_k $?post)
  (not (ki_asserted ?kri1))
  (not (id-HM-source ?id ki ?));It was obvious that he would do it.
- (not (prep_id-relation-anu_ids - kriyA-conjunction ?v_k ?));She declared that out of love for the poor she had gotten her family to go against convention. 
+ (not (prep_id-relation-anu_ids - kriyA-vAkya_viBakwi ?v_k ?));She declared that out of love for the poor she had gotten her family to go against convention. 
   =>
         (retract ?f0)
 	(assert (ki_asserted ?kri1))
@@ -355,7 +355,7 @@
  ;instead of variable_name used 1 bcoz of the sen: I wonder whether we should go .
  (defrule rule_for_yaha
  ?f1<-(id-word 1 whether)
- (prep_id-relation-anu_ids ?  kriyA-conjunction ?kri 1)
+ (prep_id-relation-anu_ids ?  kriyA-vAkya_viBakwi ?kri 1)
  ?f0 <-(hindi_id_order $?pre ?kri $?post)
  =>
 	(retract ?f0 ?f1)
@@ -368,7 +368,7 @@
  (defrule wo_rule_for_if
  (declare (salience 2))
  ?f1<-(id-word ?id if)  ;Modified by Meena (28-10-10) 
- (prep_id-relation-anu_ids  ? kriyA-conjunction  ?k ?id)
+ (prep_id-relation-anu_ids  ? kriyA-vAkya_viBakwi  ?k ?id)
  (prep_id-relation-anu_ids  ? kriyA-praSnavAcI  ?k ?p)
  (prep_id-relation-anu_ids  ? kriyA-subject ?k1 ?p)
  ?f0 <-(hindi_id_order $?pre ?k1 $?post)
@@ -389,7 +389,7 @@
  (declare (salience 1))
  ?f1<-(id-word ?id ?word&if|although)  ;Modified by Meena (28-10-10) 
  (not (wo_inserted )) ;restricted for Stanford Parser bcoz "wo" is generated using constituents.
- (prep_id-relation-anu_ids  ? kriyA-conjunction  ?k ?id)
+ (prep_id-relation-anu_ids  ? kriyA-vAkya_viBakwi  ?k ?id)
  ?f0 <-(hindi_id_order $?pre ?k ?then $?post)
  (id-HM-source ?then ?hmng&~waba ?) ;If I have made a mistake, then it is up to me to set it right.
  (not (hindi_id_order $? ?k))
@@ -410,7 +410,7 @@
  (declare (salience 15))
  ?f1<-(id-word 1 when)  ;Modified by Meena (28-10-10) 
  (not (wo_inserted )) ;restricted for Stanford Parser bcoz "wo" is generated using constituents.
- (prep_id-relation-anu_ids ?  kriyA-conjunction  ?k 1)
+ (prep_id-relation-anu_ids ?  kriyA-vAkya_viBakwi  ?k 1)
  (prep_id-relation-anu_ids ?  kriyA-subject  ?k1 ?id)
  ?f0 <-(hindi_id_order $?pre ?id $?post)
  (test (> ?k1 ?k) )
@@ -429,7 +429,7 @@
  ?f1<-(id-word 1 when)
  (not (wo_inserted )) ;restricted for Stanford Parser bcoz "wo" is generated using constituents.
  (prep_id-relation-anu_ids ?  kriyA-kriyA_viSeRaNa  ?k 1)
- (prep_id-relation-anu_ids ?  kriyA-conjunction  ?k1 ?sub)
+ (prep_id-relation-anu_ids ?  kriyA-vAkya_viBakwi  ?k1 ?sub)
  (test (> ?k1 ?k) )
  ?f0 <-(hindi_id_order $?pre ?k1 $?post)
  =>
@@ -459,7 +459,7 @@
  ;------------------------------------------------------------------------------------------------------------------
  (defrule since_rule
  ?f1<-(id-word 1 since)  ;Modified by Meena (28-10-10) 
- (prep_id-relation-anu_ids ?  kriyA-conjunction  ?k 1)
+ (prep_id-relation-anu_ids ?  kriyA-vAkya_viBakwi  ?k 1)
  (prep_id-relation-anu_ids ?  kriyA-subject  ?kri1 ?id)
  ?f0 <-(hindi_id_order $?pre ?id $?post)
  (test (and (> ?kri1 ?k) (neq ?id ?k)))
@@ -474,7 +474,7 @@
   (defrule insert_nahIM
   ?f1<-(id-word ?id until)
   (id-HM-source   ?id   jaba_waka  ?)
-  (prep_id-relation-anu_ids ? kriyA-conjunction  ?sub   ?id)
+  (prep_id-relation-anu_ids ? kriyA-vAkya_viBakwi  ?sub   ?id)
   (prep_id-relation-anu_ids ? kriyA-subject  ?kri  ?sub)
   ?f<-(hindi_id_order $?list ?id $?list1 ?kri)
   =>
