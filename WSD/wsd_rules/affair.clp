@@ -6,7 +6,7 @@
 (declare (salience 4000))
 ?mng <-(meaning_to_be_decided ?id)
 (id-root ?id affair)
-(or(viSeRya-with_saMbanXI  ?id ?id1)(viSeRya-viSeRaNa  ?id ?id1)(samAsa  ?id ?id1))
+(or(viSeRya-with_saMbanXI  ?id ?id1)(viSeRya-viSeRaNa  ?id ?id1)(samAsa_viSeRya-samAsa_viSeRaNa  ?id ?id1))
 (id-root ?id1 love|passionate|extramarital|adulterous|man|person|boy|girl|woman)
 =>
 (retract ?mng)
@@ -41,7 +41,7 @@
 (declare (salience 4000))
 ?mng <-(meaning_to_be_decided ?id)
 (id-root ?id affair)
-(or(viSeRya-viSeRaNa  ?id ?id1)(samAsa  ?id ?id1))
+(or(viSeRya-viSeRaNa  ?id ?id1)(samAsa_viSeRya-samAsa_viSeRaNa  ?id ?id1))
 (id-root ?id1 amaze|velvet)
 =>
 (retract ?mng)

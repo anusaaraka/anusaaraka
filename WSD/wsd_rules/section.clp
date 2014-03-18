@@ -53,7 +53,7 @@
 (id-root ?id section)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
-(samAsa ?id ?id1 )
+(samAsa_viSeRya-samAsa_viSeRaNa ?id ?id1 )
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id viBAga))

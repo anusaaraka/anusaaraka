@@ -8,7 +8,7 @@
 (declare (salience 5100))
 (id-root ?id disability)
 ?mng <-(meaning_to_be_decided ?id)
-(or (viSeRya-viSeRaNa ?id ?)(viSeRya-with_saMbanXI ? ?id) (samAsa ? ?id) (viSeRya-RaRTI_viSeRaNa ?id ?) (kriyA-object ? ?id) )
+(or (viSeRya-viSeRaNa ?id ?)(viSeRya-with_saMbanXI ? ?id) (samAsa_viSeRya-samAsa_viSeRaNa ? ?id) (viSeRya-RaRTI_viSeRaNa ?id ?) (kriyA-object ? ?id) )
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)

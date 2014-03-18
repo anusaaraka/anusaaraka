@@ -21,7 +21,7 @@ then
 (id-root ?id scrap)
 ?mng <- (meaning_to_be_decided ?id)
 (not(id-cat_coarse ?id verb))
-(or(subject-subject_samAnAXikaraNa ?	?id)(samAsa ? ?id) (id-cat_coarse ?id adjective)(id-root =(+ ?id 1) material|iron|copper|matel|timber|dealer|wood|book)
+(or(subject-subject_samAnAXikaraNa ?	?id)(samAsa_viSeRya-samAsa_viSeRaNa ? ?id) (id-cat_coarse ?id adjective)(id-root =(+ ?id 1) material|iron|copper|matel|timber|dealer|wood|book)
 (id-root =(+ ?id 1) in)) 
 =>
 (retract ?mng)

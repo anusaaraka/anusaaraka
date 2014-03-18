@@ -8,7 +8,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id adjective )
 (id-cat_coarse =(+ ?id 1) noun)
-(samAsa ?id =(+ ?id 1))
+(samAsa_viSeRya-samAsa_viSeRaNa ?id =(+ ?id 1))
 (viSeRya-det_viSeRaNa =(+ ?id 1) =(- ?id 1))
 =>
 (retract ?mng)
@@ -49,7 +49,7 @@
 (id-root ?id fat)
 ?mng <-(meaning_to_be_decided ?id)
 ;(id-cat_coarse ?id adjective)
-(or(viSeRya-viSeRaNa =(+ ?id 1) ?id)(samAsa  =(+ ?id 1)  ?id))
+(or(viSeRya-viSeRaNa =(+ ?id 1) ?id)(samAsa_viSeRya-samAsa_viSeRaNa  =(+ ?id 1)  ?id))
 (not(id-root =(+ ?id 1)  boy|girl|man|woman|baby|child))
 =>
 (retract ?mng)

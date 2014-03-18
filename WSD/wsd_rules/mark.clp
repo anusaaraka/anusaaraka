@@ -115,7 +115,7 @@
 (declare (salience 5200)) 
 (id-root ?id mark) 
 ?mng <-(meaning_to_be_decided ?id)
-(or (samAsa =(- ?id 1) ?id)(viSeRya-det_viSeRaNa ?id =(- ?id 1))) 
+(or (samAsa_viSeRya-samAsa_viSeRaNa =(- ?id 1) ?id)(viSeRya-det_viSeRaNa ?id =(- ?id 1))) 
 => 
 (retract ?mng) 
 (assert (id-wsd_root_mng ?id niSAna))

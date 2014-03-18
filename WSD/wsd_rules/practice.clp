@@ -7,7 +7,7 @@
 (id-root ?id practice)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 law)
-(or (samAsa  ?id ?id1) (viSeRya-viSeRaNa ?id ?id1));modified for OL by Sukhada(6-9-10)
+(or (samAsa_viSeRya-samAsa_viSeRaNa  ?id ?id1) (viSeRya-viSeRaNa ?id ?id1));modified for OL by Sukhada(6-9-10)
 
 =>
 (retract ?mng)

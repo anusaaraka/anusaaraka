@@ -42,7 +42,7 @@
 (id-root ?id glass)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
-(or(samAsa ?id1 ?id)(viSeRya-viSeRaNa ?id ?id1)(viSeRya-viSeRaNa ?id1 ?id))
+(or(samAsa_viSeRya-samAsa_viSeRaNa ?id1 ?id)(viSeRya-viSeRaNa ?id ?id1)(viSeRya-viSeRaNa ?id1 ?id))
 (id-root ?id1 drink|full|half|plastic|steel|brass|metal|coke|wine|water|milk|tea|coffee|beer)
 =>
 (retract ?mng)

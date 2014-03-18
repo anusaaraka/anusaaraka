@@ -4,7 +4,7 @@
 (declare (salience 5000))
 (id-root ?id variable)
 ?mng <-(meaning_to_be_decided ?id)
-(or(viSeRya-viSeRaNa ?id1 ?id)(samAsa ?id1 ?id))
+(or(viSeRya-viSeRaNa ?id1 ?id)(samAsa_viSeRya-samAsa_viSeRaNa ?id1 ?id))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id parivarwanIya))
