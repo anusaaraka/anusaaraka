@@ -62,7 +62,7 @@
 (id-word ?id much)
 (id-word ?how how)
 ?mng <-(meaning_to_be_decided ?id)
-(samAsa ?id ?how)
+(samAsa_viSeRya-samAsa_viSeRaNa ?id ?how)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kiwanA))

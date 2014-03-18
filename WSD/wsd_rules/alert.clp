@@ -4,7 +4,7 @@
 (declare (salience 5000))
 (id-root ?id alert)
 ?mng <-(meaning_to_be_decided ?id)
-(samAsa ?id ?id1)
+(samAsa_viSeRya-samAsa_viSeRaNa ?id ?id1)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id cewAvanI))

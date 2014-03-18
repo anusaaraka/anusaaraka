@@ -180,7 +180,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id mine )
 (id-word ?id1 coal)
-(samAsa ?id1 ?id)
+(samAsa_viSeRya-samAsa_viSeRaNa ?id1 ?id)
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)

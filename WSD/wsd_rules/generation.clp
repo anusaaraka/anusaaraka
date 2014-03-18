@@ -25,7 +25,7 @@
 (declare (salience 5000))
 (id-root ?id generation)
 ?mng <-(meaning_to_be_decided ?id)
-(or(viSeRya-viSeRaNa ?id ?id1)(samAsa ?id ?id1)(viSeRya-RaRTI_viSeRaNa ?id ?id1)(viSeRya-det_viSeRaNa ?id ?id1))
+(or(viSeRya-viSeRaNa ?id ?id1)(samAsa_viSeRya-samAsa_viSeRaNa ?id ?id1)(viSeRya-RaRTI_viSeRaNa ?id ?id1)(viSeRya-det_viSeRaNa ?id ?id1))
 (or(id-cat_coarse ?id1 adjective|pronoun)(id-word ?id1 new))
 (id-cat_coarse ?id noun)
 =>
@@ -60,7 +60,7 @@
 (declare (salience 3000))
 (id-root ?id generation)
 ?mng <-(meaning_to_be_decided ?id)
-(or(viSeRya-viSeRaNa ?id ?id2)(samAsa ?id ?id2))
+(or(viSeRya-viSeRaNa ?id ?id2)(samAsa_viSeRya-samAsa_viSeRaNa ?id ?id2))
 (id-word =(- ?id 1) process|crop|task|idea|income|revenue|power|light|case|energy|electricity|water|program|concept|category)
 (id-cat_coarse ?id noun)
 =>

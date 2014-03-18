@@ -38,7 +38,7 @@
 (id-root ?id point)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word =(- ?id 1) grammar)
-(samAsa ?id =(- ?id 1)) 
+(samAsa_viSeRya-samAsa_viSeRaNa ?id =(- ?id 1)) 
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id muxxA))

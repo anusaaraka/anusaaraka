@@ -33,7 +33,7 @@
 (id-root ?id fair)
 ?mng <-(meaning_to_be_decided ?id)
 ;(link_name-lnode-rnode AN ?id ?id1)
-(or (viSeRya-viSeRaNa ? ?id)(samAsa ? ?id))
+(or (viSeRya-viSeRaNa ? ?id)(samAsa_viSeRya-samAsa_viSeRaNa ? ?id))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id uciwa))

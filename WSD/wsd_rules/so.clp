@@ -4,7 +4,7 @@
 (id-root ?id so)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id adverb)
-(not (kriyA-conjunction ?i ?id));The sky is blue, so it is likely that Joe will come.
+(not (kriyA-vAkya_viBakwi ?i ?id));The sky is blue, so it is likely that Joe will come.
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id iwanA))
@@ -16,7 +16,7 @@
 (declare (salience 4900))
 (id-root ?id so)
 ?mng <-(meaning_to_be_decided ?id)
-(or (id-cat_coarse ?id preposition)  (kriyA-conjunction ?i ?id));The sky is blue, so it is likely that Joe will come.
+(or (id-cat_coarse ?id preposition)  (kriyA-vAkya_viBakwi ?i ?id));The sky is blue, so it is likely that Joe will come.
 ;(or (id-cat_coarse ?id preposition)  (subject-conjunction ?i ?id));The sky is blue, so it is likely that Joe will come.
 =>
 (retract ?mng)

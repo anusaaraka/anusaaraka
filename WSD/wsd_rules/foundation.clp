@@ -28,7 +28,7 @@
 (declare (salience 4950))
 (id-root ?id foundation)
 ?mng <-(meaning_to_be_decided ?id)
-(or(and(samAsa  ?id ?id2)(kriyA-to_saMbanXI  ?id1 ?id))(saMjFA-to_kqxanwa  ?id ?id1))
+(or(and(samAsa_viSeRya-samAsa_viSeRaNa  ?id ?id2)(kriyA-to_saMbanXI  ?id1 ?id))(saMjFA-to_kqxanwa  ?id ?id1))
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)

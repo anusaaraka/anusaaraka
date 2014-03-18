@@ -8,7 +8,7 @@
 (id-word =(- ?id 2) if)
 (id-word =(- ?id 1) we|you|they)
 (kriyA-subject 	?id  =(- ?id 1))
-(kriyA-conjunction  ?id  =(- ?id 2))
+(kriyA-vAkya_viBakwi  ?id  =(- ?id 2))
 =>
 (retract ?mng)
 (assert (id-wsd_word_mng ?id howe))
@@ -30,7 +30,7 @@
 (id-word =(- ?id 2) if)
 (id-word =(- ?id 1) he|it|I)
 (kriyA-subject  ?id  =(- ?id 1))
-(kriyA-conjunction  ?id  =(- ?id 2))
+(kriyA-vAkya_viBakwi  ?id  =(- ?id 2))
 =>
 (retract ?mng)
 (assert (id-wsd_word_mng ?id howA))
@@ -50,7 +50,7 @@
 (id-word =(- ?id 2) if)
 (id-word =(- ?id 1) she)
 (kriyA-subject  ?id  =(- ?id 1))
- (kriyA-conjunction  ?id  =(- ?id 2))
+ (kriyA-vAkya_viBakwi  ?id  =(- ?id 2))
 =>
 (retract ?mng)
 (assert (id-wsd_word_mng ?id howI))

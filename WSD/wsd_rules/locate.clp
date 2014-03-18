@@ -20,7 +20,7 @@
 (id-root ?id locate)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
-(or(kriyA-in_saMbanXI  ?id ?id1)(kriyA-aXikaraNavAcI_avyaya  ?id ?id1))
+(or(kriyA-in_saMbanXI  ?id ?id1)(kriyA-aXikaraNavAcI  ?id ?id1))
 
 =>
 (retract ?mng)

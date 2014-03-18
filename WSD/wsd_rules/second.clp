@@ -30,7 +30,7 @@
 (declare (salience 4800))
 (id-root ?id second)
 ?mng <-(meaning_to_be_decided ?id)
- (or (samAsa ?id1 ?id )( id-cat_coarse ?id determiner)) ; Added by sukhada Ex: Can we open a second browser window.
+ (or (samAsa_viSeRya-samAsa_viSeRaNa ?id1 ?id )( id-cat_coarse ?id determiner)) ; Added by sukhada Ex: Can we open a second browser window.
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id xUsarA))

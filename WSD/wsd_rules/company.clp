@@ -76,7 +76,7 @@
 (id-root ?id company)
 ?mng <-(meaning_to_be_decided ?id)
 (id-root ?id1 ?)
-(or(samAsa ?id ?id1)(samAsa ?id1 ?id)(viSeRya-viSeRaNa ?id ?id1)(viSeRya-det_viSeRaNa ?id ?id1))
+(or(samAsa_viSeRya-samAsa_viSeRaNa ?id ?id1)(samAsa_viSeRya-samAsa_viSeRaNa ?id1 ?id)(viSeRya-viSeRaNa ?id ?id1)(viSeRya-det_viSeRaNa ?id ?id1))
 ;(id-word =(- ?id 1) oil)      ;commented by Meena(12.01.10)
 =>
 (retract ?mng)

@@ -5,7 +5,7 @@
 (id-root ?id body)
 ?mng <-(meaning_to_be_decided ?id)
 (id-root ?id1 ?)
-(samAsa ?id1 ?id)
+(samAsa_viSeRya-samAsa_viSeRaNa ?id1 ?id)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id SarIrika))

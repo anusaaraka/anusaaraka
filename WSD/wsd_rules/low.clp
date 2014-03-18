@@ -59,7 +59,7 @@
 (declare (salience 5100))
 (id-root ?id low)
 ?mng <-(meaning_to_be_decided ?id)
-(or(viSeRya-viSeRaNa ?id1 ?id)(subject-subject_samAnAXikaraNa ?id1 ?id)(samAsa ?id1 ?id))
+(or(viSeRya-viSeRaNa ?id1 ?id)(subject-subject_samAnAXikaraNa ?id1 ?id)(samAsa_viSeRya-samAsa_viSeRaNa ?id1 ?id))
 (or (id-cat_coarse ?id noun|adjective)(id-cat ?id adjective_comparative|adjective_superlative))
 (id-cat_coarse ?id1 noun)
 =>

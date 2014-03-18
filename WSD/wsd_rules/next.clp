@@ -6,7 +6,7 @@
 (declare (salience 5001))
 (id-root ?id next)
 ?mng <-(meaning_to_be_decided ?id)
-(or(kriyA-aXikaraNavAcI_avyaya  =(- ?id 1) ?id1)(kriyA-next_to_saMbanXI   =(- ?id 1) ?id1)) ;kriyA-lupwa_prep_saMbanXI  is now changed to kriyA-aXikaraNavAcI_avyaya (Modified by Roja 28-12-10 Suggested by Sukhada)
+(or(kriyA-aXikaraNavAcI  =(- ?id 1) ?id1)(kriyA-next_to_saMbanXI   =(- ?id 1) ?id1)) ;kriyA-lupwa_prep_saMbanXI  is now changed to kriyA-aXikaraNavAcI (Modified by Roja 28-12-10 Suggested by Sukhada)
 (id-word =(+ ?id 1) to )
 =>
 (retract ?mng)

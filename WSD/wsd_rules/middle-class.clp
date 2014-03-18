@@ -22,7 +22,7 @@
 (declare (salience 5000))
 (id-root ?id middle-class)
 ?mng <-(meaning_to_be_decided ?id)
-(or(viSeRya-viSeRaNa  ?id ?id1)(samAsa  ?id ?id1))
+(or(viSeRya-viSeRaNa  ?id ?id1)(samAsa_viSeRya-samAsa_viSeRaNa  ?id ?id1))
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)

@@ -44,7 +44,7 @@
 (id-root ?id show)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 dog)
-(samAsa ?id1 ?id)
+(samAsa_viSeRya-samAsa_viSeRaNa ?id1 ?id)
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
@@ -58,7 +58,7 @@
 (id-root ?id show)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 flower)
-(samAsa ?id1 ?id)
+(samAsa_viSeRya-samAsa_viSeRaNa ?id1 ?id)
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
@@ -72,7 +72,7 @@
 (id-root ?id show)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 fashion)
-(samAsa ?id1 ?id)
+(samAsa_viSeRya-samAsa_viSeRaNa ?id1 ?id)
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)

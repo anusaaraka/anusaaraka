@@ -1024,7 +1024,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
 ;(kriyA-subject ?id  =(- ?id 1))
-(kriyA-aXikaraNavAcI_avyaya  ?id =(+ ?id 1));I got the news. Added by Shirisha Manju(Suggested by Sukhada)
+(kriyA-aXikaraNavAcI  ?id =(+ ?id 1));I got the news. Added by Shirisha Manju(Suggested by Sukhada)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id pahuzca))
@@ -1264,8 +1264,8 @@
 (id-root ?id get)
 ?mng <-(meaning_to_be_decided ?id)
 ;(id-word ?id1 home)
-(kriyA-aXikaraNavAcI_avyaya  ?id ?id1) ;kriyA-lupwa_prep_saMbanXI  is now changed to kriyA-aXikaraNavAcI_avyaya (Modified by Roja 28-12-10 Suggested by Sukhada)
-;(or(kriyA-object ?id ?id1)(kriyA-aXikaraNavAcI_avyaya  ?id ?id1)) ;kriyA-lupwa_prep_saMbanXI  is now changed to kriyA-aXikaraNavAcI_avyaya (Modified by Roja 28-12-10 Suggested by Sukhada) ;Commented by Manju Suggested by Sukhada
+(kriyA-aXikaraNavAcI  ?id ?id1) ;kriyA-lupwa_prep_saMbanXI  is now changed to kriyA-aXikaraNavAcI (Modified by Roja 28-12-10 Suggested by Sukhada)
+;(or(kriyA-object ?id ?id1)(kriyA-aXikaraNavAcI  ?id ?id1)) ;kriyA-lupwa_prep_saMbanXI  is now changed to kriyA-aXikaraNavAcI (Modified by Roja 28-12-10 Suggested by Sukhada) ;Commented by Manju Suggested by Sukhada
 ;(id-cat_coarse ?id verb)
 =>
 (retract ?mng)

@@ -5,7 +5,7 @@
 (declare (salience 5000))
 (id-root ?id until)
 ?mng <-(meaning_to_be_decided ?id)
-(kriyA-conjunction  ?id1 ?id)
+(kriyA-vAkya_viBakwi  ?id1 ?id)
 ;(id-cat_coarse ?id conjunction)
 =>
 (retract ?mng)
