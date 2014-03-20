@@ -13842,7 +13842,7 @@ fresh_breeze	wAjZI_havA#wAjZI_havA#noun#2#RM
 fresh_receipt	nayI-AvawI#nayI-AvawI#noun#2#RM
 fresh_vacancy	naWa_riikwa#naWa_riikwa#noun#2#RM
 fresh_voucher	prApwi-vAucara#prApwi-vAucara#noun#2#RM
-fresh_water	mITA_pAnI#mITA_pAnI#noun#2#RM
+fresh_water	wAjA_pAnI/mITA_pAnI#wAjA_pAnI/mITA_pAnI#noun#2#RM
 freshman_class	navAgaMwuka_kakRA#navAgaMwuka_kakRA#noun#2#RM
 freshwater_bream	wAjZe_pAnI_meM_rahane_vAlI_maCalI#wAjZe_pAnI_meM_rahane_vAlI_maCalI#noun#2#RM
 freshwater_clam	wAjZe_jala_kA_sIpI#wAjZe_jala_kA_sIpI#noun#2#RM

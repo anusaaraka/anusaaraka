@@ -5698,3 +5698,15 @@ Holi	holI
 Marathi	marATI	
 Simon	simona
 Gangotri	gaMgowrI
+Duttgarh	xawwagaDZa
+Saatpute	sAwapuwe
+Mule	mule
+Agra	AgarA
+Sangeeta	saMgIwA
+Bamrauli	bamarOlI
+Katara	katArA
+Chauki	cOkI
+Dauki	dOkI
+Tajganj	wAjagaMja
+Inspector	iMspektara
+Gitanjali	gIwAMjali	
