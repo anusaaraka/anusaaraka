@@ -65464,7 +65464,7 @@ remunerating_UNDEFINED	pAriSramika_xenA
 remuneration_noun	pAriSramika
 remunerations_UNDEFINED	pAriSramika
 remunerative_UNDEFINED	lABapraxa
-remunerative_adjective	pAriSramika-praxawwa/lABakArI
+remunerative_adjective	lABakArI/pAriSramika-praxawwa
 remunerator_noun	BugawAnakarwA
 renaissance_UNDEFINED	punarjAgaraNa
 renaissance_noun	navajAgaraNakAla/navajAgaraNa
@@ -78999,7 +78999,7 @@ symbioticalest_UNDEFINED	sahajIvI
 symbioticer_UNDEFINED	sahajIvI
 symbioticest_UNDEFINED	sahajIvI
 symbol-worship_noun	prawIkopAsanA
-symbol_noun	niSAna/prawIka/cinha/cihna/safkewAkRara
+symbol_noun	prawIka/niSAna/cinha/cihna/safkewAkRara
 symbolatry_noun	prawIkopAsanA
 symboled_UNDEFINED	safkewAkRara
 symbolic_adjective	prawIkAwmaka
@@ -93518,5 +93518,7 @@ infestation_noun	saMkramaNa
 evince_verb	icCA_vyakwa_kara
 educative_adjective	SikRApraxa
 expressible_adjective	vyakwa_karane_yogya
-etc._noun	Axi
 intervening_adjective	maXyAvarwI
+#abbrevations:
+etc._noun	Axi
+MSRTC_PropN	mahArARtra_rAjya_sadZaka_parivahana_nigama

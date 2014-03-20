@@ -11,11 +11,12 @@
   ========================
   1. Modified :
 	1. paraCAIM	as	paraCAI
-	2. baMxi	as  	baMxI   (by Roja 17-07-12)
-  	3. sparXA	as  	sparXa  (    "   12-09-12)
-	4. nIva		as	nIMva	(    "	 15-07-13) Suggested by Sarita ji LTRC)
+	2. baMxi	as  	baMxI   	(by Roja 17-07-12)
+  	3. sparXA	as  	sparXa  	(    "   12-09-12)
+	4. nIva		as	nIMva		(    "	 15-07-13) Suggested by Sarita ji LTRC)
 				Ex: The foundations of the house are being laid today.
-	5. sImA(man)	as	sImA	(Suggested by Sukhada 20-02-14) 
+	5. sImA(man)	as	sImA		(Suggested by Sukhada 20-02-14) 
+	6. lAparavAI	as	lAparavAhI	(Suggested by Chaitanya Sir 20-3-14) Ex: The bus driver's negligence caused the death of Mohan.
 
   2. Added :
 	1. SuBakAmanA 	Suggested by sheetal (02-11-09) Eg: We convey our best wishes to the Chinmaya Dham Yatris . 
@@ -42,6 +43,7 @@
 	22. pawaMga     Suggested by Sukhada        (17-01-12)  Ex: Sundari was a big red, white and blue kite.
 	23. dAyarektarI	By Roja Suggested by Sukhada (20-11-13) Ex: Create a new directory and put all your files into it. 
 	24. garmI	Suggested by sukhada (25-11-13)		Ex: The warmth of the sun's rays.
+	25. amana	Suggested by sukhada (20-03-14)		Ex: Everyone should maintain peace on the earth. 
 	
 
   3. Removed :
@@ -1036,9 +1038,12 @@ Removed:
 					Ex: Quantitative measurement is central to the growth of science especially physics because the
 					    laws of nature happen to be expressible in precise mathematical equations.
 	80. etc._noun			Axi				(Suggested by Pramila Banasthali 07-03-14)
-					Ex: The working of an antenna, the propagation of radio waves in the ionosphere etc. are problems of 						electrodynamics.
+					Ex: The working of an antenna, the propagation of radio waves in the ionosphere etc. are problems of 						   electrodynamics.
 	81. intervening_adjective	maXyAvarwI			(Suggested by Prachi Banasthali 07-03-14)
 					Ex: Little had changed in the intervening years.
+	82. MSRTC_PropN			mahArARtra_rAjya_sadZaka_parivahana_nigama (From newsdev2014 corpus 20-3-14)
+					Ex: Along with ordering the MSRTC to pay the compensation the Tribunal said that the insurance company
+					    should not pay anything as the car belonged to Jichkar himself.
 
 
     4. Added new meaning to the existing word:
@@ -1442,7 +1447,11 @@ Removed:
 				Ex: We must return them to their rightful owner, How can you do that?
 	118. taker_noun		xAzva_lagAne_vAlA	as	lene_vAlA	(Suggested by Prachi Banasthali	08-03-14)
 				Ex: I have two tickets for sale. Any takers? 
-
+	119. symbol_noun     	niSAna		as	prawIka			(Suggested by Jagriti Banasthali 18-03-14)
+				Ex: When magnitudes of two or more physical quantities are multiplied their units should be treated in the 
+				    same manner as ordinary algebraic symbols.
+	120. remunerative_adjective  pAriSramika-praxawwa	as	lABakArI  (Suggested by Anita ji LTRC 18-03-14)
+				Ex: But their belief was that the expenditure which they recommended would be remunerative.
 	
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1842,6 +1851,8 @@ Removed:
 				Ex: For this, we consider a plane circular loop of radius r whose plane is perpendicular to
 				    the direction of the current-carrying wire, and which is centred symmetrically with
 				    respect to the wire.
+	7. fresh_water		wAjA_pAnI		(Suggested by Chaitanya sir 20-3-14 	) Ex: We drained the pond and filled it with
+												      fresh water.
 
 
    Modifying the head id:
@@ -1901,17 +1912,23 @@ Removed:
 	window_noun     	gavAkRa		(Suggested by Rashmi Banasthali  14-10-13)
 	charge_noun		AveSa		(Suggested by Chaitanya Sir      04-11-13)
 	charge_verb		AveSiwa_kara	(		"		   "	 )
-	absorb_verb		avaSoRiwa_kara	(Suggested by Garima Banasthali  14-11-13)
-				EX:The dark lines indicate the frequencies that have been absorbed by the atoms of the gas.
-	protoplanetary_noun	protoplEnetarI	(Suggested by Sonam Banasthali	 04-12-13)
-				Ex: The Infra Red Astronomy Satellite IRAS launched in 1983 succeeded in discovering such protoplanetary 					   discs around a few nearby stars like beta pictoris. 
-	pre-solar_adjective	sOramaNdala_kI_racanA_se_pahale_ke(	"	   "	 )
-				Ex: However, with the pre-solar cloud, another factor had to be  taken into co..
-	elementary_adjective 	mUla		(Suggested by Pramila Banasthali 05-02-14)
-				Ex: Note that when mole is used the elementary entities must be specified.
-	dimensionless_adjective vimAvihIna	(Suggested by Pramila Banasthali 05-02-14)
-				Ex: Both these are dimensionless quantities.
-
+	absorb_verb		avaSoRiwa_kara	(Suggested by Garima Banasthali  14-11-13) Ex: The dark lines indicate the frequencies that
+											       have been absorbed by the atoms of the gas.
+	protoplanetary_noun	protoplEnetarI	(Suggested by Sonam Banasthali	 04-12-13) Ex: The Infra Red Astronomy Satellite IRAS launched
+                                                                                           in 1983 succeeded in discovering such protoplanetary
+						  					   discs around a few nearby stars like beta pictoris. 
+	pre-solar_adjective	sOramaNdala_kI_racanA_se_pahale_ke(	"	   "	 ) Ex: However, with the pre-solar cloud, another
+											       factor had to be  taken into co..
+	elementary_adjective 	mUla		(Suggested by Pramila Banasthali 05-02-14) Ex: Note that when mole is used the elementary 
+											       entities must be specified.
+	dimensionless_adjective vimAvihIna	(	"	"		     "	 ) Ex: Both these are dimensionless quantities.
+	subtraction_noun  	vyavakalana	(Suggested by Jagriti Banasthali 18-03-14) Ex: The magnitudes of physical quantities may be
+                                                                                               added together or subtracted from one another
+                                                                                               only if they have the same dimensions.
+	dimensionally_adverb 	vimIya		(Suggested by Pramila Banasthali 05-02-14) Ex: The dimensions of LHS and RHS are the same and
+											       hence the equation is dimensionally correct.
+	exponent_noun 		GAwAfka		(		"		    "	 ) Ex: The dimensions of a physical quantity are the 
+											       powers or exponents to which the base quantities 											      are raised to represent that quantity.
 
     Modifying spelling of the existing word :
     -----------------------------------------
@@ -2035,6 +2052,18 @@ Removed:
 	Marathi 	marATI		(	By Shirisha Manju        29-01-14)
 	Simon   	simona		(		"		 12-02-14)
 	Gangotri	gaMgowrI	(		"		 25-02-14)
+	Duttgarh	xawwagaDZa	( By Manju from newsdev2014 corpus 20-3-14)	
+	Saatpute	sAwapuwe	(	"			"	 )
+	Mule	mule			(	"			"	 )	  
+	Agra	AgarA			(	"			"	 )
+	Sangeeta	saMgIwA		(	"			"	 )
+	Bamrauli	bamarOlI	(	"			"	 )
+	Katara	katArA			(	"			"	 )
+	Chauki	cOkI			(	"			"	 )
+	Dauki	dOkI			(	"			"	 )
+	Tajganj	wAjagaMja		(	"			"	 )
+	Inspector	iMspektara	(	"			"	 )
+	Gitanjali	gIwAMjali	(	"			"	 )
 
    Modified:
    ---------

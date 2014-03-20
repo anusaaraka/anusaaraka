@@ -403,3 +403,6 @@ protoplanetary_noun	protoplEnetarI
 pre-solar_adjective	sOramaNdala_kI_racanA_se_pahale_ke
 dimensionless_adjective	vimAvihIna
 elementary_adjective	mUla
+subtraction_noun	vyavakalana
+dimensionally_adverb	vimIya
+exponent_noun	GAwAfka
