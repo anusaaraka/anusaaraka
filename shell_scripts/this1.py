@@ -37,6 +37,7 @@ while(char[k]!='<'):
 	k=k+1
 jvstr = "var hnd = new Array();\nfor(i=0;i<" + str(len(hnd)) + ";i++){\n	hnd[i] = new Array();\n}\n"
 for i in range(0,len(hnd)):
+	hnd[i][1]="\\\"".join(hnd[i][1].split("\""));
 	jvstr += "hnd[" + str(i) + "][0] = \"" + hnd[i][0] + "\";\n"
 	jvstr += "hnd[" + str(i) + "][1] = \"" + hnd[i][1] + "\";\n"
 jvstr += "var k=0;\nvar i=0;\nwhile(k!=2){\n	if(senno[i]=='.')k++;\n	i++;\n}senno = senno.slice(0,i-1);\nfor(i=0;i<" + str(len(hnd)) + ";i++){\n	if(hnd[i][0]==senno){\n		str += hnd[i][1];\n		break;\n	}\n}\n"

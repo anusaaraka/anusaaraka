@@ -172,7 +172,7 @@ inextensible_adjective	aviwAnya
 infinitesimal_noun	anaMwa_sUkRma
 infinity_noun	anaMwa
 instantaneous_adjective	wAwkRaNika
-instant_noun	kRaNika/kRaNa
+instant_noun	kRaNa/kRaNika
 interaction_noun	anyonya_kriyA
 interatomic_noun	aMwaraparamANvika
 inter-dispersed_adjective	aMwarparikRipwa
