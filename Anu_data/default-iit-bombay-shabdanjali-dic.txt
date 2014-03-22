@@ -93522,3 +93522,4 @@ intervening_adjective	maXyAvarwI
 #abbrevations:
 etc._noun	Axi
 MSRTC_PropN	mahArARtra_rAjya_sadZaka_parivahana_nigama
+icecream_noun	AIsakrIma
