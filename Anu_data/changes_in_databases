@@ -1050,6 +1050,48 @@ Removed:
 					    should not pay anything as the car belonged to Jichkar himself.
 	83. icecream_noun		AIsakrIma			(Suggested by Prachi Banasthali	21-03-14)
 					Ex: He treated his friends to an icecream. 
+	83. hour-long_noun  		GaMtA_lambI			(By Manju from newsdev2014 corpus   21-3-14)
+					Ex: The police arrived on the scene and cleared the two hour-long traffic jam.
+	84. well-wishers_noun       	SuBacinwaka			(By Manju from newsdev2014 corpus   21-3-14)
+					Ex: Reeta Mule presented messages from well-wishers.
+	85. joint-secretary_noun    	sahasaciva			(			"		"  )
+	86. North-Central_noun      	uwwara-maXya			(			"		"  )
+					Ex: Candidates from North-Central and Bargi Assembly seats have been declared in the list issued by the
+					    party.
+	87. Multi-speciality_noun   	maltIspeSielitI			(By Manju from newsdev2014 corpus   21-3-14)
+					Ex: Komal was immediately taken to the Multi-speciality Government Hospital.
+	88. in-charge_noun  		praBArI				(By Manju from newsdev2014 corpus   21-3-14)
+					Ex: Chauki in-charge Rejister Pal Singh, who was sitting on the front, was killed immediately.
+	89. power-dependent_noun    	bijalI_para_nirBara_hone_vAlA	(By Manju from newsdev2014 corpus   21-3-14)
+					Ex: On Thursday power-dependent business were completely stopped.
+	90. Indo-Pakistani_noun     	BArawa-pAka			(					"  )
+	91. near-by_noun    		AsapAsa				(					"  )
+					Ex: On hearing the sound of a car colliding with a tree, the near-by residents came to the scene and 
+					    immediately informed the police.
+	92. Sub-Inspector_noun      	saba_iMspektara			(By Manju from newsdev2014 corpus   21-3-14)
+					Ex: This case is being handled by Sub-Inspector Surendra Kumar
+	93. North-Centre_noun       	uwwara-maXya			(				"	"  )
+	94. secretary-general_noun  	mahAsaciva			(				"	"  )
+					Ex: The secretary-general would have to fix a date for a quick requisition meeting.
+	95. Co-operative_noun       	paxAXikArI			(By Manju from newsdev2014 corpus   21-3-14)
+					Ex: He gave emphasis to the high level investigation of the activities of the Co-operative department.
+	96. multi-talented_noun     	bahuAyAmI_prawiBASAlI		(By Manju from newsdev2014 corpus   21-3-14)
+					Ex: India is full of multi-talented geniuses.
+	97. part-payment_noun       	pArta_pemeMta			(			"		"  )
+					Ex:The Power corporation is not accepting part-payments.
+	98. sub-divisions_noun      	saba_divijana			(			"		"  )
+					Ex: The SDO of all sub-divisions have been ordered to meet the target.
+	99. show-cause_noun 		kAraNa_bawAo			(By Manju from newsdev2014 corpus	"  )
+					Ex: The absentees were issued with a show-cause notice.
+	100. house-shop_noun 		makAna-xukAna			(			 " 		"  )
+					Ex: According to this bill an NRI Punjabi can rent her land and house-shop at a fixed point in time.
+	101. Vice-President_noun     	upAXyakRa			(By Manju from newsdev2014 corpus   21-3-14)
+					Ex:  The Vice-President Vijay Singh welcomed the decision taken by the administration.
+	102. oblation_noun   		Ahuwi				(Suggested by Chaitanya Sir         22-3-14)
+					Ex: The Katha will be completed and the final oblation to the Havan will be made on Saturday.
+	103. BJP_PropN			BAjapA				(By Manju from newsdev2014 corpus   22-3-14)
+	104. ADCP_PropN			edIsIpI				(	"		"		"  )
+	105. ACP_PropN			esIpI				(	"		"		"  )
 
 
     4. Added new meaning to the existing word:
@@ -1585,12 +1627,17 @@ Removed:
     Louis_Victor_de_Broglie	luisa_viktara_xe_broYglI#luisa_viktara_xe_broYglI#noun#1#WM	
 				(Suggested by Sonam Banasthali	29-08-13)
     Added 5029 entries. Extracted from .xls files. 		(By Roja	19-10-13)
-    101_Days	101_desa#101_desa#noun#2#RM
+    	101_Days	101_desa#101_desa#noun#2#RM
 		to
-    Zulm_Ko_Jala_Doonga	jZulma_ko_jalA_xUMgA#jZulma_ko_jalA_xUMgA#noun#4#RM	
-    Crab_Nebula		karka_nihArikA#karka_nihArikA#noun#2#RM	(Suggested by Nandini ji LTRC 07-12-13)
-    United_Nation's	saMyukwa_rARtra#saMyukwa_rARtra#noun#2#RM	(Suggested by Sukhada	19-12-13)
-    Prime_Minister	praXAna_manwrI#praXAna_manwrI#noun#2#RM		(Suggested by Anita ji  21-01-14)
+    	Zulm_Ko_Jala_Doonga	jZulma_ko_jalA_xUMgA#jZulma_ko_jalA_xUMgA#noun#4#RM	
+    	Crab_Nebula		karka_nihArikA#karka_nihArikA#noun#2#RM	(Suggested by Nandini ji LTRC 07-12-13)
+    	United_Nation's	saMyukwa_rARtra#saMyukwa_rARtra#noun#2#RM	(Suggested by Sukhada	19-12-13)
+    	Prime_Minister	praXAna_manwrI#praXAna_manwrI#noun#2#RM		(Suggested by Anita ji  21-01-14)
+    	Uttar_Pradesh	uwwara_praxeSa#uwwara_praxeSa#noun#2#RM		(By Manju from  newsdev2014 corpus 22-03-14)
+    	Sri_Rama	SrI_rAma#SrI_rAma#noun#2#RM			(	"		"		"  )
+    	Lord_Krishna	BagavAna_kqRNa#BagavAna_kqRNa#noun#2#RM		(	"		"		"  )
+	South_India	xakRiNa_BArawa#xakRiNa_BArawa#noun#2#RM		(	"		"		"  )
+	Sri_Lankan	SrIlaMkAI#SrIlaMkAI#noun#2#RM			(	"		"		"  )
     
  multi_word_expressions.txt
  ==========================
@@ -1845,6 +1892,42 @@ Removed:
 				Ex: The rain water had washed them away.
 	92. any_day		kisI_BI_xina#kisI_BI_xina#noun#2#RM		 	(Suggested by preeti ji LTRC	03-02-14)
 				Ex: The baby could arrive any day now.
+	93. youth_council   	yuvA_pariRax/nOjavAnoM_kI_samiwi#noun#2#RM		(Suggested by Ratna purohit	21-03-14)
+				Ex:On this occasion, the SFI state secretary, State joint-secretary of the Youth council and Ajit were present.
+	94. state_secretary 	rAjya_saciva#rAjya_saciva#noun#2#RM			(Suggested by Ratna purohit	21-03-14)
+				Ex:On this occasion, the SFI state secretary, State joint-secretary of the Youth council and Ajit were present.
+	95. newly_married_woman nava_vivAhiwA#nava_vivAhiwA#noun#2#RM			(Suggested by Ratna purohit	21-03-14)
+				Ex: A newly married woman committed suicide by hanging herself from the fan.
+	96. secondary_school    mAXyamika_vixyAlaya#mAXyamika_vixyAlaya#noun#2#RM	(Suggested by Ratna purohit	  "	)
+				Ex: Municipal corporation secondary school demonstrated their imagination power.
+	97. teachers_association	SikRaka_saMGa#SikRaka_saMGa#noun#2#RM		(Suggested by Ratna purohit	  "	)
+				Ex: The President of the MNPA teachers association, honoured the school by presenting the award.
+	98. driving_licence 	cAlaka_lAisensa#cAlaka_lAisensa#noun#2#RM		(Suggested by Ratna purohit	21-03-14)
+	99. by_next_week    	agale_sapwAha_waka#agale_sapwAha_waka#noun#2#RM		(		"		  "	)
+				Ex: The rest will be provided by next week.		(
+	100. service_act	sevA_aXiniyama#sevA_aXiniyama#noun#2#RM			(		"		  "	)
+				Ex: The service act specifies that the deadline is seven days.
+	101. number_of_applicants	AvexakoM_kI_saMKyA#AvexakoM_kI_saMKyA#noun#2#RM	(		"		  "	)
+				Ex: The number of applicants moved around the office for two to three months are countless.
+	102. ordinary_day	sAmAnya_xina#sAmAnya_xina#noun#2#RM			(Suggested by Ratna purohit	21-03-14)
+				Ex: On an ordinary day it is usually 55 decibels.	
+	103. out_of_clay	mittI_xvArA/mittI_rahiwa#noun#2#RM			(		"		  "	)
+				Ex: The teachers and students built the fort out of clay.
+	104. Akhil_Bhartiya_Janwadi_Mahila_Samiti  aKila_BArawIya_janavAxI_mahilA_samiwi#noun#2#RM ( 	"		  "	)
+				Ex: Akhil Bhartiya Janwadi Mahila Samiti launched a state-wide campaign against corruption in jobs.
+	105. across_the_state	praxeSa_Bara_meM/saMpUrNa_rAjya_meM#noun#2#RM		(Suggested by Ratna purohit	21-03-14)
+				Ex: Signatures across the state will be collected and handed over to the Governor.
+	106. on_the_outskirts	bAhya_kRewra_meM/bAharI_ilAke_meM#noun#2#RM		(Suggested by Ratna purohit	  "	)
+				Ex: A very sad incident occurred in Maloya village, which is located on the outskirts of the city,where a
+				    newly married woman committed suicide by hanging herself from the fan.
+	107. share_market	prawiBUwi_bAjAra#prawiBUwi_bAjAra#noun#2#RM		(Suggested by Ratna purohit	21-03-14)
+				Ex: The domestic share market make history on Thursday. 
+	108. President_of_the_District_Art_Teachers'_association  jilA_kalAXyApaka_saMGa_ke_aXyakRa#noun#2#RM( "	  "	)
+				Ex: The President of the District Art Teachers' association provided guidance to the students.
+	109. gold_bars		sone_kI_IMteM#sone_kI_IMteM#noun#2#RM			(Suggested by Ratna purohit     21-03-14)
+				Ex: Demand for gold bars and coins went down due to inflation.
+	110. Panchayat_level_committee_officer  paMcAyawa_samiwi_swarIya_paxAXikArI#noun#2#RM(		"		  "	)
+				Ex: Information about the PSS meeting was not given to the Panchayat level committee officer.
 
     Added new meaning to the existing word:
     --------------------------------------
@@ -1859,6 +1942,9 @@ Removed:
 				    respect to the wire.
 	7. fresh_water		wAjA_pAnI		(Suggested by Chaitanya sir 20-3-14 	) Ex: We drained the pond and filled it with
 												      fresh water.
+	8. fatal_accident  	GAwaka_xurGatanA	(Suggested by Ratna purohit     21-03-14)
+	9. general_public  	Ama_AxamI		(Suggested by Chaitanya sir     22-03-14) Ex: For this reason the general public has to
+												      come forward.		
 
 
    Modifying the head id:
@@ -1934,7 +2020,7 @@ Removed:
 	dimensionally_adverb 	vimIya		(Suggested by Pramila Banasthali 05-02-14) Ex: The dimensions of LHS and RHS are the same and
 											       hence the equation is dimensionally correct.
 	exponent_noun 		GAwAfka		(		"		    "	 ) Ex: The dimensions of a physical quantity are the 
-											       powers or exponents to which the base quantities 											      are raised to represent that quantity.
+									       powers or exponents to which the base quantities 											      are raised to represent that quantity.
     Modifying first meaning:
     -----------------------
 	instant_noun	kRaNika	as	kRaNa	(Suggested by Prachi Banasthali  21-03-14) 
@@ -2062,18 +2148,43 @@ Removed:
 	Marathi 	marATI		(	By Shirisha Manju        29-01-14)
 	Simon   	simona		(		"		 12-02-14)
 	Gangotri	gaMgowrI	(		"		 25-02-14)
-	Duttgarh	xawwagaDZa	( By Manju from newsdev2014 corpus 20-3-14)	
-	Saatpute	sAwapuwe	(	"			"	 )
-	Mule	mule			(	"			"	 )	  
-	Agra	AgarA			(	"			"	 )
-	Sangeeta	saMgIwA		(	"			"	 )
-	Bamrauli	bamarOlI	(	"			"	 )
-	Katara	katArA			(	"			"	 )
-	Chauki	cOkI			(	"			"	 )
-	Dauki	dOkI			(	"			"	 )
-	Tajganj	wAjagaMja		(	"			"	 )
-	Inspector	iMspektara	(	"			"	 )
-	Gitanjali	gIwAMjali	(	"			"	 )
+
+	Following entries are added from  newsdev2014 corpus by Shirisha Manju
+
+		Duttgarh	xawwagaDZa			Saatpute	sAwapuwe	
+		Mule		mule				Agra		AgarA			
+		Sangeeta	saMgIwA				Bamrauli	bamarOlI	
+		Katara		katArA				Chauki		cOkI			
+		Dauki		dOkI				Tajganj		wAjagaMja		
+		Inspector	iMspektara			Gitanjali	gIwAMjali	
+		Ayodhya 	ayoXyA				Ananth  	anaMwa			
+		Diwali  	xivAlI				Dhanteras       Xanawerasa	
+		Gavre   	gavare				Hariparvat      harIparvawa	
+		Hariyana        hariyANA			Jairam  	jayarAma		
+		Vivekananda     vivekAnaMxa			Vachspati       vAcaspawi	
+		Medpallivaar    medapallIvAra			Ramesh  	rameSa			
+		Meshram 	meSrAma				Mehar   	mehara			
+		Nagarsevak      nagarasevaka			Sultanpur       sulwAnapura	
+		Sundernagar     suMxaranagara			Suigawadi       suIgavAdZI	
+		Priyanjana      priyaMjanA			Bhullar 	BUllara	
+		Chatrokhadi     cawaroKadZI			Avni    	avani
+		Gujarat 	gujarAwa			Umesh   	umeSa
+		Surendra        sureMxra			Punjab  	paMjAba
+		Pallekele       pAllekela			Nikhil  	niKila
+		Nehru   	neharU				Narhari 	naraharI
+		Naresh  	nareSa				NHPS    	enaecapIsI
+		Narender        nareMxra			Kavle   	kAvale
+		Darshan 	xarSana				Gedekar 	edZekara
+		Sahil   	sAhila				Barai   	bAraI
+		Shekhar 	SeKara				Vanskar 	vAnaskara
+		Gundamwar       guMdamavAra			Rohtak  	rohawaka
+		SFI     	esaePaAI			Deshwal 	xeSavAla
+		Hawa    	havA				Ajit    	ajIwa
+		Maloya  	maloyA				Kulvinder       kulaviMxara
+		Dimuth  	ximuWa				Karunarathne    karuNArawne			
+		Ashan   	eSAna				Dambulla        xAMbulA
+		Hambantota      haMbanatotA			Khedia  	KedZiyA
+		Sushil  	suSIla				Mahanta 	mahaMwa
 
    Modified:
    ---------

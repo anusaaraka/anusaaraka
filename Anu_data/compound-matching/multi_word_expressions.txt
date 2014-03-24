@@ -12569,7 +12569,7 @@ fast_tract	SIxa_a_nipatAna#SIxa_a_nipatAna#noun#2#RM
 fat_cell	vasA_koSA#vasA_koSA#noun#2#RM
 fat_man	motA_AxamI#motA_AxamI#noun#2#RM
 fat_salary	motI_wanKA#motI_wanKA#noun#2#RM
-fatal_accident	jAnalevA_xurGatanA#jAnalevA_xurGatanA#noun#2#RM
+fatal_accident	GAwaka_xurGatanA/jAnalevA_xurGatanA#GAwaka_xurGatanA/jAnalevA_xurGatanA#noun#2#RM
 fatal_error	GAwaka_wruti#GAwaka_wruti#noun#2#RM
 fatigue_duty	SrAnwi_karwavya#SrAnwi_karwavya#noun#2#RM
 fault_finding	CixrAnveRapra#CixrAnveRapra#noun#2#RM
@@ -14204,7 +14204,7 @@ general_proposal	sAmAnya_praswAva#sAmAnya_praswAva#noun#2#RM
 general_provident_fund	sAmAnya_BaviRya_niXi#sAmAnya_BaviRya_niXi#noun#3#RM
 general_provident_fund_rules	sAmAnya_BaviRya_niXi_niyamAvalI#sAmAnya_BaviRya_niXi_niyamAvalI#noun#4#RM
 general_provident_fund_section	sAmAnya_BaviRya_niXi_anuBAga#sAmAnya_BaviRya_niXi_anuBAga#noun#4#RM
-general_public	jana_sAXAraNa#jana_sAXAraNa#noun#2#RM
+general_public	Ama_AxamI/jana_sAXAraNa#Ama_AxamI/jana_sAXAraNa#noun#2#RM
 general_purpose_computer	vyApaka_uxxeSaya_aBikaliwra#vyApaka_uxxeSaya_aBikaliwra#noun#3#RM
 general_purpose_language	vyApaka_uxxeSaya_BARA#vyApaka_uxxeSaya_BARA#noun#3#RM
 general_purpose_operating_system	vyApaka_uxxeSaya_saMkriyA#vyApaka_uxxeSaya_saMkriyA#noun#4#RM
@@ -33734,3 +33734,21 @@ character_building	cariwra_nirmANa#cariwra_nirmANa#noun#1#RM
 any_day	kisI_BI_xina#kisI_BI_xina#noun#2#RM
 #By Krithika ji LTRc
 fatal_hour	nirNAyaka_pala#nirNAyaka_pala#noun#2#RM
+youth_council	yuvA_pariRax/nOjavAnoM_kI_samiwi#yuvA_pariRax/nOjavAnoM_kI_samiwi#noun#2#RM 
+state_secretary	rAjya_saciva#rAjya_saciva#noun#2#RM
+newly_married_woman	nava_vivAhiwA#nava_vivAhiwA#noun#2#RM
+secondary_school	mAXyamika_vixyAlaya#mAXyamika_vixyAlaya#noun#2#RM
+teachers_association	SikRaka_saMGa#SikRaka_saMGa#noun#2#RM
+driving_licence	cAlaka_lAisensa#cAlaka_lAisensa#noun#2#RM
+by_next_week	agale_sapwAha_waka#agale_sapwAha_waka#noun#2#RM
+service_act	sevA_aXiniyama#sevA_aXiniyama#noun#2#RM
+number_of_applicants	AvexakoM_kI_saMKyA#AvexakoM_kI_saMKyA#noun#2#RM
+ordinary_day	sAmAnya_xina#sAmAnya_xina#noun#2#RM
+out_of_clay	mittI_xvArA/mittI_rahiwa#mittI_xvArA/mittI_rahiwa#noun#2#RM
+Akhil_Bhartiya_Janwadi_Mahila_Samiti	aKila_BArawIya_janavAxI_mahilA_samiwi#aKila_BArawIya_janavAxI_mahilA_samiwi#noun#2#RM
+across_the_state	praxeSa_Bara_meM/saMpUrNa_rAjya_meM#praxeSa_Bara_meM/saMpUrNa_rAjya_meM#noun#2#RM 
+on_the_outskirts	bAhya_kRewra_meM/bAharI_ilAke_meM#bAhya_kRewra_meM/bAharI_ilAke_meM#noun#2#RM
+share_market	prawiBUwi_bAjAra#prawiBUwi_bAjAra#noun#2#RM
+President_of_the_District_Art_Teachers'_association	jilA_kalAXyApaka_saMGa_ke_aXyakRa#jilA_kalAXyApaka_saMGa_ke_aXyakRa#noun#2#RM
+gold_bars	sone_kI_IMteM#sone_kI_IMteM#noun#2#RM
+Panchayat_level_committee_officer	paMcAyawa_samiwi_swarIya_paxAXikArI#paMcAyawa_samiwi_swarIya_paxAXikArI#noun#2#RM

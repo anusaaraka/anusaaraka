@@ -5380,3 +5380,8 @@ Zulm_Ko_Jala_Doonga	jZulma_ko_jalA_xUMgA#jZulma_ko_jalA_xUMgA#noun#4#RM
 Crab_Nebula	karka_nihArikA#karka_nihArikA#noun#2#RM
 United_Nation's	saMyukwa_rARtra#saMyukwa_rARtra#noun#2#RM
 Prime_Minister	praXAna_manwrI#praXAna_manwrI#noun#2#RM
+Uttar_Pradesh	uwwara_praxeSa#uwwara_praxeSa#noun#2#RM
+Sri_Rama	SrI_rAma#SrI_rAma#noun#2#RM
+Lord_Krishna	BagavAna_kqRNa#BagavAna_kqRNa#noun#2#RM
+South_India	xakRiNa_BArawa#xakRiNa_BArawa#noun#2#RM
+Sri_Lankan	SrIlaMkAI#SrIlaMkAI#noun#2#RM
