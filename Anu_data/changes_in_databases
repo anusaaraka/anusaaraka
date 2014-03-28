@@ -642,7 +642,10 @@ Modified :
 	hoover		accept__vblex		(     "	     "	  )
 	hoover		house__n		(     "	     "	  )
 	toy		accept__vblex		(     "	     "	  )
-
+	labourer	house__n		(     "   28-03-14)
+	laborer		house__n		(     "      "    )
+	eye		ey/e__vblex		(     "      "	  )
+	hold-up		house__n		(     "	     "	  )
 
 
 Modified paradigm:
@@ -658,6 +661,7 @@ Added new paradigms:
         trek__vblex		(By Roja	14-10-11)
 	quarrel_vblex		("		16-11-13)
 	refer_vblex		("		04-12-13)
+	ey/e__vblex		("		28-03-14)
 
 Modified root:
 	may		May		as	may		(By Roja 14-03-13)
@@ -892,6 +896,11 @@ Removed:
 	102. electromagnetism_noun	vixyuw-cumbakawva	as	vixyuwa_cumbakawva  (suggested by Sukhada 04-12-13)
 	103. employment_noun 	vyavasAsa		as	vyavasAya	(Suggested by Pramila Banasthali 24-01-14)
 	104. police_noun	pulIsa			as	pulisa		(Suggested by 	"	"	10-02-14)
+	105. X-ray_verb      eksa-kiraNa_se_Poto_nikAla	as	eksa-re_se_Poto_nikAla	(Suggested by Anita ji LTRC 24-03-14)
+	106. X-rayed_UNDEFINED       eksa-kiraNa_se_Poto_nikAlanA	as	eksa-re_se_Poto_nikAlanA  (Suggested by Anita ji LTRC 24-03-14)
+	107. X-raying_UNDEFINED      eksa-kiraNa_se_Poto_nikAlanA	as	eksa-re_se_Poto_nikAlanA  (		"		"     )
+	108. X-rays_UNDEFINED        eksa-kiraNa_se_Poto_nikAlanA	as	eksa-re_se_Poto_nikAlanA  (		"		"     )
+
 
     3. Added new entry:
        ---------------
@@ -1532,6 +1541,7 @@ Removed:
 	25. freeman-^pl.freemen^_UNDEFINED  svAXIna_nAgarika			(By Manju			13-09-13)
 	26. freeman-{pl.freemen}_noun       svAXIna_nAgarika			(By  "				  "	)
 	27. civilisation_noun	saBya_samAja					(Suggested by 	Sukhada         26-11-13)
+	28. X-ray_noun		eksa-kiraNa					(Suggested by Anita ji LTRC	24-03-14)	
 
 
     7. Removed entry:
