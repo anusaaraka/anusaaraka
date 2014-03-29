@@ -2094,11 +2094,11 @@ X-chromosome_noun	eksa_guNasUwra
 X-linked_adjective	eksa_kromojoma_se_sambaxXa/eksa_guNasUwra-sambaxXa
 X-radiation_noun	kRa-vikiraNa/eksa-rediyeSana
 X-rated_adjective	eksa_SreNI_kA/aSlIla
-X-ray_noun	eksa-kiraNa/eksa-re
-X-ray_verb	eksa-kiraNa_se_Poto_nikAla
-X-rayed_UNDEFINED	eksa-kiraNa_se_Poto_nikAlanA
-X-raying_UNDEFINED	eksa-kiraNa_se_Poto_nikAlanA
-X-rays_UNDEFINED	eksa-kiraNa_se_Poto_nikAlanA
+X-ray_noun	eksa-re
+X-ray_verb	eksa-re_se_Poto_nikAla
+X-rayed_UNDEFINED	eksa-re_se_Poto_nikAlanA
+X-raying_UNDEFINED	eksa-re_se_Poto_nikAlanA
+X-rays_UNDEFINED	eksa-re_se_Poto_nikAlanA
 XCIII_noun	werAnave
 XCII_noun	bAnave
 XCIV_noun	cOrAnave
