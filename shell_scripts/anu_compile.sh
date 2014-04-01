@@ -223,4 +223,11 @@
 
  echo "Copying Readme and shell file to Provisional directory"
  cd  $HOME_anu_test/Doc/Provisional_data
- cp  *    $HOME_anu_provisional_wsd_rules/
+ if ! [ -d $HOME_anu_provisional_wsd_rules ] ; then
+	echo "Creating "$HOME_anu_provisional_wsd_rules 
+	mkdir $HOME_anu_provisional_wsd_rules/
+	cp  * $HOME_anu_provisional_wsd_rules/
+ fi
+ echo "Generating Canonical form for Provisional_wsd_rules"
+ cd $HOME_anu_provisional_wsd_rules/
+ sh get_canonical_form_prov_wsd_rules.sh
