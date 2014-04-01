@@ -537,6 +537,9 @@ Modified :
   17.	judavA		ladak/A__n		as	rAjA/__n		(	"	"	     17-07-13)
   18.   golA		gudiy/A__n		as	loh/A__n		(	" Suggested by Sukhada 16-10-13)
   19.   bAzha		Gar/a__n		as	rAw/a__n		(	"	"	       20-01-14)
+  20.   In /ja__v paradigm:
+		Generation of 'gayIM' is stopped				(By Roja 		       01-04-14)
+
 
  Removed : 
 	  1.  Removed the following parsarg paradigms and its related patterns
@@ -646,6 +649,10 @@ Modified :
 	laborer		house__n		(     "      "    )
 	eye		ey/e__vblex		(     "      "	  )
 	hold-up		house__n		(     "	     "	  )
+	tank		accept__vblex		(     "	  01-04-14)
+	tower		accept__vblex		(     "	     "	  )
+	big		plug__vblex
+	tiredness	access__n
 
 
 Modified paradigm:
