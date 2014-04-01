@@ -21,7 +21,7 @@
  (not (file_loaded ?id))
  (not (not_SandBox)) ;Added for server purpose. (Suggested by Chaitanya Sir, Added by Roja(05-03-11))
  =>
-        (bind ?file (str-cat ?*provisional_wsd_path* "/" ?word ".clp"))
+        (bind ?file (str-cat ?*provisional_wsd_path* "/canonical_form_prov_wsd_rules/" ?word ".clp"))
         (if (neq (load* ?file) FALSE) then
             (assert (file_loaded ?id))
        )
@@ -35,7 +35,7 @@
  (not (file_loaded ?id))
  (not (not_SandBox)) ;Added for server purpose. (Suggested by Chaitanya Sir, Added by Roja(05-03-11))
  =>
-        (bind ?file (str-cat ?*provisional_wsd_path* "/" ?word ".clp"))
+        (bind ?file (str-cat ?*provisional_wsd_path* "/canonical_form_prov_wsd_rules/" ?word ".clp"))
         (if (neq (load* ?file) FALSE) then
             (assert (file_loaded ?id))
        )
@@ -49,7 +49,7 @@
  (not (file_loaded ?id))
  (not (not_SandBox)) ;Added for server purpose. (Suggested by Chaitanya Sir, Added by Roja(05-03-11))
  =>
-        (bind ?file (str-cat ?*provisional_wsd_path* "/" ?root ".clp"))
+        (bind ?file (str-cat ?*provisional_wsd_path* "/canonical_form_prov_wsd_rules/" ?root ".clp"))
         (if (neq (load* ?file) FALSE) then
             (assert (file_loaded ?id))
        )

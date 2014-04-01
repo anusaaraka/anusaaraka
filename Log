@@ -4,6 +4,20 @@
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
 		  collect.clp	material.clp	remain.clp	can.clp		create.clp	cause.clp 	fresh.clp
 	 	  what.clp	ing_tam.clp	rent.clp	so.clp
+	Modified following relations:
+        kriyA-aXikaraNavAcI_avyaya  to  kriyA-aXikaraNavAcI
+        samAsa                      to  samAsa_viSeRya-samAsa_viSeRaNa
+        kriyA-conjunction           to  kriyA-vAkya_viBakwi
+        in following files:
+	above.clp	accident.clp	affair.clp	alert.clp	black.clp	body.clp	bunch.clp	disability.clp
+	camp.clp	charge.clp	company.clp	degree.clp	disappoint.clp	employ.clp	fair.clp	fast.clp
+	fat.clp		feature.clp	fiat.clp	foundation.clp	frequency.clp	generation.clp	get.clp		glass.clp	
+	high.clp	how.clp		increase.clp	locate.clp	low.clp		many.clp	mark.clp	middle-class.clp
+	mine.clp	much.clp	next.clp	old.clp		paper.clp	point.clp	practice.clp	present.clp
+	project.clp	public.clp	right.clp	scrap.clp	second.clp	section.clp	sharp.clp	show.clp
+	since.clp	standstill.clp	state.clp	sun.clp		term.clp	that.clp	turn.clp	union.clp
+	until.clp	upper.clp	variable.clp	velvet.clp	vessel.clp	waste.clp	were.clp	where.clp
+	with.clp	workshop.clp	a.clp		an.clp		as.clp		it.clp		so.clp
  2. vibakthi.clp
 	Added    : get_vib_for_grp_id_from_wsd	and 	get_vib_for_hid_from_wsd
 	Modified : assert_facts rule
@@ -30,6 +44,7 @@
  8. hindi_meaning.clp:
 	Modified: modify_word_for_apos	-> To remove 's in numbers
 		  database_cmp_phrase_word_mng, database_cmp_phrase_root_mng -> To print source in hindi meaning based on priority
+		  source variable in the function 'print_hindi_mng'
  9. hindi_sent_reorder.clp:
 	Modified: insert_aXika_for_adj_er,  insert_sabase_aXika_adj_est -> Added source of provisional database in the list.
 		  wh_without_aux-reorder1
@@ -90,35 +105,38 @@
 	add_snt_tag.lex		  -> Added this file to add sentence tag in input file.
 	std_format/Makefile	  -> Added compilation of add_snt_tag.lex
 	check-for-another-sent.pl -> Gives warnings if more tahn one sentence present in a line.
- 25. Updated following dictionary related files:
+ 25. To get provisional_wsd_rules in canonical form, Modified following files:
+        adjective.clp
+        wsd_meaning.clp
+        shell_scripts/anu_compile.sh
+ 26. Updated following dictionary related files:
         changes_in_databases	 apertium-en-hi.en.metadix 	apertium_hn.dix
- 26. Updated the following files to add 'id-wsd_viBakwi' fact in nerver-called deffunction
+ 27. Updated the following files to add 'id-wsd_viBakwi' fact in nerver-called deffunction
 	causative_verb_mng.clp	hindi_meaning.clp		hindi_sent_reorder.clp	hindi_sentence.clp
 	number.clp		prepare_apertium_input.clp	tam_meaning.clp		preferred_morph_consistency_check.clp
 	vibakthi.clp
- 27. Updation of new versions:
+ 28. Updation of new versions:
 	Stanford parser:	3.2.0	to	3.3.1
 	Stanford Tregex:	3.2.0	to	3.3.1
- 28. Following files are updated according to the new version:
+ 29. Following files are updated according to the new version:
 	Anusaaraka_bllip_parser_minion.sh	Anusaaraka_rasp.sh		Anusaaraka_site.sh
 	Anusaaraka_stanford-Factored.sh		Anusaaraka_stanford.sh		Anusaaraka_stanford_minion.sh
 	run_stanford-gui-factored.sh		run_stanford-gui-pcfg.sh	anu_compile.sh
 	remove_out-files.sh			Anusaaraka.sh			Anusaaraka_all.sh	
 	Anusaaraka_berkeley.sh			Anusaaraka_bllip_parser.sh	run_tregex_for_multiparse.sh
 	run_tregex.sh
- 29. Updated following files:
+ 30. Updated following files:
 	Stanford_parser_fails
 	phy_verified_out
  	anusaaraka/README
 	Readme_to_use_email_in_firefox.txt
 	mail.php:    Added Root layer
- 30. Removed following files:
+ 31. Removed following files:
 	Stanford parser 3.2.0
 	Stanford Tregex 3.2.0
- 31. Updated 
+ 32. Updated 
 	sd_verified (776)	small_sent_verified_sd (166)
- 32. Updated Log.
-
+ 33. Updated Log.
 
  06-01-14
  ========
