@@ -148,6 +148,7 @@
 								     that new stars are still being born there. 
 	CApa_lagA       f   Suggested by Sukhada (04-02-14)	Ex: The newspapers branded her a hypocrite.
 	xAzva_lagA      m   		"		"	Ex: I wager that she can not pass the exam. 
+	gAlI_xe		f		"	 (27-03-14)	Ex: Billy cried when the other kids called him names.
 	
 
 
@@ -537,6 +538,12 @@ Modified :
   17.	judavA		ladak/A__n		as	rAjA/__n		(	"	"	     17-07-13)
   18.   golA		gudiy/A__n		as	loh/A__n		(	" Suggested by Sukhada 16-10-13)
   19.   bAzha		Gar/a__n		as	rAw/a__n		(	"	"	       20-01-14)
+  20.   in uT/a__v paradigm :
+	  <e><p><l>ane</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:u"/><s n="tam:nA"/></r></p></e>
+				to
+
+	  <e><p><l>anA</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:u"/><s n="tam:nA"/></r></p></e>
+	  [Note: similarly for per : m,a and m_h where gen and num are same]
 
  Removed : 
 	  1.  Removed the following parsarg paradigms and its related patterns
@@ -900,7 +907,6 @@ Removed:
 	106. X-rayed_UNDEFINED       eksa-kiraNa_se_Poto_nikAlanA	as	eksa-re_se_Poto_nikAlanA  (Suggested by Anita ji LTRC 24-03-14)
 	107. X-raying_UNDEFINED      eksa-kiraNa_se_Poto_nikAlanA	as	eksa-re_se_Poto_nikAlanA  (		"		"     )
 	108. X-rays_UNDEFINED        eksa-kiraNa_se_Poto_nikAlanA	as	eksa-re_se_Poto_nikAlanA  (		"		"     )
-
 
     3. Added new entry:
        ---------------
@@ -1507,8 +1513,10 @@ Removed:
 	119. symbol_noun     	niSAna		as	prawIka			(Suggested by Jagriti Banasthali 18-03-14)
 				Ex: When magnitudes of two or more physical quantities are multiplied their units should be treated in the 
 				    same manner as ordinary algebraic symbols.
-	120. remunerative_adjective  pAriSramika-praxawwa	as	lABakArI  (Suggested by Anita ji LTRC 18-03-14)
+	120. remunerative_adjective  pAriSramika-praxawwa	as  lABakArI    (Suggested by Anita ji LTRC 18-03-14)
 				Ex: But their belief was that the expenditure which they recommended would be remunerative.
+	121. yeast_noun      	KamIra		as	yIsta			(Suggested by Anita ji LTRC 27-03-14) 
+				Ex: Flour is fermented with yeast to make bread. 
 	
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1631,7 +1639,12 @@ Removed:
 
   proper_noun-common_noun_compounds.txt 
   =====================================
-    Added   ::
+    Modifications on whole file:
+    ----------------------------
+	1. Modified "gAzXI" 	as      "gAMXI"    Ex: Rajiv_Gandhi    rAjIva_gAzXI  =>  Rajiv_Gandhi    rAjIva_gAMXI
+
+    Added   
+    ------
     Wall_Street     voYl_strIta#voYl_strIta#noun#2#WM
                     [previously it was present in multi_word_expressions.txt as "wall_street     galI[_banxa_sadaka]#galI[_banxa_sadaka]#noun#2#RM" which is wrong so removed made entry in proper_noun-common_noun_compounds.txt as above, Suggested by Chaitanya ji and Dipti Madam. 23-04-12]
     Louis_Victor_de_Broglie	luisa_viktara_xe_broYglI#luisa_viktara_xe_broYglI#noun#1#WM	
@@ -1648,6 +1661,12 @@ Removed:
     	Lord_Krishna	BagavAna_kqRNa#BagavAna_kqRNa#noun#2#RM		(	"		"		"  )
 	South_India	xakRiNa_BArawa#xakRiNa_BArawa#noun#2#RM		(	"		"		"  )
 	Sri_Lankan	SrIlaMkAI#SrIlaMkAI#noun#2#RM			(	"		"		"  )
+
+   Added 96 entries extracted from newsdev2014 corpus  (By Shirisha Manju 28-03-14)
+	Akhil_Bhartiya_Janwadi_Mahila_Samiti    aKila_BArawIya_janavAxI_mahilA_samiwi#aKila_BArawIya_janavAxI_mahilA_samiwi#noun#5#RM
+				to
+	Gandhi_Nagar    gAMXI_nagara#gAMXI_nagara#noun#2#RM
+
     
  multi_word_expressions.txt
  ==========================

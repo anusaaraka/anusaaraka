@@ -1,9 +1,9 @@
- 20-03-14
+ 01-04-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
 		  collect.clp	material.clp	remain.clp	can.clp		create.clp	cause.clp 	fresh.clp
-	 	  what.clp
+	 	  what.clp	ing_tam.clp	rent.clp	so.clp
  2. vibakthi.clp
 	Added    : get_vib_for_grp_id_from_wsd	and 	get_vib_for_hid_from_wsd
 	Modified : assert_facts rule
@@ -32,6 +32,7 @@
 		  database_cmp_phrase_word_mng, database_cmp_phrase_root_mng -> To print source in hindi meaning based on priority
  9. hindi_sent_reorder.clp:
 	Modified: insert_aXika_for_adj_er,  insert_sabase_aXika_adj_est -> Added source of provisional database in the list.
+		  wh_without_aux-reorder1
 	Modified following relation_names:
  	       	kriyA-aXikaraNavAcI_avyaya  as  kriyA-aXikaraNavAcI
         	kriyA-conjunction           as  kriyA-vAkya_viBakwi
@@ -42,26 +43,29 @@
         Modified : rm_repeated_mng_from_sentence (added 'karIba|sAWa' in the list)
  12. H_ordering_rules.clp
 	Modified relation_name kriyA-conjunction  as  kriyA-vAkya_viBakwi
+	Modified : reverse-NP-Daughters (added 'level' in the list)
  13. sd_pada.clp
        Modified : multiple_prep_rule (added 'S' in the list)
- 14. manual_lwg.clp
+ 14. parser_tree_correction_rules.clp
+	Added : modify_PP_daughter
+ 15. manual_lwg.clp
 	Added : single_vib1	Modified : kI_[word]
- 15. word_alignment.clp
+ 16. word_alignment.clp
 	Added : lookup_man_word_in_hindi_wnb_using_multi_word_dic
- 16. In run_modules_std.bat, run_modules_ol.bat and run_modules_link.bat
+ 17. In run_modules_std.bat, run_modules_ol.bat and run_modules_link.bat
 	Loaded 'punctuation_info.dat' file in WSD module
 	Opened 'pada_control_fact.dat' in append mode for 'vibakthi' module
- 17. Added following files:
+ 18. Added following files:
 	mail.js in Broswer/src
 	provisional_multi_word_dictionary.txt in Anu_data/compound-matching 
 	multi_word_expression_for_prov.c in multifast-v1.0.0/src
- 18. Modified following files:
+ 19. Modified following files:
 	multifast-v1.0.0/src/Makefile	-> To add compilation of multi_word_expression_for_prov.c programe
 	multifast-v1.0.0/src/multi_word_expression.c	-> Modified priority from '5' to '2'
 	multifast-v1.0.0/src/run.sh			-> To create 'provisional_multi_dic.c'
 	list-right			-> Added provisional_multi_word_dictionary.txt
 	list_Anu_data_compound		-> 		"
- 19. Modified following shell files:
+ 20. Modified following shell files:
 	run_sentence_stanford.sh	-> Displaying Warning message for provisional multi dictionary.
 	dic_compile.sh			-> Modified to remove 'provisional_multi_dic.c'	
 	remove_out-files.sh		-> 		"
@@ -71,49 +75,50 @@
 	Anusaaraka_stanford.sh	Anusaaraka_site.sh	Anusaaraka_bllip_parser.sh	Anusaaraka_stanford_minion.sh
 	Anusaaraka.sh		Anusaaraka_all.sh	Anusaaraka_berkeley.sh	Anusaaraka_stanford-Factored.sh	
 	Anusaaraka_link.sh	Anusaaraka_ol.sh	Anusaaraka_rasp.sh	Anusaaraka_bllip_parser_minion.sh
- 20. In this1.py following modifications are done:
+ 21. In this1.py following modifications are done:
 	To display 'provisional_multi_word_dictionary'
 	To print Error message
         Separated mail related work in mail.js file
- 21. handling_abbrevations.lex:
+ 22. handling_abbrevations.lex:
         Added 'Rs.' and 'rs.'
- 22. In abbrevations.lex:
+ 23. In abbrevations.lex:
 	Added 'B.Tech', 'Std.', 'Ex.'
- 23. Added new option 'onesent' to run Anusaaraka when the input is one sentence per line. Following files are modified accordingly:
+ 24. Added new option 'onesent' to run Anusaaraka when the input is one sentence per line. Following files are modified accordingly:
 	Anusaaraka_stanford.sh
 	pre_process.sh
 	stdenglish.sh
 	add_snt_tag.lex		  -> Added this file to add sentence tag in input file.
 	std_format/Makefile	  -> Added compilation of add_snt_tag.lex
 	check-for-another-sent.pl -> Gives warnings if more tahn one sentence present in a line.
- 24. Updated following dictionary related files:
-        changes_in_databases	 apertium-en-hi.en.metadix 
- 25. Updated the following files to add 'id-wsd_viBakwi' fact in nerver-called deffunction
+ 25. Updated following dictionary related files:
+        changes_in_databases	 apertium-en-hi.en.metadix 	apertium_hn.dix
+ 26. Updated the following files to add 'id-wsd_viBakwi' fact in nerver-called deffunction
 	causative_verb_mng.clp	hindi_meaning.clp		hindi_sent_reorder.clp	hindi_sentence.clp
 	number.clp		prepare_apertium_input.clp	tam_meaning.clp		preferred_morph_consistency_check.clp
 	vibakthi.clp
- 26. Updation of new versions:
+ 27. Updation of new versions:
 	Stanford parser:	3.2.0	to	3.3.1
 	Stanford Tregex:	3.2.0	to	3.3.1
- 27. Following files are updated according to the new version:
+ 28. Following files are updated according to the new version:
 	Anusaaraka_bllip_parser_minion.sh	Anusaaraka_rasp.sh		Anusaaraka_site.sh
 	Anusaaraka_stanford-Factored.sh		Anusaaraka_stanford.sh		Anusaaraka_stanford_minion.sh
 	run_stanford-gui-factored.sh		run_stanford-gui-pcfg.sh	anu_compile.sh
 	remove_out-files.sh			Anusaaraka.sh			Anusaaraka_all.sh	
 	Anusaaraka_berkeley.sh			Anusaaraka_bllip_parser.sh	run_tregex_for_multiparse.sh
 	run_tregex.sh
- 28. Updated following files:
+ 29. Updated following files:
 	Stanford_parser_fails
 	phy_verified_out
  	anusaaraka/README
 	Readme_to_use_email_in_firefox.txt
 	mail.php:    Added Root layer
- 29. Removed following files:
+ 30. Removed following files:
 	Stanford parser 3.2.0
 	Stanford Tregex 3.2.0
- 30. Updated 
+ 31. Updated 
 	sd_verified (776)	small_sent_verified_sd (166)
- 31. Updated Log.
+ 32. Updated Log.
+
 
  06-01-14
  ========

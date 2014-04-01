@@ -1104,3 +1104,4 @@ uwwara_xe	m
 puRti kara	f
 CApa_lagA	f
 xAzva_lagA	m
+gAlI_xe	f

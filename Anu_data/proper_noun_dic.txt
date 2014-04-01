@@ -1675,7 +1675,7 @@ GAMIL	gamila
 Ganaraj	gaNarAja
 Ganda	gAMdA
 Gandhidham	gAMXIXAma
-Gandhi	gAzXI
+Gandhi	gAMXI
 Gandhinagar	gAMXInagara
 Gandidam	gAzXIXAma
 Gandotra	gaMxowrA

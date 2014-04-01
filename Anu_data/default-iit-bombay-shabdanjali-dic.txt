@@ -93000,7 +93000,7 @@ yearns_UNDEFINED	icCA_karanA
 years_UNDEFINED	varRa
 years_noun	umra/lambA_samaya/bahuwa_samaya/bahuwa_sAla/baDawI_umra
 yeas_UNDEFINED	hAz
-yeast_noun	KamIra/yIsta
+yeast_noun	yIsta/KamIra
 yeastlike_adjective	yIstayukwa/yIsta_ke_samAna/KamIra-yukwa/KamIra_ke_samAna
 yeasts_UNDEFINED	KamIra
 yeasty_adjective	yIstayukwa/yIsta_ke_samAna/uwsAhapUrNa/KamIrayukwa/KamIra_ke_samAna/joSapUrNa/joSa_Ora_ullAsa_se_yukwa
