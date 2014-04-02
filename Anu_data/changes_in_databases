@@ -7,7 +7,6 @@
   2. Added    :   mEca        Suggested by sukhada 	(24.2.11)  Ex: There was a football match in the school yesterday.
                   prabaMXaka  Added by Meena		(28.7.11)  Ex: But fund managers say they are ready.
 
-
   changes in female_list.txt
   ========================
   1. Modified :
@@ -545,6 +544,8 @@ Modified :
 
 	  <e><p><l>anA</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:u"/><s n="tam:nA"/></r></p></e>
 	  [Note: similarly for per : m,a and m_h where gen and num are same]
+  21.   in /jA__v paradigm:							(By Roja			02-04-14)
+	  Stopped generation of 'gayIM'
 
  Removed : 
 	  1.  Removed the following parsarg paradigms and its related patterns
@@ -654,6 +655,10 @@ Modified :
 	laborer		house__n		(     "      "    )
 	eye		ey/e__vblex		(     "      "	  )
 	hold-up		house__n		(     "	     "	  )
+	tank		accept__vblex		(     "   02-04-14)
+	tower		accept__vblex		(     "	     "	  )
+	big		plug__vblex		(     "	     "	  )
+	tiredness	access__n		(     "	     "	  )
 
 
 Modified paradigm:
