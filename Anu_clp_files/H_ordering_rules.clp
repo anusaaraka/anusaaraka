@@ -427,10 +427,11 @@
 ;RRC :These equations give the velocity and the distance traveled as a function of time and also the variation of velocity with distance. 
 ;It is the sort of work that calls for a high level of concentration.
 ;Standing in the middle of the great epic like a lighthouse, it illuminates the whole of the epic.
+;It is the sort of work that calls for a high level of concentration.
 (defrule reverse-NP-Daughters
 (declare (salience 800))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot ?NP ?PP $?d)
-(id-original_word ?head ?wrd&~lot&~most&~number&~spot&~kinds&~set&~sort&~whole)
+(id-original_word ?head ?wrd&~lot&~most&~number&~spot&~kinds&~set&~sort&~whole&~level)
 (Node-Category  ?mot  NP)
 (Node-Category  ?NP  NP)
 (Node-Category  ?PP PP|VP|RRC)

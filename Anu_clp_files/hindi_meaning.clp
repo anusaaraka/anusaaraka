@@ -47,7 +47,7 @@
         (loop-for-count (?i  1 (length $?grp_ids))
                 (bind ?id (nth$ ?i $?grp_ids))
                 (if (neq ?id ?head_id ) then
-                        (printout ?*hin_mng_file* "(id-HM-source  " ?id "   " ?mng"    Database_compound_phrase_word_mng )" crlf)
+                        (printout ?*hin_mng_file* "(id-HM-source	" ?id "   " ?mng"	"?src ")" crlf)
                         (assert (mng_has_been_decided ?id))
                 )
         )

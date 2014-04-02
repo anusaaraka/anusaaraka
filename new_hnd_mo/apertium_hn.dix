@@ -1820,10 +1820,10 @@
 <e><p><l>ane</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m"/><s n="tam:nA"/></r></p></e>
 <e><p><l>ane</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:nA"/></r></p></e>
 <e><p><l>ane</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:p"/><s n="per:m_h"/><s n="tam:nA"/></r></p></e>
-<e><p><l>ane</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:u"/><s n="tam:nA"/></r></p></e>
-<e><p><l>ane</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m"/><s n="tam:nA"/></r></p></e>
-<e><p><l>ane</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/><s n="tam:nA"/></r></p></e>
-<e><p><l>ane</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m_h"/><s n="tam:nA"/></r></p></e>
+<e><p><l>anA</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:u"/><s n="tam:nA"/></r></p></e>
+<e><p><l>anA</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m"/><s n="tam:nA"/></r></p></e>
+<e><p><l>anA</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/><s n="tam:nA"/></r></p></e>
+<e><p><l>anA</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:m_h"/><s n="tam:nA"/></r></p></e>
 <e><p><l>anI</l><r>a<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:u"/><s n="tam:nA"/></r></p></e>
 <e><p><l>anI</l><r>a<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:m"/><s n="tam:nA"/></r></p></e>
 <e><p><l>anI</l><r>a<s n="cat:v"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="tam:nA"/></r></p></e>
