@@ -70,7 +70,11 @@ $PATH1/simplify_english.pl < $1.tmp7 > $1.tmp8
 #A sample honorifics file is provided. This file MUST contain honorifics, not
 #abbreviations. The program detects abbreviations using regular expressions.
 
-$PATH1/sentence-boundary.pl -d $PATH1/HONORIFICS -i $1.tmp8 -o ../$1.std
-
+if  [ "$3" != "onesent" ]; then 
+	$PATH1/sentence-boundary.pl -d $PATH1/HONORIFICS -i $1.tmp8 -o ../$1.std
+else
+	perl $PATH1/check-for-another-sent.pl $1 $HOME_anu_tmp < $1.tmp8  > $HOME_anu_tmp/tmp/$1_tmp/$1.check 2>&1
+	cat  $HOME_anu_tmp/tmp/$1_tmp/$1.check
+fi
 cd ../
 fi

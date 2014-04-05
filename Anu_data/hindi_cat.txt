@@ -3325,7 +3325,6 @@ parora	T
 parosa	T
 parusa	T
 pasA	T
-pAsa	T
 Pasaka	T
 pasara	T
 pasarA	T

@@ -48,18 +48,30 @@ Their belongings were flung about the room.
 From the high-brow elegance of  Northern Ireland's Houses and Gardens to the comfort of a spectacular  self-drive around some of the country's most exceptional scenic sights .
 --> 's category should be POS
 
+The instructor persuaded Mary to take that course.
+--> There should be kriyA-object relation between 'persuaded' and 'Mary'
+
+The people of Orissa are facing grave adversities due to the cyclone. 
+-->  ADJP - due to the cyclone- should be the daughter of VP 
+
 Failures due to 'dep' link ::
 ==========================
 
 Within the relationship he feels ill-used most of the time.
 -->"dep(ill-used-6, most-7)" wrong relation. parse wrong in 2010-11-30. better in 2012-01-06.
--->mng of "ill-used" and grouping of "Within the relationship" is kept for discussion
+--> mng of "ill-used" and grouping of "Within the relationship" is kept for discussion
 
 He told me why he was here and what he was doing.
 --> "dep(told-2, was-6)" wrong relation
 
 Did you send a birthday card to Sheela?
 --> "tmod(send-3, card-6)"  wrong relation (Note:: instead of "birthday" , "marriage" is given then we get correct relation)
+
+The languages recognized as principle languages were Bengali, Hindi, Urdu and Assamies.
+-->  'as principle languages'  should be PP
+
+The yield of kharif crops was not good this season.
+--> dep(good-8, season-10) wrong relation
 
 Failures due to category problem::
 ================================
@@ -99,3 +111,36 @@ She's always dieting but she never seems to lose any weight.
 	-> Parser gave 'dieting' category as NN but it should be verb.
 May I help you?
 	-> Parser gave 'May' category as NNP but it should be modal verb.
+A flush spread over her face. 
+	-> Parser gave 'flush' category as JJ but it should be noun
+This is the second flush or sprouting period, isn't it, Mr. Barua?
+	-> Parser gave 'flush' category as JJ but it should be noun
+The Education Department of Eastern Bengal and Assam had proposed that the Calcutta University should withdraw recognition from these schools, which were under private management, and the Chief Secretary wrote to the Registrar of of the Calcutta University accordingly.
+	--> Parser gave 'Department' category as 'NNP' but it should be noun
+	--> Parser gave 'Eastern' category as 'NNP' but it should be adjective.
+He's always carping about how badly organized the office is.
+	--> Parser gave 'carping' category as noun but it should be verb
+I do not believe there is any one connected with the University of Calcutta, I doubt whether there is any educated man in Bengal, who is not grateful to him.
+	-> Parser gave 'educated'  category as VBN but it should be adjective.
+Deal them five cards each.
+	-> Parser gave 'Deal'  category as NNP but it should be verb.
+Deal five cards to each of them.          
+	-> Parser gave 'Deal'  category as NNP but it should be verb.
+She is a real class performer.
+	--> Parser gave 'class' category as noun but it should be adjective
+Electrodynamics deals with electric and magnetic phenomena associated with charged and magnetic bodies.
+	--> Parser gave 'deals' category as NNS  but it should be verb.
+Applied physics is equally demanding.
+	--> Parser gave 'demanding' category as VBG but it should be adjective.
+My grandma became very demanding as she got older.
+	--> Parser gave 'demanding' category as VBG but it should be adjective.
+The most demanding challenge I have ever faced.
+	--> Parser gave 'demanding' category as VBG but it should be adjective.
+Some derived units in terms of the SI base units are given.
+	--> Parser gave 'derived' category as VBD but it should be adjective.
+Some SI derived units are given special names and some derived SI units make use of these units with special names and the seven base units.
+	--> Parser gave 'derived' category as VBD but it should be adjective.
+A complete set of these units both the base units and derived units is known as the system of units. 
+	--> Parser gave 'derived' category as NN but it should be adjective.
+	--> Parser gave 'base' category as NN but it should be adjective.
+

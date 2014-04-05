@@ -187,7 +187,7 @@
 (id-root ?id as)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-subject ?kri ?id1)
-(kriyA-conjunction  ?kri ?id)
+(kriyA-vAkya_viBakwi  ?kri ?id)
 (id-root =(+ ?id1 1) be|know|shall|will|think) ;Added shall|will|think in the list by Garima singh-Banasthali (14.8.13)
 ;(id-cat_coarse ?id conjunction); Commented by  Garima singh
 =>
@@ -203,7 +203,7 @@
 (declare (salience 3500))
 (id-root ?id as)
 ?mng <-(meaning_to_be_decided ?id)
-(kriyA-conjunction  ?id1 ?id)
+(kriyA-vAkya_viBakwi  ?id1 ?id)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id jaba))
@@ -468,7 +468,7 @@
 (declare (salience 3700))
 (id-root ?id as)
 ?mng <-(meaning_to_be_decided ?id)
-(kriyA-conjunction  ?kri ?id)
+(kriyA-vAkya_viBakwi  ?kri ?id)
 (kriyA-subject ?kri ?id1)
 (subject-subject_samAnAXikaraNa ?id1 ?id2)
 (id-root =(+ ?id1 1) be|know)

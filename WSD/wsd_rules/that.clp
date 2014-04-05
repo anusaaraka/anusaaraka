@@ -73,7 +73,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-in_saMbanXI  ?id1 =(- ?id 1))
 (kriyA-dummy_subject  ?id1  =(- ?id1 1))
-(kriyA-conjunction  ?id1 ?id)
+(kriyA-vAkya_viBakwi  ?id1 ?id)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id jahAz))
@@ -89,7 +89,7 @@
 (declare (salience 4600))
 (id-root ?id that)
 ?mng <-(meaning_to_be_decided ?id)
-(kriyA-conjunction  ?id1 ?id)
+(kriyA-vAkya_viBakwi  ?id1 ?id)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ki))
@@ -672,7 +672,7 @@
 (declare (salience 4700))
 (id-root ?id that)
 ?mng <-(meaning_to_be_decided ?id)
-(kriyA-conjunction  ?kri ?id)
+(kriyA-vAkya_viBakwi  ?kri ?id)
 (viSeRya-viSeRaNa  ?vi ?kri)
 (id-cat_coarse ?vi noun)
 =>

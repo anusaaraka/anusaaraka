@@ -427,10 +427,11 @@
 ;RRC :These equations give the velocity and the distance traveled as a function of time and also the variation of velocity with distance. 
 ;It is the sort of work that calls for a high level of concentration.
 ;Standing in the middle of the great epic like a lighthouse, it illuminates the whole of the epic.
+;It is the sort of work that calls for a high level of concentration.
 (defrule reverse-NP-Daughters
 (declare (salience 800))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot ?NP ?PP $?d)
-(id-original_word ?head ?wrd&~lot&~most&~number&~spot&~kinds&~set&~sort&~whole)
+(id-original_word ?head ?wrd&~lot&~most&~number&~spot&~kinds&~set&~sort&~whole&~level)
 (Node-Category  ?mot  NP)
 (Node-Category  ?NP  NP)
 (Node-Category  ?PP PP|VP|RRC)
@@ -474,7 +475,7 @@
 (Head-Level-Mother-Daughters ? ? ?prep ?id)
 (Node-Category ?SBAR SBAR|PP)
 (Node-Category ?prep IN)
-(not (prep_id-relation-anu_ids ? kriyA-conjunction  ? ?id));It was so dark that I could not see anything.
+(not (prep_id-relation-anu_ids ? kriyA-vAkya_viBakwi  ? ?id));It was so dark that I could not see anything.
 (not (Mother  ?SBAR))
 (id-original_word ?head ?wrd)
 (test (eq (member$ ?wrd (create$ that because as though although If if unless since per) ) FALSE)); He argues that efforts to firm up prices will be undermined by producers' plans to expand production capacity.  A quick turnaround is crucial to Quantum because its cash requirements remain heavy. Some grammars are better than others, as we have proved. The limiting speed is about 11.2 kilometres per second.

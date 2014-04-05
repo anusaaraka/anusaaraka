@@ -169,7 +169,7 @@
  make
 
  echo "Compiling stanford parser files"
- cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2013-06-20/
+ cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-01-04/
  sh compile.sh
 
  echo "Compiling RASP parser files"
@@ -193,7 +193,7 @@
  cp $HOME_anu_test/debugging/sentence_debug.sh $HOME_anu_test/bin/.
  
  cd $HOME_anu_test/miscellaneous/std_tregex/
- unzip stanford-tregex-2013-06-20.zip
+ unzip stanford-tregex-2014-01-04.zip
 
  echo "Creating Transliteration files"
  cd  $HOME_anu_test/miscellaneous/transliteration/
@@ -223,4 +223,11 @@
 
  echo "Copying Readme and shell file to Provisional directory"
  cd  $HOME_anu_test/Doc/Provisional_data
- cp  *    $HOME_anu_provisional_wsd_rules/
+ if ! [ -d $HOME_anu_provisional_wsd_rules ] ; then
+	echo "Creating "$HOME_anu_provisional_wsd_rules 
+	mkdir $HOME_anu_provisional_wsd_rules/
+	cp  * $HOME_anu_provisional_wsd_rules/
+ fi
+ echo "Generating Canonical form for Provisional_wsd_rules"
+ cd $HOME_anu_provisional_wsd_rules/
+ sh get_canonical_form_prov_wsd_rules.sh

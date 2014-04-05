@@ -15,7 +15,7 @@
  rm -rf link-grammar-4.5.7
 
  echo "Removing stanford out files"
- cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2013-06-20/
+ cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-01-04/
  rm -f *.out
  rm -f lex.yy.c
 
@@ -84,12 +84,12 @@
  make clean
 
  cd $HOME_anu_test/multifast-v1.0.0/src/
- rm -f get_word_count multi_word-dic.c  physics-dic.c  proper_noun-dic.c
+ rm -f get_word_count multi_word-dic.c  physics-dic.c  proper_noun-dic.c provisional_multi_dic.c
  make clean 
 
  echo "Removing stanford-tregex"
  cd $HOME_anu_test/miscellaneous/std_tregex
- rm -rf stanford-tregex-2013-06-20
+ rm -rf stanford-tregex-2014-01-04
 
  echo "Removing SHALLOW_PARSER out files"
  cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER

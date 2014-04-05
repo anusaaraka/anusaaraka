@@ -42,7 +42,7 @@
 (id-root ?id an)
 ?mng <-(meaning_to_be_decided ?id)
 ;(id-word =(+ ?id 1) ?word)
-(samAsa  ?id1 =(+ ?id 1))
+(samAsa_viSeRya-samAsa_viSeRaNa  ?id1 =(+ ?id 1))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id -))

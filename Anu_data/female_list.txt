@@ -22590,7 +22590,7 @@ lA	f
 lAilmI	f
 lAKirAja	f
 lAcArI	f
-lAparavAI	f
+lAparavAhI	f
 lAmajahabI	f
 lAi	f
 lAicI	f
@@ -28533,7 +28533,7 @@ sImakuSI	f
 sIma	f
 sImAMwaleKA	f
 sImAsaMXi	f
-sImA(man)	f
+sImA	f
 sImikA	f
 sIya	f
 sIyana	f
@@ -32184,3 +32184,4 @@ pawaMga	f
 Cada	f
 dAyarektarI	f
 garmI	f
+amana	f

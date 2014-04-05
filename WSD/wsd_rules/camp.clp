@@ -25,7 +25,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-root =(- ?id 1) enemy)
 ;(id-root ?id1 ?)
-(or (samAsa ?id =(- ?id 1))(viSeRya-viSeRaNa  ?id =(- ?id 1)))
+(or (samAsa_viSeRya-samAsa_viSeRaNa ?id =(- ?id 1))(viSeRya-viSeRaNa  ?id =(- ?id 1)))
 =>
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(- ?id 1)  Sawru_Sivira ));Interchanged affecting_id-affected_id informtion by Mahalaxmi (25-03-10)

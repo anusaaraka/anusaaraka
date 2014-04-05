@@ -110,6 +110,7 @@
  ;-----------------------------------------------------------------------------------------------------------------------
  ; The people of Orissa are facing grave adversities due to the cyclone.
  ;They served a wonderful meal to more than fifty delegates.
+ ;Along with ordering the MSRTC to pay the compensation the Tribunal said that the insurance company should not pay anything as the car belonged to Jichkar himself. 
  (defrule multiple_prep_rule
  (declare (salience 4700))
  (prep_ids $?ids ?prep)
@@ -117,7 +118,7 @@
  (head_id-prawiniXi_id-grp_ids ? ?prep_id ?prep)
  ?f0<-(head_id-prawiniXi_id-grp_ids ?hid ?pp $? ?prep_id ?np_id)
  (prawiniXi_id-node-category ?pp ?PP PP|WHPP|QP)
- (prawiniXi_id-node-category ?np_id ?NP NP|WHNP)
+ (prawiniXi_id-node-category ?np_id ?NP NP|WHNP|S)
  (head_id-prawiniXi_id-grp_ids ?np_head ?np_id $?grp_ids ?last_node)
 ?f1<-(pada_info (group_head_id ?np_id)(preposition 0))
  (root-verbchunk-tam-chunkids ? ? ? $? ?vid) ;I am depending on you to keep your promise.

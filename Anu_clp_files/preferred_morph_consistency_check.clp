@@ -24,6 +24,7 @@
  (assert (id-attach_emphatic))
  (assert (id-eng-src))
  (assert (id-attach_eng_mng))
+ (assert (id-wsd_viBakwi))
  )
  ;--------------------------------------------------------------------------------------------------------------------
  ;Rule re-modified by Roja(07-04-11)

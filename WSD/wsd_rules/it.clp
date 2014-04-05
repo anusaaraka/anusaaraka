@@ -433,7 +433,7 @@
 (kriyA-object ?id1 ?id)
 (kriyA-subject ?id1 ?id2)
 (id-root =(- ?id2 1) but)
-(kriyA-conjunction  ?id1 =(- ?id2 1))
+(kriyA-vAkya_viBakwi  ?id1 =(- ?id2 1))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id vaha))

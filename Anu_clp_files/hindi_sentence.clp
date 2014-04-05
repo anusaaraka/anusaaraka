@@ -34,6 +34,7 @@
  (assert (meaning_has_been_decided))
  (assert (id-attach_eng_mng))
  (assert (conj_head-left_head-right_head))
+ (assert (id-wsd_viBakwi))
  )
 
 (defglobal ?*hin_sen-file* = h_sen_fp)
@@ -282,7 +283,7 @@
  (defrule rm_repeated_mng_from_sentence
  (declare (salience 200))
  ?f<-(hindi_id_order $?pre ?mng ?mng $?post)
- (test (eq  (member$ ?mng (create$ bAra SurU kaBI XIre Binna)) FALSE));The frequent sleeping of students is a big problem.
+ (test (eq  (member$ ?mng (create$ bAra SurU kaBI XIre Binna karIba sAWa)) FALSE));The frequent sleeping of students is a big problem.
  (id-mng ?id $?m ?mng ?mng $?m1)
  (id-word ?id ?wrd)
  (id-HM-source ?id ? ?src)

@@ -11,6 +11,6 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id paxArWa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp       for0   "  ?id "  paxArWa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  material.clp       material0   "  ?id "  paxArWa )" crlf))
 )
 

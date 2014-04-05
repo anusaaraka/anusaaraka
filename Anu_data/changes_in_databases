@@ -11,10 +11,12 @@
   ========================
   1. Modified :
 	1. paraCAIM	as	paraCAI
-	2. baMxi	as  	baMxI   (by Roja 17-07-12)
-  	3. sparXA	as  	sparXa  (    "   12-09-12)
-	4. nIva		as	nIMva	(    "	 15-07-13) Suggested by Sarita ji LTRC)
-				Ex: The foundations of the house are being laid today. 
+	2. baMxi	as  	baMxI   	(by Roja 17-07-12)
+  	3. sparXA	as  	sparXa  	(    "   12-09-12)
+	4. nIva		as	nIMva		(    "	 15-07-13) Suggested by Sarita ji LTRC)
+				Ex: The foundations of the house are being laid today.
+	5. sImA(man)	as	sImA		(Suggested by Sukhada 20-02-14) 
+	6. lAparavAI	as	lAparavAhI	(Suggested by Chaitanya Sir 20-3-14) Ex: The bus driver's negligence caused the death of Mohan.
 
   2. Added :
 	1. SuBakAmanA 	Suggested by sheetal (02-11-09) Eg: We convey our best wishes to the Chinmaya Dham Yatris . 
@@ -41,6 +43,7 @@
 	22. pawaMga     Suggested by Sukhada        (17-01-12)  Ex: Sundari was a big red, white and blue kite.
 	23. dAyarektarI	By Roja Suggested by Sukhada (20-11-13) Ex: Create a new directory and put all your files into it. 
 	24. garmI	Suggested by sukhada (25-11-13)		Ex: The warmth of the sun's rays.
+	25. amana	Suggested by sukhada (20-03-14)		Ex: Everyone should maintain peace on the earth. 
 	
 
   3. Removed :
@@ -115,6 +118,9 @@
   2. Modified
 	XAkela	=>	Xakela	(By Roja 18-07-13, Suggested by Chaitanya Sir) 	 
 
+  3. Removed
+	pAsa		(By Shirisha Manju 29-01-14, Suggested by Chaitanya Sir)
+
   changes in kriyA_mUla-gender.txt
   ================================
   1. Added  :
@@ -126,9 +132,9 @@
 								        complained ," All our work is in vain ".
  	vinawI_kara  	f  Suggested by Meenaji (18-03-10)       Ex: As the Master grew old and infirm , the disciples
 								     begged him not to die .   
-        xeKaBAla_kara   f  Added by Meena (27-03-10)  	         Ex: The shephered is tending the sheep. 
-        upayoga_kara	m  Suggested by Sukhada (20-04-10)       Ex: They used force to open the jammed door . 
-        sUcanA_xe	f  Suggested by Meena (13-05-10)         Ex: We informed the new employees that no salary increase 
+        xeKaBAla_kara   f  Added by Meena (27-03-10)  		Ex: The shephered is tending the sheep. 
+        upayoga_kara	m  Suggested by Sukhada (20-04-10)	Ex: They used force to open the jammed door . 
+        sUcanA_xe	f  Suggested by Meena (13-05-10)	Ex: We informed the new employees that no salary increase 
 									would be possible .
         niScaya_kara    m   Meena (14.6.10)
         walASa_kara     f   Meena (14.6.10)
@@ -137,9 +143,13 @@
 	BalA_kara       m   Suggested by Meena vipin (25-01-11)Ex:Republican policies only benefit the rich and the powerful.
         Sarwa_lagA	f   Meena(5.4.11)
 	kE_kara 	f   Meena(2.5.11)
-	uwwara_xe	m   Suggested by Sukhada (16-09-11)      Ex: He studiously avoided answering the question.)	 
-	puRti_kara	f   		"	 (08-01-14)	 Ex: Indeed, the detection of such waves in the Orion Nebula confirmed 
+	uwwara_xe	m   Suggested by Sukhada (16-09-11)	Ex: He studiously avoided answering the question.)	 
+	puRti_kara	f   		"	 (08-01-14)	Ex: Indeed, the detection of such waves in the Orion Nebula confirmed 
 								     that new stars are still being born there. 
+	CApa_lagA       f   Suggested by Sukhada (04-02-14)	Ex: The newspapers branded her a hypocrite.
+	xAzva_lagA      m   		"		"	Ex: I wager that she can not pass the exam. 
+	gAlI_xe		f		"	 (27-03-14)	Ex: Billy cried when the other kids called him names.
+	
 
 
   changes in compound_phrase.txt  (samAsa.txt)
@@ -438,7 +448,25 @@
 	his	   (Suggested by Pramila Banasthali 07-01-14 ) Ex: His descent into crime was rapid.
 	clerk	   (		By Manju	    07-01-14 ) Ex: He dictated the letter to his clerk.  
 	minister   (Suggested by Jagriti  "         21-01-14 ) Ex: He is the most shady minister in the state.
-
+	terrorist  (Suggested by Krithiki LTRC 	    22-01-14 ) Ex: The police fired tear gas to flush out the terrorists.       
+	robber     (		"	"		"    )
+	prowler    (		"	"		"    ) Ex: He flushed out the prowler. 
+	bandit     (		"	"		"    ) Ex: The police flushed out the bandits from their place of hiding.
+	animal	   (		"	"	    29-01-14 ) Ex: The hunter moved in to finish the animal off.
+	audience   (By Shirisha Manju from human.txt 25-01-14) Ex: Her performance electrified the audiences.
+	hunter	   (Suggested by Garima Banasthali  12-02-14 ) Ex: A deer was ensnared by hunters.
+	college    (		"	"		"    ) Ex: The conditions of student life, and the character of the training afforded 
+							      by the colleges were thus very materially improved as a result of the Act of 1904
+	government (		"	"		"    ) Ex: The services of Asutosh were recognized by Government and be was Knighted at
+								   the Delhi Durbar in December 1911.
+	president	(Suggested by Prachi Banasthali  07-03-14 ) Ex:The interview was broadcast on the same day he was invested as President
+	chairperson	(       "       "                       " ) Ex:The group invested her as chairperson.
+	advocate	(Suggested by Anita ji LTRC             " ) 
+	police		(Suggested by garima Banasthali	 08-03-14 ) Ex:The man has been killed by the police.
+	driver		(Suggested by Preeti ji LTRC	 21-03-14 ) Ex: He is a cautious driver.
+	laborer		(Suggested by Prachi Banasthali  21-03-14 ) Ex: a husky laborer
+	investigator 	(	"		"		" ) Ex: The investigator will have to be thorough.
+	murderer	(Suggested by Pramila Banasthali 21-03-14 ) Ex: The convicted murderer escaped from a high security prison.
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -509,6 +537,15 @@ Modified :
   16.	namUnA		regular__adj-noun	as	loh/A__n		(By Roja Suggested by Chaitanya Sir 22-04-13)
   17.	judavA		ladak/A__n		as	rAjA/__n		(	"	"	     17-07-13)
   18.   golA		gudiy/A__n		as	loh/A__n		(	" Suggested by Sukhada 16-10-13)
+  19.   bAzha		Gar/a__n		as	rAw/a__n		(	"	"	       20-01-14)
+  20.   in uT/a__v paradigm :
+	  <e><p><l>ane</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:u"/><s n="tam:nA"/></r></p></e>
+				to
+
+	  <e><p><l>anA</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:u"/><s n="tam:nA"/></r></p></e>
+	  [Note: similarly for per : m,a and m_h where gen and num are same]
+  21.   in /jA__v paradigm:							(By Roja			02-04-14)
+	  Stopped generation of 'gayIM'
 
  Removed : 
 	  1.  Removed the following parsarg paradigms and its related patterns
@@ -604,6 +641,24 @@ Modified :
 	labor		accept__vblex		(     "   09-01-14)
 	tail		accept__vblex		(     "   18-01-14)
 	bore		liv/e__vblex		(     "      "    )
+	ensnare		liv/e__vblex		(     "	  01-02-14)
+	unconvince	liv/e__vblex		(     "	     "	  )
+	educationist	house__n		(     "	     "	  )
+	dumb		accept__vblex		(     "	     "	  )
+	regime		house__n		(     "	  07-02-14)
+	tart		accept__vblex		(     "	     "	  )
+	swell		sw/ell__vblex		(     "	  08-02-14)
+	hoover		accept__vblex		(     "	     "	  )
+	hoover		house__n		(     "	     "	  )
+	toy		accept__vblex		(     "	     "	  )
+	labourer	house__n		(     "   28-03-14)
+	laborer		house__n		(     "      "    )
+	eye		ey/e__vblex		(     "      "	  )
+	hold-up		house__n		(     "	     "	  )
+	tank		accept__vblex		(     "   02-04-14)
+	tower		accept__vblex		(     "	     "	  )
+	big		plug__vblex		(     "	     "	  )
+	tiredness	access__n		(     "	     "	  )
 
 
 Modified paradigm:
@@ -619,6 +674,7 @@ Added new paradigms:
         trek__vblex		(By Roja	14-10-11)
 	quarrel_vblex		("		16-11-13)
 	refer_vblex		("		04-12-13)
+	ey/e__vblex		("		28-03-14)
 
 Modified root:
 	may		May		as	may		(By Roja 14-03-13)
@@ -640,6 +696,7 @@ Miscellaneous:
 	1. In p/erson__n  paradigm: 	person, people	as	person		(By Roja	02-04-13)
 	2. In riteri/on__n paradigm to generate 'criterias' word.		(By Roja	14-03-13)
 	3. ([0-9]+)?[04-9]+th 	as	([0-9]+)?[0-9]+th			(By Roja	17-07-13)
+	4. In t/each__vblex, modified 'teachs' to 'teaches'			(By Roja	20-01-14)
 
 Removed:
 	repetition entry <e lm="April"><i>April</i><par n="house__n"/></e>	(By Roja	27-07-13)
@@ -678,8 +735,9 @@ Removed:
   Added:
          time	1  (By Sukhada 13-02-11) 
          year	1  (        "                )
-	 second	1  (Suggested by Nandini ji LTRC 24-10-13) Ex: The winner cut ten seconds off the world record.
-	 month	1 (Suggested by Krithiki LTRC 03-12-13) Ex:The solution came through at the fatal moment. 
+	 second	1  (Suggested by Nandini ji LTRC	24-10-13) Ex: The winner cut ten seconds off the world record.
+	 month	1  (Suggested by Krithiki LTRC		03-12-13) Ex: The solution came through at the fatal moment.
+	 week	1  (Suggested by Prachi Banasthali	07-03-14) Ex: He took off two weeks in September.	     
 
   Removed: month_day.txt and merged all its contents in time.txt (Suggested by Sukhada 08-03-11)
 
@@ -723,6 +781,7 @@ Removed:
 		Let_them_0      nA_unako_xo-0-0
 		Let_us_0        caliye_hama-0-subj
 		let_us_0        subj-0-caliye_hama
+		get_en		0_ho_jAwA_hE-0-0 (Suggested by Garima Banasthali 11-02-14)
 
  Changes in default-iit-bombay-shabdanjali-dic.txt
  =================================================
@@ -840,15 +899,20 @@ Removed:
 	92. illustration_noun	vyaKyA			as	vyAKyA		(	" Prachi Banasthali 14-10-13 )
 	93. illustrate_verb	vyaKyA_kara		as	vyAKyA_kara	(By Roja 		    14-10-13 )
 	94. photon_noun		Potana			as	Potona		(Suggested by Sonam Banasthali	29-10-13)
-	95. precisely_adverb	Tika-Tika		as	TIka-vahI	(	"		"	"    )
-	96. intellect_noun	buxxI			as	buxXI		(Suggested by Chaitanya Sir 20-11-13)
-	97. loudly_adverb	jEYora_se		as	jZora_se	(Suggested by Nandini ji LTRC 27-11-13)
-	98. drastic_adjective	uxaNda			as	uxxaNda		(Suggested by Chaitanya Sir 26-11-13  )
-	99. passage_noun	yAtrAXikAra		as	yAwrAXikAra	(Suggested by Chaitanya Sir 05-12-13)
-	100.passage_noun	yAtrA			as	yAwrA		(	"		"	    )
-	101.passage_noun	gamana_svAtanwrya	as	gamana_svAwanwrya(	"		"	    )
-	102.electromagnetism_noun	vixyuw-cumbakawva	as	vixyuwa_cumbakawva	(suggested by Sukhada 04-12-13)
-
+	95. precisely_adverb	Tika-Tika		as	TIka-vahI	(	"		"	"       )
+	96. intellect_noun	buxxI			as	buxXI		(Suggested by Chaitanya Sir  	20-11-13)
+	97. loudly_adverb	jEYora_se		as	jZora_se	(Suggested by Nandini ji LTRC 	27-11-13)
+	98. drastic_adjective	uxaNda			as	uxxaNda		(Suggested by Chaitanya Sir	26-11-13)
+	99. passage_noun	yAtrAXikAra		as	yAwrAXikAra	(Suggested by Chaitanya Sir 	05-12-13)
+	100. passage_noun	yAtrA			as	yAwrA		(	"		"	    	)
+	101. passage_noun	gamana_svAtanwrya	as	gamana_svAwanwrya(	"		"	    	)
+	102. electromagnetism_noun	vixyuw-cumbakawva	as	vixyuwa_cumbakawva  (suggested by Sukhada 04-12-13)
+	103. employment_noun 	vyavasAsa		as	vyavasAya	(Suggested by Pramila Banasthali 24-01-14)
+	104. police_noun	pulIsa			as	pulisa		(Suggested by 	"	"	10-02-14)
+	105. X-ray_verb      eksa-kiraNa_se_Poto_nikAla	as	eksa-re_se_Poto_nikAla	(Suggested by Anita ji LTRC 24-03-14)
+	106. X-rayed_UNDEFINED       eksa-kiraNa_se_Poto_nikAlanA	as	eksa-re_se_Poto_nikAlanA  (Suggested by Anita ji LTRC 24-03-14)
+	107. X-raying_UNDEFINED      eksa-kiraNa_se_Poto_nikAlanA	as	eksa-re_se_Poto_nikAlanA  (		"		"     )
+	108. X-rays_UNDEFINED        eksa-kiraNa_se_Poto_nikAlanA	as	eksa-re_se_Poto_nikAlanA  (		"		"     )
 
     3. Added new entry:
        ---------------
@@ -987,6 +1051,68 @@ Removed:
 					Ex: The father and son duo were sitting beside a dying fire in front of their hut .
 	74. Murrah_noun   		mUDZA				(Suggested by Nandini ji LTRC     05-01-14)
 					Ex: Murrahs were brought and they all sat down.
+	75. peacekeeping_noun		SAnwi_banAe_raKane_vAlA		(Suggested by Sonam Banasthali  28-01-14)
+					Ex: Peacekeeping operations.
+	76. infestation_noun		saMkramaNa			(Suggested by Prachi Banasthali	29-01-14)
+					Ex: Scientists are checking for both insect and fungal infestation.
+	77. evince_verb     		icCA_vyakwa_kara		(Suggested by Pamila Banasthali 25-01-14)
+					Ex: She never evinced any desire to do such a thing.
+	78. educative_adjective     	SikRApraxa			(Suggested by Pamila Banasthali 25-02-14)
+					Ex: You will find that this exercise is very educative and also great fun.
+	79. expressible_adjective   	vyakwa_karane_yogya		(Suggested by Pamila Banasthali 25-02-14)
+					Ex: Quantitative measurement is central to the growth of science especially physics because the
+					    laws of nature happen to be expressible in precise mathematical equations.
+	80. etc._noun			Axi				(Suggested by Pramila Banasthali 07-03-14)
+					Ex: The working of an antenna, the propagation of radio waves in the ionosphere etc. are problems of 						   electrodynamics.
+	81. intervening_adjective	maXyAvarwI			(Suggested by Prachi Banasthali 07-03-14)
+					Ex: Little had changed in the intervening years.
+	82. MSRTC_PropN			mahArARtra_rAjya_sadZaka_parivahana_nigama (From newsdev2014 corpus 20-3-14)
+					Ex: Along with ordering the MSRTC to pay the compensation the Tribunal said that the insurance company
+					    should not pay anything as the car belonged to Jichkar himself.
+	83. icecream_noun		AIsakrIma			(Suggested by Prachi Banasthali	21-03-14)
+					Ex: He treated his friends to an icecream. 
+	83. hour-long_noun  		GaMtA_lambI			(By Manju from newsdev2014 corpus   21-3-14)
+					Ex: The police arrived on the scene and cleared the two hour-long traffic jam.
+	84. well-wishers_noun       	SuBacinwaka			(By Manju from newsdev2014 corpus   21-3-14)
+					Ex: Reeta Mule presented messages from well-wishers.
+	85. joint-secretary_noun    	sahasaciva			(			"		"  )
+	86. North-Central_noun      	uwwara-maXya			(			"		"  )
+					Ex: Candidates from North-Central and Bargi Assembly seats have been declared in the list issued by the
+					    party.
+	87. Multi-speciality_noun   	maltIspeSielitI			(By Manju from newsdev2014 corpus   21-3-14)
+					Ex: Komal was immediately taken to the Multi-speciality Government Hospital.
+	88. in-charge_noun  		praBArI				(By Manju from newsdev2014 corpus   21-3-14)
+					Ex: Chauki in-charge Rejister Pal Singh, who was sitting on the front, was killed immediately.
+	89. power-dependent_noun    	bijalI_para_nirBara_hone_vAlA	(By Manju from newsdev2014 corpus   21-3-14)
+					Ex: On Thursday power-dependent business were completely stopped.
+	90. Indo-Pakistani_noun     	BArawa-pAka			(					"  )
+	91. near-by_noun    		AsapAsa				(					"  )
+					Ex: On hearing the sound of a car colliding with a tree, the near-by residents came to the scene and 
+					    immediately informed the police.
+	92. Sub-Inspector_noun      	saba_iMspektara			(By Manju from newsdev2014 corpus   21-3-14)
+					Ex: This case is being handled by Sub-Inspector Surendra Kumar
+	93. North-Centre_noun       	uwwara-maXya			(				"	"  )
+	94. secretary-general_noun  	mahAsaciva			(				"	"  )
+					Ex: The secretary-general would have to fix a date for a quick requisition meeting.
+	95. Co-operative_noun       	paxAXikArI			(By Manju from newsdev2014 corpus   21-3-14)
+					Ex: He gave emphasis to the high level investigation of the activities of the Co-operative department.
+	96. multi-talented_noun     	bahuAyAmI_prawiBASAlI		(By Manju from newsdev2014 corpus   21-3-14)
+					Ex: India is full of multi-talented geniuses.
+	97. part-payment_noun       	pArta_pemeMta			(			"		"  )
+					Ex:The Power corporation is not accepting part-payments.
+	98. sub-divisions_noun      	saba_divijana			(			"		"  )
+					Ex: The SDO of all sub-divisions have been ordered to meet the target.
+	99. show-cause_noun 		kAraNa_bawAo			(By Manju from newsdev2014 corpus	"  )
+					Ex: The absentees were issued with a show-cause notice.
+	100. house-shop_noun 		makAna-xukAna			(			 " 		"  )
+					Ex: According to this bill an NRI Punjabi can rent her land and house-shop at a fixed point in time.
+	101. Vice-President_noun     	upAXyakRa			(By Manju from newsdev2014 corpus   21-3-14)
+					Ex:  The Vice-President Vijay Singh welcomed the decision taken by the administration.
+	102. oblation_noun   		Ahuwi				(Suggested by Chaitanya Sir         22-3-14)
+					Ex: The Katha will be completed and the final oblation to the Havan will be made on Saturday.
+	103. BJP_PropN			BAjapA				(By Manju from newsdev2014 corpus   22-3-14)
+	104. ADCP_PropN			edIsIpI				(	"		"		"  )
+	105. ACP_PropN			esIpI				(	"		"		"  )
 
 
     4. Added new meaning to the existing word:
@@ -1149,6 +1275,8 @@ Removed:
 					Ex: Bhagirathi, the children read the name-plate on the door.
 	88. embankment_noun    		wata			(		  "	"	 21-12-13)
 					Ex: Alka and Taffy wandered about on the embankment.
+	89. exhaustive_adjective    	viswqwa			(Suggested by Pramila Banasthali 25-02-14)
+					Ex: Obviously these tables are not exhaustive.
 
 
     5. Modifying first meaning from the list :
@@ -1370,7 +1498,31 @@ Removed:
 				Ex: I like carp fish.
 	109. convincing_adjective	niScayAwmaka	as	yaWArWapUrNa	(	"		"	   "	 )
 				Ex: The Fellows of the University found the arguments so convincing that the proposal to attach new 						   conditions to the award was dropped.
-
+	110. separately_adverb	svawanwra_rUpa_se	as	alaga-alaga	(Suggested by Jagriti Banasthali 23-01-14)
+				Ex: Can I pay for each item separately?
+	111. conscience_noun    viveka		as	anwaHkaraNa		(Suggested by Preeti ji LTRC	29-01-14)
+				Ex: He will not let it trouble his conscience.
+	112. county_noun	maNdala 	as	kAuNtI			(Suggested by 	"		"	)
+				Ex: Today they take the field against county champions Essex.
+	113. special_adjective	asAXAraNa	as	viSeRa			(Suggested by Jagriti Banasthali 06-02-14)
+				Ex: Special conditions apply if you are under 18.
+	114. wallet_noun     	JolA		as	batuA			(Suggested by Pramila Banasthali 24-02-14)
+				Ex: She picked up the wallet and handed it back to him.
+	115. expense_noun    	lAgawa		as	Karca			(Suggested by Pramila Banasthali 07-03-14)
+				Ex: He tallied his expenses every day.
+	116. chocolate_noun	gahara_BurA_rafga	as	cAkaleta	(Suggested by Preeti ji LTRC 06-03-14)
+				Ex: I made a resolution to give up chocolate.
+	117. rightful_adjective	aXikArI		as	asalI			(Suggested by Anita ji LTRC 06-03-14)
+				Ex: We must return them to their rightful owner, How can you do that?
+	118. taker_noun		xAzva_lagAne_vAlA	as	lene_vAlA	(Suggested by Prachi Banasthali	08-03-14)
+				Ex: I have two tickets for sale. Any takers? 
+	119. symbol_noun     	niSAna		as	prawIka			(Suggested by Jagriti Banasthali 18-03-14)
+				Ex: When magnitudes of two or more physical quantities are multiplied their units should be treated in the 
+				    same manner as ordinary algebraic symbols.
+	120. remunerative_adjective  pAriSramika-praxawwa	as  lABakArI    (Suggested by Anita ji LTRC 18-03-14)
+				Ex: But their belief was that the expenditure which they recommended would be remunerative.
+	121. yeast_noun      	KamIra		as	yIsta			(Suggested by Anita ji LTRC 27-03-14) 
+				Ex: Flour is fermented with yeast to make bread. 
 	
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1403,6 +1555,7 @@ Removed:
 	25. freeman-^pl.freemen^_UNDEFINED  svAXIna_nAgarika			(By Manju			13-09-13)
 	26. freeman-{pl.freemen}_noun       svAXIna_nAgarika			(By  "				  "	)
 	27. civilisation_noun	saBya_samAja					(Suggested by 	Sukhada         26-11-13)
+	28. X-ray_noun		eksa-kiraNa					(Suggested by Anita ji LTRC	24-03-14)	
 
 
     7. Removed entry:
@@ -1440,7 +1593,7 @@ Removed:
 	30. grain_UNDEFINED 	anAja					(Suggested by Shweta Banasthali 29-10-13)
 	31. observe_UNDEFINED	avalokana_kara				( Suggested by Chaitanya Sir    26-11-13)
 	32. doorway_UNDEFINED   xvArapaWa				(Suggested by Pramila Banasthali 12-12-13)
-
+	33. doctorate_noun  	daktara_kI_upAXi			(	"		"	 24-01-14)
 
     8. Modified category:
        ------------------
@@ -1454,6 +1607,7 @@ Removed:
 	8. electrified_UNDEFINED as	electrified_adjective	(Suggested by Pramila Banasthali 05-10-13)
 	9. focussed_UNDEFINED	as	focussed_verb		(By Roja 			16-10-13 )	
 	10. civilisation_UNDEFINED	as civilisation_noun	(Suggested by Sukhada 		26-11-13 )
+	11. doctorate_UNDEFINED as	doctorate_noun    	(Suggested by Pramila Banasthali 24-01-14)
 
 	
  changes in preposition.txt
@@ -1491,18 +1645,34 @@ Removed:
 
   proper_noun-common_noun_compounds.txt 
   =====================================
-    Added   ::
+    Modifications on whole file:
+    ----------------------------
+	1. Modified "gAzXI" 	as      "gAMXI"    Ex: Rajiv_Gandhi    rAjIva_gAzXI  =>  Rajiv_Gandhi    rAjIva_gAMXI
+
+    Added   
+    ------
     Wall_Street     voYl_strIta#voYl_strIta#noun#2#WM
                     [previously it was present in multi_word_expressions.txt as "wall_street     galI[_banxa_sadaka]#galI[_banxa_sadaka]#noun#2#RM" which is wrong so removed made entry in proper_noun-common_noun_compounds.txt as above, Suggested by Chaitanya ji and Dipti Madam. 23-04-12]
     Louis_Victor_de_Broglie	luisa_viktara_xe_broYglI#luisa_viktara_xe_broYglI#noun#1#WM	
 				(Suggested by Sonam Banasthali	29-08-13)
     Added 5029 entries. Extracted from .xls files. 		(By Roja	19-10-13)
-    101_Days	101_desa#101_desa#noun#2#RM
+    	101_Days	101_desa#101_desa#noun#2#RM
 		to
-    Zulm_Ko_Jala_Doonga	jZulma_ko_jalA_xUMgA#jZulma_ko_jalA_xUMgA#noun#4#RM	
-    Crab_Nebula		karka_nihArikA#karka_nihArikA#noun#2#RM	(Suggested by Nandini ji LTRC 07-12-13)
-    United_Nation's	saMyukwa_rARtra#saMyukwa_rARtra#noun#2#RM	(Suggested by Sukhada	19-12-13)
-    Prime_Minister	praXAna_manwrI#praXAna_manwrI#noun#2#RM		(Suggested by Anita ji  21-01-14)
+    	Zulm_Ko_Jala_Doonga	jZulma_ko_jalA_xUMgA#jZulma_ko_jalA_xUMgA#noun#4#RM	
+    	Crab_Nebula		karka_nihArikA#karka_nihArikA#noun#2#RM	(Suggested by Nandini ji LTRC 07-12-13)
+    	United_Nation's	saMyukwa_rARtra#saMyukwa_rARtra#noun#2#RM	(Suggested by Sukhada	19-12-13)
+    	Prime_Minister	praXAna_manwrI#praXAna_manwrI#noun#2#RM		(Suggested by Anita ji  21-01-14)
+    	Uttar_Pradesh	uwwara_praxeSa#uwwara_praxeSa#noun#2#RM		(By Manju from  newsdev2014 corpus 22-03-14)
+    	Sri_Rama	SrI_rAma#SrI_rAma#noun#2#RM			(	"		"		"  )
+    	Lord_Krishna	BagavAna_kqRNa#BagavAna_kqRNa#noun#2#RM		(	"		"		"  )
+	South_India	xakRiNa_BArawa#xakRiNa_BArawa#noun#2#RM		(	"		"		"  )
+	Sri_Lankan	SrIlaMkAI#SrIlaMkAI#noun#2#RM			(	"		"		"  )
+
+   Added 96 entries extracted from newsdev2014 corpus  (By Shirisha Manju 28-03-14)
+	Akhil_Bhartiya_Janwadi_Mahila_Samiti    aKila_BArawIya_janavAxI_mahilA_samiwi#aKila_BArawIya_janavAxI_mahilA_samiwi#noun#5#RM
+				to
+	Gandhi_Nagar    gAMXI_nagara#gAMXI_nagara#noun#2#RM
+
     
  multi_word_expressions.txt
  ==========================
@@ -1544,6 +1714,14 @@ Removed:
 	16. on_the_basis_of_total_income	kula_Aya_ke_AXAra_para#kula_Aya_ke_AXAra_para#noun#3#RM (Suggested by Chaitanya Sir 05-01-14)
 	17. away_from		se_xUra#se_xUra#noun#2#RM		(Suggested by Krithika ji LTRC  07-01-14)
 				Ex: When she left school she grew away from her mother.
+	18. in_the_case_of	kI_sWiwi_meM#kI_sWiwi_meM#noun#3#RM	(Suggested by Preeti ji LTRC	29-01-14)
+				Ex: As in the case of the Sun, the shrinking ball of gas begins to heat up and eventually becomes hot enough 					   to shine.
+	19. first_class		pahalA_xarjA#pahalA_xarjA#noun#2#RM	(suggested by Preeti ji LTRC	29-01-14)
+				Ex: My first class starts at 8:30.
+	20. acquainted_with 	pariciwa_honA#pariciwa_honA#noun#2#RM	(Suggested by Garima Banasthali 12-02-14)
+				Ex: 
+	21. bound_to        	bazXA_huA^bAXya#bazXA_huA^bAXya#noun#2#RM(	"		"	  "	)
+				Ex:
 
     Modified :
     --------
@@ -1569,6 +1747,13 @@ Removed:
 				Ex: Take the old furniture to the rubbish dump.
 	name_plate		nAma_patta		as	nAma_pattikA	(Suggested by Nandini ji LTRC 17-12-13)
 				Ex: Bhagirathi, the children read the name plate on the door.
+	inspite_of		ke_BAvajUxa		as	ke_bAvajUxa	(Suggested by Prachi Banasthali 01-02-14)
+				Ex: Inspite of this he stood third among the successful candidates. 
+	any_time		UNDEFINED		as	noun		(Suggested by preeti ji LTRC	03-02-14)
+				Ex: The baby could arrive any time now.
+	coffee_drinks		koYPI_peya_yA_Sarabawa	as	koYPI_peya/Sarabawa(Suggested by Preeti ji LTRC 07-03-14)
+				Ex: People use espresso to make other coffee drinks.
+
 		
     Added new entry:
     ----------------
@@ -1735,9 +1920,49 @@ Removed:
 				Ex: Then, taking courage in both hands, he spoke, Your Majesty, please grant me anything
 	89. preferred_location	aXimawa_avasWiwi#aXimawa_avasWiwi#noun#2#RM		(Suggested by Chaitanya Sir     04-01-14)
 				Ex: Likewise, space is homogeneous and there is no (intrinsically) preferred location in the universe. 
-	90. on_the_basis_of	ke_AXAra_para#ke_AXAra_para#preposition#3#RM		 (Suggested by Chaitanya Sir     05-01-14)
+	90. on_the_basis_of	ke_AXAra_para#ke_AXAra_para#preposition#3#RM		(Suggested by Chaitanya Sir     05-01-14)
 				Ex: Physicists try to discover the rules that are operating in nature, on the basis of observations,
-				    experimentation and analysis.		       			 
+				    experimentation and analysis.
+	91. rain_water		varRA_kA_pAnI#varRA_kA_pAnI#noun#2#RM		       	(Suggested by Anita ji LTRC	01-02-14)
+				Ex: The rain water had washed them away.
+	92. any_day		kisI_BI_xina#kisI_BI_xina#noun#2#RM		 	(Suggested by preeti ji LTRC	03-02-14)
+				Ex: The baby could arrive any day now.
+	93. youth_council   	yuvA_pariRax/nOjavAnoM_kI_samiwi#noun#2#RM		(Suggested by Ratna purohit	21-03-14)
+				Ex:On this occasion, the SFI state secretary, State joint-secretary of the Youth council and Ajit were present.
+	94. state_secretary 	rAjya_saciva#rAjya_saciva#noun#2#RM			(Suggested by Ratna purohit	21-03-14)
+				Ex:On this occasion, the SFI state secretary, State joint-secretary of the Youth council and Ajit were present.
+	95. newly_married_woman nava_vivAhiwA#nava_vivAhiwA#noun#2#RM			(Suggested by Ratna purohit	21-03-14)
+				Ex: A newly married woman committed suicide by hanging herself from the fan.
+	96. secondary_school    mAXyamika_vixyAlaya#mAXyamika_vixyAlaya#noun#2#RM	(Suggested by Ratna purohit	  "	)
+				Ex: Municipal corporation secondary school demonstrated their imagination power.
+	97. teachers_association	SikRaka_saMGa#SikRaka_saMGa#noun#2#RM		(Suggested by Ratna purohit	  "	)
+				Ex: The President of the MNPA teachers association, honoured the school by presenting the award.
+	98. driving_licence 	cAlaka_lAisensa#cAlaka_lAisensa#noun#2#RM		(Suggested by Ratna purohit	21-03-14)
+	99. by_next_week    	agale_sapwAha_waka#agale_sapwAha_waka#noun#2#RM		(		"		  "	)
+				Ex: The rest will be provided by next week.		(
+	100. service_act	sevA_aXiniyama#sevA_aXiniyama#noun#2#RM			(		"		  "	)
+				Ex: The service act specifies that the deadline is seven days.
+	101. number_of_applicants	AvexakoM_kI_saMKyA#AvexakoM_kI_saMKyA#noun#2#RM	(		"		  "	)
+				Ex: The number of applicants moved around the office for two to three months are countless.
+	102. ordinary_day	sAmAnya_xina#sAmAnya_xina#noun#2#RM			(Suggested by Ratna purohit	21-03-14)
+				Ex: On an ordinary day it is usually 55 decibels.	
+	103. out_of_clay	mittI_xvArA/mittI_rahiwa#noun#2#RM			(		"		  "	)
+				Ex: The teachers and students built the fort out of clay.
+	104. Akhil_Bhartiya_Janwadi_Mahila_Samiti  aKila_BArawIya_janavAxI_mahilA_samiwi#noun#2#RM ( 	"		  "	)
+				Ex: Akhil Bhartiya Janwadi Mahila Samiti launched a state-wide campaign against corruption in jobs.
+	105. across_the_state	praxeSa_Bara_meM/saMpUrNa_rAjya_meM#noun#2#RM		(Suggested by Ratna purohit	21-03-14)
+				Ex: Signatures across the state will be collected and handed over to the Governor.
+	106. on_the_outskirts	bAhya_kRewra_meM/bAharI_ilAke_meM#noun#2#RM		(Suggested by Ratna purohit	  "	)
+				Ex: A very sad incident occurred in Maloya village, which is located on the outskirts of the city,where a
+				    newly married woman committed suicide by hanging herself from the fan.
+	107. share_market	prawiBUwi_bAjAra#prawiBUwi_bAjAra#noun#2#RM		(Suggested by Ratna purohit	21-03-14)
+				Ex: The domestic share market make history on Thursday. 
+	108. President_of_the_District_Art_Teachers'_association  jilA_kalAXyApaka_saMGa_ke_aXyakRa#noun#2#RM( "	  "	)
+				Ex: The President of the District Art Teachers' association provided guidance to the students.
+	109. gold_bars		sone_kI_IMteM#sone_kI_IMteM#noun#2#RM			(Suggested by Ratna purohit     21-03-14)
+				Ex: Demand for gold bars and coins went down due to inflation.
+	110. Panchayat_level_committee_officer  paMcAyawa_samiwi_swarIya_paxAXikArI#noun#2#RM(		"		  "	)
+				Ex: Information about the PSS meeting was not given to the Panchayat level committee officer.
 
     Added new meaning to the existing word:
     --------------------------------------
@@ -1750,6 +1975,11 @@ Removed:
 				Ex: For this, we consider a plane circular loop of radius r whose plane is perpendicular to
 				    the direction of the current-carrying wire, and which is centred symmetrically with
 				    respect to the wire.
+	7. fresh_water		wAjA_pAnI		(Suggested by Chaitanya sir 20-3-14 	) Ex: We drained the pond and filled it with
+												      fresh water.
+	8. fatal_accident  	GAwaka_xurGatanA	(Suggested by Ratna purohit     21-03-14)
+	9. general_public  	Ama_AxamI		(Suggested by Chaitanya sir     22-03-14) Ex: For this reason the general public has to
+												      come forward.		
 
 
    Modifying the head id:
@@ -1809,13 +2039,27 @@ Removed:
 	window_noun     	gavAkRa		(Suggested by Rashmi Banasthali  14-10-13)
 	charge_noun		AveSa		(Suggested by Chaitanya Sir      04-11-13)
 	charge_verb		AveSiwa_kara	(		"		   "	 )
-	absorb_verb		avaSoRiwa_kara	(Suggested by Garima Banasthali  14-11-13)
-				EX:The dark lines indicate the frequencies that have been absorbed by the atoms of the gas.
-	protoplanetary_noun	protoplEnetarI	(Suggested by Sonam Banasthali	 04-12-13)
-				Ex: The Infra Red Astronomy Satellite IRAS launched in 1983 succeeded in discovering such protoplanetary 					   discs around a few nearby stars like beta pictoris. 
-	pre-solar_adjective	sOramaNdala_kI_racanA_se_pahale_ke(	"	   "	 )
-				Ex: However, with the pre-solar cloud, another factor had to be  taken into co..
-
+	absorb_verb		avaSoRiwa_kara	(Suggested by Garima Banasthali  14-11-13) Ex: The dark lines indicate the frequencies that
+											       have been absorbed by the atoms of the gas.
+	protoplanetary_noun	protoplEnetarI	(Suggested by Sonam Banasthali	 04-12-13) Ex: The Infra Red Astronomy Satellite IRAS launched
+                                                                                           in 1983 succeeded in discovering such protoplanetary
+						  					   discs around a few nearby stars like beta pictoris. 
+	pre-solar_adjective	sOramaNdala_kI_racanA_se_pahale_ke(	"	   "	 ) Ex: However, with the pre-solar cloud, another
+											       factor had to be  taken into co..
+	elementary_adjective 	mUla		(Suggested by Pramila Banasthali 05-02-14) Ex: Note that when mole is used the elementary 
+											       entities must be specified.
+	dimensionless_adjective vimAvihIna	(	"	"		     "	 ) Ex: Both these are dimensionless quantities.
+	subtraction_noun  	vyavakalana	(Suggested by Jagriti Banasthali 18-03-14) Ex: The magnitudes of physical quantities may be
+                                                                                               added together or subtracted from one another
+                                                                                               only if they have the same dimensions.
+	dimensionally_adverb 	vimIya		(Suggested by Pramila Banasthali 05-02-14) Ex: The dimensions of LHS and RHS are the same and
+											       hence the equation is dimensionally correct.
+	exponent_noun 		GAwAfka		(		"		    "	 ) Ex: The dimensions of a physical quantity are the 
+									       powers or exponents to which the base quantities 											      are raised to represent that quantity.
+    Modifying first meaning:
+    -----------------------
+	instant_noun	kRaNika	as	kRaNa	(Suggested by Prachi Banasthali  21-03-14) 
+			Ex: It is easier to calculate the value of velocity at different instants if we have data of positions at different 				   instants or exact expression for the position as a function of time.
 
     Modifying spelling of the existing word :
     -----------------------------------------
@@ -1856,15 +2100,19 @@ Removed:
  
     Added new entry:
     ----------------
-	charged_particles        AveSiwa_kaNa#AveSiwa_kaNa#noun#2#RM		(Suggested by Chaitanya Sir	 07-06-13)
-	discharge_tube		 visarjana_nalI#visarjana_nalI#noun#2#WM	(Suggested by Pramila Banasthali 19-08-13)
-	discharge_valve		 visarjana_vAlva#visarjana_vAlva#noun#2#WM 	(	"		"		 )
-	potential_difference     viBavAnwara#viBavAnwara#noun#1#RM		(	"		"	 23-08-13)
+	charged_particles	AveSiwa_kaNa#AveSiwa_kaNa#noun#2#RM		(Suggested by Chaitanya Sir	 07-06-13)
+	discharge_tube		visarjana_nalI#visarjana_nalI#noun#2#WM	(Suggested by Pramila Banasthali 19-08-13)
+	discharge_valve		visarjana_vAlva#visarjana_vAlva#noun#2#WM 	(	"		"		 )
+	potential_difference	viBavAnwara#viBavAnwara#noun#1#RM		(	"		"	 23-08-13)
 	dynamically_stable_orbit gawiSIla_sWira_kakRA#gawiSIla_sWira_kakRA#noun#3#RM( 	"		"	 10-09-13)
-	double_slit     	 xviJirI#xviJirI#noun#2#RM			(	"		"    	    "    )
-	closed_loop     	 baMxa_paripaWa#baMxa_paripaWa#noun#2#RM	(Suggested by	Chaitanya Sir	 21-09-13)
-	sign_convention		 cihna_paripAtI#cihna_paripAtI#noun#1#RM	(suggested by Preeti ji LTRC	 19-12-13)
-				 Ex: We now apply the sign convention. 
+	double_slit		xviJirI#xviJirI#noun#2#RM			(	"		"    	    "    )
+	closed_loop		baMxa_paripaWa#baMxa_paripaWa#noun#2#RM	(Suggested by	Chaitanya Sir	 21-09-13)
+	sign_convention		cihna_paripAtI#cihna_paripAtI#noun#1#RM	(suggested by Preeti ji LTRC	 19-12-13)
+				Ex: We now apply the sign convention.
+	vernier_callipers	varniyara_kEliparsa#varniyara_kEliparsa#noun#2#WM	(Suggested by Prachi Banasthali 07-03-14)
+				Ex: For example, a vernier callipers has the least count as 0.01 cm
+	vernier_scale		varniyara_pEmAnA#varniyara_pEmAnA#noun#2#RM		(	"		"		) 
+				Ex: In a vernier callipers the zero mark of vernier scale may not coincide with the zero mark of the main scale
 			
 
  changes in causative_verb_mng.txt
@@ -1932,6 +2180,46 @@ Removed:
 	Gatldis		gEtaladisa	(	"		"	"	)
 	Earth    	pqWvI		(Suggested by Pramila Banasthali 12-12-13)
 	Dad     	piwAjI		(	"		"	   "	 )
+	Marathi 	marATI		(	By Shirisha Manju        29-01-14)
+	Simon   	simona		(		"		 12-02-14)
+	Gangotri	gaMgowrI	(		"		 25-02-14)
+
+	Following entries are added from  newsdev2014 corpus by Shirisha Manju
+
+		Duttgarh	xawwagaDZa			Saatpute	sAwapuwe	
+		Mule		mule				Agra		AgarA			
+		Sangeeta	saMgIwA				Bamrauli	bamarOlI	
+		Katara		katArA				Chauki		cOkI			
+		Dauki		dOkI				Tajganj		wAjagaMja		
+		Inspector	iMspektara			Gitanjali	gIwAMjali	
+		Ayodhya 	ayoXyA				Ananth  	anaMwa			
+		Diwali  	xivAlI				Dhanteras       Xanawerasa	
+		Gavre   	gavare				Hariparvat      harIparvawa	
+		Hariyana        hariyANA			Jairam  	jayarAma		
+		Vivekananda     vivekAnaMxa			Vachspati       vAcaspawi	
+		Medpallivaar    medapallIvAra			Ramesh  	rameSa			
+		Meshram 	meSrAma				Mehar   	mehara			
+		Nagarsevak      nagarasevaka			Sultanpur       sulwAnapura	
+		Sundernagar     suMxaranagara			Suigawadi       suIgavAdZI	
+		Priyanjana      priyaMjanA			Bhullar 	BUllara	
+		Chatrokhadi     cawaroKadZI			Avni    	avani
+		Gujarat 	gujarAwa			Umesh   	umeSa
+		Surendra        sureMxra			Punjab  	paMjAba
+		Pallekele       pAllekela			Nikhil  	niKila
+		Nehru   	neharU				Narhari 	naraharI
+		Naresh  	nareSa				NHPS    	enaecapIsI
+		Narender        nareMxra			Kavle   	kAvale
+		Darshan 	xarSana				Gedekar 	edZekara
+		Sahil   	sAhila				Barai   	bAraI
+		Shekhar 	SeKara				Vanskar 	vAnaskara
+		Gundamwar       guMdamavAra			Rohtak  	rohawaka
+		SFI     	esaePaAI			Deshwal 	xeSavAla
+		Hawa    	havA				Ajit    	ajIwa
+		Maloya  	maloyA				Kulvinder       kulaviMxara
+		Dimuth  	ximuWa				Karunarathne    karuNArawne			
+		Ashan   	eSAna				Dambulla        xAMbulA
+		Hambantota      haMbanatotA			Khedia  	KedZiyA
+		Sushil  	suSIla				Mahanta 	mahaMwa
 
    Modified:
    ---------
@@ -1966,6 +2254,21 @@ Removed:
 	lecturer	(	"			   "	  ) Ex: The lecturer decided to write a book.  (Note: replaced above example)
 	clerk		(Suggested by Pramila Banasthali 07-01-14 ) Ex: He dictated the letter to his clerk.  
 	minister	(By Manju from animate.txt 	 21-01-14 ) Ex: He is the most shady minister in the state.
+	terrorist  	( 	"	"		 22-01-14 ) Ex: The police fired tear gas to flush out the terrorists.
+        robber     	(       "       "                    "    )
+        prowler    	(       "       "                    "    ) Ex: He flushed out the prowler.
+        bandit  	(	"	"		     "    ) Ex: The police flushed out the bandits from their place of hiding.
+	audience	(Suggested by Pramila Banasthali 25-01-14 ) Ex: Her performance electrified the audiences.	
+	hunter     	(By Manju from animate.txt	 12-02-14 ) Ex: A deer was ensnared by hunters.
+	his		(By Roja from animate.txt	 07-03-14 ) Ex: His descent into crime was rapid.
+	president	(Suggested by Prachi Banasthali	 07-03-14 ) Ex:The interview was broadcast on the same day he was invested as President
+	chairperson	(	"	"			" ) Ex: The group invested her as chairperson.
+	advocate	(Suggested by Anita ji LTRC	 	" )
+	police		(Suggested by garima Banasthali	 08-03-14 ) Ex: The man has been killed by the police.
+	driver		(Suggested by Preeti ji LTRC     21-03-14 ) Ex: He is a cautious driver
+	laborer		(Suggested by Prachi Banasthali	 21-03-14 ) Ex: a husky laborer
+	investigator 	(	"		"		" ) Ex: The investigator will have to be thorough.
+	murderer	(Suggested by Pramila Banasthali 21-03-14 ) Ex: The convicted murderer escaped from a high security prison.
 
 
  changes in named_entities.txt

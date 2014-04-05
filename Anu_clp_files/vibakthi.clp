@@ -1,6 +1,7 @@
 ;This file is written by Shirisha Manju
 
 (defglobal ?*vib_debug_file* = vib_debug_fp)
+(defglobal ?*p_c_f_file* = p_c_fact)
 
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
@@ -41,6 +42,7 @@
  (assert (ids-phy_cmp_mng-head-cat-mng_typ-priority)) 
  (assert (id-eng-src))
  (assert (id-attach_eng_mng))
+ (assert (id-wsd_viBakwi))
  )
  ;---------------------------------------------------------------------------------------------------------------
  (deffunction remove_character(?char ?str ?replace_char)
@@ -202,6 +204,32 @@
  	(retract ?f0)
         (modify ?f1 (vibakthi ko))
 	(printout ?*vib_debug_file* "(id-vib-source	"?obj_id"	ko	object_as_jo_samAnAXikaraNa )" crlf )
+ )
+ ;---------------------------------------- vib from wsd -------------------------------------------------------------
+ ;Suggested by Sukhada (4-03-14)
+ ;Most of the inexpensive budget accommodation is in taj ganj.
+ ;kama KarcIle bajata meM rukane_kI vyvasWA jyAxAwara taj ganj meM hE.
+ (defrule get_vib_for_grp_id_from_wsd
+ (declare (salience 900))
+ (id-wsd_viBakwi ?id ?vib)
+ ?f0<-(pada_info (group_head_id ?hid) (group_ids $?ids ?id $?ids1) )
+ (test (neq ?hid ?id))
+ =>
+        (modify ?f0 (group_ids $?ids1))
+	(assert (pada_info (group_cat PP)(group_head_id ?id) (group_ids $?ids ?id) (vibakthi ?vib) ))
+	(printout ?*p_c_f_file* "(pada_control_fact	" ?id ")" crlf)
+	(printout ?*vib_debug_file* "(id-vib-source	"?id"	"?vib "  get_vib_for_grp_id_from_wsd )" crlf )
+ )
+ ;-------------------------------------------------------------------------------------------------------------
+ ;Suggested by Sukhada (4-03-14)
+ ;The newspapers branded her a hypocrite.
+ (defrule get_vib_for_hid_from_wsd
+ (declare (salience 900))
+ (id-wsd_viBakwi ?id ?vib)
+ ?f0<-(pada_info (group_head_id ?id)(vibakthi 0) )
+ =>
+        (modify ?f0 (vibakthi ?vib))
+	(printout ?*vib_debug_file* "(id-vib-source	"?id"	"?vib "  get_vib_for_hid_from_wsd )" crlf )
  )
  ;---------------------------------------------( vib from tam database ) ------------------------------------
  ;Rule re-modified by Roja (11-03-11)

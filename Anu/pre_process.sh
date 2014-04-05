@@ -41,6 +41,7 @@ else
 
 #This program absorbs spaces between tags and the words.
 #e.g. <TITLE> test </TITLE> will be changed to <TITLE>test</TITLE>
+if  [ "$3" != "onesent" ]; then
 $PATH1/change2mystdformat.out < ../$1.std > $1.tmp2
 
 #Below programme is out dated so removing them.(Suggested by Chaitanya Sir 09-07-12)
@@ -55,6 +56,10 @@ $PATH1/add_snt_mrkr.out < $1.tmp2 > $PATH2/$1.pre-processed
 
 # Produces an error if the sentences have more than 250 words.
 $PATH1/check_long_sentences.pl < $PATH2/$1.pre-processed
+
+else
+$PATH1/add_snt_tag.out < $PATH2/tmp_stdenglish/$1.tmp8 > $PATH2/$1.pre-processed
+fi
 
 cd ../
 fi

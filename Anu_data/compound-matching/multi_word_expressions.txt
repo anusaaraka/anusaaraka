@@ -2209,7 +2209,6 @@ acoustic_signal	Xvanika_saMkewa#Xvanika_saMkewa#noun#2#RM
 acoustic_storage	Xvanika_BaMdAraNa#Xvanika_BaMdAraNa#noun#2#RM
 acoustical_coupler	Xvanika_yugmaka#Xvanika_yugmaka#noun#2#RM
 acoustical_sound_enclosure	Xvanika_Xvani_pariveRTaka#Xvanika_Xvani_pariveRTaka#noun#3#RM
-acquainted_with	pariciwa_honA#pariciwa_honA#noun#2#RM
 acquired_in_satisfaction_of_claims	xAvoM_kI_pUrwi_meM_prApwa#xAvoM_kI_pUrwi_meM_prApwa#noun#3#RM
 acquired_reflex	sWiwyAnukUla_prawivarwa#sWiwyAnukUla_prawivarwa#noun#2#RM
 acquisition_effort	saMprApwi#saMprApwi#noun#2#RM
@@ -3482,7 +3481,7 @@ antivirus_program	prawi_viRANu_progrAma#prawi_viRANu_progrAma#noun#2#RM
 anxiety_disorder	cinwA_vikAra#cinwA_vikAra#noun#2#RM
 any_and_all_bid	kampanI_para_aXikAra_pAne_kI_ceRtA_meM_sAre_Seyara_KZarIxane_kA_praswAva_raKanA#kampanI_para_aXikAra_pAne_kI_ceRtA_meM_sAre_Seyara_KZarIxane_kA_praswAva_raKanA#noun#4#RM
 any_longer	Ora_jZyAxA_nahIM#Ora_jZyAxA_nahIM#noun#2#RM
-any_time	kisI_BI_samaya#kisI_BI_samaya#UNDEFINED#2#RM
+any_time	kisI_BI_samaya#kisI_BI_samaya#noun#2#RM
 anybody_else	koI_anya#koI_anya#noun#2#RM
 anything_else	kisI_Ora_cIja#kisI_Ora_cIja#noun#1#RM
 ap_access_provider	e_pI_aBigama_praxAwA#e_pI_aBigama_praxAwA#noun#3#RM
@@ -5747,7 +5746,6 @@ bought_ledger	KarIxa_araya_KAwA#KarIxa_araya_KAwA#noun#2#RM
 bought_ledger_adjustment_account	KarIxa_araya_KAwA_samAyojana_leKA#KarIxa_araya_KAwA_samAyojana_leKA#noun#4#RM
 bought_ledger_control_account	KarIxa_araya_KAwA_niyaMwraNa_leKA#KarIxa_araya_KAwA_niyaMwraNa_leKA#noun#4#RM
 boulder_clay	golASma_mqwwikA#golASma_mqwwikA#noun#2#RM
-bound_to	bazXA_huA^bAXya#bazXA_huA^bAXya#noun#2#RM
 boundary_condition	sImA_kI_parisWiwi#sImA_kI_parisWiwi#noun#2#RM
 boundary_mark	sImA_cihna#sImA_cihna#noun#2#RM
 bounding_function	purabaMWana_Palana#purabaMWana_Palana#noun#2#RM
@@ -7598,7 +7596,7 @@ coffee_cake	kAPI_kA_keka#kAPI_kA_keka#noun#2#RM
 coffee_can	kAPI_kA_dibbA#kAPI_kA_dibbA#noun#2#RM
 coffee_capuccino	kEpIcino_kAPZI#kEpIcino_kAPZI#noun#2#RM
 coffee_cup	kOPI_kA_pyAlA#kOPI_kA_pyAlA#noun#2#RM
-coffee_drinks	koYPI_peya_yA_Sarabawa#koYPI_peya_yA_Sarabawa#noun#2#RM
+coffee_drinks	koYPI_peya/Sarabawa#koYPI_peya/Sarabawa#noun#2#RM
 coffee_house	koYPI_hAusa#koYPI_hAusa#noun#2#RM
 coffee_machine	koYPI_maSIna#koYPI_maSIna#noun#2#RM
 coffee_shop	kOPI_SOpa#kOPI_SOpa#noun#2#RM
@@ -12571,7 +12569,7 @@ fast_tract	SIxa_a_nipatAna#SIxa_a_nipatAna#noun#2#RM
 fat_cell	vasA_koSA#vasA_koSA#noun#2#RM
 fat_man	motA_AxamI#motA_AxamI#noun#2#RM
 fat_salary	motI_wanKA#motI_wanKA#noun#2#RM
-fatal_accident	jAnalevA_xurGatanA#jAnalevA_xurGatanA#noun#2#RM
+fatal_accident	GAwaka_xurGatanA/jAnalevA_xurGatanA#GAwaka_xurGatanA/jAnalevA_xurGatanA#noun#2#RM
 fatal_error	GAwaka_wruti#GAwaka_wruti#noun#2#RM
 fatigue_duty	SrAnwi_karwavya#SrAnwi_karwavya#noun#2#RM
 fault_finding	CixrAnveRapra#CixrAnveRapra#noun#2#RM
@@ -13064,7 +13062,6 @@ first_call_money	praWama_mAMga_rASi_iakama#praWama_mAMga_rASi_iakama#noun#3#RM
 first_call_register	praWama_mAMga_rajistara#praWama_mAMga_rajistara#noun#3#RM
 first_cause	praWama_kAraNa#praWama_kAraNa#noun#2#RM
 first_charge	praWama_praBAra#praWama_praBAra#noun#2#RM
-first_class	pahalA_xarjA#pahalA_xarjA#noun#2#RM
 first_class_magistrate	praWama_SreprI_majistreta#praWama_SreprI_majistreta#noun#3#RM
 first_class_paper	variRTa_huMdI_IraleKa#variRTa_huMdI_IraleKa#noun#3#RM
 first_come_first_serve	pahale_Ao_pahale_pAo#pahale_Ao_pahale_pAo#noun#4#RM
@@ -13845,7 +13842,7 @@ fresh_breeze	wAjZI_havA#wAjZI_havA#noun#2#RM
 fresh_receipt	nayI-AvawI#nayI-AvawI#noun#2#RM
 fresh_vacancy	naWa_riikwa#naWa_riikwa#noun#2#RM
 fresh_voucher	prApwi-vAucara#prApwi-vAucara#noun#2#RM
-fresh_water	mITA_pAnI#mITA_pAnI#noun#2#RM
+fresh_water	wAjA_pAnI/mITA_pAnI#wAjA_pAnI/mITA_pAnI#noun#2#RM
 freshman_class	navAgaMwuka_kakRA#navAgaMwuka_kakRA#noun#2#RM
 freshwater_bream	wAjZe_pAnI_meM_rahane_vAlI_maCalI#wAjZe_pAnI_meM_rahane_vAlI_maCalI#noun#2#RM
 freshwater_clam	wAjZe_jala_kA_sIpI#wAjZe_jala_kA_sIpI#noun#2#RM
@@ -14207,7 +14204,7 @@ general_proposal	sAmAnya_praswAva#sAmAnya_praswAva#noun#2#RM
 general_provident_fund	sAmAnya_BaviRya_niXi#sAmAnya_BaviRya_niXi#noun#3#RM
 general_provident_fund_rules	sAmAnya_BaviRya_niXi_niyamAvalI#sAmAnya_BaviRya_niXi_niyamAvalI#noun#4#RM
 general_provident_fund_section	sAmAnya_BaviRya_niXi_anuBAga#sAmAnya_BaviRya_niXi_anuBAga#noun#4#RM
-general_public	jana_sAXAraNa#jana_sAXAraNa#noun#2#RM
+general_public	Ama_AxamI/jana_sAXAraNa#Ama_AxamI/jana_sAXAraNa#noun#2#RM
 general_purpose_computer	vyApaka_uxxeSaya_aBikaliwra#vyApaka_uxxeSaya_aBikaliwra#noun#3#RM
 general_purpose_language	vyApaka_uxxeSaya_BARA#vyApaka_uxxeSaya_BARA#noun#3#RM
 general_purpose_operating_system	vyApaka_uxxeSaya_saMkriyA#vyApaka_uxxeSaya_saMkriyA#noun#4#RM
@@ -16063,7 +16060,6 @@ in_the_air	vAyu_mez#vAyu_mez#noun#3#RM
 in_the_alternative	vikalpa_ke_rUpa_meM#vikalpa_ke_rUpa_meM#noun#3#RM
 in_the_arms_of_morpheus	unIMxA#unIMxA#noun#3#RM
 in_the_capacity_of	kI_hEsiyawa_se#kI_hEsiyawa_se#noun#3#RM
-in_the_case_of	kI_sWiwi_meM#kI_sWiwi_meM#noun#3#RM
 in_the_cause_of	ke_kAraNa_kA#ke_kAraNa_kA#noun#3#RM
 in_the_circumstances	EsI_parisWiwi_iAlawa_meM#EsI_parisWiwi_iAlawa_meM#noun#3#RM
 in_the_circumstances_of	kI_parisWiwiyoM_meM#kI_parisWiwiyoM_meM#noun#3#RM
@@ -16641,7 +16637,7 @@ inspectorate_general	mahAnirIkRaprAlaya#mahAnirIkRaprAlaya#noun#2#RM
 inspectorate_of_armaments	AyuXa_nirIkRaprAlaya#AyuXa_nirIkRaprAlaya#noun#1#RM
 inspectorate_of_engineering_equipments	iMjIniyarI_upaskara_nirIkRaprAlaya#iMjIniyarI_upaskara_nirIkRaprAlaya#noun#1#RM
 inspectors_of_notified_factories	aXisUciwa_kAraKZAnoM_kA_nirIkRaka#aXisUciwa_kAraKZAnoM_kA_nirIkRaka#noun#1#RM
-inspite_of	ke_BAvajUxa#ke_BAvajUxa#noun#1#RM
+inspite_of	ke_bAvajUxa#ke_bAvajUxa#noun#1#RM
 installation_charge	prawiRTApana_mUlya#prawiRTApana_mUlya#noun#2#RM
 installation_engineer	saMsWApana_iMjIniyara#saMsWApana_iMjIniyara#noun#2#RM
 installation_of_persian_wheels	rahata_lagAnA#rahata_lagAnA#noun#1#RM
@@ -33563,6 +33559,7 @@ load_of_rubbish	bakavAsa_se_BarapUra#bakavAsa_se_BarapUra#adjective#3#RM
 call_of_nature	SOcAxi_kI_AvaSyakawA#SOcAxi_kI_AvaSyakawA#noun#3#RM
 rubbish_bin	kacarA_kuMdI#kacarA_kuMdI#noun#2#RM
 rubbish_dump	kacare_kA_mExAna#kacare_kA_mExAna#noun#2#RM
+rain_water	varRA_kA_pAnI#varRA_kA_pAnI#noun#2#RM
 #By Alpana ji (LTRC)
 Block_multiplexer	avaroXa_bahusaMkewaka#avaroXa_bahusaMkewaka#noun#2#RM
 Discharge_Required	AvaSyaka_nirvahana#AvaSyaka_nirvahana#noun#1#RM
@@ -33734,5 +33731,24 @@ as_much_as	jiwanA_aXika#jiwanA_aXika#adverb/adjective#3#RM
 at_all_costs    kisI_BI_kImawa_para#kisI_BI_kImawa_para#noun#3#RM
 copper_plate	wAmrapawra#wAmrapawra#noun#2#RM
 character_building	cariwra_nirmANa#cariwra_nirmANa#noun#1#RM
+any_day	kisI_BI_xina#kisI_BI_xina#noun#2#RM
 #By Krithika ji LTRc
 fatal_hour	nirNAyaka_pala#nirNAyaka_pala#noun#2#RM
+youth_council	yuvA_pariRax/nOjavAnoM_kI_samiwi#yuvA_pariRax/nOjavAnoM_kI_samiwi#noun#2#RM 
+state_secretary	rAjya_saciva#rAjya_saciva#noun#2#RM
+newly_married_woman	nava_vivAhiwA#nava_vivAhiwA#noun#2#RM
+secondary_school	mAXyamika_vixyAlaya#mAXyamika_vixyAlaya#noun#2#RM
+teachers_association	SikRaka_saMGa#SikRaka_saMGa#noun#2#RM
+driving_licence	cAlaka_lAisensa#cAlaka_lAisensa#noun#2#RM
+by_next_week	agale_sapwAha_waka#agale_sapwAha_waka#noun#2#RM
+service_act	sevA_aXiniyama#sevA_aXiniyama#noun#2#RM
+number_of_applicants	AvexakoM_kI_saMKyA#AvexakoM_kI_saMKyA#noun#2#RM
+ordinary_day	sAmAnya_xina#sAmAnya_xina#noun#2#RM
+out_of_clay	mittI_xvArA/mittI_rahiwa#mittI_xvArA/mittI_rahiwa#noun#2#RM
+Akhil_Bhartiya_Janwadi_Mahila_Samiti	aKila_BArawIya_janavAxI_mahilA_samiwi#aKila_BArawIya_janavAxI_mahilA_samiwi#noun#2#RM
+across_the_state	praxeSa_Bara_meM/saMpUrNa_rAjya_meM#praxeSa_Bara_meM/saMpUrNa_rAjya_meM#noun#2#RM 
+on_the_outskirts	bAhya_kRewra_meM/bAharI_ilAke_meM#bAhya_kRewra_meM/bAharI_ilAke_meM#noun#2#RM
+share_market	prawiBUwi_bAjAra#prawiBUwi_bAjAra#noun#2#RM
+President_of_the_District_Art_Teachers'_association	jilA_kalAXyApaka_saMGa_ke_aXyakRa#jilA_kalAXyApaka_saMGa_ke_aXyakRa#noun#2#RM
+gold_bars	sone_kI_IMteM#sone_kI_IMteM#noun#2#RM
+Panchayat_level_committee_officer	paMcAyawa_samiwi_swarIya_paxAXikArI#paMcAyawa_samiwi_swarIya_paxAXikArI#noun#2#RM

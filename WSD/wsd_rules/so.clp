@@ -4,7 +4,7 @@
 (id-root ?id so)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id adverb)
-(not (kriyA-conjunction ?i ?id));The sky is blue, so it is likely that Joe will come.
+(not (kriyA-vAkya_viBakwi ?i ?id));The sky is blue, so it is likely that Joe will come.
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id iwanA))
@@ -16,7 +16,7 @@
 (declare (salience 4900))
 (id-root ?id so)
 ?mng <-(meaning_to_be_decided ?id)
-(or (id-cat_coarse ?id preposition)  (kriyA-conjunction ?i ?id));The sky is blue, so it is likely that Joe will come.
+(or (id-cat_coarse ?id preposition)  (kriyA-vAkya_viBakwi ?i ?id));The sky is blue, so it is likely that Joe will come.
 ;(or (id-cat_coarse ?id preposition)  (subject-conjunction ?i ?id));The sky is blue, so it is likely that Joe will come.
 =>
 (retract ?mng)
@@ -26,8 +26,11 @@
 )
 
 ;The POS taggers assign RB/IN POS. Based on it the above rules have been added.
+
+;So, they celebrate this day. 
+;isalie, ve isa xina uwsava manAwe hEM.
 (defrule so2
-(declare (salience 4800))
+(declare (salience 5100)) ; salience increased by Manju (24-3-14) from 4800 to 5100
 (id-root ?id so)
 ?mng <-(meaning_to_be_decided ?id)
 ;(id-word 1 ?id)
@@ -95,12 +98,16 @@
 )
 
 ; I asked him to do so.
+
+;$$$ Modified by Manju (24-03-14)
+;added was in the list
+; Is that so?
 (defrule so7
 (declare (salience 4300))
 (id-root ?id so)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word =(- ?id 1) that )
-(id-word =(- ?id 2) is)
+(id-word =(- ?id 2) is|was)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id vEsA))
@@ -108,25 +115,14 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  so.clp 	so7   "  ?id "  vEsA )" crlf))
 )
 
-(defrule so8
-(declare (salience 4200))
-(id-root ?id so)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) that )
-(id-word =(- ?id 2) was)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id vEsA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  so.clp 	so8   "  ?id "  vEsA )" crlf))
-)
 
-; Is that so?
+;$$$ Modified by Manju (24-03-14)
+;added was|am in the list
 (defrule so9
 (declare (salience 4100))
 (id-root ?id so)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) is)
+(id-word =(+ ?id 1) is|was|am|are|were)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id vEse_hI))
@@ -134,53 +130,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  so.clp 	so9   "  ?id "  vEse_hI )" crlf))
 )
 
-(defrule so10
-(declare (salience 4000))
-(id-root ?id so)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) was)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id vEse_hI))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  so.clp 	so10   "  ?id "  vEse_hI )" crlf))
-)
-
-(defrule so11
-(declare (salience 3900))
-(id-root ?id so)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) am)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id vEse_hI))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  so.clp 	so11   "  ?id "  vEse_hI )" crlf))
-)
-
-(defrule so12
-(declare (salience 3800))
-(id-root ?id so)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) are)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id vEse_hI))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  so.clp 	so12   "  ?id "  vEse_hI )" crlf))
-)
-
-(defrule so13
-(declare (salience 3700))
-(id-root ?id so)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) were)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id vEse_hI))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  so.clp 	so13   "  ?id "  vEse_hI )" crlf))
-)
 
 ; so am I/so was he.
 ; The above rule was following_root=be, but the morph give is/was etc as the roots && not be! Hence 5 rules have been written.
@@ -258,6 +207,26 @@
 ;So thats the end of this movie.
 ;So there is no proof, we can't do anything.
 ;
+
+;------------------- Removed rules- ------------------
+;so8
+;	if -1 that and -2 was	then vEsA
+;	Note : merged in so7
+;so10	
+;	if +1 was  then    vEse_hI
+;	 Note : merged in so9
+;
+;so11	
+;	if +1 am   then    vEse_hI
+;	 Note : merged in so9
+;so12
+;	if +1 are  then    vEse_hI
+;        Note : merged in so9
+;so13
+;	if +1  were  then    vEse_hI
+;        Note : merged in so9
+
+
 ;LEVEL 
 ;Headword : so
 ;

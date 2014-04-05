@@ -128,3 +128,27 @@
 	
  	)
  )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;Suggested by Chaitanya Sir (24-03-14)
+ ;There can be some confusion [regarding] the trailing zeros.
+ (defrule modify_PP_daughter
+ ?f0<-(Head-Level-Mother-Daughters ?h ?l ?PP ?daut ?np)
+ (Node-Category ?PP PP)
+ (Node-Category ?daut ?cat&~IN&~TO)
+ ?f1<-(Head-Level-Mother-Daughters ?h1 ?l1 ?daut ?id $?post)
+ ?f2<-(Node-Category	?daut	?d)
+ ?f3<-(id-sd_cat ?id ?c)
+ =>
+        (if (eq ?h regarding) then
+                (retract ?f0 ?f1 ?f2 ?f3)
+                (bind ?Mot (get_no ?daut ?cat IN))
+                (assert (Head-Level-Mother-Daughters ?h ?l ?PP ?Mot ?np))
+                (assert (Node-Category ?Mot IN))
+                (assert (Head-Level-Mother-Daughters ?h1 ?l1 ?Mot ?id $?post))
+		(assert (id-sd_cat ?id IN))
+	else
+		(printout t "PP daughter category problem "?h ": " ?cat crlf)
+
+        )
+ )
+

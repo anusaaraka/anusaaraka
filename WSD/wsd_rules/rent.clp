@@ -34,8 +34,8 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  rent.clp     rent2   "  ?id " rent )" crlf))
 )
 
-;@@@ Added by Anita 20-12-2013 [old clp sentence]
-;There are some apartments for rent in these buildings.
+;@@@ Added by Anita 20-12-2013 
+;There are some apartments for rent in these buildings. [old clp sentence]
 ;इन इमारतों में किराए के लिए कुछ फ्लैट हैं ।
 ;ina imArawoM meM kirAye ke liye kuCa PlEta hEM. [verified sentence]
 (defrule rent3

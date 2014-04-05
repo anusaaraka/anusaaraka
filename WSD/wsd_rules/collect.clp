@@ -6,9 +6,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id iktTA_kara))
+(assert (id-wsd_root_mng ?id ikatTA_kara));$$$ Corrected spelling 'iktTA_kara' to 'ikatTA_kara' by Roja(10-02-14)
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  collect.clp 	collect0   "  ?id "  iktTA_kara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  collect.clp 	collect0   "  ?id "  ikatTA_kara )" crlf))
 )
 
 (defrule collect1

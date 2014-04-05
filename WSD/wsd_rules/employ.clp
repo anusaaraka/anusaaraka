@@ -46,7 +46,7 @@
 (declare (salience 4900))
 (id-root ?id employ)
 ?mng <-(meaning_to_be_decided ?id)
-(or(kriyA-vAkyakarma  ?id ?id1)(kriyA-aXikaraNavAcI_avyaya  ?id ?id1)(kriyA-kriyA_viSeRaNa  ?id ?id1)(kriyA-kqxanwa_karma  ?id1 ?id)(saMjFA-to_kqxanwa  ?id2 ?id)) 
+(or(kriyA-vAkyakarma  ?id ?id1)(kriyA-aXikaraNavAcI  ?id ?id1)(kriyA-kriyA_viSeRaNa  ?id ?id1)(kriyA-kqxanwa_karma  ?id1 ?id)(saMjFA-to_kqxanwa  ?id2 ?id)) 
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)

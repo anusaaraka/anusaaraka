@@ -41,6 +41,7 @@
  (assert (id-wsd_root))
  (assert (id-attach_emphatic))
  (assert (id-attach_eng_mng))
+ (assert (id-wsd_viBakwi))
  )
  ;============================================ Stanford Parser Rules ===================================================
 
@@ -50,7 +51,7 @@
  (declare (salience 1100))
  (Parser_used Stanford-Parser|Open-Logos-Parser)
  (prep_id-relation-anu_ids ? viSeRya-jo_samAnAXikaraNa  ?  10000)
- (or (prep_id-relation-anu_ids ? kriyA-object  ?k  10000)(prep_id-relation-anu_ids ? kriyA-aXikaraNavAcI_avyaya  ?k  10000))
+ (or (prep_id-relation-anu_ids ? kriyA-object  ?k  10000)(prep_id-relation-anu_ids ? kriyA-aXikaraNavAcI  ?k  10000))
  (prep_id-relation-anu_ids ? kriyA-subject  ?k ?sub)
  ?f0<-(hindi_id_order $?id ?sub $?id1 ?k $?daut)
  (not (jo_samAn_id_inserted ))
@@ -65,7 +66,7 @@
  ; Do you think we should go to the party? 
  (defrule insert_conjunction
  (declare (salience 1100))
- (prep_id-relation-anu_ids ? kriyA-conjunction  ?k 10000)
+ (prep_id-relation-anu_ids ? kriyA-vAkya_viBakwi  ?k 10000)
  (prep_id-relation-anu_ids ? kriyA-subject  ?k  ?sub)
  (Head-Level-Mother-Daughters ? ? ?NP $?ids)
  (Node-Category ?NP NP)
@@ -147,13 +148,12 @@
  (pada_info (group_cat PP|infinitive)(group_ids ?wh_word $?d))
  ?f0<-(hindi_id_order  $?start ?wh_word $?d  $?ids ?kriyA $?end)
  (id-HM-source ?wh_word ?hmng ?src)
- (test (eq (sub-string 1 1 ?hmng) "k")) ;My car broke down when I reached Lalitpur.
+ (test (eq (sub-string 1 1 ?hmng) "k")) ;My car broke down when I reached Lalitpur. When the dollar is in a free-fall, even central banks can not stop it.
  (not (prep_id-relation-anu_ids ?  kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka ?  ?wh_word)) ;Ex. How quickly did you run?
  (not (prep_id-relation-anu_ids ?  wall_conjunction ?wh_word))
  (not (prep_id-relation-anu_ids ?  viSeRaNa-viSeRaka  ? ?wh_word)) ;I wonder how big the department is .
  (not (prep_id-relation-anu_ids ?  viSeRya-jo_samAnAXikaraNa  ? ?wh_word))
  (not (id-word =(+ ?wh_word 1) long));How long will it last ?
- (not (prep_id-relation-anu_ids - niReXawmaka_vAkya));When the dollar is in a free-fall, even central banks can not stop it.
  (not (wh_movement_done ?wh_word))
  =>
         (retract ?f0 )
@@ -264,7 +264,7 @@
  (id-HM-source ?id ?hmng&~kyozki ?)
  (not (hindi_id_order $?ids ?kri));The Master said , if I did not go , how would you ever see ?
  (not (prep_id-relation-anu_ids ?  kriyA-object  ?kri ?));I saw him telling her about the party. 
- (not (prep_id-relation-anu_ids ?  kriyA-conjunction  ?kri_1 10000));Do you think we should go to the party? 
+ (not (prep_id-relation-anu_ids ?  kriyA-vAkya_viBakwi  ?kri_1 10000));Do you think we should go to the party? 
  =>
         (retract ?f0 ?f1)
         (assert (hindi_id_order  $?pre ?kri ki ?id $?post))
@@ -326,7 +326,7 @@
  ?f0 <-(hindi_id_order $?pre ?kri1 ?id $?d ?v_k $?post)
  (not (ki_asserted ?kri1))
  (not (id-HM-source ?id ki ?));It was obvious that he would do it.
- (not (prep_id-relation-anu_ids - kriyA-conjunction ?v_k ?));She declared that out of love for the poor she had gotten her family to go against convention. 
+ (not (prep_id-relation-anu_ids - kriyA-vAkya_viBakwi ?v_k ?));She declared that out of love for the poor she had gotten her family to go against convention. 
   =>
         (retract ?f0)
 	(assert (ki_asserted ?kri1))
@@ -354,7 +354,7 @@
  ;instead of variable_name used 1 bcoz of the sen: I wonder whether we should go .
  (defrule rule_for_yaha
  ?f1<-(id-word 1 whether)
- (prep_id-relation-anu_ids ?  kriyA-conjunction ?kri 1)
+ (prep_id-relation-anu_ids ?  kriyA-vAkya_viBakwi ?kri 1)
  ?f0 <-(hindi_id_order $?pre ?kri $?post)
  =>
 	(retract ?f0 ?f1)
@@ -367,7 +367,7 @@
  (defrule wo_rule_for_if
  (declare (salience 2))
  ?f1<-(id-word ?id if)  ;Modified by Meena (28-10-10) 
- (prep_id-relation-anu_ids  ? kriyA-conjunction  ?k ?id)
+ (prep_id-relation-anu_ids  ? kriyA-vAkya_viBakwi  ?k ?id)
  (prep_id-relation-anu_ids  ? kriyA-praSnavAcI  ?k ?p)
  (prep_id-relation-anu_ids  ? kriyA-subject ?k1 ?p)
  ?f0 <-(hindi_id_order $?pre ?k1 $?post)
@@ -388,7 +388,7 @@
  (declare (salience 1))
  ?f1<-(id-word ?id ?word&if|although)  ;Modified by Meena (28-10-10) 
  (not (wo_inserted )) ;restricted for Stanford Parser bcoz "wo" is generated using constituents.
- (prep_id-relation-anu_ids  ? kriyA-conjunction  ?k ?id)
+ (prep_id-relation-anu_ids  ? kriyA-vAkya_viBakwi  ?k ?id)
  ?f0 <-(hindi_id_order $?pre ?k ?then $?post)
  (id-HM-source ?then ?hmng&~waba ?) ;If I have made a mistake, then it is up to me to set it right.
  (not (hindi_id_order $? ?k))
@@ -409,7 +409,7 @@
  (declare (salience 15))
  ?f1<-(id-word 1 when)  ;Modified by Meena (28-10-10) 
  (not (wo_inserted )) ;restricted for Stanford Parser bcoz "wo" is generated using constituents.
- (prep_id-relation-anu_ids ?  kriyA-conjunction  ?k 1)
+ (prep_id-relation-anu_ids ?  kriyA-vAkya_viBakwi  ?k 1)
  (prep_id-relation-anu_ids ?  kriyA-subject  ?k1 ?id)
  ?f0 <-(hindi_id_order $?pre ?id $?post)
  (test (> ?k1 ?k) )
@@ -428,7 +428,7 @@
  ?f1<-(id-word 1 when)
  (not (wo_inserted )) ;restricted for Stanford Parser bcoz "wo" is generated using constituents.
  (prep_id-relation-anu_ids ?  kriyA-kriyA_viSeRaNa  ?k 1)
- (prep_id-relation-anu_ids ?  kriyA-conjunction  ?k1 ?sub)
+ (prep_id-relation-anu_ids ?  kriyA-vAkya_viBakwi  ?k1 ?sub)
  (test (> ?k1 ?k) )
  ?f0 <-(hindi_id_order $?pre ?k1 $?post)
  =>
@@ -458,7 +458,7 @@
  ;------------------------------------------------------------------------------------------------------------------
  (defrule since_rule
  ?f1<-(id-word 1 since)  ;Modified by Meena (28-10-10) 
- (prep_id-relation-anu_ids ?  kriyA-conjunction  ?k 1)
+ (prep_id-relation-anu_ids ?  kriyA-vAkya_viBakwi  ?k 1)
  (prep_id-relation-anu_ids ?  kriyA-subject  ?kri1 ?id)
  ?f0 <-(hindi_id_order $?pre ?id $?post)
  (test (and (> ?kri1 ?k) (neq ?id ?k)))
@@ -473,7 +473,7 @@
   (defrule insert_nahIM
   ?f1<-(id-word ?id until)
   (id-HM-source   ?id   jaba_waka  ?)
-  (prep_id-relation-anu_ids ? kriyA-conjunction  ?sub   ?id)
+  (prep_id-relation-anu_ids ? kriyA-vAkya_viBakwi  ?sub   ?id)
   (prep_id-relation-anu_ids ? kriyA-subject  ?kri  ?sub)
   ?f<-(hindi_id_order $?list ?id $?list1 ?kri)
   =>
@@ -482,6 +482,7 @@
   	(printout  ?*DBUG* "(Rule_Name-ids   insert_nahIM   (hindi_id_order  "(implode$ (create$ $?list  ?id $?list1 nahIM ?kri)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
+ ;Added provisional_Database_compound_phrase_root_mng and provisional_Database_compound_phrase_word_mng in the list by Roja(20-02-14)
  ;Mary is taller than Max.
  ;Added by Shirisha Manju (03-08-13)  Suggested by Chaitanya Sir
  ;At longer wavelengths (i.e., at lower frequencies), the antennas have large physical size and they are located on or very near to the ground.
@@ -491,13 +492,14 @@
  ?f0<-(id-root-category-suffix-number ?id ? adjective er ?)
  (not (id-eng-src ?id ? Word_mng))
  ?f<-(hindi_id_order $?list ?id $?list1)
- (not (id-HM-source ?id ? ?src&Database_compound_phrase_root_mng|Database_compound_phrase_word_mng));Note : Same as below but no sentence found.
+ (not (id-HM-source ?id ? ?src&Database_compound_phrase_root_mng|Database_compound_phrase_word_mng|provisional_Database_compound_phrase_root_mng|provisional_Database_compound_phrase_word_mng));Note : Same as below but no sentence found. 
  =>
         (retract ?f ?f0)
 	(assert (hindi_id_order  $?list aXika ?id $?list1))
   	(printout  ?*DBUG* "(Rule_Name-ids   insert_aXika_for_adj_er   (hindi_id_order  "(implode$ (create$ $?list aXika ?id $?list1 )) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
+ ;Added provisional_Database_compound_phrase_root_mng and provisional_Database_compound_phrase_word_mng in the list by Roja(20-02-14)
  ;The giraffe has the longest neck of any land mammal.
  ;Added by Shirisha Manju (18-06-12)  Suggested by Chaitanya Sir 
  (defrule insert_sabase_aXika_adj_est
@@ -505,7 +507,7 @@
  ?f0<-(id-root-category-suffix-number ?id ? adjective est ?)
  (not (id-eng-src ?id ? Word_mng))
  ?f<-(hindi_id_order $?list ?id $?list1)
- (not (id-HM-source ?id ? ?src&Database_compound_phrase_root_mng|Database_compound_phrase_word_mng));Safety is our highest priority.
+ (not (id-HM-source ?id ? ?src&Database_compound_phrase_root_mng|Database_compound_phrase_word_mng|provisional_Database_compound_phrase_root_mng|provisional_Database_compound_phrase_word_mng));Safety is our highest priority.
  =>
         (retract ?f ?f0)
 	(assert (hindi_id_order  $?list sabase aXika ?id $?list1))

@@ -101,12 +101,14 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng " ?*wsd_dir* "  ing_tam.clp    ing_tam4  "  ?id " vAlA )" crlf))
 )
 
+;$$$ Modified by Shirisha Manju (25-03-14)
+; added use|worth in the list
 ;She struck me as being a very nervy kind of person.
 (defrule ing_tam5
 (declare (salience 4500))
 (id-TAM ?id ing)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) good)
+(id-word =(- ?id 1) good|use|worth)
 =>
 (retract ?mng)
 (assert (make_verbal_noun ?id))
@@ -114,29 +116,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  ing_tam.clp  	ing_tam5  "  ?id " )" crlf))
 )
 
-(defrule ing_tam6
-(declare (salience 4400))
-(id-TAM ?id ing)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) use)
-=>
-(retract ?mng)
-(assert (make_verbal_noun ?id))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  ing_tam.clp  	ing_tam6  "  ?id " )" crlf))
-)
-
-(defrule ing_tam7
-(declare (salience 4300))
-(id-TAM ?id ing)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) worth)
-=>
-(retract ?mng)
-(assert (make_verbal_noun ?id))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  ing_tam.clp  	ing_tam7  "  ?id " )" crlf))
-)
 
 ; Is it any use expecting them to be in time.
 ;I didn't think it worth complaining about the meal.
@@ -333,7 +312,7 @@
 (id-root ?id1  sit|miss|stand)
 =>
 (retract ?mng)
-(assert (id-E_tam-H_tam_mng ?id ing ye_hue))
+(assert (id-E_tam-H_tam_mng ?id ing yA_huA))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  ing_tam.clp  	ing_tam18  "  ?id "  ye_hue )" crlf))
 )
@@ -399,3 +378,10 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi " ?*wsd_dir* "  ing_tam.clp    ing_tam21  "  ?id " se )" crlf)
 )
 )
+
+
+;--------------------- Removed rules ---------------
+; if -1  use    then make_verbal_noun  --- merged in 'ing_tam5' rule
+; if -1  worth  then make_verbal_noun  --- merged in 'ing_tam5' rule
+;
+

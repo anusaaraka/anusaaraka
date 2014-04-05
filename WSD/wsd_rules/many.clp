@@ -50,7 +50,7 @@
 (declare (salience 4800))
 (id-word ?id many)
 ?mng <-(meaning_to_be_decided ?id)
-(samAsa ?id ?how)
+(samAsa_viSeRya-samAsa_viSeRaNa ?id ?how)
 (id-word ?how how)
 =>
 (retract ?mng)

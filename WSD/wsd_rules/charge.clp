@@ -22,7 +22,7 @@
 (id-root ?id charge)
 ?mng <-(meaning_to_be_decided ?id)
 (id-root ?id1 ?)
-(or (samAsa ?id ?id1)(viSeRya-viSeRaNa ?id ?id1));"viSeRya-viSeRaNa" added by sheetal
+(or (samAsa_viSeRya-samAsa_viSeRaNa ?id ?id1)(viSeRya-viSeRaNa ?id ?id1));"viSeRya-viSeRaNa" added by sheetal
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id aBiyoga))

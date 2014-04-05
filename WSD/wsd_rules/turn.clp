@@ -138,7 +138,7 @@
 (id-root ?id turn)
 ?mng <-(meaning_to_be_decided ?id)
 ;(id-cat_coarse ?id noun)
-(or(viSeRya-viSeRaNa ?id ?id1)(viSeRya-det_viSeRaNa ?id ?id1)(samAsa ?id ?id1)(conjunction-components  ?conj  ?id ?id2)) ;Interchanged conjunction components ids  by Roja(15-02-11)
+(or(viSeRya-viSeRaNa ?id ?id1)(viSeRya-det_viSeRaNa ?id ?id1)(samAsa_viSeRya-samAsa_viSeRaNa ?id ?id1)(conjunction-components  ?conj  ?id ?id2)) ;Interchanged conjunction components ids  by Roja(15-02-11)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id modZa))

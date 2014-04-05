@@ -53,7 +53,7 @@
 (defrule accident3
 (declare (salience 5300))
 (id-root ?id accident)
-(samAsa ?id ?id1)
+(samAsa_viSeRya-samAsa_viSeRaNa ?id ?id1)
 (kriyA-in_saMbanXI ?id2 ?id)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)

@@ -7,7 +7,7 @@
 (id-root ?id with)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word =(+ ?id 1) which)
-(kriyA-conjunction ?id1 ?id)
+(kriyA-vAkya_viBakwi ?id1 ?id)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id se))

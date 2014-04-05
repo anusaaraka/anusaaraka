@@ -222,7 +222,6 @@ Apa kEse hEM ?
 Hindi meaning using Stanford parser 2.52
 How old are you? 
 ApakI kyA umra hE ?
-Multiple adjective senses are available for old. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.53
 Excuse me. 
@@ -319,7 +318,7 @@ usane anuroXa kiyA.
 
 Hindi meaning using Stanford parser 2.76
 This bag belongs to Hardik. 
-yaha WElA PropN-hardik-PropN kA hE .
+yaha WElA PropN-hardik-PropN kA hE.
 
 Hindi meaning using Stanford parser 2.77
 He is a good speaker. 
@@ -407,7 +406,6 @@ Multiple adjective senses are available for lazy. WSD rule is required
 Hindi meaning using Stanford parser 2.95
 We were dumb. 
 hama gUzge We.
-Multiple adjective senses are available for dumb. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.96
 Play in the park. 
@@ -428,7 +426,6 @@ sUraja uwsAha se muskarAyA.
 Hindi meaning using Stanford parser 2.100
 It was very strong. 
 yaha awyanwa majabUwa WA.
-Multiple adjective senses are available for strong. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.101
 Now jump on my back. 
@@ -574,16 +571,131 @@ The door is open.
 xaravAjA KulA huA hE.
 
 Hindi meaning using Stanford parser 2.136
-I have lost my tail.
+I have lost my tail. 
 mEM merI pUzCa Ko cukA hUz.
 
 Hindi meaning using Stanford parser 2.137
-What a beautiful scene!
-kiwanA sunxara xQSya!
+What a beautiful scene! 
+kiwanA sunxara xqSya!
+Multiple adjective senses are available for beautiful. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.138
-So he reluctantly agreed.
+So he reluctantly agreed. 
 isalie vaha anicCA se sahamawa huA.
+
+Hindi meaning using Stanford parser 2.139
+The anaesthetic acted quickly. 
+cewanASUnyawA_kI ORaXi ne PurwI se kArya kiyA.
+
+Hindi meaning using Stanford parser 2.140
+Aditya asked anxiously. 
+Axiwya ne uxvega se pUCA.
+
+Hindi meaning using Stanford parser 2.141
+Can it be washed? 
+kyA yaha XoyA jA sakawA hE?
+
+Hindi meaning using Stanford parser 2.142
+It really is lovely. 
+yaha vAswava meM manohara hE.
+Multiple adjective senses are available for lovely. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.143
+But look at this! 
+paranwu isako xeKie!
+
+Hindi meaning using Stanford parser 2.144
+He is drowning. 
+vaha dUba rahA hE.
+
+Hindi meaning using Stanford parser 2.145
+Draw the curtains. 
+parxe KIMcie.
+
+Hindi meaning using Stanford parser 2.146
+Adopt a child. 
+bacce ko goxa lIjie.
+
+Hindi meaning using Stanford parser 2.147
+Winter is approaching. 
+jAdA pAsa_A rahA hE.
+
+Hindi meaning using Stanford parser 2.148
+Maple wood burns well. 
+xviPala lakadI acCI waraha jalawI hE.
+
+Hindi meaning using Stanford parser 2.149
+Period furniture. 
+prAcIna ParnIcara.
+
+Hindi meaning using Stanford parser 2.150
+I have no idea. 
+merI jAnakArI nahIM hE.
+
+Hindi meaning using Stanford parser 2.151
+She dashed into shop. 
+vaha xukAna ke aMxara wejI_se GusI.
+
+Hindi meaning using Stanford parser 2.152
+She dashed forward. 
+vaha Age kI ora lapakI.
+
+Hindi meaning using Stanford parser 2.153
+The crowd dispersed. 
+BIda wiwara-biwara_ho gaI.
+
+Hindi meaning using Stanford parser 2.154
+Sorry, he is away. 
+kRamA kIjie, vaha anupasWiwa hE.
+
+Hindi meaning using Stanford parser 2.155
+We can not swim across. 
+hama isa Cora se usa Cora waka nahIM_wEra sakawe hEM.
+Meaning for verb phrase swim_across  is required
+
+Hindi meaning using Stanford parser 2.156
+They are playing cards. 
+ve wASa Kela rahe hEM.
+
+Hindi meaning using Stanford parser 2.157
+We drill seeds. 
+hama bIja bowe hEM.
+
+Hindi meaning using Stanford parser 2.158
+England drew against France. 
+iMglEMda ne PrAMsa ke viruxXa Kela_meM_barAbara kiyA.
+
+Hindi meaning using Stanford parser 2.159
+England drew with France. 
+iMglEMda ne PrAMsa ke sAWa Kela_meM_barAbara kiyA.
+
+Hindi meaning using Stanford parser 2.160
+A theatre of war. 
+yuxXa kA mExAna.
+
+Hindi meaning using Stanford parser 2.161
+He strained the rubber. 
+usane rabada kasakara wAnI.
+
+Hindi meaning using Stanford parser 2.162
+She strained tea. 
+usane cAya CAnI.
+
+Hindi meaning using Stanford parser 2.163
+Trend of a river. 
+naxI kA pravAha.
+
+Hindi meaning using Stanford parser 2.164
+Trend of a road. 
+sadaka kI xiSA.
+
+Hindi meaning using Stanford parser 2.165
+Please strike the match. 
+kqpayA mAcisa jalAie.
+
+Hindi meaning using Stanford parser 2.166
+Beat the drum. 
+Dola bajAie.
 
 Calling Transliteration
 Calling Interface related programs

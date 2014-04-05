@@ -3,10 +3,8 @@
 1. sudo apt-get install ssmtp
 2. sudo apt-get install apache2
 3. sudo apt-get install php5
-
-4. cd $HOME_anu_test/miscellaneous/e-mail 
-	sudo cp  $HOME_anu_test/miscellaneous/e-mail/mail.php /var/www/ 
-5. 	sudo cp  $HOME_anu_test/miscellaneous/e-mail/ssmtp.conf /etc/ssmtp/
+4. sudo cp $HOME_anu_test/miscellaneous/e-mail/mail.php /var/www/ 
+5. sudo cp $HOME_anu_test/miscellaneous/e-mail/ssmtp.conf /etc/ssmtp/
 
 #  Start the apache server with command :
 6. sudo service apache2 restart
@@ -18,7 +16,7 @@
 #For testing:
 -----------
 1. Run Anusaaraka_stanford.sh <file-name>
-2. Open firefox $HOME_anu_output/sample2.html
+2. Open firefox $HOME_anu_output/<file_name>_sample2.html
 3. Click on any word 
 	-> A message box opens 
 	-> Fill te Suggestion Box

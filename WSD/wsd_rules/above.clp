@@ -113,7 +113,7 @@
 (defrule above8
 (declare (salience 4800))
 (id-root ?id above)
-(kriyA-aXikaraNavAcI_avyaya ?kri ?id) ; kriyA-lupwa_prep_saMbanXI  is now changed to kriyA-aXikaraNavAcI_avyaya (Modified by Roja 28-12-10 Suggested by Sukhada)
+(kriyA-aXikaraNavAcI ?kri ?id) ; kriyA-lupwa_prep_saMbanXI  is now changed to kriyA-aXikaraNavAcI (Modified by Roja 28-12-10 Suggested by Sukhada)
 ?mng <-(meaning_to_be_decided ?id)
 =>
 (retract ?mng)

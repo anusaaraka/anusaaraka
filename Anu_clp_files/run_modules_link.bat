@@ -245,6 +245,7 @@
  (load-facts "morph.dat")
  (load-facts "cat_consistency_check.dat")
  (load-facts "preferred_morph.dat")
+ (load-facts "punctuation_info.dat")
  (load* "global_path.clp")
  (load-facts "sand_box.dat")
  (load-facts "domain.dat")
@@ -420,9 +421,11 @@
  (load-facts "original_word.dat")
  (load-facts "revised_root.dat")
  (open "vib_debug.dat" vib_debug_fp "w")
+ (open "pada_control_fact.dat" p_c_fact "a")
  (run)
  (save-facts "vibakthi_info.dat" local pada_info conj_head-left_head-right_head)
  (close vib_debug_fp)
+ (close p_c_fact)
  (clear)
  ;----------------------------------------------------------------------
  ; Decide the verb agreement with padas.

@@ -152,7 +152,7 @@ int match_handler(AC_MATCH_t * m, void * param)
 		        printf(" %d ", final_ids);
 		} 
 		
-		printf("%s %s %s %s 5)",  mng, head_id, cat, mng_type);
+		printf("%s %s %s %s 2)",  mng, head_id, cat, mng_type);
 		printf("\n"); 
 	}
 	switch (myp->achar) {

@@ -29,7 +29,7 @@
 (declare (salience 4800))
 (id-root ?id degree)
 ?mng <-(meaning_to_be_decided ?id)
-(or(id-word =(+ ?id 1) in)(samAsa  ?id ?id1))
+(or(id-word =(+ ?id 1) in)(samAsa_viSeRya-samAsa_viSeRaNa  ?id ?id1))
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
@@ -67,7 +67,7 @@
 (declare (salience 4900))
 (id-root ?id degree)
 ?mng <-(meaning_to_be_decided ?id)
-(or(and(viSeRya-viSeRaNa  ?id ?id1)(viSeRya-of_saMbanXI  ?id ?id2))(samAsa  ?id3 ?id))
+(or(and(viSeRya-viSeRaNa  ?id ?id1)(viSeRya-of_saMbanXI  ?id ?id2))(samAsa_viSeRya-samAsa_viSeRaNa  ?id3 ?id))
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)

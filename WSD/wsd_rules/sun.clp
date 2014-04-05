@@ -25,7 +25,7 @@
 (declare (salience 5000))
 (id-root ?id sun)
 ?mng <-(meaning_to_be_decided ?id)
-(or(kriyA-in_saMbanXI  ?id1 ?id)(kriyA-of_saMbanXI  ?id1 ?id)(samAsa  ?id1 ?id)(viSeRya-in_saMbanXI  ?id ?id1))
+(or(kriyA-in_saMbanXI  ?id1 ?id)(kriyA-of_saMbanXI  ?id1 ?id)(samAsa_viSeRya-samAsa_viSeRaNa  ?id1 ?id)(viSeRya-in_saMbanXI  ?id ?id1))
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
