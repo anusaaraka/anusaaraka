@@ -467,6 +467,7 @@
 	laborer		(Suggested by Prachi Banasthali  21-03-14 ) Ex: a husky laborer
 	investigator 	(	"		"		" ) Ex: The investigator will have to be thorough.
 	murderer	(Suggested by Pramila Banasthali 21-03-14 ) Ex: The convicted murderer escaped from a high security prison.
+	turkey		(Suggested by Preeti ji LTRC 	 14-04-14 ) Ex: Who's going to carve the turkey?
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -659,6 +660,8 @@ Modified :
 	tower		accept__vblex		(     "	     "	  )
 	big		plug__vblex		(     "	     "	  )
 	tiredness	access__n		(     "	     "	  )
+	getup		house__n		(     "	  14-04-14)
+	cart		access__n		(     "	     "	  )
 
 
 Modified paradigm:
@@ -1277,7 +1280,10 @@ Removed:
 					Ex: Alka and Taffy wandered about on the embankment.
 	89. exhaustive_adjective    	viswqwa			(Suggested by Pramila Banasthali 25-02-14)
 					Ex: Obviously these tables are not exhaustive.
-
+	90. complication_noun		samasyA 		(Suggested by Preeti ji LTRC	 14-04-14)
+					Ex: The bad weather added a further complication to our journey. 
+	91. cake_verb			sana			(Suggested by preeti ji LTRC	 14-04-14)
+					Ex: Her shoes were caked with mud. 
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -1523,7 +1529,15 @@ Removed:
 				Ex: But their belief was that the expenditure which they recommended would be remunerative.
 	121. yeast_noun      	KamIra		as	yIsta			(Suggested by Anita ji LTRC 27-03-14) 
 				Ex: Flour is fermented with yeast to make bread. 
-	
+	122. chimney_noun	XuAzkaSa	as	cimanI			(Suggested by Preeti ji LTRC 14-04-14)
+				Ex: Factory chimneys belched dense white smoke into the sky.
+	123. companionship_noun	safgawi		as	sAWa			(Suggested 	"	"	"    )
+				Ex: They meet at the club for companionship and advice.
+	124. competitor_noun	prawiyogI	as	prawisparXxI		(Suggested by 	"	"	"    )
+				Ex: We produce cheaper goods than our competitors.
+	125. carriage_noun	wopa-gAdI	as	gAdI			(Suggested by	"	"	"    )
+				Ex: They rode to the city in carriages.
+
     6. Removed meaning from existing list:
        ----------------------------------
 	1. overdue_adjective 	jo_bahuwa_pahale_hI_ho_jAnA_cAhiye_WA,_vaha	( Suggested by Rajini		29-02-12)
@@ -1594,7 +1608,8 @@ Removed:
 	31. observe_UNDEFINED	avalokana_kara				( Suggested by Chaitanya Sir    26-11-13)
 	32. doorway_UNDEFINED   xvArapaWa				(Suggested by Pramila Banasthali 12-12-13)
 	33. doctorate_noun  	daktara_kI_upAXi			(	"		"	 24-01-14)
-
+	34. carpeted_UNDEFINED	kAlIna_biCAnA				(Suggested by Preeti ji LTRC 	14-04-14)
+	
     8. Modified category:
        ------------------
 	1. Habegger_- 		as	Habegger_noun	 	( Suggested by Chaitanya Sir 29-02-12 	 )
@@ -1722,6 +1737,8 @@ Removed:
 				Ex: 
 	21. bound_to        	bazXA_huA^bAXya#bazXA_huA^bAXya#noun#2#RM(	"		"	  "	)
 				Ex:
+	22. reference_to	saMxarBa_meM#saMxarBa_meM#noun#2#RM	(Suggested by ANita ji LTRC	14-04-14)
+				Ex: Knowing what had happened, I avoided making any reference to weddings.
 
     Modified :
     --------

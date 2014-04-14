@@ -25633,7 +25633,6 @@ reference_record	saMxarBa_aBileKa#saMxarBa_aBileKa#noun#2#RM
 reference_register	havAlA_rajistara#havAlA_rajistara#noun#2#RM
 reference_string	saMxarBa_rajju#saMxarBa_rajju#noun#2#RM
 reference_time	nirxeSa_samaya#nirxeSa_samaya#noun#2#RM
-reference_to	saMxarBa_meM#saMxarBa_meM#noun#2#RM
 reference_year	saMxaBar_vaRar#saMxaBar_vaRar#noun#2#RM
 referential_integrity	saMxarBika_ekawA#saMxarBika_ekawA#noun#2#RM
 referred_to_above	uparinirxiRta#uparinirxiRta#noun#3#RM
