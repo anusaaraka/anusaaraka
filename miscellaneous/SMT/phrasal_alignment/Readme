@@ -1,0 +1,33 @@
+#Readme to extract dictionaries from phrase table
+#################################################
+
+1. To extract english-hindi dictionary:
+	RUN: python  phrase_gdbm_dict.py phrase-table
+#       Ex:  python  phrase_gdbm_dict.py phrase-dev 
+#            O/p : en-hi-dict.txt        
+ 
+2. To extract english-wrd_to_wrd_alignment-hindi dictionary
+	RUN: python wrd-to-wrd-alignment.py phrase-table
+#       Ex:  python wrd-to-wrd-alignment.py phrase-dev
+#            O/p: w-w-phrase_dict
+
+3. sed "s/'_s_/'s_/g"    en-hi-dict.txt > en-hi-dev-dict.txt
+
+4. sh  run.sh  en-hi-dict.txt  extract-key-dev-corpus.c
+
+5. cp  extract-key-dev-corpus.c  $HOME_anu_test/multifast-v1.0.0/src/
+
+6. cd $HOME_anu_test/multifast-v1.0.0/src/
+   Change the dictionary name in extract_key_using_multifast.c
+   RUN: make
+
+7. $HOME_anu_test/Anu_data/create-gdbm.pl  dev-corpus/en-hi-dev-dict.gdbm < dev-corpus/en-hi-dev-dict.txt
+
+#################################################
+#Readme to run phrasal alignment
+
+1. Extract keys from the en-hi-dict.txt
+
+extract_key_using_multifast.c
+
+

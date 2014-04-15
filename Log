@@ -1,4 +1,4 @@
- 14-04-14
+ 15-04-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
@@ -135,9 +135,25 @@
  30. Removed following files:
 	Stanford parser 3.2.0
 	Stanford Tregex 3.2.0
- 31. Updated 
+ 31. Added phrasal_alignment folder consisting of following files and folders in anusaaraka/miscellaneous/SMT
+	compile.sh	en-hi-gdbm-dict.txt	map-ids.py	map-wrd-to-wrd.py	notes	replace_val_trn.py
+	short.py	w-w-phrase_dict		dev-corpus/	gdbm-fetch.c		Readme	mapping.py	
+	match_value_in_hnd.py	run_alignment.sh	tourism-corpus
+ 32. In multifast-v1.0.0/src/ directory Added following files:
+	extract_key_using_multifast.c
+	extract_key.c
+	extract-key-dev-corpus.c
+	extract-key-tourism-corpus.c
+	Makefile (Updated for compilation of above file.)
+ 33. In anusaaraka/bin Added following files:
+	Anusaaraka_stanford_align_eng_ord.sh 
+	run_sentence_stanford_align_eng.sh
+ 34. To get layered alignment o/p Added following files:
+	create_eng_align_html.clp
+	run_align_browser_eng.sh
+ 35. Updated 
 	sd_verified (776)	small_sent_verified_sd (166)
- 32. Updated Log.
+ 36. Updated Log.
 
  06-01-14
  ========
