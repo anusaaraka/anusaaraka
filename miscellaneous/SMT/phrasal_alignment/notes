@@ -1,0 +1,6 @@
+1. In w-w-phrase-dict:
+	Replaced : %s/'_s_/'s_/g
+			Ex: _Kirchhoff'_s_	to 	_Kirchhoff's
+		 : %s/_@_/_@/g
+			Ex: _(_b_)_the_     _(_b_)_#####_   _(_@b_)_
+			
