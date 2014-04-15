@@ -91,7 +91,7 @@ P_SHRP[\[\]]            yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(
 SYM_SLASH[\[\]]         yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng-1)='\0'; return TOK_CATEGORY;
 
 
-[A-Za-z0-9%='β\+-][A-Za-z_0-9.,%'β\+-]*    yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return STRING;
+[A-Za-z0-9%='β:\+-][A-Za-z_0-9.,%'β:\+-]*    yylval=malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; return STRING;
 \n                      /* ignore end of line */;
 [ \t]+                  /* ignore whitespace */;
 [, .]*                   /*                   */

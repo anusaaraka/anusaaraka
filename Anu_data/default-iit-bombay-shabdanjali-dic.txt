@@ -12230,7 +12230,7 @@ cajoled_UNDEFINED	PusalAnA
 cajoles_UNDEFINED	PusalAnA
 cajoling_UNDEFINED	PusalAnA
 cake_noun	keka/tikiyA/rotI/piNdikA/piNda/KalI/capAwI/battI
-cake_verb	tikiyA_banA/sUKa_jA/keka_banA/Dazka/banA
+cake_verb	sana/tikiyA_banA/sUKa_jA/keka_banA/Dazka/banA
 caked_UNDEFINED	keka
 cakehole_noun	muzha
 cakes_UNDEFINED	keka
@@ -12861,7 +12861,6 @@ carpet-slippers_noun	kArpeta_slipara
 carpet-sweeper_noun	kAlIna_buhArI
 carpet_noun	kAlIna/xarI/parawa
 carpet_verb	xarI_biCA/para_xarI_biCA/dAzta/DAzka_xe/kAlIna_biCA
-carpeted_UNDEFINED	kAlIna_biCAnA
 carpeting_UNDEFINED	kAlIna_biCAnA
 carpeting_noun	xarI_banAne_kA_sAmAna
 carpets_UNDEFINED	kAlIna_biCAnA
@@ -12872,7 +12871,7 @@ carpus_noun	maNibanXa/kalAI
 carpython_UNDEFINED	kAlIna_biCAnA
 carpythons_UNDEFINED	kAlIna_biCAnA
 carriage_UNDEFINED	yAna
-carriage_noun	wopa-gAdI/vyavasWA/vAhana/vAhaka/upabanXaka/tattU/savArI_dibbA/relagAdI/raWa/prabanXa/parivahanavyaya/parivahana/pAlanA/mUlya/mAla-dibbA/kEYreja/hAva-BAva/gAdI/DAzcA/Dafga/cAra_pahiyoM_vAlI_GodAgAdI/cAla-DAla/cAla/barwAva/BAdA/baccA-gAdI/AcaraNa/relagADI_kA_dibbA
+carriage_noun	gAdI/wopa-gAdI/vyavasWA/vAhana/vAhaka/upabanXaka/tattU/savArI_dibbA/relagAdI/raWa/prabanXa/parivahanavyaya/parivahana/pAlanA/mUlya/mAla-dibbA/kEYreja/hAva-BAva/DAzcA/Dafga/cAra_pahiyoM_vAlI_GodAgAdI/cAla-DAla/cAla/barwAva/BAdA/baccA-gAdI/AcaraNa/relagADI_kA_dibbA
 carriages_UNDEFINED	relagAdI_kA_dibbA
 carriageway_UNDEFINED	piravahana-mArga
 carriageway_noun	parivahana-mArga
@@ -14062,7 +14061,7 @@ chimney-pot_noun	cimanI_kI_nalI
 chimney-stack_noun	cimanI_ciwi
 chimney-sweep_noun	cimanI_sAPa_karanevAlA
 chimney_UNDEFINED	XuzAkaSa
-chimney_noun	XuAzkaSa/lEmpa/cUlhA/cimanI/barPa_kA_katAva/pahAda_me_Upara_ko_jAwI_surafga
+chimney_noun	cimanI/XuAzkaSa/lEmpa/cUlhA/barPa_kA_katAva/pahAda_me_Upara_ko_jAwI_surafga
 chimneys_UNDEFINED	pahAda_me_Upara_ko_jAwI_surafga
 chimp_noun	cimpAFjI
 chimpanzee_noun	cimpAFjI
@@ -16047,7 +16046,7 @@ companionable_adjective	milanasAra
 companioned_UNDEFINED	sAWI
 companioning_UNDEFINED	sAWI
 companions_UNDEFINED	sAWI
-companionship_noun	safgawi/sAWa
+companionship_noun	sAWa/safgawi
 companionships_UNDEFINED	safgawi
 company_noun	kampanI/xala/uxyoga/tolI/sAWI/sAWa/safgawi/safga/sahayogI/mitra/milanevAlA/mehamAna/maNdalI/janasamUha/ikAI/awiWi/safgawa
 company_verb	sAWI_ho/sAWa_xe
@@ -16128,7 +16127,7 @@ competitions_UNDEFINED	sparXA
 competitive_adjective	prawiyogiwA_sambanXI/prawisparXAwmaka/prawisparXApUrNa
 competitiver_UNDEFINED	prawiyogiwA_sambanXI
 competitivest_UNDEFINED	prawiyogiwA_sambanXI
-competitor_noun	prawiyogI/prawixvanxvI/prawisparXxI
+competitor_noun	prawisparXxI/prawiyogI/prawixvanxvI
 competitorier_UNDEFINED	prawiyogiwA_sambanXI
 competitoriest_UNDEFINED	prawiyogiwA_sambanXI
 competitors_UNDEFINED	prawiyogI
@@ -16214,7 +16213,7 @@ complicater_UNDEFINED	ulaJAnA
 complicates_UNDEFINED	ulaJAnA
 complicatest_UNDEFINED	ulaJAnA
 complicating_UNDEFINED	ulaJAnA
-complication_noun	ulaJana/pareSAnI/jatilawA
+complication_noun	samasyA/ulaJana/pareSAnI/jatilawA
 complications_UNDEFINED	ulaJana
 complicities_UNDEFINED	sahaaparAXiwA
 complicity_UNDEFINED	sahaaparAXiwA
