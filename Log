@@ -1,4 +1,4 @@
- 01-04-14
+ 15-04-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
@@ -94,49 +94,66 @@
 	To display 'provisional_multi_word_dictionary'
 	To print Error message
         Separated mail related work in mail.js file
- 22. handling_abbrevations.lex:
-        Added 'Rs.' and 'rs.'
- 23. In abbrevations.lex:
-	Added 'B.Tech', 'Std.', 'Ex.'
- 24. Added new option 'onesent' to run Anusaaraka when the input is one sentence per line. Following files are modified accordingly:
+ 22. Added new option 'onesent' to run Anusaaraka when the input is one sentence per line. Following files are modified accordingly:
 	Anusaaraka_stanford.sh
 	pre_process.sh
 	stdenglish.sh
 	add_snt_tag.lex		  -> Added this file to add sentence tag in input file.
 	std_format/Makefile	  -> Added compilation of add_snt_tag.lex
 	check-for-another-sent.pl -> Gives warnings if more tahn one sentence present in a line.
- 25. To get provisional_wsd_rules in canonical form, Modified following files:
+ 23. To get provisional_wsd_rules in canonical form, Modified following files:
         adjective.clp
         wsd_meaning.clp
         shell_scripts/anu_compile.sh
- 26. Updated following dictionary related files:
+ 24. Updated following lex files:
+ 	handling_abbrevations.lex:	Added 'Rs.' and 'rs.'
+	abbrevations.lex	 :	Added 'B.Tech', 'Std.', 'Ex.', 'A.M.', 'a.m.', 'P.M.' and 'p.m.'
+	standard_abbrevations.lex:	Removed 'p'
+	constituency_parse.l	 :	Added ':'
+ 25. Updated following dictionary related files:
         changes_in_databases	 apertium-en-hi.en.metadix 	apertium_hn.dix
- 27. Updated the following files to add 'id-wsd_viBakwi' fact in nerver-called deffunction
+ 26. Updated the following files to add 'id-wsd_viBakwi' fact in nerver-called deffunction
 	causative_verb_mng.clp	hindi_meaning.clp		hindi_sent_reorder.clp	hindi_sentence.clp
 	number.clp		prepare_apertium_input.clp	tam_meaning.clp		preferred_morph_consistency_check.clp
 	vibakthi.clp
- 28. Updation of new versions:
+ 27. Updation of new versions:
 	Stanford parser:	3.2.0	to	3.3.1
 	Stanford Tregex:	3.2.0	to	3.3.1
- 29. Following files are updated according to the new version:
+ 28. Following files are updated according to the new version:
 	Anusaaraka_bllip_parser_minion.sh	Anusaaraka_rasp.sh		Anusaaraka_site.sh
 	Anusaaraka_stanford-Factored.sh		Anusaaraka_stanford.sh		Anusaaraka_stanford_minion.sh
 	run_stanford-gui-factored.sh		run_stanford-gui-pcfg.sh	anu_compile.sh
 	remove_out-files.sh			Anusaaraka.sh			Anusaaraka_all.sh	
 	Anusaaraka_berkeley.sh			Anusaaraka_bllip_parser.sh	run_tregex_for_multiparse.sh
 	run_tregex.sh
- 30. Updated following files:
+ 29. Updated following files:
 	Stanford_parser_fails
 	phy_verified_out
  	anusaaraka/README
 	Readme_to_use_email_in_firefox.txt
 	mail.php:    Added Root layer
- 31. Removed following files:
+ 30. Removed following files:
 	Stanford parser 3.2.0
 	Stanford Tregex 3.2.0
- 32. Updated 
+ 31. Added phrasal_alignment folder consisting of following files and folders in anusaaraka/miscellaneous/SMT
+	compile.sh	en-hi-gdbm-dict.txt	map-ids.py	map-wrd-to-wrd.py	notes	replace_val_trn.py
+	short.py	w-w-phrase_dict		dev-corpus/	gdbm-fetch.c		Readme	mapping.py	
+	match_value_in_hnd.py	run_alignment.sh	tourism-corpus
+ 32. In multifast-v1.0.0/src/ directory Added following files:
+	extract_key_using_multifast.c
+	extract_key.c
+	extract-key-dev-corpus.c
+	extract-key-tourism-corpus.c
+	Makefile (Updated for compilation of above file.)
+ 33. In anusaaraka/bin Added following files:
+	Anusaaraka_stanford_align_eng_ord.sh 
+	run_sentence_stanford_align_eng.sh
+ 34. To get layered alignment o/p Added following files:
+	create_eng_align_html.clp
+	run_align_browser_eng.sh
+ 35. Updated 
 	sd_verified (776)	small_sent_verified_sd (166)
- 33. Updated Log.
+ 36. Updated Log.
 
  06-01-14
  ========
