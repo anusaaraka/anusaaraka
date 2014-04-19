@@ -1,4 +1,4 @@
- 15-04-14
+ 19-04-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
@@ -86,6 +86,7 @@
 	remove_out-files.sh		-> 		"
 	ClipsToAnu_browser_intfc.sh	-> Added '$HOME_anu_provisional_wsd_rules' and mail.js as a variable to run this1.py programe.
         run_anu_browser.sh 		-> Added mail.js file in Browser related code
+	stdenglish.sh			-> Modified path for generating 'generate_ABBR-Dot.lex' file. 
 	Modified following shell files to get provisional multiword dictionary:
 	Anusaaraka_stanford.sh	Anusaaraka_site.sh	Anusaaraka_bllip_parser.sh	Anusaaraka_stanford_minion.sh
 	Anusaaraka.sh		Anusaaraka_all.sh	Anusaaraka_berkeley.sh	Anusaaraka_stanford-Factored.sh	
