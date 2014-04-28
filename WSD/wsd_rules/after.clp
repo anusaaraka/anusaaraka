@@ -50,65 +50,19 @@
 )
 ; instead of word  used root -- Modified by manju
 
+;$$$ Modified by Shirisha Manju 16-4-14 -- added 'call' in the list
+;He is named after his father.
 (defrule after4
 (declare (salience 4600))
 (id-root ?id after)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) name)
+(id-word =(- ?id 1) name|call)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ke_upara))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  after.clp 	after4   "  ?id "  ke_upara )" crlf))
 )
-
-;He is named after his father.
-(defrule after5
-(declare (salience 4500))
-(id-root ?id after)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) call)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id ke_upara))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  after.clp 	after5   "  ?id "  ke_upara )" crlf))
-)
-
-(defrule after6
-(declare (salience 4400))
-(id-root ?id after)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id adjective)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id bAxa_kA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  after.clp 	after6   "  ?id "  bAxa_kA )" crlf))
-)
-
-;"after","Adj","1.bAxa_kA"
-;We shall rectify these problems in the after years.
-;
-(defrule after7
-(declare (salience 4300))
-(id-root ?id after)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id adverb)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id bAxa_meM))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  after.clp 	after7   "  ?id "  bAxa_meM )" crlf))
-)
-
-;"after","Adv","1.bAxa_meM"
-;The week after,I left for the U.S.
-;--"2.pICe"
-;He was ahead && I was standing after him.
-
-
-
 
 
 ;Added by Meena(28.5.10)
@@ -128,9 +82,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  after.clp     after08   "  ?id " usake_bAxa )" crlf))
 )
 
-
-
-
 ;Added by Meena(19.3.10)
 ;After I am gone , I trust you will notice the river . 
 (defrule after8
@@ -145,12 +96,53 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  after.clp     after8   "  ?id "  ke_bAxa )" crlf))
 )
 
+;@@@ Added by Shirisha Manju 16-4-14 Suggested by Sukhada
+;Naming the government scheme after inspiring personalities is the easiest tool for reviving the history. 
+;preraka vyakwiwva ke nAma para sarakArI yojanA kA nAmakaraNa karanA iwihAsa ko punarjIviwa karane kA sabase aXika AsAna OjAra hE.
+(defrule after10
+(declare (salience 4900))
+(id-root ?id after)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-after_saMbanXI ?id1 ?id2)
+(id-root ?id1 name)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ke_nAma_para))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  after.clp     after10   "  ?id "  ke_nAma_para )" crlf))
+)
+;----------------------- Default Rules ---------------------------
+(defrule after6
+(id-root ?id after)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bAxa_kA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  after.clp     after6   "  ?id "  bAxa_kA )" crlf))
+)
+;"after","Adj","1.bAxa_kA"
+;We shall rectify these problems in the after years.
 
 
+(defrule after7
+(id-root ?id after)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adverb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bAxa_meM))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  after.clp     after7   "  ?id "  bAxa_meM )" crlf))
+)
+;"after","Adv","1.bAxa_meM"
+;The week after,I left for the U.S.
+;--"2.pICe"
+;He was ahead && I was standing after him.
 
-;
+
 (defrule after9
-(declare (salience 4200))
 (id-root ?id after)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id preposition)
@@ -176,3 +168,9 @@
 ;--"4.ke_anusaraNa_para"
 ;He was named after his grandfather && really emerged just like him.
 ;
+
+;----------------------- Removed rules --------------
+;Removed after5 by Shirisha Manju
+;	if -1 call then ke_upara
+; 	Note : added call in after4
+; Removed saliences for default rules by Shirisha Manju

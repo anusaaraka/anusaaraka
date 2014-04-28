@@ -1,9 +1,10 @@
- 19-04-14
+ 28-04-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
 		  collect.clp	material.clp	remain.clp	can.clp		create.clp	cause.clp 	fresh.clp
-	 	  what.clp	ing_tam.clp	rent.clp	so.clp
+	 	  what.clp	ing_tam.clp	rent.clp	so.clp		after.clp	heavily.clp	ram.clp
+	Added   : government.clp	revive.clp	grocery.clp
 	Modified following relations:
         kriyA-aXikaraNavAcI_avyaya  to  kriyA-aXikaraNavAcI
         samAsa                      to  samAsa_viSeRya-samAsa_viSeRaNa
@@ -153,7 +154,7 @@
 	create_eng_align_html.clp
 	run_align_browser_eng.sh
  35. Updated 
-	sd_verified (776)	small_sent_verified_sd (166)
+	sd_verified (802)	small_sent_verified_sd (169)
  36. Updated Log.
 
  06-01-14
