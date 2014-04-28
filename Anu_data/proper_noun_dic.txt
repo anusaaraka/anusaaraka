@@ -2189,7 +2189,7 @@ IMAM	imAma
 Imphal	imPAla
 Imtihan	imwihAna
 Indeever	inxIvara
-India	iMdiyA
+India	BArawa
 Indian	iMdiyana
 Indira	iMxirA
 Indonesia	iMdonesiyA
@@ -5766,3 +5766,5 @@ Hambantota	haMbanatotA
 Khedia	KedZiyA
 Sushil	suSIla
 Mahanta	mahaMwa
+Tata	tAtA
+District	jilA

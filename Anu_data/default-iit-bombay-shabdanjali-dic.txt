@@ -12793,7 +12793,7 @@ careworn_adjective	WakA/klAnwa
 carfare_noun	yAwrA_kA_kirAyA
 carfuffle_UNDEFINED	Sora-SarAbA
 carfuffles_UNDEFINED	Sora-SarAbA
-cargo_noun	jahAjI_mAla/mAla/jahAja_me_laxA_mAla/BAlavAhII/Kepa
+cargo_noun	mAla/jahAjI_mAla/jahAja_me_laxA_mAla/BAlavAhII/Kepa
 cargoes_UNDEFINED	Kepa
 cargos_UNDEFINED	Kepa
 caribbean_UNDEFINED	kEirabiyana
@@ -34621,11 +34621,10 @@ groaning_UNDEFINED	karAhanA
 groaning_adjective	karAhapUrNa
 groans_UNDEFINED	karAhanA
 grocer_noun	pansArI/paMsArI_kI_xukAna/paMsArI
-groceries_UNDEFINED	kirAne_kA_sAmAna
-groceries_noun	kirAnA
+groceries_noun	kirAne_kA_sAmAna
 grocers_UNDEFINED	pansArI
 grocery_adjective	kirAne_ke_sAmAna_kA
-grocery_noun	kirAne_kA_sAmAna/kirAne_kI_xukAna
+grocery_noun	kirAne_kI_xukAna/kirAne_kA_sAmAna
 grogginess_noun	arXacewanAvasWA
 groin_noun	kamara
 groined_UNDEFINED	kamara
@@ -65666,7 +65665,7 @@ repetitiveness_noun	punarAvarwana
 repetitiver_UNDEFINED	xoharAyA_gayA
 repetitivest_UNDEFINED	xoharAyA_gayA
 rephrase_UNDEFINED	eka_hI_bAwa_ko_viBinna_prakAra_se_kaha
-rephrase_verb	paxAnvaya_kara/alaga_Dafga_se_vyakwa_kara/eka_hI_bAwa_ko_viBinna_prakAra_se_kaha
+rephrase_verb	alaga_Dafga_se_vyakwa_kara/paxAnvaya_kara/eka_hI_bAwa_ko_viBinna_prakAra_se_kaha
 rephrased_UNDEFINED	eka_hI_bAwa_ko_viBinna_prakAra_se_kahanA
 rephrases_UNDEFINED	eka_hI_bAwa_ko_viBinna_prakAra_se_kahanA
 rephrasing_UNDEFINED	eka_hI_bAwa_ko_viBinna_prakAra_se_kahanA
@@ -66654,7 +66653,7 @@ revivalist_adjective	punarjAgaraNavAxI
 revivalist_noun	punarjAgaraNavAxI
 revivalistic_adjective	punarjAgaraNavAxI
 revivals_UNDEFINED	punaruwWAna
-revive_verb	Pira_jIviwa_kara/xobArA_pracaliwa_kara/punarujjIviwa_ho/punarjIviwa_kara/punaH_uwpanna_kara/punaH_pracaliwa_kara/Pira_se_wAjA_kara/Pira_se_cAlU_kara/Pira_praxarSiwa_kara/jAna_dAla_xe/hoSa_meM_lA
+revive_verb	punarjIviwa_kara/Pira_jIviwa_kara/xobArA_pracaliwa_kara/punarujjIviwa_ho/punaH_uwpanna_kara/punaH_pracaliwa_kara/Pira_se_wAjA_kara/Pira_se_cAlU_kara/Pira_praxarSiwa_kara/jAna_dAla_xe/hoSa_meM_lA
 revived_UNDEFINED	Pira_jIviwa_karanA
 revives_UNDEFINED	Pira_jIviwa_karanA
 revivification_noun	punaruxXAra/punaruwWAna
@@ -70256,7 +70255,7 @@ semiliguda_UNDEFINED	similigudA
 seminal_adjective	Sukra_sambanXI/SukrIya/bIjIya/awyanwa_praBAvaSAlI
 seminaler_UNDEFINED	Sukra_sambanXI
 seminalest_UNDEFINED	Sukra_sambanXI
-seminar_noun	aXyayana_goRTI/seminAra/parisaMvAxa
+seminar_noun	seminAra/aXyayana_goRTI/parisaMvAxa
 seminarier_UNDEFINED	pAxariyoM_kI_SikRA_saMsWA
 seminaries_UNDEFINED	pAxariyoM_kI_SikRA_saMsWA
 seminariest_UNDEFINED	pAxariyoM_kI_SikRA_saMsWA
@@ -78129,6 +78128,7 @@ super-charged_adjective	jyAxA_wAkawa_vAlA
 super-computer_noun	eka_SakwiSAlI_kampyUtara
 super-grass_noun	pulIsa_kA_KabarI
 super_adjective	bahuwa_badA/uwkqRta/SAnaxAra/Bavya/aXika
+super_adverb	bahuwa
 super_noun	pulisa_aXikArI/eka_pulIsa_aXikArI
 superabundance_noun	pracurawA
 superabundant_UNDEFINED	BarapUra
@@ -92370,7 +92370,7 @@ working_adjective	warkasafgawa/vyavahArya/Sramika/rojagAraSuxA/paryApwa/nOkarISu
 working_noun	saFcAlana/KaxAna/KAna/gawiviXi
 workingclass_noun	majaxUravarga
 workings_noun	KaxAna/KAna
-workload_noun	kAma_kA_boJa/kArya-BAra
+workload_noun	kArya-BAra/kAma_kA_boJa
 workloads_UNDEFINED	kAma_kA_boJa
 workman_noun	Sramika/majaxUra/kArIgara
 workmanlike_adjective	kAryakuSala/kAragara

@@ -6,9 +6,9 @@
 (id-cat_coarse ?id adverb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id bahuw_aXika))
+(assert (id-wsd_root_mng ?id bahuwa_aXika))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  heavily.clp  	heavily1  "  ?id "  bahuw_aXika)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  heavily.clp  	heavily1  "  ?id "  bahuwa_aXika)" crlf))
 ) 
 ;Example:-The terrorist was heavily armed.
 ;AwaMkavAxI bahuw #aXika Saswra_yukwa kiyA gayA WA

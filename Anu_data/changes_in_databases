@@ -467,7 +467,6 @@
 	laborer		(Suggested by Prachi Banasthali  21-03-14 ) Ex: a husky laborer
 	investigator 	(	"		"		" ) Ex: The investigator will have to be thorough.
 	murderer	(Suggested by Pramila Banasthali 21-03-14 ) Ex: The convicted murderer escaped from a high security prison.
-	turkey		(Suggested by Preeti ji LTRC 	 14-04-14 ) Ex: Who's going to carve the turkey?
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -660,8 +659,6 @@ Modified :
 	tower		accept__vblex		(     "	     "	  )
 	big		plug__vblex		(     "	     "	  )
 	tiredness	access__n		(     "	     "	  )
-	getup		house__n		(     "	  14-04-14)
-	cart		access__n		(     "	     "	  )
 
 
 Modified paradigm:
@@ -1116,6 +1113,8 @@ Removed:
 	103. BJP_PropN			BAjapA				(By Manju from newsdev2014 corpus   22-3-14)
 	104. ADCP_PropN			edIsIpI				(	"		"		"  )
 	105. ACP_PropN			esIpI				(	"		"		"  )
+	106. super_adverb		bahuwa				(Suggested by Sukhada		   28-04-14)
+					Ex: I am super excited.
 
 
     4. Added new meaning to the existing word:
@@ -1280,10 +1279,8 @@ Removed:
 					Ex: Alka and Taffy wandered about on the embankment.
 	89. exhaustive_adjective    	viswqwa			(Suggested by Pramila Banasthali 25-02-14)
 					Ex: Obviously these tables are not exhaustive.
-	90. complication_noun		samasyA 		(Suggested by Preeti ji LTRC	 14-04-14)
-					Ex: The bad weather added a further complication to our journey. 
-	91. cake_verb			sana			(Suggested by preeti ji LTRC	 14-04-14)
-					Ex: Her shoes were caked with mud. 
+	90. groceries_noun		kirAne_kA_sAmAna	(Suggested by Chaitanya Sir  	 28-04-14)
+					Ex: Do your part to keep food safe when bagging groceries.
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -1529,15 +1526,19 @@ Removed:
 				Ex: But their belief was that the expenditure which they recommended would be remunerative.
 	121. yeast_noun      	KamIra		as	yIsta			(Suggested by Anita ji LTRC 27-03-14) 
 				Ex: Flour is fermented with yeast to make bread. 
-	122. chimney_noun	XuAzkaSa	as	cimanI			(Suggested by Preeti ji LTRC 14-04-14)
-				Ex: Factory chimneys belched dense white smoke into the sky.
-	123. companionship_noun	safgawi		as	sAWa			(Suggested 	"	"	"    )
-				Ex: They meet at the club for companionship and advice.
-	124. competitor_noun	prawiyogI	as	prawisparXxI		(Suggested by 	"	"	"    )
-				Ex: We produce cheaper goods than our competitors.
-	125. carriage_noun	wopa-gAdI	as	gAdI			(Suggested by	"	"	"    )
-				Ex: They rode to the city in carriages.
+	122. seminar_noun    	aXyayana_goRTI	as	seminAra		(Suggested by Jagriti Banasthali 04-04-14)
+				Ex: With the aim of spreading awareness among the public against corruption the Roop-nagar vigilance unit held
+				    a seminar at a local Khalsa school.
+	123. cargo_noun		jahAjI_mAla	as	mAla			(Suggested by Sukhada    28-04-14)
+				Ex: People stopped cargo train in the station.
+	124. grocery_noun	kirAne_kA_sAmAna  as	kirAne_kI_xukAna	(Suggested by Chaitanya Sir 28-04-14) Ex: I'm at the grocery.
+	125. rephrase_verb	paxAnvaya_kara	as	alaga_Dafga_se_vyakwa_kara	(Suggested by Sukhada 28-04-14)
+	126. revive_verb	Pira_jIviwa_kara  as	punarjIviwa_kara		(		"	"     )
+				Ex: Naming the government scheme after inspiring personalities is the easiest tool for reviving the history.
+	127. workload_noun	kAma_kA_boJa	as	kArya-BAra			(Suggested by Sukhada 28-04-14)
+				Ex: The workload is very high.
 
+	
     6. Removed meaning from existing list:
        ----------------------------------
 	1. overdue_adjective 	jo_bahuwa_pahale_hI_ho_jAnA_cAhiye_WA,_vaha	( Suggested by Rajini		29-02-12)
@@ -1608,8 +1609,9 @@ Removed:
 	31. observe_UNDEFINED	avalokana_kara				( Suggested by Chaitanya Sir    26-11-13)
 	32. doorway_UNDEFINED   xvArapaWa				(Suggested by Pramila Banasthali 12-12-13)
 	33. doctorate_noun  	daktara_kI_upAXi			(	"		"	 24-01-14)
-	34. carpeted_UNDEFINED	kAlIna_biCAnA				(Suggested by Preeti ji LTRC 	14-04-14)
-	
+	34. groceries_UNDEFINED	kirAne_kA_sAmAna			(Suggested by Chaitanya Sir      28-04-14)
+
+
     8. Modified category:
        ------------------
 	1. Habegger_- 		as	Habegger_noun	 	( Suggested by Chaitanya Sir 29-02-12 	 )
@@ -1737,8 +1739,6 @@ Removed:
 				Ex: 
 	21. bound_to        	bazXA_huA^bAXya#bazXA_huA^bAXya#noun#2#RM(	"		"	  "	)
 				Ex:
-	22. reference_to	saMxarBa_meM#saMxarBa_meM#noun#2#RM	(Suggested by ANita ji LTRC	14-04-14)
-				Ex: Knowing what had happened, I avoided making any reference to weddings.
 
     Modified :
     --------
@@ -1981,6 +1981,9 @@ Removed:
 	110. Panchayat_level_committee_officer  paMcAyawa_samiwi_swarIya_paxAXikArI#noun#2#RM(		"		  "	)
 				Ex: Information about the PSS meeting was not given to the Panchayat level committee officer.
 
+	111. cargo_train	mAla_gAdI#mAla_gAdI#noun#2#RM				(Suggested by Sukhada   28-04-14        )
+				Ex: People stopped cargo train in the station.
+
     Added new meaning to the existing word:
     --------------------------------------
 	1. no_doubt        	niHsaMxeha		(Suggested by Sukhada 30-05-13		)
@@ -1997,7 +2000,10 @@ Removed:
 	8. fatal_accident  	GAwaka_xurGatanA	(Suggested by Ratna purohit     21-03-14)
 	9. general_public  	Ama_AxamI		(Suggested by Chaitanya sir     22-03-14) Ex: For this reason the general public has to
 												      come forward.		
+	10. characteristic_features viSiRta_lakRaNa	(	"	"		3-04-14 ) Ex: With the BionicKangaroo,we have precisely 								  	     reproduced the most characteristic features of natural kangaroos.
 
+	11. path_of_least_resistance	kama_avaroXa_kA_mArga (Suggested by Anita ji LTRC 28-04-14) Ex: I took the path of least resistance and
+													agreed with the others.
 
    Modifying the head id:
    ---------------------
@@ -2237,6 +2243,7 @@ Removed:
 		Ashan   	eSAna				Dambulla        xAMbulA
 		Hambantota      haMbanatotA			Khedia  	KedZiyA
 		Sushil  	suSIla				Mahanta 	mahaMwa
+		Tata		tAtA				District	jilA
 
    Modified:
    ---------
