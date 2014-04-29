@@ -6940,7 +6940,7 @@ character_string	saMprawIka_rajju#saMprawIka_rajju#noun#2#RM
 character_string_constant	saMprawIka_rajju_avara#saMprawIka_rajju_avara#noun#3#RM
 character_study	pAwra#pAwra#noun#2#RM
 character_witness	cariwra_kA_gavAha#cariwra_kA_gavAha#noun#2#RM
-characteristic_features	KAsa_KAsa_bAweM#KAsa_KAsa_bAweM#noun#2#RM
+characteristic_features	viSiRta_lakRaNa/KAsa_KAsa_bAweM#viSiRta_lakRaNa/KAsa_KAsa_bAweM#noun#2#RM
 characteristic_function	aBilakRaNika_Palana#aBilakRaNika_Palana#noun#2#RM
 characteristic_roots	aBilakRaNika_mUla#aBilakRaNika_mUla#noun#2#RM
 charcoal_burner	lakadZI_kA_koyalA#lakadZI_kA_koyalA#noun#2#RM
@@ -22906,7 +22906,7 @@ patent_coin_boxes	peteMta_sikkA_Aota_petiSa#peteMta_sikkA_Aota_petiSa#noun#3#RM
 patent_infringement	ekasva_ullaMGana#ekasva_ullaMGana#noun#2#RM
 patent_note_boxes	peteMta_sikkA_Aota_petiSa#peteMta_sikkA_Aota_petiSa#noun#3#RM
 path_length	paWa_lambAI#paWa_lambAI#noun#2#WM
-path_of_least_resistance	sarala_rAha#sarala_rAha#noun#1#RM
+path_of_least_resistance	kama_avaroXa_kA_mArga/sarala_rAha#kama_avaroXa_kA_mArga/sarala_rAha#noun#1#RM
 pathology_department	vikqwivijFAna_viBAga#vikqwivijFAna_viBAga#noun#2#RM
 patrol_car	pEtrola_se_calane_vAlI_kAra#pEtrola_se_calane_vAlI_kAra#noun#2#RM
 pattern_keeper	prawimAna_pAla#prawimAna_pAla#noun#2#RM
@@ -33228,6 +33228,7 @@ in_the_distance	xUra#xUra#noun#3#WM
 staple_diet	Bojana_kA_muKya_aMSa#Bojana_kA_muKya_aMSa#noun#2#RM
 taking_courage_in_both_hands	jI_kadZA_karake_badZI_himmawa_se#jI_kadZA_karake_badZI_himmawa_se#verb#1#RM
 preferred_location	aXimawa_avasWiwi#aXimawa_avasWiwi#noun#2#RM
+cargo_train	mAla_gAdI#mAla_gAdI#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
