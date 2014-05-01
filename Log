@@ -1,4 +1,4 @@
- 28-04-14
+ 29-04-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
@@ -112,6 +112,8 @@
 	abbrevations.lex	 :	Added 'B.Tech', 'Std.', 'Ex.', 'A.M.', 'a.m.', 'P.M.' and 'p.m.'
 	standard_abbrevations.lex:	Removed 'p'
 	constituency_parse.l	 :	Added ':'
+	mapping-symbols.lex	 :	Added '<' and '>' 
+	replace-mapping-symbols.lex :	Added '<' and '>'
  25. Updated following dictionary related files:
         changes_in_databases	 apertium-en-hi.en.metadix 	apertium_hn.dix
  26. Updated the following files to add 'id-wsd_viBakwi' fact in nerver-called deffunction
@@ -127,7 +129,7 @@
 	run_stanford-gui-factored.sh		run_stanford-gui-pcfg.sh	anu_compile.sh
 	remove_out-files.sh			Anusaaraka.sh			Anusaaraka_all.sh	
 	Anusaaraka_berkeley.sh			Anusaaraka_bllip_parser.sh	run_tregex_for_multiparse.sh
-	run_tregex.sh
+	run_tregex.sh				view_trees.sh
  29. Updated following files:
 	Stanford_parser_fails
 	phy_verified_out

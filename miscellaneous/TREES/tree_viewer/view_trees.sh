@@ -2,7 +2,7 @@
 
  rm -f E_constituents_info.dat Node_category_info.dat cons_tree.dat $1.error $1_* 
 
- MYPATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2013-06-20
+ MYPATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-01-04
 
  java  -mx900m -cp "$MYPATH/*:" edu.stanford.nlp.parser.lexparser.LexicalizedParser -sentences "newline" -outputFormat oneline -outputFormatOptions "treeDependencies" -tokenizerOptions "americanize=false, escapeForwardSlashAsterisk=false"  edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz  $*  > $1_derived_tree  2> /dev/null
  
