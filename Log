@@ -1,9 +1,10 @@
- 29-04-14
+ 02-05-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
 		  collect.clp	material.clp	remain.clp	can.clp		create.clp	cause.clp 	fresh.clp
 	 	  what.clp	ing_tam.clp	rent.clp	so.clp		after.clp	heavily.clp	ram.clp
+		  get.clp
 	Added   : government.clp	revive.clp	grocery.clp
 	Modified following relations:
         kriyA-aXikaraNavAcI_avyaya  to  kriyA-aXikaraNavAcI
@@ -108,7 +109,7 @@
         wsd_meaning.clp
         shell_scripts/anu_compile.sh
  24. Updated following lex files:
- 	handling_abbrevations.lex:	Added 'Rs.' and 'rs.'
+ 	handling_abbrevations.lex:	Added 'Rs.', 'rs.', 'approx' and 'cent'
 	abbrevations.lex	 :	Added 'B.Tech', 'Std.', 'Ex.', 'A.M.', 'a.m.', 'P.M.' and 'p.m.'
 	standard_abbrevations.lex:	Removed 'p'
 	constituency_parse.l	 :	Added ':'
@@ -152,6 +153,7 @@
  33. In anusaaraka/bin Added following files:
 	Anusaaraka_stanford_align_eng_ord.sh 
 	run_sentence_stanford_align_eng.sh
+	run_tregex_for_multiparse.sh
  34. To get layered alignment o/p Added following files:
 	create_eng_align_html.clp
 	run_align_browser_eng.sh

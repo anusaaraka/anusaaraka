@@ -42,12 +42,13 @@
 )
 
 ;@@@ Added by Shirisha Manju ,Suggested by Chaitanya Sir (14-01-14)
-;What are you reading?
+;What are you reading? 
+;But it does not tell us in what direction an object is moving. 
 (defrule what3
 (declare (salience 4700))
 (id-root ?id what)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse =(+ ?id 1) verb)
+(or (id-cat_coarse =(+ ?id 1) verb)(id-root =(- ?id 1) in))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kyA))

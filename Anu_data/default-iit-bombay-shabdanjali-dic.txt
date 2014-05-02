@@ -10489,7 +10489,7 @@ bonehead_UNDEFINED	mUrKa_vykwi
 bonehead_noun	mUrKa_vyakwi
 boneheaded_adjective	bevakUPa
 bones_UNDEFINED	asWi
-bonfire_noun	alAva/uwsAgani/holI
+bonfire_noun	holI/alAva/uwsAgani
 bonfires_UNDEFINED	alAva
 bongo_noun	bofgo
 bonhomie_UNDEFINED	milanasArI
@@ -25875,7 +25875,7 @@ empathy_noun	samAnuBUwi
 emperor_noun	samrAt/samrAta
 emperors_UNDEFINED	samrAt
 emphases_UNDEFINED	jora
-emphasis_noun	jora/mahawva/bala
+emphasis_noun	bala/jora/mahawva
 emphasise_verb	jora_xe/mahawva_xe/bala_xe
 emphasised_UNDEFINED	jora_xe
 emphasises_UNDEFINED	jora_xe
@@ -27239,7 +27239,7 @@ everyday_adjective	prawixina/sAXAraNa/rojamarrA_kA/eka_Darre_para_calane_vAlA
 everydayer_UNDEFINED	prawixina
 everydayest_UNDEFINED	prawixina
 everyone_adjective	saBI
-everyone_noun	saba/hara_eka
+everyone_noun	hara_koI/saba/hara_eka
 everyone_pronoun	prawyeka_vyakwi/saba/prawEka_vyakwi/prawEka/hara_koI/hara_eka
 everyplace_adverb	prawyeka_sWAna_para/sarvawra/saBI_jagaha/hara_jagaha
 everything_pronoun	saba_kuCa/sArA/saba/prawyeka
@@ -83592,7 +83592,7 @@ trustworthiness_noun	viSvasanIyawA
 trustworthy_adjective	viSvAsayogya/viSvasanIya/karwavyaniRTa
 trusty_adjective	viSvAsI/viSvasanIya/karwavyaniRTa
 trusty_noun	kExI{jisako_usakI_ImAnaxArI_ke_kAraNa_viReSAXikAra_xiyA_ho}
-truth_noun	saccAI/vAswvikawA/vAswavikawA/sawyawA/ImAnaxArI
+truth_noun	saca/saccAI/vAswvikawA/vAswavikawA/sawyawA/ImAnaxArI
 truthful_adjective	saccAIpUrNa/sawyavAxI/saccAI_se_BarA/saccA
 truthfuler_UNDEFINED	saccAIpUrNa
 truthfulest_UNDEFINED	saccAIpUrNa

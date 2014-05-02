@@ -20,7 +20,8 @@
 
   2. Added :
 	1. SuBakAmanA 	Suggested by sheetal (02-11-09) Eg: We convey our best wishes to the Chinmaya Dham Yatris . 
-	2. esItilIna  	Suggested by Meenaji(24-02-10)Eg:Acetylene burns with bright flame that helps in cutting and welding 	    3. mAxA_pakRI   Suggested by sheetal(05-03-10)  Eg: Females of birds produce eggs.
+	2. esItilIna  	Suggested by Meenaji(24-02-10)  Eg: Acetylene burns with bright flame that helps in cutting and welding
+        3. mAxA_pakRI   Suggested by sheetal(05-03-10)  Eg: Females of birds produce eggs.
 	4. PEktarI    	Meena (20.5.10)
 	5. PrIkveMsI	Meena (11.6.10)
 	6. Avqwi   	Meena (11.6.10)
@@ -44,6 +45,8 @@
 	23. dAyarektarI	By Roja Suggested by Sukhada (20-11-13) Ex: Create a new directory and put all your files into it. 
 	24. garmI	Suggested by sukhada (25-11-13)		Ex: The warmth of the sun's rays.
 	25. amana	Suggested by sukhada (20-03-14)		Ex: Everyone should maintain peace on the earth. 
+	26. pUrvasanXyA Suggested by Chaitanya Sir (2-05-14)	Ex: On the eve of Holi, a bonfire is lit up.
+	27. sanXyA  			"		"		
 	
 
   3. Removed :
@@ -74,6 +77,7 @@
 	21. Cada		"		    (04-11-13)  Eg: When electrified rods are brought near light objects, a 
 								    similar effect takes place.
 	22. wArA	Suggested by Sukhada	    (21-12-13)  Eg: How does a star form?
+	23. kAna 	Suggested by Chaitanya Sir  (02-05-14)	Eg: A rabbit has long ears.
 
   changes in Phrv.txt 
   ===================
@@ -359,9 +363,10 @@
   changes in not_ne_verb_list.txt
   ===============================
   1. Added
-	 howA, howe, howI (Suggested by Meenaji -- 23-03-10)
+	howA, howe, howI (Suggested by Meenaji -- 23-03-10)
                              Eg: If you were a middle-class American without a job , who would you vote for .
-	 ruka	(Suggested by Chaitanya Sir 10-07-13) Ex: Well then, get out of the pit as best you can, said Papri coldly.
+	ruka	(Suggested by Chaitanya Sir 10-07-13) 	Ex: Well then, get out of the pit as best you can, said Papri coldly.
+	jala	(Suggested by Chaitanya Sir 30-04-14)	Ex: The coal in the BBQ grill finally lit up.	
   2. Removed : -kara , -pIta    
 		     Eg: The songwriter, whose artistic work had stretched over decades, acknowledged the standing ovation.
   3. Modified : -siXAra as siXAra	
@@ -1277,7 +1282,7 @@ Removed:
 					    use new tools to interact with nature. "
 	85. originate_verb		uxBava_ho		(Suggested by Chaitanya Sir  26-11-12)
 					Ex: The word Science originates from the Latin verb Scientia meaning 'to know'. 
-	86. doorway_noun    		xvArapaWa		(Suggested by Pramila Banasthali 12-12-13)
+	86. doorway_noun    		xvArapaWa		(Suggested by Pramila Banasthali 12-12-13) 
 					Ex: He suddenly appeared in the doorway.
 	87. name-plate_noun		nAma_pattikA		(Suggested by Nandini ji LTRC	17-12-13)
 					Ex: Bhagirathi, the children read the name-plate on the door.
@@ -1287,14 +1292,15 @@ Removed:
 					Ex: Obviously these tables are not exhaustive.
 	90. complication_noun		samasyA 		(Suggested by Preeti ji LTRC	 14-04-14)
 					Ex: The bad weather added a further complication to our journey. 
-	91. cake_verb			sana			(Suggested by Preeti ji LTRC	 14-04-14)
-					Ex: Her shoes were caked with mud. 
+	91. cake_verb			sana			(Suggested by Preeti ji LTRC	 14-04-14) Ex: Her shoes were caked with mud. 
 	92. groceries_noun		kirAne_kA_sAmAna	(Suggested by Chaitanya Sir  	 28-04-14)
 					Ex: Do your part to keep food safe when bagging groceries.
-	93. weird_adjective		axBuwa			(Suggested by Chaitanya Sir	29-04-14)
-					Ex: He was in a weird getup.
+	93. weird_adjective		axBuwa			(Suggested by Chaitanya Sir	29-04-14)  Ex: He was in a weird getup.
 	94. ghostly_adjective		BUwahA			(Suggested by Chaitanya Sir	29-04-14)
 					Ex: The graveyard looked ghostly, enveloped in mist.
+	95. everyone_noun		hara_koI		(Suggested by Chaitanya Sir     30-04-14)  
+					Ex: Everyone celebrates Holi festival.   [note: bcoz of number problem]
+	96. truth_noun			saca			(Suggested by Chaitanya Sir     30-04-14)  Ex: He always speaks the truth.
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -1575,6 +1581,10 @@ Removed:
 				Ex: When asked about the differences in his comments he became annoyed and started accusing the Government and the SSI, talking about what exactly is being done at the excavation site and that the media is being banned from entry there.
 	139. district_noun	maNdala		as	jilA			(Suggested by Pramila Banasthali 29-04-14)
 				Ex: On this occasion, the SFI state secretary Manoj Kumar, Anju, District Secretary of the Committee, State joint-secretary of the Youth council Vinod Deshwal, Sumit, Anju, Rakesh Kumari, Geeta, Sonu, Rajesh Kumar, Sangeeta, Meena, Veena Malik, Sangeeta, Hawa Singh and Ajit were present.
+	128. emphasis_noun   	jora		as	bala			(Suggested by Chaitanya Sir 28-04-14)
+				Ex: Special emphasis was given to female education in ancient times. 
+	129. bonfire_noun	alAva		as 	holI			(Suggested by Chaitanya Sir 28-04-14)
+				Ex: On the eve of Holi, a bonfire is lit up.
 
     6. Removed meaning from existing list:
        ----------------------------------
