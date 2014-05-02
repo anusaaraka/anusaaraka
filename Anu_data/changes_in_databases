@@ -667,6 +667,12 @@ Modified :
 	tiredness	access__n		(     "	     "	  )
 	getup		house__n		(     "	  14-04-14)
 	cart		access__n		(     "	     "	  )
+	chaperone	house__n		(     "	  02-05-14)
+	chaperone	liv/e__vblex		(     "	     "	  )
+	utmost		house__n		(     "      "    )
+	level		quarrel__vblex		(     "      "    )
+	level		accept__vblex		(     "      "    )
+
 
 
 Modified paradigm:
@@ -2038,6 +2044,9 @@ Removed:
 
 	111. cargo_train	mAla_gAdI#mAla_gAdI#noun#2#RM				(Suggested by Sukhada   28-04-14        )
 				Ex: People stopped cargo train in the station.
+	112. least_resistance	AsAna_warIkA#AsAna_warIkA#noun#2#RM			(Suggested by Anita ji LTRC 02-04-14	)
+				Ex: I took the path of least resistance and agreed with the others.
+
 
     Added new meaning to the existing word:
     --------------------------------------

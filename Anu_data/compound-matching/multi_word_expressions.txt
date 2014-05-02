@@ -33560,6 +33560,7 @@ call_of_nature	SOcAxi_kI_AvaSyakawA#SOcAxi_kI_AvaSyakawA#noun#3#RM
 rubbish_bin	kacarA_kuMdI#kacarA_kuMdI#noun#2#RM
 rubbish_dump	kacare_kA_mExAna#kacare_kA_mExAna#noun#2#RM
 rain_water	varRA_kA_pAnI#varRA_kA_pAnI#noun#2#RM
+least_resistance	AsAna_warIkA#AsAna_warIkA#noun#2#RM
 #By Alpana ji (LTRC)
 Block_multiplexer	avaroXa_bahusaMkewaka#avaroXa_bahusaMkewaka#noun#2#RM
 Discharge_Required	AvaSyaka_nirvahana#AvaSyaka_nirvahana#noun#1#RM
