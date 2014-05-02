@@ -1444,6 +1444,21 @@
 )
 ;Do not get wet in the rain .
 
+;@@@ Added by Shirisha Manju (28-04-14) Suggested by Chaitanya Sir
+;We are getting ready for the movie.
+(defrule get_ready
+(declare (salience 4000))
+(id-root ?id get)
+?mng <-(meaning_to_be_decided ?id)
+(id-root =(+ ?id 1) ready)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id (+ ?id 1)  wEyAra_ho))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " get.clp   get_ready  "  ?id "  " (+ ?id 1) "  wEyAra_ho  )" crlf))
+)
+
 
 ;default_sense && category=verb	mila	0
 ;"get","V","1.milanA"

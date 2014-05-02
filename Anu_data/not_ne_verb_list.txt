@@ -1299,3 +1299,4 @@ howe	0
 howI	0
 wEra	0
 wErA	0
+jala	0
