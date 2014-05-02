@@ -85,7 +85,8 @@
  20. Modified following shell files:
 	run_sentence_stanford.sh	-> Displaying Warning message for provisional multi dictionary.
 	dic_compile.sh			-> Modified to remove 'provisional_multi_dic.c'	
-	remove_out-files.sh		-> 		"
+	remove_out-files.sh		-> 		"                              . to remove run_tregex_for_multiparse.sh
+	anu_compile.sh			-> Modified to copy run_tregex_for_multiparse.sh in anusaaraka/bin/
 	ClipsToAnu_browser_intfc.sh	-> Added '$HOME_anu_provisional_wsd_rules' and mail.js as a variable to run this1.py programe.
         run_anu_browser.sh 		-> Added mail.js file in Browser related code
 	stdenglish.sh			-> Modified path for generating 'generate_ABBR-Dot.lex' file. 
@@ -153,7 +154,6 @@
  33. In anusaaraka/bin Added following files:
 	Anusaaraka_stanford_align_eng_ord.sh 
 	run_sentence_stanford_align_eng.sh
-	run_tregex_for_multiparse.sh
  34. To get layered alignment o/p Added following files:
 	create_eng_align_html.clp
 	run_align_browser_eng.sh
