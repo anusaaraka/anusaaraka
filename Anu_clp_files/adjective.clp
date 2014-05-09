@@ -2,13 +2,13 @@
 ;When category is adjective loading with original word and word
 ;If file not loaded then checking in default dictionary
 
-; Load user original word file
- (defrule load_user_org_word_file1
+ ;Load user original word file
+ (defrule load_user_adj_org_word_file
  (declare (salience 7495))
  (id-original_word ?id ?word)
  (id-cat_coarse ?id adjective)
  (not (meaning_has_been_decided ?id))
- (not (file_loaded ?id))
+ ;(not (file_loaded ?id)) ;Commented this fact by Roja(09-05-14) If mng not decided by orig_wrd then to check word commented this fact
  (not (not_SandBox)) ;Added for server purpose. (Suggested by Chaitanya Sir, Added by Roja(05-03-11))
  =>
         (bind ?file (str-cat ?*provisional_wsd_path* "/canonical_form_prov_wsd_rules/" ?word ".clp"))
@@ -17,13 +17,13 @@
        )
  )
  ;---------------------------------------------------------------------------------------------------------
- ; Load user word file
- (defrule load_user_word_file1
+ ;Load user word file
+ (defrule load_user_adj_word_file
  (declare (salience 7480))
  (id-word ?id ?word)
  (id-cat_coarse ?id adjective)
  (not (meaning_has_been_decided ?id))
- (not (file_loaded ?id))
+ ;(not (file_loaded ?id)) ;Commented this fact by Roja(09-05-14) If mng not decided by orig_wrd then to check word commented this fact
  (not (not_SandBox)) ;Added for server purpose. (Suggested by Chaitanya Sir, Added by Roja(05-03-11))
  =>
         (bind ?file (str-cat ?*provisional_wsd_path* "/canonical_form_prov_wsd_rules/" ?word ".clp"))
@@ -33,12 +33,12 @@
  )
  ;---------------------------------------------------------------------------------------------------------
  ;Loads system original word file 
- (defrule load_org_word_file1
+ (defrule load_adj_org_word_file
  (declare (salience 7450))
  (id-original_word ?id ?word)
  (id-cat_coarse ?id adjective)
  (not (meaning_has_been_decided ?id))
- (not (file_loaded ?id))
+ ;(not (file_loaded ?id));Commented this fact by Roja(09-05-14). If mng not decided by orig_wrd then to check word commented this fact
  =>
         (bind ?file (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/" ?word ".clp"))
         (if (neq (load* ?file) FALSE) then
@@ -47,12 +47,12 @@
  )
  ;---------------------------------------------------------------------------------------------------------
  ; Load system word file
- (defrule load_word_file1
+ (defrule load_adj_word_file
  (declare (salience 7400))
  (id-word ?id ?word)
  (id-cat_coarse ?id adjective)
  (not (meaning_has_been_decided ?id))
- (not (file_loaded ?id))
+ ;(not (file_loaded ?id));Commented this fact by Roja(09-05-14). If mng not decided by orig_wrd then to check word commented this fact
  =>
         (bind ?file (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/" ?word ".clp"))
         (if (neq (load* ?file) FALSE) then
