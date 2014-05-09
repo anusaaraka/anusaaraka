@@ -13432,7 +13432,6 @@ certainest_UNDEFINED	kuCa
 certainly_adverb	niSciwa_rUpa_se/niSicawa_rUpa_seM
 certainties_UNDEFINED	niSciwawA
 certainty_noun	niSciwawA/niScaya
-certifcate_UNDEFINED	pramANa_pawra
 certificate_noun	pramANapawra/pramANa_patra
 certificated_adjective	pramANiwa_kiyA_huA/pramANapawriwa
 certificates_UNDEFINED	pramANapawra
@@ -13627,9 +13626,6 @@ chapelest_UNDEFINED	CotA_girajA
 chapels_UNDEFINED	CotA_girajA
 chaperon_noun	cOkasI_karanevAlI_swrI
 chaperon_verb	cOkasI_kara{mahilA_kI}
-chaperone_UNDEFINED	cOkasI_karanA
-chaperoned_UNDEFINED	cOkasI_karanA
-chaperones_UNDEFINED	cOkasI_karanA
 chaperoning_UNDEFINED	cOkasI_karanA
 chaperons_UNDEFINED	cOkasI_karanA
 chaplain_noun	pujArI/purohiwa/pAxarI
@@ -13718,7 +13714,6 @@ charlock_noun	jafgalI_sarasoM
 charm_adjective	AkarRaka
 charm_noun	manoharawA/wAvIja/wAbIja/sOnxarya/manoharwA/mANtra/maNtra/jAxU-tonA/gaNdA/AkarRaNa/ABURaNa
 charm_verb	vaSIBUwa_kara/sammohiwa_kara/rakRA_kara/pravqwwa_kara/prasanna_kara/mohiwa_kara/mANtra-mugXa_kara/maNtra-mugXa_kara/bahakA/AkarRiwa_kara
-charmed_UNDEFINED	mohiwa_karanA
 charmer_UNDEFINED	mohanevAlA
 charmers_UNDEFINED	mohanevAlA
 charming_adjective	mohaka/jAxuI/AkarRaka
@@ -13775,7 +13770,7 @@ chastising_UNDEFINED	wAdanA_karanA
 chastities_UNDEFINED	SuxXawA
 chastity_noun	SuxXawA/sawIwva
 chat_noun	gapaSapa/bAwacIwa
-chat_verb	gapaSapa_udA/bAwa_kara/gapaSapa_kara
+chat_verb	bAwa_kara/gapaSapa_udA/gapaSapa_kara
 chateau_noun	kilA/mahala
 chateaus_UNDEFINED	kilA
 chateaux_UNDEFINED	kilA
@@ -81800,7 +81795,7 @@ toilet-paper_noun	SOca_kA_kAgaja
 toilet-roll_noun	SOca_kAgaja_kA_pulinxA
 toilet-train_verb	SOca_praSikRaNa_xe
 toilet-training_noun	SOca_praSikRaNa
-toilet_noun	SOcaGara/SOcAlaya/SOca/praSAXana
+toilet_noun	praSAXana_kakRa/SOcAlaya/SOcaGara/SOca
 toiletries_noun	prasAXana_kA_sAmAna/prasAXana-sAmagrI
 toilets_UNDEFINED	SOcaGara
 toiling_UNDEFINED	pariSrama_kara
@@ -93536,6 +93531,10 @@ Vice-President_noun	upAXyakRa
 oblation_noun	Ahuwi
 vedic_noun	vExika
 vedic_adjective	vExika
+charmed_adjective	camawkArI
+chaperone_noun	saMrakRikA
+chaperone_verb	sAWa_raha_yA_jA
+certifcate_verb	pramANiwa_kara
 #abbrevations:
 etc._noun	Axi
 MSRTC_PropN	mahArARtra_rAjya_sadZaka_parivahana_nigama
