@@ -46,6 +46,52 @@
  ;============================================ Stanford Parser Rules ===================================================
 
  ;-------------------------------- new_word/new_id insertion rules ------------------------------------------------------
+ ;If you know who did it, you should tell the teacher. 
+ ;yaxi Apa jAnawe hEM, ki yaha kisane kiyA wo Apako SikRaka ko bawAnA cAhie.
+ (defrule insert_wo
+ (declare (salience 1100))
+ (prep_id-relation-anu_ids - kriyA-vAkya_viBakwi  ?kri ?if)
+ (id-word ?if if)
+ (prep_id-relation-anu_ids - kriyA-vAkyakarma  ?kri ?vk)
+ ?f0<-(hindi_id_order $?id ?vk $?daut)
+ (not (wo_inserted ?if))
+ (test (neq (length $?daut) 0)) 
+ =>
+	(retract ?f0)
+        (assert (hindi_id_order $?id  ?vk wo $?daut))
+        (assert (wo_inserted ?if))
+        (printout ?*DBUG* "(Rule_Name-ids 	insert_wo	(hindi_id_order  "(implode$ (create$ $?id ?vk wo $?daut)) ")" crlf)
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
+ 
+ ;If John was with Lisa last night, who went to the movie with Diane. 
+ ;yaxi joYna piCalI rAwa, PropN-lisa-PropN ke sAWa WA. wo PropN-diane-PropN ke sAWa calaciwra kOna gayA
+ ;If you were a middle-class American without a job, who would you vote for. 
+ ;yaxi Apa eka maXyama varga kAma ke binA amarIkI howe, wo Apa kisake lie mawa xewe.
+ ;If we heat iron it becomes red. 
+ ;yaxi hama lohA garama karawe hEM wo yaha lAla ho jAwA hE.
+ ;If you use that strategy, he will wipe you out. 
+ ;yaxi Apa usa raNanIwi kA upayoga karawe hEM, wo vaha Apako mitA xegA.
+ 
+ ;If the USA were to be invaded by another country, would it really matter to you?
+ ;yaxI USA para koI anya xeSa hamalA karawA hE wo usakA Apa para kyA praBAva padegA.
+ ;yaxI USA para koI anya xeSa hamalA karawA hE wo usakA Apa para koI praBAva padegA.
+ ;yaxI USA para koI anya xeSa hamalA karawA hE wo Apako kucCa anwara padegA.
+ ;Although acceleration can vary with time, our study in this chapter will be restricted to motion with constant acceleration.
+ (defrule insert_wo1
+ (declare (salience 1000))
+ (prep_id-relation-anu_ids - kriyA-vAkya_viBakwi  ?kri ?if)
+ (id-word ?if if|although)
+ ?f0<-(hindi_id_order $?ids ?kri ?id $?daut)
+ (id-HM-source ?id ?mng&~waba ?);If this is your idea of a joke, then I do not find it very funny.
+ (not (wo_inserted ?if))
+ =>
+        (retract ?f0)
+        (assert (hindi_id_order $?ids  ?kri wo ?id $?daut))
+        (assert (wo_inserted ?if))
+        (printout ?*DBUG* "(Rule_Name-ids	insert_wo1	(hindi_id_order  "(implode$ (create$ $?ids ?kri wo ?id $?daut)) ")" crlf)
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
  ;The girl you met yesterday is here. The dog I chased was black.
  (defrule insert_jo_samAnAXikaraNa
  (declare (salience 1100))
@@ -81,26 +127,8 @@
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju (22-12-11) Suggested by Sukhada
- ; If the USA were to be invaded by another country, would it really matter?
- (defrule insert_wo_for_yes_no_question
- (declare (salience 1150))
- (id-word ?id if|when)
- (Head-Level-Mother-Daughters ? ? ?SBAR $?ids)
- (Node-Category ?SBAR SBAR)
- (Head-Level-Mother-Daughters ? ? ?SQ $?ids $?sq_ids)
- (Node-Category ?SQ SQ)
- ?f0<-(hindi_id_order $?pre $?ids $?sq_ids $?post)
- (not (wo_inserted ))
- =>
-        (retract ?f0)
-        (assert (hindi_id_order $?pre $?ids wo kyA $?sq_ids $?post))
-        (assert (wo_inserted ))
-        (printout ?*DBUG* "(Rule_Name-ids   insert_wo_for_yes_no_question   (hindi_id_order  "(implode$ (create$ $?pre $?ids wo kyA $?sq_ids $?post)) ")" crlf)
- )
- ;-----------------------------------------------------------------------------------------------------------------------
- ; Added by Shirisha Manju (22-12-11) Suggested by Sukhada
  ;When Mrs. Chitnis discovered that her husband was an adulterer she divorced him.
- (defrule insert_wo
+ (defrule insert_wo_when
  (declare (salience 1100))
  (id-word ?id when)
  (sbar-mother-dau ?sbar ?SBAR-dau)
@@ -120,21 +148,22 @@
  ;-----------------------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju (22-12-11) Suggested by Sukhada
  ;When the dollar is in a free-fall, even central banks can not stop it.
- (defrule insert_wo1
- (declare (salience 1000))
- (id-word ?id if|when)
- (Head-Level-Mother-Daughters ? ? ?SBAR $?ids)
- (Node-Category ?SBAR SBAR)
- ?f0<-(hindi_id_order $?pre $?ids ?that_id $?post)
- (id-word ?that_id ?that&~that&~then);For example, when you say that a car is moving on a road, you are describing the car with respect to a frame of reference attached to you or to the ground.
- (test (and (member$ ?id $?ids)(neq (length $?post) 0))) ;My car broke down when I reached Lalitpur.
- (not (wo_inserted ))
- =>
-        (retract ?f0)
-        (assert (hindi_id_order $?pre $?ids wo ?that_id $?post))
-        (assert (wo_inserted ))
-        (printout ?*DBUG* "(Rule_Name-ids  insert_wo1 (hindi_id_order  "(implode$ (create$ $?pre $?ids wo ?that_id $?post)) ")" crlf)
- )
+; (defrule insert_wo1
+; (declare (salience 1000))
+; (id-word ?id if|when)
+; (Head-Level-Mother-Daughters ? ? ?SBAR $?ids ?id1)
+; (Node-Category ?SBAR SBAR)
+; ?f0<-(hindi_id_order $?pre $?ids ?id1 ?that_id $?post)
+; (id-word ?that_id ?that&~that&~then);For example, when you say that a car is moving on a road, you are describing the car with respect to a frame of reference attached to you or to the ground.
+; (test (and (or (member$ ?id $?ids)(eq ?id ?id1))(neq (length $?post) 0))) ;My car broke down when I reached Lalitpur.
+; (not (wo_inserted ))
+; (not (prep_id-relation-anu_ids - kriyA-vAkyakarma ?id1 ?))
+; =>
+;        (retract ?f0)
+;        (assert (hindi_id_order $?pre $?ids ?id1 wo ?that_id $?post))
+;        (assert (wo_inserted ))
+;        (printout ?*DBUG* "(Rule_Name-ids  insert_wo1 (hindi_id_order  "(implode$ (create$ $?pre $?ids ?id1 wo ?that_id $?post)) ")" crlf)
+; )
  ;====================================  id movement rules ===============================================================
  ; I finally figured out why this program is so slow .
  ; Modified by Shirisha Manju (09-11-11) Suggested by Sukhada -- instead of moving wh word move the whole pada
@@ -362,99 +391,50 @@
         (printout  ?*DBUG* "(Rule_Name-ids   rule_for_yaha   (hindi_id_order  "(implode$ (create$ $?pre ?kri  yaha $?post)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
- ; Added by Shirisha Manju(25-02-2011).
- ; If you know who did it, you should tell the teacher.
- (defrule wo_rule_for_if
- (declare (salience 2))
- ?f1<-(id-word ?id if)  ;Modified by Meena (28-10-10) 
- (prep_id-relation-anu_ids  ? kriyA-vAkya_viBakwi  ?k ?id)
- (prep_id-relation-anu_ids  ? kriyA-praSnavAcI  ?k ?p)
- (prep_id-relation-anu_ids  ? kriyA-subject ?k1 ?p)
- ?f0 <-(hindi_id_order $?pre ?k1 $?post)
- (not (wo_inserted ))
- =>
-        (retract ?f0 ?f1)
-        (assert (hindi_id_order  $?pre ?k1 wo $?post))
-        (printout ?*DBUG* "(Rule_Name-ids  wo_rule_for_if  (hindi_id_order  "(implode$ (create$ $?pre ?k1 wo $?post))")"crlf)
- )
- ;------------------------------------------------------------------------------------------------------------------
- ; Added by Shirisha Manju(09-12-2009).--- Suggested by Sheetal
- ; If John was with Lisa last night, who went to the movie with Diane. 
- ; If you were a middle-class American without a job , who would you vote for .
- ; If we heat iron it becomes red .
- ; If you use that strategy , he will wipe you out .
- ; Although acceleration can vary with time, our study in this chapter will be restricted to motion with constant acceleration.
- (defrule wo_rule_for_if1
- (declare (salience 1))
- ?f1<-(id-word ?id ?word&if|although)  ;Modified by Meena (28-10-10) 
- (not (wo_inserted )) ;restricted for Stanford Parser bcoz "wo" is generated using constituents.
- (prep_id-relation-anu_ids  ? kriyA-vAkya_viBakwi  ?k ?id)
- ?f0 <-(hindi_id_order $?pre ?k ?then $?post)
- (id-HM-source ?then ?hmng&~waba ?) ;If I have made a mistake, then it is up to me to set it right.
- (not (hindi_id_order $? ?k))
- =>
-        (retract ?f0 ?f1)
-	(if (eq ?word if) then
-	        (assert (hindi_id_order  $?pre ?k wo $?post))  
-		(printout ?*DBUG* "(Rule_Name-ids  wo_rule_for_if1  (hindi_id_order  "(implode$ (create$ $?pre ?k wo $?post))")" crlf)
-	else
-		(assert (hindi_id_order  $?pre ?k paranwu $?post))
-	        (printout ?*DBUG* "(Rule_Name-ids  wo_rule_for_if1  (hindi_id_order  "(implode$ (create$ $?pre ?k paranwu $?post))")" crlf)
-	)
- )
- ;------------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (25-02-11) 
- ;When Mrs. Chitnis discovered that her husband was an adulterer she divorced him.
- (defrule wo_rule_for_when
- (declare (salience 15))
- ?f1<-(id-word 1 when)  ;Modified by Meena (28-10-10) 
- (not (wo_inserted )) ;restricted for Stanford Parser bcoz "wo" is generated using constituents.
- (prep_id-relation-anu_ids ?  kriyA-vAkya_viBakwi  ?k 1)
- (prep_id-relation-anu_ids ?  kriyA-subject  ?k1 ?id)
+ ;-----------------------------------------------------------------------------------------------------------------
+ ;When you stand on this rock and face the east, the waves of the bay of bengal lap your feet. 
+ ;jaba Apa isa cattAna para Kade howe hEM Ora pUrva kI ora muzha karawe hEM, wo bengal kI KAdI kI lahareM Apake pAzvoM se XIre_se takarAwI hEM.
+ (defrule insert_wo_for_when
+ (prep_id-relation-anu_ids ?  kriyA-kriyA_viSeRaNa  ?k 1)
+ ?f1<-(id-word 1 when)
+ (prep_id-relation-anu_ids ?  vAkya-vAkya_saMbanXI  ?k ?id)
  ?f0 <-(hindi_id_order $?pre ?id $?post)
- (test (> ?k1 ?k) )
- (not (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa  ?id ?))
+ =>
+	(retract ?f0 ?f1)
+        (assert (hindi_id_order  $?pre  ?id wo  $?post))
+        (printout ?*DBUG* "(Rule_Name-ids   insert_wo_for_when   (hindi_id_order  "(implode$ (create$ $?pre ?id wo $?post))")"crlf)
+ )
+ ;-----------------------------------------------------------------------------------------------------------------
+ ;When the dollar is in a free-fall, even central banks can not stop it. 
+ ;jaba dOlara BArI girAvata meM ho, wo keMxrIya bEMka BI isako nahIM_roka sakawe hEM.
+ (defrule insert_wo_for_when1
+ (prep_id-relation-anu_ids ?  kriyA-kriyA_viSeRaNa  ?k 1)
+ ?f1<-(id-word 1 when)
+ (prep_id-relation-anu_ids ?  kriyA-in_saMbanXI  ?k ?)
+ ?f0 <-(hindi_id_order $?pre ?k $?post)
  =>
         (retract ?f0 ?f1)
-        (assert (hindi_id_order  $?pre  wo ?id $?post))
-        (printout ?*DBUG* "(Rule_Name-ids   wo_rule_for_when   (hindi_id_order  "(implode$ (create$ $?pre ?k1 wo $?post))")"crlf)
-
+ 	(assert (wo_inserted 1))
+        (assert (hindi_id_order  $?pre  ?k wo  $?post))
+        (printout ?*DBUG* "(Rule_Name-ids   insert_wo_for_when   (hindi_id_order  "(implode$ (create$ $?pre ?k wo $?post))")"crlf)
  )
- ;-------------------------------------------------------------------------------------------------------------
+ ;-----------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (15-11-11)
  ;When Mrs. Chitnis discovered that her husband was an adulterer she divorced him.
- (defrule wo_rule_for_when1
- (declare (salience 2))
+ (defrule insert_wo_for_when2
  ?f1<-(id-word 1 when)
- (not (wo_inserted )) ;restricted for Stanford Parser bcoz "wo" is generated using constituents.
+ (not (wo_inserted 1))
  (prep_id-relation-anu_ids ?  kriyA-kriyA_viSeRaNa  ?k 1)
  (prep_id-relation-anu_ids ?  kriyA-vAkya_viBakwi  ?k1 ?sub)
  (test (> ?k1 ?k) )
  ?f0 <-(hindi_id_order $?pre ?k1 $?post)
  =>
         (retract ?f0 ?f1)
+ 	(assert (wo_inserted 1))
         (assert (hindi_id_order  $?pre ?k1 wo $?post))
-        (printout ?*DBUG* "(Rule_Name-ids   wo_rule_for_when1  (hindi_id_order  "(implode$ (create$ $?pre ?k1 wo $?post))")"crlf)
+        (printout ?*DBUG* "(Rule_Name-ids   insert_wo_for_when2  (hindi_id_order  "(implode$ (create$ $?pre ?k1 wo $?post))")"crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
- ; Added by Shirisha Manju (22-12-11)
- ; When the dollar is in a free-fall, even central banks can not stop it.
- ; When you stand on this rock and face the east, the waves of the bay of bengal lap your feet.
- (defrule wo_rule_for_when2
- (declare (salience 1))
- ?f1<-(id-word 1 when)
- (not (wo_inserted ))   
- (prep_id-relation-anu_ids ?  kriyA-kriyA_viSeRaNa  ?k 1)
- (prep_id-relation-anu_ids ?  kriyA-subject  ?k1 ?id)
- (pada_info (group_head_id ?id) (group_cat PP) (group_ids $?d))
- ?f0 <-(hindi_id_order $?pre $?d $?post)
- (test (> ?k1 ?k) )
- =>
-        (retract ?f0 ?f1)
-        (assert (hindi_id_order  $?pre wo $?d $?post))
-        (printout ?*DBUG* "(Rule_Name-ids   wo_rule_for_when2  (hindi_id_order  "(implode$ (create$ $?pre wo $?d $?post))")"crlf)
-
- )
  ;------------------------------------------------------------------------------------------------------------------
  (defrule since_rule
  ?f1<-(id-word 1 since)  ;Modified by Meena (28-10-10) 
@@ -545,30 +525,6 @@
 	)
 	(assert (modified_order))
  )
- ;------------------------------------------------------------------------------------------------------------------
-; (defrule dont_have
-; (expr $?s_m1 ?do ?not ?have $?s_m2 ?in ?common $?s_m3)
-; (and (id-word ?do do)(id-word ?not not) (id-word ?have have)(id-word ?in in)(id-word ?common common))
-; (not (modified_order))
-; ?f0<-(hindi_id_order $?order)
-; =>
-;        (retract ?f0)
-; 	(assert (hindi_id_order $?s_m1 $?s_m3 $?s_m2 samAnawA nahIM hE))
-;        (assert (modified_order))
-; )
-; ;------------------------------------------------------------------------------------------------------------------
-; (defrule have_rule
-;; (expr $?s_m1 ?have $?s_m2 ?in ?common $?s_m3)
-; ?f0<-(hindi_id_order $?s_m1 ?have $?s_m2 ?common $?s_m3)
-; (and (id-word ?have have)(id-word ?common common)(id-word =(- ?common 1) in))
-;; (and (id-word ?have have)(id-word ?in in)(id-word ?common common))
-; (not (modified_order))
-;; ?f0<-(hindi_id_order $?order)
-; =>
-;        (retract ?f0)
-;        (assert (hindi_id_order $?s_m1 $?s_m3 $?s_m2 samAnawA hE))
-;        (assert (modified_order))
-; )
  ;------------------------------------------------------------------------------------------------------------------
  (defrule remove_ordered_ids
  (declare (salience -500))

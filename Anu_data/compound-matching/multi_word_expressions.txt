@@ -33229,6 +33229,9 @@ staple_diet	Bojana_kA_muKya_aMSa#Bojana_kA_muKya_aMSa#noun#2#RM
 taking_courage_in_both_hands	jI_kadZA_karake_badZI_himmawa_se#jI_kadZA_karake_badZI_himmawa_se#verb#1#RM
 preferred_location	aXimawa_avasWiwi#aXimawa_avasWiwi#noun#2#RM
 cargo_train	mAla_gAdI#mAla_gAdI#noun#2#RM
+military_rule	senA_kA_SARana#senA_kA_SARana#noun#2#RM
+high_level_of_concentration	uccaswarIya_ekAgrawA#uccaswarIya_ekAgrawA#noun#4#RM
+a_high_level_of_concentration	uccaswarIya_ekAgrawA#uccaswarIya_ekAgrawA#noun#4#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

@@ -257,7 +257,7 @@ usane sAvaXAnI se rAwa_kA Bojana wEyAra kiyA.
 
 Hindi meaning using Stanford parser 2.58
 There are many tissues of fat in our body. 
-hamAre SarIra meM carbI ke bahuwa sAre Uwaka hEM.
+hamAre SarIra meM carbI ke bahuwa Uwaka hEM.
 
 Hindi meaning using Stanford parser 2.59
 The mystery of the Nixon tapes was never solved. 
@@ -436,7 +436,6 @@ Sabxa kahAz se Awe hEM?
 Hindi meaning using Stanford parser 2.99
 It was obvious that he would do it. 
 spaRta WA ki vaha yaha karegA.
-Multiple adjective senses are available for obvious. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.100
 He felt a deep shame. 
@@ -569,6 +568,7 @@ Hindi meaning using Stanford parser 2.129
 He is looking for another job. 
 vaha xUsare kAma ke lie xeKa rahA hE.
 vaha eka Ora nOkarI ke lie DUzDa rahA hE.
+vaha eka Ora nOkarI DUzDa rahA hE.
 
 Hindi meaning using Stanford parser 2.130
 He is a well known scientist. 
@@ -949,7 +949,8 @@ vaha usake karmacAriyoM ke sAWa uciwa vyavahAra karawA hE.
 
 Hindi meaning using Stanford parser 2.217
 Everyone should maintain peace on the earth. 
-saba ko pqWvI para amana banAe raKanI cAhie.
+hara kisIko pqWvI para amana banAe raKanI cAhie.
+hara kisIko pqWvI para amana banAye raKanI cAhie.
 
 Hindi meaning using Stanford parser 2.218
 It is true that you are my friend but I can not go along with you on this issue. 
@@ -1146,7 +1147,7 @@ Multiple adjective senses are available for acidic. WSD rule is required
 
 Hindi meaning using Stanford parser 2.261
 I wondered for a long time why everyone liked her so much. 
-muJe lambe_samaya waka AScarya huA ki saba ne iwanA jyAxA usako kyoM pasanxa kiyA.
+muJe lambe_samaya waka AScarya huA ki hara kisIne iwanA jyAxA usako kyoM pasanxa kiyA.
 
 Hindi meaning using Stanford parser 2.262
 Beautiful paintings adorned the walls of the palace. 
@@ -1185,7 +1186,7 @@ Multiple adjective senses are available for similar. WSD rule is required
 
 Hindi meaning using Stanford parser 2.270
 Three quarters of a million people in this city have no health insurance. 
-isa Sahara meM xasa-lAKa logoM kI wIna cOWAI kA svAsWya bImA nahIM hE.
+isa Sahara meM xasa-lAKa logoM kI wIna cOWAI ke svAsWya bImA nahIM hE.
 
 Hindi meaning using Stanford parser 2.271
 I wonder how much money you earned. 
@@ -1550,6 +1551,7 @@ Multiple adjective senses are available for western. WSD rule is required
 
 Hindi meaning using Stanford parser 3.46
 I like dogs as well as cats. 
+mEM kuwwe BI Ora billiyAz BI pasanxa karawA hUz.
 mEM kuwwe vEse hI billiyAz pasanxa karawA hUz.
 mEM kuwwoM vEse hI billiyoM ko pasanxa karawA hUz.
 
@@ -1748,7 +1750,7 @@ Multiple adjective senses are available for most. WSD rule is required
 
 Hindi meaning using Stanford parser 3.89
 As we go from ooty to gudalur, the change in vegetation is striking. 
-jaba hama ooty se gudalur ko jAwe hEM, pOXoM_kI vqxXi meM parivarwana XyAna AkarRiwa karanevAlA hE.
+jaba hama ooty se gudalur ko jAwe hEM, pOXoM_kI vqxXi meM baxalAva XyAna AkarRiwa karanevAlA hE.
 Multiple adjective senses are available for striking. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.90
@@ -1759,7 +1761,7 @@ Multiple adjective senses are available for main. WSD rule is required
 
 Hindi meaning using Stanford parser 3.91
 Mahadevi Verma wrote many poems. 
-PropN-mahadevi-PropN PropN-verma-PropN ne bahuwa sArI kaviwAez liKIM.
+PropN-mahadevi-PropN PropN-verma-PropN ne bahuwa kaviwAez liKIM.
 
 Hindi meaning using Stanford parser 3.92
 Soccer is my most favourite sport. 
@@ -1922,6 +1924,7 @@ PropN-queen-PropN viktoriyA ne navambara 1869 meM blackfriars pula KolA.
 Hindi meaning using Stanford parser 4.25
 Srinagar is the capital city of Jammu and Kashmir and one of the most popular hill stations. 
 SrInagara jammU Ora PropN-kashmir-PropN kA rAjaXAnI Sahara Ora sabase aXika lokapriya pahAdI steSanoM meM se eka hE.
+SrInagara jammU Ora PropN-kashmir-PropN kA rAjaXAnI nagara Ora sabase aXika lokapriya pahAdI steSanoM meM se eka hE.
 
 Hindi meaning using Stanford parser 4.26
 The toltecs were the predominant civilizations of this time. 
@@ -2112,7 +2115,7 @@ isa sileMdara kA Ayawana kyA hE?
 
 Hindi meaning using Stanford parser 4.67
 The advantages of science are many. 
-vijFAna ke PAyaxe bahuwa sAre hEM.
+vijFAna ke PAyaxe bahuwa hEM.
 
 Hindi meaning using Stanford parser 4.68
 I am busy with my studies. 
@@ -2433,7 +2436,7 @@ Multiple adjective senses are available for best. WSD rule is required
 
 Hindi meaning using Stanford parser 5.42
 In ancient times there were many kingdoms. 
-prAcIna kAla meM bahuwa sAre rAjya We.
+prAcIna kAla meM bahuwa rAjya We.
 Multiple adjective senses are available for ancient. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.43
@@ -2522,6 +2525,7 @@ bAibila kahawI hE ki xevawA ne viSva banAyA.
 Hindi meaning using Stanford parser 5.62
 The government plans to create more jobs for young people. 
 sarakAra waruNa logoM ke lie aXika kAma uwwapanna karane ke lie yojanA banAwI hE.
+sarakAra yuvA logoM ke lie aXika kAma uwwapanna karane ke lie yojanA banAwI hE.
 
 Hindi meaning using Stanford parser 5.63
 Scientists disagree about how the universe was created. 
@@ -2660,7 +2664,7 @@ havA pedoM meM sarasarAI.
 
 Hindi meaning using Stanford parser 5.94
 She was murmuring in his ear. 
-vaha usakI kAna meM badabadA rahI WI.
+vaha usake kAna meM badabadA rahI WI.
 
 Hindi meaning using Stanford parser 5.95
 The Democratic National Convention will meet next week to announce their party's candidate for president. 
@@ -3053,6 +3057,7 @@ vaha eka gamBIra swrI WI jo SAyaxa hI kaBI muskarAI.
 Hindi meaning using Stanford parser 6.88
 His great knowledge, his wonderful memory and his untiring energy have been devoted to this purpose for nearly twenty years. 
 usakA baDiyA jFAna, usakI baDiyA smqwi Ora usakI aWaka UrjA karIba karIba bIsa varRoM se isa uxxeSya ko samarpiwa kie gaye hEM.
+usakA baDiyA jFAna, usakI baDiyA smqwi Ora usakI aWaka UrjA karIba karIba bIsa varRoM se isa uxxeSya ko samarpiwa kI gayI hE.
 Multiple adjective senses are available for untiring. WSD rule is required 
 
 Hindi meaning using Stanford parser 6.89
@@ -3285,7 +3290,7 @@ Multiple adjective senses are available for electric. WSD rule is required
 
 Hindi meaning using Stanford parser 7.45
 This model embodies many new features. 
-yaha namUnA ( mAdela ) bahuwa sArI nayI viSeRawAez sammiliwa karawA hE.
+yaha namUnA ( mAdela ) bahuwa nayI viSeRawAez sammiliwa karawA hE.
 
 Hindi meaning using Stanford parser 7.46
 The cigarette burned a hole in the carpet. 
@@ -3318,6 +3323,7 @@ dAkuoM ne pUrA gAzva Awafka_PElAkara_lUta liyA.
 Hindi meaning using Stanford parser 7.53
 He stuck up to his opponents. 
 usane usake vipakRa kA_datakara_sAmanA kiyA.
+usane usake prawipakRI kA_datakara_sAmanA kiyA.
 
 Hindi meaning using Stanford parser 7.54
 We stuck up the posters. 
@@ -3350,6 +3356,7 @@ gAdI traka se_takarA gaI.
 Hindi meaning using Stanford parser 7.61
 The article advances a new theory to explain changes in the climate. 
 leKa jalavAyu meM parivarwana samaJAne ke lie eka nayA sixXAnwa praswuwa karawI hE.
+leKa jalavAyu meM baxalAva samaJAne ke lie eka nayA sixXAnwa praswuwa karawI hE.
 
 Hindi meaning using Stanford parser 7.62
 Someone was beating a drum. 
@@ -3517,6 +3524,18 @@ gAdI joYna ke xvArA KarIxI gayI WI.
 Hindi meaning using Stanford parser 8.2
 Naming the government scheme after inspiring personalities is the easiest tool for reviving the history. 
 preraka vyakwiwva ke nAma para sarakArI yojanA kA nAmakaraNa karanA iwihAsa ko punarujjIviwa karane kA sabase aXika AsAna OjAra hE.
+
+Hindi meaning using Stanford parser 8.3
+The contribution of women in society is the highest. 
+samAja meM swriyoM kA yogaxAna sabase aXika hE.
+
+Hindi meaning using Stanford parser 8.4
+He sat back and lit up a cigarette. 
+vaha ArAma_se bETA Ora sigareta jalAI.
+
+Hindi meaning using Stanford parser 8.5
+His eyes lit up when she walked into the room. 
+usakI AzKeM KuSI_se_camaka uTIM jaba vaha kamare ke anxara gaI.
 
 Calling Transliteration
 Calling Interface related programs
