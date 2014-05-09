@@ -82,6 +82,16 @@
  (assert (yA-tam  yA_huA_ho_sakawA_hE))
  (assert (yA-tam  yA_huA_nahIM_hogA))
  )
+
+ ;to cntl generating vib for conj ids
+ (defrule rm_pada_cnt_fact_for_conj_ids
+ (declare (salience 1500))
+ (prep_id-relation-anu_ids - kriyA-object ?id ?obj_id)
+ (conjunction-components ?obj_id $? ?cid $?)
+ ?f1<-(pada_control_fact ?cid)
+ =>
+	(retract ?f1)
+ )
  ;---------------------------------- kA vib for RaRTI_viSeRaNa  ----------------------------------
  ;Added on (04-03-11)
  ;Ex: We had wasted our journey.
@@ -108,9 +118,24 @@
 	(printout ?*vib_debug_file* "(id-vib-source	"?sub_id"	"?vib"	WSD_sub_viBakwi )" crlf )
  )
  ;---------------------------------verb-to-obj vibakthi -----------------------------------------------------
+ ;I like music, theatre and cinema. 
+ (defrule wsd_kriyA_obj_vibakthi_rule_for_conj
+ (declare (salience 1000))
+ (or (and (kriyA_id-object_viBakwi ?root_id ?vib)(prep_id-relation-anu_ids ? kriyA-object  ?root_id ?obj_id))(and (kriyA_id-object2_viBakwi ?root_id ?vib)(prep_id-relation-anu_ids ? kriyA-object_2  ?root_id ?obj_id))(and (kriyA_id-object1_viBakwi ?root_id ?vib)(prep_id-relation-anu_ids ? kriyA-object_1  ?root_id ?obj_id)))
+ (conj_head-left_head-right_head ?obj_id ?lt ?rt)
+ ?f0<-(pada_control_fact ?obj_id)
+ ?f1<-(pada_control_fact ?lt)
+ ?f2<-(pada_control_fact ?rt)
+ ?f3<-(pada_info (group_head_id ?rt)(group_cat PP))
+ =>
+        (retract ?f0 ?f1 ?f2)
+        (modify ?f3 (vibakthi ?vib))
+        (printout ?*vib_debug_file* "(id-vib-source     "?obj_id"       "?vib"  WSD_obj_viBakwi) " crlf )
+ )
+ ;--------------------------------------------------------------------------------------------------------
  ;I saw him telling her about the party .
  (defrule wsd_kriyA_obj_vibakthi_rule
- (declare (salience 1000))
+ (declare (salience 995))
  (or (and (kriyA_id-object_viBakwi ?root_id ?vib)(prep_id-relation-anu_ids ? kriyA-object  ?root_id ?obj_id))(and (kriyA_id-object2_viBakwi ?root_id ?vib)(prep_id-relation-anu_ids ? kriyA-object_2  ?root_id ?obj_id))(and (kriyA_id-object1_viBakwi ?root_id ?vib)(prep_id-relation-anu_ids ? kriyA-object_1  ?root_id ?obj_id)))
  ?f0<-(pada_control_fact ?obj_id)
  ?f1<-(pada_info (group_head_id ?obj_id)(group_cat PP))

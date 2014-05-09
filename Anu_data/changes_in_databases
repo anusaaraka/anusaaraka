@@ -47,6 +47,7 @@
 	25. amana	Suggested by sukhada (20-03-14)		Ex: Everyone should maintain peace on the earth. 
 	26. pUrvasanXyA Suggested by Chaitanya Sir (2-05-14)	Ex: On the eve of Holi, a bonfire is lit up.
 	27. sanXyA  			"		"		
+	28. sigareta	Suggested by sukhada (08-05-14) 	Ex: He sat back and lit up a cigarette.
 	
 
   3. Removed :
@@ -473,6 +474,9 @@
 	investigator 	(	"		"		" ) Ex: The investigator will have to be thorough.
 	murderer	(Suggested by Pramila Banasthali 21-03-14 ) Ex: The convicted murderer escaped from a high security prison.
 	turkey		(Suggested by Preeti ji LTRC 	 14-04-14 ) Ex: Who's going to carve the turkey?
+	male		(Suggested by Sukhada            08-05-14 ) Ex: My many male friends were angered by the hearings.
+	female		(		"		    "	  ) Ex: My many female friends were angered by the hearings.
+	fairy		(		"		    "	  ) Ex: I saw many fairies in my dream.
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -2046,6 +2050,12 @@ Removed:
 				Ex: People stopped cargo train in the station.
 	112. least_resistance	AsAna_warIkA#AsAna_warIkA#noun#2#RM			(Suggested by Anita ji LTRC 02-04-14	)
 				Ex: I took the path of least resistance and agreed with the others.
+	113. military_rule   	senA_kA_SARana#senA_kA_SARana#noun#2#RM			(Suggested by Sukhada   02-05-14        )
+				Ex: Democratic government has now replaced military rule.
+	114. high_level_of_concentration     uccaswarIya_ekAgrawA#noun#4#RM		(		"	03-05-14	)
+				Ex:It is the sort of work that calls for a high level of concentration.
+	115. a_high_level_of_concentration   uccaswarIya_ekAgrawA#noun#4#RM		(		"	  "		)
+				Ex: It is the sort of work that calls for a high level of concentration.
 
 
     Added new meaning to the existing word:

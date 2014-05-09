@@ -281,7 +281,7 @@
  )
  ;------------------------------------------------------------------------------------------------------------------------
  ;sharing gender and number info of "and" to the "and components" if they are adjective
- ;She is ugly and fat.
+ ;She is ugly and fat. He is deaf and dumb.
  (defrule sub_and_samA_with_and
  (declare (salience 750))
  (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa|saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
@@ -294,8 +294,10 @@
  (not (modified_and_compnents ?samAnAXikaraNa_id))
  =>
 	(retract ?f0 ?f1)
-	(modify ?f0 (gender ?gen) (number ?num))
-	(modify ?f1 (gender ?gen) (number ?num))
+	(modify ?f0 (gender ?gen) )
+;	(modify ?f0 (gender ?gen) (number ?num))
+;	(modify ?f1 (gender ?gen) (number ?num))
+	(modify ?f1 (gender ?gen) )
 	(assert (modified_and_compnents ?samAnAXikaraNa_id))
  )
  ;========================================== Relative Clause Rule ==============================================
@@ -389,7 +391,7 @@
  =>
         (retract ?f1)
         (printout ?*gender* "(id-gender-src "?id "  "?gen"   subject-subject_samAnAXikaraNa)" crlf)
-        (printout ?*gnp_debug* "(pada_id-rule_name-gen_src " ?pada_id "modify_gender_for_and "?gen" subject-subject_samAnAXikaraNa)" crlf)
+        (printout ?*gnp_debug* "(pada_id-rule_name-gen_src " ?pada_id " modify_gender_for_and "?gen" subject-subject_samAnAXikaraNa)" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
  ;John screamed from inside the house .

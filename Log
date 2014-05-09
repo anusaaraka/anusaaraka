@@ -1,10 +1,10 @@
- 02-05-14
+ 09-05-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
 		  collect.clp	material.clp	remain.clp	can.clp		create.clp	cause.clp 	fresh.clp
 	 	  what.clp	ing_tam.clp	rent.clp	so.clp		after.clp	heavily.clp	ram.clp
-		  get.clp
+		  get.clp	many.clp
 	Added   : government.clp	revive.clp	grocery.clp
 	Modified following relations:
         kriyA-aXikaraNavAcI_avyaya  to  kriyA-aXikaraNavAcI
@@ -21,15 +21,17 @@
 	until.clp	upper.clp	variable.clp	velvet.clp	vessel.clp	waste.clp	were.clp	where.clp
 	with.clp	workshop.clp	a.clp		an.clp		as.clp		it.clp		so.clp
  2. vibakthi.clp
-	Added    : get_vib_for_grp_id_from_wsd	and 	get_vib_for_hid_from_wsd
+	Added    : get_vib_for_grp_id_from_wsd,	get_vib_for_hid_from_wsd, wsd_kriyA_obj_vibakthi_rule_for_conj and 
+		   rm_pada_cnt_fact_for_conj_ids
 	Modified : assert_facts rule
  3. sd-relation_rules.clp:
 	Modified: cop+nsubj_for_it, vmod, vmod1,  vmod+nsubj+cop rules(As stanford merged 'partmod' and 'infmod' to 'vmod')
-		  cop+nsubj, cop+nsubj_2
+		  cop+nsubj, cop+nsubj_2, amod ,amod_1
 	Renamed:  partmod	to	vmod
 		  infmod	to	vmod1
 		  partmod+nsubj+cop	to	vmod+nsubj+cop
 	Removed : attr+nsubj, attr+aux rules ('attr' is removed in 3.3.1 version)
+	Added   : conj+cc, assert_rel, sub_samA_be and kri_subj_be
 	Modified following relation_names:
         kriyA-aXikaraNavAcI_avyaya  as  kriyA-aXikaraNavAcI
         samAsa                      as  samAsa_viSeRya-samAsa_viSeRaNa
@@ -49,10 +51,11 @@
 		  source variable in the function 'print_hindi_mng'
  9. hindi_sent_reorder.clp:
 	Modified: insert_aXika_for_adj_er,  insert_sabase_aXika_adj_est -> Added source of provisional database in the list.
-		  wh_without_aux-reorder1
+		  wh_without_aux-reorder1, wo_rule_for_when2, insert_wo1 and insert_wo
 	Modified following relation_names:
  	       	kriyA-aXikaraNavAcI_avyaya  as  kriyA-aXikaraNavAcI
         	kriyA-conjunction           as  kriyA-vAkya_viBakwi
+	Removed  : insert_wo_for_yes_no_question, wo_rule_for_if1 and wo_rule_for_if
  10. prepare_apertium_input.clp:
 	Modified: word_mng_with_vib, word_mng_rule, Compound_mng_with_Prep_id1, Compound_mng_with_Prep_id 
 		  (Added source of provisional database in the list)
@@ -60,29 +63,33 @@
         Modified : rm_repeated_mng_from_sentence (added 'karIba|sAWa' in the list)
  12. H_ordering_rules.clp
 	Modified relation_name kriyA-conjunction  as  kriyA-vAkya_viBakwi
-	Modified : reverse-NP-Daughters (added 'level' in the list)
  13. sd_pada.clp
        Modified : multiple_prep_rule (added 'S' in the list)
  14. parser_tree_correction_rules.clp
 	Added : modify_PP_daughter
- 15. manual_lwg.clp
+ 15. GNP_agreement.clp
+	Modified : sub_and_samA_with_and
+ 16. agreement.clp 
+	Added : assert_facts, rm_agmt_cnt_fact_for_conj_ids, obj_agmt_with_yA_tams and obj_agmt_with_yA_tams1
+ 17. manual_lwg.clp
 	Added : single_vib1	Modified : kI_[word]
- 16. word_alignment.clp
+ 18. word_alignment.clp
 	Added : lookup_man_word_in_hindi_wnb_using_multi_word_dic
- 17. In run_modules_std.bat, run_modules_ol.bat and run_modules_link.bat
+ 19. In run_modules_std.bat, run_modules_ol.bat and run_modules_link.bat
 	Loaded 'punctuation_info.dat' file in WSD module
 	Opened 'pada_control_fact.dat' in append mode for 'vibakthi' module
- 18. Added following files:
+	Added : (assert (load_yA_tams)) for agreement module
+ 20. Added following files:
 	mail.js in Broswer/src
 	provisional_multi_word_dictionary.txt in Anu_data/compound-matching 
 	multi_word_expression_for_prov.c in multifast-v1.0.0/src
- 19. Modified following files:
+ 21. Modified following files:
 	multifast-v1.0.0/src/Makefile	-> To add compilation of multi_word_expression_for_prov.c programe
 	multifast-v1.0.0/src/multi_word_expression.c	-> Modified priority from '5' to '2'
 	multifast-v1.0.0/src/run.sh			-> To create 'provisional_multi_dic.c'
 	list-right			-> Added provisional_multi_word_dictionary.txt
 	list_Anu_data_compound		-> 		"
- 20. Modified following shell files:
+ 22. Modified following shell files:
 	run_sentence_stanford.sh	-> Displaying Warning message for provisional multi dictionary.
 	dic_compile.sh			-> Modified to remove 'provisional_multi_dic.c'	
 	remove_out-files.sh		-> 		"                              . to remove run_tregex_for_multiparse.sh
@@ -94,72 +101,72 @@
 	Anusaaraka_stanford.sh	Anusaaraka_site.sh	Anusaaraka_bllip_parser.sh	Anusaaraka_stanford_minion.sh
 	Anusaaraka.sh		Anusaaraka_all.sh	Anusaaraka_berkeley.sh	Anusaaraka_stanford-Factored.sh	
 	Anusaaraka_link.sh	Anusaaraka_ol.sh	Anusaaraka_rasp.sh	Anusaaraka_bllip_parser_minion.sh
- 21. In this1.py following modifications are done:
+ 23. In this1.py following modifications are done:
 	To display 'provisional_multi_word_dictionary'
 	To print Error message
         Separated mail related work in mail.js file
- 22. Added new option 'onesent' to run Anusaaraka when the input is one sentence per line. Following files are modified accordingly:
+ 24. Added new option 'onesent' to run Anusaaraka when the input is one sentence per line. Following files are modified accordingly:
 	Anusaaraka_stanford.sh
 	pre_process.sh
 	stdenglish.sh
 	add_snt_tag.lex		  -> Added this file to add sentence tag in input file.
 	std_format/Makefile	  -> Added compilation of add_snt_tag.lex
 	check-for-another-sent.pl -> Gives warnings if more tahn one sentence present in a line.
- 23. To get provisional_wsd_rules in canonical form, Modified following files:
+ 25. To get provisional_wsd_rules in canonical form, Modified following files:
         adjective.clp
         wsd_meaning.clp
         shell_scripts/anu_compile.sh
- 24. Updated following lex files:
+ 26. Updated following lex files:
  	handling_abbrevations.lex:	Added 'Rs.', 'rs.', 'approx' and 'cent'
 	abbrevations.lex	 :	Added 'B.Tech', 'Std.', 'Ex.', 'A.M.', 'a.m.', 'P.M.' and 'p.m.'
 	standard_abbrevations.lex:	Removed 'p'
 	constituency_parse.l	 :	Added ':'
 	mapping-symbols.lex	 :	Added '<' and '>' 
 	replace-mapping-symbols.lex :	Added '<' and '>'
- 25. Updated following dictionary related files:
+ 27. Updated following dictionary related files:
         changes_in_databases	 apertium-en-hi.en.metadix 	apertium_hn.dix
- 26. Updated the following files to add 'id-wsd_viBakwi' fact in nerver-called deffunction
+ 28. Updated the following files to add 'id-wsd_viBakwi' fact in nerver-called deffunction
 	causative_verb_mng.clp	hindi_meaning.clp		hindi_sent_reorder.clp	hindi_sentence.clp
 	number.clp		prepare_apertium_input.clp	tam_meaning.clp		preferred_morph_consistency_check.clp
 	vibakthi.clp
- 27. Updation of new versions:
+ 29. Updation of new versions:
 	Stanford parser:	3.2.0	to	3.3.1
 	Stanford Tregex:	3.2.0	to	3.3.1
- 28. Following files are updated according to the new version:
+ 30. Following files are updated according to the new version:
 	Anusaaraka_bllip_parser_minion.sh	Anusaaraka_rasp.sh		Anusaaraka_site.sh
 	Anusaaraka_stanford-Factored.sh		Anusaaraka_stanford.sh		Anusaaraka_stanford_minion.sh
 	run_stanford-gui-factored.sh		run_stanford-gui-pcfg.sh	anu_compile.sh
 	remove_out-files.sh			Anusaaraka.sh			Anusaaraka_all.sh	
 	Anusaaraka_berkeley.sh			Anusaaraka_bllip_parser.sh	run_tregex_for_multiparse.sh
 	run_tregex.sh				view_trees.sh
- 29. Updated following files:
+ 31. Updated following files:
 	Stanford_parser_fails
 	phy_verified_out
  	anusaaraka/README
 	Readme_to_use_email_in_firefox.txt
 	mail.php:    Added Root layer
- 30. Removed following files:
+ 32. Removed following files:
 	Stanford parser 3.2.0
 	Stanford Tregex 3.2.0
- 31. Added phrasal_alignment folder consisting of following files and folders in anusaaraka/miscellaneous/SMT
+ 33. Added phrasal_alignment folder consisting of following files and folders in anusaaraka/miscellaneous/SMT
 	compile.sh	en-hi-gdbm-dict.txt	map-ids.py	map-wrd-to-wrd.py	notes	replace_val_trn.py
 	short.py	w-w-phrase_dict		dev-corpus/	gdbm-fetch.c		Readme	mapping.py	
 	match_value_in_hnd.py	run_alignment.sh	tourism-corpus
- 32. In multifast-v1.0.0/src/ directory Added following files:
+ 34. In multifast-v1.0.0/src/ directory Added following files:
 	extract_key_using_multifast.c
 	extract_key.c
 	extract-key-dev-corpus.c
 	extract-key-tourism-corpus.c
 	Makefile (Updated for compilation of above file.)
- 33. In anusaaraka/bin Added following files:
+ 35. In anusaaraka/bin Added following files:
 	Anusaaraka_stanford_align_eng_ord.sh 
 	run_sentence_stanford_align_eng.sh
- 34. To get layered alignment o/p Added following files:
+ 36. To get layered alignment o/p Added following files:
 	create_eng_align_html.clp
 	run_align_browser_eng.sh
- 35. Updated 
-	sd_verified (802)	small_sent_verified_sd (169)
- 36. Updated Log.
+ 37. Updated 
+	sd_verified (805)	small_sent_verified_sd (169)
+ 38. Updated Log.
 
  06-01-14
  ========

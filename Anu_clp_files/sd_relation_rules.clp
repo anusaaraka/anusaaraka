@@ -33,7 +33,7 @@
  ?f<-(rel_name-sids ?rel   ?x ?y)
  (basic_rel_name-sids cc ?y ?and)
  =>
- (retract ?f)
+; (retract ?f)
  (assert (rel_name-sids ?rel  ?x  ?and))
  (printout       ?*dbug* "(rel_name-sids  "?rel" "?x"  "?and")"crlf)
  (printout       ?*dbug* "(rule-deleted_Relation-ids    replace_head  "?rel"  "?x"  "?and")"crlf)
@@ -42,7 +42,7 @@
  ;Added by Shirisha Manju
  ; Are a dog and a cat here?
  (defrule replace_head_with_cop
- (declare (salience 9999))
+ (declare (salience 9998))
  ?f<-(rel_name-sids ?rel&cop|nsubj   ?y ?x) ;Her mom was beautiful, talented and sweet. 
  (basic_rel_name-sids cc ?y ?and&and|or)
  (not (modified ?rel))
@@ -53,7 +53,17 @@
  (printout       ?*dbug* "(rule-deleted_Relation-ids    replace_head  "?rel "  "?x"  "?and")"crlf)
  (assert (modified ?rel))
  )
- ;=======================================================================================================================
+;------------------------------------------------------------------------------------------------------------------------
+ (defrule assert_rel
+ (declare (salience 9999))
+ (rel_name-sids ?rel  ?y ?x) 
+ (rel_name-sids conj_and|conj_or  ?x ?z) 
+ =>
+ (assert (rel_name-sids ?rel  ?y  ?z))
+ (printout       ?*dbug* "(rule-asserted_Relation-ids    assert_rel  "?rel "  "?y"  "?z")"crlf)
+ )
+;Rama, Mohan, Hari and Sita ate bananas and apples.
+;------------------------------------------------------------------------------------------------------------------------
  (defrule sub_samA_with_cop
  (declare (salience 9888))
  (rel_name-sids nsubj|nsubjpass ?x  ?sub)
@@ -63,11 +73,8 @@
  (printout      ?*fp*   "(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa   "?sub"  "?samA")"crlf)
  (printout      ?*dbug* "(prep_id-Rule-Rel-ids  -   sub_samA_with_cop     subject-subject_samAnAXikaraNa  "?sub"  "?samA")"crlf)
  )
-
  ; Ex. He is a devoted husband and a father. 
 ;------------------------------------------------------------------------------------------------------------------------
-
-
  (defrule expl
  (rel_name-sids expl ?kriyA ?dummy_sub)
  (parserid-word ?kriyA ?word&is|are|was|were|be);I went there to buy a book.
@@ -94,14 +101,14 @@
 (rel_name-sids nsubj|nsubjpass ?kriyA ?sub)
 (not (rel_name-sids cop ?kriyA ?))
 (not (rel_name-sids nn ?sub ?));Added by Shirisha Manju Ex : You are lucky that there is no exam today .
-(not (sub_for_kriyA ?kriyA))
+(not (sub_for_kriyA ?sub))
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -    kriyA-dummy_subject       "?kriyA"        "?kriyA_dummy_subject")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj_expl   kriyA-dummy_subject   "?kriyA"        "?kriyA_dummy_subject")"crlf)
 
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -    kriyA-aBihiwa       "?kriyA"        "?sub")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj_expl   kriyA-aBihiwa   "?kriyA"        "?sub")"crlf)
- (assert (sub_for_kriyA ?kriyA ))
+ (assert (sub_for_kriyA ?sub ))
 )
 ;Ex. There was a red mark on the door . 
 ;------------------------------------------------------------------------------------------------------------------------
@@ -137,13 +144,37 @@
  (not (got_kriyA-karwA ?kriyA))
  (not (got_kriyA-karwA_rel ?sub))
  (not (got_kriyA-subject ?kriyA))
+ (not (got_samAnAXikaraNa_rel  ?kriyA)) ;Rama must be educated.
  =>
  (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?kriyA"        "?sub")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kriyA_sub_rule   kriyA-subject   "?kriyA"        "?sub")"crlf)
- (assert (sub_for_kriyA ?kriyA))
+ (assert (sub_for_kriyA ?sub))
  )
  ;Added by Shirisha Manju
  ; The boy has a computer . The train left on time .
+ ;------------------------------------------------------------------------------------------------------------------------
+; (defrule sub_samA_be
+; (declare (salience 300))
+; (rel_name-sids nsubjpass ?samA ?sub)
+; (rel_name-sids auxpass ?samA ?b)
+; (parserid-word ?b be)
+; =>
+; (printout       ?*fp*   "(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa    "?sub"        "?samA")"crlf)
+; (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   sub_samA_be   subject-subject_samAnAXikaraNa    "?sub"        "?samA")"crlf)
+; (assert (got_samAnAXikaraNa_rel  ?samA))
+; )
+; ; Rama must be educated.
+; ;------------------------------------------------------------------------------------------------------------------------
+; (defrule kri_subj_be
+; (declare (salience 300))
+; (rel_name-sids nsubjpass ?samA ?sub)
+; (rel_name-sids auxpass ?samA ?b)
+; (parserid-word ?b be)
+; =>
+; (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?b"        "?sub")"crlf)
+; (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kri_subj_be  kriyA-subject    "?b"        "?sub")"crlf)
+; )
+; ; Rama must be educated.
  ;------------------------------------------------------------------------------------------------------------------------
 
  (defrule kri_shared_sub
@@ -239,6 +270,7 @@
  (parserid-word ?id and|or|well)
  (test (and (> (string_to_integer ?id) (string_to_integer ?x)) (< (string_to_integer ?id) (string_to_integer ?y))))
  =>
+     (assert (conjunction-components   ?id   ?x  (implode$ $?ids)   ?y))
      (printout ?*fp* "(conjunction-components  "?id"   "?x"  "(implode$ $?ids)"   "?y")"crlf)
      (printout ?*dbug* "(conjunction-components    conj-comp-rule  "?id"   "?x"  "(implode$ $?ids)"   "?y")"crlf)
  )
@@ -280,6 +312,7 @@
 (defrule ccomp
 (declare(salience -200)) 
 (rel_name-sids ccomp ?kriyA ?vAkyakarma)
+(not (ccomp_mapped_to_preraka_kriyA ?kriyA))
 ;(not (rel_name-sids advmod ?vAkyakarma ?)) ;--->Added by Mahalaxmi.
 ;(not (rel_name-sids aux ?vAkyakarma ?)) ;--->Added by Mahalaxmi.
 ;(not (rel_name-sids nsubj ?vAkyakarma ?)) ;--->Added by Mahalaxmi.
@@ -384,14 +417,14 @@ else
 (defrule nsubj+xcomp
 (rel_name-sids nsubj ?obj_s ?obj)
 (rel_name-sids xcomp ?kriyA ?obj_s)
-(parser_id-cat_coarse ?obj_s adjective)
+(parser_id-cat_coarse ?obj_s adjective|noun)
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     object-object_samAnAXikaraNa     "?obj"        "?obj_s")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj+xcomp     object-object_samAnAXikaraNa     "?obj"        "?obj_s")"crlf)
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-object     "?kriyA"        "?obj")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj+xcomp     kriyA-object     "?kriyA"        "?obj")"crlf)
 )
-; Ex.  I consider him intelligent.
+; Ex.  I consider him intelligent. She calls me her friend.
 ;------------------------------------------------------------------------------------------------------------------------ 
 
 
@@ -509,44 +542,45 @@ else
 )
  ; Ex. He talked to him in order to secure the account.
 ;------------------------------------------------------------------------------------------------------------------------
-(defrule advcl
-(rel_name-sids  advcl ?kri ?samakAlika_kri)
-=>
-(printout	?*fp*	"(prep_id-relation-parser_ids  -	kriyA-samakAlika_kriyA	"?kri"	"?samakAlika_kri")"crlf)
-(printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	advcl	kriyA-samakAlika_kriyA	"?kri"	"?samakAlika_kri")"crlf)
-)
+;(defrule advcl
+;(rel_name-sids  advcl ?kri ?samakAlika_kri)
+;=>
+;(printout	?*fp*	"(prep_id-relation-parser_ids  -	kriyA-samakAlika_kriyA	"?kri"	"?samakAlika_kri")"crlf)
+;(printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	advcl	kriyA-samakAlika_kriyA	"?kri"	"?samakAlika_kri")"crlf)
+;)
  ; Ex. The accident happened as the night was falling. 
 ;------------------------------------------------------------------------------------------------------------------------
-(defrule nsubj_advmod
+(defrule advmod
 (rel_name-sids advmod ?kri ?kri_viSeRaNa) 
 (parser_id-cat_coarse ?kri verb) ;He is more intelligent than John.
 (not  (got_viSeRya-jo_samAnAXikaraNa  ?kri_viSeRaNa))
 (not (got_kriyA-aXikaraNavAcI_rel_for ?kri_viSeRaNa))
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     kriyA-kriyA_viSeRaNa	"?kri"	"?kri_viSeRaNa")"crlf)	
-(printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	nsubj_advmod	kriyA-kriyA_viSeRaNa	"?kri"	"?kri_viSeRaNa")"crlf)	
+(printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	advmod	kriyA-kriyA_viSeRaNa	"?kri"	"?kri_viSeRaNa")"crlf)	
 )
  ; Ex. I like genetically modified food.  He runs fast.  When you take the scissors, remember to put them back. When the dollar is in a fall, even central banks can not stop it.
 ;------------------------------------------------------------------------------------------------------------------------
-(defrule nsubj_advmod_1
+(defrule advmod_1
 (rel_name-sids  advmod   ?viSeRya ?viSeRaka)
 (parser_id-cat_coarse ?viSeRya ~verb) 
 (parser_id-cat_coarse ?viSeRaka ~verb) 
 (not (got_kriyA_viSeRaNa_viSeRaka ?viSeRya)) ;They lived very simply.
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     viSeRya-viSeRaka     "?viSeRya"        "?viSeRaka")"crlf)      
-(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   nsubj_advmod_1    viSeRya-viSeRaka    "?viSeRya"        "?viSeRaka")"crlf)
+(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   advmod_1    viSeRya-viSeRaka    "?viSeRya"        "?viSeRaka")"crlf)
 )
 ;Added by Shirisha Manju  Ex: She is very careful about her work . She is apparently an excellent pianist .
 ;------------------------------------------------------------------------------------------------------------------------
-(defrule advmod_acomp
-(rel_name-sids advmod ?kriyA ?kriyA_viSeRaNa)
-(rel_name-sids acomp ? ?kriyA)
-=>
-(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-kriyA_viSeRaNa     "?kriyA"        "?kriyA_viSeRaNa")"crlf)      
-(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   advmod_acomp  kriyA-kriyA_viSeRaNa    "?kriyA"        "?kriyA_viSeRaNa")"crlf)      
-)
- ; Ex : I guess you are working very hard . ???	PARSER FAILS FOR THIS SENTENCE.
+;PARSER FAILS FOR THIS SENTENCE.
+;(defrule advmod_acomp
+;(rel_name-sids advmod ?kriyA ?kriyA_viSeRaNa)
+;(rel_name-sids acomp ? ?kriyA)
+;=>
+;(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-kriyA_viSeRaNa     "?kriyA"        "?kriyA_viSeRaNa")"crlf)      
+;(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   advmod_acomp  kriyA-kriyA_viSeRaNa    "?kriyA"        "?kriyA_viSeRaNa")"crlf)      
+;)
+; ; Ex : I guess you are working very hard . ???	PARSER FAILS FOR THIS SENTENCE.
  ; Added by Shirisha Manju
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule advmod1
@@ -602,29 +636,33 @@ else
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule amod
 (rel_name-sids amod ?viSeRya ?viSeRaNa)
-(parserid-word ?viSeRaNa ?word&~much&~many) ;How much more spilled ?
+(not (got_viSeRaNa-viSeRaka_rel ?viSeRaNa))
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     viSeRya-viSeRaNa	"?viSeRya"	"?viSeRaNa")"crlf)	
 (printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	amod	viSeRya-viSeRaNa	"?viSeRya"	"?viSeRaNa")"crlf)	
 )
- ; Ex. Sam eats red meat.
+ ; Ex. Sam eats red meat. There are many tissues of fat in our body . 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule amod_1
+(declare (salience 10))
 (rel_name-sids amod ?viSeRya ?viSeRaNa)
 (parserid-word ?viSeRaNa ?word&much|many)
+(parser_id-cat_coarse ?viSeRya ?c&~noun)
 =>
  (printout       ?*fp*   "(prep_id-relation-parser_ids  -     viSeRaNa-viSeRaka "?viSeRya"      "?viSeRaNa")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   amod_1    viSeRaNa-viSeRaka     "?viSeRya"      "?viSeRaNa")"crlf)
+(assert (got_viSeRaNa-viSeRaka_rel ?viSeRaNa))
 )
-; Added by Shirisha Manju  Ex: How much more spilled ?  There are many tissues of fat in our body . 
+; Added by Shirisha Manju  Ex: How much more spilled ? 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule vmod
 (rel_name-sids vmod ?viSeRya ?kqxanwa_vi) ;Modified partmod to vmod as new version of Stanford 3.3.1
+(not (rel_name-sids aux ?kqxanwa_vi ?to)) ;But my efforts to win his heart have failed. 
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     viSeRya-kqxanwa_viSeRaNa	"?viSeRya"	"?kqxanwa_vi")"crlf)	
 (printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	vmod	viSeRya-kqxanwa_viSeRaNa	"?viSeRya"	"?kqxanwa_vi")"crlf)	
 )
- ; Ex. He talked to him in order to secure the account.
+ ; Ex. He talked to him in order to secure the account. Truffles picked during the spring are tasty. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule mark
 (rel_name-sids mark ?kri ?conj)
@@ -646,6 +684,19 @@ else
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   mark+cop    kriyA-vAkya_viBakwi        "?kriyA"      "?conj")"crlf)
 )
  ; Ex. He disputed that our program was superior.
+;------------------------------------------------------------------------------------------------------------------------
+(defrule conj+cc
+(declare (salience 200))
+(rel_name-sids ?cnj ?kri1 ?kri2)
+(test (eq (sub-string 1 5 (implode$ (create$ ?cnj))) "conj_"))
+(rel_name-sids cc ?kri1  ?conj)
+(parser_id-cat_coarse ?kri1 verb)
+(parser_id-cat_coarse ?kri2 verb)
+=>
+(printout       ?*fp*   "(prep_id-relation-parser_ids  -     vAkya-vAkya_saMbanXI          "?kri1"      "?kri2")"crlf)
+(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   conj+cc    vAkya-vAkya_saMbanXI          "?kri1"      "?kri2")"crlf)
+)
+ ; Ex.We ran after him, but he escaped. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule conj_but
 (rel_name-sids ?cnj ?kriyA ?kri)
@@ -1138,6 +1189,7 @@ else
 (defrule xcomp
 (rel_name-sids xcomp  ?kri ?kq_vi)
 (parser_id-cat_coarse ?kri verb)
+(parser_id-cat_coarse ?kq_vi verb) ;She calls me her friend.
 (not (rel_name-sids cop ?kq_vi ?)) ;Added by Shirisha Manju 
 (not (parser_id-cat_coarse ?kq_vi adjective))
 (not (kriyA-kriyArWa_kriyA_rel_has_been_dcd_by_xcomp+aux_rule ?kq_vi))
@@ -1183,6 +1235,7 @@ else
 (rel_name-sids ccomp ?pre_kri ?kri)
 (parserid-word  ?pre_kri made|make|makes|making|has|have|had|having|get|gets|got|getting)
 =>
+(assert (ccomp_mapped_to_preraka_kriyA ?pre_kri))
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-preraka_kriyA   "       ?kri"    "?pre_kri")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   ccomp_1   kriyA-preraka_kriyA  "       ?kri"   "?pre_kri")"crlf)
 )
@@ -1191,12 +1244,22 @@ else
 (defrule ccomp+nsubj
 (rel_name-sids ccomp ?pre_kri ?kri)
 (rel_name-sids nsubj ?kri ?pra_karwA)
-(parserid-word  ?pre_kri made|make|makes|making|has|have|had|having|get|gets|got|getting)
+(parserid-word  ?pre_kri made|make|makes|making|has|have|had|having)
 =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-prayojya_karwA   "       ?kri"    "?pra_karwA")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   ccomp+nsubj   kriyA-prayojya_karwA   "       ?kri"    "?pra_karwA")"crlf)
 )
 ;Ex.  I made him go. The teacher made the students stay after class.
+;------------------------------------------------------------------------------------------------------------------------
+(defrule ccomp+nsubj_1
+(rel_name-sids ccomp ?pre_kri ?kri)
+(rel_name-sids nsubj ?kri ?obj)
+(parserid-word  ?pre_kri get|gets|got|getting)
+=>
+(printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-object   "       ?kri"    "?obj")"crlf)
+(printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   ccomp+nsubj_1   kriyA-object   "       ?kri"    "?obj")"crlf)
+)
+;Ex.  I got the house built. I got the car washed.
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule kri_sub_for_causative_verb
 (declare (salience 500))
@@ -1232,7 +1295,7 @@ else
 (defrule vmod1 
 (rel_name-sids vmod|xcomp  ?saMjFA ?kqxanwa) ;Modified infmod to vmod as new version of Stanford 3.3.1
 (parser_id-cat_coarse ?saMjFA ~verb) ;Added by Sukhada
-
+(rel_name-sids aux  ?kqxanwa ?to); Added by Sukhada. Ex. Truffles picked during the spring are tasty. 
  =>
 (printout       ?*fp*   "(prep_id-relation-parser_ids  -     saMjFA-to_kqxanwa        "?saMjFA"    "?kqxanwa")"crlf)
 (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   vmod1   saMjFA-to_kqxanwa        "?saMjFA"    "?kqxanwa")"crlf)
@@ -1250,7 +1313,7 @@ else
 ;------------------------------------------------------------------------------------------------------------------------
  (defrule cc_rule
  (rel_name-sids cc ?k P1)
- (parserid-word P1 But|And)
+ (parserid-word P1 For|And|Nor|But|Or|Yet|So|However)
  =>
         (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-vAkya_viBakwi "?k    " P1)"crlf)
         (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   cc_rule  kriyA-vAkya_viBakwi " ?k      " P1)"crlf)
@@ -1258,7 +1321,7 @@ else
  ; Ex. But my efforts to win his heart have failed . 
  ;Added by Shirisha Manju
 ;------------------------------------------------------------------------------------------------------------------------
- (defrule prep_nsubj_advmod_rule
+ (defrule prep_advmod_rule
  (declare (salience 100))
  ?f0<-(rel_name-sids prep ?kriyA ?prep)
  ?f1<-(rel_name-sids advmod ?kriyA ?prep_saM)
@@ -1266,7 +1329,7 @@ else
  (parserid-word ?prep_saM  ?word&where|what|Where|What|Who|who|Whom|whom)
  =>
  (printout      ?*fp*   "(prep_id-relation-parser_ids  "?prep"     kriyA-"(lowcase ?prp)"_saMbanXI        "?kriyA" "?prep_saM")"crlf)
- (printout      ?*dbug* "(prep_id-Rule-Rel-ids  "?prep"    prep_nsubj_advmod_rule  kriyA-"?prp"_saMbanXI        "?kriyA" "?prep_saM")"crlf)
+ (printout      ?*dbug* "(prep_id-Rule-Rel-ids  "?prep"    prep_advmod_rule  kriyA-"?prp"_saMbanXI        "?kriyA" "?prep_saM")"crlf)
  )
   ; Ex : Where are you coming from ?
   ; Added by Shirisha Manju

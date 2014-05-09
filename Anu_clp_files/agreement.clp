@@ -30,12 +30,83 @@
  (assert (conj_head-left_head-right_head))
  )
  ;--------------------------------------------------------------------------------------------------------------------
+ (defrule assert_facts
+ (declare (salience 10000))
+ (load_yA_tams)
+ =>
+ (assert (yA-tam  yA))
+ (assert (yA-tam  yA_WA))
+ (assert (yA-tam  yA_ho))
+ (assert (yA-tam  yA_hE))
+ (assert (yA-tam  yA_huA))
+ (assert (yA-tam  yA_huA_WA))
+ (assert (yA-tam  yA_hogA))
+ (assert (yA-tam  yA_howA))
+ (assert (yA-tam  yA_binA))
+ (assert (yA-tam  yA_huA_hogA))
+ (assert (yA-tam  yA_huA_honA))
+ (assert (yA-tam  yA_karawA_WA))
+ (assert (yA-tam  yA_hI_WA))
+ (assert (yA-tam  yA_hI_jAnA_hE))
+ (assert (yA-tam  yA_hI_jAnA_hE))
+ (assert (yA-tam  yA_cAhiye_WA))
+ (assert (yA-tam  yA_huA_ho_sakawA_hE))
+ (assert (yA-tam  yA_huA_nahIM_hogA))
+ )
+ ;--------------------------------------------------------------------------------------------------------------------
  (defrule end
  (declare (salience -2000))
  =>
         (close  ?*agrmt_file*)
         (close ?*agrmt_debug*)
  )
+ ;--------------------------------------------------------------------------------------------------------------------
+ (defrule rm_agmt_cnt_fact_for_conj_ids
+ (declare (salience 1550))
+ ?f0<-(prep_id-relation-anu_ids ?  kriyA-object|kriyA-subject ?kriyA_id ?id)
+ (prep_id-relation-anu_ids ?  kriyA-object|kriyA-subject ?kriyA_id ?cid)
+ (conjunction-components ?cid $? ?id $?)
+ ?f1<-(agmt_control_fact ?cid)
+ =>
+        (retract ?f1 ?f0)
+ )
+ ;--------------------------------------------------------------------------------------------------------------------
+ ;Suggested by Sukhada (7-4-14)
+ ;Shankar ran and grasped his tail.
+ ;Safkara xOdA Ora usakI pUzCa pakadI. 
+ ;I slept, drank milk and ate sweets.
+ (defrule obj_agmt_with_yA_tams
+ (declare (salience 1480))
+ (prep_id-relation-anu_ids ?  kriyA-object ?kriyA_id ?obj_id)
+ (pada_info (group_head_id ?kriyA_id)(group_cat VP) (H_tam ?tam))
+ (yA-tam  ?tam)
+ (pada_info (group_cat PP)(group_head_id ?obj_id)(vibakthi 0))
+ (id-HM-source ?kriyA_id ?mng ?)
+ (test (neq (str-index "_" ?mng)  FALSE))
+ (test (neq (sub-string (- (length ?mng) 2) (length ?mng) ?mng) "_jA")) ;Ex: Petu ran fast but missed the bus.
+ ?f0<-(agmt_control_fact ?kriyA_id)
+ =>
+        (retract ?f0)
+        (printout ?*agrmt_file* "(verb_agrmt-object_id-head_id  object " ?obj_id" " ?kriyA_id ")" crlf )
+        (printout ?*agrmt_debug* "(Rule_name-verb_agrmt-object_id-head_id  obj_agrmt_with_yA_tams   object " ?obj_id" " ?kriyA_id ")" crlf )
+ )
+ ;--------------------------------------------------------------------------------------------------------------------
+ ;Suggested by Sukhada (15-4-14)
+ (defrule obj_agmt_with_yA_tams1
+ (declare (salience 1490))
+ (prep_id-relation-anu_ids ?  kriyA-object ?kriyA_id ?obj_id)
+ (pada_info (group_head_id ?kriyA_id)(group_cat VP) (H_tam ?tam))
+ (yA-tam  ?tam)
+ (pada_info (group_cat PP)(group_head_id ?obj_id)(vibakthi 0))
+ (id-HM-source ?kriyA_id ?mng&~jA&~pahuzca ?);Because of this, the parents approached the High Court. 
+ (test (eq (str-index "_" ?mng)  FALSE))
+ ?f0<-(agmt_control_fact ?kriyA_id)
+ =>
+        (retract ?f0)
+        (printout ?*agrmt_file* "(verb_agrmt-object_id-head_id  object " ?obj_id" " ?kriyA_id ")" crlf )
+        (printout ?*agrmt_debug* "(Rule_name-verb_agrmt-object_id-head_id  obj_agrmt_with_yA_tams1   object " ?obj_id" " ?kriyA_id ")" crlf )
+ )
+
  ;--------------------------------------------------------------------------------------------------------------------
  ;Verb agrees with last id of subject with head_id "or"
  ;Ex. Are John or I invited ?
