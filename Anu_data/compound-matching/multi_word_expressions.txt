@@ -1765,7 +1765,6 @@ a_bit	WodZA_sA#WodZA_sA#noun#2#RM
 a_brick_built_house	pakkA_makAna#pakkA_makAna#noun#4#RM
 a_cappella_singing	vAxya_rahiwa_saMgIwa#vAxya_rahiwa_saMgIwa#noun#3#RM
 a_cart_load	gAdZI_Bara#gAdZI_Bara#noun#3#RM
-a_certain	koI_eka#koI_eka#noun#2#RM
 a_clever_thief	pakkA_cora#pakkA_cora#noun#3#RM
 a_couple_of	xo_eka#xo_eka#noun#2#RM
 a_few	kuCa#kuCa#noun#2#RM
