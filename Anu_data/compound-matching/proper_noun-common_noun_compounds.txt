@@ -346,6 +346,7 @@ native_Australian	oYstreliyAyI_mUlanivAsI#oYstreliyAyI_mUlanivAsI#noun#2#RM
 Wall_Street	voYl_strIta#voYl_strIta#noun#2#WM
 Thomas_Harris	Thomas_Harris#Thomas_Harris#noun#1#RM	
 Louis_Victor_de_Broglie	luisa_viktara_xe_broYglI#luisa_viktara_xe_broYglI#noun#1#WM
+Mill_Road	mila_roda#mila_roda#PropN#2#RM
 ### Following entries are extracted from .xls files given by Chaitanya Sir. Added by Roja 17-10-13
 101_Days	101_desa#101_desa#noun#2#RM
 12_O_Clock	12_o_kloka#12_o_kloka#noun#3#RM

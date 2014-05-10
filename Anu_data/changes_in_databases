@@ -477,6 +477,9 @@
 	male		(Suggested by Sukhada            08-05-14 ) Ex: My many male friends were angered by the hearings.
 	female		(		"		    "	  ) Ex: My many female friends were angered by the hearings.
 	fairy		(		"		    "	  ) Ex: I saw many fairies in my dream.
+	wife		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: He is cheating on his wife. 
+	bouncer		(Suggested by Sukhada		 09-05-14 ) Ex: He had the bouncers throw them out of the club. 
+	enemy		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: We charged at the enemy.  
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -1136,6 +1139,13 @@ Removed:
 	107. vedic_noun			vExika				(Suggested by Prachi Banasthali	   28-04-14)
 	108. vedic_adjective		vExika				(	"	"	"		"  )
 					Ex: Philosophy and culture, the Vedic sages Kapil, Buddha, Mahavira and Shankara are such notable ancestors.
+	109. charmed_adjective		camawkArI			(Suggested by Preeti ji LTRC 	   09-05-14)
+	110. chaperone_noun		saMrakRikA			(	"	"	"		"  )
+					Ex: I was a chaperone on one of my son's school trips. 
+	111. chaperone_verb		sAWa_raha_yA_jA			(	"	"	"		"  )
+					Ex: Two parents chaperoned the children.
+	112. certifcate_verb		pramANiwa_kara			(	"	"	"		"  )
+					Ex: The amounts earned have to be certificated by employers.
 
 
     4. Added new meaning to the existing word:
@@ -1595,6 +1605,12 @@ Removed:
 				Ex: Special emphasis was given to female education in ancient times. 
 	129. bonfire_noun	alAva		as 	holI			(Suggested by Chaitanya Sir 28-04-14)
 				Ex: On the eve of Holi, a bonfire is lit up.
+	130. chat_verb		gapaSapa_udA	as	bAwa_kara		(Suggested by Preeti ji LTRC 09-05-14)
+				Ex: What were you chatting about?
+	131. chemical_noun	xavA		as	rasAyana		(	"	"	"    10-05-14)
+				Ex: Farmers are being urged to reduce their use of chemicals and work with nature to combat pests.
+	132. chestnut_noun	SAhabalUwa_kI_lakadI_kA_banA	as	SAhabalUwa	(Suggested by Preeti ji 10-05-14)	
+				Ex: There are several types of chestnut tree. 
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1673,7 +1689,13 @@ Removed:
 	38. chagrining_UNDEFINED	KijAnA				(	"	"	"	"	)
 	39. chagrins_UNDEFINED	KijAnA					(	"	"	"	"	)
 	40. censured_UNDEFINED	ninxA_karanA				(	"	"	"	"	)
-	41. censures_UNDEFINED	ninxA_karanA				(	"	"	"	"	)	
+	41. censures_UNDEFINED	ninxA_karanA				(	"	"	"	"	)
+	42. charmed_UNDEFINED	mohiwa_karanA				(Suggested 	"	"	09-05-14) 
+	43. chaperone_UNDEFINED    cOkasI_karanA			(	"	"	"	"	)
+	44. chaperoned_UNDEFINED    cOkasI_karanA			(	"	"	"	"	)
+	45. chaperones_UNDEFINED    cOkasI_karanA			(	"	"	"	"	)
+	46. certifcate_UNDEFINED	pramANa_pawra			(	"	"	"	"	)
+	
 
     8. Modified category:
        ------------------
@@ -1752,6 +1774,8 @@ Removed:
 	Akhil_Bhartiya_Janwadi_Mahila_Samiti    aKila_BArawIya_janavAxI_mahilA_samiwi#aKila_BArawIya_janavAxI_mahilA_samiwi#noun#5#RM
 				to
 	Gandhi_Nagar    gAMXI_nagara#gAMXI_nagara#noun#2#RM
+	Mill_Road	mila_roda#mila_roda#PropN#2#RM			(Suggested by Anita ji LTRC 	10-05-14)
+			Ex: I live on Mill Road.
 
     
  multi_word_expressions.txt
@@ -1804,6 +1828,10 @@ Removed:
 				Ex:
 	22. reference_to	saMxarBa_meM#saMxarBa_meM#noun#2#RM	(Suggested by Anita ji LTRC	14-04-14)
 				Ex: Knowing what had happened, I avoided making any reference to weddings.
+	23. small_change	CotA_parivarwana#CotA_parivarwana#noun#2#RM	(Suggetsed by Preeti ji LTRC	10-05-14)
+				Ex: I did not have any small change to leave as a tip.
+	24. a_certain		koI_eka#koI_eka#noun#2#RM		(Suggested by Preeti ji LTRC	10-05-14)
+				Ex: You have to have a certain amount of courage to perform in public.
 
     Modified :
     --------
@@ -2056,6 +2084,10 @@ Removed:
 				Ex:It is the sort of work that calls for a high level of concentration.
 	115. a_high_level_of_concentration   uccaswarIya_ekAgrawA#noun#4#RM		(		"	  "		)
 				Ex: It is the sort of work that calls for a high level of concentration.
+	116. sweet_shop		miTAI_kI_xukAna#miTAI_kI_xukAna#noun#2#RM		(Suggested by Anita ji LTRC	10-05-14)
+				Ex: There's a sweet shop on the other side of the road.
+	117. rock_group		rAka_grupa#rAka_grupa#noun#2#RM				(	"	"	"	"	)
+				Ex: Most rock groups spend two or three months a year on the road.
 
 
     Added new meaning to the existing word:
@@ -2367,6 +2399,9 @@ Removed:
 	laborer		(Suggested by Prachi Banasthali	 21-03-14 ) Ex: a husky laborer
 	investigator 	(	"		"		" ) Ex: The investigator will have to be thorough.
 	murderer	(Suggested by Pramila Banasthali 21-03-14 ) Ex: The convicted murderer escaped from a high security prison.
+	wife		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: He is cheating on his wife.
+	bouncer		(Suggested by Sukhada		 09-05-14 ) Ex: He had the bouncers throw them out of the club.
+	enemy		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: We charged at the enemy.  
 
 
  changes in named_entities.txt
