@@ -1607,6 +1607,10 @@ Removed:
 				Ex: On the eve of Holi, a bonfire is lit up.
 	130. chat_verb		gapaSapa_udA	as	bAwa_kara		(Suggested by Preeti ji LTRC 09-05-14)
 				Ex: What were you chatting about?
+	131. chemical_noun	xavA		as	rasAyana		(	"	"	"    10-05-14)
+				Ex: Farmers are being urged to reduce their use of chemicals and work with nature to combat pests.
+	132. chestnut_noun	SAhabalUwa_kI_lakadI_kA_banA	as	SAhabalUwa	(Suggested by Preeti ji 10-05-14)	
+				Ex: There are several types of chestnut tree. 
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1770,6 +1774,8 @@ Removed:
 	Akhil_Bhartiya_Janwadi_Mahila_Samiti    aKila_BArawIya_janavAxI_mahilA_samiwi#aKila_BArawIya_janavAxI_mahilA_samiwi#noun#5#RM
 				to
 	Gandhi_Nagar    gAMXI_nagara#gAMXI_nagara#noun#2#RM
+	Mill_Road	mila_roda#mila_roda#PropN#2#RM			(Suggested by Anita ji LTRC 	10-05-14)
+			Ex: I live on Mill Road.
 
     
  multi_word_expressions.txt
@@ -1822,6 +1828,10 @@ Removed:
 				Ex:
 	22. reference_to	saMxarBa_meM#saMxarBa_meM#noun#2#RM	(Suggested by Anita ji LTRC	14-04-14)
 				Ex: Knowing what had happened, I avoided making any reference to weddings.
+	23. small_change	CotA_parivarwana#CotA_parivarwana#noun#2#RM	(Suggetsed by Preeti ji LTRC	10-05-14)
+				Ex: I did not have any small change to leave as a tip.
+	24. a_certain		koI_eka#koI_eka#noun#2#RM		(Suggested by Preeti ji LTRC	10-05-14)
+				Ex: You have to have a certain amount of courage to perform in public.
 
     Modified :
     --------
@@ -2074,6 +2084,10 @@ Removed:
 				Ex:It is the sort of work that calls for a high level of concentration.
 	115. a_high_level_of_concentration   uccaswarIya_ekAgrawA#noun#4#RM		(		"	  "		)
 				Ex: It is the sort of work that calls for a high level of concentration.
+	116. sweet_shop		miTAI_kI_xukAna#miTAI_kI_xukAna#noun#2#RM		(Suggested by Anita ji LTRC	10-05-14)
+				Ex: There's a sweet shop on the other side of the road.
+	117. rock_group		rAka_grupa#rAka_grupa#noun#2#RM				(	"	"	"	"	)
+				Ex: Most rock groups spend two or three months a year on the road.
 
 
     Added new meaning to the existing word:

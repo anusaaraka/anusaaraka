@@ -13904,7 +13904,7 @@ chef-d'oeuvre_noun	uwkqRta_kalAkqwi
 chef_UNDEFINED	KAnasAmA
 chef_noun	praXAna_rasoiyA
 chemical_adjective	rasAyanika/rAsAyanika/rAsAyana_sambanXI
-chemical_noun	xavA/rAsAyanika_paxArWa/rasAyana/kemikala/rasAyanika_xravya
+chemical_noun	rasAyana/xavA/rAsAyanika_paxArWa/kemikala/rasAyanika_xravya
 chemicaler_UNDEFINED	rasAyanika_xravya
 chemicalest_UNDEFINED	rasAyanika_xravya
 chemically_UNDEFINED	rasAyanika_rUpa_se
@@ -13946,7 +13946,7 @@ chessmen_UNDEFINED	SawaraFja_kI_gotI
 chest_noun	CAwI/wijorI/sInA/petI/koRa/badA_sanxUka/sanxUka
 chester_UNDEFINED	cejatara
 chestnut_adjective	BUrA
-chestnut_noun	SAhabalUwa_kI_lakadI_kA_banA/SAhabalUwa_kA_peda/lAla_BUre_rafga_kA_GodA/lAla_BUre_rafga_kA/GisApitA_kissA/bAxAma_jAwi_kA_peda/SAhabalUwa
+chestnut_noun	SAhabalUwa/SAhabalUwa_kI_lakadI_kA_banA/SAhabalUwa_kA_peda/lAla_BUre_rafga_kA_GodA/lAla_BUre_rafga_kA/GisApitA_kissA/bAxAma_jAwi_kA_peda
 chestnuter_UNDEFINED	SAhabalUwa
 chestnutest_UNDEFINED	SAhabalUwa
 chestnuts_UNDEFINED	SAhabalUwa
