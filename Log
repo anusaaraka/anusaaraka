@@ -1,4 +1,4 @@
- 09-05-14
+ 12-05-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
@@ -20,6 +20,13 @@
 	since.clp	standstill.clp	state.clp	sun.clp		term.clp	that.clp	turn.clp	union.clp
 	until.clp	upper.clp	variable.clp	velvet.clp	vessel.clp	waste.clp	were.clp	where.clp
 	with.clp	workshop.clp	a.clp		an.clp		as.clp		it.clp		so.clp
+	Whenever 'viSeRya-viSeRaNa' relation is present a dummy rule is created by replacing this relation with
+	'subject-subject_samAnAXikaraNa' and 'object-object_samAnAXikaraNa' relations
+	This is done automatically by a programme written by Sukhada
+	Following files are modified accordingly.
+		biological.clp	bold.clp	certain.clp	curious.clp	difficult.clp	early.clp	enormous.clp
+		following.clp	general.clp	malleable.clp	mind.clp	number.clp	performance.clp	sensitive.clp
+		systemic.clp	tarnish.clp	vacant.clp	vivid.clp
  2. vibakthi.clp
 	Added    : get_vib_for_grp_id_from_wsd,	get_vib_for_hid_from_wsd, wsd_kriyA_obj_vibakthi_rule_for_conj and 
 		   rm_pada_cnt_fact_for_conj_ids

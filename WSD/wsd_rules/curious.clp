@@ -28,3 +28,33 @@
 )
 )
 ;They speak neither French nor German , but a curious mixture of the two.
+
+;@@@ Added by Sukhada (12-05-14)
+(defrule sub_samA_curious1
+(declare (salience 4700))
+(id-root ?id curious)
+?mng <-(meaning_to_be_decided ?id)
+(subject-subject_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 mixture)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id viciwra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " sub_samA_curious1" ?id " viciwra )" crlf)
+)
+)
+
+;@@@ Added by Sukhada (12-05-14)
+(defrule obj_samA_curious1
+(declare (salience 4700))
+(id-root ?id curious)
+?mng <-(meaning_to_be_decided ?id)
+(object-object_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 mixture)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id viciwra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " obj_samA_curious1" ?id " viciwra )" crlf)
+)
+)
