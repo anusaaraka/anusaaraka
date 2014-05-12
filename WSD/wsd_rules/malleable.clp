@@ -36,3 +36,33 @@
 )
 
  
+
+;@@@ Added by Sukhada (12-05-14)
+(defrule sub_samA_malleable1
+(declare (salience 6600))
+(id-root ?id malleable)
+?mng <-(meaning_to_be_decided ?id)
+(id-root ?id1 ?noun)
+(subject-subject_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 idea|feature|workforce)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id AsAnI_se_praBAviwa_hone_vAlA ))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name_id-wsd_root_mng " ?*wsd_dir* " sub_samA_malleable1" ?id " AsAnI_se_ praBAviwa_hone_yA_baxalane_vAlA )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14)
+(defrule obj_samA_malleable1
+(declare (salience 6600))
+(id-root ?id malleable)
+?mng <-(meaning_to_be_decided ?id)
+(id-root ?id1 ?noun)
+(object-object_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 idea|feature|workforce)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id AsAnI_se_praBAviwa_hone_vAlA ))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name_id-wsd_root_mng " ?*wsd_dir* " obj_samA_malleable1" ?id " AsAnI_se_ praBAviwa_hone_yA_baxalane_vAlA )" crlf))
+)
