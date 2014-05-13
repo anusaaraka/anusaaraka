@@ -8,7 +8,7 @@
  ;Added by Roja (03-05-13) Suggested by Chaitanya Sir
  ;Meaning for adjective
  (defrule load_adjective.clp
- (declare (salience 7500))
+ (declare (salience 7000))
  (id-cat_coarse ?id adjective)
  (not (file_loaded ?file))
  =>
@@ -19,7 +19,7 @@
  ;--------------------------------------------------------------------------------------------------------- 
  ;Load user original word file
  (defrule load_user_org_word_file
- (declare (salience 7000))
+ (declare (salience -6005))
  (id-original_word ?id ?word)
  (not (meaning_has_been_decided ?id))
  ;(not (file_loaded ?id));Commented this fact by Roja(09-05-14).If mng not decided by orig_wrd then to check word and root, commented this fact
@@ -33,7 +33,7 @@
  ;---------------------------------------------------------------------------------------------------------
  ;Load user word file
  (defrule load_user_word_file
- (declare (salience 6000))
+ (declare (salience -6006))
  (id-word ?id ?word)
  (not (meaning_has_been_decided ?id))
  ;(not (file_loaded ?id));Commented this fact by Roja(09-05-14).If mng not decided by orig_wrd then to check word and root, commented this fact
@@ -47,7 +47,7 @@
  ;---------------------------------------------------------------------------------------------------------
  ; Load user root file
  (defrule load_user_root_file
- (declare (salience 5000))
+ (declare (salience -6007))
  (id-root ?id ?root)
  (not (meaning_has_been_decided ?id))
  ;(not (file_loaded ?id));Commented this fact by Roja(09-05-14).If mng not decided by orig_wrd, word then to check root, commented this fact
@@ -61,7 +61,7 @@
  ;---------------------------------------------------------------------------------------------------------
  ;Load original word file 
  (defrule load_org_word_file
- (declare (salience 4000))
+ (declare (salience -7000))
  (id-original_word ?id ?word)
  (not (meaning_has_been_decided ?id))
  ;(not (file_loaded ?id));Commented this fact by Roja(09-05-14).If mng not decided by orig_wrd then to check word and root, commented this fact
@@ -74,7 +74,7 @@
  ;---------------------------------------------------------------------------------------------------------
  ;Load word file
  (defrule load_word_file
- (declare (salience 3000))
+ (declare (salience -7500))
  (id-word ?id ?word)
  (not (meaning_has_been_decided ?id))
 ;(not (file_loaded ?id));Commented this fact by Roja(09-05-14). If mng not decided by orig_wrd then to check word and root, commented this fact
@@ -87,7 +87,7 @@
  ;---------------------------------------------------------------------------------------------------------
  ;Load root file
  (defrule load_root_file
- (declare (salience 2000))
+ (declare (salience -8000))
  (id-root ?id ?root)
  (not (meaning_has_been_decided ?id))
 ;(not (file_loaded ?id));Commented this fact by Roja(09-05-14). If mng not decided by orig_wrd and word then to check root, commented this fact

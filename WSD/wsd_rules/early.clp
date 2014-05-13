@@ -160,7 +160,7 @@ else
 
 ;
 
-;@@@ Added by Sukhada (12-05-14)
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
 (defrule sub_samA_early6
 (declare (salience 4700))
 (id-root ?id early)
@@ -182,7 +182,7 @@ else
 )
 ))
 
-;@@@ Added by Sukhada (12-05-14)
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
 (defrule obj_samA_early6
 (declare (salience 4700))
 (id-root ?id early)

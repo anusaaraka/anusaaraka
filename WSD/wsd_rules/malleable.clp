@@ -37,7 +37,7 @@
 
  
 
-;@@@ Added by Sukhada (12-05-14)
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
 (defrule sub_samA_malleable1
 (declare (salience 6600))
 (id-root ?id malleable)
@@ -52,7 +52,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name_id-wsd_root_mng " ?*wsd_dir* " sub_samA_malleable1" ?id " AsAnI_se_ praBAviwa_hone_yA_baxalane_vAlA )" crlf))
 )
 
-;@@@ Added by Sukhada (12-05-14)
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
 (defrule obj_samA_malleable1
 (declare (salience 6600))
 (id-root ?id malleable)

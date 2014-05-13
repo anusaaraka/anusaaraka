@@ -4,7 +4,7 @@
 
  ;Load user original word file
  (defrule load_user_adj_org_word_file
- (declare (salience 7495))
+ (declare (salience -6001))
  (id-original_word ?id ?word)
  (id-cat_coarse ?id adjective)
  (not (meaning_has_been_decided ?id))
@@ -19,7 +19,7 @@
  ;---------------------------------------------------------------------------------------------------------
  ;Load user word file
  (defrule load_user_adj_word_file
- (declare (salience 7480))
+ (declare (salience -6002))
  (id-word ?id ?word)
  (id-cat_coarse ?id adjective)
  (not (meaning_has_been_decided ?id))
@@ -34,7 +34,7 @@
  ;---------------------------------------------------------------------------------------------------------
  ;Loads system original word file 
  (defrule load_adj_org_word_file
- (declare (salience 7450))
+ (declare (salience -6003))
  (id-original_word ?id ?word)
  (id-cat_coarse ?id adjective)
  (not (meaning_has_been_decided ?id))
@@ -48,7 +48,7 @@
  ;---------------------------------------------------------------------------------------------------------
  ; Load system word file
  (defrule load_adj_word_file
- (declare (salience 7400))
+ (declare (salience -6004))
  (id-word ?id ?word)
  (id-cat_coarse ?id adjective)
  (not (meaning_has_been_decided ?id))
