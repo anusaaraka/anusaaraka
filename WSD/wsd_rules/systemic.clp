@@ -15,7 +15,7 @@
 
 
 
-;@@@ Added by Sukhada (12-05-14)
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
 (defrule sub_samA_systemic0
 (declare (salience 5000))
 (id-root ?id systemic)
@@ -29,7 +29,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " sub_samA_systemic0" ?id " sistama_saMbanXI )" crlf))
 )
 
-;@@@ Added by Sukhada (12-05-14)
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
 (defrule obj_samA_systemic0
 (declare (salience 5000))
 (id-root ?id systemic)

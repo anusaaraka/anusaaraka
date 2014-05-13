@@ -95,7 +95,7 @@
 
 
 
-;@@@ Added by Sukhada (12-05-14)
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
 (defrule sub_samA_tarnish0
 (declare (salience 5000))
 (id-root ?id tarnish)
@@ -110,7 +110,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng " ?*wsd_dir* " sub_samA_tarnish0" ?id " bigadI_huI )" crlf))
 )
 
-;@@@ Added by Sukhada (12-05-14)
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
 (defrule obj_samA_tarnish0
 (declare (salience 5000))
 (id-root ?id tarnish)

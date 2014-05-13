@@ -29,7 +29,7 @@
 )
 ;They speak neither French nor German , but a curious mixture of the two.
 
-;@@@ Added by Sukhada (12-05-14)
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
 (defrule sub_samA_curious1
 (declare (salience 4700))
 (id-root ?id curious)
@@ -44,7 +44,7 @@
 )
 )
 
-;@@@ Added by Sukhada (12-05-14)
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
 (defrule obj_samA_curious1
 (declare (salience 4700))
 (id-root ?id curious)
