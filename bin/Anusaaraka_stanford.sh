@@ -40,6 +40,8 @@
  ###Added below loop for server purpose.
  if [ "$3" == "True" ] ; then 
     echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
+    cd $HOME_anu_provisional_wsd_rules
+    sh get_canonical_form_prov_wsd_rules.sh 
  else
     echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
  fi
