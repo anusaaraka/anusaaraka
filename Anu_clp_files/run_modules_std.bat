@@ -297,6 +297,7 @@
  (load-facts "root.dat")
  (load-facts "preferred_morph.dat")
  (load-facts "wsd_facts_output.dat")
+ (load-facts "morph.dat")
  (open "revised_preferred_morph.dat" morph_cons_fp "w")
  (open "revised_root.dat" rev_rt_fp "w")
  (run)
