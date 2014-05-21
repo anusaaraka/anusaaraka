@@ -15,11 +15,9 @@
 import sys
 h_input = open(sys.argv[1],"r")
 hi_file = h_input.readlines()
-g_input = open(sys.argv[2],"r")
-g_file  = g_input.readlines()
-m_input = open(sys.argv[3],"r")
+m_input = open(sys.argv[2],"r")
 m_file  = m_input.readlines()
-a_out   = open(sys.argv[4],"w")
+a_out   = open(sys.argv[3],"w")
 
 c_file = open('count_dict.txt', 'w')
 
@@ -42,93 +40,94 @@ c_file.close()
 
 c_dic = open('count_dict.txt', 'r')
 c_dic_file  = c_dic.readlines()
-left_over = open(sys.argv[5], 'w')
+left_over = open(sys.argv[3], 'w')
+
+#Function to delete an item. 
+def del_item(Str, List):
+        if Str in List:
+                List.pop(List.index(Str))
+        return List
+
+
 sent_count = 0
-flag = 0 
-align_dic = {}
-tmp_dic = {}
-eng_key_lst = []
+flag = 0
+align_dic = {} 
+
+pre_key = ''
+cur_key = ''
+pre_val = ''
+cur_val = ''
+new_val = ''
+hi_sent = hi_file[0]   #to use del_item function 0th sentence is checked outside.
+hi_sent_tmp = hi_sent[1:-2].strip()
+hi_lst = hi_sent_tmp.split('_')
 for line in m_file:
-	graph_out = g_file[sent_count]  #picking graph o/p based on sentence no:
-        hi_sent = hi_file[sent_count]   #picking manual sentence based on sentence no:
-        hi_sent_tmp = hi_sent[1:-2].strip()
-        hi_lst = hi_sent_tmp.split('_')
-        new_line = graph_out[2:-3]
-        g_lst = new_line.split("', '")
-        if 'Construction mismatch' in graph_out:
-                flag = 1
-	if ';~~~~~~~~~~\n' in line:
-		if flag == 1:
-                        a_out.write("Construction mismatch\n")
+	if 'Construction mismatch' in line:
+		print line.strip()
+	elif ';~~~~~~~~~~\n' in line :
 		for key in sorted(align_dic):
-			hnd = align_dic[key][1:-1].split('_')
-#			print hnd, hi_lst, len(hnd)
-			eng = key.split()
-                        for j in hnd:
-                                if j in hi_lst:
-                                        for index, item in enumerate(hi_lst):
-                                                if j == item:
-                                                        del hi_lst[index]
-							break
-			for k in eng:
-                                if k in eng_key_lst:
-                                        for index, item in enumerate(eng_key_lst):
-                                                if k == item:
-                                                        del eng_key_lst[index]
-							break
+			v = align_dic[key].split('\t')
+			print v[1] + '\t' + v[2] + '\t' + str(key) + ' ' + v[0]
+                print line.strip()
+		left_over.write("(hindi_left_over_words\t%s" % ' '.join(hi_lst))
+		left_over.write(")\n;~~~~~~~~~~\n")
+		align_dic = {}
+		if sent_count < len(hi_file)-1:
+			sent_count += 1
+			hi_sent = hi_file[sent_count]   #picking manual sentence based on sentence no:
+			hi_sent_tmp = hi_sent[1:-2].strip()
+			hi_lst = hi_sent_tmp.split('_')
+	else:
+		lst = line.split()
 		for each_count in c_dic_file:
 			if ';~~~~~~~~~~\n' in each_count:
-                        	pass
+				pass
 			else:
+				flag = 0
 				c_lst = each_count.strip().split('\t')
-				for i in range(0, len(eng_key_lst)):
-					for each_key in tmp_dic.keys():
-						l = tmp_dic[each_key].split()
-						if l[0] == eng_key_lst[i] and eng_key_lst[i] == c_lst[0] and int(c_lst[1]) > 1:
-							val = l[1].split('/')
-							for each_val in range(0, len(val)):
-								if  val[each_val][1:-1] in hi_lst:
-#									print eng_key_lst[i], val[each_val], each_key
-									v = eng_key_lst[i] + '\t' + val[each_val]
-									align_dic[each_key] = v
-						                        if val[each_val][1:-1] in hi_lst:
-						                        	for index, item in enumerate(hi_lst):
-                                                					if val[each_val][1:-1] == item:
-						                                        	del hi_lst[index]
-                                                						break 
-		for key in sorted(align_dic):			
-			a_out.write(align_dic[key] + '\t' +  key + '\n')
-                a_out.write(line)
-		sent_count += 1
-		align_dic = {}
-		tmp_dic = {}
-		eng_key_lst = []
-		flag = 0 
-		left_over.write('(english_left_over_wrds\t%s)\n(hindi_left_over_words\t%s)\n' % (' '.join(eng_key_lst), ' '.join(hi_lst)))
-		left_over.write(';~~~~~~~~~~\n')
-	else:
-		for i in range(0,len(g_lst)-1):
-			lst = line.split()
-			if g_lst[i] == lst[2] and g_lst[i+1] == lst[3].strip():
-				k = lst[2] + ' ' + lst[3]
-				v = lst[0] + '\t' + lst[1] 
-				if k in tmp_dic.keys():
-					val = tmp_dic[k]
-					if v not in val:
-		        	                val = val + '/' + lst[1]
-						v = val
-                			        tmp_dic[k] = v
-				else:
-					tmp_dic[k] = v
-				if lst[0] not in eng_key_lst:
-			        	eng_key_lst.append(lst[0])
-				for each_count in c_dic_file:
-					if ';~~~~~~~~~~\n' in each_count:
-						pass
-					else:
-						c_lst = each_count.strip().split('\t')
-						if lst[0] == c_lst[0] and int(c_lst[1]) == 1:
-							v = lst[0] + '\t' + lst[1]
-							k = lst[2] + ' ' + lst[3]
-							align_dic[k] = v
-	
+				if int(c_lst[1]) == 1 and c_lst[0] == lst[0]:
+					key = lst[2]  
+					val = lst[3] + '\t' + lst[0] + '\t' + lst[1]
+					align_dic[int(key)] = val
+#					print '###', lst[0] + '\t' + lst[1] + '\t' + lst[2] + ' ' + lst[3]
+					aligned_hnd = lst[1].split('_')
+					for j in aligned_hnd:
+						del_item(j, hi_lst)	
+				elif int(c_lst[1]) >= 1 and c_lst[0] == lst[0]:
+					hindi_phrase = lst[1][1:-1].split('_')
+					for item in hindi_phrase:
+						if item in hi_lst:
+							flag = 1
+						else:
+							flag = 0
+					if flag == 1:
+						key = lst[2] + ' '  + lst[3]
+						val = lst[0] + '\t' + lst[1]
+						if key not in align_dic:
+							k = key.split()
+                                                        v = k[1] + '\t' + val
+                                                        align_dic[int(k[0])] = v
+#							print '&&&', k[0], v
+							aligned_hnd = lst[1].split('_')
+	                                        	for j in aligned_hnd:
+        	                                        	del_item(j, hi_lst)
+						else:
+							cur_key = key
+							cur_val = val
+							if pre_key == cur_key:
+								if len(pre_val) >= len(cur_val):
+									new_val = pre_val
+								else:
+									new_val = cur_val
+							pre_key = cur_key
+							pre_val = cur_val
+							k = pre_key.split()
+							v = k[1] + '\t' + new_val
+							align_dic[int(k)] = v
+#							print '@@@', k[0], v
+							if len(new_val) > 1:
+								v = new_val.split('\t')
+								aligned_hnd = v[1].split('_')
+								for j in aligned_hnd:
+        		                                        	del_item(j, hi_lst)
+#						print '@@@', lst[0] + '\t' + lst[1] + '\t' + lst[2] + ' ' + lst[3]
