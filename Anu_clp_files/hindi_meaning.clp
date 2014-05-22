@@ -39,6 +39,22 @@
  (assert (id-eng-src))
  (assert (id-attach_eng_mng))
  (assert (id-wsd_viBakwi))
+ (assert (dir_name-file_name-rule_name-id-wsd_root_mng))
+ (assert (dir_name-file_name-rule_name-id-wsd_word_mng))
+ (assert (dir_name-file_name-rule_name-id-H_tam_mng))
+ (assert (default-iit-bombay-shabdanjali-dic.gdbm))
+ (assert (dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng))
+ (assert (dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_word_mng))
+ (assert (dir_name-file_name-rule_name-root_id-TAM-vachan))
+ (assert (dir_name-file_name-rule_name-make_verbal_noun))
+ (assert (dir_name-file_name-rule_name-id-H_vib_mng))
+ (assert (dir_name-file_name-rule_name-kriyA_id-object_viBakwi))
+ (assert (dir_name-file_name-rule_name-kriyA_id-subject_viBakwi))
+ (assert (dir_name-file_name-rule_name-id-wsd_root))
+ (assert (dir_name-file_name-rule_name-kriyA_id-object1_viBakwi))
+ (assert (dir_name-file_name-rule_name-kriyA_id-subject1_viBakwi))
+ (assert (dir_name-file_name-rule_name-id-preceeding_part_of_verb))
+ (assert (dir_name-file_name-rule_name-id-wsd_number))
  )
 
  ;------------------------------------------ Functions ---------------------------------------------------------
@@ -171,12 +187,14 @@
  (defrule wsd_cmp_phrase_word_mng
  (declare (salience 9400))
  (affecting_id-affected_ids-wsd_group_word_mng  ?id  $?ids ?cmp_mng)
+ (dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_word_mng ? ?file_name ?rule_name ?id $?ids ?)
  ?f<-(meaning_to_be_decided ?id)
  =>
 	(retract ?f)
+        (bind ?str (str-cat WSD_compound_phrase_word_mng ",rule::"  ?rule_name))
 	(print_hindi_mng ?id -  WSD_compound_phrase_word_mng $?ids)
-	(printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?cmp_mng"    WSD_compound_phrase_word_mng)" crlf)
-        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    WSD_compound_phrase_word_mng "?id" "(implode$ $?ids)")" crlf)
+	(printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?cmp_mng"    "?str")" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    "?str" "?id" "(implode$ $?ids)")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ; WSD compound phrase mng.
@@ -184,12 +202,14 @@
  (defrule wsd_cmp_phrase_root_mng
  (declare (salience 9400))
  (affecting_id-affected_ids-wsd_group_root_mng  ?id  $?ids ?cmp_mng)
+ (dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng ? ?file_name ?rule_name ?id $?ids ?)
  ?f<-(meaning_to_be_decided ?id)
  =>
 	(retract ?f)
+        (bind ?str (str-cat WSD_compound_phrase_root_mng ",rule::"  ?rule_name))
 	(print_hindi_mng ?id -  WSD_compound_phrase_root_mng $?ids)
-        (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?cmp_mng"    WSD_compound_phrase_root_mng)" crlf)
-	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    WSD_compound_phrase_root_mng "?id" "(implode$ $?ids)")" crlf)
+        (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?cmp_mng"   "?str")" crlf)
+	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    "?str" "?id" "(implode$ $?ids)")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;WSD verb phrase mng
@@ -198,13 +218,16 @@
  (declare (salience 9300))
  (prep_id-relation-anu_ids ?  kriyA-upasarga  ?id ?id1)
  (affecting_id-affected_ids-wsd_group_word_mng  ?id  ?id1 ?grp_mng)
+ (dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng ? ?file_name ?rule_name ?id $?ids ?)
  ?mng<-(meaning_to_be_decided ?id)
  ?mng1<-(meaning_to_be_decided ?id1)
  =>
   (retract ?mng ?mng1)
-  (printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?grp_mng "  WSD_verb_phrase_word_mng)" crlf)
-  (printout ?*hin_mng_file* "(id-HM-source   "?id1"   -    WSD_verb_phrase_word_mng)" crlf)
-  (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id1"   "?grp_mng"    WSD_verb_phrase_word_mng "?id" "?id1")" crlf)
+  (bind ?str (str-cat WSD_verb_phrase_word_mng ",rule::"  ?rule_name))
+  (bind ?str1 (str-cat WSD_verb_phrase_word_mng ",rule::"  ?rule_name))
+  (printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?grp_mng"  "?str")" crlf)
+  (printout ?*hin_mng_file* "(id-HM-source   "?id1"   -    "?str1")" crlf)
+  (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id1"   "?grp_mng"    "?str1"  "?id" "?id1")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;WSD verb phrase mng
@@ -213,12 +236,15 @@
  (declare (salience 9300))
  (prep_id-relation-anu_ids  ? kriyA-upasarga  ?id ?id1)
  (affecting_id-affected_ids-wsd_group_root_mng  ?id  ?id1 ?grp_mng)
+ (dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng ? ?file_name ?rule_name ?id $?ids ?)
  ?mng<-(meaning_to_be_decided ?id)
  ?mng1<-(meaning_to_be_decided ?id1)
  =>
   (retract ?mng ?mng1)
-  (printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?grp_mng "  WSD_verb_phrase_root_mng)" crlf)
-  (printout ?*hin_mng_file* "(id-HM-source   "?id1"   -    WSD_verb_phrase_root_mng)" crlf)
+  (bind ?str (str-cat WSD_verb_phrase_root_mng ",rule::"  ?rule_name))
+  (bind ?str1 (str-cat WSD_verb_phrase_root_mng ",rule::"  ?rule_name))
+  (printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?grp_mng "  "?str")" crlf)
+  (printout ?*hin_mng_file* "(id-HM-source   "?id1"   -    " ?str1")" crlf)
   (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?grp_mng "  WSD_verb_phrase_root_mng "?id" "?id1")" crlf)
  )
  ;=================================== Default multi word meaning ===============================================
@@ -469,11 +495,13 @@
  (defrule wsd_word_mng
  (declare (salience 8200))
  ?mng<-(meaning_to_be_decided ?id)
+ (dir_name-file_name-rule_name-id-wsd_word_mng  ?  ?file_name 	?rule_name  ?id ?)
  (id-wsd_word_mng ?id ?h_word)
  =>
         (retract ?mng)
-        (printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?h_word "    WSD_word_mng)" crlf)
-        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?h_word "    WSD_word_mng "?id")" crlf)
+        (bind ?str (str-cat WSD_word_mng ",rule::"  ?rule_name))
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?h_word"  "?str")" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?h_word" "?str" "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  (defrule idiom_root_mng
@@ -489,11 +517,13 @@
  (defrule wsd_root_mng
  (declare (salience 8000))
  ?mng<-(meaning_to_be_decided ?id)
+ (dir_name-file_name-rule_name-id-wsd_root_mng  ?  ?file_name 	?rule_name  ?id ?)
  (id-wsd_root_mng ?id ?h_word)
  =>
         (retract ?mng)
-        (printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?h_word "   WSD_root_mng)" crlf)
-        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?h_word "   WSD_root_mng "?id")" crlf)
+        (bind ?str (str-cat WSD_root_mng ",rule::"  ?rule_name))
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?h_word "   "?str")" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?h_word "   "?str" "?id")" crlf)
  )
  ;========================================== Default single word meaning =======================================
  ;Added by Shirisha Manju (09-05-13)

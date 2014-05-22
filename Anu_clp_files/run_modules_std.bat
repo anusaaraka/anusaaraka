@@ -405,6 +405,7 @@
  (load-facts "original_word.dat")
  (load-facts "word.dat")
  (load-facts "domain.dat")
+ (load-facts "debug_file.dat")
  (open "proper_nouns.dat" p_noun "w")
  (open "hindi_meanings_tmp.dat" fp "a")
  (open "hindi_meanings_with_grp_ids_tmp.dat" fp1 "w")
