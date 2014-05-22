@@ -1,4 +1,4 @@
- 21-05-14
+ 22-05-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
@@ -173,6 +173,7 @@
 	short.py	get_phrase.py		dev-corpus/	gdbm-fetch.c		Readme	mapping.py
 	align.sh	match_value_in_hnd.py	split.sh	tourism-corpus		Word-to-Word-dict.txt
 	align-left-over-wrds.py		get_word_align.py	replace-punctuation.lex	run_alignment.sh
+	print_shortest_path.py
  38. In multifast-v1.0.0/src/ directory Added following files:
 	extract_key_using_multifast.c
 	extract_key.c
