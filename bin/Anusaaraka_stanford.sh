@@ -37,6 +37,8 @@
 
  mkdir $MYPATH/tmp/$1_tmp
 
+ PRES_PATH=`pwd`
+ cp $1 $MYPATH/tmp/$1_tmp/
  ###Added below loop for server purpose.
  if [ "$3" == "True" ] ; then 
     echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
@@ -46,8 +48,6 @@
     echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
  fi
 
- PRES_PATH=`pwd`
- cp $1 $MYPATH/tmp/$1_tmp/
  #running stanford NER (Named Entity Recogniser) on whole text.
  echo "Calling NER ..."
  cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2013-06-20/

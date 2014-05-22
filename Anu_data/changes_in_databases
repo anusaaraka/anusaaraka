@@ -679,6 +679,11 @@ Modified :
 	utmost		house__n		(     "      "    )
 	level		quarrel__vblex		(     "      "    )
 	level		accept__vblex		(     "      "    )
+	chisel		quarrel__vblex		(     "	  22-05-14)
+	chisel		accept__vblex		(     "	     "	  )
+	bargaining	east__n			(     "	     "    )
+	brie		house__n		(     "	     "	  )
+
 
 
 
@@ -1146,7 +1151,8 @@ Removed:
 					Ex: Two parents chaperoned the children.
 	112. certifcate_verb		pramANiwa_kara			(	"	"	"		"  )
 					Ex: The amounts earned have to be certificated by employers.
-
+	113: greatest_adjective		sabase_badA/sabase_mahAna	(Suggested by Chaitanya Sir	   22-05-14)
+					Ex: Shut down the greatest website in the world.
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1695,7 +1701,8 @@ Removed:
 	44. chaperoned_UNDEFINED    cOkasI_karanA			(	"	"	"	"	)
 	45. chaperones_UNDEFINED    cOkasI_karanA			(	"	"	"	"	)
 	46. certifcate_UNDEFINED	pramANa_pawra			(	"	"	"	"	)
-	
+	47. greatest_UNDEFINED	badA					(Suggested by Chaitanya Sir	22-05-14)
+	48. greatestest_UNDEFINED	mahAnawama			(	"	"	"	"	)
 
     8. Modified category:
        ------------------
@@ -2088,6 +2095,10 @@ Removed:
 				Ex: There's a sweet shop on the other side of the road.
 	117. rock_group		rAka_grupa#rAka_grupa#noun#2#RM				(	"	"	"	"	)
 				Ex: Most rock groups spend two or three months a year on the road.
+	118. chink_of_light	prakASa_kI_kiraNa#prakASa_kI_kiraNa#noun#2#RM		(Suggested by Preeti ji LTRC	22-05-14)
+				Ex: Chinks of light coming through the trees started to become like gun shots.
+	119. back_yard		piCavAdZA#piCavAdZA#2#RM				(Suggested by Preeti ji LTRC	"	)
+				Ex: They keep chickens in the back yard.
 
 
     Added new meaning to the existing word:
