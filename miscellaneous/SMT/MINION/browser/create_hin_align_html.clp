@@ -163,6 +163,15 @@
  (assert (anu_id-anu_mng-man_id-man_mng ?id ?anu_gp_mng ?id1 ?man_gp_mng))
  )
 
+ (defrule change_manual_op_fact
+ (declare (salience 2002))
+ ?f<-(anu_id-anu_mng-man_mng ?aid ?anu_mng ?man_mng)
+  =>
+ (retract ?f)
+ (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid ?anu_mng - - ?man_mng))
+ )
+
+
  ;convert Apertium_output wx notation to utf8.
  (defrule convert_wx_to_utf8
  (declare (salience 5999))
@@ -359,19 +368,19 @@
  (printout fp "</td></tr>" crlf)
  (printout fp "<tr><td>"(implode$ $?eng_sen)"</td></tr>" crlf)
  (printout fp "<tr><td>"(wx_utf8 (implode$ $?man_sen))"</td></tr>" crlf)
- (bind ?dic_path (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/minion_sen_dic.txt"))
- (printout t ?dic_path "----------" crlf)
- (open ?dic_path dic_fp)
- (bind ?val (readline dic_fp))
+; (bind ?dic_path (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/minion_sen_dic.txt"))
+; (printout t ?dic_path "----------" crlf)
+; (open ?dic_path dic_fp)
+; (bind ?val (readline dic_fp))
  (printout fp "<tr><td>" crlf)
- (while (neq ?val EOF)
- (printout fp ?val"<br>" crlf)
+; (while (neq ?val EOF)
+; (printout fp ?val"<br>" crlf)
 ; (printout fp "<b>"?val"</b><br>" crlf)
- (printout t ?val crlf)
- (bind ?val (readline dic_fp))
- )
+; (printout t ?val crlf)
+; (bind ?val (readline dic_fp))
+; )
  (printout fp "</td></tr>" crlf)
- (close dic_fp)
+; (close dic_fp)
  (printout fp "</table></form>")
  (if (and (= ?p_id 1) (= ?s_id 1)) then (printout fp "<div class=\"float_clear\"/>" crlf))
 

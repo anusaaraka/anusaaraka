@@ -7,8 +7,8 @@
 
  #To get proper noun gdbm (17-06-13) For alignmnet work purpose
  paste $1/$2_tmp/proper_nouns_list_sort  $1/$2_tmp/proper_nouns_list.wx > $1/$2_tmp/transliterated_words_list
- rm -f $HOME_anu_test/Anu_databases/transliterate_proper_nouns.gdbm
- $HOME_anu_test/Anu_data/create-gdbm.pl $HOME_anu_test/Anu_databases/transliterate_proper_nouns.gdbm < $1/$2_tmp/transliterated_words_list
+# rm -f $HOME_anu_test/Anu_databases/transliterate_proper_nouns.gdbm
+# $HOME_anu_test/Anu_data/create-gdbm.pl $HOME_anu_test/Anu_databases/transliterate_proper_nouns.gdbm < $1/$2_tmp/transliterated_words_list
 
 #Added below two commands by Roja(04-02-13). I.M.E of Hindi writers (Development park). 
  sed 's/[-]/-@/g' $1/$2_tmp/proper_nouns_list | sed 's/[.]/\.@/g'> $1/$2_tmp/proper_nouns_list1

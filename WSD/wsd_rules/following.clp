@@ -115,3 +115,63 @@
 ;There was a major uprising following his arrest.
 ;
 ;
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_following0
+(declare (salience 5000))
+(id-root ?id following)
+?mng <-(meaning_to_be_decided ?id)
+(subject-subject_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 activity|text|image)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id nimnaliKiwa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " following.clp   sub_samA_following0   "   ?id " nimnliKiwa )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_following0
+(declare (salience 5000))
+(id-root ?id following)
+?mng <-(meaning_to_be_decided ?id)
+(object-object_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 activity|text|image)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id nimnaliKiwa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " following.clp   obj_samA_following0   "   ?id " nimnliKiwa )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_following1
+(declare (salience 5000))
+(id-root ?id following)
+?mng <-(meaning_to_be_decided ?id)
+(subject-subject_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 event|incident)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id agalA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " following.clp   sub_samA_following1   "   ?id " agalA )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_following1
+(declare (salience 5000))
+(id-root ?id following)
+?mng <-(meaning_to_be_decided ?id)
+(object-object_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 event|incident)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id agalA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " following.clp   obj_samA_following1   "   ?id " agalA )" crlf))
+)

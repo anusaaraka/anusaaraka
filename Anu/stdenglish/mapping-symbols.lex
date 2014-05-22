@@ -78,6 +78,8 @@ FILE *fp;
 χ	{	printf(" SYMBOL-CHI ");	}
 ψ	{	printf(" SYMBOL-PSI ");	}
 ω	{	printf(" SYMBOL-OMEGA ");	}
+[ ]\<[ ]	{	printf("  SYMBOL-LESSTHAN  ");	}
+[ ]\>[ ]	{	printf("  SYMBOL-GREATERTHAN  ");	}
 
 [^<][a-zA-Z0-9]*[/][a-zA-Z0-9]* { 	len=strcspn(yytext, "/");
 				strncpy(str, yytext, len); str[len]='\0';

@@ -1765,7 +1765,6 @@ a_bit	WodZA_sA#WodZA_sA#noun#2#RM
 a_brick_built_house	pakkA_makAna#pakkA_makAna#noun#4#RM
 a_cappella_singing	vAxya_rahiwa_saMgIwa#vAxya_rahiwa_saMgIwa#noun#3#RM
 a_cart_load	gAdZI_Bara#gAdZI_Bara#noun#3#RM
-a_certain	koI_eka#koI_eka#noun#2#RM
 a_clever_thief	pakkA_cora#pakkA_cora#noun#3#RM
 a_couple_of	xo_eka#xo_eka#noun#2#RM
 a_few	kuCa#kuCa#noun#2#RM
@@ -6940,7 +6939,7 @@ character_string	saMprawIka_rajju#saMprawIka_rajju#noun#2#RM
 character_string_constant	saMprawIka_rajju_avara#saMprawIka_rajju_avara#noun#3#RM
 character_study	pAwra#pAwra#noun#2#RM
 character_witness	cariwra_kA_gavAha#cariwra_kA_gavAha#noun#2#RM
-characteristic_features	KAsa_KAsa_bAweM#KAsa_KAsa_bAweM#noun#2#RM
+characteristic_features	viSiRta_lakRaNa/KAsa_KAsa_bAweM#viSiRta_lakRaNa/KAsa_KAsa_bAweM#noun#2#RM
 characteristic_function	aBilakRaNika_Palana#aBilakRaNika_Palana#noun#2#RM
 characteristic_roots	aBilakRaNika_mUla#aBilakRaNika_mUla#noun#2#RM
 charcoal_burner	lakadZI_kA_koyalA#lakadZI_kA_koyalA#noun#2#RM
@@ -22906,7 +22905,7 @@ patent_coin_boxes	peteMta_sikkA_Aota_petiSa#peteMta_sikkA_Aota_petiSa#noun#3#RM
 patent_infringement	ekasva_ullaMGana#ekasva_ullaMGana#noun#2#RM
 patent_note_boxes	peteMta_sikkA_Aota_petiSa#peteMta_sikkA_Aota_petiSa#noun#3#RM
 path_length	paWa_lambAI#paWa_lambAI#noun#2#WM
-path_of_least_resistance	sarala_rAha#sarala_rAha#noun#1#RM
+path_of_least_resistance	kama_avaroXa_kA_mArga/sarala_rAha#kama_avaroXa_kA_mArga/sarala_rAha#noun#1#RM
 pathology_department	vikqwivijFAna_viBAga#vikqwivijFAna_viBAga#noun#2#RM
 patrol_car	pEtrola_se_calane_vAlI_kAra#pEtrola_se_calane_vAlI_kAra#noun#2#RM
 pattern_keeper	prawimAna_pAla#prawimAna_pAla#noun#2#RM
@@ -28132,7 +28131,6 @@ small_cane	CotA_beMwa#CotA_beMwa#noun#2#RM
 small_cap	CotI_topI#CotI_topI#noun#2#RM
 small_cause_court_judge	laxu_vAxa_nyAyAXISa#laxu_vAxa_nyAyAXISa#noun#4#RM
 small_cause_courts	laxuvAxa_nyAyAlaya#laxuvAxa_nyAyAlaya#noun#3#RM
-small_change	CotA_parivarwana#CotA_parivarwana#noun#2#RM
 small_civet	billI_jAwi_kA_CotA_jaMwu#billI_jAwi_kA_CotA_jaMwu#noun#2#RM
 small_coin_depot	Cote_sikkoM_kA_dipo#Cote_sikkoM_kA_dipo#noun#3#RM
 small_computer_systems_interface	laGu_saMgaNaka_praNAlI#laGu_saMgaNaka_praNAlI#noun#4#RM
@@ -33228,6 +33226,10 @@ in_the_distance	xUra#xUra#noun#3#WM
 staple_diet	Bojana_kA_muKya_aMSa#Bojana_kA_muKya_aMSa#noun#2#RM
 taking_courage_in_both_hands	jI_kadZA_karake_badZI_himmawa_se#jI_kadZA_karake_badZI_himmawa_se#verb#1#RM
 preferred_location	aXimawa_avasWiwi#aXimawa_avasWiwi#noun#2#RM
+cargo_train	mAla_gAdI#mAla_gAdI#noun#2#RM
+military_rule	senA_kA_SARana#senA_kA_SARana#noun#2#RM
+high_level_of_concentration	uccaswarIya_ekAgrawA#uccaswarIya_ekAgrawA#noun#4#RM
+a_high_level_of_concentration	uccaswarIya_ekAgrawA#uccaswarIya_ekAgrawA#noun#4#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
@@ -33559,6 +33561,9 @@ call_of_nature	SOcAxi_kI_AvaSyakawA#SOcAxi_kI_AvaSyakawA#noun#3#RM
 rubbish_bin	kacarA_kuMdI#kacarA_kuMdI#noun#2#RM
 rubbish_dump	kacare_kA_mExAna#kacare_kA_mExAna#noun#2#RM
 rain_water	varRA_kA_pAnI#varRA_kA_pAnI#noun#2#RM
+least_resistance	AsAna_warIkA#AsAna_warIkA#noun#2#RM
+sweet_shop	miTAI_kI_xukAna#miTAI_kI_xukAna#noun#2#RM
+rock_group	rAka_grupa#rAka_grupa#noun#2#RM
 #By Alpana ji (LTRC)
 Block_multiplexer	avaroXa_bahusaMkewaka#avaroXa_bahusaMkewaka#noun#2#RM
 Discharge_Required	AvaSyaka_nirvahana#AvaSyaka_nirvahana#noun#1#RM

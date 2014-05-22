@@ -4352,7 +4352,6 @@ kAWa	f
 kAxaMbarI	f
 kAxaMbinI	f
 kAxirI	f
-kAna	f
 kAnAkAnI	f
 kAnAgosI	f
 kAnAPUsI	f
@@ -32185,3 +32184,6 @@ Cada	f
 dAyarektarI	f
 garmI	f
 amana	f
+pUrvasanXyA	f
+sanXyA	f
+sigareta	f

@@ -87,3 +87,9 @@ laborer	1
 investigator	1
 murderer	1
 turkey	1
+male	1
+female	1
+fairy	1
+wife	1
+bouncer	1
+enemy	1

@@ -432,6 +432,7 @@
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/agreement.bclp"))
  (bload ?*path*)
+ (assert (load_yA_tams))
  (load-facts "vibakthi_info.dat")
  (load-facts "relations_tmp1.dat")
  (load-facts "agmt_control_fact.dat")

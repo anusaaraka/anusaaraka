@@ -10489,7 +10489,7 @@ bonehead_UNDEFINED	mUrKa_vykwi
 bonehead_noun	mUrKa_vyakwi
 boneheaded_adjective	bevakUPa
 bones_UNDEFINED	asWi
-bonfire_noun	alAva/uwsAgani/holI
+bonfire_noun	holI/alAva/uwsAgani
 bonfires_UNDEFINED	alAva
 bongo_noun	bofgo
 bonhomie_UNDEFINED	milanasArI
@@ -12793,7 +12793,7 @@ careworn_adjective	WakA/klAnwa
 carfare_noun	yAwrA_kA_kirAyA
 carfuffle_UNDEFINED	Sora-SarAbA
 carfuffles_UNDEFINED	Sora-SarAbA
-cargo_noun	jahAjI_mAla/mAla/jahAja_me_laxA_mAla/BAlavAhII/Kepa
+cargo_noun	mAla/jahAjI_mAla/jahAja_me_laxA_mAla/BAlavAhII/Kepa
 cargoes_UNDEFINED	Kepa
 cargos_UNDEFINED	Kepa
 caribbean_UNDEFINED	kEirabiyana
@@ -13318,8 +13318,6 @@ censorship_UNDEFINED	seMsara_vyavasWA
 censorships_UNDEFINED	seMsara_vyavasWA
 censure_noun	ninxA
 censure_verb	ninxA_kara
-censured_UNDEFINED	ninxA_karanA
-censures_UNDEFINED	ninxA_karanA
 censuring_UNDEFINED	ninxA_karanA
 census_noun	janagaNanA
 censuses_UNDEFINED	janagaNanA
@@ -13434,7 +13432,6 @@ certainest_UNDEFINED	kuCa
 certainly_adverb	niSciwa_rUpa_se/niSicawa_rUpa_seM
 certainties_UNDEFINED	niSciwawA
 certainty_noun	niSciwawA/niScaya
-certifcate_UNDEFINED	pramANa_pawra
 certificate_noun	pramANapawra/pramANa_patra
 certificated_adjective	pramANiwa_kiyA_huA/pramANapawriwa
 certificates_UNDEFINED	pramANapawra
@@ -13468,7 +13465,7 @@ chafe_noun	ragada/KIJa
 chafe_verb	ragada_se_CIla_xe/ragada_se_Cila_jA/ciDa_ho/bajA/ragada_jA
 chafed_UNDEFINED	ragada_jAnA
 chafes_UNDEFINED	ragada_jAnA
-chaff_noun	CilakA/BUsI/BUsA/CAztana
+chaff_noun	BUsI/CilakA/BUsA/CAztana
 chaff_verb	hazsI-majAka_kara/hazsI_meM_KijA/wafga_kara
 chaffed_UNDEFINED	wafga_karanA
 chaffinch_noun	cEPiFca
@@ -13477,10 +13474,7 @@ chaffs_UNDEFINED	wafga_karanA
 chafing_UNDEFINED	ragada_jAnA
 chagrin_noun	JuFJalAhata/sanwApa
 chagrin_verb	KIJa/kuDA/KijA
-chagrined_UNDEFINED	KijAnA
 chagrined_adjective	KiJA_huA
-chagrining_UNDEFINED	KijAnA
-chagrins_UNDEFINED	KijAnA
 chain-gang_noun	haWakadI-yukwa_banxI_xala
 chain-letter_noun	patra_SrqfKalA
 chain-mail_noun	CalloM_se_banA_kavaca
@@ -13521,7 +13515,7 @@ chalky_adjective	KadiyAvaw/KadiyAmaya
 challan_UNDEFINED	cAlAna
 challandar_UNDEFINED	cAlAnaxAra
 challenge_noun	cunOwI/lalakAra/cunOwi/Apawwi/xAvA
-challenge_verb	toka/lalakAra/cunOwi_xe/Apawwi_uTA/cunOwI_xe
+challenge_verb	cunOwI_xe/toka/lalakAra/cunOwi_xe/Apawwi_uTA
 challenged_UNDEFINED	cunOwI_xenA
 challenger_noun	cunOwI_xene_vAlA
 challenges_UNDEFINED	cunOwI_xenA
@@ -13632,9 +13626,6 @@ chapelest_UNDEFINED	CotA_girajA
 chapels_UNDEFINED	CotA_girajA
 chaperon_noun	cOkasI_karanevAlI_swrI
 chaperon_verb	cOkasI_kara{mahilA_kI}
-chaperone_UNDEFINED	cOkasI_karanA
-chaperoned_UNDEFINED	cOkasI_karanA
-chaperones_UNDEFINED	cOkasI_karanA
 chaperoning_UNDEFINED	cOkasI_karanA
 chaperons_UNDEFINED	cOkasI_karanA
 chaplain_noun	pujArI/purohiwa/pAxarI
@@ -13723,7 +13714,6 @@ charlock_noun	jafgalI_sarasoM
 charm_adjective	AkarRaka
 charm_noun	manoharawA/wAvIja/wAbIja/sOnxarya/manoharwA/mANtra/maNtra/jAxU-tonA/gaNdA/AkarRaNa/ABURaNa
 charm_verb	vaSIBUwa_kara/sammohiwa_kara/rakRA_kara/pravqwwa_kara/prasanna_kara/mohiwa_kara/mANtra-mugXa_kara/maNtra-mugXa_kara/bahakA/AkarRiwa_kara
-charmed_UNDEFINED	mohiwa_karanA
 charmer_UNDEFINED	mohanevAlA
 charmers_UNDEFINED	mohanevAlA
 charming_adjective	mohaka/jAxuI/AkarRaka
@@ -13780,7 +13770,7 @@ chastising_UNDEFINED	wAdanA_karanA
 chastities_UNDEFINED	SuxXawA
 chastity_noun	SuxXawA/sawIwva
 chat_noun	gapaSapa/bAwacIwa
-chat_verb	gapaSapa_udA/bAwa_kara/gapaSapa_kara
+chat_verb	bAwa_kara/gapaSapa_udA/gapaSapa_kara
 chateau_noun	kilA/mahala
 chateaus_UNDEFINED	kilA
 chateaux_UNDEFINED	kilA
@@ -13914,7 +13904,7 @@ chef-d'oeuvre_noun	uwkqRta_kalAkqwi
 chef_UNDEFINED	KAnasAmA
 chef_noun	praXAna_rasoiyA
 chemical_adjective	rasAyanika/rAsAyanika/rAsAyana_sambanXI
-chemical_noun	xavA/rAsAyanika_paxArWa/rasAyana/kemikala/rasAyanika_xravya
+chemical_noun	rasAyana/xavA/rAsAyanika_paxArWa/kemikala/rasAyanika_xravya
 chemicaler_UNDEFINED	rasAyanika_xravya
 chemicalest_UNDEFINED	rasAyanika_xravya
 chemically_UNDEFINED	rasAyanika_rUpa_se
@@ -13956,7 +13946,7 @@ chessmen_UNDEFINED	SawaraFja_kI_gotI
 chest_noun	CAwI/wijorI/sInA/petI/koRa/badA_sanxUka/sanxUka
 chester_UNDEFINED	cejatara
 chestnut_adjective	BUrA
-chestnut_noun	SAhabalUwa_kI_lakadI_kA_banA/SAhabalUwa_kA_peda/lAla_BUre_rafga_kA_GodA/lAla_BUre_rafga_kA/GisApitA_kissA/bAxAma_jAwi_kA_peda/SAhabalUwa
+chestnut_noun	SAhabalUwa/SAhabalUwa_kI_lakadI_kA_banA/SAhabalUwa_kA_peda/lAla_BUre_rafga_kA_GodA/lAla_BUre_rafga_kA/GisApitA_kissA/bAxAma_jAwi_kA_peda
 chestnuter_UNDEFINED	SAhabalUwa
 chestnutest_UNDEFINED	SAhabalUwa
 chestnuts_UNDEFINED	SAhabalUwa
@@ -25880,7 +25870,7 @@ empathy_noun	samAnuBUwi
 emperor_noun	samrAt/samrAta
 emperors_UNDEFINED	samrAt
 emphases_UNDEFINED	jora
-emphasis_noun	jora/mahawva/bala
+emphasis_noun	bala/jora/mahawva
 emphasise_verb	jora_xe/mahawva_xe/bala_xe
 emphasised_UNDEFINED	jora_xe
 emphasises_UNDEFINED	jora_xe
@@ -26482,7 +26472,7 @@ entomology_UNDEFINED	kIta_vijFAna
 entourage_noun	parijana
 entrails_noun	Azwa/anwarAfga
 entrailses_UNDEFINED	Azwa
-entrance_noun	praveSa_mArga/xAKilA/rAswA/praveS_xvAra/praveSa_xvAra/praveSa
+entrance_noun	praveSa/praveSa_mArga/xAKilA/rAswA/praveSa_xvAra
 entrance_verb	xAKilA_xe/xAKilA_le/sammohiwa_kara/mohiwa_kara/jA
 entranced_UNDEFINED	praveSa_mArga
 entranced_adjective	mohiwa
@@ -27244,7 +27234,7 @@ everyday_adjective	prawixina/sAXAraNa/rojamarrA_kA/eka_Darre_para_calane_vAlA
 everydayer_UNDEFINED	prawixina
 everydayest_UNDEFINED	prawixina
 everyone_adjective	saBI
-everyone_noun	saba/hara_eka
+everyone_noun	hara_koI/saba/hara_eka
 everyone_pronoun	prawyeka_vyakwi/saba/prawEka_vyakwi/prawEka/hara_koI/hara_eka
 everyplace_adverb	prawyeka_sWAna_para/sarvawra/saBI_jagaha/hara_jagaha
 everything_pronoun	saba_kuCa/sArA/saba/prawyeka
@@ -27373,7 +27363,7 @@ excavate_verb	Koxakara_nikAla/KuxAI_kara/Koxa/Koxa_kara_nikAla
 excavated_UNDEFINED	Koxakara_nikAlanA
 excavates_UNDEFINED	Koxakara_nikAlanA
 excavating_UNDEFINED	Koxakara_nikAlanA
-excavation_noun	KoKalApana/uwKanana-sWala/KuxAI
+excavation_noun	KuxAI/KoKalApana/uwKanana-sWala
 excavations_UNDEFINED	KoKalApana
 excavator_noun	Kaniwra/uwKanaka
 exccution_UNDEFINED	niRpAxana
@@ -33381,7 +33371,7 @@ ghosted_UNDEFINED	BUwa
 ghosting_UNDEFINED	BUwa
 ghostlier_UNDEFINED	prewarUpI
 ghostliest_UNDEFINED	prewarUpI
-ghostly_adjective	prewarUpI
+ghostly_adjective	BUwahA/prewarUpI
 ghosts_UNDEFINED	BUwa
 ghostwrite_verb	BUwaleKana_kara
 ghoul_noun	rAkRasa/mOwa_Axi_meM_viSeRa_rUci_raKane_vAlA
@@ -34621,11 +34611,10 @@ groaning_UNDEFINED	karAhanA
 groaning_adjective	karAhapUrNa
 groans_UNDEFINED	karAhanA
 grocer_noun	pansArI/paMsArI_kI_xukAna/paMsArI
-groceries_UNDEFINED	kirAne_kA_sAmAna
-groceries_noun	kirAnA
+groceries_noun	kirAne_kA_sAmAna
 grocers_UNDEFINED	pansArI
 grocery_adjective	kirAne_ke_sAmAna_kA
-grocery_noun	kirAne_kA_sAmAna/kirAne_kI_xukAna
+grocery_noun	kirAne_kI_xukAna/kirAne_kA_sAmAna
 grogginess_noun	arXacewanAvasWA
 groin_noun	kamara
 groined_UNDEFINED	kamara
@@ -45635,7 +45624,7 @@ lighting_noun	prakASa_vyavasWA/bawwI
 lightly_adverb	halke_se/upekRApUrvaka/halake_se/akAraNa/kama_meM/gamBIrawA_rahiwa_hokara
 lightness_noun	halkApana/PurwI/BArahInawA
 lightnesses_UNDEFINED	halkApana
-lightning_adjective	capalA/bijalI/bahuwa_jalxI/SIGrawama
+lightning_adjective	SIGrawama/capalA/bijalI/bahuwa_jalxI
 lightning_noun	wadiwa/vixyuw/prakASa/bijalI
 lightnings_UNDEFINED	wadiwa
 lights_UNDEFINED	balAGAwaSUnya
@@ -65666,7 +65655,7 @@ repetitiveness_noun	punarAvarwana
 repetitiver_UNDEFINED	xoharAyA_gayA
 repetitivest_UNDEFINED	xoharAyA_gayA
 rephrase_UNDEFINED	eka_hI_bAwa_ko_viBinna_prakAra_se_kaha
-rephrase_verb	paxAnvaya_kara/alaga_Dafga_se_vyakwa_kara/eka_hI_bAwa_ko_viBinna_prakAra_se_kaha
+rephrase_verb	alaga_Dafga_se_vyakwa_kara/paxAnvaya_kara/eka_hI_bAwa_ko_viBinna_prakAra_se_kaha
 rephrased_UNDEFINED	eka_hI_bAwa_ko_viBinna_prakAra_se_kahanA
 rephrases_UNDEFINED	eka_hI_bAwa_ko_viBinna_prakAra_se_kahanA
 rephrasing_UNDEFINED	eka_hI_bAwa_ko_viBinna_prakAra_se_kahanA
@@ -66185,7 +66174,7 @@ responsibily_adverb	jimmexArI_se
 responsible_adjective	uwwaraxAyI/uwwarxAyI/uwwaraxAyiwvapurNa/jimmexArIvAlA/jimmexAra/javAvaxeha/nEwika_rUpa_se_uwwaraxAyI/vyakwigawa_jimmexArI/kisI_kAma_ke_liye_jimmexAra_honA
 responsibler_UNDEFINED	nEwika_rUpa_se_uwwaraxAyI
 responsiblest_UNDEFINED	nEwika_rUpa_se_uwwaraxAyI
-responsibly_adverb	viSvasanIya_Dafga_se/jimmexArI_ke_sAWa
+responsibly_adverb	jimmexArI_ke_sAWa/viSvasanIya_Dafga_se
 responsive_adjective	uwwaraxAyI/uwsAhapUrvaka_anukUla/prawikriyASIla/saMvexanaSIla
 responsively_adverb	prawikriyAwmaka_Dafga_se
 responsiveness_noun	prawisaMvexanaSIlawA/prawikriyAwmakawA
@@ -66255,7 +66244,7 @@ restricted_adjective	sImiwa/prawibanXiwa/niRixXa/Apa_logoM_ke_liye_varjiwa
 restricteder_UNDEFINED	Apa_logoM_ke_liye_varjiwa
 restrictedest_UNDEFINED	Apa_logoM_ke_liye_varjiwa
 restricting_UNDEFINED	sImiwa_karanA
-restriction_noun	sImA/roka/prawibanXa
+restriction_noun	prawibanXa/sImA/roka
 restrictions_UNDEFINED	prawibanXa
 restrictive-practices_noun	hoda_kama_karane_kA_samaJOwA
 restrictive_adjective	rokane_vAlA/prawibanXAwmaka/niyAmaka/viSeRaNa
@@ -66654,7 +66643,7 @@ revivalist_adjective	punarjAgaraNavAxI
 revivalist_noun	punarjAgaraNavAxI
 revivalistic_adjective	punarjAgaraNavAxI
 revivals_UNDEFINED	punaruwWAna
-revive_verb	Pira_jIviwa_kara/xobArA_pracaliwa_kara/punarujjIviwa_ho/punarjIviwa_kara/punaH_uwpanna_kara/punaH_pracaliwa_kara/Pira_se_wAjA_kara/Pira_se_cAlU_kara/Pira_praxarSiwa_kara/jAna_dAla_xe/hoSa_meM_lA
+revive_verb	punarjIviwa_kara/Pira_jIviwa_kara/xobArA_pracaliwa_kara/punarujjIviwa_ho/punaH_uwpanna_kara/punaH_pracaliwa_kara/Pira_se_wAjA_kara/Pira_se_cAlU_kara/Pira_praxarSiwa_kara/jAna_dAla_xe/hoSa_meM_lA
 revived_UNDEFINED	Pira_jIviwa_karanA
 revives_UNDEFINED	Pira_jIviwa_karanA
 revivification_noun	punaruxXAra/punaruwWAna
@@ -70256,7 +70245,7 @@ semiliguda_UNDEFINED	similigudA
 seminal_adjective	Sukra_sambanXI/SukrIya/bIjIya/awyanwa_praBAvaSAlI
 seminaler_UNDEFINED	Sukra_sambanXI
 seminalest_UNDEFINED	Sukra_sambanXI
-seminar_noun	aXyayana_goRTI/seminAra/parisaMvAxa
+seminar_noun	seminAra/aXyayana_goRTI/parisaMvAxa
 seminarier_UNDEFINED	pAxariyoM_kI_SikRA_saMsWA
 seminaries_UNDEFINED	pAxariyoM_kI_SikRA_saMsWA
 seminariest_UNDEFINED	pAxariyoM_kI_SikRA_saMsWA
@@ -78129,6 +78118,7 @@ super-charged_adjective	jyAxA_wAkawa_vAlA
 super-computer_noun	eka_SakwiSAlI_kampyUtara
 super-grass_noun	pulIsa_kA_KabarI
 super_adjective	bahuwa_badA/uwkqRta/SAnaxAra/Bavya/aXika
+super_adverb	bahuwa
 super_noun	pulisa_aXikArI/eka_pulIsa_aXikArI
 superabundance_noun	pracurawA
 superabundant_UNDEFINED	BarapUra
@@ -81805,7 +81795,7 @@ toilet-paper_noun	SOca_kA_kAgaja
 toilet-roll_noun	SOca_kAgaja_kA_pulinxA
 toilet-train_verb	SOca_praSikRaNa_xe
 toilet-training_noun	SOca_praSikRaNa
-toilet_noun	SOcaGara/SOcAlaya/SOca/praSAXana
+toilet_noun	praSAXana_kakRa/SOcAlaya/SOcaGara/SOca
 toiletries_noun	prasAXana_kA_sAmAna/prasAXana-sAmagrI
 toilets_UNDEFINED	SOcaGara
 toiling_UNDEFINED	pariSrama_kara
@@ -83597,7 +83587,7 @@ trustworthiness_noun	viSvasanIyawA
 trustworthy_adjective	viSvAsayogya/viSvasanIya/karwavyaniRTa
 trusty_adjective	viSvAsI/viSvasanIya/karwavyaniRTa
 trusty_noun	kExI{jisako_usakI_ImAnaxArI_ke_kAraNa_viReSAXikAra_xiyA_ho}
-truth_noun	saccAI/vAswvikawA/vAswavikawA/sawyawA/ImAnaxArI
+truth_noun	saca/saccAI/vAswvikawA/vAswavikawA/sawyawA/ImAnaxArI
 truthful_adjective	saccAIpUrNa/sawyavAxI/saccAI_se_BarA/saccA
 truthfuler_UNDEFINED	saccAIpUrNa
 truthfulest_UNDEFINED	saccAIpUrNa
@@ -90799,7 +90789,7 @@ weightliftings_UNDEFINED	BAra_uTAnA
 weights_UNDEFINED	BAra_baDAnA
 weighty_adjective	BArI/sWUlakAya/praBAvaSAlI/gamBIra/cinwAjanaka
 weir_noun	naxI_kA_bAzXa/xikparivarwI_bAzXa/maCalI_pakadane_kA_tattara/maCalI_pakadane_naxI_para_lagAyA_huA_jAla
-weird_adjective	BayAnaka/nirAlA/awiprAkqwika/anoKA/ajIba/anUTA
+weird_adjective	axBuwa/BayAnaka/nirAlA/awiprAkqwika/anoKA/ajIba/anUTA
 weirder_UNDEFINED	anUTA
 weirdest_UNDEFINED	anUTA
 weirdie_noun	ajIba_AxamI
@@ -92370,7 +92360,7 @@ working_adjective	warkasafgawa/vyavahArya/Sramika/rojagAraSuxA/paryApwa/nOkarISu
 working_noun	saFcAlana/KaxAna/KAna/gawiviXi
 workingclass_noun	majaxUravarga
 workings_noun	KaxAna/KAna
-workload_noun	kAma_kA_boJa/kArya-BAra
+workload_noun	kArya-BAra/kAma_kA_boJa
 workloads_UNDEFINED	kAma_kA_boJa
 workman_noun	Sramika/majaxUra/kArIgara
 workmanlike_adjective	kAryakuSala/kAragara
@@ -93539,6 +93529,12 @@ show-cause_noun	kAraNa_bawAo
 house-shop_noun	makAna-xukAna
 Vice-President_noun	upAXyakRa
 oblation_noun	Ahuwi
+vedic_noun	vExika
+vedic_adjective	vExika
+charmed_adjective	camawkArI
+chaperone_noun	saMrakRikA
+chaperone_verb	sAWa_raha_yA_jA
+certifcate_verb	pramANiwa_kara
 #abbrevations:
 etc._noun	Axi
 MSRTC_PropN	mahArARtra_rAjya_sadZaka_parivahana_nigama

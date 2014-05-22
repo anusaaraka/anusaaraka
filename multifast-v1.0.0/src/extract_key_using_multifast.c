@@ -32,8 +32,8 @@
 //#include "extract-key-dev-corpus.c" //This file is for dev corpus 
 //#include "extract-key-tourism-corpus.c"   //This file is for tourism corpus
 
-//char buffer[256];
 
+//char buffer[256];
 char buffer[2500];
 char input_line [10000];
 int word_count=0, offset_count=0, flag=0;
@@ -117,6 +117,8 @@ int match_handler(AC_MATCH_t * m, void * param)
 		  } 
 		printf("(eng_cmp_mng-eng_ids\t");
 
+//		printf("%s ", m->patterns[j].rep.stringy);
+
 		printf("%s\t%ld\t%ld",  m->patterns[j].astring, m->position - m->patterns[j].length + 1, m-> position);
 		fprintf(fp1, "%ld %ld\t", m->position - m->patterns[j].length + 1, m-> position);
 		//to get word ids
@@ -125,7 +127,7 @@ int match_handler(AC_MATCH_t * m, void * param)
 		        fprintf(fp1, "%d ", final_ids);
 		} 
 		printf(")\n");
-		fprintf(fp1, "\n"); 
+		fprintf(fp1, "\n");
 	}
 	switch (myp->achar) {
 	case 'f': /* find first */

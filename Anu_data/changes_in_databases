@@ -20,7 +20,8 @@
 
   2. Added :
 	1. SuBakAmanA 	Suggested by sheetal (02-11-09) Eg: We convey our best wishes to the Chinmaya Dham Yatris . 
-	2. esItilIna  	Suggested by Meenaji(24-02-10)Eg:Acetylene burns with bright flame that helps in cutting and welding 	    3. mAxA_pakRI   Suggested by sheetal(05-03-10)  Eg: Females of birds produce eggs.
+	2. esItilIna  	Suggested by Meenaji(24-02-10)  Eg: Acetylene burns with bright flame that helps in cutting and welding
+        3. mAxA_pakRI   Suggested by sheetal(05-03-10)  Eg: Females of birds produce eggs.
 	4. PEktarI    	Meena (20.5.10)
 	5. PrIkveMsI	Meena (11.6.10)
 	6. Avqwi   	Meena (11.6.10)
@@ -44,6 +45,9 @@
 	23. dAyarektarI	By Roja Suggested by Sukhada (20-11-13) Ex: Create a new directory and put all your files into it. 
 	24. garmI	Suggested by sukhada (25-11-13)		Ex: The warmth of the sun's rays.
 	25. amana	Suggested by sukhada (20-03-14)		Ex: Everyone should maintain peace on the earth. 
+	26. pUrvasanXyA Suggested by Chaitanya Sir (2-05-14)	Ex: On the eve of Holi, a bonfire is lit up.
+	27. sanXyA  			"		"		
+	28. sigareta	Suggested by sukhada (08-05-14) 	Ex: He sat back and lit up a cigarette.
 	
 
   3. Removed :
@@ -74,6 +78,7 @@
 	21. Cada		"		    (04-11-13)  Eg: When electrified rods are brought near light objects, a 
 								    similar effect takes place.
 	22. wArA	Suggested by Sukhada	    (21-12-13)  Eg: How does a star form?
+	23. kAna 	Suggested by Chaitanya Sir  (02-05-14)	Eg: A rabbit has long ears.
 
   changes in Phrv.txt 
   ===================
@@ -359,9 +364,10 @@
   changes in not_ne_verb_list.txt
   ===============================
   1. Added
-	 howA, howe, howI (Suggested by Meenaji -- 23-03-10)
+	howA, howe, howI (Suggested by Meenaji -- 23-03-10)
                              Eg: If you were a middle-class American without a job , who would you vote for .
-	 ruka	(Suggested by Chaitanya Sir 10-07-13) Ex: Well then, get out of the pit as best you can, said Papri coldly.
+	ruka	(Suggested by Chaitanya Sir 10-07-13) 	Ex: Well then, get out of the pit as best you can, said Papri coldly.
+	jala	(Suggested by Chaitanya Sir 30-04-14)	Ex: The coal in the BBQ grill finally lit up.	
   2. Removed : -kara , -pIta    
 		     Eg: The songwriter, whose artistic work had stretched over decades, acknowledged the standing ovation.
   3. Modified : -siXAra as siXAra	
@@ -468,6 +474,12 @@
 	investigator 	(	"		"		" ) Ex: The investigator will have to be thorough.
 	murderer	(Suggested by Pramila Banasthali 21-03-14 ) Ex: The convicted murderer escaped from a high security prison.
 	turkey		(Suggested by Preeti ji LTRC 	 14-04-14 ) Ex: Who's going to carve the turkey?
+	male		(Suggested by Sukhada            08-05-14 ) Ex: My many male friends were angered by the hearings.
+	female		(		"		    "	  ) Ex: My many female friends were angered by the hearings.
+	fairy		(		"		    "	  ) Ex: I saw many fairies in my dream.
+	wife		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: He is cheating on his wife. 
+	bouncer		(Suggested by Sukhada		 09-05-14 ) Ex: He had the bouncers throw them out of the club. 
+	enemy		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: We charged at the enemy.  
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -662,6 +674,12 @@ Modified :
 	tiredness	access__n		(     "	     "	  )
 	getup		house__n		(     "	  14-04-14)
 	cart		access__n		(     "	     "	  )
+	chaperone	house__n		(     "	  02-05-14)
+	chaperone	liv/e__vblex		(     "	     "	  )
+	utmost		house__n		(     "      "    )
+	level		quarrel__vblex		(     "      "    )
+	level		accept__vblex		(     "      "    )
+
 
 
 Modified paradigm:
@@ -1116,6 +1134,18 @@ Removed:
 	103. BJP_PropN			BAjapA				(By Manju from newsdev2014 corpus   22-3-14)
 	104. ADCP_PropN			edIsIpI				(	"		"		"  )
 	105. ACP_PropN			esIpI				(	"		"		"  )
+	106. super_adverb		bahuwa				(Suggested by Sukhada		   28-04-14)
+					Ex: I am super excited.
+	107. vedic_noun			vExika				(Suggested by Prachi Banasthali	   28-04-14)
+	108. vedic_adjective		vExika				(	"	"	"		"  )
+					Ex: Philosophy and culture, the Vedic sages Kapil, Buddha, Mahavira and Shankara are such notable ancestors.
+	109. charmed_adjective		camawkArI			(Suggested by Preeti ji LTRC 	   09-05-14)
+	110. chaperone_noun		saMrakRikA			(	"	"	"		"  )
+					Ex: I was a chaperone on one of my son's school trips. 
+	111. chaperone_verb		sAWa_raha_yA_jA			(	"	"	"		"  )
+					Ex: Two parents chaperoned the children.
+	112. certifcate_verb		pramANiwa_kara			(	"	"	"		"  )
+					Ex: The amounts earned have to be certificated by employers.
 
 
     4. Added new meaning to the existing word:
@@ -1272,7 +1302,7 @@ Removed:
 					    use new tools to interact with nature. "
 	85. originate_verb		uxBava_ho		(Suggested by Chaitanya Sir  26-11-12)
 					Ex: The word Science originates from the Latin verb Scientia meaning 'to know'. 
-	86. doorway_noun    		xvArapaWa		(Suggested by Pramila Banasthali 12-12-13)
+	86. doorway_noun    		xvArapaWa		(Suggested by Pramila Banasthali 12-12-13) 
 					Ex: He suddenly appeared in the doorway.
 	87. name-plate_noun		nAma_pattikA		(Suggested by Nandini ji LTRC	17-12-13)
 					Ex: Bhagirathi, the children read the name-plate on the door.
@@ -1282,8 +1312,15 @@ Removed:
 					Ex: Obviously these tables are not exhaustive.
 	90. complication_noun		samasyA 		(Suggested by Preeti ji LTRC	 14-04-14)
 					Ex: The bad weather added a further complication to our journey. 
-	91. cake_verb			sana			(Suggested by preeti ji LTRC	 14-04-14)
-					Ex: Her shoes were caked with mud. 
+	91. cake_verb			sana			(Suggested by Preeti ji LTRC	 14-04-14) Ex: Her shoes were caked with mud. 
+	92. groceries_noun		kirAne_kA_sAmAna	(Suggested by Chaitanya Sir  	 28-04-14)
+					Ex: Do your part to keep food safe when bagging groceries.
+	93. weird_adjective		axBuwa			(Suggested by Chaitanya Sir	29-04-14)  Ex: He was in a weird getup.
+	94. ghostly_adjective		BUwahA			(Suggested by Chaitanya Sir	29-04-14)
+					Ex: The graveyard looked ghostly, enveloped in mist.
+	95. everyone_noun		hara_koI		(Suggested by Chaitanya Sir     30-04-14)  
+					Ex: Everyone celebrates Holi festival.   [note: bcoz of number problem]
+	96. truth_noun			saca			(Suggested by Chaitanya Sir     30-04-14)  Ex: He always speaks the truth.
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -1537,6 +1574,43 @@ Removed:
 				Ex: We produce cheaper goods than our competitors.
 	125. carriage_noun	wopa-gAdI	as	gAdI			(Suggested by	"	"	"    )
 				Ex: They rode to the city in carriages.
+	126. seminar_noun    	aXyayana_goRTI	as	seminAra		(Suggested by Jagriti Banasthali 04-04-14)
+				Ex: With the aim of spreading awareness among the public against corruption the Roop-nagar vigilance unit held
+				    a seminar at a local Khalsa school.
+	127. cargo_noun		jahAjI_mAla	as	mAla			(Suggested by Sukhada    28-04-14)
+				Ex: People stopped cargo train in the station.
+	128. grocery_noun	kirAne_kA_sAmAna  as	kirAne_kI_xukAna	(Suggested by Chaitanya Sir 28-04-14) Ex: I'm at the grocery.
+	129. rephrase_verb	paxAnvaya_kara	as	alaga_Dafga_se_vyakwa_kara	(Suggested by Sukhada 28-04-14)
+	130. revive_verb	Pira_jIviwa_kara  as	punarjIviwa_kara		(		"	"     )
+				Ex: Naming the government scheme after inspiring personalities is the easiest tool for reviving the history.
+	131. workload_noun	kAma_kA_boJa	as	kArya-BAra			(Suggested by Sukhada 28-04-14)
+				Ex: The workload is very high.
+	132. lightning_adjective	capalA	as	SIGrawama		(Suggested by Nandini ji LTRC 28-04-14)
+				Ex: He struck his opponent with a lightning speed.
+	133. restriction_noun	sImA		as	prawibanXa		(Suggested by Chaitanya Sir	"    )
+				Ex: Trade and commerce between the two countries has proceeded unhampered by any restriction.
+	134. challenge_verb	toka		as	cunOwI_xe		(Suggested by Preeti ji LTRC	"    )
+				Ex: The job doesn't really challenge her. 
+	135. entrance_noun	praveSa_mArga	as	praveSa
+				Ex: I noticed her entrance because she slipped and fell in the door way.
+	136. responsibly_adverb	viSvasanIya_Dafga_se	as	jimmexArI_ke_sAWa	(Suggested by Anita ji LTRC 29-04-14)
+				Ex: When he saw the crash, the young boy acted very responsibly and called the police.
+	137. chaff_noun		CilakA 		as	BUsI			(Suggested by Preeti ji LTRC	29-04-14)	
+				Ex: The first step, it seems, is to separate the chaff from the grain. 
+	138. excavation_noun	KoKalApana	as	KuxAI			(Suggested by Pramila Banasthali 29-04-14)
+				Ex: When asked about the differences in his comments he became annoyed and started accusing the Government and the SSI, talking about what exactly is being done at the excavation site and that the media is being banned from entry there.
+	139. district_noun	maNdala		as	jilA			(Suggested by Pramila Banasthali 29-04-14)
+				Ex: On this occasion, the SFI state secretary Manoj Kumar, Anju, District Secretary of the Committee, State joint-secretary of the Youth council Vinod Deshwal, Sumit, Anju, Rakesh Kumari, Geeta, Sonu, Rajesh Kumar, Sangeeta, Meena, Veena Malik, Sangeeta, Hawa Singh and Ajit were present.
+	128. emphasis_noun   	jora		as	bala			(Suggested by Chaitanya Sir 28-04-14)
+				Ex: Special emphasis was given to female education in ancient times. 
+	129. bonfire_noun	alAva		as 	holI			(Suggested by Chaitanya Sir 28-04-14)
+				Ex: On the eve of Holi, a bonfire is lit up.
+	130. chat_verb		gapaSapa_udA	as	bAwa_kara		(Suggested by Preeti ji LTRC 09-05-14)
+				Ex: What were you chatting about?
+	131. chemical_noun	xavA		as	rasAyana		(	"	"	"    10-05-14)
+				Ex: Farmers are being urged to reduce their use of chemicals and work with nature to combat pests.
+	132. chestnut_noun	SAhabalUwa_kI_lakadI_kA_banA	as	SAhabalUwa	(Suggested by Preeti ji 10-05-14)	
+				Ex: There are several types of chestnut tree. 
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1609,7 +1683,20 @@ Removed:
 	32. doorway_UNDEFINED   xvArapaWa				(Suggested by Pramila Banasthali 12-12-13)
 	33. doctorate_noun  	daktara_kI_upAXi			(	"		"	 24-01-14)
 	34. carpeted_UNDEFINED	kAlIna_biCAnA				(Suggested by Preeti ji LTRC 	14-04-14)
+	35. groceries_UNDEFINED	kirAne_kA_sAmAna			(Suggested by Chaitanya Sir     28-04-14)
+	36. challenged_UNDEFINED	cunOwI_xenA			(Suggested by Preeti ji LTRC	28-04-14)
+	37. chagrined_UNDEFINED	KijAnA					(Suggested 	"	"	"	)
+	38. chagrining_UNDEFINED	KijAnA				(	"	"	"	"	)
+	39. chagrins_UNDEFINED	KijAnA					(	"	"	"	"	)
+	40. censured_UNDEFINED	ninxA_karanA				(	"	"	"	"	)
+	41. censures_UNDEFINED	ninxA_karanA				(	"	"	"	"	)
+	42. charmed_UNDEFINED	mohiwa_karanA				(Suggested 	"	"	09-05-14) 
+	43. chaperone_UNDEFINED    cOkasI_karanA			(	"	"	"	"	)
+	44. chaperoned_UNDEFINED    cOkasI_karanA			(	"	"	"	"	)
+	45. chaperones_UNDEFINED    cOkasI_karanA			(	"	"	"	"	)
+	46. certifcate_UNDEFINED	pramANa_pawra			(	"	"	"	"	)
 	
+
     8. Modified category:
        ------------------
 	1. Habegger_- 		as	Habegger_noun	 	( Suggested by Chaitanya Sir 29-02-12 	 )
@@ -1687,6 +1774,8 @@ Removed:
 	Akhil_Bhartiya_Janwadi_Mahila_Samiti    aKila_BArawIya_janavAxI_mahilA_samiwi#aKila_BArawIya_janavAxI_mahilA_samiwi#noun#5#RM
 				to
 	Gandhi_Nagar    gAMXI_nagara#gAMXI_nagara#noun#2#RM
+	Mill_Road	mila_roda#mila_roda#PropN#2#RM			(Suggested by Anita ji LTRC 	10-05-14)
+			Ex: I live on Mill Road.
 
     
  multi_word_expressions.txt
@@ -1737,8 +1826,12 @@ Removed:
 				Ex: 
 	21. bound_to        	bazXA_huA^bAXya#bazXA_huA^bAXya#noun#2#RM(	"		"	  "	)
 				Ex:
-	22. reference_to	saMxarBa_meM#saMxarBa_meM#noun#2#RM	(Suggested by ANita ji LTRC	14-04-14)
+	22. reference_to	saMxarBa_meM#saMxarBa_meM#noun#2#RM	(Suggested by Anita ji LTRC	14-04-14)
 				Ex: Knowing what had happened, I avoided making any reference to weddings.
+	23. small_change	CotA_parivarwana#CotA_parivarwana#noun#2#RM	(Suggetsed by Preeti ji LTRC	10-05-14)
+				Ex: I did not have any small change to leave as a tip.
+	24. a_certain		koI_eka#koI_eka#noun#2#RM		(Suggested by Preeti ji LTRC	10-05-14)
+				Ex: You have to have a certain amount of courage to perform in public.
 
     Modified :
     --------
@@ -1981,6 +2074,22 @@ Removed:
 	110. Panchayat_level_committee_officer  paMcAyawa_samiwi_swarIya_paxAXikArI#noun#2#RM(		"		  "	)
 				Ex: Information about the PSS meeting was not given to the Panchayat level committee officer.
 
+	111. cargo_train	mAla_gAdI#mAla_gAdI#noun#2#RM				(Suggested by Sukhada   28-04-14        )
+				Ex: People stopped cargo train in the station.
+	112. least_resistance	AsAna_warIkA#AsAna_warIkA#noun#2#RM			(Suggested by Anita ji LTRC 02-04-14	)
+				Ex: I took the path of least resistance and agreed with the others.
+	113. military_rule   	senA_kA_SARana#senA_kA_SARana#noun#2#RM			(Suggested by Sukhada   02-05-14        )
+				Ex: Democratic government has now replaced military rule.
+	114. high_level_of_concentration     uccaswarIya_ekAgrawA#noun#4#RM		(		"	03-05-14	)
+				Ex:It is the sort of work that calls for a high level of concentration.
+	115. a_high_level_of_concentration   uccaswarIya_ekAgrawA#noun#4#RM		(		"	  "		)
+				Ex: It is the sort of work that calls for a high level of concentration.
+	116. sweet_shop		miTAI_kI_xukAna#miTAI_kI_xukAna#noun#2#RM		(Suggested by Anita ji LTRC	10-05-14)
+				Ex: There's a sweet shop on the other side of the road.
+	117. rock_group		rAka_grupa#rAka_grupa#noun#2#RM				(	"	"	"	"	)
+				Ex: Most rock groups spend two or three months a year on the road.
+
+
     Added new meaning to the existing word:
     --------------------------------------
 	1. no_doubt        	niHsaMxeha		(Suggested by Sukhada 30-05-13		)
@@ -1997,7 +2106,10 @@ Removed:
 	8. fatal_accident  	GAwaka_xurGatanA	(Suggested by Ratna purohit     21-03-14)
 	9. general_public  	Ama_AxamI		(Suggested by Chaitanya sir     22-03-14) Ex: For this reason the general public has to
 												      come forward.		
+	10. characteristic_features viSiRta_lakRaNa	(	"	"		3-04-14 ) Ex: With the BionicKangaroo,we have precisely 								  	     reproduced the most characteristic features of natural kangaroos.
 
+	11. path_of_least_resistance	kama_avaroXa_kA_mArga (Suggested by Anita ji LTRC 28-04-14) Ex: I took the path of least resistance and
+													agreed with the others.
 
    Modifying the head id:
    ---------------------
@@ -2237,6 +2349,7 @@ Removed:
 		Ashan   	eSAna				Dambulla        xAMbulA
 		Hambantota      haMbanatotA			Khedia  	KedZiyA
 		Sushil  	suSIla				Mahanta 	mahaMwa
+		Tata		tAtA				District	jilA
 
    Modified:
    ---------
@@ -2286,6 +2399,9 @@ Removed:
 	laborer		(Suggested by Prachi Banasthali	 21-03-14 ) Ex: a husky laborer
 	investigator 	(	"		"		" ) Ex: The investigator will have to be thorough.
 	murderer	(Suggested by Pramila Banasthali 21-03-14 ) Ex: The convicted murderer escaped from a high security prison.
+	wife		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: He is cheating on his wife.
+	bouncer		(Suggested by Sukhada		 09-05-14 ) Ex: He had the bouncers throw them out of the club.
+	enemy		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: We charged at the enemy.  
 
 
  changes in named_entities.txt

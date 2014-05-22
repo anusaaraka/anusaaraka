@@ -111,3 +111,31 @@
 ;Would you mind the baby for an hour.
 ;
 ;
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_mind1
+(declare (salience 4800))
+(id-root ?id mind)
+?mng <-(meaning_to_be_decided ?id)
+(subject-subject_samAnAXikaraNa ?id ?id1)
+(id-root ?id1 twist|brilliant|good|keen|creative|evil|suspicious|criminal|conscious|subconscious)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ximAga))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " mind.clp   sub_samA_mind1   "   ?id " ximAga )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_mind1
+(declare (salience 4800))
+(id-root ?id mind)
+?mng <-(meaning_to_be_decided ?id)
+(object-object_samAnAXikaraNa ?id ?id1)
+(id-root ?id1 twist|brilliant|good|keen|creative|evil|suspicious|criminal|conscious|subconscious)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ximAga))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " mind.clp   obj_samA_mind1   "   ?id " ximAga )" crlf))
+)

@@ -94,3 +94,33 @@
 
 
 
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_tarnish0
+(declare (salience 5000))
+(id-root ?id tarnish)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id tarnished)
+(subject-subject_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 public|image|reputation|opinion)
+=>
+(retract ?mng)
+(assert (id-wsd_word_mng ?id bigadI_huI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng " ?*wsd_dir* " tarnish.clp   sub_samA_tarnish0   "   ?id " bigadI_huI )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_tarnish0
+(declare (salience 5000))
+(id-root ?id tarnish)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id tarnished)
+(object-object_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 public|image|reputation|opinion)
+=>
+(retract ?mng)
+(assert (id-wsd_word_mng ?id bigadI_huI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng " ?*wsd_dir* " tarnish.clp   obj_samA_tarnish0   "   ?id " bigadI_huI )" crlf))
+)

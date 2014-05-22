@@ -17,8 +17,8 @@
 ;#  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 ;
 ;######################################################################
-;Added by jagriti(31.08.2013)
-;Note that sensitive electrical instruments in the vicinity of an electromagnet can be damaged.          										   [physics corpus]
+;@@@ Added by jagriti(31.08.2013)
+;Note that sensitive electrical instruments in the vicinity of an electromagnet can be damaged.  [physics corpus]
 ;नोट कीजिए कि विद्युत चुंबक के समीप रखे सुग्राही विद्युत यंत्र को क्षतिग्रस्त किया जा सकता है.
 (defrule sensitive0
 (declare (salience 5000))
@@ -60,4 +60,32 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  sensitive.clp 	sensitive2   "  ?id " saMvexanaSIla)" crlf))
 )
 
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_sensitive0
+(declare (salience 5000))
+(id-root ?id sensitive)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(subject-subject_samAnAXikaraNa ?id ?id1)
+(id-word ?id1 instrument|electrical)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sugrAhI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " sensitive.clp   sub_samA_sensitive0   "   ?id " sugrAhI)" crlf))
+)
 
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_sensitive0
+(declare (salience 5000))
+(id-root ?id sensitive)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(object-object_samAnAXikaraNa ?id ?id1)
+(id-word ?id1 instrument|electrical)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sugrAhI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " sensitive.clp   obj_samA_sensitive0   "   ?id " sugrAhI)" crlf))
+)

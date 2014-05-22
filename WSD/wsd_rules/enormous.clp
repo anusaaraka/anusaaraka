@@ -27,7 +27,7 @@
 ;तुम बहुत बडे सहायक रहे.
 ;wuma bahuwa bade sahAyaka rahe.
 
-;At the macroscopic level, one deals with charges that are enormous compared to the magnitude of charge e. [ physics ]
+;At the macroscopic level, one deals with charges that are enormous compared to the magnitude of charge e. [NCERT]
 ;स्थूल स्तर पर हम ऐसे आवेशों से व्यवहार करते हैं जो इलेक्ट्रॉन e के आवेश की तुलना में परिमाण में बहुत बडे होते हैं .
 ;sWUla swara para hama Ese AveSoM se vyavahAra karawe hEM jo ilektroYna e ke AveSa kI wulanA meM parimANa meM bahuwa bade howe hEM .
 (defrule enormous0
@@ -118,4 +118,34 @@
 (assert (id-wsd_root_mng ?id viSAla))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  enormous.clp 	enormous5   "  ?id " viSAla  )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_enormous2
+(declare (salience 5000))
+(id-root ?id enormous)
+?mng <-(meaning_to_be_decided ?id)
+(subject-subject_samAnAXikaraNa ?id1 ?id)
+(id-word ?id1 time)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bahuwa_aXika))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " enormous.clp   sub_samA_enormous2   "   ?id " bahuwa_aXika )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_enormous2
+(declare (salience 5000))
+(id-root ?id enormous)
+?mng <-(meaning_to_be_decided ?id)
+(object-object_samAnAXikaraNa ?id1 ?id)
+(id-word ?id1 time)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bahuwa_aXika))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " enormous.clp   obj_samA_enormous2   "   ?id " bahuwa_aXika )" crlf))
 )

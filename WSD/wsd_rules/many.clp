@@ -28,15 +28,39 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  many.clp 	many1   "  ?id "  bahuwa_sA )" crlf))
 )
 
+;@@@ Added by Shirisha Manju 3-5-14  Suggested by Sukhada
+;My many female friends were angered by the hearings.
+;merI bahuwa sArI swrI miwra sunavAI se kroXiwa huIM.
+;I saw many fairies in my dream. 
+;mEM mere svapna meM bahuwa sArI pariyoM se milA.
+(defrule many_with_animate
+(declare (salience 4850))
+(id-root ?id many)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(id-root ?id1  ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bahuwa_sArA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*prov_dir* "  many.clp     many_with_animate "  ?id"  bahuwa_sArA )" crlf)
+)
+)
+
+
+;$$$ Modified by Shirisha Manju 30-4-14 Suggested by Chaitanya Sir
+;Modified meaning 'bahuwa_sArA' as 'bahuwa'
+;Many years ago there lived a king.
 (defrule many2
 (declare (salience 4800))
 (id-root ?id many)
 ?mng <-(meaning_to_be_decided ?id)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id bahuwa_sArA))
+(assert (id-wsd_root_mng ?id bahuwa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  many.clp      many2   "  ?id "  bahuwa_sArA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  many.clp      many2   "  ?id "  bahuwa )" crlf)
+)
 )
 
 ;"many","Det","1.bahuwa_se"

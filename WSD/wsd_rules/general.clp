@@ -77,3 +77,33 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  general.clp 	general3   "  ?id "  sAmAnya )" crlf))
 )
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_general1
+(declare (salience 4800))
+(id-root ?id general)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(subject-subject_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 result|idea)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id vyApaka))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " general.clp   sub_samA_general1   "   ?id " vyApaka )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_general1
+(declare (salience 4800))
+(id-root ?id general)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(object-object_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 result|idea)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id vyApaka))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " general.clp   obj_samA_general1   "   ?id " vyApaka )" crlf))
+)
