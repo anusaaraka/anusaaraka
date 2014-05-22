@@ -6,12 +6,8 @@
 #RUN: python match_value_in_hnd.py  manual_file  key-val.txt graph eng_file > match-value.txt 
 
 import sys
-import networkx as nx
 from short import shortest_path
 from short import bfs
-
-MG = nx.MultiGraph()
-
 h_input = open(sys.argv[1],"r")
 hi_file = h_input.readlines()
 g_file = open(sys.argv[3], "w")
@@ -21,12 +17,8 @@ sent_count=0
 pre_line = ''
 cur_line = ''
 graph_dict = {}
-multi_graph = [] 
-multi_graph_file = open("multi-graph-inp", "w")
-multi_graph_file.write("MG.add_weighted_edges_from([");
 e_k=[]
 graph_file = open("graph_err", "w")
-
 for line in open(sys.argv[2]): #argv[2] is dictionary
 	hi_sent = hi_file[sent_count]
 	e_sent = e_file[sent_count]
@@ -45,15 +37,6 @@ for line in open(sys.argv[2]): #argv[2] is dictionary
 		graph_dict = {}
 		e_k=[]
                 sent_count += 1
-		multi_graph_file.write("])");
-		GG=nx.Graph()
-		for n,nbrs in MG.adjacency_iter():
-			for nbr,edict in nbrs.items():
-				minvalue=min([d['weight'] for d in edict.values() ])
-				GG.add_edge(n,nbr, weight = minvalue)
-#		print(nx.shortest_path(GG,1,6))
-		multi_graph_file.write("\n;~~~~~~~~~~\n")
-		multi_graph_file.write("MG.add_weighted_edges_from([");
 		print ';~~~~~~~~~~';
 	else:
 		lst=line.split('\t')
@@ -65,11 +48,6 @@ for line in open(sys.argv[2]): #argv[2] is dictionary
 					print lst[0], i, lst[2].strip(), lst[3].strip() 
 					e_k.append(lst[0])
 					start_pos = lst[2].strip()
-					multi_graph_file.write('(%s,%s,1),' %  (start_pos, lst[3].strip()))
-					if start_pos not in multi_graph:
-						multi_graph.append(start_pos)
-					if lst[3].strip() not in multi_graph:
-                                                multi_graph.append(lst[3].strip())
 					#start_pos = int(lst[2].strip())
 					if start_pos in graph_dict.keys():
 						val = graph_dict[start_pos]
@@ -82,7 +60,6 @@ for line in open(sys.argv[2]): #argv[2] is dictionary
 			hnd_mng=lst[1].strip()
 			if hnd_mng in hi_sent:
 				print lst[0], hnd_mng, lst[2].strip(), lst[3].strip()
-				multi_graph_file.write("(%s,%s,1)," %  (lst[2].strip(), lst[3].strip()))
 				e_k.append(lst[0])
 				graph_dict[lst[2].strip()] = [lst[3].strip()]
 				#graph_dict[int(lst[2].strip())] = [lst[3].strip()]
