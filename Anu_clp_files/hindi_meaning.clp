@@ -193,7 +193,7 @@
 	(retract ?f)
         (bind ?str (str-cat WSD_compound_phrase_word_mng ",rule::"  ?rule_name))
 	(print_hindi_mng ?id -  WSD_compound_phrase_word_mng $?ids)
-	(printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?cmp_mng"    "?str")" crlf)
+	(printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?cmp_mng"    WSD_compound_phrase_word_mng)" crlf)
         (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    "?str" "?id" "(implode$ $?ids)")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
@@ -208,7 +208,7 @@
 	(retract ?f)
         (bind ?str (str-cat WSD_compound_phrase_root_mng ",rule::"  ?rule_name))
 	(print_hindi_mng ?id -  WSD_compound_phrase_root_mng $?ids)
-        (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?cmp_mng"   "?str")" crlf)
+        (printout ?*hin_mng_file* "(id-HM-source  " ?id "  "?cmp_mng"   WSD_compound_phrase_root_mng)" crlf)
 	(printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?cmp_mng"    "?str" "?id" "(implode$ $?ids)")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
@@ -224,10 +224,9 @@
  =>
   (retract ?mng ?mng1)
   (bind ?str (str-cat WSD_verb_phrase_word_mng ",rule::"  ?rule_name))
-  (bind ?str1 (str-cat WSD_verb_phrase_word_mng ",rule::"  ?rule_name))
-  (printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?grp_mng"  "?str")" crlf)
-  (printout ?*hin_mng_file* "(id-HM-source   "?id1"   -    "?str1")" crlf)
-  (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id1"   "?grp_mng"    "?str1"  "?id" "?id1")" crlf)
+  (printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?grp_mng"  WSD_verb_phrase_word_mng)" crlf)
+  (printout ?*hin_mng_file* "(id-HM-source   "?id1"   -    WSD_verb_phrase_word_mng)" crlf)
+  (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id1"   "?grp_mng"    "?str"  "?id" "?id1")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;WSD verb phrase mng
@@ -242,10 +241,9 @@
  =>
   (retract ?mng ?mng1)
   (bind ?str (str-cat WSD_verb_phrase_root_mng ",rule::"  ?rule_name))
-  (bind ?str1 (str-cat WSD_verb_phrase_root_mng ",rule::"  ?rule_name))
-  (printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?grp_mng "  "?str")" crlf)
-  (printout ?*hin_mng_file* "(id-HM-source   "?id1"   -    " ?str1")" crlf)
-  (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?grp_mng "  WSD_verb_phrase_root_mng "?id" "?id1")" crlf)
+  (printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?grp_mng "  WSD_verb_phrase_root_mng)" crlf)
+  (printout ?*hin_mng_file* "(id-HM-source   "?id1"   -    WSD_verb_phrase_root_mng)" crlf)
+  (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?grp_mng " "?str" "?id" "?id1")" crlf)
  )
  ;=================================== Default multi word meaning ===============================================
  ;Added 'if..else' loop by Roja(20-02-14) to decide source of the MWE.
@@ -500,7 +498,7 @@
  =>
         (retract ?mng)
         (bind ?str (str-cat WSD_word_mng ",rule::"  ?rule_name))
-        (printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?h_word"  "?str")" crlf)
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?h_word"  WSD_word_mng)" crlf)
         (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?h_word" "?str" "?id")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
@@ -522,7 +520,7 @@
  =>
         (retract ?mng)
         (bind ?str (str-cat WSD_root_mng ",rule::"  ?rule_name))
-        (printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?h_word "   "?str")" crlf)
+        (printout ?*hin_mng_file* "(id-HM-source   "?id"   " ?h_word "   WSD_root_mng)" crlf)
         (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?h_word "   "?str" "?id")" crlf)
  )
  ;========================================== Default single word meaning =======================================
