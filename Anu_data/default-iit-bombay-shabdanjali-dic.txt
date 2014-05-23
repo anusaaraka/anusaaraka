@@ -34432,8 +34432,7 @@ greatcoat_UNDEFINED	BArI_POjI_ovakAOta
 greatcoat_noun	BArI_POjI_ovarkota
 greater_UNDEFINED	badA
 greater_adjective	Ora_aXika/aXika_mahAna/aXika
-greatest_UNDEFINED	badA
-greatestest_UNDEFINED	mahAnawama
+greatest_adjective	sabase_badA/sabase_mahAna
 greatly_adverb	awyanwa/bahuwa_hI
 greatness_noun	badappana/viSAlawA/mahawwA/mahAnawA
 greatnesses_UNDEFINED	badappana
