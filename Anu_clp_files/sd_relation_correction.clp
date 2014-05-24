@@ -26,3 +26,12 @@
 	(assert (prep_id-relation-parser_ids ?p kriyA-karma ?kri ?sub))
  )
  ;--------------------------------------------------------------------------------------------
+ ;Added by Sukhada 22-05-14.
+ ;When will the race end? 
+ (defrule q_sentence_type
+ (Head-Level-Mother-Daughters ?h ? ?sbarq ?  ?)
+ (Node-Category ?sbarq SBARQ|SQ)
+ =>
+ 	 (assert (prep_id-relation-parser_ids	-	praSnAwmaka_vAkya))
+ )
+ ;--------------------------------------------------------------------------------------------

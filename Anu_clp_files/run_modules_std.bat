@@ -154,6 +154,8 @@
  (load-facts "relations_tmp.dat")
  (load-facts "sd_word.dat")
  (load-facts "lwg_info_tmp.dat")
+ (load-facts "E_constituents_info_tmp6.dat")
+ (load-facts "Node_category.dat")
  (run)
  (save-facts "relations_with_correction.dat" local prep_id-relation-parser_ids conjunction-components)
  (clear)

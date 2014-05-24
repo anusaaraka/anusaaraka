@@ -440,7 +440,7 @@ table[i].ondblclick=function(){
 		}
 	}
 	//Storing Word, Root, English Sentence and hindi Trnslation in str variable.
-	str += "\nRoot -" + str1 + "\nSentence - "+nextsen + "\nHindi Translation - ";
+	str += "\nRoot -" + str1 + "\nSentence - "+nextsen;
 
 if(top.frames["ManHindiTranslation"]){
 	var fr = top.ManHindiTranslation;
@@ -453,3 +453,5 @@ if(top.frames["ManHindiTranslation"]){
 	}
 	str += "\nManual Translation - " + manhnd;
 }
+str += "\nHindi Translation - ";
+//if(top.frames["ManHindiTranslation"]){
