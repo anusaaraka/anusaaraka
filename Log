@@ -1,4 +1,4 @@
- 22-05-14
+ 23-05-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
@@ -89,7 +89,7 @@
 	Modified: p_morph rule
 	Added: morph deftemplate 
  22. hindi_meaning.clp
-        Added extra information [rule_name in source part] of (id-HM-source) in all wsd related rules for debugging purpose [for viewing it in html]"
+        Added extra information [rule_name in source part] of (id-HM-source-grp_ids) in all wsd related rules for debugging purpose [for viewing it in html]"
  23. sd_relation_correction.clp:
 	Added 'q_sentence_type' rule to get questionary type sentence.
  24. In run_modules_std.bat, run_modules_ol.bat and run_modules_link.bat
