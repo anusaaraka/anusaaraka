@@ -1,4 +1,4 @@
- 23-05-14
+ 26-05-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
@@ -55,9 +55,13 @@
 	Modified: modify_word_for_apos	-> To remove 's in numbers
 		  database_cmp_phrase_word_mng, database_cmp_phrase_root_mng -> To print source in hindi meaning based on priority
 		  source variable in the function 'print_hindi_mng'
+	Added:   default_hindi_mng-same-cat_with_org_wrd, default_hindi_mng-different-cat_with_org_wrd, default_hindi_mng-same-cat_with_org_wrd_lc, default_hindi_mng-different-cat_with_org_wrd_lc -> To get meaning for original word
+	Renamed: default_hindi_mng-same-cat to default_hindi_mng-same-cat_with_root
+		 default_hindi_mng-different-cat to default_hindi_mng-different-cat_with_root
  9. hindi_sent_reorder.clp:
 	Modified: insert_aXika_for_adj_er,  insert_sabase_aXika_adj_est -> Added source of provisional database in the list.
-		  wh_without_aux-reorder1, wo_rule_for_when2, insert_wo1 and insert_wo
+		  wh_without_aux-reorder1, wo_rule_for_when2, insert_wo1 and insert_wo, insert_wo_for_when, 
+		  insert_wo_for_when1 and insert_wo_for_when2
 	Modified following relation_names:
  	       	kriyA-aXikaraNavAcI_avyaya  as  kriyA-aXikaraNavAcI
         	kriyA-conjunction           as  kriyA-vAkya_viBakwi
