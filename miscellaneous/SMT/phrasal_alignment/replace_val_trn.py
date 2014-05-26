@@ -1,6 +1,6 @@
 #Programme written by Roja (22-03-14)
 #This programme takes the shortest path generated from the graph along with the value matched in manual sentence.
-#Thus aligment is done based on the shrtest path.
+#Thus aligment is done based on the shortest path.
 #RUN:  python replace_val_trn.py  manual_file graph  match-value.txt > align_eng.txt 
 #TODO:restricted words need to be enhanced.
 

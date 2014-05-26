@@ -45,8 +45,13 @@
  fi
 
  PRES_PATH=`pwd`
- cp $1 $MYPATH/tmp/$1_tmp/
- cp $6 $MYPATH/tmp/$1_tmp/
+ if [ $# == 6 ] ; then 
+	 cp $1 $MYPATH/tmp/$1_tmp/
+	 cp $6 $MYPATH/tmp/$1_tmp/
+ else
+	echo "Check Arguments"
+	exit
+ fi
  #running stanford NER (Named Entity Recogniser) on whole text.
  echo "Calling NER ..."
  cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2013-06-20/

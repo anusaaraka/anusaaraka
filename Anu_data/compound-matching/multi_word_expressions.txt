@@ -33736,6 +33736,8 @@ at_all_costs    kisI_BI_kImawa_para#kisI_BI_kImawa_para#noun#3#RM
 copper_plate	wAmrapawra#wAmrapawra#noun#2#RM
 character_building	cariwra_nirmANa#cariwra_nirmANa#noun#1#RM
 any_day	kisI_BI_xina#kisI_BI_xina#noun#2#RM
+chink_of_light	prakASa_kI_kiraNa#prakASa_kI_kiraNa#noun#2#RM
+back_yard	piCavAdZA#piCavAdZA#2#RM
 #By Krithika ji LTRc
 fatal_hour	nirNAyaka_pala#nirNAyaka_pala#noun#2#RM
 youth_council	yuvA_pariRax/nOjavAnoM_kI_samiwi#yuvA_pariRax/nOjavAnoM_kI_samiwi#noun#2#RM 

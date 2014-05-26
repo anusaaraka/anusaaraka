@@ -294,9 +294,9 @@
  (defrule test_for_hmng
  (declare (salience 3001))
  (id-word ?id ?word)
- (not(id-HM-source ?id ?h_mng ?))
+ (not(id-HM-source-grp_ids ?id ?h_mng ? $?))
   =>
- (assert (id-HM-source ?id - -))
+ (assert (id-HM-source-grp_ids ?id - - -))
  )
  ;---------------------------------------------------------------------------------------------------
  ;Asserting a dummy fact for not generating dummy  Apertium_output(Group ids having prepositional id neq 0)
@@ -333,7 +333,7 @@
  (defrule test_for_Apertium_output
  (declare (salience 3000))
  (id-word ?id ?word)
- (id-HM-source ?id ?h_mng ?)
+ (id-HM-source-grp_ids ?id ?h_mng ? $?)
  (not (cntrl_fact_for_apertium_op ?id))
  (not (id-Apertium_output ?id $?Apertium_output))
   =>
@@ -407,7 +407,7 @@
  ;convert hindi_meaning wx notation to utf8.
  (defrule test_gt_and_lt_HM
  (declare (salience 2000))
- ?f<-(id-HM-source ?id ?mng ?src)
+ ?f<-(id-HM-source-grp_ids ?id ?mng ?src $?grp_ids)
  (not (id_HM_mng_modified ?id))
  =>
  (retract ?f)
@@ -422,7 +422,7 @@
 	(bind ?index (str-index "<" ?mng))
 	(bind ?mng (str-cat (sub-string 1 (- ?index 1) ?mng) "&lt;" (sub-string (+ ?index 1) ?length ?mng)))
  )
- (assert (id-HM-source ?id ?mng ?src))
+ (assert (id-HM-source-grp_ids ?id ?mng ?src $?grp_ids))
  (assert (id_HM_mng_modified ?id))
  )
  ;---------------------------------------------------------------------------------------------------
@@ -493,12 +493,12 @@
  ;Remove '@' symbol from hindi_meaning 
  (defrule test_symbol_for_HM
  (declare (salience 1900))
- ?f<-(id-HM-source   ?id   ?mng   ?src)
+ ?f<-(id-HM-source-grp_ids   ?id   ?mng   ?src $?grp_ids)
  (test (eq (sub-string 1 1 ?mng) "@"))
  =>
  (retract ?f)
  (bind ?h_mng (str-cat (sub-string 2 1000 ?mng)))
- (assert (id-HM-source   ?id   ?h_mng   ?src))
+ (assert (id-HM-source-grp_ids   ?id   ?h_mng   ?src $?grp_ids))
  )
  ;
  (defrule test_for_catastrophe_symbol
@@ -522,7 +522,7 @@
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
  (test (member$ ?id $?ids))
  (id-padasuthra ?id ?padasuthra)
- (id-HM-source ?id ?h_mng ?)
+ (id-HM-source-grp_ids ?id ?h_mng ? $?)
  (id-right_punctuation ?id ?r_punc)
  (id-left_punctuation  ?id ?l_punc )
  (id-Apertium_output   ?id   ?mng)
@@ -556,7 +556,7 @@
 ; (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
 ; (test (member$ ?id $?ids))
 ; (id-padasuthra ?id ?padasuthra)
-; (id-HM-source ?id ?h_mng ?)
+; (id-HM-source-grp_ids ?id ?h_mng ? $?)
 ; (id-right_punctuation ?id ?r_punc)
 ; (id-left_punctuation  ?id ?l_punc )
 ; (id-Apertium_output   ?id   ?apertium_output)
@@ -644,7 +644,7 @@
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
  (test (member$ ?id $?ids))
  (id-padasuthra ?id ?padasuthra)
- (id-HM-source ?id ?h_mng ?mng_src)
+ (id-HM-source-grp_ids ?id ?h_mng ?mng_src $?)
  (root-verbchunk-tam-chunkids ? ? ? $?lwg_ids ?head_id)
  (pada_info (group_head_id ?head_id)(H_tam ?h_tam))
  (test (or(member$ ?id $?lwg_ids)(= ?head_id ?id)))
@@ -689,7 +689,7 @@
  (id-word ?pp_id ?pp_word)
  (id-cat_coarse ?pp_id ?pp_cat)
  (id-padasuthra ?pp_id ?pp_padasuthra)
- (id-HM-source ?pp_id ?pp_h_mng ?)
+ (id-HM-source-grp_ids ?pp_id ?pp_h_mng ? $?)
  (id-word ?id ?word)
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
  (test (member$ ?id $?ids))
@@ -699,7 +699,7 @@
  (chunk-ids ?chunk_type1 ?chnk_fr_htm1 $?ids1)
  (test (member$ ?id $?ids1))
  (id-padasuthra ?id ?padasuthra)
- (id-HM-source ?id ?h_mng ?mng_src)
+ (id-HM-source-grp_ids ?id ?h_mng ?mng_src $?)
  (id-Apertium_output ?id ?apertium_output)
  (pada_info (group_head_id ?h_id)(vibakthi ?vib)(preposition ?pp_id)(group_ids $?g_ids))
  (id-right_punctuation ?id ?r_punc)
@@ -738,7 +738,7 @@
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
  (test (member$ ?pp_id $?ids))
  (id-padasuthra ?pp_id ?pp_padasuthra)
- (id-HM-source ?pp_id ?pp_h_mng ?mng_src)
+ (id-HM-source-grp_ids ?pp_id ?pp_h_mng ?mng_src $?)
 ; (test (neq ?pp_h_mng -))
  (id-word ?id ?word)
  ;(id-root ?id ?root)
@@ -747,7 +747,7 @@
  (chunk-ids ?chunk_type1 ?chnk_fr_htm1 $?ids1)
  (test (member$ ?id $?ids1))
  (id-padasuthra ?id ?padasuthra)
- (id-HM-source ?id ?h_mng ?)
+ (id-HM-source-grp_ids ?id ?h_mng ? $?)
  (id-Apertium_output ?id ?Apertium_output)
  (id-right_punctuation ?pp_id ?r_punc)
  (id-left_punctuation  ?pp_id ?l_punc )
@@ -791,7 +791,7 @@
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
  (test (member$ ?id $?ids))
  (id-padasuthra ?id ?padasuthra)
- (id-HM-source ?id ?h_mng ?mng_src)
+ (id-HM-source-grp_ids ?id ?h_mng ?mng_src $?)
  (id-Apertium_output ?id ?apertium_output)
  (id-right_punctuation ?id ?r_punc)
  (id-left_punctuation  ?id ?l_punc )
@@ -827,7 +827,7 @@
  (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
  (test (member$ ?id $?ids))
  (id-padasuthra ?id ?padasuthra)
- (id-HM-source ?id ?h_mng ?mng_src)
+ (id-HM-source-grp_ids ?id ?h_mng ?mng_src $?)
  (id-right_punctuation ?id ?r_punc)
  (id-left_punctuation  ?id ?l_punc )
  (not (No complete linkages found))
