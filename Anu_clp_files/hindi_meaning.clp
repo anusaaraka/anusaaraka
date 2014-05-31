@@ -580,7 +580,7 @@
  ;Getting Hindi meaning from default dictionary when there is a same category 
  ;Assuming first meaning always has 'Defualt'.
  ;Modified by Shirisha Manju (04-02-12) removed if condition to check for "number" in action part instead added in rule part
- (defrule default_hindi_mng-same-cat
+ (defrule default_hindi_mng-same-cat_with_root
  (declare (salience 7700))
  (id-root ?id ?rt)
  ?mng<-(meaning_to_be_decided ?id)
@@ -600,7 +600,7 @@
  ;Getting Hindi meaning from default dictionary when there is a different category.
  ;Also asserting a fact (sen_type-id-phrase Default_mng_with_different_category) as a warning message in catastrophe.dat
  ;Assuming first meaning always has 'Defualt'.
- (defrule default_hindi_mng-different-cat
+ (defrule default_hindi_mng-different-cat_with_root
  (declare (salience 7600))
  (id-root ?id ?rt)
  ?mng<-(meaning_to_be_decided ?id)
@@ -619,8 +619,91 @@
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (24-05-14).
+ ;Getting Hindi meaning from default dictionary with original word same category
+ (defrule default_hindi_mng-same-cat_with_org_wrd
+ (declare (salience 7500))
+ ?mng<-(meaning_to_be_decided ?id)
+ (id-cat_coarse ?id ?cat)
+ (id-original_word ?id ?org_wrd)
+ (test (neq (numberp ?org_wrd) TRUE))
+ (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?org_wrd "_" ?cat)) "FALSE"))
+ =>
+        (bind ?f_mng (get_first_mng ?org_wrd ?cat default-iit-bombay-shabdanjali-dic.gdbm))
+        (if (neq ?f_mng "FALSE") then
+                (retract ?mng)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
+        )
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (24-05-14).
+ ;Getting Hindi meaning from default dictionary with original word when there is a different category.
+ ;Also asserting a fact (sen_type-id-phrase Default_mng_with_different_category) as a warning message in catastrophe.dat
+ ;Assuming first meaning always has 'Defualt'.
+ (defrule default_hindi_mng-different-cat_with_org_wrd
+ (declare (salience 7300))
+ ?mng<-(meaning_to_be_decided ?id)
+ (id-original_word ?id ?org_wrd)
+ (id-cat_coarse ?id ?cat)
+ (default-cat ?cat1)
+ (test (neq (numberp ?org_wrd) TRUE))
+ (test (neq ?cat ?cat1))
+ (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?org_wrd "_" ?cat1)) "FALSE"))
+ =>
+        (bind ?f_mng (get_first_mng ?org_wrd ?cat1 default-iit-bombay-shabdanjali-dic.gdbm))
+        (if (neq ?f_mng "FALSE") then
+                (retract ?mng)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
+                (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?org_wrd")" crlf)
+        )
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (24-05-14).
+ ;Getting Hindi meaning from default dictionary lowcasing original word same category
+ (defrule default_hindi_mng-same-cat_with_org_wrd_lc
+ (declare (salience 7200))
+ ?mng<-(meaning_to_be_decided ?id)
+ (id-cat_coarse ?id ?cat)
+ (id-original_word ?id ?org_wrd)
+ (test (neq (numberp ?org_wrd) TRUE))
+ (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat (lowcase ?org_wrd) "_" ?cat)) "FALSE"))
+ =>
+        (bind ?f_mng (get_first_mng (lowcase ?org_wrd) ?cat default-iit-bombay-shabdanjali-dic.gdbm))
+        (if (neq ?f_mng "FALSE") then
+                (retract ?mng)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
+        )
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (24-05-14).
+ ;Getting Hindi meaning from default dictionary lowcasing original word when there is a different category.
+ ;Also asserting a fact (sen_type-id-phrase Default_mng_with_different_category) as a warning message in catastrophe.dat
+ ;Assuming first meaning always has 'Defualt'.
+ (defrule default_hindi_mng-different-cat_with_org_wrd_lc
+ (declare (salience 7100))
+ ?mng<-(meaning_to_be_decided ?id)
+ (id-original_word ?id ?org_wrd)
+ (id-cat_coarse ?id ?cat)
+ (default-cat ?cat1)
+ (test (neq (numberp ?org_wrd) TRUE))
+ (test (neq ?cat ?cat1))
+ (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat (lowcase ?org_wrd) "_" ?cat1)) "FALSE"))
+ =>
+        (bind ?f_mng (get_first_mng (lowcase ?org_wrd) ?cat1 default-iit-bombay-shabdanjali-dic.gdbm))
+        (if (neq ?f_mng "FALSE") then
+                (retract ?mng)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
+                (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?org_wrd")" crlf)
+        )
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+  ;Getting meaning for Proper noun 
   (defrule test_for_PropN
-  (declare (salience 7500))
+  (declare (salience 7400))
   (id-cat_coarse ?id PropN)
   (id-word ?id ?word)
   ?mng<-(meaning_to_be_decided ?id)
@@ -637,7 +720,7 @@
  ;That would be the lowest level since the early 1970s.
  ;Seven of nine states have grown each year since 1980, including New York, which lost 4% of its population during the 1970s.
  (defrule default_mng
- (declare (salience 7400))
+ (declare (salience 7000))
  (id-original_word ?id  ?original_wrd)
  ?mng<-(meaning_to_be_decided ?id)
  =>
