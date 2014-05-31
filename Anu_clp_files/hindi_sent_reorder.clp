@@ -394,11 +394,13 @@
  ;-----------------------------------------------------------------------------------------------------------------
  ;When you stand on this rock and face the east, the waves of the bay of bengal lap your feet. 
  ;jaba Apa isa cattAna para Kade howe hEM Ora pUrva kI ora muzha karawe hEM, wo bengal kI KAdI kI lahareM Apake pAzvoM se XIre_se takarAwI hEM.
+ ;In questiory type sentences 'wo' is not inserted. So added '(not (prep_id-relation-anu_ids  -    praSnAwmaka_vAkya))' by Roja (24-05-14)
  (defrule insert_wo_for_when
  (prep_id-relation-anu_ids ?  kriyA-kriyA_viSeRaNa  ?k 1)
  ?f1<-(id-word 1 when)
  (prep_id-relation-anu_ids ?  vAkya-vAkya_saMbanXI  ?k ?id)
  ?f0 <-(hindi_id_order $?pre ?id $?post)
+ (not (prep_id-relation-anu_ids  -    praSnAwmaka_vAkya)) ;When will you arrive in Hyderabad? Suggested by Chaitanya Sir
  =>
 	(retract ?f0 ?f1)
         (assert (hindi_id_order  $?pre  ?id wo  $?post))
@@ -407,20 +409,23 @@
  ;-----------------------------------------------------------------------------------------------------------------
  ;When the dollar is in a free-fall, even central banks can not stop it. 
  ;jaba dOlara BArI girAvata meM ho, wo keMxrIya bEMka BI isako nahIM_roka sakawe hEM.
+ ;In questiory type sentences 'wo' is not inserted. So added '(not (prep_id-relation-anu_ids  -    praSnAwmaka_vAkya))' by Roja (24-05-14)
  (defrule insert_wo_for_when1
  (prep_id-relation-anu_ids ?  kriyA-kriyA_viSeRaNa  ?k 1)
  ?f1<-(id-word 1 when)
  (prep_id-relation-anu_ids ?  kriyA-in_saMbanXI  ?k ?)
  ?f0 <-(hindi_id_order $?pre ?k $?post)
+ (not (prep_id-relation-anu_ids  -    praSnAwmaka_vAkya)) ;When will you arrive in Hyderabad? Suggested by Chaitanya Sir
  =>
         (retract ?f0 ?f1)
  	(assert (wo_inserted 1))
         (assert (hindi_id_order  $?pre  ?k wo  $?post))
-        (printout ?*DBUG* "(Rule_Name-ids   insert_wo_for_when   (hindi_id_order  "(implode$ (create$ $?pre ?k wo $?post))")"crlf)
+        (printout ?*DBUG* "(Rule_Name-ids   insert_wo_for_when1   (hindi_id_order  "(implode$ (create$ $?pre ?k wo $?post))")"crlf)
  )
  ;-----------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (15-11-11)
  ;When Mrs. Chitnis discovered that her husband was an adulterer she divorced him.
+ ;In questiory type sentences 'wo' is not inserted. So added '(not (prep_id-relation-anu_ids  -    praSnAwmaka_vAkya))' by Roja (24-05-14)
  (defrule insert_wo_for_when2
  ?f1<-(id-word 1 when)
  (not (wo_inserted 1))
@@ -428,6 +433,7 @@
  (prep_id-relation-anu_ids ?  kriyA-vAkya_viBakwi  ?k1 ?sub)
  (test (> ?k1 ?k) )
  ?f0 <-(hindi_id_order $?pre ?k1 $?post)
+ (not (prep_id-relation-anu_ids  -    praSnAwmaka_vAkya)) ;When will you arrive in Hyderabad? Suggested by Chaitanya Sir 
  =>
         (retract ?f0 ?f1)
  	(assert (wo_inserted 1))
