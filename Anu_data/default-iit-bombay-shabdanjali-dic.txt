@@ -78737,7 +78737,7 @@ swede_UNDEFINED	svIdanavAsI
 swede_noun	svIda/eka_waraPa_kI_sabjI
 swedes_UNDEFINED	sabjI
 sweep_noun	PElAva/saPAI/GumAva/cakkara/avaXi
-sweep_verb	sAPa_kara/PEla/JAda/JAdU_lagA/Guma/CA_jA/buhAra/batora/bahA_le_jA/baha_jA/AsAnI_se_cada/akadakara_cala/saPAI_kara
+sweep_verb	sAPa_kara/PEla/JAda/JAdU_lagA/Guma/CA_jA/buhAra/batora/bahA_le_jA/baha_jA/AsAnI_se_cada/akadakara_cala/saPAI_kara/prasarpa
 sweeper_noun	JAdU_lagAnevAlA/svIpara_maCalI/svIpara/mehawara/JAdU_lagAne_vAlA/JAdana/Puta_bAla_kA_eka_KilAdI
 sweepers_UNDEFINED	Puta_bAla_kA_eka_KilAdI
 sweeping_adjective	mahawwvapUrNa/vyApaka/laharAwA_huA/BArI/awivyApwa/awiraFjiwa/anXAXunXa
@@ -93540,3 +93540,5 @@ MSRTC_PropN	mahArARtra_rAjya_sadZaka_parivahana_nigama
 BJP_PropN	BAjapA
 ADCP_PropN	edIsIpI
 ACP_PropN	esIpI
+societal_adjective	sAmAjika
+arthropod_noun	saMXipAxa_prANI
