@@ -35,7 +35,7 @@
   (bind ?new_mng (remove_character "_" (implode$ (create$ ?man_mng)) " "))
   (bind ?new_mng (remove_character "." (implode$ ?new_mng) " "))
   (bind ?new_mng (remove_character "," (implode$ ?new_mng) " "))
-  (bind ?new_mng (remove_character "@" (implode$ ?new_mng) " "))
+;  (bind ?new_mng (remove_character "@" (implode$ ?new_mng) " "))
   (assert (anu_id-anu_mng-man_mng ?mid ?word ?new_mng))
   (assert (underscore_removed ?mid))
 )
@@ -71,7 +71,6 @@
 	(assert (manual_id_en_hi-word-root-vib-grp_ids ?mid ?man_wrd - - - - - ?mid))
         (assert (fact_modified_id ?mid)) 
 ) 
-
 
 (defrule get_id2
 (declare (salience 800))
@@ -125,6 +124,18 @@
         (retract ?f1)
         (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids))
 )
+
+
+(defrule verb_rule1
+(declare (salience 50)) 
+?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun $?tam - - - - - $?grp_ids)
+(man_word-root-cat $?noun ?root v)
+=>
+        (retract ?f1)
+        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - ?root - $?tam - $?grp_ids))
+)
+
+
 
 ;;(to ===> se ko)
 ;(defrule get_id3

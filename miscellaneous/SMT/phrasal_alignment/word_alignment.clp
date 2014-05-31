@@ -203,11 +203,46 @@
         (assert (prov_assignment ?eid ?mid))
 )
 ;-------------------------------------------------------------------------------------
+;Check for manual verb[root] and tam match in the dictionary
+; The strong nuclear force binds protons and neutrons in a nucleus.  
+(defrule verb_match_using_dic
+(declare (salience 880))
+(current_id ?mid)
+(manual_id_en_hi-word-root-vib-grp_ids ?mid $?verb_mng - $?v_root - $?tam - $?grp_ids)
+(id-org_wrd-root-dbase_name-mng ? ? ?root ? $?v_root)
+(e_tam-id-dbase_name-mng ?e_tam ? ? $?tam)
+(id-root ?aid ?root)
+(not (prov_assignment ?aid ?mid))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (assert (anu_ids-sep-manual_ids ?aid - $?grp_ids))
+        (assert (man_id-src-root ?mid dictionary ?root))
+        (assert (prov_assignment ?aid ?mid))
+)
+
+;-------------------------------------------------------------------------------------
+(defrule verb_with_only_root_match_using_dic
+(declare (salience 879))
+(current_id ?mid)
+(manual_id_en_hi-word-root-vib-grp_ids ?mid $?verb_mng - $?v_root - $?tam - $?grp_ids)
+(id-org_wrd-root-dbase_name-mng ? ? ?root ? $?v_root)
+(id-root ?aid ?root)
+(not (prov_assignment ?aid ?mid))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (assert (anu_ids-sep-manual_ids ?aid - $?grp_ids))
+        (assert (man_id-src-root ?mid dictionary ?root))
+        (assert (prov_assignment ?aid ?mid))
+)
+;-------------------------------------------------------------------------------------
 (defrule check_match_with_english_word
 (declare (salience 830))
 (current_id ?mid)
 (manual_id_en_hi-word-root-vib-grp_ids ?mid $?word - - - - - $?gids)
-(or (id-word ?eid $?word)(id-original_word ?eid $?word))
+(or (id-word ?eid $?word1)(id-original_word ?eid $?word1))
+(test (eq (explode$ (str-cat  @ (implode$ (create$ $?word1)))) $?word))
 (id-root ?eid ?e_root)
 (not (prov_assignment ?eid ?mid))
 =>
