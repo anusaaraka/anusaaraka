@@ -8,6 +8,8 @@ left_over = left_over_file.readlines()
 left_file = open(sys.argv[5], 'r')
 left = left_file.readlines()
 
+al_left_file = open(sys.argv[6], 'a')
+
 left_dic = {}
 ##Phrase level left over words:
 count = 0
@@ -92,30 +94,52 @@ for key in sorted(align_dic):
 				else:
 					if hi_s_l[index] == left_lst[i]:
 						if  hi_s_l[index-1] == val[1]: 	  #Comparing with previous word in hindi sentence
-							if val[1] == '-':
-								tmp_v = align_dic[key-1].split('\t')
-								if  hi_s_l[index-2] == tmp_v[1]: #Comparing with two words previous in hindi sentence
-									v = align_dic[key+1].split('\t')
-									new_v = v[0] + '\t' +  left_lst[i]
-									align_dic[int(key+1)] = new_v
-#									print '@@@', key, new_v
-									replace_item(left_lst[i], left_lst)
-							else:
-#								print '!!!!', val[1], key, left_lst[i]
-								new_v = val[0] + '\t' + val[1] + '_' + left_lst[i]
-								align_dic[int(key)] = new_v
-#								print '!!!', key, new_v
-								replace_item(left_lst[i], left_lst)
+								if val[1] == '-':
+									tmp_v = align_dic[int(key-1)].split('\t')
+									if  hi_s_l[index-2] == tmp_v[1]: #Comparing with two words previous in hindi sentence
+										v = align_dic[key+1].split('\t')
+										new_v = v[0] + '\t' +  left_lst[i]
+										align_dic[int(key+1)] = new_v
+#										print '@@@', key, new_v
+										replace_item(left_lst[i], left_lst)
+#						       		else:
+#									print '!!!!', val[1], key, left_lst[i]
+#									new_v = val[0] + '\t' + val[1] + '_' + left_lst[i]
+#									align_dic[int(key)] = new_v
+#	#								print '!!!', key, new_v
+#									replace_item(left_lst[i], left_lst)
 						else:
-							val = align_dic[key].split('\t')
-							if '_' in val[1]:
-								v = val[1].split('_')
-								if hi_s_l[index-1] == v[1] and hi_s_l[index-2] == v[0]:
-									new_v = val[0] + '\t' +  val[1] + '_' + left_lst[i]
-									align_dic[int(key)] = new_v
-#									print '***', key, new_v
-									replace_item(left_lst[i], left_lst)
+								val = align_dic[key].split('\t')
+#								print '***', val
+								if val[1] == '-':
+									tmp_v = align_dic[int(key)].split('\t')
+									if  hi_s_l[index-2] == tmp_v[1]: #Comparing with two words previous in hindi sentence
+										v = align_dic[key+1].split('\t')
+										new_v = v[0] + '\t' +  left_lst[i]
+										align_dic[int(key+1)] = new_v
+										replace_item(left_lst[i], left_lst)
+								elif '_' in val[1]:
+									v = val[1].split('_')
+									if hi_s_l[index-1] == v[1] and hi_s_l[index-2] == v[0]:
+										tmp_v = align_dic[int(key+1)].split('\t')
+										if tmp_v[1] == '-':
+											 new_v =  tmp_v[0] + '\t' + left_lst[i]
+											 align_dic[int(key+1)] = new_v
+											 replace_item(left_lst[i], left_lst)
+										else:
+											new_v = val[0] + '\t' +  val[1] + '_' + left_lst[i]
+											align_dic[int(key)] = new_v
+											replace_item(left_lst[i], left_lst)
 #		print  '%%%', left_lst
 
 
 	print '(anu_id-anu_mng-man_mng' + '\t' + str(key) + '\t' + align_dic[key] + ')'
+for each in phrase_left_over_lst:
+	if each != 'REPLACED':
+		al_left_file.write('%s '  % each)
+for each in left_lst:
+	if each != 'REPLACED':
+		al_left_file.write('%s '  % each)
+al_left_file.write('\n;~~~~~~~~~~\n')
+#print '^^^', left_lst
+#print '***', phrase_left_over_lst	

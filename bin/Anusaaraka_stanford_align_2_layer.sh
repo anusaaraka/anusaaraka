@@ -165,7 +165,7 @@
     echo "Hindi meaning using Stanford parser" $line
     cp $MYPATH/tmp/$1_tmp/sand_box.dat $MYPATH/tmp/$1_tmp/$line/
     cp $MYPATH/tmp/$1_tmp/ner.txt $MYPATH/tmp/$1_tmp/$line/ner.dat
-    timeout 500 ./run_sentence_stanford_align_eng.sh $1 $line 1 $MYPATH $4 $6
+    timeout 500 ./run_sentence_stanford_align_2_layer.sh $1 $line 1 $MYPATH $4 $6
     echo ""
  done < $MYPATH/tmp/$1_tmp/dir_names.txt
 
@@ -177,4 +177,4 @@
 
  echo "Calling Interface related programs"
  sh $HOME_anu_test/bin/run_anu_browser.sh $HOME_anu_test $1 $MYPATH $HOME_anu_output
- sh $HOME_anu_test/miscellaneous/SMT/MINION/browser/run_align_browser_eng.sh $HOME_anu_test $1 $MYPATH $HOME_anu_output
+ sh $HOME_anu_test/miscellaneous/SMT/MINION/browser/run_align_browser_eng_2_layer.sh $HOME_anu_test $1 $MYPATH $HOME_anu_output

@@ -1,5 +1,5 @@
-
-
+ (defglobal ?*h_mng_file* = h_grp_fp)
+ 
  (deffunction never-called ()
  (assert (id-original_word) )
  (assert (id-number-src))
@@ -31,6 +31,26 @@
  (assert (id-eng-src))
  (assert (id-attach_eng_mng))
  (assert (id-wsd_viBakwi))
+ (assert (dir_name-file_name-rule_name-id-wsd_root_mng))
+ (assert (dir_name-file_name-rule_name-id-wsd_word_mng))
+ (assert (dir_name-file_name-rule_name-id-H_tam_mng))
+ (assert (default-iit-bombay-shabdanjali-dic.gdbm))
+ (assert (dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng))
+ (assert (dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_word_mng))
+ (assert (dir_name-file_name-rule_name-root_id-TAM-vachan))
+ (assert (dir_name-file_name-rule_name-make_verbal_noun))
+ (assert (dir_name-file_name-rule_name-id-H_vib_mng))
+ (assert (dir_name-file_name-rule_name-kriyA_id-object_viBakwi))
+ (assert (dir_name-file_name-rule_name-kriyA_id-subject_viBakwi))
+ (assert (dir_name-file_name-rule_name-id-wsd_root))
+ (assert (dir_name-file_name-rule_name-kriyA_id-object1_viBakwi))
+ (assert (dir_name-file_name-rule_name-kriyA_id-subject1_viBakwi))
+ (assert (dir_name-file_name-rule_name-id-preceeding_part_of_verb))
+ (assert (dir_name-file_name-rule_name-id-wsd_number))
+ (assert (dir_name-file_name-rule_name-kriyA_id-object2_viBakwi))
+ (assert (dir_name-file_name-rule_name-id-attach_emphatic))
+ (assert (dir_name-file_name-rule_name-id-wsd_viBakwi))
+ (assert (id-HM-source-grp_ids))
  )
  ;----------------------------------------------------------------------------------------------------------------
  ; I am going to remarry when you die
@@ -39,7 +59,7 @@
  (defrule verbal_noun_mng1
  (declare (salience 1000))
  (or (make_verbal_noun ?id)(id-cat_coarse ?id verbal_noun))
- ?f0<-(id-HM-source ?id ?h_word ?src)
+ ?f0<-(id-HM-source ?id ?h_word ?src&~Template_word_mng);Ex: Your cat keeps on [rubbing] itself against my leg.
  (test (neq ?h_word -))
  (not (made_verbal_noun ?id))
  =>
@@ -117,3 +137,36 @@
         (retract ?f0)
  )
  ;----------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (31-05-14)
+ (defrule get_rule_info
+ (declare (salience 600))
+ (id-HM-source ?id ?hmng ?src)
+ (dir_name-file_name-rule_name-id-wsd_root_mng ? ?file_name ?rule_name ?id ?)
+ ?f0<-(id-HM-source-grp_ids  ?id  ? ?src $?ids)
+ =>
+	(retract ?f0)
+	(bind ?str (str-cat ?src ",rule_name::"  ?rule_name))
+ 	(printout ?*h_mng_file* "(id-HM-source-grp_ids  " ?id "  "?hmng"    "?str" "(implode$ $?ids)")" crlf)	
+ )
+ ;----------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (31-05-14)
+ (defrule get_rule_info1
+ (declare (salience 500))
+ (id-HM-source ?id ?hmng ?src&WSD_root_mng)
+ (default-iit-bombay-shabdanjali-dic.gdbm ?id ? ?hmng)
+ ?f0<-(id-HM-source-grp_ids  ?id  ? ?src $?ids)
+ =>
+        (retract ?f0)
+        (bind ?str (str-cat ?src ",rule_name::Default_meaning_for_adjective"))
+        (printout ?*h_mng_file* "(id-HM-source-grp_ids  " ?id "  "?hmng"    "?str" "(implode$ $?ids)")" crlf)
+ )
+ ;----------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (31-05-14)
+ (defrule get_rule_info2
+ (declare (salience 400))
+ (id-HM-source ?id ?hmng ?src)
+ ?f0<-(id-HM-source-grp_ids  ?id  ? ?src $?ids)
+ =>
+        (retract ?f0)
+        (printout ?*h_mng_file* "(id-HM-source-grp_ids  " ?id "  "?hmng"    "?src" "(implode$ $?ids)")" crlf)
+ )

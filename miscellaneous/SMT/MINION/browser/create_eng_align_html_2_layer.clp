@@ -666,24 +666,24 @@
  (assert (anu_id-anu_mng-sep-man_id-man_mng ?id - - - -))
  )
 
-; (defrule change_manual_op_fact-hi-en
-; (declare (salience 2002))
-; ?f<-(eng_id-eng_wrd-man_wrd ?aid ?anu_mng ?man_mng)
-;  =>
-; (retract ?f)
-; (assert (eng_id-eng_wrd-sep-man_id-man_mng ?aid ?anu_mng - - ?man_mng))
-; )
+ (defrule change_manual_op_fact-hi-en
+ (declare (salience 2002))
+ ?f<-(eng_id-eng_wrd-man_wrd ?aid ?anu_mng ?man_mng)
+  =>
+ (retract ?f)
+ (assert (eng_id-eng_wrd-sep-man_id-man_mng ?aid ?anu_mng - - ?man_mng))
+ )
 
  (defrule convert_wx_to_utf8_for_manual_output-hi-en
  (declare (salience 2001))
- ?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?mng - ?mid $?man_output)
+ ?f<-(eng_id-eng_wrd-sep-man_id-man_mng ?aid $?mng - ?mid $?man_output)
  (test (and (> (length $?mng) 0) (neq $?man_output -)))
  (not (id_manual_output_mng_modified1 ?aid))
  =>
  (retract ?f)
  (bind ?length (length $?man_output))
  (if (eq ?length 0) then
-        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?mng - ?mid -))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?mng - ?mid -))
  else
         (loop-for-count (?i  1 ?length)
                 ;(bind ?word (nth$ ?i (create$ $?man_output)))
@@ -698,7 +698,7 @@
                 else
                         (bind ?utf8_man_output ?word)))
 
-        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid  $?mng - ?mid ?utf8_man_output))
+        (assert (eng_id-eng_wrd-sep-man_id-man_mng ?aid  $?mng - ?mid ?utf8_man_output))
  )
         (assert (id_manual_output_mng_modified1 ?aid))
  )
@@ -707,10 +707,10 @@
  (defrule man_rule1-hi-en
  (declare (salience 900))
  (id-word ?id ?word)
- (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $?))
+ (not (eng_id-eng_wrd-sep-man_id-man_mng ?id $?))
  =>
 
- (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id - - - -))
+ (assert (eng_id-eng_wrd-sep-man_id-man_mng ?id - - - -))
  )
 
  ;---------------------------------------------------------------------------------------------------
@@ -735,7 +735,7 @@
  (id-left_punctuation  ?id ?l_punc )
  (sen_type-id-phrase ?sen_type ?id ?phrase)
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? - ? ?man_mng)
- (anu_id-anu_mng-sep-man_id-man_mng_tmp  ?id $? - ? ?man_mng1)
+ (eng_id-eng_wrd-sep-man_id-man_mng  ?id $? - ? ?man_mng1)
  =>
  (retract ?f)
  (if (eq ?r_punc NONE) then (bind ?r_punc ""))
@@ -796,7 +796,7 @@
  (test (member$ ?id $?g_ids))
  (sen_type-id-phrase ?sen_type ?id ?phrase)
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? - ? ?man_mng)
- (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $? - ? ?man_mng1)
+ (eng_id-eng_wrd-sep-man_id-man_mng  ?id $? - ? ?man_mng1)
  =>
  (retract ?f)
  (if (eq ?r_punc NONE) then (bind ?r_punc ""))
@@ -847,7 +847,7 @@
  (test (and (neq ?vib 0) (neq ?pp_id 0)))
  (sen_type-id-phrase ?sen_type ?pp_id ?phrase)
  (anu_id-anu_mng-sep-man_id-man_mng ?pp_id $? - ? ?man_mng)
- (anu_id-anu_mng-sep-man_id-man_mng_tmp ?pp_id $? - ? ?man_mng1)
+ (eng_id-eng_wrd-sep-man_id-man_mng  ?pp_id $? - ? ?man_mng1)
  =>
  (retract ?f)
  (bind ?sign (- ?id ?pp_id))
@@ -893,7 +893,7 @@
  (id-left_punctuation  ?id ?l_punc )
  (sen_type-id-phrase ?sen_type ?id ?phrase)
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? - ? ?man_mng)
- (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $? - ? ?man_mng1)
+ (eng_id-eng_wrd-sep-man_id-man_mng  ?id $? - ? ?man_mng1)
  =>
  (retract ?f)
  (if (eq ?r_punc NONE) then (bind ?r_punc ""))
@@ -933,7 +933,7 @@
  (not (No complete linkages found))
  (sen_type-id-phrase ?sen_type ?id ?phrase)
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? - ? ?man_mng)
- (anu_id-anu_mng-sep-man_id-man_mng_tmp  ?id $? - ? ?man_mng1)
+ (eng_id-eng_wrd-sep-man_id-man_mng  ?id $? - ? ?man_mng1)
  =>
  (retract ?f)
  (if (eq ?r_punc NONE) then (bind ?r_punc ""))
@@ -972,7 +972,7 @@
  (sen_type-id-phrase ?sen_type ?id ?phrase)
  (No complete linkages found)
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? - ? ?man_mng)
- (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $? - ? ?man_mng1)
+ (eng_id-eng_wrd-sep-man_id-man_mng  ?id $? - ? ?man_mng1)
  =>
  (retract ?f)
  (if (eq ?r_punc NONE) then (bind ?r_punc ""))
@@ -1043,7 +1043,7 @@
  (printout fp "<tr><td>" crlf)
  (while (neq ?val1 EOF)
  (printout fp "Anu translation :: "(wx_utf8 ?val1)"<br>" crlf)
- (printout t ?val1 crlf)
+ ;(printout t ?val1 crlf)
  (bind ?val1 (readline dic_fp1))
  )
  (printout fp "</td></tr>" crlf)
@@ -1051,17 +1051,17 @@
  
  (printout fp "<tr><td>" "Man translation :: " (wx_utf8 (implode$ $?man_sen))"</td></tr>" crlf)
 
- (bind ?dic_path (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/alignment_dic.txt"))
- (open ?dic_path dic_fp)
- (bind ?val (readline dic_fp))
- (printout fp "<tr><td>" crlf)
- (while (neq ?val EOF)
- (printout fp ?val"<br>" crlf)
- (printout t ?val crlf)
- (bind ?val (readline dic_fp))
- )
- (printout fp "</td></tr>" crlf)
- (close dic_fp)
+; (bind ?dic_path (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/alignment_dic.txt"))
+; (open ?dic_path dic_fp)
+; (bind ?val (readline dic_fp))
+; (printout fp "<tr><td>" crlf)
+; (while (neq ?val EOF)
+; (printout fp ?val"<br>" crlf)
+; (printout t ?val crlf)
+; (bind ?val (readline dic_fp))
+; )
+; (printout fp "</td></tr>" crlf)
+; (close dic_fp)
  (printout fp "</table></form>")
  (if (and (= ?p_id 1) (= ?s_id 1)) then (printout fp "<div class=\"float_clear\"/>" crlf))
 
