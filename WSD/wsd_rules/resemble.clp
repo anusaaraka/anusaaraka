@@ -21,48 +21,36 @@
 ;Modified by Sukhada (30-12-09) as the relation name "kriyA-kqxanwa_viSeRaNa" has been modified as "kriyA-kqxanwa_karma".
 ;They seem to resemble each other .
 
-(defrule resemble1
-(declare (salience 5000))
-(id-root ?id resemble)
-?mng <-(meaning_to_be_decided ?id)
-;(kriyA-kqxanwa_viSeRaNa  ?id1 ?id)
-(kriyA-kqxanwa_karma  ?id1 ?id)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id ke_samAna))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  resemble.clp     resemble1   "  ?id "  ke_samAna )" crlf)
-)
-)
+;(defrule resemble1
+;(declare (salience 5000))
+;(id-root ?id resemble)
+;?mng <-(meaning_to_be_decided ?id)
+;;(kriyA-kqxanwa_viSeRaNa  ?id1 ?id)
+;(kriyA-kqxanwa_karma  ?id1 ?id)
+;=>
+;(retract ?mng)
+;(assert (id-wsd_root_mng ?id ke_samAna))
+;(if ?*debug_flag* then
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  resemble.clp     resemble1   "  ?id "  ke_samAna )" crlf)
+;)
+;)
 
 
 
 ;Added by Sheetal(21.09.09)
 ;Salience reduced by Meena(21.10.09) as it is a default rule, with no conditions. 
+;$$$ Modified by Shirisha Manju 13-5-14 Suggested by Sukhada --- Changed meaning from 'ke_samAna' to 'samAna'
 (defrule resemble2
-;(declare (salience 5000))
-(declare (salience 1000))
 (id-root ?id resemble)
 ?mng <-(meaning_to_be_decided ?id)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id ke_samAna))
+(assert (id-wsd_root_mng ?id samAna))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  resemble.clp     resemble1   "  ?id "  ke_samAna )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  resemble.clp     resemble1   "  ?id "  samAna )" crlf)
 )
 )
 ;They seem to resemble each other .
 ;eka_xUsare ve ke_samAna prawIwa howe hEM
-
-
-
-
-
-
-
-
-
-
-
 
 

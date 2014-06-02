@@ -153,28 +153,30 @@
  ;Added by Shirisha Manju
  ; The boy has a computer . The train left on time .
  ;------------------------------------------------------------------------------------------------------------------------
-; (defrule sub_samA_be
-; (declare (salience 300))
-; (rel_name-sids nsubjpass ?samA ?sub)
-; (rel_name-sids auxpass ?samA ?b)
-; (parserid-word ?b be)
-; =>
-; (printout       ?*fp*   "(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa    "?sub"        "?samA")"crlf)
-; (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   sub_samA_be   subject-subject_samAnAXikaraNa    "?sub"        "?samA")"crlf)
-; (assert (got_samAnAXikaraNa_rel  ?samA))
-; )
-; ; Rama must be educated.
-; ;------------------------------------------------------------------------------------------------------------------------
-; (defrule kri_subj_be
-; (declare (salience 300))
-; (rel_name-sids nsubjpass ?samA ?sub)
-; (rel_name-sids auxpass ?samA ?b)
-; (parserid-word ?b be)
-; =>
-; (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?b"        "?sub")"crlf)
-; (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kri_subj_be  kriyA-subject    "?b"        "?sub")"crlf)
-; )
-; ; Rama must be educated.
+ (defrule sub_samA_be
+ (declare (salience 300))
+ (rel_name-sids nsubjpass ?samA ?sub)
+ (rel_name-sids auxpass ?samA ?b)
+ (parserid-word ?b be)
+ (root-verbchunk-tam-parser_chunkids ? ? ? $? ?b);Anne told me I would almost certainly be hired.
+ =>
+ (printout       ?*fp*   "(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa    "?sub"        "?samA")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   sub_samA_be   subject-subject_samAnAXikaraNa    "?sub"        "?samA")"crlf)
+ (assert (got_samAnAXikaraNa_rel  ?samA))
+ )
+ ; Rama must be educated.
+ ;------------------------------------------------------------------------------------------------------------------------
+ (defrule kri_subj_be
+ (declare (salience 300))
+ (rel_name-sids nsubjpass ?samA ?sub)
+ (rel_name-sids auxpass ?samA ?b)
+ (parserid-word ?b be)
+ (root-verbchunk-tam-parser_chunkids ? ? ? $? ?b) ;Anne told me I would almost certainly be hired.
+ =>
+ (printout       ?*fp*   "(prep_id-relation-parser_ids  -     kriyA-subject    "?b"        "?sub")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kri_subj_be  kriyA-subject    "?b"        "?sub")"crlf)
+ )
+ ; Rama must be educated.
  ;------------------------------------------------------------------------------------------------------------------------
 
  (defrule kri_shared_sub
@@ -445,7 +447,7 @@ else
 (defrule nsubj+xcomp_1
 (declare (salience 290))
 (rel_name-sids nsubj ?k ?s)
-(rel_name-sids xcomp|ccomp ?k1 ?k)   ;
+(rel_name-sids ccomp ?k1 ?k)   ;
 (rel_name-sids aux ?k ?to)
 ;(parserid-word ?to to);I knew who would come to the party.
 =>
@@ -542,12 +544,12 @@ else
 )
  ; Ex. He talked to him in order to secure the account.
 ;------------------------------------------------------------------------------------------------------------------------
-;(defrule advcl
-;(rel_name-sids  advcl ?kri ?samakAlika_kri)
-;=>
-;(printout	?*fp*	"(prep_id-relation-parser_ids  -	kriyA-samakAlika_kriyA	"?kri"	"?samakAlika_kri")"crlf)
-;(printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	advcl	kriyA-samakAlika_kriyA	"?kri"	"?samakAlika_kri")"crlf)
-;)
+(defrule advcl
+(rel_name-sids  advcl ?kri ?vAkya_vi)
+=>
+(printout	?*fp*	"(prep_id-relation-parser_ids  -	kriyA-vAkya_viSeRaNa  	"?kri"	"?vAkya_vi")"crlf)
+(printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	advcl	kriyA-vAkya_viSeRaNa   	"?kri"	"?vAkya_vi")"crlf)
+)
  ; Ex. The accident happened as the night was falling. 
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule advmod
