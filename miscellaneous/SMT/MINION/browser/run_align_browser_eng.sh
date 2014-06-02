@@ -1,5 +1,5 @@
 #/bin/sh
- timeout 300 myclips -f $HOME_anu_test/miscellaneous/SMT/MINION/browser/run_eng_align_html.bat >> $3/tmp/$2_tmp/xml.err
+ timeout 300 myclips -f $HOME_anu_test/miscellaneous/SMT/MINION/browser/run_eng_align_html_phrasal.bat >> $3/tmp/$2_tmp/xml.err
 
  sh $HOME_anu_test/bin/replace-abbrevations.sh $3/tmp/$2_tmp/$2_eng_align_tmp.html $3/tmp/$2_tmp/$2_eng_align_tmp1.html  
 
