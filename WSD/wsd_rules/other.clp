@@ -74,6 +74,6 @@
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(- ?id 1) eka_xUsare))
 (assert (id-H_vib_mng ?id ke))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  other.clp     other4   "  ?id "  "(- ?id 1) "  eka_xUsare )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  other.clp     other4   "  ?id "  "(- ?id 1) "  eka_xUsare )" crlf))
 )
 

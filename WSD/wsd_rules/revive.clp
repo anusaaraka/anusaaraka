@@ -12,7 +12,7 @@
 (assert (id-wsd_root_mng ?id punarujjIviwa_kara))
 (assert (kriyA_id-object_viBakwi ?id ko))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng   " ?*wsd_dir* "  revive.clp    revive0   "  ?id "  punarujjIviwa_kara)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  revive.clp    revive0   "  ?id "  punarujjIviwa_kara)" crlf))
 (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  revive.clp      revive0   "  ?id " ko )" crlf)
 )
 
@@ -30,7 +30,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id panapa_uTa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng   " ?*wsd_dir* "  revive.clp    revive1   "  ?id "  panapa_uTa)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  revive.clp    revive1   "  ?id "  panapa_uTa)" crlf))
 )
 
 
@@ -45,7 +45,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id punarjIviwa_ho))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng   " ?*wsd_dir* "  revive.clp    revive2   "  ?id "  punarjIviwa_ho)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  revive.clp    revive2   "  ?id "  punarjIviwa_ho)" crlf))
 )
 
 
