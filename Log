@@ -1,4 +1,4 @@
- 26-05-14
+ 31-05-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
@@ -180,13 +180,19 @@
 	short.py	get_phrase.py		dev-corpus/	gdbm-fetch.c		Readme	mapping.py
 	align.sh	match_value_in_hnd.py	split.sh	tourism-corpus		Word-to-Word-dict.txt
 	align-left-over-wrds.py		get_word_align.py	replace-punctuation.lex	run_alignment.sh
-	print_shortest_path.py
+	print_shortest_path.py	get_manual_id_en_hi.clp	run_H_gen_sen_eng.bat	run_alignment-hi-en-hi.sh	run_alignment-hi-en.sh
+	word_alignment.clp
+        hi-en folder
  39. In multifast-v1.0.0/src/ directory Added following files:
 	extract_key_using_multifast.c
 	extract_key.c
 	extract-key-dev-corpus.c
 	extract-key-tourism-corpus.c
 	Makefile (Updated for compilation of above file.)
+        extract_key-hi-en.c
+	extract_key-hi-en-hi.c
+	extract_key_using_multifast-hi-en.c
+        extract_key_using_multifast-hi-en-hi.c
  40. In anusaaraka/bin Added following files:
 	Anusaaraka_stanford_align_eng_ord.sh 
 	run_sentence_stanford_align_eng.sh
