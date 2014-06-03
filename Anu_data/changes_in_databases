@@ -1153,6 +1153,9 @@ Removed:
 					Ex: The amounts earned have to be certificated by employers.
 	113: greatest_adjective		sabase_badA/sabase_mahAna	(Suggested by Chaitanya Sir	   22-05-14)
 					Ex: Shut down the greatest website in the world.
+	114. societal_adjective		sAmAjika			(Suggested by Mohit SUMMER-Students 03-06-14)
+	115. arthropod_noun		saMXipAxa_prANI			(Suggested by			    03-06-14)
+
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1327,6 +1330,9 @@ Removed:
 	95. everyone_noun		hara_koI		(Suggested by Chaitanya Sir     30-04-14)  
 					Ex: Everyone celebrates Holi festival.   [note: bcoz of number problem]
 	96. truth_noun			saca			(Suggested by Chaitanya Sir     30-04-14)  Ex: He always speaks the truth.
+	97. sweep_verb			prasarpa		(	"	"		03-06-14). 
+					Ex: The line that joins any planet to the sun sweeps equal areas in equal intervals of time.
+
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -1616,7 +1622,12 @@ Removed:
 	131. chemical_noun	xavA		as	rasAyana		(	"	"	"    10-05-14)
 				Ex: Farmers are being urged to reduce their use of chemicals and work with nature to combat pests.
 	132. chestnut_noun	SAhabalUwa_kI_lakadI_kA_banA	as	SAhabalUwa	(Suggested by Preeti ji 10-05-14)	
-				Ex: There are several types of chestnut tree. 
+				Ex: There are several types of chestnut tree.
+	133. enrollment_noun	nAma_liKAI	as	nAmAfkana		(Suggested by Chaitanya Sir  03-06-14)
+				Ex: Enrollment in English medium schools in India has gone up sharply in just two years from 4.3 percent of total enrollment in 2003 to 2004 to 6.3 percent in 2005 to 2006. 
+	134. environment_noun	pariveSa	as	paryAvaraNa/		(Suggested by Chaitanya Sir  03-06-14)
+				Ex: Environment means surroundings.
+	
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -2323,6 +2334,7 @@ Removed:
 	Marathi 	marATI		(	By Shirisha Manju        29-01-14)
 	Simon   	simona		(		"		 12-02-14)
 	Gangotri	gaMgowrI	(		"		 25-02-14)
+	Prakriti	prakqwi		(Suggested by Chaitanya Sir	 03-06-14)
 
 	Following entries are added from  newsdev2014 corpus by Shirisha Manju
 
@@ -2364,7 +2376,9 @@ Removed:
 
    Modified:
    ---------
-	Egypt	IjIpIWa		as	ijipta		( By Shirisha Manju 	21-10-13)
+	Egypt	IjIpIWa		as	ijipta			(By Shirisha Manju 	21-10-13)
+	Daisy	xesI		as	dejZI			(Suggested by Chaitanya Sir  03-06-14)
+	Dalhousie	dalahOjZI	as	dalhojI		(Suggested by Chaitanya Sir  03-06-14)
 
 
  changes in kriyA_object_vib.txt
