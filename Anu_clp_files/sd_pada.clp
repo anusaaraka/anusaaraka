@@ -448,23 +448,24 @@
  (declare (salience 940))
  ?f0<-(modified_head ?hid $?d ?id $?d1)
  ?f1<-(id-grp_ids $?a ?id $?a1)
- (not (asserted_adjp_fact))
+ (not (asserted_adjp_fact ?hid))
  =>
 	(retract ?f1)
 	(assert (id-grp_ids $?a $?a1))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  ;I do not have very much money.
+ ;[A fat ugly boy] had to eat [too many fruits] to lose his weight.
  (defrule get_modified_adjp_fact
  (declare (salience 930))
  (head_id-prawiniXi_id-grp_ids ? ?id $?ids)
  (modified_head ?id $?)
  ?f1<-(id-grp_ids ?id $? ?a $? )
- (not (asserted_adjp_fact))
+ (not (asserted_adjp_fact ?id))
  =>
-        (retract ?f1)
+        (retract ?f1 )
         (assert (id-grp_ids ?id $?ids))	
-	(assert (asserted_adjp_fact))
+	(assert (asserted_adjp_fact ?id))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  ;How many people did you see? 
@@ -473,10 +474,10 @@
  (head_id-prawiniXi_id-grp_ids ? ?id $?ids)
  (modified_head ?id $?)
  (not (id-grp_ids ?id $?))
- (not (asserted_adjp_fact))
+ (not (asserted_adjp_fact ?id))
  =>
         (assert (id-grp_ids ?id $?ids))
-        (assert (asserted_adjp_fact))
+        (assert (asserted_adjp_fact ?id))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  ;I read about the train robbery in today's paper.
@@ -645,16 +646,6 @@
 	(print_in_ctrl_fact_files  ?h)
  )
  ;-----------------------------------------------------------------------------------------------------------------------
-; (defrule merge_mul_conj
-; (declare (salience 630))
-; (get_pada)
-; ?f0<-(conj_head-left_head-right_head ?CC ?lh ?rh)
-; ?f1<-(conj_head-left_head-right_head ?CC1 ?rh ?rh1)
-; =>
-;	(retract ?f0 ?f1)
-;	(assert (conj_head-left_head-right_head ?CC ?lh ?rh1))
-; )
-
  ;The white marbled moti masjid or the pearl mosque was the private mosque for aurangzeb. 
  (defrule get_or_verb_agmt_fact
  (declare (salience 650))

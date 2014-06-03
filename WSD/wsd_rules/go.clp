@@ -29,7 +29,7 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(+ ?id 1) ?wrd sone_ke_liye_jA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng " ?*wsd_dir* "  go.clp        go_to_bed   "  ?id"  " =(+ ?id 1)"  " ?wrd " sone_ke_liye_jA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng " ?*wsd_dir* "  go.clp        go_to_bed   "  ?id"  " (+ ?id 1)"  " ?wrd " sone_ke_liye_jA )" crlf))
 )
 
 
@@ -207,7 +207,7 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(+ ?id 1) sahamawa_ho))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " go.clp    go10  "  ?id "  " =(+ ?id 1) "  sahamawa_ho  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " go.clp    go10  "  ?id "  " (+ ?id 1) "  sahamawa_ho  )" crlf))
 )
 
 

@@ -108,7 +108,7 @@
 (retract ?mng)
 (assert (id-wsd_word_mng ?id BUmi))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  land.clp       land5   "  ?id "  BUmi )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  land.clp       land5   "  ?id "  BUmi )" crlf))
 )
 
 ;default_sense && category=verb	uwaranA/avawaraNa kara	0
