@@ -11,7 +11,8 @@ do
         ./canonical_form_correction.out  < $line".canonical_form_tmp" > $line".canonical_form"
 #        ./canonical_to_conventional.out  < $line".canonical_form_tmp1" > $line".canonical_form"
 	paste  $line".canonical_form" $line".eng" > dictionaries/$line"_in_canonical_form.txt"
-	rm $line".txt" $line".hindi" $line".eng" $line".canonical_form" $line".canonical_form_tmp" $line".canonical_form_tmp1"
+#	rm $line".txt" $line".hindi" $line".eng" $line".canonical_form" $line".canonical_form_tmp" $line".canonical_form_tmp1"
+	rm $line".txt" $line".hindi" $line".eng" $line".canonical_form" $line".canonical_form_tmp" 
         echo "Generated $line"_in_canonical_form.txt"" 
 done < list-left
 ###########################################
@@ -25,7 +26,8 @@ do
         ./canonical_form_correction.out  < $line".canonical_form_tmp" > $line".canonical_form"
 #        ./canonical_to_conventional.out  < $line".canonical_form_tmp1" > $line".canonical_form"
         paste  $line".eng" $line".canonical_form"  > dictionaries/$line"_in_canonical_form.txt"
-        rm $line".txt" $line".eng" $line".hindi" $line".canonical_form" $line".canonical_form_tmp" $line".canonical_form_tmp1"
+#        rm $line".txt" $line".eng" $line".hindi" $line".canonical_form" $line".canonical_form_tmp" $line".canonical_form_tmp1"
+        rm $line".txt" $line".eng" $line".hindi" $line".canonical_form" $line".canonical_form_tmp"
         echo "Generated $line"_in_canonical_form.txt"" 
 done < list-right
 ###########################################
@@ -43,7 +45,8 @@ do
         ./canonical_form_correction.out  < $line".hnd2.canonical_form_tmp" > $line".hnd2.canonical_form"
 #        ./canonical_to_conventional.out  < $line".hnd2.canonical_form_tmp1" > $line".hnd2.canonical_form"
 	paste $line".hnd1.canonical_form"  $line".hnd2.canonical_form" > dictionaries/$line"_in_canonical_form.txt"
-	rm $line".txt" $line".hnd" $line".hindi" $line".hnd1.canonical_form" $line".hnd2.canonical_form" $line".hnd1.canonical_form_tmp" $line".hnd2.canonical_form_tmp" $line".hnd1.canonical_form_tmp1" $line".hnd2.canonical_form_tmp1"
+#	rm $line".txt" $line".hnd" $line".hindi" $line".hnd1.canonical_form" $line".hnd2.canonical_form" $line".hnd1.canonical_form_tmp" $line".hnd2.canonical_form_tmp" $line".hnd1.canonical_form_tmp1" $line".hnd2.canonical_form_tmp1"
+	rm $line".txt" $line".hnd" $line".hindi" $line".hnd1.canonical_form" $line".hnd2.canonical_form" $line".hnd1.canonical_form_tmp" $line".hnd2.canonical_form_tmp" 
 	echo "Generated $line"_in_canonical_form.txt""
 done < list-two-side-hindi
 ###########################################

@@ -43,7 +43,7 @@
 
  cd $HOME_anu_test/Anu/stdenglish
  make clean
- rm  abbrevations_using_NER.out generate_ABBR-Dot.lex generate_ABBR-Dot.out
+ rm  abbrevations_using_NER.out 
 
  cd $HOME_anu_test/Anu/std_format
  make clean
@@ -93,4 +93,4 @@
 
  echo "Removing SHALLOW_PARSER out files"
  cd $HOME_anu_test/miscellaneous/SHALLOW_PARSER
- rm adding@-for-eng-words.out lex.yy.c
+ rm -f adding@-for-eng-words.out lex.yy.c

@@ -26336,7 +26336,7 @@ enroll_verb	nAmAvAlI_pawra_meM_liKa/nAma_liKA
 enrolled_UNDEFINED	nAmAvAlI_pawra_meM_liKanA
 enrollee_noun	nAmAfkiwa_vyakwi
 enrolling_UNDEFINED	nAmAvAlI_pawra_meM_liKanA
-enrollment_noun	nAma_liKAI/nAmAfkana
+enrollment_noun	nAmAfkana/nAma_liKAI
 enrolls_UNDEFINED	nAmAvAlI_pawra_meM_liKanA
 enrolment_noun	nAmAfkana
 enrols_UNDEFINED	nAmAvAlI_pawra_meM_liKanA
@@ -26554,7 +26554,7 @@ enviously_adverb	IrRyA_ke_sAWa
 environ_UNDEFINED	Gera
 environed_UNDEFINED	Gera
 environing_UNDEFINED	Gera
-environment_noun	pariveSa/vAwAvaraNa/paryAvaraNa
+environment_noun	paryAvaraNa/pariveSa/vAwAvaraNa
 environmental_adjective	paryAvaraNa_sambanXI/vAwAvaraNa_sambanXI
 environmentaler_UNDEFINED	paryAvaraNa_sambanXI
 environmentalest_UNDEFINED	paryAvaraNa_sambanXI

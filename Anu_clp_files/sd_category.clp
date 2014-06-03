@@ -215,6 +215,15 @@
          (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
+  ;Added by Roja(29-05-14)
+  ;A can be expressed as a sum of two vectors — one obtained by multiplying [a] by a real number and the other obtained by multiplying [b] by another real number.
+  (defrule SYM_rule
+  ?f0<-(id-sd_cat        ?id     SYM)
+  =>
+         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  symbol)" crlf)
+         (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
   (defrule close_cat_file
   (declare (salience -100))
   =>

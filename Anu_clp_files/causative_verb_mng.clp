@@ -141,7 +141,8 @@
  (defrule get_rule_info
  (declare (salience 600))
  (id-HM-source ?id ?hmng ?src)
- (dir_name-file_name-rule_name-id-wsd_root_mng ? ?file_name ?rule_name ?id ?)
+ (dir_name-file_name-rule_name-id-wsd_root_mng ? ?file_name ?rule_name $?ids ?)
+; (dir_name-file_name-rule_name-id-wsd_root_mng ? ?file_name ?rule_name ?id ?)
  ?f0<-(id-HM-source-grp_ids  ?id  ? ?src $?ids)
  =>
 	(retract ?f0)
