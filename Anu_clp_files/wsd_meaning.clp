@@ -5,6 +5,16 @@
  ;Mng is not decided in the 'left' word file 
  ;So loading root file 'leave;
  ;--------------------------------------------------------------------------------------------------------- 
+ ;Added by Roja (29-05-14).
+ ;A can be expressed as a sum of two vectors — one obtained by multiplying [a] by a real number and the other obtained by multiplying [b] by another real number.
+ (defrule dont_load_symbol_cat
+ (declare (salience 7001))
+ (id-cat_coarse ?id symbol)
+ (not (meaning_has_been_decided ?id))
+ =>
+ (assert (meaning_has_been_decided ?id))
+ )
+ ;--------------------------------------------------------------------------------------------------------- 
  ;Added by Roja (03-05-13) Suggested by Chaitanya Sir
  ;Meaning for adjective
  (defrule load_adjective.clp
