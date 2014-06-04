@@ -214,11 +214,11 @@
        	(printout ?*aper_debug-file* "(id-Rule_name  " ?id "  word_mng_with_vib )" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------
- ;Added 'provisional_Database_compound_phrase_root_mng' in the list by Roja(20-02-14)
+ ;Added 'provisional_Database_compound_phrase_word_mng' in the list by Roja(20-02-14)
  ;There was a marked difference in the prices of dishes .
  (defrule word_mng_rule
  (declare (salience 1001))
- ?f0<-(id-HM-source ?id ?hmng WSD_compound_phrase_word_mng|Database_compound_phrase_word_mng|WSD_verb_phrase_word_mng|WSD_word_mng|Idiom_word_mng|provisional_Database_compound_phrase_root_mng)
+ ?f0<-(id-HM-source ?id ?hmng WSD_compound_phrase_word_mng|Database_compound_phrase_word_mng|WSD_verb_phrase_word_mng|WSD_word_mng|Idiom_word_mng|provisional_Database_compound_phrase_word_mng|Template_word_mng)
   =>
        	(retract ?f0)
 	(bind ?hmng (remove_character "_" ?hmng " "))
@@ -394,14 +394,10 @@
  ; He wrote the address on a [piece of paper]. -- kAgaja_kA_purjA , para => kAgaja_ke_purje para
  (defrule kA_in_hindi_rt_mng
  (declare (salience 610))
-; (prep_id-relation-anu_ids ? viSeRya-of_saMbanXI ?f_id ?id)
-; ?f0<-(id-HM-source ?f_id ?h_mng ?s)
  ?f0<-(id-HM-source ?id ?h_mng ?s)
  (test (member$ kA (create$ (remove_character "_" ?h_mng " "))))
  (pada_info (group_head_id ?id) (gender ?g) (number ?n) (case ?c) (vibakthi ?vib))
  (test (neq ?vib 0))
-; (pada_info (group_ids $?f_ids) (gender ?g) (number ?n) (case ?c))
-; (test (member$ ?f_id $?f_ids))
  =>
 	(retract ?f0)
 	(bind ?kA_mng (get_kA_mng ?g ?n ?c))
@@ -420,7 +416,7 @@
  ; I want to go there .
  (defrule verbal_noun_without_vib
  (declare (salience 910))
- (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi 0))
+ (pada_info (group_head_id ?pada_id)(group_cat PP|infinitive)(vibakthi 0))
  (or (make_verbal_noun ?pada_id) (id_cat_coarse ?pada_id verbal_noun))
  ?f0<-(id-HM-source ?pada_id ?hmng ?)
   =>
@@ -433,7 +429,7 @@
  ;The game of life is played for winning .
  (defrule verbal_noun_with_vib
  (declare (salience 905))
- (pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi ?vib))
+ (pada_info (group_head_id ?pada_id)(group_cat PP|infinitive)(vibakthi ?vib))
  (or (make_verbal_noun ?pada_id)(id-cat_coarse ?pada_id verbal_noun))
  ?f0<-(id-HM-source ?pada_id ?hmng ?)
  (test (neq ?vib 0))
@@ -442,33 +438,6 @@
         (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?hmng"<cat:vn><case:o>$ ^" ?vib "<cat:prsg>$)" crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  " ?pada_id "  verbal_noun_with_vib  )"crlf)
  )
- ;========================================== verbal-noun without tam =======================================================
-; ; The wheels of the car began to turn . 
-; ;I want to go there .
- (defrule verbal_noun_without_tam
- (declare (salience 910))
- (pada_info (group_head_id ?pada_id)(group_cat infinitive)(H_tam ?vib))
- (or (make_verbal_noun ?pada_id)(id-cat_coarse ?pada_id verbal_noun))
- ?f0<-(id-HM-source ?pada_id ?hmng ?)
- (test (or (eq ?vib 0)(eq ?vib -)))
-  =>
-        (retract ?f0)
-        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?hmng"<cat:vn><case:d>$)"  crlf)
-        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  verbal_noun_without_tam )"  crlf)
-  )
- ;============================================== verbal-noun with tam ====================================================\\
- ; A fat ugly boy had to eat too many fruits to lose his weight. 
- (defrule verbal_noun_with_tam
- (declare (salience 890))
- (pada_info (group_head_id ?pada_id)(group_cat infinitive)(H_tam ?vib))
- (or (make_verbal_noun ?pada_id) (id-cat_coarse ?pada_id verbal_noun))
- ?f0<-(id-HM-source ?pada_id ?hmng ?)
- (test (and (neq ?vib 0)(neq ?vib -)));added vib neq - case (15/09/09)
-  =>
-        (retract ?f0)
-        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?hmng"<cat:vn><case:o>$  ^" ?vib "<cat:prsg>$)"  crlf)
-        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  verbal_noun_with_tam )"  crlf)
-  )
   ;============================ Pronoun rules -  vibakthi not equal to nil (head id) ======================================
   ; All his books are good. 
   ; He wasted his golden opportunity to play in the national team .
@@ -490,9 +459,9 @@
   ;------------------------------------------------------------------------------------------------------------------------
   ; vib kA -- for He,I,She ,They 
   ; Ex:  I asked him a question . She carefully prepared the dinner.
-  ;      Discuss it among yourselves first . The leopard seizes its kill and begins to eat . This book is mine.
+  ;      Discuss it among yourselves first . The leopard seizes its kill and begins to eat . 
   (defrule PP_pronoun_rule_with_vib_kA
-  (declare (salience 940))
+  (declare (salience 941))
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(person ?per)(vibakthi kA)(group_ids $?ids))
   (id-word ?pada_id  ?w&he|she|their|i|those|your|you|our|my|me|they|its|we|it|him|this|mine)
   ?f0<-(id-HM-source ?pada_id ?h_word ?)
@@ -509,6 +478,27 @@
 	        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><parsarg:kA><fnum:"?num1"><case:"?case1"><gen:"?gen1"><num:"?num"><per:"?per ">$)"  crlf)
 	)
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_with_vib_kA )" crlf)
+  )
+  ;------------------------------------------------------------------------------------------------------------------------
+  ; Added by Shirisha Manju (12-05-14) suggested by Chaitanya Sir
+  ;This book is mine.
+  (defrule PP_pronoun_rule_with_vib_kA1
+  (declare (salience 940))
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(case ?case)(vibakthi ?vib)(group_ids $?ids))
+  (or (id-word ?pada_id he|she|their|i|our|me|him|they|them|her|we|it|that|this|ours|who|whom|mine)(id-original_word ?pada_id us|Us))
+  ?f0<-(id-HM-source ?pada_id ?h_word ?)
+  (test (neq ?vib 0))
+  (test (neq (str-index "_" ?vib)  FALSE))
+  (test (eq (sub-string 1 2 ?vib) "kA"))
+  (test (eq (sub-string (+ (str-index "_" ?vib) 1) (length ?vib) ?vib) "vAlA"))
+  (hindi_id_order  $?start $?ids ?foll_pada_id $?)
+  (pada_info (group_head_id ?h)(number ?num1)(case ?case1)(gender ?gen1)(group_cat PP|infinitive|VP)(group_ids $?f_ids))
+  (test (member$ ?foll_pada_id $?f_ids))
+;  (id-gender-src ?foll_pada_id ?gen ?)
+  =>
+        (retract ?f0)
+        (printout ?*A_fp5* "(id-Apertium_input "?pada_id  " ^"?h_word "<cat:p><parsarg:kA><fnum:"?num1"><case:"?case1"><gen:"?gen1"><num:"?num"><per:"?per ">$  ^vAlA<cat:n><case:"?case1"><gen:"?gen1"><num:"?num1">$)" crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  PP_pronoun_rule_with_vib_kA1 )" crlf)
   )
   ;------------------------------------------------------------------------------------------------------------------------
   ; Added by Shirisha Manju (21-09-11) suggested by Chaitanya Sir
@@ -1143,7 +1133,7 @@
   (defrule PP_rule_with_vib_for_hnd_pronoun
   (declare (salience 401))
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(gender ?gen)(person ?per)(vibakthi ?vib))
-  ?f0<-(id-HM-source ?pada_id ?h_word&wuma|kOna|jo|koI ?)
+  ?f0<-(id-HM-source ?pada_id ?h_word&wuma|kOna|jo|koI|hara_koI ?)
   (test (neq ?vib 0))
   =>
         (retract ?f0)

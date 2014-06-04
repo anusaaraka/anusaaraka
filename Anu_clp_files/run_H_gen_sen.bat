@@ -10,6 +10,16 @@
  (clear)
  ;----------------------------------------------------------------------
  (load "global_path.clp")
+ (bind ?*path* (str-cat ?*path* "/Anu_clp_files/template_after_mng.clp"))
+ (load ?*path*)
+ (load-facts "word.dat")
+ (load-facts "id_Apertium_output.dat")
+ (load-facts "hindi_id_order.dat")
+ (run)
+ (save-facts "id_Apertium_output.dat" local id-Apertium_output)
+ (clear)
+ ;----------------------------------------------------------------------
+ (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/hindi_sentence.bclp"))
  (bload ?*path*)
  (load-facts "word.dat")

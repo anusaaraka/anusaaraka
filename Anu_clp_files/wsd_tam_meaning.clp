@@ -7,6 +7,16 @@
 	(open "debug_file.dat" wsd_fp "a")
  )
  ;------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju 14-5-14 -- removes control fact if tam meaning is decided from template
+ (defrule rm_cntl_fact_for_template_tam_mng
+ (declare (salience 1050))
+ (id-E_tam-H_tam_mng ?id ?tam ?)
+ (id-tam-src ?id ?tam Template)
+ ?f0<-(id-TAM ?id ?tam)
+ =>
+	(retract ?f0)
+ )
+
  (defrule load_user_tam_file
  (declare (salience 1000))
  (id-TAM ?root_id ?tam)
