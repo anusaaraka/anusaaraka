@@ -45117,7 +45117,7 @@ leftwards_adverb	vAmapanWa_kI_ora/bAzIM_waraPa/bAzIM_ora
 lefty_adjective	vAmapanWI
 lefty_noun	vAmapanWI/KabbA
 leg-room_noun	tAfge_pasArane_kI_jagaha
-leg_noun	tAfga/tAzga/rAna/pEra/pAyzacA/pAyA/lEga/pAzyacA/padAva
+leg_noun	tAzga/rAna/pEra/pAyzacA/pAyA/lEga/pAzyacA/padAva
 leg_verb	pEra_se_mAra/pera_se_mAra/pEra_hil/cala/BAga
 legacies_UNDEFINED	paramparA_meM_prApwa
 legacy_noun	pEwrika_sampawwi/virAsawa/pEwqka_sampawwi/paramparA_meM_prApwa

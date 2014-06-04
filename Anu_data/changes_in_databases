@@ -1661,6 +1661,7 @@ Removed:
 	26. freeman-{pl.freemen}_noun       svAXIna_nAgarika			(By  "				  "	)
 	27. civilisation_noun	saBya_samAja					(Suggested by 	Sukhada         26-11-13)
 	28. X-ray_noun		eksa-kiraNa					(Suggested by Anita ji LTRC	24-03-14)	
+	29. leg_noun		tAfga						(Suggested by   Sukhada         02-06-14)
 
 
     7. Removed entry:
@@ -2384,8 +2385,9 @@ Removed:
  changes in kriyA_object_vib.txt
  ==============================
  Added :
-   1. prakASiwa_kara  ko     (Suggested by Chaitanya Sir 28-09-13)
-			 Ex:Standing in the middle of the great epic like a lighthouse, it illuminates the whole of the epic.
+   1. prakASiwa_kara  	ko     	(Suggested by Chaitanya Sir 28-09-13) Ex: Standing in the middle of the great epic like a lighthouse, it 
+									  illuminates the whole of the epic.
+   2. ragada  		ko	(Suggested by Sukhada       02-06-14) Ex: Your cat keeps on rubbing itself against my leg. 
 
  changes in human.txt
  ===================
