@@ -66,7 +66,7 @@
 [@]*SYMBOL-OMEGA		{	printf("ω");	}
 [@]*SYMBOL-DOT			{	printf(".");	}
 [ @]*SYMBOL-SLASH[ ]*		{	printf("/");	}
-[ @]*SYMBOL-LESSTHAN[ ]*	{       printf("<");	}
-[ @]*SYMBOL-GREATERTHAN[ ]*	{	printf(">");	}
+[@]*SYMBOL-LESSTHAN	{       printf("<");	}
+[@]*SYMBOL-GREATERTHAN	{	printf(">");	}
 
 %%

@@ -1,7 +1,7 @@
 /****** This programe is written by Roja (23-05-2013).
 	Adding sentence marker 
 *******/
-
+#include <string.h>
 %{
 char str[1000], *s1;
 int len;

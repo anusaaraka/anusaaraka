@@ -749,6 +749,7 @@ Removed:
 11. multi_word_expressions_from_iit_bombay.txt 
 	Extracted from iit-bombay dictionary.Added by Roja 10-05-13. Suggested by Chaitanya Sir)
 12. proper_noun_dic.txt    (Added by Shirisha Manju Suggested by Chaitanya Sir)
+13. provisional_multi_word_dictionary.txt	(Added by Roja 21-02-14)
      
 
  Changes in ol_parser_unused_words.txt
@@ -1155,7 +1156,8 @@ Removed:
 					Ex: Shut down the greatest website in the world.
 	114. societal_adjective		sAmAjika			(Suggested by Mohit SUMMER-Students 03-06-14)
 	115. arthropod_noun		saMXipAxa_prANI			(Suggested by			    03-06-14)
-
+	116. wove_verb			eka_hI_kaWAsUwra_meM_graWiwa_kara(Suggested by 	Chaitanya Sir	    09-06-14)
+					Ex: Muslim jurisprudents then wove these percepts into a body of law.
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1715,6 +1717,9 @@ Removed:
 	46. certifcate_UNDEFINED	pramANa_pawra			(	"	"	"	"	)
 	47. greatest_UNDEFINED	badA					(Suggested by Chaitanya Sir	22-05-14)
 	48. greatestest_UNDEFINED	mahAnawama			(	"	"	"	"	)
+	49. wove_UNDEFINED	eka_hI_kaWAsUwra_meM_graWiwa_karanA	(	"	"	"	09-06-14)
+	50. woven_UNDEFINED	eka_hI_kaWAsUwra_meM_graWiwa_karanA	(	"	"	"	"	)
+
 
     8. Modified category:
        ------------------
