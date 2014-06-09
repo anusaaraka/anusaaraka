@@ -20,10 +20,10 @@ python mapping.py $MYPATH/tmp/$3_tmp/wrd-to-wrd.txt > $MYPATH/tmp/$3_tmp/mapped.
 ./replace-punctuation.out < $MYPATH/tmp/$3_tmp/hnd > $MYPATH/tmp/$3_tmp/hnd1
 ./replace-punctuation.out < $MYPATH/tmp/$3_tmp/mapped.txt1  > $MYPATH/tmp/$3_tmp/mapped.txt2
 
-sed 's/\([0-9]\)[.]\([0-9]\)/\1SYMBOL-DOT\2/g'  $MYPATH/tmp/$3_tmp/hnd1 | sed 's/_/ /g' | sed 's/  / /g'| sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/\([^0-9]\)\.)\n/\1 PUNCT-Dot)\n/g;p}'| sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g'   > $MYPATH/tmp/$3_tmp/one_sen_per_line_manual_hindi_sen.txt
+sed 's/\([0-9]\)[.]\([0-9]\)/\1SYMBOL-DOT\2/g'  $MYPATH/tmp/$3_tmp/hnd1 | sed 's/_/ /g' | sed 's/  / /g'| sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/\([^0-9]\)\.)\n/\1 PUNCT-Dot)\n/g;p}'| sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g'  | sed 's/nonascii/@nonascii/g' > $MYPATH/tmp/$3_tmp/one_sen_per_line_manual_hindi_sen.txt
 
 
-sed 's/\([0-9]\)[.]\([0-9]\)/\1SYMBOL-DOT\2/g'   $MYPATH/tmp/$3_tmp/mapped.txt2  | sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g'  > $MYPATH/tmp/$3_tmp/word-alignment.txt
+sed 's/\([0-9]\)[.]\([0-9]\)/\1SYMBOL-DOT\2/g'   $MYPATH/tmp/$3_tmp/mapped.txt2  | sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g' | sed 's/nonascii/@nonascii/g'  > $MYPATH/tmp/$3_tmp/word-alignment.txt
 
 ########################### Tokenizing Manual Sentence ###########################################
 

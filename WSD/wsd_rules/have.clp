@@ -58,7 +58,7 @@
 ;(assert (kriyA_id-subject_viBakwi ?id ))
 ;(if ?*debug_flag* then
 ;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp      have1   "  ?id "  hE )" crlf)
-;(printout wsd_fp "(dir_name-file_name-rule_name-id-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  have.clp      have1   "  ?id " ke_pAsa )" crlf)
+;(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  have.clp      have1   "  ?id " ke_pAsa )" crlf)
 ;)
 ;)
 
@@ -79,7 +79,7 @@
 (assert (kriyA_id-subject_viBakwi ?id ke_pAsa))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  have.clp 	have2   "  ?id "  hE )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  have.clp      have2   "  ?id " ke_pAsa )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  have.clp      have2   "  ?id " ke_pAsa )" crlf)
 )
 )
 

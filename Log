@@ -1,4 +1,27 @@
- 04-06-14
+ 09-06-14
+ ========
+ 1. WSD:
+	have.clp	who.clp
+ 2. Added relation_table/ folder in Doc contains following files:
+	relation-table-for-WSD-wx.html  
+	style.css
+ 3. Updated following lex files:
+	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
+	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern
+ 4. Updated following files in phrasal_alignment and multifast:
+	Word-to-Word-dict.txt
+	en-hi-gdbm-dict.txt
+	run_alignment.sh
+	extract_key.c
+ 5. Updated following dictionarie related files:
+	changes_in_databases
+ 6. Updated following files shell files:
+	Anusaaraka_stanford_align_eng_ord.sh
+ 7. Updated following file:
+	sd_verified
+ 8. Updated Log. 
+
+ 05-06-14
  ========
  1. WSD:
         Modified: ing_tam.clp   off.clp         shrink.clp      turn.clp        upper.clp       wash.clp	have.clp
