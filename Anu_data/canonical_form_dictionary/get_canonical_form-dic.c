@@ -21,12 +21,17 @@ int main(int argc, char* argv[])
 
    while (getline(&line, &len, fp) != -1)
    {	
-	len=strcspn(line, "\n");
-	strncpy(word, line, len);  word[len]='\0';	//getting the word 
+       	if(line[0] != '#') 
+		break; //reading comments
+	else 
+	{
+		len=strcspn(line, "\n");
+		strncpy(word, line, len);  word[len]='\0';	//getting the word 
 
-	canonical_form(word,canonical_word);		//passing the word to canonical_form function
-        printf("%s\n", canonical_word);				
-	*word='\0'; *canonical_word='\0';		//null the arrays word and canonical_word
+		canonical_form(word,canonical_word);		//passing the word to canonical_form function
+        	printf("%s\n", canonical_word);				
+		*word='\0'; *canonical_word='\0';		//null the arrays word and canonical_word
+	}
    }
    fclose(fp);
 }
