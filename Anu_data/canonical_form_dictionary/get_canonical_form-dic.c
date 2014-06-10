@@ -21,8 +21,8 @@ int main(int argc, char* argv[])
 
    while (getline(&line, &len, fp) != -1)
    {	
-       	if(line[0] != '#') 
-		break; //reading comments
+       	if(line[0] == '#')
+		printf("%s", line); 	 //reading comments
 	else 
 	{
 		len=strcspn(line, "\n");
