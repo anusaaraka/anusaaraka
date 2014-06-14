@@ -118,10 +118,15 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  mean.clp 	mean7   "  ?id "  arWa_ho )" crlf))
 )
 
+
+;$$$ Modified by Nandini(17-12-13)
+;"Go" also means earth.[via mail]
 (defrule mean8
-(declare (salience 4200))
+(declare (salience 4550))
 (id-root ?id mean)
 ?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 go)
+(kriyA-subject  ?id ?id1)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)

@@ -23,10 +23,12 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  time.clp 	time_kAla   "  ?id "    kAla )" crlf))
 )
 
-
+;$$$ Modified by Prachi Rathore[27-2-14]
 ;Modified by Preeti 15-09-13
 ;This room is two times bigger than the hall.[old clp]
 ;yaha kamarA hoYla kI apekRA xo gunA aXika badA hE.
+;The strong nuclear force is the strongest of all fundamental forces about 100 times the electromagnetic force in strength.[ncert]
+;यह प्रबल नाभिकीय बल सभी मूल बलों में प्रबलतम है जोकि प्रबलता में विद्युत - चुम्बकीय बल का लगभग 100 गुना है.
 ;"times","N","1.gunA"
 (defrule time_gunA
 (declare (salience 700))
@@ -34,7 +36,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id times)
 (id-cat_coarse ?id noun)
-(viSeRya-viSeRaNa  ? ?id)
+(or(viSeRya-viSeRaNa  ? ?id)(saMKyA-saMKyA  ?id ?))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id gunA))
@@ -319,3 +321,72 @@
 ;Publication of his biography was timed to coincide with his 70th birthday celebrations.
 ;Time how long it takes you to answer the questions.
 ;A beautifully timed shot will always be appreciated.
+
+;@@@   --- Added by Prachi Rathore[12-12-13]
+; The game was interrupted several times by rain. [oald]
+;खेल वर्षा द्वारा कई बार अवरूध्द हुआ था . 
+; Next [time] I'll keep my mouth shut, Rajvir promised, as they[ moved on].[gyannidhi]
+;अब मैं अपना मुंह बंद रखूंगा राजवीर ने वायदा किया और वे चल पड़े। 
+;This is the very same place we sat in the last time we came. [cambridge]
+ ;यह  बिल्कुल वही स्थान है  जहाँ हम बैठे थे जब हम पिछली बार आए थे. 
+(defrule time1
+(declare (salience 560))
+(id-root ?id time)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-viSeRaNa  ?id ?id1)
+(id-root ?id1 several|next|last)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bAra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  time.clp 	time1   "  ?id "  bAra )" crlf))
+)
+
+
+;@@@ Added by Prachi Rathore[25-2-14]
+;Do you know your six times table?[oald]
+;क्या आप छः का पहाडा जानते हैं? 
+(defrule time2
+(declare (salience 560))
+(id-root ?id time)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-saMKyA_viSeRaNa  ?id1 ?id)
+(id-root ?id1 table)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  time.clp 	time2  "  ?id "  kA )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_time1
+(declare (salience 560))
+(id-root ?id time)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(subject-subject_samAnAXikaraNa ?id ?id1)
+(id-root ?id1 several|next|last)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bAra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " time.clp   sub_samA_time1   "   ?id " bAra )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_time1
+(declare (salience 560))
+(id-root ?id time)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(object-object_samAnAXikaraNa ?id ?id1)
+(id-root ?id1 several|next|last)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bAra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " time.clp   obj_samA_time1   "   ?id " bAra )" crlf))
+)

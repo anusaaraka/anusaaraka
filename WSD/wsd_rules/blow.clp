@@ -1,45 +1,284 @@
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)12-dec-2013
+;A gale-force wind had blown the fence down .[cambridge]
+;हवा कीं तेजी ने बाड़े को गिरा दिया
+(defrule blow17
+(declare (salience 5000))
+(id-root ?id blow)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-aXikaraNavAcI  ?id ?id1)
+(id-word ?id1 down)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id girA_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  blow.clp 	blow17   "  ?id "  girA_xe )" crlf))
+)
 
-(defrule blow0
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)12-dec-2013
+;The letter blew away and I had to run after it.[cambridge]
+;पत्र उड़ गया और मुझे उसके पीछे भागना पड़ा.
+(defrule blow18
+(declare (salience 5000))
+(id-root ?id blow)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-upasarga  ?id ?id1)
+(id-word ?id1 away)
+(not(kriyA-object ?id ?))
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 uda_jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " blow.clp	blow18  "  ?id "  " ?id1 "  uda_jA  )" crlf))
+)
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)12-dec-2013
+;I blew the dust off the books.[cambridge]
+;मैने पुस्तकों पर से धूल झाड दी .
+(defrule blow19
+(declare (salience 5500))
+(id-root ?id blow)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-off_saMbanXI  ?id ?id1)
+(kriyA-object  ?id ?obj)
+(id-word ?obj dust)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id JAda_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  blow.clp 	blow19   "  ?id "  JAda_xe )" crlf))
+)
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)12-dec-2013
+;example given below is a contadictory example of rule 'blow4'.So I have in creased the salience in this rule. According to me rule 'blow4' should be modified or deleted because the condition given in that rule is not sufficient. 
+;I wish you wouldn't blow smoke in my face.[cambridge]
+;मै आशा करता हूँ कि तुम मेरे चेहरे पर धुआं नहीं उड़ाओगे .
+(defrule blow20
+(declare (salience 5000))
+(id-root ?id blow)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?id ?id1)
+(id-word ?id1 smoke|dust|air)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id udA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  blow.clp 	blow20   "  ?id "  udA )" crlf))
+)
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)13-dec-2013
+;He scored the winning goal just before the whistle blew.[cambridge]
+;दूसरी सीटी बजने से जरा पहले उसने जीत का गोल कर दिया .
+(defrule blow21
+(declare (salience 5000))
+(id-word ?id blew)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject  ?id ?id1)
+(not(kriyA-object ?id ?))
+(id-word ?id1 whistle|notes|music|trumpet)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id baja))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  blow.clp 	blow21   "  ?id "  baja )" crlf))
+)
+
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)13-dec-2013
+;Ann blew a few notes on the trumpet.[cambridge]
+;एन ने तूर्य पर कुछ नोटस बजाए .
+(defrule blow22
+(declare (salience 5000))
+(id-word ?id blew)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?id ?id1)
+(id-word ?id1 whistle|notes|music|trumpet)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bajA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  blow.clp 	blow22   "  ?id "  bajA )" crlf))
+)
+
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)13-dec-2013
+;Losing his job was a severe blow to his confidence.[cambridge]
+;नौकरी का छूटना उसके आत्मविश्वास के लिए एक भारी आघात था.
+(defrule blow23
+(declare (salience 5000))
+(id-word ?id blew)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaNa  ?id ?id2)
+(viSeRya-to_saMbanXI  ?id ?id1)
+(id-word ?id1 confidence)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id AGAwa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  blow.clp 	blow23   "  ?id "  AGAwa )" crlf))
+)
+
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)13-dec-2013
+;Just blow off his comments, he's only joking.[cambridge]
+;उसकी टिप्पणी पर ध्यान मत दो ,वह मजाक कर रहा है.
+(defrule blow24
+(declare (salience 5000))
+(id-word ?id blew)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?id ?obj)
+(kriyA-upasarga  ?id ?id1)
+(id-word ?id1 off)
+(id-root ?obj comment)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 para_XyAna_mawa_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " blow.clp	blow24  "  ?id "  " ?id1 "  para_XyAna_mawa_xe  )" crlf))
+)
+
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)13-dec-2013
+;They threatened to blow up the plane if their demands were not met.[cambridge]
+;उन्होंने प्लेन को धमाके से उड़ाने की धमकी दी अगर उनकी माँगे नही पूरी की गयी
+(defrule blow25
+(declare (salience 4000))
+(id-root ?id blow)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 up)
+(kriyA-upasarga ?id ?id1)
+(kriyA-object ?id ? )
+;(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 XamAke_se_udA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " blow.clp	blow25  "  ?id "  " ?id1 "  XamAke_se_udA  )" crlf))
+)
+
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)13-dec-2013
+;Would you help me blow up these balloons?[cambridge]
+;क्या तुम इन गुब्बारों को फुलाने में मेरी मदद करोंगे .
+(defrule blow26
 (declare (salience 5000))
 (id-root ?id blow)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 up)
 (kriyA-upasarga ?id ?id1)
-(id-cat_coarse ?id verb)
+(kriyA-object ?id ?obj)
+(id-root ?obj balloon)
+;(id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 XamAke_ke_kAraNa_tukadZe-tukadZe_ho))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 PulA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " blow.clp	blow0  "  ?id "  " ?id1 "  XamAke_ke_kAraNa_tukadZe-tukadZe_ho  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " blow.clp	blow26  "  ?id "  " ?id1 "  PulA  )" crlf))
 )
 
-;The bridge blew up.
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)13-dec-2013
+;Demonstrators nearly came to blows with the police during the march.[cambridge]
+;प्रदर्शनकरियों कीं  प्रदर्शन के दौरान पुलिस से लगभग हाथापाई कीं नौबत आ गयीं .
+(defrule blow27
+(declare (salience 5000))
+(id-root ?id blow)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-to_saMbanXI  ?kri ?id)
+(id-root ?kri come)
+(viSeRya-with_saMbanXI  ?id ?id1)
+;(id-word =(- ?id 1) to)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(- ?id 1) ladZAI_para_uwara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " blow.clp	blow27  "  ?id "  " (- ?id 1) "  ladZAI_para_uwara  )" crlf))
+)
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)13-dec-2013
+;Do you think the two countries will come to blows over this?[cambridge]
+;क्या तुम्हें लगता है कि दोनों देश इस पर एक दूसरे से विवाद करेंगे 
+(defrule blow28
+(declare (salience 5000))
+(id-root ?id blow)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject  ?kri ?sub)
+(kriyA-to_saMbanXI  ?kri ?id)
+(id-root ?sub ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(- ?id 1) vivAxa_para_uwara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " blow.clp	blow28  "  ?id "  " (- ?id 1) "  vivAxa_para_uwara  )" crlf))
+)
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)09-jan-2014
+;A severe wind was blowing .
+;बहुत तेज हवा चल रही थी
+(defrule blow29
+(declare (salience 5000))
+(id-root ?id blow)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject  ?id ?sub)
+(id-word ?sub wind)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id cala))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  blow.clp 	blow29   "  ?id "  cala )" crlf))
+)
+
+
+;$$$ modified by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)13-dec-2013
+;The bridge blew up.[old]
 ;pula XamAke ke kAraNa tukadZe-tukadZe ho gayA
-(defrule blow1
-(declare (salience 4900))
+(defrule blow0
+(declare (salience 4000))
 (id-root ?id blow)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 up)
 (kriyA-upasarga ?id ?id1)
-(kriyA-object ?id ?)
+(not(kriyA-object ?id ? ))
+;(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 XamAke_se_uda_jA));meaning changed by Garima Singh
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " blow.clp	blow0  "  ?id "  " ?id1 "  XamAke_se_uda_jA  )" crlf));meaning changed by Garima Singh
+)
+
+;$$$ modified by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)13-dec-2013
+;The teacher blew up over his student.[old]
+;SikRaka vixyArWI pe BadZaka uTA
+;My dad blew up when he saw the phone bill.
+;मेरे पिता जी गुस्से से पागल हो गए जब उन्होंने फोन का बिल देखा .
+(defrule blow1
+(declare (salience 5000))
+(id-root ?id blow)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 up)
+(kriyA-upasarga ?id ?id1)
+(kriyA-subject ?id ?sub)
+(id-root ?sub ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))
+(not(kriyA-object ?id ?))
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 ApA_Ko))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 BadZaka_jA)); meaning changed by Garima Singh
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " blow.clp	blow1  "  ?id "  " ?id1 "  ApA_Ko  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " blow.clp	blow1  "  ?id "  " ?id1 "  BadZaka_jA  )" crlf));meaning changed by Garima Singh
 )
 
-;The teacher blew up over his student.
-;SikRaka vixyArWI pe BadZaka uTA
+;$$$ modified by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)13-dec-2013
+;He blew up the image to detect some important details.
+;usane kuCa mahawvapUrNa jAnakArI prApwa karane ke liye Poto ko badZA kiyA
 (defrule blow2
-(declare (salience 4800))
+(declare (salience 5000))
 (id-root ?id blow)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 up)
 (kriyA-upasarga ?id ?id1)
-(kriyA-object ?id ?)
-(id-cat_coarse ?id verb)
+(kriyA-object ?id ?obj)
+(id-word ?obj image)
+;(id-cat_coarse ?id verb)
 =>
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 baDZA))
@@ -47,10 +286,9 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " blow.clp	blow2  "  ?id "  " ?id1 "  baDZA  )" crlf))
 )
 
-;He blew up the image to detect some important details.
-;usane kuCa mahawvapUrNa jAnakArI prApwa karane ke liye Poto ko badZA kiyA
+;this rule needs to be modified 
 (defrule blow3
-(declare (salience 4700))
+(declare (salience 3700));salience reduced by Garima Singh 
 (id-root ?id blow)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 up)
@@ -108,18 +346,27 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " blow.clp blow6 " ?id "  prahAra_kara )" crlf)) 
 )
 
+
+;$$$ Modified by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)23-jan-2014
+;A pile of papers blew off the desk.[oald]
+;समाचार पत्रों का ढेर मेज से उड़ गया .
 (defrule blow7
 (declare (salience 4300))
 (id-root ?id blow)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 off)
 (kriyA-upasarga ?id ?id1)
+;(kriyA-subject  ?id ?sub);uncomment this and the line below if any conflict is found 
+;(id-word ?sub pile)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 prahAra_kara))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 udZa_jA));meaning changed from 'prahAra_kara' to 'uda_jA' by Garima Singh
+(assert (kriyA_id-object_viBakwi ?id se))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " blow.clp	blow7  "  ?id "  " ?id1 "  prahAra_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " blow.clp	blow7  "  ?id "  " ?id1 "  udZa_jA  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* " blow.clp    blow7   "  ?id " se )" crlf)
+)
 )
 
 (defrule blow8
@@ -235,7 +482,7 @@
 )
 
 (defrule blow16
-(declare (salience 3400))
+(declare (salience 0));salience reduced by Garima Singh(M.Tech-C.S)
 (id-root ?id blow)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)

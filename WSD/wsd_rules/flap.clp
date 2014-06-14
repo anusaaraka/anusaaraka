@@ -32,6 +32,11 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  flap.clp 	flap1   "  ?id "  hilA )" crlf))
 )
 
+;$$$ Modified mng from 'hila' to 'PadaPadA'. Suggested by Chaitanya Sir and Aditi Mam. (24-04-14)
+;The bird flapped its wings.
+;pakRI ne apane paMka PadaPadAye/hilAye.
+;Flags were flapping in the breeze.    [cambridge]
+;JaNde manxa samIra meM PadaPadA rahe We.
 (defrule flap2
 (declare (salience 4800))
 (id-root ?id flap)
@@ -39,9 +44,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id hila))
+(assert (id-wsd_root_mng ?id PadaPadA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  flap.clp 	flap2   "  ?id "  hila )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  flap.clp 	flap2   "  ?id "  PadaPadA)" crlf))
 )
 
 ;"flap","V","1.hilanA[hilAnA]"

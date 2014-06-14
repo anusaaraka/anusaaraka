@@ -32,7 +32,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  match.clp     match1   "  ?id "  mEca )" crlf))
 )
 
-
+;$$$ Modified by Nandini (16-12-13) (In meaning spelling correction)
 ;Added by Meena(7.9.09);to be discussed for the meaning "usake samaswara_kA_KilAdI"
 ;I was no match for him at tennis .
 ;I was his match at tennis . 
@@ -44,9 +44,9 @@
 (subject-subject_samAnAXikaraNa  ?id2 ?id)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id samAnAswara))
+(assert (id-wsd_root_mng ?id samAnaswara)) 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  match.clp     match2   "  ?id "  samAnAswara )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  match.clp     match2   "  ?id "  samAnaswara )" crlf)
 )
 )
 
@@ -121,7 +121,55 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  match.clp     match6   "  ?id "  mEca )" crlf))
 )
 
+;@@@ Added by Nandini (16-12-13)
+;But we have no camphor and no matches, Grandpa.
+(defrule match7
+(declare (salience 2500))
+(id-root ?id match)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 camphor)
+(conjunction-components  ? ?id1 ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id mAcisa ))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  match.clp     match7   "  ?id "  mAcisa )" crlf))
+)
 
+;@@@ Added by Nandini (16-12-13)
+;He was determined that his daughter should make a good match. [oxford advanced learner's dictionary]
+;usane nirXAriwa kiyA ki usakI betI ko eka acCA jIvavansAWI cAhie.
+(defrule match8
+(declare (salience 4950))
+(id-root ?id match)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 daughter)
+(and(kriyA-subject  ? ?id1)(kriyA-object  ? ?id))
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id jIvanasAWI ))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  match.clp     match8   "  ?id "  jIvanasAWI )" crlf))
+)
+
+
+;@@@ Added by Nandini (16-12-13)
+;New information is matched against existing data in the computer.
+;The suspects' stories just don't match up.
+;sanxigXa kI kahAniyAz jarA ke Upara mela_nahIM kA hEM.
+(defrule match9
+(declare (salience 4970))
+(id-root ?id match)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id mela_KA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  match.clp     match9   "  ?id "  mela_KA )" crlf))
+)
 
 
 

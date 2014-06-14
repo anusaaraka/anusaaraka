@@ -82,3 +82,60 @@
 ;   sUwra : pEnA^icCuka
 ;
 ;
+
+;Added by Prachi Rathore[29-11-13]
+
+;Dogs have a keen sense of smell.
+;kuwwoM kI GrANaSakwi bahuwa wejZa howI hE.
+(defrule keen2
+(declare (salience 5000))
+(id-root ?id keen)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(viSeRya-viSeRaNa  ? ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id wIkRNa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  keen.clp 	keen2   "  ?id "  wIkRNa )" crlf))
+)
+
+;Added by Prachi Rathore[29-11-13]
+
+;He is keening over his dead brother.
+;vaha apane mqwa BAI ke liye vilApa kara rahA hE.
+
+(defrule keen3
+(declare (salience 5000))
+(id-root ?id keen)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-over_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id vilApa_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  keen.clp 	keen3   "  ?id " vilApa_kara )" crlf))
+)
+
+
+;Added by Prachi Rathore[29-11-13]
+
+;--"2.icCuka"
+;She is keen to take on medical line.
+;He is keen on marrying  your sister.
+;vaha wumhArI bahana se SAxI karane kA icCuka hE.
+(defrule keen4
+(declare (salience 5000))
+(id-root ?id keen)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(or(saMjFA-to_kqxanwa  ?id ?)(viSeRya-on_saMbanXI  ?id ?))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id icCuka))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  keen.clp 	keen4   "  ?id "  icCuka )" crlf))
+)
+
+

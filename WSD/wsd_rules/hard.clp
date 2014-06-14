@@ -66,3 +66,51 @@
 ;He tried hard to finish the work in time.
 ;
 ;
+
+;Added by Prachi Rathore[23-11-13]
+;She hit him hard with her purse. [m-w]
+(defrule hard5
+(declare (salience 4900))
+(id-root ?id hard)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(or(viSeRya-with_saMbanXI  ?id ?)(kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka  ?id ?))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id jora_se))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  hard.clp 	hard5   "  ?id "  jora_se )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[23-11-13]
+;I've had a long hard day.[oald]
+(defrule hard6
+(declare (salience 4900))
+(id-root ?id hard)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(viSeRya-viSeRaNa  ?id1 ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id muSkila))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  hard.clp 	hard6   "  ?id "  muSkila )" crlf))
+)
+
+;@@@ Added by Prachi Rathore
+;Her eyes were cruel and hard.[oald]
+;उसकी आँखें क्रूर और कठोर थीं . 
+(defrule hard7
+(declare (salience 4900))
+(id-root ?id hard)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(conjunction-components  ?id2 ?id1 ?id)
+(id-root ?id1 cruel)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kaTora))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  hard.clp 	hard7   "  ?id "  kaTora )" crlf))
+)
+

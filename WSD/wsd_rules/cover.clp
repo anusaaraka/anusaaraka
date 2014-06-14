@@ -67,6 +67,9 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  cover.clp 	cover4   "  ?id "  AvaraNa )" crlf))
 )
 
+;$$$  Modified by Preeti(19-12-13) meaning 'samAviRta_kara' to 'Daka'
+;They hurriedly rearranged the shrubs to cover the boat and set off for home. 
+;unhoMne jalxI se nAva Dakane ke liye JAdiyoM ko punaH_vyavasWiwa kiyA Ora Gara ke liye ravAnA hue.
 (defrule cover5
 (declare (salience 4500))
 (id-root ?id cover)
@@ -74,10 +77,30 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id samAviRta_kara))
+(assert (id-wsd_root_mng ?id Daka))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  cover.clp 	cover5   "  ?id "  samAviRta_kara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  cover.clp 	cover5   "  ?id "  Daka )" crlf))
 )
+
+;@@@ Added by Preeti(3-12-13)
+;The players were soon covered in mud. [ Oxford Advanced Learner's Dictionary]
+;KilAdI SIGra hI kIcada meM laWapaWa ho gaye We.
+(defrule cover6
+(declare (salience 4600))
+(id-root ?id cover)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-in_saMbanXI   ?id ?id1)
+(id-root ?id1 mud|sweat|blood|dust)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id laWapaWa_ho))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  cover.clp 	cover6   "  ?id "  laWapaWa_ho)" crlf))
+)
+;################### Need to be handled ####################
+;Matteo arrived at the top of the hill, panting and covered in sweat.
+;########################Old Example##############
 
 ;default_sense && category=verb	AcCAxiwa_karanA/DAzka	0
 ;"cover","VT","1.AcCAxiwa_karanA/DAzkanA"

@@ -18,10 +18,6 @@
 )
 
 
-
-
-
-
 ;Added by Meena(25.11.09)
 ;He is always right.
 ;Which one is right for me ?
@@ -39,16 +35,13 @@
 )
 )
 
-
-
-
 ;Modified by Meena(12.4.10)
 ;Added by Meena(13.11.09)
 ;She is fighting for her right.
 ;Everyone  has a right to education.
 ;What right have you got to blame me ? 
 (defrule right2
-(declare (salience 5000))
+;(declare (salience 5000))
 (id-root ?id right)
 ?mng <-(meaning_to_be_decided ?id)
 (or(viSeRya-det_viSeRaNa ?id ?id1)(viSeRya-RaRTI_viSeRaNa ?id ?id1)(kriyA-object ?id1 ?id)(viSeRya-to_saMbanXI ?id  ?id1)
@@ -69,7 +62,7 @@
 ;Place the books on the right side of the spects . 
 ;You follow the first turning on the right .
 (defrule right3
-(declare (salience 5000))
+(declare (salience 4500)) ;decrease salience by Anita
 (id-root ?id right)
 ?mng <-(meaning_to_be_decided ?id)
 (or(kriyA-on_saMbanXI ?id2 ?id)(kriyA-to_saMbanXI ?id2 ?id)(viSeRya-viSeRaNa ?id1 ?id)(samAsa_viSeRya-samAsa_viSeRaNa ?id1 ?id))
@@ -82,15 +75,15 @@
 )
 
 
-
-
-
-
+;$$$ Modifed by Anita--10.3.2014
+;What the government is proposing, encroaches on the rights of individuals. [By mail]
+;सरकार जो प्रस्ताव रख रही है, वह व्यक्तियों के अधिकारों का अतिक्रमण करता है ।
 (defrule right4
 (declare (salience 4900))
 (id-root ?id right)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word =(+ ?id 1) to|of)
+(viSeRya-of_saMbanXI  ?id ?) ;added relation by Anita-10.3.2014
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
@@ -98,9 +91,6 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  right.clp 	right4   "  ?id "  aXikAra )" crlf))
 )
-
-
-
 
 
 (defrule right5
@@ -117,35 +107,11 @@
 )
 
 
-
-
-;Salience reduced by Meena(13.11.09)
-(defrule right6
-(declare (salience 0))
-;(declare (salience 4500))
-(id-root ?id right)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id noun)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id aXikAra))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  right.clp 	right6   "  ?id "  aXikAra )" crlf))
-)
-
-;"right","N","1.aXikAra"
-;You have no right to stop me from going to bombay.
-;--"2.sahI"
-;The children should be able to distinguish between right && wrong.
-;
-;viSeRya=answers && category=adjective	TIka	0
-
-
-
-
 ;Modified by Meena(5.4.10)
 ;You got three answers right . 
 ;Nothing seems to be going right for him nowadays . 
+;;This is not the right road. [verified sentence]
+; यह ठीक सड़क नहीं है ।
 (defrule right7
 (declare (salience 4400))
 (id-root ?id right)
@@ -157,9 +123,6 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  right.clp 	right7   "  ?id "  TIka )" crlf))
 )
-
-
-
 
 
 ;Added by Meena(7.4.10)
@@ -178,11 +141,6 @@
 )
 
 
-
-
-
-
-
 (defrule right9
 (declare (salience 4000))
 (id-root ?id right)
@@ -196,15 +154,10 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  right.clp 	right9   "  ?id "  uciwa )" crlf))
 )
 
-
-
-
-
-
-
-
+;Looking back, I think we did the right thing.[Gyan-Nidhi]
+;पीछे देखते हुए मैं सोचता हूँ कि हमने सही चीज़ की ।
 (defrule right10
-(declare (salience 3200))
+(declare (salience 5100))
 (id-root ?id right)
 ?mng <-(meaning_to_be_decided ?id)
 (id-root =(- ?id 2) be)
@@ -236,14 +189,17 @@
 
 
 
-
+;$$$ Modified by Anita-20.3.2014
+;When you hold a pencil in front of you against some specific point on the background a wall and look ;at the pencil first through your left eye A closing the right eye and then look at the pencil through ;your right eye B closing the left eye you would notice that the position of the pencil seems to change ;with respect to the point on the wall. [ncert sentence]
+;जब आप किसी पेंसिल को अपने सामने पकडते हैं और पृष्ठभूमि (माना दीवार) के किसी विशिष्ट बिन्दु के सापेक्ष पेंसिल को पहले अपनी ;बायीं आँख A से (दायीं आँख बन्द रखते हुए) देखते हैं, और फिर दायीं आँख B से (बायीं आँख बन्द रखते हुए), तो आप पाते हैं, कि ;दीवार के उस बिन्दु के सापेक्ष पेंसिल की स्थिति परिवर्तित होती प्रतीत होती है. [translated by Shuchita ]
 ;Salience reduced by Meena(14.11.09)
 (defrule right12
-(declare (salience 0))
-;(declare (salience 2600))
+(declare (salience 5200)) ;salience increase from 3100 to 5200 by Anita-20.3.2014
 (id-root ?id right)
 ?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaNa  ?vi ?id) ; added relation by Anita-20.3.2014
 (id-cat_coarse ?id adjective)
+(id-root ?vi eye|hand|leg|nose|chick|brain|ear|side) ; added by Anita-20.3.2014
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id xAzyA))
@@ -258,6 +214,25 @@
 ;
 ;given_word=rightly && category=adverb	$TIka_TIka)
 
+;------------------------------------ Default rules -----------------------------------
+;Salience reduced by Meena(13.11.09)
+(defrule right6
+(declare (salience 0))
+(id-root ?id right)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id aXikAra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  right.clp    right6   "  ?id "  aXikAra )" crlf))
+)
+
+;"right","N","1.aXikAra"
+;You have no right to stop me from going to bombay.
+;--"2.sahI"
+;The children should be able to distinguish between right && wrong.
+;
 
 (defrule right13
 (declare (salience -100))
@@ -271,11 +246,9 @@
 )
 
 
-
 ;Salience reduced by Meena(14.11.09)
 (defrule right14
 (declare (salience 0))
-;(declare (salience 2500))
 (id-root ?id right)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id adverb)

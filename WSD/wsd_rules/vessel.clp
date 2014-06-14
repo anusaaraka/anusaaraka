@@ -17,7 +17,9 @@
 )
 
 
-
+;$$$ Modified mng from '+_pAwra' to pAwra' and added wsd_viBakwi 'kA' by Roja (13-06-14). Suggested by Chaitanya Sir for below ex.
+;A Bronze Age drinking vessel was discovered recently. 
+;eka kAzsA yuga pIne kA pAwra hAla mez DUzDa liyA gayA WA.
 ;Added by Meena(17.4.10)
 (defrule vessel1
 (declare (salience 5000))
@@ -27,9 +29,11 @@
 (not(id-root ?id1 blood|Blood))
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id +_pAwra))  ;" +_pAwra ":  to read "kA pAwra" in the output
+(assert (id-wsd_root_mng ?id pAwra));" +_pAwra ":  to read "kA pAwra" in the output
+(assert (id-wsd_viBakwi ?id1 kA))  
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  vessel.clp    vessel1   "  ?id "   +_pAwra )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  vessel.clp    vessel1   "  ?id "   pAwra )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_viBakwi   " ?*wsd_dir* "  vessel.clp 	vessel1  "  ?id1 "  kA" crlf))
 )
 
 

@@ -16,12 +16,26 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  old.clp       old_kA   "  ?id "  kA )" crlf))
 )
 
-
+;@@@ Added by Sonam Gupta MTech IT Banasthali 2013
+;And it can well claim to be the oldest of sciences.
+;और यह विज्ञान के सबसे अधिक पुरानी शाखा होने का अच्छी तरह दावा कर सकता है .
+(defrule old0
+(declare (salience 4900))
+(id-word ?id oldest)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id1 noun)
+(viSeRya-of_saMbanXI  ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id purAnI_SAKA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  old.clp      old0   "  ?id "  purAnI_SAKA )" crlf))
+)
 
 ;Added by Meena(17.3.11)
 ;These cuts in services will particularly affect the old.
-(defrule old0
-(declare (salience 4900))
+(defrule old1
+(declare (salience 4800))
 (id-root ?id old)
 ?mng <-(meaning_to_be_decided ?id)
 (id-root =(- ?id 1) the)
@@ -32,15 +46,15 @@
 (assert (id-wsd_root_mng ?id vqxXa))
 (assert (id-wsd_number ?id p))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  old.clp      old0   "  ?id "  vqxXa )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_number   " ?*wsd_dir* "  old.clp      old0   "  ?id "  p )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  old.clp      old1   "  ?id "  vqxXa )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_number   " ?*wsd_dir* "  old.clp      old1  "  ?id "  p )" crlf))
 )
 
 
 
 
 ;Salience reduced by  Meena(17.3.10)
-(defrule old1
+(defrule old2
 (declare (salience 0))
 ;(declare (salience 4500))
 (id-root ?id old)
@@ -50,13 +64,13 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id purAnA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  old.clp 	old1   "  ?id "  purAnA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  old.clp 	old2   "  ?id "  purAnA )" crlf))
 )
 
 
 ;Added by Meena(17.3.10)
 ;As the Master grew old and infirm, the disciples begged him not to die.
-(defrule old2
+(defrule old3
 (declare (salience 4400))
 (id-root ?id old)
 ?mng <-(meaning_to_be_decided ?id)
@@ -68,13 +82,13 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id vqxXa ))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  old.clp       old2   "  ?id "  vqxXa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  old.clp       old3   "  ?id "  vqxXa  )" crlf))
 )
 
 
 ;Added by Meena(22.3.11)
 ;The old man had to walk a long way to catch the bus.
-(defrule old3
+(defrule old4
 (declare (salience 5000))
 (id-root ?id old)
 ?mng <-(meaning_to_be_decided ?id)
@@ -85,13 +99,13 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id vqxXa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  old.clp       old3   "  ?id "  vqxXa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  old.clp       old4   "  ?id "  vqxXa )" crlf))
 )
 
 
 
 ;She was wearing an old dress.
-(defrule old4
+(defrule old5
 (declare (salience 0))
 ;(declare (salience 4400))
 (id-root ?id old)
@@ -101,7 +115,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id purAnA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  old.clp 	old4   "  ?id "  purAnA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  old.clp 	old5   "  ?id "  purAnA )" crlf))
 )
 
 ;"old","Adj","1.purAnA"
@@ -110,3 +124,24 @@
 ;The old man had to walk a long way to catch the bus.
 ;
 ;
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 3-1-2014
+;Growing old is so awful. [Gyannidhi]
+;वृद्ध होना काफी बुरा है . 
+;I helped the old lady across. [OALD]
+;मैंने वृद्ध महिला की सहायता की . 
+(defrule old6
+(declare (salience 5500))
+(id-root ?id old)
+?mng <-(meaning_to_be_decided ?id)
+(id-root ?id1 grow|get|lady|women|man|person|people)
+(or(viSeRya-viSeRaNa ?id1 ?id)(viSeRya-viSeRaNa ?id ?id1))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id vqxXa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  old.clp 	old6   "  ?id "  vqxXa )" crlf))
+)
+
+
+

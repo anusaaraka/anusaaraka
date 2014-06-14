@@ -1,11 +1,10 @@
 
+;$$$ modified by Pramila(BU) on 05-12-2013
 (defrule dawn0
 (declare (salience 5000))
 (id-root ?id dawn)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 on)
-(kriyA-upasarga ?id ?id1)
-(kriyA-object ?id ?)
+(kriyA-on_saMbanXI  ?id ?id1)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -20,7 +19,7 @@
 ;The Health Minister has declared against the new bill.
 ;svAsWaya maMwrI ne nae bila kI GoRaNA kI hE
 (defrule dawn1
-(declare (salience 4900))
+(declare (salience 4000))
 (id-root ?id dawn)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -37,8 +36,46 @@
 ;The dawn of civilization
 ;It was the dawn of the Roman Empire
 ;
+
+
+;@@@ added by pramila(BU) on 05-12-2013
+;The dawn of civilization
+;saByawA kA aByuxaya 
+;It was the dawn of the Roman Empire
+;yaha romana sAmrAjya kA aByuxaya WA.
 (defrule dawn2
-(declare (salience 4800))
+(declare (salience 4900))
+(id-root ?id dawn)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-of_saMbanXI  ?id ?id1)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id aByuxaya))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  dawn.clp 	dawn2   "  ?id "  aByuxaya )" crlf))
+)
+
+;@@@ added by pramila(BU) on 05-12-2013
+;The age of computers had dawned
+;kampyUtara kA yuga AraMBa ho gayA WA.
+
+(defrule dawn3
+(declare (salience 5000))
+(id-root ?id dawn)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject  ?id ?id1)
+(viSeRya-of_saMbanXI  ?id1 ?id2)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id AraMBa_ho))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  dawn.clp 	dawn3   "  ?id "  AraMBa_ho )" crlf))
+)
+
+(defrule dawn4
+(declare (salience 4000))
 (id-root ?id dawn)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -46,7 +83,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id saberA_ho))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  dawn.clp 	dawn2   "  ?id "  saberA_ho )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  dawn.clp 	dawn4   "  ?id "  saberA_ho )" crlf))
 )
 
 ;"dawn","VT","1.saberA_honA"

@@ -14,7 +14,7 @@
 
 ;"seating","N","1.bETane kA sWAna"
 ;This bus has seating capacity of 60 people.
-;
+;$$$ Modified by jagriti(4.4.2014)..sIta instead of Asana
 (defrule seat1
 (declare (salience 4900))
 (id-root ?id seat)
@@ -22,9 +22,9 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id Asana))
+(assert (id-wsd_root_mng ?id sIta))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  seat.clp 	seat1   "  ?id "  Asana )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  seat.clp 	seat1   "  ?id "  sIta )" crlf))
 )
 
 ;"seat","N","1.Asana"

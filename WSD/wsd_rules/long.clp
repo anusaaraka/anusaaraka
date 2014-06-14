@@ -122,3 +122,20 @@
 ;"long","V","1.icCA_karanA"
 ;I long to be there for the rest of my life.
 ;
+
+;@@@ Added by Nandini(1-1-14)
+;The milkman's long face grew longer.
+(defrule long7
+(declare (salience 4850))
+(id-root ?id long)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject  ?kri ?id1)
+(id-root ?kri grow)
+(or (subject-subject_samAnAXikaraNa ?id1 ?id) (kriyA-kriyA_viSeRaNa  ?kri ?id))
+(id-cat ?id adjective|adjective_comparative|adjective_superlative)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id aXika_laMbA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  long.clp 	long7   "  ?id "  aXika_laMbA )" crlf))
+)

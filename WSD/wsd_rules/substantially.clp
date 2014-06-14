@@ -1,6 +1,4 @@
-;############################################################################## 
-;#  Copyright (C) 2013-2014 Jagrati Singh (Banasthali University)
-;#
+;# Copyright (C) 2013-2014 Jagrati Singh (Banasthali University)
 ;#  This program is free software; you can redistribute it and/or
 ;#  modify it under the terms of the GNU General Public License
 ;#  as published by the Free Software Foundation; either
@@ -15,8 +13,9 @@
 ;#  You should have received a copy of the GNU General Public License
 ;#  along with this program; if not, write to the Free Software
 ;#  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
-;##############################################################################
-;This model has a few extra fittings, but the two cars are substantially the same. [Cambridge_Advanced_Learner] 
+;##############################################################################3333
+;@@@ Added by Jagrati
+;This model has a few extra fittings, but the two cars are substantially the same.   [Cambridge_Advanced_Learner]
 ;इस मॉडल में कुछ अतिरिक्त उपकरण है, लेकिन दो कारें मूल  रूप से समान हैं. 
 (defrule substantially0
 (declare (salience 5000))
@@ -31,6 +30,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  substantially.clp 	substantially0   "  ?id "mUla_rUpa_se )" crlf))
 )
 
+;@@@ Added by Jagrati
 ;.................Default Rule...........
 ;The targets of the First and the Second Plan were substantially achieved . [ Gyanaidhi Search Link]
 ;प्रथम और दूसरी योजना के लक्ष्य काफी हद तक पूरे हो गये थे |

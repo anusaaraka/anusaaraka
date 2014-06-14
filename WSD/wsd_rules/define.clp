@@ -27,6 +27,7 @@
 (declare (salience 5000))
 (id-root ?id define)
 ?mng <-(meaning_to_be_decided ?id)
+;(or(id-word (+ ?id 1) as)(id-word (+ ?id 2) as)(id-word (+ ?id 3) as))
 (kriyA-as_saMbanXI  ?id ?id1)
 (id-cat_coarse ?id verb)
 =>
@@ -56,8 +57,44 @@
 )
 
 
+;------------------------------------------------------------default-----------------------------------------------------------------------
+;All of these words were defined in a thesaurus.
+;ये सभी शब्द शब्दकोश में परिभाषित किए गये थे
+;Metadata set was defined to create a repository. 
+;मेटाडाटा समुच्चय कोष बनाने के लिए परिभाषित किया गया था . 
+;Procedures and criteria are defined prior to the beginning of the review process.
+;कार्यविधि और मानदण्ड पुनरवलोकन प्रक्रिया के आरम्भ से पहले परिभाषित किए गये हैं . 
 (defrule define2
-(declare (salience 4500))
+(declare (salience 4900))
+(id-root ?id define)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id pariBARiwa_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  define.clp 	define2   "  ?id "  pariBARiwa_kara )" crlf))
+)
+
+;The photocurrent is found to decrease rapidly until it drops to zero at a certain sharply defined, critical value of the negative 
+;potential V 0 on the plate A.
+;यह पाया गया कि प्रकाशिक - धारा तेजी से कम होती जाती है जब तक कि यह पट्टिका A पर ऋण विभव V 0 के किसी निश्चित तीक्ष्ण और स्पष्ट क्रान्तिक मान पर शून्य नहीं हो जाती.
+
+(defrule define3
+(declare (salience 4000))
+(id-root ?id define)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id spaRZta))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  define.clp 	define3   "  ?id "  spaRZta )" crlf))
+)
+
+
+(defrule define4
+(declare (salience 3000))
 (id-root ?id define)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id defined)
@@ -66,42 +103,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id niSZciwa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  define.clp    define2   "  ?id "  niSZciwa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  define.clp 	define4   "  ?id "  niSZciwa )" crlf))
 )
 
-
-
-;------------------------------------------- Default rules --------------------------------------------
-;All of these words were defined in a thesaurus.
-;ये सभी शब्द शब्दकोश में परिभाषित किए गये थे
-;Metadata set was defined to create a repository. 
-;मेटाडाटा समुच्चय कोष बनाने के लिए परिभाषित किया गया था . 
-;Procedures and criteria are defined prior to the beginning of the review process.
-;कार्यविधि और मानदण्ड पुनरवलोकन प्रक्रिया के आरम्भ से पहले परिभाषित किए गये हैं . 
-(defrule define3
-(declare (salience 3000))
-(id-root ?id define)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id pariBARiwa_kara))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  define.clp 	define3   "  ?id "  pariBARiwa_kara )" crlf))
-)
-
-;The photocurrent is found to decrease rapidly until it drops to zero at a certain sharply defined, critical value of the negative potential V 0 on the plate A.
-;यह पाया गया कि प्रकाशिक - धारा तेजी से कम होती जाती है जब तक कि यह पट्टिका A पर ऋण विभव V 0 के किसी निश्चित तीक्ष्ण और स्पष्ट क्रान्तिक मान पर शून्य नहीं हो जाती.
-
-(defrule define4
-(declare (salience 3000))
-(id-root ?id define)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id adjective)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id spaRZta))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  define.clp 	define4   "  ?id "  spaRZta )" crlf))
-)
 

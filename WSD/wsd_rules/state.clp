@@ -1,3 +1,4 @@
+;$$$ Modified by jagriti(4.4.2014)...replace (kriyA-in_saMbanXI  ? ?id) with (viSeRya-viSeRaNa  ?id ?id1)
 ;Added by Rashmi Ranjan(Banasthali Vidyapith)
 ;They were in a state of shock. [m-w]
 ;वे सदमे की अवस्था में थे.
@@ -29,7 +30,7 @@
 (declare (salience 4900))
 (id-root ?id state)
 ?mng <-(meaning_to_be_decided ?id)
-(or(viSeRya-of_saMbanXI  ?id ?id1)(subject-subject_samAnAXikaraNa  ?sub ?id)(kriyA-in_saMbanXI  ? ?id))
+(or(viSeRya-of_saMbanXI  ?id ?id1)(subject-subject_samAnAXikaraNa  ? ?id)(viSeRya-viSeRaNa  ?id ?id1))
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
@@ -47,7 +48,7 @@
 ;चिहुआहुआ उत्तरी मेक्सिको में एक राज्य है.
 ;Vermont was the only New England state to pass the law.[m-w]
 ;वरमोंट कानून पारित करने के लिए केवल न्यू इंग्लैंड राज्य था.
-;Removed conditions (viSeRya-viSeRaNa ?id ?id1),(samAsa_viSeRya-samAsa_viSeRaNa ?id ?id1),(viSeRya-in_saMbanXI ?id1 ?id), (id-word ?id1 policy|czechoslovak|small|city)
+;Removed conditions (viSeRya-viSeRaNa ?id ?id1),(samAsa ?id ?id1),(viSeRya-in_saMbanXI ?id1 ?id), (id-word ?id1 policy|czechoslovak|small|city)
 (defrule state1
 (declare (salience 6000))
 (id-root ?id state)

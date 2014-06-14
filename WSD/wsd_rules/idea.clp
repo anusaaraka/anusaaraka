@@ -60,3 +60,19 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  idea.clp       idea3   "  ?id "  vicAra )" crlf))
 )
+
+
+;Added by Prachi Rathore[29-3-14].
+;You can get an idea of how bad the situation is in the office from the fact that DTO Anil Garg does not have any information regarding the notice on the delivery counter.
+;ऑफिस की बदतर हालत का अंदाजा इसी बात से लगाया जा सकता है कि डीटीओ अनिल गर्ग को डिलीवरी काउंटर पर लगे इस नोटिस की जानकारी तक नहीं है।
+(defrule idea4
+(declare (salience 4800))
+(id-root ?id idea)
+?mng <- (meaning_to_be_decided ?id)
+(viSeRya-of_saMbanXI  ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id aMxAjA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  idea.clp       idea4   "  ?id "  aMxAjA)" crlf))
+)

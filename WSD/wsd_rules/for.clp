@@ -69,6 +69,9 @@
 ;Modified by Meena(17.8.11)
 ;Added by Meena(9.8.11)
 ;This room would look big and airy for a spot of paint.
+;yaha kamarA jarA se rafga ke bAxa badA Ora havAxAra lagegA.
+;jarA rafga kara xene se yaha kamarA badA Ora havAxAra lagegA.
+;This rule need to be modified. Ex: I am being ready for the party.
 (defrule for2
 (declare (salience 4700))
 (id-root ?id for)
@@ -144,17 +147,19 @@
 )
 
 
-
+;$$$ Added neq ?str moment by Roja (13-06-14). Suggested by Chaitanya Sir. ###Counter Ex: The family stopped for a moment to look at the yellow bird inside.
 ;Salience changed by Meena(27.7.11) to stop this rule for the example:I waited for Seeta for hours.(because ol takes (viSeRya-for_saMbanXI  Seeta hours))
 ;Added by Meena(22.5.11)
 ;In fact she had been feeling tired and queasy for the past three days.
+;days modifier is past|last condition need to be used
+;Counter ex: The teacher said they have to carry these potatoes with them everywhere they go for a week. (Here for mng -> waka)
 (defrule for6
 (declare (salience 4700))
 (id-root ?id for)
 ?mng <-(meaning_to_be_decided ?id)
 (or (kriyA-for_saMbanXI ? ?id1)(viSeRya-for_saMbanXI  ?viSeR  ?id1))
 ;(id-root ?id1 day|hour|month|week|minute|year|decade|century)
-(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "time.gdbm" ?str)));instead of list Added time.gdbm by Shirisha Manju(16-07-13) 
+(id-root ?id1 ?str&:(and (neq ?str moment)(not (numberp ?str))(gdbm_lookup_p "time.gdbm" ?str)));instead of list Added time.gdbm by Shirisha Manju(16-07-13) 
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id se))
@@ -222,7 +227,7 @@
 (id-root ?id for)
 ?mng <-(meaning_to_be_decided ?id)
 ;(id-word =(+ ?id 1) long|hours|weeks|years) ;modified by Dipti-27-07-09 ;dropped 'a' from the list
-(id-word ?id2  miles|long|hours|weeks|years|time|months|hours|minutes|seconds) ;Added "time" in the list(Meena 8.02.10)
+(id-word ?id2  miles|long|weeks|years|time|months|hours|minutes|seconds) ;Added "time" in the list(Meena 8.02.10)
 (kriyA-for_saMbanXI  ?id1 ?id2)
 =>
 (retract ?mng)
@@ -250,22 +255,6 @@
 )
 
 
-(defrule for11
-(declare (salience 4400))
-(id-root ?id for)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id conjunction)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id kyoMki))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp 	for11   "  ?id "  kyoMki )" crlf))
-)
-
-;"for","Conj","1.kyoMki"
-;Rama was very angry with Madhu for she has again forgotten her birthday.
-
-
 ;;Commented by Meena(9.3.10)
 ;;Added  by Meena(9.3.10)
 ;;Thomas Edison tried two thousand different materials in search of a filament for the light bulb .
@@ -281,14 +270,44 @@
 ;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp       for07   "  ?id "  kA )" crlf))
 ;)
 
+;@@@ Added by Shirisha Manju 16-4-14 Suggested by Sukhada
+;Naming the government scheme after inspiring personalities is the easiest tool for reviving the history. 
+;preraka vyakwiwva ke nAma para sarakArI yojanA kA nAmakaraNa karanA iwihAsa ko punarjIviwa karane kA sabase aXika AsAna OjAra hE.
+(defrule for_revive
+(declare (salience 200))
+(id-root ?id for)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-for_saMbanXI ? ?id1)
+(id-root ?id1 revive)
+(id-cat_coarse ?id preposition)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp      for_revive   "  ?id "  kA )" crlf))
+)
+
+;---------------------- Default rules ------------------------
+
+(defrule for11
+(id-root ?id for)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id conjunction)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kyoMki))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  for.clp      for11   "  ?id "  kyoMki )" crlf))
+)
+
+;"for","Conj","1.kyoMki"
+;Rama was very angry with Madhu for she has again forgotten her birthday.
 
 
 
 
 ;Salience reduced by Meena(9.3.10)
 (defrule for12
-(declare (salience 0))
-;(declare (salience 4300))
 (id-root ?id for)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id preposition)

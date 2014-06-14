@@ -277,18 +277,21 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " look.clp	look16  "  ?id "  " ?id1 "  xeKaBAla_kara  )" crlf))
 )
 
+;$$$ Modified by Shirisha Manju (23-4-14) Suggested by Chaitanya Sir
+;Removed 'kriyA-for_saMbanXI' relation and Modified wsd_root_mng as affecting_id-affected_ids-wsd_group_root_mng
+;He is looking for a house.
+;vaha Gara DUzDa rahA hE.
 (defrule look17
 (declare (salience 3300))
 (id-root ?id look)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 for)
-(kriyA-for_saMbanXI ?id ?) ;Automatically modified kriyA-upasarga to kriyA-prep_saMbanXI by Sukhada's program. 
+(id-word =(+ ?id 1) for) ;added by Shirisha Manju (23-4-14)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id DUzDa));Automatically modified 'affecting_id-affected_ids-wsd_group_root_mng ?id ?id1' to 'id-wsd_root_mng ?id ' by Sukhada's program. 
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id (+ ?id 1) DUzDa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " look.clp look17 " ?id "  DUzDa )" crlf)) 
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " look.clp	look17  "  ?id "  " (+ ?id 1) "  DUzDa  )" crlf))
 )
 
 (defrule look18
@@ -556,6 +559,11 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  look.clp 	look36   "  ?id "  xeKa )" crlf))
 )
 
+;Below examples and translations Suggested by Aditi ji (27-04-14). Added by Roja.
+;She is looking at the book.
+;vaha kiwAba xeKa rahI hEM.
+;She is looking at Meera.
+;vaha Meera ko xeKa rahI hEM.
 (defrule look37
 (declare (salience 1300))
 (id-root ?id look)
@@ -572,7 +580,7 @@
 ;$$$ Modified by Shirisha Manju Suggested by Chaitanya Sir (12-12-13) -- Added +1 category as adjective fact
 ;That book looks interesting.
 (defrule look38
-(declare (salience 1200))
+(declare (salience 1400)) ;Salience increased by Roja(27-04-14). Counter Ex: The graveyard which was  enveloped in mist looked ghostly. Suggested by Aditi Mam.
 (id-root ?id look)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -708,6 +716,41 @@
 (assert (id-wsd_root_mng ?id xeKa))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  look.clp 	look47   "  ?id "  xeKa )" crlf))
+)
+
+;Added by Nandini (3-11-13)
+;She looked back now to that fatal day in December. [sentence from mail]
+;xisambara ke  usa nirNAyaka xina ko aba usane piCe_mudakara xeKA.
+(defrule look48
+(declare (salience 2950))
+(id-root ?id look)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 back)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 piCe_mudakara_xeKa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " look.clp	look48  "  ?id "  " ?id1 "  piCe_mudakara_xeKa  )" crlf))
+)
+
+;@@@ Added by Nandini (2-1-14)
+;To his surprise Minakshi looked more beautiful than ever before.[sentence from mail]
+;use AScarya huA Minakshi pahale  kI apekRA Ora  aXika sunxara xiKa rahI WI.
+(defrule look49
+(declare (salience 2980))
+(id-root ?id look)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject  ?id ?id1)
+(subject-subject_samAnAXikaraNa  ?id1 ?id2)
+(id-word ?id2 beautiful)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id xiKa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  look.clp 	look49   "  ?id "  xiKa )" crlf))
 )
 
 ;default_sense && category=verb	najZara_A	0

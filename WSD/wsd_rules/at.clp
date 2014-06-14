@@ -1,4 +1,5 @@
-
+;Sentence added by Shirisha Manju Suggested by Chaitanya Sir
+;So at end of the day, you have to make better choices, ladies.  (NPR_TellMore -COCA - freq:184)
 (defrule at0
 (declare (salience 5000))
 (id-root ?id at)
@@ -227,6 +228,26 @@
 )
 
 
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)3-Feb-2014
+;She had a jolly time at the party.
+;उसने पार्टी में एक मस्ती भरा समय बिताया
+;Sentence added by Shirisha Manju Suggested by Chaitanya Sir
+;This show, for the beer-drinkers at Party on the Plaza, will presumably focus on more adult-oriented material.  (COCA - Houston Chronicle)
+(defrule at15
+(declare (salience 4000))
+(id-root ?id at)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-at_saMbanXI  ?id1 ?id2)
+(id-root ?id2 conference|meeting|discussion|party)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id meM))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  at.clp        at15   "  ?id "  meM )" crlf))
+)
+
+
+;***********************DEFAULT RULE*************************************
 
 (defrule at14
 (declare (salience 0))

@@ -45,17 +45,58 @@
 ;I have a fine collection of holiday snaps.
 ;--,"1.wASa_ke_pawwoM_kA_eka_Kela"
 ;Snap is an entertaining game.
-;
+
+;$$$ Modified by jagriti(31.12.2013)
+;meaning modified from Poto_lenA instead of wodZa_dZAla because it is most commonly used meaning.
+;I snapped you on the beach. 
+;मैंने समुद्र तट पर आपका फोटो लिया.
 (defrule snap3
-(declare (salience 4700))
+(declare (salience 1))
 (id-root ?id snap)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id wodZa_dZAla))
+(assert (id-wsd_root_mng ?id Poto_le))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  snap.clp 	snap3   "  ?id "  wodZa_dZAla )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  snap.clp 	snap3   "  ?id "  Poto_le )" crlf))
+)
+
+;@@@  Added by jagriti(31.12.2013)
+;;He snapped his finger.
+;उसने अपनी उंगली काट ली.
+;The snake snapped the boy's feet.
+;साँप ने लड़के के पैर पर काट लिया.
+(defrule snap4
+(declare (salience 4700))
+(id-root ?id snap)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-object ?id ?id1)
+(id-root ?id1 foot|ankle|finger)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kAta_le))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  snap.clp 	snap4   "  ?id "  kAta_le )" crlf))
+)
+
+;@@@ Added by jagriti(31.12.2013)
+;`Come hear at once,' she snapped. 
+;एक बार में आअो उसने गुस्से से कहा.
+;;The teacher snapped 'shut your mouth'.
+;शिक्षक ने गुस्से से कहा 'अपना मुँह बंद कर लो'.
+(defrule snap5
+(declare (salience 4600))
+(id-root ?id snap)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-vAkyakarma ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id gusse_se_kaha))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  snap.clp 	snap5   "  ?id "  gusse_se_kaha )" crlf))
 )
 
 ;"snap","V","1.wodZa_dZAlanA"

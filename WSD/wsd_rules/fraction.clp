@@ -27,6 +27,7 @@
 (declare (salience 4950))
 (id-root ?id fraction)
 ?mng <-(meaning_to_be_decided ?id)
+;(id-word ?id1 break)
 (viSeRya-of_saMbanXI  ?id ?id1)
 (id-root-category-suffix-number ?id1  ? noun ? s)
 (id-cat_coarse ?id noun)
@@ -46,6 +47,7 @@
 (declare (salience 4950))
 (id-root ?id fraction)
 ?mng <-(meaning_to_be_decided ?id)
+;(or((viSeRya-of_saMbanXI  ?id ?id1)(id-root-category-suffix-number ?id1  ? noun ? p))
 (viSeRya-of_saMbanXI  ?id ?id1)
 (viSeRya-of_saMbanXI  ?id1 ?id2)
 (id-root-category-suffix-number ?id2  ? noun ? p)
@@ -58,10 +60,24 @@
 )
 
 
+;default
+;Would you please move a fraction?
+;क्या आप थोडा खिसक जाएंगे?
+(defrule fraction2
+(declare (salience 4900))
+(id-root ?id fraction)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id WodA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fraction.clp 	fraction2   "  ?id "  WodA )" crlf))
+)
 
 ;Break it into equal fractions.
 ;इसे बराबर भागो में तोडो.
-(defrule fraction2
+(defrule fraction3
 (declare (salience 4950))
 (id-root ?id fraction)
 ?mng <-(meaning_to_be_decided ?id)
@@ -72,35 +88,9 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id BAga))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fraction.clp 	fraction2   "  ?id "  BAga )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fraction.clp 	fraction3   "  ?id "  BAga )" crlf))
 )
 
 
-;------------------------  default ----------------------------------------
 
-;Would you please move a fraction?
-;क्या आप थोडा खिसक जाएंगे?
-(defrule fraction3
-(declare (salience 900))
-(id-root ?id fraction)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id noun)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id WodA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fraction.clp         fraction3   "  ?id "  WodA )" crlf))
-)
-
-;Added by Manju (29-08-13)
-(defrule fraction4
-(declare (salience 100))
-(id-root ?id fraction)
-?mng <-(meaning_to_be_decided ?id)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id WodA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fraction.clp         fraction4   "  ?id "  WodA )" crlf))
-)
 

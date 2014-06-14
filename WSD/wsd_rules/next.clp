@@ -93,6 +93,38 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  next.clp 	next6   "  ?id "  usake_bAxa )" crlf))
 )
 
+;@@@ Added by Nandini(5-12-13)
+;The next is of helium, followed by carbon, oxygen, neon and so on. [from mail]
+;अगला हिलियम ,उसके बाद कारबन , आक्सीजन, निओन वगैरह है .
+(defrule next7
+(declare (salience 4850))
+(id-root ?id next)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject  ? ?id)
+;(viSeRya-det_viSeRaNa  ?id ?id1)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id agalA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  next.clp 	next7   "  ?id "  agalA )" crlf))
+)
+
 ;"next","Adv","1.usake_bAxa"
 ;We visited the shrine next.
 ;
+
+;@@@ Added by Nandini(15-1-14)
+;Nobody knows what will happen next.
+;koI nahIM jAnawA hE ki Age kyA hogA.
+(defrule next8
+(declare (salience 5050))
+(id-root ?id next)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-aXikaraNavAcI  ?id1 ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Age))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  next.clp 	next8   "  ?id "  Age )" crlf))
+)

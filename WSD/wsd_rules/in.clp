@@ -216,3 +216,92 @@
 ;"Abbr:inch","1.iMca"
 ;He is 4 ft 2 inches tall.
 ;vaha 4 PIta 2 incesa uzcA hE.
+
+;@@@ Added by Prachi Rathore[6-3-14]
+;Short skirts are in again.[oald]
+;छोटी स्कर्ट फिर से प्रचलन में है
+(defrule in12
+(declare (salience 5000))
+(id-root ?id in)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id pracalana_meM))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  in.clp        in12   "  ?id "  pracalana_meM)" crlf)))
+
+;@@@ Added by Prachi Rathore[6-3-14]
+;Applications must be in by April 30.[oald]
+;प्रार्थना पत्र ३० अप्रेल तक पहुँच जाना चाहिये
+(defrule in13
+(declare (salience 5000))
+(id-root ?id in)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject  ?id2 ?id1)
+(kriyA-in_by_saMbanXI  ?id2 ?)
+(id-root ?id1 application|letter)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id pahuca_jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  in.clp        in13   "  ?id "  pahuca_jA)" crlf)))
+
+
+;@@@ Added by Prachi Rathore[6-3-14]
+;Will you keep a tally of the number of customers going in and out?[cambridge]
+;क्या आप  अंदर और बाहर जाते हुए ग्राहकों की संख्या की गिनती रखेंगे? 
+(defrule in14
+(declare (salience 5000))
+(id-root ?id in)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaNa  ?id ?id1)
+(id-root ?id1 out)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id aMxara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  in.clp        in14   "  ?id "  aMxara)" crlf)))
+
+
+;@@@ Added by Prachi Rathore[6-3-14]
+;Exotic pets are the in thing right now.[oald]
+;विदेशी पालतू जानवर आजकल प्रचलित  हैं. 
+(defrule in15
+(declare (salience 5050))
+(id-root ?id in)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(id-root =(+ ?id 1) thing)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id (+ ?id 1) pracaliwa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " in.clp        in15  "  ?id "  " (+ ?id 1) "  pracaliwa )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_in14
+(declare (salience 5000))
+(id-root ?id in)
+?mng <-(meaning_to_be_decided ?id)
+(subject-subject_samAnAXikaraNa ?id ?id1)
+(id-root ?id1 out)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id aMxara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " in.clp   sub_samA_in14   "   ?id " aMxara)" crlf)))
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_in14
+(declare (salience 5000))
+(id-root ?id in)
+?mng <-(meaning_to_be_decided ?id)
+(object-object_samAnAXikaraNa ?id ?id1)
+(id-root ?id1 out)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id aMxara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " in.clp   obj_samA_in14   "   ?id " aMxara)" crlf)))

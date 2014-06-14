@@ -89,14 +89,16 @@
 ;sUwra : sOxA^viwaraNa
 ;
 ;
-;Added by Pramila(Banasthali University)
+;@@@Added by Pramila(Banasthali University)
 ;She deals in gold.
 
+;We only deal with companies which have a good credit record.         ;cald
+;हम उन्ही कम्पनियों से व्यापार करते हैं जिनका पिछला अच्छा रिकार्ड रहा है.
 (defrule deal2
-(declare (salience 4980))
+(declare (salience 5000))
 (id-root ?id deal)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) in)
+(or(id-word =(+ ?id 1) in) (and(kriyA-with_saMbanXI ?id ?id1)(id-root ?id1 company))) ;modified by Pramila(Banasthali University) on 18-11-2013
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -105,40 +107,224 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deal.clp 	deal2   "  ?id "  vyApAra_kara )" crlf))
 )
 
-;Added by Pramila(Banasthali University)
-;This book deals with incest.
-;Electrostatics deals with charges on glass rods.
-;For example, the subject of thermodynamics, developed in the nineteenth century, deals with bulk systems in terms of macroscopic quantities such as temperature, internal energy, entropy, etc.. 
+;@@@ Added by Pramila(Banasthali University) on 18-11-2013
+;How long had she been dealing (= selling drugs)before she was arrested?            ;cald
+;गिरफ्तारी से कितने समय से पहले से वह (ड्रग्स बेचने का) व्यापार कर रही थी .                  
 (defrule deal3
-(declare (salience 4970))
+(declare (salience 5000))
+(id-root ?id deal)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-samakAlika_kriyA  ?id ?id1)
+(id-root ?id1 arrest)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id vyApAra_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deal.clp 	deal3   "  ?id "  vyApAra_kara )" crlf))
+)
+
+;@@@ Added by Pramila(Banasthali University) on 18-11-2013                 
+;He was suspected of dealing cocaine.             ;cald
+;उस पर कोकीन बेचने का शक है.
+(defrule deal4
+(declare (salience 5000))
+(id-root ?id deal)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?id ?id1)
+(id-root ?id1 cocaine|drugs)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id vyApAra_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deal.clp 	deal4   "  ?id "  vyApAra_kara )" crlf))
+)
+
+;@@@ Added by Pramila(Banasthali University)
+;This book deals with incest.
+;Electrostatic deals with charges on glass rods.
+;For example, the subject of thermodynamics, developed in the nineteenth century, deals with bulk systems in terms of macroscopic 
+;quantities such as temperature, internal energy, entropy, etc.. 
+
+;replaced the old condition of inanimate things with new format for inanimate things.
+(defrule deal5
+(declare (salience 4980))
 (id-root ?id deal)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-subject ?id ?id1)
-;(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "inanimate.gdbm" ?str)))
-(id-root ?id1 ?str) ;As suggested by Chaitanya Sir removed inanimate.gdbm and modified the fact as shown by Roja (03-12-13) 
+(id-root ?id1 ?str)
 (test (and (neq (numberp ?str) TRUE) (neq (gdbm_lookup_p "animate.gdbm" ?str) TRUE)))
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id varNana_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deal.clp 	deal3   "  ?id "  varNana_kara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deal.clp 	deal5   "  ?id "  varNana_kara )" crlf))
 )
 
 
-;Added by Pramila(Banasthali University)
+;@@@ Added by Pramila(Banasthali University)
 ;This led to the development of a radically new theory (Quantum Mechanics) to deal with atomic and molecular phenomena.
 ;They have been taking measures to deal with instability in Europe for over a year.
-(defrule deal4
+;We have so far dealt with charge configurations involving discrete charges .
+;अब तक हमने विविक्त आवेशों के आवेश विन्यास के विषय में विचार किया है .
+(defrule deal6
 (declare (salience 4970))
 (id-root ?id deal)
 ?mng <-(meaning_to_be_decided ?id)
-(kriyA-kriyArWa_kriyA  ?kri ?id)
+(or(kriyA-kriyArWa_kriyA  ?kri ?id)(kriyA-kqxanwa_karma  ?id ?id1))
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id vicAra_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deal.clp 	deal4   "  ?id "  vicAra_kara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deal.clp 	deal6   "  ?id "  vicAra_kara )" crlf))
 )
 
+;How are you going to deal with this problem ?
+;isa samasyA se wuma kEse nipatoge ?
+
+;The government must deal with this as a matter of urgency.
+;sarakAra ko  isase ApaWasWiwi kI waraha nipatana CAhiye.
+
+;@@@ Added by Pramila(Banasthali University) on 21-10-2013
+(defrule deal7
+(declare (salience 4970))
+(id-root ?id deal)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-with_saMbanXI  ?id ?id1)
+(or(viSeRya-as_saMbanXI  ?id1 ?id2)(viSeRya-det_viSeRaNa  ?id1 ?id2))
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id nipata))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deal.clp 	deal7   "  ?id "  nipata )" crlf))
+)
+
+;@@@ Added by Pramila(Banasthali University) on 18-11-2013
+;Deal them five cards each.         ;cald
+;हर एक को पांच  ताश के पत्ते बाँटना 
+;Would you like to deal (out) the cards?                  ;cald
+;क्या तुम ताश के पत्ते बाँटना पसंद करोंगे?
+(defrule deal8
+(declare (salience 5000))
+(id-root ?id deal)
+?mng <-(meaning_to_be_decided ?id)
+(or(viSeRya-viSeRaNa  ?id ?id1)(kriyA-object  ?id ?id1))
+(id-root ?id1 card)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bAzta))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deal.clp 	deal8   "  ?id "  bAzta )" crlf))
+)
+
+;@@@ Added by Pramila(Banasthali University) on 22-02-2014
+;Whose turn is it to deal?                       ;cald
+;ताश के पत्ते बांटने की किस की बारी है ?
+(defrule deal9
+(declare (salience 5000))
+(id-root ?id deal)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-vAkyakarma  ?id1 ?id)
+(kriyA-subject  ?id1 ?id2)
+(id-root ?id2 turn)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bAzta))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deal.clp 	deal9   "  ?id "  bAzta )" crlf))
+)
+
+;@@@ Added by Pramila(Banasthali University) on 22-02-2014
+;Deal five cards to each of them.           ;cald
+;हर एक को पांच  ताश के पत्ते बाँटना .
+(defrule deal10
+(declare (salience 5000))
+(id-root ?id deal)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-to_saMbanXI  ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bAzta))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deal.clp 	deal10   "  ?id "  bAzta )" crlf))
+)
+
+;@@@ Added by Pramila(Banasthali University) on 18-11-2013
+;He dealt me the Queen of Spades.                 ;thefreedictionary
+;usane muJe hukuma kI begama xI.
+(defrule deal11
+(declare (salience 5000))
+(id-root ?id deal)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-kqxanwa_karma  ?id ?id1)
+(id-root ?id1 queen|jack|king|ace)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deal.clp 	deal11   "  ?id "  xe )" crlf))
+)
+
+;@@@ Added by Pramila(Banasthali University) on 18-11-2013
+;The latest trade figures have dealt a severe blow to hopes of an early economic recovery.           ;cald
+;ताजे (नये ) व्यापार के अंकों ने जल्दी आर्थिक सुधार की आशाओं को बड़ा धक्का लगा दिया.
+(defrule deal12
+(declare (salience 5000))
+(id-root ?id deal)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?id ?id1)
+(id-root ?id1 blow)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id lagA_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deal.clp 	deal12   "  ?id "  lagA_xe )" crlf))
+)
+
+;@@@ Added by Pramila(Banasthali University) on 22-02-2014
+; Rather it deals with systems in macroscopic equilibrium and is concerned with changes in internal energy temperature entropy etc. of 
+;the system through external work and transfer of heat.     ;ncert
+;अपितु यह स्थूल सन्तुलन के निकायों पर विचार करती है, तथा इसका सम्बन्ध बाह्य कार्य तथा ऊष्मा स्थानान्तरण द्वारा निकाय की आन्तरिक ऊर्जा, ताप, ऐन्ट्रॉपी आदि में अन्तर से होता है.
+(defrule deal13
+(declare (salience 5000))
+(id-root ?id deal)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-with_saMbanXI  ?id ?id1)
+(viSeRya-in_saMbanXI  ?id1 ?id2)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id vicAra_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deal.clp 	deal13   "  ?id "  vicAra_kara )" crlf))
+)
+
+
+;@@@ Added by Pramila(BU) on 12-03-2014
+;Presently we are dealing with motion along a straight line also called rectilinear motion only.    ;ncert
+;इस अध्याय में हम एक सरल रेखा के अनुदिश सरल गति (जिसे हम रेखीय गति कहते हैं) के विषय में ही अध्ययन करेंगे ..
+(defrule deal14
+(declare (salience 5000))
+(id-root ?id deal)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-subject ?id ?id1)
+(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))
+(kriyA-with_saMbanXI  ?id ?id2)
+(id-root ?id2 ?str)
+(test (and (neq (numberp ?str) TRUE) (neq (gdbm_lookup_p "animate.gdbm" ?str) TRUE)))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id aXyayana_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deal.clp 	deal14   "  ?id "  aXyayana_kara )" crlf))
+)

@@ -47,3 +47,20 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  could_0_tam.clp        could_0_tam2  "  ?id "  0_sakA )" crlf))
 )
 
+;@@@ Added by Prachi Rathore
+;I'm not implying anything about your cooking, but could we eat out tonight?[cambridge]
+;मैं आपके खाना पकाने की विधि के बारे में कुछ भी अर्थ नहीं निकाल रहा हूँ, परन्तु क्या हम आज की रात बाहर खा सकते हैं.
+;Could you teach me to do that?[oald]
+(defrule could_0_tam3
+(declare (salience 4800))
+(id-TAM ?id could_0)
+?mng <-(meaning_to_be_decided ?id)
+(id-root ?id eat|get|teach|arrive);Added 'arrive' by Roja Ex: The baby could arrive any time now. 
+=>
+(retract ?mng)
+(assert (id-E_tam-H_tam_mng ?id could_0 0_sakawA_hE))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  could_0_tam.clp        could_0_tam3  "  ?id "  0_sakawA_hE )" crlf))
+)
+
+

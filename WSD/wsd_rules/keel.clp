@@ -36,3 +36,15 @@
 ;The ship turned over its keel.
 ;
 ;
+;Added by Prachi Rathore[29-11-13]
+(defrule keel2
+(declare (salience 4900))
+(id-root ?id keel)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id penxA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  keel.clp 	keel2   "  ?id "  penxA)" crlf))
+)

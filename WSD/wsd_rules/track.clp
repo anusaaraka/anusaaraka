@@ -32,6 +32,59 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  track.clp 	track1   "  ?id "  pawA_lagA )" crlf))
 )
 
+;@@@ Added by Prachi Rathore[11-3-14]
+;The police have so far failed to track down the attacker.[oald]
+;पुलीस आक्रमणकारी को खोज निकालने में अब तक असफल रही है . 
+(defrule track2
+(declare (salience 5000))
+(id-root ?id track)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(id-word ?id1 down)
+(kriyA-upasarga ?id ?id1)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 Koja_nikAla))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " track.clp 	track2  "  ?id "  " ?id1 "  Koja_nikAla  )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[11-3-14]
+;The camera eventually tracked away.[oald]
+; आखिरकार कैमरा साथ साथ मुडा . 
+(defrule track3
+(declare (salience 5000))
+(id-root ?id track)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(id-word ?id1 away)
+(kriyA-upasarga ?id ?id1)
+(kriyA-subject  ?id ?id2)
+(id-root ?id2 camera)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 sAWa_sAWa_muda))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " track.clp 	track3  "  ?id "  " ?id1 "  sAWa_sAWa_muda )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[11-3-14]
+;Don't track mud on my clean floor. [oald]
+;मेरे स्वच्छ फर्श पर कीचड मत छोडिए . 
+(defrule track4
+(declare (salience 5000))
+(id-root ?id track)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?id1)
+(id-root ?id1 mud)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Coda))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  track.clp 	track4   "  ?id "  Coda )" crlf))
+)
+
 ;"track","VI","1.pawA_lagAnA"
 ;The police tracked the dacoits to their hideout.
 ;--"2.sAWa_sAWa_calakara_Pilma_KIMcanA"

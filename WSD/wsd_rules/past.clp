@@ -255,6 +255,25 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  past.clp 	past18   "  ?id "  pare )" crlf))
 )
 
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 2013
+;Pussy slept so much that Sidey had grown quite unafraid of her and walked past without bothering to see how near old Pussy was. [Gyannidhi]
+;उसके सोते रहने के कारण दुमछल निडर हो गया था और इस बात की परवाह किये बिना यह देखने के लिये बगल से गुजरा कि बिल्ली उसके कितने पास में हैं।
+(defrule past19
+(declare (salience 3400))
+(id-root ?id past)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(id-root ?id1 walk)
+(kriyA-object  ?id1 ?id)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id1 ?id bagala_se_gujarA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " past19.clp  past19  "  ?id1 "  " ?id "  bagala_se_gujarA )" crlf))
+)
+
+
 ;"past","Prep","1.pare"
 ;This issue is past her understanding.
 ;--"2.se aXika"

@@ -29,3 +29,19 @@
 ;"humble","V","1.nIcAxiKAnA"
 ;use ucca paxa se hatAkara usakA 'humble' kiyA.
 ;
+
+;;@@@   ---Added by Prachi Rathore
+; She has risen from humble origins to immense wealth. [oald]
+;वह सादगीपूर्ण मूल से असीम संपत्ति तक पहुँची.
+(defrule humble2
+(declare (salience 5100))
+(id-root ?id humble)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(viSeRya-viSeRaNa  ? ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sAxagIpUrNa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  humble.clp 	humble2   "  ?id "  sAxagIpUrNa )" crlf))
+)

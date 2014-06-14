@@ -26,7 +26,7 @@
 
 ;Behaviour is a specific response which can be seen && observed in an active way.
 (defrule way2
-(declare (salience 4800))
+(declare (salience 100))
 (id-root ?id way)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -67,3 +67,73 @@
 ;"warIkA"
 ;I don't think this will work, we better start looking for an alternative way.
 ;I don't know which way i am supposed to do it.
+
+;@@@ Added by Pramila(BU) on 21-02-2014
+;Turn your face this way.
+;अपना चेहरा इस ओर कीजिए.
+(defrule way4
+(declare (salience 4800))
+(id-root ?id way)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(kriyA-object  ?kri ?id1)
+(id-root ?kri turn)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ora))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  way.clp 	way4   "  ?id "  ora )" crlf))
+)
+
+;@@@ Added by Pramila(BU) on 21-02-2014
+;That way, bacteria will never know that they have achieved the kind of threshold necessary to establish an infection in the body.
+;उस प्रकार, बैक्टीरिया को  कभी पता नहीं चलेगा कि वे शरीर में संक्रमण की स्थापना के लिए आवश्यक सीमा तक पहुँच चिके है.
+(defrule way5
+(declare (salience 4800))
+(id-root ?id way)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(kriyA-subject  ?kri ?id)
+(kriyA-vAkyakarma  ?kri ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id prakAra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  way.clp 	way5   "  ?id "  prakAra )" crlf))
+)
+
+;@@@ Added by Pramila(BU) on 21-02-2014
+;What's the best way of approaching this problem?   ;oald
+;इस समस्या को हल करने का सबसे अच्छा तरीका क्या है.
+(defrule way6
+(declare (salience 4800))
+(id-root ?id way)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(subject-subject_samAnAXikaraNa  ?id ?id1)
+(id-root ?id1 what|which)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id warIkA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  way.clp 	way6   "  ?id "  warIkA )" crlf))
+)
+
+;@@@ Added by Pramila(BU) on 21-02-2014
+;It was obvious that, with Sankaran Nair as Education Member, Sharp was not having everything his own way.   ;gyanidhi
+;यह स्पष्ट था कि शंकरन नायर के शिक्षा सदस्य होते हुए शार्प प्रत्येक कार्य अपनी तरीके से नहीं कर पा रहे थे।
+(defrule way7
+(declare (salience 4800))
+(id-root ?id way)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(kriyA-object  ?kri ?id1)
+(id-root ?kri have|do)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id warIkA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  way.clp 	way7   "  ?id "  warIkA )" crlf))
+)

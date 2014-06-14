@@ -45,3 +45,36 @@
 )
 ;Teasing can be very cruel .
 
+;@@@ Added by Prachi Rathore[25-1-14]
+;The teacher helped them tease out the meaning of the poem.[oald]
+(defrule tease3
+(declare (salience 5000))
+(id-root ?id tease)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(id-word ?id1 out)
+(kriyA-upasarga ?id ?id1)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 pawA_lagA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " tease.clp     tease3  "  ?id "  " ?id1 "  pawA_lagA )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[25-1-14]
+;While it was still wet, I gently teased out the tangled knots in Rosie's hair.[oald]
+(defrule tease4
+(declare (salience 5000))
+(id-root ?id tease)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(id-word ?id1 out)
+(kriyA-upasarga ?id ?id1)
+(kriyA-object  ?id ?id2)
+(id-root ?id2 knot)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 Kola))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " tease.clp     tease4  "  ?id "  " ?id1 " Kola )" crlf))
+)

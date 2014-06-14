@@ -103,6 +103,191 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pitch.clp 	pitch5   "  ?id "  sWira_kara )" crlf))
 )
 
+
+
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 12-2-2014
+;She pitched the idea to me over lunch. [Cambridge]
+;उसने मुझे लन्च में विचार समझाया .
+(defrule pitch6
+(declare (salience 5500))
+(id-root ?id pitch)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-to_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id samaJA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pitch.clp 	pitch6   "  ?id "  samaJA )" crlf))
+)
+
+
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 12-2-2014
+;They are pitching for new business at the moment. [Cambridge]
+;वे उस क्षण नये व्यापार के बारे में विचार-विमर्श कर रह थे .
+(defrule pitch7
+(declare (salience 5500))
+(id-root ?id pitch)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-for_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id vicAra-vimarSa_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pitch.clp 	pitch7   "  ?id "  vicAra-vimarSa_kara )" crlf))
+)
+
+
+
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 12-2-2014
+;He braked too hard and the car pitched forward.  [Cambridge]
+;उसने बहुत तेज ब्रेक लगाए और गाड़ी आगे बढ़ी . 
+(defrule pitch8
+(declare (salience 5500))
+(id-root ?id pitch)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-kriyA_viSeRaNa  ?id ?id1)
+(id-root ?id1 further|forward|ahead)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id baDZa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pitch.clp 	pitch8   "  ?id "  baDZa )" crlf))
+)
+
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 12-2-2014
+;The tune was pitched much too high for me.  [Cambridge]
+;धुन की तान मेरे लिये बहुत ऊँची थी .
+(defrule pitch9
+(declare (salience 5500))
+(id-root ?id pitch)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-subject  ?id ?id1)
+(id-root ?id1 tune|volume|sound|music)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id wAna))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pitch.clp 	pitch9   "  ?id "  wAna )" crlf))
+)
+
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 12-2-2014
+;If we all pitch in, we'll get this kitchen cleaned up in no time.  [Cambridge]
+;यदि हम सब में सहायता करते हैं, तो यह रसोईघर  हम तुरन्त स्वच्छ कर देंगे . 
+(defrule pitch10
+(declare (salience 5500))
+(id-root ?id pitch)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-upasarga  ?id ?id1)
+(id-root ?id1 in)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sahAyawA_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pitch.clp 	pitch10   "  ?id "  sahAyawA_kara )" crlf))
+)
+
+
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 12-2-2014
+;The explosion pitched her violently into the air. [oald]
+;विस्फोट ने हवा में हिंसात्मक ढङ्ग से उसको फेंका . 
+(defrule pitch11
+(declare (salience 5500))
+(id-root ?id pitch)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-into_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id PeMka))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pitch.clp 	pitch11   "  ?id "  PeMka )" crlf))
+)
+
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 12-2-2014
+;The new government has already been pitched into a crisis. [oald]
+;नयी सरकार सङ्कट के अंदर पहले से ही फँस गयी है . 
+(defrule pitch12
+(declare (salience 5700))
+(id-root ?id pitch)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-into_saMbanXI  ?id ?id1)
+(id-root ?id1 crisis|problem|disaster|emergency)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Pazsa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pitch.clp 	pitch12   "  ?id "  Pazsa )" crlf))
+)
+
+
+
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 12-2-2014
+;The new software is being pitched at banks. [oald]
+;नया सॉफ्टवेयर बैंकों में स्थापित किया जा रहा है . 
+(defrule pitch13
+(declare (salience 5500))
+(id-root ?id pitch)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-at_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sWApiwa_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pitch.clp 	pitch13   "  ?id "  sWApiwa_kara )" crlf))
+)
+
+
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 12-2-2014
+;Orange juice is to be pitched as an athlete's drink. [oald]
+;नारङ्गी रस एक व्यायामी के पेय या शरबत जैसे ही इस्तेमाल किया जाना है . 
+(defrule pitch14
+(declare (salience 5500))
+(id-root ?id pitch)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-as_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id iswemAla_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pitch.clp 	pitch14   "  ?id "  iswemAla_kara )" crlf))
+)
+
+
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 12-2-2014
+;They pitched camp for the night near the river. [oald]
+;उन्होंने नदी के पास रात में तंबू गाढ़ा .
+(defrule pitch15
+(declare (salience 5500))
+(id-root ?id pitch)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?id1)
+(id-root ?id1 camp|tent)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id gAdZa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pitch.clp 	pitch15   "  ?id "  gAdZa )" crlf))
+)
+
 ;"pitch","V","1.sWira_karanA"
 ;Their prices are pitched lower than those of their competition.
 ;--"2.lagAnA"

@@ -192,3 +192,23 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  a.clp         a10   "  ?id "  - )" crlf))
 )
 
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)24-jan-2014
+;There is a temple dedicated to Shiva here.
+;यहाँ पर शिव को समर्पित एक मंदिर है
+(defrule a11
+(declare (salience 4000))
+(id-root ?id a)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-det_viSeRaNa  ?id1 ?id)
+(kriyA-aBihiwa  ?kri ?id1)
+(id-word ?kri is)
+(kriyA-dummy_subject  ?kri ?id2)
+(id-word ?id2 there)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id eka))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  a.clp    a11   "  ?id "  eka )" crlf))
+)
+

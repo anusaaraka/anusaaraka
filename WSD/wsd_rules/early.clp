@@ -99,11 +99,12 @@
 ;He has to go to school early today .
 
 
-
+;$$$ Modified by Pramila(BU) on 12-12-2013 ;Added 'breakfast in the action part.
 ;Modified by Meena(23.9.10)
 ;Added by Meena(7.9.10)
 ;These are some of my early attempts at sculpture .
 ;He must get up early in the morning .
+;The next morning they sat down to an early breakfast.
 (defrule early6
 (declare (salience 4700))
 (id-root ?id early)
@@ -112,13 +113,13 @@
 (id-word ?id1 ?word)
 =>
 (retract ?mng)
-(if (eq ?word morning) then
+(if (or(eq ?word morning)(eq ?word breakfast)) then
     (assert (id-wsd_root_mng ?id jalxI))
 else	;Added else statement and moved assert statement into else part ( by Roja(12-09-13) )
 (assert (id-wsd_root_mng ?id prAramBika))
 )
 (if ?*debug_flag* then
-(if (eq ?word morning) then
+(if (or(eq ?word morning)(eq ?word breakfast)) then
         (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  early.clp      early6   "  ?id "  jalxI )" crlf)
 else
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  early.clp     early6   "  ?id " prAramBika  )" crlf)
@@ -156,9 +157,104 @@ else
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  early.clp     early8   "  ?id " AramBika  )" crlf))
 )
 
+(defrule early9
+(declare (salience 5000))
+(id-root ?id early)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id earlier )
+(viSeRya-viSeRaNa  ?id1 ?id)
+(id-root ?id1 time)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 prAcIna_kAla))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " early.clp	early9  "  ?id "  " ?id1 "  prAcIna_kAla  )" crlf))
+)
 
 
-;
+(defrule early10
+(declare (salience 5000))
+(id-root ?id early)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaka  ?id ?id1)
+(id-root ?id1 too)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 bahuwa_jalxI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " early.clp	early10  "  ?id "  " ?id1 "  bahuwa_jalxI  )" crlf))
+)
+
+
+;@@@ Added by Pramila (BU) on 17-02-2014
+; One kind of response from the earliest times has been to observe the physical environment carefully look for any meaningful patterns 
+;and relations in natural phenomena and build and use new tools to interact with nature.   ;ncert
+;आदि काल से मानव की एक प्रकार की प्रतिक्रिया यह रही है कि उसने अपने भौतिक पर्यावरण का सावधानीपूर्वक प्रेक्षण किया है, प्राकृतिक परिघटनाओं में अर्थपूर्ण पैटर्न तथा सम्बन्ध खोजे हैं, तथा प्रकृति 
+;के साथ प्रतिक्रिया कर सकने के लिए नए औजारों को बनाया तथा उनका उपयोग किया है.
+(defrule early11
+(declare (salience 5000))
+(id-root ?id early)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id earliest )
+(viSeRya-viSeRaNa  ?id1 ?id)
+(id-root ?id1 time)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_word_mng ?id ?id1 Axi_kAla))
+(assert (id-eng-src ?id earliest Word_mng))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_word_mng   " ?*wsd_dir* " early.clp	early11  "  ?id "  " ?id1 "  Axi_kAla  )" crlf))
+)
+
+;@@@ Added by Pramila(Banasthali University) on 24-02-2014
+;Early thinkers like Aristotle had wrong ideas about it.  ;ncert
+;आद्य विचारकों जैसे अरस्तू की बल के विषय में सङ्कल्पना गलत थी.
+(defrule early12
+(declare (salience 4500))
+(id-root ?id early)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaka  ?id1 ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Axya))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  early.clp     early12   "  ?id " Axya  )" crlf))
+)
+
+;@@@ Added by Pramila(Banasthali University) on 24-02-2014
+;The project will start early next month .   [old clp]
+;परियोजना अगले महीने के शुरू में आरम्भ होगी.
+(defrule early13
+(declare (salience 4600))
+(id-root ?id early)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaka  ?kAlv ?id)
+(kriyA-kAlavAcI  ?id1 ?kAlv)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id SurU_meM))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  early.clp     early13   "  ?id " SurU_meM  )" crlf))
+)
+
+;@@@ Added by Pramila(Banasthali University) on 04-03-2014
+;The government is pressing for an early resolution of the dispute.   ;oald
+;सरकार विवाद के शीघ्र समाधान के लिये दबाव डाल रही है .
+(defrule early12
+(declare (salience 4800))
+(id-root ?id early)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(id-root ?id1 resolution)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id SIGra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  early.clp     early12   "  ?id " SIGra  )" crlf))
+)
 
 ;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
 (defrule sub_samA_early6
@@ -169,13 +265,13 @@ else
 (id-word ?id1 ?word)
 =>
 (retract ?mng)
-(if (eq ?word morning) then
+(if (or(eq ?word morning)(eq ?word breakfast)) then
     (assert (id-wsd_root_mng ?id jalxI))
 else	;Added else statement and moved assert statement into else part ( by Roja(12-09-13) )
 (assert (id-wsd_root_mng ?id prAramBika))
 )
 (if ?*debug_flag* then
-(if (eq ?word morning) then
+(if (or(eq ?word morning)(eq ?word breakfast)) then
         (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  early.clp      early6   "  ?id "  jalxI )" crlf)
 else
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " early.clp   sub_samA_early6   "   ?id " prAramBika )" crlf)
@@ -191,15 +287,109 @@ else
 (id-word ?id1 ?word)
 =>
 (retract ?mng)
-(if (eq ?word morning) then
+(if (or(eq ?word morning)(eq ?word breakfast)) then
     (assert (id-wsd_root_mng ?id jalxI))
 else	;Added else statement and moved assert statement into else part ( by Roja(12-09-13) )
 (assert (id-wsd_root_mng ?id prAramBika))
 )
 (if ?*debug_flag* then
-(if (eq ?word morning) then
+(if (or(eq ?word morning)(eq ?word breakfast)) then
         (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  early.clp      early6   "  ?id "  jalxI )" crlf)
 else
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " early.clp   obj_samA_early6   "   ?id " prAramBika )" crlf)
 )
 ))
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_early9
+(declare (salience 5000))
+(id-root ?id early)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id earlier )
+(subject-subject_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 time)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 prAcIna_kAla))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng " ?*wsd_dir* " early.clp   sub_samA_early9   "   ?id " " ?id1 " prAcIna_kAla )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_early9
+(declare (salience 5000))
+(id-root ?id early)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id earlier )
+(object-object_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 time)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 prAcIna_kAla))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng " ?*wsd_dir* " early.clp   obj_samA_early9   "   ?id " " ?id1 " prAcIna_kAla )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_early11
+(declare (salience 5000))
+(id-root ?id early)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id earliest )
+(subject-subject_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 time)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_word_mng ?id ?id1 Axi_kAla))
+(assert (id-eng-src ?id earliest Word_mng))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_word_mng " ?*wsd_dir* " early.clp   sub_samA_early11   "   ?id " " ?id1 " Axi_kAla )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_early11
+(declare (salience 5000))
+(id-root ?id early)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id earliest )
+(object-object_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 time)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_word_mng ?id ?id1 Axi_kAla))
+(assert (id-eng-src ?id earliest Word_mng))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_word_mng " ?*wsd_dir* " early.clp   obj_samA_early11   "   ?id " " ?id1 " Axi_kAla )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_early12
+(declare (salience 4800))
+(id-root ?id early)
+?mng <-(meaning_to_be_decided ?id)
+(subject-subject_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 resolution)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id SIGra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " early.clp   sub_samA_early12   "   ?id " SIGra )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_early12
+(declare (salience 4800))
+(id-root ?id early)
+?mng <-(meaning_to_be_decided ?id)
+(object-object_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 resolution)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id SIGra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " early.clp   obj_samA_early12   "   ?id " SIGra )" crlf))
+)

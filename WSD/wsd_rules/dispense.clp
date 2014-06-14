@@ -33,3 +33,22 @@
 ;My father dispensed money to us on the NewYear day.
 ;
 ;
+
+;@@@ Added by Pramila(BU) on 09-01-2014
+;The judge dispenses justice.         ;shiksharthi
+;न्यायाधीश न्याय देता है.
+;to dispense justice/advice       ;oald
+;न्याय/सलाह देना
+(defrule dispense2
+(declare (salience 5000))
+(id-root ?id dispense)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object ?id ?id1)
+(id-root ?id1 justice|advice)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  dispense.clp 	dispense2   "  ?id "  xe )" crlf))
+)

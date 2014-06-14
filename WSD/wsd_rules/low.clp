@@ -69,6 +69,42 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  low.clp 	low4   "  ?id "  kama )" crlf))
 )
 
+;@@@ Added by Nandini(2-1-14)
+;The man was sitting on a low stool, fanning himself with a palm leaf. [via mail]
+;eka AxamI svayaM ko wAdZa_ke pawwe se panKA karawe hue eka ChotI stUla para bETA WA.
+(defrule low5
+(declare (salience 5200))
+(id-root ?id low)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(kriyA-on_saMbanXI  ?kri ?id1)
+(id-root ?id1 stool)
+(id-cat ?id adjective|adjective_comparative|adjective_superlative)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ChotI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  low.clp 	low5   "  ?id "  ChotI )" crlf))
+)
+
+;@@@ Added by Nandini(15-4-14)
+;Some pieces of pottery were found in the lowest level of the excavations.[hinKoja-dict]
+;KuxAI ke samaya mitti ke barawana ke kuCa tukade sabase aXika nimna swara meM pAe gaye We.
+(defrule low6
+(declare (salience 5200))
+(id-root ?id low)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(id-root ?id1 level)
+(id-cat ?id adjective|adjective_comparative|adjective_superlative)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id nimna))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  low.clp 	low6   "  ?id "  nimna )" crlf))
+)
+
+
 ;"low","VI","1.bEla_kI_waraha_dakAranA_yA_bolanA"
 ;
 ;

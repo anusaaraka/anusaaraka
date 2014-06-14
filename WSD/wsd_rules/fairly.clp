@@ -1,5 +1,5 @@
 ;##############################################################################
-;#  Copyright (C) 2013-2014 Pramila (pramila3005@gmail.com)
+;#  Copyright (C) 2013-2014 Pramila (pramila3005 at gmail dot com)
 ;#
 ;#  This program is free software; you can redistribute it and/or
 ;#  modify it under the terms of the GNU General Public License
@@ -18,8 +18,10 @@
 ;
 ;##############################################################################
 
-;It became clear that a fairly radical departure from the established principles of classical mechanics and electromagnetism would be needed to understand the structure of atoms and the relation of atomic structure to atomic spectra. 
-;यह स्पष्ट हो गया कि परमाणु - संरचना और इसका परमाण्वीय स्पेक्ट्रम से सम्बन्ध समझने के लिए क्लासिकी यान्त्रिकी और वैद्युतचुम्बकत्व के स्थापित सिद्धान्तों से काफी हद तक आमूल विचलन की  आवश्यकता होगी. 
+;It became clear that a fairly radical departure from the established principles of classical mechanics and electromagnetism would be 
+;needed to understand the structure of atoms and the relation of atomic structure to atomic spectra. 
+;यह स्पष्ट हो गया कि परमाणु - संरचना और इसका परमाण्वीय स्पेक्ट्रम से सम्बन्ध समझने के लिए क्लासिकी यान्त्रिकी और वैद्युतचुम्बकत्व के स्थापित सिद्धान्तों से काफी हद तक आमूल विचलन की 
+;आवश्यकता होगी. 
 
 
 (defrule fairly0
@@ -60,7 +62,7 @@
 
 
 
-;----------------------------------------------- Default rules------------------------------------------------------------------------------
+;-----------------------------------------------default rules------------------------------------------------------------------------------
 
 ;I go jogging fairly regularly.	;OALD
 ;मैं  जॉगिंग के लिए काफी नियमित रूप से जाता हूँ.

@@ -1,3 +1,20 @@
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 22/03/2014
+;A man of heavy build.[oald]
+;भारी काठी का आदमी
+(defrule build5
+(declare (salience 5000))
+(id-root ?id build)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-of_saMbanXI  ?id1 ?id)
+(id-word ?id1 man|woman|girl|boy)
+=>
+(retract ?mng)
+(assert (id-wsd_word_mng ?id kATI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  build.clp  	build5   "  ?id "  kATI )" crlf))
+) 
+
+
 
 ;given_word=building && category=noun	$nirmANa)
 

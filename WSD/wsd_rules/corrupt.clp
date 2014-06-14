@@ -1,5 +1,5 @@
 
-;Added by jagriti(13.8.2013))
+;@@@ Added by jagriti(13.8.2013))
 ;"corrupt","Adj","1.BraRta"
 ;Ram is a corrupted person. 
 ;Mohan is a highly corrupt officer.
@@ -17,7 +17,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  corrupt.clp 	corrupt00   "  ?id "  BraRta )" crlf))
 )
 
-;Modified by jagriti(13.8.2013))
+;$$$ Modified by jagriti(13.8.2013))
 ; receiver receives a corrupted version of the transmitted signal. 
 (defrule corrupt0
 (declare (salience 5000))
@@ -28,7 +28,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id vikqwa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  corrupt.clp 	corrupt0   "  ?id "  BraRta )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  corrupt.clp 	corrupt0   "  ?id "  vikqwa )" crlf))
 )
 
 ;--"2.niyamoM_kA_anusaraNa_na_karanevAlA"
