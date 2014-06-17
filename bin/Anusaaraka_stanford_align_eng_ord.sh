@@ -105,7 +105,7 @@
   perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/tmp/$1_tmp/$6 | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" | sed 's/ @ / @/g' > $MYPATH/tmp/$1_tmp/hnd-hi-en
   $HOME_anu_test/Anu_src/identify-nonascii-chars.out $MYPATH/tmp/$1_tmp/$6 $MYPATH/tmp/$1_tmp/hnd1
 #  perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/tmp/$1_tmp/hnd1 | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" | sed 's/ /_/g' | sed 's/^/_/g' | sed 's/_@_/_@/g' > $MYPATH/tmp/$1_tmp/hnd
-  sed 's/^/_/g' $MYPATH/tmp/$1_tmp/hnd1 | sed 's/,/_,_/g' | sed 's/(/_(_/g' | sed 's/)/_)_/g' | sed 's/\?/_?_/g' |  sed 's/ /_/g' | sed 's/$/_/g' > $MYPATH/tmp/$1_tmp/hnd
+  sed 's/^/_/g' $MYPATH/tmp/$1_tmp/hnd1 | sed 's/\([^ ]\),/\1 ,/g' | sed 's/\([^ ]\)(/\1 ( /g' | sed 's/\([^ ]\))/\1 )/g' |                      sed 's/\([^ ]\)?/\1 ?/g' | sed 's/\([^ ]\):/\1 :/g' |  sed 's/ /_/g' | sed 's/$/_/g' > $MYPATH/tmp/$1_tmp/hnd
 
   echo "Multi word ..."
   $HOME_anu_test/multifast-v1.0.0/src/multi_word_expression $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/multi_word_expressions.txt
@@ -123,6 +123,7 @@
   cd $HOME_anu_test/miscellaneous/SMT/phrasal_alignment
   replace-abbrevations.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised  $MYPATH/tmp/$1_tmp/eng_tmp_tok_org
   $HOME_anu_test/Anu/stdenglish/replace-mapping-symbols.out < $MYPATH/tmp/$1_tmp/eng_tmp_tok_org > $MYPATH/tmp/$1_tmp/eng_tok_org
+ # sed -i 's/\([^ ]\)$/\1 /g'  $MYPATH/tmp/$1_tmp/eng_tok_org
 #  perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/tmp/$1_tmp/eng_tmp2_tok_org | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" > $MYPATH/tmp/$1_tmp/eng_tok_org
  sed 's/^/_/g' $MYPATH/tmp/$1_tmp/eng_tok_org | sed 's/ /_/g' > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised1
 
@@ -135,9 +136,13 @@
 
   cd $MYPATH/tmp/$1_tmp
   $HOME_anu_test/Anu_src/split_file.out one_sen_per_line_manual_hindi_sen.txt dir_names.txt manual_hindi_sen.dat
+#  $HOME_anu_test/Anu_src/split_file.out  $MYPATH/tmp/$1_tmp/count_dict.txt dir_names.txt count_dict.dat
+  
   $HOME_anu_test/Anu_src/split_file.out  $MYPATH/tmp/$1_tmp/word-alignment.txt dir_names.txt word-alignment.dat
   $HOME_anu_test/Anu_src/split_file.out  $MYPATH/tmp/$1_tmp/word-alignment-hi-en.txt dir_names.txt word-alignment-hi-en.dat
   $HOME_anu_test/Anu_src/split_file.out  $MYPATH/tmp/$1_tmp/word-alignment-hi-en-hi.txt dir_names.txt word-alignment-hi-en-hi.dat
+  wx_utf8 < $MYPATH/tmp/$1_tmp/align_left_over_wrds.txt > align_left_over_wrds.txt1
+  $HOME_anu_test/Anu_src/split_file.out  $MYPATH/tmp/$1_tmp/align_left_over_wrds.txt1 dir_names.txt align_left_over_wrds.dat
   
   #=================================================================================================================
 
