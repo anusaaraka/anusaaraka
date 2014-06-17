@@ -1,6 +1,22 @@
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 03-March-2014
+;Plenty of eggs.[oald]
+;बहुत सारे अंडे
+(defrule plenty3
+(declare (salience 3000))
+(id-root ?id plenty)
+?mng <-(meaning_to_be_decided ?id)
+(id-word =(+ ?id 1) of)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id (+ ?id 1) bahuwa_sArA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " plenty.clp 	plenty3  "  ?id "  " (+ ?id 1) "  bahuwa_sArA )" crlf))
+)
 
+
+;******************DEFAULT RULE**********************
 (defrule plenty0
-(declare (salience 5000))
+(declare (salience 0));salience reduced by Garima Singh
 (id-root ?id plenty)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id adverb)
@@ -15,7 +31,7 @@
 ;We have plenty more of books to read.
 ;
 (defrule plenty1
-(declare (salience 4900))
+(declare (salience 0));salience reduced by Garima Singh
 (id-root ?id plenty)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -30,7 +46,7 @@
 ;We have plenty of time left to do our work.
 ;
 (defrule plenty2
-(declare (salience 4800))
+(declare (salience 0));salience reduced by Garima Singh
 (id-root ?id plenty)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id pronoun)

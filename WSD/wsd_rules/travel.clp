@@ -63,3 +63,34 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  travel.clp    travel3   "  ?id "  cala )" crlf))
 )
 
+;@@@ Added by Prachi Rathore[3-3-14]
+;The job involves a considerable amount of foreign travel.
+;नौकरी में काफी विदेशी यात्रा भी सम्मिलित है . ?
+(defrule travel4
+(declare (salience 3000))
+(id-root ?id travel)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id yAwrA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  travel.clp 	travel4   "  ?id "  yAwrA )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[19-3-14]
+; While that train must be traveling faster than you to be able to pass you it does seem slower to you than it would be to someone standing on the ground and watching both the trains.[ncert]
+;क्योङ्कि यह रेलगाडी आपसे आगे निकल जाती है इसलिए यह आपकी रेलगाडी से अधिक तीव्र गति से चल रही है ; परन्तु यह आपको उस व्यक्ति की अपेक्षा धीमी चलती दिखाई दे रही होगी, जो धरती पर खडा होकर दोनों रेलगाडियों को देख रहा है ...... ....
+
+(defrule travel5
+(declare (salience 4800))
+(id-root ?id travel)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject  ?id ?id1)
+(id-root ?id1 train|bus)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id cala))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  travel.clp    travel5   "  ?id "  cala )" crlf))
+)

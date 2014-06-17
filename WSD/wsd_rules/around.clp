@@ -23,11 +23,15 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  around.clp 	around1   "  ?id "  meM_iXara_uXara )" crlf))
 )
 
+;$$$ modified by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 16-dec-2013 
+;They lose around 30 to 40 per cent of their moisture here.
+;उनसे लगभग 30 से 40 प्रतिशत की नमी निकल जाती है।
 (defrule around2
 (declare (salience 4800))
 (id-root ?id around)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) integer|whole number|number)
+;(id-word =(+ ?id 1) integer|whole number|number); commented by Garima Singh
+(id-cat_coarse =(+ ?id 1) number|integer); added by Gariam Singh
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id lagaBaga))

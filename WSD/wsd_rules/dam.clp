@@ -33,7 +33,7 @@
 ;The dam of many successful racehorses is a thorough bred Arabian mare.
 ;
 (defrule dam2
-(declare (salience 4800))
+(declare (salience 4000))
 (id-root ?id dam)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -47,3 +47,21 @@
 ;"dam","VT","1.bAzXa_bAzXanA"
 ;It is no use daming the rivers that run dry in summers.
 ;
+
+
+;@@@ Added by Pramila(BU) on 20-01-2014
+;A whole valley was drowned when the river was dammed.      ;cald
+;एक पूरी घाटी जलमग्न हुई गयी थी जब नदी अवरुद्ध हो गयी थी .
+(defrule dam3
+(declare (salience 4800))
+(id-root ?id dam)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-samakAlika_kriyA  ?id1 ?id)
+(id-root ?id1 drown)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id avaruxXa_ho))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  dam.clp 	dam3   "  ?id "  avaruxXa_ho )" crlf))
+)

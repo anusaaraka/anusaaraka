@@ -679,5 +679,51 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id jo))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  that.clp      that41   "  ?id "  jo)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  that.clp      that41   "  ?id "  jEsA_ki)" crlf))
 )
+
+;@@@  Added by Prachi Rathore
+(defrule that42
+(declare (salience 5000))
+(id-root ?id that)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id determiner)
+(kriyA-to_saMbanXI  ?id1 ?id)
+(id-root ?id1 say)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id vaha))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  that.clp 	that42   "  ?id "  vaha )" crlf))
+)
+
+;@@@ Added by Prachi Rathore
+;Hold that pose, It will make a great photograph.[m-w]
+ ;वह मुद्रा बनाये रखिए, यह एक बढिया फोटो बनाएगा . 
+(defrule that43
+(declare (salience 5100))
+(id-root ?id that)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-vAkya_viBakwi  ?id1 ?id)
+(id-root ?id1 pose)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id vaha))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  that.clp      that43   "  ?id "  vaha )" crlf))
+)
+
+;@@@ Added by Prachi Rathore
+;Default Rule
+(defrule that44
+(id-root ?id that)
+?mng <-(meaning_to_be_decided ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id vaha))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  that.clp      that44   "  ?id "  vaha )" crlf))
+)
+
+
+

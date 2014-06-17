@@ -47,3 +47,38 @@
 ;The production was forced to halt ,due to a strike in the factory .
 ;kAraKAne meM hadZawAla ke kAraNa uwpAxana baMxa kara xenA padZA.
 ;
+
+;@@@ Added by Prachi Rathore 2-1-14
+;The King [halted] and looked around.[gyan-nidhi]
+; राजा रुक गया और हर ओर देखा . 
+(defrule halt3
+(declare (salience 5000))
+(id-root ?id halt)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-subject  ?id ?id1)
+(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ruka_jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  halt.clp 	halt3   "  ?id "  ruka_jA )" crlf))
+)
+
+;@@@ Added by Prachi Rathore 2-1-14
+;the recent halt in production.[cambridge]
+;उत्पादन में हाल की रुकावट . 
+;The thought brought her to an abrupt halt.
+;
+(defrule halt4
+(declare (salience 5000))
+(id-root ?id halt)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(or(viSeRya-in_saMbanXI  ?id ?)(viSeRya-viSeRaNa  ?id ?))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id rukAvata))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  halt.clp 	halt4   "  ?id "  rukAvata )" crlf))
+)

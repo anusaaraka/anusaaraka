@@ -49,6 +49,41 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  term.clp 	term2   "  ?id "  kahalA )" crlf))
 )
 
+
+;@@@ Added by Prachi Rathore[18-1-14]
+; It's nearly the end of term. [oald]
+;यह  करीब-करीब  सत्र का अन्त है .
+(defrule term3
+(declare (salience 5000))
+(id-root ?id term)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-of_saMbanXI  ?id1 ?id)
+(id-root ?id1 end)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sawra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  term.clp      term3   "  ?id "  sawra) )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[18-1-14]
+;According to the terms of the contract the tenants have to pay the maintenance charges. [sentence from this file]
+;kAntrEkta kI SarwoM ke anusAra kirAyexAroM ko raKaraKAva ke pEse xene hoMge.
+(defrule term4
+(declare (salience 5000))
+(id-root ?id term)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-of_saMbanXI  ?id ?id1)
+(id-root ?id1 contract)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Sarwa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  term.clp      term4   "  ?id "  Sarwa) )" crlf))
+)
+
+
+
 ;"term","V","1.kahalAnA"
 ;He has often been termed a perfectionist.
 ;

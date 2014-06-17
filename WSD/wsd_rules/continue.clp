@@ -116,3 +116,19 @@
 ;The bad weather continued for two more weeks
 ;
 ;
+;@@@ Added by Preeti(11-1-14)
+;Let us take a short rest and sleep a little and then we can continue on our way. [By mail]
+;caliye hama  WodA viSrAma lewe hEM Ora WodA sowe hEM  Ora bAxa meM hama hamAre mArga para Age_baDa sakawe hEM.
+(defrule continue8
+(declare (salience 4700))
+(id-root ?id continue)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb) 
+(kriyA-on_saMbanXI  ?id ?id1)
+(id-root ?id1 way)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Age_baDZa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  continue.clp 	continue8   "  ?id "  Age_baDZa )" crlf))
+)

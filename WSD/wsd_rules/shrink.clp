@@ -17,8 +17,8 @@
 ;#  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
 ;
 ;######################################################################
-;Added by jagriti(31.08.2013)
-; She shrank before her boss's anger.  [english to hindi word net]
+;@@@ Added by jagriti(31.08.2013)
+;She shrank before her boss's anger.  [english to hindi word net]
 ;वह अपने मालिक के क्रोध के सामने सहम  गयी. 
 (defrule shrink0
 (declare (salience 5000))
@@ -33,12 +33,12 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  shrink.clp 	shrink0   "  ?id "sahama_jA)" crlf))
 )
+
+;@@@ Added by jagriti(31.08.2013)
 ;The workforce has shrunk from 20000 to 6000 in the past ten years.   [english to hindi wordnet]        
 ;कर्मचारियों की संख्या पिछले दस साल में 20000 से 6000 तक घट गई है.
-
-;the productivity improvements have shrunk our cost by 25%. [cambridge advance learner]
+;The productivity improvements have shrunk our cost by 25%. [cambridge advance learner]
 ;उत्पादकता में सुधार से हमारी लागत 25% तक घट गयी है.
-
 (defrule shrink1
 (declare (salience 4900))
 (id-root ?id shrink)
@@ -54,11 +54,12 @@
 )
 
 
-;------------------------------ Default rules -----------------------
+;....default rule......
+;@@@ Added by jagriti(31.08.2013)
 ;Will this shirt shrink in the wash? [english to hindi wordnet]
 ;क्या यह कमीज धुलाई से सिकुडेगी? 
 (defrule shrink2
-(declare (salience 4800))
+(declare (salience 4900))
 (id-root ?id shrink)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -71,6 +72,7 @@
 ;I was so depressed that I ended up going to see a shrink. [cambridge dictionary online]
 ;मैं इतना अवसादग्रस्त था कि मैने मनोचिकितसक से मिलना बंद कर दिय़ा.
 
+;@@@ Added by jagriti(31.08.2013)
 (defrule shrink3
 (declare (salience 4800))
 (id-root ?id shrink)
@@ -84,6 +86,7 @@
 )
 
 (defrule shrink4
+(declare (salience 4700))
 (id-root ?id shrink)
 ?mng <-(meaning_to_be_decided ?id)
 =>

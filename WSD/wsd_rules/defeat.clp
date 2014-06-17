@@ -14,8 +14,29 @@
 ;"defeat","N","1.hAra"
 ;Defeat should not be the way of life.
 ;
+
+;@@@ added by Pramila(BU) on 06-12-2013
+;It defeats me why you make the same mistake again && again.              ;sentence of this file
+;muJe samaJa meM nahIM AwA ki wuma vahI galawI bArabAra kyoM karawe ho.
 (defrule defeat1
-(declare (salience 4900))
+(declare (salience 5000))
+(id-root ?id defeat)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-samakAlika_kriyA  ?id ?id1)
+(kriyA-kriyA_viSeRaNa  ?id1 ?id2)
+(id-root ?id2 why)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id samaJa_meM_nahIM_A))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  defeat.clp 	defeat1   "  ?id "  samaJa_meM_nahIM_A )" crlf))
+)
+
+
+
+(defrule defeat2
+(declare (salience 4000))
 (id-root ?id defeat)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -23,7 +44,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id harA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  defeat.clp 	defeat1   "  ?id "  harA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  defeat.clp 	defeat2   "  ?id "  harA )" crlf))
 )
 
 ;"defeat","V","1.harAnA"

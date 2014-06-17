@@ -75,3 +75,22 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  whose.clp     whose4   "  ?id "  jisa )" crlf))
 )
+
+;@@@ Added by Pramila(Banasthali University) on 24-02-2014
+;The financial difficulties of the University continued while Government added to them by starting new Universities and thereby reducing 
+;the number of students on whose examination fees the Calcutta University counted.   ;gyannidhi
+;विश्वविद्यालय की वित्तीय कठिनाइयां बनी रही जबकि सरकार ने नये विश्वविद्यालय चाबू कर और इस प्रकार उन छात्रों की संख्या को घटाकर जिनका परीक्षा शुल्क कलकत्ता 
+;विश्वविद्यालय के लिए महत्त्वपूर्ण था, इस कठिनाई में वृद्धि कर दी।
+(defrule whose5
+(declare (salience 5000))
+(id-root ?id whose)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-RaRTI_viSeRaNa ?vi ?id)
+(id-root-category-suffix-number ?vi ? noun s p)
+(id-cat_coarse ?id wh-pronoun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id jinakA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  whose.clp     whose5   "  ?id "  jinakA )" crlf))
+)

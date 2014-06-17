@@ -28,7 +28,7 @@
 )
 
 (defrule rest2
-(declare (salience 4800))
+(declare (salience 100))
 (id-root ?id rest)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -40,7 +40,7 @@
 )
 
 (defrule rest3
-(declare (salience 4700))
+(declare (salience 100))
 (id-root ?id rest)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -51,8 +51,158 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rest.clp 	rest3   "  ?id "  ArAma_kara )" crlf))
 )
 
+;@@@ Added by Anita-20.1.2014
+;May her soul rest in peace.  [old clp sentence]
+;उसकी आत्मा को शान्ति मिले ।
+(defrule rest4
+(declare (salience 4850))
+(id-root ?id rest)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-in_saMbanXI  ?id ?id1)
+(id-root ?id1 peace)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id SAnwi_mila))
+(assert (kriyA_id-subject_viBakwi ?id ko))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rest.clp 	rest4   "  ?id "  SAnwi_mila )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  rest.clp      rest4   "  ?id " ko )" crlf)
+)
+)
+
+;@@@ Added by Anita-20.1.2014
+;He rested his head on a pillow. [old clp sentence]
+;उसने अपना सिर तकिये पर टिकाया ।
+(defrule rest5
+(declare (salience 4950))
+(id-root ?id rest)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-on_saMbanXI  ?id ?id1)
+(id-root ?id1 pillow)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id tikA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rest.clp 	rest5   "  ?id "  tikA )" crlf)
+)
+)
+
+;@@@ Added by Anita-20.1.2014
+;I will never rest until I know the truth. [old clp sentence]
+;जब तक सच नहीं जान लूँगा तब तक मैं शान्त नहीं होऊँगा । 
+(defrule rest6
+(declare (salience 5050))
+(id-root ?id rest)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-kriyA_niReXaka  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id SAnwa_ho))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rest.clp 	rest6   "  ?id "  SAnwa_ho )" crlf)
+)
+)
+
+;@@@ Added by Anita-20.1.2014
+;India's hope of a gold medal rested on P.T.Usha. [old clp sentence]
+;भारत की गोल्ड मेडल की आशा पी.टी. ऊषा पर निर्भर करती है ।
+(defrule rest7
+(declare (salience 5150))
+(id-root ?id rest)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-subject  ?id ?id1)
+(id-root ?id1 hope)
+(viSeRya-of_saMbanXI  ?id1 ?id2)
+(id-root ?id2 medal)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id nirBara_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rest.clp 	rest7   "  ?id "  nirBara_kara )" crlf)
+)
+)
+
+
+
+;@@@ Added by Anita-20.1.2014
+;His eys rested on her face. [old clp sentence]  [tam problem] 
+;उसकी आँखें उसके चेहरे पर टिक गयीं ।
+(defrule rest8
+(declare (salience 4000))
+(id-root ?id rest)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-on_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id tika_jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rest.clp 	rest8   "  ?id "  tika_jA )" crlf))
+)
+
+;@@@ Added by Anita-20.1.2014
+;Let the Bofors case rest.  [old clp sentence] [4th parse]
+;चलो बोफॉर्स मामले की कार्यवाही छोड़ दें ।
+;I rest my case. 
+; मैंने अपने मामले की कार्यवाही छोड़ दी ।
+(defrule rest9
+(declare (salience 5270))
+(id-root ?id rest)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(or (kriyA-object  ?id ?id1)(kriyA-subject ?id ?id1))
+(id-root ?id1 case)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kAryavAhI_CodZa_xe))
+(assert (kriyA_id-object_viBakwi ?id kA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rest.clp 	rest9   "  ?id " kAryavAhI_CodZa_xe)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  rest.clp      rest9  "  ?id " kA )" crlf)
+)
+)
+
+;@@@ Added by Anita-20.1.2014 
+;Let this field rest for a year. [old clp sentence] [6th parse]
+;चलो एक साल के लिए यह खेत खाली छोड़ दें ।
+(defrule rest10
+(declare (salience 5250))
+(id-root ?id rest)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-subject  ?id ?id1)
+(viSeRya-det_viSeRaNa  ?id1 ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id KAlI_CodZa_xe))
+(assert (kriyA_id-object_viBakwi ?id ko))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rest.clp 	rest10   "  ?id "  KAlI_CodZa_xe )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  rest.clp      rest10  "  ?id " ko )" crlf))
+)
+
+;@@@ Added by Anita-20.3.2014
+;In the simpler case when charges are at rest the force is given by Coulombs law attractive for unlike ;charges and repulsive for like charges. [ncert]
+;सरल प्रकरण में, जब आवेश विरामावस्था में होते हैं, तो इस बल को कूलॉम - नियम द्वारा व्यक्त किया जाता है: "सजातीय आवेशों में ;प्रतिकर्षण तथा विजातीय आवेशों में आकर्षण"
+(defrule rest11
+(declare (salience 5350))
+(id-root ?id rest)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-at_saMbanXI  ? ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id virAmAvasWA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rest.clp 	rest11   "  ?id "  virAmAvasWA )" crlf))
+)
+
 ;"rest","VTI","1.ArAma_karanA"
-;He is tired && he is resting now.
+;He is tired & he is resting now.
 ;--"2.SAnwi_praxAna_karanA"   
 ;May her soul rest in peace.  
 ;--"3.teka_para_raKanA"   

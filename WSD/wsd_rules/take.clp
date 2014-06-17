@@ -43,7 +43,9 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp	take3  "  ?id "  " ?id1 "  galawI_samaJa  )" crlf))
 )
 
-
+;Meaning modified by Roja(18-09-10) for this sentence.Take off the football from the table. 
+;$$$ Meaning changed : 'le_jA' as 'hatA' by Jan 2014 workshop team (10-01-14) under Sukhada's guidance. 
+;Ex. It would be much better to take off the football from the Olympic Games.
 (defrule take4
 (declare (salience 4400))
 (id-root ?id take)
@@ -53,9 +55,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 le_jA)) ;meaning modified by Roja(18-09-10) for this sentence.Take off the football from the table. 
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 hatA)) 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp	take4  "  ?id "  " ?id1 "  le_jA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp	take4  "  ?id "  " ?id1 "  hatA  )" crlf))
 )
 
 
@@ -274,7 +276,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  take.clp      take16   "  ?id "  le )" crlf))
 )
 
-;Added by Aditya and Hardik(21-06-2013),IIT(BHU) batch 2012-2017.
+;@@@ Added by Aditya and Hardik(21-06-2013),IIT(BHU) batch 2012-2017.
 ;You should take care of your mother.
 (defrule take17
 (declare (salience 2500))
@@ -290,7 +292,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp	take17  "  ?id "  " ?id1 "  KyAla_raKa  )" crlf))
 )
 
-;Added by Shirisha Manju, Suggested by Chaitanya Sir (05-11-13)
+;@@@ Added by Shirisha Manju, Suggested by Chaitanya Sir (05-11-13)
 ;When electrified rods are brought near light objects, a similar effect takes place.  (NECRT-physics)
 ;jaba kisI vixyunmaya Cada ko halakI vaswuoM ke nikata lAwe hEM wo yahI praBAva howA hE.
 (defrule take18
@@ -381,3 +383,358 @@
 ;
 ;sUwra : lenA[>mAna_lenA]
 ; 
+
+;@@@ Added by Prachi Rathore[03-12-13]
+;However, with the[ pre-solar] cloud, another factor had to be[ taken into] consideration.[gyannidhi]
+;लेकिन सौरमंडल की रचना से पहले के बादल के बारे में एक अन्य बात को भी ध्यान में रखना होगा।
+(defrule take19
+(declare (salience 2700))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-into_saMbanXI  ?id ?id2)
+(id-root ?id2 consideration)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id raKa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  take.clp      take19   "  ?id "  raKa)" crlf)
+))
+
+;;@@@   ---Added by Prachi Rathore
+;Then Grandpa took the children to an apple orchard.[gyannidhi]
+;तब दादाजी बच्चों को  सेब फलोद्यान को ले गये . 
+(defrule take20
+(declare (salience 2700))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-to_saMbanXI  ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id le_jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  take.clp      take20   "  ?id "  le_jA)" crlf)
+))
+
+
+;;@@@   ---Added by Prachi Rathore
+;In the afternoon Mr. Barua took Rajvir on a tour of the tea-garden. [gyannidhi]
+;दोपहर के बाद के समय को श्रीमान बरुअ चाय-बागान की यात्रा पर राजवीर को ले गये .  
+(defrule take33
+(declare (salience 2700))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-on_saMbanXI  ?id ?id1)
+(id-root ?id1 tour)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id le_jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  take.clp      take33   "  ?id "  le_jA)" crlf)
+))
+
+;;@@@   ---Added by Prachi Rathore
+;The earth has to be removed [from] the tunnel and[ taken] elsewhere.[gyannidhi]
+;सुरंग से मिट्टी निकाली गई होगी और दूसरी जगह ले जाई गई होगी।
+(defrule take21
+(declare (salience 2700))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-kriyA_viSeRaNa  ?id ?)
+(conjunction-components  ? ?id1 ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id le_jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  take.clp      take21   "  ?id "  le_jA)" crlf)
+))
+
+;@@@ Added by Prachi Rathore
+;Take your jacket off.[cambridge]
+;आपका जैकेट उतार दीजिए .
+(defrule take22
+(declare (salience 2600))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-kriyA_viSeRaNa  ?id ?id1)
+(id-word ?id1 off)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 uwAra_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp	take22 "  ?id "  " ?id1 "  uwAra_xe  )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[31-12-13]
+;During the Dussehra festival he participated in the Ram Lila , taking up the role of some character or the other .[bade ghar ki beti]
+(defrule take23
+(declare (salience 4500))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 up)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?id2)
+(id-root ?id2 role)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 BAga_le))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp	take23  "  ?id "  " ?id1 "  BAga_le  )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[8-1-14]
+;She's completely taken up with preparing for her exams. 
+(defrule take24
+(declare (salience 4500))
+(id-root ?id take)
+(id-word ?id taken)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 up)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+(kriyA-with_saMbanXI  ?id ?id2)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 vyaswa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp	take24  "  ?id "  " ?id1 " vyaswa )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[8-1-14]
+;She took up the story where Tim had left off. [oald]
+(defrule take25
+(declare (salience 4500))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 up)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?id2)
+(id-root ?id2 story)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 jArI_raKa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp	take25  "  ?id "  " ?id1 " jArI_raKa )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[8-1-14]
+;Cooking gas takes up too much time. [siksharthikosh]
+;Her time is fully taken up with writing. [oald]
+(defrule take26
+(declare (salience 4600))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 up)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+(or(kriyA-karma  ?id ?id2)(kriyA-object  ?id ?id2))
+(id-root ?id2 time)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 le))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp	take26  "  ?id "  " ?id1 " le )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[8-1-14]
+;They've taken up golf. [oald]
+(defrule take27
+(declare (salience 4500))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 up)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?id2)
+(id-root ?id2 golf|oboe|profession)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 apanAyA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp	take27  "  ?id "  " ?id1 " apanAyA )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[8-1-14]
+;We were all very taken with his girlfriend. [oald]
+(defrule take28
+(declare (salience 4000))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-with_saMbanXI  ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id AkarRiwa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  take.clp      take28   "  ?id "  AkarRiwa)" crlf))
+)
+
+;@@@ Added by Prachi Rathore[8-1-14]
+;I'd like to take you up on what you said earlier. [oald]
+;I must take you up on that point.[oald]
+(defrule take29
+(declare (salience 4500))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 up)
+(or(kriyA-upasarga ?id ?id1)(kriyA-kriyA_viSeRaNa  ?id ?id1))
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?id2)
+(id-root ?id2 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))
+=>
+(retract ?mng)
+(assert (kriyA_id-object_viBakwi ?id se))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 sahamawa_nahIM_ho))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp	take29  "  ?id "  " ?id1 " sahamawa_nahIM_ho )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[9-1-14]
+;We'll take the matter forward at our next meeting.  [oald]
+(defrule take31
+(declare (salience 4500))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-kriyA_viSeRaNa  ?id ?id1)
+(id-cat_coarse ?id1 adverb|preposition)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id le_jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  take.clp      take31   "  ?id "  le_jA)" crlf)
+))
+
+;@@@ Added by Prachi Rathore[9-1-14]
+;He took up his position by the door. [oald]
+(defrule take32
+(declare (salience 4500))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 up)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?id2)
+(viSeRya-RaRTI_viSeRaNa  ?id2 ?)
+(id-root ?id2 position)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 le))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp	take32  "  ?id "  " ?id1 " le )" crlf))
+)
+
+
+;@@@ Added by Prachi Rathore[17-1-14]
+;We are taking steps to correct the situation. 
+;हम हालत ठीक करने के लिये कदम उठा रहे हैं . 
+(defrule take34
+(declare (salience 4500))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?)
+(kriyA-kriyArWa_kriyA  ?id ?id1)
+(id-root ?id1 correct)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id uTA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  take.clp      take34   "  ?id " uTA )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[17-1-14]
+;The baby took her first steps today.
+;शिशु ने आज उसके प्रथम कदम लिए . 
+(defrule take35
+(declare (salience 4000))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?id1)
+(id-root ?id1 step)
+(kriyA-subject  ?id ?id2)
+(id-root ?id2 baby)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id le))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  take.clp      take35   "  ?id " le )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[24-1-14]
+;Please flush the drain after you have taken bath. 
+;स्नान कर चुकने के बाद आप  कृपया नाली बहा दीजिए . 
+(defrule take36
+(declare (salience 4000))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?id1)
+(id-root ?id1 bath)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 snAna_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp  take36  "  ?id "  " ?id1 " snAna_kara )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[6-2-14]
+;While taking this momentous step the Government of India did not make any arrangement to enable the Government of Bengal to meet the financial liability in respect of the University.[gyan-nidhi]
+;इस महत्त्वपूर्ण कदम को उठाते हुए भारत सरकार ने विश्वविद्यालय की वित्तीय ज़िम्मेदारी को पूरा करने में बंगाल सरकार की सहायता करने की कोई व्यवस्था नहीं की।
+(defrule take37
+(declare (salience 3900))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?id1)
+(id-root ?id1 step)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id uTA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  take.clp      take37   "  ?id " uTA )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[10-2-14]
+;The plane took off at 8.30 a.m. [cambridge]
+;विमान ने सुबह 8.30 पर उडान भरी . 
+(defrule take38
+(declare (salience 4500))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 off)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+(kriyA-subject  ?id ?id2)
+(id-root ?id2 plane)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 udAna_Bara)) 
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp	take38  "  ?id "  " ?id1 "  udAna_Bara )" crlf))
+)
+
+
+;@@@ Added by Prachi Rathore[10-2-14]
+;He took off two weeks in September. [cambridge]
+;उसने सितम्बर में दो सप्ताह की छुट्टी ली . 
+(defrule take39
+(declare (salience 4500))
+(id-root ?id take)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 off)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?id2)
+(id-root ?id2 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "time.gdbm" ?str)))
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 CuttI_le)) 
+(assert (kriyA_id-object_viBakwi ?id kA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " take.clp	take39  "  ?id "  " ?id1 "  CuttI_le )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  take.clp	take39   "  ?id " kA )" crlf))
+)
+

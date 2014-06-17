@@ -1,10 +1,29 @@
+;##############################################################################
+;#  Copyright (C) 2013-2014 Pramila (pramila3005 at gmail dot com)
+;#
+;#  This program is free software; you can redistribute it and/or
+;#  modify it under the terms of the GNU General Public License
+;#  as published by the Free Software Foundation; either
+;#  version 2 of the License, or (at your option) any later
+;#  version.
+;#
+;#  This program is distributed in the hope that it will be useful,
+;#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+;#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;#  GNU General Public License for more details.
+;#
+;#  You should have received a copy of the GNU General Public License
+;#  along with this program; if not, write to the Free Software
+;#  Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+;
+;##############################################################################
+
 
 
 ;This idea is foundation of all economics.	---old
 ;yaha vicAra saBI arWaSAswroM kA AXAra hE.
 ;These stories have no foundation.	---oald
 ;ina kahAniyoM kA koI AXAra nahIM hE.
-;Added by Pramila (banasthali university)
 (defrule foundation0
 (declare (salience 4900))
 (id-root ?id foundation)
@@ -18,7 +37,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  foundation.clp 	foundation0   "  ?id "  AXAra )" crlf))
 )
 
-;Added by Pramila (banasthali university)
+
 ;To get financial support for your research you can apply to various research foundations.          ;hinkhoj
 ;apane anusaMXAna ke liye ArWika sahAyawA lene ke liye wuma viBinna anusaMXAna saMsWaoM meM Avexana kara sakawe ho.
 
@@ -37,7 +56,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  foundation.clp       foundation1   "  ?id "  saMsWA )" crlf))
 )
 
-;Added by Pramila (banasthali university)
 ;The foundation of a library in the town helped many a students.                          ;hinkhoj
 ;Sahara meM puswakAlaya ki sWApanA se bahuwa CAwroM ko sahAyawA milI.
 (defrule foundation2
@@ -54,7 +72,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  foundation.clp       foundation2   "  ?id "  sWApanA )" crlf))
 )
 
-;Added by Pramila (banasthali university)
 ;The book explains the moral foundations on which her political career was built.              ;m-w
 ;kiwAba nEwika sixXAnwoM kA varNana karawI hE jina para usakA rAjanIwika kEriyara banA huA hE.
 (defrule foundation3
@@ -70,7 +87,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  foundation.clp       foundation3   "  ?id "  sixXAnwa )" crlf))
 )
 
-;Added by Pramila (banasthali university)
+
 ;These allegations are completely without foundation.   ;cald
 ;ye Aropa pUrI waraha se binA buniyAxa ke hE.
 (defrule foundation4
@@ -87,8 +104,8 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  foundation.clp 	foundation4   "  ?id "  buniyAxa )" crlf))
 )
 
-;-------------------------------- Default rules ----------------------------------
-;Modified by Pramila : Removed the fact  => (id-word ?id1 house|plot|factory)
+;--------------------------------default rules----------------------------------
+
 ;The foundations of the house are being laid today.
 ;Aja Gara kI nIMva raKI jA rahI hE.
 ;The science of electricity and magnetism is the foundation for the modern technological civilisation.   ;physics
@@ -96,7 +113,7 @@
 (defrule foundation5
 (declare (salience 4000))
 (id-root ?id foundation)
-?mng <-(meaning_to_be_decided ?id)    
+?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
@@ -117,21 +134,3 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  foundation.clp 	foundation6   "  ?id "  nIMva )" crlf))
 )
 
-;****************************** Removed rules *********************************
-;1. foundation_noun       nIMva
-;   (viSeRya-viSeRaNa ?id1 ?id) 
-;   (id-word ?id1 glorious)
-
-;2. foundation_noun       mUla_vicAra
-
-;****************************** Examples *************************************
-;default_sense && category=noun	AXAra	0
-;"foundation","N","1.AXAra"
-;The foundation of the building was layed way back in 1997.
-;--"2.sWApanA
-;The foundation of a library in the town helpe dmany a students.
-;--"3.saMsWA
-;To get financial support for your research you can apply to various 
-;research foundations.
-;
-;****************************************************************************

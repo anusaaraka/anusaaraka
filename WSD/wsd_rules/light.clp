@@ -32,22 +32,80 @@
 
 ;She lit upon a golden ring hidden under the carpet.
 ;use galIce ke nIce acAnaka eka sunaharI azgUTI mila gaI
+
+;$$$ Modified by Shirisha Manju 29-4-14 --- Suggested by Chaitanya Sir
+;Modofied meaning 'KuSI_se_Kila_jA'  as  'KuSI_se_camaka_uTa'
+;Her face lights up when she sees me.
+;jaba BI vaha muJe xeKawI hE,usakA ceharA KuSI se  Kila jAwA hE
 (defrule light2
 (declare (salience 4800))
 (id-root ?id light)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 up)
 (kriyA-upasarga ?id ?id1)
+(kriyA-subject ?id ?sub) ; added by Shirisha Manju 29-4-14
+(id-root ?sub face|eye) ; added by Shirisha Manju 29-4-14
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 KuSI_se_Kila_jA))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 KuSI_se_camaka_uTa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " light.clp	light2  "  ?id "  " ?id1 "  KuSI_se_Kila_jA  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " light.clp	light2  "  ?id "  " ?id1 "  KuSI_se_camaka_uTa  )" crlf))
 )
 
-;Her face lights up when she sees me.
-;jaba BI vaha muJe xeKawI hE,usakA ceharA KuSI se Kila jAwA hE
+;@@@ Added by Shirisha Manju 30-4-14  --- Suggested by Chaitanya Sir
+;He sat back and lit up a cigarette.  -- OALD
+(defrule light_up
+(declare (salience 4810))
+(id-root ?id light)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-upasarga ?id ?id1)
+(id-word ?id1 up)
+(kriyA-object  ?id ?obj)
+(id-root ?obj cigarette|coal|bonfire|fire|wood)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 jalA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " light.clp        light_up  "  ?id "  " ?id1 "  jalA  )" crlf))
+)
+
+;@@@ Added by Shirisha Manju 30-4-14 --- Suggested by Chaitanya Sir
+;The coal in the BBQ grill finally lit up.    [ The Free Dictionary]
+;On the eve of Holi, a bonfire is lit up.
+(defrule light_up1
+(declare (salience 4810))
+(id-root ?id light)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-upasarga ?id ?id1)
+(id-word ?id1 up)
+(kriyA-subject  ?id ?sub)
+(id-root ?sub coal|bonfire|fire|wood|cigarette)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 jala))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " light.clp        light_up1  "  ?id "  " ?id1 "  jala  )" crlf))
+)
+
+;@@@ Added by Shirisha Manju 01-5-14 --- Suggested by Chaitanya Sir
+;They all lit up as soon as he left the room.     OALD
+(defrule light_up2
+(declare (salience 4800))
+(id-root ?id light)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-upasarga ?id ?id1)
+(id-word ?id1 up)
+(kriyA-subject  ?id ?sub)
+(id-root ?sub ?str&:(and (not (numberp ?str))(gdbm_lookup_p "human.gdbm" ?str)))
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 sigareta_jalA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " light.clp        light_up2  "  ?id "  " ?id1 "  sigareta_jalA )" crlf))
+)
+
+
 (defrule light3
 (declare (salience 4700))
 (id-root ?id light)
@@ -78,6 +136,7 @@
 )
 
 ; The stars light up the night sky	100
+
 (defrule light5
 (declare (salience 4500))
 (id-root ?id light)
@@ -92,24 +151,31 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  light.clp 	light5   "  ?id "  prakASa )" crlf))
 )
 
-(defrule light6
-(declare (salience 4400))
+;@@@ Added by Nandini (2-11-13)
+;Basically, a telescope makes use of curved[ reflecting] surfaces and/or lenses to bend the[ light] rays from a distant source in such a way that its clear and magnified image is formed closer to the observer. [send by suchita shukla]
+;बुनियादी तौर पर दूरबीन में प्रतिबिंब बनाने वाले गोल तलों या लेंसों का इस्तेमाल किया जाता है जिससे दूर से आने वाली प्रकाश की किरणें इस प्रकार मुड़ जाती हैं कि देखने वाले के सामने वस्तुओं का स्पष्ट और बड़ा प्रतिबिंब बन जाता है।
+(defrule light5-a
+(declare (salience 4500))
 (id-root ?id light)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id adjective )
-(id-cat_coarse =(+ ?id 1) ~noun)
+(id-root ?id1 ray|year)
+(viSeRya-viSeRaNa ?id1 ?id)
+(id-cat ?id adjective|adjective_comparative|adjective_superlative)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id prakASa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  light.clp 	light6   "  ?id "  prakASa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  light.clp 	light5-a   "  ?id "  prakASa )" crlf))
 )
 
+;$$$ Modified by Nandini (17-12-13) replaced id-cat with id-cat_coarse
+;And two pairs of light, strong and comfortable shoes for walking. 
+;Ora calane ke liye halake, majabUwa Ora ArAmaxAyaka jUwoM ke xo jode.
 (defrule light7
-(declare (salience 4300))
+(declare (salience 4350))
 (id-root ?id light)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat ?id adjective|adjective_comparative|adjective_superlative)
+(id-cat_coarse ?id adjective|adjective_comparative|adjective_superlative)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id halakA))
@@ -162,6 +228,11 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  light.clp 	light9   "  ?id "  prakASiwa_kara )" crlf))
 )
+
+;----------------- Removed Rules ------------------
+;light6
+	;if category is adjective and +1 category is not noun then  prakASa
+
 
 ;"light","V","1.prakASa_kara"
 ;--"2.jalAnA"

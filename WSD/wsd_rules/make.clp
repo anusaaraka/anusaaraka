@@ -7,12 +7,13 @@
 (id-root ?id make)
 ?mng <-(meaning_to_be_decided ?id)
 (id-root =(+ ?id 1) sure)
+(id-cat_coarse ?id verb) ;$$$ Added this fact by Nandini 18-12-13
 =>
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(+ ?id 1) niSciwa_kara))
 ;(assert (id-wsd_root_mng ?id saMvexanA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " make.clp  make_sure  "  ?id "  " (+ ?id 1) "  niSciwa_kara  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " make.clp  make_sure0  "  ?id "  " (+ ?id 1) "  niSciwa_kara  )" crlf))
 )
 
 
@@ -23,12 +24,13 @@
 (id-root ?id make)
 ?mng <-(meaning_to_be_decided ?id)
 (id-root =(+ ?id 1) sense)
+(id-cat_coarse ?id verb) ;$$$ Added this fact by Nandini 18-12-13
 =>
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(+ ?id 1) sahI))
 ;(assert (id-wsd_root_mng ?id saMvexanA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " make.clp  make_sense  "  ?id "  " (+ ?id 1) "  sahI  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " make.clp  make_sense0  "  ?id "  " (+ ?id 1) "  sahI  )" crlf))
 )
 
 
@@ -41,6 +43,7 @@
 (id-root ?id make)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-for_saMbanXI  ?id ?id1)
+(id-cat_coarse ?id verb) ;$$$ Added this fact by Nandini 18-12-13
 =>
 (retract ?mng)
 (assert (id-wsd_word_mng ?id bane_hue))
@@ -58,6 +61,7 @@
 (id-root ?id make)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-prayojya_karwA  ?id ?id2)
+(id-cat_coarse ?id verb) ;$$$ Added this fact by Nandini 18-12-13
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kara))
@@ -74,6 +78,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (id-word =(+ ?id 1) speedy)
 (id-word =(+ ?id 2) progress)
+(id-cat_coarse ?id verb) ;$$$ Added this fact by Nandini 18-12-13
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kara))
@@ -88,6 +93,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-kriyA_mUla ?id ?id1)
 (id-root ?id1 clear)
+(id-cat_coarse ?id verb) ;$$$ Added this fact by Nandini 18-12-13
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kara))
@@ -192,6 +198,25 @@
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 BAzpa))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " make.clp	make5  "  ?id "  " ?id1 "  BAzpa  )" crlf))
+)
+
+;@@@ Added by Nandini (2-11-13)
+;When you look at a tree in the distance you cannot make out its individual leaves.[send by suchita shukla]
+;जब आप दूर के किसी पेड़ को देखते हैं, तो आपको उसके अलग-अलग पत्ते दिखाई नहीं देते।
+(defrule make5-a
+(declare (salience 4750))
+(id-root ?id make)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 out)
+(kriyA-upasarga ?id ?id1)
+(kriyA-object ?id ?id2)
+(id-word ?id2 leaves)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 xeKa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " make.clp	make5-a  "  ?id "  " ?id1 "  xeKa  )" crlf))
 )
 
 ;Can you make out how they did it?
@@ -682,6 +707,23 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  make.clp 	make58   "  ?id "  gaTana )" crlf))
 )
 
+;@@@ Added by Nandini(14-12-13)
+;As they drew near the bungalow they could make out that something important had happened.
+(defrule make_out
+(declare (salience 4550))
+(id-root ?id make)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 out)
+(kriyA-upasarga ?id ?id1)
+(kriyA-vAkyakarma  ?id ?id2)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 BAzpa_le))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " make.clp	make_out  "  ?id "  " ?id1 "  BAzpa_le  )" crlf))
+)
+
 ;"make","N","1.gaTana"
 ;The machinery is of an excellent make.
 ;
@@ -707,7 +749,7 @@
 
 
 
-
+;$$$ Added ("remark" in the list.) by Nandini.
 ;Added "mention" in the list(Meena 27.4.11)
 ;The book does not make any mention of his love affair. 
 ;Added by sheetal (04-02-10). 
@@ -717,7 +759,7 @@
 (id-root ?id make)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-object ?id ?id1)
-(id-word ?id1 mention|attempt|effort|excuse|suggestion|decision|exception|enquiry|call|mistake|request|fuss|noise|arrangement|journey|statement|love|war|peace|comment|observation|inspection) ; list Added by Manju (04-02-10).
+(id-word ?id1 mention|attempt|effort|excuse|suggestion|decision|exception|enquiry|call|mistake|request|fuss|noise|arrangement|journey|statement|love|war|peace|comment|observation|inspection|remark) ; list Added by Manju (04-02-10).
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kara))
@@ -731,8 +773,166 @@
 ;He made a request that there be an investigation.
 ;He made a mistake in inviting John.
 
+;@@@ Added by Nandini (11-11-13)
+;She always makes me laugh. 
+;vaha hameSA muJe hazsAwI hE.
+(defrule make061
+(declare (salience 4850))
+(id-root ?id make)
+?mng <-(meaning_to_be_decided ?id)
+(id-root ?id1 laugh|shout|cry)
+(kriyA-preraka_kriyA  ?id1 ?id)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id -))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  make.clp      make061   "  ?id "  - )" crlf))
+)
+
+;@@@ Added by Nandini (18-11-13)
+;The report reveals that the company made a loss of £ 20 million last year.
+;riporta bawAwI hE ki kampanI ko piCale varRa 20 miliyana pOMda  kA GAtA huA.
+(defrule make61
+(declare (salience 4870))
+(id-root ?id make)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 loss)
+(kriyA-object  ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ho))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  make.clp      make61   "  ?id " ho)" crlf))
+)
+
+;@@@ Added by Nandini (2-1-14)
+;So the King  had to make arrangements for her departure.
+;We need a drill to make holes in wood. [via mail] Added by Nandini (18-1-14)
+;hameM lakadI meM Cexa karane ke liye Cexa_karane_vAlI maSIna kI jarUrawa howI hE.
+;isalie rAjA ko usakI ravAnagI ke liye prabanXa karane pade.
+;added hole in the list (18-01-14) by Nandini 
+(defrule make62
+(declare (salience 5050))
+(id-root ?id make)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?id ?id1)
+(id-root ?id1 arrangement|hole) 
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  make.clp      make62   "  ?id " kara)" crlf))
+)
+
+;@@@ Added by Nandini(2-1-14)
+;I made a dash for the bathroom
+(defrule make63
+(declare (salience 6000))
+(id-root ?id make)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?id ?id1)
+(id-root ?id1 dash)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id lagA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  make.clp      make63   "  ?id " lagA)" crlf))
+)
+
+;@@@ Added by Nandini(2-1-14)
+;They tickle my throat and make me cough.
+(defrule make64
+(declare (salience 6050))
+(id-root ?id make)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-kqxanwa_karma  ?id ?id1)
+(id-word ?id1 cough)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id majabUra_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  make.clp      make64   "  ?id " majabUra_kara)" crlf))
+)
+
+;@@@ Added by Nandini(6-1-14)
+;He made strong critical remark on Salman's new film.
+;usane salman ke naye sineme para kaDZI samIkRAwmaka tippaNI kI.
+(defrule make65
+(declare (salience 6050))
+(id-root ?id make)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object ?id ?id1)
+(id-root ?id1 remark)
+(viSeRya-viSeRaNa  ?id1 ?id2)
+(id-root ?id2 critical)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  make.clp      make65   "  ?id "  kara )" crlf))
+)
+
+;Help Suggested by Chaitanya Sir
 ;-- make <something> public
 ; make public either object_1 or object_2 then -> mng -> sArvajanika
 ; He gave me a book. (This type construction)
 ; public ko sampradana laba hE
 ;
+
+
+;@@@ Added by Sukhada(2-4-14)
+;If I make a promise, I like to keep it. 
+;yaxi mEM vAxA karawA hUz, wo mEM use niBAnA pasanxa karawA hUz.
+(defrule make_promise
+(declare (salience 5000))
+(id-root ?id make)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object ?id ?id1)
+(id-root ?id1 promise)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  make.clp      make_promise   "  ?id "  kara )" crlf))
+)
+
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_make65
+(declare (salience 6050))
+(id-root ?id make)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object ?id ?id1)
+(id-root ?id1 remark)
+(subject-subject_samAnAXikaraNa ?id1 ?id2)
+(id-root ?id2 critical)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " make.clp   sub_samA_make65   "   ?id " kara )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_make65
+(declare (salience 6050))
+(id-root ?id make)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object ?id ?id1)
+(id-root ?id1 remark)
+(object-object_samAnAXikaraNa ?id1 ?id2)
+(id-root ?id2 critical)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " make.clp   obj_samA_make65   "   ?id " kara )" crlf))
+)

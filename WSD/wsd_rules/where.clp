@@ -96,3 +96,21 @@ etal
 )
 ;Modified by Sukhada. jahAz => kahAz
 ;The most famous tamrind tree in India is in Gwaliar, where it stand near the ..
+
+
+;@@@ Added by Pramila(BU) on 21-02-2014
+;After a whole hour of driving, we fetched up back where we started.        ;cald
+;पूरे एक घंटे गाडी चलाने के बाद हम वापिस वहीं पहुँच गए जहाँ से हमने शुरू किया था.
+(defrule where7
+(declare (salience 4800))
+(id-root ?id where)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id wh-adverb)
+(kriyA-kriyA_viSeRaNa  ?id1 ?id)
+(id-root ?id1 start)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id jahAz_se))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  where.clp 	where7   "  ?id "  jahAz_se )" crlf))
+)

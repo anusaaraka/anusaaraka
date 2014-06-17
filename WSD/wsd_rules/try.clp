@@ -142,3 +142,22 @@
 ;koSiSa_karanA/prayawna_karanA
 ;jAzca_karanA/Koja_bIna_karanA
 ;ajamAnA/*_kara_xeKanA
+
+
+;@@@   ---Added by Prachi Rathore
+;Let's not try our luck too far, said one.[gyan-nidhi]
+;हमें अपनी किस्‍मत उतनी दूर तक नहीं आजमानी चाहिए एक ने कहा।
+(defrule try7
+(declare (salience 5000))
+(id-root ?id try)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object ?id ?id1)
+(id-root ?id1 luck|fate)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id AjamAnA))
+(assert (kriyA_id-object_viBakwi ?id ko))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  try.clp       try7   "  ?id "  AjamAnA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi " ?*wsd_dir* "  try.clp    try7  "  ?id " ko )" crlf))
+)

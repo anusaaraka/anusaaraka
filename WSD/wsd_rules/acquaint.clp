@@ -1,4 +1,23 @@
 
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)5-Feb-2014
+;Please acquaint me with the facts of the case . [oald]
+;कृपया मामले के तथ्यों से मुझे अवगत कराये . 
+(defrule acquaint4
+(declare (salience 5000))
+(id-root ?id acquaint)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-with_saMbanXI ?id ?)
+(kriyA-object ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id avagawa_karA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  acquaint.clp  	acquaint4   "  ?id "  avagawa_karA )" crlf))
+)
+
+
+;***********************DEFAULT RULES*********************************
+
 (defrule acquaint0
 (declare (salience 5000))
 (id-root ?id acquaint)
@@ -29,7 +48,7 @@
 )
 
 (defrule acquaint2
-(declare (salience 4800))
+(declare (salience 0));salience reduced by Garima Singh
 (id-root ?id acquaint)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-object ?id ?)

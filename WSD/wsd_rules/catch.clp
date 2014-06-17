@@ -111,15 +111,16 @@
 
 
 
-
+;$$$  Modified by Preeti(19.12.13) ,Translation added
 ;Added by Meena(11.11.09)
 ;The punch caught him in the back. 
+;usako pITa meM mukkA  lagA.
 (defrule catch6
 (declare (salience 4100))
 (id-root ?id catch)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-subject ?id ?id1)
-;(id-root ?id1 rock|punch|blow)
+(id-root ?id1 rock|punch|blow) ;Uncommented by Preeti
 ;(id-root ?id1  ?str&:(and (not (numberp ?str))(gdbm_lookup_p "inanimate.gdbm" ?str)))
 (id-root ?id1 ?str);As suggested by Chaitanya Sir removed inanimate.gdbm and modified the fact as shown by Roja (03-12-13) 
 (test (and (neq (numberp ?str) TRUE) (neq (gdbm_lookup_p "animate.gdbm" ?str) TRUE)))
@@ -155,8 +156,10 @@
 
 
 
-
 ;Salience reduced by Meena(11.11.09)
+;Sentence added by Preeti (19.12.13)
+;It had caught a bull by the throat and was dragging it away. [By mail]
+;usane  sAzda ko gale se pakadzA WA Ora use KIMca rahA WA.
 (defrule catch8
 (declare (salience 1000))
 ;(declare (salience 4000))
@@ -172,3 +175,40 @@
 ;"catch","V","1.pakadZanA"
 ;He caught the ball superbly.
 ;
+;@@@ Added by Prachi Rathore[11-3-14]
+; I caught the aroma of coffee.[wordnet]
+;MuJe kaZPI kI sugaMXa AyI
+(defrule catch9
+(declare (salience 4000))
+(id-root ?id catch)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?id1)
+(id-root ?id1 aroma)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id A))
+(assert (kriyA_id-subject_viBakwi ?id ko))
+(assert (kriyA_id-object_viBakwi ?id kI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  catch.clp 	catch9   "  ?id "  A )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  catch.clp 	catch9    "  ?id "  ko )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  catch.clp 	catch9    "  ?id "  kI )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[11-3-14]
+; Catch a glimpse.[wordnet]
+;Jalaka xeKo.
+(defrule catch10
+(declare (salience 4000))
+(id-root ?id catch)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?id1)
+(id-root ?id1 glimpse)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id xeKa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  catch.clp 	catch10   "  ?id "  xeKa )" crlf))
+)

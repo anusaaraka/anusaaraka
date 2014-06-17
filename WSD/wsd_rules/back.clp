@@ -140,10 +140,11 @@
 )
 
 
-
+;$$$ Modified by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)10-Feb-2014
+;replaced (- ?id 1) with variable name id2 in assert and printout statement of action part.
 ;Added by Meena(1.4.11)
 ;We were bunched up at the back of the room. (link)
-(defrule at_the_back
+(defrule back15
 (declare (salience 4100))
 (id-root ?id back)
 ?mng <-(meaning_to_be_decided ?id)
@@ -152,13 +153,15 @@
 (id-word ?id2 on|at)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id   =(- ?id 1)  pICe))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id   ?id2  pICe))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  back.clp      at_the_back   "  ?id "   "(- ?id 1)"   pICe )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  back.clp      back15   "  ?id "   "?id2"   pICe )" crlf))
 )
 
 
 
+;$$$ Modified by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)10-Feb-2014
+;Removed variables " =(- ?id 1)  =(+ ?id 1) " from assert and print statement.
 ;Modified by Meena(1.4.11)
 ;We were bunched up at the back of the room.(OL)
 ;Added by Meena(26.9.09)
@@ -168,22 +171,39 @@
 (declare (salience 4000))
 (id-root ?id back)
 ?mng <-(meaning_to_be_decided ?id)
-(or(viSeRya-of_saMbanXI  ?id ?id1)(kriyA-at_the_back_of_saMbanXI ?id3 ?id1)(kriyA-at_saMbanXI  ?id3 ?id))
+(or(kriyA-on_saMbanXI  ?kri ?id)(kriyA-at_saMbanXI  ?kri ?id));added by Garima Singh
+(viSeRya-of_saMbanXI  ?id ?);added by Garima Singh
+;(or(viSeRya-of_saMbanXI  ?id ?id1)(kriyA-at_the_back_of_saMbanXI ?id3 ?id1)(kriyA-at_saMbanXI  ?id3 ?id));commented by Garima Singh
 (id-word ?id2 on|at)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id  ?id2  =(- ?id 1)  =(+ ?id 1)  ke_pICe))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id  ?id2  pICe))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  back.clp      at_the_back_of   "  ?id " " ?id2"  "(- ?id 1)" "(+ ?id 1)"  ke_pICe )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  back.clp      at_the_back_of   "  ?id " " ?id2"  pICe )" crlf))
+)
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 09-jan-2014
+;He leaned back on the chair.
+;वह कुर्सी पर पीछे झुका
+(defrule back14
+(declare (salience 5000))
+(id-root ?id back)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-kriyA_viSeRaNa  ?kri ?id)
+(id-root ?kri lean);added by Garima Singh(25-jan-2014)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id pICe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  back.clp 	back14   "  ?id "  pICe )" crlf))
 )
 
 
-
-
+;**************DEFAULT RULES*************************
 
 
 (defrule back11
-(declare (salience 3900))
+(declare (salience 0));salience reduced by Garima Singh
 (id-root ?id back)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -195,7 +215,7 @@
 )
 
 (defrule back12
-(declare (salience 3800))
+(declare (salience 0));salience reduced by Garima Singh
 (id-root ?id back)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)

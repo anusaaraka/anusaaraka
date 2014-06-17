@@ -36,6 +36,22 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  upon.clp 	upon2   "  ?id "  ke_Upara )" crlf))
 )
 
+;@@@ Added by Prachi Rathore[17-1-14]
+;No further action appears to have been taken in the matter until Lord Curzon came upon the scene. [gyannidhi]
+;ऐसा प्रतीत होता है कि लार्ड कर्ज़न के आने तक इस विषय में आगे कोई कार्यवाही नहीं की गई।
+(defrule upon3
+(declare (salience 5000))
+(id-root ?id upon)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id preposition)
+(kriyA-upon_saMbanXI  ?id1 ?id2)
+(id-root ?id1 come)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 A_jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " upon.clp	 upon3  "  ?id "  " ?id1 "  A_jA  )" crlf))
+)
 ;"upon","Prep","1.ke_Upara/UzcA/para"
 ;The cat jumped upon the table.
 ;--"2.najZaxIka"

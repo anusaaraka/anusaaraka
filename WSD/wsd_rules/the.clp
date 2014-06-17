@@ -240,3 +240,22 @@
 ;Ex. At the moment , the spokesman said , the President is busy .
 ;Added by sukhada
 
+
+;;@@@   ---;ADDED BY PRACHI RATHORE
+;There is a copper-plate inscription of the time in the temple. [gyannidhi]
+;उस समय का एक ताम्रलेख भी मंदिर में हैं।
+(defrule the9
+(declare (salience 4900)) 
+(id-root ?id the)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id determiner)
+(viSeRya-of_saMbanXI  ? ?id1)
+(viSeRya-det_viSeRaNa  ?id1 ?id)
+(id-root ?id1 time)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id vaha ))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  the.clp 	the9   "  ?id "  -  )" crlf))
+)
+

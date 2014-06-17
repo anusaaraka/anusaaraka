@@ -34,3 +34,34 @@
 ;Cars are intended for the scrapyard.
 ;
 ;
+;Added by Prachi Rathore[23-11-13]
+;The course is intended for intermediate-level students.
+;कोर्स इंटरमीडिएट के विध्यार्थी के स्तर के आधार पर नियोजित किया गया है.
+(defrule intend2
+(declare (salience 5000))
+(id-root ?id intend)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-for_saMbanXI ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id niyojiwa_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  intend.clp 	intend2   "  ?id "  niyojiwa_kara )" crlf))
+)
+
+;Added by Prachi Rathore[23-11-13]
+;It was intended as a compliment, honestly!
+;सच में ,यह प्रशंसा के इरादे से किया गया  था .
+(defrule intend3
+(declare (salience 5000))
+(id-root ?id intend)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-as_saMbanXI ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id irAxe_se_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  intend.clp 	intend3   "  ?id "  irAxe_se_kara )" crlf))
+)

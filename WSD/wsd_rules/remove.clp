@@ -1,7 +1,7 @@
 ;"remove","N","1.hatAva_yA_xUra_hone_kI_kriyA"
 ;Her account of the incident was several removes from the truth. [Hinkhoj Dictionary, Old file]
 ;उसकी घटना का खाता सच्चाई से कई हटाव पर है ।
-;Modified by Anita-27.11.2013 as Suggested by Chaitanya ji (mng 'hatAva_yA_xUra_hone_kI_kriyA' to 'hatAva')
+;$$$ Modified by Anita-27.11.2013 as Suggested by Chaitanya ji (mng 'hatAva_yA_xUra_hone_kI_kriyA' to 'hatAva')
 (defrule remove0
 (id-root ?id remove)
 ?mng <-(meaning_to_be_decided ?id)
@@ -14,7 +14,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  remove.clp 	remove0   "  ?id "  hatAva )" crlf))
 )
 
-;Modified by Anita-27.11.2013 
+;$$$ Modified by Anita-27.11.2013 
 ;This detergent will remove even old stains. [Cambridge Dictionary] 
 ;यह साबुन पुराने धब्बे भी निकाल देगा ।
 (defrule remove1
@@ -30,7 +30,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  remove.clp 	remove1   "  ?id "  nikAla_xe )" crlf))
 )
 
-;Added by Anita-27.11.2013 
+;@@@ Added by Anita-27.11.2013 
 ;The men came to remove the rubbish from the backyard. [Cambridge Dicionary]
 ;पिछवाड़े का कचरा ले जाने के लिए आदमी आया था ।
 (defrule remove3
@@ -46,7 +46,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  remove.clp 	remove3   "  ?id "  le_jA )" crlf))
 )
 
-;Added by Anita-27.11.2013 
+;@@@ Added by Anita-27.11.2013 
 ;It got so hot that he removed his tie and jacket. [Cambridge Dictionary ]
 ;इतनी गर्मी हो गयी कि उसे अपनी टाई और जैकेट भी उतारनी पड़ी ।
 (defrule remove4
@@ -61,7 +61,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  remove.clp 	remove4   "  ?id "  uwAra_xe )" crlf))
 )
 
-;Added by Anita-27.11.2013 
+;@@@ Added by Anita-27.11.2013 
 ;They decided to remove their son from the school. [Cambridge Dictionary]
 ;उन्होंने अपने बेटे को स्कूल से निकालने का निश्चय किया ।
 (defrule remove5
@@ -77,7 +77,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  remove.clp 	remove5   "  ?id "  nikAla )" crlf))
 )
 
-;Added by Anita-27.11.2013 
+;@@@ Added by Anita-27.11.2013 
 ;Hearing your opinion has removed my last doubts about her. [Cambridge Dictionary]
 ;तुम्हारे विचार को सुनकर मेरा आखिरी संदेह भी उसके बारे में खत्म हो गया ।
 ;Hearing your opinion has removed my last suspicions about her.
@@ -94,7 +94,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  remove.clp 	remove6   "  ?id "  Kawma_ho )" crlf))
 )
 
-;Added by Anita-27.11.2013 
+;@@@ Added by Anita-27.11.2013 
 ;Remove your hand from my shoulder.
 ;mere kanXe se ApakA hAWa hatAie. 
 (defrule remove7

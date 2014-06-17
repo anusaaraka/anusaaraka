@@ -223,6 +223,39 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  head.clp      head10   "  ?id "  aXyakRawA_kara )" crlf))
 )
+
+;@@@ Added by Prachi Rathore[15-1-14]
+;Is it heads or tails? [m-w]
+;क्या यह हेड्स या टेल्स है? 
+(defrule head11
+(declare (salience 5000))
+(id-root ?id head)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(conjunction-components  ? ?id ?id1)
+(id-root ?id1 tail)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id hedsa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  head.clp 	head11 "  ?id " hedsa )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[3-3-14]
+; During his tenure as head coach, the team won the championship twice. [m-w]
+;मुख्य प्रशिक्षक के रूप में उसके कार्य काल के दौरान, टीम ने दो बार  चैम्पियनशिप जीती . 
+(defrule head12
+(declare (salience 5000))
+(id-root ?id head)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(samAsa_viSeRya-samAsa_viSeRaNa  ? ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id muKya))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  head.clp 	head12   "  ?id "  muKya )" crlf))
+)
 ;I have been invited to head the department .
 
 ;default_sense && category=noun	SIrRa	0

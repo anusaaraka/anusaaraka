@@ -21,7 +21,7 @@
 ;The unexpected heavy monsoon caused a rush on raincoats.
 ;
 (defrule rush1
-(declare (salience 4900))
+(declare (salience 4000))
 (id-root ?id rush)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -36,3 +36,39 @@
 ;Don't rush, take your own time to get ready.
 ;I'm afraid without a single thought she rushed into marriage.
 ;
+
+;@@@ Added by Anita-9.1.2014
+;The action of the rushing water cleans the gully. [By mail]
+;तेज़ी से बहते हुये पानी की क्रिया नाली साफ करती है ।
+(defrule rush2
+(declare (salience 5000))
+(id-root ?id rush)
+(id-word ?id rushing)
+?mng <-(meaning_to_be_decided ?id)
+(id-root ?id1 water)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 wejZI_se_bahawe_hue_pAnI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rush.clp 	rush2   " ?id "  " ?id1 " wejZI_se_bahawe_hue_pAnI )" crlf))
+)
+
+;@@@ Added by Anita-9.1.2014
+;I stretched out and listened to the sound of the rushing stream. [Cambridge-dictionary]
+;मैं बाहर निकला और तेज़ी से बहते हुए झरने की आवाज़ सुनी ।
+(defrule rush3
+(declare (salience 5010))
+(id-root ?id rush)
+(id-word ?id rushing)
+?mng <-(meaning_to_be_decided ?id)
+(id-root ?id1 stream)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 wejZI_se_bahawI_huI_Jarane))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rush.clp 	rush3   " ?id "   " ?id1 " wejZI_se_bahawe_hue_Jarane )" crlf))
+)

@@ -157,3 +157,49 @@
 ;I know this voice.
 ;
 ;
+
+;Added by Prachi Rathore[2-12-13]
+;Indeed, our many questions about the heavens have received reasonably satisfactory answers from the laws of science [known] to us today.
+;वास्तव में, विज्ञान के जो सिद्धांत हमें आज मालूम हैं, उनसे हमें आकाश संबंधी कई प्रश्नों के संतोषजनक उत्तर मिल गये हैं।
+(defrule know8
+(declare (salience 5000))
+(id-root ?id know)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-to_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id mAlUma))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  know.clp      know8   "  ?id "  mAlUma )" crlf))
+)
+
+;Added by Prachi Rathore[3-12-13]
+;Paradoxically, scientists seem to [know] more about the stars which are far away than about the planets of our own solar system.
+;यह अजीब बात है कि वैज्ञानिकों को हमारे अपने सौरमंडल के ग्रहों के मुकाबले उन तारों के बारे में ज्यादा जानकारी है जो बहुत दूरी पर स्थित हैं।
+(defrule know9
+(declare (salience 5000))
+(id-root ?id know)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-about_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id jAnakArI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  know.clp      know9   "  ?id "  jAnakArI )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[9-1-14]
+;If you want to call a meeting or anything, just let me know.
+(defrule know10
+(declare (salience 5000))
+(id-root ?id know)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject ?id ?id1)
+(kriyA-vAkyakarma  ?id2 ?id)
+(id-root ?id2 let)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id2 bawA_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " know.clp	know10  "  ?id "  " ?id2 "  bawA_xe  )" crlf))
+)

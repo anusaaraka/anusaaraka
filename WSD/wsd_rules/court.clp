@@ -1,14 +1,67 @@
-
+;$$$  Modified by Preeti(8-11-13)
+;He was presented to the queen at court. [ Oxford Advanced Learner's Dictionary]
+;use xarabAra meM rAnI ke samakRa peSa kiyA gayA WA.
 (defrule court0
+(declare (salience 5050))
+(id-root ?id court)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-at_saMbanXI  ?id1 ?id) ; added relation by Preeti  
+(id-root ?id1 queen|king) ; added root fact by Preeti
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id xarabAra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  court.clp 	court0   "  ?id "  xarabAra )" crlf))
+)
+
+;@@@ Added by Preeti(8-11-13)
+;The court discharged him. [By mail]
+;adAlawa ne usako rihA kiyA.
+(defrule court2
 (declare (salience 5000))
 (id-root ?id court)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id xarabAra))
+(assert (id-wsd_root_mng ?id axAlawa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  court.clp 	court0   "  ?id "  xarabAra )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  court.clp 	court2   "  ?id "  axAlawa )" crlf))
+)
+
+;@@@ Added by Preeti(8-11-13)
+;He won after only 52 minutes on court.  [ Oxford Advanced Learner's Dictionary]
+;vaha Kela_ke mExAna para sirPa 52 minatoM ke bAxa jIwA.
+; Kela_ke mExAna para 52 minatoM waka rahane ke bAxa hI vaha jIwA.
+(defrule court3
+(declare (salience 5050))
+(id-root ?id court)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(kriyA-on_saMbanXI  ? ?id) 
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Kela_kA_mExAna))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  court.clp 	court3   "  ?id "  Kela_kA_mExAna )" crlf))
+)
+
+;@@@ Added by Preeti(8-11-13)
+;The badminton court near my house is very big. [self]
+;mere Gara ke nikata bEdamiMtana mExAna awyanwa badA hE.
+(defrule court4
+(declare (salience 5050))
+(id-root ?id court)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(samAsa_viSeRya-samAsa_viSeRaNa  ?id ?id1)
+(id-root ?id1 tennis|squash|badminton)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id mExAna))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  court.clp 	court4   "  ?id "  mExAna )" crlf))
 )
 
 (defrule court1

@@ -1,3 +1,4 @@
+
 ;##############################################################################
 ;#  Copyright (C) 2013-2014 Pramila (pramila3005 at gmail dot com)
 ;#
@@ -57,7 +58,7 @@
 
 
 
-;---------------------------------- Default rules --------------------------------------------------
+;------------------------------------------------------default rules---------------------------------------------------------------------------
 ;Let's eliminate the course on Akkadian hieroglyphics.
 ;अकाडिनी hieroglyphics पर पाठ्यक्रम को खत्म करते हैं.
 ;A move towards healthy eating could help eliminate heart disease.
@@ -77,6 +78,7 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  eliminate.clp 	eliminate2   "  ?id " Kawma_kara  )" crlf))
 )
+
 
 
 (defrule eliminate3

@@ -148,3 +148,72 @@
 ;Jane Austin wrote 'Pride && Prejudice'.
 ;
 ;
+
+
+;@@@ Added by Pramila(BU) on 27-03-2014
+;Please write back at your earliest.         ;shiksharthi
+;कृपया जल्दी से जल्दी उत्तर दीजिए.
+(defrule write10
+(declare (salience 4200))
+(id-root ?id write)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(id-word ?id1 back)
+(kriyA-upasarga ?id ?id1)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 uwwara_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " write.clp	write10  "  ?id "  " ?id1 "  uwwara_xe  )" crlf))
+)
+
+;@@@ Added by Pramila(BU) on 27-03-2014
+;I have written down everything.        ;shiksharthi
+;मैंने सब कुछ लिख लिया है.
+(defrule write11
+(declare (salience 4200))
+(id-root ?id write)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(id-word ?id1 down)
+(kriyA-upasarga ?id ?id1)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 liKa_le))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " write.clp	write11  "  ?id "  " ?id1 "  liKa_le  )" crlf))
+)
+
+
+;@@@ Added by Pramila(BU) on 27-03-2014
+;I wrote in all his suggestions.        ;shiksharthi
+;मैंने उसके सारे सुझाव लिखकर रख लिए हैं.
+(defrule write12
+(declare (salience 4200))
+(id-root ?id write)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(id-word ?id1 in)
+(kriyA-upasarga ?id ?id1)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 liKakara_raKa_le))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " write.clp	write12  "  ?id "  " ?id1 "  liKakara_raKa_le  )" crlf))
+)
+
+
+;@@@ Added by Pramila(BU) on 27-03-2014
+;Ask anything in written.   ;shiksharthi
+;कोई चीज लिखित में माँगो.
+(defrule write13
+(declare (salience 4500))
+(id-word ?id written)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id liKiwa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  write.clp 	write13   "  ?id "  liKiwa )" crlf))
+)

@@ -53,6 +53,22 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  arise.clp 	arise2   "  ?id "  uwpanna_ho )" crlf))
 )
 
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 03/04/2014
+;When evil arises on earth and evil people torture innocent people then God has to incarnate to exterminate the evil ones.[news-dev]
+;धरती पर जब पाप बढ़ता है और राक्षस प्रवृत्ति के लोग जनता पर अत्याचार करते हैं तब दुष्टों का संहार करने के लिए भगवान को अवतरित होना पड़ता है।
+(defrule arise4
+(declare (salience 4000))
+(id-root ?id arise)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject  ?id ?id1)
+(id-word ?id1 evil)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id baDZa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  arise.clp 	arise4   "  ?id "  baDZa )" crlf))
+)
+
 ;------------------------ Default Rule -----------------------------
 ;I arise at 5 A.M.
 ;मैं सुबह 5 बजे उठता हूँ .

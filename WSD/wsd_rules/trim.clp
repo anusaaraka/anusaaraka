@@ -60,3 +60,21 @@
 ;"trim","VT","1.kAta_CAzta_karanA"
 ;He trimmed the hedges recently.
 ;
+
+;@@@ Added by Prachi Rathore[10-2-14]
+;Using the diet he's trimmed down from 90 kilos to 70.[oald]
+;आहार का उपयोग करते हुए उसने 90 किलो से 70 वजन कम किया  है . 
+(defrule trim4
+(declare (salience 5000))
+(id-root ?id trim)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 down)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 vajana_kama_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " trim.clp 	trim4  "  ?id "  " ?id1 "  vajana_kama_kara  )" crlf))
+)
+

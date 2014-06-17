@@ -1,18 +1,3 @@
-
-(defrule cause0
-(declare (salience 5000))
-(id-root ?id cause)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id noun)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id kAraNa))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  cause.clp 	cause0   "  ?id "  kAraNa )" crlf))
-)
-
-
-
 ;Added by Meena(5.02.10)
 ;All jams and sauces contain additives which may sometimes cause allergies .
 ;$$$ Modified by Shirisha Manju (18-03-14) Suggested by Chaitanya Sir
@@ -34,13 +19,44 @@
 )
 )
 
+;@@@ Added by Preeti(15-4-14)
+;The bad weather is causing problems for many farmers. [Oxford Advanced Learner's Dictionary]
+;KarAba mOsama bahuwa sAre kisAnoM ke liye samasyAez pExA_kara rahA hE.
+(defrule cause4
+(declare (salience 1000))
+(id-root ?id cause)
+(id-word ?id causing)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id pExA_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  cause.clp 	cause4   "  ?id "  pExA_kara )" crlf))
+)
 
+;@@@ Added by Preeti(15-4-14)
+;He fought for the Republican cause in the war. [Cambridge Learner’s Dictionary]
+;vaha yuxXa meM gaNawAnwrika uxxeSya ke liye ladA.
+(defrule cause5
+(declare (salience 1000))
+(id-root ?id cause)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(or(viSeRya-to_saMbanXI ? ?id ) (kriyA-for_saMbanXI  ? ?id))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id uxxeSya))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  cause.clp 	cause5   "  ?id "  uxxeSya )" crlf))
+)
+
+;--------------------------------- Default rules -----------------------------------
 
 ;$$$ Modified by Shirisha Manju (18-03-14) Suggested by Chaitanya Sir
 ;changed meaning from 'kAraNa_ho' to 'kAraNa_bana'
 ;Salience reduced by Meena(5.02.10)
 (defrule cause2
-(declare (salience 0))
 (id-root ?id cause)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -54,6 +70,19 @@
 ;"cause","VT","1.kAraNa_honA/uwpanna_karanA"
 ;Chewing tobacco can cause cancer.
 ;
+
+(defrule cause0
+(id-root ?id cause)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kAraNa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  cause.clp    cause0   "  ?id "  kAraNa )" crlf))
+)
+
+
 ;LEVEL 
 ;
 ;

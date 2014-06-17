@@ -1,4 +1,73 @@
 
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 4-Feb-2014
+;She rushed out in alarm.
+;वह भय से बाहर भागी
+(defrule alarm3
+(declare (salience 5000))
+(id-root ?id alarm)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-in_saMbanXI  ? ?id)
+(id-word =(- ?id 1) in)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id (- ?id 1) Baya_se))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " alarm.clp  	alarm3  "  ?id "  " (- ?id 1) "  Baya_se )" crlf))
+)
+
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)4-Feb-2014
+;We alarmed the villagers.
+;हमने गाँव वालो को सावधान किया
+(defrule alarm4
+(declare (salience 5000))
+(id-word ?id alarmed)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?id ?obj)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sAvaXAna_kara))
+(assert (kriyA_id-object_viBakwi ?id ko))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  alarm.clp  	alarm4   "  ?id "  sAvaXAna_kara )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* " alarm.clp    alarm4   "  ?id " ko )" crlf)
+)
+)
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)4-Feb-2014
+;I felt a growing sense of alarm when he did not return that night.[oald]
+;मैने खतरे की भावना को महसूस किया जब उस रात वह घर नहीं लौटी 
+(defrule alarm5
+(declare (salience 5000))
+(id-root ?id alarm)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-of_saMbanXI  ? ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id KawarA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  alarm.clp  	alarm5  "  ?id "  KawarA )" crlf))
+)
+
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)4-Feb-2014
+;The doctor said there was no cause for alarm.[oald]
+;डाक्टर ने कहा डरने की कोई बात नहीं है
+(defrule alarm6
+(declare (salience 5000))
+(id-root ?id alarm)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-for_saMbanXI  ?id1 ?id)
+(id-word ?id1 cause)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id daranA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  alarm.clp  	alarm6  "  ?id "  daranA )" crlf))
+)
+
+
+;*******************DEFAULT RULE****************************************
 (defrule alarm0
 (declare (salience 5000))
 (id-root ?id alarm)
@@ -16,7 +85,7 @@
 ;Last year the onion price increased at an alarming rate.
 ;
 (defrule alarm1
-(declare (salience 4900))
+(declare (salience 0));salience reduced by Garima Singh
 (id-root ?id alarm)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id adjective)
@@ -28,7 +97,7 @@
 )
 
 (defrule alarm2
-(declare (salience 4800))
+(declare (salience 0));salience reduced by Garima Singh
 (id-root ?id alarm)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)

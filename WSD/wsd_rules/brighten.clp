@@ -1,4 +1,21 @@
 
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 24/03/2014
+;His face brightened up.[shiksharthi]
+;usaka ceharA camaka uTA
+(defrule brighten4
+(declare (salience 5000))
+(id-root ?id brighten)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-upasarga  ?id ?id1)
+(id-root ?id1 up)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 camaka_uTA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " brighten.clp   brighten4  "  ?id "  " ?id1 "  camaka_uTA )" crlf))
+)
+
 (defrule brighten0
 (declare (salience 5000))
 (id-root ?id brighten)

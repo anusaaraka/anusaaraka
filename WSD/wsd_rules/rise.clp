@@ -1,6 +1,6 @@
 
 ;Added by human
-; Sun rises in the east.
+;Sun rises in the east.
 (defrule rise0
 (declare (salience 5000))
 (id-root ?id rise)
@@ -80,28 +80,36 @@
 ;Para military forces were brought in to suppress the rising.
 ;
 
-;Added by human
-; Sun rises in the east.
+;@@@ Added by Anita-13.3.2014
+;It was her custom to rise early. [oald]
+;जल्दी उठने की उसकी आदत थी ।
 (defrule rise6
-(declare (salience 4400))
+(declare (salience 7100))
 (id-root ?id rise)
 ?mng <-(meaning_to_be_decided ?id)
+(kriyA-kriyA_viSeRaNa  ?id ?id1)
+(id-word ?id1 early|late)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id Upara_uTa))
+(assert (id-wsd_root_mng ?id uTa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rise.clp 	rise6   "  ?id "  Upara_uTa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rise.clp    rise6   "  ?id "  uTa )" crlf))
 )
 
 
+;$$$ Modified by Anita-19.2.2014
+;Removed 'kriyA-subject' relation
 ;Added by Meena(20.8.09)
-;She rose from the table to welcome me .
+;She rose from the table to welcome me .[verified sentence]
+;वह मेरा स्वागत करने के लिए मेंज से उठी ।
 (defrule rise7
-(declare (salience 4400))
+(declare (salience 7100))
 (id-root ?id rise)
 ?mng <-(meaning_to_be_decided ?id)
-(kriyA-subject ?id ?id1)
+(id-cat_coarse ?id verb)
+(kriyA-from_saMbanXI  ?id ?id2) ;Added by Anita
+(id-root ?id2 table|chair|bed) ;Added by Anita
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id uTa))
@@ -109,8 +117,57 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rise.clp    rise7   "  ?id "  uTa )" crlf))
 )
 
+;@@@ Added by Anita 13-12-13
+;She has risen from humble origins to immense wealth.
+;वह नम्र मूल से विशाल समृद्धि को पहुँच चुकी है ।
+(defrule rise9
+(declare (salience 7000))
+(id-root ?id rise)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-from_saMbanXI  ?id ?)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id pahuzca))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rise.clp    rise9 " ?id " pahuzca)" crlf))
+) 
+
+;@@@ Added by Anita
+;The prison population is continuing to rise.
+;कारागार की जनसंख्या में लगातार वृद्धि हो रही  है ।
+;A 9 % rise in the prison population.
+;कारागार के जनसंख्या में 9 % की वृद्धि हुई है ।
+(defrule rise10
+(declare (salience 7500))
+(id-root ?id rise)
+?mng <-(meaning_to_be_decided ?id)
+(id-root ?id1 population)
+(or (kriyA-subject  ?id ?id1)(kriyA-in_saMbanXI  ?id ?id1))
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id vqxXi_ho))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rise.clp    rise10 " ?id " vqxXi_ho)" crlf))
+) 
+;--------------------------------- Default rules --------------------
+;Added by human
+;Sun rises in the east.
+(defrule rise5
+(declare (salience 3000))
+(id-root ?id rise)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Upara_uTa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rise.clp 	rise5   "  ?id "  Upara_uTa )" crlf))
+)
+
 ;Added by Veena Bagga (22-01-10)
-;;Example:-There is a rise in all food items. 
+;Example:-There is a rise in all food items. 
 (defrule rise8
 (declare (salience 6500))
 (id-root ?id rise)
@@ -123,6 +180,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rise.clp    rise8 " ?id " vqxXi)" crlf))
 ) 
 
+;--------------------- old Examples -------------------------`
 ;default_sense && category=verb	uTa	0
 ;"rise","VI","1.uTanA"
 ;The smoke is rising from the chimney.

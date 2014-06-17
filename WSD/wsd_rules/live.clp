@@ -125,6 +125,24 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " live.clp	live8  "  ?id "  " ?id1 "  nirBara_raha  )" crlf))
 )
 
+;@@@ Added by Nandini (14-12-13) 
+;They were living in the forest.[via mail]
+;ve jafgala meM raha rahe We.
+(defrule live_forest
+(declare (salience 4150))
+(id-root ?id live)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id living )
+(kriyA-in_saMbanXI  ?id ?)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id raha))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  live.clp  	live_forest   "  ?id "  raha )" crlf))
+)
+
+
 (defrule live9
 (declare (salience 4100))
 (id-root ?id live)
@@ -165,6 +183,45 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  live.clp 	live11   "  ?id "  raha )" crlf))
 )
+
+;@@@ Added by Nandini (3-12-13)
+;The president's speech was broadcast live. 
+;aXyakRIya BARaNa kA sIXA prasAraNa prasAriwa kIyA gayA WA.
+(defrule live12
+(declare (salience 3900))
+(id-word ?id live)
+?mng <-(meaning_to_be_decided ?id)
+;(subject-subject_samAnAXikaraNa  3 4)
+(not(id-cat_coarse ?id verb))
+=>
+(retract ?mng)
+(assert (id-wsd_word_mng ?id sIXA_prasAraNa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng   " ?*wsd_dir* "  live.clp 	live12   "  ?id "  sIXA_prasAraNa )" crlf))
+)
+
+;@@@ Added by Nandini (5-12-13)
+;We like live cricket on the TV.
+(defrule live13
+(declare (salience 5001))
+(id-word ?id live)
+?mng <-(meaning_to_be_decided ?id)
+;(id-root ?id1 ?str)
+;(test (and (neq (numberp ?str) TRUE) (neq (gdbm_lookup_p "animate.gdbm" ?str) TRUE)))
+(id-word ?id1 cricket|show)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(not(id-cat_coarse ?id verb))
+=>
+(retract ?mng)
+(assert (id-wsd_word_mng ?id vAswava))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng   " ?*wsd_dir* "  live.clp 	live13   "  ?id "  vAswava )" crlf))
+)
+
+
+;============need-to-be-handled==============
+;Was the concert recorded or it was live?
+
 
 ;default_sense && category=verb	jIviwa raha	0
 ;"live","V","1.jIviwa rahanA"

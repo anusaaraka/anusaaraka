@@ -1,9 +1,12 @@
-
+;$$$ Modified by Anita--20.2.2014
+;We must return them to their rightful owner, How can you do that? [by mail]
+;हमें उनके असली मालिक को ये मोती लौटा देना चाहिए,आप ऐसा कैसे कर सकते हैं?
 (defrule return0
 (declare (salience 5000))
 (id-root ?id return)
 ?mng <-(meaning_to_be_decided ?id)
-(kriyA-object ?id ?)
+;(kriyA-object ?id ?);Commented by Anita
+(kriyA-to_saMbanXI  ?id ?) ; Added by Anita
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)

@@ -12,14 +12,21 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  consider.clp  	consider0   "  ?id "  XyAna_meM_raKa_kara )" crlf))
 )
 
-;Added by Roja Suggested by Chaitanya Sir(17-08-13)
+;$$$ Modified by Preeti(28-2-14) --- added is_being_en|are_en in the list and also added +1 adjective
+;Who do you consider responsible for the accident? 
+;Apa xurGatanA ke liye kisako uwwaraxAyI mAnawe hEM?
+;The company is being actively considered as a potential partner. 
+;kampanI ko sakriya rUpa se eka sAmarWya sAJIxAra kI waraha  mAnA jA rahI hE. 
+;These workers are considered as a high-risk group. 
+;Ina majaxUroM ko eka ucca joKima samUha kI waraha mAnA gayA hEM.
+;@@@ Added by Roja Suggested by Chaitanya Sir(17-08-13)
 ;Teaching is considered an apt calling for women.
 ;Jumma masjid is considered to be one of the most beautiful mosques in western india. 
 (defrule consider_is_en
 (declare (salience 4950))
 (id-root ?id consider)
 ?mng <-(meaning_to_be_decided ?id)
-(root-verbchunk-tam-chunkids consider ? is_en  $?ids)
+(or (root-verbchunk-tam-chunkids consider ? is_en|is_being_en|are_en $? ?id $?)(id-cat_coarse =(+ ?id 1) adjective))
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -72,6 +79,39 @@
 (assert (id-wsd_root_mng ?id samaJa))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  consider.clp 	consider4   "  ?id "  samaJa )" crlf))
+)
+
+;@@@ Added by Preeti(28-2-14)
+;He considers himself an expert on the subject. 
+;vaha svayaM ko viRaya meM nipuNa mAnawA hE.
+(defrule consider7
+(declare (salience 4950))
+(id-root ?id consider)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?id1)
+(id-root ?id1 behaviour|attitude)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id mAna))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  consider.clp  consider7   "  ?id "  mAna )" crlf))
+)
+
+;@@@ Added by Preeti(28-2-14)
+;He considers himself an expert on the subject. 
+;vaha svayaM ko viRaya meM nipuNa mAnawA hE.
+(defrule consider6
+(declare (salience 4950))
+(id-root ?id consider)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(id-word ?id considers )
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id mAna))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  consider.clp  consider6   "  ?id "  mAna )" crlf))
 )
 
 (defrule consider5

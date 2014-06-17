@@ -36,8 +36,43 @@
 ;--"3.maCalI{eka_prakAra}"
 ;There are many perchs in my acquarium.
 ;
+
+;Added by Sonam Gupta MTech IT Banasthali 2013
+;The village is perched on top of a high hill. [Cambridge]
+;गाँव एक ऊँची पहाडी के ऊपर बसाया हुआ है . 
 (defrule perch2
 (declare (salience 4800))
+(id-root ?id perch)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(id-root ?id1 village|town|city|house|hotel|shop)
+(kriyA-subject  ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id basA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  perch.clp 	perch2   "  ?id "  basA )" crlf))
+)
+
+;Added by Sonam Gupta MTech IT Banasthali 2013
+;Perched the baby in a basket. [MW]
+;डलिया में शिशु बैठाया . 
+(defrule perch3
+(declare (salience 4700))
+(id-root ?id perch)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(id-root ?id1 baby)
+(kriyA-object  ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bETAyA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  perch.clp 	perch3   "  ?id "  bETAyA )" crlf))
+)
+
+(defrule perch4
+(declare (salience 4600))
 (id-root ?id perch)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -45,7 +80,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id bETa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  perch.clp 	perch2   "  ?id "  bETa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  perch.clp 	perch4   "  ?id "  bETa )" crlf))
 )
 ;"perch","V","1.bETanA{adde_para}"
 ;The birds perched over the roof.

@@ -35,3 +35,35 @@
 ;--"2.xiSA_baxalanA"
 ;He tacked the ship by turning the sail with favorable wind.
 ;
+
+
+;Added by Prachi RAthore[02-12-13]
+;The poems were tacked on at the end of the book.
+(defrule tack2
+(declare (salience 4900))
+(id-root ?id tack)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-upasarga  ?id ?id1)
+(id-word ?id1 on)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 lagA_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " tack.clp	tack2  "  ?id "  " ?id1 "  lagA  )" crlf))
+)
+
+;Added by Prachi RAthore[02-12-13]
+; They tacked one more provision onto the deal. ▪ The porch looked like it was just tacked on/onto the house..
+(defrule tack3
+(declare (salience 4900))
+(id-root ?id tack)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(or(kriyA-onto_saMbanXI  ?id ?)(kriyA-on_saMbanXI  ?id ?))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id jalxabAjI_me_joda))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  tack.clp 	tack3   "  ?id "  jalxabAjI_me_joda )" crlf))
+)

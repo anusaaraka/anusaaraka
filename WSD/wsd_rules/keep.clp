@@ -589,9 +589,10 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id raKa))
+(assert (kriyA_id-object2_viBakwi ?id ko))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  keep.clp 	keep34   "  ?id "  raKa )" crlf))
-(assert (kriyA_id-object2_viBakwi ?id ko))
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object2_viBakwi   " ?*wsd_dir* "  keep.clp      keep34   "  ?id " ko )" crlf)
 )
 
 ;They kept him busy
@@ -604,11 +605,45 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id raKa));meaning is changed by sheetal from 'raha' to 'raKa'.
+(assert (id-wsd_root_mng ?id raKa)) ;meaning is changed by sheetal from 'raha' to 'raKa'.
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  keep.clp     keep35   "  ?id "  raKa )" crlf));inconsistency in the mng in assert & print statement has been corrected by Sukhada (15.3.10)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  keep.clp     keep35   "  ?id "  raKa )" crlf)) ;inconsistency in the mng in assert & print statement has been corrected by Sukhada (15.3.10)
 )
 ;Abandoned children are kept in orphanages .
+
+;;@@@   ---Added by Prachi Rathore
+;When a child learns walking, he keeps walking.[old sentence]
+;जब बच्चा चलना सीखता है, तो वह चलना जारी रखता है . 
+(defrule keep36
+(declare (salience 5100))
+(id-root ?id keep)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-kqxanwa_karma  ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id jArI_raKa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  keep.clp 	keep36   "  ?id "  jArI_raKa)" crlf))
+)
+
+;@@@ Added by Sukhada(2-4-14)
+;I keep the promise. 
+;mEM vAxA niBawA hUz.
+(defrule keep_promise
+(declare (salience 5000))
+(id-root ?id keep)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object ?id ?id1)
+(id-root ?id1 promise)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id niBA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  keep.clp      keep_promise   "  ?id "  niBA )" crlf))
+)
+
+
 
 
 ;They kept silent.

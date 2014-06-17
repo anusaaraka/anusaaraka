@@ -1,119 +1,8 @@
-
+;----default-rule----
+;They learn Russian at school.
+;ve vixyAlaya para rUsI sIKawe hEM.
 (defrule learn0
-(declare (salience 5000))
-(id-root ?id learn)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id learning )
-(id-cat_coarse ?id noun)
-=>
-(retract ?mng)
-(assert (id-wsd_word_mng ?id jFAna))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  learn.clp  	learn0   "  ?id "  jFAna )" crlf))
-)
-
-;"learning","N","1.jFAna/vixyA"
-;He is a man of learning.
-;
-(defrule learn1
-(declare (salience 4900))
-(id-root ?id learn)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id learned )
-(id-cat_coarse ?id adjective)
-=>
-(retract ?mng)
-(assert (id-wsd_word_mng ?id vixvAna))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  learn.clp  	learn1   "  ?id "  vixvAna )" crlf))
-)
-
-;"learned","Adj","1.vixvAna"
-;A learned professor. 
-;--"2.paDe liKe vyakwiyoM kA samUha"
-;A learned society.
-;
-;
-(defrule learn2
-(declare (salience 4800))
-(id-root ?id learn)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 hindi)
-(kriyA-object ?id1 ?id)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id sIKanA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  learn.clp 	learn2   "  ?id "  sIKanA )" crlf))
-)
-
-(defrule learn3
-(declare (salience 4700))
-(id-root ?id learn)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 kannada)
-(kriyA-object ?id1 ?id)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id sIKanA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  learn.clp 	learn3   "  ?id "  sIKanA )" crlf))
-)
-
-(defrule learn4
-(declare (salience 4600))
-(id-root ?id learn)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 marathi)
-(kriyA-object ?id1 ?id)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id sIKanA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  learn.clp 	learn4   "  ?id "  sIKanA )" crlf))
-)
-
-(defrule learn5
-(declare (salience 4500))
-(id-root ?id learn)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 english)
-(kriyA-object ?id1 ?id)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id sIKanA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  learn.clp 	learn5   "  ?id "  sIKanA )" crlf))
-)
-
-(defrule learn6
-(declare (salience 4400))
-(id-root ?id learn)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 french)
-(kriyA-object ?id1 ?id)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id sIKanA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  learn.clp 	learn6   "  ?id "  sIKanA )" crlf))
-)
-
-(defrule learn7
-(declare (salience 4300))
-(id-root ?id learn)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 german)
-(kriyA-object ?id1 ?id)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id sIKanA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  learn.clp 	learn7   "  ?id "  sIKanA )" crlf))
-)
-
-(defrule learn8
-(declare (salience 4200))
+(declare (salience 50))
 (id-root ?id learn)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -121,16 +10,109 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id sIKa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  learn.clp 	learn8   "  ?id "  sIKa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  learn.clp 	learn0   "  ?id "  sIKa )" crlf))
 )
 
-;"learn","V","1.vixyA_arjana_karanA"
-;He is learning new techniques of scientific experimentation in this field.
-;--"2.sIKanA"
-;He learnt swimming at a very early age. 
-;--"3.ratanA"
-;(by heart) She has learnt the poem by heart. 
-;--"4.sUcanA pAnA"
-;I learnt about his mother's demise yesterday only.
-;
-;
+;Modified by Nandini 28-10-13
+;We only learned who the new teacher was a few days ago.[advanced oxford leraner dictionary]
+;hamane sirPa kuCa xina pahale jAnA nayA SikRaka  kOna WA.
+(defrule learn1
+(declare (salience 60))
+(id-root ?id learn)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-about_saMbanXI  ?id ?id1)
+;(id-word ?id1 learned)
+(id-cat_coarse ?id1 adverb)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id jAna))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  learn.clp  	learn1   "  ?id "  jAna )" crlf))
+)
+
+
+;I later learnt that the message had never arrived.
+;mEM bAxa meM jAnI ki sanxeSa kaBI nahIM pahuzca gayA.
+(defrule learn2
+(declare (salience 60))
+(id-root ?id learn)
+?mng <-(meaning_to_be_decided ?id)
+(or (kriyA-aXikaraNavAcI  ?id ?id1) (kriyA-kriyA_viSeRaNa  ?id ?id1))
+(id-cat_coarse ?id1 adverb)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id jAna))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  learn.clp  	learn2   "  ?id "  jAna )" crlf))
+)
+
+;We were all shocked to learn of his death.[advanced oxford leraner dictionary]
+;usakI mqwyu kI Kabar jAnakar hama sabako  saxamA pahuzcA WA.
+(defrule learn3
+(declare (salience 60))
+(id-root ?id learn)
+?mng <-(meaning_to_be_decided ?id)
+(or(saMjFA-to_kqxanwa ?id1 ?id)(kriyA-kriyArWa_kriyA  ? ?id))
+(id-cat_coarse ?id verb)
+(id-cat_coarse ?id1 adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id jAna))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  learn.clp  	learn3   "  ?id "  jAna )" crlf))
+)
+
+;How did they react when they learned the news?[advanced oxford leraner dictionary]
+;unakI  kyA prawikriyA WI jaba unhoMne samAcAra sunA?
+(defrule learn4
+(declare (salience 60))
+(id-root ?id learn)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 news)
+(kriyA-object  ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id jAna))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  learn.clp  	learn4   "  ?id "  jAna )" crlf))
+)
+
+;It has been learned that 500 jobs are to be lost at the factory.[advanced oxford leraner dict]
+;yaha mAluma padA gayA hE ki 500 kAma PEktarI meM Koe jAne hEM.
+(defrule learn5
+(declare (salience 70))
+(id-root ?id learn)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 it)
+(kriyA-subject  ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id mAluma_pada))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  learn.clp  	learn5   "  ?id "  mAluma_pada )" crlf))
+)
+
+
+;They learned very well.
+;unhoMne bahuwa acCA jAnA.
+;(defrule learn2
+;(declare (salience 70))
+;(id-root ?id learn)
+;?mng <-(meaning_to_be_decided ?id)
+;(kriyA-kriyA_viSeRaNa  ?id ?id1)
+;(id-cat_coarse ?id verb)
+;(id-cat_coarse ?id1 adverb)
+;=>
+;(retract ?mng)
+;(assert (id-wsd_root_mng ?id siKa))
+;(if ?*debug_flag* then
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  learn.clp  	;learn2   "  ?id "  siKa )" crlf))
+;)
+
+;==========Additional-examples==========
+;I learnt of her arrival from a close friend.
+;I only learnt about the accident later.
