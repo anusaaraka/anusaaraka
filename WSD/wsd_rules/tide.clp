@@ -27,6 +27,23 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " tide.clp	tide1  "  ?id "  " ?id1 "  pAra_lagA  )" crlf))
 )
 
+
+;@@@ Added by Prachi Rathore[6-2-14]
+;A tide of optimism.[oald]
+;आशावाद की लहर . 
+(defrule tide4
+(declare (salience 5000))
+(id-root ?id tide)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-of_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id lahara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  tide.clp 	tide4   "  ?id "  lahara )" crlf))
+)
+;xxxxxxxxxxxxxxxxxx Defaul Rule xxxxxxxxxxxxxxxxxxx
 (defrule tide2
 (declare (salience 4800))
 (id-root ?id tide)

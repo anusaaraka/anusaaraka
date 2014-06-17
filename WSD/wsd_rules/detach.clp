@@ -16,9 +16,9 @@
 ;A detached part of the body can't be attached again.
 ;So many  detached houses are there in the town. 
 ;The detached shutter fell on him
-;
+
 (defrule detach1
-(declare (salience 4900))
+(declare (salience 4000))
 (id-root ?id detach)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -27,6 +27,40 @@
 (assert (id-wsd_root_mng ?id pqWaka_kara))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  detach.clp 	detach1   "  ?id "  pqWaka_kara )" crlf))
+)
+
+;@@@ Added by Pramila(Banasthali University) on 13-12-2013
+;The police was detached to apprehend the culprit.          ;sentence of this file
+;aBiyukwa ko pakadZane ke lie pulisa Beja xI gayI.
+(defrule detach2
+(declare (salience 5000))
+(id-root ?id detach)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-kriyArWa_kriyA  ?id ?id1)
+(to-infinitive  ?id2 ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Beja))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  detach.clp 	detach2   "  ?id "  Beja )" crlf))
+)
+
+;@@@ Added by Pramila(Banasthali University) on 13-12-2013
+;She detached herself from his embrace.      ;oald
+;उसने उसके आग़ोश से स्वयं को अलग किया.
+(defrule detach3
+(declare (salience 5000))
+(id-root ?id detach)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?id ?id1)
+(id-word ?id1 myself|herself|themselves|ourselves|himself|itself)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id alag_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  detach.clp 	detach3   "  ?id "  alag_kara )" crlf))
 )
 
 ;"detach","VT","1.pqWaka_karanA"

@@ -110,9 +110,6 @@
 ;I like to lie in on holidays.
 ;muJe avakASa meM sonA pasaMxa hE
 
-
-
-
 (defrule lie6
 (declare (salience 4400))
 (id-root ?id lie)
@@ -131,9 +128,6 @@
 ; The decision lies with you to do it or not..
 ;ise karane yA na karane kA PZEsalA wuma para nirBara karawA hE
 
-
-
-
 (defrule lie7
 (declare (salience 4300))
 (id-root ?id lie)
@@ -147,10 +141,6 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " lie.clp	lie7  "  ?id "  " ?id1 "  so  )" crlf))
 )
-
-
-
-
 
 (defrule lie8
 (declare (salience 4100))
@@ -180,10 +170,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  lie.clp  	lie9   "  ?id "  aviSeRajFa- )" crlf))
 )
 
-
-
-
-
 (defrule lie10
 (declare (salience 3900))
 (id-root ?id lie)
@@ -200,8 +186,6 @@
 ;Whatever he has said is a pack of lies.
 ;
 
-
-
 ;Added by Meena(12.5.11)
 ;She always leaves her clothes lying about on the floor.
 (defrule lie11
@@ -217,14 +201,10 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lie.clp       lie11   "  ?id "  pade_hue )" crlf))
 )
 
-
-
-
-
-
 ;Salience reduced by Meena(12.5.11)
 (defrule lie12
 ;(declare (salience 3800))
+(declare (salience 50))
 (id-root ?id lie)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -234,6 +214,59 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lie.clp 	lie12   "  ?id "  JUTa_bola )" crlf))
 )
+
+;@@@ Added by Nandini (4-12-13)
+;This is the Pole Star that lies towards the north.
+;यह ध्रुव तारा है, जो उत्तर दिशा में दिखाई देता है।
+(defrule lie13
+(declare (salience 5500))
+(id-root ?id lie)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-towards_saMbanXI  ?id ?id1)
+(id-word ?id1 north|south)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sWiwa_ho))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  lie.clp  	lie13   "  ?id "  sWiwa_ho )" crlf))
+)
+
+;@@@ Added by Nandini (12-12-13)
+;The body was lying in a pool of blood. (via mail)
+;SarIra KUna ke wAla meM lahUluhAna_padA_huA WA.
+(defrule lie14
+(declare (salience 3850))
+(id-root ?id lie)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-in_saMbanXI  ?id ?id1)
+;(id-word ?id1 body)
+;(kriyA-subject  ?id ?id1)
+;(id-word ?id lying)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id lahUluhAna_padA_ho))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lie.clp       lie14   "  ?id "  lahUluhAna_padA_ho )" crlf))
+)
+
+;@@@ Added by Nandini (12-12-13)
+;I spent most of my holiday lying sunbathing by the pool. (via mail)
+;mEMne apanI aXika CuttiyAZ wErane ke wAlAba ke kinAre letakara XUpa-snAna karawe hue  biwAyI.
+(defrule lie15
+(declare (salience 3860))
+(id-root ?id lie)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-kqxanwa_karma  ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id letakara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lie.clp       lie15   "  ?id "  letakara )" crlf))
+)
+
 
 ;"lie","V","1.JUTa_bolanA"
 ;He lied to me about his experience.

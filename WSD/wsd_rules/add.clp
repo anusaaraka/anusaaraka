@@ -1,4 +1,61 @@
 
+;@@@ Added by Garima Singh(M.tech-C.S, Banasthali Vidyapith) 15/03/2014
+;When two quantities are added or subtracted the absolute error in the final result is the sum of the absolute errors in the individual quantities[ncert]
+;जब दो राशियों को सङ्कलित या व्यवकलित किया जाता है, तो अन्तिम परिणाम में निरपेक्ष त्रुटि उन राशियों की निरपेक्ष त्रुटियों के योग के बराबर होती है..
+(defrule add6
+(declare (salience 4750))
+(id-word ?id added)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 quantities)
+(kriyA-subject  ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id safkaliwa_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " add.clp  add6  " ?id "   safkaliwa_kara  )" crlf))
+)
+
+;@@@ Added by Garima Singh(M.tech-C.S, Banasthali Vidyapith) 15/03/2014
+;In other words we can add or subtract similar physical quantities.[ncert]
+;दूसरे शब्दों में, हम केवल एक ही प्रकार की राशियों का सङ्कलन या व्यवकलन कर सकते हैं
+(defrule add7
+(declare (salience 4750))
+(id-root ?id add)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 quantities)
+(kriyA-object  ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id safkalana_kara))
+(assert (kriyA_id-object_viBakwi ?id kA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " add.clp  add7  " ?id "   safkalana_kara  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  add.clp      add7   "  ?id " kA )" crlf)
+)
+)
+
+;@@@ Added by Garima Singh(M.tech-C.S, Banasthali Vidyapith) 18/03/2014
+;Scalars can be added subtracted multiplied and divided just as the ordinary numbers.[ncert]
+;अदिशों को हम ठीक वैसे ही जोड सकते हैं, घटा सकते हैं, गुणा या भाग कर सकते हैं जैसा कि हम सामान्य सङ्ख्याओं के साथ करते हैं .
+(defrule add8
+(declare (salience 4750))
+(id-root ?id add)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 scalars|numbers|vectors)
+(or(kriyA-subject  ?id ?id1)(kriyA-object  ?id ?id1))
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id jodZa))
+(assert (kriyA_id-subject_viBakwi ?id ko))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " add.clp  add8  " ?id "   jodZa  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  add.clp      add8   "  ?id " ko )" crlf)
+)
+)
+
 (defrule add0
 (declare (salience 5000))
 (id-root ?id add)
@@ -26,6 +83,8 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " add.clp	add1  "  ?id "  " ?id1 "  Pira_jodZa  )" crlf))
 )
+
+
 
 (defrule add2
 (declare (salience 4800))

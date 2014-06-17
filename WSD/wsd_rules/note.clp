@@ -72,7 +72,25 @@
 
 ;"note","VT","1.XyAna_se_xeKanA"
 ;Take note of this chemical reaction.
-;
+
+;@@@ Added by Nandini
+;Ann blew a few notes on the trumpet.
+;ann ne wurahI para kuCa swara bajAe.
+(defrule note4
+(declare (salience 4850))
+(id-root ?id note)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?id1 ?id)
+(id-root ?id1 blow)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id swara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  note.clp 	note4   "  ?id " swara )" crlf))
+)
+
+
 ;LEVEL 
 ;
 ;

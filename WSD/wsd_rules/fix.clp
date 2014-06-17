@@ -37,6 +37,10 @@
 
 ;Have you fixed on a date for your party?
 ;kyA wumane apanI pArtI kI wArIKZa waya kara lI hE?
+
+
+;He then [varied] the charges in pairs, keeping the distance [fixed] for each pair.   [physics]
+;तत्पश्चात उन्होंने प्रत्येक युगल के लिए  निश्चित की हुई दूरी रखकर युगलों में आवेशों में परिवर्तन किया .
 (defrule fix2
 (declare (salience 4800))
 (id-root ?id fix)
@@ -44,9 +48,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id niSciwa_ho))
+(assert (id-wsd_root_mng ?id niSciwa_kara))  ;meaning modified by Pramila(Banasthali University) on 23-10-2013
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fix.clp 	fix2   "  ?id "  niSciwa_ho )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  fix.clp 	fix2   "  ?id "  niSciwa_kara )" crlf))
 )
 
 (defrule fix3

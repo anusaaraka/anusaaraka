@@ -26336,7 +26336,7 @@ enroll_verb	nAmAvAlI_pawra_meM_liKa/nAma_liKA
 enrolled_UNDEFINED	nAmAvAlI_pawra_meM_liKanA
 enrollee_noun	nAmAfkiwa_vyakwi
 enrolling_UNDEFINED	nAmAvAlI_pawra_meM_liKanA
-enrollment_noun	nAma_liKAI/nAmAfkana
+enrollment_noun	nAmAfkana/nAma_liKAI
 enrolls_UNDEFINED	nAmAvAlI_pawra_meM_liKanA
 enrolment_noun	nAmAfkana
 enrols_UNDEFINED	nAmAvAlI_pawra_meM_liKanA
@@ -26554,7 +26554,7 @@ enviously_adverb	IrRyA_ke_sAWa
 environ_UNDEFINED	Gera
 environed_UNDEFINED	Gera
 environing_UNDEFINED	Gera
-environment_noun	pariveSa/vAwAvaraNa/paryAvaraNa
+environment_noun	paryAvaraNa/pariveSa/vAwAvaraNa
 environmental_adjective	paryAvaraNa_sambanXI/vAwAvaraNa_sambanXI
 environmentaler_UNDEFINED	paryAvaraNa_sambanXI
 environmentalest_UNDEFINED	paryAvaraNa_sambanXI
@@ -45117,7 +45117,7 @@ leftwards_adverb	vAmapanWa_kI_ora/bAzIM_waraPa/bAzIM_ora
 lefty_adjective	vAmapanWI
 lefty_noun	vAmapanWI/KabbA
 leg-room_noun	tAfge_pasArane_kI_jagaha
-leg_noun	tAfga/tAzga/rAna/pEra/pAyzacA/pAyA/lEga/pAzyacA/padAva
+leg_noun	tAzga/rAna/pEra/pAyzacA/pAyA/lEga/pAzyacA/padAva
 leg_verb	pEra_se_mAra/pera_se_mAra/pEra_hil/cala/BAga
 legacies_UNDEFINED	paramparA_meM_prApwa
 legacy_noun	pEwrika_sampawwi/virAsawa/pEwqka_sampawwi/paramparA_meM_prApwa
@@ -92524,8 +92524,7 @@ woundeds_UNDEFINED	GAyala_huA
 wounding_adjective	cota_pahuzcAne_vAlA
 wounding_noun	jaKma/GAva/cota
 wounds_UNDEFINED	GAyala_karanA
-wove_UNDEFINED	eka_hI_kaWAsUwra_meM_graWiwa_karanA
-woven_UNDEFINED	eka_hI_kaWAsUwra_meM_graWiwa_karanA
+wove_verb	eka_hI_kaWAsUwra_meM_graWiwa_kara
 woven_adjective	guzWA_huA/bunA_huA
 woven_verb	eka_hI_sUwra_meM_graWiwa_kara
 wow_noun	jabarxaswa_majAka

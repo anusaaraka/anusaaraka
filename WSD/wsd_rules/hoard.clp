@@ -31,3 +31,18 @@
 ;kisAna ko apane Kewa meM se 'hoard'(gupwa Xana)milA.
 ;
 ;
+
+;;@@@ Added by Prachi Rathore[3-2-14]
+;There would be enough food on a daily basis if people were not hoarding it. [cambridge]
+;??
+(defrule hoard2
+(declare (salience 4900))
+(id-root ?id hoard)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id saMcaya_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  hoard.clp 	hoard2   "  ?id "  saMcaya_kara )" crlf))
+)

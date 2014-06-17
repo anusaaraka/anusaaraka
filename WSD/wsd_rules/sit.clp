@@ -43,6 +43,24 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " sit.clp	sit2  "  ?id "  " ?id1 "  bETa  )" crlf))
 )
 
+;@@@ Added by Shirisha Manju 2-05-14  --- Suggested by Chaitanya Sir
+;He sat back and lit up a cigarette.   OALD
+;vaha ArAma_se bETA Ora sigareta jalAI.
+(defrule sit_back
+(declare (salience 4800))
+(id-root ?id sit)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-kriyA_viSeRaNa ?id ?id1)
+(id-root ?id1 back)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 ArAma_se_bETa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " sit.clp  sit_back  "  ?id "  " ?id1 "  ArAma_se_bETa  )" crlf))
+)
+
+
+
 (defrule sit3
 (declare (salience 4700))
 (id-root ?id sit)
@@ -56,6 +74,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  sit.clp 	sit3   "  ?id "  bETa )" crlf))
 )
 ; Modified wsd_word_mng bETA_huA  as wsd_root_mng  bETa  by manju
+
 
 (defrule sit4
 (declare (salience 4600))

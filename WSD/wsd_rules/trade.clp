@@ -143,3 +143,24 @@
 ;He traded his stamp-collection for a coin-collection.
 ;
 ;
+
+;@@@ Added by Prachi Rathore[10-2-14]
+;They were attempting to trade off inflation against unemployment.[oald]
+;वे बेरोजगारी के विरुद्ध मुद्रा स्फीति का समझोता करने का प्रयास कर रहे थे . 
+(defrule trade9
+(declare (salience 4800))
+(id-root ?id trade)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 off)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 samaJOwA_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " trade.clp	trade9  "  ?id "  " ?id1 "  samaJOwA_kara  )" crlf))
+)
+
+
+
+

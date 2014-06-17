@@ -12,10 +12,27 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  side.clp  	side0   "  ?id "  bagalI_relapaWa )" crlf))
 )
 
+;@@@ Added by jagriti(2.12.2013)
+;The ingredients are listed on the side of the box. [cambridge dictionary]
+;सामग्री बॉक्स की सतह पर सूचीबद्ध हैं.
+(defrule side1
+(declare (salience 4800))
+(id-root ?id side)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(or(kriyA-on_saMbanXI ? ?id)(viSeRya-saMKyA_viSeRaNa ?id ?))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sawaha))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  side.clp 	side1   "  ?id "  sawaha )" crlf))
+)
+
+
 ;"siding","N","1.bagalI relapaWa"
 ;
-(defrule side1
-(declare (salience 4900))
+(defrule side2
+(declare (salience 1))
 (id-root ?id side)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -23,7 +40,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id waraPZa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  side.clp 	side1   "  ?id "  waraPZa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  side.clp 	side2   "  ?id "  waraPZa )" crlf))
 )
 
 ;"side","N","1.waraPZa"
@@ -49,8 +66,8 @@
 ;vaha Sahara ke xUra vAle Baga/hisse meM rahawA hE.
 
 
-(defrule side2
-(declare (salience 4800))
+(defrule side3
+(declare (salience 1))
 (id-root ?id side)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -58,7 +75,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kA_pakRa_le))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  side.clp 	side2   "  ?id "  kA_pakRa_le )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  side.clp 	side3   "  ?id "  kA_pakRa_le )" crlf))
 )
 
 ;"side","V","1.kA_pakRa_lenA/kA_samarWana_karanA"

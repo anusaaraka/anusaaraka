@@ -1,18 +1,74 @@
-
+;$$$ modified by pramila(BU) on 05-12-2013
+;This kind of work exhausts me.
 (defrule exhaust0
 (declare (salience 5000))
+(id-root ?id exhaust)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?id ?id1)
+(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id WakA_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  exhaust.clp 	exhaust0   "  ?id "  WakA_xe )" crlf))
+)
+
+;@@@ added by pramila(BU) on 05-12-2013
+(defrule exhaust1
+(declare (salience 5000))
+(id-root ?id exhaust)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject  ?id ?id1)
+(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Waka_jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  exhaust.clp 	exhaust1   "  ?id "  Waka_jA )" crlf))
+)
+
+;@@@ added by pramila(BU) on 05-12-2013
+;But a stage will come in the life of a star when it exhausts the available hydrogen in its central hot region.
+;परंतु हर तारे के जीवन में एक ऐसी अवस्था आयेगी जब उसके केंद्रीय गर्म क्षेत्र में हाइड्रोजन खत्म हो जायेगी।
+;The Sun will also go through this process after it has exhausted its central fuel of hydrogen.
+;सूर्य भी इस प्रक्रिया से गुजरेगा, जब इसका हाइड्रोजन का केंद्रीय ईंधन खत्म हो जायेगा।
+(defrule exhaust2
+(declare (salience 3000))
 (id-root ?id exhaust)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id Waka))
+(assert (id-wsd_root_mng ?id Kawma_ho_jA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  exhaust.clp 	exhaust0   "  ?id "  Waka )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  exhaust.clp 	exhaust2   "  ?id "  Kawma_ho_jA )" crlf))
 )
 
-(defrule exhaust1
-(declare (salience 4900))
+
+;@@@ added by pramila(BU) on 05-12-2013
+;Increased use of the well water has exhausted it.
+;kuez ke pAnI ke aXika prayoga ne ise samApwa_kara_xiyA hE.
+(defrule exhaust3
+(declare (salience 5000))
+(id-root ?id exhaust)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject  ?id ?id1)
+(viSeRya-viSeRaNa  ?id1 ?id2)
+(id-root ?id2 increase)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id samApwa_kara_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  exhaust.clp 	exhaust3   "  ?id "  samApwa_kara_xe )" crlf))
+)
+
+
+
+(defrule exhaust4
+(declare (salience 4000))
 (id-root ?id exhaust)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -20,7 +76,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id recaka_yaMwra))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  exhaust.clp 	exhaust1   "  ?id "  recaka_yaMwra )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  exhaust.clp 	exhaust4   "  ?id "  recaka_yaMwra )" crlf))
 )
 
 ;default_sense && category=verb	WakA_xe	0
@@ -77,3 +133,35 @@
 ;
 ;sUwra :samApwa_karanA[<KIMca_nikAlanA...]^[recaka]_yaMwra
 ;
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_exhaust3
+(declare (salience 5000))
+(id-root ?id exhaust)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject  ?id ?id1)
+(subject-subject_samAnAXikaraNa ?id1 ?id2)
+(id-root ?id2 increase)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id samApwa_kara_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " exhaust.clp   sub_samA_exhaust3   "   ?id " samApwa_kara_xe )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_exhaust3
+(declare (salience 5000))
+(id-root ?id exhaust)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject  ?id ?id1)
+(object-object_samAnAXikaraNa ?id1 ?id2)
+(id-root ?id2 increase)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id samApwa_kara_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " exhaust.clp   obj_samA_exhaust3   "   ?id " samApwa_kara_xe )" crlf))
+)

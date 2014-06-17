@@ -41,6 +41,7 @@ def replace_item(Str, List):
 	
 sent_count = int(sys.argv[4])
 align_dic = {}
+flag = 0 
 for line in open(sys.argv[1]):
 	if '\t' in line:
 		lst = line[:-2].split('\t') #(anu_id-anu_mng-man_mng	1	More	aXika)
@@ -48,7 +49,8 @@ for line in open(sys.argv[1]):
 		val = lst[2] + '\t' + lst[3]
 		align_dic[int(key)] = val
 	if 'Construction mismatch' in line:
-		print line.strip()	
+		print line.strip()
+		flag = 1	
 	if ';~~~~~~~~~~\n' in line:
 #		sent_count += 1
 		align_dic = {}
@@ -121,6 +123,7 @@ for key in sorted(align_dic):
 								elif '_' in val[1]:
 									v = val[1].split('_')
 									if hi_s_l[index-1] == v[1] and hi_s_l[index-2] == v[0]:
+#										print int(key+1), v[1], v[0]
 										tmp_v = align_dic[int(key+1)].split('\t')
 										if tmp_v[1] == '-':
 											 new_v =  tmp_v[0] + '\t' + left_lst[i]
@@ -134,12 +137,19 @@ for key in sorted(align_dic):
 
 
 	print '(anu_id-anu_mng-man_mng' + '\t' + str(key) + '\t' + align_dic[key] + ')'
+al_left_file.write('@left_@over_@words:::\t')
 for each in phrase_left_over_lst:
-	if each != 'REPLACED':
-		al_left_file.write('%s '  % each)
+	if each == 'Construction' and each == 'mismatch':
+		al_left_file.write('@%s' % each)
+#	elif each != 'REPLACED':
+	elif (each != 'REPLACED' and   each != 'Construction' and  each != 'mismatch' and each != ' '):
+		al_left_file.write(' %s /'  % each)
 for each in left_lst:
-	if each != 'REPLACED':
-		al_left_file.write('%s '  % each)
+	if each == 'Construction' and each == 'mismatch':
+		pass
+	elif (each != 'REPLACED' and  each != 'Construction' and each != 'mismatch' and  each != ' '):
+#	elif each != 'REPLACED':
+		al_left_file.write(' %s /'  % each)
 al_left_file.write('\n;~~~~~~~~~~\n')
 #print '^^^', left_lst
 #print '***', phrase_left_over_lst	

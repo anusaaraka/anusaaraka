@@ -19,9 +19,9 @@
 ;##############################################################################
 
 
-;It was a radical departure from tradition.	[OALD]
+;It was a radical departure from tradition.	;OALD
 ;यह परंपरा से एक स्वाभाविक व्यतिकरण था.
-;Any violation of Gauss's law will indicate departure from the inverse square law.	[physics_NCERT]
+;Any violation of Gauss's law will indicate departure from the inverse square law.	;physics
 ;गाउस नियम का कोई उल्लङ्घन व्युत्क्रम वर्ग नियम से व्यतिकरण को सङ्केत करेगा.
 (defrule departure0
 (declare (salience 5000))
@@ -38,11 +38,11 @@
 
 ;-----------------------------default rules-------------------------------------------------------------
 
-;Flights should be confirmed 48 hours before departure.	[OALD]
+;Flights should be confirmed 48 hours before departure.	;OALD
 ;उड़ानें रवानगी से 48 घंटे पहले  निश्चित हो जानी चाहिए.
-;All departures are from Manchester.			[OALD]
+;All departures are from Manchester.	;Oald
 ;सभी रवानगी मैनचेस्टर से हैं.
-;Our departure was delayed because of bad weather. 	[Cambridge]
+;Our departure was delayed because of bad weather. 	;Cambridge
 ;हमारी रवानगी खराब मौसम के कारण देरी से हुई.
 (defrule departure1
 (declare (salience 4000))

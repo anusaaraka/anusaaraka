@@ -26,8 +26,8 @@
 (id-root ?id emerge)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-kriyA_viSeRaNa  ?id ?id1)
+(kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka  ?id1 ?id2)
 (id-cat_coarse ?id verb)
-(not (id-root ?id1 suddenly)) ; Suddenly, the proprietor emerged from his office.
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id vikasiwa_ho))
@@ -53,8 +53,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  emerge.clp 	emerge1   "  ?id " uBara_kara_A  )" crlf))
 )
 
-;------------------------------ Default rules ----------------------------------------
-
 ;Suddenly, the proprietor emerged from his office.
 ;अचानक, मालिक अपने कार्यालय  से निकला.
 ;acAnaka, mAlika apane kAryAlaya  se nikalA.
@@ -68,9 +66,10 @@
 ;vaha prawiRTA ke sAWa apanI agni parIkRA se nikalA.
 
 (defrule emerge2
-(declare (salience 4000))
+(declare (salience 5000))
 (id-root ?id emerge)
 ?mng <-(meaning_to_be_decided ?id)
+(kriyA-from_saMbanXI  ?id ?id1)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -79,7 +78,20 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  emerge.clp 	emerge2   "  ?id " nikala  )" crlf))
 )
 
+;----------------default rules----------------------------------------------------------------------------------------------------------------
 (defrule emerge3
+(declare (salience 4000))
+(id-root ?id emerge)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id nikala))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  emerge.clp 	emerge3   "  ?id " nikala  )" crlf))
+)
+
+(defrule emerge4
 (declare (salience 3000))
 (id-root ?id emerge)
 ?mng <-(meaning_to_be_decided ?id)
@@ -87,6 +99,6 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id prakata_ho))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  emerge.clp 	emerge3   "  ?id " prakata_ho  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  emerge.clp 	emerge4   "  ?id " prakata_ho  )" crlf))
 )
 

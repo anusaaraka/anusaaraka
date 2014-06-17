@@ -9,7 +9,7 @@
 (id-word ?id founded)
 (kriyA-subject ?id ?id1)
 (id-root ?id1 college|institution|organisation|club|school|city|town|company|country)
-(kriyA-in_saMbanXI  ?id ?id2)
+;(kriyA-in_saMbanXI  ?id ?id2)
 (kriyA-by_saMbanXI  ?id ?id3)
 =>
 (retract ?mng)
@@ -120,7 +120,7 @@
 ;Added by Pramila(Banasthali University)
 ;Danish found that compass needle is deflected by passing an electric current through a wire placed near the needle.
 (defrule found4
-(declare (salience 2900))
+(declare (salience 3100))
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id found )
 (id-word =(+ ?id 1) that)
@@ -133,10 +133,27 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  found.clp      found4   "  ?id "  find )" crlf)
 )
 )
-
-;-------------------------------- Default --------------------------------------
+;He also argued that light is electromagnetic in nature and its speed can be found by making purely electric 
+;and magnetic measurements.----physics
+;उन्होंने यह भी प्रमाणित किया कि प्रकाश की प्रकृति वैद्युतचुम्बकीय है तथा इसकी चाल केवल विद्युत तथा चुम्बकीय मापों द्वारा प्राप्त की जा सकती है . 
 ;Added by Pramila(Banasthali University)
 (defrule found5
+(declare (salience 3400))
+(id-root ?id found)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-by_saMbanXI  ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id prApwa_kara))
+(assert (id-wsd_root ?id found))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  found.clp      found5   "  ?id "  prApwa_kara )" crlf)
+)
+)
+;-------------------------------- Default --------------------------------------
+;Added by Pramila(Banasthali University)
+(defrule found6
 (declare (salience 2900))
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id found)
@@ -145,8 +162,8 @@
 (assert (id-wsd_root_mng ?id pA))
 (assert (id-wsd_root ?id find))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  found.clp      found5   "  ?id "  pA )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  found.clp      found5   "  ?id "  find )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  found.clp      found6   "  ?id "  pA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  found.clp      found6   "  ?id "  find )" crlf)
 )
 )
 

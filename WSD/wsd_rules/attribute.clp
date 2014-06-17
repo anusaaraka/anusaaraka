@@ -14,6 +14,7 @@
 ;"attribute","N","1.guNa/BAva"
 ;His greatest attribute was his helpful nature.
 ;
+
 (defrule attribute1
 (declare (salience 4900))
 (id-root ?id attribute)
@@ -29,3 +30,5 @@
 ;"attribute","VT","1.sambanXa_TaharAnA"
 ;Attribute their illness to their poor diets.
 ;
+
+

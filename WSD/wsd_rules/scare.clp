@@ -1,6 +1,6 @@
 
 (defrule scare0
-(declare (salience 5000))
+(declare (salience 4000))
 (id-root ?id scare)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id scared )
@@ -17,9 +17,43 @@
 ; 
 ;"scary","Adj","1.darAvanA"
 ;The story was quite scary.
-;
-(defrule scare1
+;@@@ Added by jagriti(8.3.2014)
+;The dog barked and scared off/away the thief.[rajpal]
+;कुत्ते ने भौंककर चोर को भगा दिया . 
+(defrule scare3
+(declare (salience 5000))
+(id-root ?id scare)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-upasarga ?id ?id1)
+(id-root ?id1 off|away)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 BagA_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " scare.clp	scare3  "  ?id "  " ?id1 "   BagA_xe )" crlf))
+)
+;@@@ Added by jagriti(8.3.2014)
+;The sudden noise scared the child.[rajpal]
+;अचानक शोर ने बच्चे को डरा दिया .
+(defrule scare4
 (declare (salience 4900))
+(id-root ?id scare)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-object ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_word_mng ?id darA_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  scare.clp  	scare4   "  ?id "  darA_xe )" crlf))
+)
+
+
+;...default rule...
+
+(defrule scare1
+(declare (salience 100))
 (id-root ?id scare)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -34,7 +68,7 @@
 ;Her sudden appearance gave me a scare.
 ;
 (defrule scare2
-(declare (salience 4800))
+(declare (salience 100))
 (id-root ?id scare)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)

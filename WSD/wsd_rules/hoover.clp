@@ -1,4 +1,21 @@
+;@@@ Added by Prachi Rathore[7-2-14]
+;The US and Canada usually hoover up most of the gold medals.[oald]
+;यूएस और कनाडा आम तौर पर ज्यादातर स्वर्ण पदक बटोर लेते हैं . 
+(defrule hoover2
+(declare (salience 5000))
+(id-root ?id hoover)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-upasarga  ?id ?id1)
+(id-root ?id1 up)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 batora_le))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " hoover.clp 	hoover2  "  ?id "  " ?id1 "  batora_le )" crlf))
+)
 
+;xxxxxxxxxxxxxxxxx Default rule xxxxxxxxxxxxxxxxx
 (defrule hoover0
 (declare (salience 5000))
 (id-root ?id hoover)

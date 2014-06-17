@@ -33,7 +33,7 @@
 )
 
 (defrule excite2
-(declare (salience 4900))
+(declare (salience 4000))
 (id-root ?id excite)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -43,6 +43,25 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  excite.clp 	excite2   "  ?id "  uwwejiwa_kara )" crlf))
 )
+
+;@@@ added by pramila(BU) on 10-12-2013
+;She excited her friend for the competition.
+;usane apanI miwra ko prawiyogiwA ke liye jAgqwa kiyA.
+(defrule excite3
+(declare (salience 5000))
+(id-root ?id excite)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-for_saMbanXI  ?id ?id1)
+(id-root ?id1 competition)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id jAgqwa_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  excite.clp 	excite3   "  ?id "  jAgqwa_kara )" crlf))
+)
+
+
 
 ;"excite","VT","1.uwwejiwa_karanA"
 ;We were very much excited by the news of India's victory over Australia.

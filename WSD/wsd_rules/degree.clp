@@ -18,7 +18,7 @@
 ;
 ;##############################################################################
 
-
+;@@@ Added by pramila(BU)
 ;He got a degree in medicine from the famous medical college.
 ;उसने प्रसिद्ध मेडिकल कॉलेज से चिकित्सा में उपाधि प्राप्त की.
 ;She received the Bachelor of Arts degree at commencement.
@@ -37,7 +37,7 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  degree.clp 	degree0   "  ?id "  upAXi )" crlf))
 )
-
+;@@@ Added by pramila(BU)
 ;The angle can be measured in degrees.
 ;कोण अंशों में नापा जा सकता है . 
 ;Sum of all the three angles of a triangle is 180 degrees.
@@ -58,7 +58,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  degree.clp 	degree1   "  ?id "  aMSa )" crlf))
 )
 
-
+;@@@ Added by pramila(BU)
 ;It has a high degree of accuracy.
 ;इसमें सटीकता की एक उच्च स्तर है.
 ;It proceeded to the next degree of difficulty.  
@@ -67,7 +67,8 @@
 (declare (salience 4900))
 (id-root ?id degree)
 ?mng <-(meaning_to_be_decided ?id)
-(or(and(viSeRya-viSeRaNa  ?id ?id1)(viSeRya-of_saMbanXI  ?id ?id2))(samAsa_viSeRya-samAsa_viSeRaNa  ?id3 ?id))
+(viSeRya-viSeRaNa  ?id ?id1)
+(viSeRya-of_saMbanXI  ?id ?id2)
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
@@ -76,6 +77,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  degree.clp 	degree2   "  ?id "  swara )" crlf))
 )
 
+;@@@ Added by pramila(BU)
 ;We followed the degrees of her recovery with joy.
 ;हमने खुशी से उसके स्वाथ्य लाभ के स्तर का अनुसरण किया . .
 (defrule degree3
@@ -92,7 +94,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  degree.clp 	degree3   "  ?id "  swara )" crlf))
 )
 
-
+;@@@ Added by pramila(BU)
 ;They modernized their facilities to a large degree.
 ;उन्होनें अपनी सुविधाओं का आधुनिकीकरण एक बड़ी मात्रा में किया .
 ;The degree of ionisation varies with the height.
@@ -113,6 +115,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  degree.clp 	degree4   "  ?id " mAwrA )" crlf))
 )
 
+;@@@ Added by pramila(BU)
 ;Tall is the positive degree, taller the comparative degree, and tallest the superlative degree of the adjective tall.
 ;लंबा सकारात्मक डिग्री, लम्बे तुलनात्मक डिग्री, और विशेषण का सबसे बड़ा अतिशयोक्ति डिग्री लंबा है.
 ;The game was played in spite of the 40-degree temperature.
@@ -130,9 +133,44 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  degree.clp 	degree5   "  ?id " digrI  )" crlf))
 )
 
+;@@@ Added by pramila(BU) on 25-01-2014
+;The object of Asutosh in inviting scholars from all over the world to speak on their researches to the students and teachers of the 
+;Calcutta University and in instituting the degree of Doctor of Philosophy bore fruit.   ;gyannidhi
+;कलकत्ता विश्वविद्यालय के छात्रों और प्राध्यापकों से अपने शोध कार्य के बारे में बातचीत करने के लिए आशुतोष द्वारा विश्व के सभी भागों के विद्वानों को दिये गये निमंत्रण के और डाक्टर आफ फिलासफी की 
+;डिग्री शुरू करने के उनके उद्देश्य फलीभूत हुए 
+(defrule degree6
+(declare (salience 4900))
+(id-root ?id degree)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-of_saMbanXI  ?id ?id1)
+(viSeRya-of_saMbanXI  ?id1 ?id2)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id digrI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  degree.clp 	degree6   "  ?id "  digrI )" crlf))
+)
 
-;----------------------------------- default rules -------------------------------------------------
+
+;---------------------------------------------default rules--------------------------------------------------------------------------------
+;@@@ Added by pramila(BU)
 (defrule degree7
+(declare (salience 3200))
+(id-root ?id degree)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id digrI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  degree.clp 	degree7   "  ?id " digrI  )" crlf))
+)
+
+
+
+;@@@ Added by pramila(BU)
+(defrule degree8
 (declare (salience 3000))
 (id-root ?id degree)
 ?mng <-(meaning_to_be_decided ?id)
@@ -140,5 +178,5 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id digrI))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  degree.clp 	degree7   "  ?id " digrI  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  degree.clp 	degree8   "  ?id " digrI  )" crlf))
 )

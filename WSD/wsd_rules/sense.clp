@@ -22,6 +22,22 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  sense.clp 	sense1   "  ?id "  anuBava_kara )" crlf))
 )
+;@@@ Added by jagriti(12.12.2013)
+;In these ashrams one has a sense of homecoming.[gyanidhi-corpus]
+;इन आश्रमों में एक अपने पन का अनुभव होता हैं।
+(defrule sense2
+(declare (salience 5500))
+(id-root ?id sense)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-of_saMbanXI ?id ?id1)
+(id-root ?id1 homecoming|hot|cold)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id anuBava ))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  sense.clp 	sense2   "  ?id "  anuBava )" crlf))
+)
 
 ;"sense","V","1.anuBava karanA"
 ;Sensing his importance, Rakesh started buttering him.

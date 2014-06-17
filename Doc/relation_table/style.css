@@ -1,0 +1,52 @@
+/*
+Copyright (C) 2005 Sunil Mohan Adapa <sunil atc atc tcs co in>
+
+This program is free software; you can redistribute it and/or 
+modify it under the terms of the GNU General Public License 
+as published by the Free Software Foundation; either 
+version 2 of the License, or (at your option) any later 
+version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+*/
+/*TOOLTIP CSS starts from here*/
+.tooltip {
+			border-bottom: 1px dotted #000000; color: #000000; outline: none;
+			cursor: help; text-decoration: none;
+			position: relative;width:auto;
+		}
+
+.tooltip span {
+                        margin-left: -999em;background: #FFDAB9;
+                        position: absolute;outline: none;left: 1em; top: 2em; z-index: 99;
+                }
+.tooltip:hover span {
+                        display: block;width: ; padding: 5px;border: 1px solid #FF3334;
+
+                        border-radius: 5px 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
+                        box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1); -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.1); -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.1);border-color: black;
+                        font-family: Calibri, Tahoma, Geneva, sans-serif;
+                        position: absolute; left: 1em; top: 2em; z-index: 99;
+                        margin-left: 0; /*width: 550px;*/
+                }
+/*
+.tooltip noun        { color: blue;  }
+.tooltip verb        { color: red;   }
+.tooltip adverb      { color: green; }
+.tooltip adjective   { color: brown;}
+.tooltip preposition { color: purple;}
+.tooltip conjunction { color: DarkSlateBlue;}
+.tooltip determiner  { color: maroon; }
+.tooltip pronoun     { color: SaddleBrown; }
+.tooltip interjection {color: DarkSlateGray;}
+.tooltip wh-adverb   {color:  FireBrick;}
+*/
+
+/*TOOLTIP CSS ends here*/

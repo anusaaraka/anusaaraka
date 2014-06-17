@@ -27,8 +27,58 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " scale.clp	scale1  "  ?id "  " ?id1 "  badZA  )" crlf))
 )
 
+;@@@ Added by jagriti(31.12.2013)
+;The prisoner scaled the high prison wall and ran off.[cald]
+;कैदी उँची जेल की दीवार पर चढ़्ा और भाग गया.
 (defrule scale2
 (declare (salience 4800))
+(id-root ?id scale)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-object ?id ?id1)
+(id-root ?id1 wall|mountain|hill)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id  caDZa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  scale.clp 	scale2   "  ?id "   caDZa )" crlf))
+)
+
+;@@@ Added By jagriti(31.12.2013)
+;Rise up the social scale. [iit-bombay]
+;सामाजिक स्तर ऊपर उठाओ.
+;;The world is facing economic crisis on a global scale.
+;दुनिया को वैश्विक स्तर पर आर्थिक संकट का सामना करना पड़ रहा है.
+(defrule scale3
+(declare (salience 4800))
+(id-root ?id scale)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-viSeRaNa ?id ?id1)
+(id-root ?id1 social|political|global)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id swara ))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  scale.clp 	scale3   "  ?id "  swara )" crlf))
+)
+;......Default rule....
+;@@@ Added By jagriti(5.12.2013)
+(defrule scale4
+(declare (salience 1))
+(id-root ?id scale)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id pEmAnA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  scale.clp 	scale4   "  ?id "  pEmAnA )" crlf))
+)
+
+;He scalled the fish to cook.
+(defrule scale5
+(declare (salience 1))
 (id-root ?id scale)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -36,7 +86,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id CilakA_yA_parawa_uwAra))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  scale.clp 	scale2   "  ?id "  CilakA_yA_parawa_uwAra )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  scale.clp 	scale5   "  ?id "  CilakA_yA_parawa_uwAra )" crlf))
 )
 
 ;default_sense && category=verb	CilakA yA parawa uwAra	0
@@ -114,3 +164,33 @@
 ;isase yaha Sabxa `svaragrAma' ke rUpa meM socA jA sakawA hE . 
 ;
 ;
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_scale3
+(declare (salience 4800))
+(id-root ?id scale)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(subject-subject_samAnAXikaraNa ?id ?id1)
+(id-root ?id1 social|political|global)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id swara ))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " scale.clp   sub_samA_scale3   "   ?id " swara )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_scale3
+(declare (salience 4800))
+(id-root ?id scale)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(object-object_samAnAXikaraNa ?id ?id1)
+(id-root ?id1 social|political|global)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id swara ))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " scale.clp   obj_samA_scale3   "   ?id " swara )" crlf))
+)

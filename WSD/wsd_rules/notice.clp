@@ -11,6 +11,9 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  notice.clp 	notice0   "  ?id "  sucanApawra )" crlf))
 )
 
+;$$$ Added 'kriyA_id-object_viBakwi' by Roja (27-04-14). Suggested by Chaitanya Sir.
+;Children should notice the traffic while crossing.
+;sadZaka pAra karawe samaya baccoM ko trEPika para XyAna xenA cAhiye (Translation suggested by Chaitanya Sir)
 (defrule notice1
 (declare (salience 4900))
 (id-root ?id notice)
@@ -19,6 +22,7 @@
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id XyAna_xe))
+(assert (kriyA_id-object_viBakwi ?id para))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  notice.clp 	notice1   "  ?id "  XyAna_xe )" crlf))
 )

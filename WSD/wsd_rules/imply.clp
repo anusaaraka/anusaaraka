@@ -85,8 +85,24 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  imply.clp 	imply3   "  ?id "  sUciwa_kara )" crlf))
 )
 
-
-
+;@@@ Added by Prachi Rathore[18-1-14]
+; As the name implies, these objects look like stars but they are much more powerful.[gyan-nidhi]
+;जैसा कि  नाम से अर्थ निकलता है, यह वस्तुए तारों की तरह दिखती है परन्तु वे बहुत अधिक शक्तिशाली हैं
+(defrule imply6	
+(declare (salience 3000))
+(id-root ?id imply)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-subject  ?id ?id1)
+(id-root ?id1 name)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id arWa_nikala))
+(assert (kriyA_id-subject_viBakwi ?id se))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  imply.clp 	imply6   "  ?id "  arWa_nikala )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  imply.clp     imply6   "  ?id "  se )" crlf))
+)
 
 
 ;XXXXXXXXXXXXXXX DEFAULT XXXXXXXXXXXXXXXXX

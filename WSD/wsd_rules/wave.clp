@@ -78,10 +78,14 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  wave.clp 	wave5   "  ?id "  lahara )" crlf))
 )
 
+;$$$ Modified by Anita 29.1.2014
+;"wave","VTI","1.laharAnA"
+;He waved his hands for help. [old clp sentence]
 (defrule wave6
 (declare (salience 4400))
 (id-root ?id wave)
 ?mng <-(meaning_to_be_decided ?id)
+(kriyA-for_saMbanXI  ?id ?) ; added relation by Anita
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -90,7 +94,21 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  wave.clp 	wave6   "  ?id "  laharA )" crlf))
 )
 
-;"wave","VTI","1.laharAnA"
-;He waved his hands for help
+;@@@ Added by Anita-23.1.2014
+;We waved as the train pulled out of the station. [by mail sentence]
+;जैसे ही रेलगाड़ी स्टेशन से चली हमने हाथ हिलाया ।
+(defrule wave7
+(declare (salience 5100))
+(id-root ?id wave)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-samakAlika_kriyA  ?id ?)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id hAWa_hilA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  wave.clp 	wave7   "  ?id "  hAWa_hilA )" crlf))
+)
+
 ;
 ;

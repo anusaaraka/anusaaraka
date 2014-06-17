@@ -46,3 +46,19 @@
 ;She knitted a sweater.
 ;I bought knitted sweater from the shop.
 ;
+
+;@@@ Added by Prachi Rathore[12-2-14]
+;The bone failed to knit correctly.[oald]
+;हड्डी सही ढङ्ग से जुडने में असफल हुई . 
+(defrule knit3
+(declare (salience 5000))
+(id-root ?id knit)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-kriyA_viSeRaNa  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id juda))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  knit.clp 	knit3   "  ?id "  juda )" crlf))
+)

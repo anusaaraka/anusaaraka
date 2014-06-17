@@ -41,6 +41,22 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  spring.clp 	spring2   "  ?id "  uCala )" crlf))
 )
+;@@@ Added by jagriti(11.12.2013)
+;They would bathe in the hot spring there across the Ganga.
+;वे गंगा के किनारे गर्म पानी के झरने में स्नान करेंगे.
+(defrule spring3
+(declare (salience 5000))
+(id-root ?id spring)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-viSeRaNa ?id1 ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id JaranA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  spring.clp 	spring3   "  ?id "  JaranA )" crlf))
+)
+
 
 ;"spring","V","1.uCalanA"
 ;Don't spring on bed it will break.

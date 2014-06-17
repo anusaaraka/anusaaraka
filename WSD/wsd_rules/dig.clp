@@ -66,6 +66,10 @@
 
 ;We dug up that old statue from the building.
 ;hamane usa purAnI mUrwI ko imArawa se uKAdZa PEMkA
+
+
+;$$$ Modified by Pramila(BU) on 01-04-2014
+;[meaning changed from 'KoxAI' to 'KuxAI']
 (defrule dig4
 (declare (salience 4600))
 (id-root ?id dig)
@@ -73,9 +77,9 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id KoxAI))
+(assert (id-wsd_root_mng ?id KuxAI))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  dig.clp 	dig4   "  ?id "  KoxAI )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  dig.clp 	dig4   "  ?id "  KuxAI )" crlf))
 )
 
 ;"dig","N","1.KoxAI"

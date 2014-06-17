@@ -32,3 +32,20 @@
 ;--"2.ciMGAdZanA"
 ;The elephant trumpetted in the forest.
 ;
+
+;@@@ Added by Prachi Rathore
+;As soon as night fell, the elephant trumpeted. [gyan-nidhi]
+;रात होते ही हाथी ने सूँड ऊपर उठाकर एक चिंघाड़ मारी।
+(defrule trumpet2
+(declare (salience 5000))
+(id-root ?id trumpet)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-subject  ?id ?id1)
+(id-root ?id1 elephant)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ciMGAdZa_mAra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  trumpet.clp 	trumpet2   "  ?id "  ciMGAdZa_mAra )" crlf))
+)

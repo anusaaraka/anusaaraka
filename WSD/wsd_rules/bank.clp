@@ -74,7 +74,7 @@
 )
 
 (defrule bank5
-(declare (salience 4500))
+(declare (salience 0)); salience reduced by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)9-dec-2013
 (id-root ?id bank)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -99,5 +99,67 @@
 
 ;"bank","V","1.bEMka_mez_rUpayA_raKanA"
 ;Ram banks his money for safety.
-;
-;
+
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)9-dec-2013
+;On reaching Gangnani, Aditya jumped down from the bus and went to the bank of the Ganga.
+;गंगनानी पहुँचने पर, आदित्य बस पर से  कूदा और गंगा के तट पर गया . 
+(defrule bank7
+(declare (salience 4600))
+(id-root ?id bank)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-of_saMbanXI  ?id ?id1)
+;(viSeRya-det_viSeRaNa  ?id1 ?id2)
+;(id-word ?id2 the)
+(id-word ?id1 river|ganga)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id wata))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  bank.clp 	bank7   "  ?id "  wata )" crlf))
+)
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)9-dec-2013
+;Driving at this speed on a banked road will cause little wear and tear of the tyres.[ncert]
+;इस चाल से ढालू सडक पर कार चलाने पर कार के टायरों की कम घिसाई होती है.
+(defrule bank8
+(declare (salience 4600))
+(id-root ?id bank)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(id-word ?id1 road)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id DAlU))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  bank.clp 	bank8   "  ?id "  DAlU )" crlf))
+)
+
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_bank8
+(declare (salience 4600))
+(id-root ?id bank)
+?mng <-(meaning_to_be_decided ?id)
+(subject-subject_samAnAXikaraNa ?id1 ?id)
+(id-word ?id1 road)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id DAlU))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " bank.clp   sub_samA_bank8   "   ?id " DAlU )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_bank8
+(declare (salience 4600))
+(id-root ?id bank)
+?mng <-(meaning_to_be_decided ?id)
+(object-object_samAnAXikaraNa ?id1 ?id)
+(id-word ?id1 road)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id DAlU))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " bank.clp   obj_samA_bank8   "   ?id " DAlU )" crlf))
+)

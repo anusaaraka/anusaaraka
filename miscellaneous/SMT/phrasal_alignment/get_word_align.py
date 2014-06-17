@@ -20,31 +20,38 @@ hi_lst = []
 new_hi_lst = []
 align_dic = {}
 new_left_lst = []
+flag = 0 
 for line in open(sys.argv[2]):
 	hi_s = hi_sent[sent_count]
 	hi_s_l = hi_s[1:-1].split('_')
 	if ';~~~~~~~~~~\n' in line:
-		for key in sorted(align_dic):
-#		print type(key), '==============' # align_dic[key]
-			v = align_dic[key].split('\t')
-			if '####' in v[1]:
-				print  '(anu_id-anu_mng-man_mng ' + '\t' + str(key) + '\t' + v[0] + '\t' +  '-'  +  ')'
-			else:
-				print  '(anu_id-anu_mng-man_mng ' + '\t' + str(key) + '\t' +  v[0] + '\t' + v[1] +  ')'
-			if '_' in v[1]:	
-				new_v = v[1].split('_')
-				for i in range(0, len(new_v)):
-					if new_v[i] in hi_s_l:
-						new_left_lst.append(new_v[i])
-			else:
-				if v[1] in hi_s_l:
-					new_left_lst.append(v[1])
-		for j in range(0, len(new_left_lst)):
-			if new_left_lst[j] in hi_s_l:
-				del_item( new_left_lst[j], hi_s_l);
-#		print hi_s_l
-		for k in  hi_s_l:
-			left_over.write('%s**,**' % k);
+		if flag == 1:
+			print '(eng-hnd-eng_ids Construction mismatch)'
+			left_over.write('Construction mismatch');
+			align_dic = {}
+			flag = 0
+		else:
+			for key in sorted(align_dic):
+#			print type(key), '==============' # align_dic[key]
+				v = align_dic[key].split('\t')
+				if '####' in v[1]:
+					print  '(anu_id-anu_mng-man_mng ' + '\t' + str(key) + '\t' + v[0] + '\t' +  '-'  +  ')'
+				else:
+					print  '(anu_id-anu_mng-man_mng ' + '\t' + str(key) + '\t' +  v[0] + '\t' + v[1] +  ')'
+				if '_' in v[1]:	
+					new_v = v[1].split('_')
+					for i in range(0, len(new_v)):
+						if new_v[i] in hi_s_l:
+							new_left_lst.append(new_v[i])
+				else:
+					if v[1] in hi_s_l:
+						new_left_lst.append(v[1])
+			for j in range(0, len(new_left_lst)):
+				if new_left_lst[j] in hi_s_l:
+					del_item( new_left_lst[j], hi_s_l);
+	#		print hi_s_l
+			for k in  hi_s_l:
+				left_over.write('%s**,**' % k);
 		align_dic = {}
 		eng_w_id_dic = {}
 		hi_lst = []
@@ -55,8 +62,10 @@ for line in open(sys.argv[2]):
 		sent_count += 1
 #		print hi_lst
         elif 'Construction mismatch' in line:
-		print line.strip()
+#		print line.strip()
+		flag = 1
 	else:
+		flag = 0
 		k = line.split('\t') #(position-eng-hnd-eng_ids	1	_More_precisely_,_a_	_aXika_yaWArWawA_se_,_@a_	1 2 2 3)
 		eng_lst = k[2][1:-1].split('_')
 		key = k[2] + k[3]

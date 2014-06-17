@@ -1,5 +1,5 @@
 ;##############################################################################
-;#  Copyright (C) 2013-2014 Pramila (pramila3005 at gmail dot com)
+;#  Copyright (C) 2013-2014 Pramila (pramila3005@gmail.com)
 ;#
 ;#  This program is free software; you can redistribute it and/or
 ;#  modify it under the terms of the GNU General Public License
@@ -19,14 +19,14 @@
 ;##############################################################################
 
 
+;@@@ Added by Pramila(Banasthali University)
 ;A compass needle is deflected by passing an electric current through a wire placed near the needle.
-
 (defrule deflect0
 (declare (salience 5000))
 (id-root ?id deflect)
 ?mng <-(meaning_to_be_decided ?id)
-(kriyA-subject  ?id ?id1)
 (id-word ?id1 electricity|current)
+(kriyA-subject  ?id ?id1)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -36,6 +36,7 @@
 )
 
 
+;@@@ Added by Pramila(Banasthali University)
 ;The road deflected near its end.
 ;The way deflects several times.
 
@@ -43,8 +44,8 @@
 (declare (salience 4900))
 (id-root ?id deflect)
 ?mng <-(meaning_to_be_decided ?id)
-(or(kriyA-subject  ?id ?id1)(kriyA-object  ?id ?id1))
 (id-word ?id1 road|way)
+(or(kriyA-subject  ?id ?id1)(kriyA-object  ?id ?id2))
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -53,6 +54,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  deflect.clp 	deflect1   "  ?id "  muda )" crlf))
 )
 ;-------------------------------------------- Default rules  -----------------------------------------------
+;@@@ Added by Pramila(Banasthali University)
 (defrule deflect2
 (declare (salience 4300))
 (id-root ?id deflect)
@@ -66,6 +68,7 @@
 )
 
 
+;@@@ Added by Pramila(Banasthali University)
 (defrule deflect3
 (declare (salience 4000))
 (id-root ?id deflect)

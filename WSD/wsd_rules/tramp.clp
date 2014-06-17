@@ -35,3 +35,20 @@
 ;--"2.paxa_yAwrA_karanA"
 ;Pilgrims tramp to Badrinath.
 ;
+
+;@@@ Added by Prachi Rathore[25-2-14]
+;--"3.paxacApa"
+;We heard the tramp of the marching army.
+(defrule tramp2
+(declare (salience 5050))
+(id-root ?id tramp)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-of_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id paxacApa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  tramp.clp 	tramp2   "  ?id "  paxacApa )" crlf))
+)
+

@@ -28,6 +28,41 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  house.clp 	house1   "  ?id "  saMsaxa )" crlf))
 )
 
+;@@@ Added by Prachi Rathore[24-1-14]
+;The University Law College was housed in the Darbhanga Library Building.[gyan-nidhi]
+;यूनिवर्सिटी लॉ कालेज को दरभंगा पुस्तकालय भवन में जगह दी गई थी।
+(defrule house4
+(declare (salience 5000))
+(id-root ?id house)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-in_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id jagaha_xe))
+(assert (kriyA_id-subject_viBakwi ?id ko))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  house.clp 	house4   "  ?id "  jagaha_xe )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  house.clp      house4   "  ?id " ko )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[29-3-14]
+;It was the decision of the house that departmental representatives were attending the meeting just to complete the quorum and were not equipped with complete information.[news]
+;सदन का फैसला था कि विभागीय प्रतिनिधि सिर्फ कोरम पूरा करने के लिए बैठक में आते हैं उन्हें पूरी जानकारी नहीं रहती है।
+(defrule house5
+(declare (salience 5000))
+(id-root ?id house)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-of_saMbanXI ?id1 ?id)
+(id-root ?id1 decision)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id saMsaxa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  house.clp 	house5   "  ?id "  saMsaxa )" crlf))
+)
+
+;xxxxxxxxxxxxxxx Default rule. xxxxxxxxxxxxxxxxxxxxxxx
 ;In case of capital words, POS tagger gives the lable prop_noun
 ;The bill was approved by the House.
 (defrule house2
