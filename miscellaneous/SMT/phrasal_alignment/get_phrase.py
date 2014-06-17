@@ -128,7 +128,7 @@ for line in s_file:
 								cur_val = val
 #								print 'hello', pre_key, 'hai', cur_key, pre_val , cur_val
 								if pre_key == cur_key:
-									print 'hai'
+#									print 'hai'
 									longest_str(pre_key, pre_val, cur_key, cur_val, longest_line)
 									pre_key = cur_key
 									pre_val = longest_line
