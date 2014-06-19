@@ -86,6 +86,8 @@
  (load-facts "ner.dat")
  (load-facts "E_constituents_info_tmp5.dat")
  (load-facts "Node_category.dat")
+ (load-facts "parserid_wordid_mapping.dat")
+ (load-facts "word2.dat")
  (open "sd_category_info.dat" sd_cat_fp "w")
  (run)
  (clear)

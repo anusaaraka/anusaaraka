@@ -41,10 +41,13 @@
   (defrule PropN_rule_from_NER
   (declare (salience 12))
   (word-nertype ?word&~of PERSON|LOCATION|ORGANIZATION) ;The Zongle [of] Bongle Dongle resigned today. 
-  (parserid-word ?pid ?word)
-  ?f0<-(id-sd_cat   ?pid ?)
+  (parserid-word P1 ?word)
+  ;(parserid-word ?pid ?word)
+  ?f0<-(id-sd_cat   P1 ?)
+;  ?f0<-(id-sd_cat   ?pid ?)
   =>
-        (printout ?*cat_fp* "(parser_id-cat_coarse  "?pid " PropN)" crlf)
+        (printout ?*cat_fp* "(parser_id-cat_coarse	P1	 PropN)" crlf)
+;        (printout ?*cat_fp* "(parser_id-cat_coarse  "?pid " PropN)" crlf)
         (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
@@ -52,12 +55,15 @@
   (defrule PropN_rule_from_NER1
   (declare (salience 12))
   (word-nertype ?word PERSON|LOCATION|ORGANIZATION)
-  (parserid-word ?pid ?wrd)
-  ?f0<-(id-sd_cat   ?pid ?)
+;  (parserid-word ?pid ?wrd)
+  (parserid-word P1's ?wrd)
+  ?f0<-(id-sd_cat   P1's ?)
+  ;?f0<-(id-sd_cat   ?pid ?)
   (test (neq (str-index "'s" ?wrd) FALSE))
   (test (eq ?word (string-to-field (sub-string 1 (- (str-index "'s" ?wrd) 1) ?wrd))))
   =>
-	(printout ?*cat_fp* "(parser_id-cat_coarse  "?pid " PropN)" crlf)
+	(printout ?*cat_fp* "(parser_id-cat_coarse  P1's	 PropN)" crlf)
+;	(printout ?*cat_fp* "(parser_id-cat_coarse  "?pid " PropN)" crlf)
 	(retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
@@ -76,6 +82,30 @@
 ; 	(retract ?f0)
 ;	(assert (id-sd_cat   ?pid NNP))
 ;  )
+  ;------------------------------------------------------------------------------------------
+  ; We camped on Nilgiri hills during summer. He went to Agra and saw the Tajmahal.
+  (defrule PropN_rule
+  (declare (salience 10))
+  (id-word_cap_info ?id&~1  first_cap)
+  (parserid-wordid   ?pid  ?id)
+  ?f0<-(id-sd_cat  ?pid ?)
+   =>
+        (printout ?*cat_fp* "(parser_id-cat_coarse  "?pid"   PropN)" crlf)
+        (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  ;Suggested by Chaitanya Sir 04-06-14 
+  ;They are [educated]. 
+  (defrule modify_VBN_cat
+  (declare (salience 5))
+  ?f0<-(id-sd_cat  ?id  VBN)
+  (Head-Level-Mother-Daughters ?id ? ?ADJP ?VBN)
+  (Node-Category ?ADJP ADJP)
+  (Node-Category ?VBN VBN)
+  =>
+	(printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  adjective)" crlf)
+   	(retract ?f0)
+  )
   ;------------------------------------------------------------------------------------------
   ;He disputed that our program was superior . (PRP$) 
   (defrule PRP_rule

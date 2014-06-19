@@ -34823,7 +34823,7 @@ guerilla_UNDEFINED	gurillA
 guerillas_UNDEFINED	gurillA
 guerrilla_noun	gurillA/CApAmAra
 guerrillas_UNDEFINED	gurillA
-guess_noun	rAya/anumAna
+guess_noun	anumAna/rAya
 guess_verb	anxAja_lagA/mAna_le/jAna_le/anxAjA_lagA/anumAna_lagA
 guessed_UNDEFINED	anxAja_lagAnA
 guesses_UNDEFINED	anxAja_lagAnA
@@ -86090,7 +86090,7 @@ universalities_UNDEFINED	sarvavyApakawA
 universality_noun	sarvavyApakawA/sArvaBOmikawA
 universalize_verb	sarvavyApI_banA
 universally_adverb	sarvawra/saBI_ke_xvArA
-universe_noun	sqRti/viSva/saMsqwi/saMsAra/sampUrNa_sqRiti/samaswa_vicArAXIna_vaswu/mAnavajAwi/jagawa/brahmANda/brahamANda
+universe_noun	brahmANda/sqRti/viSva/saMsqwi/saMsAra/sampUrNa_sqRiti/samaswa_vicArAXIna_vaswu/mAnavajAwi/jagawa
 universes_UNDEFINED	jagawa
 universities_UNDEFINED	viSvavixyAlaya
 university_noun	viSvavixyAlaya/yUnivarsitI_vitsa/viSvaviXAlaya/kisI_viSvavixyAlaya_kA_xala

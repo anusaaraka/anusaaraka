@@ -4,10 +4,9 @@
 ;rARtrapawi ne naye kAma uwwapanna karane ke lie yojanA kI GoRaNA kI hE.
 (defrule president0
 (declare (salience 80))
-(id-root ?id president)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id noun)
 (id-original_word ?id President|President's)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun|PropN)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id rARtrapawi))
