@@ -6,16 +6,19 @@ g_input = open(sys.argv[2],"r")
 g_file  = g_input.readlines()
 
 sent_count = 0
+flag = 0 
 for line in m_file:
         graph_out = g_file[sent_count]
 	graph_val = graph_out[2:-3]
         g_lst = graph_val.split("', '")
 	if 'NO PATH' in graph_out:
-		print 'NO PATH'
+		flag = 1
 	else:
 		for i in range(0,len(g_lst)-1):
 			lst = line.split()
 			if g_lst[i] == lst[2] and g_lst[i+1] == lst[3].strip():
 				print line,
 
+if flag == 1:
+	print 'NO PATH'
 
