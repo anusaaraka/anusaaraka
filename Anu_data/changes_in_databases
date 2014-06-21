@@ -1629,6 +1629,10 @@ Removed:
 				Ex: Enrollment in English medium schools in India has gone up sharply in just two years from 4.3 percent of total enrollment in 2003 to 2004 to 6.3 percent in 2005 to 2006. 
 	134. environment_noun	pariveSa	as	paryAvaraNa/		(Suggested by Chaitanya Sir  03-06-14)
 				Ex: Environment means surroundings.
+	135. universe_noun	sqRti		as	brahmANda		(Suggested by Sukhada        18-06-14)
+				Ex: On this note we end our journey of the Universe.
+	136. guess_noun      	rAya		as	anumAna			(Suggested by Chaitanya Sir  19-06-14)
+				Ex: He hazarded a guess.
 	
 
     6. Removed meaning from existing list:
@@ -1798,8 +1802,16 @@ Removed:
 	Akhil_Bhartiya_Janwadi_Mahila_Samiti    aKila_BArawIya_janavAxI_mahilA_samiwi#aKila_BArawIya_janavAxI_mahilA_samiwi#noun#5#RM
 				to
 	Gandhi_Nagar    gAMXI_nagara#gAMXI_nagara#noun#2#RM
-	Mill_Road	mila_roda#mila_roda#PropN#2#RM			(Suggested by Anita ji LTRC 	10-05-14)
-			Ex: I live on Mill Road.
+	Mill_Road		mila_roda#mila_roda#PropN#2#RM					(Suggested by Anita ji LTRC 	10-05-14)
+				Ex: I live on Mill Road.
+	West_Indiana_Street     vesta_iNdiyanA_strIta#vesta_iNdiyanA_strIta#PropN#3#RM		(Suggested by Sukhada   18-06-14)
+				Ex: I live at 805 West Indiana Street.
+	Nobel_Prize     	nobala_puraskAra#nobala_puraskAra#PropN#2#RM			(		"	"	)
+				Ex: In 1922, Bohr was awarded Nobel Prize in Physics.
+	Democratic_National_Convention  prajAwAnwrika_rARtrajana_sammelana#PropN#3#RM		(		"	"	)
+				Ex: The Democratic National Convention will meet next week to announce their party's candidate for president.
+	Hawa_mahal      	havA_mahala#havA_mahala#PropN#2#RM				(		"	"	)
+				Ex:The Hawa mahal was built by the Maharaja Sawai Pratap Singh in 1799 AD and Lal Chand Usta was the architect.
 
     
  multi_word_expressions.txt
@@ -2379,6 +2391,13 @@ Removed:
 		Hambantota      haMbanatotA			Khedia  	KedZiyA
 		Sushil  	suSIla				Mahanta 	mahaMwa
 		Tata		tAtA				District	jilA
+	Nilgiri 	nIlagiri	(Suggested by Sukhada  18-06-14 )
+	Medicine        mEdisina	(	"		"	)
+	Tamilnadu       wamilanAdu	(	"		"	)
+	Tajmahal        wAjamahala	(	"		"	)
+	Sirdar  	siraxAra	(	"		"	)
+	Reading 	rIdiMga		(	"		"	)
+	Didcot  	didkoYt		(	"		"	)
 
    Modified:
    ---------

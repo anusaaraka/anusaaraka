@@ -569,12 +569,13 @@
 ;--------------------------------------------------------------------------
  ;Identifying and modifying the TAM for IMPERATIVE sentences ,
  ;Ex:-Please enclose a curriculum vitae with your letter of application. 
+ ;SBAR Ex: When they go out shut the door.
  (defrule check_for_imper1 
  (declare (salience -20))
  (Head-Level-Mother-Daughters ? ? ?ROOT ?S $?)
  (and (Node-Category ?ROOT ROOT) (Node-Category ?S S))
  (Head-Level-Mother-Daughters ? ? ?S ?INTJ ?VP $?)
- (Node-Category ?INTJ INTJ|ADVP|PP|CC)
+ (Node-Category ?INTJ INTJ|ADVP|PP|CC|SBAR)
  (Head-Level-Mother-Daughters ? ? ?VP ?verb $?)
  (Head-Level-Mother-Daughters ?h ? ?verb ?first $?)
  (parserid-word ?h ?w&~Let&~let);Now let her see.
