@@ -1116,7 +1116,8 @@
  
  (printout fp "<tr><td>" "Man translation :: " (wx_utf8 (implode$ $?man_sen))"</td></tr>" crlf)
 
- (bind ?dic_path (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/alignment_dic.txt"))
+; (bind ?dic_path (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/align_left_over_wrds.dat"))
+ (bind ?dic_path (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/left-over-words.dat"))
  (open ?dic_path dic_fp)
  (bind ?val (readline dic_fp))
  (printout fp "<tr><td>" crlf)

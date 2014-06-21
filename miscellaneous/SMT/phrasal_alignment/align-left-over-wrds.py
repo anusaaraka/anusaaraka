@@ -5,10 +5,10 @@ hi_sent = hi_file.readlines()
 left_over_file = open(sys.argv[3], 'r')
 left_over = left_over_file.readlines()
 
-left_file = open(sys.argv[5], 'r')
+left_file = open(sys.argv[4], 'r')
 left = left_file.readlines()
 
-al_left_file = open(sys.argv[6], 'a')
+al_left_file = open(sys.argv[5], 'w')
 
 left_dic = {}
 ##Phrase level left over words:
@@ -17,8 +17,6 @@ for each in left:
 	if '(hindi_left_over_words	)' in each:
 		left_dic[count] = ' '
 		count +=1
-	elif ';~~~~~~~~~~\n' in each:
-		pass
 	else:
 		lst = each.split()
 		left_dic[count] = lst[1:-1]
@@ -39,22 +37,19 @@ def replace_item(Str, List):
 			List[index] = 'REPLACED'
 	return List  	
 	
-sent_count = int(sys.argv[4])
+#sent_count = int(sys.argv[4])
 align_dic = {}
 flag = 0 
+sent_count = 0
 for line in open(sys.argv[1]):
 	if '\t' in line:
 		lst = line[:-2].split('\t') #(anu_id-anu_mng-man_mng	1	More	aXika)
 		key = lst[1]
 		val = lst[2] + '\t' + lst[3]
 		align_dic[int(key)] = val
-	if 'Construction mismatch' in line:
+	if 'NO PATH' in line:
 		print line.strip()
 		flag = 1	
-	if ';~~~~~~~~~~\n' in line:
-#		sent_count += 1
-		align_dic = {}
-		print line.strip()
 
 hi_s = hi_sent[sent_count]   #to use del_item function 0th sentence is checked outside.
 hi_s_l = hi_s[1:-1].strip().split('_')
@@ -104,12 +99,6 @@ for key in sorted(align_dic):
 										align_dic[int(key+1)] = new_v
 #										print '@@@', key, new_v
 										replace_item(left_lst[i], left_lst)
-#						       		else:
-#									print '!!!!', val[1], key, left_lst[i]
-#									new_v = val[0] + '\t' + val[1] + '_' + left_lst[i]
-#									align_dic[int(key)] = new_v
-#	#								print '!!!', key, new_v
-#									replace_item(left_lst[i], left_lst)
 						else:
 								val = align_dic[key].split('\t')
 #								print '***', val
@@ -133,23 +122,13 @@ for key in sorted(align_dic):
 											new_v = val[0] + '\t' +  val[1] + '_' + left_lst[i]
 											align_dic[int(key)] = new_v
 											replace_item(left_lst[i], left_lst)
-#		print  '%%%', left_lst
 
 
 	print '(anu_id-anu_mng-man_mng' + '\t' + str(key) + '\t' + align_dic[key] + ')'
 al_left_file.write('@left_@over_@words:::\t')
 for each in phrase_left_over_lst:
-	if each == 'Construction' and each == 'mismatch':
-		al_left_file.write('@%s' % each)
-#	elif each != 'REPLACED':
-	elif (each != 'REPLACED' and   each != 'Construction' and  each != 'mismatch' and each != ' '):
+	if each != 'REPLACED':
 		al_left_file.write(' %s /'  % each)
 for each in left_lst:
-	if each == 'Construction' and each == 'mismatch':
-		pass
-	elif (each != 'REPLACED' and  each != 'Construction' and each != 'mismatch' and  each != ' '):
-#	elif each != 'REPLACED':
+	if each != 'REPLACED':
 		al_left_file.write(' %s /'  % each)
-al_left_file.write('\n;~~~~~~~~~~\n')
-#print '^^^', left_lst
-#print '***', phrase_left_over_lst	

@@ -11,12 +11,7 @@ count=0
 new_ids_lst=[]
 new_ids_str=''
 for line in open(sys.argv[1]):
-	if ';~~~~~~~~~~\n' in line:
-		print line.strip()
-		new_ids_lst=[]
-		new_ids_str=''
-		count=0
-	elif 'Construction mismatch' in line:
+	if 'NO PATH' in line:
 		print line.strip()
 	else:
 		new_ids_lst=[]
@@ -33,5 +28,3 @@ for line in open(sys.argv[1]):
 			new_ids_lst.append(ids)
 		new_ids_str = ' '.join(str(e) for e in new_ids_lst)
 		print lst[0] + '\t' + new_ids_str + '\t' + lst[2] + '\t' + lst[3].strip()
-		
-	

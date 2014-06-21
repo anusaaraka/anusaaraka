@@ -1,27 +1,24 @@
-MYPATH=$HOME_anu_tmp
-echo "extracting keys from hindi sentence"
-$HOME_anu_test/multifast-v1.0.0/src/extract_key_using_multifast-hi-en $1 $MYPATH/tmp/$3_tmp/map-hi-en.txt > $MYPATH/tmp/$3_tmp/key-hi-en.txt 
-echo "extracting values for the given keys"
-./gdbm-fetch.out  hi-en/Hin-Eng-dic.gdbm  $MYPATH/tmp/$3_tmp/key-hi-en.txt > $MYPATH/tmp/$3_tmp/key-val-hi-en.txt
-echo "searching values in english sentence"
-python match_value_in_hnd.py  $2  $MYPATH/tmp/$3_tmp/key-val-hi-en.txt $MYPATH/tmp/$3_tmp/graph_input-hi-en $1 $MYPATH/tmp/$3_tmp/graph_output-hi-en> $MYPATH/tmp/$3_tmp/match-value-hi-en.txt 
-echo "Phrase alignment"
-python print_shortest_path.py $MYPATH/tmp/$3_tmp/match-value-hi-en.txt  $MYPATH/tmp/$3_tmp/graph_output-hi-en > $MYPATH/tmp/$3_tmp/shortest-path-value-hi-en.txt
-python count.py $MYPATH/tmp/$3_tmp/shortest-path-value-hi-en.txt $MYPATH/tmp/$3_tmp/ $MYPATH/tmp/$3_tmp/count_dict_with_length-hi-en.txt
-sh split.sh $MYPATH/tmp/$3_tmp/count_dict_with_length-hi-en.txt
-sh sort.sh $MYPATH/tmp/$3_tmp/sorted_file-hi-en.txt
-python get_phrase.py  $2  $MYPATH/tmp/$3_tmp/sorted_file-hi-en.txt $MYPATH/tmp/$3_tmp/shortest-path-value-hi-en.txt $MYPATH/tmp/$3_tmp/left-over-words-hi-en.txt > $MYPATH/tmp/$3_tmp/align_eng-hi-en.txt
-python map-ids.py  $MYPATH/tmp/$3_tmp/align_eng-hi-en.txt  $MYPATH/tmp/$3_tmp/map-hi-en.txt $MYPATH/tmp/$3_tmp/mapped-hi-en.txt
-echo "Word alignment"
-python get_word_align.py hi-en/Word-to-word-hi-en.txt   $MYPATH/tmp/$3_tmp/mapped-hi-en.txt $2 $MYPATH/tmp/$3_tmp/left-hi-en > $MYPATH/tmp/$3_tmp/wrd-to-wrd-hi-en.txt1
-echo "Aligning left over words"
-sh split.sh $MYPATH/tmp/$3_tmp/wrd-to-wrd-hi-en.txt1
-sh hi-en/align-hi-en.sh $MYPATH/tmp/$3_tmp 
-python mapping.py $MYPATH/tmp/$3_tmp/wrd-to-wrd-hi-en.txt > $MYPATH/tmp/$3_tmp/mapped-hi-en.txt1
+
+echo "extracting values for the given keys"   >> $1/phrasal_error
+./gdbm-fetch.out  hi-en/Hin-Eng-dic.gdbm  $1/key-hi-en.dat > $1/key-val-hi-en.dat
+echo "searching values in hindi sentence"  >> $1/phrasal_error
+python match_value_in_hnd.py  $1/hnd  $1/key-val-hi-en.dat $1/graph_input-hi-en $1/eng_tok_org $1/graph_output-hi-en> $1/match-value-hi-en.dat  2>> $1/phrasal_error
+echo "Phrase alignment" >> $1/phrasal_error
+python print_shortest_path.py $1/match-value-hi-en.dat  $1/graph_output-hi-en > $1/shortest-path-value-hi-en.dat  2>> $1/phrasal_error
+python count.py $1/shortest-path-value-hi-en.dat $1/count_dict-hi-en $1/count_dict_with_length-hi-en.dat  2>> $1/phrasal_error
+sh sort.sh $1/count_dict_with_length-hi-en.dat  $1/sorted_file-hi-en.dat 2>> $1/phrasal_error
+python get_phrase.py  $1/hnd  $1/sorted_file-hi-en.dat $1/shortest-path-value-hi-en.dat $1/left-over-words-hi-en.dat > $1/align_eng-hi-en.dat  2>> $1/phrasal_error
+python map-eng-offset.py  $1/align_eng-hi-en.dat  $1/map-hi-en.dat > $1/mapped-hi-en.dat  2>> $1/phrasal_error
+
+echo "Word alignment" >> $1/phrasal_error
+python get_word_align.py hi-en/Word-to-word-hi-en.txt   $1/mapped-hi-en.dat $1/hnd $1/left-hi-en > $1/wrd-to-wrd-hi-en.txt1  2>> $1/phrasal_error
+echo "Aligning left over words" >> $1/phrasal_error
+python align-left-over-wrds.py  $1/wrd-to-wrd-hi-en.txt1  $1/hnd  $1/left-hi-en $1/left-over-words-hi-en.dat $1/align_left_over_wrds-hi-en.dat > $1/wrd-to-wrd-hi-en.dat 2>> $1/phrasal_error
+python mapping.py $1/wrd-to-wrd-hi-en.dat > $1/mapped1-hi-en.dat 2>> $1/phrasal_error
 
 #===================================== Mapping punctuations in alignment ===========================================
-./replace-punctuation.out < $MYPATH/tmp/$3_tmp/mapped-hi-en.txt1  > $MYPATH/tmp/$3_tmp/mapped-hi-en.txt2
+./replace-punctuation.out < $1/mapped1-hi-en.dat  > $1/mapped2-hi-en.dat
 
 
-sed 's/\([0-9]\)[.]\([0-9]\)/\1SYMBOL-DOT\2/g'   $MYPATH/tmp/$3_tmp/mapped-hi-en.txt2  | sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g' | sed 's/(anu_id-anu_mng-man_mng/(eng_id-eng_wrd-man_wrd/g'  > $MYPATH/tmp/$3_tmp/word-alignment-hi-en.txt
+sed 's/\([0-9]\)[.]\([0-9]\)/\1SYMBOL-DOT\2/g'   $1/mapped2-hi-en.dat  | sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g' | sed 's/(anu_id-anu_mng-man_mng/(eng_id-eng_wrd-man_wrd/g'  > $1/word-alignment-hi-en.dat
 
