@@ -24,7 +24,7 @@ for each in left:
 
 vib = ['baje', 'Bara_meM', 'iXara-uXara', 'kA', 'ke', 'ke_anxara', 'ke_bAhara', 'ke_bAre_meM', 'ke_bAxa', 'ke_bIca', 'ke_bIca_meM', 'ke_binA', 'ke_cAroM_ora', 'ke_jEsA', 'ke_kAraNa', 'ke_liye', 'ke_lie', 'ke_nAma_se', 'ke_nIce', 'ke_nikata', 'ke_pakRa_meM ', 'ke_pAsa', 'ke_pICe', 'ke_prawi_prema_ke_kAraNa', 'ke_samparka_meM', 'ke_sAWa', 'ke_Upara', 'ke_usa_pAra', 'ke_viRaya_meM', 'ke_viruxXa', 'ke_xOrAna', 'ke_xvArA', 'kI', 'kI_apekRA', 'kI_ora', 'kI_waraha', 'ko', 'lagaBaga', 'meM', 'meM_se', 'mqwyu_uparAnwa', 'ne', 'para', 'se', 'se_lagA_huA', 'se_pahale', 'vAlA', 'waka', 'xvArA']
 
-verb_list = ['karawA', 'howA', 'karawI', 'howI']
+verb_list = ['karawA', 'howA', 'karawI', 'howI', 'karawe', 'howe']
 
 def del_item(Str, List):
         if Str in List:
@@ -125,10 +125,11 @@ for key in sorted(align_dic):
 
 
 	print '(anu_id-anu_mng-man_mng' + '\t' + str(key) + '\t' + align_dic[key] + ')'
-al_left_file.write('@left_@over_@words:::\t')
+al_left_file.write('@phrase_left_@over_@words:::\t')
 for each in phrase_left_over_lst:
 	if each != 'REPLACED':
 		al_left_file.write(' %s /'  % each)
+al_left_file.write('@word_left_@over_@words:::\t')
 for each in left_lst:
 	if each != 'REPLACED':
 		al_left_file.write(' %s /'  % each)
