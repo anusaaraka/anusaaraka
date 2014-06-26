@@ -61,29 +61,26 @@ for line in s_file:
 		flag1 = 0
 		s_lst = line.split('\t')
 		for each_count in m_file:
-			if ';~~~~~~~~~~\n' in each_count:
-				pass
+			flag = 0
+			lst = each_count.strip().split()
+#			print s_lst[1] , s_lst[2].strip(), lst[0]
+			if int(s_lst[1]) == 1 and s_lst[2].strip() == lst[0]:
+				key = lst[2]  
+				val = lst[3] + '\t' + lst[0] + '\t' + lst[1]
+				align_dic[int(key)] = val
+#				print '###', lst[0] + '\t' + lst[1] + '\t' + lst[2] + ' ' + lst[3]
+				aligned_hnd = lst[1].split('_')
+				for j in aligned_hnd:
+					del_item(j, hi_lst)
 			else:
-				flag = 0
-				lst = each_count.strip().split()
-#				print s_lst[1] , s_lst[2].strip(), lst[0]
-				if int(s_lst[1]) == 1 and s_lst[2].strip() == lst[0]:
-					key = lst[2]  
-					val = lst[3] + '\t' + lst[0] + '\t' + lst[1]
-					align_dic[int(key)] = val
-#					print '###', lst[0] + '\t' + lst[1] + '\t' + lst[2] + ' ' + lst[3]
-					aligned_hnd = lst[1].split('_')
-					for j in aligned_hnd:
-						del_item(j, hi_lst)
-				else:
-					flag = 0 
-					if int(s_lst[1]) >= 1 and s_lst[2].strip() == lst[0]:
-						hindi_phrase = lst[1][1:-1].split('_')
-						for item in hindi_phrase:
-							if item in hi_lst:
-								flag = 1
-							else:
-								flag = 0
+				flag = 0 
+				if int(s_lst[1]) >= 1 and s_lst[2].strip() == lst[0]:
+					hindi_phrase = lst[1][1:-1].split('_')
+					for item in hindi_phrase:
+						if item in hi_lst:
+							flag = 1
+						else:
+							flag = 0
 						if flag == 1:
 							key = lst[2] + ' '  + lst[3]
 							val = lst[0] + '\t' + lst[1]
@@ -123,5 +120,6 @@ else:
 	for key in sorted(align_dic):
 		v = align_dic[key].split('\t')
 		print v[1] + '\t' + v[2] + '\t' + str(key) + ' ' + v[0]
+#	print '&&&', hi_lst
 	left_over.write("(hindi_left_over_words\t%s" % ' '.join(hi_lst))
 	left_over.write(")")

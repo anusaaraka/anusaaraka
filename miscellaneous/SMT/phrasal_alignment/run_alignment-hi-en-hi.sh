@@ -4,7 +4,7 @@ $HOME_anu_test/multifast-v1.0.0/src/extract_key_using_multifast-hi-en-hi $1 $MYP
 echo "extracting values for the given keys"
 ./gdbm-fetch.out  hi-en/Hin-Eng-dic-hi.gdbm  $MYPATH/tmp/$3_tmp/key-hi-en-hi.txt > $MYPATH/tmp/$3_tmp/key-val-hi-en-hi.txt
 echo "searching values in english sentence"
-python match_value_in_hnd.py  $2  $MYPATH/tmp/$3_tmp/key-val-hi-en-hi.txt $MYPATH/tmp/$3_tmp/graph_input-hi-en-hi $1 $MYPATH/tmp/$3_tmp/graph_output-hi-en-hi > $MYPATH/tmp/$3_tmp/match-value-hi-en-hi.txt 
+python match_value_in_hnd.py  $2  $MYPATH/tmp/$3_tmp/key-val-hi-en-hi.txt $MYPATH/tmp/$3_tmp/graph_input-hi-en-hi $1 $MYPATH/tmp/$3_tmp/graph_output-hi-en-hi $1/english_left_over-hi-en-hi.dat > $MYPATH/tmp/$3_tmp/match-value-hi-en-hi.txt 
 echo "Phrase alignment"
 python print_shortest_path.py $MYPATH/tmp/$3_tmp/match-value-hi-en-hi.txt  $MYPATH/tmp/$3_tmp/graph_output-hi-en-hi > $MYPATH/tmp/$3_tmp/shortest-path-value-hi-en-hi.txt
 python count.py $MYPATH/tmp/$3_tmp/shortest-path-value-hi-en.txt $MYPATH/tmp/$3_tmp/ $MYPATH/tmp/$3_tmp/count_dict_with_length-hi-en-hi.txt

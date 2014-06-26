@@ -3,13 +3,19 @@
 
   MYPATH=$HOME_anu_tmp/tmp/$1_tmp
   $HOME_anu_test/Anu_src/identify-nonascii-chars.out $2 $MYPATH/hnd1
-  sed 's/^/_/g' $MYPATH/hnd1 | sed 's/\([^ ]\),/\1 ,/g' | sed 's/\([^ ]\)(/\1 ( /g' | sed 's/\([^ ]\))/\1 )/g' | sed 's/\([^ ]\)?/\1 ?/g' | sed 's/\([^ ]\):/\1 :/g' | sed 's/\([^ ]\)\./\1 \./g' | sed 's/ /_/g' | sed 's/$/_/g' > $MYPATH/hnd
-  perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $2 | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" | sed 's/ @ / @/g' > $MYPATH/hnd-hi-en
+#  sed 's/^/_/g' $MYPATH/hnd1 | sed 's/\([^ ]\),/\1 ,/g' | sed 's/\([^ ]\)(/\1 ( /g' | sed 's/\([^ ]\))/\1 )/g' | sed 's/\([^ ]\)?/\1 ?/g' | sed 's/\([^ ]\):/\1 :/g' | sed 's/\([^ ]\)\.$/\1 \./g' | sed 's/ /_/g' | sed 's/$/_/g' > $MYPATH/hnd_tmp
+  perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/hnd1 | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" | sed 's/ @ / @/g' | sed 's/ /_/g' | sed 's/^/_/g' | sed 's/$/_/g' > $MYPATH/hnd_tmp
+
+  $HOME_anu_test/Anu_data/canonical_form_dictionary/get_canonical_form-dic.out $MYPATH/hnd_tmp > $MYPATH/hnd_tmp1
+  $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form_correction.out  < $MYPATH/hnd_tmp1 > $MYPATH/hnd_tmp2
+  $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_to_conventional.out  < $MYPATH/hnd_tmp2 > $MYPATH/hnd
+
+  perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/hnd | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" | sed 's/ @ / @/g' > $MYPATH/hnd-hi-en
 
 
   cd $HOME_anu_test/miscellaneous/SMT/phrasal_alignment
   replace-abbrevations.sh $MYPATH/one_sentence_per_line.txt_tokenised  $MYPATH/eng_tmp_tok_org
-  $HOME_anu_test/Anu/stdenglish/replace-mapping-symbols.out < $MYPATH/eng_tmp_tok_org > $MYPATH/eng_tok_org
+  $HOME_anu_test/Anu/stdenglish/replace-mapping-symbols_for_align.out < $MYPATH/eng_tmp_tok_org > $MYPATH/eng_tok_org
   echo "Alignment through Phrasal"
   echo "extracting keys from english sentence"
   $HOME_anu_test/multifast-v1.0.0/src/extract_key_using_multifast $MYPATH/eng_tok_org $MYPATH/map.txt > $MYPATH/key.txt

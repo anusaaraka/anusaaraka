@@ -2,7 +2,7 @@
 echo "extracting values for the given keys"   >> $1/phrasal_error
 ./gdbm-fetch.out  hi-en/Hin-Eng-dic.gdbm  $1/key-hi-en.dat > $1/key-val-hi-en.dat
 echo "searching values in hindi sentence"  >> $1/phrasal_error
-python match_value_in_hnd.py  $1/hnd  $1/key-val-hi-en.dat $1/graph_input-hi-en $1/eng_tok_org $1/graph_output-hi-en> $1/match-value-hi-en.dat  2>> $1/phrasal_error
+python match_value_in_hnd.py  $1/hnd  $1/key-val-hi-en.dat $1/graph_input-hi-en $1/eng_tok_org $1/graph_output-hi-en $1/english_left_over-hi-en.dat > $1/match-value-hi-en.dat  2>> $1/phrasal_error
 echo "Phrase alignment" >> $1/phrasal_error
 python print_shortest_path.py $1/match-value-hi-en.dat  $1/graph_output-hi-en > $1/shortest-path-value-hi-en.dat  2>> $1/phrasal_error
 python count.py $1/shortest-path-value-hi-en.dat $1/count_dict-hi-en $1/count_dict_with_length-hi-en.dat  2>> $1/phrasal_error
