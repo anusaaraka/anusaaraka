@@ -15,7 +15,7 @@
 
   cd $HOME_anu_test/miscellaneous/SMT/phrasal_alignment
   replace-abbrevations.sh $MYPATH/one_sentence_per_line.txt_tokenised  $MYPATH/eng_tmp_tok_org
-  replace-mapping-symbols_for_align.out < $MYPATH/eng_tmp_tok_org > $MYPATH/eng_tmp1_tok_org
+  ./replace-mapping-symbols_for_align.out < $MYPATH/eng_tmp_tok_org > $MYPATH/eng_tmp1_tok_org
   $HOME_anu_test/Anu_src/identify-nonascii-chars.out $MYPATH/eng_tmp1_tok_org $MYPATH/eng_tok_org
   echo "Alignment through Phrasal"
   echo "extracting keys from english sentence"
