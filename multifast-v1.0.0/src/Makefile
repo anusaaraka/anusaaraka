@@ -5,7 +5,7 @@ ACLIB := ahocorasick
 ifeq ($(wildcard $(PATH_LIBRARY)/lib$(ACLIB).a),) 
 all:;@echo 'Please go to ../ahocorasick directory and complie it first.'
 else
-all: multi_word_expression multi_word_expression_for_proper_nouns multi_word_expression_for_physics multi_word_expression_for_prov extract_key_using_multifast extract_key_using_multifast-hi-en extract_key_using_multifast-hi-en-hi
+all: multi_word_expression multi_word_expression_for_proper_nouns multi_word_expression_for_physics multi_word_expression_for_prov extract_key_using_multifast extract_key_using_multifast-hi-en extract_key_using_multifast-hi-en-hi extract_key_in_hindi_phrase 
 
 endif
 
@@ -47,6 +47,11 @@ extract_key_using_multifast-hi-en-hi.o: extract_key_using_multifast-hi-en-hi.c
 	cc -I$(PATH_INCLUDE) -Wall -c extract_key_using_multifast-hi-en-hi.c
 extract_key_using_multifast-hi-en-hi: extract_key_using_multifast-hi-en-hi.o
 	cc -o extract_key_using_multifast-hi-en-hi extract_key_using_multifast-hi-en-hi.o -l$(ACLIB) -L$(PATH_LIBRARY) 
+
+extract_key_in_hindi_phrase.o: extract_key_in_hindi_phrase.c
+	cc -I$(PATH_INCLUDE) -Wall -c extract_key_in_hindi_phrase.c
+extract_key_in_hindi_phrase: extract_key_in_hindi_phrase.o
+	cc -o extract_key_in_hindi_phrase extract_key_in_hindi_phrase.o -l$(ACLIB) -L$(PATH_LIBRARY) 
 
 clean:
 	rm -rf multi_word_expression.o multi_word_expression multi_word_expression_for_proper_nouns.o multi_word_expression_for_proper_nouns multi_word_expression_for_physics.o multi_word_expression_for_physics multi_word_expression_for_prov multi_word_expression_for_prov.o extract_key_using_multifast.o extract_key_using_multifast extract_key_using_multifast-hi-en extract_key_using_multifast-hi-en.o extract_key_using_multifast-hi-en-hi extract_key_using_multifast-hi-en-hi.o

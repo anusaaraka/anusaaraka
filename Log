@@ -1,4 +1,4 @@
- 19-06-14
+ 27-06-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	who.clp
@@ -13,17 +13,24 @@
  5. Added relation_table/ folder in Doc contains following files:
 	relation-table-for-WSD-wx.html  
 	style.css
- 6. Added following files in phrasal alignment:
+ 6. Added following files related to phrasal alignment:
 	count.py
 	sort.sh
+	bin/Anusaaraka_alignment.sh 
+	bin/run_alignment.sh
+	replace-mapping-symbols_for_align.lex
+        map-eng-offset.py
  7. Updated following lex files:
 	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
 	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern
- 8. Updated following files in phrasal_alignment and multifast:
+ 8. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
 	Word-to-Word-dict.txt
 	en-hi-gdbm-dict.txt
 	run_alignment.sh
-	extract_key.c
+	run_alignment-hi-en.sh
+	run_alignment-hi-en-hi.sh
+	multifast-v1.0.0/src/extract_key.c
+    	multifast-v1.0.0/src/Makefile
 	align-left-over-wrds.py
 	compile.sh
 	get_word_align.py
@@ -32,6 +39,13 @@
 	run_alignment-hi-en.sh
 	run_alignment.sh
 	get_phrase.py
+	create_eng_align_html_phrasal.clp
+	map-ids.py
+	map-wrd-to-wrd.py
+	mapping.py
+	print_shortest_path.py
+	replace_val_trn.py
+	Readme 
  9. Updated following dictionarie related files:
 	changes_in_databases
  10. Updated following files shell files:
