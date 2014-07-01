@@ -530,6 +530,7 @@
  22.	sarasarA	KA/__v			(By Roja Suggested by Sukhada	19-12-13)
  23.	samamiwi	Apawwi/__n		(By Roja Suggested by Chaitanya Sir 28-12-13)
  24.	wArA		ladak/A__n		(By Roja Suggetsed by Sukhada	06-01-14)
+ 25.	bAzyA		kAl/A__adj		(By roja Suggested by Chaitanya Sir 01-07-14)
 
 Modified :
   1.	<e><p><l>we_hue</l>	as	<e><p><l>owe_hue</l>       for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
@@ -572,6 +573,7 @@ Modified :
 		muJako, hamako, 
 	  4.  <e lm="keSa"><i>keS</i><par n="Gar/a__n"/></e>	 (Suggested by Chaitanya Sir 04-04-12)
 	  5.  <e lm="kamI"><i>kamI</i><par n="AjAxI/__n"/></e>	 (By Roja, Suggested by Chaitanya Sir 31-08-13)
+	  6.  <e lm="ha"><i>h</i><par n="Gar/a__n"/></e> 	 (by Roja, 	"		"     01-07-14)
 
 
  Changes in apertium-en-hi.en.metadix 
@@ -692,6 +694,7 @@ Modified :
 	ravel		house__n		(     "	     "	  )
 	resource	liv/e__vblex		(     "	     "	  )
 	disinvestment	house__n		(     "	     "	  )
+	recognise	liv/e__vblex		(     "	  01-07-14)
 
 
 
@@ -1641,6 +1644,9 @@ Removed:
 				Ex: On this note we end our journey of the Universe.
 	136. guess_noun      	rAya		as	anumAna			(Suggested by Chaitanya Sir  19-06-14)
 				Ex: He hazarded a guess.
+	137. persian_adjective	PArasI_BARA_yA_PArasI{nivAsI}	as	PArasI/PArasI_BARA/{nivAsI}
+										(Suggested by ANita ji LTRC	01-07-14)
+				Ex: Persian rugs are characterized by their geometric designs and rich colours.
 	
 
     6. Removed meaning from existing list:
@@ -1731,6 +1737,7 @@ Removed:
 	48. greatestest_UNDEFINED	mahAnawama			(	"	"	"	"	)
 	49. wove_UNDEFINED	eka_hI_kaWAsUwra_meM_graWiwa_karanA	(	"	"	"	09-06-14)
 	50. woven_UNDEFINED	eka_hI_kaWAsUwra_meM_graWiwa_karanA	(	"	"	"	"	)
+	51. persian_UNDEFINED	PArasI_BARA_yA_PArasI			(Suggested by Anita ji LTRC 	01-07-14)
 
 
     8. Modified category:

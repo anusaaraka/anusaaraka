@@ -57393,7 +57393,7 @@ perseveres_UNDEFINED	niranwara_prayawna_karanA
 persevering_adjective	aXyavasAyI/xqDa
 persian-carpet_noun	PArasI_catAI
 persian_UNDEFINED	PArasI_BARA_yA_PArasI
-persian_adjective	PArasI_BARA_yA_PArasI{nivAsI}
+persian_adjective	PArasI/PArasI_BARA/{nivAsI}
 persian_noun	PArasI_BARA
 persians_noun	PArasI
 persimmon_noun	wenxU_Pala
