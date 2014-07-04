@@ -1,4 +1,4 @@
- 01-07-14
+ 04-07-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	who.clp
@@ -20,6 +20,11 @@
 	bin/run_alignment.sh
 	replace-mapping-symbols_for_align.lex
         map-eng-offset.py
+	get_mul_pat.sh
+	map-hindi-offset.py
+	map_eng_offset-to_wrdids.py
+	multifast-v1.0.0/src/extract_key_in_hindi_phrase.c
+	multifast-v1.0.0/src/get_word_count_single.c
  7. Updated following lex files:
 	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
 	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern
@@ -35,9 +40,8 @@
 	compile.sh
 	get_word_align.py
 	match_value_in_hnd.py
-	run_alignment-hi-en-hi.sh
-	run_alignment-hi-en.sh
-	run_alignment.sh
+	Anusaaraka_alignment.sh
+	bin/run_alignment.sh
 	get_phrase.py
 	create_eng_align_html_phrasal.clp
 	map-ids.py
@@ -45,12 +49,17 @@
 	mapping.py
 	print_shortest_path.py
 	replace_val_trn.py
+	phrasal_alignment.css
+	phrasal_alignment.js
+	run_H_gen_sen_eng.bat
+ 	multifast-v1.0.0/src/run.sh
 	Readme 
  9. Updated following dictionarie related files:
 	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix
  10. Updated following files shell files:
 	Anusaaraka_stanford_align_eng_ord.sh
 	replace-abbrevations.sh
+	abbr.sh
  11. Updated following file:
 	sd_verified
  12. Updated Log. 

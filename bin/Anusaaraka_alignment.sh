@@ -38,8 +38,8 @@
   $HOME_anu_test/miscellaneous/SMT/MINION/alignment/morph.out $MYPATH/manual_hin.morph.txt < $MYPATH/one_sen_per_line_manual_hindi_sen_tmp.txt.morph > /dev/null
 
  cd $MYPATH
- $HOME_anu_test/Anu_src/split_file.out key.txt  dir_names.txt  key.dat
- $HOME_anu_test/Anu_src/split_file.out key-hi-en.txt  dir_names.txt  key-hi-en.dat
+ $HOME_anu_test/Anu_src/split_file.out key.txt  dir_names.txt  key_tmp.dat
+ $HOME_anu_test/Anu_src/split_file.out key-hi-en.txt  dir_names.txt  key-hi-en_tmp.dat
  $HOME_anu_test/Anu_src/split_file.out map.txt  dir_names.txt  map.dat
  $HOME_anu_test/Anu_src/split_file.out map-hi-en.txt  dir_names.txt  map-hi-en.dat
  $HOME_anu_test/Anu_src/split_file.out hnd-sent1 dir_names.txt  hnd

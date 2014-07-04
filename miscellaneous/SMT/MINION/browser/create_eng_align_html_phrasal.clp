@@ -65,7 +65,7 @@
  (printout fp "</div>" crlf)
  (printout fp "<div id=\"navigation\">" crlf)
  (printout fp "<form action=\"\" onsubmit=\"goto_section(); return false;\">" crlf)
- (printout fp "<p><a id=\"hindi_order\" href=\""?*filename*"_tran_frame.html\" target=\"_new\">Layered Output [Hindi-order]</a><a id=\"translation\" href=\""?*filename*"_trnsltn.html\" target=\"_new\"> Translation </a><a id=\"help\" href=\"help.html\" target=\"_new\">Help</a><input type=\"text\" name=\"goto_section_value\" size=\"5\" /><input type=\"button\" value=\"Goto\" onclick=\"goto_section()\" /><input type=\"hidden\" name=\"no_of_rows\" value=\"14\" /><input type=\"button\" value=\"Show/Hide Rows...\" onclick=\"window.open('rows.html','ShowHideRowsWindow','top=200,left=200,height=600,width=300,location=no,menubar=no,toolbar=no,directories=no,statusbar=no');\" /><input type=\"checkbox\" name=\"numbers_value\" checked=\"checked\" onchange=\"toggle_numbers()\" />Numbers<input type=\"checkbox\" name=\"border_value\" checked=\"checked\" onchange=\"toggle_borders()\" />Borders</p>" crlf)
+ (printout fp "<p><a id=\"hindi_order\" href=\""?*filename*"_tran_frame.html\" target=\"_new\">Layered Output [Hindi-order]</a><a id=\"translation\" href=\""?*filename*"_trnsltn.html\" target=\"_new\"> Translation </a><a id=\"help\" href=\"help.html\" target=\"_new\">Help</a><input type=\"text\" name=\"goto_section_value\" size=\"5\" /><input type=\"button\" value=\"Goto\" onclick=\"goto_section()\" /><input type=\"hidden\" name=\"no_of_rows\" value=\"15\" /><input type=\"button\" value=\"Show/Hide Rows...\" onclick=\"window.open('rows.html','ShowHideRowsWindow','top=200,left=200,height=700,width=300,location=no,menubar=no,toolbar=no,directories=no,statusbar=no');\" /><input type=\"checkbox\" name=\"numbers_value\" checked=\"checked\" onchange=\"toggle_numbers()\" />Numbers<input type=\"checkbox\" name=\"border_value\" checked=\"checked\" onchange=\"toggle_borders()\" />Borders</p>" crlf)
  (printout fp "</form>" crlf)
  (printout fp "</div>" crlf)
  (printout fp "<div class=\"float_clear\"/>" crlf crlf)
@@ -78,7 +78,7 @@
                       (printout fp "<tr><td>"(implode$ $?eng_sen)"</td></tr><tr><td>" crlf)
  )
  (printout fp "<table cellspacing=\"0\">"crlf"<tr class=\"row1\">" crlf)
- (printout fp "<td class=\"number\">"?p_id"."?s_id".A<a name=\"sentence_"?p_id"_"?s_id"_"?w_id"\" id=\"sentence_"?p_id"_"?s_id"_"?w_id"\"></a></td><td class=\""?chnk_fr_htm"\"> <a onclick=\"javascript:  fetchshabd"?fetch"('"?root"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?w_id"_"?original_word"\" class=\"popup_link\">"?l_punc ?original_word ?r_punc"</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_"?p_id"_"?s_id"_"?w_id"_"?original_word "',{position:'below',trigger:'click'}); </script>   </a> </td>"crlf"</tr>" crlf)
+ (printout fp "<td class=\"number\">"?p_id"."?s_id".A<a name=\"sentence_"?p_id"_"?s_id"_"?w_id"\" id=\"sentence_"?p_id"_"?s_id"_"?w_id"\"></a></td><td class=\""?chnk_fr_htm"\"> <a onclick=\"javascript:  fetchshabd"?fetch"('"?root"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?w_id"_"?original_word"\" class=\"popup_link\">"(implode$ (create$ ?l_punc)) ?original_word (implode$ (create$ ?r_punc))"</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_"?p_id"_"?s_id"_"?w_id"_"?original_word "',{position:'below',trigger:'click'}); </script>   </a> </td>"crlf"</tr>" crlf)
  )
 
  (deffunction print_caution_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
@@ -102,7 +102,7 @@
  (if (eq ?cat PropN) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> "?padasuthra" </td>" crlf "</tr>" crlf)
  else
- (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_punc ?padasuthra ?r_punc" </td>" crlf "</tr>" crlf))
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$ ?l_punc)) ?padasuthra (implode$ (create$ ?r_punc))" </td>" crlf "</tr>" crlf))
  )
 
  (deffunction print_dictionary_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?pos ?root)
@@ -138,13 +138,13 @@
  (printout fp "<tr class=\"row4\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".D</td>"))
  (if (and (neq ?suf -)(neq ?num -)) then
- (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_punc ?root ?r_punc " {suf:"?suf",num:"?num"} </td>" crlf "</tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$ ?l_punc)) ?root (implode$ (create$ ?r_punc)) " {suf:"?suf",num:"?num"} </td>" crlf "</tr>" crlf)
  else (if (and (eq ?suf -)(neq ?num -)) then
- (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_punc ?root ?r_punc " {num:"?num"} </td>" crlf "</tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$ ?l_punc)) ?root (implode$ (create$ ?r_punc)) " {num:"?num"} </td>" crlf "</tr>" crlf)
  else (if (and (neq ?suf -)(eq ?num -)) then
- (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_punc ?root ?r_punc " {suf:"?suf"} </td>" crlf "</tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$ ?l_punc)) ?root (implode$ (create$ ?r_punc)) " {suf:"?suf"} </td>" crlf "</tr>" crlf)
  else
- (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_punc ?root ?r_punc " </td>" crlf "</tr>" crlf))))
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$ ?l_punc)) ?root (implode$ (create$ ?r_punc)) " </td>" crlf "</tr>" crlf))))
  )
  
  (deffunction print_pos_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?cat)
@@ -162,11 +162,11 @@
  (printout fp "<tr class=\"row8\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".H</td>"))
  (if (eq ?id_type MAIN_VERB) then
- (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_punc ?padasuthra"{tam:"?h_tam"}" ?r_punc" </td>" crlf "</tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$ ?l_punc)) ?padasuthra"{tam:"?h_tam"}" (implode$ (create$ ?r_punc))" </td>" crlf "</tr>" crlf)
  else (if (eq ?id_type AUX_VERB) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> --&gt; </td>" crlf "</tr>" crlf)
  else (if (eq ?id_type VIB0) then
- (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_punc ?padasuthra ?r_punc" </td>" crlf "</tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$ ?l_punc)) ?padasuthra (implode$ (create$ ?r_punc))" </td>" crlf "</tr>" crlf)
  else
  (printout fp "<td class=\""?chnk_fr_htm"\"> "?h_tam" </td>" crlf "</tr>" crlf))))
  )
@@ -175,67 +175,67 @@
  (printout fp "<tr class=\"row9\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".I</td>"))
  (if (eq ?id_type MAIN_VERB) then
- (printout fp "<td class=\""?chnk_fr_htm"\"> <a class=\"tooltip\" href=\"#\"> "?l_punc ?h_mng"{tam:"?h_tam"}" ?r_punc" <span>"?mng_src"</span></a></td>" crlf "</tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> <a class=\"tooltip\" href=\"#\"> "(implode$ (create$ ?l_punc)) ?h_mng"{tam:"?h_tam"}" (implode$ (create$ ?r_punc))" <span>"?mng_src"</span></a></td>" crlf "</tr>" crlf)
  else (if (eq ?id_type AUX_VERB) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> <a class=\"tooltip\" href=\"#\"> --&gt; <span>"?mng_src"</span></a></td>" crlf "</tr>" crlf)
  else (if (eq ?id_type VIB0) then
- (printout fp "<td class=\""?chnk_fr_htm"\"> <a class=\"tooltip\" href=\"#\"> "?l_punc ?h_mng ?r_punc" <span>"?mng_src"</span></a></td>" crlf "</tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> <a class=\"tooltip\" href=\"#\"> "(implode$ (create$ ?l_punc)) ?h_mng (implode$ (create$ ?r_punc))" <span>"?mng_src"</span></a></td>" crlf "</tr>" crlf)
  else (if (eq ?id_type GREATER_THAN) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> <a class=\"tooltip\" href=\"#\"> --&gt; "?h_mng" <span>"?mng_src"</span></a></td>" crlf "</tr>" crlf)
  else (if (eq ?id_type LESS_THAN) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> <a class=\"tooltip\" href=\"#\"> "?h_mng" &lt;-- <span>"?mng_src"</span></a></td>" crlf "</tr>" crlf)
  else
- (printout fp "<td class=\""?chnk_fr_htm"\"> <a class=\"tooltip\" href=\"#\"> "?l_punc ?h_mng ?r_punc" <span>"?mng_src"</span></a></td>" crlf "</tr>" crlf))))))
+ (printout fp "<td class=\""?chnk_fr_htm"\"> <a class=\"tooltip\" href=\"#\"> "(implode$ (create$ ?l_punc)) ?h_mng (implode$ (create$ ?r_punc))" <span>"?mng_src"</span></a></td>" crlf "</tr>" crlf))))))
  )
 
  (deffunction print_prep-movement_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng ?h_tam ?id_type ?sign)
  (printout fp "<tr class=\"row10\">" crlf)
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".J</td>"))
  (if (eq ?id_type MAIN_VERB) then
- (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_punc ?h_mng"{tam:"?h_tam"}" ?r_punc" </td>" crlf "</tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$ ?l_punc)) ?h_mng"{tam:"?h_tam"}" (implode$ (create$ ?r_punc))" </td>" crlf "</tr>" crlf)
  else (if (eq ?id_type AUX_VERB) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> --&gt; </td>" crlf "</tr>" crlf)
  else (if (eq ?id_type VIB0) then
- (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_punc ?h_mng ?r_punc" </td>" crlf "</tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$ ?l_punc)) ?h_mng (implode$ (create$ ?r_punc))" </td>" crlf "</tr>" crlf)
  else (if (eq ?id_type GREATER_THAN) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> (+"?sign") --&gt; "?h_mng  " </td>" crlf "</tr>" crlf)
  else (if (eq ?id_type LESS_THAN) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> " ?h_mng " &lt;-- ("?sign") </td>" crlf "</tr>" crlf)
  else
- (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_punc ?h_mng ?r_punc" </td>" crlf "</tr>" crlf))))))
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$ ?l_punc)) ?h_mng (implode$ (create$ ?r_punc))" </td>" crlf "</tr>" crlf))))))
  )
 
  (deffunction print_hindi-generation_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?aper_op ?lwg_type)
  (printout fp "<tr class=\"row11\">" crlf ) 
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".K</td>"))
  (if (eq ?lwg_type MAIN_VERB) then
- (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_punc ?aper_op ?r_punc" </td>" crlf "</tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$ ?l_punc)) ?aper_op (implode$ (create$ ?r_punc))" </td>" crlf "</tr>" crlf)
  else (if (eq ?lwg_type AUX_VERB) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> -- </td>" crlf "</tr>" crlf)
  else
- (printout fp "<td class=\""?chnk_fr_htm"\"> "?l_punc ?aper_op ?r_punc " </td>" crlf "</tr>" crlf)))
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$ ?l_punc)) ?aper_op (implode$ (create$ ?r_punc)) " </td>" crlf "</tr>" crlf)))
  )
 
- (deffunction print_manual_ouput_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?man_op ?lwg_type)
+ (deffunction print_manual_ouput_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?m_l_punc ?m_r_punc ?man_op ?lwg_type)
  (printout fp "<tr class=\"row12\">" crlf )
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".L</td>"))
  (if (eq ?lwg_type MAIN_VERB) then
- (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op" </td>" crlf "</tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$  ?m_l_punc)) ?man_op (implode$ (create$  ?m_r_punc))" </td>" crlf "</tr>" crlf)
  else (if (eq ?lwg_type AUX_VERB) then
- (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op " </td>" crlf "</tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$  ?m_l_punc)) ?man_op (implode$ (create$  ?m_r_punc))" </td>" crlf "</tr>" crlf)
  else
- (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op " </td>" crlf "</tr>" crlf)))
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$  ?m_l_punc)) ?man_op (implode$ (create$  ?m_r_punc))" </td>" crlf "</tr>" crlf)))
  )
 
- (deffunction print_manual_ouput_row1(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?man_op ?lwg_type)
+ (deffunction print_manual_ouput_row1(?p_id ?s_id ?w_id ?chnk_fr_htm ?m_l_punc ?m_r_punc ?man_op ?lwg_type)
  (printout fp "<tr class=\"row13\">" crlf )
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".M</td>"))
  (if (eq ?lwg_type MAIN_VERB) then
- (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op" </td>" crlf "</tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$  ?m_l_punc)) ?man_op (implode$ (create$  ?m_r_punc))" </td>" crlf "</tr>" crlf)
  else (if (eq ?lwg_type AUX_VERB) then
- (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op " </td>" crlf "</tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$  ?m_l_punc)) ?man_op (implode$ (create$  ?m_r_punc))" </td>" crlf "</tr>" crlf)
  else
- (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op " </td>" crlf "</tr>" crlf)))
+ (printout fp "<td class=\""?chnk_fr_htm"\"> "(implode$ (create$  ?m_l_punc)) ?man_op (implode$ (create$  ?m_r_punc))" </td>" crlf "</tr>" crlf)))
  )
 
  (deffunction print_manual_ouput_row2(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?man_op ?lwg_type)
@@ -250,15 +250,26 @@
  )
 
 
- (deffunction print_suggestion_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?aper_op ?id_type)
+ (deffunction print_manual_ouput_row3(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?man_op ?lwg_type)
  (printout fp "<tr class=\"row15\">" crlf )
+ (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".O</td>"))
+ (if (eq ?lwg_type MAIN_VERB) then
+ (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op" </td>" crlf "</tr>" crlf)
+ else (if (eq ?lwg_type AUX_VERB) then
+ (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op " </td>" crlf "</tr>" crlf)
+ else
+ (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op " </td>" crlf "</tr>" crlf)))
+ )
+
+ (deffunction print_suggestion_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?aper_op ?id_type)
+ (printout fp "<tr class=\"row16\">" crlf )
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">&nbsp;</td>"))
  (printout fp "<td class=\""?chnk_fr_htm"\"><input name=\"suggestion_1.1\" type=\"text\" class=\"suggestion\" size=\"1\" value=\"")
- (if (eq ?id_type AUX_VERB) then (printout fp " -- \" /></td></tr>" crlf) else (printout fp ?l_punc ?aper_op ?r_punc "\" /></td></tr>" crlf))
+ (if (eq ?id_type AUX_VERB) then (printout fp " -- \" /></td></tr>" crlf) else (printout fp (implode$ (create$ ?l_punc)) ?aper_op (implode$ (create$ ?r_punc)) "\" /></td></tr>" crlf))
  (printout fp "</table>" crlf)
  )
 
- ;================================ Asserting dummy ==================================================
+ ;================================ Asserting dummy facts ==================================================
  ;Asserting chunk control facts if the id is present in any of the chunk.
  (defrule cntrl_fact_for_chunk
  (declare (salience 4000))
@@ -568,8 +579,8 @@
  (sen_type-id-phrase ?sen_type ?id ?phrase)
  =>
  (retract ?f)
- (if (eq ?r_punc NONE) then (bind ?r_punc ""))
- (if (eq ?l_punc NONE) then (bind ?l_punc ""))   
+ (if (eq ?r_punc NONE) then (bind ?r_punc (create$ )))
+ (if (eq ?l_punc NONE) then (bind ?l_punc (create$ )))   
  (print_head_info)
  (assert (id-index (+ ?id 1) 0))
  )
@@ -582,6 +593,73 @@
  =>
  (print_head_info))
 
+ (defrule get_phrase_information
+ (declare (salience 1004))
+ (position-eng-hnd-eng_ids	?pos	?eng	?hnd	?phrase_start_id $? ?phrase_end_id)
+ =>
+ 	(assert (id-phrase_type-lvalue ?phrase_start_id start PUNCT-OpenParenPUNCT-OpenParen ))
+ 	(assert (id-phrase_type-rvalue ?phrase_end_id end PUNCT-ClosedParenPUNCT-ClosedParen))
+ )
+
+ (defrule get_phrase_information1
+ (declare (salience 1004))
+ (position-eng-hnd-eng_ids      ?pos    ?eng    ?hnd    ?phrase_id)
+ =>
+        (assert (id-phrase_type-lvalue ?phrase_id start PUNCT-OpenParenPUNCT-OpenParen ))
+        (assert (id-phrase_type-rvalue ?phrase_id end PUNCT-ClosedParenPUNCT-ClosedParen))
+ )
+
+
+ (defrule print_dummy_phrase_linfo
+ (declare (salience 1003))
+ (id-word ?id ?)
+ (not (id-phrase_type-lvalue ?id $?))
+ =>
+ (assert (id-phrase_type-lvalue ?id - -))
+ )
+ 
+ (defrule print_dummy_phrase_rinfo
+ (declare (salience 1003))
+ (id-word ?id ?)
+ (not (id-phrase_type-rvalue ?id $?))
+ =>
+ (assert (id-phrase_type-rvalue ?id - -))
+ )
+
+ (defrule get_phrase_information_hi_en
+ (declare (salience 1004))
+ (position_hi_en-eng-hnd-eng_ids      ?pos    ?eng    ?hnd    ?phrase_start_id $? ?phrase_end_id)
+ =>
+        (assert (id-phrase_type-lvalue_hi_en ?phrase_start_id start PUNCT-OpenParenPUNCT-OpenParen ))
+        (assert (id-phrase_type-rvalue_hi_en ?phrase_end_id end PUNCT-ClosedParenPUNCT-ClosedParen))
+ )
+
+ (defrule get_phrase_information1_hi_en
+ (declare (salience 1004))
+ (position-eng-hnd-eng_ids      ?pos    ?eng    ?hnd    ?phrase_id)
+ =>
+        (assert (id-phrase_type-lvalue_hi_en ?phrase_id start PUNCT-OpenParenPUNCT-OpenParen ))
+        (assert (id-phrase_type-rvalue_hi_en ?phrase_id end PUNCT-ClosedParenPUNCT-ClosedParen))
+ )
+
+
+ (defrule print_dummy_phrase_linfo_hi_en
+ (declare (salience 1003))
+ (id-word ?id ?)
+ (not (id-phrase_type-lvalue_hi_en ?id $?))
+ =>
+ (assert (id-phrase_type-lvalue_hi_en ?id - -))
+ )
+
+ (defrule print_dummy_phrase_rinfo_hi_en
+ (declare (salience 1003))
+ (id-word ?id ?)
+ (not (id-phrase_type-rvalue_hi_en ?id $?))
+ =>
+ (assert (id-phrase_type-rvalue_hi_en ?id - -))
+ )
+
+ 
  ;---------------------------------------------------------------------------------------------------
  ;;printing sentence start information
  (defrule sent_start
@@ -598,8 +676,8 @@
  (sen_type-id-phrase ?sen_type 1 ?)
  (Eng_sen $?eng_sen)
  =>
- (if (eq ?r_punc NONE) then (bind ?r_punc ""))
- (if (eq ?l_punc NONE) then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc (create$ )))
+ (if (eq ?l_punc NONE) then (bind ?l_punc (create$ )))
  (bind ?fetch (sub-string 0 1 (implode$ (create$ ?root))))
  (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\"><table cellspacing=\"0\">" crlf)
  (print_eng_wrd_row  ?p_id ?s_id 1 ?chnk_fr_htm ?l_punc ?r_punc ?root ?original_word ?sen_type ?fetch $?eng_sen)
@@ -621,25 +699,74 @@
  (id-right_punctuation ?id ?r_punc)
  (id-left_punctuation  ?id ?l_punc )
  =>
- (if (eq ?r_punc NONE) then (bind ?r_punc ""))
- (if (eq ?l_punc NONE) then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc (create$ )))
+ (if (eq ?l_punc NONE) then (bind ?l_punc (create$ )))
  (bind ?fetch (sub-string 0 1 (implode$ (create$ ?root))))
 
  (printout fp "<table cellspacing=\"0\">" crlf)
  (printout fp "<tr class=\"row1\">" crlf)
- (printout fp "<td class=\""?chnk_fr_htm"\"> <a onclick=\"javascript:  fetchshabd"?fetch"('"?root"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?id"_"?original_word"\" class=\"popup_link\">"?l_punc ?original_word ?r_punc"</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_"?p_id"_"?s_id"_"?id"_"?original_word"',{position:'below',trigger:'click'}); </script>   </a> </td></tr>" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> <a onclick=\"javascript:  fetchshabd"?fetch"('"?root"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?id"_"?original_word"\" class=\"popup_link\">"(implode$ (create$ ?l_punc)) ?original_word (implode$ (create$ ?r_punc))"</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_"?p_id"_"?s_id"_"?id"_"?original_word"',{position:'below',trigger:'click'}); </script>   </a> </td></tr>" crlf)
 
  )
 
- (defrule change_manual_op_fact
+ (defrule change_manual_op_fact_en_hi
  (declare (salience 2002))
  ?f<-(anu_id-anu_mng-man_mng ?aid ?anu_mng $?man_mng)
+ (test (and  (neq $?man_mng @PUNCT-DotDotDot)(neq $?man_mng @PUNCT-Dot) (neq $?man_mng @PUNCT-Semicolon) (neq $?man_mng @PUNCT-Comma)))
   =>
  (retract ?f)
  (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid ?anu_mng - - $?man_mng))
  )
 
- (defrule convert_wx_to_utf8_for_manual_output
+ (defrule manual_op_fact_r_punc_en_hi
+ (declare (salience 2004))
+ ?f<-(anu_id-anu_mng-man_mng ?aid ?anu_mng ?man_mng&@PUNCT-DotDotDot|@PUNCT-Dot|@PUNCT-Semicolon|@PUNCT-Comma)
+  =>
+ (retract ?f)
+ (assert (anu_id-man_right_punc  ?aid ?man_mng))
+ )
+
+ (defrule manual_op_fact_l_punc_en_hi
+ (declare (salience 2004))
+ ?f<-(id-word ?aid $?)
+ (not (anu_id-man_left_punc ?aid $?))
+  =>
+ (assert (anu_id-man_left_punc  ?aid -))
+ )
+
+ (defrule dummy_manual_r_punc_en_hi
+ (declare (salience 2003))
+ ?f<-(id-word ?aid $?)
+ (not (anu_id-man_right_punc ?aid $?))
+  =>
+ (assert (anu_id-man_right_punc  ?aid -))
+ )
+
+ (defrule manual_op_fact_r_punc_hi_en
+ (declare (salience 2004))
+ ?f<-(eng_id-eng_wrd-man_wrd ?aid ?anu_mng ?man_mng&@PUNCT-DotDotDot|@PUNCT-Dot|@PUNCT-Semicolon|@PUNCT-Comma)
+  =>
+ (retract ?f)
+ (assert (anu_id-man_right_punc_hi_en  ?aid ?man_mng))
+ )
+
+ (defrule manual_op_fact_l_punc_hi_en
+ (declare (salience 2004))
+ ?f<-(id-word ?aid $?)
+ (not (anu_id-man_left_punc_hi_en ?aid $?))
+  =>
+ (assert (anu_id-man_left_punc_hi_en  ?aid -))
+ )
+
+ (defrule dummy_manual_r_punc_hi_en
+ (declare (salience 2003))
+ ?f<-(id-word ?aid $?)
+ (not (anu_id-man_right_punc_hi_en ?aid $?))
+  =>
+ (assert (anu_id-man_right_punc_hi_en  ?aid -))
+ )
+
+ (defrule convert_wx_to_utf8_for_manual_output_en_hi
  (declare (salience 2001))
  ?f<-(anu_id-anu_mng-sep-man_id-man_mng ?aid $?mng - ?mid $?man_output)
  (test (and (> (length $?mng) 0) (neq $?man_output -)))
@@ -669,7 +796,7 @@
  )
 
 
- (defrule man_rule1
+ (defrule man_rule_en_hi
  (declare (salience 900))
  (id-word ?id ?word)
  (not (anu_id-anu_mng-sep-man_id-man_mng ?id $?))
@@ -695,7 +822,7 @@
  (retract ?f)
  (bind ?length (length $?man_output))
  (if (eq ?length 0) then
-        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?mng - ?mid -))
+        (assert (eng_id-eng_wrd-sep-man_id-man_mng ?aid $?mng - ?mid -))
  else
         (loop-for-count (?i  1 ?length)
                 ;(bind ?word (nth$ ?i (create$ $?man_output)))
@@ -725,7 +852,7 @@
  (assert (eng_id-eng_wrd-sep-man_id-man_mng ?id - - - -))
  )
 
- (defrule convert_wx_to_utf8_for_manual_output-hi-en1
+ (defrule convert_wx_to_utf8_for_manual_output_human_rules-en_hi
  (declare (salience 2001))
  ?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?mng - ?mid $?man_output)
  (test (and (> (length $?mng) 0) (neq $?man_output -)))
@@ -755,7 +882,7 @@
  )
 
 
- (defrule man_rule1-hi-en1
+ (defrule man_rule_human_rules_en_hi
  (declare (salience 900))
  (id-word ?id ?word)
  (not (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $?))
@@ -763,6 +890,47 @@
 
  (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id - - - -))
  )
+
+ (defrule convert_wx_to_utf8_for_manual_output_human_rules-hi_en
+ (declare (salience 2001))
+ ?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp1 ?aid $?mng - ?mid $?man_output)
+ (test (and (> (length $?mng) 0) (neq $?man_output -)))
+ (not (id_manual_output_mng_modified3 ?aid))
+ =>
+ (retract ?f)
+ (bind ?length (length $?man_output))
+ (if (eq ?length 0) then
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp1 ?aid $?mng - ?mid -))
+ else
+        (loop-for-count (?i  1 ?length)
+                ;(bind ?word (nth$ ?i (create$ $?man_output)))
+                (bind ?word (nth$ ?i $?man_output))
+                (if (not (numberp ?word)) then
+                        (bind ?manual_output (wx_utf8 ?word))
+                        (if (eq ?i 1) then
+                                (bind ?utf8_man_output ?manual_output)
+                        else
+                                (bind ?utf8_man_output (str-cat ?utf8_man_output " " ?manual_output))
+  )
+                else
+                        (bind ?utf8_man_output ?word)))
+
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp1 ?aid  $?mng - ?mid ?utf8_man_output))
+ )
+        (assert (id_manual_output_mng_modified3 ?aid))
+ )
+
+
+ (defrule man_rule_human_rules_hi_en
+ (declare (salience 900))
+ (id-word ?id ?word)
+ (not (anu_id-anu_mng-sep-man_id-man_mng_tmp1 ?id $?))
+ =>
+
+ (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp1 ?id - - - -))
+ )
+
+
 
  ;---------------------------------------------------------------------------------------------------
  ;;printing lwg words information
@@ -788,10 +956,29 @@
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? - ? ?man_mng)
  (eng_id-eng_wrd-sep-man_id-man_mng  ?id $? - ? ?man_mng1)
  (anu_id-anu_mng-sep-man_id-man_mng_tmp  ?id $? - ? ?man_mng2)
+ (anu_id-anu_mng-sep-man_id-man_mng_tmp1  ?id $? - ? ?man_mng3)
+ (id-phrase_type-lvalue ?id ?ph_ltype ?ph_l_val)
+ (id-phrase_type-rvalue ?id ?ph_rtype ?ph_r_val)
+ (anu_id-man_left_punc ?id ?m_l_punc)
+ (anu_id-man_right_punc ?id ?m_r_punc)
+ (id-phrase_type-lvalue_hi_en ?id ?ph_ltype_hi_en ?ph_l_val_hi_en)
+ (id-phrase_type-rvalue_hi_en ?id ?ph_rtype_hi_en ?ph_r_val_hi_en)
+ (anu_id-man_left_punc_hi_en ?id ?m_l_punc_hi_en)
+ (anu_id-man_right_punc_hi_en ?id ?m_r_punc_hi_en)
  =>
  (retract ?f)
- (if (eq ?r_punc NONE) then (bind ?r_punc ""))
- (if (eq ?l_punc NONE) then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc (create$ )))
+ (if (eq ?l_punc NONE) then (bind ?l_punc (create$ )))
+ (if (eq ?m_r_punc -) then (bind ?m_r_punc (create$ )))
+ (if (eq ?m_l_punc -) then (bind ?m_l_punc (create$ )))
+ (if (eq ?ph_ltype start) then (bind ?m_l_punc (create$ ?ph_l_val ?m_l_punc)))
+ (if (eq ?ph_rtype end) then (bind ?m_r_punc  (create$ ?ph_r_val ?m_r_punc)))
+ (if (eq ?m_r_punc_hi_en -) then (bind ?m_r_punc_hi_en (create$ )))
+ (if (eq ?m_l_punc_hi_en -) then (bind ?m_l_punc_hi_en (create$ )))
+ (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
+ (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?ph_r_val_hi_en ?m_r_punc_hi_en)))
+ (printout t "----" ?r_punc crlf)
+ (printout t "----" ?l_punc crlf)
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
  (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
@@ -804,18 +991,20 @@
  (print_sense_disambiguation_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng ?h_tam MAIN_VERB ?mng_src)
  (print_prep-movement_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng ?h_tam MAIN_VERB -)
  (print_hindi-generation_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output MAIN_VERB)
- (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng MAIN_VERB)
- (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng1 MAIN_VERB)
+ (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc ?m_r_punc ?man_mng MAIN_VERB)
+ (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc_hi_en ?m_r_punc_hi_en ?man_mng1 MAIN_VERB)
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 MAIN_VERB)
+ (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 MAIN_VERB)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output MAIN_VERB) 
  else
  (print_lwg_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_tam ?padasuthra AUX_VERB)
  (print_sense_disambiguation_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng ?h_tam AUX_VERB ?mng_src)
  (print_prep-movement_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng ?h_tam AUX_VERB -)
  (print_hindi-generation_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - AUX_VERB)
- (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng AUX_VERB)
- (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng1 AUX_VERB)
+ (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc ?m_r_punc ?man_mng AUX_VERB)
+ (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc_hi_en ?m_r_punc_hi_en ?man_mng1 AUX_VERB)
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 AUX_VERB)
+ (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 AUX_VERB)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output AUX_VERB)) 
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -852,10 +1041,27 @@
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? - ? ?man_mng)
  (eng_id-eng_wrd-sep-man_id-man_mng  ?id $? - ? ?man_mng1)
  (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $? - ? ?man_mng2)
+ (anu_id-anu_mng-sep-man_id-man_mng_tmp1 ?id $? - ? ?man_mng3)
+ (id-phrase_type-lvalue ?id ?ph_ltype ?ph_l_val)
+ (id-phrase_type-rvalue ?id ?ph_rtype ?ph_r_val)
+ (anu_id-man_left_punc ?id ?m_l_punc)
+ (anu_id-man_right_punc ?id ?m_r_punc)
+ (id-phrase_type-lvalue_hi_en ?id ?ph_ltype_hi_en ?ph_l_val_hi_en)
+ (id-phrase_type-rvalue_hi_en ?id ?ph_rtype_hi_en ?ph_r_val_hi_en)
+ (anu_id-man_left_punc_hi_en ?id ?m_l_punc_hi_en)
+ (anu_id-man_right_punc_hi_en ?id ?m_r_punc_hi_en)
  =>
  (retract ?f)
- (if (eq ?r_punc NONE) then (bind ?r_punc ""))
- (if (eq ?l_punc NONE) then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc (create$ )))
+ (if (eq ?l_punc NONE) then (bind ?l_punc (create$ )))
+ (if (eq ?m_r_punc -) then (bind ?m_r_punc (create$ )))
+ (if (eq ?m_l_punc -) then (bind ?m_l_punc (create$ )))
+ (if (eq ?ph_ltype start) then (bind ?m_l_punc (create$ ?ph_l_val ?m_l_punc)))
+ (if (eq ?ph_rtype end) then (bind ?m_r_punc (create$ ?ph_r_val ?m_r_punc)))
+ (if (eq ?m_r_punc_hi_en -) then (bind ?m_r_punc_hi_en (create$ )))
+ (if (eq ?m_l_punc_hi_en -) then (bind ?m_l_punc_hi_en (create$ )))
+ (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
+ (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?ph_r_val_hi_en ?m_r_punc_hi_en)))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
  (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
@@ -867,9 +1073,10 @@
  (print_sense_disambiguation_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng - VIB0 ?mng_src)
  (print_prep-movement_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng - VIB0 -)
  (print_hindi-generation_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output -)
- (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng -)
- (print_manual_ouput_row1 ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng1 -)
+ (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc ?m_r_punc ?man_mng -)
+ (print_manual_ouput_row1 ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc_hi_en ?m_r_punc_hi_en ?man_mng1 -)
  (print_manual_ouput_row2 ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
+ (print_manual_ouput_row3 ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output -)
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -905,11 +1112,28 @@
  (anu_id-anu_mng-sep-man_id-man_mng ?pp_id $? - ? ?man_mng)
  (eng_id-eng_wrd-sep-man_id-man_mng  ?pp_id $? - ? ?man_mng1)
  (anu_id-anu_mng-sep-man_id-man_mng_tmp ?pp_id $? - ? ?man_mng2)
+ (anu_id-anu_mng-sep-man_id-man_mng_tmp1 ?pp_id $? - ? ?man_mng3)
+ (id-phrase_type-lvalue ?pp_id ?ph_ltype ?ph_l_val) 
+ (id-phrase_type-rvalue ?pp_id ?ph_rtype ?ph_r_val) 
+ (anu_id-man_left_punc ?id ?m_l_punc)
+ (anu_id-man_right_punc ?id ?m_r_punc)
+ (id-phrase_type-lvalue_hi_en ?pp_id ?ph_ltype_hi_en ?ph_l_val_hi_en)
+ (id-phrase_type-rvalue_hi_en ?pp_id ?ph_rtype_hi_en ?ph_r_val_hi_en)
+ (anu_id-man_left_punc_hi_en ?id ?m_l_punc_hi_en)
+ (anu_id-man_right_punc_hi_en ?id ?m_r_punc_hi_en)
  =>
  (retract ?f)
  (bind ?sign (- ?id ?pp_id))
- (if (eq ?r_punc NONE) then (bind ?r_punc ""))
- (if (eq ?l_punc NONE) then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc (create$ )))
+ (if (eq ?l_punc NONE) then (bind ?l_punc (create$ )))
+ (if (eq ?m_r_punc -) then (bind ?m_r_punc (create$ )))
+ (if (eq ?m_l_punc -) then (bind ?m_l_punc (create$ )))
+ (if (eq ?ph_ltype start) then (bind ?m_l_punc (create$ ?ph_l_val ?m_l_punc)))
+ (if (eq ?ph_rtype end) then (bind ?m_r_punc (create$ ?ph_r_val ?m_r_punc)))
+ (if (eq ?m_r_punc_hi_en -) then (bind ?m_r_punc_hi_en (create$ )))
+ (if (eq ?m_l_punc_hi_en -) then (bind ?m_l_punc_hi_en (create$ )))
+ (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
+ (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?ph_r_val_hi_en ?m_r_punc_hi_en)))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))  
  (print_caution_row ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?pp_root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?pp_cat ?pp_padasuthra)
@@ -925,9 +1149,10 @@
  (print_sense_disambiguation_row  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?pp_h_mng - LESS_THAN ?mng_src)
  (print_prep-movement_row  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?pp_h_mng - LESS_THAN ?sign))
  (print_hindi-generation_row  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc "~" -)
- (print_manual_ouput_row  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng -)
- (print_manual_ouput_row1  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng1 -)
+ (print_manual_ouput_row  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?m_l_punc ?m_r_punc ?man_mng -)
+ (print_manual_ouput_row1  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?m_l_punc_hi_en ?m_r_punc_hi_en ?man_mng1 -)
  (print_manual_ouput_row2  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
+ (print_manual_ouput_row3  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
  (print_suggestion_row ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc "~" -) 
  
  (assert (id-index (+ ?pp_id 1) (- ?n_words 1)))
@@ -953,10 +1178,29 @@
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? - ? ?man_mng)
  (eng_id-eng_wrd-sep-man_id-man_mng  ?id $? - ? ?man_mng1)
  (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $? - ? ?man_mng2)
+ (anu_id-anu_mng-sep-man_id-man_mng_tmp1 ?id $? - ? ?man_mng3)
+ (id-phrase_type-lvalue ?id ?ph_ltype ?ph_l_val)
+ (id-phrase_type-rvalue ?id ?ph_rtype ?ph_r_val)
+ (anu_id-man_left_punc ?id ?m_l_punc)
+ (anu_id-man_right_punc ?id ?m_r_punc)
+ (id-phrase_type-lvalue_hi_en ?id ?ph_ltype_hi_en ?ph_l_val_hi_en)
+ (id-phrase_type-rvalue_hi_en ?id ?ph_rtype_hi_en ?ph_r_val_hi_en)
+ (anu_id-man_left_punc_hi_en ?id ?m_l_punc_hi_en)
+ (anu_id-man_right_punc_hi_en ?id ?m_r_punc_hi_en)
  =>
  (retract ?f)
- (if (eq ?r_punc NONE) then (bind ?r_punc ""))
- (if (eq ?l_punc NONE) then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc (create$ )))
+ (if (eq ?l_punc NONE) then (bind ?l_punc (create$ )))
+ (if (eq ?m_r_punc -) then (bind ?m_r_punc (create$ )))
+ (if (eq ?m_l_punc -) then (bind ?m_l_punc (create$ )))
+ (if (eq ?ph_ltype start) then (bind ?m_l_punc (create$ ?ph_l_val ?m_l_punc)))
+ (if (eq ?ph_rtype end) then (bind ?m_r_punc (create$ ?ph_r_val ?m_r_punc)))
+ (if (eq ?m_r_punc_hi_en -) then (bind ?m_r_punc_hi_en (create$ )))
+ (if (eq ?m_l_punc_hi_en -) then (bind ?m_l_punc_hi_en (create$ )))
+ (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
+ (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?ph_r_val_hi_en ?m_r_punc_hi_en)))
+ (printout t ?r_punc crlf)
+ (printout t ?l_punc crlf)
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
  (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
@@ -968,9 +1212,10 @@
  (print_sense_disambiguation_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng - - ?mng_src)
  (print_prep-movement_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng - - -)
  (print_hindi-generation_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output -)
- (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng -)
- (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng1 -)
+ (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc ?m_r_punc ?man_mng -)
+ (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc_hi_en ?m_r_punc_hi_en ?man_mng1 -)
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
+ (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?apertium_output -)
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -995,10 +1240,27 @@
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? - ? ?man_mng)
  (eng_id-eng_wrd-sep-man_id-man_mng  ?id $? - ? ?man_mng1)
  (anu_id-anu_mng-sep-man_id-man_mng_tmp  ?id $? - ? ?man_mng2)
+ (anu_id-anu_mng-sep-man_id-man_mng_tmp1  ?id $? - ? ?man_mng3)
+ (id-phrase_type-lvalue ?id ?ph_ltype ?ph_l_val)
+ (id-phrase_type-rvalue ?id ?ph_rtype ?ph_r_val)
+ (anu_id-man_left_punc ?id ?m_l_punc)
+ (anu_id-man_right_punc ?id ?m_r_punc)
+ (id-phrase_type-lvalue_hi_en ?id ?ph_ltype_hi_en ?ph_l_val_hi_en)
+ (id-phrase_type-rvalue_hi_en ?id ?ph_rtype_hi_en ?ph_r_val_hi_en)
+ (anu_id-man_left_punc_hi_en ?id ?m_l_punc_hi_en)
+ (anu_id-man_right_punc_hi_en ?id ?m_r_punc_hi_en)
  =>
  (retract ?f)
- (if (eq ?r_punc NONE) then (bind ?r_punc ""))
- (if (eq ?l_punc NONE) then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc (create$ )))
+ (if (eq ?l_punc NONE) then (bind ?l_punc (create$ )))
+ (if (eq ?m_r_punc -) then (bind ?m_r_punc (create$ )))
+ (if (eq ?m_l_punc -) then (bind ?m_l_punc (create$ )))
+ (if (eq ?ph_ltype start) then (bind ?m_l_punc (create$ ?ph_l_val ?m_l_punc)))
+ (if (eq ?ph_rtype end) then (bind ?m_r_punc (create$ ?ph_r_val ?m_r_punc)))
+ (if (eq ?m_r_punc_hi_en -) then (bind ?m_r_punc_hi_en (create$ )))
+ (if (eq ?m_l_punc_hi_en -) then (bind ?m_l_punc_hi_en (create$ )))
+ (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
+ (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?ph_r_val_hi_en ?m_r_punc_hi_en)))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
  (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
@@ -1010,9 +1272,10 @@
  (print_sense_disambiguation_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng - - ?mng_src)
  (print_prep-movement_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng - - -)
  (print_hindi-generation_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng -)
- (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng -)
- (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng1 -)
+ (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc ?m_r_punc ?man_mng -)
+ (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc_hi_en ?m_r_punc_hi_en ?man_mng1 -)
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
+ (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?h_mng -)
 
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -1036,10 +1299,27 @@
  (anu_id-anu_mng-sep-man_id-man_mng ?id $? - ? ?man_mng)
  (eng_id-eng_wrd-sep-man_id-man_mng  ?id $? - ? ?man_mng1)
  (anu_id-anu_mng-sep-man_id-man_mng_tmp ?id $? - ? ?man_mng2)
+ (anu_id-anu_mng-sep-man_id-man_mng_tmp1 ?id $? - ? ?man_mng3)
+ (id-phrase_type-lvalue ?id ?ph_ltype ?ph_l_val)
+ (id-phrase_type-rvalue ?id ?ph_rtype ?ph_r_val)
+ (anu_id-man_left_punc ?id ?m_l_punc)
+ (anu_id-man_right_punc ?id ?m_r_punc)
+ (id-phrase_type-lvalue_hi_en ?id ?ph_ltype_hi_en ?ph_l_val_hi_en)
+ (id-phrase_type-rvalue_hi_en ?id ?ph_rtype_hi_en ?ph_r_val_hi_en)
+ (anu_id-man_left_punc_hi_en ?id ?m_l_punc_hi_en)
+ (anu_id-man_right_punc_hi_en ?id ?m_r_punc_hi_en)
  =>
  (retract ?f)
- (if (eq ?r_punc NONE) then (bind ?r_punc ""))
- (if (eq ?l_punc NONE) then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc (create$ )))
+ (if (eq ?l_punc NONE) then (bind ?l_punc (create$ )))
+ (if (eq ?m_r_punc -) then (bind ?m_r_punc (create$ )))
+ (if (eq ?m_l_punc -) then (bind ?m_l_punc (create$ )))
+ (if (eq ?ph_ltype start) then (bind ?m_l_punc (create$ ?ph_l_val ?m_l_punc)))
+ (if (eq ?ph_rtype end) then (bind ?m_r_punc (create$ ?ph_r_val ?m_r_punc)))
+ (if (eq ?m_r_punc_hi_en -) then (bind ?m_r_punc_hi_en (create$ )))
+ (if (eq ?m_l_punc_hi_en -) then (bind ?m_l_punc_hi_en (create$ )))
+ (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
+ (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?ph_r_val_hi_en ?m_r_punc_hi_en)))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
  (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
@@ -1051,9 +1331,10 @@
  (print_sense_disambiguation_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - - - -)
  (print_prep-movement_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - - - -)
  (print_hindi-generation_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
- (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng -)
- (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng1 -)
+ (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc ?m_r_punc ?man_mng -)
+ (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc_hi_en ?m_r_punc_hi_en ?man_mng1 -)
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng2 -)
+ (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?man_mng3 -)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
  
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -1068,10 +1349,26 @@
  (test (member$ ?id $?ids))
  (id-right_punctuation ?id ?r_punc)
  (id-left_punctuation  ?id ?l_punc )
+ (id-phrase_type-lvalue ?id ?ph_ltype ?ph_l_val)
+ (id-phrase_type-rvalue ?id ?ph_rtype ?ph_r_val)
+ (anu_id-man_left_punc ?id ?m_l_punc)
+ (anu_id-man_right_punc ?id ?m_r_punc)
+ (id-phrase_type-lvalue_hi_en ?id ?ph_ltype_hi_en ?ph_l_val_hi_en)
+ (id-phrase_type-rvalue_hi_en ?id ?ph_rtype_hi_en ?ph_r_val_hi_en)
+ (anu_id-man_left_punc_hi_en ?id ?m_l_punc_hi_en)
+ (anu_id-man_right_punc_hi_en ?id ?m_r_punc_hi_en)
  =>
  (retract ?f)
- (if (eq ?r_punc NONE) then (bind ?r_punc ""))
- (if (eq ?l_punc NONE) then (bind ?l_punc ""))
+ (if (eq ?r_punc NONE) then (bind ?r_punc (create$ )))
+ (if (eq ?l_punc NONE) then (bind ?l_punc (create$ )))
+ (if (eq ?m_r_punc -) then (bind ?m_r_punc (create$ )))
+ (if (eq ?m_l_punc -) then (bind ?m_l_punc (create$ )))
+ (if (eq ?ph_ltype start) then (bind ?m_l_punc (create$ ?ph_l_val ?m_l_punc)))
+ (if (eq ?ph_rtype end) then (bind ?m_r_punc (create$ ?ph_r_val ?m_r_punc)))
+ (if (eq ?m_r_punc_hi_en -) then (bind ?m_r_punc_hi_en (create$ )))
+ (if (eq ?m_l_punc_hi_en -) then (bind ?m_l_punc_hi_en (create$ )))
+ (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
+ (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?ph_r_val_hi_en ?m_r_punc_hi_en)))
  (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - - -s)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
  (print_root_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - - -)
@@ -1082,9 +1379,10 @@
  (print_sense_disambiguation_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - - - -)
  (print_prep-movement_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - - - -)
  (print_hindi-generation_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
- (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
- (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
+ (print_manual_ouput_row  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc ?m_r_punc - -)
+ (print_manual_ouput_row1  ?p_id ?s_id ?id ?chnk_fr_htm ?m_l_punc_hi_en ?m_r_punc_hi_en - -)
  (print_manual_ouput_row2  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
+ (print_manual_ouput_row3  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
  (print_suggestion_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
  
  (assert (id-index (+ ?id 1) (- ?n_words 1)))
@@ -1117,17 +1415,48 @@
  (printout fp "<tr><td>" "Man translation :: " (wx_utf8 (implode$ $?man_sen))"</td></tr>" crlf)
 
 ; (bind ?dic_path (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/align_left_over_wrds.dat"))
- (bind ?dic_path (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/left-over-words.dat"))
+; (bind ?dic_path (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/left-over-words.dat"))
+ (bind ?dic_path (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/total-left-over.dat"))
  (open ?dic_path dic_fp)
  (bind ?val (readline dic_fp))
  (printout fp "<tr><td>" crlf)
  (while (neq ?val EOF)
  (printout fp ?val"<br>" crlf)
- (printout t ?val crlf)
+ ;(printout t ?val crlf)
  (bind ?val (readline dic_fp))
  )
  (printout fp "</td></tr>" crlf)
  (close dic_fp)
+
+
+ (bind ?dic_path2 (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/english_left_over.dat"))
+ (open ?dic_path2 dic_fp2)
+ (bind ?val (readline dic_fp2))
+ (printout fp "<tr><td>" crlf)
+ (while (neq ?val EOF)
+ (printout fp ?val"<br>" crlf)
+ ;(printout t ?val crlf)
+ (bind ?val (readline dic_fp2))
+ )
+ (printout fp "</td></tr>" crlf)
+ (close dic_fp2)
+
+ (bind ?dic_path3 (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/align_left_over_wrds.dat"))
+ (open ?dic_path3 dic_fp3)
+ (bind ?val (readline dic_fp3))
+ (printout fp "<tr><td>" crlf)
+ (while (neq ?val EOF)
+ (printout fp ?val"<br>" crlf)
+ ;(printout t ?val crlf)
+ (bind ?val (readline dic_fp3))
+ )
+ (printout fp "</td></tr>" crlf)
+ (close dic_fp3)
+
+
+;align_left_over_wrds.dat  english_left_over.dat  left-over-words.dat
+
+
  (printout fp "</table></form>")
  (if (and (= ?p_id 1) (= ?s_id 1)) then (printout fp "<div class=\"float_clear\"/>" crlf))
 
