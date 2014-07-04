@@ -4,19 +4,20 @@ Configuration file for English-Hinid language specifics
 
 var rows_visibility = [
 1, // row1
-1, // row2
-1, // row3
+0, // row2
+0, // row3
 0, // row4
 0, // row5
 0, // row6
 0, // row7
 0, // row8
-1, // row9
+0, // row9
 0, // row10
 1, // row11
 1, // row12
 1, // row13
 1, // row14
+1, // row15
 0, // last row will be the suggestions row
 ]; // The array can be of different size than the number of rows at hand
 
@@ -32,10 +33,11 @@ var row_labels = [
 "Sense Disambiguation (I)",
 "Preposition Movement (J)",
 "Hindi Generation (K)",
-"Manual meaning (E-H) (L)",
-"Manual meaning (H-E) (M)",
-"Manual meaning (N)",
-"Suggestions (O)"
+"Phrasal meaning (E-H) (L)",
+"Phrasal meaning (H-E) (M)",
+"Manual meaning (E-H) (N) ",
+"Manual meaning (H-E) (O)",
+"Suggestions (P)"
 ];
 
 var row_descriptions = [
@@ -52,6 +54,7 @@ var row_descriptions = [
 "Shows the Hindi word after calling the Hindi generator",
 "Shows the manual word translation using  phrasal english to hindi training data",
 "Shows the manual word translation using phrasal hindi to english training data",
-"Shows the manual aligned meaning",
+"Shows the manual aligned meaning for phrasal english to hindi training data",
+"Shows the manual aligned meaning for phrasal hindi to english training data",
 "Shows the user suggestion"
 ];
