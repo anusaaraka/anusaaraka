@@ -1,5 +1,5 @@
 //Print no: of words in a multi word
-
+//Written by Roja (21-03-14)
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
