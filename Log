@@ -1,4 +1,4 @@
- 27-06-14
+ 01-07-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	who.clp
@@ -47,7 +47,7 @@
 	replace_val_trn.py
 	Readme 
  9. Updated following dictionarie related files:
-	changes_in_databases
+	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix
  10. Updated following files shell files:
 	Anusaaraka_stanford_align_eng_ord.sh
 	replace-abbrevations.sh
