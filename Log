@@ -23,7 +23,8 @@
 	get_mul_pat.sh
 	map-hindi-offset.py
 	map_eng_offset-to_wrdids.py
-	extract_key_in_hindi_phrase.c
+	multifast-v1.0.0/src/extract_key_in_hindi_phrase.c
+	multifast-v1.0.0/src/get_word_count_single.c
  7. Updated following lex files:
 	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
 	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern
@@ -51,6 +52,7 @@
 	phrasal_alignment.css
 	phrasal_alignment.js
 	run_H_gen_sen_eng.bat
+ 	multifast-v1.0.0/src/run.sh
 	Readme 
  9. Updated following dictionarie related files:
 	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix
