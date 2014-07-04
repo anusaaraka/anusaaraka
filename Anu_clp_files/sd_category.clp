@@ -90,6 +90,7 @@
   (id-word_cap_info ?id&~1  first_cap|all_caps)
   (parserid-wordid   ?pid  ?id)
   ?f0<-(id-sd_cat  ?pid ?)
+  (parserid-word ?pid ?w&~I) ;You are lucky I am here. 
    =>
         (printout ?*cat_fp* "(parser_id-cat_coarse  "?pid"   PropN)" crlf)
         (retract ?f0)
