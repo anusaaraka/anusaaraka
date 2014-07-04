@@ -84758,7 +84758,7 @@ unclaimed_adjective	jisakA_koI_xAvexAra_na_ho/binA_xAve_kA
 unclasp_verb	Kola
 unclassifiable_adjective	avargIkaraNIya
 unclassified_adjective	avargIkqwa/upalabXa/aSreNika
-uncle_noun	cAcA/mOsA/mAmA/PUPA
+uncle_noun	cAcA/mOsA/mAmA/PUPA/wAu
 unclean_adjective	mElA/ganxA/asvacCa/apaviwra/apAvana
 uncleaner_UNDEFINED	apAvana
 uncleanest_UNDEFINED	apAvana

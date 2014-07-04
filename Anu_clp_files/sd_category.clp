@@ -84,9 +84,10 @@
 ;  )
   ;------------------------------------------------------------------------------------------
   ; We camped on Nilgiri hills during summer. He went to Agra and saw the Tajmahal.
+  ; As will be explained later, there are several types of modulation, abbreviated as AM, FM and PM.
   (defrule PropN_rule
   (declare (salience 10))
-  (id-word_cap_info ?id&~1  first_cap)
+  (id-word_cap_info ?id&~1  first_cap|all_caps)
   (parserid-wordid   ?pid  ?id)
   ?f0<-(id-sd_cat  ?pid ?)
    =>
