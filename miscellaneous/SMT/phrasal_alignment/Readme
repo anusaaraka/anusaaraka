@@ -1,33 +1,28 @@
-#Readme to extract dictionaries from phrase table
-#################################################
-
-1. To extract english-hindi dictionary:
-	RUN: python  phrase_gdbm_dict.py phrase-table
-#       Ex:  python  phrase_gdbm_dict.py phrase-dev 
-#            O/p : en-hi-dict.txt        
- 
-2. To extract english-wrd_to_wrd_alignment-hindi dictionary
-	RUN: python wrd-to-wrd-alignment.py phrase-table
-#       Ex:  python wrd-to-wrd-alignment.py phrase-dev
-#            O/p: w-w-phrase_dict
-
-3. sed "s/'_s_/'s_/g"    en-hi-dict.txt > en-hi-dev-dict.txt
-
-4. sh  run.sh  en-hi-dict.txt  extract-key-dev-corpus.c
-
-5. cp  extract-key-dev-corpus.c  $HOME_anu_test/multifast-v1.0.0/src/
-
-6. cd $HOME_anu_test/multifast-v1.0.0/src/
-   Change the dictionary name in extract_key_using_multifast.c
-   RUN: make
-
-7. $HOME_anu_test/Anu_data/create-gdbm.pl  dev-corpus/en-hi-dev-dict.gdbm < dev-corpus/en-hi-dev-dict.txt
-
-#################################################
 #Readme to run phrasal alignment
+################################
+Pre-requisites:
+##############
+	-> Parallel Corpus
+	-> Phrase and Word alignment dictionaries extracted from phrase table
 
-1. Extract keys from the en-hi-dict.txt
+RUN::
+###
+1. Anusaaraka_stanford.sh <english-file> 0 True physics onesent
+	Ex: Anusaaraka_stanford.sh  sample 0 True physics onesent
+		(where sample   -> English file  
+			0       -> default parse
+			True    -> Giving preference to u ser wsd rules
+			physics -> if parallel corpus is physics then use this option 
+				   else use 'general' option
+			onesent -> As parallel corpus already in one sentence per line, 
+				   to skip pre-proccessing using this option.
+		)
 
-extract_key_using_multifast.c
+2. Anusaaraka_alignment.sh <english-file> <manual-file>
+	Ex: Anusaaraka_alignment.sh sample sample_h
 
 
+To view layered output:
+######################
+firefox $HOME_anu-output/<file-name>_eng_align.html
+	Ex: firefox $HOME_anu-output/sample_eng_align.html

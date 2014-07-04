@@ -30,7 +30,7 @@ for each in m_file:
 	hi_lst = hi_sent_tmp.split('_')
 	new_line = graph_out[2:-3]
 	lst = new_line.split("', '")
-	if 'Construction mismatch\n' in graph_out:
+	if 'NO PATH\n' in graph_out:
 		flag = 1	
 	if ';~~~~~~~~~~\n' in each:
 		for key in sorted(dic):
@@ -48,7 +48,7 @@ for each in m_file:
 			else:
 				print "%s\t%s" % (dic[key], key)
 		if flag == 1:
-			print "Construction mismatch"
+			print "NO PATH"
 		print ';~~~~~~~~~~'
 		sent_count += 1
 		dic = {}

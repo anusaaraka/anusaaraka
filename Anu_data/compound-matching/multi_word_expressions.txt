@@ -10855,6 +10855,7 @@ divisional_officer	maMdala_aXikArI#maMdala_aXikArI#noun#2#RM
 divisional_operating_superintendent	praBAgIya_pracAlana_aXIkRaka#praBAgIya_pracAlana_aXIkRaka#noun#3#RM
 divisional_pay_clerk	praBAgIya_vewana_klarka#praBAgIya_vewana_klarka#noun#3#RM
 divisional_personnel_officer	praBAgIya_kArmika_aXikArI#praBAgIya_kArmika_aXikArI#noun#3#RM
+development_work	vikAsa_kArya#vikAsa_kArya#noun#2#RM
 divisional_safety_officer	praBAgIya_saMrakRA_aXikArI#praBAgIya_saMrakRA_aXikArI#noun#3#RM
 divisional_signal_and_tellecommunication_engineer	praBAgIya_siganala_Ora_xUrasaMcAra_iMjIniyara#praBAgIya_siganala_Ora_xUrasaMcAra_iMjIniyara#noun#5#RM
 divisional_superintendent	praBAgIya_aXIkRaka#praBAgIya_aXIkRaka#noun#2#RM
@@ -33230,6 +33231,11 @@ cargo_train	mAla_gAdI#mAla_gAdI#noun#2#RM
 military_rule	senA_kA_SARana#senA_kA_SARana#noun#2#RM
 high_level_of_concentration	uccaswarIya_ekAgrawA#uccaswarIya_ekAgrawA#noun#4#RM
 a_high_level_of_concentration	uccaswarIya_ekAgrawA#uccaswarIya_ekAgrawA#noun#4#RM
+cigarette_smoking	XUmrapAna#XUmrapAna#noun#2#RM
+back_injury	pITa_kI_cota#pITa_kI_cota#noun#2#RM
+disaster_victims	ApaxA_pIdiwa#ApaxA_pIdiwa#noun#2#RM
+boarding_life	CAwrAvAsIya_jIvana#CAwrAvAsIya_jIvana#noun#2#RM
+ply_board	plAI_borda#plAI_borda#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
@@ -33758,3 +33764,4 @@ share_market	prawiBUwi_bAjAra#prawiBUwi_bAjAra#noun#2#RM
 President_of_the_District_Art_Teachers'_association	jilA_kalAXyApaka_saMGa_ke_aXyakRa#jilA_kalAXyApaka_saMGa_ke_aXyakRa#noun#2#RM
 gold_bars	sone_kI_IMteM#sone_kI_IMteM#noun#2#RM
 Panchayat_level_committee_officer	paMcAyawa_samiwi_swarIya_paxAXikArI#paMcAyawa_samiwi_swarIya_paxAXikArI#noun#2#RM
+
