@@ -71,6 +71,7 @@
  (printout fp "<div class=\"float_clear\"/>" crlf crlf)
  )
 
+ ;======================================== deffunctions for printing all rows ===============================================
  (deffunction print_eng_wrd_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?root ?original_word ?sen_type ?fetch $?eng_sen)
  (if (= ?w_id 1) then ;(printout fp "<tr><td>"(implode$ $?eng_sen)"</td></tr>" crlf)
                       (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\">" crlf)
@@ -268,8 +269,9 @@
  (if (eq ?id_type AUX_VERB) then (printout fp " -- \" /></td></tr>" crlf) else (printout fp (implode$ (create$ ?l_punc)) ?aper_op (implode$ (create$ ?r_punc)) "\" /></td></tr>" crlf))
  (printout fp "</table>" crlf)
  )
-
  ;================================ Asserting dummy facts ==================================================
+ ;As each rule need all of the facts here we are generating dummy facts if that fact is absent by any reason.
+ ;=========================================================================================================
  ;Asserting chunk control facts if the id is present in any of the chunk.
  (defrule cntrl_fact_for_chunk
  (declare (salience 4000))
@@ -558,41 +560,10 @@
  =>
  (assert (sen_type-id-phrase NONE ?id -))
  )
- ;========================================= Generating html format ========================================
- ;;printing html head information 
- (defrule sent_start1.1_dont_print_title_info
- (declare (salience 1004))
- (REMOVE_TITLE_FROM_HTML)
- (para_id-sent_id-no_of_words 1 1 ?)
- ?f<-(id-original_word 1 ?original_word)
- (id-word ?id ?word)
- ;(id-root ?id ?root)
- (id-root-category-suffix-number ?id ?root ? ?suf ?num)
- (id-cat_coarse ?id ?cat)
- (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
- (test (member$ ?id $?ids))
- (id-padasuthra ?id ?padasuthra)
- (id-HM-source-grp_ids ?id ?h_mng ? $?)
- (id-right_punctuation ?id ?r_punc)
- (id-left_punctuation  ?id ?l_punc )
- (id-Apertium_output   ?id   ?mng)
- (sen_type-id-phrase ?sen_type ?id ?phrase)
- =>
- (retract ?f)
- (if (eq ?r_punc NONE) then (bind ?r_punc (create$ )))
- (if (eq ?l_punc NONE) then (bind ?l_punc (create$ )))   
- (print_head_info)
- (assert (id-index (+ ?id 1) 0))
- )
 
- ;;printing html head information
- (defrule print_head_info
- (declare (salience 1004))
- (para_id-sent_id-no_of_words 1 1 ?)
- (not (REMOVE_TITLE_FROM_HTML)) 
- =>
- (print_head_info))
-
+ ;------------------------------------------------------------------------------------------------------
+ ;===================== Formatting manual sen o/p facts ===============================================
+ ;------------------------------------------------------------------------------------------------------
  (defrule get_phrase_information
  (declare (salience 1004))
  (position-eng-hnd-eng_ids	?pos	?eng	?hnd	?phrase_start_id $? ?phrase_end_id)
@@ -608,7 +579,6 @@
         (assert (id-phrase_type-lvalue ?phrase_id start PUNCT-OpenParenPUNCT-OpenParen ))
         (assert (id-phrase_type-rvalue ?phrase_id end PUNCT-ClosedParenPUNCT-ClosedParen))
  )
-
 
  (defrule print_dummy_phrase_linfo
  (declare (salience 1003))
@@ -660,59 +630,10 @@
  )
 
  
- ;---------------------------------------------------------------------------------------------------
- ;;printing sentence start information
- (defrule sent_start
- (declare (salience 1001))
- (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
-; (test (neq ?p_id 1))
- (id-word 1 ?word)
- (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
- (test (member$ 1 $?ids))
- (id-root-category-suffix-number 1 ?root ? ?suf ?num)
- (id-right_punctuation 1 ?r_punc)
- (id-left_punctuation  1 ?l_punc )
- (id-original_word 1 ?original_word)
- (sen_type-id-phrase ?sen_type 1 ?)
- (Eng_sen $?eng_sen)
- =>
- (if (eq ?r_punc NONE) then (bind ?r_punc (create$ )))
- (if (eq ?l_punc NONE) then (bind ?l_punc (create$ )))
- (bind ?fetch (sub-string 0 1 (implode$ (create$ ?root))))
- (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\"><table cellspacing=\"0\">" crlf)
- (print_eng_wrd_row  ?p_id ?s_id 1 ?chnk_fr_htm ?l_punc ?r_punc ?root ?original_word ?sen_type ?fetch $?eng_sen)
- (assert (id-index 1 ?n_words))
- )
- ;---------------------------------------------------------------------------------------------------
- ;;printing word head information
- (defrule sent_next_word
- (declare (salience 1000))
- ?f<-(id-index ?id ?n_words)
- (test (neq ?id 1))
- (para_id-sent_id-no_of_words ?p_id ?s_id ?words)
- (id-word ?id ?word)
- ;(id-root ?id ?root)
- (id-root-category-suffix-number ?id ?root ? ?suf ?num)
- (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
- (test (member$ ?id $?ids))
- (id-original_word ?id ?original_word)
- (id-right_punctuation ?id ?r_punc)
- (id-left_punctuation  ?id ?l_punc )
- =>
- (if (eq ?r_punc NONE) then (bind ?r_punc (create$ )))
- (if (eq ?l_punc NONE) then (bind ?l_punc (create$ )))
- (bind ?fetch (sub-string 0 1 (implode$ (create$ ?root))))
-
- (printout fp "<table cellspacing=\"0\">" crlf)
- (printout fp "<tr class=\"row1\">" crlf)
- (printout fp "<td class=\""?chnk_fr_htm"\"> <a onclick=\"javascript:  fetchshabd"?fetch"('"?root"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?id"_"?original_word"\" class=\"popup_link\">"(implode$ (create$ ?l_punc)) ?original_word (implode$ (create$ ?r_punc))"</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_"?p_id"_"?s_id"_"?id"_"?original_word"',{position:'below',trigger:'click'}); </script>   </a> </td></tr>" crlf)
-
- )
-
  (defrule change_manual_op_fact_en_hi
  (declare (salience 2002))
  ?f<-(anu_id-anu_mng-man_mng ?aid ?anu_mng $?man_mng)
- (test (and  (neq $?man_mng @PUNCT-DotDotDot)(neq $?man_mng @PUNCT-Dot) (neq $?man_mng @PUNCT-Semicolon) (neq $?man_mng @PUNCT-Comma)))
+ (test (and  (neq $?man_mng @PUNCT-DotDotDot)(neq $?man_mng @PUNCT-Dot) (neq $?man_mng @PUNCT-Semicolon) (neq $?man_mng @PUNCT-Comma) (neq $?man_mng @PUNCT-QuestionMark)(neq $?man_mng @PUNCT-DoubleQuote)(neq $?man_mng @PUNCT-Colon)(neq $?man_mng @PUNCT-OpenParen)(neq $?man_mng @PUNCT-ClosedParen)(neq $?man_mng @PUNCT-Exclamation)(neq $?man_mng @PUNCT-LeftCurlyBrace)(neq $?man_mng @PUNCT-RightCurlyBrace)(neq $?man_mng @PUNCT-RightSquareBracket)(neq $?man_mng @PUNCT-LeftSquareBracket)))
   =>
  (retract ?f)
  (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid ?anu_mng - - $?man_mng))
@@ -720,7 +641,7 @@
 
  (defrule manual_op_fact_r_punc_en_hi
  (declare (salience 2004))
- ?f<-(anu_id-anu_mng-man_mng ?aid ?anu_mng ?man_mng&@PUNCT-DotDotDot|@PUNCT-Dot|@PUNCT-Semicolon|@PUNCT-Comma)
+ ?f<-(anu_id-anu_mng-man_mng ?aid ?anu_mng ?man_mng&@PUNCT-DotDotDot|@PUNCT-Dot|@PUNCT-Semicolon|@PUNCT-Comma|@PUNCT-QuestionMark|PUNCT-DoubleQuote|PUNCT-Colon|PUNCT-OpenParen|PUNCT-ClosedParen|PUNCT-Exclamation|PUNCT-LeftCurlyBrace|PUNCT-RightCurlyBrace|PUNCT-RightSquareBracket|PUNCT-LeftSquareBracket)
   =>
  (retract ?f)
  (assert (anu_id-man_right_punc  ?aid ?man_mng))
@@ -744,7 +665,7 @@
 
  (defrule manual_op_fact_r_punc_hi_en
  (declare (salience 2004))
- ?f<-(eng_id-eng_wrd-man_wrd ?aid ?anu_mng ?man_mng&@PUNCT-DotDotDot|@PUNCT-Dot|@PUNCT-Semicolon|@PUNCT-Comma)
+ ?f<-(eng_id-eng_wrd-man_wrd ?aid ?anu_mng ?man_mng&@PUNCT-DotDotDot|@PUNCT-Dot|@PUNCT-Semicolon|@PUNCT-Comma|@PUNCT-QuestionMark|PUNCT-DoubleQuote|PUNCT-Colon|PUNCT-OpenParen|PUNCT-ClosedParen|PUNCT-Exclamation|PUNCT-LeftCurlyBrace|PUNCT-RightCurlyBrace|PUNCT-RightSquareBracket|PUNCT-LeftSquareBracket)
   =>
  (retract ?f)
  (assert (anu_id-man_right_punc_hi_en  ?aid ?man_mng))
@@ -808,6 +729,7 @@
  (defrule change_manual_op_fact-hi-en
  (declare (salience 2002))
  ?f<-(eng_id-eng_wrd-man_wrd ?aid ?anu_mng ?man_mng)
+ (test (and  (neq ?man_mng @PUNCT-DotDotDot)(neq ?man_mng @PUNCT-Dot) (neq ?man_mng @PUNCT-Semicolon) (neq ?man_mng @PUNCT-Comma) (neq ?man_mng @PUNCT-QuestionMark)(neq ?man_mng @PUNCT-DoubleQuote)(neq ?man_mng @PUNCT-Colon)(neq ?man_mng @PUNCT-OpenParen)(neq ?man_mng @PUNCT-ClosedParen)(neq ?man_mng @PUNCT-Exclamation)(neq ?man_mng @PUNCT-LeftCurlyBrace)(neq ?man_mng @PUNCT-RightCurlyBrace)(neq ?man_mng @PUNCT-RightSquareBracket)(neq ?man_mng @PUNCT-LeftSquareBracket)))
   =>
  (retract ?f)
  (assert (eng_id-eng_wrd-sep-man_id-man_mng ?aid ?anu_mng - - ?man_mng))
@@ -930,7 +852,89 @@
  (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp1 ?id - - - -))
  )
 
+ ;========================================= Generating html format ========================================
+ ;;printing html head information 
+ (defrule sent_start1.1_dont_print_title_info
+ (declare (salience 1004))
+ (REMOVE_TITLE_FROM_HTML)
+ (para_id-sent_id-no_of_words 1 1 ?)
+ ?f<-(id-original_word 1 ?original_word)
+ (id-word ?id ?word)
+ ;(id-root ?id ?root)
+ (id-root-category-suffix-number ?id ?root ? ?suf ?num)
+ (id-cat_coarse ?id ?cat)
+ (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
+ (test (member$ ?id $?ids))
+ (id-padasuthra ?id ?padasuthra)
+ (id-HM-source-grp_ids ?id ?h_mng ? $?)
+ (id-right_punctuation ?id ?r_punc)
+ (id-left_punctuation  ?id ?l_punc )
+ (id-Apertium_output   ?id   ?mng)
+ (sen_type-id-phrase ?sen_type ?id ?phrase)
+ =>
+ (retract ?f)
+ (if (eq ?r_punc NONE) then (bind ?r_punc (create$ )))
+ (if (eq ?l_punc NONE) then (bind ?l_punc (create$ )))
+ (print_head_info)
+ (assert (id-index (+ ?id 1) 0))
+ )
 
+ ;;printing html head information
+ (defrule print_head_info
+ (declare (salience 1004))
+ (para_id-sent_id-no_of_words 1 1 ?)
+ (not (REMOVE_TITLE_FROM_HTML))
+ =>
+ (print_head_info))
+
+ ;---------------------------------------------------------------------------------------------------
+ ;;printing sentence start information
+ (defrule sent_start
+ (declare (salience 1001))
+ (para_id-sent_id-no_of_words ?p_id ?s_id ?n_words)
+; (test (neq ?p_id 1))
+ (id-word 1 ?word)
+ (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
+ (test (member$ 1 $?ids))
+ (id-root-category-suffix-number 1 ?root ? ?suf ?num)
+ (id-right_punctuation 1 ?r_punc)
+ (id-left_punctuation  1 ?l_punc )
+ (id-original_word 1 ?original_word)
+ (sen_type-id-phrase ?sen_type 1 ?)
+ (Eng_sen $?eng_sen)
+ =>
+ (if (eq ?r_punc NONE) then (bind ?r_punc (create$ )))
+ (if (eq ?l_punc NONE) then (bind ?l_punc (create$ )))
+ (bind ?fetch (sub-string 0 1 (implode$ (create$ ?root))))
+ (printout fp "<form class=\"suggestion\" action=\"sumbit_suggestions.php\"><table cellspacing=\"0\">" crlf)
+ (print_eng_wrd_row  ?p_id ?s_id 1 ?chnk_fr_htm ?l_punc ?r_punc ?root ?original_word ?sen_type ?fetch $?eng_sen)
+ (assert (id-index 1 ?n_words))
+ )
+ ;---------------------------------------------------------------------------------------------------
+ ;;printing word head information
+ (defrule sent_next_word
+ (declare (salience 1000))
+ ?f<-(id-index ?id ?n_words)
+ (test (neq ?id 1))
+ (para_id-sent_id-no_of_words ?p_id ?s_id ?words)
+ (id-word ?id ?word)
+ ;(id-root ?id ?root)
+ (id-root-category-suffix-number ?id ?root ? ?suf ?num)
+ (chunk-ids ?chunk_type ?chnk_fr_htm $?ids)
+ (test (member$ ?id $?ids))
+ (id-original_word ?id ?original_word)
+ (id-right_punctuation ?id ?r_punc)
+ (id-left_punctuation  ?id ?l_punc )
+ =>
+ (if (eq ?r_punc NONE) then (bind ?r_punc (create$ )))
+ (if (eq ?l_punc NONE) then (bind ?l_punc (create$ )))
+ (bind ?fetch (sub-string 0 1 (implode$ (create$ ?root))))
+
+ (printout fp "<table cellspacing=\"0\">" crlf)
+ (printout fp "<tr class=\"row1\">" crlf)
+ (printout fp "<td class=\""?chnk_fr_htm"\"> <a onclick=\"javascript:  fetchshabd"?fetch"('"?root"')\"> <span id=\"popup_link_"?p_id"_"?s_id"_"?id"_"?original_word"\" class=\"popup_link\">"(implode$ (create$ ?l_punc)) ?original_word (implode$ (create$ ?r_punc))"</span> <script type=\"text/javascript\"> new Popup('popup_2','popup_link_"?p_id"_"?s_id"_"?id"_"?original_word"',{position:'below',trigger:'click'}); </script>   </a> </td></tr>" crlf)
+
+ )
 
  ;---------------------------------------------------------------------------------------------------
  ;;printing lwg words information
@@ -972,11 +976,11 @@
  (if (eq ?m_r_punc -) then (bind ?m_r_punc (create$ )))
  (if (eq ?m_l_punc -) then (bind ?m_l_punc (create$ )))
  (if (eq ?ph_ltype start) then (bind ?m_l_punc (create$ ?ph_l_val ?m_l_punc)))
- (if (eq ?ph_rtype end) then (bind ?m_r_punc  (create$ ?ph_r_val ?m_r_punc)))
+ (if (eq ?ph_rtype end) then (bind ?m_r_punc  (create$ ?m_r_punc ?ph_r_val)))
  (if (eq ?m_r_punc_hi_en -) then (bind ?m_r_punc_hi_en (create$ )))
  (if (eq ?m_l_punc_hi_en -) then (bind ?m_l_punc_hi_en (create$ )))
  (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
- (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?ph_r_val_hi_en ?m_r_punc_hi_en)))
+ (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?m_r_punc_hi_en ?ph_r_val_hi_en)))
  (printout t "----" ?r_punc crlf)
  (printout t "----" ?l_punc crlf)
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
@@ -1057,11 +1061,11 @@
  (if (eq ?m_r_punc -) then (bind ?m_r_punc (create$ )))
  (if (eq ?m_l_punc -) then (bind ?m_l_punc (create$ )))
  (if (eq ?ph_ltype start) then (bind ?m_l_punc (create$ ?ph_l_val ?m_l_punc)))
- (if (eq ?ph_rtype end) then (bind ?m_r_punc (create$ ?ph_r_val ?m_r_punc)))
+ (if (eq ?ph_rtype end) then (bind ?m_r_punc (create$ ?m_r_punc ?ph_r_val)))
  (if (eq ?m_r_punc_hi_en -) then (bind ?m_r_punc_hi_en (create$ )))
  (if (eq ?m_l_punc_hi_en -) then (bind ?m_l_punc_hi_en (create$ )))
  (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
- (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?ph_r_val_hi_en ?m_r_punc_hi_en)))
+ (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?m_r_punc_hi_en ?ph_r_val_hi_en)))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
  (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
@@ -1129,11 +1133,11 @@
  (if (eq ?m_r_punc -) then (bind ?m_r_punc (create$ )))
  (if (eq ?m_l_punc -) then (bind ?m_l_punc (create$ )))
  (if (eq ?ph_ltype start) then (bind ?m_l_punc (create$ ?ph_l_val ?m_l_punc)))
- (if (eq ?ph_rtype end) then (bind ?m_r_punc (create$ ?ph_r_val ?m_r_punc)))
+ (if (eq ?ph_rtype end) then (bind ?m_r_punc (create$ ?m_r_punc ?ph_r_val)))
  (if (eq ?m_r_punc_hi_en -) then (bind ?m_r_punc_hi_en (create$ )))
  (if (eq ?m_l_punc_hi_en -) then (bind ?m_l_punc_hi_en (create$ )))
  (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
- (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?ph_r_val_hi_en ?m_r_punc_hi_en)))
+ (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?m_r_punc_hi_en ?ph_r_val_hi_en)))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))  
  (print_caution_row ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?pp_root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?pp_id ?chnk_fr_htm ?l_punc ?r_punc ?pp_cat ?pp_padasuthra)
@@ -1194,11 +1198,11 @@
  (if (eq ?m_r_punc -) then (bind ?m_r_punc (create$ )))
  (if (eq ?m_l_punc -) then (bind ?m_l_punc (create$ )))
  (if (eq ?ph_ltype start) then (bind ?m_l_punc (create$ ?ph_l_val ?m_l_punc)))
- (if (eq ?ph_rtype end) then (bind ?m_r_punc (create$ ?ph_r_val ?m_r_punc)))
+ (if (eq ?ph_rtype end) then (bind ?m_r_punc (create$ ?m_r_punc ?ph_r_val)))
  (if (eq ?m_r_punc_hi_en -) then (bind ?m_r_punc_hi_en (create$ )))
  (if (eq ?m_l_punc_hi_en -) then (bind ?m_l_punc_hi_en (create$ )))
  (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
- (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?ph_r_val_hi_en ?m_r_punc_hi_en)))
+ (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?m_r_punc_hi_en ?ph_r_val_hi_en)))
  (printout t ?r_punc crlf)
  (printout t ?l_punc crlf)
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
@@ -1256,11 +1260,11 @@
  (if (eq ?m_r_punc -) then (bind ?m_r_punc (create$ )))
  (if (eq ?m_l_punc -) then (bind ?m_l_punc (create$ )))
  (if (eq ?ph_ltype start) then (bind ?m_l_punc (create$ ?ph_l_val ?m_l_punc)))
- (if (eq ?ph_rtype end) then (bind ?m_r_punc (create$ ?ph_r_val ?m_r_punc)))
+ (if (eq ?ph_rtype end) then (bind ?m_r_punc (create$ ?m_r_punc ?ph_r_val)))
  (if (eq ?m_r_punc_hi_en -) then (bind ?m_r_punc_hi_en (create$ )))
  (if (eq ?m_l_punc_hi_en -) then (bind ?m_l_punc_hi_en (create$ )))
  (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
- (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?ph_r_val_hi_en ?m_r_punc_hi_en)))
+ (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?m_r_punc_hi_en ?ph_r_val_hi_en)))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
  (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
@@ -1315,11 +1319,11 @@
  (if (eq ?m_r_punc -) then (bind ?m_r_punc (create$ )))
  (if (eq ?m_l_punc -) then (bind ?m_l_punc (create$ )))
  (if (eq ?ph_ltype start) then (bind ?m_l_punc (create$ ?ph_l_val ?m_l_punc)))
- (if (eq ?ph_rtype end) then (bind ?m_r_punc (create$ ?ph_r_val ?m_r_punc)))
+ (if (eq ?ph_rtype end) then (bind ?m_r_punc (create$ ?m_r_punc ?ph_r_val)))
  (if (eq ?m_r_punc_hi_en -) then (bind ?m_r_punc_hi_en (create$ )))
  (if (eq ?m_l_punc_hi_en -) then (bind ?m_l_punc_hi_en (create$ )))
  (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
- (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?ph_r_val_hi_en ?m_r_punc_hi_en)))
+ (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?m_r_punc_hi_en ?ph_r_val_hi_en)))
  (bind ?idiom_des (gdbm_lookup "idioms.gdbm" ?phrase))
  (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?root ?sen_type ?idiom_des)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc ?cat ?padasuthra)
@@ -1364,11 +1368,11 @@
  (if (eq ?m_r_punc -) then (bind ?m_r_punc (create$ )))
  (if (eq ?m_l_punc -) then (bind ?m_l_punc (create$ )))
  (if (eq ?ph_ltype start) then (bind ?m_l_punc (create$ ?ph_l_val ?m_l_punc)))
- (if (eq ?ph_rtype end) then (bind ?m_r_punc (create$ ?ph_r_val ?m_r_punc)))
+ (if (eq ?ph_rtype end) then (bind ?m_r_punc (create$ ?m_r_punc ?ph_r_val)))
  (if (eq ?m_r_punc_hi_en -) then (bind ?m_r_punc_hi_en (create$ )))
  (if (eq ?m_l_punc_hi_en -) then (bind ?m_l_punc_hi_en (create$ )))
  (if (eq ?ph_ltype_hi_en start) then (bind ?m_l_punc_hi_en (create$ ?ph_l_val_hi_en ?m_l_punc_hi_en)))
- (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?ph_r_val_hi_en ?m_r_punc_hi_en)))
+ (if (eq ?ph_rtype_hi_en end) then (bind ?m_r_punc_hi_en  (create$ ?m_r_punc_hi_en ?ph_r_val_hi_en)))
  (print_caution_row ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - - -s)
  (print_padasutra_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - -)
  (print_root_row  ?p_id ?s_id ?id ?chnk_fr_htm ?l_punc ?r_punc - - -)

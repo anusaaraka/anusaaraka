@@ -79,11 +79,10 @@ except:
 ### Printing english left over words:
 ### If NO PATH then english words are left
 english_left = open(sys.argv[6], 'w')
-english_left.write('(@english_@left_@over_@words:::\t')
+english_left.write('English_left_over_words:::\t')
 
 for i in e_lst:
 	english_left.write('%s ' % i)
 
-english_left.write(')\n')
-
+english_left.write('\n')
 english_left.close()
