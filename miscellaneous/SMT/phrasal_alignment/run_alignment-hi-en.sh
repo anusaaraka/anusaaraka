@@ -43,6 +43,7 @@ else
 
 #===================================== Mapping punctuations in alignment ===========================================
 	./replace-punctuation.out < $1/mapped1-hi-en.dat  > $1/mapped2-hi-en.dat
+	./replace-punctuation.out < $1/mapped-hi-en.dat  > $1/mapped3-hi-en.dat
 
 
 	sed 's/\([0-9]\)[.]\([0-9]\)/\1SYMBOL-DOT\2/g'   $1/mapped2-hi-en.dat  | sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g' | sed 's/(anu_id-anu_mng-man_mng/(eng_id-eng_wrd-man_wrd/g'  > $1/word-alignment-hi-en.dat

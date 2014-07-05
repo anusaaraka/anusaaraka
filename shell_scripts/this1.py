@@ -2,7 +2,7 @@ import sys
 import os 
 
 """Getting Hindi Sentences"""
-path = sys.argv[4] + "/tmp/" + sys.argv[5] + "_tmp/" + sys.argv[5] + "_trnsltn_tmp4.html"
+path = sys.argv[4] + "/tmp/" + sys.argv[5] + "_tmp/" + sys.argv[5] + "_trnsltn_tmp3.html"
 path1 = sys.argv[2] + "/mail.js" #Separated mail related data in mail.js file
 m_p = open(path1, 'r')
 m_p1_line = m_p.read() 

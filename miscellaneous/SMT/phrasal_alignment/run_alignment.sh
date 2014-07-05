@@ -43,13 +43,15 @@ else
 	python mapping.py $1/wrd-to-wrd.dat > $1/mapped1.dat 2>> $1/phrasal_error
 
 #===================================== Mapping punctuations in alignment ===========================================
-#	./replace-punctuation.out < $1/hnd > $1/hnd1
 	./replace-punctuation.out < $1/mapped1.dat  > $1/mapped2.dat
+	./replace-punctuation.out < $1/mapped.dat  > $1/mapped3.dat
 
 	#sed 's/\([0-9]\)[.]\([0-9]\)/\1SYMBOL-DOT\2/g'  $1/hnd1 | sed 's/_/ /g' | sed 's/  / /g'| sed  's/^/(manual_hin_sen /'  | sed -n '1h;2,$H;${g;s/\n/)\n;~~~~~~~~~~\n/g;p}' | sed -n '1h;2,$H;${g;s/$/)\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/\([^0-9]\)\.)\n/\1 PUNCT-Dot)\n/g;p}'| sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g'  | sed 's/nonascii/@nonascii/g' > $1/one_sen_per_line_manual_hindi_sen.txt
 
 	sed 's/\([0-9]\)[.]\([0-9]\)/\1SYMBOL-DOT\2/g'   $1/mapped2.dat  | sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g' | sed 's/nonascii/@nonascii/g'  > $1/word-alignment.dat
-	
+
+#=============================== Displaying left over words at each level ============================================
+
 	echo "@Phrase @level @left @over @Words::" >  $1/total-left-over1.dat 
 	cat $1/left-over-words.dat >> $1/total-left-over1.dat
 	echo "" >>  $1/total-left-over1.dat
@@ -58,6 +60,8 @@ else
 	cat $1/left >> $1/total-left-over1.dat
 	sed -i 's/(hindi_left_over_words//g' $1/total-left-over1.dat 
 	sed -i 's/)$//g' $1/total-left-over1.dat
-	wx_utf8 < $1/total-left-over1.dat > $1/total-left-over.dat 
+	wx_utf8 < $1/total-left-over1.dat > $1/tmp
+	cat $1/english_left_over.dat   $1/tmp > $1/total-left-over.dat 
+	wx_utf8 < $1/align_left_over_wrds.dat >> $1/total-left-over.dat
 	echo "Phrasal Alignment EN-HI completed" >> $1/phrasal_error
 fi
