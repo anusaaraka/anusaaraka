@@ -125,11 +125,11 @@ for key in sorted(align_dic):
 
 
 	print '(anu_id-anu_mng-man_mng' + '\t' + str(key) + '\t' + align_dic[key] + ')'
-al_left_file.write('After applying huristics:\n@phrase_left_@over_@words:::\t')
+al_left_file.write('@After @applying @huristics:\n@phrase_@left_@over_@words:::\t')
 for each in phrase_left_over_lst:
 	if each != 'REPLACED':
 		al_left_file.write(' %s '  % each)
-al_left_file.write('@word_left_@over_@words:::\t')
+al_left_file.write('\n@word_@left_@over_@words:::\t')
 for each in left_lst:
 	if each != 'REPLACED':
 		al_left_file.write(' %s '  % each)
