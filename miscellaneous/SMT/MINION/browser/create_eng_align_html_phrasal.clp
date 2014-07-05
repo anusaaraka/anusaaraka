@@ -1418,8 +1418,6 @@
  
  (printout fp "<tr><td>" "Man translation :: " (wx_utf8 (implode$ $?man_sen))"</td></tr>" crlf)
 
-; (bind ?dic_path (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/align_left_over_wrds.dat"))
-; (bind ?dic_path (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/left-over-words.dat"))
  (bind ?dic_path (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/total-left-over.dat"))
  (open ?dic_path dic_fp)
  (bind ?val (readline dic_fp))
@@ -1431,35 +1429,6 @@
  )
  (printout fp "</td></tr>" crlf)
  (close dic_fp)
-
-
- (bind ?dic_path2 (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/english_left_over.dat"))
- (open ?dic_path2 dic_fp2)
- (bind ?val (readline dic_fp2))
- (printout fp "<tr><td>" crlf)
- (while (neq ?val EOF)
- (printout fp ?val"<br>" crlf)
- ;(printout t ?val crlf)
- (bind ?val (readline dic_fp2))
- )
- (printout fp "</td></tr>" crlf)
- (close dic_fp2)
-
- (bind ?dic_path3 (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/align_left_over_wrds.dat"))
- (open ?dic_path3 dic_fp3)
- (bind ?val (readline dic_fp3))
- (printout fp "<tr><td>" crlf)
- (while (neq ?val EOF)
- (printout fp ?val"<br>" crlf)
- ;(printout t ?val crlf)
- (bind ?val (readline dic_fp3))
- )
- (printout fp "</td></tr>" crlf)
- (close dic_fp3)
-
-
-;align_left_over_wrds.dat  english_left_over.dat  left-over-words.dat
-
 
  (printout fp "</table></form>")
  (if (and (= ?p_id 1) (= ?s_id 1)) then (printout fp "<div class=\"float_clear\"/>" crlf))
