@@ -77,6 +77,20 @@
         (retract ?mng)
  )
  ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (05-07-14)
+ ;If category is symbol then hindi meaning is same as Original Word.
+ ;A can be expressed as a sum of two vectors — one obtained by multiplying [a] by a real number and the other obtained by multiplying [b] by another real number.
+ (defrule decide_mng_symbols
+ (declare (salience 9989))
+ (id-cat_coarse ?id symbol)
+ ?mng<-(meaning_to_be_decided ?id)
+ (id-original_word ?id  ?original_wrd)
+ =>
+	(retract ?mng)
+	(printout ?*hin_mng_file* "(id-HM-source  " ?id "  @" ?original_wrd"    Symbol)" crlf)
+        (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?id "  @"?original_wrd"    Symbol)" crlf)
+ )
+ ;--------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (29-11-12) (suggested by Chaitanya Sir)
  ;Assuming lwg_ids (verb-verb connection) will not be part of compound phrase (noun-noun connection)
  ;The magnitude of the displacement for a course of motion [may be] zero but the corresponding path length is not zero. 
