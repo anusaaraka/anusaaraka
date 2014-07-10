@@ -1,4 +1,4 @@
- 04-07-14
+ 08-07-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	who.clp
@@ -8,12 +8,16 @@
         Added : PropN_rule
  3. sd_lwg_rules.clp
         Modified : check_for_imper1  (to add SBAR in the list)
- 4. run_modules_std.bat
+ 4. hindi_meaning.clp:
+	Added : decide_mng_symbols (when cat is symbol)
+ 5. run_modules_std.bat
         Loaded  parserid_wordid_mapping.dat and word2.dat in sd_category module
- 5. Added relation_table/ folder in Doc contains following files:
+ 6. hnd_translation.pl:
+        Modified 'hindi_sentence_tmp.dat' to 'hindi_sentence.dat'	
+ 7. Added relation_table/ folder in Doc contains following files:
 	relation-table-for-WSD-wx.html  
 	style.css
- 6. Added following files related to phrasal alignment:
+ 8. Added following files related to phrasal alignment:
 	count.py
 	sort.sh
 	bin/Anusaaraka_alignment.sh 
@@ -25,10 +29,10 @@
 	map_eng_offset-to_wrdids.py
 	multifast-v1.0.0/src/extract_key_in_hindi_phrase.c
 	multifast-v1.0.0/src/get_word_count_single.c
- 7. Updated following lex files:
+ 9. Updated following lex files:
 	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
 	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern
- 8. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
+10. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
 	Word-to-Word-dict.txt
 	en-hi-gdbm-dict.txt
 	run_alignment.sh
