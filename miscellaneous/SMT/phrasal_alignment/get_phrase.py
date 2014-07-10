@@ -64,6 +64,8 @@ for key in sorted(align_dic):
 					h_key[1] = int(h_key[1]) - diff
 #		print h_key[0], h_key[1], h_s
 		new_sent = replace_str(h_s, str(h_key[0]), str(h_key[1]))
+		slots_filled.append(h_key[0])
+		slots_filled.append(h_key[1])
 		h_s = new_sent
 
 
@@ -72,6 +74,6 @@ l_o.write('@Phrase_@level_@left_@over_@words::\t')
 l_o1.write('@Phrase_@level_@left_@over_@words::\t')
 for i in range(0, len(h_s)-1, 2):
 	if h_s[i+1] != 'REPLACED':
-		l_o.write( '%s %s %s ' % (h_s[i] , h_s[i+1], h_s[i+2]))
+		l_o.write( '%s%s%s ' % (h_s[i] , h_s[i+1], h_s[i+2]))
 		l_o1.write( '%s ' %  h_s[i+1])
 #print h_s

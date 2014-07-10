@@ -33,6 +33,7 @@ else
 	python print_shortest_path.py $1/match-value-with-hindi-wrdid-hi-en.dat  $1/graph_output-hi-en > $1/shortest-path-value-hi-en.dat  2>> $1/phrasal_error
 	 python get_phrase.py  $1/shortest-path-value-hi-en.dat  $1/hnd2 $1/left-over-words1-hi-en.dat  $1/left-over-words-hi-en.dat> $1/align_eng-hi-en.dat 2>> $1/phrasal_error
 	python map_eng_offset-to_wrdids.py  $1/align_eng-hi-en.dat  $1/map-wrd-id-hi-en.dat > $1/mapped-hi-en.dat  2>> $1/phrasal_error
+	python  map-wrd-offset-anu-ids.py $1/mapped-hi-en.dat   > $1/mapped-1-hi-en.dat  2>> $1/phrasal_error
 	echo "Word alignment" >> $1/phrasal_error
 	python get_word_align.py hi-en/Word-to-word-hi-en.txt   $1/mapped-hi-en.dat $1/hnd $1/left-hi-en > $1/wrd-to-wrd-hi-en.txt1  2>> $1/phrasal_error
 	echo "Aligning left over words" >> $1/phrasal_error
@@ -41,7 +42,7 @@ else
 
 #===================================== Mapping punctuations in alignment ===========================================
 	./replace-punctuation.out < $1/mapped1-hi-en.dat  > $1/mapped2-hi-en.dat
-	./replace-punctuation.out < $1/mapped-hi-en.dat  > $1/mapped3-hi-en.dat
+	./replace-punctuation.out < $1/mapped-1-hi-en.dat  > $1/mapped3-hi-en.dat
 
 
 	sed 's/\([0-9]\)[.]\([0-9]\)/\1SYMBOL-DOT\2/g'   $1/mapped2-hi-en.dat  | sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g' | sed 's/(anu_id-anu_mng-man_mng/(eng_id-eng_wrd-man_wrd/g'  > $1/word-alignment-hi-en.dat
