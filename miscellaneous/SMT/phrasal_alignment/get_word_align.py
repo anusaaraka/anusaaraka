@@ -1,6 +1,7 @@
 #python gdbm-fetch.py Word-to-Word-dict.txt  mapped.txt
 import sys
 left_over = open(sys.argv[4], 'w')
+left_over1 = open(sys.argv[5], 'w')
 hi_file = open(sys.argv[3], 'r')
 hi_sent = hi_file.read()
 sent_count = 0
@@ -97,4 +98,6 @@ else:
 	for k in  range(0, len(hi_s_l)-1, 2):
 		if hi_s_l[k+1] != 'REPLACED':
 			left_over.write('%s %s %s**,**' %   (hi_s_l[k] , hi_s_l[k+1],  hi_s_l[k+2]))
+			left_over1.write('(word_offset-word_left_over_wrd\t%s\t%s)\n' %  (hi_s_l[k] , hi_s_l[k+1]))
+
 	left_over.write('\n')
