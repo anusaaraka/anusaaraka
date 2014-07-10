@@ -32,19 +32,19 @@ e_count = 0
 slots_filled = []
 
 for line in open(sys.argv[1]):
-	lst = line.strip().split('\t')
-	k = lst[2]
-	v = lst[3] + '\t' + lst[0] + '\t' + lst[1]
-	if k not in align_dic:
-		align_dic[k] = v 
+	lst = line.strip().split('\t') #_Every_calculated_quantity_     _prawyeka_parikaliwa_rASi_      1 4     1 4
+	k = lst[2].split()
+	v = k[1] + '\t' + lst[3] + '\t' + lst[0] + '\t' + lst[1]
+	if k[0] not in align_dic:
+		align_dic[int(k[0])] = v 
 	else:
-		if len(align_dic[k]) < len(v) :
-			align_dic[k] = v
+		if len(align_dic[k[0]]) < len(v) :
+			align_dic[int(k[0])] = v
 
 for key in sorted(align_dic):
 	v = align_dic[key].split('\t')
-	print v[1] + '\t' + v[2] + '\t' + key + '\t' + v[0]
-	h_key = v[0].split()
+	print v[2] + '\t' + v[3] + '\t' + str(key) + ' ' + v[0] + '\t' + v[1]
+	h_key = v[1].split()
 	if h_key[0] in h_s and h_key[1] in h_s:
 		new_sent = replace_str(h_s, h_key[0], h_key[1])
 		slots_filled.append(h_key[0])
