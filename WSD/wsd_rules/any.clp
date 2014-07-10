@@ -112,14 +112,12 @@
 (retract ?mng)
 (if (or(eq ?wrd mention)(eq ?wrd questions)(eq ?wrd light)) then
         (assert (id-wsd_root_mng ?id koI))
-else
-(assert (id-wsd_root_mng ?id kisI))
-)
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  any.clp       any7   "  ?id "  kisI )" crlf)
-(if (or(eq ?wrd mention)(eq ?wrd questions)(eq ?wrd light)) then
-        (assert (id-wsd_root_mng ?id koI))
+	(if ?*debug_flag* then
         (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  any.clp      any7   "  ?id "  koI )" crlf))
+else
+	(assert (id-wsd_root_mng ?id kisI))
+	(if ?*debug_flag* then
+	(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  any.clp       any7   "  ?id "  kisI )" crlf))
 ))
 ;note: this rule needs to be modified as the condition "(viSeRya-det_viSeRaNa  ?id1 ?id)" is not sufficient.
 
