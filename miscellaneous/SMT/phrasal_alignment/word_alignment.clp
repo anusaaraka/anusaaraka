@@ -84,6 +84,22 @@
         (assert (prov_assignment ?aid ?mid))
 )
 ;-------------------------------------------------------------------------------------
+(defrule exact_match_with_anu_output2 ;[manual word match with vib]
+(declare (salience 901))
+(current_id ?mid)
+(manual_id_en_hi-word-root-vib-grp_ids ?mid $?mng - - - - - $?grp_ids)
+(id-Apertium_output ?aid $?mng $?vib)
+(id-root ?aid ?root)
+(not (prov_assignment ?aid ?mid))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (assert (anu_ids-sep-manual_ids ?aid - $?grp_ids))
+        (assert (man_id-src-root ?mid exact ?root))
+        (assert (prov_assignment ?aid ?mid))
+)
+
+;-------------------------------------------------------------------------------------
 (defrule lookup_man_word_in_hindi_wordnet
 (declare (salience 890))
 (current_id ?mid)
@@ -328,6 +344,36 @@
 ;(hindi_id_order $? ?aid ?aid1 $?)
 ;(id-Apertium_output ?aid1 $?anu_mng1)
 
+(defrule align_left_over_wrds_using_phrasal_data
+(declare (salience -199))
+?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids)
+?f1<-(current_id ?mid)
+?f2<-(count_fact 0)
+(not (anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?))
+(test (and (neq (length  $?r) 0) (neq (length  $?vib) 0)))
+(anu_id-anu_mng-man_mng 	?aid	?a_wrd	$?man_mng)
+(id-original_word ?aid ?a_wrd)
+(id-Apertium_output ?aid $?anu_mng)
+=>
+	(retract ?f ?f1 ?f2)
+        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mids))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids))
+)
 
 
+;(defrule align_left_over_wrds_using_phrasal_data1
+;(declare (salience -199))
+;?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids)
+;?f1<-(current_id ?mid)
+;(test (and (neq (length  $?r) 0) (neq (length  $?vib) 0)))
+;?f2<-(count_fact 0)
+;(not (anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?))
+;(anu_id-anu_mng-man_mng         ?aid    ?a_wrd  $?man_mng $?)
+;(id-original_word ?aid ?a_wrd)
+;(id-Apertium_output ?aid $?anu_mng)
+;=>
+;        (retract ?f ?f1 ?f2)
+;        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mids))
+;        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids))
+;)
 
