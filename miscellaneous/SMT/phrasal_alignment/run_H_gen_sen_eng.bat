@@ -101,6 +101,7 @@
  (load-facts "manual_hindi_sen.dat")
  (load-facts "manual_hin.morph.dat")
  (load-facts "word-alignment.dat")
+ ;(load-facts "word_alignment_en_hi.dat")
  (load-facts "database_mng.dat")
  (load-facts "revised_root.dat")
  (load-facts "id_Apertium_output.dat")
