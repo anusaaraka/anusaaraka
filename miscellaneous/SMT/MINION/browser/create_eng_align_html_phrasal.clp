@@ -566,7 +566,7 @@
  ;------------------------------------------------------------------------------------------------------
  (defrule get_phrase_information
  (declare (salience 1004))
- (position-eng-hnd-eng_ids	?pos	?eng	?hnd	?phrase_start_id $? ?phrase_end_id)
+ (position-eng-hnd-eng_ids	?pos	?eng	?hnd	?phrase_start_id $? ?phrase_end_id ? ?)
  =>
  	(assert (id-phrase_type-lvalue ?phrase_start_id start PUNCT-OpenParenPUNCT-OpenParen ))
  	(assert (id-phrase_type-rvalue ?phrase_end_id end PUNCT-ClosedParenPUNCT-ClosedParen))
@@ -574,7 +574,7 @@
 
  (defrule get_phrase_information1
  (declare (salience 1004))
- (position-eng-hnd-eng_ids      ?pos    ?eng    ?hnd    ?phrase_id)
+ (position-eng-hnd-eng_ids      ?pos    ?eng    ?hnd    ?phrase_id ? ?)
  =>
         (assert (id-phrase_type-lvalue ?phrase_id start PUNCT-OpenParenPUNCT-OpenParen ))
         (assert (id-phrase_type-rvalue ?phrase_id end PUNCT-ClosedParenPUNCT-ClosedParen))
@@ -598,7 +598,7 @@
 
  (defrule get_phrase_information_hi_en
  (declare (salience 1004))
- (position_hi_en-eng-hnd-eng_ids      ?pos    ?eng    ?hnd    ?phrase_start_id $? ?phrase_end_id)
+ (position_hi_en-eng-hnd-eng_ids      ?pos    ?eng    ?hnd    ?phrase_start_id $? ?phrase_end_id ? ?)
  =>
         (assert (id-phrase_type-lvalue_hi_en ?phrase_start_id start PUNCT-OpenParenPUNCT-OpenParen ))
         (assert (id-phrase_type-rvalue_hi_en ?phrase_end_id end PUNCT-ClosedParenPUNCT-ClosedParen))
@@ -606,7 +606,7 @@
 
  (defrule get_phrase_information1_hi_en
  (declare (salience 1004))
- (position-eng-hnd-eng_ids      ?pos    ?eng    ?hnd    ?phrase_id)
+ (position_hi_en-eng-hnd-eng_ids      ?pos    ?eng    ?hnd    ?phrase_id ? ?)
  =>
         (assert (id-phrase_type-lvalue_hi_en ?phrase_id start PUNCT-OpenParenPUNCT-OpenParen ))
         (assert (id-phrase_type-rvalue_hi_en ?phrase_id end PUNCT-ClosedParenPUNCT-ClosedParen))
@@ -1404,7 +1404,7 @@
  (printout fp "</td></tr>" crlf)
  (printout fp "<tr><td>"(implode$ $?eng_sen)"</td></tr>" crlf)
  
- (bind ?dic_path1 (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/hindi_sentence.dat"))
+ (bind ?dic_path1 (str-cat ?*path1* "/tmp/" ?*filename* "_tmp/"?p_id"."?s_id"/hindi_sentence_tmp2.dat"))
  (open ?dic_path1 dic_fp1)
  (bind ?val1 (readline dic_fp1))
  (printout fp "<tr><td>" crlf)

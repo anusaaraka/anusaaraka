@@ -18,16 +18,17 @@
 
 (defrule rm_punct
 (declare (salience 1001))
-?f<-(anu_id-anu_mng-man_mng     ?aid $?pre PUNCT-Comma|PUNCT-Colon|PUNCT-Dot $?post)
+?f<-(eng_id-eng_wrd-man_wrd     ?aid $?pre PUNCT-Comma|PUNCT-Colon|PUNCT-Dot $?post)
 =>
         (retract ?f)
-        (assert (anu_id-anu_mng-man_mng     ?aid $?pre $?post))
+        (assert (eng_id-eng_wrd-man_wrd     ?aid $?pre $?post))
 )
+
 
 (defrule rm_underscore
 (declare (salience 1000))
-?f<-(anu_id-anu_mng-man_mng ?aid ?word ?man_mng)
-(not (underscore_removed ?aid))
+?f<-(eng_id-eng_wrd-man_wrd ?mid ?word ?man_mng)
+(not (underscore_removed ?mid))
 (test (neq ?man_mng @PUNCT-Comma))
 =>
   (retract ?f)
@@ -35,8 +36,8 @@
   (bind ?new_mng (remove_character "." (implode$ ?new_mng) " "))
   (bind ?new_mng (remove_character "," (implode$ ?new_mng) " "))
 ;  (bind ?new_mng (remove_character "@" (implode$ ?new_mng) " "))
-  (assert (anu_id-anu_mng-man_mng ?aid ?word ?new_mng))
-  (assert (underscore_removed ?aid))
+  (assert (eng_id-eng_wrd-man_wrd ?mid ?word ?new_mng))
+  (assert (underscore_removed ?mid))
 )
 
 (defrule cp_manual_sen
@@ -64,7 +65,7 @@
 
 (defrule get_id1
 (declare (salience 850))
-?f<-(anu_id-anu_mng-man_mng	?aid ?a_wrd ?man_wrd)
+?f<-(eng_id-eng_wrd-man_wrd	?aid ?a_wrd ?man_wrd)
 ?f1<-(manual_id-word ?mid ?man_wrd)
 =>
 	(assert (manual_id_en_hi-word-root-vib-grp_ids ?mid ?man_wrd - - - - - ?mid))
@@ -73,7 +74,7 @@
 
 (defrule get_id2
 (declare (salience 800))
-?f<-(anu_id-anu_mng-man_mng     ?aid ?a_wrd ?man_wrd ?man_wrd1 $?mng)
+?f<-(eng_id-eng_wrd-man_wrd     ?aid ?a_wrd ?man_wrd ?man_wrd1 $?mng)
 ?f1<-(manual_id-word ?mid ?man_wrd)
 ?f2<-(manual_id-word =(+ ?mid 1) ?man_wrd1)
 =>
@@ -93,15 +94,6 @@
         
 )
 
-
-(defrule get_id3
-(declare (salience 600))
-?f1<-(manual_id-word ?mid ?man_wrd)
-(not (manual_id_en_hi-word-root-vib-grp_ids ? $? - $? - $? - $? ?mid $?))
-=>
-
-	(assert (manual_id_en_hi-word-root-vib-grp_ids ?mid ?man_wrd - - - - - ?mid))
-)
 
 (defrule delete_fact
 (declare (salience 700))
@@ -142,83 +134,13 @@
         (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids))
 )
 
-;(defrule verb_rule1
-;(declare (salience 50)) 
-;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - - - $?grp_ids)
-;?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?tam&karawA|howA|karawI|howI|karawe|howe - - - - - $?grp_ids1)
-;(man_word-root-cat ?tam ?root&kara|ho v)
-;=>
-;        (retract ?f1 ?f2)
-; ;       (bind ?root (string-to-field (str-cat (implode$ $?noun)  "_" ?root)))
-;        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - $?noun ?root - ?tam - $?grp_ids $?grp_ids1))
-;
-;)
-;
-;
+
 (defrule verb_rule1
 (declare (salience 50)) 
-?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 ?tam&karawA|howA|karawI|howI|karawe|howe|kahawe - - - - - ?id0)
-?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?wrd&hE|hEM - - - - -  ?id1)
-(man_word-root-cat ?tam ?root1&kara|ho|kaha v)
-=>
-        (retract ?f1 ?f2)
-;        (bind ?root1 (string-to-field (str-cat ?tam "_" ?wrd)))
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 ?tam ?wrd - - - - -  ?id0 ?id1))
-)
-
-(defrule verb_rule2
-(declare (salience 50)) 
-?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - - - $?grp_ids)
-?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1)  ?tam&karawA|howA|karawI|howI|karawe|howe|kahawe ?wrd&hE|hEM - - - - - $?grp_ids1)
-(man_word-root-cat ?tam ?root&kara|ho|kaha v)
-=>
-        (retract ?f1 ?f2)
- ;       (bind ?root (string-to-field (str-cat (implode$ $?noun)  "_" ?root)))
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?tam ?wrd - $?noun ?root - wA ?wrd - $?grp_ids $?grp_ids1))
-
-)
-
-(defrule verb_rule3
-(declare (salience 50))
-?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 ?tam&honA|karanA|kahanA ?wrd&cAhie - - - - - $?grp_ids)
-(man_word-root-cat ?tam ?root&kara|ho|kaha v)
+?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun $?tam - - - - - $?grp_ids)
+(man_word-root-cat $?noun ?root v)
 =>
         (retract ?f1)
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 ?tam ?wrd  - ?root - nA ?wrd -  $?grp_ids ))
+        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - ?root - $?tam - $?grp_ids))
 )
-
-;(defrule verb_rule4
-;(declare (salience 50))
-;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - - - $?grp_ids)
-;?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1)  ?tam&honA|karanA|kahanA ?wrd&cAhie - - - - - $?grp_ids1)
-;(man_word-root-cat ?tam ?root&kara|ho|kaha v)
-;=>
-;        (retract ?f1 ?f2)
-; ;       (bind ?root (string-to-field (str-cat (implode$ $?noun)  "_" ?root)))
-;        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?tam ?wrd - $?noun ?root - nA ?wrd - $?grp_ids $?grp_ids1))
-;
-;)
-
-
-
-
-
-
-
-;
-;
-;(defrule verb_rule2
-;(declare (salience 50)) 
-;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?verb_mng - $?root - ?tam&karawA|howA|karawI|howI|karawe|howe -  $?grp_ids ?id)
-;?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id 1) ?id1) ?wrd&hE - $? - $? -  ?id1)
-;(man_word-root-cat ?tam ?root1&kara|ho v)
-;=>
-;        (retract ?f1 ?f2)
-;;        (bind ?root1 (string-to-field (str-cat ?tam "_" ?wrd)))
-;        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?verb_mng - $?root - ?tam ?wrd - $?grp_ids ?id ?id1))
-;)
-
-
-
-
 
