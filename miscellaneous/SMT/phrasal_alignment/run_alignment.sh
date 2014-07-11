@@ -44,8 +44,8 @@ else
 	echo "Word alignment" >> $1/phrasal_error
 	python get_word_align.py Word-to-Word-dict.txt   $1/mapped.dat $1/hnd2 $1/left $1/left1 > $1/wrd-to-wrd.txt1 2>> $1/phrasal_error
 	echo "Aligning left over words" >> $1/phrasal_error  2>> $1/phrasal_error
-	python align-left-over-wrds.py  $1/wrd-to-wrd.txt1  $1/hnd  $1/left $1/left-over-words.dat $1/align_left_over_wrds.dat > $1/wrd-to-wrd.dat 2>> $1/phrasal_error
-	python mapping.py $1/wrd-to-wrd.dat > $1/mapped1.dat 2>> $1/phrasal_error
+#	python align-left-over-wrds.py  $1/wrd-to-wrd.txt1  $1/hnd  $1/left $1/left-over-words.dat $1/align_left_over_wrds.dat > $1/wrd-to-wrd.dat 2>> $1/phrasal_error
+	python mapping.py $1/wrd-to-wrd.txt1 > $1/mapped1.dat 2>> $1/phrasal_error
 
 #===================================== Mapping punctuations in alignment ===========================================
 	./replace-punctuation.out < $1/mapped1.dat  > $1/mapped2.dat
