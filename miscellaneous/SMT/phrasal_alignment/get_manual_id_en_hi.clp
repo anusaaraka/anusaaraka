@@ -97,19 +97,20 @@
 (defrule get_id3
 (declare (salience 600))
 ?f1<-(manual_id-word ?mid ?man_wrd)
-(not (manual_id_en_hi-word-root-vib-grp_ids ? $? - $? - $? - $? ?mid $?))
+(not (manual_id_en_hi-word-root-vib-grp_ids $? - $? ?mid $?))
+(not (mng_has_been_grouped ?mid))
 =>
 
 	(assert (manual_id_en_hi-word-root-vib-grp_ids ?mid ?man_wrd - - - - - ?mid))
 )
 
-(defrule delete_fact
-(declare (salience 700))
-?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?)
-(mng_has_been_grouped ?mid)
-=>
-	(retract ?f)
-)
+;(defrule delete_fact
+;(declare (salience 700))
+;?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?)
+;(mng_has_been_grouped ?mid)
+;=>
+;	(retract ?f)
+;)
 
 (defrule single_vib
 (declare (salience 70))
@@ -137,6 +138,7 @@
 (defrule single_vib2
 (declare (salience 60))
 ?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle - - - - - $?grp_ids)
+(test (neq (length $?noun) 0))
 =>
         (retract ?f1)
         (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids))
