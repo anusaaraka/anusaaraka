@@ -32,8 +32,8 @@ var row_labels = [
 "Preposition Movement (J)",
 "Hindi Generation (K)",
 "Phrasal meaning (E-H) (L)",
-"Manual meaning (E-H) (N) ",
-"Suggestions (P)"
+"Manual meaning (E-H) (M) ",
+"Suggestions (N)"
 ];
 
 var row_descriptions = [

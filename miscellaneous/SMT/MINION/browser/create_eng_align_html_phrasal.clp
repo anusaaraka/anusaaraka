@@ -229,8 +229,8 @@
  )
 
  (deffunction print_manual_ouput_row2(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?man_op ?lwg_type)
- (printout fp "<tr class=\"row14\">" crlf )
- (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".N</td>"))
+ (printout fp "<tr class=\"row13\">" crlf )
+ (if (= ?w_id 1) then (printout fp "<td class=\"number\">"?p_id"."?s_id".M</td>"))
  (if (eq ?lwg_type MAIN_VERB) then
  (printout fp "<td class=\""?chnk_fr_htm"\"> " ?man_op" </td>" crlf "</tr>" crlf)
  else (if (eq ?lwg_type AUX_VERB) then
@@ -240,7 +240,7 @@
  )
 
  (deffunction print_suggestion_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?aper_op ?id_type)
- (printout fp "<tr class=\"row16\">" crlf )
+ (printout fp "<tr class=\"row14\">" crlf )
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">&nbsp;</td>"))
  (printout fp "<td class=\""?chnk_fr_htm"\"><input name=\"suggestion_1.1\" type=\"text\" class=\"suggestion\" size=\"1\" value=\"")
  (if (eq ?id_type AUX_VERB) then (printout fp " -- \" /></td></tr>" crlf) else (printout fp (implode$ (create$ ?l_punc)) ?aper_op (implode$ (create$ ?r_punc)) "\" /></td></tr>" crlf))

@@ -1,6 +1,5 @@
 (defglobal ?*fp* = dic_fp1)
 
-
 (defrule potential_count_of_manual_id
 (declare (salience 1500))
 ;(or (potential_assignment_vacancy_id-candidate_id ?aid1 ?mid) (man_id-anu_id ?mid ?aid1)(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?))
@@ -54,20 +53,46 @@
 ;------------------------------------------------------------------------------------------------------------
 (defrule align_poten_man_id
 (declare (salience 1000))
-?f<-(man_id-candidate_ids ?mid $? ?aid $?)
+?f<-(man_id-candidate_ids ?mid $?list1 ?aid $?list2)
 (not (mng_has_been_aligned ?mid))
 (not (mng_has_been_filled ?aid))
-?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids)
+(test (or (neq (length $?list1) 0) (neq (length $?list2) 0)))
+?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids ?id)
 (mot-cat-praW_id-largest_group ? NP ? $?grp)
-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?anu_mng1 - ?mid1 $?)
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?anu_mng1 - ?mid1 $? )
 (test (member$ ?aid $?grp))
 (test (member$ ?aid1 $?grp))
-(test (eq (+ ?mid 1) ?mid1))
+(test (eq (+ ?id 1) ?mid1))
 (id-Apertium_output ?aid $?anu_mng)
 (test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?man_mng) 0)))
 =>
 	(retract ?f ?f1)
         (if (eq (length $?anu_mng) 0) then (bind $?anu_mng (create$ -)))
+        (assert (mng_has_been_aligned ?mid))
+        (assert (mng_has_been_filled ?aid))
+        (assert (phrasal_aligned_mng ?aid  ?mid))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mids ?id))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids ?id))
+)
+
+(defrule align_poten_man_id1
+(declare (salience 1000))
+?f<-(man_id-candidate_ids ?mid $?list1 ?aid $?list2)
+(not (mng_has_been_aligned ?mid))
+(not (mng_has_been_filled ?aid))
+(test (or (neq (length $?list1) 0) (neq (length $?list2) 0)))
+?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids)
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?anu_mng1 - ?mid1 $? ?id)
+(test (numberp ?id))
+(test (eq (+ ?id 1) ?mid))
+(mot-cat-praW_id-largest_group ? NP|PP ? $?grp)
+(test (member$ ?aid $?grp))
+(test (member$ ?aid1 $?grp))
+(id-Apertium_output ?aid $?anu_mng)
+(test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?man_mng) 0)))
+=>      
+        (retract ?f ?f1)
+        (if (eq (length $?anu_mng) 0) then (bind $?anu_mng (create$ -))) 
         (assert (mng_has_been_aligned ?mid))
         (assert (mng_has_been_filled ?aid))
         (assert (phrasal_aligned_mng ?aid  ?mid))
@@ -121,6 +146,7 @@
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mids))
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids))
 )
+
 ;-------------------------------------------------------------------------------------
 
 (defrule replace_id_with_word_for_nos

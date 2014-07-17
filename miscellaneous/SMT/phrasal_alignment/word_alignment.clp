@@ -121,6 +121,7 @@
         (assert (anu_id-man_id ?aid ?mid))
         (bind ?dic_val (gdbm_lookup "hindi_wordnet_dic1.gdbm" (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root)))))
         (bind ?dic_val (remove_character "/" ?dic_val " "))
+        (printout t "----------" ?dic_val "---------" crlf)
         (if (neq ?dic_val "FALSE") then
             (if (and (member$ $?h_root ?dic_val)(member$ ?mng ?dic_val)) then
                 (bind ?*count* (+ ?*count* 1))
@@ -212,7 +213,7 @@
 (declare (salience 840))
 (current_id ?mid)
 (or (manual_id_en_hi-word-root-vib-grp_ids ?mid ? $?noun - $?w - $?vib - $?grp_ids)(manual_id_en_hi-word-root-vib-grp_ids ?mid ? $?w - $?noun - $?vib - $?grp_ids))
-(test (and (neq (length $?r) 0)(neq (length $?w) 0)(neq (length $?noun) 0)))
+(test (and (neq (length $?w) 0)(neq (length $?vib) 0)(neq (length $?noun) 0)))
 (test (neq $?vib -))
 (id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?noun)
 (id-root ?eid ?e_word)
@@ -269,7 +270,9 @@
 (current_id ?mid)
 (manual_id_en_hi-word-root-vib-grp_ids ?mid $?word - $?r - $?vib - $?gids)
 (test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?word) 0)))
+(test (neq (str-index @ (implode$ (create$ $?word))) FALSE))
 (or (id-word ?eid $?word1)(id-original_word ?eid $?word1))
+;(test (or (eq (explode$ (str-cat  @ (implode$ (create$ $?word1)))) $?word) (eq (string-to-field (str-cat (sub-string 1 (- (str-index @ (implode$ (create$ $?word))) 1) (implode$ (create$ $?word))) (sub-string (+ (str-index @ (implode$ (create$ $?word))) 1) (length $?word) (implode$ (create$ $?word))))) (string-to-field (implode$ (create$ $?word1))))))
 (test (eq (explode$ (str-cat  @ (implode$ (create$ $?word1)))) $?word))
 (id-root ?eid ?e_root)
 (not (prov_assignment ?eid ?mid))
@@ -280,6 +283,30 @@
         (assert (man_id-src-root ?mid exact ?e_root))
         (assert (prov_assignment ?eid ?mid))
 )
+
+
+;check_match_with_english_word and check_match_with_english_word1 are the same rules just the test condition differs [?word and $?word] 
+;As I was getting problem in test condition I handled it in a seperate rule.
+;need to improve the rule. 
+(defrule check_match_with_english_word1
+(declare (salience 830))
+(current_id ?mid)
+(manual_id_en_hi-word-root-vib-grp_ids ?mid ?word - $?r - $?vib - $?gids)
+(test (and (neq (length $?r) 0)(neq (length $?vib) 0)))
+(test (neq (str-index @ (implode$ (create$ ?word))) FALSE))
+(or (id-word ?eid ?word1)(id-original_word ?eid ?word1))
+(test (or (eq ?word1 ?word) (eq (string-to-field (str-cat (sub-string 1 (- (str-index @ (implode$ (create$ ?word))) 1) ?word) (sub-string (+ (str-index @ (implode$ (create$ ?word))) 1) (length (implode$ (create$ ?word))) ?word))) ?word1)))
+(id-root ?eid ?e_root)
+(not (prov_assignment ?eid ?mid))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (assert (anu_ids-sep-manual_ids ?eid - $?gids))
+        (assert (man_id-src-root ?mid exact ?e_root))
+        (assert (prov_assignment ?eid ?mid))
+)
+
+
 ;-------------------------------------------------------------------------------------
 (defrule replace_id_with_word
 (declare (salience -501))

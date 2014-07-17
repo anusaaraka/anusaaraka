@@ -1,5 +1,4 @@
 (defglobal ?*id* = 1)
-(defglobal ?*dic_fp2*  = dic_fp)
 
 
 (deffunction remove_character(?char ?str ?replace_char)
@@ -23,6 +22,9 @@
         (retract ?f)
         (assert (anu_id-anu_mng-man_mng     ?aid $?pre $?post))
 )
+
+
+
 
 (defrule rm_underscore
 (declare (salience 1000))
@@ -62,14 +64,15 @@
         (bind ?*id* (+ ?*id* 1))
 )
 
-(defrule get_id1
-(declare (salience 850))
-?f<-(anu_id-anu_mng-man_mng	?aid ?a_wrd ?man_wrd)
-?f1<-(manual_id-word ?mid ?man_wrd)
-=>
-	(assert (manual_id_en_hi-word-root-vib-grp_ids ?mid ?man_wrd - - - - - ?mid))
-;        (assert (fact_modified_id ?mid)) 
-) 
+;(defrule get_id1
+;(declare (salience 60))
+;?f<-(anu_id-anu_mng-man_mng	?aid ?a_wrd ?man_wrd)
+;?f1<-(manual_id-word ?mid ?man_wrd)
+;(not (mng_has_been_grouped ?mid))
+;=>
+;	(assert (manual_id_en_hi-word-root-vib-grp_ids ?mid ?man_wrd - - - - - ?mid))
+;;        (assert (fact_modified_id ?mid)) 
+;) 
 
 (defrule get_id2
 (declare (salience 800))
@@ -95,7 +98,7 @@
 
 
 (defrule get_id3
-(declare (salience 600))
+(declare (salience 60))
 ?f1<-(manual_id-word ?mid ?man_wrd)
 (not (manual_id_en_hi-word-root-vib-grp_ids $? - $? ?mid $?))
 (not (mng_has_been_grouped ?mid))
@@ -104,20 +107,139 @@
 	(assert (manual_id_en_hi-word-root-vib-grp_ids ?mid ?man_wrd - - - - - ?mid))
 )
 
-;(defrule delete_fact
-;(declare (salience 700))
-;?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?)
-;(mng_has_been_grouped ?mid)
-;=>
-;	(retract ?f)
-;)
-
+;----------------------------------------------------------------------------------------------------------------
+;It is mainly through light and the sense of vision that we know and interpret the world around us.
+;Man tran :: muKya rUpa se prakASa evaM xqRti kI saMvexanA ke kAraNa hI hama [apane cAroM ora] ke saMsAra ko samaJawe evaM usakI vyAKyA karawe hEM.
+;Anu tran :: yaha halake meM se waWA xUraxarSiwA kI saMvexanA meM se pramuKa rUpa se hE ki hama hamAre cAroM ora yuga vyAKyA kara waWA jAnawI hE.
+(defrule multi_word0
+(declare (salience 110))
+?f0<-(manual_id-word ?id0 ?w&apane|unake)
+?f1<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?w1&cAroM)
+?f2<-(manual_id-word ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora)
+;(not (id-word ? surrounding))
+(not (mng_has_been_grouped ?id1))
+(not (mng_has_been_grouped ?id2))
+=>
+        ;(retract ?f0 ?f1 ?f2)
+        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 ?w  - - - ?w1 ?w2 - ?id0 ?id1 ?id2))
+        (assert (mng_has_been_grouped ?id1)) 
+        (assert (mng_has_been_grouped ?id2)) 
+)
+;----------------------------------------------------------------------------------------------------------------
+;To throw a stone upwards, one has to give it an upward push.-->kisI pawWara ko Upara kI ora Pefkane ke lie, hameM use Upara kI ora prakRepiwa karanA padawA hE .
+;The resolution of such an electron microscope is limited finally by the fact that electrons can also behave as waves. ---> isa prakAra ke ilektroYna - sUkRmaxarSI kA viBexana BI anwawaH isI waWya xvArA sImiwa howA hE ki ilektroYna BI warafgoM kI waraha vyavahAra kara sakawe hEM.
+(defrule multi_word1
+(declare (salience 110))
+?f0<-(manual_id-word ?id0 ?w)
+?f1<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?w1&kI)
+?f2<-(manual_id-word ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora|waraha)
+(not (mng_has_been_grouped ?id1))
+(not (mng_has_been_grouped ?id2))
+=>
+        ;(retract ?f0 ?f1 ?f2)
+        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 ?w  - ?w  - ?w1 ?w2 - ?id0 ?id1 ?id2))
+        (assert (mng_has_been_grouped ?id1)) 
+        (assert (mng_has_been_grouped ?id2)) 
+)
+;----------------------------------------------------------------------------------------------------------------
+;ke rUpa meM, ke bAre meM
+;;Axya vicArakoM jEse araswU kI bala [ke viRaya meM] saMkalpanA galawa WI -- Early thinkers like Aristotle had wrong ideas about it.
+;BOwikI ke anwargawa hama viviXa BOwika pariGatanAoM kI vyAKyA kuCa safkalpanAoM evaM niyamoM [ke paxoM meM] karane kA prayAsa karawe hEM --- In Physics, we attempt to explain diverse physical phenomena in terms of a few concepts and laws. 
+;;xqSya prakASa ke sWAna para hama, ilektroYna - puFja kA upayoga kara sakawe hEM.---Instead of visible light, we can use an electron beam.
+(defrule ke_[word]_meM
+(declare (salience 90))
+?f1<-(manual_id-word ?id0 $?noun)
+?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ke)
+?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&rUpa|bAre|viRaya|AXAra|wOra|paxoM|sWAna)
+?f4<-(manual_id-word ?id3&:(=(+ ?id0 3) ?id3) meM|para)
+(not (mng_has_been_grouped ?id1))
+(not (mng_has_been_grouped ?id2))
+(not (mng_has_been_grouped ?id3))
+=>
+        ;(retract ?f1 ?f2 ?f3 ?f4)
+        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ke ?w meM - ?id0 ?id1 ?id2 ?id3))
+        (assert (mng_has_been_grouped ?id1)) 
+        (assert (mng_has_been_grouped ?id2)) 
+        (assert (mng_has_been_grouped ?id3)) 
+)
+;----------------------------------------------------------------------------------------------------------------
+(defrule kI_[word]_meM
+(declare (salience 90))
+?f1<-(manual_id-word ?id0 $?noun)
+?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) kI)
+?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&wulanA)
+?f4<-(manual_id-word ?id3&:(=(+ ?id0 3) ?id3) meM)
+(not (mng_has_been_grouped ?id1))
+(not (mng_has_been_grouped ?id2))
+(not (mng_has_been_grouped ?id33))
+=>
+        ;(retract ?f1 ?f2 ?f3 ?f4)
+        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - kI ?w meM - ?id0 ?id1 ?id2 ?id3))
+        (assert (mng_has_been_grouped ?id1)) 
+        (assert (mng_has_been_grouped ?id2)) 
+        (assert (mng_has_been_grouped ?id3)) 
+)
+;----------------------------------------------------------------------------------------------------------------
+;Since the electromagnetic force is so much stronger than the gravitational force, it dominates all phenomena at atomic and molecular scales. -- cUfki vixyuwa cumbakIya bala guruwvAkarRaNa bala kI apekRA kahIM aXika prabala howA hE yaha ANvika waWA paramANvIya pEmAne kI saBI pariGatanAoM para CAyA rahawA hE
+(defrule kI_[word]
+(declare (salience 80))
+?f1<-(manual_id-word ?id0 $?noun)
+?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) kI)
+?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&apekRA)
+;(manual_id-word ?id3&:(=(+ ?id0 3) ?id3) ? ?c&~VM);It seems to turn around corners and enter regions where we would expect a shadow. yaha kone se mudakara usa kRewra meM praveSa karawA huA prawIwa howA hE jahAz hama CAyA kI apekRA karawe hEM
+(not (mng_has_been_grouped ?id1))
+(not (mng_has_been_grouped ?id2))
+=>
+        ;(retract ?f1 ?f2 ?f3)
+        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - kI ?w - ?id0 ?id1 ?id2))
+        (assert (mng_has_been_grouped ?id1)) 
+        (assert (mng_has_been_grouped ?id2)) 
+)
+;----------------------------------------------------------------------------------------------------------------
+;ke liye , ke lie ,ke pariwaH ,ke sAWa,[besides --> ke awirikwa]
+;xravyamAna kenxra kI pariBARA [jAnane ke bAxa] , aba hama isa sWiwi meM hEM ki kaNoM ke eka nikAya ke lie isake BOwika mahawva kI vivecanA kara sakeM.
+;It is mainly through light and the sense of vision that we know and interpret the world around us.--> muKya rUpa se prakASa evaM xqRti kI [saMvexanA ke kAraNa] hI hama apane cAroM ora ke saMsAra ko samaJawe evaM usakI vyAKyA karawe hEM
+;There is no loss of energy due to friction. [ke kAraNa]
+;The apparent flattening (oval shape) of the sun at sunset and sunrise is also due to the same phenomenon.--->sUryAswa waWA [sUryoxaya ke samaya] sUrya kA ABAsI capatApana (aNdAkAra Akqwi) BI isI pariGatanA ke kAraNa hI hE.
+;The restoring muscular forces again come into play and bring the body to rest.----- >prawyAnayanI peSIya baloM ke kAryarawa hone [ke kAraNa] SarIra virAma avasWA meM A jAwI hE
+(defrule ke_[word]
+(declare (salience 80))
+?f1<-(manual_id-word ?id0 $?noun)
+?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ke)
+?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|kAraNa|pare)
+(not (mng_has_been_grouped ?id1))
+(not (mng_has_been_grouped ?id2))
+=>
+        ;(retract ?f1 ?f2 ?f3)
+        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ke ?w - ?id0 ?id1 ?id2))
+        (assert (mng_has_been_grouped ?id1)) 
+        (assert (mng_has_been_grouped ?id2)) 
+)
+;----------------------------------------------------------------------------------------------------------------
+;Dispersion takes place because the refractive index of medium for different wavelengths (colors) is different.
+;parikRepaNa kA kAraNa yaha hE ki kisI mAXyama kA apavarwanAfka viBinna warafgaxErGyoM  @PUNCT-OpenParenvarNoM @PUNCT-ClosedParen ke lie Binna - Binna howA hE
+(defrule word_[hyphen]_word
+(declare (salience 81))
+?f1<-(manual_id-word ?id0 $?noun)
+?f2<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) -)
+?f3<-(man_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w)
+(not (mng_has_been_grouped ?id1))
+(not (mng_has_been_grouped ?id2))
+=>
+        ;(retract ?f1 ?f2 ?f3)
+        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?w  - - - 0 - ?id0 ?id2))
+        (assert (mng_has_been_grouped ?id1)) 
+        (assert (mng_has_been_grouped ?id2)) 
+)
+;----------------------------------------------------------------------------------------------------------------
 (defrule single_vib
 (declare (salience 70))
 ?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - - - $?grp_ids)
 ?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle - - - - - $?grp_ids1)
+(not (mng_has_been_grouped ?id1))
 =>
         (retract ?f1 ?f2)
+        (assert (mng_has_been_grouped ?id1)) 
         (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids $?grp_ids1))
 )
 
@@ -154,7 +276,6 @@
 (man_word-root-cat ?tam ?root&kara|ho v)
 =>
         (retract ?f1 ?f2 ?f3)
- ;       (bind ?root (string-to-field (str-cat (implode$ $?noun)  "_" ?root)))
         (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word ?tam ?tam1  - ?iwa_word ?root - wA ?tam1 - $?grp_ids ?id1 ?id2))
 )
 
@@ -168,7 +289,6 @@
 (man_word-root-cat ?tam ?root&kara|ho v)
 =>
         (retract ?f1 ?f2)
- ;       (bind ?root (string-to-field (str-cat (implode$ $?noun)  "_" ?root)))
         (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word ?tam ?tam1  - ?iwa_word ?root - wA ?tam1 - $?grp_ids ?id1 ?id2))
 )
 
@@ -188,31 +308,7 @@
 (man_word-root-cat ?tam ?root&kara|ho|kaha v)
 =>
         (retract ?f1 ?f2)
- ;       (bind ?root (string-to-field (str-cat (implode$ $?noun)  "_" ?root)))
         (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?tam ?wrd - $?noun ?root - nA ?wrd - $?grp_ids $?grp_ids1))
 
 )
-
-
-
-
-
-
-
-;
-;
-;(defrule verb_rule2
-;(declare (salience 50)) 
-;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?verb_mng - $?root - ?tam&karawA|howA|karawI|howI|karawe|howe -  $?grp_ids ?id)
-;?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id 1) ?id1) ?wrd&hE - $? - $? -  ?id1)
-;(man_word-root-cat ?tam ?root1&kara|ho v)
-;=>
-;        (retract ?f1 ?f2)
-;;        (bind ?root1 (string-to-field (str-cat ?tam "_" ?wrd)))
-;        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?verb_mng - $?root - ?tam ?wrd - $?grp_ids ?id ?id1))
-;)
-
-
-
-
 
