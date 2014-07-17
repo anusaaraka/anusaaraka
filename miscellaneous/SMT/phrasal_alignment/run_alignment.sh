@@ -36,6 +36,7 @@ if [ "'$var'" == "'NO PATH'" ] ; then
 	echo "@Phrase @level @left @over @words::	@NO @PATH" > $1/total-left-over1.dat    
         echo "@NO @PATH"	> $1/left
 	touch $1/align_left_over_wrds.dat
+	touch $1/mapped3.dat
 else
 	python print_shortest_path.py $1/match-value-with-hindi-wrdid.dat  $1/graph_output > $1/shortest-path-value.dat 2>> $1/phrasal_error
 	python get_phrase.py  $1/shortest-path-value.dat  $1/hnd2 $1/left-over-words1.dat  $1/left-over-words.dat> $1/align_eng.dat 2>> $1/phrasal_error
@@ -66,5 +67,5 @@ fi
 	$HOME_anu_test/Anu_src/replace_nonascii-chars.out $1/hnd2 $1/hnd3
 	wx_utf8 < $1/hnd3 > $1/hnd4
 	cat $1/hnd4 $1/english_left_over.dat   $1/tmp > $1/total-left-over.dat 
-	wx_utf8 < $1/align_left_over_wrds.dat >> $1/total-left-over.dat
+	#wx_utf8 < $1/align_left_over_wrds.dat >> $1/total-left-over.dat
 	echo "Phrasal Alignment EN-HI completed" >> $1/phrasal_error	
