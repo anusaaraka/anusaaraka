@@ -132,11 +132,11 @@
 (defrule align_left_over_wrds_using_phrasal_data
 (declare (salience -199))
 ?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids)
-(anu_id-anu_mng-man_mng         ?aid    ?a_wrd  $?man_mng)
+(anu_id-anu_mng-man_mng         ?aid    ?  $?man_mng)
 (not (mng_has_been_aligned ?mid))
 (not (mng_has_been_filled ?aid))
 (test (and (neq (length  $?r) 0) (neq (length  $?vib) 0)))
-(id-original_word ?aid ?a_wrd)
+(id-original_word ?aid ?)
 (id-Apertium_output ?aid $?anu_mng)
 =>
         (retract ?f)

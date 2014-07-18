@@ -16,6 +16,7 @@ var rows_visibility = [
 1, // row11
 1, // row12
 1, // row13
+1, // row14
 0, // last row will be the suggestions row
 ]; // The array can be of different size than the number of rows at hand
 
@@ -32,8 +33,9 @@ var row_labels = [
 "Preposition Movement (J)",
 "Hindi Generation (K)",
 "Phrasal meaning (E-H) (L)",
-"Manual meaning (E-H) (M) ",
-"Suggestions (N)"
+"Phrasal meaning (H-E) (M)",
+"Manual meaning  (N) ",
+"Suggestions (O)"
 ];
 
 var row_descriptions = [
@@ -49,6 +51,7 @@ var row_descriptions = [
 "Shows the probable place to which preposition should be moved in Hindi output as per parser",
 "Shows the Hindi word after calling the Hindi generator",
 "Shows the manual word translation using  phrasal english to hindi training data",
+"Shows the manual word translation using  phrasal hindi to english training data",
 "Shows the manual aligned meaning after applying huristics",
 "Shows the user suggestion"
 ];
