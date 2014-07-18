@@ -29,6 +29,7 @@ if [ "'$var'" == "'NO PATH'" ] ; then
 	touch $1/word-alignment-hi-en.dat
 	echo "(hindi_left_over_words	NO PATH)" > $1/left-over-words-hi-en.dat 
 	touch $1/left-hi-en 
+	touch $1/mapped3-hi-en.dat 
 else
 	python print_shortest_path.py $1/match-value-with-hindi-wrdid-hi-en.dat  $1/graph_output-hi-en > $1/shortest-path-value-hi-en.dat  2>> $1/phrasal_error
 	python get_phrase.py  $1/shortest-path-value-hi-en.dat  $1/hnd2 $1/left-over-words1-hi-en.dat  $1/left-over-words-hi-en.dat> $1/align_eng-hi-en.dat 2>> $1/phrasal_error

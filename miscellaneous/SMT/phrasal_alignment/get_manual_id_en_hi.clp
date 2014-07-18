@@ -18,7 +18,7 @@
 (defrule rm_punct
 (declare (salience 1001))
 ?f<-(anu_id-anu_mng-man_mng     ?aid ?anu_mng $?pre ?PUNCT $?post)
-(test (eq (sub-string 1 6 ?PUNCT) "@PUNCT"))
+(test (eq (sub-string 1 6 (implode$ (create$ ?PUNCT))) "@PUNCT"))
 =>
         (retract ?f)
         (assert (anu_id-anu_mng-man_mng  ?aid ?anu_mng $?pre $?post))
@@ -101,7 +101,7 @@
 (defrule get_id3
 (declare (salience 60))
 ?f1<-(manual_id-word ?mid ?man_wrd)
-(test (neq (sub-string 1 6 ?man_wrd) "@PUNCT"))
+(test (neq (sub-string 1 6 (implode$ (create$ ?man_wrd))) "@PUNCT"))
 (not (manual_id_en_hi-word-root-vib-grp_ids $? - $? ?mid $?))
 (not (mng_has_been_grouped ?mid))
 =>
