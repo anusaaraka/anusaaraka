@@ -23,7 +23,7 @@
  (not (file_loaded ?root_id))
  (not (not_SandBox)) ;Added for server purpose. (Suggested by Chaitanya Sir, Added by Roja(05-07-13))
  =>
-        (bind ?file (str-cat  ?*provisional_wsd_path* "/" ?tam "_tam.clp"))
+        (bind ?file (str-cat  ?*provisional_wsd_path* "/canonical_form_prov_wsd_rules/" ?tam "_tam.clp"));Added canonical_form_prov_wsd_rules by Roja(24-07-14)
         (bind ?file_load (load* ?file))
         (if (eq ?file_load TRUE) then
         (assert (file_loaded ?root_id)))

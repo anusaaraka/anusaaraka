@@ -35,11 +35,13 @@ for line in open(sys.argv[1]):
 	lst = line.strip().split('\t') #_Every_calculated_quantity_     _prawyeka_parikaliwa_rASi_      1 4     1 4
 	k = lst[2].split()
 	v = k[1] + '\t' + lst[3] + '\t' + lst[0] + '\t' + lst[1]
-	if k[0] not in align_dic:
+	if int(k[0]) not in align_dic:
 		align_dic[int(k[0])] = v 
+#		print '%%%', k[0] , '&&&', v
 	else:
-		if len(align_dic[k[0]]) < len(v) :
+		if len(align_dic[int(k[0])]) < len(v) :
 			align_dic[int(k[0])] = v
+#			print '^^^', k[0] , '$$$', v
 
 for key in sorted(align_dic):
 	v = align_dic[key].split('\t')

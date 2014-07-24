@@ -15891,7 +15891,7 @@ in_absolute_terms	mAwrA_kI_iRta_se#mAwrA_kI_iRta_se#noun#3#RM
 in_accord_with	ke_anurUpa_se#ke_anurUpa_se#noun#3#RM
 in_accordance_with	ke_anusAra#ke_anusAra#noun#3#RM
 in_addition_to	ke_awirikwa#ke_awirikwa#noun#3#RM
-in_advance	agrima#agrima#noun#2#RM
+in_advance	pahale_se#pahale_se#noun#2#RM
 in_advance_of	hone_se_pahale#hone_se_pahale#noun#2#RM
 in_advertently	asAvaXAnI_InajAne_meM#asAvaXAnI_InajAne_meM#noun#2#RM
 in_aid_of	ke_maxaxa_ke_lie#ke_maxaxa_ke_lie#noun#2#RM

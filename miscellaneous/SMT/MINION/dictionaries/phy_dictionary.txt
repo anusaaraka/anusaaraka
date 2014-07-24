@@ -406,3 +406,4 @@ elementary_adjective	mUla
 subtraction_noun	vyavakalana
 dimensionally_adverb	vimIya
 exponent_noun	GAwAfka
+sensitivity_noun	sugrAhiwA

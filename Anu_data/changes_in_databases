@@ -951,6 +951,12 @@ Removed:
 	106. X-rayed_UNDEFINED       eksa-kiraNa_se_Poto_nikAlanA	as	eksa-re_se_Poto_nikAlanA  (Suggested by Anita ji LTRC 24-03-14)
 	107. X-raying_UNDEFINED      eksa-kiraNa_se_Poto_nikAlanA	as	eksa-re_se_Poto_nikAlanA  (		"		"     )
 	108. X-rays_UNDEFINED        eksa-kiraNa_se_Poto_nikAlanA	as	eksa-re_se_Poto_nikAlanA  (		"		"     )
+	109. harden_verb	xrDa_ban	as	xqDa_banA	(Suggested by Chaitanya Sir 24-07-14	)
+	110.	"		saKwa_ban	as	saKwa_banA	(	"	"	"		)
+	111.	"		pakkA_ban	as	pakkA_banA	(	"	"	"		)
+	112.	"		kaTora_ban	as	kaTora_banA	(	"	"	"		)
+	113. have_verb		K		as	KA		(	"	"	"		)	
+	
 
     3. Added new entry:
        ---------------
@@ -1169,6 +1175,11 @@ Removed:
 	115. arthropod_noun		saMXipAxa_prANI			(Suggested by			    03-06-14)
 	116. wove_verb			eka_hI_kaWAsUwra_meM_graWiwa_kara(Suggested by 	Chaitanya Sir	    09-06-14)
 					Ex: Muslim jurisprudents then wove these percepts into a body of law.
+	117. all_determiner		saba/samaswa/saBI		(Suggested by Chaitanya Sir		24-07-14)
+					Ex:All the processes occurring in living beings including plants are mediated by fluids. 
+	118. general_adverb		Ama_wOra_para/sAmAnyawayA	(Suggested by 	"		"	"	)
+					Ex: The surface of liquid near the plane of contact, with another medium is in general curved. 
+
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1345,6 +1356,10 @@ Removed:
 	96. truth_noun			saca			(Suggested by Chaitanya Sir     30-04-14)  Ex: He always speaks the truth.
 	97. sweep_verb			prasarpa		(	"	"		03-06-14). 
 					Ex: The line that joins any planet to the sun sweeps equal areas in equal intervals of time.
+	98. all_adjective		samaswa			(Suggested by Chaitanya Sir	24-07-14)
+					Ex: All the processes occurring in living beings including plants are mediated by fluids. 
+	99. all_pronoun			samaswa			(	"		"	"	)
+	100. 
 
 
     5. Modifying first meaning from the list :
@@ -1647,6 +1662,15 @@ Removed:
 	137. persian_adjective	PArasI_BARA_yA_PArasI{nivAsI}	as	PArasI/PArasI_BARA/{nivAsI}
 										(Suggested by ANita ji LTRC	01-07-14)
 				Ex: Persian rugs are characterized by their geometric designs and rich colours.
+	138. deer_noun		mqganayanI	as	hirana			(Suggested by Chaitanya Sir	24-07-14)
+				Ex: There were two deer near a roundabout, chewing on the grass.
+	139. horrific_adjective	romAFcakArI	as	ByAvaha			(	"	"		"	)
+				Ex: The long teeth of pigs were making them horrific.
+	140. raindrop_noun	varRA_kI_eka_bUnxa	as	varRA_kI_bUnxa	(	"	"		"	)
+				Ex: Anything thrown up falls down towards the earth, raindrops from the clouds etc.(note:sentence simplified)
+	141. 	"		varRA-binxu		as	varRA_bUnxa	(	"	"		"	)
+
+	
 	
 
     6. Removed meaning from existing list:
@@ -1682,7 +1706,12 @@ Removed:
 	27. civilisation_noun	saBya_samAja					(Suggested by 	Sukhada         26-11-13)
 	28. X-ray_noun		eksa-kiraNa					(Suggested by Anita ji LTRC	24-03-14)	
 	29. leg_noun		tAfga						(Suggested by   Sukhada         02-06-14)
+	30. all_pronoun		all						(Suggested by Chaitanya Sir	24-07-14)
+	31. deer_noun		mqganayanI					(	"	"		"	)
+	32. harden_verb		saKwa_bana					(	"	"		"	)
+	33. series_noun		SrqfKalA					(	"	"		"	)
 
+	
 
     7. Removed entry:
        --------------
@@ -1738,6 +1767,8 @@ Removed:
 	49. wove_UNDEFINED	eka_hI_kaWAsUwra_meM_graWiwa_karanA	(	"	"	"	09-06-14)
 	50. woven_UNDEFINED	eka_hI_kaWAsUwra_meM_graWiwa_karanA	(	"	"	"	"	)
 	51. persian_UNDEFINED	PArasI_BARA_yA_PArasI			(Suggested by Anita ji LTRC 	01-07-14)
+	52. raindrops_UNDEFINED	varRA_kI_eka_bUnxa			(Suggested by Chaitanya Sir	24-07-14)
+
 
 
     8. Modified category:
@@ -1914,6 +1945,8 @@ Removed:
 				Ex: The baby could arrive any time now.
 	coffee_drinks		koYPI_peya_yA_Sarabawa	as	koYPI_peya/Sarabawa(Suggested by Preeti ji LTRC 07-03-14)
 				Ex: People use espresso to make other coffee drinks.
+	in_advance		agrima	as	pahale_se	(Suggested by Soma Mam	24-07-14)
+				Ex: A paper scale may be put inside the bottle in advance to measure the separation of leaves. 
 
 		
     Added new entry:
@@ -2250,6 +2283,9 @@ Removed:
 											       hence the equation is dimensionally correct.
 	exponent_noun 		GAwAfka		(		"		    "	 ) Ex: The dimensions of a physical quantity are the 
 									       powers or exponents to which the base quantities 											      are raised to represent that quantity.
+	sensitivity_noun	sugrAhiwA	(Suggested by Chaitanya Sir	24-07-14) 
+			Ex: A convenient way for the manufacturer to increase the sensitivity is to increase the number of turns N. 
+	
     Modifying first meaning:
     -----------------------
 	instant_noun	kRaNika	as	kRaNa	(Suggested by Prachi Banasthali  21-03-14) 
