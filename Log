@@ -31,6 +31,9 @@
 	map_eng_offset-to_wrdids.py
 	multifast-v1.0.0/src/extract_key_in_hindi_phrase.c
 	multifast-v1.0.0/src/get_word_count_single.c
+	get_pos_chunk.sh
+	create-chunk-facts.py
+	print-pos-info.py
  10. Updated following lex files:
 	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
 	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern
