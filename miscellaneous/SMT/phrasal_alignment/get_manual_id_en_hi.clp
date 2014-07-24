@@ -208,7 +208,7 @@
 (declare (salience 80))
 ?f1<-(manual_id-word ?id0 $?noun)
 ?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ke)
-?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|kAraNa|pare)
+?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|kAraNa|pare|BIwara)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>
@@ -232,6 +232,25 @@
         (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?w  - - - 0 - ?id0 ?id2))
         (assert (mng_has_been_grouped ?id1)) 
         (assert (mng_has_been_grouped ?id2)) 
+)
+;----------------------------------------------------------------------------------------------------------------
+;Dispersion takes place because the refractive index of medium for different wavelengths (colors) is different.
+;parikRepaNa kA kAraNa yaha hE ki kisI mAXyama kA apavarwanAfka viBinna warafgaxErGyoM  @PUNCT-OpenParenvarNoM @PUNCT-ClosedParen ke lie Binna - Binna howA hE @PUNCT-Dot
+;Eng sen : Fig. 3.2 (b) shows the position-time graph of such a motion.
+;Man sen : isa prakAra kI gawi kA sWiwi - samaya grAPa ciwra 3.2 @PUNCT-OpenParen @b @PUNCT-ClosedParen [meM] xiKalAyA gayA hE  @PUNCT-Dot
+
+;Eng sen :Acceleration, therefore, may result from a change in [speed (magnitude)], a change in direction or changes in both.
+;Man sen : awaH yA wo [cAla]  @PUNCT-OpenParen parimANa @PUNCT-ClosedParen [meM] parivarwana @PUNCT-Comma  xiSA meM parivarwana aWavA ina xonoM meM parivarwana se wvaraNa kA uxBava ho sakawA hE  @PUNCT-Dot
+(defrule single_vib_Paren
+(declare (salience 70))
+?f1<-(manual_id-word ?id0 $?noun)
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen)
+(manual_id-word ?id2 @PUNCT-ClosedParen)
+(test (or (eq (- ?id2 ?id1) 3)(eq (- ?id2 ?id1) 2) (eq (- ?id2 ?id1) 1)(eq (- ?id2 ?id1) 4)))
+?f3<-(manual_id-word ?id3&:(=(+ ?id2 1) ?id3) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|waka|hI)
+(not (mng_has_been_grouped ?id3))
+=>
+        (assert (manual_id-en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - ?id0 ?id3))
 )
 ;----------------------------------------------------------------------------------------------------------------
 (defrule single_vib
@@ -268,6 +287,7 @@
         (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids))
 )
 
+;----------------------------------------------------------------------------------------------------------------
 (defrule verb_rule1
 (declare (salience 50)) 
 ?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word - - - - - $?grp_ids)

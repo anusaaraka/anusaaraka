@@ -58,7 +58,7 @@
 (not (mng_has_been_filled ?aid))
 (test (or (neq (length $?list1) 0) (neq (length $?list2) 0)))
 ?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids ?id)
-(mot-cat-praW_id-largest_group ? NP ? $?grp)
+(mot-cat-praW_id-largest_group ? NP|PP ? $?grp)
 (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?anu_mng1 - ?mid1 $? )
 (test (member$ ?aid $?grp))
 (test (member$ ?aid1 $?grp))
