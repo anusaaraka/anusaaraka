@@ -5776,3 +5776,15 @@ Sirdar	siraxAra
 Reading	rIdiMga
 Didcot	didkoYta
 Yovraj	yuvarAja
+Nicolas	nikolasa
+Alaska	alAskA
+Richard	ricarda
+Lawrence	loreMjZa
+Bernoulli	barnUlI
+Alexander	alekjeNdara
+Robert	rAbarta
+Hawaii	havAI
+Antarctica	aMtArkatikA
+Arthur	ArWara
+Charles	cArlsa
+Dennis	denisa
