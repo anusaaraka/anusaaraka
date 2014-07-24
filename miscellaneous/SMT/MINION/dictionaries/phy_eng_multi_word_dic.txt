@@ -172,7 +172,7 @@ lamp_black	xIpa_kajjala#xIpa_kajjala#noun#2#RM
 law_of_cosine	kojyA-niyama#kojyA-niyama#noun#1#WM
 law_of_equipartition_of_energy	UrjA_ke_samaviBAjana_kA_niyama#UrjA_ke_samaviBAjana_kA_niyama#noun#1#RM
 law_of_sine	jyA-niyama#jyA-niyama#noun#1#WM
-least_count_error	alpawmAMka_wrutiyAz#alpawmAMka_wrutiyAz#noun#3#RM
+least_count_error	alpawamAMka_wruti#alpawamAMka_wruti#noun#3#RM
 lever_arm	uwwolaka-BujA#uwwolaka-BujA#noun#2#RM
 like_charges	sajAwIya_AveSa#sajAwIya_AveSa#noun#2#RM
 limiting_process	sImAMwa_prakriyA#sImAMwa_prakriyA#noun#2#RM
