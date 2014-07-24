@@ -41,10 +41,13 @@
   (defrule PropN_rule_from_NER
   (declare (salience 12))
   (word-nertype ?word&~of PERSON|LOCATION|ORGANIZATION) ;The Zongle [of] Bongle Dongle resigned today. 
-  (parserid-word ?pid ?word)
-  ?f0<-(id-sd_cat   ?pid ?)
+  (parserid-word P1 ?word)
+  ;(parserid-word ?pid ?word)
+  ?f0<-(id-sd_cat   P1 ?)
+;  ?f0<-(id-sd_cat   ?pid ?)
   =>
-        (printout ?*cat_fp* "(parser_id-cat_coarse  "?pid " PropN)" crlf)
+        (printout ?*cat_fp* "(parser_id-cat_coarse	P1	 PropN)" crlf)
+;        (printout ?*cat_fp* "(parser_id-cat_coarse  "?pid " PropN)" crlf)
         (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
@@ -52,12 +55,15 @@
   (defrule PropN_rule_from_NER1
   (declare (salience 12))
   (word-nertype ?word PERSON|LOCATION|ORGANIZATION)
-  (parserid-word ?pid ?wrd)
-  ?f0<-(id-sd_cat   ?pid ?)
+;  (parserid-word ?pid ?wrd)
+  (parserid-word P1's ?wrd)
+  ?f0<-(id-sd_cat   P1's ?)
+  ;?f0<-(id-sd_cat   ?pid ?)
   (test (neq (str-index "'s" ?wrd) FALSE))
   (test (eq ?word (string-to-field (sub-string 1 (- (str-index "'s" ?wrd) 1) ?wrd))))
   =>
-	(printout ?*cat_fp* "(parser_id-cat_coarse  "?pid " PropN)" crlf)
+	(printout ?*cat_fp* "(parser_id-cat_coarse  P1's	 PropN)" crlf)
+;	(printout ?*cat_fp* "(parser_id-cat_coarse  "?pid " PropN)" crlf)
 	(retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
@@ -76,6 +82,33 @@
 ; 	(retract ?f0)
 ;	(assert (id-sd_cat   ?pid NNP))
 ;  )
+  ;------------------------------------------------------------------------------------------
+  ; We camped on Nilgiri hills during summer. He went to Agra and saw the Tajmahal.
+  ; As will be explained later, there are several types of modulation, abbreviated as AM, FM and PM.
+  (defrule PropN_rule
+  (declare (salience 10))
+  (id-word_cap_info ?id&~1  first_cap|all_caps)
+  (parserid-wordid   ?pid  ?id)
+  ?f0<-(id-sd_cat  ?pid ?)
+  (parserid-word ?pid ?w&~I) ;You are lucky I am here.
+  (test (eq (str-index "SYMBOL-" ?w) FALSE));Added this condition to avoid words with SYMBOL to convert to NNP category (Added by Roja 18-10-12) EX:  In one-dimensional motion, there are only two directions (backward and forward, upward and downward) in which an object can move, and these two directions can easily be specified by + and — signs. 
+   =>
+        (printout ?*cat_fp* "(parser_id-cat_coarse  "?pid"   PropN)" crlf)
+        (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  ;Suggested by Chaitanya Sir 04-06-14 
+  ;They are [educated]. 
+  (defrule modify_VBN_cat
+  (declare (salience 5))
+  ?f0<-(id-sd_cat  ?id  VBN)
+  (Head-Level-Mother-Daughters ?id ? ?ADJP ?VBN)
+  (Node-Category ?ADJP ADJP)
+  (Node-Category ?VBN VBN)
+  =>
+	(printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  adjective)" crlf)
+   	(retract ?f0)
+  )
   ;------------------------------------------------------------------------------------------
   ;He disputed that our program was superior . (PRP$) 
   (defrule PRP_rule
@@ -212,6 +245,15 @@
   ?f0<-(id-sd_cat        ?id     UH)
   =>
          (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  interjection)" crlf)
+         (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  ;Added by Roja(29-05-14)
+  ;A can be expressed as a sum of two vectors — one obtained by multiplying [a] by a real number and the other obtained by multiplying [b] by another real number.
+  (defrule SYM_rule
+  ?f0<-(id-sd_cat        ?id     SYM)
+  =>
+         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  symbol)" crlf)
          (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------

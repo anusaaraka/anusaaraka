@@ -30,7 +30,7 @@
 )
 
 (defrule desert2
-(declare (salience 4800))
+(declare (salience 4000))
 (id-root ?id desert)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -67,3 +67,21 @@
 ;
 ;
 ;
+
+;@@@ added by Pramila(BU) on 13-12-2013
+;The mother deserted her children.          ;sentence of this file
+;माँ ने अपने बच्चे को छोड़ दिया.
+(defrule desert3
+(declare (salience 4900))
+(id-root ?id desert)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject  ?id ?id1)
+(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id CodZa_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  desert.clp 	desert3   "  ?id "  CodZa_xe )" crlf))
+)
+

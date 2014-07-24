@@ -1,5 +1,15 @@
  (defglobal ?*debug_flag* = TRUE)
 
+ ;Added by Shirisha Manju 14-5-14 ; removes control fact if meaning is decided from template
+ (defrule rm_cntl_fact_for_template_mng
+ (declare (salience 7001))
+ (id-HM-source  ?id  ?mng  Template_root_mng|Template_word_mng)
+ (not (meaning_has_been_decided ?id))
+ =>
+	(assert (meaning_has_been_decided ?id))
+ )
+
+
  ;Commented file loaded condition. When meaning is not decided by Original_Word/Word then loading root file.
  ;Ex: She reminded me where I had left the car.  
  ;Mng is not decided in the 'left' word file 

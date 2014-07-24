@@ -530,6 +530,7 @@
  22.	sarasarA	KA/__v			(By Roja Suggested by Sukhada	19-12-13)
  23.	samamiwi	Apawwi/__n		(By Roja Suggested by Chaitanya Sir 28-12-13)
  24.	wArA		ladak/A__n		(By Roja Suggetsed by Sukhada	06-01-14)
+ 25.	bAzyA		kAl/A__adj		(By roja Suggested by Chaitanya Sir 01-07-14)
 
 Modified :
   1.	<e><p><l>we_hue</l>	as	<e><p><l>owe_hue</l>       for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
@@ -572,6 +573,7 @@ Modified :
 		muJako, hamako, 
 	  4.  <e lm="keSa"><i>keS</i><par n="Gar/a__n"/></e>	 (Suggested by Chaitanya Sir 04-04-12)
 	  5.  <e lm="kamI"><i>kamI</i><par n="AjAxI/__n"/></e>	 (By Roja, Suggested by Chaitanya Sir 31-08-13)
+	  6.  <e lm="ha"><i>h</i><par n="Gar/a__n"/></e> 	 (by Roja, 	"		"     01-07-14)
 
 
  Changes in apertium-en-hi.en.metadix 
@@ -683,7 +685,16 @@ Modified :
 	chisel		accept__vblex		(     "	     "	  )
 	bargaining	east__n			(     "	     "    )
 	brie		house__n		(     "	     "	  )
-
+	stigmatise	liv/e__vblex		(     "	  27-06-14)
+	stigmatize	liv/e__vblex		(     "	     "	  )
+	kennel		quarrel__vblex		(     "	     "	  )
+	kennel		accept__vblex		(     "	     "	  )
+	carcass		access__n		(     "	  28-06-14)
+	room		accept__vblex		(     "   30-06-14)
+	ravel		house__n		(     "	     "	  )
+	resource	liv/e__vblex		(     "	     "	  )
+	disinvestment	house__n		(     "	     "	  )
+	recognise	liv/e__vblex		(     "	  01-07-14)
 
 
 
@@ -749,6 +760,7 @@ Removed:
 11. multi_word_expressions_from_iit_bombay.txt 
 	Extracted from iit-bombay dictionary.Added by Roja 10-05-13. Suggested by Chaitanya Sir)
 12. proper_noun_dic.txt    (Added by Shirisha Manju Suggested by Chaitanya Sir)
+13. provisional_multi_word_dictionary.txt	(Added by Roja 21-02-14)
      
 
  Changes in ol_parser_unused_words.txt
@@ -1153,6 +1165,10 @@ Removed:
 					Ex: The amounts earned have to be certificated by employers.
 	113: greatest_adjective		sabase_badA/sabase_mahAna	(Suggested by Chaitanya Sir	   22-05-14)
 					Ex: Shut down the greatest website in the world.
+	114. societal_adjective		sAmAjika			(Suggested by Mohit SUMMER-Students 03-06-14)
+	115. arthropod_noun		saMXipAxa_prANI			(Suggested by			    03-06-14)
+	116. wove_verb			eka_hI_kaWAsUwra_meM_graWiwa_kara(Suggested by 	Chaitanya Sir	    09-06-14)
+					Ex: Muslim jurisprudents then wove these percepts into a body of law.
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1327,6 +1343,9 @@ Removed:
 	95. everyone_noun		hara_koI		(Suggested by Chaitanya Sir     30-04-14)  
 					Ex: Everyone celebrates Holi festival.   [note: bcoz of number problem]
 	96. truth_noun			saca			(Suggested by Chaitanya Sir     30-04-14)  Ex: He always speaks the truth.
+	97. sweep_verb			prasarpa		(	"	"		03-06-14). 
+					Ex: The line that joins any planet to the sun sweeps equal areas in equal intervals of time.
+
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -1616,7 +1635,19 @@ Removed:
 	131. chemical_noun	xavA		as	rasAyana		(	"	"	"    10-05-14)
 				Ex: Farmers are being urged to reduce their use of chemicals and work with nature to combat pests.
 	132. chestnut_noun	SAhabalUwa_kI_lakadI_kA_banA	as	SAhabalUwa	(Suggested by Preeti ji 10-05-14)	
-				Ex: There are several types of chestnut tree. 
+				Ex: There are several types of chestnut tree.
+	133. enrollment_noun	nAma_liKAI	as	nAmAfkana		(Suggested by Chaitanya Sir  03-06-14)
+				Ex: Enrollment in English medium schools in India has gone up sharply in just two years from 4.3 percent of total enrollment in 2003 to 2004 to 6.3 percent in 2005 to 2006. 
+	134. environment_noun	pariveSa	as	paryAvaraNa/		(Suggested by Chaitanya Sir  03-06-14)
+				Ex: Environment means surroundings.
+	135. universe_noun	sqRti		as	brahmANda		(Suggested by Sukhada        18-06-14)
+				Ex: On this note we end our journey of the Universe.
+	136. guess_noun      	rAya		as	anumAna			(Suggested by Chaitanya Sir  19-06-14)
+				Ex: He hazarded a guess.
+	137. persian_adjective	PArasI_BARA_yA_PArasI{nivAsI}	as	PArasI/PArasI_BARA/{nivAsI}
+										(Suggested by ANita ji LTRC	01-07-14)
+				Ex: Persian rugs are characterized by their geometric designs and rich colours.
+	
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1650,6 +1681,7 @@ Removed:
 	26. freeman-{pl.freemen}_noun       svAXIna_nAgarika			(By  "				  "	)
 	27. civilisation_noun	saBya_samAja					(Suggested by 	Sukhada         26-11-13)
 	28. X-ray_noun		eksa-kiraNa					(Suggested by Anita ji LTRC	24-03-14)	
+	29. leg_noun		tAfga						(Suggested by   Sukhada         02-06-14)
 
 
     7. Removed entry:
@@ -1703,6 +1735,10 @@ Removed:
 	46. certifcate_UNDEFINED	pramANa_pawra			(	"	"	"	"	)
 	47. greatest_UNDEFINED	badA					(Suggested by Chaitanya Sir	22-05-14)
 	48. greatestest_UNDEFINED	mahAnawama			(	"	"	"	"	)
+	49. wove_UNDEFINED	eka_hI_kaWAsUwra_meM_graWiwa_karanA	(	"	"	"	09-06-14)
+	50. woven_UNDEFINED	eka_hI_kaWAsUwra_meM_graWiwa_karanA	(	"	"	"	"	)
+	51. persian_UNDEFINED	PArasI_BARA_yA_PArasI			(Suggested by Anita ji LTRC 	01-07-14)
+
 
     8. Modified category:
        ------------------
@@ -1781,8 +1817,16 @@ Removed:
 	Akhil_Bhartiya_Janwadi_Mahila_Samiti    aKila_BArawIya_janavAxI_mahilA_samiwi#aKila_BArawIya_janavAxI_mahilA_samiwi#noun#5#RM
 				to
 	Gandhi_Nagar    gAMXI_nagara#gAMXI_nagara#noun#2#RM
-	Mill_Road	mila_roda#mila_roda#PropN#2#RM			(Suggested by Anita ji LTRC 	10-05-14)
-			Ex: I live on Mill Road.
+	Mill_Road		mila_roda#mila_roda#PropN#2#RM					(Suggested by Anita ji LTRC 	10-05-14)
+				Ex: I live on Mill Road.
+	West_Indiana_Street     vesta_iNdiyanA_strIta#vesta_iNdiyanA_strIta#PropN#3#RM		(Suggested by Sukhada   18-06-14)
+				Ex: I live at 805 West Indiana Street.
+	Nobel_Prize     	nobala_puraskAra#nobala_puraskAra#PropN#2#RM			(		"	"	)
+				Ex: In 1922, Bohr was awarded Nobel Prize in Physics.
+	Democratic_National_Convention  prajAwAnwrika_rARtrajana_sammelana#PropN#3#RM		(		"	"	)
+				Ex: The Democratic National Convention will meet next week to announce their party's candidate for president.
+	Hawa_mahal      	havA_mahala#havA_mahala#PropN#2#RM				(		"	"	)
+				Ex:The Hawa mahal was built by the Maharaja Sawai Pratap Singh in 1799 AD and Lal Chand Usta was the architect.
 
     
  multi_word_expressions.txt
@@ -2099,6 +2143,16 @@ Removed:
 				Ex: Chinks of light coming through the trees started to become like gun shots.
 	119. back_yard		piCavAdZA#piCavAdZA#2#RM				(Suggested by Preeti ji LTRC	"	)
 				Ex: They keep chickens in the back yard.
+	120. cigarette_smoking  XUmrapAna#XUmrapAna#noun#2#RM			(Suggested by Javaid Ahmad (workshop)   21-06-14)
+				Ex: Cigarette smoking is not good for health.
+	121. back_injury	pITa_kI_cota#pITa_kI_cota#noun#2#RM			(Suggested by Sukhada   	29-06-14)
+				Ex: Yovraj's back injury rendered him unfit.
+	122. disaster_victims	ApaxA_pIdiwa#ApaxA_pIdiwa#noun#2#RM			(	"	"		"	)
+				Ex: They rendered assistance to the disaster victims. 
+	123. boarding_life   	CAwrAvAsIya_jIvana#CAwrAvAsIya_jIvana#noun#2#RM		(Suggested by Sukhada		01-07-14)
+				Ex: Boarding life is enjoyable.
+	124. ply_board       	plAI_borda#plAI_borda#noun#2#RM				(	"	"		"	)
+				Ex: Use ply board for partitioning the room. 
 
 
     Added new meaning to the existing word:
@@ -2323,6 +2377,7 @@ Removed:
 	Marathi 	marATI		(	By Shirisha Manju        29-01-14)
 	Simon   	simona		(		"		 12-02-14)
 	Gangotri	gaMgowrI	(		"		 25-02-14)
+	Prakriti	prakqwi		(Suggested by Chaitanya Sir	 03-06-14)
 
 	Following entries are added from  newsdev2014 corpus by Shirisha Manju
 
@@ -2361,17 +2416,28 @@ Removed:
 		Hambantota      haMbanatotA			Khedia  	KedZiyA
 		Sushil  	suSIla				Mahanta 	mahaMwa
 		Tata		tAtA				District	jilA
+	Nilgiri 	nIlagiri	(Suggested by Sukhada  18-06-14 )
+	Medicine        mEdisina	(	"	"	"	)
+	Tamilnadu       wamilanAdu	(	"	"	"	)
+	Tajmahal        wAjamahala	(	"	"	"	)
+	Sirdar  	siraxAra	(	"	"	"	)
+	Reading 	rIdiMga		(	"	"	"	)
+	Didcot  	didkoYt		(	"	"	"	)
+	Yovraj		yuvarAja	(	"	"	01-07-14)	
 
    Modified:
    ---------
-	Egypt	IjIpIWa		as	ijipta		( By Shirisha Manju 	21-10-13)
+	Egypt	IjIpIWa		as	ijipta			(By Shirisha Manju 	21-10-13)
+	Daisy	xesI		as	dejZI			(Suggested by Chaitanya Sir  03-06-14)
+	Dalhousie	dalahOjZI	as	dalhojI		(Suggested by Chaitanya Sir  03-06-14)
 
 
  changes in kriyA_object_vib.txt
  ==============================
  Added :
-   1. prakASiwa_kara  ko     (Suggested by Chaitanya Sir 28-09-13)
-			 Ex:Standing in the middle of the great epic like a lighthouse, it illuminates the whole of the epic.
+   1. prakASiwa_kara  	ko     	(Suggested by Chaitanya Sir 28-09-13) Ex: Standing in the middle of the great epic like a lighthouse, it 
+									  illuminates the whole of the epic.
+   2. ragada  		ko	(Suggested by Sukhada       02-06-14) Ex: Your cat keeps on rubbing itself against my leg. 
 
  changes in human.txt
  ===================

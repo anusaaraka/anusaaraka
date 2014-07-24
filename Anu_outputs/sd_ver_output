@@ -67,7 +67,7 @@ puswaka mIrA ke xvArA paDI gayI WI.
 
 Hindi meaning using Stanford parser 2.14
 What is the purpose of Dharma? 
-Dharma kA uxxeSya kyA hE?
+Xarma kA uxxeSya kyA hE?
 
 Hindi meaning using Stanford parser 2.15
 There was a marked difference in the prices of dishes. 
@@ -140,12 +140,12 @@ paranwu usakA hqxaya jIwane ke liye merI koSiSeM asaPala_ho cukIM hEM.
 Hindi meaning using Stanford parser 2.31
 He is a brother of a rich person. 
 vaha eka sampanna vyakwi kA BAI hE.
-Multiple adjective senses are available for rich. WSD rule is required 
+vaha eka amIra vyakwi kA BAI hE.
 
 Hindi meaning using Stanford parser 2.32
 She is a wife of a rich person. 
 vaha eka sampanna vyakwi kI pawnI hE.
-Multiple adjective senses are available for rich. WSD rule is required 
+vaha eka amIra vyakwi kI pawnI hE.
 
 Hindi meaning using Stanford parser 2.33
 The boy saw a child. 
@@ -194,6 +194,7 @@ ladake ke pAsa safgaNaka hE.
 
 Hindi meaning using Stanford parser 2.44
 The professor decided to write a book. 
+prAXyApaka ne puswaka liKane kA niScaya kiyA.
 prAXyApaka ne puswaka liKane ke lie niScaya kiyA.
 prAXyApaka ne puswaka liKane kA PEsalA kiyA.
 prAXyApaka ne puswaka liKane ke liye PEsalA kiyA.
@@ -336,6 +337,7 @@ loga anya koYPI_peya_yA Sarabawa banAne ke lie espreso koYPI upayoga karawe hEM.
 Hindi meaning using Stanford parser 2.75
 The Zongle of Bongle Dongle resigned today. 
 PropN-bongle-PropN PropN-dongle-PropN ke Zongle ne Aja wyAga_pawra xiyA.
+PropN-bongle-PropN PropN-dongle-PropN ke PropN-zongle-PropN ne Aja wyAga_pawra xiyA.
 
 Hindi meaning using Stanford parser 2.76
 I gave an expensive present. 
@@ -514,7 +516,7 @@ vaha usake boYsa kI AzKoM meM eka CotA AxamI hE.
 
 Hindi meaning using Stanford parser 2.117
 We camped on Nilgiri hills during summer. 
-hamane grIRma ke xOrAna Nilgiri pahAdiyoM para padAva dAlA.
+hamane grIRma ke xOrAna nIlagiri pahAdiyoM para padAva dAlA.
 
 Hindi meaning using Stanford parser 2.118
 The soldiers were called out for the war. 
@@ -700,6 +702,7 @@ Hindi meaning using Stanford parser 2.159
 He is being hired by another company. 
 usako xUsarI kampanI ke xvArA kAma xiyA jA rahA hE.
 usako eka Ora kampanI se kAma xiyA jA rahA hE.
+usako eka Ora kampanI ke xvArA kAma xiyA jA rahA hE.
 
 Hindi meaning using Stanford parser 2.160
 We picked them out for her. 
@@ -776,6 +779,7 @@ Multiple adjective senses are available for good. WSD rule is required
 Hindi meaning using Stanford parser 2.176
 He took the most convenient seat. 
 usane sabase aXika suviXAjanaka Asana liyA.
+usane sabase aXika suviXAjanaka sIta lI.
 
 Hindi meaning using Stanford parser 2.177
 He made negative comments to the press. 
@@ -791,7 +795,7 @@ mEM mAna lewA hUz ki usakI AlocanA uciwa tippaNI WI.
 
 Hindi meaning using Stanford parser 2.180
 They seem to resemble each other. 
-ve eka xUsare ke_samAna prawIwa howe hEM.
+ve eka xUsare ke samAna prawIwa howe hEM.
 
 Hindi meaning using Stanford parser 2.181
 He had not seen him since that graduation day. 
@@ -842,6 +846,7 @@ mEM viBAga kI aXyakRawA karane ke lie Amanwriwa kiyA gayA hUz.
 Hindi meaning using Stanford parser 2.192
 He was awakened at dawn by the sound of crying. 
 vaha cIKane kI AvAja se uRAkAla meM jagAyA gayA WA.
+vaha rone kI AvAja se uRAkAla meM jagAyA gayA WA.
 
 Hindi meaning using Stanford parser 2.193
 I am afraid you have completely misunderstood the question. 
@@ -865,6 +870,7 @@ Hindi meaning using Stanford parser 2.197
 We ate at Joe's Diner last week. 
 hamane piCale sapwAha PropN-joe-PropN ke DAbe meM KAyA.
 hamane piCale sapwAha PropN-joe-PropN ke DAbe meM KAnA KAyA.
+hamane piCale sapwAha PropN-joe-PropN ke PropN-diner-PropN meM KAnA KAyA.
 
 Hindi meaning using Stanford parser 2.198
 How did John do it? 
@@ -881,6 +887,7 @@ yaha spaRta hE ki PropN-rod-PropN ko kisane mArA.
 Hindi meaning using Stanford parser 2.201
 We are from the planet Gorpon. 
 hama graha Gorpon se hEM.
+hama graha PropN-gorpon-PropN se hEM.
 
 Hindi meaning using Stanford parser 2.202
 The best costumes got prizes. 
@@ -1084,6 +1091,7 @@ vaha eka badA Kela praSaMsaka hE.
 Hindi meaning using Stanford parser 2.247
 I live at 805 West Indiana Street. 
 mEM 805 paScima Indiana sadaka meM rahawA hUz.
+mEM 805 vesta_iMdiyanA strIta meM rahawA hUz.
 
 Hindi meaning using Stanford parser 2.248
 It was a completely wasted journey. 
@@ -1098,6 +1106,7 @@ mere pAsa bahuwa jyAxA pEsA nahIM hE.
 Hindi meaning using Stanford parser 2.250
 Dalai Lama is the abbot of the Tibetian monastery. 
 xalAI PropN-lama-PropN Tibetian maTa kA maTAXyakRa hE.
+xalAI PropN-lama-PropN PropN-tibetian-PropN maTa kA maTAXyakRa hE.
 
 Hindi meaning using Stanford parser 2.251
 There is abject poverty in India. 
@@ -1129,6 +1138,7 @@ kuCa vixyAlaya pATyakramewara kriyA kalApa ko mahawva nahIM xewe hEM.
 Hindi meaning using Stanford parser 2.257
 The Inspector made an accidental inspection of the school. 
 nirIkRaka ne vixyAlaya kA Akasmika nirIkRaNa kiyA.
+iMspektara ne vixyAlaya kA Akasmika nirIkRaNa kiyA.
 Multiple adjective senses are available for accidental. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.258
@@ -1211,6 +1221,7 @@ usane kahA ki usane mere barwAva ko pasanxa_nahIM kiyA WA.
 
 Hindi meaning using Stanford parser 2.276
 She decided to search her biological mother. 
+usane usakI sagI mAz ko walASa karane kA niScaya kiyA.
 usane usakI sagI mAz ko walASa karane ke lie niScaya kiyA.
 usane usakI sagI mAz ko walASa karane kA PEsalA kiyA.
 
@@ -1255,6 +1266,7 @@ Hindi meaning using Stanford parser 2.285
 The Master said, if I did not go, how would you ever see? 
 mAlika ne kahA, ki yaxi mEM nahIM gayA WA, wo kEse Apa kaBI BI xeKeMge?
 mAlika ne kahA, ki yaxi mEM nahIM gayA WA, wo Apa kaBI BI kEse xeKeMge?
+mAstara ne kahA, ki yaxi mEM nahIM gayA WA, wo Apa kaBI BI kEse xeKeMge?
 
 Hindi meaning using Stanford parser 2.286
 The letter was clearly the product of a twisted mind. 
@@ -1675,11 +1687,13 @@ Hindi meaning using Stanford parser 3.73
 No, it was not Black Monday. 
 nahIM, vaha aSuBa somavAra nahIM WA.
 nahIM, yaha aSuBa somavAra nahIM WA.
+nahIM, yaha blEka somavAra nahIM WA.
 
 Hindi meaning using Stanford parser 3.74
 The President's address to the nation was broadcasted across the country. 
-rARtra ko aXyakRa kA samboXana pUre_xeSa meM prasAriwa kiyA gayA WA.
+rARtra ko rARtrapawi kA samboXana pUre_xeSa meM prasAriwa kiyA gayA WA.
 rARtra ke lie PropN-president-PropN kA samboXana pUre_xeSa meM prasAriwa kiyA gayA WA.
+rARtra ko PropN-president-PropN kA samboXana pUre_xeSa meM prasAriwa kiyA gayA WA.
 
 Hindi meaning using Stanford parser 3.75
 Still, fund groups are not taking any chances. 
@@ -1716,6 +1730,7 @@ sWiwi usake xvArA samaJAI gayI WI.
 Hindi meaning using Stanford parser 3.82
 He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
 usane kahA ki Ese pariNAmoM ko jApAna ke sAWa yU.esa. vyApAra GAtA kama karane meM "dOlara Ora sEnta meM mApane yogya" honA cAhie.
+usane kahA ki Ese pariNAma jApAna ke sAWa yU.esa. vyApAra GAtA kama karane meM "dOlara Ora sEnta meM mApane yogya" hone cAhie.
 Multiple adjective senses are available for measurable. WSD rule is required 
 Multiple adjective senses are available for such. WSD rule is required 
 
@@ -1817,8 +1832,10 @@ vaha kAgaja para kAma karawI hE kyozki vaha safgaNaka nApasanxa karawI hE.
 
 Hindi meaning using Stanford parser 4.3
 I read a recent paper in the Journal of Medicine. 
+mEMne mEdisina kI pawrikA meM eka hAla kA SoXapawra paDA.
 mEMne ORaXI kI pawrikA meM eka hAla kA SoXapawra paDA.
 mEMne PropN-medicine-PropN kI pawrikA meM eka hAla kA leKapawra paDA.
+mEMne PropN-medicine-PropN kI pawrikA meM eka hAla kA SoXapawra paDA.
 Multiple adjective senses are available for recent. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.4
@@ -1828,6 +1845,7 @@ mEMne Aja ke samAcAra pawra meM relagAdI dakEwI ke bAre meM paDA.
 Hindi meaning using Stanford parser 4.5
 I read about the train accident in Sunday paper. 
 mEMne ravivAra ke_samAcAra pawra meM rela xurGatanA ke bAre meM paDA.
+mEMne sande samAcAra pawra meM rela xurGatanA ke bAre meM paDA.
 
 Hindi meaning using Stanford parser 4.6
 This journal is available in paper form. 
@@ -1853,6 +1871,7 @@ Hindi meaning using Stanford parser 4.10
 She declared that out of love for the poor she had gotten her family to go against convention. 
 usane GoRiwa kiyA ki xInoM ke prawi prema ke kAraNa usane paramparA ke viruxXa jAne ke lie usake parivAra ko preriwa kiyA WA.
 usane GoRiwa kiyA ki xInoM ke prawi prema ke kAraNa vaha paramparA ke viruxXa jAne ke lie usake parivAra ko preriwa_kara cukI WI.
+PP daughter category problem of: RB
 
 Hindi meaning using Stanford parser 4.11
 She got the book to read from the library. 
@@ -1868,7 +1887,7 @@ usako anwawaH janasaBA meM bolane ke lie viRaya milA.
 
 Hindi meaning using Stanford parser 4.14
 The main states of southern India are Tamilnadu, Kerala, Maharashtra, Andhrapradesh and Karnataka. 
-xakRiNI BArawa ke pramuKa rAjya Tamilnadu, PropN-kerala-PropN, PropN-maharashtra-PropN, PropN-andhrapradesh-PropN Ora PropN-karnataka-PropN hEM.
+xakRiNI BArawa ke pramuKa rAjya wamilanAdu, PropN-kerala-PropN, PropN-maharashtra-PropN, PropN-andhrapradesh-PropN Ora PropN-karnataka-PropN hEM.
 xakRiNI BArawa ke pramuKa rAjya tamilnadu, kerala, maharashtra, andhrapradesh Ora karnataka hEM.
 Multiple adjective senses are available for main. WSD rule is required 
 Multiple adjective senses are available for southern. WSD rule is required 
@@ -1900,7 +1919,7 @@ Multiple adjective senses are available for important. WSD rule is required
 
 Hindi meaning using Stanford parser 4.20
 He went to Agra and saw the Tajmahal. 
-vaha AgarA gayA Ora Tajmahal ko xeKA.
+vaha AgarA gayA Ora wAjamahala ko xeKA.
 
 Hindi meaning using Stanford parser 4.21
 They accused him of the crime. 
@@ -2163,7 +2182,7 @@ parisWiwiyAz kuCa jyAxA hI KarAba ho gayI .
 
 Hindi meaning using Stanford parser 4.77
 SOUTH AFRICA FREED the ANC's Sisulu and seven other political prisoners. 
-xakRiNa AFRICA ne PropN-anc-PropN ke PropN-sisulu-PropN Ora sAwa anya rAjanEwika banxiyoM ko mukwa kiyA.
+xakRiNa aPrIkA ne PropN-anc-PropN ke PropN-sisulu-PropN Ora sAwa anya rAjanEwika banxiyoM ko mukwa kiyA.
 SOUTH AFRICA ne ANC ke Sisulu Ora sAwa anya rAjanEwika banxI mukwa kie.
 Multiple adjective senses are available for political. WSD rule is required 
 
@@ -2182,6 +2201,8 @@ unako kArya karane xo.
 
 Hindi meaning using Stanford parser 4.81
 The Hawa mahal was built by the Maharaja Sawai Pratap Singh in 1799 AD and Lal Chand Usta was the architect. 
+havA mahala 1799 krIswa paScAwa meM mahArAjA PropN-sawai-PropN prawApa siMha ke xvArA banAyA gayA WA Ora lAla canxa PropN-usta-PropN vAswukAra WA.
+havA mahal 1799 krIswa paScAwa meM mahArAjA PropN-sawai-PropN prawApa siMha ke xvArA banAI gayI WI Ora lAla canxa PropN-usta-PropN vAswukAra WA.
 Hawa mahal 1799 krIswa paScAwa meM mahArAjA PropN-sawai-PropN prawApa siMha ke xvArA banAyA gayA WA Ora lAla canxa PropN-usta-PropN vAswukAra WA.
 
 Hindi meaning using Stanford parser 4.82
@@ -2306,6 +2327,7 @@ mEM waruNa Ora svasWa hUz.
 Hindi meaning using Stanford parser 5.10
 The Sun was declared stronger than the Wind. 
 sUraja havA kI apekRA aXika saSakwa GoRiwa kiyA gayA WA.
+sUrya havA kI apekRA aXika saSakwa GoRiwa kiyA gayA WA.
 
 Hindi meaning using Stanford parser 5.11
 Once there were three little pigs, Sonu, Monu and Gonu. 
@@ -2323,6 +2345,7 @@ Multiple adjective senses are available for good. WSD rule is required
 Hindi meaning using Stanford parser 5.14
 The giraffe said, Not if you ride on my back. 
 jirAPa ne kahA, ki nahIM yaxi Apa merI pITa para savArI karawe hEM.
+jirAPa ne kahA, ki PropN-not-PropN yaxi Apa merI pITa para savArI karawe hEM.
 
 Hindi meaning using Stanford parser 5.15
 I go to school on Mondays, Tuesdays, Wednesdays, Thursdays and Fridays. 
@@ -2488,7 +2511,7 @@ usane unakI tippaNiyoM se niRkarRa nikAlA ki ve yojanA ke pakRa meM nahIM We.
 usane unakI tippaNiyoM se waya kiyA ki ve yojanA ke pakRa meM nahIM We.
 
 Hindi meaning using Stanford parser 5.54
-Moteram said, Friend, your cry was like the roar of a lion. 
+Moteram said, friend, your cry was like the roar of a lion. 
 moterAma ne kahA, ki miwra, ApakA nAxa siMha ke xahAda kI waraha WA.
 
 Hindi meaning using Stanford parser 5.55
@@ -2511,7 +2534,8 @@ Multiple adjective senses are available for terrible. WSD rule is required
 
 Hindi meaning using Stanford parser 5.59
 In 1922, Bohr was awarded Nobel Prize in Physics. 
-1922 meM, bora ko BOwika vijFAna meM Nobel puraskAra xiyA gayA WA.
+1922 meM, bora ko BOwika vijFAna meM nobala puraskAra xiyA gayA WA.
+1922 meM, bora ko PropN-physics-PropN meM nobala puraskAra xiyA gayA WA.
 
 Hindi meaning using Stanford parser 5.60
 The snow created further problems. 
@@ -2521,6 +2545,7 @@ Multiple adjective senses are available for further. WSD rule is required
 Hindi meaning using Stanford parser 5.61
 The Bible says that God created the world. 
 bAibila kahawI hE ki xevawA ne viSva banAyA.
+bAibila kahawI hE ki ISvara ne viSva banAyA.
 
 Hindi meaning using Stanford parser 5.62
 The government plans to create more jobs for young people. 
@@ -2542,7 +2567,7 @@ sarakAra ne ATa naye keMxra banAe hEM.
 
 Hindi meaning using Stanford parser 5.66
 The President has announced a plan to create new jobs. 
-aXyakRa ne naye kAma uwwapanna karane ke lie yojanA kI GoRaNA kI hE.
+rARtrapawi ne naye kAma uwwapanna karane ke lie yojanA kI GoRaNA kI hE.
 
 Hindi meaning using Stanford parser 5.67
 The scientists who created the world's first atomic bomb. 
@@ -2720,6 +2745,7 @@ pahAdiyoM meM AlU Bojana_kA_muKya aMSa hEM.
 Hindi meaning using Stanford parser 6.7
 He was the leader of the first Indian expedition which attempted to climb Everest. 
 vaha praWama BArawIya aBiyAna xala kA newA WA jisane PropN-everest-PropN para caDane ke lie prayAsa kiyA.
+vaha praWama iMdiyana aBiyAna kA newA WA jisane PropN-everest-PropN para caDane ke lie prayAsa kiyA.
 vaha praWama BArawIya aBiyAna kA newA WA jisane PropN-everest-PropN para caDane ke lie prayAsa kiyA.
 
 Hindi meaning using Stanford parser 6.8
@@ -2737,6 +2763,7 @@ wArA kEse banAwA hE?
 Hindi meaning using Stanford parser 6.11
 There is an important difference, however, between the Sun and the hydrogen bomb. 
 sUraja ke bIca Ora hAIdrojana bama ke bIca mahawwvapUrNa anwara, waWApi, hE.
+sUrya ke bIca Ora hAIdrojana bama ke bIca mahawwvapUrNa anwara, waWApi, hE.
 Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 6.12
@@ -2807,6 +2834,7 @@ Multiple adjective senses are available for dry. WSD rule is required
 Hindi meaning using Stanford parser 6.27
 You must continue our custom of performing Lakshmi Puja on the first Friday of Shravana. 
 Apako PropN-shravana-PropN ke praWama SukravAra ko lakRmI pUjA kArya karane kI hamArI rIwi jArI raKanI cAhie.
+Apako PropN-shravana-PropN ke praWama SukravAra ko lakRmI pUjA kArya karane kA hamArA rivAja jArI raKanA cAhie.
 
 Hindi meaning using Stanford parser 6.28
 Gopal remembered his promise and told his wife about it. 
@@ -2877,7 +2905,7 @@ Multiple adjective senses are available for kind. WSD rule is required
 
 Hindi meaning using Stanford parser 6.44
 The leader of each group is called a Sirdar. 
-hara eka samUha kA newA Sirdar kahA jAwA hE.
+hara eka samUha kA newA siraxAra kahA jAwA hE.
 
 Hindi meaning using Stanford parser 6.45
 Wild elephants too cause havoc occasionally. 
@@ -3089,8 +3117,8 @@ Your answer is exactly right.
 ApakA uwwara yaWArWawaH TIka hE.
 
 Hindi meaning using Stanford parser 6.96
-To apply for a position in a company. 
-kampanI meM paxa ke lie Avexana karanA .
+Please apply for a position in a company. 
+kqpayA kampanI meM paxa ke lie Avexana kIjie.
 
 Hindi meaning using Stanford parser 6.97
 He leaned back on the chair. 
@@ -3107,6 +3135,7 @@ mEMne usako usakI kriyAez samaJAne ke lie kahA.
 Hindi meaning using Stanford parser 6.100
 To know a person by his actions. 
 usake karmoM se vyakwi ko jAnanA .
+usake karmoM se vyakwi ko jAnane ke lie .
 
 Hindi meaning using Stanford parser 7.1
 The action of sunlight on the skin. 
@@ -3445,7 +3474,7 @@ PropN-billy-PropN royA jaba xUsare baccoM ne usako gAlI xI.
 
 Hindi meaning using Stanford parser 7.83
 This train calls at Didcot and Reading. 
-yaha relagAdI Didcot Ora aXyayana meM rukawI hE.
+yaha relagAdI didkoYta Ora rIdiMga meM rukawI hE.
 
 Hindi meaning using Stanford parser 7.84
 You can not call her beautiful. 
@@ -3536,6 +3565,72 @@ vaha ArAma_se bETA Ora sigareta jalAI.
 Hindi meaning using Stanford parser 8.5
 His eyes lit up when she walked into the room. 
 usakI AzKeM KuSI_se_camaka uTIM jaba vaha kamare ke anxara gaI.
+
+Hindi meaning using Stanford parser 8.6
+A fat boy had to eat too many fruits to lose his weight. 
+eka mote ladake ko usakA vajana kama karane ke lie bahuwa aXika Pala KAne pade.
+
+Hindi meaning using Stanford parser 8.7
+He went out and shut the door. 
+vaha bAhara gayA Ora xaravAjA banxa kiyA.
+
+Hindi meaning using Stanford parser 8.8
+Close the door and open the window. 
+xaravAjA banxa kIjie Ora KidakI Kolie.
+
+Hindi meaning using Stanford parser 8.9
+They go out and shut the door. 
+ve bAhara jAwe hEM Ora xaravAjA banxa karawe hEM.
+
+Hindi meaning using Stanford parser 8.10
+When you go out shut the door. 
+jaba Apa bAhara jAwe hEM xaravAjA banxa kIjie.
+
+Hindi meaning using Stanford parser 8.11
+Flags were flapping in the breeze. 
+JaNde manxa samIra meM PadaPadA rahe We.
+
+Hindi meaning using Stanford parser 8.12
+You need to be very fit to hike the Himalayas. 
+Apako himAlaya pAxa_yAwrA karane ke lie awyanwa svasWa hone kI jarUrawa hE.
+Multiple adjective senses are available for fit. WSD rule is required 
+
+Hindi meaning using Stanford parser 8.13
+All the boys are here. 
+saBI ladake yahAz hEM.
+
+Hindi meaning using Stanford parser 8.14
+Both the boys and girls are here. 
+xono ladake Ora ladakiyAz yahAz hEM.
+
+Hindi meaning using Stanford parser 8.15
+Toms likes to eat fish. 
+PropN-toms-PropN maCaliyAz KAnA pasanxa karawA hE.
+
+Hindi meaning using Stanford parser 8.16
+He says that you like to swim. 
+vaha kahawA hE ki Apa wEranA pasanxa karawe hEM.
+
+Hindi meaning using Stanford parser 8.17
+Lucknow is the capital of Uttar Pradesh. 
+laKanaU uwwara praxeSa kI rAjaXAnI hE.
+
+Hindi meaning using Stanford parser 8.18
+He was in a weird getup. 
+vaha eka axBuwa pahanAve meM WA.
+Multiple adjective senses are available for weird. WSD rule is required 
+
+Hindi meaning using Stanford parser 8.19
+Why did they stop me? 
+unhoMne muJe kyoM rokA?
+
+Hindi meaning using Stanford parser 8.20
+When they know who I am why did they stop me? 
+jaba ve jAnawe hEM ki mEM kOna hUz unhoMne muJe kyoM rokA?
+
+Hindi meaning using Stanford parser 8.21
+Your cat keeps on rubbing itself against my leg. 
+ApakI billI merI tAzga se svayam ko ragadawI rahawI hE .
 
 Calling Transliteration
 Calling Interface related programs

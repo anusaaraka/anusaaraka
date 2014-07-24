@@ -55,7 +55,9 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  who.clp 	who3   "  ?id "  kOna )" crlf))
 )
 
- (defrule who4
+;Rama who is my brother is coming tomorrow.(Ex: and translation suggested by Chaitanya Sir)
+;rAma jo merA BAI hE kala A rahA hE.
+(defrule who4
 (declare (salience 4600))
 (id-root ?id who)
 ?mng <-(meaning_to_be_decided ?id)

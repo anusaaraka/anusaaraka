@@ -23,7 +23,9 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  single.clp 	single1   "  ?id "  eka )" crlf))
 )
-
+;$$$ Modified by jagriti(3.4.2014)..eka_hI instead of ekamAwra
+;At a single Halloween party one can see many weird faces.[news-dev]
+;इस तरह एक ही हैलोवीन पार्टी में आपको ढेरों अजीबोगरीब चेहरे दिख जाएंगे।
 (defrule single2
 (declare (salience 4800))
 (id-root ?id single)
@@ -31,9 +33,9 @@
 (id-cat_coarse ?id adjective)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id ekamAwra))
+(assert (id-wsd_root_mng ?id eka_hI))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  single.clp 	single2   "  ?id "  ekamAwra )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  single.clp 	single2   "  ?id "  eka_hI )" crlf))
 )
 
 ;default_sense && category=adjective	eka/eka_hI/ekamAwra	0

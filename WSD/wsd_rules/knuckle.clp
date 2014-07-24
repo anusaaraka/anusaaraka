@@ -76,3 +76,72 @@
 ;He was hit hard on the knuckles by the duster.
 ;
 ;
+
+;@@@ Added by Prachi Rathore[2-4-14]
+;I'm going to have to knuckle down to some serious study.[oald]
+;मैं  गम्भीर अध्ययन में जुट रहा हूँ . 
+(defrule knuckle5
+(declare (salience 4700))
+(id-root ?id knuckle)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 down)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 juta))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " knuckle.clp	knuckle5  "  ?id "  " ?id1 "  juta )" crlf))
+)
+
+
+;@@@ Added by Prachi Rathore[2-4-14]
+;To knuckle down to somebody.[gyannidhi]
+;किसी के आगे  झुक जाना . 
+(defrule knuckle6
+(declare (salience 4800))
+(id-root ?id knuckle)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 down)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+(kriyA-to_saMbanXI  ?id ?id2)
+(id-root ?id2 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 Juka_jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " knuckle.clp	knuckle6  "  ?id "  " ?id1 "  Juka_jA )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[2-4-14]
+;She rapped her knuckles on the table. [m-w]
+(defrule knuckle7
+(declare (salience 400))
+(id-root ?id knuckle)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id uzgalI_kI_gAzTa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  knuckle.clp 	knuckle7   "  ?id "  uzgalI_kI_gAzTa )" crlf))
+)
+
+
+;@@@ Added by Prachi Rathore[2-4-14]
+;Knuckle of pork.[oald]
+;
+(defrule knuckle8
+(declare (salience 4000))
+(id-root ?id knuckle)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-of_saMbanXI ?id ?id1)
+(id-root ?id1 pork)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id taKane_kA_goSwa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  knuckle.clp 	knuckle8   "  ?id "  taKane_kA_goSwa )" crlf))
+)

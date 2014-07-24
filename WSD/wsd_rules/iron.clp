@@ -44,3 +44,19 @@
 ;She listens to music while ironing.
 ;
 ;
+
+;@@@ Added by Prachi Rathore[3-3-14]
+;We have an electric iron.[shiksharthi kosh]
+;हमारे पास वैद्युत इस्त्री है . 
+(defrule iron3
+(declare (salience 5000))
+(id-root ?id iron)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-viSeRaNa  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id iswrI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  iron.clp 	iron3   "  ?id "  iswrI )" crlf))
+)

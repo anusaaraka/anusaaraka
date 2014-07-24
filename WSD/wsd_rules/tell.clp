@@ -129,3 +129,56 @@
 ;The age was beginning to tell on her face.
 ;
 ;
+
+;@@@ Added by Prachi Rathore[27-11-13]
+;His reputation as a troublemaker told against him when he tried to change his job.
+;जब उसने नौकरी बदलनी चाही उसकी झगड़ालू आदत बाधक बनी.
+(defrule tell6
+(declare (salience 5000))
+(id-root ?id tell)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-against_saMbanXI  ?id ?)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_word_mng ?id bAXaka_bana))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  tell.clp  	tell6   "  ?id "  bAXaka_bana )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[27-11-13]
+;A succession of late nights had begun to tell on him and his work was suffering.
+;लगातार देरतक जागने के कारण उसके स्वास्थ्य पर असर  दिखने  लगा है और उसके काम पर भी बुरा असर पड़ा रहा था.
+(defrule tell7
+(declare (salience 5000))
+(id-root ?id tell)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-on_saMbanXI  ?id ?id1)
+(id-cat_coarse ?id verb)
+(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))
+=>
+(retract ?mng)
+(assert (id-wsd_word_mng ?id xiKa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  tell.clp  	tell7   "  ?id "  xiKa )" crlf))
+)
+
+;@@@   ---Added by Prachi Rathore
+;He prodded me in the back and told me to hurry up. [cambridge]
+;उसने पीठ में मुझे चुभाया कि और मुझे जल्दी करने के लिये कहा 
+(defrule tell8
+(declare (salience 4000))
+(id-root ?id tell)
+?mng <-(meaning_to_be_decided ?id)
+(or(kriyA-subject  ?id ?id1)(kriyA-object  ?id ?id1))
+(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))
+(kriyA-vAkyakarma  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kaha))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  tell.clp  	tell8   "  ?id "  kaha )" crlf))
+)
+
+
+

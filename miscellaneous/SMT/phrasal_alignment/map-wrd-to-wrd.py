@@ -15,7 +15,7 @@ for line in open(sys.argv[1]):
 	lst = line.split('\t') #Ex: (position-eng-hnd-eng_ids	1	_More_precisely_,_a_	_aXika_yaWArWawA_se_,_@a_	1 2 2 3)
 	if ';~~~~~~~~~~\n' in line:
 		print line.strip()
-	elif 'Construction mismatch' in line:
+	elif 'NO PATH' in line:
 		print line.strip()
 	else:
 		for item in df:

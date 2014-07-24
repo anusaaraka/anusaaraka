@@ -85,3 +85,40 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  only.clp  only5   "  ?id "  hI )" crlf))
 )
+
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 5-2-2014
+;But their belief was that the expenditure which they recommended would be remunerative, 
+;not only in its effect upon the sources of the moral strength but also upon the economic 
+;welfare of the country and upon its civic and industrial initiative. [gyanidhi]
+;परंतु उनका यह विश्वास था कि उनके द्वारा सुझाये गये व्यय से न केवल  हैतिक शक्ति के स्त्रोतों पर बल्कि देश के आर्थिक कल्याण पर और 
+;उसकी नागरिक और औद्योगिक पहलशक्ति पर भी लाभकारी असर पङेगा।।
+(defrule only6
+(declare (salience 4900))
+(id-root ?id only)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-kriyA_niReXaka  ?id ?id1)
+(id-root ?id1 not)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 nA_kevala))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " only.clp  only6  "  ?id "  " ?id1 "  nA_kevala  )" crlf))
+)
+
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 11-3-2014
+;The other two forces as we shall see operate only at nuclear scales. [physics ncert]
+;अन्य दो बल, जैसा कि हम आगे देखेँगे, केवल नाभिकीय पैमाने पर सक्रिय होते हैं.
+(defrule only7
+(declare (salience 4900))
+(id-root ?id only)
+?mng <-(meaning_to_be_decided ?id)
+(and(kriyA-kriyA_viSeRaNa  ?verb ?id)(kriyA-at_saMbanXI  ?verb ?))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kevala))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  only.clp  only7   "  ?id "  kevala )" crlf))
+)
+

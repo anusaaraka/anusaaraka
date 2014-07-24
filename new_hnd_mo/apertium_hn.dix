@@ -9193,6 +9193,7 @@
 <e lm="bAyazhawWA"><i>bAyazhawW</i><par n="regular__adj-noun"/></e>
 <e lm="bAyAz"><i>bAyAz</i><par n="amIra/__adj"/></e>
 <e lm="bAzca"><i>bAzc</i><par n="uT/a__v"/></e>
+<e lm="bAzyA"><i>bAzy</i><par n="kAl/A__adj"/></e>
 <e lm="BAzda"><i>BAzda</i><par n="kroXa/__n"/></e>
 <e lm="bAzdA"><i>bAzd</i><par n="regular__adj-noun"/></e>
 <e lm="BazduA"><i>Bazdu</i><par n="regular__adj-noun"/></e>
@@ -12584,7 +12585,7 @@
 <e lm="hadZappA"><i>hadZapp</i><par n="regular__adj-noun"/></e>
 <e lm="hAhAkAra"><i>hAhAkAra</i><par n="kroXa/__n"/></e>
 <e lm="hAidrojana"><i>hAidrojana</i><par n="kroXa/__n"/></e>
-<e lm="ha"><i>h</i><par n="Gar/a__n"/></e>
+<!--<e lm="ha"><i>h</i><par n="Gar/a__n"/></e> -->
 <e lm="hAI"><i>hAI</i><par n="ajAwI/__adj"/></e>
 <e lm="hajama"><i>hajama</i><par n="amIra/__adj"/></e>
 <e lm="hajAma"><i>hajAm</i><par n="Gar/a__n"/></e>

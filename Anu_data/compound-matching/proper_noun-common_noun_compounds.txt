@@ -5480,3 +5480,7 @@ Bhagat_Singh	Bagawa_siMha#Bagawa_siMha#noun#2#RM
 Rajendra_Prasad	rAjeMxra_prasAxa#rAjeMxra_prasAxa#noun#2#RM
 Mahatma_Gandhi	mahAwmA_gAMXI#mahAwmA_gAMXI#noun#2#RM
 Gandhi_Nagar	gAMXI_nagara#gAMXI_nagara#noun#2#RM
+West_Indiana_Street	vesta_iNdiyanA_strIta#vesta_iNdiyanA_strIta#PropN#3#RM
+Hawa_mahal	havA_mahala#havA_mahala#PropN#2#RM
+Nobel_Prize	nobala_puraskAra#nobala_puraskAra#PropN#2#RM
+Democratic_National_Convention	prajAwAnwrika_rARtrajana_sammelana#prajAwAnwrika_rARtrajana_sammelana#PropN#3#RM

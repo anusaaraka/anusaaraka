@@ -1,6 +1,6 @@
 
 (defrule dead0
-(declare (salience 5000))
+(declare (salience 4000))
 (id-root ?id dead)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id adjective)
@@ -33,8 +33,120 @@
 ;The party being dead we left early
 ;This is a dead town; nothing ever happens here
 ;
+
+
+;Added by Pramila(BU) on 29-11-2013
+;Crater Lake is in the crater of a dead volcano of the Cascade Range                   ;sentence of this file
+;kretara wAla kAsaKeda reMja ke eka SAnwa jvAlAmuKI ke kretara meM hE.
 (defrule dead1
+(declare (salience 5000))
+(id-root ?id dead)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(viSeRya-of_saMbanXI  ?id1 ?id2)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id SAMwa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  dead.clp 	dead1   "  ?id "  SAMwa )" crlf))
+)
+
+;Added by Pramila(BU) on 29-11-2013
+;Passersby were dead to our plea for help                   ;sentence of this file
+;Ane-jAne vAle loga sahAyawA kI hamArI mAzga ke prawi niSceRta We
+(defrule dead2
+(declare (salience 5000))
+(id-root ?id dead)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-to_saMbanXI  ?id ?id1)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id niSceRta))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  dead.clp 	dead2   "  ?id "  niSceRta )" crlf))
+)
+
+;Added by Pramila(BU) on 29-11-2013
+;The party being dead we left early                 ;sentence of this file
+;pArtI bejAna hone ke kAraNa hama jalxI hI vahAz se ravAnA ho gaye.
+;This is a dead town.                    ;sentence of this file
+;yaha eka bejAna Sahara hE;
+(defrule dead3
+(declare (salience 5000))
+(id-root ?id dead)
+?mng <-(meaning_to_be_decided ?id)
+(subject-subject_samAnAXikaraNa  ?id1 ?id)
+(id-root ?id1 party|town)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bejAna))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  dead.clp 	dead3   "  ?id "  bejAna )" crlf))
+)
+
+;Added by Pramila(BU) on 29-11-2013
+;Gold is a dead capital                   ;sentence of this file 
+;sonA niRpravAha Xana hE
+
+(defrule dead4
 (declare (salience 4900))
+(id-root ?id dead)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(subject-subject_samAnAXikaraNa  ?id2 ?id1)
+(id-word ?id2 gold)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id niRpravAha))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  dead.clp 	dead4   "  ?id "  niRpravAha )" crlf))
+)
+
+;Added by Pramila(BU) on 29-11-2013
+;The hard disk is dead.           ;oald
+;कम्प्युटर की हार्ड डिस्क मृत है .
+;Suddenly the phone went dead.             ;oald
+;अचानक टेलीफोन खराब हो गया .
+(defrule dead5
+(declare (salience 5000))
+(id-root ?id dead)
+?mng <-(meaning_to_be_decided ?id)
+(subject-subject_samAnAXikaraNa  ?id1 ?id)
+(id-root ?id1 disk|phone|telephone)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id KarAba))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  dead.clp 	dead5   "  ?id "  KarAba )" crlf))
+)
+
+;Added by Pramila(BU) on 29-11-2013
+;Many believe the peace plan is dead.         ;oald
+;बहुत से मानते हैं अमन योजना मृत है .
+;Unfortunately racism is not yet dead.                 ;oald
+;दुर्भाग्य से जातिवाद अभी तक निष्क्रिय नहीं है . 
+(defrule dead6
+(declare (salience 5000))
+(id-root ?id dead)
+?mng <-(meaning_to_be_decided ?id)
+(subject-subject_samAnAXikaraNa  ?id1 ?id)
+(id-root ?id1 idea|plan|racism)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id niRkriya))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  dead.clp 	dead6   "  ?id "  niRkriya )" crlf))
+)
+
+
+(defrule dead7
+(declare (salience 4000))
 (id-root ?id dead)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -42,7 +154,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id mqwaka))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  dead.clp 	dead1   "  ?id "  mqwaka )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  dead.clp 	dead7   "  ?id "  mqwaka )" crlf))
 )
 
 ;"dead","N","1.mqwaka"

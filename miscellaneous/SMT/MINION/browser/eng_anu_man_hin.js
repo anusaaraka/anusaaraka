@@ -14,8 +14,7 @@ var rows_visibility = [
 1, // row9
 0, // row10
 1, // row11
-1, // row11
-1, // row11
+1, // row12
 0, // last row will be the suggestions row
 ]; // The array can be of different size than the number of rows at hand
 
@@ -31,9 +30,8 @@ var row_labels = [
 "Sense Disambiguation (I)",
 "Preposition Movement (J)",
 "Hindi Generation (K)",
-"Manual meaning (E-H) (L)",
-"Manual meaning (H-E) (M)",
-"Suggestions (N)"
+"Manual meaning (L)",
+"Suggestions (M)"
 ];
 
 var row_descriptions = [
@@ -48,7 +46,6 @@ var row_descriptions = [
 "Shows the Hindi meaning after disambiguating the word in a context",
 "Shows the probable place to which preposition should be moved in Hindi output as per parser",
 "Shows the Hindi word after calling the Hindi generator",
-"Shows the manual word translation using  phrasal english to hindi training data",
-"Shows the manual word translation using phrasal hindi to english training data",
+"Shows the manual aligned meaning",
 "Shows the user suggestion"
 ];

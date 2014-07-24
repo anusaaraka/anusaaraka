@@ -34,7 +34,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  rent.clp     rent2   "  ?id " rent )" crlf))
 )
 
-;@@@ Added by Anita 20-12-2013 
+;@@@ Added by Anita 20-12-2013
 ;There are some apartments for rent in these buildings. [old clp sentence]
 ;इन इमारतों में किराए के लिए कुछ फ्लैट हैं ।
 ;ina imArawoM meM kirAye ke liye kuCa PlEta hEM. [verified sentence]
@@ -104,7 +104,7 @@
 (assert (id-wsd_root_mng ?id PAdZa_xe))
 (assert (id-wsd_root ?id rend))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rent.clp 	rend5   " ?id "  PAdZa_xe )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rent.clp 	rent5   " ?id "  PAdZa_xe )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root   " ?*wsd_dir* "  rent.clp     rent5   "  ?id " rend )" crlf))
 )
 ;@@@ Added by Anita 21-12-2013

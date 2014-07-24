@@ -1218,13 +1218,12 @@ Dahek	xaheka
 Dahibhate	xahIBAwe
 Dahiya	xahiyA
 Dahod	xAhoxa
-Daisy	xesI
+Daisy	dejZI
 Dakshesh	xakReSa
 Dakshinakabata	xakaSinAkabawA
 Dalaal	xalAla
 Dalai	xalAI
 Dalal	xalAla
-Dalhousie	dalahOjZI
 Dalhousie	dalhojI
 Daljit	xalajIwa
 Dalpati	xalapawi
@@ -1380,7 +1379,7 @@ Dharawadkar	XaravAxkara
 Dhar	DAra
 Dharmadev	Xarmaxeva
 Dharmatma	XarmamAwmA
-Dharma	XarmaM
+Dharma	Xarma
 Dharmendra	Xarmenxra
 Dharmesh	XarmeSa
 Dharminder	Xarminxra
@@ -5769,3 +5768,11 @@ Mahanta	mahaMwa
 Tata	tAtA
 District	jilA
 Prakriti	prakqwi
+Nilgiri	nIlagiri
+Medicine	mEdisina
+Tamilnadu	wamilanAdu
+Tajmahal	wAjamahala
+Sirdar	siraxAra
+Reading	rIdiMga
+Didcot	didkoYta
+Yovraj	yuvarAja

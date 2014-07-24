@@ -37,6 +37,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  essentially.clp 	essentially0   "  ?id " vAswava_meM  )" crlf))
 )
 
+;added by Pramila(Banasthali University)
 ;It has to be essentially done.
 ;It has to be essentially better.
 (defrule essentially1
@@ -54,7 +55,7 @@
 )
 
 
-;----------------------------------------- Default rules -------------------------------------------------
+;------------------------------------------------------------default rules-------------------------------------------------------------------
 (defrule essentially2
 (declare (salience 5000))
 (id-root ?id essentially)

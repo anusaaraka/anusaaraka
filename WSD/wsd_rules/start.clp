@@ -70,21 +70,123 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  start.clp 	start4   "  ?id "  Suru_kara )" crlf))
 )
-
+;@@@ Added by jagriti(5.4.2014)
+;He came and started the machine.[rajpal]
+;वह आया और मशीन चालू किया . 
 (defrule start5
-(declare (salience 4500))
+(declare (salience 5200))
+(id-root ?id start)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb )
+(kriyA-object ?id ?id1)
+(id-root ?id1 car|engine|machine)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id cAlU_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  start.clp 	start5   "  ?id "  cAlU_kara )" crlf))
+)
+;@@@ Added by jagriti(5.4.2014)
+;He has started on a journey.[rajpal]
+;वह यात्रा पर चल पडा.
+(defrule start8
+(declare (salience 5100))
+(id-root ?id start)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb )
+(or(kriyA-on_saMbanXI ?id ?id1)(kriyA-for_saMbanXI ?id ?id1)(kriyA-at_saMbanXI ?id ?id1))
+(not(kriyA-object ?id ?id2))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id cala_padZa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  start.clp 	start8   "  ?id "  cala_padZa)" crlf))
+)
+;@@@ Added by jagriti(5.4.2014)
+;When I reached the station,the train had started.[rajpal]
+;जब मैं स्टेशन पहुंचा तो ट्रेन छूट चुकी थी.
+(defrule start9
+(declare (salience 5000))
+(id-root ?id start)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb )
+(kriyA-subject ?id ?id1)
+(id-root ?id1 train|bus)
+(not(kriyA-object ?id ?id2))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id CUta_jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  start.clp 	start9   "  ?id "  CUta_jA)" crlf))
+)
+;@@@ Added by jagriti(5.4.2014)
+;The sudden noise made the child start.[rajpal]
+;अचानक शोर ने बच्चे को चौका दिया.
+(defrule start10
+(declare (salience 5000))
+(id-root ?id start)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun )
+(kriyA-object ?id1 ?id)
+(id-root ?id1 make)
+(samAsa_viSeRya-samAsa_viSeRaNa ?id ?id2)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 cOkA_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " start.clp	start10  "  ?id "  " ?id1 "  cOkA_xe  )" crlf))
+)
+;@@@ Added by jagriti(5.4.2014)
+;We made a start at a good time.[rajpal]
+;हमने अच्छे समय में प्रस्थान किया.
+(defrule start11
+(declare (salience 5000))
+(id-root ?id start)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun )
+(kriyA-object ?id1 ?id)
+(id-root ?id1 make)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 prasWAna_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " start.clp	start11  "  ?id "  " ?id1 "  prasWAna_kara )" crlf))
+)
+;@@@ Added by jagriti(5.4.2014)
+;He got a start of ten meters.[rajpal]
+;उसने दस मीटर की रिआयत प्राप्त की . 
+(defrule start12
+(declare (salience 5000))
+(id-root ?id start)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun )
+(kriyA-object ?id1 ?id)
+(id-root ?id1 get)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id riAyawa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  start.clp 	start12   "  ?id "  riAyawa)" crlf))
+)
+;....Default Rule....
+;$$$ Modified by jagriti(3.4.2014)..default meaning Suru_kara instead of Suru_ho
+;For simplicity we shall start with a two particle system.[ncert]
+;सरलता की दृष्टि से हम दो कणों के निकाय से शुरुआत करेङ्गे.
+(defrule start6
+(declare (salience 100))
 (id-root ?id start)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb )
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id Suru_ho))
+(assert (id-wsd_root_mng ?id Suru_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  start.clp 	start5   "  ?id "  Suru_ho )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  start.clp 	start6   "  ?id "  Suru_kara )" crlf))
 )
 
-(defrule start6
-(declare (salience 4400))
+
+(defrule start7
+(declare (salience 100))
 (id-root ?id start)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -92,7 +194,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id AramBa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  start.clp 	start6   "  ?id "  AramBa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  start.clp 	start7   "  ?id "  AramBa )" crlf))
 )
 
 ;"start","N","1.AramBa"

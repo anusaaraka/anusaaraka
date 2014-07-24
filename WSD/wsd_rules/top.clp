@@ -44,20 +44,8 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " top.clp	top1  "  ?id "  " ?id1 "  muzha_waka_Bara  )" crlf))
 )
 
-(defrule top2
-(declare (salience 4800))
-(id-root ?id top)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id upara_dAla))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  top.clp 	top2   "  ?id "  upara_dAla )" crlf))
-)
 
-;default_sense && category=verb	Upara_dAla	0
-;"top","VT","1.Upara_dAlanA"
+
 ;You top the cake with cream && chocolate.
 ;--"2.SiKara_para_pahuzcanA"
 ;We topped the mountain to have a clear view.
@@ -123,3 +111,96 @@
 ;
 ;sUwra : tOYpa`
 ;
+
+;@@@ Added by Prachi Rathore[3-2-14]
+;She topped off her performance with a dazzling encore.
+;??
+(defrule top3
+(declare (salience 4900))
+(id-root ?id top)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 off)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 purA_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " top.clp	top3  "  ?id "  " ?id1 "  purA_kara )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[3-2-14]
+;Inflation topped out at 12%.
+;मुद्रा स्फीति 12 % के शिर्ष पर पहुँची . 
+(defrule top4
+(declare (salience 4900))
+(id-root ?id top)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 out)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 SirRa_para_pahuzca))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " top.clp	top4  "  ?id "  " ?id1 "  SirRa_para_pahuzca)" crlf))
+)
+
+;@@@ Added by Prachi Rathore[3-2-14]
+;I need a top to go with these trousers.
+;मुझे  इस पतलून के साथ एक टाप की जरूरत होती है . 
+(defrule top7
+(declare (salience 4900))
+(id-root ?id top)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(kriyA-anaBihiwa_subject  ?id1 ?id)
+(kriyA-with_saMbanXI  ?id1 ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id toYpa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  top.clp 	top7   "  ?id "  toYpa )" crlf))
+)
+
+;xxxxxxxxxxxxxxxxxxx default rules xxxxxxxxxxxxxxxxxxxxxxxxxxx
+;default_sense && category=verb	Upara_dAla	0
+;"top","VT","1.Upara_dAlanA"
+(defrule top2
+(id-root ?id top)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id upara_dAla))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  top.clp 	top2   "  ?id "  upara_dAla )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[3-2-14]
+;He's at the top of his profession.[oald]
+;वह उसके पेशे के सर्वोच्च स्थान पर है . 
+(defrule top5
+(id-root ?id top)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sarvocca_sWAna))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  top.clp 	top5   "  ?id "  sarvocca_sWAna )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[3-2-14]
+;She got top marks for her essay.[oald]
+;उसने उसके निबन्ध के लिये सर्वोत्तम अङ्क प्राप्त किए . 
+(defrule top6
+(id-root ?id top)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sarvowwama))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  top.clp 	top6   "  ?id "  sarvowwama )" crlf))
+)

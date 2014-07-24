@@ -27,7 +27,9 @@
  (assert (No complete linkages found))
  (assert (conj_head-left_head-right_head))
  (assert (id-cat))
- (assert (id-cat_coarse))
+ (assert (id-cat_coarse)) 
+ (assert (id-E_tam-H_tam_mng))
+ (assert (id-tam-src))
  )
 
  (deffunction print_debug_info(?id ?rule_name ?g ?g_src ?n ?n_src ?p ?p_src ?c ?c_src)
@@ -42,21 +44,22 @@
  )
   
  ;================================ PP pada for vibakthi=0 and vibhakti!=0 ======================================
- ; If "I"  then  gender=m number=s and peson=u
+ ; If "I"  then  gender=- number=s and peson=u
  ;This book is mine.
  (defrule PP_pada_for_I_me_and_my
  (declare (salience 1000))
  ?f1<-(pada_info (group_head_id ?pada_id)(group_cat PP)(group_ids $?ids)(vibakthi ?vib))
  (id-original_word ?pada_id I|i|my|My|me|mine)
+ (id-gender-src ?pada_id ?gen ?gen_src)
  ?f0<-(pada_control_fact ?pada_id)
  =>
 	(retract ?f0)
 	(if (eq ?vib 0) then
-		(modify ?f1 (gender m)(number s)(person u)(case d))
-		(print_debug_info ?pada_id PP_pada_for_I_me_and_my m Direct s Direct u Direct d vibakthi_absent)
+		(modify ?f1 (gender ?gen)(number s)(person u)(case d))
+		(print_debug_info ?pada_id PP_pada_for_I_me_and_my ?gen ?gen_src s Direct u Direct d vibakthi_absent)
 	else			
-	        (modify ?f1 (gender m)(number s)(person u)(case o))
-		(print_debug_info ?pada_id PP_pada_for_I_me_and_my m Direct s Direct u Direct o vibakthi_present)
+	        (modify ?f1 (gender ?gen)(number s)(person u)(case o))
+		(print_debug_info ?pada_id PP_pada_for_I_me_and_my ?gen ?gen_src s Direct u Direct o vibakthi_present)
 	)
  )
  ;----------------------------------------------------------------------------------------------------------------
@@ -191,17 +194,17 @@
  (defrule samAnAXikaraNa_to_sub
  (declare (salience 800))
  (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa|saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAna_id)
- ?f1<-(pada_info (group_head_id ?samAna_id)(group_cat PP)(gender ?gen)(number ?num1))
+ ?f1<-(pada_info (group_head_id ?samAna_id)(group_cat PP)(gender ?gen)(number ?num1)(person ?per1))
  ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender -)(number ?num)(person ?per))
  (test (neq ?gen -))
  (not(samAnAXikaraNa_id_checked ?samAna_id))
  =>
    	(if (eq ?num1 -) then
-       		(modify ?f1 (gender ?gen)(number ?num)(person ?per))
-		(print_debug_info ?samAna_id samAnAXikaraNa_to_sub ?gen PV ?num n_f_s ?per p_f_s 0 0)
+       		(modify ?f1 (gender ?gen)(number ?num)(person ?per1))
+		(print_debug_info ?samAna_id samAnAXikaraNa_to_sub ?gen PV ?num n_f_s ?per PV 0 0)
    	else
-	     	(modify ?f1 (gender ?gen)(number ?num1)(person ?per))
-		(print_debug_info ?samAna_id samAnAXikaraNa_to_sub ?gen PV ?num number_from_samAnAXikaraNa ?per p_f_s 0 0)
+	     	(modify ?f1 (gender ?gen)(number ?num1)(person ?per1))
+		(print_debug_info ?samAna_id samAnAXikaraNa_to_sub ?gen PV ?num PV ?per PV 0 0)
    	)
 	(modify ?f2 (gender ?gen) )
 	(print_debug_info ?sub_id samAnAXikaraNa_to_sub ?gen gender_from_samAnAXikaraNa ?num PV  ?per PV 0 0)
@@ -212,17 +215,17 @@
  (defrule sub_to_samAnAXikaraNa
  (declare (salience 790))
  (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa|saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
- ?f1<-(pada_info (group_head_id ?samAnAXikaraNa_id)(group_cat PP)(vibakthi ?vib)(gender -)(number ?num1))
+ ?f1<-(pada_info (group_head_id ?samAnAXikaraNa_id)(group_cat PP)(person ?per1)(gender -)(number ?num1))
  ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender ?gen)(number ?num)(person ?per))
  (test (neq ?gen -))
  (not(samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
  =>
 	(if (eq ?num1 -) then
-	 	(modify ?f1 (gender ?gen)(number ?num)(person ?per))
-		(print_debug_info ?samAnAXikaraNa_id sub_to_samAnAXikaraNa ?gen g_f_s ?num n_f_s ?per p_f_s 0 0)
+	 	(modify ?f1 (gender ?gen)(number ?num)(person ?per1))
+		(print_debug_info ?samAnAXikaraNa_id sub_to_samAnAXikaraNa ?gen g_f_s ?num n_f_s ?per1 PV 0 0)
 	else
-		(modify ?f1 (gender ?gen)(number ?num1)(person ?per))
-		(print_debug_info ?samAnAXikaraNa_id sub_to_samAnAXikaraNa ?gen g_f_s ?num PV ?per p_f_s 0 0)
+		(modify ?f1 (gender ?gen)(number ?num1)(person ?per1))
+		(print_debug_info ?samAnAXikaraNa_id sub_to_samAnAXikaraNa ?gen g_f_s ?num PV ?per1 PV 0 0)
 	)
 	(assert (samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
  )
@@ -231,17 +234,17 @@
  (defrule sub_and_samA_with_same_gender
  (declare (salience 770))
  (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa|saMjFA-saMjFA_samAnAXikaraNa ?sub_id ?samAnAXikaraNa_id)
- ?f1<-(pada_info (group_head_id ?samAnAXikaraNa_id)(group_cat PP)(vibakthi ?vib)(gender ?gen1)(number ?num1))
+ ?f1<-(pada_info (group_head_id ?samAnAXikaraNa_id)(group_cat PP)(person ?per1)(gender ?gen)(number ?num1))
  ?f2<-(pada_info (group_head_id ?sub_id)(group_cat PP)(gender ?gen)(number ?num)(person ?per)(case ?case))
  (not(samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
- (test (and (neq ?gen1 -)(neq ?gen -)(eq ?gen ?gen1)))
+ (test (neq ?gen -))
  =>
 	(if (eq ?num1 -) then
-		(modify ?f1 (gender ?gen)(number ?num)(person ?per))
-		(print_debug_info ?samAnAXikaraNa_id sub_and_samA_with_same_gender ?gen PV ?num n_f_s ?per p_f_s 0 0)
+		(modify ?f1 (gender ?gen)(number ?num)(person ?per1))
+		(print_debug_info ?samAnAXikaraNa_id sub_and_samA_with_same_gender ?gen PV ?num n_f_s ?per PV 0 0)
 	else
-		(modify ?f1 (gender ?gen)(number ?num1)(person ?per))
-		(print_debug_info ?samAnAXikaraNa_id sub_and_samA_with_same_gender ?gen PV ?num PV ?per p_f_s 0 0)
+		(modify ?f1 (gender ?gen)(number ?num1)(person ?per1))
+		(print_debug_info ?samAnAXikaraNa_id sub_and_samA_with_same_gender ?gen PV ?num PV ?per PV 0 0)
 	)
 	(assert (samAnAXikaraNa_id_checked ?samAnAXikaraNa_id))
  )
@@ -553,7 +556,21 @@
         (modify ?f1 (gender ?gen)(number ?num)(person ?per)(case ?c))
       	(print_debug_info ?pada_id verb_with_viSeRya_kqxanwa_viSeRaNa ?gen g_f_v ?num n_f_v ?per p_f_v ?c case_from_viSeRya)
  )
-;-------------------------------------------------------------------------------------------------------------------
+ ;-------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju  (29-05-14)
+ ;I [keep] on [thinking] I've seen her before somewhere.
+ (defrule modify_gnp_for_template
+ (declare (salience 100))
+ (prep_id-relation-anu_ids ? kriyA-on_saMbanXI ?k ?k1)
+ (id-original_word ?k keeps|kept|keep)
+ ?f0<-(id-tam-src ?k1 ? Template)
+ (pada_info (group_head_id ?k)(gender ?gen) (number ?num)(person ?per)(case ?c))
+ ?f1<-(pada_info (group_head_id ?k1))
+ =>
+	(retract ?f0)
+        (modify ?f1 (gender ?gen)(number ?num)(person ?per)(case ?c))
+ )
+ ;-------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju  (08-12-11)
  (defrule default_gender_m_for_id
  (declare (salience 3))

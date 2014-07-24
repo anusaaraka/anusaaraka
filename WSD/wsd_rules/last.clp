@@ -212,6 +212,54 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  last.clp 	last9   "  ?id "  calawA_raha )" crlf))
 )
 
+;@@@ Added by Nandini (12-12-13)
+;Tonight is your last chance to catch the play at your local theatre.
+;Aja_kI rAwa Apake sWAnIya raMgamaMca meM nAtaka xeKane kA ApakA AKirI avasara hE.
+(defrule last10
+(declare (salience 4950))
+(id-root ?id last)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 chance)
+(viSeRya-viSeRaNa  ?id1 ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id AKirI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  last.clp      last10   "  ?id "  AKirI )" crlf))
+)
+
+;@@@ Added by Nandini (12-12-13)
+;Last night we finished the last of the dry chapattis and dal.
+;piCalI rAwa hamane sUKI chapattiyAz Ora bacI_KucI dal Kawama kI.
+(defrule last11
+(declare (salience 5050))
+(id-root ?id last)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-of_saMbanXI  ?id ?id1)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bacI_huI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  last.clp      last10   "  ?id "  bacI_huI )" crlf))
+)
+
+;@@@ Added by Nandini(4-1-14)
+;The thief last entering the tunnel had closed it behind him.
+(defrule last12
+(declare (salience 3850))
+(id-root ?id last)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-kriyA_viSeRaNa  ?id1 ?id)
+(viSeRya-kqxanwa_viSeRaNa  ?id2 ?id1)
+(id-root ?id2 thief)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id AKirI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  last.clp      last12   "  ?id "  AKirI )" crlf))
+)
+
 ;"last","V","1.calawe_rahanA"
 ;The bottle that he gave me lasted for a month.
 ;The well was dug at a huge cost; but the water did not last long.

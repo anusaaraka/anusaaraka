@@ -47,6 +47,22 @@
 ;"number","VT","1.ginanA"
 ;You should number the pages of the thesis.
 ;
+;@@@ Added by Nandini(9-1-14)
+;He put his phone number on a napkin. [via mail]
+;usane rumAla para usakA telIPona nambara liKA.
+(defrule number3
+(declare (salience 4950))
+(id-root ?id number)
+?mng <-(meaning_to_be_decided ?id)
+(samAsa_viSeRya-samAsa_viSeRaNa  ?id ?id1)
+(id-root ?id1 phone)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id nambara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  number.clp 	number3   "  ?id "  nambara )" crlf))
+)
 
 ;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
 (defrule sub_samA_number0

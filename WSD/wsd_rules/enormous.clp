@@ -31,7 +31,7 @@
 ;स्थूल स्तर पर हम ऐसे आवेशों से व्यवहार करते हैं जो इलेक्ट्रॉन e के आवेश की तुलना में परिमाण में बहुत बडे होते हैं .
 ;sWUla swara para hama Ese AveSoM se vyavahAra karawe hEM jo ilektroYna e ke AveSa kI wulanA meM parimANa meM bahuwa bade howe hEM .
 (defrule enormous0
-(declare (salience 5000))
+(declare (salience 4900))
 (id-root ?id enormous)
 ?mng <-(meaning_to_be_decided ?id)
 (or(viSeRya-viSeRaNa  ?id1 ?id)(viSeRya-compared_to_saMbanXI  ?id ?id1))

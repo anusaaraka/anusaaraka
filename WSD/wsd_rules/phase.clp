@@ -67,6 +67,22 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  phase.clp 	phase4   "  ?id "  caraNoM_meM_kara )" crlf))
 )
 
+;@@@Added by Sonam Gupta MTEch IT Banasthali 2013
+;The Universe during this early hot phase was much more efficient than stars in producing helium. [Gyan nidhi]
+;इस प्रारम्भिक गरम चरण के दौरान ब्रह्माण्ड हिलिअम बनाने में तारों की अपेक्षा बहुत अधिक दक्ष था .
+(defrule phase5
+(declare (salience 4500))
+(id-root ?id phase)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id caraNa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  phase.clp 	phase5   "  ?id "  caraNa )" crlf))
+)
+
+
 ;default_sense && category=verb	caraNoM_meM_kara	0
 ;"phase","V","1.caraNoM_meM_karanA"
 ;It involved as a phased programme going over a twenty five year period.

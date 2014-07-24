@@ -144,8 +144,14 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come8  "  ?id "  " ?id1 "  prApwa_karanA_yA_pA  )" crlf))
 )
 
+
 ;Accurate report was difficult to come by from the office.
 ;APisa se sahI riporta prApwa karanA muSkila WA
+
+;$$$ modified by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 11-dec-2013
+;Replaced meaning 'GatanA_yA_kama_ho' with 'kama_ho' and added sub as price
+;The price of milk has come down.
+;xUXa kI kImawa kama ho gayI hE
 (defrule come9
 (declare (salience 4100))
 (id-root ?id come)
@@ -153,15 +159,18 @@
 (id-word ?id1 down)
 (kriyA-upasarga ?id ?id1)
 (id-cat_coarse ?id verb)
+(kriyA-subject ?id ?sub)
+(id-word ?sub price)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 GatanA_yA_kama_ho))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 kama_ho))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come9  "  ?id "  " ?id1 "  GatanA_yA_kama_ho  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come9  "  ?id "  " ?id1 "  kama_ho  )" crlf))
 )
 
-;The price of milk has come down.
-;xUXa kI kImawa kama ho gayI hE
+
+;$$$ Modified by Shirisha Manju 22-03-14 Suggested by Chaitanya sir
+;Changed meaning from 'Age_baDZakara_AnA_yA_najZara_meM_A' to 'Age_A'
 (defrule come10
 (declare (salience 4000))
 (id-root ?id come)
@@ -171,9 +180,27 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 Age_baDZakara_AnA_yA_najZara_meM_A))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 Age_A))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come10  "  ?id "  " ?id1 "  Age_baDZakara_AnA_yA_najZara_meM_A  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come10  "  ?id "  " ?id1 "  Age_A )" crlf))
+)
+
+
+;@@@ Added by Shirisha Manju 22-03-14 Suggested by Chaitanya sir
+;For this reason the general public has to come forward. 
+;isa kAraNa ke liye jana sAXAraNa ko Age AnA hE.
+(defrule come_forward
+(declare (salience 3900))
+(id-root ?id come)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-kriyA_viSeRaNa ?id ?id1)
+(id-word ?id1 forward)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 Age_A))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp come_forward  "  ?id "  " ?id1 "  Age_A )" crlf))
 )
 
 ;My friend came forward to support me in the meeting.
@@ -762,6 +789,11 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* " come.clp come48 " ?id "  gira )" crlf)) 
 )
 
+
+;$$$ modified by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 11-dec-2013
+; Replaced 'gira' with 'nIce_A'
+;Yes, the musk deer will come down from the colder regions above when it snows more.[gyananidhi]
+;हाँ , कस्तूरी मृग ठन्डे क्षेत्रों  से नीचे आ जायेगा जब बर्फ ज्यादा पङेगी  
 (defrule come49
 (declare (salience 100))
 (id-root ?id come)
@@ -771,9 +803,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 gira))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 nIce_A))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come49  "  ?id "  " ?id1 "  gira  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " come.clp	come49  "  ?id "  " ?id1 "  nIce_A  )" crlf))
 )
 
 (defrule come50

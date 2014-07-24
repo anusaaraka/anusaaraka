@@ -10,12 +10,104 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  direct.clp 	direct0   "  ?id "  sIXA )" crlf))
 )
-
 ;"direct","Adj","1.sIXA"
 ;He asked a direct question relating to her personal life.
 ;
+
+;For a positive charge, the electric field will be directed radially outwards from the charge.
+;धनावेश के कारण विद्युत क्षेत्र आवेश से बाहर की ओर उन्मुख त्रिज्यीय होता है.
+;The building directed towards the east.
+;imArawa pUrva kI ora unmuKa hE.
+
+;Added by Pramila(Banasthali University)
 (defrule direct1
-(declare (salience 4900))
+(declare (salience 4950))
+(id-root ?id direct)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject ?id ?id1)
+(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "inanimate.gdbm" ?str)))
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id unmuKa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  direct.clp 	direct1   "  ?id "  unmuKa )" crlf))
+)
+
+
+
+;The guide directed our attention to another sculpture.
+;gAida ne eka ora mUrwi kI ora hamArA XyAna AkarRiwa kiyA.
+
+;Added by Pramila(Banasthali University)
+(defrule direct2
+(declare (salience 5000))
+(id-root ?id direct)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object ?id ?id1)
+(id-root ?id1 attention)
+(kriyA-to_saMbanXI  ?id ?id2)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id AkarRiwa_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  direct.clp 	direct3   "  ?id "  AkarRiwa_kara )" crlf))
+)
+
+;Mohan's remarks were directed at Reeta.
+;mohana ke vAkya rIwA ko lakRiwa kara rahe We.
+
+;Added by Pramila(Banasthali University)
+(defrule direct3
+(declare (salience 4950))
+(id-root ?id direct)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-at_saMbanXI  ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id lakRiwa_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  direct.clp 	direct4   "  ?id "  lakRiwa_kara )" crlf))
+)
+
+(defrule direct5
+(declare (salience 5000))
+(id-root ?id direct)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(viSeRya-jo_samAnAXikaraNa  ?id1 ?id2)
+(id-root ?id2 law|theory)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id prawyakRa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  direct.clp 	direct5   "  ?id "  prawyakRa )" crlf))
+)
+
+;@@@ added by Pramila(BU) on 12-12-2013
+;They pumped the sprayer-levers up and down, directing the chemical jet on to the ground.    ;gyannidhi
+;वे स्प्रेयर के लीवर को ऊपर नीचे खींचते और उससे रसायन की फुहार जमीन पर डालते जाते थे।
+(defrule direct6
+(declare (salience 5000))
+(id-root ?id direct)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-on_to_saMbanXI  ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id dAlawe_jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  direct.clp 	direct6   "  ?id "  dAlawe_jA )" crlf))
+)
+
+
+;---------------------default rules--------------------------------------
+
+(defrule direct7
+(declare (salience 4000))
 (id-root ?id direct)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -23,9 +115,8 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id paWa_xiKA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  direct.clp 	direct1   "  ?id "  paWa_xiKA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  direct.clp 	direct7   "  ?id "  paWa_xiKA )" crlf))
 )
-
 ;"direct","VT","1.paWa_xiKAnA"
 ;I directed them towards the town hall.
 ;

@@ -15,8 +15,94 @@
 ;"designing","Adj","1.cAlAka"
 ;A selfish && designing nation obsessed with the dark schemes of European intrigue
 ;
+
+;Added by Pramila(Banasthali University) on 19-11-2013
+;The design was made for a dress.                     ;sentence of this clip file
+; poSAka ke lie dijAina banAI gaI WIM.
 (defrule design1
 (declare (salience 4900))
+(id-root ?id design)
+?mng <-(meaning_to_be_decided ?id)
+(or(and(kriyA-subject  ?id1 ?id)(kriyA-for_saMbanXI  ?id1 ?id2))(viSeRya-viSeRaNa  ?id ?id1))
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id dijAina))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  design.clp 	design1   "  ?id "  dijAina )" crlf))
+)
+
+;Added by Pramila(Banasthali University) on 19-11-2013
+;We don't know whether it was done by accident or by design.                    ;sentence of this clip file
+;hameM yaha pawA nahIM ki vaha kisI rxuGatanA se huI yA kisI uxxeSya se huI.
+(defrule design2
+(declare (salience 4900))
+(id-root ?id design)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-by_saMbanXI  ?id1 ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id uxxeSya))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  design.clp 	design2   "  ?id "  uxxeSya )" crlf))
+)
+
+
+;Added by Pramila(Banasthali University) on 19-11-2013
+;I have no design to go to Bombay.               ;sentence of this clip file
+;merA baMbaI jAne kA koI irAxA nahIM .
+;
+(defrule design3
+(declare (salience 4900))
+(id-root ?id design)
+?mng <-(meaning_to_be_decided ?id)
+(saMjFA-to_kqxanwa  ?id ?id1)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id irAxA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  design.clp 	design3   "  ?id "  irAxA )" crlf))
+)
+;Added by Pramila(Banasthali University) on 19-11-2013
+;This dictionary is designed for advanced learners of English.   ;cald
+;यह शब्दकोश आरम्भिक अंग्रेजी सीखने वालों के उद्देश्य से बनाया गया है 
+;These measures are designed to reduce pollution.             ;cald
+;ये उपाय प्रदूषण कम करने के लिए बनाए गए हैं .
+(defrule design4
+(declare (salience 5000))
+(id-root ?id design)
+?mng <-(meaning_to_be_decided ?id)
+(or(kriyA-for_saMbanXI  ?id ?id1)(kriyA-kriyArWa_kriyA  ?id ?id1))
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_word_mng ?id banA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  design.clp  	design4   "  ?id "  banA )" crlf))
+)
+
+;@@@ Added by Pramila(BU) on 01-02-2014
+;A design impressed on the book's cover.            ;m-w
+;पुस्तक के आवरण पर एक आकृति छपी है.
+(defrule design5
+(declare (salience 5000))
+(id-root ?id design)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(kriyA-subject  ?kri ?id)
+(kriyA-on_saMbanXI  ?kri ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Akqwi))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  design.clp 	design5   "  ?id "  Akqwi )" crlf))
+)
+
+;-----------------------------default rules------------------------------------------------------------
+(defrule design6
+(declare (salience 4000))
 (id-root ?id design)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -24,11 +110,11 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id racanA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  design.clp 	design1   "  ?id "  racanA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  design.clp 	design6   "  ?id "  racanA )" crlf))
 )
 
-(defrule design2
-(declare (salience 4800))
+(defrule design7
+(declare (salience 3000))
 (id-root ?id design)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -36,7 +122,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id nakSA_banA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  design.clp 	design2   "  ?id "  nakSA_banA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  design.clp 	design7   "  ?id "  nakSA_banA )" crlf))
 )
 
 ;default_sense && category=verb	rUpAkAra_xe	0

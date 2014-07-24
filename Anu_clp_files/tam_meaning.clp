@@ -34,6 +34,8 @@
  (assert (id-eng-src))
  (assert (id-attach_eng_mng))
  (assert (id-wsd_viBakwi)) 
+ (assert (id-tam-src))
+ (assert (id-HM-source))
  )
 
  ; if there is a conjunction between verbs and the tam for first verb is say wA_hE then modify all the tams for the verbs in conjunction as wA_hE
@@ -70,6 +72,21 @@
 	(assert (got_vn_fact_for_second_verb ?s_vb))
  )
  ;---------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju 14-5-14
+ ;This rules takes tam meaning from templates
+ ;Your cat keeps on rubbing itself against my leg.
+ (defrule tam_mng_from_template
+ (declare (salience 7001))
+ (id-E_tam-H_tam_mng ?id  ?E_tam ?H_tam)
+ (id-tam-src ?id ?E_tam  ?src)
+ (id-cat_coarse ?id verb)
+ ?f1<-(pada_info (group_head_id ?id))
+ ?mng<-(meaning_to_be_decided ?id)
+ =>
+        (retract ?mng)
+        (modify ?f1 (H_tam ?H_tam)(tam_source ?src))
+ )
+ ;---------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju
  (defrule tam_mng_from_wsd_tam_file_with_preceeding_verb
  (declare (salience 7000))
@@ -83,10 +100,42 @@
         (modify ?f1 (H_tam ?H_tam)(preceeding_part_of_verb ?verb)(tam_source WSD))
  )
  ;---------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (12-05-14) -- Suggested by Chaitanya Sir
+ ;This rule is added to solve 'noun' vib problem  [noun vib's: 0,ne,ko,se,ke_lie,se,kA/kI/ke,meM,para,vAlA]
+ ;This book is [mine].
+ ;'ne' and '0' are not considered becoz 'ne'  -- ne_xo [verb] and  '0'   -- ambiguous
+ (defrule vib_mng_from_wsd_[word/root]_file
+ (declare (salience 6550))
+ (id-H_vib_mng ?id ?vib)
+ ?f1<-(pada_info (group_head_id ?id))
+ ?mng<-(meaning_to_be_decided ?id)
+ (test (neq (str-index "_" ?vib)  FALSE))
+ (test (member$ (string-to-field (sub-string 1 (- (str-index "_" ?vib) 1) ?vib)) (create$ kA kI ke meM)))
+ =>
+        (retract ?mng)
+        (modify ?f1 (vibakthi ?vib)(tam_source WSD))
+        (assert (tam_decided  ?id))
+ )
+ ;---------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (12-05-14) -- Suggested by Chaitanya Sir
+ ;This rule is added to solve 'noun' vib problem  [noun vib's: 0,ne,ko,se,ke_lie,se,kA/kI/ke,meM,para,vAlA]
+ ;not added   '0'   -- ambiguous
+ (defrule vib_mng_from_wsd_[word/root]_file1
+ (declare (salience 6500))
+ (id-H_vib_mng ?id ?vib)
+ ?f1<-(pada_info (group_head_id ?id))
+ ?mng<-(meaning_to_be_decided ?id)
+ (test (member$ ?vib (create$ ne ko se kA kI ke meM para vAlA)))
+ =>
+        (retract ?mng)
+        (modify ?f1 (vibakthi ?vib)(tam_source WSD))
+        (assert (tam_decided  ?id))
+ )
+ ;---------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju
  ;He wasted his golden opportunity to play in the national team. 
  (defrule tam_mng_from_wsd_[word/root]_file
- (declare (salience 6500))
+ (declare (salience 6400))
  (id-H_vib_mng ?id ?H_tam)
  (id-cat_coarse ?id verb)
  ?f1<-(pada_info (group_head_id ?id))

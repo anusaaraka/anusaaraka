@@ -30,7 +30,7 @@
 ;People choose the elect as the best.
 ;
 (defrule elect2
-(declare (salience 4800))
+(declare (salience 4000))
 (id-root ?id elect)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -46,3 +46,39 @@
 ;--"2.cunanA"
 ;She elected to work overtime on sundays.
 ;
+
+
+;@@@ Added by Pramila(BU) on 04-02-2014
+;She elected to work overtime on sundays.   [old clp]
+;उसने रविवार को अतिरिक्त समय काम करने के लिए चुना.
+(defrule elect3
+(declare (salience 4800))
+(id-root ?id elect)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-kriyArWa_kriyA  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id cuna))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  elect.clp 	elect3   "  ?id "  cuna )" crlf))
+)
+
+;@@@ Added by Pramila(BU) on 04-02-2014
+;Asutosh was elected President of the Post-graduate Council in Arts as well as of the Post-graduate Council in Science.  ;gyannidhi
+;आशुतोष को कला के स्नातकोत्तर परिषद दोनों का ही अध्यक्ष चुना गया।
+(defrule elect4
+(declare (salience 4800))
+(id-root ?id elect)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?id1)
+(viSeRya-of_saMbanXI  ?id1 ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id cuna))
+(assert (kriyA_id-subject_viBakwi ?id ko))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  elect.clp 	elect4   "  ?id "  cuna )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  elect.clp    elect4   "  ?id " ko )" crlf))
+)

@@ -1,6 +1,7 @@
-
+;They carted him off to the jail.
+;ve use aBaxrawApUrvaka jela meM le gae
 (defrule cart0
-(declare (salience 5000))
+(declare (salience 4800))
 (id-root ?id cart)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id1 off)
@@ -14,8 +15,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " cart.clp	cart0  "  ?id "  " ?id1 "  aBaxrawApUrvaka_le_jA  )" crlf))
 )
 
-;They carted him off to the jail.
-;ve use aBaxrawApUrvaka jela meM le gae
+
 (defrule cart1
 (declare (salience 4900))
 (id-root ?id cart)
@@ -43,6 +43,23 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " cart.clp	cart2  "  ?id "  " ?id1 "  sAmAna_nikAla  )" crlf))
 )
+;Parse Problem
+;@@@ Added by Preeti(14-4-14)
+;The rubbish is then carted away for recycling. [Oxford Advanced Learner's Dictionary]
+;kacare ko Pira punarcakraNa ke liye le jAyA jAwA hE.
+(defrule cart4
+(declare (salience 4800))
+(id-root ?id cart)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 away)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 le_jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " cart.clp	cart4  "  ?id "  " ?id1 "  le_jA  )" crlf))
+)
 
 (defrule cart3
 (declare (salience 4700))
@@ -61,3 +78,5 @@
 ;He used a handcart to carry the rocks away
 ;
 ;
+
+

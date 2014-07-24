@@ -325,10 +325,15 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  run.clp 	run22   "  ?id "  calA )" crlf))
 )
 
+;$$$ Modified by Anita--3.4.2014
+;We walk, run and ride a bicycle. 
+;hama calawe hEM, xOdawe hEM Ora sAikila savArI karawe hEM. [Anusaaraka output] [using 3rd parse]
+;;हम चलते हैं, दौड़ते हैं और साईकिल चलाते हैं ।
 (defrule run23
 (declare (salience 2700))
 (id-root ?id run)
 ?mng <-(meaning_to_be_decided ?id)
+(conjunction-components  ? ?id ?) ;Add relation by Anita-3.4.2014
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -350,6 +355,60 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  run.clp       run25   "  ?id "  GUmanA )" crlf))
 )
  
+;@@@ Added by Anita-9.12.2013
+; We ran down to the beach and plunged into the sea.
+;हम समुद्र तट की ओर  गए और समुद्र में कूद गए ।
+(defrule run26
+(declare (salience 4001))
+(id-root ?id run)
+?mng <-(meaning_to_be_decided ?id)
+(id-root ?id1 down)
+(kriyA-upasarga  ?id ?id1)
+(id-cat_coarse ?id verb)
+(kriyA-to_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  run.clp       run26   "  ?id " " ?id1 " jA )" crlf))
+)
+;@@@ Added by Anita-18.12.2013
+;A high, earth embankment ran along the banks of the river to protect the adjacent areas from floods.
+;बाढ़ से बचने के लिए नदी के आसपास के किनारे ऊंची मिट्टी के बनाए गए।     [For discussion ]
+(defrule run27
+(declare (salience 4100))
+(id-root ?id run)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-upasarga ?id ?id1)
+(id-root ?id1 along)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 sAWa_sAWa_banA_ho))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  run.clp       run27   "  ?id " " ?id1 " sAWa_sAWa_banA_ho )" crlf))
+)
+
+;@@@ Added by Anita--19.3.2014
+;The report runs into five volumes and covers, practically the whole sphere of education.  [gyanidhi sentence]
+;रिपोर्ट पांच खण्डों में चलती है और इसमें शिक्षा का लगभग सारा क्षेत्र शामिल है।
+(defrule run28
+(declare (salience 4200))
+(id-root ?id run)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-into_saMbanXI  ?id ?)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id cala))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  run.clp       run28   "  ?id "  cala )" crlf))
+)
+
+
+
+
+
 ;LEVEL 
 ;
 ;

@@ -72,6 +72,32 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  against.clp 	against5   "  ?id "  ke_prawi )" crlf))
 )
 
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 11-dec-2013
+;Devyani stumbled against a stone and her foot began to bleed.[gyananidhi]
+;देवयानी को एक पत्‍थर से ठोकर लग गयी और उसके पैर से खून बहने लगा
+;He squashed his nose against the window.
+;उसने दरवाजे से उसकी नाक दबायी
+;$$$ Modified by Shirisha Manju (9-6-14) -- added 'rub' to the list
+;Your cat keeps on rubbing itself against my leg.
+;ApakI billI merI tAzga se svayam ko ragadawI rahawI hE .
+(defrule against7
+(declare (salience 4500))
+(id-root ?id against)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-against_saMbanXI  ?kri ?id1)
+(id-root ?kri stumble|squash|rub);added squash in the list (24-jan-2014)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id se))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  against.clp 	against7   "  ?id "  se )" crlf))
+)
+
+
+
+;*********************DEFAULT RULE*****************************************
+
 (defrule against6
 (declare (salience 4400))
 (id-root ?id against)

@@ -60,6 +60,27 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  project.clp      project3   "  ?id " ko )" crlf))
 )
 
+;@@@ Added by Sonam Gupta MTech IT Banasthali 27-1-2014
+;In August 1913 the noble donor wrote to Asutosh: I have now decided to make over to the University a sum of rupees 
+;ten lakhs in furtherance of the University College of Science as projected by you with the sanction of the Senate. [Gyannidhi]
+;अगस्त 1913 में इस महान दानी ने आशुतोष को लिखा: अब मैंने फैसला किीय है कि यूनिवर्सिटी कॉलिज ऑफ साइंस को आपके द्वारा सिनेट की अनुगति से 
+;बनाई-गई परियोजना के अनुरूप प्रोत्साहन देने के लिए मैं विश्वविद्यालय को दस लाख रूपये की राशि दूंगा।
+(defrule project4
+(declare (salience 5550))
+(id-root ?id project)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id projected)
+(id-cat_coarse ?id verb)
+(id-root ?id1 as)
+(kriyA-kriyA_viSeRaNa  ?id ?id1)
+(kriyA-by_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 pariyojanA_ke_anurUpa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " project.clp	project19  "  ?id "  " ?id1 "  pariyojanA_ke_anurUpa  )" crlf))
+)
+
 
 ;"project","V","1.pariyojanA karanA"
 ;A projected drain improvement scheme is being implemented in our colony.

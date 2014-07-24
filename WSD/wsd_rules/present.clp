@@ -119,8 +119,93 @@
 ;--"2.upahAra"
 ;This book was a present from my elder brother.
 ;
+
+
+;Added by Sonam Gupta MTech IT Banasthali 2013
+;May I present Professor Carter? [Veena mam Translation]
+;क्या मैं प्रोफेसर कार्टर का परिचय करा दूँ ?
 (defrule present6
 (declare (salience 4400))
+(id-root ?id present)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(and(kriyA-object  ?id ?)(kriyA-subject  ?id ?)(kriyA-kriyArWa_kriyA  ? ?id)(to-infinitive  ? ?id)(kriyA-to_saMbanXI  ?id ?))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id paricaya_karA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  present.clp 	present6   "  ?id "  paricaya_karA )" crlf))
+)
+
+
+;Added by Sonam Gupta MTech IT Banasthali 2013
+;The winners were presented with medals. [Veena mam Translation]
+;विजेताओं को पदक प्रदान किए गए .
+(defrule present7
+(declare (salience 4300))
+(id-root ?id present)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(and(kriyA-subject  ?id ?)(kriyA-karma  ?id ?)(kriyA-with_saMbanXI  ?id ?))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id praxAna_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  present.clp 	present7   "  ?id "  praxAna_kara )" crlf))
+)
+
+
+;Added by Sonam Gupta MTech IT Banasthali 2013
+;The documentary presented us with a balanced view of the issue. [Veena mam Translation]
+;वृत्तचित्र में हमें समस्या के बारे में एक संतुलित विचार से अवगत कराया गया था .
+(defrule present8
+(declare (salience 4200))
+(id-root ?id present)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(and(kriyA-object  ?id ?)(kriyA-subject  ?id ?)(kriyA-with_saMbanXI  ?id ?))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id avagawa_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  present.clp 	present8   "  ?id "  avagawa_kara )" crlf))
+)
+
+;Added by Sonam Gupta MTech IT Banasthali 2013
+;She presents the late-night news. [Veena mam Translation]
+;वह देर रात के समाचार पेश करती है.
+(defrule present9
+(declare (salience 4100))
+(id-root ?id present)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(or(and(kriyA-object  ?id ?)(kriyA-subject  ?id ?)(kriyA-kAlavAcI  ?id ?))(kriyA-object  ?id ?)(kriyA-subject  ?id ?))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id peSa_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  present.clp 	present9   "  ?id "  peSa_kara )" crlf))
+)
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 6-1-2014
+;Insisted on my being present. [Shikshyarthi kosh]
+(defrule present10
+(declare (salience 5000))
+(id-root ?id present)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-viSeRaNa  ?id ?)
+(viSeRya-RaRTI_viSeRaNa  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id upasWiwi))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  present.clp 	present10   "  ?id "  upasWiwi )" crlf))
+)
+
+
+(defrule present11
+(declare (salience 4000))
 (id-root ?id present)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -128,7 +213,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id xe))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  present.clp 	present6   "  ?id "  xe )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  present.clp 	present11   "  ?id "  xe )" crlf))
 )
 
 ;"present","V","1.xe{upahAra}"

@@ -26,6 +26,7 @@
  (assert (id-eng-src))
  (assert (id-attach_eng_mng))
  (assert (id-wsd_viBakwi))
+ (assert (id-HM-source))
  )
  ;--------------------------------------------------------------------------------------------------------------------
  ;When root is revised from WSD then revising morph information. Modified by Roja(16-05-14). Suggested by Chaitanya Sir.

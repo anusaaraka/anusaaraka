@@ -60,10 +60,12 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  rule.clp      rule3   "  ?id " para )" crlf)
 )
 
+;$$$ Modified by Anita 
 (defrule rule4
-(declare (salience 4600))
+(declare (salience 100))
 (id-root ?id rule)
 ?mng <-(meaning_to_be_decided ?id)
+(not (kriyA-object ?id ?)) ;Added relation by Anita
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -77,8 +79,49 @@
 ;The convener of the session ruled the speaker out of order.
 ;--"2.3"
 ;
+
+;@@@ Added by Anita 25.2.2014
+;The state is being ruled by a representative government. [representative.clp का sentence]
+;राज्य एक प्रतिनिधि सरकार द्वारा चलाया जा रहा है।
+(defrule rule6
+(declare (salience 4400))
+(id-root ?id rule)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-by_saMbanXI  ?id ?)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id cAliwa_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rule.clp 	rule6   "  ?id "  cAliwa_kara )" crlf))
+)
+;"rule","VT","1.SAsana_kara"
+;Akbar ruled India for many years.
+;She doesn't allow herself to be ruled by her emotions.
+;
+;LEVEL 
+
+;@@@ Added by Anita 11.3.2014 
+;He ruled the University with a supreme sway.
+;उन्होंने विश्वविद्यालय पर अत्यन्त दबंगता के साथ प्रशासन किया .
+(defrule rule7
+(declare (salience 4700))
+(id-root ?id rule)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 university)
+(kriyA-object ?id ?id1)
+(kriyA-with_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id praSAsana_kara))
+(assert (kriyA_id-object_viBakwi ?id para))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rule.clp 	rule7   "  ?id "  praSAsana_kara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  rule.clp      rule7   "  ?id " para )" crlf)
+)
+
+;####################################default-rule##############################
 (defrule rule5
-(declare (salience 4500))
 (id-root ?id rule)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -88,15 +131,6 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rule.clp 	rule5   "  ?id "  SAsana_kara )" crlf))
 )
-
-;"rule","VT","1.SAsana_kara"
-;Akbar ruled India for many years.
-;She doesn't allow herself to be ruled by her emotions.
-;
-;LEVEL 
-;
-;
-;
 ;"rule"
 ;
 ;Different senses of the word "rule"

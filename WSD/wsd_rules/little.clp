@@ -90,6 +90,76 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  little.clp 	little5   "  ?id "  WodA )" crlf))
 )
 
+;@@@ Added by Nandini (11-12-13)
+;I felt his essay needed a little pruning.(via mail)
+;muJe lagawA hE ki usake nibanXa ko Wode kAta-CAzta kI AvaSyakawA hE.
+(defrule little6
+(declare (salience 4700))
+(id-root ?id little)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 pruning|water|milk)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(viSeRya-det_viSeRaNa  ?id1 ?)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id WodA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  little.clp 	little6   "  ?id "  WodA )" crlf))
+)
+
+;@@@ Added by Nandini (11-12-13)
+;There was little snow on the lower reaches of the ski run. (via mail)
+;skI ke pattI ke nicale BAgoMpara baraPa nahiM ke barAbar WI.
+(defrule little7
+(declare (salience 4710))
+(id-root ?id little)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 snow)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(viSeRya-on_saMbanXI  ?id1 ?)
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id nahIM_ke_barAbara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  little.clp 	little7   "  ?id "  nahIM_ke_barAbara )" crlf))
+)
+
+
+;@@@ Added by Nandini (18-12-13)
+;Mongla rejoined them a little later.
+;mongla  WodI xera bAxa  unako milA.
+(defrule little8
+(declare (salience 4790))
+(id-root ?id little)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 later)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(kriyA-aXikaraNavAcI  ? ?id1)
+;(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id WodA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  little.clp 	little8   "  ?id "  WodA )" crlf))
+)
+
+;@@@ Added by Nandini (21-1-14)
+;My words has little effect on her.[via mail]
+;mere SabxoM kA usapara WodA praBAva hE.
+(defrule little9
+(declare (salience 5010))
+(id-root ?id little)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaNa ?id1 ?id)
+(id-root ?id1 effect)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id WodA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  little.clp    little9   "  ?id "  WodA )" crlf))
+)
 
 
 

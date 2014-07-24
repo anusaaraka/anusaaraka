@@ -35,10 +35,11 @@
 )
 
 ;----------------------- Default rules -------------------------
+;@@@ Added by jagriti(31.08.2013)
 ;Skin of some children is very sensitive.[word net]
 ;कुछ बच्चों की त्वचा बहुत संवेदनशील है.
 (defrule sensitive1
-(declare (salience 100))
+(declare (salience 0))
 (id-root ?id sensitive)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id adjective)
@@ -48,6 +49,7 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  sensitive.clp 	sensitive1   "  ?id " saMvexanaSIla)" crlf))
 )
+
 ;She is very sensitive to other people's feelings. [word net]
 ;वह अन्य लोगों की भावनाओं के प्रति बहुत संवेदनशील है.
 (defrule sensitive2
