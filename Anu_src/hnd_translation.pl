@@ -49,7 +49,8 @@ sub final_translation{
    if(defined $ARGV[2] && length $ARGV[2] > 0) {
    if(($ARGV[2] eq "REMOVE_TITLE") && ($ParaId == 1 && $SenId == 1))  { return; } }
 
-    local $facts_filename = $path_clips."/tmp/$ARGV[0]_tmp/".$ParaId.".".$SenId."/hindi_sentence_tmp.dat";
+#    local $facts_filename = $path_clips."/tmp/$ARGV[0]_tmp/".$ParaId.".".$SenId."/hindi_sentence_tmp.dat";
+    local $facts_filename = $path_clips."/tmp/$ARGV[0]_tmp/".$ParaId.".".$SenId."/hindi_sentence.dat";
 
     if (-e  $facts_filename) {
       if (-z $facts_filename){

@@ -33,7 +33,7 @@
 ;
 ;
 (defrule wed2
-(declare (salience 4800))
+(declare (salience 100))
 (id-root ?id wed)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -48,3 +48,24 @@
 ;Tom weddded Mary.
 ;
 ;
+
+;@@@ Added by Pramila(BU) on 04-03-2014
+;The priest wedded Gokul and Nidhi.    ;shiksharthi
+;पुरोहित ने गोकुल और निधि की शादी कराई
+(defrule wed3
+(declare (salience 4800))
+(id-root ?id wed)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?id3)
+(conjunction-components  ?id3 ?id1 ?id2)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id SAxI_karA))
+(assert (kriyA_id-subject_viBakwi ?id ne))
+(assert (kriyA_id-object_viBakwi ?id kA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  wed.clp 	wed3   "  ?id "  SAxI_karA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  wed.clp 	wed3   "  ?id " ne )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  wed.clp 	wed3   "  ?id " kA )" crlf))
+)

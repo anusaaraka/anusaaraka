@@ -27,8 +27,27 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " bowl.clp	bowl1  "  ?id "  " ?id1 "  girA_xe  )" crlf))
 )
 
-(defrule bowl2
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)21-Feb-2014
+;Soon we were bowling along the country roads.[oald]
+;जल्द ही हम देश की सड़को पर तेज रफ्तार में चल रहे थे
+(defrule bowl4
 (declare (salience 4800))
+(id-root ?id bowl)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-along_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id weja_raPwAra_meM_cala))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  bowl.clp 	bowl4   "  ?id "  weja_raPwAra_meM_chala )" crlf))
+)
+
+
+;************************DEFAULT RULES*********************************
+
+(defrule bowl2
+(declare (salience 0));salience reduced by Garima Singh
 (id-root ?id bowl)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -43,7 +62,7 @@
 ;I like mud colored ceramic bowls.
 ;
 (defrule bowl3
-(declare (salience 4700))
+(declare (salience 0));salience reduced by Garima Singh
 (id-root ?id bowl)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)

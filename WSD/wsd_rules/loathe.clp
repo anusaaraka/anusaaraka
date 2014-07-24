@@ -31,3 +31,20 @@
 ;I loathe to take that road to my house because of very unpleasant stench at a particular point.
 ;
 ;
+;
+;@@@--- Added by Nandini(19-5-14)
+;I loathe to take that road to my house because of very unpleasant stench at a particular point.[HinKoja]
+;mEM mere Gara ke usa raswe ke eka viSiRta sWAna se  AnevAlI awyaMwa  xurganXa ke kAraNa vahAz se jAnA  nApasanxa karawA hUz .
+(defrule loathe2
+(declare (salience 4950))
+(id-root ?id loathe)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-kriyArWa_kriyA  ?id ?id1)
+(id-root ?id1 take)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id nApasanxa_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  loathe.clp 	loathe2   "  ?id "  nApasanxa_kara )" crlf))
+)

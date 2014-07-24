@@ -40,6 +40,40 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  spare.clp 	spare2   "  ?id "  bacA )" crlf))
 )
 
+;@@@ Added by jagriti(30.12.2013)
+;Take some spare clothes in case you get wet.[oald]
+;भीग जाने की स्थिति के लिए कुछ अतिरिक्त कपड़े ले लो.
+(defrule spare3
+(declare (salience 4950))
+(id-root ?id spare)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(viSeRya-viSeRaNa ?id1 ?id)
+(id-root ?id1 clothes|room)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id awirikwa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  spare.clp 	spare3   "  ?id "  awirikwa )" crlf))
+)
+
+;@@@ Added by jagriti(30.12.2013)
+;He's studying music in his spare time.[oald]
+;वह अपने खाली समय में संगीत का अध्ययन कर रहा है.
+(defrule spare4
+(declare (salience 4955))
+(id-root ?id spare)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(viSeRya-viSeRaNa ?id1 ?id)
+(id-root ?id1 time)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id KAlI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  spare.clp 	spare4   "  ?id "  KAlI )" crlf))
+)
+
 ;"spare","V","1.bacAnA"
 ;We should always spare others when they are in danger.
 ;--"2.xe_xenA"
@@ -106,3 +140,63 @@
 ;
 ;
 ;
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_spare3
+(declare (salience 4950))
+(id-root ?id spare)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(subject-subject_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 clothes|room)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id awirikwa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " spare.clp   sub_samA_spare3   "   ?id " awirikwa )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_spare3
+(declare (salience 4950))
+(id-root ?id spare)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(object-object_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 clothes|room)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id awirikwa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " spare.clp   obj_samA_spare3   "   ?id " awirikwa )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_spare4
+(declare (salience 4955))
+(id-root ?id spare)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(subject-subject_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 time)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id KAlI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " spare.clp   sub_samA_spare4   "   ?id " KAlI )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_spare4
+(declare (salience 4955))
+(id-root ?id spare)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(object-object_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 time)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id KAlI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " spare.clp   obj_samA_spare4   "   ?id " KAlI )" crlf))
+)

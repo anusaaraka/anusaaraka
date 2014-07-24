@@ -65,6 +65,9 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  level.clp 	level4   "  ?id "  swara )" crlf))
 )
 
+;$$$ Modified by Nandini(15-4-14) ; Add eng & hin sentence
+;I had a gun levelled at my head.[olad]
+;
 (defrule level5
 (declare (salience 4500))
 (id-root ?id level)
@@ -76,6 +79,123 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  level.clp 	level5   "  ?id "  niSAnA_lagA )" crlf))
 )
+
+;@@@   --- Added by Nandini(15-4-14)
+;The level of the platform is very high.[hinKoja-dict]
+;pletaPoYrma kI sswaha bahuwa UzcI hE.
+(defrule level6
+(declare (salience 4850))
+(id-root ?id level)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-of_saMbanXI  ?id ?id1)
+(id-root ?id1 platform|bridge|road)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sawaha))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  level.clp 	level6   "  ?id "  sawaha )" crlf))
+)
+
+;@@@   --- Added by Nandini(15-4-14)
+;The pitch has been well levelled.
+;pica ko acCI waraha samawala banAyA gayA hE.
+(defrule level7
+(declare (salience 5050))
+(id-root ?id level)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject  ?id ?id1)
+(id-root ?id1 pitch|ground)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id samawala_banA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  level.clp 	level7   "  ?id "  samawala_banA )" crlf))
+)
+
+;@@@   --- Added by Nandini(15-4-14)
+;The floodwater nearly reached roof level.[olad]
+;bADaZ kA pAnI karIba Cawa kI UzcAI waka pahuzcA.
+(defrule level8
+(declare (salience 4850))
+(id-root ?id level)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object ?id1 ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id UzcAI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  level.clp 	level8   "  ?id "  UzcAI)" crlf))
+)
+
+;@@@   --- Added by Nandini(15-4-14)
+;The library is all on one level.[olad]
+;puswakAlaya eka hI sawaha para hE.
+(defrule level9
+(declare (salience 4850))
+(id-root ?id level)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-saMKyA_viSeRaNa  ?id ?id1)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sawaha))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  level.clp 	level9   "  ?id "  sawaha)" crlf))
+) 
+
+;@@@   --- Added by Nandini(15-4-14)
+;The tables are not on a level.
+(defrule level10
+(declare (salience 4850))
+(id-root ?id level)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-on_saMbanXI  ?id1 ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id  UzcAI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  level.clp 	level10   "  ?id "  UzcAI)" crlf))
+)
+
+;@@@   --- Added by Nandini(15-4-14)
+;Add a level tablespoon of flour.[oald]
+;Ate kA eka samawal badA cammaca milAo.
+(defrule level11
+(declare (salience 5080))
+(id-root ?id level)
+?mng <-(meaning_to_be_decided ?id)
+(samAsa_viSeRya-samAsa_viSeRaNa  ?id1 ?id)
+(kriyA-object  ?id2 ?id1)
+(id-root ?id1 tablespoon|teaspoon)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id samawala))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  level.clp 	level11   "  ?id "  samawala )" crlf))
+)
+
+;@@@   --- Added by Nandini(15-4-14)
+;The blast levelled several buildings in the area.
+;XamAke ne kRewra meM kaI imAraweM naRta kI WI.
+(defrule level12
+(declare (salience 4550))
+(id-root ?id level)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject ?id ?id1)
+(id-root ?id1 blast)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id naRta_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  level.clp 	level12   "  ?id "  naRta_kara )" crlf))
+)
+
 
 ;default_sense && category=verb	samAna swara kA banA	0
 ;"level","V","1.samAna swara kA banAnA"
@@ -92,7 +212,7 @@
 ;merI cAya meM eka samawala cammaca cInI kA dAlo.<--samawala <--wala <-- sawaha
 ;
 ;--"2.samAna swarIya"                                                        
-;Both the posters aren't quite level,the right one is little higher than the other
+;Both the posters aren't quite level, the right one is little higher than the other
 ;xonoM postaras samAna swara para nahIM hEM xAzyA vAlA xUsare kI apekRA kuCa Upara hE .<--samAna swara<-- sama<--samAna sawaha<-- sawaha
 ;--"3.samapaxIya/samAna swaravAlA"
 ;Regarding studies both the children are at the same level

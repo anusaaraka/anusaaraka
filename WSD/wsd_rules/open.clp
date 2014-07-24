@@ -40,6 +40,7 @@
 (id-root ?id open)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id opening )
+(not (kriyA-object ?id ?));$$$ This fact added by Roja(17-05-14). Suggested by Chaitanya Sir. Counter Ex: Excuse me for opening your letter by mistake.
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -51,7 +52,7 @@
 ))
 
 (defrule open3
-(declare (salience 4700))
+(declare (salience 4800))
 (id-root ?id open)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word ?id opening )
@@ -158,7 +159,7 @@
 
 
 ;Dr. Singh said, "We are open to a reasoned debate on all these issues". Added by Sukhada(23-8-11).
-(defrule open1o
+(defrule open10
 (declare (salience 4950))
 (id-root ?id open)
 ?mng <-(meaning_to_be_decided ?id)
@@ -170,3 +171,41 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  open.clp      open10  "  ?id "  KulA_huA )" crlf))
 )
 
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 2013
+;We are in September, the bazaar will remain open only for a few more days. [Gyannidhi]
+;अभी सितम्बर है, बाजार कुछ अधिक दिनों तक ही खुला रहेगा . 
+(defrule open11
+(declare (salience 4800))
+(id-root ?id open)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat ?id adjective)
+(kriyA-upasarga  ? ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id KulA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  open.clp      open11  "  ?id "  KulA )" crlf))
+)
+
+
+
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 2-1-2014
+;We can ask the gardeners to gather the buds just as they are about to open every evening. [Gyannidhi]
+;हम माली को कलियाँ इकठ्ठा करने के लिये कह सकते हैं जैसे ही वे प्रत्येक सन्ध्या खिलने वाली हो 
+(defrule open12
+(declare (salience 5500))
+(id-root ?id open)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(id-root ?id1 bud)
+(saMjFA-to_kqxanwa  ?adv ?id)
+(kriyA-samakAlika_kriyA  ?vrb ?adv)
+(kriyA-object  ?vrb ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Kila))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  open.clp      open12  "  ?id "  Kila )" crlf))
+)

@@ -41,6 +41,24 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pan.clp 	pan1   "  ?id "  wasale_meM_kuCa_Xo )" crlf))
 )
 
+;@@@ Added by Sonam Gupta MTech IT Banasthali 2013
+;His last novel was panned by the critics. [Cambridge]
+;उसके पिछले उपन्यास की आलोचकों द्वारा आलोचना की गई थी.
+(defrule pan2
+(declare (salience 5000))
+(id-root ?id pan)
+(id-word ?id panned)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-by_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id AlocanA_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pan.clp 	pan2   "  ?id "  AlocanA_kara )" crlf))
+)
+
+
 ;"pan","V","1.wasale meM kuCa XonA"
 ;The prospectors living in South Africa pan for gold && live their life.
 ;--"2."

@@ -14,14 +14,16 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  youth.clp  	youth0   "  ?id "  yuvaka )" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_number  " ?*wsd_dir* "  youth.clp      youth0   "  ?id "  s )"  crlf))
 )
-
-;
+;$$$ Modified by Anita-5.4.2014
+;The police are trying to find this man, and also trying to find out where the youth was on Thursday ;and with whom, before his death.
+;पुलिस उस आदमी को पाने का प्रयास कर रही हैं और यह भी पता करने का प्रयास कर रही है कि युवा गुरुवार को कहाँ था और  मृत्यु से पहले किसके साथ था ।
 (defrule youth1
 (declare (salience 4900))
 (id-root ?id youth)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 first)
-(viSeRya-viSeRaNa ?id1 ?id)
+;(id-word ?id1 first)-commented by Anita-5.4.2014
+;(viSeRya-viSeRaNa ?id1 ?id)-commented by Anita-5.4.2014
+(viSeRya-det_viSeRaNa  ?id ?) ;Added by Anita-5.4.2014
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)

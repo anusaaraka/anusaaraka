@@ -128,7 +128,8 @@
 ;The paper turned from red to green.
 
 
-
+;$$$ Modified 'wsd_root_mng' to 'affecting_id-affected_ids-wsd_group_root_mng' by Roja(27-04-14). Suggested by Chaitanya Sir.
+;He talked to him in order to secure the account.
 (defrule to7
 (declare (salience 4400))
 (id-root ?id to)
@@ -140,10 +141,10 @@
 (retract ?mng)
 (assert (make_verbal_noun ?rid))
 (assert (id-H_vib_mng ?rid ke_liye))
-(assert (id-wsd_root_mng ?id -))
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id =(- ?id 1) =(- ?id 2) -))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp   	to7   "  ?rid " )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  to.clp     to7  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng  " ?*wsd_dir* "  to.clp     to7  "  ?id "  "(- ?id 1)" "(- ?id 2)"   -)" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to7  "  ?rid " ke_liye )" crlf))
 )
 
@@ -281,12 +282,15 @@
 
 
 
-
+;$$$ Modified by Shirisha Manju (19-03-14) Suggested by Sukhada
+;added afford in the list
+;I can not afford to buy a house.
+;mEM Gara KarIxane kA Karca_nahIM_uTA sakawA hUz.
 (defrule to14
 (declare (salience 3700))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
-(id-root =(- ?id 1) opportunity)
+(id-root =(- ?id 1) opportunity|afford)
 (to-infinitive  ?id ?rid)
 (id-cat_coarse ?rid verb)
 =>
@@ -540,14 +544,20 @@
 )
 
 
-
+;$$$ Modified by Prachi Rathore : added quick in the list
+;The others were quick [to] protest.[gyan-nidhi]
+;वे इसका विरोध करने के लिए उतावले थे।
+;Added the word anxious in the list [28-12-13]
+;Added the word will in the list [30-12-13]
+;He was so anxious to go to heaven that he did not want to risk offending the elephant. [gyan-nidhi]
+;If you are willing to try I'll tell you what I want.[gyan-nidhi]
 ;Added by Meena(2.9.09)The salience in this rule should be higher than that in "to21";(assert (id-H_vib_mng ?rid 0)) , here H-vib_mng should be "0" and not "-"
 ;It is impossible to reach on time for the function.
 (defrule to22
 (declare (salience 3000))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
-(not(id-root ?rid fix|catch|word))
+(not(id-root ?rid fix|catch|word|quick|anxious|will))
 (id-cat_coarse =(- ?id 1) adjective) ;Added by Meena(6.4.11)
 (or(saMjFA-to_kqxanwa  =(- ?id 1)  ?rid)(kriyA-kriyArWa_kriyA  ?kri ?rid)(kriyA-kqxanwa_karma  ?kri ?rid))
     ;Sukhada may need to change this relation, here "impossible" is adjective and not saMjFA  ,then we will change the rule name also . Renamed saMjFA-kqxanwa as saMjFA-to_kqxanwa by Manju (05-02-11)
@@ -1544,7 +1554,11 @@
 )
 
 
-
+;$$$ Modified by Prachi Rathore;added tea in the list Ex: Uncle, all this applies to Green tea. 
+;Uncle, all this applies to Green tea.
+;चाचा, सब यह हरियाली चाय पर लागू करता है . 
+;Added apply in the list 10-1-14 
+;Pressure applied to the wound will stop the bleeding.
 ;Modified by Meena(28.4.10); added top|station|place in the list and commented (id-root ?id1 heat),so that the rule works with other verbs.
 ;Added by sheetal(14-01-10).
 (defrule to72
@@ -1553,7 +1567,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-to_saMbanXI  ?id1 ?id2)
 ;(id-root ?id1 heat)
-(or(id-root ?id1 tune|fall|write)(id-root ?id2 temperature|top|place|river|station))
+(or(id-root ?id1 tune|fall|write|apply)(id-root ?id2 temperature|top|place|river|station|tea))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id para))
@@ -1612,7 +1626,7 @@
 ;The dress may be nice but it is not to her liking.
 
 
-;Added by Prachi Rathore[4-12-13].
+;@@@ Added by Prachi Rathore[4-12-13].
 ;This question was finally answered about 50 to 60 years ago.
 ;इस प्रश्न का लगभग 50 से 60 वर्ष पहले अन्ततः उत्तर दिया गया था . 
 (defrule to74
@@ -1627,4 +1641,217 @@
 (assert (id-wsd_root_mng ?id se))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to74   "  ?id "  se )" crlf))
+)
+
+;@@@   ---Added by Prachi Rathore
+;Look, we've come to a clump of birch. 
+;देखो, हम सनौबर/भोज-वृक्षों  के पेड के  झुरमुट तक आ चुके हैं .  
+(defrule to75
+(declare (salience 2000))
+(id-root ?id to)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id preposition)
+(kriyA-to_saMbanXI  ? ?id1)
+(id-root ?id1 clump)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id waka))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to75   "  ?id "  waka )" crlf))
+)
+
+;@@@   Added by Prachi Rathore
+;So Sidey went [to] him.[gyan-nidhi]
+;इसलिए दुमछल उसके पास गयी।
+;So I have come [to] you.[gyan-nidhi]
+;मैं इसीलिए आपके पास आई हूँ।
+;I must take them[ to] the King, the farmer said [firmly].[GYANNIDHI]
+;यही उचित है कि हम उन्हें राजा के पास ले जायें।
+(defrule to76
+(declare (salience 2000))
+(id-root ?id to)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-to_saMbanXI ?id1 ?id2)
+(id-word ?id2  ?str&:(and (not (numberp ?str))(gdbm_lookup_p "human.gdbm" ?str)))
+(id-root ?id1 go|come|take)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id  ke_pAsa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  to.clp     to76  "  ?id "  ke_pAsa)" crlf)
+)
+)
+
+
+;@@@ Added by Prachi Rathore 3-1-14
+;She was alert to the slightest sound.[oald]
+;वह हल्की सी आवाज के लिये सतर्क थी . 
+(defrule to78
+(declare (salience 2900))
+(id-root ?id to)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id preposition)
+(viSeRya-to_saMbanXI  ?id1 ?)
+(id-root ?id1 alert)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ke_liye))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to78   "  ?id "  ke_liye )" crlf))
+)
+
+;@@@ Added by Prachi Rathore 3-1-14
+;Turning [to] her husband, she told him unquestioningly to imitate her actions.[gyan-nidhi]
+;उसके पति की ओर मुडते हुए, उसने उसको बिना कुछ पूछे उसकी क्रियाएँ नकल करने के लिये बताया .
+(defrule to79
+(declare (salience 2900))
+(id-root ?id to)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id preposition)
+(kriyA-to_saMbanXI  ?id1 ?id2)
+(id-root ?id1 turn)
+(id-root ?id2 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "human.gdbm" ?str)))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kI_ora))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to79   "  ?id "  ki_Ora )" crlf))
+)
+
+;@@@ Added by Prachi Rathore 6-1-14
+;In half an hour they had swept all the litter and were about to make a large heap outside the garden. 
+(defrule to80
+(declare (salience 2900))
+(id-root ?id to)
+?mng <-(meaning_to_be_decided ?id)
+(saMjFA-to_kqxanwa  ?id1 ?rid)
+(id-root ?id1 about)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id -))
+(assert (id-H_vib_mng ?rid ne))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to80   "  ?id "  - )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to80  "  ?rid "  ne )" crlf))
+)
+
+;@@@ Added by Prachi Rathore 6-1-14
+;We can't afford to go abroad this summer.[oald]
+;हम इस गर्मी विदेश में जाने का खर्च नहीं उठा सकते हैं . 
+;She had learnt to bury her feelings.[oald]
+;उसने उसकी भावनाओं को छिपाना सीख लिया था
+(defrule to81
+(declare (salience 2900))
+(id-root ?id to)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-kriyArWa_kriyA  ?id2 ?id1)
+(to-infinitive  ?id ?id1)
+(id-root ?id1 afford|bury|bubble)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id -))
+(assert (id-H_vib_mng ?id1 nA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to81   "  ?id "  - )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to81  "  ?id1 "  nA )" crlf)
+)
+)
+
+
+;@@@ Added by Prachi Rathore 6-1-14
+;He was charged with contempt of court and tried before a full bench of the High' Court on May 5, 1883 and sentenced to imprisonment.[gyannidhi]
+;उन पर अदालत का अपमान आशुतोष मुखर्जी करने का आरोप लगाया गया और 5 मई, 1883 को उच्च न्यायालय के पूर्ण पीठ द्वारा मामले पर विचार किए जाने के बाद उन्हें कैद की सज़ा दी गई।
+(defrule to82
+(declare (salience 2900))
+(id-root ?id to)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-to_saMbanXI  ?id1 ?id2)
+(id-root ?id2 imprisonment)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to82   "  ?id "  kI )" crlf)
+)
+)
+
+
+;@@@ Added by Prachi Rathore 10-1-14
+;He was charged with contempt of court and tried before a full bench of the High' Court on May 5, 1883 and sentenced to imprisonment.[gyannidhi]
+;उन पर अदालत का अपमान आशुतोष मुखर्जी करने का आरोप लगाया गया और 5 मई, 1883 को उच्च न्यायालय के पूर्ण पीठ द्वारा मामले पर विचार किए जाने के बाद उन्हें कैद की सज़ा दी गई।
+(defrule to83
+(declare (salience 2900))
+(id-root ?id to)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-to_saMbanXI  ?id1 ?)
+(kriyA-kriyA_viSeRaNa  ?id1 ?id2)
+(id-root ?id2 apply)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id para))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to83   "  ?id "  para )" crlf)
+)
+)
+
+;@@@ Added by Prachi Rathore[13-2-14]
+;The water in the pan was beginning to bubble.[oald]
+;भगोने मे पानी में बुलबुले उठना शुरु हो रहे है.
+(defrule to84
+(declare (salience 2900))
+(id-root ?id to)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-to_saMbanXI  ?id1 ?id2)
+(id-root ?id1 begin)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id -))
+(assert (make_verbal_noun ?id2))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  to.clp 	to84   "  ?id "  - )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp        to84   " ?id2 "  )" crlf)
+)
+)
+
+
+;@@@ Added by Prachi Rathore[17-2-14]
+;The professor decided to write a book. [verified_sentence]
+;प्राध्यापक ने पुस्तक लिखने का फैसला किया . 
+(defrule to85
+(declare (salience 2900))
+(id-root ?id to)
+?mng <-(meaning_to_be_decided ?id)
+(to-infinitive  ?id ?id1)
+(kriyA-kriyArWa_kriyA  ?id2  ?id1)
+(id-root ?id2 decide)
+(id-cat_coarse ?id1 verb)
+=>
+(retract ?mng)
+(assert (make_verbal_noun ?id1))
+(assert (id-H_vib_mng ?id1 kA))
+(assert (id-wsd_root_mng ?id -))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp    to85   "  ?id1 "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  to.clp     to85  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to85  "  ?id1 "  kA )" crlf)
+)
+)
+
+;@@@ Added by Prachi Rathore[19-2-14]
+;He went to Agra and saw the Tajmahal. [verified]
+;वह आगरा गया और ताजजमहल देखा . 
+(defrule to86
+(declare (salience 2900))
+(id-root ?id to)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-to_saMbanXI ?id1 ?id2)
+(not(id-word ?id2  ?str&:(and (not (numberp ?str))(gdbm_lookup_p "human.gdbm" ?str))))
+(id-cat_coarse ?id2 PropN)
+(id-root ?id1 go)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id  -))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  to.clp     to86  "  ?id " -)" crlf)
+)
 )

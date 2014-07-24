@@ -59,3 +59,20 @@
 ;--"5.miWyA_arWa_xenA"
 ;The papers twisted everything.
 ;
+
+;@@@ Added by Prachi Rathore[7-2-14]
+;I twisted off the lid and looked inside.[oald]
+;मैंने ढक्कन खोला और अन्दर देखा . 
+(defrule twist3
+(declare (salience 5000))
+(id-root ?id twist)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-upasarga  ?id ?id1)
+(id-root ?id1 off)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 Kola))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " twist.clp 	twist3  "  ?id "  " ?id1 "  Kola )" crlf))
+)

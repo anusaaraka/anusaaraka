@@ -73,3 +73,18 @@
 ;Votes have tilted in favour of the communists.
 ;
 ;
+
+;@@@ Added by Prachi Rathore[6-2-14]
+;The table is at a slight tilt.[oald]
+;मेज थोडे से झुकाव पर है .  
+(defrule tilt5
+(declare (salience 4600))
+(id-root ?id tilt)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id JukAva))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  tilt.clp 	tilt5   "  ?id "  JukAva )" crlf))
+)

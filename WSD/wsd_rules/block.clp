@@ -27,8 +27,67 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " block.clp	block1  "  ?id "  " ?id1 "  roka  )" crlf))
 )
 
+;@@@ Added by Garima Singh(M.Tech-C.S) 17-jan-2014
+;I think the kitchen drain is blocked.[cambridge]
+;मुझे लगता है कि रसोईघर नाली रुकी हुई है . 
+(defrule block4
+(declare (salience 5000))
+(id-root ?id block)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-subject  ?id ?sub)
+(id-root ?sub pipe|drain)
+(not(kriyA-object ?id ?obj))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ruka))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  block.clp 	block4   "  ?id "  ruka )" crlf))
+)
+
+;@@@ Added by Garima Singh(M.Tech-C.S) 17-jan-2014
+;An ugly new building blocked the view from the window.[oald]
+;एक कुरूप नयी इमारत ने खिडकी से दृष्य में बाधा डाली .  
+(defrule block5
+(declare (salience 5000))
+(id-root ?id block)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?id ?obj)
+(id-root ?obj view)
+(kriyA-subject  ?id ?sub)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bAXA_dAla))
+(assert (kriyA_id-object_viBakwi ?id meM))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  block.clp 	block5   "  ?id "  bAXA_dAla )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* " block.clp    block5   "  ?id " meM )" crlf)
+)
+)
+
+;@@@ Added by Garima Singh(M.Tech-C.S) 17-jan-2014
+;One door had been blocked up.[oald]
+;My nose is blocked up.[oald]
+(defrule block6
+(declare (salience 1000))
+(id-root ?id block)
+?mng <-(meaning_to_be_decided ?id)
+(or
+(kriyA-object  ?id ?id1)
+(kriyA-subject  ?id ?id1)
+)
+(id-root ?id1 way|path)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id roka))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  block.clp 	block6   "  ?id "  roka )" crlf))
+)
+
+
+;***************************DEFAULT RULES****************************************
+
 (defrule block2
-(declare (salience 4800))
+(declare (salience 0))
 (id-root ?id block)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -39,16 +98,19 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  block.clp 	block2   "  ?id "  KaNda )" crlf))
 )
 
+;$$$ Modified by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 17-jan-2014
+;After today's heavy snow, many roads are still blocked.[oald]
+;आज की भारी बरफ के बाद, बहुत सारी सडकें अभी भी बन्द हैं . 
 (defrule block3
-(declare (salience 4700))
+(declare (salience 0))
 (id-root ?id block)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id roka))
+(assert (id-wsd_root_mng ?id banxa));changed the meaning from roka to banxa by Garima
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  block.clp 	block3   "  ?id "  roka )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  block.clp 	block3   "  ?id "  banxa )" crlf))
 )
 
 ;"block","VT","1.rokanA/banxa_karanA"

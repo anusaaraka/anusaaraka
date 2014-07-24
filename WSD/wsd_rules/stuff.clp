@@ -10,7 +10,8 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  stuff.clp 	stuff0   "  ?id "  sAmagrI )" crlf))
 )
-
+;$$$$$$
+;Modified by jagriti(11.12.2013)......default meaning modified from TUzsanA to BaranA
 (defrule stuff1
 (declare (salience 4900))
 (id-root ?id stuff)
@@ -18,9 +19,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id TUzsa))
+(assert (id-wsd_root_mng ?id Bara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  stuff.clp 	stuff1   "  ?id "  TUzsa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  stuff.clp 	stuff1   "  ?id "  Bara )" crlf))
 )
 
 ;"stuff","V","1.TUzsanA"

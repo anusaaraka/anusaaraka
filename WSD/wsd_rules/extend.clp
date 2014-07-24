@@ -38,13 +38,15 @@
 
 ;Added by Shirisha Manju Suggested by Chaitanya Sir (17-10-13)
 ;Rain is expected to extend to all parts of the country by this evening. [Cambridge Dic]
-;आज शाम तक, बारिश [के] देश के पूरे भाग में पहुंचने की आशा है.		
+;आज शाम तक, बारिश [के] देश के पूरे भाग में पहुंचने की आशा है.	
+;$$$ Modified by Pramila(BU) on 22-02-2014 [condition '(kriyA-kriyArWa_kriyA  ?id1 ?id)' added]
 (defrule extend2
 (declare (salience 5000))
 (id-root ?id extend)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb )
-(kriyA-subject  ?id ?sub)
+(kriyA-kriyArWa_kriyA  ?id1 ?id)
+(kriyA-subject  ?id1 ?sub)
 (id-root ?sub rain)
 =>
 (retract ?mng)
@@ -73,15 +75,14 @@
 ;Added by Shirisha Manju Suggested by Chaitanya Sir (17-10-13)
 ;The pub has recently extended its opening hours. [Cambridge Dic]
 ;पब ने हाल में ही अपने खुले रहने की अवधि_बढ़ा दी है. 
-;I need to extend my visa.	[Cambridge Dic]		 
-;मुझे अपने वीसा की अवधि बढ़वाना है .  
+;$$$ modified by Pramila(BU) on 22-02-2014 [condition '(id-root ?id1 visa|licence|stay)' removed]
 (defrule extend4
 (declare (salience 5000))
 (id-root ?id extend)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb )
 (kriyA-object ?id ?id1)
-(or (id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "time.gdbm" ?str)))(id-root ?id1 visa|licence|stay))
+(id-root ?id1 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "time.gdbm" ?str)))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id avaXi_baDZA))
@@ -92,6 +93,25 @@
 )
 )
 
+;@@@ Added by Pramila(Banasthali university) on 22-02-2014
+;I need to extend my visa.	[Cambridge Dic]		 
+;मुझे अपने वीसा की अवधि बढ़वानी है .  
+(defrule extend5
+(declare (salience 5000))
+(id-root ?id extend)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb )
+(kriyA-object ?id ?id1)
+(id-root ?id1 visa)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id avaXi_baDZavA))
+(assert (kriyA_id-object_viBakwi ?id kA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  extend.clp   extend5   "  ?id " avaXi_baDZavA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  extend.clp   extend5  "?id " kA )" crlf)
+)
+)
 ;Added by Shirisha Manju Suggested by Chaitanya Sir (17-10-13)
 ;I should like to extend my thanks to you for your kindness.
 ;आपकी मेहरबानी के लिए मैं आपको धन्यवाद देना चाहूँगा .		[Cambridge Dic]
@@ -100,7 +120,7 @@
 ;The bank has agreed to extend us money to us to buy our house.
 ;हमें घर खरीदने के लिए धन देने के लिए बैंक मान गया है .		[Cambridge Dic]
 ;The bank refused to extend credit to them.
-(defrule extend5
+(defrule extend6
 (declare (salience 5000))
 (id-root ?id extend)
 ?mng <-(meaning_to_be_decided ?id)
@@ -111,14 +131,14 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id xe))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  extend.clp   extend5   "  ?id "  xe )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  extend.clp   extend6   "  ?id "  xe )" crlf))
 )
 
 ;Added by Shirisha Manju Suggested by Chaitanya Sir (18-10-13)
 ;Parking restrictions do not extend to disabled people.  [Cambridge Dic]
 ;विकलांगो के लिए पार्किंग-प्रतिबंध लागू नहीं होते .
 ;The offer does not extend to employees' partners.       [OALD]
-(defrule extend6
+(defrule extend7
 (declare (salience 5000))
 (id-root ?id extend)
 ?mng <-(meaning_to_be_decided ?id)
@@ -129,13 +149,13 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id lAgU_ho))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  extend.clp   extend6   "  ?id "  lAgU_ho )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  extend.clp   extend7   "  ?id "  lAgU_ho )" crlf))
 )
 
 ;Added by Shirisha Manju Suggested by Chaitanya Sir (18-10-13)
 ;She feels that her job doesn't extend her enough.   [Cambridge Dic]
 ;उसे लगता है कि नौकरी में उसकी योग्यता का पूरा उपयोग नहीं किया जा रहा है.
-(defrule extend7
+(defrule extend8
 (declare (salience 5000))
 (id-root ?id extend)
 ?mng <-(meaning_to_be_decided ?id)
@@ -147,12 +167,12 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id yogyawA_kA_upayoga_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  extend.clp   extend7   "  ?id "  yogyawA_kA_upayoga_kara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  extend.clp   extend8   "  ?id "  yogyawA_kA_upayoga_kara )" crlf))
 )
 
 ;Added by Shirisha Manju Suggested by Chaitanya Sir (18-10-13)
 ;Jim didn't really have to extend himself in the exam. [OALD]
-(defrule extend8
+(defrule extend9
 (declare (salience 5000))
 (id-root ?id extend)
 ?mng <-(meaning_to_be_decided ?id)
@@ -163,14 +183,14 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id yogyawA_kA_upayoga_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  extend.clp   extend8   "  ?id "  yogyawA_kA_upayoga_kara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  extend.clp   extend9   "  ?id "  yogyawA_kA_upayoga_kara )" crlf))
 )
 
 ;Added by Shirisha Manju Suggested by Chaitanya Sir (22-10-13)
 ;The chairperson extended a warm welcome to the guest speaker. [Cambridge Dic]
 ;चेयरपर्सन ने गेस्ट स्पीकर का हार्दिक स्वागत किया .
 ;I'm sure you will join me in extending a very warm welcome to our visitors. [OALD]
-(defrule extend9
+(defrule extend10
 (declare (salience 5000))
 (id-root ?id extend)
 ?mng <-(meaning_to_be_decided ?id)
@@ -181,19 +201,51 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  extend.clp   extend9   "  ?id "  kara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  extend.clp   extend10   "  ?id "  kara )" crlf))
 )
-;--------------------------- Default ----------------------------------------------------------
+
+;@@@ Added by Pramila(Banasthali university) on 03-01-2014
+;So Gopal went to Uma's house and extended a personal invitation.      ;gyannidhi
+;इसलिए गोपाल ऊमा के घर पर गया और एक वैयक्तिक आमन्त्रण दिया. 
+(defrule extend11
+(declare (salience 5000))
+(id-root ?id extend)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb )
+(kriyA-object ?id ?obj)
+(id-root ?obj invitation)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  extend.clp   extend11   "  ?id "  xe )" crlf))
+)
+
+;@@@ Added by Pramila(Banasthali university) on 22-02-2014
 ;We are planning to extend our publishing of children's books. 
 ;हम बच्चों की किताबों के [अपने] प्रकाशन को बढाने की योजना बना रहें हैं . 	[Cambridge Dic]
 ;The government has produced a series of leaflets designed to extend public awareness of the dangers of AIDS.[Cambridge Dic]
 ;सरकार ने जनता में एड्स के खतरे के प्रति जागरूकता बढाने के लिए कई सूचनापत्र बनाएं.(निकाले)
 ;We have plans to extend our house. 	[Cambridge Dic]
 ;अपना मकान बढाने की हमारी योजना है.
+;There are plans to extend the no-smoking area.  [OALD]
+(defrule extend12
+(declare (salience 4900))
+(id-root ?id extend)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb )
+(or(kriyA-kriyArWa_kriyA  ?id1 ?id)(saMjFA-to_kqxanwa  ?id1 ?id))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id baDZAnA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  extend.clp 	extend12   "  ?id "  baDZAnA )" crlf))
+)
+;--------------------------- Default ----------------------------------------------------------
 ;He extended his hand as a greeting.	[Cambridge Dic]
 ;उसने अभिवादन करने के लिए अपना हाथ बढ़ाया .
 ;There are plans to extend the no-smoking area.  [OALD]
-(defrule extend10
+(defrule extend13
 (declare (salience 4000))
 (id-root ?id extend)
 ?mng <-(meaning_to_be_decided ?id)
@@ -202,7 +254,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id baDZA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  extend.clp 	extend10   "  ?id "  baDZA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  extend.clp 	extend13   "  ?id "  baDZA )" crlf))
 )
 
 ;default_sense && category=verb	PElA	0

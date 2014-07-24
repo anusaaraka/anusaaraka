@@ -173,16 +173,20 @@
 ;--"7.alamArI"
 ;I have a wooden press in my bed-room.
 ;
-(defrule press9
-(declare (salience 4100))
+;@@@ Added by Sonam Gupta MTech IT Banasthali 2013
+;The boys pressed themselves deeper into the shadows. [Gyannidhi]
+;लड़के और अंधेरे में खिसक गए।
+(defrule press10
+(declare (salience 4900))
 (id-root ?id press)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
+(kriyA-into_saMbanXI  ?id ?)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id xabA))
+(assert (id-wsd_root_mng ?id Kisaka_jA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  press.clp 	press9   "  ?id "  xabA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  press.clp 	press10   "  ?id " Kisaka_jA )" crlf))
 )
 
 ;"press","V","1.xabAnA"

@@ -38,6 +38,44 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  picture.clp 	picture1   "  ?id "  kalpanA_kara )" crlf))
 )
 
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 2103
+;I've got a much clearer picture of what's happening now. [Cambridge]
+;मेरे पास एक बहुत अधिक स्पष्ट मानस चित्र है अब क्या हो रहा है . 
+(defrule picture2
+(declare (salience 5500))
+(id-root ?id picture)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-viSeRaNa  ?id ?)
+(viSeRya-det_viSeRaNa  ?id ?)
+(kriyA-object  ? ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id mAnasa_ciwra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  picture.clp 	picture2   "  ?id "  mAnasa_ciwra )" crlf))
+)
+
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 2103
+;I've got a much clearer picture of what's happening now. [Cambridge]
+
+(defrule picture3
+(declare (salience 5500))
+(id-word ?id pictures)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(kriyA-to_saMbanXI  ? ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id calaciwra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  picture.clp 	picture3   "  ?id "  calaciwra )" crlf))
+)
+
+
+
 ;"picture","V","1.kalpanA_karanA"
 ;I tried to picture how our India will be in 21st century.
 ;--"2.ciwriwa_karanA/ciwra_xvArA_praxarSiwa_karanA"

@@ -13,7 +13,7 @@
 )
 
 (defrule date1
-(declare (salience 4900))
+(declare (salience 4000))
 (id-root ?id date)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -24,7 +24,57 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  date.clp 	date1   "  ?id "  wiWI )" crlf))
 )
 
+;@@@ Added by pramila(BU) on 05-12-2013
+;They are going out on a date.            ;sentence of this file
+;ve deta para bAhe jA rahe hEM.
 (defrule date2
+(declare (salience 4900))
+(id-root ?id date)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-on_saMbanXI  ?id1 ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id deta))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  date.clp 	date2   "  ?id "  deta )" crlf))
+)
+
+;@@@ Added by pramila(BU) on 05-12-2013
+;His date never stopped talking.            ;sentence of this file
+;usakA sAWI cupa hI nahIM ho rahA WA.
+(defrule date3
+(declare (salience 4900))
+(id-root ?id date)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-RaRTI_viSeRaNa  ?id ?id1)
+(id-root ?id1 his|her|my|our|your)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sAWI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  date.clp 	date3   "  ?id "  sAWI )" crlf))
+)
+;@@@ Added by pramila(BU) on 05-12-2013
+;The store sells fresh dates.         ;sentence of this file
+;yaha xukAna wAjZe KajUra becawI hE.
+(defrule date4
+(declare (salience 4900))
+(id-root ?id date)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?id1 ?id)
+(id-root ?id1 give|sell|purchase|take)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id KajUra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  date.clp 	date4   "  ?id "  KajUra )" crlf))
+)
+
+
+(defrule date5
 (declare (salience 4800))
 (id-root ?id date)
 ?mng <-(meaning_to_be_decided ?id)
@@ -33,7 +83,25 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id wiWi_dAla))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  date.clp 	date2   "  ?id "  wiWi_dAla )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  date.clp 	date5   "  ?id "  wiWi_dAla )" crlf))
+)
+
+;@@@ Added by Pramila(Banasthali University) on 17-01-2014
+;Six months before his actual date of retirement, he decided to retire as he felt that his state of health was such that he would not be 
+;fit to discharge his responsibilities to his satisfaction.           ;gyannidhi
+;अवकाश ग्रहण करने की वास्तविक तारीख से 6 महीने पहले ही उन्होंने अवकाश ले लेने का फैसला किया क्योंकि उनका विचार था कि अपने स्वास्थ्य के कारण अपनी ज़िम्मेदारियों को वे संतोषजनक ढंग
+;से निभाने में समर्थ नहीं होंगे।
+(defrule date6
+(declare (salience 5000))
+(id-root ?id date)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-of_saMbanXI  ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id wArIKa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  date.clp 	date6   "  ?id "  wArIKa )" crlf))
 )
 
 ;"date","VT","1.wiWi_dAlanA"

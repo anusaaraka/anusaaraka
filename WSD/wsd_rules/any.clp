@@ -95,7 +95,9 @@
 )
 
 
-
+;$$$ Modified by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)23-jan-2014 -- added light 
+;How do we 'see' a black hole if it can not emit any light?
+;कैसे हम एक कृष्ण विवर 'देखते हैं' यदि यह कोइ  प्रकाश का  उत्सर्जन नहीं कर सकता है?
 ;Modified by Meena(3.5.11)
 ;The book does not make any mention of his love affair.
 ;Added by Meena(21.10.09)
@@ -108,17 +110,16 @@
 (id-word ?id1 ?wrd)
 =>
 (retract ?mng)
-(if (or(eq ?wrd mention)(eq ?wrd questions)) then
+(if (or(eq ?wrd mention)(eq ?wrd questions)(eq ?wrd light)) then
         (assert (id-wsd_root_mng ?id koI))
-else
-(assert (id-wsd_root_mng ?id kisI))
-)
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  any.clp       any7   "  ?id "  kisI )" crlf)
-(if (or(eq ?wrd mention)(eq ?wrd questions)) then
-        (assert (id-wsd_root_mng ?id koI))
+	(if ?*debug_flag* then
         (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  any.clp      any7   "  ?id "  koI )" crlf))
+else
+	(assert (id-wsd_root_mng ?id kisI))
+	(if ?*debug_flag* then
+	(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  any.clp       any7   "  ?id "  kisI )" crlf))
 ))
+;note: this rule needs to be modified as the condition "(viSeRya-det_viSeRaNa  ?id1 ?id)" is not sufficient.
 
 
 ;Salience reduced in "any8" by Meena(21.10.09) as it is a very general rule. 
@@ -163,6 +164,23 @@ else
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  any.clp 	any10   "  ?id "  kuCa )" crlf))
 )
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)30-jan-2014
+;I doubt whether there is any educated man in Bengal, who is not grateful to him.
+;मुझे संदेह है कि सारे बंगाल में शायद ही कोई ऐसा शिक्षित व्यक्ति होगा, जो उनके प्रति कृतज्ञ न हो।
+(defrule any11
+(declare (salience 5000))
+(id-root ?id any)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-det_viSeRaNa  ?id1 ?id)
+(kriyA-aBihiwa  ?kri ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id koI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  any.clp 	any11   "  ?id "  koI )" crlf))
+)
+
 
 ;"any","Pron","1.kuCa/kiMciwa"
 ;Is there any water in the jug?

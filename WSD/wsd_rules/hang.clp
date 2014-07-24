@@ -302,3 +302,20 @@
 ;aMgrejoM ne Bagawa siMha ko PAzsI"para"hang"kara xiyA WA.
 ;
 ;
+
+;@@@ Added by Prachi Rathore[4-2-14]
+;The possibility of a court case is still hanging over her.[oald]
+;अदालती मामला होने की सम्भावना  अभी भी उसके उपर लटक रही है . 
+(defrule hang20
+(declare (salience 3200))
+(id-root ?id hang)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 over)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 upara_lataka))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " hang.clp	hang20  "  ?id "  " ?id1 "  upara_lataka  )" crlf))
+)

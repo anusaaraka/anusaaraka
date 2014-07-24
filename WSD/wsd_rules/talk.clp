@@ -70,3 +70,19 @@
 ;--"2.bola_sakanA"
 ;Children learn to talk faster.
 ;
+
+;@@@ Added by Prachi Rathore[19-2-14]
+;Peace talks were held to try to heal the growing rift between the two sides.[cambridge]
+;शांति वार्ता दोनों तरफ के बीच बढती हुई दरार मिटाने का प्रयास करने के लिये आयोजित की गयी थी . 
+(defrule talk3
+(declare (salience 4900))
+(id-word ?id talks)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(samAsa_viSeRya-samAsa_viSeRaNa  ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_word_mng ?id vArwA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng   " ?*wsd_dir* "  talk.clp 	talk3   "  ?id "  vArwA )" crlf))
+)

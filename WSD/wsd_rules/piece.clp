@@ -12,7 +12,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  piece.clp 	piece0   "  ?id "  tukadA )" crlf))
 )
 
-(defrule piece2
+(defrule piece1
 (declare (salience 5500))
 (id-root ?id piece)
 ?mng <-(meaning_to_be_decided ?id)
@@ -26,7 +26,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kalAkqwi));Modified 'kalAkquwi to kalAkqwi' by Roja as Suggested by Chaitanya Sir(20-07-12)
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  piece.clp    piece2   "  ?id "   kalAkqwi )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  piece.clp    piece1   "  ?id "   kalAkqwi )" crlf))
 )
 
 ;"piece","N","1.tukadA"
@@ -37,7 +37,7 @@
 ;Leonardo da vince's monalisa is his master piece.
 ;--"4.hissA"
 ;
-(defrule piece1
+(defrule piece2
 (declare (salience 4900))
 (id-root ?id piece)
 ?mng <-(meaning_to_be_decided ?id)
@@ -46,7 +46,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id joda))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  piece.clp 	piece1   "  ?id "  joda )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  piece.clp 	piece2   "  ?id "  joda )" crlf))
 )
 
 ;"piece","V","1.jodanA"
@@ -85,3 +85,60 @@
 ;     SawaraMja ke aneka moharoM meM se eka moharA  naga??
 ;
 ;sUwra : tukadZA^naga
+
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 3-1-2014
+;A useful piece of equipment.  [Cambridge]
+;उपकरण का एक उपयोगी पुर्जा . 
+(defrule piece3
+(declare (salience 5500))
+(id-root ?id piece)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(id-root ?id1 equipment|machine|machinery)
+(viSeRya-of_saMbanXI  ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id purjA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  piece.clp 	piece3   "  ?id "  purjA )" crlf))
+)
+
+
+
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 3-1-2014
+;There was an interesting piece on alternative medicine in the paper yesterday.   [Cambridge]
+;कल लेखपत्र में वैकल्पिक चिकित्सा पर रोचक लेख था . 
+(defrule piece4
+(declare (salience 5500))
+(id-root ?id piece)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(or(viSeRya-on_saMbanXI  ?id ?)(viSeRya-RaRTI_viSeRaNa  ?id ?))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id leKa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  piece.clp 	piece4   "  ?id "  leKa )" crlf))
+)
+
+
+
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 3-1-2014
+;She lives down the road a piece from here.  [OALD]
+;वह यहाँ से दूर सङक के नीचे की ओर रहती है . 
+(defrule piece5
+(declare (salience 5500))
+(id-root ?id piece)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(id-root ?id1 road)
+(viSeRya-viSeRaNa  ?id1 ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id xUra))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  piece.clp 	piece5   "  ?id "  xUra )" crlf))
+)

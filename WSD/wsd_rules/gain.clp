@@ -33,20 +33,41 @@
 ;--"2.lABa"
 ;His business is bringing him a lot of gains.
 ;
+
+;$$$ Modified 'prApwa_ho' to 'prApwa_kara' by Roja(07-05-14). Suggested by Chaitanya Sir.
+;I gained a lot of information in the two-day workshop.
+;mEMne xo xina kI kAryaSAlA meM bahuwa sUcanA prApwa kI. (Translation Suggested by Sukhada)
 (defrule gain2
 (declare (salience 4800))
 (id-root ?id gain)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
+(kriyA-object ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id prApwa_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  gain.clp 	gain2   "  ?id "  prApwa_kara )" crlf))
+)
+
+;@@@ Added by Roja (17-05-14). Suggested by Chaitanya Sir.
+;"gain","V","1.prApwa_honA"
+;There is nothing to be gained from delaying the decision. [OALD]
+;nirNaya ko vilambiwa karane se kuCa prApwa nahIM honA_hE/hogA
+;nirNaya meM vilamba karane se kuCa prApwa nahIM honA_hE/hogA
+(defrule gain3
+(declare (salience 4800))
+(id-root ?id gain)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(not (kriyA-object ?id ?))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id prApwa_ho))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  gain.clp 	gain2   "  ?id "  prApwa_ho )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  gain.clp     gain3   "  ?id "  prApwa_ho )" crlf))
 )
 
-;"gain","V","1.prApwa_honA"
-;I gained a lot of information in the two-day workshop.
 ;--"2.jarUrawa_se_aXika_milanA"
 ;His business gained him profit.
 ;--"3.pahuMcanA"

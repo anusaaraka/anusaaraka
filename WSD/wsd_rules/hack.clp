@@ -48,3 +48,38 @@
 ;Environment is getting spoiled through hacking of trees .
 ;vqkRoM ko kAtane se paryAvaraNa KarAba ho rahA hE .
 ;
+
+;Added by Prachi Rathore[25-11-13]
+;He hacked into the bank's computer.[oald]
+;उसने बैंक का सङ्गणक हैक किया . 
+(defrule hack3
+(declare (salience 5000))
+(id-root ?id hack)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+;(kriyA-into_saMbanXI  ?id ?)
+(id-root =(+ ?id 1) into)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id (+ ?id 1) hEka_kara))
+(assert (kriyA_id-object_viBakwi ?id ko))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " hack.clp	 hack3  "  ?id "  " (+ ?id 1) "  hEka_kara )" crlf)))
+
+
+;Added by Prachi Rathore[25-11-13]
+;They had hacked secret data.[oald]
+;वे राज रखने वाले डेटा हैक कर चुके थे . 
+(defrule hack4
+(declare (salience 5000))
+(id-root ?id hack)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?id1)
+(id-root ?id1 computer|datum|website)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id hEka_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  hack.clp 	hack4   "  ?id "  hEka_kara )" crlf))
+)

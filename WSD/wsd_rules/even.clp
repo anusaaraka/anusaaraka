@@ -1,4 +1,6 @@
-
+;DOUBT: Can 'even' be a verb?
+;Searched the word 'evened' in the COCA and found 152 records.
+;Ex: Her breathing evened out and slowed.  [COCA CORPUS]
 (defrule even0
 (declare (salience 5000))
 (id-root ?id even)
@@ -88,6 +90,7 @@
 ;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  even.clp 	even5   "  ?id "  wo_BI )" crlf))
 )
 
+;Counter Ex: Even when we are sleeping. (waba_BI) Needs correction.
 (defrule even6
 (declare (salience 4200))
 (id-root ?id even)
@@ -157,6 +160,62 @@
 (assert (id-wsd_root_mng ?id yahAz_waka_ki))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  even.clp      even10   "  ?id "  yahAz_waka_ki )" crlf))
+)
+
+;@@@ Added by Pramila(Banasthali university) on 01-04-2014
+;Even the work of banks and offices were affected.  ;new-dev corpus
+;यहां तक कि बैंकों तथा दफ्तरों के कामकाज प्रभावित रहे।
+;बैंकों और दफ्तरों के कामकाज भी प्रभावित हुए थे . (Note: meaning can be simply 'भी' )
+;However the above is really the translation of "The work of banks and offices were also affected." So there is difference in flavour.
+;Even animals like to live in discipline.
+;yahAz waka ki paSu BI anuSAsana meM rahanA pasanxa karawe hEM.
+(defrule even11
+(declare (salience 4700))
+(id-root ?id even)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adverb)
+(viSeRya-viSeRaka  ?id1 ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id yahAz_waka_ki))
+(assert (id-attach_emphatic ?id1 BI)) ;added by Shirisha Manju 30-4-14 -- Suggested by Chaitanya Sir
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  even.clp 	even11   "  ?id "  yahAz_waka_ki )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-attach_emphatic " ?*wsd_dir* " even.clp   	even11	 "  ?id1 "  BI)" crlf)
+)
+
+;@@@ Added by Pramila(Banasthali university) on 01-04-2014
+;Her condition was even worse.   [old clp]
+;उसकी स्थिति और भी खराब थी . 
+(defrule even12
+(declare (salience 4800))
+(id-root ?id even)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adverb)
+(viSeRya-viSeRaka  ?id1 ?id)
+(subject-subject_samAnAXikaraNa  ?id2 ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id BI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  even.clp 	even12   "  ?id "  BI )" crlf))
+)
+
+;@@@ Added by Pramila(Banasthali university) on 01-04-2014
+;These nos.4,6,8,10,etc.are even numbers && can be divided by two.  [old clp]
+;ye nambaras 4,6,8,10,Axi sama nambaras hEM Ora xo se viBAjiwa kiye jA sakawe hEM
+(defrule even13
+(declare (salience 4800))
+(id-root ?id even)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaka  ?id1 ?id)
+(id-root ?id1 number)
+(id-cat_coarse ?id1 noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sama))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  even.clp 	even13   "  ?id "  sama )" crlf))
 )
 
 ;default_sense && category=verb	barAbara_kara	0

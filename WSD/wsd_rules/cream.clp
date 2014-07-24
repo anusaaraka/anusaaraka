@@ -46,3 +46,19 @@
 ;"cream","VT","1.malAI_uwAranA/sawa_nikAla_lenA"
 ;skim cream from the surface of milk
 ;
+
+;@@@ Added by Preeti(-1-14)
+;Apply the suntan cream liberally to exposed areas every three hours and after swimming. [By mail]
+;prawyeka wIna GaNte meM Ora wErane ke bAxa bAhya wvacA para KUba sArA sanatEna krIma lagAeM. 
+(defrule cream3
+(declare (salience 5050))
+(id-root ?id cream)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(samAsa_viSeRya-samAsa_viSeRaNa  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id krIma))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  cream.clp 	cream3   "  ?id "  krIma )" crlf))
+)

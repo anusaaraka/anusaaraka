@@ -1,25 +1,72 @@
- 09-06-14
+ 08-07-14
  ========
  1. WSD:
-	have.clp	who.clp
- 2. Added relation_table/ folder in Doc contains following files:
+	Modified : have.clp	president.clp	who.clp
+	Moved provisional wsd rules into WSD
+ 2. sd_category.clp
+        Modified : PropN_rule_from_NER and PropN_rule_from_NER1
+        Added : PropN_rule
+ 3. sd_lwg_rules.clp
+        Modified : check_for_imper1  (to add SBAR in the list)
+ 4. hindi_meaning.clp:
+	Added : decide_mng_symbols (when cat is symbol)
+ 5. run_modules_std.bat
+        Loaded  parserid_wordid_mapping.dat and word2.dat in sd_category module
+ 6. hnd_translation.pl:
+        Modified 'hindi_sentence_tmp.dat' to 'hindi_sentence.dat'	
+ 7. Added relation_table/ folder in Doc contains following files:
 	relation-table-for-WSD-wx.html  
 	style.css
- 3. Updated following lex files:
+ 8. Added following files related to phrasal alignment:
+	count.py
+	sort.sh
+	bin/Anusaaraka_alignment.sh 
+	bin/run_alignment.sh
+	replace-mapping-symbols_for_align.lex
+        map-eng-offset.py
+	get_mul_pat.sh
+	map-hindi-offset.py
+	map_eng_offset-to_wrdids.py
+	multifast-v1.0.0/src/extract_key_in_hindi_phrase.c
+	multifast-v1.0.0/src/get_word_count_single.c
+ 9. Updated following lex files:
 	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
 	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern
- 4. Updated following files in phrasal_alignment and multifast:
+10. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
 	Word-to-Word-dict.txt
 	en-hi-gdbm-dict.txt
 	run_alignment.sh
-	extract_key.c
- 5. Updated following dictionarie related files:
-	changes_in_databases
- 6. Updated following files shell files:
+	run_alignment-hi-en.sh
+	run_alignment-hi-en-hi.sh
+	multifast-v1.0.0/src/extract_key.c
+    	multifast-v1.0.0/src/Makefile
+	align-left-over-wrds.py
+	compile.sh
+	get_word_align.py
+	match_value_in_hnd.py
+	Anusaaraka_alignment.sh
+	bin/run_alignment.sh
+	get_phrase.py
+	create_eng_align_html_phrasal.clp
+	map-ids.py
+	map-wrd-to-wrd.py
+	mapping.py
+	print_shortest_path.py
+	replace_val_trn.py
+	phrasal_alignment.css
+	phrasal_alignment.js
+	run_H_gen_sen_eng.bat
+ 	multifast-v1.0.0/src/run.sh
+	Readme 
+ 9. Updated following dictionarie related files:
+	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix
+ 10. Updated following files shell files:
 	Anusaaraka_stanford_align_eng_ord.sh
- 7. Updated following file:
+	replace-abbrevations.sh
+	abbr.sh
+ 11. Updated following file:
 	sd_verified
- 8. Updated Log. 
+ 12. Updated Log. 
 
  05-06-14
  ========

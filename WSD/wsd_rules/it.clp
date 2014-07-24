@@ -59,6 +59,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  it.clp 	it3   "  ?id "  - )" crlf))
 )
 
+;$$$ Modified by Shirisha Manju 3-5-14  
 ;first_word && following_word=is && following_plus_two_word=the	-	0
 ;It is the third big city in China.
 ; It was a Sunday Evening.
@@ -69,7 +70,7 @@
 ;(id-word 1 ?id)
 (test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.
 (id-word =(+ ?id 1) was )
-(id-word =(+ ?id 2) a)
+(id-word =(+ ?id 2) a|an) ;added 'an' to the list by Shirisha Manju 3-5-14
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id -))
@@ -77,20 +78,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  it.clp 	it4   "  ?id "  - )" crlf))
 )
 
-(defrule it5
-(declare (salience 4500))
-(id-root ?id it)
-?mng <-(meaning_to_be_decided ?id)
-;(id-word 1 ?id)
-(test (eq ?id 1)) ;Commented above line and added test condition by Roja 04-11-13 automatically by a programme.
-(id-word =(+ ?id 1) was )
-(id-word =(+ ?id 2) an)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id -))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  it.clp 	it5   "  ?id "  - )" crlf))
-)
 
 ;first_word && following_word=was && following_plus_two_word=the	-	0
 ;It was the third big city in China.
@@ -132,12 +119,12 @@
 )
 
 
-
+;$$$ Modified by Shirisha Manju 3-5-14 --- added 'was' in the list
 (defrule it8
 (declare (salience 4200))
 (id-root ?id it)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) is )
+(id-word =(+ ?id 1) is|was )
 (id-cat_coarse =(+ ?id 2) noun)
 =>
 (retract ?mng)
@@ -146,11 +133,12 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  it.clp 	it8   "  ?id "  - )" crlf))
 )
 
+;$$$ Modified by Shirisha Manju 3-5-14
 (defrule it9
 (declare (salience 4100))
 (id-root ?id it)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) was )
+(id-word =(+ ?id 1) was|would );added would in the list by Shirisha Manju 3-5-14
 (id-cat_coarse =(+ ?id 2) adjective)
 =>
 (retract ?mng)
@@ -159,31 +147,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  it.clp 	it9   "  ?id "  - )" crlf))
 )
 
-(defrule it10
-(declare (salience 4000))
-(id-root ?id it)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) was )
-(id-cat_coarse =(+ ?id 2) noun)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id -))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  it.clp 	it10   "  ?id "  - )" crlf))
-)
-
-(defrule it11
-(declare (salience 3900))
-(id-root ?id it)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) would )
-(id-cat_coarse =(+ ?id 2) adjective)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id -))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  it.clp 	it11   "  ?id "  - )" crlf))
-)
 
 (defrule it12
 (declare (salience 3800))
@@ -212,7 +175,7 @@
 )
 
 
-
+;$$$ Modified by Shirisha Manju 3-5-14
 ;As it14 is a very general rule compared to it30,the salience reduced by Meena(14.10.09)
 (defrule it14
 ;(declare (salience 3600))
@@ -220,25 +183,12 @@
 (id-root ?id it)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse =(+ ?id 1) verb)
-(id-word =(+ ?id 2) to)
+(id-word =(+ ?id 2) to|for) ;added 'for' by Shirisha Manju 3-5-14 
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id -))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  it.clp 	it14   "  ?id "  - )" crlf))
-)
-
-(defrule it15
-(declare (salience 3500))
-(id-root ?id it)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse =(+ ?id 1) verb)
-(id-word =(+ ?id 2) for)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id -))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  it.clp 	it15   "  ?id "  - )" crlf))
 )
 
 (defrule it16
@@ -254,12 +204,15 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  it.clp 	it16   "  ?id "  - )" crlf))
 )
 
+;$$$ Modified by Shirisha Manju 3-5-14 Suggested by Chaitanya Sir -- used 'root' instead of 'word'
+;It seems that he will die.
 (defrule it17
 (declare (salience 3300))
 (id-root ?id it)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 seem)
 (kriyA-subject ?id1 ?id)
+(id-root ?id1 seem|appear|happen|chance|follow|look) ; added 'appear|happen|chance|follow|look' by Shirisha Manju 3-5-14
+(kriyA-vAkyakarma ?id1 ?) ; added by Shirisha Manju 3-5-14 Suggested by Sukhada
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id EsA))
@@ -267,57 +220,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  it.clp 	it17   "  ?id "  EsA )" crlf))
 )
 
-(defrule it18
-(declare (salience 3200))
-(id-root ?id it)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 appear)
-(kriyA-subject ?id1 ?id)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id EsA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  it.clp 	it18   "  ?id "  EsA )" crlf))
-)
-
-(defrule it19
-(declare (salience 3100))
-(id-root ?id it)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 happen)
-(kriyA-subject ?id1 ?id)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id EsA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  it.clp 	it19   "  ?id "  EsA )" crlf))
-)
-
-(defrule it20
-(declare (salience 3000))
-(id-root ?id it)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 chance)
-(kriyA-subject ?id1 ?id)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id EsA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  it.clp 	it20   "  ?id "  EsA )" crlf))
-)
-
-(defrule it21
-(declare (salience 2900))
-(id-root ?id it)
-?mng <-(meaning_to_be_decided ?id)
-(id-word ?id1 follow)
-(kriyA-subject ?id1 ?id)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id EsA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  it.clp 	it21   "  ?id "  EsA )" crlf))
-)
 
 (defrule it22
 (declare (salience 2800))
@@ -419,10 +321,6 @@
 )
 
 
-
-
-
-
 ;Added by Meena(30.01.10)
 ;it as vaha
 ;There was a problem , but we solved it . 
@@ -445,9 +343,6 @@
 )
 	
 
-
-
-
 ;Salience reduced by Meena(27.11.09)
 (defrule it27
 (declare (salience 0))
@@ -460,7 +355,6 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  it.clp 	it27   "  ?id "  yaha )" crlf))
 )
-
 
 
 ;Added by Meena(9.9.09)
@@ -510,7 +404,7 @@
 ;Added by Meena(13.10.09)
 ;It struggled to force its body through that little hole . 
 (defrule it30
-(declare (salience 4950))
+(declare (salience 3000));salience reduced by Shirisha Manju 3-5-14 counter ex: It seems that he will die.
 (id-root ?id it)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-subject =(+ ?id 1) ?id)   
@@ -540,3 +434,27 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  it.clp       it31   "  ?id "  - )" crlf))
 )
 ;It was so dark that I could not see anything . 
+
+;-------------- Removed rules ------------------
+;it10 removed by Shirisha Manju 3-5-14
+;	if +1 was and +2 noun then -     	Note : added 'was' in it8 rule
+;it5 removed by Shirisha Manju 3-5-14
+;	if +1 was and +2 an	then  -	 	Note : added 'was' in it4 rule
+;it11 removed by Shirisha Manju 3-5-14
+;	if +1 would and +2 adjective  then  -  	Note : added 'would' in it9 rule
+;it15 removed by Shirisha Manju 3-5-14
+;	if +1 verb and +2 for	then -		Note : added 'for' in it14 rule
+;it18 removed by Shirisha Manju 3-5-14
+;	if 'kriyA-subject' relation is present 
+;		if kriyA is 'appear' then  'EsA'	Note : added 'appear' in it17 rule
+;it19 removed by Shirisha Manju 3-5-14
+;       if 'kriyA-subject' relation is present 
+;               if kriyA is 'happen' then  'EsA'        Note : added 'happen' in it17 rule
+;it20 removed by Shirisha Manju 3-5-14
+;       if 'kriyA-subject' relation is present 
+;               if kriyA is 'chance' then  'EsA'        Note : added 'chance' in it17 rule
+;it21 removed by Shirisha Manju 3-5-14
+;       if 'kriyA-subject' relation is present 
+;               if kriyA is 'follow' then  'EsA'        Note : added 'follow' in it17 rule
+
+

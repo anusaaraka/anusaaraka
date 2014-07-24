@@ -1,6 +1,6 @@
 
 (defrule draft0
-(declare (salience 5000))
+(declare (salience 4000))
 (id-root ?id draft)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -16,16 +16,20 @@
 ;--"2.masOxA"
 ;The draft of the letter is ready.
 ;
+
+;$$$ modified by Pramila(BU)on 15-01-2014 [meaning changed from "masOxA_banA" to "prArUpa_wEyAra_kara" and kA viBakwi is added]
 (defrule draft1
-(declare (salience 4900))
+(declare (salience 4000))
 (id-root ?id draft)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id masOxA_banA))
+(assert (id-wsd_root_mng ?id prArUpa_wEyAra_kara))
+(assert (kriyA_id-object_viBakwi ?id kA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  draft.clp 	draft1   "  ?id "  masOxA_banA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  draft.clp 	draft1   "  ?id "  prArUpa_wEyAra_kara )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  draft.clp      draft1   "  ?id " kA )" crlf))
 )
 
 ;"draft","VT","1.masOxA_banAnA/liKanA"
@@ -106,3 +110,92 @@
 ;             xaswA, GAna Axi                 cuna_lenA
 ;
 ;sUwra : nikAla_lenA`[>huMdI]
+
+;@@@ Added by Pramila(BU) on 15-01-2014
+;I've made a rough draft of the letter.     ;shiksharthi
+;मैंने पत्र का रफ प्रारूप बना लिया है.
+(defrule draft2
+(declare (salience 4900))
+(id-root ?id draft)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-of_saMbanXI  ?id ?id1)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id prArUpa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  draft.clp 	draft2   "  ?id "  prArUpa )" crlf))
+)
+
+
+;@@@ Added by Pramila(BU) on 15-01-2014
+;He was drafted into the army at 18.       ;cald
+;वह 18 वर्ष की उम्र में सेना में भर्ती हो गया था.
+;He was drafted at 18.         ;cald
+;वह 18 वर्ष की उम्र में भर्ती हो गया था.
+(defrule draft3
+(declare (salience 5000))
+(id-root ?id draft)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(or(kriyA-into_saMbanXI  ?id ?id1)(kriyA-at_saMbanXI  ?id ?id1))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id BarwI_ho))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  draft.clp 	draft3   "  ?id "  BarwI_ho )" crlf))
+)
+
+;@@@ Added by Pramila(BU) on 15-01-2014
+;A draft of cold air entered the room through the open window.        ;oald
+;ठंडी हवा का एक झोंका खुली खिड़की से कमरे में आया.
+(defrule draft4
+(declare (salience 5000))
+(id-root ?id draft)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-of_saMbanXI  ?id ?id1)
+(id-root ?id1 air)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id JoMkA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  draft.clp 	draft4   "  ?id "  JoMkA )" crlf))
+)
+
+
+;@@@ Added by Pramila(BU) on 15-01-2014
+;The draft of soldiers were sent in different directions.     ;oald
+;सैनिको की टुकड़ी भिन्न-भिन्न दिशाओं में भेज दी गई है.
+(defrule draft5
+(declare (salience 5000))
+(id-root ?id draft)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-of_saMbanXI  ?id ?id1)
+(id-root ?id1 soldier)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id tukadI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  draft.clp 	draft5   "  ?id "  tukadZI )" crlf))
+)
+
+;@@@ Added by Pramila(BU) on 15-01-2014
+;He finished the whole glass of the juice in one draft.       [old clp]
+;usane jUsa kA pUrA glAsa eka GUzta meM Kawama kara xiyA.
+(defrule draft6
+(declare (salience 5000))
+(id-root ?id draft)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-in_saMbanXI  ?kri ?id)
+(viSeRya-saMKyA_viSeRaNa  ?id ?id1)
+(id-root ?id1 one|single)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id GUzta))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  draft.clp 	draft6   "  ?id "  GUzta )" crlf))
+)
+

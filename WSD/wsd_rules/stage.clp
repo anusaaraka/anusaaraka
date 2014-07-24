@@ -79,9 +79,24 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  stage.clp 	stage5   "  ?id "  avasWA )" crlf))
 )
-
+;@@@ Added by jagriti(4.3.2014)
+; At the present stage of our understanding we know of four fundamental forces in nature which are described in brief here.[gyanidhi]
+;अपनी समझ के वर्तमान चरण पर हम प्रकृति के चार मूल बलों को जानते हैं, जिनका यहाँ सङ्क्षेप में वर्णन किया गया है.
 (defrule stage6
 (declare (salience 4400))
+(id-root ?id stage)
+?mng <-(meaning_to_be_decided ?id)
+(id-root ?id1 present)
+(viSeRya-viSeRaNa ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id caraN))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  stage.clp 	stage6   "  ?id "  caraN )" crlf))
+)
+;....default Rule...
+(defrule stage7
+(declare (salience 100))
 (id-root ?id stage)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -89,10 +104,10 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id maMca))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  stage.clp 	stage6   "  ?id "  maMca )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  stage.clp 	stage7   "  ?id "  maMca )" crlf))
 )
 
-;default_sense && category=noun	raMgamaMca	0
+;default_sense && category=noun	raMgamaMca	
 ;"stage","N","1.raMgamaMca"
 ;He is arranging the stage for the play.
 ;

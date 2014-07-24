@@ -288,7 +288,7 @@
 ;
 
 
-
+;$$$ Modified mng from 'raKe_hue to raKa' and also modified word mng to root mng by Roja(27-04-14). Suggested by Chaitanya Sir for below example.
 ;Modified by Meena(12.4.11)
 ;Once they were caught in a trap laid for birds. 
 (defrule lay17
@@ -299,10 +299,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id raKe_hue))
-;(assert (id-wsd_root_mng ?id raKa))
+(assert (id-wsd_root_mng ?id raKa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lay.clp 	lay17   "  ?id "  raKe_hue )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lay.clp 	lay17   "  ?id "  raKa)" crlf))
 )
 
 
@@ -320,7 +319,43 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  lay.clp       lay18   "  ?id "  raKa )" crlf))
 )
 
+;@@@ Added by Nandini(16-12-13)
+;He lay face down.
+;उसने चेहरा नीचे कर लिया.
+(defrule lay19
+(declare (salience 5000))
+(id-root ?id lay)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 down)
+(kriyA-upasarga  ?id ?id1)
+(kriyA-object  ?id ?id2)
+(id-root ?id2 face)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 nIce_kara_le))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " lay.clp	lay19  "  ?id "  " ?id1 "  nIce_kara_le )" crlf))
+)
 
+;@@@ Added by Nandini(16-1-14)
+;The University laid down the syllabus for the examinations and named the textbooks.[via mail]
+;viSvavixyAlaya ne parIkRAoM ke liye pATyakrama nirXAriwa kiyA Ora pATya puswakoM kA nAmakaraNa kIyA.
+(defrule lay20
+(declare (salience 4700))
+(id-root ?id lay)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 down)
+(kriyA-upasarga ?id ?id1)
+(kriyA-object ?id ?id2)
+(id-root ?id2 syllabus)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 nirXAriwa_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " lay.clp	lay20  "  ?id "  " ?id1 "  nirXAriwa_kara  )" crlf))
+)
 
 
 

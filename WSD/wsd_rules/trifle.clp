@@ -101,3 +101,41 @@
 ;Her mother made a trifle pudding for the breakfast.
 ;
 ;
+
+
+;@@@ Added by Prachi Rathore[1-4-14]
+;He trifled away all his efforts.[shiksharthi-kosh]
+;उसने उसके सब प्रयास व्यर्थ कर दिए .  
+(defrule trifle7
+(declare (salience 4600))
+(id-root ?id trifle)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 away)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 vyarWa_kara_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " trifle.clp	trifle7  "  ?id "  " ?id1 "  vyarWa_kara_xe )" crlf))
+)
+
+
+;@@@ Added by Prachi Rathore[1-4-14]
+;He trifles away his precious time. [shiksharthi-kosh]
+;वह उसका मूल्यवान समय व्यर्थ गँवा देता है . 
+(defrule trifle8
+(declare (salience 4600))
+(id-root ?id trifle)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 away)
+(kriyA-upasarga ?id ?id1)
+(id-cat_coarse ?id verb)
+(kriyA-object  ?id ?id2)
+(id-root ?id2 time)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 vyarWa_gazvA_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " trifle.clp	trifle8  "  ?id "  " ?id1 "  vyarWa_gazvA_xe )" crlf))
+)

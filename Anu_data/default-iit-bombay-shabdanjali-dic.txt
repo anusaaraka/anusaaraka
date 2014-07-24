@@ -34823,7 +34823,7 @@ guerilla_UNDEFINED	gurillA
 guerillas_UNDEFINED	gurillA
 guerrilla_noun	gurillA/CApAmAra
 guerrillas_UNDEFINED	gurillA
-guess_noun	rAya/anumAna
+guess_noun	anumAna/rAya
 guess_verb	anxAja_lagA/mAna_le/jAna_le/anxAjA_lagA/anumAna_lagA
 guessed_UNDEFINED	anxAja_lagAnA
 guesses_UNDEFINED	anxAja_lagAnA
@@ -57393,7 +57393,7 @@ perseveres_UNDEFINED	niranwara_prayawna_karanA
 persevering_adjective	aXyavasAyI/xqDa
 persian-carpet_noun	PArasI_catAI
 persian_UNDEFINED	PArasI_BARA_yA_PArasI
-persian_adjective	PArasI_BARA_yA_PArasI{nivAsI}
+persian_adjective	PArasI/PArasI_BARA/{nivAsI}
 persian_noun	PArasI_BARA
 persians_noun	PArasI
 persimmon_noun	wenxU_Pala
@@ -84758,7 +84758,7 @@ unclaimed_adjective	jisakA_koI_xAvexAra_na_ho/binA_xAve_kA
 unclasp_verb	Kola
 unclassifiable_adjective	avargIkaraNIya
 unclassified_adjective	avargIkqwa/upalabXa/aSreNika
-uncle_noun	cAcA/mOsA/mAmA/PUPA
+uncle_noun	cAcA/mOsA/mAmA/PUPA/wAu
 unclean_adjective	mElA/ganxA/asvacCa/apaviwra/apAvana
 uncleaner_UNDEFINED	apAvana
 uncleanest_UNDEFINED	apAvana
@@ -86090,7 +86090,7 @@ universalities_UNDEFINED	sarvavyApakawA
 universality_noun	sarvavyApakawA/sArvaBOmikawA
 universalize_verb	sarvavyApI_banA
 universally_adverb	sarvawra/saBI_ke_xvArA
-universe_noun	sqRti/viSva/saMsqwi/saMsAra/sampUrNa_sqRiti/samaswa_vicArAXIna_vaswu/mAnavajAwi/jagawa/brahmANda/brahamANda
+universe_noun	brahmANda/sqRti/viSva/saMsqwi/saMsAra/sampUrNa_sqRiti/samaswa_vicArAXIna_vaswu/mAnavajAwi/jagawa
 universes_UNDEFINED	jagawa
 universities_UNDEFINED	viSvavixyAlaya
 university_noun	viSvavixyAlaya/yUnivarsitI_vitsa/viSvaviXAlaya/kisI_viSvavixyAlaya_kA_xala

@@ -37,6 +37,12 @@
 )
 
 ; He has just gone home
+
+;$$$        --- Modified by Prachi Rathore
+;Meaning changesd from kevala to -
+;She looks just like her mother.[oald]
+;वह उसकी माँ की तरह दिखती है . 
+
 (defrule just3
 (declare (salience 4700))
 (id-root ?id just)
@@ -44,9 +50,9 @@
 (id-word =(+ ?id 1) like)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id kevala))
+(assert (id-wsd_root_mng ?id -))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  just.clp 	just3   "  ?id "  kevala )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  just.clp 	just3   "  ?id "  - )" crlf))
 )
 
 (defrule just4
@@ -117,6 +123,58 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  just.clp 	just7   "  ?id "  TIka )" crlf))
 )
+
+;@@@   ---Added by Prachi Rathore[11-12-13]
+;The path was narrow, just wide enough for walking.[gayannidhi]
+;-रास्ता संकरा था, पर चलने के लिए काफी था।
+(defrule just8
+(declare (salience 4400))
+(id-root ?id just)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adverb)
+(kriyA_viSeRaNa-kriyA_viSeRaNa_viSeRaka  ? ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id para))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  just.clp 	just8   "  ?id "  para )" crlf))
+)
+
+;@@@ Added by Prachi Rathore 2-1-14
+;Here there was just an ordinary rural household.[bade ghar ki beti]
+;यहाँ बस एक साधारण ग्रामीण परिवार  था . 
+(defrule just9
+(declare (salience 4500))
+(id-root ?id just)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adverb)
+(kriyA-kriyA_viSeRaNa  ? ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id basa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  just.clp 	just9   "  ?id "  basa)" crlf))
+)
+
+
+;@@@ Added by Prachi Rathore[17-1-14]
+;The cottage is just steps from the beach. 
+;कुटी समुद्रतट से सिर्फ कुछ कदम दूर/पर है . 
+(defrule just10
+(declare (salience 5000))
+(id-root ?id just)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaka  ?id1 ?id)
+(id-root ?id1 step)
+(viSeRya-from_saMbanXI  ?id1 ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sirPa_kuCa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  just.clp      just10   "  ?id " sirPa_kuCa
+ )" crlf))
+)
+
 
 ;"just","Adv","1.TIka"
 ;This blouse is just my size.
