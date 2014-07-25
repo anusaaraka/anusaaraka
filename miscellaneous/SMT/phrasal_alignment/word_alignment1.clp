@@ -60,8 +60,8 @@
 ?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids ?id)
 (mot-cat-praW_id-largest_group ? NP|PP ? $?grp)
 (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?anu_mng1 - ?mid1 $? )
-(test (member$ ?aid $?grp))
-(test (member$ ?aid1 $?grp))
+(test (neq (member$ ?aid $?grp) "FALSE"))
+(test (neq (member$ ?aid1 $?grp) "FALSE"))
 (test (eq (+ ?id 1) ?mid1))
 (id-Apertium_output ?aid $?anu_mng)
 (test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?man_mng) 0)))
@@ -86,8 +86,8 @@
 (test (numberp ?id))
 (test (eq (+ ?id 1) ?mid))
 (mot-cat-praW_id-largest_group ? NP|PP ? $?grp)
-(test (member$ ?aid $?grp))
-(test (member$ ?aid1 $?grp))
+(test (neq (member$ ?aid $?grp) "FALSE"))
+(test (neq (member$ ?aid1 $?grp) "FALSE"))
 (id-Apertium_output ?aid $?anu_mng)
 (test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?man_mng) 0)))
 =>      
@@ -140,6 +140,7 @@
 (id-Apertium_output ?aid $?anu_mng)
 =>
         (retract ?f)
+        (if (eq (length $?anu_mng) 0) then (bind $?anu_mng (create$ -)))
         (assert (mng_has_been_aligned ?mid))
         (assert (mng_has_been_filled ?aid))
         (assert (phrasal_aligned_mng ?aid  ?mid))
@@ -147,6 +148,25 @@
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids))
 )
 
+(defrule align_left_over_wrds_using_phrasal_data1
+(declare (salience -200))
+?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids)
+(anu_id-anu_mng-man_mng         ?aid    ?  $? ?man_mng1 $?)
+(test (member$ ?man_mng1 $?man_mng))
+(not (mng_has_been_aligned ?mid))
+(not (mng_has_been_filled ?aid))
+(test (and (neq (length  $?r) 0) (neq (length  $?vib) 0)))
+(id-original_word ?aid ?)
+(id-Apertium_output ?aid $?anu_mng)
+=>
+        (retract ?f)
+        (if (eq (length $?anu_mng) 0) then (bind $?anu_mng (create$ -)))
+        (assert (mng_has_been_aligned ?mid))
+        (assert (mng_has_been_filled ?aid))
+        (assert (phrasal_aligned_mng ?aid  ?mid))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mids))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids))
+)
 ;-------------------------------------------------------------------------------------
 
 (defrule replace_id_with_word_for_nos

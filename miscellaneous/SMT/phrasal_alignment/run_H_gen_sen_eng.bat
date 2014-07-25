@@ -70,6 +70,7 @@
  (load-facts "database_mng.dat")
  (load-facts "revised_root.dat")
  (load-facts "id_Apertium_output.dat")
+ (load-facts "chunk_info.dat")
  (run)
  (save-facts "manual_word.dat" local manual_id-word)
  (save-facts "manual_lwg_en_hi.dat" local manual_id_en_hi-word-root-vib-grp_ids)
