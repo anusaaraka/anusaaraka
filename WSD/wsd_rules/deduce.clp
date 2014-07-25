@@ -36,15 +36,19 @@
 )
 
 
-;In 1834, German physicist Heinrich Friedrich Lenz (1804-1865) deduced a rule, known as Lenz's law which gives the polarity of the induced emf in a clear and concise fashion.
-;सन 1834 में जर्मन भौतिकविद हेनरिक फ्रेडरिच लेंज (1804 - 1865) ने एक नियम का निगमन किया जिसे लेंज का नियम के नाम से जाना जाता है ; यह नियम प्रेरित विद्युत वाहक बल की ध्रुवता  (दिशा) का स्पष्ट एवं संक्षिप्त रूप में वर्णन करता है.
-;sana 1834 meM jarmana BOwikavixa henarika Predarica leMja (1804 - 1865) ne eka niyama kA nigamana kiyA jise leMja kA niyama ke nAma se jAnA jAwA hE ; yaha niyama preriwa vixyuwa vAhaka bala kI XruvawA (xiSA) kA spaRta evaM saMkRipwa rUpa meM varNana karawA hE.
+;In 1834, German physicist Heinrich Friedrich Lenz (1804-1865) deduced a rule, known as Lenz's law which gives the polarity of the induced 
+;emf in a clear and concise fashion.
+;सन 1834 में जर्मन भौतिकविद हेनरिक फ्रेडरिच लेंज (1804 - 1865) ने एक नियम का निगमन किया जिसे लेंज का नियम के नाम से जाना जाता है ; यह नियम प्रेरित विद्युत वाहक बल की ध्रुवता
+; (दिशा) का स्पष्ट एवं संक्षिप्त रूप में वर्णन करता है.
+;sana 1834 meM jarmana BOwikavixa henarika Predarica leMja (1804 - 1865) ne eka niyama kA nigamana kiyA jise leMja kA niyama ke nAma se 
+;jAnA jAwA hE ; yaha niyama preriwa vixyuwa vAhaka bala kI XruvawA (xiSA) kA spaRta evaM saMkRipwa rUpa meM varNana karawA hE.
 
 (defrule deduce1
 (declare (salience 5000))
 (id-root ?id deduce)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-object  ?id ?id1)
+(id-cat_coarse ?id1 noun)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
@@ -72,7 +76,7 @@
 )
 
 
-;-------------------------------------------deafult rules------------------------------------
+;--------------------------------------------------------------deafult rules--------------------------------------------------------
 
 
 (defrule deduce3

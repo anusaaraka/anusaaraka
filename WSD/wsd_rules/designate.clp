@@ -12,7 +12,7 @@
 )
 
 (defrule designate1
-(declare (salience 4900))
+(declare (salience 4000))
 (id-root ?id designate)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -21,6 +21,26 @@
 (assert (id-wsd_root_mng ?id niyukwa_kara))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  designate.clp 	designate1   "  ?id "  niyukwa_kara )" crlf))
+)
+
+
+;@@@ Added by Pramila(Banasthali University) on 13-12-2013
+;The inside of the park was designated as 'No Smoking' area.          ;sentece of this file
+;pArka ke anxara kA kRewra 'XUmrapAna_niSixXa' kRewra nirxiRta kiyA gayA WA.
+(defrule designate2
+(declare (salience 4900))
+(id-root ?id designate)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-as_saMbanXI  ?id ?id1)
+(kriyA-karma  ?id ?id2)
+(id-root ?id2 ?str)
+(test (and (neq (numberp ?str) TRUE) (neq (gdbm_lookup_p "animate.gdbm" ?str) TRUE)))
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id nirxiRta_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  designate.clp 	designate2   "  ?id "  nirxiRta_kara )" crlf))
 )
 
 ;default_sense && category=verb	nirxiRta_kara	0

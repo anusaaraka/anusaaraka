@@ -1,3 +1,24 @@
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 27/03/2014
+;Representatives who had come to attend the meeting in the absence of the Health department and the CDPO were not allowed to sit in the meeting hall.[news]
+;स्वास्थ्य विभाग एवं सीडीपीओ की अनुपस्थिति में बैठक में शामिल होने आए प्रतिनिधियों को सभागार में बैठने नहीं दिया गया।
+(defrule attend2
+(declare (salience 4000))
+(id-root ?id attend)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?id ?id1)
+(id-word ?id1 meeting)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id SAmila_ho))
+(assert (kriyA_id-object_viBakwi ?id meM))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  attend.clp 	attend2  "  ?id "  SAmila_ho )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  attend.clp    attend2   "  ?id " meM )" crlf)
+)
+)
+
+
 
 (defrule attend0
 (declare (salience 5000))
@@ -17,7 +38,7 @@
 ;I have some urgent work to attend to.
 ;muJe eka jarUrI kAma para XyAna xenA hE
 (defrule attend1
-(declare (salience 4900))
+(declare (salience 0));salience reduced by Garima Singh
 (id-root ?id attend)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)

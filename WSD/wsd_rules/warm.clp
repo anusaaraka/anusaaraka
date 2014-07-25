@@ -3,7 +3,7 @@
 ;(declare (salience 5000)) Salience commented by Roja (11-12-13)
 (id-root ?id warm)
 ?mng <-(meaning_to_be_decided ?id)
-;(id-cat ?id adjective|adjective_comparative|adjective_superlative);Commented this fact and added below fact by Roja(11-12-13) 
+;(id-cat ?id adjective|adjective_comparative|adjective_superlative);Commented this fact and added below fact by Roja(11-12-13) Ex: Warm up the soup. 
 (id-cat_coarse ?id adjective)
 =>
 (retract ?mng)
@@ -50,3 +50,98 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " warm.clp  warm_up  "  ?id "  " ?id1 "  garama_kara)" crlf))
 )
 
+;@@@ Added by Pramila(BU) on 20-02-2014
+;The clothes are available in warm natural colours.   ;oald
+;वस्त्र सुखद प्राकृतिक रङ्गों में उपलब्ध हैं .
+(defrule warm3
+(declare (salience 5000))
+(id-root ?id warm)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(id-root ?id1 colour)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id suKaxa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  warm.clp 	warm3   "  ?id " suKaxa )" crlf))
+)
+
+
+;@@@ Added by Pramila(BU) on 26-02-2014
+;They gave us a warm welcome.   ;shiksharthi
+;उन्होंने हमारा हार्दिक स्वागत किया.
+(defrule warm4
+(declare (salience 5000))
+(id-root ?id warm)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(viSeRya-viSeRaNa  ?id1 ?id)
+(id-root ?id1 welcome)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id hArxika))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  warm.clp 	warm4   "  ?id " hArxika )" crlf))
+)
+
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_warm3
+(declare (salience 5000))
+(id-root ?id warm)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(subject-subject_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 colour)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id suKaxa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " warm.clp   sub_samA_warm3   "   ?id " suKaxa )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_warm3
+(declare (salience 5000))
+(id-root ?id warm)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(object-object_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 colour)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id suKaxa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " warm.clp   obj_samA_warm3   "   ?id " suKaxa )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule sub_samA_warm4
+(declare (salience 5000))
+(id-root ?id warm)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(subject-subject_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 welcome)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id hArxika))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " warm.clp   sub_samA_warm4   "   ?id " hArxika )" crlf))
+)
+
+;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
+(defrule obj_samA_warm4
+(declare (salience 5000))
+(id-root ?id warm)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id adjective)
+(object-object_samAnAXikaraNa ?id1 ?id)
+(id-root ?id1 welcome)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id hArxika))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng " ?*wsd_dir* " warm.clp   obj_samA_warm4   "   ?id " hArxika )" crlf))
+)

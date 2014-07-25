@@ -114,3 +114,24 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-root_id-TAM-vachan  " ?*wsd_dir* "  were_en_tam.clp   were_en_tam5  "  ?id " were_en p )" crlf))
 )
 
+;@@@ Added by Pramila(BU) on 11-02-2014
+;Research had received a great stimulus at his hands and teachers and students in the postgraduate departments were engaged in widening 
+;the bounds of knowledge.        ;gyannidhi
+;शोध को उनके हाथों बहुत प्रोत्साहन मिला और स्नातकोत्तर विभागों में अध्यापक और छात्र ज्ञान की सीमाओं के विस्तार में लगे हुए थे।।
+(defrule were_en_tam6
+(declare (salience 4850))
+(id-TAM ?id were_en)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-in_saMbanXI  ?id ?)
+(id-root ?id engage)
+=>
+(retract ?mng)
+(assert (id-E_tam-H_tam_mng ?id were_en yA_huA_WA))
+(assert (root_id-TAM-vachan ?id were_en p))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  were_en_tam.clp   were_en_tam6  "  ?id "  yA_huA_WA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-root_id-TAM-vachan  " ?*wsd_dir* "  were_en_tam.clp   were_en_tam6  "  ?id " were_en p )" crlf))
+(assert (id-tam_type ?id passive))
+)
+
+

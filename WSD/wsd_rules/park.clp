@@ -30,6 +30,10 @@
 ;"park","N","1.uxyAna"
 ;There is a big park in our colony.
 ;
+
+;$$$ Modified meaning by Sonam Gupta MTech IT Banasthali 31-12-2013 (from gAdZI_KadA_kara to KadA_kara)
+;Where did you park the car I can not remember.
+;आपने गाडी कहाँ खडी की मैं याद नहीं कर पा रहा हूँ . 
 (defrule park2
 (declare (salience 4800))
 (id-root ?id park)
@@ -37,7 +41,7 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id gAdZI_KadA_kara))
+(assert (id-wsd_root_mng ?id KadA_kara))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  park.clp 	park2   "  ?id "  gAdZI_KadA_kara )" crlf))
 )

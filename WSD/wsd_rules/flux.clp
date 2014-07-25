@@ -1,3 +1,4 @@
+
 ;##############################################################################
 ;#  Copyright (C) 2013-2014 Pramila (pramila3005 at gmail dot com)
 ;#
@@ -52,7 +53,7 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  flux.clp 	flux1   "  ?id "  piGala_jA )" crlf))
 )
-;--------------------------------------------Default rules----------------------------------------------------
+;-------------------------------------------------default rules-------------------------------------------------------------------------------
 
 ;Magnetic flux is a scalar quantity. 
 ;चुंबकीय प्रवाह एक अदिश राशि है.

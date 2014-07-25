@@ -18,7 +18,7 @@
 ;Added by Meena(17.02.10)
 ;Criminal charges will be brought against the driver . 
 (defrule charge0
-(declare (salience 5000))
+;(declare (salience 5000))
 (id-root ?id charge)
 ?mng <-(meaning_to_be_decided ?id)
 (id-root ?id1 ?)
@@ -31,14 +31,17 @@
 )
 
 
-
+;$$$  Modified by Preet(2-5-14)
 ;Salience reduced by Meena(17.02.10)
+;There is no charge for fixing the tire. [merriam-webster.com]
+;pahiyA lagAne ke liye  koI mUlya nahIM hE.
 (defrule charge1
-(declare (salience 0))
-;(declare (salience 5000))
+;(declare (salience 0))
+(declare (salience 5000));salience changed
 (id-root ?id charge)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
+(viSeRya-for_saMbanXI  ?id ?)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id mUlya))
@@ -48,17 +51,301 @@
 
 
 
+;$$$  Modified by Preet(2-5-14)
+;The government charged that he had not paid taxes for five years. [merriam-webster.com]
+;sarakAra ne Aropa lagAyA ki vaha pAzca varRoM se kara nahIM_xe rahA WA.
 (defrule charge2
-(declare (salience 4900))
+;(declare (salience 4900));salience changed
 (id-root ?id charge)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id xoRa_lagA))
+(assert (id-wsd_root_mng ?id Aropa_lagA));meaning changed
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  charge.clp 	charge2   "  ?id "  xoRa_lagA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  charge.clp 	charge2   "  ?id "  Aropa_lagA )" crlf))
 )
+
+;$$$  Modified by Preet(2-5-14)
+;@@@ Added by Preeti(1-3-14)
+;He was prosecuted on a charge of theft. [Rajpal]
+;usa para corI ke Aropa para aBiyoga calAyA gayA WA.
+(defrule charge3
+;(declare (salience 5000));salience changed
+(id-root ?id charge)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+;(viSeRya-of_saMbanXI  ?id ?id1);condition removed
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Aropa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  charge.clp 	charge3   "  ?id "  Aropa )" crlf))
+)
+
+;@@@ Added by Preeti(2-5-14)
+;I am leaving the school in your charge. [Oxford Advanced Learner's Dictionary]
+;mEM ApakI jimmexArI para vixyAlaya ko Codakara jA rahA hUz.
+(defrule charge4
+(declare (salience 4950))
+(id-root ?id charge)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-in_saMbanXI  ? ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id jimmexArI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  charge.clp 	charge4   "  ?id "  jimmexArI)" crlf))
+)
+;@@@ Added by Preeti(2-5-14)
+;He took charge of the farm after his father's death. [Oxford Advanced Learner's Dictionary]
+;usane apane piwA kI mqwyu ke bAxa Kewa kI jimmexArI lI.
+;He has charge of the building. [merriam-webster.com]
+;usa para imArawa kI jimmexArI hE.
+(defrule charge41
+(declare (salience 4950))
+(id-root ?id charge)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(kriyA-object  ?id1 ?id)
+(id-root ?id1 take|have)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id jimmexArI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  charge.clp 	charge41   "  ?id "  jimmexArI)" crlf))
+)
+
+
+;@@@ Added by Preeti(2-5-14)
+;He set off a charge that destroyed the mountain. [merriam-webster.com]
+;usane eka EsA bArUxa sulagAyA jisane parvawa naRta_kara xiyA.
+(defrule charge5
+(declare (salience 4900))
+(id-root ?id charge)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+;(viSeRya-det_viSeRaNa  ?id ?id1)
+(id-root ?id1 set)
+(kriyA-object  ?id1 ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bArUxa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  charge.clp 	charge5   "  ?id "  bArUxa)" crlf))
+)
+
+;@@@ Added by Preeti(2-5-14)
+;He led the charge down the field.[Oxford Advanced Learner's Dictionary] 
+;usane mExAna meM XAve ka newqwva kiyA.
+(defrule charge6
+(declare (salience 4900))
+(id-root ?id charge)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(kriyA-object  ?id1 ?id)
+(id-root ?id1 lead)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id XAvA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  charge.clp 	charge6   "  ?id "  XAvA)" crlf))
+)
+
+;@@@ Added by Preeti(2-5-14)
+;His charge was to obtain specific information. [Oxford Advanced Learner's Dictionary]
+;usakA kAma viSiRta sUcanA prApwa karanA WA.
+(defrule charge7
+(declare (salience 4900))
+(id-root ?id charge)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+(viSeRya-RaRTI_viSeRaNa  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kAma))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  charge.clp 	charge7   "  ?id "  kAma)" crlf))
+)
+
+;@@@ Added by Preeti(2-5-14)
+;'Are you paying cash?' 'No, it will be a charge. [Oxford Advanced Learner's Dictionary]
+;kyA  Apa rokada xegeM? 'nahIM, yaha Karca_meM liKanA hogA.
+;Would you like to put that on your charge? 
+;kyA Apa ise Apake Karca_meM liKanA pasanxa kareMge?
+(defrule charge8
+(declare (salience 4900))
+(id-root ?id charge)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+;(or(viSeRya-on_saMbanXI  ? ?id) (subject-subject_samAnAXikaraNa  ? ?id))
+(or(viSeRya-on_saMbanXI  ? ?id)(kriyA-vAkyakarma  ? ?id))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Karca_meM_liKanA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  charge.clp 	charge8   "  ?id "  Karca_meM_liKanA)" crlf))
+)
+
+;@@@ Added by Preeti(2-5-14)
+;The bank does not charge to stop a payment. [Oxford Advanced Learner's Dictionary]
+;bEMka BugawAna ko rokane ke liye kImawa_nahIM lewA hE.
+(defrule charge9
+(declare (salience 4950))
+(id-root ?id charge)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(or(kriyA-for_saMbanXI ?id ?)(kriyA-at_saMbanXI  ?id ?)(kriyA-kriyArWa_kriyA  ? ?id)(kriyA-kriyArWa_kriyA  ?id ?))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kImawa_le))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  charge.clp 	charge9   "  ?id "  kImawa_le )" crlf))
+)
+
+;@@@ Added by Preeti(2-5-14)
+;He was charged with murder. [Oxford Advanced Learner's Dictionary]
+;usa para KUna kA_Aropa lagAyA gayA WA.
+;Opposition MPs charged the minister with neglecting her duty. [Oxford Advanced Learner's Dictionary]
+;vipakRa empiyoM ne manwrI para apane karwwavya kI upekRA karanA kA_Aropa lagAyA.
+(defrule charge10
+(declare (salience 4950))
+(id-root ?id charge)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-with_saMbanXI  ?id ?)
+(id-root  ?id1  with)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 kA_Aropa_lagA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  charge.clp 	charge10   "  ?id "   " ?id1" kA_Aropa_lagA) )" crlf))
+)
+
+;@@@ Added by Preeti(2-5-14)
+;We charged at the enemy. [Oxford Advanced Learner's Dictionary]
+;hamane Sawru para AkramaNa kiyA.
+;The bull put its head down and charged. [Oxford Advanced Learner's Dictionary]
+;sAzda ne usakA sira xabAyA Ora AkramaNa kiyA.
+(defrule charge11
+(declare (salience 4950))
+(id-root ?id charge)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(id-root ?id1  ?str&:(and (not (numberp ?str))(gdbm_lookup_p "human.gdbm" ?str)))
+(kriyA-at_saMbanXI  ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id AkramaNa_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  charge.clp 	charge11   "  ?id "  AkramaNa_kara) )" crlf))
+)
+;@@@ Added by Preeti(2-5-14)
+;The children charged around the house. [Cambridge Learner’s Dictionary]
+;bacce Gara ke cAroM ora wejI_se_cala_rahe We.
+(defrule charge12
+(declare (salience 4950))
+(id-root ?id charge)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+;(id-cat_coarse =(+ ?id 1)  adverb|preposition)
+(id-root =(+ ?id 1) around|down)
+(id-root ?id1  ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))
+(kriyA-subject  ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id wejI_se_cala_rahe_We))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  charge.clp 	charge12   "  ?id "  wejI_se_cala_rahe_We) )" crlf))
+)
+
+;@@@ Added by Preeti(2-5-14)
+;He came charging into my room and demanded to know what was going on. [Oxford Advanced Learner's Dictionary]
+;vaha mere kamare ke aMxara wejI_se calakar  AyA Ora  kyA ho rahA WA jAnane kI mAzga kiyA kI.
+(defrule charge13
+(declare (salience 4950))
+(id-root ?id charge)
+(id-word ?id charging)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(id-cat_coarse =(+ ?id 1)  adverb|preposition)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id wejI_se_calakar))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  charge.clp 	charge13   "  ?id "  wejI_se_calakar) )" crlf))
+)
+
+;@@@ Added by Preeti(2-5-14)
+;The shaver can be charged up and used when travelling. [Oxford Advanced Learner's Dictionary]
+;yAwrA ke samya uswArA cArja kiyA jA sakawA hE Ora upayoga kiyA jA sakawA hE .
+(defrule charge14
+(declare (salience 4960))
+(id-root ?id charge)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(id-root  ?id1  up)
+(kriyA-upasarga  ?id ?id1)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 cArja_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  charge.clp 	charge14   "  ?id "   " ?id1" cArja_kara) )" crlf))
+)
+
+;@@@ Added by Preeti(2-5-14)
+;Before use, the battery must be charged. [Oxford Advanced Learner's Dictionary]
+;upayoga se pahale, bEtrI cArja karanI hogI.
+(defrule charge15
+(declare (salience 4950))
+(id-root ?id charge)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(or(kriyA-subject  ?id ?id1) (kriyA-object  ?id ?id1))
+(id-root ?id1 battery)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id cArja_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  charge.clp 	charge15   "  ?id "  cArja_kara) )" crlf))
+)
+
+;@@@ Added by Preeti(2-5-14)
+;The teacher charged the children to memorize the poem. [wordnetweb.princeton.edu]
+;SikRaka ne kaviwA yAxa karane ke liye baccoM ko AxeSa xiyA.
+(defrule charge16
+(declare (salience 4950))
+(id-root ?id charge)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-kriyArWa_kriyA  ?id ?id1)
+(id-root ?id1 memorize)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id AxeSa_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  charge.clp 	charge16   "  ?id "  AxeSa_xe) )" crlf))
+)
+
+(defrule charge17
+(declare (salience 4950))
+(id-root ?id charge)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-to_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Karca_meM_liKanA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  charge.clp 	charge17   "  ?id " Karca_meM_liKanA ) )" crlf))
+)
+
+;parser problem
+;The bull looked as if it was about to charge.
+;They are charging SYMBOL-POUND-SIGN 3 for the catalogue.
+;He only charged me half price.
+;He saw Jess charging at him with a pitchfork.
 
 ;"charge","V","1.xoRa_lagAnA"
 ;The suspect was charged with murdering his wife.

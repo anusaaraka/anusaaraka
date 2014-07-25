@@ -24,8 +24,8 @@
 (declare (salience 5000))
 (id-root ?id feature)
 ?mng <-(meaning_to_be_decided ?id)
+(id-word =(+ ?id 1) film)
 (samAsa_viSeRya-samAsa_viSeRaNa  ?id1 ?id)
-(id-word ?id1 film)
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
@@ -51,7 +51,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  feature.clp 	feature1   "  ?id "  viSeRa_rupa_se_praxarSiwa )" crlf))
 )
 
-;-------------------------------------------default rules---------------------------------------------
+;------------------------------------------------------default rules---------------------------------------------------------------------------
 ;I can't feature that happening.
 ;मै उस घटना को प्रधानता नही दे सकता.
 ;This restaurant features the most famous chefs in France.
@@ -69,6 +69,7 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  feature.clp 	feature2   "  ?id "  praXAnawA_xe )" crlf))
 )
+
 
 
 ;The town's main features are its beautiful mosque and ancient marketplace.
@@ -116,9 +117,15 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  feature.clp 	feature5   "  ?id "  lakRaNa )" crlf))
 )
 
+
+
+
 ;Have to be resolved
 
 ;Nose is an important feature of the face.
 ;His features are good.
 ;He has wonderful strong features.
 ;Her eyes are her best feature.
+
+
+

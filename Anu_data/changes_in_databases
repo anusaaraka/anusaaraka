@@ -530,6 +530,7 @@
  22.	sarasarA	KA/__v			(By Roja Suggested by Sukhada	19-12-13)
  23.	samamiwi	Apawwi/__n		(By Roja Suggested by Chaitanya Sir 28-12-13)
  24.	wArA		ladak/A__n		(By Roja Suggetsed by Sukhada	06-01-14)
+ 25.	bAzyA		kAl/A__adj		(By roja Suggested by Chaitanya Sir 01-07-14)
 
 Modified :
   1.	<e><p><l>we_hue</l>	as	<e><p><l>owe_hue</l>       for tam:adv_we_hue    (Suggested by Sriram 21-06-11)
@@ -572,6 +573,7 @@ Modified :
 		muJako, hamako, 
 	  4.  <e lm="keSa"><i>keS</i><par n="Gar/a__n"/></e>	 (Suggested by Chaitanya Sir 04-04-12)
 	  5.  <e lm="kamI"><i>kamI</i><par n="AjAxI/__n"/></e>	 (By Roja, Suggested by Chaitanya Sir 31-08-13)
+	  6.  <e lm="ha"><i>h</i><par n="Gar/a__n"/></e> 	 (by Roja, 	"		"     01-07-14)
 
 
  Changes in apertium-en-hi.en.metadix 
@@ -683,7 +685,16 @@ Modified :
 	chisel		accept__vblex		(     "	     "	  )
 	bargaining	east__n			(     "	     "    )
 	brie		house__n		(     "	     "	  )
-
+	stigmatise	liv/e__vblex		(     "	  27-06-14)
+	stigmatize	liv/e__vblex		(     "	     "	  )
+	kennel		quarrel__vblex		(     "	     "	  )
+	kennel		accept__vblex		(     "	     "	  )
+	carcass		access__n		(     "	  28-06-14)
+	room		accept__vblex		(     "   30-06-14)
+	ravel		house__n		(     "	     "	  )
+	resource	liv/e__vblex		(     "	     "	  )
+	disinvestment	house__n		(     "	     "	  )
+	recognise	liv/e__vblex		(     "	  01-07-14)
 
 
 
@@ -940,6 +951,12 @@ Removed:
 	106. X-rayed_UNDEFINED       eksa-kiraNa_se_Poto_nikAlanA	as	eksa-re_se_Poto_nikAlanA  (Suggested by Anita ji LTRC 24-03-14)
 	107. X-raying_UNDEFINED      eksa-kiraNa_se_Poto_nikAlanA	as	eksa-re_se_Poto_nikAlanA  (		"		"     )
 	108. X-rays_UNDEFINED        eksa-kiraNa_se_Poto_nikAlanA	as	eksa-re_se_Poto_nikAlanA  (		"		"     )
+	109. harden_verb	xrDa_ban	as	xqDa_banA	(Suggested by Chaitanya Sir 24-07-14	)
+	110.	"		saKwa_ban	as	saKwa_banA	(	"	"	"		)
+	111.	"		pakkA_ban	as	pakkA_banA	(	"	"	"		)
+	112.	"		kaTora_ban	as	kaTora_banA	(	"	"	"		)
+	113. have_verb		K		as	KA		(	"	"	"		)	
+	
 
     3. Added new entry:
        ---------------
@@ -1158,6 +1175,11 @@ Removed:
 	115. arthropod_noun		saMXipAxa_prANI			(Suggested by			    03-06-14)
 	116. wove_verb			eka_hI_kaWAsUwra_meM_graWiwa_kara(Suggested by 	Chaitanya Sir	    09-06-14)
 					Ex: Muslim jurisprudents then wove these percepts into a body of law.
+	117. all_determiner		saba/samaswa/saBI		(Suggested by Chaitanya Sir		24-07-14)
+					Ex:All the processes occurring in living beings including plants are mediated by fluids. 
+	118. general_adverb		Ama_wOra_para/sAmAnyawayA	(Suggested by 	"		"	"	)
+					Ex: The surface of liquid near the plane of contact, with another medium is in general curved. 
+
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1334,6 +1356,10 @@ Removed:
 	96. truth_noun			saca			(Suggested by Chaitanya Sir     30-04-14)  Ex: He always speaks the truth.
 	97. sweep_verb			prasarpa		(	"	"		03-06-14). 
 					Ex: The line that joins any planet to the sun sweeps equal areas in equal intervals of time.
+	98. all_adjective		samaswa			(Suggested by Chaitanya Sir	24-07-14)
+					Ex: All the processes occurring in living beings including plants are mediated by fluids. 
+	99. all_pronoun			samaswa			(	"		"	"	)
+	100. 
 
 
     5. Modifying first meaning from the list :
@@ -1629,6 +1655,22 @@ Removed:
 				Ex: Enrollment in English medium schools in India has gone up sharply in just two years from 4.3 percent of total enrollment in 2003 to 2004 to 6.3 percent in 2005 to 2006. 
 	134. environment_noun	pariveSa	as	paryAvaraNa/		(Suggested by Chaitanya Sir  03-06-14)
 				Ex: Environment means surroundings.
+	135. universe_noun	sqRti		as	brahmANda		(Suggested by Sukhada        18-06-14)
+				Ex: On this note we end our journey of the Universe.
+	136. guess_noun      	rAya		as	anumAna			(Suggested by Chaitanya Sir  19-06-14)
+				Ex: He hazarded a guess.
+	137. persian_adjective	PArasI_BARA_yA_PArasI{nivAsI}	as	PArasI/PArasI_BARA/{nivAsI}
+										(Suggested by ANita ji LTRC	01-07-14)
+				Ex: Persian rugs are characterized by their geometric designs and rich colours.
+	138. deer_noun		mqganayanI	as	hirana			(Suggested by Chaitanya Sir	24-07-14)
+				Ex: There were two deer near a roundabout, chewing on the grass.
+	139. horrific_adjective	romAFcakArI	as	ByAvaha			(	"	"		"	)
+				Ex: The long teeth of pigs were making them horrific.
+	140. raindrop_noun	varRA_kI_eka_bUnxa	as	varRA_kI_bUnxa	(	"	"		"	)
+				Ex: Anything thrown up falls down towards the earth, raindrops from the clouds etc.(note:sentence simplified)
+	141. 	"		varRA-binxu		as	varRA_bUnxa	(	"	"		"	)
+
+	
 	
 
     6. Removed meaning from existing list:
@@ -1664,7 +1706,12 @@ Removed:
 	27. civilisation_noun	saBya_samAja					(Suggested by 	Sukhada         26-11-13)
 	28. X-ray_noun		eksa-kiraNa					(Suggested by Anita ji LTRC	24-03-14)	
 	29. leg_noun		tAfga						(Suggested by   Sukhada         02-06-14)
+	30. all_pronoun		all						(Suggested by Chaitanya Sir	24-07-14)
+	31. deer_noun		mqganayanI					(	"	"		"	)
+	32. harden_verb		saKwa_bana					(	"	"		"	)
+	33. series_noun		SrqfKalA					(	"	"		"	)
 
+	
 
     7. Removed entry:
        --------------
@@ -1719,6 +1766,9 @@ Removed:
 	48. greatestest_UNDEFINED	mahAnawama			(	"	"	"	"	)
 	49. wove_UNDEFINED	eka_hI_kaWAsUwra_meM_graWiwa_karanA	(	"	"	"	09-06-14)
 	50. woven_UNDEFINED	eka_hI_kaWAsUwra_meM_graWiwa_karanA	(	"	"	"	"	)
+	51. persian_UNDEFINED	PArasI_BARA_yA_PArasI			(Suggested by Anita ji LTRC 	01-07-14)
+	52. raindrops_UNDEFINED	varRA_kI_eka_bUnxa			(Suggested by Chaitanya Sir	24-07-14)
+
 
 
     8. Modified category:
@@ -1798,8 +1848,16 @@ Removed:
 	Akhil_Bhartiya_Janwadi_Mahila_Samiti    aKila_BArawIya_janavAxI_mahilA_samiwi#aKila_BArawIya_janavAxI_mahilA_samiwi#noun#5#RM
 				to
 	Gandhi_Nagar    gAMXI_nagara#gAMXI_nagara#noun#2#RM
-	Mill_Road	mila_roda#mila_roda#PropN#2#RM			(Suggested by Anita ji LTRC 	10-05-14)
-			Ex: I live on Mill Road.
+	Mill_Road		mila_roda#mila_roda#PropN#2#RM					(Suggested by Anita ji LTRC 	10-05-14)
+				Ex: I live on Mill Road.
+	West_Indiana_Street     vesta_iNdiyanA_strIta#vesta_iNdiyanA_strIta#PropN#3#RM		(Suggested by Sukhada   18-06-14)
+				Ex: I live at 805 West Indiana Street.
+	Nobel_Prize     	nobala_puraskAra#nobala_puraskAra#PropN#2#RM			(		"	"	)
+				Ex: In 1922, Bohr was awarded Nobel Prize in Physics.
+	Democratic_National_Convention  prajAwAnwrika_rARtrajana_sammelana#PropN#3#RM		(		"	"	)
+				Ex: The Democratic National Convention will meet next week to announce their party's candidate for president.
+	Hawa_mahal      	havA_mahala#havA_mahala#PropN#2#RM				(		"	"	)
+				Ex:The Hawa mahal was built by the Maharaja Sawai Pratap Singh in 1799 AD and Lal Chand Usta was the architect.
 
     
  multi_word_expressions.txt
@@ -1887,6 +1945,8 @@ Removed:
 				Ex: The baby could arrive any time now.
 	coffee_drinks		koYPI_peya_yA_Sarabawa	as	koYPI_peya/Sarabawa(Suggested by Preeti ji LTRC 07-03-14)
 				Ex: People use espresso to make other coffee drinks.
+	in_advance		agrima	as	pahale_se	(Suggested by Soma Mam	24-07-14)
+				Ex: A paper scale may be put inside the bottle in advance to measure the separation of leaves. 
 
 		
     Added new entry:
@@ -2116,6 +2176,16 @@ Removed:
 				Ex: Chinks of light coming through the trees started to become like gun shots.
 	119. back_yard		piCavAdZA#piCavAdZA#2#RM				(Suggested by Preeti ji LTRC	"	)
 				Ex: They keep chickens in the back yard.
+	120. cigarette_smoking  XUmrapAna#XUmrapAna#noun#2#RM			(Suggested by Javaid Ahmad (workshop)   21-06-14)
+				Ex: Cigarette smoking is not good for health.
+	121. back_injury	pITa_kI_cota#pITa_kI_cota#noun#2#RM			(Suggested by Sukhada   	29-06-14)
+				Ex: Yovraj's back injury rendered him unfit.
+	122. disaster_victims	ApaxA_pIdiwa#ApaxA_pIdiwa#noun#2#RM			(	"	"		"	)
+				Ex: They rendered assistance to the disaster victims. 
+	123. boarding_life   	CAwrAvAsIya_jIvana#CAwrAvAsIya_jIvana#noun#2#RM		(Suggested by Sukhada		01-07-14)
+				Ex: Boarding life is enjoyable.
+	124. ply_board       	plAI_borda#plAI_borda#noun#2#RM				(	"	"		"	)
+				Ex: Use ply board for partitioning the room. 
 
 
     Added new meaning to the existing word:
@@ -2213,6 +2283,10 @@ Removed:
 											       hence the equation is dimensionally correct.
 	exponent_noun 		GAwAfka		(		"		    "	 ) Ex: The dimensions of a physical quantity are the 
 									       powers or exponents to which the base quantities 											      are raised to represent that quantity.
+	sensitivity_noun	sugrAhiwA	(Suggested by Chaitanya Sir	24-07-14) 
+			Ex: A convenient way for the manufacturer to increase the sensitivity is to increase the number of turns N. 
+	Added 'electrostatic_UNDEFINED' to 'calorimetry_UNDEFINED' extracted from phrase table(Suggested by Banasthali Students-2014 24-07-14)
+	
     Modifying first meaning:
     -----------------------
 	instant_noun	kRaNika	as	kRaNa	(Suggested by Prachi Banasthali  21-03-14) 
@@ -2379,6 +2453,27 @@ Removed:
 		Hambantota      haMbanatotA			Khedia  	KedZiyA
 		Sushil  	suSIla				Mahanta 	mahaMwa
 		Tata		tAtA				District	jilA
+	Nilgiri 	nIlagiri	(Suggested by Sukhada  18-06-14 )
+	Medicine        mEdisina	(	"	"	"	)
+	Tamilnadu       wamilanAdu	(	"	"	"	)
+	Tajmahal        wAjamahala	(	"	"	"	)
+	Sirdar  	siraxAra	(	"	"	"	)
+	Reading 	rIdiMga		(	"	"	"	)
+	Didcot  	didkoYt		(	"	"	"	)
+	Yovraj		yuvarAja	(	"	"	01-07-14)
+	Nicolas		nikolasa	(Suggested by Yashwini dhaka Banasthali	24-07-14)
+	Alaska		alAskA		(	"  by Prajna Jha	"	"	)
+	Richard		ricarda 	(	"  by Karanveer kaur	"	"	)
+	Lawrence	loreMjZa	(	"  by	"	"	"	"	)
+	Bernoulli	barnUlI 	(	"	"	"	"	"	)
+	Alexander	alekjeNdara	(	"  by Soshya Joshi	"	"	)	
+	Robert		rAbarta 	(	"	"	"	"	"	)
+	Hawaii		havAI		(	"  by Anshika Sharma	"	"	)
+	Antarctica	aMtArkatikA	(	"	"	"	"	"	)
+	Arthur		ArWara		(	"	"	"	"	"	)
+	Charles		cArlsa		(	"  by Muskaan Singh	"	"	)
+	Dennis		denisa		(	"	"	"	"	"	)
+	
 
    Modified:
    ---------

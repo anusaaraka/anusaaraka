@@ -101,14 +101,12 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng " ?*wsd_dir* "  ing_tam.clp    ing_tam4  "  ?id " vAlA )" crlf))
 )
 
-;$$$ Modified by Shirisha Manju (25-03-14)
-; added use|worth in the list
 ;She struck me as being a very nervy kind of person.
 (defrule ing_tam5
 (declare (salience 4500))
 (id-TAM ?id ing)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) good|use|worth)
+(id-word =(- ?id 1) good)
 =>
 (retract ?mng)
 (assert (make_verbal_noun ?id))
@@ -116,6 +114,29 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  ing_tam.clp  	ing_tam5  "  ?id " )" crlf))
 )
 
+(defrule ing_tam6
+(declare (salience 4400))
+(id-TAM ?id ing)
+?mng <-(meaning_to_be_decided ?id)
+(id-word =(- ?id 1) use)
+=>
+(retract ?mng)
+(assert (make_verbal_noun ?id))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  ing_tam.clp  	ing_tam6  "  ?id " )" crlf))
+)
+
+(defrule ing_tam7
+(declare (salience 4300))
+(id-TAM ?id ing)
+?mng <-(meaning_to_be_decided ?id)
+(id-word =(- ?id 1) worth)
+=>
+(retract ?mng)
+(assert (make_verbal_noun ?id))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  ing_tam.clp  	ing_tam7  "  ?id " )" crlf))
+)
 
 ; Is it any use expecting them to be in time.
 ;I didn't think it worth complaining about the meal.
@@ -312,7 +333,7 @@
 (id-root ?id1  sit|miss|stand)
 =>
 (retract ?mng)
-(assert (id-E_tam-H_tam_mng ?id ing yA_huA))
+(assert (id-E_tam-H_tam_mng ?id ing ye_hue))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  ing_tam.clp  	ing_tam18  "  ?id "  ye_hue )" crlf))
 )
@@ -379,9 +400,20 @@
 )
 )
 
-
-;--------------------- Removed rules ---------------
-; if -1  use    then make_verbal_noun  --- merged in 'ing_tam5' rule
-; if -1  worth  then make_verbal_noun  --- merged in 'ing_tam5' rule
-;
+;@@@ Added by Pramila(BU) on 21-02-2014
+;While taking this momentous step the Government of India did not make any arrangement to enable the Government of Bengal to meet 
+;the financial liability in respect of the University.     ;gyannidhi
+;इस महत्त्वपूर्ण कदम को उठाते हुए भारत सरकार ने विश्वविद्यालय की वित्तीय ज़िम्मेदारी को पूरा करने में बंगाल सरकार की सहायता करने की कोई व्यवस्था नहीं की।
+(defrule ing_tam22
+(declare (salience 3200))
+(id-TAM ?id ing)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-vAkya_viBakwi  ?id ?id1)
+(id-word ?id1 while)
+=>
+(retract ?mng)
+(assert (id-E_tam-H_tam_mng ?id ing wA_huA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  ing_tam.clp  	ing_tam22  "  ?id "  wA_huA )" crlf))
+)
 

@@ -41,11 +41,14 @@
 
 ;Modified by Meena(13.4.11)
 ;I can see I will have to revise my opinions of his abilities now.
+;$$$ Modified by Shirisha Manju 17-4-14 -- added '|talk|hear|think|complain' to the list
+;added 'speak' in the list by Shirisha Manju 19-4-14 suggested by Sukhada
+;You spoke of pesticide.
 (defrule of3
 (declare (salience 4700))
 (id-root ?id of)
 ?mng <-(meaning_to_be_decided ?id)
-(id-root =(- ?id 1) inform|remind|opinion)     
+(id-root =(- ?id 1) inform|remind|opinion|talk|hear|think|complain|speak)     
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ke_bAre_meM))
@@ -130,11 +133,20 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  of.clp 	of9   "  ?id "  - )" crlf))
 )
 
+;$$$ Modified by Shirisha Manju 17-4-14 -- added 'ahead|aware|afraid' in the list and used 'root' fact instead 'word'
+;added 'die|scare' in the list Suggested by Chaitanya Sir
+;I am dying of stomach pain.  We are scared of death.
+;It is full of advertisemnets.
+;He is ahead of you
+;She is full of bright ideas.  [Verified sentences]
+;वह बढ़िया विचारों से भरी हुई है . 
+;He was well aware of the problem. [Verified sentences]
+;वह समस्या से अच्छी तरह अवगत है 
 (defrule of10
 (declare (salience 4000))
 (id-root ?id of)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) full)
+(id-root =(- ?id 1) full|ahead|aware|afraid|die|scare|relieve|make|consist|frighten|beg|clear|empty|drain|deprive|cheat)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id se))
@@ -142,33 +154,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  of.clp 	of10   "  ?id "  se )" crlf))
 )
 
-;It is full of advertisemnets.
-(defrule of11
-(declare (salience 3900))
-(id-root ?id of)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) ahead)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id se))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  of.clp 	of11   "  ?id "  se )" crlf))
-)
-
-;He is ahead of you
-(defrule of12
-(declare (salience 3800))
-(id-root ?id of)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) fond)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id kA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  of.clp 	of12   "  ?id "  kA )" crlf))
-)
-
-;He is fond of sweets.
 (defrule of13
 (declare (salience 3700))
 (id-root ?id of)
@@ -195,23 +180,13 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  of.clp 	of14   "  ?id "  kA )" crlf))
 )
 
-(defrule of15
-(declare (salience 3500))
-(id-root ?id of)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) kinds|types)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id kA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  of.clp 	of15   "  ?id "  kA )" crlf))
-)
-
+;$$$ Modified by Shirisha Manju 17-4-14 -- added 'fond' in the list and used root fact intead word 
+;He is fond of sweets.
 (defrule of16
 (declare (salience 3400))
 (id-root ?id of)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) kind|type|clever|unwise)
+(id-root =(- ?id 1) kind|type|clever|unwise|fond)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kA))
@@ -269,20 +244,15 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  of.clp 	of20   "  ?id "  - )" crlf))
 )
 
-(defrule of21
-(declare (salience 2900))
-(id-root ?id of)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) aware|afraid)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id se))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  of.clp 	of21   "  ?id "  se )" crlf))
-)
 
 ;from_list(previous_word,pron_of_meM_se.dat)	meM_se	0
 ;One of those, etc.
+;One friend of mine told me this.
+;Some friends of mine
+;Any friend of mine
+;No friend of mine can do this mistake.
+;This rule need to be modified according to above examples
+;determiner presence is neccessary to modify this rule.
 (defrule of22
 (declare (salience 2800))
 (id-root ?id of)
@@ -308,28 +278,39 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  of.clp 	of23   "  ?id "  - )" crlf))
 )
 
-(defrule of24
-(declare (salience 2600))
-(id-root ?id of)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) talk|hear|think|complain)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id ke_bAre_meM))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  of.clp 	of24   "  ?id "  ke_bAre_meM )" crlf))
-)
-
+;$$$ Modified by Shirisha Manju 19-4-14
+;used 'id-root' fact instead 'id-word' fact
+;She is full of bright ideas.  [Verified sentences]
+;वह बढ़िया विचारों से भरी हुई है . 
+;He was well aware of the problem. [Verified sentences]
+;वह समस्या से अच्छी तरह अवगत है .
 (defrule of25
 (declare (salience 2500))
 (id-root ?id of)
 ?mng <-(meaning_to_be_decided ?id)
-(id-word =(- ?id 1) relieve|die|relieved|died|made|consist|frighten|beg|clear|empty|drain|deprive|cheat)
+;(or (kriyA-of_saMbanXI ?id1 ?)(viSeRya-of_saMbanXI ?id1 ?)) ;added by Shirisha Manju 19-4-14
+(kriyA-of_saMbanXI ?id1 ?) ;added by Shirisha Manju 19-4-14
+(id-root ?id1 relieve|die|make|drain|deprive|cheat|frighten|full|aware|afraid|ahead|clear|empty)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id se))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  of.clp 	of25   "  ?id "  se )" crlf))
+)
+
+;Splitted above rule and below rule by Roja (13-06-14). Suggested by Chaitanya Sir.### Counter Ex: According to this figure, you need to configure this software. 
+(defrule of25_1
+(declare (salience 2500))
+(id-root ?id of)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-of_saMbanXI ?id1 ?) ;added by Shirisha Manju 19-4-14
+;(id-root ?id1 cheat|frighten|full|aware|afraid|ahead|clear|empty)
+(id-root ?id1 aware)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id se))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  of.clp       of25_1   "  ?id "  se )" crlf))
 )
 
 (defrule of26
@@ -404,18 +385,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  of.clp 	of31   "  ?id "  meM_se )" crlf))
 )
 
-(defrule of32
-(declare (salience 1800))
-(id-root ?id of)
-?mng <-(meaning_to_be_decided ?id)
-(id-word =(+ ?id 1) all)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id meM_se))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  of.clp 	of32   "  ?id "  meM_se )" crlf))
-)
-
 (defrule of33
 (declare (salience 1700))
 (id-root ?id of)
@@ -446,19 +415,6 @@
 )
 
 
-
-
-(defrule of35
-(declare (salience 1600))
-(id-root ?id of)
-?mng <-(meaning_to_be_decided ?id)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id kA))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  of.clp 	of35   "  ?id "  kA )" crlf))
-)
-
 (defrule sh-of0
 (declare (salience 5000))
 (id-root ?id of)
@@ -474,9 +430,6 @@
 ;I should have talked to you before the inviting of John .
  
 
-
-
-
 ;Added by Meena(2.3.10)
 ;She said she did not approve of my behavior .
 (defrule approve_of0
@@ -491,6 +444,31 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  of.clp        approve_of0   "  ?id "  ko )" crlf))
 )
+;------------------------------------ Default Rules --------------------
+(defrule of35
+(declare (salience 1600))
+(id-root ?id of)
+?mng <-(meaning_to_be_decided ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  of.clp       of35   "  ?id "  kA )" crlf))
+)
+
+
+;---------------------------- Removed rules------------------------------------------------
+;removed of11 by shirisha Manju
+;	if -1  ahead then 'se'   Note : added in of10
+;removed of12 by shirisha Manju
+;	if -1 fond then 'kA'	 Note : added in of16
+;removed of15 by shirisha Manju
+;	if -1 kinds|types then  'kA'   	Note : same as of16
+;removed of21 by shirisha Manju	
+;	if -1 aware|afraid then 'se'	Note : added in of10
+;removed of24 by shirisha Manju
+;	if -1 talk|hear|think|complain then  'ke_bAre_meM'   Note : added in of3
+; removed of32 --- same as of29  by shirisha Manju
 
 ;LEVEL 
 ;Headword : of

@@ -51,13 +51,31 @@
         (assert (count_fact ?new_count))
 )
 ;-------------------------------------------------------------------------------------
+;(defrule exact_match_for_multi_word_using_dic
+;(declare (salience 902))
+;(current_id ?mid)
+;(manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng - $? - $?vib - $?grp_ids1)
+;(id-multi_word_expression-dbase_name-mng ? $?eng_mwe ? $?mng $?vib)
+;(multi_word_expression-grp_ids $?eng_mwe $?ids ?aid)
+;(id-root ?aid ?root)
+;(id-org_wrd-root-dbase_name-mng ? ? ?root ? $?dic_mng)
+;(not (prov_assignment ?aid ?mid))
+;=>
+;        (bind ?*count* (+ ?*count* 1))
+;        (assert (update_count_fact ?*count*))
+;        (assert (anu_ids-sep-manual_ids ?aid - $?grp_ids1))
+;        (assert (man_id-src-root ?mid exact ?root))
+;        (assert (prov_assignment ?aid ?mid))
+;)
+;-------------------------------------------------------------------------------------
 (defrule exact_match_with_anu_output ;[manual word match with vib]
 (declare (salience 901))
 (current_id ?mid)
-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?mng - - - $?vib - $?grp_ids)
+(manual_id_en_hi-word-root-vib-grp_ids ?mid $?mng - $?r - $?vib - $?grp_ids)
 (id-Apertium_output ?aid $?mng $?vib)
 (id-root ?aid ?root)
 (test (and (neq $?vib -)(neq (length $?vib) 0)))
+(test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?mng) 0)))
 (not (prov_assignment ?aid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
@@ -70,11 +88,13 @@
 (defrule exact_match_with_anu_output1 ;[manual word match]
 (declare (salience 900))
 (current_id ?mid)
-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?mng - - - $?vib - $?grp_ids)
-(id-Apertium_output ?aid $?mng $?vib1)
+(manual_id_en_hi-word-root-vib-grp_ids ?mid $?mng - $?r - $?vib - $?grp_ids)
+;(id-Apertium_output ?aid $?mng $?vib1)
+(id-Apertium_output ?aid $?mng)
 (test (and (neq $?mng -)(neq (length $?mng) 0)))
-(test (and (neq $?vib $?vib1) (neq (length $?vib) 0)))
+(test (and (neq $?vib -) (neq (length $?vib) 0)))
 (id-root ?aid ?root)
+(test (and (neq (length $?r) 0)(neq (length $?mng) 0)))
 (not (prov_assignment ?aid ?mid))
 =>
         (bind ?*count* (+ ?*count* 1))
@@ -84,10 +104,29 @@
         (assert (prov_assignment ?aid ?mid))
 )
 ;-------------------------------------------------------------------------------------
+(defrule exact_match_with_anu_output2 ;[manual word match with vib]
+(declare (salience 901))
+(current_id ?mid)
+(manual_id_en_hi-word-root-vib-grp_ids ?mid $?mng - $?r - - - $?grp_ids)
+(id-Apertium_output ?aid $?mng)
+(id-root ?aid ?root)
+;(test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?mng) 0)))
+(test (and (neq (length $?r) 0)(neq (length $?mng) 0)))
+(not (prov_assignment ?aid ?mid))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (assert (anu_ids-sep-manual_ids ?aid - $?grp_ids))
+        (assert (man_id-src-root ?mid exact ?root))
+        (assert (prov_assignment ?aid ?mid))
+)
+
+;-------------------------------------------------------------------------------------
 (defrule lookup_man_word_in_hindi_wordnet
 (declare (salience 890))
 (current_id ?mid)
-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?word - - - - - $?grp_ids)
+(manual_id_en_hi-word-root-vib-grp_ids ?mid $?word - $?r - $?vib - $?grp_ids)
+(test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?word) 0)))
 ;(test (neq (length $?t) -))
 (man_word-root-cat $?word $?h_root ?)
 (test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root))) "FALSE"))
@@ -96,11 +135,12 @@
 (test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng))) "FALSE"))
 (test (eq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root))) (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng)))))
 (not (prov_assignment ?aid ?mid))
-(not (anu_id-man_id ?aid ?mid))
+;(not (anu_id-man_id ?aid ?mid))
 =>
-        (assert (anu_id-man_id ?aid ?mid))
+   ;     (assert (anu_id-man_id ?aid ?mid))
         (bind ?dic_val (gdbm_lookup "hindi_wordnet_dic1.gdbm" (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ $?h_root)))))
         (bind ?dic_val (remove_character "/" ?dic_val " "))
+        (printout t "----------" ?dic_val "---------" crlf)
         (if (neq ?dic_val "FALSE") then
             (if (and (member$ $?h_root ?dic_val)(member$ ?mng ?dic_val)) then
                 (bind ?*count* (+ ?*count* 1))
@@ -116,7 +156,8 @@
 (defrule word_and_vib_match_using_dic
 (declare (salience 870))
 (current_id ?mid)
-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?noun - $? - $?vib - $?grp_ids)
+(manual_id_en_hi-word-root-vib-grp_ids ?mid $?noun - $?r - $?vib - $?grp_ids)
+(test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?noun) 0)))
 (test (neq $?vib -))
 (id-org_wrd-root-dbase_name-mng ? ? ?e_noun ? $?noun)
 (id-org_wrd-root-dbase_name-mng ? ? ?e_vib ? $?vib)
@@ -135,7 +176,8 @@
 (defrule root_and_vib_match_using_dic1
 (declare (salience 870))
 (current_id ?mid)
-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?word - - - $?vib - $?grp_ids)
+(manual_id_en_hi-word-root-vib-grp_ids ?mid $?word - $?r - $?vib - $?grp_ids)
+(test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?word) 0)))
 (man_word-root-cat $?word $?noun ?)
 (test (neq $?vib 0))
 (id-org_wrd-root-dbase_name-mng ? ? ?e_noun ? $?noun)
@@ -156,7 +198,8 @@
 (defrule noun-word_with_0_vib
 (declare (salience 850))
 (current_id ?mid)
-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?mng - - - - - $?gids)
+(manual_id_en_hi-word-root-vib-grp_ids ?mid $?mng - $?r - $?vib - $?gids)
+(test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?mng) 0)))
 (id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?mng)
 (id-root ?eid ?e_word)
 (not (prov_assignment ?eid ?mid))
@@ -171,7 +214,8 @@
 (defrule noun-word_with_0_vib1
 (declare (salience 850))
 (current_id ?mid)
-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?word - - - - - $?gids)
+(manual_id_en_hi-word-root-vib-grp_ids ?mid $?word - $?r - $?vib - $?gids)
+(test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?word) 0)))
 (man_word-root-cat $?word $?mng ?)
 (id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?mng)
 (id-root ?eid ?e_word)
@@ -187,7 +231,8 @@
 (defrule noun-word_with_vib-pres-and-no-match
 (declare (salience 840))
 (current_id ?mid)
-(or (manual_id_en_hi-word-root-vib-grp_ids ?mid ? $?noun - $? - $?vib - $?grp_ids)(manual_id_en_hi-word-root-vib-grp_ids ?mid ? $? - $?noun - $?vib - $?grp_ids))
+(or (manual_id_en_hi-word-root-vib-grp_ids ?mid ? $?noun - $?w - $?vib - $?grp_ids)(manual_id_en_hi-word-root-vib-grp_ids ?mid ? $?w - $?noun - $?vib - $?grp_ids))
+(test (and (neq (length $?w) 0)(neq (length $?vib) 0)(neq (length $?noun) 0)))
 (test (neq $?vib -))
 (id-org_wrd-root-dbase_name-mng ? ? ?e_word ? $?noun)
 (id-root ?eid ?e_word)
@@ -209,6 +254,7 @@
 (declare (salience 880))
 (current_id ?mid)
 (manual_id_en_hi-word-root-vib-grp_ids ?mid $?verb_mng - $?v_root - $?tam - $?grp_ids)
+(test (and (neq (length $?v_root) 0)(neq (length $?tam) 0)(neq (length $?verb_mng) 0)))
 (id-org_wrd-root-dbase_name-mng ? ? ?root ? $?v_root)
 (e_tam-id-dbase_name-mng ?e_tam ? ? $?tam)
 (id-root ?aid ?root)
@@ -226,6 +272,7 @@
 (declare (salience 879))
 (current_id ?mid)
 (manual_id_en_hi-word-root-vib-grp_ids ?mid $?verb_mng - $?v_root - $?tam - $?grp_ids)
+(test (and (neq (length $?v_root) 0)(neq (length $?tam) 0)(neq (length $?verb_mng) 0)))
 (id-org_wrd-root-dbase_name-mng ? ? ?root ? $?v_root)
 (id-root ?aid ?root)
 (not (prov_assignment ?aid ?mid))
@@ -240,8 +287,11 @@
 (defrule check_match_with_english_word
 (declare (salience 830))
 (current_id ?mid)
-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?word - - - - - $?gids)
+(manual_id_en_hi-word-root-vib-grp_ids ?mid $?word - $?r - $?vib - $?gids)
+(test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?word) 0)))
+(test (neq (str-index @ (implode$ (create$ $?word))) FALSE))
 (or (id-word ?eid $?word1)(id-original_word ?eid $?word1))
+;(test (or (eq (explode$ (str-cat  @ (implode$ (create$ $?word1)))) $?word) (eq (string-to-field (str-cat (sub-string 1 (- (str-index @ (implode$ (create$ $?word))) 1) (implode$ (create$ $?word))) (sub-string (+ (str-index @ (implode$ (create$ $?word))) 1) (length $?word) (implode$ (create$ $?word))))) (string-to-field (implode$ (create$ $?word1))))))
 (test (eq (explode$ (str-cat  @ (implode$ (create$ $?word1)))) $?word))
 (id-root ?eid ?e_root)
 (not (prov_assignment ?eid ?mid))
@@ -252,12 +302,37 @@
         (assert (man_id-src-root ?mid exact ?e_root))
         (assert (prov_assignment ?eid ?mid))
 )
+
+
+;check_match_with_english_word and check_match_with_english_word1 are the same rules just the test condition differs [?word and $?word] 
+;As I was getting problem in test condition I handled it in a seperate rule.
+;need to improve the rule. 
+(defrule check_match_with_english_word1
+(declare (salience 830))
+(current_id ?mid)
+(manual_id_en_hi-word-root-vib-grp_ids ?mid ?word - $?r - $?vib - $?gids)
+(test (and (neq (length $?r) 0)(neq (length $?vib) 0)))
+(test (neq (str-index @ (implode$ (create$ ?word))) FALSE))
+(or (id-word ?eid ?word1)(id-original_word ?eid ?word1))
+(test (or (eq ?word1 ?word) (eq (string-to-field (str-cat (sub-string 1 (- (str-index @ (implode$ (create$ ?word))) 1) ?word) (sub-string (+ (str-index @ (implode$ (create$ ?word))) 1) (length (implode$ (create$ ?word))) ?word))) ?word1)))
+(id-root ?eid ?e_root)
+(not (prov_assignment ?eid ?mid))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (assert (anu_ids-sep-manual_ids ?eid - $?gids))
+        (assert (man_id-src-root ?mid exact ?e_root))
+        (assert (prov_assignment ?eid ?mid))
+)
+
+
 ;-------------------------------------------------------------------------------------
 (defrule replace_id_with_word
 (declare (salience -501))
 ?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?pre ?id $?pos)
 ?f1<-(manual_id-word ?id ?h_mng)
 (not (mng_inserted-head ?id ?mid))
+(test (neq (length $?anu_mng) 0))
 =>
         (assert (mng_inserted-head ?h_mng ?mid))
         (retract ?f ?f1)
@@ -278,6 +353,7 @@
 (test (member$ ?mid $?mids))
 =>
         (retract ?f2)
+        (if (eq (length $?anu_mng) 0) then (bind $?anu_mng (create$ -)))
         (bind $?man_grp (create$ ))
         (assert_control_fact mng_has_been_aligned $?mids)
         (assert_control_fact mng_has_been_filled $?aids)
@@ -328,6 +404,36 @@
 ;(hindi_id_order $? ?aid ?aid1 $?)
 ;(id-Apertium_output ?aid1 $?anu_mng1)
 
+;(defrule align_left_over_wrds_using_phrasal_data
+;(declare (salience -199))
+;?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids)
+;?f1<-(current_id ?mid)
+;?f2<-(count_fact 0)
+;(not (anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?))
+;(test (and (neq (length  $?r) 0) (neq (length  $?vib) 0)))
+;(anu_id-anu_mng-man_mng 	?aid	?a_wrd	$?man_mng)
+;(id-original_word ?aid ?a_wrd)
+;(id-Apertium_output ?aid $?anu_mng)
+;=>
+;	(retract ?f ?f1 ?f2)
+;        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mids))
+;        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids))
+;)
 
 
+;(defrule align_left_over_wrds_using_phrasal_data1
+;(declare (salience -199))
+;?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids)
+;?f1<-(current_id ?mid)
+;(test (and (neq (length  $?r) 0) (neq (length  $?vib) 0)))
+;?f2<-(count_fact 0)
+;(not (anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?))
+;(anu_id-anu_mng-man_mng         ?aid    ?a_wrd  $?man_mng $?)
+;(id-original_word ?aid ?a_wrd)
+;(id-Apertium_output ?aid $?anu_mng)
+;=>
+;        (retract ?f ?f1 ?f2)
+;        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mids))
+;        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids))
+;)
 

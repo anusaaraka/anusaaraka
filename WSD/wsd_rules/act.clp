@@ -1,3 +1,137 @@
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 11-dec-2013
+;Who is acting for the defendant?[cambridge]
+;प्रतिवादी के लिये कौन प्रतिनिधित्व कर रहा है? 
+(defrule act14
+(declare (salience 4500))
+(id-root ?id act)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-for_saMbanXI  ?id ?id1)
+;(id-word ?id1 defendant) ;add this condition if some contradictory example is found.
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id prawiniXiwva_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  act.clp  	act14   "  ?id "  prawiniXiwva_kara )" crlf))
+)
+
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 11-dec-2013
+;Who is acting on behalf of the defendant?[cambridge]
+;प्रतिवादी की ओर से कौन प्रतिनिधित्व कर रहा है? 
+(defrule act15
+(declare (salience 4500))
+(id-root ?id act)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-on_saMbanXI  ?id ?id1)
+(id-word ?id1 behalf)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id prawiniXiwva_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  act.clp  	act15   "  ?id "  prawiniXiwva_kara )" crlf))
+)
+
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 11-dec-2013
+;He acted as if he'd never met me before.[cambridge]
+;उसने दिखाया मानो वह मुझसे पहले  कभी नहीं मिला है . 
+(defrule act16
+(declare (salience 4500))
+(id-root ?id act)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-samakAlika_kriyA  ?id ?id1)
+(kriyA-kriyA_viSeRaNa  ?id1 =(+ ?id 1))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id xiKA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  act.clp  	act16   "  ?id "  xiKA )" crlf))
+)
+
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 11-dec-2013
+;Don't be so silly - you're acting like a child![cambridge]
+;इतना बेवकूफ मत बनो- आप बच्चे की तरह हरकत कर रहे हैं! 
+(defrule act17
+(declare (salience 4500))
+(id-root ?id act)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-like_saMbanXI  ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id harakawa_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  act.clp  	act17   "  ?id "  harakawa_kara )" crlf))
+)
+
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 12-dec-2013
+;Ellis Pike was chosen to act the part of the lawyer in the film.[cambridge]
+;एललिस पिके को सिनेमा में वकील के किरदार का अभिनय करने के लिये चुना गया था . 
+(defrule act18
+(declare (salience 4500))
+(id-root ?id act)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?id ?id1)
+(id-word ?id1 part)
+(viSeRya-of_saMbanXI  ?id1 ?id2)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id aBinaya_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  act.clp  	act18   "  ?id "  aBinaya_kara )" crlf))
+)
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 12-dec-2013
+;Have you ever acted in a play before?[cambridge]
+;क्या आपने पहले भी कभी नाटक में अभिनय किया है? 
+(defrule act19
+(declare (salience 4500))
+(id-root ?id act)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-in_saMbanXI  ?id ?id1)
+(id-word ?id1 play|movie|cinema|show|drama|theater)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id aBinaya_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  act.clp  	act19   "  ?id "  aBinaya_kara )" crlf))
+)
+
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 12-dec-2013
+;The state legislature passed an act banning the sale of automatic weapons.[cambridge]
+;राज्य विधानमण्डल ने स्वचालित अस्त्रों की बिक्री पर प्रतिबन्ध लगाते हुए एक कानून निकाला . 
+(defrule act20
+(declare (salience 4500))
+(id-root ?id act)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ?kri ?id)
+(id-root ?kri pass)
+(kriyA-subject  ?kri ?sub)
+(id-root ?sub legislature|government)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id kAnUna))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  act.clp  	act20   "  ?id "  kAnUna )" crlf))
+)
+
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 27-jan-2014
+;Calcutta University has made considerable progress in the directions indicated by the Act.[gyananidhi]
+;कलकत्ता विश्वविद्यालय ने अधिनियम द्वारा बताई गई दिशाओं में बहुत प्रगति की है।
+(defrule act21
+(declare (salience 4500))
+(id-original_word ?id  Act)
+?mng <-(meaning_to_be_decided ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id aXiniyama))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  act.clp  	act21   "  ?id "  aXiniyama )" crlf))
+)
+
 
 (defrule act0
 (declare (salience 5000))
@@ -152,7 +286,7 @@
 )
 
 (defrule act10
-(declare (salience 4000))
+(declare (salience 0));salience reduced by Garima Singh
 (id-root ?id act)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
@@ -252,3 +386,16 @@
 ;
 ;sUwra : kArya[>aBinaya/viXi]
 ;
+
+
+;***********NOTE******************
+
+;Sentences for which above rules do not work or do not convey appropriate meaning
+;*********************************************************************************
+
+;Some people say that capital punishment acts as a deterrent
+;कुछ लोंगो का कहना है कि मृत्यु-दंड अपराध रोकने का काम करता है.
+;Tim always does a vanishing act when my mother comes to stay.
+;जब भी मेरी माँ रहने आती है टिम हमेशा गायब हो जाता है.
+;Why are you always acting the fool?
+;आप हमेशा मूर्ख की तरह क्यों हरकत करते हो

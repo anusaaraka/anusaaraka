@@ -29,3 +29,37 @@
 ;"hurry","V","1.jalxI_karanA"
 ;vaha sArA kAma'hurry' meM karawA hE.
 ;
+
+;;@@@   ---Added by Prachi Rathore
+;He prodded me in the back and told me to hurry up. [cambridge]
+;उसने पीठ में मुझे चुभाया कि और मुझे जल्दी करने के लिये कहा  
+(defrule hurry2
+(declare (salience 5000))
+(id-root ?id hurry)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(id-word ?id1 up)
+(kriyA-upasarga ?id ?id1)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 jalxI_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " hurry.clp	hurry2  "  ?id "  " ?id1 "  jalxI_kara  )" crlf))
+)
+
+;@@@ Added by Prachi Rathore[15-1-14]
+;She hurried on before he could interrupt her.[oald]
+;
+(defrule hurry3
+(declare (salience 5000))
+(id-root ?id hurry)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(id-word ?id1 on)
+(kriyA-upasarga ?id ?id1)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 bolanA_jArI_raKa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " hurry.clp	hurry3  "  ?id "  " ?id1 "  bolanA_jArI_raKa  )" crlf))
+)

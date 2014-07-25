@@ -43,8 +43,9 @@
 ;xUsare Sabxo meM,krewA kama ApUrwi meM pAnI ke lie SUnyewara kImawa axA karane ke icCuka hoMge.
 (defrule equivalently1
 (declare (salience 5000))
-(id-root 1 equivalently)
+(id-root ?id equivalently)
 ?mng <-(meaning_to_be_decided 1)
+(id-cat_coarse 1 adverb)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng 1 xUsre_Sabxo_meM))
@@ -52,7 +53,8 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  equivalently.clp 	equivalently1   "  1 "  xUsre_Sabxo_meM )" crlf))
 )
 
-;-------------------------------------- Default rules----------------------------------
+
+;-----------------------------------------default rules----------------------------------------------------------------------------------
 (defrule equivalently2
 (declare (salience 4000))
 (id-root ?id equivalently)

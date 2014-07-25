@@ -31,3 +31,42 @@
 ;"turf","V","1.GAsa_biCAnA"
 ;You have to turf the field.
 ;
+
+
+;@@@ Added by Prachi Rathore[25-2-14]
+;The boys were turfed off the bus.[oald]
+;लडकों को बस से बाहर फेंक दिया  था . 
+(defrule turf2
+(declare (salience 5000))
+(id-root ?id turf)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-upasarga  ?id ?id1)
+(id-word ?id1 off)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 bAhara_PeMka_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* "  turf.clp 	turf2     "  ?id "  " ?id1 "  bAhara_PeMka_xe )" crlf))
+)
+
+
+;@@@ Added by Prachi Rathore[25-2-14]
+;He was turfed out of the party.[oald]
+;उसे पार्टी से बाहर फेंक दिया गया था . 
+(defrule turf3
+(declare (salience 5000))
+(id-root ?id turf)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-upasarga  ?id ?id1)
+(id-word ?id1 out)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bAhara_PeMka_xe))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  turf.clp 	turf3   "  ?id " bAhara_PeMka_xe )" crlf))
+)
+
+
+

@@ -84,3 +84,20 @@ else
       (printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  is_en_tam.clp  	is_en_tam2  "  ?id "  yA_gayA_hE )" crlf))
       (assert (id-tam_type ?id passive))
 ))
+
+
+;@@@ Added by Prachi Rathore[18-1-14]
+;REM sleep is termed ‘active’ sleep.[oald]
+(defrule is_en_tam3
+(declare (salience 5000))
+(id-TAM ?id is_en)
+?mng <-(meaning_to_be_decided ?id)
+(id-root ?id term)
+=>
+(retract ?mng)
+(assert (id-E_tam-H_tam_mng ?id is_en wA_hE))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  is_en_tam.clp  	is_en_tam3  "  ?id "  wA_hE )" crlf))
+(assert (id-tam_type ?id passive))
+)
+

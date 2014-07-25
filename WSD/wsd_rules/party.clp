@@ -13,7 +13,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  party.clp 	party0   "  ?id "  Boja )" crlf))
 )
 
-;Rule re-modified by Roja as suggested by Aditiji.
+;$$$ Rule re-modified by Roja as suggested by Aditiji.
 ;Modified by sheetal(21-01-10).
 ;John last week threw a great party .
 (defrule party1
@@ -32,7 +32,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  party.clp     party1   "  ?id "  Boja )" crlf))
 )
 
-;Added by Roja, Suggested by Aditi ji 12-11-13
+;@@@ Added by Roja, Suggested by Aditi ji 12-11-13
 ;The dissenters launched a new party.
 (defrule party_xala
 (declare (salience 4900))
@@ -48,7 +48,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  party.clp     party_xala   "  ?id "  xala )" crlf))
 )
 
-;Added by Roja, Suggested by Aditi ji and Chaitanya Sir(12-11-13)
+;@@@ Added by Roja, Suggested by Aditi ji and Chaitanya Sir(12-11-13)
 ;He is campaigning for congress party.
 (defrule party_xala1
 (declare (salience 4900))
@@ -64,6 +64,56 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  party.clp     party_xala1   "  ?id "  xala )" crlf))
 )
 
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 17-1-2014
+;A birthday party. [Cambridge]
+;एक जन्मदिन उत्सव .
+(defrule party3
+(declare (salience 4900))
+(id-root ?id party)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaNa  ? ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id uwsava))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  party.clp     party3   "  ?id "  uwsava )" crlf))
+)
+
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 17-1-2014
+;A political party. [Cambridge]
+;एक राजनैतिक दल .
+(defrule party4
+(declare (salience 4900))
+(id-root ?id party)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-viSeRaNa  ?id ?)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id xala))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  party.clp     party4   "  ?id "  xala )" crlf))
+)
+
+;@@@ Added by Sonam Gupta MTech IT Banasthali 17-1-2014
+;A party of tourists. [Cambridge]
+;पर्यटकों की एक टोली .
+(defrule party5
+(declare (salience 4900))
+(id-root ?id party)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-of_saMbanXI  ?id ?)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id tolI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  party.clp     party5   "  ?id "  tolI )" crlf))
+)
+
 ;---------------------------- Default Rules ---------------------------------------
 (defrule party_noun
 (id-root ?id party)
@@ -73,7 +123,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id pArtI)) ; pArtI/xala 
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  party.clp    party2   "  ?id "  pArtI )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  party.clp    party_noun   "  ?id "  pArtI )" crlf))
 )
 ;In this rule Hindi meaning "xala" is replaced with "pArtI" by Sukhada because the meaning "pArtI" is more familier than the meaning "xala". Date: 13-06-09
 
@@ -82,7 +132,7 @@
 ;Party of that area was given maximum votes.
 
 
-;Added by Roja, Suggested by Aditi ji 12-11-13
+;@@@ Added by Roja, Suggested by Aditi ji 12-11-13
 ;Were you partying last night?
 ;kyA Apa kala rAwa pArtI meM gaye We?
 (defrule party_verb
@@ -95,6 +145,19 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  party.clp    party_verb   "  ?id "  pArtI_meM_jA)" crlf))
 )
+
+(defrule party_default
+(declare (salience -10))
+(id-root ?id party)
+?mng <-(meaning_to_be_decided ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id pArtI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  party.clp    party_default   "  ?id "  pArtI)" crlf))
+)
+
+
 
 ;--------------------Additional Examples by Aditi ji 12-11-13-------------
 ;To participate in a party.  

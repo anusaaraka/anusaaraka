@@ -33,3 +33,33 @@
 ;He pounced on me && accused me of lying.
 ;
 ;
+
+;@@@ Added by Sona Gupta MTech IT Banasthali 3-4-2014
+;His comments were pounced upon by the press. [oald]
+;उसकी टिप्पणियाँ प्रैस के द्वारा पकड़ी गईं थी .
+(defrule pounce2
+(declare (salience 5500))
+(id-root ?id pounce)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-subject  ?id ?id1)
+(id-root ?id1 comment|remark|explanation)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id pakadZa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pounce.clp 	pounce2   "  ?id "  pakadZa )" crlf))
+)
+
+
+;@@@ Added by Sona Gupta MTech IT Banasthali 3-4-2014
+(defrule pounce3
+(id-root ?id pounce)
+?mng <-(meaning_to_be_decided ?id)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Japata))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pounce.clp 	pounce3   "  ?id "  Japata )" crlf))
+)
+

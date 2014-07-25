@@ -30,4 +30,18 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-subject_viBakwi   " ?*wsd_dir* "  improve.clp    improve1   "  ?id " se ) " crlf))
 )
 
-
+;@@@ Added by Prachi Rathore[1-2-14]
+;We've certainly improved on last year's figures.[oald]
+;हम पिछले वर्ष के आँकडो में निश्चित रूप से सुधार कर चुके हैं . 
+(defrule improve2
+(declare (salience 5000))
+(id-root ?id improve)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-on_saMbanXI  ?id ?)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id suXAra_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  improve.clp    improve2   "  ?id "  suXAra_kara )" crlf))
+)

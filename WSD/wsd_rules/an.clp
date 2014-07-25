@@ -5,7 +5,7 @@
 (declare (salience 5000))
 (id-root ?id an)
 ?mng <-(meaning_to_be_decided ?id)
-;(id-root =(+ ?id 1) ?word)
+(id-root =(+ ?id 1) ?word)
 (viSeRya-viSeRaNa ?id1 =(+ ?id 1))
 =>
 (retract ?mng)
@@ -20,10 +20,10 @@
 
 
 (defrule an1
-(declare (salience 10)) ; Salience reduced by Roja (27-12-13)
+(declare (salience 5000))
 (id-root ?id an)
 ?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id determiner);$$$ Modified category from 'Art' to 'determiner' by Roja. (27-12-13)
+(id-cat_coarse ?id Art)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id eka))
@@ -41,7 +41,7 @@
 (declare (salience 4900))
 (id-root ?id an)
 ?mng <-(meaning_to_be_decided ?id)
-;(id-word =(+ ?id 1) ?word)
+(id-word =(+ ?id 1) ?word)
 (samAsa_viSeRya-samAsa_viSeRaNa  ?id1 =(+ ?id 1))
 =>
 (retract ?mng)

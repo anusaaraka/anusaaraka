@@ -15,16 +15,52 @@
 ;"panelling","N","1.cOKatA"
 ;The rooms furnished with oak paneling are now in fashion.
 ;
+
+
+;Added by Sona Gupta MTech IT Banasthali 2013
+;A panel of experts
+;
 (defrule panel1
 (declare (salience 4900))
 (id-root ?id panel)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
+(id-root ?id1 expert|judge|jury|auditor|invigilator|politician|host|chef|member)
+(or(viSeRya-of_saMbanXI  ?id ?id1)(viSeRya-on_saMbanXI  ?id1 ?id)(kriyA-object  ?id1 ?id))
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id waKwA))
+(assert (id-wsd_root_mng ?id xala))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  panel.clp 	panel1   "  ?id "  waKwA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  panel.clp 	panel1   "  ?id "  xala )" crlf))
+)
+
+
+;Added by Sona Gupta MTech IT Banasthali 2013
+;The trousers have double thickness knee panels for extra protection.
+;(defrule panel2
+;(declare (salience 4800))
+;(id-root ?id panel)
+;?mng <-(meaning_to_be_decided ?id)
+;(id-cat_coarse ?id noun)
+;(id-root ?id1 knee|elbow|skirt)
+;(or(samAsa_viSeRya-samAsa_viSeRaNa  ?id ?id1)(viSeRya-RaRTI_viSeRaNa  ?id ?id1))
+;=>
+;(retract ?mng)
+;(assert (id-wsd_root_mng ?id pattI))
+;(if ?*debug_flag* then
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  panel.clp 	panel2   "  ?id "  pattI )" crlf))
+;)
+
+(defrule panel3
+(declare (salience 4700))
+(id-root ?id panel)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id pattI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  panel.clp 	panel3   "  ?id "  pattI )" crlf))
 )
 
 ;"panel","N","1.waKwA`"
@@ -37,8 +73,8 @@
 ;--"5.xala"
 ;The panel of judges in SC sat down to solve the case of Jaisika Lal.
 ;
-(defrule panel2
-(declare (salience 4800))
+(defrule panel4
+(declare (salience 4600))
 (id-root ?id panel)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
@@ -46,7 +82,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id xillA_lagA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  panel.clp 	panel2   "  ?id "  xillA_lagA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  panel.clp 	panel4   "  ?id "  xillA_lagA )" crlf))
 )
 
 ;"panel","V","1.xillA_lagAnA"

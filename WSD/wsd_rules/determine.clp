@@ -12,7 +12,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng  " ?*wsd_dir* "  determine.clp  	determine0   "  ?id "  kqwasaMkalpa )" crlf))
 )
 
-
 ;"determined","Adj","1.kqwasaMkalpa"
 ;--"2.xqDZa"
 ;It was tough for the army to fight a determined enemy.
@@ -39,7 +38,7 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  determine.clp 	determine1   "  ?id "  nirXAriwa_kara )" crlf))
 )
 
-;Added by Pramila(Banasthali University) on 25-10-2013
+;added by Pramila(Banasthali University) on 25-10-2013
 ;Upbringing plays an important part in determining a person's character.
 ;pAlaNa-poRaNa vyakwi kA cariwra niSciwa karane meM mahawwavapurNa BUmikA niBAwA hE.
 
@@ -60,8 +59,8 @@
 )
 
 
-;Added by Pramila(Banasthali University) on 26-10-2-2013
-;They dtermined to start early.
+;Added by Pramila(Banasthali University) on 26-10-2013
+;They determined to start early.
 ;unhoneM jalxI jAne ka xqDa niScaya kiyA.
 (defrule determine3
 (declare (salience 5000))
@@ -77,9 +76,45 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  determine.clp 	determine3   "  ?id "  xqDa_niScaya_kara )" crlf))
 )
 
+;@@@ Added by Pramila Banasthali 13-02-2014
+;He is determined in his object.  ;shiksharthi
+;वह अपने उद्देश्य में दृढ़ है.
+(defrule determine4
+(declare (salience 4900))  
+(id-word ?id determined)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-in_saMbanXI  ?id ?id1)
+=>
+(retract ?mng)
+(assert (id-wsd_word_mng ?id xqDa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_word_mng   " ?*wsd_dir* "  determine.clp 	determine4   "  ?id "  xqDa )" crlf))
+)
+
+;@@@ Added by Pramila Banasthali 07-03-2014
+;In one experiment using a measuring instrument of resolution 0.1 cm the measured value is found to be 3.5 cm while in another 
+;experiment using a measuring device of greater resolution say 0.01 cm the length is determined to be 3.38 cm.   ;ncert
+;.एक प्रयोग में 0.1 cm विभेदन का मापक - यन्त्र प्रयोग करके इसका मान 3.5 cm मापा गया, जबकि, दूसरे प्रयोग में अधिक विभेदन वाला (माना 0.01 cm ) मापक यन्त्र प्रयोग करके उसी 
+;लम्बाई को 3.38 cm मापा गया.
+(defrule determine5
+(declare (salience 5000))  
+(id-word ?id determined)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+(kriyA-kqxanwa_karma  ?id ?id1)
+(id-word ?id1 be)
+(kriyA-karma  ?id ?id2)
+(id-word ?id2 length|height|width)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 mApa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " determine.clp 	determine5  "  ?id "  "  ?id1  "  mApa )" crlf))
+)
 ;--------------------------------------default rules--------------------------------------------
 
-(defrule determine4
+(defrule determine6
 (declare (salience 4000))  ;Modified by Pramila(banasthali University)on 21-10-2013
 (id-root ?id determine)
 ?mng <-(meaning_to_be_decided ?id)
@@ -88,7 +123,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id nirXAriwa_kara))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  determine.clp 	determine4   "  ?id "  nirXAriwa_kara )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  determine.clp 	determine6   "  ?id "  nirXAriwa_kara )" crlf))
 )
 
 ;default_sense && category=verb	nirXAraNa_karanA/niScaya_kara	0

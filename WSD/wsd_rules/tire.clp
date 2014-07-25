@@ -142,3 +142,18 @@
 ;"tire","VT","1.Uba_jAnA"
 ;We are tired of eating the same food.
 ;
+
+;@@@ Added by Prachi Rathore[13-2-14]
+;a front tire [oald]
+;आगे का पहिया
+(defrule tire9
+(declare (salience 4200))
+(id-root ?id tire)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id pahiyA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  tire.clp 	tire9   "  ?id "  pahiyA )" crlf))
+)

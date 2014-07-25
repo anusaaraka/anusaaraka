@@ -62,9 +62,6 @@
 )
 
 
-
-
-
 ;Added by Meena(26.6.10)
 ;She has gone for a walk in the woods . 
 (defrule walk4
@@ -79,29 +76,6 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  walk.clp      walk4   "  ?id "  sEra )" crlf))
 )
-
-
-
-
-;Salience reduced by Meena(26.6.10)
-(defrule walk5
-(declare (salience 0))
-;(declare (salience 4400))
-(id-root ?id walk)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id noun)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id cAla))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  walk.clp 	walk5   "  ?id "  cAla )" crlf))
-)
-
-;"walk","N","1.cAla"
-;His walk is not straight
-;
-
-
 
 
 (defrule walk6
@@ -124,20 +98,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng   " ?*wsd_dir* "  walk.clp      walk6   "  ?id " yA )" crlf))
 )
 
-(defrule walk7
-(declare (salience 4200))
-(id-root ?id walk)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id cala))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  walk.clp 	walk7   "  ?id "  cala )" crlf))
-)
-
-;"walk","V","1.calanA"
-;They walked for two kilometers yesterday.
 
 (defrule walk8
 (declare (salience 4200))
@@ -168,3 +128,51 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " walk.clp        walk9  "  ?id "  " ?id1 "  anxara_AyA  )" crlf))
 )
+
+;@@@ Added by Shirisha Manju (02-05-14) Suggested by Chaitanya Sir.
+;His eyes lit up when she walked into the room.  OALD
+;usakI AzKeM KuSI_se_camaka uTIM jaba vaha kamare ke anxara gaI.
+(defrule walk_into
+(declare (salience 4350))
+(id-root ?id walk)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 into)
+(kriyA-into_saMbanXI ?id ?)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id jA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* " walk.clp        walk_into  "  ?id "    jA  )" crlf))
+)
+
+
+;------------------------ Default rules -----------------------------
+;"walk","V","1.calanA"
+;They walked for two kilometers yesterday.
+(defrule walk7
+(id-root ?id walk)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id cala))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  walk.clp     walk7   "  ?id "  cala )" crlf))
+)
+
+;"walk","N","1.cAla"
+;His walk is not straight
+(defrule walk5
+(id-root ?id walk)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id cAla))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  walk.clp     walk5   "  ?id "  cAla )" crlf))
+)
+
+
+; Removed salience for default rules by Shirisha Manju 2/5/14

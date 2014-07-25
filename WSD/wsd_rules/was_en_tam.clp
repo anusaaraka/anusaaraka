@@ -172,5 +172,57 @@ else
 (assert (id-tam_type ?id passive))
 ))
 
+;@@@ Added by Pramila(BU) on 13-02-2014
+;Tiredness was etched on his face.   ;oald
+;थकान उसके चेहरे पर साफ झलक रही थी.
+(defrule was_en_tam7
+(declare (salience 4800))
+(id-TAM ?id was_en)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-on_saMbanXI  ?id ?id1)
+(viSeRya-RaRTI_viSeRaNa  ?id1 ?id2)
+(id-root ?id2 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "human.gdbm" ?str)))
+(id-root ?id etch)
+=>
+(retract ?mng)
+(assert (id-E_tam-H_tam_mng ?id was_en 0_rahA_WA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  was_en_tam.clp    was_en_tam7  "  ?id "  0_rahA_WA )" crlf))
+(assert (id-tam_type ?id passive))
+)
 
 
+;@@@ Added by Prachi Rathore[17-2-14]
+;She was terrified on seeing the terrific scene in the cinema.[shiksharthi-kosh]
+;वह चलचित्र में भयानक दृश्य को देखने पर डर गयी थी .  
+(defrule was_en_tam8
+(declare (salience 4800))
+(id-TAM ?id was_en)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-karma ?id ?id1)
+(id-root ?id terrify)
+=>
+(retract ?mng)
+(assert (id-E_tam-H_tam_mng ?id was_en 0_gayA_WA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  was_en_tam.clp    was_en_tam8  "  ?id "  0_gayA_WA )" crlf))
+(assert (id-tam_type ?id passive))
+)
+
+
+;@@@ Added by Prachi Rathore[5-3-14]
+;Our team was thrashed 18-0.[shiksharthi-kosh]
+;हमारी टीम 18 के मुकाबले 0 से हार गयी 
+(defrule was_en_tam9
+(declare (salience 4800))
+(id-TAM ?id was_en)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-karma ?id ?id1)
+(id-root ?id thrash)
+=>
+(retract ?mng)
+(assert (id-E_tam-H_tam_mng ?id was_en yA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_tam_mng  " ?*wsd_dir* "  was_en_tam.clp    was_en_tam999999999  "  ?id "  yA )" crlf))
+(assert (id-tam_type ?id passive))
+)

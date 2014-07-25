@@ -138,7 +138,7 @@
 (id-root ?id by)
 ?mng <-(meaning_to_be_decided ?id)
 ;(id-word =(+ ?id 1) time|time period|period of time|period|moment|minute|second|instant|point in time|clock time|hour)
-(id-word =(+ ?id 1) time|period|moment|minute|second|instant|point|clock|hour);commented the above fact by Manju(20-6-13) 
+(id-word =(+ ?id 1) time|period|moment|minute|second|instant|point|clock|hour);commented the above fact by Manju(20--6-13) 
 ;								              bcoz in id-word fact word field has no spaces.
 =>
 (retract ?mng)
@@ -153,6 +153,8 @@
 
 ;Re-Modified by Sukhada 16-10-13
 ;Modified by Meena(17.8.11);added "|verb|verbal_noun" in the list to stop this rule for By going there you can earn more money.
+;Modified by Meena(2.8.11) added{(not(id-cat_coarse =(+ ?id 1) PropN)) and (kriyA-by_saMbanXI ?kri =(+ ?id 1))},deleted (id-cat_coarse =(+ ?id 1) noun) and commented (not (or (kriyA-by_saMbanXI  ?id1 ... )(... ... ...)))
+;Modified by Meena(20.11.10); commented (kriyA-by_saMbanXI...) and added (id-cat_coarse =(+ ?id 1) noun)(id-root ?id1....)
 ;Added by Meena(12.11.09)
 ;By 2012 the task will be completed.
 (defrule by11
@@ -285,15 +287,22 @@
 )
 
 
-
+;$$$ Modified by Garima Singh(M.Tech-C.S, Banasthali Vidyapith) 09-jan-2014
+;Note: condition about category is added by Garima Singh.This can also be replaced by animate condition.
+;conflicting example: The keen interest taken by Asutosh in legal studies is shown by the fact that he attended the Tagore Law Lectures for three successive years. 
 ;Added by Meena(10.11.09)
 ;The book was read by Meera.
+;A record similar to the one outlined above may also have been achieved by many other students.
 (defrule by19
 (declare (salience 3900))
 ;(declare (salience 3400))
 (id-root ?id by)
 ?mng <-(meaning_to_be_decided ?id)
 (kriyA-by_saMbanXI  ?id1 ?id2)
+(or
+(id-cat_coarse ?id2 PropN|pronoun);this condition is added by Garima Singh
+(id-root ?id2 ?str&:(and (not (numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str)))
+)
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ke_xvArA))
@@ -306,7 +315,7 @@
 
 ;Salience reduced by Meena(9.11.09)
 (defrule by20
-(declare (salience 1000))
+(declare (salience 0));salience reduced by Garima Singh
 ;(declare (salience 3400))
 (id-root ?id by)
 ?mng <-(meaning_to_be_decided ?id)
@@ -350,3 +359,96 @@
 ;Hardik was killed by gun.
 ;"waka"
 ;Maybe you will get it by delhi and you will not need to go to Lucknow.
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)06-jan-2014
+;By the nineteenth century, enough evidence had accumulated in favor of atomic hypothesis of matter.
+;She had promised to be back by five o'clock. 
+;The application must be in by the 31st to be accepted.
+(defrule by22
+(declare (salience 3900))
+(id-root ?id by)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-by_saMbanXI  ? ?id1)
+(or(id-cat_coarse ?id1 number)(id-word ?id1 century))  
+(id-cat_coarse ?id preposition)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id waka))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  by.clp 	by22   "  ?id "  waka )" crlf))
+)
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)02-jan-2014
+;She kept a long stick by her to chase away the goats and cows that tried to snatch at the bundles of grass and hay. 
+;वह उसके पास एक छड़ी रखती थी जिससे वह बकरियों और गायों को भगाया करती है जो घास में मुँह मारने के लिए आ जाती है।
+(defrule by23
+(declare (salience 4000))
+(id-root ?id by)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-by_saMbanXI  ?id1 ?id2)
+(id-word ?id2 him|her)
+(kriyA-object  ?id1 ?obj)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ke_pAsa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  by.clp        by23   "  ?id "  ke_pAsa )" crlf))
+)
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)07-jan-2014
+;To know a person by his actions.[shiksharthi kosh]
+;व्यक्ति को उसके कर्मों से जानना
+(defrule by24
+(declare (salience 3500))
+(id-root ?id by)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-by_saMbanXI  ?id1 ?id2)
+;(viSeRya-RaRTI_viSeRaNa  ?id2 ?id3)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id se))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  by.clp        by24   "  ?id "  se )" crlf))
+)
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)09-jan-2014
+;He took up his position by the door.[olad]
+;उसने दरवाजे के पास उसका स्थान लिया
+(defrule by25
+(declare (salience 4000))
+(id-root ?id by)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-det_viSeRaNa  ?id2 ?det)
+(id-word ?det the)
+(kriyA-by_saMbanXI  ?id1 ?id2)
+(not(id-cat_coarse ?id2 PropN|pronoun));added by Garima Singh
+(kriyA-object  ?id1 ?obj)
+(id-root ?obj ?str)
+(test (and (neq (numberp ?str) TRUE) (neq (gdbm_lookup_p "animate.gdbm" ?str) TRUE)))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ke_pAsa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  by.clp        by25   "  ?id "  ke_pAsa )" crlf))
+)
+
+;@@@ Added by Garima Singh(M.Tech-C.S, Banasthali Vidyapith)09-jan-2014
+;There's a pad and pencil by the phone.
+;फोन के पास में एक पैड और कलम है
+(defrule by26
+(declare (salience 4000))
+(id-root ?id by)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-by_saMbanXI  ?id1 ?id2)
+(viSeRya-det_viSeRaNa  ?id2 ?)
+(id-root ?id2 ?str)
+(test (and (neq (numberp ?str) TRUE) (neq (gdbm_lookup_p "animate.gdbm" ?str) TRUE)))
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id ke_pAsa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  by.clp        by26   "  ?id "  ke_pAsa )" crlf))
+)
+
+
+

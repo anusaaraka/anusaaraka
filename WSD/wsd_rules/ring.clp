@@ -14,7 +14,9 @@
 )
 
 
-
+;Below sentence added by Anita-30.12.2013
+;There was a ring at the door. [cambridge dictionary]
+;दरवाज़े पर घंटी बजी ।
 ;Modified by Meena(8.6.10) added (kriyA-subject ?id ?id1)
 ;At midnight Uttama's telephone rings . 
 (defrule ring1
@@ -37,8 +39,6 @@
 ;
 
 
-
-
 ;Modified by Meena(8.6.10)  added (kriyA-object ?id ?id1)
 ;He rings the bell in the morning.
 (defrule ring2
@@ -54,13 +54,14 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  ring.clp 	ring2   "  ?id "  bajA )" crlf))
 )
 
-
-
-
+;@@@ Added by Anita-30.12.2013 
+;He bought her a diamond ring. [cambridge dictionary]
+;उसने हीरे  की एक अंगूठी खरीदी ।
 (defrule ring3
 (declare (salience 4800))
 (id-root ?id ring)
 ?mng <-(meaning_to_be_decided ?id)
+(kriyA-kqxanwa_karma  ? ?id)
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
@@ -68,7 +69,97 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  ring.clp      ring3   "  ?id "  azgUTI )" crlf))
 )
+;@@@ Added by Anita -30.12.2013
+;The game involved throwing metal rings over a stick. [cambridge dictionary]
+;खेल में एक छड़ी पर धातु के छल्ले फेंकना शामिल किया गया ।
+(defrule ring4
+(declare (salience 4900))
+(id-root ?id ring)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object  ? ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id CallA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  ring.clp      ring4   "  ?id "  CallA )" crlf))
+)
+;@@@ Added by Anita-30.12.2013
+;The children sat in a ring around the teacher. [cambridge dictionary]
+;बच्चे शिक्षक के चारों ओर एक गोले में बैठ गये ।
+(defrule ring5
+(declare (salience 5000))
+(id-root ?id ring)
+?mng <-(meaning_to_be_decided ?id)
+(id-root ?id1 teacher)
+(kriyA-in_saMbanXI  ? ?id)
+(kriyA-around_saMbanXI  ? ?id1)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id golA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  ring.clp      ring5   "  ?id "  golA )" crlf))
+)
+;@@@ Added by Anita-30.12.2013
+;I will give you a ring tomorrow. 
+;मैं आपको कल फोन करूँगा ।
+(defrule ring6
+(declare (salience 5500))
+(id-root ?id ring)
+?mng <-(meaning_to_be_decided ?id)
+(viSeRya-det_viSeRaNa  ?id ?)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id teliPona))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  ring.clp      ring6   "  ?id "  teliPona )" crlf))
+)
+;@@@ Added by Anita-30.12.2013
+;There was a ring at the door.
+;दरवाज़े पर घंटी बजी ।
+(defrule ring7
+(declare (salience 5575))
+(id-root ?id ring)
+?mng <-(meaning_to_be_decided ?id)
+(id-root ?id1 door)
+(viSeRya-at_saMbanXI  ?id ?id1)
+;(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id GaMtI_baja))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  ring.clp      ring7   "  ?id "  GaMtI_baja )" crlf))
+)
 
+;################################default-rule#############################
+;she always wears diamond ring.
+;वह हमेशा हीरे की अँगूठी पहनती है । 
+(defrule ring_default-rule-noun
+;(declare (salience 4800))
+(id-root ?id ring)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id azgUTI))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  ring.clp      ring_default-rule-noun   "  ?id "  azgUTI )" crlf))
+)
+;@@@ Added by Anita-30.12.2013
+;Ring the bell for school assembly. [old clp sentence]
+;स्कूल -असेम्बली के लिए घंटी बजाओ।
+(defrule ring_default-rule-verb
+(id-root ?id ring)
+?mng <-(meaning_to_be_decided ?id)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id bajA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  ring.clp      ring_default-rule-verb  "  ?id "  bajA )" crlf))
+)
 ;"ring","N","1.azgUTI"
 ;she always wears diamond ring.
 ;--"2.CallA{cABI/nepakina_kA}"
@@ -151,3 +242,50 @@
 ;'ring' Sabxa kA sUwra 
 ;
 ;sUwra : CallA-[GerA]-bajAnA
+
+;Additional Examples by Anita
+;----------------------------
+;The game involved throwing metal rings over a stick.
+;खेल में छड़ी पर धातु के छल्ले फेंकना शामिल है ।
+;The children sat in a ring around the teacher.
+;बच्चे शिक्षक के चारों ओर एक गोले में बैठ गये ।
+;He bought her a diamond ring.
+;उसने उसके लिए एक हीरे की अँगूठी खरीदी ।
+;I'll give you a ring tomorrow.
+;मैं कल आपको फोन करूँगा ।
+;There was a ring at the door.
+;दरवाज़े पर घंटी बजी ।
+;He gave a ring at the door.
+;उसने दरवाजे पर घंटी बजाई ।
+;She had dark rings a round her eyes from lack of sleep.
+;कम सोने के कारण उसकी आँखों के चारों ओर काले घेरे हो गए थे।
+;A diamond glittered on her ring finger.
+;उसकी उँगली की अँगूठी पर एक हीरा चमक रहा है ।
+;a key ring.
+;चाबी का छल्ला ।
+;curtain rings.
+;पर्दे के छल्ले । 
+;onion rings.
+;प्याज के छल्ले ।
+;The horses trotted round the ring.
+;घोड़े गोले के चारों तरफ दौड़े ।
+;The doorbell rang.
+;दरवाज़े की घंटी बजी ।
+;Anne's alarm clock rang for half an hour before she woke. 
+;ऐने की एलार्म घड़ी उसके उठने से पहले आधा घंटे तक बजती रही ।
+;I rang the bell but nobody came to the door. 
+;मैंने घंटी बजाई लेकिन कोई भी दरवाज़े पर नहीं आया । 
+;My ears are still ringing from the sound of the military band.
+;मिलेट्री बैंड की आवाज़ से मेरे कानों में अभी भी गूँज रही है ।
+;I ring home once a week to tell my parents I'm okay.
+;मैं सप्ताह में एक बार घर पर फोन करता हूँ कहने के लिए कि मैं ठीक हूँ ।
+;There's been an accident - can you ring for an ambulance?
+;वहाँ एक दुर्घटना हुई है-क्या आप एम्बुलैंस के लिए फोन कर सकते हैं ।
+;The boss rang  to say he'll be back at 4.30.
+;बॉस ने यह कहने के लिए फोन किया था कि वे ४.३० बजे वापस आएंगे ।
+;I rang round the airlines to find out the cheapest price. 
+;मैं सस्ती कीमत पता लगाने के लिए लगातार हवाई कंपनी को फोन करता रहा ।
+;Why don't you ring up Simon and ask him to the party?
+;आप साईमन को  क्यों नहीं फोन करते हैं और उससे पूछते हैं कि पार्टी कब है ?
+;The ringleaders were jailed for 15 years.
+;सरगना को १५ साल के लिए जेल में बंद कर दिया गया था ।

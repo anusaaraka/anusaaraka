@@ -4747,10 +4747,11 @@ all-starer_UNDEFINED	aBinewriyAz_ho
 all-starest_UNDEFINED	aBinewriyAz_ho
 all-time_adjective	sabase_badA/aBI_waka_kA_sabase
 all-weather_adjective	sarvaqwvika
-all_adjective	saBI/pUrA/aXikawama/sArA
+all_adjective	saBI/pUrA/aXikawama/sArA/samaswa
 all_adverb	pUrNa_rUpa_se/pUre_wOra_se/oYla/kevala/bahuwa
 all_noun	sabakuCa
-all_pronoun	saba/all
+all_pronoun	saba/samaswa
+all_determiner	saba/samaswa/saBI
 allan_UNDEFINED	allAna
 allay_UNDEFINED	xabA
 allay_verb	kama_kara/bu/xabA{SAnwa_kara_xenA}
@@ -20560,7 +20561,7 @@ deepseated_UNDEFINED	gaharA
 deepseateder_UNDEFINED	gaharA
 deepseatedest_UNDEFINED	gaharA
 deer_UNDEFINED	hiraNa
-deer_noun	mqganayanI/hirana_kA_baccA/hirana/bArIka_GAsa/hariNa
+deer_noun	hirana/hirana_kA_baccA/bArIka_GAsa/hariNa
 deers_UNDEFINED	hiraNa
 deerses_UNDEFINED	hiraNa
 deerstalker_noun	eka_prakAra_kI_pagadI
@@ -33093,6 +33094,7 @@ genera_UNDEFINED	vaMSa`
 general-purpose_noun	vyApaka_prayojana
 general_adjective	vyApaka/sAXAraNa/sArvajanika/sAmAnya/praXAna/Ama/senApawi
 general_noun	janarala/senApawi/sAXAraNa/sAmAnya
+general_adverb	Ama_wOra_para/sAmAnyawayA
 generaler_UNDEFINED	sAmAnya
 generalest_UNDEFINED	sAmAnya
 generalisation_noun	vyApakIkaraNa/sAXAraNIkaraNa
@@ -34823,7 +34825,7 @@ guerilla_UNDEFINED	gurillA
 guerillas_UNDEFINED	gurillA
 guerrilla_noun	gurillA/CApAmAra
 guerrillas_UNDEFINED	gurillA
-guess_noun	rAya/anumAna
+guess_noun	anumAna/rAya
 guess_verb	anxAja_lagA/mAna_le/jAna_le/anxAjA_lagA/anumAna_lagA
 guessed_UNDEFINED	anxAja_lagAnA
 guesses_UNDEFINED	anxAja_lagAnA
@@ -35782,7 +35784,7 @@ hardboard_UNDEFINED	motI_xaPwI
 hardboard_noun	kaTora_gawwA/motA_xaPwI
 hardboards_UNDEFINED	motI_xaPwI
 harden_UNDEFINED	kadA_ho_jA
-harden_verb	xrDa_ban/saKwa_kara/saKwa_ban/saKwa_bana/pakkA_ban/kaTora_kara/kaTora_ban/kadA_kara
+harden_verb	xqDa_banA/saKwa_kara/saKwa_banA/pakkA_banA/kaTora_kara/kaTora_banA/kadA_kara
 hardened_UNDEFINED	kadA_karanA
 hardening_UNDEFINED	kadA_karanA
 hardening_noun	kaTorIkaraNa
@@ -36087,7 +36089,7 @@ hauteur_noun	xarpa
 hauteurs_UNDEFINED	xarpa
 have-nots_noun	nirXana
 have-to_verb	sambanXa_raKa
-have_verb	pAsa_ho/xil/se_SatruwA_ho/sawarka_Ora_wEyAra_ho/raKa/pI/para_najara_raKa/para_AzKa_ho/mila/K/ke_sAWa_samBoga_kara/karav/jAna/ho/hE/hAla_kI_KabareM_raKa/dAla/bAXya_ho
+have_verb	pAsa_ho/xil/se_SatruwA_ho/sawarka_Ora_wEyAra_ho/raKa/pI/para_najara_raKa/para_AzKa_ho/mila/KA/ke_sAWa_samBoga_kara/karav/jAna/ho/hE/hAla_kI_KabareM_raKa/dAla/bAXya_ho
 haven_noun	banxaragAha/ASraya-sWala
 havened_UNDEFINED	ASraya
 havening_UNDEFINED	ASraya
@@ -37794,7 +37796,7 @@ horribly_adverb	Bayafkara_rUpase/burI_waraha_se
 horrid_adjective	jaGanya/Bayafkara
 horrider_UNDEFINED	jaGanya
 horridest_UNDEFINED	jaGanya
-horrific_adjective	romAFcakArI/ByAvaha/bahuwa_bekAra
+horrific_adjective	ByAvaha/romAFcakArI/bahuwa_bekAra
 horrifically_adverb	romAFcakArI_Dafga_se/BayAvaha_Dafga_se
 horrificer_UNDEFINED	romAFcakArI
 horrificest_UNDEFINED	romAFcakArI
@@ -57393,7 +57395,7 @@ perseveres_UNDEFINED	niranwara_prayawna_karanA
 persevering_adjective	aXyavasAyI/xqDa
 persian-carpet_noun	PArasI_catAI
 persian_UNDEFINED	PArasI_BARA_yA_PArasI
-persian_adjective	PArasI_BARA_yA_PArasI{nivAsI}
+persian_adjective	PArasI/PArasI_BARA/{nivAsI}
 persian_noun	PArasI_BARA
 persians_noun	PArasI
 persimmon_noun	wenxU_Pala
@@ -63366,8 +63368,7 @@ rainbow_noun	inxraXanuRa/inxra_XanuRa/meGaXanuRa
 rainbows_UNDEFINED	meGaXanuRa
 raincoat_noun	barasAwI/renakota/inxraXanuRa
 raincoats_UNDEFINED	barasAwI
-raindrop_noun	varRA_kI_eka_bUnxa/varRA-binxu
-raindrops_UNDEFINED	varRA_kI_eka_bUnxa
+raindrop_noun	varRA_kI_bUnxa/varRA_bUnxa
 rained_UNDEFINED	bOCAra
 rainfall_noun	varRA/pAnI_barasanA
 rainfalls_UNDEFINED	pAnI_barasanA
@@ -70575,7 +70576,7 @@ serials_UNDEFINED	XArAvAhika
 sericeous_adjective	romila
 sericulture_UNDEFINED	reSama_uwpAxana
 sericulturist_UNDEFINED	reSamavijFAnI
-series_noun	SrqfKalA/SqfKalA/sIrIja
+series_noun	SqfKalA/sIrIja
 serious-minded_UNDEFINED	gamBIra_svaBAvavAlA
 serious_adjective	gamBIra/vicAravAna/vicAraSIla/saFjIxA/rahasyamaya/pracaNda/mahwvapUrNa/mahawwvapUrNa/jatila/Gora/ahama/AcAra_sambanXI
 serious_adverb	gamBIrawA_se
@@ -84758,7 +84759,7 @@ unclaimed_adjective	jisakA_koI_xAvexAra_na_ho/binA_xAve_kA
 unclasp_verb	Kola
 unclassifiable_adjective	avargIkaraNIya
 unclassified_adjective	avargIkqwa/upalabXa/aSreNika
-uncle_noun	cAcA/mOsA/mAmA/PUPA
+uncle_noun	cAcA/mOsA/mAmA/PUPA/wAu
 unclean_adjective	mElA/ganxA/asvacCa/apaviwra/apAvana
 uncleaner_UNDEFINED	apAvana
 uncleanest_UNDEFINED	apAvana
@@ -86090,7 +86091,7 @@ universalities_UNDEFINED	sarvavyApakawA
 universality_noun	sarvavyApakawA/sArvaBOmikawA
 universalize_verb	sarvavyApI_banA
 universally_adverb	sarvawra/saBI_ke_xvArA
-universe_noun	sqRti/viSva/saMsqwi/saMsAra/sampUrNa_sqRiti/samaswa_vicArAXIna_vaswu/mAnavajAwi/jagawa/brahmANda/brahamANda
+universe_noun	brahmANda/sqRti/viSva/saMsqwi/saMsAra/sampUrNa_sqRiti/samaswa_vicArAXIna_vaswu/mAnavajAwi/jagawa
 universes_UNDEFINED	jagawa
 universities_UNDEFINED	viSvavixyAlaya
 university_noun	viSvavixyAlaya/yUnivarsitI_vitsa/viSvaviXAlaya/kisI_viSvavixyAlaya_kA_xala

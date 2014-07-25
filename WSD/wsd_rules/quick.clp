@@ -46,4 +46,19 @@
 
 ;"quick","N","1.haswAMguli_ke_aXa:_BAga"
 ;Pricking with a pin on the quick of a finger is painful
-;
+
+;@@@ Added by Anita-23.1.2014
+;The answer was not easy or quick. [by mail sentence]
+;इसका उत्तर आसान या त्वरित नहीं था ।
+(defrule quick3
+(declare (salience 5100))
+(id-root ?id quick)
+?mng <-(meaning_to_be_decided ?id)
+(conjunction-components  ? $? ?id $?) 
+(id-cat_coarse ?id adjective)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id wvariwa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  quick.clp 	quick3   "  ?id "  wvariwa )" crlf))
+)

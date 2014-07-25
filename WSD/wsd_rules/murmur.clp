@@ -1,3 +1,20 @@
+;@@@ Added by Nandini (1-1-14)
+;Shankar did not utter a murmur of protest.[via mail]
+;Safkara viroXa kA eka Sabxa nahIM bolA WA.
+(defrule murmur5
+(declare (salience 400))
+(id-root ?id murmur)
+?mng <-(meaning_to_be_decided ?id)
+(id-word ?id1 protest)
+(viSeRya-of_saMbanXI  ?id ?id1)
+(id-cat_coarse ?id noun)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Sabxa))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  murmur.clp 	murmur5   "  ?id "  Sabxa)" crlf))
+)
+
 ;@@@ Added by Nandini(14-12-13)
 ;She answered in a faint murmur.[oxford advanced learner's dictionary]
 ;usane eka nirbala svara meM uwwara xiyA.
