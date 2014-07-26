@@ -84,17 +84,17 @@
 
 (defrule get_verb_chunk
 (declare (salience 802))
-?f<-(chunk_name-chunk_ids-words ?chnk&VGF $?pre ?mid $?pos - $?gids)
+?f<-(chunk_name-chunk_ids-words ?chnk&VGF $?gids - $?pre ?mid $?pos)
 ?f1<-(manual_id-word ?mid ?man_wrd)
 =>
 	(retract ?f)
-	(assert (chunk_name-chunk_ids-words ?chnk $?pre ?man_wrd $?pos - $?gids))
+	(assert (chunk_name-chunk_ids-words ?chnk  $?gids - $?pre ?man_wrd $?pos))
 ) 
 
 
 (defrule get_verb_chunk1
 (declare (salience 801))
-?f<-(chunk_name-chunk_ids-words ?chnk&VGF ?man_wrd $?r_mng - $?gids)
+?f<-(chunk_name-chunk_ids-words ?chnk&VGF $?gids - ?man_wrd $?r_mng)
 ?f1<-(manual_id-word ?mid ?man_wrd)
 =>
 	(bind $?ids (create$ ))
@@ -369,15 +369,16 @@
 )
 
 
-(defrule verb_rule5
-(declare (salience 50))
-?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word - - - - - $?grp_ids)
-(test (eq (numberp ?iwa_word) FALSE))
-?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?tam&karawA|howA|karawI|howI|karawe|howe|kiyA $?rem_wrds - - - - - ?id1 $?gids)
-(man_word-root-cat ?tam ?root&kara|ho v)
-=>
-        (retract ?f1 ?f2)
-        (if (eq (length $?rem_wrds) 0) then (bind $?rem_wrds (create$ -)))
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word ?tam $?rem_wrds - ?iwa_word ?root - $?rem_wrds - $?grp_ids ?id1 $?gids))
-)
-
+;(defrule verb_rule5
+;(declare (salience 50))
+;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word - - - - - $?grp_ids)
+;(chunk_name-chunk_ids ?chnk&JJP $? ?id0 $?mng)
+;(test (eq (numberp ?iwa_word) FALSE))
+;?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?tam&karawA|howA|karawI|howI|karawe|howe|kiyA $?rem_wrds - - - - - ?id1 $?gids)
+;(man_word-root-cat ?tam ?root&kara|ho v)
+;=>
+;        (retract ?f1 ?f2)
+;        (if (eq (length $?rem_wrds) 0) then (bind $?rem_wrds (create$ -)))
+;        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word ?tam $?rem_wrds - ?iwa_word ?root - $?rem_wrds - $?grp_ids ?id1 $?gids))
+;)
+;
