@@ -51,6 +51,11 @@
 )
 
 
+;$$$ Modified by Shirisha Manju -- used 'word' fact instead 'root' and added sundays|mondays|tuesdays|wednesdays|thursdays|fridays to list
+;I go to school on Mondays, Tuesdays, Wednesdays, Thursdays and Fridays.
+;mEM somavAra, mafgalavAra, buXavAra, guruvAra Ora SukravAra ko vixyAlaya jAwA hUz.
+;On Saturdays I play games at school. 
+;SanivAra ko mEM vixyAlaya meM Kela KelawA hUz.
 ;Modified by Aditya and Hardik(5.7.13),IIT(BHU) (Added month names and number category)
 ;I completed my college on 23rd july 2013.
 ;Modified by Meena(21.7.11)
@@ -61,7 +66,7 @@
 ?mng <-(meaning_to_be_decided ?id)
 (or(kriyA-on_saMbanXI ?kri ?id1)(viSeRya-on_saMbanXI  ?viSeRya  ?id1))
 ;(id-root  ?id1 Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)
-(or (id-root  ?id1 sunday|monday|tuesday|wednesday|thursday|friday|saturday|january|february|march|april|may|june|july|august|september|october|november|december)(id-cat_coarse ?id1 number));Modified to lowcase by Roja(13-06-13). As now we are using NER to get PropN info , NER doesnt recognize weekdays as Named Entities. So changed to lowcase. Ex:They are playing an important match against Liverpool on Saturday. 
+(or (id-word  ?id1 sunday|monday|tuesday|wednesday|thursday|friday|saturday|january|february|march|april|may|june|july|august|september|october|november|december|sundays|mondays|tuesdays|wednesdays|thursdays|fridays|saturdays)(id-cat_coarse ?id1 number));Modified to lowcase by Roja(13-06-13). As now we are using NER to get PropN info , NER doesnt recognize weekdays as Named Entities. So changed to lowcase. Ex:They are playing an important match against Liverpool on Saturday. 
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id ko))

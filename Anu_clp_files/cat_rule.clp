@@ -6,18 +6,22 @@
  (assert (parserid-wordid))
  (assert (parser_id-cat_coarse))
  (assert (No complete linkages found))
+ (assert (parser_id-cat))
  )
  ;-----------------------------------------------------------------------------------------------------------------
- ;POS fine cat
+ ;Stanford fine cat
  (defrule fine_cat
  (declare (salience 150))
- (id-cat ?id ?cat)
+ ?f1<-(parser_id-cat  ?pid  ?cat)
+ (parserid-wordid  ?pid ?id)
+ ?f0<-(id-cat ?id $?)
  =>
-	(printout ?*cat_fp* "(id-cat "?id" " ?cat")"crlf)
+	(printout ?*cat_fp* "(parser_id-cat "?pid" " ?cat")"crlf)
+	(retract ?f0 ?f1)
  )
  ;-----------------------------------------------------------------------------------------------------------------
  ; link cat  
- (defrule link_cat
+ (defrule parser_cat
  (declare (salience 100))
  ?f1<-(parser_id-cat_coarse  ?pid  ?cat)
  (parserid-wordid  ?pid ?id)
