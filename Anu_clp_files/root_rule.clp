@@ -12,6 +12,7 @@
  (assert (morph_analysis_to_be_choosen))
  (assert (ol_res_id-word_id-word))
  (assert (current_id-group_members))
+ (assert (parser_id-cat))
  )
  ;----------------------------------------COMMON RULES FOR ALL PARSERS------------------------------------------------------
 ; Handling this rule in wsd_meaning.clp

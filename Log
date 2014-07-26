@@ -1,25 +1,31 @@
- 24-07-14
+ 26-07-14
  ========
  1. WSD:
-	Modified : have.clp	president.clp	who.clp		roundabout.clp
+	Modified : have.clp	president.clp	who.clp		roundabout.clp	on.clp	add.clp
+	Added	 : dissolve.clp
 	Moved provisional wsd rules into WSD
  2. sd_category.clp
         Modified : PropN_rule_from_NER and PropN_rule_from_NER1
-        Added : PropN_rule
+        Added : PropN_rule TO_rule1
+	Modified the rules to generate fine category using stanford parser 
  3. sd_lwg_rules.clp
         Modified : check_for_imper1  (to add SBAR in the list)
  4. hindi_meaning.clp:
 	Added : decide_mng_symbols (when cat is symbol)
  5. wsd_tam_meaning.clp:
 	Modified: load_user_tam_file
- 6. run_modules_std.bat
+ 6. cat_rule.clp
+	Modified: 'fine_cat' rule (used stanford parsers fine cat instead apertium)
+ 7. parser_id_mapping.clp
+	Modified: 'map_cat' rule  (used stanford parsers fine cat instead apertium) 
+ 8. run_modules_std.bat
         Loaded  parserid_wordid_mapping.dat and word2.dat in sd_category module
- 7. hnd_translation.pl:
+ 9. hnd_translation.pl:
         Modified 'hindi_sentence_tmp.dat' to 'hindi_sentence.dat'	
- 8. Added relation_table/ folder in Doc contains following files:
+ 10. Added relation_table/ folder in Doc contains following files:
 	relation-table-for-WSD-wx.html  
 	style.css
- 9. Added following files related to phrasal alignment:
+ 11. Added following files related to phrasal alignment:
 	count.py
 	sort.sh
 	bin/Anusaaraka_alignment.sh 
@@ -34,10 +40,11 @@
 	get_pos_chunk.sh
 	create-chunk-facts.py
 	print-pos-info.py
- 10. Updated following lex files:
+ 12. Added 'parser_id-cat' dummy fact in cat_rule.clp, parser_id_mapping.clp, root_rule.clp and sd_relation_rules.clp
+ 13. Updated following lex files:
 	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
 	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern
- 11. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
+ 14. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
 	Word-to-Word-dict.txt
 	en-hi-gdbm-dict.txt
 	run_alignment.sh
@@ -63,15 +70,15 @@
 	run_H_gen_sen_eng.bat
  	multifast-v1.0.0/src/run.sh
 	Readme 
- 12. Updated following dictionarie related files:
+ 15. Updated following dictionarie related files:
 	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix
- 13. Updated following files shell files:
+ 16. Updated following files shell files:
 	Anusaaraka_stanford_align_eng_ord.sh
 	replace-abbrevations.sh
 	abbr.sh
- 14. Updated following file:
-	sd_verified
- 15. Updated Log. 
+ 17. Updated following file:
+	sd_verified (827)
+ 18. Updated Log. 
 
  05-06-14
  ========
