@@ -42,6 +42,9 @@
 
  python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  hindi_sentence_tmp1.dat hindi_sentence_tmp2.dat
 
+ wx_utf8 < hindi_sentence_tmp2.dat  >  hindi_sentence_utf8.dat
+ cat hindi_sentence_utf8.dat
+
  cat  hindi_sentence_tmp2.dat |  sed -e 's/\\@//g' | sed 's/@//g'  > hindi_sentence.dat
  cat  hindi_sentence.dat
 

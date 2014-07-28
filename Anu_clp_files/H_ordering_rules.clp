@@ -128,21 +128,42 @@
 ;They accused him of the crime.
 (defrule dont_rev_if_VP_head_accused
 (declare (salience 1400))
-?f0<-(Head-Level-Mother-Daughters ?head ?l ?Mot ?ADVP $?d ?VP)
+?f0<-(Head-Level-Mother-Daughters ?head ?l ?Mot ?verb $?d)
 (id-original_word ?head accused)
 (Node-Category  ?Mot VP)
 (not (Mother  ?Mot))
 =>
 	(bind ?*count* (+ ?*count* 1))
         (retract ?f0)
-        (assert (Head-Level-Mother-Daughters ?head ?l ?Mot $?d ?VP ?ADVP))
+        (assert (Head-Level-Mother-Daughters ?head ?l ?Mot $?d ?verb))
         (assert (Mother  ?Mot))
         (printout ?*order_debug-file* "(rule_name - dont_rev_if_VP_head_accused " ?*count* " " crlf
-                         "              Before    - "?head" "?l" "?Mot" "?ADVP" "(implode$ $?d)" "?VP crlf
-                         "              After     - "?head" "?l" "?Mot" "(implode$ $?d)" "?VP" "?ADVP ")" crlf)
+                         "              Before    - "?head" "?l" "?Mot" "?verb" "(implode$ $?d) crlf
+                         "              After     - "?head" "?l" "?Mot" "(implode$ $?d)" "?verb ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (26-07-14) -- Suggested by Sukhada.
+;Do you think we should go to the party?  He disputed that our program was superior.We [assume] that the motion is in y-direction, more correctly in — y-direction because we choose upward direction as positive.
+;S :  I do not think ghosts exist. ;I want to go there.
+(defrule dont_rev_VP_if_immediate_sis_sbar
+(declare (salience 1400))
+?f0<-(Head-Level-Mother-Daughters ?head ?l ?Mot ?verb ?sbar $?d)
+(Node-Category  ?Mot VP)
+(Node-Category  ?sbar SBAR|S)
+(Head-Level-Mother-Daughters  ?  ?  ?verb ?id)
+(id-cat_coarse ?id verb)
+(id-root ?head ?root) 
+(test (member$ ?root (create$ think matter wonder say dispute suppose comment figure point assume)) )
+(not (Mother  ?Mot))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (Mother  ?Mot))
+	(printout ?*order_debug-file* "(rule_name - dont_rev_VP_if_immediate_sis_sbar " ?*count* " " crlf
+                         "              Before    - "?head" "?l" "?Mot" "?verb" "?sbar" "(implode$ $?d) crlf
+                         "              After     - "?head" "?l" "?Mot" "?verb" "?sbar" "(implode$ $?d) ")" crlf)
 
+)
+;-----------------------------------------------------------------------------------------------------------------------
 (defrule print_for_debugging2
 (declare (salience 1000))
 =>
@@ -160,8 +181,6 @@
 (Node-Category  ?advp  ADVP|RB)
 (not (Mother  ?advp))
 (not (Mother  ?Mot));Her heart beats fast. 
-(id-original_word ?head ?word)
-(test (eq (member$ ?word (create$ think thought thinks thinking matter wonder say said says saying disputed suppose supposed supposes supposing commented figured pointed assume)) FALSE))
 =>
         (retract ?f0)
 	(assert (Mother  ?advp))
@@ -172,31 +191,30 @@
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;So we conclude that the thieves did not enter through the front door, Pranjol said.
+;wo hama niRkarRa nikAlawe hEM ki cora sAmane ke xaravAje se nahIM Guse We.
+;I think so.  He pointed a gun at her.
 (defrule rev_VP_or_WHPP
 (declare (salience 950))
-?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d ?d1 )
+?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot $?daut)
 (Node-Category  ?Mot  VP|WHPP|Inf_VP)
-(not (Node-Category  ?d CC));I ate fruits, drank milk and slept. 
 (not (Mother  ?Mot))
 (not (Daughters_replaced  ?Mot))
-(id-original_word ?head ?wrd)
-(test (eq (member$ ?wrd (create$ think thought thinks thinking matter wonder say said says saying disputed suppose supposed supposes supposing commented figured pointed assume conclude)) FALSE));Do you think we should go to the party?  He disputed that our program was superior.We [assume] that the motion is in y-direction, more correctly in — y-direction because we choose upward direction as positive.
 =>
         (bind ?*count* (+ ?*count* 1))	
 	(bind ?note "reverse") ;In the second case, the car moves from O to P and then moves back from P to Q .
 	(loop-for-count (?i 1 (length $?daut))
 		(bind ?id (nth$ ?i $?daut))
-		(if (eq (sub-string 1 2 ?id) "CC") then
+		(if (eq (sub-string 1 2 ?id) "CC")  then
 			(bind ?note "dont_reverse")
 		)
 	)
 	(if (neq ?note "dont_reverse") then
         	(retract ?f0)
-	       	(bind ?rev_daut (create$ ?head ?lev (reverse_daughters ?Mot $?daut ?d ?d1)))
+	       	(bind ?rev_daut (create$ ?head ?lev (reverse_daughters ?Mot $?daut)))
 		(assert (Head-Level-Mother-Daughters ?rev_daut))
 		(assert (Mother  ?Mot))
 		(printout ?*order_debug-file* "(rule_name - rev_VP_or_PP_or_WHPP " ?*count* " " crlf
-                         "              Before    - "?head" " ?lev" "?Mot" "(implode$ $?daut)" " ?d" "?d1 crlf
+                         "              Before    - "?head" " ?lev" "?Mot" "(implode$ $?daut) crlf
 	                 "              After     - "(implode$ ?rev_daut) ")" crlf)
 	)
 )
