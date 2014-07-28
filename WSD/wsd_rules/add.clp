@@ -114,22 +114,72 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " add.clp	add3  "  ?id "  " ?id1 "  yoga_ho  )" crlf))
 )
 
+;$$$ Modified by July workshop participants under Aditi and Soma guidance (10-07-14)
+;removed --- (not (id-cat_coarse ?id1 number));added by Shirisha Manju (13-06-13) Suggested by Sukhada
+;Changed 'wsd_word_mng' as 'wsd_root_mng' => milAo  as milA
+;Add some sugar.
+;kuCa cInI milAiye. 
 (defrule add4
 (declare (salience 4700))
 ?mng <-(meaning_to_be_decided ?id)
 (id-root ?id add)
 (kriyA-object ?id ?id1)
-(not (id-cat_coarse ?id1 number));added by Shirisha Manju (13-06-13) Suggested by Sukhada
+(id-root ?id1 air|water|milk|juice|oil|sand|sugar|salt|mineral|acid|spices) ;added by July workshop participants on 10-07-14
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_word_mng ?id milAo))
+(assert (id-wsd_root_mng ?id milA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  add.clp    add4   "  ?id "  milAo )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  add.clp    add4   "  ?id "  milA )" crlf))
 )
+
+;@@@ Added by Shirisha Manju Suggested by Sukhada (16-7-14)
 ;Add one spoonful of sugar.
+;eka cammaca cInI milAiye. 
+(defrule add10
+(declare (salience 4700))
+?mng <-(meaning_to_be_decided ?id)
+(id-root ?id add)
+(kriyA-object ?id ?obj)
+(viSeRya-of_saMbanXI  ?obj ?id1)
+(id-root ?id1 air|water|milk|juice|oil|sand|sugar|salt|mineral|acid|spices)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id milA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  add.clp    add10   "  ?id "  milA )" crlf))
+)
 
 
+
+;@@@ Added by July workshop participants under Aditi and Soma guidance [11-07-14]
+;"I bought a pen", he added.
+;usane Age kahA, "mEMne kalama KarIxI".
+;He added that the revolutionaries will not fall into the trap.
+;usane Age kahA kI krAnwikArI jAla meM nahIM PaseMge.
+(defrule add9
+(declare (salience 4700))
+?mng <-(meaning_to_be_decided ?id)
+(id-root ?id add)
+(kriyA-vAkyakarma ?id ?)
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id Age_kaha))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  add.clp    add9   "  ?id "  Age_kaha )" crlf))
+)
+
+
+;$$$ Modified by July workshop participants under Aditi and Soma guidance [10-7-14]
+;Changed meaning from 'Age_kaha' to 'jodZa'
+;It is added to their blacklist.        COCA
+;yaha unakI kAlI-sUcI meM jodZA gayA.
+;A new wing was added to the building.  OALD
+;Bavana meM eka nayA viNga jodZA gayA.
+;New features can be added to the existing systems. COCA
+;mOjUxA praNaliyoM meM nayI viSeRawAyeM jodZI jA sakawI hEM.
 (defrule add5
 (declare (salience 4600))
 (id-root ?id add)
@@ -137,9 +187,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id Age_kaha))
+(assert (id-wsd_root_mng ?id jodZa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  add.clp 	add5   "  ?id "  Age_kaha )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  add.clp 	add5   "  ?id "  jodZa )" crlf))
 )
 
 ;Added by Aditya and Hardik,

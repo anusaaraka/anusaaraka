@@ -6,7 +6,8 @@
  (assert (word-nertype))
  )
 
- (defglobal ?*cat_fp* = sd_cat_fp) 
+ (defglobal ?*cat_fp* = sd_cat_fp)
+
 
  (deffunction string_to_integer (?parser_id)
 ; Removes the first character from the input symbol which is assumed to contain digits only from the second position onward; length should be less than 10000]
@@ -22,8 +23,9 @@
   (id-sd_cat ?id1 NNP)
   (test (eq (- (string_to_integer ?id) 1) (string_to_integer ?id1)))
   =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id" PropN)" crlf)
-         (retract ?f0)
+	(assert (parser_id-cat_coarse ?id PropN))
+	(assert (parser_id-cat ?id proper_noun_plural))
+        (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
   (defrule NNP_to_NN
@@ -42,12 +44,10 @@
   (declare (salience 12))
   (word-nertype ?word&~of PERSON|LOCATION|ORGANIZATION) ;The Zongle [of] Bongle Dongle resigned today. 
   (parserid-word P1 ?word)
-  ;(parserid-word ?pid ?word)
   ?f0<-(id-sd_cat   P1 ?)
-;  ?f0<-(id-sd_cat   ?pid ?)
   =>
-        (printout ?*cat_fp* "(parser_id-cat_coarse	P1	 PropN)" crlf)
-;        (printout ?*cat_fp* "(parser_id-cat_coarse  "?pid " PropN)" crlf)
+        (assert (parser_id-cat_coarse P1 PropN))
+        (assert (parser_id-cat P1 proper_noun))
         (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
@@ -55,15 +55,13 @@
   (defrule PropN_rule_from_NER1
   (declare (salience 12))
   (word-nertype ?word PERSON|LOCATION|ORGANIZATION)
-;  (parserid-word ?pid ?wrd)
   (parserid-word P1's ?wrd)
   ?f0<-(id-sd_cat   P1's ?)
-  ;?f0<-(id-sd_cat   ?pid ?)
   (test (neq (str-index "'s" ?wrd) FALSE))
   (test (eq ?word (string-to-field (sub-string 1 (- (str-index "'s" ?wrd) 1) ?wrd))))
   =>
-	(printout ?*cat_fp* "(parser_id-cat_coarse  P1's	 PropN)" crlf)
-;	(printout ?*cat_fp* "(parser_id-cat_coarse  "?pid " PropN)" crlf)
+        (assert (parser_id-cat_coarse  P1's PropN))
+        (assert (parser_id-cat P1's proper_noun))
 	(retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
@@ -93,7 +91,8 @@
   (parserid-word ?pid ?w&~I) ;You are lucky I am here.
   (test (eq (str-index "SYMBOL-" ?w) FALSE));Added this condition to avoid words with SYMBOL to convert to NNP category (Added by Roja 18-10-12) EX:  In one-dimensional motion, there are only two directions (backward and forward, upward and downward) in which an object can move, and these two directions can easily be specified by + and — signs. 
    =>
-        (printout ?*cat_fp* "(parser_id-cat_coarse  "?pid"   PropN)" crlf)
+        (assert (parser_id-cat_coarse ?pid PropN))
+        (assert (parser_id-cat ?pid proper_noun))
         (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
@@ -106,67 +105,182 @@
   (Node-Category ?ADJP ADJP)
   (Node-Category ?VBN VBN)
   =>
-	(printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  adjective)" crlf)
+        (assert (parser_id-cat_coarse ?id adjective))
+        (assert (parser_id-cat ?id adjective))
    	(retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
-  ;He disputed that our program was superior . (PRP$) 
   (defrule PRP_rule
-  ?f0<-(id-sd_cat	?id	PRP|PRP$)
+  ?f0<-(id-sd_cat	?id	PRP)
   =>
- 	(printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  pronoun)" crlf)
+        (assert (parser_id-cat_coarse ?id pronoun))
+        (assert (parser_id-cat ?id personal_pronoun))
   	(retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
-  ; NNS -- How many people died .
-  (defrule NN_rule
-  ?f0<-(id-sd_cat        ?id     ?cat&NN|NNS)
+  ;He disputed that our program was superior . (PRP$) 
+  (defrule PRP$_rule
+  ?f0<-(id-sd_cat       ?id     PRP$)
   =>
- 	(printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  noun)" crlf)
+        (assert (parser_id-cat_coarse ?id pronoun))
+        (assert (parser_id-cat ?id possessive_pronoun))
+        (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  (defrule NN_rule
+  ?f0<-(id-sd_cat        ?id     NN)
+  =>
+        (assert (parser_id-cat_coarse ?id noun))
+	(assert (parser_id-cat ?id noun_singular))
+   	(retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  ; NNS -- How many people died .
+  (defrule NNS_rule
+  ?f0<-(id-sd_cat        ?id     NNS)
+  =>
+	(assert (parser_id-cat_coarse ?id noun))
+	(assert (parser_id-cat ?id noun_plural))
          (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
   (defrule VB_rule
-  ?f0<-(id-sd_cat        ?id     VB|VBZ|VBN|VBG|VBD|VBP)
+  ?f0<-(id-sd_cat        ?id     VB)
   =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  verb)" crlf)
-         (retract ?f0)
+        (assert (parser_id-cat_coarse ?id verb))
+	(assert (parser_id-cat ?id verb_base_form))
+        (retract ?f0)
   )
+  ;------------------------------------------------------------------------------------------
+  (defrule VBZ_rule
+  ?f0<-(id-sd_cat        ?id     VBZ)
+  =>
+        (assert (parser_id-cat_coarse ?id verb))
+	(assert (parser_id-cat ?id 3rd_person_singular))
+        (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  (defrule VBN_rule
+  ?f0<-(id-sd_cat        ?id     VBN)
+  =>
+        (assert (parser_id-cat_coarse ?id verb))
+	(assert (parser_id-cat ?id verb_past_participle))
+        (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  (defrule VBG_rule
+  ?f0<-(id-sd_cat        ?id     VBG)
+  =>
+        (assert (parser_id-cat_coarse ?id verb))
+	(assert (parser_id-cat ?id gerund_or_present_participle))
+        (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  (defrule VBD_rule
+  ?f0<-(id-sd_cat        ?id     VBD)
+  =>
+        (assert (parser_id-cat_coarse ?id verb))
+	(assert (parser_id-cat ?id verb_past_tense))
+        (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  (defrule VBP_rule
+  ?f0<-(id-sd_cat        ?id     VBP)
+  =>
+        (assert (parser_id-cat_coarse ?id verb))
+	(assert (parser_id-cat ?id non-3rd_person_singular))
+        (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+ ; MD may be modal verb or verb
+  (defrule MD_rule
+  ?f0<-(id-sd_cat        ?id     MD)
+  =>
+        (assert (parser_id-cat_coarse ?id verb))
+	(assert (parser_id-cat ?id modal_verb))
+        (retract ?f0)
+  )      
   ;------------------------------------------------------------------------------------------
   ;[There] was a red mark on the door. 
   (defrule RB_rule
-  ?f0<-(id-sd_cat        ?id     RB|RBR|RBS|EX)
+  ?f0<-(id-sd_cat        ?id     RB)
   =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  adverb)" crlf)
-         (retract ?f0)
+        (assert (parser_id-cat_coarse ?id adverb))
+	(assert (parser_id-cat ?id adverb))
+        (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  (defrule RBR_rule
+  ?f0<-(id-sd_cat        ?id     RBR)
+  =>
+        (assert (parser_id-cat_coarse ?id adverb))
+	(assert (parser_id-cat ?id adverb_comparative))
+        (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  (defrule RBS_rule
+  ?f0<-(id-sd_cat        ?id     RBS)
+  =>
+        (assert (parser_id-cat_coarse ?id adverb))
+	(assert (parser_id-cat ?id adverb_superlative))
+        (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  (defrule Ex_rule
+  ?f0<-(id-sd_cat        ?id     EX)
+  =>
+        (assert (parser_id-cat_coarse ?id adverb))
+	(assert (parser_id-cat ?id existential_there))
+        (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
   (defrule RP_rule
   ?f0<-(id-sd_cat        ?id     RP)
   =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  particle)" crlf)
-         (retract ?f0)
+	(assert (parser_id-cat_coarse ?id particle))
+        (assert (parser_id-cat ?id particle))
+        (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
   (defrule JJ_rule
-  ?f0<-(id-sd_cat        ?id     JJ|JJR|JJS)
+  ?f0<-(id-sd_cat        ?id     JJ)
   =>
- 	(printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  adjective)" crlf)
+         (assert (parser_id-cat_coarse ?id adjective))
+         (assert (parser_id-cat ?id adjective))
          (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  (defrule JJR_rule
+  ?f0<-(id-sd_cat        ?id     JJR)
+  =>
+        (assert (parser_id-cat_coarse ?id adjective))
+	(assert (parser_id-cat ?id adjective_comparative))
+        (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  (defrule JJS_rule
+  ?f0<-(id-sd_cat        ?id     JJS)
+  =>
+        (assert (parser_id-cat_coarse ?id adjective))
+        (assert (parser_id-cat ?id adjective_superlative))
+        (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
   ;If you use that strategy, he will wipe you out.
   ;Since I know English, he spoke to me.
+  ;He managed to escape clear out [of] the burning house.
   (defrule IN_rule
   ?f0<-(id-sd_cat        ?id     IN)
   (Head-Level-Mother-Daughters ? ? ?IN ?id)
-  (Head-Level-Mother-Daughters ? ? ?Mot ?IN $?)
+  (Head-Level-Mother-Daughters ? ? ?Mot $? ?IN $?)
   (Node-Category ?Mot ?cat&PP|SBAR)
   =>
 	(if (eq ?cat PP) then
-		(printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  preposition)" crlf)
+         	(assert (parser_id-cat_coarse ?id preposition))
+        	(assert (parser_id-cat ?id preposition))
 	else
-		(printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  conjunction)" crlf)
+		(assert (parser_id-cat_coarse ?id conjunction))
+        	(assert (parser_id-cat ?id subordinating_conjunction))
 	)	
         (retract ?f0)
   )
@@ -174,25 +288,27 @@
   ;[All] these numbers have the same number of significant figures (digits 2, 3, 0, 8), namely four.
   ;[Such] a dilemma does not occur in the wave picture of light.
   (defrule DT_rule
-  ?f0<-(id-sd_cat        ?id     DT|PDT)
+  ?f0<-(id-sd_cat        ?id     DT)
   =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  determiner)" crlf)
-         (retract ?f0)
+        (assert (parser_id-cat_coarse ?id determiner))
+      	(assert (parser_id-cat ?id determiner))
+        (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
-  (defrule MD
-  ?f0<-(id-sd_cat        ?id     MD)
+  (defrule PDT_rule
+  ?f0<-(id-sd_cat        ?id     PDT)
   =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  verb)" crlf)
-         (retract ?f0)
+        (assert (parser_id-cat_coarse ?id determiner))
+        (assert (parser_id-cat ?id pre_determiner))
+        (retract ?f0)
   )
-  ; MD may be modal verb or verb
   ;------------------------------------------------------------------------------------------
   (defrule CC_rule
   ?f0<-(id-sd_cat        ?id     CC)
   =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  conjunction)" crlf)
-         (retract ?f0)
+        (assert (parser_id-cat_coarse ?id conjunction))
+       	(assert (parser_id-cat ?id coordinating_conjunction))
+        (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
   ;In which school do you study?
@@ -200,24 +316,41 @@
   (defrule WDT_rule
   ?f0<-(id-sd_cat        ?id     WDT)
   =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  wh-determiner)" crlf)
-         (retract ?f0)
+        (assert (parser_id-cat_coarse ?id wh-determiner))
+       	(assert (parser_id-cat ?id wh-determiner))
+        (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
   ;When did the accident happen?
   (defrule WRB_rule
   ?f0<-(id-sd_cat        ?id     WRB)
   =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  wh-adverb)" crlf)
+         (assert (parser_id-cat_coarse ?id wh-adverb))
+         (assert (parser_id-cat ?id wh-adverb))
+         (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  ;Added by Shirisha Manju 24-7-14 Suggested by Chaitanya Sir
+  ;The way to predict the future is to create it. My goal is to make products that have enduring appeal.
+  (defrule TO_rule1
+  (declare (salience -10))
+  ?f0<-(id-sd_cat        ?id     TO)
+  (parser_id-cat_coarse ?id1 verb)
+  (test (= (+ (string_to_integer ?id) 1)(string_to_integer ?id1)))
+  =>
+         (assert (parser_id-cat_coarse ?id infinitive_to))
+         (assert (parser_id-cat ?id to))
          (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
   ;Equation (6.1) can be extended [to] curved surfaces and nonuniform fields. 
   ;Added by Roja(17-07-13)
   (defrule TO_rule
+  (declare (salience -20))
   ?f0<-(id-sd_cat        ?id     TO)
   =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  preposition)" crlf)
+         (assert (parser_id-cat_coarse ?id preposition))
+         (assert (parser_id-cat ?id to))
          (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
@@ -226,16 +359,26 @@
   (defrule CD_rule
   ?f0<-(id-sd_cat        ?id     CD)
   =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  number)" crlf)
+         (assert (parser_id-cat_coarse ?id number))
+         (assert (parser_id-cat ?id cardinal_number))
          (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
   ;Added by Roja(17-07-13)
   ;[What] is the nature of physical laws? 
   (defrule WP_rule
-  ?f0<-(id-sd_cat        ?id     WP|WP$)
+  ?f0<-(id-sd_cat        ?id     WP)
   =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  wh-pronoun)" crlf)
+         (assert (parser_id-cat_coarse ?id wh-pronoun))
+         (assert (parser_id-cat ?id wh-pronoun))
+         (retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
+  (defrule WP$_rule
+  ?f0<-(id-sd_cat        ?id     WP$)
+  =>
+         (assert (parser_id-cat_coarse ?id wh-pronoun))
+         (assert (parser_id-cat ?id possessive_wh-pronoun))
          (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
@@ -244,7 +387,8 @@
   (defrule UH_rule
   ?f0<-(id-sd_cat        ?id     UH)
   =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  interjection)" crlf)
+         (assert (parser_id-cat_coarse ?id interjection))
+         (assert (parser_id-cat ?id interjection))
          (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
@@ -253,13 +397,24 @@
   (defrule SYM_rule
   ?f0<-(id-sd_cat        ?id     SYM)
   =>
-         (printout ?*cat_fp* "(parser_id-cat_coarse  "?id"  symbol)" crlf)
+         (assert (parser_id-cat_coarse ?id symbol))
+         (assert (parser_id-cat ?id symbol))
          (retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
-  (defrule close_cat_file
-  (declare (salience -100))
+  (defrule print_coarse_info
+  (declare (salience -50))
+  ?f<-(parser_id-cat_coarse ?id ?cat)
   =>
-  	(close ?*cat_fp*)
+	(printout ?*cat_fp* "(parser_id-cat_coarse  "?id" " ?cat")" crlf)
+	(retract ?f)
   )
   ;------------------------------------------------------------------------------------------
+  (defrule print_fine_info
+  (declare (salience -60))
+  ?f<-(parser_id-cat ?id ?cat)
+  =>
+        (printout ?*cat_fp* "(parser_id-cat  "?id" " ?cat")" crlf)
+        (retract ?f)
+  )     
+

@@ -22,7 +22,9 @@
  (assert (link_id-idiom_root_mng))
  (assert (meaning_has_been_decided_for_linkid))
  (assert (parser_id-number-src))
+ (assert (parser_id-cat))
  )
+
  (defglobal ?*cat_cons-file* = cat_cons_fp) 
  (defglobal ?*mng_dcd-file* = mng_dcd_fp)
  (defglobal ?*id_expr-file* = id_expr_fp)
@@ -136,20 +138,21 @@
  )
  
  ;======================================  RULES TO MAP CATEGORY   ====================================================
-
+ ;Modified by Shirisha Manju 25-7-14 : used stanford fine cat instead of apertium fine cat
  (defrule map_cat
  (declare (salience 850))
- (id-cat $?var)
+ (parser_id-cat ?p_id ?cat)
+ (parserid-wordid  ?p_id ?wid)
  =>
-	(printout ?*cat_cons-file* "(id-cat " (implode$ $?var) ")" crlf)
+	(printout ?*cat_cons-file* "(id-cat " ?wid" "?cat ")" crlf)
  )
  ;-------------------------------------------------------------------------------------------------------------------
  (defrule map_cat_coarse
  (declare (salience 800))
- (parser_id-cat_coarse ?p_id ?var)
+ (parser_id-cat_coarse ?p_id ?cat)
  (parserid-wordid  ?p_id ?wid)
  =>
-	(printout ?*cat_cons-file* "(id-cat_coarse "?wid" "?var")" crlf)
+	(printout ?*cat_cons-file* "(id-cat_coarse "?wid" "?cat")" crlf)
  )
  ;======================================  RULES TO MAP NUMBER   ====================================================
  (defrule map_number

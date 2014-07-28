@@ -15,6 +15,7 @@
  (assert (rel_name-sids))
  (assert (root-verbchunk-tam-parser_chunkids))
  (assert (lwg_root-verbchunk-tam-chunkids))
+ (assert (parser_id-cat))
  )
  
 
