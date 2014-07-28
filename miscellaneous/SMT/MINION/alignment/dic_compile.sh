@@ -172,30 +172,33 @@ echo "Creating eng_proper_noun_multi.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic_smt.gdbm < default-iit-bombay-shabdanjali-dic_smt.txt
  rm word_field mng_field mng_utf8 default-iit-bombay-shabdanjali-dic_firefox_tmp.txt default-iit-bombay-shabdanjali-dic_smt_tmp.txt
 
+ cd $HOME_anu_test/Anu_data/
  echo "Creating PropN.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/PropN.gdbm < $HOME_anu_test/Anu_data/PropN.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/PropN.gdbm < PropN.txt
  echo "Creating adverb_list.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/adverbs_list.gdbm < $HOME_anu_test/Anu_data/adverbs_list.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/adverbs_list.gdbm < adverbs_list.txt
  echo "Creating uncountable.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/uncountable.gdbm < $HOME_anu_test/Anu_data/uncountable.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/uncountable.gdbm < uncountable.txt
  echo "Creating animate.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/animate.gdbm < $HOME_anu_test/Anu_data/animate.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/animate.gdbm < animate.txt
  echo "Creating human.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/human.gdbm < $HOME_anu_test/Anu_data/human.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/human.gdbm < human.txt
  echo "Creating plural_words.gdbm "
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/plural_words.gdbm < $HOME_anu_test/Anu_data/plural_words.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/plural_words.gdbm < plural_words.txt
  echo "Creating ol_parser_unused_words.gdbm "
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/ol_parser_unused_words.gdbm < $HOME_anu_test/Anu_data/ol_parser_unused_words.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/ol_parser_unused_words.gdbm < ol_parser_unused_words.txt
  echo "Creating place.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/place.gdbm  < $HOME_anu_test/Anu_data/place.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/place.gdbm  < place.txt
  echo "Creating time.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/time.gdbm  < $HOME_anu_test/Anu_data/time.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/time.gdbm  < time.txt
  echo "Creating eng-animate-list.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/eng-animate-list.gdbm  < $HOME_anu_test/Anu_data/eng-animate-list.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/eng-animate-list.gdbm  < eng-animate-list.txt
  echo "Creating transitive-verb-list.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/transitive-verb-list.gdbm  < $HOME_anu_test/Anu_data/transitive-verb-list.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/transitive-verb-list.gdbm  < transitive-verb-list.txt
  echo "Creating idioms.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/idioms.gdbm < $HOME_anu_test/Anu_data/idioms.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/idioms.gdbm < idioms.txt
+ echo "Creating transliterate_meaning.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/transliterate_meaning.gdbm < transliterate_meaning.txt
 
  cd $HOME_anu_test/Anu_data/compound-matching
  sh make-dict.sh

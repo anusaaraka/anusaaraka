@@ -96,6 +96,7 @@
 (declare (salience 801))
 ?f<-(chunk_name-chunk_ids-words ?chnk&VGF $?gids - ?man_wrd $?r_mng)
 ?f1<-(manual_id-word ?mid ?man_wrd)
+(test (member$ ?mid $?gids))
 =>
 	(bind $?ids (create$ ))
         (bind ?length (length $?gids))
@@ -289,25 +290,25 @@
 ;----------------------------------------------------------------------------------------------------------------
 (defrule single_vib
 (declare (salience 70))
-?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - - - $?grp_ids)
+?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid0 $?noun - - - - - $?grp_ids ?id0)
 ?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle - - - - - $?grp_ids1)
 (not (mng_has_been_grouped ?id1))
 =>
         (retract ?f1 ?f2)
         (assert (mng_has_been_grouped ?id1)) 
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids $?grp_ids1))
+        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids ?id0 $?grp_ids1))
 )
 
 
 (defrule single_vib1
 (declare (salience 70))
-?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - - - $?grp_ids)
+?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid0 $?noun - - - - - $?grp_ids ?id0)
 ?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle $?r_wrd - - - - - ?id1 $?grp_ids1)
 (test (neq (length $?r_wrd) 0))
 =>
         (retract ?f1 ?f2)
         (bind ?new_id (nth$ 1 $?grp_ids1))
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids ?id1))
+        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids ?id0 ?id1))
         (assert (manual_id_en_hi-word-root-vib-grp_ids ?new_id $?r_wrd - - - - - $?grp_ids1))
 )
 

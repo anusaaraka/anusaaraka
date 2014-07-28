@@ -689,6 +689,22 @@
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju Suggested by Chaitanya Sir (18-7-14)
+ (defrule get_mng_from_transliterate_mng
+ (declare (salience 7410))
+ (id-word ?id ?word)
+ ?f<-(meaning_to_be_decided ?id)
+ (test (neq (numberp ?word) TRUE))
+ (test (neq (gdbm_lookup "transliterate_meaning.gdbm" ?word ) "FALSE"))
+ =>
+	(bind ?mng (gdbm_lookup "transliterate_meaning.gdbm" ?word ))
+        (if (neq ?mng "FALSE") then
+                (retract ?f)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?mng"   transliterate_meaning_dic)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?mng"   transliterate_meaning_dic "?id")" crlf)
+        )
+ )
+ ;--------------------------------------------------------------------------------------------------------------
   ;Getting meaning for Proper noun 
   (defrule test_for_PropN
   (declare (salience 7400))
