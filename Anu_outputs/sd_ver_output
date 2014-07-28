@@ -93,7 +93,6 @@ luhAra ne lohe_kI_Kanija mittI kI eka paraKa banAI.
 Hindi meaning using Stanford parser 2.20
 He could hear a faint sound from the bushes. 
 vaha JAdiyoM se nirbala Xvani suna sakA.
-Multiple adjective senses are available for faint. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.21
 I heard the sound of rain on the roof. 
@@ -751,7 +750,6 @@ muJe PropN-maybeline-PropN ke xvArA pUrI kahAnI bawAI gayI WI.
 Hindi meaning using Stanford parser 2.170
 She is full of bright ideas. 
 vaha wejasvI vicAroM se BarI huI hE.
-Multiple adjective senses are available for full. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.171
 I thought it is right to resign. 
@@ -965,7 +963,6 @@ Apa mere miwra hEM yaha sawya hE paranwu mEM isa viRaya para Apake sAWa sahamawa
 Apa mere miwra hEM yaha sawya hE paranwu mEM isa viRaya para Apake sAWa sahamawa_nahIM_ho sakawA hUz.
 yaha sawya hE ki Apa mere miwra hEM paranwu mEM isa viRaya para Apa ke sAWa sahamawa_nahIM_ho sakawA hUz.
 yaha sawya hE ki Apa mere miwra hEM paranwu mEM isa viRaya para Apake_sAWa sahamawa_nahIM_ho sakawA hUz.
-Multiple adjective senses are available for true. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.219
 If we heat iron it becomes red. 
@@ -1611,7 +1608,6 @@ puswaka usake prema sambanXa kA koI ulleKa nahIM karawI hE.
 Hindi meaning using Stanford parser 3.56
 He sat under a wonderful velvet sky. 
 vaha eka axBuwa maKamalI AsamAna ke nIce bETA.
-Multiple adjective senses are available for wonderful. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.57
 Do this in your room. 
@@ -1680,8 +1676,8 @@ Multiple adjective senses are available for queasy. WSD rule is required
 Multiple adjective senses are available for tired. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.72
-At the end of the day, 251SYMBOL-DOT2 million shares were traded. 
-xina ke anwa meM, 251SYMBOL-DOT2 xasa-lAKa SeyaroM kA vyApAra kiyA gayA WA.
+At the end of the day, 251.2 million shares were traded. 
+xina ke anwa meM, 251.2 xasa-lAKa SeyaroM kA vyApAra kiyA gayA WA.
 
 Hindi meaning using Stanford parser 3.73
 No, it was not Black Monday. 
@@ -1702,7 +1698,6 @@ aBI BI, pUzjI samUha KawarA_mola_nahIM_le rahe hEM.
 Hindi meaning using Stanford parser 3.76
 But fund managers say they are ready. 
 paranwu pUzjI prabanXaka kahawe hEM ki ve wEyAra hEM.
-Multiple adjective senses are available for ready. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.77
 The test may come today. 
@@ -1771,7 +1766,6 @@ Multiple adjective senses are available for striking. WSD rule is required
 Hindi meaning using Stanford parser 3.90
 The glass house built on the lines of the crystal palace in london is the main attraction in this huge park. 
 landana meM sPatika mahala kI lAinoM para banA huA kAzca Gara isa viSAla uxyAna meM pramuKa AkarRaNa hE.
-Multiple adjective senses are available for huge. WSD rule is required 
 Multiple adjective senses are available for main. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.91
@@ -1962,7 +1956,6 @@ rAhula buxXa kA betA WA Ora nAma PropN-lahaul-PropN rAhula se viSleRaNa huA hE.
 Hindi meaning using Stanford parser 4.29
 The white marbled moti masjid or the pearl mosque was the private mosque for aurangzeb. 
 saPexa safgamaramara_se banI huI moti masjid yA mowI masjixa aurangzeb ke lie vyakwigawa masjixa WI.
-Multiple adjective senses are available for white. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.30
 Sarpa yakshi and Naga yakshi are the beloved consorts of Nagaraja. 
@@ -2212,7 +2205,6 @@ vaha muJase sambanXiwa nahIM hE.
 Hindi meaning using Stanford parser 4.83
 When the dollar is in a free-fall, even central banks can not stop it. 
 jaba dOlara BArI girAvata meM ho, wo keMxrIya bEMka BI isako nahIM_roka sakawe hEM.
-Multiple adjective senses are available for central. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.84
 Mary is taller than Max. 
@@ -2268,7 +2260,6 @@ mEM isakA KyAla_raKa rahA hUz.
 Hindi meaning using Stanford parser 4.96
 We should make our relationship strong. 
 hameM hamArA sambanXa majabUwa banAnA cAhie.
-Multiple adjective senses are available for strong. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.97
 The quotes of this volume are nice. 
@@ -2340,7 +2331,6 @@ sonU monU ke Gara kI ora xOdA.
 Hindi meaning using Stanford parser 5.13
 He smiled and said, Good morning! 
 vaha muskarAyA Ora kahA, supraBAwa!
-Multiple adjective senses are available for good. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.14
 The giraffe said, Not if you ride on my back. 
@@ -2530,7 +2520,6 @@ xeSa yuxXa kI avasWA meM hE.
 Hindi meaning using Stanford parser 5.58
 The building is in a terrible state. 
 imArawa eka BayAnaka avasWA meM hE.
-Multiple adjective senses are available for terrible. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.59
 In 1922, Bohr was awarded Nobel Prize in Physics. 
@@ -2540,7 +2529,6 @@ In 1922, Bohr was awarded Nobel Prize in Physics.
 Hindi meaning using Stanford parser 5.60
 The snow created further problems. 
 baraPa ne Ora aXika samasyAez uwwapanna kIM.
-Multiple adjective senses are available for further. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.61
 The Bible says that God created the world. 
@@ -2681,7 +2669,6 @@ Multiple adjective senses are available for fat. WSD rule is required
 Hindi meaning using Stanford parser 5.92
 She answered in a faint murmur. 
 usane eka nirbala svara meM uwwara xiyA.
-Multiple adjective senses are available for faint. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.93
 The wind murmured in the trees. 
@@ -2715,7 +2702,6 @@ xo sawarka vEjFAnikoM ne galawI xeKI.
 Hindi meaning using Stanford parser 5.100
 They had been alerted to the possibility of further price rises. 
 ve Ora aXika mUlya vqxXi kI samBAvanA ke lie sacewa kie gaye We.
-Multiple adjective senses are available for further. WSD rule is required 
 
 Hindi meaning using Stanford parser 6.1
 And its eyes are beautiful. 
@@ -2793,8 +2779,8 @@ He rented a small house in Allahabad.
 usane IlAhAbAxa meM eka CotA Gara kirAye_para liyA.
 
 Hindi meaning using Stanford parser 6.18
-The limiting speed is about 11SYMBOL-DOT2 kilometres per second. 
-prawibanXaka raPwAra prawi sekanda 11SYMBOL-DOT2 kilomItara lagaBaga hE.
+The limiting speed is about 11.2 kilometres per second. 
+prawibanXaka raPwAra prawi sekanda 11.2 kilomItara lagaBaga hE.
 
 Hindi meaning using Stanford parser 6.19
 There are two reasons for this. 
@@ -2901,7 +2887,6 @@ Hindi meaning using Stanford parser 6.43
 Once there was a king who was generous and kind. 
 eka bAra eka EsA rAjA WA jo uxAra Ora xayAlu WA.
 Multiple adjective senses are available for generous. WSD rule is required 
-Multiple adjective senses are available for kind. WSD rule is required 
 
 Hindi meaning using Stanford parser 6.44
 The leader of each group is called a Sirdar. 
@@ -3176,7 +3161,6 @@ unhoMne varRA kI vajaha se mEca roka xiyA.
 Hindi meaning using Stanford parser 7.10
 They hired an architect to draft the plans for their new home. 
 unhoMne unake naye Gara ke lie yojanAoM kA prArUpa_wEyAra karane ke lie eka vAswukAra majaxUrI_para raKA.
-Multiple adjective senses are available for new. WSD rule is required 
 
 Hindi meaning using Stanford parser 7.11
 I was sitting in a draught. 
@@ -3593,7 +3577,7 @@ JaNde manxa samIra meM PadaPadA rahe We.
 Hindi meaning using Stanford parser 8.12
 You need to be very fit to hike the Himalayas. 
 Apako himAlaya pAxa_yAwrA karane ke lie awyanwa svasWa hone kI jarUrawa hE.
-Multiple adjective senses are available for fit. WSD rule is required 
+Apako himAlaya pAxa_yAwrA karane ke lie awyanwa wanxuruswa hone kI jarUrawa hE.
 
 Hindi meaning using Stanford parser 8.13
 All the boys are here. 
@@ -3631,6 +3615,30 @@ jaba ve jAnawe hEM ki mEM kOna hUz unhoMne muJe kyoM rokA?
 Hindi meaning using Stanford parser 8.21
 Your cat keeps on rubbing itself against my leg. 
 ApakI billI merI tAzga se svayam ko ragadawI rahawI hE .
+
+Hindi meaning using Stanford parser 8.22
+Dissolve some sugar in water. 
+pAnI meM kuCa cInI Golie.
+
+Hindi meaning using Stanford parser 8.23
+Why are you dissolving salt in your tea. 
+Apa ApakI cAya meM namaka kyoM Gola rahe hEM.
+
+Hindi meaning using Stanford parser 8.24
+The court dissolved their marriage in 1998. 
+axAlawa ne 1998 meM unakI SAxI Bafga kI.
+
+Hindi meaning using Stanford parser 8.25
+The Speaker dissolved the parliament. 
+vakwA ne saMsaxa Bafga kI.
+
+Hindi meaning using Stanford parser 8.26
+Oil does not dissolve in water. 
+wela pAnI meM nahIM GulawA hE.
+
+Hindi meaning using Stanford parser 8.27
+The bacteria would soon dissolve the body. 
+jIvANu SarIra SIGra galA xeMge.
 
 Calling Transliteration
 Calling Interface related programs
