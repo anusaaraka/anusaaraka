@@ -48352,7 +48352,7 @@ medicate_UNDEFINED	xavA_yukwa
 medicated_adjective	xavA_yukwa
 medication_noun	xavA_kA_prayoga/ORaXi
 medications_UNDEFINED	xavA_kA_prayoga
-medicinal_adjective	roganASaka/ORaXIya
+medicinal_adjective	ORaXIya/roganASaka
 medicinaler_UNDEFINED	roganASaka
 medicinalest_UNDEFINED	roganASaka
 medicinals_UNDEFINED	roganASaka
