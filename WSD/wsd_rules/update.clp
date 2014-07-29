@@ -29,7 +29,7 @@
 (if ?*debug_flag* then
 ;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  update.clp 	update1   "  ?id "  AXunika_banA )" crlf))
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  update.clp    update1   "  ?id "  baxala_xe )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-kriyA_id-object_viBakwi    " ?*wsd_dir* "  update.clp    update1   "  ?id "   ko )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi    " ?*wsd_dir* "  update.clp    update1   "  ?id "   ko )" crlf)
 )
 )
 
@@ -49,7 +49,7 @@
 (assert (kriyA_id-object_viBakwi ?id kA))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  update.clp    update2   "  ?id "   navInIkaraNa_kara )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-kriyA_id-object_viBakwi   " ?*wsd_dir* "  update.clp    update2   "  ?id " kA )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  update.clp    update2   "  ?id " kA )" crlf)
 )
 )
 
