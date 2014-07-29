@@ -26,7 +26,7 @@
 (assert (kriyA_id-object_viBakwi ?id kI))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  admire.clp 	admire1   "  ?id "  praSaMsA_kara )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-kriyA_id-object_viBakwi   " ?*wsd_dir* "  admire.clp    admire1   "  ?id " kI )"crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  admire.clp    admire1   "  ?id " kI )"crlf)
 )
 )
 

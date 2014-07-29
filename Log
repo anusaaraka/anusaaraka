@@ -1,4 +1,4 @@
- 28-07-14
+ 29-07-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	who.clp		roundabout.clp	on.clp	add.clp
@@ -45,6 +45,9 @@
 	get_pos_chunk.sh
 	create-chunk-facts.py
 	print-pos-info.py
+	get_phrasal_dic-en-hi.sh 
+	phrase_gdbm_dict.c 
+	create_SL-TL_dict_using_phrase_table.py
  14. Added 'parser_id-cat' dummy fact in cat_rule.clp, parser_id_mapping.clp, root_rule.clp and sd_relation_rules.clp
  15. Updated following lex files:
 	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
