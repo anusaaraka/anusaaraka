@@ -244,6 +244,7 @@
  (load-facts "cat_consistency_check.dat")
  (load-facts "pada_id_info.dat")
  (load-facts "meaning_to_be_decided_tmp.dat")
+ (load-facts "root.dat")
  (open "hin_order_debug.dat" order_debug "w")
  (run)
  (save-facts "ordered_constituents.dat" local Head-Level-Mother-Daughters Node-Category)

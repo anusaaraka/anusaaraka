@@ -33236,6 +33236,8 @@ back_injury	pITa_kI_cota#pITa_kI_cota#noun#2#RM
 disaster_victims	ApaxA_pIdiwa#ApaxA_pIdiwa#noun#2#RM
 boarding_life	CAwrAvAsIya_jIvana#CAwrAvAsIya_jIvana#noun#2#RM
 ply_board	plAI_borda#plAI_borda#noun#2#RM
+two_and_a_half	DAI#DAI#number#4#RM
+one_and_a_half	deDa#deDa#number#4#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

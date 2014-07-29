@@ -90,6 +90,8 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/idioms.gdbm < idioms.txt
  echo "Creating preposition.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/preposition.gdbm < preposition.txt
+ echo "Creating transliterate_meaning.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/transliterate_meaning.gdbm < transliterate_meaning.txt
 
  cd vb_root
  echo "Creating ol_vb_root.gdbm"

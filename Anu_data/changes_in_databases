@@ -1670,7 +1670,8 @@ Removed:
 	140. raindrop_noun	varRA_kI_eka_bUnxa	as	varRA_kI_bUnxa	(	"	"		"	)
 				Ex: Anything thrown up falls down towards the earth, raindrops from the clouds etc.(note:sentence simplified)
 	141. 	"		varRA-binxu		as	varRA_bUnxa	(	"	"		"	)
-
+	142. medicinal_adjective    roganASaka		as	ORaXIya		(Suggested by Manasa-Gurukul    16-08-14)
+				Ex: Often people will be found looking at the medicinal plants.
 	
 	
 
@@ -2187,7 +2188,10 @@ Removed:
 				Ex: Boarding life is enjoyable.
 	124. ply_board       	plAI_borda#plAI_borda#noun#2#RM				(	"	"		"	)
 				Ex: Use ply board for partitioning the room. 
-
+	125. two_and_a_half  	DAI#DAI#number#4#RM					(Suggested by Neha Arya Gurkul 13-07-2014)
+				Ex: It takes only two and a half to three hours to reach Munnar via Periyakenal and Devikulam.
+	126. one_and_a_half	deDa#deDa#number#4#RM					(Suggested by Neha Arya Gurkul 13-07-2014)
+				Ex: It takes only one and a half to three hours to reach Munnar.
 
     Added new meaning to the existing word:
     --------------------------------------
