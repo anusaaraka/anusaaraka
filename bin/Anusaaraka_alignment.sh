@@ -36,7 +36,7 @@
   cd $HOME_anu_test/bin/
   apertium-destxt $MYPATH/hnd | lt-proc -ac hi.morf.bin | apertium-retxt >  $MYPATH/one_sen_per_line_manual_hindi_sen_tmp.txt.morph
 
-  $HOME_anu_test/miscellaneous/SMT/MINION/alignment/morph.out $MYPATH/manual_hin.morph.txt < $MYPATH/one_sen_per_line_manual_hindi_sen_tmp.txt.morph > /dev/null
+  $HOME_anu_test/miscellaneous/SMT/MINION/alignment/morph.out $MYPATH/manual_hin.morph.txt $MYPATH/manual_hin.tam.txt < $MYPATH/one_sen_per_line_manual_hindi_sen_tmp.txt.morph > /dev/null
 
  cd $MYPATH
  $HOME_anu_test/Anu_src/split_file.out key.txt  dir_names.txt  key_tmp.dat
@@ -47,6 +47,7 @@
  $HOME_anu_test/Anu_src/split_file.out hnd-hi-en-sent1 dir_names.txt  hnd-hi-en
  $HOME_anu_test/Anu_src/split_file.out eng_tok_org-sent1 dir_names.txt  eng_tok_org
  $HOME_anu_test/Anu_src/split_file.out manual_hin.morph.txt dir_names.txt manual_hin.morph.dat
+ $HOME_anu_test/Anu_src/split_file.out manual_hin.tam.txt dir_names.txt manual_hin.tam.dat
  $HOME_anu_test/Anu_src/split_file.out one_sen_per_line_manual_hindi_sen.txt dir_names.txt manual_hindi_sen.dat
  $HOME_anu_test/Anu_src/split_file.out pos.txt dir_names.txt pos.dat
  $HOME_anu_test/Anu_src/split_file.out chunk_info.txt dir_names.txt chunk_info.dat
