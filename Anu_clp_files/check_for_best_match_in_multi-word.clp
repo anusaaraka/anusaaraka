@@ -22,6 +22,8 @@
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja(21-02-14)
+ ;The magnitude of electric field E due to a point charge is thus same on a sphere with the point charge at its center; [in other words], it has a spherical symmetry.
+ ;Here, in provisional MWE dic we have mng other_words = xUsare_Sabxa, In MWE in_other_words = anya_Sabxa
  ;To check provisional multiword fact available or not. If present then pick provisional fact and retract database fact.
  ;When same group ids
  (defrule chk_for_prov_multi_same_group_ids
