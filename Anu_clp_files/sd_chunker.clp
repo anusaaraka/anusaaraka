@@ -13,7 +13,8 @@
 ?f<-(Head-Level-Mother-Daughters  ?h  ?l  ?mot  $?pre ?dau $?pos)
 (Node-Category ?mot ?cat&VP|NP|ADVP|PP|S|ADJP|SBARQ|SQ|SBAR|WHADVP)
 (Node-Category ?dau ?cat1&VP|NP|ADVP|PP|S|ADJP|SBARQ|SQ|SBAR|CC|TO|WHADVP)
-(test (neq ?cat ?cat1))
+;(test (neq ?cat ?cat1))
+(test (neq ?mot ?dau))
 =>
         (retract ?f)
         (assert (Head-Level-Mother-Daughters  ?h  ?l  ?mot  $?pre $?pos))

@@ -550,6 +550,18 @@
  ;------------------------------------------------------------------------------------------------------
  ;===================== Formatting manual sen o/p facts ===============================================
  ;------------------------------------------------------------------------------------------------------
+ (defrule get_phrase_information0
+ (declare (salience 1005))
+ ?f<-(position-eng-hnd-eng_ids      ?pos    ?eng    ?hnd    ?phrase_start_id $?ids ?phrase_end_id ?l ?r)
+ ?f1<-(position-eng-hnd-eng_ids      ?pos1    ?eng1    ?hnd1    ?phrase_end_id $?ids1 ?l1 ?r1)
+ (test (eq (= ?pos ?pos1) FALSE))
+ =>
+	(retract ?f1)
+	(assert (position-eng-hnd-eng_ids      ?pos1    ?eng1    ?hnd1  $?ids1 ?l1 ?r1))
+ )
+
+
+
  (defrule get_phrase_information
  (declare (salience 1004))
  (position-eng-hnd-eng_ids	?pos	?eng	?hnd	?phrase_start_id $? ?phrase_end_id ? ?)
@@ -582,38 +594,18 @@
  (assert (id-phrase_type-rvalue ?id - -))
  )
 
- (defrule change_manual_op_fact_en_hi
- (declare (salience 2002))
- ?f<-(anu_id-anu_mng-man_mng ?aid ?anu_mng $?man_mng)
- (test (and  (neq $?man_mng @PUNCT-DotDotDot)(neq $?man_mng @PUNCT-Dot) (neq $?man_mng @PUNCT-Semicolon) (neq $?man_mng @PUNCT-Comma) (neq $?man_mng @PUNCT-QuestionMark)(neq $?man_mng @PUNCT-DoubleQuote)(neq $?man_mng @PUNCT-Colon)(neq $?man_mng @PUNCT-OpenParen)(neq $?man_mng @PUNCT-ClosedParen)(neq $?man_mng @PUNCT-Exclamation)(neq $?man_mng @PUNCT-LeftCurlyBrace)(neq $?man_mng @PUNCT-RightCurlyBrace)(neq $?man_mng @PUNCT-RightSquareBracket)(neq $?man_mng @PUNCT-LeftSquareBracket)))
-  =>
- (retract ?f)
- (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid ?anu_mng - - $?man_mng))
+ (defrule get_phrase_information0_hi_en
+ (declare (salience 1005))
+ ?f<-(position_hi_en-eng-hnd-eng_ids      ?pos    ?eng    ?hnd    ?phrase_start_id $?ids ?phrase_end_id ?l ?r)
+ ?f1<-(position_hi_en-eng-hnd-eng_ids      ?pos1    ?eng1    ?hnd1    ?phrase_end_id $?ids1 ?l1 ?r1)
+ ;(test (neq ?pos  ?pos1))
+ (test (eq (= ?pos ?pos1) FALSE))
+ =>
+        (retract ?f1)
+        (assert (position_hi_en-eng-hnd-eng_ids      ?pos1    ?eng1    ?hnd1     $?ids1 ?l1 ?r1))
  )
 
- (defrule manual_op_fact_r_punc_en_hi
- (declare (salience 2004))
- ?f<-(anu_id-anu_mng-man_mng ?aid ?anu_mng ?man_mng&@PUNCT-DotDotDot|@PUNCT-Dot|@PUNCT-Semicolon|@PUNCT-Comma|@PUNCT-QuestionMark|PUNCT-DoubleQuote|PUNCT-Colon|PUNCT-OpenParen|PUNCT-ClosedParen|PUNCT-Exclamation|PUNCT-LeftCurlyBrace|PUNCT-RightCurlyBrace|PUNCT-RightSquareBracket|PUNCT-LeftSquareBracket)
-  =>
- (retract ?f)
- (assert (anu_id-man_right_punc  ?aid ?man_mng))
- )
 
- (defrule manual_op_fact_l_punc_en_hi
- (declare (salience 2004))
- ?f<-(id-word ?aid $?)
- (not (anu_id-man_left_punc ?aid $?))
-  =>
- (assert (anu_id-man_left_punc  ?aid -))
- )
-
- (defrule dummy_manual_r_punc_en_hi
- (declare (salience 2003))
- ?f<-(id-word ?aid $?)
- (not (anu_id-man_right_punc ?aid $?))
-  =>
- (assert (anu_id-man_right_punc  ?aid -))
- )
 (defrule get_phrase_information_hi_en
  (declare (salience 1004))
  (position_hi_en-eng-hnd-eng_ids      ?pos    ?eng    ?hnd    ?phrase_start_id $? ?phrase_end_id ? ?)

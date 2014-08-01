@@ -77,14 +77,14 @@
 
 (defrule get_verb_chunk_cp
 (declare (salience 803))
-?f<-(chunk_name-chunk_ids ?chnk&VGF $?gids)
+?f<-(chunk_name-chunk_ids ?chnk&VGF|VGNN $?gids)
 =>
 	(assert (chunk_name-chunk_ids-words  ?chnk $?gids - $?gids))
 )
 
 (defrule get_verb_chunk
 (declare (salience 802))
-?f<-(chunk_name-chunk_ids-words ?chnk&VGF $?gids - $?pre ?mid $?pos)
+?f<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN $?gids - $?pre ?mid $?pos)
 ?f1<-(manual_id-word ?mid ?man_wrd)
 =>
 	(retract ?f)
@@ -94,7 +94,7 @@
 
 (defrule get_verb_chunk1
 (declare (salience 801))
-?f<-(chunk_name-chunk_ids-words ?chnk&VGF $?gids - ?man_wrd $?r_mng)
+?f<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN $?gids - ?man_wrd $?r_mng)
 ?f1<-(manual_id-word ?mid ?man_wrd)
 (test (member$ ?mid $?gids))
 =>
@@ -127,11 +127,38 @@
         ))
         (assert (manual_id_en_hi-word-root-vib-grp_ids ?mid ?man_wrd ?man_wrd1 $?mng - - - - - ?mid =(+ ?mid 1) $?ids))
 ;        (assert (fact_modified_id ?mid)) 
+        (assert (mng_has_been_grouped ?mid)) 
         (assert (mng_has_been_grouped =(+ ?mid 1))) 
         
 )
 
-
+;Eng_semn:: The line connecting the two charges defines a direction in space.
+;Man_sen :: xonoM  AveSoM  ko  saMyojiwa  karane  vAlI  reKA  xiksWAna  meM  kisI  xiSA  ko  [pariBARiwa  karawI  hE]  .
+;Anu_tran :: xo AveSoM ko jodawe_hue lAina xiksWAna meM xiSA [sImAfkiwa karawI hE].
+;(manual_id_en_hi-word-root-vib-grp_ids 13 pariBARiwa karawI - - - - - 13 14)
+;(manual_id_en_hi-word-root-vib-grp_ids 14 karawI hE - - - - - 14 15)===> (manual_id_en_hi-word-root-vib-grp_ids 13 pariBARiwa karawI hE - - - - - 13 14 15)
+(defrule combine_ids_common_in_two_different_facts
+(declare (salience 750))
+?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_wrd  - $?r - $?vib - $?pre ?id $?pos)
+?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid1 $?man_wrd1 - $?r1 - $?vib1 - $?pre1 ?id $?pos1)
+?f2<-(chunk_name-chunk_ids ?chnk&VGF|VGNN $?gids)
+(test (neq ?mid ?mid1))
+(test (and (neq (length $?r) 0)(neq (length $?vib) 0)))
+(test (and (neq (length $?r1) 0)(neq (length $?vib1) 0)))
+(manual_hin_sen1 $?man_hin_sen)
+=>
+	(retract ?f ?f1)
+	(bind $?grp (sort > (create$ $?pre ?id $?pos $?pre1 $?pos1)))
+        (if (eq $?vib -) then (bind $?vib (create$ )))
+        (bind $?mng (create$ ))
+                                ;(printout t $?man_hin_sen crlf)
+	(loop-for-count (?i 1 (length $?grp))
+                                (bind ?j (nth$ ?i $?grp))
+                                (bind $?mng (create$ $?mng (nth$ ?j $?man_hin_sen))) 
+                                ;(printout t ?j $?mng crlf)
+        )
+        (assert (manual_id_en_hi-word-root-vib-grp_ids ?mid $?mng - - - - - $?grp))
+)
 
 (defrule get_id3
 (declare (salience 60))
@@ -347,6 +374,21 @@
 =>
         (retract ?f1 ?f2)
         (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word ?tam ?tam1  - ?iwa_word ?root - wA ?tam1 - $?grp_ids ?id1 ?id2))
+)
+
+;Eng_semn:: The line connecting the two charges defines a direction in space.
+;Man_sen :: xonoM  AveSoM  ko  saMyojiwa  karane  vAlI  reKA  xiksWAna  meM  kisI  xiSA  ko  [pariBARiwa  karawI  hE]  .
+;Anu_tran :: xo AveSoM ko jodawe_hue lAina xiksWAna meM xiSA [sImAfkiwa karawI hE].
+;(manual_id_en_hi-word-root-vib-grp_ids 13 pariBARiwa karawI hE - - - - - 13 14 15) ==> (manual_id_en_hi-word-root-vib-grp_ids 13 pariBARiwa karawI hE - pariBARiwa kara - wA hE - 13 14 15)
+(defrule verb_rule5
+(declare (salience 50))
+?f<-(manual_id_en_hi-word-root-vib-grp_ids ?id $?noun ?iwa_word ?tam&karawA|howA|karawI|howI|karawe|howe ?tam1&hE|hEM - - - - - $?grp_ids)
+(test (eq (numberp ?iwa_word) FALSE))
+(test (eq (sub-string (- (length ?iwa_word) 2) (length ?iwa_word) ?iwa_word) "iwa"))
+(man_word-root-cat ?tam ?root&kara|ho v)
+=>
+        (retract ?f)
+        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id $?noun ?iwa_word ?tam ?tam1  - ?iwa_word ?root - wA ?tam1 - $?grp_ids))
 )
 
 (defrule verb_rule3
