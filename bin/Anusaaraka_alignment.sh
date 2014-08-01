@@ -15,7 +15,7 @@
   cd $HOME_anu_test/miscellaneous/SMT/phrasal_alignment
   sh get_pos_chunk.sh $MYPATH
   replace-abbrevations.sh $MYPATH/one_sentence_per_line.txt_tokenised  $MYPATH/eng_tmp_tok_org
-  ./replace-mapping-symbols_for_align.out < $MYPATH/eng_tmp_tok_org > $MYPATH/eng_tmp1_tok_org
+  $HOME_anu_test/Anu/stdenglish/replace-mapping-symbols.out < $MYPATH/eng_tmp_tok_org > $MYPATH/eng_tmp1_tok_org
   $HOME_anu_test/Anu_src/identify-nonascii-chars.out $MYPATH/eng_tmp1_tok_org $MYPATH/eng_tmp2_tok_org
   perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/eng_tmp2_tok_org | sed "s/ 's /'s /" | sed "s/s ' /s' /g" | sed 's/ @ / @/g'> $MYPATH/eng_tok_org 
 
