@@ -11,7 +11,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id awirikwa))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-_id-wsd_root_mng   " ?*wsd_dir* " excess.clp	excess0  "  ?id "  " "  awirikwa )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* " excess.clp	excess0  "  ?id "  " "  awirikwa )" crlf))
 )
 
 ;Priyank Bhatnagar (prnk.bhatnagar@gmail.com) 11/June/2011
@@ -44,5 +44,5 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id awirikwa ))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-_id-wsd_root_mng   " ?*wsd_dir* " excess.clp	excess2  "  ?id "  " " awirikwa  )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* " excess.clp	excess2  "  ?id "  " " awirikwa  )" crlf))
 )

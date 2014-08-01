@@ -9959,7 +9959,7 @@ government_expenditures	sarakArI_Karca#sarakArI_Karca#noun#2#RM
 government_finances	sarakAroM_kI_viwwIya_sWiwi#sarakAroM_kI_viwwIya_sWiwi#noun#2#RM
 # State [government finances] are facing continuous pressures
 # rAjya sarakAroM kI viwwIya sWiwi lagAwAra xabAva Jela rahI hE
-by government_forces	sarakAra_kA_niyaMwraNa#sarakAra_kA_niyaMwraNa#noun#2#RM
+government_forces	sarakAra_kA_niyaMwraNa#sarakAra_kA_niyaMwraNa#noun#2#RM
 # Children fromthe Tamil village of Sivanthivu, for example,lived in a 'grey' area controlled neither by[government forces] nor by the rebel LiberationTigers of Tamil Eelam (LTTE) forces
 # uxAharaNa ke lie wamila gAzva sivAnaWibu ke bacce Ese ilAke meM rahawe We jisa para na sarakAra kA niyaMwraNa WA Ora na vixrohI elatItII yAnI libareSana tAigarsa APa wamila Ilama kA
 government_functionaries	sarakArI_paxAXikArI#sarakArI_paxAXikArI#noun#2#RM
