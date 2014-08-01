@@ -1,8 +1,9 @@
- 29-07-14
+ 01-08-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	admire.clp	distinguish.clp		update.clp
 		   who.clp	roundabout.clp	on.clp		add.clp			excess.clp
+		   both.clp
 	Added	 : dissolve.clp
 	Moved provisional wsd rules into WSD
  2. sd_category.clp
@@ -24,16 +25,20 @@
 	dded	 : dont_rev_VP_if_immediate_sis_sbar
  9. check_for_best_match_in_multi-word.clp:
 	Added example sentence and comments in 'chk_for_prov_multi_same_group_ids' rule.
- 10. run_modules_std.bat
+ 10. causative_verb_mng.clp:
+	Modified : get_rule_info
+ 11. tam_meaning.clp:
+	Added 'Warning msg in get_tam_from_database' rule.
+ 12. run_modules_std.bat
         Loaded  parserid_wordid_mapping.dat and word2.dat in sd_category module
 	Loaded  root.dat file in H_ordering_rules module
- 11. hnd_translation.pl:
+ 13. hnd_translation.pl:
         Modified 'hindi_sentence_tmp.dat' to 'hindi_sentence.dat'	
- 12. Added transliterate_meaning.txt file in Anu_data
- 13. Added relation_table/ folder in Doc contains following files:
+ 14. Added transliterate_meaning.txt file in Anu_data
+ 15. Added relation_table/ folder in Doc contains following files:
 	relation-table-for-WSD-wx.html  
 	style.css
- 14. Added following files related to phrasal alignment:
+ 16. Added following files related to phrasal alignment:
 	count.py
 	sort.sh
 	bin/Anusaaraka_alignment.sh 
@@ -51,12 +56,15 @@
 	get_phrasal_dic-en-hi.sh 
 	phrase_gdbm_dict.c 
 	create_SL-TL_dict_using_phrase_table.py
- 15. Added 'parser_id-cat' dummy fact in cat_rule.clp, parser_id_mapping.clp, root_rule.clp and sd_relation_rules.clp
- 16. Updated following lex files:
+ 17. Added 'parser_id-cat' dummy fact in cat_rule.clp, parser_id_mapping.clp, root_rule.clp and sd_relation_rules.clp
+ 18. Removed : 
+	miscellaneous/SMT/phrasal_alignment/replace-mapping-symbols_for_align.lex
+ 19. Updated following lex files:
 	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
 	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern
 	morph.lex:	-> Modified to get tam info from morph.
- 17. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
+	wx_utf8.lex:	-> Handled 'eV', 'eY', 'oV'
+ 20. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
 	Word-to-Word-dict.txt
 	en-hi-gdbm-dict.txt
 	run_alignment.sh
@@ -82,9 +90,9 @@
 	run_H_gen_sen_eng.bat
  	multifast-v1.0.0/src/run.sh
 	Readme 
- 18. Updated following dictionarie related files:
+ 21. Updated following dictionarie related files:
 	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix
- 19. Updated following files shell files:
+ 22. Updated following files shell files:
 	Anusaaraka_stanford_align_eng_ord.sh
 	replace-abbrevations.sh
 	abbr.sh
@@ -92,9 +100,9 @@
 	dic_compile.sh
 	anu_compile.sh 
 	get_multi_word-dic.sh
- 20. Updated following file:
+ 23. Updated following file:
 	sd_verified (827)
- 21. Updated Log. 
+ 24. Updated Log. 
 
  05-06-14
  ========
