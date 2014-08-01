@@ -138,9 +138,10 @@
  )
  ;----------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (31-05-14)
+ ;Added 'Physics_Glossary' in not condition by Roja(31-07-14).Ex: The line connecting the two [charges] defines a [direction] in [space].
  (defrule get_rule_info
  (declare (salience 600))
- (id-HM-source ?id ?hmng ?src)
+ (id-HM-source ?id ?hmng ?src&~Physics_Glossary)
  (dir_name-file_name-rule_name-id-wsd_root_mng ? ?file_name ?rule_name $?ids ?)
 ; (dir_name-file_name-rule_name-id-wsd_root_mng ? ?file_name ?rule_name ?id ?)
  ?f0<-(id-HM-source-grp_ids  ?id  ? ?src $?ids)

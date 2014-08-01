@@ -6,7 +6,7 @@
 (id-cat_coarse ?id conjunction)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id xono))
+(assert (id-wsd_root_mng ?id xonoM))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  both.clp 	both0   "  ?id "  xono )" crlf))
 )
@@ -19,7 +19,7 @@
 (id-cat_coarse ?id determiner)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id xono))
+(assert (id-wsd_root_mng ?id xonoM))
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  both.clp 	both1   "  ?id "  xono )" crlf))
 )

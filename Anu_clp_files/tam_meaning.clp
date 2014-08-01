@@ -215,6 +215,8 @@
             (bind ?sub_v (string-to-field (sub-string 1 (- (str-index "-" ?sub) 1)  ?sub))) ; ?sub_v = ko
             (bind ?v (string-to-field (sub-string (+ (str-index "-" ?sub) 1) (length ?sub) ?sub))) ;?v = 0
 	    (modify ?f2 (H_tam ?h_tam)(vibakthi ?sub_v)(preceeding_part_of_verb ?v)(tam_source Default))
+	else
+		(printout t "Warning: " ?tam " TAM Not Found in WSD/Default Dictionary" crlf)
         )
  )
  ;---------------------------------------------------------------------------------------------------------------------

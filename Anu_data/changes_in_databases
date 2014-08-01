@@ -956,7 +956,9 @@ Removed:
 	110.	"		saKwa_ban	as	saKwa_banA	(	"	"	"		)
 	111.	"		pakkA_ban	as	pakkA_banA	(	"	"	"		)
 	112.	"		kaTora_ban	as	kaTora_banA	(	"	"	"		)
-	113. have_verb		K		as	KA		(	"	"	"		)	
+	113. have_verb		K		as	KA		(	"	"	"		)
+	114. both_conjunction	xono		as	xonoM		(	"	"	"   01-08-14	)
+	115. both_determiner	xono		as	xonoM		(	"	"	"	"	)
 	
 
     3. Added new entry:
