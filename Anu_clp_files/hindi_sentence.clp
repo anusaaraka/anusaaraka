@@ -290,7 +290,7 @@
  =>
 	(retract ?f)
 	(assert (hindi_id_order $?pre ?mng $?post))
-	(printout t "Removed repeated meaning  : " ?mng" "?mng crlf)
+	(printout t "Warning: Removed repeated meaning  : " ?mng" "?mng crlf)
 	(bind $?n_mng (create$ $?m ?mng ?mng $?m1))
         (printout ?*rmd_mng-file* "(id-word-mng-removed_mng-src	"?id"	"?wrd"	"(implode$ $?n_mng)"	"?mng"	"?src ")" crlf)
  )

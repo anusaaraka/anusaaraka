@@ -9,8 +9,10 @@ sent_count = 0
 flag = 0 
 for line in m_file:
         graph_out = g_file[sent_count]
-	graph_val = graph_out[2:-3]
-        g_lst = graph_val.split("', '")
+#	graph_val = graph_out[2:-3]
+	graph_val = graph_out[1:-1]
+#        g_lst = graph_val.split("', '") #while using short.py uncomment this
+        g_lst = graph_val.split(", ")
 	if 'NO PATH' in graph_out:
 		flag = 1
 	else:
