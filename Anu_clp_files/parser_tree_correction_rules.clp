@@ -147,7 +147,7 @@
                 (assert (Head-Level-Mother-Daughters ?h1 ?l1 ?Mot ?id $?post))
 		(assert (id-sd_cat ?id IN))
 	else
-		(printout t "PP daughter category problem "?h ": " ?cat crlf)
+		(printout t "Warning: PP daughter category problem "?h ": " ?cat crlf)
 
         )
  )

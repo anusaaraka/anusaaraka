@@ -18,7 +18,7 @@ vaha bahuXA AwA rahA hE.
 Hindi meaning using Stanford parser 2.2
 Rama is a good boy. 
 rAma eka acCA ladakA hE.
-Multiple adjective senses are available for good. WSD rule is required 
+Warning: Multiple adjective senses are available for good. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.3
 This is a sample sentence for Anusaraka. 
@@ -72,7 +72,7 @@ Xarma kA uxxeSya kyA hE?
 Hindi meaning using Stanford parser 2.15
 There was a marked difference in the prices of dishes. 
 WAliyoM ke mUlyoM meM eka suspaRta anwara WA.
-Multiple adjective senses are available for marked. WSD rule is required 
+Warning: Multiple adjective senses are available for marked. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.16
 Did you take your breakfast? 
@@ -185,7 +185,7 @@ Pala wowe ke xvArA KAyA gayA hE.
 Hindi meaning using Stanford parser 2.42
 I got a book from the fat ugly boy. 
 mEMne mote kurUpa ladake se puswaka prApwa kI.
-Multiple adjective senses are available for ugly. WSD rule is required 
+Warning: Multiple adjective senses are available for ugly. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.43
 The boy has a computer. 
@@ -226,7 +226,7 @@ gaXA prawimA se lAxA gayA WA.
 Hindi meaning using Stanford parser 2.51
 Sita is a good girl. 
 sIwA eka acCI ladakI hE.
-Multiple adjective senses are available for good. WSD rule is required 
+Warning: Multiple adjective senses are available for good. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.52
 I gave a book to him. 
@@ -239,7 +239,7 @@ yaha merA praWama vAkya hE.
 Hindi meaning using Stanford parser 2.54
 Your claims are indefensible. 
 Apake xAve arakRaNIya hEM.
-Multiple adjective senses are available for indefensible. WSD rule is required 
+Warning: Multiple adjective senses are available for indefensible. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.55
 The wheels of the car began to turn. 
@@ -270,12 +270,12 @@ Ayakara praswAva nAmaFjUra kiyA gayA WA.
 Hindi meaning using Stanford parser 2.61
 You are lucky I am here. 
 Apa BAgyavAna hEM ki mEM yahAz hUz.
-Multiple adjective senses are available for lucky. WSD rule is required 
+Warning: Multiple adjective senses are available for lucky. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.62
 A big, black, ugly dog chased me. 
 eka bade, kAle, kurUpa kuwwe ne merA pICA kiyA.
-Multiple adjective senses are available for ugly. WSD rule is required 
+Warning: Multiple adjective senses are available for ugly. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.63
 She is very careful about her work. 
@@ -284,7 +284,7 @@ vaha usake kArya ke bAre meM awyanwa sAvaXAna hE.
 Hindi meaning using Stanford parser 2.64
 It is likely they will come. 
 yaha samBava hE ki ve Aezge.
-Multiple adjective senses are available for likely. WSD rule is required 
+Warning: Multiple adjective senses are available for likely. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.65
 Have you ever seen the Pacific? 
@@ -374,7 +374,7 @@ usane tEgora kI jIvanI liKI.
 Hindi meaning using Stanford parser 2.84
 All his books are good. 
 usakI saba puswakeM acCI hEM.
-Multiple adjective senses are available for good. WSD rule is required 
+Warning: Multiple adjective senses are available for good. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.85
 He made a mistake in inviting John. 
@@ -411,7 +411,7 @@ vaha Ora mEM miwra hEM.
 Hindi meaning using Stanford parser 2.93
 John Stuart Mill is an important author. 
 joYna PropN-stuart-PropN PropN-mill-PropN mahawwvapUrNa leKaka hE.
-Multiple adjective senses are available for important. WSD rule is required 
+Warning: Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.94
 It does not matter what Ted does. 
@@ -445,12 +445,12 @@ usane gaharI lajjA mahasUsa kI.
 Hindi meaning using Stanford parser 2.101
 He saw the broken window. 
 usane tUtI huI KidakI ko xeKA.
-Multiple adjective senses are available for broken. WSD rule is required 
+Warning: Multiple adjective senses are available for broken. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.102
 Broken windows need to be replaced. 
 tUtI huIM KidakiyAz baxalI jAnI hEM.
-Multiple adjective senses are available for broken. WSD rule is required 
+Warning: Multiple adjective senses are available for broken. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.103
 Birds lay their eggs in the nest. 
@@ -486,7 +486,7 @@ usane usakI umra kA anxAja lagAne ke lie muJe kahA.
 Hindi meaning using Stanford parser 2.110
 John is less fat than Tom. 
 joYna PropN-tom-PropN kI apekRA kama motA hE.
-Multiple adjective senses are available for fat. WSD rule is required 
+Warning: Multiple adjective senses are available for fat. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.111
 I knew who would come to the party. 
@@ -536,7 +536,7 @@ mEMne Aja ke samAcAra pawra meM rela xurGatanA ke bAre meM paDA.
 Hindi meaning using Stanford parser 2.122
 He is a devoted husband and a father. 
 vaha eka vaPAxAra pawi Ora piwA hE.
-Multiple adjective senses are available for devoted. WSD rule is required 
+Warning: Multiple adjective senses are available for devoted. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.123
 He is listening music on high volume. 
@@ -550,8 +550,8 @@ mEMne piCale sapwAha eka baDiyA calaciwra xeKA.
 Hindi meaning using Stanford parser 2.125
 The idol was a beautiful piece of excellent workmanship. 
 prawimA uwwama kArIgarI kI eka sunxara kalAkqwi WI.
-Multiple adjective senses are available for beautiful. WSD rule is required 
-Multiple adjective senses are available for excellent. WSD rule is required 
+Warning: Multiple adjective senses are available for beautiful. WSD rule is required 
+Warning: Multiple adjective senses are available for excellent. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.126
 The water came above our shoulder. 
@@ -646,7 +646,7 @@ sipAhI policestation ko usako le gayA.
 Hindi meaning using Stanford parser 2.147
 It is likely that Rod died. 
 yaha samBava hE ki PropN-rod-PropN mara gayA.
-Multiple adjective senses are available for likely. WSD rule is required 
+Warning: Multiple adjective senses are available for likely. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.148
 He is known as the Einstein of India. 
@@ -677,8 +677,8 @@ PropN-rod-PropN ko mArane ke lie eka prayAsa WA.
 Hindi meaning using Stanford parser 2.154
 The recent advertising campaign has had a marked effect on sales. 
 hAla ke vijFApanabAjI aBiyAna kA bikrI para suspaRta praBAva huA hE.
-Multiple adjective senses are available for marked. WSD rule is required 
-Multiple adjective senses are available for recent. WSD rule is required 
+Warning: Multiple adjective senses are available for marked. WSD rule is required 
+Warning: Multiple adjective senses are available for recent. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.155
 We should help the poor. 
@@ -710,7 +710,7 @@ hamane usake lie unako cuna liyA.
 Hindi meaning using Stanford parser 2.161
 We picked out some beautiful flowers for her. 
 hamane usake lie kuCa sunxara PUla cuna lie.
-Multiple adjective senses are available for beautiful. WSD rule is required 
+Warning: Multiple adjective senses are available for beautiful. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.162
 I am afraid that I have badly hurt him. 
@@ -720,7 +720,7 @@ mEM cinwiwa hUz ki mEM burI waraha se usako kRawi_pahuzcA cukA hUz.
 Hindi meaning using Stanford parser 2.163
 Dick is important to fix the problem. 
 PropN-dick-PropN samasyA ko sulaJAne ke lie mahawwvapUrNa hE.
-Multiple adjective senses are available for important. WSD rule is required 
+Warning: Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.164
 Anne told me I would almost certainly be hired. 
@@ -741,7 +741,7 @@ vaha usake BUwapUrva vijewAoM ke viruxXa eka PutabAla mEca KelegA.
 Hindi meaning using Stanford parser 2.168
 They are playing an important match against Liverpool on Saturday. 
 ve SanivAra ko livarapUla ke viruxXa mahawwvapUrNa mEca Kela rahe hEM.
-Multiple adjective senses are available for important. WSD rule is required 
+Warning: Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.169
 I was told the whole story by Maybeline. 
@@ -758,7 +758,7 @@ mEMne socA ki wyAga_pawra xenA TIka hE.
 Hindi meaning using Stanford parser 2.172
 It is not a good idea to drive for hours without a rest. 
 viSrAma ke binA GaNtoM waka vAhana calAnA acCA vicAra nahIM hE.
-Multiple adjective senses are available for good. WSD rule is required 
+Warning: Multiple adjective senses are available for good. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.173
 His aim was to become president. 
@@ -772,7 +772,7 @@ Hindi meaning using Stanford parser 2.175
 It is not a good manner to eat alone. 
 akelA KAnA acCA vyavahAra nahIM hE.
 akelA KAnA acCA AcaraNa nahIM hE.
-Multiple adjective senses are available for good. WSD rule is required 
+Warning: Multiple adjective senses are available for good. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.176
 He took the most convenient seat. 
@@ -890,12 +890,12 @@ hama graha PropN-gorpon-PropN se hEM.
 Hindi meaning using Stanford parser 2.202
 The best costumes got prizes. 
 sarvowwama pahanAvoM ne puraskAra prApwa kie.
-Multiple adjective senses are available for best. WSD rule is required 
+Warning: Multiple adjective senses are available for best. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.203
 She is apparently an excellent pianist. 
 vaha UparI wOra se uwwama piyAno_bajAne vAlI hE.
-Multiple adjective senses are available for excellent. WSD rule is required 
+Warning: Multiple adjective senses are available for excellent. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.204
 There is a dog or a cat here. 
@@ -905,7 +905,7 @@ kuwwA yA billI yahAz hE.
 Hindi meaning using Stanford parser 2.205
 It is important to fix the problem. 
 samasyA ko sulaJAnA mahawwvapUrNa hE.
-Multiple adjective senses are available for important. WSD rule is required 
+Warning: Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.206
 He spoke last on this issue. 
@@ -946,7 +946,7 @@ mEMne merI mAz ke lie eka sone kI cUdI KarIxI.
 Hindi meaning using Stanford parser 2.215
 The mother calmed the angry son. 
 mAz ne kroXiwa bete ko SAnwa kiyA.
-Multiple adjective senses are available for angry. WSD rule is required 
+Warning: Multiple adjective senses are available for angry. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.216
 He deals fairly with his employees. 
@@ -976,7 +976,7 @@ joYna PropN-tom-PropN kI apekRA aXika buxXimAna hE.
 Hindi meaning using Stanford parser 2.221
 The sparrow made a beautiful nest. 
 gOrEyA ne eka sunxara GoMsalA banAyA.
-Multiple adjective senses are available for beautiful. WSD rule is required 
+Warning: Multiple adjective senses are available for beautiful. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.222
 There is a ghost in the room. 
@@ -1014,7 +1014,7 @@ vaha usakI bArI ke lie prawIkRA_kara rahI hE.
 Hindi meaning using Stanford parser 2.230
 She waled a beautiful picture on the cloth. 
 usane kapade para eka sunxara ciwra cihniwa kiyA.
-Multiple adjective senses are available for beautiful. WSD rule is required 
+Warning: Multiple adjective senses are available for beautiful. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.231
 I asked my friend to xerox the notes. 
@@ -1027,12 +1027,12 @@ vaha SAxI ke lie jyAxA hI CotI hE.
 Hindi meaning using Stanford parser 2.233
 The government took serious steps to check the dacoits. 
 sarakAra ne dAkuoM ko rokane ke lie gamBIra kaxama uTAe.
-Multiple adjective senses are available for serious. WSD rule is required 
+Warning: Multiple adjective senses are available for serious. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.234
 You must outline the important sentences with a marker. 
 Apako mArkar pEna se mahawwvapUrNa vAkya golIkqwa karane cAhie.
-Multiple adjective senses are available for important. WSD rule is required 
+Warning: Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.235
 He opened a conversation on the issue of animal rights. 
@@ -1051,7 +1051,7 @@ Hindi meaning using Stanford parser 2.238
 The land was zoned for industrial purposes. 
 BUmi Oxyogika uxxeSyoM ke lie kRewroM_meM_viBAjiwa kI gayI WI.
 sWala Oxyogika uxxeSyoM ke lie kRewroM_meM_viBAjiwa kiyA gayA WA.
-Multiple adjective senses are available for industrial. WSD rule is required 
+Warning: Multiple adjective senses are available for industrial. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.239
 The child is weeping for his mother. 
@@ -1108,17 +1108,17 @@ xalAI PropN-lama-PropN PropN-tibetian-PropN maTa kA maTAXyakRa hE.
 Hindi meaning using Stanford parser 2.251
 There is abject poverty in India. 
 BArawa meM awi garIbI hE.
-Multiple adjective senses are available for abject. WSD rule is required 
+Warning: Multiple adjective senses are available for abject. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.252
 A policeman is abasing a good businessman. 
 sipAhI eka acCe vyApArI ko avamAniwa_kara rahA hE.
-Multiple adjective senses are available for good. WSD rule is required 
+Warning: Multiple adjective senses are available for good. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.253
 Abandoned children are kept in orphanages. 
 Code hue bacce anAWAlayoM meM raKe gaye hEM.
-Multiple adjective senses are available for abandoned. WSD rule is required 
+Warning: Multiple adjective senses are available for abandoned. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.254
 The frequent sleeping of students is a big problem. 
@@ -1136,7 +1136,7 @@ Hindi meaning using Stanford parser 2.257
 The Inspector made an accidental inspection of the school. 
 nirIkRaka ne vixyAlaya kA Akasmika nirIkRaNa kiyA.
 iMspektara ne vixyAlaya kA Akasmika nirIkRaNa kiyA.
-Multiple adjective senses are available for accidental. WSD rule is required 
+Warning: Multiple adjective senses are available for accidental. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.258
 The priest granted absolution for John's sins. 
@@ -1145,12 +1145,12 @@ purohiwa ne joYna ke pApoM ke lie kRamAxAna xiyA.
 Hindi meaning using Stanford parser 2.259
 There are abundant natural resources in our country. 
 hamAre xeSa meM bahuwa sAre prAkqwika saMsAXana hEM.
-Multiple adjective senses are available for abundant. WSD rule is required 
+Warning: Multiple adjective senses are available for abundant. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.260
 Some fruit juices are very acidic. 
 kuCa Pala rasa awyanwa amlIya hEM.
-Multiple adjective senses are available for acidic. WSD rule is required 
+Warning: Multiple adjective senses are available for acidic. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.261
 I wondered for a long time why everyone liked her so much. 
@@ -1159,7 +1159,7 @@ muJe lambe_samaya waka AScarya huA ki hara kisIne iwanA jyAxA usako kyoM pasanxa
 Hindi meaning using Stanford parser 2.262
 Beautiful paintings adorned the walls of the palace. 
 sunxara kalAkqwiyoM ne mahala kI xIvAreM sajAIM.
-Multiple adjective senses are available for beautiful. WSD rule is required 
+Warning: Multiple adjective senses are available for beautiful. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.263
 The leopard seizes its kill and begins to eat. 
@@ -1189,7 +1189,7 @@ gEsa pAipa se nikala rahI hE.
 Hindi meaning using Stanford parser 2.269
 He commented that the two essays were rather similar. 
 usane tippaNI kI ki xo nibanXa kAPI samAna We.
-Multiple adjective senses are available for similar. WSD rule is required 
+Warning: Multiple adjective senses are available for similar. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.270
 Three quarters of a million people in this city have no health insurance. 
@@ -1225,7 +1225,7 @@ usane usakI sagI mAz ko walASa karane kA PEsalA kiyA.
 Hindi meaning using Stanford parser 2.277
 Monday sounds good for the meeting. 
 somavAra bETaka ke lie acCA prawIwa howA hE.
-Multiple adjective senses are available for good. WSD rule is required 
+Warning: Multiple adjective senses are available for good. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.278
 My many female friends were angered by the hearings. 
@@ -1247,17 +1247,17 @@ Hindi meaning using Stanford parser 2.282
 It was interesting to hear about school life in Britain. 
 britana meM vixyAlaya jIvana ke bAre meM sunanA rucikara WA.
 britana meM vixyAlaya jIvana ke bAre meM sunanA rocaka WA.
-Multiple adjective senses are available for interesting. WSD rule is required 
+Warning: Multiple adjective senses are available for interesting. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.283
 He lives in a narrow lane off the main road. 
 vaha pramuKa sadaka se nikalI huI eka safkIrNa galI meM rahawA hE.
-Multiple adjective senses are available for main. WSD rule is required 
+Warning: Multiple adjective senses are available for main. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.284
 The chairman of the company presented the annual report. 
 kampanI ke aXyakRa ne vArRika riporta peSa kI.
-Multiple adjective senses are available for annual. WSD rule is required 
+Warning: Multiple adjective senses are available for annual. WSD rule is required 
 
 Hindi meaning using Stanford parser 2.285
 The Master said, if I did not go, how would you ever see? 
@@ -1342,12 +1342,12 @@ mEMne anwawaH pawA lagAyA yaha progrAma iwanA XImA kyoM hE.
 Hindi meaning using Stanford parser 3.2
 He was an exotic creature with short red hair and brilliant green eyes. 
 vaha Cote lAla keSa vAlA Ora wejomaya harI AzKoM vAlA AkarRaka prANI WA.
-Multiple adjective senses are available for exotic. WSD rule is required 
+Warning: Multiple adjective senses are available for exotic. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.3
 The best five costumes got prizes. 
 sarvowwama pAzca pahanAvoM ne puraskAra prApwa kie.
-Multiple adjective senses are available for best. WSD rule is required 
+Warning: Multiple adjective senses are available for best. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.4
 I wonder how John did it. 
@@ -1360,7 +1360,7 @@ mEMne mafgalavAra ko PropN-margaret-PropN ko bawAyA ki mEMne socA ki usako samBa
 Hindi meaning using Stanford parser 3.6
 High income taxes are important. 
 aXika Aya kara mahawwvapUrNa hEM.
-Multiple adjective senses are available for important. WSD rule is required 
+Warning: Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.7
 There is a heap of garbage near the house. 
@@ -1422,12 +1422,12 @@ dAktara GAyaloM kI xeKaBAla_kara rahA hE.
 Hindi meaning using Stanford parser 3.20
 He gave up his lucrative law practice for the sake of the country. 
 usane xeSa ke lie usakI lABakara vakAlawa Coda xI.
-Multiple adjective senses are available for lucrative. WSD rule is required 
+Warning: Multiple adjective senses are available for lucrative. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.21
 She is an excellent student with a bright future. 
 vaha eka ujjvala BaviRya vAlI uwwama vixyArWI hE.
-Multiple adjective senses are available for excellent. WSD rule is required 
+Warning: Multiple adjective senses are available for excellent. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.22
 Someone laughed suddenly and the spell was broken. 
@@ -1437,7 +1437,7 @@ Hindi meaning using Stanford parser 3.23
 To the people of India he is the symbol of mature wisdom. 
 BArawa ke logoM ke lie vaha paripakva buxXimawwA kA prawIka hE.
 vaha BArawa ke logoM ke lie paripakva buxXimawwA kA prawIka hE.
-Multiple adjective senses are available for mature. WSD rule is required 
+Warning: Multiple adjective senses are available for mature. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.24
 I enclose three documents herewith. 
@@ -1452,7 +1452,7 @@ vaha usakI pawnI kI mqwyu ke saxame se vAswava meM kaBI nahIM uBara pAyA.
 Hindi meaning using Stanford parser 3.26
 He was well aware of the problem. 
 vaha samasyA se acCI waraha avagawa WA.
-Multiple adjective senses are available for aware. WSD rule is required 
+Warning: Multiple adjective senses are available for aware. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.27
 She has gone for a walk in the woods. 
@@ -1489,7 +1489,7 @@ Hindi meaning using Stanford parser 3.33
 The dog which Chris bought is really ugly. 
 jise PropN-chris-PropN ne KarIxA vaha kuwwA vAswava meM kurUpa hE.
 Chris ne jise KarIxA vaha kuwwA vAswava meM kurUpa hE.
-Multiple adjective senses are available for ugly. WSD rule is required 
+Warning: Multiple adjective senses are available for ugly. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.34
 Phil gave me a sweater which he bought in Paris. 
@@ -1537,26 +1537,26 @@ mEM Apako vaha Gara xiKAUzgA jise mEMne KarIxA.
 Hindi meaning using Stanford parser 3.42
 Shivaji was one of the most powerful rulers in 1600. 
 PropN-shivaji-PropN 1600 meM sabase aXika SakwiSAlI SAsakoM meM se eka WA.
-Multiple adjective senses are available for powerful. WSD rule is required 
+Warning: Multiple adjective senses are available for powerful. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.43
 Ayodhya during ancient times was known as kaushaldesa. 
 prAcIna kAla ke xOrAna ayoXyA kaushaldesa ke rUpa meM jAnI jAwI WI.
 prAcIna kAla ke xOrAna PropN-ayodhya-PropN kaushaldesa ke nAma se jAnA jAwA WA.
 prAcIna kAla ke xOrAna Ayodhya kaushaldesa ke nAma se jAnA jAwA WA.
-Multiple adjective senses are available for ancient. WSD rule is required 
+Warning: Multiple adjective senses are available for ancient. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.44
 Golconda fort is situated on the western outskirts of Hyderabad. 
 PropN-golconda-PropN kilA hExarAbAxa ke paScimI bAharI ilAke meM hE.
 PropN-golconda-PropN kilA PropN-hyderabad-PropN ke paScimI bAharI hisse meM hE.
-Multiple adjective senses are available for western. WSD rule is required 
+Warning: Multiple adjective senses are available for western. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.45
 Jumma masjid is considered to be one of the most beautiful mosques in western India. 
 jummA masjixa paScimI BArawa meM sabase aXika sunxara masjixoM meM se eka mAnI jAwI hE.
-Multiple adjective senses are available for beautiful. WSD rule is required 
-Multiple adjective senses are available for western. WSD rule is required 
+Warning: Multiple adjective senses are available for beautiful. WSD rule is required 
+Warning: Multiple adjective senses are available for western. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.46
 I like dogs as well as cats. 
@@ -1567,7 +1567,7 @@ mEM kuwwoM vEse hI billiyoM ko pasanxa karawA hUz.
 Hindi meaning using Stanford parser 3.47
 He was imprisoned in 1945 for the brutal murder of a sixty year old man. 
 vaha eka sATa varRa ke AxamI ke nirmama KUna ke lie 1945 meM kExa kiyA gayA WA.
-Multiple adjective senses are available for brutal. WSD rule is required 
+Warning: Multiple adjective senses are available for brutal. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.48
 These cuts in services will particularly affect the old. 
@@ -1578,7 +1578,7 @@ Hindi meaning using Stanford parser 3.49
 A slow, balmy breeze from the south engulfed everyone in the audience. 
 xakRiNa se eka XIme, suKaxAyaka manxa samIra ne SrowAgaNa meM saba ko nimagna kiyA.
 xakRiNa se eka XIme, suKaxAyaka manxa samIra ne SrowAxala meM prawyeka_vyakwi ko nimagna kiyA.
-Multiple adjective senses are available for balmy. WSD rule is required 
+Warning: Multiple adjective senses are available for balmy. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.50
 Is there life beyond the grave? 
@@ -1645,7 +1645,7 @@ eka mote ladake ko Pala KAne pade.
 Hindi meaning using Stanford parser 3.65
 A fat boy had to do various exercises. 
 eka mote ladake ko viBinna vyAyAma karane pade.
-Multiple adjective senses are available for various. WSD rule is required 
+Warning: Multiple adjective senses are available for various. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.66
 Applicants for posts are called for interview. 
@@ -1672,8 +1672,8 @@ AsapAsa bahuwa sArA PlU hE.
 Hindi meaning using Stanford parser 3.71
 In fact she had been feeling tired and queasy for the past few days. 
 vAswava meM vaha piCale kuCa xinoM se WakI huI Ora vamanakArI mahasUsa karawI rahI WI.
-Multiple adjective senses are available for queasy. WSD rule is required 
-Multiple adjective senses are available for tired. WSD rule is required 
+Warning: Multiple adjective senses are available for queasy. WSD rule is required 
+Warning: Multiple adjective senses are available for tired. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.72
 At the end of the day, 251.2 million shares were traded. 
@@ -1707,7 +1707,7 @@ Hindi meaning using Stanford parser 3.78
 I will tell you some interesting facts tomorrow. 
 mEM kala Apako kuCa rucikara waWya bawAUzgA.
 mEM kala Apako kuCa rocaka waWya bawAUzgA.
-Multiple adjective senses are available for interesting. WSD rule is required 
+Warning: Multiple adjective senses are available for interesting. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.79
 At this point, the Dow was down about 35 points. 
@@ -1726,8 +1726,8 @@ Hindi meaning using Stanford parser 3.82
 He said such results should be "measurable in dollars and cents" in reducing the U.S. trade deficit with Japan. 
 usane kahA ki Ese pariNAmoM ko jApAna ke sAWa yU.esa. vyApAra GAtA kama karane meM "dOlara Ora sEnta meM mApane yogya" honA cAhie.
 usane kahA ki Ese pariNAma jApAna ke sAWa yU.esa. vyApAra GAtA kama karane meM "dOlara Ora sEnta meM mApane yogya" hone cAhie.
-Multiple adjective senses are available for measurable. WSD rule is required 
-Multiple adjective senses are available for such. WSD rule is required 
+Warning: Multiple adjective senses are available for measurable. WSD rule is required 
+Warning: Multiple adjective senses are available for such. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.83
 Go straight and take a right turn. 
@@ -1755,18 +1755,18 @@ Hindi meaning using Stanford parser 3.88
 Most of the inexpensive budget accommodation is in taj ganj. 
 kama KarcIle bajata meM rukane_kI vyvasWA jyAxAwara taj ganj meM hE.
 kama KarcIle bajata AvAsa kA sabase aXika taj ganj meM hE.
-Multiple adjective senses are available for inexpensive. WSD rule is required 
-Multiple adjective senses are available for most. WSD rule is required 
+Warning: Multiple adjective senses are available for inexpensive. WSD rule is required 
+Warning: Multiple adjective senses are available for most. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.89
 As we go from ooty to gudalur, the change in vegetation is striking. 
 jaba hama ooty se gudalur ko jAwe hEM, pOXoM_kI vqxXi meM baxalAva XyAna AkarRiwa karanevAlA hE.
-Multiple adjective senses are available for striking. WSD rule is required 
+Warning: Multiple adjective senses are available for striking. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.90
 The glass house built on the lines of the crystal palace in london is the main attraction in this huge park. 
 landana meM sPatika mahala kI lAinoM para banA huA kAzca Gara isa viSAla uxyAna meM pramuKa AkarRaNa hE.
-Multiple adjective senses are available for main. WSD rule is required 
+Warning: Multiple adjective senses are available for main. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.91
 Mahadevi Verma wrote many poems. 
@@ -1775,7 +1775,7 @@ PropN-mahadevi-PropN PropN-verma-PropN ne bahuwa kaviwAez liKIM.
 Hindi meaning using Stanford parser 3.92
 Soccer is my most favourite sport. 
 PutabAla merA sabase aXika priya Kela hE.
-Multiple adjective senses are available for favourite. WSD rule is required 
+Warning: Multiple adjective senses are available for favourite. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.93
 He persuaded them to go. 
@@ -1809,7 +1809,7 @@ usane usake rAjya Bara meM paSuoM ke Ora cidiyoM ke GAwaka ko rokA.
 Hindi meaning using Stanford parser 3.99
 Experience is more important for this job than paper qualifications. 
 anuBava kAgajI yogyawA kI apekRA isa kAma ke lie aXika mahawwvapUrNa hE.
-Multiple adjective senses are available for important. WSD rule is required 
+Warning: Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 3.100
 He wrote the address on a piece of paper. 
@@ -1830,7 +1830,7 @@ mEMne mEdisina kI pawrikA meM eka hAla kA SoXapawra paDA.
 mEMne ORaXI kI pawrikA meM eka hAla kA SoXapawra paDA.
 mEMne PropN-medicine-PropN kI pawrikA meM eka hAla kA leKapawra paDA.
 mEMne PropN-medicine-PropN kI pawrikA meM eka hAla kA SoXapawra paDA.
-Multiple adjective senses are available for recent. WSD rule is required 
+Warning: Multiple adjective senses are available for recent. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.4
 I read about the train robbery in today's paper. 
@@ -1845,7 +1845,7 @@ Hindi meaning using Stanford parser 4.6
 This journal is available in paper form. 
 yaha pawrikA kAgajI rUpa meM upalabXa hE.
 yaha jarnala kagajI rUpa meM upalabXa hE.
-Multiple adjective senses are available for available. WSD rule is required 
+Warning: Multiple adjective senses are available for available. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.7
 Almora is a small town in Uttarakhanda state. 
@@ -1854,7 +1854,7 @@ almorA PropN-uttarakhanda-PropN rAjya meM eka CotA nagara hE.
 Hindi meaning using Stanford parser 4.8
 This card is printed on recycled paper. 
 yaha kArda punarAvqwwa kAgaja para CApA huA hE.
-Multiple adjective senses are available for recycled. WSD rule is required 
+Warning: Multiple adjective senses are available for recycled. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.9
 She had gotten her family to go against convention. 
@@ -1883,13 +1883,13 @@ Hindi meaning using Stanford parser 4.14
 The main states of southern India are Tamilnadu, Kerala, Maharashtra, Andhrapradesh and Karnataka. 
 xakRiNI BArawa ke pramuKa rAjya wamilanAdu, PropN-kerala-PropN, PropN-maharashtra-PropN, PropN-andhrapradesh-PropN Ora PropN-karnataka-PropN hEM.
 xakRiNI BArawa ke pramuKa rAjya tamilnadu, kerala, maharashtra, andhrapradesh Ora karnataka hEM.
-Multiple adjective senses are available for main. WSD rule is required 
-Multiple adjective senses are available for southern. WSD rule is required 
+Warning: Multiple adjective senses are available for main. WSD rule is required 
+Warning: Multiple adjective senses are available for southern. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.15
 He will not come because he is busy. 
 vaha nahIM AegA kyozki vaha vyaswa hE.
-Multiple adjective senses are available for busy. WSD rule is required 
+Warning: Multiple adjective senses are available for busy. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.16
 He neither plays, nor reads. 
@@ -1904,12 +1904,12 @@ Hindi meaning using Stanford parser 4.18
 Chaturbhuj temple is built on a massive stone platform. 
 PropN-chaturbhuj-PropN manxira eka BArI pawWara pletaPoYrma para banAyA huA hE.
 Chaturbhuj manxira eka BArI pawWara pletaPoYrma para banAyA huA hE.
-Multiple adjective senses are available for massive. WSD rule is required 
+Warning: Multiple adjective senses are available for massive. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.19
 Puri is one of the most important pilgrimage centres for the hindus. 
 pUrI hindus ke lie awi mahawvapUrNa wIrWayAwrA keMxroM meM se eka hE.
-Multiple adjective senses are available for important. WSD rule is required 
+Warning: Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.20
 He went to Agra and saw the Tajmahal. 
@@ -1927,7 +1927,7 @@ uxyAna Sahara kA eka SAnaxAra xqSya xewA hE.
 Hindi meaning using Stanford parser 4.23
 It is easy to get into a fight. 
 ladAI meM ulaJanA AsAna hE.
-Multiple adjective senses are available for easy. WSD rule is required 
+Warning: Multiple adjective senses are available for easy. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.24
 Queen victoria opened blackfriars bridge in november 1869. 
@@ -1942,7 +1942,7 @@ SrInagara jammU Ora PropN-kashmir-PropN kA rAjaXAnI nagara Ora sabase aXika loka
 Hindi meaning using Stanford parser 4.26
 The toltecs were the predominant civilizations of this time. 
 toltecs isa kAla ke sarvAXika saBya samAja We.
-Multiple adjective senses are available for predominant. WSD rule is required 
+Warning: Multiple adjective senses are available for predominant. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.27
 How shall we collect the money? 
@@ -1971,7 +1971,7 @@ Hindi meaning using Stanford parser 4.32
 Allahabad is also known for its annual magh mela (mini kumbh mela) and colorful dussehra festival. 
 IlAhAbAxa usake vArRika magh mele ke lie (CotA kumbh melA) Ora rafgIna dussehra wyOhAra ke lie BI jAnA jAwA hE.
 Allahabad usake vArRika magh mele ke lie (Cote kumbh mele) Ora rafgIna dussehra wyOhAra ke lie BI jAnA jAwA hE.
-Multiple adjective senses are available for annual. WSD rule is required 
+Warning: Multiple adjective senses are available for annual. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.33
 This old fort was built by Sher Shah in the 16th century. 
@@ -1985,13 +1985,13 @@ praWama mahAyuxXa ke xOrAna, yaha aspawAla kI waraha upayoga kiyA gayA WA.
 Hindi meaning using Stanford parser 4.35
 The chenna kesava temple of belur built 900 years ago is an exquisite example of hoysala art. 
 900 varRa pahale banA huA belur kA chenna kesava manxira hoysala kalA kA uwkqRta uxAharaNa hE.
-Multiple adjective senses are available for exquisite. WSD rule is required 
+Warning: Multiple adjective senses are available for exquisite. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.36
 This beautiful building is 245 ft in length and 156 ft in width. 
 yaha sunxara imArawa lambAI meM 245 ft Ora cOdAI meM 156 ft hE.
 yaha sunxara imArawa lambAI meM 245 PropN-ft-PropN Ora cOdAI meM 156 PropN-ft-PropN hE.
-Multiple adjective senses are available for beautiful. WSD rule is required 
+Warning: Multiple adjective senses are available for beautiful. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.37
 One can reach kumbhalgarh by road from Udaipur (84km) and ranakpur which is 18km from kumbhalgarh. 
@@ -2001,19 +2001,19 @@ koI BI udaipur se (PropN-84km-PropN) Ora ranakpur se sadaka se kumbhalgarh waka 
 Hindi meaning using Stanford parser 4.38
 She is ugly and fat. 
 vaha kurUpa Ora motI hE.
-Multiple adjective senses are available for fat. WSD rule is required 
-Multiple adjective senses are available for ugly. WSD rule is required 
+Warning: Multiple adjective senses are available for fat. WSD rule is required 
+Warning: Multiple adjective senses are available for ugly. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.39
 Her mom was beautiful, talented and sweet. 
 usakI mAz sunxara, prawiBASAlI Ora mITI WI.
-Multiple adjective senses are available for beautiful. WSD rule is required 
-Multiple adjective senses are available for talented. WSD rule is required 
+Warning: Multiple adjective senses are available for beautiful. WSD rule is required 
+Warning: Multiple adjective senses are available for talented. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.40
 She is beautiful and intelligent. 
 vaha sunxara Ora buxXimAna hE.
-Multiple adjective senses are available for beautiful. WSD rule is required 
+Warning: Multiple adjective senses are available for beautiful. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.41
 Mary, Joe, Sita, Geeta and Louise are coming to the party. 
@@ -2023,7 +2023,7 @@ merI, PropN-joe-PropN, sIwA, gIwA Ora PropN-louise-PropN pArtI ko A rahIM hEM.
 Hindi meaning using Stanford parser 4.42
 The government's action was unusual. 
 sarakAra kI kriyA asAmAnya WI.
-Multiple adjective senses are available for unusual. WSD rule is required 
+Warning: Multiple adjective senses are available for unusual. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.43
 It would open a can of worms. 
@@ -2065,12 +2065,12 @@ Apake kiwane bacce hEM?
 Hindi meaning using Stanford parser 4.52
 It is good to eat less food these days. 
 ina xinoM kama AhAra KAnA acCA hE.
-Multiple adjective senses are available for good. WSD rule is required 
+Warning: Multiple adjective senses are available for good. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.53
 The purpose of this note is to give simple sentences for translation. 
 isa tippaNI kA uxxeSya anuvAxa ke lie sarala vAkya xenA hE.
-Multiple adjective senses are available for simple. WSD rule is required 
+Warning: Multiple adjective senses are available for simple. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.54
 The journey takes about three hours. 
@@ -2132,7 +2132,7 @@ vijFAna ke PAyaxe bahuwa hEM.
 Hindi meaning using Stanford parser 4.68
 I am busy with my studies. 
 mEM mere aXyayana meM vyaswa hUz.
-Multiple adjective senses are available for busy. WSD rule is required 
+Warning: Multiple adjective senses are available for busy. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.69
 Rama said that Radha told a lie. 
@@ -2145,7 +2145,7 @@ jisane merA pICA kiyA vaha kuwwA kAlA WA.
 Hindi meaning using Stanford parser 4.71
 The book I was reading is wonderful. 
 jise mEM paDa rahA WA vaha puswaka axBuwa hE.
-Multiple adjective senses are available for wonderful. WSD rule is required 
+Warning: Multiple adjective senses are available for wonderful. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.72
 I saw the man who you love. 
@@ -2155,7 +2155,7 @@ mEMne usa AxamI ko jise Apa pasanxa karawe hEM xeKA.
 Hindi meaning using Stanford parser 4.73
 The place where you are staying is very congested. 
 jahAz Apa raha rahe hEM vaha sWAna awyanwa safkuliwa hE.
-Multiple adjective senses are available for congested. WSD rule is required 
+Warning: Multiple adjective senses are available for congested. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.74
 I will show you the house where I met your mother. 
@@ -2167,7 +2167,7 @@ The dalai lama presented some beautiful tankhas.
 dalai lama ne kuCa sunxara tankhas xiyA.
 PropN-dalai-PropN PropN-lama-PropN ne kuCa sunxara tankhas xiyA.
 dalai lama ne kuCa sunxara tankhas peSa kiyA.
-Multiple adjective senses are available for beautiful. WSD rule is required 
+Warning: Multiple adjective senses are available for beautiful. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.76
 Things had just gone too far. 
@@ -2177,7 +2177,7 @@ Hindi meaning using Stanford parser 4.77
 SOUTH AFRICA FREED the ANC's Sisulu and seven other political prisoners. 
 xakRiNa aPrIkA ne PropN-anc-PropN ke PropN-sisulu-PropN Ora sAwa anya rAjanEwika banxiyoM ko mukwa kiyA.
 SOUTH AFRICA ne ANC ke Sisulu Ora sAwa anya rAjanEwika banxI mukwa kie.
-Multiple adjective senses are available for political. WSD rule is required 
+Warning: Multiple adjective senses are available for political. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.78
 If John was with Lisa last night, who went to the movie with Diane? 
@@ -2222,7 +2222,7 @@ Hindi meaning using Stanford parser 4.87
 Health is more important than money. 
 svAsWya pEse kI apekRA aXika mahawwvapUrNa hE.
 PropN-health-PropN pEse kI apekRA aXika mahawvapUrNa hE.
-Multiple adjective senses are available for important. WSD rule is required 
+Warning: Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.88
 I know a woman who has two children. 
@@ -2239,7 +2239,7 @@ jo asvasWa hE vaha sEnika aspawAla meM hE.
 Hindi meaning using Stanford parser 4.91
 In these examples, the external agency of force (hands, wind, stream, etc) is in contact with the object. 
 ina uxAharaNoM meM, bala kA bAhya sAXana (hAWa, havA, jalaXArA, Axi) vaswu ke samparka meM hE.
-Multiple adjective senses are available for external. WSD rule is required 
+Warning: Multiple adjective senses are available for external. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.92
 This is the color I like best. 
@@ -2268,7 +2268,7 @@ isa KaNda ke uxXaraNacihna acCe hEM.
 Hindi meaning using Stanford parser 4.98
 A good enough actor can do it. 
 eka yogya aBinewA yaha kara sakawA hE.
-Multiple adjective senses are available for good. WSD rule is required 
+Warning: Multiple adjective senses are available for good. WSD rule is required 
 
 Hindi meaning using Stanford parser 4.99
 I am going across the border. 
@@ -2445,12 +2445,12 @@ caliye hama isa vAkya ke Gataka BAgoM ko xeKeM.
 Hindi meaning using Stanford parser 5.41
 Childhood is the best time of life. 
 bacapana jIvana kA sarvowwama samaya hE.
-Multiple adjective senses are available for best. WSD rule is required 
+Warning: Multiple adjective senses are available for best. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.42
 In ancient times there were many kingdoms. 
 prAcIna kAla meM bahuwa rAjya We.
-Multiple adjective senses are available for ancient. WSD rule is required 
+Warning: Multiple adjective senses are available for ancient. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.43
 This time tomorrow I will be in Canada. 
@@ -2459,7 +2459,7 @@ isa samaya kala mEM kanAdA meM hoUzgA.
 Hindi meaning using Stanford parser 5.44
 This is a fairly easy book. 
 yaha eka kAPI AsAna puswaka hE.
-Multiple adjective senses are available for easy. WSD rule is required 
+Warning: Multiple adjective senses are available for easy. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.45
 I know him fairly well, but I would not say we were really close friends. 
@@ -2472,7 +2472,7 @@ mEM kAPI niSciwa hUz ki mEM kAma kara sakawA hUz.
 Hindi meaning using Stanford parser 5.47
 The report was fairly incomprehensible. 
 riporta kAPI xurUha WI.
-Multiple adjective senses are available for incomprehensible. WSD rule is required 
+Warning: Multiple adjective senses are available for incomprehensible. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.48
 He took the book from his friend. 
@@ -2511,7 +2511,7 @@ ve saxame kI avasWA meM We.
 Hindi meaning using Stanford parser 5.56
 What is the company's financial state? 
 kampanI kI ArWika avasWA kyA hE?
-Multiple adjective senses are available for financial. WSD rule is required 
+Warning: Multiple adjective senses are available for financial. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.57
 The country is in a state of war. 
@@ -2547,7 +2547,7 @@ vEjFAnika usa ke bAre meM ki asahamawa howe hEM brahmANda kEse banAyA gayA WA.
 Hindi meaning using Stanford parser 5.64
 The company is trying to create a young energetic image. 
 kampanI eka waruNa ojasvI prawimA banAne ke lie prayAsa_kara rahI hE.
-Multiple adjective senses are available for energetic. WSD rule is required 
+Warning: Multiple adjective senses are available for energetic. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.65
 The government has created eight new peers. 
@@ -2560,7 +2560,7 @@ rARtrapawi ne naye kAma uwwapanna karane ke lie yojanA kI GoRaNA kI hE.
 Hindi meaning using Stanford parser 5.67
 The scientists who created the world's first atomic bomb. 
 vEjFAnika jinhoMne viSva kA praWama paramANu bama banAyA.
-Multiple adjective senses are available for atomic. WSD rule is required 
+Warning: Multiple adjective senses are available for atomic. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.68
 Create a new directory and put all your files into it. 
@@ -2569,7 +2569,7 @@ eka nayI dAyarektarI banAie Ora isake anxara ApakI saba PAileM raKie.
 Hindi meaning using Stanford parser 5.69
 The main purpose of industry is to create wealth. 
 uxyoga kA pramuKa uxxeSya Xana banAnA hE.
-Multiple adjective senses are available for main. WSD rule is required 
+Warning: Multiple adjective senses are available for main. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.70
 My party will be grander than your party. 
@@ -2590,8 +2590,8 @@ unhoMne anAWa baccoM kI sahAyawA karane ke lie saMsWA sWApiwa kI.
 Hindi meaning using Stanford parser 5.74
 The science of electricity and magnetism is the foundation for the modern technological civilisation. 
 vixyuwa Sakwi Ora cumbakawwva kA vijFAna AXunika wakanIkI sambanXI samAja ke lie nIMva hE.
-Multiple adjective senses are available for modern. WSD rule is required 
-Multiple adjective senses are available for technological. WSD rule is required 
+Warning: Multiple adjective senses are available for modern. WSD rule is required 
+Warning: Multiple adjective senses are available for technological. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.75
 The sun was shining and birds were singing. 
@@ -2650,12 +2650,12 @@ yaha kRewra vixyuwa cumbakawva kahA jAwA hE.
 Hindi meaning using Stanford parser 5.88
 If this is your idea of a joke, then I do not find it very funny. 
 yaxi yaha cutakule kA ApakA vicAra hE, waba mEM isako awyanwa hAsyAspaxa nahIM pAwA hUz.
-Multiple adjective senses are available for funny. WSD rule is required 
+Warning: Multiple adjective senses are available for funny. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.89
 He discussed the general but neglected the particular. 
 usane sAmAnya ke viRaya meM carcA kI paranwu viSiRta kI upekRA kI.
-Multiple adjective senses are available for particular. WSD rule is required 
+Warning: Multiple adjective senses are available for particular. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.90
 His words implied a threat. 
@@ -2664,7 +2664,7 @@ usake SabxoM ne XamakI nihiwa WI.
 Hindi meaning using Stanford parser 5.91
 Are you implying that I am fat? 
 kyA Apa safkewa_xe rahe hEM ki mEM motA hUz?
-Multiple adjective senses are available for fat. WSD rule is required 
+Warning: Multiple adjective senses are available for fat. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.92
 She answered in a faint murmur. 
@@ -2706,7 +2706,7 @@ ve Ora aXika mUlya vqxXi kI samBAvanA ke lie sacewa kie gaye We.
 Hindi meaning using Stanford parser 6.1
 And its eyes are beautiful. 
 Ora usakI AzKeM sunxara hEM.
-Multiple adjective senses are available for beautiful. WSD rule is required 
+Warning: Multiple adjective senses are available for beautiful. WSD rule is required 
 
 Hindi meaning using Stanford parser 6.2
 It would die in the hot plains. 
@@ -2750,7 +2750,7 @@ Hindi meaning using Stanford parser 6.11
 There is an important difference, however, between the Sun and the hydrogen bomb. 
 sUraja ke bIca Ora hAIdrojana bama ke bIca mahawwvapUrNa anwara, waWApi, hE.
 sUrya ke bIca Ora hAIdrojana bama ke bIca mahawwvapUrNa anwara, waWApi, hE.
-Multiple adjective senses are available for important. WSD rule is required 
+Warning: Multiple adjective senses are available for important. WSD rule is required 
 
 Hindi meaning using Stanford parser 6.12
 Alka had fallen straight into it. 
@@ -2810,12 +2810,12 @@ xUsaroM ne sahamawI meM sira hilAyA.
 Hindi meaning using Stanford parser 6.25
 The earth inside a tunnel would be wet and muddy. 
 surafga ke anxara pqWvI gIlI Ora kIcada BarI hogI.
-Multiple adjective senses are available for muddy. WSD rule is required 
+Warning: Multiple adjective senses are available for muddy. WSD rule is required 
 
 Hindi meaning using Stanford parser 6.26
 The land ahead looks dry. 
 BUmi Age sUKI xiKawI hE.
-Multiple adjective senses are available for dry. WSD rule is required 
+Warning: Multiple adjective senses are available for dry. WSD rule is required 
 
 Hindi meaning using Stanford parser 6.27
 You must continue our custom of performing Lakshmi Puja on the first Friday of Shravana. 
@@ -2877,7 +2877,7 @@ pUrA sWAna mila ke bAhara udawe_hue Ate se saPexa WA.
 Hindi meaning using Stanford parser 6.41
 He was happy and gave her the oil. 
 vaha KuSa WA Ora usako wela xiyA.
-Multiple adjective senses are available for happy. WSD rule is required 
+Warning: Multiple adjective senses are available for happy. WSD rule is required 
 
 Hindi meaning using Stanford parser 6.42
 Where did you get it from? 
@@ -2886,7 +2886,7 @@ Apane isako kahAz se prApwa kiyA?
 Hindi meaning using Stanford parser 6.43
 Once there was a king who was generous and kind. 
 eka bAra eka EsA rAjA WA jo uxAra Ora xayAlu WA.
-Multiple adjective senses are available for generous. WSD rule is required 
+Warning: Multiple adjective senses are available for generous. WSD rule is required 
 
 Hindi meaning using Stanford parser 6.44
 The leader of each group is called a Sirdar. 
@@ -2952,7 +2952,7 @@ mEM unake nAma BI nahIM jAnawA hUz.
 Hindi meaning using Stanford parser 6.59
 Before the days of printing, our holy books were written on birch bark. 
 CapAI ke xinoM se pahale, hamArI paviwra puswakeM sanObara ke peda valkala para liKI gayIM WIM.
-Multiple adjective senses are available for holy. WSD rule is required 
+Warning: Multiple adjective senses are available for holy. WSD rule is required 
 
 Hindi meaning using Stanford parser 6.60
 Another thing, where do you keep your ghee at home? 
@@ -3041,7 +3041,7 @@ sampawwi piwA se bete ko uwwarAXikAra_meM_prApwa huI.
 Hindi meaning using Stanford parser 6.81
 A political storm in parliament. 
 saMsaxa meM eka rAjanEwika hafgAmA.
-Multiple adjective senses are available for political. WSD rule is required 
+Warning: Multiple adjective senses are available for political. WSD rule is required 
 
 Hindi meaning using Stanford parser 6.82
 They built a rough shelter from the old pieces of wood and cardboard. 
@@ -3071,7 +3071,7 @@ Hindi meaning using Stanford parser 6.88
 His great knowledge, his wonderful memory and his untiring energy have been devoted to this purpose for nearly twenty years. 
 usakA baDiyA jFAna, usakI baDiyA smqwi Ora usakI aWaka UrjA karIba karIba bIsa varRoM se isa uxxeSya ko samarpiwa kie gaye hEM.
 usakA baDiyA jFAna, usakI baDiyA smqwi Ora usakI aWaka UrjA karIba karIba bIsa varRoM se isa uxxeSya ko samarpiwa kI gayI hE.
-Multiple adjective senses are available for untiring. WSD rule is required 
+Warning: Multiple adjective senses are available for untiring. WSD rule is required 
 
 Hindi meaning using Stanford parser 6.89
 The police dispersed the crowd. 
@@ -3229,7 +3229,7 @@ eka Cote SiSu ko niranwara xeKaBAla kI AvaSyakawA howI hE.
 Hindi meaning using Stanford parser 7.27
 This school compares with the best in the country. 
 yaha vixyAlaya xeSa meM sarvowwama ke sAWa barAbrI karawA hE.
-Multiple adjective senses are available for best. WSD rule is required 
+Warning: Multiple adjective senses are available for best. WSD rule is required 
 
 Hindi meaning using Stanford parser 7.28
 The University laid down the syllabus for the examinations and named the textbooks. 
@@ -3290,7 +3290,7 @@ SiSu aba kisI_BI xina pExA_ho sakawA hE.
 Hindi meaning using Stanford parser 7.42
 The answer was not easy or quick. 
 uwwara AsAna yA wvariwa nahIM WA.
-Multiple adjective senses are available for easy. WSD rule is required 
+Warning: Multiple adjective senses are available for easy. WSD rule is required 
 
 Hindi meaning using Stanford parser 7.43
 In the evening the fox went into the earth. 
@@ -3299,7 +3299,7 @@ sanXyA ko lomadI bila ke anxara gaI.
 Hindi meaning using Stanford parser 7.44
 He earthed the electric wires near the pillar. 
 usane KamBe ke nikata vExyuwa wAra BUsamparkiwa kie.
-Multiple adjective senses are available for electric. WSD rule is required 
+Warning: Multiple adjective senses are available for electric. WSD rule is required 
 
 Hindi meaning using Stanford parser 7.45
 This model embodies many new features. 
@@ -3446,7 +3446,7 @@ sUraja pUrva meM ugawA hE.
 Hindi meaning using Stanford parser 7.80
 Reading and tennis are my favourite pastimes. 
 aXyayana Ora tenisa mere priya manabahalAva hEM.
-Multiple adjective senses are available for favourite. WSD rule is required 
+Warning: Multiple adjective senses are available for favourite. WSD rule is required 
 
 Hindi meaning using Stanford parser 7.81
 This is a historic step. 
@@ -3463,7 +3463,7 @@ yaha relagAdI didkoYta Ora rIdiMga meM rukawI hE.
 Hindi meaning using Stanford parser 7.84
 You can not call her beautiful. 
 Apa usako sunxara nahIM_kaha sakawe hEM.
-Multiple adjective senses are available for beautiful. WSD rule is required 
+Warning: Multiple adjective senses are available for beautiful. WSD rule is required 
 
 Hindi meaning using Stanford parser 7.85
 Teaching is considered an apt calling for women. 
@@ -3484,7 +3484,7 @@ xUsare samUha meM eka vivAxiwa nirNaya WA.
 Hindi meaning using Stanford parser 7.89
 I heard a distinctive call of the cuckoo. 
 mEMne koyala kI eka viSeRa pukAra sunI.
-Multiple adjective senses are available for distinctive. WSD rule is required 
+Warning: Multiple adjective senses are available for distinctive. WSD rule is required 
 
 Hindi meaning using Stanford parser 7.90
 I called for the bill in the restaurant. 
@@ -3602,7 +3602,7 @@ laKanaU uwwara praxeSa kI rAjaXAnI hE.
 Hindi meaning using Stanford parser 8.18
 He was in a weird getup. 
 vaha eka axBuwa pahanAve meM WA.
-Multiple adjective senses are available for weird. WSD rule is required 
+Warning: Multiple adjective senses are available for weird. WSD rule is required 
 
 Hindi meaning using Stanford parser 8.19
 Why did they stop me? 

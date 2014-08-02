@@ -42,20 +42,15 @@
 
  python $HOME_anu_test/Anu_src/add-@_in-hindi_sentence.py  hindi_sentence_tmp1.dat hindi_sentence_tmp2.dat
 
+ cat  hindi_sentence_tmp2.dat |  sed -e 's/\\@//g' | sed 's/@//g'  > hindi_sentence.dat
+ cat  hindi_sentence.dat
+ 
  wx_utf8 < hindi_sentence_tmp2.dat  >  hindi_sentence_utf8.dat
  cat hindi_sentence_utf8.dat
 
- cat  hindi_sentence_tmp2.dat |  sed -e 's/\\@//g' | sed 's/@//g'  > hindi_sentence.dat
- cat  hindi_sentence.dat
-
+ grep "Warning:" $1.error > error.txt
+ sort -u error.txt > errors.txt
  grep -B2 "FALSE" $1.error >> errors.txt
- grep "Multiple adjective senses are available"  $1.error > error.txt
- sort -u error.txt >> errors.txt
- grep "Meaning for verb phrase" $1.error >> errors.txt
- grep "Parserid Wordid mapping missing for" $1.error >> errors.txt
- grep "Removed repeated meaning" $1.error >> errors.txt
- grep "Warning:" $1.error >> errors.txt
- grep "PP daughter category problem" $1.error >> errors.txt
 
  cat errors.txt
 
