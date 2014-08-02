@@ -194,11 +194,6 @@
 
  cp $HOME_anu_test/debugging/sentence_debug.sh $HOME_anu_test/bin/.
  
- cd $HOME_anu_test/miscellaneous/std_tregex/
- unzip stanford-tregex-2014-01-04.zip
- cp run_tregex_for_multiparse.sh $HOME_anu_test/bin/.
- chmod +x $HOME_anu_test/bin/run_tregex_for_multiparse.sh
-
  echo "Creating Transliteration files"
  cd  $HOME_anu_test/miscellaneous/transliteration/
  tar -xvzf phrasal.Beta2.tar.gz

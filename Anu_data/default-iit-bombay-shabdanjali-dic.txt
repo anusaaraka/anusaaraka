@@ -10714,8 +10714,8 @@ botches_UNDEFINED	muhAMsA
 botching_UNDEFINED	muhAMsA
 botchy_adjective	anAdI
 both_adjective	xonoM
-both_conjunction	xono/uBaya
-both_determiner	xono/uBaya
+both_conjunction	xonoM/uBaya
+both_determiner	xonoM/uBaya
 bother_interjection	hAya_rAma
 bother_noun	pareSAnI/JaFJata
 bother_verb	viRaya_meM_cinwiwa_ho/pareSAna_kara/kaRta_xe/kaRta_uTA/cinwA_kara/cinwA_KAI_jA/wafga_kara

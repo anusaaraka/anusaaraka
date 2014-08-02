@@ -98,6 +98,6 @@
  (test (or (neq ?id 10000) (neq ?id 10001) (neq ?id 2000)))
  =>
 	(retract ?f1)
-	(printout t "Parserid Wordid mapping missing for "	?id	"	"?wrd crlf)
+	(printout t "Warning: Parserid Wordid mapping missing for "	?id	"	"?wrd crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------------

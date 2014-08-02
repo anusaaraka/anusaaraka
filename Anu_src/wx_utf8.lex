@@ -22,9 +22,10 @@ u	{	printf("उ");	}
 q	{	printf("ऋ");	}
 aM	{	printf("अं");	}
 aH	{	printf("अः");	}
+eV	{	printf("ऎ");	}
+oV	{	printf("ऒ");	}
+eY	{	printf("ऍ");	}
 oY	{	printf("ऑ");	}
-eV		{	printf("ऎ");	BEGIN INITIAL;	}
-oV		{	printf("ऒ");	BEGIN INITIAL;	}
 
 <consonant>A	{	printf("ा");	BEGIN INITIAL;	}
 <consonant>E	{	printf("ै");	BEGIN INITIAL;	}
@@ -38,12 +39,13 @@ oV		{	printf("ऒ");	BEGIN INITIAL;	}
 <consonant>o	{	printf("ो");	BEGIN INITIAL;	}
 <consonant>u	{	printf("ु");	BEGIN INITIAL;	}
 <consonant>q	{	printf("ृ");	BEGIN INITIAL;	}
-<consonant>oY	{	printf("ॉ");	BEGIN INITIAL;	}
 H		{	printf("ः");	BEGIN INITIAL;	}
 M		{	printf("ं");	BEGIN INITIAL;	}
 z		{	printf("ँ");	BEGIN INITIAL;	}
 <consonant>eV	{	printf("ॆ");	BEGIN INITIAL;	}
-<consonant>oV	{	printf("ॊ");	BEGIN INITIAL;	/*}
+<consonant>oV	{	printf("ॊ");	BEGIN INITIAL;	}
+<consonant>eY   {       printf("ॅ");	BEGIN INITIAL;	}
+<consonant>oY	{	printf("ॉ");	BEGIN INITIAL;	/*}
 Z		{	printf("़");	BEGIN INITIAL;	*/}
 
 

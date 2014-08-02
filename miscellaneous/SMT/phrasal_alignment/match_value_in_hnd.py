@@ -11,6 +11,7 @@
 import sys
 from short import shortest_path
 from short import bfs
+import networkx as nx
 
 h_input = open(sys.argv[1],"r")
 hi_file = h_input.readlines()
@@ -18,7 +19,7 @@ g_file = open(sys.argv[5], "w")
 e_input =  open(sys.argv[4],"r")
 e_file = e_input.readlines()
 sent_count=0
-graph_dict = {}
+graph_dict = []
 e_k=[]
 index = ''
 graph_file = open(sys.argv[3], "w")
@@ -34,11 +35,11 @@ e_lst = e_sent.split()
 
 for line in open(sys.argv[2]): #argv[2] is dictionary
 	hi_sent = hi_file[sent_count]
-	lst=line.split('\t')
+	lst=line.split('\t') #_The_loss_of_electrons_from_the_n-region_       _-_kRewra_se_ilektroYnoM_kI_hAni_/_@n_-_kRewra_se_ilektroYnoM_kI_hAni_  1       8
 	if '/' in lst[1]:
 		hnd_mng=lst[1].split('/')
 		for i in hnd_mng:
-			if i in hi_sent:
+			if i in hi_sent: #@n_-_kRewra_se_ilektroYnoM_kI_hAni_waWA_@p_-_kRewra_meM_holoM_kI_prApwi_ke_kAraNa_xonoM_kRewroM_kI_sanXi_ke_Ara_-_pAra_eka_viBavAnwara_uwpanna_ho_jAwA_hE_._
 				print lst[0], i, lst[2].strip(), lst[3].strip()
 				eng_phrase_lst = lst[0][1:-1].split('_')
 				for i in eng_phrase_lst:
@@ -46,13 +47,17 @@ for line in open(sys.argv[2]): #argv[2] is dictionary
 				e_k.append(lst[0])
 				start_pos = lst[2].strip()
 				#start_pos = int(lst[2].strip())
-				if start_pos in graph_dict.keys():
-					val = graph_dict[start_pos]
-					if lst[3].strip() not in val:
-						val.append(lst[3].strip())
-						graph_dict[start_pos] = val
-				else:
-					graph_dict[start_pos] = [lst[3].strip()]
+			#	if start_pos in graph_dict.keys():
+			#		val = graph_dict[start_pos]
+			#		if lst[3].strip() not in val:
+			#			val.append(lst[3].strip())
+						#graph_dict[start_pos] = val
+			#			graph_dict[start_pos] = val
+			#	else:
+					#graph_dict[start_pos] = [lst[3].strip()]
+				tup =  (int(start_pos), int(lst[3].strip()), 1)
+				if tup not in graph_dict:
+					graph_dict.append(tup)
 	else:
 		hnd_mng=lst[1].strip()
 		if hnd_mng in hi_sent:
@@ -61,17 +66,28 @@ for line in open(sys.argv[2]): #argv[2] is dictionary
 			for i in eng_phrase_lst:
 				del_item(i, e_lst)
 			e_k.append(lst[0])
-			graph_dict[lst[2].strip()] = [lst[3].strip()]
+			#graph_dict[lst[2].strip()] = [lst[3].strip()]
+			tup = (int(lst[2].strip()), int(lst[3].strip()), 1)
+			if tup not in graph_dict:
+                             graph_dict.append(tup)
 	if 'Word not found' not in line:
 		index = lst[3].strip()
 
-#Print graph
 graph_file.write('%s' % graph_dict)
-graph_file.write("\n")
-#Get shortest path
+
+#Usage of Multigraph
+MG = nx.MultiGraph()
+MG.add_weighted_edges_from(graph_dict)
+
+#Converting Multigraph to normal graph
+GG=nx.Graph()
+for n,nbrs in MG.adjacency_iter():
+       for nbr,edict in nbrs.items():
+               minvalue=min([d['weight'] for d in edict.values() ])
+               GG.add_edge(n,nbr, weight = minvalue)
 try:
-	graph_output = shortest_path(graph_dict, '1', index)
-	g_file.write(str(graph_output) + "\n")
+	output= nx.shortest_path(GG,1,int(index))
+	g_file.write('%s' % output)
 except:
 	g_file.write("NO PATH\n")
 

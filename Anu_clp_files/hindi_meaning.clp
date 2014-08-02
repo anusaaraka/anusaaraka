@@ -175,10 +175,10 @@
 	(print_hindi_mng ?head_id -  Phy_compound_phrase_root_mng $?grp_ids)
 	(if (eq ?mng_typ RM) then
   		(printout ?*hin_mng_file* "(id-HM-source  " ?head_id "  "?mng"    Phy_compound_phrase_root_mng)" crlf)
-  		(printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?head_id "  "?mng"    Phy_compound_phrase_root_mng" ?head_id" "(implode$ $?grp_ids)")" crlf)
+  		(printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?head_id "  "?mng"    Phy_compound_phrase_root_mng  "(implode$ $?grp_ids)")" crlf)
 	else
 		(printout ?*hin_mng_file* "(id-HM-source  " ?head_id "  "?mng"    Phy_compound_phrase_word_mng)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?head_id "  "?mng"    Phy_compound_phrase_word_mng" ?head_id" "(implode$ $?grp_ids)")" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids  " ?head_id "  "?mng"    Phy_compound_phrase_word_mng  "(implode$ $?grp_ids)")" crlf)
 	)
  )
  ;========================================== WSD multi word meaning ==============================================
@@ -306,7 +306,7 @@
 		(printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?a "   Verb_Phrase_gdbm "?id" "?id1")" crlf)
 		(retract ?mng ?mng1)
 	else
-		(printout t "Meaning for verb phrase "?vrb_phrase "  is required" crlf)
+		(printout t "Warning: Meaning for verb phrase "?vrb_phrase "  is required" crlf)
   	)
  )
  ;======================================== PropN rules ==========================================================
