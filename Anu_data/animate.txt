@@ -93,3 +93,4 @@ fairy	1
 wife	1
 bouncer	1
 enemy	1
+kitten	1

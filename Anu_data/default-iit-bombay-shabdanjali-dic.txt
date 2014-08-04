@@ -3601,7 +3601,7 @@ adiposis_noun	motApA
 aditya_UNDEFINED	Axiwya
 adj_UNDEFINED	e_dI_je
 adjacence_UNDEFINED	nikatawA
-adjacent_adjective	pArSvasWa/satA_huA/pAsa_kA/lagA_huA/judA_huA/bagalavAlA/bagala_kA
+adjacent_adjective	satA_huA/pArSvasWa/pAsa_kA/lagA_huA/judA_huA/bagalavAlA/bagala_kA
 adjacent_adverb	pAsa/bagala_meM
 adjacenter_UNDEFINED	pArSvasWa
 adjacentest_UNDEFINED	pArSvasWa
@@ -9791,7 +9791,7 @@ black_adjective	kAlA/XuzXalA/xUXarahiwa/xuRta/xuHKaxa/vyafgapUrNa/Soka/nirASAjan
 black_noun	kAlI_jAwi_ke_loga/kAlA_kapadA
 black_verb	pAliSa_kara/kAlI_pAliSa_kara/kAlA_rafga_caDA/kAlA_kara/kAlA_ho/ganxA_kara/ganxA_ho/blEka_meM_beca/bahiRkAra_kara
 blackball_verb	ke_viruxXa_mawaxAna_kara/bahiRkqwa_kara/asvIkAra_kara
-blackberry_noun	kqRNa_baxarI/kqRNa_baxarI_kI_JAdI
+blackberry_noun	jAmuna/kqRNa_baxarI/kqRNa_baxarI_kI_JAdI
 blackbird_noun	SyAmApakRI
 blackboard_noun	blEkaborda/SyAmapatta
 blackboards_UNDEFINED	SyAmapatta
@@ -11112,7 +11112,7 @@ breathlessly_adverb	hAzPAwe_hue
 breathlessness_noun	SvAsahInawA
 breaths_UNDEFINED	JofkA
 breathtaking_adjective	vismayakArI/asAXAraNa
-breathtakingly_UNDEFINED	asAXAraNa_oVpa_se
+breathtakingly_UNDEFINED	asAXAraNa_rUpa_se 
 breathtakingly_adverb	asAXAraNa_rUpa_se
 breathy_adjective	SvAsayukwa
 bred_UNDEFINED	pExA_karanA
@@ -47785,7 +47785,7 @@ marveled_UNDEFINED	AScaryacakiwa_ho
 marveling_UNDEFINED	AScaryacakiwa_ho
 marvelled_UNDEFINED	AScaryacakiwa_ho
 marvelling_UNDEFINED	AScaryacakiwa_ho
-marvellous_adjective	camawkArI/SAnaxAra/axBuwa/AScaryajanaka
+marvellous_adjective	SAnaxAra/camawkArI/axBuwa/AScaryajanaka
 marvellouser_UNDEFINED	camawkArI
 marvellousest_UNDEFINED	camawkArI
 marvellously_UNDEFINED	camawkArI_rUpa_se
@@ -50093,7 +50093,7 @@ moleculars_UNDEFINED	ANvika
 molecule_noun	aNu
 molecules_UNDEFINED	aNu
 molehill_UNDEFINED	bAmbI
-molehill_noun	CaCUzxara_kI_bAzbI/CaFCUxara_xvArA_Upara_PefkI_mittI
+molehill_noun	bAzbI/CaCUzxara_kI_bAzbI/CaFCUxara_xvArA_Upara_PefkI_mittI
 molehills_UNDEFINED	bAmbI
 moles_UNDEFINED	CaFCUxara
 moleskin_noun	narama_sUwI_kapadA
@@ -90646,7 +90646,7 @@ weaver_noun	julAhA/bunakara/bayA
 weaverbird_noun	bayA
 weavers_UNDEFINED	julAhA
 weaves_UNDEFINED	eka_hI_kaWAsUwra_meM_graWiwa_karanA
-weaving_UNDEFINED	eka_hI_kaWAsUwra_meM_graWiwa_karanA
+weaving_UNDEFINED	bunanA/eka_hI_kaWAsUwra_meM_graWiwa_karanA
 web-footed_adjective	jAlapAxa
 web-toed_adjective	jAlapAxa
 web_noun	jAlA/wIra_kA_para/pAxajAla/jAla/paFjeM_kI_JillI{jalapakRI_va_meNDaka_kI}
@@ -93542,3 +93542,4 @@ ADCP_PropN	edIsIpI
 ACP_PropN	esIpI
 societal_adjective	sAmAjika
 arthropod_noun	saMXipAxa_prANI
+citydweller_noun	SaharavAsI
