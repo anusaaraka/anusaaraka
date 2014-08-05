@@ -1,9 +1,9 @@
- 02-08-14
+ 05-08-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	admire.clp	distinguish.clp		update.clp
 		   who.clp	roundabout.clp	on.clp		add.clp			excess.clp
-		   both.clp
+		   both.clp	consist.clp
 	Added	 : dissolve.clp
 	Moved provisional wsd rules into WSD
  2. sd_category.clp
@@ -38,16 +38,18 @@
 	Modified: modify_PP_daughter (Added Warning: in print statement)
  14. parserid_wordid_mapping.clp:
 	Modified: print_warning_msg (Added Warning: in print statement)
- 15. run_modules_std.bat
+ 15. get_dbase_mng.clp:
+	Added 'proper_noun_dic.gdbm in rules 'get_mng_from_all_dic' and 'get_mng_from_all_dic1'   
+ 16. run_modules_std.bat
         Loaded  parserid_wordid_mapping.dat and word2.dat in sd_category module
 	Loaded  root.dat file in H_ordering_rules module
- 16. hnd_translation.pl:
+ 17. hnd_translation.pl:
         Modified 'hindi_sentence_tmp.dat' to 'hindi_sentence.dat'	
- 17. Added transliterate_meaning.txt file in Anu_data
- 18. Added relation_table/ folder in Doc contains following files:
+ 18. Added transliterate_meaning.txt file in Anu_data
+ 19. Added relation_table/ folder in Doc contains following files:
 	relation-table-for-WSD-wx.html  
 	style.css
- 19. Added following files related to phrasal alignment:
+ 20. Added following files related to phrasal alignment:
 	count.py
 	sort.sh
 	bin/Anusaaraka_alignment.sh 
@@ -65,15 +67,16 @@
 	get_phrasal_dic-en-hi.sh 
 	phrase_gdbm_dict.c 
 	create_SL-TL_dict_using_phrase_table.py
- 20. Added 'parser_id-cat' dummy fact in cat_rule.clp, parser_id_mapping.clp, root_rule.clp and sd_relation_rules.clp
- 21. Removed : 
+ 21. Added 'parser_id-cat' dummy fact in cat_rule.clp, parser_id_mapping.clp, root_rule.clp and sd_relation_rules.clp
+ 22. Added check_for_TITLE.c programme to check whether input file contains TITLE or not.
+ 23. Removed : 
 	miscellaneous/SMT/phrasal_alignment/replace-mapping-symbols_for_align.lex
- 22. Updated following lex files:
+ 24. Updated following lex files:
 	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
 	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern
 	morph.lex:	-> Modified to get tam info from morph.
 	wx_utf8.lex:	-> Handled 'eV', 'eY', 'oV'
- 23. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
+ 25. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
 	Word-to-Word-dict.txt
 	en-hi-gdbm-dict.txt
 	run_alignment.sh
@@ -99,9 +102,9 @@
 	run_H_gen_sen_eng.bat
  	multifast-v1.0.0/src/run.sh
 	Readme 
- 24. Updated following dictionarie related files:
+ 26. Updated following dictionarie related files:
 	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix
- 25. Updated following files shell files:
+ 27. Updated following files shell files:
 	Anusaaraka_stanford_align_eng_ord.sh
 	replace-abbrevations.sh
 	abbr.sh
@@ -109,9 +112,10 @@
 	dic_compile.sh
 	anu_compile.sh 
 	get_multi_word-dic.sh
- 26. Updated following file:
+	stdenglish.sh	-> 	Added code to run  check_for_TITLE.c programme
+ 28. Updated following file:
 	sd_verified (827)
- 27. Updated Log. 
+ 29. Updated Log. 
 
  05-06-14
  ========

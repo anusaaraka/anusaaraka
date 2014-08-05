@@ -3,6 +3,7 @@
 
   MYPATH=$HOME_anu_tmp/tmp/$1_tmp
   $HOME_anu_test/Anu_src/identify-nonascii-chars.out $2 $MYPATH/hnd1
+  sed -i  '1iparIkRaNa .' $MYPATH/hnd1
   perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/hnd1 | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" | sed 's/^@[ ]/@/g' | sed 's/^/_/g' | sed 's/[ ]@[ ]/ @/g' | sed 's/ /_/g' |  sed 's/$/_/g' > $MYPATH/hnd_tmp
 
   $HOME_anu_test/Anu_data/canonical_form_dictionary/get_canonical_form-dic.out $MYPATH/hnd_tmp > $MYPATH/hnd_tmp1
