@@ -108,6 +108,7 @@
  gcc -o f_range.out f_range_wordarray_resarray.c
  gcc -o split_file.out   split_file.c
  gcc -o chunker.out  chunker.c
+ gcc -o check_for_TITLE.out check_for_TITLE.c
  ./comp.sh ir
  mv ir.out  $HOME_anu_test/bin/ir
  ./comp.sh ir_no@

@@ -186,6 +186,7 @@
 		(dic_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?id ?word ?word ?cat)
 		(dic_lookup "numbers_dic.gdbm" ?id ?word ?word ?cat)
 		(dic_lookup "inferred_dic.gdbm" ?id ?word ?word ?cat)
+		(dic_lookup "proper_noun_dic.gdbm" ?id ?word ?word ?cat)
  )
  ;--------------------------------------------------------------------------------------------------------
  (defrule get_mng_from_all_dic1
@@ -201,6 +202,7 @@
 		(dic_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "numbers_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "inferred_dic.gdbm" ?id ?word ?root ?cat)
+		(dic_lookup "proper_noun_dic.gdbm" ?id ?word ?word ?cat)
  )
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Roja (01-08-12). 

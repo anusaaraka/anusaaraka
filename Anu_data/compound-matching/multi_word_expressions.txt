@@ -33238,6 +33238,7 @@ boarding_life	CAwrAvAsIya_jIvana#CAwrAvAsIya_jIvana#noun#2#RM
 ply_board	plAI_borda#plAI_borda#noun#2#RM
 two_and_a_half	DAI#DAI#number#4#RM
 one_and_a_half	deDa#deDa#number#4#RM
+picnic_spot	pikanika_sWala#pikanika_sWala#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

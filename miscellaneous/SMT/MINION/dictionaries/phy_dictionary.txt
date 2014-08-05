@@ -659,3 +659,11 @@ kilocalorie_UNDEFINED	kilo_kElorI
 apollo_UNDEFINED	apolo
 coating_UNDEFINED	vilepana
 calorimetry_UNDEFINED	URmAmiwi
+viscous_adjective	SyAna
+projectile_adjective	prakRepya 
+unit_noun	mAwraka
+frictionless_adjective	GarRaNa_rahiwa
+convention_noun	paxXawi
+material_noun	xravya
+elastic_adjective    prawyAsWa
+conservative_adjective	saMrakRI

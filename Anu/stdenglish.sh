@@ -13,18 +13,22 @@ else
     cd $PATH2/tmp_stdenglish
   fi
 
-#========================================Processing Symbols==========================================================
+#========================================Check whether i/p file contains <TITLE> or not ..If not present adding it=====
+#Check whether i/p file contains <TITLE> or not ... If not present adding it.
+$HOME_anu_test/Anu_src/check_for_TITLE.out $2/$1 $1.tmp_tmp
+
+#========================================Processing Symbols============================================================
 # Below three files are for handling different types of Symbols.
 
 # Replacing Non-ASCII characters within ASCII range with ASCII characters.  Ex: “ is replaced with "
-$PATH1/replacing-non_ascii_chars-to-ascii_chars.out <  $2/$1  > $1.tmp_tmp 
+$PATH1/replacing-non_ascii_chars-to-ascii_chars.out <  $1.tmp_tmp  > $1.tmp_tmp1 
 
 # Replacing Symbols with their linguistic name. Mapped name is sent to the Parser. Ex: = is replaced as SYMBOL-EQUAL-TO
-$PATH1/mapping-symbols.out  < $1.tmp_tmp > $1.tmp_tmp1
+$PATH1/mapping-symbols.out  < $1.tmp_tmp1 > $1.tmp_tmp2
 
 # Remaining Non-ASCII characters are handled here
 # Program to replace more than 1 BYTE CHARACTER WITH nonascii<no of bytes><value>  Ex:Δ is replaced as nonascii2206148
-$HOME_anu_test/Anu_src/identify-nonascii-chars.out $1.tmp_tmp1 $1.tmp
+$HOME_anu_test/Anu_src/identify-nonascii-chars.out $1.tmp_tmp2 $1.tmp
 
 #==============================Expanding standard abbreviations with single apostophe================================
 

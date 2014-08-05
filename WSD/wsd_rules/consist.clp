@@ -23,6 +23,8 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  consist.clp 	consist1   "  ?id "  banA_honA )" crlf))
 )
 
+;$$$ Modified mng 'ba' to 'bana'. by Roja (02-08-14). Suggested by Chaitanya Sir.
+;The magnetic field is now thought to arise due to electrical currents produced by convective motion of metallic fluids (consisting mostly of molten iron and nickel) in the outer core of the earth. [NCERT Corpus]
 (defrule consist2
 (declare (salience 4800))
 (id-root ?id consist)
@@ -30,9 +32,9 @@
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id ba))
+(assert (id-wsd_root_mng ?id bana))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  consist.clp 	consist2   "  ?id "  ba )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  consist.clp 	consist2   "  ?id "  bana )" crlf))
 )
 
 ;default_sense && category=verb	yukwa_ho	0
