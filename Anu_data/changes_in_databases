@@ -481,6 +481,7 @@
 	wife		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: He is cheating on his wife. 
 	bouncer		(Suggested by Sukhada		 09-05-14 ) Ex: He had the bouncers throw them out of the club. 
 	enemy		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: We charged at the enemy.  
+	kitten		(Suggested by Anshika Sharma Banasthali 4-8-14)	Ex: Our cat produced four kittens during the course of the night.
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -952,13 +953,14 @@ Removed:
 	106. X-rayed_UNDEFINED       eksa-kiraNa_se_Poto_nikAlanA	as	eksa-re_se_Poto_nikAlanA  (Suggested by Anita ji LTRC 24-03-14)
 	107. X-raying_UNDEFINED      eksa-kiraNa_se_Poto_nikAlanA	as	eksa-re_se_Poto_nikAlanA  (		"		"     )
 	108. X-rays_UNDEFINED        eksa-kiraNa_se_Poto_nikAlanA	as	eksa-re_se_Poto_nikAlanA  (		"		"     )
-	109. harden_verb	xrDa_ban	as	xqDa_banA	(Suggested by Chaitanya Sir 24-07-14	)
-	110.	"		saKwa_ban	as	saKwa_banA	(	"	"	"		)
-	111.	"		pakkA_ban	as	pakkA_banA	(	"	"	"		)
-	112.	"		kaTora_ban	as	kaTora_banA	(	"	"	"		)
-	113. have_verb		K		as	KA		(	"	"	"		)
-	114. both_conjunction	xono		as	xonoM		(	"	"	"   01-08-14	)
-	115. both_determiner	xono		as	xonoM		(	"	"	"	"	)
+	109. harden_verb		xrDa_ban	as	xqDa_banA	(Suggested by Chaitanya Sir 24-07-14	)
+	110.	"			saKwa_ban	as	saKwa_banA	(	"	"	"		)
+	111.	"			pakkA_ban	as	pakkA_banA	(	"	"	"		)
+	112.	"			kaTora_ban	as	kaTora_banA	(	"	"	"		)
+	113. have_verb			K		as	KA		(	"	"	"		)
+	114. both_conjunction		xono		as	xonoM		(	"	"	"   01-08-14	)
+	115. both_determiner		xono		as	xonoM		(	"	"	"	"	)
+	116. breathtakingly_UNDEFINED  	asAXAraNa_oVpa_se as  asAXAraNa_rUpa_se (Suggested by karanveer kaur Banasthali 02-08-14) 
 	
 
     3. Added new entry:
@@ -1182,7 +1184,8 @@ Removed:
 					Ex:All the processes occurring in living beings including plants are mediated by fluids. 
 	118. general_adverb		Ama_wOra_para/sAmAnyawayA	(Suggested by 	"		"	"	)
 					Ex: The surface of liquid near the plane of contact, with another medium is in general curved. 
-
+	119. citydweller_noun    	SaharavAsI			(Suggested by Soshya Joshi Banasthali 02-08-14)
+					Ex: Fauyasagar reservoir is the nearest picnic spot of the citydwellers.
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1362,7 +1365,14 @@ Removed:
 	98. all_adjective		samaswa			(Suggested by Chaitanya Sir	24-07-14)
 					Ex: All the processes occurring in living beings including plants are mediated by fluids. 
 	99. all_pronoun			samaswa			(	"		"	"	)
-	100. 
+	100. blackberry_noun 		jAmuna 			(Suggested by Shivani Pathak Banasthali 02-08-14)
+					Ex: There are mixed trees of butea , salai , black berry , berries , baheda etc in the forests of 
+					    Sariska National Park  .
+	101. weaving_UNDEFINED       	bunanA			(Suggested by Soshya Joshi Banasthali 02-08-14)
+					Ex: Right since the time of Hindu King Kumar there were important centres of weaving Patola sari in 
+					    Patan.
+	102. molehill_noun   		bAzbI			(Suggested by karanveer kaur Banasthali 02-08-14)
+					Ex: Make a mountain out of a molehill.
 
 
     5. Modifying first meaning from the list :
@@ -1672,11 +1682,14 @@ Removed:
 	140. raindrop_noun	varRA_kI_eka_bUnxa	as	varRA_kI_bUnxa	(	"	"		"	)
 				Ex: Anything thrown up falls down towards the earth, raindrops from the clouds etc.(note:sentence simplified)
 	141. 	"		varRA-binxu		as	varRA_bUnxa	(	"	"		"	)
-	142. medicinal_adjective    roganASaka		as	ORaXIya		(Suggested by Manasa-Gurukul    16-08-14)
-				Ex: Often people will be found looking at the medicinal plants.
-	
-	
+	142. medicinal_adjective    	roganASaka	as	ORaXIya		(Suggested by Manasa-Gurukul    16-07-14)
+					Ex: Often people will be found looking at the medicinal plants.
+	143. marvellous_adjective    	camawkArI	as	SAnaxAra	(Suggested by Soshya Joshi Banasthali 16-07-14)
+				     	Ex: This will be a marvellous opportunity for her.
+	144. adjacent_adjective		pArSvasWa	as	satA_huA	(Suggested by Soshya Joshi Banasthali 02-08-14)
+					Ex: Prithviraj Chauhan Memorial' is on a small hill adjacent to Taragarh hill.
 
+	
     6. Removed meaning from existing list:
        ----------------------------------
 	1. overdue_adjective 	jo_bahuwa_pahale_hI_ho_jAnA_cAhiye_WA,_vaha	( Suggested by Rajini		29-02-12)
@@ -2194,6 +2207,8 @@ Removed:
 				Ex: It takes only two and a half to three hours to reach Munnar via Periyakenal and Devikulam.
 	126. one_and_a_half	deDa#deDa#number#4#RM					(Suggested by Neha Arya Gurkul 13-07-2014)
 				Ex: It takes only one and a half to three hours to reach Munnar.
+	127. picnic_spot	pikanika_sWala#pikanika_sWala#noun#2#RM			(Suggested by Soshya joshi Banasthali 3-9-13) 
+				Ex: Fauyasagar reservoir is the nearest picnic spot of the citydwellers. 
 
     Added new meaning to the existing word:
     --------------------------------------
@@ -2288,11 +2303,32 @@ Removed:
                                                                                                only if they have the same dimensions.
 	dimensionally_adverb 	vimIya		(Suggested by Pramila Banasthali 05-02-14) Ex: The dimensions of LHS and RHS are the same and
 											       hence the equation is dimensionally correct.
-	exponent_noun 		GAwAfka		(		"		    "	 ) Ex: The dimensions of a physical quantity are the 
-									       powers or exponents to which the base quantities 											      are raised to represent that quantity.
+	exponent_noun 		GAwAfka		(		"		    "	 ) 
+				Ex: The dimensions of a physical quantity are the powers or exponents to which the base quantities are raised
+				    to represent that quantity.
 	sensitivity_noun	sugrAhiwA	(Suggested by Chaitanya Sir	24-07-14) 
-			Ex: A convenient way for the manufacturer to increase the sensitivity is to increase the number of turns N. 
+				Ex: A convenient way for the manufacturer to increase the sensitivity is to increase the number of turns N. 
+
 	Added 'electrostatic_UNDEFINED' to 'calorimetry_UNDEFINED' extracted from phrase table(Suggested by Banasthali Students-2014 24-07-14)
+
+	projectile_adjective    prakRepya	(Suggested by Vartika Sah Banasthali  02-08-14)
+				Ex: As a simple case of motion in a plane, we shall discuss motion with constant acceleration and treat in 
+				    detail the projectile motion.  
+	unit_noun    		mAwraka		(Suggested by Soshya Joshi Banasthali 02-08-14)
+				Ex: Measurement of any physical quantity involves comparison with a certain basic, arbitrarily chosen,
+				    internationally accepted reference standard called unit.  
+	frictionless_adjective	GarRaNa_rahiwa	(Suggested by Prajna Jha Banasthali   02-08-14)
+				Ex: Galileo concluded that an object moving on a frictionless horizontal plane must neither have acceleration
+				    nor retardation, i.e. it should move with constant velocity.
+	convention_noun		paxXawi		(Suggested by yashwini dhaka Banasthali 02-08-14)
+				Ex: Following this convention, the position coordinates of point P and Q in Fig. 3.1 are +360 m and +240 m
+	elastic_adjective    	prawyAsWa	(Suggested by Anshika Sharma Banasthali 02-08-14)
+				Ex: The elastic behavior of materials plays an important role in engineering design.
+	material_noun        	xravya		(Suggested by Anshika Sharma Banasthali 02-08-14)
+				Ex: The elastic behavior of materials plays an important role in engineering design.
+	conservative_adjective  saMrakRI	(Suggested by yashwini dhaka Banasthali 04-08-14)
+				Ex: This law restricted for a conservative force should not be confused with the general law of conservation 
+				    of energy of an isolated system.
 	
     Modifying first meaning:
     -----------------------
