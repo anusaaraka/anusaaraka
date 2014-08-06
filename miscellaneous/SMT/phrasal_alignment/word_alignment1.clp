@@ -1,58 +1,4 @@
 (defglobal ?*fp* = dic_fp1)
-
-;(defrule potential_count_of_manual_id
-;(declare (salience 1500))
-;;(or (potential_assignment_vacancy_id-candidate_id ?aid1 ?mid) (man_id-anu_id ?mid ?aid1)(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?))
-;(potential_assignment_vacancy_id-candidate_id ?aid1 ?mid)
-;(not (man_id-candidate_ids ?mid $?))
-;(not (mng_has_been_aligned ?mid))
-;(not (mng_has_been_filled ?aid1))
-;=>
-;        (assert (man_id-candidate_ids ?mid))
-;)
-;;------------------------------------------------------------------------------------------------------------
-;(defrule potential_count_of_manual_id1
-;(declare (salience 1500))
-;;(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid) (man_id-anu_id ?mid ?aid)(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?))
-;(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
-;?f<-(man_id-candidate_ids ?mid $?mem)
-;;(test (eq (member$ ?aid $?mem) "FALSE"))
-;(test (not (member$ ?aid $?mem)))
-;(not (mng_has_been_aligned ?mid))
-;(not (mng_has_been_filled ?aid))
-;=>
-;        (retract ?f)
-;        (bind $?mem (sort > (create$ $?mem ?aid)))
-;        (assert (man_id-candidate_ids ?mid $?mem))
-;)
-;;------------------------------------------------------------------------------------------------------------
-;(defrule potential_count_of_anu_id
-;(declare (salience 1200))
-;;(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid1) (anu_id-man_id ?aid ?mid1)(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?))
-;(potential_assignment_vacancy_id-candidate_id ?aid ?mid1)
-;(not (anu_id-candidate_ids ?aid $?))
-;(not (mng_has_been_filled ?aid))
-;(not (mng_has_been_aligned ?mid1))
-;=>
-;        (assert (anu_id-candidate_ids ?aid))
-;)
-;;------------------------------------------------------------------------------------------------------------
-;(defrule potential_count_of_anu_id1
-;(declare (salience 1200))
-;;(or (potential_assignment_vacancy_id-candidate_id ?aid ?mid) (anu_id-man_id ?aid ?mid)(anu_id-anu_mng-sep-man_id-man_mng ?aid $? - ?mid $?))
-;(potential_assignment_vacancy_id-candidate_id ?aid ?mid)
-;?f<-(anu_id-candidate_ids ?aid $?mem)
-;;(test (eq (member$ ?mid $?mem) "FALSE"))
-;(test (not (member$ ?mid $?mem)))
-;(id-word ?aid ?word)
-;(not (mng_has_been_filled ?aid))
-;(not (mng_has_been_aligned ?mid))
-;=>
-;        (retract ?f)
-;        (bind $?mem (sort > (create$ $?mem ?mid)))
-;        (assert (anu_id-candidate_ids ?aid $?mem))
-;)
- 
 ;;------------------------------------------------------------------------------------------------------------
 ;Eng sen ::- The lens nearest the [object], called the objective, forms a real, inverted, magnified [image] of the [object].
 ;Man sen ::- बिंब के सबसे निकट के लेंस को अभिदृश्यक ( @objective ) कहते हैं जो बिंब का वास्तविक , उलटा , आवर्धित प्रतिबिंब बनाता है .
@@ -237,6 +183,7 @@
 (id-Apertium_output ?aid $?anu_mng)
 =>
         (retract ?f)
+        (if (eq (length $?anu_mng) 0) then (bind $?anu_mng (create$ -)))
         (assert (mng_has_been_aligned ?mid))
         (assert (mng_has_been_filled ?aid))
         (assert (phrasal_aligned_mng ?aid  ?mid))
@@ -254,6 +201,7 @@
 (id-word ?aid $?anu_mng&:(subsetp $?anu_mng $?pos_mngs))
 =>
         (retract ?f)
+        (if (eq (length $?anu_mng) 0) then (bind $?anu_mng (create$ -)))
         (assert (mng_has_been_aligned ?mid))
         (assert (mng_has_been_filled ?aid))
         (assert (phrasal_aligned_mng ?aid  ?mid))
