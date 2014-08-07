@@ -29,3 +29,7 @@ sed 's/ \[/\t[/'  f1-1 | sed 's/ /##/g' | sed 's/__/_/g'  | sed 's/^_//g' | sed 
 sed 's/##//g' tmp1 | sed 's/\t/_",0, {stringy: "/g' | sed 's/^/\t{"_/g' | sed 's/$/"}},/g' > tmp2
 sed '1i\AC_PATTERN_t allpattern[] = {'  tmp2 > tmp3
 sed '$a\};'   tmp3  > extract_key.c
+rm tmp* f1 f1-1
+
+
+rm $Phrasal_align_path/en-hi-gdbm-dict.txt1 $Phrasal_align_path/en-hi-gdbm-dict.txt2 f1 f2 f4 f1-4.txt 
