@@ -104,7 +104,7 @@
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/miscellaneous/SMT/phrasal_alignment/manual_lwg_new.clp"))
  (load ?*path*)
- (load-facts "manual_lwg.dat")
+ (load-facts "manual_lwg_en_hi.dat")
  (load-facts "word_alignment_tmp.dat")
  (load-facts "manual_word.dat")
  (run)
