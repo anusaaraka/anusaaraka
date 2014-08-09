@@ -34,8 +34,8 @@ char *ptr;
 					fprintf(fp1,"(man_word-cat-tam      %s      %s      %s)\n",word,cat,tam);		
 				}
 
-[\n]				{	fprintf(fp,";~~~~~~~~~~\n",yytext);
-					fprintf(fp1,";~~~~~~~~~~\n",yytext);
+[\n]				{	fprintf(fp,";~~~~~~~~~~\n");
+					fprintf(fp1,";~~~~~~~~~~\n");
 				}
 
 %%
