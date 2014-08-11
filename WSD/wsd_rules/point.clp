@@ -42,7 +42,7 @@
 (id-root ?id point)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word =(- ?id 1) grammar)
-(samAsa ?id =(- ?id 1)) 
+(samAsa_viSeRya-samAsa_viSeRaNa ?id =(- ?id 1)) 
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id muxxA))
@@ -177,7 +177,7 @@
 (id-root ?id point)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
-(and(kriyA-subject  ? ?id)(viSeRya-det_viSeRaNa  ?id ?)(samAsa  ?id ?))
+(and(kriyA-subject  ? ?id)(viSeRya-det_viSeRaNa  ?id ?)(samAsa_viSeRya-samAsa_viSeRaNa  ?id ?))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id iSArA_kara))
@@ -488,7 +488,7 @@
 (id-root ?id point)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id noun)
-(or(viSeRya-beyond_saMbanXI  ? ?id)(and(kriyA-at_saMbanXI  ? ?id)(samAsa  ?id ?)))
+(or(viSeRya-beyond_saMbanXI  ? ?id)(and(kriyA-at_saMbanXI  ? ?id)(samAsa_viSeRya-samAsa_viSeRaNa  ?id ?)))
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id jagaha))
