@@ -6,4 +6,7 @@ cd hi-en
 $HOME_anu_test/Anu_data/create-gdbm.pl  Hin-Eng-dic.gdbm < Hin-Eng-dic.txt
 $HOME_anu_test/Anu_data/create-gdbm.pl  Hin-Eng-dic-hi.gdbm < Hin-Eng-dic.txt-hi-en
 cd $HOME_anu_test/multifast-v1.0.0/src/
+if ! [ -e extract_hindi_key.c ] ; then 
+	touch extract_hindi_key.c
+fi
 make

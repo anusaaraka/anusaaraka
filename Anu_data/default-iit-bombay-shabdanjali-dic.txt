@@ -30888,7 +30888,6 @@ foothills_UNDEFINED	CotA_parvawa_jo_bade_parvawa_ke_AXAra_meM_ho
 foothold_noun	pakada/pAzva_raKane_kI_jagaha/surakRiwa_sWAna/pEra_tikAne_kA_sWAna
 footholds_UNDEFINED	pEra_tikAne_kA_sWAna
 footing_noun	AXAra/sWiwi/pEroM_kA_jamAva/sanwulana/paxavI
-footings_UNDEFINED	sanwulana
 footlights_noun	PUtalAita/PUtalAit
 footling_adjective	bekAra_kA
 footloose_adjective	kahIM_BI_jAne_ko_AjAxa/svawantra

@@ -660,7 +660,7 @@ else
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule vmod
 (rel_name-sids vmod ?viSeRya ?kqxanwa_vi) ;Modified partmod to vmod as new version of Stanford 3.3.1
-(not (rel_name-sids aux ?kqxanwa_vi ?to)) ;But my efforts to win his heart have failed. 
+;(not (rel_name-sids aux ?kqxanwa_vi ?to)) ;But my efforts to win his heart have failed.Commented this for new version 3.4 
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     viSeRya-kqxanwa_viSeRaNa	"?viSeRya"	"?kqxanwa_vi")"crlf)	
 (printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	vmod	viSeRya-kqxanwa_viSeRaNa	"?viSeRya"	"?kqxanwa_vi")"crlf)	
