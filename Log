@@ -1,4 +1,4 @@
- 11-08-14
+ 14-08-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	admire.clp	distinguish.clp		update.clp
@@ -41,7 +41,7 @@
  15. parserid_wordid_mapping.clp:
 	Modified: print_warning_msg (Added Warning: in print statement)
  16. sd_relation_rules.clp:
-	Modified : vmod
+	Modified : vmod , cop+nsubj and cop+nsubj_2
  17. get_dbase_mng.clp:
 	Added 'proper_noun_dic.gdbm in rules 'get_mng_from_all_dic' and 'get_mng_from_all_dic1'   
  18. run_modules_std.bat
