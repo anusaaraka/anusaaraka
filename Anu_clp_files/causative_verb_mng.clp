@@ -142,8 +142,7 @@
  (defrule get_rule_info
  (declare (salience 600))
  (id-HM-source ?id ?hmng ?src&~Physics_Glossary)
- (or (dir_name-file_name-rule_name-id-wsd_root_mng ? ?file_name ?rule_name $?ids ?) (dir_name-file_name-rule_name-id-wsd_word_mng ? ?file_name ?rule_name $?ids ?))
-; (dir_name-file_name-rule_name-id-wsd_root_mng ? ?file_name ?rule_name ?id ?)
+ (or (dir_name-file_name-rule_name-id-wsd_root_mng ? ?file_name ?rule_name $?ids ?) (dir_name-file_name-rule_name-id-wsd_word_mng ? ?file_name ?rule_name $?ids ?)(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng ? ?file_name ?rule_name $?ids ?)(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_word_mng ? ?file_name ?rule_name $?ids ?))
  ?f0<-(id-HM-source-grp_ids  ?id  ? ?src $?ids)
  =>
 	(retract ?f0)
