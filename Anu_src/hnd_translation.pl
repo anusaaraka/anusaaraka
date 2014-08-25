@@ -81,7 +81,7 @@ sub final_translation{
       }
     }
     else {
-      open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn_tmp.html") || die "Can't open $ARGV[0]_trnsltn.html";
+      open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn_tmp.html") || die "Can't open $ARGV[0]_trnsltn_tmp.html";
       print TRANS "$ParaId.$SenId\t\@Could \@not \@translate \@the \@sentence. \n<\@BR>\n";
       close(TRANS);
 
@@ -101,6 +101,6 @@ sub wx_utf8 {
 }
 
 
-open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn_tmp.html") || die "Can't open $ARGV[0]_trnsltn.html";
+open(TRANS,">> $path_clips\/tmp/$ARGV[0]_tmp/$ARGV[0]_trnsltn_tmp.html") || die "Can't open $ARGV[0]_trnsltn_tmp.html";
 print TRANS "</\@BODY></\@HTML>\n";
 close(TRANS);
