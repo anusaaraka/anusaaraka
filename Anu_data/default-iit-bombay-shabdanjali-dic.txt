@@ -86170,7 +86170,7 @@ unleashing_UNDEFINED	pravarwiwa_karanA
 unleavened_adjective	beKamIra
 unleaveneder_UNDEFINED	beKamIra
 unleavenedest_UNDEFINED	beKamIra
-unless_conjunction	yaxi_nahIM/jaba_waka_nahIM/jo_nahIM/binA/jabawaka_nahIM
+unless_conjunction	yaxi_nahIM/jaba_waka_nahIM/jo_nahIM/binA
 unlettered_UNDEFINED	anapaDa
 unlettered_adjective	aSikRiwa
 unlettereder_UNDEFINED	anapaDa
