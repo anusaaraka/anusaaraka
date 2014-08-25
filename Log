@@ -1,9 +1,9 @@
- 14-08-14
+ 25-08-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	admire.clp	distinguish.clp		update.clp
 		   who.clp	roundabout.clp	on.clp		add.clp			excess.clp
-		   both.clp	consist.clp	reflect.clp	point.clp
+		   both.clp	consist.clp	reflect.clp	point.clp		till.clp
 	Added	 : dissolve.clp
 	Moved provisional wsd rules into WSD
  2. sd_category.clp
@@ -75,12 +75,13 @@
  24. Added check_for_TITLE.c programme to check whether input file contains TITLE or not.
  25. Removed : 
 	miscellaneous/SMT/phrasal_alignment/replace-mapping-symbols_for_align.lex
- 26. Updated following lex files:
+ 26. Modified get_word_count.c and get_word_count_single.c 
+ 27. Updated following lex files:
 	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
 	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern
 	morph.lex:	-> Modified to get tam info from morph.
 	wx_utf8.lex:	-> Handled 'eV', 'eY', 'oV'
- 27. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
+ 28. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
 	Word-to-Word-dict.txt
 	en-hi-gdbm-dict.txt
 	run_alignment.sh
@@ -106,9 +107,9 @@
 	run_H_gen_sen_eng.bat
  	multifast-v1.0.0/src/run.sh
 	Readme 
- 28. Updated following dictionarie related files:
+ 29. Updated following dictionarie related files:
 	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix
- 29. Updated following files shell files:
+ 30. Updated following files shell files:
 	Anusaaraka_stanford_align_eng_ord.sh
 	replace-abbrevations.sh
 	abbr.sh
@@ -117,9 +118,9 @@
 	anu_compile.sh 
 	get_multi_word-dic.sh
 	stdenglish.sh	-> 	Added code to run  check_for_TITLE.c programme
- 30. Updated following file:
+ 31. Updated following file:
 	sd_verified (827)
- 31. Updated Log. 
+ 32. Updated Log. 
 
  05-06-14
  ========
