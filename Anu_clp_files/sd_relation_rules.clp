@@ -361,6 +361,8 @@
 (rel_name-sids nsubj|nsubjpass ?samAnAXikaraNa  ?sub)
 (rel_name-sids cop  ?samAnAXikaraNa ?kriyA)
 (parserid-word ?sub  ?word) ; It is not a good manner to eat alone. 
+;(not (numberp ?word))
+(test (neq (numberp ?word) TRUE)) ;The length of an object reported after measurement to be 287.5 cm has four significant figures the digits 287 are certain while the digit 5 is uncertain. 
 (not (sub_id_decided ?sub))
 =>
 (if (or (eq (lowcase ?word)  it) (eq (lowcase ?word) there)) then
@@ -378,6 +380,7 @@ else
 (rel_name-sids nsubj|nsubjpass ?samA  ?sub)
 (rel_name-sids cop  ?samA ?kriyA)
 (parserid-word ?samA ?word) ; What is the company's financial state?  Who is Rama?
+(test (neq (numberp ?word) TRUE)) 
 =>
 (if (or (eq (lowcase ?word)  who) (eq (lowcase ?word) what)) then
     (printout      ?*fp*   "(prep_id-relation-parser_ids  -     subject-subject_samAnAXikaraNa   "?samA"  "?sub")"crlf)
@@ -660,7 +663,7 @@ else
 ;------------------------------------------------------------------------------------------------------------------------
 (defrule vmod
 (rel_name-sids vmod ?viSeRya ?kqxanwa_vi) ;Modified partmod to vmod as new version of Stanford 3.3.1
-(not (rel_name-sids aux ?kqxanwa_vi ?to)) ;But my efforts to win his heart have failed. 
+;(not (rel_name-sids aux ?kqxanwa_vi ?to)) ;But my efforts to win his heart have failed.Commented this for new version 3.4 
 =>
 (printout	?*fp*	"(prep_id-relation-parser_ids  -     viSeRya-kqxanwa_viSeRaNa	"?viSeRya"	"?kqxanwa_vi")"crlf)	
 (printout	?*dbug*	"(prep_id-Rule-Rel-ids  - 	vmod	viSeRya-kqxanwa_viSeRaNa	"?viSeRya"	"?kqxanwa_vi")"crlf)	

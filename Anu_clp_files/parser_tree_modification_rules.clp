@@ -126,6 +126,32 @@
         (assert (Node-Category ?compPhrase COMP_PH))
  )
  ;----------------------------------------------------------------------------------------------------------------
+ ;Suggested by Sukhada (01-07-14)
+ ;The time right now is a quarter after three. I waited a quarter of an hour and then went home.
+ ;I was there three-quarters of an hour.
+ (defrule make_compound_Phrase1
+ ?f0<-(Head-Level-Mother-Daughters ?h ?lvl ?M $?d ?Mot $?d1)
+ ?f<-(Head-Level-Mother-Daughters quarter ?l ?Mot ?NP ?PP $?d2)
+ (Node-Category  ?NP    NP)
+ (Node-Category  ?Mot    NP)
+ (Node-Category  ?PP    PP)
+ (Head-Level-Mother-Daughters quarter ? ?NP $?)
+ (Head-Level-Mother-Daughters ? ? ?PP $? ?np)
+ (Head-Level-Mother-Daughters ? ? ?np $? ?np1)
+ (Head-Level-Mother-Daughters ? ? ?np1 $? ?id)
+ (parserid-word ?id ?wrd)
+ (or (id-sd_cat  ?id  CD) (parserid-word ?id ?wrd&:(and (not (numberp ?wrd))(gdbm_lookup_p "time.gdbm" ?wrd))))
+ (not (Mother  ?M))
+ =>
+	(bind ?*count* (+ ?*count* 1))
+ 	(retract ?f ?f0)
+        (bind ?compPhrase (explode$ (str-cat COMP_PH ?*count* )))
+	(assert (Head-Level-Mother-Daughters ?h ?lvl ?M $?d ?compPhrase $?d1))
+	(assert (Head-Level-Mother-Daughters quarter ?l ?compPhrase ?NP ?PP $?d2))
+	(assert (Node-Category ?compPhrase COMP_PH))
+	(assert (Mother  ?M))
+ )
+
  ;;Is that the film in which he kills his mother? 
  ;Can you tell us where those strange ideas came from?
  (defrule convert_Q_sent_to_normal
