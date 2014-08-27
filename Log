@@ -1,4 +1,4 @@
- 25-08-14
+ 27-08-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	admire.clp	distinguish.clp		update.clp
@@ -119,10 +119,14 @@
 	anu_compile.sh 
 	get_multi_word-dic.sh
 	stdenglish.sh	-> 	Added code to run  check_for_TITLE.c programme
- 31. Updated Readme_to_use_email_in_firefox.txt
- 32. Updated following file:
+	run_align_browser_eng.sh to work email concept in alignment layered o/p
+ 31. Updated following files:
+	create_eng_align_html_phrasal.clp to work email concept in alignment layered o/p
+	this1.py
+ 32. Updated Readme_to_use_email_in_firefox.txt
+ 33. Updated following file:
 	sd_verified (827)
- 33. Updated Log. 
+ 34. Updated Log. 
 
  05-06-14
  ========
