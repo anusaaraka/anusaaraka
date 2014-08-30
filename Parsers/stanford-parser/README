@@ -1,38 +1,14 @@
-     Command to run stanford parser
-     ------------------------------
-                      
-              Anusaaraka_stanford.sh  <file_name>     Ex :  Anusaaraka_stanford.sh verified
-
-      Note : Currently stanford parser is used in case if "No complete linkage Found" in Link-parser
-             (presently stanford to paninian relations mapping is under progress)
-      TODO : POS , pada formation ..etc extraction from stanford --- yet to be done.
-
-
-    Steps to update new Stanford version.
-    -------------------------------------
-
-	1.   Untar the new Stanford version  in $HOME_anu_test/stanford-parser/
-               Eg:   tar -xvzf stanford-parser-2010-08-20.tgz
-
-        2.   Copy the files listed below from the existing Stanford-parser directory to the new Stanford-parser version.
-                	compile.sh
-			comp.sh
-			run_stanford-parser.sh
-			run_stanford.sh
-			stnford_relations.lex
-                        get_word_cat.lex
-                        constituency_to_dependency.sh
-			run_lexicalize.sh
-			split-relations.py
-			run_penn-pcfg.sh
-			run_multiple_parse_penn.sh 
-			preffered_parse.py
-			run_penn-factored.sh
-			mapping-punctuations.lex
-			handling_abbrevations.lex
-
-       3.    Change the version of Stanford-parser in $HOME_anu_test/bin/ for Anusaaraka.sh ,  Anusaaraka_stanford.sh , 
-	     Anusaaraka_site.sh, run_stanford-gui.sh and $HOME_anu_test/shell_scripts for anu_compile.sh, remove_out-files.sh
-
-       4.    run:    shell_scripts/remove_out-files.sh 
-                     shell_scripts/anu_compile.sh
+  Steps to update new Stanford version.
+  -------------------------------------
+  1. Download stanford parser latest version from following link:
+	http://nlp.stanford.edu/software/lex-parser.shtml
+	(Note: Current version is 3.4.1) 
+  2. Copy the above dowloaded zip file in the following path:
+	$HOME_anu_test/Parsers/stanford-parser/
+  3. Run:
+	cd $HOME_anu_test/Parsers/stanford-parser/
+	sh get_latest_version_stanford_parser.sh <stanford-parser-latest-version.zip>
+		Ex: sh get_latest_version_stanford_parser.sh stanford-parser-full-2014-08-27.zip 
+  4. cd $HOME_anu_test
+  5. shell_scripts/remove_out-files.sh 
+  6. shell_scripts/anu_compile.sh

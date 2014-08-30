@@ -17,6 +17,7 @@
  fi
 
  MYPATH=$HOME_anu_tmp
+ STANFORD_PATH=$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-08-27
  cp $1 $MYPATH/. 
 
  if ! [ -d $MYPATH/tmp ] ; then
@@ -37,15 +38,17 @@
 
  mkdir $MYPATH/tmp/$1_tmp
 
+ PRES_PATH=`pwd`
+ cp $1 $MYPATH/tmp/$1_tmp/
  ###Added below loop for server purpose.
  if [ "$3" == "True" ] ; then 
     echo "" > $MYPATH/tmp/$1_tmp/sand_box.dat
+    cd $HOME_anu_provisional_wsd_rules
+    sh get_canonical_form_prov_wsd_rules.sh 
  else
     echo "(not_SandBox)"  > $MYPATH/tmp/$1_tmp/sand_box.dat
  fi
 
- PRES_PATH=`pwd`
- cp $1 $MYPATH/tmp/$1_tmp/
  #running stanford NER (Named Entity Recogniser) on whole text.
  echo "Calling NER ..."
  cd $HOME_anu_test/Parsers/stanford-parser/stanford-ner-2013-06-20/
@@ -59,8 +62,8 @@
  cd $PRES_PATH
  echo "Saving Format info ..."
 
- $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH
- $HOME_anu_test/Anu/pre_process.sh $1 $MYPATH
+ $HOME_anu_test/Anu/stdenglish.sh $1 $MYPATH $5
+ $HOME_anu_test/Anu/pre_process.sh $1 $MYPATH $5
  $HOME_anu_test/Anu/save_format.sh $1 $MYPATH
 
  echo "Saving word information"
@@ -90,8 +93,8 @@
   mv $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org.std.penn_tmp1  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp1
   
   echo "Calling Stanford parser ..."
-  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-01-04/
-  sh run_stanford-parser.sh $1 $MYPATH > /dev/null
+  cd $HOME_anu_test/Parsers/stanford-parser/src
+  sh run_stanford-parser.sh $STANDORD_PATH $1 $MYPATH > /dev/null
 
   echo "Tokenizing ..." 
   perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised
