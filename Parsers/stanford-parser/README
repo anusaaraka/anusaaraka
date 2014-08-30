@@ -1,7 +1,7 @@
   Steps to update new Stanford version.
   -------------------------------------
   1. Download stanford parser latest version from following link:
-	http://nlp.stanford.edu/software/lex-parser.shtml
+	http://nlp.stanford.edu/software/stanford-parser-full-2014-08-27.zip
 	(Note: Current version is 3.4.1) 
   2. Copy the above dowloaded zip file in the following path:
 	$HOME_anu_test/Parsers/stanford-parser/
