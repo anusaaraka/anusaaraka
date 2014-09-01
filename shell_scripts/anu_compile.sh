@@ -175,7 +175,7 @@
  make
 
  echo "Compiling stanford parser files"
- cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-01-04/
+ cd $HOME_anu_test/Parsers/stanford-parser/src
  sh compile.sh
 
  echo "Compiling RASP parser files"

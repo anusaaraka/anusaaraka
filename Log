@@ -1,4 +1,4 @@
- 25-08-14
+ 30-08-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	admire.clp	distinguish.clp		update.clp
@@ -22,7 +22,7 @@
 	Modified: 'fine_cat' rule (used stanford parsers fine cat instead apertium)
  7. parser_id_mapping.clp
 	Modified: 'map_cat' rule  (used stanford parsers fine cat instead apertium) 
- 8.  H_ordering_rules.clp
+ 8. H_ordering_rules.clp
 	Modified : dont_rev_if_VP_head_accused, move_ADVP_after_v and rev_VP_or_WHPP 
 	dded	 : dont_rev_VP_if_immediate_sis_sbar
  9. check_for_best_match_in_multi-word.clp:
@@ -50,11 +50,10 @@
  19. hnd_translation.pl:
         Modified 'hindi_sentence_tmp.dat' to 'hindi_sentence.dat'
 		 '$ARGV[0]_trnsltn.html' to '$ARGV[0]_trnsltn_tmp.html'	
- 20. Added transliterate_meaning.txt file in Anu_data
- 21. Added relation_table/ folder in Doc contains following files:
+ 20. Added relation_table/ folder in Doc contains following files:
 	relation-table-for-WSD-wx.html  
 	style.css
- 22. Added following files related to phrasal alignment:
+ 21. Added following files related to phrasal alignment:
 	count.py
 	sort.sh
 	bin/Anusaaraka_alignment.sh 
@@ -72,17 +71,22 @@
 	get_phrasal_dic-en-hi.sh 
 	phrase_gdbm_dict.c 
 	create_SL-TL_dict_using_phrase_table.py
- 23. Added 'parser_id-cat' dummy fact in cat_rule.clp, parser_id_mapping.clp, root_rule.clp and sd_relation_rules.clp
- 24. Added check_for_TITLE.c programme to check whether input file contains TITLE or not.
- 25. Removed : 
+ 22. Added 'parser_id-cat' dummy fact in cat_rule.clp, parser_id_mapping.clp, root_rule.clp and sd_relation_rules.clp
+ 23. Added following files:
+	-> check_for_TITLE.c programme to check whether input file contains TITLE or not.
+	-> get_latest_version_stanford_parser.sh in stanford-parser dir 
+	-> src folder in stanford-parser dir (Separated source files related to stanford-parser)
+ 	-> transliterate_meaning.txt file in Anu_data
+ 24. Removed : 
 	miscellaneous/SMT/phrasal_alignment/replace-mapping-symbols_for_align.lex
- 26. Modified get_word_count.c and get_word_count_single.c 
- 27. Updated following lex files:
+	Stanford parser version 3.3.1
+ 25. Modified get_word_count.c and get_word_count_single.c 
+ 26. Updated following lex files:
 	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
 	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern
 	morph.lex:	-> Modified to get tam info from morph.
 	wx_utf8.lex:	-> Handled 'eV', 'eY', 'oV'
- 28. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
+ 27. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
 	Word-to-Word-dict.txt
 	en-hi-gdbm-dict.txt
 	run_alignment.sh
@@ -108,9 +112,9 @@
 	run_H_gen_sen_eng.bat
  	multifast-v1.0.0/src/run.sh
 	Readme 
- 29. Updated following dictionarie related files:
+ 28. Updated following dictionarie related files:
 	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix
- 30. Updated following files shell files:
+ 29. Updated following shell files:
 	Anusaaraka_stanford_align_eng_ord.sh
 	replace-abbrevations.sh
 	abbr.sh
@@ -119,8 +123,18 @@
 	anu_compile.sh 
 	get_multi_word-dic.sh
 	stdenglish.sh	-> 	Added code to run  check_for_TITLE.c programme
- 31. Updated Readme_to_use_email_in_firefox.txt
- 32. Updated following file:
+	run_align_browser_eng.sh to work email concept in alignment layered o/p
+ 30. Updated following files:
+	create_eng_align_html_phrasal.clp to work email concept in alignment layered o/p
+	this1.py
+	stanford-parser/README
+ 	Readme_to_use_email_in_firefox.txt
+ 31. Updated Stanford parser version from 3.3.1 to 3.4.1 in following files:
+	Anusaaraka_bllip_parser.sh	Anusaaraka_bllip_parser_minion.sh	Anusaaraka_rasp.sh	Anusaaraka_site.sh
+	Anusaaraka_stanford-Factored.sh	Anusaaraka_stanford_align_man_ord.sh	Anusaaraka.sh		Anusaaraka_all.sh	
+	Anusaaraka_berkeley.sh		run_stanford-gui-factored.sh		run_stanford-gui-pcfg.sh
+	Anusaaraka_stanford.sh		shell_scripts/anu_compile.sh		shell_scripts/remove_out-files.sh
+ 32. Updated following verifieds:
 	sd_verified (827)
  33. Updated Log. 
 

@@ -264,7 +264,7 @@
  (deffunction print_suggestion_row(?p_id ?s_id ?w_id ?chnk_fr_htm ?l_punc ?r_punc ?aper_op ?id_type)
  (printout fp "<tr class=\"row13\">" crlf )
  (if (= ?w_id 1) then (printout fp "<td class=\"number\">&nbsp;</td>"))
- (printout fp "<td class=\""?chnk_fr_htm"\"><input name=\"suggestion_1.1\" type=\"text\" class=\"suggestion\" size=\"1\" value=\"")
+ (printout fp "<td class=\""?chnk_fr_htm"\"><input name=\"suggestion_"?p_id"."?s_id"\" type=\"text\" class=\"suggestion\" size=\"1\" value=\"")
  (if (eq ?id_type AUX_VERB) then (printout fp " -- \" /></td></tr>" crlf) else (printout fp ?l_punc ?aper_op ?r_punc "\" /></td></tr>" crlf))
  (printout fp "</table>" crlf)
  )
