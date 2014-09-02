@@ -1,1 +1,1 @@
-java -mx800m -cp "$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-01-04/stanford-parser.jar:" edu.stanford.nlp.parser.ui.Parser $HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-01-04/edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz
+java -mx800m -cp "$HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-08-27/stanford-parser.jar:" edu.stanford.nlp.parser.ui.Parser $HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-08-27/edu/stanford/nlp/models/lexparser/englishPCFG.ser.gz
