@@ -1,5 +1,8 @@
 (defglobal ?*id* = 1)
 
+(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
+
+
 
 (deffunction remove_character(?char ?str ?replace_char)
                         (bind ?new_str "")
@@ -77,37 +80,61 @@
 
 (defrule get_verb_chunk_cp
 (declare (salience 803))
-?f<-(chunk_name-chunk_ids ?chnk&VGF|VGNN $?gids)
+?f<-(chunk_name-chunk_ids ?chnk&VGF|VGNN|VGNF $?gids)
 =>
 	(assert (chunk_name-chunk_ids-words  ?chnk $?gids - $?gids))
 )
 
 (defrule get_verb_chunk
 (declare (salience 802))
-?f<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN $?gids - $?pre ?mid $?pos)
+?f<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF $?gids - $?pre ?mid $?pos)
 ?f1<-(manual_id-word ?mid ?man_wrd)
 =>
 	(retract ?f)
 	(assert (chunk_name-chunk_ids-words ?chnk  $?gids - $?pre ?man_wrd $?pos))
 ) 
 
+;Added by Shirisha Manju 5-9-14
+;The Princess began to weep. 					rAjakumArI ne ronA [SurU kara xiyA]. 
+;And, turning to her guards, she ordered them to seize Dipu.    usane apane paharexAroM kI ora GUmakara xIpU ko pakadane kA [AxeSa xiyA]. 
+;Dipu remarked.							xIpU ne [tippaNI kI].
+;He must be very worried about me.				vaha avaSya hI mere lie bahuwa [ciMwiwa hogA].
+(defrule check_prev_word_for_kara_or_ho_or_xe
+(declare (salience 802))
+?f0<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF ?mid $?gids -  $?mng)
+(manual_id-word ?mid ?w)
+(man_word-root-cat ?w ?r&kara|ho|xe v)
+(manual_id-word ?mid1&:(= (- ?mid 1) ?mid1) $?word)
+(id-org_wrd-root-dbase_name-mng ? ? ?root ? $?word ?kar&kara|ho|xe)
+=>
+       	(retract ?f0 )
+	(assert (chunk_name-chunk_ids-words ?chnk  ?mid1 ?mid $?gids - $?word $?mng))
+	(assert (id-kara_grouped ?mid1))
+)
+
+
 
 (defrule get_verb_chunk1
 (declare (salience 801))
-?f<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN $?gids - ?man_wrd $?r_mng)
+?f<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF $?gids - ?man_wrd $?r_mng)
 ?f1<-(manual_id-word ?mid ?man_wrd)
 (test (member$ ?mid $?gids))
 =>
 	(bind $?ids (create$ ))
         (bind ?length (length $?gids))
+        (bind $?new_mng (create$ ?man_wrd $?r_mng))
         (if (> ?length 0) then
         (loop-for-count (?i 1 ?length)
                         (bind ?new_id (nth$ ?i $?gids))
+                        (bind ?word (nth$ ?i $?new_mng))
                         (assert (mng_has_been_grouped ?new_id))
+                        (if (eq (sub-string 1 6 (implode$ (create$ ?word))) "@PUNCT") then
+                        (bind $?gids (delete-member$  $?gids ?new_id))
+                        (bind $?new_mng (delete-member$  $?new_mng ?word)))
         ))
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?mid ?man_wrd $?r_mng - - - - - $?gids))
+        
+        (assert (manual_id_en_hi-word-root-vib-grp_ids ?mid $?new_mng - - - - - $?gids))
 )
-
 
 (defrule get_id2
 (declare (salience 800))
@@ -311,8 +338,10 @@
 (test (or (eq (- ?id2 ?id1) 3)(eq (- ?id2 ?id1) 2) (eq (- ?id2 ?id1) 1)(eq (- ?id2 ?id1) 4)))
 ?f3<-(manual_id-word ?id3&:(=(+ ?id2 1) ?id3) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|waka|hI)
 (not (mng_has_been_grouped ?id3))
+(not (vib_added ?id0))
 =>
         (assert (manual_id-en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - ?id0 ?id3))
+	(assert (vib_added ?id0))
 )
 ;----------------------------------------------------------------------------------------------------------------
 (defrule single_vib
@@ -320,10 +349,12 @@
 ?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid0 $?noun - - - - - $?grp_ids ?id0)
 ?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle - - - - - $?grp_ids1)
 (not (mng_has_been_grouped ?id1))
+(not (vib_added ?id0))
 =>
         (retract ?f1 ?f2)
         (assert (mng_has_been_grouped ?id1)) 
         (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids ?id0 $?grp_ids1))
+	(assert (vib_added ?id0))
 )
 
 
@@ -332,11 +363,15 @@
 ?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid0 $?noun - - - - - $?grp_ids ?id0)
 ?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle $?r_wrd - - - - - ?id1 $?grp_ids1)
 (test (neq (length $?r_wrd) 0))
+(not (vib_added ?id0))
+(not (vib_added ?new_id))
 =>
         (retract ?f1 ?f2)
         (bind ?new_id (nth$ 1 $?grp_ids1))
         (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids ?id0 ?id1))
         (assert (manual_id_en_hi-word-root-vib-grp_ids ?new_id $?r_wrd - - - - - $?grp_ids1))
+	(assert (vib_added ?id0))
+	(assert (vib_added ?new_id))
 )
 
 
@@ -344,12 +379,77 @@
 (declare (salience 60))
 ?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle - - - - - $?grp_ids)
 (test (neq (length $?noun) 0))
+(not (vib_added ?id0))
 =>
         (retract ?f1)
         (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids))
+	(assert (vib_added ?id0))
 )
 
-;----------------------------------------------------------------------------------------------------------------
+;-------------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 5-9-14
+;The Princess began to weep. rAjakumArI ne ronA [SurU kara xiyA]. 
+(defrule get_kara_tam
+(declare (salience 76))
+(id-kara_grouped ?id)
+?f<-(manual_id_en_hi-word-root-vib-grp_ids ?id  $?m ?w $?m1 - - - - - $?grp_ids)
+?f1<-(man_word-root-cat    ?w ?root&kara|ho|xe    v)
+(test (neq  (length $?m) 0))
+=>
+	(retract ?f ?f1)
+	(if (eq (length $?m1) 0) then 
+		(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  $?m ?w $?m1 - $?m ?root - - - $?grp_ids))
+	else
+		(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  $?m ?w $?m1 - $?m ?root - $?m1 - $?grp_ids))
+	)
+)
+;-------------------------------------------------------------------------------------------------------------------------------
+
+;As vib and tam both goes into same field...increasing tam rule and replace_tam_with_root-tam rule salience above than vib rules
+;ex: More [precisely], a is the acceleration of the [center of] mass of the system.
+(defrule tam
+(declare (salience 75))
+?f<-(manual_id_en_hi-word-root-vib-grp_ids ?id   ?word $?wrds - - - - - $?grp_ids)
+?f1<-(man_word-root-cat    ?word ?root&~kara~ho    v)
+(chunk_name-chunk_ids-words VGF|VGNN|VGNF $? ?id $? - $?)
+(test (neq (length ?root) (length ?word)))
+=>
+	(bind ?tam (string-to-field (sub-string (+ (length ?root) 1)  (length ?word) ?word)))
+	(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root -  ?tam $?wrds  - $?grp_ids))
+	(retract ?f ?f1)
+)
+;-------------------------------------------------------------------------------------------------------------------------------
+;This process continues till the capacitor is fully charged.
+;
+(defrule replace_tam_with_root-tam
+(declare (salience 72))
+?f <- (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root -  ?tam $?wrds  - $?grp_ids)
+(test (neq ?tam -))
+(not (replaced_tam_with_root_tam ?id))
+(not (vib_added ?id))
+=>
+	(bind ?new_mng (remove_character " " (implode$ (create$ ?tam $?wrds)) "_"))
+	(printout t (implode$ ?new_mng) crlf)
+	(bind ?mng (gdbm_lookup "AllTam_align_rev_sort.gdbm" (implode$ ?new_mng)))
+	(if (neq ?mng "FALSE") then
+		(bind ?root_tam (string-to-field (implode$ (remove_character "_"  (implode$ (create$ ?mng)) " "))))
+		(printout t ?root_tam crlf)
+		(if (eq ?root ?word) then 
+			(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root - (explode$ ?root_tam) - $?grp_ids))
+			(assert (replaced_tam_with_root_tam ?id)) 
+		else
+		(bind ?new_tam (sub-string 2 (length ?root_tam) ?root_tam))
+		(printout t ?new_tam ?root_tam crlf)
+			(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root - (explode$ ?new_tam) - $?grp_ids))
+			(assert (replaced_tam_with_root_tam ?id))
+		)
+		(retract ?f)
+	)
+)	
+;-------------------------------------------------------------------------------------------------------------------------------
+;(defrule nahIM_case
+;(declare (salience 55))
+
 (defrule verb_rule1
 (declare (salience 50)) 
 ?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word - - - - - $?grp_ids)
@@ -411,7 +511,6 @@
 
 )
 
-
 ;(defrule verb_rule5
 ;(declare (salience 50))
 ;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word - - - - - $?grp_ids)
@@ -425,3 +524,5 @@
 ;        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word ?tam $?rem_wrds - ?iwa_word ?root - $?rem_wrds - $?grp_ids ?id1 $?gids))
 ;)
 ;
+
+
