@@ -31,6 +31,33 @@
                  )
 )
 ;-------------------------------------------------------------------------------------
+;Counts the number of verbs of anusaaraka sentence
+(defrule verb_count_of_anu
+(declare (salience 1001))
+(pada_info (group_cat VP)(group_head_id  ?vid))
+?f<-(anu_verb_count-verbs ?anu_verb_count $?verbs)
+(test (eq (member$ ?vid $?verbs) FALSE))
+=>
+        (retract ?f)
+        (bind ?anu_verb_count (+ ?anu_verb_count 1))
+        (bind $?verbs (create$ $?verbs ?vid))
+        (assert (anu_verb_count-verbs ?anu_verb_count $?verbs))
+)
+;-------------------------------------------------------------------------------------
+;Counts the number of verbs of manual sentence
+(defrule verb_count_of_manual
+(declare (salience 1001))
+;(manual_id-node-word-root-tam  ?vid   VGF $?)
+(chunk_name-chunk_ids VGF ?mid $?)
+?f<-(man_verb_count-verbs ?man_verb_count $?verbs)
+(test (eq (member$ ?mid $?verbs) FALSE))
+=>
+        (retract ?f)
+        (bind ?man_verb_count (+ ?man_verb_count 1))
+        (bind $?verbs (create$ $?verbs ?mid))
+        (assert (man_verb_count-verbs ?man_verb_count $?verbs))
+)
+;-------------------------------------------------------------------------------------
 
 (defrule get_current_word
 (manual_id_en_hi-word-root-vib-grp_ids ?mid $?)
@@ -246,6 +273,27 @@
         (assert (anu_ids-sep-manual_ids ?eid - $?grp_ids))
         (assert (man_id-src-root ?mid dictionary ?e_word))
         (assert (prov_assignment ?eid ?mid))
+)
+;-------------------------------------------------------------------------------------
+;If only one verb is present in both the manual and anusaaraka sentences then make direct alignment.
+(defrule single_verb_group_match_with_anu
+(declare (salience 878))
+(current_id ?mid)
+(anu_verb_count-verbs 1 ?aid)
+(man_verb_count-verbs 1 ?mid)
+(manual_id_en_hi-word-root-vib-grp_ids ?mid $?verb_mng - $?v_root - $?tam - $?grp)
+(test (and (neq (length $?v_root) 0)(neq (length $?tam) 0)(neq (length $?verb_mng) 0)))
+;(manual_id-node-word-root-tam ?m_h_id VGF $?man_mng - $? - $?)
+(id-Apertium_output ?aid $?anu_mng)
+(id-root ?aid ?root)
+(not (prov_assignment ?aid ?mid))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (assert (anu_ids-sep-manual_ids ?aid -  $?grp))
+        (assert (man_id-src-root ?mid single_verb ?root))
+        (assert (prov_assignment ?aid ?mid))
+
 )
 ;-------------------------------------------------------------------------------------
 ;Check for manual verb[root] and tam match in the dictionary
