@@ -373,6 +373,28 @@
         (assert (prov_assignment ?eid ?mid))
 )
 
+;Eng Sen :: My name is Kular.
+;Anu translation :: मेरा नाम कुलार है.
+;Man translation :: मेरा नाम कुलार है .
+(defrule check_match_with_transliterate_mng
+(declare (salience 830))
+(current_id ?mid)
+(manual_id_en_hi-word-root-vib-grp_ids ?mid ?word - $?r - $?vib - $?gids)
+(test (and (neq (length $?r) 0)(neq (length $?vib) 0)))
+(word-transliterate_mng ?lwc_word ?word)
+(id-HM-source ?eid ?trans_mng transliterate_mng)
+(id-Apertium_output ?eid ?trans_mng)
+(id-root ?eid ?e_root)
+(not (prov_assignment ?eid ?mid))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (assert (anu_ids-sep-manual_ids ?eid - $?gids))
+        (assert (man_id-src-root ?mid exact ?e_root))
+        (assert (prov_assignment ?eid ?mid))
+)
+
+
 
 ;-------------------------------------------------------------------------------------
 (defrule replace_id_with_word
