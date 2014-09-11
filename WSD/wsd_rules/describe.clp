@@ -203,11 +203,14 @@
 (id-root ?id describe)
 ?mng <-(meaning_to_be_decided ?id)
 (id-cat_coarse ?id verb)
+(kriyA-object ?id ?);In this chapter, we shall learn how to describe motion. 
 =>
 (retract ?mng)
 (assert (id-wsd_root_mng ?id bawA))
+(assert (kriyA_id-object_viBakwi ?id ke_bAre_meM));In this chapter, we shall learn how to describe motion. 
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  describe.clp 	describe9   "  ?id "  bawA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  describe.clp  describe7   "  ?id " ke_bAre_meM )" crlf)
 )
 
 ;@@@ Added by Pramila(Banasthali university)

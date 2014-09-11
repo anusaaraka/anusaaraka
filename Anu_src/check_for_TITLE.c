@@ -7,7 +7,7 @@
 main(int argc, char * argv[])
 {
 	FILE *fp, *fp1;
-	char *line = NULL;
+	char *line = NULL, *next_line = NULL;
 	size_t	len=0;
 	
 	fp = fopen(argv[1], "r");
@@ -18,7 +18,7 @@ main(int argc, char * argv[])
 	else
 		getline(&line, &len, fp);
 		if (line[0] == '<' && line[1] == 'T' && line[2] == 'I' && line[3] == 'T' && line[4] == 'L' && line[5] == 'E' &&  line[6] == '>')		{ //Check whether first line of the file starts with <TITLE>
-			fprintf(fp1,"%s", line);  //print the fisrt line
+			fprintf(fp1,"%s", line);  //print the first line
 			while(getline(&line, &len, fp)!=-1)
 			{
 				fprintf(fp1, "%s", line);  //print remaining lines.
@@ -30,7 +30,10 @@ main(int argc, char * argv[])
 			fprintf(fp1, "%s", line);
 			while(getline(&line, &len, fp)!=-1)
 			{
-				fprintf(fp1, "%s", line); //print remaining lines.
+				if(line[0] == '\n')  //line starts with new line(\n) then printing <p> and </p> 
+					fprintf(fp1, "</p>\n<p>\n");
+				else
+					fprintf(fp1, "%s", line); //print remaining lines.
 			}
 			fprintf(fp1, "</p>\n");
 		}
