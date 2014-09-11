@@ -1,9 +1,10 @@
- 06-09-14
+ 11-09-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	admire.clp	distinguish.clp		update.clp
 		   who.clp	roundabout.clp	on.clp		add.clp			excess.clp
 		   both.clp	consist.clp	reflect.clp	point.clp		till.clp
+		   describe.clp
 	Added	 : dissolve.clp
 	Moved provisional wsd rules into WSD
  2. sd_category.clp
@@ -81,6 +82,7 @@
 	-> get_latest_version_stanford_parser.sh in stanford-parser dir 
 	-> src folder in stanford-parser dir (Separated source files related to stanford-parser)
  	-> transliterate_meaning.txt file in Anu_data
+	-> get_rev_alltam.sh file to generate Alltam in reverse format
  25. Removed : 
 	miscellaneous/SMT/phrasal_alignment/replace-mapping-symbols_for_align.lex
 	Stanford parser version 3.3.1
@@ -118,7 +120,7 @@
 	Readme 
 	get_manual_id_en_hi.clp
  29. Updated following dictionarie related files:
-	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix
+	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix		provisional_multi_word_dictionary.txt 
  30. Updated following shell files:
 	Anusaaraka_stanford_align_eng_ord.sh
 	replace-abbrevations.sh

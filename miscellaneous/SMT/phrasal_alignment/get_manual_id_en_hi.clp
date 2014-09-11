@@ -420,7 +420,8 @@
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
 ;This process continues till the capacitor is fully charged.
-;
+;yaha prakriyA waba waka [calawI rahawI hE] jaba waka ki saMXAriwra pUrI waraha AveSiwa nahIM ho jAwA hE.
+;root = cala , tam = wA_rahawA_hE 
 (defrule replace_tam_with_root-tam
 (declare (salience 72))
 ?f <- (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root -  ?tam $?wrds  - $?grp_ids)
@@ -430,7 +431,7 @@
 =>
 	(bind ?new_mng (remove_character " " (implode$ (create$ ?tam $?wrds)) "_"))
 	(printout t (implode$ ?new_mng) crlf)
-	(bind ?mng (gdbm_lookup "AllTam_align_rev_sort.gdbm" (implode$ ?new_mng)))
+	(bind ?mng (gdbm_lookup "AllTam_rev.gdbm" (implode$ ?new_mng)))
 	(if (neq ?mng "FALSE") then
 		(bind ?root_tam (string-to-field (implode$ (remove_character "_"  (implode$ (create$ ?mng)) " "))))
 		(printout t ?root_tam crlf)

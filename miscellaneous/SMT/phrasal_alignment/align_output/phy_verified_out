@@ -1,0 +1,108 @@
+Calling NER ...
+Saving Format info ...
+Saving word information
+Saving morph information
+Calling POS Tagger and Chunker (APERTIUM)
+Calling Stanford parser ...
+Tokenizing ...
+Multi word ...
+Hindi meaning using Stanford parser 1.1
+test. 
+jAzca kIjie.
+जाँच कीजिए.
+
+Hindi meaning using Stanford parser 2.1
+We see leaves falling from trees and water flowing down a dam. 
+hama bAzXa kama bahawe_hue pedoM Ora pAnI se girawe_hue pawwiyoM ko xeKawe hEM.
+हम बाँध कम बहते_हुए पेडों और पानी से गिरते_हुए पत्तियों को देखते हैं.
+Warning: Meaning for verb phrase flow_down  is required
+
+Hindi meaning using Stanford parser 2.2
+How does the position change with time? 
+sWiwi samaya ke sAWa kEse baxalawI hE?
+स्थिति समय के साथ कैसे बदलती है?
+
+Hindi meaning using Stanford parser 2.3
+Displacement has both magnitude and direction. 
+visWApana ke xonoM parimANa Ora xiSA hEM.
+विस्थापन के दोनों परिमाण और दिशा हैं.
+
+Hindi meaning using Stanford parser 2.4
+The average velocity can be positive or negative depending upon the sign of the displacement. 
+Osawa vega nirBara karawA huA visWApana ke cihna ke Upara sakArAwmaka yA qNAwmaka ho sakawA hE.
+औसत वेग निर्भर करता हुआ विस्थापन के चिह्न के ऊपर सकारात्मक या ऋणात्मक हो सकता है.
+Warning: PP daughter category problem depending: VBG
+
+Hindi meaning using Stanford parser 2.5
+The velocity of an object, in general, changes during its course of motion. 
+sAmAnya_rUpa meM, eka vaswu kA, vega gawi ke usake pATyakrama ke xOrAna baxalawA hE.
+सामान्य_रूप में, एक वस्तु का, वेग गति के उसके पाठ्यक्रम के दौरान बदलता है.
+
+Hindi meaning using Stanford parser 2.6
+This was a problem even in Galileo's time. 
+yaha gElIliyo ke samaya meM samasyA BI WA.
+यह गैलीलियो के समय में समस्या भी था.
+
+Hindi meaning using Stanford parser 2.7
+This product is called impulse. 
+yaha uwpAxa Avega kahA jAwA hE.
+यह उत्पाद आवेग कहा जाता है.
+
+Hindi meaning using Stanford parser 2.8
+This property of the body is called inertia. 
+piMda kA yaha guNa jadawva kahA jAwA hE.
+पिंड का यह गुण जडत्व कहा जाता है.
+
+Hindi meaning using Stanford parser 2.9
+This reading T 1 is the temperature of the surroundings. 
+afgrejI varNamAlA kA eka akRara 1 paDawe_hue yaha pariveSa kA wApa hE.
+अङ्ग्रेजी वर्णमाला का एक अक्षर 1 पढते_हुए यह परिवेश का ताप है.
+
+Hindi meaning using Stanford parser 2.10
+This relationship is known as ideal gas law. 
+yaha sambanXa gEsa kAnUna kI waraha jAnA jAwA hE.
+यह सम्बन्ध गैस कानून की तरह जाना जाता है.
+
+Hindi meaning using Stanford parser 2.11
+This represents a simple harmonic motion. 
+yaha eka sarala Avarwa gawi xarSAwA hE.
+यह एक सरल आवर्त गति दर्शाता है.
+Warning: Multiple adjective senses are available for harmonic. WSD rule is required 
+
+Hindi meaning using Stanford parser 2.12
+This shows the advantage of introducing the concept of rms values. 
+yaha rms mUlyoM kI XAraNA paricaya karAne kA PAyaxA xiKAwA hE.
+यह rms मूल्यों की धारणा परिचय कराने का फायदा दिखाता है.
+
+Hindi meaning using Stanford parser 2.13
+This suggests the definition of dipole moment. 
+yaha xviXruva AGUrNa kI pariBARA safkewa karawA hE.
+यह द्विध्रुव आघूर्ण की परिभाषा सङ्केत करता है.
+
+Hindi meaning using Stanford parser 2.14
+This product is a vector. 
+yaha uwpAxa saxiSa hE.
+यह उत्पाद सदिश है.
+
+Hindi meaning using Stanford parser 2.15
+This process is instantaneous. 
+yaha prakriyA wAwkRaNika hE.
+यह प्रक्रिया तात्क्षणिक है.
+
+Hindi meaning using Stanford parser 2.16
+This process is known as modulation. 
+yaha prakriyA mAdulana kI waraha jAnI jAwI hE.
+यह प्रक्रिया माडुलन की तरह जानी जाती है.
+
+Hindi meaning using Stanford parser 2.17
+More precisely, a is the acceleration of the center of mass of the system. 
+aXika yaWAwaWya_rUpa se, a nikAya kI saMhawi ke keMxra kA wvaraNa hE.
+अधिक यथातथ्य_रूप से, a निकाय की संहति के केंद्र का त्वरण है.
+
+Hindi meaning using Stanford parser 2.18
+The length of each side is a scalar and the perimeter is also a scalar. 
+hara eka waraPa kI lambAI axiSa hE Ora parimiwi BI axiSa hE.
+हर एक तरफ की लम्बाई अदिश है और परिमिति भी अदिश है.
+
+Calling Transliteration
+Calling Interface related programs
