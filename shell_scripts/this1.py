@@ -2,7 +2,8 @@ import sys
 import os 
 
 """Getting Hindi Sentences"""
-path = sys.argv[4] + "/tmp/" + sys.argv[5] + "_tmp/" + sys.argv[5] + "_trnsltn_tmp3.html"
+#path = sys.argv[4] + "/tmp/" + sys.argv[5] + "_tmp/" + sys.argv[5] + "_trnsltn_tmp3.html"
+path = sys.argv[2] + "/" +  sys.argv[5] + "_trnsltn.html"
 path1 = sys.argv[2] + "/mail.js" #Separated mail related data in mail.js file
 m_p = open(path1, 'r')
 m_p1_line = m_p.read() 
@@ -472,10 +473,13 @@ for line in f1:
 						char.insert(len(sys.argv[7])-1, '/')
 						dic[i][0] = "".join(char[0:len(char)])
 						string+="this.href=\"file://" + "/" + dic[i][0] + "\";\n}\n"
+#						string+="this.gedit \"/" + dic[i][0] + "\";\n}\n"
 					else:
 						string+="this.href=\"file://" + sys.argv[3] + "/" + dic[i][0] + "\";\n}\n"
+#						string+="this.gedit \"" + sys.argv[3] + "/" + dic[i][0] + "\";\n}\n"
 				else:
 					string+="this.href=\"file://" + sys.argv[3] + "/" + dic[i][0] + "\";\n}\n"
+#					string+="this.gedit \"" + sys.argv[3] + "/" + dic[i][0] + "\";\n}\n"
 				f2.write(string)
 			elif(len(dic[i])==3):
 				flag_dic0=0
@@ -495,13 +499,17 @@ for line in f1:
 				string = "var td = tr[" + str(i) + "].getElementsByTagName('td');\n	var index=0;\n	if(td.length==2)index=1;\n	var a = td[index].getElementsByTagName('a');\n	var span = a[0].getElementsByTagName('span');\n	var spanv = span[0].innerHTML;\n	var av = a[0].innerHTML;\n	var ind = av.indexOf(spanv);\n	ind--;\n	av=av.slice(0,ind);\n	var k=0;\n	var r = av.indexOf('{');\n	var av1;\n	var av2;\n	if(r!=-1){\n		k = r;\n		av1 = av.slice(0,k);\n		av2 = av.slice(k,av.length-1);\n	}\n	else{\n		av1 = av;\n		av2 = \"tam\";\n		spanv += \" : tam missing\";\n	}\n	a[0].parentNode.removeChild(a[0]);\n	var a1 = document.createElement(\"a\");\n	a1.innerHTML = av1;\n	a1.target = \"blank\";\n	"
 				if(flag_dic0==0):
 					string+= "a1.href = \"file://" + sys.argv[3] + "/" + dic[i][0] + "\";\n	"
+#					string+= "a1.gedit \"" + sys.argv[3] + "/" + dic[i][0] + "\";\n	"
 				else:
 					string+="a1.href = \"file://" + "/" + dic[i][0] + "\";\n	"
+#					string+="a1.gedit \"/" + dic[i][0] + "\";\n	"
 				string += "a1.className = \"tooltip\";\n	var span1 = document.createElement(\"span\");\n	span1.innerHTML = spanv;\n	a1.appendChild(span1);\n	var a2 = document.createElement(\"a\");\n	a2.innerHTML = av2;\n	a2.target = \"blank\";\n	"
 				if(flag_dic1==0):
 					string+="a2.href = \"file://" + sys.argv[3] + "/" + dic[i][1] + "\";\n	"
+#					string+="a2.gedit \"" + sys.argv[3] + "/" + dic[i][1] + "\";\n	"
 				else:
 					string+="a2.href = \"file://" + "/" + dic[i][1] + "\";\n	"
+#					string+="a2.gedit \"/" + dic[i][1] + "\";\n	"
 				string+="a2.className = \"tooltip\";\n	var span2 = document.createElement(\"span\");\n	span2.innerHTML = \"" + dic[i][2] +"\";\n	a2.appendChild(span2);\n	td[index].appendChild(a1);\n	td[index].appendChild(a2);\n"
 				f2.write(string)
 		f2.write("}\n</script>\n")
