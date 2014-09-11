@@ -1,4 +1,5 @@
 (defglobal ?*fp* = dic_fp1)
+(defglobal ?*fp1* = dic_fp2)
 ;;------------------------------------------------------------------------------------------------------------
 ;Eng sen ::- The lens nearest the [object], called the objective, forms a real, inverted, magnified [image] of the [object].
 ;Man sen ::- बिंब के सबसे निकट के लेंस को अभिदृश्यक ( @objective ) कहते हैं जो बिंब का वास्तविक , उलटा , आवर्धित प्रतिबिंब बनाता है .
@@ -41,6 +42,9 @@
         (assert (phrasal_aligned_mng ?aid1  ?mid1))
 	(assert (anu_id-anu_mng-sep-man_id-man_mng ?aid1 $?anu_mng1 - ?mid1 $?mids1 ?id1))
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?anu_mng1 - ?mid1 $?mids1 ?id1))
+        (assert (man_id-root-src-rule_name ?mid -  heuristics align_poten_man_id3))
+        (assert (man_id-root-src-rule_name ?mid1 -  heuristics align_poten_man_id3))
+        
 )
 
 
@@ -80,6 +84,8 @@
         (assert (phrasal_aligned_mng ?aid1  ?mid1))
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid1 $?anu_mng1 - ?mid1 $?mids1 ?id1))
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?anu_mng1 - ?mid1 $?mids1 ?id1))
+        (assert (man_id-root-src-rule_name ?mid -  heuristics align_poten_man_id2))
+        (assert (man_id-root-src-rule_name ?mid1 -  heuristics align_poten_man_id2))
 )
 
 
@@ -106,6 +112,7 @@
         (assert (phrasal_aligned_mng ?aid  ?mid))
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mids ?id))
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids ?id))
+        (assert (man_id-root-src-rule_name ?mid -  heuristics align_poten_man_id))
 )
 
 (defrule align_poten_man_id1
@@ -131,6 +138,7 @@
         (assert (phrasal_aligned_mng ?aid  ?mid))
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mids))
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids))
+        (assert (man_id-root-src-rule_name ?mid -  heuristics align_poten_man_id1))
 )
 
 
@@ -160,6 +168,7 @@
         (assert (phrasal_aligned_mng ?aid ?mid))
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mids))
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids))
+        (assert (man_id-root-src-rule_name ?mid -  heuristics align_single_candidate_id))
 )
 ;------------------------------------------------------------------------------------------------------------
 
@@ -179,6 +188,7 @@
         (assert (phrasal_aligned_mng ?aid  ?mid))
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mids))
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids))
+        (assert (man_id-root-src-rule_name ?mid -  heuristics align_restricted_left_over_wrds1))
 )
 
 (defrule align_restricted_left_over_wrds2
@@ -197,6 +207,7 @@
         (assert (phrasal_aligned_mng ?aid  ?mid))
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mids))
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids))
+        (assert (man_id-root-src-rule_name ?mid -  heuristics align_restricted_left_over_wrds2))
 )
 
 (defrule align_restricted_left_over_wrds3
@@ -234,6 +245,7 @@
         (assert (phrasal_aligned_mng ?aid  ?mid))
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mids))
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids))
+        (assert (man_id-root-src-rule_name ?mid -  heuristics align_left_over_wrds_using_phrasal_data))
 )
 
 (defrule align_left_over_wrds_using_phrasal_data1
@@ -254,6 +266,7 @@
         (assert (phrasal_aligned_mng ?aid  ?mid))
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mids))
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids))
+        (assert (man_id-root-src-rule_name ?mid -  heuristics align_left_over_wrds_using_phrasal_data1))
 )
 ;-------------------------------------------------------------------------------------
 
@@ -287,8 +300,10 @@
 (declare (salience -1000))
 ?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?man_mng)
 (phrasal_aligned_mng ?aid  ?mid)
+(man_id-root-src-rule_name ?mid ?root  ?src ?rule_name)
 =>
 	(retract ?f)
         (printout ?*fp* "(anu_id-anu_mng-sep-man_id-man_mng_tmp "?aid" "(implode$ $?anu_mng)" - "?mid" "(implode$ $?man_mng)")" crlf)
+        (printout ?*fp1* "(man_id-root-src-rule_name "?mid" "?root"  "?src" "?rule_name")" crlf)
 )
 
