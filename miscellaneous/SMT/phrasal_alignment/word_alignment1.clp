@@ -188,7 +188,7 @@
         (assert (phrasal_aligned_mng ?aid  ?mid))
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mids))
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids))
-        (assert (man_id-root-src-rule_name ?mid -  heuristics align_restricted_left_over_wrds1))
+        (assert (man_id-root-src-rule_name ?mid -  restricted_word_match align_restricted_left_over_wrds1))
 )
 
 (defrule align_restricted_left_over_wrds2
@@ -207,7 +207,7 @@
         (assert (phrasal_aligned_mng ?aid  ?mid))
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mids))
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids))
-        (assert (man_id-root-src-rule_name ?mid -  heuristics align_restricted_left_over_wrds2))
+        (assert (man_id-root-src-rule_name ?mid -  restricted_word_match align_restricted_left_over_wrds2))
 )
 
 (defrule align_restricted_left_over_wrds3
@@ -245,7 +245,7 @@
         (assert (phrasal_aligned_mng ?aid  ?mid))
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mids))
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids))
-        (assert (man_id-root-src-rule_name ?mid -  heuristics align_left_over_wrds_using_phrasal_data))
+        (assert (man_id-root-src-rule_name ?mid -  default_pharasal_match align_left_over_wrds_using_phrasal_data))
 )
 
 (defrule align_left_over_wrds_using_phrasal_data1
@@ -266,7 +266,7 @@
         (assert (phrasal_aligned_mng ?aid  ?mid))
         (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid $?mids))
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?mids))
-        (assert (man_id-root-src-rule_name ?mid -  heuristics align_left_over_wrds_using_phrasal_data1))
+        (assert (man_id-root-src-rule_name ?mid -  default_pharasal_match align_left_over_wrds_using_phrasal_data1))
 )
 ;-------------------------------------------------------------------------------------
 
