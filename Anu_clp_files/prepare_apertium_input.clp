@@ -294,6 +294,7 @@
  ;======================================= KA vibakthi (kriyA_id-object_viBakwi) rules =====================================
  ; Added by Shirisha Manju (17-06-11) Suggested by Chaitanya Sir
  ; Clinton announced on Tuesday a bold new proposal. 
+ ; kliMtana ne eka nirBIka naye praswAva kI mafgalavAra ko GoRaNA kI.
  (defrule kA_vib_from_obj_rule
  (declare (salience 1000))
  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(vibakthi kA))
@@ -301,13 +302,13 @@
  (prep_id-relation-anu_ids - kriyA-object ?k_id ?pada_id)
  (kriyA_id-object_viBakwi ?k_id kA)
  (pada_info (group_head_id ?k_id)(number ?num1)(case ?case1))
- (id-HM-source ?k_id ?hmng&~upayoga_kara&~anxAja_lagA ?) ;I can guess his age.
+ (id-HM-source ?k_id ?hmng&~upayoga_kara ?) 
  =>
         (bind ?gen1 (gdbm_lookup "kriyA_mUla-gender.gdbm" ?hmng))
         (if (neq ?gen1 "FALSE") then
             (if (eq ?gen1 -) then (bind ?gen1 m)
             else
-                (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word"<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^kA<cat:sh><case:"?case"><gen:"?gen1"><num:"?num">$)"  crlf)
+                (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word"<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^kA<cat:sh><case:d><gen:"?gen1"><num:"?num">$)"  crlf)
             )
             (retract ?f0)
             (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  kA_vib_from_obj_rule )" crlf)
@@ -315,6 +316,8 @@
  )
  ;------------------------------------------------------------------------------------------------------------------------
  ; He studiously avoided answering the question. 
+ ; She asked me to guess her age. 
+ ; usane muJe usakI umra kA anxAja lagAne ke lie kahA.
  (defrule kA_vib_from_obj_rule1
  (declare (salience 1001))
  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(vibakthi kA))
@@ -332,7 +335,7 @@
         (if (neq ?gen1 "FALSE") then
             (if (eq ?gen1 -) then (bind ?gen1 m)
             else
-                (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word"<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^kA<cat:sh><case:"?case"><gen:"?gen1"><num:"?num">$)"  crlf)
+                (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word"<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^kA<cat:sh><case:d><gen:"?gen1"><num:"?num">$)"  crlf)
             )
             (retract ?f0)
             (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  kA_vib_from_obj_rule1 )" crlf)
@@ -427,6 +430,8 @@
  ;==========================================  verbal-noun with vib =======================================================
   ;Did you order people to go? Added by Sukhada (24-08-14)
  ; kyA Apane logoM ko jAne kI AjFA xI? 
+ ; I have been running about all morning trying to find you. 
+ ; mEM Apako pAne kA prayAsa karawe_hue pUrI subaha iXara-uXara xOdawA rahA hUz.
  (defrule kA_vib_rule_for_verbal_noun
  (declare (salience 906))
  (prep_id-relation-anu_ids ? kriyA-kqxanwa_karma|kriyA-kriyArWa_kriyA ?kri ?id)
@@ -437,7 +442,7 @@
  (pada_info (group_head_id ?kri)(number ?num1)(case ?case1))
  =>
        (bind ?gen1 (gdbm_lookup "kriyA_mUla-gender.gdbm" ?hmng))
-        (printout ?*A_fp5* "(id-Apertium_input "?id " ^"?hmng1"<cat:vn><case:o>$ ^kA<cat:sh><case:"?case1"><gen:"?gen1"><num:"?num1">$)"  crlf)
+        (printout ?*A_fp5* "(id-Apertium_input "?id " ^"?hmng1"<cat:vn><case:o>$ ^kA<cat:sh><case:d><gen:"?gen1"><num:"?num1">$)"  crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  kA_vib_rule_for_verbal_noun  )"crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------------

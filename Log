@@ -51,7 +51,7 @@
         Added : get_vib_for_kriyA_mUla
  18. prepare_apertium_input.clp :
         Added : kA_vib_rule_for_verbal_noun
-        Modified : kA_vib_from_obj_rule   (added 'anxAja_lagA' in not condition)
+	Modified : kA_vib_from_obj_rule, kA_vib_from_obj_rule1 and kA_vib_rule_for_verbal_noun [changed 'case' info from variable to 'd']
  19. get_dbase_mng.clp:
 	Added 'proper_noun_dic.gdbm in rules 'get_mng_from_all_dic' and 'get_mng_from_all_dic1'   
  20. run_modules_std.bat
