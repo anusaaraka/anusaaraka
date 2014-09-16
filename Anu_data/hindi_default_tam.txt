@@ -1,5 +1,6 @@
 #Eng_tam	H_tam-Sub_viBakwi-preceding_part_of_the_verb
 ################################################################
+0	wA_hE-0-0
 0_not	0-0-nahIM
 against_ing	ne_ke_viruxXa-0-0
 am_able_to_0	0_pAwA_hE-0-0
@@ -140,6 +141,7 @@ having_en	0_cukane_ke_bAxa-0-0
 imper_0	imper-0-0
 imper	imper-0-0
 imper_not_0	imper-0-mawa
+ing	wA_huA-0-0
 in_ing	ne_meM-0-0
 into_ing	ne_para-0-0
 is_able_to_0	0_pAwA_hE-0-0

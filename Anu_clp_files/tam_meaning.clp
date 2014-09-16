@@ -106,15 +106,13 @@
  ;'ne' and '0' are not considered becoz 'ne'  -- ne_xo [verb] and  '0'   -- ambiguous
  (defrule vib_mng_from_wsd_[word/root]_file
  (declare (salience 6550))
- (id-H_vib_mng ?id ?vib)
+ ?f0<-(id-H_vib_mng ?id ?vib&~0)
  ?f1<-(pada_info (group_head_id ?id))
- ?mng<-(meaning_to_be_decided ?id)
  (test (neq (str-index "_" ?vib)  FALSE))
  (test (member$ (string-to-field (sub-string 1 (- (str-index "_" ?vib) 1) ?vib)) (create$ kA kI ke meM)))
  =>
-        (retract ?mng)
-        (modify ?f1 (vibakthi ?vib)(tam_source WSD))
-        (assert (tam_decided  ?id))
+        (retract ?f0)
+        (modify ?f1 (vibakthi ?vib))
  )
  ;---------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (12-05-14) -- Suggested by Chaitanya Sir
@@ -122,14 +120,12 @@
  ;not added   '0'   -- ambiguous
  (defrule vib_mng_from_wsd_[word/root]_file1
  (declare (salience 6500))
- (id-H_vib_mng ?id ?vib)
+ ?f0<-(id-H_vib_mng ?id ?vib&~0)
  ?f1<-(pada_info (group_head_id ?id))
- ?mng<-(meaning_to_be_decided ?id)
  (test (member$ ?vib (create$ ne ko se kA kI ke meM para vAlA)))
  =>
-        (retract ?mng)
-        (modify ?f1 (vibakthi ?vib)(tam_source WSD))
-        (assert (tam_decided  ?id))
+        (retract ?f0)
+        (modify ?f1 (vibakthi ?vib))
  )
  ;---------------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju

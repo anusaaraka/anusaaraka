@@ -301,7 +301,7 @@
  (prep_id-relation-anu_ids - kriyA-object ?k_id ?pada_id)
  (kriyA_id-object_viBakwi ?k_id kA)
  (pada_info (group_head_id ?k_id)(number ?num1)(case ?case1))
- (id-HM-source ?k_id ?hmng&~upayoga_kara ?)
+ (id-HM-source ?k_id ?hmng&~upayoga_kara&~anxAja_lagA ?) ;I can guess his age.
  =>
         (bind ?gen1 (gdbm_lookup "kriyA_mUla-gender.gdbm" ?hmng))
         (if (neq ?gen1 "FALSE") then
@@ -425,6 +425,22 @@
         (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id"  verbal_noun_without_vib )" crlf)
  )
  ;==========================================  verbal-noun with vib =======================================================
+  ;Did you order people to go? Added by Sukhada (24-08-14)
+ ; kyA Apane logoM ko jAne kI AjFA xI? 
+ (defrule kA_vib_rule_for_verbal_noun
+ (declare (salience 906))
+ (prep_id-relation-anu_ids ? kriyA-kqxanwa_karma|kriyA-kriyArWa_kriyA ?kri ?id)
+ (make_verbal_noun ?id)
+ (pada_info (group_head_id ?id)(vibakthi kA))
+ ?f0<-(id-HM-source ?kri ?hmng ?)
+ (id-HM-source ?id ?hmng1 ?)
+ (pada_info (group_head_id ?kri)(number ?num1)(case ?case1))
+ =>
+       (bind ?gen1 (gdbm_lookup "kriyA_mUla-gender.gdbm" ?hmng))
+        (printout ?*A_fp5* "(id-Apertium_input "?id " ^"?hmng1"<cat:vn><case:o>$ ^kA<cat:sh><case:"?case1"><gen:"?gen1"><num:"?num1">$)"  crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  kA_vib_rule_for_verbal_noun  )"crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
  ; He made a mistake in the inviting of John. 
  ;The game of life is played for winning .
  (defrule verbal_noun_with_vib

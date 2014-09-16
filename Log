@@ -1,10 +1,11 @@
- 11-09-14
+ 16-09-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	admire.clp	distinguish.clp		update.clp
 		   who.clp	roundabout.clp	on.clp		add.clp			excess.clp
 		   both.clp	consist.clp	reflect.clp	point.clp		till.clp
-		   describe.clp
+		   be.clp	describe.clp	call.clp   	drink.clp   		rude.clp 
+		   to.clp
 	Added	 : dissolve.clp
 	Moved provisional wsd rules into WSD
  2. sd_category.clp
@@ -30,8 +31,11 @@
 	Added example sentence and comments in 'chk_for_prov_multi_same_group_ids' rule.
  10. causative_verb_mng.clp:
 	Modified : get_rule_info
+	increased salience of causative_verb_mng (bcoz mng should be lookup before adding 'nA')
  11. tam_meaning.clp:
 	Added 'Warning msg in get_tam_from_database' rule.
+	Modified : vib_mng_from_wsd_[word/root]_file1, vib_mng_from_wsd_[word/root]_file
+                   [ removed 'id-H_vib_mng' fact instead meaning_to_be_decided fact for vib case]
  12. adjective.clp:
 	Added:  load_user_org_wrd_with_verb_root, load_user_wrd_with_verb_root, load_org_wrd_with_verb_root
 		load_wrd_with_verb_root, check_whether_mng_dcd, remove_dummy_fact_mng_need_to_be_decided_on_verb_root
@@ -43,22 +47,27 @@
 	Modified: print_warning_msg (Added Warning: in print statement)
  16. sd_relation_rules.clp:
 	Modified : vmod , cop+nsubj and cop+nsubj_2
- 17. get_dbase_mng.clp:
+ 17. vibakthi.clp
+        Added : get_vib_for_kriyA_mUla
+ 18. prepare_apertium_input.clp :
+        Added : kA_vib_rule_for_verbal_noun
+        Modified : kA_vib_from_obj_rule   (added 'anxAja_lagA' in not condition)
+ 19. get_dbase_mng.clp:
 	Added 'proper_noun_dic.gdbm in rules 'get_mng_from_all_dic' and 'get_mng_from_all_dic1'   
- 18. run_modules_std.bat
+ 20. run_modules_std.bat
         Loaded  parserid_wordid_mapping.dat and word2.dat in sd_category module
 	Loaded  root.dat file in H_ordering_rules module
- 19. hnd_translation.pl:
+ 21. hnd_translation.pl:
         Modified 'hindi_sentence_tmp.dat' to 'hindi_sentence.dat'
 		 '$ARGV[0]_trnsltn.html' to '$ARGV[0]_trnsltn_tmp.html'	
- 20. Added relation_table/ folder in Doc contains following files:
+ 22. Added relation_table/ folder in Doc contains following files:
 	relation-table-for-WSD-wx.html  
 	style.css
- 21. Added align_output/ folder in phrasal_alignment which contains
+ 23. Added align_output/ folder in phrasal_alignment which contains
 	verified
 	verified_hnd
        	verified_eng_align.html
- 22. Added following files related to phrasal alignment:
+ 24 Added following files related to phrasal alignment:
 	count.py
 	sort.sh
 	bin/Anusaaraka_alignment.sh 
@@ -76,52 +85,40 @@
 	get_phrasal_dic-en-hi.sh 
 	phrase_gdbm_dict.c 
 	create_SL-TL_dict_using_phrase_table.py
- 23. Added 'parser_id-cat' dummy fact in cat_rule.clp, parser_id_mapping.clp, root_rule.clp and sd_relation_rules.clp
- 24. Added following files:
+ 25. Added 'parser_id-cat' dummy fact in cat_rule.clp, parser_id_mapping.clp, root_rule.clp and sd_relation_rules.clp
+ 26. Added following files:
 	-> check_for_TITLE.c programme to check whether input file contains TITLE or not.
 	-> get_latest_version_stanford_parser.sh in stanford-parser dir 
 	-> src folder in stanford-parser dir (Separated source files related to stanford-parser)
  	-> transliterate_meaning.txt file in Anu_data
 	-> get_rev_alltam.sh file to generate Alltam in reverse format
- 25. Removed : 
+ 27. Removed : 
 	miscellaneous/SMT/phrasal_alignment/replace-mapping-symbols_for_align.lex
 	Stanford parser version 3.3.1
- 26. Modified get_word_count.c and get_word_count_single.c 
- 27. Updated following lex files:
+ 28. Modified get_word_count.c and get_word_count_single.c 
+ 29. Updated following lex files:
 	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
 	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern
 	morph.lex:	-> Modified to get tam info from morph.
 	wx_utf8.lex:	-> Handled 'eV', 'eY', 'oV'
- 28. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
-	Word-to-Word-dict.txt
-	en-hi-gdbm-dict.txt
-	run_alignment.sh
-	run_alignment-hi-en.sh
-	run_alignment-hi-en-hi.sh
-	multifast-v1.0.0/src/extract_key.c
+ 30. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
+	Word-to-Word-dict.txt			run_alignment.sh			align-left-over-wrds.py
+	en-hi-gdbm-dict.txt			run_alignment-hi-en.sh			get_word_align.py
+						run_alignment-hi-en-hi.sh		match_value_in_hnd.py
+	create_eng_align_html_phrasal.clp	Anusaaraka_alignment.sh			get_phrase.py
+	get_manual_id_en_hi.clp			bin/run_alignment.sh			map-ids.py
+ 						multifast-v1.0.0/src/run.sh		map-wrd-to-wrd.py
+ 	multifast-v1.0.0/src/extract_key.c	compile.sh				mapping.py
+											print_shortest_path.py
+	run_H_gen_sen_eng.bat								replace_val_trn.py
+
     	multifast-v1.0.0/src/Makefile
-	align-left-over-wrds.py
-	compile.sh
-	get_word_align.py
-	match_value_in_hnd.py
-	Anusaaraka_alignment.sh
-	bin/run_alignment.sh
-	get_phrase.py
-	create_eng_align_html_phrasal.clp
-	map-ids.py
-	map-wrd-to-wrd.py
-	mapping.py
-	print_shortest_path.py
-	replace_val_trn.py
+	Readme 
 	phrasal_alignment.css
 	phrasal_alignment.js
-	run_H_gen_sen_eng.bat
- 	multifast-v1.0.0/src/run.sh
-	Readme 
-	get_manual_id_en_hi.clp
- 29. Updated following dictionarie related files:
+ 31. Updated following dictionarie related files:
 	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix		provisional_multi_word_dictionary.txt 
- 30. Updated following shell files:
+ 32. Updated following shell files:
 	Anusaaraka_stanford_align_eng_ord.sh
 	replace-abbrevations.sh
 	abbr.sh
@@ -131,19 +128,19 @@
 	get_multi_word-dic.sh
 	stdenglish.sh	-> 	Added code to run  check_for_TITLE.c programme
 	run_align_browser_eng.sh to work email concept in alignment layered o/p
- 31. Updated following files:
+ 33. Updated following files:
 	create_eng_align_html_phrasal.clp to work email concept in alignment layered o/p
 	this1.py
 	stanford-parser/README
  	Readme_to_use_email_in_firefox.txt
- 32. Updated Stanford parser version from 3.3.1 to 3.4.1 in following files:
+ 34. Updated Stanford parser version from 3.3.1 to 3.4.1 in following files:
 	Anusaaraka_bllip_parser.sh	Anusaaraka_bllip_parser_minion.sh	Anusaaraka_rasp.sh	Anusaaraka_site.sh
 	Anusaaraka_stanford-Factored.sh	Anusaaraka_stanford_align_man_ord.sh	Anusaaraka.sh		Anusaaraka_all.sh	
 	Anusaaraka_berkeley.sh		run_stanford-gui-factored.sh		run_stanford-gui-pcfg.sh
 	Anusaaraka_stanford.sh		shell_scripts/anu_compile.sh		shell_scripts/remove_out-files.sh
- 33. Updated following verifieds:
-	sd_verified (827)
- 34. Updated Log. 
+ 35. Updated following verifieds:
+	sd_verified (846)
+ 36. Updated Log. 
 
  05-06-14
  ========

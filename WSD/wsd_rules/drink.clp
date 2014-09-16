@@ -92,6 +92,15 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  drink.clp 	drink4   "  ?id "  pI )" crlf))
 )
 
+;"drink","V","1.pI"
+;--"2.pInA/pAna_karanA"
+;Why don't you drink a glass of water after food.
+;--"3.maxirA_pAna_karanA"
+;Though he is an army officer but never drinks.
+;He drank away his all inheritance. 
+;They are drinking themselves to death.
+;
+
 
 ;@@@ added by Pramila(BU) on 12-12-2013
 ;Drink up and let's go.             ;oald
@@ -147,11 +156,3 @@
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " drink.clp	drink7  "  ?id "  " ?id1 " pIkara_udZA_xe  )" crlf))
 )
-;"drink","V","1.pI"
-;--"2.pInA/pAna_karanA"
-;Why don't you drink a glass of water after food.
-;--"3.maxirA_pAna_karanA"
-;Though he is an army officer but never drinks.
-;He drank away his all inheritance. 
-;They are drinking themselves to death.
-;

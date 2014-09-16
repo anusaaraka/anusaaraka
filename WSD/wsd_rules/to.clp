@@ -1,7 +1,64 @@
 ;; FILE MODIFIED BY MEENA (22.8.09)
 
+;@@@ Added by Sukhada (14-08-14)
+;It appears to be moving toward a middle ground. 
+;यह  बीच की जमीन की ओर जाता हुआ लगता है.
+;All students appeared to take the assessments seriously. 
+;सब विद्यार्थी राय को गम्भीरता से लेते हुए लगे.
+;He appeared to take great satisfaction in connecting adoptive parents with disabled kids. 
+;वह दत्तक माँ बाप को विकलाङ्ग बच्चों से मिलाने में बहुत सन्तोष अनुभव करता हुआ लगा.
+;They appear to show genuine concern about your welfare. 
+;;;वे आपके हित में वास्तविक दिलचस्पी दिखाते हुए लगते हैं.
+;She appeared to enjoy it. 
+;वह इसका आनन्द उठाती हुई लगी.
+(defrule appear_seem_to
+(declare (salience 5000))
+(id-root ?id to)
+?mng <-(meaning_to_be_decided ?id)
+(or (kriyA-kqxanwa_karma ?kri ?inf) (kriyA-kriyArWa_kriyA  ?kri ?inf))
+(id-root ?kri appear|seem)
+(to-infinitive ?id  ?inf)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id -))
+(assert (id-H_vib_mng ?inf wA_huA))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* " to.clp    appear_seem_to  "  ?id "  -  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng   " ?*wsd_dir* " to.clp    appear_seem_to  "  ?inf "  wA_huA  )" crlf))
+)
 
 
+;$$$ Modified by Sukhada (14-08-14) -- added below sentences with translations
+;7000 people turned out to see him. === -ने के लिये #### Raising predicate
+;7000 लोग उसे देखने के लिए  आये.
+;Another patient was caused to hear her small son. === -ने के लिये #### ECM verb passive 
+;अन्य मरीज को उसके छोटे बेटे से बात करने के लिए  राजी किया गया था.
+;Chinese person shall be caused to be removed there-from to the country from whence he came. === -ने के लिये #### ECM verb passive ;
+;चीनी व्यक्ति को  जहाँ से वह आया है उस देश को जाने के लिये मज़बूर किया जाना चाहिये.
+;I should not have been caused to live so long. === -ने के लिये #### ECM verb passive 
+;मुझे इतने लंबे समय जीवित रहने के लिए मज़बूर नहीं किया जाना चाहिये.
+;National holidays were declared to mark the wedding. === -ने के लिये #### ECM verb passive ;
+;विवाहोत्सव यादगार बनाने के लिए राष्ट्रिय अवकाश घोषित किए गये थे.
+;The agent agreed to pay her $ 800 for a night. === -ने के लिये #### Subject control verb
+;एजेंट उसे एक रात के लिये  $800 देने के लिये मान गया.
+(defrule to39
+(declare (salience 1900))
+(id-root ?id to)
+?mng <-(meaning_to_be_decided ?id)
+(to-infinitive  ?id ?rid)
+(id-cat_coarse ?rid verb)
+=>
+(retract ?mng)
+(assert (make_verbal_noun ?rid))
+(assert (id-H_vib_mng ?rid ke_liye))
+(assert (id-wsd_root_mng ?id  -))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to39   " ?id "  )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  to.clp     to39  "  ?id "  -)" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to39 "  ?rid " ke_liye )" crlf)
+)
+)
+;The instructor persuaded Mary to take that course
 
 
 
@@ -70,7 +127,7 @@
 ;Added by Meena(8.9.10)
 ;Because of the recession the company is to axe 350 jobs . 
 (defrule to4
-(declare (salience 4700))
+(declare (salience 4600))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
 (id-root =(- ?id 1) be)
@@ -92,7 +149,7 @@
 
 
 (defrule to5
-(declare (salience 4600))
+(declare (salience 4700))
 (id-root ?id to)
 ?mng <-(meaning_to_be_decided ?id)
 (id-word =(- ?id 1) is)
@@ -801,6 +858,7 @@
 (assert (id-wsd_root_mng ?id  -))
 (assert (id-H_vib_mng (+  ?id  1) 0_kara))
 (if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  to.clp     to30  "  ?id "  -)" crlf)
 (printout wsd_fp "(dir_name-file_name-rule_name-rule_name-id-H_vib_mng 	 " ?*wsd_dir* "  to.clp     to30   "  (+  ?id  1) "  0_kara )" crlf))
 )
 
@@ -1025,24 +1083,6 @@
 
 
 
-(defrule to39
-(declare (salience 1900))
-(id-root ?id to)
-?mng <-(meaning_to_be_decided ?id)
-(to-infinitive  ?id ?rid)
-(id-cat_coarse ?rid verb)
-=>
-(retract ?mng)
-(assert (make_verbal_noun ?rid))
-(assert (id-H_vib_mng ?rid ke_liye))
-(assert (id-wsd_root_mng ?id  -))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-make_verbal_noun " ?*wsd_dir* "  to.clp  	to39   " ?id "  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  to.clp     to39  "  ?id "  -)" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  to.clp     to39 "  ?rid " ke_liye )" crlf)
-)
-)
-;The instructor persuaded Mary to take that course
 
 (defrule to40
 (declare (salience 1800))
