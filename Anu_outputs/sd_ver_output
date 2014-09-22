@@ -1627,7 +1627,7 @@ xaravAjA banxa_mawa kIjie.
 
 Hindi meaning using Stanford parser 3.61
 I have been running about all morning trying to find you. 
-mEM Apako pAne ke lie prayAsa karawe_hue pUrI subaha iXara-uXara xOdawA rahA hUz.
+mEM Apako pAne kA prayAsa karawe_hue pUrI subaha iXara-uXara xOdawA rahA hUz.
 mEM pUrI subaha meM iXara-uXara Apako pAne ke lie prayAsa karwe_hue xOdawA rahA hUz.
 
 Hindi meaning using Stanford parser 3.62
@@ -1865,7 +1865,7 @@ Hindi meaning using Stanford parser 4.10
 She declared that out of love for the poor she had gotten her family to go against convention. 
 usane GoRiwa kiyA ki xInoM ke prawi prema ke kAraNa usane paramparA ke viruxXa jAne ke lie usake parivAra ko preriwa kiyA WA.
 usane GoRiwa kiyA ki xInoM ke prawi prema ke kAraNa vaha paramparA ke viruxXa jAne ke lie usake parivAra ko preriwa_kara cukI WI.
-PP daughter category problem of: RB
+Warning: PP daughter category problem of: RB
 
 Hindi meaning using Stanford parser 4.11
 She got the book to read from the library. 
@@ -2031,7 +2031,7 @@ yaha kIdoM kA kEna KolegA.
 
 Hindi meaning using Stanford parser 4.44
 Everybody was trying to do the same thing at the same time. 
-prawyeka vyakwi eka_hI_samaya para vahI cIja karane ke lie prayAsa_kara rahA WA.
+prawyeka vyakwi eka_hI_samaya para vahI cIja karane kA prayAsa_kara rahA WA.
 
 Hindi meaning using Stanford parser 4.45
 I will tell you the story tomorrow. 
@@ -2292,7 +2292,7 @@ yaha isa praWA ko siKAne meM sahAyawA karawA hE.
 
 Hindi meaning using Stanford parser 5.4
 This helps to cultivate this practice. 
-yaha isa praWA ko siKAne ke lie sahAyawA karawA hE.
+yaha isa praWA ko siKAne kI sahAyawA karawA hE.
 
 Hindi meaning using Stanford parser 5.5
 I saw the blue sky above the trees. 
@@ -2538,7 +2538,7 @@ bAibila kahawI hE ki ISvara ne viSva banAyA.
 Hindi meaning using Stanford parser 5.62
 The government plans to create more jobs for young people. 
 sarakAra waruNa logoM ke lie aXika kAma uwwapanna karane ke lie yojanA banAwI hE.
-sarakAra yuvA logoM ke lie aXika kAma uwwapanna karane ke lie yojanA banAwI hE.
+sarakAra yuvA logoM ke lie aXika kAma uwwapanna karane kI yojanA banAwI hE.
 
 Hindi meaning using Stanford parser 5.63
 Scientists disagree about how the universe was created. 
@@ -2546,7 +2546,7 @@ vEjFAnika usa ke bAre meM ki asahamawa howe hEM brahmANda kEse banAyA gayA WA.
 
 Hindi meaning using Stanford parser 5.64
 The company is trying to create a young energetic image. 
-kampanI eka waruNa ojasvI prawimA banAne ke lie prayAsa_kara rahI hE.
+kampanI eka waruNa ojasvI prawimA banAne kA prayAsa_kara rahI hE.
 Warning: Multiple adjective senses are available for energetic. WSD rule is required 
 
 Hindi meaning using Stanford parser 5.65
@@ -3356,7 +3356,7 @@ safgaTana newA unakI mAzga para_date rahe.
 
 Hindi meaning using Stanford parser 7.58
 The team is bidding to retain its place in the league. 
-tIma safGa meM usakA sWAna banAe raKane ke lie prayAsa_kara rahI hE.
+tIma safGa meM usakA sWAna banAe raKane kA prayAsa_kara rahI hE.
 
 Hindi meaning using Stanford parser 7.59
 Suddenly he struck a knife into his stomach. 
@@ -3639,6 +3639,83 @@ wela pAnI meM nahIM GulawA hE.
 Hindi meaning using Stanford parser 8.27
 The bacteria would soon dissolve the body. 
 jIvANu SarIra SIGra galA xeMge.
+
+Hindi meaning using Stanford parser 8.28
+A few have been kept to work as supervisors. 
+kuCa paryavekRaka kI waraha kAma karane ke lie raKe gaye hEM.
+
+Hindi meaning using Stanford parser 8.29
+Gingrich is due to arrive in Florida today. 
+gifgrica Aja PloVrada AnA bAkI hE.
+
+Hindi meaning using Stanford parser 8.30
+I used to be pretty good. 
+mEM kAPI acCA huA karawA WA.
+Warning: Multiple adjective senses are available for good. WSD rule is required 
+
+Hindi meaning using Stanford parser 8.31
+People used to say so little about it. 
+loga isake bAre meM iwanA WodA kahe karawe We.
+
+Hindi meaning using Stanford parser 8.32
+I was asked to be the project manager. 
+muJase pariyojanA prabanXaka hone ke lie pUCA gayA WA.
+
+Hindi meaning using Stanford parser 8.33
+This institution does not bother to ask the questions. 
+yaha saMsWA praSna pUCane kI jahamawa_nahIM uTAwI hE.
+
+Hindi meaning using Stanford parser 8.34
+I decided to go ahead. 
+mEMne Age jAne kA PEsalA kiyA.
+
+Hindi meaning using Stanford parser 8.35
+He decided to take a nap on the sofa. 
+usane soPe para JapakI lene kA PEsalA kiyA.
+
+Hindi meaning using Stanford parser 8.36
+I will enjoy to talk later. 
+mEM bAxa meM bAwacIwa karane kA Ananxa uTAUzgA.
+
+Hindi meaning using Stanford parser 8.37
+You were elected to do something. 
+Apa kuCa karane ke lie cune gaye We.
+
+Hindi meaning using Stanford parser 8.38
+I hate to say this. 
+mEM yaha kahanA nApasanxa karawA hUz.
+
+Hindi meaning using Stanford parser 8.39
+I hate to be rude. 
+mEM aBaxra honA nApasanxa karawA hUz.
+
+Hindi meaning using Stanford parser 8.40
+You must learn to read, write, and count. 
+Apako paDanA, liKanA, Ora ginanA sIKanA cAhie.
+
+Hindi meaning using Stanford parser 8.41
+We have to learn to live together again. 
+hameM Pira se eka sAWa rahanA sIKanA hE.
+
+Hindi meaning using Stanford parser 8.42
+We would like to see every animal. 
+hama prawyeka paSu ko xeKanA pasanxa kareMge.
+
+Hindi meaning using Stanford parser 8.43
+Do you plan to do something about it? 
+kyA Apa isake bAre meM kuCa karane kI yojanA banAwe hEM?
+
+Hindi meaning using Stanford parser 8.44
+Introverts prefer to have close relationships with a few people. 
+anwarmuKI vyakwi kuCa logoM ke sAWa nikata sambanXa pasanxa karawe hEM.
+
+Hindi meaning using Stanford parser 8.45
+He seems to be intelligent. 
+vaha buxXimAna prawIwa howA hE.
+
+Hindi meaning using Stanford parser 8.46
+The boy seems to be intelligent. 
+ladakA buxXimAna prawIwa howA hE.
 
 Calling Transliteration
 Calling Interface related programs

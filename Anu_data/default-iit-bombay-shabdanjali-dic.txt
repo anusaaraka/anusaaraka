@@ -7815,7 +7815,7 @@ axing_UNDEFINED	kAtanA
 axiom_noun	svayaMsixXa-vakwavya/sUkwi
 axiomatic_adjective	svawaH_sixXa
 axioms_UNDEFINED	svayaMsixXa-vakwavya
-axis_noun	XurI/samaJOwA/akRa
+axis_noun	akRa/XurI/samaJOwA
 axle_noun	XurA
 axles_UNDEFINED	XurA
 ay_UNDEFINED	saxA
@@ -15987,7 +15987,7 @@ communicates_UNDEFINED	jawAnA
 communicating_UNDEFINED	jawAnA
 communicating_noun	saFcAraNa
 communication_UNDEFINED	sampreRaNa
-communication_noun	sUcanA/saMsarga/samparka/saFcAravyavasWA/saFcAra
+communication_noun	saFcAra/sUcanA/saMsarga/samparka/saFcAravyavasWA
 communications_UNDEFINED	samparka
 communicative_adjective	bAwacIwa_karane_evaM_samparka_raKane_ke_IcCuka
 communicative_verb	bAwa-cIwa_kara
@@ -17444,7 +17444,7 @@ converses_UNDEFINED	vArwAlApa_karanA
 conversest_UNDEFINED	vArwAlApa_karanA
 conversing_UNDEFINED	vArwAlApa_karanA
 conversion_UNDEFINED	samparivarwana
-conversion_noun	Xarma_parivarwana/parivarwana/rUpAnwara/mawa_parivarwana
+conversion_noun	parivarwana/Xarma_parivarwana/rUpAnwara/mawa_parivarwana
 conversions_UNDEFINED	mawa_parivarwana
 convert_noun	paraXarma_avalambI/mawa_baxalane_vAlA_vyakwi
 convert_verb	Xarma_baxala/rAjI_kara/parivarwiwa_kara/parivarwiwa_ho/gola_karake_eka_prayawna_ko_pUrA_kara/baxala/Xarma_parivarwana_kara
@@ -19258,7 +19258,7 @@ cubbed_UNDEFINED	baccA
 cubbing_UNDEFINED	baccA
 cubby_noun	ArAmaxeha_kamarA
 cubbyhole_noun	ArAmaxeha_kamarA
-cube_noun	kyUba/GanAkAra_tukadA/Gana/GanaPala
+cube_noun	Gana/kyUba/GanAkAra_tukadA/GanaPala
 cube_verb	Gana_nikAla/GanAkAra_tukadA_banA
 cubed_UNDEFINED	GanaPala
 cubes_UNDEFINED	GanaPala
@@ -47646,8 +47646,8 @@ marjorams_UNDEFINED	kuTarA
 mark-down_UNDEFINED	mUlya_Gata
 mark-down_noun	avamUlyana/mUlya_GatanA
 mark-up_noun	mUlya-vqxXi
-mark_noun	niSAna/XabbA/vinxu/safkewa/mohara/mArka/lakRaNa/cinha/cihna/CApa/afka/niSAnA/mahawwva
-mark_verb	wila_ho/virAma-cihna_lagA/uxxeSya_ho/safkewa_kara/prawIka_ho/niSAna_lag/niSAna_kara/niSAna_ban/mohara_lag/liKa/lakRya_kara/lakRya_ban/iSArA_kara/irAxA_praxarSiwa_kara/darSA/cinhiwa_kara/cinha_lag/cihna_ban/CApa_CodEYa/BAva_ho/BAva_baw/banA_ho/ASaya_ho/afka_p/para_niSAna_lagA/para_XyAna_xe
+mark_noun	cihna/niSAna/XabbA/vinxu/safkewa/mohara/mArka/lakRaNa/CApa/afka/niSAnA/mahawwva
+mark_verb	cihna_laga/wila_ho/virAma-cihna_lagA/uxxeSya_ho/safkewa_kara/prawIka_ho/niSAna_lag/niSAna_kara/niSAna_ban/mohara_lag/liKa/lakRya_kara/lakRya_ban/iSArA_kara/irAxA_praxarSiwa_kara/darSA/cinhiwa_kara/cihna_ban/CApa_CodEYa/BAva_ho/BAva_baw/banA_ho/ASaya_ho/afka_p/para_niSAna_lagA/para_XyAna_xe
 marked_adjective	suspaRta/ulleKanIya/sAPa
 markeder_UNDEFINED	suspaRta
 markedest_UNDEFINED	suspaRta
@@ -55524,7 +55524,7 @@ painting_noun	kalAkqwi/rafgasAjI/rafgAI/peNtinga/ciwrakArI/ciwrakalA/ciwra/rafga
 paintings_UNDEFINED	kalAkqwi
 paints_UNDEFINED	ciwrakArI_karanA
 paintwork_noun	ciwriwa_kAma/razgAI
-pair_noun	jodA/yugma/yugala/xo_dAzdo_se_KeyI_jAnevAlI_nAva/xo/peara/pawi-pawnI/nara-mAx/jodI/aSva-yugma
+pair_noun	yugala/jodA/yugma/xo_dAzdo_se_KeyI_jAnevAlI_nAva/xo/peara/pawi-pawnI/nara-mAx/jodI/aSva-yugma
 pair_verb	xampawirUpa_meM_bazXa/vivAha_kara/milA/mEWuna_kara/jodo_meM_kiswa_ho/jodA_lagA/jodA_banA/jodA_ba
 paired_UNDEFINED	jodA_banAnA
 pairing_UNDEFINED	jodA_banAnA
@@ -64346,7 +64346,7 @@ recognisabler_UNDEFINED	pahacAnane_yogya
 recognisablest_UNDEFINED	pahacAnane_yogya
 recognisably_adverb	pahacAne_jAne_kI_haxa_waka
 recognise_UNDEFINED	pahacAnanA
-recognise_verb	svIkAra_kara/sammAna_kara/pawA_lagA/pahacAna/namaskAra_kara/mAnyawA_xe/mAna/mAnA_jA
+recognise_verb	pahacAna/svIkAra_kara/sammAna_kara/pawA_lagA/namaskAra_kara/mAnyawA_xe/mAna/mAnA_jA
 recognised_UNDEFINED	mAnyawA_xenA
 recognised_adjective	avivAxiwa
 recognises_UNDEFINED	mAnyawA_xenA
@@ -77465,7 +77465,7 @@ submarines_UNDEFINED	panadubbI
 submerge_verb	dubakI_lagA/xila_meM_CipAe_raKa/pUrI_waraha_se_CipA_xe/lAxa_xe/jalamagna_kara_xe
 submerged_UNDEFINED	dubakI_lagAnA
 submerged_adjective	jalamagna/anwarjalIya
-submergence_noun	AplAvana
+submergence_noun	jalaBarAva/AplAvana
 submerges_UNDEFINED	dubakI_lagAnA
 submergible_adjective	nimajjanIya
 submerging_UNDEFINED	dubakI_lagAnA
@@ -88578,7 +88578,7 @@ venturous_UNDEFINED	sAhasI
 venturous_adjective	sAhasika
 venturouser_UNDEFINED	sAhasI
 venturousest_UNDEFINED	sAhasI
-venue_noun	GatanAsWala/sWAna/mukaxame_kA_sWAna
+venue_noun	sWala/GatanAsWala/sWAna/mukaxame_kA_sWAna
 venues_UNDEFINED	GatanAsWala
 venula_noun	SirikA
 venule_noun	SirikA
