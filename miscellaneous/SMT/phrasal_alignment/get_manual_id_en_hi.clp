@@ -410,13 +410,18 @@
 (defrule tam
 (declare (salience 75))
 ?f<-(manual_id_en_hi-word-root-vib-grp_ids ?id   ?word $?wrds - - - - - $?grp_ids)
-?f1<-(man_word-root-cat    ?word ?root&~kara~ho    v)
+?f1<-(man_word-root-cat    ?word ?root&~kara&~ho    v)
 (chunk_name-chunk_ids-words VGF|VGNN|VGNF $? ?id $? - $?)
-(test (neq (length ?root) (length ?word)))
+;(test (neq (length ?root) (length ?word)))
 =>
-	(bind ?tam (string-to-field (sub-string (+ (length ?root) 1)  (length ?word) ?word)))
-	(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root -  ?tam $?wrds  - $?grp_ids))
-	(retract ?f ?f1)
+	(if (eq ?word ?root) then ;Ex: You can neither inherit it, nor pass it on to your progeny. न तो आप इसे उत्तराधिकार में पा सकते हैं और न ही अपनी सन्तति को विरासत में दे सकते हैं
+		(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root -  0 $?wrds  - $?grp_ids))
+		(retract ?f ?f1)
+	else
+		(bind ?tam (string-to-field (sub-string (+ (length ?root) 1)  (length ?word) ?word)))
+		(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root -  ?tam $?wrds  - $?grp_ids))
+		(retract ?f ?f1)
+	)
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
 ;This process continues till the capacitor is fully charged.
