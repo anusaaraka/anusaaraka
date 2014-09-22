@@ -256,6 +256,24 @@
         (modify ?f0 (vibakthi ?vib))
 	(printout ?*vib_debug_file* "(id-vib-source	"?id"	"?vib "  get_vib_for_hid_from_wsd )" crlf )
  )
+ ;-------------------------------------------------------------------------------------------------------------
+ ;Suggested by Sukhada (14-08-14)
+ ;Others conspired to keep Thomas off the original Dream Team.
+ ;अन्यों ने मूल ड्रीम टीम से टॉमस को दूर रखने का षडयन्त्र रचा.
+ (defrule get_vib_for_kriyA_mUla
+ (declare (salience 900))
+ (id-HM-source ?id ?hm ? )
+ (prep_id-relation-anu_ids ? kriyA-kriyArWa_kriyA|kriyA-kqxanwa_karma ?id ?vn) 
+ (make_verbal_noun ?vn)
+ (test (neq (gdbm_lookup "kriyA_mUla-gender.gdbm" ?hm) "FALSE"))
+ ?f0<-(pada_info (group_head_id ?vn)(vibakthi ?vib) (H_tam ?tam))
+ (test (neq ?vib kA))
+ =>
+;        (modify ?f0 (vibakthi kA) (H_tam kA))
+        (modify ?f0 (vibakthi kA) )
+        (printout ?*vib_debug_file* "(id-vib-source     "?vn"   kA   get_vib_for_kriyA_mUla )" crlf )
+ )
+
  ;---------------------------------------------( vib from tam database ) ------------------------------------
  ;Rule re-modified by Roja (11-03-11)
  ;Removed deftemplate tam_tmp_info and hindi_tam_rules.clp and instead created it as gdbm with name hindi_default_tam.gdbm.
@@ -407,7 +425,7 @@
  =>
 	(retract ?f1)
         (modify ?f0 (vibakthi ko))
-       	(printout ?*vib_debug_file* "(id-vib-source	"?pada_id"	ko	word_"?w " )" crlf )
+	(printout ?*vib_debug_file* "(id-vib-source	"?pada_id"	ko	word_"?w " )" crlf )
  )
 ;------------------------------------------------------------------------------------------
  ; Is that the film in which he kills his mother. This book is mine|ours|yours.

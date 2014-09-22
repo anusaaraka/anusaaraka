@@ -1,4 +1,4 @@
-
+;$$$ Modified by Shirisha Manju 02-09-14 
 (defrule rude0
 (declare (salience 5000))
 (id-root ?id rude)
@@ -6,9 +6,9 @@
 (id-cat ?id adjective|adjective_comparative|adjective_superlative)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id aBaxra-))
+(assert (id-wsd_root_mng ?id aBaxra));modified 'aBaxra-' as 'aBaxra' by Shirisha Manju 02-09-14
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rude.clp 	rude0   "  ?id "  aBaxra- )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  rude.clp 	rude0   "  ?id "  aBaxra )" crlf))
 )
 
 (defrule rude1

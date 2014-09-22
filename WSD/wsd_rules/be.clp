@@ -1,3 +1,47 @@
+;@@@ Added by Sukhada (14-08-14)
+;The program appears to be a success. 
+;progrAma saPala lagawA hE.
+;The girl ended up to be David Bieber's ex-girlfriend. 
+;ladakI devida bIbara kI pUrva premikA nikalI.
+;The president's plan appears to be a significant expansion of previous efforts.
+;राष्ट्रपति की योजना पिछले प्रयासों का एक महत्त्वपूर्ण विस्तार  लगती है.
+;You need to be sure.
+;आपको निश्चित / सन्देहरहित होना चाहिये .
+;We just happened to be there the same week.
+;It proved to be a soft mat.
+;It turned out to be a bad day.
+;यह एक खराब दिन निकला.
+;The number of inputs is assumed to be two. 
+;इनपुट की संख्या दो मानी जाती है.
+;Any specific Christmas decoration is deemed to be dangerous to our commonality. === copula drop #### ECM verb passive 
+;कोई भी विशिष्ट क्रिसमस सजावट हमारी समानता के लिए खतरनाक मानी गयी है.
+;5 minutes of jumping rope is estimated to be equivalent to 20 minutes of jogging. === copula drop #### ECM verb passive 
+;5 मिनट रस्सी कूदना 20 मिनट दौडने के बराबर आँका गया है.
+;He is believed to be responsible for an explosion. === copula drop #### ECM verb passive 
+;वह एक विस्फोट के लिए जिम्मेदार माना गया है.
+;White bodies are believed to be biologically and morally pure. === copula drop #### ECM verb passive 
+;सफेद शरीर  जैविक और नैतिक रूप से पवित्र माने गये हैं.
+;Solar energy is considered to be an inexhaustible energy source. === copula drop #### ECM verb passive 
+;सौर ऊर्जा एक अक्षय ऊर्जा स्रोत मानी गयी है.
+;The overall voting population of Lebanon was declared to be around 2.3 million. === copula drop #### ECM verb passive 
+;लेबनान की समग्र मतदाता सङ्ख्या  23 लाख  के आसपास घोषित की गयी थी.
+(defrule to_be
+(declare (salience 5000))
+(id-root ?b be)
+?mng <-(meaning_to_be_decided ?b)
+(to-infinitive ?id ?b)
+(id-root ?id to)
+(kriyA-kqxanwa_karma ?kri ?b)
+(id-root ?kri appear|seem|assume|admit|concede|prove|end|deem|estimate|believe|consider|declare)
+=>
+(retract ?mng)
+(assert (affecting_id-affected_ids-wsd_group_root_mng  ?b ?id  - ))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " be.clp    to_be  "  ?b "  " ?id "  -  )" crlf))
+)
+
+
+
 ;Added by Meena(19.7.11)
 ;When the dollar is in a free-fall, even central banks can not stop it. 
 (defrule be00

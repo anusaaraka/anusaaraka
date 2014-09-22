@@ -4370,7 +4370,6 @@ kApiSI	f
 kApI	f
 kAPiyAbaMxI	f
 kAPirI	f
-kAPI	f
 kAbilIyawa	f
 kAbisa	f
 kAbula	f

@@ -476,7 +476,7 @@ dt_UNDEFINED	dt
 compressible_UNDEFINED	saMpIdya
 compressibility_UNDEFINED	saMpIdyawA
 vectorially_UNDEFINED	saxiSa/saxiSa_rUpa_meM
-nuclide_UNDEFINED	nABikoM
+nuclide_noun	nABika
 pinhole_UNDEFINED	sUciCixra/Cixra/Cexa
 pentavalent_UNDEFINED	paMcasaMyojaka
 subscript_UNDEFINED	pAxAkRara/nimnaRTa/aXoliKiwa
@@ -667,3 +667,9 @@ convention_noun	paxXawi
 material_noun	xravya
 elastic_adjective    prawyAsWa
 conservative_adjective	saMrakRI
+positive_noun	XanAwmaka
+positive_adjective	XanAwmaka
+centimetre_adjective	sentImItara
+differential_noun	avakala
+coincide_verb	saMpAwI
+elasticity_noun	prawyAsWA

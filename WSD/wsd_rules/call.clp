@@ -1111,7 +1111,7 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 ?id2 jutA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng " ?*wsd_dir* " sub_samA_call_up" ?id " " ?id1" "?id2" jutA)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng " ?*wsd_dir* " call.clp  sub_samA_call_up" ?id " " ?id1" "?id2" jutA)" crlf))
 )
 
 ;@@@ Added by Sukhada (12-05-14). Automatically generated this rule.
@@ -1128,5 +1128,5 @@
 (retract ?mng)
 (assert (affecting_id-affected_ids-wsd_group_root_mng ?id ?id1 ?id2 jutA))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng " ?*wsd_dir* " obj_samA_call_up" ?id " " ?id1" "?id2" jutA)" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng " ?*wsd_dir* " call.clp  obj_samA_call_up" ?id " " ?id1" "?id2" jutA)" crlf))
 )

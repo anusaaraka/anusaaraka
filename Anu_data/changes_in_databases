@@ -80,6 +80,7 @@
 								    similar effect takes place.
 	22. wArA	Suggested by Sukhada	    (21-12-13)  Eg: How does a star form?
 	23. kAna 	Suggested by Chaitanya Sir  (02-05-14)	Eg: A rabbit has long ears.
+	24. kAPI    	Suggested by Sukhada 	    (02-09-14)  Eg: I used to be pretty good.
 
   changes in Phrv.txt 
   ===================
@@ -155,6 +156,8 @@
 	CApa_lagA       f   Suggested by Sukhada (04-02-14)	Ex: The newspapers branded her a hypocrite.
 	xAzva_lagA      m   		"		"	Ex: I wager that she can not pass the exam. 
 	gAlI_xe		f		"	 (27-03-14)	Ex: Billy cried when the other kids called him names.
+	Added   'Radayanwra_raca	 m '	to 	'XamakI_xe	f' by Sukhada 27-8-14
+
 	
 
 
@@ -805,11 +808,12 @@ Removed:
 
     Added:
     ------
-	1. 0			wA_hE
+	1. 0			wA_hE		(By Shirisha Manju      01-09-14)
 	2. used_to_be_en	yA_jAwA_WA-0-0  (Suggested by Rajini 17-01-12) Ex: She used to be organized.
 	3. needs_to_be_en	yA_jAnA_hE-0-0              "                  Ex: That's the way business used to be done and that is the
 										    way business needs to be done.
 	4. would_have_been_ing	0_rahA_howA-0-0 (Suggested by Dipti Mam 18-01-14) 
+	5. ing			wA_huA-0-0	(By Shirisha Manju 	01-09-14)
 
  Removed :
  -------
@@ -1373,7 +1377,12 @@ Removed:
 					    Patan.
 	102. molehill_noun   		bAzbI			(Suggested by karanveer kaur Banasthali 02-08-14)
 					Ex: Make a mountain out of a molehill.
-
+	103. submergence_noun        	jalaBarAva		(Suggested by Ayushi Agrawal Banasthali 02-08-14)
+					Ex: A water submergence of 42 square kms has taken place in its lake till Pipaldali in Bhilangana .
+	104. mark_verb       		cihna_laga		(Suggested by Swati Kanojia Banasthali 25-08-14)
+					Ex: An arrow is marked at the head of this line. 
+	105. venue_noun      		sWala			(Suggested by Soshya Joshi Banasthali 27-08-14)
+					Ex: The venue of the fair is about 90 kilometres from Delhi .
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -1688,7 +1697,21 @@ Removed:
 				     	Ex: This will be a marvellous opportunity for her.
 	144. adjacent_adjective		pArSvasWa	as	satA_huA	(Suggested by Soshya Joshi Banasthali 02-08-14)
 					Ex: Prithviraj Chauhan Memorial' is on a small hill adjacent to Taragarh hill.
-
+	145. conversion_noun    Xarma_parivarwana	as	parivarwana	(Suggested by yashwini dhaka Banasthali 14-08-14)
+				Ex: Because SI units used decimal system, conversions within the system are quite simple and convenient.
+	146. recognise_verb  	svIkAra_kara		as	pahacAna	(Suggested by Swati Kanojia Banasthali 14-08-14)
+				Ex: Getting a glimpse of the tiger the deer, peacock and the baboon cry out their calls  to caution others , 
+				    to recognise which among the many other voices in the jungle is an art .
+	147. mark_noun       	niSAna		as	cihna			(Suggested by Swati Kanojia Banasthali 25-08-14)
+				Ex: 
+	148. cube_noun		kyUba		as	Gana			(Suggested by yashwini dhaka Banasthali 27-08-14)
+				Ex: The square of the time period of revolution of a planet is proportional to the cube of the semi-major axis 
+				    of the ellipse traced out by the planet.
+	149. communication_noun sUcanA		as	saFcAra			(Suggested by yashwini dhaka Banasthali 27-08-14)
+				Ex: An example of the latter is the wireless communication technology that followed the discovery of the basic 
+				    laws of electricity and magnetism in the nineteenth century. 
+	150. pair_noun       	jodA		as	yugala			(Suggested by Anshika Sharma Banasthali 27-08-14)
+				Ex: Forces always occur in pairs.  
 	
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1728,7 +1751,8 @@ Removed:
 	32. harden_verb		saKwa_bana					(	"	"		"	)
 	33. series_noun		SrqfKalA					(	"	"		"	)
 	34. unless_conjunction	jabawaka_nahIM					(	"	"		18-07-14)
-
+	35. mark_noun		cinha						(	"	"		25-08-14)
+	36. mark_verb		cinha_lag					(	"	"		"	)
 
 	
 
@@ -2331,11 +2355,26 @@ Removed:
 	conservative_adjective  saMrakRI	(Suggested by yashwini dhaka Banasthali 04-08-14)
 				Ex: This law restricted for a conservative force should not be confused with the general law of conservation 
 				    of energy of an isolated system.
-	
+	positive_noun 		XanAwmaka	(Suggested by Anshika Sharma Banasthali 14-08-14)
+				Ex: But absolute error |Δa| will always be positive.
+	positive_adjective 	XanAwmaka	(Suggested by Anshika Sharma Banasthali 14-08-14)
+				Ex: Multiplying a vector A with a positive number λ gives a vector.
+	centimetre_adjective    sentImItara	(Suggested by yashwini dhaka Banasthali 14-08-14)
+				Ex:  In CGS system they were centimetre, gram and second respectively.
+	differential_noun       avakala 	(Suggested by Vartika Sah Banasthali 14-08-14)
+				Ex: use differential calculus for the given expression and calculate dx/dt at different instants 
+	coincide_verb     	saMpAwI		(Suggested by yashwini dhaka Banasthali 14-08-14)
+				Ex: To describe motion along a straight line, we can choose an axis, say X-axis, so that it coincides with the
+				    path of the object.
+	elasticity_noun    	prawyAsWA	(Suggested by Anshika Sharma Banasthali 14-08-14)
+				Ex: In 1676, he presented his law of elasticity, now called Hooke's law. 
+
     Modifying first meaning:
     -----------------------
-	instant_noun	kRaNika	as	kRaNa	(Suggested by Prachi Banasthali  21-03-14) 
+	instant_noun	kRaNika		as	kRaNa		(Suggested by Prachi Banasthali  21-03-14) 
 			Ex: It is easier to calculate the value of velocity at different instants if we have data of positions at different 				   instants or exact expression for the position as a function of time.
+	prefix_noun 	pUrvalagna	as	upasarga	(Suggested by Anshika Sharma Banasthali 25-08-14)
+			Ex: Common SI prefixes and symbols for multiples and sub-multiples are given in Appendix A2.  
 
     Modifying spelling of the existing word :
     -----------------------------------------
@@ -2361,7 +2400,8 @@ Removed:
 
     Modifing category:
     -----------------
-	relative_noun	as	relative_adjective		(Suggested by Chaitanya Sir 05-01-13)
+	relative_noun		as	relative_adjective		(Suggested by Chaitanya Sir 		05-01-13)
+	nuclide_UNDEFINED	as	nuclide_noun			(Suggested by Swati Kanojia Banasthali 	27-08-14)
 	
 
  changes in phy_eng_multi_word_dic.txt
@@ -2581,6 +2621,9 @@ Removed:
   Modified :
 	1. 'RR' is replaced with 'R' 
 		Ex: anwarrARRtrIya_vikAsa_ejeMsI	as	anwarrARtrIya_vikAsa_ejeMsI	(by Roja 08-10-13)
+
+  Added :
+	1. National_youth_wing    rARtrIya_yuvA_morcA#rARtrIya_yuvA_morcA#noun#3#RM	(Suggested by Anita ji LTRC	01-09-14)
 
  changes in restricted_eng_words.txt:
  ===================================
