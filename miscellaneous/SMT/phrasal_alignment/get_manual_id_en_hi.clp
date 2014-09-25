@@ -164,14 +164,15 @@
 ;Anu_tran :: xo AveSoM ko jodawe_hue lAina xiksWAna meM xiSA [sImAfkiwa karawI hE].
 ;(manual_id_en_hi-word-root-vib-grp_ids 13 pariBARiwa karawI - - - - - 13 14)
 ;(manual_id_en_hi-word-root-vib-grp_ids 14 karawI hE - - - - - 14 15)===> (manual_id_en_hi-word-root-vib-grp_ids 13 pariBARiwa karawI hE - - - - - 13 14 15)
+;Added (length $?man_wrd) and (length $?man_wrd1) in the test condition for the sent. When a solid is deformed, the atoms or molecules are displaced from their equilibrium positions causing a change in the interatomic (or intermolecular) distances. "
 (defrule combine_ids_common_in_two_different_facts
 (declare (salience 750))
 ?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_wrd  - $?r - $?vib - $?pre ?id $?pos)
 ?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid1 $?man_wrd1 - $?r1 - $?vib1 - $?pre1 ?id $?pos1)
 ?f2<-(chunk_name-chunk_ids ?chnk&VGF|VGNN $?gids)
 (test (neq ?mid ?mid1))
-(test (and (neq (length $?r) 0)(neq (length $?vib) 0)))
-(test (and (neq (length $?r1) 0)(neq (length $?vib1) 0)))
+(test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?man_wrd)0)))
+(test (and (neq (length $?r1) 0)(neq (length $?vib1) 0)(neq (length $?man_wrd1) 0)))
 (manual_hin_sen1 $?man_hin_sen)
 =>
 	(retract ?f ?f1)
@@ -410,13 +411,18 @@
 (defrule tam
 (declare (salience 75))
 ?f<-(manual_id_en_hi-word-root-vib-grp_ids ?id   ?word $?wrds - - - - - $?grp_ids)
-?f1<-(man_word-root-cat    ?word ?root&~kara~ho    v)
+?f1<-(man_word-root-cat    ?word ?root&~kara&~ho    v)
 (chunk_name-chunk_ids-words VGF|VGNN|VGNF $? ?id $? - $?)
-(test (neq (length ?root) (length ?word)))
+;(test (neq (length ?root) (length ?word)))
 =>
-	(bind ?tam (string-to-field (sub-string (+ (length ?root) 1)  (length ?word) ?word)))
-	(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root -  ?tam $?wrds  - $?grp_ids))
-	(retract ?f ?f1)
+	(if (eq ?word ?root) then ;Ex: You can neither inherit it, nor pass it on to your progeny. न तो आप इसे उत्तराधिकार में पा सकते हैं और न ही अपनी सन्तति को विरासत में दे सकते हैं
+		(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root -  0 $?wrds  - $?grp_ids))
+		(retract ?f ?f1)
+	else
+		(bind ?tam (string-to-field (sub-string (+ (length ?root) 1)  (length ?word) ?word)))
+		(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root -  ?tam $?wrds  - $?grp_ids))
+		(retract ?f ?f1)
+	)
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
 ;This process continues till the capacitor is fully charged.
