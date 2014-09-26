@@ -1,3 +1,6 @@
+(deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot root (default 0))(multislot vibakthi (default 0))(multislot group_ids (default 0)))
+
+
 (defglobal ?*fp* = dic_fp1)
 (defglobal ?*fp1* = dic_fp2)
 ;;------------------------------------------------------------------------------------------------------------
@@ -9,15 +12,14 @@
 ?f<-(man_id-candidate_ids ?mid $?list1 ?aid $?list2 ?aid1  $?list3)
 ?f1<-(man_id-candidate_ids ?mid1 $?list1 ?aid $?list2 ?aid1  $?list3)
 ?f4<-(man_id-candidate_ids ?mid3 $?list1 ?aid $?list2 ?aid1  $?list3)
-;(test (and (< ?mid3 ?mid) (< ?mid3 ?mid1)(< ?mid ?mid1)))
 (test (and (< ?mid3 ?mid) (< ?mid3 ?mid1)))
 (not (mng_has_been_aligned ?mid))
 (not (mng_has_been_aligned ?mid1))
 (not (mng_has_been_filled ?aid))
 (not (mng_has_been_filled ?aid1))
 (test (or (neq (length $?list1) 0) (neq (length $?list2) 0)(neq (length $?list3) 0)))
-?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids ?id)
-?f3<-(manual_id_en_hi-word-root-vib-grp_ids ?mid1 $?man_mng1 - $?r1 - $?vib1 - $?mids1 ?id1)
+?f2<-(manual_word_info (head_id ?mid) (word $?man_mng) (group_ids $?mids ?id))
+?f3<-(manual_word_info (head_id ?mid1) (word $?man_mng1) (group_ids $?mids1 ?id1))
 (mot-cat-praW_id-largest_group ? NP|PP ? $?grp)
 (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid2 $?anu_mng2 - ?mid2 $? )
 (test (integerp (member$ ?aid $?grp)))
@@ -26,8 +28,6 @@
 (test (eq (+ ?id1 1) ?mid2))
 (id-Apertium_output ?aid $?anu_mng)
 (id-Apertium_output ?aid1 $?anu_mng1)
-(test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?man_mng) 0)))
-(test (and (neq (length $?r1) 0)(neq (length $?vib1) 0)(neq (length $?man_mng1) 0)))
 =>
         (retract ?f ?f1 ?f2 ?f3)
         (if (eq (length $?anu_mng) 0) then (bind $?anu_mng (create$ -)))
@@ -58,8 +58,8 @@
 (not (mng_has_been_filled ?aid))
 (not (mng_has_been_filled ?aid1))
 (test (or (neq (length $?list1) 0) (neq (length $?list2) 0)(neq (length $?list3) 0)))
-?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids ?id)
-?f3<-(manual_id_en_hi-word-root-vib-grp_ids ?mid1 $?man_mng1 - $?r1 - $?vib1 - $?mids1 ?id1)
+?f2<-(manual_word_info (head_id ?mid) (word $?man_mng) (group_ids $?mids ?id))
+?f3<-(manual_word_info (head_id ?mid1) (word $?man_mng1) (group_ids $?mids1 ?id1))
 (mot-cat-praW_id-largest_group ? NP|PP ? $?grp)
 (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid2 $?anu_mng2 - ?mid2 $? )
 (test (integerp (member$ ?aid $?grp)))
@@ -68,8 +68,6 @@
 (test (eq (+ ?id1 1) ?mid2))
 (id-Apertium_output ?aid $?anu_mng)
 (id-Apertium_output ?aid1 $?anu_mng1)
-(test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?man_mng) 0)))
-(test (and (neq (length $?r1) 0)(neq (length $?vib1) 0)(neq (length $?man_mng1) 0)))
 =>
         (retract ?f ?f1 ?f2 ?f3)
         (assert (mng_has_been_aligned ?mid))
@@ -96,14 +94,13 @@
 (not (mng_has_been_aligned ?mid))
 (not (mng_has_been_filled ?aid))
 (test (or (neq (length $?list1) 0) (neq (length $?list2) 0)))
-?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids ?id)
+?f1<-(manual_word_info (head_id ?mid) (word $?man_mng) (group_ids $?mids ?id))
 (mot-cat-praW_id-largest_group ? NP|PP ? $?grp)
 (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?anu_mng1 - ?mid1 $? )
 (test (integerp (member$ ?aid $?grp)))
 (test (integerp (member$ ?aid1 $?grp)))
 (test (eq (+ ?id 1) ?mid1))
 (id-Apertium_output ?aid $?anu_mng)
-(test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?man_mng) 0)))
 =>
 	(retract ?f ?f1)
         (if (eq (length $?anu_mng) 0) then (bind $?anu_mng (create$ -)))
@@ -121,7 +118,7 @@
 (not (mng_has_been_aligned ?mid))
 (not (mng_has_been_filled ?aid))
 (test (or (neq (length $?list1) 0) (neq (length $?list2) 0)))
-?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids)
+?f1<-(manual_word_info (head_id ?mid) (word $?man_mng) (group_ids $?mids))
 (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?anu_mng1 - ?mid1 $? ?id)
 (test (numberp ?id))
 (test (eq (+ ?id 1) ?mid))
@@ -129,7 +126,6 @@
 (test (integerp (member$ ?aid $?grp)))
 (test (integerp (member$ ?aid1 $?grp)))
 (id-Apertium_output ?aid $?anu_mng)
-(test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?man_mng) 0)))
 =>      
         (retract ?f ?f1)
         (if (eq (length $?anu_mng) 0) then (bind $?anu_mng (create$ -))) 
@@ -157,9 +153,8 @@
 (anu_id-candidate_ids ?aid ?mid) 
 (not (mng_has_been_aligned ?mid))
 (not (mng_has_been_filled ?aid))
-?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids)
+?f1<-(manual_word_info (head_id ?mid) (word $?man_mng) (group_ids $?mids))
 (id-Apertium_output ?aid $?anu_mng)
-(test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?man_mng) 0)))
 =>
         (retract ?f1)
         (if (eq (length $?anu_mng) 0) then (bind $?anu_mng (create$ -)))
@@ -175,8 +170,7 @@
 (defrule align_restricted_left_over_wrds1
 (declare (salience -197))
 (anu_id-word-possible_mngs ?aid ?word $?pos_mngs)
-?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng&:(subsetp $?man_mng $?pos_mngs) - $?r - $?vib - $?mids)
-(test (and (neq (length  $?r) 0) (neq (length  $?vib) 0)))
+?f<-(manual_word_info (head_id ?mid) (word $?man_mng&:(subsetp $?man_mng $?pos_mngs)) (group_ids $?mids))
 (not (mng_has_been_aligned ?mid))
 (not (mng_has_been_filled ?aid))
 (id-Apertium_output ?aid $?anu_mng)
@@ -194,8 +188,7 @@
 (defrule align_restricted_left_over_wrds2
 (declare (salience -197))
 (man_id-word-possible_mngs ?mid ?word $?pos_mngs)
-?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids)
-(test (and (neq (length  $?r) 0) (neq (length  $?vib) 0)))
+?f<-(manual_word_info (head_id ?mid) (word $?man_mng) (group_ids $?mids))
 (not (mng_has_been_aligned ?mid))
 (not (mng_has_been_filled ?aid))
 (id-word ?aid $?anu_mng&:(subsetp $?anu_mng $?pos_mngs))
@@ -230,11 +223,10 @@
 
 (defrule align_left_over_wrds_using_phrasal_data
 (declare (salience -199))
-?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids)
+?f<-(manual_word_info (head_id ?mid) (word $?man_mng)(group_ids $?mids))
 (anu_id-anu_mng-man_mng         ?aid    ?  $?man_mng)
 (not (mng_has_been_aligned ?mid))
 (not (mng_has_been_filled ?aid))
-(test (and (neq (length  $?r) 0) (neq (length  $?vib) 0)))
 (id-original_word ?aid ?)
 (id-Apertium_output ?aid $?anu_mng)
 =>
@@ -250,12 +242,11 @@
 
 (defrule align_left_over_wrds_using_phrasal_data1
 (declare (salience -200))
-?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - $?r - $?vib - $?mids)
+?f<-(manual_word_info (head_id ?mid) (word $?man_mng)(group_ids $?mids))
 (anu_id-anu_mng-man_mng         ?aid    ?  $? ?man_mng1 $?)
 (test (member$ ?man_mng1 $?man_mng))
 (not (mng_has_been_aligned ?mid))
 (not (mng_has_been_filled ?aid))
-(test (and (neq (length  $?r) 0) (neq (length  $?vib) 0)))
 (id-original_word ?aid ?)
 (id-Apertium_output ?aid $?anu_mng)
 =>

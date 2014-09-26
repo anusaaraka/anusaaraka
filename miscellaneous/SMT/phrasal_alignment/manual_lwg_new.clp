@@ -1,4 +1,7 @@
+(deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot root (default 0))(multislot vibakthi (default 0))(multislot group_ids (default 0)))
+
 (defglobal ?*count* = 0)
+
  
 (deffacts dummy_facts
 	(id-confidence_level)
@@ -14,24 +17,15 @@
 )
 ;-------------------------------------------------------------------------------------
 (defrule get_current_word
-(declare (salience 200))
-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?)
-(not (manual_id_en_hi-word-root-vib-grp_ids ?mid1&:(< ?mid1 ?mid) $?))
+(manual_word_info (head_id ?mid))
+(not (manual_word_info (head_id ?mid1&:(< ?mid1 ?mid))))
 =>
         (assert (current_id ?mid))
 )
 ;-------------------------------------------------------------------------------------
 (defrule remove_manual_punct_facts
 (declare (salience 1001))
-?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid ? ?punc&@PUNCT-Comma|@PUNCT-Dot|@PUNCT-QuestionMark|@PUNCT-DoubleQuote|@PUNCT-DoubleQuote|@PUNCT-Semicolon|@PUNCT-Colon|@PUNCT-SingleQuote|@PUNCT-OpenParen|@PUNCT-ClosedParen|@PUNCT-Exclamation|@SYM-Dollar|@PUNCT-LeftSquareBracket|@PUNCT-RightSquareBracket - $?)
-=>
-        (retract ?f)
-)
-;-------------------------------------------------------------------------------------
-(defrule remove_manual_punct_facts1
-(declare (salience 1001))
-?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid SYM $?word)
-(test (eq $?word -));biMxu F xarpaNa kA muKya PZokasa kahalAwA hE ; here category of 'F' is SYM 
+?f<-(manual_word_info (head_id ?mid) (word $? ?punc&@PUNCT-Comma|@PUNCT-Dot|@PUNCT-QuestionMark|@PUNCT-DoubleQuote|@PUNCT-DoubleQuote|@PUNCT-Semicolon|@PUNCT-Colon|@PUNCT-SingleQuote|@PUNCT-OpenParen|@PUNCT-ClosedParen|@PUNCT-Exclamation|@SYM-Dollar|@PUNCT-LeftSquareBracket|@PUNCT-RightSquareBracket|SYM))
 =>
         (retract ?f)
 )
@@ -53,7 +47,7 @@
 (defrule rule2
 (declare (salience 900))
 ?f0<-(current_id ?mid)
-?f<-(manual_id_en_hi-word-root-vib-grp_ids ?h_id ? $? - $? - $? - $?grp)
+?f<-(manual_word_info (head_id ?h_id) (group_ids $?grp))
 (test (member$ ?mid $?grp))
 (test (eq (member$ - $?grp ) FALSE))
 =>
@@ -66,7 +60,7 @@
 (defrule delete_manual_fact
 (declare (salience 2000))
 ?f1<-(delete_manual_fact ?mid)
-?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?)
+?f2<-(manual_word_info (head_id ?mid))
 =>
 	(retract ?f1 ?f2)
 )
