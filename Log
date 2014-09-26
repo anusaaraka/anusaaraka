@@ -1,4 +1,4 @@
- 16-09-14
+ 22-09-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	admire.clp	distinguish.clp		update.clp
@@ -14,6 +14,8 @@
 	Modified the rules to generate fine category using stanford parser 
  3. sd_lwg_rules.clp
         Modified : check_for_imper1  (to add SBAR in the list)
+        Added    : find_conj_head1 test_nodes_for_verbs replace_nodes_for_main_verb replace_nodes_for_aux rem_fact_with_nodes
+        Removed  : replace_nodes
  4. hindi_meaning.clp:
 	Added : decide_mng_symbols (when cat is symbol), get_mng_from_transliterate_mng 
 	Modified: get_compound_mng_for_physics_domain (printout statements)

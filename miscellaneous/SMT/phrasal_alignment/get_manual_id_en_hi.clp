@@ -1,7 +1,7 @@
 (defglobal ?*id* = 1)
 
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
-
+(deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot root (default 0))(multislot vibakthi (default 0))(multislot group_ids (default 0)))
 
 
 (deffunction remove_character(?char ?str ?replace_char)
@@ -133,7 +133,8 @@
                         (bind $?new_mng (delete-member$  $?new_mng ?word)))
         ))
         
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?mid $?new_mng - - - - - $?gids))
+        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?mid $?new_mng - - - - - $?gids))
+        (assert (manual_word_info (head_id ?mid) (word $?new_mng)(group_ids $?gids)))
 )
 
 (defrule get_id2
@@ -152,7 +153,8 @@
                         (bind $?ids (create$ $?ids ?new_id))
                         (assert (mng_has_been_grouped ?new_id)) 
         ))
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?mid ?man_wrd ?man_wrd1 $?mng - - - - - ?mid =(+ ?mid 1) $?ids))
+        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?mid ?man_wrd ?man_wrd1 $?mng - - - - - ?mid =(+ ?mid 1) $?ids))
+        (assert (manual_word_info (head_id ?mid) (word ?man_wrd ?man_wrd1 $?mng)(group_ids ?mid =(+ ?mid 1) $?ids)))
 ;        (assert (fact_modified_id ?mid)) 
         (assert (mng_has_been_grouped ?mid)) 
         (assert (mng_has_been_grouped =(+ ?mid 1))) 
@@ -164,19 +166,22 @@
 ;Anu_tran :: xo AveSoM ko jodawe_hue lAina xiksWAna meM xiSA [sImAfkiwa karawI hE].
 ;(manual_id_en_hi-word-root-vib-grp_ids 13 pariBARiwa karawI - - - - - 13 14)
 ;(manual_id_en_hi-word-root-vib-grp_ids 14 karawI hE - - - - - 14 15)===> (manual_id_en_hi-word-root-vib-grp_ids 13 pariBARiwa karawI hE - - - - - 13 14 15)
+;Added (length $?man_wrd) and (length $?man_wrd1) in the test condition for the sent. When a solid is deformed, the atoms or molecules are displaced from their equilibrium positions causing a change in the interatomic (or intermolecular) distances. "
 (defrule combine_ids_common_in_two_different_facts
 (declare (salience 750))
-?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_wrd  - $?r - $?vib - $?pre ?id $?pos)
-?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid1 $?man_wrd1 - $?r1 - $?vib1 - $?pre1 ?id $?pos1)
+?f<-(manual_word_info (head_id ?mid) (word $?man_wrd)(group_ids $?pre ?id $?pos))
+?f1<-(manual_word_info (head_id ?mid1) (word $?man_wrd1)(group_ids $?pre1 ?id $?pos1))
+;?f<-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_wrd  - $?r - $?vib - $?pre ?id $?pos)
+;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid1 $?man_wrd1 - $?r1 - $?vib1 - $?pre1 ?id $?pos1)
 ?f2<-(chunk_name-chunk_ids ?chnk&VGF|VGNN $?gids)
 (test (neq ?mid ?mid1))
-(test (and (neq (length $?r) 0)(neq (length $?vib) 0)))
-(test (and (neq (length $?r1) 0)(neq (length $?vib1) 0)))
+;(test (and (neq (length $?r) 0)(neq (length $?vib) 0)(neq (length $?man_wrd)0)))
+;(test (and (neq (length $?r1) 0)(neq (length $?vib1) 0)(neq (length $?man_wrd1) 0)))
 (manual_hin_sen1 $?man_hin_sen)
 =>
 	(retract ?f ?f1)
 	(bind $?grp (sort > (create$ $?pre ?id $?pos $?pre1 $?pos1)))
-        (if (eq $?vib -) then (bind $?vib (create$ )))
+ ;       (if (eq $?vib -) then (bind $?vib (create$ )))
         (bind $?mng (create$ ))
                                 ;(printout t $?man_hin_sen crlf)
 	(loop-for-count (?i 1 (length $?grp))
@@ -184,18 +189,21 @@
                                 (bind $?mng (create$ $?mng (nth$ ?j $?man_hin_sen))) 
                                 ;(printout t ?j $?mng crlf)
         )
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?mid $?mng - - - - - $?grp))
+        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?mid $?mng - - - - - $?grp))
+        (assert (manual_word_info (head_id ?mid) (word $?mng)(group_ids $?grp)))
 )
 
 (defrule get_id3
 (declare (salience 60))
 ?f1<-(manual_id-word ?mid ?man_wrd)
 (test (neq (sub-string 1 6 (implode$ (create$ ?man_wrd))) "@PUNCT"))
-(not (manual_id_en_hi-word-root-vib-grp_ids $? - $? ?mid $?))
+;(not (manual_id_en_hi-word-root-vib-grp_ids $? - $? ?mid $?))
+(not (manual_word_info (group_ids $? ?mid $?)))
 (not (mng_has_been_grouped ?mid))
 =>
 
-	(assert (manual_id_en_hi-word-root-vib-grp_ids ?mid ?man_wrd - - - - - ?mid))
+	;(assert (manual_id_en_hi-word-root-vib-grp_ids ?mid ?man_wrd - - - - - ?mid))
+        (assert (manual_word_info (head_id ?mid) (word ?man_wrd)(group_ids ?mid)))
 )
 
 ;----------------------------------------------------------------------------------------------------------------
@@ -212,7 +220,8 @@
 (not (mng_has_been_grouped ?id2))
 =>
         ;(retract ?f0 ?f1 ?f2)
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 ?w  - - - ?w1 ?w2 - ?id0 ?id1 ?id2))
+        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 ?w  - - - ?w1 ?w2 - ?id0 ?id1 ?id2))
+        (assert (manual_word_info (head_id ?id0) (word ?w)(vibakthi ?w1 ?w2)(group_ids ?id0 ?id1 ?id2)))
         (assert (mng_has_been_grouped ?id1)) 
         (assert (mng_has_been_grouped ?id2)) 
 )
@@ -228,7 +237,8 @@
 (not (mng_has_been_grouped ?id2))
 =>
         ;(retract ?f0 ?f1 ?f2)
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 ?w  - ?w  - ?w1 ?w2 - ?id0 ?id1 ?id2))
+        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 ?w  - ?w  - ?w1 ?w2 - ?id0 ?id1 ?id2))
+        (assert (manual_word_info (head_id ?id0) (word ?w)(root ?w)(vibakthi ?w1 ?w2)(group_ids ?id0 ?id1 ?id2)))
         (assert (mng_has_been_grouped ?id1)) 
         (assert (mng_has_been_grouped ?id2)) 
 )
@@ -248,7 +258,8 @@
 (not (mng_has_been_grouped ?id3))
 =>
         ;(retract ?f1 ?f2 ?f3 ?f4)
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ke ?w meM - ?id0 ?id1 ?id2 ?id3))
+        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ke ?w meM - ?id0 ?id1 ?id2 ?id3))
+        (assert (manual_word_info (head_id ?id0) (word $?noun)(vibakthi ke ?w meM)(group_ids ?id0 ?id1 ?id2 ?id3)))
         (assert (mng_has_been_grouped ?id1)) 
         (assert (mng_has_been_grouped ?id2)) 
         (assert (mng_has_been_grouped ?id3)) 
@@ -265,7 +276,8 @@
 (not (mng_has_been_grouped ?id33))
 =>
         ;(retract ?f1 ?f2 ?f3 ?f4)
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - kI ?w meM - ?id0 ?id1 ?id2 ?id3))
+        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - kI ?w meM - ?id0 ?id1 ?id2 ?id3))
+        (assert (manual_word_info (head_id ?id0) (word $?noun)(vibakthi kI ?w meM)(group_ids ?id0 ?id1 ?id2 ?id3)))
         (assert (mng_has_been_grouped ?id1)) 
         (assert (mng_has_been_grouped ?id2)) 
         (assert (mng_has_been_grouped ?id3)) 
@@ -282,7 +294,8 @@
 (not (mng_has_been_grouped ?id2))
 =>
         ;(retract ?f1 ?f2 ?f3)
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - kI ?w - ?id0 ?id1 ?id2))
+        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - kI ?w - ?id0 ?id1 ?id2))
+        (assert (manual_word_info (head_id ?id0) (word $?noun)(vibakthi kI ?w)(group_ids ?id0 ?id1 ?id2)))
         (assert (mng_has_been_grouped ?id1)) 
         (assert (mng_has_been_grouped ?id2)) 
 )
@@ -302,7 +315,8 @@
 (not (mng_has_been_grouped ?id2))
 =>
         ;(retract ?f1 ?f2 ?f3)
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ke ?w - ?id0 ?id1 ?id2))
+        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ke ?w - ?id0 ?id1 ?id2))
+        (assert (manual_word_info (head_id ?id0) (word $?noun)(vibakthi ke ?w)(group_ids ?id0 ?id1 ?id2)))
         (assert (mng_has_been_grouped ?id1)) 
         (assert (mng_has_been_grouped ?id2)) 
 )
@@ -318,7 +332,8 @@
 (not (mng_has_been_grouped ?id2))
 =>
         ;(retract ?f1 ?f2 ?f3)
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?w  - - - 0 - ?id0 ?id2))
+        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?w  - - - 0 - ?id0 ?id2))
+        (assert (manual_word_info (head_id ?id0) (word $?noun ?w)(group_ids ?id0 ?id2)))
         (assert (mng_has_been_grouped ?id1)) 
         (assert (mng_has_been_grouped ?id2)) 
 )
@@ -341,35 +356,43 @@
 (not (vib_added ?id0))
 =>
         (assert (manual_id-en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - ?id0 ?id3))
+        (assert (manual_word_info (head_id ?id0) (word $?noun)(vibakthi ?vib)(group_ids ?id0 ?id3)))
 	(assert (vib_added ?id0))
 )
 ;----------------------------------------------------------------------------------------------------------------
 (defrule single_vib
 (declare (salience 70))
-?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid0 $?noun - - - - - $?grp_ids ?id0)
-?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle - - - - - $?grp_ids1)
+?f1<-(manual_word_info (head_id ?mid0) (word $?noun)(group_ids $?grp_ids ?id0))
+?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle)(group_ids $?grp_ids1))
+;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid0 $?noun - - - - - $?grp_ids ?id0)
+;?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle - - - - - $?grp_ids1)
 (not (mng_has_been_grouped ?id1))
 (not (vib_added ?id0))
 =>
         (retract ?f1 ?f2)
         (assert (mng_has_been_grouped ?id1)) 
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids ?id0 $?grp_ids1))
+        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids ?id0 $?grp_ids1))
+        (assert (manual_word_info (head_id ?id0) (word $?noun)(vibakthi ?vib)(group_ids ?id0 $?grp_ids1)))
 	(assert (vib_added ?id0))
 )
 
 
 (defrule single_vib1
 (declare (salience 70))
-?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid0 $?noun - - - - - $?grp_ids ?id0)
-?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle $?r_wrd - - - - - ?id1 $?grp_ids1)
+?f1<-(manual_word_info (head_id ?mid0) (word $?noun)(group_ids $?grp_ids ?id0))
+?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle $?r_wrd)(group_ids ?id1 $?grp_ids1))
+;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid0 $?noun - - - - - $?grp_ids ?id0)
+;?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle $?r_wrd - - - - - ?id1 $?grp_ids1)
 (test (neq (length $?r_wrd) 0))
 (not (vib_added ?id0))
 (not (vib_added ?new_id))
 =>
         (retract ?f1 ?f2)
         (bind ?new_id (nth$ 1 $?grp_ids1))
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids ?id0 ?id1))
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?new_id $?r_wrd - - - - - $?grp_ids1))
+        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids ?id0 ?id1))
+        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?new_id $?r_wrd - - - - - $?grp_ids1))
+        (assert (manual_word_info (head_id ?id0) (word $?noun)(vibakthi ?vib)(group_ids $?grp_ids ?id0 ?id1)))
+        (assert (manual_word_info (head_id ?new_id) (word $?r_wrd)(group_ids $?grp_ids1)))
 	(assert (vib_added ?id0))
 	(assert (vib_added ?new_id))
 )
@@ -377,12 +400,14 @@
 
 (defrule single_vib2
 (declare (salience 60))
-?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle - - - - - $?grp_ids)
+?f1<-(manual_word_info (head_id ?id0) (word $?noun ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle)(group_ids $?grp_ids))
+;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle - - - - - $?grp_ids)
 (test (neq (length $?noun) 0))
 (not (vib_added ?id0))
 =>
         (retract ?f1)
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids))
+        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids))
+        (assert (manual_word_info (head_id ?id0) (word $?noun)(vibakthi ?vib)(group_ids $?grp_ids)))
 	(assert (vib_added ?id0))
 )
 
@@ -392,15 +417,18 @@
 (defrule get_kara_tam
 (declare (salience 76))
 (id-kara_grouped ?id)
-?f<-(manual_id_en_hi-word-root-vib-grp_ids ?id  $?m ?w $?m1 - - - - - $?grp_ids)
-?f1<-(man_word-root-cat    ?w ?root&kara|ho|xe    v)
+?f<-(manual_word_info (head_id ?id) (word $?m ?w $?m1)(group_ids $?grp_ids))
+;?f<-(manual_id_en_hi-word-root-vib-grp_ids ?id  $?m ?w $?m1 - - - - - $?grp_ids)
+?f1<-(man_word-root-cat    ?w&~howI ?root&kara|ho|xe    v)
 (test (neq  (length $?m) 0))
 =>
 	(retract ?f ?f1)
 	(if (eq (length $?m1) 0) then 
-		(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  $?m ?w $?m1 - $?m ?root - - - $?grp_ids))
+		;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  $?m ?w $?m1 - $?m ?root - - - $?grp_ids))
+		(assert (manual_word_info (head_id ?id) (word $?m ?w $?m1)(root $?m ?root)(group_ids $?grp_ids)))
 	else
-		(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  $?m ?w $?m1 - $?m ?root - $?m1 - $?grp_ids))
+		;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  $?m ?w $?m1 - $?m ?root - $?m1 - $?grp_ids))
+		(assert (manual_word_info (head_id ?id) (word $?m ?w $?m1)(root $?m ?root)(vibakthi $?m1)(group_ids $?grp_ids)))
 	)
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
@@ -409,14 +437,23 @@
 ;ex: More [precisely], a is the acceleration of the [center of] mass of the system.
 (defrule tam
 (declare (salience 75))
-?f<-(manual_id_en_hi-word-root-vib-grp_ids ?id   ?word $?wrds - - - - - $?grp_ids)
-?f1<-(man_word-root-cat    ?word ?root&~kara~ho    v)
+?f<-(manual_word_info (head_id ?id) (word ?word $?wrds)(group_ids $?grp_ids))
+;?f<-(manual_id_en_hi-word-root-vib-grp_ids ?id   ?word $?wrds - - - - - $?grp_ids)
+?f1<-(man_word-root-cat    ?word ?root&~kara&~ho    v)
 (chunk_name-chunk_ids-words VGF|VGNN|VGNF $? ?id $? - $?)
-(test (neq (length ?root) (length ?word)))
+;(test (neq (length ?root) (length ?word)))
 =>
-	(bind ?tam (string-to-field (sub-string (+ (length ?root) 1)  (length ?word) ?word)))
-	(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root -  ?tam $?wrds  - $?grp_ids))
-	(retract ?f ?f1)
+	(if (eq ?word ?root) then ;Ex: You can neither inherit it, nor pass it on to your progeny. न तो आप इसे उत्तराधिकार में पा सकते हैं और न ही अपनी सन्तति को विरासत में दे सकते हैं
+		;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root -  0 $?wrds  - $?grp_ids))
+		(assert (manual_word_info (head_id ?id) (word ?word $?wrds)(root ?root)(vibakthi 0 $?wrds)(group_ids $?grp_ids)))
+
+		(retract ?f ?f1)
+	else
+		(bind ?tam (string-to-field (sub-string (+ (length ?root) 1)  (length ?word) ?word)))
+		;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root -  ?tam $?wrds  - $?grp_ids))
+		(assert (manual_word_info (head_id ?id) (word ?word $?wrds)(root ?root)(vibakthi ?tam $?wrds)(group_ids $?grp_ids)))
+		(retract ?f ?f1)
+	)
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
 ;This process continues till the capacitor is fully charged.
@@ -424,7 +461,8 @@
 ;root = cala , tam = wA_rahawA_hE 
 (defrule replace_tam_with_root-tam
 (declare (salience 72))
-?f <- (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root -  ?tam $?wrds  - $?grp_ids)
+?f<-(manual_word_info (head_id ?id) (word ?word $?wrds)(root ?root)(vibakthi ?tam $?wrds)(group_ids $?grp_ids))
+;?f <- (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root -  ?tam $?wrds  - $?grp_ids)
 (test (neq ?tam -))
 (not (replaced_tam_with_root_tam ?id))
 (not (vib_added ?id))
@@ -436,12 +474,14 @@
 		(bind ?root_tam (string-to-field (implode$ (remove_character "_"  (implode$ (create$ ?mng)) " "))))
 		(printout t ?root_tam crlf)
 		(if (eq ?root ?word) then 
-			(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root - (explode$ ?root_tam) - $?grp_ids))
+			;;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root - (explode$ ?root_tam) - $?grp_ids))
+			(assert (manual_word_info (head_id ?id) (word ?word $?wrds)(root ?root)(vibakthi ?root ?tam)(group_ids $?grp_ids)))
 			(assert (replaced_tam_with_root_tam ?id)) 
 		else
 		(bind ?new_tam (sub-string 2 (length ?root_tam) ?root_tam))
 		(printout t ?new_tam ?root_tam crlf)
-			(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root - (explode$ ?new_tam) - $?grp_ids))
+			;;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root - (explode$ ?new_tam) - $?grp_ids))
+			(assert (manual_word_info (head_id ?id) (word ?word $?wrds)(root ?root)(vibakthi ?new_tam)(group_ids $?grp_ids)))
 			(assert (replaced_tam_with_root_tam ?id))
 		)
 		(retract ?f)
@@ -453,28 +493,39 @@
 
 (defrule verb_rule1
 (declare (salience 50)) 
-?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word - - - - - $?grp_ids)
+?f1<-(manual_word_info (head_id ?id0) (word $?noun ?iwa_word)(group_ids $?grp_ids))
+;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word - - - - - $?grp_ids)
 (test (eq (numberp ?iwa_word) FALSE))
 (test (or (eq (sub-string (- (length ?iwa_word) 2) (length ?iwa_word) ?iwa_word) "iwa") (eq (sub-string (- (length ?iwa_word) 2) (length ?iwa_word) ?iwa_word) "rpa") ))
-?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?tam&karawA|howA|karawI|howI|karawe|howe|karanA - - - - - ?id1)
-?f3<-(manual_id_en_hi-word-root-vib-grp_ids ?id2&:(=(+ ?id1 1) ?id2) ?tam1&hE|hEM - - - - - ?id2)
+?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1)) (word ?tam&karawA|howA|karawI|howI|karawe|howe|karanA)(group_ids ?id1))
+?f3<-(manual_word_info (head_id ?id2&:(=(+ ?id1 1) ?id2)) (word ?tam1&hE|hEM)(group_ids ?id2))
+;?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?tam&karawA|howA|karawI|howI|karawe|howe|karanA - - - - - ?id1)
+;?f3<-(manual_id_en_hi-word-root-vib-grp_ids ?id2&:(=(+ ?id1 1) ?id2) ?tam1&hE|hEM - - - - - ?id2)
 (man_word-root-cat ?tam ?root&kara|ho v)
+(not (replaced_tam_with_root_tam ?id0))
 =>
         (retract ?f1 ?f2 ?f3)
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word ?tam ?tam1  - ?iwa_word ?root - wA ?tam1 - $?grp_ids ?id1 ?id2))
+       ; ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word ?tam ?tam1  - ?iwa_word ?root - wA ?tam1 - $?grp_ids ?id1 ?id2))
+	(assert (manual_word_info (head_id ?id0) (word $?noun ?iwa_word ?tam ?tam1)(root ?iwa_word ?root)(vibakthi wA ?tam1)(group_ids $?grp_ids ?id1 ?id2)))
+        (assert (replaced_tam_with_root_tam ?id0))
 )
 
 
 (defrule verb_rule2
 (declare (salience 50))
-?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word - - - - - $?grp_ids)
+?f1<-(manual_word_info (head_id ?id0) (word $?noun ?iwa_word)(group_ids $?grp_ids))
+;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word - - - - - $?grp_ids)
 (test (eq (numberp ?iwa_word) FALSE))
 (test (eq (sub-string (- (length ?iwa_word) 2) (length ?iwa_word) ?iwa_word) "iwa"))
-?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?tam&karawA|howA|karawI|howI|karawe|howe|karanA ?tam1&hE|hEM - - - - - ?id1 ?id2) 
+?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1)) (word ?tam&karawA|howA|karawI|howI|karawe|howe|karanA ?tam1&hE|hEM)(group_ids ?id1 ?id2))
+;?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?tam&karawA|howA|karawI|howI|karawe|howe|karanA ?tam1&hE|hEM - - - - - ?id1 ?id2) 
 (man_word-root-cat ?tam ?root&kara|ho v)
+(not (replaced_tam_with_root_tam ?id0))
 =>
         (retract ?f1 ?f2)
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word ?tam ?tam1  - ?iwa_word ?root - wA ?tam1 - $?grp_ids ?id1 ?id2))
+	(assert (manual_word_info (head_id ?id0) (word $?noun $?noun ?iwa_word ?tam ?tam1)(root ?iwa_word ?root)(vibakthi wA ?tam1)(group_ids $?grp_ids ?id1 ?id2)))
+        (assert (replaced_tam_with_root_tam ?id0))
+        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?iwa_word ?tam ?tam1  - ?iwa_word ?root - wA ?tam1 - $?grp_ids ?id1 ?id2))
 )
 
 ;Eng_semn:: The line connecting the two charges defines a direction in space.
@@ -483,32 +534,45 @@
 ;(manual_id_en_hi-word-root-vib-grp_ids 13 pariBARiwa karawI hE - - - - - 13 14 15) ==> (manual_id_en_hi-word-root-vib-grp_ids 13 pariBARiwa karawI hE - pariBARiwa kara - wA hE - 13 14 15)
 (defrule verb_rule5
 (declare (salience 50))
-?f<-(manual_id_en_hi-word-root-vib-grp_ids ?id $?noun ?iwa_word ?tam&karawA|howA|karawI|howI|karawe|howe ?tam1&hE|hEM - - - - - $?grp_ids)
+?f<-(manual_word_info (head_id ?id) (word $?noun ?iwa_word ?tam&karawA|howA|karawI|howI|karawe|howe ?tam1&hE|hEM)(group_ids $?grp_ids))
+;?f<-(manual_id_en_hi-word-root-vib-grp_ids ?id $?noun ?iwa_word ?tam&karawA|howA|karawI|howI|karawe|howe ?tam1&hE|hEM - - - - - $?grp_ids)
 (test (eq (numberp ?iwa_word) FALSE))
 (test (eq (sub-string (- (length ?iwa_word) 2) (length ?iwa_word) ?iwa_word) "iwa"))
 (man_word-root-cat ?tam ?root&kara|ho v)
+(not (replaced_tam_with_root_tam ?id))
 =>
         (retract ?f)
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id $?noun ?iwa_word ?tam ?tam1  - ?iwa_word ?root - wA ?tam1 - $?grp_ids))
+	(assert (manual_word_info (head_id ?id) (word $?noun ?iwa_word ?tam ?tam1)(root ?iwa_word ?root)(vibakthi wA ?tam1)(group_ids $?grp_ids)))
+        (assert (replaced_tam_with_root_tam ?id))
+        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id $?noun ?iwa_word ?tam ?tam1  - ?iwa_word ?root - wA ?tam1 - $?grp_ids))
 )
 
 (defrule verb_rule3
 (declare (salience 50))
-?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 ?tam&honA|karanA|kahanA ?wrd&cAhie - - - - - $?grp_ids)
+?f1<-(manual_word_info (head_id ?id0) (word ?tam&honA|karanA|kahanA ?wrd&cAhie)(group_ids $?grp_ids))
+;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 ?tam&honA|karanA|kahanA ?wrd&cAhie - - - - - $?grp_ids)
 (man_word-root-cat ?tam ?root&kara|ho|kaha v)
+(not (replaced_tam_with_root_tam ?id0))
 =>
         (retract ?f1)
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 ?tam ?wrd  - ?root - nA ?wrd -  $?grp_ids ))
+	(assert (manual_word_info (head_id ?id0) (word ?tam ?wrd)(root ?root)(vibakthi nA ?wrd)(group_ids $?grp_ids)))
+        (assert (replaced_tam_with_root_tam ?id0))
+        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 ?tam ?wrd  - ?root - nA ?wrd -  $?grp_ids ))
 )
 ;
 (defrule verb_rule4
 (declare (salience 50))
-?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - - - $?grp_ids)
-?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1)  ?tam&honA|karanA|kahanA ?wrd&cAhie - - - - - $?grp_ids1)
+?f1<-(manual_word_info (head_id ?id0) (word $?noun)(group_ids $?grp_ids))
+?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1)) (word ?tam&honA|karanA|kahanA ?wrd&cAhie)(group_ids $?grp_ids1))
+;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - - - $?grp_ids)
+;?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1)  ?tam&honA|karanA|kahanA ?wrd&cAhie - - - - - $?grp_ids1)
 (man_word-root-cat ?tam ?root&kara|ho|kaha v)
+(not (replaced_tam_with_root_tam ?id0))
 =>
         (retract ?f1 ?f2)
-        (assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?tam ?wrd - $?noun ?root - nA ?wrd - $?grp_ids $?grp_ids1))
+	(assert (manual_word_info (head_id ?id0) (word $?noun ?tam ?wrd)(root $?noun ?root)(vibakthi nA ?wrd)(group_ids $?grp_ids $?grp_ids1)))
+        (assert (replaced_tam_with_root_tam ?id0))
+        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?tam ?wrd - $?noun ?root - nA ?wrd - $?grp_ids $?grp_ids1))
 
 )
 

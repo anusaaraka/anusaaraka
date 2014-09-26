@@ -38,6 +38,18 @@
 	(assert (dont_replace_VP ?VP1))
  )
 
+ ;asserting a control fact in order to stop replacing the "VP" having conjunction ","
+ ;Cancer can not be caused, can not be prevented. [(VP5 VP6 VP14)]
+ ;In 1676, he presented his law of elasticity, now called Hooke's law.
+ (defrule find_conj_head1
+ (declare (salience 1702))
+ ?f1<-(Head-Level-Mother-Daughters_lwg ?head1 ?lvl1 ?VP1 ?VP2 $?pos1)
+ ?f3<-(Node-Category ?VP2 VP)
+ =>
+        (assert (dont_replace_VP ?VP1))
+ )
+
+
 ;--------------------------------------------------------------------------
  ;They are eating and dancing or sleeping or soring.
  ;They have been eating, drinking and sleeping.
@@ -245,26 +257,40 @@
  (printout ?*lwg_debug_file* " =========================================================================================" crlf crlf)
  )
 
+ (defrule test_nodes_for_verbs
+ (declare (salience 60))
+ ?f<-(root-verbchunk-tam-parser_chunkids - $?vb_chk - $?tam - $?pre ?node $?post)
+ (Node-Category ?node ?cat)
+ (test (eq (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO AUX AUXG)) FALSE)) 
+ =>
+ (retract ?f)
+ (bind $?vb_chk (delete-member$ $?vb_chk ?node))
+ (bind $?tam (delete-member$ $?tam ?node))
+ (assert (root-verbchunk-tam-parser_chunkids - $?vb_chk - $?tam - $?pre $?post))
+ )
+ 
  ;--------------------------------------------------------------------------
  ;Replacing all the nodes with there child
  ;Here it look like,
  ;(root-verbchunk-tam-parser_chunkids - is making feed - s ing 0 - P2 P3 P6)
- (defrule replace_nodes
+ (defrule replace_nodes_for_aux
  (declare (salience 60))
- ?f<-(root-verbchunk-tam-parser_chunkids - $?vb_chk - $?tam - $?pre ?node $?post)
+ ?f<-(root-verbchunk-tam-parser_chunkids - $?vb_chk - $?tam - $?pre ?node $?post ?main_verb)
  (Head-Level-Mother-Daughters ?h_id ? ?node $?child)
  (parserid-word ?h_id ?head)
  (Node-Category ?node ?cat)
  (parser_id-root-category-suffix-number  ?h_id  ? ? ?suf ?)
  =>
 	
-	(retract ?f)
+	(retract ?f)(printout t "node :: "?node "---  head:: "?head crlf)
         (printout ?*lwg_debug_file* "	(rule_name - replace_nodes" crlf
-                         "			Before    - (root-verbchunk-tam-parser_chunkids - "(implode$ $?vb_chk)" - "(implode$ $?tam)" - "(implode$ $?pre)" "?node" "(implode$ $?post)")" crlf)
+                         "			Before    - (root-verbchunk-tam-parser_chunkids - "(implode$ $?vb_chk)" - "(implode$ $?tam)" - "(implode$ $?pre)" "?node" "(implode$ $?post)" "?main_verb ")" crlf)
 
         (bind $?chunkid  (create$ $?pre ?node $?post))
         (bind ?pos (member$ ?node $?chunkid))
-        (if (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO AUX AUXG)) then
+        (bind ?head (lowcase ?head))
+        (if (and (member$ ?head (create$ make made get making let am being do does doing need can could ought might must should been had may will be is are has shall would were was did to have used use )) (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO AUX AUXG))) then
+        ;(if (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO AUX AUXG)) then
         (bind $?chunkid (create$ (subseq$ $?chunkid 1 (- ?pos 1)) $?child (subseq$ $?chunkid (+ ?pos 1) (length $?chunkid))))
         (bind $?vb_chk (create$ (subseq$ $?vb_chk 1 (- ?pos 1)) (lowcase ?head) (subseq$ $?vb_chk (+ ?pos 1) (length $?vb_chk))))
           (if (eq ?cat VBG) then 
@@ -289,10 +315,53 @@
            (bind $?tam (delete-member$ $?tam ?node))
 	   (printout t $?tam "   "$?vb_chk crlf)
            (bind $?chunkid (delete-member$ $?chunkid ?node)));)
-        (assert (root-verbchunk-tam-parser_chunkids - $?vb_chk - $?tam - $?chunkid))
-        (printout ?*lwg_debug_file* "			After     - (root-verbchunk-tam-parser_chunkids - "(implode$ $?vb_chk)" - "(implode$ $?tam)" - "(implode$ $?chunkid)")" crlf)
+        (assert (root-verbchunk-tam-parser_chunkids - $?vb_chk - $?tam - $?chunkid ?main_verb))
+        (printout ?*lwg_debug_file* "			After     - (root-verbchunk-tam-parser_chunkids - "(implode$ $?vb_chk)" - "(implode$ $?tam)" - "(implode$ $?chunkid)" "?main_verb" )" crlf)
  )
 
+ (defrule replace_nodes_for_main_verb
+ (declare (salience 59))
+ ?f<-(root-verbchunk-tam-parser_chunkids - $?vb_chk - $?tam - $?pre ?node)
+ (Head-Level-Mother-Daughters ?h_id ? ?node $?child)
+ (parserid-word ?h_id ?head)
+ (Node-Category ?node ?cat)
+ (parser_id-root-category-suffix-number  ?h_id  ? ? ?suf ?)
+ =>
+
+        (retract ?f)(printout t "node :: "?node "---  head:: "?head crlf)
+        (printout ?*lwg_debug_file* "   (rule_name - replace_nodes" crlf
+                         "                      Before    - (root-verbchunk-tam-parser_chunkids - "(implode$ $?vb_chk)" - "(implode$ $?tam)" - "(implode$ $?pre)" "?node" )" crlf)
+
+        (bind $?chunkid  (create$ $?pre ?node))
+        (bind ?pos (member$ ?node $?chunkid))
+        (if (member$ ?cat (create$ VBG VBN VBD VBZ VBP VB MD TO AUX AUXG)) then
+        (bind $?chunkid (create$ (subseq$ $?chunkid 1 (- ?pos 1)) $?child (subseq$ $?chunkid (+ ?pos 1) (length $?chunkid))))
+        (bind $?vb_chk (create$ (subseq$ $?vb_chk 1 (- ?pos 1)) (lowcase ?head) (subseq$ $?vb_chk (+ ?pos 1) (length $?vb_chk))))
+          (if (eq ?cat VBG) then 
+                    (bind $?tam (create$ (subseq$ $?tam 1 (- ?pos 1)) ing (subseq$ $?tam (+ ?pos 1) (length $?tam))))
+              else (if (eq ?cat VBN) then 
+                   (bind $?tam (create$ (subseq$ $?tam 1 (- ?pos 1)) en (subseq$ $?tam (+ ?pos 1) (length $?tam))))
+              else (if (eq ?cat VBD) then 
+                   (bind $?tam (create$ (subseq$ $?tam 1 (- ?pos 1)) ed (subseq$ $?tam (+ ?pos 1) (length $?tam))))
+              else (if (eq ?cat VBZ) then 
+                   (bind $?tam (create$ (subseq$ $?tam 1 (- ?pos 1)) s (subseq$ $?tam (+ ?pos 1) (length $?tam))))
+              else (if (eq ?cat VBP) then 
+                   (bind $?tam (create$ (subseq$ $?tam 1 (- ?pos 1)) 0 (subseq$ $?tam (+ ?pos 1) (length $?tam))))
+              else (if (eq ?cat VB) then 
+                   (bind $?tam (create$ (subseq$ $?tam 1 (- ?pos 1)) 0 (subseq$ $?tam (+ ?pos 1) (length $?tam))))
+              else (if (eq ?cat AUX) then ;Added for bllip parser. Ex: The recent advertising campaign has had a marked effect on sales.  
+                   (bind $?tam (create$ (subseq$ $?tam 1 (- ?pos 1)) ?suf (subseq$ $?tam (+ ?pos 1) (length $?tam))))
+              else
+                   (bind $?tam (create$ (subseq$ $?tam 1 (- ?pos 1)) 0 (subseq$ $?tam (+ ?pos 1) (length $?tam)))))))))))
+
+      else
+           (bind $?vb_chk (delete-member$ $?vb_chk ?node))
+           (bind $?tam (delete-member$ $?tam ?node))
+           (printout t $?tam "   "$?vb_chk crlf)
+           (bind $?chunkid (delete-member$ $?chunkid ?node)));)
+        (assert (root-verbchunk-tam-parser_chunkids - $?vb_chk - $?tam - $?chunkid))
+        (printout ?*lwg_debug_file* "                   After     - (root-verbchunk-tam-parser_chunkids - "(implode$ $?vb_chk)" - "(implode$ $?tam)" - "(implode$ $?chunkid)")" crlf)
+ )
 ;--------------------------------------------------------------------------
 ; ;Gets conjunction lwg facts
 ; ;Ex:-I ate fruits, drank milk and slept.
@@ -698,3 +767,18 @@
 	(assert (Head-Level-Mother-Daughters ?h1 ?l1 ?Mot $?daut))
  ) 
 ;--------------------------------------------------------------------------
+ ;Eg sen:: Bohr's second postulate of quantisation [(Eq. (12.11)] says that the allowed values of angular momentum are integral multiples of h/2 π.
+ ;(root-verbchunk-tam-parser_chunkids - VBD15 - VBD15 - VBD15)
+ ;Remove fact containg nodes
+ (defrule rem_fact_with_nodes
+ (declare (salience -160))
+ ?f<-(root-verbchunk-tam-parser_chunkids - $? ?node $? - $? - $?)
+ (Node-Category ?node ?)
+ =>
+ (retract ?f)
+ (printout t "Warning: LWG node not mapped ," ?node " is not replaced with verb_chunk. " crlf)
+ )
+;--------------------------------------------------------------------------
+ 
+
+
