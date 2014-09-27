@@ -1,3 +1,4 @@
+(deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot root (default 0))(multislot vibakthi (default 0))(multislot group_ids (default 0)))
 ;------------------------------------------------------------------------------------------------------------
 (deffunction remove_character(?char ?str ?replace_char)
 	(bind ?new_str "")
@@ -73,7 +74,8 @@
 ;Guard, stop this donkey and let [me] get off [his] back! I can not do without him.
 (defrule get_hnd_dic
 (declare (salience 2001))
-(manual_id_en_hi-word-root-vib-grp_ids ?mid $?mng - ?root - $?vib - $?)
+(manual_word_info (head_id ?mid) (word $?mng) (root ?root))
+;(manual_id_en_hi-word-root-vib-grp_ids ?mid $?mng - ?root - $?vib - $?)
 (test (eq (numberp (implode$ (create$ $?mng))) FALSE ))
 (test (or (neq (gdbm_lookup "restricted_hnd_words.gdbm" (implode$ (create$ $?mng))) "FALSE")(neq (gdbm_lookup "restricted_hnd_words.gdbm" ?root) "FALSE")))
 =>
@@ -110,7 +112,8 @@
 (declare (salience 2000))
 (id-word ?aid ?wrd)
 (anu_id-word-possible_mngs ?aid ?wrd $?pos_mngs)
-(or (manual_id-word ?mid $?man_mng)(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - ? - $? - $?))
+(or (manual_id-word ?mid $?man_mng)(manual_word_info (head_id ?mid) (word $?man_mng)))
+;(or (manual_id-word ?mid $?man_mng)(manual_id_en_hi-word-root-vib-grp_ids ?mid $?man_mng - ? - $? - $?))
 (test (subsetp $?man_mng $?pos_mngs))
 (hindi_id_order $?hin_order)
 (test (neq (member$ ?aid $?hin_order) FALSE))
