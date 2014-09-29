@@ -1,4 +1,4 @@
- 22-09-14
+ 29-09-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	admire.clp	distinguish.clp		update.clp
@@ -60,7 +60,7 @@
         Loaded  parserid_wordid_mapping.dat and word2.dat in sd_category module
 	Loaded  root.dat file in H_ordering_rules module
  21. hnd_translation.pl:
-        Modified 'hindi_sentence_tmp.dat' to 'hindi_sentence.dat'
+        Modified 'hindi_sentence_tmp.dat' to 'hindi_sentence_tmp2.dat'
 		 '$ARGV[0]_trnsltn.html' to '$ARGV[0]_trnsltn_tmp.html'	
  22. Added relation_table/ folder in Doc contains following files:
 	relation-table-for-WSD-wx.html  
@@ -94,16 +94,20 @@
 	-> src folder in stanford-parser dir (Separated source files related to stanford-parser)
  	-> transliterate_meaning.txt file in Anu_data
 	-> get_rev_alltam.sh file to generate Alltam in reverse format
- 27. Removed : 
+ 28. Added:
+	iit-bombay-UNL-hi-en dictionary in goldendict format(reverse of en-hi)
+ 29. Removed : 
 	miscellaneous/SMT/phrasal_alignment/replace-mapping-symbols_for_align.lex
 	Stanford parser version 3.3.1
- 28. Modified get_word_count.c and get_word_count_single.c 
- 29. Updated following lex files:
+ 30. Renamed iit-bombay dictionary has iit-bombay-UNL-en-hi
+ 31. Modified get_word_count.c and get_word_count_single.c 
+ 32. Updated following lex files:
 	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
-	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern
+	mapping-symbols.lex -> 	Added code to handle '|'
+	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern, Added code to handle '|'
 	morph.lex:	-> Modified to get tam info from morph.
 	wx_utf8.lex:	-> Handled 'eV', 'eY', 'oV'
- 30. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
+ 33. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
 	Word-to-Word-dict.txt			run_alignment.sh			align-left-over-wrds.py
 	en-hi-gdbm-dict.txt			run_alignment-hi-en.sh			get_word_align.py
 						run_alignment-hi-en-hi.sh		match_value_in_hnd.py
@@ -113,14 +117,13 @@
  	multifast-v1.0.0/src/extract_key.c	compile.sh				mapping.py
 											print_shortest_path.py
 	run_H_gen_sen_eng.bat								replace_val_trn.py
-
     	multifast-v1.0.0/src/Makefile
 	Readme 
 	phrasal_alignment.css
 	phrasal_alignment.js
- 31. Updated following dictionarie related files:
+ 34. Updated following dictionarie related files:
 	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix		provisional_multi_word_dictionary.txt 
- 32. Updated following shell files:
+ 35. Updated following shell files:
 	Anusaaraka_stanford_align_eng_ord.sh
 	replace-abbrevations.sh
 	abbr.sh
@@ -130,19 +133,21 @@
 	get_multi_word-dic.sh
 	stdenglish.sh	-> 	Added code to run  check_for_TITLE.c programme
 	run_align_browser_eng.sh to work email concept in alignment layered o/p
- 33. Updated following files:
+ 36. Updated following files:
 	create_eng_align_html_phrasal.clp to work email concept in alignment layered o/p
 	this1.py
 	stanford-parser/README
  	Readme_to_use_email_in_firefox.txt
- 34. Updated Stanford parser version from 3.3.1 to 3.4.1 in following files:
+	Dictionaries/Readme
+ 37. Updated Stanford parser version from 3.3.1 to 3.4.1 in following files:
 	Anusaaraka_bllip_parser.sh	Anusaaraka_bllip_parser_minion.sh	Anusaaraka_rasp.sh	Anusaaraka_site.sh
 	Anusaaraka_stanford-Factored.sh	Anusaaraka_stanford_align_man_ord.sh	Anusaaraka.sh		Anusaaraka_all.sh	
 	Anusaaraka_berkeley.sh		run_stanford-gui-factored.sh		run_stanford-gui-pcfg.sh
 	Anusaaraka_stanford.sh		shell_scripts/anu_compile.sh		shell_scripts/remove_out-files.sh
- 35. Updated following verifieds:
+ 38. Updated following verifieds:
 	sd_verified (846)
- 36. Updated Log. 
+ 39. Updated Log. 
+
 
  05-06-14
  ========
