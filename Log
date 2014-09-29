@@ -107,6 +107,7 @@
 	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern, Added code to handle '|'
 	morph.lex:	-> Modified to get tam info from morph.
 	wx_utf8.lex:	-> Handled 'eV', 'eY', 'oV'
+	phrasal_alignment/replace-punctuation.lex	-> 	Added '~' 
  33. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
 	Word-to-Word-dict.txt			run_alignment.sh			align-left-over-wrds.py
 	en-hi-gdbm-dict.txt			run_alignment-hi-en.sh			get_word_align.py
