@@ -326,8 +326,8 @@
 (defrule word_[hyphen]_word
 (declare (salience 81))
 ?f1<-(manual_id-word ?id0 $?noun)
-?f2<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) -)
-?f3<-(man_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w)
+?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) -)
+?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>
@@ -381,8 +381,6 @@
 (declare (salience 70))
 ?f1<-(manual_word_info (head_id ?mid0) (word $?noun)(group_ids $?grp_ids ?id0))
 ?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle $?r_wrd)(group_ids ?id1 $?grp_ids1))
-;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid0 $?noun - - - - - $?grp_ids ?id0)
-;?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle $?r_wrd - - - - - ?id1 $?grp_ids1)
 (test (neq (length $?r_wrd) 0))
 (not (vib_added ?id0))
 (not (vib_added ?new_id))
@@ -396,40 +394,43 @@
 	(assert (vib_added ?id0))
 	(assert (vib_added ?new_id))
 )
-
-
+;-------------------------------------------------------------------------------------------------------------------------------
 (defrule single_vib2
 (declare (salience 60))
 ?f1<-(manual_word_info (head_id ?id0) (word $?noun ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle)(group_ids $?grp_ids))
-;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle - - - - - $?grp_ids)
 (test (neq (length $?noun) 0))
 (not (vib_added ?id0))
 =>
-        (retract ?f1)
-        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids))
-        (assert (manual_word_info (head_id ?id0) (word $?noun)(vibakthi ?vib)(group_ids $?grp_ids)))
+	(modify ?f1 (word $?noun)(vibakthi ?vib))
 	(assert (vib_added ?id0))
 )
 
 ;-------------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 5-9-14
 ;The Princess began to weep. rAjakumArI ne ronA [SurU kara xiyA]. 
-(defrule get_kara_tam
+(defrule get_kara_root
+(declare (salience 77))
+?f0<-(id-kara_grouped ?id)
+?f<-(manual_word_info (head_id ?id) (word $?m ?w)(group_ids $?grp_ids))
+?f1<-(man_word-root-cat    ?w&~howI ?root&kara|ho|xe    v)
+=>
+	(retract ?f0 ?f1)
+	(modify ?f (root $?m ?root))
+)
+;-------------------------------------------------------------------------------------------------------------------------------
+(defrule get_kara_root1
 (declare (salience 76))
 (id-kara_grouped ?id)
 ?f<-(manual_word_info (head_id ?id) (word $?m ?w $?m1)(group_ids $?grp_ids))
-;?f<-(manual_id_en_hi-word-root-vib-grp_ids ?id  $?m ?w $?m1 - - - - - $?grp_ids)
 ?f1<-(man_word-root-cat    ?w&~howI ?root&kara|ho|xe    v)
 (test (neq  (length $?m) 0))
 =>
-	(retract ?f ?f1)
-	(if (eq (length $?m1) 0) then 
-		;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  $?m ?w $?m1 - $?m ?root - - - $?grp_ids))
-		(assert (manual_word_info (head_id ?id) (word $?m ?w $?m1)(root $?m ?root)(group_ids $?grp_ids)))
-	else
-		;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  $?m ?w $?m1 - $?m ?root - $?m1 - $?grp_ids))
-		(assert (manual_word_info (head_id ?id) (word $?m ?w $?m1)(root $?m ?root)(vibakthi $?m1)(group_ids $?grp_ids)))
-	)
+        (retract ?f1)
+        (if (eq (length $?m1) 0) then
+                (modify ?f (root $?m ?root))
+        else
+                (modify ?f (root $?m ?root)(vibakthi $?m1))
+        )
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
 
