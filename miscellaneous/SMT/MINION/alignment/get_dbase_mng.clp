@@ -5,6 +5,10 @@
 ;	5. default_meaning_frm_oldwsd.gdbm  and
 ;	6. default-iit-bombay-shabdanjali-dic_smt.gdbm 
 
+(deftemplate  database_info(slot meaning (default 0))(multislot components (default 0))(slot root (default 0))(slot database_name (default 0))( slot database_type (default 0)))
+
+
+
  ;Added by Mahalaxmi
  (deffunction remove_character(?char ?str ?replace_char)
                         (bind ?new_str "")
@@ -35,26 +39,32 @@
                 (while (neq ?slh_index FALSE)
                         (bind ?count (+ ?count 1))
                         (bind ?new_mng1 (sub-string 1 (- ?slh_index 1) ?new_mng))
+                        (bind ?org_mng (string-to-field (sub-string 1 (- ?slh_index 1) ?new_mng)))
                         (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
                         (bind ?new_mng1 (remove_character "-" (implode$ (create$  ?new_mng1)) " "))
                         (if (eq ?dic_type multi) then
                                 (assert (id-multi_word_expression-dbase_name-mng ?count ?word ?gdbm ?new_mng1))
+                                (assert (database_info (meaning ?org_mng)(components ?new_mng1) (database_name ?gdbm)(database_type multi)))
                         else
                                 (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root ?gdbm ?new_mng1))
+                                (assert (database_info (meaning ?org_mng)(components ?new_mng1)(root ?root)(database_name ?gdbm)(database_type single)))
                         )
                         (bind ?new_mng (sub-string (+ ?slh_index 1) (length ?new_mng) ?new_mng))
                         (bind ?slh_index (str-index "/" ?new_mng))
                 )
         )
         (bind ?new_mng1 (str-cat (sub-string 1 (length ?new_mng) ?new_mng)))
+        (bind ?org_mng (string-to-field (str-cat (sub-string 1 (length ?new_mng) ?new_mng))))
         (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
         (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
         (if (neq ?new_mng "") then
                 (bind ?count (+ ?count 1))
                 (if (eq ?dic_type multi) then
                         (assert (id-multi_word_expression-dbase_name-mng ?count ?word ?gdbm ?new_mng1))
+                        (assert (database_info (meaning ?org_mng)(components ?new_mng1) (database_name ?gdbm)(database_type multi)))
                 else
                         (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root ?gdbm ?new_mng1))
+           	       (assert (database_info (meaning ?org_mng)(components ?new_mng1)(root ?root)(database_name ?gdbm)(database_type single)))
  		)
         )
  )
