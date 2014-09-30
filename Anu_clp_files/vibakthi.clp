@@ -43,6 +43,8 @@
  (assert (id-eng-src))
  (assert (id-attach_eng_mng))
  (assert (id-wsd_viBakwi))
+ (assert (id-domain_type))
+ (assert (compound_meaning_decided))
  )
  ;---------------------------------------------------------------------------------------------------------------
  (deffunction remove_character(?char ?str ?replace_char)

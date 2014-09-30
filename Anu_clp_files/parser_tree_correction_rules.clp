@@ -1,4 +1,5 @@
  ; This file is written by Shirisha Manju (19-06-12)
+ (defglobal ?*count*  = 0)
 
  (deftemplate word-morph(slot original_word)(slot morph_word)(slot root)(slot category)(slot suffix)(slot number))
  ;----------------------------------------------------------------------------------------------------------------------- 
@@ -88,6 +89,60 @@
 	(assert (Head-Level-Mother-Daughters ?h1 ?l1 $?pre ?Mot $?pos))
 	(assert (Node-Category  ?Mot   ?m_cat))
  )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;Suggested by Chaitanya Sir (23-09-14)
+ ;first daughter of NP is NNP and the daughter of NNP is the 1st word of the sentence and the word exists as an adjective in the dictionary
+ ; then modify the NNP as JJ 
+ ;[Big] egos are big shields. 	Before: garBAvasWA_kA_anwima caraNa aham badI DAleM hEM.	After: bade aham badI DAleM hEM.
+ (defrule modify_NNP_as_JJ
+ ?f<-(Head-Level-Mother-Daughters ?h ?l ?NP ?NNP ?NN $?p)
+ (Node-Category ?NP NP)
+ ?f1<-(Node-Category ?NNP NNP)
+ ?f2<-(Head-Level-Mother-Daughters ?head ?l1 ?NNP P1)
+ (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat (lowcase ?head) "_adjective")) "FALSE"))
+ ?f3<-(id-sd_cat  P1  ?cat)
+ =>
+	(retract ?f ?f1 ?f2 ?f3)
+	(bind ?jj (get_no ?NNP NNP JJ))
+	(assert (Node-Category ?jj JJ))
+	(assert (Head-Level-Mother-Daughters ?h ?l ?NP ?jj ?NN $?p))
+ 	(assert (Head-Level-Mother-Daughters ?head ?l1 ?jj P1))
+	(assert (id-sd_cat  P1 JJ))
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ; Suggested by Chaitanya Sir (23-09-14)
+ ; If VP => VP1 CC VP2 and VP2 => whenever  then 
+ ;      make CC and VP2 as the daughters of the last NP daughter of VP1
+ ; We can do it next week or [whenever]. 
+ ; Before: hama agale sapwAha yaha kara sakawe hEM yA jaba_kaBI.
+ ; After : hama agalA sapwAha yA jaba kaBI yaha kara sakawe hEM.
+ (defrule modify_VBZ_as_NP
+ ?f<-(Head-Level-Mother-Daughters ?h ?lvl ?VP $?p ?VP1 ?CC ?VP2 $?p1)
+ (Node-Category ?VP1 VP)
+ (Node-Category ?CC CC) 
+ ?f2<-(Node-Category ?VP2 VP)
+ ?f3<-(Head-Level-Mother-Daughters whenever ?l ?VP2 ?VBZ)
+ ?f4<-(Node-Category ?VBZ ?cat) 
+ ?f5<-(Head-Level-Mother-Daughters whenever ?l1 ?VBZ ?id)
+ (parserid-word ?id whenever)
+ (Head-Level-Mother-Daughters ? ? ?VP1 $? ?VP3)
+ (Node-Category ?VP3 VP)
+ (Head-Level-Mother-Daughters ? ? ?VP3 $? ?NP)
+ (Node-Category ?NP NP)
+ ?f1<-(Head-Level-Mother-Daughters ?h2 ?l2 ?NP $?post ?NN )
+ (Head-Level-Mother-Daughters ? ? ?NN ?id1)
+ (id-sd_cat  ?id1 NN|NNS)
+ =>
+	(retract ?f ?f1 ?f2 ?f3 ?f4 ?f5)
+	(assert (Head-Level-Mother-Daughters ?h ?lvl ?VP $?p ?VP1))
+	(bind ?np (get_no ?VP2 VP NP))
+	(assert (Node-Category ?np NP))
+ 	(assert (Head-Level-Mother-Daughters ?h2 ?l2 ?NP $?post ?NN ?CC ?np $?p1))
+	(bind ?nn (get_no ?VBZ ?cat NN))
+	(assert (Node-Category ?nn NN))
+ 	(assert (Head-Level-Mother-Daughters whenever ?l ?np ?nn))
+ 	(assert (Head-Level-Mother-Daughters whenever ?l1 ?nn ?id))
+ )
  ;======================================= LWG correction rules ===================================================
 
  ;The mother calmed the angry son.The jet zoomed across the sky.
@@ -129,6 +184,40 @@
  	)
  )
  ;------------------------------------------------------------------------------------------------------------------------
+ ;Suggested by Chaitanya Sir (23-09-14)
+ ;if first_daughter of NP is NNP and the daughter of NNP is the 1st word of the sentence 
+ ;     and the word exists as a verb in the dictionary then modify it as 
+ ;	Root => S  , S => VP , VP => VB
+ ;[Wrap] the book.              Before: SAla puswaka.                   After: puswaka lapetie.
+ ;[Reserve] the seats for me.   Before: awirikwa niXi mere lie sIteM.   After: mere lie sIteM bacAie.
+ (defrule modify_NNP_as_VB
+ ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?ROOT ?NP )
+ (Node-Category ?ROOT ROOT)
+ ?f4<-(Node-Category ?NP NP)
+ ?f5<-(Head-Level-Mother-Daughters ?h ?l ?NP ?NP1 $?post ?punct)
+ ?f1<-(Head-Level-Mother-Daughters ?h1 ?l1 ?NP1 ?NNP)
+ ?f2<-(Node-Category ?NNP NNP)
+ ?f6<-(Node-Category ?NP1 ?cat)
+ ?f3<-(Head-Level-Mother-Daughters ?h2 ?l2 ?NNP P1)
+ (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat (lowcase ?head) "_verb")) "FALSE"))
+ ?f7<-(id-sd_cat  P1  ?cat1)
+ =>
+        (retract ?f0 ?f1 ?f2 ?f3 ?f4 ?f5 ?f6 ?f7)
+        (bind ?s (get_no ?NP NP S))
+        (assert (Node-Category ?s S))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?ROOT ?s ))
+
+        (bind ?VP (get_no ?NP1 ?cat VP))
+        (assert (Node-Category ?VP VP))
+        (assert (Head-Level-Mother-Daughters ?h ?l ?s ?VP ?punct))
+
+        (bind ?verb (get_no ?NNP NNP VB))
+        (assert (Node-Category ?verb VB))
+        (assert (Head-Level-Mother-Daughters ?h ?l ?VP ?verb $?post))
+        (assert (Head-Level-Mother-Daughters ?h2 ?l2 ?verb P1))
+        (assert (id-sd_cat  P1  VB))
+ )
+ ;==============================================================================================
  ;Suggested by Chaitanya Sir (24-03-14)
  ;There can be some confusion [regarding] the trailing zeros.
  (defrule modify_PP_daughter

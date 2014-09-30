@@ -35,6 +35,8 @@
  (assert (id-attach_eng_mng))
  (assert (conj_head-left_head-right_head))
  (assert (id-wsd_viBakwi))
+ (assert (id-domain_type))
+ (assert (compound_meaning_decided))
  )
 
 (defglobal ?*hin_sen-file* = h_sen_fp)
