@@ -134,4 +134,7 @@
 (load*  "parser_tree_modification_rules.clp")
 (bsave  "parser_tree_modification_rules.bclp")
 (clear)
+(load*  "hindi_compound_meaning.clp")
+(bsave "hindi_compound_meaning.bclp")
+(clear)
 (exit)
