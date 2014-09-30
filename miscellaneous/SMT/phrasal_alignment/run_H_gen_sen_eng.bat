@@ -59,6 +59,7 @@
  (assert (default-cat))
  (run)
  (save-facts "database_mng.dat" local id-org_wrd-root-dbase_name-mng e_tam-id-dbase_name-mng id-multi_word_expression-dbase_name-mng multi_word_expression-grp_ids id-left_word-possible_mngs id-right_word-possible_mngs)
+ (save-facts "database_original_mng.dat" local database_info)
  (clear)
  ;--------------------------------------------------------------------------
  (load "global_path.clp")
