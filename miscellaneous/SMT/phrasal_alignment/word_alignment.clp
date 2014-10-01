@@ -50,7 +50,7 @@
 (defrule verb_count_of_manual
 (declare (salience 1001))
 ;(manual_id-node-word-root-tam  ?vid   VGF $?)
-(chunk_name-chunk_ids VGF ?mid $?)
+(chunk_name-chunk_ids-words VGF ?mid $? - $?)
 ?f<-(man_verb_count-verbs ?man_verb_count $?verbs)
 (test (eq (member$ ?mid $?verbs) FALSE))
 =>
