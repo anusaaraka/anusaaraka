@@ -412,25 +412,31 @@
 (declare (salience 77))
 ?f0<-(id-kara_grouped ?id)
 ?f<-(manual_word_info (head_id ?id) (word $?m ?w)(group_ids $?grp_ids))
-?f1<-(man_word-root-cat    ?w&~howI ?root&kara|ho|xe    v)
+?f1<-(man_word-root-cat    ?w&~howI&~hE ?root&kara|ho|xe    v) ; nirBara karawA [hE]
 =>
 	(retract ?f0 ?f1)
 	(modify ?f (root $?m ?root))
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 8-9-14
+;The average velocity can be positive or negative depending upon the sign of the displacement.
+;Osawa vega kA qNAwmaka yA XanAwmaka honA visWApana ke cihna para [nirBara karawA hE] .
+;Man has constantly made endeavors to improve the quality of communication with other human beings. 
+;mAnava niranwara hI yaha [prayawna karawA rahA hE] ki usakA mAnava jAwi se saFcAra guNawA meM unnawa ho. 
 (defrule get_kara_root1
 (declare (salience 76))
 (id-kara_grouped ?id)
 ?f<-(manual_word_info (head_id ?id) (word $?m ?w $?m1)(group_ids $?grp_ids))
 ?f1<-(man_word-root-cat    ?w&~howI ?root&kara|ho|xe    v)
-(test (neq  (length $?m) 0))
+(test (neq  (length $?m1) 0))
 =>
         (retract ?f1)
-        (if (eq (length $?m1) 0) then
-                (modify ?f (root $?m ?root))
-        else
-                (modify ?f (root $?m ?root)(vibakthi $?m1))
-        )
+	(if (eq ?root kara) then
+		(bind ?v (string-to-field (sub-string 5 (length ?w) ?w)))
+        	(modify ?f (root $?m ?root)(vibakthi ?v $?m1))
+	else	
+	        (modify ?f (root $?m ?root)(vibakthi $?m1))
+	)
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
 
@@ -460,15 +466,17 @@
 ;This process continues till the capacitor is fully charged.
 ;yaha prakriyA waba waka [calawI rahawI hE] jaba waka ki saMXAriwra pUrI waraha AveSiwa nahIM ho jAwA hE.
 ;root = cala , tam = wA_rahawA_hE 
+;Man has constantly made endeavors to improve the quality of communication with other human beings. 
+;mAnava niranwara hI yaha [prayawna karawA rahA hE] ki usakA mAnava jAwi se saFcAra guNawA meM unnawa ho. 
 (defrule replace_tam_with_root-tam
 (declare (salience 72))
-?f<-(manual_word_info (head_id ?id) (word ?word $?wrds)(root ?root)(vibakthi ?tam $?wrds)(group_ids $?grp_ids))
+?f<-(manual_word_info (head_id ?id) (word ?word $?wrds)(root ?root $?r)(vibakthi ?tam $?tams)(group_ids $?grp_ids))
 ;?f <- (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root -  ?tam $?wrds  - $?grp_ids)
 (test (neq ?tam -))
 (not (replaced_tam_with_root_tam ?id))
 (not (vib_added ?id))
 =>
-	(bind ?new_mng (remove_character " " (implode$ (create$ ?tam $?wrds)) "_"))
+	(bind ?new_mng (remove_character " " (implode$ (create$ ?tam $?tams)) "_"))
 	(printout t (implode$ ?new_mng) crlf)
 	(bind ?mng (gdbm_lookup "AllTam_rev.gdbm" (implode$ ?new_mng)))
 	(if (neq ?mng "FALSE") then
@@ -476,13 +484,13 @@
 		(printout t ?root_tam crlf)
 		(if (eq ?root ?word) then 
 			;;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root - (explode$ ?root_tam) - $?grp_ids))
-			(assert (manual_word_info (head_id ?id) (word ?word $?wrds)(root ?root)(vibakthi ?root ?tam)(group_ids $?grp_ids)))
+			(assert (manual_word_info (head_id ?id) (word ?word $?wrds)(root ?root $?r)(vibakthi ?root ?tam)(group_ids $?grp_ids)))
 			(assert (replaced_tam_with_root_tam ?id)) 
 		else
 		(bind ?new_tam (sub-string 2 (length ?root_tam) ?root_tam))
 		(printout t ?new_tam ?root_tam crlf)
 			;;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root - (explode$ ?new_tam) - $?grp_ids))
-			(assert (manual_word_info (head_id ?id) (word ?word $?wrds)(root ?root)(vibakthi ?new_tam)(group_ids $?grp_ids)))
+			(assert (manual_word_info (head_id ?id) (word ?word $?wrds)(root ?root $?r)(vibakthi ?new_tam)(group_ids $?grp_ids)))
 			(assert (replaced_tam_with_root_tam ?id))
 		)
 		(retract ?f)

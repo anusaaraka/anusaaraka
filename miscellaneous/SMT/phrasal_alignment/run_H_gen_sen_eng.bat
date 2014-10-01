@@ -77,7 +77,7 @@
  (load-facts "cat_consistency_check.dat")
  (run)
  (save-facts "manual_word.dat" local manual_id-word)
- (save-facts "chunk_info1.dat" local chunk_name-chunk_ids)
+ (save-facts "chunk_info1.dat" local chunk_name-chunk_ids-words)
  (save-facts "manual_lwg.dat" local manual_word_info)
  (save-facts "word-alignment_new.dat" local anu_id-anu_mng-man_mng)
  (clear)
