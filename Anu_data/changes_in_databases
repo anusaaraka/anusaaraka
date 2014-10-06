@@ -700,7 +700,13 @@ Modified :
 	resource	liv/e__vblex		(     "	     "	  )
 	disinvestment	house__n		(     "	     "	  )
 	recognise	liv/e__vblex		(     "	  01-07-14)
-
+	endeavor	house__n		(     "	  02-10-14)
+	endeavour	house__n		(     "	     "	  )
+	weave		w/eave__vblex		(     "      "    )
+	campfire	house__n		(     "      "    )
+	rack		house__n		(     "      "    )
+	rack		accept__vblex		(     "      "    )
+	rumbling	house__n		(     "      "    )
 
 
 Modified paradigm:
@@ -719,13 +725,16 @@ Added new paradigms:
 	ey/e__vblex		("		28-03-14)
 
 Modified root:
-	may		May		as	may		(By Roja 14-03-13)
-	june		June		as	june		( 	"	 ) 
-	december	December	as	december	(	"	 )
-	april		April		as	april		(	"	 )
-	september	September	as	september	(	"	 )
-	november	November	as	november	(	"	 )
-	october		October		as	october		(	"	 )
+	may		May		as	may		(By Roja  14-03-13)
+	june		June		as	june		( 	"	  ) 
+	december	December	as	december	(	"	  )
+	april		April		as	april		(	"	  )
+	september	September	as	september	(	"	  )
+	november	November	as	november	(	"	  )
+	october		October		as	october		(	"	  )
+	ourselves	ourselves	as	ourself		(	" 02-10-14)
+	yourselves	yourselves	as	yourself	(	"	  )
+	themselves	themselves	as	themself	(	"	  )
 
 Modified root based on paradigms:
 	bab/y__n	analys/is__n	maxim/um__n	m/an__n		wol/f__n	li/fe__n	m/ouse__n
@@ -739,6 +748,9 @@ Miscellaneous:
 	2. In riteri/on__n paradigm to generate 'criterias' word.		(By Roja	14-03-13)
 	3. ([0-9]+)?[04-9]+th 	as	([0-9]+)?[0-9]+th			(By Roja	17-07-13)
 	4. In t/each__vblex, modified 'teachs' to 'teaches'			(By Roja	20-01-14)
+	5. In cost__vblex", modified to generate 'costed'			(By Roja	02-10-14)
+	6. In w/eave__vblex, added code to generate 'weaved'			("		"	)
+
 
 Removed:
 	repetition entry <e lm="April"><i>April</i><par n="house__n"/></e>	(By Roja	27-07-13)
@@ -746,6 +758,7 @@ Removed:
 	<e lm="shrank"><i>shrank</i><par n="accept__vblex"/></e>		("		"	)
 	<e lm="flags"><i>flags</i><par n="access__n"/></e>			("		04-12-13) 
 	<e lm="tactics"><i>tactics</i><par n="politics__n"/></e>		("		06-01-14)
+	<e lm="wrapped"><i>wrapped</i><par n="accept__vblex"/></e>		("		02-10-14)
 
 
  Added new files:
