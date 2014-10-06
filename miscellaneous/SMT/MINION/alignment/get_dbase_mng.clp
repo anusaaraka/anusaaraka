@@ -5,7 +5,7 @@
 ;	5. default_meaning_frm_oldwsd.gdbm  and
 ;	6. default-iit-bombay-shabdanjali-dic_smt.gdbm 
 
-(deftemplate  database_info(slot meaning (default 0))(multislot components (default 0))(slot root (default 0))(slot database_name (default 0))( slot database_type (default 0)))
+(deftemplate  database_info(slot meaning (default 0))(multislot components (default 0))(slot root (default 0))(slot database_name (default 0))( slot database_type (default 0))(multislot group_ids (default 0)))
 
 
 
@@ -25,7 +25,7 @@
  ;--------------------------------------------------------------------------------------------------------
  ; Modified by Shirisha Manju to add the argument dictionary type
  ;Added by Mahalaxmi
- (deffunction print_dic_mng(?gdbm ?word ?root ?new_mng ?dic_type)
+ (deffunction print_dic_mng(?gdbm ?word ?root ?new_mng ?dic_type $?grp_ids)
         (bind ?count 0)
         (bind ?word (string-to-field ?word))
 	(if (eq (numberp ?word) FALSE) then
@@ -44,7 +44,7 @@
                         (bind ?new_mng1 (remove_character "-" (implode$ (create$  ?new_mng1)) " "))
                         (if (eq ?dic_type multi) then
                                 (assert (id-multi_word_expression-dbase_name-mng ?count ?word ?gdbm ?new_mng1))
-                                (assert (database_info (meaning ?org_mng)(components ?new_mng1) (database_name ?gdbm)(database_type multi)))
+                                (assert (database_info (meaning ?org_mng)(components ?new_mng1) (database_name ?gdbm)(database_type multi)(group_ids $?grp_ids)))
                         else
                                 (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root ?gdbm ?new_mng1))
                                 (assert (database_info (meaning ?org_mng)(components ?new_mng1)(root ?root)(database_name ?gdbm)(database_type single)))
@@ -61,7 +61,7 @@
                 (bind ?count (+ ?count 1))
                 (if (eq ?dic_type multi) then
                         (assert (id-multi_word_expression-dbase_name-mng ?count ?word ?gdbm ?new_mng1))
-                        (assert (database_info (meaning ?org_mng)(components ?new_mng1) (database_name ?gdbm)(database_type multi)))
+                        (assert (database_info (meaning ?org_mng)(components ?new_mng1) (database_name ?gdbm)(database_type multi)(group_ids $?grp_ids)))
                 else
                         (assert (id-org_wrd-root-dbase_name-mng ?count ?word ?root ?gdbm ?new_mng1))
            	       (assert (database_info (meaning ?org_mng)(components ?new_mng1)(root ?root)(database_name ?gdbm)(database_type single)))
@@ -90,7 +90,7 @@
                         (if (and (neq (length ?lkup) 0)(neq ?lkup "FALSE") (> (length (create$ $?grp_ids)) 1)) then
 				(bind ?str1 ?str)
         	                (bind ?mng ?lkup)
-				(print_dic_mng ?gdbm ?str1 null ?mng multi)
+				(print_dic_mng ?gdbm ?str1 null ?mng multi $?grp_ids)
                                	(bind ?str1 (remove_character "_" ?str1 " "))
                                	(assert (multi_word_expression-grp_ids (explode$ (implode$ ?str1)) $?grp_ids))
                        )
@@ -161,21 +161,23 @@
 	(bind ?new_mng "")
 	(bind ?wrd_mng (gdbm_lookup ?gdbm ?word))
 	(if (and (neq ?wrd_mng "FALSE") (neq (length ?wrd_mng) 0)) then (bind ?new_mng ?wrd_mng)
-		(print_dic_mng ?gdbm ?word ?root ?new_mng single)
+		(print_dic_mng ?gdbm ?word ?root ?new_mng single 0)
 	)
 	(bind ?rt_mng (gdbm_lookup ?gdbm ?root))
       	(if (and (neq ?rt_mng "FALSE") (neq (length ?rt_mng) 0)) then (bind ?new_mng ?rt_mng)
-		(print_dic_mng ?gdbm ?word ?root ?new_mng single)
+		(print_dic_mng ?gdbm ?word ?root ?new_mng single 0)
 	else (if (eq (sub-string (- (length ?word) 1) (length ?word) ?word) "'s") then
 		(bind ?word (string-to-field (sub-string 1 (- (length ?word) 2) ?word)))
                 (bind ?apos_mng (gdbm_lookup ?gdbm ?word))
              	(if (and (neq ?apos_mng "FALSE") (neq (length ?apos_mng) 0)) then (bind ?new_mng ?apos_mng))
-		        (print_dic_mng ?gdbm ?word ?root ?new_mng single)
+		        (print_dic_mng ?gdbm ?word ?root ?new_mng single 0)
 		else (if (and (eq ?id 1)(eq (upcase (sub-string 1 1 ?root)) (sub-string 1 1 ?root))(eq ?cat PropN)) then
                         (bind ?str (lowcase (sub-string 1 1 ?root)))
              		(bind ?n_root (str-cat ?str (sub-string 2 (length ?root)  ?root)))
 		        (bind ?n_rt_mng (gdbm_lookup ?gdbm  ?n_root))
-             		(if (and (neq ?n_rt_mng "FALSE") (neq (length ?n_rt_mng) 0)) then (bind ?new_mng ?n_rt_mng)                        		(print_dic_mng ?gdbm ?word ?root ?new_mng single)
+			(if (and (neq ?n_rt_mng "FALSE") (neq (length ?n_rt_mng) 0)) then 
+				(bind ?new_mng ?n_rt_mng)                      
+		  		(print_dic_mng ?gdbm ?word ?root ?new_mng single 0)
 	     		)
 	    	     )
 	    )
@@ -246,7 +248,7 @@
  =>
         (bind ?mng (gdbm_lookup "phy_dictionary.gdbm" (str-cat ?rt "_" ?cat)))
         (if (neq ?mng "FALSE") then
-		(print_dic_mng phy_dictionary.gdbm ?word ?rt ?mng single)
+		(print_dic_mng phy_dictionary.gdbm ?word ?rt ?mng single 0)
 		(retract ?f0)
         )
  )
@@ -264,7 +266,7 @@
  =>
         (bind ?mng (gdbm_lookup "phy_dictionary.gdbm" (str-cat ?rt "_" ?cat1)))
         (if (neq ?mng "FALSE") then
-                (print_dic_mng phy_dictionary.gdbm ?word ?rt ?mng single)
+                (print_dic_mng phy_dictionary.gdbm ?word ?rt ?mng single 0)
 		(retract ?f0)
         )
  )
@@ -282,7 +284,7 @@
  =>
         (bind ?mng (gdbm_lookup "phy_dictionary.gdbm" (str-cat (lowcase ?rt) "_" ?cat1)))
 	(if (neq ?mng "FALSE") then
-                (print_dic_mng phy_dictionary.gdbm ?word ?rt ?mng single)
+                (print_dic_mng phy_dictionary.gdbm ?word ?rt ?mng single 0)
 		(retract ?f0)
         )
  )
