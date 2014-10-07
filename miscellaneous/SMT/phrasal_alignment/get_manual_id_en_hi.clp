@@ -17,7 +17,6 @@
                 (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
  )
 
-
 (defrule rm_punct
 (declare (salience 1001))
 ?f<-(anu_id-anu_mng-man_mng     ?aid ?anu_mng $?pre ?PUNCT $?post)
@@ -26,9 +25,6 @@
         (retract ?f)
         (assert (anu_id-anu_mng-man_mng  ?aid ?anu_mng $?pre $?post))
 )
-
-
-
 
 (defrule rm_underscore
 (declare (salience 1000))
@@ -44,6 +40,16 @@
   (assert (anu_id-anu_mng-man_mng ?aid ?word ?new_mng))
   (assert (underscore_removed ?aid))
 )
+
+(defrule get_multi_dbase_facts
+(declare (salience 1000))
+?f0<-(ids-cmp_mng-head-cat-mng_typ-priority $?ids ?mng ? ? ? ?)
+=>
+	(retract ?f0)
+	(bind ?new_mng (remove_character "_" (implode$ (create$ ?mng)) " "))
+	(assert (multi-word ?new_mng))
+)	
+
 
 (defrule cp_manual_sen
 (declare (salience 1000))
@@ -207,6 +213,18 @@
 )
 
 ;----------------------------------------------------------------------------------------------------------------
+(defrule multi_word_from_dic
+(declare (salience 110))
+(multi-word ?mng ?mng1)
+?f0<-(manual_id-word ?id0 ?mng)
+?f1<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?mng1)
+(not (mng_has_been_grouped ?id1))
+=>
+	(assert (manual_word_info (head_id ?id0) (word ?mng ?mng1)(group_ids ?id0 ?id1)))
+        (assert (mng_has_been_grouped ?id0))
+        (assert (mng_has_been_grouped ?id1))
+)
+;----------------------------------------------------------------------------------------------------------------
 ;It is mainly through light and the sense of vision that we know and interpret the world around us.
 ;Man tran :: muKya rUpa se prakASa evaM xqRti kI saMvexanA ke kAraNa hI hama [apane cAroM ora] ke saMsAra ko samaJawe evaM usakI vyAKyA karawe hEM.
 ;Anu tran :: yaha halake meM se waWA xUraxarSiwA kI saMvexanA meM se pramuKa rUpa se hE ki hama hamAre cAroM ora yuga vyAKyA kara waWA jAnawI hE.
@@ -363,20 +381,15 @@
 (defrule single_vib
 (declare (salience 70))
 ?f1<-(manual_word_info (head_id ?mid0) (word $?noun)(group_ids $?grp_ids ?id0))
-?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle)(group_ids $?grp_ids1))
-;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid0 $?noun - - - - - $?grp_ids ?id0)
-;?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle - - - - - $?grp_ids1)
+?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle|waka)(group_ids $?grp_ids1))
 (not (mng_has_been_grouped ?id1))
 (not (vib_added ?id0))
 =>
-        (retract ?f1 ?f2)
+	(modify ?f1 (vibakthi ?vib)(group_ids $?grp_ids ?id0 $?grp_ids1))
+        (retract ?f2)
         (assert (mng_has_been_grouped ?id1)) 
-        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids ?id0 $?grp_ids1))
-        (assert (manual_word_info (head_id ?id0) (word $?noun)(vibakthi ?vib)(group_ids ?id0 $?grp_ids1)))
-	(assert (vib_added ?id0))
 )
-
-
+;----------------------------------------------------------------------------------------------------------------
 (defrule single_vib1
 (declare (salience 70))
 ?f1<-(manual_word_info (head_id ?mid0) (word $?noun)(group_ids $?grp_ids ?id0))

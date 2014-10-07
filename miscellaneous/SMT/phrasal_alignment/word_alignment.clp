@@ -83,16 +83,15 @@
 ;(defrule exact_match_for_multi_word_using_dic
 ;(declare (salience 902))
 ;(current_id ?mid)
-;(manual_id-cat-word-root-vib-grp_ids ?mid ? $?mng - $? - $?vib - $?grp_ids1)
-;(id-multi_word_expression-dbase_name-mng ? $?eng_mwe ? $?mng $?vib)
+;(manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib)(group_ids $?grp_ids))
+;(id-multi_word_expression-dbase_name-mng ? $?eng_mwe ? $?mng)
 ;(multi_word_expression-grp_ids $?eng_mwe $?ids ?aid)
 ;(id-root ?aid ?root)
-;(id-org_wrd-root-dbase_name-mng ? ? ?root ? $?dic_mng)
 ;(not (prov_assignment ?aid ?mid))
 ;=>
 ;        (bind ?*count* (+ ?*count* 1))
 ;        (assert (update_count_fact ?*count*))
-;        (assert (anu_ids-sep-manual_ids ?aid - $?grp_ids1))
+;        (assert (anu_ids-sep-manual_ids ?aid - $?grp_ids))
 ;        (assert (man_id-src-root ?mid exact ?root))
 ;        (assert (prov_assignment ?aid ?mid))
 ;)
@@ -109,6 +108,28 @@
         (assert (update_count_fact ?*count*))
         (assert (anu_ids-sep-manual_ids ?aid - $?grp_ids))
         (assert (man_id-root-src-rule_name ?mid ?root exact_match exact_match_with_anu_output))
+        (assert (prov_assignment ?aid ?mid))
+)
+;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;Modern communication has its roots in the [19] th and [20] th century in the work of scientists like J.C. Bose, F.B. Morse, G. Marconi and Alexander Graham Bell. 
+;AXunika saFcAra kI jadeM [19] vIM waWA [20] vIM SawAbxiyoM meM sara jagaxISa canxra bosa, ePa.bI. morsa, jI mArkonI waWA alekjeNdara grAhma bela ke kArya xvArA dAlI gaIM.
+;Note :NO PATH
+(defrule anu_exact_match_for_nos
+(declare (salience 900))
+(current_id ?mid)
+(manual_word_info (head_id ?mid) (word ?mng)(group_ids $?grp_ids))
+(test (numberp ?mng))
+(id-Apertium_output ?aid ?mng1)
+(test (neq (str-index "@" ?mng1) FALSE))
+(test (eq (string-to-field (sub-string 2 (length ?mng1) ?mng1)) ?mng))
+(id-root ?aid ?root)
+(not (prov_assignment ?aid ?mid))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (update_count_fact ?*count*))
+        (assert (anu_ids-sep-manual_ids ?aid - $?grp_ids))
+        (assert (man_id-root-src-rule_name ?mid ?root exact_match anu_exact_match_for_nos))
         (assert (prov_assignment ?aid ?mid))
 )
 ;-------------------------------------------------------------------------------------
