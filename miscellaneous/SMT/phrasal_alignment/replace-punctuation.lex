@@ -20,5 +20,6 @@
 =	{	printf("SYMBOL-EQUAL-TO");		}
 \+	{	printf("SYMBOL-PLUS");		}
 [[]	{	printf("PUNCT-LeftSquareBracket");	}
+~	{	printf("SYMBOL-TELDA");		}
 
 %%

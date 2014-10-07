@@ -26,6 +26,8 @@
  (assert (id-eng-src))
  (assert (id-attach_eng_mng))
  (assert (id-wsd_viBakwi))
+ (assert (id-domain_type))
+ (assert (compound_meaning_decided))
  )
 
  ; Added by Roja.(06-11-10)

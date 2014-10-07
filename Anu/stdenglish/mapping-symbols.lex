@@ -78,6 +78,7 @@ FILE *fp;
 χ	{	printf(" SYMBOL-CHI ");	}
 ψ	{	printf(" SYMBOL-PSI ");	}
 ω	{	printf(" SYMBOL-OMEGA ");	}
+\|	{	printf(" SYMBOL-VERTICAL-LINE ");	}
 [ ]\<[ ]	{	printf("  SYMBOL-LESSTHAN  ");	}
 [ ]\>[ ]	{	printf("  SYMBOL-GREATERTHAN  ");	}
 

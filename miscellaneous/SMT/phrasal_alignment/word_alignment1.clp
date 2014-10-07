@@ -137,6 +137,33 @@
         (assert (man_id-root-src-rule_name ?mid -  heuristics align_poten_man_id1))
 )
 
+;Added by Shirisha Manju 4-9-14
+;if 'growing' is aligned and 'demand' is left and both are in same scope then align demand
+;Languages and methods used in communication have kept evolving from prehistoric to modern times, to meet the [growing] [demands] in terms of speed and complexity of information.
+;mAnava prAgEwihAsika kAla se AXunika kAla waka, saFcAra meM upayoga hone vAlI nayI - nayI BARAoM evaM viXiyoM kI Koja karane ke lie prayawnaSIla rahA hE, wAki saFcAra kI gawi evaM jatilawAoM ke paxoM meM [baDawI] [AvaSyakawAoM kI] pUrwi ho sake.
+(defrule align_poten_man_id_with_scope
+(declare (salience 1001))
+?f<-(man_id-candidate_ids ?mid $?list1 ?aid $?list2)
+(not (mng_has_been_aligned ?mid))
+(not (mng_has_been_filled ?aid))
+(test (or (neq (length $?list1) 0) (neq (length $?list2) 0)))
+?f1<-(manual_word_info (head_id ?mid) (word $?man_mng) (group_ids ?id $?mids))
+(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid1 $?anu_mng1 - ?mid1 $?)
+(test (eq (- ?id 1) ?mid1))
+(mot-cat-praW_id-largest_group ? NP|PP ? $?grp)
+(test (integerp (member$ ?aid $?grp)))
+(test (integerp (member$ ?aid1 $?grp)))
+(id-Apertium_output ?aid $?anu_mng)
+=>
+        (retract ?f ?f1)
+        (if (eq (length $?anu_mng) 0) then (bind $?anu_mng (create$ -)))
+        (assert (mng_has_been_aligned ?mid))
+        (assert (mng_has_been_filled ?aid))
+        (assert (phrasal_aligned_mng ?aid  ?mid))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng ?aid $?anu_mng - ?mid ?id $?mids))
+        (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid ?id $?mids))
+        (assert (man_id-root-src-rule_name ?mid -  heuristics align_poten_man_id1))
+)
 
 (defrule delete_mng_filled
 (declare (salience 900))

@@ -42,6 +42,8 @@
  (assert (id-attach_emphatic))
  (assert (id-attach_eng_mng))
  (assert (id-wsd_viBakwi))
+ (assert (id-domain_type))
+ (assert (compound_meaning_decided))
  )
  ;============================================ Stanford Parser Rules ===================================================
 

@@ -17,7 +17,6 @@
                 (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
  )
 
-
 (defrule rm_punct
 (declare (salience 1001))
 ?f<-(anu_id-anu_mng-man_mng     ?aid ?anu_mng $?pre ?PUNCT $?post)
@@ -26,9 +25,6 @@
         (retract ?f)
         (assert (anu_id-anu_mng-man_mng  ?aid ?anu_mng $?pre $?post))
 )
-
-
-
 
 (defrule rm_underscore
 (declare (salience 1000))
@@ -44,6 +40,16 @@
   (assert (anu_id-anu_mng-man_mng ?aid ?word ?new_mng))
   (assert (underscore_removed ?aid))
 )
+
+(defrule get_multi_dbase_facts
+(declare (salience 1000))
+?f0<-(ids-cmp_mng-head-cat-mng_typ-priority $?ids ?mng ? ? ? ?)
+=>
+	(retract ?f0)
+	(bind ?new_mng (remove_character "_" (implode$ (create$ ?mng)) " "))
+	(assert (multi-word ?new_mng))
+)	
+
 
 (defrule cp_manual_sen
 (declare (salience 1000))
@@ -207,6 +213,18 @@
 )
 
 ;----------------------------------------------------------------------------------------------------------------
+(defrule multi_word_from_dic
+(declare (salience 110))
+(multi-word ?mng ?mng1)
+?f0<-(manual_id-word ?id0 ?mng)
+?f1<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?mng1)
+(not (mng_has_been_grouped ?id1))
+=>
+	(assert (manual_word_info (head_id ?id0) (word ?mng ?mng1)(group_ids ?id0 ?id1)))
+        (assert (mng_has_been_grouped ?id0))
+        (assert (mng_has_been_grouped ?id1))
+)
+;----------------------------------------------------------------------------------------------------------------
 ;It is mainly through light and the sense of vision that we know and interpret the world around us.
 ;Man tran :: muKya rUpa se prakASa evaM xqRti kI saMvexanA ke kAraNa hI hama [apane cAroM ora] ke saMsAra ko samaJawe evaM usakI vyAKyA karawe hEM.
 ;Anu tran :: yaha halake meM se waWA xUraxarSiwA kI saMvexanA meM se pramuKa rUpa se hE ki hama hamAre cAroM ora yuga vyAKyA kara waWA jAnawI hE.
@@ -326,8 +344,8 @@
 (defrule word_[hyphen]_word
 (declare (salience 81))
 ?f1<-(manual_id-word ?id0 $?noun)
-?f2<-(man_id-word-cat ?id1&:(=(+ ?id0 1) ?id1) -)
-?f3<-(man_id-word-cat ?id2&:(=(+ ?id0 2) ?id2) ?w)
+?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) -)
+?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>
@@ -363,26 +381,19 @@
 (defrule single_vib
 (declare (salience 70))
 ?f1<-(manual_word_info (head_id ?mid0) (word $?noun)(group_ids $?grp_ids ?id0))
-?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle)(group_ids $?grp_ids1))
-;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid0 $?noun - - - - - $?grp_ids ?id0)
-;?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle - - - - - $?grp_ids1)
+?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle|waka)(group_ids $?grp_ids1))
 (not (mng_has_been_grouped ?id1))
 (not (vib_added ?id0))
 =>
-        (retract ?f1 ?f2)
+	(modify ?f1 (vibakthi ?vib)(group_ids $?grp_ids ?id0 $?grp_ids1))
+        (retract ?f2)
         (assert (mng_has_been_grouped ?id1)) 
-        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids ?id0 $?grp_ids1))
-        (assert (manual_word_info (head_id ?id0) (word $?noun)(vibakthi ?vib)(group_ids ?id0 $?grp_ids1)))
-	(assert (vib_added ?id0))
 )
-
-
+;----------------------------------------------------------------------------------------------------------------
 (defrule single_vib1
 (declare (salience 70))
 ?f1<-(manual_word_info (head_id ?mid0) (word $?noun)(group_ids $?grp_ids ?id0))
 ?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle $?r_wrd)(group_ids ?id1 $?grp_ids1))
-;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?mid0 $?noun - - - - - $?grp_ids ?id0)
-;?f2<-(manual_id_en_hi-word-root-vib-grp_ids ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle $?r_wrd - - - - - ?id1 $?grp_ids1)
 (test (neq (length $?r_wrd) 0))
 (not (vib_added ?id0))
 (not (vib_added ?new_id))
@@ -396,39 +407,48 @@
 	(assert (vib_added ?id0))
 	(assert (vib_added ?new_id))
 )
-
-
+;-------------------------------------------------------------------------------------------------------------------------------
 (defrule single_vib2
 (declare (salience 60))
 ?f1<-(manual_word_info (head_id ?id0) (word $?noun ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle)(group_ids $?grp_ids))
-;?f1<-(manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle - - - - - $?grp_ids)
 (test (neq (length $?noun) 0))
 (not (vib_added ?id0))
 =>
-        (retract ?f1)
-        ;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - $?grp_ids))
-        (assert (manual_word_info (head_id ?id0) (word $?noun)(vibakthi ?vib)(group_ids $?grp_ids)))
+	(modify ?f1 (word $?noun)(vibakthi ?vib))
 	(assert (vib_added ?id0))
 )
 
 ;-------------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 5-9-14
 ;The Princess began to weep. rAjakumArI ne ronA [SurU kara xiyA]. 
-(defrule get_kara_tam
+(defrule get_kara_root
+(declare (salience 77))
+?f0<-(id-kara_grouped ?id)
+?f<-(manual_word_info (head_id ?id) (word $?m ?w)(group_ids $?grp_ids))
+?f1<-(man_word-root-cat    ?w&~howI&~hE ?root&kara|ho|xe    v) ; nirBara karawA [hE]
+=>
+	(retract ?f0 ?f1)
+	(modify ?f (root $?m ?root))
+)
+;-------------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 8-9-14
+;The average velocity can be positive or negative depending upon the sign of the displacement.
+;Osawa vega kA qNAwmaka yA XanAwmaka honA visWApana ke cihna para [nirBara karawA hE] .
+;Man has constantly made endeavors to improve the quality of communication with other human beings. 
+;mAnava niranwara hI yaha [prayawna karawA rahA hE] ki usakA mAnava jAwi se saFcAra guNawA meM unnawa ho. 
+(defrule get_kara_root1
 (declare (salience 76))
 (id-kara_grouped ?id)
 ?f<-(manual_word_info (head_id ?id) (word $?m ?w $?m1)(group_ids $?grp_ids))
-;?f<-(manual_id_en_hi-word-root-vib-grp_ids ?id  $?m ?w $?m1 - - - - - $?grp_ids)
 ?f1<-(man_word-root-cat    ?w&~howI ?root&kara|ho|xe    v)
-(test (neq  (length $?m) 0))
+(test (neq  (length $?m1) 0))
 =>
-	(retract ?f ?f1)
-	(if (eq (length $?m1) 0) then 
-		;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  $?m ?w $?m1 - $?m ?root - - - $?grp_ids))
-		(assert (manual_word_info (head_id ?id) (word $?m ?w $?m1)(root $?m ?root)(group_ids $?grp_ids)))
-	else
-		;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  $?m ?w $?m1 - $?m ?root - $?m1 - $?grp_ids))
-		(assert (manual_word_info (head_id ?id) (word $?m ?w $?m1)(root $?m ?root)(vibakthi $?m1)(group_ids $?grp_ids)))
+        (retract ?f1)
+	(if (eq ?root kara) then
+		(bind ?v (string-to-field (sub-string 5 (length ?w) ?w)))
+        	(modify ?f (root $?m ?root)(vibakthi ?v $?m1))
+	else	
+	        (modify ?f (root $?m ?root)(vibakthi $?m1))
 	)
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
@@ -459,15 +479,17 @@
 ;This process continues till the capacitor is fully charged.
 ;yaha prakriyA waba waka [calawI rahawI hE] jaba waka ki saMXAriwra pUrI waraha AveSiwa nahIM ho jAwA hE.
 ;root = cala , tam = wA_rahawA_hE 
+;Man has constantly made endeavors to improve the quality of communication with other human beings. 
+;mAnava niranwara hI yaha [prayawna karawA rahA hE] ki usakA mAnava jAwi se saFcAra guNawA meM unnawa ho. 
 (defrule replace_tam_with_root-tam
 (declare (salience 72))
-?f<-(manual_word_info (head_id ?id) (word ?word $?wrds)(root ?root)(vibakthi ?tam $?wrds)(group_ids $?grp_ids))
+?f<-(manual_word_info (head_id ?id) (word ?word $?wrds)(root ?root $?r)(vibakthi ?tam $?tams)(group_ids $?grp_ids))
 ;?f <- (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root -  ?tam $?wrds  - $?grp_ids)
 (test (neq ?tam -))
 (not (replaced_tam_with_root_tam ?id))
 (not (vib_added ?id))
 =>
-	(bind ?new_mng (remove_character " " (implode$ (create$ ?tam $?wrds)) "_"))
+	(bind ?new_mng (remove_character " " (implode$ (create$ ?tam $?tams)) "_"))
 	(printout t (implode$ ?new_mng) crlf)
 	(bind ?mng (gdbm_lookup "AllTam_rev.gdbm" (implode$ ?new_mng)))
 	(if (neq ?mng "FALSE") then
@@ -475,13 +497,13 @@
 		(printout t ?root_tam crlf)
 		(if (eq ?root ?word) then 
 			;;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root - (explode$ ?root_tam) - $?grp_ids))
-			(assert (manual_word_info (head_id ?id) (word ?word $?wrds)(root ?root)(vibakthi ?root ?tam)(group_ids $?grp_ids)))
+			(assert (manual_word_info (head_id ?id) (word ?word $?wrds)(root ?root $?r)(vibakthi ?root ?tam)(group_ids $?grp_ids)))
 			(assert (replaced_tam_with_root_tam ?id)) 
 		else
 		(bind ?new_tam (sub-string 2 (length ?root_tam) ?root_tam))
 		(printout t ?new_tam ?root_tam crlf)
 			;;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root - (explode$ ?new_tam) - $?grp_ids))
-			(assert (manual_word_info (head_id ?id) (word ?word $?wrds)(root ?root)(vibakthi ?new_tam)(group_ids $?grp_ids)))
+			(assert (manual_word_info (head_id ?id) (word ?word $?wrds)(root ?root $?r)(vibakthi ?new_tam)(group_ids $?grp_ids)))
 			(assert (replaced_tam_with_root_tam ?id))
 		)
 		(retract ?f)

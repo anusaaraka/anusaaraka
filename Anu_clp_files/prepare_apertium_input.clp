@@ -50,6 +50,8 @@
  (assert (id-eng-src))
  (assert (id-attach_eng_mng))
  (assert (id-wsd_viBakwi))
+ (assert (id-domain_type))
+ (assert (compound_meaning_decided))
  )
  ;----------------------------------------------------------------------------------------------------------------------- 
  (deffunction remove_character(?char ?str ?replace_char)
@@ -1173,6 +1175,22 @@
         (retract ?f0)
         (printout ?*A_fp5* "(id-Apertium_input "?id " ^"?h_word "<cat:p><case:o><parsarg:0><gen:"?gen"><num:"?num"><per:"?per "><tam:0>$)"  crlf)
         (printout ?*aper_debug-file* "(id-Rule_name  "?id "  PP_rule_with_vib_for_hnd_pronoun1 )" crlf)
+  )
+  ;-------------------------------------------------------------------------------------------------------------------------
+  ;Since the magnitude of a null vector is zero, its direction can not be specified.
+  ;kyoMki eka akRama vektara kA parimANa SUnya hE, usakA isaliye xiSA nahIM bawAI jA sakawI hE.
+  (defrule default_kA_vib_rule
+  (declare (salience 351))
+  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(person ?per)(vibakthi kA)(group_ids $?ids))
+  (id-word ?pada_id  ?w&he|she|their|i|those|your|you|our|my|me|they|its|we|it|him|this|mine)
+  ?f0<-(id-HM-source ?pada_id ?h_word ?)
+  (hindi_id_order  $?start $?ids ?foll_pada_id $?)
+  (not (numberp ?foll_pada_id))
+  =>
+	(retract ?f0)
+        (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word "<cat:p><parsarg:kA><fnum:s><case:d><gen:m><num:"?num"><per:"?per ">$)"  crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  default_kA_vib_rule )" crlf)
+	(printout t "Warning: Missing GNP for 'kA' for " ?w  crlf)
   )
   ;-------------------------------------------------------------------------------------------------------------------------
   (defrule PP_rule_with_vib_hid

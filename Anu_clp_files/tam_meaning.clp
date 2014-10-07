@@ -36,6 +36,7 @@
  (assert (id-wsd_viBakwi)) 
  (assert (id-tam-src))
  (assert (id-HM-source))
+ (assert (id-domain_type))
  )
 
  ; if there is a conjunction between verbs and the tam for first verb is say wA_hE then modify all the tams for the verbs in conjunction as wA_hE
