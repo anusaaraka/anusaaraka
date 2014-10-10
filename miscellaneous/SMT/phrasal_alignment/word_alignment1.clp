@@ -1,4 +1,4 @@
-(deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot root (default 0))(multislot vibakthi (default 0))(multislot group_ids (default 0)))
+(deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(multislot group_ids (default 0)))
 
 
 (defglobal ?*fp* = dic_fp1)
@@ -314,14 +314,14 @@
         (assert (anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?pre $?h_mng $?pos)))
 )
 ;-------------------------------------------------------------------------------------
-(defrule print_to_file
-(declare (salience -1000))
-?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?man_mng)
-(phrasal_aligned_mng ?aid  ?mid)
-(man_id-root-src-rule_name ?mid ?root  ?src ?rule_name)
-=>
-	(retract ?f)
-        (printout ?*fp* "(anu_id-anu_mng-sep-man_id-man_mng_tmp "?aid" "(implode$ $?anu_mng)" - "?mid" "(implode$ $?man_mng)")" crlf)
-        (printout ?*fp1* "(man_id-root-src-rule_name "?mid" "?root"  "?src" "?rule_name")" crlf)
-)
+;(defrule print_to_file
+;(declare (salience -1000))
+;?f<-(anu_id-anu_mng-sep-man_id-man_mng_tmp ?aid $?anu_mng - ?mid $?man_mng)
+;(phrasal_aligned_mng ?aid  ?mid)
+;(man_id-root-src-rule_name ?mid ?root  ?src ?rule_name)
+;=>
+;	(retract ?f)
+;        (printout ?*fp* "(anu_id-anu_mng-sep-man_id-man_mng_tmp "?aid" "(implode$ $?anu_mng)" - "?mid" "(implode$ $?man_mng)")" crlf)
+;        (printout ?*fp1* "(man_id-root-src-rule_name "?mid" "?root"  "?src" "?rule_name")" crlf)
+;)
 
