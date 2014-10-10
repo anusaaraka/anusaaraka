@@ -5,7 +5,9 @@
 ;	5. default_meaning_frm_oldwsd.gdbm  and
 ;	6. default-iit-bombay-shabdanjali-dic_smt.gdbm 
 
-(deftemplate  database_info(slot meaning (default 0))(multislot components (default 0))(slot root (default 0))(slot database_name (default 0))( slot database_type (default 0))(multislot group_ids (default 0)))
+(deftemplate  database_info (slot meaning (default 0))(multislot components (default 0))(slot root (default 0))(slot database_name (default 0))( slot database_type (default 0))(multislot group_ids (default 0)))
+
+(deftemplate tam_database_info (multislot e_tam (default 0)) (slot database_name (default 0)) (multislot meaning (default 0))(multislot components (default 0)))
 
 
 
@@ -305,7 +307,7 @@
  =>
 	(bind ?new_mng "")
         (bind ?count 0)
-                (bind ?tam (implode$ (create$ ?tam)))
+                ;(bind ?tam (implode$ (create$ ?tam)))
                 (bind ?mng (gdbm_lookup "hindi_tam_dictionary.gdbm" ?tam))
                 (if (and (neq ?mng "FALSE") (neq (length ?mng) 0)) then (bind ?new_mng (str-cat ?new_mng ?mng)))
 		(bind ?new_mng1 "")
@@ -316,7 +318,9 @@
                         (bind ?new_mng1 (sub-string 1 (- ?slh_index 1) ?new_mng))
                         (bind ?new_mng1 (remove_character "_" ?new_mng1 " "))
                         (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
-                        (assert (e_tam-id-dbase_name-mng (explode$ ?tam) ?count hindi_tam_dictionary ?new_mng1))
+                 ;       (bind ?tam (explode$ ?tam))
+                        (assert (e_tam-id-dbase_name-mng ?tam ?count hindi_tam_dictionary ?new_mng1))
+                        (assert (tam_database_info (e_tam ?tam) (database_name hindi_tam_dictionary) (meaning   ?new_mng1) (components ?new_mng1)))
                         (bind ?new_mng (sub-string (+ ?slh_index 1) (length ?new_mng) ?new_mng))
                         (bind ?slh_index (str-index "/" ?new_mng))
                 )
@@ -326,7 +330,9 @@
                         (bind ?new_mng1 (remove_character "-" (implode$ (create$ ?new_mng1)) " "))
         (if (neq ?new_mng "") then
                         (bind ?count (+ ?count 1))
-                        (assert (e_tam-id-dbase_name-mng (explode$ ?tam) ?count hindi_tam_dictionary ?new_mng1))
+                  ;      (bind ?tam (explode$ ?tam))
+                        (assert (e_tam-id-dbase_name-mng ?tam ?count hindi_tam_dictionary ?new_mng1))
+                        (assert (tam_database_info (e_tam ?tam) (database_name hindi_tam_dictionary) (meaning   ?new_mng1)(components ?new_mng1)))
         )
  )
  ;--------------------------------------------------------------------------------------------------------
