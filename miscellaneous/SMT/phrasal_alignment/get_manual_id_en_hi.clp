@@ -295,7 +295,7 @@
 (declare (salience 80))
 ?f1<-(manual_id-word ?id0 $?noun)
 ?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ke)
-?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|kAraNa|pare|BIwara)
+?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|pare|BIwara|Age|pICe|paScAwa|paScAw|nikata|sApekRa)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>
@@ -336,7 +336,7 @@
 (not (mng_has_been_grouped ?id3))
 (not (vib_added ?id0))
 =>
-        (assert (manual_id-en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - ?id0 ?id3))
+;        (assert (manual_id-en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - ?id0 ?id3))
         (assert (manual_word_info (head_id ?id0) (word $?noun)(vibakthi ?vib)(group_ids ?id0 ?id3)))
 	(assert (vib_added ?id0))
 )
@@ -419,7 +419,7 @@
 (declare (salience 75))
 ?f<-(manual_word_info (head_id ?id) (word ?word $?wrds)(group_ids $?grp_ids))
 ;?f<-(manual_id_en_hi-word-root-vib-grp_ids ?id   ?word $?wrds - - - - - $?grp_ids)
-?f1<-(man_word-root-cat    ?word ?root&~kara&~ho    v)
+?f1<-(man_word-root-cat    ?word ?root&~kara&~ho~hE    v)
 (chunk_name-chunk_ids-words VGF|VGNN|VGNF $? ?id $? - $?)
 ;(test (neq (length ?root) (length ?word)))
 =>
@@ -453,6 +453,7 @@
 	(bind ?new_mng (remove_character " " (implode$ (create$ ?tam $?tams)) "_"))
 	(printout t (implode$ ?new_mng) crlf)
 	(bind ?mng (gdbm_lookup "AllTam_rev.gdbm" (implode$ ?new_mng)))
+	(printout t ?mng "***" crlf)
 	(if (neq ?mng "FALSE") then
 		(bind ?root_tam (string-to-field (implode$ (remove_character "_"  (implode$ (create$ ?mng)) " "))))
 		(printout t ?root_tam crlf)
@@ -462,9 +463,9 @@
 			(assert (replaced_tam_with_root_tam ?id)) 
 		else
 		(bind ?new_tam (sub-string 2 (length ?root_tam) ?root_tam))
-		(printout t ?new_tam ?root_tam crlf)
+		(printout t ?new_tam "&&" ?root_tam crlf)
 			;;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root - (explode$ ?new_tam) - $?grp_ids))
-			(modify ?f (root ?root $?r)(vibakthi ?new_tam))
+			(modify ?f (root ?root $?r)(vibakthi (explode$ ?new_tam)))
 			(assert (replaced_tam_with_root_tam ?id))
 		)
 	)

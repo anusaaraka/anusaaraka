@@ -21,5 +21,5 @@
 \+	{	printf("SYMBOL-PLUS");		}
 [[]	{	printf("PUNCT-LeftSquareBracket");	}
 ~	{	printf("SYMBOL-TELDA");		}
-
+\| 	{	printf("SYMBOL-VERTICAL-LINE");	}
 %%
