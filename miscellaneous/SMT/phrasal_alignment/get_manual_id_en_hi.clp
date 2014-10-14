@@ -44,13 +44,15 @@
   (assert (underscore_removed ?aid))
 )
 ;---------------------------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 
 (defrule get_multi_dbase_facts
 (declare (salience 1000))
-?f0<-(ids-cmp_mng-head-cat-mng_typ-priority $?ids ?mng ? ? ? ?)
+(database_info (meaning ?mng)(database_type multi))
+(not (got_multi_word ?mng))
 =>
-	(retract ?f0)
+	(assert (got_multi_word ?mng))
 	(bind ?new_mng (remove_character "_" (implode$ (create$ ?mng)) " "))
-	(assert (multi-word ?new_mng))
+	(assert (multi_word ?new_mng))
 )	
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 (defrule cp_manual_sen
@@ -180,6 +182,10 @@
         (modify ?f (head_id ?mid) (word $?mng)(group_ids $?grp))
 )
 
+
+
+
+
 (defrule get_id3
 (declare (salience 60))
 ?f1<-(manual_id-word ?mid ?man_wrd)
@@ -192,9 +198,12 @@
 )
 
 ;----------------------------------------------------------------------------------------------------------------
-(defrule multi_word_from_dic
+;Added by Shirisha Manju
+;Languages and methods used in communication have kept evolving from prehistoric to [modern times], to meet the growing demands in terms of speed and complexity of information.
+;mAnava prAgEwihAsika kAla se [AXunika kAla] waka, saFcAra meM upayoga hone vAlI nayI - nayI BARAoM evaM viXiyoM kI Koja karane ke lie prayawnaSIla rahA hE, wAki saFcAra kI gawi evaM jatilawAoM ke paxoM meM baDawI AvaSyakawAoM kI pUrwi ho sake.
+(defrule multi_word_from_mwe_dic
 (declare (salience 110))
-(multi-word ?mng ?mng1)
+(multi_word ?mng ?mng1)
 ?f0<-(manual_id-word ?id0 ?mng)
 ?f1<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?mng1)
 (not (mng_has_been_grouped ?id1))
@@ -311,11 +320,11 @@
 ?f1<-(manual_id-word ?id0 $?noun)
 ?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) -)
 ?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w)
-(not (mng_has_been_grouped ?id1))
+(not (mng_has_been_grouped ?id0))
 (not (mng_has_been_grouped ?id2))
 =>
         (assert (manual_word_info (head_id ?id0) (word $?noun ?w)(group_ids ?id0 ?id2)))
-        (assert (mng_has_been_grouped ?id1)) 
+        (assert (mng_has_been_grouped ?id0)) 
         (assert (mng_has_been_grouped ?id2)) 
 )
 ;----------------------------------------------------------------------------------------------------------------
@@ -336,7 +345,7 @@
 (not (mng_has_been_grouped ?id3))
 (not (vib_added ?id0))
 =>
-;        (assert (manual_id-en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - ?id0 ?id3))
+       ; (assert (manual_id-en_hi-word-root-vib-grp_ids ?id0 $?noun - - - ?vib - ?id0 ?id3))
         (assert (manual_word_info (head_id ?id0) (word $?noun)(vibakthi ?vib)(group_ids ?id0 ?id3)))
 	(assert (vib_added ?id0))
 )
@@ -379,6 +388,19 @@
 )
 
 ;-------------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 8-9-14
+;[Similarly], we can argue that it lies on the median MQ and NR.
+;[isI prakAra] hama warka kara sakawe hEM ki yaha mAXyikA MQ Ora NR para BI avasWiwa hogA.
+(defrule multi_word_from_dic
+(declare (salience 110))
+(database_info (components ?mng ?mng1)(database_type single))
+?f0<-(manual_word_info (head_id ?id0) (word ?mng)(group_ids ?id))
+?f1<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1)) (word ?mng1)(group_ids $?ids))
+=>
+	(retract ?f0)
+	(modify ?f1 (head_id ?id0)(word ?mng ?mng1)(group_ids ?id $?ids))
+)
+;-------------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 5-9-14
 ;The Princess began to weep. rAjakumArI ne ronA [SurU kara xiyA]. 
 (defrule get_kara_root
@@ -419,7 +441,7 @@
 (declare (salience 75))
 ?f<-(manual_word_info (head_id ?id) (word ?word $?wrds)(group_ids $?grp_ids))
 ;?f<-(manual_id_en_hi-word-root-vib-grp_ids ?id   ?word $?wrds - - - - - $?grp_ids)
-?f1<-(man_word-root-cat    ?word ?root&~kara&~ho~hE    v)
+?f1<-(man_word-root-cat    ?word ?root&~kara&~ho&~hE    v)
 (chunk_name-chunk_ids-words VGF|VGNN|VGNF $? ?id $? - $?)
 ;(test (neq (length ?root) (length ?word)))
 =>
@@ -453,7 +475,6 @@
 	(bind ?new_mng (remove_character " " (implode$ (create$ ?tam $?tams)) "_"))
 	(printout t (implode$ ?new_mng) crlf)
 	(bind ?mng (gdbm_lookup "AllTam_rev.gdbm" (implode$ ?new_mng)))
-	(printout t ?mng "***" crlf)
 	(if (neq ?mng "FALSE") then
 		(bind ?root_tam (string-to-field (implode$ (remove_character "_"  (implode$ (create$ ?mng)) " "))))
 		(printout t ?root_tam crlf)
@@ -463,7 +484,7 @@
 			(assert (replaced_tam_with_root_tam ?id)) 
 		else
 		(bind ?new_tam (sub-string 2 (length ?root_tam) ?root_tam))
-		(printout t ?new_tam "&&" ?root_tam crlf)
+		(printout t ?new_tam ?root_tam crlf)
 			;;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root - (explode$ ?new_tam) - $?grp_ids))
 			(modify ?f (root ?root $?r)(vibakthi (explode$ ?new_tam)))
 			(assert (replaced_tam_with_root_tam ?id))
@@ -543,4 +564,18 @@
         (assert (replaced_tam_with_root_tam ?id0))
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
+;This suggests the definition of dipole moment
+;isase xviXruva AGUrNa kI pariBARA kA [safkewa] [milawA hE].
+;safkewa milawA == phrasal
+;milawA hE = chunk
+(defrule modify_verb_chunk
+(declare (salience 10))
+(manual_word_info (head_id ?id0) (word $?noun)(group_ids ?id $?ids $?vids))
+?f0<-(chunk_name-chunk_ids-words VGF $?vids - $?wrds)
+?f1<-(chunk_name-chunk_ids NP ?id $?ids)
+=>
+	(retract ?f0 ?f1)
+	(assert (chunk_name-chunk_ids-words VGF  ?id $?ids $?vids - ?id $?ids $?wrds))	
+)
+
 

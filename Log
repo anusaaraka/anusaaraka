@@ -72,10 +72,15 @@
 	relation-table-for-WSD-wx.html  
 	style.css
  23. Added align_output/ folder in phrasal_alignment which contains
-	verified
-	verified_hnd
-       	verified_eng_align.html
- 24 Added following files related to phrasal alignment:
+	verified			phy_verified
+	verified_hnd			phy_verified_hnd
+       	verified_eng_align.html		phy_verified_eng_align.html
+ 24. Added align_debug/ folder in phrasal_alignment which contains
+	alignment_debug.sh
+	create-html-table.pl
+	print_matrix.py
+	README
+ 25. Added following files related to phrasal alignment:
 	count.py
 	sort.sh
 	bin/Anusaaraka_alignment.sh 
@@ -93,34 +98,36 @@
 	get_phrasal_dic-en-hi.sh 
 	phrase_gdbm_dict.c 
 	create_SL-TL_dict_using_phrase_table.py
- 25. Added dummy fact
+	get_heuristics.clp
+	alignment.clp
+ 26. Added dummy fact
         1. 'parser_id-cat' ---  cat_rule.clp, parser_id_mapping.clp, root_rule.clp and sd_relation_rules.clp
 	2. '(id-domain_type) and (compound_meaning_decided)'
 		causative_verb_mng.clp		hindi_meaning.clp		hindi_sent_reorder.clp
 		hindi_sentence.clp		number.clp			prepare_apertium_input.clp
 		tam_meaning.clp			vibakthi.clp			preferred_morph_consistency_check.clp
- 26. Added following files:
+ 27. Added following files:
 	-> check_for_TITLE.c programme to check whether input file contains TITLE or not.
 	-> get_latest_version_stanford_parser.sh in stanford-parser dir 
 	-> src folder in stanford-parser dir (Separated source files related to stanford-parser)
  	-> transliterate_meaning.txt file in Anu_data
 	-> get_rev_alltam.sh file to generate Alltam in reverse format
 	-> hindi_compound_meaning.clp in Anu_clp_files  (to handle all compound meanings)
- 27. Added:
+ 28. Added:
 	iit-bombay-UNL-hi-en dictionary in goldendict format(reverse of en-hi)
- 28. Removed : 
+ 29. Removed : 
 	miscellaneous/SMT/phrasal_alignment/replace-mapping-symbols_for_align.lex
 	Stanford parser version 3.3.1
- 29. Renamed iit-bombay dictionary has iit-bombay-UNL-en-hi
- 30. Modified get_word_count.c and get_word_count_single.c 
- 31. Updated following lex files:
+ 30. Renamed iit-bombay dictionary has iit-bombay-UNL-en-hi
+ 31. Modified get_word_count.c and get_word_count_single.c 
+ 32. Updated following lex files:
 	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
 	mapping-symbols.lex -> 	Added code to handle '|'
 	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern, Added code to handle '|'
 	morph.lex:	-> Modified to get tam info from morph.
 	wx_utf8.lex:	-> Handled 'eV', 'eY', 'oV'
 	phrasal_alignment/replace-punctuation.lex	-> 	Added '~' 
- 32. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
+ 33. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
 	Word-to-Word-dict.txt			run_alignment.sh			align-left-over-wrds.py
 	en-hi-gdbm-dict.txt			run_alignment-hi-en.sh			get_word_align.py
 						run_alignment-hi-en-hi.sh		match_value_in_hnd.py
@@ -134,9 +141,9 @@
 	Readme 
 	phrasal_alignment.css
 	phrasal_alignment.js
- 33. Updated following dictionarie related files:
+ 34. Updated following dictionarie related files:
 	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix		provisional_multi_word_dictionary.txt 
- 34. Updated following shell files:
+ 35. Updated following shell files:
 	Anusaaraka_stanford_align_eng_ord.sh
 	replace-abbrevations.sh
 	abbr.sh
@@ -146,21 +153,21 @@
 	get_multi_word-dic.sh
 	stdenglish.sh	-> 	Added code to run  check_for_TITLE.c programme
 	run_align_browser_eng.sh to work email concept in alignment layered o/p
- 35. Updated following files:
+ 36. Updated following files:
 	create_eng_align_html_phrasal.clp to work email concept in alignment layered o/p
 	this1.py
 	stanford-parser/README
  	Readme_to_use_email_in_firefox.txt
 	Dictionaries/Readme
 	create_binary_files.clp	-- added hindi_compound_meaning.clp
- 36. Updated Stanford parser version from 3.3.1 to 3.4.1 in following files:
+ 37. Updated Stanford parser version from 3.3.1 to 3.4.1 in following files:
 	Anusaaraka_bllip_parser.sh	Anusaaraka_bllip_parser_minion.sh	Anusaaraka_rasp.sh	Anusaaraka_site.sh
 	Anusaaraka_stanford-Factored.sh	Anusaaraka_stanford_align_man_ord.sh	Anusaaraka.sh		Anusaaraka_all.sh	
 	Anusaaraka_berkeley.sh		run_stanford-gui-factored.sh		run_stanford-gui-pcfg.sh
 	Anusaaraka_stanford.sh		shell_scripts/anu_compile.sh		shell_scripts/remove_out-files.sh
- 37. Updated following verifieds:
+ 38. Updated following verifieds:
 	sd_verified (846)
- 38. Updated Log. 
+ 39. Updated Log. 
 
 
  05-06-14
