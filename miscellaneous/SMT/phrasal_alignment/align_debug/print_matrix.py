@@ -36,8 +36,8 @@ eng_wrds = {}
 for line in file(sys.argv[2]):
         tmp = line.split()
         tmp1 = tmp[1:-1]
-        for i in xrange(len(tmp1)):
-                eng_wrds[i] = tmp1[i]
+        for i in range(1,len(tmp1)+1):
+                eng_wrds[i] = tmp1[i-1]
 
 
 print '<th colspan="', cols, '">','<FONT COLOR=#FF3333>', '<style type="text/css"> div {text-align: left;}</style><div>', eng_wrds, '</div> </th>'
@@ -105,6 +105,7 @@ for r in range(rows):
 			print '.\t',	
 	print
 
+
 # --- To print no match cases -------------
 no_match_list = [ ]
 for line in file(sys.argv[1]):
@@ -114,3 +115,48 @@ for line in file(sys.argv[1]):
 
 if no_match_list != []:
 	print '<th colspan="', cols, '">', '<style type="text/css"> div {text-align: left;}</style><div>','<FONT COLOR=red>','no_match_found :',' / '.join(no_match_list), '</FONT>','</div> </th>'
+
+
+#---- To print parser original tree info------------
+tree= [ ]
+tree_info_dict = {};
+for line in file(sys.argv[1]):
+	if line.startswith('( ('):
+#	if line.startswith('(ROOT (S'):
+		tmp=line.strip()
+		tree= tmp.split('_')
+		for key in  eng_wrds.keys():
+			tree_info_dict[key]=tree[key-1]
+
+#print tree_info_dict
+print '\t',
+for c in range(1, cols+1):
+	print '<FONT COLOR=blue>','<b>',tree_info_dict[c],'</b>', '\t',
+
+print '\t',
+
+#--------------- To print tree after removing paren -----------
+print '\t',
+tree1 = " " 
+#str1=' '
+for c in range(1, cols+1):
+	tree1 = tree_info_dict[c]
+	lcount= tree1.count('(')
+	rcount= tree1.count(')')
+	count= lcount - rcount
+	if count > 0:
+		t1=tree1[:-rcount]
+		print '<FONT COLOR=blue>','<b>',t1[rcount:],'</b>', '\t',
+	else:
+		t1=tree1[lcount+1:]
+		print '<FONT COLOR=blue>','<b>',t1[:-lcount],'</b>', '\t',
+
+#	print lcount, rcount , count
+#	if count < 0:
+#		for j in range(-count):
+#			str1= str1+')' 
+#		print '<FONT COLOR=blue>','<b>',c, str1,'</b>', '\t',
+#	else:
+#		for j in range(count):
+#			print '<FONT COLOR=blue>','<b>','(', '</b>',
+#		print '<FONT COLOR=blue>','<b>', c,'</b>', '\t',

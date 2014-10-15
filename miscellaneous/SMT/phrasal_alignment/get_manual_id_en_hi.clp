@@ -564,15 +564,16 @@
         (assert (replaced_tam_with_root_tam ?id0))
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 ;This suggests the definition of dipole moment
-;isase xviXruva AGUrNa kI pariBARA kA [safkewa] [milawA hE].
-;safkewa milawA == phrasal
-;milawA hE = chunk
+;isase xviXruva AGUrNa kI pariBARA kA [safkewa] [milawA hE].  safkewa milawA == phrasal ;  milawA hE = chunk
+;Such cables are normally operated below 18 GHz.
+;isa prakAra kA kebala sAmAnyawaH 18 @GHz Avqwwi se nIce [pracAliwa howA hE].  grouped using verb_rule2  
 (defrule modify_verb_chunk
 (declare (salience 10))
 (manual_word_info (head_id ?id0) (word $?noun)(group_ids ?id $?ids $?vids))
 ?f0<-(chunk_name-chunk_ids-words VGF $?vids - $?wrds)
-?f1<-(chunk_name-chunk_ids NP ?id $?ids)
+?f1<-(chunk_name-chunk_ids ? ?id $?ids)
 =>
 	(retract ?f0 ?f1)
 	(assert (chunk_name-chunk_ids-words VGF  ?id $?ids $?vids - ?id $?ids $?wrds))	
