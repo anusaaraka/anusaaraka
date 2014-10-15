@@ -14,7 +14,6 @@ $HOME_anu_test/Anu_src/split_file.out one_sentence_per_line.txt.std.penn.tmp3  d
 while read line
 do
  cd $line
- echo $line
  myclips -f  $PRES_PATH/run_parser_mapping.bat >  $1_map.error
  sed 's/(parserid-wordid   /sed "s\//' parserid_wordid_mapping_with_punct.dat | sed "s/P\([0-9's]\+\)[ ]\+/P\1\//" | sed 's/)$/\/"/' | sed -n -e "H;\${g;s/\n/ | /g;p}"  | sed 's/^/sed "s\/dummy_sed\/\/" \$1/g' > map.sh
  sh map.sh  $MYPATH/$line/std.penn.tmp  > std.penn.tmp1
