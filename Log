@@ -1,4 +1,4 @@
- 30-09-14
+ 15-10-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	admire.clp	distinguish.clp		update.clp
@@ -79,6 +79,10 @@
 	alignment_debug.sh
 	create-html-table.pl
 	print_matrix.py
+	combine_apos.lex
+	get_wordid.lex
+	parserid_wordid_mapping.clp
+	run_parser_mapping.bat
 	README
  25. Added following files related to phrasal alignment:
 	count.py
