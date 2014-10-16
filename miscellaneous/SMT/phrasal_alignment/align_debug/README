@@ -1,0 +1,10 @@
+Pre-requisites:
+===============
+	Run Phrasal alignment before debugging.
+	Ex: sh run_alignment.sh ENG HND 
+
+Run:
+====
+
+sh alignment_debug.sh <file_name> <sentence_no>
+	Ex: sh alignment_debug.sh  k  2.1
