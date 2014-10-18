@@ -2,7 +2,7 @@
 
 (deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(multislot group_ids (default 0)))
 
-(deftemplate  database_info(slot meaning (default 0))(multislot components (default 0))(slot root (default 0))(slot database_name (default 0))( slot database_type (default 0))(multislot group_ids (default 0)))
+(deftemplate  database_info (slot root (default 0))(slot meaning (default 0))(multislot components (default 0))(slot database_name (default 0))( slot database_type (default 0))(multislot group_ids (default 0)))
 
 (deftemplate tam_database_info (slot e_tam (default 0)) (slot database_name (default 0)) (multislot meaning (default 0))(multislot components (default 0)))
 
@@ -60,7 +60,6 @@
         (assert (count_fact 0))
 )
 ;--------------------------------- Exact match with anu without vib ------------------------------------------------
-;Added by Shirisha Manju
 ;Modern communication has its roots in the [19] th and [20] th century in the work of scientists like J.C. Bose, F.B. Morse, G. Marconi and Alexander Graham Bell. 
 ;AXunika saFcAra kI jadeM [19] vIM waWA [20] vIM SawAbxiyoM meM sara jagaxISa canxra bosa, ePa.bI. morsa, jI mArkonI waWA alekjeNdara grAhma bela ke kArya xvArA dAlI gaIM.
 ;Note :NO PATH
@@ -234,6 +233,20 @@
         )
 )
 ;-------------------------------------------------------------------------------------
+;Similarly, we can argue that it lies on the median MQ and NR.
+;isI prakAra hama [warka kara sakawe hEM] ki yaha mAXyikA @MQ Ora @NR para BI avasWiwa hogA.
+(defrule kriyA_mUla_partial_match
+(declare (salience 820))
+(current_id ?mid)
+(manual_word_info (head_id ?mid)(root $?v_root ?r&kara|ho|xe))
+(test (neq (length $?v_root) 0))
+(database_info (root ?root)(components $?v_root $? ?r) (database_type single) )
+(id-root ?aid ?root)
+=>
+	(assert (anu_id-man_id-type ?aid ?mid  kriyA_mUla_partial_match))
+	(assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root kriyA_mUla_with_dic kriyA_mUla_partial_match))
+)
+ 
 ;need to discuss
 ;(defrule verb_with_only_root_match_using_dic
 ;(declare (salience 879))

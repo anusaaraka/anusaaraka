@@ -22,7 +22,7 @@ done < $MYPATH/dir_names.txt
 
 cd $MYPATH/$2
 sed 's/\([0-9]\)\()\+\)[ ]/\1\2_/g' std.penn.tmp1 > std.penn.tmp2
-sed 's/[A-Z]\+//g' std.penn.tmp2 > std.penn.txt
+sed 's/[A-Z,\$]\+//g' std.penn.tmp2 > std.penn.txt
 
 cat std.penn.tmp2 std.penn.txt >> slot_debug_input.txt
 #-------------------------------------------------------------------

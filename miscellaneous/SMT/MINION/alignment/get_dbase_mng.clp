@@ -5,7 +5,8 @@
 ;	5. default_meaning_frm_oldwsd.gdbm  and
 ;	6. default-iit-bombay-shabdanjali-dic_smt.gdbm 
 
-(deftemplate  database_info (slot meaning (default 0))(multislot components (default 0))(slot root (default 0))(slot database_name (default 0))( slot database_type (default 0))(multislot group_ids (default 0)))
+;(deftemplate  database_info (slot meaning (default 0))(multislot components (default 0))(slot root (default 0))(slot database_name (default 0))( slot database_type (default 0))(multislot group_ids (default 0)))
+(deftemplate  database_info (slot root (default 0))(slot meaning (default 0))(multislot components (default 0))(slot database_name (default 0))( slot database_type (default 0))(multislot group_ids (default 0)))
 
 (deftemplate tam_database_info (multislot e_tam (default 0)) (slot database_name (default 0)) (multislot meaning (default 0))(multislot components (default 0)))
 
