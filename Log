@@ -1,4 +1,4 @@
- 15-10-14
+ 17-10-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	admire.clp	distinguish.clp		update.clp
@@ -104,6 +104,7 @@
 	create_SL-TL_dict_using_phrase_table.py
 	get_heuristics.clp
 	alignment.clp
+	get_score.clp
  26. Added dummy fact
         1. 'parser_id-cat' ---  cat_rule.clp, parser_id_mapping.clp, root_rule.clp and sd_relation_rules.clp
 	2. '(id-domain_type) and (compound_meaning_decided)'

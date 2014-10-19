@@ -4,7 +4,8 @@
 
 (deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(multislot group_ids (default 0)))
 
-(deftemplate  database_info(slot meaning (default 0))(multislot components (default 0))(slot root (default 0))(slot database_name (default 0))( slot database_type (default 0))(multislot group_ids (default 0)))
+
+(deftemplate  database_info (slot root (default 0))(slot meaning (default 0))(multislot components (default 0))(slot database_name (default 0))( slot database_type (default 0))(multislot group_ids (default 0)))
 
 (deftemplate tam_database_info (slot e_tam (default 0)) (slot database_name (default 0)) (multislot meaning (default 0))(multislot components (default 0)))
 ;---------------------------------------------------------------------------------------------------------------------------------------------
@@ -80,14 +81,14 @@
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 
 (defrule get_verb_chunk_cp
-(declare (salience 803))
+(declare (salience 850))
 ?f<-(chunk_name-chunk_ids ?chnk&VGF|VGNN|VGNF $?gids)
 =>
 	(assert (chunk_name-chunk_ids-words  ?chnk $?gids - $?gids))
 )
 
 (defrule get_verb_chunk
-(declare (salience 802))
+(declare (salience 840))
 ?f<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF $?gids - $?pre ?mid $?pos)
 ?f1<-(manual_id-word ?mid ?man_wrd)
 =>
@@ -100,14 +101,14 @@
 ;And, turning to her guards, she ordered them to seize Dipu.    usane apane paharexAroM kI ora GUmakara xIpU ko pakadane kA [AxeSa xiyA]. 
 ;Dipu remarked.							xIpU ne [tippaNI kI].
 ;He must be very worried about me.				vaha avaSya hI mere lie bahuwa [ciMwiwa hogA].
+;Similarly, we can argue that it lies on the median MQ and NR.  isI prakAra hama [warka kara sakawe hEM] ki yaha mAXyikA @MQ Ora @NR para BI avasWiwa hogA.
 (defrule check_prev_word_for_kara_or_ho_or_xe
-(declare (salience 802))
+(declare (salience 830))
 ?f0<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF ?mid $?gids -  $?mng)
 (manual_id-word ?mid ?w)
 (man_word-root-cat ?w ?r&kara|ho|xe v)
 (manual_id-word ?mid1&:(= (- ?mid 1) ?mid1) $?word)
-(database_info (components $?word ?kar&kara|ho|xe) (root ?root))
-;(id-org_wrd-root-dbase_name-mng ? ? ?root ? $?word ?kar&kara|ho|xe)
+(database_info (components $?word $? ?kar&kara|ho|xe) (root ?root))
 =>
        	(retract ?f0 )
 	(assert (chunk_name-chunk_ids-words ?chnk  ?mid1 ?mid $?gids - $?word $?mng))
@@ -136,11 +137,17 @@
         (assert (manual_word_info (head_id ?mid) (word $?new_mng)(group_ids $?gids)))
 )
 ;---------------------------------------------------------------------------------------------------------------------------------------------
+;Not Ex's : Every calculated quantity which is based on measured values, also has an error. 
+;	    prawyeka parikaliwa rASi, jo mApiwa mAnoM para [AXAriwa howI hE], meM BI kuCa wruti howI hE.
+
+;	    A simple method for estimating the molecular size of oleic acid is given below.
+;           olIka amla aNu ke sAija kA Akalana karane kI eka sarala viXi nIce [xI gaI hE].	    	 
 (defrule get_id2
 (declare (salience 800))
 ?f<-(anu_id-anu_mng-man_mng     ?aid ?a_wrd ?man_wrd ?man_wrd1 $?mng)
 ?f1<-(manual_id-word ?mid ?man_wrd)
 ?f2<-(manual_id-word =(+ ?mid 1) ?man_wrd1)
+(not (manual_word_info (group_ids $? ?mid =(+ ?mid 1) $?ids))) ;olIka amla aNu ke sAija kA Akalana karane kI eka sarala viXi nIce [xI gaI hE].
 =>
         (bind $?ids (create$ ))
         (bind ?length (length $?mng))
@@ -178,6 +185,7 @@
 	(loop-for-count (?i 1 (length $?grp))
                                 (bind ?j (nth$ ?i $?grp))
                                 (bind $?mng (create$ $?mng (nth$ ?j $?man_hin_sen))) 
+				(printout t ?j " " $?mng crlf)
         )
         (modify ?f (head_id ?mid) (word $?mng)(group_ids $?grp))
 )
@@ -379,14 +387,14 @@
 ;-------------------------------------------------------------------------------------------------------------------------------
 (defrule single_vib2
 (declare (salience 60))
-?f1<-(manual_word_info (head_id ?id0) (word $?noun ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle)(group_ids $?grp_ids))
+?f1<-(manual_word_info (head_id ?id0) (word $?noun ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle)(group_ids $?grp_ids)(vibakthi $?v ?v1))
 (test (neq (length $?noun) 0))
+(test (neq ?v1 ?vib));A simple method for estimating the molecular size of oleic acid is given below. olIka amla aNu ke sAija kA [Akalana karane kI] eka sarala viXi nIce xI gaI hE.
 (not (vib_added ?id0))
 =>
-	(modify ?f1 (word $?noun)(vibakthi ?vib))
+	(modify ?f1 (word $?noun)(vibakthi $?v ?v1 ?vib))
 	(assert (vib_added ?id0))
 )
-
 ;-------------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 8-9-14
 ;[Similarly], we can argue that it lies on the median MQ and NR.
@@ -403,11 +411,15 @@
 ;-------------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 5-9-14
 ;The Princess began to weep. rAjakumArI ne ronA [SurU kara xiyA]. 
+;Not Ex: ;olIka amla aNu ke sAija kA [Akalana karane kI] eka sarala viXi nIce xI gaI hE.
+;	  A simple method for estimating the molecular size of oleic acid is given below.
 (defrule get_kara_root
 (declare (salience 77))
 ?f0<-(id-kara_grouped ?id)
-?f<-(manual_word_info (head_id ?id) (word $?m ?w)(group_ids $?grp_ids))
+?f<-(manual_word_info (head_id ?id) (word $?m ?w)(group_ids $?grp_ids ?lid))
 ?f1<-(man_word-root-cat    ?w&~howI&~hE ?root&kara|ho|xe    v) ; nirBara karawA [hE]
+(manual_id-word =(- ?lid 1) ?m1)
+(not (man_word-root-cat ?m1 kara v))
 =>
 	(retract ?f0 ?f1)
 	(modify ?f (root $?m ?root))
@@ -420,12 +432,12 @@
 ;mAnava niranwara hI yaha [prayawna karawA rahA hE] ki usakA mAnava jAwi se saFcAra guNawA meM unnawa ho. 
 (defrule get_kara_root1
 (declare (salience 76))
-(id-kara_grouped ?id)
+?f0<-(id-kara_grouped ?id)
 ?f<-(manual_word_info (head_id ?id) (word $?m ?w $?m1)(group_ids $?grp_ids))
 ?f1<-(man_word-root-cat    ?w&~howI ?root&kara|ho|xe    v)
 (test (neq  (length $?m1) 0))
 =>
-        (retract ?f1)
+        (retract ?f0 ?f1)
 	(if (eq ?root kara) then
 		(bind ?v (string-to-field (sub-string 5 (length ?w) ?w)))
         	(modify ?f (root $?m ?root)(vibakthi ?v $?m1))
@@ -433,29 +445,28 @@
 	        (modify ?f (root $?m ?root)(vibakthi $?m1))
 	)
 )
+
 ;-------------------------------------------------------------------------------------------------------------------------------
 
 ;As vib and tam both goes into same field...increasing tam rule and replace_tam_with_root-tam rule salience above than vib rules
 ;ex: More [precisely], a is the acceleration of the [center of] mass of the system.
 (defrule tam
-(declare (salience 75))
+(declare (salience 74))
 ?f<-(manual_word_info (head_id ?id) (word ?word $?wrds)(group_ids $?grp_ids))
-;?f<-(manual_id_en_hi-word-root-vib-grp_ids ?id   ?word $?wrds - - - - - $?grp_ids)
-?f1<-(man_word-root-cat    ?word ?root&~kara&~ho&~hE    v)
+?f1<-(man_word-root-cat    ?word&~hE ?root&~kara    v)
 (chunk_name-chunk_ids-words VGF|VGNN|VGNF $? ?id $? - $?)
+(not (root_decided ?id))
 ;(test (neq (length ?root) (length ?word)))
 =>
 	(if (eq ?word ?root) then ;Ex: You can neither inherit it, nor pass it on to your progeny. न तो आप इसे उत्तराधिकार में पा सकते हैं और न ही अपनी सन्तति को विरासत में दे सकते हैं
 		;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root -  0 $?wrds  - $?grp_ids))
 		(modify ?f (root ?root)(vibakthi 0 $?wrds))
-
-		;(retract ?f ?f1)
-		(retract ?f1)
+		(assert (root_decided ?id))
 	else
 		(bind ?tam (string-to-field (sub-string (+ (length ?root) 1)  (length ?word) ?word)))
 		;(assert (manual_id_en_hi-word-root-vib-grp_ids ?id  ?word $?wrds - ?root -  ?tam $?wrds  - $?grp_ids))
 		(modify ?f (root ?root)(vibakthi ?tam $?wrds))
-		(retract ?f1)
+		(assert (root_decided ?id))
 	)
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
