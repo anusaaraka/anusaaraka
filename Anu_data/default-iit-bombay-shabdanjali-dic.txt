@@ -14390,7 +14390,7 @@ circumspection_UNDEFINED	sAvaXAn
 circumspection_noun	sAvaXAnI/samaJaxArI
 circumspectly_UNDEFINED	sAvaXAnI_se
 circumspectly_adverb	sAvaXAnIpUrvaka
-circumstance_noun	hAlAwa/sWiwi/parisWiwi/xaSA
+circumstance_noun	parisWiwi/hAlAwa/sWiwi/xaSA
 circumstances_UNDEFINED	xaSA
 circumstances_noun	parisWiwiyAz
 circumstantial_adjective	pArisWiwika/byorevAra/parisWiwivaSa/saMyogavaSa
@@ -16198,7 +16198,7 @@ compliant_adjective	sammawa/anuvarwI/AjFAkArI
 complianter_UNDEFINED	sammawa
 compliantest_UNDEFINED	sammawa
 complicate_verb	ulaJA/jatila_banA
-complicated_adjective	ulaJA_huA/pecIxA/kaTina/jatila
+complicated_adjective	jatila/ulaJA_huA/pecIxA/kaTina
 complicateder_UNDEFINED	ulaJA_huA
 complicatedest_UNDEFINED	ulaJA_huA
 complicater_UNDEFINED	ulaJAnA
@@ -27782,7 +27782,7 @@ expired_adjective	gawAvaXika
 expires_UNDEFINED	samApwa_honA
 expiring_UNDEFINED	samApwa_honA
 expiry_noun	samApwi
-explain_verb	samaJA/vivaraNa_xe/vivaraNa_kara/varaNa_kara/spaRta_kara/spaRta_ho/saPAI_xe/sapRta_kara/kAraNa_bawA/javAba_xe/byorA_xe/bawA/bawalA
+explain_verb	samaJA/vivaraNa_xe/vivaraNa_kara/varaNa_kara/spaRta_kara/spaRta_ho/saPAI_xe/sapRta_kara/kAraNa_bawA/javAba_xe/byorA_xe/bawA/bawalA/vyAKyA_kara
 explained_UNDEFINED	samaJAnA
 explaining_UNDEFINED	samaJAnA
 explains_UNDEFINED	samaJAnA
@@ -63932,7 +63932,7 @@ reaching_UNDEFINED	Age_baDAnA
 react_verb	prawikriyA_kara/virUxXa_prawikriyA_kara/aBikriyA_uwpanna_kara/rAsAyanika_parivarwana_pExA_kara/kisI_paxArWa_me_parivarwana_kara
 reacted_UNDEFINED	rAsAyanika_parivarwana_pExA_karanA
 reacting_UNDEFINED	rAsAyanika_parivarwana_pExA_karanA
-reaction_noun	prawikriyA/prawigamana/praBAva/aBikriyA/pragawi_me_bAXA/xavA_kA_praBAva/paxArWoM_kA_eka_xUsare_para_rAsAyanika_praBAva
+reaction_noun	aBikriyA/prawikriyA/prawigamana/praBAva/pragawi_me_bAXA/xavA_kA_praBAva/paxArWoM_kA_eka_xUsare_para_rAsAyanika_praBAva
 reactionarier_UNDEFINED	prawikriyAwmaka
 reactionaries_UNDEFINED	prawikriyAwmaka
 reactionariest_UNDEFINED	prawikriyAwmaka
@@ -65329,7 +65329,7 @@ remand_verb	vApasa_lOtA/havAlAwa_Beja/[havAlAwa]_vApasa_Beja[karanA]
 remark_UNDEFINED	bayAna_xenA
 remark_noun	XyAna/prawikriyA/XyAna_xenA
 remark_verb	XyAna_xe/tippaNI_kara/tippaNi_kara/kara/carcA_kara/bayAna_xe/kaha
-remarkable_adjective	ulleKanIya/viSiRta/vilakRaNa/asAXAraNa
+remarkable_adjective	vilakRaNa/ulleKanIya/viSiRta/asAXAraNa
 remarkabler_UNDEFINED	ulleKanIya
 remarkablest_UNDEFINED	ulleKanIya
 remarkably_UNDEFINED	ulleKanIya_waraha_se
@@ -93547,3 +93547,6 @@ connotation_noun	saMkewArWa
 metallically_noun	XAwu
 electronegative_adjective	QNAwmaka
 electronegativity_noun	viGuwaQNAwmaka 	
+edit_noun	saMpAxana
+coplanar_adjective	samawalIya
+epulsion_noun	prawikarRaNa
