@@ -645,7 +645,6 @@ Modified :
 	ionization	house__n		(     "	     "	  )
 	ionise		liv/e__vblex		(     "      "    )
 	square		liv/e__vblex		(     "      "    )
-	focuss		approach__vblex		(     "      "    )
 	salesperson	p/erson__n		(     "      "    )
 	shrink		dr/ink__vblex		(     "      "    )
 	arms		personnel__n		(     "   02-10-13)
@@ -708,6 +707,7 @@ Modified :
 	rack		house__n		(     "      "    )
 	rack		accept__vblex		(     "      "    )
 	rumbling	house__n		(     "      "    )
+	focus		focus__vblex		(     "   24-10-14)
 
 
 Modified paradigm:
@@ -724,6 +724,7 @@ Added new paradigms:
 	quarrel_vblex		("		16-11-13)
 	refer_vblex		("		04-12-13)
 	ey/e__vblex		("		28-03-14)
+	focus__vblex		("		24-10-14)
 
 Modified root:
 	may		May		as	may		(By Roja  14-03-13)
