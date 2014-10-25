@@ -86,7 +86,7 @@
  ;The explanation of the results led to the birth of Rutherford's planetary model of atom.
  (defrule modify_word_for_apos
  (declare (salience 9700))
- (id-cat_coarse ?id PropN|number)
+ (id-cat_coarse ?id ?cat&PropN|number)
  ?mng<-(meaning_to_be_decided ?id)
  ?f0<-(id-original_word ?id ?word)
  ?f1<-(id-word ?id ?wrd)
@@ -96,7 +96,7 @@
         (retract ?f0 ?f1)
         (bind ?n_word (string-to-field (sub-string 1 (- (str-index "'s" ?word) 1) ?word)))
         (assert (id-original_word ?id ?n_word))
-	(if (eq ?id number) then 
+	(if (eq ?cat number) then 
 	        (assert (id-word ?id ?n_word))
 	else
         	(assert (id-word ?id (lowcase ?n_word)))
@@ -430,7 +430,7 @@
  ;Getting Hindi meaning from default dictionary with original word when there is a different category.
  ;Also asserting a fact (sen_type-id-phrase Default_mng_with_different_category) as a warning message in catastrophe.dat
  ;Assuming first meaning always has 'Defualt'.
- (defrule default_hindi_mng-different-cat_with_org_wrd
+ (defrule default_hindi_mng-different-cat_with_org_wrd1
  (declare (salience 7300))
  ?mng<-(meaning_to_be_decided ?id)
  (id-original_word ?id ?org_wrd)

@@ -11670,7 +11670,7 @@ bulging_UNDEFINED	nikala_AnA
 bulging_adjective	uBarA_huA
 bulgy_adjective	uBarA_huA
 bulimia_noun	kRuXAwiSaya
-bulk_adjective	Woka
+bulk_adjective	Woka/vqhaxAkAra/bqhaxAkAra
 bulk_noun	Woka/viSAla_AkAra/SarIra/reSexAra_wawva/aXikAMSa
 bulk_verb	xiKa
 bulked_UNDEFINED	xiKanA
@@ -14207,6 +14207,7 @@ choruses_UNDEFINED	samUha
 chorusing_UNDEFINED	samUha
 chose_UNDEFINED	cunanA
 chosen_UNDEFINED	cunanA
+chosen_adjective	cunA_huA
 choses_UNDEFINED	cunA
 chotray_UNDEFINED	CotarAya
 choudhuri_UNDEFINED	cOXarI
@@ -14389,7 +14390,7 @@ circumspection_UNDEFINED	sAvaXAn
 circumspection_noun	sAvaXAnI/samaJaxArI
 circumspectly_UNDEFINED	sAvaXAnI_se
 circumspectly_adverb	sAvaXAnIpUrvaka
-circumstance_noun	hAlAwa/sWiwi/parisWiwi/xaSA
+circumstance_noun	parisWiwi/hAlAwa/sWiwi/xaSA
 circumstances_UNDEFINED	xaSA
 circumstances_noun	parisWiwiyAz
 circumstantial_adjective	pArisWiwika/byorevAra/parisWiwivaSa/saMyogavaSa
@@ -16197,7 +16198,7 @@ compliant_adjective	sammawa/anuvarwI/AjFAkArI
 complianter_UNDEFINED	sammawa
 compliantest_UNDEFINED	sammawa
 complicate_verb	ulaJA/jatila_banA
-complicated_adjective	ulaJA_huA/pecIxA/kaTina/jatila
+complicated_adjective	jatila/ulaJA_huA/pecIxA/kaTina
 complicateder_UNDEFINED	ulaJA_huA
 complicatedest_UNDEFINED	ulaJA_huA
 complicater_UNDEFINED	ulaJAnA
@@ -17550,7 +17551,7 @@ cookhouse_noun	bAhara_kI_rasoI_muKyawayA_kempa_meM
 cookie_noun	mITA_biskuta/vyakwi/biskuta
 cookies_UNDEFINED	mITA_biskuta
 cooking_adjective	pakAne_yogya
-cooking_noun	KAnA_pakAne_kI_viXi/pAkaviXi/KAnA
+cooking_noun	KAnA_pakAnA/KAnA_pakAne_kI_viXi/pAkaviXi/KAnA
 cookmate_UNDEFINED	sahAyaka_rasoiyA
 cooks_UNDEFINED	pakAnA
 cookup_UNDEFINED	pakAnA
@@ -21556,7 +21557,7 @@ derivative_noun	vyuwpanna_Sabxa/saFjAwa
 derivativer_UNDEFINED	vyuwpAxiwa
 derivatives_UNDEFINED	vyuwpAxiwa
 derivativest_UNDEFINED	vyuwpAxiwa
-derive_verb	prApwa_kara/vyuwpanna_ho/uwpanna_ho
+derive_verb	prApwa_kara/vyuwpanna_ho/uwpanna_ho/vyuwpanna_kara
 derived_UNDEFINED	uwpanna_honA
 derives_UNDEFINED	uwpanna_honA
 deriving_UNDEFINED	uwpanna_honA
@@ -24194,7 +24195,7 @@ dram_noun	Ayawana_kA_eka_nApa/maxirA_kI_WodI_mAwrA
 drama_noun	nAtaka/sVAfga/nAtya_racanA/aBinaya/svAfga/nAtaka_saxqSa_GatanAez
 dramas_UNDEFINED	nAtaka_saxqSa_GatanAez
 dramatic_adjective	nAtakIya/uwwejaka/praBAvaSAlI/Akasmika
-dramatically_adverb	nAtakIya_Dafga_se/praBAvaSAlI_warIke_se
+dramatically_adverb	nAtakIya_Dafga_se/nAtakIya_rUpa_se/praBAvaSAlI_warIke_se
 dramaticer_UNDEFINED	nAtakIya
 dramaticest_UNDEFINED	nAtakIya
 dramatics_noun	nAtya-kalA/nAtakIya_vyavahAra
@@ -26205,7 +26206,7 @@ engineer-driver_noun	iFjina_cAlaka
 engineer_noun	iFjIniyara/yANtrika/ABiyMawA
 engineer_verb	iFjIniyara/yojanA_banA/prabMaXa_kara/niramANa_kara
 engineered_UNDEFINED	iFjIniyara
-engineering_noun	kala_banAne_kI_vixyA/aBiyAnwrikI
+engineering_noun	aBiyAnwrikI/kala_banAne_kI_vixyA
 engineerings_UNDEFINED	kala_banAne_kI_vixyA
 engineers_UNDEFINED	iFjIniyara
 engines_UNDEFINED	kala
@@ -27781,7 +27782,7 @@ expired_adjective	gawAvaXika
 expires_UNDEFINED	samApwa_honA
 expiring_UNDEFINED	samApwa_honA
 expiry_noun	samApwi
-explain_verb	samaJA/vivaraNa_xe/vivaraNa_kara/varaNa_kara/spaRta_kara/spaRta_ho/saPAI_xe/sapRta_kara/kAraNa_bawA/javAba_xe/byorA_xe/bawA/bawalA
+explain_verb	samaJA/vivaraNa_xe/vivaraNa_kara/varaNa_kara/spaRta_kara/spaRta_ho/saPAI_xe/sapRta_kara/kAraNa_bawA/javAba_xe/byorA_xe/bawA/bawalA/vyAKyA_kara
 explained_UNDEFINED	samaJAnA
 explaining_UNDEFINED	samaJAnA
 explains_UNDEFINED	samaJAnA
@@ -34852,7 +34853,7 @@ guide_verb	xiSA-nirxeSa_kara/saFcAlana_kara/rAha_xiKA/niyantriwa_kara/newqwva_ka
 guided_UNDEFINED	aguvAI_karanA
 guided_adjective	mArgaxarSiwa
 guideline_UNDEFINED	nirxeSa
-guideline_noun	muKya_bAw/mArgaxarSana
+guideline_noun	muKya_bAwa/mArgaxarSana
 guidelines_UNDEFINED	nirxeSa
 guidepost_noun	xiSA_nirxeSa_patta
 guides_UNDEFINED	aguvAI_karanA
@@ -62877,7 +62878,7 @@ querulousness_noun	cidacidApana
 query_noun	praSna/praSna_cihna
 query_verb	pUCa/ke_bAre_meM_pUCawACa_kara/praSna_kara
 querying_UNDEFINED	praSna_karanA
-quest_noun	walASa/Koja
+quest_noun	walASa/Koja/anveRaNa
 quest_verb	walASa/walAS_kara/ro
 quested_UNDEFINED	walASanA
 quester_noun	Koja_karane_vAlA
@@ -63931,7 +63932,7 @@ reaching_UNDEFINED	Age_baDAnA
 react_verb	prawikriyA_kara/virUxXa_prawikriyA_kara/aBikriyA_uwpanna_kara/rAsAyanika_parivarwana_pExA_kara/kisI_paxArWa_me_parivarwana_kara
 reacted_UNDEFINED	rAsAyanika_parivarwana_pExA_karanA
 reacting_UNDEFINED	rAsAyanika_parivarwana_pExA_karanA
-reaction_noun	prawikriyA/prawigamana/praBAva/aBikriyA/pragawi_me_bAXA/xavA_kA_praBAva/paxArWoM_kA_eka_xUsare_para_rAsAyanika_praBAva
+reaction_noun	aBikriyA/prawikriyA/prawigamana/praBAva/pragawi_me_bAXA/xavA_kA_praBAva/paxArWoM_kA_eka_xUsare_para_rAsAyanika_praBAva
 reactionarier_UNDEFINED	prawikriyAwmaka
 reactionaries_UNDEFINED	prawikriyAwmaka
 reactionariest_UNDEFINED	prawikriyAwmaka
@@ -64233,7 +64234,7 @@ receivable_adjective	prApya
 receive_verb	pA/upArjana_kara/svIkAra_kara/svAgawa_kara/prApwa_kara/mila/le/grahaNa_kara/agavAnI_kara/sammAna_yA_ASIrvAxa_le/Ane_xe
 received_UNDEFINED	svAgawa_karanA
 received_adjective	vEXa/svIkArya/SiRta/pracaliwa/mAna
-receiver_noun	lene_vAlA/risIvara/prApwakarwA/pAne_vAlA/gqhIwA/cora-hatiyA
+receiver_noun	lene_vAlA/risIvara/prApwakarwA/pAne_vAlA/gqhIwA/cora-hatiyA/grAhI/aBigrAhI
 receivers_UNDEFINED	lene_vAlA
 receivership_noun	prApakawA/prApaka_paxa
 receives_UNDEFINED	svAgawa_karanA
@@ -65328,7 +65329,7 @@ remand_verb	vApasa_lOtA/havAlAwa_Beja/[havAlAwa]_vApasa_Beja[karanA]
 remark_UNDEFINED	bayAna_xenA
 remark_noun	XyAna/prawikriyA/XyAna_xenA
 remark_verb	XyAna_xe/tippaNI_kara/tippaNi_kara/kara/carcA_kara/bayAna_xe/kaha
-remarkable_adjective	ulleKanIya/viSiRta/vilakRaNa/asAXAraNa
+remarkable_adjective	vilakRaNa/ulleKanIya/viSiRta/asAXAraNa
 remarkabler_UNDEFINED	ulleKanIya
 remarkablest_UNDEFINED	ulleKanIya
 remarkably_UNDEFINED	ulleKanIya_waraha_se
@@ -72049,7 +72050,7 @@ similarities_UNDEFINED	samAnawA
 similarity_noun	sAxqSya/samAnawA/samanawA
 similarly_UNDEFINED	isI_waraha_se
 similarly_adjective	samAna_rUpa_se/usI_prakAra_se
-similarly_adverb	usI_waraha_se/eka_jEse
+similarly_adverb	usI_waraha_se/eka_jEse/isI_prakAra
 simile_noun	upamA
 similes_UNDEFINED	upamA
 simitar_UNDEFINED	SaMSerI
@@ -78509,7 +78510,7 @@ surrogating_UNDEFINED	prawiniXi
 surround_noun	kinArA
 surround_verb	cAroM_ora_se_Gera/Gere_hue_ho/Gera_le/cAroM_ora_ho/BarA_ho
 surrounded_UNDEFINED	cAroM_ora_se_GeranA
-surrounding_adjective	Asa-pAsa_kA
+surrounding_adjective	Asa-pAsa_kA/cAroM_ora_kA
 surroundings_noun	pariveSa/pAsa-padosa/prawiveSa
 surroundingses_UNDEFINED	pariveSa
 surrounds_UNDEFINED	cAroM_ora_se_GeranA
@@ -80623,7 +80624,7 @@ theist_noun	ISvaravAxI/Aswika
 theistic_adjective	AswikavAxI
 theistical_adjective	AswikavAxI
 them_UNDEFINED	ve
-them_pronoun	unheM/unako/unake/unak/unheM_unako
+them_pronoun	unheM/unako/unake
 thematic_adjective	viRayaka/safgIwa-viRaya_sambanXI
 thematically_adverb	viRaya-vaswu_kI_xqRti_se
 thematicer_UNDEFINED	viRayaka
@@ -93542,3 +93543,10 @@ ACP_PropN	esIpI
 societal_adjective	sAmAjika
 arthropod_noun	saMXipAxa_prANI
 citydweller_noun	SaharavAsI
+connotation_noun	saMkewArWa 
+metallically_noun	XAwu
+electronegative_adjective	QNAwmaka
+electronegativity_noun	viGuwaQNAwmaka 	
+edit_noun	saMpAxana
+coplanar_adjective	samawalIya
+epulsion_noun	prawikarRaNa

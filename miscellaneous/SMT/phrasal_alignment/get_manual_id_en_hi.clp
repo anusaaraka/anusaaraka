@@ -321,6 +321,21 @@
         (assert (mng_has_been_grouped ?id2)) 
 )
 ;----------------------------------------------------------------------------------------------------------------
+;[Before] the discovery of transistor in 1948, such devices were mostly vacuum tubes (also called valves) like the vacuum diode which has two electrodes, viz., anode (often called plate) and cathode; triode which has three electrodes — cathode, plate and grid; tetrode and pentode (respectively with 4 and 5 electrodes). "
+;सन् 1948 में ट्राञ्जिस्टर की खोज [से पहले] ऐसी युक्तियाँ अधिकांशतः निर्वात नलिकाएँ ( या वाल्व ) थीं , जैसे निर्वात डायोड जिसमें दो इलेक्ट्रोड ; एनोड ( प्लेट ) तथा कैथोड होते हैं ; ट्रायोड जिसमें तीन इलेक्ट्रोड-कैथोड , प्लेट तथा ग्रिड होते हैं ; टेट्रोड तथा पेंटोड ( क्रमशः 4 तथा 5 इलेक्ट्रोडों के साथ ) .
+(defrule se_[word]
+(declare (salience 80))
+?f1<-(manual_id-word ?id0 $?noun)
+?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) se)
+?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&pahale|Age|pICe)
+(not (mng_has_been_grouped ?id1))
+(not (mng_has_been_grouped ?id2))
+=>
+        (assert (manual_word_info (head_id ?id0) (word $?noun)(vibakthi se ?w)(group_ids ?id0 ?id1 ?id2)))
+        (assert (mng_has_been_grouped ?id1))
+        (assert (mng_has_been_grouped ?id2))
+)
+;----------------------------------------------------------------------------------------------------------------
 ;Dispersion takes place because the refractive index of medium for different wavelengths (colors) is different.
 ;parikRepaNa kA kAraNa yaha hE ki kisI mAXyama kA apavarwanAfka viBinna warafgaxErGyoM  @PUNCT-OpenParenvarNoM @PUNCT-ClosedParen ke lie Binna - Binna howA hE
 (defrule word_[hyphen]_word
