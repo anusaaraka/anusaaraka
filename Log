@@ -1,4 +1,4 @@
- 17-10-14
+ 24-10-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	admire.clp	distinguish.clp		update.clp
@@ -19,11 +19,12 @@
  4. hindi_meaning.clp:
 	Added    : decide_mng_symbols (when cat is symbol), get_mng_from_transliterate_mng, get_phy_wsd_word_mng and get_phy_wsd_root_mng
 	Modified : get_compound_mng_for_physics_domain (printout statements)
-	Modified : vrb_phrase_mng (Added Warning: in print statement) , mng_decided 
+	Modified : vrb_phrase_mng (Added Warning: in print statement) , mng_decided , modify_word_for_apos rules
 	Removed  : rm_cmp_mng_if_head_is_verb, compare_wsd_and_db_MWE_word_mng,  compare_wsd_and_db_MWE_root_mng, lwg_mng
 		   complete_sen_trans, get_compound_mng_for_physics_domain,wsd_cmp_phrase_word_mng, wsd_cmp_phrase_root_mng,
 		   wsd_vrb_phrase_word_mng, wsd_vrb_phrase_root_mng,database_cmp_phrase_word_mng, database_cmp_phrase_root_mng
                    vrb_phrase_mng   [ handled in  hindi_compound_meaning.clp ]
+	Renamed  :  default_hindi_mng-different-cat_with_org_wrd to default_hindi_mng-different-cat_with_org_wrd1
  5. wsd_tam_meaning.clp:
 	Modified: load_user_tam_file
  6. cat_rule.clp
