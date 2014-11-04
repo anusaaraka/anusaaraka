@@ -660,8 +660,8 @@ Grecian_adjective	yUnAnI
 Grecian_noun	yUnAnI
 Greece_noun	yUnAna
 Greek-style_adjective	grIka_SElI_kA
-Greek_adjective	yUnAna_sambanXI
-Greek_noun	yUnAnI_BARA/yUnAna_vAsI
+Greek_adjective	yUnAnI/yUnAna_sambanXI
+Greek_noun	yUnAnI/yUnAnI_BARA/yUnAna_vAsI
 Gregorian_adjective	gregarI_sambanXI
 Grey_noun	gre
 Grimm_noun	grima
@@ -3092,7 +3092,7 @@ acculturation_noun	uwsaMskaraNa/saMskqwigrAhyawA/saMskqwi
 acculturational_adjective	saMskqwigrAhI
 acculturative_adjective	saMskqwigrAhI
 accumbent_adjective	Sayiwa/prawisWiwa/mUlABimuKa/letA_huA
-accumulate_verb	saFcaya_kara/jamA_kara/jamA_ho/ikatTA_kara/Dera_laga/baDa
+accumulate_verb	saFcaya_kara/jamA_kara/jamA_ho/ikatTA_kara/Dera_laga/baDa/ekawriwa_ho/ekawriwa_kara
 accumulated_UNDEFINED	saFcaya_karanA
 accumulated_adjective	jamA/ikatTA
 accumulates_UNDEFINED	saFcaya_karanA
@@ -13213,7 +13213,7 @@ cavil_noun	kamI
 caving_UNDEFINED	kanxarA_banAnA
 caving_noun	kanxarAnveRaNa
 cavities_UNDEFINED	koRTa
-cavity_noun	koRTa/guhikA
+cavity_noun	guhikA/koRTa
 cavort_UNDEFINED	kUxa-PAzxa_karanA
 cavort_verb	uCala-kUxa_kara/Soragula_macAwe_hue_Kela/kUxa-PAzxa_kara
 caw_UNDEFINED	kOve_kI_koYva_koYva
@@ -13228,7 +13228,7 @@ cd_UNDEFINED	sI_dI
 cdr_UNDEFINED	kamANdara
 cease-fire_noun	yuxXa-virAmakAla/yuxXa-virAma
 cease_UNDEFINED	Kawma_ho
-cease_verb	banxa_kara/anwa_ho/virAma_lagA
+cease_verb	roka/banxa_kara/anwa_ho/virAma_lagA
 ceased_UNDEFINED	virAma_lagAnA
 ceasefire_UNDEFINED	yuxXavirAma
 ceasefires_UNDEFINED	yuxXavirAma
@@ -19563,7 +19563,7 @@ curtsey_UNDEFINED	SiRtawA
 curvaceous_adjective	gola-matola/sudOla
 curvaceouser_UNDEFINED	gola-matola
 curvaceousest_UNDEFINED	gola-matola
-curvature_noun	teDApana/vakrawA
+curvature_noun	vakrawA/teDApana
 curvatures_UNDEFINED	teDApana
 curve_noun	vakra_reKA/vakrAkAra_genxa/vakra/SreNI/sOnxarya/reKA/moda/GumAva/AleKa
 curve_verb	muda/muda_jA/JukA/GumA/GUma_jA/vakra_ho
@@ -20315,7 +20315,7 @@ deciduousest_UNDEFINED	parNapAwI
 decilitre_noun	desIlitara
 decimal-point_noun	desImala_binxu
 decimal_adjective	desImala/xaSamika/xaSamalava
-decimal_noun	xaSamika_praNAlI/xaSamalava_afkagaNiwa/xaSamalava/xahAIkI_ginawI
+decimal_noun	xaSamalava/xaSamika_praNAlI/xaSamalava_afkagaNiwa/xahAIkI_ginawI
 decimaler_UNDEFINED	desImala
 decimalest_UNDEFINED	desImala
 decimalise_UNDEFINED	desImalAija
@@ -25379,6 +25379,7 @@ eject_UNDEFINED	balapUrvaka_bAhara_ho
 eject_verb	nikAla_xe/nikAla_Pefka/bAhara_nikAla/baca_nikala/balapUrvaka_bAhara_ho[karanA]
 ejected_UNDEFINED	balapUrvaka_bAhara_honA
 ejecting_UNDEFINED	balapUrvaka_bAhara_honA
+ejecting_adjective	niRkAsiwa
 ejection_UNDEFINED	niCakAsana
 ejection_noun	uwkRepaNa/niRkAsana
 ejectment_UNDEFINED	bexaKaAlI
@@ -25471,7 +25472,7 @@ electric_noun	vExyuwaI/bijalI
 electrical_adjective	vExyuwa/vixyuwa/bijalI_kA
 electricaler_UNDEFINED	bijalI_kA
 electricalest_UNDEFINED	bijalI_kA
-electrically_adverb	vixyuw_se
+electrically_adverb	vixyuwa_se/vExyuwa_rUpa_se
 electricer_UNDEFINED	bijalI_kA
 electricest_UNDEFINED	bijalI_kA
 electrician_noun	bijalI_kA_kAma_jAnane_vAlA/bijalI-miswrI/vixyuxvewwA
@@ -26211,7 +26212,8 @@ engineerings_UNDEFINED	kala_banAne_kI_vixyA
 engineers_UNDEFINED	iFjIniyara
 engines_UNDEFINED	kala
 england_UNDEFINED	inglanda
-english_UNDEFINED	afgrejI
+english_noun	afgrejI
+english_adjective	afgreja/britiSa
 englishwoman_UNDEFINED	afgareja_mihalA
 englut_verb	jyAxA_KA
 engorge_verb	jyAxA_KA
@@ -29404,7 +29406,7 @@ figurativest_UNDEFINED	AlafkArika
 figure-of-eight_noun	ATa_kA_afka
 figure-on_verb	anumAna_kara
 figure-out_verb	samAXAna_ho[karanA]
-figure_noun	afka/vyakwi/svaroM_kA_samUha/safKyA/rASi/prasixXa_vyakwi/namUnA/nakSA/lakRaNa/janmapatrI/ciwra/citra/ciMnha/AzkadA/Akqwi/AkAra/Akqwi{SArIrika}/Akqwi{reKAciwra}
+figure_noun	ciwra/afka/vyakwi/svaroM_kA_samUha/safKyA/rASi/prasixXa_vyakwi/namUnA/nakSA/lakRaNa/janmapatrI/citra/ciMnha/AzkadA/Akqwi/AkAra/Akqwi{SArIrika}/Akqwi{reKAciwra}
 figure_verb	vicAra_kara/niyojiwa_kara/nakSA_banA/mUlya_afkiwa_kara/hisAba_lagA/hisAba_kara/ginawI_kara/gaNanA_kara/diKAyI_pada/anumAna_lagA/anxAjA_lagA/xiKAI_xe/kalpanA_kara
 figured_adjective	alafkqwa
 figureder_UNDEFINED	alafkqwa
@@ -38653,7 +38655,7 @@ ideating_UNDEFINED	kalpanA_karanA
 ideation_noun	vicAraNa
 ideations_UNDEFINED	vicAraNa
 identical_UNDEFINED	bilkula_eka_se
-identical_adjective	eka_jEsA/vEsA_hI/jEsA/bilakul_vahI
+identical_adjective	pUrNawayA_samAna/eka_jEsA/vEsA_hI/jEsA/bilakul_vahI/bilakul_samAna
 identicalest_UNDEFINED	bilkula_eka_se
 identifiable_UNDEFINED	pahacAna_yogya
 identification_UNDEFINED	SinAKwa
@@ -48058,7 +48060,7 @@ matte_adjective	camakarahiwa
 matted_UNDEFINED	catAI
 matter-of-fact_adjective	waWyAwmaka
 matter_UNDEFINED	mahawwvapUrNa_ho
-matter_noun	wawva/viRaya/upAxAna/samasyA/sAmagrI/sAmagra/pIba/paxArWa/mAmalA/mahawva/kAraNa/cIja/BAra/xravya
+matter_noun	xravya/wawva/viRaya/upAxAna/samasyA/sAmagrI/sAmagra/pIba/paxArWa/mAmalA/mahawva/kAraNa/cIja/BAra
 mattered_UNDEFINED	xravya
 mattering_UNDEFINED	xravya
 matters_UNDEFINED	xravya
@@ -52931,7 +52933,7 @@ notablest_UNDEFINED	prasixXa
 notably_adverb	viSeRakara/viSeRawaH
 notaries_UNDEFINED	notarI
 notary_noun	notarI/leKya_pramANaka
-notation_noun	safkewa_paxXawi/safkewa-cihna
+notation_noun	safkewa/safkewa_paxXawi/safkewa-cihna
 notations_UNDEFINED	safkewa_paxXawi
 notch_noun	KAzcA/swara/niSAna
 notch_verb	KAzcA_banA
@@ -71971,8 +71973,8 @@ silica_noun	silikA
 silicas_UNDEFINED	silikA
 silicate_noun	siliketa/agni_praswara_kA_miSraNa
 silicates_UNDEFINED	agni_praswara_kA_miSraNa
-silicon_noun	silikana
-silicons_UNDEFINED	silikana
+silicon_noun	silikoYna
+silicons_UNDEFINED	silikoYna
 silk_adjective	silka/reSamI
 silk_noun	reSama/semala/salAhakAra/reSama_kA_vastra/reSA
 silked_UNDEFINED	reSama
@@ -73983,7 +73985,7 @@ solicits_UNDEFINED	mAzganA
 solicitude_noun	KyAla/cinwA
 solicitudes_UNDEFINED	KyAla
 solid_adjective	GanIBUwa/yaWArWa/vAswavika/Tosa/saKwa/saccA/puRta/pUrA/pakkA/majabUwa/kadI/ImAnaxAra/GanA/eka_samAna/ekarUpa/asalI
-solid_noun	tosa_paxArWa
+solid_noun	Tosa_paxArWatosa_paxArWa
 solidarities_UNDEFINED	pUrNa_ekawA
 solidarity_noun	pUrNa_ekawA/ekawA
 solider_UNDEFINED	Tosa
@@ -76967,6 +76969,7 @@ stretch_noun	viswAra/PElAva/pafkwi/lacaka/kAryAvaXi/jela_kI_miyAxa/azgadAI/avaXi
 stretch_verb	wAna/PElA/PEla_jA/PElA_huA_ho/paryApwa_ho/lambA_ho/KIFca/cala_pA/baDA_caDA_kara_kaha/baDA/azgadAI_le/KIFcakara_baDA/wAnA_jA/jora_se_KIFca/afgadAI_le/kisI_vaswu_kA_Ayu_baDA/pUrNarUpa_se_lagA/jarUrawa_se_jyAxA_KIFca
 stretchable_adjective	lacIlA
 stretched_UNDEFINED	jora_se_KIFcanA
+stretched_adjective	KIFcA_huA
 stretcher-bearer_noun	strecara_vAhaka
 stretcher_noun	dolA/viswAraka/strecara/lamba/cOKatA/waKwA
 stretchers_UNDEFINED	waKwA
@@ -80732,7 +80735,7 @@ thermic_adjective	URmIya
 thermodynamic_adjective	URmAgawika
 thermodynamical_adjective	URmAgawika
 thermodynamics_noun	URmA-gawikI/URmAgawikI
-thermometer_noun	WarmAmItara/WarmAmItara{SIwoRNa_mApaka_yanwra}
+thermometer_noun	wApamApI/WarmAmItara/WarmAmItara{SIwoRNa_mApaka_yanwra}
 thermometers_UNDEFINED	WarmAmItara
 thermonuclear_adjective	wApa-nABikIya
 thermoregulator_noun	wApasWApI
@@ -80828,7 +80831,7 @@ thinkablest_UNDEFINED	vicAraNIya
 thinker_noun	cinwaka/vicAraka/socane_vAlA
 thinkers_UNDEFINED	cinwaka
 thinking_adjective	vicAraSIla
-thinking_noun	vicAra_karane_kI_kriyA/vicAraNA/soca
+thinking_noun	soca/vicAra_karane_kI_kriyA/vicAraNA
 thinkinger_UNDEFINED	vicAra_karane_kI_kriyA
 thinkingest_UNDEFINED	vicAra_karane_kI_kriyA
 thinkings_UNDEFINED	vicAra_karane_kI_kriyA
@@ -87140,7 +87143,7 @@ unstinted_adjective	uxAra
 unstinting_adjective	pracura/uxAra
 unstintingly_adverb	pracurawA/uxArawApUrvaka
 unstirred_adjective	na_hilAyA_gayA
-unstoppable_adjective	jise_rokA_na_jA_sake/beroka/aroXanIya
+unstoppable_adjective	abAXa/jise_rokA_na_jA_sake/beroka/aroXanIya
 unstoppabler_UNDEFINED	jise_rokA_na_jA_sake
 unstoppablest_UNDEFINED	jise_rokA_na_jA_sake
 unstoppered_adjective	KulI_dAta_vAlA/dAta_nikalA
@@ -93550,3 +93553,9 @@ electronegativity_noun	viGuwaQNAwmaka
 edit_noun	saMpAxana
 coplanar_adjective	samawalIya
 epulsion_noun	prawikarRaNa
+carrom_noun	kErama
+commutative_adjective	kramaviniyama
+sub-atomic_adjective	avaparamANuka
+trailing_adjective	anugAmI
+spherometer_noun	golAImApI
+side-wise_adjective	iXara_se_uXara
