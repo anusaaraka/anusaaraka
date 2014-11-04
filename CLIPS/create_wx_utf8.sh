@@ -1,0 +1,3 @@
+sed -n -e "H;\${g;s/ROM_WORD @/%{\n#include<stdio.h>\n#include<stdlib.h>\n#include<string.h>\n#include \"clips.h\"\n#include <stddef.h>\nchar *utf8_string;\nchar *returnValue;\n%}\n\nROM_WORD @/g;p}" < $1 | sed "s/printf(/strcat(utf8_string,/g" | sed "s/strcat(utf8_string,\"%s\",/strcat(utf8_string,/g"  |sed "s/strcat(utf8_string,\"\(.*\)\");\tstrcat(utf8_string,yytext);\tBEGIN[ ]INITIAL;\t}/strcat(utf8_string,\"\1\");\tstrcat(utf8_string+3,yytext);\tBEGIN INITIAL; \/* previous devanagiri character(् ) takes 3 bytes so advancing buffer pointer to buf+3 *\/}/g" > $2
+#| sed "s/* previous devanagiri character(् ) takes 3 bytes so advancing buffer pointer to buf+3 */\t}/g" > $2
+
