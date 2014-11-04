@@ -121,11 +121,15 @@ if no_match_list != []:
 tree= [ ]
 tree_info_dict = {};
 for line in file(sys.argv[1]):
-	if line.startswith('( ('):
+	if line.startswith('('):
+#	if line.startswith('( ('):
 #	if line.startswith('(ROOT (S'):
 		tmp=line.strip()
 		tree= tmp.split('_')
+#		print tree, "-----------"
 		for key in  eng_wrds.keys():
+#			print tree_info_dict[key]
+##			if key in 
 			tree_info_dict[key]=tree[key-1]
 
 #print tree_info_dict
@@ -138,7 +142,6 @@ print '\t',
 #--------------- To print tree after removing paren -----------
 print '\t',
 tree1 = " " 
-#str1=' '
 for c in range(1, cols+1):
 	tree1 = tree_info_dict[c]
 	lcount= tree1.count('(')
@@ -146,11 +149,23 @@ for c in range(1, cols+1):
 	count= lcount - rcount
 	if count > 0:
 		t1=tree1[:-rcount]
+#		print t1, "---------"
 		print '<FONT COLOR=blue>','<b>',t1[rcount:],'</b>', '\t',
+#		print '<FONT COLOR=blue>','<b>',t1[rcount+1:],'</b>', '\t',
 	else:
-		t1=tree1[lcount+1:]
+#		t1=tree1[lcount+1:]
+		t1=tree1[lcount:]
+#		print t1, "---------"
 		print '<FONT COLOR=blue>','<b>',t1[:-lcount],'</b>', '\t',
 
+
+
+
+
+
+
+
+#str1=' '
 #	print lcount, rcount , count
 #	if count < 0:
 #		for j in range(-count):

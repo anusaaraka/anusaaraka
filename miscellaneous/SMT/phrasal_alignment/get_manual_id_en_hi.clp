@@ -260,7 +260,7 @@
 (declare (salience 90))
 ?f1<-(manual_id-word ?id0 $?noun)
 ?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ke)
-?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&rUpa|bAre|viRaya|AXAra|wOra|paxoM|sWAna)
+?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&rUpa|bAre|viRaya|AXAra|wOra|paxoM|sWAna|maXya)
 ?f4<-(manual_id-word ?id3&:(=(+ ?id0 3) ?id3) meM|para)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
@@ -308,11 +308,12 @@
 ;There is no loss of energy due to friction. [ke kAraNa]
 ;The apparent flattening (oval shape) of the sun at sunset and sunrise is also due to the same phenomenon.--->sUryAswa waWA [sUryoxaya ke samaya] sUrya kA ABAsI capatApana (aNdAkAra Akqwi) BI isI pariGatanA ke kAraNa hI hE.
 ;The restoring muscular forces again come into play and bring the body to rest.----- >prawyAnayanI peSIya baloM ke kAryarawa hone [ke kAraNa] SarIra virAma avasWA meM A jAwI hE
+;EsI gEsoM meM paramANuoM [ke maXya] anwarAla aXika howA hE.
 (defrule ke_[word]
 (declare (salience 80))
 ?f1<-(manual_id-word ?id0 $?noun)
 ?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ke)
-?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|pare|BIwara|Age|pICe|paScAwa|paScAw|nikata|sApekRa)
+?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|pare|BIwara|Age|pICe|paScAwa|paScAw|nikata|sApekRa|maXya)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>
@@ -604,5 +605,17 @@
 	(retract ?f0 ?f1)
 	(assert (chunk_name-chunk_ids-words VGF  ?id $?ids $?vids - ?id $?ids $?wrds))	
 )
-
+;-------------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;We can broadly [describe] physics as a study of the basic laws of nature and their manifestation in different natural phenomena.
+;mote wOra para hama BOwikI kA [varNana] prakqwi ke mUlaBUwa niyamoM kA aXyayana waWA viBinna prAkqwika pariGatanAoM meM inakI aBivyakwi ke rUpa meM [kara sakawe hEM].
+(defrule group_kara
+(declare (salience 11))
+?f0<-(manual_word_info (head_id ?id0) (word kara $?mng)(group_ids $?ids))
+?f1<-(manual_word_info (head_id ?id1) (word ?m)(group_ids ?id1))
+(database_info (components ?m kara))
+=>
+	(retract ?f0 ?f1)
+	(assert (manual_word_info (head_id ?id1) (word ?m kara $?mng)(group_ids ?id1 $?ids)))
+)
 

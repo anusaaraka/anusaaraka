@@ -981,7 +981,9 @@ Removed:
 	115. both_determiner		xono		as	xonoM		(	"	"	"	"	)
 	116. breathtakingly_UNDEFINED  	asAXAraNa_oVpa_se as  asAXAraNa_rUpa_se (Suggested by karanveer kaur Banasthali 02-08-14) 
 	117. guideline_noun		muKya_bAw	as	muKya_bAwa	(Suggested by Chaitanya Sir 20-10-14    )
-	
+	118. silicon_noun    		silikana	as	silikoYna	(Suggested by 14anu-ban-01	17-10-14)
+	119. silicons_UNDEFINED      	silikana        as	silikoYna	(	"	"		 "	)
+	120. solid_noun      		tosa_paxArWa	as	Tosa_paxArWa	(	"	"		 "	)
 
     3. Added new entry:
        ---------------
@@ -1226,10 +1228,35 @@ Removed:
 	127. epulsion_noun   		prawikarRaNa			(Suggested by	14anu-ban-10		 17-10-14)
 					Ex: For example, the elastic spring force arises due to the net attraction/repulsion between the 
 					    neighbouring atoms of the spring when the spring is elongated/compressed.
+	128. carrom_noun     		kErama				(Suggested by   14anu-ban-03            17-10-14)
+					Ex: Several games such as billiards, marbles or carrom involve collisions.
+	129. commutative_adjective   	kramaviniyama			(Suggested by   14anu-ban-03            17-10-14)
+					Ex: Note that scalar product of two vectors is commutative as said earlier, a.b = b.a.
+	130. sub-atomic_adjective    	avaparamANuka			(Suggested by   14anu-ban-01            17-10-14)
+					Ex: For measurement of small masses of atomic/sub-atomic particles etc., we make use of mass
+                                            spectrograph.
+	131. ejecting_adjective      	niRkAsiwa			(Suggested by   14anu-ban-04            17-10-14)
+					Ex: The propulsion of a rocket by a jet of ejecting gases, propagation of water waves or sound waves in
+					    air, the equilibrium of a bent rod under a load, etc., are problems of mechanics.
+	132. trailing_adjective		anugAmI				(Suggested by   14anu-ban-07            17-10-14)
+					Ex: There can be some confusion regarding the trailing zero (s).
+	133. spherometer_noun        	golAImApI			(Suggested by   14anu-ban-01            17-10-14)
+					Ex: For example, a vernier callipers has the least count as 0.01 cm; a spherometer may have a least 
+					    count of 0.001 cm.
+	134. side-wise_adjective    	iXara_se_uXara			(Suggested by   14anu-ban-01            20-10-14)
+					Ex: While the fan rotates and its axis moves sidewise, this point is fixed.
+	135. idealised_adjective    	AxarSa				(Suggested by   14anu-ban-06            17-10-14)
+					Ex: This is, of course, an idealised situation.
+	136. ejecting_adjective		niRkAsiwa			( Suggested by Chaitanya Sir  04-11-14)
+	137. english_adjective		afgreja/britiSa			( Suggested by Chaitanya Sir  04-11-14)
+					Ex: In 1897, the experiments on electric discharge through gases carried out by the English physicist
+					    J. J. Thomson (1856—1940) revealed that atoms of different elements contain negatively charged 
+					    constituents (electrons) that are identical for all atoms. 
+	138. stretched_adjective	KIFcA_huA			 ( Suggested by Chaitanya Sir  04-11-14)
+					Ex: The spring is not stretched and does not exert any upward force on the object which is moving down
+					    with acceleration g due to gravity.
 
 
-
-	
     4. Added new meaning to the existing word:
        ---------------------------------------
         1. inaudibly_adverb             XImI_Avaja_meM                  ( Suggested by Rajini   29-02-12        )
@@ -1444,7 +1471,22 @@ Removed:
 					    century. 
 	113. similarly_adverb		isI_prakAra		 (Suggested by Chaitanya Sir         08-10-14)
                                         Ex: Husband and wife were similarly successful in their chosen careers. (OALD)
-
+	114. Greek_adjective		yUnAnI			(Suggested by Chaitanya Sir         29-10-14)
+					Ex: The word Physics comes from a Greek word meaning nature.
+	115. Greek_noun			yUnAnI			(Suggested by Chaitanya Sir         29-10-14)
+	116. unstoppable_adjective   	abAXa			(Suggested by 14anu-ban-07	    17-10-14)
+					Ex: The progress of science is unstoppable!
+	117. thermometer_noun        	wApamApI		(Suggested by 14anu-ban-07          17-10-14)
+					Ex: To determine the temperature of a human body, a thermometer placed under the armpit will always 
+					    give a temperature lower than the actual value of the body temperature. 
+	118. notation_noun   		safkewa			(Suggested by 14anu-ban-08          17-10-14)
+					Ex: The scientific notation is ideal for reporting measurement.
+	119. cease_verb      		roka			(Suggested by 14anu-ban-03          17-10-14)
+					Ex: In other words, its motion never ceases.
+	120. accumulate_verb		ekawriwa_ho/ekawriwa_kara	(Suggested by Chaitanya Sir  04-11-14)
+					Ex: By the nineteenth century, enough evidence had accumulated in favor of atomic hypothesis of matter. 
+	121. electrically_adverb	vExyuwa_rUpa_se		(Suggested by Chaitanya Sir  04-11-14)
+					Ex: However, atoms on a whole are electrically neutral. 
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -1788,7 +1830,20 @@ Removed:
 	155. circumstance_noun  hAlAwa			as	parisWiwi	(Suggested by 	14anu-ban-03	17-10-14)
 				Ex: Indeed, to be consistent, in that circumstance, we ourselves would crumble under our own weight.
 
-	
+	156. thinking_noun   	vicAra_karane_kI_kriyA	as	soca		(Suggested by 14anu-ban-07	29-10-14)
+				Ex: First, it was realized that for scientific progress, only qualitative thinking, though no doubt important,
+                                    is not enough.
+	157. curvature_noun  	teDApana	as	vakrawA			(Suggested by   14anu-ban-03    17-10-14)
+				Ex: Thus radio waves broadcast from an antenna can be received at points far away where the direct wave fail to 				   reach on account of the curvature of the earth.
+	158. decimal_noun    	xaSamika_praNAlI	as	xaSamalava	(Suggested by   14anu-ban-04    17-10-14)
+				Ex: It is often customary to write the decimal after the first digit.
+	159. cavity_noun     	koRTa			as	guhikA		(Suggested by   14anu-ban-03    17-10-14)
+				Ex: A bubble Fig 10.20 (c) differs from a drop and a cavity; in this it has two interfaces.
+	160. matter_noun     	wawva			as	xravya		(Suggested by   14anu-ban-08    17-10-14)
+				Ex: Matter, as we know, consists of elementary charged constituents like electrons and protons.
+	161. figure_noun     	afka			as	ciwra		(Suggested by   14anu-ban-05    17-10-14)
+				Ex: Figure 7.12 is a good illustration of Eq. (7.11).	
+
     6. Removed meaning from existing list:
        ----------------------------------
 	1. overdue_adjective 	jo_bahuwa_pahale_hI_ho_jAnA_cAhiye_WA,_vaha	( Suggested by Rajini		29-02-12)
@@ -1904,6 +1959,7 @@ Removed:
 	9. focussed_UNDEFINED	as	focussed_verb		(By Roja 			16-10-13 )	
 	10. civilisation_UNDEFINED	as civilisation_noun	(Suggested by Sukhada 		26-11-13 )
 	11. doctorate_UNDEFINED as	doctorate_noun    	(Suggested by Pramila Banasthali 24-01-14)
+	12. english_UNDEFINED	as	english_noun		( Suggested by Chaitanya Sir     04-11-14)
 
 	
  changes in preposition.txt
@@ -2445,6 +2501,70 @@ Removed:
 				    path of the object.
 	elasticity_noun    	prawyAsWA	(Suggested by Anshika Sharma Banasthali 14-08-14)
 				Ex: In 1676, he presented his law of elasticity, now called Hooke's law. 
+	electrochemical_adjective viGuwa_rAsAyanika	(Suggested by 14anu-ban-04	17-10-14)
+				Ex: The chemically resistant (but expensive) fluorinated ionomers are used as electrochemical cell membranes,
+				    of which the first and most prominent example is Nafion.
+	individually_adverb	pqWaka_rUpa_se 	(Suggested by 14anu-ban-06      17-10-14)
+				Ex: Individually the kinetic energy K and the potential energy V (x) may vary from point to point, but the sum
+				    is a constant.
+	external_adjective      bAhya		(Suggested by 14anu-ban-04      17-10-14)
+				Ex: Even the appreciably rigid steel bar can be deformed when a sufficiently large external force is applied on
+				    it.
+	relativity_noun 	ApekRikawA	(Suggested by 14anu-ban-10      17-10-14)
+				Ex: Until the advent of Einstein's theory of relativity, the law of conservation of mass was regarded as 
+				    another basic conservation law of nature, since matter was thought to be indestructible.
+	reacting_adjective      aBikarmaka	(Suggested by 14anu-ban-10      17-10-14)
+				Ex: If the total binding energy of the reacting molecules is less than the total binding energy of the product 
+				    molecules, the difference appears as heat and the reaction is exothermic. 
+	concurrent_adjective    safgAmI		(Suggested by 14anu-ban-03      17-10-14)
+				Ex: Since all these forces act on the single particle, they must be concurrent.
+	unaccelerated_verb   	awvariwa	(Suggested by 14anu-ban-05      17-10-14)
+				Ex: In that case, if we know that an object is unaccelerated (i.e. it is either at rest or in uniform linear 
+				    motion), we can infer from the first law that the net external force on the object must be zero.
+	neutral_adjective	uxAsIna		(Suggested by 14anu-ban-08      17-10-14)
+				Ex: At the neutral point N, the speed approaches zero.
+	translate_verb		rUpAnwariwa_ho	(Suggested by 14anu-ban-07      17-10-14)
+				Ex: Once again the final mass is less than the initial mass and the mass difference translates into energy,
+                                    which can be tapped to provide electrical energy as in nuclear power plants (controlled nuclear fission)
+                                    or can be employed in making nuclear weapons (uncontrolled nuclear fission).
+	dimensional_adjective   vimIya/vimiwIya	(Suggested by 14anu-ban-04      17-10-14)
+				Ex: Now we can test the dimensional consistency or homogeneity of the equation.
+	disc_noun       	cakawI 		(Suggested by 14anu-ban-04      17-10-14)
+				Ex: The disc can be considered to be a planar body.
+	rectangle_noun  	Ayawa		(Suggested by 14anu-ban-10      17-10-14)
+				Ex: For example, if the length and breadth of a rectangle are 1.0 m and 0.5 m respectively, then its perimeter
+			            is the sum of the lengths of the four sides.
+	ratio_noun      	anupAwa		(Suggested by 14anu-ban-10      17-10-14)
+				Ex: density is the ratio of the mass to the volume of the substance. 
+	macroscopic_noun	sWUla		(Suggested by 14anu-ban-08      17-10-14)
+				Ex: The law of conservation of energy is thought to be valid across all domains of nature, from the microscopic
+				    to the macroscopic.
+	regroup_verb    	punah_ekawra_kara	(Suggested by 14anu-ban-10      17-10-14)
+				Ex: Since vectors obey the commutative and associative laws, we can arrange and regroup the vectors in Eq. (4.1
+				    9a) as convenient to us.
+	vigorously_adverb       jora_se			(Suggested by 14anu-ban-07      17-10-14)
+				Ex: In winter, in order to feel warm, we generate heat by vigorously rubbing our palms together.
+	viscosity_noun  	SyAnawA			(Suggested by 14anu-ban-07      17-10-14)
+				Ex: It is called viscosity.
+	tip_noun        	saxiSa			(Suggested by 14anu-ban-07      17-10-14)
+				Ex: Then, since their tips S and P also coincide, the two vectors are said to be equal.
+	unstable_adjective      asanwuliwa		(Suggested by 14anu-ban-07      17-10-14)
+				Ex: It is evident that without some attractive force, a nucleus will be unstable due to the electric repulsion 
+				    between its protons.
+	median_adjective        mAXyikA			(Suggested by 14anu-ban-08      17-10-14)
+				Ex: If we join the midpoint of all the strips we get the median LP.
+	median_noun     	mAXyikA			(Suggested by 14anu-ban-08      17-10-14)
+				Ex: This means the center of mass lies on the point of concurrence of the medians, i.e. on the centroid G of
+				    the triangle.
+	geostationary_noun      wulyakAlI		(Suggested by 14anu-ban-05      17-10-14)
+				Ex: Satellites in a circular orbits around the earth in the equatorial plane with T = 24 hours are called
+				    Geostationary Satellites.
+	typical_adjective	prArUpika		(Suggested by 14anu-ban-07      17-10-14)
+				Ex: Table 2.5 gives the range and order of some typical time intervals.
+	neighbouring_adjective	nikatavarwI		(Suggested by 14anu-ban-08      17-10-14)
+				Ex: For example, the elastic spring force arises due to the net attraction/repulsion between the neighbouring
+				    atoms of the spring when the spring is elongated/compressed.
+
 
     Modifying first meaning:
     -----------------------
@@ -2452,6 +2572,8 @@ Removed:
 			Ex: It is easier to calculate the value of velocity at different instants if we have data of positions at different 				   instants or exact expression for the position as a function of time.
 	prefix_noun 	pUrvalagna	as	upasarga	(Suggested by Anshika Sharma Banasthali 25-08-14)
 			Ex: Common SI prefixes and symbols for multiples and sub-multiples are given in Appendix A2.  
+	variable_noun   parivarwI	as	cara		(Suggested by 14anu-ban-07	17-10-14)
+			Ex: Taken together, the product of mass and velocity, that is momentum, is evidently a relevant variable of motion.
 
     Modifying spelling of the existing word :
     -----------------------------------------
@@ -2478,11 +2600,28 @@ Removed:
 	5. interaction_noun        	pArasparika_kriyA	(Suggested by Aditi ji     	20-10-14)
 					Ex: A related effort is to derive the properties of a bigger, more complex, system from the properties
 					    and interactions of its constituent simpler parts.
-
+	6. kinematic_noun  		SuxXagawikI		(Suggested by 14anu-ban-07  17-10-14)
+					Ex: Just before it hits the ground, its speed is given by the kinematic relation.
+	7. terrestrial_adjective   	sWalIya			(Suggested by 14anu-ban-07  17-10-14)
+					Ex: This experience is common to most terrestrial motion.
+	8. upward_adjective        	Upara_kI_ora		(Suggested by 14anu-ban-07  17-10-14)
+					Ex: To throw a stone upwards, one has to give it an upward push.
+	9. transmission_noun       	saFcaraNa		(Suggested by 14anu-ban-07  17-10-14)
+					Ex: This is the Pascal's law for transmission of fluid pressure and has many applications in daily life
+	10. vibration_noun  		kampana			(Suggested by 14anu-ban-07  17-10-14)
+					Ex: The vibrations of the cesium atom regulate the rate of this cesium atomic clock just as the 
+					    vibrations of a balance wheel regulate an ordinary wristwatch or the vibrations of a small quartz 
+					    crystal regulate a quartz wristwatch. 
+	11. constitution_noun       	safGatana		(Suggested by 14anu-ban-03  17-10-14)
+					Ex: The microscopic domain of physics deals with the constitution and structure of matter at the minute 					   scales of atoms and nuclei (and even lower scales of length) and their interaction with different
+                                            probes such as electrons, photons and other elementary particles.
+			
     Modifing category:
     -----------------
 	relative_noun		as	relative_adjective		(Suggested by Chaitanya Sir 		05-01-13)
 	nuclide_UNDEFINED	as	nuclide_noun			(Suggested by Swati Kanojia Banasthali 	27-08-14)
+	dimensionless_UNDEFINED	as	dimensionless_noun		(Suggested by 14anu-ban-04	17-10-14	)
+ 	neutral_noun       	as	neutral_adjective       	(Suggested by AditiJi		04-11-14	)	
 	
 
  changes in phy_eng_multi_word_dic.txt

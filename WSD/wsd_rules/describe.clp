@@ -157,25 +157,25 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  describe.clp 	describe6   "  ?id " kara  )" crlf))
 )
 
-
-;@@@ Added by Pramila(Banasthali university)  on 10-03-2014
-;In Kinematics we study ways to describe motion without going into the causes of motion.   ;ncert
-;शुद्धगतिकी में, हम वस्तु की गति के कारणों पर ध्यान न देकर केवल उसकी गति के बारे में अध्ययन करते हैं .
-(defrule describe7
-(declare (salience 5000))
-(id-root ?id describe)
-?mng <-(meaning_to_be_decided ?id)
-(id-cat_coarse ?id verb)
-(kriyA-anaBihiwa_subject  ?id ?id1)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id -))
-(assert (kriyA_id-object_viBakwi ?id ke_bAre_meM))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  describe.clp 	describe7   "  ?id " -  )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  describe.clp 	describe7   "  ?id " ke_bAre_meM )" crlf))
-)
-
+;needs correction : commented by Manju Suggested by Chaitanya Sir (20-10-14) In the given example hindi translator has omitted the words. (construction change) 
+;;@@@ Added by Pramila(Banasthali university)  on 10-03-2014
+;;In Kinematics we study ways to describe motion without going into the causes of motion.   ;ncert
+;;शुद्धगतिकी में, हम वस्तु की गति के कारणों पर ध्यान न देकर केवल उसकी गति के बारे में अध्ययन करते हैं .
+;(defrule describe7
+;(declare (salience 5000))
+;(id-root ?id describe)
+;?mng <-(meaning_to_be_decided ?id)
+;(id-cat_coarse ?id verb)
+;(kriyA-anaBihiwa_subject  ?id ?id1)
+;=>
+;(retract ?mng)
+;(assert (id-wsd_root_mng ?id -))
+;(assert (kriyA_id-object_viBakwi ?id ke_bAre_meM))
+;(if ?*debug_flag* then
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  describe.clp 	describe7   "  ?id " -  )" crlf)
+;(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  describe.clp 	describe7   "  ?id " ke_bAre_meM )" crlf))
+;)
+;
 ;@@@ Added by Pramila(Banasthali university)  on 12-03-2014
 ;Should it be described as the rate of change in velocity with distance or with time?   ;ncert
 ;वेग में हो रहे इस परिवर्तन को समय के सापेक्ष व्यक्त करना चाहिए या दूरी के सापेक्ष ? 
@@ -210,7 +210,7 @@
 (assert (kriyA_id-object_viBakwi ?id ke_bAre_meM));In this chapter, we shall learn how to describe motion. 
 (if ?*debug_flag* then
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  describe.clp 	describe9   "  ?id "  bawA )" crlf))
-(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  describe.clp  describe7   "  ?id " ke_bAre_meM )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-kriyA_id-object_viBakwi   " ?*wsd_dir* "  describe.clp  describe9   "  ?id " ke_bAre_meM )" crlf)
 )
 
 ;@@@ Added by Pramila(Banasthali university)
