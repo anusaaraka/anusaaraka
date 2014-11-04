@@ -1,4 +1,4 @@
- 24-10-14
+ 4-11-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	admire.clp	distinguish.clp		update.clp
@@ -171,9 +171,19 @@
 	Anusaaraka_stanford-Factored.sh	Anusaaraka_stanford_align_man_ord.sh	Anusaaraka.sh		Anusaaraka_all.sh	
 	Anusaaraka_berkeley.sh		run_stanford-gui-factored.sh		run_stanford-gui-pcfg.sh
 	Anusaaraka_stanford.sh		shell_scripts/anu_compile.sh		shell_scripts/remove_out-files.sh
- 38. Updated following verifieds:
+ 38. Modified CLIPS/wx_utf8.c
+   - For easy maintaince modified the total concept but the file name is not changed.
+   - Calling the lex wx_utf8.lex  from the c-program ( Anu_src/wx_utf.lex which is already used in anusaaraka)
+     (previously wx_utf8.c the whole conversion wx-notation to utf8 was done by the c program)
+   - Updated  CLIPS/compile.sh.
+   - Added the older file wx_utf8.c in "miscellaneous/Programs/removed_files/" and updated README.
+   - Added code for generating CLIPS/wx_utf8.lex in shell_scripts/anu_compile.sh
+   - Added code for removing CLIPS/wx_utf8.lex in shell_scripts/remove_out-files.sh
+ 
+ 39. Updated  Anu_src/wx_utf8.lex
+ 40. Updated following verifieds:
 	sd_verified (846)
- 39. Updated Log. 
+ 41. Updated Log. 
 
 
  05-06-14
