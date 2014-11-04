@@ -34,7 +34,7 @@
 
  echo "Removing CLIPS out files"
  cd $HOME_anu_test/CLIPS
- rm -f gdbm_lookup.h *.o
+ rm -f gdbm_lookup.h wx_utf8.lex *.o
 
  cd $HOME_anu_test/bin
  rm -f myclips
