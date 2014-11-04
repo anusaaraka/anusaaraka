@@ -4,13 +4,14 @@ MYPATH=$HOME_anu_tmp/tmp/$1_tmp
 #------------- For Parser tree purpose -----------------------
 $HOME_anu_test/Anu_src/comp.sh combine_apos
 $HOME_anu_test/Anu_src/comp.sh get_wordid
-./combine_apos.out  < $MYPATH/one_sentence_per_line.txt.std.penn  > $MYPATH/one_sentence_per_line.txt.std.penn.tmp1
-sed '1d' $MYPATH/one_sentence_per_line.txt.std.penn.tmp1 > $MYPATH/one_sentence_per_line.txt.std.penn.tmp2
-./get_wordid.out < $MYPATH/one_sentence_per_line.txt.std.penn.tmp2  > $MYPATH/one_sentence_per_line.txt.std.penn.tmp3
+sed '1d' $MYPATH/one_sentence_per_line.txt.std.penn > $MYPATH/one_sentence_per_line.txt.std.penn.tmp1
+./combine_apos.out  < $MYPATH/one_sentence_per_line.txt.std.penn.tmp1 > $MYPATH/one_sentence_per_line.txt.std.penn.tmp2
+#./get_wordid.out < $MYPATH/one_sentence_per_line.txt.std.penn.tmp2  > $MYPATH/one_sentence_per_line.txt.std.penn.tmp3
 
 cd $MYPATH
 
-$HOME_anu_test/Anu_src/split_file.out one_sentence_per_line.txt.std.penn.tmp3  dir_names.txt  std.penn.tmp
+#$HOME_anu_test/Anu_src/split_file.out one_sentence_per_line.txt.std.penn.tmp3  dir_names.txt  std.penn.tmp
+$HOME_anu_test/Anu_src/split_file.out one_sentence_per_line.txt.std.penn.tmp2  dir_names.txt  std.penn.tmp
 while read line
 do
  cd $line
@@ -21,10 +22,16 @@ do
 done < $MYPATH/dir_names.txt
 
 cd $MYPATH/$2
-sed 's/\([0-9]\)\()\+\)[ ]/\1\2_/g' std.penn.tmp1 > std.penn.tmp2
-sed 's/[A-Z,\$]\+//g' std.penn.tmp2 > std.penn.txt
+#sed 's/\([0-9]\)\()\+\)[ ]/\1\2_/g' std.penn.tmp1 > std.penn.tmp2
+#sed 's/[A-Z,\$]\+//g' std.penn.tmp2 > std.penn.txt
 
-cat std.penn.tmp2 std.penn.txt >> slot_debug_input.txt
+sed 's/) (\([A-Z$]\)/)_(\1/g' std.penn.tmp1 | sed 's/([A-Z$-\:\.]\+ /(/g' > std.penn.tmp2
+ sed 's/\([A-Za-z]\+\)\([)]\+\)[ ](\([,.: ]\+\))_/\1\3\2_/g' std.penn.tmp2 | sed 's/\([A-Za-z]\+\)\([)]\+\)[ ](\([,.: ]\+\))\(.*\)$/\1\3\2\4/g' > std.penn.txt
+ #sed 's/\([A-Za-z]\+\)\([)]\+\)[ ](\([,. ]\+\))_/\1\3\2_/g' std.penn.tmp2 > std.penn.txt
+
+
+cat std.penn.txt >> slot_debug_input.txt
+#cat std.penn.tmp2 std.penn.txt >> slot_debug_input.txt
 #-------------------------------------------------------------------
 
 

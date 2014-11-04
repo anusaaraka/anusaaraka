@@ -121,6 +121,21 @@
 	(assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu anu_exact_match_with_vib))
 )
 ;-------------------------------------------------------------------------------------
+;Subsequently, the subjects of [kinetic theory] and [statistical mechanics] interpreted these quantities in terms of the properties of the molecular constituents of the bulk system.
+;wawpaScAw [aNugawi sixXAnwa] waWA [sAfKyikIya yAnwrikI] viRayoM ke anwargawa inhIM rASiyoM kI vyAKyA vqhaxAkAra nikAyoM ke ANvika avayavoM ke guNoM ke paxoM meM kI gaI.
+;(database_info (components aNugawi sixXAnwa) (database_name eng_phy_multi_word_dic.gdbm) (database_type multi) (group_ids 5 6))
+(defrule exact_match_with_anu_output2
+(declare (salience 900))
+(current_id ?mid)
+(manual_word_info (head_id ?mid) (word $?mng)(vibakthi 0)(group_ids $?grp_ids))
+(id-Apertium_output ?aid $?mng ?)
+(database_info (components $?mng))
+(id-root ?aid ?root)
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  anu_word_match_without_vib))
+        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu anu_exact_match_with_vib))
+)
+;-------------------------------------------------------------------------------------
 (defrule word_and_vib_match_using_dic
 (declare (salience 870))
 (current_id ?mid)
@@ -172,6 +187,17 @@
 	(assert (anu_id-man_id-type ?eid ?mid  dic_root_match_without_vib))
         (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_noun dictionary root_match_using_dic))
 )
+;-------------------------------------------------------------------------------------
+(defrule partial_word_match_with_anu
+(declare (salience 840))
+(current_id ?mid)
+(manual_word_info (head_id ?mid) (word $?mng)(group_ids $?grp_ids))
+(id-Apertium_output ?aid $? $?mng $?)
+(id-root ?aid ?root)
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  anu_partial_word_match))
+        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu_partial partial_word_match_with_anu))
+)
 ;=================================   verb rules =================================================
 ;Check for manual verb[root] and tam match in the dictionary
 ; The strong nuclear force binds protons and neutrons in a nucleus.  
@@ -187,14 +213,15 @@
         (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root dictionary verb_root_and_tam_match_using_dic))
 )
 ;-------------------------------------------------------------------------------------
-;
+;Therefore, an atom must also contain some positive charge to [neutralise] the negative charge of the electrons.
+;isalie, ilektroYna ke qNa AveSa ko [niRpraBAviwa karane ke lie] paramANu meM XanAwmaka AveSa BI avaSya honA cAhie.
 (defrule verb_root_match_using_dic
 (declare (salience 840))
 (current_id ?mid)
 (manual_word_info (head_id ?mid)(word $?r)(root $?root)(vibakthi $?tam))
 (test (neq $?tam 0))
 (database_info (components $?root)(root ?e_verb))
-(id-root ?eid ?e_verb)
+(or (id-root ?eid ?e_verb)(id-original_word ?eid ?e_verb))
 =>
 	(assert (anu_id-man_id-type ?eid ?mid  dic_root_match_without_vib))
         (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_verb dictionary verb_root_match_using_dic))
@@ -246,18 +273,6 @@
 	(assert (anu_id-man_id-type ?aid ?mid  kriyA_mUla_partial_match))
 	(assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root kriyA_mUla_with_dic kriyA_mUla_partial_match))
 )
- 
-;need to discuss
-;(defrule verb_with_only_root_match_using_dic
-;(declare (salience 879))
-;(current_id ?mid)
-;(manual_word_info (head_id ?mid)(root $?v_root))
-;(id-org_wrd-root-dbase_name-mng ? ? ?root ? $?v_root)
-;(id-root ?aid ?root)
-;=>
-;	(assert (anu_id-man_id-type ?aid ?mid  dic_root_match_without_vib))
-;        (assert (man_id-root-src-rule_name ?mid ?root dictionary verb_with_only_root_match_using_dic))
-;)
 ;================================ English word rules ====================================
 ;Eng : This process under forward bias is known as minority [carrier] [injection].
 ;Anu : agra aBinawi ke nIce yaha prakriyA alpasafKyaka vAhaka iMjekSana kI waraha jAnI jAwI hE.
@@ -327,6 +342,36 @@
 =>
         (assert (anu_id-man_id-type ?aid ?mid  M_layer_pharasal_match))
         (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  M_layer_pharasal_match align_using_phrasal_data_M))
+)
+;============================== get scope ============================================
+(defrule get_small_scope_fact
+(declare (salience 811))
+(current_id ?mid)
+(anu_id-man_id-root-src-rule_name ?aid ?mid $?)
+(anu_id-man_id-root-src-rule_name ?aid1 =(- ?mid 1) $?)
+(pada_info (group_ids $?grp))
+(test (integerp (member$ ?aid $?grp)))
+(test (integerp (member$ ?aid1 $?grp)))
+(id-root ?aid ?root)
+(not (anu_id-man_id-root-src-rule_name ? ?mid $? scope $?))
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  scope))
+        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  scope get_scope_fact))
+)
+;-------------------------------------------------------------------------------------
+(defrule get_large_scope_fact
+(declare (salience 810))
+(current_id ?mid)
+(anu_id-man_id-root-src-rule_name ?aid ?mid $?)
+(anu_id-man_id-root-src-rule_name ?aid1 =(- ?mid 1) $?)
+(mot-cat-praW_id-largest_group ? NP|PP ? $?grp)
+(test (integerp (member$ ?aid $?grp)))
+(test (integerp (member$ ?aid1 $?grp)))
+(id-root ?aid ?root)
+(not (anu_id-man_id-root-src-rule_name ? ?mid $? scope $?))
+=>
+	(assert (anu_id-man_id-type ?aid ?mid  scope))
+        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  scope get_scope_fact))
 )
 ;-------------------------------------------------------------------------------------
 (defrule create_file

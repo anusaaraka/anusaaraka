@@ -23,6 +23,7 @@
 	(assert (aligned_anu_id ?aid))
 	(assert (aligned_man_id ?mid))
 )
+
 ;-----------------------------------------------------------------------------------
 ;We see leaves falling from trees and water flowing down a dam.
 ;hama pedoM se girawe hue pawwoM ko waWA bAzXa se bahawe hue pAnI ko xeKawe hEM .
@@ -68,3 +69,29 @@
         )
 )
 
+;==================== to print left over words in html =======================================
+;(defglobal ?*lids* = (create$ )) 
+;(defglobal ?*lwords* = (create$ )) 
+;
+;(defrule get_left_over_ids
+;(declare (salience -502))
+;(no_match_found ?id)
+;(manual_id-word ?id $?mng)
+;=>
+;	(bind ?*lids* (create$  ?*lids* $?mng))
+;)
+;
+;(defrule get_left_over_fact
+;(declare (salience -503))
+;=>
+;	(assert (left_over_words  ?*lids*))
+;)
+;
+;(defrule get_left_over_words
+;(declare (salience -504))
+;?f0<-(left_over_words ?id $?ids)
+;(manual_id-word ?id $?mng)
+;=>
+;	(bind ?*lids* (create$  ?*lids* ?id)) 
+;
+;)
