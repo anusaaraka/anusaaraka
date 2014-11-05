@@ -1,11 +1,11 @@
- 4-11-14
+ 05-11-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	admire.clp	distinguish.clp		update.clp
 		   who.clp	roundabout.clp	on.clp		add.clp			excess.clp
 		   both.clp	consist.clp	reflect.clp	point.clp		till.clp
 		   be.clp	describe.clp	call.clp   	drink.clp   		rude.clp 
-		   to.clp
+		   to.clp	evidence.clp	move.clp
 	Added	 : dissolve.clp
 	Moved provisional wsd rules into WSD
  2. sd_category.clp
@@ -125,7 +125,11 @@
 	miscellaneous/SMT/phrasal_alignment/replace-mapping-symbols_for_align.lex
 	Stanford parser version 3.3.1
  30. Renamed iit-bombay dictionary has iit-bombay-UNL-en-hi
- 31. Modified get_word_count.c and get_word_count_single.c 
+ 31. Modified following C programmes:
+	get_canonical_form-dic.c -> Modified variable names
+        myeq.c                   -> increased array size in canonical_form function
+	get_word_count.c
+	get_word_count_single.c 
  32. Updated following lex files:
 	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
 	mapping-symbols.lex -> 	Added code to handle '|'

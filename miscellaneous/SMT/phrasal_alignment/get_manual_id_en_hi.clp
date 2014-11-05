@@ -260,7 +260,7 @@
 (declare (salience 90))
 ?f1<-(manual_id-word ?id0 $?noun)
 ?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ke)
-?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&rUpa|bAre|viRaya|AXAra|wOra|paxoM|sWAna|maXya)
+?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&rUpa|bAre|viRaya|AXAra|wOra|paxoM|sWAna|maXya|bIca|pakRa|samparka)
 ?f4<-(manual_id-word ?id3&:(=(+ ?id0 3) ?id3) meM|para)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
@@ -293,7 +293,7 @@
 (declare (salience 80))
 ?f1<-(manual_id-word ?id0 $?noun)
 ?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) kI)
-?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&apekRA)
+?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&apekRA|ora|waraha)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>
@@ -313,7 +313,7 @@
 (declare (salience 80))
 ?f1<-(manual_id-word ?id0 $?noun)
 ?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ke)
-?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|pare|BIwara|Age|pICe|paScAwa|paScAw|nikata|sApekRa|maXya)
+?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|pare|BIwara|Age|pICe|paScAwa|paScAw|nikata|sApekRa|maXya|anxara|bAhara|binA|jEsA|pAsa|viruxXa|xOrAna|sahiwa)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>

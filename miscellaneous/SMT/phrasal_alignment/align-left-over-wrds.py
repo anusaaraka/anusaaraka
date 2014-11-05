@@ -22,7 +22,7 @@ for each in left:
 		left_dic[count] = lst[1:-1]
 		count +=1
 
-vib = ['baje', 'Bara_meM', 'iXara-uXara', 'kA', 'ke', 'ke_anxara', 'ke_bAhara', 'ke_bAre_meM', 'ke_bAxa', 'ke_bIca', 'ke_bIca_meM', 'ke_binA', 'ke_cAroM_ora', 'ke_jEsA', 'ke_kAraNa', 'ke_liye', 'ke_lie', 'ke_nAma_se', 'ke_nIce', 'ke_nikata', 'ke_pakRa_meM ', 'ke_pAsa', 'ke_pICe', 'ke_prawi_prema_ke_kAraNa', 'ke_samparka_meM', 'ke_sAWa', 'ke_Upara', 'ke_usa_pAra', 'ke_viRaya_meM', 'ke_viruxXa', 'ke_xOrAna', 'ke_xvArA', 'kI', 'kI_apekRA', 'kI_ora', 'kI_waraha', 'ko', 'lagaBaga', 'meM', 'meM_se', 'mqwyu_uparAnwa', 'ne', 'para', 'se', 'se_lagA_huA', 'se_pahale', 'vAlA', 'waka', 'xvArA', 'ke_sahiwa]
+vib = ['baje', 'Bara_meM', 'iXara-uXara', 'kA', 'ke', 'ke_anxara', 'ke_bAhara', 'ke_bAre_meM', 'ke_bAxa', 'ke_bIca', 'ke_bIca_meM', 'ke_binA', 'ke_cAroM_ora', 'ke_jEsA', 'ke_kAraNa', 'ke_liye', 'ke_lie', 'ke_nAma_se', 'ke_nIce', 'ke_nikata', 'ke_pakRa_meM ', 'ke_pAsa', 'ke_pICe', 'ke_prawi_prema_ke_kAraNa', 'ke_samparka_meM', 'ke_sAWa', 'ke_Upara', 'ke_usa_pAra', 'ke_viRaya_meM', 'ke_viruxXa', 'ke_xOrAna', 'ke_xvArA', 'kI', 'kI_apekRA', 'kI_ora', 'kI_waraha', 'ko', 'lagaBaga', 'meM', 'meM_se', 'mqwyu_uparAnwa', 'ne', 'para', 'se', 'se_lagA_huA', 'se_pahale', 'vAlA', 'waka', 'xvArA', 'ke_sahiwa']
 
 verb_list = ['karawA', 'howA', 'karawI', 'howI', 'karawe', 'howe']
 

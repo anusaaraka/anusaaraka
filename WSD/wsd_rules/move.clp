@@ -27,7 +27,7 @@
 (id-word ?id1 in)
 (or(kriyA-upasarga ?id ?id1)(kriyA-in_saMbanXI  ?id ?))
 (kriyA-subject ?id ?sub)
-(id-root ?sub ?str&:((not(numberp ?str)(gdbm_lookup_p "animate.gdbm" ?str)))) ;$$$ Added this and above condition by Roja(26-05-14).Suggested by Chaitanya Sir. Counter Ex: Even when we are sleeping, air moves into and out of our lungs and blood flows in arteries and veins.  
+(id-root ?sub ?str&:(and (not(numberp ?str))(gdbm_lookup_p "animate.gdbm" ?str))) ;$$$ Added this and above condition by Roja(26-05-14).Suggested by Chaitanya Sir. Counter Ex: Even when we are sleeping, air moves into and out of our lungs and blood flows in arteries and veins.  
 (id-cat_coarse ?id verb)
 =>
 (retract ?mng)
