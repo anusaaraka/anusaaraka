@@ -1,5 +1,28 @@
  06-11-14
  ========
+ 1. Added 'agriculture' related dictionaries in Anu_data/domain
+ 2. To get canonical form for agriculture domain:
+	Added: list_Anu_data_domain, list_Anu_data_multi_domain
+	Modified: get_txt_files.sh, list-right
+ 3. To create agriculture gdbm:
+	Modified : shell_scripts/anu_compile.sh
+ 4. To get MWE for agriculture:
+	Added:  multi_word_expression_for_agriculture.c
+	Modified: Makefile, run.sh
+ 5. causative_verb_mng.clp: 
+	Modified :get_rule_info
+ 6. check_for_best_match_in_multi-word.clp:
+	Added: load_agr_multi_word_file, chk_for_best_match_in_agr_domain
+ 7. hindi_compound_meaning.clp:
+	Added: get_default_agr_compound_root_mng
+ 8. hindi_meaning.clp:
+	Added: agr_default_mng_with_org_wrd_with_same_cat, agr_default_mng_with_diff_cat_with_org_wrd, 
+	       get_mng_from_agr_dic_with_same_cat, get_mng_from_agr_dic_with_diff_cat
+ 9. Added code to run agriculture mwe in Anusaaraka_stanford.sh
+10. Updated Log.
+
+ 06-11-14
+ ========
  1. WSD:
 	Modified : have.clp	president.clp	admire.clp	distinguish.clp		update.clp
 		   who.clp	roundabout.clp	on.clp		add.clp			excess.clp

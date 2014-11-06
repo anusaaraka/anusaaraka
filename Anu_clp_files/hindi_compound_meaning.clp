@@ -197,6 +197,22 @@
        (printout ?*h_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?mng"    Phy_compound_phrase_root_mng  "(implode$ $?grp_ids)")" crlf)
 	(printout ?*w_fact_file* "(compound_meaning_decided  " ?id ")" crlf)
  )
+ ;--------------------------------------------------------------------------------------------------------------
+ ;Added for agriculture domain
+ (defrule get_default_agr_compound_root_mng
+ (declare (salience 9600))
+ (Domain agriculture)
+ (ids-agr_cmp_mng-head-cat-mng_typ-priority $?grp_ids ?mng ?grp_head ?grp_cat RM ?)
+ ?f<-(meaning_to_be_decided ?id)
+ (test (eq (nth$ ?grp_head $?grp_ids) ?id))
+ =>
+       (retract ?f)
+       (print_hindi_mng ?id -  Agr_compound_phrase_root_mng $?grp_ids)
+       (printout ?*h_mng_file* "(id-HM-source  " ?id "  "?mng"    Agr_compound_phrase_root_mng)" crlf)
+       (printout ?*h_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?mng"    Agr_compound_phrase_root_mng  "(implode$ $?grp_ids)")" crlf)
+        (printout ?*w_fact_file* "(compound_meaning_decided  " ?id ")" crlf)
+ )
+
  ;==========================================  multi-word meaning rules ===========================================
  ; WSD compound phrase word mng.
  (defrule wsd_cmp_phrase_word_mng

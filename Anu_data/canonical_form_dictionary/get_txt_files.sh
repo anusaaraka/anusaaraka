@@ -23,3 +23,13 @@ while read line
 do
         cp $HOME_anu_test/miscellaneous/SMT/MINION/dictionaries/$line".txt" .
 done < list_SMT
+
+while read line
+do
+	cp $HOME_anu_test/Anu_data/domain/$line".txt" .
+done < list_Anu_data_domain
+
+while read line
+do
+        cp $HOME_anu_test/Anu_data/domain/multi_word_dic/$line".txt" .
+done < list_Anu_data_multi_domain
