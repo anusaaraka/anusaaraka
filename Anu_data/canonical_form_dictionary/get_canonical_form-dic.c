@@ -14,7 +14,7 @@ int main(int argc, char* argv[])
    char    word[100000], canonical_word[100000];
    char    *line=NULL;
    FILE    *fp;
-   int     i;
+   int     i, len1;
 
    fp=fopen(argv[1], "r");				//to open a file argv[1]
    if(fp==NULL)  printf("could not open file ");	
@@ -25,13 +25,15 @@ int main(int argc, char* argv[])
 		printf("%s", line); 	 //reading comments
 	else 
 	{
-		len=strcspn(line, "\n");
-		strncpy(word, line, len);  word[len]='\0';	//getting the word 
+		len1=strcspn(line, "\n");
+		strncpy(word, line, len1);  word[len1]='\0';	//getting the word 
 
 		canonical_form(word,canonical_word);		//passing the word to canonical_form function
         	printf("%s\n", canonical_word);				
 		*word='\0'; *canonical_word='\0';		//null the arrays word and canonical_word
 	}
    }
+   if (line)
+	free(line);
    fclose(fp);
 }

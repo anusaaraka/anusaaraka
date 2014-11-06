@@ -159,6 +159,7 @@
 
  echo "Compiling CLIPS source files"
  cd $HOME_anu_test/CLIPS
+ sh create_wx_utf8.sh $HOME_anu_test/Anu_src/wx_utf8.lex wx_utf8.lex
  sh compile.sh
  mv myclips $HOME_anu_test/bin/.
 

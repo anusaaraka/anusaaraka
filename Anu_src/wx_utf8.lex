@@ -3,10 +3,12 @@
 
 ROM_WORD @[A-Za-z0-9]+
 
+NON_ALPHABETS [^@A-Za-z]+
+
 %x consonant
 
 %%
-{ROM_WORD}	{	printf("%s", yytext+1);	}
+{ROM_WORD}	{	printf("%s", yytext+1);	BEGIN INITIAL;	}
 
 A	{	printf("आ");	}
 E	{	printf("ऐ");	}
@@ -121,6 +123,7 @@ lY	{	printf("ळ");	BEGIN consonant;	}
 
 <consonant>Z	{	printf("़");	BEGIN consonant;	}
 
-<consonant>([ ]|\n|[^a-zA-Z])	{	printf("्");	ECHO;	BEGIN INITIAL;	}
+<consonant>([ ]|\n|{NON_ALPHABETS})	{	printf("्");	printf("%s",yytext);	BEGIN INITIAL;	}
+{NON_ALPHABETS}         { printf("%s", yytext);  BEGIN INITIAL;}
 
 %%

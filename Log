@@ -1,11 +1,11 @@
- 24-10-14
+ 05-11-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	admire.clp	distinguish.clp		update.clp
 		   who.clp	roundabout.clp	on.clp		add.clp			excess.clp
 		   both.clp	consist.clp	reflect.clp	point.clp		till.clp
 		   be.clp	describe.clp	call.clp   	drink.clp   		rude.clp 
-		   to.clp
+		   to.clp	evidence.clp	move.clp
 	Added	 : dissolve.clp
 	Moved provisional wsd rules into WSD
  2. sd_category.clp
@@ -125,7 +125,11 @@
 	miscellaneous/SMT/phrasal_alignment/replace-mapping-symbols_for_align.lex
 	Stanford parser version 3.3.1
  30. Renamed iit-bombay dictionary has iit-bombay-UNL-en-hi
- 31. Modified get_word_count.c and get_word_count_single.c 
+ 31. Modified following C programmes:
+	get_canonical_form-dic.c -> Modified variable names
+        myeq.c                   -> increased array size in canonical_form function
+	get_word_count.c
+	get_word_count_single.c 
  32. Updated following lex files:
 	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
 	mapping-symbols.lex -> 	Added code to handle '|'
@@ -171,9 +175,19 @@
 	Anusaaraka_stanford-Factored.sh	Anusaaraka_stanford_align_man_ord.sh	Anusaaraka.sh		Anusaaraka_all.sh	
 	Anusaaraka_berkeley.sh		run_stanford-gui-factored.sh		run_stanford-gui-pcfg.sh
 	Anusaaraka_stanford.sh		shell_scripts/anu_compile.sh		shell_scripts/remove_out-files.sh
- 38. Updated following verifieds:
+ 38. Modified CLIPS/wx_utf8.c
+   - For easy maintaince modified the total concept but the file name is not changed.
+   - Calling the lex wx_utf8.lex  from the c-program ( Anu_src/wx_utf.lex which is already used in anusaaraka)
+     (previously wx_utf8.c the whole conversion wx-notation to utf8 was done by the c program)
+   - Updated  CLIPS/compile.sh.
+   - Added the older file wx_utf8.c in "miscellaneous/Programs/removed_files/" and updated README.
+   - Added code for generating CLIPS/wx_utf8.lex in shell_scripts/anu_compile.sh
+   - Added code for removing CLIPS/wx_utf8.lex in shell_scripts/remove_out-files.sh
+ 
+ 39. Updated  Anu_src/wx_utf8.lex
+ 40. Updated following verifieds:
 	sd_verified (846)
- 39. Updated Log. 
+ 41. Updated Log. 
 
 
  05-06-14

@@ -10,7 +10,7 @@
   $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_form_correction.out  < $MYPATH/hnd_tmp1 > $MYPATH/hnd_tmp2
   $HOME_anu_test/Anu_data/canonical_form_dictionary/canonical_to_conventional.out  < $MYPATH/hnd_tmp2 > $MYPATH/hnd
 
-  perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/hnd | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" | sed 's/ @ / @/g' > $MYPATH/hnd-hi-en
+  perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/hnd | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" | sed 's/ @ / @/g' | sed 's/[ ]\.\([^$]\)/\.\1/g' > $MYPATH/hnd-hi-en
 
 
   cd $HOME_anu_test/miscellaneous/SMT/phrasal_alignment
