@@ -1,4 +1,4 @@
- 05-11-14
+ 06-11-14
  ========
  1. WSD:
 	Modified : have.clp	president.clp	admire.clp	distinguish.clp		update.clp
@@ -60,23 +60,25 @@
  18. prepare_apertium_input.clp :
         Added    : kA_vib_rule_for_verbal_noun ,default_kA_vib_rule
 	Modified : kA_vib_from_obj_rule, kA_vib_from_obj_rule1 and kA_vib_rule_for_verbal_noun [changed 'case' info from variable to 'd']
- 19. get_dbase_mng.clp:
+ 19. sd_pada.clp:
+	Modified : get_prep (added not condition)
+ 20. get_dbase_mng.clp:
 	Added 'proper_noun_dic.gdbm in rules 'get_mng_from_all_dic' and 'get_mng_from_all_dic1'   
- 20. run_modules_std.bat
+ 21. run_modules_std.bat
         Loaded  parserid_wordid_mapping.dat and word2.dat in sd_category module
 	Loaded  root.dat file in H_ordering_rules module
 	Added 	new module 'hindi_compound_meaning.clp'
- 21. hnd_translation.pl:
+ 22. hnd_translation.pl:
         Modified 'hindi_sentence_tmp.dat' to 'hindi_sentence_tmp2.dat'
 		 '$ARGV[0]_trnsltn.html' to '$ARGV[0]_trnsltn_tmp.html'	
- 22. Added relation_table/ folder in Doc contains following files:
+ 23. Added relation_table/ folder in Doc contains following files:
 	relation-table-for-WSD-wx.html  
 	style.css
- 23. Added align_output/ folder in phrasal_alignment which contains
+ 24. Added align_output/ folder in phrasal_alignment which contains
 	verified			phy_verified
 	verified_hnd			phy_verified_hnd
        	verified_eng_align.html		phy_verified_eng_align.html
- 24. Added align_debug/ folder in phrasal_alignment which contains
+ 25. Added align_debug/ folder in phrasal_alignment which contains
 	alignment_debug.sh
 	create-html-table.pl
 	print_matrix.py
@@ -85,7 +87,7 @@
 	parserid_wordid_mapping.clp
 	run_parser_mapping.bat
 	README
- 25. Added following files related to phrasal alignment:
+ 26. Added following files related to phrasal alignment:
 	count.py
 	sort.sh
 	bin/Anusaaraka_alignment.sh 
@@ -106,38 +108,38 @@
 	get_heuristics.clp
 	alignment.clp
 	get_score.clp
- 26. Added dummy fact
+ 27. Added dummy fact
         1. 'parser_id-cat' ---  cat_rule.clp, parser_id_mapping.clp, root_rule.clp and sd_relation_rules.clp
 	2. '(id-domain_type) and (compound_meaning_decided)'
 		causative_verb_mng.clp		hindi_meaning.clp		hindi_sent_reorder.clp
 		hindi_sentence.clp		number.clp			prepare_apertium_input.clp
 		tam_meaning.clp			vibakthi.clp			preferred_morph_consistency_check.clp
- 27. Added following files:
+ 28. Added following files:
 	-> check_for_TITLE.c programme to check whether input file contains TITLE or not.
 	-> get_latest_version_stanford_parser.sh in stanford-parser dir 
 	-> src folder in stanford-parser dir (Separated source files related to stanford-parser)
  	-> transliterate_meaning.txt file in Anu_data
 	-> get_rev_alltam.sh file to generate Alltam in reverse format
 	-> hindi_compound_meaning.clp in Anu_clp_files  (to handle all compound meanings)
- 28. Added:
+ 29. Added:
 	iit-bombay-UNL-hi-en dictionary in goldendict format(reverse of en-hi)
- 29. Removed : 
+ 30. Removed : 
 	miscellaneous/SMT/phrasal_alignment/replace-mapping-symbols_for_align.lex
 	Stanford parser version 3.3.1
- 30. Renamed iit-bombay dictionary has iit-bombay-UNL-en-hi
- 31. Modified following C programmes:
+ 31. Renamed iit-bombay dictionary has iit-bombay-UNL-en-hi
+ 32. Modified following C programmes:
 	get_canonical_form-dic.c -> Modified variable names
         myeq.c                   -> increased array size in canonical_form function
 	get_word_count.c
 	get_word_count_single.c 
- 32. Updated following lex files:
+ 33. Updated following lex files:
 	add_snt_tag.lex	-> Included <string.h> header file to avoid warnings in CentOs.
 	mapping-symbols.lex -> 	Added code to handle '|'
 	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern, Added code to handle '|'
 	morph.lex:	-> Modified to get tam info from morph.
 	wx_utf8.lex:	-> Handled 'eV', 'eY', 'oV'
 	phrasal_alignment/replace-punctuation.lex	-> 	Added '~' 
- 33. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
+ 34. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
 	Word-to-Word-dict.txt			run_alignment.sh			align-left-over-wrds.py
 	en-hi-gdbm-dict.txt			run_alignment-hi-en.sh			get_word_align.py
 						run_alignment-hi-en-hi.sh		match_value_in_hnd.py
@@ -151,9 +153,9 @@
 	Readme 
 	phrasal_alignment.css
 	phrasal_alignment.js
- 34. Updated following dictionarie related files:
+ 35. Updated following dictionarie related files:
 	changes_in_databases	apertium-en-hi.en.metadix	apertium_hn.dix		provisional_multi_word_dictionary.txt 
- 35. Updated following shell files:
+ 36. Updated following shell files:
 	Anusaaraka_stanford_align_eng_ord.sh
 	replace-abbrevations.sh
 	abbr.sh
@@ -163,19 +165,19 @@
 	get_multi_word-dic.sh
 	stdenglish.sh	-> 	Added code to run  check_for_TITLE.c programme
 	run_align_browser_eng.sh to work email concept in alignment layered o/p
- 36. Updated following files:
+ 37. Updated following files:
 	create_eng_align_html_phrasal.clp to work email concept in alignment layered o/p
 	this1.py
 	stanford-parser/README
  	Readme_to_use_email_in_firefox.txt
 	Dictionaries/Readme
 	create_binary_files.clp	-- added hindi_compound_meaning.clp
- 37. Updated Stanford parser version from 3.3.1 to 3.4.1 in following files:
+ 38. Updated Stanford parser version from 3.3.1 to 3.4.1 in following files:
 	Anusaaraka_bllip_parser.sh	Anusaaraka_bllip_parser_minion.sh	Anusaaraka_rasp.sh	Anusaaraka_site.sh
 	Anusaaraka_stanford-Factored.sh	Anusaaraka_stanford_align_man_ord.sh	Anusaaraka.sh		Anusaaraka_all.sh	
 	Anusaaraka_berkeley.sh		run_stanford-gui-factored.sh		run_stanford-gui-pcfg.sh
 	Anusaaraka_stanford.sh		shell_scripts/anu_compile.sh		shell_scripts/remove_out-files.sh
- 38. Modified CLIPS/wx_utf8.c
+ 39. Modified CLIPS/wx_utf8.c
    - For easy maintaince modified the total concept but the file name is not changed.
    - Calling the lex wx_utf8.lex  from the c-program ( Anu_src/wx_utf.lex which is already used in anusaaraka)
      (previously wx_utf8.c the whole conversion wx-notation to utf8 was done by the c program)
@@ -184,10 +186,10 @@
    - Added code for generating CLIPS/wx_utf8.lex in shell_scripts/anu_compile.sh
    - Added code for removing CLIPS/wx_utf8.lex in shell_scripts/remove_out-files.sh
  
- 39. Updated  Anu_src/wx_utf8.lex
- 40. Updated following verifieds:
+ 40. Updated  Anu_src/wx_utf8.lex
+ 41. Updated following verifieds:
 	sd_verified (846)
- 41. Updated Log. 
+ 42. Updated Log. 
 
 
  05-06-14
