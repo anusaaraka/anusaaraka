@@ -201,6 +201,7 @@
  (run)
  (save-facts "align_debug_source.dat" local anu_id-man_id-root-src-rule_name no_match_found)
  (close s_fp)
+ (clear)
  ;--------------------------------------------------------------------------
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/miscellaneous/SMT/phrasal_alignment/get_score.clp"))
@@ -227,6 +228,7 @@
  (load-facts "align_debug_source.dat")
  (load-facts "align_score.dat")
  (load-facts "manual_lwg.dat")
+ (load-facts "hindi_meanings.dat")
  (open "total-left-over.dat" lf "a")
  (run)
  (save-facts "word_alignment.dat" local alignment)

@@ -984,6 +984,7 @@ Removed:
 	118. silicon_noun    		silikana	as	silikoYna	(Suggested by 14anu-ban-01	17-10-14)
 	119. silicons_UNDEFINED      	silikana        as	silikoYna	(	"	"		 "	)
 	120. solid_noun      		tosa_paxArWa	as	Tosa_paxArWa	(	"	"		 "	)
+	121. neutron_noun     		nyUtrana	as	nyUtroYna 	(	"	14anu-ban-08	"	)
 
     3. Added new entry:
        ---------------
@@ -1255,6 +1256,9 @@ Removed:
 	138. stretched_adjective	KIFcA_huA			 ( Suggested by Chaitanya Sir  04-11-14)
 					Ex: The spring is not stretched and does not exert any upward force on the object which is moving down
 					    with acceleration g due to gravity.
+	140. derive_noun     		vyuwpanna			(Suggested by   14anu-ban-04   05-11-14)
+					Ex:A complete set of these units,both the base units and derived units,is known as the system of units.
+	
 
 
     4. Added new meaning to the existing word:
@@ -1487,6 +1491,10 @@ Removed:
 					Ex: By the nineteenth century, enough evidence had accumulated in favor of atomic hypothesis of matter. 
 	121. electrically_adverb	vExyuwa_rUpa_se		(Suggested by Chaitanya Sir  04-11-14)
 					Ex: However, atoms on a whole are electrically neutral. 
+	122. mercury_noun    		buXa			(Suggested by 14anu-ban-08   05-11-14)
+					Ex: We note that the orbits of all planets except Mercury, Mars and Pluto are very close to being
+					    circular.
+
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -1843,6 +1851,10 @@ Removed:
 				Ex: Matter, as we know, consists of elementary charged constituents like electrons and protons.
 	161. figure_noun     	afka			as	ciwra		(Suggested by   14anu-ban-05    17-10-14)
 				Ex: Figure 7.12 is a good illustration of Eq. (7.11).	
+	162. manifest_verb   	spaRta_ho_jA		as	prakata_ho	(Suggested by   14anu-ban-08    17-10-14)
+				Ex: Electric force manifests itself in atmosphere where the atoms are ionised and that leads to lightning.
+	163. head-on_adjective  Amane_sAmane		as	sIXA		(Suggested by   14anu-ban-06    05-11-14)
+				Ex: In practice, however, this number is smaller since head-on collisions are rare.
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -2564,7 +2576,12 @@ Removed:
 	neighbouring_adjective	nikatavarwI		(Suggested by 14anu-ban-08      17-10-14)
 				Ex: For example, the elastic spring force arises due to the net attraction/repulsion between the neighbouring
 				    atoms of the spring when the spring is elongated/compressed.
-
+	diametrically_adjective vyAsawa			(Suggested by 14anu-ban-04      05-11-14)
+				Ex: It is the angle between the two directions when two diametrically opposite points of the planet are viewed
+				    through the telescope.   
+	value_verb		mAna_ho			(Suggested by 14anu-ban-07      05-11-14)
+				Ex: The ice and steam point have values 32 Â°F and 212 Â°F respectively, on the Fahrenheit scale and 0 Â°C and 
+				    100 Â°C on the Celsius scale.
 
     Modifying first meaning:
     -----------------------
@@ -2615,6 +2632,9 @@ Removed:
 	11. constitution_noun       	safGatana		(Suggested by 14anu-ban-03  17-10-14)
 					Ex: The microscopic domain of physics deals with the constitution and structure of matter at the minute 					   scales of atoms and nuclei (and even lower scales of length) and their interaction with different
                                             probes such as electrons, photons and other elementary particles.
+	12. mercury_noun    		pArA			(Suggested by 14anu-ban-08  05-11-14)
+					Ex: Mercury and alcohol are the liquids used in most liquid-in-glass thermometers.
+	
 			
     Modifing category:
     -----------------

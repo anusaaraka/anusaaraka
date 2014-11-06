@@ -221,6 +221,39 @@
         (assert (mng_has_been_grouped ?id1))
 )
 ;----------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 8-9-14
+;[Similarly], we can argue that it lies on the median MQ and NR.
+;[isI prakAra] hama warka kara sakawe hEM ki yaha mAXyikA MQ Ora NR para BI avasWiwa hogA.
+(defrule multi_word_2_from_dic
+(declare (salience 110))
+(database_info (components ?mng ?mng1 $?)(database_type single))
+?f0<-(manual_id-word ?id0 ?mng)
+?f1<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?mng1)
+(not (mng_has_been_grouped ?id0))
+=>
+	(assert (manual_word_info (head_id ?id0) (word ?mng ?mng1)(group_ids ?id0 ?id1)))
+        (assert (mng_has_been_grouped ?id0))
+        (assert (mng_has_been_grouped ?id1))
+)
+;----------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 4-11-14
+;However, atoms on a whole are [electrically] neutral.
+;waWApi, paramANu svayaM meM [vExyuwa rUpa se] uxAsIna howe hEM.
+(defrule multi_word_3_from_dic
+(declare (salience 111))
+(database_info (components ?mng ?mng1 ?mng2)(database_type single))
+?f0<-(manual_id-word ?id0 ?mng)
+?f1<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?mng1)
+?f2<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?mng2)
+(not (mng_has_been_grouped ?id0))
+=>
+        (assert (manual_word_info (head_id ?id0) (word ?mng ?mng1 ?mng2)(group_ids ?id0 ?id1 ?id2)))
+        (assert (mng_has_been_grouped ?id0))
+        (assert (mng_has_been_grouped ?id1))
+        (assert (mng_has_been_grouped ?id2))
+)
+
+;----------------------------------------------------------------------------------------------------------------
 ;It is mainly through light and the sense of vision that we know and interpret the world around us.
 ;Man tran :: muKya rUpa se prakASa evaM xqRti kI saMvexanA ke kAraNa hI hama [apane cAroM ora] ke saMsAra ko samaJawe evaM usakI vyAKyA karawe hEM.
 ;Anu tran :: yaha halake meM se waWA xUraxarSiwA kI saMvexanA meM se pramuKa rUpa se hE ki hama hamAre cAroM ora yuga vyAKyA kara waWA jAnawI hE.
@@ -386,6 +419,22 @@
         (assert (mng_has_been_grouped ?id1)) 
 )
 ;----------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 4-11-14
+;According to this model, the positive charge of the atom is uniformly distributed throughout the volume of the atom and the negatively charged electrons are embedded in it like seeds in a watermelon. 
+; (manual_word_info (head_id 2) (word moYdala) (vibakthi 0)) and (manual_word_info (head_id 3)(word ke anusAra)) then
+; (manual_word_info (head_id 2) (word moYdala) (vibakthi ke anusAra)) 
+(defrule single_vib1-0
+(declare (salience 71))
+?f1<-(manual_word_info (head_id ?mid0) (word $?noun)(group_ids $?grp_ids ?id0)(vibakthi 0))
+?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ke $?r_wrd)(group_ids ?id1 $?grp_ids1))
+(test (neq (length $?r_wrd) 0))
+(not (vib_added ?id1))
+=>
+	(retract ?f2)
+        (modify ?f1  (head_id ?mid0) (word $?noun)(vibakthi ke $?r_wrd)(group_ids $?grp_ids ?id0 ?id1 $?grp_ids1))
+        (assert (vib_added ?id1))
+)
+;-------------------------------------------------------------------------------------------------------------------------------
 (defrule single_vib1
 (declare (salience 70))
 ?f1<-(manual_word_info (head_id ?mid0) (word $?noun)(group_ids $?grp_ids ?id0))
@@ -407,22 +456,10 @@
 (test (neq (length $?noun) 0))
 (test (neq ?v1 ?vib));A simple method for estimating the molecular size of oleic acid is given below. olIka amla aNu ke sAija kA [Akalana karane kI] eka sarala viXi nIce xI gaI hE.
 (not (vib_added ?id0))
+(not (mng_has_been_grouped ?id0));However, atoms on a whole are electrically neutral.
 =>
 	(modify ?f1 (word $?noun)(vibakthi $?v ?v1 ?vib))
 	(assert (vib_added ?id0))
-)
-;-------------------------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju 8-9-14
-;[Similarly], we can argue that it lies on the median MQ and NR.
-;[isI prakAra] hama warka kara sakawe hEM ki yaha mAXyikA MQ Ora NR para BI avasWiwa hogA.
-(defrule multi_word_from_dic
-(declare (salience 110))
-(database_info (components ?mng ?mng1)(database_type single))
-?f0<-(manual_word_info (head_id ?id0) (word ?mng)(group_ids ?id))
-?f1<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1)) (word ?mng1)(group_ids $?ids))
-=>
-	(retract ?f0)
-	(modify ?f1 (head_id ?id0)(word ?mng ?mng1)(group_ids ?id $?ids))
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 5-9-14

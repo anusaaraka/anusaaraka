@@ -210,7 +210,7 @@ mean_noun	mAXya
 measurement_noun	mApana
 mechanics_noun	yAMwrikI
 medium_noun	mAXyama
-mercury_noun	buXa
+mercury_noun	pArA/buXa
 microscope_noun	sUkRmaxarSI
 microscopic_noun	sUkRma/sUkRmaxarSanIya/sUkRmaxarSIya
 microwaves_noun	sUkRma_waraMgeM
@@ -696,3 +696,5 @@ median_noun	mAXyikA
 geostationary_noun	wulyakAlI
 typical_adjective	prArUpika
 neighbouring_adjective	nikatavarwI
+diametrically_adjective	vyAsawa
+value_verb	mAna_ho
