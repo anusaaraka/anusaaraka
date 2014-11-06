@@ -212,6 +212,25 @@
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
+ ;Added for agriculture domain
+ (defrule agr_default_mng_with_org_wrd_with_same_cat
+ (declare (salience 9100))
+ (Domain agriculture)
+ (id-root ?id -)
+ (id-original_word ?id  ?org_wrd)
+ ?mng<-(meaning_to_be_decided ?id)
+ (id-cat_coarse ?id ?cat)
+ (test (neq (numberp ?org_wrd) TRUE))
+ (test (neq (gdbm_lookup "agriculture.gdbm" (str-cat ?org_wrd "_" ?cat)) "FALSE"))
+ =>
+        (bind ?f_mng (get_first_mng ?org_wrd ?cat agriculture.gdbm))
+        (if (neq ?f_mng "FALSE") then
+                (retract ?mng)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Agriculture_Glossary)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Agriculture_Glossary "?id")" crlf)
+        )
+ )
+ ;--------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (26-08-13).
  ;If root is '-' then check original word in dicionary with different category.
  (defrule phy_default_mng_with_diff_cat_with_org_wrd
@@ -235,6 +254,28 @@
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
+ ;Added for agriculture domain
+ (defrule agr_default_mng_with_diff_cat_with_org_wrd
+ (declare (salience 9000))
+ (Domain agriculture)
+ (id-root ?id -)
+ (id-original_word ?id  ?org_wrd)
+ ?mng<-(meaning_to_be_decided ?id)
+ (id-cat_coarse ?id ?cat)
+ (test (neq (numberp ?org_wrd) TRUE))
+ (default-cat ?cat1)
+ (test (neq ?cat ?cat1))
+ (test (neq (gdbm_lookup "agriculture.gdbm" (str-cat ?org_wrd "_" ?cat1)) "FALSE"))
+ =>
+        (bind ?f_mng (get_first_mng ?org_wrd ?cat1 agriculture.gdbm))
+        (if (neq ?f_mng "FALSE") then
+                (retract ?mng)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Agriculture_Glossary)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Agriculture_Glossary "?id")" crlf)
+                (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?org_wrd")" crlf)
+        )
+ )
+ ;--------------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju (19-11-12)
  (defrule get_mng_from_phy_dic_with_same_cat
  (declare (salience 8900))
@@ -250,6 +291,24 @@
                 (retract ?mng)
                 (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Physics_Glossary)" crlf)
                 (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Physics_Glossary "?id")" crlf)
+        )
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+ ;Added for agriculture domain
+ (defrule get_mng_from_agr_dic_with_same_cat
+ (declare (salience 8900))
+ (Domain agriculture)
+ (id-root ?id ?rt)
+ ?mng<-(meaning_to_be_decided ?id)
+ (id-cat_coarse ?id ?cat)
+ (test (neq (numberp ?rt) TRUE))
+ (test (neq (gdbm_lookup "agriculture.gdbm" (str-cat ?rt "_" ?cat)) "FALSE"))
+ =>
+        (bind ?f_mng (get_first_mng ?rt ?cat agriculture.gdbm))
+        (if (neq ?f_mng "FALSE") then
+                (retract ?mng)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Agriculture_Glossary)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Agriculture_Glossary "?id")" crlf)
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
@@ -269,6 +328,25 @@
                 (retract ?mng)
                 (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Physics_Glossary)" crlf)
                 (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Physics_Glossary "?id")" crlf)
+                (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?rt")" crlf)
+        )
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+ ;Added for agriculture domain
+ (defrule get_mng_from_agr_dic_with_diff_cat
+ (declare (salience 8800))
+ (Domain agriculture)
+ (id-cat_coarse ?id PropN)
+ (id-root ?id ?rt)
+ ?mng<-(meaning_to_be_decided ?id)
+ (test (neq (numberp ?rt) TRUE))
+ (test (neq (gdbm_lookup "agriculture.gdbm" (str-cat (lowcase ?rt) "_noun")) "FALSE"))
+ =>
+        (bind ?f_mng (get_first_mng (lowcase ?rt) noun agriculture.gdbm))
+        (if (neq ?f_mng "FALSE") then
+                (retract ?mng)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Agriculture_Glossary)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Agriculture_Glossary "?id")" crlf)
                 (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?rt")" crlf)
         )
  )

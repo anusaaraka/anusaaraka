@@ -6,7 +6,7 @@ ifeq ($(wildcard $(PATH_LIBRARY)/lib$(ACLIB).a),)
 all:;@echo 'Please go to ../ahocorasick directory and complie it first.'
 else
 #all: multi_word_expression multi_word_expression_for_proper_nouns multi_word_expression_for_physics multi_word_expression_for_prov extract_key_using_multifast extract_key_using_multifast-hi-en extract_key_using_multifast-hi-en-hi extract_key_in_hindi_phrase 
-all: multi_word_expression multi_word_expression_for_proper_nouns multi_word_expression_for_physics multi_word_expression_for_prov extract_key_using_multifast extract_key_using_multifast-hi-en extract_key_in_hindi_phrase 
+all: multi_word_expression multi_word_expression_for_proper_nouns multi_word_expression_for_physics multi_word_expression_for_agriculture multi_word_expression_for_prov extract_key_using_multifast extract_key_using_multifast-hi-en extract_key_in_hindi_phrase
 
 endif
 
@@ -27,6 +27,12 @@ multi_word_expression_for_physics: multi_word_expression_for_physics.o
 
 multi_word_expression_for_physics.o: multi_word_expression_for_physics.c
 	cc -I$(PATH_INCLUDE) -Wall -c multi_word_expression_for_physics.c
+
+multi_word_expression_for_agriculture: multi_word_expression_for_agriculture.o
+	cc -o multi_word_expression_for_agriculture multi_word_expression_for_agriculture.o -l$(ACLIB) -L$(PATH_LIBRARY) 
+
+multi_word_expression_for_agriculture.o: multi_word_expression_for_agriculture.c
+	cc -I$(PATH_INCLUDE) -Wall -c multi_word_expression_for_agriculture.c
 
 multi_word_expression_for_prov: multi_word_expression_for_prov.o
 	cc -o multi_word_expression_for_prov multi_word_expression_for_prov.o -l$(ACLIB) -L$(PATH_LIBRARY) 
