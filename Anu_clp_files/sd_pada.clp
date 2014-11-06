@@ -266,6 +266,7 @@
  (test (eq (member$ 0 $?prep) FALSE))
  (prawiniXi_id-node-category ?np ?NP NP|VP)
  ?f0<-(pada_info (group_head_id ?np)(preposition  0))
+ (not (conj-lt_head-rt_head ? ?np ?));Heat transfer takes place between the system and the surrounding medium.
  =>
         (retract ?f0)
 	(printout ?*pada_debug_file* "(rule_name-mode_of_pada - get_prep Modification"crlf )

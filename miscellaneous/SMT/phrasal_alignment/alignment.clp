@@ -1,5 +1,7 @@
 ;This file is added by Shirisha Manju (9-10-14)
 
+(defglobal ?*lf-f* = lf)
+
 (deftemplate score (slot anu_id (default 0))(slot man_id (default 0))(slot weightage_sum (default 0))(multislot heuristics (default 0))(multislot rule_names (default 0)))
 
 (deftemplate alignment (slot anu_id (default 0))(slot man_id (default 0))(multislot anu_meaning (default 0))(multislot man_meaning(default 0)))
@@ -23,7 +25,24 @@
 	(assert (aligned_anu_id ?aid))
 	(assert (aligned_man_id ?mid))
 )
-
+;-----------------------------------------------------------------------------------
+;Ex: if aper output not present then consider hindi meaning
+; According to this model, the positive charge of the atom is uniformly distributed [throughout] the volume of the atom and the negatively charged electrons are embedded in it like seeds in a watermelon.
+;isa moYdala ke anusAra, paramANu kA Xana AveSa paramANu meM [pUrNawayA] ekasamAna rUpa se viwariwa hE waWA qNa AveSiwa ilektroYna isameM TIka usI prakAra anwaHsWApiwa hEM jEse kisI warabUja meM bIja.
+(defrule align_with_max_sum1
+(declare (salience 80))
+?f1<-(score (anu_id ?aid)(man_id ?mid)(weightage_sum ?score))
+(not (score (weightage_sum ?score1&:(> ?score1 ?score))))
+(not (id-Apertium_output ?aid $?))
+(id-HM-source ?aid ?amng ?)
+?f0<-(manual_word_info (head_id ?mid) (group_ids $?ids))
+(not (aligned_anu_id ?aid))
+=>
+        (retract ?f0 ?f1)
+        (assert (alignment (anu_id ?aid)(man_id ?mid)(anu_meaning ?amng)(man_meaning $?ids)))
+        (assert (aligned_anu_id ?aid))
+        (assert (aligned_man_id ?mid))
+)
 ;-----------------------------------------------------------------------------------
 ;We see leaves falling from trees and water flowing down a dam.
 ;hama pedoM se girawe hue pawwoM ko waWA bAzXa se bahawe hue pAnI ko xeKawe hEM .
@@ -70,28 +89,37 @@
 )
 
 ;==================== to print left over words in html =======================================
-;(defglobal ?*lids* = (create$ )) 
-;(defglobal ?*lwords* = (create$ )) 
-;
-;(defrule get_left_over_ids
-;(declare (salience -502))
-;(no_match_found ?id)
-;(manual_id-word ?id $?mng)
-;=>
-;	(bind ?*lids* (create$  ?*lids* $?mng))
-;)
-;
-;(defrule get_left_over_fact
-;(declare (salience -503))
-;=>
-;	(assert (left_over_words  ?*lids*))
-;)
-;
-;(defrule get_left_over_words
-;(declare (salience -504))
-;?f0<-(left_over_words ?id $?ids)
-;(manual_id-word ?id $?mng)
-;=>
-;	(bind ?*lids* (create$  ?*lids* ?id)) 
-;
-;)
+(defglobal ?*lids* = (create$ )) 
+(defglobal ?*lwords* = (create$ )) 
+
+(defrule get_left_over_ids
+(declare (salience -502))
+?f0<-(no_match_found ?id)
+(not (manual_id-word ?id .))
+=>
+	(retract ?f0)
+	(bind ?*lids* (create$  ?*lids* ?id))
+)
+
+(defrule get_left_over_fact
+(declare (salience -503))
+=>
+	(assert (left_over_words  ?*lids*))
+)
+
+(defrule print_info
+(declare (salience -504))
+(left_over_words ?id $?)
+(not (msg_printed))
+=>
+	 (printout ?*lf-f* "Nth layer Un-assigned words:  " )
+	(assert (msg_printed))
+)
+
+(defrule get_left_over_words
+(declare (salience -505))
+?f0<-(left_over_words ?id)
+(manual_id-word ?id ?mng)
+=>
+	(printout ?*lf-f* ?mng crlf)
+)

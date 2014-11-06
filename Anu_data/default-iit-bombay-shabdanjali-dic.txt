@@ -36185,7 +36185,7 @@ head-dress_noun	SiroBURaNa/Sirovaswra
 head-hunt_verb	manavAkara_ucca_paxa_kI_BarwI_kara
 head-hunter_noun	BarwI_karAne_vAlA_kAryakarwA/ucca_paxa_kI_BarwI_karane_vAlA_vyakwi/ucca_paxa_kI_BarwI_karane_vAlA_saMsWA/mare_hue_SatruoM_kA_sira_ikatTA_karane_vAlA_jafgalI_vyakwi
 head-of-state_noun	rAja_pramuKa
-head-on_adjective	Amane_sAmane/sIXA/Amane-sAmane_kA
+head-on_adjective	sIXA/Amane_sAmane/Amane-sAmane_kA
 head-on_adverb	sIXe/sAmane_se/Amane-sAmane
 head-shrinker_noun	manoviSleRaka/manaScikiwsaka
 head-to-head_adjective	sIX/ekAnwika/vivAxiwa_viRaya_kA_mukAbalA
@@ -47432,7 +47432,7 @@ manicurist_noun	naKa-prasAXikA/naKa-prasAXaka
 manie_UNDEFINED	mEnI
 manifest_adjective	suspaRta/spaRta/vyakwa_karanA/mAlasUcI
 manifest_noun	yAwrIsUcI/mAlasUcI
-manifest_verb	spaRta_ho_jA/sAPa_xiKAI_xe/praxarSiwa_kara/nAKuna_prasAXana_kara/prakata_ho
+manifest_verb	prakata_ho/spaRta_ho_jA/sAPa_xiKAI_xe/praxarSiwa_kara/nAKuna_prasAXana_kara
 manifestation_UNDEFINED	prakatIkaraNa
 manifestation_noun	prawyakRIkaraNa/AvirBAva/aBivyakwi
 manifestations_UNDEFINED	prakatIkaraNa
@@ -48656,7 +48656,7 @@ mercurialer_UNDEFINED	weja
 mercurialest_UNDEFINED	weja
 mercurials_UNDEFINED	weja
 mercuries_UNDEFINED	buXagraha
-mercury_noun	pArA/buXagraha
+mercury_noun	buXa/pArA/buXagraha
 mercy-killing_noun	xayA_karake_mAranA
 mercy_noun	xayA/kqpA/karuNA
 mere_adjective	mAwra/kevala
@@ -52201,7 +52201,7 @@ neutralizing_UNDEFINED	niRpraBAva_karanA
 neutrally_adverb	watasWa_BAva_se/niRkriyawApUrvaka
 neutrals_UNDEFINED	niRpakRa
 neutron_UNDEFINED	nyUtaXoYna
-neutron_noun	nyUtrana
+neutron_noun	nyUtroYna 
 never-ending_adjective	kaBI_Kawma_na_hone_vAlA
 never-fear_verb	mawa_daro
 never_adverb	kaBI_nahIM/kaBI_BI/jarA_BI_nahIM/bilkula_nahIM/[kaBI]_nahIM
@@ -93559,3 +93559,4 @@ sub-atomic_adjective	avaparamANuka
 trailing_adjective	anugAmI
 spherometer_noun	golAImApI
 side-wise_adjective	iXara_se_uXara
+derive_noun	vyuwpanna
