@@ -1490,7 +1490,7 @@ yA_jAwA_hE,m,p,m	jAwe_hEM
 yA_jAwA_hE,m,p,u	jAwe_hEM
 yA_jAwA_hE,m,s,a	jAwA_hE
 yA_jAwA_hE,m,s,m	jAwA_hE
-yA_jAwA_hE,m,s,u	jAwA_hE
+yA_jAwA_hE,m,s,u	jAwA_hUM
 
 yA_jAwA_WA,f,p,a	jAwIM_WIM
 yA_jAwA_WA,f,p,m	jAwIM_WIM

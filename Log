@@ -1,4 +1,4 @@
- 06-11-14
+ 11-11-14
  ========
  1. Added 'agriculture' related dictionaries in Anu_data/domain
  2. To get canonical form for agriculture domain:
@@ -16,10 +16,16 @@
  7. hindi_compound_meaning.clp:
 	Added: get_default_agr_compound_root_mng
  8. hindi_meaning.clp:
-	Added: agr_default_mng_with_org_wrd_with_same_cat, agr_default_mng_with_diff_cat_with_org_wrd, 
-	       get_mng_from_agr_dic_with_same_cat, get_mng_from_agr_dic_with_diff_cat
- 9. Added code to run agriculture mwe in Anusaaraka_stanford.sh
-10. Updated Log.
+	Added 	: get_wsd_first_mng, get_mng_from_domain_dic_with_diff_cat1
+	Removed : agr_default_mng_with_org_wrd_with_same_cat,agr_default_mng_with_diff_cat_with_org_wrd, get_mng_from_agr_dic_with_same_cat
+		  default_hindi_mng-same-cat_with-org_wrd,  default_hindi_mng-different-cat_with_org_wrd
+	Modified the rules to add 'get_wsd_first_mng' for domain specific rules
+	Modified the rules to get domain specific dic meaning (generalised for all domains)
+ 9. sd_pada.clp:
+	Added : get_tam_type (to get tam type info ex: passive)
+10. Added code to run agriculture mwe in Anusaaraka_stanford.sh
+11. Updated changes_in_databases
+12. Updated Log.
 
  06-11-14
  ========

@@ -22,7 +22,9 @@
 
  cd $HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries
  echo "Creating phy_dictionary.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/phy_dictionary.gdbm < phy_dictionary_in_canonical_form.txt
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/physics_dic.gdbm < phy_dictionary_in_canonical_form.txt
+ echo "Creating agriculture.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/agriculture_dic.gdbm < agriculture_dic_in_canonical_form.txt
 
  echo "Creating paxasUwra.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/total-paxasUwra.gdbm < total-paxasUwra_in_canonical_form.txt 
@@ -62,8 +64,6 @@
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/kriyA_object_vib.gdbm < kriyA_object_vib_in_canonical_form.txt
  echo "Creating proper_noun_dic.gdbm"
  ./create-gdbm.pl $HOME_anu_test/Anu_databases/proper_noun_dic.gdbm < proper_noun_dic_in_canonical_form.txt
- echo "Creating agriculture.gdbm"
- ./create-gdbm.pl $HOME_anu_test/Anu_databases/agriculture.gdbm < agriculture_dic_in_canonical_form.txt 
 
  cd $HOME_anu_test/Anu_data
  echo "Creating PropN.gdbm"
