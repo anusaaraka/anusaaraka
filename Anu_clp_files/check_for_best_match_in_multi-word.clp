@@ -4,20 +4,14 @@
  ;If priority=1 then meaning is from 'provisional_multi_word_dictionary.txt'
  ;If priority=2 then meaning is from other multiword dictionaries(Ex: multi_word_expressions.txt)
  ;--------------------------------------------------------------------------------------------------------------
- ;Domain physics
- (defrule load_phy_multi_word_file
+ ;Load Domain MWE file
+ (defrule load_domain_multi_word_file
  (declare (salience 9000))
- (Domain physics)
+ (Domain ?domain&~general)
  =>
- (load-facts "phy_multi_word_expressions.dat")
- )
- ;--------------------------------------------------------------------------------------------------------------
- ;Domain agriculture
- (defrule load_agr_multi_word_file
- (declare (salience 9000))
- (Domain agriculture)
- =>
- (load-facts "agr_multi_word_expressions.dat")
+ (bind ?mwe_dic (str-cat (sub-string 1 3 ?domain) "_multi_word_expressions.dat"))
+ (printout t ?mwe_dic crlf)
+ (load-facts ?mwe_dic)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja(21-02-14)
@@ -70,26 +64,11 @@
         )
  )
  ;--------------------------------------------------------------------------------------------------------------------------
- ;To check best match in physics multi word dictionary
- (defrule chk_for_best_match_in_physics_domain
+ ;To check best match in domain multi word dictionary
+ (defrule chk_for_best_match_in_domain
  (declare (salience 100))
- ?f<-(ids-phy_cmp_mng-head-cat-mng_typ-priority  $?grp_ids ?mng ?h_id ?cat ?mng_typ ?rank)
- ?f1<-(ids-phy_cmp_mng-head-cat-mng_typ-priority $?grp_ids1 ?mng1 ?h_id1 ?cat1 ?mng_typ1 ?rank)
- (test (neq ?mng ?mng1))
- (test (or (member$ $?grp_ids $?grp_ids1)(member$ $?grp_ids1 $?grp_ids)))
- =>
-        (if (> (length $?grp_ids) (length $?grp_ids1)) then
-                (retract ?f1)
-        else
-                (retract ?f)
-        )
- )
- ;--------------------------------------------------------------------------------------------------------------------------
- ;To check best match in agriculture multi word dictionary
- (defrule chk_for_best_match_in_agr_domain
- (declare (salience 100))
- ?f<-(ids-agr_cmp_mng-head-cat-mng_typ-priority  $?grp_ids ?mng ?h_id ?cat ?mng_typ ?rank)
- ?f1<-(ids-agr_cmp_mng-head-cat-mng_typ-priority $?grp_ids1 ?mng1 ?h_id1 ?cat1 ?mng_typ1 ?rank)
+ ?f<-(ids-domain_cmp_mng-head-cat-mng_typ-priority  $?grp_ids ?mng ?h_id ?cat ?mng_typ ?rank)
+ ?f1<-(ids-domain_cmp_mng-head-cat-mng_typ-priority $?grp_ids1 ?mng1 ?h_id1 ?cat1 ?mng_typ1 ?rank)
  (test (neq ?mng ?mng1))
  (test (or (member$ $?grp_ids $?grp_ids1)(member$ $?grp_ids1 $?grp_ids)))
  =>
