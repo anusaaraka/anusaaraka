@@ -695,3 +695,14 @@
         (print_in_ctrl_fact_files   ?hid)
  )	
  ;-----------------------------------------------------------------------------------------------------------------------
+ ;Suggested by Chaitanya Sir (6-11-14)
+ (defrule get_tam_type
+ (declare (salience 10))
+ (pada_info (group_head_id  ?id)(group_cat VP))
+ (root-verbchunk-tam-chunkids ? ? ?tam $?ids ?id)
+ (test (eq (integerp (member$ ?tam (create$ am_en are_en being_en is_en was_en were_en is_not_en was_not_en were_not_en are_to_be_en am_being_en are_being_en is_to_be_en was_being_en ))) TRUE))
+ =>
+	(assert (id-tam_type ?id passive))
+ )
+  
+ 
