@@ -1,31 +1,50 @@
- 11-11-14
+ 12-11-14
  ========
- 1. Added 'agriculture' related dictionaries in Anu_data/domain
- 2. To get canonical form for agriculture domain:
-	Added: list_Anu_data_domain, list_Anu_data_multi_domain
-	Modified: get_txt_files.sh, list-right
- 3. To create agriculture gdbm:
-	Modified : shell_scripts/anu_compile.sh
- 4. To get MWE for agriculture:
-	Added:  multi_word_expression_for_agriculture.c
-	Modified: Makefile, run.sh
- 5. causative_verb_mng.clp: 
-	Modified :get_rule_info
- 6. check_for_best_match_in_multi-word.clp:
-	Added: load_agr_multi_word_file, chk_for_best_match_in_agr_domain
- 7. hindi_compound_meaning.clp:
-	Added: get_default_agr_compound_root_mng
- 8. hindi_meaning.clp:
-	Added 	: get_wsd_first_mng, get_mng_from_domain_dic_with_diff_cat1
-	Removed : agr_default_mng_with_org_wrd_with_same_cat,agr_default_mng_with_diff_cat_with_org_wrd, get_mng_from_agr_dic_with_same_cat
-		  default_hindi_mng-same-cat_with-org_wrd,  default_hindi_mng-different-cat_with_org_wrd
-	Modified the rules to add 'get_wsd_first_mng' for domain specific rules
+ 1. causative_verb_mng.clp: 
+	Modified: get_rule_info
+ 2. check_for_best_match_in_multi-word.clp:
+	Renamed:  load_phy_multi_word_file to load_domain_multi_word_file
+		  chk_for_best_match_in_phy_domain to chk_for_best_match_in_domain
+	Modified: load_domain_multi_word_file (to handle for any domain)
+		  chk_for_best_match_in_domain ( "	"	"      )
+ 3. hindi_compound_meaning.clp:
+	Renamed:  get_default_phy_compound_word_mng to get_default_domain_compound_word_mng
+		  get_default_phy_compound_root_mng to get_default_domain_compound_root_mng
+	Modified: get_default_domain_compound_word_mng, get_default_domain_compound_root_mng (to handle for any domain mwe) 
 	Modified the rules to get domain specific dic meaning (generalised for all domains)
- 9. sd_pada.clp:
+ 4. hindi_meaning.clp:
+	Added 	: get_wsd_first_mng, get_mng_from_domain_dic_with_diff_cat1
+	Removed : default_hindi_mng-same-cat_with-org_wrd,  default_hindi_mng-different-cat_with_org_wrd
+	Modified the rules to add 'get_wsd_first_mng' for domain specific rules
+ 5. sd_pada.clp:
 	Added : get_tam_type (to get tam type info ex: passive)
-10. Added code to run agriculture mwe in Anusaaraka_stanford.sh
-11. Updated changes_in_databases
-12. Updated Log.
+ 6. vibakthi.clp:
+	Renamed: In never-called(), (ids-phy_cmp_mng-head-cat-mng_typ-priority) to (ids-domain_cmp_mng-head-cat-mng_typ-priority)
+ 7. run_modules_std.bat:
+	In check_for_best_match_in_multi-word.clp module:
+	Modified: ids-phy_cmp_mng-head-cat-mng_typ-priority to ids-domain_cmp_mng-head-cat-mng_typ-priority (in save facts)
+ 8. this1.py:
+	Handled domain type source (to open specifc domain dic)
+	Handled Default_meaning_for_adjective type source 
+	Added try and ValueError to handle errors.
+ 9. multi_word_expression_for_physics.c:
+	Modified fact name from (ids-phy_cmp_mng-head-cat-mng_typ-priority) to (ids-domain_cmp_mng-head-cat-mng_typ-priority)
+ 10. Added new folder Anu_data/domain:
+	'agriculture' related dictionaries
+ 11. Added new files:
+	multi_word_expression_for_agriculture.c  (to get mwe for agriculture domain)
+	list_Anu_data_domain, list_Anu_data_multi_domain (to get canonical form)
+ 12. Modified following shell files:
+	shell_scripts/anu_compile.sh	(to create agriculture gdbm)
+	dic_compile.sh			(	"	"	   )
+	get_txt_files.sh		(to get canonical form for agriculture domain)
+	Anusaaraka_stanford.sh		(code to run agriculture mwe)
+ 13. Modified following files:
+	Makefile, run.sh in multifast (to get mwe for agriculture domain)
+	list-right in canonical form (to get canonical form for agricultural domain)
+ 14. Updated following dictionaries: 
+	changes_in_databases	provisional_multi_word_dictionary.txt
+ 15. Updated Log.
 
  06-11-14
  ========

@@ -7307,7 +7307,7 @@ safety_need	bacAva_AvaSyakawA/surakRA_kamI#bacAva_AvaSyakawA/surakRA_kamI#noun#2
 safety_officer	saMrakRA_aXikArI/surakRA_aXikArI#saMrakRA_aXikArI/surakRA_aXikArI#noun#2#RM
 safety_system	surakRA_sixXAnwa#surakRA_sixXAnwa#noun#2#RM
 sailing_club	(pAla)_nOkAyana_klaba#(pAla)_nOkAyana_klaba#noun#2#RM
-salary_office	vewana_viBAga#vewana_viBAga#noun#2#RM
+salary_office	vewana_viBAga#vewana_viBAga#noun#2#RM
 sale_agreement	bikrI_anubanXa#bikrI_anubanXa#noun#2#RM
 sale_application	bikrI_Avexana(vikraya_hewu_Avexana)#bikrI_Avexana(vikraya_hewu_Avexana)#noun#2#RM
 sale_material	bikrI_sAmagrI#bikrI_sAmagrI#noun#1#RM
@@ -18614,7 +18614,7 @@ grazing_animals	AhAra_vAle_paSu/pawwoM_kA_Bojana_karane_vAle_paSu#AhAra_vAle_paS
 grazing_cattle	carane_vAle_maveSI#carane_vAle_maveSI#noun#2#RM
 # Together they raced on and stopped only when they had reached the peacefully [grazing cattle] on the opposite side of the clearing
 # ve xOdZawI rahIM Ora waBI rukIM jaba vahAM pahuMca gayIM jahAM maveSI SAMwi se cara rahe We Ora koI KawarA na WA
-'ghasnis'grazing_lands	GasanI/carAgAha#GasanI/carAgAha#noun#2#RM
+grazing_lands	carAgAha#carAgAha#noun#2#RM
 # The land belonging to zam-indars (cultivators) are converted into 'ghasnis' ([grazing lands)] and the state derives all the benefits out of it
 # jamIMxAroM (kASwakAroM) kI jamInoM ko 'GasanI' (carAgAha) banA xiyA jAwA hE Ora usake sAre lABa rAjya ko prApwa howe hEM
 greenhouse_gases	grIna_hAUsa_gEsoM#grIna_hAUsa_gEsoM#noun#2#RM
@@ -23884,8 +23884,7 @@ maternity_benefits	prasUwi_lABa#prasUwi_lABa#noun#2#RM
 # Robots offer Reduced Cost of Production The cost of maintaining a robot is less than the average cost of maintaining a human being when the fringe benefits are taken into account EOS Robots do not get any of the fringe benefits as they are not paid any social security, workman's compensation, do not need vacations, holidays, sick leave, medical and dental benefits, [maternity benefits,] or retirement pay
 # agara prApwa lABa ke xqRtigawa xeKeM wo robota para surakRA, kRawipUrwi, GuttI, bImArI BawwA, xaMwa cikiwsA, prasUwi CuttI yA sevAnivqwi anuxAna jEse KarcoM kA boJa vahana nahIM karanA padZawA hEM
 maternity_home	prasUwi_gqha#prasUwi_gqha#noun#2#RM
- Village_maternity_home
-# (Ta.)             gAzva_kA_prasUwi_gqha#gAzva_kA_prasUwi_gqha#noun#2#RM
+Village_maternity_home	gAzva_kA_prasUwi_gqha#gAzva_kA_prasUwi_gqha#noun#2#RM
 maternity_hospital	prasUwi_aspawAla#prasUwi_aspawAla#noun#2#RM
 # One is to go to a [maternity hospital,] see a child being , born and then observe its life in detail EOS This way our visitor will know only about one human being and that too after watching him or her for several decades
 # eka warIkA wo yaha hE ki vaha kisI aspawAla ke prasUwi vArda meM jAkara janma lewe SiSu ko xeKe Ora Pira usake jIvana kA viswAra se aXyayana kare

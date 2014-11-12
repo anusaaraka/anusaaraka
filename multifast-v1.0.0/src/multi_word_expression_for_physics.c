@@ -144,7 +144,7 @@ int match_handler(AC_MATCH_t * m, void * param)
 			strncpy(mng_type, p, length);  mng_type[length]='\0';   //mng type . EX:, WM , RM 
 		   }}
 		   
-		printf("(ids-phy_cmp_mng-head-cat-mng_typ-priority\t");
+		printf("(ids-domain_cmp_mng-head-cat-mng_typ-priority\t");
 
 		//to get word ids
 		for(i=atoi(id_count); i>=1; i--) { 

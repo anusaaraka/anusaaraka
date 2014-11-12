@@ -78,197 +78,183 @@ for o in os.listdir(os.getcwd()):
 			dire.append(o)
 dire.sort()
 for i in range(0,len(dire)):
-	dic1=[]
-	check = []
-	dire[i][0] = str(dire[i][0])
-	dire[i][1] = str(dire[i][1])
-	dire[i] = ".".join(dire[i])
-	os.chdir(dire[i])
-	#print dire[i]
-	maxi = -1
+	try:
+		dic1=[]
+		check = []
+		dire[i][0] = str(dire[i][0])
+		dire[i][1] = str(dire[i][1])
+		dire[i] = ".".join(dire[i])
+		os.chdir(dire[i])
+		#print dire[i]
+		maxi = -1
 
-	"""Accessing hindi_meanings.dat"""
-	fph = open('hindi_meanings.dat', 'r')
-	char = fph.read()
-	char = list(char)
-	k=0
-	while(len(char)-k>1):
-		while(char[k]!=' '):
-			k=k+1
-		while(char[k]==' '):
-			k=k+1
-		x=k
-		while(char[k]!=' '):
-			k=k+1
-		dic2 = []
-#		print '===========', char[-50:] , char[x:k],  ''.join(char),
-		try:
-			int("".join(char[x:k]))
-		except ValueError:
-			print "********* Error in sentence no: " + dire[i] + " Pls check the sentence. *********"
-		no = int("".join(char[x:k]))
-		dic2.append(no)
-		if(no>maxi and no<10000):
-			maxi=no
-		while(char[k]==' '):
-			k=k+1
-		while(char[k]!=' '):
-			k=k+1
-		while(char[k]==' '):
-			k=k+1
-		x=k
-		while(char[k]!='\n'):
-			k=k+1
-		k=k-1
-		source = "".join(char[x:k])
-		if "WSD" not in source:
-			if(source=="Default_meaning"):
-				dic2.append("Anu_data/default-iit-bombay-shabdanjali-dic.txt")
-				if dic2[0] not in check:
-					check.append(dic2[0])
-					dic1.append(dic2)
-			elif(source=="Database_compound_phrase_root_mng" or source=="Database_compound_phrase_word_mng"):
-				dic2.append("Anu_data/compound-matching/multi_word_expressions.txt")
-				if dic2[0] not in check:
-					check.append(dic2[0])
-					dic1.append(dic2)
-			#Added below loop to access provisional multi word by Roja(21-02-14)
-			elif(source=="provisional_Database_compound_phrase_root_mng" or source=="provisional_Database_compound_phrase_word_mng"):
-				dic2.append("Anu_data/compound-matching/provisional_multi_word_dictionary.txt")
-				if dic2[0] not in check:
-					check.append(dic2[0])
-					dic1.append(dic2)
-			elif(source=="Word"):
-				dic2.append("Anu_clp_files/causative_verb_mng.clp")
-				if dic2[0] not in check:
-					check.append(dic2[0])
-					dic1.append(dic2)
-		dic2 = []
-		k=k+2
-	fph.close()
-	#print dic1
-
-	"""Accessing GNP_agmt_info.dat"""
-	fp = open('GNP_agmt_info.dat','r')
-	char = fp.read()
-	char = list(char)
-	k=0
-	while(len(char)-k>1):
-		x=k
-		while(char[k]!=' ' and char[k]!='\t'):
-			k=k+1
-		if("".join(char[x:k])=="(conj_head-left_head-right_head"):
-			while(char[k]!='\n'):
+		"""Accessing hindi_meanings.dat"""
+		fph = open('hindi_meanings.dat', 'r')
+		char = fph.read()
+		char = list(char)
+		k=0
+		while(len(char)-k>1):
+			while(char[k]!=' '):
 				k=k+1
-			k=k+1
-			continue
-		while(char[k]==' ' or char[k]=='\t'):
-			k=k+1
-		for j in range(0,1):
-			while(char[k]!=' ' and char[k]!='\t'):
-				k=k+1
-			while(char[k]==' ' or char[k]=='\t'):
-				k=k+1
-		x=k
-		while(char[k]!=')'):
-			k=k+1
-#		print '===========', char[-50:] , char[x:k],  ''.join(char),
-		try:
-			int("".join(char[x:k]))
-		except ValueError:
-			print "********* Error in sentence no: " + dire[i] + " Pls check the sentence. *********"
-		no = int("".join(char[x:k]))
-		dic2 = []
-		dic2.append(no)
-		k = "".join(char).find("tam_source",k)
-		while(char[k]!=' ' and char[k]!='\t'):
-			k=k+1
-		while(char[k]==' ' or char[k]=='\t'):
-			k=k+1
-		x=k
-		while(char[k]!=')'):
-			k=k+1
-		source = "".join(char[x:k])
-		if(source=="Default"):
-			check.append(no)
-			link = "Anu_data/hindi_default_tam.txt"	
-			dic2.append(link)	
-			dic2.append(source)
-			dic1.append(dic2)
-		while(char[k]!='\n'):
-			k=k+1
-		k=k+1
-	fp.close()
-	#print dic1
-
-	"""Accessing debug_file.dat"""
-	fp = open('debug_file.dat', 'r')
-	char = fp.read()
-	char = list(char)
-	k=0
-	while(len(char)-k>1):
-		x=k
-		while(char[k]!=' ' and char[k]!='\t'):
-			k=k+1
-		sen = "".join(char[x:k])
-		if(sen=="(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng" or sen=="(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_word_mng"):
-			while(char[k]==' ' or char[k]=='\t'):
-				k=k+1
-			while(char[k]!='/'):
-				k=k+1
-			k=k+1
-			x=k
-			while(char[k]!=' ' and char[k]!='\t'):
-				k=k+1
-			link = "".join(char[x:k])
-			while(char[k]==' ' or char[k]=='\t'):
+			while(char[k]==' '):
 				k=k+1
 			x=k
-			while(char[k]!=' ' and char[k]!='\t'):
+			while(char[k]!=' '):
 				k=k+1
-			link += "".join(char[x:k])
-			while(char[k]==' ' or char[k]=='\t'):
-				k=k+1
-			while(char[k]!=' ' and char[k]!='\t'):
-				k=k+1
-			"""getting first number"""
-			while(char[k]==' ' or char[k]=='\t'):
-				k=k+1
-			x=k
-			while(char[k]!=' ' and char[k]!='\t'):
-				k=k+1
-			tmp = []
+			dic2 = []
+	#		print '===========', char[-50:] , char[x:k],  ''.join(char),
 			try:
 				int("".join(char[x:k]))
 			except ValueError:
 				print "********* Error in sentence no: " + dire[i] + " Pls check the sentence. *********"
 			no = int("".join(char[x:k]))
-			tmp.append(no)
-			tmp.append(link)
-			""""""
-			if no not in check:
-				check.append(no)
-				dic1.append(tmp)
-			else:
-				for j in range(0,len(dic1)):
-					if(no==dic1[j][0] and len(dic1[j])>=3):
-						if(dic1[j][2]=="Default"):
-							dic1.append(tmp)
-							break
-			"""getting second number"""
+			dic2.append(no)
+			if(no>maxi and no<10000):
+				maxi=no
+			while(char[k]==' '):
+				k=k+1
+			while(char[k]!=' '):
+				k=k+1
+			while(char[k]==' '):
+				k=k+1
+			x=k
+			while(char[k]!='\n'):
+				k=k+1
+			k=k-1
+			source = "".join(char[x:k])
+			if "WSD" not in source:
+				if(source=="Default_meaning"):
+					dic2.append("Anu_data/default-iit-bombay-shabdanjali-dic.txt")
+					if dic2[0] not in check:
+						check.append(dic2[0])
+						dic1.append(dic2)
+				elif(source=="Database_compound_phrase_root_mng" or source=="Database_compound_phrase_word_mng"):
+					dic2.append("Anu_data/compound-matching/multi_word_expressions.txt")
+					if dic2[0] not in check:
+						check.append(dic2[0])
+						dic1.append(dic2)
+				#Added below loop to access provisional multi word by Roja(21-02-14)
+				elif(source=="provisional_Database_compound_phrase_root_mng" or source=="provisional_Database_compound_phrase_word_mng"):
+					dic2.append("Anu_data/compound-matching/provisional_multi_word_dictionary.txt")
+					if dic2[0] not in check:
+						check.append(dic2[0])
+						dic1.append(dic2)
+				#Added below loop to access physics multi word by Roja(12-11-14)
+				elif(source=="phy_compound_phrase_root_mng" or source=="phy_compound_phrase_word_mng"):
+					dic2.append("miscellaneous/SMT/MINION/dictionaries/phy_eng_multi_word_dic.txt")
+					if dic2[0] not in check:
+						check.append(dic2[0])
+						dic1.append(dic2)
+				#Added below loop to access agriculture multi word by Roja(12-11-14)
+				elif(source=="agr_compound_phrase_root_mng" or source=="agr_compound_phrase_word_mng"):
+					dic2.append("Anu_data/domain/multi_word_dic/agriculture_multi_dic.txt")
+					if dic2[0] not in check:
+						check.append(dic2[0])
+						dic1.append(dic2)
+				elif(source=="Default_meaning_for_adjective"):
+					dic2.append("Anu_data/default-iit-bombay-shabdanjali-dic.txt")
+					if dic2[0] not in check:
+						check.append(dic2[0])
+						dic1.append(dic2)	
+				elif(source=="Word"):
+					dic2.append("Anu_clp_files/causative_verb_mng.clp")
+					if dic2[0] not in check:
+						check.append(dic2[0])
+						dic1.append(dic2)
+			dic2 = []
+			k=k+2
+		fph.close()
+		#print dic1
+
+		"""Accessing GNP_agmt_info.dat"""
+		fp = open('GNP_agmt_info.dat','r')
+		char = fp.read()
+		char = list(char)
+		k=0
+		while(len(char)-k>1):
+			x=k
+			while(char[k]!=' ' and char[k]!='\t'):
+				k=k+1
+			if("".join(char[x:k])=="(conj_head-left_head-right_head"):
+				while(char[k]!='\n'):
+					k=k+1
+				k=k+1
+				continue
+			while(char[k]==' ' or char[k]=='\t'):
+				k=k+1
+			for j in range(0,1):
+				while(char[k]!=' ' and char[k]!='\t'):
+					k=k+1
+				while(char[k]==' ' or char[k]=='\t'):
+					k=k+1
+			x=k
+			while(char[k]!=')'):
+				k=k+1
+	#		print '===========', char[-50:] , char[x:k],  ''.join(char),
+			try:
+				int("".join(char[x:k]))
+			except ValueError:
+				print "********* Error in sentence no: " + dire[i] + " Pls check the sentence. *********"
+			no = int("".join(char[x:k]))
+			dic2 = []
+			dic2.append(no)
+			k = "".join(char).find("tam_source",k)
+			while(char[k]!=' ' and char[k]!='\t'):
+				k=k+1
 			while(char[k]==' ' or char[k]=='\t'):
 				k=k+1
 			x=k
-			digit=1
+			while(char[k]!=')'):
+				k=k+1
+			source = "".join(char[x:k])
+			if(source=="Default"):
+				check.append(no)
+				link = "Anu_data/hindi_default_tam.txt"	
+				dic2.append(link)	
+				dic2.append(source)
+				dic1.append(dic2)
+			while(char[k]!='\n'):
+				k=k+1
+			k=k+1
+		fp.close()
+		#print dic1
+
+		"""Accessing debug_file.dat"""
+		fp = open('debug_file.dat', 'r')
+		char = fp.read()
+		char = list(char)
+		k=0
+		while(len(char)-k>1):
+			x=k
 			while(char[k]!=' ' and char[k]!='\t'):
-				if(char[k]=='=' or char[k]==':'):
-					char.pop(k)
-				elif(char[k]!='0' and char[k]!='1' and char[k]!='2' and char[k]!='3' and char[k]!='4' and char[k]!='5' and char[k]!='6' and char[k]!='7' and char[k]!='8' and char[k]!='9'):
-					digit=0
-					break;
-				else:
+				k=k+1
+			sen = "".join(char[x:k])
+			if(sen=="(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng" or sen=="(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_word_mng"):
+				while(char[k]==' ' or char[k]=='\t'):
 					k=k+1
-			if(digit==1):
+				while(char[k]!='/'):
+					k=k+1
+				k=k+1
+				x=k
+				while(char[k]!=' ' and char[k]!='\t'):
+					k=k+1
+				link = "".join(char[x:k])
+				while(char[k]==' ' or char[k]=='\t'):
+					k=k+1
+				x=k
+				while(char[k]!=' ' and char[k]!='\t'):
+					k=k+1
+				link += "".join(char[x:k])
+				while(char[k]==' ' or char[k]=='\t'):
+					k=k+1
+				while(char[k]!=' ' and char[k]!='\t'):
+					k=k+1
+				"""getting first number"""
+				while(char[k]==' ' or char[k]=='\t'):
+					k=k+1
+				x=k
+				while(char[k]!=' ' and char[k]!='\t'):
+					k=k+1
 				tmp = []
 				try:
 					int("".join(char[x:k]))
@@ -287,152 +273,187 @@ for i in range(0,len(dire)):
 							if(dic1[j][2]=="Default"):
 								dic1.append(tmp)
 								break
-		elif(sen=="(dir_name-file_name-rule_name-id-wsd_root_mng" or sen=="(dir_name-file_name-rule_name-id-wsd_word_mng"):
-			while(char[k]==' ' or char[k]=='\t'):
+				"""getting second number"""
+				while(char[k]==' ' or char[k]=='\t'):
+					k=k+1
+				x=k
+				digit=1
+				while(char[k]!=' ' and char[k]!='\t'):
+					if(char[k]=='=' or char[k]==':'):
+						char.pop(k)
+					elif(char[k]!='0' and char[k]!='1' and char[k]!='2' and char[k]!='3' and char[k]!='4' and char[k]!='5' and char[k]!='6' and char[k]!='7' and char[k]!='8' and char[k]!='9'):
+						digit=0
+						break;
+					else:
+						k=k+1
+				if(digit==1):
+					tmp = []
+					try:
+						int("".join(char[x:k]))
+					except ValueError:
+						print "********* Error in sentence no: " + dire[i] + " Pls check the sentence. *********"
+					no = int("".join(char[x:k]))
+					tmp.append(no)
+					tmp.append(link)
+					""""""
+					if no not in check:
+						check.append(no)
+						dic1.append(tmp)
+					else:
+						for j in range(0,len(dic1)):
+							if(no==dic1[j][0] and len(dic1[j])>=3):
+								if(dic1[j][2]=="Default"):
+									dic1.append(tmp)
+									break
+			elif(sen=="(dir_name-file_name-rule_name-id-wsd_root_mng" or sen=="(dir_name-file_name-rule_name-id-wsd_word_mng"):
+				while(char[k]==' ' or char[k]=='\t'):
+					k=k+1
+				while(char[k]!='/'):
+					k=k+1
 				k=k+1
-			while(char[k]!='/'):
+				x=k
+				while(char[k]!=' ' and char[k]!='\t'):
+					k=k+1
+				link = "".join(char[x:k])
+				while(char[k]==' ' or char[k]=='\t'):
+					k=k+1
+				x=k
+				while(char[k]!=' ' and char[k]!='\t'):
+					k=k+1
+				link += "".join(char[x:k])
+				while(char[k]==' ' or char[k]=='\t'):
+					k=k+1
+				while(char[k]!=' ' and char[k]!='\t'):
+					k=k+1
+				"""getting first number"""
+				while(char[k]==' ' or char[k]=='\t'):
+					k=k+1
+				x=k
+				while(char[k]!=' ' and char[k]!='\t'):
+					if(char[k]!='0' and char[k]!='1' and char[k]!='2' and char[k]!='3' and char[k]!='4' and char[k]!='5' and char[k]!='6' and char[k]!='7' and char[k]!='8' and char[k]!='9'):
+						break
+					k=k+1
+				tmp = []
+				try:
+					int("".join(char[x:k]))
+				except ValueError:
+					print "********* Error in sentence no: " + dire[i] + " Pls check the sentence. *********"
+				no = int("".join(char[x:k]))
+				tmp.append(no)
+				tmp.append(link)
+				""""""	
+				if no not in check:
+					check.append(no)
+					dic1.append(tmp)
+				else:
+					for j in range(0,len(dic1)):
+						if(no==dic1[j][0] and len(dic1[j])>=3):
+							if(dic1[j][2]=="Default"):
+								dic1.append(tmp)
+								break
+			elif(sen=="(default-iit-bombay-shabdanjali-dic.gdbm"):
+				while(char[k]==' ' or char[k]=='\t'):
+					k=k+1
+				x=k
+				while(char[k]!=' ' and char[k]!='\t'):
+					k=k+1
+				try:
+					int("".join(char[x:k]))
+				except ValueError:
+					print "********* Error in sentence no: " + dire[i] + " Pls check the sentence. *********"
+				no = int("".join(char[x:k]))
+				tmp=[]
+				tmp.append(no)
+				link = "Anu_data/default-iit-bombay-shabdanjali-dic.txt"
+				tmp.append(link)
+				if no not in check:
+					check.append(no)
+					dic1.append(tmp)
+				else:
+					for j in range(0,len(dic1)):
+						if(no==dic1[j][0] and len(dic1[j])>=3):
+							if(dic1[j][2]=="Default"):
+								dic1.append(tmp)
+								break
+			elif(sen=="(dir_name-file_name-rule_name-id-H_tam_mng"):
+				while(char[k]==' ' or char[k]=='\t'):
+					k=k+1
+				while(char[k]!='/'):
+					k=k+1
 				k=k+1
-			k=k+1
-			x=k
-			while(char[k]!=' ' and char[k]!='\t'):
-				k=k+1
-			link = "".join(char[x:k])
-			while(char[k]==' ' or char[k]=='\t'):
-				k=k+1
-			x=k
-			while(char[k]!=' ' and char[k]!='\t'):
-				k=k+1
-			link += "".join(char[x:k])
-			while(char[k]==' ' or char[k]=='\t'):
-				k=k+1
-			while(char[k]!=' ' and char[k]!='\t'):
-				k=k+1
-			"""getting first number"""
-			while(char[k]==' ' or char[k]=='\t'):
-				k=k+1
-			x=k
-			while(char[k]!=' ' and char[k]!='\t'):
-				if(char[k]!='0' and char[k]!='1' and char[k]!='2' and char[k]!='3' and char[k]!='4' and char[k]!='5' and char[k]!='6' and char[k]!='7' and char[k]!='8' and char[k]!='9'):
-					break
-				k=k+1
-			tmp = []
-			try:
-				int("".join(char[x:k]))
-			except ValueError:
-				print "********* Error in sentence no: " + dire[i] + " Pls check the sentence. *********"
-			no = int("".join(char[x:k]))
-			tmp.append(no)
-			tmp.append(link)
-			""""""	
-			if no not in check:
-				check.append(no)
+				x=k
+				while(char[k]!=' ' and char[k]!='\t'):
+					k=k+1
+				link = "".join(char[x:k])
+				while(char[k]==' ' or char[k]=='\t'):
+					k=k+1
+				x=k
+				while(char[k]!=' ' and char[k]!='\t'):
+					k=k+1
+				link += "".join(char[x:k])
+				while(char[k]==' ' or char[k]=='\t'):
+					k=k+1
+				while(char[k]!=' ' and char[k]!='\t'):
+					k=k+1
+				"""getting first number"""
+				while(char[k]==' ' or char[k]=='\t'):
+					k=k+1
+				x=k
+				while(char[k]!=' ' and char[k]!='\t'):
+					k=k+1
+				tmp = []
+				try:
+					int("".join(char[x:k]))
+				except ValueError:
+					print "********* Error in sentence no: " + dire[i] + " Pls check the sentence. *********"
+				no = int("".join(char[x:k]))
+				tmp.append(no)
+				tmp.append(link)
+				tmp.append("WSD")
+				""""""
 				dic1.append(tmp)
-			else:
-				for j in range(0,len(dic1)):
-					if(no==dic1[j][0] and len(dic1[j])>=3):
-						if(dic1[j][2]=="Default"):
-							dic1.append(tmp)
-							break
-		elif(sen=="(default-iit-bombay-shabdanjali-dic.gdbm"):
-			while(char[k]==' ' or char[k]=='\t'):
+			while(char[k]!='\n'):
 				k=k+1
-			x=k
-			while(char[k]!=' ' and char[k]!='\t'):
-				k=k+1
-			try:
-				int("".join(char[x:k]))
-			except ValueError:
-				print "********* Error in sentence no: " + dire[i] + " Pls check the sentence. *********"
-			no = int("".join(char[x:k]))
-			tmp=[]
-			tmp.append(no)
-			link = "Anu_data/default-iit-bombay-shabdanjali-dic.txt"
-			tmp.append(link)
-			if no not in check:
-				check.append(no)
+			k=k+1
+		fp.close()
+		#print dic1
+		for j in range(1,maxi+1):
+			if j not in check:
+				tmp = []
+				tmp.append(j)
+				tmp.append("#")
 				dic1.append(tmp)
+		#print dic1
+		#print check
+		#print maxi
+		dic1.sort()
+		flag=0
+		for j in range(0,len(dic1)):
+			if(flag==1):
+				flag=0
+				continue
+			if(j!=len(dic1)-1 and dic1[j][0]==dic1[j+1][0]):
+				tmp = []
+				val = dic1[j+1][1].find("tam")
+				if(val!=-1):
+					tmp.append(dic1[j][1])
+					tmp.append(dic1[j+1][1])
+					tmp.append(dic1[j+1][2])
+				else:
+					tmp.append(dic1[j+1][1])
+					tmp.append(dic1[j][1])
+	#				print '==========', dic1[j], '******', j, dic1, '______', tmp, ''.join(char),
+					tmp.append(dic1[j][2])
+				flag=1
+				dic.append(tmp)
 			else:
-				for j in range(0,len(dic1)):
-					if(no==dic1[j][0] and len(dic1[j])>=3):
-						if(dic1[j][2]=="Default"):
-							dic1.append(tmp)
-							break
-		elif(sen=="(dir_name-file_name-rule_name-id-H_tam_mng"):
-			while(char[k]==' ' or char[k]=='\t'):
-				k=k+1
-			while(char[k]!='/'):
-				k=k+1
-			k=k+1
-			x=k
-			while(char[k]!=' ' and char[k]!='\t'):
-				k=k+1
-			link = "".join(char[x:k])
-			while(char[k]==' ' or char[k]=='\t'):
-				k=k+1
-			x=k
-			while(char[k]!=' ' and char[k]!='\t'):
-				k=k+1
-			link += "".join(char[x:k])
-			while(char[k]==' ' or char[k]=='\t'):
-				k=k+1
-			while(char[k]!=' ' and char[k]!='\t'):
-				k=k+1
-			"""getting first number"""
-			while(char[k]==' ' or char[k]=='\t'):
-				k=k+1
-			x=k
-			while(char[k]!=' ' and char[k]!='\t'):
-				k=k+1
-			tmp = []
-			try:
-				int("".join(char[x:k]))
-			except ValueError:
-				print "********* Error in sentence no: " + dire[i] + " Pls check the sentence. *********"
-			no = int("".join(char[x:k]))
-			tmp.append(no)
-			tmp.append(link)
-			tmp.append("WSD")
-			""""""
-			dic1.append(tmp)
-		while(char[k]!='\n'):
-			k=k+1
-		k=k+1
-	fp.close()
-	#print dic1
-	for j in range(1,maxi+1):
-		if j not in check:
-			tmp = []
-			tmp.append(j)
-			tmp.append("#")
-			dic1.append(tmp)
-	#print dic1
-	#print check
-	#print maxi
-	dic1.sort()
-	flag=0
-	for j in range(0,len(dic1)):
-		if(flag==1):
-			flag=0
-			continue
-		if(j!=len(dic1)-1 and dic1[j][0]==dic1[j+1][0]):
-			tmp = []
-			val = dic1[j+1][1].find("tam")
-			if(val!=-1):
+				tmp = []
 				tmp.append(dic1[j][1])
-				tmp.append(dic1[j+1][1])
-				tmp.append(dic1[j+1][2])
-			else:
-				tmp.append(dic1[j+1][1])
-				tmp.append(dic1[j][1])
-#				print '==========', dic1[j], '******', j, dic1, '______', tmp, ''.join(char),
-				tmp.append(dic1[j][2])
-			flag=1
-			dic.append(tmp)
-		else:
-			tmp = []
-			tmp.append(dic1[j][1])
-			dic.append(tmp)
-	os.chdir("..")
+				dic.append(tmp)
+		os.chdir("..")
+	except ValueError:
+				print "Failed to create debugging files from this sentence onwards.\nPls check the sentence." + dire[i]
+				os.chdir("..")
 f1.close()
 
 

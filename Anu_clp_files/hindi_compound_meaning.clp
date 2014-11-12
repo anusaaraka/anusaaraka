@@ -17,6 +17,7 @@
  (assert (id-wsd_root_mng))
  (assert (id-wsd_word_mng))
  (assert (ids-cmp_mng-head-cat-mng_typ-priority))
+ (assert (ids-domain_cmp_mng-head-cat-mng_typ-priority))
  (assert (verb_type-verb-kriyA_mUla-tam))
  (assert (id-sen_mng))
  (assert (id-tam_type))
@@ -167,52 +168,40 @@
  )
  ;--------------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju (19-11-12)
- ; get default physics compound word meaning 
- (defrule get_default_phy_compound_word_mng
+ ; get default Domain compound word meaning 
+ (defrule get_default_domain_compound_word_mng
  (declare (salience 9600))
- (Domain physics)
- (ids-phy_cmp_mng-head-cat-mng_typ-priority $?grp_ids ?mng ?grp_head ?grp_cat WM ?)
+ (Domain ?domain)
+ (ids-domain_cmp_mng-head-cat-mng_typ-priority $?grp_ids ?mng ?grp_head ?grp_cat WM ?)
  ?f<-(meaning_to_be_decided ?id)
  (test (eq (nth$ ?grp_head $?grp_ids) ?id))
  =>
-       (retract ?f)
-       (print_hindi_mng ?id -  Phy_compound_phrase_word_mng $?grp_ids)
-       (printout ?*h_mng_file* "(id-HM-source  " ?id "  "?mng"    Phy_compound_phrase_word_mng)" crlf)
-       (printout ?*h_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?mng"    Phy_compound_phrase_word_mng  "(implode$ $?grp_ids)")" crlf)
+	(retract ?f)
+	(bind ?dom (sub-string 1 3 ?domain))
+	(bind ?src (string-to-field (str-cat ?dom"_compound_phrase_word_mng")))
+	(print_hindi_mng ?id -  ?src  $?grp_ids)
+	(printout ?*h_mng_file* "(id-HM-source  " ?id "  "?mng"  " ?src ")" crlf)
+	(printout ?*h_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?mng"  "?src " " (implode$ $?grp_ids)")" crlf)
 	(printout ?*w_fact_file* "(compound_meaning_decided  " ?id ")" crlf)
  )
  ;--------------------------------------------------------------------------------------------------------------
  ; Added by Shirisha Manju (22-09-14)
- ; get default physics compound root meaning 
- (defrule get_default_phy_compound_root_mng
+ ; get default Domain compound root meaning 
+ (defrule get_default_domain_compound_root_mng
  (declare (salience 9600))
- (Domain physics)
- (ids-phy_cmp_mng-head-cat-mng_typ-priority $?grp_ids ?mng ?grp_head ?grp_cat RM ?)
+ (Domain ?domain)
+ (ids-domain_cmp_mng-head-cat-mng_typ-priority $?grp_ids ?mng ?grp_head ?grp_cat RM ?)
  ?f<-(meaning_to_be_decided ?id)
  (test (eq (nth$ ?grp_head $?grp_ids) ?id))
  =>
-       (retract ?f)
-       (print_hindi_mng ?id -  Phy_compound_phrase_root_mng $?grp_ids)
-       (printout ?*h_mng_file* "(id-HM-source  " ?id "  "?mng"    Phy_compound_phrase_root_mng)" crlf)
-       (printout ?*h_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?mng"    Phy_compound_phrase_root_mng  "(implode$ $?grp_ids)")" crlf)
+	(retract ?f)
+	(bind ?dom (sub-string 1 3 ?domain))
+	(bind ?src (string-to-field (str-cat ?dom"_compound_phrase_root_mng")))	
+	(print_hindi_mng ?id -  ?src $?grp_ids)
+	(printout ?*h_mng_file* "(id-HM-source  " ?id "  "?mng"   " ?src ")" crlf)
+	(printout ?*h_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?mng"    "?src " " (implode$ $?grp_ids)")" crlf)
 	(printout ?*w_fact_file* "(compound_meaning_decided  " ?id ")" crlf)
  )
- ;--------------------------------------------------------------------------------------------------------------
- ;Added for agriculture domain
- (defrule get_default_agr_compound_root_mng
- (declare (salience 9600))
- (Domain agriculture)
- (ids-agr_cmp_mng-head-cat-mng_typ-priority $?grp_ids ?mng ?grp_head ?grp_cat RM ?)
- ?f<-(meaning_to_be_decided ?id)
- (test (eq (nth$ ?grp_head $?grp_ids) ?id))
- =>
-       (retract ?f)
-       (print_hindi_mng ?id -  Agr_compound_phrase_root_mng $?grp_ids)
-       (printout ?*h_mng_file* "(id-HM-source  " ?id "  "?mng"    Agr_compound_phrase_root_mng)" crlf)
-       (printout ?*h_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?mng"    Agr_compound_phrase_root_mng  "(implode$ $?grp_ids)")" crlf)
-        (printout ?*w_fact_file* "(compound_meaning_decided  " ?id ")" crlf)
- )
-
  ;==========================================  multi-word meaning rules ===========================================
  ; WSD compound phrase word mng.
  (defrule wsd_cmp_phrase_word_mng
@@ -349,4 +338,4 @@
                 (printout t "Warning: Meaning for verb phrase "?vrb_phrase "  is required" crlf)
         )
  )
-
+ ;--------------------------------------------------------------------------------------------------------------

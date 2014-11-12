@@ -39,7 +39,7 @@
  (assert (id-word))
  (assert (root-verbchunk-tam-chunkids))
  (assert (conj_head-left_head-right_head))
- (assert (ids-phy_cmp_mng-head-cat-mng_typ-priority)) 
+ (assert (ids-domain_cmp_mng-head-cat-mng_typ-priority)) 
  (assert (id-eng-src))
  (assert (id-attach_eng_mng))
  (assert (id-wsd_viBakwi))
