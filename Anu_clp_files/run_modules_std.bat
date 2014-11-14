@@ -225,6 +225,7 @@
  (assert (index 1))
  (assert (English-list))
  (run)
+ (save-facts "tam_id.dat" local id-tam_type)
  (close agmt_cntrl_fp)
  (close pada_cntrl_fp)
  (close pada_fp)
@@ -331,7 +332,7 @@
  (load-facts "original_word.dat")
  (load-facts "E_constituents_info.dat")
  (load-facts "Node_category.dat")
- (open "tam_id.dat" tam_id_fp "w")
+ (open "tam_id.dat" tam_id_fp "a")
  (run)
  (clear)
  ;----------------------------------------------------------------------

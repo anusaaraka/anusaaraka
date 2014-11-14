@@ -1120,3 +1120,6 @@ zonal_climatogenic_soil	kRewrIya_jalavAyu_praBAviwa_mqxA#kRewrIya_jalavAyu_praBA
 zonal_coordinator	kRewrIya_samanvayaka#kRewrIya_samanvayaka#noun#2#RM
 zonal_coordinator_unit	kRewrIya_samanvayaka_ikAI/yUnita#kRewrIya_samanvayaka_ikAI/yUnita#noun#2#RM
 zonal_soil	kRewrIya/jonala_mqxA#kRewrIya/jonala_mqxA#noun#2#RM
+peanut_soup	mUzgaPalI_se_banA_SorabA#mUzgaPalI_se_banA_SorabA#noun#2#RM
+peanut_milk	mUzgaPalI_kA_xUXa#mUzgaPalI_kA_xUXa#noun#2#RM
+oilcake_meal	KalI_kA_motA_AtA#KalI_kA_motA_AtA#noun#2#RM

@@ -1342,3 +1342,4 @@ yeast_noun	KZamIra/yIsta
 yield_noun	upaja/pExAvAra
 zeolite_noun	jiyolAita
 zone_noun	KaMda/praxeSa/kRewra/maMdala
+polysaccharides_noun	bahuSarkarAeda

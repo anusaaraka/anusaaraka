@@ -49,6 +49,7 @@
 	27. sanXyA  			"		"		
 	28. sigareta	Suggested by sukhada (08-05-14) 	Ex: He sat back and lit up a cigarette.
 	29. saMsaxa 			"    (07-07-14)		Ex: The Speaker dissolved the parliament.
+	30. vAina   	Suggested by Chaitanya Sir (13-11-14)	Ex: Can I offer you some wine?
 	
 
   3. Removed :
@@ -1261,8 +1262,18 @@ Removed:
 					    with acceleration g due to gravity.
 	140. derive_noun     		vyuwpanna			(Suggested by   14anu-ban-04   05-11-14)
 					Ex:A complete set of these units,both the base units and derived units,is known as the system of units.
-	
-
+	141. inhibitor_noun  		niroXI				(Suggested by   14anu-ban-06   13-11-14)
+					Ex: According to a 2003 study, roasting peanuts, as more commonly done in North America, causes the 
+					    major peanut allergen Ara h2 to become a stronger inhibitor of the digestive enzyme trypsin, making
+					    it more resistant to digestion.
+	142. trypsin_noun    		kloma-rasa/tripsina		(Suggested by   14anu-ban-07   13-11-14)
+					Ex: According to a 2003 study, roasting peanuts, as more commonly done in North America, causes the 
+                                            major peanut allergen Ara h2 to become a stronger inhibitor of the digestive enzyme trypsin, making
+                                            it more resistant to digestion.
+	143. anaphylactic_adjective  	wIvragAhiwA_saMbaMXI		(Suggested by   14anu-ban-02   14-11-14)
+					Ex: Some people (0.6%[26] of the United States population) report that they experience mild to severe
+					    allergic reactions to peanut exposure; symptoms can range from watery eyes to anaphylactic shock,
+					    which can be fatal if untreated.
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1497,7 +1508,21 @@ Removed:
 	122. mercury_noun    		buXa			(Suggested by 14anu-ban-08   05-11-14)
 					Ex: We note that the orbits of all planets except Mercury, Mars and Pluto are very close to being
 					    circular.
-
+	123. metal_adjective 		XAwu			(Suggested by 14anu-ban-08   13-11-14)
+					Ex: Metals, human and animal bodies and earth are conductors.
+	124. negatively_adverb       	qNAwmaka_rUpa_meM	(Suggested by 14anu-ban-08   13-11-14)
+					Ex: The middle portion becomes negatively charged.
+	125. conjunction_noun        	saMyojana		(Suggested by 14anu-ban-03   14-11-14)
+					Ex: Soybeans were first introduced to North America in 1765, by Samuel Bowen, a former East India 
+					    Company sailor who had visited China in conjunction with James Flint.
+	126. sailor_noun     		jahAjZI			(Suggested by 14anu-ban-01   14-11-14)
+					Ex: Soybeans were first introduced to North America in 1765, by Samuel Bowen, a former East India 
+					    Company sailor who had visited China in conjunction with James Flint.
+	127. continuum_noun  		sAMwawya		(Suggested by 14anu-ban-03   14-11-14)
+					Ex:If we intend to show streamline of every flowing particle,we would end up with a continuum of lines.
+	128. graduation_noun 		afkana			(Suggested by 14anu-ban-05   14-11-14)
+					Ex: If we use a metre scale for measurement of length, it may have graduations at 1 mm division scale
+				            spacing or interval.
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -1858,6 +1883,17 @@ Removed:
 				Ex: Electric force manifests itself in atmosphere where the atoms are ionised and that leads to lightning.
 	163. head-on_adjective  Amane_sAmane		as	sIXA		(Suggested by   14anu-ban-06    05-11-14)
 				Ex: In practice, however, this number is smaller since head-on collisions are rare.
+	164. versus_preposition viparIwa		as	ke_mukAbale	(Suggested by   14anu-ban-07    13-11-14)
+				Ex: A hypothesis of the development of peanut allergy has to do with the way peanuts are processed in North 
+				    America versus other countries, such as Pakistan and China, where peanuts are widely eaten.
+	165. infectious_adjective  CUwa_se_laganevAlA	as 	safkrAmaka	(Suggested by   14anu-ban-06    13-11-14)
+				Ex: Another hypothesis, called the hygiene hypothesis, states that a lack of early childhood exposure to 
+			            infectious agents like germs and parasites could be causing the increase of food allergies.
+	166. kernel_noun     	sAra			as	xAnA		(Suggested by   14anu-ban-07    13-11-14)
+				Ex:The average amount of resveratrol in one ounce of commonly eaten peanuts (15 whole peanut kernels) is 73 μg.
+	167. null_adjective  	akRama			as	SUnya		(Suggested by Chaitanya Sir     13-11-14)
+				Ex: Since the magnitude of a null vector is zero, its direction can not be specified. 
+	
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1900,6 +1936,7 @@ Removed:
 	35. mark_noun		cinha						(	"	"		25-08-14)
 	36. mark_verb		cinha_lag					(	"	"		"	)
 	37. them_pronoun	unak/unheM_unako				(	"	"		17-10-14)
+	38. conjunction_UNDEFINED	saMyojana				(Suggested by 14anu-ban-03	14-11-14)
 
 	
 
@@ -2585,6 +2622,22 @@ Removed:
 	value_verb		mAna_ho			(Suggested by 14anu-ban-07      05-11-14)
 				Ex: The ice and steam point have values 32 Â°F and 212 Â°F respectively, on the Fahrenheit scale and 0 Â°C and 
 				    100 Â°C on the Celsius scale.
+	term_verb       	kahalA			(Suggested by 14anu-ban-07      13-11-14)
+				Ex: The line along which the body is fixed is termed as its axis of rotation.
+	together_adverb 	Apasa_meM		(Suggested by 14anu-ban-07      13-11-14)
+				Ex:These are bonded together by interatomic or intermolecular forces and stay in a stable equilibrium position.
+	traverse_verb		waya_kara		(Suggested by 14anu-ban-07      13-11-14)
+				Ex: Where u and v are the initial and final speeds and s the distance traversed.
+	term_noun       	Sabxa			(Suggested by 14anu-ban-07      13-11-14)
+				Ex: The terms 'work', 'energy' and 'power' are frequently used in everyday language.
+	vital_adjective 	mahawvapUrNa		(Suggested by 14anu-ban-07      13-11-14)
+				Ex:The early civilisations of Egypt, India, China, Greece, Mesopotamia and many others made vital contributions
+				   to its progress.
+	hotness_noun    	wapwawA			(Suggested by 14anu-ban-06      13-11-14)
+				Ex: Temperature is a relative measure, or indication of hotness or coldness.
+	usage_noun      	prayoga			(Suggested by 14anu-ban-07      13-11-14)
+				Ex: Thus, the meaning of work in physics is different from its usage in everyday language.
+
 
     Modifying first meaning:
     -----------------------
@@ -2872,4 +2925,30 @@ Removed:
  ===================================
  Added:
 	be	ho/raha		(Suggested by Chaitanya Sir 11-08-14)
+
+ changes in agriculture_multi_dic.txt:
+ =====================================
+  Added:
+  ------
+	1. peanut_soup	mUzgaPalI_se_banA_SorabA#mUzgaPalI_se_banA_SorabA#noun#2#RM 	(Suggested by 14anu-ban-09 12-11-14)
+			Ex: Peanut butter is one of the most popular peanut-based foods in the US, and for four hundred years, recipes for
+			    peanut soup have been present in the South, Virginia in particular.
+	2. peanut_milk	mUzgaPalI_kA_xUXa#mUzgaPalI_kA_xUXa#noun#2#RM			(Suggested by 14anu-ban-09 12-11-14)
+			Ex: Peanuts can be used like other legumes and grains to make a lactose-free milk-like beverage, peanut milk.	
+ 	3. oilcake_meal	KalI_kA_motA_AtA#KalI_kA_motA_AtA#noun#2#RM			(Suggested by 14anu-ban-09 12-11-14)
+			Ex: The protein cake (oilcake meal) residue from oil processing is used as an animal feed and as a soil fertilizer.
+
+ changes in agriculture_dic.txt:
+ ==============================
+    Added:
+    ------ 
+	1. polysaccharides_noun		bahuSarkarAeda					(Suggested by 14anu-ban-09 14-11-14)
+					Ex: The insoluble carbohydrates in soybeans consist of the complex polysaccharides cellulose,
+				            hemicellulose, and pectin.
+
+ changes in transliterate_meaning.txt :
+ ==================================== 
+  Removed :
+
+	tube	tUba			(suggested by Chaitanya Sir     13-11-14 )
 
