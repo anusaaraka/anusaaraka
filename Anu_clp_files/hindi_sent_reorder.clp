@@ -393,7 +393,6 @@
         (printout  ?*DBUG* "(Rule_Name-ids   rule_for_yaha   (hindi_id_order  "(implode$ (create$ $?pre ?kri  yaha $?post)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
- ;-----------------------------------------------------------------------------------------------------------------
  ;When you stand on this rock and face the east, the waves of the bay of bengal lap your feet. 
  ;jaba Apa isa cattAna para Kade howe hEM Ora pUrva kI ora muzha karawe hEM, wo bengal kI KAdI kI lahareM Apake pAzvoM se XIre_se takarAwI hEM.
  ;In questiory type sentences 'wo' is not inserted. So added '(not (prep_id-relation-anu_ids  -    praSnAwmaka_vAkya))' by Roja (24-05-14)
@@ -443,17 +442,34 @@
         (printout ?*DBUG* "(Rule_Name-ids   insert_wo_for_when2  (hindi_id_order  "(implode$ (create$ $?pre ?k1 wo $?post))")"crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
- ;------------------------------------------------------------------------------------------------------------------
  (defrule since_rule
  ?f1<-(id-word 1 since)  ;Modified by Meena (28-10-10) 
  (prep_id-relation-anu_ids ?  kriyA-vAkya_viBakwi  ?k 1)
  (prep_id-relation-anu_ids ?  kriyA-subject  ?kri1 ?id)
- ?f0 <-(hindi_id_order $?pre ?id $?post)
+ (pada_info (group_head_id ?id)(group_ids $?grp_ids))
+ ?f0 <-(hindi_id_order $?pre $?grp_ids $?post)
  (test (and (> ?kri1 ?k) (neq ?id ?k)))
  =>
         (retract ?f0 ?f1)
-	(assert (hindi_id_order  $?pre isaliye ?id $?post))
-        (printout ?*DBUG* "(Rule_Name-ids   since_rule  (hindi_id_order  "(implode$ (create$ $?pre isaliye ?id $?post))")" crlf)
+	(assert (hindi_id_order  $?pre isaliye $?grp_ids $?post))
+	(printout ?*DBUG* "(Rule_Name-ids   since_rule  (hindi_id_order  "(implode$ (create$ $?pre isaliye $?grp_ids $?post))")" crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------
+ ; Added by Shirisha Manju (14-11-14) 
+ ;[Since] the magnitude of a null vector is zero, [its] [direction] can not be specified. 
+ (defrule since_rule1
+ (declare (salience 10))
+ ?f1<-(id-word 1 since)   
+ (prep_id-relation-anu_ids ?  kriyA-vAkya_viBakwi  ?k 1)
+ (prep_id-relation-anu_ids ?  kriyA-subject  ?kri1 ?id)
+ (prep_id-relation-anu_ids ? viSeRya-RaRTI_viSeRaNa  ?id ?id1)
+ (pada_info (group_head_id ?id1)(group_ids $?grp_ids))
+ ?f0 <-(hindi_id_order $?pre $?grp_ids $?post)
+ (test (and (> ?kri1 ?k) (neq ?id ?k)))
+ =>
+        (retract ?f0 ?f1)
+	(assert (hindi_id_order  $?pre isaliye $?grp_ids $?post))
+        (printout ?*DBUG* "(Rule_Name-ids   since_rule1  (hindi_id_order  "(implode$ (create$ $?pre isaliye $?grp_ids $?post))")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
   ;I can not go out until my hair is dry.

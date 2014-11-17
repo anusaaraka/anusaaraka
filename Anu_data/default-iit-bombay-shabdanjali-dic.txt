@@ -16770,8 +16770,7 @@ conjugatest_UNDEFINED	saMyukwa
 conjugating_UNDEFINED	saMyukwa
 conjugation_noun	kriyArUpa_saMyojana
 conjugational_adjective	saMyugmana_sambanXI/kriyApaxa_ke_rUpa_se_sambanXiwa
-conjunction_UNDEFINED	saMyojana
-conjunction_noun	saMyoga/samuccayaboXaka/mela/samuccaya_boXaka_avyaya
+conjunction_noun	saMyojana/saMyoga/samuccayaboXaka/mela/samuccaya_boXaka_avyaya
 conjunctions_UNDEFINED	samuccaya_boXaka_avyaya
 conjunctivitis_noun	newraSoWa
 conjure_verb	jAxU_kara
@@ -17248,7 +17247,7 @@ continuous_adjective	lagAwAra/sawawa/lAgAwAra
 continuouser_UNDEFINED	lAgAwAra
 continuousest_UNDEFINED	lAgAwAra
 continuously_adverb	lagAwAra
-continuum_noun	pravAha/sAwawya
+continuum_noun	sAMwawya/pravAha/sAwawya
 continuums_UNDEFINED	pravAha
 contort_verb	ENTa/vikqwa_kara/vikqwa_ho/rUpa_bigAda
 contorted_adjective	ENTIhuI/wudA-mudA/vikqwa/kuFciwa
@@ -34197,7 +34196,7 @@ graduate_adjective	snAwakowwara
 graduate_noun	snAwaka/snAwakowwara
 graduate_verb	vargikaraNa_kara/dIgrI_xe/dIgrI_prapwa_kara/cinha_lagA/upAXi_prApwa_kara
 graduates_UNDEFINED	upAXi_prApwa_karanA
-graduation_noun	kramaSa:vqxXi/kramasWApana
+graduation_noun	afkana/kramaSa:vqxXi/kramasWApana
 graduations_UNDEFINED	kramaSa:vqxXi
 graffiti_UNDEFINED	BiyYawwa-leKana
 graffiti_noun	Biwwi-leKana
@@ -40704,7 +40703,7 @@ infectest_UNDEFINED	CUwa_lagAnA
 infecting_UNDEFINED	CUwa_lagAnA
 infection_noun	bImArI_kI_CUwa/svara_parivarwana/safkramaNa/safkrAmaka_roga/nEwIka_pawana/CUwa/burA_asara
 infections_UNDEFINED	bImArI_kI_CUwa
-infectious_adjective	CUwa_se_laganevAlA/safkrAmaka/PEla_jAne_vAlA/Opasargika/CUwa_kA
+infectious_adjective	safkrAmaka/CUwa_se_laganevAlA/PEla_jAne_vAlA/Opasargika/CUwa_kA
 infectiouser_UNDEFINED	CUwa_se_laganevAlA
 infectiousest_UNDEFINED	CUwa_se_laganevAlA
 infectiously_adverb	safkrAmaka_rUpa_se
@@ -43658,7 +43657,7 @@ kerfuffles_UNDEFINED	Sora-SarAbA
 kerfuffling_UNDEFINED	Sora-SarAbA
 kerketta_UNDEFINED	kerakettA
 kernel_UNDEFINED	wawva
-kernel_noun	sAra/garI/girI/xAnA
+kernel_noun	xAnA/sAra/garI/girI
 kerneled_UNDEFINED	sAra
 kerneling_UNDEFINED	sAra
 kernelled_UNDEFINED	sAra
@@ -48761,7 +48760,7 @@ metabolism_noun	rasa_prakriyA/cayApacaya
 metabolisms_UNDEFINED	rasa_prakriyA
 metal-detector_noun	XAwu_Kojaka
 metal-fatigue_noun	XAwu_kamajorI
-metal_adjective	XAwvika
+metal_adjective	XAwu/XAwvika
 metal_noun	XAwu/rela_kI_patarI/piGalA_kAFca
 metalanguage_noun	BARA/nirUpaka_BARA
 metalanguages_UNDEFINED	BARA
@@ -51967,7 +51966,7 @@ negations_UNDEFINED	nakAra
 negative_adjective	nakArAwmaka/qNAwmaka/prawikUla/niReXAwmaka
 negative_noun	nigetiva/nakAra/nigetiva{Poto_kA}
 negative_verb	mAnane_se_inkAra_kara
-negatively_adverb	nakArAwmaka_rUpa_meM/qNAwmaka_Dafga_se/galawa_warIke_se
+negatively_adverb	qNAwmaka_rUpa_meM/nakArAwmaka_rUpa_meM/qNAwmaka_Dafga_se/galawa_warIke_se
 negativer_UNDEFINED	nigetiva
 negatives_UNDEFINED	nigetiva
 negativest_UNDEFINED	nigetiva
@@ -53096,7 +53095,7 @@ nuggets_UNDEFINED	mUlyavAna
 nuisance_noun	upaxrava/pareSAnI/kaNtaka
 nuisances_UNDEFINED	upaxrava
 nuke_verb	mAikroveva_cUlhe_meM_pakA/mAikroveva_cUlhe_meM_garama_kara/cUra-cUra_kara/bama_se_hamalA_kara
-null_adjective	akRama/vyarWa/SUnya
+null_adjective	SUnya/akRama/vyarWa
 null_noun	kuCa_nahIM
 nuller_UNDEFINED	akRama
 nullest_UNDEFINED	akRama
@@ -68120,7 +68119,7 @@ sailing-race_noun	nOkAyana_prawisparXA/nOkA_xOda
 sailing-ship_noun	pAlaxAra_jahAja
 sailing_noun	jalayAwrA/pAla_nOkAyana
 sailings_UNDEFINED	jalayAwrA
-sailor_noun	nAvika/panAmA_topI/nOsEnika/nOkAcAlaka/mallAha
+sailor_noun	jahAjZI/nAvika/panAmA_topI/nOsEnika/nOkAcAlaka/mallAha
 sailors_UNDEFINED	mallAha
 sails_UNDEFINED	ravAnA_honA
 saimurga_UNDEFINED	sAImurgA
@@ -88731,7 +88730,7 @@ versing_UNDEFINED	kaviwA
 version_noun	saMskaraNa/rUpa/anUxiwa_puswaka/vqwAnwa/Avqwwi
 versions_UNDEFINED	Avqwwi
 verso_noun	vAma_pqRTa/bAyAz_pqRTa
-versus_preposition	viparIwa/viruxXa/ke_mukAbale/banAma
+versus_preposition	ke_mukAbale/viparIwa/viruxXa/banAma
 vertebra_noun	rIda_kA_joda/kaSeruka
 vertebrae_UNDEFINED	rIda_kA_joda
 vertebral_adjective	kaSerukI
@@ -93560,3 +93559,6 @@ trailing_adjective	anugAmI
 spherometer_noun	golAImApI
 side-wise_adjective	iXara_se_uXara
 derive_noun	vyuwpanna
+inhibitor_noun	niroXI
+trypsin_noun	kloma-rasa/tripsina
+anaphylactic_adjective	wIvragAhiwA_saMbaMXI

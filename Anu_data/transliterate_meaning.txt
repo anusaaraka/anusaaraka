@@ -122570,8 +122570,7 @@ tubal	tUbala
 tubb	taba
 tubbs	tabjZa
 tubby	tabI
-tube	tUba
-tube(1)	tyUba
+tube	tyUba
 tuberculosis	tabarkyalovsisa
 tuberculosis(1)	tUbarkyalovsasa
 tuberculosis(2)	tUbarkyUlovsasa

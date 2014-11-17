@@ -32187,3 +32187,4 @@ pUrvasanXyA	f
 sanXyA	f
 sigareta	f
 saMsaxa	f
+vAina	f

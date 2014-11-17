@@ -329,9 +329,9 @@
         (bind ?a (gdbm_lookup "Phrv.gdbm" ?vrb_phrase))
         (if (neq ?a "FALSE") then
                 (printout ?*h_mng_file* "(id-HM-source   "?id"   " ?a "   Verb_Phrase_gdbm)" crlf)
-		(printout ?*w_fact_file* "(compound_meaning_decided  " ?id ")" crlf)
                 (printout ?*h_mng_file* "(id-HM-source   "?id1"   -    Verb_Phrase_gdbm)" crlf)
 		(printout ?*w_fact_file* "(compound_meaning_decided  " ?id ")" crlf)
+		(printout ?*w_fact_file* "(compound_meaning_decided  " ?id1 ")" crlf)
                 (printout ?*h_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?a "   Verb_Phrase_gdbm "?id" "?id1")" crlf)
                 (retract ?mng ?mng1)
         else

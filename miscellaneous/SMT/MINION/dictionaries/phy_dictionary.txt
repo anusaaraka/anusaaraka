@@ -698,3 +698,11 @@ typical_adjective	prArUpika
 neighbouring_adjective	nikatavarwI
 diametrically_adjective	vyAsawa
 value_verb	mAna_ho
+term_verb	kahalA
+together_adverb	Apasa_meM
+traverse_verb	waya_kara
+term_noun	Sabxa
+vital_adjective	mahawvapUrNa
+hotness_noun	wapwawA
+usage_noun	prayoga
+distribute_verb	viwariwa_ho
