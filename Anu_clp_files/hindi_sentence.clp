@@ -280,21 +280,33 @@
        (assert (hindi_id_order $?var ?lid ?rp))
  )
  ;---------------------------------------------------------------------------------------------------------
- ;;Added by Shirisha Manju (23-11-13)
+ ;Added by Shirisha Manju (23-11-13)
  ;Your account of the accident does not agree [with hers].
  (defrule rm_repeated_mng_from_sentence
  (declare (salience 200))
  ?f<-(hindi_id_order $?pre ?mng ?mng $?post)
  (test (eq  (member$ ?mng (create$ bAra SurU kaBI XIre Binna karIba sAWa)) FALSE));The frequent sleeping of students is a big problem.
- (id-mng ?id $?m ?mng ?mng $?m1)
+ ?f1<-(id-mng ?id $?m ?mng ?mng $?m1)
  (id-word ?id ?wrd)
  (id-HM-source ?id ? ?src)
  =>
-	(retract ?f)
+	(retract ?f ?f1)
 	(assert (hindi_id_order $?pre ?mng $?post))
+	(assert (id-mng ?id $?m ?mng $?m1)) ;Added by Roja(18-11-14) To remove repeated mng in layered o/p
 	(printout t "Warning: Removed repeated meaning  : " ?mng" "?mng crlf)
 	(bind $?n_mng (create$ $?m ?mng ?mng $?m1))
         (printout ?*rmd_mng-file* "(id-word-mng-removed_mng-src	"?id"	"?wrd"	"(implode$ $?n_mng)"	"?mng"	"?src ")" crlf)
+ )
+ ;---------------------------------------------------------------------------------------------------------
+ ;Added by Roja (18-11-14)
+ ;To remove repeated mng in layered o/p
+ ;Rather, it deals with systems in macroscopic equilibrium and is [concerned] with changes in internal energy, temperature, entropy, etc., of the system through external work and transfer of heat.
+ ;'sambanXa huA huA hE' -> 'sambanXa huA hE'
+ (defrule modify_id-mng_fact
+ (declare (salience 150))
+ (id-mng ?id $?mng)
+ =>
+	(assert (id-Apertium_output ?id $?mng))
  )
  ;---------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (25-01-12)
