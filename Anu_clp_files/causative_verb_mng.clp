@@ -51,6 +51,7 @@
  (assert (dir_name-file_name-rule_name-id-attach_emphatic))
  (assert (dir_name-file_name-rule_name-id-wsd_viBakwi))
  (assert (dir_name-file_name-rule_name-id-domain_type))
+ (assert (dir_name-file_name-rule_name-id-tam_type))
  (assert (id-HM-source-grp_ids))
  (assert (id-domain_type))
  (assert (compound_meaning_decided))
