@@ -1,4 +1,4 @@
- 18-11-14
+ 19-11-14
  ========
  1. causative_verb_mng.clp: 
 	Modified: get_rule_info
@@ -34,6 +34,7 @@
 	Modified: ids-phy_cmp_mng-head-cat-mng_typ-priority to ids-domain_cmp_mng-head-cat-mng_typ-priority (in save facts)
 	Added "save-facts" to generate "tam_id.dat" (to get : id-tam_type) in sd_pada module
 	Opened tam_id.dat file in append mode in tam_id module
+	Loaded tam_id.dat file in WSD module
  11. run_H_gen_sen.bat:
 	Added: (save-facts "id_Apertium_output.dat" local id-Apertium_output) in hindi_sentence module
  12. this1.py:
