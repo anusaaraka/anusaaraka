@@ -689,7 +689,6 @@ ratio_noun	anupAwa
 regroup_verb	punah_ekawra_kara
 vigorously_adverb	jora_se
 viscosity_noun	SyAnawA
-tip_noun	saxiSa
 unstable_adjective	asanwuliwa
 median_adjective	mAXyikA
 median_noun	mAXyikA
