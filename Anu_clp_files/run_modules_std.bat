@@ -284,6 +284,7 @@
  (load-facts "sand_box.dat")
  (load-facts "domain.dat")
  (load-facts "hindi_meanings_tmp.dat")
+ (load-facts "tam_id.dat")
  (defmodule WSD_MODULE (export ?ALL)
                        (import MAIN ?ALL)
                        (import MAIN deftemplate ?ALL))

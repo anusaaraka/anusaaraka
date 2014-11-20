@@ -143,6 +143,25 @@
  	(assert (Head-Level-Mother-Daughters whenever ?l ?np ?nn))
  	(assert (Head-Level-Mother-Daughters whenever ?l1 ?nn ?id))
  )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;Suggested by krithika (19-11-14)
+ ;The industry is in [terminal] decline. 
+ ; If NP first daughter is NN whose value is NN then modify it as JJ
+ (defrule modify_NN_as_JJ
+ ?f0<-(Head-Level-Mother-Daughters ?h ?l ?NP ?N1 ?N2 $?pre )
+ (Node-Category ?NP NP)
+ ?f1<-(Node-Category ?N1 NN)
+ ?f2<- (Head-Level-Mother-Daughters terminal ?l1 ?N1 ?id)
+ ?f3<-(id-sd_cat  ?id NN)
+ =>
+	(retract ?f0 ?f1 ?f2 ?f3)
+	(bind ?jj (get_no ?N1 NN JJ))
+	(assert (Head-Level-Mother-Daughters ?h ?l ?NP ?jj ?N2 $?pre ))
+	(assert (Node-Category ?jj JJ))
+	(assert (Head-Level-Mother-Daughters terminal ?l1 ?jj ?id))
+	(assert (id-sd_cat  ?id JJ))
+ )
+
  ;======================================= LWG correction rules ===================================================
 
  ;The mother calmed the angry son.The jet zoomed across the sky.
