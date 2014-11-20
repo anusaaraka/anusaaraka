@@ -382,7 +382,7 @@ crop_plants	PasalI_pOXe#PasalI_pOXe#noun#2#RM
 crop_production_system	Pasala_uwpAxana_praNAlI#Pasala_uwpAxana_praNAlI#noun#2#RM
 crop_residue_management	sasyAvaSeRa_prabaMXana#sasyAvaSeRa_prabaMXana#noun#2#RM
 crop_residue	sasyAvaSeRa#sasyAvaSeRa#noun#2#RM
-crop_rotation	Pasala_cakra#Pasala_cakra#noun#2#RM
+crop_rotation	PasaloM_kA_Avarwana/Pasala_cakra#PasaloM_kA_Avarwana/Pasala_cakra#noun#2#RM
 crop_weather_outlook	Pasala_mOsama_xqRtikoNa#Pasala_mOsama_xqRtikoNa#noun#2#RM
 crown_grafting	SIrRa-ropaNa/SIrRa_kalama#SIrRa-ropaNa/SIrRa_kalama#noun#2#RM
 crown_height	SIrRa_UMcAI/Apawra_UMcAI#SIrRa_UMcAI/Apawra_UMcAI#noun#2#RM
@@ -1124,3 +1124,4 @@ peanut_soup	mUzgaPalI_se_banA_SorabA#mUzgaPalI_se_banA_SorabA#noun#2#RM
 peanut_milk	mUzgaPalI_kA_xUXa#mUzgaPalI_kA_xUXa#noun#2#RM
 oilcake_meal	KalI_kA_motA_AtA#KalI_kA_motA_AtA#noun#2#RM
 catch_crop	aMwaravarwI_Pasala#aMwaravarwI_Pasala#noun#2#RM
+deep_rooted	gaharI_jadZa_vAlA#gaharI_jadZa_vAlA#adjective#2#RM

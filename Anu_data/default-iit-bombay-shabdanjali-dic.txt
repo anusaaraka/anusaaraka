@@ -40100,7 +40100,7 @@ increased_adjective	baDA_huA
 increasedly_UNDEFINED	baDawe_huA
 increases_UNDEFINED	vqxXi_karanA
 increasing_UNDEFINED	vqxXi_karanA
-increasingly_adverb	aXika_mAwrA_meM/uwwarowwara/lagAwAra/bahuwa_hI/baDawe_hue
+increasingly_adverb	bahuwa_jyAxA/aXika_mAwrA_meM/uwwarowwara/lagAwAra/bahuwa_hI/baDawe_hue
 incredible_adjective	aviSvasanIya/AScaryajanaka/asAXAraNa/acCA
 incredible_noun	aviSvasanIya
 incredibler_UNDEFINED	aviSvasanIya
@@ -51913,7 +51913,7 @@ necromancer_noun	oJA
 necromancies_UNDEFINED	prewa_vixyA
 necromancy_noun	prewa_vixyA/kAlA_jAxU/jAxU-tonA
 necropolis_noun	kabriswAna
-nectar_noun	amqwa/rasa/parAga
+nectar_noun	parAga/amqwa/rasa
 nectarine_noun	SaPawAlU
 nectars_UNDEFINED	amqwa
 necterine_noun	amqwa_jEsA_maXura

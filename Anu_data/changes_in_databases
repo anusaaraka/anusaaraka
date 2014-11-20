@@ -1523,6 +1523,8 @@ Removed:
 	128. graduation_noun 		afkana			(Suggested by 14anu-ban-05   14-11-14)
 					Ex: If we use a metre scale for measurement of length, it may have graduations at 1 mm division scale
 				            spacing or interval.
+	129. increasingly_adverb	bahuwa_jyAxA		(Suggested by 14anu-ban-06   20-11-14)
+					Ex: The wild relatives of crop plants constitute an increasingly important resource for improving agricultural production and for maintaining sustainable agro-ecosystems.
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -1893,6 +1895,8 @@ Removed:
 				Ex:The average amount of resveratrol in one ounce of commonly eaten peanuts (15 whole peanut kernels) is 73 μg.
 	167. null_adjective  	akRama			as	SUnya		(Suggested by Chaitanya Sir     13-11-14)
 				Ex: Since the magnitude of a null vector is zero, its direction can not be specified. 
+	168. nectar_noun	amqwa			as	parAga		(Suggested by 14anu-ban-08	20-11-14)
+				Ex: Arthropod abundance and biomass was also higher in the clover cover cropped fields throughout much of the songbird breeding season, which was attributed to an increased supply of flower nectar from the clover.
 	
 
     6. Removed meaning from existing list:
@@ -2419,7 +2423,16 @@ Removed:
 	126. one_and_a_half	deDa#deDa#number#4#RM					(Suggested by Neha Arya Gurkul 13-07-2014)
 				Ex: It takes only one and a half to three hours to reach Munnar.
 	127. picnic_spot	pikanika_sWala#pikanika_sWala#noun#2#RM			(Suggested by Soshya joshi Banasthali 3-9-13) 
-				Ex: Fauyasagar reservoir is the nearest picnic spot of the citydwellers. 
+				Ex: Fauyasagar reservoir is the nearest picnic spot of the citydwellers.
+	128. nesting_sites	Gosale_kI_jagahoM#Gosale_kI_jagahoM#noun#2#RM		(Suggested by 14anu-ban-08	20-11-14)
+				Ex: The clover cover crop enhanced songbird habitat by providing cover and nesting sites, and an increased food 				   source from higher arthropod populations.
+	129. more_recently	hAla_hI_meM#hAla_hI_meM#adverb#2#RM			(Suggested by 14anu-ban-08	20-11-14)
+				Ex: More recently, plant breeders have utilised CWR genes to improve a wide range of crops like rice (Oryza 					   sativa), tomato (Solanum lycopersicum) and grain legumes. [Agriculture]
+	130. nutrient_cycling	poRaka_wawva_cakkara_prakiyA#poRaka_wawva_cakkara_prakiyA#2#RM	(Suggested by 14anu-ban-08	20-11-14)
+				Ex: The impact of residue placement (buried by tillage or left on the surface in zero tillage) on nutrient					   cycling and efficiency is under study. [Agriculture]
+	131. gaining_hold	prApwa_kara#prApwa_kara#verb#1#RM			(Suggested by 14anu-ban-06	20-11-14)
+				Ex: In scorched earth strategy, crops and other useful materials are destroyed to prevent the enemy from 					   gaining hold of them.(agriculture)
+				    Man: JulasI pqWvI raNanIwi  meM, PasaloM Ora anya upayogI paxArWo ko naRta kara xiyA jAwA hEM jisase ki 					   xuSmana ko unheM prApwa karane se rokA jA sake.
 
     Added new meaning to the existing word:
     --------------------------------------
@@ -2937,6 +2950,14 @@ Removed:
 			Ex: The protein cake (oilcake meal) residue from oil processing is used as an animal feed and as a soil fertilizer.
 	4. catch_crop   aMwaravarwI_Pasala#aMwaravarwI_Pasala#noun#2#RM			(Suggested by 14anu-ban-03 19-11-14)
 			Ex: Catch crops are also crops that are sown to prevent minerals being flushed away from the soil.
+	5. deep_rooted	gaharI_jadZa_vAlA#gaharI_jadZa_vAlA#adjective#2#RM		(Suggested by 14anu-ban-04 20-11-14)
+			Ex: Crop rotation also mitigates the build-up of pathogens and pests that often occurs when one species is continuously 			   cropped, and can also improve soil structure and fertility by alternating deep-rooted and shallow-rooted plants.
+
+  Modified:
+	Added 1st meaning:
+	1. crop_rotation     PasaloM_kA_Avarwana					(Suggested by 14anu-ban-03 20-11-14)
+			Ex: Crop rotation gives various nutrients to the soil. फसलों का आवर्तन मिट्टी को विभिन्न पोषक तत्व देता है.
+
 
  changes in agriculture_dic.txt:
  ==============================
@@ -2945,6 +2966,14 @@ Removed:
 	1. polysaccharides_noun		bahuSarkarAeda					(Suggested by 14anu-ban-09 14-11-14)
 					Ex: The insoluble carbohydrates in soybeans consist of the complex polysaccharides cellulose,
 				            hemicellulose, and pectin.
+	2. nutrient_adjective		poRaka_wawva					(Suggested by 14anu-ban-08 20-11-14)
+					Ex: Soil aggregation allows greater nutrient retention and utilization, decreasing the need for added 						   nutrients.
+	3. clover_noun			wipawiyA					(Suggested by 14anu-ban-03 20-11-14)
+					Ex: The clover cover crop enhanced songbird habitat by providing cover and nesting sites, and an increased food source from higher arthropod populations.तिपतिया झाडी वाली फसल गानेवाले पक्षी के प्राकृतिक वास को शरण और घोसले की जगहों को परिष्कृत करती/देती है और जो अधिक संधिपाद प्राणी की आबादी उनके खाद्य/आहार स्रोत  को बढाती हैं.(manual)
+    Removed:
+    -------
+	1. environment_noun	paryAvaraNa						(Suggested by 14anu-ban-04 20-11-14)
+			Ex: In addition, plants produce root exudates and other chemicals which manipulate their soil environment as well as their weed environment.
 
  changes in transliterate_meaning.txt :
  ==================================== 
