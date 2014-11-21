@@ -368,7 +368,7 @@ cotton_seed	binOlA/kapAsa_kA_bIja#binOlA/kapAsa_kA_bIja#noun#2#RM
 cotton_seed_oil	binOlA_wela#binOlA_wela#noun#2#RM
 cotyledonary_node	bIjapawrIya_parvasaMXi#bIjapawrIya_parvasaMXi#noun#2#RM
 counter_tillage	samawala_juwAI#samawala_juwAI#noun#2#RM
-cover_crop	BUmi_saMrakRI_sasya/BUmi_saMrakRI_Pasala#BUmi_saMrakRI_sasya/BUmi_saMrakRI_Pasala#noun#2#RM
+cover_crop	JAdZI_vAlI_Pasala/BUmi_saMrakRI_sasya/BUmi_saMrakRI_Pasala#JAdZI_vAlI_Pasala/BUmi_saMrakRI_sasya/BUmi_saMrakRI_Pasala#noun#2#RM
 cow_pea	lobiyA#lobiyA#noun#2#RM
 critical_difference	krAMwika_aMwara#krAMwika_aMwara#noun#2#RM
 critical_length	krAMwika_lambAI#krAMwika_lambAI#noun#2#RM

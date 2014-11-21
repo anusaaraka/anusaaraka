@@ -33,7 +33,6 @@ asymmetry_noun	asamamiwi
 atmospheric_adjective	vAyumaMdalIya
 atomic_adjective	paramANvika/paramANvIya
 average_noun	Osawa
-backward_noun	paScagAmI
 ball-bearing_noun	boYla-beyariMga
 beam_noun	puMja
 beats_noun	vispaMxa

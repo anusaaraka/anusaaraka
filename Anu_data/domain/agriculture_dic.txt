@@ -700,7 +700,7 @@ immobilisation_noun	sWirIkaraNa
 immune_noun	asaMkrAmya
 immunization_noun	prawirakRaNa
 immunogenic_noun	prawirakRAjanI
-impact_noun	saMGAwa/jamAnA
+impact_noun	praBAva/saMGAwa/jamAnA
 impaired_noun	vikqwa/kRawi/hAni/xurbala
 impending_noun	Asanna/sannikata/samupasWiwi
 impervious_noun	aBexya/apAragamya
@@ -1227,7 +1227,6 @@ sucking_noun	cURaka
 sunfower_noun	sUrajamuKI
 supply_noun	ApUrwi/pUrwi
 suppression_noun	xamana/niroXa
-surplus_noun	awirikwa/BAga/bacawa/baDZowwarI
 surveyer_noun	sarvekRaka
 survey_noun	sarvekRaNa
 survival_noun	jIviwa_rahanA
@@ -1344,3 +1343,4 @@ zeolite_noun	jiyolAita
 zone_noun	KaMda/praxeSa/kRewra/maMdala
 polysaccharides_noun	bahuSarkarAeda
 clover_noun	wipawiyA
+sustainable_adjective	vahanIya

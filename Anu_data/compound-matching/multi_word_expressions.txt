@@ -33243,6 +33243,9 @@ nesting_sites	Gosale_kI_jagahoM#Gosale_kI_jagahoM#noun#2#RM
 more_recently	hAla_hI_meM#hAla_hI_meM#adverb#2#RM
 nutrient_cycling	poRaka_wawva_cakkara_prakiyA#poRaka_wawva_cakkara_prakiyA#2#RM
 gaining_hold	prApwa_kara#prApwa_kara#verb#1#RM
+agro_ecosystems	kqRi_pariwaMwra#kqRi_pariwaMwra#noun#2#RM
+government_regulated	sarakAra_viniyamiwa#sarakAra_viniyamiwa#noun#1#RM 
+above_ground	jamIna_ke_Upara#jamIna_ke_Upara#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
