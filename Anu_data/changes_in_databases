@@ -50,6 +50,7 @@
 	28. sigareta	Suggested by sukhada (08-05-14) 	Ex: He sat back and lit up a cigarette.
 	29. saMsaxa 			"    (07-07-14)		Ex: The Speaker dissolved the parliament.
 	30. vAina   	Suggested by Chaitanya Sir (13-11-14)	Ex: Can I offer you some wine?
+	31. prayogaSAlA	Suggested by 14anu-ban-08 (22-11-14)	Ex: The prototypes of the International standard kilogram supplied by the International Bureau of Weights and Measures (BIPM) are available in many other laboratories of different countries.
 	
 
   3. Removed :
@@ -489,7 +490,7 @@
 	bouncer		(Suggested by Sukhada		 09-05-14 ) Ex: He had the bouncers throw them out of the club. 
 	enemy		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: We charged at the enemy.  
 	kitten		(Suggested by Anshika Sharma Banasthali 4-8-14)	Ex: Our cat produced four kittens during the course of the night.
-	farmer		(Suggested by Soma Mam		 21-11-14 )
+	farmer		(Suggested by Soma Mam		 21-11-14 ) Ex: In government-regulated agriculture, farmers can be required to destroy 									crops that exceed their production quota.
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -2453,6 +2454,12 @@ Removed:
 				Ex: In government-regulated agriculture, farmers can be required to destroy crops that exceed their production 						quota.
 	134. above_ground	jamIna_ke_Upara#jamIna_ke_Upara#noun#2#RM		(Suggested by 14anu-ban-05	21-11-14)
 				Ex: About 50 per cent recovery of N in the above-ground plant in the first year.
+	135. flower_nectar	PUla_ke_parAga# PUla_ke_parAga#noun#2#RM		(Suggested by 14anu-ban-05	22-11-14)
+				Ex: Arthropod abundance and biomass was also higher in the clover cover cropped fields throughout much of the 					songbird breeding season, which was attributed to an increased supply of flower nectar from the clover.
+	136. forestry_species	vanya_prajAwi#vanya_prajAwi#noun#2#RM			(Suggested by 14anu-ban-05	22-11-14)
+				Ex: Therefore CWRs are wild plants related to socio-economically important species including food, fodder and 					forage crops, medicinal plants, condiments, ornamental, and forestry species, as well as plants used for 					industrial purposes, such as oils and fibres, and to which they can contribute beneficial traits.
+	137. geographic_origin	BOgolika_mUla#BOgolika_mUla#noun#2#RM			(Suggested by 14anu-ban-05	22-11-14)
+				Ex: A crop wild relative (CWR) is a wild plant closely related to a domesticated plant, whose geographic 					origins can be traced to regions known as Vavilov Centers (named for the pioneering botanist Nikolai Vavilov). 
 
     Added new meaning to the existing word:
     --------------------------------------
@@ -2945,7 +2952,7 @@ Removed:
 	wife		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: He is cheating on his wife.
 	bouncer		(Suggested by Sukhada		 09-05-14 ) Ex: He had the bouncers throw them out of the club.
 	enemy		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: We charged at the enemy.  
-	farmer		(Suggested by Soma Mam		 21-11-14 )
+	farmer		(Suggested by Soma Mam		 21-11-14 ) Ex: In government-regulated agriculture, farmers can be required to destroy 									crops that exceed their production quota.
 
 
  changes in named_entities.txt
