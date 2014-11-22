@@ -225,6 +225,7 @@
  (assert (index 1))
  (assert (English-list))
  (run)
+ (save-facts "tam_id.dat" local id-tam_type)
  (close agmt_cntrl_fp)
  (close pada_cntrl_fp)
  (close pada_fp)
@@ -283,6 +284,7 @@
  (load-facts "sand_box.dat")
  (load-facts "domain.dat")
  (load-facts "hindi_meanings_tmp.dat")
+ (load-facts "tam_id.dat")
  (defmodule WSD_MODULE (export ?ALL)
                        (import MAIN ?ALL)
                        (import MAIN deftemplate ?ALL))
@@ -331,7 +333,7 @@
  (load-facts "original_word.dat")
  (load-facts "E_constituents_info.dat")
  (load-facts "Node_category.dat")
- (open "tam_id.dat" tam_id_fp "w")
+ (open "tam_id.dat" tam_id_fp "a")
  (run)
  (clear)
  ;----------------------------------------------------------------------
@@ -405,7 +407,7 @@
  (assert (index 1))
  (assert (English-list))
  (run)
- (save-facts "multi_word_expressions.dat" local ids-cmp_mng-head-cat-mng_typ-priority ids-phy_cmp_mng-head-cat-mng_typ-priority)
+ (save-facts "multi_word_expressions.dat" local ids-cmp_mng-head-cat-mng_typ-priority ids-domain_cmp_mng-head-cat-mng_typ-priority)
  (clear)
  ;-----------------------------------------------------------------------
  ; Generate hindi meaning for multi-word (priority -> compl.sen, wsd, default etc)

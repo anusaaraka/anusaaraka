@@ -71,8 +71,10 @@ sh generate_multi_word_dic_for_alignment.sh $MYPATH1/proper_noun-common_noun_com
 ################################# Generating GDBM's #########################################################
 
 cd $MYPATH1
- echo "Creating phy_dictionary.gdbm"
-  ./create-gdbm.pl $HOME_anu_test/Anu_databases/phy_dictionary.gdbm         < phy_dictionary_in_canonical_form.txt
+ echo "Creating physics_dic.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/physics_dic.gdbm < phy_dictionary_in_canonical_form.txt
+ echo "Creating agriculture_dic.gdbm"
+ ./create-gdbm.pl $HOME_anu_test/Anu_databases/agriculture_dic.gdbm < agriculture_dic_in_canonical_form.txt
  echo "Creating provisional_PropN_dic.gdbm"
   ./create-gdbm.pl $HOME_anu_test/Anu_databases/provisional_PropN_dic.gdbm  < provisional_PropN_dic_in_canonical_form.txt
  echo "Creating provisional_word_dic.gdbm"

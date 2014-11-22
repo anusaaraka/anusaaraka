@@ -125,8 +125,8 @@
 <e><p><l>I</l><r>A<s n="cat:adj"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l>I</l><r>A<s n="cat:adj"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>				
-<!-- kAl/A__adj covers all the cases of vAl/A__adj so commenting this paradigm.Suggested by Chaitanya Sir 
-<pardef n="vAl/A__adj">
+<!-- kAl/A__adj covers all the cases of vAl/A__adj so commenting this paradigm.Suggested by Chaitanya Sir -->
+<!--<pardef n="vAl/A__adj">
 <e><p><l>A</l><r>A<s n="cat:adj"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>e</l><r>A<s n="cat:adj"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l>e</l><r>A<s n="cat:adj"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
@@ -2197,137 +2197,137 @@
 </pardef>				
 
 
-<pardef n="rAw/a__n">					
+<pardef n="rAw/a__n">
 <e><p><l>a</l><r>a<s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>eM</l><r>a<s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l>a</l><r>a<s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>oM</l><r>a<s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="BIda/__n">					
+<pardef n="BIda/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="ASA/__n">					
+<pardef n="ASA/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e r ="LR"><p><l>yeM</l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l>ez</l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e> 
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>oM</l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="gudiy/A__n">					
+<pardef n="gudiy/A__n">
 <e><p><l>A</l><r>A<s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>Az</l><r>A<s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l>A</l><r>A<s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>oM</l><r>A<s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="IrRyA/__n">					
+<pardef n="IrRyA/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="Apawwi/__n">					
+<pardef n="Apawwi/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>yAz</l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>yoM</l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="SAnwi/__n">					
+<pardef n="SAnwi/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="ladak/I__n">					
+<pardef n="ladak/I__n">
 <e><p><l>I</l><r>I<s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>iyAz</l><r>I<s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l>I</l><r>I<s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>iyoM</l><r>I<s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="AjAxI/__n">					
+<pardef n="AjAxI/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="qwu/__n">					
+<pardef n="qwu/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>ez</l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>oM</l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="vAyu/__n">					
+<pardef n="vAyu/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="bah/U__n">					
+<pardef n="bah/U__n">
 <e><p><l>U</l><r>U<s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>uez</l><r>U<s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l>uyeM</l><r>U<s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l>U</l><r>U<s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>uoM</l><r>U<s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="bAlU/__n">					
+<pardef n="bAlU/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="lO/__n">					
+<pardef n="lO/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>ez</l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>voM</l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="sarasoM/__n">					
+<pardef n="sarasoM/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="mAz/__n">					
+<pardef n="mAz/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>yeM</l><r><s n="cat:n"/><s n="case:d"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:s"/></r></p></e>
 <e><p><l>oM</l><r><s n="cat:n"/><s n="case:o"/><s n="gen:f"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="Gar/a__n">					
+<pardef n="Gar/a__n">
 <e><p><l>a</l><r>a<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>a</l><r>a<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l>a</l><r>a<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>oM</l><r>a<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="Karc/a__n">					
+<pardef n="Karc/a__n">
 <e><p><l>a</l><r>a<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>e</l><r>a<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l>a</l><r>a<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>oM</l><r>a<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="kroXa/__n">					
+<pardef n="kroXa/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="ladak/A__n">					
+<pardef n="ladak/A__n">
 <e><p><l>A</l><r>A<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>e</l><r>A<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l>e</l><r>A<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>oM</l><r>A<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="rAjA/__n">					
+<pardef n="rAjA/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>oM</l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 </pardef>	
 
-<!-- Suggested by Chaitanya Sir
-<pardef n="vAl/A__n">					
+<!-- Suggested by Chaitanya Sir -->
+<!--<pardef n="vAl/A__n">
 <e><p><l>A</l><r>A<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>e</l><r>A<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l>e</l><r>A<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
@@ -2339,80 +2339,80 @@
 </pardef> 
 -->
 				
-<pardef n="loh/A__n">					
+<pardef n="loh/A__n">
 <e><p><l>A</l><r>A<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>e</l><r>A<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l>e</l><r>A<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>e</l><r>A<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="viXAwA/__n">					
+<pardef n="viXAwA/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="kavi/__n">					
+<pardef n="kavi/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>yoM</l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="Axam/I__n">					
+<pardef n="Axam/I__n">
 <e><p><l>I</l><r>I<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>I</l><r>I<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l>I</l><r>I<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>iyoM</l><r>I<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="pAnI/__n">					
+<pardef n="pAnI/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="Sawru/__n">					
+<pardef n="Sawru/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>oM</l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 </pardef>					
-<pardef n="katu/__n">					
+<pardef n="katu/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 </pardef>					
-<pardef n="Al/U__n">					
+<pardef n="Al/U__n">
 <e><p><l>U</l><r>U<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>U</l><r>U<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l>U</l><r>U<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>uoM</l><r>U<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="lahU/__n">					
+<pardef n="lahU/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="ku/Az__n">					
+<pardef n="ku/Az__n">
 <e><p><l>Az</l><r>Az<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>ez</l><r>Az<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l>ez</l><r>Az<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>oM</l><r>Az<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="redio/__n">					
+<pardef n="redio/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="geh/Uz__n">					
+<pardef n="geh/Uz__n">
 <e><p><l>Uz</l><r>Uz<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>Uz</l><r>Uz<s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l>Uz</l><r>Uz<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l>uzoM</l><r>Uz<s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 </pardef>					
-<pardef n="BARAvix/__n">					
+<pardef n="BARAvix/__n">
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:s"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:d"/><s n="gen:m"/><s n="num:p"/></r></p></e>
 <e><p><l></l><r><s n="cat:n"/><s n="case:o"/><s n="gen:m"/><s n="num:s"/></r></p></e>

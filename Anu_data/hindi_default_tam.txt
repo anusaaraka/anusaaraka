@@ -6,7 +6,7 @@ against_ing	ne_ke_viruxXa-0-0
 am_able_to_0	0_pAwA_hE-0-0
 am_being_en	yA_jA_rahA_hE-ko-0
 am_en_born	yA_hE-0-0
-am_en	yA_gayA_hE-0-0
+am_en	yA_jAwA_hE-0-0
 am_going_to_0	ne_vAlA_hE-0-0
 am_ing	0_rahA_hE-0-0
 am_not_being_en	yA_jA_rahA_hE-ko-nahIM

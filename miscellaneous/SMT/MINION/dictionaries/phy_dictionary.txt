@@ -33,7 +33,6 @@ asymmetry_noun	asamamiwi
 atmospheric_adjective	vAyumaMdalIya
 atomic_adjective	paramANvika/paramANvIya
 average_noun	Osawa
-backward_noun	paScagAmI
 ball-bearing_noun	boYla-beyariMga
 beam_noun	puMja
 beats_noun	vispaMxa
@@ -210,7 +209,7 @@ mean_noun	mAXya
 measurement_noun	mApana
 mechanics_noun	yAMwrikI
 medium_noun	mAXyama
-mercury_noun	buXa
+mercury_noun	pArA/buXa
 microscope_noun	sUkRmaxarSI
 microscopic_noun	sUkRma/sUkRmaxarSanIya/sUkRmaxarSIya
 microwaves_noun	sUkRma_waraMgeM
@@ -689,10 +688,19 @@ ratio_noun	anupAwa
 regroup_verb	punah_ekawra_kara
 vigorously_adverb	jora_se
 viscosity_noun	SyAnawA
-tip_noun	saxiSa
 unstable_adjective	asanwuliwa
 median_adjective	mAXyikA
 median_noun	mAXyikA
 geostationary_noun	wulyakAlI
 typical_adjective	prArUpika
 neighbouring_adjective	nikatavarwI
+diametrically_adjective	vyAsawa
+value_verb	mAna_ho
+term_verb	kahalA
+together_adverb	Apasa_meM
+traverse_verb	waya_kara
+term_noun	Sabxa
+vital_adjective	mahawvapUrNa
+hotness_noun	wapwawA
+usage_noun	prayoga
+distribute_verb	viwariwa_ho

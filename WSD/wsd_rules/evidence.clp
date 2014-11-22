@@ -64,9 +64,9 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id gavAhI))
+(assert (id-wsd_root_mng ?id sAkRya)) ;$$$ mng changed from 'gavAhI' to 'sAkRya'. 'gavAhI' is also acceptable for the sentence given above (actually it is better also for this case.) but it should not be default sense. Note: 'sAkRya' is more general but less in use. Suggested by Chaitanya Sir (03-11-14). Modified by Roja.
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  evidence.clp 	evidence2   "  ?id " gavAhI )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  evidence.clp 	evidence2   "  ?id " sAkRya )" crlf)
 )
 )
 
@@ -77,8 +77,8 @@
 ?mng <-(meaning_to_be_decided ?id)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id gavAhI))
+(assert (id-wsd_root_mng ?id sAkRya)) ;$$$ mng changed from 'gavAhI' to 'sAkRya'. Also see the comment in the evidence2 rule. Suggested by Chaitanya Sir (03-11-14). Modified by Roja.
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  evidence.clp 	evidence3   "  ?id " gavAhI )" crlf)
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  evidence.clp 	evidence3   "  ?id " sAkRya )" crlf)
 )
 )

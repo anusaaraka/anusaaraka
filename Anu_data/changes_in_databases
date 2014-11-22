@@ -49,6 +49,7 @@
 	27. sanXyA  			"		"		
 	28. sigareta	Suggested by sukhada (08-05-14) 	Ex: He sat back and lit up a cigarette.
 	29. saMsaxa 			"    (07-07-14)		Ex: The Speaker dissolved the parliament.
+	30. vAina   	Suggested by Chaitanya Sir (13-11-14)	Ex: Can I offer you some wine?
 	
 
   3. Removed :
@@ -306,6 +307,9 @@
 			ne_ke_bIca		ne_ke_pahale	ne_ke_pare	ne_ke_bAre_meM
 			ne_kI_jarUrawa_hE	ne_vAlA_hE	ne_vAlA_WA	ne_meM
 			ne_para			ne_se		ne_kI_jarUrawa_pada_sakawI_hE,
+	5. yA_jAwA_hE,m,s,u		jAwA_hE	 	as  	jAwA_hUM	(Suggested by Somaji 10-11-14)
+
+
   Removed  : 
 	0_sakawA_               (all the entries for 0_sakawA_         ) Suggested by sukhada(19-01-12)
 	nA_kI_himmahE           (       "          nA_kI_himmahE       )          "
@@ -485,6 +489,7 @@
 	bouncer		(Suggested by Sukhada		 09-05-14 ) Ex: He had the bouncers throw them out of the club. 
 	enemy		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: We charged at the enemy.  
 	kitten		(Suggested by Anshika Sharma Banasthali 4-8-14)	Ex: Our cat produced four kittens during the course of the night.
+	farmer		(Suggested by Soma Mam		 21-11-14 )
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -819,7 +824,7 @@ Removed:
 			Ex: Let her go to the market. 
     6. had_en		0_cukA_WA-0-0			     as	   yA_WA-0-0		       (Suggested by Chaitanya Sir 12-12-13)
     7. has_en		0_cukA_hE-0-0			     as    yA_hE-0-0		       ( 	"		"	   )
-
+    8. am_en		yA_gayA_hE-0-0			     as	   yA_jAwA_hE-0-0	       (Suggested by Soma Madam 10-11-14)		
 
     Added:
     ------
@@ -984,6 +989,9 @@ Removed:
 	118. silicon_noun    		silikana	as	silikoYna	(Suggested by 14anu-ban-01	17-10-14)
 	119. silicons_UNDEFINED      	silikana        as	silikoYna	(	"	"		 "	)
 	120. solid_noun      		tosa_paxArWa	as	Tosa_paxArWa	(	"	"		 "	)
+	121. neutron_noun     		nyUtrana	as	nyUtroYna 	(	"	14anu-ban-08	"	)
+	122. usefully_adverb		upayogI_Dafga_e	as	upayogI_DaMga_se(	"	14anu-ban-07 21-11-14	)
+	123. significantly_adverb	arWapUrNawAse	as	arWapUrNawA_se	(	"	14anu-ban-11 21-11-14   )
 
     3. Added new entry:
        ---------------
@@ -1255,6 +1263,22 @@ Removed:
 	138. stretched_adjective	KIFcA_huA			 ( Suggested by Chaitanya Sir  04-11-14)
 					Ex: The spring is not stretched and does not exert any upward force on the object which is moving down
 					    with acceleration g due to gravity.
+	140. derive_noun     		vyuwpanna			(Suggested by   14anu-ban-04   05-11-14)
+					Ex:A complete set of these units,both the base units and derived units,is known as the system of units.
+	141. inhibitor_noun  		niroXI				(Suggested by   14anu-ban-06   13-11-14)
+					Ex: According to a 2003 study, roasting peanuts, as more commonly done in North America, causes the 
+					    major peanut allergen Ara h2 to become a stronger inhibitor of the digestive enzyme trypsin, making
+					    it more resistant to digestion.
+	142. trypsin_noun    		kloma-rasa/tripsina		(Suggested by   14anu-ban-07   13-11-14)
+					Ex: According to a 2003 study, roasting peanuts, as more commonly done in North America, causes the 
+                                            major peanut allergen Ara h2 to become a stronger inhibitor of the digestive enzyme trypsin, making
+                                            it more resistant to digestion.
+	143. anaphylactic_adjective  	wIvragAhiwA_saMbaMXI		(Suggested by   14anu-ban-02   14-11-14)
+					Ex: Some people (0.6%[26] of the United States population) report that they experience mild to severe
+					    allergic reactions to peanut exposure; symptoms can range from watery eyes to anaphylactic shock,
+					    which can be fatal if untreated.
+	144. immobilization_noun	nisaMcAlana			(Suggested by 14anu-ban-06	21-11-14)
+					Ex: Just like fertilizer nutrients, nutrients released from crop residue into the soil are susceptible 				to losses such as leaching (N and S), denitrification (N), immobilization (N, P, K and S), and fixation (P and K).
 
 
     4. Added new meaning to the existing word:
@@ -1487,6 +1511,31 @@ Removed:
 					Ex: By the nineteenth century, enough evidence had accumulated in favor of atomic hypothesis of matter. 
 	121. electrically_adverb	vExyuwa_rUpa_se		(Suggested by Chaitanya Sir  04-11-14)
 					Ex: However, atoms on a whole are electrically neutral. 
+	122. mercury_noun    		buXa			(Suggested by 14anu-ban-08   05-11-14)
+					Ex: We note that the orbits of all planets except Mercury, Mars and Pluto are very close to being
+					    circular.
+	123. metal_adjective 		XAwu			(Suggested by 14anu-ban-08   13-11-14)
+					Ex: Metals, human and animal bodies and earth are conductors.
+	124. negatively_adverb       	qNAwmaka_rUpa_meM	(Suggested by 14anu-ban-08   13-11-14)
+					Ex: The middle portion becomes negatively charged.
+	125. conjunction_noun        	saMyojana		(Suggested by 14anu-ban-03   14-11-14)
+					Ex: Soybeans were first introduced to North America in 1765, by Samuel Bowen, a former East India 
+					    Company sailor who had visited China in conjunction with James Flint.
+	126. sailor_noun     		jahAjZI			(Suggested by 14anu-ban-01   14-11-14)
+					Ex: Soybeans were first introduced to North America in 1765, by Samuel Bowen, a former East India 
+					    Company sailor who had visited China in conjunction with James Flint.
+	127. continuum_noun  		sAMwawya		(Suggested by 14anu-ban-03   14-11-14)
+					Ex:If we intend to show streamline of every flowing particle,we would end up with a continuum of lines.
+	128. graduation_noun 		afkana			(Suggested by 14anu-ban-05   14-11-14)
+					Ex: If we use a metre scale for measurement of length, it may have graduations at 1 mm division scale
+				            spacing or interval.
+	129. increasingly_adverb	bahuwa_jyAxA		(Suggested by 14anu-ban-06   20-11-14)
+					Ex: The wild relatives of crop plants constitute an increasingly important resource for improving 						agricultural production and for maintaining sustainable agro-ecosystems.
+	130. unplanned_adjective	aniyojiwa		(Suggested by 14anu-ban-02   21-11-14)
+					Ex: Zero tillage is a fundamental management practice that promotes crop stubble retention under longer 					unplanned fallows when crops cannot be planted.
+	131. least_adjective		sabase_kama		(Suggested by 14anu-ban-08   21-11-14) 
+					Ex: From the results obtained it is clear that among the three bodies the sphere has the greatest and
+					 the ring has the least velocity of the center of mass at the bottom of the inclined plane.
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -1843,6 +1892,26 @@ Removed:
 				Ex: Matter, as we know, consists of elementary charged constituents like electrons and protons.
 	161. figure_noun     	afka			as	ciwra		(Suggested by   14anu-ban-05    17-10-14)
 				Ex: Figure 7.12 is a good illustration of Eq. (7.11).	
+	162. manifest_verb   	spaRta_ho_jA		as	prakata_ho	(Suggested by   14anu-ban-08    17-10-14)
+				Ex: Electric force manifests itself in atmosphere where the atoms are ionised and that leads to lightning.
+	163. head-on_adjective  Amane_sAmane		as	sIXA		(Suggested by   14anu-ban-06    05-11-14)
+				Ex: In practice, however, this number is smaller since head-on collisions are rare.
+	164. versus_preposition viparIwa		as	ke_mukAbale	(Suggested by   14anu-ban-07    13-11-14)
+				Ex: A hypothesis of the development of peanut allergy has to do with the way peanuts are processed in North 
+				    America versus other countries, such as Pakistan and China, where peanuts are widely eaten.
+	165. infectious_adjective  CUwa_se_laganevAlA	as 	safkrAmaka	(Suggested by   14anu-ban-06    13-11-14)
+				Ex: Another hypothesis, called the hygiene hypothesis, states that a lack of early childhood exposure to 
+			            infectious agents like germs and parasites could be causing the increase of food allergies.
+	166. kernel_noun     	sAra			as	xAnA		(Suggested by   14anu-ban-07    13-11-14)
+				Ex:The average amount of resveratrol in one ounce of commonly eaten peanuts (15 whole peanut kernels) is 73 μg.
+	167. null_adjective  	akRama			as	SUnya		(Suggested by Chaitanya Sir     13-11-14)
+				Ex: Since the magnitude of a null vector is zero, its direction can not be specified. 
+	168. nectar_noun	amqwa			as	parAga		(Suggested by 14anu-ban-08	20-11-14)
+				Ex: Arthropod abundance and biomass was also higher in the clover cover cropped fields throughout much of the 					songbird breeding season, which was attributed to an increased supply of flower nectar from the clover.
+	169. limitation_noun	parisImA		as	sImA		(Suggested by 14anu-ban-08	21-11-14)
+				Ex: Even a microscope has certain limitations.
+	170. recovery_noun	svAWya_lABa		as	punaH_prApwa	(Suggested by 14anu-ban-11	21-11-14)
+				Ex: About 50 per cent recovery of N in the above-ground plant in the first year.
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1885,6 +1954,7 @@ Removed:
 	35. mark_noun		cinha						(	"	"		25-08-14)
 	36. mark_verb		cinha_lag					(	"	"		"	)
 	37. them_pronoun	unak/unheM_unako				(	"	"		17-10-14)
+	38. conjunction_UNDEFINED	saMyojana				(Suggested by 14anu-ban-03	14-11-14)
 
 	
 
@@ -2367,7 +2437,22 @@ Removed:
 	126. one_and_a_half	deDa#deDa#number#4#RM					(Suggested by Neha Arya Gurkul 13-07-2014)
 				Ex: It takes only one and a half to three hours to reach Munnar.
 	127. picnic_spot	pikanika_sWala#pikanika_sWala#noun#2#RM			(Suggested by Soshya joshi Banasthali 3-9-13) 
-				Ex: Fauyasagar reservoir is the nearest picnic spot of the citydwellers. 
+				Ex: Fauyasagar reservoir is the nearest picnic spot of the citydwellers.
+	128. nesting_sites	Gosale_kI_jagahoM#Gosale_kI_jagahoM#noun#2#RM		(Suggested by 14anu-ban-08	20-11-14)
+				Ex: The clover cover crop enhanced songbird habitat by providing cover and nesting sites, and an increased food 				   source from higher arthropod populations.
+	129. more_recently	hAla_hI_meM#hAla_hI_meM#adverb#2#RM			(Suggested by 14anu-ban-08	20-11-14)
+				Ex: More recently, plant breeders have utilised CWR genes to improve a wide range of crops like rice (Oryza 					   sativa), tomato (Solanum lycopersicum) and grain legumes. [Agriculture]
+	130. nutrient_cycling	poRaka_wawva_cakkara_prakiyA#poRaka_wawva_cakkara_prakiyA#2#RM	(Suggested by 14anu-ban-08	20-11-14)
+				Ex: The impact of residue placement (buried by tillage or left on the surface in zero tillage) on nutrient					   cycling and efficiency is under study. [Agriculture]
+	131. gaining_hold	prApwa_kara#prApwa_kara#verb#1#RM			(Suggested by 14anu-ban-06	20-11-14)
+				Ex: In scorched earth strategy, crops and other useful materials are destroyed to prevent the enemy from 					   gaining hold of them.(agriculture)
+				    Man: JulasI pqWvI raNanIwi  meM, PasaloM Ora anya upayogI paxArWo ko naRta kara xiyA jAwA hEM jisase ki 					   xuSmana ko unheM prApwa karane se rokA jA sake.
+	132. agro_ecosystems	kqRi_pariwaMwra#kqRi_pariwaMwra#noun#2#RM		(Suggested by 14anu-ban-02	21-11-14)
+				Ex: The wild relatives of crop plants constitute an increasingly important resource for improving agricultural 					production and for maintaining sustainable (agro-ecosystems).
+	133. government_regulated	sarakAra_viniyamiwa#sarakAra_viniyamiwa#noun#1#RM (Suggested by 14anu-ban-05	21-11-14)
+				Ex: In government-regulated agriculture, farmers can be required to destroy crops that exceed their production 						quota.
+	134. above_ground	jamIna_ke_Upara#jamIna_ke_Upara#noun#2#RM		(Suggested by 14anu-ban-05	21-11-14)
+				Ex: About 50 per cent recovery of N in the above-ground plant in the first year.
 
     Added new meaning to the existing word:
     --------------------------------------
@@ -2546,8 +2631,6 @@ Removed:
 				Ex: In winter, in order to feel warm, we generate heat by vigorously rubbing our palms together.
 	viscosity_noun  	SyAnawA			(Suggested by 14anu-ban-07      17-10-14)
 				Ex: It is called viscosity.
-	tip_noun        	saxiSa			(Suggested by 14anu-ban-07      17-10-14)
-				Ex: Then, since their tips S and P also coincide, the two vectors are said to be equal.
 	unstable_adjective      asanwuliwa		(Suggested by 14anu-ban-07      17-10-14)
 				Ex: It is evident that without some attractive force, a nucleus will be unstable due to the electric repulsion 
 				    between its protons.
@@ -2564,7 +2647,27 @@ Removed:
 	neighbouring_adjective	nikatavarwI		(Suggested by 14anu-ban-08      17-10-14)
 				Ex: For example, the elastic spring force arises due to the net attraction/repulsion between the neighbouring
 				    atoms of the spring when the spring is elongated/compressed.
-
+	diametrically_adjective vyAsawa			(Suggested by 14anu-ban-04      05-11-14)
+				Ex: It is the angle between the two directions when two diametrically opposite points of the planet are viewed
+				    through the telescope.   
+	value_verb		mAna_ho			(Suggested by 14anu-ban-07      05-11-14)
+				Ex: The ice and steam point have values 32 Â°F and 212 Â°F respectively, on the Fahrenheit scale and 0 Â°C and 
+				    100 Â°C on the Celsius scale.
+	term_verb       	kahalA			(Suggested by 14anu-ban-07      13-11-14)
+				Ex: The line along which the body is fixed is termed as its axis of rotation.
+	together_adverb 	Apasa_meM		(Suggested by 14anu-ban-07      13-11-14)
+				Ex:These are bonded together by interatomic or intermolecular forces and stay in a stable equilibrium position.
+	traverse_verb		waya_kara		(Suggested by 14anu-ban-07      13-11-14)
+				Ex: Where u and v are the initial and final speeds and s the distance traversed.
+	term_noun       	Sabxa			(Suggested by 14anu-ban-07      13-11-14)
+				Ex: The terms 'work', 'energy' and 'power' are frequently used in everyday language.
+	vital_adjective 	mahawvapUrNa		(Suggested by 14anu-ban-07      13-11-14)
+				Ex:The early civilisations of Egypt, India, China, Greece, Mesopotamia and many others made vital contributions
+				   to its progress.
+	hotness_noun    	wapwawA			(Suggested by 14anu-ban-06      13-11-14)
+				Ex: Temperature is a relative measure, or indication of hotness or coldness.
+	usage_noun      	prayoga			(Suggested by 14anu-ban-07      13-11-14)
+				Ex: Thus, the meaning of work in physics is different from its usage in everyday language.
 
     Modifying first meaning:
     -----------------------
@@ -2615,13 +2718,21 @@ Removed:
 	11. constitution_noun       	safGatana		(Suggested by 14anu-ban-03  17-10-14)
 					Ex: The microscopic domain of physics deals with the constitution and structure of matter at the minute 					   scales of atoms and nuclei (and even lower scales of length) and their interaction with different
                                             probes such as electrons, photons and other elementary particles.
+	12. mercury_noun    		pArA			(Suggested by 14anu-ban-08  05-11-14)
+					Ex: Mercury and alcohol are the liquids used in most liquid-in-glass thermometers.
+	
 			
     Modifing category:
     -----------------
 	relative_noun		as	relative_adjective		(Suggested by Chaitanya Sir 		05-01-13)
 	nuclide_UNDEFINED	as	nuclide_noun			(Suggested by Swati Kanojia Banasthali 	27-08-14)
 	dimensionless_UNDEFINED	as	dimensionless_noun		(Suggested by 14anu-ban-04	17-10-14	)
- 	neutral_noun       	as	neutral_adjective       	(Suggested by AditiJi		04-11-14	)	
+ 	neutral_noun       	as	neutral_adjective       	(Suggested by AditiJi		04-11-14	)
+
+   Removed entry:
+   -------------
+	backward_noun	paScagAmI 	(Suggested by 14anu-ban-02	21-11-14)
+			Ex: We get thrown backward with a jerk.
 	
 
  changes in phy_eng_multi_word_dic.txt
@@ -2834,6 +2945,7 @@ Removed:
 	wife		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: He is cheating on his wife.
 	bouncer		(Suggested by Sukhada		 09-05-14 ) Ex: He had the bouncers throw them out of the club.
 	enemy		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: We charged at the enemy.  
+	farmer		(Suggested by Soma Mam		 21-11-14 )
 
 
  changes in named_entities.txt
@@ -2849,4 +2961,64 @@ Removed:
  ===================================
  Added:
 	be	ho/raha		(Suggested by Chaitanya Sir 11-08-14)
+
+ changes in agriculture_multi_dic.txt:
+ =====================================
+  Added:
+  ------
+	1. peanut_soup	mUzgaPalI_se_banA_SorabA#mUzgaPalI_se_banA_SorabA#noun#2#RM 	(Suggested by 14anu-ban-09 12-11-14)
+			Ex: Peanut butter is one of the most popular peanut-based foods in the US, and for four hundred years, recipes for
+			    peanut soup have been present in the South, Virginia in particular.
+	2. peanut_milk	mUzgaPalI_kA_xUXa#mUzgaPalI_kA_xUXa#noun#2#RM			(Suggested by 14anu-ban-09 12-11-14)
+			Ex: Peanuts can be used like other legumes and grains to make a lactose-free milk-like beverage, peanut milk.	
+ 	3. oilcake_meal	KalI_kA_motA_AtA#KalI_kA_motA_AtA#noun#2#RM			(Suggested by 14anu-ban-09 12-11-14)
+			Ex: The protein cake (oilcake meal) residue from oil processing is used as an animal feed and as a soil fertilizer.
+	4. catch_crop   aMwaravarwI_Pasala#aMwaravarwI_Pasala#noun#2#RM			(Suggested by 14anu-ban-03 19-11-14)
+			Ex: Catch crops are also crops that are sown to prevent minerals being flushed away from the soil.
+	5. deep_rooted	gaharI_jadZa_vAlA#gaharI_jadZa_vAlA#adjective#2#RM		(Suggested by 14anu-ban-04 20-11-14)
+			Ex: Crop rotation also mitigates the build-up of pathogens and pests that often occurs when one species is continuously 			   cropped, and can also improve soil structure and fertility by alternating deep-rooted and shallow-rooted plants.
+
+  Modified:
+	Added 1st meaning:
+	1. crop_rotation     PasaloM_kA_Avarwana					(Suggested by 14anu-ban-03 20-11-14)
+			Ex: Crop rotation gives various nutrients to the soil. फसलों का आवर्तन मिट्टी को विभिन्न पोषक तत्व देता है.
+
+  Added new meaning to existing list:
+  -----------------------------------
+	1. cover_crop	JAdZI_vAlI_Pasala						(Suggested by 14anu-ban-03 21-11-14)
+			Ex: The clover cover crop enhanced songbird habitat by providing cover and nesting sites, and an increased food 
+			source from higher arthropod populations.
+
+ changes in agriculture_dic.txt:
+ ==============================
+    Added:
+    ------ 
+	1. polysaccharides_noun		bahuSarkarAeda					(Suggested by 14anu-ban-09 14-11-14)
+					Ex: The insoluble carbohydrates in soybeans consist of the complex polysaccharides cellulose,
+				            hemicellulose, and pectin.
+	2. nutrient_adjective		poRaka_wawva					(Suggested by 14anu-ban-08 20-11-14)
+					Ex: Soil aggregation allows greater nutrient retention and utilization, decreasing the need for added 						   nutrients.
+	3. clover_noun			wipawiyA					(Suggested by 14anu-ban-03 20-11-14)
+					Ex: The clover cover crop enhanced songbird habitat by providing cover and nesting sites, and an increased food source from higher arthropod populations.तिपतिया झाडी वाली फसल गानेवाले पक्षी के प्राकृतिक वास को शरण और घोसले की जगहों को परिष्कृत करती/देती है और जो अधिक संधिपाद प्राणी की आबादी उनके खाद्य/आहार स्रोत  को बढाती हैं.(manual)
+	4. sustainable_adjective	vahanIya					(Suggested by 14anu-ban-11 21-11-14)
+					Ex: The wild relatives of crop plants constitute an increasingly important resource for improving 						agricultural production and for maintaining sustainable agro-ecosystems.
+
+    Removed:
+    -------
+	1. environment_noun	paryAvaraNa						(Suggested by 14anu-ban-04 20-11-14)
+			Ex: In addition, plants produce root exudates and other chemicals which manipulate their soil environment as well as their weed environment.
+	2. surplus_noun		awirikwa/BAga/bacawa/baDZowwarI 			(Suggested by 14anu-ban-02 21-11-14)
+			Ex: A large portion of the Wine lake (European Union wine surplus) is converted to industrial ethanol.
+			    vAina JIla (yuropIya safGa SarAba aXiSeRa)kA eka bahuwa badZA BAga  Oxyogika iWenoYla meM parivarwiwa howA hE
+
+	Added new meaning to existing list:
+	----------------------------------
+	1. impact_noun	praBAva		(Suggested by 14anu-ban-06	21-11-14) 
+		Ex: The impact of residue placement (buried by tillage or left on the surface in zero tillage) on nutrient cycling and 				efficiency is under study.
+
+ changes in transliterate_meaning.txt :
+ ==================================== 
+  Removed :
+
+	tube	tUba			(suggested by Chaitanya Sir     13-11-14 )
 

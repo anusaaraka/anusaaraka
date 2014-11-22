@@ -150,7 +150,10 @@
  (not (mng_need_to_be_decided_on_verb_root ?id))
  =>
 	(bind ?file (str-cat ?*provisional_wsd_path* "/canonical_form_prov_wsd_rules/" ?root ".clp"))
-	(assert (mng_need_to_be_decided_on_verb_root ?id))
+	(if (neq (load* ?file) FALSE) then
+                (assert (file_loaded ?id))
+		(assert (mng_need_to_be_decided_on_verb_root ?id))
+	)
  )
  ;---------------------------------------------------------------------------------------------------------
  ;loading user word with verb root
@@ -164,7 +167,10 @@
  (not (mng_need_to_be_decided_on_verb_root ?id))
  =>
         (bind ?file (str-cat ?*provisional_wsd_path* "/canonical_form_prov_wsd_rules/" ?root ".clp"))
-	(assert (mng_need_to_be_decided_on_verb_root ?id))
+	(if (neq (load* ?file) FALSE) then
+                (assert (file_loaded ?id))
+		(assert (mng_need_to_be_decided_on_verb_root ?id))
+	)
  )
  ;---------------------------------------------------------------------------------------------------------
  ;loading original word with verb root
@@ -178,7 +184,10 @@
  (not (mng_need_to_be_decided_on_verb_root ?id))
  =>
 	(bind ?file (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/" ?root ".clp"))
-	(assert (mng_need_to_be_decided_on_verb_root ?id))
+	(if (neq (load* ?file) FALSE) then
+                (assert (file_loaded ?id))
+		(assert (mng_need_to_be_decided_on_verb_root ?id))
+	)
  ) 
  ;---------------------------------------------------------------------------------------------------------
  ;loading word with verb root
@@ -192,7 +201,10 @@
  (not (mng_need_to_be_decided_on_verb_root ?id))
  =>
 	(bind ?file (str-cat ?*path* "/WSD/wsd_rules/canonical_form_wsd_rules/" ?root ".clp"))
-	(assert (mng_need_to_be_decided_on_verb_root ?id))
+	(if (neq (load* ?file) FALSE) then
+                (assert (file_loaded ?id))
+		(assert (mng_need_to_be_decided_on_verb_root ?id))
+	)
  )
  ;---------------------------------------------------------------------------------------------------------
  ;To check whether file the file is loaded  

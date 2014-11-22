@@ -27,19 +27,16 @@
 //*** 0. Include the header
 #include "ahocorasick.h"
 
-//** Include multi_word dictionary
-#include "extract_key.c"   //This file is for ncert corpus
-//#include "extract_key_health.c"   //This file is for ncert corpus
-//#include "extract-key-dev-corpus.c" //This file is for dev corpus 
-//#include "extract-key-tourism-corpus.c"   //This file is for tourism corpus
-
+//** Include agriculture multi_word dictionary
+#include "agriculture_multi_dic.c"
 
 //char buffer[256];
+
 char buffer[2500];
 char input_line [10000];
 int word_count=0, offset_count=0, flag=0;
 int word_id[1000], offset_no[1000];
-FILE *fp1;
+
 
 /***********************************************************************/
 
@@ -47,6 +44,18 @@ struct sample_param {
 	int anum;
 	char achar;
 };
+
+/***********************************************************************/
+/* Checking whether the string is punctuation or not .
+** If punctuation then flag is 0 else flag is 1 */
+
+ void check_for_punctuation(char *str)
+     {
+          if(strcmp(str,")")==0 ||strcmp(str,"(")==0 ||strcmp(str,"$")==0 ||strcmp(str,",")==0 ||strcmp(str,".")==0 ||strcmp(str,":")==0 ||strcmp(str,";")==0 ||strcmp(str,"?")==0 ||strcmp(str,"!")==0 ||strcmp(str,"''")==0 ||strcmp(str,"'")==0||strcmp(str,"=")==0 || strcmp(str,"\"")==0 || strcmp(str,"\n")==0)
+	     flag=0;
+          else 
+             flag=1;
+    }
 
 /***********************************************************************/
 //*** Replacing space with underscore in input text. 
@@ -67,12 +76,16 @@ void replace_space_with_underscore(char inp_text[10000])
            len1=strcspn(p1+1, "_");
   	   strncpy(str, p1+1, len1);  str[len1]='\0';  p1=p1+len1+1;
 	   offset_count=strlen(inp_text)-strlen(p)+1;
-//		printf("^^^%d---%d---%d\n", offset_count, strlen(inp_text), strlen(p));
           
+           //calling function check_for_punctuation()
+	   check_for_punctuation(str); 
+
+           if(flag==1) {
            offset_no[j]=offset_count;
 	   word_id[j]=word_count;
+//	   printf("%d\t%d\t%s\n", offset_no[j], word_id[j], str);
 	   j++; 
-	   word_count++; 
+	   word_count++; }
         }
 	else
 	{
@@ -90,8 +103,8 @@ void replace_space_with_underscore(char inp_text[10000])
 int match_handler(AC_MATCH_t * m, void * param)
 {
 	unsigned int j;
-	int i=0, k=0;
-	char id_count[1000], *p;
+	int i=0, k=0, length;
+	char id_count[1000], *p, mng[1000], mngs[1000], head_id[100], cat[1000], mng_type[1000];
 	int word_ids, final_ids;
 
 	/* example of sending parameter to call-back function */
@@ -102,33 +115,45 @@ int match_handler(AC_MATCH_t * m, void * param)
                 if(offset_no[k] == m->position) 
 		 {
 		   word_ids=word_id[k];
+//		   printf ("@ %ld-- %d--%d", m->position, word_ids, word_count); 
 		   break;  
 		 }
 	      }
 	} 
 	else
-                printf ("At %ld : ", m->position);
+                printf ("At %ld : ", m->position);	
 
 	//to get multi word expression
 	for (j=0; j < m->match_num; j++) 
 	{
 		if((p=index(m->patterns[j].rep.stringy, '=')+1))
 		 {
-			strncpy(id_count, p, strlen(p)); id_count[strlen(p)]='\0'; //word_count 
-		  } 
-		printf("(eng_cmp_mng-eng_ids\t");
+		   if((length=strcspn(p, "#"))) { 
+			strncpy(id_count, p, length); id_count[length]='\0'; p=p+length+1;  //word_count
+			length=strcspn(p, "#");
+			strncpy(mngs, p, length);  mngs[length]='\0'; p=p+length+1;   //mngs
+			if((length=strcspn(mngs, "/"))) 
+                        {  strncpy(mng, mngs, length); mng[length]='\0';  } //if more than one meaning
+			else   strcpy(mng, mngs);
+			length=strcspn(p, "#"); p=p+length+1;
+			length=strcspn(p, "#");
+			strncpy(cat, p, length);  cat[length]='\0'; p=p+length+1;  //category info
+			length=strcspn(p, "#");
+			strncpy(head_id, p, length); head_id[length]='\0'; p=p+length+1; //head id info
+			length=strcspn(p, "#");
+			strncpy(mng_type, p, length);  mng_type[length]='\0';   //mng type . EX:, WM , RM 
+		   }}
+		   
+		printf("(ids-domain-cmp_mng-head-cat-mng_typ-priority\t");
 
-//		printf("%s ", m->patterns[j].rep.stringy);
-
-		printf("%s\t%ld\t%ld",  m->patterns[j].astring, m->position - m->patterns[j].length + 1, m-> position);
-		fprintf(fp1, "%ld %ld\t", m->position - m->patterns[j].length + 1, m-> position);
 		//to get word ids
 		for(i=atoi(id_count); i>=1; i--) { 
 			final_ids=word_ids-i+1;
-		        fprintf(fp1, "%d ", final_ids);
+		        printf(" %d ", final_ids);
 		} 
-		printf(")\n");
-		fprintf(fp1, "\n");
+		
+		printf("%s %s %s %s 2)",  mng, head_id, cat, mng_type);
+		printf("\n"); 
 	}
 	switch (myp->achar) {
 	case 'f': /* find first */
@@ -185,8 +210,7 @@ int main (int argc, char ** argv)
         size_t len=0;
 
 	fp = fopen(argv[1], "r");
-	fp1 = fopen(argv[2], "w");
-        if(fp == NULL || fp1 == NULL) printf("File Couldn't Open\n");
+        if(fp == NULL) printf("File Couldn't Open\n");
 
 	input_line[0]='_'; 
 	while(getline(&line, &len, fp)!=-1)
@@ -219,9 +243,8 @@ int main (int argc, char ** argv)
 		chunk_start += sizeof(buffer); 
 	 }
 	    //*** 8. Reset
-	   ac_automata_reset(acap); 
-	   printf(";~~~~~~~~~~\n");
-	   fprintf(fp1, ";~~~~~~~~~~\n");
+	 ac_automata_reset(acap);
+	 printf(";~~~~~~~~~~\n");
 	}
 	//*** 9. Release automata
 	ac_automata_release (acap);

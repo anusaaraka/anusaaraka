@@ -16,7 +16,7 @@ void canonical_form(char* str , char* new_str)
 	char  *p1,*p2,*p3;
 	char ch;
 	int len=0,str_len=0,len_checked=0,new_str_len=0, count=0, array_len;
-	char array[1000];
+	char array[100000]; //Increased array size from 1000 to 100000 to avoid Segmentation fault while running BOJAR corpus.(Modified by Roja(24-10-14))
 
 	strcpy(new_str,str);
 	str_len = strlen(str);

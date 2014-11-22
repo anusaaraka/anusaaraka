@@ -36,6 +36,7 @@
  (open "hindi_sentence_tmp.dat" h_sen_fp "w")
  (open "removed_repeated_mng.dat" rm_mng_fp "w")
  (run)
+ (save-facts "id_Apertium_output.dat" local id-Apertium_output)
  (clear)
  ;--------------------------------------------------------------------------
  (load "global_path.clp")
