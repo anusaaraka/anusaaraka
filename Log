@@ -1,4 +1,4 @@
- 22-11-14
+ 25555514
  ========
  1. causative_verb_mng.clp: 
 	Modified: get_rule_info
@@ -45,24 +45,26 @@
 	Handled domain type source (to open specifc domain dic)
 	Handled Default_meaning_for_adjective type source 
 	Added try and ValueError to handle errors.
- 15. multi_word_expression_for_physics.c:
+ 15. FinalGenerate.pl:
+	Added code to stop english words (ie. which starts with '@') to go to lt-proc
+ 16. multi_word_expression_for_physics.c:
 	Modified fact name from (ids-phy_cmp_mng-head-cat-mng_typ-priority) to (ids-domain_cmp_mng-head-cat-mng_typ-priority)
- 16. Added new folder Anu_data/domain:
+ 17. Added new folder Anu_data/domain:
 	'agriculture' related dictionaries
- 17. Added new files:
+ 18. Added new files:
 	multi_word_expression_for_agriculture.c  (to get mwe for agriculture domain)
 	list_Anu_data_domain, list_Anu_data_multi_domain (to get canonical form)
- 18. Modified following shell files:
+ 19. Modified following shell files:
 	shell_scripts/anu_compile.sh	(to create agriculture gdbm)
 	dic_compile.sh			(	"	"	   )
 	get_txt_files.sh		(to get canonical form for agriculture domain)
 	Anusaaraka_stanford.sh		(code to run agriculture mwe)
- 19. Modified following files:
+ 20. Modified following files:
 	Makefile, run.sh in multifast (to get mwe for agriculture domain)
 	list-right in canonical form (to get canonical form for agricultural domain)
- 20. Updated following dictionaries: 
+ 21. Updated following dictionaries: 
 	changes_in_databases	provisional_multi_word_dictionary.txt	apertium-en-hi.en.metadix
- 21. Updated Log.
+ 22. Updated Log.
 
  06-11-14
  ========
