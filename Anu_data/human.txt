@@ -72,3 +72,4 @@ wife	1
 bouncer	1
 enemy	1
 farmer	1
+solicitor	1

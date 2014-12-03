@@ -704,3 +704,4 @@ vital_adjective	mahawvapUrNa
 hotness_noun	wapwawA
 usage_noun	prayoga
 distribute_verb	viwariwa_ho
+weights_noun	bAta

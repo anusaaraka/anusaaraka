@@ -323,3 +323,7 @@ relative_density	ApekRika_Ganawva#ApekRika_Ganawva#noun#2#RM
 sign_convention	cihna_paripAtI#cihna_paripAtI#noun#1#RM
 vernier_callipers	varniyara_kEliparsa#varniyara_kEliparsa#noun#2#WM
 vernier_scale	varniyara_pEmAnA#varniyara_pEmAnA#noun#2#RM
+geographic_north_pole	BOgolika_uwwarI_Xruva#BOgolika_uwwarI_Xruva#noun#2#RM
+iron_filings	lOha_rewana#lOha_rewana#noun#1#RM
+arithmetic_mean	samAnwara_mAXya#samAnwara_mAXya#noun#2#RM
+pivotal_point	keMxrIya_biMxu#keMxrIya_biMxu#noun#2#RM

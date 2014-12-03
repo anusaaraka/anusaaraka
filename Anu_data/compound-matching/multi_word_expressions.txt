@@ -33249,6 +33249,11 @@ above_ground	jamIna_ke_Upara#jamIna_ke_Upara#noun#2#RM
 flower_nectar	PUla_ke_parAga# PUla_ke_parAga#noun#2#RM
 forestry_species	vanya_prajAwi#vanya_prajAwi#noun#2#RM
 geographic_origin	BOgolika_mUla#BOgolika_mUla#noun#2#RM
+that_is_why	isalie#isalie#determiner#1#RM
+purgator_of_the_fallen	pawiwa_pAvanI#pawiwa_pAvanI#adjective#4#RM
+fallen_purgator	pawiwa_pAvanI#pawiwa_pAvanI#adjective#1#RM
+pith_ball	sarakaNde_kI_golI#sarakaNde_kI_golI#noun#2#RM
+saving_grace	viSeRa_guNa#viSeRa_guNa#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
