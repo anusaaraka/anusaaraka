@@ -533,7 +533,6 @@ enterprise_noun	uxyoga
 entomogamy_noun	kIta_parAgaNa
 entomogenous_noun	kIta_jIvI
 entomology_noun	kIta-vijFAna
-environment_noun	paryAvaraNa
 enzyme_noun	eMjAima
 ephemeral_noun	svalpAyu
 epidemic_noun	mahAmArI
@@ -701,7 +700,7 @@ immobilisation_noun	sWirIkaraNa
 immune_noun	asaMkrAmya
 immunization_noun	prawirakRaNa
 immunogenic_noun	prawirakRAjanI
-impact_noun	saMGAwa/jamAnA
+impact_noun	praBAva/saMGAwa/jamAnA
 impaired_noun	vikqwa/kRawi/hAni/xurbala
 impending_noun	Asanna/sannikata/samupasWiwi
 impervious_noun	aBexya/apAragamya
@@ -909,7 +908,8 @@ normal_noun	sAmAnya
 npk_noun	nAitrojana/PAsPorasa/potASa
 nursery_noun	narsarI/pOXaSAlA/narsarI
 nut_noun	girI
-nutrient_noun	poRaka/poRka
+nutrient_noun	poRaka
+nutrient_adjective	poRaka_wawva
 nutrition_noun	poRaNa/poSaNa/AhAra
 occupation_noun	vyavasAya
 oil_noun	wela
@@ -1227,7 +1227,6 @@ sucking_noun	cURaka
 sunfower_noun	sUrajamuKI
 supply_noun	ApUrwi/pUrwi
 suppression_noun	xamana/niroXa
-surplus_noun	awirikwa/BAga/bacawa/baDZowwarI
 surveyer_noun	sarvekRaka
 survey_noun	sarvekRaNa
 survival_noun	jIviwa_rahanA
@@ -1343,3 +1342,5 @@ yield_noun	upaja/pExAvAra
 zeolite_noun	jiyolAita
 zone_noun	KaMda/praxeSa/kRewra/maMdala
 polysaccharides_noun	bahuSarkarAeda
+clover_noun	wipawiyA
+sustainable_adjective	vahanIya

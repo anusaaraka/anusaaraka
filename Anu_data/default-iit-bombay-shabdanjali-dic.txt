@@ -40100,7 +40100,7 @@ increased_adjective	baDA_huA
 increasedly_UNDEFINED	baDawe_huA
 increases_UNDEFINED	vqxXi_karanA
 increasing_UNDEFINED	vqxXi_karanA
-increasingly_adverb	aXika_mAwrA_meM/uwwarowwara/lagAwAra/bahuwa_hI/baDawe_hue
+increasingly_adverb	bahuwa_jyAxA/aXika_mAwrA_meM/uwwarowwara/lagAwAra/bahuwa_hI/baDawe_hue
 incredible_adjective	aviSvasanIya/AScaryajanaka/asAXAraNa/acCA
 incredible_noun	aviSvasanIya
 incredibler_UNDEFINED	aviSvasanIya
@@ -45017,7 +45017,7 @@ leases_UNDEFINED	patte_para_xenA
 leash_noun	cena
 leash_verb	rassI_se_bAzXa/cena_se_bAzXa
 leasing_UNDEFINED	patte_para_xenA
-least_adjective	WodA_BI/saba_se_CotA/kama_se_kama/kama
+least_adjective	sabase_kama/WodA_BI/saba_se_CotA/kama_se_kama/kama
 least_pronoun	nyUnawama
 leaster_UNDEFINED	nyUnawama
 leastest_UNDEFINED	nyUnawama
@@ -45715,7 +45715,7 @@ limestones_UNDEFINED	cUne_vAlA_pawWara
 liming_UNDEFINED	nImbU
 limit_noun	sImA/sImAbaxXawA/pAbanxI/maryAxA/haxa
 limit_verb	sImA_meM_raha/pAbanxI_lagA/sImiwa_raha
-limitation_noun	parisImA/sImA/prawibanXa/haxa/Sarwa/kamI
+limitation_noun	sImA/parisImA/prawibanXa/haxa/Sarwa/kamI
 limitations_UNDEFINED	Sarwa
 limited_UNDEFINED	sImiwa_rahanA
 limited_adjective	sImiwa
@@ -51913,7 +51913,7 @@ necromancer_noun	oJA
 necromancies_UNDEFINED	prewa_vixyA
 necromancy_noun	prewa_vixyA/kAlA_jAxU/jAxU-tonA
 necropolis_noun	kabriswAna
-nectar_noun	amqwa/rasa/parAga
+nectar_noun	parAga/amqwa/rasa
 nectarine_noun	SaPawAlU
 nectars_UNDEFINED	amqwa
 necterine_noun	amqwa_jEsA_maXura
@@ -64470,7 +64470,7 @@ recoveries_UNDEFINED	sahI_hAlawa_me_A_jAnA
 recovering_UNDEFINED	TIka_honA
 recovers_UNDEFINED	TIka_honA
 recovery_UNDEFINED	punaHprApwi
-recovery_noun	svAWya_lABa/svAsWyalABa/punaH_prApwi/prawilABa/bahAlI/Arogya-kakRa/Arogya_kakRa/sahI_hAlawa_me_A_jAnA_/punarlABa
+recovery_noun	punaH_prApwa/svAWya_lABa/svAsWyalABa/prawilABa/bahAlI/Arogya-kakRa/Arogya_kakRa/sahI_hAlawa_me_A_jAnA_/punarlABa
 recreant_adjective	svapakRawyAgI
 recreant_noun	xalabaxalU/viSvAsaGAwI
 recreate_verb	Pira_uwpanna_kara
@@ -71931,7 +71931,7 @@ significances_UNDEFINED	mahawwva
 significant_adjective	mahawwvapUrNa/uxxeSapUrNa/arWapUrNa/sArWaka
 significanter_UNDEFINED	arWapUrNa
 significantest_UNDEFINED	arWapUrNa
-significantly_adverb	arWapUrNawAse/ulleKanIya_Dafga_se/sAragarBiwa_Dafga_se/mahawwvapUrNa_Dafga_se/arWapUrNa_Dafga_se
+significantly_adverb	arWapUrNawA_se/ulleKanIya_Dafga_se/sAragarBiwa_Dafga_se/mahawwvapUrNa_Dafga_se/arWapUrNa_Dafga_se
 signification_noun	arWa
 significations_UNDEFINED	arWa
 significative_adjective	jawAne_vAlA
@@ -86525,7 +86525,7 @@ unpitying_adjective	nirxaya/krUra
 unplaced_adjective	aSreNika
 unplaceder_UNDEFINED	aSreNika
 unplacedest_UNDEFINED	aSreNika
-unplanned_adjective	jAnabUJa_kara_na_kiyA_gayA/avicAriwa
+unplanned_adjective	aniyojiwa/jAnabUJa_kara_na_kiyA_gayA/avicAriwa
 unplanted_adjective	anAropiwa
 unplayable_adjective	na_Kelane_lAyaka/xurUha/nahIM_Kelane_lAyaka/Kela_ke_anupayukwa/bajAne_ke_yogya_nahIM
 unplayful_adjective	gamBIra/avinoxapriya
@@ -87867,7 +87867,7 @@ useful_adjective	upayogI/PAyaxemanxa/lABaxAyaka/lABapraxa/kAma_kA
 usefuler_UNDEFINED	upayogI
 usefulest_UNDEFINED	upayogI
 usefully_UNDEFINED	upayogiwApUrvaka
-usefully_adverb	upayogI_Dafga_e
+usefully_adverb	upayogI_DaMga_se
 usefulness_noun	upayogiwA
 usefulnesses_UNDEFINED	upayogiwA
 useless_adjective	vyarWa/sAmAnya/nirWaka/nikammA/bekAra
@@ -93562,3 +93562,4 @@ derive_noun	vyuwpanna
 inhibitor_noun	niroXI
 trypsin_noun	kloma-rasa/tripsina
 anaphylactic_adjective	wIvragAhiwA_saMbaMXI
+immobilization_noun	nisaMcAlana

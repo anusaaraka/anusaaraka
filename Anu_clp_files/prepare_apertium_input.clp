@@ -157,7 +157,7 @@
         (retract ?f0)
  	(bind ?kA_mng (get_kA_mng ?g ?n ?c))
         (printout ?*A_fp5* "(id-Apertium_input " ?id "  " ?mng"  " ?kA_mng " )" crlf)
-        (printout ?*aper_debug-file* "(id-Rule_name  "?id "  print_org_word_mng_for_head_id )" crlf)
+        (printout ?*aper_debug-file* "(id-Rule_name  "?id "  print_org_word_mng_with_kA_vib )" crlf)
  )
  ;----------------------------------------------------------------------------------------------------------------------- 
  ;The Hawa mahal was built by the Maharaja Sawai Pratap [Singh] in 1799 AD and Lal Chand [Usta] was the architect.

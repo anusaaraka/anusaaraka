@@ -33239,6 +33239,16 @@ ply_board	plAI_borda#plAI_borda#noun#2#RM
 two_and_a_half	DAI#DAI#number#4#RM
 one_and_a_half	deDa#deDa#number#4#RM
 picnic_spot	pikanika_sWala#pikanika_sWala#noun#2#RM
+nesting_sites	Gosale_kI_jagahoM#Gosale_kI_jagahoM#noun#2#RM
+more_recently	hAla_hI_meM#hAla_hI_meM#adverb#2#RM
+nutrient_cycling	poRaka_wawva_cakkara_prakiyA#poRaka_wawva_cakkara_prakiyA#2#RM
+gaining_hold	prApwa_kara#prApwa_kara#verb#1#RM
+agro_ecosystems	kqRi_pariwaMwra#kqRi_pariwaMwra#noun#2#RM
+government_regulated	sarakAra_viniyamiwa#sarakAra_viniyamiwa#noun#1#RM 
+above_ground	jamIna_ke_Upara#jamIna_ke_Upara#noun#2#RM
+flower_nectar	PUla_ke_parAga# PUla_ke_parAga#noun#2#RM
+forestry_species	vanya_prajAwi#vanya_prajAwi#noun#2#RM
+geographic_origin	BOgolika_mUla#BOgolika_mUla#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

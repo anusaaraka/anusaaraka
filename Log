@@ -1,4 +1,4 @@
- 19-11-14
+ 25555514
  ========
  1. causative_verb_mng.clp: 
 	Modified: get_rule_info
@@ -29,36 +29,42 @@
 	Modified: rm_repeated_mng_from_sentence 
  9. parser_tree_correction_rules.clp
 	Added : modify_NN_as_JJ
- 10. run_modules_std.bat:
+ 10. prepare_apertium_input.clp:
+	Corrected rule name in debug info in print statement in 'print_org_word_mng_with_kA_vib' rule
+ 11. sd_relation_rules.clp:
+	Modified: decide_conj_rel,  conj-comp-rule
+ 12. run_modules_std.bat:
 	In check_for_best_match_in_multi-word.clp module:
 	Modified: ids-phy_cmp_mng-head-cat-mng_typ-priority to ids-domain_cmp_mng-head-cat-mng_typ-priority (in save facts)
 	Added "save-facts" to generate "tam_id.dat" (to get : id-tam_type) in sd_pada module
 	Opened tam_id.dat file in append mode in tam_id module
 	Loaded tam_id.dat file in WSD module
- 11. run_H_gen_sen.bat:
+ 13. run_H_gen_sen.bat:
 	Added: (save-facts "id_Apertium_output.dat" local id-Apertium_output) in hindi_sentence module
- 12. this1.py:
+ 14. this1.py:
 	Handled domain type source (to open specifc domain dic)
 	Handled Default_meaning_for_adjective type source 
 	Added try and ValueError to handle errors.
- 13. multi_word_expression_for_physics.c:
+ 15. FinalGenerate.pl:
+	Added code to stop english words (ie. which starts with '@') to go to lt-proc
+ 16. multi_word_expression_for_physics.c:
 	Modified fact name from (ids-phy_cmp_mng-head-cat-mng_typ-priority) to (ids-domain_cmp_mng-head-cat-mng_typ-priority)
- 14. Added new folder Anu_data/domain:
+ 17. Added new folder Anu_data/domain:
 	'agriculture' related dictionaries
- 15. Added new files:
+ 18. Added new files:
 	multi_word_expression_for_agriculture.c  (to get mwe for agriculture domain)
 	list_Anu_data_domain, list_Anu_data_multi_domain (to get canonical form)
- 16. Modified following shell files:
+ 19. Modified following shell files:
 	shell_scripts/anu_compile.sh	(to create agriculture gdbm)
 	dic_compile.sh			(	"	"	   )
 	get_txt_files.sh		(to get canonical form for agriculture domain)
 	Anusaaraka_stanford.sh		(code to run agriculture mwe)
- 17. Modified following files:
+ 20. Modified following files:
 	Makefile, run.sh in multifast (to get mwe for agriculture domain)
 	list-right in canonical form (to get canonical form for agricultural domain)
- 18. Updated following dictionaries: 
-	changes_in_databases	provisional_multi_word_dictionary.txt
- 19. Updated Log.
+ 21. Updated following dictionaries: 
+	changes_in_databases	provisional_multi_word_dictionary.txt	apertium-en-hi.en.metadix
+ 22. Updated Log.
 
  06-11-14
  ========
