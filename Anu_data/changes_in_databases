@@ -723,6 +723,10 @@ Modified :
 	utilize		liv/e__vblex		(     "      "    )
 	utilise		liv/e__vblex		(     "      "    )
 	breastfeed	ble/ed__vblex		(     "	     "	  )
+	gnaw		hew__vblex		(     "	     "	  )
+	synthesize	liv/e__vblex		(     "      "    )
+	synthesise	liv/e__vblex		(     "      "    )
+
 
 
 Modified paradigm:
