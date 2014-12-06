@@ -1,4 +1,4 @@
- 25555514
+ 06-12-14
  ========
  1. causative_verb_mng.clp: 
 	Modified: get_rule_info
@@ -59,12 +59,17 @@
 	dic_compile.sh			(	"	"	   )
 	get_txt_files.sh		(to get canonical form for agriculture domain)
 	Anusaaraka_stanford.sh		(code to run agriculture mwe)
- 20. Modified following files:
+ 20. Modified following lex files:
+	non_canonical_form.lex
+ 21. Modified following files:
 	Makefile, run.sh in multifast (to get mwe for agriculture domain)
 	list-right in canonical form (to get canonical form for agricultural domain)
- 21. Updated following dictionaries: 
+ 22. Updated following dictionaries: 
 	changes_in_databases	provisional_multi_word_dictionary.txt	apertium-en-hi.en.metadix
- 22. Updated Log.
+ 23. Updated following files:
+	INSTALL
+	README
+ 24. Updated Log.
 
  06-11-14
  ========

@@ -716,6 +716,13 @@ Modified :
 	rack		accept__vblex		(     "      "    )
 	rumbling	house__n		(     "      "    )
 	focus		focus__vblex		(     "   24-10-14)
+	label		accept__vblex		(     "   06-12-14)
+	pen		plan__vblex		(     "	     "	  )
+	minimize	liv/e__vblex		(     "      "    )
+	minimise	liv/e__vblex		(     "      "    )
+	utilize		liv/e__vblex		(     "      "    )
+	utilise		liv/e__vblex		(     "      "    )
+	breastfeed	ble/ed__vblex		(     "	     "	  )
 
 
 Modified paradigm:
@@ -745,6 +752,7 @@ Modified root:
 	ourselves	ourselves	as	ourself		(	" 02-10-14)
 	yourselves	yourselves	as	yourself	(	"	  )
 	themselves	themselves	as	themself	(	"	  )
+	electric	electrical	as	electric	(	" 06-12-14)
 
 Modified root based on paradigms:
 	bab/y__n	analys/is__n	maxim/um__n	m/an__n		wol/f__n	li/fe__n	m/ouse__n
@@ -1282,6 +1290,8 @@ Removed:
 					    which can be fatal if untreated.
 	144. immobilization_noun	nisaMcAlana			(Suggested by 14anu-ban-06	21-11-14)
 					Ex: Just like fertilizer nutrients, nutrients released from crop residue into the soil are susceptible 				to losses such as leaching (N and S), denitrification (N), immobilization (N, P, K and S), and fixation (P and K).
+	145. blog_verb			blOga_kara			(Suggested by Chaitanya Sir	06-12-14) 	  
+					Ex: Are you blogging or thinking about starting one?
 
 
     4. Added new meaning to the existing word:

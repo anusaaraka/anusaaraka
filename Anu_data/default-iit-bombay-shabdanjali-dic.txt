@@ -10045,6 +10045,7 @@ blocking_UNDEFINED	KaNda
 blocks_UNDEFINED	KaNda
 blodied_adjective	lahUluhAna
 blog_noun	blOga
+blog_verb	blOga_kara
 bloke_noun	AxamI
 blond_adjective	sunaharA/sunaharA_BUrA
 blond_noun	BUre_bAloM_vAlI_swrI/BUre_bAloM_vAlA_AxamI/gore_SarIra_va_nIlI_AzKa_vAlA_manuRya

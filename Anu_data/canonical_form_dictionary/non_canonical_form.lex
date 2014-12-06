@@ -3,7 +3,7 @@
 /*Written by Roja (31-12-12)	*/
 
 alphabets [a-zA-Z]
-
+MATRAS [eEiIoO]
 %%
 @{alphabets}+	{	 ECHO;	}
 
@@ -33,4 +33,5 @@ nX	{	printf("MX");	}
 nw	{	printf("Mw");	}
 nW	{	printf("MW");	}
 
+{MATRAS}[z][kKgGcCjJtTdDpPbBxXwW]	{	printf("%cM%c", yytext[0], yytext[2]);	}
 %%
