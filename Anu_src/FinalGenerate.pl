@@ -11,7 +11,7 @@ while(<STDIN>){
 		print "\n(id-Apertium_output\ $id "; 
 		@words=split(/\s+/,$2);
 		foreach $word (@words){
-		   if($word =~ /^\@.*/) { print $word; }  #Added this if else by Roja Ex: (id-Apertium_input 32  @shallow-rooted  ) If word starts with @ then to stop going below loop
+		   if($word =~ /^\@.*/) { print $word, " "; }  #Added this if else by Roja Ex: (id-Apertium_input 32  @shallow-rooted  ) If word starts with @ then to stop going below loop
 		   else {
 			if($word =~ /\^(.*)\$/){
 

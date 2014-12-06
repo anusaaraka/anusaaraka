@@ -1135,14 +1135,13 @@ screening_noun	CAnabIna/saMvIkRaNa
 script_noun	AleKa
 scrutiny_noun	saMvIkRA
 seasonal_noun	mOsamI/sAmayika/mOsamI
-season_noun	mOsama
 sediment_noun	walaCata/kalka/avasAxa
 seedling_noun	bIja_pOXA/pOXa
 seedlings_noun	pOXa
 seed_noun	bIja
 seepage_noun	prasrava
 selected_noun	cuniMxA
-selection_noun	varaNa/cayana
+selection_noun	cayana/varaNa
 seller_noun	vikrewA
 senescence_noun	jIrjawA/pawwiyAM_girAnA
 separate_noun	pqWaka
@@ -1319,7 +1318,6 @@ vulnerable_noun	xoRapUrNawA
 wage_noun	majZaxUrI
 walnut_noun	aKarota
 watershed_noun	jalAgama/jalasaMcayana/jalagrahaNa/jalasaMBara/jala_viBAjaka
-weather_noun	mOsama
 weedicide_noun	KarapawavAranASI
 weeding_noun	nirAI-gudZAI/nirAI/nIMxanA/nirAnA
 weed_noun	KarapawavAra/GAsapAwa/apawqNa/kuwqNa
