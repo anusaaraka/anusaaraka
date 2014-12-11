@@ -14,6 +14,11 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  pluck.clp 	pluck0   "  ?id "  sAhasa )" crlf))
 )
 
+;"pluck","N","1.sAhasa"
+;The boy showed his pluck in capturing the decoits.
+;
+
+
 
 ;@@@Added by Sonam Gupta MTech IT Banasthali 2013
 ;Police plucked a drowning girl from the river yesterday.  [OALD]
@@ -34,9 +39,6 @@
 )
 
 
-;"pluck","N","1.sAhasa"
-;The boy showed his pluck in capturing the decoits.
-;
 
 
 

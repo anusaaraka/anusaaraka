@@ -49,3 +49,6 @@
 
 17. To view wx-notation chart:
 	Go to this directory $HOME_anu_test/Doc/wx-notation/ and open wx-notation.jpg
+
+18. To install Stanford parser:
+	Check README present in $HOME_anu_test/Parsers/stanford-parser/

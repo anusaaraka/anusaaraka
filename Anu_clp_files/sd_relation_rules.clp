@@ -252,10 +252,11 @@
  ; Ex. I like fruits as well as nuts.  
  ;------------------------------------------------------------------------------------------------------------------------
  ;SD gives multiple conj_and relations with different ids for same 'AND', So handling them in one single list.
+ ;Added 'conj_but' ny Roja (22-11-14) Ex: Many people can speak but only a few can act .
  (defrule decide_conj_rel
  (declare (salience -900))
- ?f<-(rel_name-sids ?conj&conj_and|conj_or   ?x ?y)
- ?f1<-(rel_name-sids ?conj&conj_and|conj_or  ?x $?y1)
+ ?f<-(rel_name-sids ?conj&conj_and|conj_or|conj_but   ?x ?y)
+ ?f1<-(rel_name-sids ?conj&conj_and|conj_or|conj_but  ?x $?y1)
  (test (eq (member$ ?y ?y1) FALSE))
  =>
    (bind ?plist (create$ ))
@@ -267,10 +268,11 @@
  ;------------------------------------------------------------------------------------------------------------------------
  ;printing conjunction-components.
  ;Ulsoor lake is an ideal place for sightseeing, boating and shopping.
+ ;Added 'but', 'conj_but' ny Roja (22-11-14) Ex: Many people can speak but only a few can act .
  (defrule conj-comp-rule
  (declare (salience -1000))
- (rel_name-sids conj_and|conj_or  ?x $?ids  ?y)
- (parserid-word ?id and|or|well)
+ (rel_name-sids conj_and|conj_or|conj_but  ?x $?ids  ?y)
+ (parserid-word ?id and|or|well|but)
  (test (and (> (string_to_integer ?id) (string_to_integer ?x)) (< (string_to_integer ?id) (string_to_integer ?y))))
  =>
      (assert (conjunction-components   ?id   ?x  (implode$ $?ids)   ?y))

@@ -50,6 +50,7 @@
 	28. sigareta	Suggested by sukhada (08-05-14) 	Ex: He sat back and lit up a cigarette.
 	29. saMsaxa 			"    (07-07-14)		Ex: The Speaker dissolved the parliament.
 	30. vAina   	Suggested by Chaitanya Sir (13-11-14)	Ex: Can I offer you some wine?
+	31. prayogaSAlA	Suggested by 14anu-ban-08 (22-11-14)	Ex: The prototypes of the International standard kilogram supplied by the International Bureau of Weights and Measures (BIPM) are available in many other laboratories of different countries.
 	
 
   3. Removed :
@@ -489,7 +490,9 @@
 	bouncer		(Suggested by Sukhada		 09-05-14 ) Ex: He had the bouncers throw them out of the club. 
 	enemy		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: We charged at the enemy.  
 	kitten		(Suggested by Anshika Sharma Banasthali 4-8-14)	Ex: Our cat produced four kittens during the course of the night.
-	farmer		(Suggested by Soma Mam		 21-11-14 )
+	farmer		(Suggested by Soma Mam		 21-11-14 ) Ex: In government-regulated agriculture, farmers can be required to destroy 									crops that exceed their production quota.
+	solicitor       (Suggested by 14anu-ban-04       03-12-14 ) Ex: If your opponent employs a solicitor, you can not be charged the cost 
+                                                                        even if you lose your case .
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -713,6 +716,17 @@ Modified :
 	rack		accept__vblex		(     "      "    )
 	rumbling	house__n		(     "      "    )
 	focus		focus__vblex		(     "   24-10-14)
+	label		accept__vblex		(     "   06-12-14)
+	pen		plan__vblex		(     "	     "	  )
+	minimize	liv/e__vblex		(     "      "    )
+	minimise	liv/e__vblex		(     "      "    )
+	utilize		liv/e__vblex		(     "      "    )
+	utilise		liv/e__vblex		(     "      "    )
+	breastfeed	ble/ed__vblex		(     "	     "	  )
+	gnaw		hew__vblex		(     "	     "	  )
+	synthesize	liv/e__vblex		(     "      "    )
+	synthesise	liv/e__vblex		(     "      "    )
+
 
 
 Modified paradigm:
@@ -742,6 +756,7 @@ Modified root:
 	ourselves	ourselves	as	ourself		(	" 02-10-14)
 	yourselves	yourselves	as	yourself	(	"	  )
 	themselves	themselves	as	themself	(	"	  )
+	electric	electrical	as	electric	(	" 06-12-14)
 
 Modified root based on paradigms:
 	bab/y__n	analys/is__n	maxim/um__n	m/an__n		wol/f__n	li/fe__n	m/ouse__n
@@ -1279,6 +1294,8 @@ Removed:
 					    which can be fatal if untreated.
 	144. immobilization_noun	nisaMcAlana			(Suggested by 14anu-ban-06	21-11-14)
 					Ex: Just like fertilizer nutrients, nutrients released from crop residue into the soil are susceptible 				to losses such as leaching (N and S), denitrification (N), immobilization (N, P, K and S), and fixation (P and K).
+	145. blog_verb			blOga_kara			(Suggested by Chaitanya Sir	06-12-14) 	  
+					Ex: Are you blogging or thinking about starting one?
 
 
     4. Added new meaning to the existing word:
@@ -2453,6 +2470,25 @@ Removed:
 				Ex: In government-regulated agriculture, farmers can be required to destroy crops that exceed their production 						quota.
 	134. above_ground	jamIna_ke_Upara#jamIna_ke_Upara#noun#2#RM		(Suggested by 14anu-ban-05	21-11-14)
 				Ex: About 50 per cent recovery of N in the above-ground plant in the first year.
+	135. flower_nectar	PUla_ke_parAga# PUla_ke_parAga#noun#2#RM		(Suggested by 14anu-ban-05	22-11-14)
+				Ex: Arthropod abundance and biomass was also higher in the clover cover cropped fields throughout much of the 					songbird breeding season, which was attributed to an increased supply of flower nectar from the clover.
+	136. forestry_species	vanya_prajAwi#vanya_prajAwi#noun#2#RM			(Suggested by 14anu-ban-05	22-11-14)
+				Ex: Therefore CWRs are wild plants related to socio-economically important species including food, fodder and 					forage crops, medicinal plants, condiments, ornamental, and forestry species, as well as plants used for 					industrial purposes, such as oils and fibres, and to which they can contribute beneficial traits.
+	137. geographic_origin	BOgolika_mUla#BOgolika_mUla#noun#2#RM			(Suggested by 14anu-ban-05	22-11-14)
+				Ex: A crop wild relative (CWR) is a wild plant closely related to a domesticated plant, whose geographic 					origins can be traced to regions known as Vavilov Centers (named for the pioneering botanist Nikolai Vavilov). 
+	138. that_is_why 	isalie#isalie#determiner#1#RM				(Suggested by Soshya joshi Banasthali 02-12-14) 
+				Ex: That is why Haridwar is also called the Gate of the Ganges . 
+	139. purgator_of_the_fallen   pawiwa_pAvanI#pawiwa_pAvanI#adjective#4#RM	(Suggested by 14anu-ban-05 02-12-14)
+                                Ex: Ganges , the purgator of the fallen , enters the plains leaving mountainous areas in Haridwar .
+	140. fallen_purgator	pawiwa_pAvanI#pawiwa_pAvanI#adjective#1#RM		(Suggested by 14anu-ban-05 02-12-14)
+				Ex: All the sanskars will get completed with worship of the Mukteshwar Mahadev at a place called Shiv
+                                    Ballabhapur established by Lord Parashuram in Khandavi forest . yajna and a bath at the fallen purgator
+                                    Ganges and offering a pindadan there .
+	141. pith_ball       	sarakaNde_kI_golI#sarakaNde_kI_golI#noun#2#RM		(Suggested by 14anu-ban-09 02-12-14)
+				Ex: Suppose we connect one end of a copper wire to a neutral pith ball and the other end to a negatively
+                                    charged plastic rod.
+	142. saving_grace    	viSeRa_guNa#viSeRa_guNa#noun#2#RM			(Suggested by 14anu-ban-09 02-12-14)
+				Ex: A saving grace was that Johanna would be forced to reveal that Titus had the overwhelming weapon. 
 
     Added new meaning to the existing word:
     --------------------------------------
@@ -2668,6 +2704,9 @@ Removed:
 				Ex: Temperature is a relative measure, or indication of hotness or coldness.
 	usage_noun      	prayoga			(Suggested by 14anu-ban-07      13-11-14)
 				Ex: Thus, the meaning of work in physics is different from its usage in everyday language.
+	weights_noun       	bAta			(Suggested by 14anu-ban-11      02-12-14)
+				Ex: Weights are added till the plate just clears water.(ncert)
+
 
     Modifying first meaning:
     -----------------------
@@ -2747,19 +2786,28 @@ Removed:
  
     Added new entry:
     ----------------
-	charged_particles	AveSiwa_kaNa#AveSiwa_kaNa#noun#2#RM		(Suggested by Chaitanya Sir	 07-06-13)
-	discharge_tube		visarjana_nalI#visarjana_nalI#noun#2#WM	(Suggested by Pramila Banasthali 19-08-13)
-	discharge_valve		visarjana_vAlva#visarjana_vAlva#noun#2#WM 	(	"		"		 )
-	potential_difference	viBavAnwara#viBavAnwara#noun#1#RM		(	"		"	 23-08-13)
-	dynamically_stable_orbit gawiSIla_sWira_kakRA#gawiSIla_sWira_kakRA#noun#3#RM( 	"		"	 10-09-13)
-	double_slit		xviJirI#xviJirI#noun#2#RM			(	"		"    	    "    )
-	closed_loop		baMxa_paripaWa#baMxa_paripaWa#noun#2#RM	(Suggested by	Chaitanya Sir	 21-09-13)
-	sign_convention		cihna_paripAtI#cihna_paripAtI#noun#1#RM	(suggested by Preeti ji LTRC	 19-12-13)
+	1. charged_particles	AveSiwa_kaNa#AveSiwa_kaNa#noun#2#RM		(Suggested by Chaitanya Sir	 07-06-13)
+	2. discharge_tube	visarjana_nalI#visarjana_nalI#noun#2#WM	(Suggested by Pramila Banasthali 19-08-13)
+	3. discharge_valve	visarjana_vAlva#visarjana_vAlva#noun#2#WM 	(	"		"		 )
+	4. potential_difference	viBavAnwara#viBavAnwara#noun#1#RM		(	"		"	 23-08-13)
+	5. dynamically_stable_orbit gawiSIla_sWira_kakRA#gawiSIla_sWira_kakRA#noun#3#RM( 	"		"	 10-09-13)
+	6. double_slit		xviJirI#xviJirI#noun#2#RM			(	"		"    	    "    )
+	7. closed_loop		baMxa_paripaWa#baMxa_paripaWa#noun#2#RM	(Suggested by	Chaitanya Sir	 21-09-13)
+	8. sign_convention	cihna_paripAtI#cihna_paripAtI#noun#1#RM	(suggested by Preeti ji LTRC	 19-12-13)
 				Ex: We now apply the sign convention.
-	vernier_callipers	varniyara_kEliparsa#varniyara_kEliparsa#noun#2#WM	(Suggested by Prachi Banasthali 07-03-14)
+	9. vernier_callipers	varniyara_kEliparsa#varniyara_kEliparsa#noun#2#WM	(Suggested by Prachi Banasthali 07-03-14)
 				Ex: For example, a vernier callipers has the least count as 0.01 cm
-	vernier_scale		varniyara_pEmAnA#varniyara_pEmAnA#noun#2#RM		(	"		"		) 
+	10. vernier_scale	varniyara_pEmAnA#varniyara_pEmAnA#noun#2#RM		(	"		"		) 
 				Ex: In a vernier callipers the zero mark of vernier scale may not coincide with the zero mark of the main scale
+	11. geographic_north_pole   BOgolika_uwwarI_Xruva#BOgolika_uwwarI_Xruva#noun#2#RM	(Suggested by 14anu-ban-05 02-12-14)
+				    Ex: The pole near the geographic north pole of the earth is called the north magnetic pole. 
+	12. iron_filings	lOha_rewana#lOha_rewana#noun#1#RM			(Suggested by 14anu-ban-05 02-12-14)
+				Ex: We begin our study by examining iron filings sprinkled on a sheet of glass placed over a short bar magnet.
+	13. arithmetic_mean	samAnwara_mAXya#samAnwara_mAXya#noun#2#RM		(Suggested by 14anu-ban-02 02-12-14)
+				Ex: As the arithmetic mean of all the absolute errors is 0.11s, there is already an error in the tenth of a 
+				    second.
+	14. pivotal_point    	keMxrIya_biMxu#keMxrIya_biMxu#noun#2#RM			(Suggested by 14anu-ban-09 02-12-14)
+				Ex: A compass needle consists of a magnetic needle which floats on a pivotal point.[NCERT]
 			
 
  changes in causative_verb_mng.txt
@@ -2945,7 +2993,9 @@ Removed:
 	wife		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: He is cheating on his wife.
 	bouncer		(Suggested by Sukhada		 09-05-14 ) Ex: He had the bouncers throw them out of the club.
 	enemy		(Suggested by Preeti ji LTRC	 09-05-14 ) Ex: We charged at the enemy.  
-	farmer		(Suggested by Soma Mam		 21-11-14 )
+	farmer		(Suggested by Soma Mam		 21-11-14 ) Ex: In government-regulated agriculture, farmers can be required to destroy 									crops that exceed their production quota.
+	solicitor    	(Suggested by 14anu-ban-04       03-12-14 ) Ex: If your opponent employs a solicitor, you can not be charged the cost
+                                                                        even if you lose your case . 
 
 
  changes in named_entities.txt
@@ -3005,16 +3055,27 @@ Removed:
 
     Removed:
     -------
-	1. environment_noun	paryAvaraNa						(Suggested by 14anu-ban-04 20-11-14)
-			Ex: In addition, plants produce root exudates and other chemicals which manipulate their soil environment as well as their weed environment.
-	2. surplus_noun		awirikwa/BAga/bacawa/baDZowwarI 			(Suggested by 14anu-ban-02 21-11-14)
-			Ex: A large portion of the Wine lake (European Union wine surplus) is converted to industrial ethanol.
-			    vAina JIla (yuropIya safGa SarAba aXiSeRa)kA eka bahuwa badZA BAga  Oxyogika iWenoYla meM parivarwiwa howA hE
+	1. environment_noun	paryAvaraNa			(Suggested by 14anu-ban-04 20-11-14)
+				Ex: In addition, plants produce root exudates and other chemicals which manipulate their soil environment as well as their weed environment.
+	2. surplus_noun		awirikwa/BAga/bacawa/baDZowwarI	(Suggested by 14anu-ban-02 21-11-14)
+				Ex: A large portion of the Wine lake (European Union wine surplus) is converted to industrial ethanol.
+			    	    vAina JIla (yuropIya safGa SarAba aXiSeRa)kA eka bahuwa badZA BAga  Oxyogika iWenoYla meM parivarwiwa howA hE
+	3. weather_noun		mOsama				(Suggested by 14anu-ban-01 02-12-14)
+				Ex: Plant pathogens follow similar patterns of response to weather and season.
+	4. season_noun		mOsama				(Suggested by 14anu-ban-01 02-12-14)
+				Ex: Plant pathogens follow similar patterns of response to weather and season.
 
 	Added new meaning to existing list:
 	----------------------------------
 	1. impact_noun	praBAva		(Suggested by 14anu-ban-06	21-11-14) 
-		Ex: The impact of residue placement (buried by tillage or left on the surface in zero tillage) on nutrient cycling and 				efficiency is under study.
+					Ex: The impact of residue placement (buried by tillage or left on the surface in zero tillage) on nutrient cycling and 				efficiency is under study.
+
+	Modified first meaning:
+        -----------------------
+	1. selection_noun  	varaNa		as	cayana		(Suggested by 14anu-ban-01 02-12-14)
+				Ex: IPM is the selection and use of pest control actions that will ensure favourable economic,ecological and
+                                    social consequences and is applicable to most agricultural, public health and amenity pest management 
+				    situations.
 
  changes in transliterate_meaning.txt :
  ==================================== 
