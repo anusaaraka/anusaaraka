@@ -73,3 +73,5 @@ bouncer	1
 enemy	1
 farmer	1
 solicitor	1
+lover	1
+killer	1

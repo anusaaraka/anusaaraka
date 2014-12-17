@@ -338,7 +338,7 @@ trajectory_noun	prakRepa_paWa
 transformation_noun	rUpAMwaraNa
 translational_adjective	sWAnAMwarIya
 transmission_noun	saFcaraNa/pAragamana
-transmit_verb	preRiwa
+transmit_verb	preRiwa_kara
 trigonometry_noun	wrikoNamiwi
 trough_noun	garwa
 turbulence_noun	prakRoBa
