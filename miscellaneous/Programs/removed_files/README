@@ -48,10 +48,11 @@
 		 default-iit-bombay-shabdanjali-dic_firefox.txt, dictionaryA-R.js and dictionaryS-Z.js are provided here)
 
 5. CLIPS/wx_utf8.c
-   - For easy maintaince modified the total concept but the file name is not changed.
-   - Calling the lex wx_utf8.lex  from the c-program ( Anu_src/wx_utf.lex which is already used in anusaaraka)
-     (previously wx_utf8.c the whole conversion wx-notation to utf8 was done by the c program)
+   - Previously wx_utf8.c the whole conversion wx-notation to utf8 was done by the c program itself; here calling wx_utf8.lex file within c program wx_utf8.c (Anu_src/wx_utf.lex which is already used in anusaaraka)
+   - For easy maintaince modified the total concept but the file name kept same.
 
+6. apertium/tagger.c
+  - For easy maintainance and for faster execution replaced tagger.c program with tagger.lex.
      
 
 
