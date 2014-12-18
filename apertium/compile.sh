@@ -37,4 +37,7 @@ apertium-preprocess-transfer en-hi-empty.t1x en-hi-empty.t1x.bin
 apertium-validate-transfer en-hi.t1x
 apertium-preprocess-transfer en-hi.t1x en-hi.t1x.bin
 
-gcc -g -o tagger.out tagger.c 
+#gcc -g -o tagger.out tagger.c 
+
+$HOME_anu_test/Anu_src/comp.sh tagger
+
