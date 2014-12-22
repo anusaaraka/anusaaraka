@@ -28495,7 +28495,7 @@ special_permission	viSeRa_anumawi#viSeRa_anumawi#noun#2#RM
 special_points	viSiRta_bAweM#viSiRta_bAweM#noun#2#RM
 special_power_of_attorney	muKwAranAmA_KZAsa#muKwAranAmA_KZAsa#noun#2#RM
 special_procedure	viSeRa_prakriyA_AriyAviXi#viSeRa_prakriyA_AriyAviXi#noun#2#RM
-special_property	viSeRa_saMpwwi#viSeRa_saMpwwi#noun#2#RM
+special_property	viSiRta_guNa/viSeRa_saMpawwi#viSiRta_guNa/viSeRa_saMpawwi#noun#2#RM
 special_protection	viSeRa_surakRA_xala#viSeRa_surakRA_xala#noun#2#RM
 special_purpose_computer	viSeRa_uxxeSya_aBikaliwra#viSeRa_uxxeSya_aBikaliwra#noun#3#RM
 special_recovery_register	viSeRa_vasUlI_rajistara#viSeRa_vasUlI_rajistara#noun#3#RM
@@ -30311,7 +30311,7 @@ that_does_not_matter	usase_koI_Parka_nahIM_padawA#usase_koI_Parka_nahIM_padawA#n
 that_is_to_say	arWAwa#arWAwa#noun#4#RM
 that_is_what	yahI_vaha_hE_jo#yahI_vaha_hE_jo#noun#3#RM
 that_is_where	yahI_vaha_jagaha_hE_jahAz#yahI_vaha_jagaha_hE_jahAz#noun#3#RM
-that_is_why	isIliye#isIliye#noun#3#RM
+that_is_why	isalie/isIliye#isalie/isIliye#noun#3#RM
 that_means	yAne_ki#yAne_ki#noun#2#RM
 the_Almighty	BagavAna#BagavAna#noun#2#RM
 the_First_World_War	praWama_mahAyuxXa#praWama_mahAyuxXa#noun#4#RM
@@ -33249,7 +33249,6 @@ above_ground	jamIna_ke_Upara#jamIna_ke_Upara#noun#2#RM
 flower_nectar	PUla_ke_parAga# PUla_ke_parAga#noun#2#RM
 forestry_species	vanya_prajAwi#vanya_prajAwi#noun#2#RM
 geographic_origin	BOgolika_mUla#BOgolika_mUla#noun#2#RM
-that_is_why	isalie#isalie#determiner#1#RM
 purgator_of_the_fallen	pawiwa_pAvanI#pawiwa_pAvanI#adjective#4#RM
 fallen_purgator	pawiwa_pAvanI#pawiwa_pAvanI#adjective#1#RM
 pith_ball	sarakaNde_kI_golI#sarakaNde_kI_golI#noun#2#RM
@@ -33782,4 +33781,6 @@ share_market	prawiBUwi_bAjAra#prawiBUwi_bAjAra#noun#2#RM
 President_of_the_District_Art_Teachers'_association	jilA_kalAXyApaka_saMGa_ke_aXyakRa#jilA_kalAXyApaka_saMGa_ke_aXyakRa#noun#2#RM
 gold_bars	sone_kI_IMteM#sone_kI_IMteM#noun#2#RM
 Panchayat_level_committee_officer	paMcAyawa_samiwi_swarIya_paxAXikArI#paMcAyawa_samiwi_swarIya_paxAXikArI#noun#2#RM
-
+free_of_cost	muPZwa#muPZwa#noun#3#RM
+much_more	Ora_aXika#Ora_aXika#adverb#2#RM
+more_commonly	aXikawara#aXikawara#abverb#2#RM

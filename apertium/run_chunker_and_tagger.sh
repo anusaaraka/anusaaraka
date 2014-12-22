@@ -1,4 +1,4 @@
- MYPATH=$HOME_anu_tmp
+MYPATH=$HOME_anu_tmp
 
 #apertium-deswxml $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | lt-proc -a en.morf.bin| apertium-tagger -g en-ca.prob | apertium-rewxml   > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.tagger 
 
@@ -18,4 +18,6 @@ apertium-deswxml  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt  | lt-proc -a en.
 
 apertium-rewxml < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.tagger_tmp > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.tagger
 
-./tagger.out $MYPATH $1 <  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.tagger 
+#./tagger.out $MYPATH $1 <  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.tagger 
+./tagger.out  < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.tagger $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.tagger.out  2&>/dev/null
+ 

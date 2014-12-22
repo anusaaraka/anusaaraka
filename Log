@@ -1,4 +1,4 @@
- 06-12-14
+ 18-12-14
  ========
  1. causative_verb_mng.clp: 
 	Modified: get_rule_info
@@ -64,12 +64,19 @@
  21. Modified following files:
 	Makefile, run.sh in multifast (to get mwe for agriculture domain)
 	list-right in canonical form (to get canonical form for agricultural domain)
- 22. Updated following dictionaries: 
+ 22. apertium/tagger.c
+    -For easy maintainance and for faster execution replaced tagger.c program with tagger.lex ,
+     Modified the following files:
+     apertium/compile.sh		run_chunker_and_tagger.sh	  Anusaaraka.sh	                       Anusaaraka_all.sh 
+     Anusaaraka_bllip_parser.sh		Anusaaraka_rasp.sh		  Anusaaraka_stanford.sh	       Anusaaraka_bllip_parser_minion.sh
+     Anusaaraka_site.sh			Anusaaraka_stanford-Factored.sh	  Anusaaraka_stanford_align_man_ord.sh
+     Anusaaraka_stanford_minion.sh      removed_files/README    	  Anusaaraka_berkeley.sh
+ 23. Updated following dictionaries: 
 	changes_in_databases	provisional_multi_word_dictionary.txt	apertium-en-hi.en.metadix
- 23. Updated following files:
+ 24. Updated following files:
 	INSTALL
 	README
- 24. Updated Log.
+ 25. Updated Log.
 
  06-11-14
  ========

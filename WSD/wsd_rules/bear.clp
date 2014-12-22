@@ -171,6 +171,24 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng   " ?*wsd_dir* " bear.clp	bear11  "  ?id "  " ?id1 "  sahana_kara  )" crlf))
 )
 
+;Added by Aditya and Hardik(8.7.13),IIT(BHU)
+;They will have to bear him.
+;She can not bear the smell of petrol.
+(defrule bear15
+(declare (salience 3750))
+(id-root ?id bear)
+?mng <-(meaning_to_be_decided ?id)
+(kriyA-object ?id ?id1)
+(or(id-word ?id1 pain|burden|smell|pressure|load|weight|trouble|cost|threats|consequences|allegations|blame|harshness|anger|loss|shame|sock)(id-cat_coarse ?id1 pronoun))
+(id-cat_coarse ?id verb)
+=>
+(retract ?mng)
+(assert (id-wsd_root_mng ?id sahana_kara))
+(if ?*debug_flag* then
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  bear.clp 	bear15   "  ?id "  sahana_kara )" crlf))
+)
+
+;------------------- Default rules ---------------------
 (defrule bear12
 (declare (salience 3800))
 (id-root ?id bear)
@@ -209,22 +227,6 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  bear.clp 	bear14   "  ?id "  XAraNa_kara )" crlf))
 )
 
-;Added by Aditya and Hardik(8.7.13),IIT(BHU)
-;They will have to bear him.
-;She can not bear the smell of petrol.
-(defrule bear15
-(declare (salience 3750))
-(id-root ?id bear)
-?mng <-(meaning_to_be_decided ?id)
-(kriyA-object ?id ?id1)
-(or(id-word ?id1 pain|burden|smell|pressure|load|weight|trouble|cost|threats|consequences|allegations|blame|harshness|anger|loss|shame|sock)(id-cat_coarse ?id1 pronoun))
-(id-cat_coarse ?id verb)
-=>
-(retract ?mng)
-(assert (id-wsd_root_mng ?id sahana_kara))
-(if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  bear.clp 	bear15   "  ?id "  sahana_kara )" crlf))
-)
 
 ;"bear","VT","1.XAraNa karanA"
 ;She bears the title of Duchess.
