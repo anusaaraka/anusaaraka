@@ -193,6 +193,7 @@
  ?f0<-(id-root ?id -)
  (id-original_word ?id ?word)
  (id-cat_coarse ?id ?cat)
+ (id-word ?id ?w)
  =>
 		(retract ?f0)
 		(dic_lookup "provisional_word_dic.gdbm" ?id ?word ?word ?cat)
@@ -202,6 +203,8 @@
 		(dic_lookup "numbers_dic.gdbm" ?id ?word ?word ?cat)
 		(dic_lookup "inferred_dic.gdbm" ?id ?word ?word ?cat)
 		(dic_lookup "proper_noun_dic.gdbm" ?id ?word ?word ?cat)
+		(dic_lookup "physics_dic.gdbm" ?id ?w ?w ?cat)
+		(dic_lookup "agriculture_dic.gdbm" ?id ?w ?w ?cat)
  )
  ;--------------------------------------------------------------------------------------------------------
  (defrule get_mng_from_all_dic1
@@ -218,6 +221,8 @@
 		(dic_lookup "numbers_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "inferred_dic.gdbm" ?id ?word ?root ?cat)
 		(dic_lookup "proper_noun_dic.gdbm" ?id ?word ?word ?cat)
+		(dic_lookup "physics_dic.gdbm" ?id ?word ?root ?cat)
+		(dic_lookup "agriculture_dic.gdbm" ?id ?word ?root ?cat)
  )
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Roja (01-08-12). 
@@ -240,56 +245,25 @@
  (assert (default-cat wh-determiner))
  )
  ;--------------------------------------------------------------------------------------------------------
- ; get mng from physics dic with same category
- (defrule get_mng_from_phy_dic
- (declare (salience 140))
- ?f0<-(id-original_word ?id ?word)
- (id-root ?id ?rt)
- (id-cat_coarse ?id ?cat)
- (test (neq (numberp ?rt) TRUE))
- (test (neq (gdbm_lookup "phy_dictionary.gdbm" (str-cat ?rt "_" ?cat)) "FALSE"))
- =>
-        (bind ?mng (gdbm_lookup "phy_dictionary.gdbm" (str-cat ?rt "_" ?cat)))
-        (if (neq ?mng "FALSE") then
-		(print_dic_mng phy_dictionary.gdbm ?word ?rt ?mng single 0)
-		(retract ?f0)
-        )
- )
- ;--------------------------------------------------------------------------------------------------------
- ; get mng from physics dic with different category
- (defrule get_mng_from_phy_dic1
- (declare (salience 130))
- ?f0<-(id-original_word ?id ?word)
- (id-root ?id ?rt)
+ ;Added by Shirisha Manju
+ (defrule get_mng_from_all_dic_with_diff_cat
+ (declare (salience 150))
+ (id-original_word ?id ?word)
+ (id-root ?id ?root)
  (id-cat_coarse ?id ?cat)
  (default-cat ?cat1)
  (test (neq ?cat ?cat1))
- (test (neq (numberp ?rt) TRUE))
- (test (neq (gdbm_lookup "phy_dictionary.gdbm" (str-cat ?rt "_" ?cat1)) "FALSE"))
  =>
-        (bind ?mng (gdbm_lookup "phy_dictionary.gdbm" (str-cat ?rt "_" ?cat1)))
-        (if (neq ?mng "FALSE") then
-                (print_dic_mng phy_dictionary.gdbm ?word ?rt ?mng single 0)
-		(retract ?f0)
-        )
- )
- ;--------------------------------------------------------------------------------------------------------
- ; get mng from physics dic with different category and with lowcase root
- (defrule get_mng_from_phy_dic2
- (declare (salience 120))
-?f0<-(id-original_word ?id ?word)
- (id-root ?id ?rt)
- (id-cat_coarse ?id ?cat)
- (test (neq (numberp ?rt) TRUE))
- (default-cat ?cat1)
- (test (neq ?cat ?cat1))
- (test (neq (gdbm_lookup "phy_dictionary.gdbm" (str-cat (lowcase ?rt) "_" ?cat1)) "FALSE"))
- =>
-        (bind ?mng (gdbm_lookup "phy_dictionary.gdbm" (str-cat (lowcase ?rt) "_" ?cat1)))
-	(if (neq ?mng "FALSE") then
-                (print_dic_mng phy_dictionary.gdbm ?word ?rt ?mng single 0)
-		(retract ?f0)
-        )
+
+                (dic_lookup "provisional_word_dic.gdbm" ?id ?word ?root ?cat1)
+                (dic_lookup "provisional_root_dic.gdbm" ?id ?word ?root ?cat1)
+                (dic_lookup "provisional_PropN_dic.gdbm" ?id ?word ?root ?cat1)
+                (dic_lookup "default-iit-bombay-shabdanjali-dic_smt.gdbm" ?id ?word ?root ?cat1)
+                (dic_lookup "numbers_dic.gdbm" ?id ?word ?root ?cat1)
+                (dic_lookup "inferred_dic.gdbm" ?id ?word ?root ?cat1)
+                (dic_lookup "proper_noun_dic.gdbm" ?id ?word ?word ?cat1)
+                (dic_lookup "physics_dic.gdbm" ?id ?word ?root ?cat1)
+                (dic_lookup "agriculture_dic.gdbm" ?id ?word ?root ?cat1)
  )
  ;--------------------------------------------------------------------------------------------------------
  ;Added by Mahalaxmi
