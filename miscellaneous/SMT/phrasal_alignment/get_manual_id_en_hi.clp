@@ -644,6 +644,19 @@
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
+;Today, most of the electrical devices we use [require] ac voltage.
+;Ajakala jina vExyuwa yukwiyoM kA hama upayoga karawe hEM unameM se aXikAMSa ke lie @ac voltawA kI hI [AvaSyakawA howI hE].
+(defrule verb_group_using_anu_out
+(declare (salience 12))
+?f0<-(manual_word_info (head_id ?id0) (word $?mng)(root ho)(group_ids ?id $?ids))
+(id-Apertium_output ? ?m $?mng)
+?f1<-(manual_word_info (head_id ?id1&:(= (- ?id 1) ?id1)) (word ?m) (group_ids $?ids1))
+=>
+	(retract ?f0 ?f1)
+	(assert (manual_word_info (head_id ?id1) (word ?m $?mng)(group_ids $?ids1 ?id $?ids)))
+)
+;-------------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 ;We can broadly [describe] physics as a study of the basic laws of nature and their manifestation in different natural phenomena.
 ;mote wOra para hama BOwikI kA [varNana] prakqwi ke mUlaBUwa niyamoM kA aXyayana waWA viBinna prAkqwika pariGatanAoM meM inakI aBivyakwi ke rUpa meM [kara sakawe hEM].
 (defrule group_kara

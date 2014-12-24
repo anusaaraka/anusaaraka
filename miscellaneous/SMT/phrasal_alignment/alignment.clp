@@ -1,6 +1,5 @@
 ;This file is added by Shirisha Manju (9-10-14)
 
-(defglobal ?*lf-f* = lf)
 
 (deftemplate score (slot anu_id (default 0))(slot man_id (default 0))(slot weightage_sum (default 0))(multislot heuristics (default 0))(multislot rule_names (default 0)))
 
@@ -88,38 +87,22 @@
         )
 )
 
-;==================== to print left over words in html =======================================
+;==================== to get left over ids info =======================================
+
 (defglobal ?*lids* = (create$ )) 
-(defglobal ?*lwords* = (create$ )) 
 
 (defrule get_left_over_ids
 (declare (salience -502))
-?f0<-(no_match_found ?id)
-(not (manual_id-word ?id .))
+?f0<-(manual_id-word ?id ?mng)
+(test (eq (integerp (member$ ?mng (create$ @PUNCT-QuestionMark @PUNCT-Comma .))) FALSE))
 =>
 	(retract ?f0)
 	(bind ?*lids* (create$  ?*lids* ?id))
 )
 
-(defrule get_left_over_fact
+(defrule print_left_over_ids
 (declare (salience -503))
 =>
-	(assert (left_over_words  ?*lids*))
+	(assert (left_over_ids  ?*lids*))
 )
 
-(defrule print_info
-(declare (salience -504))
-(left_over_words ?id $?)
-(not (msg_printed))
-=>
-	 (printout ?*lf-f* "Nth layer Un-assigned words:  " )
-	(assert (msg_printed))
-)
-
-(defrule get_left_over_words
-(declare (salience -505))
-?f0<-(left_over_words ?id)
-(manual_id-word ?id ?mng)
-=>
-	(printout ?*lf-f* ?mng crlf)
-)

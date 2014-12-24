@@ -28730,7 +28730,7 @@ favorably_adverb	praSaMsAwmaka_Dafga_se
 favored_UNDEFINED	kqpA_xqRti_raKanA
 favored_adjective	suKaxa/pasanxIxA/kqpApAwra
 favoring_UNDEFINED	kqpA_xqRti_raKanA
-favorite_adjective	priya
+favorite_adjective	manapasanxa/priya
 favoriter_UNDEFINED	priya
 favorites_UNDEFINED	priya
 favoritest_UNDEFINED	priya
@@ -50138,7 +50138,7 @@ momenta_UNDEFINED	gawi
 momentarier_UNDEFINED	kRaNika
 momentariest_UNDEFINED	kRaNika
 momentarily_UNDEFINED	kRaNa_Bara_ke_lie
-momentarily_adverb	Wodi_hI_xera_meM/pala_Bara_ke_liye
+momentarily_adverb	Wodi_xera_ke_liye/Wodi_hI_xera_meM/pala_Bara_ke_liye
 momentary_adjective	kRaNika
 momentous_UNDEFINED	awi_mahwvapUrNa
 momentous_adjective	mahawwvapUrNa/AvaSyaka
