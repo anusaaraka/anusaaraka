@@ -18,21 +18,22 @@
     along with multifast.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#define _GNU_SOURCE
+#define _GNU_SOURCE //Added by Roja
 #include <stdio.h>
 #include <string.h>
-#include <ctype.h>
-#include <stdlib.h>
+#include <ctype.h>  //Added by Roja
+#include <stdlib.h> //Added by Roja
 
 //*** 0. Include the header
 #include "ahocorasick.h"
 
-//** Include proper noun dictionary 
+//** Include proper noun dictionary (Removed 'char input_file []' instead included proper noun dictionary by Roja)
 #include "proper_noun-dic.c"
 
 //char buffer[256];
 
-char buffer[2500];
+char buffer[2500]; //Increased buffer size from 256 to 2500
+//Added below variables by Roja
 char input_line [10000];
 int word_count=0, offset_count=0, flag=0;
 int word_id[1000], offset_no[1000];
@@ -46,6 +47,7 @@ struct sample_param {
 };
 
 /***********************************************************************/
+//Added below function by Roja
 /* Checking whether the string is punctuation or not .
 ** If punctuation then flag is 0 else flag is 1 */
 
@@ -58,6 +60,7 @@ struct sample_param {
     }
 
 /***********************************************************************/
+//Added below function by Roja
 //*** Replacing space with underscore in input text. 
 //*** Also storing word count and offset count in an array
 
@@ -99,10 +102,10 @@ void replace_space_with_underscore(char inp_text[10000])
 /****************************************************************************/
 
 //*** 1. Define a call-back function of the MATCH_CALBACK_t type
-
 int match_handler(AC_MATCH_t * m, void * param)
 {
 	unsigned int j;
+        //Assigned below variables by Roja
 	int i=0, k=0, length;
 	char id_count[1000], *p, mng[1000], mngs[1000], head_id[100], cat[1000], mng_type[1000];
 	int word_ids, final_ids;
@@ -110,7 +113,7 @@ int match_handler(AC_MATCH_t * m, void * param)
 	/* example of sending parameter to call-back function */
 	struct sample_param * myp = (struct sample_param *)param;
 
-	if (myp->anum==1) {  
+	if (myp->anum==1) {  // Added below code inside if loop by Roja
               for(k=0; k<1000 ; k++) {
                 if(offset_no[k] == m->position) 
 		 {
@@ -125,7 +128,7 @@ int match_handler(AC_MATCH_t * m, void * param)
 
 	//to get multi word expression
 	for (j=0; j < m->match_num; j++) 
-	{
+	{  //(Added below code by Roja.)
 		if((p=index(m->patterns[j].rep.stringy, '=')+1))
 		 {
 		   if((length=strcspn(p, "#"))) { 
@@ -154,6 +157,7 @@ int match_handler(AC_MATCH_t * m, void * param)
 		
 		printf("%s %s %s %s 2)",  mng, head_id, cat, mng_type);
 		printf("\n"); 
+	//Added Code by Roja ended  
 	}
 	switch (myp->achar) {
 	case 'f': /* find first */
@@ -170,7 +174,7 @@ int main (int argc, char ** argv)
 {
 	//*** 2. Define AC variables
 	AC_AUTOMATA_t * acap;
-
+//Removed 	AC_PATTERN_t allpattern[] (similar pattern was included in proper noun dic file)
 	AC_TEXT_t input_text = {0, 0};
 
 	#define PATTERN_NUMBER (sizeof(allpattern)/sizeof(AC_PATTERN_t))
@@ -204,7 +208,7 @@ int main (int argc, char ** argv)
 	 * in such situations searching must be done inside a loop. the loop
 	 * continues until it consumes all input file.
 	**/
-
+	//Added below code by Roja  
 	FILE *fp;
 	char *line;
         size_t len=0;
@@ -221,32 +225,35 @@ int main (int argc, char ** argv)
 	   //calling function replace_space_with_underscore()
            replace_space_with_underscore(input_line);
 	   *(input_line+len)='_';  
+	//Code added by  Roja ended
 
-	   char * chunk_start = input_line;
-           //	char * end_of_file = input_line+sizeof(input_line);
-	   char * end_of_file = input_line+strlen(input_line);
-	   input_text.astring = buffer;
+          // Modified input_file variable to input_line by Roja.
+	char * chunk_start = input_line;  
+        //	char * end_of_file = input_line+sizeof(input_line);
+	char * end_of_file = input_line+strlen(input_line);
+	input_text.astring = buffer;
 
 	/* Search loop */
-	 while (chunk_start<end_of_file) { 
+	while (chunk_start<end_of_file) {
 		//*** 6. Set input text
 		input_text.length = (chunk_start<end_of_file)?
 				sizeof(buffer):(sizeof(input_line)%sizeof(buffer));
 		strncpy(input_text.astring, chunk_start, input_text.length);
-        
+
 		//*** 7. Do search
 		if(ac_automata_search (acap, &input_text, (void *)(&my_param)))
 			break;
 		/* according to the return value of ac_automata_search() we decide to
 		 * continue or break loop. */
 
-		chunk_start += sizeof(buffer); 
+		chunk_start += sizeof(buffer);
 	 }
 	    //*** 8. Reset
 	 ac_automata_reset(acap);
-	 printf(";~~~~~~~~~~\n");
+	 printf(";~~~~~~~~~~\n"); //Added by Roja
 	}
 	//*** 9. Release automata
 	ac_automata_release (acap);
+
 	return 0;
 }
