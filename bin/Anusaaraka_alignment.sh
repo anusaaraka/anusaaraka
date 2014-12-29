@@ -60,7 +60,7 @@
 	sh run_alignment.sh $MYPATH/$line
 	sh run_alignment-hi-en.sh $MYPATH/$line
         cd $HOME_anu_test/bin 
-	sh run_alignment.sh $MYPATH/$line
+	sh run_alignment.sh $MYPATH/$line $1
 	cd $PHRASAL_PATH
  done < $MYPATH/dir_names.txt
 

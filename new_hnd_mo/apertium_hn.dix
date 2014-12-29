@@ -2607,6 +2607,7 @@
 <e><p><l>inameM_se</l><r>Ona<s n="cat:p"/><s n="case:o"/><s n="parsarg:meM_se"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
 <e><p><l>inapara</l><r>Ona<s n="cat:p"/><s n="case:o"/><s n="parsarg:para"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/></r></p></e>
 <e><p><l>inapara</l><r>Ona<s n="cat:p"/><s n="case:o"/><s n="parsarg:para"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/></r></p></e>
+<!--
 <e><p><l>isI</l><r>oI<s n="cat:p"/><s n="case:o"/><s n="parsarg:0"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>
 <e><p><l>isI</l><r>oI<s n="cat:p"/><s n="case:o"/><s n="parsarg:0"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/></r></p></e>
 
@@ -2614,6 +2615,7 @@
 <e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:d"/><s n="parsarg:0"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="tam:0"/></r></p></e>
 <e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:o"/><s n="parsarg:0"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/><s n="tam:0"/></r></p></e>
 <e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:d"/><s n="parsarg:0"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:0"/></r></p></e>
+-->
 
 </pardef>
 <pardef n="k/oI__p">
@@ -30450,7 +30452,7 @@
 <e lm="vikeMxrIyakaraNa"><i>vikeMxrIyakaraNa</i><par n="kroXa/__n"/></e>
 <e lm="viketa"><i>viket</i><par n="Gar/a__n"/></e>
 <e lm="vikira"><i>vikira</i><par n="kroXa/__n"/></e>
-<e lm="vikiraNa"><i>vikiraNa</i><par n="kroXa/__n"/></e>
+<e lm="vikiraNa"><i>vikiraN</i><par n="Gar/a__n"/></e>
 <e lm="vikiraNamApI"><i>vikiraNamAp</i><par n="Axam/I__n"/></e>
 <e lm="vikiraNavijFAna"><i>vikiraNavijFAna</i><par n="kroXa/__n"/></e>
 <e lm="vikiraNawA"><i>vikiraNawA</i><par n="ASA/__n"/></e>

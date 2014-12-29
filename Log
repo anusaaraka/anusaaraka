@@ -1,4 +1,4 @@
- 23-12-14
+ 29-12-14
  ========
  1. causative_verb_mng.clp: 
 	Modified: get_rule_info
@@ -39,7 +39,8 @@
 	Removed  : get_mng_from_phy_dic , get_mng_from_phy_dic1 and get_mng_from_phy_dic2 (generalised in one rule)
 	Added    : get_mng_from_all_dic_with_diff_cat
  13. get_manual_id_en_hi.clp
-	Added: verb_group_using_anu_out
+	Added: verb_group_using_anu_out, rm_underscore_M_layer
+	Renamed: 'rm_underscore' to 'rm_underscore_L_layer'
  14. run_modules_std.bat:
 	In check_for_best_match_in_multi-word.clp module:
 	Modified: ids-phy_cmp_mng-head-cat-mng_typ-priority to ids-domain_cmp_mng-head-cat-mng_typ-priority (in save facts)
@@ -52,38 +53,43 @@
 	Handled domain type source (to open specifc domain dic)
 	Handled Default_meaning_for_adjective type source 
 	Added try and ValueError to handle errors.
- 17. FinalGenerate.pl:
+ 17. mapping.py:
+	Removed '=', '$' from the punctuation list and added '{', '}', '[', ']'
+ 18. FinalGenerate.pl:
 	Added code to stop english words (ie. which starts with '@') to go to lt-proc
- 18. multi_word_expression_for_physics.c:
+ 19. multi_word_expression_for_physics.c:
 	Modified fact name from (ids-phy_cmp_mng-head-cat-mng_typ-priority) to (ids-domain_cmp_mng-head-cat-mng_typ-priority)
- 19. Added new folder Anu_data/domain:
+ 20. Added comments in multi_word_expression_for_proper_nouns.c
+ 21. Added new folder Anu_data/domain:
 	'agriculture' related dictionaries
- 20. Added new files:
+ 22. Added new files:
 	multi_word_expression_for_agriculture.c  (to get mwe for agriculture domain)
 	list_Anu_data_domain, list_Anu_data_multi_domain (to get canonical form)
- 21. Modified following shell files:
+ 23. Modified following shell files:
 	shell_scripts/anu_compile.sh	(to create agriculture gdbm)
 	dic_compile.sh			(	"	"	   )
 	get_txt_files.sh		(to get canonical form for agriculture domain)
 	Anusaaraka_stanford.sh		(code to run agriculture mwe)
- 22. Modified following lex files:
+	Anusaaraka_alignment.sh		
+	run_alignment.sh
+ 24. Modified following lex files:
 	non_canonical_form.lex
- 23. Modified following files:
+ 25. Modified following files:
 	Makefile, run.sh in multifast (to get mwe for agriculture domain)
 	list-right in canonical form (to get canonical form for agricultural domain)
- 24. apertium/tagger.c
+ 26. apertium/tagger.c
     -For easy maintainance and for faster execution replaced tagger.c program with tagger.lex ,
      Modified the following files:
      apertium/compile.sh		run_chunker_and_tagger.sh	  Anusaaraka.sh	                       Anusaaraka_all.sh 
      Anusaaraka_bllip_parser.sh		Anusaaraka_rasp.sh		  Anusaaraka_stanford.sh	       Anusaaraka_bllip_parser_minion.sh
      Anusaaraka_site.sh			Anusaaraka_stanford-Factored.sh	  Anusaaraka_stanford_align_man_ord.sh
      Anusaaraka_stanford_minion.sh      removed_files/README    	  Anusaaraka_berkeley.sh
- 25. Updated following dictionaries: 
+ 27. Updated following dictionaries: 
 	changes_in_databases	provisional_multi_word_dictionary.txt	apertium-en-hi.en.metadix
- 26. Updated following files:
+ 28. Updated following files:
 	INSTALL
 	README
- 27. Updated Log.
+ 29. Updated Log.
 
  06-11-14
  ========

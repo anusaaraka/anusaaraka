@@ -31,7 +31,7 @@
         (assert (anu_id-anu_mng-man_mng  ?aid ?anu_mng $?pre $?post))
 )
 
-(defrule rm_underscore
+(defrule rm_underscore_L_layer
 (declare (salience 1000))
 ?f<-(anu_id-anu_mng-man_mng ?aid ?word ?man_mng)
 (not (underscore_removed ?aid))
@@ -43,6 +43,20 @@
   (bind ?new_mng (remove_character "," (implode$ ?new_mng) " "))
   (assert (anu_id-anu_mng-man_mng ?aid ?word ?new_mng))
   (assert (underscore_removed ?aid))
+)
+;---------------------------------------------------------------------------------------------------------------------------------------------
+(defrule rm_underscore_M_layer
+(declare (salience 1000))
+?f<-(eng_id-eng_wrd-man_wrd ?aid ?word ?man_mng)
+(not (underscore_removed_in_M ?aid))
+(test (and (neq ?man_mng @PUNCT-Comma) (neq ?word @PUNCT-Comma)))
+=>
+  (retract ?f)
+  (bind ?new_mng (remove_character "_" (implode$ (create$ ?man_mng)) " "))
+  (bind ?new_mng (remove_character "." (implode$ ?new_mng) " "))
+  (bind ?new_mng (remove_character "," (implode$ ?new_mng) " "))
+  (assert (eng_id-eng_wrd-man_wrd ?aid ?word ?new_mng))
+  (assert (underscore_removed_in_M ?aid))
 )
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 

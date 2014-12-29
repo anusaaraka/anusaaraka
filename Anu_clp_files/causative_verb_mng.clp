@@ -142,7 +142,7 @@
  )
  ;----------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (31-05-14)
- ;Added 'Physics_Glossary' in not condition by Roja(31-07-14).Ex: The line connecting the two [charges] defines a [direction] in [space].
+ ;Added 'physics_Glossary' in not condition by Roja(31-07-14).Ex: The line connecting the two [charges] defines a [direction] in [space].
  (defrule get_rule_info
  (declare (salience 600))
  (id-HM-source ?id ?hmng ?src&~physics_Glossary&~agriculture_Glossary)

@@ -576,6 +576,7 @@ Modified :
 	  [Note: similarly for per : m,a and m_h where gen and num are same]
   21.   in /jA__v paradigm:							(By Roja			02-04-14)
 	  Stopped generation of 'gayIM'
+  22.  vikiraNa		kroXa/__n		as	Gar/a__n		("	"			29-12-14)
 
  Removed : 
 	  1.  Removed the following parsarg paradigms and its related patterns
@@ -589,7 +590,15 @@ Modified :
 		muJako, hamako, 
 	  4.  <e lm="keSa"><i>keS</i><par n="Gar/a__n"/></e>	 (Suggested by Chaitanya Sir 04-04-12)
 	  5.  <e lm="kamI"><i>kamI</i><par n="AjAxI/__n"/></e>	 (By Roja, Suggested by Chaitanya Sir 31-08-13)
-	  6.  <e lm="ha"><i>h</i><par n="Gar/a__n"/></e> 	 (by Roja, 	"		"     01-07-14)
+	  6.  <e lm="ha"><i>h</i><par n="Gar/a__n"/></e> 	 (By Roja, 	"		"     01-07-14)
+	  7.  Following entries are commented in k/Ona__p paradigm (By Roja, Suggested by Chaitanya Sir	29-12-14)
+		<e><p><l>isI</l><r>oI<s n="cat:p"/><s n="case:o"/><s n="parsarg:0"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/></r></p></e>
+		<e><p><l>isI</l><r>oI<s n="cat:p"/><s n="case:o"/><s n="parsarg:0"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/></r></p></e>
+		<e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:o"/><s n="parsarg:0"/><s n="gen:f"/><s n="num:s"/><s n="per:a"/><s n="tam:0"/></r></p></e>
+		<e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:d"/><s n="parsarg:0"/><s n="gen:f"/><s n="num:p"/><s n="per:a"/><s n="tam:0"/></r></p></e>
+		<e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:o"/><s n="parsarg:0"/><s n="gen:m"/><s n="num:s"/><s n="per:a"/><s n="tam:0"/></r></p></e>
+		<e><p><l>isa</l><r>yA<s n="cat:p"/><s n="case:d"/><s n="parsarg:0"/><s n="gen:m"/><s n="num:p"/><s n="per:a"/><s n="tam:0"/></r></p></e>
+		
 
 
  Changes in apertium-en-hi.en.metadix 
