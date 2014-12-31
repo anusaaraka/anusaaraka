@@ -2,6 +2,8 @@
 
 (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
 
+(deftemplate word-morph(slot original_word)(slot morph_word)(slot root)(slot category)(slot suffix)(slot number))
+
  (deffunction never-called ()
  (assert (No complete linkages found))
  (assert (missing-level-id) )
@@ -486,6 +488,24 @@
   	(printout  ?*DBUG* "(Rule_Name-ids   insert_nahIM   (hindi_id_order  "(implode$ (create$ $?list  ?id $?list1 nahIM ?kri)) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (29-10-14) Suggested by Chaitanya Sir
+ ;Harder your better will be the result. 
+ ;jiwanA kaTora Apa uwanA behawara pariNAma hogA.
+ (defrule add_vib_for_er
+ (declare (salience 15))
+ ?f0<-(hindi_id_order $?s_m1 ?id $?s_m2 ?id1 $?s_m3)
+ (id-original_word ?id ?w)
+ (id-original_word ?id1 ?w1)
+ (word-morph (original_word ?w) (suffix er))
+ (word-morph (original_word ?w1) (suffix er))
+ (not (vib_inserted ?id1))
+ => 
+	(retract ?f0)
+	(assert (hindi_id_order $?s_m1 jiwanA ?id $?s_m2 uwanA ?id1 $?s_m3))
+	(assert (vib_inserted ?id))
+	(assert (vib_inserted ?id1))
+ )
+ ;------------------------------------------------------------------------------------------------------------------
  ;Added provisional_Database_compound_phrase_root_mng and provisional_Database_compound_phrase_word_mng in the list by Roja(20-02-14)
  ;Mary is taller than Max.
  ;Added by Shirisha Manju (03-08-13)  Suggested by Chaitanya Sir
@@ -497,6 +517,7 @@
  (not (id-eng-src ?id ? Word_mng))
  ?f<-(hindi_id_order $?list ?id $?list1)
  (not (id-HM-source ?id ? ?src&Database_compound_phrase_root_mng|Database_compound_phrase_word_mng|provisional_Database_compound_phrase_root_mng|provisional_Database_compound_phrase_word_mng));Note : Same as below but no sentence found. 
+ (not (vib_inserted ?id))
  =>
         (retract ?f ?f0)
 	(assert (hindi_id_order  $?list aXika ?id $?list1))

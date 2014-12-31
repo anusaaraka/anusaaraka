@@ -31,7 +31,7 @@
         (assert (anu_id-anu_mng-man_mng  ?aid ?anu_mng $?pre $?post))
 )
 
-(defrule rm_underscore
+(defrule rm_underscore_L_layer
 (declare (salience 1000))
 ?f<-(anu_id-anu_mng-man_mng ?aid ?word ?man_mng)
 (not (underscore_removed ?aid))
@@ -43,6 +43,20 @@
   (bind ?new_mng (remove_character "," (implode$ ?new_mng) " "))
   (assert (anu_id-anu_mng-man_mng ?aid ?word ?new_mng))
   (assert (underscore_removed ?aid))
+)
+;---------------------------------------------------------------------------------------------------------------------------------------------
+(defrule rm_underscore_M_layer
+(declare (salience 1000))
+?f<-(eng_id-eng_wrd-man_wrd ?aid ?word ?man_mng)
+(not (underscore_removed_in_M ?aid))
+(test (and (neq ?man_mng @PUNCT-Comma) (neq ?word @PUNCT-Comma)))
+=>
+  (retract ?f)
+  (bind ?new_mng (remove_character "_" (implode$ (create$ ?man_mng)) " "))
+  (bind ?new_mng (remove_character "." (implode$ ?new_mng) " "))
+  (bind ?new_mng (remove_character "," (implode$ ?new_mng) " "))
+  (assert (eng_id-eng_wrd-man_wrd ?aid ?word ?new_mng))
+  (assert (underscore_removed_in_M ?aid))
 )
 ;---------------------------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 
@@ -641,6 +655,19 @@
 =>
 	(retract ?f0 ?f1)
 	(assert (chunk_name-chunk_ids-words VGF  ?id $?ids $?vids - ?id $?ids $?wrds))	
+)
+;-------------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;Today, most of the electrical devices we use [require] ac voltage.
+;Ajakala jina vExyuwa yukwiyoM kA hama upayoga karawe hEM unameM se aXikAMSa ke lie @ac voltawA kI hI [AvaSyakawA howI hE].
+(defrule verb_group_using_anu_out
+(declare (salience 12))
+?f0<-(manual_word_info (head_id ?id0) (word $?mng)(root ho)(group_ids ?id $?ids))
+(id-Apertium_output ? ?m $?mng)
+?f1<-(manual_word_info (head_id ?id1&:(= (- ?id 1) ?id1)) (word ?m) (group_ids $?ids1))
+=>
+	(retract ?f0 ?f1)
+	(assert (manual_word_info (head_id ?id1) (word ?m $?mng)(group_ids $?ids1 ?id $?ids)))
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju

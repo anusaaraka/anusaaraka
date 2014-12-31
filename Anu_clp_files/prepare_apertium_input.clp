@@ -1183,7 +1183,9 @@
   (defrule default_kA_vib_rule
   (declare (salience 351))
   (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(person ?per)(vibakthi kA)(group_ids $?ids))
-  (id-word ?pada_id  ?w&he|she|their|i|those|your|you|our|my|me|they|its|we|it|him|this|mine)
+  (id-cat_coarse ?pada_id PropN|pronoun)
+;  (id-word ?pada_id  ?w&he|she|their|i|those|your|you|our|my|me|they|its|we|it|him|this|mine)
+  (id-word ?pada_id  ?w)
   ?f0<-(id-HM-source ?pada_id ?h_word ?)
   (hindi_id_order  $?start $?ids ?foll_pada_id $?)
   (not (numberp ?foll_pada_id))

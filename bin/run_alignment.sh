@@ -2,7 +2,7 @@
  
  sh $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/convert_transliterate_file_to_fact_format.sh ../transliterated_words_list > transliterated_words_list.dat 
 
- myclips -f $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/run_H_gen_sen_eng.bat >> $1.error
+ myclips -f $HOME_anu_test/miscellaneous/SMT/phrasal_alignment/run_H_gen_sen_eng.bat >> $2.error 
 
  cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat sd_chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat lwg_info.dat hindi_meanings_with_grp_ids.dat GNP_agmt_info.dat id_Apertium_output.dat catastrophe.dat  > facts_for_eng_html
 
