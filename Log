@@ -70,8 +70,8 @@
 	extract_key_using_multifast-hi-en.c
 	Makefile
  23. Modified following shell files:
-	shell_scripts/anu_compile.sh	(to create agriculture gdbm)
-	dic_compile.sh			(	"	"	   )
+	shell_scripts/anu_compile.sh	(to create agriculture gdbm, removed touch extract_hindi_key.c)
+	dic_compile.sh			(	"	"	   	"	"	)
 	get_txt_files.sh		(to get canonical form for agriculture domain)
 	Anusaaraka_stanford.sh		(removed 'physics','agriculture' related code, instead generalised the code for any domain)
 	Anusaaraka_alignment.sh		(Modified path of alignment related mwe programe)
@@ -80,6 +80,8 @@
 	compile.sh			('phrasal_mwe' path for alignment related mwe programs)	
 	run_alignment.sh		(	"		"	)
 	run_alignment-hi-en.sh		(	"		"	)
+        get_phrasal_dic-en-hi.sh	(	"		"	)
+	get_phrasal_dic-hi-en-en.sh	(	"		"	)
  24. Modified following lex files:
 	non_canonical_form.lex
 	add_snt_tag.lex -> Added </s> in ending pattern
