@@ -62,7 +62,14 @@
 	'agriculture' related dictionaries
  21. Added new files:
 	list_Anu_data_domain, list_Anu_data_multi_domain (to get canonical form)
- 22. Modified following shell files:
+ 22. Added  phrasal_mwe folder (Separated alignment related mwe's in phrasal_mwe folder)
+	extract_hindi_key.c
+	extract_key_using_multifast.c
+	extract_key_using_multifast-hi-en-hi.c
+	extract_key_in_hindi_phrase.c
+	extract_key_using_multifast-hi-en.c
+	Makefile
+ 23. Modified following shell files:
 	shell_scripts/anu_compile.sh	(to create agriculture gdbm)
 	dic_compile.sh			(	"	"	   )
 	get_txt_files.sh		(to get canonical form for agriculture domain)
@@ -70,14 +77,17 @@
 	Anusaaraka_alignment.sh		(Modified path of alignment related mwe programe)
 	run_alignment.sh
 	multifast-v1.0.0/src/run.sh	(Modified 'physics-dic.c' to 'physics_multi_dic.c')
- 23. Modified following lex files:
+	compile.sh			('phrasal_mwe' path for alignment related mwe programs)	
+	run_alignment.sh		(	"		"	)
+	run_alignment-hi-en.sh		(	"		"	)
+ 24. Modified following lex files:
 	non_canonical_form.lex
 	add_snt_tag.lex -> Added </s> in ending pattern
 	replace-mapping-symbols.lex 
- 24. Modified following files:
+ 25. Modified following files:
 	Makefile 
 	list-right in canonical form (to get canonical form for agricultural domain)
- 25. apertium/tagger.c
+ 26. apertium/tagger.c
     -For easy maintainance and for faster execution replaced tagger.c program with tagger.lex ,
      Modified the following files:
      apertium/compile.sh		run_chunker_and_tagger.sh	  Anusaaraka.sh	                       Anusaaraka_all.sh 
