@@ -22,8 +22,8 @@
 
   echo "Alignment through Phrasal"
   echo "extracting keys from english sentence"
-  $HOME_anu_test/multifast-v1.0.0/src/extract_key_using_multifast $MYPATH/eng_tok_org $MYPATH/map.txt > $MYPATH/key.txt
-  $HOME_anu_test/multifast-v1.0.0/src/extract_key_using_multifast-hi-en $MYPATH/eng_tok_org $MYPATH/map-hi-en.txt > $MYPATH/key-hi-en.txt 
+  $HOME_anu_test/multifast-v1.0.0/src/phrasal_mwe/extract_key_using_multifast $MYPATH/eng_tok_org $MYPATH/map.txt > $MYPATH/key.txt
+  $HOME_anu_test/multifast-v1.0.0/src/phrasal_mwe/extract_key_using_multifast-hi-en $MYPATH/eng_tok_org $MYPATH/map-hi-en.txt > $MYPATH/key-hi-en.txt 
  
   sed -n -e "H;\${g;s/\n/\n;~~~~~~~~~~\n/g;p}"  $MYPATH/hnd >  $MYPATH/hnd-sent
   sed 1,2d $MYPATH/hnd-sent > $MYPATH/hnd-sent1 

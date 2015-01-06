@@ -27,8 +27,8 @@
 //*** 0. Include the header
 #include "ahocorasick.h"
 
-//** Include physics dictionary
-#include "physics-dic.c"
+//** Include domain dictionary
+#include "domain_multi_dic.c"
 
 //char buffer[256];
 
