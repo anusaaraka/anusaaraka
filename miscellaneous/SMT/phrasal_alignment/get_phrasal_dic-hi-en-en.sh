@@ -1,6 +1,6 @@
 MYPATH=`pwd`
 Phrasal_align_path=$HOME_anu_test/miscellaneous/SMT/phrasal_alignment
-Multifast_path=$HOME_anu_test/multifast-v1.0.0/src
+Multifast_path=$HOME_anu_test/multifast-v1.0.0/src/phrasal_mwe
 rm -rf $Phrasal_align_path/hi-en
 mkdir $Phrasal_align_path/hi-en
 
@@ -41,7 +41,7 @@ cd $Multifast_path
 cut -f1  $Phrasal_align_path/hi-en/Hin-Eng-dic.txt  > f1
 grep -v "^$" f1 > f1-1
 sed 's/ \[/\t[/'  f1-1 | sed 's/ /##/g' | sed 's/__/_/g'  | sed 's/^_//g' | sed 's/_$//g' | sed 's/"/\\"/g' > tmp
-./get_word_count_single.out  tmp > tmp1
+$HOME_anu_test/multifast-v1.0.0/src/get_word_count_single.out  tmp > tmp1
 sed 's/##//g' tmp1 | sed 's/\t/_",0, {stringy: "/g' | sed 's/^/\t{"_/g' | sed 's/$/"}},/g' > tmp2
 sed '1i\AC_PATTERN_t allpattern[] = {'  tmp2 > tmp3
 sed '$a\};'   tmp3  > extract_key-hi-en.c

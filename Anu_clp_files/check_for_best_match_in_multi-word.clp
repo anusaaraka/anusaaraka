@@ -9,7 +9,8 @@
  (declare (salience 9000))
  (Domain ?domain&~general)
  =>
- (bind ?mwe_dic (str-cat (sub-string 1 3 ?domain) "_multi_word_expressions.dat"))
+; (bind ?mwe_dic (str-cat (sub-string 1 3 ?domain) "_multi_word_expressions.dat"))
+ (bind ?mwe_dic "domain_multi_word_expressions.dat")
  (printout t ?mwe_dic crlf)
  (load-facts ?mwe_dic)
  )

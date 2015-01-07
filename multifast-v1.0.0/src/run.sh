@@ -8,7 +8,7 @@ cat $MYPATH/proper_noun-common_noun_compounds_in_canonical_form.txt $MYPATH/acro
 
 sh get_multi_word-dic.sh $MYPATH/multi_word_expressions_in_canonical_form.txt   multi_word-dic.c
 sh get_multi_word-dic.sh proper_noun_dic.txt     proper_noun-dic.c
-sh get_multi_word-dic.sh $MYPATH/phy_eng_multi_word_dic_in_canonical_form.txt   physics-dic.c
+sh get_multi_word-dic.sh $MYPATH/phy_eng_multi_word_dic_in_canonical_form.txt   physics_multi_dic.c
 sh get_multi_word-dic.sh $MYPATH/provisional_multi_word_dictionary_in_canonical_form.txt   provisional_multi_dic.c
 sh get_multi_word-dic.sh $MYPATH/agriculture_multi_dic_in_canonical_form.txt  agriculture_multi_dic.c
 
