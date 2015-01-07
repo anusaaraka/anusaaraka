@@ -50,9 +50,6 @@ cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
 
 cd  $HOME_anu_test/multifast-v1.0.0/src
  sh run.sh
- if ! [ -e extract_hindi_key.c ] ; then
-        touch extract_hindi_key.c
- fi
  make
 
 cd $MYPATH

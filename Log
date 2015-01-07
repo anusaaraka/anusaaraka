@@ -1,4 +1,4 @@
- 29-12-14
+ 07-01-15
  ========
  1. causative_verb_mng.clp: 
 	Modified: get_rule_info
@@ -57,25 +57,37 @@
 	Removed '=', '$' from the punctuation list and added '{', '}', '[', ']'
  18. FinalGenerate.pl:
 	Added code to stop english words (ie. which starts with '@') to go to lt-proc
- 19. multi_word_expression_for_physics.c:
-	Modified fact name from (ids-phy_cmp_mng-head-cat-mng_typ-priority) to (ids-domain_cmp_mng-head-cat-mng_typ-priority)
- 20. Added comments in multi_word_expression_for_proper_nouns.c
- 21. Added new folder Anu_data/domain:
+ 19. Added comments in multi_word_expression_for_proper_nouns.c
+ 20. Added new folder Anu_data/domain:
 	'agriculture' related dictionaries
- 22. Added new files:
-	multi_word_expression_for_agriculture.c  (to get mwe for agriculture domain)
+ 21. Added new files:
 	list_Anu_data_domain, list_Anu_data_multi_domain (to get canonical form)
+ 22. Added  phrasal_mwe folder (Separated alignment related mwe's in phrasal_mwe folder)
+	extract_hindi_key.c
+	extract_key_using_multifast.c
+	extract_key_using_multifast-hi-en-hi.c
+	extract_key_in_hindi_phrase.c
+	extract_key_using_multifast-hi-en.c
+	Makefile
  23. Modified following shell files:
-	shell_scripts/anu_compile.sh	(to create agriculture gdbm)
-	dic_compile.sh			(	"	"	   )
+	shell_scripts/anu_compile.sh	(to create agriculture gdbm, removed touch extract_hindi_key.c)
+	dic_compile.sh			(	"	"	   	"	"	)
 	get_txt_files.sh		(to get canonical form for agriculture domain)
-	Anusaaraka_stanford.sh		(code to run agriculture mwe)
-	Anusaaraka_alignment.sh		
+	Anusaaraka_stanford.sh		(removed 'physics','agriculture' related code, instead generalised the code for any domain)
+	Anusaaraka_alignment.sh		(Modified path of alignment related mwe programe)
 	run_alignment.sh
+	multifast-v1.0.0/src/run.sh	(Modified 'physics-dic.c' to 'physics_multi_dic.c')
+	compile.sh			('phrasal_mwe' path for alignment related mwe programs)	
+	run_alignment.sh		(	"		"	)
+	run_alignment-hi-en.sh		(	"		"	)
+        get_phrasal_dic-en-hi.sh	(	"		"	)
+	get_phrasal_dic-hi-en-en.sh	(	"		"	)
  24. Modified following lex files:
 	non_canonical_form.lex
+	add_snt_tag.lex -> Added </s> in ending pattern
+	replace-mapping-symbols.lex 
  25. Modified following files:
-	Makefile, run.sh in multifast (to get mwe for agriculture domain)
+	Makefile 
 	list-right in canonical form (to get canonical form for agricultural domain)
  26. apertium/tagger.c
     -For easy maintainance and for faster execution replaced tagger.c program with tagger.lex ,
@@ -84,12 +96,19 @@
      Anusaaraka_bllip_parser.sh		Anusaaraka_rasp.sh		  Anusaaraka_stanford.sh	       Anusaaraka_bllip_parser_minion.sh
      Anusaaraka_site.sh			Anusaaraka_stanford-Factored.sh	  Anusaaraka_stanford_align_man_ord.sh
      Anusaaraka_stanford_minion.sh      removed_files/README    	  Anusaaraka_berkeley.sh
- 27. Updated following dictionaries: 
-	changes_in_databases	provisional_multi_word_dictionary.txt	apertium-en-hi.en.metadix
- 28. Updated following files:
+ 26. Removed following files in multifast-v1.0.0/src/ folder:
+	multi_word_expression_for_agriculture.c
+	multi_word_expression_for_physics.c
+ 27. Renamed 'multi_word_expression_for_physics.c' to 'multi_word_expression_for_domain.c'
+	-> This works for any domain
+	-> Replaced (ids-phy_cmp_mng-head-cat-mng_typ-priority) to (ids-domain_cmp_mng-head-cat-mng_typ-priority)
+ 28. Updated following dictionaries: 
+	changes_in_databases	provisional_multi_word_dictionary.txt	apertium-en-hi.en.metadix	apertium_hn.dix
+ 29. Updated following files:
 	INSTALL
 	README
- 29. Updated Log.
+ 30. Updated Log.
+
 
  06-11-14
  ========

@@ -2,6 +2,8 @@
  source ~/.bashrc
 
   MYPATH=$HOME_anu_tmp/tmp/$1_tmp
+  PHRASAL_PATH=$HOME_anu_test/miscellaneous/SMT/phrasal_alignment
+
   $HOME_anu_test/Anu_src/identify-nonascii-chars.out $2 $MYPATH/hnd1
   sed -i  '1iparIkRaNa .' $MYPATH/hnd1
   perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/hnd1 | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" | sed 's/^@[ ]/@/g' | sed 's/^/_/g' | sed 's/[ ]@[ ]/ @/g' | sed 's/ /_/g' |  sed 's/$/_/g' > $MYPATH/hnd_tmp
@@ -13,7 +15,7 @@
   perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/hnd | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" | sed 's/ @ / @/g' | sed 's/[ ]\.\([^$]\)/\.\1/g' > $MYPATH/hnd-hi-en
 
 
-  cd $HOME_anu_test/miscellaneous/SMT/phrasal_alignment
+  cd $PHRASAL_PATH
   sh get_pos_chunk.sh $MYPATH
   replace-abbrevations.sh $MYPATH/one_sentence_per_line.txt_tokenised  $MYPATH/eng_tmp_tok_org
   $HOME_anu_test/Anu/stdenglish/replace-mapping-symbols.out < $MYPATH/eng_tmp_tok_org > $MYPATH/eng_tmp1_tok_org
@@ -22,9 +24,19 @@
 
   echo "Alignment through Phrasal"
   echo "extracting keys from english sentence"
-  $HOME_anu_test/multifast-v1.0.0/src/extract_key_using_multifast $MYPATH/eng_tok_org $MYPATH/map.txt > $MYPATH/key.txt
-  $HOME_anu_test/multifast-v1.0.0/src/extract_key_using_multifast-hi-en $MYPATH/eng_tok_org $MYPATH/map-hi-en.txt > $MYPATH/key-hi-en.txt 
- 
+  if [ "$3" != "" ] ; then
+	cd $HOME_anu_test/multifast-v1.0.0/src/phrasal_mwe	
+	cp extract_key_$3.c extract_key.c
+	cp extract_key-hi-en_$3.c extract_key-hi-en.c
+	make clean > /dev/null
+	make > /dev/null
+	./extract_key_using_multifast $MYPATH/eng_tok_org $MYPATH/map.txt > $MYPATH/key.txt
+	./extract_key_using_multifast-hi-en $MYPATH/eng_tok_org $MYPATH/map-hi-en.txt > $MYPATH/key-hi-en.txt 
+  else
+	echo "Please specify the domain to run further...EXITING"
+	exit
+  fi       
+  cd $PHRASAL_PATH 
   sed -n -e "H;\${g;s/\n/\n;~~~~~~~~~~\n/g;p}"  $MYPATH/hnd >  $MYPATH/hnd-sent
   sed 1,2d $MYPATH/hnd-sent > $MYPATH/hnd-sent1 
   sed -n -e "H;\${g;s/\n/\n;~~~~~~~~~~\n/g;p}"  $MYPATH/eng_tok_org >  $MYPATH/eng_tok_org-sent
@@ -53,12 +65,11 @@
  $HOME_anu_test/Anu_src/split_file.out pos.txt dir_names.txt pos.dat
  $HOME_anu_test/Anu_src/split_file.out chunk_info.txt dir_names.txt chunk_info.dat
 
- PHRASAL_PATH=$HOME_anu_test/miscellaneous/SMT/phrasal_alignment
  cd $PHRASAL_PATH
  while read line
  do 
-	sh run_alignment.sh $MYPATH/$line
-	sh run_alignment-hi-en.sh $MYPATH/$line
+	sh run_alignment.sh $MYPATH/$line $3
+	sh run_alignment-hi-en.sh $MYPATH/$line $3
         cd $HOME_anu_test/bin 
 	sh run_alignment.sh $MYPATH/$line $1
 	cd $PHRASAL_PATH

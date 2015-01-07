@@ -145,9 +145,6 @@
  make
  cd  $HOME_anu_test/multifast-v1.0.0/src
  sh run.sh
- if ! [ -e extract_hindi_key.c ] ; then
-	touch extract_hindi_key.c
- fi 
  make
 
  echo "Compiling Anu stdenglish source files"

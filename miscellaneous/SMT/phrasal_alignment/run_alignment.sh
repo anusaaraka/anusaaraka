@@ -9,7 +9,8 @@ echo "Map english offsets with Word ids" >> $1/phrasal_error
 python map-eng-offset.py $1/key_tmp.dat $1/map.dat  $1/map-wrd-id.dat >  $1/key.dat
 
 echo "extracting values for the given keys"   >> $1/phrasal_error
-./gdbm-fetch.out  en-hi-gdbm-dict.gdbm  $1/key.dat > $1/key-val.dat  2>> $1/phrasal_error
+./gdbm-fetch.out  en-hi-gdbm-dict_$2.gdbm  $1/key.dat > $1/key-val.dat  2>> $1/phrasal_error
+#./gdbm-fetch.out  en-hi-gdbm-dict_tourism.gdbm  $1/key.dat > $1/key-val.dat  2>> $1/phrasal_error
 
 echo "searching values in hindi sentence"  >> $1/phrasal_error
 python match_value_in_hnd.py  $1/hnd  $1/key-val.dat $1/graph_input $1/eng_tok_org $1/graph_output $1/english_left_over.dat > $1/match-value.dat 2>> $1/phrasal_error
@@ -18,8 +19,8 @@ echo "Phrase alignment" >> $1/phrasal_error
 ./replace-punctuation.out < $1/hnd > $1/hnd1
 
 echo "Getting hindi offsets"  >> $1/phrasal_error
-sh get_mul_pat.sh  $1/match-value.dat  $HOME_anu_test/multifast-v1.0.0/src/extract_hindi_key.c 2>> $1/phrasal_error
-cd $HOME_anu_test/multifast-v1.0.0/src
+sh get_mul_pat.sh  $1/match-value.dat  $HOME_anu_test/multifast-v1.0.0/src/phrasal_mwe/extract_hindi_key.c 2>> $1/phrasal_error
+cd $HOME_anu_test/multifast-v1.0.0/src/phrasal_mwe
 rm -f extract_key_in_hindi_phrase extract_key_in_hindi_phrase.o
 make >> $1/phrasal_error
 sed 's/^_//g'  $1/hnd | sed 's/_$//g' | sed 's/_/ /g'  > $1/hnd-tmp
@@ -43,7 +44,8 @@ else
 	python map_eng_offset-to_wrdids.py  $1/align_eng.dat  $1/map-wrd-id.dat > $1/mapped.dat 2>> $1/phrasal_error
 	python  map-wrd-offset-anu-ids.py $1/mapped.dat  > $1/mapped-1.dat  2>> $1/phrasal_error
 	echo "Word alignment" >> $1/phrasal_error
-	python get_word_align.py Word-to-Word-dict.txt   $1/mapped.dat $1/hnd2 $1/left $1/left1 > $1/wrd-to-wrd.txt1 2>> $1/phrasal_error
+	python get_word_align.py Word-to-Word-dict_$2.txt   $1/mapped.dat $1/hnd2 $1/left $1/left1 > $1/wrd-to-wrd.txt1 2>> $1/phrasal_error
+#	python get_word_align.py Word-to-Word-dict_tourism.txt   $1/mapped.dat $1/hnd2 $1/left $1/left1 > $1/wrd-to-wrd.txt1 2>> $1/phrasal_error
 	echo "Aligning left over words" >> $1/phrasal_error  2>> $1/phrasal_error
 #	python align-left-over-wrds.py  $1/wrd-to-wrd.txt1  $1/hnd  $1/left $1/left-over-words.dat $1/align_left_over_wrds.dat > $1/wrd-to-wrd.dat 2>> $1/phrasal_error
 	python mapping.py $1/wrd-to-wrd.txt1 > $1/mapped1.dat 2>> $1/phrasal_error

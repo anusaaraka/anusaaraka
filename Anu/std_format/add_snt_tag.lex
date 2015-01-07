@@ -22,6 +22,6 @@ int len;
 
 <start_tag>[^a-zA-Z]$	{	ECHO; printf("</s>"); */	}
 
-<start_tag>\n\<\/p\>\n	{	printf("</p>"); BEGIN INITIAL;	}
+<start_tag>\n\<\/p\>\n	{	printf("</s></p>"); BEGIN INITIAL;	}
 
 %%
