@@ -86405,7 +86405,7 @@ unnoted_adjective	upekRiwa
 unnoticeable_adjective	alakRya
 unnoticeableness_noun	alakRyawA
 unnoticeably_adverb	awisUkRma_rUpa_se/alakRiwa_rUpa_se
-unnoticed_adjective	axqRta/alakRiwa/beKabara/ajFAwa/acAnaka
+unnoticed_adjective	alakRiwa/axqRta/beKabara/ajFAwa/acAnaka
 unnourished_adjective	apoRiwa
 unnumberable_adjective	asafKya
 unnumbered_adjective	asafKya
@@ -92442,7 +92442,7 @@ worn_adjective	GisA_huA/WakA/PatA-purAnA/klAnwa/GisA/WakA_huA
 worner_UNDEFINED	WakA_huA
 wornest_UNDEFINED	WakA_huA
 worried_UNDEFINED	pareSAna_karanA
-worried_adjective	pareSAna/cinwiwa/cinwAgraswa/ASafkAvAna
+worried_adjective	cinwiwa/pareSAna/cinwAgraswa/ASafkAvAna
 worriedly_adverb	uxvignawApUrvaka/uxvignawaH/cinwiwawaH
 worrier_noun	bahuwa_aXika_cinwA_karane_vAlA
 worries_UNDEFINED	pareSAna_karanA
