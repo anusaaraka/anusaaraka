@@ -30,6 +30,8 @@
 
  cp $MYPATH/$1_tmp/underscore_hyphen_replace_info.txt  $MYPATH/$1_tmp/$2/underscore_hyphen_replace_info.dat
  myclips -f $HOME_anu_test/Anu_clp_files/run_H_gen_sen.bat >> $1.error
+
+## python $HOME_anu_test/Anu_src/hindi_sentence.py  $MYPATH/$1_tmp/$2/hindi_id_order.dat  $MYPATH/$1_tmp/$2/hindi_punctuation.dat $MYPATH/$1_tmp/$2/id_Apertium_output.dat > $MYPATH/$1_tmp/$2/hindi_sentence_tmp.dat
  
  cat  para_sent_id_info.dat original_word.dat word.dat punctuation_info.dat sd_chunk.dat cat_consistency_check.dat padasuthra.dat root.dat  revised_preferred_morph.dat parserid_wordid_mapping.dat lwg_info.dat relations.dat hindi_meanings.dat GNP_agmt_info.dat id_Apertium_output.dat  hindi_id_order.dat position.dat hindi_punctuation.dat catastrophe.dat English_sentence.dat >>$MYPATH/$1_tmp/$2/all_facts
 
@@ -45,8 +47,8 @@
  cat  hindi_sentence_tmp2.dat |  sed -e 's/\\@//g' | sed 's/@//g'  > hindi_sentence.dat
  cat  hindi_sentence.dat
  
- wx_utf8 < hindi_sentence_tmp2.dat  >  hindi_sentence_utf8.dat
- cat hindi_sentence_utf8.dat
+ #wx_utf8 < hindi_sentence_tmp2.dat  >  hindi_sentence_utf8.dat
+ #cat hindi_sentence_utf8.dat
 
  grep "Warning:" $1.error > error.txt
  sort -u error.txt > errors.txt

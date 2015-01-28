@@ -79,11 +79,11 @@
  rm -rf bllip-parser-master 
 
  echo "Removing Multifast out files"
- cd $HOME_anu_test/multifast-v1.0.0/ahocorasick/
+ cd $HOME_anu_test/multifast-v1.4.2/ahocorasick/
  make clean
 
- cd $HOME_anu_test/multifast-v1.0.0/src/
- rm -f get_word_count multi_word-dic.c  physics-dic.c  proper_noun-dic.c provisional_multi_dic.c
+ cd $HOME_anu_test/multifast-v1.4.2/src/
+ rm -f get_word_count get_word_count_single.out multi_word-dic.c  physics_multi_dic.c  proper_noun-dic.c provisional_multi_dic.c agriculture_multi_dic.c
  make clean 
 
  echo "Removing stanford-tregex"

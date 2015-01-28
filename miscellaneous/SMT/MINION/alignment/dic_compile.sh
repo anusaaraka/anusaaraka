@@ -24,8 +24,8 @@ cd $HOME_anu_test/Anu_databases/
 
 rm $MYPATH/eng_* $MYPATH/hnd_multi* $MYPATH/hnd_phy_multi*
 
-cd  $HOME_anu_test/multifast-v1.0.0/src
-rm -f get_word_count multi_word-dic.c  physics-dic.c  proper_noun-dic.c provisional_multi_dic.c
+cd  $HOME_anu_test/multifast-v1.4.2/src
+rm -f get_word_count get_word_count_single.out multi_word-dic.c  physics_multi_dic.c  proper_noun-dic.c provisional_multi_dic.c agriculture_multi_dic.c
 make clean
 
 ################################# Compiling Source files ################################################
@@ -48,7 +48,7 @@ cd $HOME_anu_test/Anu_data/canonical_form_dictionary/
 
 ################################# Generating MWE Dictionaries ################################################
 
-cd  $HOME_anu_test/multifast-v1.0.0/src
+cd  $HOME_anu_test/multifast-v1.4.2/src
  sh run.sh
  make
 

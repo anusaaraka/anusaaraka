@@ -20655,6 +20655,17 @@ zone_land	kRewra_kI_BUmi#kRewra_kI_BUmi#noun#2#RM
 zoning_law	kRewrIkaraNa_kAnUna#kRewrIkaraNa_kAnUna#noun#2#RM
 zoning_system	kRewrIkaraNa_sixXAnwa#kRewrIkaraNa_sixXAnwa#noun#2#RM
 zoot_money	jUta_rASi/jZUta_viwwIya_sevA_saMsWAna_kA_pEsA#jUta_rASi/jZUta_viwwIya_sevA_saMsWAna_kA_pEsA#noun#2#RM
+target_entity	lakRya_wawwva/lakRya_vaswu#lakRya_wawwva/lakRya_vaswu#noun#1#RM
+target_url	lakRya_yUnivarsala_risorsa_loketara#lakRya_yUnivarsala_risorsa_loketara#noun#1#RM
+biodiversity_target	jEva_viviXawA_lakRya#jEva_viviXawA_lakRya#noun#2#RM
+object_target	vaswu_lakRya/uxxeSya_lakRya#vaswu_lakRya/uxxeSya_lakRya#noun#2#RM
+tax_perspective	kara_xqRtikoNa#kara_xqRtikoNa#noun#1#RM
+tax_status	kara_sWiwi#kara_sWiwi#noun#1#RM
+tax_stimulant	kara_prowsAhaka#kara_prowsAhaka#noun#1#RM
+tax_strategy	kara_raNanIwi#kara_raNanIwi#noun#1#RM
+tax_structure	kara_saMracanA#kara_saMracanA#noun#1#RM
+tax_subsidy	kara_anuxAna#kara_anuxAna#noun#1#RM
+tax_system	kara_praNAlI#kara_praNAlI#noun#1#RM
 ###################################################################################################################################
 absentee_landlordism	anupasZWiwa_jamIMxArI#anupasZWiwa_jamIMxArI#adjective#2#RM
 # AMATEUR THEATRICALS AND EARLYPLAYWRIGHTS SPREAD of English education, growing affluence of trading families, [absentee landlordism,] the rise of the middle class and the exploding growth of Calcutta; the strong pull of traditional jatra among the common people on the one hand and, on the other, reaction against it amongst the intelligentsia, acquaintance with English dramatic literature and English theatrical forms in the playhouses of Calcuttaall these fertilised the soil for Bengali theatre to grow and take in many ways the shape it did
@@ -32488,3 +32499,15 @@ side_streets	bAjU_kI_sadZakeM/kinAre_kI_galiyAz#bAjU_kI_sadZakeM/kinAre_kI_galiy
 somebody_else	kisI_Ora/anya#kisI_Ora/anya#noun#2#RM
 #You have been born a woman EOS Why do you want to change into a man by a supernatural process? You'd better let [somebody else] kill Bheeshma
 # nArI rUpa meM janmI ho aba kisI xEvI upAya se purURa kyoM honA cAhawI ho? BIRma vaXa kI jimmexArI kisI Ora para Codo
+spring_traps	kAztoM_ke_PaMxe#kAztoM_ke_PaMxe#noun#2#RM
+# It is trapped in iron [spring traps]
+# ise aksara loga lohe ke kAztoM ke PaMxoM meM PazsA lewe hEM
+transport_systems	parivahana_praNAliyAz#parivahana_praNAliyAz#noun#2#RM
+# EIL is now diversifying into several areas including highways & bridges, airports, mass rapid [transport systems,] ports & terminals, power projects, non-conventional/renewable energy sources, buildings and related works
+# I AI ela aba rAjamArgo Ora puloM, havAI addoM, mAsa repiu trAMsaporta sistamsa, baMxaragAhoM Ora tarminaloM, bijalI pariyojanAoM, apAramparika/punarupayogI UrjA srowoM, Bavana Ora sambaxGa kAryo sahiwa kaI kReFoM ko apanI gawiviXiyoM meM SAmila karawe hue viviXawA lAne kI ora agrasara hE
+village_economy	grAma_arWavyavasWA#grAma_arWavyavasWA#noun#2#RM
+# Village Swaraj is man-centred non-exploiting decentralized, simple [village economy] providing for full employment to 'each one of its citizens on the basis of voluntary co-operation and working for achieving self-sufficiency in its basic EOS requirements of food, clothing and other necessities of life
+# grAma-svarAjya EsI sarala Ora sAxI grAma-arWavyavasWA hE, jisakA kenxra manuRya hE, jo SoRaNa-rahiwa hE Ora vikenxriwa hE vaha svecCApUrNa sahayogake AXAra para apane hara nAgarikako pUrA kAma xenekA prabanXa karawI hE Ora jIvanakI anna-vaswrakI prAWamika AvaSyakawAoM waWA anya AvaSyakawAoMke viRayameM svAvalambana sixXa karanekA prayawna karawI hEM
+volunteer_corps	SAMwixala_kA_xala/svayaMsevI_SAMwixala#SAMwixala_kA_xala/svayaMsevI_SAMwixala#noun#2#RM
+# Ordinarily, the efficient running of a large [volunteer corps] based on force implies the possibility of the use of force in the event of breach of discipline
+#Ese hiMsaka gAMvoMmeM SAMwixala xalameM AxamI ke cAla-calana ko nahI xeKA jAwA

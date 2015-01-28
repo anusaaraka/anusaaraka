@@ -1,7 +1,0 @@
-TODO
-----
-
-* Read input from pipe (multifast)
-* Receive patterns from command line (multifast)
-* Implement Rabin-Carp algorithm as a library
-

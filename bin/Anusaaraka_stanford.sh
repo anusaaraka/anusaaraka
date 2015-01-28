@@ -102,18 +102,18 @@
   perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised
 
   echo "Multi word ..."
-  $HOME_anu_test/multifast-v1.0.0/src/multi_word_expression $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/multi_word_expressions.txt
-  $HOME_anu_test/multifast-v1.0.0/src/multi_word_expression_for_proper_nouns $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/proper_noun_dic.txt
+  $HOME_anu_test/multifast-v1.4.2/src/build/multi_word_expression $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/multi_word_expressions.txt
+  $HOME_anu_test/multifast-v1.4.2/src/build/multi_word_expression_for_proper_nouns $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/proper_noun_dic.txt
   if [ "$3" == "True" ]; then
-	  $HOME_anu_test/multifast-v1.0.0/src/multi_word_expression_for_prov $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/provisional_multi_dic.txt
+	  $HOME_anu_test/multifast-v1.4.2/src/build/multi_word_expression_for_prov $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/provisional_multi_dic.txt
   fi
 
   if [ "$4" != "general" -a "$4" != "" ]; then
-     cd $HOME_anu_test/multifast-v1.0.0/src/
+     cd $HOME_anu_test/multifast-v1.4.2/src
      cp $4_multi_dic.c  domain_multi_dic.c
-     rm -f multi_word_expression_for_domain multi_word_expression_for_domain.o
+     rm -f build/multi_word_expression_for_domain build/multi_word_expression_for_domain.o
      make >/dev/null 
-     $HOME_anu_test/multifast-v1.0.0/src/multi_word_expression_for_domain $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/domain_multi_word_expressions.txt
+     $HOME_anu_test/multifast-v1.4.2/src/build/multi_word_expression_for_domain $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/domain_multi_word_expressions.txt
   fi
 
   cd $MYPATH/tmp/$1_tmp

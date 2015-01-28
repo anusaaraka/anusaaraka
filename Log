@@ -1,4 +1,4 @@
- 07-01-15
+ 28-01-15
  ========
  1. causative_verb_mng.clp: 
 	Modified: get_rule_info
@@ -104,11 +104,24 @@
 	-> Replaced (ids-phy_cmp_mng-head-cat-mng_typ-priority) to (ids-domain_cmp_mng-head-cat-mng_typ-priority)
  28. Updated following dictionaries: 
 	changes_in_databases	provisional_multi_word_dictionary.txt	apertium-en-hi.en.metadix	apertium_hn.dix
- 29. Updated following files:
+ 29. Updation of new versions:
+	multifast-v1.0.0 to multifast-v1.4.2 
+ 30. Updated multifast new version in following programs:
+	Anusaaraka_alignment.sh
+	Anusaaraka_stanford.sh
+	dic_compile.sh
+	phrasal_alignment/compile.sh
+	get_mul_pat.sh
+	get_phrasal_dic-en-hi.sh
+	get_phrasal_dic-hi-en-en.sh
+	run_alignment-hi-en.sh
+	phrasal_alignment/run_alignment.sh
+	anu_compile.sh
+	remove_out-files.sh
+ 31. Updated following files:
 	INSTALL
 	README
- 30. Updated Log.
-
+ 32. Updated Log.
 
  06-11-14
  ========
