@@ -13,5 +13,5 @@ $HOME_anu_test/Anu_data/create-gdbm.pl  Hin-Eng-dic_physics.gdbm < Hin-Eng-dic_p
 #$HOME_anu_test/Anu_data/create-gdbm.pl  Hin-Eng-dic_tourism.gdbm < Hin-Eng-dic_tourism.txt
 #$HOME_anu_test/Anu_data/create-gdbm.pl  Hin-Eng-dic-hi.gdbm < Hin-Eng-dic.txt-hi-en
 
-cd $HOME_anu_test/multifast-v1.0.0/src/phrasal_mwe
+cd $HOME_anu_test/multifast-v1.4.2/src/phrasal_mwe
 make
