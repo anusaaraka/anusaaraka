@@ -141,9 +141,9 @@
  rm word_field mng_field mng_utf8 default-iit-bombay-shabdanjali-dic_firefox_tmp.txt default-iit-bombay-shabdanjali-dic_smt_tmp.txt
 
  echo "Compiling Multifast programmes..."
- cd  $HOME_anu_test/multifast-v1.0.0/ahocorasick
+ cd  $HOME_anu_test/multifast-v1.4.2/ahocorasick
  make
- cd  $HOME_anu_test/multifast-v1.0.0/src
+ cd  $HOME_anu_test/multifast-v1.4.2/src
  sh run.sh
  make
 

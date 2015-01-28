@@ -25,13 +25,13 @@
   echo "Alignment through Phrasal"
   echo "extracting keys from english sentence"
   if [ "$3" != "" ] ; then
-	cd $HOME_anu_test/multifast-v1.0.0/src/phrasal_mwe	
+	cd $HOME_anu_test/multifast-v1.4.2/src/phrasal_mwe	
 	cp extract_key_$3.c extract_key.c
 	cp extract_key-hi-en_$3.c extract_key-hi-en.c
 	make clean > /dev/null
 	make > /dev/null
-	./extract_key_using_multifast $MYPATH/eng_tok_org $MYPATH/map.txt > $MYPATH/key.txt
-	./extract_key_using_multifast-hi-en $MYPATH/eng_tok_org $MYPATH/map-hi-en.txt > $MYPATH/key-hi-en.txt 
+	build/extract_key_using_multifast $MYPATH/eng_tok_org $MYPATH/map.txt > $MYPATH/key.txt
+	build/extract_key_using_multifast-hi-en $MYPATH/eng_tok_org $MYPATH/map-hi-en.txt > $MYPATH/key-hi-en.txt 
   else
 	echo "Please specify the domain to run further...EXITING"
 	exit
