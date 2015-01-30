@@ -4,23 +4,6 @@ MYPATH1=$HOME_anu_test/Anu_data/canonical_form_dictionary/dictionaries
 
 cd $HOME_anu_test/Anu_databases/
 	rm *.gdbm
-#cd $HOME_anu_test/miscellaneous/SMT/MINION/alignment
-#rm $HOME_anu_test/Anu_databases/phy_dictionary.gdbm
-#rm $HOME_anu_test/Anu_databases/provisional_*
-#rm $HOME_anu_test/Anu_databases/restricted_eng_words.gdbm
-#rm $HOME_anu_test/Anu_databases/restricted_hnd_words.gdbm
-#rm $HOME_anu_test/Anu_databases/hindi_tam_dictionary.gdbm
-#rm $HOME_anu_test/Anu_databases/hindi_wordnet_dic*.gdbm
-#rm $HOME_anu_test/Anu_databases/numbers_dic.gdbm
-#rm $HOME_anu_test/Anu_databases/preposition_dictionary.gdbm
-#rm $HOME_anu_test/Anu_databases/inferred_dic.gdbm
-#rm $HOME_anu_test/Anu_databases/Science-dictionary.gdbm
-#rm $HOME_anu_test/Anu_databases/preposition.gdbm
-#rm $HOME_anu_test/Anu_databases/adv_prep_dic.gdbm
-#rm $HOME_anu_test/Anu_databases/eng_*
-#rm $HOME_anu_test/Anu_databases/hnd_multi_*
-#rm $HOME_anu_test/Anu_databases/hnd_phy_multi_*
-#rm $HOME_anu_test/Anu_databases/default-iit-bombay-shabdanjali-dic*.gdbm
 
 rm $MYPATH/eng_* $MYPATH/hnd_multi* $MYPATH/hnd_phy_multi*
 
