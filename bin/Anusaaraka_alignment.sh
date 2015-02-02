@@ -30,8 +30,8 @@
 	cp extract_key-hi-en_$3.c extract_key-hi-en.c
 	make clean > /dev/null
 	make > /dev/null
-	build/extract_key_using_multifast $MYPATH/eng_tok_org $MYPATH/map.txt > $MYPATH/key.txt
-	build/extract_key_using_multifast-hi-en $MYPATH/eng_tok_org $MYPATH/map-hi-en.txt > $MYPATH/key-hi-en.txt 
+	./extract_key_using_multifast $MYPATH/eng_tok_org $MYPATH/map.txt > $MYPATH/key.txt
+	./extract_key_using_multifast-hi-en $MYPATH/eng_tok_org $MYPATH/map-hi-en.txt > $MYPATH/key-hi-en.txt 
   else
 	echo "Please specify the domain to run further...EXITING"
 	exit

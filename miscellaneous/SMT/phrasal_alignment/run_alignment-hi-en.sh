@@ -15,10 +15,10 @@ echo "Phrase alignment" >> $1/phrasal_error
 echo "Getting hindi offsets"  >> $1/phrasal_error
 sh get_mul_pat.sh  $1/match-value-hi-en.dat  $HOME_anu_test/multifast-v1.4.2/src/phrasal_mwe/extract_hindi_key.c 2>> $1/phrasal_error
 cd $HOME_anu_test/multifast-v1.4.2/src/phrasal_mwe
-rm -f build/extract_key_in_hindi_phrase build/extract_key_in_hindi_phrase.o
+rm -f extract_key_in_hindi_phrase extract_key_in_hindi_phrase.o
 make >> $1/phrasal_error
 sed 's/^_//g'  $1/hnd | sed 's/_$//g' | sed 's/_/ /g'  > $1/hnd-tmp
-build/extract_key_in_hindi_phrase $1/hnd-tmp  $1/map_hindi_offsets-hi-en.dat > $1/key_hindi_phrase-hi-en.dat  2>> $1/phrasal_error
+./extract_key_in_hindi_phrase $1/hnd-tmp  $1/map_hindi_offsets-hi-en.dat > $1/key_hindi_phrase-hi-en.dat  2>> $1/phrasal_error
 python $MYPATH/map-hindi-offset.py  $1/key_hindi_phrase-hi-en.dat $1/map_hindi_offsets-hi-en.dat $1/match-value-hi-en.dat > $1/match-value-with-hindi-wrdid-hi-en.dat 2>> $1/phrasal_error
 
 cd $MYPATH

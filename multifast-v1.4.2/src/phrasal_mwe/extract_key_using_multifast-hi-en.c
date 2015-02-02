@@ -93,30 +93,22 @@ int match_handler (AC_MATCH_t * matchp, void * param)
 	char id_count[1000], *p;
 	int word_ids, final_ids;
 
-//	if (matchp->position >  par->position) { Commented by Roja and added below if else loop
-	if (matchp->match_num == 1) { 
+/*Commented below if loop by Roja 
+	if (matchp->position >  par->position) { 
+	   return 1; 
+
+	printf ("@ %2ld : ", matchp->position); 
+*/
+//Added below loop by Roja
+	if (matchp->match_num >= 1) { 
               for(k=0; k<1000 ; k++) {
                 if(offset_no[k] == matchp->position)
 		 {
 		   word_ids=word_id[k];
 //		   printf ("@ %ld-- %d--%d", matchp->position, word_ids, word_count);
-//        	    return 1; //Commented by Roja
 		   break;
  	}
               }}
-        else {
-	//	printf ("At %ld : ", matchp->position); //Commented by Roja
-		for(k=0; k<1000 ; k++) {
-                if(offset_no[k] == matchp->position)
-		 {
-		   word_ids=word_id[k];
-//		   printf ("@ %ld-- %d--%d", matchp->position, word_ids, word_count);
-		   break;
- 	}}}
-
-
-
-// printf ("@ %2ld : ", matchp->position); //Commented by Roja
 
 for (j=0; j < matchp->match_num; j++) { //(Added below code by Roja.)
 //        printf ("%s (%s), ", matchp->patterns[j].rep.stringy, matchp->patterns[j].astring);
