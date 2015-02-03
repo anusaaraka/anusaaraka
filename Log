@@ -1,4 +1,4 @@
- 28-01-15
+ 03-02-15
  ========
  1. causative_verb_mng.clp: 
 	Modified: get_rule_info
@@ -118,10 +118,11 @@
 	phrasal_alignment/run_alignment.sh
 	anu_compile.sh
 	remove_out-files.sh
- 31. Updated following files:
+ 31. Modified CLIPS/wx_utf8.c , corrected the mistake [ ्जाँच_कर ] in wx_utf8.c functiion.
+ 32. Updated following files:
 	INSTALL
 	README
- 32. Updated Log.
+ 33. Updated Log.
 
  06-11-14
  ========
@@ -262,7 +263,7 @@
 	mapping-symbols.lex -> 	Added code to handle '|'
 	replace-mapping-symbols.lex -> Modified SYMBOL-LESSTHAN and SYMBOL-GREATERTHAN pattern, Added code to handle '|'
 	morph.lex:	-> Modified to get tam info from morph.
-	wx_utf8.lex:	-> Handled 'eV', 'eY', 'oV'
+	wx_utf8.lex:	-> Handled 'eV', 'eY', 'oV' and added -[hypen] to Roman list
 	phrasal_alignment/replace-punctuation.lex	-> 	Added '~' 
  34. Updated phrasal alignement related files , Major changes is separated code to work with each sentence separately.
 	Word-to-Word-dict.txt			run_alignment.sh			align-left-over-wrds.py
