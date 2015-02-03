@@ -51,6 +51,8 @@
 	29. saMsaxa 			"    (07-07-14)		Ex: The Speaker dissolved the parliament.
 	30. vAina   	Suggested by Chaitanya Sir (13-11-14)	Ex: Can I offer you some wine?
 	31. prayogaSAlA	Suggested by 14anu-ban-08 (22-11-14)	Ex: The prototypes of the International standard kilogram supplied by the International Bureau of Weights and Measures (BIPM) are available in many other laboratories of different countries.
+	32. ASaMkA  	(Suggested by Chaitanya Sir 03-02-15)	Ex: More than 80 people were feared dead last night after flash floods, the 
+								    worst in 34 years. 
 	
 
   3. Removed :
@@ -495,6 +497,8 @@
                                                                         even if you lose your case .
 	lover		(Suggested by 14anu-ban-04       15-12-14 ) Ex: She discovered her lover in the arms of another woman.
 	killer		(Suggested by 14anu-ban-08       16-12-14 ) Ex: The police have failed to nail the killer.
+	firefighter     (By Shirisha Manju from human.txt 28-01-15) Ex: All four firefighters were decorated for bravery.       
+	swimmer		(Suggested by 14anu-ban-01        03-02-15) Ex: She was not a strong swimmer. 
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -574,10 +578,12 @@ Modified :
 
 	  <e><p><l>anA</l><r>a<s n="cat:v"/><s n="gen:m"/><s n="num:s"/><s n="per:u"/><s n="tam:nA"/></r></p></e>
 	  [Note: similarly for per : m,a and m_h where gen and num are same]
-  21.   in /jA__v paradigm:							(By Roja			02-04-14)
+  21.   in /jA__v paradigm:							(By Roja		    02-04-14)
 	  Stopped generation of 'gayIM'
-  22.  vikiraNa		kroXa/__n		as	Gar/a__n		("	"			29-12-14)
-
+  22.   vikiraNa	kroXa/__n		as	Gar/a__n		("	"		    29-12-14)
+  23.   sWiwi		kavi/__n		as	Apawwi/__n		(Suggested by Chaitanya Sir 03-02-15)
+  24.   nasla		Gar/a__n		as	rAw/a__n		(		"		"  5)
+	
  Removed : 
 	  1.  Removed the following parsarg paradigms and its related patterns
 		kI_wulanA_meM  ke_liye  ke_sAWa  ke_pAsa  ke_pICe   ke_Upara   ke_bAre_meM   ke_pakRa_meM   ke_xvArA
@@ -835,8 +841,14 @@ Removed:
  changes in place.txt
  ====================
  Added   :
-		himalayas       1  (Added by Sukhada 19-12-11)
-		plains  	1  (Added by Sukhada 19-12-11)
+	himalayas       (Added by Sukhada 19-12-11)
+	plains 	 	(Added by Sukhada 19-12-11)
+	Nagaland  	(Suggested by 14anu-ban-04 30-01-15) Ex:The entrance of Nagaland is connected with several major cities of the country.
+	Gateway		(	"		"	"  ) Ex: On the entrance of Gateway of India the statues of two great personalities 
+								 like Chhatrapati Shivaji and Swami Vivekananda are installed .
+	Basti   	(	"		"	"  ) Ex: A big door of wood is the entrance of the ' Badi Basti ' .
+	Cave		(	"		"	"  ) Ex: On the entrance of Karla Cave there are one pillar and three lion statues
+								 prior to the cave .
 
 
  Changes in hindi_default_tam.txt
@@ -1308,7 +1320,19 @@ Removed:
 					Ex: Just like fertilizer nutrients, nutrients released from crop residue into the soil are susceptible 				to losses such as leaching (N and S), denitrification (N), immobilization (N, P, K and S), and fixation (P and K).
 	145. blog_verb			blOga_kara			(Suggested by Chaitanya Sir	06-12-14) 	  
 					Ex: Are you blogging or thinking about starting one?
-
+	146. bike_verb			sAikila_calA/bAika_calA		(Suggested by Chaitanya Sir     23-01-15)
+	147. feverish_noun		halkA_buKAra			(Suggested by 14anu-ban-05      02-02-15)
+					Ex: Children become feverish.
+	148. feverish_adjective		uwwejiwa_ho_kara		(	"	"		  "	)
+					Ex: He worked with feverish haste.[oald]
+	149. one-favoured_adjective    	EsA_hI_eka			(	"	"		  "     )
+					Ex: Steel is one-favoured choice.
+	150. north-south_adjective      wwara-xakRiNa			(	"	"		  "     )
+					Ex: A thin long piece of a magnet, when suspended freely, pointed in the north-south direction.
+	151. dismayingly_adverb      	nirASAwmaka_rUpa_se		(Suggested by 14anu-ban-04      02-02-15)
+					Ex: Neverthless,his message is still dismayingly mixed.
+	152. smarten_verb    		AkarRaka_banA			(Suggested by 14anu-ban-01      03-02-15)
+					Ex: You should smarten yourself up.
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1570,6 +1594,14 @@ Removed:
 	133. favorite_adjective		manapasanxa		(Suggested by Chaitanya Sir 22-12-14)
 					Ex: For example, whenever we tune our radio to a favorite station, we are taking advantage of a special
 				            property of ac circuits — one of many that you will study in this chapter.
+	134. bike_UNDEFINED		sAikila/bAika						(Suggested by Chaitanya Sir 23-01-15)
+					Ex: There was no permission to take bike inside the park.
+	135. propaganda_noun		vipralipsA						(	"	"		"   )
+					संदेह को विप्रलिप्सा कहते हैं अथवा दूसरों की वंचना करने की इच्छा को भी विप्रलिप्सा कहते हैं
+					reference: http://navbharattimes.indiatimes.com/astro/holy-discourse/religious-discourse/-/astroshow/820812.cms
+	136. omission_noun   		aparAXa			(Suggested by 14anu-ban-09   02-02-15)
+					Ex: Can be convicted of a criminal offence .
+
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -1949,6 +1981,13 @@ Removed:
 	171. unnoticed_adjective	axqRta		as	alakRiwa	(Suggested by Chaitanya Sir	09-01-15)
 				Ex: I remained unnoticed.
 	172. worried_adjective	pareSAna		as	cinwiwa		(	"		"	"	)
+	173. safari_noun	SikAra			as	saPArI 		(	"		"	23-01-15)
+				Ex: Somebody advised us that we should take safari for inside.
+	174. misuse_verb     	xurvyavahAra_kara	as	xurupayoga_kara	(	"	14anu-ban-08    02-02-15)
+				Ex: That can be misused with varying effects .
+	175. conversely_adverb  ulatA			as	isake_viparIwa	(	"	14anu-ban-03	  "     )
+				Ex:Conversely,there is an attractive force between the north pole of one magnet and the south pole of the other
+	
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -1992,7 +2031,8 @@ Removed:
 	36. mark_verb		cinha_lag					(	"	"		"	)
 	37. them_pronoun	unak/unheM_unako				(	"	"		17-10-14)
 	38. conjunction_UNDEFINED	saMyojana				(Suggested by 14anu-ban-03	14-11-14)
-
+	39. bike_noun		sAikil_calAa/bAika_calA				(Suggested by Chaitanya Sir     23-01-15)
+	40. bike_UNDEFINED	sAikila_calA					(	"	"		  "	)
 	
 
     7. Removed entry:
@@ -2737,6 +2777,17 @@ Removed:
 				Ex: Thus, the meaning of work in physics is different from its usage in everyday language.
 	weights_noun       	bAta			(Suggested by 14anu-ban-11      02-12-14)
 				Ex: Weights are added till the plate just clears water.(ncert)
+	flash_noun      	PlESa			(Suggested by 14anu-ban-05      20-01-15)
+				Ex: These flashes may be viewed through a microscope and the distribution of the number of scattered particles 
+				    may be studied as a function of angle of scattering.
+	electric_noun   	vExyuwa			(Suggested by 14anu-ban-04      20-01-15)
+	electric_adjective      vExyuwa			(		"		"       )
+				Ex: Thus, according to Maxwell, light waves are associated with changing electric and magnetic fields.
+	iron-tipped_adjective   lohe_kI_topI_caDI	(Suggested by 14anu-ban-05      20-01-15)
+				Ex: Their iron-tipped rods were similarly affected.
+	bar-magnet_noun 	Cada_cumbaka		(Suggested by 14anu-ban-05      20-01-15)
+				Ex: 
+	urrent-carrying_adjective   XArAvAhI		(Suggested by 14anu-ban-05      20-01-15)
 
 
     Modifying first meaning:
@@ -3032,6 +3083,8 @@ Removed:
                                                                         even if you lose your case . 
 	lover           (By Manju from animate.txt       15-12-14 ) Ex: She discovered her lover in the arms of another woman.
 	killer          (By Manju from animate.txt       16-12-14 ) Ex: The police have failed to nail the killer.
+	firefighter     (Suggested by 14anu-ban-04       28-01-15 ) Ex: All four firefighters were decorated for bravery. 
+	swimmer		(Suggested by 14anu-ban-01       03-02-15 ) Ex: She was not a strong swimmer. 
 
 
  changes in named_entities.txt

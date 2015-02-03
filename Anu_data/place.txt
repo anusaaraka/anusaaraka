@@ -1097,7 +1097,7 @@ bawdy house	1
 cathedral	1
 chateau	1
 charterhouse	1
-cave	1
+Cave	1
 bilge	1
 bonanza	1
 cellar	1
@@ -2812,3 +2812,6 @@ Northwest	1
 Archipelago	1
 himalayas	1
 plains	1
+Nagaland	1
+Gateway	1
+Basti	1

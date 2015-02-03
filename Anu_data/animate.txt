@@ -98,3 +98,5 @@ farmer	1
 solicitor	1
 lover	1
 killer	1
+firefighter	1
+swimmer	1
