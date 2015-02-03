@@ -1,7 +1,7 @@
 /* This programme converts wx to utf8 */
 /* Added by Roja (07-09-12) 	 */
 
-ROM_WORD @[A-Za-z0-9]+
+ROM_WORD @[A-Za-z0-9\-]+
 
 NON_ALPHABETS [^@A-Za-z]+
 
