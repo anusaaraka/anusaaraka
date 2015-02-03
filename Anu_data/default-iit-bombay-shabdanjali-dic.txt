@@ -9563,8 +9563,9 @@ bijoy_UNDEFINED	vijaya
 biju_UNDEFINED	bIjU
 bijuli_UNDEFINED	bijulYi
 bikash_UNDEFINED	vikAsa
-bike_UNDEFINED	sAikila_calA
-bike_noun	sAikil_calAa/sAikila/bAika_calA/bAika
+bike_UNDEFINED	sAikila/bAika
+bike_noun	sAikila/bAika
+bike_verb	sAikila_calA/bAika_calA
 bikini_UNDEFINED	biikanI
 bikini_noun	bikinI
 bilabial_adjective	uBayoRtya
@@ -17439,7 +17440,7 @@ converse_adjective	viparIwa
 converse_noun	viparIwa
 converse_verb	vArwAlApa_kara
 conversed_UNDEFINED	vArwAlApa_karanA
-conversely_adverb	ulatA/isake_viparIwa
+conversely_adverb	isake_viparIwa/ulatA
 converser_UNDEFINED	vArwAlApa_karanA
 converses_UNDEFINED	vArwAlApa_karanA
 conversest_UNDEFINED	vArwAlApa_karanA
@@ -49825,7 +49826,7 @@ misunderstands_UNDEFINED	galawa_samaJanA
 misunderstood_UNDEFINED	galawa_samaJanA
 misunderstood_adjective	galawa_samajA_gayA
 misuse_noun	galawa_prayoga/xurupayoga
-misuse_verb	xurvyavahAra_kara/xurupayoga_kara
+misuse_verb	xurupayoga_kara/xurvyavahAra_kara
 misused_UNDEFINED	galawa_prayoga
 misuser_UNDEFINED	xurupayoga_karane_vAlA
 misuses_UNDEFINED	galawa_prayoga
@@ -53889,7 +53890,7 @@ omens_UNDEFINED	Saguna_cihna
 ominous_adjective	apaSaguna/aniRtasUcaka
 ominouser_UNDEFINED	apaSaguna
 ominousest_UNDEFINED	apaSaguna
-omission_noun	cUka/na_liyA_jAnA
+omission_noun	aparAXa/cUka/na_liyA_jAnA
 omissions_UNDEFINED	cUka
 omit_verb	Coda_jA/hatA/Coda_xe
 omits_UNDEFINED	Coda_jAnA
@@ -61476,7 +61477,7 @@ proofs_UNDEFINED	SoXyapawra
 prop-word_noun	sahAyaka_Sabxa
 prop_noun	lakadI_se_banA_AXAra/ASraya_xAwA/WUnI/teka/sahArA/praWama_pafkwi_kA_ragbI_KilAdI/maFca-sAmagrI
 prop_verb	tikA
-propaganda_noun	aXipracAra/pracAra
+propaganda_noun	vipralipsA/aXipracAra/pracAra
 propagandas_UNDEFINED	aXipracAra
 propagandise_verb	pracAra_kara
 propagandist_adjective	pracAravAxI
@@ -68045,7 +68046,7 @@ sado-masochism_noun	rawi_pIdAnanxa_kAmukawA
 sado-masochist_noun	parapIdAnxa_kAmuka
 sado-masochistic_adjective	parapIdAnxa_kAmuka
 sae_noun	esa_e_I
-safari_noun	SikAra/saPArI
+safari_noun	saPArI/SikAra
 safaris_UNDEFINED	SikAra
 safe-Conduct_noun	aBayapawra
 safe-Keeping_noun	surakRA
@@ -73985,7 +73986,7 @@ solicits_UNDEFINED	mAzganA
 solicitude_noun	KyAla/cinwA
 solicitudes_UNDEFINED	KyAla
 solid_adjective	GanIBUwa/yaWArWa/vAswavika/Tosa/saKwa/saccA/puRta/pUrA/pakkA/majabUwa/kadI/ImAnaxAra/GanA/eka_samAna/ekarUpa/asalI
-solid_noun	Tosa_paxArWatosa_paxArWa
+solid_noun	Tosa_paxArWa
 solidarities_UNDEFINED	pUrNa_ekawA
 solidarity_noun	pUrNa_ekawA/ekawA
 solider_UNDEFINED	Tosa
@@ -93564,3 +93565,9 @@ inhibitor_noun	niroXI
 trypsin_noun	kloma-rasa/tripsina
 anaphylactic_adjective	wIvragAhiwA_saMbaMXI
 immobilization_noun	nisaMcAlana
+feverish_noun	halkA_buKAra
+feverish_adjective	uwwejiwa_ho_kara
+dismayingly_adverb	nirASAwmaka_rUpa_se
+one-favoured_adjective	EsA_hI_eka
+north-south_adjective	uwwara-xakRiNa
+smarten_verb	AkarRaka_banA

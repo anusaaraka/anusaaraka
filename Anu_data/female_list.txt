@@ -32189,3 +32189,4 @@ sigareta	f
 saMsaxa	f
 vAina	f
 prayogaSAlA	f
+ASaMkA	f
