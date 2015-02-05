@@ -499,6 +499,15 @@
 	killer		(Suggested by 14anu-ban-08       16-12-14 ) Ex: The police have failed to nail the killer.
 	firefighter     (By Shirisha Manju from human.txt 28-01-15) Ex: All four firefighters were decorated for bravery.       
 	swimmer		(Suggested by 14anu-ban-01        03-02-15) Ex: She was not a strong swimmer. 
+	Suggested following entries by Soma Mam (03-02-15)
+	abuser		airhostess	anybody		assistant	astronaut	attendant	blacksmith	boyfriend
+	captain		carpenter	champion	chef		consumer	cook		customer	diver
+	employer	engineer	everybody	girlfriend	granddaugthter	grandfather	grandmother	grandson
+	herself		hijacker	himself		inspector	interviewee	interviewer	journalist	kid
+	lawyer		leader		master		member		myself		nobody		nurse		operator
+	ourself		patron		pilot		politician	public		reader		reporter	scholar
+	scientist	steward		subordinate	teen		themself	victim		viewer		voter
+	astronomer
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -745,7 +754,11 @@ Modified :
 	synthesise	liv/e__vblex		(     "      "    )
 	scope		liv/e__vblex		(     "   02-01-15)
 	slide		slid/e__vblex		(     "   28-01-15)
-
+	swivel		quarrel__vblex		(     "   05-02-15)
+	fuel		quarrel__vblex		(     "	     "	  )
+	fuel		accept__vblex		(     "	     "	  )
+	clamour		accept__vblex		(     "      "	  )
+	clamor		accept__vblex		(     "      "    )
 
 Modified paradigm:
      	belonging	house__n	as	personnel__n	(Suggested by Meena ji 12-05-11)
@@ -3084,7 +3097,16 @@ Removed:
 	lover           (By Manju from animate.txt       15-12-14 ) Ex: She discovered her lover in the arms of another woman.
 	killer          (By Manju from animate.txt       16-12-14 ) Ex: The police have failed to nail the killer.
 	firefighter     (Suggested by 14anu-ban-04       28-01-15 ) Ex: All four firefighters were decorated for bravery. 
-	swimmer		(Suggested by 14anu-ban-01       03-02-15 ) Ex: She was not a strong swimmer. 
+	swimmer		(Suggested by 14anu-ban-01       03-02-15 ) Ex: She was not a strong swimmer.
+	Suggested following entries by Soma Mam (03-02-15)
+	abuser		airhostess	anybody		assistant	astronaut	attendant	blacksmith	boyfriend	
+	captain		carpenter	champion	chef		consumer	cook		customer	diver		
+	employer	engineer	everybody	girlfriend	granddaugthter	grandfather	grandmother	grandson
+	herself		hijacker	himself		inspector	interviewee	interviewer	journalist	kid
+	lawyer		leader		master		member		myself		nobody		nurse		operator
+	ourself		patron		pilot		politician	public		reader		reporter	scholar
+	scientist	steward		subordinate	teen		themself	victim		viewer		voter
+	astronomer	
 
 
  changes in named_entities.txt
