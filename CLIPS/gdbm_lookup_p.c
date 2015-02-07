@@ -58,7 +58,8 @@ int gdbm_lookup_p(char *dbm,char *word)
 //   PrintRouter(WDISPLAY,"\n");
  //  PrintRouter(WDISPLAY,RtnLexeme(2));
   // PrintRouter(WDISPLAY,"\n");
-   return(1L); }
+   return(0); //Modified return(1L) to return(0) by Roja(05-02-15). If return(1L) then return TRUE even if database is empty
+ }
   
   key.dptr=word;
   key.dsize=strlen(key.dptr);

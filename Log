@@ -1,4 +1,4 @@
- 03-02-15
+ 05-02-15
  ========
  1. causative_verb_mng.clp: 
 	Modified: get_rule_info
@@ -58,18 +58,22 @@
  18. FinalGenerate.pl:
 	Added code to stop english words (ie. which starts with '@') to go to lt-proc
  19. Added comments in multi_word_expression_for_proper_nouns.c
- 20. Added new folder Anu_data/domain:
+ 20. gdbm_lookup_p.c:
+	Modified return statement incase of database found empty.
+ 21. wx_utf8.c:
+	corrected the mistake [ ्जाँच_कर ] in wx_utf8.c functiion.
+ 22. Added new folder Anu_data/domain:
 	'agriculture' related dictionaries
- 21. Added new files:
+ 23. Added new files:
 	list_Anu_data_domain, list_Anu_data_multi_domain (to get canonical form)
- 22. Added  phrasal_mwe folder (Separated alignment related mwe's in phrasal_mwe folder)
+ 24. Added  phrasal_mwe folder (Separated alignment related mwe's in phrasal_mwe folder)
 	extract_hindi_key.c
 	extract_key_using_multifast.c
 	extract_key_using_multifast-hi-en-hi.c
 	extract_key_in_hindi_phrase.c
 	extract_key_using_multifast-hi-en.c
 	Makefile
- 23. Modified following shell files:
+ 25. Modified following shell files:
 	shell_scripts/anu_compile.sh	(to create agriculture gdbm, removed touch extract_hindi_key.c)
 	dic_compile.sh			(	"	"	   	"	"	)
 	get_txt_files.sh		(to get canonical form for agriculture domain)
@@ -82,31 +86,31 @@
 	run_alignment-hi-en.sh		(	"		"	)
         get_phrasal_dic-en-hi.sh	(	"		"	)
 	get_phrasal_dic-hi-en-en.sh	(	"		"	)
- 24. Modified following lex files:
+ 26. Modified following lex files:
 	non_canonical_form.lex
 	add_snt_tag.lex -> Added </s> in ending pattern
 	replace-mapping-symbols.lex 
- 25. Modified following files:
+ 27. Modified following files:
 	Makefile 
 	list-right in canonical form (to get canonical form for agricultural domain)
- 26. apertium/tagger.c
+ 28. apertium/tagger.c
     -For easy maintainance and for faster execution replaced tagger.c program with tagger.lex ,
      Modified the following files:
      apertium/compile.sh		run_chunker_and_tagger.sh	  Anusaaraka.sh	                       Anusaaraka_all.sh 
      Anusaaraka_bllip_parser.sh		Anusaaraka_rasp.sh		  Anusaaraka_stanford.sh	       Anusaaraka_bllip_parser_minion.sh
      Anusaaraka_site.sh			Anusaaraka_stanford-Factored.sh	  Anusaaraka_stanford_align_man_ord.sh
      Anusaaraka_stanford_minion.sh      removed_files/README    	  Anusaaraka_berkeley.sh
- 26. Removed following files in multifast-v1.0.0/src/ folder:
+ 29. Removed following files in multifast-v1.0.0/src/ folder:
 	multi_word_expression_for_agriculture.c
 	multi_word_expression_for_physics.c
- 27. Renamed 'multi_word_expression_for_physics.c' to 'multi_word_expression_for_domain.c'
+ 30. Renamed 'multi_word_expression_for_physics.c' to 'multi_word_expression_for_domain.c'
 	-> This works for any domain
 	-> Replaced (ids-phy_cmp_mng-head-cat-mng_typ-priority) to (ids-domain_cmp_mng-head-cat-mng_typ-priority)
- 28. Updated following dictionaries: 
+ 31. Updated following dictionaries: 
 	changes_in_databases	provisional_multi_word_dictionary.txt	apertium-en-hi.en.metadix	apertium_hn.dix
- 29. Updation of new versions:
+ 32. Updation of new versions:
 	multifast-v1.0.0 to multifast-v1.4.2 
- 30. Updated multifast new version in following programs:
+ 33. Updated multifast new version in following programs:
 	Anusaaraka_alignment.sh
 	Anusaaraka_stanford.sh
 	dic_compile.sh
@@ -118,11 +122,10 @@
 	phrasal_alignment/run_alignment.sh
 	anu_compile.sh
 	remove_out-files.sh
- 31. Modified CLIPS/wx_utf8.c , corrected the mistake [ ्जाँच_कर ] in wx_utf8.c functiion.
- 32. Updated following files:
+ 34. Updated following files:
 	INSTALL
 	README
- 33. Updated Log.
+ 35. Updated Log.
 
  06-11-14
  ========
