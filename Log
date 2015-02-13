@@ -1,4 +1,4 @@
- 05-02-15
+ 13-02-15
  ========
  1. causative_verb_mng.clp: 
 	Modified: get_rule_info
@@ -62,18 +62,21 @@
 	Modified return statement incase of database found empty.
  21. wx_utf8.c:
 	corrected the mistake [ ्जाँच_कर ] in wx_utf8.c functiion.
- 22. Added new folder Anu_data/domain:
+ 22. gdbm-open.c:
+	Modified to avoid junk characters to print in the output.
+ 23. Added new folder Anu_data/domain:
 	'agriculture' related dictionaries
- 23. Added new files:
+ 24. Added new files:
 	list_Anu_data_domain, list_Anu_data_multi_domain (to get canonical form)
- 24. Added  phrasal_mwe folder (Separated alignment related mwe's in phrasal_mwe folder)
+	run_penn-rnn.sh in stanford src directory.
+ 25. Added  phrasal_mwe folder (Separated alignment related mwe's in phrasal_mwe folder)
 	extract_hindi_key.c
 	extract_key_using_multifast.c
 	extract_key_using_multifast-hi-en-hi.c
 	extract_key_in_hindi_phrase.c
 	extract_key_using_multifast-hi-en.c
 	Makefile
- 25. Modified following shell files:
+ 26. Modified following shell files:
 	shell_scripts/anu_compile.sh	(to create agriculture gdbm, removed touch extract_hindi_key.c)
 	dic_compile.sh			(	"	"	   	"	"	)
 	get_txt_files.sh		(to get canonical form for agriculture domain)
@@ -86,46 +89,52 @@
 	run_alignment-hi-en.sh		(	"		"	)
         get_phrasal_dic-en-hi.sh	(	"		"	)
 	get_phrasal_dic-hi-en-en.sh	(	"		"	)
- 26. Modified following lex files:
+ 27. Modified following lex files:
 	non_canonical_form.lex
 	add_snt_tag.lex -> Added </s> in ending pattern
 	replace-mapping-symbols.lex 
- 27. Modified following files:
+ 28. Modified following files:
 	Makefile 
 	list-right in canonical form (to get canonical form for agricultural domain)
- 28. apertium/tagger.c
+ 29. Modified path of provisional wsd rules in wsd module and wsd tam module for following files:
+	run_modules_link.bat
+	run_modules_ol.bat
+	run_modules_std.bat
+ 30. Modified following files to update stanford directory path:
+	constituency_to_dependency.sh		run_lexicalize.sh	run_multiple_parse_penn.sh	run_penn-factored.sh
+	run_penn-pcfg.sh			run_stanford-parser.sh	run_stanford.sh			Anusaaraka_stanford.sh
+	std_tregex/run_tregex.sh		anu_compile.sh		run_tregex_for_multiparse.sh	tree_viewer/view_trees.sh
+	Anusaaraka.sh				Anusaaraka_all.sh	Anusaaraka_berkeley.sh		Anusaaraka_bllip_parser.sh
+	Anusaaraka_bllip_parser_minion.sh	Anusaaraka_rasp.sh	Anusaaraka_site.sh		Anusaaraka_stanford-Factored.sh
+	Anusaaraka_stanford_align_man_ord.sh	Anusaaraka_stanford_minion.sh
+ 31. apertium/tagger.c
     -For easy maintainance and for faster execution replaced tagger.c program with tagger.lex ,
      Modified the following files:
-     apertium/compile.sh		run_chunker_and_tagger.sh	  Anusaaraka.sh	                       Anusaaraka_all.sh 
-     Anusaaraka_bllip_parser.sh		Anusaaraka_rasp.sh		  Anusaaraka_stanford.sh	       Anusaaraka_bllip_parser_minion.sh
+     apertium/compile.sh		run_chunker_and_tagger.sh	  Anusaaraka_bllip_parser_minion.sh	Anusaaraka_all.sh 
+     Anusaaraka_bllip_parser.sh		Anusaaraka_rasp.sh		  Anusaaraka_stanford.sh		Anusaaraka.sh
      Anusaaraka_site.sh			Anusaaraka_stanford-Factored.sh	  Anusaaraka_stanford_align_man_ord.sh
      Anusaaraka_stanford_minion.sh      removed_files/README    	  Anusaaraka_berkeley.sh
- 29. Removed following files in multifast-v1.0.0/src/ folder:
+ 32. Removed following files in multifast-v1.0.0/src/ folder:
 	multi_word_expression_for_agriculture.c
 	multi_word_expression_for_physics.c
- 30. Renamed 'multi_word_expression_for_physics.c' to 'multi_word_expression_for_domain.c'
+ 33. Renamed 'multi_word_expression_for_physics.c' to 'multi_word_expression_for_domain.c'
 	-> This works for any domain
 	-> Replaced (ids-phy_cmp_mng-head-cat-mng_typ-priority) to (ids-domain_cmp_mng-head-cat-mng_typ-priority)
- 31. Updated following dictionaries: 
+ 34. Updated following dictionaries: 
 	changes_in_databases	provisional_multi_word_dictionary.txt	apertium-en-hi.en.metadix	apertium_hn.dix
- 32. Updation of new versions:
+ 35. Updation of new versions:
 	multifast-v1.0.0 to multifast-v1.4.2 
- 33. Updated multifast new version in following programs:
-	Anusaaraka_alignment.sh
-	Anusaaraka_stanford.sh
-	dic_compile.sh
-	phrasal_alignment/compile.sh
-	get_mul_pat.sh
-	get_phrasal_dic-en-hi.sh
-	get_phrasal_dic-hi-en-en.sh
-	run_alignment-hi-en.sh
-	phrasal_alignment/run_alignment.sh
-	anu_compile.sh
-	remove_out-files.sh
- 34. Updated following files:
+ 36. Updated multifast new version in following programs:
+	Anusaaraka_alignment.sh		Anusaaraka_stanford.sh		dic_compile.sh		phrasal_alignment/compile.sh
+	phrasal_alignment/run_alignment.sh	anu_compile.sh	remove_out-files.sh	Anusaaraka.sh	Anusaaraka_all.sh
+	Anusaaraka_berkeley.sh	Anusaaraka_bllip_parser.sh	Anusaaraka_bllip_parser_minion.sh	Anusaaraka_link.sh
+	Anusaaraka_ol.sh	Anusaaraka_rasp.sh		Anusaaraka_site.sh	Anusaaraka_stanford-Factored.sh
+	Anusaaraka_stanford.sh	Anusaaraka_stanford_align_man_ord.sh			Anusaaraka_stanford_minion.sh
+	get_mul_pat.sh		get_phrasal_dic-en-hi.sh	get_phrasal_dic-hi-en-en.sh	run_alignment-hi-en.sh
+ 37. Updated following files:
 	INSTALL
 	README
- 35. Updated Log.
+ 38. Updated Log.
 
  06-11-14
  ========

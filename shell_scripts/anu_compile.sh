@@ -177,6 +177,8 @@
  echo "Compiling stanford parser files"
  cd $HOME_anu_test/Parsers/stanford-parser/src
  sh compile.sh
+ cp run_penn-rnn.sh $HOME_anu_test/bin/
+ cp run_penn-pcfg.sh $HOME_anu_test/bin/
 
  echo "Compiling RASP parser files"
  cd $HOME_anu_test/Parsers/RASP/rasp3os/scripts/
