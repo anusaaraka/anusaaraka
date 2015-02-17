@@ -389,7 +389,7 @@ coupled_noun	yugma
 cowpea_noun	lobiyA
 creeper_noun	bela
 crisis_noun	saMkata/saMkatAvasWA
-critical_noun	krAMwika/nAjuka_sWiwi
+critical_noun	mahawvapUrNa/krAMwika/nAjuka_sWiwi
 crop_noun	Pasala
 cross-fertilization_noun	para-niSecana
 cross-infectivity_noun	para-saMkrAmyawA
@@ -969,7 +969,7 @@ performance_noun	niRpAxana/praxarSana
 performation_noun	kArya
 permeability_noun	pAragamyawA
 perturbations_noun	avyavasWA
-pesticide_noun	pIdZakanASI
+pesticide_noun	kITanASaka/pIdZakanASI/kItanASI/nASIjIva
 pesticides_noun	kItanASI/nASIjIva
 pest_noun	kIta/nASIjIva/nASaka_jIva/pIdZaka/isake_aMwargawa
 phenology_noun	qwu_jEvika_caryA_vijFAna/qwujEvikI
@@ -1342,3 +1342,7 @@ zone_noun	KaMda/praxeSa/kRewra/maMdala
 polysaccharides_noun	bahuSarkarAeda
 clover_noun	wipawiyA
 sustainable_adjective	vahanIya
+coloration_noun	raMgAI
+prothorax_noun	agra_BAga
+prolegs_noun	prapAxa
+petioles_noun	daMTala
