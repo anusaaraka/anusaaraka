@@ -138,3 +138,4 @@ guard	1
 prisoner	1
 staff	1
 spokesman	1
+parents	1

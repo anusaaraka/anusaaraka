@@ -1125,3 +1125,5 @@ peanut_milk	mUzgaPalI_kA_xUXa#mUzgaPalI_kA_xUXa#noun#2#RM
 oilcake_meal	KalI_kA_motA_AtA#KalI_kA_motA_AtA#noun#2#RM
 catch_crop	aMwaravarwI_Pasala#aMwaravarwI_Pasala#noun#2#RM
 deep_rooted	gaharI_jadZa_vAlA#gaharI_jadZa_vAlA#adjective#2#RM
+cane_growing	gannA_uwpAxana#gannA_uwpAxana#adjective#2#RM
+scarab_beetle	gubarElA# gubarElA#noun#2#RM

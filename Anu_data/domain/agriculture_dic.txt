@@ -259,7 +259,7 @@ bioassay_noun	jEva_AmApana
 biochemical_noun	jEva_rasAyanika
 biofertilizer_noun	jEva-urvaraka
 biogas_noun	gobara-gEsa/boyogEsa
-biological_noun	jOvika
+biological_noun	jEvika
 biology_noun	jIva-vijFAna
 bio-manure_noun	jOvika_KAxa
 biomass_noun	jIva_BAra/jEva_mAwrA

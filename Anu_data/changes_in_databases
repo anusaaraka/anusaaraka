@@ -513,6 +513,7 @@
 	rhinoceros	(Suggested by 14anu-ban-01        07-02-15) Ex: This injection stuns the rhinoceros, so we can examine it.
 	staff           (By Shirisha Manju from human.txt 16-02-15) Ex: The company is reconsidering the way in which it deploys its staff.
         spokesman       (       "       "                       " ) Ex: The spokesman refused to disclose details of the takeover to the press.
+	parents		(	"	"		  18-02-15)
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -2056,6 +2057,10 @@ Removed:
 				Ex: Great advances in physics often amount to unification of different theories and domains.
 	184. chubby_adjective	galaPulA		as	golamatola	(Suggested by 14anu-ban-03     17-02-15 )
 				Ex: It was a chastening experience. She has got chubby cheeks.
+	185. motor_noun      	preraka			as	motara		(Suggested by 14anu-ban-08     18-02-15 )
+				Ex: The motor must supply enough power to balance this force.
+	186. pointer_noun    	nirxeSaka		as	safkewaka	(Suggested by 14anu-ban-09     18-02-15 )
+				Ex: Take a laser pointer and shine its beam through the turbid water. [ncert]
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -2624,6 +2629,11 @@ Removed:
 				    is defined much more precisely.
 	144. more_commonly    	aXikawara#aXikawara#abverb#2#RM				(Suggested by 14anu-ban-08 17-12-14)
 				Ex: It is the variable force, which is more commonly encountered.
+	145. biology_based   	jIva_vijFAna_AXAriwa#jIva_vijFAna_AXAriwa#noun#2#RM	(Suggested by 14anu-ban-09 18-02-15)
+				Ex: Further ('biology-based') or 'ecological' techniques are under evaluation.
+	146. date_palm_fruit    KajUra_ke_Pala#KajUra_ke_Pala#noun#3#RM			(Suggested by 14anu-ban-09 18-02-15)
+				Ex: The date palm fruit stalk borer, Oryctes elegans Prell, from the subfamily Dynastinae, is a major pest of
+				    the date palm in southern parts of Persia. [Agriculture]
 
 
     Added new meaning to the existing word:
@@ -2650,6 +2660,8 @@ Removed:
 				Ex: For example,whenever we tune our radio to a favorite station, we are taking advantage of a special property 				   of ac circuits — one of many that you will study in this chapter.
 	13. that_is_why         isalie#isalie#determiner#1#RM                           (Suggested by Soshya joshi Banasthali 02-12-14)
                                 Ex: That is why Haridwar is also called the Gate of the Ganges .
+	14. security_guard  	paharexAra		(Suggested by 14anu-ban-01      18-02-15)
+				Ex: The thief broke into the office while his accomplice stalled off the security guard.
 
 
    Modifying the head id:
@@ -2862,6 +2874,11 @@ Removed:
 				Ex:We can imagine two equal and small elements of area placed at points R and S normal to the field lines there
 	longitudinal_adjective  anuxErGya		(Suggested by 14anu-ban-08      16-02-15)
 				Ex: Tensile or compressive stress can also be termed as longitudinal stress.
+	mono-molecular_adjective        ekANvika	(Suggested by 14anu-ban-08      16-02-15)
+				  Ex: If we assume that the film has mono-molecular thickness, then this becomes the size or diameter of a
+				      molecule of oleic acid.
+	drift_noun      	apavAha			(Suggested by 14anu-ban-04      18-02-15)
+				Ex: This is the phenomenon of drift and the velocity vd in Eq. (3.17) is called the drift velocity.
 
     Modifying first meaning:
     -----------------------
@@ -2929,6 +2946,7 @@ Removed:
    -------------
 	backward_noun	paScagAmI 	(Suggested by 14anu-ban-02	21-11-14) Ex: We get thrown backward with a jerk.
 	material_noun	xravya		(Suggested by 14anu-ban-02      16-02-15)  
+	mean_noun	mAXya		(Suggested by 14anu-ban-08      18-02-15) Ex:
 	
 
  changes in phy_eng_multi_word_dic.txt
@@ -3176,7 +3194,7 @@ Removed:
 	guard		(Suggested by 14anu-ban-09       07-02-15 ) Ex: Guards have been posted along the border. 
 	prisoner	(Suggested by 14anu-ban-04		" ) Ex: The prisoners were executed by firing squad.
 	staff   	(	"	"		 16-02-15 ) Ex: The company is reconsidering the way in which it deploys its staff. 
-	spokesman       (	"	"			" ) Ex: The spokesman refused to disclose details of the takeover to the press.
+	spokesman       (	"	"			" ) Ex: The spokesman refused to disclose details of the takeover to the press.	       parents	       (Suggested by 14anu-ban-03       18-02-15 )
 
 
  changes in named_entities.txt
@@ -3208,6 +3226,10 @@ Removed:
 			Ex: Catch crops are also crops that are sown to prevent minerals being flushed away from the soil.
 	5. deep_rooted	gaharI_jadZa_vAlA#gaharI_jadZa_vAlA#adjective#2#RM		(Suggested by 14anu-ban-04 20-11-14)
 			Ex: Crop rotation also mitigates the build-up of pathogens and pests that often occurs when one species is continuously 			   cropped, and can also improve soil structure and fertility by alternating deep-rooted and shallow-rooted plants.
+	6. cane_growing gannA_uwpAxana#gannA_uwpAxana#adjective#2#RM			(Suggested by 14anu-ban-03 18-02-15)
+			Ex: The larvae also attack the roots of sugar cane, causing serious damage in cane-growing regions of Persia. 
+	7. scarab_beetle	gubarElA# gubarElA#noun#2#RM				(Suggested by 14anu-ban-01 18-02-15)
+			Ex: The larvae of the scarab beetle, Pentodon idiota Herbst, are polyphagous and feed on the roots of different plants.
 
   Modified:
 	Added 1st meaning:
@@ -3222,6 +3244,11 @@ Removed:
 
  changes in agriculture_dic.txt:
  ==============================
+    Modified:
+    ---------
+	1. biological_noun 	jOvika		as	jEvika				(Suggested by 14anu-ban-02 27-11-14)
+				
+
     Added:
     ------ 
 	1. polysaccharides_noun		bahuSarkarAeda					(Suggested by 14anu-ban-09 14-11-14)

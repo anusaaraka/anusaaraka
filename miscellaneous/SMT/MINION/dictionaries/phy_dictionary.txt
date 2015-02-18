@@ -205,7 +205,6 @@ mars_noun	maMgala
 mass_noun	saMhawi
 Maxwell_noun	mEksavela
 maxwell-boltzamann_noun	mEksavEla-boltSamAna_sAMKyikI
-mean_noun	mAXya
 measurement_noun	mApana
 mechanics_noun	yAMwrikI
 medium_noun	mAXyama
@@ -712,3 +711,5 @@ bar-magnet_noun	Cada_cumbaka
 current-carrying_adjective	XArAvAhI
 element_noun	avayava
 longitudinal_adjective	anuxErGya
+mono-molecular_adjective	ekANvika
+drift_noun	apavAha

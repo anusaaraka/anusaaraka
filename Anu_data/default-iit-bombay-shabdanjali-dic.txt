@@ -50710,7 +50710,7 @@ motor-content_noun	preraka_prasafga
 motor-cycle_noun	motarasAikila
 motor-defect_noun	gawiparaka_xoRa
 motor_adjective	motara/cAlaka
-motor_noun	preraka/preraka_peSI/motara/cAlaka
+motor_noun	motara/preraka/preraka_peSI/cAlaka
 motor_verb	motara_se_j
 motorbike_noun	motarasAikila
 motorbikes_UNDEFINED	motarasAikila
@@ -59130,7 +59130,7 @@ pointed_adjective	nukIlA/suspaRta
 pointeder_UNDEFINED	suspaRta
 pointedest_UNDEFINED	suspaRta
 pointedly_adverb	lakRya_karawe_hue/suspaRta_Dafga_se/sAragarBiwa_Dafga_se
-pointer_noun	nirxeSaka/suJAva/sUI/sUcaka/safkewa/paiNtara/safkewaka/nirxeSaxaNda/salAha/BaviRya_kI_pragawi_ko_xarSAnevAlI_vaswu/SikArI_kuwwA
+pointer_noun	safkewaka/nirxeSaka/suJAva/sUI/sUcaka/safkewa/paiNtara/nirxeSaxaNda/salAha/BaviRya_kI_pragawi_ko_xarSAnevAlI_vaswu/SikArI_kuwwA
 pointers_UNDEFINED	nirxeSaxaNda
 pointillism_noun	binxu_ciwraNa
 pointillisms_UNDEFINED	binxu_ciwraNa
