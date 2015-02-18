@@ -205,7 +205,6 @@ mars_noun	maMgala
 mass_noun	saMhawi
 Maxwell_noun	mEksavela
 maxwell-boltzamann_noun	mEksavEla-boltSamAna_sAMKyikI
-mean_noun	mAXya
 measurement_noun	mApana
 mechanics_noun	yAMwrikI
 medium_noun	mAXyama
@@ -663,7 +662,6 @@ projectile_adjective	prakRepya
 unit_noun	mAwraka
 frictionless_adjective	GarRaNa_rahiwa
 convention_noun	paxXawi
-material_noun	xravya
 elastic_adjective    prawyAsWa
 conservative_adjective	saMrakRI
 positive_noun	XanAwmaka
@@ -705,3 +703,13 @@ hotness_noun	wapwawA
 usage_noun	prayoga
 distribute_verb	viwariwa_ho
 weights_noun	bAta
+flash_noun	PlESa
+electric_noun	vExyuwa
+electric_adjective	vExyuwa
+iron-tipped_adjective	lohe_kI_topI_caDI
+bar-magnet_noun	Cada_cumbaka
+current-carrying_adjective	XArAvAhI
+element_noun	avayava
+longitudinal_adjective	anuxErGya
+mono-molecular_adjective	ekANvika
+drift_noun	apavAha

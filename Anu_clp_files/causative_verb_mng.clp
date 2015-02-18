@@ -114,6 +114,26 @@
 	)
   )
  ;----------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (06-02-15) Suggested by Chaitanya Sir
+ ;He is solving the problems in the [chapter sets].
+ (defrule combine_viSeRya-viSeRaNa_mng_with_vib
+ (declare (salience 710))
+ ?f<-(Head-Level-Mother-Daughters  ? ? ?mot $? ?NN ?NNS)
+ (and (Node-Category ?NN NN) (Node-Category ?NNS NNS))
+ (Head-Level-Mother-Daughters  ? ?  ?NN  ?id)
+ (Head-Level-Mother-Daughters  ? ?  ?NNS  ?id1)
+ ?f0<-(id-HM-source ?id ?mng ?s&WSD_root_mng|Default_meaning)
+ ?f1<-(id-HM-source ?id1 ?mng1 ?s1&WSD_root_mng|Default_meaning)
+ (id-original_word ?id ?w)
+ (id-original_word ?id1 ?w1)
+ =>
+        (retract ?f ?f0 ?f1)
+	(assert (id-HM-source ?id -  ?s))
+        (bind ?n_mng (string-to-field (str-cat ?mng "_" ?mng1)))
+	(assert (id-HM-source ?id1 ?n_mng ?s1))
+	(printout t "Warning: Compound Meaning is missing for:  " ?w " "?w1 crlf)
+ )
+ ;----------------------------------------------------------------------------------------------------------------
  ;Ex. She was asked about the pay increase but made no comment.
  ;The cat sat on a mat and scratched itself loudly .(2nd-parse)
  ; Note : Need to be handled properly in Link

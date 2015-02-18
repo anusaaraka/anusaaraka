@@ -1,6 +1,7 @@
- 13-02-15
+ 17-02-15
  ========
  1. causative_verb_mng.clp: 
+	Added 	: combine_viSeRya-viSeRaNa_mng_with_vib
 	Modified: get_rule_info
 	Added: 'dir_name-file_name-rule_name-id-tam_type' in never-called ()
  2. check_for_best_match_in_multi-word.clp:
@@ -32,6 +33,7 @@
  10. prepare_apertium_input.clp:
 	Corrected rule name in debug info in print statement in 'print_org_word_mng_with_kA_vib' rule
  	Modified : default_kA_vib_rule
+	Added 	 : Compound_mng_with_grpid_head
  11. sd_relation_rules.clp:
 	Modified: decide_conj_rel,  conj-comp-rule
  12. get_dbase_mng.clp
@@ -45,8 +47,10 @@
 	In check_for_best_match_in_multi-word.clp module:
 	Modified: ids-phy_cmp_mng-head-cat-mng_typ-priority to ids-domain_cmp_mng-head-cat-mng_typ-priority (in save facts)
 	Added "save-facts" to generate "tam_id.dat" (to get : id-tam_type) in sd_pada module
-	Opened tam_id.dat file in append mode in tam_id module
-	Loaded tam_id.dat file in WSD module
+	Opened tam_id.dat 		file in append mode in tam_id module
+	Loaded tam_id.dat 		file in WSD module
+	Loaded 'wsd_facts_output.dat' 	file in wsd_tam_meaning module (to use hindi meaning in rule part)
+	Loaded 'E_constituents_info.dat' and 'Node_category.dat' files in causative_verb_mng module
  15. run_H_gen_sen.bat:
 	Added: (save-facts "id_Apertium_output.dat" local id-Apertium_output) in hindi_sentence module
  16. this1.py:

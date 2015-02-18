@@ -27112,7 +27112,7 @@ security_cover	surakRA_kavaca#surakRA_kavaca#noun#2#RM
 security_deposit	prawiBUwi-jamA#prawiBUwi-jamA#noun#2#RM
 security_deposit_account	jamAnawa_arawiBUwi_jamA_leKA#jamAnawa_arawiBUwi_jamA_leKA#noun#3#RM
 security_director	surakRA_nirxeSaka#surakRA_nirxeSaka#noun#2#RM
-security_guard	surakRA_gAraxa#surakRA_gAraxa#noun#2#RM
+security_guard	paharexAra/surakRA_gAraxa#paharexAra/surakRA_gAraxa#noun#2#RM
 security_instructio	surakRA_anuxeSa#surakRA_anuxeSa#noun#2#RM
 security_instruction	surakRA-anuxeSa#surakRA-anuxeSa#noun#2#RM
 security_longer_dated	xIxarkAlika_prawiBUwi#xIxarkAlika_prawiBUwi#noun#3#RM
@@ -33784,3 +33784,5 @@ Panchayat_level_committee_officer	paMcAyawa_samiwi_swarIya_paxAXikArI#paMcAyawa_
 free_of_cost	muPZwa#muPZwa#noun#3#RM
 much_more	Ora_aXika#Ora_aXika#adverb#2#RM
 more_commonly	aXikawara#aXikawara#abverb#2#RM
+biology_based	jIva_vijFAna_AXAriwa#jIva_vijFAna_AXAriwa#noun#2#RM
+date_palm_fruit	KajUra_ke_Pala#KajUra_ke_Pala#noun#3#RM

@@ -508,6 +508,12 @@
 	ourself		patron		pilot		politician	public		reader		reporter	scholar
 	scientist	steward		subordinate	teen		themself	victim		viewer		voter
 	astronomer
+	guard		(By Shirisha Manju from human.txt 28-01-15) Ex: Guards have been posted along the border. 
+	prisoner	(	"		"	  07-02-15) Ex: The prisoners were executed by firing squad.
+	rhinoceros	(Suggested by 14anu-ban-01        07-02-15) Ex: This injection stuns the rhinoceros, so we can examine it.
+	staff           (By Shirisha Manju from human.txt 16-02-15) Ex: The company is reconsidering the way in which it deploys its staff.
+        spokesman       (       "       "                       " ) Ex: The spokesman refused to disclose details of the takeover to the press.
+	parents		(	"	"		  18-02-15)
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -1346,6 +1352,22 @@ Removed:
 					Ex: Neverthless,his message is still dismayingly mixed.
 	152. smarten_verb    		AkarRaka_banA			(Suggested by 14anu-ban-01      03-02-15)
 					Ex: You should smarten yourself up.
+	153. hand-picking_adjective    	haswa_cayana			(Suggested by 14anu-ban-06      16-02-15)
+					Ex: They include simple hand-picking, barriers, traps, vacuuming and tillage to disrupt breeding.
+	154. subfamily_noun    		upaparivAra			(Suggested by 14anu-ban-01      16-02-15)
+					Ex: The date palm fruit stalk borer, Oryctes elegans Prell, from the subfamily Dynastinae, is a major
+					    pest of the date palm in southern parts of Persia.
+	155. low-volume_adjective	kama_mAwrA			(Suggested by 14anu-ban-08      16-02-15)
+					Ex: The use of low-volume spray equipment reduces overall pesticide use and labor cost.
+	156. semi-circular_adjective    arXavqwwAkara			(Suggested by 14anu-ban-01      16-02-15)
+					Ex: They move in a semi-circular path in one of the dees and arrive in the gap between the dees in a
+					    time interval T/2.
+	157. geographic_adjective   	BOgolika			(Suggested by 14anu-ban-06      16-02-15)
+					Ex: At such a point, the direction of the longitude circle determines the geographic north-south 
+					    direction, the line of longitude towards the north pole being the direction of true north.
+	158. rigorous_noun              pariSuxXa 			(Suggested by 14anu-ban-10      16-02-15)
+					Ex: However, this adhoc assumption is not satisfactory and the absence of the backwave is really
+					    justified from more rigorous wave theory.
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1614,6 +1636,22 @@ Removed:
 					reference: http://navbharattimes.indiatimes.com/astro/holy-discourse/religious-discourse/-/astroshow/820812.cms
 	136. omission_noun   		aparAXa			(Suggested by 14anu-ban-09   02-02-15)
 					Ex: Can be convicted of a criminal offence .
+	137. provider_noun   		praxAwA			(Suggested by 14anu-ban-09   07-02-15)
+					Ex: From the ages Uttarakhand has been the provider of spiritual shelter and peace for the Indians.
+	138. entreat_verb    		nivexana_kara/anuroXa_kara/yAcanA_kara/vinawI_kara/gujAriSa_kara
+					(Suggested by 14anu-ban-04   07-02-15) She entreated him not to go.
+	139. elderly_adjective       	bujurga
+					On seeing houses turned to ruins on all four sides , burnt-half burnt buildings , amputated dead bodies
+					,the injured waiting for death, wailing children and women, crying elderly people, dead and injured 
+					animals , blood laced roads .
+	140. English_adjective       	britiSa			(Suggested by Chaitanya Sir  12-02-15   )
+					Ex: In 1897, the experiments on electric discharge through gases carried out by the English physicist
+					J.J.Thomson (1856 — 1940) revealed that atoms of different elements contain negatively charged 
+					constituents (electrons) that are identical for all atoms. [NCERT 12-12]
+	141. modify_verb		saMSoXana		(Suggested by 14anu-ban-09   16-02-15)
+					Ex: Science is a systematic attempt to understand natural phenomena in as much detail and depth as
+					    possible, and use the knowledge so gained to predict, modify and control phenomena.
+
 
 
     5. Modifying first meaning from the list :
@@ -2000,7 +2038,29 @@ Removed:
 				Ex: That can be misused with varying effects .
 	175. conversely_adverb  ulatA			as	isake_viparIwa	(	"	14anu-ban-03	  "     )
 				Ex:Conversely,there is an attractive force between the north pole of one magnet and the south pole of the other
-	
+	176. neutralise_verb 	watasWa_GoRiwa_kara	as	niRpraBAviwa_kara ( Suggested by Chaitanya Sir  12-02-15)
+				Ex: Therefore, an atom must also contain some positive charge to neutralise the negative charge of the
+				    electrons. [necrt 12-12]
+	177. timing_noun     	wAla			as	samaya		(Suggested by 14anu-ban-07     16-02-15 )
+				Ex: The office timings were same for all but the breaks were arbitrary.
+	178. similarity_noun 	sAxqSya			as	samanawA	(Suggested by 14anu-ban-01     16-02-15 )
+				Ex: The Biot-Savart law for the magnetic field has certain similarities as well as differences with the 
+				    Coulomb's law for the electrostatic field.
+	179. diagnosis_noun  	roga_kI_pahacAna	as	nixAna		(Suggested by 14anu-ban-04     16-02-15 )
+				Ex: It is used in hospitals to produce radioactive substances which can be used in diagnosis and treatment.
+	180. leg_noun        	tAzga			as	pEra		(Suggested by 14anu-ban-08     16-02-15 )
+				Ex: 
+	181. exceedingly_adverb 	bahuwa_sA	as	awyanwa		(Suggested by 14anu-ban-04     16-02-15 )
+	182. regulate_verb   	niyamAnusAra_Tahara	as	niyanwriwa_kara	(Suggested by 14anu-ban-10     16-02-15 )
+				Ex: The vibrations of the cesium atom regulate the rate of this cesium atomic clock just as the vibrations of a 				   balance wheel regulate an ordinary wristwatch or the vibrations of a small quartz crystal regulate a quartz					  wristwatch.		
+	183. unification_noun	eka_ho_jAnA		as	ekIkaraNa	(Suggested by 14anu-ban-07     17-02-15 )
+				Ex: Great advances in physics often amount to unification of different theories and domains.
+	184. chubby_adjective	galaPulA		as	golamatola	(Suggested by 14anu-ban-03     17-02-15 )
+				Ex: It was a chastening experience. She has got chubby cheeks.
+	185. motor_noun      	preraka			as	motara		(Suggested by 14anu-ban-08     18-02-15 )
+				Ex: The motor must supply enough power to balance this force.
+	186. pointer_noun    	nirxeSaka		as	safkewaka	(Suggested by 14anu-ban-09     18-02-15 )
+				Ex: Take a laser pointer and shine its beam through the turbid water. [ncert]
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -2193,7 +2253,9 @@ Removed:
 	Democratic_National_Convention  prajAwAnwrika_rARtrajana_sammelana#PropN#3#RM		(		"	"	)
 				Ex: The Democratic National Convention will meet next week to announce their party's candidate for president.
 	Hawa_mahal      	havA_mahala#havA_mahala#PropN#2#RM				(		"	"	)
-				Ex:The Hawa mahal was built by the Maharaja Sawai Pratap Singh in 1799 AD and Lal Chand Usta was the architect.
+				Ex:The Hawa mahal was built by the Maharaja Sawai Pratap Singh in 1799 AD and Lal Chand Usta was the architect.	
+	Organic_Materials_Review_Institute      jEvika_paxArWa_samIkRA_saMsWAna#noun#4#RM	(Suggested by 14anu-ban-08 16-02-15)
+						Ex: These may or may not include materials listed on the Organic Materials Review Institute. 
 
     
  multi_word_expressions.txt
@@ -2567,6 +2629,11 @@ Removed:
 				    is defined much more precisely.
 	144. more_commonly    	aXikawara#aXikawara#abverb#2#RM				(Suggested by 14anu-ban-08 17-12-14)
 				Ex: It is the variable force, which is more commonly encountered.
+	145. biology_based   	jIva_vijFAna_AXAriwa#jIva_vijFAna_AXAriwa#noun#2#RM	(Suggested by 14anu-ban-09 18-02-15)
+				Ex: Further ('biology-based') or 'ecological' techniques are under evaluation.
+	146. date_palm_fruit    KajUra_ke_Pala#KajUra_ke_Pala#noun#3#RM			(Suggested by 14anu-ban-09 18-02-15)
+				Ex: The date palm fruit stalk borer, Oryctes elegans Prell, from the subfamily Dynastinae, is a major pest of
+				    the date palm in southern parts of Persia. [Agriculture]
 
 
     Added new meaning to the existing word:
@@ -2593,6 +2660,8 @@ Removed:
 				Ex: For example,whenever we tune our radio to a favorite station, we are taking advantage of a special property 				   of ac circuits — one of many that you will study in this chapter.
 	13. that_is_why         isalie#isalie#determiner#1#RM                           (Suggested by Soshya joshi Banasthali 02-12-14)
                                 Ex: That is why Haridwar is also called the Gate of the Ganges .
+	14. security_guard  	paharexAra		(Suggested by 14anu-ban-01      18-02-15)
+				Ex: The thief broke into the office while his accomplice stalled off the security guard.
 
 
    Modifying the head id:
@@ -2801,7 +2870,15 @@ Removed:
 	bar-magnet_noun 	Cada_cumbaka		(Suggested by 14anu-ban-05      20-01-15)
 				Ex: 
 	urrent-carrying_adjective   XArAvAhI		(Suggested by 14anu-ban-05      20-01-15)
-
+	element_noun         	avayava			(Suggested by 14anu-ban-04      16-02-15)
+				Ex:We can imagine two equal and small elements of area placed at points R and S normal to the field lines there
+	longitudinal_adjective  anuxErGya		(Suggested by 14anu-ban-08      16-02-15)
+				Ex: Tensile or compressive stress can also be termed as longitudinal stress.
+	mono-molecular_adjective        ekANvika	(Suggested by 14anu-ban-08      16-02-15)
+				  Ex: If we assume that the film has mono-molecular thickness, then this becomes the size or diameter of a
+				      molecule of oleic acid.
+	drift_noun      	apavAha			(Suggested by 14anu-ban-04      18-02-15)
+				Ex: This is the phenomenon of drift and the velocity vd in Eq. (3.17) is called the drift velocity.
 
     Modifying first meaning:
     -----------------------
@@ -2867,8 +2944,9 @@ Removed:
 
    Removed entry:
    -------------
-	backward_noun	paScagAmI 	(Suggested by 14anu-ban-02	21-11-14)
-			Ex: We get thrown backward with a jerk.
+	backward_noun	paScagAmI 	(Suggested by 14anu-ban-02	21-11-14) Ex: We get thrown backward with a jerk.
+	material_noun	xravya		(Suggested by 14anu-ban-02      16-02-15)  
+	mean_noun	mAXya		(Suggested by 14anu-ban-08      18-02-15) Ex:
 	
 
  changes in phy_eng_multi_word_dic.txt
@@ -2905,6 +2983,11 @@ Removed:
 				    second.
 	14. pivotal_point    	keMxrIya_biMxu#keMxrIya_biMxu#noun#2#RM			(Suggested by 14anu-ban-09 02-12-14)
 				Ex: A compass needle consists of a magnetic needle which floats on a pivotal point.[NCERT]
+	15. negatively_charged_constituents qNAwmaka_AveSiwa_safGataka#noun#3#RM	(Suggested by Chaitanya Sir      12-02-15)
+				Ex: In 1897, the experiments on electric discharge through gases carried out by the English physicist J.J.
+                                    Thomson (1856 — 1940) revealed that atoms of different elements contain negatively charged constituents
+                                    (electrons) that are identical for all atoms. [NCERT 12-12]
+	16. positively_charged_constituents XanAwmaka_AveSiwa_safGataka#noun#3#RM	(Suggested by Chaitanya Sir      12-02-15)		
 			
 
  changes in causative_verb_mng.txt
@@ -3035,6 +3118,7 @@ Removed:
 	Charles		cArlsa		(	"  by Muskaan Singh	"	"	)
 	Dennis		denisa		(	"	"	"	"	"	)
 	Ganges		gaMgA		(Suggested by Chaitanya Sir 	      15-12-14	)
+	Persia  	PArasa		(	"	14anu-ban-09	"     16-02-15  )	
 	
 
    Modified:
@@ -3107,6 +3191,10 @@ Removed:
 	ourself		patron		pilot		politician	public		reader		reporter	scholar
 	scientist	steward		subordinate	teen		themself	victim		viewer		voter
 	astronomer	
+	guard		(Suggested by 14anu-ban-09       07-02-15 ) Ex: Guards have been posted along the border. 
+	prisoner	(Suggested by 14anu-ban-04		" ) Ex: The prisoners were executed by firing squad.
+	staff   	(	"	"		 16-02-15 ) Ex: The company is reconsidering the way in which it deploys its staff. 
+	spokesman       (	"	"			" ) Ex: The spokesman refused to disclose details of the takeover to the press.	       parents	       (Suggested by 14anu-ban-03       18-02-15 )
 
 
  changes in named_entities.txt
@@ -3138,6 +3226,10 @@ Removed:
 			Ex: Catch crops are also crops that are sown to prevent minerals being flushed away from the soil.
 	5. deep_rooted	gaharI_jadZa_vAlA#gaharI_jadZa_vAlA#adjective#2#RM		(Suggested by 14anu-ban-04 20-11-14)
 			Ex: Crop rotation also mitigates the build-up of pathogens and pests that often occurs when one species is continuously 			   cropped, and can also improve soil structure and fertility by alternating deep-rooted and shallow-rooted plants.
+	6. cane_growing gannA_uwpAxana#gannA_uwpAxana#adjective#2#RM			(Suggested by 14anu-ban-03 18-02-15)
+			Ex: The larvae also attack the roots of sugar cane, causing serious damage in cane-growing regions of Persia. 
+	7. scarab_beetle	gubarElA# gubarElA#noun#2#RM				(Suggested by 14anu-ban-01 18-02-15)
+			Ex: The larvae of the scarab beetle, Pentodon idiota Herbst, are polyphagous and feed on the roots of different plants.
 
   Modified:
 	Added 1st meaning:
@@ -3152,6 +3244,11 @@ Removed:
 
  changes in agriculture_dic.txt:
  ==============================
+    Modified:
+    ---------
+	1. biological_noun 	jOvika		as	jEvika				(Suggested by 14anu-ban-02 27-11-14)
+				
+
     Added:
     ------ 
 	1. polysaccharides_noun		bahuSarkarAeda					(Suggested by 14anu-ban-09 14-11-14)
@@ -3163,6 +3260,17 @@ Removed:
 					Ex: The clover cover crop enhanced songbird habitat by providing cover and nesting sites, and an increased food source from higher arthropod populations.तिपतिया झाडी वाली फसल गानेवाले पक्षी के प्राकृतिक वास को शरण और घोसले की जगहों को परिष्कृत करती/देती है और जो अधिक संधिपाद प्राणी की आबादी उनके खाद्य/आहार स्रोत  को बढाती हैं.(manual)
 	4. sustainable_adjective	vahanIya					(Suggested by 14anu-ban-11 21-11-14)
 					Ex: The wild relatives of crop plants constitute an increasingly important resource for improving 						agricultural production and for maintaining sustainable agro-ecosystems.
+	5. coloration_noun 		raMgAI						(Suggested by 14anu-ban-03 16-02-15)
+					Ex: The adult insects have often brilliant, metallic colorations, Although members of this family are
+					typically inhabitants of hot moist forests, several genera such as Sphenoptera, and Capnodis are of 
+					significant importance throughout Persia.
+	6. prothorax_noun  		agra_BAga					(Suggested by 14anu-ban-09 16-02-15)
+					Ex: The prothorax is large and broader than the remaining segments.
+	7. petioles_noun    		daMTala						(			"	"  )
+					Ex: While the larvae feed on the petioles in the crown and on sap from the base of the fronds.
+	8. prolegs_noun    		prapAxa						(			"	"  )
+					Ex: The larvae have three pairs of highly reduced thoracic legs, as well as nine pairs of prolegs, 
+					    which aid them in locomotion.
 
     Removed:
     -------
@@ -3175,11 +3283,17 @@ Removed:
 				Ex: Plant pathogens follow similar patterns of response to weather and season.
 	4. season_noun		mOsama				(Suggested by 14anu-ban-01 02-12-14)
 				Ex: Plant pathogens follow similar patterns of response to weather and season.
+	5. pesticides_noun 	kItanASI/nASIjIva		(	By Shirisha Manju  16-02-15)          
 
 	Added new meaning to existing list:
 	----------------------------------
-	1. impact_noun	praBAva		(Suggested by 14anu-ban-06	21-11-14) 
-					Ex: The impact of residue placement (buried by tillage or left on the surface in zero tillage) on nutrient cycling and 				efficiency is under study.
+	1. impact_noun		praBAva				(Suggested by 14anu-ban-06	21-11-14) 
+				Ex: The impact of residue placement (buried by tillage or left on the surface in zero tillage) on
+				    nutrient cycling and efficiency is under study.
+	2. pesticide_noun  	kITanASaka/kItanASI/nASIjIva	(Suggested by 14anu-ban-09      16-02-15)
+				Ex: The use of low-volume spray equipment reduces overall pesticide use and labor cost.
+	3. critical_noun   	mahawvapUrNa			(Suggested by 14anu-ban-03      16-02-15)
+				Ex: Matching the application technique to the crop, the pest, and the pesticide is critical.
 
 	Modified first meaning:
         -----------------------

@@ -157,3 +157,9 @@ victim	1
 viewer	1
 voter	1
 astronomer	1
+guard	1
+rhinoceros	1
+prisoner	1
+staff	1
+spokesman	1
+parents	1
