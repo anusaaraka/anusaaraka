@@ -14266,7 +14266,7 @@ chub_noun	Caba_macalI
 chubbier_UNDEFINED	galaPulA
 chubbiest_UNDEFINED	galaPulA
 chubbiness_noun	gulagoWanApana
-chubby_adjective	galaPulA/golamatola
+chubby_adjective	golamatola/galaPulA
 chuck_noun	gomAMsa_kA_loWadA/caka/nikAla_xenA
 chuck_verb	beparavAha_Pefka/Pefka_xe/Coda_xe
 chucked_UNDEFINED	beparavAha_PefkanA
@@ -85915,7 +85915,7 @@ unicycle_verb	ikapahiyA_sAikala_calA
 unicyclist_noun	ikapahiyA_saikala_calAne_vAlA
 unidentifiable_adjective	jise_pahacAnA_na_jA_sake/apahacAna_yogya
 unidentified_adjective	ajFAwa/ajFAw{pahacAna}
-unification_noun	eka_ho_jAnA/ekIkaraNa
+unification_noun	ekIkaraNa/eka_ho_jAnA
 unifications_UNDEFINED	eka_ho_jAnA
 unified_UNDEFINED	joda
 unifies_UNDEFINED	joda
