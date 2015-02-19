@@ -5484,3 +5484,4 @@ West_Indiana_Street	vesta_iNdiyanA_strIta#vesta_iNdiyanA_strIta#PropN#3#RM
 Hawa_mahal	havA_mahala#havA_mahala#PropN#2#RM
 Nobel_Prize	nobala_puraskAra#nobala_puraskAra#PropN#2#RM
 Democratic_National_Convention	prajAwAnwrika_rARtrajana_sammelana#prajAwAnwrika_rARtrajana_sammelana#PropN#3#RM
+Organic_Materials_Review_Institute	jEvika_paxArWa_samIkRA_saMsWAna#jEvika_paxArWa_samIkRA_saMsWAna#noun#4#RM

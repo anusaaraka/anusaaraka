@@ -86,7 +86,7 @@
   ./replace_nonascii-chars.out $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tmp_org $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org
 
   echo "Calling Stanford parser ..."
-  cd $HOME_anu_test/Parsers/stanford-parser/stanford-parser-full-2014-01-04/
+  cd $HOME_anu_test/Parsers/stanford-parser/src
   if [ "$2" != "" -a "$2" != "0" ] ;
   then
   sh run_multiple_parse_penn.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_org > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt.std.penn_tmp_1 2>/dev/null  
@@ -101,14 +101,18 @@
   perl $HOME_anu_test/miscellaneous/HANDY_SCRIPTS/tokenizer.perl -l en < $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt | sed "s/ 's /'s /g" | sed "s/s ' /s' /g" > $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised
 
   echo "Multi word ..."
-  $HOME_anu_test/multifast-v1.0.0/src/multi_word_expression $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/multi_word_expressions.txt
-  $HOME_anu_test/multifast-v1.0.0/src/multi_word_expression_for_proper_nouns $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/proper_noun_dic.txt
+  $HOME_anu_test/multifast-v1.4.2/src/multi_word_expression $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/multi_word_expressions.txt
+  $HOME_anu_test/multifast-v1.4.2/src/multi_word_expression_for_proper_nouns $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/proper_noun_dic.txt
   if [ "$3" == "True" ]; then
-	  $HOME_anu_test/multifast-v1.0.0/src/multi_word_expression_for_prov $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/provisional_multi_dic.txt
+	  $HOME_anu_test/multifast-v1.4.2/src/multi_word_expression_for_prov $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/provisional_multi_dic.txt
   fi
 
-  if [ "$4" == "physics" ]; then 
-     $HOME_anu_test/multifast-v1.0.0/src/multi_word_expression_for_physics $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/phy_multi_word_expressions.txt
+  if [ "$4" != "general" -a "$4" != "" ]; then
+     cd $HOME_anu_test/multifast-v1.4.2/src
+     cp $4_multi_dic.c  domain_multi_dic.c
+     rm -f multi_word_expression_for_domain multi_word_expression_for_domain.o
+     make >/dev/null 
+     $HOME_anu_test/multifast-v1.4.2/src/multi_word_expression_for_domain $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_tokenised > $MYPATH/tmp/$1_tmp/domain_multi_word_expressions.txt
   fi
 
   cd $MYPATH/tmp/$1_tmp
@@ -130,8 +134,8 @@
           $HOME_anu_test/Anu_src/split_file.out provisional_multi_dic.txt dir_names.txt provisional_multi_dic.dat
   fi
 
-  if [ "$4" == "physics" ]; then
-  $HOME_anu_test/Anu_src/split_file.out phy_multi_word_expressions.txt  dir_names.txt  phy_multi_word_expressions.dat
+  if [ "$4" != "general" -a "$4" != "" ]; then
+  $HOME_anu_test/Anu_src/split_file.out domain_multi_word_expressions.txt  dir_names.txt  domain_multi_word_expressions.dat
   fi
 
   #====================================== Minion ================================================
@@ -161,7 +165,7 @@
  cd $MYPATH/tmp/$1_tmp/
  echo "(defglobal ?*path* = $HOME_anu_test)" > path_for_html.clp
  echo "(defglobal ?*mypath* = $MYPATH)" >> path_for_html.clp
- echo "(defglobal ?*filename* = $1)" >> path_for_html.clp
+ echo "(defglobal ?*filename* = ""$1"")" >> path_for_html.clp
 
  echo "Calling Interface related programs"
  sh $HOME_anu_test/bin/run_anu_browser.sh $HOME_anu_test $1 $MYPATH $HOME_anu_output

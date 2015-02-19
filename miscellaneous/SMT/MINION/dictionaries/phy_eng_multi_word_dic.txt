@@ -327,3 +327,5 @@ geographic_north_pole	BOgolika_uwwarI_Xruva#BOgolika_uwwarI_Xruva#noun#2#RM
 iron_filings	lOha_rewana#lOha_rewana#noun#1#RM
 arithmetic_mean	samAnwara_mAXya#samAnwara_mAXya#noun#2#RM
 pivotal_point	keMxrIya_biMxu#keMxrIya_biMxu#noun#2#RM
+negatively_charged_constituents	qNAwmaka_AveSiwa_safGataka#qNAwmaka_AveSiwa_safGataka#noun#3#RM
+positively_charged_constituents	XanAwmaka_AveSiwa_safGataka#qNAwmaka_AveSiwa_safGataka#noun#3#RM
