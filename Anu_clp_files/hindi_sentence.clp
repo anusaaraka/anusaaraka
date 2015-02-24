@@ -72,7 +72,8 @@
  (pada_info (group_ids $? ?id $? ?))
  =>
 	(retract ?f0 ?f1)
-	(bind $?n_mng (create$ $?wrd_analysis PUNCT-OpenParen ?mng PUNCT-ClosedParen))
+	(bind $?n_mng (create$ $?wrd_analysis @PUNCT-OpenParen ?mng @PUNCT-ClosedParen)) ;Added '@'before PUNCT to avoid to convert into utf8.
+;Ex: This [model] was picturesquely called plum pudding model of the atom.
 	(assert (id-Apertium_output ?id $?n_mng))
  )
  ;----------------------------------------------------------------------------------------------------------
@@ -87,10 +88,10 @@
  =>
         (retract ?f0 ?f1)
 	(if (and (eq (str-index "_" (implode$ (create$ ?vib))) FALSE) (neq ?vib 0)) then
-	        (bind $?n_mng (create$ $?wrd_analysis PUNCT-OpenParen ?mng PUNCT-ClosedParen ?v_mng))
+	        (bind $?n_mng (create$ $?wrd_analysis @PUNCT-OpenParen ?mng @PUNCT-ClosedParen ?v_mng))
         	(assert (id-Apertium_output ?id $?n_mng))
 	else 
-		(bind $?n_mng (create$ $?wrd_analysis ?v_mng PUNCT-OpenParen ?mng PUNCT-ClosedParen))
+		(bind $?n_mng (create$ $?wrd_analysis ?v_mng @PUNCT-OpenParen ?mng @PUNCT-ClosedParen))
                 (assert (id-Apertium_output ?id $?n_mng))
 	)
  )

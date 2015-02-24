@@ -19,6 +19,7 @@
        -- timeout (Please note that recent coreutils (>= 7.5-1) provide a timeout binary in it)  
           (this command is used to exit the CLIPS environment in the specific time.)
        -- Stanford Parser (Check README present in anusaaraka/Parsers/stanford-parser/README)
+       -- Ace Parser (optional, if needed check Readme_to_install_ace_parser.txt present in anusaaraka/Parsers/ace-parser)
      (NOTE: Anusaaraka uses 'bash' instead of 'dash')
 --------------------------------------------------------------------------------------------------------------
  2. Install:
