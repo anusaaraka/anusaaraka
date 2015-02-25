@@ -1,4 +1,4 @@
- 24-02-15
+ 25-02-15
  ========
  1. hindi_sentence.clp:
 	Modified : add_eng_mng, add_eng_mng1 rule
@@ -8,6 +8,7 @@
 	src/get_cat_root_info.py
 	src/get_mrs.sh
 	src/map-relations.py
+	src/get_tree.sh
  3. Added following files to run Ace parser:
 	bin/Anusaaraka_ace.sh
 	bin/run_sentence_ace.sh
