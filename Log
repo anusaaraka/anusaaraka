@@ -1,3 +1,23 @@
+ 25-02-15
+ ========
+ 1. hindi_sentence.clp:
+	Modified : add_eng_mng, add_eng_mng1 rule
+ 2. Added ace-parser dir in Parsers folder
+	Readme_to_install_ace_parser.txt
+	src/extract_mrs_output.py
+	src/get_cat_root_info.py
+	src/get_mrs.sh
+	src/map-relations.py
+	src/get_tree.sh
+ 3. Added following files to run Ace parser:
+	bin/Anusaaraka_ace.sh
+	bin/run_sentence_ace.sh
+	Anu_clp_files/run_modules_ace.bat
+ 4. Updated following files:
+	INSTALL
+	README
+ 5. Updated Log.
+
  18-02-15
  ========
  1. causative_verb_mng.clp: 

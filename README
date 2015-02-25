@@ -52,3 +52,6 @@
 
 18. To install Stanford parser:
 	Check README present in $HOME_anu_test/Parsers/stanford-parser/
+
+19. To install Ace Parser:
+	Check Readme_to_install_ace_parser.txt present in $HOME_anu_test/Parsers/ace-parser
