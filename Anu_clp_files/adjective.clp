@@ -207,7 +207,8 @@
 	)
  )
  ;---------------------------------------------------------------------------------------------------------
- ;To check whether file the file is loaded  
+ ;To check whether file the file is loaded 
+ ;Newton [unified] terrestrial and celestial domains under a common law of gravitation.  
  (defrule check_whether_mng_dcd
  (declare (salience -9955))
 ?f<-(mng_need_to_be_decided_on_verb_root ?id)
