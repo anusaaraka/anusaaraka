@@ -50,7 +50,7 @@ for line in open(sys.argv[1]):
 		if word_id not in rel_dic:
 			rel_dic[word_id] = relation_name
 		else:
-			rel_dic[word_id] = rel_dic[word_id] + '/' + relation_name 
+			rel_dic[word_id] = rel_dic[word_id] + "^" + relation_name 
 
 #for key in rel_dic:
 #	print key, rel_dic[key]
@@ -63,17 +63,18 @@ for key in sorted(parserid_dic):
 	ids = key.split(':') 
 	parser_word = sent[int(ids[0])+6:int(ids[1])+6] 
 	if key in rel_dic:
-		if '/' not in rel_dic[key]:
+		if '^' not in rel_dic[key]:
 			root = rel_dic[key].split('_')
 			if root[0] not in relation_names:
 				dic[int(parserid_dic[key])] =  parser_word + ':' + root[0] + ':' + root[1]
-			else:
-				print '***'
 		else:
-			rels = rel_dic[key].split('/')
+			rels = rel_dic[key].split('^')
 			for item in rels:
 				root = item.split('_')
 				if root[0] not in relation_names:
+					if '/' in root[0]:
+						lst = root[0].split('/')
+						root[1] = lst[1]
 					dic[int(parserid_dic[key])] =  parser_word + ':' + root[0] + ':' + root[1]
 			if parserid_dic[key] not in dic:
 				dic[int(parserid_dic[key])] =  parser_word + ':' + parser_word + ':' + '-'
