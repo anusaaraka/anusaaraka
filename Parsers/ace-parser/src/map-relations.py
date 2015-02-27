@@ -37,10 +37,12 @@ for line in open(sys.argv[1]):
 				arg3 = ''
 				arg0 = ''
 			else:
-				if cat[args[5]] == 'v':
-					relation_name = 'kriyA-' + prep + '_saMbanXI'
-				else:
-					relation_name = 'viSeRya-' + prep + '_saMbanXI'
+ 				print '^^^', type(args[5])
+				if args[5] in cat:
+					if cat[args[5]] == 'v':
+						relation_name = 'kriyA-' + prep + '_saMbanXI'
+					else:
+						relation_name = 'viSeRya-' + prep + '_saMbanXI'
 				print_rel_info(relation_name, args[5], args[8])
 				print_rel_info_in_anu(relation_name, args[2], args[5], args[8])
 		elif '_a_1' in lst[0]:
@@ -61,3 +63,6 @@ for line in open(sys.argv[1]):
 		elif 'compound_rel' in lst[0]:
 			print_rel_info('samAsa_viSeRya-samAsa_viSeRaNa', args[5], args[8])
 			print_rel_info_in_anu('samAsa_viSeRya-samAsa_viSeRaNa', '-', args[5], args[8])
+		elif 'be_v_id_rel' in lst[0]:
+			print_rel_info('subject-subject_samAnAXikaraNa', args[5], args[8])
+			print_rel_info_in_anu('subject-subject_samAnAXikaraNa', '-', args[5], args[8])
