@@ -329,3 +329,6 @@ arithmetic_mean	samAnwara_mAXya#samAnwara_mAXya#noun#2#RM
 pivotal_point	keMxrIya_biMxu#keMxrIya_biMxu#noun#2#RM
 negatively_charged_constituents	qNAwmaka_AveSiwa_safGataka#qNAwmaka_AveSiwa_safGataka#noun#3#RM
 positively_charged_constituents	XanAwmaka_AveSiwa_safGataka#qNAwmaka_AveSiwa_safGataka#noun#3#RM
+neon_sign	nioYna-sAina#nioYna-sAina#noun#2#RM
+mercury_vapor	pAraxa-vARpa#pAraxa-vARpa#noun#2#RM
+glow_tube	wApaxIpwa_nalikA#wApaxIpwa_nalikA#noun#2#RM
