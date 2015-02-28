@@ -22,7 +22,10 @@ def check_word_in_dic(arg, word):
         elif word in event_dic:
                 print arg, word, event_dic[word],
         elif word in indirect_handle_dic:
-                print arg, word + '->' + indirect_handle_dic[word], handle_dic[indirect_handle_dic[word]],
+		if indirect_handle_dic[word] in handle_dic: #To avoid handle type Key errors added if else loop
+	                print arg, word + '->' + indirect_handle_dic[word], handle_dic[indirect_handle_dic[word]],
+		else:
+			print arg, word + '->' + indirect_handle_dic[word], '0',
         else:
                 print arg, word, '0',
 
@@ -67,12 +70,12 @@ for line in open(sys.argv[1]):
 				for i in range(0, len(rel)-1):
 					if 'ARG' in rel[i]:
 						if 'ARG0' in rel[i]:
-							key = relation_name + '+' + rel[i] + '+' + rel[i+1]
+							key = relation_name + '^' + rel[i] + '^' + rel[i+1]
 						else:
 							if value == '':
-								value = value +  rel[i] + '+' + rel[i+1]
+								value = value +  rel[i] + '^' + rel[i+1]
 							else:
-								value = value + '+' + rel[i] + '+' + rel[i+1]
+								value = value + '^' + rel[i] + '^' + rel[i+1]
 				relation_dic[key] = value
 	if 'HCONS' in line:
 		line = line[9:-5]
@@ -82,8 +85,8 @@ for line in open(sys.argv[1]):
 #			print lst[each], lst[each+2]
 
 for key in relation_dic:
-	new_key = key.split('+')
-	lst = relation_dic[key].split('+')
+	new_key = key.split('^')
+	lst = relation_dic[key].split('^')
 	print '\n' + new_key[0] + '\t', 
 	check_word_in_dic(new_key[1], new_key[2])
 	for i in range(0, len(lst), 2):

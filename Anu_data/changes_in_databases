@@ -765,6 +765,13 @@ Modified :
 	fuel		accept__vblex		(     "	     "	  )
 	clamour		accept__vblex		(     "      "	  )
 	clamor		accept__vblex		(     "      "    )
+	strew		hew__vblex		(     "	  26-02-15)
+	intricacy	bab/y__n		(     "      "    )
+	cleave		w/eave__vblex		(     "      "    )
+	sheer		long/__adj		(     "      "    )
+	billow		accept__vblex		(     "      "    )
+	enfold		accept__vblex		(     "      "    )
+
 
 Modified paradigm:
      	belonging	house__n	as	personnel__n	(Suggested by Meena ji 12-05-11)
@@ -818,6 +825,7 @@ Removed:
 	<e lm="flags"><i>flags</i><par n="access__n"/></e>			("		04-12-13) 
 	<e lm="tactics"><i>tactics</i><par n="politics__n"/></e>		("		06-01-14)
 	<e lm="wrapped"><i>wrapped</i><par n="accept__vblex"/></e>		("		02-10-14)
+	<e lm="stocks"><i>stocks</i><par n="access__n"/></e>			("		26-02-15)
 
 
  Added new files:

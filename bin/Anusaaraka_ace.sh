@@ -119,7 +119,7 @@
   echo "Running Ace parser ..."
   cd $HOME_anu_test/Parsers/ace-parser/src
   sh get_mrs.sh $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt 2>/dev/null
-  sed -n '1h;2,$H;${g;s/\nSENT:/;~~~~~~~~~~\nSENT:/g;p}' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_Tf1 >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_Tf1.txt
+  sed -n '1h;2,$H;${g;s/\nSENT:/;~~~~~~~~~~\nSENT:/g;p}' $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_Tf1 | sed 's/^SKIP:/;~~~~~~~~~~\nSKIP:/g' >  $MYPATH/tmp/$1_tmp/one_sentence_per_line.txt_Tf1.txt
 
   cd $MYPATH/tmp/$1_tmp
   sed 's/&/\&amp;/g' one_sentence_per_line.txt|sed -e s/\'/\\\'/g |sed 's/\"/\&quot;/g' |sed  "s/^/(Eng_sen \"/" |sed -n '1h;2,$H;${g;s/\n/\")\n;~~~~~~~~~~\n/g;p}'|sed -n '1h;2,$H;${g;s/$/\")\n;~~~~~~~~~~\n/g;p}' > one_sentence_per_line_tmp.txt

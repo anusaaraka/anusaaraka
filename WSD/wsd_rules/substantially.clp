@@ -27,7 +27,7 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id mUla_rUpa_se))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  substantially.clp 	substantially0   "  ?id "mUla_rUpa_se )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  substantially.clp 	substantially0   "  ?id " mUla_rUpa_se )" crlf))
 )
 
 ;@@@ Added by Jagrati
@@ -42,5 +42,5 @@
 (retract ?mng)
 (assert (id-wsd_root_mng ?id kAPZI_haxa_waka))
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  substantially.clp 	substantially1   "  ?id "kAPZI_haxa_waka )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  substantially.clp 	substantially1   "  ?id " kAPZI_haxa_waka )" crlf))
 )
