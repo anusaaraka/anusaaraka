@@ -84,7 +84,7 @@ for line in open(sys.argv[1]):
 			indirect_handle_dic[lst[each]] = lst[each+2]
 #			print lst[each], lst[each+2]
 
-for key in relation_dic:
+for key in sorted(relation_dic):
 	new_key = key.split('^')
 	lst = relation_dic[key].split('^')
 	print '\n' + new_key[0] + '\t', 

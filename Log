@@ -1,4 +1,4 @@
- 26-02-15
+ 03-03-15
  ========
  1. WSD:
 	substantially.clp 
@@ -22,6 +22,9 @@
  7. Updated following files:
 	INSTALL
 	README
+	tree_viewer/README
+	tree_viewer/remove-out-files.sh
+	tree_viewer/view_trees.sh
  8. Updated Log.
 
  18-02-15

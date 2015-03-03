@@ -18,15 +18,16 @@
  
          Steps to view trees:
  	  Go to File menu -> select Open Treebank
- 	  (A new window opens)  --> select the path upto working directory and then 
-	 		   	   a.  select <input-file>_derived_tree file and Click Open
+ 	  (A new window opens)  --> 
+	 		   	   a.  select <input-file>_derived_tree file in home directory and Click Open
                                          Ex: test_derived_tree 
-                                   b.  select <input-file>_derivation_tree file and Click Open
+                                   b.  select <input-file>_derivation_tree file in home directory and Click Open
                                          Ex: test_derivation_tree
-		                   c.  select <input-file>_dependency_tree and Click Open
+		                   c.  select <input-file>_dependency_tree in home directory and Click Open
                                          Ex: test_dependency_tree 
 
   Note: To remove out files, run: bash remove-out-files.sh
+        All the trees are created in $HOME directory.
 -------------------------------------------------------------------------------------------------------------------
 To view Dependency Tree in paninian format::
 =========================================

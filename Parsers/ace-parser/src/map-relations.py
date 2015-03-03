@@ -5,6 +5,7 @@ import sys
 rel_fp = open(sys.argv[3], 'w')
 
 cat = {}
+
 for each in open(sys.argv[2]):
 	lst = each.split('\t')
 	cat[lst[1]] = lst[2][:-2]	
@@ -18,6 +19,8 @@ def print_rel_info_in_anu(relation_name, prep_id, id1, id2):
 arg3 = ''
 arg0 = ''
 
+prep_list = ['up', 'out', 'down']
+
 for line in open(sys.argv[1]):
 	if '\t' in line:
 		lst = line.split('\t')
@@ -28,7 +31,7 @@ for line in open(sys.argv[1]):
 			else:
 				prep = lst[0][:-6]
 			if arg3 != '' and args[2] == arg3:
-				if cat[arg0] == 'v':
+				if cat[arg0] == 'v' or cat[args[5]] == 'VBZ':
 					relation_name = 'kriyA-' + prep + '_saMbanXI'
 				else:
 					relation_name = 'viSeRya-' + prep + '_saMbanXI'
@@ -37,21 +40,26 @@ for line in open(sys.argv[1]):
 				arg3 = ''
 				arg0 = ''
 			else:
- 				print '^^^', type(args[5])
 				if args[5] in cat:
-					if cat[args[5]] == 'v':
+					if cat[args[5]] == 'v' or cat[args[5]] == 'VBZ':
 						relation_name = 'kriyA-' + prep + '_saMbanXI'
 					else:
 						relation_name = 'viSeRya-' + prep + '_saMbanXI'
-				print_rel_info(relation_name, args[5], args[8])
-				print_rel_info_in_anu(relation_name, args[2], args[5], args[8])
+#					print '***', relation_name
+					print_rel_info(relation_name, args[5], args[8])
+					print_rel_info_in_anu(relation_name, args[2], args[5], args[8])
 		elif '_a_1' in lst[0]:
-			print_rel_info('viSeRya-viSeRaNa', args[2], args[5])
-			print_rel_info_in_anu('viSeRya-viSeRaNa', '-', args[2], args[5])
+			if args[5] in cat:
+				if cat[args[5]] == 'v'  or cat[args[5]] == 'VBZ':
+					relation_name = 'kriyA-kriyA_viSeRaNa'
+				else:
+					relation_name = 'viSeRya-viSeRaNa'
+				print_rel_info(relation_name, args[5], args[2])
+				print_rel_info_in_anu(relation_name, '-', args[5], args[2])
 		elif 'poss_rel' in lst[0]:
 			print_rel_info('viSeRya-RaRTI_viSeRaNa', args[5], args[8])
 			print_rel_info_in_anu('viSeRya-RaRTI_viSeRaNa', '-', args[5], args[8])
-		elif '_v_1_rel' in lst[0] or '_v_up_rel' in lst[0]:
+		elif '_v_1_rel' in lst[0] or '_v_up_rel' in lst[0] or '_v_out_rel' in lst[0]: #If you use that strategy, he will [wipe] you [out]. 
 			print_rel_info('kriyA-subject', args[2], args[5])
 			print_rel_info_in_anu('kriyA-subject', '-', args[2], args[5])
 			if len(args) > 6:
@@ -66,3 +74,6 @@ for line in open(sys.argv[1]):
 		elif 'be_v_id_rel' in lst[0]:
 			print_rel_info('subject-subject_samAnAXikaraNa', args[5], args[8])
 			print_rel_info_in_anu('subject-subject_samAnAXikaraNa', '-', args[5], args[8])
+		elif 'be_v_there_rel' in lst[0]:
+			print_rel_info('kriyA-aBihiwa', args[2], args[5])
+			print_rel_info_in_anu('kriyA-aBihiwa', '-', args[2], args[5])
