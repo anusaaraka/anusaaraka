@@ -1,4 +1,4 @@
- 26-02-15
+ 4-03-15
  ========
  1. WSD:
 	substantially.clp 
@@ -17,12 +17,15 @@
 	bin/Anusaaraka_ace.sh
 	bin/run_sentence_ace.sh
 	Anu_clp_files/run_modules_ace.bat
- 6. Updated following dictionaries:
+ 6. Added rule "change_tam_source_for_WSD" in tam_meaning.clp [for showing tooltip along with wsd rule name in html file] ,
+         Also modified below files for loading debug_file.dat in tam_meaning.clp module
+         run_modules_ace.bat  run_modules_link.bat  run_modules_ol.bat run_modules_std.bat
+ 7. Updated following dictionaries:
         changes_in_databases	apertium-en-hi.en.metadix
- 7. Updated following files:
+ 8. Updated following files:
 	INSTALL
 	README
- 8. Updated Log.
+ 9. Updated Log.
 
  18-02-15
  ========
