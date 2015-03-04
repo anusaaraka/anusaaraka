@@ -18,7 +18,7 @@
  cd $MYPATH/$1_tmp/$2
  python $HOME_anu_test/Parsers/ace-parser/src/extract_mrs_output.py mrs_output.dat  > relations
  python $HOME_anu_test/Parsers/ace-parser/src/get_cat_root_info.py  mrs_output.dat word  root  cat
- python $HOME_anu_test/Parsers/ace-parser/src/map-relations.py  relations cat relations_tmp1.dat > relations.dat 
+ python $HOME_anu_test/Parsers/ace-parser/src/map-relations.py  relations word cat relations_tmp1.dat > relations.dat 
   
  myclips -f $HOME_anu_test/Anu_clp_files/run_modules_ace.bat >  $1.error
  #Following two files are added to handle PropN fact and SYMBOL facts in layered o/p 
