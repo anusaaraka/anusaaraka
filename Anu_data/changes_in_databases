@@ -514,6 +514,10 @@
 	staff           (By Shirisha Manju from human.txt 16-02-15) Ex: The company is reconsidering the way in which it deploys its staff.
         spokesman       (       "       "                       " ) Ex: The spokesman refused to disclose details of the takeover to the press.
 	parents		(	"	"		  18-02-15)
+	baby            (Suggested by 14anu-ban-01       23-02-15 ) Ex: The baby was screaming itself hoarse
+	teenager        (       "       "                28-02-15 ) Ex: Bob turned out to be a sullen teenager.
+	paparazzi	(	"     14anu-ban-07	   "	  ) Ex: I love what you did to try to throw off the paparazzi.
+	troop           (       "     14anu-ban-04       23-02-15 ) Ex: They embarked the troops by night.
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -772,7 +776,6 @@ Modified :
 	billow		accept__vblex		(     "      "    )
 	enfold		accept__vblex		(     "      "    )
 
-
 Modified paradigm:
      	belonging	house__n	as	personnel__n	(Suggested by Meena ji 12-05-11)
 	box		bass__n		as	access__n	(Suggested by Meena ji 10-08-11)
@@ -876,6 +879,7 @@ Removed:
 	Basti   	(	"		"	"  ) Ex: A big door of wood is the entrance of the ' Badi Basti ' .
 	Cave		(	"		"	"  ) Ex: On the entrance of Karla Cave there are one pillar and three lion statues
 								 prior to the cave .
+	Industry	(	"		"  28-02-15) Ex: Industry in Britain has been in decline since the 1970s.  	
 
 
  Changes in hindi_default_tam.txt
@@ -1659,7 +1663,13 @@ Removed:
 	141. modify_verb		saMSoXana		(Suggested by 14anu-ban-09   16-02-15)
 					Ex: Science is a systematic attempt to understand natural phenomena in as much detail and depth as
 					    possible, and use the knowledge so gained to predict, modify and control phenomena.
-
+	142. picturesquely_adverb    	ciwramaya_rUpa_meM	(Suggested by Chaitanya Sir  19-02-15   )
+					Ex: This model was picturesquely called plum pudding model of the atom.
+	143. later_adverb		kuCa_samaya_paScAwa	(Suggested by Chaitanya Sir  28-02-15  )
+					Ex: This experiment was later performed around 1911 by Hans Geiger.
+	144. revolving_adjective	parikramA_karawA_huA/parikramA_karane_vAlA (Suggested by Chaitanya Sir  28-02-15  )
+					Ex: According to this the entire positive charge and most of the mass of the atom is concentrated in a 
+					    small volume called the nucleus with electrons revolving around the nucleus just as planets revolve                                            around the sun.
 
 
     5. Modifying first meaning from the list :
@@ -2069,6 +2079,8 @@ Removed:
 				Ex: The motor must supply enough power to balance this force.
 	186. pointer_noun    	nirxeSaka		as	safkewaka	(Suggested by 14anu-ban-09     18-02-15 )
 				Ex: Take a laser pointer and shine its beam through the turbid water. [ncert]
+	187. glow_verb		rafga			as	camaka		(Suggested by Chaitanya Sir    28-02-15)
+				
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -2114,6 +2126,7 @@ Removed:
 	38. conjunction_UNDEFINED	saMyojana				(Suggested by 14anu-ban-03	14-11-14)
 	39. bike_noun		sAikil_calAa/bAika_calA				(Suggested by Chaitanya Sir     23-01-15)
 	40. bike_UNDEFINED	sAikila_calA					(	"	"		  "	)
+	41. spacing_noun	anwarAlana					(	"	"		24-02-15)
 	
 
     7. Removed entry:
@@ -2995,8 +3008,14 @@ Removed:
 				Ex: In 1897, the experiments on electric discharge through gases carried out by the English physicist J.J.
                                     Thomson (1856 — 1940) revealed that atoms of different elements contain negatively charged constituents
                                     (electrons) that are identical for all atoms. [NCERT 12-12]
-	16. positively_charged_constituents XanAwmaka_AveSiwa_safGataka#noun#3#RM	(Suggested by Chaitanya Sir      12-02-15)		
-			
+	16. positively_charged_constituents XanAwmaka_AveSiwa_safGataka#noun#3#RM	(Suggested by Chaitanya Sir      12-02-15)		       17. neon_sign		nioYna-sAina#nioYna-sAina#noun#2#RM		       (	"	"		23-02-15)
+				Ex: In contrast, light emitted from rarefied gases heated in a flame, or excited electrically in a glow tube
+				    such as the familiar neon sign or mercury vapor light has only certain discrete wavelengths.	
+	18. mercury_vapor   	pAraxa-vARpa#pAraxa-vARpa#noun#2#RM			(Suggested by Chaitanya Sir      23-02-15)
+				Ex: 						"
+	19. glow_tube       	wApaxIpwa_nalikA#wApaxIpwa_nalikA#noun#2#RM		(	"	"		  "	 )
+				Ex:						"
+		
 
  changes in causative_verb_mng.txt
  =================================
@@ -3203,7 +3222,10 @@ Removed:
 	prisoner	(Suggested by 14anu-ban-04		" ) Ex: The prisoners were executed by firing squad.
 	staff   	(	"	"		 16-02-15 ) Ex: The company is reconsidering the way in which it deploys its staff. 
 	spokesman       (	"	"			" ) Ex: The spokesman refused to disclose details of the takeover to the press.	       parents	       (Suggested by 14anu-ban-03       18-02-15 )
-
+	baby		(Suggested by 14anu-ban-01       23-02-15 ) Ex:	The baby was screaming itself hoarse.
+	teenager	(	"	"		 28-02-15 ) Ex: Bob turned out to be a sullen teenager.
+	troop		(	"     14anu-ban-04       23-02-15 ) Ex: They embarked the troops by night.     
+	paparazzi       (By Manju from animate.txt        "       ) Ex: I love what you did to try to throw off the paparazzi.
 
  changes in named_entities.txt
  =============================

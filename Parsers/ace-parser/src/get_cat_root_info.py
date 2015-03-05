@@ -55,7 +55,7 @@ for line in open(sys.argv[1]):
 #for key in rel_dic:
 #	print key, rel_dic[key]
 
-relation_names = ['parg', 'udef', 'def', 'poss', 'pron', 'pronoun']
+relation_names = ['parg', 'udef', 'def', 'poss', 'pron', 'pronoun', 'nominalization']
 
 dic = {}
 
@@ -66,13 +66,16 @@ for key in sorted(parserid_dic):
 		if '^' not in rel_dic[key]:
 			root = rel_dic[key].split('_')
 			if root[0] not in relation_names:
+				if '/' in root[0]: #He [ladles] it with a large wooden spoon. 
+					lst = root[0].split('/')
+					root[1] = lst[1]
 				dic[int(parserid_dic[key])] =  parser_word + ':' + root[0] + ':' + root[1]
 		else:
 			rels = rel_dic[key].split('^')
 			for item in rels:
 				root = item.split('_')
 				if root[0] not in relation_names:
-					if '/' in root[0]:
+					if '/' in root[0]:   #The [blacksmith] made an assay of iron ore.
 						lst = root[0].split('/')
 						root[1] = lst[1]
 					dic[int(parserid_dic[key])] =  parser_word + ':' + root[0] + ':' + root[1]

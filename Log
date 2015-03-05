@@ -1,4 +1,8 @@
+<<<<<<< HEAD
  4-03-15
+=======
+ 03-03-15
+>>>>>>> remotes/origin/master
  ========
  1. WSD:
 	substantially.clp 
@@ -25,7 +29,14 @@
  8. Updated following files:
 	INSTALL
 	README
+<<<<<<< HEAD
  9. Updated Log.
+=======
+	tree_viewer/README
+	tree_viewer/remove-out-files.sh
+	tree_viewer/view_trees.sh
+ 8. Updated Log.
+>>>>>>> remotes/origin/master
 
  18-02-15
  ========

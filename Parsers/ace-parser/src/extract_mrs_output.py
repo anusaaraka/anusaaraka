@@ -61,6 +61,11 @@ for line in open(sys.argv[1]):
 			handle_dic[rel[1]] = parserid_dic[word_id]
 			if rel[3].startswith('e'):
 				event_dic[rel[3]] = parserid_dic[word_id]
+			elif  rel[2] == 'CARG:':  #He is known as the [Einstein] of India.
+				if rel[5].startswith('e'):
+					event_dic[rel[5]] = parserid_dic[word_id]
+				elif 'ARG1' not in rel:
+					self_dic[rel[5]] = parserid_dic[word_id]
 			elif 'ARG1' not in rel:
 				self_dic[rel[3]] = parserid_dic[word_id]
 		if relation_name not in relation_dic:
@@ -84,7 +89,7 @@ for line in open(sys.argv[1]):
 			indirect_handle_dic[lst[each]] = lst[each+2]
 #			print lst[each], lst[each+2]
 
-for key in relation_dic:
+for key in sorted(relation_dic):
 	new_key = key.split('^')
 	lst = relation_dic[key].split('^')
 	print '\n' + new_key[0] + '\t', 

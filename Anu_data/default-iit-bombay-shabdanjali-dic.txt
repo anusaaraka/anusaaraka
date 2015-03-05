@@ -33767,7 +33767,7 @@ gloves_UNDEFINED	xaswAnA
 gloving_UNDEFINED	xaswAnA
 glow-worm_noun	juganU
 glow_noun	xIpwi/uxipwi/lAlI/camaka_xamaka/ABA
-glow_verb	rafga/praPulliwa_ho/garama_kara/camaka
+glow_verb	camaka/rafga/praPulliwa_ho/garama_kara
 glowed_UNDEFINED	camakanA
 glower_noun	kruxXa_xqRti
 glower_verb	AzKeM_warera_kara_xeKa
@@ -44725,7 +44725,7 @@ latent_adjective	pracCanna/aprakata/avikasiwa
 latenter_UNDEFINED	avikasiwa
 latentest_UNDEFINED	avikasiwa
 later_UNDEFINED	xera
-later_adverb	bAxa_meM/bAxa/aXika_xera_waka
+later_adverb	bAxa_meM/bAxa/aXika_xera_waka/kuCa_samaya_paScAwa
 lateral-thinking_noun	pArSvika_cinwana
 lateral_adjective	pArSvika/pArSvIya
 lateraler_UNDEFINED	pArSvika
@@ -58021,7 +58021,7 @@ picture_verb	varNana_kara/varaNana_kara/praswuwa_kara/kalpanA_kara/citra_banA/an
 pictured_UNDEFINED	Poto
 pictures_UNDEFINED	Poto
 picturesque_adjective	suramya/ciwravawa_sunxara/sunxara/sajIva
-picturesquely_adverb	sarasawA_se
+picturesquely_adverb	ciwramaya_rUpa_meM/sarasawA_se
 picturesqueness_noun	suramyawA/sajIvawA
 picturesquenesses_UNDEFINED	suramyawA
 picturesquer_UNDEFINED	sajIva
@@ -66682,7 +66682,7 @@ revolver_UNDEFINED	rivoYlvara
 revolver_noun	wamaFcA/rivalvara/cakra-xvAra/piswOla{jisamez_kaI_nalI_hoz}
 revolvers_UNDEFINED	piswOla
 revolves_UNDEFINED	GUmanA
-revolving_adjective	parikramI/GUmane_vAlA
+revolving_adjective	parikramA_karawA_huA/GUmane_vAlA/parikramA_karane_vAlA
 revolvinger_UNDEFINED	parikramI
 revolvingest_UNDEFINED	parikramI
 revue_noun	samasAmayika_prahasana/rivyU
@@ -74484,7 +74484,7 @@ spacial_UNDEFINED	AkISIya
 spacial_adjective	sWAnika
 spacialer_UNDEFINED	AkISIya
 spacialest_UNDEFINED	AkISIya
-spacing_noun	anwarAlana/anwarAla/anwara
+spacing_noun	anwarAla/anwara
 spacings_UNDEFINED	anwarAlana
 spacious_adjective	viswqwa/viSAla/badA
 spaciouser_UNDEFINED	viswqwa
