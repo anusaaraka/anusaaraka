@@ -349,6 +349,7 @@
  (load-facts "meaning_to_be_decided.dat")
  (load-facts "cat_consistency_check.dat")
  (load-facts "relations_tmp1.dat")
+ (load-facts "debug_file.dat")
  (open "wsd_tam_facts_output.dat" wsd_tam_fact_fp "a")
  (run)
  (save-facts "hindi_tam_info.dat" local pada_info conj_head-left_head-right_head)
