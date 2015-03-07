@@ -775,6 +775,9 @@ Modified :
 	sheer		long/__adj		(     "      "    )
 	billow		accept__vblex		(     "      "    )
 	enfold		accept__vblex		(     "      "    )
+	align		accept__vblex		(     "   06-03-15)
+	disguise	liv/e__vblex		(     "      "    )
+
 
 Modified paradigm:
      	belonging	house__n	as	personnel__n	(Suggested by Meena ji 12-05-11)
@@ -1062,6 +1065,7 @@ Removed:
 	121. neutron_noun     		nyUtrana	as	nyUtroYna 	(	"	14anu-ban-08	"	)
 	122. usefully_adverb		upayogI_Dafga_e	as	upayogI_DaMga_se(	"	14anu-ban-07 21-11-14	)
 	123. significantly_adverb	arWapUrNawAse	as	arWapUrNawA_se	(	"	14anu-ban-11 21-11-14   )
+	124. move_verb			hil/hat/becakara_hat/calA_j	as	hila/hata/becakara_hata/calA_ja	(Suggested by Chaitanya Sir 06-03-15)
 
     3. Added new entry:
        ---------------
@@ -1380,6 +1384,8 @@ Removed:
 	158. rigorous_noun              pariSuxXa 			(Suggested by 14anu-ban-10      16-02-15)
 					Ex: However, this adhoc assumption is not satisfactory and the absence of the backwave is really
 					    justified from more rigorous wave theory.
+	159. Fig._noun			ciwra				(Suggested by Chaitanya Sir	06-03-15)
+					Ex: The electronic transitions corresponding to these series are shown in Fig. 12.9.
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1670,7 +1676,8 @@ Removed:
 	144. revolving_adjective	parikramA_karawA_huA/parikramA_karane_vAlA (Suggested by Chaitanya Sir  28-02-15  )
 					Ex: According to this the entire positive charge and most of the mass of the atom is concentrated in a 
 					    small volume called the nucleus with electrons revolving around the nucleus just as planets revolve                                            around the sun.
-
+	145. emit_verb			uwsarjiwa_kara		(Suggested by Chaitanya Sir 	06-03-15)
+					Ex: However, it could not explain why atoms emit light of only discrete wavelengths.
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -2127,6 +2134,7 @@ Removed:
 	39. bike_noun		sAikil_calAa/bAika_calA				(Suggested by Chaitanya Sir     23-01-15)
 	40. bike_UNDEFINED	sAikila_calA					(	"	"		  "	)
 	41. spacing_noun	anwarAlana					(	"	"		24-02-15)
+	42. move_noun		upAya						(	"	"		06-03-15)
 	
 
     7. Removed entry:
