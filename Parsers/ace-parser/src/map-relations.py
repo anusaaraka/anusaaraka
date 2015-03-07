@@ -108,7 +108,7 @@ for line in open(sys.argv[1]):
 			if len(rel) == 4:
 				key = check_value_in_dic(rel[2], word)
 				if key != None:
-					print_rel_info('kriyA-upasarga', args[2], key)
+					print_rel_info('kriyA-upasarga', args[2], key) # I will [give up] smoking.
 					print_rel_info_in_anu('kriyA-upasarga', '-', args[2], key)
 			print_rel_info('kriyA-subject', args[2], args[5])
 			print_rel_info_in_anu('kriyA-subject', '-', args[2], args[5])
@@ -118,3 +118,15 @@ for line in open(sys.argv[1]):
 			if len(args) == 12:
 				arg3 = args[11]
 				arg0 = args[2]				
+		elif '_n_of_rel' in lst[0]: #He heard the [sound of rain] from the kitchen. 
+			rel = lst[0].split('_')
+			if len(rel) == 4:
+				key = check_value_in_dic(rel[2], word)
+				if key != None:
+					print_rel_info('viSeRya-of_saMbanXI', args[2], args[5])
+					print_rel_info_in_anu('viSeRya-of_saMbanXI', key, args[2], args[5])
+		elif 'neg_rel' in lst[0]: #It [is not] a good manner to eat alone.
+			print_rel_info('kriyA-kriyA_niReXaka', args[2], args[5])
+			print_rel_info_in_anu('kriyA-kriyA_niReXaka', '-', args[2], args[5])
+		
+	

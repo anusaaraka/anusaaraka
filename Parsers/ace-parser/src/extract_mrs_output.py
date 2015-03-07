@@ -37,10 +37,16 @@ for line in open(sys.argv[1]):
 #		print   lst
 		for i in range(1, len(lst)):
 			count += 1
-			end_count = start_count + len(lst[i])
-			word_id = str(start_count) + ':' + str(end_count)
-			parserid_dic[word_id] = count
-			start_count = end_count + 1
+			if "'s" in lst[i]:   #The priest granted absolution for [John's] sins.
+				end_count = start_count + len(lst[i]) - 2
+				word_id = str(start_count) + ':' + str(end_count)
+				parserid_dic[word_id] = count
+				start_count = end_count + 1 + 2   #here 2 is for 's
+			else:
+				end_count = start_count + len(lst[i])
+				word_id = str(start_count) + ':' + str(end_count)
+				parserid_dic[word_id] = count
+				start_count = end_count + 1
 		print sent
 	if 'LBL' in line:
 		if 'RELS:' in line:

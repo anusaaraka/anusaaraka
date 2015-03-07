@@ -25822,7 +25822,7 @@ emissaries_UNDEFINED	xUwa
 emissary_noun	xUwa/xUwa{xo_xeSoM_ke_bIca}
 emission_noun	uwsarjana/srAva
 emissions_UNDEFINED	uwsarjana
-emit_verb	uwsarjana_kara/nikAla/Coda
+emit_verb	uwsarjana_kara/nikAla/Coda/uwsarjiwa_kara
 emits_UNDEFINED	uwsarjana_kara
 emitted_UNDEFINED	uwsarjana_kara
 emitting_UNDEFINED	uwsarjana_kara
@@ -50872,8 +50872,8 @@ move-on_verb	viRaya_parivarwana_kara/sWAna_parivarwana_kara
 move-out_verb	purAnA_Gara_Coda_xe
 move-over_verb	sWana_baxal
 move-up_verb	sWAna_baxala
-move_noun	upAya/sWAnAnwaraNa/safkramaNa/prayAsa/parivarwana/kaxama/kArravAI/gawiviXi/cAla
-move_verb	cala/uwwejiwa_kara/uTanA_bETa/upAya_kara/sWAna_parivarwana_kara/sWAnAnwariwa_kara/saFcAliwa_ho/preriwa_kara/praswAva_raKa/praBAviwa_kara/peSa_kara/nikAla/majabUra_kara/kArravAI_kara/JakaJora/hil/hat/hata/Gara_baxala/cal/calA/calA_j/cAla_cAla/becakara_hat/baxala/baDa/agrasara_kara/hila
+move_noun	sWAnAnwaraNa/safkramaNa/prayAsa/parivarwana/kaxama/kArravAI/gawiviXi/cAla
+move_verb	cala/uwwejiwa_kara/uTanA_bETa/upAya_kara/sWAna_parivarwana_kara/sWAnAnwariwa_kara/saFcAliwa_ho/preriwa_kara/praswAva_raKa/praBAviwa_kara/peSa_kara/nikAla/majabUra_kara/kArravAI_kara/JakaJora/hila/hata/Gara_baxala/calA/calA_ja/cAla_cAla/becakara_hata/baxala/baDa/agrasara_kara
 moveable-feast_noun	cala-parva
 moveable_adjective	parivarwanIya/hilane-dulane_lAyaka/cala
 moveable_noun	cala_sampawwi
@@ -93577,3 +93577,4 @@ subfamily_noun	upaparivAra
 low-volume_adjective	kama_mAwrA
 semi-circular_adjective	arXavqwwAkara
 geographic_adjective	BOgolika
+Fig._noun	ciwra
