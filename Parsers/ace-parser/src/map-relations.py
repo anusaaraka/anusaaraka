@@ -2,16 +2,20 @@
 #Written by Roja (21-02-15)
 import sys
 
-rel_fp = open(sys.argv[4], 'w')
+rel_fp = open(sys.argv[5], 'w')
 
 word = {}
 cat = {}
+tense = {}
+
+for each in open(sys.argv[4]):
+	lst = each.split('\t')	
+	tense[lst[0]] = lst[1].strip()
 
 for each in open(sys.argv[2]):
 	lst = each.split('\t')
 	word[lst[1]] = lst[2][:-2]
 	
-
 for each in open(sys.argv[3]):
 	lst = each.split('\t')
 	cat[lst[1]] = lst[2][:-2]	
@@ -23,6 +27,13 @@ def print_rel_info(relation_name, id1, id2):
 def print_rel_info_in_anu(relation_name, prep_id, id1, id2):
 	if id2 != '0':
 		rel_fp.write('(prep_id-relation-anu_ids\t%s\t%s\t%s\t%s)\n' % (prep_id, relation_name, id1, id2))
+
+def check_for_infinitive(tense, verb_id):
+	sense = tense[lst[0]].split()
+	if sense[1] == 'untensed' and sense[3] == 'indicative':                         
+		if word[str(int(verb_id)-1)] == 'to':
+			print_rel_info('to-infinitive', str(int(verb_id)-1), verb_id)
+			print_rel_info_in_anu('to-infinitive', '-', str(int(verb_id)-1), verb_id)
 
 def check_value_in_dic(value, dic):
 	a = dic.values()
@@ -79,21 +90,30 @@ for line in open(sys.argv[1]):
 		elif 'poss_rel' in lst[0]:
 			print_rel_info('viSeRya-RaRTI_viSeRaNa', args[5], args[8])
 			print_rel_info_in_anu('viSeRya-RaRTI_viSeRaNa', '-', args[5], args[8])
-		elif '_v_1_rel' in lst[0]: #or '_v_up_rel' in lst[0] or '_v_out_rel' in lst[0]: #If you use that strategy, he will [wipe] you [out]. 
+		elif '_v_1_rel' in lst[0]: 
 			print_rel_info('kriyA-subject', args[2], args[5])
 			print_rel_info_in_anu('kriyA-subject', '-', args[2], args[5])
 			if len(args) > 6:
 				print_rel_info('kriyA-object', args[2], args[8])
 				print_rel_info_in_anu('kriyA-object', '-', args[2], args[8])
+			#If ARG3 in lst[0]:
 			if len(args) == 12:
 				arg3 = args[11]
 				arg0 = args[2]
+			#To check to infinitive:
+			if lst[0] in tense:
+				check_for_infinitive(tense, args[2])
 		elif 'compound_rel' in lst[0]:
 			print_rel_info('samAsa_viSeRya-samAsa_viSeRaNa', args[5], args[8])
 			print_rel_info_in_anu('samAsa_viSeRya-samAsa_viSeRaNa', '-', args[5], args[8])
 		elif 'be_v_id_rel' in lst[0]:
 			print_rel_info('subject-subject_samAnAXikaraNa', args[5], args[8])
 			print_rel_info_in_anu('subject-subject_samAnAXikaraNa', '-', args[5], args[8])
+			print_rel_info('kriyA-subject', args[2], args[5])
+			print_rel_info_in_anu('kriyA-subject', '-', args[2], args[5])
+			if len(args) > 6:
+				print_rel_info('kriyA-object', args[2], args[8])
+				print_rel_info_in_anu('kriyA-object', '-', args[2], args[8])
 		elif 'be_v_there_rel' in lst[0]:
 			rel = lst[0].split('_')
 			print_rel_info('kriyA-aBihiwa', args[2], args[5])
@@ -103,8 +123,9 @@ for line in open(sys.argv[1]):
 				if key != None:
 					print_rel_info('kriyA-dummy_subject', args[2], key)
 					print_rel_info_in_anu('kriyA-dummy_subject', '-', args[2], key)
-		elif '_v_' in lst[0]:
+		elif '_v_' in lst[0]: #If you use that strategy, he will [wipe] you [out].
 			rel = lst[0].split('_')
+			#To get phrasal verb relation:
 			if len(rel) == 4:
 				key = check_value_in_dic(rel[2], word)
 				if key != None:
@@ -115,9 +136,13 @@ for line in open(sys.argv[1]):
 			if len(args) > 6:
 				print_rel_info('kriyA-object', args[2], args[8])
 				print_rel_info_in_anu('kriyA-object', '-', args[2], args[8])
+			#If ARG3 in lst[0]:
 			if len(args) == 12:
 				arg3 = args[11]
-				arg0 = args[2]				
+				arg0 = args[2]
+			#To check to infinitive:
+			if lst[0] in tense:
+				check_for_infinitive(tense, args[2])
 		elif '_n_of_rel' in lst[0]: #He heard the [sound of rain] from the kitchen. 
 			rel = lst[0].split('_')
 			if len(rel) == 4:
@@ -128,5 +153,3 @@ for line in open(sys.argv[1]):
 		elif 'neg_rel' in lst[0]: #It [is not] a good manner to eat alone.
 			print_rel_info('kriyA-kriyA_niReXaka', args[2], args[5])
 			print_rel_info_in_anu('kriyA-kriyA_niReXaka', '-', args[2], args[5])
-		
-	

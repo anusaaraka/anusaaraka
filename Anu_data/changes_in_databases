@@ -2976,13 +2976,47 @@ Removed:
 	backward_noun	paScagAmI 	(Suggested by 14anu-ban-02	21-11-14) Ex: We get thrown backward with a jerk.
 	material_noun	xravya		(Suggested by 14anu-ban-02      16-02-15)  
 	mean_noun	mAXya		(Suggested by 14anu-ban-08      18-02-15) Ex:
-	
+	addition_noun   kA_niyama/SaBuja_kA_niyama 			(Wrongly extracted entry)
+	maxwell-boltzamann_noun mEksavEla-boltSamAna_sAMKyikI		(	"		)	
+	thermodynamic_noun      URmAgawika_wApa				(	"		)
+
+   Modified:
+   ---------
+	energyisothermal_noun   samawApIya
+		to
+	isothermal_noun   samawApIya
 
  changes in phy_eng_multi_word_dic.txt
  =====================================
     Modified :
     --------
 	frame_of_reference      nirxeSa-waMwra	as	nirxeSa_waMwra
+	temperaturearbitraily_chosen    svecCagqhIwa#svecCagqhIwa#noun#2#RM
+                        to
+        arbitraily_chosen    svecCagqhIwa#svecCagqhIwa#noun#2#RM
+        temperatureabsolute_zero        parama_SUnya#parama_SUnya#noun#2#RM
+                        to
+        absolute_zero        parama_SUnya#parama_SUnya#noun#2#RM
+        capacitymolar_volume    grAma-aNuka_Ayawana#grAma-aNuka_Ayawana#noun#2#RM
+                to
+        molar_volume    grAma-aNuka_Ayawana#grAma-aNuka_Ayawana#noun#2#RM
+        adiabatic_wall  ruxXoRma_Biwwi/xIvAraxXa#ruxXoRma_Biwwi/xIvAraxXa#noun#2#RM
+                        to
+        adiabatic_wall  ruxXoRma_Biwwi/ruxXoRma_xIvAra#ruxXoRma_Biwwi/ruxXoRma_xIvAra#noun#2#RM
+        zig_zag teDAZ-meDAZ/teDZA-meDZA#teDAZ-meDAZ#noun#2#WM
+                        to
+        zig_zag teDZA-meDZA#teDZA-meDZA#noun#2#WM
+        vector-product_or_cross_product saxiSa_guNanaPala#saxiSa_guNanaPala#noun#2#RM
+                        to
+        vector_product  saxiSa_guNanapaPala#saxiSa_guNanapaPala#noun#2#RM
+        cross_product   saxiSa_guNanapaPala#saxiSa_guNanapaPala#noun#2#RM
+        statisticspauli_exclusion_principle     pAulI_apavarjana_sixXAMwa#pAulI_apavarjana_sixXAMwa#noun#2#RM
+                        to
+        pauli_exclusion_principle     pAulI_apavarjana_sixXAMwa#pAulI_apavarjana_sixXAMwa#noun#2#RM
+        viscous_force   SyAna_bala/SyAnawA/yAna_bala#SyAna_bala#noun#2#RM
+                        to
+        viscous_force   SyAna_bala/SyAnawA#SyAna_bala/SyAnawA#noun#2#RM
+        absolute_scale_of_temperature   parama_wApa_mAPavrama   to parama_wApa_mApakrama
 
     Added new meaning to the existing word:
     ---------------------------------------
@@ -3023,7 +3057,16 @@ Removed:
 				Ex: 						"
 	19. glow_tube       	wApaxIpwa_nalikA#wApaxIpwa_nalikA#noun#2#RM		(	"	"		  "	 )
 				Ex:						"
-		
+
+	Removed entry:
+	-------------	
+	absolute_scale_of		parama_wApa_mApavraPama#parama_wApa_mApavraPama#noun#2#RM       (Wrongly extracted entry)
+        coefficient_of_linear		reKIya_prasAra_guNAMka#reKIya_prasAra_guNAMka#noun#2#RM		(	"		)
+        constant_volume			sWira_Ayawana_wApamApI#sWira_Ayawana_wApamApI#noun#2#RM         (       "       	)
+        coefficient_of_volume		Ayawana_prasAra_guNAMka#Ayawana_prasAra_guNAMka#noun#2#RM       (       "       	)
+        viscous_force			yAnawA#yAnawA#noun#2#RM                 			(       "       	)
+        scalar_product_or_dot		axiSa_guNanapaPala#axiSa_guNanapaPala#noun#2#RM         	(       "       	)
+
 
  changes in causative_verb_mng.txt
  =================================

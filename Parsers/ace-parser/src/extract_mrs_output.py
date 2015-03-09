@@ -2,6 +2,8 @@
 #Written by Roja (10-02-15)
 import sys
 
+fp = open(sys.argv[2], 'w')
+
 sent = []
 count = 0
 start_count = 0
@@ -74,6 +76,7 @@ for line in open(sys.argv[1]):
 					self_dic[rel[5]] = parserid_dic[word_id]
 			elif 'ARG1' not in rel:
 				self_dic[rel[3]] = parserid_dic[word_id]
+		#To extract only relations:
 		if relation_name not in relation_dic:
 			value = ''
 			key = ''
@@ -87,7 +90,12 @@ for line in open(sys.argv[1]):
 								value = value +  rel[i] + '^' + rel[i+1]
 							else:
 								value = value + '^' + rel[i] + '^' + rel[i+1]
+					#To handle to infinitive cases:
+					if '_v_' in relation_name: #This is the way [to go].
+						if 'TENSE:' in rel[i]:
+							fp.write('%s\t%s %s %s %s\n' % (relation_name, rel[i], rel[i+1], rel[i+2], rel[i+3]))
 				relation_dic[key] = value
+				
 	if 'HCONS' in line:
 		line = line[9:-5]
 		lst = line.split(' ')
