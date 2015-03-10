@@ -1678,6 +1678,10 @@ Removed:
 					    small volume called the nucleus with electrons revolving around the nucleus just as planets revolve                                            around the sun.
 	145. emit_verb			uwsarjiwa_kara		(Suggested by Chaitanya Sir 	06-03-15)
 					Ex: However, it could not explain why atoms emit light of only discrete wavelengths.
+	146. sullenly_adverb		KinnawA_se		(Suggested by 14anu-ban-02	10-03-15)
+					Ex: She glared at him sullenly.
+	147. schematic_adjective	vyavasWiwa		(Suggested by Chaitanya Sir	10-03-15)
+					Ex: Figure 12.2 shows a schematic diagram of this experiment.
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -2087,7 +2091,14 @@ Removed:
 	186. pointer_noun    	nirxeSaka		as	safkewaka	(Suggested by 14anu-ban-09     18-02-15 )
 				Ex: Take a laser pointer and shine its beam through the turbid water. [ncert]
 	187. glow_verb		rafga			as	camaka		(Suggested by Chaitanya Sir    28-02-15)
-				
+	188. carelessly_adverb	XyAnahInawaH		as	lAparavAhI_se	(Suggested by 14anu-ban-03	10-03-15)
+				Ex: The prosecution alleges that she was driving carelessly.
+	189. most_adjective	sabase_aXika		as	aXikAMSa	(Suggested by 14anu-ban-08	"	)
+				Ex: Since the wavelength of light is much smaller than the dimensions of most obstacles
+	190. schematic_adjective	yojanA_baxXa	as	AreKIya		(Suggested by Chaitanya Sir	10-03-15)
+				Ex: Figure 12.2 shows a schematic diagram of this experiment.
+	191. electricity_noun	vixyuwa_Sakwi		as	vixyuwa		(Suggested by 14anu-ban-04	"	)
+				Ex: In 1864, the laws obeyed by electricity and magnetism were unified and formulated by James Maxwell who then 				realized that light was electromagnetic waves.
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -2663,6 +2674,21 @@ Removed:
 	146. date_palm_fruit    KajUra_ke_Pala#KajUra_ke_Pala#noun#3#RM			(Suggested by 14anu-ban-09 18-02-15)
 				Ex: The date palm fruit stalk borer, Oryctes elegans Prell, from the subfamily Dynastinae, is a major pest of
 				    the date palm in southern parts of Persia. [Agriculture]
+	147. strip_off_tree	vqkRa_vihIna_kara#vqkRa_vihIna_kara#noun#3#RM		(Suggested by 14anu-ban-01 10-03-15)
+				Ex: Our land is stripped off trees.
+	148. speed_guns		spIda_gana#spIda_gana#noun#2#RM				(Suggested by 	"		"  )
+				Ex: Radar also provides the basis for the speed guns used to time fast balls, tennis-serves, and automobiles.
+	149. closed_door_meeting	banxa_xaravAje_kI_bETaka#banxa_xaravAje_kI_bETaka#noun#2#RM	(Suggested by 14anu-ban-01 10-03-15)
+					Ex: We held closed door meetings cautioning one another against the slightest slip.
+	150. ill_effect		xuRpraBAva#xuRpraBAva#noun#2#RM				(Suggested by 14anu-ban-04 10-03-15)
+				Ex: The reason is that Jharkhand is such a state which is untouched to a large extent by the ill effects
+				 of urbanization .
+	151. watercolor_paper	jalaraMga_kAlajZanusa#jalaraMga_kAlajZanusa#noun#2#RM	(Suggested by 14anu-ban-09 10-03-15)
+				Ex: The pleasure can be even more enhanced if you are prepared to foregosome of the geometry accuracy of urban 					structures and allow your watercolor paper to pay a substantial role in the formation of your image.
+	152. ready_to_feed	KilAne_ke_lie_wEyAra#KilAne_ke_lie_wEyAra#adjective#3#RM (Suggested by 14anu-ban-11 10-03-15)
+				Ex: It is sold in powdered, ready-to-feed, and concentrated liquid forms.
+	153. by_a_stroke_of_fortune	kismawa_se#kismawa_se#noun#5#RM			(Suggested by 14anu-ban-05 10-03-15)
+				Ex: By a stroke of fortune he found work almost immediately.
 
 
     Added new meaning to the existing word:
@@ -2908,6 +2934,8 @@ Removed:
 				      molecule of oleic acid.
 	drift_noun      	apavAha			(Suggested by 14anu-ban-04      18-02-15)
 				Ex: This is the phenomenon of drift and the velocity vd in Eq. (3.17) is called the drift velocity.
+	collimate_verb		saMreKiwa_kara		(Suggested by Chaitanya Sir	10-03-15)
+				Ex: Alpha-particles emitted by a Bi radioactive source were collimated into a narrow beam by their passage 					through lead bricks.
 
     Modifying first meaning:
     -----------------------
@@ -3050,13 +3078,16 @@ Removed:
 				Ex: In 1897, the experiments on electric discharge through gases carried out by the English physicist J.J.
                                     Thomson (1856 — 1940) revealed that atoms of different elements contain negatively charged constituents
                                     (electrons) that are identical for all atoms. [NCERT 12-12]
-	16. positively_charged_constituents XanAwmaka_AveSiwa_safGataka#noun#3#RM	(Suggested by Chaitanya Sir      12-02-15)		       17. neon_sign		nioYna-sAina#nioYna-sAina#noun#2#RM		       (	"	"		23-02-15)
+	16. positively_charged_constituents XanAwmaka_AveSiwa_safGataka#noun#3#RM	(Suggested by Chaitanya Sir      12-02-15)
+	17. neon_sign		nioYna-sAina#nioYna-sAina#noun#2#RM		       (	"	"		23-02-15)
 				Ex: In contrast, light emitted from rarefied gases heated in a flame, or excited electrically in a glow tube
 				    such as the familiar neon sign or mercury vapor light has only certain discrete wavelengths.	
 	18. mercury_vapor   	pAraxa-vARpa#pAraxa-vARpa#noun#2#RM			(Suggested by Chaitanya Sir      23-02-15)
 				Ex: 						"
 	19. glow_tube       	wApaxIpwa_nalikA#wApaxIpwa_nalikA#noun#2#RM		(	"	"		  "	 )
 				Ex:						"
+	20. temperature_scale	mApakrama#mApakrama#noun#1#RM				(Suggested by 14anu-ban-07	10-03-15) 
+				Ex: The two familiar temperature scales are the Fahrenheit temperature scale and the Celsius temperature scale.
 
 	Removed entry:
 	-------------	
@@ -3387,5 +3418,18 @@ Removed:
  ==================================== 
   Removed :
 
-	tube	tUba			(suggested by Chaitanya Sir     13-11-14 )
+	tube	tUba			(Suggested by Chaitanya Sir     13-11-14 )
+
+ changes in provisional_multi_word_dictionary.txt:
+ ===============================================
+  Removed:
+  -------
+	following_morning       agale_xina_subaha#agale_xina_subaha#noun#2#RM	(Suggested by Chaitanya Sir	10-03-15)
+
+  Modified:
+	following_morning       agalI_subaha#agalI_subaha#noun#1#RM		(Suggested by Chaitanya Sir     10-03-15)
+			to
+	following_morning       agalI_subaha#agalI_subaha#noun#2#RM
+
+
 

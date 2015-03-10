@@ -12782,7 +12782,7 @@ careless_adjective	lAparavAha/beparavAha/suswa/nEsargika/kama/kaccA/galawa/DIlA-
 carelesser_UNDEFINED	beparavAha
 carelessest_UNDEFINED	beparavAha
 carelessly_UNDEFINED	beparavAhI_se
-carelessly_adverb	XyAnahInawaH/lAparavAhI_se/asAvaXAnawaH
+carelessly_adverb	lAparavAhI_se/XyAnahInawaH/asAvaXAnawaH
 carelessness_UNDEFINED	lAparavAhI
 carelessnesses_UNDEFINED	lAparavAhI
 carer_noun	xeKa-reKa_karane_vAlA
@@ -25479,7 +25479,7 @@ electricest_UNDEFINED	bijalI_kA
 electrician_noun	bijalI_kA_kAma_jAnane_vAlA/bijalI-miswrI/vixyuxvewwA
 electricians_UNDEFINED	vixyuxvewwA
 electricities_UNDEFINED	bijalI
-electricity_noun	vixyuwa_Sakwi/vixyuwa/uwwejanA/UrjA/bijalI/vixyuwa_XArA
+electricity_noun	vixyuwa/vixyuwa_Sakwi/uwwejanA/UrjA/bijalI/vixyuwa_XArA
 electricity_verb	naI_lahara_xOda
 electrics_UNDEFINED	bijalI_kA
 electrics_noun	vixyuw-wanwra
@@ -50616,7 +50616,7 @@ mossier_UNDEFINED	kAI_BarA
 mossiest_UNDEFINED	kAI_BarA
 mossy_UNDEFINED	kAI_BarA
 mossy_adjective	kAIxAra/GisA_pitA
-most_adjective	sabase_aXika/sarvAXika/bahuwa_aXika/bahuwa/aXikawama/aXikAMSa
+most_adjective	aXikAMSa/sabase_aXika/sarvAXika/bahuwa_aXika/bahuwa/aXikawama
 most_adverb	sabase_aXika/lagaBaga/awyaXika
 most_pronoun	aXikawama
 mostly_adverb	prAyaH/mUKya_rUpa_se
@@ -69000,7 +69000,7 @@ schedules_UNDEFINED	sUcI
 scheduling_UNDEFINED	sUcI
 schema_noun	rUpareKA/Anwarika_ciwraNa
 schemata_UNDEFINED	rUpareKA
-schematic_adjective	yojanA_baxXa/yojanAbaxXa/AreKIya
+schematic_adjective	AreKIya/yojanA_baxXa/yojanAbaxXa/vyavasWiwa
 schematic_noun	AreK
 schematically_adverb	yojanAbaxXa_Dafga_se
 schematicer_UNDEFINED	yojanA_baxXa
@@ -77923,7 +77923,7 @@ sulky_noun	ekajaniyA_GodAgAdI
 sullen_adjective	rUTA_huA/Kinna/GirA_huA/baxamijAja
 sullener_UNDEFINED	rUTA_huA
 sullenest_UNDEFINED	rUTA_huA
-sullenly_adverb	muzha_PulAe
+sullenly_adverb	KinnawA_se/muzha_PulAe
 sullenness_noun	cidacidApana/baxamijAjI
 sullied_UNDEFINED	kaluRiwa_karanA
 sullies_UNDEFINED	kaluRiwa_karanA

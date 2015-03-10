@@ -285,6 +285,7 @@ successive_interval_of_time	kramika_aMwarAla#kramika_aMwarAla#noun#2#RM
 surface_energy	pqRTa_uQrjA/pqRTa_uParjA#pqRTa_uQrjA#noun#2#RM
 surface_tension	pqRTa_wanAva#pqRTa_wanAva#noun#2#RM
 temperature_gradient	wApa_pravaNawA#wApa_pravaNawA#noun#2#RM
+temperature_scale	mApakrama#mApakrama#noun#1#RM
 tensile_strength	wanana_sAmarWya#wanana_sAmarWya#noun#2#RM
 terminal_velocity	aMwima_vega#aMwima_vega#noun#2#RM
 thermal_capacity	URmAXAriwA/URmAXariwA#URmAXAriwA#noun#2#RM

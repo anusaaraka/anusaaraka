@@ -68,7 +68,6 @@ body_noun	piNda
 boulder_noun	SilAKaMda/KaMdASya
 brittle_noun	BaMgura
 bubble_noun	bulabulA
-buoyancy_noun	uwplAvakawA
 buoyancy_noun	uwplAvana/uwplAvakawA
 calibrated_adjective	aMSAMkiwa
 calorimeter_noun	uQRmAmApI/kElorImItara/uPaRmAmApI/vEPalorImItara
@@ -107,6 +106,7 @@ co-existence_noun	saha-aswiwva
 coincide_noun	saMpAwI
 coincide_verb	saMpAwI
 collimate_UNDEFINED	puFja
+collimate_verb	saMreKiwa_kara
 collinear_UNDEFINED	saMreKa/saMreKiwa
 collision_noun	saMGat/tatakkara/saMGarRa/takkara
 communication_noun	saMpreRaNa/saMcAra
@@ -547,8 +547,7 @@ quasi-static_adjective	sWEwikakalpa
 radial_noun	wrijyIya
 radian_UNDEFINED	vikiraNa/rediyana
 radiation_noun	vikiraNa
-radioactive_adjective	rediyo_Ektiva
-radioactive_adjective	viGatanABika/rediyoEktiva
+radioactive_adjective	rediyo_Ektiva/viGatanABika/rediyoEktiva
 rainbow_noun	inxraXanuRa
 range_noun	parAsa
 ratio_noun	anupAwa
