@@ -61,8 +61,8 @@ fi
 	sed -i 's/\*\*,\*\*/ /g'  $1/left
 	echo "@Word @level @left @over @Words::" >> $1/total-left-over1.dat
 	cat $1/left >> $1/total-left-over1.dat
-	sed -i 's/(hindi_left_over_words//g' $1/total-left-over1.dat 
-	sed -i 's/)$//g' $1/total-left-over1.dat
+	sed 's/(hindi_left_over_words//g' $1/total-left-over1.dat | sed 's/)$//g' | sed 's/SYMBOL/@SYMBOL/g' | sed 's/PUNCT-/@PUNCT-/g' | sed 's/nonascii/@nonascii/g'  > $1/total-left-over2.dat
+	mv  $1/total-left-over2.dat $1/total-left-over1.dat
 	wx_utf8 < $1/total-left-over1.dat > $1/tmp
 	$HOME_anu_test/Anu_src/replace_nonascii-chars.out $1/hnd2 $1/hnd3
 	wx_utf8 < $1/hnd3 > $1/hnd4
