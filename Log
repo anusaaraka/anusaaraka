@@ -1,4 +1,4 @@
- 10-03-15
+ 17-03-15
  ========
  1. WSD:
 	substantially.clp 
@@ -26,6 +26,8 @@
         run_alignment.sh
  9. Updated following dictionaries:
         changes_in_databases	apertium-en-hi.en.metadix	provisional_multi_word_dictionary.txt
+        miscellaneous/SMT/MINION/dictionaries/phy_dictionary.txt
+        miscellaneous/SMT/MINION/dictionaries/phy_eng_multi_word_dic.txt
  10. Updated following files:
 	INSTALL
 	README
