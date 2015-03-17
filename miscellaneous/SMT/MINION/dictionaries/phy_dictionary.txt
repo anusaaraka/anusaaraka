@@ -706,3 +706,4 @@ weight_noun	BAra
 weights_noun	bAta
 window_noun	gavAkRa
 windowpane_UNDEFINED	KidZakI_kA_SISA
+charge_adjective	AveSiwa
