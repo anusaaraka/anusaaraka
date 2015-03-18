@@ -30,7 +30,7 @@ def print_rel_info_in_anu(relation_name, prep_id, id1, id2):
 
 def check_for_infinitive(tense, verb_id):
 	sense = tense[lst[0]].split()
-	if sense[1] == 'untensed' and sense[3] == 'indicative':                         
+	if sense[1] == 'untensed' and sense[3] == 'indicative':
 		if word[str(int(verb_id)-1)] == 'to':
 			print_rel_info('to-infinitive', str(int(verb_id)-1), verb_id)
 			print_rel_info_in_anu('to-infinitive', '-', str(int(verb_id)-1), verb_id)
@@ -49,8 +49,6 @@ def check_value_in_dic(value, dic):
 
 arg3 = ''
 arg0 = ''
-
-prep_list = ['up', 'out', 'down']
 
 for line in open(sys.argv[1]):
 	if '\t' in line:
@@ -101,7 +99,7 @@ for line in open(sys.argv[1]):
 				arg3 = args[11]
 				arg0 = args[2]
 			#To check to infinitive:
-			if lst[0] in tense:
+			if lst[0] in tense and args[2] != '1':  #'1' is checked because there will no previous word before first word
 				check_for_infinitive(tense, args[2])
 		elif 'compound_rel' in lst[0]:
 			print_rel_info('samAsa_viSeRya-samAsa_viSeRaNa', args[5], args[8])
@@ -141,7 +139,7 @@ for line in open(sys.argv[1]):
 				arg3 = args[11]
 				arg0 = args[2]
 			#To check to infinitive:
-			if lst[0] in tense:
+			if lst[0] in tense and args[2] != '1':#'1' is checked because there will no previous word before first word
 				check_for_infinitive(tense, args[2])
 		elif '_n_of_rel' in lst[0]: #He heard the [sound of rain] from the kitchen. 
 			rel = lst[0].split('_')
