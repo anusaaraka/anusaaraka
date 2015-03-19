@@ -242,26 +242,29 @@
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
+ ; Commented by Manju Suggested by Chaitanya Sir . (28-02-15) need to add the word in dic
+ ;Counter Ex: In contrast, light emitted from rarefied gases [heated] in a flame, or excited electrically in a glow tube such as the familiar neon sign or mercury vapor light has only certain discrete wavelengths.
  ;Added by Shirisha Manju (07-11-14).
- (defrule get_mng_from_domain_dic_with_diff_cat1
- (declare (salience 8800))
- (Domain ?domain&~general)
- (id-root ?id ?rt)
- ?mng<-(meaning_to_be_decided ?id)
- (id-cat_coarse ?id ?cat)
- (test (neq (numberp ?rt) TRUE))
- (default-cat ?cat1)
- (test (neq ?cat ?cat1))
- (test (neq (gdbm_lookup (str-cat ?domain"_dic.gdbm") (str-cat ?rt "_" ?cat1)) "FALSE"))
- =>
-        (bind ?f_mng (get_first_mng (lowcase ?rt) ?cat1 (str-cat ?domain"_dic.gdbm")))
-        (if (neq ?f_mng "FALSE") then
-                (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   "?domain"_Glossary)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   "?domain"_Glossary "?id")" crlf)
-                (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?rt")" crlf)
-        )
- )
+; (defrule get_mng_from_domain_dic_with_diff_cat1
+; (declare (salience 7950))
+;; (declare (salience 8800))
+; (Domain ?domain&~general)
+; (id-root ?id ?rt)
+; ?mng<-(meaning_to_be_decided ?id)
+; (id-cat_coarse ?id ?cat)
+; (test (neq (numberp ?rt) TRUE))
+; (default-cat ?cat1)
+; (test (neq ?cat ?cat1))
+; (test (neq (gdbm_lookup (str-cat ?domain"_dic.gdbm") (str-cat ?rt "_" ?cat1)) "FALSE"))
+; =>
+;        (bind ?f_mng (get_first_mng (lowcase ?rt) ?cat1 (str-cat ?domain"_dic.gdbm")))
+;        (if (neq ?f_mng "FALSE") then
+;                (retract ?mng)
+;                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   "?domain"_Glossary)" crlf)
+;                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   "?domain"_Glossary "?id")" crlf)
+;                (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?rt")" crlf)
+;        )
+; )
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju (26-08-13).
  ; If meaning not found with root then check with original word in dicionary with same category.
@@ -282,27 +285,29 @@
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju (26-08-13).
- ;If meaning not found with root then check with original word in dicionary with different category.
- (defrule default_domain_mng_with_org_wrd_with_diff_cat
- (declare (salience 8600))
- (Domain ?domain&~general)
- (id-original_word ?id  ?org_wrd)
- ?mng<-(meaning_to_be_decided ?id)
- (id-cat_coarse ?id ?cat)
- (test (neq (numberp ?org_wrd) TRUE))
- (default-cat ?cat1)
- (test (neq ?cat ?cat1))
- (test (neq (gdbm_lookup (str-cat ?domain"_dic.gdbm") (str-cat ?org_wrd "_" ?cat1)) "FALSE"))
- =>
-        (bind ?f_mng (get_first_mng ?org_wrd ?cat1 (str-cat ?domain"_dic.gdbm")))
-        (if (neq ?f_mng "FALSE") then
-                (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   "?domain"_Glossary)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   "?domain"_Glossary "?id")" crlf)
-                (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?org_wrd")" crlf)
-        )
- )
+ ; Commented by Manju Suggested by Chaitanya Sir . (28-02-15) need to add the word in dic
+; ;Added by Shirisha Manju (26-08-13).
+; ;If meaning not found with root then check with original word in dicionary with different category.
+; (defrule default_domain_mng_with_org_wrd_with_diff_cat
+; (declare (salience 7940))
+;; (declare (salience 8600))
+; (Domain ?domain&~general)
+; (id-original_word ?id  ?org_wrd)
+; ?mng<-(meaning_to_be_decided ?id)
+; (id-cat_coarse ?id ?cat)
+; (test (neq (numberp ?org_wrd) TRUE))
+; (default-cat ?cat1)
+; (test (neq ?cat ?cat1))
+; (test (neq (gdbm_lookup (str-cat ?domain"_dic.gdbm") (str-cat ?org_wrd "_" ?cat1)) "FALSE"))
+; =>
+;        (bind ?f_mng (get_first_mng ?org_wrd ?cat1 (str-cat ?domain"_dic.gdbm")))
+;        (if (neq ?f_mng "FALSE") then
+;                (retract ?mng)
+;                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   "?domain"_Glossary)" crlf)
+;                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   "?domain"_Glossary "?id")" crlf)
+;                (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?org_wrd")" crlf)
+;        )
+; )
  ;=========================================== WSD and Idiom meaning ===========================================
  (defrule idiom_word_mng
  (declare (salience 8300))
@@ -377,12 +382,30 @@
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Roja (24-05-14).
+ ;Getting Hindi meaning from default dictionary with original word same category
+ (defrule default_hindi_mng-same-cat_with_org_wrd
+ (declare (salience 7600))
+ ?mng<-(meaning_to_be_decided ?id)
+ (id-cat_coarse ?id ?cat)
+ (id-original_word ?id ?org_wrd)
+ (test (neq (numberp ?org_wrd) TRUE))
+ (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?org_wrd "_" ?cat)) "FALSE"))
+ =>
+        (bind ?f_mng (get_first_mng ?org_wrd ?cat default-iit-bombay-shabdanjali-dic.gdbm))
+        (if (neq ?f_mng "FALSE") then
+                (retract ?mng)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
+        )
+ )
+ ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja (01-08-12).
  ;Getting Hindi meaning from default dictionary when there is a different category.
  ;Also asserting a fact (sen_type-id-phrase Default_mng_with_different_category) as a warning message in catastrophe.dat
  ;Assuming first meaning always has 'Defualt'.
  (defrule default_hindi_mng-different-cat_with_root
- (declare (salience 7600))
+ (declare (salience 7500))
  (id-root ?id ?rt)
  ?mng<-(meaning_to_be_decided ?id)
  (id-cat_coarse ?id ?cat)
@@ -400,29 +423,29 @@
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
- ;Added by Roja (24-05-14).
- ;Getting Hindi meaning from default dictionary with original word same category
- (defrule default_hindi_mng-same-cat_with_org_wrd
- (declare (salience 7500))
- ?mng<-(meaning_to_be_decided ?id)
- (id-cat_coarse ?id ?cat)
- (id-original_word ?id ?org_wrd)
- (test (neq (numberp ?org_wrd) TRUE))
- (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?org_wrd "_" ?cat)) "FALSE"))
- =>
-        (bind ?f_mng (get_first_mng ?org_wrd ?cat default-iit-bombay-shabdanjali-dic.gdbm))
-        (if (neq ?f_mng "FALSE") then
-                (retract ?mng)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
-        )
- )
+; ;Added by Roja (24-05-14).
+; ;Getting Hindi meaning from default dictionary with original word same category
+; (defrule default_hindi_mng-same-cat_with_org_wrd
+; (declare (salience 7500))
+; ?mng<-(meaning_to_be_decided ?id)
+; (id-cat_coarse ?id ?cat)
+; (id-original_word ?id ?org_wrd)
+; (test (neq (numberp ?org_wrd) TRUE))
+; (test (neq (gdbm_lookup "default-iit-bombay-shabdanjali-dic.gdbm" (str-cat ?org_wrd "_" ?cat)) "FALSE"))
+; =>
+;        (bind ?f_mng (get_first_mng ?org_wrd ?cat default-iit-bombay-shabdanjali-dic.gdbm))
+;        (if (neq ?f_mng "FALSE") then
+;                (retract ?mng)
+;                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
+;                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
+;        )
+; )
  ;--------------------------------------------------------------------------------------------------------------
  ;Added by Roja (24-05-14).
  ;Getting Hindi meaning from default dictionary with original word when there is a different category.
  ;Also asserting a fact (sen_type-id-phrase Default_mng_with_different_category) as a warning message in catastrophe.dat
  ;Assuming first meaning always has 'Defualt'.
- (defrule default_hindi_mng-different-cat_with_org_wrd1
+ (defrule default_hindi_mng-different-cat_with_org_wrd
  (declare (salience 7300))
  ?mng<-(meaning_to_be_decided ?id)
  (id-original_word ?id ?org_wrd)
@@ -438,6 +461,22 @@
                 (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?f_mng"   Default_meaning)" crlf)
                 (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?f_mng"   Default_meaning "?id")" crlf)
                 (printout ?*catastrophe_file* "(sen_type-id-phrase Default_mng_with_different_category "?id"  " ?org_wrd")" crlf)
+        )
+ )
+ ;--------------------------------------------------------------------------------------------------------------
+ ; ;Added by Shirisha Manju Suggested by Chaitanya Sir (18-7-14)
+ (defrule get_mng_from_transliterate_mng
+ (declare (salience 7250))
+ (id-word ?id ?word)
+ ?f<-(meaning_to_be_decided ?id)
+ (test (neq (numberp ?word) TRUE))
+ (test (neq (gdbm_lookup "transliterate_meaning.gdbm" ?word ) "FALSE"))
+ =>
+        (bind ?mng (gdbm_lookup "transliterate_meaning.gdbm" ?word ))
+        (if (neq ?mng "FALSE") then
+                (retract ?f)
+                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?mng"   transliterate_meaning_dic)" crlf)
+                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?mng"   transliterate_meaning_dic "?id")" crlf)
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
@@ -482,25 +521,25 @@
         )
  )
  ;--------------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju Suggested by Chaitanya Sir (18-7-14)
- (defrule get_mng_from_transliterate_mng
- (declare (salience 7410))
- (id-word ?id ?word)
- ?f<-(meaning_to_be_decided ?id)
- (test (neq (numberp ?word) TRUE))
- (test (neq (gdbm_lookup "transliterate_meaning.gdbm" ?word ) "FALSE"))
- =>
-	(bind ?mng (gdbm_lookup "transliterate_meaning.gdbm" ?word ))
-        (if (neq ?mng "FALSE") then
-                (retract ?f)
-                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?mng"   transliterate_meaning_dic)" crlf)
-                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?mng"   transliterate_meaning_dic "?id")" crlf)
-        )
- )
+;; ;Added by Shirisha Manju Suggested by Chaitanya Sir (18-7-14)
+; (defrule get_mng_from_transliterate_mng
+; (declare (salience 7000))
+; (id-word ?id ?word)
+; ?f<-(meaning_to_be_decided ?id)
+; (test (neq (numberp ?word) TRUE))
+; (test (neq (gdbm_lookup "transliterate_meaning.gdbm" ?word ) "FALSE"))
+; =>
+;	(bind ?mng (gdbm_lookup "transliterate_meaning.gdbm" ?word ))
+;        (if (neq ?mng "FALSE") then
+;                (retract ?f)
+;                (printout ?*hin_mng_file* "(id-HM-source   "?id"   "?mng"   transliterate_meaning_dic)" crlf)
+;                (printout ?*hin_mng_file1* "(id-HM-source-grp_ids   "?id"   "?mng"   transliterate_meaning_dic "?id")" crlf)
+;        )
+; )
  ;--------------------------------------------------------------------------------------------------------------
   ;Getting meaning for Proper noun 
   (defrule test_for_PropN
-  (declare (salience 7400))
+  (declare (salience 6500))
   (id-cat_coarse ?id PropN)
   (id-word ?id ?word)
   ?mng<-(meaning_to_be_decided ?id)
@@ -517,7 +556,7 @@
  ;That would be the lowest level since the early 1970s.
  ;Seven of nine states have grown each year since 1980, including New York, which lost 4% of its population during the 1970s.
  (defrule default_mng
- (declare (salience 7000))
+ (declare (salience 6400))
  (id-original_word ?id  ?original_wrd)
  ?mng<-(meaning_to_be_decided ?id)
  =>
