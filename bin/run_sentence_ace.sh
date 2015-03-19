@@ -16,9 +16,9 @@
  ./constituency_parse $MYPATH/$1_tmp/$2/E_constituents_info_tmp.dat  $MYPATH/$1_tmp/$2/Node_category_tmp.dat < $MYPATH/$1_tmp/$2/sd-lexicalize_info.dat
 
  cd $MYPATH/$1_tmp/$2
- python $HOME_anu_test/Parsers/ace-parser/src/extract_mrs_output.py mrs_output.dat  > relations
+ python $HOME_anu_test/Parsers/ace-parser/src/extract_mrs_output.py mrs_output.dat  tense_info.dat > relations
  python $HOME_anu_test/Parsers/ace-parser/src/get_cat_root_info.py  mrs_output.dat word  root  cat
- python $HOME_anu_test/Parsers/ace-parser/src/map-relations.py  relations cat relations_tmp1.dat > relations.dat 
+ python $HOME_anu_test/Parsers/ace-parser/src/map-relations.py  relations word cat tense_info.dat relations_tmp1.dat > relations.dat 
   
  myclips -f $HOME_anu_test/Anu_clp_files/run_modules_ace.bat >  $1.error
  #Following two files are added to handle PropN fact and SYMBOL facts in layered o/p 

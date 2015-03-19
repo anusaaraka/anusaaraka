@@ -37,6 +37,27 @@
  (assert (id-tam-src))
  (assert (id-HM-source))
  (assert (id-domain_type))
+ (assert (dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_root_mng))
+ (assert (dir_name-file_name-rule_name-id-wsd_root_mng))
+ (assert (dir_name-file_name-rule_name-affecting_id-affected_ids-wsd_group_word_mng))
+ (assert (dir_name-file_name-rule_name-id-wsd_word_mng))
+ (assert (dir_name-file_name-rule_name-kriyA_id-object2_viBakwi))
+ (assert (dir_name-file_name-rule_name-kriyA_id-object_viBakwi))
+ (assert (dir_name-file_name-rule_name-kriyA_id-subject_viBakwi))
+ (assert (dir_name-file_name-rule_name-make_verbal_noun))
+ (assert (dir_name-file_name-rule_name-id-H_tam_mng))
+ (assert (dir_name-file_name-rule_name-id-H_vib_mng))
+ (assert (dir_name-file_name-rule_name-kriyA_id-object1_viBakwi))
+ (assert (dir_name-file_name-rule_name-id-wsd_number))
+ (assert (dir_name-file_name-rule_name-id-wsd_viBakwi))
+ (assert (dir_name-file_name-rule_name-id-preceeding_part_of_verb))
+ (assert (dir_name-file_name-rule_name-id-wsd_root))
+ (assert (dir_name-file_name-rule_name-id-attach_emphatic))
+ (assert (dir_name-file_name-rule_name-root_id-TAM-vachan))
+ (assert (dir_name-file_name-rule_name-id-eng_src))
+ (assert (dir_name-file_name-rule_name-id-domain_type))
+ (assert (dir_name-file_name-rule_name-id-tam_type))
+ (assert (default-iit-bombay-shabdanjali-dic.gdbm))
  )
 
  ; if there is a conjunction between verbs and the tam for first verb is say wA_hE then modify all the tams for the verbs in conjunction as wA_hE
@@ -217,3 +238,12 @@
         )
  )
  ;---------------------------------------------------------------------------------------------------------------------
+ (defrule change_tam_source_for_WSD
+ (declare (salience -100))
+ ?f<-(pada_info (group_head_id ?head_id)(tam_source WSD))
+ (dir_name-file_name-rule_name-id-H_tam_mng ?  ? ?rule_name  ?head_id  ?)
+ =>
+   (bind ?str (str-cat "WSD,rule_name::" ?rule_name))
+   (modify ?f (tam_source ?str))
+ )
+

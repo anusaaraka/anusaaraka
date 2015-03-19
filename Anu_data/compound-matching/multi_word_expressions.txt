@@ -33253,6 +33253,13 @@ purgator_of_the_fallen	pawiwa_pAvanI#pawiwa_pAvanI#adjective#4#RM
 fallen_purgator	pawiwa_pAvanI#pawiwa_pAvanI#adjective#1#RM
 pith_ball	sarakaNde_kI_golI#sarakaNde_kI_golI#noun#2#RM
 saving_grace	viSeRa_guNa#viSeRa_guNa#noun#2#RM
+strip_off_tree	vqkRa_vihIna_kara#vqkRa_vihIna_kara#noun#3#RM
+speed_guns	spIda_gana#spIda_gana#noun#2#RM
+closed_door_meeting	banxa_xaravAje_kI_bETaka#banxa_xaravAje_kI_bETaka#noun#2#RM
+ill_effect	xuRpraBAva#xuRpraBAva#noun#2#RM
+watercolor_paper	jalaraMga_kAlajZanusa#jalaraMga_kAlajZanusa#noun#2#RM
+ready_to_feed	KilAne_ke_lie_wEyAra#KilAne_ke_lie_wEyAra#adjective#3#RM
+by_a_stroke_of_fortune	kismawa_se#kismawa_se#noun#5#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

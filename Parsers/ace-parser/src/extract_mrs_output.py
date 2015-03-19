@@ -2,6 +2,8 @@
 #Written by Roja (10-02-15)
 import sys
 
+fp = open(sys.argv[2], 'w')
+
 sent = []
 count = 0
 start_count = 0
@@ -37,10 +39,16 @@ for line in open(sys.argv[1]):
 #		print   lst
 		for i in range(1, len(lst)):
 			count += 1
-			end_count = start_count + len(lst[i])
-			word_id = str(start_count) + ':' + str(end_count)
-			parserid_dic[word_id] = count
-			start_count = end_count + 1
+			if "'s" in lst[i]:   #The priest granted absolution for [John's] sins.
+				end_count = start_count + len(lst[i]) - 2
+				word_id = str(start_count) + ':' + str(end_count)
+				parserid_dic[word_id] = count
+				start_count = end_count + 1 + 2   #here 2 is for 's
+			else:
+				end_count = start_count + len(lst[i])
+				word_id = str(start_count) + ':' + str(end_count)
+				parserid_dic[word_id] = count
+				start_count = end_count + 1
 		print sent
 	if 'LBL' in line:
 		if 'RELS:' in line:
@@ -61,8 +69,14 @@ for line in open(sys.argv[1]):
 			handle_dic[rel[1]] = parserid_dic[word_id]
 			if rel[3].startswith('e'):
 				event_dic[rel[3]] = parserid_dic[word_id]
+			elif  rel[2] == 'CARG:':  #He is known as the [Einstein] of India.
+				if rel[5].startswith('e'):
+					event_dic[rel[5]] = parserid_dic[word_id]
+				elif 'ARG1' not in rel:
+					self_dic[rel[5]] = parserid_dic[word_id]
 			elif 'ARG1' not in rel:
 				self_dic[rel[3]] = parserid_dic[word_id]
+		#To extract only relations:
 		if relation_name not in relation_dic:
 			value = ''
 			key = ''
@@ -76,7 +90,12 @@ for line in open(sys.argv[1]):
 								value = value +  rel[i] + '^' + rel[i+1]
 							else:
 								value = value + '^' + rel[i] + '^' + rel[i+1]
+					#To handle to infinitive cases:
+					if '_v_' in relation_name: #This is the way [to go].
+						if 'TENSE:' in rel[i]:
+							fp.write('%s\t%s %s %s %s\n' % (relation_name, rel[i], rel[i+1], rel[i+2], rel[i+3]))
 				relation_dic[key] = value
+				
 	if 'HCONS' in line:
 		line = line[9:-5]
 		lst = line.split(' ')
@@ -84,7 +103,7 @@ for line in open(sys.argv[1]):
 			indirect_handle_dic[lst[each]] = lst[each+2]
 #			print lst[each], lst[each+2]
 
-for key in relation_dic:
+for key in sorted(relation_dic):
 	new_key = key.split('^')
 	lst = relation_dic[key].split('^')
 	print '\n' + new_key[0] + '\t', 

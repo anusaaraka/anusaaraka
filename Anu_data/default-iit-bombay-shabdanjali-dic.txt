@@ -12782,7 +12782,7 @@ careless_adjective	lAparavAha/beparavAha/suswa/nEsargika/kama/kaccA/galawa/DIlA-
 carelesser_UNDEFINED	beparavAha
 carelessest_UNDEFINED	beparavAha
 carelessly_UNDEFINED	beparavAhI_se
-carelessly_adverb	XyAnahInawaH/lAparavAhI_se/asAvaXAnawaH
+carelessly_adverb	lAparavAhI_se/XyAnahInawaH/asAvaXAnawaH
 carelessness_UNDEFINED	lAparavAhI
 carelessnesses_UNDEFINED	lAparavAhI
 carer_noun	xeKa-reKa_karane_vAlA
@@ -25479,7 +25479,7 @@ electricest_UNDEFINED	bijalI_kA
 electrician_noun	bijalI_kA_kAma_jAnane_vAlA/bijalI-miswrI/vixyuxvewwA
 electricians_UNDEFINED	vixyuxvewwA
 electricities_UNDEFINED	bijalI
-electricity_noun	vixyuwa_Sakwi/vixyuwa/uwwejanA/UrjA/bijalI/vixyuwa_XArA
+electricity_noun	vixyuwa/vixyuwa_Sakwi/uwwejanA/UrjA/bijalI/vixyuwa_XArA
 electricity_verb	naI_lahara_xOda
 electrics_UNDEFINED	bijalI_kA
 electrics_noun	vixyuw-wanwra
@@ -25822,7 +25822,7 @@ emissaries_UNDEFINED	xUwa
 emissary_noun	xUwa/xUwa{xo_xeSoM_ke_bIca}
 emission_noun	uwsarjana/srAva
 emissions_UNDEFINED	uwsarjana
-emit_verb	uwsarjana_kara/nikAla/Coda
+emit_verb	uwsarjana_kara/nikAla/Coda/uwsarjiwa_kara
 emits_UNDEFINED	uwsarjana_kara
 emitted_UNDEFINED	uwsarjana_kara
 emitting_UNDEFINED	uwsarjana_kara
@@ -50616,7 +50616,7 @@ mossier_UNDEFINED	kAI_BarA
 mossiest_UNDEFINED	kAI_BarA
 mossy_UNDEFINED	kAI_BarA
 mossy_adjective	kAIxAra/GisA_pitA
-most_adjective	sabase_aXika/sarvAXika/bahuwa_aXika/bahuwa/aXikawama/aXikAMSa
+most_adjective	aXikAMSa/sabase_aXika/sarvAXika/bahuwa_aXika/bahuwa/aXikawama
 most_adverb	sabase_aXika/lagaBaga/awyaXika
 most_pronoun	aXikawama
 mostly_adverb	prAyaH/mUKya_rUpa_se
@@ -50872,8 +50872,8 @@ move-on_verb	viRaya_parivarwana_kara/sWAna_parivarwana_kara
 move-out_verb	purAnA_Gara_Coda_xe
 move-over_verb	sWana_baxal
 move-up_verb	sWAna_baxala
-move_noun	upAya/sWAnAnwaraNa/safkramaNa/prayAsa/parivarwana/kaxama/kArravAI/gawiviXi/cAla
-move_verb	cala/uwwejiwa_kara/uTanA_bETa/upAya_kara/sWAna_parivarwana_kara/sWAnAnwariwa_kara/saFcAliwa_ho/preriwa_kara/praswAva_raKa/praBAviwa_kara/peSa_kara/nikAla/majabUra_kara/kArravAI_kara/JakaJora/hil/hat/hata/Gara_baxala/cal/calA/calA_j/cAla_cAla/becakara_hat/baxala/baDa/agrasara_kara/hila
+move_noun	sWAnAnwaraNa/safkramaNa/prayAsa/parivarwana/kaxama/kArravAI/gawiviXi/cAla
+move_verb	cala/uwwejiwa_kara/uTanA_bETa/upAya_kara/sWAna_parivarwana_kara/sWAnAnwariwa_kara/saFcAliwa_ho/preriwa_kara/praswAva_raKa/praBAviwa_kara/peSa_kara/nikAla/majabUra_kara/kArravAI_kara/JakaJora/hila/hata/Gara_baxala/calA/calA_ja/cAla_cAla/becakara_hata/baxala/baDa/agrasara_kara
 moveable-feast_noun	cala-parva
 moveable_adjective	parivarwanIya/hilane-dulane_lAyaka/cala
 moveable_noun	cala_sampawwi
@@ -69000,7 +69000,7 @@ schedules_UNDEFINED	sUcI
 scheduling_UNDEFINED	sUcI
 schema_noun	rUpareKA/Anwarika_ciwraNa
 schemata_UNDEFINED	rUpareKA
-schematic_adjective	yojanA_baxXa/yojanAbaxXa/AreKIya
+schematic_adjective	AreKIya/yojanA_baxXa/yojanAbaxXa/vyavasWiwa
 schematic_noun	AreK
 schematically_adverb	yojanAbaxXa_Dafga_se
 schematicer_UNDEFINED	yojanA_baxXa
@@ -77923,7 +77923,7 @@ sulky_noun	ekajaniyA_GodAgAdI
 sullen_adjective	rUTA_huA/Kinna/GirA_huA/baxamijAja
 sullener_UNDEFINED	rUTA_huA
 sullenest_UNDEFINED	rUTA_huA
-sullenly_adverb	muzha_PulAe
+sullenly_adverb	KinnawA_se/muzha_PulAe
 sullenness_noun	cidacidApana/baxamijAjI
 sullied_UNDEFINED	kaluRiwa_karanA
 sullies_UNDEFINED	kaluRiwa_karanA
@@ -93577,3 +93577,4 @@ subfamily_noun	upaparivAra
 low-volume_adjective	kama_mAwrA
 semi-circular_adjective	arXavqwwAkara
 geographic_adjective	BOgolika
+Fig._noun	ciwra

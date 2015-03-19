@@ -395,6 +395,7 @@
  (load-facts "E_constituents_info.dat")
  (load-facts "Node_category.dat")
  (load-facts "template_tam_meaning.dat")
+ (load-facts "debug_file.dat")
  (open "wsd_tam_facts_output.dat" wsd_tam_fact_fp "a")
  (run)
  (save-facts "hindi_tam_info.dat" local pada_info conj_head-left_head-right_head)
