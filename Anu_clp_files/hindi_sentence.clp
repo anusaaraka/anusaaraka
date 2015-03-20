@@ -43,6 +43,20 @@
 (defglobal ?*rmd_mng-file* = rm_mng_fp)
  
  (deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
+
+(deffunction remove_character(?char ?str ?replace_char)
+                        (bind ?new_str "")
+                        (bind ?index (str-index ?char ?str))
+                        (if (neq ?index FALSE) then
+                        (while (neq ?index FALSE)
+                        (bind ?new_str (str-cat ?new_str (sub-string 1  (- ?index 1) ?str) ?replace_char))
+                        (bind ?str (sub-string (+ ?index 1) (length ?str) ?str))
+                        (bind ?index (str-index ?char ?str))
+                        )
+                        )
+                (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
+ )
+
  ;----------------------------------------------------------------------------------------------------------
  ;Added by Roja (29-06-11)
  ;To replace hyphen(-) with underscore(_) only in cases where we get underscore in the sentence. 
@@ -63,13 +77,24 @@
    	)
  )
  ;----------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (19-02-15)
+ ;remove 'id-attach_eng_mng' if mng decided is not from WSD bcoz this fact is restricted to wsd
+ ;This model was picturesquely called plum pudding model of the atom. (physics domain)
+ (defrule rm_eng_fact
+ (declare (salience 2560))
+ ?f<-(id-attach_eng_mng ?id ?mng)
+ (id-HM-source ?id ? ?s&~WSD_root_mng&~WSD_word_mng)
+ =>
+	(retract ?f)
+ )
+ ;----------------------------------------------------------------------------------------------------------
  ;Add english meaning to the hindi mng
  ;Added by Shirisha Manju (19-09-13) 
  (defrule add_eng_mng
  (declare (salience 2550))
  ?f0<-(id-Apertium_output ?id $?wrd_analysis)
  ?f1<-(id-attach_eng_mng ?id ?mng)
- (pada_info (group_ids $? ?id $? ?))
+ (pada_info (group_ids $? ?id)(vibakthi 0))
  =>
 	(retract ?f0 ?f1)
 	(bind $?n_mng (create$ $?wrd_analysis @PUNCT-OpenParen ?mng @PUNCT-ClosedParen)) ;Added '@'before PUNCT to avoid to convert into utf8.
@@ -86,13 +111,16 @@
  ?f1<-(id-attach_eng_mng ?id ?mng)
  (pada_info (group_ids  $? ?id)(vibakthi ?vib))
  =>
-        (retract ?f0 ?f1)
-	(if (and (eq (str-index "_" (implode$ (create$ ?vib))) FALSE) (neq ?vib 0)) then
-	        (bind $?n_mng (create$ $?wrd_analysis @PUNCT-OpenParen ?mng @PUNCT-ClosedParen ?v_mng))
-        	(assert (id-Apertium_output ?id $?n_mng))
-	else 
-		(bind $?n_mng (create$ $?wrd_analysis ?v_mng @PUNCT-OpenParen ?mng @PUNCT-ClosedParen))
+	(retract ?f0 ?f1)
+	(if (neq (str-index "_" ?vib) FALSE) then
+		(bind ?v (remove_character "_" (implode$ (create$ ?vib)) " "))
+		(bind $?w (create$ $?wrd_analysis ?v_mng))
+		(bind $?w (delete-member$ $?w ?v))
+		(bind $?n_mng (create$ $?w @PUNCT-OpenParen ?mng @PUNCT-ClosedParen ?v))
                 (assert (id-Apertium_output ?id $?n_mng))
+	else
+		(bind $?n_mng (create$ $?wrd_analysis @PUNCT-OpenParen ?mng @PUNCT-ClosedParen ?v_mng))
+		(assert (id-Apertium_output ?id $?n_mng))
 	)
  )
  ;----------------------------------------------------------------------------------------------------------
