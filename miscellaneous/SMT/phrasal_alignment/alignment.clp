@@ -94,7 +94,8 @@
 (defrule get_left_over_ids
 (declare (salience -502))
 ?f0<-(manual_id-word ?id ?mng)
-(test (eq (integerp (member$ ?mng (create$ @PUNCT-QuestionMark @PUNCT-Comma .))) FALSE))
+(manual_word_info (head_id ?id)) 
+;(test (eq (integerp (member$ ?mng (create$ @PUNCT-QuestionMark @PUNCT-Comma .))) FALSE))
 =>
 	(retract ?f0)
 	(bind ?*lids* (create$  ?*lids* ?id))
