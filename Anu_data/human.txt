@@ -138,8 +138,11 @@ guard	1
 prisoner	1
 staff	1
 spokesman	1
-parents	1
+parent	1
 baby	1
 teenager	1
 troop	1
 paparazzi	1
+guy	1
+crowd	1
+nephew	1

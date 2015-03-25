@@ -513,11 +513,19 @@
 	rhinoceros	(Suggested by 14anu-ban-01        07-02-15) Ex: This injection stuns the rhinoceros, so we can examine it.
 	staff           (By Shirisha Manju from human.txt 16-02-15) Ex: The company is reconsidering the way in which it deploys its staff.
         spokesman       (       "       "                       " ) Ex: The spokesman refused to disclose details of the takeover to the press.
-	parents		(	"	"		  18-02-15)
+	parent		(	"	"		  18-02-15)
 	baby            (Suggested by 14anu-ban-01       23-02-15 ) Ex: The baby was screaming itself hoarse
 	teenager        (       "       "                28-02-15 ) Ex: Bob turned out to be a sullen teenager.
 	paparazzi	(	"     14anu-ban-07	   "	  ) Ex: I love what you did to try to throw off the paparazzi.
 	troop           (       "     14anu-ban-04       23-02-15 ) Ex: They embarked the troops by night.
+	guy		(	"     14anu-ban-03	 20-03-15 ) Ex: He was a cool guy.
+	ant     	(	"	 "		   "	  ) Ex: A colony of ants.
+	bacteria  	(	"	 "		   "	  )
+	termites	(	"	 "		   "	  )
+	crowd           (       "     14anu-ban-04         "      ) Ex: The crowd erupted in applause and cheering.
+        nephew          (       "        "                 "      ) Ex: He entrusted the task to his nephew.
+	pig		(	"	 "		 21-03-15 ) Ex: I had an alarming encounter with a wild pig.
+
 
   Changes in total-paxasUwra.txt 
   ==============================
@@ -883,6 +891,10 @@ Removed:
 	Cave		(	"		"	"  ) Ex: On the entrance of Karla Cave there are one pillar and three lion statues
 								 prior to the cave .
 	Industry	(	"		"  28-02-15) Ex: Industry in Britain has been in decline since the 1970s.  	
+
+ Removed  :
+ ---------
+	wood		(Suggested by 14anu-ban-04 21-03-15)
 
 
  Changes in hindi_default_tam.txt
@@ -3307,11 +3319,14 @@ Removed:
 	guard		(Suggested by 14anu-ban-09       07-02-15 ) Ex: Guards have been posted along the border. 
 	prisoner	(Suggested by 14anu-ban-04		" ) Ex: The prisoners were executed by firing squad.
 	staff   	(	"	"		 16-02-15 ) Ex: The company is reconsidering the way in which it deploys its staff. 
-	spokesman       (	"	"			" ) Ex: The spokesman refused to disclose details of the takeover to the press.	       parents	       (Suggested by 14anu-ban-03       18-02-15 )
+	spokesman       (	"	"			" ) Ex: The spokesman refused to disclose details of the takeover to the press.	       parent	       (Suggested by 14anu-ban-03       18-02-15 ) Ex: He is playing up towards his parents.
 	baby		(Suggested by 14anu-ban-01       23-02-15 ) Ex:	The baby was screaming itself hoarse.
 	teenager	(	"	"		 28-02-15 ) Ex: Bob turned out to be a sullen teenager.
 	troop		(	"     14anu-ban-04       23-02-15 ) Ex: They embarked the troops by night.     
 	paparazzi       (By Manju from animate.txt        "       ) Ex: I love what you did to try to throw off the paparazzi.
+	guy             (Suggested by 14anu-ban-03       20-03-15 ) Ex: He was a cool guy.
+	crowd		(	"     14anu-ban-04	   "	  ) Ex: The crowd erupted in applause and cheering. 
+	nephew		(	"	 "		   "	  ) Ex: He entrusted the task to his nephew.  
 
  changes in named_entities.txt
  =============================
