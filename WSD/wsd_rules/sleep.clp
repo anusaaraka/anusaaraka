@@ -12,6 +12,10 @@
 (printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng   " ?*wsd_dir* "  sleep.clp 	sleep0   "  ?id "  - )" crlf))
 )
 
+;$$$ Modified by Shirisha Manju  Suggested by Chaitanya Sir 20-03-2015
+;changed meaning 'so' as 'sonA'
+;Modified by Shirisha Manju (replaced id-wsd_word_mng as id-wsd_root_mng) (4-12-09)
+;Ex : The sleeping of students can ruin a lecture . 
 (defrule sleep1
 (declare (salience 4900))
 (id-root ?id sleep)
@@ -20,14 +24,13 @@
 (id-cat_coarse ?id noun)
 =>
 (retract ?mng)
-(assert (id-wsd_root_mng ?id so))
-(assert (id-H_vib_mng ?id wA_huA))
+(assert (id-wsd_root_mng ?id sonA))
+;(assert (id-H_vib_mng ?id wA_huA)) ; commented by Shirisha Manju Suggested by Chaitanya Sir 20-03-2015
 (if ?*debug_flag* then
-(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*wsd_dir* "  sleep.clp  	sleep1   "  ?id "  so )" crlf)
-(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*wsd_dir* "  sleep.clp      sleep1   "  ?id " wA_huA )" crlf))
+(printout wsd_fp "(dir_name-file_name-rule_name-id-wsd_root_mng  " ?*prov_dir* "  sleep.clp     sleep1   "  ?id "  sonA )" crlf)
+;(printout wsd_fp "(dir_name-file_name-rule_name-id-H_vib_mng  " ?*prov_dir* "  sleep.clp      sleep1   "  ?id " wA_huA )" crlf)
 )
-; Modified by Shirisha Manju (replaced id-wsd_word_mng as id-wsd_root_mng) (4-12-09)
-; Ex : The sleeping of students can ruin a lecture . 
+)
 
 (defrule sleep2
 (declare (salience 4800))

@@ -167,3 +167,10 @@ baby	1
 teenager	1
 troop	1
 paparazzi	1
+guy	1
+crowd	1
+nephew	1
+ant	1
+bacteria	1
+termites	1
+pig	1

@@ -1431,7 +1431,6 @@ ward	1
 frontier	1
 country boundaries	1
 viceroyalty	1
-wood	1
 subdivision	1
 slope	1
 table	1
