@@ -325,3 +325,5 @@ yield_point	parABava_biMxu#parABava_biMxu#noun#2#RM
 yield_strength	parABava_sAmarWya#parABava_sAmarWya#noun#2#RM
 young's_modulus	yaMga_guNAMka/yaMga_prawyAsWawA_guNAMka#yaMga_guNAMka/yaMga_prawyAsWawA_guNAMka#noun#2#WM
 zig_zag	teDZA-meDZA#teDZA-meDZA#noun#2#WM
+positively_charged	XanAveSiwa#XanAveSiwa#noun#2#RM
+negatively_charged	qNAveSiwa#qNAveSiwa#noun#2#RM

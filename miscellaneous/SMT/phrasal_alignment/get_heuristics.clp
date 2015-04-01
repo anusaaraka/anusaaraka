@@ -77,6 +77,24 @@
 	(assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu anu_exact_match_without_vib))
 )
 
+;Ex: In contrast, light emitted from rarefied gases heated in a flame, or excited electrically in a glow tube such as the familiar [neon sign] or mercury vapor light has only certain discrete wavelengths.
+;Anu : ke viparIwa, jvAlA meM garama kiyA, yA pariciwa [nioYna-sAina] yA pAraxa-vARpa prakASa jEse ki eka wApaxIpwa nalikA meM vixyuwa se uwwejiwa kiyA sImiwa samuxAya se sambanXiwa gEsoM se uwsarjiwa prakASa meM ekamAwra kuCa vivikwa warafgaxErGya hEM.
+;Man : isake viparIwa jvAlA meM garma kI gaI viraliwa gEsoM xvArA uwsarjiwa prakASa aWavA kisI wApaxIpwa nalikA meM vixyuwa uwwejiwa gEsa, jEse [nioYna sAina] aWavA pAraxa-vARpa prakASa meM kevala niSciwa vivikwa warafgaxErGya howI hEM.
+(defrule anu_exact_match_without_vib_for_hyphen_word
+(declare (salience 902))
+(current_id ?mid)
+(manual_word_info (head_id ?mid) (word ?m ?m1)(vibakthi 0))
+(id-Apertium_output ?aid ?a)
+(test (neq (str-index "-" ?a) FALSE))
+(test (eq (string-to-field (sub-string 1 (- (str-index "-" ?a) 1) ?a)) ?m))
+(test (eq (string-to-field (sub-string (+ (str-index "-" ?a) 1) (length ?a) ?a)) ?m1))
+(pada_info (group_head_id ?aid)(preposition  0))
+(id-root ?aid ?root)
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
+        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu anu_exact_match_without_vib))
+)
+
 ;Eng_sen : This property of the body is called [inertia].
 ;Anu     : piMda kA yaha guNa [jadawva] kahA jAwA hE.
 ;Man     : vaswu ke isa guNa ko [jadawva] kahawe hEM.
@@ -262,12 +280,14 @@
 ;-------------------------------------------------------------------------------------
 ;Similarly, we can argue that it lies on the median MQ and NR.
 ;isI prakAra hama [warka kara sakawe hEM] ki yaha mAXyikA @MQ Ora @NR para BI avasWiwa hogA.
+;In Rutherford's nuclear model of the atom, the entire positive charge and most of the mass of the atom [are concentrated] in the nucleus with the electrons some distance away. 
+;raxaraPorda ke paramANu ke nABikIya moYdala meM, paramANu kA kula XanAveSa waWA isakA aXikAMSa xravyamAna paramANu ke bahuwa Cote se Ayawana meM [safkeMxriwa howA hE] jise nABika kahawe hEM waWA ilektroYna isase kuCa xUra howe hEM .
 (defrule kriyA_mUla_partial_match
 (declare (salience 820))
 (current_id ?mid)
 (manual_word_info (head_id ?mid)(root $?v_root ?r&kara|ho|xe))
 (test (neq (length $?v_root) 0))
-(database_info (root ?root)(components $?v_root $? ?r) (database_type single) )
+(or (database_info (root ?root)(components $?v_root $? ?r) (database_type single) ) (database_info (root ?root)(components $?v_root $?) (database_type single)))
 (id-root ?aid ?root)
 =>
 	(assert (anu_id-man_id-type ?aid ?mid  kriyA_mUla_partial_match))

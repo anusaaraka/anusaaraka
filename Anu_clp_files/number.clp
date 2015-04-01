@@ -94,6 +94,21 @@
         )
  )
  ;-----------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju Suggested by Chaitanya Sir 24-02-15
+ ;if morph generates number as 'p' then this rule decides number as 's' using determinar 'a'
+ ;A [sheep] is jumping.
+ ;The spectrum appears as a [series] of bright lines.
+ ;inake spektrama meM camakIlI reKAoM kI eka [SqfKalA] xiKAI xewI hE .
+ (defrule get_num_using_det
+ (declare (salience 950))
+ ?f1<-(id-root-category-suffix-number  ?id ? ? ? p)
+ ?f2<- (id-number-src ?id ? ?)
+ (id-word =(- ?id 1) a)
+ =>
+        (retract ?f1 ?f2)
+        (assert (id-number-src ?id  s  Word))
+ )
+ ;-----------------------------------------------------------------------------------------------------------
  ;The Danes are nice people.
  (defrule get_num_for_sub
  (declare (salience 900))
