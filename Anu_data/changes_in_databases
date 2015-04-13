@@ -785,6 +785,12 @@ Modified :
 	enfold		accept__vblex		(     "      "    )
 	align		accept__vblex		(     "   06-03-15)
 	disguise	liv/e__vblex		(     "      "    )
+	sneak		accept__vblex		(     "   05-04-15) 
+	stabbing	house__n		(     "	     "	  )
+	pencil		quarrel__vblex		(     "	     "	  )
+	slather		accept__vblex		(     "   13-04-15)
+	salvo		access__n		(     "	     "	  )
+	salvo		house__n		(     "	     "	  )
 
 
 Modified paradigm:
