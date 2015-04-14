@@ -174,3 +174,6 @@ ant	1
 bacteria	1
 termites	1
 pig	1
+volunteer	1
+fly	1
+insect	1

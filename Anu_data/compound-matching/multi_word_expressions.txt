@@ -14396,7 +14396,6 @@ golf_club	gAlPZa_klaba#gAlPZa_klaba#noun#2#RM
 gondola_car	bijalI_kI_trAlI#bijalI_kI_trAlI#noun#2#RM
 gong_buoy	GaMte_kA_cihna#GaMte_kA_cihna#noun#2#RM
 good_behaviour	saxvyavahAra#saxvyavahAra#noun#2#RM
-good_books	kqpA_xqRti#kqpA_xqRti#noun#2#RM
 good_bye	alvixA#alvixA#noun#2#RM
 good_cause	uwwma_areRTa_Xyeya_aakRya#uwwma_areRTa_Xyeya_aakRya#noun#2#RM
 good_character	saccariwrawA#saccariwrawA#noun#2#RM
