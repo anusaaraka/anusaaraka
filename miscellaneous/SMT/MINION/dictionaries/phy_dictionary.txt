@@ -681,7 +681,6 @@ unstable_adjective	asanwuliwa
 upward_adjective	Upara_kI_ora/UrXvagAmI/uparimuKI
 usage_noun	prayoga
 vacuum_noun	nirvAwa
-value_verb	mAna_ho
 variable_noun	cara/parivarwI
 vectorially_UNDEFINED	saxiSa/saxiSa_rUpa_meM
 vector_noun	saxiSa
@@ -707,3 +706,4 @@ weights_noun	bAta
 window_noun	gavAkRa
 windowpane_UNDEFINED	KidZakI_kA_SISA
 charge_adjective	AveSiwa
+mass_adjective	xravyamAna 

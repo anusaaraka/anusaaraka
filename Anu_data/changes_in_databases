@@ -525,6 +525,9 @@
 	crowd           (       "     14anu-ban-04         "      ) Ex: The crowd erupted in applause and cheering.
         nephew          (       "        "                 "      ) Ex: He entrusted the task to his nephew.
 	pig		(	"	 "		 21-03-15 ) Ex: I had an alarming encounter with a wild pig.
+	volunteer       (       "        "               11-04-15 ) Ex: They're enlisting volunteers for an experiment.
+	fly		(	"	 "		 13-04-15 ) Ex: Spiders ensnare flies and other insects in their webs. 
+	insect  	(	"	 "		    "	  ) Ex: 	"		"
 
 
   Changes in total-paxasUwra.txt 
@@ -1404,6 +1407,17 @@ Removed:
 					    justified from more rigorous wave theory.
 	159. Fig._noun			ciwra				(Suggested by Chaitanya Sir	06-03-15)
 					Ex: The electronic transitions corresponding to these series are shown in Fig. 12.9.
+	160. interatomic_adjective   	nwarA-paramANavika		(Suggested by 14anu-ban-06      11-04-15)
+					Ex: When a solid is deformed, the atoms or molecules are displaced from their equilibrium positions 
+					    causing a change in the interatomic (or intermolecular) distances.
+	161. preferred_adjective     	AXimawa				(Suggested by 14anu-ban-09      13-04-15)
+					Ex: In the same way isotropy of space (no intrinsically preferred direction in space) underlies the law
+					    of conservation of angular momentum.
+	162. pericarp_noun   		PalI				(Suggested by 14anu-ban-09      13-04-15)
+					Ex: As the ovules develop into seeds, the ovary begins to ripen and the ovary wall, the pericarp, may
+                                            become fleshy (as in berries or drupes), or form a hard outer covering (as in nuts). [wiki-fruits]
+	163. compiled_adjective      	safkaliwa			(Suggested by 14anu-ban-03      14-04-15)
+					Ex: His compiled data were analyzed later by his assistant Johannes Kepler (1571-1640).
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1700,6 +1714,9 @@ Removed:
 					Ex: She glared at him sullenly.
 	147. schematic_adjective	vyavasWiwa		(Suggested by Chaitanya Sir	10-03-15)
 					Ex: Figure 12.2 shows a schematic diagram of this experiment.
+	148. conservationist_noun    	saMrakRaNakarwA		(Suggested by 14anu-ban-03      14-04-15)
+					Ex: The artist and conservationist says he visits each one twice every year - in the spring to prune 
+                                            and in late summer to graft - for three years, until the tree is established.
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -2117,6 +2134,9 @@ Removed:
 				Ex: Figure 12.2 shows a schematic diagram of this experiment.
 	191. electricity_noun	vixyuwa_Sakwi		as	vixyuwa		(Suggested by 14anu-ban-04	"	)
 				Ex: In 1864, the laws obeyed by electricity and magnetism were unified and formulated by James Maxwell who then 				realized that light was electromagnetic waves.
+	192. displace_verb   	apanI_jagaha_se_hatA_xe	as	visWApiwa_ho_jA	(Suggested by 14anu-ban-06      11-04-15)
+				Ex: When a solid is deformed, the atoms or molecules are displaced from their equilibrium positions causing a
+                                    change in the interatomic (or intermolecular) distances.
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -2370,6 +2390,9 @@ Removed:
 				Ex: I did not have any small change to leave as a tip.
 	24. a_certain		koI_eka#koI_eka#noun#2#RM		(Suggested by Preeti ji LTRC	10-05-14)
 				Ex: You have to have a certain amount of courage to perform in public.
+	25. good_books      	kqpA_xqRti#kqpA_xqRti#noun#2#RM		(Suggested by 14anu-ban-02	11-04-15)
+				Ex: We urge you to try to add many names and items to these tables with the help of your teachers, good books
+				    and websites on science. [ncert]
 
     Modified :
     --------
@@ -2912,9 +2935,6 @@ Removed:
 	diametrically_adjective vyAsawa			(Suggested by 14anu-ban-04      05-11-14)
 				Ex: It is the angle between the two directions when two diametrically opposite points of the planet are viewed
 				    through the telescope.   
-	value_verb		mAna_ho			(Suggested by 14anu-ban-07      05-11-14)
-				Ex: The ice and steam point have values 32 Â°F and 212 Â°F respectively, on the Fahrenheit scale and 0 Â°C and 
-				    100 Â°C on the Celsius scale.
 	term_verb       	kahalA			(Suggested by 14anu-ban-07      13-11-14)
 				Ex: The line along which the body is fixed is termed as its axis of rotation.
 	together_adverb 	Apasa_meM		(Suggested by 14anu-ban-07      13-11-14)
@@ -2955,6 +2975,8 @@ Removed:
 	collimate_verb		saMreKiwa_kara		(Suggested by Chaitanya Sir	10-03-15)
 				Ex: Alpha-particles emitted by a Bi radioactive source were collimated into a narrow beam by their passage 					through lead bricks.
         charge_adjective        AveSiwa                 (Suggested by Chaitanya Sir     17-03-15)
+	mass_adjective		xravyamAna 		(Suggested by 14anu-ban-08      14-04-15)
+				Ex: Consider a constant force F acting on an object of mass m.
 
     Modifying first meaning:
     -----------------------
@@ -3108,8 +3130,16 @@ Removed:
 	19. glow_tube       	wApaxIpwa_nalikA#wApaxIpwa_nalikA#noun#2#RM		(	"	"		  "	 )
 				Ex:						"
 	20. temperature_scale	mApakrama#mApakrama#noun#1#RM				(Suggested by 14anu-ban-07	10-03-15) 
-				Ex: The two familiar temperature scales are the Fahrenheit temperature scale and the Celsius temperature scale.        21. positively_charged      XanAveSiwa#XanAveSiwa#noun#2#RM 		       (Suggested by Chaitanya Sir     17-03-15)
-	22. negatively_charged      qNAveSiwa#qNAveSiwa#noun#2#RM 			(Suggested by Chaitanya Sir      17-03-15)
+				Ex: The two familiar temperature scales are the Fahrenheit temperature scale and the Celsius temperature scale.
+        21. positively_charged  XanAveSiwa#XanAveSiwa#noun#2#RM 		       	(Suggested by Chaitanya Sir     17-03-15)
+	22. negatively_charged  qNAveSiwa#qNAveSiwa#noun#2#RM 				(Suggested by Chaitanya Sir     17-03-15)
+	23. current_carrying    vixyuwa_XArAvAhI#vixyuwa XArAvAhI#noun#2#RM		(Suggested by 14anu-ban-09 	11-04-15)
+	24. alternating_voltage prawyAvarwI_voltawA#prawyAvarwI_voltawA#noun#2#RM	(	"	"		  "	)
+				Ex: Such a voltage is called  alternating voltage  (ac voltage) and the current driven by it in a circuit is
+                                    called the alternating current (ac current).
+	25. average_current	mAXya_XArA #mAXya_XArA #noun#2#RM			(Suggested by 14anu-ban-09      11-04-15)
+				Ex: Thus, the sum of the instantaneous current values over one complete cycle is zero, and the average current
+				    is zero.
 
 	Removed entry:
 	-------------	
@@ -3333,6 +3363,8 @@ Removed:
 	guy             (Suggested by 14anu-ban-03       20-03-15 ) Ex: He was a cool guy.
 	crowd		(	"     14anu-ban-04	   "	  ) Ex: The crowd erupted in applause and cheering. 
 	nephew		(	"	 "		   "	  ) Ex: He entrusted the task to his nephew.  
+	volunteer	(	"	 "		 11-04-15 ) Ex: They're enlisting volunteers for an experiment.
+	me		(	"     14anu-ban-09	 11-04-15 ) Ex: My mother is always trying to organize me.
 
  changes in named_entities.txt
  =============================
@@ -3365,8 +3397,15 @@ Removed:
 			Ex: Crop rotation also mitigates the build-up of pathogens and pests that often occurs when one species is continuously 			   cropped, and can also improve soil structure and fertility by alternating deep-rooted and shallow-rooted plants.
 	6. cane_growing gannA_uwpAxana#gannA_uwpAxana#adjective#2#RM			(Suggested by 14anu-ban-03 18-02-15)
 			Ex: The larvae also attack the roots of sugar cane, causing serious damage in cane-growing regions of Persia. 
-	7. scarab_beetle	gubarElA# gubarElA#noun#2#RM				(Suggested by 14anu-ban-01 18-02-15)
+	7. scarab_beetle    gubarElA# gubarElA#noun#2#RM				(Suggested by 14anu-ban-01 18-02-15)
 			Ex: The larvae of the scarab beetle, Pentodon idiota Herbst, are polyphagous and feed on the roots of different plants.
+	8. nesting_sites    Gosale_kI_jagahoM#Gosale_kI_jagahoM#noun#2#RM		(Suggested by 14anu-ban-08 11-04-15)
+			Ex: The clover cover crop enhanced songbird habitat by providing cover and nesting sites, and an increased food source
+	                    from higher arthropod populations.
+	9. nutrient_cycling poRaka_wawv_cakkara_praNAlI#poRaka_wawv_cakkara_praNAlI#2#RM (Suggested by 14anu-ban-08 11-04-15)
+			Ex: The impact of residue placement (buried by tillage or left on the surface in zero tillage) on nutrient cycling and
+                            efficiency is under study.
+
 
   Modified:
 	Added 1st meaning:
