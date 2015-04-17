@@ -330,3 +330,4 @@ negatively_charged	qNAveSiwa#qNAveSiwa#noun#2#RM
 current_carrying	vixyuwa_XArAvAhI#vixyuwa XArAvAhI#noun#2#RM
 alternating_voltage	prawyAvarwI_voltawA#prawyAvarwI_voltawA#noun#2#RM
 average_current	mAXya_XArA #mAXya_XArA #noun#2#RM
+boiling_points	kvaWanAMka#kvaWanAMka#noun#2#WM

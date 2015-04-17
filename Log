@@ -1,4 +1,4 @@
- 23-03-15
+ 17-04-15
  ========
  1. WSD:
 	substantially.clp 
@@ -10,50 +10,55 @@
  4. tam_meaning.clp:
 	Added : change_tam_source_for_WSD
  5. number.clp
-        Added : get_num_using_det
+        Added    : get_num_using_det
+	Modified : verb_rule  -- added no. info for subject
  6. hindi_meaning.clp
 	Modified the hierarchy for default mng
- 7. get_dbase_mng.clp
+ 7. sd_relation_rules.clp
+	Modified: conj+cc
+ 8. get_dbase_mng.clp
 	Modified : print_dic_mng and dic_lookup functions to add group_ids
- 8. get_heuristics.clp
+ 9. get_heuristics.clp
 	Added : anu_exact_match_without_vib_for_hyphen_word
- 9. alignment.clp
+ 10. alignment.clp
 	Modified :get_left_over_ids
- 10. Modified following bat files to show tooltop for WSD tam along with rule name:
-	run_modules_ace.bat	run_modules_link.bat	run_modules_ol.bat	run_modules_std.bat
- 11. run_H_gen_sen_eng.bat
+ 11. run_modules_std.bat
+	Loaded "relations_tmp1.dat" file in number module
+ 12. run_H_gen_sen_eng.bat
  	Loaded word.dat file in get_dbase_mng module
 	Removed get_manual_id_en_hi, word_alignment , manual_lwg_new, word_alignment1 modules
 	Added get_manual_id_and_group, get_verb_and_phrasal_grp.clp and alignment1 modules
- 12.  Added the following files for alignment
+ 13. Modified following bat files to show tooltop for WSD tam along with rule name:
+	run_modules_ace.bat	run_modules_link.bat	run_modules_ol.bat	run_modules_std.bat
+ 14.  Added the following files for alignment
 	get_manual_id_and_group.clp  	--- to get manual_word fact and noun group info
 	get_verb_and_phrasal_grp.clp 	--- to get verb group and phrasal group info
 	alignment1.clp 			--- align after heuristics
- 13. Added ace-parser dir in Parsers folder
+ 15. Added ace-parser dir in Parsers folder
 	Readme_to_install_ace_parser.txt
 	src/extract_mrs_output.py
 	src/get_cat_root_info.py
 	src/get_mrs.sh
 	src/map-relations.py
 	src/get_tree.sh
- 14. Added following files to run Ace parser:
+ 16. Added following files to run Ace parser:
 	bin/Anusaaraka_ace.sh
 	bin/run_sentence_ace.sh
 	Anu_clp_files/run_modules_ace.bat
- 15. Updated following files related to phrasal alignment:
+ 17. Updated following files related to phrasal alignment:
         run_alignment-hi-en.sh
         run_alignment.sh
- 16. Updated following dictionaries:
+ 18. Updated following dictionaries:
         changes_in_databases	apertium-en-hi.en.metadix	provisional_multi_word_dictionary.txt
         miscellaneous/SMT/MINION/dictionaries/phy_dictionary.txt
         miscellaneous/SMT/MINION/dictionaries/phy_eng_multi_word_dic.txt
- 17. Updated following files:
+ 19. Updated following files:
 	INSTALL
 	README
 	tree_viewer/README
 	tree_viewer/remove-out-files.sh
 	tree_viewer/view_trees.sh
- 18. Updated Log.
+ 20. Updated Log.
 
  18-02-15
  ========
