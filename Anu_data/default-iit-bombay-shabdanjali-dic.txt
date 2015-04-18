@@ -15708,7 +15708,7 @@ coloring_noun	raFjaka/rafgawa/rafga_BaranA
 colorless_adjective	rafgahIna
 colorlessness_noun	varNahInawA/rafgahInawA/avarNawA
 colors_UNDEFINED	rafganA
-colossal_adjective	xIrGakAya/viSAla/bahuwa_badA
+colossal_adjective	BArI_mAwrA/xIrGakAya/viSAla/bahuwa_badA
 colossaler_UNDEFINED	bahuwa_badA
 colossalest_UNDEFINED	bahuwa_badA
 colossi_UNDEFINED	xIrGakAya_vyakwi
@@ -17119,7 +17119,7 @@ contagiousness_noun	safkrAmakawA
 contain_UNDEFINED	XAraNa_karanA
 contain_verb	sammiliwa_kara/roka/pUrNawayA_viBAjya_ho/niyaNtraNa_raKa/le/ho/Gera/se_yukwa_ho/atA/XAraNa_kara/WAma/pUrNawaH_viBAjiwa{safKyA}_ho
 contained_adjective	sanwuliwa
-container_noun	XAraka/pAwra/AXAna
+container_noun	pAwra/XAraka/AXAna
 containers_UNDEFINED	pAwra
 containing_UNDEFINED	XAraNa_karanA
 containment_noun	pariroXana/niyanwraNa
@@ -21807,7 +21807,7 @@ detachment_noun	pqWakkaraNa/watasWawA/vilagana/tukadI/nirlipwawA
 detachments_UNDEFINED	pqWakkaraNa
 detail_noun	byOrA/viswAra/senA_kI_tukadI/jAnakArI/BAga/vyOrA
 detail_verb	wEnAwa_kara/waPasIla_xe/vivaraNa_bayAna_kara/viswAra_se_varNana_kara/saviswAra_varNana_kara/niyukwa_kara/byorA_xe/vyOrevAra_varNana_kara
-detailed_adjective	vyOrevAra/viswqwa
+detailed_adjective	viswqwa/vyOrevAra
 detaileder_UNDEFINED	vyOrevAra
 detailedest_UNDEFINED	vyOrevAra
 detailing_UNDEFINED	vyOrA
@@ -82813,7 +82813,7 @@ transportable_adjective	parivahanIya
 transportabler_UNDEFINED	parivahanIya
 transportablest_UNDEFINED	parivahanIya
 transportation_UNDEFINED	vAhana
-transportation_noun	xeSanikAlA/parivahana/kirAyA/vahanIyawA
+transportation_noun	yAwAyAwa/xeSanikAlA/parivahana/kirAyA/vahanIyawA
 transportations_UNDEFINED	xeSanikAlA
 transported_UNDEFINED	aBiBUwa_ho
 transported_adjective	aBiBUwa_honA

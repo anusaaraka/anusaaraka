@@ -28,6 +28,8 @@
  (assert (id-wsd_viBakwi))
  (assert (id-domain_type))
  (assert (compound_meaning_decided))
+ (assert (prep_id-relation-anu_ids))
+ (assert (conjunction-components))
  )
 
  ; Added by Roja.(06-11-10)
@@ -76,27 +78,29 @@
  ;The sheep are jumping. The sheep is jumping.
  (defrule verb_rule
  (declare (salience 960))
- ?f1<-(id-number-src ?id ?num Default)
+ ?f1<-(id-number-src ?head ?num Default)
  (root-verbchunk-tam-chunkids ? ? ? ?id $? ?head)
- ?f2<-(id-root-category-suffix-number  ?id ? verb $?)
- (id-word ?id ?word)
- ?f3<-(id-number-src ?head - Default) ;Added by Roja(30-01-14) To avoid duplication fact Ex:The draft of soldiers were sent in different directions.
+ (prep_id-relation-anu_ids   ?   kriyA-subject  ?head ?sub)
+ (id-word ?id ?word&are|were|is|was)
+ ?f2<-(id-number-src ?sub ? Default)
+; ?f3<-(id-number-src ?head - Default) ;Added by Roja(30-01-14) To avoid duplication fact Ex:The draft of soldiers were sent in different directions.
  =>
         (retract ?f1 ?f2)
         (if (or (eq ?word are)(eq ?word were)) then
                 (assert (id-number-src ?head  p  Word))
-		(retract ?f3) ;Added by Roja(30-01-14) To avoid duplication fact
+                (assert (id-number-src ?sub  p  Word))
+;		(retract ?f3) ;Added by Roja(30-01-14) To avoid duplication fact
         else
-                (if (eq ?word is) then
+                (if (or (eq ?word is) (eq ?word was)) then
                         (assert (id-number-src ?head  s  Word))
-			(retract ?f3);Added by Roja(30-01-14) To avoid duplication fact
+	                (assert (id-number-src ?sub  s  Word))
+;			(retract ?f3);Added by Roja(30-01-14) To avoid duplication fact
                 )
         )
  )
  ;-----------------------------------------------------------------------------------------------------------
  ;Added by Shirisha Manju Suggested by Chaitanya Sir 24-02-15
  ;if morph generates number as 'p' then this rule decides number as 's' using determinar 'a'
- ;A [sheep] is jumping.
  ;The spectrum appears as a [series] of bright lines.
  ;inake spektrama meM camakIlI reKAoM kI eka [SqfKalA] xiKAI xewI hE .
  (defrule get_num_using_det
