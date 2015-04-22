@@ -93582,3 +93582,5 @@ interatomic_adjective	anwarA-paramANavika
 preferred_adjective	AXimawa
 pericarp_noun	PalI
 compiled_adjective	safkaliwa
+chicken-run_noun	murgI_kA_bAdZA
+ski-run_noun	skI-rana

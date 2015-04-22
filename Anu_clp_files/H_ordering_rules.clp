@@ -392,31 +392,59 @@
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ; Added by Shirisha Manju(20-06-11) Suggested by Dipti mam
-; He never really recovered from the shock of his wife's death. I have never played golf in my life.
+; He never really recovered from the shock of his wife's death.
 (defrule move_negation_before_verb
 (declare (salience 900))
-?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d ?ADVP $?d1) 
 (Head-Level-Mother-Daughters ?never ? ?ADVP $?)
 (id-original_word ?never never)
-(Head-Level-Mother-Daughters ?h ?l ?mot $?d2 $?d3 ?VP)
-?f1<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VP $?d4 ?V $?d5)
-(Node-Category ?VP VP)
 (Node-Category ?ADVP ADVP)
+?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d ?ADVP $?d1 ?VP) 
+(Node-Category ?VP VP)
+?f1<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VP $?d4 ?V $?d5)
 (or (Node-Category ?V VBD) (id-cat_coarse ?V verb))
 (not (Mother  ?ADVP))
 =>
 	(bind ?*count* (+ ?*count* 1))
         (retract ?f0 ?f1)
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d $?d1))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d $?d1 ?VP))
 	(assert (Head-Level-Mother-Daughters ?h1 ?l1 ?VP $?d4 ?ADVP ?V $?d5))
         (assert (Mother  ?ADVP))
 	(assert (Mother ?VP))
         (printout ?*order_debug-file* "(rule_name - move_negation_before_verb " ?*count* crlf
-                         "              Before    - "?head" "?lvl" "(implode$ $?d)" "?ADVP" "(implode$ $?d1)" "?VP crlf
-                         "              After     - "?head" "?lvl" "(implode$ $?d)" "(implode$ $?d1)" "?VP")" crlf crlf)
+                         "              Before    - "?head" "?lvl" "?Mot" "(implode$ $?d)" "?ADVP" "(implode$ $?d1)" "?VP crlf
+                         "              After     - "?head" "?lvl" "?Mot" "(implode$ $?d)" "(implode$ $?d1)" "?VP")" crlf crlf)
 	(printout ?*order_debug-file* "(rule_name - move_negation_before_verb " ?*count* crlf
-                        "              Before    - "?h" "?l" "?VP" "(implode$ $?d2)" "?V crlf
-                         "              After     - "?h" "?l" "?VP" "(implode$ $?d2)" "?ADVP" "?VP")" crlf)
+                        "              Before    - "?h1" "?l1" "?VP" "(implode$ $?d4)" "?V " "(implode$ $?d5) crlf
+                        "              After     - "?h1" "?l1" "?VP" "(implode$ $?d4)" "?ADVP" "?V" "(implode$ $?d5) ")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
+; Added by Shirisha Manju(20-06-11) Suggested by Sukhada
+;The government has promised not to raise taxes. 
+(defrule move_negation_before_inf_verb
+(declare (salience 900))
+(Head-Level-Mother-Daughters ?never ? ?ADVP $?)
+(id-original_word ?never never|not)
+(Node-Category ?ADVP ADVP|RB)
+?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d ?ADVP $?d1 ?TO_VP) 
+(Node-Category ?TO_VP TO_VP)
+(Head-Level-Mother-Daughters ? ? ?TO_VP $? ?Inf_VP)
+(Node-Category ?Inf_VP Inf_VP)
+?f1<-(Head-Level-Mother-Daughters ?h1 ?l1 ?Inf_VP $?d4 ?V $?d5)
+(or (Node-Category ?V VBD|VB) (id-cat_coarse ?V verb))
+(not (Mother  ?ADVP))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (retract ?f0 ?f1)
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d $?d1 ?TO_VP))
+        (assert (Head-Level-Mother-Daughters ?h1 ?l1 ?Inf_VP $?d4 ?ADVP ?V $?d5))
+        (assert (Mother  ?ADVP))
+        (assert (Mother ?Inf_VP))
+        (printout ?*order_debug-file* "(rule_name - move_negation_before_inf_verb " ?*count* crlf
+                         "              Before    - "?head" "?lvl" "?Mot" "(implode$ $?d)" "?ADVP" "(implode$ $?d1)" "?TO_VP crlf
+                         "              After     - "?head" "?lvl" "?Mot" "(implode$ $?d)" "(implode$ $?d1)" "?TO_VP")" crlf crlf)
+        (printout ?*order_debug-file* "(rule_name - move_negation_before_inf_verb " ?*count* crlf
+                        "              Before    - "?h1" "?l1" "?Inf_VP" "(implode$ $?d4)" "?V " "(implode$ $?d5) crlf
+                        "              After     - "?h1" "?l1" "?Inf_VP" "(implode$ $?d4)" "?ADVP" "?V" "(implode$ $?d5) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ; Added by Shirisha Manju(20-06-11) Suggested by Sukhada
