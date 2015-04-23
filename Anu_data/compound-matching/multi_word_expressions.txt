@@ -33262,6 +33262,8 @@ by_a_stroke_of_fortune	kismawa_se#kismawa_se#noun#5#RM
 raiding_team	CApAmAra_xala#CApAmAra_xala#noun#2#RM
 stock_exchange	Seyara_bAjZAra#Seyara_bAjZAra#noun#3#RM
 wisdom_tooth	akla_xADZa#akla_xADZa#noun#2#RM
+chicken_run	murgI_kA_bAdZA#murgI_kA_bAdZA#noun#2#RM
+ski_run	skI-rana#skI-rana#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
