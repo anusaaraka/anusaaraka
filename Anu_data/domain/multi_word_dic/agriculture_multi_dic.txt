@@ -1127,3 +1127,5 @@ catch_crop	aMwaravarwI_Pasala#aMwaravarwI_Pasala#noun#2#RM
 deep_rooted	gaharI_jadZa_vAlA#gaharI_jadZa_vAlA#adjective#2#RM
 cane_growing	gannA_uwpAxana#gannA_uwpAxana#adjective#2#RM
 scarab_beetle	gubarElA# gubarElA#noun#2#RM
+nesting_sites	Gosale_kI_jagahoM#Gosale_kI_jagahoM#noun#2#RM
+nutrient_cycling	poRaka_wawv_cakkara_praNAlI#poRaka_wawv_cakkara_praNAlI#2#RM

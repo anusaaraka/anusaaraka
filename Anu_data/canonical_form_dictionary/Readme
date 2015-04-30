@@ -6,22 +6,39 @@ RUN::
  sh get_dictionary_in_canonical_form.sh
 
 
-Steps to Add New Dictionary ::
----------------------------
-Right now Dictionaries are present at three different places:
+Right now Dictionaries are present at the following places:
+-----------------------------------------------------------
   1. Anu_data/
   2. Anu_data/compound-matching/
-  3. miscellaneous/SMT/MINION/dictionaries/
+  3. Anu_data/domain/
+  4. Anu_data/domain/multi_word_dic/
+  5. miscellaneous/SMT/MINION/dictionaries/
 
-=>To add a new dictionary in , 
+
+Steps to Add New Dictionary ::
+===============================
+1. To add a new dictionary in , 
 	Anu_data/					then    name of the dictionary need to be added in list_Anu_data
-	Anu_data/compound-matching/			then		"	list_Anu_data_compound
-	miscellaneous/SMT/MINION/dictionaries/		then		"	list_SMT 
- 
-=>To get the newly added dictionary in canonical form ::
+	Anu_data/compound-matching/			then			"			   list_Anu_data_compound
+	Anu_data/domain/				then			"			   list_Anu_data_domain
+	Anu_data/domain/multi_word_dic/			then			"			   list_Anu_data_multi_domain
+	miscellaneous/SMT/MINION/dictionaries/		then			"			   list_SMT 
+						
+2. To get the newly added dictionary in canonical form ::
   (Assumming dictionary to be in Key and Value format)
   If left side of the dictionary need to be canonical then add the name of the dictionary in 'list-left'
   If right side		"		"			"                            'list-right'
   If both side		"		"			"	               	     'list-two-side-hindi'
+
+3. sh get_txt_files.sh
+
+4. sh get_dictionary_in_canonical_form.sh
+
+5. Add code to generate gdbm in the following files:
+	single dictionary :  shell_scripts/anu_compile.sh  (Note: for domain dictionary name should be <domain>_dic.gdbm)
+	multi dictionary  :  multifast-v1.4.2/src/run.sh
+            
+
+
 
 Note:: If newly added dictionary is present in any other path specified above , then edit the get_txt_files.sh accordingly.

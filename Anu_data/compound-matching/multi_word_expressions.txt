@@ -14396,7 +14396,6 @@ golf_club	gAlPZa_klaba#gAlPZa_klaba#noun#2#RM
 gondola_car	bijalI_kI_trAlI#bijalI_kI_trAlI#noun#2#RM
 gong_buoy	GaMte_kA_cihna#GaMte_kA_cihna#noun#2#RM
 good_behaviour	saxvyavahAra#saxvyavahAra#noun#2#RM
-good_books	kqpA_xqRti#kqpA_xqRti#noun#2#RM
 good_bye	alvixA#alvixA#noun#2#RM
 good_cause	uwwma_areRTa_Xyeya_aakRya#uwwma_areRTa_Xyeya_aakRya#noun#2#RM
 good_character	saccariwrawA#saccariwrawA#noun#2#RM
@@ -33260,6 +33259,11 @@ ill_effect	xuRpraBAva#xuRpraBAva#noun#2#RM
 watercolor_paper	jalaraMga_kAlajZanusa#jalaraMga_kAlajZanusa#noun#2#RM
 ready_to_feed	KilAne_ke_lie_wEyAra#KilAne_ke_lie_wEyAra#adjective#3#RM
 by_a_stroke_of_fortune	kismawa_se#kismawa_se#noun#5#RM
+raiding_team	CApAmAra_xala#CApAmAra_xala#noun#2#RM
+stock_exchange	Seyara_bAjZAra#Seyara_bAjZAra#noun#3#RM
+wisdom_tooth	akla_xADZa#akla_xADZa#noun#2#RM
+chicken_run	murgI_kA_bAdZA#murgI_kA_bAdZA#noun#2#RM
+ski_run	skI-rana#skI-rana#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

@@ -15708,7 +15708,7 @@ coloring_noun	raFjaka/rafgawa/rafga_BaranA
 colorless_adjective	rafgahIna
 colorlessness_noun	varNahInawA/rafgahInawA/avarNawA
 colors_UNDEFINED	rafganA
-colossal_adjective	xIrGakAya/viSAla/bahuwa_badA
+colossal_adjective	BArI_mAwrA/xIrGakAya/viSAla/bahuwa_badA
 colossaler_UNDEFINED	bahuwa_badA
 colossalest_UNDEFINED	bahuwa_badA
 colossi_UNDEFINED	xIrGakAya_vyakwi
@@ -16878,7 +16878,7 @@ consequents_UNDEFINED	Pala_svarUpa
 conservancy_noun	saMrakRaNa_saMsWA
 conservation_noun	saMrakRaNa/saMrakRana/prAkqwika_saMrakRaNa/avinASiwA
 conservationist_UNDEFINED	saMrakRaka
-conservationist_noun	saMrakRaNa_meM_ruci_raKane_vAlA
+conservationist_noun	saMrakRaNakarwA/saMrakRaNa_meM_ruci_raKane_vAlA
 conservationists_UNDEFINED	saMrakRaka
 conservatism_UNDEFINED	oDivAxa
 conservatism_noun	rUDivAxa
@@ -17119,7 +17119,7 @@ contagiousness_noun	safkrAmakawA
 contain_UNDEFINED	XAraNa_karanA
 contain_verb	sammiliwa_kara/roka/pUrNawayA_viBAjya_ho/niyaNtraNa_raKa/le/ho/Gera/se_yukwa_ho/atA/XAraNa_kara/WAma/pUrNawaH_viBAjiwa{safKyA}_ho
 contained_adjective	sanwuliwa
-container_noun	XAraka/pAwra/AXAna
+container_noun	pAwra/XAraka/AXAna
 containers_UNDEFINED	pAwra
 containing_UNDEFINED	XAraNa_karanA
 containment_noun	pariroXana/niyanwraNa
@@ -21807,7 +21807,7 @@ detachment_noun	pqWakkaraNa/watasWawA/vilagana/tukadI/nirlipwawA
 detachments_UNDEFINED	pqWakkaraNa
 detail_noun	byOrA/viswAra/senA_kI_tukadI/jAnakArI/BAga/vyOrA
 detail_verb	wEnAwa_kara/waPasIla_xe/vivaraNa_bayAna_kara/viswAra_se_varNana_kara/saviswAra_varNana_kara/niyukwa_kara/byorA_xe/vyOrevAra_varNana_kara
-detailed_adjective	vyOrevAra/viswqwa
+detailed_adjective	viswqwa/vyOrevAra
 detaileder_UNDEFINED	vyOrevAra
 detailedest_UNDEFINED	vyOrevAra
 detailing_UNDEFINED	vyOrA
@@ -23181,7 +23181,7 @@ dispiriting_adjective	uxAsIna/hawowsAhiwa_karane_vAlA
 dispiritinger_UNDEFINED	uxAsIna
 dispiritingest_UNDEFINED	uxAsIna
 dispirits_UNDEFINED	mana_wodanA
-displace_verb	apanI_jagaha_se_hatA_xe/visWApiwa_ho_jA/sWana_le_le/nikAla_xe/hatA/xUsaroM_kA_sWAna_le
+displace_verb	visWApiwa_ho_jA/apanI_jagaha_se_hatA_xe/sWana_le_le/nikAla_xe/hatA/xUsaroM_kA_sWAna_le
 displaced_UNDEFINED	xUsaroM_kA_sWAna_lenA
 displaced_adjective	visWApiwa/sWAnacyuwa
 displacement_noun	visWApana/jalApasAraNa
@@ -82813,7 +82813,7 @@ transportable_adjective	parivahanIya
 transportabler_UNDEFINED	parivahanIya
 transportablest_UNDEFINED	parivahanIya
 transportation_UNDEFINED	vAhana
-transportation_noun	xeSanikAlA/parivahana/kirAyA/vahanIyawA
+transportation_noun	yAwAyAwa/xeSanikAlA/parivahana/kirAyA/vahanIyawA
 transportations_UNDEFINED	xeSanikAlA
 transported_UNDEFINED	aBiBUwa_ho
 transported_adjective	aBiBUwa_honA
@@ -93578,3 +93578,9 @@ low-volume_adjective	kama_mAwrA
 semi-circular_adjective	arXavqwwAkara
 geographic_adjective	BOgolika
 Fig._noun	ciwra
+interatomic_adjective	anwarA-paramANavika
+preferred_adjective	AXimawa
+pericarp_noun	PalI
+compiled_adjective	safkaliwa
+chicken-run_noun	murgI_kA_bAdZA
+ski-run_noun	skI-rana

@@ -697,7 +697,7 @@ else
 (declare (salience 200))
 (rel_name-sids ?cnj ?kri1 ?kri2)
 (test (eq (sub-string 1 5 (implode$ (create$ ?cnj))) "conj_"))
-(rel_name-sids cc ?kri1  ?conj)
+;(rel_name-sids cc ?kri1  ?conj) ;commented by manju for the same sentence.
 (parser_id-cat_coarse ?kri1 verb)
 (parser_id-cat_coarse ?kri2 verb)
 =>
