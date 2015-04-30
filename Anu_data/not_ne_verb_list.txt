@@ -712,7 +712,6 @@ pasIja	0
 pahuzca	0
 pAca	0
 pAxa	0
-pA	0
 pAra	0
 piGala	0
 picaka	0

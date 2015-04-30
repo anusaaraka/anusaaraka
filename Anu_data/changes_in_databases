@@ -284,10 +284,11 @@
   1. Added  
          Chinmaya International Foundation  ----  cinmaya_anwarrARtrIya_saMsWA  (Added by Sriram (02-11-09))
          Welcome you all                    ----  Apa_saba_kA_svAgata           (Added by Sriram (02-11-09))
-	 How are you     		    ----  Apa_kEse_hEM 		   (Added by Manju Suggested by Rajini (09-12-11))
- 	 I am fine thank you     	    ----  mEM_baDiyA_hUz_XanyavAxa (Added by Manju Suggested by Rajini (09-12-11))
-	 How old are you 		    ----  Apa_kI_kyA_umra_hE       (Added by Manju Suggested by Rajini (09-12-11))
-	 so far so good 		    ----  yahAz_waka_wo_saba_sahI_hE (Added by Manju Suggested by Chaitanya Sir (02-10-12))
+	 How are you     		    ----  Apa_kEse_hEM 		   	(Added by Manju Suggested by Rajini (09-12-11))
+ 	 I am fine thank you     	    ----  mEM_baDiyA_hUz_XanyavAxa 	(Added by Manju Suggested by Rajini (09-12-11))
+	 How old are you 		    ----  Apa_kI_kyA_umra_hE       	(Added by Manju Suggested by Rajini (09-12-11))
+	 so far so good 		    ----  yahAz_waka_wo_saba_sahI_hE 	(Added by Manju Suggested by Chaitanya Sir (02-10-12))
+	 Have you any idea    		    ----  kyA_Apa_ko_pawA_hE		(Added by Manju Suggested by Rajini (21-06-14))
                    
   changes in AllTam.txt
   =====================
@@ -379,8 +380,9 @@
                              Eg: If you were a middle-class American without a job , who would you vote for .
 	ruka	(Suggested by Chaitanya Sir 10-07-13) 	Ex: Well then, get out of the pit as best you can, said Papri coldly.
 	jala	(Suggested by Chaitanya Sir 30-04-14)	Ex: The coal in the BBQ grill finally lit up.	
-  2. Removed : -kara , -pIta    
-		     Eg: The songwriter, whose artistic work had stretched over decades, acknowledged the standing ovation.
+  2. Removed :
+	-kara , -pIta    Eg: The songwriter, whose artistic work had stretched over decades, acknowledged the standing ovation.
+	pA		(Suggested by Sukhada 19-06-14) Ex: I scraped a pass in the exam.
   3. Modified : -siXAra as siXAra	
 	
   changes in PropN.txt
@@ -528,6 +530,8 @@
 	volunteer       (       "        "               11-04-15 ) Ex: They're enlisting volunteers for an experiment.
 	fly		(	"	 "		 13-04-15 ) Ex: Spiders ensnare flies and other insects in their webs. 
 	insect  	(	"	 "		    "	  ) Ex: 	"		"
+	passenger	(	"	 "		 30-04-15 ) Ex: The delayed commuter train disgorged hundreds of angry passengers.  
+	someone		(	"	 "		    "	  ) Ex: Someone had been poisoning his food.        
 
 
   Changes in total-paxasUwra.txt 
@@ -3395,6 +3399,8 @@ Removed:
 	nephew		(	"	 "		   "	  ) Ex: He entrusted the task to his nephew.  
 	volunteer	(	"	 "		 11-04-15 ) Ex: They're enlisting volunteers for an experiment.
 	me		(	"     14anu-ban-09	 11-04-15 ) Ex: My mother is always trying to organize me.
+	passenger       (       "     14anu-ban-04       30-04-15 ) Ex: The delayed commuter train disgorged hundreds of angry passengers.
+        someone         (       "        "                  "     ) Ex: Someone had been poisoning his food.
 
  changes in named_entities.txt
  =============================
