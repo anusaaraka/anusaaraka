@@ -147,3 +147,5 @@ guy	1
 crowd	1
 nephew	1
 volunteer	1
+passenger	1
+someone	1

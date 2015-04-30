@@ -177,3 +177,5 @@ pig	1
 volunteer	1
 fly	1
 insect	1
+passenger	1
+someone	1
