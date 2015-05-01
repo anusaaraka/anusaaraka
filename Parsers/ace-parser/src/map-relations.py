@@ -49,6 +49,8 @@ def check_value_in_dic(value, dic):
 
 arg3 = ''
 arg0 = ''
+quant = ''
+quant_val = ''
 
 for line in open(sys.argv[1]):
 	if '\t' in line:
@@ -141,13 +143,29 @@ for line in open(sys.argv[1]):
 			#To check to infinitive:
 			if lst[0] in tense and args[2] != '1':#'1' is checked because there will no previous word before first word
 				check_for_infinitive(tense, args[2])
-		elif '_n_of_rel' in lst[0]: #He heard the [sound of rain] from the kitchen. 
+		elif '_q_rel' in lst[0]:
+			quant = args[1]
+			quant_val = args[2]
+		elif '_n_of_rel' in lst[0]: #He heard the [sound of rain] from the kitchen.
+			print quant, quant_val 
 			rel = lst[0].split('_')
 			if len(rel) == 4:
 				key = check_value_in_dic(rel[2], word)
 				if key != None:
 					print_rel_info('viSeRya-of_saMbanXI', args[2], args[5])
 					print_rel_info_in_anu('viSeRya-of_saMbanXI', key, args[2], args[5])
+			if quant == args[1]:
+				print_rel_info('viSeRya-det_viSeRaNa', args[2], quant_val)
+				print_rel_info_in_anu('viSeRya-det_viSeRaNa', '-', args[2], quant_val)
+				quant = '' 
+				quant_val = ''
 		elif 'neg_rel' in lst[0]: #It [is not] a good manner to eat alone.
 			print_rel_info('kriyA-kriyA_niReXaka', args[2], args[5])
 			print_rel_info_in_anu('kriyA-kriyA_niReXaka', '-', args[2], args[5])
+		elif '_n_' in lst[0]:
+			if quant == args[1]:
+				print_rel_info('viSeRya-det_viSeRaNa', args[2], quant_val)
+				print_rel_info_in_anu('viSeRya-det_viSeRaNa', '-', args[2], quant_val)
+				quant = '' 
+				quant_val = ''
+
