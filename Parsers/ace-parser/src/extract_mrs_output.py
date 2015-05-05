@@ -76,6 +76,9 @@ for line in open(sys.argv[1]):
 					self_dic[rel[5]] = parserid_dic[word_id]
 			elif 'ARG1' not in rel:
 				self_dic[rel[3]] = parserid_dic[word_id]
+				if '_n_1' in relation_name or '_q_rel' in relation_name and not 'udef_q_rel' in relation_name:
+					print relation_name  + '\t'  + rel[2] + ' '  + rel[3] + ' ' + str(self_dic[rel[3]])
+				#	relation_dic[key] = value
 		#To extract only relations:
 		if relation_name not in relation_dic:
 			value = ''
