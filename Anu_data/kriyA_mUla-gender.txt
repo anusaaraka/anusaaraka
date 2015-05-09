@@ -1132,4 +1132,6 @@ irAxA_kara	m
 yojanA_banA	f
 suJAva_xe	m
 XamakI_xe	f
-
+parawa_uwAra	f
+jayajayakAra_kara	f
+golI_calA	f

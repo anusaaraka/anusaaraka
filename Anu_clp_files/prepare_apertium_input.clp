@@ -312,15 +312,18 @@
        (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  RaRTI_kA_vib_rule1 )" crlf)
  )
  ;======================================= KA vibakthi (kriyA_id-object_viBakwi) rules =====================================
+ ; added kriyA_id-subject_viBakwi -- suggested by Sukhada 05-05-2015 
+ ; Bansal is being hailed for saving a young child from drowning.
+ ; bAMsala [kI] eka waruNa bacce ko dUbane se bacAne ke lie jayajayakAra kI jA rahI hE .
  ; Added by Shirisha Manju (17-06-11) Suggested by Chaitanya Sir
  ; Clinton announced on Tuesday a bold new proposal. 
  ; kliMtana ne eka nirBIka naye praswAva kI mafgalavAra ko GoRaNA kI.
- (defrule kA_vib_from_obj_rule
+ (defrule kA_vib_from_sub_or_obj_rule
  (declare (salience 1000))
  (pada_info (group_head_id ?pada_id)(group_cat PP)(number ?num)(case ?case)(gender ?gen)(vibakthi kA))
  ?f0<-(id-HM-source ?pada_id ?h_word&~Ora&~yaha ?)
- (prep_id-relation-anu_ids - kriyA-object ?k_id ?pada_id)
- (kriyA_id-object_viBakwi ?k_id kA)
+ (or (prep_id-relation-anu_ids - kriyA-object ?k_id ?pada_id)(prep_id-relation-anu_ids - kriyA-subject ?k_id ?pada_id))
+ (or(kriyA_id-object_viBakwi ?k_id kA) (kriyA_id-subject_viBakwi ?k_id kA))
  (pada_info (group_head_id ?k_id)(number ?num1)(case ?case1))
  (id-HM-source ?k_id ?hmng&~upayoga_kara ?) 
  =>
@@ -331,7 +334,7 @@
                 (printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?h_word"<cat:n><case:"?case"><gen:"?gen"><num:"?num">$  ^kA<cat:sh><case:d><gen:"?gen1"><num:"?num">$)"  crlf)
             )
             (retract ?f0)
-            (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  kA_vib_from_obj_rule )" crlf)
+            (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  kA_vib_from_sub_or_obj_rule )" crlf)
         )
  )
  ;------------------------------------------------------------------------------------------------------------------------

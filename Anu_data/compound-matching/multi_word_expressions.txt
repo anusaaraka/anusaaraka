@@ -4228,7 +4228,6 @@ at_some_point	kisI_binxu_para#kisI_binxu_para#noun#3#RM
 at_source	srowa_para#srowa_para#noun#2#RM
 at_such_times	Ese_samaya_para#Ese_samaya_para#noun#3#RM
 at_the_best	acCe_se_acCA#acCe_se_acCA#noun#3#RM
-at_the_bottom_of	ke_nicale_wala_para#ke_nicale_wala_para#preposition#4#RM
 at_the_expense_of	ke_Karce_se#ke_Karce_se#noun#3#RM
 at_the_hand_of	ke_hAWa_se#ke_hAWa_se#noun#3#RM
 at_the_hands_of	ke_hAWoM_se#ke_hAWoM_se#noun#3#RM
@@ -15094,7 +15093,6 @@ head_of_the_household	parivAra_kA_praXAna#parivAra_kA_praXAna#noun#1#RM
 head_of_the_office	kAryAlaya_aXyakRa#kAryAlaya_aXyakRa#noun#1#RM
 head_office	praXAna_kAryAlaya#praXAna_kAryAlaya#noun#2#RM
 head_office_account	praXAna_kAryAlaya_leKA#praXAna_kAryAlaya_leKA#noun#3#RM
-head_on	Amane_sAmane#Amane_sAmane#noun#2#RM
 head_parcel_clerk	praXAna_pArsala_klarka#praXAna_pArsala_klarka#noun#3#RM
 head_passenger_attendant	praXAna_yAwrI_paricara#praXAna_yAwrI_paricara#noun#3#RM
 head_pilot	praXAna_pAilata#praXAna_pAilata#noun#2#RM
@@ -16032,7 +16030,6 @@ in_pursuance_of	ke_anusaraNa_meM#ke_anusaraNa_meM#noun#2#RM
 in_question	vivAxagraswa#vivAxagraswa#noun#2#RM
 in_reference_to	ke_sambanXa_meM#ke_sambanXa_meM#noun#3#RM
 in_regard_to	ke_viRaya_meM#ke_viRaya_meM#noun#3#RM
-in_relation_to	ke_viRaya_meM#ke_viRaya_meM#noun#3#RM
 in_reply_to	ke_uwwara_meM#ke_uwwara_meM#noun#3#RM
 in_respect_of	ke_viRaya_meM#ke_viRaya_meM#noun#2#RM
 in_restraint_of	ke_avaroXa_meM#ke_avaroXa_meM#noun#2#RM
@@ -25796,7 +25793,6 @@ rejected_note	asvIkqwa_nota#asvIkqwa_nota#noun#2#RM
 rejection_memo	asvIkqwi_pawra#asvIkqwi_pawra#noun#2#RM
 relation_character	saMbaMXa_saMprawIka#saMbaMXa_saMprawIka#noun#2#RM
 relation_condition	saMbaMXa_prawibaMXa#saMbaMXa_prawibaMXa#noun#2#RM
-relation_to	ke_riSwe_mez#ke_riSwe_mez#noun#2#RM
 relational_data_base_management	saMbaMXaparaka_AMkadZA_saMcaya#saMbaMXaparaka_AMkadZA_saMcaya#noun#4#RM
 relational_data_structure	saMbaMXaparaka_AMkadZA_saMracanA#saMbaMXaparaka_AMkadZA_saMracanA#noun#3#RM
 relational_database	saMbaXaparaka_AMkadZAsaMcaya#saMbaXaparaka_AMkadZAsaMcaya#noun#2#RM
