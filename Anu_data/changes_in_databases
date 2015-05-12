@@ -161,6 +161,9 @@
 	xAzva_lagA      m   		"		"	Ex: I wager that she can not pass the exam. 
 	gAlI_xe		f		"	 (27-03-14)	Ex: Billy cried when the other kids called him names.
 	Added   'Radayanwra_raca	 m '	to 	'XamakI_xe	f' by Sukhada 27-8-14
+	parawa_uwAra      f	Suggested by Sukhada (05-05-15)	Ex: They scale the fish to cook.
+	jayajayakAra_kara f	Suggested by Sukhada (05-05-15) Ex: Bansal is being hailed for saving a young child from drowning. 
+	golI_calA         f	"			"	Ex: The police opened fire on the public.
 
 	
 
@@ -532,6 +535,8 @@
 	insect  	(	"	 "		    "	  ) Ex: 	"		"
 	passenger	(	"	 "		 30-04-15 ) Ex: The delayed commuter train disgorged hundreds of angry passengers.  
 	someone		(	"	 "		    "	  ) Ex: Someone had been poisoning his food.        
+	poor            (       "     Jagriti Banasthali 10-03-14 )
+        government      (       "     14anu-ban-04       25-04-15 ) Ex: Deposition of government is not in the interest of the country.
 
 
   Changes in total-paxasUwra.txt 
@@ -2409,7 +2414,15 @@ Removed:
 				Ex: I did not have any small change to leave as a tip.
 	24. a_certain		koI_eka#koI_eka#noun#2#RM		(Suggested by Preeti ji LTRC	10-05-14)
 				Ex: You have to have a certain amount of courage to perform in public.
-	25. good_books      	kqpA_xqRti#kqpA_xqRti#noun#2#RM		(Suggested by 14anu-ban-02	11-04-15)
+	25. in_relation_to  	ke_viRaya_meM#ke_viRaya_meM#noun#3#RM	(Suggested by Anita ji LTRC     15-04-14)
+				Ex: Its brain is small in relation to its body. 
+	26. relation_to     	ke_riSwe_mez#ke_riSwe_mez#noun#2#RM	(		"	"	  "     )
+				Ex: The fee they are offering bears no relation to the amount of work involved.
+	27. at_the_bottom_of    ke_nicale_wala_para#ke_nicale_wala_para#preposition#4#RM (Suggested by Garima Banasthali 02-10-14)	
+				Ex: I went to the school at the bottom of our street.
+	28. head_on 		Amane_sAmane#Amane_sAmane#noun#2#RM			 (	"	"		   "     )
+				Ex: He dived in and hit his head on the bottom.
+	29. good_books      	kqpA_xqRti#kqpA_xqRti#noun#2#RM		(Suggested by 14anu-ban-02	11-04-15)
 				Ex: We urge you to try to add many names and items to these tables with the help of your teachers, good books
 				    and websites on science. [ncert]
 
@@ -3401,6 +3414,8 @@ Removed:
 	me		(	"     14anu-ban-09	 11-04-15 ) Ex: My mother is always trying to organize me.
 	passenger       (       "     14anu-ban-04       30-04-15 ) Ex: The delayed commuter train disgorged hundreds of angry passengers.
         someone         (       "        "                  "     ) Ex: Someone had been poisoning his food.
+	poor    	(	"     Jagriti Banasthali 10-03-14 )
+	government      (	"     14anu-ban-04	 25-04-15 ) Ex: Deposition of government is not in the interest of the country. 
 
  changes in named_entities.txt
  =============================

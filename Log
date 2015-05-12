@@ -1,4 +1,4 @@
- 01-05-15
+ 09-05-15
  ========
  1. WSD:
 	substantially.clp 
@@ -19,55 +19,59 @@
  8. H_ordering_rules.clp
 	Added    : move_negation_before_inf_verb 
 	Modified : move_negation_before_verb
- 9. get_dbase_mng.clp
+ 9. vibakthi.clp
+        Added : wsd_kriyA_obj_and_saMjFA_vibakthi_rule
+ 10. prepare_apertium_input.clp
+        Modified : kA_vib_from_sub_or_obj_rule
+ 11. get_dbase_mng.clp
 	Modified : print_dic_mng and dic_lookup functions to add group_ids
- 10. get_heuristics.clp
+ 12. get_heuristics.clp
 	Added : anu_exact_match_without_vib_for_hyphen_word
- 11. alignment.clp
+ 13. alignment.clp
 	Modified :get_left_over_ids
- 12. run_modules_std.bat
+ 14. run_modules_std.bat
 	Loaded "relations_tmp1.dat" file in number module
- 13. run_H_gen_sen_eng.bat
+ 15. run_H_gen_sen_eng.bat
  	Loaded word.dat file in get_dbase_mng module
 	Removed get_manual_id_en_hi, word_alignment , manual_lwg_new, word_alignment1 modules
 	Added get_manual_id_and_group, get_verb_and_phrasal_grp.clp and alignment1 modules
- 14. Modified following bat files to show tooltop for WSD tam along with rule name:
+ 16. Modified following bat files to show tooltop for WSD tam along with rule name:
 	run_modules_ace.bat	run_modules_link.bat	run_modules_ol.bat	run_modules_std.bat
- 15.  Added the following files for alignment
+ 17.  Added the following files for alignment
 	get_manual_id_and_group.clp  	--- to get manual_word fact and noun group info
 	get_verb_and_phrasal_grp.clp 	--- to get verb group and phrasal group info
 	alignment1.clp 			--- align after heuristics
- 16. Added ace-parser dir in Parsers folder
+ 18. Added ace-parser dir in Parsers folder
 	Readme_to_install_ace_parser.txt
 	src/extract_mrs_output.py
 	src/get_cat_root_info.py
 	src/get_mrs.sh
 	src/map-relations.py
 	src/get_tree.sh
- 17. Added following files to run Ace parser:
+ 19. Added following files to run Ace parser:
 	bin/Anusaaraka_ace.sh
 	bin/run_sentence_ace.sh
 	Anu_clp_files/run_modules_ace.bat
- 18. Moved domain dictionaries(physics and science) from miscellaneous/SMT/MINION/dictionaries/ to Anu_data/domain/ and 
+ 20. Moved domain dictionaries(physics and science) from miscellaneous/SMT/MINION/dictionaries/ to Anu_data/domain/ and 
      Modified the following files accordingly :
 	Anu_data/canonical_form_dictionary/list_SMT
 	Anu_data/canonical_form_dictionary/list_Anu_data_domain
 	Anu_data/canonical_form_dictionary/list_Anu_data_multi_domain
- 19. Updated following files related to phrasal alignment:
+ 21. Updated following files related to phrasal alignment:
         run_alignment-hi-en.sh
         run_alignment.sh
- 20. Updated following dictionaries:
+ 22. Updated following dictionaries:
         changes_in_databases	apertium-en-hi.en.metadix	provisional_multi_word_dictionary.txt
         miscellaneous/SMT/MINION/dictionaries/phy_dictionary.txt
         miscellaneous/SMT/MINION/dictionaries/phy_eng_multi_word_dic.txt
- 21. Updated following files:
+ 23. Updated following files:
 	INSTALL
 	README
 	tree_viewer/README
 	tree_viewer/remove-out-files.sh
 	tree_viewer/view_trees.sh
 	Anu_data/canonical_form_dictionary/Readme
- 22. Updated Log.
+ 24. Updated Log.
 
  18-02-15
  ========

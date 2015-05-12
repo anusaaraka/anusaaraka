@@ -179,3 +179,5 @@ fly	1
 insect	1
 passenger	1
 someone	1
+poor	1
+government	1
