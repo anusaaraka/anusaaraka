@@ -1,0 +1,24 @@
+Install :
+=======
+1. Copy LOGON PARSER in $HOME folder
+2. gedit ~/.bashrc
+  
+  LOGONROOT=~/logon/
+  if [ -f ${LOGONROOT}/dot.bashrc ]; then
+    . ${LOGONROOT}/dot.bashrc
+  fi
+
+   LOGONTMP=~/logon_tmp
+
+Compile :
+=======
+1. source ~/.bashrc
+2. cd $HOME_anu_test/
+   sh shell_scripts/remove_out-files.sh 
+   sh shell_scripts/anu_compile.sh
+
+Run :
+====
+  sh Anusaaraka_logon.sh <input_file> 0 True
+
+  Ex:- Anusaaraka_logon.sh verified 0 True

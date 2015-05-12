@@ -18,6 +18,10 @@
  cd $HOME_anu_test/Parsers/stanford-parser/src
  rm -f *.out lex.yy.c
 
+ echo "Removing logon out files"
+ cd $HOME_anu_test/Parsers/logon-parser/src
+ rm -f lex.yy.c y.tab.c y.output  y.tab.h dependency_parse derivation_parse add_info_for_no_parse.out
+
  echo "Removing RASP out files"
  cd $HOME_anu_test/Parsers/RASP/rasp3os/scripts/
  rm -f rasp_constituency_parse y.tab.c y.tab.h lex.yy.c

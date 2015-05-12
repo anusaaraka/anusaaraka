@@ -180,6 +180,12 @@
  cp run_penn-rnn.sh $HOME_anu_test/bin/
  cp run_penn-pcfg.sh $HOME_anu_test/bin/
 
+ echo "Compiling Logon parser files"
+ cd $HOME_anu_test/Parsers/logon-parser/src
+ sh compile_bison.sh dependency_parse
+ sh compile_bison.sh derivation_parse
+ $HOME_anu_test/Anu_src/comp.sh add_info_for_no_parse
+ 
  echo "Compiling RASP parser files"
  cd $HOME_anu_test/Parsers/RASP/rasp3os/scripts/
  sh comp.sh 
