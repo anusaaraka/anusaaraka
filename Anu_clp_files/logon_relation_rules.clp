@@ -76,9 +76,11 @@
  ;------------------------------------------------------------------------------------------------------------------------
  ;Eg: Rama is a good boy.
  ;e14:_good_a_at-for-of<10:14>[ARG1 x9] ==> (relation_name-id-args_with_ids _good_a_at-for-of  4 ARG0 e14  4  ARG1 x9 5 )
+ ;Eg: He is a brother of a rich person. 
+ ;e19:_rich_a_in<21:25>[ARG1 x14] ==> (relation_name-id-args_with_ids _rich_a_in  7 ARG0 e19  7  ARG1 x14 8 )
  (defrule viSeRya-viSeRaNa_rule
  (relation_name-id-args_with_ids ?rel&~def_implicit_q  ?viSeRaNa  ARG0 ?  ?viSeRaNa  ARG1 ? ?viSeRya $?)
- (test (or (eq (sub-string  (length (sub-string 12 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_at-for-of")(eq (sub-string  (length (sub-string 4 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_1")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a")))
+ (test (or (eq (sub-string  (length (sub-string 12 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_at-for-of")(eq (sub-string  (length (sub-string 4 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_1")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_in")))
  (test (neq ?viSeRya ?viSeRaNa));I went there with my mother.;[This job] will not take much effort. 
  =>
  (printout       ?*fp*   "(viSeRya-viSeRaNa    "?viSeRya"	"?viSeRaNa")"crlf)
@@ -179,9 +181,11 @@
  ;------------------------------------------------------------------------------------------------------------------------
  ;Eg: All are going to school.
  ;e9:_to_p<14:16>[ARG1 e3, ARG2 x10] ==> (relation_name-id-args_with_ids _to_p  4 ARG0 e9  4  ARG1 e3 3  ARG2 x10 5 )
+ ;He left in the morning.
+ ;e10:_in_p_temp<8:10>[ARG1 e3, ARG2 x11] ==> (relation_name-id-args_with_ids _in_p_temp  3 ARG0 e10  3  ARG1 e3 2  ARG2 x11 5 )
  (defrule kriyA-prep_saMbanXI_rule
  (relation_name-id-args_with_ids ?rel  ? ARG0 ? ?prep  ARG1 ? ?kriyA  ARG2 ? ?prep_saMbanXI )
- (test (or (eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_p")(eq (sub-string  (length (sub-string 6 (length ?rel) ?rel)) (length ?rel) ?rel) "_p_dir")))
+ (test (or (eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_p")(eq (sub-string  (length (sub-string 6 (length ?rel) ?rel)) (length ?rel) ?rel) "_p_dir")(eq (sub-string  (length (sub-string 7 (length ?rel) ?rel)) (length ?rel) ?rel) "_p_temp")))
  (id-word ?prep ?p_wrd)
  (id-logon_cat  ?kriyA VBG|VBD|VB)
   =>
