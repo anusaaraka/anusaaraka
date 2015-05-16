@@ -23,6 +23,9 @@ int prev_count=0;
                                                  printf("[%s",yytext);}
                                                  prev_count=atoi(id);
 						}
+[\[][0-9]*[\]][ ][(][0-9]*[ ]of[ ][0-9]*[)].*/\n[\004|014] {printf("%s\n;~~~~~~~~~~",yytext); yytext=yytext+1;
+                                                 len=strcspn(yytext,"]");strncpy(id,yytext,len);
+                                                 id[len]='\0';prev_count=atoi(id);   }
 
 [\}]\n						{printf("}\n;~~~~~~~~~~");}
 
