@@ -28,6 +28,7 @@
 ;One can go to the Cantonment through Banaras City with this route too.
 ;isa rAswe se BI banArasa sitI howe hue CAvanI jA [sakawe] [hEM] .
 (defrule group_WA_hEM
+(declare (salience 1))
 ?f1<-(alignment (anu_id ?aid) (man_id ?mid) (anu_meaning $?m) (man_meaning ?m1))
 (manual_word_info (head_id ?id&:(=(+ ?mid 1) ?id)) (word ?m2&hE|hEM))
 (test (or (eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "wI") (eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "we")))
@@ -38,20 +39,32 @@
         (assert (alignment (anu_id ?aid)  (man_id ?mid) (anu_meaning $?m) (man_meaning ?m1 ?m2)))
 )
 ;----------------------------------------------------------------------------------------------
-;if noun is aligned in verb slot then combine the next word if it is the only left over word
+;if noun is aligned in verb slot then combine the next word 
 ;Amidst all this the guide began to [track] tiger.
 ;isa bIca gAida ne tAigara ko [trEka] [karanA] SurU kara xiyA .
-(defrule group_next_word
-?f<-(left_over_ids ?id)
+;You will see that the strips get attracted to the screen.
+;Apa xeKeMge ki pattiyAz parxe kI ora [AkarRiwa] [ho jAwI hEM] .
+;The world has an [astonishing] variety of materials and a bewildering diversity of life and behavior.
+;saMsAra meM paxArWoM ke [AScaryacakiwa] [karane vAle] prakAra waWA jIvana evaM vyavahAra kI vismayakArI viBinnawAez hEM.
+(defrule group_verb_if-noun_aligned
+?f<-(left_over_ids $?p ?id $?p1)
 ?f0<-(alignment (anu_id ?aid) (man_id =(- ?id 1)) (anu_meaning $?amng) (man_meaning ?mng))
-(id-cat_coarse ?aid verb)
-(chunk_name-chunk_ids NP =(- ?id 1)) 
-(manual_word_info (head_id ?id) (word $?mng1))
+(id-cat_coarse ?aid verb|adjective)
+(chunk_name-chunk_ids JJP|NP|VGNF =(- ?id 1)) 
+(manual_word_info (head_id ?id) (word $?mng1)(vibakthi $?v))
+(chunk_name-chunk_ids ?c&VGF|VGNN $? ?id $?)
 =>
-	(retract ?f ?f0)
-	(assert (alignment (anu_id ?aid) (man_id ?id ) (anu_meaning $?amng) (man_meaning ?mng $?mng1)))
+	(retract ?f)
+	(assert (left_over_ids $?p $?p1))
+	(if (eq ?c VGNN) then
+		(modify ?f0 (man_meaning ?mng $?mng1 $?v))
+	else
+		(modify ?f0 (man_meaning ?mng $?mng1))
+	)
 )
-;----------------------------------------------------------------------------------------------
+
+;---------------------------------- noun related rules---------------------------------------
+
 ;The first model of atom was proposed by J. J. Thomson in 1898.
 ;[san][1898 meM] je. je. toYmasana ne paramANu kA pahalA moYdala praswAviwa kiyA .
 (defrule group_prev_word_for_no
@@ -64,6 +77,45 @@
 	(assert (alignment (anu_id ?id) (man_id ?mid) (anu_meaning ?no meM) (man_meaning san ?no meM))	)
 	(assert (left_over_ids $?p $?p0))
 )
+;----------------------------------------------------------------------------------------------
+;Since the electromagnetic force is so much stronger than the gravitational force, it dominates all phenomena at atomic and molecular scales. 
+;cUfki vixyuwa cumbakIya bala guruwvAkarRaNa bala kI apekRA [kahIM] [aXika] prabala howA hE yaha ANvika waWA paramANvIya pEmAne kI saBI pariGatanAoM para CAyA rahawA hE.
+(defrule group_prev_word
+?f0<-(left_over_ids $?p ?mid $?p0)
+?f<-(alignment (anu_id ?aid) (man_id ?mid1&:(=(+ ?mid 1) ?mid1)) (anu_meaning $?amng) (man_meaning $?mng))
+(score (anu_id ?aid) (man_id ?mid))
+(manual_word_info (head_id ?mid) (word ?m))
+=>
+	(retract ?f ?f0)
+	(assert (alignment (anu_id ?aid) (man_id ?mid) (anu_meaning $?amng) (man_meaning ?m $?mng))  )
+	(assert (left_over_ids $?p $?p0))
+) 
+;----------------------------------------------------------------------------------------------
+;Like velocity, acceleration can also be positive, negative or zero.
+;[vega ke samAna] [hI] wvaraNa BI XanAwmaka, qNAwmaka aWavA SUnya ho sakawA hE .
+(defrule group_hI
+?f<-(left_over_ids ?id)
+(manual_word_info (head_id ?id) (word hI))
+(manual_word_info (head_id ?mid)(vibakthi $?v) (group_ids $?d ?id1&:(=(- ?id 1) ?id1)))
+?f0<-(alignment (anu_id ?aid) (man_id ?mid) (anu_meaning $?m) (man_meaning $?m1))
+=>
+	(retract ?f)
+	(modify ?f0 (man_meaning $?m1 hI))
+)
+;----------------------------------------------------------------------------------------------
+;The effort is to see the physical world as manifestation of some universal laws in different domains and conditions.
+;isakA uxxeSya viBinna [praBAva kRewroM] waWA parisWiwiyoM meM BOwika jagawa ko kuCa sArvawrika niyamoM kI aBivyakwi ke rUpa meM xeKane kA prayAsa hE .
+;(defrule group_using_L_layer
+;(declare (salience 400))
+;(anu_id-anu_mng-man_mng ? ? ?m ?m1)
+;?f<-(manual_word_info (head_id ?id) (word ?m) (group_ids ?id))
+;?f1<-(manual_word_info (head_id ?id1) (word ?m1) (group_ids ?id1 $?ids))
+;(test (neq ?id ?id1))
+;=>
+;        (retract ?f)
+;        (modify ?f1 (word ?m ?m1)(group_ids ?id ?id1 $?ids))
+;)
+
 
 ;----------------------- to get leftover_anu_ids ----------------------------------------
 (defrule get_left_anu_ids
@@ -75,10 +127,10 @@
 	(assert (hindi_id_order $?pre $?po))
 )
 
-(defrule rm_det_ids
+(defrule rm_det_and_prep_ids
 (declare (salience -8))
 ?f<-(hindi_id_order $?pre ?id $?po)
-(id-cat_coarse ?id determiner)
+(id-cat_coarse ?id determiner|preposition)
 =>
         (retract ?f)
         (assert (hindi_id_order $?pre $?po))
@@ -87,11 +139,15 @@
 ;Therefore, an atom must also contain some [positive charge] to neutralise the negative charge of the electrons.
 ;man: isalie, ilektroYna ke qNa AveSa ko niRpraBAviwa karane ke lie paramANu meM [XanAwmaka AveSa] BI avaSya honA cAhie.
 ;anu: isalie, paramANu ko ilektroYna kA qNAwmaka AveSa niRpraBAviwa karanA kuCa [XanAwmaka AveSa] BI honA cAhie.
+;Lubricants are a way of reducing kinetic friction in a machine.
+;man: maSInoM meM snehaka [gawija GarRaNa ko] kama karane kA eka sAXana howA hE.
+;anu: snehaka maSIna meM [gawija GarRaNa] kama hone kA isa prakAra hEM.
 (defrule rm_comp_ids
 (declare (salience -8))
 ?f<-(hindi_id_order $?pre ?id $?po)
-(alignment (anu_id ?id1) (man_id ?) (anu_meaning $?mng) (man_meaning $?mng))
-(ids-cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?)
+(alignment (anu_id ?id1) (man_id ?mid) (anu_meaning $?mng) (man_meaning $?))
+(manual_word_info (head_id ?mid) (word $?mng)) ; to avoid vibakthi Ex: gawija GarRaNa , gawija GarRaNa ko
+(or (ids-cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?)(ids-domain_cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?))
 (test (eq (integerp (member$ ?id $?ids)) TRUE))
 (test (eq (integerp (member$ ?id1 $?ids)) TRUE))
 =>
@@ -104,11 +160,16 @@
 ?f<-(left_over_ids ?id)
 ?f1<-(hindi_id_order ?aid)
 (id-Apertium_output ?aid $?amng)
-(manual_word_info (head_id ?id) (word $?mng))
+(manual_word_info (head_id ?id) (word $?mng)(vibakthi ?v $?vib))
+(chunk_name-chunk_ids ?c $? ?id $?)
 (not (msg_printed))
 =>
 	(retract ?f ?f1)
-	(assert (alignment (anu_id ?aid) (man_id ?id ) (anu_meaning $?amng) (man_meaning $?mng)))
+	(if (or (eq ?v 0) (eq ?v EOF)(eq ?c VGF)) then
+		(assert (alignment (anu_id ?aid) (man_id ?id ) (anu_meaning $?amng) (man_meaning $?mng)))
+	else
+		(assert (alignment (anu_id ?aid) (man_id ?id ) (anu_meaning $?amng) (man_meaning $?mng ?v $?vib)))
+	)
 	(printout t "single alignment" crlf)
 )
 

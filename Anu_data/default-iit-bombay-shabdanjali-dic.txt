@@ -92021,7 +92021,7 @@ withers_UNDEFINED	skanXa_BAga
 withers_noun	skanXa_praxeSa/skanXa_BAga{Gode_kA}
 witherses_UNDEFINED	skanXa_BAga
 withheld_UNDEFINED	roka_raKanA
-withhold_verb	roka_raKa/roka_kara_raKa/kAta
+withhold_verb	roke_raKa/roka_kara_raKa/kAta
 withholder_noun	xabA_lene_vAlA/roka_kara_raKane_vAlA/kAbU_meM_raKane_vAlA
 withholding_UNDEFINED	roka_raKanA
 withholding_noun	xabA_kara_raKanA/roka_kara_raKanA/kAtanA

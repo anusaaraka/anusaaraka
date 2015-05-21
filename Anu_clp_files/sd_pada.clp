@@ -84,6 +84,7 @@
 	(bind ?lh (nth$ (length $?d) $?d))
 	(bind ?rh (nth$ (length $?d1) $?d1))
 	(assert (conj-lt_head-rt_head ?CC ?lh ?rh))
+	(assert (conj_last_id ?rh))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  (defrule get_pada_group
@@ -236,7 +237,6 @@
 	(assert (pada_info (group_head_id ?head) (group_cat PP)(group_ids ?id)))
         (printout ?*pada_debug_file* "		(pada_info (group_head_id "?head")(group_cat PP) (group_ids "?id") ))" crlf)
 	(assert (id-grp_ids ?head ?id))
-	(assert (last_id-prep ?last_id $?prep))
  )
  ;-----------------------------------------------------------------------------------------------------------------------
  ;Physicists try to discover the rules that are operating in nature, on the basis of observations, experimentation and analysis
@@ -244,9 +244,9 @@
  ;Rainwear is a must if you are visiting between june and september.
  (defrule get_zero_level_prep
  (declare (salience 4240))
- (last_id-prep ?id $?prep)
- (pada_info (group_head_id ?con_h)(preposition $?prep) (pada_head ?h))
- ?f<-(conj_head-conj_id-components ?con_h ?cid $?d ?id)
+ (conj_last_id ?id)
+ (pada_info (group_head_id ?con_h)(preposition $?prep) (group_ids $? ?id))
+ ?f<-(conj_head-conj_id-components ?con_h $?d)
  (head_id-prawiniXi_id-grp_ids ?hid ?id ?no)
  (not (shared_conj_for_pada_id ?id))
  =>
