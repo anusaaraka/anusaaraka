@@ -328,3 +328,13 @@
         	(modify ?f1 (vibakthi $?v ?vib)(group_ids $?grp_ids ?id0 $?grp_ids1))
 	)
 )
+;----------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 18-5-15
+;to map man punct's same as anu punt's
+(defrule map_punct
+(declare (salience 100))
+?f0<-(manual_word_info  (head_id ?mid) (word ?w))
+(test (integerp (member$ ?w (create$ / )))) 
+=>
+	(modify ?f0 (word @SYMBOL-@SLASH))
+)

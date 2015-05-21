@@ -1,3 +1,5 @@
+;This file is written by Shirisha Manju
+
 (deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(multislot group_ids (default 0)))
 
 
@@ -20,6 +22,31 @@
 )
 
 ;================================================== verb rules =============================================
+;What can you conclude from these observations?
+;Apa ina prekRaNa se kyA [niRkarRa_nikAla] sakawe hEM?
+(defrule rm_underscore_in_anu_out
+(declare (salience 1001))
+?f0<-(id-Apertium_output ?id $?p ?m $?p1)
+(test (neq (str-index "_" ?m) FALSE))
+=>
+	(retract ?f0)
+	(bind ?new_mng (remove_character "_" (implode$ (create$ ?m)) " "))
+	(assert (id-Apertium_output ?id $?p $?new_mng $?p1))		
+)
+;----------------------------------------------------------------------------------------------------------
+
+;If the box is stationary relative to the train, it is in fact accelerating along with the train.
+;yaxi boYksa relagAdI ke ApekRa sWira hE @PUNCT-Comma wo vAswava meM vaha relagAdI ke sAWa wvariwa ho rahA hE.
+;(chunk_name-chunk_ids VGF 7 8) -- where 8 is @PUNCT-Comma id
+(defrule rm_punct_id_from_verb_chunk
+(declare (salience 1001))
+?f<-(chunk_name-chunk_ids ?chnk&VGF|VGNN|VGNF $?pre ?mid $?pos)
+(not (manual_word_info (group_ids $? ?mid $?) ))
+=>
+       (retract ?f)
+       (assert (chunk_name-chunk_ids ?chnk  $?pre $?pos))
+)
+;----------------------------------------------------------------------------------------------------------
 (defrule get_verb_chunk_cp
 (declare (salience 1000))
 ?f<-(chunk_name-chunk_ids ?chnk&VGF|VGNN|VGNF $?gids)
@@ -133,16 +160,6 @@
         (assert (replaced_tam_with_root_tam ?id0))
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
-;(defrule get_kara_root
-;(declare (salience 700))
-;?f0<-(id-decided_root ?id $?root)
-;?f<-(manual_word_info (head_id ?id) (word $?m)(group_ids $?grp_ids ?lid))
-;=>
-;	(retract ?f0)
-;	(modify ?f (root $?root))
-;)
-
-
 ;Added by Shirisha Manju 5-9-14
 ;The Princess began to weep. rAjakumArI ne ronA [SurU kara xiyA]. 
 ;Not Ex: ;olIka amla aNu ke sAija kA [Akalana karane kI] eka sarala viXi nIce xI gaI hE.
@@ -195,9 +212,9 @@
 (defrule group_kara
 (declare (salience 640))
 ?f0<-(manual_word_info (head_id ?id0) (word ?m1 $?mng)(group_ids $?ids))
-(man_word-root-cat ?m1	?r&kara|xe	v)
+(man_word-root-cat ?m1	?r&kara|xe|raha	v)
 ?f1<-(manual_word_info (head_id ?id1) (word ?m)(group_ids ?id1))
-(database_info (components ?m kara|xe))
+(database_info (components ?m kara|xe|raha))
 =>
         (retract ?f0 ?f1)
 	(modify ?f0 (head_id ?id1) (word ?m ?m1 $?mng)(root ?m ?r)(vibakthi 0 $?mng) (group_ids ?id1 $?ids))
@@ -207,18 +224,20 @@
 )
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
-;;Today, most of the electrical devices we use [require] ac voltage.
-;;Ajakala jina vExyuwa yukwiyoM kA hama upayoga karawe hEM unameM se aXikAMSa ke lie @ac voltawA kI hI [AvaSyakawA howI hE].
-;(defrule verb_group_using_anu_out
-;(declare (salience 630))
-;?f0<-(manual_word_info (head_id ?id0) (word $?mng)(root ho)(group_ids ?id $?ids))
-;?f1<-(manual_word_info (head_id ?id1&:(= (- ?id 1) ?id1)) (word ?m) (group_ids $?ids1))
+;Since the electromagnetic force is so much stronger than the gravitational force, it dominates all phenomena at atomic and molecular scales. 
+;cUfki vixyuwa cumbakIya bala guruwvAkarRaNa bala kI apekRA kahIM aXika prabala howA hE yaha ANvika waWA paramANvIya pEmAne kI saBI pariGatanAoM para [CAyA] [rahawA hE].
+(defrule verb_group_using_anu_out
+(declare (salience 630))
+(id-Apertium_output ? ?m $?mng)
+?f0<-(manual_word_info (head_id ?id) (word ?m)(group_ids ?id))
+?f1<-(manual_word_info (head_id ?id1&:(= (+ ?id 1) ?id1)) (word $?mng) (group_ids $?ids1))
 ;(or (id-Apertium_output ? ?m $?mng)(id-HM-source ? ?root&:(eq (string-to-field (str-cat ?m "_" ho)) ?root) ?))
-;=>
-;        (retract ?f0 ?f1)
-;        (assert (manual_word_info (head_id ?id1) (word ?m $?mng)(group_ids $?ids1 ?id $?ids)))
-;	(assert (chunk_info_to_be_modiifed $?ids1 ?id $?ids))
-;)
+
+=>
+        (retract ?f0 ?f1)
+        (assert (manual_word_info (head_id ?id) (word ?m $?mng)(group_ids ?id $?ids1)))
+	(assert (chunk_info_to_be_modiifed ?id $?ids1))
+)
 ;----------------------------------------------------------------------------------------------------------
 ;As vib and tam both goes into same field...increasing tam rule and replace_tam_with_root-tam rule salience above than vib rules
 ;ex: More [precisely], a is the acceleration of the [center of] mass of the system.
@@ -293,6 +312,7 @@
 ?f<-(anu_id-anu_mng-man_mng ?aid ?word ?man_mng)
 (not (underscore_removed ?aid))
 (test (and (neq ?man_mng @PUNCT-Comma) (neq ?word @PUNCT-Comma)))
+(test (neq (str-index "_" ?man_mng) FALSE))
 =>
   (retract ?f)
   (bind ?new_mng (remove_character "_" (implode$ (create$ ?man_mng)) " "))
@@ -307,6 +327,7 @@
 ?f<-(eng_id-eng_wrd-man_wrd ?aid ?word ?man_mng)
 (not (underscore_removed_in_M ?aid))
 (test (and (neq ?man_mng @PUNCT-Comma) (neq ?word @PUNCT-Comma)))
+(test (neq (str-index "_" ?man_mng) FALSE))
 =>
   (retract ?f)
   (bind ?new_mng (remove_character "_" (implode$ (create$ ?man_mng)) " "))
@@ -318,7 +339,7 @@
 ;----------------------------------------------------------------------------------------------------------
 ;This suggests the definition of dipole moment. 
 ;isase xviXruva AGUrNa kI pariBARA kA [safkewa] [milawA hE].
-(defrule group_using_L_layer
+(defrule verb_group_using_L_layer
 (declare (salience 400))
 ?f2<-(chunk_name-chunk_ids-words VGF ?id0 $?ids - ?m1 $?mng)
 ?f<-(manual_word_info (head_id ?id0) (word ?m1 $?mng)(root $?r) (group_ids ?id0 $?ids))
@@ -331,4 +352,21 @@
 	(assert (chunk_name-chunk_ids-words VGF ?id ?id0 $?ids - ?m ?m1 $?mng))
 	(assert (replaced_tam_with_root_tam ?id0))
 )
+
+;Counter example: Mass is a basic property of matter.
+;		  xravyamAna paxArWa kA eka AXAraBUwa guNa hE. phrasal grp : [xravyamAna AXAraBUwa]
+;The effort is to see the physical world as manifestation of some universal laws in different domains and conditions.
+;isakA uxxeSya viBinna [praBAva kRewroM] waWA parisWiwiyoM meM BOwika jagawa ko kuCa sArvawrika niyamoM kI aBivyakwi ke rUpa meM xeKane kA prayAsa hE .
+;(defrule group_using_L_layer
+;(declare (salience 400))
+;(anu_id-anu_mng-man_mng ? ? ?m ?m1)
+;?f<-(manual_word_info (head_id ?id) (word ?m) (group_ids ?id))
+;?f1<-(manual_word_info (head_id ?id1) (word ?m1) (group_ids ?id1 $?ids))
+;(test (neq ?id ?id1))
+;=>
+;	(retract ?f)
+;	(modify ?f1 (word ?m ?m1)(group_ids ?id ?id1 $?ids))
+;)
+
+
 
