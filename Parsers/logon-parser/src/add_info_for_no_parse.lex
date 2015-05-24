@@ -27,7 +27,7 @@ int prev_count=0;
                                                  len=strcspn(yytext,"]");strncpy(id,yytext,len);
                                                  id[len]='\0';prev_count=atoi(id);   }
 
-[\}]\n						{printf("}\n;~~~~~~~~~~");}
+[\}]/\n\n[\004|014]						{printf("}\n;~~~~~~~~~~");}
 
 %%
 

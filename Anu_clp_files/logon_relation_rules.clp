@@ -236,3 +236,15 @@
  )
  ;------------------------------------------------------------------------------------------------------------------------
  
+ (defrule to-infinitive_rule
+ (relation_name-id-args_with_ids ?rel ?infinitive $?)
+ (logon_relation-properties   ?rel TENSE untensed)
+ (id-word ?to to)
+ (test (eq ?to (- ?infinitive 1)))
+ =>
+ (printout       ?*fp*   "(to-infinitive    "?to"      "?infinitive")"crlf)
+ (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     to-infinitive    "?to"       "?infinitive")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   to-infinitive_rule    to-infinitive   "?to" "?infinitive")"crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ 

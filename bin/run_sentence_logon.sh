@@ -16,15 +16,19 @@
  ./constituency_parse $MYPATH/$1_tmp/$2/E_constituents_info_tmp.dat  $MYPATH/$1_tmp/$2/Node_category_tmp.dat < $MYPATH/$1_tmp/$2/sd-lexicalize_info.dat
  
  cd $MYPATH/$1_tmp/$2
- sed "/\[[0-9]*[:][0-9]*\][ ][(]active[)]/d" $MYPATH/$1_tmp/$2/logon_output.txt |sed -n -e "H;\${g;s/)\n\n{/)\n\n;~~~~~~~~~~\n{/g;p}" | sed -n -e "H;\${g;s/[[][0-9]*[]][ ][(][0-9]*[ ]of[ ][0-9]*[)][ ][{][0-9]*[}][ ][\`]\(.*\)[']\(.*\)\n[;]\~\~\~\~\~\~\~\~\~\~\n/\`\1\'\2\n;\~\~\~\~\~\~\~\~\~\~\n\`\1\'\n/g;p}" | sed -n -e "H;\${g;s/\n\n[\n]*/\n/g;p}" > $MYPATH/$1_tmp/$2/logon_output_tmp.txt
+ sed "/\[[0-9]*[:][0-9]*\][ ][(]active[)]/d" $MYPATH/$1_tmp/$2/logon_output.txt |sed -n -e "H;\${g;s/)\n\n{/)\n\n;~~~~~~~~~~\n{/g;p}" | sed -n -e "H;\${g;s/[[][0-9]*[]][ ][(][0-9]*[ ]of[ ][0-9]*[)][ ][{][0-9]*[}][ ][\`]\(.*\)[']\(.*\)\n[;]\~\~\~\~\~\~\~\~\~\~\n/\`\1\'\2\n;\~\~\~\~\~\~\~\~\~\~\n\`\1\'\n/g;p}" | sed -n -e "H;\${g;s/}\n\n{/}\n\n;~~~~~~~~~~\n{/g;p}" | sed -n -e "H;\${g;s/\n\n[\n]*/\n/g;p}" > $MYPATH/$1_tmp/$2/logon_output_tmp.txt
  
 
  csplit -f logon_output -b '%d.txt' $MYPATH/$1_tmp/$2/logon_output_tmp.txt '/;\~\~\~\~\~\~\~\~\~\~/' '{*}' > /dev/null
 
  mv $MYPATH/$1_tmp/$2/logon_output0.txt $MYPATH/$1_tmp/$2/logon_derivation_parse.txt
  mv $MYPATH/$1_tmp/$2/logon_output1.txt $MYPATH/$1_tmp/$2/logon_dependency_parse.txt
+ mv $MYPATH/$1_tmp/$2/logon_output2.txt $MYPATH/$1_tmp/$2/logon_triples_parse.txt
 
  sed -i -n -e "H;\${g;s/[;]\~\~\~\~\~\~\~\~\~\~\n//g;p}" $MYPATH/$1_tmp/$2/logon_dependency_parse.txt
+ sed -i -n -e "H;\${g;s/[;]\~\~\~\~\~\~\~\~\~\~\n//g;p}" $MYPATH/$1_tmp/$2/logon_triples_parse.txt
+
+ sed "s/{//g" $MYPATH/$1_tmp/$2/logon_triples_parse.txt | sed "s/}//g" | sed "/^$/d" | sed "s/^/(logon_relation-properties /g" | sed "s/$/)/g" >$MYPATH/$1_tmp/$2/logon_triples.dat
  
  $HOME_anu_test/Parsers/logon-parser/src/derivation_parse < $MYPATH/$1_tmp/$2/logon_derivation_parse.txt $MYPATH/$1_tmp/$2/logon_derivation_tree.dat $MYPATH/$1_tmp/$2/logon_category.dat
 
