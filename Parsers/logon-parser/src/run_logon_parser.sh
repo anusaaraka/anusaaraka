@@ -9,7 +9,7 @@ fi
 
 #rm $LOGONTMP/$1_logon.gz $1_logon
 time $LOGONROOT/parse --erg+tnt --binary --target $1_logon --best 1 --text $1 > /dev/null
-time $LOGONROOT/redwoods --binary --erg --default --composite --target $LOGONTMP --export derivation,dependencies --active all $1_logon > /dev/null
+time $LOGONROOT/redwoods --binary --erg --default --composite --target $LOGONTMP --export triples,derivation,dependencies --active all $1_logon > /dev/null
 
 gunzip $LOGONTMP/$1_logon.gz
 
