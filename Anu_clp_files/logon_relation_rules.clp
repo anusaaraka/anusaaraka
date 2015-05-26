@@ -2,6 +2,11 @@
 (defglobal ?*fp1* = open-file1)
 (defglobal ?*dbug* = debug_fp)
 
+ (deffunction my_string_cmp (?str1 ?str2)
+   (bind ?n1 (string-to-field (sub-string 2 (length ?str1) ?str1)))
+   (bind ?n2 (string-to-field (sub-string 2 (length ?str2) ?str2)))
+   (> ?n1 ?n2))
+
  (deffunction find_sub-str_before_last_underscore (?str)
  (bind ?len 0)(bind ?len1 0)
  (bind ?str1 ?str)
@@ -247,4 +252,41 @@
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   to-infinitive_rule    to-infinitive   "?to" "?infinitive")"crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------------
+ ;Eg: Rama, Mohan, hari, Sita and Gita are eating fruits.
+ ;x35:_and_c<24:27>[L-INDEX x40, R-INDEX x44] ==> (relation_name-id-args_with_ids _and_c  5 ARG0 x35  5  L-INDEX x40 4  R-INDEX x44 6 )
+ (defrule conj_rule
+ (relation_name-id-args_with_ids _and_c  ?conj ARG0 ? ?  L-INDEX ? ?lindex  R-INDEX ? ?rindex)
+ (id-word ?conj and)
+ =>
+ (assert (conj-comp ?conj ?lindex ?rindex))
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   conj_rule  conj-comp  "?conj" "?lindex " "?rindex")"crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;Eg: Rama, Mohan, hari, Sita and Gita are eating fruits.
+ ;x25:implicit_conj<19:32>[L-INDEX x30, R-INDEX x35] ==> (relation_name-id-args_with_ids implicit_conj  6  L-INDEX x30 3  R-INDEX x35 5 )
+ ;x15:implicit_conj<13:32>[L-INDEX x20, R-INDEX x25] ==> (relation_name-id-args_with_ids implicit_conj  6  L-INDEX x20 2  R-INDEX x25 6 )
+ (defrule combine_conj_components
+ (declare (salience 10)) 
+ ?f<-(conj-comp ?conj $?clist)
+ (or (relation_name-id-args_with_ids implicit_conj  ?  L-INDEX ? ?comp  R-INDEX ? ?)(relation_name-id-args_with_ids implicit_conj  ?  L-INDEX ? ? R-INDEX ? ?comp))
+ (test (and (eq (member$ ?comp $?clist) FALSE)(neq ?comp ?conj)))
+ =>
+ (retract ?f)
+ (bind ?plist (sort > $?clist ?comp))
+ (assert (conj-comp ?conj ?plist))
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   combine_conj_components  conj-comp  "?conj" "?plist")"crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;Printing conjunction-components
+ (defrule conjunction-components_rule
+ ?f<-(conj-comp ?conj $?clist)
+ =>
+ (printout       ?*fp*   "(conjunction-components    "?conj"	"(implode$ $?clist)")"crlf)
+ (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     conjunction-components    "?conj"	"(implode$ $?clist)")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   conjunction-components_rule    conjunction-components   "?conj"	"(implode$ $?clist)")"crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+
+ 
+
  

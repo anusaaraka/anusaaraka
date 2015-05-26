@@ -1,7 +1,18 @@
 Install :
 =======
 1. Copy LOGON PARSER in $HOME folder
-2. gedit ~/.bashrc
+
+   cd $HOME
+   svn checkout http://svn.emmtee.net/trunk logon
+
+  Note:- Depending on the quality of your Internet connection , this initial download may take between ten minutes and a few hours.
+
+   For more information see below link:-
+   http://moin.delph-in.net/LogonInstallation
+
+2. mkdir ~/logon_tmp
+
+3. gedit ~/.bashrc
   
   LOGONROOT=~/logon/
   if [ -f ${LOGONROOT}/dot.bashrc ]; then

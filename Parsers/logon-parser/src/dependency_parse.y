@@ -48,12 +48,10 @@ args            : args args1
 args1		: ARG {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} SELF {strcpy(args[index1][index2],$3);}
 		| BV  {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} SELF {strcpy(args[index1][index2],$3);}
 		| ARG  {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} EVENT {strcpy(args[index1][index2],$3);}
-                | LINDEX EVENT
-                | RINDEX EVENT
-                | LHNDL EVENT
+                | LINDEX {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} EVENT {strcpy(args[index1][index2],$3);}               | RINDEX {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} EVENT {strcpy(args[index1][index2],$3);}               | LHNDL EVENT
                 | RHNDL EVENT
-                | LINDEX SELF
-                | RINDEX SELF
+                | LINDEX {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} SELF {strcpy(args[index1][index2],$3);}
+                | RINDEX {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} SELF {strcpy(args[index1][index2],$3);}
                 | LHNDL SELF
                 | RHNDL SELF;
 
@@ -107,6 +105,7 @@ main(int argc,char* argv[])
                        for(j=1;j<=sub_index[i];j++)
                         { 
                          if(strcmp(arg_type[i][j],"BV")==0){ }
+                         else if (strcmp(rel_name[i],"implicit_conj")==0) { }
                          else if(j==1)
                          fprintf(fp,"ARG0 %s  %d ",arg0[i],get_word_id(id[i],str));
                             
