@@ -25,7 +25,7 @@ L[-]INDEX/[ ]       {yylval = malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(y
 R[-]INDEX/[ ]       {yylval = malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0';return RINDEX;} 
 L[-]HNDL/[ ]	{yylval = malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0';return LHNDL;}
 R[-]HNDL/[ ]	{yylval = malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0';return RHNDL;}
-[(]["][a-zA-Z\.\?]*["][)] {yylval = malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; ;return STR;}
+[(]["][a-zA-Z0-9\.\?]*["][)] {yylval = malloc(yyleng+1);strncpy(yylval,yytext,yyleng);*(yylval+yyleng)='\0'; ;return STR;}
 
 \n			/* */
 [ \t]+                  /* ignore whitespace */

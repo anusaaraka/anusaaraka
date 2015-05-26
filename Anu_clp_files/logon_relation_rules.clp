@@ -2,11 +2,6 @@
 (defglobal ?*fp1* = open-file1)
 (defglobal ?*dbug* = debug_fp)
 
- (deffunction my_string_cmp (?str1 ?str2)
-   (bind ?n1 (string-to-field (sub-string 2 (length ?str1) ?str1)))
-   (bind ?n2 (string-to-field (sub-string 2 (length ?str2) ?str2)))
-   (> ?n1 ?n2))
-
  (deffunction find_sub-str_before_last_underscore (?str)
  (bind ?len 0)(bind ?len1 0)
  (bind ?str1 ?str)
@@ -25,7 +20,7 @@
  (bind ?str4 (sub-string (+ ?index1 (+ ?len1 1)) ?str4_len ?str2) )
  (bind ?len1 (+ ?index1 ?len1))
  ))
- (printout t ?str4 crlf)
+ ;(printout t ?str4 crlf)
  (bind ?str ?str4)
  )
 

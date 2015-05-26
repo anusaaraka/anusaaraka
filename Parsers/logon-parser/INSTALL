@@ -1,0 +1,60 @@
+INSTALL
+=======
+
+1. If you do not have subversion installed, install it using:
+
+	sudo apt-get install subversion
+
+
+
+2. If you do not have lisp installed, install it. 
+
+	sudo apt-get install clisp
+
+
+3. Download logon system:
+	Go to the directory where you want to clone the repository. I am using home dir.Its a 3.5 GB download so make so make sure you have enough space.
+	cd ~
+	svn checkout http://svn.emmtee.net/trunk logon
+
+4. Make sure that motif and jpeg are installed:
+
+	sudo apt-get install libmotif3 libjpeg62
+
+5. Creating the target /tmp directory where a tar.gz file of the analysis is saved to.
+    cd $HOME
+    mkdir ~/logon_tmp
+
+    Copy the below code in ~/.bashrc
+    gedit ~/.bashrc
+  
+    LOGONROOT=$HOME/logon/
+    if [ -f ${LOGONROOT}/dot.bashrc ]; then
+    . ${LOGONROOT}/dot.bashrc
+    fi
+
+   LOGONTMP=$HOME/logon_tmp
+
+
+6. Parse a bunch of sentences:
+	cd logon
+        $LOGONROOT/parse --erg+tnt --binary --target testrun --best 1 --text input.txt
+
+	input.txt contains one sentence per line.
+	it gets top 1 results from --best 1 so if you want top 10 results use --best 10
+
+
+7. Convert parse outputs to readable form via redwoods treebank:
+        
+        $LOGONROOT/redwoods --binary --erg --default --composite --target $LOGONTMP --export triples,derivation,dependencies --active all testrun
+
+        cd $LOGONTMP/
+        gunzip testrun.gz
+	Output file is testrun file
+          
+
+
+References:
+http://moin.delph-in.net/ErgProcessing
+http://moin.delph-in.net/LogonInstallation
+http://moin.delph-in.net/LogonProcessing
