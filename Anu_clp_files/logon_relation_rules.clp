@@ -20,9 +20,32 @@
  (bind ?str4 (sub-string (+ ?index1 (+ ?len1 1)) ?str4_len ?str2) )
  (bind ?len1 (+ ?index1 ?len1))
  ))
+ ;(printout t ?str4 crlf)
+ (bind ?str ?str4)
+ )
+
+ (deffunction find_sub-str_before_last_hypen (?str)
+ (bind ?len 0)(bind ?len1 0)
+ (bind ?str1 ?str)
+ (bind ?str_len (length ?str))
+ (while (neq (str-index "-" ?str) FALSE)
+ (bind ?index (str-index "-" ?str))
+ (bind ?str (sub-string (+ ?index (+ ?len 1)) ?str_len ?str1) )
+ (bind ?len (+ ?index ?len))
+ )
+ (bind ?str4 (sub-string 1 (- ?len 1) ?str1))
+ (bind ?str2 ?str4)
+ (if (neq (str-index "-" ?str4) FALSE) then
+ (bind ?str4_len (length ?str4))
+ (while (neq (str-index "-" ?str4) FALSE)
+ (bind ?index1 (str-index "-" ?str4))
+ (bind ?str4 (sub-string (+ ?index1 (+ ?len1 1)) ?str4_len ?str2) )
+ (bind ?len1 (+ ?index1 ?len1))
+ ))
  (printout t ?str4 crlf)
  (bind ?str ?str4)
  )
+
 
  (deffunction find_sub-str_after_last_underscore (?str)
  (bind ?len 0)(bind ?len1 0)
@@ -36,6 +59,17 @@
  (bind ?str (sub-string (+ ?len 1) ?str_len ?str1))
  )
 
+ (deffunction find_sub-str_after_last_hypen (?str)
+ (bind ?len 0)(bind ?len1 0)
+ (bind ?str1 ?str)
+ (bind ?str_len (length ?str))
+ (while (neq (str-index "-" ?str) FALSE)
+ (bind ?index (str-index "-" ?str))
+ (bind ?str (sub-string (+ ?index (+ ?len 1)) ?str_len ?str1) )
+ (bind ?len (+ ?index ?len))
+ )
+ (bind ?str (sub-string (+ ?len 1) ?str_len ?str1))
+ )
 
  ;------------------------------------------------------------------------------------------------------------------------
  ;Eg: He has been frequently coming.
@@ -52,7 +86,7 @@
  )
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule kriyA_obj_rule
- (relation_name-id-args_with_ids ?rel  ?kriyA  ARG0 ?  ?kriyA  ARG1 ? ?sub ARG2 ? ?obj $?)
+ (relation_name-id-args_with_ids ?rel&~_be_v_id  ?kriyA  ARG0 ?  ?kriyA  ARG1 ? ?sub ARG2 ? ?obj $?)
  (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
  (test (neq (find_sub-str_after_last_underscore ?rel) "modal"))
  (id-word ?obj ~what) ;[What] is the purpose of Dharma?
@@ -67,7 +101,7 @@
  (defrule kriyA-kriyA_viSeRaNa_rule
  (relation_name-id-args_with_ids ?rel  ?kriyA_viSeRaNa  ARG0 ?  ?kriyA_viSeRaNa  ARG1 ? ?kriyA $?)
  (test (eq (sub-string  (length (sub-string 4 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_1"))
- (id-logon_cat  ?kriyA VBG)
+ (id-logon_cat  ?kriyA VBG|VBN|VB|VBD|VBZ)
  =>
  (printout       ?*fp*   "(kriyA-kriyA_viSeRaNa    "?kriyA"	"?kriyA_viSeRaNa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     kriyA-kriyA_viSeRaNa    "?kriyA"	"?kriyA_viSeRaNa")"crlf)
@@ -81,7 +115,8 @@
  (defrule viSeRya-viSeRaNa_rule
  (relation_name-id-args_with_ids ?rel&~def_implicit_q  ?viSeRaNa  ARG0 ?  ?viSeRaNa  ARG1 ? ?viSeRya $?)
  (test (or (eq (sub-string  (length (sub-string 12 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_at-for-of")(eq (sub-string  (length (sub-string 4 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_1")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_in")))
- (test (neq ?viSeRya ?viSeRaNa));I went there with my mother.;[This job] will not take much effort. 
+ (test (neq ?viSeRya ?viSeRaNa));I went there with my mother.;[This job] will not take much effort.
+ (id-logon_cat  ?viSeRya ?cat&NN|NNP) 
  =>
  (printout       ?*fp*   "(viSeRya-viSeRaNa    "?viSeRya"	"?viSeRaNa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     viSeRya-viSeRaNa    "?viSeRya"	"?viSeRaNa")"crlf)
@@ -92,6 +127,8 @@
  ; e9:_mark_v_1<12:18>[ARG2 x4] ==> (relation_name-id-args_with_ids _mark_v_1  4 ARG0 e9  4  ARG2 x4 5 )
  (defrule  viSeRya-viSeRaNa1
  (relation_name-id-args_with_ids ?rel&~def_implicit_q  ? ARG0 ? ?viSeRaNa  ARG2 ? ?viSeRya)
+ (id-logon_cat  ?viSeRya ?cat&~VBG&~VBD&~VB&~VBN&~VBZ)
+ (id-logon_cat  ?viSeRaNa ?cat1&~VBG&~VBD&~VB&~VBN&~VBZ)
  =>
  (printout       ?*fp*   "(viSeRya-viSeRaNa    "?viSeRya"       "?viSeRaNa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     viSeRya-viSeRaNa    "?viSeRya"      "?viSeRaNa")"crlf)
@@ -133,6 +170,7 @@
  ;e15:compound<10:25>[ARG1 x9, ARG2 x14] ==> (relation_name-id-args_with_ids compound  5 ARG0 e15  5  ARG1 x9 5  ARG2 x14 4 )
  (defrule samAsa_viSeRya-samAsa_viSeRaNa_rule
  (relation_name-id-args_with_ids compound ?samAsa_viSeRya ARG0 ? ? ARG1 ? ?samAsa_viSeRya ARG2 ? ?samAsa_viSeRaNa)
+ (test (neq ?samAsa_viSeRya ?samAsa_viSeRaNa))
   =>
  (printout       ?*fp*   "(samAsa_viSeRya-samAsa_viSeRaNa    "?samAsa_viSeRya"	"?samAsa_viSeRaNa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     samAsa_viSeRya-samAsa_viSeRaNa    "?samAsa_viSeRya"	"?samAsa_viSeRaNa")"crlf)
@@ -158,7 +196,8 @@
  (relation_name-id-args_with_ids ?rel  ? ARG0 ? ?viSeRya ARG1 ? ?prep_saMbanXI)
  (test (eq (find_sub-str_before_last_underscore ?rel) "n"))
  (id-word ?prep ?p_wrd)
- (test (eq (string-to-field (find_sub-str_after_last_underscore ?rel)) ?p_wrd))
+ (test (or (eq (string-to-field (find_sub-str_after_last_underscore ?rel)) ?p_wrd)(eq (string-to-field (find_sub-str_before_last_hypen (string-to-field (find_sub-str_after_last_underscore ?rel)))) ?p_wrd)))
+ (test (and (> ?prep ?viSeRya) (< ?prep ?prep_saMbanXI)))
   =>
  (printout       ?*fp*   "(viSeRya-"?p_wrd"_saMbanXI    "?viSeRya"      "?prep_saMbanXI")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  "?prep"     viSeRya-"?p_wrd"_saMbanXI    "?viSeRya"       "?prep_saMbanXI")"crlf)
@@ -185,9 +224,9 @@
  ;e10:_in_p_temp<8:10>[ARG1 e3, ARG2 x11] ==> (relation_name-id-args_with_ids _in_p_temp  3 ARG0 e10  3  ARG1 e3 2  ARG2 x11 5 )
  (defrule kriyA-prep_saMbanXI_rule
  (relation_name-id-args_with_ids ?rel  ? ARG0 ? ?prep  ARG1 ? ?kriyA  ARG2 ? ?prep_saMbanXI )
- (test (or (eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_p")(eq (sub-string  (length (sub-string 6 (length ?rel) ?rel)) (length ?rel) ?rel) "_p_dir")(eq (sub-string  (length (sub-string 7 (length ?rel) ?rel)) (length ?rel) ?rel) "_p_temp")))
+ (test (or (eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_p")(eq (sub-string  (length (sub-string 6 (length ?rel) ?rel)) (length ?rel) ?rel) "_p_dir")(eq (sub-string  (length (sub-string 7 (length ?rel) ?rel)) (length ?rel) ?rel) "_p_temp")(eq (sub-string  (length (sub-string 8 (length ?rel) ?rel)) (length ?rel) ?rel) "_p_state")))
  (id-word ?prep ?p_wrd)
- (id-logon_cat  ?kriyA VBG|VBD|VB)
+ (id-logon_cat  ?kriyA VBG|VBD|VB|VBN|VBZ)
   =>
  (printout       ?*fp*   "(kriyA-"?p_wrd"_saMbanXI    "?kriyA"      "?prep_saMbanXI")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  "?prep"     kriyA-"?p_wrd"_saMbanXI    "?kriyA"       "?prep_saMbanXI")"crlf)
@@ -235,4 +274,65 @@
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kriyA-aXikaraNavAcI_rule    kriyA-aXikaraNavAcI   "?kriyA" "?aXikaraNavAcI")"crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------------
+ 
+ (defrule to-infinitive_rule
+ (relation_name-id-args_with_ids ?rel ?infinitive $?)
+ (logon_relation-properties   ?rel TENSE untensed)
+ (id-word ?to to)
+ (test (eq ?to (- ?infinitive 1)))
+ =>
+ (printout       ?*fp*   "(to-infinitive    "?to"      "?infinitive")"crlf)
+ (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     to-infinitive    "?to"       "?infinitive")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   to-infinitive_rule    to-infinitive   "?to" "?infinitive")"crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;Eg: Rama, Mohan, hari, Sita and Gita are eating fruits.
+ ;x35:_and_c<24:27>[L-INDEX x40, R-INDEX x44] ==> (relation_name-id-args_with_ids _and_c  5 ARG0 x35  5  L-INDEX x40 4  R-INDEX x44 6 )
+ (defrule conj_rule
+ (relation_name-id-args_with_ids _and_c|_or_c  ?conj ARG0 ? ?  L-INDEX ? ?lindex  R-INDEX ? ?rindex)
+ (id-word ?conj and|or)
+ =>
+ (assert (conj-comp ?conj ?lindex ?rindex))
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   conj_rule  conj-comp  "?conj" "?lindex " "?rindex")"crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;Eg: Rama, Mohan, hari, Sita and Gita are eating fruits.
+ ;x25:implicit_conj<19:32>[L-INDEX x30, R-INDEX x35] ==> (relation_name-id-args_with_ids implicit_conj  6  L-INDEX x30 3  R-INDEX x35 5 )
+ ;x15:implicit_conj<13:32>[L-INDEX x20, R-INDEX x25] ==> (relation_name-id-args_with_ids implicit_conj  6  L-INDEX x20 2  R-INDEX x25 6 )
+ (defrule combine_conj_components
+ (declare (salience 10)) 
+ ?f<-(conj-comp ?conj $?clist)
+ (or (relation_name-id-args_with_ids implicit_conj  ?  L-INDEX ? ?comp  R-INDEX ? ?comp1)(relation_name-id-args_with_ids implicit_conj  ?  L-INDEX ? ?comp1 R-INDEX ? ?comp))
+ (test (and (eq (member$ ?comp $?clist) FALSE)(neq (member$ ?comp1 $?clist) FALSE)(neq ?comp ?conj)))
+ =>
+ (retract ?f)
+ (bind ?plist (sort > $?clist ?comp))
+ (assert (conj-comp ?conj ?plist))
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   combine_conj_components  conj-comp  "?conj" "?plist")"crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ (defrule combine_conj_components1
+ (declare (salience 10))
+ ?f<-(conj-comp ?conj $?clist)
+ (or (relation_name-id-args_with_ids implicit_conj  ?  L-INDEX ? ?comp  R-INDEX ? ?conj)(relation_name-id-args_with_ids implicit_conj  ?  L-INDEX ? ?conj R-INDEX ? ?comp))
+ (test (eq (member$ ?comp $?clist) FALSE))
+ =>
+ (retract ?f)
+ (bind ?plist (sort > $?clist ?comp))
+ (assert (conj-comp ?conj ?plist))
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   combine_conj_components1  conj-comp  "?conj" "?plist")"crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;Printing conjunction-components
+ (defrule conjunction-components_rule
+ ?f<-(conj-comp ?conj $?clist)
+ =>
+ (printout       ?*fp*   "(conjunction-components    "?conj"	"(implode$ $?clist)")"crlf)
+ (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     conjunction-components    "?conj"	"(implode$ $?clist)")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   conjunction-components_rule    conjunction-components   "?conj"	"(implode$ $?clist)")"crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+
+ 
+
  

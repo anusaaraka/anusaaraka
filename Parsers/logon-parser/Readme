@@ -1,14 +1,6 @@
-Install :
-=======
-1. Copy LOGON PARSER in $HOME folder
-2. gedit ~/.bashrc
-  
-  LOGONROOT=~/logon/
-  if [ -f ${LOGONROOT}/dot.bashrc ]; then
-    . ${LOGONROOT}/dot.bashrc
-  fi
-
-   LOGONTMP=~/logon_tmp
+Logon Parser Installation :
+=========================
+See Logon INSTALL file.
 
 Compile :
 =======

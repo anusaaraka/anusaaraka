@@ -168,6 +168,7 @@
  (load-facts "logon_relations.dat")
  (load-facts "word.dat")
  (load-facts "logon_category.dat")
+ (load-facts "logon_triples.dat")
  (open "relations.dat" open-file "w")
  (open "relations_debug.dat" debug_fp "w")
  (open "relations_tmp1.dat" open-file1 "w")
