@@ -167,7 +167,22 @@
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>
-        (assert (manual_word_info (head_id ?id0) (word $?noun)(vibakthi se ?w)(group_ids ?id0 ?id1 ?id2)))
+        (assert (manual_word_info (head_id ?id0) (word ?noun)(vibakthi se ?w)(group_ids ?id0 ?id1 ?id2)))
+        (assert (mng_has_been_grouped ?id1))
+        (assert (mng_has_been_grouped ?id2))
+)
+;---------------------------------------------------------------------------------------------------------------
+;What is the origin of the external force on the body?
+;[piMda para lage] bAhya bala kA uxgama kyA hE ?
+(defrule para_lage
+(declare (salience 800))
+?f1<-(manual_id-word ?id0 ?noun)
+?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) para)
+?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&lage)
+(not (mng_has_been_grouped ?id1))
+(not (mng_has_been_grouped ?id2))
+=>
+        (assert (manual_word_info (head_id ?id0) (word ?noun)(vibakthi para ?w)(group_ids ?id0 ?id1 ?id2)))
         (assert (mng_has_been_grouped ?id1))
         (assert (mng_has_been_grouped ?id2))
 )
@@ -195,6 +210,7 @@
 =>
         (assert (manual_word_info (head_id ?id0) (word ?noun ?w)(group_ids ?id0 ?id2)))
         (assert (mng_has_been_grouped ?id0))
+        (assert (mng_has_been_grouped ?id1))
         (assert (mng_has_been_grouped ?id2))
 )
 ;---------------------------------------------------------------------------------------------------------------
@@ -229,7 +245,7 @@
 (not (got_multi_word ?mng))
 =>
         (assert (got_multi_word ?mng))
-        (bind ?new_mng (remove_character "-" (implode$ (create$ ?mng)) " "))
+;        (bind ?new_mng (remove_character "-" (implode$ (create$ ?mng)) " "))
         (bind ?new_mng (remove_character "_" (implode$ (create$ ?mng)) " "))
         (assert (multi_word ?new_mng))
 )
@@ -237,17 +253,34 @@
 ;Added by Shirisha Manju
 ;Languages and methods used in communication have kept evolving from prehistoric to [modern times], to meet the growing demands in terms of speed and complexity of information.
 ;mAnava prAgEwihAsika kAla se [AXunika kAla] waka, saFcAra meM upayoga hone vAlI nayI - nayI BARAoM evaM viXiyoM kI Koja karane ke lie prayawnaSIla rahA hE, wAki saFcAra kI gawi evaM jatilawAoM ke paxoM meM baDawI AvaSyakawAoM kI pUrwi ho sake.
-(defrule multi_word_from_dic
+(defrule multi_word_from_multi_dic
 (declare (salience 700))
-(multi_word ?mng ?mng1)
+(multi_word ?mng ?mng1 $?)
 ?f0<-(manual_id-word ?id0 ?mng)
 ?f1<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?mng1)
 (not (mng_has_been_grouped ?id1))
 =>
-        (assert (manual_word_info (head_id ?id0) (word ?mng ?mng1)(group_ids ?id0 ?id1)))
+        (assert (manual_word_info (head_id ?id1) (word ?mng ?mng1)(group_ids ?id0 ?id1)))
         (assert (mng_has_been_grouped ?id0))
         (assert (mng_has_been_grouped ?id1))
 )
+;----------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;For the case of [rectilinear motion] with uniform acceleration, a set of simple equations can be obtained.
+;ekasamAna wvariwa [sarala reKIya] [gawi ke lie] kuCa sarala samIkaraNa prApwa kie jA sakawe hEM.
+(defrule add_mng_with_multi_word
+(declare (salience 690))
+(multi_word $?mng ?mng1 $?)
+?f<-(manual_word_info (head_id ?id) (word $?mng) (group_ids $?ids))
+?f1<-(manual_word_info (head_id ?id1) (word ?mng1) (vibakthi ?v $?vb)(group_ids $?ids1))
+=>
+	(retract ?f1)
+	(if (eq ?v 0) then
+		(modify ?f (head_id ?id1)(word $?mng ?mng1)(group_ids $?ids $?ids1))
+	else
+		(modify ?f (head_id ?id1)(word $?mng ?mng1)(vibakthi ?v $?vb)(group_ids $?ids $?ids1))
+	)
+) 
 ;----------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 8-9-14
 ;[Similarly], we can argue that it lies on the median MQ and NR.
