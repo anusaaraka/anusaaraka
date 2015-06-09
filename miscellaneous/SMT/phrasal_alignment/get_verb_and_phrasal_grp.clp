@@ -57,8 +57,8 @@
 (defrule get_verb_chunk
 (declare (salience 950))
 ?f<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF $?gids - $?pre ?mid $?pos)
-(manual_word_info (head_id ?mid) (word $?man_wrd))
-;?f1<-(manual_id-word ?mid ?man_wrd)
+;(manual_word_info (head_id ?mid) (word $?man_wrd))
+?f1<-(manual_id-word ?mid ?man_wrd)
 =>
        (retract ?f)
        (assert (chunk_name-chunk_ids-words ?chnk  $?gids - $?pre $?man_wrd $?pos))
@@ -254,7 +254,11 @@
                (assert (root_decided ?id))
        else
                (bind ?tam (string-to-field (sub-string (+ (length ?root) 1)  (length ?word) ?word)))
-               (modify ?f (root ?root)(vibakthi ?tam $?wrds))
+	       (if (neq ?tam ne) then	;lene ke paScAwa
+               		(modify ?f (root ?root)(vibakthi ?tam $?wrds ))
+		else
+			(modify ?f (root ?root))
+	       )
                (assert (root_decided ?id))
        )
 )
@@ -352,6 +356,23 @@
 	(assert (chunk_name-chunk_ids-words VGF ?id ?id0 $?ids - ?m ?m1 $?mng))
 	(assert (replaced_tam_with_root_tam ?id0))
 )
+;----------------------------------------------------------------------------------------------------------
+;This human endeavor led, in course of time, to modern science and technology.
+;Man: kAlAnwara meM mAnava ke inhIM prayAsoM se AXunika vijFAna waWA prOxyogikI kA [mArga praSaswa huA hE].
+(defrule verb_group_using_L_layer_and_huA
+(declare (salience 400))
+?f2<-(chunk_name-chunk_ids-words VGF ?id0 $?ids - huA $?mng)
+?f<-(manual_word_info (head_id ?id0) (word huA $?mng)(root $?r) (group_ids ?id0 $?ids))
+?f0<-(manual_word_info (head_id ?id&:(=(- ?id0 1) ?id)) (word ?m)(group_ids $?ids1))
+(anu_id-anu_mng-man_mng ? ? $? ?m)
+?f1<-(chunk_name-chunk_ids ? ?id)
+=>
+        (retract ?f ?f0 ?f1 ?f2)
+        (modify ?f (head_id ?id)(word ?m huA $?mng)(root ?m ho)(group_ids $?ids1 ?id0 $?ids))
+        (assert (chunk_name-chunk_ids-words VGF ?id ?id0 $?ids - ?m huA $?mng))
+        (assert (replaced_tam_with_root_tam ?id0))
+)
+
 
 ;Counter example: Mass is a basic property of matter.
 ;		  xravyamAna paxArWa kA eka AXAraBUwa guNa hE. phrasal grp : [xravyamAna AXAraBUwa]
