@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <string.h>
 FILE *fp;
-char arg0[100][100],sent[1000];
+char arg0[100][100],sent[1000],sent_head[100];
 char rel_name[100][100],id[100][100],args[100][100][100],sub_index[100]="\0",arg_type[100][100][100];
 int index1=0,index2=0;
 extern int yylineno;
@@ -23,17 +23,18 @@ int yywrap()
 %}
 %error-verbose
 
-%token SENT OPEN_BRKT HEAD_EVENT CLOSE_BRKT EVENT REL ID OPEN_SQ_BRKT ARG BV CLOSE_SQ_BRKT HEAD REL1 UNDERSCORE_ID SELF OPEN_CIRCLE_BRKT STR CLOSE_CIRCLE_BRKT OPEN_ANG_BRKT CLOSE_ANG_BRKT LINDEX RINDEX LHNDL RHNDL
+%token SENT OPEN_BRKT HEAD_EVENT CLOSE_BRKT EVENT REL ID OPEN_SQ_BRKT ARG BV CLOSE_SQ_BRKT HEAD REL1 UNDERSCORE_ID SELF OPEN_CIRCLE_BRKT STR CLOSE_CIRCLE_BRKT OPEN_ANG_BRKT CLOSE_ANG_BRKT LINDEX RINDEX LHNDL RHNDL ITYPE 
 
 %%
 
-start		: SENT {strcpy(sent,$1);} OPEN_BRKT EVENT relations CLOSE_BRKT;
+start		: SENT {strcpy(sent,$1);} OPEN_BRKT EVENT {strcpy(sent_head,$4);} relations CLOSE_BRKT;
 
 relations : relations relation1
           | relation1;
 
 relation1       : EVENT {index2=0;index1=index1+1;strcpy(arg0[index1],$1);} rel arg_info
                 | SELF {index2=0;index1=index1+1;strcpy(arg0[index1],$1);} rel arg_info 
+                | ITYPE {index2=0;index1=index1+1;strcpy(arg0[index1],$1);} rel arg_info 
 	        | UNDERSCORE_ID {index2=0;index1=index1+1;strcpy(arg0[index1],$1);} rel arg_info; 
 
 rel	: REL {strcpy(rel_name[index1],$1);} OPEN_ANG_BRKT ID {strcpy(id[index1],$4);} CLOSE_ANG_BRKT;
@@ -48,6 +49,8 @@ args            : args args1
 args1		: ARG {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} SELF {strcpy(args[index1][index2],$3);}
 		| BV  {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} SELF {strcpy(args[index1][index2],$3);}
 		| ARG  {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} EVENT {strcpy(args[index1][index2],$3);}
+		| ARG {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} UNDERSCORE_ID {strcpy(args[index1][index2],$3);}
+		| ARG {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} ITYPE {strcpy(args[index1][index2],$3);}
                 | LINDEX {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} EVENT {strcpy(args[index1][index2],$3);}               | RINDEX {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} EVENT {strcpy(args[index1][index2],$3);}               | LHNDL EVENT
                 | RHNDL EVENT
                 | LINDEX {index2=index2+1;sub_index[index1]=index2;strcpy(arg_type[index1][index2],$1);} SELF {strcpy(args[index1][index2],$3);}
@@ -95,6 +98,9 @@ main(int argc,char* argv[])
  strcpy(str,sent);
  //printf("=========%s==================\n" , sent);
 
+ for(i=1;i<=index1;i++){
+ if(strcmp(arg0[i],sent_head)==0)
+ fprintf(fp,"(sent_head-id  %s  %d)\n",sent_head,get_word_id(id[i],str));}
  index3 = index1;
  for(i=1;i<=index1;i++){
                        //fprintf(fp,"(relation_name-id-args_with_ids %s  %s ",rel_name[i],id[i]);

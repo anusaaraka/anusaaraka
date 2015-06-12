@@ -80,6 +80,32 @@
  (printout ?*dbug* ";-------kAraka relations---------" crlf)
 )
  ;------------------------------------------------------------------------------------------------------------------------
+ ;Eg: He has been frequently coming.
+ ;e3:_come_v_1<23:30>[ARG1 x5] ==> (relation_name-id-args_with_ids _come_v_1 5 ARG0 e3 5 ARG1 x5 1)
+ (defrule kriyA_karwA_rule
+ (relation_name-id-args_with_ids ?rel  ?kriyA  ARG0 ?  ?kriyA  ARG1 ? ?karwA $?)
+ (not (relation_name-id-args_with_ids parg_d ?kriyA $?)) ;The fruits were eaten by me.
+ (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
+ (test (neq (find_sub-str_after_last_underscore ?rel) "modal"))
+ (test (neq (find_sub-str_after_last_underscore ?rel) "there"));[There] was a red mark on the door.
+ =>
+ (printout       ?*fp*   "(kriyA-karwA    "?kriyA"    "?karwA")"crlf)
+ (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     kriyA-karwA   "?kriyA"   "?karwA")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kriyA_karwA_rule   kriyA-karwA   "?kriyA"  "?karwA")"crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ (defrule kriyA_karma_rule
+ (relation_name-id-args_with_ids ?rel&~_be_v_id  ?kriyA  ARG0 ?  ?kriyA  ARG1 ? ? ARG2 ? ?karma $?)
+ (not (relation_name-id-args_with_ids parg_d ?kriyA $?)) ;The fruits were eaten by me.
+ (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
+ (test (neq (find_sub-str_after_last_underscore ?rel) "modal"))
+ (id-word ?karma ~what) ;[What] is the purpose of Dharma?
+ =>
+ (printout       ?*fp*   "(kriyA-karma     "?kriyA"    "?karma")"crlf)
+ (printout       ?*fp1*  "(prep_id-relation-anu_ids  -   kriyA-karma   "?kriyA"        "?karma")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids   -     kriyA_karma_rule  kriyA-karma    "?kriyA"        "?karma")"crlf)
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
  ;Ex:-The fruits were eaten by me. The dog was chased by Browne.
  ;e3:_eat_v_1<16:21>[ARG1 x9, ARG2 x6] ==> (relation_name-id-args_with_ids _eat_v_1  4 ARG0 e3  4  ARG1 x9 6  ARG2 x6 2 )
  ;e10:parg_d<16:21>[ARG1 e3, ARG2 x6]  ==> (relation_name-id-args_with_ids parg_d  4 ARG0 e10  4  ARG1 e3 4  ARG2 x6 2 )
