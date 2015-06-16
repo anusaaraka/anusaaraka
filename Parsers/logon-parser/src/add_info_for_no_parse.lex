@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include<string.h>
 char id[100];
-int len=0;
+int len=0,j=0;
 int prev_count=0;
 
 %}
@@ -19,7 +19,7 @@ int prev_count=0;
                                                  if(atoi(id)==prev_count+1)
                                                  printf("[%s",yytext);
                                                  else
-                                                 {printf("(No Parse Found)\n;~~~~~~~~~~\n");
+                                                 { for(j=prev_count;j<atoi(id)-1;j++)printf("(No Parse Found)\n;~~~~~~~~~~\n");//loop if more than one continious sentence has No Parse
                                                  printf("[%s",yytext);}
                                                  prev_count=atoi(id);
 						}
