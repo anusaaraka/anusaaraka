@@ -189,6 +189,9 @@
  (assert (prep_id-relation-anu_ids  -  viSeRya-viSeRaNa  ?viSeRya ?viSeRaNa))
  )
  ;------------------------------------------------------------------------------------------------------------------------
+ ;Eg: The dog barked every day.
+ ; _2:_every_q<15:20>[BV x10] ==> (relation_name-id-args_with_ids _every_q  4  BV x10 5 )
+ ;x10:_day_n_of<21:25>[] ==> (relation_name-id-args_with_ids _day_n_of  5 ARG0 x10 5 )
  (defrule viSeRya-viSeRaNa_rule2
  (relation_name-id-args_with_ids ?rel&_every_q  ?viSeRaNa  BV ? ?viSeRya)
  (test (neq ?viSeRaNa ?viSeRya))
@@ -202,7 +205,7 @@
  (assert (prep_id-relation-anu_ids  -  viSeRya-viSeRaNa  ?viSeRya ?viSeRaNa))
  )
  ;------------------------------------------------------------------------------------------------------------------------
- ;We had wasted our journey.
+ ;Eg: We had wasted our journey.
  ;_2:def_explicit_q<14:17>[BV x9] ==> (relation_name-id-args_with_ids def_explicit_q  4  BV x9 5 )
  (defrule viSeRya-RaRTI_viSeRaNa_rule
  (relation_name-id-args_with_ids def_explicit_q  ?RaRTI_viSeRaNa  BV ? ?viSeRya)
@@ -234,15 +237,34 @@
  ;If the parse head is adjective and "is" information is absent in dependency parse and if "is" is in between head and argument of the head assign subject-subject_samAnAXikaraNa between ARG1 of head and adjective.
  (defrule subject-subject_samAnAXikaraNa_rule1
  (id-word ?be_verb is)
+ (not (relation_name-id-args_with_ids ? ?be_verb $?))
  (sent_head-id ?sen_head  ?subject_samAnAXikaraNa)
  (relation_name-id-args_with_ids ?rel ?subject_samAnAXikaraNa ARG0 ?sen_head  ?id  ARG1 ? ?subject $?)
- (not (relation_name-id-args_with_ids ? ?be_verb $?))
  (test (and (> ?be_verb ?subject) (< ?be_verb ?subject_samAnAXikaraNa)))
  (test (or (eq (sub-string  (length (sub-string 12 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_at-for-of")(eq (sub-string  (length (sub-string 4 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_1")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_in")))
  =>
  (printout       ?*fp*   "(subject-subject_samAnAXikaraNa   "?subject"  "?subject_samAnAXikaraNa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     subject-subject_samAnAXikaraNa    "?subject"        "?subject_samAnAXikaraNa")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   subject-subject_samAnAXikaraNa_rule1   subject-subject_samAnAXikaraNa   "?subject"  "?subject_samAnAXikaraNa")"crlf)
+ (assert (prep_id-relation-anu_ids  -  subject-subject_samAnAXikaraNa    ?subject ?subject_samAnAXikaraNa))
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;Eg:-`The fat [boy] is [tall] and the girl is a doctor.'
+ ;(sent_head-id  e3  6)
+ ;e3:_and_c<20:23>[L-INDEX e16, R-INDEX e19, L-HNDL e16, R-HNDL e19] ==> (relation_name-id-args_with_ids _and_c  6 ARG0 e3  6  L-INDEX e16 5  R-INDEX e19 9 )
+ ;e16:_tall_a_1<15:19>[ARG1 x6] ==> (relation_name-id-args_with_ids _tall_a_1  5 ARG0 e16  5  ARG1 x6 3 )
+ (defrule subject-subject_samAnAXikaraNa_rule2
+ (id-word ?be_verb is)
+ (not (relation_name-id-args_with_ids ? ?be_verb $?))
+ (sent_head-id ?sen_head  ?and)
+ (relation_name-id-args_with_ids ?conj_rel&_and_c  ?and $? ?subject_samAnAXikaraNa $?)
+ (relation_name-id-args_with_ids ?rel ?subject_samAnAXikaraNa ARG0 ? ?  ARG1 ? ?subject $?)
+ (test (and (> ?be_verb ?subject) (< ?be_verb ?subject_samAnAXikaraNa)))
+ (test (or (eq (sub-string  (length (sub-string 12 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_at-for-of")(eq (sub-string  (length (sub-string 4 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_1")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_in")))
+ =>
+ (printout       ?*fp*   "(subject-subject_samAnAXikaraNa   "?subject"  "?subject_samAnAXikaraNa")"crlf)
+ (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     subject-subject_samAnAXikaraNa    "?subject"        "?subject_samAnAXikaraNa")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   subject-subject_samAnAXikaraNa_rule2   subject-subject_samAnAXikaraNa   "?subject"  "?subject_samAnAXikaraNa")"crlf)
  (assert (prep_id-relation-anu_ids  -  subject-subject_samAnAXikaraNa    ?subject ?subject_samAnAXikaraNa))
  )
  ;------------------------------------------------------------------------------------------------------------------------
@@ -496,6 +518,22 @@
  (printout       ?*fp*   "(kriyA-"?p_wrd"_saMbanXI    "?kriyA"      "?prep_saMbanXI")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  "?prep"     kriyA-"?p_wrd"_saMbanXI    "?kriyA"       "?prep_saMbanXI")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  "?prep"   kriyA-prep_saMbanXI_rule1    kriyA-"?p_wrd"_saMbanXI   "?kriyA" "?prep_saMbanXI")"crlf)
+ (bind ?r (string-to-field (str-cat "kriyA-" ?p_wrd "_saMbanXI")))
+ (assert (prep_id-relation-anu_ids  ?prep  ?r  ?kriyA ?prep_saMbanXI))
+ )
+ ;------------------------------------------------------------------------------------------------------------------------ 
+ ;Abrams [handed] the cigarette to [Browne].
+ ;(relation_name-id-args_with_ids _hand_v_1  2 ARG0 e3  2  ARG1 x6 1  ARG2 x9 4  ARG3 x10 6 )
+ (defrule kriyA-prep_saMbanXI_rule2
+ (relation_name-id-args_with_ids ?rel&_hand_v_1|_give_v_1 ?kriyA ARG0 ?  ?  $? ARG3 ? ?prep_saMbanXI $?)
+ (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
+ (id-word ?prep ?p_wrd&to)
+ (not (relation_name-id-args_with_ids ?  ?to))
+ (test (and (> ?prep ?kriyA) (< ?prep ?prep_saMbanXI)))
+ =>
+ (printout       ?*fp*   "(kriyA-"?p_wrd"_saMbanXI    "?kriyA"      "?prep_saMbanXI")"crlf)
+ (printout       ?*fp1*   "(prep_id-relation-anu_ids  "?prep"     kriyA-"?p_wrd"_saMbanXI    "?kriyA"       "?prep_saMbanXI")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  "?prep"   kriyA-prep_saMbanXI_rule2    kriyA-"?p_wrd"_saMbanXI   "?kriyA" "?prep_saMbanXI")"crlf)
  (bind ?r (string-to-field (str-cat "kriyA-" ?p_wrd "_saMbanXI")))
  (assert (prep_id-relation-anu_ids  ?prep  ?r  ?kriyA ?prep_saMbanXI))
  )

@@ -92,10 +92,11 @@
  (printout       ?*fp*   "(kriyA-karwA    "?kriyA"    "?karwA")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     kriyA-karwA   "?kriyA"   "?karwA")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kriyA_karwA_rule   kriyA-karwA   "?kriyA"  "?karwA")"crlf)
+ (assert (prep_id-relation-anu_ids - kriyA-karwA ?kriyA ?karwA))
  )
  ;------------------------------------------------------------------------------------------------------------------------
  (defrule kriyA_karma_rule
- (relation_name-id-args_with_ids ?rel&~_be_v_id  ?kriyA  ARG0 ?  ?kriyA  ARG1 ? ? ARG2 ? ?karma $?)
+ (relation_name-id-args_with_ids ?rel&~_be_v_id  ?kriyA  ARG0 ?  ?kriyA  $? ARG2 ? ?karma $?)
  (not (relation_name-id-args_with_ids parg_d ?kriyA $?)) ;The fruits were eaten by me.
  (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
  (test (neq (find_sub-str_after_last_underscore ?rel) "modal"))
@@ -104,21 +105,46 @@
  (printout       ?*fp*   "(kriyA-karma     "?kriyA"    "?karma")"crlf)
  (printout       ?*fp1*  "(prep_id-relation-anu_ids  -   kriyA-karma   "?kriyA"        "?karma")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids   -     kriyA_karma_rule  kriyA-karma    "?kriyA"        "?karma")"crlf)
+ (assert (prep_id-relation-anu_ids - kriyA-karma ?kriyA ?karma))
  )
  ;------------------------------------------------------------------------------------------------------------------------
- ;Ex:-The fruits were eaten by me. The dog was chased by Browne.
+ ;Eg: The fruits were eaten by me. The dog was chased by Browne.
  ;e3:_eat_v_1<16:21>[ARG1 x9, ARG2 x6] ==> (relation_name-id-args_with_ids _eat_v_1  4 ARG0 e3  4  ARG1 x9 6  ARG2 x6 2 )
  ;e10:parg_d<16:21>[ARG1 e3, ARG2 x6]  ==> (relation_name-id-args_with_ids parg_d  4 ARG0 e10  4  ARG1 e3 4  ARG2 x6 2 )
- (defrule passive-kriyA-karwA-karma_rule
+ (defrule passive-kriyA-karwA_rule
  (relation_name-id-args_with_ids parg_d ?kriyA $? )
- (relation_name-id-args_with_ids ?rel  ?kriyA ARG0 ?  ?  ARG1 ? ?karwA ARG2 ? ?karma $?)
+ (relation_name-id-args_with_ids ?rel  ?kriyA ARG0 ?  ?  ARG1 ? ?karwA $?)
  (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
   =>
  (printout       ?*fp*   "(kriyA-karwA    "?kriyA"      "?karwA")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     kriyA-karwA   "?kriyA"       "?karwA")" crlf)
- (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   passive-kriyA-karwA-karma_rule    kriyA-karwA  "?kriyA" "?karwA")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   passive-kriyA-karwA_rule    kriyA-karwA  "?kriyA" "?karwA")"crlf)
+ (assert (prep_id-relation-anu_ids - kriyA-karwA ?kriyA ?karwA))
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;Eg: The fruits were eaten by me. The dog was chased by Browne.
+ ;e3:_eat_v_1<16:21>[ARG1 x9, ARG2 x6] ==> (relation_name-id-args_with_ids _eat_v_1  4 ARG0 e3  4  ARG1 x9 6  ARG2 x6 2 )
+ ;e10:parg_d<16:21>[ARG1 e3, ARG2 x6]  ==> (relation_name-id-args_with_ids parg_d  4 ARG0 e10  4  ARG1 e3 4  ARG2 x6 2 )
+ (defrule passive-kriyA-karma_rule
+ (relation_name-id-args_with_ids parg_d ?kriyA $? )
+ (relation_name-id-args_with_ids ?rel  ?kriyA ARG0 ?  ?  $? ARG2 ? ?karma $?)
+ (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
+  =>
  (printout       ?*fp*   "(kriyA-karma    "?kriyA"      "?karma")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     kriyA-karma    "?kriyA"       "?karma")" crlf)
- (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   passive-kriyA-karwA-karma_rule    kriyA-karma   "?kriyA" "?karma")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   passive-kriyA-karma_rule    kriyA-karma   "?kriyA" "?karma")"crlf)
+ (assert (prep_id-relation-anu_ids - kriyA-karma ?kriyA ?karma))
  )
  ;------------------------------------------------------------------------------------------------------------------------ 
+ ;Eg: Abrams [handed] the cigarette to [Browne].
+ ;(relation_name-id-args_with_ids _hand_v_1  2 ARG0 e3  2  ARG1 x6 1  ARG2 x9 4  ARG3 x10 6 )
+ (defrule kriyA-sampraxAna_rule
+ (relation_name-id-args_with_ids ?rel&_hand_v_1|_give_v_1 ?kriyA ARG0 ?  ?  $? ARG3 ? ?sampraxAna $?)
+ (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
+ =>
+ (printout       ?*fp*   "(kriyA-sampraxAna    "?kriyA"      "?sampraxAna")"crlf)
+ (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     kriyA-sampraxAna   "?kriyA"       "?sampraxAna")" crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kriyA-sampraxAna_rule    kriyA-sampraxAna   "?kriyA" "?sampraxAna")"crlf)
+ (assert (prep_id-relation-anu_ids - kriyA-sampraxAna ?kriyA ?sampraxAna))
+ )
+
