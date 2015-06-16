@@ -42,14 +42,97 @@
         )
         (bind ?*id* (+ ?*id* 1))
 )
+;===================================== grouping using dictionary ===========================================
+;Added by Shirisha Manju 5-06-15
+;In this example, the basis is the distance between the eyes.
+;isa uxAharaNa meM xonoM [AzKoM] [ke bIca] kI xUrI AXAraka hE.
+(defrule multi_word_vib_with_dic
+(declare (salience 701))
+(database_info (components ?mng&ke|kI|se ?mng1 $?))
+(manual_id-word ?id ?mng)
+(manual_id-word ?id1&:(=(+ ?id 1) ?id1) ?mng1)
+(manual_id-word ?id0&:(=(- ?id 1) ?id0) ?m)
+(not (mng_has_been_grouped ?id1))
+(not (chunk_name-chunk_ids VGF $? ?id1 $?))
+(test (neq (sub-string 1 6 (implode$ (create$ ?m))) "@PUNCT"))
+;(man_word-root-cat ?mng1 ?r&~kara&~ho&~xe ?)
+=>
+        (assert (manual_word_info (head_id ?id0) (word ?m )(vibakthi ?mng ?mng1)(group_ids ?id0 ?id ?id1)))
+        (assert (mng_has_been_grouped ?id))
+        (assert (mng_has_been_grouped ?id1))
+)
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;Languages and methods used in communication have kept evolving from prehistoric to [modern times], to meet the growing demands in terms of speed and complexity of information.
+;mAnava prAgEwihAsika kAla se [AXunika kAla] waka, saFcAra meM upayoga hone vAlI nayI - nayI BARAoM evaM viXiyoM kI Koja karane ke lie prayawnaSIla rahA hE, wAki saFcAra kI gawi evaM jatilawAoM ke paxoM meM baDawI AvaSyakawAoM kI pUrwi ho sake.
+;[Similarly], we can argue that it lies on the median MQ and NR.
+;[isI prakAra] hama warka kara sakawe hEM ki yaha mAXyikA MQ Ora NR para BI avasWiwa hogA.
+(defrule multi_word_with_dic
+(declare (salience 700))
+(database_info (components ?mng ?mng1 $?))
+(manual_id-word ?id0 ?mng&~ke&~kI&~se)
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?mng1)
+(not (mng_has_been_grouped ?id1))
+(not (chunk_name-chunk_ids VGF $? ?id1 $?))
+;(man_word-root-cat ?mng1 ?r&~kara&~ho&~xe ?)
+=>
+        (assert (manual_word_info (head_id ?id1) (word ?mng ?mng1)(group_ids ?id0 ?id1)))
+        (assert (mng_has_been_grouped ?id0))
+        (assert (mng_has_been_grouped ?id1))
+)
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;For the case of [rectilinear motion] with uniform acceleration, a set of simple equations can be obtained.
+;ekasamAna wvariwa [sarala reKIya] [gawi] ke lie kuCa sarala samIkaraNa prApwa kie jA sakawe hEM.
+(defrule add_mng_with_dic
+(declare (salience 690))
+(database_info (components $?mng ?mng1 $?))
+?f<-(manual_word_info (head_id ?id) (word $?mng) (group_ids $?ids ?lid))
+(manual_id-word ?id1&:(=(+ ?lid 1) ?id1) ?mng1)
+(not (mng_has_been_grouped ?id1))
+(not (chunk_name-chunk_ids VGF $? ?id1 $?))
+;(man_word-root-cat ?mng1 ?r&~kara&~ho&~xe ?)
+=>
+        (modify ?f (head_id ?id1)(word $?mng ?mng1)(group_ids $?ids ?lid ?id1))
+	(assert (mng_has_been_grouped ?id1))
+)
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;The [microscopic [domain]] includes atomic, molecular and nuclear phenomena.
+;jabaki [sUkRma [praBAva kRewra]] ke anwargawa paramANvIya, ANvika waWA nABikIya pariGatanAez AwI hEM.
+(defrule add_mng_with_dic1
+(declare (salience 680))
+(database_info (components ?mng1 $?mng $?))
+?f<-(manual_word_info (head_id ?id) (word $?mng) (group_ids ?fid $?ids))
+(manual_id-word ?id1&:(=(- ?fid 1) ?id1) ?mng1)
+(not (mng_has_been_grouped ?id1))
+(not (chunk_name-chunk_ids VGF $? ?id1 $?))
+(not (chunk_name-chunk_ids VGF $? ?id $?))
+;(man_word-root-cat ?mng1 ?r&~kara&~ho&~xe ?)
+=>
+        (modify ?f (head_id ?id1)(word ?mng1 $?mng)(group_ids ?id1 ?fid $?ids))
+        (assert (mng_has_been_grouped ?id1))
+)
+
 ;====================================== noun multi-word grouping =======================================
+(defrule get_default_group
+(declare (salience 600))
+?f1<-(manual_id-word ?mid ?man_wrd&~kA&~kI&~se&~ke&~.)
+(test (neq (sub-string 1 6 (implode$ (create$ ?man_wrd))) "@PUNCT"))
+(not (manual_word_info (group_ids $? ?mid $?)))
+(not (mng_has_been_grouped ?mid))
+=>
+
+        (assert (manual_word_info (head_id ?mid) (word ?man_wrd)(group_ids ?mid)))
+)
+;----------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
 ; ke_cAroM_ora
 ;The electrons would be moving in orbits about the nucleus just as the planets do around the sun.
 ;ilektroYna, [nABika ke cAroM ora] kakRA meM cakkara lagAwe hEM, TIka Ese hI jEse [sUrya ke cAroM ora] graha cakkara lagAwe hEM.
 (defrule multi_word00
-(declare (salience 800))
-?f0<-(manual_id-word ?id0 ?w)
+(declare (salience 650))
+?f<-(manual_word_info (word $?noun) (group_ids $?ids ?id0))
 (manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?w1&kA|ke)
 (manual_id-word ?id2&:(=(+ ?id1 1) ?id2) ?w2&cAroM)
 (manual_id-word ?id3&:(=(+ ?id2 1) ?id3) ?w3&ora)
@@ -57,7 +140,7 @@
 (not (mng_has_been_grouped ?id2))
 (not (mng_has_been_grouped ?id3))
 =>
-        (assert (manual_word_info (head_id ?id0) (word ?w)(vibakthi ?w1 ?w2 ?w3)(group_ids ?id0 ?id1 ?id2 ?id3)))
+	(modify ?f (vibakthi ?w1 ?w2 ?w3)(group_ids $?ids ?id0 ?id1 ?id2 ?id3))
         (assert (mng_has_been_grouped ?id1))
         (assert (mng_has_been_grouped ?id2))
         (assert (mng_has_been_grouped ?id3))
@@ -69,7 +152,7 @@
 ;Man tran :: muKya rUpa se prakASa evaM xqRti kI saMvexanA ke kAraNa hI hama [apane cAroM ora] ke saMsAra ko samaJawe evaM usakI vyAKyA karawe hEM.
 ;Anu tran :: yaha halake meM se waWA xUraxarSiwA kI saMvexanA meM se pramuKa rUpa se hE ki hama hamAre cAroM ora yuga vyAKyA kara waWA jAnawI hE.
 (defrule multi_word0
-(declare (salience 800))
+(declare (salience 650))
 ?f0<-(manual_id-word ?id0 ?w&apane|unake)
 ?f1<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?w1&cAroM)
 ?f2<-(manual_id-word ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora)
@@ -83,16 +166,16 @@
 ;---------------------------------------------------------------------------------------------------------------
 ;kI_wulanA_meM
 (defrule kI_[word]_meM
-(declare (salience 800))
-?f1<-(manual_id-word ?id0 ?noun)
-?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) kI)
-?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&wulanA)
-?f4<-(manual_id-word ?id3&:(=(+ ?id0 3) ?id3) meM)
+(declare (salience 650))
+?f<-(manual_word_info (word $?noun) (group_ids $?ids ?id0))
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) kI)
+(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&wulanA)
+(manual_id-word ?id3&:(=(+ ?id0 3) ?id3) meM)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 (not (mng_has_been_grouped ?id33))
 =>
-        (assert (manual_word_info (head_id ?id0) (word ?noun)(vibakthi kI ?w meM)(group_ids ?id0 ?id1 ?id2 ?id3)))
+	(modify ?f (vibakthi kI ?w meM)(group_ids $?ids ?id0 ?id1 ?id2 ?id3))
         (assert (mng_has_been_grouped ?id1))
         (assert (mng_has_been_grouped ?id2))
         (assert (mng_has_been_grouped ?id3))
@@ -103,14 +186,14 @@
 ;The resolution of such an electron microscope is limited finally by the fact that electrons can also behave as waves. ---> isa prakAra ke ilektroYna - sUkRmaxarSI kA viBexana BI anwawaH isI waWya xvArA sImiwa howA hE ki ilektroYna BI warafgoM kI waraha vyavahAra kara sakawe hEM.
 ;Since the electromagnetic force is so much stronger than the gravitational force, it dominates all phenomena at atomic and molecular scales. -- cUfki vixyuwa cumbakIya bala guruwvAkarRaNa bala kI apekRA kahIM aXika prabala howA hE yaha ANvika waWA paramANvIya pEmAne kI saBI pariGatanAoM para CAyA rahawA hE
 (defrule kI_[word]
-(declare (salience 800))
-?f0<-(manual_id-word ?id0 ?w)
-?f1<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?w1&kI)
-?f2<-(manual_id-word ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora|waraha|apekRA)
+(declare (salience 650))
+?f<-(manual_word_info (word $?noun) (group_ids $?ids ?id0))
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?w1&kI)
+(manual_id-word ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora|waraha|apekRA)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>
-        (assert (manual_word_info (head_id ?id0) (word ?w)(root ?w)(vibakthi ?w1 ?w2)(group_ids ?id0 ?id1 ?id2)))
+	(modify ?f (vibakthi ?w1 ?w2)(group_ids $?ids ?id0 ?id1 ?id2))
         (assert (mng_has_been_grouped ?id1))
         (assert (mng_has_been_grouped ?id2))
 )
@@ -120,16 +203,16 @@
 ;BOwikI ke anwargawa hama viviXa BOwika pariGatanAoM kI vyAKyA kuCa safkalpanAoM evaM niyamoM [ke paxoM meM] karane kA prayAsa karawe hEM --- In Physics, we attempt to explain diverse physical phenomena in terms of a few concepts and laws. 
 ;;xqSya prakASa ke sWAna para hama, ilektroYna - puFja kA upayoga kara sakawe hEM.---Instead of visible light, we can use an electron beam.
 (defrule ke_[word]_meM
-(declare (salience 800))
-?f1<-(manual_id-word ?id0 ?noun)
-?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ke)
-?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&rUpa|bAre|viRaya|AXAra|wOra|paxoM|sWAna|maXya|bIca|pakRa|samparka)
-?f4<-(manual_id-word ?id3&:(=(+ ?id0 3) ?id3) meM|para)
+(declare (salience 650))
+?f<-(manual_word_info (word $?noun) (group_ids $?ids ?id0))
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ke)
+(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&rUpa|bAre|viRaya|AXAra|wOra|paxoM|sWAna|maXya|bIca|pakRa|samparka)
+(manual_id-word ?id3&:(=(+ ?id0 3) ?id3) meM|para)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 (not (mng_has_been_grouped ?id3))
 =>
-        (assert (manual_word_info (head_id ?id0) (word ?noun)(vibakthi ke ?w meM)(group_ids ?id0 ?id1 ?id2 ?id3)))
+	(modify ?f (vibakthi ke ?w meM)(group_ids $?ids ?id0 ?id1 ?id2 ?id3))
         (assert (mng_has_been_grouped ?id1))
         (assert (mng_has_been_grouped ?id2))
         (assert (mng_has_been_grouped ?id3))
@@ -143,14 +226,14 @@
 ;The restoring muscular forces again come into play and bring the body to rest.----- >prawyAnayanI peSIya baloM ke kAryarawa hone [ke kAraNa] SarIra virAma avasWA meM A jAwI hE
 ;EsI gEsoM meM paramANuoM [ke maXya] anwarAla aXika howA hE.
 (defrule ke_[word]
-(declare (salience 800))
-?f1<-(manual_id-word ?id0 ?noun)
-?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ke)
-?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|pare|BIwara|Age|pICe|paScAwa|paScAw|nikata|sApekRa|maXya|anxara|bAhara|binA|jEsA|pAsa|viruxXa|xOrAna|sahiwa)
+(declare (salience 650))
+?f<-(manual_word_info  (word $?noun) (group_ids $?ids ?id0))
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ke)
+(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|pare|BIwara|Age|pICe|paScAwa|paScAw|nikata|sApekRa|maXya|anxara|bAhara|binA|jEsA|pAsa|viruxXa|xOrAna|sahiwa|anuxiSa)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>
-        (assert (manual_word_info (head_id ?id0) (word ?noun)(vibakthi ke ?w)(group_ids ?id0 ?id1 ?id2)))
+	(modify ?f (vibakthi ke ?w) (group_ids $?ids ?id0 ?id1 ?id2))
         (assert (mng_has_been_grouped ?id1))
         (assert (mng_has_been_grouped ?id2))
 )
@@ -160,14 +243,14 @@
 ;सन् 1948 में ट्राञ्जिस्टर की खोज [से पहले] ऐसी युक्तियाँ अधिकांशतः निर्वात नलिकाएँ ( या वाल्व ) थीं , जैसे निर्वात डायोड जिसमें दो इलेक्ट्रोड ; एनोड ( प्लेट ) तथा कैथोड थोड , प्लेट तथा ग्रिड होते हैं ; टेट्रोड तथा पेंटोड ( क्रमशः 4 तथा 5 इलेक्ट्रोडों के साथ ) .
 
 (defrule se_[word]
-(declare (salience 800))
-?f1<-(manual_id-word ?id0 ?noun)
-?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) se)
-?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&pahale|Age|pICe)
+(declare (salience 650))
+?f<-(manual_word_info (word $?noun) (group_ids $?ids ?id0))
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) se)
+(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&pahale|Age|pICe)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>
-        (assert (manual_word_info (head_id ?id0) (word ?noun)(vibakthi se ?w)(group_ids ?id0 ?id1 ?id2)))
+	(modify ?f (vibakthi se ?w) (group_ids $?ids ?id0 ?id1 ?id2))
         (assert (mng_has_been_grouped ?id1))
         (assert (mng_has_been_grouped ?id2))
 )
@@ -175,25 +258,37 @@
 ;What is the origin of the external force on the body?
 ;[piMda para lage] bAhya bala kA uxgama kyA hE ?
 (defrule para_lage
-(declare (salience 800))
-?f1<-(manual_id-word ?id0 ?noun)
-?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) para)
-?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&lage)
+(declare (salience 650))
+?f<-(manual_word_info (word $?noun) (group_ids $?ids ?id0))
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) para)
+(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&lage)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>
-        (assert (manual_word_info (head_id ?id0) (word ?noun)(vibakthi para ?w)(group_ids ?id0 ?id1 ?id2)))
+	(modify ?f (vibakthi para ?w) (group_ids $?ids ?id0 ?id1 ?id2))
         (assert (mng_has_been_grouped ?id1))
         (assert (mng_has_been_grouped ?id2))
 )
 ;---------------------------------------------------------------------------------------------------------------
+;The units of all other physical quantities can be expressed as combinations of the base units.
+;inake awirikwa anya saBI BOwika rASiyoM ke mAwrakoM ko mUla mAwrakoM ke saMyojana xvArA vyakwa kiyA jA sakawA hE.
+(defrule pronoun_group
+(declare (salience 650))
+?f<-(manual_word_info (head_id ?id0) (word ?noun&isake|usake|inake) (group_ids $?ids))
+?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) awirikwa)
+(not (mng_has_been_grouped ?id1))
+=>
+	(modify ?f (word ?noun awirikwa) (group_ids $?ids ?id1))
+        (assert (mng_has_been_grouped ?id1))
+)
+;---------------------------------------------------------------------------------------------------------------
 (defrule pronoun_vib
-(declare (salience 800))
+(declare (salience 650))
 ?f1<-(manual_id-word ?id0 ?noun&kisI)
 ?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ne)
 (not (mng_has_been_grouped ?id1))
 =>
-	(bind ?new_mng (remove_character " " (implode$ (create$ ?noun ne)) ""))
+        (bind ?new_mng (remove_character " " (implode$ (create$ ?noun ne)) ""))
         (assert (manual_word_info (head_id ?id0) (word ?new_mng)(group_ids ?id0 ?id1)))
         (assert (mng_has_been_grouped ?id1))
 )
@@ -201,7 +296,7 @@
 ;Dispersion takes place because the refractive index of medium for different wavelengths (colors) is different.
 ;parikRepaNa kA kAraNa yaha hE ki kisI mAXyama kA apavarwanAfka viBinna warafgaxErGyoM  @PUNCT-OpenParenvarNoM @PUNCT-ClosedParen ke lie Binna - Binna howA hE
 (defrule word_[hyphen]_word
-(declare (salience 800))
+(declare (salience 650))
 ?f1<-(manual_id-word ?id0 ?noun)
 ?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) -)
 ?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w)
@@ -222,7 +317,7 @@
 ;Eng sen :Acceleration, therefore, may result from a change in [speed (magnitude)], a change in direction or changes in both.
 ;Man sen : awaH yA wo [cAla]  @PUNCT-OpenParen parimANa @PUNCT-ClosedParen [meM] parivarwana @PUNCT-Comma  xiSA meM parivarwana aWavA ina xonoM meM parivarwana se wvaraNa kA uxBava ho sakawA hE  @PUNCT-Dot
 (defrule single_vib_Paren
-(declare (salience 801))
+(declare (salience 601))
 ?f1<-(manual_id-word ?id0 $?noun)
 (manual_id-word ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen)
 (manual_id-word ?id2 @PUNCT-ClosedParen)
@@ -237,109 +332,23 @@
         (assert (mng_has_been_grouped ?id3))
 )
 ;----------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju 
-(defrule get_multi_dbase_facts
-(declare (salience 750))
-(database_info (meaning ?mng)(database_type multi)(group_ids $? ?id))
-(id-cat_coarse ?id ?cat&~verb)
-(not (got_multi_word ?mng))
-=>
-        (assert (got_multi_word ?mng))
-;        (bind ?new_mng (remove_character "-" (implode$ (create$ ?mng)) " "))
-        (bind ?new_mng (remove_character "_" (implode$ (create$ ?mng)) " "))
-        (assert (multi_word ?new_mng))
-)
-;----------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju
-;Languages and methods used in communication have kept evolving from prehistoric to [modern times], to meet the growing demands in terms of speed and complexity of information.
-;mAnava prAgEwihAsika kAla se [AXunika kAla] waka, saFcAra meM upayoga hone vAlI nayI - nayI BARAoM evaM viXiyoM kI Koja karane ke lie prayawnaSIla rahA hE, wAki saFcAra kI gawi evaM jatilawAoM ke paxoM meM baDawI AvaSyakawAoM kI pUrwi ho sake.
-(defrule multi_word_from_multi_dic
-(declare (salience 700))
-(multi_word ?mng ?mng1 $?)
-?f0<-(manual_id-word ?id0 ?mng)
-?f1<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?mng1)
-(not (mng_has_been_grouped ?id1))
-=>
-        (assert (manual_word_info (head_id ?id1) (word ?mng ?mng1)(group_ids ?id0 ?id1)))
-        (assert (mng_has_been_grouped ?id0))
-        (assert (mng_has_been_grouped ?id1))
-)
-;----------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju
-;For the case of [rectilinear motion] with uniform acceleration, a set of simple equations can be obtained.
-;ekasamAna wvariwa [sarala reKIya] [gawi ke lie] kuCa sarala samIkaraNa prApwa kie jA sakawe hEM.
-(defrule add_mng_with_multi_word
-(declare (salience 690))
-(multi_word $?mng ?mng1 $?)
-?f<-(manual_word_info (head_id ?id) (word $?mng) (group_ids $?ids))
-?f1<-(manual_word_info (head_id ?id1) (word ?mng1) (vibakthi ?v $?vb)(group_ids $?ids1))
-=>
-	(retract ?f1)
-	(if (eq ?v 0) then
-		(modify ?f (head_id ?id1)(word $?mng ?mng1)(group_ids $?ids $?ids1))
-	else
-		(modify ?f (head_id ?id1)(word $?mng ?mng1)(vibakthi ?v $?vb)(group_ids $?ids $?ids1))
-	)
-) 
-;----------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju 8-9-14
-;[Similarly], we can argue that it lies on the median MQ and NR.
-;[isI prakAra] hama warka kara sakawe hEM ki yaha mAXyikA MQ Ora NR para BI avasWiwa hogA.
-(defrule multi_word_2_from_dic
-(declare (salience 650))
-(database_info (components ?mng ?mng1)(database_type single)(group_ids ?id))
-(id-cat_coarse ?id ?cat&~verb)
-?f0<-(manual_id-word ?id0 ?mng)
-?f1<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?mng1)
-(not (mng_has_been_grouped ?id0))
-=>
-        (assert (manual_word_info (head_id ?id0) (word ?mng ?mng1)(group_ids ?id0 ?id1)))
-        (assert (mng_has_been_grouped ?id0))
-        (assert (mng_has_been_grouped ?id1))
-)
-;----------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju 4-11-14
-;However, atoms on a whole are [electrically] neutral.
-;waWApi, paramANu svayaM meM [vExyuwa rUpa se] uxAsIna howe hEM.
-(defrule multi_word_3_from_dic
-(declare (salience 650))
-(database_info (components ?mng ?mng1 ?mng2)(database_type single)(group_ids ?id))
-(id-cat_coarse ?id ?cat&~verb)
-?f0<-(manual_id-word ?id0 ?mng)
-?f1<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?mng1)
-?f2<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?mng2)
-(not (mng_has_been_grouped ?id0))
-=>
-        (assert (manual_word_info (head_id ?id0) (word ?mng ?mng1 ?mng2)(group_ids ?id0 ?id1 ?id2)))
-        (assert (mng_has_been_grouped ?id0))
-        (assert (mng_has_been_grouped ?id1))
-        (assert (mng_has_been_grouped ?id2))
-)
-;----------------------------------------------------------------------------------------------------------------
 ;He made pioneering contributions in the field of optics.
-;unhoMne [prakASikI  ke] [kRewra meM] paWa praxarSaka yogaxAna xiyA .
+;unhoMne [prakASikI  ke] kRewra meM paWa praxarSaka yogaxAna xiyA .
+;In this example, the basis is the distance between the eyes.
+;isa uxAharaNa meM xonoM [AzKoM ke bIca] [kI] xUrI AXAraka hE.
 (defrule single_vib
-(declare (salience 600))
-?f1<-(manual_id-word ?id0 ?noun)
-?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle|waka)
+(declare (salience 649))
+?f1<-(manual_word_info (head_id ?id0) (word $?noun) (vibakthi ?v $?v1)(group_ids $?grp_ids ?lid))
+(manual_id-word ?id1&:(=(+ ?lid 1) ?id1) ?vib&kA|kI|ke|se)
 (not (chunk_name-chunk_ids VGF $? ?id1 $?)) ;The details are discussed in Section 12.2.anucCexa 12.2 meM isakI viswAra se vyAKyA [kI] gaI hE.
-(not (mng_has_been_grouped ?id0))
 (not (mng_has_been_grouped ?id1))
 =>
-        (assert (manual_word_info (head_id ?id0) (word ?noun )(group_ids ?id0 ?id1)(vibakthi ?vib)))
-        (assert (mng_has_been_grouped ?id0))
+	(if (eq ?v 0) then
+                (modify ?f1 (vibakthi ?vib)(group_ids $?grp_ids ?lid ?id1))
+        else
+                (modify ?f1 (vibakthi ?v $?v1 ?vib)(group_ids $?grp_ids ?lid ?id1))
+        )
         (assert (mng_has_been_grouped ?id1))
-)
-;----------------------------------------------------------------------------------------------------------------
-(defrule get_id3
-(declare (salience 600))
-?f1<-(manual_id-word ?mid ?man_wrd&~.)
-(test (neq (sub-string 1 6 (implode$ (create$ ?man_wrd))) "@PUNCT"))
-(not (manual_word_info (group_ids $? ?mid $?)))
-(not (mng_has_been_grouped ?mid))
-=>
-
-        (assert (manual_word_info (head_id ?mid) (word ?man_wrd)(group_ids ?mid)))
 )
 ;----------------------------------------------------------------------------------------------------------------
 ;Dispersion takes place because the refractive index of medium for different wavelengths (colors) is different.
@@ -347,18 +356,18 @@
 ;The average velocity can be positive or negative depending upon the sign of the displacement.
 ;Osawa vega [kA] qNAwmaka yA XanAwmaka honA visWApana ke cihna para nirBara karawA hE .
 (defrule single_vib1
-(declare (salience 550))
-?f1<-(manual_word_info (head_id ?mid0) (word $?noun)(vibakthi $?v)(group_ids $?grp_ids ?id0))
-?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&kA|ne|para|kI|ke|ko|se|meM|lie|jEse|xvArA|vAlI|vAlA|vAle|waka)(group_ids $?grp_ids1))
-(test (neq (integerp (member$ ?vib $?v)) TRUE))
+(declare (salience 650))
+?f1<-(manual_word_info (head_id ?mid0) (word $?noun)(vibakthi ?v $?v1)(group_ids $?grp_ids ?id0))
+?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&ne|para|ko|meM|lie|jEse|xvArA|vAlI|vAlA|vAle|waka)(group_ids $?grp_ids1))
+(test (and (neq (integerp (member$ ?vib $?v1)) TRUE) (neq ?v ?vib)))
 (not (chunk_name-chunk_ids VGF $? ?id1 $?))
 (not (vib_added ?id0))
 =>
         (retract ?f2)
-	(if (eq (implode$ $?v) "0") then
+	(if (eq ?v 0) then
         	(modify ?f1 (vibakthi ?vib)(group_ids $?grp_ids ?id0 $?grp_ids1))
 	else
-        	(modify ?f1 (vibakthi $?v ?vib)(group_ids $?grp_ids ?id0 $?grp_ids1))
+        	(modify ?f1 (vibakthi ?v $?v1 ?vib)(group_ids $?grp_ids ?id0 $?grp_ids1))
 	)
 )
 ;----------------------------------------------------------------------------------------------------------------
@@ -371,3 +380,4 @@
 =>
 	(modify ?f0 (word @SYMBOL-@SLASH))
 )
+

@@ -5,7 +5,6 @@
 ;	5. default_meaning_frm_oldwsd.gdbm  and
 ;	6. default-iit-bombay-shabdanjali-dic_smt.gdbm 
 
-;(deftemplate  database_info (slot meaning (default 0))(multislot components (default 0))(slot root (default 0))(slot database_name (default 0))( slot database_type (default 0))(multislot group_ids (default 0)))
 (deftemplate  database_info (slot root (default 0))(slot meaning (default 0))(multislot components (default 0))(slot database_name (default 0))( slot database_type (default 0))(multislot group_ids (default 0)))
 
 (deftemplate tam_database_info (multislot e_tam (default 0)) (slot database_name (default 0)) (multislot meaning (default 0))(multislot components (default 0)))
@@ -165,6 +164,12 @@
 	(bind ?wrd_mng (gdbm_lookup ?gdbm ?word))
 	(if (and (neq ?wrd_mng "FALSE") (neq (length ?wrd_mng) 0)) then (bind ?new_mng ?wrd_mng)
 		(print_dic_mng ?gdbm ?word ?root ?new_mng single ?id)
+	else  ; to get mng from physics dic
+		(bind ?w (str-cat ?word "_" ?cat))
+		(bind ?wrd_mng (gdbm_lookup ?gdbm ?w))
+		(if (and (neq ?wrd_mng "FALSE") (neq (length ?wrd_mng) 0)) then (bind ?new_mng ?wrd_mng)
+                	(print_dic_mng ?gdbm ?word ?root ?new_mng single ?id)
+		)
 	)
 	(bind ?rt_mng (gdbm_lookup ?gdbm ?root))
       	(if (and (neq ?rt_mng "FALSE") (neq (length ?rt_mng) 0)) then (bind ?new_mng ?rt_mng)

@@ -25,6 +25,18 @@
                 (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
 )
 ;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;saxiSoM ==> saxiSa 
+(defrule modify_morph_root
+(declare (salience 1002))
+?f<-(man_word-root-cat  ?word  ?word  dummy_cat)
+(test (eq (sub-string (- (length ?word) 1) (length ?word) ?word) "oM")) 
+=>
+	(retract ?f)
+	(bind ?root (string-to-field (str-cat (sub-string 1 (- (length ?word) 2) ?word) "a")))
+	(assert (man_word-root-cat ?word ?root modified_cat))
+)
+;-------------------------------------------------------------------------------------
 ;Counts the number of verbs of anusaaraka sentence
 (defrule verb_count_of_anu
 (declare (salience 1001))
@@ -59,46 +71,13 @@
         (bind ?*count* 0)
         (assert (count_fact 0))
 )
-;--------------------------------- Exact match with anu without vib ------------------------------------------------
-;Modern communication has its roots in the [19] th and [20] th century in the work of scientists like J.C. Bose, F.B. Morse, G. Marconi and Alexander Graham Bell. 
-;AXunika saFcAra kI jadeM [19] vIM waWA [20] vIM SawAbxiyoM meM sara jagaxISa canxra bosa, ePa.bI. morsa, jI mArkonI waWA alekjeNdara grAhma bela ke kArya xvArA dAlI gaIM.
-;Note :NO PATH
-(defrule anu_exact_match_for_nos
-(declare (salience 902))
-(current_id ?mid)
-(manual_word_info (head_id ?mid) (word ?mng)(group_ids $?grp_ids))
-(test (numberp ?mng))
-(id-Apertium_output ?aid ?mng1)
-(test (neq (str-index "@" ?mng1) FALSE))
-(test (eq (string-to-field (sub-string 2 (length ?mng1) ?mng1)) ?mng))
-(id-root ?aid ?root)
-=>
-	(assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
-	(assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu anu_exact_match_without_vib))
-)
 
-;Ex: In contrast, light emitted from rarefied gases heated in a flame, or excited electrically in a glow tube such as the familiar [neon sign] or mercury vapor light has only certain discrete wavelengths.
-;Anu : ke viparIwa, jvAlA meM garama kiyA, yA pariciwa [nioYna-sAina] yA pAraxa-vARpa prakASa jEse ki eka wApaxIpwa nalikA meM vixyuwa se uwwejiwa kiyA sImiwa samuxAya se sambanXiwa gEsoM se uwsarjiwa prakASa meM ekamAwra kuCa vivikwa warafgaxErGya hEM.
-;Man : isake viparIwa jvAlA meM garma kI gaI viraliwa gEsoM xvArA uwsarjiwa prakASa aWavA kisI wApaxIpwa nalikA meM vixyuwa uwwejiwa gEsa, jEse [nioYna sAina] aWavA pAraxa-vARpa prakASa meM kevala niSciwa vivikwa warafgaxErGya howI hEM.
-(defrule anu_exact_match_without_vib_for_hyphen_word
-(declare (salience 902))
-(current_id ?mid)
-(manual_word_info (head_id ?mid) (word ?m ?m1)(vibakthi 0))
-(id-Apertium_output ?aid ?a)
-(test (neq (str-index "-" ?a) FALSE))
-(test (eq (string-to-field (sub-string 1 (- (str-index "-" ?a) 1) ?a)) ?m))
-(test (eq (string-to-field (sub-string (+ (str-index "-" ?a) 1) (length ?a) ?a)) ?m1))
-(pada_info (group_head_id ?aid)(preposition  0))
-(id-root ?aid ?root)
-=>
-        (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
-        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu anu_exact_match_without_vib))
-)
+;============================== Exact match with anu =============================================
 
 ;Eng_sen : This property of the body is called [inertia].
 ;Anu     : piMda kA yaha guNa [jadawva] kahA jAwA hE.
 ;Man     : vaswu ke isa guNa ko [jadawva] kahawe hEM.
-(defrule anu_exact_match_without_vib 
+(defrule anu_exact_match_without_vib
 (declare (salience 902))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?mng)(vibakthi 0))
@@ -106,24 +85,26 @@
 (pada_info (group_head_id ?aid)(preposition  0))
 (id-root ?aid ?root)
 =>
-	(assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
-	(assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu anu_exact_match_without_vib))
+        (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
+        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu anu_exact_match_without_vib))
 )
-;----------------------------------Exact match with anu with vib ---------------------------------------------------
+
 ;Eng  : This question was, [in fact], the starting point that led us to the notion of the electrostatic potential (Sections 2.1 and 2.2).
 ;Anu  : yaha praSna SurU_karane_kA sWAna [vAswava meM], WA, jisane ilektrovstEtika anwarnihiwa Sakwi kI (sekSanja 2.1 Ora 2.2) XAraNA ke lie hameM mArga xiKAyA.
 ;Man  : [vAswava meM], yaha praSna AraMBa biMxu WA jo hameM sWiravExyuwa viBava kI XAraNA kI ora le gayA WA (xeKie anuBAga 2.1 waWA 2.2 ).
-(defrule anu_exact_match_with_vib 
+(defrule anu_exact_match_with_vib
 (declare (salience 901))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib))
 (id-Apertium_output ?aid $?mng $?vib)
 (id-root ?aid ?root)
 =>
-	(assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
-	(assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu anu_exact_match_with_vib))
+        (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
+        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu anu_exact_match_with_vib))
 )
+
 ;-------------------------------- Exact match with anu [anu_vib absent ; man_vib pres]-------------------------------
+
 ;Eng_sen : This [property] of the body is called inertia.
 ;Anu	 : piMda kA yaha [guNa] jadawva kahA jAwA hE.
 ;Man     : vaswu ke isa [guNa ko] jadawva kahawe hEM.
@@ -135,10 +116,11 @@
 (test (and (neq $?vib -) (neq (length $?vib) 0)))
 (id-root ?aid ?root)
 =>
-	(assert (anu_id-man_id-type ?aid ?mid  anu_word_match_without_vib))
-	(assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu anu_exact_match_with_vib))
+	(assert (anu_id-man_id-type ?aid ?mid  anu_exact_match_without_vib))
+	(assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu exact_match_with_anu_output1))
 )
-;-------------------------------------------------------------------------------------
+;------------------------------ Exact match with anu [anu_vib present ; man_vib absent] ------------------------------------
+
 ;Subsequently, the subjects of [kinetic theory] and [statistical mechanics] interpreted these quantities in terms of the properties of the molecular constituents of the bulk system.
 ;wawpaScAw [aNugawi sixXAnwa] waWA [sAfKyikIya yAnwrikI] viRayoM ke anwargawa inhIM rASiyoM kI vyAKyA vqhaxAkAra nikAyoM ke ANvika avayavoM ke guNoM ke paxoM meM kI gaI.
 ;(database_info (components aNugawi sixXAnwa) (database_name eng_phy_multi_word_dic.gdbm) (database_type multi) (group_ids 5 6))
@@ -147,14 +129,15 @@
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?mng)(vibakthi 0)(group_ids $?grp_ids))
 (id-Apertium_output ?aid $?mng ?)
-(database_info (components $?mng))
 (id-root ?aid ?root)
 =>
-        (assert (anu_id-man_id-type ?aid ?mid  anu_word_match_without_vib))
-        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu anu_exact_match_with_vib))
+        (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match_without_vib))
+        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu exact_match_with_anu_output2))
 )
-;-------------------------------------------------------------------------------------
-(defrule word_and_vib_match_using_dic
+
+;--------------------------------------- dictionary match ----------------------------------------------
+
+(defrule man_word_and_vib_match_using_dic
 (declare (salience 870))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib))
@@ -164,46 +147,60 @@
 (id-root ?vib_id ?v_root)
 (pada_info (group_head_id  ?id)(preposition ?vib_id))
 =>
-	(assert (anu_id-man_id-type ?id ?mid  dic_word_match))
-	(assert (anu_id-man_id-root-src-rule_name ?id ?mid ?root dictionary word_and_vib_match_using_dic))
+	(assert (anu_id-man_id-type ?id ?mid  dictionary_match))
+	(assert (anu_id-man_id-root-src-rule_name ?id ?mid ?root dictionary man_word_and_vib_match_using_dic))
 )
 ;-------------------------------------------------------------------------------------
-(defrule root_and_vib_match_using_dic
+(defrule man_root_and_vib_match_using_dic
 (declare (salience 830))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib))
-(man_word-root-cat $?mng $?root ?)
-(database_info (components $?root)(root ?e_noun))
+(manual_word_info (head_id ?mid) (word ?mng)(vibakthi $?vib))
+(man_word-root-cat ?mng ?root ?)
+(database_info (components ?root)(root ?e_noun))
 (database_info (components $?vib)(root ?e_vib))
 (id-root ?e_noun_id ?e_noun)
 (id-root ?e_vib_id ?e_vib)
 (pada_info (group_head_id  ?e_noun_id)(preposition ?e_vib_id))
 =>
-        (assert (anu_id-man_id-type ?e_noun_id ?mid  dic_root_match))
-        (assert (anu_id-man_id-root-src-rule_name ?e_noun_id ?mid ?e_noun dictionary root_and_vib_match_using_dic))
+        (assert (anu_id-man_id-type ?e_noun_id ?mid  dictionary_match))
+        (assert (anu_id-man_id-root-src-rule_name ?e_noun_id ?mid ?e_noun dictionary man_root_and_vib_match_using_dic))
 )
 ;---------------------------------------------------------------------------
-(defrule word_match_using_dic
+(defrule man_word_match_using_dic
 (declare (salience 840))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib)(group_ids $?grp_ids))
 (database_info (components $?mng)(root ?e_noun))
 (id-root ?eid ?e_noun)
 =>
-        (assert (anu_id-man_id-type ?eid ?mid  dic_word_match_without_vib))
-        (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_noun dictionary word_match_using_dic))
+        (assert (anu_id-man_id-type ?eid ?mid  dictionary_match_without_vib))
+        (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_noun dictionary man_word_match_using_dic))
 )
 ;---------------------------------------------------------------------------
-(defrule root_match_using_dic
+(defrule man_root_match_using_dic
+(declare (salience 840))
+(current_id ?mid)
+(manual_word_info (head_id ?mid) (word ?mng)(vibakthi $?vib)(group_ids $?grp_ids))
+(man_word-root-cat ?mng ?root ?)
+(database_info (components ?root)(root ?e_noun))
+(id-root ?eid ?e_noun)
+=>
+	(assert (anu_id-man_id-type ?eid ?mid  dictionary_match_without_vib))
+        (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_noun dictionary man_root_match_using_dic))
+)
+;---------------------------------------------------------------------------
+;For the case of [rectilinear motion] with uniform acceleration, a set of simple equations can be obtained.
+;ekasamAna wvariwa [sarala reKIya gawi ke lie] kuCa sarala samIkaraNa prApwa kie jA sakawe hEM.
+(defrule man_word_match_using_multi_dic
 (declare (salience 840))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib)(group_ids $?grp_ids))
-(man_word-root-cat $?mng $?root ?)
-(database_info (components $?root)(root ?e_noun))
+(database_info (components $?mng)(database_type multi) (group_ids $? ?eid $?))
+(id-Apertium_output ?eid ? $?)
 (id-root ?eid ?e_noun)
 =>
-	(assert (anu_id-man_id-type ?eid ?mid  dic_root_match_without_vib))
-        (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_noun dictionary root_match_using_dic))
+        (assert (anu_id-man_id-type ?eid ?mid  dictionary_match_without_vib))
+        (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_noun dictionary man_word_match_using_multi_dic))
 )
 ;-------------------------------------------------------------------------------------
 (defrule partial_word_match_with_anu
@@ -213,7 +210,7 @@
 (id-Apertium_output ?aid $? $?mng $?)
 (id-root ?aid ?root)
 =>
-        (assert (anu_id-man_id-type ?aid ?mid  anu_partial_word_match))
+        (assert (anu_id-man_id-type ?aid ?mid  anu_partial_match))
         (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu_partial partial_word_match_with_anu))
 )
 ;=================================   verb rules =================================================
@@ -227,7 +224,7 @@
 (e_tam-id-dbase_name-mng ?e_tam ? ? $?tam)
 (id-root ?aid ?root)
 =>
-        (assert (anu_id-man_id-type ?aid ?mid  dic_root_match))
+        (assert (anu_id-man_id-type ?aid ?mid  dictionary_match))
         (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root dictionary verb_root_and_tam_match_using_dic))
 )
 ;-------------------------------------------------------------------------------------
@@ -241,7 +238,7 @@
 (database_info (components $?root)(root ?e_verb))
 (or (id-root ?eid ?e_verb)(id-original_word ?eid ?e_verb))
 =>
-	(assert (anu_id-man_id-type ?eid ?mid  dic_root_match_without_vib))
+	(assert (anu_id-man_id-type ?eid ?mid  dictionary_match_without_vib))
         (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_verb dictionary verb_root_match_using_dic))
 )
 ;---------------------------------------------------------------------------
@@ -342,17 +339,36 @@
         (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_root transliterate_match check_match_with_transliterate_mng))
 )
 ;============================= phrasal alignment =======================================================
+;Added by Shirisha Manju
+;It can be noted that each term represents a periodic function with a different angular frequency.
+;XyAna xIjie, yahAz prawyeka paxa eka viBinna koNIya Avqwwi ke AvarwI Palana ko [nirUpiwa karawA hE].
+;phrasal -- nirUpiwa
+(defrule partial_align_with_l
+(declare (salience 840))
+(current_id ?mid)
+(manual_word_info (head_id ?mid) (root $?man_mng ?k&kara|ho) )
+(anu_id-anu_mng-man_mng ?aid  ?  $?man_mng)
+(id-root ?aid ?root)
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  L_layer_pharasal_match))
+        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  L_layer_pharasal_match align_using_phrasal_data_L))
+	(assert (got_align ?mid))
+)
+;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 (defrule align_using_phrasal_data_L
 (declare (salience 830))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?man_mng))
 (anu_id-anu_mng-man_mng ?aid  ?  $?man_mng)
 (id-root ?aid ?root)
+(not (got_align ?mid))
 =>
 	(assert (anu_id-man_id-type ?aid ?mid  L_layer_pharasal_match))
         (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  L_layer_pharasal_match align_using_phrasal_data_L))
 )
 ;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 (defrule align_using_phrasal_data_M
 (declare (salience 830))
 (current_id ?mid)
@@ -394,6 +410,7 @@
         (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  scope get_scope_fact))
 )
 ;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 (defrule create_file
 (declare (salience -7))
 (current_id ?mid)
@@ -419,6 +436,7 @@
 
 )
 ;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 (defrule create_file1
 (declare (salience -8))
 (current_id ?mid)
@@ -445,6 +463,7 @@
         )
 )
 ;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 (defrule rm_current_id
 (declare (salience -9))
 (current_id ?mid)
