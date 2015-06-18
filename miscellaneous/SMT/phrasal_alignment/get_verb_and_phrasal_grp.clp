@@ -20,21 +20,49 @@
                         )
                 (bind ?new_str (explode$ (str-cat ?new_str (sub-string 1 (length ?str) ?str))))
 )
-
+;------------------------------ modifying anu output -----------------------------------------------------
+ (defrule del_@PropN_in_aper_out
+ (declare (salience 2001))
+ ?f0<-(id-Apertium_output ?id ?mng $?w)
+ (test (neq (str-index "@PropN" (implode$ (create$ ?mng))) FALSE))
+ =>
+        (retract ?f0)
+        (bind ?mng (implode$ (create$ ?mng)))
+        (bind ?mng (string-to-field (sub-string 9 (- (length ?mng) 6) ?mng))) ;Ex: \@PropN-newton-PropN
+        (bind ?mng (string-to-field (str-cat "@" (upcase (sub-string 1 1 ?mng)) (sub-string 2 (length ?mng) ?mng)))) ;Ex:Newton
+        (assert (id-Apertium_output ?id ?mng $?w))
+ )
+ ;-----------------------------------------------------------------------------------------------------------
+ ;What can you conclude from these observations?
+ ;Apa ina prekRaNa se kyA [niRkarRa_nikAla] sakawe hEM?
+ (defrule rm_underscore_in_aper_op
+ (declare (salience 2000))
+ ?f<-(id-Apertium_output ?a_id $?a_grp)
+ (not (id_aper_op_modified ?a_id))
+ =>
+        (retract ?f)
+        (bind ?a_op "")
+        (bind ?a_op (remove_character "\\@" (implode$ (create$  $?a_grp)) " "))
+        (bind ?a_op (remove_character "\@" (implode$ (create$  ?a_op)) " "))
+        (bind ?a_op (remove_character "-" (implode$ (create$  ?a_op)) " "))
+        (bind ?a_op (remove_character "_" (implode$ (create$  ?a_op)) " "))
+        (assert (id-Apertium_output ?a_id  ?a_op))
+        (assert (id_aper_op_modified ?a_id))
+ )
+ ;-------------------------------------------------------------------------------------------------
+ (defrule rm_underscore_in_hindi_mng
+ (declare (salience 2000))
+ ?f<-(id-HM-source   ?id   ?hmng&~-   ?src)
+ (not (id_hmng_modified ?id))
+ =>
+        (retract ?f)
+        (bind ?new_mng (remove_character "_" ?hmng " "))
+        (bind ?new_mng (remove_character "-" (implode$ (create$  ?new_mng)) " "))
+        (bind ?new_mng (remove_character "@" (implode$ (create$  ?new_mng)) ""))
+        (assert (id-HM-source ?id ?new_mng ?src))
+        (assert (id_hmng_modified ?id))
+ )
 ;================================================== verb rules =============================================
-;What can you conclude from these observations?
-;Apa ina prekRaNa se kyA [niRkarRa_nikAla] sakawe hEM?
-(defrule rm_underscore_in_anu_out
-(declare (salience 1001))
-?f0<-(id-Apertium_output ?id $?p ?m $?p1)
-(test (neq (str-index "_" ?m) FALSE))
-=>
-	(retract ?f0)
-	(bind ?new_mng (remove_character "_" (implode$ (create$ ?m)) " "))
-	(assert (id-Apertium_output ?id $?p $?new_mng $?p1))		
-)
-;----------------------------------------------------------------------------------------------------------
-
 ;If the box is stationary relative to the train, it is in fact accelerating along with the train.
 ;yaxi boYksa relagAdI ke ApekRa sWira hE @PUNCT-Comma wo vAswava meM vaha relagAdI ke sAWa wvariwa ho rahA hE.
 ;(chunk_name-chunk_ids VGF 7 8) -- where 8 is @PUNCT-Comma id
@@ -57,7 +85,6 @@
 (defrule get_verb_chunk
 (declare (salience 950))
 ?f<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF $?gids - $?pre ?mid $?pos)
-;(manual_word_info (head_id ?mid) (word $?man_wrd))
 ?f1<-(manual_id-word ?mid ?man_wrd)
 =>
        (retract ?f)
@@ -75,6 +102,14 @@
 	(retract ?f1)
 )
 ;----------------------------------------------------------------------------------------------------------
+(defrule rm_grouped_chunk_fact
+(declare (salience 900))
+?f0<-(chunk_name-chunk_ids-words ? ?id - ?m)
+(chunk_name-chunk_ids-words ? $? ?id $?  - ? ? $?mng)
+=>
+	(retract ?f0)
+)
+;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 5-9-14
 ;The Princess began to weep.                                   rAjakumArI ne ronA [SurU kara xiyA]. 
 ;And, turning to her guards, she ordered them to seize Dipu.   usane apane paharexAroM kI ora GUmakara xIpU ko pakadane kA [AxeSa xiyA]. 
@@ -88,12 +123,11 @@
 (man_word-root-cat ?w ?r&kara|ho|xe v)
 (manual_word_info (head_id ?mid1&:(= (- ?mid 1) ?mid1)) (word $?word))
 (database_info (components $?word $? ?r) (root ?root))
-;(database_info (components $?word $? ?kar&kara|ho|xe) (root ?root))
 =>
        (retract ?f0 )
        (assert (chunk_name-chunk_ids-words ?chnk  ?mid1 ?mid $?gids - $?word $?mng))
        (assert (id-kara_grouped ?mid1))
-;      (assert (id-decided_root ?mid1 $?word ?r))
+       (assert (id-man_root ?mid1 $?word ?r))	
 )
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 12-2-15
@@ -102,20 +136,34 @@
 ;gobI regiswAna ko pAra karane vAle kAPile BI cumbakIya suiyoM kA [upayoga karawe We].
 ;Today, most of the electrical devices we use [require] ac voltage.
 ;Ajakala jina vExyuwa yukwiyoM kA hama upayoga karawe hEM unameM se aXikAMSa ke lie @ac voltawA kI hI [AvaSyakawA howI hE].
+;Since the electromagnetic force is so much stronger than the gravitational force, it dominates all phenomena at atomic and molecular scales. 
+;cUfki vixyuwa cumbakIya bala guruwvAkarRaNa bala kI apekRA kahIM aXika prabala howA hE yaha ANvika waWA paramANvIya pEmAne kI saBI pariGatanAoM para [CAyA] [rahawA hE].
 (defrule check_prev_word_for_kara_or_ho_or_xe
 (declare (salience 849))
 ?f0<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF ?mid $?gids -  $?mng)
 (manual_word_info (head_id ?mid) (word ?w))
-(man_word-root-cat ?w ?r&kara|ho|xe v)
+(man_word-root-cat ?w ?r&kara|ho|xe|raha v)
 (manual_word_info (head_id ?mid1&:(= (- ?mid 1) ?mid1)) (word ?word))
 (man_word-root-cat ?word ?r0 ?)
-(id-HM-source ? ?a_mng ?)
-(test (eq ?a_mng (string-to-field (str-cat ?r0 "_" ?r))))
+(id-HM-source ? ?r0 ?r ?)
 =>
        	(retract ?f0 )
        	(assert (chunk_name-chunk_ids-words ?chnk  ?mid1 ?mid $?gids - ?word $?mng))
       	(assert (id-kara_grouped ?mid1))
- ;      (assert (id-decided_root ?mid1 ?r0 ?r))
+	(assert (id-man_root ?mid1 ?r0 ?r))
+)
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 02-06-15
+(defrule get_verb_chunk_with_root
+(declare (salience 801))
+?f<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF $?gids - ?man_wrd $?r_mng)
+?f1<-(manual_word_info (head_id ?mid)(word ?man_wrd))
+(test (member$ ?mid $?gids))
+(id-man_root ?mid $?root)
+(not (manual_word_info (group_ids $?gids)))
+=>
+        (bind $?new_mng (create$ ?man_wrd $?r_mng))
+	(modify ?f1 (word $?new_mng)(root $?root)(root_components $?root) (group_ids $?gids))
 )
 ;----------------------------------------------------------------------------------------------------------
 ;Ex for not:This is mainly because most of the electrical energy sold by power companies is transmitted and distributed as alternating current.
@@ -146,6 +194,8 @@
         (assert (replaced_tam_with_root_tam ?id0))
 )
 ;-------------------------------------------------------------------------------------------------------------------------------
+;It can be noted that each term represents a periodic function with a different angular frequency.
+;XyAna xIjie, yahAz prawyeka paxa eka viBinna koNIya Avqwwi ke AvarwI Palana ko [nirUpiwa] [karawA hE].
 (defrule verb_rule2
 (declare (salience 730))
 ?f1<-(manual_word_info (head_id ?id0) (word $?noun ?iwa_word)(group_ids $?grp_ids))
@@ -158,50 +208,6 @@
         (retract ?f2)
 	(modify ?f1 (word $?noun $?noun ?iwa_word ?tam ?tam1)(root ?iwa_word ?root)(vibakthi wA ?tam1)(group_ids $?grp_ids ?id1 ?id2))
         (assert (replaced_tam_with_root_tam ?id0))
-)
-;-------------------------------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju 5-9-14
-;The Princess began to weep. rAjakumArI ne ronA [SurU kara xiyA]. 
-;Not Ex: ;olIka amla aNu ke sAija kA [Akalana karane kI] eka sarala viXi nIce xI gaI hE.
-;        A simple method for estimating the molecular size of oleic acid is given below.
-(defrule get_kara_root
-(declare (salience 700))
-?f0<-(id-kara_grouped ?id)
-?f<-(manual_word_info (head_id ?id) (word $?m ?w)(group_ids $?grp_ids ?lid))
-?f1<-(man_word-root-cat    ?w&~howI&~hE ?root&kara|ho|xe    v) ; nirBara karawA [hE]
-(manual_id-word =(- ?lid 1) ?m1)
-(not (man_word-root-cat ?m1 kara v))
-=>
-       (retract ?f0 ?f1)
-       (modify ?f (root $?m ?root))
-)
-;----------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju 8-9-14
-;The average velocity can be positive or negative depending upon the sign of the displacement.
-;Osawa vega kA qNAwmaka yA XanAwmaka honA visWApana ke cihna para [nirBara karawA hE] .
-;Man has constantly made endeavors to improve the quality of communication with other human beings. 
-;mAnava niranwara hI yaha [prayawna karawA rahA hE] ki usakA mAnava jAwi se saFcAra guNawA meM unnawa ho. 
-;Today, most of the electrical devices we use [require] ac voltage.
-;Ajakala jina vExyuwa yukwiyoM kA hama upayoga karawe hEM unameM se aXikAMSa ke lie @ac voltawA kI hI [AvaSyakawA howI hE].
-(defrule get_kara_root1
-(declare (salience 650))
-?f0<-(id-kara_grouped ?id)
-?f<-(manual_word_info (head_id ?id) (word $?m ?w $?m1)(group_ids $?grp_ids))
-;?f1<-(man_word-root-cat    ?w&~howI ?root&kara|ho|xe    v)
-?f1<-(man_word-root-cat    ?w ?root&kara|ho|xe    v)
-(test (neq  (length $?m1) 0))
-=>
-        (retract ?f0 ?f1)
-       (if (eq ?root kara) then
-               (bind ?v (string-to-field (sub-string 5 (length ?w) ?w)))
-               (modify ?f (root $?m ?root)(vibakthi ?v $?m1))
-       else  (if (eq ?root ho) then
-               (bind ?v (string-to-field (sub-string 3 (length ?w) ?w)))
-               (modify ?f (root $?m ?root)(vibakthi ?v $?m1))
-       	     
-	     else (modify ?f (root $?m ?root)(vibakthi $?m1))
-	)
-       )
 )
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
@@ -218,25 +224,8 @@
 =>
         (retract ?f0 ?f1)
 	(modify ?f0 (head_id ?id1) (word ?m ?m1 $?mng)(root ?m ?r)(vibakthi 0 $?mng) (group_ids ?id1 $?ids))
-	;ert (manual_word_info (head_id ?id1) (word ?m kara $?mng)(root ?m kara) (group_ids ?id1 $?ids)))
 	(assert (chunk_info_to_be_modiifed ?id1 $?ids))
 	(assert	(replaced_tam_with_root_tam ?id1))
-)
-;----------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju
-;Since the electromagnetic force is so much stronger than the gravitational force, it dominates all phenomena at atomic and molecular scales. 
-;cUfki vixyuwa cumbakIya bala guruwvAkarRaNa bala kI apekRA kahIM aXika prabala howA hE yaha ANvika waWA paramANvIya pEmAne kI saBI pariGatanAoM para [CAyA] [rahawA hE].
-(defrule verb_group_using_anu_out
-(declare (salience 630))
-(id-Apertium_output ? ?m $?mng)
-?f0<-(manual_word_info (head_id ?id) (word ?m)(group_ids ?id))
-?f1<-(manual_word_info (head_id ?id1&:(= (+ ?id 1) ?id1)) (word $?mng) (group_ids $?ids1))
-;(or (id-Apertium_output ? ?m $?mng)(id-HM-source ? ?root&:(eq (string-to-field (str-cat ?m "_" ho)) ?root) ?))
-
-=>
-        (retract ?f0 ?f1)
-        (assert (manual_word_info (head_id ?id) (word ?m $?mng)(group_ids ?id $?ids1)))
-	(assert (chunk_info_to_be_modiifed ?id $?ids1))
 )
 ;----------------------------------------------------------------------------------------------------------
 ;As vib and tam both goes into same field...increasing tam rule and replace_tam_with_root-tam rule salience above than vib rules
@@ -390,4 +379,18 @@
 ;)
 
 
+;---------------------------- group using Anu output -------------------------------
+;The component of velocity normal to the force [remains] unchanged.
+;bala ke aBilambavaw vega kA Gataka aparivarwiwa [rahawA hE].
+;In order to specify position, we need to use a reference point and a set of axes.
+;sWiwi ke nirXAraNa ke lie eka [sanxarBa biMxu] waWA akRoM ke eka samuccaya kI AvaSyakawA howI hE.
+(defrule group_using_anu_out
+(declare (salience 12))
+?f0<-(manual_word_info (head_id ?id0) (word $?mng)(group_ids ?id $?ids))
+(id-Apertium_output ? ?m $?mng)
+?f1<-(manual_word_info (head_id ?id1&:(= (- ?id 1) ?id1)) (word ?m) (group_ids $?ids1))
+=>
+        (retract ?f0 ?f1)
+        (assert (manual_word_info (head_id ?id1) (word ?m $?mng)(group_ids $?ids1 ?id $?ids)))
+)
 
