@@ -78,8 +78,10 @@
  (relation_name-id-args_with_ids ?rel  ?kriyA  ARG0 ?  ?kriyA  ARG1 ? ?sub $?) 
  (not (relation_name-id-args_with_ids parg_d ?kriyA $?)) ;The fruits were eaten by me.
  (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
- (test (neq (find_sub-str_after_last_underscore ?rel) "modal"))
+ (test (neq (find_sub-str_after_last_underscore ?rel) "modal"));He [may] drink milk or eat apples.
  (test (neq (find_sub-str_after_last_underscore ?rel) "there"));[There] was a red mark on the door.
+ (relation_name-id-args_with_ids ?rel1 ?sub $?)
+ (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron) (eq ?rel1 generic_entity)(eq ?rel1 nominalization)));This is a sample sentence for Anusaraka.
  =>
  (printout       ?*fp*   "(kriyA-subject    "?kriyA"	"?sub")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     kriyA-subject    "?kriyA"	"?sub")"crlf)
@@ -93,6 +95,8 @@
  (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
  (test (neq (find_sub-str_after_last_underscore ?rel) "modal"))
  (id-word ?obj ~what) ;[What] is the purpose of Dharma?
+ (relation_name-id-args_with_ids ?rel1 ?obj $?)
+ (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)));I will give up smoking.
  =>
  (printout       ?*fp*   "(kriyA-object     "?kriyA"	"?obj")"crlf)
  (printout       ?*fp1*  "(prep_id-relation-anu_ids  -   kriyA-object	"?kriyA"	"?obj")"crlf)
@@ -100,14 +104,15 @@
  (assert (prep_id-relation-anu_ids  -  kriyA-object  ?kriyA ?obj))
  )
  ;------------------------------------------------------------------------------------------------------------------------
- ;Eg: Abrams handed the cigarette to Browne.
+ ;Eg: Abrams handed Browne the cigarette.
  ;e3:_hand_v_1<7:13>[ARG1 x6, ARG2 x9, ARG3 x10] ==> (relation_name-id-args_with_ids _hand_v_1  2 ARG0 e3  2  ARG1 x6 1  ARG2 x9 4  ARG3 x10 6 )
  (defrule kriyA_obj_rule1
- (relation_name-id-args_with_ids ?rel&~_be_v_id  ?kriyA  ARG0 ?  ?kriyA  ARG1 ? ?sub ARG2 ? ?obj1 ARG3 ? ?obj2 $?)
+ (relation_name-id-args_with_ids ?rel&~_be_v_id  ?kriyA  ARG0 ?  ?kriyA  ARG1 ? ?sub ARG2 ? ?obj1 ARG3 ? ?obj2 $?);Abrams handed the cigarette to Browne.
  (relation_name-id-args_with_ids ?rel1 ?obj1 $?) 
  (relation_name-id-args_with_ids ?rel2 ?obj2 $?) 
- (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)))
- (test (or (eq (find_sub-str_before_last_underscore ?rel2) "n") (eq ?rel2 proper_q) (eq ?rel2 pron)))
+ (id-word =(- ?obj2 1) ~to);Abrams handed the cigarette to Browne.
+ (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)))
+ (test (or (eq (find_sub-str_before_last_underscore ?rel2) "n") (eq ?rel2 proper_q) (eq ?rel2 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)))
  (not (relation_name-id-args_with_ids parg_d ?kriyA $?)) ;The fruits were eaten by me.
  (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
  (test (neq (find_sub-str_after_last_underscore ?rel) "modal"))
@@ -145,8 +150,7 @@
  (relation_name-id-args_with_ids ?rel  ?kriyA_viSeRaNa  ARG0 ?  ?kriyA_viSeRaNa  ARG1 ? ?kriyA $?)
  (relation_name-id-args_with_ids ?rel1 ?kriyA $?)
  (test (eq (find_sub-str_before_last_underscore ?rel1) "v"))
- (test (eq (sub-string  (length (sub-string 4 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_1"))
- ;(id-logon_cat  ?kriyA VBG|VBN|VB|VBD|VBZ)
+ (test (eq (find_sub-str_before_last_underscore ?rel) "a"))
  =>
  (printout       ?*fp*   "(kriyA-kriyA_viSeRaNa    "?kriyA"	"?kriyA_viSeRaNa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     kriyA-kriyA_viSeRaNa    "?kriyA"	"?kriyA_viSeRaNa")"crlf)
@@ -160,11 +164,10 @@
  ;e19:_rich_a_in<21:25>[ARG1 x14] ==> (relation_name-id-args_with_ids _rich_a_in  7 ARG0 e19  7  ARG1 x14 8 )
  (defrule viSeRya-viSeRaNa_rule
  (relation_name-id-args_with_ids ?rel&~def_implicit_q  ?viSeRaNa  ARG0 ?  ?viSeRaNa  ARG1 ? ?viSeRya $?)
- (test (or (eq (sub-string  (length (sub-string 12 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_at-for-of")(eq (sub-string  (length (sub-string 4 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_1")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_in")))
+ (test (eq (find_sub-str_before_last_underscore ?rel) "a"))
  (test (neq ?viSeRya ?viSeRaNa));I went there with my mother.;[This job] will not take much effort.
  (relation_name-id-args_with_ids ?rel1 ?viSeRya $?)
- (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)))
- ;(id-logon_cat  ?viSeRya ?cat&NN|NNP) 
+ (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)))
  (not (sent_head-id ?  ?viSeRaNa));Rama is good.
  =>
  (printout       ?*fp*   "(viSeRya-viSeRaNa    "?viSeRya"	"?viSeRaNa")"crlf)
@@ -173,31 +176,15 @@
  (assert (prep_id-relation-anu_ids  -  viSeRya-viSeRaNa  ?viSeRya ?viSeRaNa))
  )
  ;------------------------------------------------------------------------------------------------------------------------
- ; Eg: There was a marked difference in the prices of dishes.
- ; e9:_mark_v_1<12:18>[ARG2 x4] ==> (relation_name-id-args_with_ids _mark_v_1  4 ARG0 e9  4  ARG2 x4 5 )
- (defrule  viSeRya-viSeRaNa_rule1
- (relation_name-id-args_with_ids ?rel&~def_implicit_q  ? ARG0 ? ?viSeRaNa  ARG2 ? ?viSeRya)
- (test (neq (find_sub-str_before_last_underscore ?rel) "v"))
- (relation_name-id-args_with_ids ?rel1 ?viSeRya $?)
- (test (neq (find_sub-str_before_last_underscore ?rel1) "v"))
- ;(id-logon_cat  ?viSeRya ?cat&~VBG&~VBD&~VB&~VBN&~VBZ)
- ;(id-logon_cat  ?viSeRaNa ?cat1&~VBG&~VBD&~VB&~VBN&~VBZ)
- =>
- (printout       ?*fp*   "(viSeRya-viSeRaNa    "?viSeRya"       "?viSeRaNa")"crlf)
- (printout       ?*fp1*  "(prep_id-relation-anu_ids  -     viSeRya-viSeRaNa    "?viSeRya"      "?viSeRaNa")"crlf)
- (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   viSeRya-viSeRaNa_rule1   viSeRya-viSeRaNa   "?viSeRya"      "?viSeRaNa")"crlf)
- (assert (prep_id-relation-anu_ids  -  viSeRya-viSeRaNa  ?viSeRya ?viSeRaNa))
- )
- ;------------------------------------------------------------------------------------------------------------------------
  ;Eg: The dog barked every day.
  ; _2:_every_q<15:20>[BV x10] ==> (relation_name-id-args_with_ids _every_q  4  BV x10 5 )
  ;x10:_day_n_of<21:25>[] ==> (relation_name-id-args_with_ids _day_n_of  5 ARG0 x10 5 )
+ ;Eg: Some Italian men are great tenors.
  (defrule viSeRya-viSeRaNa_rule2
- (relation_name-id-args_with_ids ?rel&_every_q  ?viSeRaNa  BV ? ?viSeRya)
+ (relation_name-id-args_with_ids ?rel&_every_q|_some_q|_all_q|_each_q  ?viSeRaNa  BV ? ?viSeRya)
  (test (neq ?viSeRaNa ?viSeRya))
- ;(test (eq (string-to-field (find_sub-str_after_last_underscore ?rel)) q))
  (relation_name-id-args_with_ids ?rel1 ?viSeRya $?)
- (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron))) 
+ (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization))) 
  =>
  (printout       ?*fp*   "(viSeRya-viSeRaNa    "?viSeRya"       "?viSeRaNa")"crlf)
  (printout       ?*fp1*  "(prep_id-relation-anu_ids  -     viSeRya-viSeRaNa    "?viSeRya"      "?viSeRaNa")"crlf)
@@ -235,13 +222,15 @@
  ;}
  ;(sent_head-id  e3  4)
  ;If the parse head is adjective and "is" information is absent in dependency parse and if "is" is in between head and argument of the head assign subject-subject_samAnAXikaraNa between ARG1 of head and adjective.
+ ;Eg: Some Italian tenors are great.
  (defrule subject-subject_samAnAXikaraNa_rule1
- (id-word ?be_verb is)
+ (id-word ?be_verb is|are)
  (not (relation_name-id-args_with_ids ? ?be_verb $?))
  (sent_head-id ?sen_head  ?subject_samAnAXikaraNa)
  (relation_name-id-args_with_ids ?rel ?subject_samAnAXikaraNa ARG0 ?sen_head  ?id  ARG1 ? ?subject $?)
  (test (and (> ?be_verb ?subject) (< ?be_verb ?subject_samAnAXikaraNa)))
- (test (or (eq (sub-string  (length (sub-string 12 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_at-for-of")(eq (sub-string  (length (sub-string 4 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_1")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_in")))
+ (test (eq (find_sub-str_before_last_underscore ?rel) "a"))
+ ;(test (or (eq (sub-string  (length (sub-string 12 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_at-for-of")(eq (sub-string  (length (sub-string 4 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_1")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_in")))
  =>
  (printout       ?*fp*   "(subject-subject_samAnAXikaraNa   "?subject"  "?subject_samAnAXikaraNa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     subject-subject_samAnAXikaraNa    "?subject"        "?subject_samAnAXikaraNa")"crlf)
@@ -254,13 +243,14 @@
  ;e3:_and_c<20:23>[L-INDEX e16, R-INDEX e19, L-HNDL e16, R-HNDL e19] ==> (relation_name-id-args_with_ids _and_c  6 ARG0 e3  6  L-INDEX e16 5  R-INDEX e19 9 )
  ;e16:_tall_a_1<15:19>[ARG1 x6] ==> (relation_name-id-args_with_ids _tall_a_1  5 ARG0 e16  5  ARG1 x6 3 )
  (defrule subject-subject_samAnAXikaraNa_rule2
- (id-word ?be_verb is)
+ (id-word ?be_verb is|are)
  (not (relation_name-id-args_with_ids ? ?be_verb $?))
  (sent_head-id ?sen_head  ?and)
  (relation_name-id-args_with_ids ?conj_rel&_and_c  ?and $? ?subject_samAnAXikaraNa $?)
  (relation_name-id-args_with_ids ?rel ?subject_samAnAXikaraNa ARG0 ? ?  ARG1 ? ?subject $?)
  (test (and (> ?be_verb ?subject) (< ?be_verb ?subject_samAnAXikaraNa)))
- (test (or (eq (sub-string  (length (sub-string 12 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_at-for-of")(eq (sub-string  (length (sub-string 4 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_1")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_in")))
+ (test (eq (find_sub-str_before_last_underscore ?rel) "a"))
+;(test (or (eq (sub-string  (length (sub-string 12 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_at-for-of")(eq (sub-string  (length (sub-string 4 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_1")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_in")))
  =>
  (printout       ?*fp*   "(subject-subject_samAnAXikaraNa   "?subject"  "?subject_samAnAXikaraNa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     subject-subject_samAnAXikaraNa    "?subject"        "?subject_samAnAXikaraNa")"crlf)
@@ -278,6 +268,19 @@
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     viSeRya-det_viSeRaNa    "?viSeRya"	"?det_viSeRaNa")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   viSeRya-det_viSeRaNa_rule   viSeRya-det_viSeRaNa   "?viSeRya"	"?det_viSeRaNa")"crlf)
  (assert (prep_id-relation-anu_ids  -  viSeRya-det_viSeRaNa    ?viSeRya  ?det_viSeRaNa))
+ )
+ ;------------------------------------------------------------------------------------------------------------------------
+ ;default rule 
+ (defrule viSeRya-viSeRaNa_rule1
+ (relation_name-id-args_with_ids ?rel&~udef_q&~_neither_q  ?viSeRaNa  BV ? ?viSeRya);Are there tenors who will contribute their fees to charity?;`Neither leading tenor comes cheap.'
+ (test (neq ?viSeRaNa ?viSeRya))
+ (test (eq (find_sub-str_after_last_underscore ?rel) "q"))
+ (not (prep_id-relation-anu_ids  -  ?  ?viSeRya  ?viSeRaNa))
+ =>
+ (printout       ?*fp*   "(viSeRya-viSeRaNa    "?viSeRya"   "?viSeRaNa")"crlf)
+ (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     viSeRya-viSeRaNa    "?viSeRya"  "?viSeRaNa")"crlf)
+ (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   viSeRya-viSeRaNa_rule1   viSeRya-viSeRaNa   "?viSeRya"      "?viSeRaNa")"crlf)
+ (assert (prep_id-relation-anu_ids  -  viSeRya-viSeRaNa    ?viSeRya  ?viSeRaNa))
  )
  ;------------------------------------------------------------------------------------------------------------------------
  ;Eg: This is a sample sentence for Anusaraka.
@@ -311,12 +314,10 @@
  ;21:_for_p<26:29>[ARG1 x9, ARG2 x22] ==> (relation_name-id-args_with_ids _for_p  6 ARG0 e21  6  ARG1 x9 5  ARG2 x22 7 )
  (defrule viSeRya-prep_saMbanXI_rule
  (relation_name-id-args_with_ids ?rel  ? ARG0 ? ?prep  ARG1 ? ?viSeRya  ARG2 ? ?prep_saMbanXI $?)
- (test (eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_p"))
+ (test (eq (gdbm_lookup "preposition.gdbm" (find_sub-str_before_last_underscore ?rel)) "1"))
  (id-word ?prep ?p_wrd)
  (relation_name-id-args_with_ids ?rel1 ?viSeRya $?)
- (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)))
- ;(test (eq ?rel1 "pron"))
- ;(id-logon_cat  ?viSeRya NN)
+ (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)))
   =>
  (printout       ?*fp*   "(viSeRya-"?p_wrd"_saMbanXI    "?viSeRya"	"?prep_saMbanXI")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  "?prep"     viSeRya-"?p_wrd"_saMbanXI    "?viSeRya"	"?prep_saMbanXI")"crlf)
@@ -329,7 +330,7 @@
  ;x9:_sound_n_of<13:18>[ARG1 x14] ==> (relation_name-id-args_with_ids _sound_n_of  4 ARG0 x9  4  ARG1 x14 6 )
  (defrule viSeRya-prep_saMbanXI_rule1
  (relation_name-id-args_with_ids ?rel  ? ARG0 ? ?viSeRya ARG1 ? ?prep_saMbanXI $?)
- (test (or (eq (find_sub-str_before_last_underscore ?rel) "n") (eq ?rel proper_q) (eq ?rel pron)))
+ (test (or (eq (find_sub-str_before_last_underscore ?rel) "n") (eq ?rel proper_q) (eq ?rel pron)(eq ?rel generic_entity)(eq ?rel nominalization)))
  (id-word ?prep ?p_wrd)
  (test (or (eq (string-to-field (find_sub-str_after_last_underscore ?rel)) ?p_wrd)(eq (string-to-field (find_sub-str_before_last_hypen (string-to-field (find_sub-str_after_last_underscore ?rel)))) ?p_wrd)))
  (test (and (> ?prep ?viSeRya) (< ?prep ?prep_saMbanXI)))
@@ -346,10 +347,13 @@
  (defrule kriyA-upasarga_rule
  (relation_name-id-args_with_ids ?rel  ? ARG0 ? ?kriyA $?)
  (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
+ (id-word ?kriyA ?k_wrd)
  (id-word ?u_id ?upasarga)
- (test (eq (string-to-field (find_sub-str_after_last_underscore ?rel)) ?upasarga))
+ (not (relation_name-id-args_with_ids ?rel1 ?u_id $?))
  (test (> ?u_id ?kriyA))
+ (test (neq (gdbm_lookup "Phrv.gdbm" (str-cat ?k_wrd "_" ?upasarga)) "FALSE"))
  =>
+; (printout t (string-to-field (str-cat ?k_wrd _ ?upasarga)) "---  " (gdbm_lookup "Phrv.gdbm" (str-cat ?k_wrd _ ?upasarga)) crlf)
  (printout       ?*fp*   "(kriyA-upasarga    "?kriyA"      "?u_id")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     kriyA-upasarga    "?kriyA"       "?u_id")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  -   kriyA-upasarga_rule    kriyA-upasarga   "?kriyA" "?u_id")"crlf)
@@ -362,11 +366,10 @@
  ;e10:_in_p_temp<8:10>[ARG1 e3, ARG2 x11] ==> (relation_name-id-args_with_ids _in_p_temp  3 ARG0 e10  3  ARG1 e3 2  ARG2 x11 5 )
  (defrule kriyA-prep_saMbanXI_rule
  (relation_name-id-args_with_ids ?rel  ? ARG0 ? ?prep  ARG1 ? ?kriyA  ARG2 ? ?prep_saMbanXI $?)
- (test (or (eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_p")(eq (sub-string  (length (sub-string 6 (length ?rel) ?rel)) (length ?rel) ?rel) "_p_dir")(eq (sub-string  (length (sub-string 7 (length ?rel) ?rel)) (length ?rel) ?rel) "_p_temp")(eq (sub-string  (length (sub-string 8 (length ?rel) ?rel)) (length ?rel) ?rel) "_p_state")))
+ (test (eq (gdbm_lookup "preposition.gdbm" (find_sub-str_before_last_underscore ?rel)) "1"))
  (id-word ?prep ?p_wrd)
  (relation_name-id-args_with_ids ?rel1 ?kriyA $?)
  (test (eq (find_sub-str_before_last_underscore ?rel1) "v"))
- ;(id-logon_cat  ?kriyA VBG|VBD|VB|VBN|VBZ)
   =>
  (printout       ?*fp*   "(kriyA-"?p_wrd"_saMbanXI    "?kriyA"      "?prep_saMbanXI")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  "?prep"     kriyA-"?p_wrd"_saMbanXI    "?kriyA"       "?prep_saMbanXI")"crlf)
@@ -378,7 +381,7 @@
  ;Eg: There was a red mark on the door.
  ;e3:_be_v_there<6:9>[ARG1 x4] ==> (relation_name-id-args_with_ids _be_v_there  2 ARG0 e3  2  ARG1 x4 5 )
  (defrule kriyA-aBihiwa_rule
- (relation_name-id-args_with_ids ?rel  ?kriyA ARG0 ?  ?kriyA  ARG1 ? ?aBihiwa $?)
+ (relation_name-id-args_with_ids ?rel&_be_v_there  ?kriyA ARG0 ?  ?kriyA  ARG1 ? ?aBihiwa $?)
  (id-word ?d_sub_id ?dummy_subject)
  (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
  (test (eq (string-to-field (find_sub-str_after_last_underscore ?rel)) ?dummy_subject))
@@ -421,7 +424,6 @@
  (assert (prep_id-relation-anu_ids  -   kriyA-aXikaraNavAcI    ?kriyA    ?aXikaraNavAcI))
  )
  ;------------------------------------------------------------------------------------------------------------------------
- 
  (defrule to-infinitive_rule
  (relation_name-id-args_with_ids ?rel ?infinitive $?)
  (logon_relation-properties   ?rel TENSE untensed)
@@ -508,7 +510,8 @@
  ;So the relation kriyA-prep_saMbanXI is assigned between "is" and "table" assuming word "is" exists in the sentence and is in between "book" and "table"
  (defrule kriyA-prep_saMbanXI_rule1
  (relation_name-id-args_with_ids ?rel ?prep ARG0 ? ?prep ARG1 ? ?viSeRya ARG2 ? ?prep_saMbanXI)
- (test (eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_p"))
+ (test (eq (gdbm_lookup "preposition.gdbm" (find_sub-str_before_last_underscore ?rel)) "1")) 
+ ;(test (eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_p"))
  (id-word ?prep ?p_wrd)
  (id-word ?kriyA is)
  (not (relation_name-id-args_with_ids ?  ?kriyA))
@@ -527,8 +530,9 @@
  (defrule kriyA-prep_saMbanXI_rule2
  (relation_name-id-args_with_ids ?rel&_hand_v_1|_give_v_1 ?kriyA ARG0 ?  ?  $? ARG3 ? ?prep_saMbanXI $?)
  (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
- (id-word ?prep ?p_wrd&to)
- (not (relation_name-id-args_with_ids ?  ?to))
+ (id-word ?prep ?p_wrd)
+ (test (eq (gdbm_lookup "preposition.gdbm" ?p_wrd) "1"))
+ (not (relation_name-id-args_with_ids ?  ?prep))
  (test (and (> ?prep ?kriyA) (< ?prep ?prep_saMbanXI)))
  =>
  (printout       ?*fp*   "(kriyA-"?p_wrd"_saMbanXI    "?kriyA"      "?prep_saMbanXI")"crlf)
@@ -543,15 +547,12 @@
  ;e3:_hiss_v_1<38:44>[ARG1 x6] ==> (relation_name-id-args_with_ids _hiss_v_1  7 ARG0 e3  7  ARG1 x6 2 )
  ;assuming ?viSeRya is argument of two different facts and "which" information is absent in dependency parse assign reltion between ?viSeRya and "which" as viSeRya-jo_samAnAXikaraNa 
  (defrule viSeRya-jo_samAnAXikaraNa_rule
- ;(relation_name-id-args_with_ids ?rel ?v_id ARG0 ? ? $? ?viSeRya $?)
- ;(relation_name-id-args_with_ids ?rel1 ?v_id1 ARG0 ? ? $? ?viSeRya $?)
  (prep_id-relation-anu_ids ? ?rel  ?id  ?viSeRya)
  (prep_id-relation-anu_ids ? ?rel1 ?id1 ?viSeRya)
  (test (neq ?id ?id1))
-; (test (eq (numberp ?viSeRya) TRUE))
- (id-word ?jo_samAnAXikaraNa which)
+ (id-word ?jo_samAnAXikaraNa which|who|where|when|whom)
  (not (relation_name-id-args_with_ids ? ?jo_samAnAXikaraNa $?))
- (not (viSeRya-jo_samAnAXikaraNa ?viSeRya ?jo_samAnAXikaraNa))
+ (not (prep_id-relation-anu_ids  - viSeRya-jo_samAnAXikaraNa ?viSeRya ?jo_samAnAXikaraNa))
  =>
  (printout       ?*fp*   "(viSeRya-jo_samAnAXikaraNa   "?viSeRya"  "?jo_samAnAXikaraNa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     viSeRya-jo_samAnAXikaraNa    "?viSeRya"        "?jo_samAnAXikaraNa")"crlf)
@@ -573,5 +574,3 @@
  (assert (prep_id-relation-anu_ids  ?prep  ?rel   ?id  ?j))
  )
  )
-
- 
