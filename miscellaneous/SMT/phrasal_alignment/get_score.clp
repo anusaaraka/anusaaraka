@@ -30,9 +30,10 @@
 (defrule get_count1
 (declare (salience 100))
 ?f0<-(anu_id-man_id-root-src-rule_name ?aid ?mid ? ?h ?r)
+(heuristic-weightage ?h ?w)
 =>
         (retract ?f0)
-        (assert (score (anu_id ?aid) (man_id ?mid)(weightage_sum 1)(heuristics ?h)(rule_names ?r)))
+        (assert (score (anu_id ?aid) (man_id ?mid)(weightage_sum ?w)(heuristics ?h)(rule_names ?r)))
 )
 ;-----------------------------------------------------------------------------------
 

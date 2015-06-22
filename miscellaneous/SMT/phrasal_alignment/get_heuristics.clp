@@ -117,7 +117,8 @@
 (id-root ?aid ?root)
 =>
 	(assert (anu_id-man_id-type ?aid ?mid  anu_exact_match_without_vib))
-	(assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu exact_match_with_anu_output1))
+	(assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu_partial exact_match_with_anu_output1))
+;	(assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu exact_match_with_anu_output1))
 )
 ;------------------------------ Exact match with anu [anu_vib present ; man_vib absent] ------------------------------------
 
@@ -132,7 +133,8 @@
 (id-root ?aid ?root)
 =>
         (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match_without_vib))
-        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu exact_match_with_anu_output2))
+        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu_partial exact_match_with_anu_output2))
+;        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu exact_match_with_anu_output2))
 )
 
 ;--------------------------------------- dictionary match ----------------------------------------------
@@ -166,12 +168,14 @@
         (assert (anu_id-man_id-root-src-rule_name ?e_noun_id ?mid ?e_noun dictionary man_root_and_vib_match_using_dic))
 )
 ;---------------------------------------------------------------------------
+;To avoid this, a common compromise is the [cross-sectional] shape shown in Fig. 9.9(c)
+;isase bacane ke lie sAXAraNawayA ciwra 9.9(@c) meM xiKAI gaI Akqwi kA [anuprasWa paricCexa] liyA jAwA hE.
 (defrule man_word_match_using_dic
 (declare (salience 840))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib)(group_ids $?grp_ids))
 (database_info (components $?mng)(root ?e_noun))
-(id-root ?eid ?e_noun)
+(or (id-root ?eid ?e_noun)(id-word ?eid ?e_noun))
 =>
         (assert (anu_id-man_id-type ?eid ?mid  dictionary_match_without_vib))
         (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_noun dictionary man_word_match_using_dic))
@@ -253,6 +257,7 @@
         (assert (anu_id-man_id-type ?aid ?mid  single_verb_match))
         (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root single_verb_match single_verb_match_with_anu))
 )
+
 ;---------------------------------------------------------------------------
 ;Eng_sen : This property of the [body] is called inertia.
 ;Anu     : [piMda kA] yaha guNa jadawva kahA jAwA hE.
@@ -369,12 +374,28 @@
 )
 ;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
+(defrule align_using_phrasal_data_M1
+(declare (salience 831))
+(current_id ?mid)
+(manual_word_info (head_id ?mid) (word $?man_mng) (vibakthi ?vib))
+(eng_id-eng_wrd-man_wrd  ?aid ? $?man_mng ?vib) 
+(id-root ?aid ?root)
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  M_layer_pharasal_match))
+        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  M_layer_pharasal_match align_using_phrasal_data_M1))
+	(assert (got_M_layer_for ?mid))
+)
+;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;Circular motion is a familiar class of motion that has a special significance in [daily-life] situations.
+;vqwwIya gawi se hama BalIBAzwi pariciwa hEM jisakA hamAre [xEnika jIvana] meM viSeRa mahawwva hE .
 (defrule align_using_phrasal_data_M
 (declare (salience 830))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?man_mng))
-(eng_id-eng_wrd-man_wrd  ?aid	? $?man_mng)
+(or (eng_id-eng_wrd-man_wrd  ?aid ? $?man_mng) (eng_id-eng_wrd-man_wrd  ?aid ? $?man_mng ?v&meM|se|ko))
 (id-root ?aid ?root)
+(not (got_M_layer_for ?mid))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  M_layer_pharasal_match))
         (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  M_layer_pharasal_match align_using_phrasal_data_M))
@@ -392,7 +413,7 @@
 (not (anu_id-man_id-root-src-rule_name ? ?mid $? scope $?))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  scope))
-        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  scope get_scope_fact))
+        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  scope get_small_scope_fact))
 )
 ;-------------------------------------------------------------------------------------
 (defrule get_large_scope_fact
@@ -407,7 +428,7 @@
 (not (anu_id-man_id-root-src-rule_name ? ?mid $? scope $?))
 =>
 	(assert (anu_id-man_id-type ?aid ?mid  scope))
-        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  scope get_scope_fact))
+        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  scope get_large_scope_fact))
 )
 ;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju

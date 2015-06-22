@@ -1,5 +1,7 @@
 ;This file is written by Shirisha Manju
 
+(deftemplate pada_info (slot group_head_id (default 0))(slot group_cat (default 0))(multislot group_ids (default 0))(slot vibakthi (default 0))(slot gender (default 0))(slot number (default 0))(slot case (default 0))(slot person (default 0))(slot H_tam (default 0))(slot tam_source (default 0))(slot preceeding_part_of_verb (default 0)) (multislot preposition (default 0))(slot Hin_position (default 0))(slot pada_head (default 0)))
+
 (deftemplate manual_word_info (slot head_id (default 0))(multislot word (default 0))(multislot word_components (default 0))(multislot root (default 0))(multislot root_components (default 0))(multislot vibakthi (default 0))(multislot vibakthi_components (default 0))(multislot group_ids (default 0)))
 
 
@@ -75,6 +77,19 @@
        (assert (chunk_name-chunk_ids ?chnk  $?pre $?pos))
 )
 ;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;The applications of physics are not always easy to foresee.
+;BOwikI ke anuprayogoM kA saxEva pUrvajFAna raKanA sarala [nahIM hE].
+(defrule modify_chunk_for_nahIM
+(declare (salience 1000))
+?f<-(chunk_name-chunk_ids VGF ?id $?ids)
+(manual_word_info (head_id ?id) (word nahIM))
+(not (pada_info (group_head_id ?h) (group_cat VP) (preceeding_part_of_verb nahIM)))
+=>
+	(retract ?f)
+       	(assert (chunk_name-chunk_ids VGF $?ids))
+)
+;----------------------------------------------------------------------------------------------------------
 (defrule get_verb_chunk_cp
 (declare (salience 1000))
 ?f<-(chunk_name-chunk_ids ?chnk&VGF|VGNN|VGNF $?gids)
@@ -138,11 +153,12 @@
 ;Ajakala jina vExyuwa yukwiyoM kA hama upayoga karawe hEM unameM se aXikAMSa ke lie @ac voltawA kI hI [AvaSyakawA howI hE].
 ;Since the electromagnetic force is so much stronger than the gravitational force, it dominates all phenomena at atomic and molecular scales. 
 ;cUfki vixyuwa cumbakIya bala guruwvAkarRaNa bala kI apekRA kahIM aXika prabala howA hE yaha ANvika waWA paramANvIya pEmAne kI saBI pariGatanAoM para [CAyA] [rahawA hE].
+;This causes a major upheaval in science. ye prekRaNa hI vijFAna meM mahAna krAnwi kA [kAraNa banawe] hEM.
 (defrule check_prev_word_for_kara_or_ho_or_xe
 (declare (salience 849))
 ?f0<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF ?mid $?gids -  $?mng)
 (manual_word_info (head_id ?mid) (word ?w))
-(man_word-root-cat ?w ?r&kara|ho|xe|raha v)
+(man_word-root-cat ?w ?r&kara|ho|xe|raha|bana v)
 (manual_word_info (head_id ?mid1&:(= (- ?mid 1) ?mid1)) (word ?word))
 (man_word-root-cat ?word ?r0 ?)
 (id-HM-source ? ?r0 ?r ?)
@@ -208,6 +224,20 @@
         (retract ?f2)
 	(modify ?f1 (word $?noun $?noun ?iwa_word ?tam ?tam1)(root ?iwa_word ?root)(vibakthi wA ?tam1)(group_ids $?grp_ids ?id1 ?id2))
         (assert (replaced_tam_with_root_tam ?id0))
+)
+;-------------------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;This causes a major upheaval in science.  ye prekRaNa hI vijFAna meM mahAna krAnwi kA [kAraNa banawe] [hEM].
+;When this is an elastic collision, the magnitude of the velocity remains the same.
+;jaba yaha takkara prawyAsWa howI hE wo vega kA parimANa aparivarwiwa [rahawA] [hE].
+(defrule group_WA_hEM
+(declare (salience 730))
+?f1<-(manual_word_info (word $?noun ?m1)(group_ids $?grp_ids ?mid))
+(test (or (eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "wI") (eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "we")(eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "wA")))
+?f2<-(manual_word_info (head_id ?id&:(=(+ ?mid 1) ?id)) (word ?m2&hE|hEM))
+=>
+        (retract ?f2)
+	(modify ?f1 (word $?noun ?m1 ?m2)(vibakthi wA ?m2)(group_ids $?grp_ids ?mid ?id))
 )
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
@@ -281,6 +311,7 @@
                )
        )
 )      
+
 ;============================================ phrasal rules ==================================
 (defrule rm_L_layer_punct
 (declare (salience 500))
@@ -361,7 +392,19 @@
         (assert (chunk_name-chunk_ids-words VGF ?id ?id0 $?ids - ?m huA $?mng))
         (assert (replaced_tam_with_root_tam ?id0))
 )
-
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;This causes a major upheaval in science.  ye prekRaNa hI vijFAna meM mahAna krAnwi kA [kAraNa banawe hEM].
+(defrule modify_verb_chunk
+(declare (salience 10))
+(manual_word_info (head_id ?id0) (word $?noun)(group_ids ?id $?ids $?vids))
+?f0<-(chunk_name-chunk_ids-words VGF $?vids - $?wrds)
+?f1<-(chunk_name-chunk_ids ?c ?id $?d)
+=>
+        (retract ?f0 ?f1)
+	(assert (chunk_name-chunk_ids ?c $?d))
+        (assert (chunk_name-chunk_ids-words VGF  ?id $?ids $?vids  - ?id $?ids $?wrds))
+)
 
 ;Counter example: Mass is a basic property of matter.
 ;		  xravyamAna paxArWa kA eka AXAraBUwa guNa hE. phrasal grp : [xravyamAna AXAraBUwa]

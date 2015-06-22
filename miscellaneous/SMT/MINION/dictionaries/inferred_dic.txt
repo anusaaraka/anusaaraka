@@ -1,6 +1,7 @@
 critically	awyanwa
 needed	AvaSyaka
 and	va
+or	yA_Pira
 release	mukwa_ho
 unravelling	sulaJAnA
 step	caraNa
@@ -18,6 +19,12 @@ move	gawimAna
 central	mahawvapUrNa
 fix	sWira_raha
 inseparable	avicCexa
-transmit	saFcariwa kara
+transmit	saFcariwa_kara
 fur	samUra
 Fig.	ciwra
+a	kisI
+even	waba_BI
+denote	nirUpiwa_kara
+cross-sectional	anuprasWa_paricCexa
+see	XyAna_xe
+interdependent	paraspara_sambanXiwa
