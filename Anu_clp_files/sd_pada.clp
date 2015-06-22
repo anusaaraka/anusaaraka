@@ -48,7 +48,8 @@
                                 (bind $?grp_ids (create$ $?grp_ids ?j)))
                                 (bind ?lkup (gdbm_lookup "preposition.gdbm"  ?str))
                                 (if (neq ?lkup "FALSE") then
-                                        (assert (prep_ids $?grp_ids))
+ 					(if (> (length $?grp_ids) 1) then
+                                        (assert (prep_ids $?grp_ids)))
                                 )
                 )
         )
