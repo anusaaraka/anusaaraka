@@ -46,7 +46,7 @@
 ;Added by Shirisha Manju 5-06-15
 ;In this example, the basis is the distance between the eyes.
 ;isa uxAharaNa meM xonoM [AzKoM] [ke bIca] kI xUrI AXAraka hE.
-(defrule multi_word_vib_with_dic
+(defrule get_multi_vib_from_dic
 (declare (salience 701))
 (database_info (components ?mng&ke|kI|se ?mng1 $?))
 (manual_id-word ?id ?mng)
@@ -55,12 +55,23 @@
 (not (mng_has_been_grouped ?id1))
 (not (chunk_name-chunk_ids VGF $? ?id1 $?))
 (test (neq (sub-string 1 6 (implode$ (create$ ?m))) "@PUNCT"))
-;(man_word-root-cat ?mng1 ?r&~kara&~ho&~xe ?)
 =>
-        (assert (manual_word_info (head_id ?id0) (word ?m )(vibakthi ?mng ?mng1)(group_ids ?id0 ?id ?id1)))
+	(assert (ids-multi_vib_from_dic ?id ?id1 ?mng ?mng1))
         (assert (mng_has_been_grouped ?id))
         (assert (mng_has_been_grouped ?id1))
 )
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;This fact was emphasised in the previous chapter also while discussing motion along a straight line.
+;piCale aXyAya meM BI eka [sarala reKA] [ke anuxiSa] gawimAna vaswu ke lie isa waWya ko BalIBAnwi samaJAyA gayA WA .
+(defrule group_multi_vib
+(declare (salience 650))
+?f<-(ids-multi_vib_from_dic ?id ?id0 $?vib)
+?f0<-(manual_word_info (head_id ?id1&:(=(- ?id 1) ?id1)) (word $?mng )(group_ids $?ids))
+=>
+	(retract ?f)
+	(modify ?f0 (vibakthi $?vib)(group_ids $?ids ?id ?id0))
+)	
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
 ;Languages and methods used in communication have kept evolving from prehistoric to [modern times], to meet the growing demands in terms of speed and complexity of information.
@@ -113,7 +124,21 @@
         (modify ?f (head_id ?id1)(word ?mng1 $?mng)(group_ids ?id1 ?fid $?ids))
         (assert (mng_has_been_grouped ?id1))
 )
-
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;Circular motion is a familiar class of motion that has a special significance in [daily-life] situations.
+;vqwwIya gawi se hama BalIBAzwi pariciwa hEM jisakA hamAre [xEnika jIvana] meM viSeRa mahawwva hE .
+(defrule get_hypen_word_grp
+(declare (salience 670))
+(id-left_word-possible_mngs ?aid $? ?m $?)
+(id-right_word-possible_mngs ?aid $? ?m1 $?)
+(manual_id-word ?id ?m)
+(manual_id-word ?id1&:(=(+ ?id 1) ?id1) ?m1)
+(not (mng_has_been_grouped ?id1))
+=>
+	(assert (manual_word_info (head_id ?id) (word ?m ?m1) (group_ids ?id ?id1)))
+        (assert (mng_has_been_grouped ?id1))
+)
 ;====================================== noun multi-word grouping =======================================
 (defrule get_default_group
 (declare (salience 600))
@@ -270,18 +295,36 @@
         (assert (mng_has_been_grouped ?id2))
 )
 ;---------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 
 ;The units of all other physical quantities can be expressed as combinations of the base units.
 ;inake awirikwa anya saBI BOwika rASiyoM ke mAwrakoM ko mUla mAwrakoM ke saMyojana xvArA vyakwa kiyA jA sakawA hE.
+;jEse ki,  inake bAxa, isa prakAra, isI prakAra
 (defrule pronoun_group
 (declare (salience 650))
-?f<-(manual_word_info (head_id ?id0) (word ?noun&isake|usake|inake) (group_ids $?ids))
-?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) awirikwa)
+?f<-(manual_word_info (head_id ?id0) (word ?noun&isake|usake|inake|isa|jEse|isI) (group_ids $?ids))
+?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?w&awirikwa|bAxa|prakAra|ki)
 (not (mng_has_been_grouped ?id1))
 =>
-	(modify ?f (word ?noun awirikwa) (group_ids $?ids ?id1))
+	(modify ?f (word ?noun ?w) (group_ids $?ids ?id1))
         (assert (mng_has_been_grouped ?id1))
 )
 ;---------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 
+;We shall study [about it] in Section 9.4.
+;hama [isake bAre meM] KaNda 9.4 meM aXyayana kareMge.
+(defrule pronoun_group1
+(declare (salience 650))
+?f<-(manual_word_info (head_id ?id0) (word ?noun&isake|usake|inake|unake) (group_ids $?ids))
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?w&bAre)
+(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) meM)
+(not (mng_has_been_grouped ?id1))
+=>
+        (modify ?f (word ?noun ?w meM) (group_ids $?ids ?id1 ?id2))
+        (assert (mng_has_been_grouped ?id1))
+        (assert (mng_has_been_grouped ?id2))
+)
+;---------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 
 (defrule pronoun_vib
 (declare (salience 650))
 ?f1<-(manual_id-word ?id0 ?noun&kisI)
