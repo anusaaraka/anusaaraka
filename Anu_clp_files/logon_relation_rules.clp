@@ -81,7 +81,7 @@
  (test (neq (find_sub-str_after_last_underscore ?rel) "modal"));He [may] drink milk or eat apples.
  (test (neq (find_sub-str_after_last_underscore ?rel) "there"));[There] was a red mark on the door.
  (relation_name-id-args_with_ids ?rel1 ?sub $?)
- (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron) (eq ?rel1 generic_entity)(eq ?rel1 nominalization)));This is a sample sentence for Anusaraka.
+ (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron) (eq ?rel1 generic_entity)(eq ?rel1 nominalization)(eq ?rel1 named)));This is a sample sentence for Anusaraka.
  =>
  (printout       ?*fp*   "(kriyA-subject    "?kriyA"	"?sub")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     kriyA-subject    "?kriyA"	"?sub")"crlf)
@@ -96,7 +96,7 @@
  (test (neq (find_sub-str_after_last_underscore ?rel) "modal"))
  (id-word ?obj ~what) ;[What] is the purpose of Dharma?
  (relation_name-id-args_with_ids ?rel1 ?obj $?)
- (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)));I will give up smoking.
+ (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)(eq ?rel1 named)));I will give up smoking.
  =>
  (printout       ?*fp*   "(kriyA-object     "?kriyA"	"?obj")"crlf)
  (printout       ?*fp1*  "(prep_id-relation-anu_ids  -   kriyA-object	"?kriyA"	"?obj")"crlf)
@@ -111,8 +111,8 @@
  (relation_name-id-args_with_ids ?rel1 ?obj1 $?) 
  (relation_name-id-args_with_ids ?rel2 ?obj2 $?) 
  (id-word =(- ?obj2 1) ~to);Abrams handed the cigarette to Browne.
- (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)))
- (test (or (eq (find_sub-str_before_last_underscore ?rel2) "n") (eq ?rel2 proper_q) (eq ?rel2 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)))
+ (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)(eq ?rel1 named)))
+ (test (or (eq (find_sub-str_before_last_underscore ?rel2) "n") (eq ?rel2 proper_q) (eq ?rel2 pron)(eq ?rel2 generic_entity)(eq ?rel2 nominalization)(eq ?rel2 named)))
  (not (relation_name-id-args_with_ids parg_d ?kriyA $?)) ;The fruits were eaten by me.
  (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
  (test (neq (find_sub-str_after_last_underscore ?rel) "modal"))
@@ -167,7 +167,7 @@
  (test (eq (find_sub-str_before_last_underscore ?rel) "a"))
  (test (neq ?viSeRya ?viSeRaNa));I went there with my mother.;[This job] will not take much effort.
  (relation_name-id-args_with_ids ?rel1 ?viSeRya $?)
- (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)))
+ (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)(eq ?rel1 named)))
  (not (sent_head-id ?  ?viSeRaNa));Rama is good.
  =>
  (printout       ?*fp*   "(viSeRya-viSeRaNa    "?viSeRya"	"?viSeRaNa")"crlf)
@@ -184,7 +184,7 @@
  (relation_name-id-args_with_ids ?rel&_every_q|_some_q|_all_q|_each_q  ?viSeRaNa  BV ? ?viSeRya)
  (test (neq ?viSeRaNa ?viSeRya))
  (relation_name-id-args_with_ids ?rel1 ?viSeRya $?)
- (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization))) 
+ (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)(eq ?rel1 named))) 
  =>
  (printout       ?*fp*   "(viSeRya-viSeRaNa    "?viSeRya"       "?viSeRaNa")"crlf)
  (printout       ?*fp1*  "(prep_id-relation-anu_ids  -     viSeRya-viSeRaNa    "?viSeRya"      "?viSeRaNa")"crlf)
@@ -230,7 +230,6 @@
  (relation_name-id-args_with_ids ?rel ?subject_samAnAXikaraNa ARG0 ?sen_head  ?id  ARG1 ? ?subject $?)
  (test (and (> ?be_verb ?subject) (< ?be_verb ?subject_samAnAXikaraNa)))
  (test (eq (find_sub-str_before_last_underscore ?rel) "a"))
- ;(test (or (eq (sub-string  (length (sub-string 12 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_at-for-of")(eq (sub-string  (length (sub-string 4 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_1")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_in")))
  =>
  (printout       ?*fp*   "(subject-subject_samAnAXikaraNa   "?subject"  "?subject_samAnAXikaraNa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     subject-subject_samAnAXikaraNa    "?subject"        "?subject_samAnAXikaraNa")"crlf)
@@ -317,7 +316,7 @@
  (test (eq (gdbm_lookup "preposition.gdbm" (find_sub-str_before_last_underscore ?rel)) "1"))
  (id-word ?prep ?p_wrd)
  (relation_name-id-args_with_ids ?rel1 ?viSeRya $?)
- (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)))
+ (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)(eq ?rel1 named)))
   =>
  (printout       ?*fp*   "(viSeRya-"?p_wrd"_saMbanXI    "?viSeRya"	"?prep_saMbanXI")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  "?prep"     viSeRya-"?p_wrd"_saMbanXI    "?viSeRya"	"?prep_saMbanXI")"crlf)
@@ -330,9 +329,10 @@
  ;x9:_sound_n_of<13:18>[ARG1 x14] ==> (relation_name-id-args_with_ids _sound_n_of  4 ARG0 x9  4  ARG1 x14 6 )
  (defrule viSeRya-prep_saMbanXI_rule1
  (relation_name-id-args_with_ids ?rel  ? ARG0 ? ?viSeRya ARG1 ? ?prep_saMbanXI $?)
- (test (or (eq (find_sub-str_before_last_underscore ?rel) "n") (eq ?rel proper_q) (eq ?rel pron)(eq ?rel generic_entity)(eq ?rel nominalization)))
+ (test (or (eq (find_sub-str_before_last_underscore ?rel) "n") (eq ?rel proper_q) (eq ?rel pron)(eq ?rel generic_entity)(eq ?rel nominalization)(eq ?rel named)))
  (id-word ?prep ?p_wrd)
- (test (or (eq (string-to-field (find_sub-str_after_last_underscore ?rel)) ?p_wrd)(eq (string-to-field (find_sub-str_before_last_hypen (string-to-field (find_sub-str_after_last_underscore ?rel)))) ?p_wrd)))
+; (test (or (eq (string-to-field (find_sub-str_after_last_underscore ?rel)) ?p_wrd)(eq (string-to-field (find_sub-str_before_last_hypen (string-to-field (find_sub-str_after_last_underscore ?rel)))) ?p_wrd)))
+ (test (eq (string-to-field (find_sub-str_after_last_underscore ?rel)) ?p_wrd))
  (test (and (> ?prep ?viSeRya) (< ?prep ?prep_saMbanXI)))
   =>
  (printout       ?*fp*   "(viSeRya-"?p_wrd"_saMbanXI    "?viSeRya"      "?prep_saMbanXI")"crlf)
