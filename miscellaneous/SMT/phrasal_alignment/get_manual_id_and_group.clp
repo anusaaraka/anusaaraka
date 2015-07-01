@@ -139,6 +139,23 @@
 	(assert (manual_word_info (head_id ?id) (word ?m ?m1) (group_ids ?id ?id1)))
         (assert (mng_has_been_grouped ?id1))
 )
+
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;Ayana maNdala == AyanamaNdala == ionosphere
+(defrule get_dic_group
+(declare (salience 670))
+(manual_id-word ?mid ?m)
+(manual_id-word ?mid1&:(=(+ ?mid 1) ?mid1) ?m1)
+(test (eq (numberp ?m1) FALSE))
+(database_info (meaning ?mng))
+(test (eq (string-to-field (str-cat ?m ?m1)) ?mng))
+(not (mng_has_been_grouped ?mid1))
+=>
+	(assert (manual_word_info (head_id ?mid1) (word ?m ?m1) (group_ids ?mid ?mid1)))
+        (assert (mng_has_been_grouped ?mid1))
+)
+
 ;====================================== noun multi-word grouping =======================================
 (defrule get_default_group
 (declare (salience 600))
@@ -421,6 +438,6 @@
 ?f0<-(manual_word_info  (head_id ?mid) (word ?w))
 (test (integerp (member$ ?w (create$ / )))) 
 =>
-	(modify ?f0 (word @SYMBOL-@SLASH))
+	(modify ?f0 (word SYMBOL-SLASH))
 )
 

@@ -23,8 +23,14 @@ transmit	saFcariwa_kara
 fur	samUra
 Fig.	ciwra
 a	kisI
+an	kisI_BI/koI_BI
 even	waba_BI
 denote	nirUpiwa_kara
 cross-sectional	anuprasWa_paricCexa
 see	XyAna_xe
 interdependent	paraspara_sambanXiwa
+dimension	vimA
+kind	prakAra
+same	eka_hI
+join	joda_xe
+nor	na_wo

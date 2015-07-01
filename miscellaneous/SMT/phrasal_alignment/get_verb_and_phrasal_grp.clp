@@ -135,7 +135,7 @@
 (declare (salience 850))
 ?f0<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF ?mid $?gids -  $?mng)
 (manual_word_info (head_id ?mid) (word ?w))
-(man_word-root-cat ?w ?r&kara|ho|xe v)
+(man_word-root-cat ?w ?r&kara|ho|xe|raKa v)
 (manual_word_info (head_id ?mid1&:(= (- ?mid 1) ?mid1)) (word $?word))
 (database_info (components $?word $? ?r) (root ?root))
 =>

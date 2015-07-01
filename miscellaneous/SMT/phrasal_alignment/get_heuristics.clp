@@ -63,6 +63,33 @@
         (assert (man_verb_count-verbs ?man_verb_count $?verbs))
 )
 ;-------------------------------------------------------------------------------------
+;In a good number of situations in real-life, the size of objects can be neglected and they can be considered as point-like objects without much error.
+;vAswavika jIvana meM [bahuwa-sI] sWiwiyoM meM vaswuoM ke AmApa (sAija) kI upekRA kI jA sakawI hE Ora binA aXika wruti ke unheM eka [biMxu-vaswu] mAnA jA sakawA hE .
+;not modified in manual_word_info bcoz we are not modifying phrasal info
+(defrule cp_man_hypen_word
+(declare (salience 1000))
+(manual_word_info (head_id ?mid) (word ?mng)(vibakthi $?v))
+(test (eq (numberp ?mng) FALSE))
+(test (neq (str-index "-" ?mng) FALSE))
+=>
+	(bind ?new_mng (remove_character "-" (implode$ (create$  ?mng)) " "))
+	(assert (id-hyphen_word-vib ?mid - ?new_mng - $?v))
+)
+;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;assert dbase fact for mngs without space
+;ex : man: Ayana maNdala  dic : AyanamaNdala 
+(defrule get_dbase_fact
+(declare (salience 1000))
+(manual_word_info (head_id ?mid) (word ?m ?m1))
+(database_info (meaning ?mng)(group_ids ?aid))
+(test (eq (numberp ?m1) FALSE))
+(test (eq (string-to-field (str-cat ?m ?m1)) ?mng))
+(or (id-root ?aid ?root)(id-word ?aid ?root))
+=>
+	(assert (database_info (root ?root)(components ?m ?m1)))
+)
+;-------------------------------------------------------------------------------------
 (defrule get_current_word
 (manual_word_info (head_id ?mid))
 (not (manual_word_info (head_id ?mid1&:(< ?mid1 ?mid)))) 
@@ -103,6 +130,21 @@
         (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu anu_exact_match_with_vib))
 )
 
+;Added by Shirisha Manju
+;We shall confine ourselves to the study of motion of objects along a straight line, also [known] as rectilinear motion.
+;isa aXyAya meM hama apanA aXyayana vaswu ke eka sarala reKA ke anuxiSa gawi waka hI sImiwa raKeMge ;isa prakAra kI gawi ko sarala reKIya gawi BI [kahawe hEM] .
+(defrule anu_exact_match_with_WSD
+(declare (salience 840))
+(current_id ?mid)
+(or (manual_word_info (head_id ?mid)(root $?root))(manual_word_info (head_id ?mid)(word $?root)))
+(id-HM-source ?aid $?root WSD_root_mng|WSD_word_mng)
+(id-root ?aid ?e_noun)
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
+        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?e_noun anu anu_exact_match_with_WSD))
+	(assert (got_wsd_align ?aid ?mid))
+)
+
 ;-------------------------------- Exact match with anu [anu_vib absent ; man_vib pres]-------------------------------
 
 ;Eng_sen : This [property] of the body is called inertia.
@@ -111,14 +153,13 @@
 (defrule exact_match_with_anu_output1 
 (declare (salience 900))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib)(group_ids $?grp_ids))
+(manual_word_info (head_id ?mid) (word $?mng)(vibakthi ?v $?vib)(group_ids $?grp_ids))
 (id-Apertium_output ?aid $?mng)
-(test (and (neq $?vib -) (neq (length $?vib) 0)))
+(test (neq ?v 0))
 (id-root ?aid ?root)
 =>
 	(assert (anu_id-man_id-type ?aid ?mid  anu_exact_match_without_vib))
 	(assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu_partial exact_match_with_anu_output1))
-;	(assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu exact_match_with_anu_output1))
 )
 ;------------------------------ Exact match with anu [anu_vib present ; man_vib absent] ------------------------------------
 
@@ -129,7 +170,9 @@
 (declare (salience 900))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?mng)(vibakthi 0)(group_ids $?grp_ids))
-(id-Apertium_output ?aid $?mng ?)
+(id-Apertium_output ?aid $?mng $?prep)
+(id-HM-source ?pid $?prep ?)
+(pada_info (group_head_id ?aid) (preposition ?pid&~0))
 (id-root ?aid ?root)
 =>
         (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match_without_vib))
@@ -138,16 +181,19 @@
 )
 
 ;--------------------------------------- dictionary match ----------------------------------------------
-
+;Eng: Physics is exciting in many ways.
+;Man: BOwikI kaI [prakAra] [se] uwwejaka hE
+;Anu: BOwika vijFAna bahuwa [mArgoM] [meM] romAFcaka hE.
 (defrule man_word_and_vib_match_using_dic
 (declare (salience 870))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib))
+(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib)) (id-hyphen_word-vib ?mid - $?mng - $?vib))
 (database_info (components $?mng)(root ?root))
 (database_info (components $?vib)(root ?v_root))
-(id-root ?id ?root)
+(or (id-root ?id ?root)(id-word ?id ?root))
 (id-root ?vib_id ?v_root)
 (pada_info (group_head_id  ?id)(preposition ?vib_id))
+(not (anu_id-man_id-root-src-rule_name ?id ?mid ? ? man_word_and_vib_match_using_dic))
 =>
 	(assert (anu_id-man_id-type ?id ?mid  dictionary_match))
 	(assert (anu_id-man_id-root-src-rule_name ?id ?mid ?root dictionary man_word_and_vib_match_using_dic))
@@ -158,14 +204,15 @@
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word ?mng)(vibakthi $?vib))
 (man_word-root-cat ?mng ?root ?)
-(database_info (components ?root)(root ?e_noun))
-(database_info (components $?vib)(root ?e_vib))
-(id-root ?e_noun_id ?e_noun)
-(id-root ?e_vib_id ?e_vib)
-(pada_info (group_head_id  ?e_noun_id)(preposition ?e_vib_id))
+(database_info (components ?root)(root ?root))
+(database_info (components $?vib)(root ?v))
+(id-root ?id ?root)
+(id-root ?vib_id ?v)
+(pada_info (group_head_id  ?id)(preposition $? ?vib_id $?))
+(not (anu_id-man_id-root-src-rule_name ?id ?mid ? ? man_word_and_vib_match_using_dic))
 =>
-        (assert (anu_id-man_id-type ?e_noun_id ?mid  dictionary_match))
-        (assert (anu_id-man_id-root-src-rule_name ?e_noun_id ?mid ?e_noun dictionary man_root_and_vib_match_using_dic))
+        (assert (anu_id-man_id-type ?id ?mid  dictionary_match))
+        (assert (anu_id-man_id-root-src-rule_name ?id ?mid ?root dictionary man_root_and_vib_match_using_dic))
 )
 ;---------------------------------------------------------------------------
 ;To avoid this, a common compromise is the [cross-sectional] shape shown in Fig. 9.9(c)
@@ -173,24 +220,45 @@
 (defrule man_word_match_using_dic
 (declare (salience 840))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib)(group_ids $?grp_ids))
+(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi 0))  (id-hyphen_word-vib ?mid - $?mng - 0))
 (database_info (components $?mng)(root ?e_noun))
-(or (id-root ?eid ?e_noun)(id-word ?eid ?e_noun))
+(or (id-root ?aid ?e_noun)(id-word ?aid ?e_noun))
+(not (anu_id-man_id-root-src-rule_name ?aid ?mid ? ? man_word_and_vib_match_using_dic))
+(not (anu_id-man_id-root-src-rule_name ?aid ?mid ? ? man_root_and_vib_match_using_dic))
 =>
-        (assert (anu_id-man_id-type ?eid ?mid  dictionary_match_without_vib))
-        (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_noun dictionary man_word_match_using_dic))
+        (assert (anu_id-man_id-type ?aid ?mid  dictionary_match_without_vib))
+        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?e_noun dictionary man_word_match_using_dic))
+)
+;---------------------------------------------------------------------------
+;if vib present and there is no dic match for vib
+(defrule dic_word_match_without_vib
+(declare (salience 830))
+(current_id ?mid)
+(manual_word_info (head_id ?mid) (word $?mng)(vibakthi ?v $?))
+(test (neq ?v 0))
+(database_info (components $?mng)(root ?e_noun))
+(or (id-root ?aid ?e_noun)(id-word ?aid ?e_noun))
+(not (anu_id-man_id-root-src-rule_name ?aid ?mid ? ? man_word_and_vib_match_using_dic))
+(not (anu_id-man_id-root-src-rule_name ?aid ?mid ? ? man_root_and_vib_match_using_dic))
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  dictionary_match_without_vib))
+        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?e_noun dictionary_without_vib dic_word_match_without_vib))
 )
 ;---------------------------------------------------------------------------
 (defrule man_root_match_using_dic
-(declare (salience 840))
+(declare (salience 820))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word ?mng)(vibakthi $?vib)(group_ids $?grp_ids))
+(manual_word_info (head_id ?mid) (word ?mng)(vibakthi ?v $?vib))
 (man_word-root-cat ?mng ?root ?)
 (database_info (components ?root)(root ?e_noun))
-(id-root ?eid ?e_noun)
+(or (id-root ?aid ?e_noun)(id-word ?aid ?e_noun))
+(not (anu_id-man_id-root-src-rule_name ?aid ?mid ? ? man_word_and_vib_match_using_dic))
+(not (anu_id-man_id-root-src-rule_name ?aid ?mid ? ? man_root_and_vib_match_using_dic))
+(not (anu_id-man_id-root-src-rule_name ?aid ?mid ? ? man_word_match_using_dic))
+(not (anu_id-man_id-root-src-rule_name ?aid ?mid ? ? dic_word_match_without_vib))
 =>
-	(assert (anu_id-man_id-type ?eid ?mid  dictionary_match_without_vib))
-        (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_noun dictionary man_root_match_using_dic))
+	(assert (anu_id-man_id-type ?aid ?mid  dictionary_match_without_vib))
+        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?e_noun dictionary man_root_match_using_dic))
 )
 ;---------------------------------------------------------------------------
 ;For the case of [rectilinear motion] with uniform acceleration, a set of simple equations can be obtained.
@@ -204,15 +272,17 @@
 (id-root ?eid ?e_noun)
 =>
         (assert (anu_id-man_id-type ?eid ?mid  dictionary_match_without_vib))
-        (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_noun dictionary man_word_match_using_multi_dic))
+        (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_noun multi_dict man_word_match_using_multi_dic))
 )
 ;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 (defrule partial_word_match_with_anu
 (declare (salience 840))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?mng)(group_ids $?grp_ids))
 (id-Apertium_output ?aid $? $?mng $?)
 (id-root ?aid ?root)
+(not (got_wsd_align ?aid ?mid))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  anu_partial_match))
         (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu_partial partial_word_match_with_anu))
@@ -280,6 +350,7 @@
         )
 )
 ;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 ;Similarly, we can argue that it lies on the median MQ and NR.
 ;isI prakAra hama [warka kara sakawe hEM] ki yaha mAXyikA @MQ Ora @NR para BI avasWiwa hogA.
 ;In Rutherford's nuclear model of the atom, the entire positive charge and most of the mass of the atom [are concentrated] in the nucleus with the electrons some distance away. 
@@ -401,6 +472,7 @@
         (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  M_layer_pharasal_match align_using_phrasal_data_M))
 )
 ;============================== get scope ============================================
+;Added by Shirisha Manju
 (defrule get_small_scope_fact
 (declare (salience 811))
 (current_id ?mid)
@@ -416,6 +488,7 @@
         (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  scope get_small_scope_fact))
 )
 ;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 (defrule get_large_scope_fact
 (declare (salience 810))
 (current_id ?mid)
@@ -429,6 +502,22 @@
 =>
 	(assert (anu_id-man_id-type ?aid ?mid  scope))
         (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  scope get_large_scope_fact))
+)
+;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+(defrule get_manual_scope
+(declare (salience 810))
+(current_id ?mid)
+(anu_id-man_id-root-src-rule_name ?aid ?mid $?)
+(anu_id-man_id-root-src-rule_name =(+ ?aid 1) ?mid1&:(= (+ ?mid 1) ?mid1) $?)
+(id-root ?aid ?root)
+(chunk_name-chunk_ids ? $?grp)
+(test (integerp (member$ ?mid1 $?grp)))
+(test (integerp (member$ ?mid $?grp)))
+(not (anu_id-man_id-root-src-rule_name ?aid ?mid $? manual_scope $?))
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  manual_scope))
+        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  manual_scope get_manual_scope))
 )
 ;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
@@ -493,6 +582,7 @@
         (retract ?f0)
 )
 ;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 (defrule get_row_colm_info
 (declare (salience -10))
 (expr $?order)

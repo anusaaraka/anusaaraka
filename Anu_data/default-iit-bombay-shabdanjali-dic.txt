@@ -16616,7 +16616,7 @@ confidingly_adverb	viSvAsa_prakata_karawe_hue
 configuration_UNDEFINED	vinyAsa
 configuration_noun	samAkqwi/kanPigareSana
 configure_verb	samanurUpa_banA
-confine_verb	sImAbaxXa_kara/sImIwa_raKa/kExa_raKa
+confine_verb	sImAbaxXa_kara/sImiwa_raKa/kExa_raKa
 confined_UNDEFINED	sImAbaxXa_karanA
 confined_adjective	sImiwa
 confinedest_UNDEFINED	sImiwa

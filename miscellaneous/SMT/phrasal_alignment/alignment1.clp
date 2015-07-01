@@ -16,28 +16,51 @@
 (defrule modify_mwe_slot
 (declare (salience 12))
 (or (ids-cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?)(ids-domain_cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?))
-?f0<-(alignment (anu_id ?id) (man_id ?mid) (anu_meaning) (man_meaning ?m $?m1))
-?f1<-(alignment (anu_id ?id1) (man_id ?mid1) (anu_meaning ?m $?amng) (man_meaning $?mng))
+?f0<-(alignment (anu_id ?id) (man_id ?mid) (anu_meaning) (man_meaning $?pre ?m $?m1))
+?f1<-(alignment (anu_id ?id1) (man_id ?mid1) (anu_meaning $? ?m $?amng) (man_meaning $?mng))
 (test (eq (integerp (member$ ?id $?ids)) TRUE))
 (test (eq (integerp (member$ ?id1 $?ids)) TRUE))
 =>
         (retract ?f0)
-        (modify ?f1 (man_meaning ?m $?m1 $?mng))
+        (modify ?f1 (man_meaning $?pre ?m $?m1 $?mng))
+	(assert (modified_mwe_slot ?mid))
 )
+;------------------------------------------------------------------
+;He also gave an explicit form for the force for [gravitational attraction] between two bodies.
+;unhoMne xo piMdoM ke bIca [guruwvAkarRaNa] bala ke lie suspaRta sUwra BI xiyA.
+(defrule modify_mwe_slot1
+(declare (salience 10))
+(or (ids-cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?)(ids-domain_cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?))
+?f0<-(alignment (anu_id ?id) (man_id ?mid) (anu_meaning) (man_meaning $?m1))
+(id-Apertium_output ?id1 $? ?m $?)
+(test (eq (integerp (member$ ?id $?ids)) TRUE))
+(test (eq (integerp (member$ ?id1 $?ids)) TRUE))
+(test (eq (integerp (member$ ?m $?m1)) TRUE))
+(not (modified_mwe_slot ?mid))
+=>
+        (modify ?f0 (anu_id ?id1))
+	(assert (modified_mwe_slot ?mid))
+)
+
 
 ;-------------------- Modify aux alignment----------------
 
 ;These [are bonded] together by interatomic or intermolecular forces and stay in a stable equilibrium position.
 ;yaha anwarA-paramANavika yA anwarA-ANavika baloM xvArA Apasa meM [bazXe] [howe hEM] Ora eka sWira sAmya avasWA meM rahawe hEM.
-(defrule modify_verb_slot_if_noun_aligned
+(defrule modify_aux_slot
 (declare (salience 12))
 (root-verbchunk-tam-chunkids ? ? ? ?id $? ?h)
-?f0<-(alignment (anu_id ?h) (man_id ?mid)(man_meaning ?m))
-(chunk_name-chunk_ids VGNF|JJ|NP|JJP $? ?mid $?)
-?f<-(alignment (anu_id ?id) (anu_meaning) (man_meaning $?mng))
+?f0<-(alignment (anu_id ?h) (man_id ?mid)(man_meaning $?m))
+(chunk_name-chunk_ids ? $? ?mid $?)
+;(chunk_name-chunk_ids VGNF|JJ|NP|JJP $? ?mid $?)
+?f<-(alignment (anu_id ?id) (man_id ?mid1)(anu_meaning) (man_meaning $?mng))
 =>
         (retract ?f )
-        (modify ?f0 (man_meaning ?m $?mng))
+	(if (> ?mid1 ?mid) then
+	        (modify ?f0 (man_meaning $?m $?mng))
+	else
+	        (modify ?f0 (man_meaning $?mng $?m))
+	)
 )
 
 ;------------------------------- verb related rules -----------------------------------------
@@ -66,7 +89,7 @@
 ?f<-(left_over_ids $?p ?id $?p1)
 ?f0<-(alignment (anu_id ?aid) (man_id =(- ?id 1)) (anu_meaning $?amng) (man_meaning ?mng))
 (id-cat_coarse ?aid verb)
-(chunk_name-chunk_ids JJP|NP|VGNF =(- ?id 1)) 
+(chunk_name-chunk_ids JJP|NP|VGNF $? =(- ?id 1) $?) 
 (manual_word_info (head_id ?id) (word $?mng1)(vibakthi $?v))
 (chunk_name-chunk_ids ?c&VGF|VGNN $? ?id $?)
 =>
@@ -130,7 +153,6 @@
 		(modify ?f0 (man_meaning ?mng ?mng1 $?w ?v $?vib))
 	)
 )
-
 ;---------------------------------- noun related rules---------------------------------------
 
 ;The first model of atom was proposed by J. J. Thomson in 1898.
@@ -204,7 +226,25 @@
         (retract ?f)
         (assert (alignment (anu_id ?a1) (man_id ?id) (anu_meaning $?am) (man_meaning $?mng)))
 )
-
+;----------------------------------------------------------------------------------------------
+;A [bundle] of optical fibers can be put to several uses.
+;prakASika wanwuoM ke [baNdala (gucCa) kA] kaI prakAra se upayoga kiyA jA sakawA hE.
+(defrule align_paren_word
+(declare (salience -9))
+?f<-(left_over_ids ?id)
+(manual_word_info (head_id ?id) (word ?m))
+(manual_id-word =(- ?id 1) @PUNCT-OpenParen)
+(manual_id-word =(+ ?id 1) @PUNCT-ClosedParen)
+(manual_word_info (head_id ?mid&:(= (- ?id 2) ?mid)) (word $?word)(vibakthi ?v $?vib))
+?f0<-(alignment (man_id ?mid))
+=>
+	(retract ?f)
+	(if (neq ?v 0) then
+		(modify ?f0 (man_meaning $?word @PUNCT-OpenParen ?m @PUNCT-ClosedParen ?v $?vib))
+	else
+		(modify ?f0 (man_meaning $?word @PUNCT-OpenParen ?m @PUNCT-ClosedParen ))
+	)
+)
 ;----------------------- to get leftover_anu_ids ----------------------------------------
 (defrule get_left_anu_ids
 (declare (salience -7))
