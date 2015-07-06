@@ -82,6 +82,7 @@
  (test (neq (find_sub-str_after_last_underscore ?rel) "there"));[There] was a red mark on the door.
  (relation_name-id-args_with_ids ?rel1 ?sub $?)
  (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron) (eq ?rel1 generic_entity)(eq ?rel1 nominalization)(eq ?rel1 named)));This is a sample sentence for Anusaraka.
+ (not (prep_id-relation-anu_ids  -  kriyA-subject  ?kriyA ?sub))
  =>
  (printout       ?*fp*   "(kriyA-subject    "?kriyA"	"?sub")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     kriyA-subject    "?kriyA"	"?sub")"crlf)
@@ -97,6 +98,7 @@
  (id-word ?obj ~what) ;[What] is the purpose of Dharma?
  (relation_name-id-args_with_ids ?rel1 ?obj $?)
  (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)(eq ?rel1 named)));I will give up smoking.
+ (not (prep_id-relation-anu_ids  -  kriyA-object  ?kriyA ?obj))
  =>
  (printout       ?*fp*   "(kriyA-object     "?kriyA"	"?obj")"crlf)
  (printout       ?*fp1*  "(prep_id-relation-anu_ids  -   kriyA-object	"?kriyA"	"?obj")"crlf)
@@ -116,6 +118,8 @@
  (not (relation_name-id-args_with_ids parg_d ?kriyA $?)) ;The fruits were eaten by me.
  (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
  (test (neq (find_sub-str_after_last_underscore ?rel) "modal"))
+ (not (prep_id-relation-anu_ids  -  kriyA-object_1  ?kriyA ?obj1))
+ (not (prep_id-relation-anu_ids  -  kriyA-object_2  ?kriyA ?obj2))
  =>
  (printout       ?*fp*   "(kriyA-object_1     "?kriyA"    "?obj1")"crlf)
  (printout       ?*fp1*  "(prep_id-relation-anu_ids  -   kriyA-object_1  "?kriyA"        "?obj1")"crlf)
@@ -137,6 +141,7 @@
  (not (relation_name-id-args_with_ids parg_d ?kriyA $?)) ;The fruits were eaten by me.
  (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
  (test (neq (find_sub-str_after_last_underscore ?rel) "modal"))
+ (not (prep_id-relation-anu_ids  -  kriyA-vAkyakarma  ?kriyA ?vAkyakarma))
  =>
  (printout       ?*fp*   "(kriyA-vAkyakarma     "?kriyA"    "?vAkyakarma")"crlf)
  (printout       ?*fp1*  "(prep_id-relation-anu_ids  -   kriyA-vAkyakarma  "?kriyA"        "?vAkyakarma")"crlf)
@@ -151,6 +156,7 @@
  (relation_name-id-args_with_ids ?rel1 ?kriyA $?)
  (test (eq (find_sub-str_before_last_underscore ?rel1) "v"))
  (test (eq (find_sub-str_before_last_underscore ?rel) "a"))
+ (not (prep_id-relation-anu_ids  -  kriyA-kriyA_viSeRaNa  ?kriyA ?kriyA_viSeRaNa))
  =>
  (printout       ?*fp*   "(kriyA-kriyA_viSeRaNa    "?kriyA"	"?kriyA_viSeRaNa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     kriyA-kriyA_viSeRaNa    "?kriyA"	"?kriyA_viSeRaNa")"crlf)
@@ -169,6 +175,7 @@
  (relation_name-id-args_with_ids ?rel1 ?viSeRya $?)
  (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)(eq ?rel1 named)))
  (not (sent_head-id ?  ?viSeRaNa));Rama is good.
+ (not (prep_id-relation-anu_ids  -  viSeRya-viSeRaNa  ?viSeRya ?viSeRaNa))
  =>
  (printout       ?*fp*   "(viSeRya-viSeRaNa    "?viSeRya"	"?viSeRaNa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     viSeRya-viSeRaNa    "?viSeRya"	"?viSeRaNa")"crlf)
@@ -185,6 +192,7 @@
  (test (neq ?viSeRaNa ?viSeRya))
  (relation_name-id-args_with_ids ?rel1 ?viSeRya $?)
  (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)(eq ?rel1 named))) 
+ (not (prep_id-relation-anu_ids  -  viSeRya-viSeRaNa  ?viSeRya ?viSeRaNa))
  =>
  (printout       ?*fp*   "(viSeRya-viSeRaNa    "?viSeRya"       "?viSeRaNa")"crlf)
  (printout       ?*fp1*  "(prep_id-relation-anu_ids  -     viSeRya-viSeRaNa    "?viSeRya"      "?viSeRaNa")"crlf)
@@ -196,6 +204,7 @@
  ;_2:def_explicit_q<14:17>[BV x9] ==> (relation_name-id-args_with_ids def_explicit_q  4  BV x9 5 )
  (defrule viSeRya-RaRTI_viSeRaNa_rule
  (relation_name-id-args_with_ids def_explicit_q  ?RaRTI_viSeRaNa  BV ? ?viSeRya)
+ (not (prep_id-relation-anu_ids  -  viSeRya-RaRTI_viSeRaNa  ?viSeRya ?RaRTI_viSeRaNa))
  =>
  (printout       ?*fp*   "(viSeRya-RaRTI_viSeRaNa    "?viSeRya"       "?RaRTI_viSeRaNa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     viSeRya-RaRTI_viSeRaNa    "?viSeRya"      "?RaRTI_viSeRaNa")"crlf)
@@ -207,6 +216,7 @@
  ;e3:_be_v_id<5:7>[ARG1 x6, ARG2 x9] ==> (relation_name-id-args_with_ids _be_v_id 2 ARG0 e3 2 ARG1 x6 1 ARG2 x9 5)
  (defrule subject-subject_samAnAXikaraNa_rule
  (relation_name-id-args_with_ids _be_v_id ?  ARG0 ?  ?  ARG1 ? ?subject ARG2 ? ?subject_samAnAXikaraNa $?)
+ (not (prep_id-relation-anu_ids  -  subject-subject_samAnAXikaraNa    ?subject ?subject_samAnAXikaraNa))
  =>
  (printout       ?*fp*   "(subject-subject_samAnAXikaraNa   "?subject"	"?subject_samAnAXikaraNa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     subject-subject_samAnAXikaraNa    "?subject"	"?subject_samAnAXikaraNa")"crlf)
@@ -230,6 +240,7 @@
  (relation_name-id-args_with_ids ?rel ?subject_samAnAXikaraNa ARG0 ?sen_head  ?id  ARG1 ? ?subject $?)
  (test (and (> ?be_verb ?subject) (< ?be_verb ?subject_samAnAXikaraNa)))
  (test (eq (find_sub-str_before_last_underscore ?rel) "a"))
+ (not (prep_id-relation-anu_ids  -  subject-subject_samAnAXikaraNa    ?subject ?subject_samAnAXikaraNa))
  =>
  (printout       ?*fp*   "(subject-subject_samAnAXikaraNa   "?subject"  "?subject_samAnAXikaraNa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     subject-subject_samAnAXikaraNa    "?subject"        "?subject_samAnAXikaraNa")"crlf)
@@ -250,6 +261,7 @@
  (test (and (> ?be_verb ?subject) (< ?be_verb ?subject_samAnAXikaraNa)))
  (test (eq (find_sub-str_before_last_underscore ?rel) "a"))
 ;(test (or (eq (sub-string  (length (sub-string 12 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_at-for-of")(eq (sub-string  (length (sub-string 4 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_1")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a")(eq (sub-string  (length (sub-string 2 (length ?rel) ?rel)) (length ?rel) ?rel) "_a_in")))
+ (not (prep_id-relation-anu_ids  -  subject-subject_samAnAXikaraNa    ?subject ?subject_samAnAXikaraNa))
  =>
  (printout       ?*fp*   "(subject-subject_samAnAXikaraNa   "?subject"  "?subject_samAnAXikaraNa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     subject-subject_samAnAXikaraNa    "?subject"        "?subject_samAnAXikaraNa")"crlf)
@@ -262,6 +274,7 @@
  (defrule viSeRya-det_viSeRaNa_rule
  (relation_name-id-args_with_ids ?rel&_a_q|_the_q|_this_q_dem  ?det_viSeRaNa  BV ? ?viSeRya)
  (test (neq ?det_viSeRaNa ?viSeRya)) 
+ (not (prep_id-relation-anu_ids  -  viSeRya-det_viSeRaNa    ?viSeRya  ?det_viSeRaNa))
  =>
  (printout       ?*fp*   "(viSeRya-det_viSeRaNa    "?viSeRya"	"?det_viSeRaNa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     viSeRya-det_viSeRaNa    "?viSeRya"	"?det_viSeRaNa")"crlf)
@@ -302,6 +315,7 @@
  (relation_name-id-args_with_ids compound ? ARG0 ? ? ARG1 ? ?viSeRya ARG2 ? ?kqxanwa_viSeRaNa)
  (relation_name-id-args_with_ids nominalization  ?kqxanwa_viSeRaNa $?)
  (test (neq ?viSeRya ?kqxanwa_viSeRaNa))
+ (not (prep_id-relation-anu_ids  -   viSeRya-kqxanwa_viSeRaNa   ?viSeRya ?kqxanwa_viSeRaNa))
   =>
  (printout       ?*fp*   "(viSeRya-kqxanwa_viSeRaNa    "?viSeRya"  "?kqxanwa_viSeRaNa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     viSeRya-kqxanwa_viSeRaNa   "?viSeRya" "?kqxanwa_viSeRaNa")"crlf)
@@ -352,6 +366,7 @@
  (not (relation_name-id-args_with_ids ?rel1 ?u_id $?))
  (test (> ?u_id ?kriyA))
  (test (neq (gdbm_lookup "Phrv.gdbm" (str-cat ?k_wrd "_" ?upasarga)) "FALSE"))
+ (not (prep_id-relation-anu_ids  - kriyA-upasarg ?kriyA    ?u_id))
  =>
 ; (printout t (string-to-field (str-cat ?k_wrd _ ?upasarga)) "---  " (gdbm_lookup "Phrv.gdbm" (str-cat ?k_wrd _ ?upasarga)) crlf)
  (printout       ?*fp*   "(kriyA-upasarga    "?kriyA"      "?u_id")"crlf)
@@ -385,6 +400,7 @@
  (id-word ?d_sub_id ?dummy_subject)
  (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
  (test (eq (string-to-field (find_sub-str_after_last_underscore ?rel)) ?dummy_subject))
+ (not (prep_id-relation-anu_ids  -   kriyA-dummy_subject   ?kriyA    ?d_sub_id))
   =>
  (printout       ?*fp*   "(kriyA-aBihiwa    "?kriyA"      "?aBihiwa")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     kriyA-aBihiwa    "?kriyA"       "?aBihiwa")"crlf)
@@ -401,6 +417,7 @@
  ;e10:neg<7:10>[ARG1 e3] ==> (relation_name-id-args_with_ids neg  3 ARG0 e10  3  ARG1 e3 4 )
  (defrule kriyA-kriyA_niReXaka_rule
  (relation_name-id-args_with_ids neg  ? ARG0 ? ?kriyA_niReXaka  ARG1 ? ?kriyA $?)
+ (not (prep_id-relation-anu_ids  -  kriyA-kriyA_niReXaka   ?kriyA   ?kriyA_niReXaka))
   =>
  (printout       ?*fp*   "(kriyA-kriyA_niReXaka    "?kriyA"      "?kriyA_niReXaka")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     kriyA-kriyA_niReXaka    "?kriyA"       "?kriyA_niReXaka")"crlf)
@@ -417,6 +434,7 @@
  ;e9:loc_nonsp<7:12>[ARG1 e3, ARG2 x10]  ==> (relation_name-id-args_with_ids loc_nonsp  3 ARG0 e9  3  ARG1 e3 2  ARG2 x10 3 )
  (defrule kriyA-aXikaraNavAcI_rule
  (relation_name-id-args_with_ids loc_nonsp  ? ARG0 ?  ?  ARG1 ? ?kriyA  ARG2 ? ?aXikaraNavAcI $?)
+ (not (prep_id-relation-anu_ids  -   kriyA-aXikaraNavAcI    ?kriyA    ?aXikaraNavAcI))
  =>
  (printout       ?*fp*   "(kriyA-aXikaraNavAcI    "?kriyA"      "?aXikaraNavAcI")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     kriyA-aXikaraNavAcI    "?kriyA"       "?aXikaraNavAcI")"crlf)
@@ -429,6 +447,7 @@
  (logon_relation-properties   ?rel TENSE untensed)
  (id-word ?to to)
  (test (eq ?to (- ?infinitive 1)))
+ (not (prep_id-relation-anu_ids  -  to-infinitive ?to    ?infinitive))
  =>
  (printout       ?*fp*   "(to-infinitive    "?to"      "?infinitive")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     to-infinitive    "?to"       "?infinitive")"crlf)
@@ -492,6 +511,7 @@
  (relation_name-id-args_with_ids ?rel  ?kriyA ARG0 ?  ?  ARG1 ? ?prep_saMbanXI ARG2 ? ?sub $?)
  (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
  (id-word ?by by)
+ (not (prep_id-relation-anu_ids  ?by  kriyA-by_saMbanXI  ?kriyA ?prep_saMbanXI))
   =>
  (printout       ?*fp*   "(kriyA-subject    "?kriyA"    "?sub")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  -     kriyA-subject    "?kriyA"   "?sub")"crlf)
@@ -562,15 +582,18 @@
  ;------------------------------------------------------------------------------------------------------------------------
  ;Eg:-In mathematics, computing, linguistics and related disciplines, an algorithm is a sequence of instructions, often used for calculation and data processing.
  (defrule get_comp_rel_using_conj_info
- (prep_id-relation-anu_ids ? conjunction-components  ?conj	$?comp)
- (prep_id-relation-anu_ids ?prep ?rel  ?id  ?conj)
+ (prep_id-relation-anu_ids ? conjunction-components  $?pre ?comp $?pos)
+ (prep_id-relation-anu_ids ?prep ?rel ?id  ?comp)
+ (not (got_component_relation ?rel ?id  ?comp)) 
  =>
- (bind ?len (length $?comp))
+ (bind $?components (create$ $?pre $?pos))
+ (bind ?len (length $?components))
  (loop-for-count (?i 1 ?len)
- (bind ?j (nth$ ?i $?comp))
+ (bind ?j (nth$ ?i $?components))
  (printout       ?*fp*   "("?rel"	"?id"	"?j")"crlf)
  (printout       ?*fp1*   "(prep_id-relation-anu_ids  "?prep"     "?rel"  "?id"    "?j")"crlf)
  (printout       ?*dbug* "(prep_id-Rule-Rel-ids  "?prep" get_comp_rel_using_conj_info    "?rel"      "?j")"crlf)
  (assert (prep_id-relation-anu_ids  ?prep  ?rel   ?id  ?j))
+ (assert (got_component_relation ?rel ?id  ?j))
  )
  )
