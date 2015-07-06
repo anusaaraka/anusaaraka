@@ -63,6 +63,35 @@
         (assert (man_verb_count-verbs ?man_verb_count $?verbs))
 )
 ;-------------------------------------------------------------------------------------
+;In a good number of situations in real-life, the size of objects can be neglected and they can be considered as point-like objects without much error.
+;vAswavika jIvana meM [bahuwa-sI] sWiwiyoM meM vaswuoM ke AmApa (sAija) kI upekRA kI jA sakawI hE Ora binA aXika wruti ke unheM eka [biMxu-vaswu] mAnA jA sakawA hE .
+;not modified in manual_word_info bcoz we are not modifying phrasal info
+(defrule cp_man_hypen_word
+(declare (salience 1000))
+(manual_word_info (head_id ?mid) (word ?mng)(vibakthi $?v))
+(test (eq (numberp ?mng) FALSE))
+(test (neq (str-index "-" ?mng) FALSE))
+=>
+	(bind ?new_mng (remove_character "-" (implode$ (create$  ?mng)) " "))
+	(assert (id-hyphen_word-vib ?mid - ?new_mng - $?v))
+	(bind ?new_mng1 (remove_character " " (implode$ (create$  ?new_mng)) ""))
+	(assert (id-hyphen_word-vib ?mid - ?new_mng1 - $?v))
+)
+;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;assert dbase fact for mngs without space
+;ex : man: Ayana maNdala  dic : AyanamaNdala 
+(defrule get_dbase_fact
+(declare (salience 1000))
+(manual_word_info (head_id ?mid) (word ?m ?m1))
+(database_info (meaning ?mng)(group_ids ?aid))
+(test (eq (numberp ?m1) FALSE))
+(test (eq (string-to-field (str-cat ?m ?m1)) ?mng))
+(or (id-root ?aid ?root)(id-word ?aid ?root))
+=>
+	(assert (database_info (root ?root)(components ?m ?m1)))
+)
+;-------------------------------------------------------------------------------------
 (defrule get_current_word
 (manual_word_info (head_id ?mid))
 (not (manual_word_info (head_id ?mid1&:(< ?mid1 ?mid)))) 
@@ -80,14 +109,14 @@
 (defrule anu_exact_match_without_vib
 (declare (salience 902))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?mng)(vibakthi 0))
+(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi 0))(id-hyphen_word-vib ?mid - $?mng - 0))
 (id-Apertium_output ?aid $?mng)
 (pada_info (group_head_id ?aid)(preposition  0))
-(id-root ?aid ?root)
 =>
         (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
-        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu anu_exact_match_without_vib))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid anu anu_exact_match_without_vib))
 )
+;-------------------------------------------------------------------------------------
 
 ;Eng  : This question was, [in fact], the starting point that led us to the notion of the electrostatic potential (Sections 2.1 and 2.2).
 ;Anu  : yaha praSna SurU_karane_kA sWAna [vAswava meM], WA, jisane ilektrovstEtika anwarnihiwa Sakwi kI (sekSanja 2.1 Ora 2.2) XAraNA ke lie hameM mArga xiKAyA.
@@ -97,10 +126,27 @@
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib))
 (id-Apertium_output ?aid $?mng $?vib)
-(id-root ?aid ?root)
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_exact_match_without_vib))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
-        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu anu_exact_match_with_vib))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid anu anu_exact_match_with_vib))
+)
+;-------------------------------------------------------------------------------------
+
+;Added by Shirisha Manju
+;We shall confine ourselves to the study of motion of objects along a straight line, also [known] as rectilinear motion.
+;isa aXyAya meM hama apanA aXyayana vaswu ke eka sarala reKA ke anuxiSa gawi waka hI sImiwa raKeMge ;isa prakAra kI gawi ko sarala reKIya gawi BI [kahawe hEM] .
+(defrule anu_exact_match_with_WSD
+(declare (salience 840))
+(current_id ?mid)
+(or (manual_word_info (head_id ?mid)(root $?root))(manual_word_info (head_id ?mid)(word $?root)))
+(id-HM-source ?aid $?root WSD_root_mng|WSD_word_mng)
+(not (anu_id-man_id-src-rule_name ?aid ?mid  ? anu_exact_match_without_vib))
+(not (anu_id-man_id-src-rule_name ?aid ?mid  ? anu_exact_match_with_vib))
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid anu anu_exact_match_with_WSD))
+	(assert (got_wsd_align ?aid ?mid))
 )
 
 ;-------------------------------- Exact match with anu [anu_vib absent ; man_vib pres]-------------------------------
@@ -111,14 +157,12 @@
 (defrule exact_match_with_anu_output1 
 (declare (salience 900))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib)(group_ids $?grp_ids))
+(manual_word_info (head_id ?mid) (word $?mng)(vibakthi ?v $?vib)(group_ids $?grp_ids))
 (id-Apertium_output ?aid $?mng)
-(test (and (neq $?vib -) (neq (length $?vib) 0)))
-(id-root ?aid ?root)
+(test (neq ?v 0))
 =>
 	(assert (anu_id-man_id-type ?aid ?mid  anu_exact_match_without_vib))
-	(assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu_partial exact_match_with_anu_output1))
-;	(assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu exact_match_with_anu_output1))
+	(assert (anu_id-man_id-src-rule_name ?aid ?mid anu_partial exact_match_with_anu_output1))
 )
 ;------------------------------ Exact match with anu [anu_vib present ; man_vib absent] ------------------------------------
 
@@ -129,43 +173,45 @@
 (declare (salience 900))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?mng)(vibakthi 0)(group_ids $?grp_ids))
-(id-Apertium_output ?aid $?mng ?)
-(id-root ?aid ?root)
+(id-Apertium_output ?aid $?mng $?prep)
+(id-HM-source ?pid $?prep ?)
+(pada_info (group_head_id ?aid) (preposition ?pid&~0))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match_without_vib))
-        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu_partial exact_match_with_anu_output2))
-;        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu exact_match_with_anu_output2))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid anu_partial exact_match_with_anu_output2))
 )
 
 ;--------------------------------------- dictionary match ----------------------------------------------
-
+;Eng: Physics is exciting in many ways.
+;Man: BOwikI kaI [prakAra] [se] uwwejaka hE
+;Anu: BOwika vijFAna bahuwa [mArgoM] [meM] romAFcaka hE.
 (defrule man_word_and_vib_match_using_dic
 (declare (salience 870))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib))
-(database_info (components $?mng)(root ?root))
-(database_info (components $?vib)(root ?v_root))
-(id-root ?id ?root)
-(id-root ?vib_id ?v_root)
+(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib)) (id-hyphen_word-vib ?mid - $?mng - $?vib))
+(database_info (components $?mng)(group_ids $? ?id $?))
+(database_info (components $?vib)(group_ids $? ?vib_id $?))
 (pada_info (group_head_id  ?id)(preposition ?vib_id))
+(not (anu_id-man_id-src-rule_name ?id ?mid  man_word_and_vib_match_using_dic))
 =>
 	(assert (anu_id-man_id-type ?id ?mid  dictionary_match))
-	(assert (anu_id-man_id-root-src-rule_name ?id ?mid ?root dictionary man_word_and_vib_match_using_dic))
+	(assert (anu_id-man_id-src-rule_name ?id ?mid dictionary man_word_and_vib_match_using_dic))
 )
 ;-------------------------------------------------------------------------------------
+;Speculation and conjecture also have a place in science; but ultimately, a scientific theory, to be acceptable, must be verified by relevant observations or experiments.
+;nirAXAra kalpanA waWA anumAna lagAne kA BI vijFAna meM sWAna hEH paranwu, anwawaH, kisI vEjFAnika sixXAnwa ko svIkArya yogya banAne ke lie, use prAsafgika prekRaNoM aWavA [prayogoM xvArA] sawyApiwa kiyA jAnA BI AvaSyaka howA hE.  
 (defrule man_root_and_vib_match_using_dic
 (declare (salience 830))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word ?mng)(vibakthi $?vib))
+(manual_word_info (head_id ?mid) (word $?m ?mng)(vibakthi $?vib))
 (man_word-root-cat ?mng ?root ?)
-(database_info (components ?root)(root ?e_noun))
-(database_info (components $?vib)(root ?e_vib))
-(id-root ?e_noun_id ?e_noun)
-(id-root ?e_vib_id ?e_vib)
-(pada_info (group_head_id  ?e_noun_id)(preposition ?e_vib_id))
+(database_info (components $?m ?root)(group_ids $? ?id $?))
+(database_info (components $?vib)(group_ids $? ?vib_id $?))
+(pada_info (group_head_id  ?id)(preposition $? ?vib_id $?))
+(not (anu_id-man_id-src-rule_name ?id ?mid ?  man_word_and_vib_match_using_dic))
 =>
-        (assert (anu_id-man_id-type ?e_noun_id ?mid  dictionary_match))
-        (assert (anu_id-man_id-root-src-rule_name ?e_noun_id ?mid ?e_noun dictionary man_root_and_vib_match_using_dic))
+        (assert (anu_id-man_id-type ?id ?mid  dictionary_match))
+        (assert (anu_id-man_id-src-rule_name ?id ?mid dictionary man_root_and_vib_match_using_dic))
 )
 ;---------------------------------------------------------------------------
 ;To avoid this, a common compromise is the [cross-sectional] shape shown in Fig. 9.9(c)
@@ -173,49 +219,56 @@
 (defrule man_word_match_using_dic
 (declare (salience 840))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib)(group_ids $?grp_ids))
-(database_info (components $?mng)(root ?e_noun))
-(or (id-root ?eid ?e_noun)(id-word ?eid ?e_noun))
+(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi 0))  (id-hyphen_word-vib ?mid - $?mng - 0))
+(database_info (components $?mng)(group_ids $? ?aid $?))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ?  man_word_and_vib_match_using_dic))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ?  man_root_and_vib_match_using_dic))
 =>
-        (assert (anu_id-man_id-type ?eid ?mid  dictionary_match_without_vib))
-        (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_noun dictionary man_word_match_using_dic))
+        (assert (anu_id-man_id-type ?aid ?mid  dictionary_match_without_vib))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid dictionary man_word_match_using_dic))
 )
 ;---------------------------------------------------------------------------
+;if vib present and there is no dic match for vib
+(defrule dic_word_match_without_vib
+(declare (salience 830))
+(current_id ?mid)
+(manual_word_info (head_id ?mid) (word $?mng)(vibakthi ?v $?))
+(test (neq ?v 0))
+(database_info (components $?mng)(group_ids $? ?aid $?))
+(not (anu_id-man_id-src-rule_name ?aid ?mid  ? man_word_and_vib_match_using_dic))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ?  man_root_and_vib_match_using_dic))
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  dictionary_match_without_vib))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid dictionary_without_vib dic_word_match_without_vib))
+)
+;---------------------------------------------------------------------------
+;You will learn more about the significant figures in section 2.7.
+;anuBAga 2.7 meM Apa sArWaka afkoM ke viRaya meM Ora viswAra se sIKeMge.  sArWaka afkoM == man  sArWaka afka == dic  
 (defrule man_root_match_using_dic
-(declare (salience 840))
+(declare (salience 820))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word ?mng)(vibakthi $?vib)(group_ids $?grp_ids))
+(manual_word_info (head_id ?mid) (word $?m ?mng)(vibakthi ?v $?vib))
 (man_word-root-cat ?mng ?root ?)
-(database_info (components ?root)(root ?e_noun))
-(id-root ?eid ?e_noun)
+(database_info (components $?m ?root)(group_ids $? ?aid $?))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ?  man_word_and_vib_match_using_dic))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ?  man_root_and_vib_match_using_dic))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ?  man_word_match_using_dic))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ?  dic_word_match_without_vib))
 =>
-	(assert (anu_id-man_id-type ?eid ?mid  dictionary_match_without_vib))
-        (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_noun dictionary man_root_match_using_dic))
+	(assert (anu_id-man_id-type ?aid ?mid  dictionary_match_without_vib))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid dictionary man_root_match_using_dic))
 )
 ;---------------------------------------------------------------------------
-;For the case of [rectilinear motion] with uniform acceleration, a set of simple equations can be obtained.
-;ekasamAna wvariwa [sarala reKIya gawi ke lie] kuCa sarala samIkaraNa prApwa kie jA sakawe hEM.
-(defrule man_word_match_using_multi_dic
-(declare (salience 840))
-(current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib)(group_ids $?grp_ids))
-(database_info (components $?mng)(database_type multi) (group_ids $? ?eid $?))
-(id-Apertium_output ?eid ? $?)
-(id-root ?eid ?e_noun)
-=>
-        (assert (anu_id-man_id-type ?eid ?mid  dictionary_match_without_vib))
-        (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_noun dictionary man_word_match_using_multi_dic))
-)
-;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 (defrule partial_word_match_with_anu
 (declare (salience 840))
 (current_id ?mid)
-(manual_word_info (head_id ?mid) (word $?mng)(group_ids $?grp_ids))
+(or (manual_word_info (head_id ?mid) (word $?mng)(group_ids $?grp_ids)) (manual_word_info (head_id ?mid) (word $?mng ?v&se|ko_ke)))
 (id-Apertium_output ?aid $? $?mng $?)
-(id-root ?aid ?root)
+(not (got_wsd_align ?aid ?mid))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  anu_partial_match))
-        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root anu_partial partial_word_match_with_anu))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid anu_partial partial_word_match_with_anu))
 )
 ;=================================   verb rules =================================================
 ;Check for manual verb[root] and tam match in the dictionary
@@ -224,12 +277,11 @@
 (declare (salience 880))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?verb_mng)(root $?v_root)(vibakthi $?tam)(group_ids $?grp_ids))
-(database_info (components $?v_root)(root ?root))
+(database_info (components $?v_root)(group_ids $? ?aid $?))
 (e_tam-id-dbase_name-mng ?e_tam ? ? $?tam)
-(id-root ?aid ?root)
 =>
         (assert (anu_id-man_id-type ?aid ?mid  dictionary_match))
-        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root dictionary verb_root_and_tam_match_using_dic))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid dictionary verb_root_and_tam_match_using_dic))
 )
 ;-------------------------------------------------------------------------------------
 ;Therefore, an atom must also contain some positive charge to [neutralise] the negative charge of the electrons.
@@ -239,11 +291,10 @@
 (current_id ?mid)
 (manual_word_info (head_id ?mid)(word $?r)(root $?root)(vibakthi $?tam))
 (test (neq $?tam 0))
-(database_info (components $?root)(root ?e_verb))
-(or (id-root ?eid ?e_verb)(id-original_word ?eid ?e_verb))
+(database_info (components $?root)(group_ids $? ?eid $?))
 =>
 	(assert (anu_id-man_id-type ?eid ?mid  dictionary_match_without_vib))
-        (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_verb dictionary verb_root_match_using_dic))
+        (assert (anu_id-man_id-src-rule_name ?eid ?mid dictionary verb_root_match_using_dic))
 )
 ;---------------------------------------------------------------------------
 ;If only one verb is present in both the manual and anusaaraka sentences then make direct alignment.
@@ -252,10 +303,9 @@
 (current_id ?mid)
 (anu_verb_count-verbs 1 ?aid)
 (man_verb_count-verbs 1 ?mid)
-(id-root ?aid ?root)
 =>
         (assert (anu_id-man_id-type ?aid ?mid  single_verb_match))
-        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root single_verb_match single_verb_match_with_anu))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid single_verb_match single_verb_match_with_anu))
 )
 
 ;---------------------------------------------------------------------------
@@ -268,18 +318,18 @@
 (manual_word_info (head_id ?mid) (word ?m_mng)(vibakthi $?vib))
 (man_word-root-cat ?m_mng ?h_root ?)
 (test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?h_root))) "FALSE"))
-(database_info (meaning ?mng) (root ?e_root))
+(database_info (meaning ?mng) (group_ids $? ?aid $?))
 (test (neq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng))) "FALSE"))
 (test (eq (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?h_root))) (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?mng)))))
-(id-root ?aid ?e_root)
 =>
         (bind ?dic_val (gdbm_lookup "hindi_wordnet_dic1.gdbm" (gdbm_lookup "hindi_wordnet_dic2.gdbm" (implode$ (create$ ?h_root)))))
         (if (neq ?dic_val "FALSE") then
 		(assert (anu_id-man_id-type ?aid ?mid  hindi_wordnet_match))
-        	(assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?e_root hindi_wordnet lookup_man_word_in_hindi_wordnet))
+        	(assert (anu_id-man_id-src-rule_name ?aid ?mid hindi_wordnet lookup_man_word_in_hindi_wordnet))
         )
 )
 ;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 ;Similarly, we can argue that it lies on the median MQ and NR.
 ;isI prakAra hama [warka kara sakawe hEM] ki yaha mAXyikA @MQ Ora @NR para BI avasWiwa hogA.
 ;In Rutherford's nuclear model of the atom, the entire positive charge and most of the mass of the atom [are concentrated] in the nucleus with the electrons some distance away. 
@@ -289,11 +339,10 @@
 (current_id ?mid)
 (manual_word_info (head_id ?mid)(root $?v_root ?r&kara|ho|xe))
 (test (neq (length $?v_root) 0))
-(or (database_info (root ?root)(components $?v_root $? ?r) (database_type single) ) (database_info (root ?root)(components $?v_root $?) (database_type single)))
-(id-root ?aid ?root)
+(or (database_info (components $?v_root $? ?r) (database_type single)(group_ids $? ?aid $?) ) (database_info (components $?v_root $?) (database_type single)(group_ids $? ?aid $?)))
 =>
 	(assert (anu_id-man_id-type ?aid ?mid  kriyA_mUla_partial_match))
-	(assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root kriyA_mUla_with_dic kriyA_mUla_partial_match))
+	(assert (anu_id-man_id-src-rule_name ?aid ?mid kriyA_mUla_with_dic kriyA_mUla_partial_match))
 )
 ;================================ English word rules ====================================
 ;Eng : This process under forward bias is known as minority [carrier] [injection].
@@ -306,10 +355,9 @@
 (test (neq (str-index @ (implode$ (create$ $?word))) FALSE))
 (or (id-word ?eid $?word1)(id-original_word ?eid $?word1))
 (test (eq (explode$ (str-cat  @ (implode$ (create$ $?word1)))) $?word))
-(id-root ?eid ?e_root)
 =>
 	(assert (anu_id-man_id-type ?eid ?mid  english_word_match))
-        (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_root english_word_match check_match_with_english_word))
+        (assert (anu_id-man_id-src-rule_name ?eid ?mid english_word_match check_match_with_english_word))
 )
 ;-------------------------------------------------------------------------------------
 ;check_match_with_english_word and check_match_with_english_word1 are the same rules just the test condition differs [?word and $?word] 
@@ -322,10 +370,9 @@
 (test (neq (str-index @ (implode$ (create$ ?word))) FALSE))
 (or (id-word ?eid ?word1)(id-original_word ?eid ?word1))
 (test (or (eq ?word1 ?word) (eq (string-to-field (str-cat (sub-string 1 (- (str-index @ (implode$ (create$ ?word))) 1) ?word) (sub-string (+ (str-index @ (implode$ (create$ ?word))) 1) (length (implode$ (create$ ?word))) ?word))) ?word1)))
-(id-root ?eid ?e_root)
 =>
 	(assert (anu_id-man_id-type ?eid ?mid  english_word_match))
-        (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_root english_word_match check_match_with_english_word1))
+        (assert (anu_id-man_id-src-rule_name ?eid ?mid english_word_match check_match_with_english_word1))
 )
 ;================================ transliterate rules =================================================
 ;Eng Sen :: My name is Kular.
@@ -338,10 +385,9 @@
 (word-transliterate_mng ?lwc_word ?word)
 (id-HM-source ?eid ?trans_mng transliterate_mng)
 (id-Apertium_output ?eid ?trans_mng)
-(id-root ?eid ?e_root)
 =>
 	(assert (anu_id-man_id-type ?eid ?mid  transliteration_match))
-        (assert (anu_id-man_id-root-src-rule_name ?eid ?mid ?e_root transliterate_match check_match_with_transliterate_mng))
+        (assert (anu_id-man_id-src-rule_name ?eid ?mid transliterate_match check_match_with_transliterate_mng))
 )
 ;============================= phrasal alignment =======================================================
 ;Added by Shirisha Manju
@@ -353,10 +399,9 @@
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (root $?man_mng ?k&kara|ho) )
 (anu_id-anu_mng-man_mng ?aid  ?  $?man_mng)
-(id-root ?aid ?root)
 =>
         (assert (anu_id-man_id-type ?aid ?mid  L_layer_pharasal_match))
-        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  L_layer_pharasal_match align_using_phrasal_data_L))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid  L_layer_pharasal_match align_using_phrasal_data_L))
 	(assert (got_align ?mid))
 )
 ;-------------------------------------------------------------------------------------
@@ -366,11 +411,10 @@
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?man_mng))
 (anu_id-anu_mng-man_mng ?aid  ?  $?man_mng)
-(id-root ?aid ?root)
 (not (got_align ?mid))
 =>
 	(assert (anu_id-man_id-type ?aid ?mid  L_layer_pharasal_match))
-        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  L_layer_pharasal_match align_using_phrasal_data_L))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid  L_layer_pharasal_match align_using_phrasal_data_L))
 )
 ;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
@@ -379,10 +423,9 @@
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?man_mng) (vibakthi ?vib))
 (eng_id-eng_wrd-man_wrd  ?aid ? $?man_mng ?vib) 
-(id-root ?aid ?root)
 =>
         (assert (anu_id-man_id-type ?aid ?mid  M_layer_pharasal_match))
-        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  M_layer_pharasal_match align_using_phrasal_data_M1))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid  M_layer_pharasal_match align_using_phrasal_data_M1))
 	(assert (got_M_layer_for ?mid))
 )
 ;-------------------------------------------------------------------------------------
@@ -393,42 +436,56 @@
 (declare (salience 830))
 (current_id ?mid)
 (manual_word_info (head_id ?mid) (word $?man_mng))
-(or (eng_id-eng_wrd-man_wrd  ?aid ? $?man_mng) (eng_id-eng_wrd-man_wrd  ?aid ? $?man_mng ?v&meM|se|ko))
-(id-root ?aid ?root)
+(or (eng_id-eng_wrd-man_wrd  ?aid ? $?man_mng) (eng_id-eng_wrd-man_wrd  ?aid ? $?man_mng ?v&meM|se|ko|ke ))
 (not (got_M_layer_for ?mid))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  M_layer_pharasal_match))
-        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  M_layer_pharasal_match align_using_phrasal_data_M))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid M_layer_pharasal_match align_using_phrasal_data_M))
 )
 ;============================== get scope ============================================
+;Added by Shirisha Manju
 (defrule get_small_scope_fact
 (declare (salience 811))
 (current_id ?mid)
-(anu_id-man_id-root-src-rule_name ?aid ?mid $?)
-(anu_id-man_id-root-src-rule_name ?aid1 =(- ?mid 1) $?)
+(anu_id-man_id-src-rule_name ?aid ?mid $?)
+(anu_id-man_id-src-rule_name ?aid1 =(- ?mid 1) $?)
 (pada_info (group_ids $?grp))
 (test (integerp (member$ ?aid $?grp)))
 (test (integerp (member$ ?aid1 $?grp)))
-(id-root ?aid ?root)
-(not (anu_id-man_id-root-src-rule_name ? ?mid $? scope $?))
+(not (anu_id-man_id-src-rule_name ? ?mid $? scope $?))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  scope))
-        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  scope get_small_scope_fact))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid  scope get_small_scope_fact))
 )
 ;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 (defrule get_large_scope_fact
 (declare (salience 810))
 (current_id ?mid)
-(anu_id-man_id-root-src-rule_name ?aid ?mid $?)
-(anu_id-man_id-root-src-rule_name ?aid1 =(- ?mid 1) $?)
+(anu_id-man_id-src-rule_name ?aid ?mid $?)
+(anu_id-man_id-src-rule_name ?aid1 =(- ?mid 1) $?)
 (mot-cat-praW_id-largest_group ? NP|PP ? $?grp)
 (test (integerp (member$ ?aid $?grp)))
 (test (integerp (member$ ?aid1 $?grp)))
-(id-root ?aid ?root)
-(not (anu_id-man_id-root-src-rule_name ? ?mid $? scope $?))
+(not (anu_id-man_id-src-rule_name ? ?mid $? scope $?))
 =>
 	(assert (anu_id-man_id-type ?aid ?mid  scope))
-        (assert (anu_id-man_id-root-src-rule_name ?aid ?mid ?root  scope get_large_scope_fact))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid  scope get_large_scope_fact))
+)
+;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+(defrule get_manual_scope
+(declare (salience 810))
+(current_id ?mid)
+(anu_id-man_id-src-rule_name ?aid ?mid $?)
+(anu_id-man_id-src-rule_name =(+ ?aid 1) ?mid1&:(= (+ ?mid 1) ?mid1) $?)
+(chunk_name-chunk_ids ? $?grp)
+(test (integerp (member$ ?mid1 $?grp)))
+(test (integerp (member$ ?mid $?grp)))
+(not (anu_id-man_id-src-rule_name ?aid ?mid $? manual_scope $?))
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  manual_scope))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid manual_scope get_manual_scope))
 )
 ;-------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
@@ -493,6 +550,7 @@
         (retract ?f0)
 )
 ;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 (defrule get_row_colm_info
 (declare (salience -10))
 (expr $?order)

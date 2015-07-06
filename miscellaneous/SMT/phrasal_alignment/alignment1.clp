@@ -16,31 +16,68 @@
 (defrule modify_mwe_slot
 (declare (salience 12))
 (or (ids-cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?)(ids-domain_cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?))
-?f0<-(alignment (anu_id ?id) (man_id ?mid) (anu_meaning) (man_meaning ?m $?m1))
-?f1<-(alignment (anu_id ?id1) (man_id ?mid1) (anu_meaning ?m $?amng) (man_meaning $?mng))
+?f0<-(alignment (anu_id ?id) (man_id ?mid) (anu_meaning) (man_meaning $?pre ?m $?m1))
+?f1<-(alignment (anu_id ?id1) (man_id ?mid1) (anu_meaning $? ?m $?amng) (man_meaning $?mng))
 (test (eq (integerp (member$ ?id $?ids)) TRUE))
 (test (eq (integerp (member$ ?id1 $?ids)) TRUE))
 =>
         (retract ?f0)
-        (modify ?f1 (man_meaning ?m $?m1 $?mng))
+        (modify ?f1 (man_meaning $?pre ?m $?m1 $?mng))
+	(assert (modified_mwe_slot ?mid))
+)
+;------------------------------------------------------------------
+;He also gave an explicit form for the force for [gravitational attraction] between two bodies.
+;unhoMne xo piMdoM ke bIca [guruwvAkarRaNa] bala ke lie suspaRta sUwra BI xiyA.
+(defrule modify_mwe_slot1
+(declare (salience 10))
+(or (ids-cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?)(ids-domain_cmp_mng-head-cat-mng_typ-priority $?ids ? ? ? ? ?))
+?f0<-(alignment (anu_id ?id) (man_id ?mid) (anu_meaning) (man_meaning $?m1))
+(id-Apertium_output ?id1 $? ?m $?)
+(test (eq (integerp (member$ ?id $?ids)) TRUE))
+(test (eq (integerp (member$ ?id1 $?ids)) TRUE))
+(test (eq (integerp (member$ ?m $?m1)) TRUE))
+(not (modified_mwe_slot ?mid))
+=>
+        (modify ?f0 (anu_id ?id1))
+	(assert (modified_mwe_slot ?mid))
 )
 
 ;-------------------- Modify aux alignment----------------
 
 ;These [are bonded] together by interatomic or intermolecular forces and stay in a stable equilibrium position.
 ;yaha anwarA-paramANavika yA anwarA-ANavika baloM xvArA Apasa meM [bazXe] [howe hEM] Ora eka sWira sAmya avasWA meM rahawe hEM.
-(defrule modify_verb_slot_if_noun_aligned
+(defrule modify_aux_slot
 (declare (salience 12))
 (root-verbchunk-tam-chunkids ? ? ? ?id $? ?h)
-?f0<-(alignment (anu_id ?h) (man_id ?mid)(man_meaning ?m))
-(chunk_name-chunk_ids VGNF|JJ|NP|JJP $? ?mid $?)
-?f<-(alignment (anu_id ?id) (anu_meaning) (man_meaning $?mng))
+?f0<-(alignment (anu_id ?h) (man_id ?mid)(man_meaning $?m))
+(chunk_name-chunk_ids ? $? ?mid $?)
+?f<-(alignment (anu_id ?id) (man_id ?mid1)(anu_meaning) (man_meaning $?mng))
 =>
         (retract ?f )
-        (modify ?f0 (man_meaning ?m $?mng))
+	(if (> ?mid1 ?mid) then
+	        (modify ?f0 (man_meaning $?m $?mng))
+	else
+	        (modify ?f0 (man_meaning $?mng $?m))
+	)
+)
+;The night sky with its bright celestial objects [has fascinated] humans since time immemorial.
+;anAxi kAla se hI rAwri ke AkASa meM camakane vAle KagolIya piMda [use sammohiwa karawe rahe hEM].
+;phrasal is aligning 'use' in has 
+(defrule rm_pronoun_words_from_finite_verb
+(declare (salience 10))
+(root-verbchunk-tam-chunkids ? ? ? $? ?h)
+?f0<-(alignment (anu_id ?h)(man_meaning ?w $?m))
+(test (neq (integerp (member$ ?w (create$ hI usa una yaha use ))) FALSE))
+?f1<-(left_over_ids $?ids)
+(manual_id-word ?mid ?w)
+=>
+	(retract ?f1)
+	(modify ?f0 (man_meaning $?m))
+	(assert (left_over_ids $?ids ?mid))	
 )
 
 ;------------------------------- verb related rules -----------------------------------------
+
 ;Eng: The time involved [varies] greatly according to climate, weather and crop.
 ;Man: jalavAyu, mOsama Ora Pasala ke anurUpa lAgawa samaya [baxalawA][rahawA hE].
 (defrule combine_verb_using_dic_and_score
@@ -66,7 +103,7 @@
 ?f<-(left_over_ids $?p ?id $?p1)
 ?f0<-(alignment (anu_id ?aid) (man_id =(- ?id 1)) (anu_meaning $?amng) (man_meaning ?mng))
 (id-cat_coarse ?aid verb)
-(chunk_name-chunk_ids JJP|NP|VGNF =(- ?id 1)) 
+(chunk_name-chunk_ids JJP|NP|VGNF $? =(- ?id 1) $?) 
 (manual_word_info (head_id ?id) (word $?mng1)(vibakthi $?v))
 (chunk_name-chunk_ids ?c&VGF|VGNN $? ?id $?)
 =>
@@ -130,7 +167,6 @@
 		(modify ?f0 (man_meaning ?mng ?mng1 $?w ?v $?vib))
 	)
 )
-
 ;---------------------------------- noun related rules---------------------------------------
 
 ;The first model of atom was proposed by J. J. Thomson in 1898.
@@ -153,27 +189,13 @@
 ?f0<-(left_over_ids $?p ?mid $?p0)
 ?f<-(alignment (anu_id ?aid) (man_id ?mid1&:(=(+ ?mid 1) ?mid1)) (anu_meaning $?amng) (man_meaning $?mng))
 (score (anu_id ?aid) (man_id ?mid))
+(not (score (anu_id ?aid) (man_id ?mid1)(rule_names $? ?r&anu_exact_match_without_vib|anu_exact_match_with_vib|man_root_and_vib_match_using_dic $?)))
 (manual_word_info (head_id ?mid) (word ?m))
 =>
 	(retract ?f ?f0)
 	(assert (alignment (anu_id ?aid) (man_id ?mid) (anu_meaning $?amng) (man_meaning ?m $?mng))  )
 	(assert (left_over_ids $?p $?p0))
 ) 
-;----------------------------------------------------------------------------------------------
-;Eng: The law of conservation of energy is thought to be valid across all domains of nature, from the microscopic to the macroscopic. 
-;Anu: UrjA ke saMrakRaNa kA niyama mAnA jAwA hE ki sWUla ko prakqwi ke saBI [praBAvakRewra] ke saBI ora, sUkRma se vEXa rahane ke lie .
-;Man: UrjA saMrakRaNa niyama ko prakqwi ke saBI [praBAva kRewroM], sUkRma se sWUla waka, ke lie vEXa mAnA gayA hE.
-(defrule group_prev_word_with_anu
-?f0<-(left_over_ids $?p ?mid $?p0)
-?f<-(alignment (anu_id ?aid) (man_id ?mid1&:(=(+ ?mid 1) ?mid1)) (anu_meaning ?m $?amng) (man_meaning $?mng))
-(manual_word_info (head_id ?mid) (word ?pmng))
-(test (eq (numberp ?m) FALSE))
-(test (eq (string-to-field (sub-string 1 (length ?pmng) ?m)) ?pmng))
-=>
-	(retract ?f0)
-	(assert (left_over_ids $?p $?p0))
-	(modify ?f (man_meaning ?pmng $?mng))
-)
 ;----------------------------------------------------------------------------------------------
 ;Like velocity, acceleration can also be positive, negative or zero.
 ;[vega ke samAna] [hI] wvaraNa BI XanAwmaka, qNAwmaka aWavA SUnya ho sakawA hE .
@@ -204,7 +226,25 @@
         (retract ?f)
         (assert (alignment (anu_id ?a1) (man_id ?id) (anu_meaning $?am) (man_meaning $?mng)))
 )
-
+;----------------------------------------------------------------------------------------------
+;A [bundle] of optical fibers can be put to several uses.
+;prakASika wanwuoM ke [baNdala (gucCa) kA] kaI prakAra se upayoga kiyA jA sakawA hE.
+(defrule align_paren_word
+;(declare (salience -9))
+?f<-(left_over_ids ?id)
+(manual_word_info (head_id ?id) (word ?m))
+(manual_id-word =(- ?id 1) @PUNCT-OpenParen)
+(manual_id-word =(+ ?id 1) @PUNCT-ClosedParen)
+(manual_word_info (head_id ?mid&:(= (- ?id 2) ?mid)) (word $?word)(vibakthi ?v $?vib))
+?f0<-(alignment (man_id ?mid))
+=>
+	(retract ?f)
+	(if (neq ?v 0) then
+		(modify ?f0 (man_meaning $?word @PUNCT-OpenParen ?m @PUNCT-ClosedParen ?v $?vib))
+	else
+		(modify ?f0 (man_meaning $?word @PUNCT-OpenParen ?m @PUNCT-ClosedParen ))
+	)
+)
 ;----------------------- to get leftover_anu_ids ----------------------------------------
 (defrule get_left_anu_ids
 (declare (salience -7))

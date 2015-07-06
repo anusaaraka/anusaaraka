@@ -41,15 +41,16 @@
                         (if (numberp ?k) then (bind ?k (implode$ (create$ ?k))))
                         (if (eq ?flag 1) then
                                 (bind ?str ?k)
-                                (bind $?grp_ids ?j)
+                                (bind $?grp_ids (create$ ?j))
                                 (bind ?flag 0)
                         else
                                 (bind ?str (str-cat ?str "_" ?k))
                                 (bind $?grp_ids (create$ $?grp_ids ?j)))
                                 (bind ?lkup (gdbm_lookup "preposition.gdbm"  ?str))
                                 (if (neq ?lkup "FALSE") then
- 					(if (> (length $?grp_ids) 1) then
-                                        (assert (prep_ids $?grp_ids)))
+	 				(if (> (length $?grp_ids) 1) then
+                                        	(assert (prep_ids $?grp_ids))
+					)
                                 )
                 )
         )

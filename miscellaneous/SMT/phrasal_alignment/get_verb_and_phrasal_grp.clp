@@ -135,13 +135,12 @@
 (declare (salience 850))
 ?f0<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF ?mid $?gids -  $?mng)
 (manual_word_info (head_id ?mid) (word ?w))
-(man_word-root-cat ?w ?r&kara|ho|xe v)
+(man_word-root-cat ?w ?r&kara|ho|xe|raKa v)
 (manual_word_info (head_id ?mid1&:(= (- ?mid 1) ?mid1)) (word $?word))
 (database_info (components $?word $? ?r) (root ?root))
 =>
        (retract ?f0 )
        (assert (chunk_name-chunk_ids-words ?chnk  ?mid1 ?mid $?gids - $?word $?mng))
-       (assert (id-kara_grouped ?mid1))
        (assert (id-man_root ?mid1 $?word ?r))	
 )
 ;----------------------------------------------------------------------------------------------------------
@@ -165,7 +164,6 @@
 =>
        	(retract ?f0 )
        	(assert (chunk_name-chunk_ids-words ?chnk  ?mid1 ?mid $?gids - ?word $?mng))
-      	(assert (id-kara_grouped ?mid1))
 	(assert (id-man_root ?mid1 ?r0 ?r))
 )
 ;----------------------------------------------------------------------------------------------------------
@@ -180,6 +178,7 @@
 =>
         (bind $?new_mng (create$ ?man_wrd $?r_mng))
 	(modify ?f1 (word $?new_mng)(root $?root)(root_components $?root) (group_ids $?gids))
+	(assert (root_decided ?mid))
 )
 ;----------------------------------------------------------------------------------------------------------
 ;Ex for not:This is mainly because most of the electrical energy sold by power companies is transmitted and distributed as alternating current.
@@ -254,7 +253,6 @@
 =>
         (retract ?f0 ?f1)
 	(modify ?f0 (head_id ?id1) (word ?m ?m1 $?mng)(root ?m ?r)(vibakthi 0 $?mng) (group_ids ?id1 $?ids))
-	(assert (chunk_info_to_be_modiifed ?id1 $?ids))
 	(assert	(replaced_tam_with_root_tam ?id1))
 )
 ;----------------------------------------------------------------------------------------------------------
@@ -340,8 +338,6 @@
 =>
   (retract ?f)
   (bind ?new_mng (remove_character "_" (implode$ (create$ ?man_mng)) " "))
-;  (bind ?new_mng (remove_character "." (implode$ ?new_mng) " "))
-  (bind ?new_mng (remove_character "," (implode$ ?new_mng) " "))
   (assert (anu_id-anu_mng-man_mng ?aid ?word ?new_mng))
   (assert (underscore_removed ?aid))
 )
@@ -355,8 +351,6 @@
 =>
   (retract ?f)
   (bind ?new_mng (remove_character "_" (implode$ (create$ ?man_mng)) " "))
- ; (bind ?new_mng (remove_character "." (implode$ ?new_mng) " "))
-  (bind ?new_mng (remove_character "," (implode$ ?new_mng) " "))
   (assert (eng_id-eng_wrd-man_wrd ?aid ?word ?new_mng))
   (assert (underscore_removed_in_M ?aid))
 )

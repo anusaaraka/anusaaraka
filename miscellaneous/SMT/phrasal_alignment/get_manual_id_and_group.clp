@@ -43,20 +43,38 @@
         (bind ?*id* (+ ?*id* 1))
 )
 ;===================================== grouping using dictionary ===========================================
-;Added by Shirisha Manju 5-06-15
-;In this example, the basis is the distance between the eyes.
-;isa uxAharaNa meM xonoM [AzKoM] [ke bIca] kI xUrI AXAraka hE.
-(defrule get_multi_vib_from_dic
-(declare (salience 701))
-(database_info (components ?mng&ke|kI|se ?mng1 $?))
+;Added by Shirisha Manju 2-07-15
+;The national standard of time interval 'second' as well as the frequency is maintained through four cesium atomic clocks.
+;cAra sIjiyama paramANu GadiyoM [ke mAXyama se], samaya-anwarAla ke rARtrIya mAnaka 'sekanda' kA anurakRaNa kiyA jAwA hE.
+(defrule get_multi_vib_3_from_dic
+(declare (salience 710))
+(database_info (components ?mng&ke|kI|se ?mng1 ?mng2))
 (manual_id-word ?id ?mng)
 (manual_id-word ?id1&:(=(+ ?id 1) ?id1) ?mng1)
-(manual_id-word ?id0&:(=(- ?id 1) ?id0) ?m)
+(manual_id-word ?id2&:(=(+ ?id 2) ?id2) ?m)
+(man_word-root-cat ?m ?mng2 ?)
 (not (mng_has_been_grouped ?id1))
 (not (chunk_name-chunk_ids VGF $? ?id1 $?))
-(test (neq (sub-string 1 6 (implode$ (create$ ?m))) "@PUNCT"))
+(not (chunk_name-chunk_ids VGF $? ?id2 $?))
 =>
-	(assert (ids-multi_vib_from_dic ?id ?id1 ?mng ?mng1))
+	(assert (ids-multi_vib_from_dic ?id ?id1 ?id2 -  ?mng ?mng1 ?m))
+        (assert (mng_has_been_grouped ?id))
+        (assert (mng_has_been_grouped ?id1))
+        (assert (mng_has_been_grouped ?id2))
+)
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 5-06-15
+;In this example, the basis is the distance between the eyes.
+;isa uxAharaNa meM xonoM AzKoM [ke bIca] kI xUrI AXAraka hE.
+(defrule get_multi_vib_2_from_dic
+(declare (salience 710))
+(database_info (components ?mng&ke|kI|se ?mng1))
+(manual_id-word ?id ?mng)
+(manual_id-word ?id1&:(=(+ ?id 1) ?id1) ?mng1)
+(not (mng_has_been_grouped ?id1))
+(not (chunk_name-chunk_ids VGF $? ?id1 $?))
+=>
+        (assert (ids-multi_vib_from_dic ?id ?id1 - ?mng ?mng1))
         (assert (mng_has_been_grouped ?id))
         (assert (mng_has_been_grouped ?id1))
 )
@@ -66,62 +84,97 @@
 ;piCale aXyAya meM BI eka [sarala reKA] [ke anuxiSa] gawimAna vaswu ke lie isa waWya ko BalIBAnwi samaJAyA gayA WA .
 (defrule group_multi_vib
 (declare (salience 650))
-?f<-(ids-multi_vib_from_dic ?id ?id0 $?vib)
+?f<-(ids-multi_vib_from_dic ?id $?vids - $?vib)
 ?f0<-(manual_word_info (head_id ?id1&:(=(- ?id 1) ?id1)) (word $?mng )(group_ids $?ids))
 =>
 	(retract ?f)
-	(modify ?f0 (vibakthi $?vib)(group_ids $?ids ?id ?id0))
+	(modify ?f0 (vibakthi $?vib)(group_ids $?ids ?id $?vids))
 )	
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;You should now be able to handle a large variety of problems in mechanics. 
+;aba Apa yAnwrikI kI viviXa prakAra kI samasyAoM ko [hala karane meM sakRama] hEM.
+(defrule multi_word_4_with_dic
+(declare (salience 701))
+(database_info (components ?mng ?mng1 ?mng2 ?mng3))
+(manual_id-word ?id0 ?mng&~ke&~kI&~se)
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?mng1)
+(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?mng2)
+(manual_id-word ?id3&:(=(+ ?id0 3) ?id3) ?m)
+(man_word-root-cat ?m ?mng3 ?)
+(not (mng_has_been_grouped ?id1))
+(not (mng_has_been_grouped ?id2))
+(not (mng_has_been_grouped ?id3))
+(not (chunk_name-chunk_ids VGF $? ?id1 $?))
+=>
+        (assert (manual_word_info (head_id ?id2) (word ?mng ?mng1 ?mng2 ?m)(group_ids ?id0 ?id1 ?id2 ?id3)))
+        (assert (mng_has_been_grouped ?id0))
+        (assert (mng_has_been_grouped ?id1))
+        (assert (mng_has_been_grouped ?id2))
+        (assert (mng_has_been_grouped ?id3))
+)
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;For the case of [rectilinear motion] with uniform acceleration, a set of simple equations can be obtained.
+;ekasamAna wvariwa [sarala reKIya gawi] ke lie kuCa sarala samIkaraNa prApwa kie jA sakawe hEM.
+;The [microscopic [domain]] includes atomic, molecular and nuclear phenomena.
+;jabaki [sUkRma praBAva kRewra] ke anwargawa paramANvIya, ANvika waWA nABikIya pariGatanAez AwI hEM.
+(defrule multi_word_3_with_dic
+(declare (salience 701))
+(database_info (components ?mng ?mng1 ?mng2))
+(manual_id-word ?id0 ?mng&~ke&~kI&~se)
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?mng1)
+(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?m)
+(man_word-root-cat ?m ?mng2 ?)
+(not (mng_has_been_grouped ?id1))
+(not (mng_has_been_grouped ?id2))
+(not (chunk_name-chunk_ids VGF $? ?id1 $?))
+=>
+        (assert (manual_word_info (head_id ?id2) (word ?mng ?mng1 ?m)(group_ids ?id0 ?id1 ?id2)))
+        (assert (mng_has_been_grouped ?id0))
+        (assert (mng_has_been_grouped ?id1))
+        (assert (mng_has_been_grouped ?id2))
+)
+;----------------------------------------------------------------------------------------------------------
+;E: These unit vectors are perpendicular to each other.
+;M: ye ekAfka saxiSa [eka xUsare ke] lambavaw hEM .  dic: eka xUsare se
+;E: The experimental discoveries of Oersted and Faraday showed that electric and magnetic phenomena are in general inseparable.
+;M: oYrsteda waWA PErAde ne prAyogika KojoM xvArA xarSAyA ki [vyApaka rUpa meM] vExyuwa waWA cumbakIya pariGatanAez avicCexya hEM.
+;     dic == vyApaka rUpa se
+(defrule multi_word_3_with_dic1
+(declare (salience 701))
+(database_info (components ?mng ?mng1 ?mng2))
+(manual_id-word ?id0 ?mng&~ke&~kI&~se)
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?mng1)
+(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?m)
+(test (eq (integerp (member$ ?mng2 (create$ ke se meM kA ko))) TRUE))
+(test (eq (integerp (member$ ?m (create$ ke se meM kA ko))) TRUE))
+(not (mng_has_been_grouped ?id1))
+(not (mng_has_been_grouped ?id2))
+(not (chunk_name-chunk_ids VGF $? ?id1 $?))
+=>
+        (assert (manual_word_info (head_id ?id2) (word ?mng ?mng1 ?m)(group_ids ?id0 ?id1 ?id2)))
+        (assert (mng_has_been_grouped ?id0))
+        (assert (mng_has_been_grouped ?id1))
+        (assert (mng_has_been_grouped ?id2))
+)
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
 ;Languages and methods used in communication have kept evolving from prehistoric to [modern times], to meet the growing demands in terms of speed and complexity of information.
 ;mAnava prAgEwihAsika kAla se [AXunika kAla] waka, saFcAra meM upayoga hone vAlI nayI - nayI BARAoM evaM viXiyoM kI Koja karane ke lie prayawnaSIla rahA hE, wAki saFcAra kI gawi evaM jatilawAoM ke paxoM meM baDawI AvaSyakawAoM kI pUrwi ho sake.
 ;[Similarly], we can argue that it lies on the median MQ and NR.
 ;[isI prakAra] hama warka kara sakawe hEM ki yaha mAXyikA MQ Ora NR para BI avasWiwa hogA.
-(defrule multi_word_with_dic
+(defrule multi_word_2_with_dic
 (declare (salience 700))
-(database_info (components ?mng ?mng1 $?))
+(database_info (components ?mng ?mng1 ))
 (manual_id-word ?id0 ?mng&~ke&~kI&~se)
-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?mng1)
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?m)
+(man_word-root-cat ?m ?mng1 ?c&~v)
 (not (mng_has_been_grouped ?id1))
 (not (chunk_name-chunk_ids VGF $? ?id1 $?))
-;(man_word-root-cat ?mng1 ?r&~kara&~ho&~xe ?)
 =>
-        (assert (manual_word_info (head_id ?id1) (word ?mng ?mng1)(group_ids ?id0 ?id1)))
+        (assert (manual_word_info (head_id ?id1) (word ?mng ?m)(group_ids ?id0 ?id1)))
         (assert (mng_has_been_grouped ?id0))
-        (assert (mng_has_been_grouped ?id1))
-)
-;----------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju
-;For the case of [rectilinear motion] with uniform acceleration, a set of simple equations can be obtained.
-;ekasamAna wvariwa [sarala reKIya] [gawi] ke lie kuCa sarala samIkaraNa prApwa kie jA sakawe hEM.
-(defrule add_mng_with_dic
-(declare (salience 690))
-(database_info (components $?mng ?mng1 $?))
-?f<-(manual_word_info (head_id ?id) (word $?mng) (group_ids $?ids ?lid))
-(manual_id-word ?id1&:(=(+ ?lid 1) ?id1) ?mng1)
-(not (mng_has_been_grouped ?id1))
-(not (chunk_name-chunk_ids VGF $? ?id1 $?))
-;(man_word-root-cat ?mng1 ?r&~kara&~ho&~xe ?)
-=>
-        (modify ?f (head_id ?id1)(word $?mng ?mng1)(group_ids $?ids ?lid ?id1))
-	(assert (mng_has_been_grouped ?id1))
-)
-;----------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju
-;The [microscopic [domain]] includes atomic, molecular and nuclear phenomena.
-;jabaki [sUkRma [praBAva kRewra]] ke anwargawa paramANvIya, ANvika waWA nABikIya pariGatanAez AwI hEM.
-(defrule add_mng_with_dic1
-(declare (salience 680))
-(database_info (components ?mng1 $?mng $?))
-?f<-(manual_word_info (head_id ?id) (word $?mng) (group_ids ?fid $?ids))
-(manual_id-word ?id1&:(=(- ?fid 1) ?id1) ?mng1)
-(not (mng_has_been_grouped ?id1))
-(not (chunk_name-chunk_ids VGF $? ?id1 $?))
-(not (chunk_name-chunk_ids VGF $? ?id $?))
-;(man_word-root-cat ?mng1 ?r&~kara&~ho&~xe ?)
-=>
-        (modify ?f (head_id ?id1)(word ?mng1 $?mng)(group_ids ?id1 ?fid $?ids))
         (assert (mng_has_been_grouped ?id1))
 )
 ;----------------------------------------------------------------------------------------------------------
@@ -139,6 +192,23 @@
 	(assert (manual_word_info (head_id ?id) (word ?m ?m1) (group_ids ?id ?id1)))
         (assert (mng_has_been_grouped ?id1))
 )
+
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
+;Ayana maNdala == AyanamaNdala == ionosphere
+(defrule get_dic_group
+(declare (salience 670))
+(manual_id-word ?mid ?m)
+(manual_id-word ?mid1&:(=(+ ?mid 1) ?mid1) ?m1)
+(test (eq (numberp ?m1) FALSE))
+(database_info (meaning ?mng))
+(test (eq (string-to-field (str-cat ?m ?m1)) ?mng))
+(not (mng_has_been_grouped ?mid1))
+=>
+	(assert (manual_word_info (head_id ?mid1) (word ?m ?m1) (group_ids ?mid ?mid1)))
+        (assert (mng_has_been_grouped ?mid1))
+)
+
 ;====================================== noun multi-word grouping =======================================
 (defrule get_default_group
 (declare (salience 600))
@@ -421,6 +491,6 @@
 ?f0<-(manual_word_info  (head_id ?mid) (word ?w))
 (test (integerp (member$ ?w (create$ / )))) 
 =>
-	(modify ?f0 (word @SYMBOL-@SLASH))
+	(modify ?f0 (word SYMBOL-SLASH))
 )
 
