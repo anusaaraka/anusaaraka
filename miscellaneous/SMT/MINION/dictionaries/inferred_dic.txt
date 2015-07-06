@@ -34,3 +34,4 @@ kind	prakAra
 same	eka_hI
 join	joda_xe
 nor	na_wo
+second	sekanda

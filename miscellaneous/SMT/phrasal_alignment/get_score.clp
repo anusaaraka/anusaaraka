@@ -5,7 +5,7 @@
 (defrule modify_score_fact
 (declare (salience 200))
 ?f0<-(score (anu_id ?aid) (man_id ?mid)(weightage_sum ?count)(heuristics $?hs)(rule_names $?rs))
-?f1<-(anu_id-man_id-root-src-rule_name ?aid ?mid ? ?h ?r)
+?f1<-(anu_id-man_id-src-rule_name ?aid ?mid ?h ?r)
 (test (eq (integerp (member$ ?r $?rs)) FALSE))
 (heuristic-weightage ?h ?w)
 =>
@@ -16,8 +16,8 @@
 ;-----------------------------------------------------------------------------------
 (defrule get_count
 (declare (salience 150))
-?f0<-(anu_id-man_id-root-src-rule_name ?aid ?mid ? ?h ?r)
-?f1<-(anu_id-man_id-root-src-rule_name ?aid ?mid ? ?h1 ?r1)
+?f0<-(anu_id-man_id-src-rule_name ?aid ?mid  ?h ?r)
+?f1<-(anu_id-man_id-src-rule_name ?aid ?mid  ?h1 ?r1)
 (test (neq ?h ?h1))
 (heuristic-weightage ?h ?w)
 (heuristic-weightage ?h1 ?w1)
@@ -29,7 +29,7 @@
 ;-----------------------------------------------------------------------------------
 (defrule get_count1
 (declare (salience 100))
-?f0<-(anu_id-man_id-root-src-rule_name ?aid ?mid ? ?h ?r)
+?f0<-(anu_id-man_id-src-rule_name ?aid ?mid ?h ?r)
 (heuristic-weightage ?h ?w)
 =>
         (retract ?f0)

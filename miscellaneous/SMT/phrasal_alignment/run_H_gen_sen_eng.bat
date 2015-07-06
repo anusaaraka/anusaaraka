@@ -144,7 +144,7 @@
  (assert (heuristics anu_exact_match anu_exact_match_without_vib anu_partial_match dictionary_match dictionary_match_without_vib hindi_wordnet_match single_verb_match kriyA_mUla_partial_match english_word_match transliteration_match scope M_layer_pharasal_match L_layer_pharasal_match))
  (open "slot_debug_input.txt" s_fp "a")
  (run)
- (save-facts "align_debug_source.dat" local anu_id-man_id-root-src-rule_name no_match_found)
+ (save-facts "align_debug_source.dat" local anu_id-man_id-src-rule_name no_match_found)
  (close s_fp)
  (clear)
  ;--------------------------------------------------------------------------
@@ -175,7 +175,6 @@
  (load ?*path*)
  (load-facts "manual_word.dat")
  (load-facts "aper_op_without_@.dat")
- (load-facts "align_debug_source.dat")
  (load-facts "align_score.dat")
  (load-facts "manual_lwg.dat")
  (load-facts "hin_mng_without_@.dat")

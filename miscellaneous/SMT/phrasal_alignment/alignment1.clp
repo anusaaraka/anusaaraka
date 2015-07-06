@@ -42,7 +42,6 @@
 	(assert (modified_mwe_slot ?mid))
 )
 
-
 ;-------------------- Modify aux alignment----------------
 
 ;These [are bonded] together by interatomic or intermolecular forces and stay in a stable equilibrium position.
@@ -52,7 +51,6 @@
 (root-verbchunk-tam-chunkids ? ? ? ?id $? ?h)
 ?f0<-(alignment (anu_id ?h) (man_id ?mid)(man_meaning $?m))
 (chunk_name-chunk_ids ? $? ?mid $?)
-;(chunk_name-chunk_ids VGNF|JJ|NP|JJP $? ?mid $?)
 ?f<-(alignment (anu_id ?id) (man_id ?mid1)(anu_meaning) (man_meaning $?mng))
 =>
         (retract ?f )
@@ -62,8 +60,24 @@
 	        (modify ?f0 (man_meaning $?mng $?m))
 	)
 )
+;The night sky with its bright celestial objects [has fascinated] humans since time immemorial.
+;anAxi kAla se hI rAwri ke AkASa meM camakane vAle KagolIya piMda [use sammohiwa karawe rahe hEM].
+;phrasal is aligning 'use' in has 
+(defrule rm_pronoun_words_from_finite_verb
+(declare (salience 10))
+(root-verbchunk-tam-chunkids ? ? ? $? ?h)
+?f0<-(alignment (anu_id ?h)(man_meaning ?w $?m))
+(test (neq (integerp (member$ ?w (create$ hI usa una yaha use ))) FALSE))
+?f1<-(left_over_ids $?ids)
+(manual_id-word ?mid ?w)
+=>
+	(retract ?f1)
+	(modify ?f0 (man_meaning $?m))
+	(assert (left_over_ids $?ids ?mid))	
+)
 
 ;------------------------------- verb related rules -----------------------------------------
+
 ;Eng: The time involved [varies] greatly according to climate, weather and crop.
 ;Man: jalavAyu, mOsama Ora Pasala ke anurUpa lAgawa samaya [baxalawA][rahawA hE].
 (defrule combine_verb_using_dic_and_score
@@ -175,27 +189,13 @@
 ?f0<-(left_over_ids $?p ?mid $?p0)
 ?f<-(alignment (anu_id ?aid) (man_id ?mid1&:(=(+ ?mid 1) ?mid1)) (anu_meaning $?amng) (man_meaning $?mng))
 (score (anu_id ?aid) (man_id ?mid))
+(not (score (anu_id ?aid) (man_id ?mid1)(rule_names $? ?r&anu_exact_match_without_vib|anu_exact_match_with_vib|man_root_and_vib_match_using_dic $?)))
 (manual_word_info (head_id ?mid) (word ?m))
 =>
 	(retract ?f ?f0)
 	(assert (alignment (anu_id ?aid) (man_id ?mid) (anu_meaning $?amng) (man_meaning ?m $?mng))  )
 	(assert (left_over_ids $?p $?p0))
 ) 
-;----------------------------------------------------------------------------------------------
-;Eng: The law of conservation of energy is thought to be valid across all domains of nature, from the microscopic to the macroscopic. 
-;Anu: UrjA ke saMrakRaNa kA niyama mAnA jAwA hE ki sWUla ko prakqwi ke saBI [praBAvakRewra] ke saBI ora, sUkRma se vEXa rahane ke lie .
-;Man: UrjA saMrakRaNa niyama ko prakqwi ke saBI [praBAva kRewroM], sUkRma se sWUla waka, ke lie vEXa mAnA gayA hE.
-(defrule group_prev_word_with_anu
-?f0<-(left_over_ids $?p ?mid $?p0)
-?f<-(alignment (anu_id ?aid) (man_id ?mid1&:(=(+ ?mid 1) ?mid1)) (anu_meaning ?m $?amng) (man_meaning $?mng))
-(manual_word_info (head_id ?mid) (word ?pmng))
-(test (eq (numberp ?m) FALSE))
-(test (eq (string-to-field (sub-string 1 (length ?pmng) ?m)) ?pmng))
-=>
-	(retract ?f0)
-	(assert (left_over_ids $?p $?p0))
-	(modify ?f (man_meaning ?pmng $?mng))
-)
 ;----------------------------------------------------------------------------------------------
 ;Like velocity, acceleration can also be positive, negative or zero.
 ;[vega ke samAna] [hI] wvaraNa BI XanAwmaka, qNAwmaka aWavA SUnya ho sakawA hE .
@@ -230,7 +230,7 @@
 ;A [bundle] of optical fibers can be put to several uses.
 ;prakASika wanwuoM ke [baNdala (gucCa) kA] kaI prakAra se upayoga kiyA jA sakawA hE.
 (defrule align_paren_word
-(declare (salience -9))
+;(declare (salience -9))
 ?f<-(left_over_ids ?id)
 (manual_word_info (head_id ?id) (word ?m))
 (manual_id-word =(- ?id 1) @PUNCT-OpenParen)
