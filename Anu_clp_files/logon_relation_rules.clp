@@ -109,7 +109,7 @@
  ;Eg: Abrams handed Browne the cigarette.
  ;e3:_hand_v_1<7:13>[ARG1 x6, ARG2 x9, ARG3 x10] ==> (relation_name-id-args_with_ids _hand_v_1  2 ARG0 e3  2  ARG1 x6 1  ARG2 x9 4  ARG3 x10 6 )
  (defrule kriyA_obj_rule1
- (relation_name-id-args_with_ids ?rel&~_be_v_id  ?kriyA  ARG0 ?  ?kriyA  ARG1 ? ?sub ARG2 ? ?obj1 ARG3 ? ?obj2 $?);Abrams handed the cigarette to Browne.
+ (relation_name-id-args_with_ids ?rel&~_be_v_id  ?kriyA  ARG0 ?  ?kriyA  ARG1 ? ?sub ARG2 ? ?obj2 ARG3 ? ?obj1 $?);Abrams handed the cigarette to Browne.
  (relation_name-id-args_with_ids ?rel1 ?obj1 $?) 
  (relation_name-id-args_with_ids ?rel2 ?obj2 $?) 
  (id-word =(- ?obj2 1) ~to);Abrams handed the cigarette to Browne.
