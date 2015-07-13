@@ -20,6 +20,7 @@
 ?f1<-(alignment (anu_id ?id1) (man_id ?mid1) (anu_meaning $? ?m $?amng) (man_meaning $?mng))
 (test (eq (integerp (member$ ?id $?ids)) TRUE))
 (test (eq (integerp (member$ ?id1 $?ids)) TRUE))
+(test (neq $?mng (create$ $?pre ?m $?m1)))
 =>
         (retract ?f0)
         (modify ?f1 (man_meaning $?pre ?m $?m1 $?mng))
@@ -44,38 +45,48 @@
 
 ;-------------------- Modify aux alignment----------------
 
+;The night sky with its bright celestial objects [has fascinated] humans since time immemorial.
+;anAxi kAla se hI rAwri ke AkASa meM camakane vAle KagolIya piMda [use sammohiwa karawe rahe hEM].
+;Recent decades have seen much progress on this front.
+;phrasal is aligning 'use kuCa hamane' in has, have
+(defrule rm_unrelated_words_from_aux_verb
+(declare (salience 13))
+(root-verbchunk-tam-chunkids ? ? ? ?id $? ?h)
+?f<-(alignment (anu_id ?id) (man_id ?mid)(anu_meaning) (man_meaning $?mng))
+(test (eq (integerp (member$ $?mng (create$ hE hEM howA hE howI hE howe hEM))) FALSE))
+?f1<-(left_over_ids $?ids)
+=>
+        (retract ?f ?f1)
+	(assert (left_over_ids $?ids ?mid))
+)
+;---------------------------------------------------------------------------------
 ;These [are bonded] together by interatomic or intermolecular forces and stay in a stable equilibrium position.
 ;yaha anwarA-paramANavika yA anwarA-ANavika baloM xvArA Apasa meM [bazXe] [howe hEM] Ora eka sWira sAmya avasWA meM rahawe hEM.
 (defrule modify_aux_slot
 (declare (salience 12))
 (root-verbchunk-tam-chunkids ? ? ? ?id $? ?h)
 ?f0<-(alignment (anu_id ?h) (man_id ?mid)(man_meaning $?m))
-(chunk_name-chunk_ids ? $? ?mid $?)
 ?f<-(alignment (anu_id ?id) (man_id ?mid1)(anu_meaning) (man_meaning $?mng))
+(test (eq (integerp (member$ $?mng (create$ $?m))) FALSE));In SI, there are seven base units as given in Table 2.1. 11-02
 =>
-        (retract ?f )
-	(if (> ?mid1 ?mid) then
+		(retract ?f )
 	        (modify ?f0 (man_meaning $?m $?mng))
-	else
-	        (modify ?f0 (man_meaning $?mng $?m))
-	)
 )
-;The night sky with its bright celestial objects [has fascinated] humans since time immemorial.
-;anAxi kAla se hI rAwri ke AkASa meM camakane vAle KagolIya piMda [use sammohiwa karawe rahe hEM].
-;phrasal is aligning 'use' in has 
-(defrule rm_pronoun_words_from_finite_verb
-(declare (salience 10))
-(root-verbchunk-tam-chunkids ? ? ? $? ?h)
-?f0<-(alignment (anu_id ?h)(man_meaning ?w $?m))
-(test (neq (integerp (member$ ?w (create$ hI usa una yaha use ))) FALSE))
-?f1<-(left_over_ids $?ids)
-(manual_id-word ?mid ?w)
+;---------------------------------------------------------------------------------
+;Some physical quantities that are represented by vectors are displacement, velocity, acceleration and force.
+;kuCa BOwika rASiyAz jinheM saxiSoM xvArA [vyakwa karawe hEM], ve [hEM] visWApana, vega, wvaraNa waWA bala .
+(defrule modify_aux_slot_with_score
+(declare (salience 11))
+(root-verbchunk-tam-chunkids ? are|is ? ?h1)
+(root-verbchunk-tam-chunkids ? ? ? ?id $? ?h)
+?f<-(alignment (anu_id ?id) (man_id ?mid)(anu_meaning) (man_meaning $?mng))
+?f0<-(score (anu_id ?h1) (man_id ?mid) ) 
+(not (alignment (anu_id ?h1)))
+(id-Apertium_output ?h1 $?m)
 =>
-	(retract ?f1)
-	(modify ?f0 (man_meaning $?m))
-	(assert (left_over_ids $?ids ?mid))	
+        (retract ?f ?f0)
+        (assert (alignment (anu_id ?h1)(man_id ?mid) (anu_meaning $?m)(man_meaning $?mng)))
 )
-
 ;------------------------------- verb related rules -----------------------------------------
 
 ;Eng: The time involved [varies] greatly according to climate, weather and crop.
@@ -302,18 +313,20 @@
 
 ;Automobiles and planes carry people from one place to the [other].
 ;motaragAdI Ora vAyuyAna yAwriyoM ko eka sWAna se [xUsare sWAna ko] le jAwe hEM .
+;The connection between physics, technology and society can be seen in many examples.
+;BOwikI, prOxyogikI waWA samAja ke bIca [pArasparika sambanXoM ko] bahuwa se uxAharaNoM meM xeKA jA sakawA hE.
 (defrule align_single_id_for_no_slot_left
 (declare (salience -9))
 ?f<-(left_over_ids ?id)
 ?f1<-(hindi_id_order)
-?f2<-(alignment (anu_id ?aid) (man_id ?id1&:(=(- ?id 1) ?id1))  (anu_meaning ?amng ?v&ko) (man_meaning ?m))
-(manual_word_info (head_id ?id) (word ?mng)(vibakthi ?v))
+?f2<-(alignment (anu_id ?aid) (man_id ?id1&:(=(- ?id 1) ?id1))  (anu_meaning ?amng ?v&ko|ne) (man_meaning ?m))
+(manual_word_info (head_id ?id) (word ?mng)(vibakthi ?v1))
 =>
 	(retract ?f ?f1)
-	(if (eq ?v 0 ) then
+	(if (eq ?v1 0 ) then
 		(modify ?f2 (man_meaning ?m ?mng))
 	else
-		(modify ?f2 (man_meaning ?m ?mng ?v))
+		(modify ?f2 (man_meaning ?m ?mng ?v1))
 	)
 )	
 
