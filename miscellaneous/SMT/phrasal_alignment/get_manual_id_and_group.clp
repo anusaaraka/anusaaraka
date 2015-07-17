@@ -92,6 +92,21 @@
 )	
 ;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju
+;The distance between the two points of observation is called the basis.
+;xo prekRaNa [biMxuoM] (@A evaM @B) [ke bIca] kI xUrI ko AXAraka kahA jAwA hE.
+(defrule multi_vib_Paren
+(declare (salience 650))
+?f<-(manual_word_info (head_id ?id0)(group_ids $?gids))
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen)
+(manual_id-word ?id2 @PUNCT-ClosedParen)
+(test (or (eq (- ?id2 ?id1) 3)(eq (- ?id2 ?id1) 2) (eq (- ?id2 ?id1) 1)(eq (- ?id2 ?id1) 4)))
+?f1<-(ids-multi_vib_from_dic ?id3&:(=(+ ?id2 1) ?id3) $?ids - $?vib)
+=>
+	(retract ?f1)
+        (modify ?f (vibakthi $?vib)(group_ids $?gids ?id3 $?ids))
+)
+;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju
 ;You should now be able to handle a large variety of problems in mechanics. 
 ;aba Apa yAnwrikI kI viviXa prakAra kI samasyAoM ko [hala karane meM sakRama] hEM.
 (defrule multi_word_4_with_dic
@@ -128,7 +143,8 @@
 (man_word-root-cat ?m ?mng2 ?)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
-(not (chunk_name-chunk_ids VGF $? ?id1 $?))
+(not (chunk_name-chunk_ids VGF $? ?id2 $?))
+;(not (chunk_name-chunk_ids VGF $? ?id1 $?))
 =>
         (assert (manual_word_info (head_id ?id2) (word ?mng ?mng1 ?m)(group_ids ?id0 ?id1 ?id2)))
         (assert (mng_has_been_grouped ?id0))
@@ -372,9 +388,10 @@
 (defrule pronoun_group
 (declare (salience 650))
 ?f<-(manual_word_info (head_id ?id0) (word ?noun&isake|usake|inake|isa|jEse|isI) (group_ids $?ids))
-?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?w&awirikwa|bAxa|prakAra|ki)
+?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1)) (word ?w&awirikwa|bAxa|prakAra|ki))
 (not (mng_has_been_grouped ?id1))
 =>
+	(retract ?f2)
 	(modify ?f (word ?noun ?w) (group_ids $?ids ?id1))
         (assert (mng_has_been_grouped ?id1))
 )
@@ -410,7 +427,7 @@
 ;parikRepaNa kA kAraNa yaha hE ki kisI mAXyama kA apavarwanAfka viBinna warafgaxErGyoM  @PUNCT-OpenParenvarNoM @PUNCT-ClosedParen ke lie Binna - Binna howA hE
 (defrule word_[hyphen]_word
 (declare (salience 650))
-?f1<-(manual_id-word ?id0 ?noun)
+?f1<-(manual_id-word ?id0 ?noun&~hEM);vyApaka rUpa se, vExyuwa waWA cumbakIya praBAva avicCexa hEM - isIlie isa bala ko vixyuwa-cumbakIya bala kahawe hEM.
 ?f2<-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) -)
 ?f3<-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w)
 (not (mng_has_been_grouped ?id0))

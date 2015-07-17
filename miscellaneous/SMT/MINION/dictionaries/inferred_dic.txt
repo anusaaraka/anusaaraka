@@ -35,3 +35,8 @@ same	eka_hI
 join	joda_xe
 nor	na_wo
 second	sekanda
+different	viviXa
+trace	Koja_kara
+convenient	suviXAnusAra
+until	wAki
+method	niyama

@@ -44,8 +44,8 @@
  =>
         (retract ?f)
         (bind ?a_op "")
-        (bind ?a_op (remove_character "\\@" (implode$ (create$  $?a_grp)) " "))
-        (bind ?a_op (remove_character "\@" (implode$ (create$  ?a_op)) " "))
+       (bind ?a_op (remove_character "\\@" (implode$ (create$  $?a_grp)) " "))
+  ;     (bind ?a_op (remove_character "\@" (implode$ (create$  ?a_op)) " "))
         (bind ?a_op (remove_character "-" (implode$ (create$  ?a_op)) " "))
         (bind ?a_op (remove_character "_" (implode$ (create$  ?a_op)) " "))
         (assert (id-Apertium_output ?a_id  ?a_op))
@@ -60,35 +60,11 @@
         (retract ?f)
         (bind ?new_mng (remove_character "_" ?hmng " "))
         (bind ?new_mng (remove_character "-" (implode$ (create$  ?new_mng)) " "))
-        (bind ?new_mng (remove_character "@" (implode$ (create$  ?new_mng)) ""))
+;       (bind ?new_mng (remove_character "@" (implode$ (create$  ?new_mng)) ""))
         (assert (id-HM-source ?id ?new_mng ?src))
         (assert (id_hmng_modified ?id))
  )
 ;================================================== verb rules =============================================
-;If the box is stationary relative to the train, it is in fact accelerating along with the train.
-;yaxi boYksa relagAdI ke ApekRa sWira hE @PUNCT-Comma wo vAswava meM vaha relagAdI ke sAWa wvariwa ho rahA hE.
-;(chunk_name-chunk_ids VGF 7 8) -- where 8 is @PUNCT-Comma id
-(defrule rm_punct_id_from_verb_chunk
-(declare (salience 1001))
-?f<-(chunk_name-chunk_ids ?chnk&VGF|VGNN|VGNF $?pre ?mid $?pos)
-(not (manual_word_info (group_ids $? ?mid $?) ))
-=>
-       (retract ?f)
-       (assert (chunk_name-chunk_ids ?chnk  $?pre $?pos))
-)
-;----------------------------------------------------------------------------------------------------------
-;Added by Shirisha Manju
-;The applications of physics are not always easy to foresee.
-;BOwikI ke anuprayogoM kA saxEva pUrvajFAna raKanA sarala [nahIM hE].
-(defrule modify_chunk_for_nahIM
-(declare (salience 1000))
-?f<-(chunk_name-chunk_ids VGF ?id $?ids)
-(manual_word_info (head_id ?id) (word nahIM))
-(not (pada_info (group_head_id ?h) (group_cat VP) (preceeding_part_of_verb nahIM)))
-=>
-	(retract ?f)
-       	(assert (chunk_name-chunk_ids VGF $?ids))
-)
 ;----------------------------------------------------------------------------------------------------------
 (defrule get_verb_chunk_cp
 (declare (salience 1000))
@@ -144,6 +120,23 @@
        (assert (id-man_root ?mid1 $?word ?r))	
 )
 ;----------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju 11-7-15
+;match with word and vib in dic
+;It [underlies] the macroscopic forces like 'tension', 'friction', 'normal force', 'spring force', etc..
+;yaha 'wanAva', 'GarRaNa', 'sAmAnya bala', 'kamAnI bala' Axi jEse sWUla baloM ke [mUla meM howA hE].
+(defrule check_prev_word_for_kara_or_ho_or_xe_using_dic1
+(declare (salience 840))
+?f0<-(chunk_name-chunk_ids-words ?chnk&VGF|VGNN|VGNF ?mid $?gids -  $?mng)
+(manual_word_info (head_id ?mid) (word ?w))
+(man_word-root-cat ?w ?r&kara|ho|xe|raKa v)
+(manual_word_info (word $?word) (group_ids $?p ?mid1&:(= (- ?mid 1) ?mid1)) (vibakthi ?v))
+(database_info (components $?word ?v ?r) (root ?root))
+=>
+       (retract ?f0 )
+       (assert (chunk_name-chunk_ids-words ?chnk $?p ?mid1 ?mid $?gids - $?word ?v $?mng))
+       (assert (id-man_root ?mid1 $?word ?v ?r))
+)
+;----------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju 12-2-15
 ;if there is no entry in database then check for the mng in WSD
 ;Caravans crossing the Gobi desert also [employed] magnetic needles. 
@@ -160,7 +153,7 @@
 (man_word-root-cat ?w ?r&kara|ho|xe|raha|bana v)
 (manual_word_info (head_id ?mid1&:(= (- ?mid 1) ?mid1)) (word ?word))
 (man_word-root-cat ?word ?r0 ?)
-(id-HM-source ? ?r0 ?r ?)
+(id-HM-source ? $? ?r0 ?r ?) ; (viSeRa rUpa se [ulleKa kara] WSD_root_mng)
 =>
        	(retract ?f0 )
        	(assert (chunk_name-chunk_ids-words ?chnk  ?mid1 ?mid $?gids - ?word $?mng))
@@ -244,14 +237,17 @@
 ;mote wOra para hama BOwikI kA [varNana] prakqwi ke mUlaBUwa niyamoM kA aXyayana waWA viBinna prAkqwika pariGatanAoM meM inakI aBivyakwi ke rUpa meM [kara sakawe hEM].
 ;The technological exploitation of this property is generally [credited] to the Chinese.
 ;isa guNa ke wakanIkI upayoga kA [Sreya] AmawOra para cIniyoM ko [xiyA jAwA hE].
+;Rather, it deals with systems in macroscopic equilibrium and [is concerned] with changes in internal energy, temperature, entropy, etc., of the system through external work and transfer of heat.
+;apiwu yaha sWUla sanwulana ke nikAyoM para vicAra karawI hE, waWA isakA [sambanXa] bAhya kArya waWA URmA sWAnAnwaraNa xvArA nikAya kI Anwarika UrjA, wApa, EntroYpI Axi meM anwara se [howA hE].
 (defrule group_kara
 (declare (salience 640))
 ?f0<-(manual_word_info (head_id ?id0) (word ?m1 $?mng)(group_ids $?ids))
 (man_word-root-cat ?m1	?r&kara|xe|raha	v)
 ?f1<-(manual_word_info (head_id ?id1) (word ?m)(group_ids ?id1))
 (database_info (components ?m kara|xe|raha))
+(not (id-Apertium_output ? ?m1 $?mng));The [work] [done] by the spring force in a cyclic process is zero. awaH spriMga bala xvArA kisI cakrIya prakrama meM [kiyA gayA] [kArya] SUnya howA hE.  dic -- kArya_kara
 =>
-        (retract ?f0 ?f1)
+        (retract ?f1)
 	(modify ?f0 (head_id ?id1) (word ?m ?m1 $?mng)(root ?m ?r)(vibakthi 0 $?mng) (group_ids ?id1 $?ids))
 	(assert	(replaced_tam_with_root_tam ?id1))
 )
