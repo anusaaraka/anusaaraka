@@ -1099,6 +1099,7 @@ Nandini ji LTRC 	27-11-13)
 	124. move_verb			hil/hat/becakara_hat/calA_j	as	hila/hata/becakara_hata/calA_ja	(Suggested by Chaitanya Sir 06-03-15)
 	125. withhold_verb		roka_raKa	as	roke_raKa	(Suggested by Sukhada 		20-05-15)
 	126. confine_verb    		sImIwa_raKa	as	sImiwa_raKa	(    "          "		23-06-15)
+	127. power_noun      		vixyuw/vixyuw_Sakwi as  vixyuwa/vixyuwa_Sakwi (   By Shirisha Manju     20-07-15)
 
     3. Added new entry:
        ---------------
@@ -1738,6 +1739,8 @@ Nandini ji LTRC 	27-11-13)
                                             grab of the waters of the Colorado River.
 	150. transportation_noun     	yAwAyAwa		(Suggested by 14anu-ban-03      14-04-15)
 					Ex: All wheels used in transportation have rolling motion.
+	151. overview_noun   		samagra_rUpa_se_avalokana/samagra_avalokana	(Suggested by Chaitanya Sir  21-07-15)
+					Ex: The two chapters in this unit give us an overview of the state of the Indian economy as it was at the					    eve of independence till after four decades of planned development, which was a path that India chose.
 
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -2312,6 +2315,7 @@ Nandini ji LTRC 	27-11-13)
 	such_as			---	(		"	    18-01-14)
 	rather_than		---	(		"		"   )
 	at_the_behest_of	---	(		"		"   )
+	till_after		---	(		"	    21-07-15)	
 
 -------------------------- compound_phrase.txt -----------------------------------
  Based on the type of the phrase, compound_phrase.txt file has been splitted in to four different files,(Suggested by Chaitanya ji 23-04-12)
@@ -2775,7 +2779,14 @@ Nandini ji LTRC 	27-11-13)
 				Ex: She has a very big 'chicken run' at her back yard.
 	158. ski_run 		skI-rana#skI-rana#noun#2#RM				(	"		"	"    )
 				Ex: Generally people go to shimla for a special sport, ski run.
-
+	159. committee_members 	samiti_saxasya#samiti_saxasya#noun#2#RM			(Suggested by manasa bomma  10-07-15 )
+	160. planned_development  niyojiwa_vikAsa#niyojiwa_vikAsa#noun#2#RM		(Suggested by Chaitanya sir 21-07-15 )
+				Ex: The two chapters in this unit give us an overview of the state of the Indian economy as it was at the eve of 
+				    independence till after four decades of planned development, which was a path that India chose.
+	161. till_after      	ke_bAxa_waka#ke_bAxa_waka#preposition#2#RM		(Suggested by Chaitanya sir 21-07-15 )
+				Ex: above sentence
+	162. five_year_plans 	paMcavaRarIya_yojanA#paMcavaRarIya_yojanA#noun#3#RM	("		"		"    )
+				Ex: An overview of the goals of five year plans and a critical appraisal of the merits and limitations of planned 				     development has been covered in this unit.
 
     Added new meaning to the existing word:
     --------------------------------------
