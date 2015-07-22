@@ -135,22 +135,6 @@
         (printout ?*vib_debug_file* "(id-vib-source     "?obj_id"       "?vib"  WSD_obj_viBakwi) " crlf )
  )
  ;--------------------------------------------------------------------------------------------------------
- ;Added by Shirisha Manju 08-05-2015 Suggested by Sukhada
- ;I met John, your friend. 		mEM joYna, Apake miwra se milA.
- ;I saw Dashrath, the king of Ayodhya. 	mEMne PropN-dashrath-PropN, ayoXyA ke rAjA ko xeKA.
- (defrule wsd_kriyA_obj_and_saMjFA_vibakthi_rule
- (declare (salience 996))
- (or (and (kriyA_id-object_viBakwi ?root_id ?vib)(prep_id-relation-anu_ids ? kriyA-object  ?root_id ?obj_id))(and (kriyA_id-object2_viBakwi ?root_id ?vib)(prep_id-relation-anu_ids ? kriyA-object_2  ?root_id ?obj_id))(and (kriyA_id-object1_viBakwi ?root_id ?vib)(prep_id-relation-anu_ids ? kriyA-object_1  ?root_id ?obj_id)))
- (prep_id-relation-anu_ids - saMjFA-saMjFA_samAnAXikaraNa  ?obj_id ?sam_id)
- ?f0<-(pada_control_fact ?obj_id)
- ?f2<-(pada_control_fact ?sam_id)
- ?f1<-(pada_info (group_head_id ?sam_id)(group_cat PP))
- =>
-        (retract ?f0 ?f2)
-        (modify ?f1 (vibakthi ?vib))
-        (printout ?*vib_debug_file* "(id-vib-source     "?sam_id"       "?vib"  WSD_obj_and_saMjFA_viBakwi) " crlf )
- )
- ;--------------------------------------------------------------------------------------------------------
  ;I saw him telling her about the party .
  (defrule wsd_kriyA_obj_vibakthi_rule
  (declare (salience 995))
@@ -504,4 +488,21 @@
        	(printout ?*vib_debug_file* "(id-vib-source	"?rh"	"?vib"	"?w " )" crlf )
 )
 ;------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju 08-05-2015 Suggested by Sukhada
+ ;I met John, your friend.              mEM joYna, Apake miwra se milA.
+ ;I saw Dashrath, the king of Ayodhya.  mEMne PropN-dashrath-PropN, ayoXyA ke rAjA ko xeKA.
+ ;United Illuminating is based in New Haven, Conn., and Northeast is based in Hartford, Conn..
+ (defrule saMjFA_vib_to_saMjFA_samA_vibakthi_rule
+ (declare (salience 300))
+ (prep_id-relation-anu_ids - saMjFA-saMjFA_samAnAXikaraNa  ?s_id ?sam_id)
+ ?f0<-(pada_info (group_head_id ?s_id) (vibakthi ?v))
+ (test (neq ?v 0))
+ ?f2<-(pada_control_fact ?sam_id)
+ ?f1<-(pada_info (group_head_id ?sam_id)(group_cat PP))
+ =>
+        (retract ?f2)
+        (modify ?f1 (vibakthi ?v))
+	(modify ?f0 (vibakthi 0))
+        (printout ?*vib_debug_file* "(id-vib-source     "?sam_id"       "?v"  saMjFA_vib_to_saMjFA_samA_vibakthi) " crlf )
+ )
 

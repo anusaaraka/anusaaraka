@@ -33260,6 +33260,10 @@ stock_exchange	Seyara_bAjZAra#Seyara_bAjZAra#noun#3#RM
 wisdom_tooth	akla_xADZa#akla_xADZa#noun#2#RM
 chicken_run	murgI_kA_bAdZA#murgI_kA_bAdZA#noun#2#RM
 ski_run	skI-rana#skI-rana#noun#2#RM
+committee_members	samiti_saxasya#samiti_saxasya#noun#2#RM
+planned_development	niyojiwa_vikAsa#niyojiwa_vikAsa#noun#2#RM
+till_after	ke_bAxa_waka#ke_bAxa_waka#preposition#2#RM
+five_year_plans	paMcavaRarIya_yojanA#paMcavaRarIya_yojanA#noun#3#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

@@ -40,3 +40,7 @@ trace	Koja_kara
 convenient	suviXAnusAra
 until	wAki
 method	niyama
+everyday	xEnika
+not	na_ki
+travel	gawi
+later	agale

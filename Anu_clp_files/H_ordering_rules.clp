@@ -145,6 +145,9 @@
 ;Added by Shirisha Manju (26-07-14) -- Suggested by Sukhada.
 ;Do you think we should go to the party?  He disputed that our program was superior.We [assume] that the motion is in y-direction, more correctly in — y-direction because we choose upward direction as positive.
 ;S :  I do not think ghosts exist. ;I want to go there.
+;But he adds, "I feel pressured, disappointed, uncomfortable and, frankly, quite angry with Viacom. 
+;Mr. Canepa confirmed he had consented to the sanctions but declined to comment further. 
+;Mr. Hahn agrees that he has a "retentive" memory, but friends say that is an understatement. 
 (defrule dont_rev_VP_if_immediate_sis_sbar
 (declare (salience 1400))
 ?f0<-(Head-Level-Mother-Daughters ?head ?l ?Mot ?verb ?sbar $?d)
@@ -153,7 +156,7 @@
 (Head-Level-Mother-Daughters  ?  ?  ?verb ?id)
 (id-cat_coarse ?id verb)
 (id-root ?head ?root) 
-(test (member$ ?root (create$ think matter wonder say dispute suppose comment figure point assume)) )
+(test (member$ ?root (create$ think matter wonder say dispute suppose comment figure point assume add confirm agree)) ) 
 (not (Mother  ?Mot))
 =>
         (bind ?*count* (+ ?*count* 1))
@@ -392,13 +395,14 @@
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ; Added by Shirisha Manju(20-06-11) Suggested by Dipti mam
-; He never really recovered from the shock of his wife's death.
+; He never really recovered from the shock of his wife's death. I have never played golf in my life.
 (defrule move_negation_before_verb
 (declare (salience 900))
+?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d ?ADVP $?d1) 
 (Head-Level-Mother-Daughters ?never ? ?ADVP $?)
 (id-original_word ?never never)
 (Node-Category ?ADVP ADVP)
-?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d ?ADVP $?d1 ?VP) 
+(Head-Level-Mother-Daughters ?h ?l ?mot $?d2 $?d3 ?VP)
 (Node-Category ?VP VP)
 ?f1<-(Head-Level-Mother-Daughters ?h1 ?l1 ?VP $?d4 ?V $?d5)
 (or (Node-Category ?V VBD) (id-cat_coarse ?V verb))
@@ -406,7 +410,8 @@
 =>
 	(bind ?*count* (+ ?*count* 1))
         (retract ?f0 ?f1)
-        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d $?d1 ?VP))
+        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d $?d1))
+;        (assert (Head-Level-Mother-Daughters ?head ?lvl ?Mot $?d $?d1 ?VP))
 	(assert (Head-Level-Mother-Daughters ?h1 ?l1 ?VP $?d4 ?ADVP ?V $?d5))
         (assert (Mother  ?ADVP))
 	(assert (Mother ?VP))
@@ -479,7 +484,7 @@
 (id-original_word ?head ?wrd&~lot&~most&~number&~spot&~kinds&~set&~sort&~whole)
 (Node-Category  ?mot  NP)
 (Node-Category  ?NP  NP)
-(Node-Category  ?PP PP|VP|RRC)
+(Node-Category  ?PP PP|VP|RRC|ADJP); ADJP: Previously, Mr. Vitulli, 43 years old, was general marketing manager of Chrysler Corp.'s Chrysler division. 
 (not (Mother  ?mot))
 ;And I think a lot of people will harp on program trading. This room would look big for a spot of paint.
 ;Chamba has a number of temples, palaces and stylized buildings

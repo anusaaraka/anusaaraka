@@ -289,7 +289,7 @@
  ; bet in the list suggested my Meena(05-04-11) Ex:Alan bet me five dollars Clinton would lose the election. 
  (defrule rule_for_ki
  (declare (salience 10))
- ?f1<- (id-root-category-suffix-number  ?kri tell|guess|see|think|say|know|suppose|wonder|hope|bet ? ? ?)
+ ?f1<- (id-root-category-suffix-number  ?kri tell|guess|see|think|say|know|suppose|wonder|hope|bet|doubt ? ? ?)
  (prep_id-relation-anu_ids ?  kriyA-subject ?kri  ?)
  (prep_id-relation-anu_ids ?  kriyA-subject ?kri_1 ?)
  ?f0 <-(hindi_id_order $?pre ?kri ?id $?post)

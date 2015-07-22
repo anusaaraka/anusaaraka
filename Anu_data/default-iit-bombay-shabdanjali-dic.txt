@@ -55233,7 +55233,7 @@ overutilization_noun	awi-upayoga
 overvaluation_UNDEFINED	aXimUlyana
 overvaluation_noun	aXimUlyAfkana
 overvalue_verb	aXika_mUlya_lagA
-overview_noun	siMhAvalokana/safkRipwa_vivaraNa/samIkRA
+overview_noun	siMhAvalokana/safkRipwa_vivaraNa/samIkRA/samagra_rUpa_se_avalokana/samagra_avalokana
 overviews_UNDEFINED	siMhAvalokana
 overweening_adjective	AwmaviSvAsa
 overweeninger_UNDEFINED	AwmaviSvAsa
@@ -59958,7 +59958,7 @@ power-sharing_noun	aXikAra_bAzta/Sakwi-viBAjana
 power-station_noun	vixyuw_uwpAxana_gqha
 power-supply_UNDEFINED	vixyuw_ApUrwi
 power_adjective	weja
-power_noun	sAmarWya/xevawA/wAkawa/vixyuw/UrjA/SOrya/sawwA/sawvAXikAra/samaXikAra/Sakwi_rAjanIwi/Sakwi/rAjya/prAXikAra/prawiBA/kRamawA/ISvarawva/GAwa/BaramAra/bala/AwiSI_SISe_ki_AkarSaNa_Sakwi/awiSakwiSAlI_rARtra/AsurI_wAkawa/aparimiwa_parimANa/agaNiwa_safKyA/aXikAra/praBAvaSAlI/vixyuw_Sakwi
+power_noun	sAmarWya/xevawA/wAkawa/vixyuwa/UrjA/SOrya/sawwA/sawvAXikAra/samaXikAra/Sakwi_rAjanIwi/Sakwi/rAjya/prAXikAra/prawiBA/kRamawA/ISvarawva/GAwa/BaramAra/bala/AwiSI_SISe_ki_AkarSaNa_Sakwi/awiSakwiSAlI_rARtra/AsurI_wAkawa/aparimiwa_parimANa/agaNiwa_safKyA/aXikAra/praBAvaSAlI/vixyuwa_Sakwi
 power_verb	UrjA_xe/SakwiSAlI_banA/Sakwavara_banA/preriwa_kara/samarWa_ho[banAnA]
 powerboat_noun	resa_kI_nOkA/yantracAliwa_nOkA
 powerboats_UNDEFINED	resa_kI_nOkA
