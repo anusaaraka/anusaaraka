@@ -156,7 +156,7 @@
 (Head-Level-Mother-Daughters  ?  ?  ?verb ?id)
 (id-cat_coarse ?id verb)
 (id-root ?head ?root) 
-(test (member$ ?root (create$ think matter wonder say dispute suppose comment figure point assume add confirm agree)) ) 
+(test (member$ ?root (create$ think matter wonder say dispute suppose comment figure point assume add confirm agree doubt)) ) 
 (not (Mother  ?Mot))
 =>
         (bind ?*count* (+ ?*count* 1))
@@ -166,6 +166,25 @@
                          "              After     - "?head" "?l" "?Mot" "?verb" "?sbar" "(implode$ $?d) ")" crlf)
 
 )
+;-----------------------------------------------------------------------------------------------------------------------
+
+;Added by Shirisha Manju (30-07-15) -- Suggested by Sukhada.
+;Stock futures trading has minted [dozens of millionaires] in their 20s and 30s.
+;xarjana laKapawiyoM ke
+(defrule dont_reverse_NP
+(declare (salience 1400))
+?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot ?NP ?PP $?d)
+(Node-Category  ?Mot  NP)(Node-Category  ?PP  PP)
+(id-original_word ?head ?wrd&lot|most|number|spot|kinds|set|sort|whole|dozens|some)
+(Head-Level-Mother-Daughters ?h ? ?PP ?IN $? ?NP2)
+(id-root ?h of)
+(not (Mother  ?NP2))
+=>
+        (bind ?*count* (+ ?*count* 1))
+        (assert (Mother  ?NP2))
+        (printout ?*order_debug-file* "(rule_name - dont_rev_NP " ?*count* " " crlf)
+)
+
 ;-----------------------------------------------------------------------------------------------------------------------
 (defrule print_for_debugging2
 (declare (salience 1000))
@@ -481,7 +500,7 @@
 (defrule reverse-NP-Daughters
 (declare (salience 800))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot ?NP ?PP $?d)
-(id-original_word ?head ?wrd&~lot&~most&~number&~spot&~kinds&~set&~sort&~whole)
+(id-original_word ?head ?wrd&~lot&~most&~number&~spot&~kinds&~set&~sort&~whole&~dozens)
 (Node-Category  ?mot  NP)
 (Node-Category  ?NP  NP)
 (Node-Category  ?PP PP|VP|RRC|ADJP); ADJP: Previously, Mr. Vitulli, 43 years old, was general marketing manager of Chrysler Corp.'s Chrysler division. 
@@ -611,6 +630,23 @@
                 	 "              After     - "?head1" "?level" "?mother1" "(implode$ $?pre)" "(implode$ $?daughters)" "(implode$ $?post) ")" crlf)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju (30-07-15) -- Suggested by Sukhada.
+;Eng: Mr. Otero, who apparently has an unpublished number, also could not be reached. 
+;Anu: SrImAna ovterova, jisameM UparI wOra se aprakASiwa safKyA hE, BI nahIM pahuzcA jA sakA.
+(defrule dont_separate_sbar_for_jo_samAnAXikaraNa
+(declare (salience 551))
+?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?pre ?vid ?sid $?po)
+(Node-Category  ?Mot ROOT)
+?f1<-(Head-Level-Mother-Daughters ?h ? ?dat ?sid $?child)
+(Node-Category  ?dat SBAR|SBARQ)
+(prep_id-relation-anu_ids - viSeRya-jo_samAnAXikaraNa ?vid ?sid)
+(not (prep_id-relation-anu_ids ? viSeRya-of_saMbanXI  ? ?vid));He was the leader of the first Indian expedition which attempted to climb Everest.
+(not (prep_id-relation-anu_ids ? subject-subject_samAnAXikaraNa  ? ?vid));She was a severe woman who seldom smiled.
+(not (prep_id-relation-anu_ids ? kriyA-aBihiwa  ? ?vid));Once there was a king who was generous and kind. 
+=>
+	(assert (dont_separate_sbar ?dat))
+)
+;-----------------------------------------------------------------------------------------------------------------------
 ;This rule delete's all the SBAR from ROOT
 (defrule rmv_sbar_from_root
 (declare (salience 550))
@@ -621,7 +657,7 @@
 (Node-Category  ?dat SBAR|SBARQ)
 (test (member$ $?child $?daut))
 (test (neq (length $?child) 0))
-;(not (dont_separate_sbar ?dat)) ;The boy who came yesterday from Delhi is my friend.
+(not (dont_separate_sbar ?dat)) ;The boy who came yesterday from Delhi is my friend.
 =>
 	(retract ?f)
 	(assert (Sen  $?child))
@@ -632,7 +668,7 @@
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Here ROOT category is changed to SBAR
-(defrule rename_ROOT_cat_to_SBAR
+(defrule get_sen_fact
 (declare (salience 500))
 ?f<-(Head-Level-Mother-Daughters ?head ?lvl ?Mot $?daut)
 ?f1<-(Node-Category  ?Mot ROOT)
@@ -651,7 +687,7 @@
         (assert (removed_node))
 )
 ;-----------------------------------------------------------------------------------------------------------------------
-(defrule print_eroor_msg_to_user
+(defrule print_error_msg_to_user
 (declare (salience 94))
 (removed_node)
 =>
@@ -712,6 +748,22 @@
         (assert (hindi_id_order   $?ids $?ids1))
         (assert (to_id_deleted ?to_id))
 )
+;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha manju (27-07-15) 
+;I asked him not to wait for me. 
+;mEMne usako mere lie 4 prawIkRA_nahIM karane ke lie kahA.
+(defrule rm_not_id_b4_inf_in_order
+(declare (salience 61))
+(pada_info (group_cat infinitive) (group_ids ?to_id ?))
+(id-root ?id1&:(=(- ?to_id 1) ?id1) not)
+?f1<-(hindi_id_order  $?ids ?id1 $?ids1)
+(not (not_id_deleted ?id1))
+=>
+        (retract ?f1)
+        (assert (hindi_id_order   $?ids $?ids1))
+        (assert (not_id_deleted ?id1))
+)
+
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha Manju(27-02-12)
 (defrule rm_prep_node_in_cons

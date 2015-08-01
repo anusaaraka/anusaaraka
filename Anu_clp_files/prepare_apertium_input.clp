@@ -470,6 +470,41 @@
         (printout ?*aper_debug-file* "(id-Rule_name  " ?id "  kA_vib_rule_for_verbal_noun  )"crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha manju (27-07-15) -- suggested by Sukhada
+ ;I asked him not to wait for me. 
+ ;mEMne usako mere lie prawIkRA_nahIM karane ke lie kahA.
+ (defrule not_before_verbal_noun_with_vib
+ (declare (salience 906))
+ (pada_info (group_head_id ?pada_id)(group_cat infinitive)(vibakthi ?vib))
+ (or (make_verbal_noun ?pada_id)(id-cat_coarse ?pada_id verbal_noun))
+ ?f0<-(id-HM-source ?pada_id ?hmng ?)
+ (test (neq ?vib 0))
+ (id-word =(- ?pada_id 2) not)
+ ?f1<-(id-HM-source =(- ?pada_id 2) ?mng ?)
+ =>
+	(if (neq (str-index "_" ?hmng) FALSE) then
+                (bind ?len 0)
+                (bind ?str1 ?hmng)
+                (bind ?str_len (length ?hmng))
+                (while (neq (str-index "_" ?hmng) FALSE)
+                        (bind ?index (str-index "_" ?hmng))
+                        (bind ?hmng (sub-string (+ ?index (+ ?len 1)) ?str_len ?str1) )
+                        (bind ?len (+ ?index ?len))
+                )
+                (bind ?str4 (sub-string 1 ?len ?str1))
+                (bind ?str5 (str-cat ?str4 ?mng (sub-string ?len ?str_len ?str1)))
+        	(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?str5"<cat:vn><case:o>$ ^" ?vib "<cat:prsg>$)" crlf)
+                (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  VP_rule_for_before_verb )" crlf)
+		(retract ?f0 ?f1)
+        else
+        	(printout ?*A_fp5* "(id-Apertium_input "?pada_id " ^"?mng"_"?hmng"<cat:vn><case:o>$ ^" ?vib "<cat:prsg>$)" crlf)
+                (printout ?*aper_debug-file* "(id-Rule_name  "?pada_id "  VP_rule_for_before_verb )" crlf))
+		(retract ?f0 ?f1)
+   )
+	
+
+
+
  ; He made a mistake in the inviting of John. 
  ;The game of life is played for winning .
  (defrule verbal_noun_with_vib

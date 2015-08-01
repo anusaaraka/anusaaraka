@@ -26061,7 +26061,7 @@ encouragement_noun	prowsAhana/hOsalA
 encouragements_UNDEFINED	prowsAhana
 encourages_UNDEFINED	uwsAhiwa_karanA
 encouraging_UNDEFINED	uwsAhiwa_karanA
-encouraging_adjective	prowsAhaka
+encouraging_adjective	uwsAhavarXaka/prowsAhaka
 encouragingly_UNDEFINED	uwsAhavarXaka_Dafga_se
 encouragingly_adverb	uwsAhavarXaka_Dafga_se
 encroach_verb	xUsare_kA_aXikAra_xabA_bETa/awikramaNa_kara/anaXikAra_praveSa_kara
@@ -54871,7 +54871,7 @@ overactive_UNDEFINED	awisakriya
 overacts_UNDEFINED	kqwrima_aBinaya_karanA
 overage_UNDEFINED	aXika_Aya
 overall_UNDEFINED	sampUrNawayaH
-overall_adjective	sampUrNa/samaswa/sAmAnya/saBI/pUrA/kula/sampUrNawaH
+overall_adjective	sampUrNa/samaswa/sAmAnya/saBI/pUrA/kula/sampUrNawaH/kula_milAkara
 overall_adverb	kula_milAkara
 overall_noun	uparI_poSAka/prAvaraNa/perabanxa
 overaller_UNDEFINED	sampUrNawaH
@@ -75630,7 +75630,7 @@ stage-manage_verb	maFca_kA_prabanXa_kara
 stage-manager_noun	maFca_prabanXaka
 stage-struck_adjective	aBinaya-lipsu
 stage_adjective	rafgamaFca/maFca/aBinaya
-stage_noun	rafgamaFca/xOda/swara/steja/maFca/kArya_kRewra/caraNa/bagGI
+stage_noun	rafgamaFca/xOda/swara/steja/maFca/kArya_kRewra/caraNa/bagGI/sopAna
 stage_verb	praswuwa_kara
 stagecoach_noun	GodAgAdI/bagGI
 stagecoaches_UNDEFINED	GodAgAdI
@@ -82717,7 +82717,7 @@ transit_noun	pAragamana/safkramaNa/lAnA-le_jAnA
 transited_UNDEFINED	pAragamana
 transiting_UNDEFINED	pAragamana
 transition_UNDEFINED	safkrAnwi
-transition_noun	svara-sanXAna/parivarwana/pAragamana
+transition_noun	parivarwana/svara-sanXAna/pAragamana
 transition_verb	parivarwana_kara/parivarwana_ho/Coda
 transitional-relief_noun	parivarwI_sahAyawA
 transitional_adjective	parivarwI/safkramaNakAlIna
@@ -93584,3 +93584,4 @@ pericarp_noun	PalI
 compiled_adjective	safkaliwa
 chicken-run_noun	murgI_kA_bAdZA
 ski-run_noun	skI-rana
+pre-independence_adjective	svawanwrawA_pUrva/svawanwrawA_ke_pUrva

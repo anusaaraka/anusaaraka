@@ -77,7 +77,7 @@
  (run)
  (clear)
  ;--------------------------------------------------------------------------------
- ; Determine pos category from link parser
+ ; Determine pos category from stanford parser
  (load "global_path.clp")
  (bind ?*path* (str-cat ?*path* "/Anu_clp_files/sd_category.bclp"))
  (bload ?*path*)
@@ -584,9 +584,12 @@
  (load-facts "revised_preferred_morph.dat")
  (load-facts "wsd_facts_output.dat")
  (load-facts "Eng_id_order.dat")
+ (load-facts "E_constituents_info_tmp5.dat")
+ (load-facts "parserid_wordid_mapping.dat")
  (open "hindi_id_reorder_debug.dat" h_id_reorder_fp "w")
  (run)
  (save-facts "hindi_id_order.dat" local hindi_id_order)
+ (save-facts "GNP_agmt_info.dat" local pada_info conj_head-left_head-right_head)
  (clear)
  ;--------------------------------------------------------------------------
  (load "global_path.clp")
