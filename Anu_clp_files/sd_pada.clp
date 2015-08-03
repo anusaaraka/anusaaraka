@@ -414,20 +414,24 @@
 	(assert (id-grp_ids ?h $?a $?a1))
  )	
  ;----------------------------------------------------------------------------------------------------------------------
- ;He wasted his golden opportunity to play in the national team.
+ ;He wasted his golden opportunity [to play] in the national team.
+ ;The company said it made the purchase in order [to] locally [produce] hydraulically operated shovels. 
  (defrule get_infinitive_pada
  (declare  (salience 1000))
  ?f0<-(id-grp_ids ? ?to ?vp)
  (prawiniXi_id-node-category ?to ?TO TO)
  (head_id-prawiniXi_id-grp_ids ?to_id ?to ?)
  (prawiniXi_id-node-category ?vp ?VP Inf_VP)
- ?f1<-(id-grp_ids ?vp ?verb $?)
+ ?f1<-(id-grp_ids ?vp $?p ?verb $?po)
+ ;?f1<-(id-grp_ids ?vp ?verb $?)
  (head_id-prawiniXi_id-grp_ids ?verb_id ?verb ?)
+ (prawiniXi_id-node-category ?verb ? VB)
  =>
         (retract ?f0 ?f1)
 	(bind $?grp_ids (create$ ?to_id ?verb_id))
 	(print_pada_info get_infinitive_pada ?verb_id infinitive 0 $?grp_ids) 
         (print_in_ctrl_fact_files  ?verb_id)
+	(assert (id-grp_ids ?vp $?p $?po))
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ;A big, black, ugly dog chased me.  I do not have very much money. Look how blue it is.

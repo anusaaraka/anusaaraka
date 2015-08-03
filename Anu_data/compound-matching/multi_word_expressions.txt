@@ -33264,6 +33264,7 @@ committee_members	samiti_saxasya#samiti_saxasya#noun#2#RM
 planned_development	niyojiwa_vikAsa#niyojiwa_vikAsa#noun#2#RM
 till_after	ke_bAxa_waka#ke_bAxa_waka#preposition#2#RM
 five_year_plans	paMcavaRarIya_yojanA#paMcavaRarIya_yojanA#noun#3#RM
+population_growth	janasafKyA_vqxXi#janasafKyA_vqxXi#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)
