@@ -66,6 +66,9 @@ fi
 	wx_utf8 < $1/total-left-over1.dat > $1/tmp
 	$HOME_anu_test/Anu_src/replace_nonascii-chars.out $1/hnd2 $1/hnd3
 	wx_utf8 < $1/hnd3 > $1/hnd4
-	cat $1/hnd4 $1/english_left_over.dat   $1/tmp > $1/total-left-over.dat 
+        sed "s/_\([^_.*]*\)_/ \1-/g" $1/hnd4 > $1/hnd4_tmp
+	#cat $1/hnd4 $1/english_left_over.dat   $1/tmp > $1/total-left-over.dat 
+	cat $1/hnd4_tmp $1/english_left_over.dat   $1/tmp > $1/total-left-over.dat 
+	#cat $1/hnd4 $1/english_left_over.dat   $1/tmp > $1/total-left-over.dat 
 	#wx_utf8 < $1/align_left_over_wrds.dat >> $1/total-left-over.dat
 	echo "Phrasal Alignment EN-HI completed" >> $1/phrasal_error	

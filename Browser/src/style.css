@@ -40,6 +40,12 @@ td.number
   border-left: solid 4px black;
 }
 
+/* class "outertd" added for alignment purpose */
+td.outertd
+{
+  white-space: normal;
+}
+
 td
 {
   border-left: 0px;

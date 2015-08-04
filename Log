@@ -1,4 +1,4 @@
- 01-08-15
+ 04-08-15
  ========
  1. WSD:
 	substantially.clp 
@@ -100,8 +100,9 @@
 	tree_viewer/remove-out-files.sh
 	tree_viewer/view_trees.sh
 	Anu_data/canonical_form_dictionary/Readme
- 29. Updated Log.
- 30. Updated  
+ 29. Modified style.css , create_eng_align_html_phrasal.clp and run_alignment.sh files for text wrapping in html.
+ 30. Updated Log.
+ 31. Updated  
 	sd_verified (855)	small_sent_verified_sd (172) 	phy_verified (164)
 
  18-02-15
