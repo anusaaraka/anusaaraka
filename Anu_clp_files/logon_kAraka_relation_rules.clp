@@ -2,7 +2,7 @@
 (defglobal ?*fp1* = open-file3)
 (defglobal ?*dbug* = debug_fp1)
 
- (deffunction find_sub-str_before_last_underscore (?str)
+ (deffunction get_category_info (?str)
  (bind ?len 0)(bind ?len1 0)
  (bind ?str1 ?str)
  (bind ?str_len (length ?str))
@@ -24,47 +24,12 @@
  (bind ?str ?str4)
  )
 
- (deffunction find_sub-str_before_last_hypen (?str)
- (bind ?len 0)(bind ?len1 0)
- (bind ?str1 ?str)
- (bind ?str_len (length ?str))
- (while (neq (str-index "-" ?str) FALSE)
- (bind ?index (str-index "-" ?str))
- (bind ?str (sub-string (+ ?index (+ ?len 1)) ?str_len ?str1) )
- (bind ?len (+ ?index ?len))
- )
- (bind ?str4 (sub-string 1 (- ?len 1) ?str1))
- (bind ?str2 ?str4)
- (if (neq (str-index "-" ?str4) FALSE) then
- (bind ?str4_len (length ?str4))
- (while (neq (str-index "-" ?str4) FALSE)
- (bind ?index1 (str-index "-" ?str4))
- (bind ?str4 (sub-string (+ ?index1 (+ ?len1 1)) ?str4_len ?str2) )
- (bind ?len1 (+ ?index1 ?len1))
- ))
- (printout t ?str4 crlf)
- (bind ?str ?str4)
- )
-
-
- (deffunction find_sub-str_after_last_underscore (?str)
+ (deffunction get_sense_info (?str)
  (bind ?len 0)(bind ?len1 0)
  (bind ?str1 ?str)
  (bind ?str_len (length ?str))
  (while (neq (str-index "_" ?str) FALSE)
  (bind ?index (str-index "_" ?str))
- (bind ?str (sub-string (+ ?index (+ ?len 1)) ?str_len ?str1) )
- (bind ?len (+ ?index ?len))
- )
- (bind ?str (sub-string (+ ?len 1) ?str_len ?str1))
- )
-
- (deffunction find_sub-str_after_last_hypen (?str)
- (bind ?len 0)(bind ?len1 0)
- (bind ?str1 ?str)
- (bind ?str_len (length ?str))
- (while (neq (str-index "-" ?str) FALSE)
- (bind ?index (str-index "-" ?str))
  (bind ?str (sub-string (+ ?index (+ ?len 1)) ?str_len ?str1) )
  (bind ?len (+ ?index ?len))
  )
@@ -84,11 +49,11 @@
  ;e3:_come_v_1<23:30>[ARG1 x5] ==> (relation_name-id-args_with_ids _come_v_1 5 ARG0 e3 5 ARG1 x5 1)
  (defrule kriyA_karwA_rule
  (relation_name-id-args_with_ids ?rel  ?kriyA  ARG0 ?  ?kriyA  ARG1 ? ?karwA $?)
- (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
+ (test (eq (get_category_info ?rel) "v"))
  (relation_name-id-args_with_ids ?rel1 ?karwA $?) 
- (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)(eq ?rel1 named)))
+ (test (or (eq (get_category_info ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)(eq ?rel1 named)))
  (not (relation_name-id-args_with_ids parg_d ?kriyA $?)) ;The fruits were eaten by me.
- (test (neq (find_sub-str_after_last_underscore ?rel) "modal"))
+ (test (neq (get_sense_info ?rel) "modal"))
  (not (prep_id-relation-anu_ids - kriyA-karwA ?kriyA ?karwA))
  =>
  (printout       ?*fp*   "(kriyA-karwA    "?kriyA"    "?karwA")"crlf)
@@ -101,9 +66,9 @@
  (relation_name-id-args_with_ids ?rel&~_be_v_id  ?kriyA  ARG0 ?  ?kriyA  $? ARG2 ? ?karma $?)
  (not (relation_name-id-args_with_ids parg_d ?kriyA $?)) ;The fruits were eaten by me.
  (relation_name-id-args_with_ids ?rel1 ?karma $?)
- (test (or (eq (find_sub-str_before_last_underscore ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)(eq ?rel1 named)))
- (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
- (test (neq (find_sub-str_after_last_underscore ?rel) "modal"))
+ (test (or (eq (get_category_info ?rel1) "n") (eq ?rel1 proper_q) (eq ?rel1 pron)(eq ?rel1 generic_entity)(eq ?rel1 nominalization)(eq ?rel1 named)))
+ (test (eq (get_category_info ?rel) "v"))
+ (test (neq (get_sense_info ?rel) "modal"))
  (id-word ?karma ~what) ;[What] is the purpose of Dharma?
  (not (prep_id-relation-anu_ids - kriyA-karma ?kriyA ?karma))
  =>
@@ -119,7 +84,7 @@
  (defrule passive-kriyA-karwA_rule
  (relation_name-id-args_with_ids parg_d ?kriyA $? )
  (relation_name-id-args_with_ids ?rel  ?kriyA ARG0 ?  ?  ARG1 ? ?karwA $?)
- (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
+ (test (eq (get_category_info ?rel) "v"))
  (not (prep_id-relation-anu_ids - kriyA-karwA ?kriyA ?karwA))
   =>
  (printout       ?*fp*   "(kriyA-karwA    "?kriyA"      "?karwA")"crlf)
@@ -134,7 +99,7 @@
  (defrule passive-kriyA-karma_rule
  (relation_name-id-args_with_ids parg_d ?kriyA $? )
  (relation_name-id-args_with_ids ?rel  ?kriyA ARG0 ?  ?  $? ARG2 ? ?karma $?)
- (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
+ (test (eq (get_category_info ?rel) "v"))
  (not (prep_id-relation-anu_ids - kriyA-karma ?kriyA ?karma))
   =>
  (printout       ?*fp*   "(kriyA-karma    "?kriyA"      "?karma")"crlf)
@@ -147,7 +112,7 @@
  ;(relation_name-id-args_with_ids _hand_v_1  2 ARG0 e3  2  ARG1 x6 1  ARG2 x9 4  ARG3 x10 6 )
  (defrule kriyA-sampraxAna_rule
  (relation_name-id-args_with_ids ?rel&_hand_v_1|_give_v_1 ?kriyA ARG0 ?  ?  $? ARG3 ? ?sampraxAna $?)
- (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
+ (test (eq (get_category_info ?rel) "v"))
  (not (prep_id-relation-anu_ids - kriyA-sampraxAna ?kriyA ?sampraxAna))
  =>
  (printout       ?*fp*   "(kriyA-sampraxAna    "?kriyA"      "?sampraxAna")"crlf)
@@ -163,7 +128,7 @@
  (test (eq (sub-string  (length (sub-string 8 (length ?rel) ?rel)) (length ?rel) ?rel) "_p_means"))
  (id-word ?prep ?p_wrd)
  (relation_name-id-args_with_ids ?rel1 ?kriyA $?)
- (test (eq (find_sub-str_before_last_underscore ?rel1) "v"))
+ (test (eq (get_category_info ?rel1) "v"))
  (not (prep_id-relation-anu_ids  ?prep  kriyA-karaNa  ?kriyA ?karaNa))
   =>
  (printout       ?*fp*   "(kriyA-karaNa    "?kriyA"      "?karaNa")"crlf)
@@ -179,8 +144,8 @@
  (relation_name-id-args_with_ids ?rel ?keep ARG0 ?  ?  ARG1 ? ?kqxanwa_karma $?)
  (relation_name-id-args_with_ids ?rel1 ?kqxanwa_karma $?)
  (test (eq (sub-string 1 6 ?rel) "_keep_"))
- (test (eq (find_sub-str_before_last_underscore ?rel) "v"))
- (test (eq (find_sub-str_before_last_underscore ?rel1) "v"))
+ (test (eq (get_category_info ?rel) "v"))
+ (test (eq (get_category_info ?rel1) "v"))
  ;(id-word ?keep kept)
  (not (prep_id-relation-anu_ids  -  kriyA-kqxanwa_karma   ?keep      ?kqxanwa_karma))
   =>
@@ -196,7 +161,7 @@
  ;e16:_in_p<18:20>[ARG1 x9, ARG2 x17] ==> (relation_name-id-args_with_ids _in_p  4 ARG0 e16  4  ARG1 x9 3  ARG2 x17 6 )
  (defrule AXeya-AXAra_rule
  (relation_name-id-args_with_ids ?rel  $?  ARG1 ? ?AXeya ARG2 ? ?AXAra)
- (test (or (eq (find_sub-str_before_last_underscore ?rel) "on")(eq (find_sub-str_before_last_underscore ?rel) "in")))
+ (test (or (eq (get_category_info ?rel) "on")(eq (get_category_info ?rel) "in")))
  (id-word ?prep_id ?p_wrd&in|on)
  (not (prep_id-relation-anu_ids  ?prep_id  AXeya-AXAra   ?AXeya  ?AXAra))
  =>
@@ -212,7 +177,7 @@
  (defrule kriyA-AXikaraNa_rule
  (relation_name-id-args_with_ids ?rel ?kriyA $? ARG3 ? ?prep $?)
  (relation_name-id-args_with_ids ?rel1 ?prep $? ARG2 ? ?AXikaraNa $?)
- (test (or (eq (find_sub-str_before_last_underscore ?rel1) "on")(eq (find_sub-str_before_last_underscore ?rel1) "in")))
+ (test (or (eq (get_category_info ?rel1) "on")(eq (get_category_info ?rel1) "in")))
  (id-word ?prep_id ?p_wrd&in|on)
  (not (prep_id-relation-anu_ids  ?prep_id  kriyA-AXikaraNa   ?kriyA  ?AXikaraNa))
  =>
