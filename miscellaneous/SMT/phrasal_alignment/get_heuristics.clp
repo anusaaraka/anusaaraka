@@ -96,7 +96,7 @@
 ;Anu     : piMda kA yaha guNa [jadawva] kahA jAwA hE.
 ;Man     : vaswu ke isa guNa ko [jadawva] kahawe hEM.
 (defrule anu_exact_match_without_vib
-(declare (salience 902))
+(declare (salience 905))
 (current_id ?mid)
 (or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi 0))(id-hyphen_word-vib ?mid - $?mng - 0))
 (id-Apertium_output ?aid $?mng)
@@ -104,6 +104,58 @@
 =>
         (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid anu anu_exact_match_without_vib))
+)
+;-------------------------------------------------------------------------------------
+
+;Eng_sen : A few other industries in the fields of sugar, cement, paper etc. came up after [the [Second] World War].
+;Anu     : cInI, simeMta, leKApawra Axi ke kRewroM meM kuCa anya uxyoga [xUsare] viSva yuxXa ke bAxa ke Upara bAxa_meM Ae.
+;Man     : [xUsare] viSva yuxXa ke bAxa cInI , kAgaja Axi ke kuCa kAraKAne BI sWApiwa hue .
+(defrule anu_gid_exact_match_without_vib
+(declare (salience 904))
+(current_id ?mid)
+(or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi 0))(id-hyphen_word-vib ?mid - $?mng - 0))
+(id-Apertium_output ?aid $?mng)
+(pada_info (group_ids $? ?aid $?))
+(not (anu_id-man_id-src-rule_name ?aid ?mid anu anu_exact_match_without_vib))
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid anu anu_gid_exact_match_without_vib))
+)
+
+;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju 15-07-15
+;Eng_sen : Here [we] have to deal with forces involving action at a distance.
+;Anu     : yahAM [hameM] xUrI para kriyA SAmila baloM ke sAWa nipatanA hE.
+;Man     : yahAz para [hamArI] xUrI para kAryarawa baloM se sAmanA howA hE.
+(defrule anu_pronoun_match_without_vib
+(declare (salience 903))
+(current_id ?mid)
+(or (manual_word_info (head_id ?mid) (word ?m)(vibakthi 0))(id-hyphen_word-vib ?mid - ?m - 0))
+(man_word-root-cat ?m ?root p)
+(id-HM-source ?aid ?root ?)
+(pada_info (group_head_id ?aid)(vibakthi ?v&ko|kA|0))
+(not (anu_id-man_id-src-rule_name ?aid ?mid anu anu_exact_match_without_vib))
+(not (anu_id-man_id-src-rule_name ?aid ?mid anu anu_gid_exact_match_without_vib))
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid anu anu_pronoun_match_without_vib))
+)
+;-------------------------------------------------------------------------------------
+;Added by Shirisha Manju 16-07-15
+(defrule anu_wsd_match_without_vib
+(declare (salience 902))
+(current_id ?mid)
+(or (manual_word_info (head_id ?mid) (word $?mng ?m)(vibakthi 0))(id-hyphen_word-vib ?mid - $?mng ?m - 0))
+(man_word-root-cat ?m ?root ?)
+(id-HM-source ?aid $?mng ?root ?)
+(pada_info (group_head_id ?aid)(vibakthi 0))
+(not (anu_id-man_id-src-rule_name ?aid ?mid anu anu_exact_match_without_vib))
+(not (anu_id-man_id-src-rule_name ?aid ?mid anu anu_gid_exact_match_without_vib))
+(not (anu_id-man_id-src-rule_name ?aid ?mid anu anu_wsd_match_without_vib))
+(not (anu_id-man_id-src-rule_name ?aid ?mid anu anu_pronoun_match_without_vib))
+=>
+        (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid anu anu_wsd_match_without_vib))
 )
 ;-------------------------------------------------------------------------------------
 
@@ -119,6 +171,7 @@
 (or (manual_word_info (head_id ?mid) (word $?mng)(vibakthi $?vib))(id-hyphen_word-vib ?mid - $?mng - $?vib))
 (id-Apertium_output ?aid $?mng $?vib)
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_exact_match_without_vib))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_gid_exact_match_without_vib))
 =>
         (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid anu anu_exact_match_with_vib))
@@ -179,6 +232,7 @@
         (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match_without_vib))
         (assert (anu_id-man_id-src-rule_name ?aid ?mid anu_without_vib exact_match_with_anu_output3))
 )
+
 ;==================================== Exact dictionary match ==========================================
 
 ;Eng: Physics is exciting in many ways.
@@ -279,10 +333,11 @@
 (defrule partial_word_match_with_anu
 (declare (salience 840))
 (current_id ?mid)
-(or (manual_word_info (head_id ?mid) (word $?mng)(group_ids $?grp_ids)) (manual_word_info (head_id ?mid) (word $?mng ?v&se|ko_ke)))
+(or (manual_word_info (head_id ?mid) (word $?mng))(manual_word_info (head_id ?mid)(word $?mng ?v&se|ko_ke)))
 (id-Apertium_output ?aid $? $?mng $?)
 (not (got_wsd_align ?aid ?mid))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_exact_match_without_vib))
+(not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_gid_exact_match_without_vib))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? anu_exact_match_with_vib))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? exact_match_with_anu_output1))
 (not (anu_id-man_id-src-rule_name ?aid ?mid ? exact_match_with_anu_output2))
@@ -329,12 +384,14 @@
 (id-HM-source ?aid $?root WSD_root_mng|WSD_word_mng)
 (not (anu_id-man_id-src-rule_name ?aid ?mid  ? anu_exact_match_without_vib))
 (not (anu_id-man_id-src-rule_name ?aid ?mid  ? anu_exact_match_with_vib))
-(not (anu_id-man_id-src-rule_name ?aid ?mid ? exact_match_with_anu_output1))
-(not (anu_id-man_id-src-rule_name ?aid ?mid ? exact_match_with_anu_output2))
-(not (anu_id-man_id-src-rule_name ?aid ?mid ? exact_match_with_anu_output3))
+(not (anu_id-man_id-src-rule_name ?aid ?mid  ? exact_match_with_anu_output1))
+(not (anu_id-man_id-src-rule_name ?aid ?mid  ? exact_match_with_anu_output2))
+(not (anu_id-man_id-src-rule_name ?aid ?mid  ? exact_match_with_anu_output3))
+(not (anu_id-man_id-src-rule_name ?aid ?mid  ? verb_root_match_using_dic))
+(not (anu_id-man_id-src-rule_name ?aid ?mid  ? verb_root_and_tam_match_using_dic))
 =>
-        (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match))
-        (assert (anu_id-man_id-src-rule_name ?aid ?mid anu verb_match_with_WSD))
+        (assert (anu_id-man_id-type ?aid ?mid  anu_exact_match_without_vib))
+        (assert (anu_id-man_id-src-rule_name ?aid ?mid anu_without_vib verb_match_with_WSD))
         (assert (got_wsd_align ?aid ?mid))
 )
 

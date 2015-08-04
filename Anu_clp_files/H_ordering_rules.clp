@@ -751,7 +751,7 @@
 ;-----------------------------------------------------------------------------------------------------------------------
 ;Added by Shirisha manju (27-07-15) 
 ;I asked him not to wait for me. 
-;mEMne usako mere lie 4 prawIkRA_nahIM karane ke lie kahA.
+;mEMne usako mere lie prawIkRA_nahIM karane ke lie kahA.
 (defrule rm_not_id_b4_inf_in_order
 (declare (salience 61))
 (pada_info (group_cat infinitive) (group_ids ?to_id ?))

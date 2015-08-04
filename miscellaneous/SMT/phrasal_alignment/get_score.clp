@@ -36,4 +36,15 @@
         (assert (score (anu_id ?aid) (man_id ?mid)(weightage_sum ?w)(heuristics ?h)(rule_names ?r)))
 )
 ;-----------------------------------------------------------------------------------
+;8. Critically appraise some of the shortfalls of the industrial [policy] pursued by the British colonial administration.
+;8. britiSa OpaniveSika praSAsana xvArA apanAI gaI Oxyogika [nIwiyoM] kI kamiyoM kI AlocanAwmaka vivecanA kareM .
+(defrule modify_count_for_same_wt
+(declare (salience -1))
+(or (score (anu_id ?aid) (man_id ?mid)(weightage_sum ?w)(heuristics M_layer_pharasal_match L_layer_pharasal_match))(score (anu_id ?aid) (man_id ?mid)(weightage_sum ?w)(heuristics L_layer_pharasal_match))(score (anu_id ?aid) (man_id ?mid)(weightage_sum ?w)(heuristics M_layer_pharasal_match )))
+?f<-(score (anu_id ?aid1) (man_id ?mid)(weightage_sum ?w)(heuristics $? hindi_wordnet|dictionary|dictionary_without_vib $?))
+(test (neq ?aid ?aid1))
+=>
+	(bind ?wt (+ ?w 1))
+	(modify ?f (weightage_sum ?wt))
+)
 

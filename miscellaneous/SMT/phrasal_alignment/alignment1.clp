@@ -51,9 +51,9 @@
 ;phrasal is aligning 'use kuCa hamane' in has, have
 (defrule rm_unrelated_words_from_aux_verb
 (declare (salience 13))
-(root-verbchunk-tam-chunkids ? ? ? ?id $? ?h)
+(root-verbchunk-tam-chunkids ? ? ? $? ?id $? ?h)
 ?f<-(alignment (anu_id ?id) (man_id ?mid)(anu_meaning) (man_meaning $?mng))
-(test (eq (integerp (member$ $?mng (create$ hE hEM howA hE howI hE howe hEM))) FALSE))
+(test (eq (integerp (member$ $?mng (create$ hE hEM howA hE howI hE howe hEM hogA))) FALSE))
 ?f1<-(left_over_ids $?ids)
 =>
         (retract ?f ?f1)
@@ -62,9 +62,11 @@
 ;---------------------------------------------------------------------------------
 ;These [are bonded] together by interatomic or intermolecular forces and stay in a stable equilibrium position.
 ;yaha anwarA-paramANavika yA anwarA-ANavika baloM xvArA Apasa meM [bazXe] [howe hEM] Ora eka sWira sAmya avasWA meM rahawe hEM.
+;In this book you [will be introduced] to some of the basic principles of macroeconomic analysis.
+;isa puswaka meM ApakA [paricaya] samaRti arWaSAswrIya viSleRaNa ke kuCa mUla sixXAnwoM se [hogA] .
 (defrule modify_aux_slot
 (declare (salience 12))
-(root-verbchunk-tam-chunkids ? ? ? ?id $? ?h)
+(root-verbchunk-tam-chunkids ? ? ? $? ?id $? ?h)
 ?f0<-(alignment (anu_id ?h) (man_id ?mid)(man_meaning $?m))
 ?f<-(alignment (anu_id ?id) (man_id ?mid1)(anu_meaning) (man_meaning $?mng))
 (test (eq (integerp (member$ $?mng (create$ $?m))) FALSE));In SI, there are seven base units as given in Table 2.1. 11-02
@@ -88,6 +90,18 @@
         (assert (alignment (anu_id ?h1)(man_id ?mid) (anu_meaning $?m)(man_meaning $?mng)))
 )
 ;------------------------------- verb related rules -----------------------------------------
+(defrule group_nahIM_using_anu_out
+(declare (salience 11))
+?f0<-(left_over_ids $?pre ?id $?po)
+(manual_word_info (head_id ?id) (word nahIM))
+?f1<-(alignment (anu_id ?aid) (man_id ?mid) (anu_meaning $?m nahIM $?mng) (man_meaning $?mng))
+(id-cat_coarse ?aid verb)
+=>
+	(retract ?f0 ?f1)
+	(modify ?f1 (man_meaning nahIM  $?mng))
+        (assert (left_over_ids $?pre $?po))
+)
+;----------------------------------------------------------------------------------------------
 
 ;Eng: The time involved [varies] greatly according to climate, weather and crop.
 ;Man: jalavAyu, mOsama Ora Pasala ke anurUpa lAgawa samaya [baxalawA][rahawA hE].
@@ -114,14 +128,14 @@
 ?f<-(left_over_ids $?p ?id $?p1)
 ?f0<-(alignment (anu_id ?aid) (man_id =(- ?id 1)) (anu_meaning $?amng) (man_meaning ?mng))
 (id-cat_coarse ?aid verb)
-(chunk_name-chunk_ids JJP|NP|VGNF $? =(- ?id 1) $?) 
-(manual_word_info (head_id ?id) (word $?mng1)(vibakthi $?v))
+(chunk_name-chunk_ids JJP|NP|VGNF|VGNN $? =(- ?id 1) $?) 
+(manual_word_info (head_id ?id) (word $?mng1)(vibakthi ?vib $?v))
 (chunk_name-chunk_ids ?c&VGF|VGNN $? ?id $?)
 =>
 	(retract ?f)
 	(assert (left_over_ids $?p $?p1))
-	(if (eq ?c VGNN) then
-		(modify ?f0 (man_meaning ?mng $?mng1 $?v))
+	(if (and (eq ?c VGNN)(neq ?vib 0)) then
+		(modify ?f0 (man_meaning ?mng $?mng1 ?vib $?v))
 	else
 		(modify ?f0 (man_meaning ?mng $?mng1))
 	)
@@ -374,5 +388,16 @@
         (modify ?f0 (anu_id ?aid))
         (modify ?f1 (anu_id ?aid2))
 	(assert (modification done ))
+)
+;----------------------------------------------------------------------------------------------
+;Since momentum is a vector this implies three equations for the three directions {x, y, z}.
+;cUzki saMvega eka saxiSa rASi hE, awaH yaha wIna xiSAoM [{@x], @y, @z} ke lie wIna samIkaraNa praxarSiwa karawA hE.
+(defrule add_punct
+(declare (salience -20))
+?f<-(manual_id-word ?mid ?w&{)
+?f1<-(alignment (anu_id ?aid) (man_id ?mid1&:(= (+ ?mid 1) ?mid1)) (man_meaning $?mng))
+ =>
+	(retract ?f)
+	(modify ?f1 (man_meaning ?w $?mng))
 )
 

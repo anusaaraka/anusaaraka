@@ -86,6 +86,7 @@
 (declare (salience 650))
 ?f<-(ids-multi_vib_from_dic ?id $?vids - $?vib)
 ?f0<-(manual_word_info (head_id ?id1&:(=(- ?id 1) ?id1)) (word $?mng )(group_ids $?ids))
+(not (manual_id-word ?id1 @PUNCT-ClosedParen|}))
 =>
 	(retract ?f)
 	(modify ?f0 (vibakthi $?vib)(group_ids $?ids ?id $?vids))
@@ -94,12 +95,14 @@
 ;Added by Shirisha Manju
 ;The distance between the two points of observation is called the basis.
 ;xo prekRaNa [biMxuoM] (@A evaM @B) [ke bIca] kI xUrI ko AXAraka kahA jAwA hE.
+;Since momentum is a vector this implies three equations for the three directions {x, y, z}.
+;cUzki saMvega eka saxiSa rASi hE, awaH yaha wIna [xiSAoM {@x, @y, @z} ke lie] wIna samIkaraNa praxarSiwa karawA hE.
 (defrule multi_vib_Paren
-(declare (salience 650))
+(declare (salience 651))
 ?f<-(manual_word_info (head_id ?id0)(group_ids $?gids))
-(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen)
-(manual_id-word ?id2 @PUNCT-ClosedParen)
-(test (or (eq (- ?id2 ?id1) 3)(eq (- ?id2 ?id1) 2) (eq (- ?id2 ?id1) 1)(eq (- ?id2 ?id1) 4)))
+(manual_id-word ?id1&:(=(+ ?id0 1) ?id1) @PUNCT-OpenParen|{)
+(manual_id-word ?id2 @PUNCT-ClosedParen|})
+(test (or (eq (- ?id2 ?id1) 3)(eq (- ?id2 ?id1) 2) (eq (- ?id2 ?id1) 1)(eq (- ?id2 ?id1) 4)(eq (- ?id2 ?id1) 6)))
 ?f1<-(ids-multi_vib_from_dic ?id3&:(=(+ ?id2 1) ?id3) $?ids - $?vib)
 =>
 	(retract ?f1)
@@ -228,7 +231,7 @@
 ;====================================== noun multi-word grouping =======================================
 (defrule get_default_group
 (declare (salience 600))
-?f1<-(manual_id-word ?mid ?man_wrd&~kA&~kI&~se&~ke&~.)
+?f1<-(manual_id-word ?mid ?man_wrd&~kA&~kI&~se&~ke&~{&~}&~.)
 (test (neq (sub-string 1 6 (implode$ (create$ ?man_wrd))) "@PUNCT"))
 (not (manual_word_info (group_ids $? ?mid $?)))
 (not (mng_has_been_grouped ?mid))
@@ -300,7 +303,7 @@
 (declare (salience 650))
 ?f<-(manual_word_info (word $?noun) (group_ids $?ids ?id0))
 (manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ?w1&kI)
-(manual_id-word ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora|waraha|apekRA)
+(manual_id-word ?id2&:(=(+ ?id1 1) ?id2)  ?w2&ora|waraha|apekRA|waraph)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>
@@ -340,7 +343,7 @@
 (declare (salience 650))
 ?f<-(manual_word_info  (word $?noun) (group_ids $?ids ?id0))
 (manual_id-word ?id1&:(=(+ ?id0 1) ?id1) ke)
-(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|pare|BIwara|Age|pICe|paScAwa|paScAw|nikata|sApekRa|maXya|anxara|bAhara|binA|jEsA|pAsa|viruxXa|xOrAna|sahiwa|anuxiSa)
+(manual_id-word ?id2&:(=(+ ?id0 2) ?id2) ?w&pariwaH|lie|liye|sAWa|anwargawa|ora|awirikwa|bAxa|kAraNa|samaya|xvArA|anusAra|aXIna|bIca|nIce|Upara|samAna|pare|BIwara|Age|pICe|paScAwa|paScAw|nikata|sApekRa|maXya|anxara|bAhara|binA|jEsA|pAsa|viruxXa|xOrAna|sahiwa|anuxiSa|samIpa)
 (not (mng_has_been_grouped ?id1))
 (not (mng_has_been_grouped ?id2))
 =>
@@ -488,9 +491,10 @@
 (defrule single_vib1
 (declare (salience 650))
 ?f1<-(manual_word_info (head_id ?mid0) (word $?noun)(vibakthi ?v $?v1)(group_ids $?grp_ids ?id0))
+(test (eq (integerp (member$ $?noun (create$ hEM hE howA hE kiye))) FALSE)) ;--- anwaHsWApiwa  hEM  jEse  kisI --- 
 ?f2<-(manual_word_info (head_id ?id1&:(=(+ ?id0 1) ?id1))(word ?vib&ne|para|ko|meM|lie|jEse|xvArA|vAlI|vAlA|vAle|waka)(group_ids $?grp_ids1))
 (test (and (neq (integerp (member$ ?vib $?v1)) TRUE) (neq ?v ?vib)))
-(not (chunk_name-chunk_ids VGF $? ?id1 $?))
+(not (chunk_name-chunk_ids VGF $? ?mid0 $?))
 (not (vib_added ?id0))
 =>
         (retract ?f2)

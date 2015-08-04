@@ -177,8 +177,7 @@
  (test (eq (nth$ ?grp_head $?grp_ids) ?id))
  =>
 	(retract ?f)
-	(bind ?dom (sub-string 1 3 ?domain))
-	(bind ?src (string-to-field (str-cat ?dom"_compound_phrase_word_mng")))
+	(bind ?src (string-to-field (str-cat ?domain"_compound_phrase_word_mng")))
 	(print_hindi_mng ?id -  ?src  $?grp_ids)
 	(printout ?*h_mng_file* "(id-HM-source  " ?id "  "?mng"  " ?src ")" crlf)
 	(printout ?*h_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?mng"  "?src " " (implode$ $?grp_ids)")" crlf)
@@ -195,8 +194,7 @@
  (test (eq (nth$ ?grp_head $?grp_ids) ?id))
  =>
 	(retract ?f)
-	(bind ?dom (sub-string 1 3 ?domain))
-	(bind ?src (string-to-field (str-cat ?dom"_compound_phrase_root_mng")))	
+	(bind ?src (string-to-field (str-cat ?domain"_compound_phrase_root_mng")))	
 	(print_hindi_mng ?id -  ?src $?grp_ids)
 	(printout ?*h_mng_file* "(id-HM-source  " ?id "  "?mng"   " ?src ")" crlf)
 	(printout ?*h_mng_file1* "(id-HM-source-grp_ids  " ?id "  "?mng"    "?src " " (implode$ $?grp_ids)")" crlf)

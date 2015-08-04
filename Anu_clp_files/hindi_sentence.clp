@@ -99,19 +99,29 @@
  ;hamAre Gara meM Pala nahIM hEM.
  ;There is no 'final' theory in science and no unquestioned authority among scientists. 
  ;vijFAna meM 'anwima' sixXAnwa Ora vEjFAnikoM ke bIca meM kuCa asanxigXa aXikArI nahIM hE.
- (defrule move_nahIM_before_verb
+ ;No wonder, the overall mortality rate was very high.
+ ;koI axBuwawA nahIM, sampUrNawayaH mqwyu xara bahuwa UzcI WI.
+ (defrule move_nahIM_before_verb_or_after_noun
  (declare (salience 2551))
  ?f<-(id-Apertium_output ?id $?pre nahIM)
  (id-word ?id no)
  (prep_id-relation-anu_ids  -  ?r1  ?k ?id)
  (prep_id-relation-anu_ids  -  ?r2  ?kri ?k)
  (id-cat_coarse ?kri verb)
- ?f0<-(hindi_id_order $?id1 ?kri $?d1)
  ?f1<-(id-Apertium_output ?kri $?mng)
+ (pada_info (group_head_id ?h) (group_ids $? ?id $?))
+ ?f0<-(id-Apertium_output ?h $?hmng)
+ (id-right_punctuation ?h ?punct)
  =>
-	(retract ?f ?f1)
+	(retract ?f)
 	(assert (id-Apertium_output ?id $?pre))
-	(assert (id-Apertium_output ?kri nahIM $?mng))
+	(if (eq ?punct PUNCT-Comma) then
+		(assert (id-Apertium_output ?h $?hmng nahIM)) 
+		(retract ?f0)
+	else
+		(assert (id-Apertium_output ?kri nahIM $?mng))
+		(retract ?f1)
+	)
  )
  ;----------------------------------------------------------------------------------------------------------
  ;Add english meaning to the hindi mng

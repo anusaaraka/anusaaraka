@@ -45,7 +45,7 @@
         (retract ?f)
         (bind ?a_op "")
        (bind ?a_op (remove_character "\\@" (implode$ (create$  $?a_grp)) " "))
-  ;     (bind ?a_op (remove_character "\@" (implode$ (create$  ?a_op)) " "))
+       (bind ?a_op (remove_character "\@" (implode$ (create$  ?a_op)) " "))
         (bind ?a_op (remove_character "-" (implode$ (create$  ?a_op)) " "))
         (bind ?a_op (remove_character "_" (implode$ (create$  ?a_op)) " "))
         (assert (id-Apertium_output ?a_id  ?a_op))
@@ -60,12 +60,11 @@
         (retract ?f)
         (bind ?new_mng (remove_character "_" ?hmng " "))
         (bind ?new_mng (remove_character "-" (implode$ (create$  ?new_mng)) " "))
-;       (bind ?new_mng (remove_character "@" (implode$ (create$  ?new_mng)) ""))
+       (bind ?new_mng (remove_character "@" (implode$ (create$  ?new_mng)) ""))
         (assert (id-HM-source ?id ?new_mng ?src))
         (assert (id_hmng_modified ?id))
  )
 ;================================================== verb rules =============================================
-;----------------------------------------------------------------------------------------------------------
 (defrule get_verb_chunk_cp
 (declare (salience 1000))
 ?f<-(chunk_name-chunk_ids ?chnk&VGF|VGNN|VGNF $?gids)
@@ -222,11 +221,13 @@
 ;This causes a major upheaval in science.  ye prekRaNa hI vijFAna meM mahAna krAnwi kA [kAraNa banawe] [hEM].
 ;When this is an elastic collision, the magnitude of the velocity remains the same.
 ;jaba yaha takkara prawyAsWa howI hE wo vega kA parimANa aparivarwiwa [rahawA] [hE].
+;We can also observe that the employment level in different production units also goes up or down together.
+;hama Binna-Binna uwpAxana ikAiyoM meM rojagAra ke swara ko BI eka sAWa Gatawe yA [baDawe hue] xeKa sakawe hEM .
 (defrule group_WA_hEM
 (declare (salience 730))
 ?f1<-(manual_word_info (word $?noun ?m1)(group_ids $?grp_ids ?mid))
 (test (or (eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "wI") (eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "we")(eq (sub-string (- (length ?m1) 1) (length ?m1) ?m1  ) "wA")))
-?f2<-(manual_word_info (head_id ?id&:(=(+ ?mid 1) ?id)) (word ?m2&hE|hEM))
+?f2<-(manual_word_info (head_id ?id&:(=(+ ?mid 1) ?id)) (word ?m2&hE|hEM|hue|huI))
 =>
         (retract ?f2)
 	(modify ?f1 (word $?noun ?m1 ?m2)(vibakthi wA ?m2)(group_ids $?grp_ids ?mid ?id))
@@ -329,8 +330,9 @@
 (declare (salience 450))
 ?f<-(anu_id-anu_mng-man_mng ?aid ?word ?man_mng)
 (not (underscore_removed ?aid))
+(not (numberp ?man_mng))
 (test (and (neq ?man_mng @PUNCT-Comma) (neq ?word @PUNCT-Comma)))
-(test (neq (str-index "_" ?man_mng) FALSE))
+(test (neq (str-index "_" (implode$ (create$ ?man_mng))) FALSE))
 =>
   (retract ?f)
   (bind ?new_mng (remove_character "_" (implode$ (create$ ?man_mng)) " "))
@@ -342,8 +344,9 @@
 (declare (salience 450))
 ?f<-(eng_id-eng_wrd-man_wrd ?aid ?word ?man_mng)
 (not (underscore_removed_in_M ?aid))
+(not (numberp ?man_mng))
 (test (and (neq ?man_mng @PUNCT-Comma) (neq ?word @PUNCT-Comma)))
-(test (neq (str-index "_" ?man_mng) FALSE))
+(test (neq (str-index "_" (implode$ (create$ ?man_mng))) FALSE))
 =>
   (retract ?f)
   (bind ?new_mng (remove_character "_" (implode$ (create$ ?man_mng)) " "))

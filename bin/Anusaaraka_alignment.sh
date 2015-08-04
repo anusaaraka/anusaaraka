@@ -24,7 +24,11 @@
 
   echo "Alignment through Phrasal"
   echo "extracting keys from english sentence"
-  if [ "$3" != "" ] ; then
+  if [ "$3" == "general" ] ; then
+	cd $HOME_anu_test/multifast-v1.4.2/src/phrasal_mwe	
+	./extract_key_using_multifast $MYPATH/eng_tok_org $MYPATH/map.txt > $MYPATH/key.txt
+	./extract_key_using_multifast-hi-en $MYPATH/eng_tok_org $MYPATH/map-hi-en.txt > $MYPATH/key-hi-en.txt 
+  elif [ "$3" != "" ] ; then
 	cd $HOME_anu_test/multifast-v1.4.2/src/phrasal_mwe	
 	cp extract_key_$3.c extract_key.c
 	cp extract_key-hi-en_$3.c extract_key-hi-en.c
@@ -67,12 +71,19 @@
 
  cd $PHRASAL_PATH
  while read line
- do 
+ do
+	if [ "$3" == "general" ] ; then
+        	cd $HOME_anu_test/bin 
+		sh run_alignment.sh $MYPATH/$line $1
+		cd $PHRASAL_PATH
+	else	
+	 
 	sh run_alignment.sh $MYPATH/$line $3
 	sh run_alignment-hi-en.sh $MYPATH/$line $3
         cd $HOME_anu_test/bin 
-	sh run_alignment.sh $MYPATH/$line $1
+	sh run_alignment.sh $MYPATH/$line $1 $line
 	cd $PHRASAL_PATH
+	fi
  done < $MYPATH/dir_names.txt
 
  cd $MYPATH

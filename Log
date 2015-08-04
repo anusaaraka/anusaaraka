@@ -2,11 +2,12 @@
  ========
  1. WSD:
 	substantially.clp 
+	seize.clp -- fixed bug in assert stmt
  2. adjective.clp:
 	Added example sentence in 'check_whether_mng_dcd' rule
  3. hindi_sentence.clp:
 	Modified : add_eng_mng, add_eng_mng1 rule
-        Added    : rm_eng_fact and move_nahIM_before_verb rules
+        Added    : rm_eng_fact and move_nahIM_before_verb_or_after_noun
  4. tam_meaning.clp:
 	Added : change_tam_source_for_WSD
  5. number.clp
@@ -14,36 +15,35 @@
 	Modified : verb_rule  -- added no. info for subject
  6. hindi_meaning.clp
 	Modified the hierarchy for default mng
- 7. sd_relation_rules.clp
+ 7. hindi_compound_meaning.clp
+        Modified : get_default_domain_compound_root_mng and get_default_domain_compound_word_mng [fixed bug to get domain dic name]
+ 8. sd_relation_rules.clp
 	Modified: conj+cc,  rcmod -- commented test condition, insert-which1 --added who|that|whom|whoever|whichever|whomever
- 8. H_ordering_rules.clp
+ 9. H_ordering_rules.clp
 	Added    : move_negation_before_inf_verb, dont_reverse_NP, dont_separate_sbar_for_jo_samAnAXikaraNa and rm_not_id_b4_inf_in_order 
 	Modified : move_negation_before_verb, dont_rev_VP_if_immediate_sis_sbar -- added 'add confirm agree doubt' to the list
 		   reverse-NP-Daughters -- added ADJP and 'dozens' to the list
                    rmv_sbar_from_root   -- added not condition
- 9. vibakthi.clp
+ 10. vibakthi.clp
         Added : saMjFA_vib_to_saMjFA_samA_vibakthi_rule 
- 10. prepare_apertium_input.clp
+ 11. prepare_apertium_input.clp
 	Added    : not_before_verbal_noun_with_vib
         Modified : kA_vib_from_sub_or_obj_rule
- 11. sd_pada.clp
+ 12. sd_pada.clp
 	Modified : get_conj_group -- added conj last id fact
 		   get_zero_level_prep -- used above generated fact to share prep
 		   get_infinitive_pada -- to handle adverb b4 infinitive
- 12.  hindi_sent_reorder.clp
+ 13.  hindi_sent_reorder.clp
 	Modified : rule_for_ki -- added 'doubt'
 	 Added   : insert_kyA and interchange_date_and_month rules
 	Removed  : insert_wo_when
- 13.  GNP_agreement.clp
+ 14.  GNP_agreement.clp
 	Added : case_for_saMjFA
- 14. get_dbase_mng.clp
+ 15. get_dbase_mng.clp
 	Modified : print_dic_mng and dic_lookup functions to add group_ids
- 15. get_heuristics.clp
-	Added : anu_exact_match_without_vib_for_hyphen_word
  16. Updated alignment files
-	alignment.clp	get_manual_id_and_group.clp	get_verb_and_phrasal_grp.clp
-	alignment1.clp
- 17. run_modules_std.bat
+	alignment.clp		get_heuristics.clp	get_score.clp
+ 17. run_modules_std.bat 
 	Loaded "relations_tmp1.dat" file in number module
 	Loaded  E_constituents_info_tmp5.dat and parserid_wordid_mapping.dat files and added save-facts for GNP_agmt_info.dat in
 	        hindi_sent_reorder module
@@ -87,8 +87,11 @@
 	Anu_data/canonical_form_dictionary/list_Anu_data_domain
 	Anu_data/canonical_form_dictionary/list_Anu_data_multi_domain
  26. Updated following files related to phrasal alignment:
+	Anusaaraka_alignment.sh
         run_alignment-hi-en.sh
         run_alignment.sh
+	get_phrasal_dic-en-hi.sh 
+	get_phrasal_dic-hi-en-en.sh
  27. Updated following dictionaries:
         changes_in_databases	apertium-en-hi.en.metadix			provisional_multi_word_dictionary.txt
         miscellaneous/SMT/MINION/dictionaries/phy_dictionary.txt		multi_word_expressions.txt
