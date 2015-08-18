@@ -859,27 +859,6 @@ Removed:
 	<e lm="wrapped"><i>wrapped</i><par n="accept__vblex"/></e>		("		02-10-14)
 	<e lm="stocks"><i>stocks</i><par n="access__n"/></e>			("		26-02-15)
 
-
- Added new files:
- ===============
- 1. ol_parser_unused_words.txt (Added by Roja 06-11-10 suggested by Chaitanya sir)
- 2. month_day.txt (Added by Roja 20-11-10 suggested by Meena ji)
- 3. place.txt 		    (Added by Roja 11-02-11. suggested by Sukhada)
- 4. time.txt  		    (     	"                  )
- 5. transitive-verb-list.txt(     	"                  )
- 6. eng-animate-list.txt    (     	"                  )
- 7. hindi_default_tam.txt   (Added by Roja 11-03-11 . Suggested by Chaitanya Sir)
- 8. default-iit-bombay-shabdanjali-dic.txt (Added by Roja 31-01-12 . Suggested by Chaitanya Sir)
- 9. preposition.txt (Added by Manju 24-02-12.  Suggested by Chaitanya Sir)
-10. Physics-dictionary  (Added by Roja 04-05-12. Suggested by Chaitanya Sir)
-     This file is splitted into two files
-     i. phy_dictionary.txt   and   ii. phy_eng_multi_word_dic.txt
-11. multi_word_expressions_from_iit_bombay.txt 
-	Extracted from iit-bombay dictionary.Added by Roja 10-05-13. Suggested by Chaitanya Sir)
-12. proper_noun_dic.txt    (Added by Shirisha Manju Suggested by Chaitanya Sir)
-13. provisional_multi_word_dictionary.txt	(Added by Roja 21-02-14)
-     
-
  Changes in ol_parser_unused_words.txt
  =====================================
  Added :
@@ -1100,6 +1079,8 @@ Nandini ji LTRC 	27-11-13)
 	125. withhold_verb		roka_raKa	as	roke_raKa	(Suggested by Sukhada 		20-05-15)
 	126. confine_verb    		sImIwa_raKa	as	sImiwa_raKa	(    "          "		23-06-15)
 	127. power_noun      		vixyuw/vixyuw_Sakwi as  vixyuwa/vixyuwa_Sakwi (   By Shirisha Manju     20-07-15)
+	128. missile_noun    		prakRepAstra	as	prakRepAswra	(Suggested by Sukhada           17-08-15)
+	129. likely_adverb   		samBavawH	as	samBavawaH	(	"	"		"	)
 
     3. Added new entry:
        ---------------
@@ -1751,7 +1732,24 @@ Nandini ji LTRC 	27-11-13)
 					Ex: The overall literacy level was less than 16 per cent..
 	154. stage_noun      		sopAna			(Suggested by Chaitanya Sir     31-07-15)
 					Ex: Before 1921, India was in the first stage of demographic transition. 
-
+	155. handicraft_noun 		haswakalA		(	By Shirisha Manju	01-08-15)
+					Ex: The traditional handicrafts industries were ruined under the British rule.
+	156. thus_adverb     		isa_waraha		(	By Shirisha Manju       11-08-15)
+					Ex: Thus a thicker rope of radius about 3 cm is recommended.
+	157. quantitatively_adverb   	mAwrAwmaka		(	By Shirisha Manju       11-08-15)
+					Ex:In the preceding Chapter,our concern was to describe the motion of a particle in space quantitatively.
+	158. together_adverb 		sAWa-sAWa		(       By Shirisha Manju       11-08-15)
+					Ex: Taken together, the product of mass and velocity, that is momentum, is evidently a relevant variable 
+					    of motion.
+	159. cancel_verb    		niraswa_kara		(       By Shirisha Manju       12-08-15)
+					Ex: The force of gravity (mg) is canceled by the normal reaction force (N) of the table.
+	160. diagram_noun    		AreKa			(       By Shirisha Manju       12-08-15)
+					Ex: The practice of drawing free-body diagrams is of great help in solving problems in mechanics.
+	161. depict_verb     		ciwraNa_kara		(       By Shirisha Manju       12-08-15)
+					Ex: Fig. 6.5 depicts a ball of mass m being dropped from a cliff of height H.
+	162. given_adjective 		praxawwa		(Suggested by Chaitanya Sir     17-08-15)
+					Ex:Multiplying a given vector A by negative numbers,say — 1 and — 1.5, gives vectors as shown in Fig 4.3
+	
     5. Modifying first meaning from the list :
        -------------------------------------
         1. establishment_noun   aXiRTAna                as      sWApanA         (Suggested by Meena  07-02-12   )
@@ -2179,6 +2177,8 @@ Nandini ji LTRC 	27-11-13)
 				    container.
 	195. transition_noun 	svara-sanXAna		as	parivarwana	(Suggested by Chaitanya Sir     31-07-15)
 				Ex: Before 1921, India was in the first stage of demographic transition.
+	196. missile_noun    	prakRepAswra		as	misAila		(Suggested by Sukhada           17-08-15)
+				Ex: Tulnerable to tens of thousands of missiles and rockets from neighboring countries.
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -2328,13 +2328,6 @@ Nandini ji LTRC 	27-11-13)
 	rather_than		---	(		"		"   )
 	at_the_behest_of	---	(		"		"   )
 	till_after		---	(		"	    21-07-15)	
-
--------------------------- compound_phrase.txt -----------------------------------
- Based on the type of the phrase, compound_phrase.txt file has been splitted in to four different files,(Suggested by Chaitanya ji 23-04-12)
-        i) acronyms-common_noun_compounds.txt
-       ii) proper_noun-common_noun_compounds.txt
-      iii) named_entities.txt
-       iv) multi_word_expressions.txt
 
   proper_noun-common_noun_compounds.txt 
   =====================================
@@ -2797,10 +2790,17 @@ Nandini ji LTRC 	27-11-13)
 				    independence till after four decades of planned development, which was a path that India chose.
 	161. till_after      	ke_bAxa_waka#ke_bAxa_waka#preposition#2#RM		(Suggested by Chaitanya sir 21-07-15 )
 				Ex: above sentence
-	162. five_year_plans 	paMcavaRarIya_yojanA#paMcavaRarIya_yojanA#noun#3#RM	("		"		"    )
-				Ex: An overview of the goals of five year plans and a critical appraisal of the merits and limitations of planned 				     development has been covered in this unit.
-	163. population_growth  janasafKyA_vqxXi#janasafKyA_vqxXi#noun#2#RM		(Suggested by Chaitanya sir 31-07-15 )
-				Ex:However, neither the total population of India nor the rate of population growth at this stage was very high.
+	162. in_both_the_cases  xonoM_hI_sWiwiyoM_meM/xonoM_hI_sWiwiyoM_meM#noun#4#WM	( By Shirisha Manju	    07-08-15 )
+				Ex: In both the cases, there is a change in the length of the cylinder.
+	163. manufacturing_units    Oxyogika_ikAI#Oxyogika_ikAI#noun#2#RM		(Suggested by Chaitanya sir 12-08-15 )
+				Ex: The establishment of a few manufacturing units here and there was no substitute to the near wholesale 
+                                    displacement of the country's traditional handicraft industries.
+	164. those_of_you    	Apa_meM_se#Apa_meM_se#pronoun#3#WM			(Suggested by Chaitanya sir 12-08-15 )
+				Ex: Those of you who will choose later to specialise in economics, for your higher studies, will know about the 
+				    more complex analyses that are used by economists to study macroeconomics today.
+	165. higher_studies  	ucca_aXyayana#ucca_aXyayana#noun#2#RM			(Suggested by Chaitanya sir 12-08-15 )
+				Ex: above example	
+
 
     Added new meaning to the existing word:
     --------------------------------------
@@ -3575,4 +3575,32 @@ Nandini ji LTRC 	27-11-13)
 	following_morning       agalI_subaha#agalI_subaha#noun#2#RM
 
 
+ Added new files:
+ ===============
+ 1. ol_parser_unused_words.txt                  (Added by Roja 06-11-10 suggested by Chaitanya sir)
+ 2. month_day.txt                               (Added by Roja 20-11-10 suggested by Meena ji)
+ 3. place.txt                                   (Added by Roja 11-02-11. suggested by Sukhada)
+ 4. time.txt                                    (       "                  )
+ 5. transitive-verb-list.txt                    (       "                  )
+ 6. eng-animate-list.txt                        (       "                  )
+ 7. hindi_default_tam.txt                       (Added by Roja 11-03-11 . Suggested by Chaitanya Sir)
+ 8. default-iit-bombay-shabdanjali-dic.txt      (Added by Roja 31-01-12 . Suggested by Chaitanya Sir)
+ 9. preposition.txt                             (Added by Shirisha Manju 24-02-12.  Suggested by Chaitanya Sir)
+10. Physics-dictionary                          (Added by Roja 04-05-12. Suggested by Chaitanya Sir)
+     This file is splitted into two files
+     i. phy_dictionary.txt   and   ii. phy_eng_multi_word_dic.txt
+11. multi_word_expressions_from_iit_bombay.txt
+        Extracted from iit-bombay dictionary.   (Added by Roja 10-05-13. Suggested by Chaitanya Sir)
+12. proper_noun_dic.txt                         (Added by Manju Suggested by Chaitanya Sir)
+13. provisional_multi_word_dictionary.txt       (Added by Roja 21-02-14)
+14. social_science_dic.txt			(Added by Manju 14-08-15 Suggested by Chaitanya Sir)
+15. social_science_multi_dic.txt		(Added by Manju 14-08-15 Suggested by Chaitanya Sir)
 
+
+
+-------------------------- compound_phrase.txt -----------------------------------
+ Based on the type of the phrase, compound_phrase.txt file has been splitted in to four different files,(Suggested by Chaitanya ji 23-04-12)
+        i) acronyms-common_noun_compounds.txt
+       ii) proper_noun-common_noun_compounds.txt
+      iii) named_entities.txt
+       iv) multi_word_expressions.txt

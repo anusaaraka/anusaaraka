@@ -516,13 +516,14 @@
  (declare (salience 10))
  ?f0<-(id-root-category-suffix-number ?id ? adjective er ?)
  (not (id-eng-src ?id ? Word_mng))
- ?f<-(hindi_id_order $?list ?id $?list1)
+ ?f<-(hindi_id_order $?list ?m ?id $?list1)
  (not (id-HM-source ?id ? ?src&Database_compound_phrase_root_mng|Database_compound_phrase_word_mng|provisional_Database_compound_phrase_root_mng|provisional_Database_compound_phrase_word_mng));Note : Same as below but no sentence found. 
  (not (vib_inserted ?id))
+ (not (id-HM-source ?m se_aXika ?)) ;Current PCs are more than 50 times faster and have memory capacity 500 times greater than their 1977 counterparts. 
  =>
         (retract ?f ?f0)
-	(assert (hindi_id_order  $?list aXika ?id $?list1))
-  	(printout  ?*DBUG* "(Rule_Name-ids   insert_aXika_for_adj_er   (hindi_id_order  "(implode$ (create$ $?list aXika ?id $?list1 )) ")" crlf)
+	(assert (hindi_id_order  $?list ?m aXika ?id $?list1))
+  	(printout  ?*DBUG* "(Rule_Name-ids   insert_aXika_for_adj_er   (hindi_id_order  "(implode$ (create$ $?list ?m aXika ?id $?list1 )) ")" crlf)
  )
  ;------------------------------------------------------------------------------------------------------------------
  ;Added provisional_Database_compound_phrase_root_mng and provisional_Database_compound_phrase_word_mng in the list by Roja(20-02-14)

@@ -110,6 +110,21 @@
    	(retract ?f0)
   )
   ;------------------------------------------------------------------------------------------
+  ;Suggested by Soma JI 08-08-15 
+  ;This chapter begins by giving you a [simplified] account of how macroeconomics differs from the microeconomics that you have known.
+  (defrule modify_VBN_cat1
+  (declare (salience 5))
+  ?f0<-(id-sd_cat  ?id  VBN)
+  (Head-Level-Mother-Daughters ? ? ?VBN ?id)
+  (Head-Level-Mother-Daughters ? ? ?Mot $? ?VBN $?)
+  (Node-Category ?Mot NP)
+  (Node-Category ?VBN VBN|VBG)
+  =>
+        (assert (parser_id-cat_coarse ?id adjective))
+        (assert (parser_id-cat ?id adjective))
+   	(retract ?f0)
+  )
+  ;------------------------------------------------------------------------------------------
   (defrule PRP_rule
   ?f0<-(id-sd_cat	?id	PRP)
   =>

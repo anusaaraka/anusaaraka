@@ -465,12 +465,14 @@
  ;-------------------------------------------------------------------------------------------------------------------
  ;We see leaves falling from trees and water flowing down a dam.
  ;He stopped killing of animals and birds throughout his kingdom. 
+ ;The intelligent students study in libraries, streets, and cinema houses.
  (defrule modify_case_for_and_grp
  (declare (salience 590))
  (conj_head-left_head-right_head ? ?l_h ?r_h)
  (pada_info (group_head_id ?r_h) (vibakthi ?vib))
  (test (neq ?vib 0))
- ?f0<-(pada_info (group_head_id ?l_h)(case d))
+ ?f0<-(pada_info (group_head_id ?id)(case d))
+ (test (or (eq ?id ?l_h) (and (> ?id ?l_h)(< ?id ?r_h))))
  =>
 	(retract ?f0)
 	(modify ?f0 (case o))

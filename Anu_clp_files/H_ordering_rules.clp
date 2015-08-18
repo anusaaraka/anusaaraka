@@ -148,6 +148,8 @@
 ;But he adds, "I feel pressured, disappointed, uncomfortable and, frankly, quite angry with Viacom. 
 ;Mr. Canepa confirmed he had consented to the sanctions but declined to comment further. 
 ;Mr. Hahn agrees that he has a "retentive" memory, but friends say that is an understatement. 
+;Many worry that Saleh will remain a power broker in Yemen through relatives and allies he put in key state positions. 
+;Israeli defense officials warn that Syria, a close Iranian ally, is believed to possess GPS-guided missiles and chemical weapons. 
 (defrule dont_rev_VP_if_immediate_sis_sbar
 (declare (salience 1400))
 ?f0<-(Head-Level-Mother-Daughters ?head ?l ?Mot ?verb ?sbar $?d)
@@ -156,7 +158,7 @@
 (Head-Level-Mother-Daughters  ?  ?  ?verb ?id)
 (id-cat_coarse ?id verb)
 (id-root ?head ?root) 
-(test (member$ ?root (create$ think matter wonder say dispute suppose comment figure point assume add confirm agree doubt)) ) 
+(test (member$ ?root (create$ think matter wonder say dispute suppose comment figure point assume add confirm agree doubt worry believe estimate)) ) 
 (not (Mother  ?Mot))
 =>
         (bind ?*count* (+ ?*count* 1))
@@ -171,16 +173,19 @@
 ;Added by Shirisha Manju (30-07-15) -- Suggested by Sukhada.
 ;Stock futures trading has minted [dozens of millionaires] in their 20s and 30s.
 ;xarjana laKapawiyoM ke
+;Such program trades, which can involve the purchase or sale of [millions of dollars] of stock, occur in a matter of seconds.
 (defrule dont_reverse_NP
 (declare (salience 1400))
 ?f0<-(Head-Level-Mother-Daughters ?head ?lvl ?mot ?NP ?PP $?d)
 (Node-Category  ?Mot  NP)(Node-Category  ?PP  PP)
-(id-original_word ?head ?wrd&lot|most|number|spot|kinds|set|sort|whole|dozens|some)
+(id-original_word ?head ?wrd&lot|most|number|spot|kinds|set|sort|whole|dozens|some|millions|type|tens|hundreds|thousands|billions|dollars)
 (Head-Level-Mother-Daughters ?h ? ?PP ?IN $? ?NP2)
 (id-root ?h of)
+(not (Mother  ?mot))
 (not (Mother  ?NP2))
 =>
         (bind ?*count* (+ ?*count* 1))
+        (assert (Mother  ?mot))
         (assert (Mother  ?NP2))
         (printout ?*order_debug-file* "(rule_name - dont_rev_NP " ?*count* " " crlf)
 )
@@ -246,7 +251,7 @@
 ; The root fact is loaded only for OL bcoz Ol shows head as root sometimes and word some times
 ;I refused to lend him extra money.
 (defrule rev_VP_for_obj1_obj2
-(declare (salience 940))
+(declare (salience 799))
 ?f0<-(Head-Level-Mother-Daughters  ?head ?lev ?Mot  $?daut ?d1 ?d $?rest)
 (Node-Category  ?Mot  VP|Inf_VP)
 (and (prep_id-relation-anu_ids ? kriyA-object_2 ?head ?obj2)(prep_id-relation-anu_ids ? kriyA-object_1 ?head ?obj1))
@@ -516,6 +521,44 @@
 	(printout ?*order_debug-file* "(rule_name - reverse-NP-Daughters "  ?*count* crlf 
                          "              Before    - "?head" "?lvl" "?mot" "?NP" "?PP " "(implode$ $?d) crlf
 	                 "              After     - "(implode$ ?NP_rev) ")" crlf)
+)
+;-----------------------------------------------------------------------------------------------------------------------
+;Added by Shirisha Manju(20-06-11) Suggested by Sukhada
+;Cray has been working on the project for more than six years. 
+;Current PCs are more than 50 times faster and have memory capacity 500 times greater than their 1977 counterparts.
+;Defense Minister Ehud Barak has estimated that an Iranian attack would claim fewer than 500 Israeli casualties a statement intended to calm the nation, but which has achieved the opposite effect.
+(defrule move_more_than_after_head
+(declare (salience 800))
+?f<-(Head-Level-Mother-Daughters ?h ?l ?NP ?QP $?d ?NN)
+(and (Node-Category  ?NP NP|ADJP)(Node-Category  ?QP QP))
+?f0<-(Head-Level-Mother-Daughters ?h1 ?l1 ?QP $?pre ?more ?than $?post ?head)
+(Head-Level-Mother-Daughters ?m_id ? ?more ?)
+(Head-Level-Mother-Daughters ?t_id ? ?than ?)
+(id-original_word ?m_id more|less|few|fewer|lesser)
+(id-root ?t_id than)
+(Head-Level-Mother-Daughters ?h2 ?l2 ?NN ?id)
+(id-root ?id ?w)
+(not (Mother  ?QP))
+=>
+	(bind ?*count* (+ ?*count* 1))
+	(assert (Mother  ?QP))
+	(if (and (neq ?w year)(neq ?w percent)(neq ?w symbol-percent)) then
+	 	(assert (Head-Level-Mother-Daughters ?h1 ?l1 ?QP $?pre $?post ?head ?more ?than))
+        	(retract ?f0)
+		(printout ?*order_debug-file* "(rule_name - move_more_than_after_head "  ?*count* crlf 
+			"              Before    - "?h1" " ?l1" " ?QP" " (implode$ $?pre)" " ?more" " ?than" " (implode$ $?post)" " ?head crlf
+			"	      After     - "?h1" " ?l1" " ?QP" " (implode$ $?pre)" "(implode$ $?post)" " ?head" " ?more" " ?than crlf)
+	else
+        	(retract ?f0 ?f)
+	 	(assert (Head-Level-Mother-Daughters ?h1 ?l1 ?QP $?pre $?post ?head ))
+		(printout ?*order_debug-file* "(rule_name - move_more_than_after_head "  ?*count* crlf 
+			"		 Before    - "?h1" " ?l1" " ?QP" " (implode$ $?pre)" " ?more" " ?than" " (implode$ $?post)" " ?head crlf
+			"		After	   - "?h1" " ?l1" " ?QP" " (implode$ $?pre)" "(implode$ $?post)" " ?head crlf)
+		(assert (Head-Level-Mother-Daughters ?h ?l ?NP ?QP $?d ?NN ?more ?than))
+		(printout ?*order_debug-file* "(rule_name - move_more_than_after_head "  ?*count* crlf
+                        "                Before    - "?h" " ?l" " ?NP" " ?QP" "(implode$ $?d)" " ?NN crlf
+			"		After	   - "?h" " ?l" " ?NP" " ?QP" "(implode$ $?d)" " ?NN " " ?more" " ?than" " crlf)
+	)
 )
 ;-----------------------------------------------------------------------------------------------------------------------
 ;All our sisters are coming. He left all his money to the orphanage. 

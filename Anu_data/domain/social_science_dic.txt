@@ -1,0 +1,7 @@
+#Added  :: By Shirisha Manju (03-08-15)
+########################################
+stage_noun	sopAna
+economy_noun	arWavyavasWA
+macroeconomic_adjective	samaRti_arWaSAswrIya
+macroeconomics_noun	samaRti_arWaSAswra
+microeconomics_noun	vyaRti_arWaSAswra

@@ -407,6 +407,7 @@
  ?f2<-(id-HM-source ?id ?h_mng ?s)
  (test (> (length $?pp_ids) 1))
  (test (and (member$ ?id $?pp_ids)(neq ?h_mng -)))
+ (not (modified_pada_with_prep ?pada_id)) 
  =>
 	(bind ?len (length $?pp_ids))
 	(loop-for-count (?i 1 ?len) do
@@ -415,6 +416,7 @@
 	          	(printout ?*vib_debug_file* "(id-vib-source	"?pada_id"	"?h_mng" 	"?s"(multi_prep) )" crlf )
 		)
        )
+	(assert (modified_pada_with_prep ?pada_id))
  )
  ;------------------------------------------------------------------------------------------
  ; She asked me to guess her age.
@@ -470,6 +472,20 @@
 	(retract ?f1)
         (modify ?f0 (vibakthi ko))
        	(printout ?*vib_debug_file* "(id-vib-source	"?hid"	ko	previous_word_every )" crlf )
+)
+;------------------------------------------------------------------------------------------
+;Suggested by Sukhada (18-08-15)
+;Hadi is to be rubber-stamped as Yemen's new leader Tuesday in a vote that can hardly be called an election.
+(defrule ko_vib_using_kAlavAcI
+(declare (salience 440))
+(prep_id-relation-anu_ids - kriyA-kAlavAcI ? ?day)
+(id-root ?day sunday|monday|tuesday|wednesday|thursday|friday|saturday|Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)
+?f0<-(pada_info (group_head_id ?day)(group_cat PP)(vibakthi 0))
+?f1<-(pada_control_fact ?day)
+=>
+        (retract ?f1)
+        (modify ?f0 (vibakthi ko))
+        (printout ?*vib_debug_file* "(id-vib-source     "?day"  ko      ko_vib_using_kAlavAcI )" crlf )
 )
 ;------------------------------------------------------------------------------------------
 ;Added on (23-05-12)

@@ -12434,7 +12434,7 @@ canard_UNDEFINED	JUTI_aMvAha
 canard_noun	JUTI_aPavAha
 canaries_UNDEFINED	eka_gAnevAlA_pakRI
 canary_noun	eka_gAnevAlA_pakRI/pIwacatakI/muKabira
-cancel_verb	raxxa_kara/kAta
+cancel_verb	raxxa_kara/kAta/niraswa_kara
 canceled_UNDEFINED	raxxa_karanA
 canceling_UNDEFINED	raxxa_karanA
 cancellation_UNDEFINED	raxxa_karanA
@@ -21387,7 +21387,7 @@ dependently_adverb	parAXInawaH/paravaSawaH
 dependents_UNDEFINED	nirBara
 depending_UNDEFINED	ASriwa_honA
 depends_UNDEFINED	ASriwa_honA
-depict_verb	xarSA/ciwra_KIFca/ciwriwa_kara
+depict_verb	xarSA/ciwra_KIFca/ciwriwa_kara/ciwraNa_kara
 depicted_UNDEFINED	ciwra_KIFcanA
 depicting_UNDEFINED	ciwra_KIFcanA
 depiction_UNDEFINED	ciwraNa_karanA
@@ -22081,7 +22081,7 @@ diagonalest_UNDEFINED	karNareKA
 diagonalization_UNDEFINED	vikarNana
 diagonally_adverb	vikarNawaH/wiraCA
 diagonals_UNDEFINED	karNareKA
-diagram_noun	ciwra/Akqwi
+diagram_noun	ciwra/Akqwi/AreKa
 diagramed_UNDEFINED	ciwra
 diagraming_UNDEFINED	ciwra
 diagrammatic_adjective	AreKI
@@ -22791,7 +22791,7 @@ discourteous_adjective	aSiRta/aBaxra
 discourteously_adverb	aBaxrawApUrvaka/aSiRtApUrvaka
 discourtesies_UNDEFINED	aSiRtawA
 discourtesy_noun	aSiRtawA/rUKApana/aBaxrawA
-discover_verb	Koja/samaJa/pawA_lagA/mAlUma_kara/Koja_nikAla/Koja_lagA/DUNDa_nikAla
+discover_verb	Koja/samaJa/pawA_lagA/mAlUma_kara/Koja_nikAla/Koja_lagA/DUNDa_nikAla/jFAwa_ho
 discovered_UNDEFINED	KojanA
 discoverer_noun	KojakarwA
 discoveries_UNDEFINED	Koja
@@ -33542,7 +33542,7 @@ give-on_verb	pahuzcA
 give-out_verb	Kawma_ho_jA/banxa_ho_jA/javAba_xe_xe
 give_noun	namyawA/lacaka
 give_verb	xe/xilA/xiKA/upahAra_xe/ucakA/svIkAra_kara/supurxa_kara/sunA/sOmpa/sipurxa_kara/saplAI_kara/samarpiwa_kara/saccAI_svIkAra_kara/pUrA_XyAna_xe/praxAna_kara/praswuwa_kara/praBAviwa_kara/piGala/pExA_kara/pEsA_xe/parosa/pahuzcA/niyukwa_kara/nikAl/nikAle/nikAla/maxaxa_kara/mAra/mAna_le/lOtA_xe/le/lagA/kula/Ko_xe/Kola/kara/kAma_meM_lagA/Jofka_xe/hAra/GoRiwa_kara/give_kara/gira_pada/Dera_ho_jA/Daha_jA/Coda_xe/canxA_xe/caDA/BUlA_xe/BugawAna_kara/bETa_jA/BeNta_kara/bAzta_xe/bahAnA_xe/axA_kara/awyaXika_icCuka_ho
-given_adjective	AxI/viSeRa/nirXAriwa/niSciwa
+given_adjective	praxawwa/AxI/viSeRa/nirXAriwa/niSciwa
 given_adverb	xeKawe_hue
 given_noun	pUrvAnumAna
 givener_UNDEFINED	niSciwa
@@ -35556,7 +35556,7 @@ handicappeder_UNDEFINED	vikalAfga
 handicappedest_UNDEFINED	vikalAfga
 handicapping_UNDEFINED	asamarWa
 handicaps_UNDEFINED	asamarWa
-handicraft_noun	haswaSilpa
+handicraft_noun	haswaSilpa/haswakalA
 handicrafts_UNDEFINED	haswaSilpa
 handier_UNDEFINED	sulaBa
 handiest_UNDEFINED	sulaBa
@@ -45658,7 +45658,7 @@ likelihoods_UNDEFINED	samBAvyawA
 likeliness_UNDEFINED	samBAvyawA
 likelinesses_UNDEFINED	samBAvyawA
 likely_adjective	samBava/upayukwa/samBAviwa/samBAvanIya/honahAra
-likely_adverb	samBavawH/samBavawaH/samBAvanA_ke_sAWa
+likely_adverb	samBavawaH/samBavawaH/samBAvanA_ke_sAWa
 liken_verb	wulanA_kara
 likened_UNDEFINED	wulanA_karanA
 likeness_noun	wulanAwmakawA/samAnawA
@@ -49739,7 +49739,7 @@ misshapen_verb	galawa_AkAra_vAlI
 misshapener_UNDEFINED	galawa_AkAra_vAlI
 misshapenest_UNDEFINED	galawa_AkAra_vAlI
 missile_UNDEFINED	misAila
-missile_noun	prakRepAstra/misAila{Pefka_kara_mArane_yogya_cIja}
+missile_noun	misAila/prakRepAswra
 missiles_UNDEFINED	misAila
 missing_adjective	KoyA_huA/nAmOjUxa/lApawA/gAyaba/anupasWiwa
 missing_adverb	KoyA_huA
@@ -62722,7 +62722,7 @@ quantifier_noun	parimANavAcaka_viSeRaNa/parimANavAcaka_Sabxa
 quantify_verb	parimANiwa_kara/parimANa_nirXAriwa_kara
 quantitative_UNDEFINED	parimANa_sambanXI
 quantitative_adjective	parimANAwmaka/parimANa_sambanXI.
-quantitatively_adverb	parimANAwmaka_Dafga_se
+quantitatively_adverb	parimANAwmaka_Dafga_se/mAwrAwmaka
 quantitativer_UNDEFINED	parimANa_sambanXI
 quantitativest_UNDEFINED	parimANa_sambanXI
 quantities_UNDEFINED	parimANa
@@ -81200,7 +81200,7 @@ thunderstorms_UNDEFINED	wUPAna
 thunderstruck_adjective	BOFcakkA
 thundery_UNDEFINED	kadakaxAra
 thursday_UNDEFINED	guruvAra/bqhaspawivAra
-thus_adverb	isa_prakAra/isa_lie/isaliye/isa_sImA_waka
+thus_adverb	isa_prakAra/isa_lie/isaliye/isa_sImA_waka/isa_waraha
 thwack_verb	Wappada_mAra
 thwart_noun	AdA_waKwA
 thwart_verb	roka/vyarWa_kara_xe
@@ -81785,7 +81785,7 @@ tofu_noun	toPU
 toga_noun	cogA
 togas_UNDEFINED	cogA
 together_adjective	eka_sAWa/mila_kara/ikatTA
-together_adverb	eka_sAWa/sAWa_meM/milA_kara/mila-jula_kara/ikataTe/eka-sAWa/ikaTTA/barAbara
+together_adverb	eka_sAWa/sAWa_meM/milA_kara/mila-jula_kara/ikataTe/eka-sAWa/ikaTTA/barAbara/sAWa-sAWa
 togetherness_noun	nikatawA/GaniRTawA
 toggle_noun	KUztI/tagala/svica
 toggle_verb	tagala_se_bAzXa/tagala_lagA/bAzXa

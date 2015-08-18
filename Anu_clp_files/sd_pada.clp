@@ -83,7 +83,7 @@
         (printout ?*pada_debug_file* "	(pada_info (group_head_id "?np_id")(group_cat PP) (group_ids "(implode$ $?d)" "?cc" "(implode$ $?d1)")))" crlf)
        	(assert (conj_head-conj_id-components ?np_id ?cc $?d $?d1))
 	(assert (generated_conj_pada ?np_id))
-	(bind ?lh (nth$ (length $?d) $?d))
+	(bind ?lh (nth$ 1 $?d))
 	(bind ?rh (nth$ (length $?d1) $?d1))
 	(assert (conj-lt_head-rt_head ?CC ?lh ?rh))
 	(assert (conj_last_id ?rh))
@@ -131,6 +131,7 @@
         (printout ?*pada_debug_file* "		Before :: (pada_info (group_head_id "?np_id")(preposition 0))" crlf)
         (modify ?f1  (preposition  $?ids ?prep))
         (printout ?*pada_debug_file* "		After  :: (pada_info (group_head_id "?np_id")(preposition "(implode$ $?ids)" "?prep"))" crlf)
+	(assert (prep_id_decided ?prep))
  )
  ;----------------------------------------------------------------------------------------------------------------------
  ;She declared that out of love for the poor she had gotten her family to go against convention.
@@ -232,6 +233,8 @@
  ?f<-(conj_head-conj_id-components ?con_h ?cid $?d ?id $?d1 ?last_id)
  (head_id-prawiniXi_id-grp_ids ?hid ?id ?no)
  (not (shared_conj_for_pada_id ?id))
+ (test (neq (str-index "." (implode$ (create$ ?con_h)))  FALSE))
+ (test (eq (string-to-field (sub-string (+ (str-index "." (implode$ (create$ ?con_h))) 1) (length (implode$ (create$ ?con_h))) (implode$ (create$ ?con_h)))) 1))
  =>
 	(assert (shared_conj_for_pada_id ?id))
 	(bind ?head (string-to-field (sym-cat ?hid ".1")))
