@@ -11206,7 +11206,7 @@ bridling_UNDEFINED	lagAma_xenA
 brief_adjective	safkRipwa/Wode_samaya_kA/safkRISpwa/laGu/CotA/alpakAlIna
 brief_noun	vAxa-sAra/sUcanA/kesa/kAma/sArapawra
 brief_verb	kAgajAwa_xe/hixAyawa_xe
-briefcase_noun	camade_kA_AyawAkAra_bEga
+briefcase_noun	baswA{brIPZakesa}/camade_kA_AyawAkAra_bEga
 briefed_UNDEFINED	laGu
 briefer_UNDEFINED	laGu
 briefest_UNDEFINED	laGu
@@ -19439,7 +19439,7 @@ curacies_UNDEFINED	pAxarI_sahAyaka_paxa
 curacy_noun	pAxarI_sahAyaka_paxa
 curate_noun	pAxarI_sahAyaka/pAxarI
 curates_UNDEFINED	pAxarI_sahAyaka
-curative_adjective	Arogyakara_paxArWa/upacArAwmaka/Arogyakara
+curative_adjective	Arogyakara/upacArAwmaka
 curativer_UNDEFINED	Arogyakara_paxArWa
 curatives_UNDEFINED	Arogyakara_paxArWa
 curativest_UNDEFINED	Arogyakara_paxArWa
@@ -21999,7 +21999,7 @@ devolution_noun	rAjyoM_ko_kenxra_xvArA_xiyA_gayA_aXikAra/haswAnwaraNa
 devolutions_UNDEFINED	rAjyoM_ko_kenxra_xvArA_xiyA_gayA_aXikAra
 devon_UNDEFINED	dIvOna
 devote_verb	samarpiwa_kara/samarpiwa_ho/vaPAxAra
-devoted_adjective	vaPAxAra/samarpiwa/niRTAvAna
+devoted_adjective	samarpiwa/niRTAvAna/vaPAxAra
 devoteder_UNDEFINED	vaPAxAra
 devotedest_UNDEFINED	vaPAxAra
 devotee_noun	Bakwa/SOkIna
@@ -22219,7 +22219,7 @@ differential_noun	Binnaka_giyara/anwara
 differentialer_UNDEFINED	anwara_sambanXI
 differentialest_UNDEFINED	anwara_sambanXI
 differentials_UNDEFINED	anwara_sambanXI
-differentiate_verb	viBexa_jAna_le/viBinnawA_praxAna_kara/Bexa-BAva_kara/anwara_kara/alaga_kara
+differentiate_verb	viBexa_kara/viBexa_jAna_le/viBinnawA_praxAna_kara/Bexa-BAva_kara/anwara_kara/alaga_kara
 differentiated_UNDEFINED	viBexa_jAna_lenA
 differentiates_UNDEFINED	viBexa_jAna_lenA
 differentiating_UNDEFINED	viBexa_jAna_lenA
@@ -73803,6 +73803,7 @@ societies_UNDEFINED	sAmAjika_jIvana
 society_adjective	uccavargIya
 society_noun	samAja/uccavarga/sAWa/samuxAya/saMsWA/safgawi/saBA/sAmAjika_jIvana/varga
 socio-economic_UNDEFINED	sAmAjika-ArWika
+socioeconomic_adjective	sAmAjika_Ora_ArWika
 sociobiologic_adjective	samAjajEvikI_sambanXI
 sociobiological_adjective	samAjajEvikI_sambanXI
 sociobiology_noun	samAjajEvikI
@@ -80229,7 +80230,7 @@ tendencious_adjective	pakRapAwapUrNa
 tendenciouser_UNDEFINED	pakRapAwI
 tendenciousest_UNDEFINED	pakRapAwI
 tendenciously_adverb	pakRapAwapUrNa_Dafga_se
-tendency_noun	pravqwi/rUJAna/prakqwi/JukAva/jukAva/Axawa
+tendency_noun	pravqwwi/rUJAna/prakqwi/JukAva/jukAva/Axawa
 tendentious_adjective	pakRapAwI/pakRapAwapUrNa
 tendentiouser_UNDEFINED	pakRapAwI
 tendentiousest_UNDEFINED	pakRapAwI
@@ -93585,3 +93586,4 @@ compiled_adjective	safkaliwa
 chicken-run_noun	murgI_kA_bAdZA
 ski-run_noun	skI-rana
 pre-independence_adjective	svawanwrawA_pUrva/svawanwrawA_ke_pUrva
+restart_verb	punaH_prAramBa_kara/Pira_se_Suru_kara

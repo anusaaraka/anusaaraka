@@ -93,6 +93,7 @@
 	come back       vApasa_AnA		(Suggested by Rajini 20.01.12) Ex : Let Abraham come back.
 	look_after      xekabAla_kara		(Suggested by Chaitanya Sir 26-07-13)
 	put_forward	praswuwa_kara		(Suggested by Pramila Banasthali 23-08-13)
+	swear_in        SapaWa_le		(Suggested by Chaitanya Sir 02-09-15)
 
   2.  Removed
 	"nA" in hindi meanings.
@@ -1081,6 +1082,8 @@ Nandini ji LTRC 	27-11-13)
 	127. power_noun      		vixyuw/vixyuw_Sakwi as  vixyuwa/vixyuwa_Sakwi (   By Shirisha Manju     20-07-15)
 	128. missile_noun    		prakRepAstra	as	prakRepAswra	(Suggested by Sukhada           17-08-15)
 	129. likely_adverb   		samBavawH	as	samBavawaH	(	"	"		"	)
+	130. tendency_noun   		pravqwi		as	pravqwwi	(Suggested by Chaitanya Sir 20-08-15    )
+		
 
     3. Added new entry:
        ---------------
@@ -1419,6 +1422,11 @@ Nandini ji LTRC 	27-11-13)
 	166. pre-independence_adjective	svawanwrawA_pUrva/svawanwrawA_ke_pUrva	(By Shirisha Manju              23-07-15)
 					Ex: Prepare a list of goods and services that were available to people in pre-independence India in rural
 					    and urban areas.
+	167. socioeconomic_adjective 	sAmAjika_Ora_ArWika		( Suggested by Chaitanya Sir  25-08-15  )
+					Ex: He mourned the perennial poverty of Calcutta and the socioeconomic decline of Bengal.
+	168. restart_verb    		punaH_prAramBa_kara/Pira_se_Suru_kara	( Suggested by Chaitanya Sir  31-08-15  )
+					Ex: When Janata government collapsed, Vajpayee restarted the Jana Sangh as the Bharatiya Janata Party in
+					    1980.
 
     4. Added new meaning to the existing word:
        ---------------------------------------
@@ -1749,6 +1757,11 @@ Nandini ji LTRC 	27-11-13)
 					Ex: Fig. 6.5 depicts a ball of mass m being dropped from a cliff of height H.
 	162. given_adjective 		praxawwa		(Suggested by Chaitanya Sir     17-08-15)
 					Ex:Multiplying a given vector A by negative numbers,say — 1 and — 1.5, gives vectors as shown in Fig 4.3
+	163. differentiate_verb      	viBexa_kara		(Suggested by Chaitanya Sir     27-08-15)
+					Ex: Poslad differentiates three different kinds of smart environments for systems, services and devices.
+	164. briefcase_noun		baswA{brIPZakesa}	(Suggested by Chaitanya Sir     02-09-15)
+				      	Ex: Memon was arrested with a briefcase which contained a recording of a conversation he had had in 
+					Karachi.
 	
     5. Modifying first meaning from the list :
        -------------------------------------
@@ -2179,6 +2192,10 @@ Nandini ji LTRC 	27-11-13)
 				Ex: Before 1921, India was in the first stage of demographic transition.
 	196. missile_noun    	prakRepAswra		as	misAila		(Suggested by Sukhada           17-08-15)
 				Ex: Tulnerable to tens of thousands of missiles and rockets from neighboring countries.
+	197. devoted_adjective  vaPAxAra		as	samarpiwa	(Suggested by Chaitanya Sir     25-08-15)
+				Ex:And as a devoted leader,he gained support both at home and abroad, becoming known as 'the people's President'.
+	198. curative_adjective Arogyakara_paxArWa	as	Arogyakara	(Suggested by Chaitanya Sir     02-09-15)
+				Ex: Memon then filed a curative petition to the Supreme Court, which was rejected on 21 July 2015.
 
     6. Removed meaning from existing list:
        ----------------------------------
@@ -2226,6 +2243,7 @@ Nandini ji LTRC 	27-11-13)
 	40. bike_UNDEFINED	sAikila_calA					(	"	"		  "	)
 	41. spacing_noun	anwarAlana					(	"	"		24-02-15)
 	42. move_noun		upAya						(	"	"		06-03-15)
+	43. curative_adjective  Arogyakara_paxArWa				(	"	"		02-09-15)
 	
 
     7. Removed entry:
@@ -2800,7 +2818,11 @@ Nandini ji LTRC 	27-11-13)
 				    more complex analyses that are used by economists to study macroeconomics today.
 	165. higher_studies  	ucca_aXyayana#ucca_aXyayana#noun#2#RM			(Suggested by Chaitanya sir 12-08-15 )
 				Ex: above example	
-
+	166. food_grain      	KAxyAnna#KAxyAnna#noun#2#RM				( "		"	    21-08-15 )
+				Ex: For example, if output of food grain is experiencing a growth, it is generally accompanied by a rise in the
+				    output level of industrial goods. 
+	167. curative_petition  nirNaya_saMSoXana_nivexanapawra#noun#2#RM		(Suggested by Chaitanya sir 02-09-15 )
+				Ex: Memon then filed a curative petition to the Supreme Court.
 
     Added new meaning to the existing word:
     --------------------------------------
@@ -3355,7 +3377,7 @@ Nandini ji LTRC 	27-11-13)
 	Dennis		denisa		(	"	"	"	"	"	)
 	Ganges		gaMgA		(Suggested by Chaitanya Sir 	      15-12-14	)
 	Persia  	PArasa		(	"	14anu-ban-09	"     16-02-15  )	
-	
+
 
    Modified:
    ---------
@@ -3370,6 +3392,9 @@ Nandini ji LTRC 	27-11-13)
    1. prakASiwa_kara  	ko     	(Suggested by Chaitanya Sir 28-09-13) Ex: Standing in the middle of the great epic like a lighthouse, it 
 									  illuminates the whole of the epic.
    2. ragada  		ko	(Suggested by Sukhada       02-06-14) Ex: Your cat keeps on rubbing itself against my leg. 
+   3. preraNA_xe      	ko	(Suggested by Chaitanya Sir 31-08-15) Ex: As a committed educator, he inspired millions of young people to
+									  achieve their very best.
+   4. preriwa_kara    	ko	(	"	"		"   )
 
  changes in human.txt
  ===================

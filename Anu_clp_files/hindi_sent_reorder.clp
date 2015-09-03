@@ -512,13 +512,15 @@
  ;Added by Shirisha Manju (03-08-13)  Suggested by Chaitanya Sir
  ;At longer wavelengths (i.e., at lower frequencies), the antennas have large physical size and they are located on or very near to the ground.
  ;In short, the greater the rate of change of momentum, the greater is the force.
+ ;What would be reasonable indicators to show that the economy is better or worse? 
  (defrule insert_aXika_for_adj_er
  (declare (salience 10))
  ?f0<-(id-root-category-suffix-number ?id ? adjective er ?)
- (not (id-eng-src ?id ? Word_mng))
  ?f<-(hindi_id_order $?list ?m ?id $?list1)
- (not (id-HM-source ?id ? ?src&Database_compound_phrase_root_mng|Database_compound_phrase_word_mng|provisional_Database_compound_phrase_root_mng|provisional_Database_compound_phrase_word_mng));Note : Same as below but no sentence found. 
+ (id-HM-source ?id ?mng ?s&~Database_compound_phrase_root_mng&~Database_compound_phrase_word_mng&~provisional_Database_compound_phrase_root_mng&~provisional_Database_compound_phrase_word_mng)
+ (test (eq (integerp (member$ ?mng (create$ behawara ))) FALSE))
  (not (vib_inserted ?id))
+ (not (id-eng-src ?id ? Word_mng))
  (not (id-HM-source ?m se_aXika ?)) ;Current PCs are more than 50 times faster and have memory capacity 500 times greater than their 1977 counterparts. 
  =>
         (retract ?f ?f0)

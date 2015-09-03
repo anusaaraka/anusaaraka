@@ -1,19 +1,21 @@
- 18-08-15
+ 03-09-15
  ========
  1. WSD:
 	substantially.clp 
 	seize.clp -- fixed bug in assert stmt
  2. adjective.clp:
 	Added example sentence in 'check_whether_mng_dcd' rule
+	Modified warning message
  3. hindi_sentence.clp:
 	Modified : add_eng_mng, add_eng_mng1 rule
         Added    : rm_eng_fact and move_nahIM_before_verb_or_after_noun
  4. tam_meaning.clp:
-	Added : change_tam_source_for_WSD
+	Added : change_tam_source_for_WSD and modify_vib_for_conjunction -- infinitive case
  5. number.clp
         Added    : get_num_using_det
 	Modified : verb_rule  -- added no. info for subject
  6. hindi_meaning.clp
+	Added :  rm_infinitive_to_id
 	Modified the hierarchy for default mng
  7. hindi_compound_meaning.clp
         Modified : get_default_domain_compound_root_mng and get_default_domain_compound_word_mng [fixed bug to get domain dic name]
@@ -29,60 +31,63 @@
  10. vibakthi.clp
         Added 	 : saMjFA_vib_to_saMjFA_samA_vibakthi_rule  and ko_vib_using_kAlavAcI rules
 	Modified : vib_for_multiple_prep -- added not condition
+		   default_kA_vib  	 -- added 'their' in the list
  11. prepare_apertium_input.clp
 	Added    : not_before_verbal_noun_with_vib
         Modified : kA_vib_from_sub_or_obj_rule
  12. sd_pada.clp
+	Added	 : get_zero_level_mul_inf, rm_pp_id_form_inf_conj and print_conj_for_inf
 	Modified : get_conj_group -- added conj last id fact
 		   get_zero_level_prep -- used above generated fact to share prep
-		   get_infinitive_pada -- to handle adverb b4 infinitive
+		   get_infinitive_pada -- to handle adverb b4 infinitive, added not condition
 		   multiple_prep_rule  -- asserted control fact for prep decided
-                   get_zero_level_conj_pada -- added test condition to check zero level
+                   get_zero_level_conj_pada -- added test condition to check zero level , added not condition
  13.  hindi_sent_reorder.clp
-	Modified : rule_for_ki -- added 'doubt' , insert_aXika_for_adj_er -- added not condition
+	Modified : rule_for_ki -- added 'doubt' , insert_aXika_for_adj_er -- added not and test  condition
 	 Added   : insert_kyA and interchange_date_and_month rules
 	Removed  : insert_wo_when
  14.  GNP_agreement.clp
 	Added : case_for_saMjFA
 	Modified: modify_case_for_and_grp -- shared case for all the components of and
- 15. sd_category.clp :    Added    : modify_VBN_cat1
- 16. get_dbase_mng.clp
+ 15. sd_category.clp :   Added 	: modify_VBN_cat1
+ 16. tam_id.clp      : 	 Added	: tam_id_frm_cau_vb3
+ 17. get_dbase_mng.clp
 	Modified : print_dic_mng and dic_lookup functions to add group_ids
- 17. Updated alignment files
+ 18. Updated alignment files
 	alignment.clp		get_heuristics.clp	get_score.clp
- 18. run_modules_std.bat 
+ 19. run_modules_std.bat 
 	Loaded "relations_tmp1.dat" file in number module
 	Loaded  E_constituents_info_tmp5.dat and parserid_wordid_mapping.dat files and added save-facts for GNP_agmt_info.dat in
 	        hindi_sent_reorder module
- 19. run_H_gen_sen.bat
+ 20. run_H_gen_sen.bat
         Loaded relations_tmp1.dat and cat_consistency_check.dat files in hindi_sentence module
- 20. run_H_gen_sen_eng.bat
+ 21. run_H_gen_sen_eng.bat
  	Loaded word.dat file in get_dbase_mng module
 	Removed get_manual_id_en_hi, word_alignment , manual_lwg_new, word_alignment1 modules
 	Added template_after_mng, get_manual_id_and_group, get_verb_and_phrasal_grp.clp and alignment1 modules
 	Loaded relations_tmp1.dat and cat_consistency_check.dat files in hindi_sentence module
- 21. Modified following bat files to show tooltop for WSD tam along with rule name:
+ 22. Modified following bat files to show tooltop for WSD tam along with rule name:
 	run_modules_ace.bat	run_modules_link.bat	run_modules_ol.bat	run_modules_std.bat
- 22. Modified the following files to add social_science_multi_dic.txt and social_science_dic.txt
+ 23. Modified the following files to add social_science_multi_dic.txt and social_science_dic.txt
         list-right                              multifast-v1.4.2/src/run.sh
         list_Anu_data_domain                    anu_compile.sh
         list_Anu_data_multi_domain
- 23.  Added the following files for alignment
+ 24.  Added the following files for alignment
 	get_manual_id_and_group.clp  	--- to get manual_word fact and noun group info
 	get_verb_and_phrasal_grp.clp 	--- to get verb group and phrasal group info
 	alignment1.clp 			--- align after heuristics
- 24. Added ace-parser dir in Parsers folder
+ 25. Added ace-parser dir in Parsers folder
 	Readme_to_install_ace_parser.txt
 	src/extract_mrs_output.py
 	src/get_cat_root_info.py
 	src/get_mrs.sh
 	src/map-relations.py
 	src/get_tree.sh
- 25. Added following files to run Ace parser:
+ 26. Added following files to run Ace parser:
 	bin/Anusaaraka_ace.sh
 	bin/run_sentence_ace.sh
 	Anu_clp_files/run_modules_ace.bat
- 26. Integrated logon parser with anusaaraka system below files have been
+ 27. Integrated logon parser with anusaaraka system below files have been
      Added:
              bin/Anusaaraka_logon.sh
 	     bin/run_sentence_logon.sh
@@ -92,31 +97,31 @@
      Modified:
              shell_scripts/anu_compile.sh
 	     shell_scripts/remove_out-files.sh
- 27. Moved domain dictionaries(physics and science) from miscellaneous/SMT/MINION/dictionaries/ to Anu_data/domain/ and 
+ 28. Moved domain dictionaries(physics and science) from miscellaneous/SMT/MINION/dictionaries/ to Anu_data/domain/ and 
      Modified the following files accordingly :
 	Anu_data/canonical_form_dictionary/list_SMT
 	Anu_data/canonical_form_dictionary/list_Anu_data_domain
 	Anu_data/canonical_form_dictionary/list_Anu_data_multi_domain
- 28. Updated following files related to phrasal alignment:
+ 29. Updated following files related to phrasal alignment:
 	Anusaaraka_alignment.sh
         run_alignment-hi-en.sh
         run_alignment.sh
 	get_phrasal_dic-en-hi.sh 
 	get_phrasal_dic-hi-en-en.sh
- 29. Updated following dictionaries:
+ 30. Updated following dictionaries:
         changes_in_databases		apertium-en-hi.en.metadix		provisional_multi_word_dictionary.txt
         phy_dictionary.txt		multi_word_expressions.txt
         phy_eng_multi_word_dic.txt	preposition.txt
- 30. Updated following files:
+ 31. Updated following files:
 	INSTALL
 	README
 	tree_viewer/README
 	tree_viewer/remove-out-files.sh
 	tree_viewer/view_trees.sh
 	Anu_data/canonical_form_dictionary/Readme
- 31. Modified style.css , create_eng_align_html_phrasal.clp and run_alignment.sh files for text wrapping in html.
- 32. Updated Log.
- 33. Updated  
+ 32. Modified style.css , create_eng_align_html_phrasal.clp and run_alignment.sh files for text wrapping in html.
+ 33. Updated Log.
+ 34. Updated  
 	sd_verified (855)	small_sent_verified_sd (172) 	phy_verified (164)
 
  18-02-15

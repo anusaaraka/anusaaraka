@@ -33266,6 +33266,8 @@ in_both_the_cases	xonoM_hI_sWiwiyoM_meM/xonoM_hI_sWiwiyoM_meM#xonoM_hI_sWiwiyoM_
 manufacturing_units	Oxyogika_ikAI#Oxyogika_ikAI#noun#2#RM
 those_of_you	Apa_meM_se#Apa_meM_se#pronoun#3#WM
 higher_studies	ucca_aXyayana#ucca_aXyayana#noun#2#RM
+food_grain	KAxyAnna#KAxyAnna#noun#2#RM
+curative_petition	nirNaya_saMSoXana_nivexanapawra#nirNaya_saMSoXana_nivexanapawra#noun#2#RM
 ################################################################################################################
 #Following entries are manually corrected by LTRC
 #By Sarita ji (LTRC)

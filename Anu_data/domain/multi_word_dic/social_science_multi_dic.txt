@@ -4,3 +4,4 @@ planned_development	niyojiwa_vikAsa#niyojiwa_vikAsa#noun#2#RM
 five_year_plans	paFcavarRIya_yojanA#paFcavarRIya_yojanA#noun#3#RM
 population_growth	janasafKyA_vqxXi#janasafKyA_vqxXi#noun#2#RM
 employment_level	rojagAra_swara#rojagAra_swara#noun#2#RM
+rise_or_fall	vqxXi_yA_hrAsa#vqxXi_yA_hrAsa#verb#3#RM

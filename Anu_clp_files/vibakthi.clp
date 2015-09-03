@@ -433,10 +433,11 @@
  )
 ;------------------------------------------------------------------------------------------
  ; Is that the film in which he kills his mother. This book is mine|ours|yours.
+ ; As a committed educator, he inspired millions of young people to achieve their very best.
  (defrule default_kA_vib
  (declare (salience 500))
  ?f0<-(pada_info (group_head_id ?pada_id)(group_cat PP)(vibakthi 0))
- (id-original_word ?pada_id  ?w&his|His|our|Our|mine|my|ours|your|yours)
+ (id-original_word ?pada_id  ?w&his|His|our|Our|mine|my|ours|your|yours|their|Their)
  ?f1<-(pada_control_fact ?pada_id)
  =>
         (retract ?f1)

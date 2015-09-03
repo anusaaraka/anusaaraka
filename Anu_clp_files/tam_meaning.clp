@@ -238,6 +238,19 @@
         )
  )
  ;---------------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju
+ ;Similarly, prices of different goods and services generally have a tendency to rise or fall simultaneously.
+ (defrule modify_vib_for_conjunction
+ (conjunction-components ?con ?f_vb $? ?l_vb)
+ ?f<-(pada_info (group_head_id ?f_vb) (vibakthi ?vib&~0))
+ ?f0<- (pada_info (group_head_id ?l_vb) )
+ (not (modified_vib ?con))
+ =>
+	(modify ?f (vibakthi 0))
+	(modify ?f0 (vibakthi ?vib))
+	(assert (modified_vib ?con))
+ )
+ ;---------------------------------------------------------------------------------------------------------------------
  (defrule change_tam_source_for_WSD
  (declare (salience -100))
  ?f<-(pada_info (group_head_id ?head_id)(tam_source WSD))

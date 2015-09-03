@@ -362,6 +362,16 @@
         (assert (id-cat_coarse ?id preposition))
  )
  ;--------------------------------------------------------------------------------------------------------------
+ ;Added by Shirisha Manju (01-09-15)
+ ; to meaning should get from WSD
+ (defrule rm_infinitive_to_id
+ (declare (salience 7910))
+ (prep_id-relation-anu_ids - to-infinitive ?id ?id1)
+ ?f0<-(meaning_to_be_decided ?id)
+ =>
+        (retract ?f0)
+ )
+ ;--------------------------------------------------------------------------------------------------------------
  ;Rule re-modified by Roja (01-08-12). 
  ;Getting Hindi meaning from default dictionary when there is a same category 
  ;Assuming first meaning always has 'Defualt'.

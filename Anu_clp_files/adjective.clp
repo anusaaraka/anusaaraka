@@ -87,7 +87,7 @@
 		(assert (id-eng-src  ?id  ?org_wrd Word_mng)) ;As Mng is decided on word
                 (assert (meaning_has_been_decided ?id))
                 (assert (file_loaded ?id))
-		(printout t "Warning: Multiple adjective senses are available for "?org_wrd ". WSD rule is required " crlf)
+		(printout t "Warning: Multiple adjective senses are available for "?org_wrd " . WSD rule is required " crlf)
 		(if ?*debug_flag* then
 		(printout wsd_fp "(default-iit-bombay-shabdanjali-dic.gdbm  " ?id " " ?org_wrd "  "?h_mng ")" crlf)) ;Added ?id for debug purpose.
             else
@@ -122,7 +122,7 @@
 		(assert (id-eng-src  ?id  ?wrd Word_mng)) ;As Mng is decided on word
 		(assert (meaning_has_been_decided ?id))
 		(assert (file_loaded ?id))
-		(printout t "Warning: Multiple adjective senses are available for "?wrd ". WSD rule is required " crlf)
+		(printout t "Warning: Multiple adjective senses are available for "?wrd " . WSD rule is required " crlf)
 		(if ?*debug_flag* then
                 (printout wsd_fp "(default-iit-bombay-shabdanjali-dic.gdbm  " ?id " " ?wrd "  "?h_mng ")" crlf));Added ?id for debug purpose.
             else

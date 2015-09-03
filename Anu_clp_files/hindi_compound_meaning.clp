@@ -333,7 +333,7 @@
                 (printout ?*h_mng_file1* "(id-HM-source-grp_ids   "?id"   " ?a "   Verb_Phrase_gdbm "?id" "?id1")" crlf)
                 (retract ?mng ?mng1)
         else
-                (printout t "Warning: Meaning for verb phrase "?vrb_phrase "  is required" crlf)
+                (printout t "Warning: Meaning for phrasal verb "?vrb_phrase "  is required" crlf)
         )
  )
  ;--------------------------------------------------------------------------------------------------------------

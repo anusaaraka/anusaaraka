@@ -15,3 +15,5 @@ mukwa_kara	ko
 KewI_kara	kI
 prakASiwa_kara	ko
 ragada	ko
+preraNA_xe	ko
+preriwa_kara	ko

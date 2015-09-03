@@ -233,6 +233,7 @@
  ?f<-(conj_head-conj_id-components ?con_h ?cid $?d ?id $?d1 ?last_id)
  (head_id-prawiniXi_id-grp_ids ?hid ?id ?no)
  (not (shared_conj_for_pada_id ?id))
+ (not (prawiniXi_id-node-category ?con_h ? Inf_VP))
  (test (neq (str-index "." (implode$ (create$ ?con_h)))  FALSE))
  (test (eq (string-to-field (sub-string (+ (str-index "." (implode$ (create$ ?con_h))) 1) (length (implode$ (create$ ?con_h))) (implode$ (create$ ?con_h)))) 1))
  =>
@@ -399,6 +400,27 @@
 	(assert (inf_id-to_id ?id ?to_id))
  )
  ;----------------------------------------------------------------------------------------------------------------------
+ ;Similarly, prices of different goods and services generally have a tendency to rise or fall simultaneously.  
+ (defrule get_zero_level_mul_inf
+ (declare (salience 1100))
+ (head_id-prawiniXi_id-grp_ids ? ? ?to ?conj_h)
+ (prawiniXi_id-node-category ?to ?TO TO)
+ (head_id-prawiniXi_id-grp_ids ?to_id ?to ?)
+ ?f<-(conj_head-conj_id-components ?conj_h ?cid $?pre ?id $?po)
+ ?f0<-(pada_info (group_head_id ?conj_h) (group_ids $?d ?id $?d1))
+ (prawiniXi_id-node-category ?id ? VB)
+ (head_id-prawiniXi_id-grp_ids ? ?id ?v_id)
+ (test (eq (string-to-field (sub-string (+ (str-index "." (implode$ (create$ ?id))) 1) (length (implode$ (create$ ?id))) (implode$ (create$ ?id)))) 0))
+ =>
+	(retract ?f)
+	(modify ?f0 (group_ids $?d $?d1))
+ 	(assert (conj_head-conj_id-components ?conj_h ?cid $?pre ?v_id $?po ))
+	(bind $?grp_ids (create$ ?to_id ?v_id))
+        (print_pada_info get_multiple_infinitive ?v_id infinitive 0 $?grp_ids)
+        (print_in_ctrl_fact_files  ?v_id)
+        (assert (inf_id-to_id ?id ?to_id))
+ )
+ ;----------------------------------------------------------------------------------------------------------------------
  ;"One kind of response from the earliest times has been to observe the physical environment carefully, look for any meaningful patterns and relations in natural phenomena, and build and use new tools to interact with nature ".
  (defrule get_multiple_infinitive1
  (declare (salience 1100))
@@ -429,6 +451,7 @@
  ;?f1<-(id-grp_ids ?vp ?verb $?)
  (head_id-prawiniXi_id-grp_ids ?verb_id ?verb ?)
  (prawiniXi_id-node-category ?verb ? VB)
+ (not (inf_id-to_id ? ?to_id))
  =>
         (retract ?f0 ?f1)
 	(bind $?grp_ids (create$ ?to_id ?verb_id))
@@ -662,12 +685,13 @@
  (get_pada)
  (conj-lt_head-rt_head ?CC ?lh ?rh)
  (prawiniXi_id-node-category ?c_h ?CC CC)
- (conj_head-conj_id-components ? ?c_h $?daut)
+ ?f<-(conj_head-conj_id-components ? ?c_h $?daut)
  (head_id-prawiniXi_id-grp_ids ?conj_id ?c_h ?)
  (id-grp_ids ?lh $? ?left_head)
  (id-grp_ids ?rh $? ?right_head)
  (not (agreement_decided ?conj_id))
  =>
+	(retract ?f)
         (assert (agreement_decided ?conj_id))
         (printout ?*pada_file* "(conj_head-left_head-right_head  " ?conj_id"   "?left_head"   "?right_head ")" crlf)
 	(printout ?*pada_file* "(conj_head-components " ?conj_id "  "(implode$ $?daut) ")" crlf)
@@ -679,7 +703,7 @@
  (get_pada)
  (conj-lt_head-rt_head ?CC ?lh ?rh)
  (prawiniXi_id-node-category ?c_h ?CC CC)
- (conj_head-conj_id-components ? ?c_h $?daut)
+ ?f<-(conj_head-conj_id-components ? ?c_h $?daut)
  (head_id-prawiniXi_id-grp_ids ?conj_id ?c_h ?)
  (head_id-prawiniXi_id-grp_ids ?left_head ?lh ?)
  (head_id-prawiniXi_id-grp_ids ?right_head ?rh ?)
@@ -687,6 +711,7 @@
  (id-grp_ids ? $? ?right_head)
  (not (agreement_decided ?conj_id))
  =>
+	(retract ?f)
         (assert (agreement_decided ?conj_id))
         (printout ?*pada_file* "(conj_head-left_head-right_head  " ?conj_id"   "?left_head"   "?right_head ")" crlf)
 	(printout ?*pada_file* "(conj_head-components " ?conj_id "  "(implode$ $?daut) ")" crlf)
@@ -703,6 +728,30 @@
  ;       (printout  ?*pada_debug_file* "(pada_info (group_head_id "?hid")(group_cat "?cat")(group_ids  "(implode$ $?grp_ids)")(preposition  "(implode$ $?prep)")(vibakthi 0) (gender 0) (number 0) (case 0) (person 0) (H_tam 0) (tam_source 0) (preceeding_part_of_verb 0) )" crlf)
         (print_in_ctrl_fact_files   ?hid)
  )	
+ ;-----------------------------------------------------------------------------------------------------------------------
+ ;Similarly, prices of different goods and services generally have a tendency to rise or fall simultaneously.
+ (defrule rm_pp_id_form_inf_conj
+ (declare (salience 1))
+ ?f0<-(conj_head-conj_id-components ?c ?c_h ?id $?d ?rh)
+ (pada_info (group_head_id ?id) (group_cat infinitive) )
+ (pada_info (group_head_id ?rh) (group_cat PP))
+ =>
+	(retract ?f0)
+	(assert (conj_head-conj_id-components ?c ?c_h ?id $?d))
+ )
+ ;-----------------------------------------------------------------------------------------------------------------------
+ ;Similarly, prices of different goods and services generally have a tendency to rise or fall simultaneously.
+ (defrule print_conj_for_inf
+ (inf_id-to_id ?lh ?)
+ (conj-lt_head-rt_head ?cc ?lh ?)
+ (prawiniXi_id-node-category ?c_h ?cc CC)
+ (conj_head-conj_id-components ? ?c_h $?d ?rh)
+ (head_id-prawiniXi_id-grp_ids ?conj_id ?c_h ?)
+ (head_id-prawiniXi_id-grp_ids ?left_head ?lh ?)
+ =>
+	(printout ?*pada_file* "(conj_head-left_head-right_head  " ?conj_id"   "?left_head"   "?rh ")" crlf)
+        (printout ?*pada_file* "(conj_head-components " ?conj_id "  "(implode$ (create$ $?d ?rh)) ")" crlf)
+ )
  ;-----------------------------------------------------------------------------------------------------------------------
  ;Suggested by Chaitanya Sir (6-11-14)
  (defrule get_tam_type
